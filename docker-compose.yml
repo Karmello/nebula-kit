@@ -1,0 +1,18 @@
+networks:
+  default:
+    name: neb_net
+services:
+  neb-kit:
+    container_name: neb-kit
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PAT=$PAT
+    ports:
+      - "$CLIENT_PORT:$CLIENT_PORT"
+      - "$SERVER_PORT:$SERVER_PORT"
+    environment:
+      - NODE_ENV=$NODE_ENV
+      - CLIENT_PORT=$CLIENT_PORT
+      - SERVER_PORT=$SERVER_PORT
