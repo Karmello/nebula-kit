@@ -1,0 +1,16 @@
+.neb-nav-layout {
+  display: grid;
+  gap: 0;
+  grid-template-columns: var(--nav-layout-side-width-base) 1fr;
+
+  .neb-nav-layout-side {
+    width: var(--nav-layout-side-width-base);
+  }
+  .neb-nav-layout-main {
+    min-width: 0;
+  }
+}
+
+.neb-nav-layout[data-nav-layout-side='right'] {
+  grid-template-columns: 1fr var(--nav-layout-side-width-base);
+}

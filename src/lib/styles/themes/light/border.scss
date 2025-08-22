@@ -1,0 +1,44 @@
+html[data-theme='light'] {
+  // neutral
+  --border-neutral: var(--gray-4);
+  --border-neutral-hover: var(--gray-5);
+  --border-neutral-active: var(--gray-6);
+
+  // primary
+  --border-primary: var(--blue-6);
+  --border-primary-hover: var(--blue-7);
+  --border-primary-active: var(--blue-8);
+
+  // secondary
+  --border-secondary: var(--blue-4);
+  --border-secondary-hover: var(--blue-5);
+  --border-secondary-active: var(--blue-6);
+
+  // tertiary
+  --border-tertiary: var(--gray-4);
+  --border-tertiary-hover: var(--gray-5);
+  --border-tertiary-active: var(--gray-6);
+
+  // success
+  --border-success: var(--green-5);
+  --border-success-hover: var(--green-6);
+  --border-success-active: var(--green-7);
+
+  // info
+  --border-info: var(--sky-4);
+  --border-info-hover: var(--sky-5);
+  --border-info-active: var(--sky-6);
+
+  // warning
+  --border-warning: var(--amber-4);
+  --border-warning-hover: var(--amber-5);
+  --border-warning-active: var(--amber-6);
+
+  // danger
+  --border-danger: var(--red-5);
+  --border-danger-hover: var(--red-6);
+  --border-danger-active: var(--red-7);
+
+  // inverse
+  --border-inverse: var(--gray-9);
+}

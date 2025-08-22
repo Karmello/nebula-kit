@@ -1,0 +1,33 @@
+.neb-text {
+  margin: 0;
+  font-family: inherit;
+  color: inherit;
+}
+
+.neb-text[data-text-typography='h1'],
+.neb-text[data-text-typography='h2'],
+.neb-text[data-text-typography='h3'],
+.neb-text[data-text-typography='h4'],
+.neb-text[data-text-typography='h5'],
+.neb-text[data-text-typography='h6'] {
+  font-weight: 600;
+}
+
+.neb-text[data-text-typography='body'],
+.neb-text[data-text-typography='secondary'] {
+  font-weight: 400;
+}
+
+.neb-text[data-text-typography='lead'] {
+  font-weight: 500;
+}
+
+.neb-text[data-text-typography='secondary'] {
+  color: var(--text-secondary);
+}
+
+.neb-text[data-text-typography='caption'] {
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}

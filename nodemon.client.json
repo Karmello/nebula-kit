@@ -1,0 +1,5 @@
+{
+  "exec": "NODE_ENV=development webpack serve --config webpack/webpack.client.config",
+  "verbose": true,
+  "watch": "./webpack"
+}

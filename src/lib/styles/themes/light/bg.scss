@@ -1,0 +1,44 @@
+html[data-theme='light'] {
+  // neutral
+  --bg-neutral: var(--gray-1);
+  --bg-neutral-hover: var(--gray-3);
+  --bg-neutral-active: var(--gray-4);
+
+  // primary
+  --bg-primary: var(--blue-6);
+  --bg-primary-hover: var(--blue-7);
+  --bg-primary-active: var(--blue-8);
+
+  // secondary
+  --bg-secondary: var(--blue-3);
+  --bg-secondary-hover: var(--blue-4);
+  --bg-secondary-active: var(--blue-5);
+
+  // tertiary
+  --bg-tertiary: var(--gray-2);
+  --bg-tertiary-hover: var(--gray-3);
+  --bg-tertiary-active: var(--gray-4);
+
+  // success
+  --bg-success: var(--green-6);
+  --bg-success-hover: var(--green-7);
+  --bg-success-active: var(--green-8);
+
+  // info
+  --bg-info: var(--sky-5);
+  --bg-info-hover: var(--sky-6);
+  --bg-info-active: var(--sky-7);
+
+  // warning
+  --bg-warning: var(--amber-4);
+  --bg-warning-hover: var(--amber-5);
+  --bg-warning-active: var(--amber-6);
+
+  // danger
+  --bg-danger: var(--red-6);
+  --bg-danger-hover: var(--red-7);
+  --bg-danger-active: var(--red-8);
+
+  // inverse
+  --bg-inverse: var(--gray-9);
+}

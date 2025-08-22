@@ -1,0 +1,83 @@
+.neb-box[data-box-variant='ghost'] {
+  background-color: transparent;
+  border-color: transparent;
+
+  &[data-box-intent='primary'] {
+    color: var(--text-primary);
+  }
+  &[data-box-intent='secondary'] {
+    color: var(--text-secondary);
+  }
+  &[data-box-intent='tertiary'] {
+    color: var(--text-tertiary);
+  }
+  &[data-box-intent='success'] {
+    color: var(--text-success);
+  }
+  &[data-box-intent='info'] {
+    color: var(--text-info);
+  }
+  &[data-box-intent='warning'] {
+    color: var(--text-warning);
+  }
+  &[data-box-intent='danger'] {
+    color: var(--text-danger);
+  }
+  &[data-box-intent='inverse'] {
+    color: var(--text-inverse);
+  }
+}
+
+.neb-box[data-box-variant='ghost'][data-box-interactive='true']:hover {
+  &[data-box-intent='primary'] {
+    color: var(--text-primary-hover);
+  }
+  &[data-box-intent='secondary'] {
+    color: var(--text-secondary-hover);
+  }
+  &[data-box-intent='tertiary'] {
+    color: var(--text-tertiary-hover);
+  }
+  &[data-box-intent='success'] {
+    color: var(--text-success-hover);
+  }
+  &[data-box-intent='info'] {
+    color: var(--text-info-hover);
+  }
+  &[data-box-intent='warning'] {
+    color: var(--text-warning-hover);
+  }
+  &[data-box-intent='danger'] {
+    color: var(--text-danger-hover);
+  }
+  &[data-box-intent='inverse'] {
+    color: var(--text-inverse-hover);
+  }
+}
+
+.neb-box[data-box-variant='ghost'][data-box-interactive='true']:active {
+  &[data-box-intent='primary'] {
+    color: var(--text-primary-active);
+  }
+  &[data-box-intent='secondary'] {
+    color: var(--text-secondary-active);
+  }
+  &[data-box-intent='tertiary'] {
+    color: var(--text-tertiary-active);
+  }
+  &[data-box-intent='success'] {
+    color: var(--text-success-active);
+  }
+  &[data-box-intent='info'] {
+    color: var(--text-info-active);
+  }
+  &[data-box-intent='warning'] {
+    color: var(--text-warning-active);
+  }
+  &[data-box-intent='danger'] {
+    color: var(--text-danger-active);
+  }
+  &[data-box-intent='inverse'] {
+    color: var(--text-inverse-active);
+  }
+}

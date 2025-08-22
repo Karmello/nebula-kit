@@ -1,0 +1,9 @@
+.ListItem {
+  width: 100%;
+  height: 100%;
+  background-color: var(--interactive-background-color);
+}
+
+.ListItem.highlighted {
+  background-color: var(--interactive-hover-background-color);
+}

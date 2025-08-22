@@ -1,0 +1,74 @@
+.neb-grid {
+  display: grid;
+
+  grid-template-columns: var(--grid-columns-base, 1fr);
+  grid-template-rows: var(--grid-rows-base, auto);
+  gap: var(--grid-gap-base, 0);
+  row-gap: var(--grid-row-gap-base, var(--grid-gap-base, 0));
+  column-gap: var(--grid-column-gap-base, var(--grid-gap-base, 0));
+  grid-auto-flow: var(--grid-auto-flow-base, row);
+  grid-auto-rows: var(--grid-auto-rows-base, auto);
+  grid-auto-columns: var(--grid-auto-columns-base, auto);
+  place-items: var(--grid-place-items-base, stretch);
+  place-content: var(--grid-place-content-base, start);
+}
+
+@media (min-width: 480px) {
+  .neb-grid {
+    grid-template-columns: var(--grid-columns-sm, 1fr);
+    grid-template-rows: var(--grid-rows-sm, auto);
+    gap: var(--grid-gap-sm, 0);
+    row-gap: var(--grid-row-gap-sm, var(--grid-gap-sm, 0));
+    column-gap: var(--grid-column-gap-sm, var(--grid-gap-sm, 0));
+    grid-auto-flow: var(--grid-auto-flow-sm, row);
+    grid-auto-rows: var(--grid-auto-rows-sm, auto);
+    grid-auto-columns: var(--grid-auto-columns-sm, auto);
+    place-items: var(--grid-place-items-sm, stretch);
+    place-content: var(--grid-place-content-sm, start);
+  }
+}
+
+@media (min-width: 768px) {
+  .neb-grid {
+    grid-template-columns: var(--grid-columns-md, 1fr);
+    grid-template-rows: var(--grid-rows-md, auto);
+    gap: var(--grid-gap-md, 0);
+    row-gap: var(--grid-row-gap-md, var(--grid-gap-md, 0));
+    column-gap: var(--grid-column-gap-md, var(--grid-gap-md, 0));
+    grid-auto-flow: var(--grid-auto-flow-md, row);
+    grid-auto-rows: var(--grid-auto-rows-md, auto);
+    grid-auto-columns: var(--grid-auto-columns-md, auto);
+    place-items: var(--grid-place-items-md, stretch);
+    place-content: var(--grid-place-content-md, start);
+  }
+}
+
+@media (min-width: 1024px) {
+  .neb-grid {
+    grid-template-columns: var(--grid-columns-lg, 1fr);
+    grid-template-rows: var(--grid-rows-lg, auto);
+    gap: var(--grid-gap-lg, 0);
+    row-gap: var(--grid-row-gap-lg, var(--grid-gap-lg, 0));
+    column-gap: var(--grid-column-gap-lg, var(--grid-gap-lg, 0));
+    grid-auto-flow: var(--grid-auto-flow-lg, row);
+    grid-auto-rows: var(--grid-auto-rows-lg, auto);
+    grid-auto-columns: var(--grid-auto-columns-lg, auto);
+    place-items: var(--grid-place-items-lg, stretch);
+    place-content: var(--grid-place-content-lg, start);
+  }
+}
+
+@media (min-width: 1280px) {
+  .neb-grid {
+    grid-template-columns: var(--grid-columns-xl, 1fr);
+    grid-template-rows: var(--grid-rows-xl, auto);
+    gap: var(--grid-gap-xl, 0);
+    row-gap: var(--grid-row-gap-xl, var(--grid-gap-xl, 0));
+    column-gap: var(--grid-column-gap-xl, var(--grid-gap-xl, 0));
+    grid-auto-flow: var(--grid-auto-flow-xl, row);
+    grid-auto-rows: var(--grid-auto-rows-xl, auto);
+    grid-auto-columns: var(--grid-auto-columns-xl, auto);
+    place-items: var(--grid-place-items-xl, stretch);
+    place-content: var(--grid-place-content-xl, start);
+  }
+}

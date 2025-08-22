@@ -1,0 +1,108 @@
+.neb-box[data-box-variant='outline'] {
+  background-color: transparent;
+
+  &[data-box-intent='neutral'] {
+    border-color: var(--border-neutral);
+    color: var(--text-neutral);
+  }
+  &[data-box-intent='primary'] {
+    border-color: var(--border-primary);
+    color: var(--text-primary);
+  }
+  &[data-box-intent='secondary'] {
+    border-color: var(--border-secondary);
+    color: var(--text-secondary);
+  }
+  &[data-box-intent='tertiary'] {
+    border-color: var(--border-tertiary);
+    color: var(--text-tertiary);
+  }
+  &[data-box-intent='success'] {
+    border-color: var(--border-success);
+    color: var(--text-success);
+  }
+  &[data-box-intent='info'] {
+    border-color: var(--border-info);
+    color: var(--text-info);
+  }
+  &[data-box-intent='warning'] {
+    border-color: var(--border-warning);
+    color: var(--text-warning);
+  }
+  &[data-box-intent='danger'] {
+    border-color: var(--border-danger);
+    color: var(--text-danger);
+  }
+  &[data-box-intent='inverse'] {
+    border-color: var(--border-inverse);
+    color: var(--text-neutral);
+  }
+}
+
+.neb-box[data-box-variant='outline'][data-box-interactive='true']:hover {
+  &[data-box-intent='neutral'] {
+    border-color: var(--border-neutral-hover);
+  }
+  &[data-box-intent='primary'] {
+    border-color: var(--border-primary-hover);
+    color: var(--text-primary-hover);
+  }
+  &[data-box-intent='secondary'] {
+    border-color: var(--border-secondary-hover);
+    color: var(--text-secondary-hover);
+  }
+  &[data-box-intent='tertiary'] {
+    border-color: var(--border-tertiary-hover);
+    color: var(--text-tertiary-hover);
+  }
+  &[data-box-intent='success'] {
+    border-color: var(--border-success-hover);
+    color: var(--text-success-hover);
+  }
+  &[data-box-intent='info'] {
+    border-color: var(--border-info-hover);
+    color: var(--text-info-hover);
+  }
+  &[data-box-intent='warning'] {
+    border-color: var(--border-warning-hover);
+    color: var(--text-warning-hover);
+  }
+  &[data-box-intent='danger'] {
+    border-color: var(--border-danger-hover);
+    color: var(--text-danger-hover);
+  }
+}
+
+.neb-box[data-box-variant='outline'][data-box-interactive='true']:active {
+  &[data-box-intent='neutral'] {
+    border-color: var(--border-neutral-active);
+  }
+  &[data-box-intent='primary'] {
+    border-color: var(--border-primary-active);
+    color: var(--text-primary-active);
+  }
+  &[data-box-intent='secondary'] {
+    border-color: var(--border-secondary-active);
+    color: var(--text-secondary-active);
+  }
+  &[data-box-intent='tertiary'] {
+    border-color: var(--border-tertiary-active);
+    color: var(--text-tertiary-active);
+  }
+  &[data-box-intent='success'] {
+    border-color: var(--border-success-active);
+    color: var(--text-success-active);
+  }
+  &[data-box-intent='info'] {
+    border-color: var(--border-info-active);
+    color: var(--text-info-active);
+  }
+  &[data-box-intent='warning'] {
+    border-color: var(--border-warning-active);
+    color: var(--text-warning-active);
+  }
+  &[data-box-intent='danger'] {
+    border-color: var(--border-danger-active);
+    color: var(--text-danger-active);
+  }
+}

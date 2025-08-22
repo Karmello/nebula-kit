@@ -1,0 +1,7 @@
+{
+  "exec": "ts-node -r tsconfig-paths/register -r ignore-styles src/server/index.ts",
+  "verbose": true,
+  "watch": "./src/server",
+  "ignore": "./src/server/specs",
+  "ext": "ts,tsx"
+}

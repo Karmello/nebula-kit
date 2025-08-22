@@ -1,0 +1,9 @@
+@use './colors/colors.scss';
+@use './scale/scale.scss';
+@use './themes/themes.scss';
+
+:root {
+  color: var(--text-neutral);
+  background: var(--bg-neutral);
+  font-family: 'Inter Variable', 'Inter var', system-ui, sans-serif;
+}

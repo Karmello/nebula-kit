@@ -1,0 +1,109 @@
+@use './variants/box-solid.scss';
+@use './variants/box-outline.scss';
+@use './variants/box-ghost.scss';
+
+.neb-box {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  letter-spacing: 0.5px;
+  outline: none;
+  transition: all 0.15s linear;
+
+  border-style: solid;
+  border-radius: var(--scale-3);
+  border-width: var(--scale-1);
+  border-color: transparent;
+
+  font-size: var(--box-font-size-base, inherit);
+  line-height: var(--box-line-height-base, normal);
+  text-align: var(--box-text-align-base, initial);
+  height: var(--box-height-base, inherit);
+  min-height: var(--box-min-height-base, inherit);
+  max-height: var(--box-max-height-base, inherit);
+  margin-top: var(--box-mt-base, var(--box-my-base, var(--box-m-base, 0)));
+  margin-right: var(--box-mr-base, var(--box-mx-base, var(--box-m-base, 0)));
+  margin-bottom: var(--box-mb-base, var(--box-my-base, var(--box-m-base, 0)));
+  margin-left: var(--box-ml-base, var(--box-mx-base, var(--box-m-base, 0)));
+  padding-top: var(--box-pt-base, var(--box-py-base, var(--box-p-base, 0)));
+  padding-right: var(--box-pr-base, var(--box-px-base, var(--box-p-base, 0)));
+  padding-bottom: var(--box-pb-base, var(--box-py-base, var(--box-p-base, 0)));
+  padding-left: var(--box-pl-base, var(--box-px-base, var(--box-p-base, 0)));
+
+  @media (min-width: 480px) {
+    font-size: var(--box-font-size-sm, inherit);
+    line-height: var(--box-line-height-sm, normal);
+    text-align: var(--box-text-align-sm, initial);
+    height: var(--box-height-sm, inherit);
+    min-height: var(--box-min-height-sm, inherit);
+    max-height: var(--box-max-height-sm, inherit);
+    margin-top: var(--box-mt-sm, var(--box-my-sm, var(--box-m-sm, 0)));
+    margin-right: var(--box-mr-sm, var(--box-mx-sm, var(--box-m-sm, 0)));
+    margin-bottom: var(--box-mb-sm, var(--box-my-sm, var(--box-m-sm, 0)));
+    margin-left: var(--box-ml-sm, var(--box-mx-sm, var(--box-m-sm, 0)));
+    padding-top: var(--box-pt-sm, var(--box-py-sm, var(--box-p-sm, 0)));
+    padding-right: var(--box-pr-sm, var(--box-px-sm, var(--box-p-sm, 0)));
+    padding-bottom: var(--box-pb-sm, var(--box-py-sm, var(--box-p-sm, 0)));
+    padding-left: var(--box-pl-sm, var(--box-px-sm, var(--box-p-sm, 0)));
+  }
+
+  @media (min-width: 768px) {
+    font-size: var(--box-font-size-md, inherit);
+    line-height: var(--box-line-height-md, normal);
+    text-align: var(--box-text-align-md, initial);
+    height: var(--box-height-md, inherit);
+    min-height: var(--box-min-height-md, inherit);
+    max-height: var(--box-max-height-md, inherit);
+    margin-top: var(--box-mt-md, var(--box-my-md, var(--box-m-md, 0)));
+    margin-right: var(--box-mr-md, var(--box-mx-md, var(--box-m-md, 0)));
+    margin-bottom: var(--box-mb-md, var(--box-my-md, var(--box-m-md, 0)));
+    margin-left: var(--box-ml-md, var(--box-mx-md, var(--box-m-md, 0)));
+    padding-top: var(--box-pt-md, var(--box-py-md, var(--box-p-md, 0)));
+    padding-right: var(--box-pr-md, var(--box-px-md, var(--box-p-md, 0)));
+    padding-bottom: var(--box-pb-md, var(--box-py-md, var(--box-p-md, 0)));
+    padding-left: var(--box-pl-md, var(--box-px-md, var(--box-p-md, 0)));
+  }
+
+  @media (min-width: 1024px) {
+    font-size: var(--box-font-size-lg, inherit);
+    line-height: var(--box-line-height-lg, normal);
+    text-align: var(--box-text-align-lg, initial);
+    height: var(--box-height-lg, inherit);
+    min-height: var(--box-min-height-lg, inherit);
+    max-height: var(--box-max-height-lg, inherit);
+    margin-top: var(--box-mt-lg, var(--box-my-lg, var(--box-m-lg, 0)));
+    margin-right: var(--box-mr-lg, var(--box-mx-lg, var(--box-m-lg, 0)));
+    margin-bottom: var(--box-mb-lg, var(--box-my-lg, var(--box-m-lg, 0)));
+    margin-left: var(--box-ml-lg, var(--box-mx-lg, var(--box-m-lg, 0)));
+    padding-top: var(--box-pt-lg, var(--box-py-lg, var(--box-p-lg, 0)));
+    padding-right: var(--box-pr-lg, var(--box-px-lg, var(--box-p-lg, 0)));
+    padding-bottom: var(--box-pb-lg, var(--box-py-lg, var(--box-p-lg, 0)));
+    padding-left: var(--box-pl-lg, var(--box-px-lg, var(--box-p-lg, 0)));
+  }
+
+  @media (min-width: 1280px) {
+    font-size: var(--box-font-size-xl, inherit);
+    line-height: var(--box-line-height-xl, normal);
+    text-align: var(--box-text-align-xl, initial);
+    height: var(--box-height-xl, inherit);
+    min-height: var(--box-min-height-xl, inherit);
+    max-height: var(--box-max-height-xl, inherit);
+    margin-top: var(--box-mt-xl, var(--box-my-xl, var(--box-m-xl, 0)));
+    margin-right: var(--box-mr-xl, var(--box-mx-xl, var(--box-m-xl, 0)));
+    margin-bottom: var(--box-mb-xl, var(--box-my-xl, var(--box-m-xl, 0)));
+    margin-left: var(--box-ml-xl, var(--box-mx-xl, var(--box-m-xl, 0)));
+    padding-top: var(--box-pt-xl, var(--box-py-xl, var(--box-p-xl, 0)));
+    padding-right: var(--box-pr-xl, var(--box-px-xl, var(--box-p-xl, 0)));
+    padding-bottom: var(--box-pb-xl, var(--box-py-xl, var(--box-p-xl, 0)));
+    padding-left: var(--box-pl-xl, var(--box-px-xl, var(--box-p-xl, 0)));
+  }
+}
+
+.neb-box[data-box-variant][data-box-intent]:focus-visible {
+  border-color: var(--border-inverse);
+}
+
+.neb-box[data-box-disabled='true'] {
+  pointer-events: none;
+  opacity: 0.4;
+}
