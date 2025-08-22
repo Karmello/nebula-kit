@@ -1,0 +1,84 @@
+{
+  "name": "Flex",
+  "description": "",
+  "props": [
+    {
+      "name": "direction",
+      "type": "ResponsiveProp<'row' | 'row-reverse' | 'column' | 'column-reverse'>",
+      "options": [
+        "column",
+        "row",
+        "row-reverse",
+        "column-reverse"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "wrap",
+      "type": "ResponsiveProp<'nowrap' | 'wrap' | 'wrap-reverse'>",
+      "options": [
+        "wrap",
+        "nowrap",
+        "wrap-reverse"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "justify",
+      "type": "ResponsiveProp<\n    'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly'\n  >",
+      "options": [
+        "center",
+        "flex-start",
+        "flex-end",
+        "space-between",
+        "space-around",
+        "space-evenly"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "align",
+      "type": "ResponsiveProp<'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'>",
+      "options": [
+        "center",
+        "flex-start",
+        "flex-end",
+        "stretch",
+        "baseline"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "gap",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "rowGap",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "columnGap",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    }
+  ]
+}

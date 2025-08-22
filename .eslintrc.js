@@ -11,6 +11,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/jsx-runtime',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -22,14 +23,9 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks', '@typescript-eslint'],
   rules: {
-    indent: [
-      'error',
-      2,
-      {
-        SwitchCase: 1,
-        offsetTernaryExpressions: true,
-      },
-    ],
+    indent: 'off',
+    'react/jsx-indent': 'off',
+    'react/jsx-indent-props': 'off',
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single', 'avoid-escape'],
     semi: ['error', 'never'],

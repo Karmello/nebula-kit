@@ -1,0 +1,125 @@
+{
+  "name": "Text",
+  "description": "",
+  "props": [
+    {
+      "name": "intent",
+      "type": "'textAlig",
+      "options": [
+        "neutral",
+        "primary",
+        "secondary",
+        "tertiary",
+        "success",
+        "info",
+        "warning",
+        "danger",
+        "inverse"
+      ],
+      "required": false,
+      "defaultValue": "'neutral'",
+      "description": "Semantic tone or purpose (e.g. neutral, success, danger)"
+    },
+    {
+      "name": "fontSize",
+      "type": "ReactNode\n  ref?: Ref<any>\n  as?: Te",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": "Sets font size using scale values or raw CSS values"
+    },
+    {
+      "name": "lineHeight",
+      "type": "OGRAPHY_TO_PROPS: Record<\n  Text",
+      "options": [],
+      "required": false,
+      "defaultValue": "",
+      "description": "Controls line height for text content"
+    },
+    {
+      "name": "textAlign",
+      "type": "caption: { as: 'p', font",
+      "options": [
+        "left",
+        "right",
+        "center",
+        "justify",
+        "start",
+        "end",
+        "inherit",
+        "initial",
+        "unset",
+        "revert"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": "Horizontal alignment of text (start, center, end, etc.)"
+    },
+    {
+      "name": "typography",
+      "type": "TextTypography",
+      "options": [
+        "secondary",
+        "caption",
+        "body",
+        "lead",
+        "h6",
+        "h5",
+        "h4",
+        "h3",
+        "h2",
+        "h1"
+      ],
+      "required": false,
+      "defaultValue": "'body'",
+      "description": ""
+    },
+    {
+      "name": "noWrap",
+      "type": "boolean",
+      "options": [],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "clampLines",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "truncate",
+      "type": "boolean",
+      "options": [],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "iconName",
+      "type": "WithIconProps['iconName']",
+      "options": [
+        "check",
+        "close",
+        "search"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "iconPosition",
+      "type": "WithIconProps['iconPosition']",
+      "options": [
+        "left",
+        "right"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    }
+  ]
+}

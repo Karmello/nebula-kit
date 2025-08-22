@@ -32,5 +32,15 @@ export const App = () => {
     setTimeout(() => setLoading(false), 1000)
   }, [])
 
-  return <RootPage />
+  return (
+    <>
+      <a href="/playground">
+        <button>Playground</button>
+      </a>
+      <a href="/docs">
+        <button>Docs</button>
+      </a>
+      <RootPage />
+    </>
+  )
 }

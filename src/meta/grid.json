@@ -1,0 +1,105 @@
+{
+  "name": "Grid",
+  "description": "",
+  "props": [
+    {
+      "name": "columns",
+      "type": "ResponsiveProp<string | number>",
+      "options": [],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "rows",
+      "type": "ResponsiveProp<string | number>",
+      "options": [],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "gap",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "rowGap",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "columnGap",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "autoFlow",
+      "type": "ResponsiveProp<'row' | 'column' | 'dense' | 'row dense' | 'column dense'>",
+      "options": [
+        "column",
+        "row",
+        "dense",
+        "row dense",
+        "column dense"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "autoRows",
+      "type": "ResponsiveProp<string>",
+      "options": [],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "autoColumns",
+      "type": "ResponsiveProp<string>",
+      "options": [],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "placeItems",
+      "type": "ResponsiveProp<'start' | 'center' | 'end' | 'stretch'>",
+      "options": [
+        "center",
+        "start",
+        "end",
+        "stretch"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "placeContent",
+      "type": "ResponsiveProp<\n    'start' | 'center' | 'end' | 'stretch' | 'space-between' | 'space-around' | 'space-evenly'\n  >",
+      "options": [
+        "center",
+        "start",
+        "end",
+        "stretch",
+        "space-between",
+        "space-around",
+        "space-evenly"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    }
+  ]
+}

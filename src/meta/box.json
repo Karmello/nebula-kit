@@ -1,6 +1,6 @@
 {
   "name": "Box",
-  "description": "Box component",
+  "description": "Box is the foundational layout primitive. It renders as any element (div by default) and provides consistent spacing, typography, sizing, and surface styling through responsive props and CSS variables. Use it as the base container or building block for more complex components.",
   "props": [
     {
       "name": "variant",
@@ -12,7 +12,7 @@
       ],
       "required": false,
       "defaultValue": "'solid'",
-      "description": ""
+      "description": "Visual style of the box surface (e.g. solid, outline)"
     },
     {
       "name": "intent",
@@ -30,7 +30,7 @@
       ],
       "required": false,
       "defaultValue": "'neutral'",
-      "description": ""
+      "description": "Semantic tone or purpose (e.g. neutral, success, danger)"
     },
     {
       "name": "interactive",
@@ -38,7 +38,7 @@
       "options": [],
       "required": false,
       "defaultValue": "false",
-      "description": ""
+      "description": "Marks the box as interactive, enabling hover/focus styles"
     },
     {
       "name": "disabled",
@@ -46,23 +46,23 @@
       "options": [],
       "required": false,
       "defaultValue": "false",
-      "description": "Whether the button is disabled"
+      "description": "Disables interaction and applies a muted style"
     },
     {
       "name": "fontSize",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'inherit'",
+      "description": "Sets font size using scale values or raw CSS values"
     },
     {
       "name": "lineHeight",
       "type": "ResponsiveProp<number | string>",
       "options": [],
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'normal'",
+      "description": "Controls line height for text content"
     },
     {
       "name": "textAlign",
@@ -80,144 +80,144 @@
         "revert"
       ],
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'initial'",
+      "description": "Horizontal alignment of text (start, center, end, etc.)"
     },
     {
       "name": "height",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'inherit'",
+      "description": "Explicit height of the box"
     },
     {
       "name": "minHeight",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'inherit'",
+      "description": "Minimum height constraint"
     },
     {
       "name": "maxHeight",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'inherit'",
+      "description": "Maximum height constraint"
     },
     {
       "name": "pt",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Padding top"
     },
     {
       "name": "pr",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Padding right"
     },
     {
       "name": "pb",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Padding bottom"
     },
     {
       "name": "pl",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Padding left"
     },
     {
       "name": "px",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Horizontal padding (left & right)"
     },
     {
       "name": "py",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Vertical padding (top & bottom)"
     },
     {
       "name": "p",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Padding on all sides"
     },
     {
       "name": "mt",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Margin top"
     },
     {
       "name": "mr",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Margin right"
     },
     {
       "name": "mb",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Margin bottom"
     },
     {
       "name": "ml",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Margin left"
     },
     {
       "name": "mx",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Horizontal margin (left & right)"
     },
     {
       "name": "my",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Vertical margin (top & bottom)"
     },
     {
       "name": "m",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Margin on all sides"
     }
   ]
 }

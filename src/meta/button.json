@@ -1,0 +1,87 @@
+{
+  "name": "Button",
+  "description": "",
+  "props": [
+    {
+      "name": "variant",
+      "type": "abled'> & {",
+      "options": [
+        "solid",
+        "outline",
+        "ghost"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": "Visual style of the box surface (e.g. solid, outline)"
+    },
+    {
+      "name": "intent",
+      "type": "iconPosi",
+      "options": [
+        "neutral",
+        "primary",
+        "secondary",
+        "tertiary",
+        "success",
+        "info",
+        "warning",
+        "danger",
+        "inverse"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": "Semantic tone or purpose (e.g. neutral, success, danger)"
+    },
+    {
+      "name": "disabled",
+      "type": "nSize,\n ",
+      "options": [],
+      "required": false,
+      "defaultValue": "",
+      "description": "Disables interaction and applies a muted style"
+    },
+    {
+      "name": "ref",
+      "type": "Ref<any>",
+      "options": [],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "size",
+      "type": "ButtonSize",
+      "options": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "required": false,
+      "defaultValue": "'md'",
+      "description": ""
+    },
+    {
+      "name": "iconName",
+      "type": "WithIconProps['iconName']",
+      "options": [
+        "check",
+        "close",
+        "search"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "iconPosition",
+      "type": "WithIconProps['iconPosition']",
+      "options": [
+        "left",
+        "right"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "HStack",
+  "description": "",
+  "props": [
+    {
+      "name": "align",
+      "type": "",
+      "options": [
+        "center",
+        "flex-start",
+        "flex-end",
+        "stretch",
+        "baseline"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "gap",
+      "type": "",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "justify",
+      "type": "gap} {...props} />\n}\n\nHStack.displayName = 'HStack'\n",
+      "options": [
+        "center",
+        "flex-start",
+        "flex-end",
+        "space-between",
+        "space-around",
+        "space-evenly"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    }
+  ]
+}

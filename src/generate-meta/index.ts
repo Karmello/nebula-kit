@@ -3,20 +3,16 @@ import { kebabCase } from 'change-case'
 
 import { run } from './run/run'
 
-// const libComponentFolderNames = fs
-//   .readdirSync('src/lib/components', { withFileTypes: true })
-//   .filter(e => e.isDirectory())
-//   .map(e => e.name)
-
-const libComponentFolderNames = ['primitive']
+const libComponentFolderNames = fs
+  .readdirSync('src/lib/components', { withFileTypes: true })
+  .filter(e => e.isDirectory())
+  .map(e => e.name)
 
 libComponentFolderNames.forEach(folderName => {
-  // const libComponentNames = fs
-  //   .readdirSync(`src/lib/components/${folderName}`, { withFileTypes: true })
-  //   .filter(e => e.isDirectory())
-  //   .map(e => e.name)
-
-  const libComponentNames = ['Box']
+  const libComponentNames = fs
+    .readdirSync(`src/lib/components/${folderName}`, { withFileTypes: true })
+    .filter(e => e.isDirectory())
+    .map(e => e.name)
 
   libComponentNames.forEach(componentName => {
     try {

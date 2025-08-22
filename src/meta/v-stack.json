@@ -1,0 +1,28 @@
+{
+  "name": "VStack",
+  "description": "",
+  "props": [
+    {
+      "name": "align",
+      "type": "",
+      "options": [
+        "center",
+        "flex-start",
+        "flex-end",
+        "stretch",
+        "baseline"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "gap",
+      "type": "",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    }
+  ]
+}

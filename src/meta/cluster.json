@@ -1,0 +1,14 @@
+{
+  "name": "Cluster",
+  "description": "",
+  "props": [
+    {
+      "name": "minItemWidth",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    }
+  ]
+}

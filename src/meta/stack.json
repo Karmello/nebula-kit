@@ -1,0 +1,55 @@
+{
+  "name": "Stack",
+  "description": "",
+  "props": [
+    {
+      "name": "align",
+      "type": ",\n  gap = 8,\n  ...rest\n}: StackProps<E>) => {\n  return <Flex direction={direct",
+      "options": [
+        "center",
+        "flex-start",
+        "flex-end",
+        "stretch",
+        "baseline"
+      ],
+      "required": false,
+      "defaultValue": "'stretch'",
+      "description": ""
+    },
+    {
+      "name": "gap",
+      "type": "gn={align} gap={gap} {...(rest as St",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "8",
+      "description": ""
+    },
+    {
+      "name": "rowGap",
+      "type": ")} />\n}\n\nStack.displayName = 'Stack'",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "columnGap",
+      "type": "",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "direction",
+      "type": "ResponsiveProp<'column' | 'row'>",
+      "options": [
+        "column",
+        "row"
+      ],
+      "required": false,
+      "defaultValue": "'column'",
+      "description": ""
+    }
+  ]
+}
