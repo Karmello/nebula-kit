@@ -2,8 +2,7 @@ import { useEffect, useLayoutEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-import { Loader } from 'lib/components'
-import { useStore } from 'lib/state'
+import { useLibStore } from 'lib/state'
 import { validateQueryParams } from 'client/services'
 import { useAppStore } from 'client/store'
 
@@ -16,7 +15,7 @@ export const App = () => {
   const { pathname, search } = useLocation()
   const push = useNavigate()
 
-  const { lang, setLang, theme, setTheme } = useStore()
+  const { lang, setLang, theme, setTheme } = useLibStore()
   const { loading, setLoading, distractionFreeMode } = useAppStore()
 
   useLayoutEffect(() => {
@@ -37,21 +36,10 @@ export const App = () => {
 
   return (
     <div>
-      {!loading && (
-        <>
-          {!distractionFreeMode ? (
-            <>
-              <AppNavBar>
-                <RootPage />
-              </AppNavBar>
-              <AppFooter />
-            </>
-          ) : (
-            <RootPage />
-          )}
-        </>
-      )}
-      <Loader surfaceProps={{ loading, size: 'xxl' }} verticallyCentered />
+      <AppNavBar>
+        <RootPage />
+      </AppNavBar>
+      <AppFooter />
     </div>
   )
 }

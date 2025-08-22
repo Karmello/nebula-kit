@@ -2,8 +2,8 @@ import { JSX, ComponentProps } from 'react'
 import { expectType, expectAssignable, expectError } from 'tsd'
 
 import { Cluster, type ClusterProps, type ClusterOwnProps } from '..'
-import type { FlexOwnProps } from 'lib-2/components'
-import type { ResponsiveProp, ScaleValue } from 'lib-2/definitions'
+import type { FlexOwnProps } from 'lib/components'
+import type { ResponsiveProp, ScaleValue } from 'lib/definitions'
 
 // --- Basic render & own props ---
 expectType<JSX.Element>(<Cluster />)

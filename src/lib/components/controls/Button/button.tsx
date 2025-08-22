@@ -1,9 +1,9 @@
 import { ButtonHTMLAttributes, Ref } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, WithIcon, WithIconProps } from 'lib-2/components'
-import { withPrefix, getDataAttrs } from 'lib-2/helpers'
-import { Size } from 'lib-2/definitions'
+import { Box, BoxOwnProps, WithIcon, WithIconProps } from 'lib/components'
+import { withPrefix, getDataAttrs } from 'lib/helpers'
+import { Size } from 'lib/definitions'
 
 import './button.scss'
 

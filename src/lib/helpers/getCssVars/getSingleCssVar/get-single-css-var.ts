@@ -1,6 +1,6 @@
 import { kebabCase } from 'lodash'
 
-import { BREAKPOINTS, CSS_VARS_CONFIG, CompWithCssVarsPrefix } from 'lib-2/definitions'
+import { BREAKPOINTS, CSS_VARS_CONFIG, CompWithCssVarsPrefix } from 'lib/definitions'
 
 import { GetCssVarsProps } from '../get-css-vars'
 import { formatCssVarValue } from '../formatCssVarValue'

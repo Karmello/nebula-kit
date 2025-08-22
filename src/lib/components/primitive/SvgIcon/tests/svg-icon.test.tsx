@@ -2,7 +2,7 @@ import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
 import { SvgIcon } from '..'
-import { getSvgIconComponent } from 'lib-2/icons'
+import { getSvgIconComponent } from 'lib/icons'
 
 const VALID_ICON_NAME = 'search' as const
 

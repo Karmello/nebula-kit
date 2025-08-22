@@ -3,7 +3,7 @@ import { expectType, expectAssignable, expectError } from 'tsd'
 
 // Adjust import path to your package entry
 import { Center, type CenterProps, type CenterOwnProps } from '..'
-import type { FlexOwnProps } from 'lib-2/components'
+import type { FlexOwnProps } from 'lib/components'
 
 // --- Basic render & own props ---
 expectType<JSX.Element>(<Center />)

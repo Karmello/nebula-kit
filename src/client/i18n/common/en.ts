@@ -1,4 +1,4 @@
-import { Languages, Themes } from 'lib/enums'
+import { Language, Theme } from 'lib/definitions'
 
 export const COMMON_EN = {
   backgroundColor: 'Background color',
@@ -15,8 +15,8 @@ export const COMMON_EN = {
   home: 'Home',
   language: 'Language',
   languages: {
-    [Languages.ENGLISH]: 'English',
-    [Languages.POLISH]: 'Polish',
+    [Language.EN]: 'English',
+    [Language.PL]: 'Polish',
   },
   loading: 'Loading',
   name: 'Name',
@@ -30,9 +30,9 @@ export const COMMON_EN = {
   size: 'Size',
   theme: 'Theme',
   themes: {
-    [Themes.LIGHT]: 'Light',
-    [Themes.GRAY]: 'Gray',
-    [Themes.DARK]: 'Dark',
+    [Theme.LIGHT]: 'Light',
+    [Theme.GRAY]: 'Gray',
+    [Theme.DARK]: 'Dark',
   },
   type: 'Type',
   values: 'Values',

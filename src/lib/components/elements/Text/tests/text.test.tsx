@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import { withPrefix, getDataAttrs } from 'lib-2/helpers'
+import { withPrefix, getDataAttrs } from 'lib/helpers'
 import { Text } from '..'
 
 /**

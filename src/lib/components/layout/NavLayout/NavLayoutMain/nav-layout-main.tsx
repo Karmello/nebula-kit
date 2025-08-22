@@ -1,7 +1,7 @@
 import { ComponentProps, Ref } from 'react'
 import classNames from 'classnames'
 
-import { Box } from 'lib-2/components'
+import { Box } from 'lib/components'
 
 export interface NavLayoutMainProps extends ComponentProps<typeof Box> {
   ref?: Ref<any>

@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, Ref } from 'react'
 import classNames from 'classnames'
 
-import { Button, useNavLayoutContext } from 'lib-2/components'
+import { Button, useNavLayoutContext } from 'lib/components'
 
 export interface NavLayoutToggleProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   ref?: Ref<any>

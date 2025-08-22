@@ -1,9 +1,7 @@
 import { ComponentPropsWithRef, ElementType } from 'react'
 
-import { BoxOwnProps, ClusterOwnProps, FlexOwnProps, GridOwnProps, NavLayoutOwnProps } from 'lib-2/components'
-import { THEMES, BREAKPOINTS, SCALE } from '..'
-
-export type Theme = (typeof THEMES)[number]
+import { BoxOwnProps, ClusterOwnProps, FlexOwnProps, GridOwnProps, NavLayoutOwnProps } from 'lib/components'
+import { BREAKPOINTS, SCALE } from '..'
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl'
 

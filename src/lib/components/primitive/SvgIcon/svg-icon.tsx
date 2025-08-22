@@ -1,5 +1,5 @@
-import { IconName, getSvgIconComponent } from 'lib-2/icons'
-import { ScaleValue } from 'lib-2/definitions'
+import { IconName, getSvgIconComponent } from 'lib/icons'
+import { ScaleValue } from 'lib/definitions'
 
 export type SvgIconProps = {
   name: IconName

@@ -1,5 +1,5 @@
-import { Flex, FlexOwnProps } from 'lib-2/components'
-import { ResponsiveProp, PolymorphicProps } from 'lib-2/definitions'
+import { Flex, FlexOwnProps } from 'lib/components'
+import { ResponsiveProp, PolymorphicProps } from 'lib/definitions'
 
 export type StackAs =
   | 'div'

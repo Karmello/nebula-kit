@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import { withPrefix, getCssVars, getDataAttrs } from 'lib-2/helpers'
+import { withPrefix, getCssVars, getDataAttrs } from 'lib/helpers'
 import { Cluster } from '..'
 
 // Helper: find Cluster root via its own prefixed class

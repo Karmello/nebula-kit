@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps } from 'lib-2/components'
-import { withPrefix, getCssVars } from 'lib-2/helpers'
-import { PolymorphicProps, ResponsiveProp, ScaleValue } from 'lib-2/definitions'
+import { Box, BoxOwnProps } from 'lib/components'
+import { withPrefix, getCssVars } from 'lib/helpers'
+import { PolymorphicProps, ResponsiveProp, ScaleValue } from 'lib/definitions'
 
 import './grid.scss'
 

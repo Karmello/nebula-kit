@@ -1,4 +1,4 @@
-import { BoxOwnProps, TextOwnProps, NavLayoutOwnProps } from 'lib-2/components'
+import { BoxOwnProps, TextOwnProps, NavLayoutOwnProps } from 'lib/components'
 
 type DataAttrProps = Pick<BoxOwnProps, 'variant' | 'intent' | 'interactive' | 'disabled'> &
   Pick<TextOwnProps, 'typography'> &

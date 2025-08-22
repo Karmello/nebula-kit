@@ -2,17 +2,15 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 
 import { HomePage, PlaygroundPage, DocsPage, FeedbackPage } from 'client/pages'
 import { formatAsQueryString } from 'client/services'
-import { useStore } from 'lib/state'
-import { Divider } from 'lib/components'
+import { useLibStore } from 'lib/state'
 
 import styles from './root-page.module.scss'
 
 export const RootPage = () => {
-  const { lang, theme } = useStore()
+  const { lang, theme } = useLibStore()
 
   return (
     <div className={styles.RootPage}>
-      <Divider size="s" />
       <Routes>
         <Route path="/home" Component={HomePage} />
         <Route path="/playground/*" Component={PlaygroundPage} />

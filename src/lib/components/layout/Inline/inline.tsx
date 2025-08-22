@@ -1,7 +1,7 @@
 import { ElementType } from 'react'
 
-import { Flex, FlexOwnProps } from 'lib-2/components'
-import { PolymorphicProps } from 'lib-2/definitions'
+import { Flex, FlexOwnProps } from 'lib/components'
+import { PolymorphicProps } from 'lib/definitions'
 
 export type InlineOwnProps = {
   block?: boolean

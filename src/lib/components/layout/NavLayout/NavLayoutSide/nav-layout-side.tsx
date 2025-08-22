@@ -1,7 +1,7 @@
 import { ComponentProps, Ref } from 'react'
 import classNames from 'classnames'
 
-import { Box, useNavLayoutContext } from 'lib-2/components'
+import { Box, useNavLayoutContext } from 'lib/components'
 
 export interface NavLayoutSideProps extends ComponentProps<typeof Box> {
   ref?: Ref<any>

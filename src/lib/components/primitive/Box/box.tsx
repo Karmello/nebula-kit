@@ -1,8 +1,8 @@
 import { ElementType } from 'react'
 import classNames from 'classnames'
 
-import { withPrefix, getCssVars, getDataAttrs } from 'lib-2/helpers'
-import { PolymorphicProps, ResponsiveProp, ScaleValue } from 'lib-2/definitions'
+import { withPrefix, getCssVars, getDataAttrs } from 'lib/helpers'
+import { PolymorphicProps, ResponsiveProp, ScaleValue } from 'lib/definitions'
 import { BoxVariant, BoxIntent } from './definitions'
 
 import './styles/box.scss'

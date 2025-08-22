@@ -1,4 +1,4 @@
-import { ResponsiveProp, CompWithCssVarsPrefix } from 'lib-2/definitions'
+import { ResponsiveProp, CompWithCssVarsPrefix } from 'lib/definitions'
 
 import { getSingleCssVar } from './getSingleCssVar'
 

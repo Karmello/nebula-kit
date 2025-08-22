@@ -1,23 +1,23 @@
 import qs from 'qs'
 
-import { Languages, Themes } from 'lib/enums'
+import { Language, Theme } from 'lib/definitions'
 
 export type QueryParams = {
-  lang: Languages
-  theme: Themes
+  lang: Language
+  theme: Theme
 }
 
 export const validateQueryParams = (search: string): QueryParams => {
   const queryParams = qs.parse(search.slice(1)) as QueryParams
 
-  const { lang = Languages.DEFAULT, theme = Themes.DEFAULT } = (JSON.parse(localStorage.getItem('ui-bb'))
+  const { lang = Language.DEFAULT, theme = Theme.DEFAULT } = (JSON.parse(localStorage.getItem('ui-bb'))
     ?.state || {}) as QueryParams
 
-  if (!Object.values(Languages).includes(queryParams.lang)) {
+  if (!Object.values(Language).includes(queryParams.lang)) {
     queryParams.lang = lang
   }
 
-  if (!Object.values(Themes).includes(queryParams.theme)) {
+  if (!Object.values(Theme).includes(queryParams.theme)) {
     queryParams.theme = theme
   }
 
@@ -25,8 +25,8 @@ export const validateQueryParams = (search: string): QueryParams => {
 }
 
 export const formatAsQueryString = ({
-  lang = Languages.DEFAULT,
-  theme = Themes.DEFAULT,
+  lang = Language.DEFAULT,
+  theme = Theme.DEFAULT,
 }: QueryParams): string => {
   return `lang=${lang}&theme=${theme}`
 }

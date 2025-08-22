@@ -1,8 +1,8 @@
 import { ReactNode } from 'react'
 
-import { SvgIcon } from 'lib-2/components'
-import { withPrefix } from 'lib-2/helpers'
-import { IconName } from 'lib-2/icons'
+import { SvgIcon } from 'lib/components'
+import { withPrefix } from 'lib/helpers'
+import { IconName } from 'lib/icons'
 
 import './with-icon.scss'
 

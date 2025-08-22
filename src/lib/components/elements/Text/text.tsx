@@ -1,8 +1,8 @@
 import { CSSProperties, ReactNode, Ref } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, WithIcon, WithIconProps } from 'lib-2/components'
-import { withPrefix, getDataAttrs } from 'lib-2/helpers'
+import { Box, BoxOwnProps, WithIcon, WithIconProps } from 'lib/components'
+import { withPrefix, getDataAttrs } from 'lib/helpers'
 
 import './text.scss'
 

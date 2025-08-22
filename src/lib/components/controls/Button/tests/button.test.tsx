@@ -2,7 +2,7 @@ import { createRef } from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import { withPrefix } from 'lib-2/helpers'
+import { withPrefix } from 'lib/helpers'
 import { Button } from '../'
 
 // Helper: find the Button root element (Box rendered as <button>) via real prefixed class

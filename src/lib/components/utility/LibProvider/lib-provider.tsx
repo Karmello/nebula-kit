@@ -1,13 +1,13 @@
 import { ReactElement, useEffect } from 'react'
 
-import { useLibStore } from 'lib-2/state'
-import { Theme, THEME_DEFAULT } from 'lib-2/definitions'
+import { useLibStore } from 'lib/state'
+import { Theme } from 'lib/definitions'
 
-import 'lib-2/icons'
+import 'lib/icons'
 
 type LibProviderProps = { children: ReactElement; defaultTheme?: Theme }
 
-export const LibProvider = ({ children, defaultTheme = THEME_DEFAULT }: LibProviderProps): ReactElement => {
+export const LibProvider = ({ children, defaultTheme = Theme.DEFAULT }: LibProviderProps): ReactElement => {
   const { theme, setTheme } = useLibStore()
 
   useEffect(() => {

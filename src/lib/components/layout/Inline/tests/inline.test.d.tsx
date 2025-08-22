@@ -2,7 +2,7 @@ import { JSX, ComponentProps } from 'react'
 import { expectType, expectAssignable, expectError } from 'tsd'
 
 import { Inline, type InlineProps, type InlineOwnProps } from '..'
-import type { FlexOwnProps } from 'lib-2/components'
+import type { FlexOwnProps } from 'lib/components'
 
 // --- Basic render & own props ---
 expectType<JSX.Element>(<Inline />)

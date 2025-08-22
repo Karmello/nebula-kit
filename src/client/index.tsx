@@ -2,12 +2,9 @@ import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 
 import { App } from 'client/components'
-import { LibProvider } from 'lib-2/components'
+import { LibProvider } from 'lib/components'
 
 import './i18n'
-import '../lib/i18n'
-import '../lib/styles/index.scss'
-import '../lib-2/styles/index.scss'
 
 const Node = () => (
   <BrowserRouter>

@@ -1,4 +1,4 @@
-import { LIB_PREFIX } from 'lib-2/definitions'
+import { LIB_PREFIX } from 'lib/definitions'
 
 import { withPrefix } from '../withPrefix'
 

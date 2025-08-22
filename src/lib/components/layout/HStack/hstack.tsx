@@ -1,5 +1,5 @@
-import { Flex, FlexOwnProps, StackAs, StackOwnProps } from 'lib-2/components'
-import { PolymorphicProps } from 'lib-2/definitions'
+import { Flex, FlexOwnProps, StackAs, StackOwnProps } from 'lib/components'
+import { PolymorphicProps } from 'lib/definitions'
 
 export type HStackOwnProps = Omit<StackOwnProps, 'direction' | 'rowGap' | 'columnGap'> &
   Pick<FlexOwnProps, 'justify'>

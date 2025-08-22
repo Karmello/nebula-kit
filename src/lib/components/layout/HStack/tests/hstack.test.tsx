@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import { withPrefix, getDataAttrs, getCssVars } from 'lib-2/helpers'
+import { withPrefix, getDataAttrs, getCssVars } from 'lib/helpers'
 import { HStack } from '..'
 
 // Helper: get the Flex root rendered by HStack via real prefixed class

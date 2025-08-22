@@ -4,8 +4,6 @@ import { enableFetchMocks } from 'jest-fetch-mock'
 import 'jest-canvas-mock'
 import { TextEncoder, TextDecoder } from 'util'
 
-import '../lib/i18n'
-
 global.React = React
 global.scrollTo = jest.fn()
 Element.prototype.scrollTo = jest.fn()

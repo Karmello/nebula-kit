@@ -1,16 +1,6 @@
-import {
-  Theme,
-  BoxCssVars,
-  FlexCssVars,
-  GridCssVars,
-  ClusterCssVars,
-  NavLayoutCssVars,
-} from 'lib-2/definitions'
+import { BoxCssVars, FlexCssVars, GridCssVars, ClusterCssVars, NavLayoutCssVars } from 'lib/definitions'
 
 export const LIB_PREFIX = 'neb'
-
-export const THEMES = ['light', 'gray', 'dark'] as const
-export const THEME_DEFAULT: Theme = 'light'
 
 export const BREAKPOINTS = ['base', 'sm', 'md', 'lg', 'xl'] as const
 

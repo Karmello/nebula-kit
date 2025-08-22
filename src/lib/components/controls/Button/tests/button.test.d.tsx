@@ -2,7 +2,7 @@ import { JSX, createRef } from 'react'
 import { expectType, expectAssignable, expectError } from 'tsd'
 
 import { Button, type ButtonProps, type ButtonSize } from '..'
-import type { BoxOwnProps, WithIconProps } from 'lib-2/components'
+import type { BoxOwnProps, WithIconProps } from 'lib/components'
 
 // --- Basic render ---
 expectType<JSX.Element>(<Button />)

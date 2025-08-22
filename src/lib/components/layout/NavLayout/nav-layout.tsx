@@ -1,9 +1,9 @@
 import { useId, useState, ComponentProps } from 'react'
 import classNames from 'classnames'
 
-import { withPrefix, getDataAttrs, getCssVars } from 'lib-2/helpers'
-import { Box } from 'lib-2/components'
-import { ResponsiveProp, ScaleValue } from 'lib-2/definitions'
+import { withPrefix, getDataAttrs, getCssVars } from 'lib/helpers'
+import { Box } from 'lib/components'
+import { ResponsiveProp, ScaleValue } from 'lib/definitions'
 
 import { NavLayoutContext } from './useNavLayoutContext'
 

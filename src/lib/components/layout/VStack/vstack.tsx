@@ -1,5 +1,5 @@
-import { Stack, StackAs, StackOwnProps } from 'lib-2/components'
-import { PolymorphicProps } from 'lib-2/definitions'
+import { Stack, StackAs, StackOwnProps } from 'lib/components'
+import { PolymorphicProps } from 'lib/definitions'
 
 export type VStackOwnProps = Omit<StackOwnProps, 'direction' | 'rowGap' | 'columnGap'>
 
