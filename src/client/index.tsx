@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { App } from 'client/components'
 import { NebKitProvider } from 'lib/components'
 
-import './i18n'
+import './dictionary'
 
 const Node = () => (
   <BrowserRouter>

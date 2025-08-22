@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
-import { Navigate, Route, Routes, useNavigate, useLocation } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { pascalCase, sentenceCase } from 'change-case'
 
 import { useLibStore } from 'lib/state'
@@ -8,30 +7,24 @@ import { useDocsStore } from 'client/store'
 import { formatAsQueryString } from 'client/services'
 import { DOCS_ROUTING_CONFIG, RoutingCategoryKey, RoutingItemKey } from 'client/definitions'
 
-import { Doc } from './Doc'
+const DOCS_PAGES = DOCS_ROUTING_CONFIG.map(({ key, items }, index) => ({
+  key,
+  label: sentenceCase(key),
+  items: items.map(key => {
+    return {
+      key,
+      label: index < 2 ? sentenceCase(key) : pascalCase(key),
+      Component: require(`../../docs/${pascalCase(key)}Docs`)[`${pascalCase(key)}Docs`],
+    }
+  }),
+}))
 
-const getDocsCategories = () => {
-  return DOCS_ROUTING_CONFIG.map(({ key, items }, index) => ({
-    key,
-    label: sentenceCase(key),
-    items: items.map(key => {
-      return {
-        key,
-        label: index < 2 ? sentenceCase(key) : pascalCase(key),
-      }
-    }),
-  }))
-}
-
-const CATEGORIES = getDocsCategories()
-const DEFAULT_PATHNAME = `${CATEGORIES[0].key}/${CATEGORIES[0].items[0].key}`
+const DEFAULT_PATHNAME = `${DOCS_PAGES[0].key}/${DOCS_PAGES[0].items[0].key}`
 
 export const DocsPage = () => {
-  const { t } = useTranslation()
-  const push = useNavigate()
   const { pathname } = useLocation()
 
-  const { categoryKey, itemKey, setCategoryKey, setItemKey } = useDocsStore()
+  const { setCategoryKey, setItemKey } = useDocsStore()
   const { lang, theme } = useLibStore()
 
   useEffect(() => {
@@ -42,15 +35,9 @@ export const DocsPage = () => {
 
   return (
     <Routes>
-      {CATEGORIES.flatMap(({ key: categoryKey, items }, index) =>
-        items.map(({ key: itemKey }) => {
-          return (
-            <Route
-              key={itemKey}
-              path={`${categoryKey}/${itemKey}`}
-              element={<Doc index={index} categoryKey={categoryKey} itemKey={itemKey} />}
-            />
-          )
+      {DOCS_PAGES.flatMap(({ key: categoryKey, items }, index) =>
+        items.map(({ key: itemKey, Component }) => {
+          return <Route key={itemKey} path={`${categoryKey}/${itemKey}`} Component={Component} />
         })
       )}
       <Route
