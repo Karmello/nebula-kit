@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-import { RoutingCategoryKey, RoutingItemKey } from 'client/types'
+import { RoutingCategoryKey, RoutingItemKey } from 'client/definitions'
 
 export type DocProps = {
   index: number

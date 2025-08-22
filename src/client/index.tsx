@@ -2,15 +2,15 @@ import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 
 import { App } from 'client/components'
-import { LibProvider } from 'lib/components'
+import { NebKitProvider } from 'lib/components'
 
 import './i18n'
 
 const Node = () => (
   <BrowserRouter>
-    <LibProvider>
+    <NebKitProvider>
       <App />
-    </LibProvider>
+    </NebKitProvider>
   </BrowserRouter>
 )
 

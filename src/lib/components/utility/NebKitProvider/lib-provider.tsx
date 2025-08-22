@@ -5,9 +5,12 @@ import { Theme } from 'lib/definitions'
 
 import 'lib/icons'
 
-type LibProviderProps = { children: ReactElement; defaultTheme?: Theme }
+type NebKitProviderProviderProps = { children: ReactElement; defaultTheme?: Theme }
 
-export const LibProvider = ({ children, defaultTheme = Theme.DEFAULT }: LibProviderProps): ReactElement => {
+export const NebKitProvider = ({
+  children,
+  defaultTheme = Theme.DEFAULT,
+}: NebKitProviderProviderProps): ReactElement => {
   const { theme, setTheme } = useLibStore()
 
   useEffect(() => {

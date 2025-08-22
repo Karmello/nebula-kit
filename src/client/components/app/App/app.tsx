@@ -6,8 +6,6 @@ import { useLibStore } from 'lib/state'
 import { validateQueryParams } from 'client/services'
 import { useAppStore } from 'client/store'
 
-import { AppNavBar } from './AppNavBar'
-import { AppFooter } from './AppFooter'
 import { RootPage } from '../RootPage'
 
 export const App = () => {
@@ -16,7 +14,7 @@ export const App = () => {
   const push = useNavigate()
 
   const { lang, setLang, theme, setTheme } = useLibStore()
-  const { loading, setLoading, distractionFreeMode } = useAppStore()
+  const { setLoading } = useAppStore()
 
   useLayoutEffect(() => {
     const validated = validateQueryParams(search)
@@ -34,12 +32,5 @@ export const App = () => {
     setTimeout(() => setLoading(false), 1000)
   }, [])
 
-  return (
-    <div>
-      <AppNavBar>
-        <RootPage />
-      </AppNavBar>
-      <AppFooter />
-    </div>
-  )
+  return <RootPage />
 }

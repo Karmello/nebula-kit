@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-import { RoutingCategoryKey, RoutingItemKey } from 'client/types'
+import { RoutingCategoryKey, RoutingItemKey } from 'client/definitions'
 
 export type DocsStore = {
   categoryKey: RoutingCategoryKey

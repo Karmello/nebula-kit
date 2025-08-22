@@ -2,7 +2,7 @@ import { create } from 'zustand'
 
 import { useLibStore } from 'lib/state'
 
-import { RoutingCategoryKey, RoutingItemKey } from 'client/types'
+import { RoutingCategoryKey, RoutingItemKey } from 'client/definitions'
 
 export type PlaygroundStore = {
   categoryKey: RoutingCategoryKey

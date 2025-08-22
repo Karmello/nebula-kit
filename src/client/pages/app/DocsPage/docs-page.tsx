@@ -1,14 +1,27 @@
 import { useEffect } from 'react'
 import { Navigate, Route, Routes, useNavigate, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { pascalCase, sentenceCase } from 'change-case'
 
 import { useLibStore } from 'lib/state'
 import { useDocsStore } from 'client/store'
 import { formatAsQueryString } from 'client/services'
-import { RoutingCategoryKey, RoutingItemKey } from 'client/types'
+import { DOCS_ROUTING_CONFIG, RoutingCategoryKey, RoutingItemKey } from 'client/definitions'
 
 import { Doc } from './Doc'
-import { getDocsCategories } from './config'
+
+const getDocsCategories = () => {
+  return DOCS_ROUTING_CONFIG.map(({ key, items }, index) => ({
+    key,
+    label: sentenceCase(key),
+    items: items.map(key => {
+      return {
+        key,
+        label: index < 2 ? sentenceCase(key) : pascalCase(key),
+      }
+    }),
+  }))
+}
 
 const CATEGORIES = getDocsCategories()
 const DEFAULT_PATHNAME = `${CATEGORIES[0].key}/${CATEGORIES[0].items[0].key}`
