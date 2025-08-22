@@ -6,4 +6,6 @@ export enum RoutingCategoryKey {
 export enum RoutingItemKey {
   // playground
   box = 'box',
+  flex = 'flex',
+  grid = 'grid',
 }

@@ -1,3 +1,5 @@
+import { Box } from 'lib/components'
+
 export const BoxPlayground = () => {
-  return 'Box playground'
+  return <Box>Default box</Box>
 }

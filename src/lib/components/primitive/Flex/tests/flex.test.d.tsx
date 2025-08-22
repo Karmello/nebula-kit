@@ -36,21 +36,21 @@ expectType<JSX.Element>(<Flex wrap="wrap-reverse" />)
 expectError(<Flex wrap="no-wrap" />)
 
 // justify
-expectType<JSX.Element>(<Flex justify="start" />)
+expectType<JSX.Element>(<Flex justify="flex-start" />)
 expectType<JSX.Element>(<Flex justify="center" />)
-expectType<JSX.Element>(<Flex justify="end" />)
-expectType<JSX.Element>(<Flex justify="between" />)
-expectType<JSX.Element>(<Flex justify="around" />)
-expectType<JSX.Element>(<Flex justify="evenly" />)
-expectError(<Flex justify="space-between" />)
+expectType<JSX.Element>(<Flex justify="flex-end" />)
+expectType<JSX.Element>(<Flex justify="space-between" />)
+expectType<JSX.Element>(<Flex justify="space-around" />)
+expectType<JSX.Element>(<Flex justify="space-evenly" />)
+expectError(<Flex justify="between" />)
 
 // align
-expectType<JSX.Element>(<Flex align="start" />)
+expectType<JSX.Element>(<Flex align="flex-start" />)
 expectType<JSX.Element>(<Flex align="center" />)
-expectType<JSX.Element>(<Flex align="end" />)
+expectType<JSX.Element>(<Flex align="flex-end" />)
 expectType<JSX.Element>(<Flex align="stretch" />)
 expectType<JSX.Element>(<Flex align="baseline" />)
-expectError(<Flex align="flex-start" />)
+expectError(<Flex align="start" />)
 
 // gap / rowGap / columnGap accept string values
 expectType<JSX.Element>(<Flex gap="8px" />)

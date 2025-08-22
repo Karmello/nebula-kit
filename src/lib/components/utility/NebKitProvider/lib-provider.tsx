@@ -4,13 +4,14 @@ import { useLibStore } from 'lib/state'
 import { Theme } from 'lib/definitions'
 
 import 'lib/icons'
+import 'lib/styles/index.scss'
 
-type NebKitProviderProviderProps = { children: ReactElement; defaultTheme?: Theme }
+type NebKitProviderProps = { children: ReactElement; defaultTheme?: Theme }
 
 export const NebKitProvider = ({
   children,
   defaultTheme = Theme.DEFAULT,
-}: NebKitProviderProviderProps): ReactElement => {
+}: NebKitProviderProps): ReactElement => {
   const { theme, setTheme } = useLibStore()
 
   useEffect(() => {

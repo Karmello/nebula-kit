@@ -9,7 +9,7 @@ expectType<JSX.Element>(<HStack />)
 
 // gap comes from StackOwnProps; justify comes from FlexOwnProps
 const gap: StackOwnProps['gap'] = 4
-const justify: FlexOwnProps['justify'] = 'between'
+const justify: FlexOwnProps['justify'] = 'space-between'
 expectType<JSX.Element>(<HStack gap={gap} />)
 expectType<JSX.Element>(<HStack justify={justify} />)
 

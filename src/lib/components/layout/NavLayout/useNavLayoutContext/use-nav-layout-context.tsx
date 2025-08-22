@@ -15,5 +15,5 @@ export const useNavLayoutContext = (who: 'Main' | 'Sidebar' | 'Toggle') => {
     console.warn(`[NavLayout${who}] must be used inside <NavLayout />`)
   }
 
-  return context
+  return context || { sideId: 'neb-nav-layout-missing', open: false, setOpen: () => null }
 }

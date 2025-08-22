@@ -4,7 +4,7 @@ import { getSingleCssVar } from './getSingleCssVar'
 
 export type GetCssVarsProps<T> = Record<string, ResponsiveProp<T>>
 
-export const getCssVars = (prefix: CompWithCssVarsPrefix, props: GetCssVarsProps<string | number>) => {
+export const getCssVars = (prefix: CompWithCssVarsPrefix, props: GetCssVarsProps<any>) => {
   let cssVars = {}
 
   if (props) {

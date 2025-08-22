@@ -10,7 +10,7 @@ expectType<JSX.Element>(<Inline block />)
 
 // Flex-related props (picked from FlexOwnProps)
 const wrap: FlexOwnProps['wrap'] = 'wrap'
-const justify: FlexOwnProps['justify'] = 'start'
+const justify: FlexOwnProps['justify'] = 'flex-start'
 const align: FlexOwnProps['align'] = 'baseline'
 const gap: FlexOwnProps['gap'] = 4
 expectType<JSX.Element>(<Inline wrap={wrap} />)

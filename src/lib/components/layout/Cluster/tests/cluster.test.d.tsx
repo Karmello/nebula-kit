@@ -12,7 +12,7 @@ expectType<JSX.Element>(<Cluster className="cluster" style={{ display: 'flex' }}
 // Flex-derived props (direction omitted in ClusterProps)
 const wrap: FlexOwnProps['wrap'] = 'wrap'
 const align: FlexOwnProps['align'] = 'center'
-const justify: FlexOwnProps['justify'] = 'start'
+const justify: FlexOwnProps['justify'] = 'flex-start'
 const gap: FlexOwnProps['gap'] = 4
 expectType<JSX.Element>(<Cluster wrap={wrap} />)
 expectType<JSX.Element>(<Cluster align={align} />)
