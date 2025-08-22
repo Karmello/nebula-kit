@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef, ElementType } from 'react'
 
-import { BoxOwnProps, ClusterOwnProps, FlexOwnProps, GridOwnProps, NavLayoutOwnProps } from 'lib/components'
+import { BoxOwnProps, ClusterOwnProps, FlexOwnProps, GridOwnProps, NavLayoutProps } from 'lib/components'
 import { BREAKPOINTS, SCALE } from '..'
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl'
@@ -62,4 +62,29 @@ export type GridCssVars = Pick<
 
 export type ClusterCssVars = Pick<ClusterOwnProps, 'minItemWidth'>
 
-export type NavLayoutCssVars = Pick<NavLayoutOwnProps, 'sideWidth'>
+export type NavLayoutCssVars = Pick<NavLayoutProps, 'sideWidth'>
+
+export type TextAlign =
+  | 'left'
+  | 'right'
+  | 'center'
+  | 'justify'
+  | 'start'
+  | 'end'
+  | 'inherit'
+  | 'initial'
+  | 'unset'
+  | 'revert'
+
+export type ComponentMeta = {
+  name: string
+  description: string
+  props: {
+    name: string
+    type: string
+    options: (string | number)[] | string
+    required: boolean
+    defaultValue: string
+    description: string
+  }[]
+}

@@ -1,8 +1,8 @@
-import { BoxOwnProps, TextOwnProps, NavLayoutOwnProps } from 'lib/components'
+import { BoxOwnProps, TextOwnProps, NavLayoutProps } from 'lib/components'
 
 type DataAttrProps = Pick<BoxOwnProps, 'variant' | 'intent' | 'interactive' | 'disabled'> &
   Pick<TextOwnProps, 'typography'> &
-  Pick<NavLayoutOwnProps, 'side' | 'open'>
+  Pick<NavLayoutProps, 'side' | 'open'>
 
 type Prefix = 'box' | 'text' | 'nav-layout'
 

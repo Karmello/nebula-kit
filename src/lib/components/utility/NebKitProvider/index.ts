@@ -1,1 +1,1 @@
-export * from './lib-provider'
+export * from './neb-kit-provider'

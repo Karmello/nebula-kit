@@ -35,7 +35,7 @@
     "prepare": "husky install",
     "dist": "./scripts/distribute.sh",
     "lib": "git push && yarn dist && npm publish",
-    "docs": "rimraf src/docs && node ./scripts/generate-docs.js",
+    "meta": "rimraf src/meta && ts-node src/generate-meta/index.ts",
     "tsd": "tsc -p tsconfig.types.json && tsd -t dist/types/index.d.ts -f src/lib/components/**/*.test.d.tsx"
   },
   "dependencies": {

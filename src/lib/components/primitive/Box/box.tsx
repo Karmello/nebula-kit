@@ -2,7 +2,7 @@ import { ElementType } from 'react'
 import classNames from 'classnames'
 
 import { withPrefix, getCssVars, getDataAttrs } from 'lib/helpers'
-import { PolymorphicProps, ResponsiveProp, ScaleValue } from 'lib/definitions'
+import { PolymorphicProps, ResponsiveProp, ScaleValue, TextAlign } from 'lib/definitions'
 import { BoxVariant, BoxIntent } from './definitions'
 
 import './styles/box.scss'
@@ -11,12 +11,11 @@ export type BoxOwnProps = {
   variant?: BoxVariant
   intent?: BoxIntent
   interactive?: boolean
+  /** Whether the button is disabled */
   disabled?: boolean
   fontSize?: ResponsiveProp<ScaleValue | string>
   lineHeight?: ResponsiveProp<number | string>
-  textAlign?: ResponsiveProp<
-    'left' | 'right' | 'center' | 'justify' | 'start' | 'end' | 'inherit' | 'initial' | 'unset' | 'revert'
-  >
+  textAlign?: ResponsiveProp<TextAlign>
   height?: ResponsiveProp<ScaleValue | string>
   minHeight?: ResponsiveProp<ScaleValue | string>
   maxHeight?: ResponsiveProp<ScaleValue | string>
@@ -38,14 +37,15 @@ export type BoxOwnProps = {
 
 export type BoxProps<E extends ElementType = 'div'> = PolymorphicProps<E, BoxOwnProps>
 
+/** Box component */
 export const Box = <E extends ElementType = 'div'>({
   as,
   className,
   style,
   variant = 'solid',
   intent = 'neutral',
-  interactive,
-  disabled,
+  interactive = false,
+  disabled = false,
   fontSize,
   lineHeight,
   textAlign,

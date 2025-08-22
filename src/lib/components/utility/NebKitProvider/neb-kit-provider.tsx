@@ -6,7 +6,7 @@ import { Theme } from 'lib/definitions'
 import 'lib/icons'
 import 'lib/styles/index.scss'
 
-type NebKitProviderProps = { children: ReactElement; defaultTheme?: Theme }
+export type NebKitProviderProps = { children: ReactElement; defaultTheme?: Theme }
 
 export const NebKitProvider = ({
   children,

@@ -9,7 +9,7 @@ import { NavLayoutContext } from './useNavLayoutContext'
 
 import './nav-layout.scss'
 
-export interface NavLayoutOwnProps extends ComponentProps<typeof Box> {
+export interface NavLayoutProps extends ComponentProps<typeof Box> {
   side?: 'left' | 'right'
   sideWidth?: ResponsiveProp<ScaleValue | string>
   defaultOpen?: boolean
@@ -23,7 +23,7 @@ export const NavLayout = ({
   className,
   style,
   ...rest
-}: NavLayoutOwnProps) => {
+}: NavLayoutProps) => {
   const id = useId()
   const sideId = `${id}-sidebar`
   const [open, setOpen] = useState(defaultOpen)

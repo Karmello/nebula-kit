@@ -1,0 +1,223 @@
+{
+  "name": "Box",
+  "description": "Box component",
+  "props": [
+    {
+      "name": "variant",
+      "type": "BoxVariant",
+      "options": [
+        "solid",
+        "outline",
+        "ghost"
+      ],
+      "required": false,
+      "defaultValue": "'solid'",
+      "description": ""
+    },
+    {
+      "name": "intent",
+      "type": "BoxIntent",
+      "options": [
+        "neutral",
+        "primary",
+        "secondary",
+        "tertiary",
+        "success",
+        "info",
+        "warning",
+        "danger",
+        "inverse"
+      ],
+      "required": false,
+      "defaultValue": "'neutral'",
+      "description": ""
+    },
+    {
+      "name": "interactive",
+      "type": "boolean",
+      "options": [],
+      "required": false,
+      "defaultValue": "false",
+      "description": ""
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "options": [],
+      "required": false,
+      "defaultValue": "false",
+      "description": "Whether the button is disabled"
+    },
+    {
+      "name": "fontSize",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "lineHeight",
+      "type": "ResponsiveProp<number | string>",
+      "options": [],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "textAlign",
+      "type": "ResponsiveProp<TextAlign>",
+      "options": [
+        "left",
+        "right",
+        "center",
+        "justify",
+        "start",
+        "end",
+        "inherit",
+        "initial",
+        "unset",
+        "revert"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "height",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "minHeight",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "maxHeight",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "pt",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "pr",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "pb",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "pl",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "px",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "py",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "p",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "mt",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "mr",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "mb",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "ml",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "mx",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "my",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "m",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    }
+  ]
+}
