@@ -7,6 +7,7 @@ import { validateQueryParams } from 'client/services'
 import { useAppStore } from 'client/store'
 
 import { RootPage } from '../RootPage'
+import { AppNavBar } from './AppNavBar'
 
 export const App = () => {
   const { i18n } = useTranslation()
@@ -34,12 +35,7 @@ export const App = () => {
 
   return (
     <>
-      <a href="/playground">
-        <button>Playground</button>
-      </a>
-      <a href="/docs">
-        <button>Docs</button>
-      </a>
+      <AppNavBar />
       <RootPage />
     </>
   )

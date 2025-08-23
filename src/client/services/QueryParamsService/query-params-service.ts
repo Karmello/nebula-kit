@@ -1,6 +1,8 @@
 import qs from 'qs'
 
 import { Language, Theme } from 'lib/definitions'
+import { useLibStore } from 'lib/state'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 export type QueryParams = {
   lang: Language
@@ -29,4 +31,16 @@ export const formatAsQueryString = ({
   theme = Theme.DEFAULT,
 }: QueryParams): string => {
   return `lang=${lang}&theme=${theme}`
+}
+
+export const useNavigateTo = () => {
+  const { pathname } = useLocation()
+  const push = useNavigate()
+  const { theme, lang } = useLibStore()
+
+  return (path: string) => {
+    if (path !== pathname) {
+      push(`${path}?${formatAsQueryString({ lang, theme })}`)
+    }
+  }
 }
