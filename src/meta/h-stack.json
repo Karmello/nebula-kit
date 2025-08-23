@@ -4,7 +4,7 @@
   "props": [
     {
       "name": "align",
-      "type": "e = 'HStack'\n",
+      "type": "",
       "options": [
         "center",
         "flex-start",
@@ -14,7 +14,7 @@
       ],
       "required": false,
       "defaultValue": "",
-      "description": ""
+      "description": "Alignment of items along the cross axis, supports responsive values"
     },
     {
       "name": "gap",
@@ -22,11 +22,11 @@
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "",
-      "description": ""
+      "description": "Shorthand spacing between items, supports responsive values"
     },
     {
       "name": "justify",
-      "type": "ap} {...props} />\n}\n\nHStack.",
+      "type": "",
       "options": [
         "center",
         "flex-start",
@@ -37,7 +37,7 @@
       ],
       "required": false,
       "defaultValue": "",
-      "description": ""
+      "description": "Distribution of items along the main axis, supports responsive values"
     }
   ]
 }

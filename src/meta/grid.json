@@ -1,50 +1,50 @@
 {
   "name": "Grid",
-  "description": "",
+  "description": "Grid is a polymorphic, responsive 2‑D layout primitive built on Box. It exposes a CSS‑variable API for track templates, auto‑placement, alignment, and per‑axis gaps - great for card grids, dashboards, and complex layouts.",
   "props": [
     {
       "name": "columns",
       "type": "ResponsiveProp<string | number>",
       "options": [],
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'1fr'",
+      "description": "Column track template or count (e.g. \"repeat(12, 1fr)\" or 12); supports responsive values"
     },
     {
       "name": "rows",
       "type": "ResponsiveProp<string | number>",
       "options": [],
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'auto'",
+      "description": "Row track template or count (e.g. \"auto 1fr auto\" or 3); supports responsive values"
     },
     {
       "name": "gap",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Shorthand gap between grid items; accepts scale tokens or raw CSS; responsive"
     },
     {
       "name": "rowGap",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Vertical spacing between rows; overrides gap on the block axis; responsive"
     },
     {
       "name": "columnGap",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Horizontal spacing between columns; overrides gap on the inline axis; responsive"
     },
     {
       "name": "autoFlow",
-      "type": "ResponsiveProp<'row' | 'column' | 'dense' | 'row dense' | 'column dense'>",
+      "type": "ResponsiveProp<GridAutoFlow>",
       "options": [
         "column",
         "row",
@@ -53,28 +53,28 @@
         "column dense"
       ],
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'row'",
+      "description": "Auto‑placement strategy for items (grid-auto-flow); responsive"
     },
     {
       "name": "autoRows",
       "type": "ResponsiveProp<string>",
       "options": [],
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'auto'",
+      "description": "Size for implicitly created rows (grid-auto-rows); responsive"
     },
     {
       "name": "autoColumns",
       "type": "ResponsiveProp<string>",
       "options": [],
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'auto'",
+      "description": "Size for implicitly created columns (grid-auto-columns); responsive"
     },
     {
       "name": "placeItems",
-      "type": "ResponsiveProp<'start' | 'center' | 'end' | 'stretch'>",
+      "type": "ResponsiveProp<GridPlaceItems>",
       "options": [
         "center",
         "start",
@@ -82,12 +82,12 @@
         "stretch"
       ],
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'stretch'",
+      "description": "Shorthand alignment for items within their cells (place-items); responsive"
     },
     {
       "name": "placeContent",
-      "type": "ResponsiveProp<\n    'start' | 'center' | 'end' | 'stretch' | 'space-between' | 'space-around' | 'space-evenly'\n  >",
+      "type": "ResponsiveProp<GridPlaceContent>",
       "options": [
         "center",
         "start",
@@ -98,8 +98,8 @@
         "space-evenly"
       ],
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'start'",
+      "description": "Shorthand alignment for the grid within its container (place-content); responsive"
     }
   ]
 }

@@ -14,7 +14,7 @@
       ],
       "required": false,
       "defaultValue": "",
-      "description": ""
+      "description": "Alignment of items along the cross axis, supports responsive values"
     },
     {
       "name": "gap",
@@ -22,7 +22,7 @@
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "",
-      "description": ""
+      "description": "Shorthand spacing between items, supports responsive values"
     }
   ]
 }

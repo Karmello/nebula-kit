@@ -4,7 +4,7 @@
   "props": [
     {
       "name": "align",
-      "type": "st Stack = <E extends Stac",
+      "type": "",
       "options": [
         "center",
         "flex-start",
@@ -14,31 +14,31 @@
       ],
       "required": false,
       "defaultValue": "'stretch'",
-      "description": ""
+      "description": "Alignment of items along the cross axis, supports responsive values"
     },
     {
       "name": "gap",
-      "type": "iv'>({\n  direction = 'column',\n  ali",
+      "type": "",
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "8",
-      "description": ""
+      "description": "Shorthand spacing between items, supports responsive values"
     },
     {
       "name": "rowGap",
-      "type": "ch',\n  gap = 8,\n  ...rest\n}: StackPr",
+      "type": "",
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "",
-      "description": ""
+      "description": "Vertical spacing between rows, overrides gap on block axis"
     },
     {
       "name": "columnGap",
-      "type": "return <Flex direction={direction} ",
+      "type": "",
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "",
-      "description": ""
+      "description": "Horizontal spacing between columns, overrides gap on inline axis"
     },
     {
       "name": "direction",

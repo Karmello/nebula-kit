@@ -90,6 +90,19 @@ export type FlexJustify =
 
 export type FlexAlign = 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'
 
+export type GridAutoFlow = 'row' | 'column' | 'dense' | 'row dense' | 'column dense'
+
+export type GridPlaceItems = 'start' | 'center' | 'end' | 'stretch'
+
+export type GridPlaceContent =
+  | 'start'
+  | 'center'
+  | 'end'
+  | 'stretch'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
+
 export type ComponentMeta = {
   name: string
   description: string

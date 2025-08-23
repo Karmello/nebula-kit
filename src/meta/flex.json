@@ -1,6 +1,6 @@
 {
   "name": "Flex",
-  "description": "",
+  "description": "Flex is a polymorphic layout primitive built on Box that uses flexbox under the hood. It handles direction, wrapping, alignment, and gaps (with per-axis overrides), and supports responsive values for a clean, mobile-first flow.",
   "props": [
     {
       "name": "direction",
@@ -12,8 +12,8 @@
         "column-reverse"
       ],
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'row'",
+      "description": "Main axis direction (row, column, etc.), supports responsive values"
     },
     {
       "name": "wrap",
@@ -24,8 +24,8 @@
         "wrap-reverse"
       ],
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'nowrap'",
+      "description": "How flex items wrap onto multiple lines, supports responsive values"
     },
     {
       "name": "justify",
@@ -39,8 +39,8 @@
         "space-evenly"
       ],
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'flex-start'",
+      "description": "Distribution of items along the main axis, supports responsive values"
     },
     {
       "name": "align",
@@ -53,32 +53,32 @@
         "baseline"
       ],
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "'flex-start'",
+      "description": "Alignment of items along the cross axis, supports responsive values"
     },
     {
       "name": "gap",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Shorthand spacing between items, supports responsive values"
     },
     {
       "name": "rowGap",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Vertical spacing between rows, overrides gap on block axis"
     },
     {
       "name": "columnGap",
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "0",
+      "description": "Horizontal spacing between columns, overrides gap on inline axis"
     }
   ]
 }

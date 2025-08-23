@@ -4,7 +4,7 @@
   "props": [
     {
       "name": "wrap",
-      "type": "{\n  fill,\n  screen,\n  gro",
+      "type": "er\"\n      style={{\n      ",
       "options": [
         "wrap",
         "nowrap",
@@ -12,31 +12,31 @@
       ],
       "required": false,
       "defaultValue": "",
-      "description": ""
+      "description": "How flex items wrap onto multiple lines, supports responsive values"
     },
     {
       "name": "gap",
-      "type": "row\"\n      justify=\"center\"\n      al",
+      "type": "",
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "",
-      "description": ""
+      "description": "Shorthand spacing between items, supports responsive values"
     },
     {
       "name": "rowGap",
-      "type": "\"\n      style={{\n        ...(fill ? ",
+      "type": "",
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "",
-      "description": ""
+      "description": "Vertical spacing between rows, overrides gap on block axis"
     },
     {
       "name": "columnGap",
-      "type": "', height: '100%' } : null),\n       ",
+      "type": "",
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "",
-      "description": ""
+      "description": "Horizontal spacing between columns, overrides gap on inline axis"
     },
     {
       "name": "fill",
