@@ -52,7 +52,7 @@ export const DocsPage = () => {
         ))}
       </nav>
       <Routes>
-        {DOCS_PAGES.flatMap(({ key: categoryKey, items }, index) =>
+        {DOCS_PAGES.flatMap(({ key: categoryKey, items }) =>
           items.map(({ key: itemKey, Component }) => {
             return <Route key={itemKey} path={`${categoryKey}/${itemKey}`} Component={Component} />
           })

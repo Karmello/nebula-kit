@@ -74,7 +74,7 @@ describe('getCssVars', () => {
 
     // walk in order, mirroring getSingleCssVar behavior
     let last = (responsive[BREAKPOINTS[0]] ?? undefined) as number | undefined
-    BREAKPOINTS.forEach((bp, i) => {
+    BREAKPOINTS.forEach(bp => {
       if (responsive[bp] !== undefined) last = responsive[bp]
       const key = `--${prefix}-${kebab}-${bp}`
       // once a number appears, it should be wrapped with the scale token and persist forward

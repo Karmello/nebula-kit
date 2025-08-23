@@ -19,7 +19,7 @@ export const run = (source: string, componentName: string, propsName: string, ou
     defaultValue: defaultProps[p.name as never] ?? '',
   }))
 
-  const { description, jsDocTags } = getComponentMeta(program, source, componentName)
+  const { description } = getComponentMeta(program, source, componentName)
 
   fs.mkdirSync(path.dirname(out), { recursive: true })
 

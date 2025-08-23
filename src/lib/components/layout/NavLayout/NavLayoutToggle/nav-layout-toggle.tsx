@@ -1,5 +1,4 @@
 import { ButtonHTMLAttributes, Ref } from 'react'
-import classNames from 'classnames'
 
 import { Button, useNavLayoutContext } from 'lib/components'
 
@@ -9,10 +8,10 @@ export interface NavLayoutToggleProps extends ButtonHTMLAttributes<HTMLButtonEle
 }
 
 export const NavLayoutToggle = ({ targetId, children, className, ...btn }: NavLayoutToggleProps) => {
-  const { sideId, open, setOpen } = useNavLayoutContext('Toggle')
+  const { sideId } = useNavLayoutContext('Toggle')
   const id = targetId || sideId
 
-  return <Button />
+  return <Button {...btn} />
 }
 
 NavLayoutToggle.displayName = 'NavLayoutToggle'

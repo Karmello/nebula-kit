@@ -1,9 +1,6 @@
-import { useDocsStore } from 'client/store'
 import { ComponentMeta } from 'lib/definitions'
 
 export const CompMetaRenderer = ({ data }: { data: ComponentMeta }) => {
-  const { itemKey } = useDocsStore()
-
   if (!data) {
     return null
   }

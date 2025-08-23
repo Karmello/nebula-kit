@@ -88,7 +88,7 @@ describe('getSingleCssVar', () => {
     const kebab = kebabCase(propName)
 
     let last = partial[BREAKPOINTS[0]] ?? (undefined as unknown as number)
-    BREAKPOINTS.forEach((bp, idx) => {
+    BREAKPOINTS.forEach(bp => {
       if (partial[bp] !== undefined) last = partial[bp]
       const key = `--${prefix}-${kebab}-${bp}`
       // once a number is set, it should persist forward

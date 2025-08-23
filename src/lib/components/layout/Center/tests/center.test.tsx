@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import { withPrefix, getDataAttrs } from 'lib/helpers'
+import { withPrefix } from 'lib/helpers'
 import { Center } from '..'
 
 // Helper: Center renders a Flex; locate the Flex root via its real prefixed class

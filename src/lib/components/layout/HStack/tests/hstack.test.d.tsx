@@ -1,7 +1,7 @@
 import { JSX, ComponentProps } from 'react'
 import { expectType, expectAssignable, expectError } from 'tsd'
 
-import { HStack, type HStackProps, type HStackOwnProps } from '..'
+import { HStack, type HStackOwnProps } from '..'
 import type { FlexOwnProps, StackOwnProps } from 'lib/components'
 
 // --- Basic render & own props ---

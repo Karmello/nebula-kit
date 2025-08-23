@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import { withPrefix, getDataAttrs, getCssVars } from 'lib/helpers'
+import { withPrefix, getCssVars } from 'lib/helpers'
 import { VStack } from '..'
 
 // Helper: Stack renders Flex, so locate the Flex root by its real prefixed class

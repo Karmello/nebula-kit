@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, Ref } from 'react'
 import classNames from 'classnames'
 
 import { Box, BoxOwnProps, WithIcon, WithIconProps } from 'lib/components'
-import { withPrefix, getDataAttrs } from 'lib/helpers'
+import { withPrefix } from 'lib/helpers'
 import { Size } from 'lib/definitions'
 
 import './button.scss'

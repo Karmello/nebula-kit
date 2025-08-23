@@ -1,7 +1,5 @@
 import { create } from 'zustand'
 
-import { useLibStore } from 'lib/state'
-
 import { RoutingCategoryKey, RoutingItemKey } from 'client/definitions'
 
 export type PlaygroundStore = {
@@ -10,8 +8,6 @@ export type PlaygroundStore = {
   itemKey: RoutingItemKey
   setItemKey: (itemKey: RoutingItemKey) => void
 }
-
-const theme = useLibStore.getState().theme
 
 export const usePlaygroundStore = create<PlaygroundStore>(set => ({
   categoryKey: RoutingCategoryKey.primitive,

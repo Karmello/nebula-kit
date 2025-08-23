@@ -35,7 +35,7 @@ export const getPropsFromExport = (
     const t = checker.getTypeOfSymbolAtLocation(prop, decl ?? sf)
 
     const typeExact = displayTypeExact(checker, t, decl, sf)
-    const { description, jsDocTags } = getSymbolDocs(checker, prop)
+    const { description } = getSymbolDocs(checker, prop)
 
     const propMeta = {
       name: prop.getName(),
