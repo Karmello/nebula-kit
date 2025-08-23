@@ -20,7 +20,7 @@ describe('<Cluster /> (real components + helpers)', () => {
     expect(root.classList.contains('extra')).toBe(true)
   })
 
-  it('applies CSS vars for minItemWidth (number -> var(--scale-X))', () => {
+  it('applies CSS vars for minItemWidth (number -> var(--neb-scale-X))', () => {
     const { container } = render(<Cluster minItemWidth={12} />)
     const root = getClusterRoot(container)
 

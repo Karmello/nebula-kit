@@ -1,6 +1,6 @@
 import { kebabCase } from 'lodash'
 
-import { BREAKPOINTS, CSS_VARS_CONFIG } from 'lib/definitions'
+import { BREAKPOINTS, CSS_VARS_CONFIG, LIB_PREFIX } from 'lib/definitions'
 import { getSingleCssVar } from '../getSingleCssVar'
 
 describe('getSingleCssVar', () => {
@@ -18,7 +18,7 @@ describe('getSingleCssVar', () => {
     const out = getSingleCssVar(prefix as any, { [propName]: value } as any, propName)
 
     const kebab = kebabCase(propName)
-    const expectedKeys = BREAKPOINTS.map(bp => `--${prefix}-${kebab}-${bp}`)
+    const expectedKeys = BREAKPOINTS.map(bp => `--${LIB_PREFIX}-${prefix}-${kebab}-${bp}`)
     expect(Object.keys(out)).toEqual(expectedKeys)
     expectedKeys.forEach(k => expect(out[k]).toBe(value))
   })
@@ -30,8 +30,8 @@ describe('getSingleCssVar', () => {
 
     const kebab = kebabCase(propName)
     BREAKPOINTS.forEach(bp => {
-      const key = `--${prefix}-${kebab}-${bp}`
-      expect(out[key]).toBe('var(--scale-4)')
+      const key = `--${LIB_PREFIX}-${prefix}-${kebab}-${bp}`
+      expect(out[key]).toBe(`var(--${LIB_PREFIX}-scale-4)`)
     })
   })
 
@@ -41,7 +41,7 @@ describe('getSingleCssVar', () => {
 
     const kebab = kebabCase(propName)
     BREAKPOINTS.forEach(bp => {
-      const key = `--${prefix}-${kebab}-${bp}`
+      const key = `--${LIB_PREFIX}-${prefix}-${kebab}-${bp}`
       expect(out[key]).toBe('repeat(3, 1fr)')
     })
   })
@@ -52,7 +52,7 @@ describe('getSingleCssVar', () => {
 
     const kebab = kebabCase(propName)
     BREAKPOINTS.forEach(bp => {
-      const key = `--${prefix}-${kebab}-${bp}`
+      const key = `--${LIB_PREFIX}-${prefix}-${kebab}-${bp}`
       expect(out[key]).toBe(1.6)
       expect(typeof out[key]).toBe('number')
     })
@@ -70,8 +70,8 @@ describe('getSingleCssVar', () => {
     const kebab = kebabCase(propName)
 
     BREAKPOINTS.forEach((bp, i) => {
-      const key = `--${prefix}-${kebab}-${bp}`
-      expect(out[key]).toBe(`var(--scale-${i + 1})`)
+      const key = `--${LIB_PREFIX}-${prefix}-${kebab}-${bp}`
+      expect(out[key]).toBe(`var(--neb-scale-${i + 1})`)
     })
   })
 
@@ -90,9 +90,9 @@ describe('getSingleCssVar', () => {
     let last = partial[BREAKPOINTS[0]] ?? (undefined as unknown as number)
     BREAKPOINTS.forEach(bp => {
       if (partial[bp] !== undefined) last = partial[bp]
-      const key = `--${prefix}-${kebab}-${bp}`
+      const key = `--${LIB_PREFIX}-${prefix}-${kebab}-${bp}`
       // once a number is set, it should persist forward
-      expect(out[key]).toBe(`var(--scale-${last})`)
+      expect(out[key]).toBe(`var(--${LIB_PREFIX}-scale-${last})`)
     })
   })
 })

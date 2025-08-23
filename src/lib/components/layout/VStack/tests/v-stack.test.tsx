@@ -20,7 +20,7 @@ describe('<VStack /> (real components + helpers)', () => {
     expect(root.classList.contains('extra')).toBe(true)
   })
 
-  it('applies gap as CSS custom properties when provided (number -> var(--scale-X))', () => {
+  it('applies gap as CSS custom properties when provided (number -> var(--neb-scale-X))', () => {
     const { container } = render(<VStack gap={6}>g</VStack>)
     const root = getFlexRoot(container)
 

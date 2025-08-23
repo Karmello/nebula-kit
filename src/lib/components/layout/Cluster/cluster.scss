@@ -1,18 +1,18 @@
 .neb-cluster > * {
-  flex: 0 1 var(--cluster-min-item-width-base, auto);
+  flex: 0 1 var(--neb-cluster-min-item-width-base, auto);
 }
 
 @media (min-width: 480px) {
   .neb-cluster > * {
-    flex-basis: var(--cluster-min-item-width-sm, var(--cluster-min-item-width-base, auto));
+    flex-basis: var(--neb-cluster-min-item-width-sm, var(--neb-cluster-min-item-width-base, auto));
   }
 }
 
 @media (min-width: 768px) {
   .neb-cluster > * {
     flex-basis: var(
-      --cluster-min-item-width-md,
-      var(--cluster-min-item-width-sm, var(--cluster-min-item-width-base, auto))
+      --neb-cluster-min-item-width-md,
+      var(--neb-cluster-min-item-width-sm, var(--neb-cluster-min-item-width-base, auto))
     );
   }
 }
@@ -20,10 +20,10 @@
 @media (min-width: 1024px) {
   .neb-cluster > * {
     flex-basis: var(
-      --cluster-min-item-width-lg,
+      --neb-cluster-min-item-width-lg,
       var(
-        --cluster-min-item-width-md,
-        var(--cluster-min-item-width-sm, var(--cluster-min-item-width-base, auto))
+        --neb-cluster-min-item-width-md,
+        var(--neb-cluster-min-item-width-sm, var(--neb-cluster-min-item-width-base, auto))
       )
     );
   }
@@ -32,12 +32,12 @@
 @media (min-width: 1280px) {
   .neb-cluster > * {
     flex-basis: var(
-      --cluster-min-item-width-xl,
+      --neb-cluster-min-item-width-xl,
       var(
-        --cluster-min-item-width-lg,
+        --neb-cluster-min-item-width-lg,
         var(
-          --cluster-min-item-width-md,
-          var(--cluster-min-item-width-sm, var(--cluster-min-item-width-base, auto))
+          --neb-cluster-min-item-width-md,
+          var(--neb-cluster-min-item-width-sm, var(--neb-cluster-min-item-width-base, auto))
         )
       )
     );

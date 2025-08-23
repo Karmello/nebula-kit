@@ -5,8 +5,8 @@ import { kebabCase } from 'lodash'
 import { Flex } from '..'
 
 function readVar(el: HTMLElement, key: string, bp?: string) {
-  const baseName = bp ? `--flex-${kebabCase(key)}-${bp}` : `--flex-${kebabCase(key)}`
-  const altBase = bp ? baseName : `--flex-${kebabCase(key)}-base`
+  const baseName = bp ? `--neb-flex-${kebabCase(key)}-${bp}` : `--neb-flex-${kebabCase(key)}`
+  const altBase = bp ? baseName : `--neb-flex-${kebabCase(key)}-base`
   return el.style.getPropertyValue(baseName) || el.style.getPropertyValue(altBase)
 }
 

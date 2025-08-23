@@ -23,8 +23,8 @@ describe('<SvgIcon /> (real icons)', () => {
     const { container } = render(<SvgIcon name={VALID_ICON_NAME} size={8} />)
     const svg = container.querySelector('svg') as SVGElement
     expect(svg).toBeInTheDocument()
-    expect(svg).toHaveStyle('width: var(--scale-8)')
-    expect(svg).toHaveStyle('height: var(--scale-8)')
+    expect(svg).toHaveStyle('width: var(--neb-scale-8)')
+    expect(svg).toHaveStyle('height: var(--neb-scale-8)')
   })
 
   it('does not set width/height styles when size is omitted', () => {
@@ -40,7 +40,7 @@ describe('<SvgIcon /> (real icons)', () => {
   it('supports other scale tokens (e.g., 12)', () => {
     const { container } = render(<SvgIcon name={VALID_ICON_NAME} size={12} />)
     const svg = container.querySelector('svg') as SVGElement
-    expect(svg).toHaveStyle('width: var(--scale-12)')
-    expect(svg).toHaveStyle('height: var(--scale-12)')
+    expect(svg).toHaveStyle('width: var(--neb-scale-12)')
+    expect(svg).toHaveStyle('height: var(--neb-scale-12)')
   })
 })

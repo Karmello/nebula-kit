@@ -55,16 +55,16 @@ describe('Grid (no mocks)', () => {
     const style = el.getAttribute('style') || ''
 
     // Spot-check a few expected var hooks without depending on exact values
-    expect(style).toContain('--grid-columns-base')
-    expect(style).toContain('--grid-rows-base')
-    expect(style).toContain('--grid-gap-base')
-    expect(style).toContain('--grid-row-gap-base')
-    expect(style).toContain('--grid-column-gap-base')
-    expect(style).toContain('--grid-auto-flow-base')
-    expect(style).toContain('--grid-auto-rows-sm')
-    expect(style).toContain('--grid-auto-columns-md')
-    expect(style).toContain('--grid-place-items-lg')
-    expect(style).toContain('--grid-place-content-xl')
+    expect(style).toContain('--neb-grid-columns-base')
+    expect(style).toContain('--neb-grid-rows-base')
+    expect(style).toContain('--neb-grid-gap-base')
+    expect(style).toContain('--neb-grid-row-gap-base')
+    expect(style).toContain('--neb-grid-column-gap-base')
+    expect(style).toContain('--neb-grid-auto-flow-base')
+    expect(style).toContain('--neb-grid-auto-rows-sm')
+    expect(style).toContain('--neb-grid-auto-columns-md')
+    expect(style).toContain('--neb-grid-place-items-lg')
+    expect(style).toContain('--neb-grid-place-content-xl')
   })
 
   it('user style overrides helper-provided CSS vars (merge order)', () => {
@@ -106,6 +106,6 @@ describe('Grid (no mocks)', () => {
 
     // Adding a prop should increase or change the style text (vars added)
     expect(withColumnsStyle.length).toBeGreaterThanOrEqual(baseStyle.length)
-    expect(withColumnsStyle).toContain('--grid-columns')
+    expect(withColumnsStyle).toContain('--neb-grid-columns')
   })
 })

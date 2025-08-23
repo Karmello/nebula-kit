@@ -1,5 +1,5 @@
 import { kebabCase } from 'lodash'
-import { BREAKPOINTS, CSS_VARS_CONFIG } from 'lib/definitions'
+import { BREAKPOINTS, CSS_VARS_CONFIG, LIB_PREFIX } from 'lib/definitions'
 
 import { getCssVars } from '../getCssVars'
 
@@ -27,10 +27,10 @@ describe('getCssVars', () => {
     const c = kebabCase('columns')
 
     BREAKPOINTS.forEach(bp => {
-      const gapKey = `--${prefix}-${g}-${bp}`
-      const colKey = `--${prefix}-${c}-${bp}`
+      const gapKey = `--${LIB_PREFIX}-${prefix}-${g}-${bp}`
+      const colKey = `--${LIB_PREFIX}-${prefix}-${c}-${bp}`
 
-      expect(out[gapKey as never]).toBe('var(--scale-2)')
+      expect(out[gapKey as never]).toBe('var(--neb-scale-2)')
       expect(out[colKey as never]).toBe('repeat(3, 1fr)')
     })
 
@@ -51,8 +51,8 @@ describe('getCssVars', () => {
     const lh = kebabCase('lineHeight')
 
     BREAKPOINTS.forEach(bp => {
-      expect(out[`--${prefix}-${p}-${bp}` as never]).toBe('var(--space-m)')
-      expect(out[`--${prefix}-${lh}-${bp}` as never]).toBe(1.5)
+      expect(out[`--${LIB_PREFIX}-${prefix}-${p}-${bp}` as never]).toBe('var(--space-m)')
+      expect(out[`--${LIB_PREFIX}-${prefix}-${lh}-${bp}` as never]).toBe(1.5)
     })
   })
 
@@ -76,9 +76,9 @@ describe('getCssVars', () => {
     let last = (responsive[BREAKPOINTS[0]] ?? undefined) as number | undefined
     BREAKPOINTS.forEach(bp => {
       if (responsive[bp] !== undefined) last = responsive[bp]
-      const key = `--${prefix}-${kebab}-${bp}`
+      const key = `--${LIB_PREFIX}-${prefix}-${kebab}-${bp}`
       // once a number appears, it should be wrapped with the scale token and persist forward
-      expect(out[key as never]).toBe(`var(--scale-${last})`)
+      expect(out[key as never]).toBe(`var(--neb-scale-${last})`)
     })
   })
 
@@ -96,8 +96,8 @@ describe('getCssVars', () => {
 
     // gap should carry 2 forward
     BREAKPOINTS.forEach(bp => {
-      expect(out[`--${prefix}-${g}-${bp}` as never]).toBe('var(--scale-2)')
-      expect(out[`--${prefix}-${c}-${bp}` as never]).toBe('repeat(4, 1fr)')
+      expect(out[`--${LIB_PREFIX}-${prefix}-${g}-${bp}` as never]).toBe(`var(--${LIB_PREFIX}-scale-2)`)
+      expect(out[`--${LIB_PREFIX}-${prefix}-${c}-${bp}` as never]).toBe('repeat(4, 1fr)')
     })
   })
 })

@@ -19,14 +19,14 @@
 }
 
 // .neb-table[data-table-zebra='true'] tbody tr:nth-child(odd) > :is(td, th) {
-//   background: var(--bg-tertiary);
+//   background: var(--neb-bg-tertiary);
 // }
 
 .neb-table[data-table-sticky-header='true'] thead th {
   position: sticky;
   top: 0;
   z-index: 1;
-  background: var(--bg-neutral);
+  background: var(--neb-bg-neutral);
 }
 
 .neb-table [data-table-head-cell-align='start'],

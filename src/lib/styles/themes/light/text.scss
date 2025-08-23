@@ -1,44 +1,44 @@
 html[data-theme='light'] {
   // neutral
-  --text-neutral: var(--gray-9);
+  --neb-text-neutral: var(--neb-gray-9);
 
   // primary
-  --text-primary: var(--blue-7);
-  --text-primary-hover: var(--blue-8);
-  --text-primary-active: var(--blue-9);
+  --neb-text-primary: var(--neb-blue-7);
+  --neb-text-primary-hover: var(--neb-blue-8);
+  --neb-text-primary-active: var(--neb-blue-9);
 
   // secondary
-  --text-secondary: var(--blue-5);
-  --text-secondary-hover: var(--blue-6);
-  --text-secondary-active: var(--blue-7);
+  --neb-text-secondary: var(--neb-blue-5);
+  --neb-text-secondary-hover: var(--neb-blue-6);
+  --neb-text-secondary-active: var(--neb-blue-7);
 
   // tertiary
-  --text-tertiary: var(--gray-5);
-  --text-tertiary-hover: var(--gray-6);
-  --text-tertiary-active: var(--gray-7);
+  --neb-text-tertiary: var(--neb-gray-5);
+  --neb-text-tertiary-hover: var(--neb-gray-6);
+  --neb-text-tertiary-active: var(--neb-gray-7);
 
   // success
-  --text-success: var(--green-6);
-  --text-success-hover: var(--green-7);
-  --text-success-active: var(--green-8);
+  --neb-text-success: var(--neb-green-6);
+  --neb-text-success-hover: var(--neb-green-7);
+  --neb-text-success-active: var(--neb-green-8);
 
   // info
-  --text-info: var(--sky-5);
-  --text-info-hover: var(--sky-6);
-  --text-info-active: var(--sky-7);
+  --neb-text-info: var(--neb-sky-5);
+  --neb-text-info-hover: var(--neb-sky-6);
+  --neb-text-info-active: var(--neb-sky-7);
 
   // warning
-  --text-warning: var(--amber-5);
-  --text-warning-hover: var(--amber-6);
-  --text-warning-active: var(--amber-7);
+  --neb-text-warning: var(--neb-amber-5);
+  --neb-text-warning-hover: var(--neb-amber-6);
+  --neb-text-warning-active: var(--neb-amber-7);
 
   // danger
-  --text-danger: var(--red-6);
-  --text-danger-hover: var(--red-7);
-  --text-danger-active: var(--red-8);
+  --neb-text-danger: var(--neb-red-6);
+  --neb-text-danger-hover: var(--neb-red-7);
+  --neb-text-danger-active: var(--neb-red-8);
 
   // inverse
-  --text-inverse: var(--gray-1);
-  --text-inverse-hover: var(--gray-2);
-  --text-inverse-active: var(--gray-3);
+  --neb-text-inverse: var(--neb-gray-1);
+  --neb-text-inverse-hover: var(--neb-gray-2);
+  --neb-text-inverse-active: var(--neb-gray-3);
 }

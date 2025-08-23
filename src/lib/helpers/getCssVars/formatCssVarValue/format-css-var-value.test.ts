@@ -12,9 +12,9 @@ describe('formatCssVarValue', () => {
     expect(formatCssVarValue('columns' as any, 1)).toBe('repeat(1, 1fr)')
   })
 
-  it('wraps other numeric props with var(--scale-<n>)', () => {
-    expect(formatCssVarValue('gap' as any, 4)).toBe('var(--scale-4)')
-    expect(formatCssVarValue('padding' as any, 0)).toBe('var(--scale-0)')
+  it('wraps other numeric props with var(--neb-scale-<n>)', () => {
+    expect(formatCssVarValue('gap' as any, 4)).toBe('var(--neb-scale-4)')
+    expect(formatCssVarValue('padding' as any, 0)).toBe('var(--neb-scale-0)')
   })
 
   it('returns string values unchanged', () => {

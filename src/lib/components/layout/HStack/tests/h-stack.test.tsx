@@ -13,7 +13,7 @@ function getFlexRoot(container: HTMLElement) {
 }
 
 describe('<HStack /> (real components + helpers)', () => {
-  it('applies gap as CSS custom properties when provided (number -> var(--scale-X))', () => {
+  it('applies gap as CSS custom properties when provided (number -> var(--neb-scale-X))', () => {
     const { container } = render(<HStack gap={6}>g</HStack>)
     const root = getFlexRoot(container)
 

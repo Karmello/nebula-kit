@@ -10,7 +10,7 @@ export const formatCssVarValue = (
     } else if (propName === 'columns') {
       return `repeat(${propValue}, 1fr)`
     } else {
-      return `var(--scale-${propValue})`
+      return `var(--neb-scale-${propValue})`
     }
   } else {
     return propValue

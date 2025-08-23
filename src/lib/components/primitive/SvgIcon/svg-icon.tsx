@@ -12,8 +12,8 @@ export const SvgIcon = ({ name, size }: SvgIconProps) => {
   return (
     <Svg
       style={{
-        width: size !== undefined ? `var(--scale-${size})` : undefined,
-        height: size !== undefined ? `var(--scale-${size})` : undefined,
+        width: size !== undefined ? `var(--neb-scale-${size})` : undefined,
+        height: size !== undefined ? `var(--neb-scale-${size})` : undefined,
       }}
     />
   )
