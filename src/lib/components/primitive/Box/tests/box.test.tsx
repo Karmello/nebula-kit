@@ -14,10 +14,10 @@ describe('<Box /> runtime', () => {
   it('emits data attributes for variant/intent/interactive/disabled', () => {
     render(<Box data-testid="box" variant="ghost" intent="danger" interactive disabled />)
     const el = screen.getByTestId('box')
-    expect(el).toHaveAttribute('data-box-variant', 'ghost')
-    expect(el).toHaveAttribute('data-box-intent', 'danger')
-    expect(el).toHaveAttribute('data-box-interactive', 'true')
-    expect(el).toHaveAttribute('data-box-disabled', 'true')
+    expect(el).toHaveAttribute('data-neb-box-variant', 'ghost')
+    expect(el).toHaveAttribute('data-neb-box-intent', 'danger')
+    expect(el).toHaveAttribute('data-neb-box-interactive', 'true')
+    expect(el).toHaveAttribute('data-neb-box-disabled', 'true')
   })
 
   it('writes CSS vars for padding (scalar token) with box prefix', () => {

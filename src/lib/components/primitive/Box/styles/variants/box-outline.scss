@@ -1,107 +1,107 @@
-.neb-box[data-box-variant='outline'] {
+.neb-box[data-neb-box-variant='outline'] {
   background-color: transparent;
 
-  &[data-box-intent='neutral'] {
+  &[data-neb-box-intent='neutral'] {
     border-color: var(--neb-border-neutral);
     color: var(--neb-text-neutral);
   }
-  &[data-box-intent='primary'] {
+  &[data-neb-box-intent='primary'] {
     border-color: var(--neb-border-primary);
     color: var(--neb-text-primary);
   }
-  &[data-box-intent='secondary'] {
+  &[data-neb-box-intent='secondary'] {
     border-color: var(--neb-border-secondary);
     color: var(--neb-text-secondary);
   }
-  &[data-box-intent='tertiary'] {
+  &[data-neb-box-intent='tertiary'] {
     border-color: var(--neb-border-tertiary);
     color: var(--neb-text-tertiary);
   }
-  &[data-box-intent='success'] {
+  &[data-neb-box-intent='success'] {
     border-color: var(--neb-border-success);
     color: var(--neb-text-success);
   }
-  &[data-box-intent='info'] {
+  &[data-neb-box-intent='info'] {
     border-color: var(--neb-border-info);
     color: var(--neb-text-info);
   }
-  &[data-box-intent='warning'] {
+  &[data-neb-box-intent='warning'] {
     border-color: var(--neb-border-warning);
     color: var(--neb-text-warning);
   }
-  &[data-box-intent='danger'] {
+  &[data-neb-box-intent='danger'] {
     border-color: var(--neb-border-danger);
     color: var(--neb-text-danger);
   }
-  &[data-box-intent='inverse'] {
+  &[data-neb-box-intent='inverse'] {
     border-color: var(--neb-border-inverse);
     color: var(--neb-text-neutral);
   }
 }
 
-.neb-box[data-box-variant='outline'][data-box-interactive='true']:hover {
-  &[data-box-intent='neutral'] {
+.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:hover {
+  &[data-neb-box-intent='neutral'] {
     border-color: var(--neb-border-neutral-hover);
   }
-  &[data-box-intent='primary'] {
+  &[data-neb-box-intent='primary'] {
     border-color: var(--neb-border-primary-hover);
     color: var(--neb-text-primary-hover);
   }
-  &[data-box-intent='secondary'] {
+  &[data-neb-box-intent='secondary'] {
     border-color: var(--neb-border-secondary-hover);
     color: var(--neb-text-secondary-hover);
   }
-  &[data-box-intent='tertiary'] {
+  &[data-neb-box-intent='tertiary'] {
     border-color: var(--neb-border-tertiary-hover);
     color: var(--neb-text-tertiary-hover);
   }
-  &[data-box-intent='success'] {
+  &[data-neb-box-intent='success'] {
     border-color: var(--neb-border-success-hover);
     color: var(--neb-text-success-hover);
   }
-  &[data-box-intent='info'] {
+  &[data-neb-box-intent='info'] {
     border-color: var(--neb-border-info-hover);
     color: var(--neb-text-info-hover);
   }
-  &[data-box-intent='warning'] {
+  &[data-neb-box-intent='warning'] {
     border-color: var(--neb-border-warning-hover);
     color: var(--neb-text-warning-hover);
   }
-  &[data-box-intent='danger'] {
+  &[data-neb-box-intent='danger'] {
     border-color: var(--neb-border-danger-hover);
     color: var(--neb-text-danger-hover);
   }
 }
 
-.neb-box[data-box-variant='outline'][data-box-interactive='true']:active {
-  &[data-box-intent='neutral'] {
+.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:active {
+  &[data-neb-box-intent='neutral'] {
     border-color: var(--neb-border-neutral-active);
   }
-  &[data-box-intent='primary'] {
+  &[data-neb-box-intent='primary'] {
     border-color: var(--neb-border-primary-active);
     color: var(--neb-text-primary-active);
   }
-  &[data-box-intent='secondary'] {
+  &[data-neb-box-intent='secondary'] {
     border-color: var(--neb-border-secondary-active);
     color: var(--neb-text-secondary-active);
   }
-  &[data-box-intent='tertiary'] {
+  &[data-neb-box-intent='tertiary'] {
     border-color: var(--neb-border-tertiary-active);
     color: var(--neb-text-tertiary-active);
   }
-  &[data-box-intent='success'] {
+  &[data-neb-box-intent='success'] {
     border-color: var(--neb-border-success-active);
     color: var(--neb-text-success-active);
   }
-  &[data-box-intent='info'] {
+  &[data-neb-box-intent='info'] {
     border-color: var(--neb-border-info-active);
     color: var(--neb-text-info-active);
   }
-  &[data-box-intent='warning'] {
+  &[data-neb-box-intent='warning'] {
     border-color: var(--neb-border-warning-active);
     color: var(--neb-text-warning-active);
   }
-  &[data-box-intent='danger'] {
+  &[data-neb-box-intent='danger'] {
     border-color: var(--neb-border-danger-active);
     color: var(--neb-text-danger-active);
   }

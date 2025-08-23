@@ -75,7 +75,7 @@ export const Button = ({
       pl={isSquare ? 0 : SIZE_TO_PROPS[size].pl}
       pr={isSquare ? 0 : SIZE_TO_PROPS[size].pr}
       {...{
-        'data-btn-square': isSquare,
+        'data-neb-btn-square': isSquare,
       }}
     >
       <WithIcon iconName={iconName} iconPosition={iconPosition}>

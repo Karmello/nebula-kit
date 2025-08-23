@@ -1,83 +1,83 @@
-.neb-box[data-box-variant='ghost'] {
+.neb-box[data-neb-box-variant='ghost'] {
   background-color: transparent;
   border-color: transparent;
 
-  &[data-box-intent='primary'] {
+  &[data-neb-box-intent='primary'] {
     color: var(--neb-text-primary);
   }
-  &[data-box-intent='secondary'] {
+  &[data-neb-box-intent='secondary'] {
     color: var(--neb-text-secondary);
   }
-  &[data-box-intent='tertiary'] {
+  &[data-neb-box-intent='tertiary'] {
     color: var(--neb-text-tertiary);
   }
-  &[data-box-intent='success'] {
+  &[data-neb-box-intent='success'] {
     color: var(--neb-text-success);
   }
-  &[data-box-intent='info'] {
+  &[data-neb-box-intent='info'] {
     color: var(--neb-text-info);
   }
-  &[data-box-intent='warning'] {
+  &[data-neb-box-intent='warning'] {
     color: var(--neb-text-warning);
   }
-  &[data-box-intent='danger'] {
+  &[data-neb-box-intent='danger'] {
     color: var(--neb-text-danger);
   }
-  &[data-box-intent='inverse'] {
+  &[data-neb-box-intent='inverse'] {
     color: var(--neb-text-inverse);
   }
 }
 
-.neb-box[data-box-variant='ghost'][data-box-interactive='true']:hover {
-  &[data-box-intent='primary'] {
+.neb-box[data-neb-box-variant='ghost'][data-neb-box-interactive='true']:hover {
+  &[data-neb-box-intent='primary'] {
     color: var(--neb-text-primary-hover);
   }
-  &[data-box-intent='secondary'] {
+  &[data-neb-box-intent='secondary'] {
     color: var(--neb-text-secondary-hover);
   }
-  &[data-box-intent='tertiary'] {
+  &[data-neb-box-intent='tertiary'] {
     color: var(--neb-text-tertiary-hover);
   }
-  &[data-box-intent='success'] {
+  &[data-neb-box-intent='success'] {
     color: var(--neb-text-success-hover);
   }
-  &[data-box-intent='info'] {
+  &[data-neb-box-intent='info'] {
     color: var(--neb-text-info-hover);
   }
-  &[data-box-intent='warning'] {
+  &[data-neb-box-intent='warning'] {
     color: var(--neb-text-warning-hover);
   }
-  &[data-box-intent='danger'] {
+  &[data-neb-box-intent='danger'] {
     color: var(--neb-text-danger-hover);
   }
-  &[data-box-intent='inverse'] {
+  &[data-neb-box-intent='inverse'] {
     color: var(--neb-text-inverse-hover);
   }
 }
 
-.neb-box[data-box-variant='ghost'][data-box-interactive='true']:active {
-  &[data-box-intent='primary'] {
+.neb-box[data-neb-box-variant='ghost'][data-neb-box-interactive='true']:active {
+  &[data-neb-box-intent='primary'] {
     color: var(--neb-text-primary-active);
   }
-  &[data-box-intent='secondary'] {
+  &[data-neb-box-intent='secondary'] {
     color: var(--neb-text-secondary-active);
   }
-  &[data-box-intent='tertiary'] {
+  &[data-neb-box-intent='tertiary'] {
     color: var(--neb-text-tertiary-active);
   }
-  &[data-box-intent='success'] {
+  &[data-neb-box-intent='success'] {
     color: var(--neb-text-success-active);
   }
-  &[data-box-intent='info'] {
+  &[data-neb-box-intent='info'] {
     color: var(--neb-text-info-active);
   }
-  &[data-box-intent='warning'] {
+  &[data-neb-box-intent='warning'] {
     color: var(--neb-text-warning-active);
   }
-  &[data-box-intent='danger'] {
+  &[data-neb-box-intent='danger'] {
     color: var(--neb-text-danger-active);
   }
-  &[data-box-intent='inverse'] {
+  &[data-neb-box-intent='inverse'] {
     color: var(--neb-text-inverse-active);
   }
 }

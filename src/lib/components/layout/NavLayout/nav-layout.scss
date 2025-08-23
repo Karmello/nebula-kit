@@ -11,6 +11,6 @@
   }
 }
 
-.neb-nav-layout[data-nav-layout-side='right'] {
+.neb-nav-layout[data-neb-nav-layout-side='right'] {
   grid-template-columns: 1fr var(--neb-nav-layout-side-width-base);
 }

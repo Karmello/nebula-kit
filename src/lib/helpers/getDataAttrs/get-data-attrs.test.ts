@@ -21,13 +21,13 @@ describe('getDataAttrs', () => {
     } as any)
 
     expect(out).toEqual({
-      'data-box-variant': 'primary',
-      'data-box-intent': 'success',
-      'data-box-interactive': true,
-      'data-box-disabled': false,
-      'data-box-typography': 'body-m',
-      'data-box-side': 'left',
-      'data-box-open': true,
+      'data-neb-box-variant': 'primary',
+      'data-neb-box-intent': 'success',
+      'data-neb-box-interactive': true,
+      'data-neb-box-disabled': false,
+      'data-neb-box-typography': 'body-m',
+      'data-neb-box-side': 'left',
+      'data-neb-box-open': true,
     })
   })
 
@@ -40,8 +40,8 @@ describe('getDataAttrs', () => {
     } as any)
 
     expect(out).toEqual({
-      'data-box-intent': 'danger',
-      'data-box-disabled': true,
+      'data-neb-box-intent': 'danger',
+      'data-neb-box-disabled': true,
     })
   })
 
@@ -52,8 +52,8 @@ describe('getDataAttrs', () => {
     } as any)
 
     expect(out).toEqual({
-      'data-nav-layout-side': 'start',
-      'data-nav-layout-open': false,
+      'data-neb-nav-layout-side': 'start',
+      'data-neb-nav-layout-open': false,
     })
   })
 
@@ -63,10 +63,10 @@ describe('getDataAttrs', () => {
       interactive: false,
     } as any)
 
-    expect(typeof out['data-text-disabled' as never]).toBe('boolean')
-    expect(typeof out['data-text-interactive' as never]).toBe('boolean')
-    expect(out['data-text-disabled' as never]).toBe(true)
-    expect(out['data-text-interactive' as never]).toBe(false)
+    expect(typeof out['data-neb-text-disabled' as never]).toBe('boolean')
+    expect(typeof out['data-neb-text-interactive' as never]).toBe('boolean')
+    expect(out['data-neb-text-disabled' as never]).toBe(true)
+    expect(out['data-neb-text-interactive' as never]).toBe(false)
   })
 
   it('current behavior: unknown keys are forwarded if present on the object', () => {
@@ -78,8 +78,8 @@ describe('getDataAttrs', () => {
     } as any)
 
     // data attribute for known key
-    expect(out['data-box-variant' as never]).toBe('ghost')
+    expect(out['data-neb-box-variant' as never]).toBe('ghost')
     // data attribute for unknown key (documenting current behavior)
-    expect(out['data-box-custom' as never]).toBe('whoops')
+    expect(out['data-neb-box-custom' as never]).toBe('whoops')
   })
 })

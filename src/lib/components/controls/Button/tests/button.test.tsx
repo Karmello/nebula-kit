@@ -37,29 +37,29 @@ describe('<Button /> (real components + system helpers)', () => {
     expect(root).toBeDisabled()
 
     // data-* from real getDataAttrs (Box typically emits these)
-    expect(root).toHaveAttribute('data-box-variant', 'solid')
-    expect(root).toHaveAttribute('data-box-intent', 'primary')
+    expect(root).toHaveAttribute('data-neb-box-variant', 'solid')
+    expect(root).toHaveAttribute('data-neb-box-intent', 'primary')
     // Button sets interactive (boolean) on Box
-    expect(root).toHaveAttribute('data-box-interactive', 'true')
+    expect(root).toHaveAttribute('data-neb-box-interactive', 'true')
     // disabled also appears as data attr via helpers
-    expect(root).toHaveAttribute('data-box-disabled', 'true')
+    expect(root).toHaveAttribute('data-neb-box-disabled', 'true')
   })
 
   it('sets data-square=true when no children (icon-only or empty), else false', () => {
     // no children
     const { container, rerender } = render(<Button />)
     let root = getButtonRoot(container)
-    expect(root).toHaveAttribute('data-btn-square', 'true')
+    expect(root).toHaveAttribute('data-neb-btn-square', 'true')
 
     // icon-only still counts as "square" (no children text)
     rerender(<Button iconName="search" />)
     root = getButtonRoot(container)
-    expect(root).toHaveAttribute('data-btn-square', 'true')
+    expect(root).toHaveAttribute('data-neb-btn-square', 'true')
 
     // with children -> not square
     rerender(<Button iconName="search">Star</Button>)
     root = getButtonRoot(container)
-    expect(root).toHaveAttribute('data-btn-square', 'false')
+    expect(root).toHaveAttribute('data-neb-btn-square', 'false')
   })
 
   it('respects size prop without breaking semantics (sm, md, lg)', () => {
