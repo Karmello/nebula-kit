@@ -44,7 +44,7 @@ const SIZE_TO_PROPS: Record<
   lg: { height: 26, pl: 12, pr: 12, fontSize: 9 },
 }
 
-/** Button is a polymorphic action component built on Box. It supports variants, intents, and sizes, with optional icons on either side. Padding and height adjust automatically per size, and when no children are provided it renders as a square icon-only button. */
+/** Button is a polymorphic action component built on Box. It supports variants, intents, and sizes, with optional icons on either side. Padding and height adjust automatically per size. */
 export const Button = ({
   ref,
   type = 'button',
@@ -58,8 +58,6 @@ export const Button = ({
   children,
   ...rest
 }: ButtonProps) => {
-  const isSquare = !children
-
   return (
     <Box
       ref={ref}
@@ -72,11 +70,6 @@ export const Button = ({
       disabled={disabled}
       interactive
       {...SIZE_TO_PROPS[size]}
-      pl={isSquare ? 0 : SIZE_TO_PROPS[size].pl}
-      pr={isSquare ? 0 : SIZE_TO_PROPS[size].pr}
-      {...{
-        'data-neb-btn-square': isSquare,
-      }}
     >
       <WithIcon iconName={iconName} iconPosition={iconPosition}>
         {children}

@@ -54,7 +54,7 @@
         "ghost"
       ],
       "required": false,
-      "defaultValue": "",
+      "defaultValue": "'solid'",
       "description": "Visual style of the box surface (e.g. solid, outline)"
     },
     {
@@ -72,7 +72,7 @@
         "inverse"
       ],
       "required": false,
-      "defaultValue": "",
+      "defaultValue": "'neutral'",
       "description": "Semantic tone or purpose (e.g. neutral, success, danger)"
     }
   ]

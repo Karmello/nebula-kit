@@ -13,6 +13,7 @@ export enum RoutingItemKey {
   table = 'table',
   text = 'text',
   button = 'button',
+  iconButton = 'icon-button',
   stack = 'stack',
   hstack = 'h-stack',
   vstack = 'v-stack',

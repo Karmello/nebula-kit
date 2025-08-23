@@ -1,10 +1,22 @@
 {
-  "name": "Button",
-  "description": "Button is a polymorphic action component built on Box. It supports variants, intents, and sizes, with optional icons on either side. Padding and height adjust automatically per size.",
+  "name": "IconButton",
+  "description": "IconButton is a specialized button for icon-only actions. It inherits all button styling (variants, intents, sizes, disabled state) but omits children, always rendering a single icon centered within a square button.",
   "props": [
     {
+      "name": "iconName",
+      "type": "ButtonOwnProps['iconName']",
+      "options": [
+        "check",
+        "close",
+        "search"
+      ],
+      "required": true,
+      "defaultValue": "",
+      "description": "Icon name to render inside the button"
+    },
+    {
       "name": "variant",
-      "type": "BoxOwnProps['variant']",
+      "type": "ButtonOwnProps['variant']",
       "options": [
         "solid",
         "outline",
@@ -16,7 +28,7 @@
     },
     {
       "name": "intent",
-      "type": "BoxOwnProps['intent']",
+      "type": "ButtonOwnProps['intent']",
       "options": [
         "neutral",
         "primary",
@@ -34,7 +46,7 @@
     },
     {
       "name": "disabled",
-      "type": "BoxOwnProps['disabled']",
+      "type": "ButtonOwnProps['disabled']",
       "options": [],
       "required": false,
       "defaultValue": "false",
@@ -42,7 +54,7 @@
     },
     {
       "name": "size",
-      "type": "ButtonSize",
+      "type": "ButtonOwnProps['size']",
       "options": [
         "sm",
         "md",
@@ -50,30 +62,7 @@
       ],
       "required": false,
       "defaultValue": "'md'",
-      "description": "Button size controlling height, padding, and font size"
-    },
-    {
-      "name": "iconName",
-      "type": "WithIconProps['iconName']",
-      "options": [
-        "check",
-        "close",
-        "search"
-      ],
-      "required": false,
-      "defaultValue": "",
-      "description": "Optional icon name to render inside the button"
-    },
-    {
-      "name": "iconPosition",
-      "type": "WithIconProps['iconPosition']",
-      "options": [
-        "left",
-        "right"
-      ],
-      "required": false,
-      "defaultValue": "",
-      "description": "Position of the icon relative to text (e.g. left or right)"
+      "description": "Button size controlling height and font size"
     }
   ]
 }

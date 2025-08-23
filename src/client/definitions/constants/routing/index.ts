@@ -7,7 +7,7 @@ export const PLAYGROUND_ROUTING_CONFIG = [
   },
   {
     key: RoutingCategoryKey.controls,
-    items: [RoutingItemKey.button],
+    items: [RoutingItemKey.button, RoutingItemKey.iconButton],
   },
   {
     key: RoutingCategoryKey.elements,
