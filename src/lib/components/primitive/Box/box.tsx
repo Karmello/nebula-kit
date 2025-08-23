@@ -2,8 +2,16 @@ import { ElementType } from 'react'
 import classNames from 'classnames'
 
 import { withPrefix, getCssVars, getDataAttrs } from 'lib/helpers'
-import { PolymorphicProps, ResponsiveProp, ScaleValue, TextAlign } from 'lib/definitions'
-import { BoxVariant, BoxIntent } from './definitions'
+
+import {
+  BOX_CSS_VARS,
+  PolymorphicProps,
+  ResponsiveProp,
+  ScaleValue,
+  TextAlign,
+  BoxVariant,
+  BoxIntent,
+} from 'lib/definitions'
 
 import './styles/box.scss'
 
@@ -69,26 +77,26 @@ export const Box = <E extends ElementType = 'div'>({
   intent = 'neutral',
   interactive = false,
   disabled = false,
-  fontSize = 'inherit',
-  lineHeight = 'normal',
-  textAlign = 'initial',
-  height = 'inherit',
-  minHeight = 'inherit',
-  maxHeight = 'inherit',
-  pt = 0,
-  pr = 0,
-  pb = 0,
-  pl = 0,
-  px = 0,
-  py = 0,
-  p = 0,
-  mt = 0,
-  mr = 0,
-  mb = 0,
-  ml = 0,
-  mx = 0,
-  my = 0,
-  m = 0,
+  fontSize = BOX_CSS_VARS.fontSize,
+  lineHeight = BOX_CSS_VARS.lineHeight,
+  textAlign = BOX_CSS_VARS.textAlign,
+  height = BOX_CSS_VARS.height,
+  minHeight = BOX_CSS_VARS.minHeight,
+  maxHeight = BOX_CSS_VARS.maxHeight,
+  pt = BOX_CSS_VARS.pt,
+  pr = BOX_CSS_VARS.pr,
+  pb = BOX_CSS_VARS.pb,
+  pl = BOX_CSS_VARS.pl,
+  px = BOX_CSS_VARS.px,
+  py = BOX_CSS_VARS.py,
+  p = BOX_CSS_VARS.p,
+  mt = BOX_CSS_VARS.mt,
+  mr = BOX_CSS_VARS.mr,
+  mb = BOX_CSS_VARS.mb,
+  ml = BOX_CSS_VARS.ml,
+  mx = BOX_CSS_VARS.mx,
+  my = BOX_CSS_VARS.my,
+  m = BOX_CSS_VARS.m,
   ...rest
 }: BoxProps<E>) => {
   const As = (as || 'div') as ElementType

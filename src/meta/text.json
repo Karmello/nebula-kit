@@ -16,7 +16,7 @@
         "span"
       ],
       "required": false,
-      "defaultValue": "'p'",
+      "defaultValue": "",
       "description": "Underlying HTML tag to render for the text element (defaults to the tag implied by typography)"
     },
     {

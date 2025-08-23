@@ -10,6 +10,7 @@ export enum RoutingItemKey {
   box = 'box',
   flex = 'flex',
   grid = 'grid',
+  table = 'table',
   text = 'text',
   button = 'button',
   stack = 'stack',

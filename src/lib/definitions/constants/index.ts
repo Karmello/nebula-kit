@@ -10,13 +10,27 @@ export const SCALE = [
   56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80,
 ] as const
 
-const BOX_CSS_VARS: BoxCssVars = {
+export const BOX_VARIANTS = ['solid', 'outline', 'ghost'] as const
+
+export const BOX_INTENTS = [
+  'neutral',
+  'primary',
+  'secondary',
+  'tertiary',
+  'success',
+  'info',
+  'warning',
+  'danger',
+  'inverse',
+] as const
+
+export const BOX_CSS_VARS: BoxCssVars = {
   fontSize: 'inherit',
   lineHeight: 'normal',
   textAlign: 'initial',
-  height: 'inherit',
-  minHeight: 'inherit',
-  maxHeight: 'inherit',
+  height: 'auto',
+  minHeight: 'auto',
+  maxHeight: 'none',
   p: 0,
   pb: 0,
   pl: 0,
@@ -33,7 +47,7 @@ const BOX_CSS_VARS: BoxCssVars = {
   my: 0,
 }
 
-const FLEX_CSS_VARS: FlexCssVars = {
+export const FLEX_CSS_VARS: FlexCssVars = {
   direction: 'row',
   wrap: 'nowrap',
   justify: 'flex-start',
@@ -43,7 +57,7 @@ const FLEX_CSS_VARS: FlexCssVars = {
   columnGap: 0,
 }
 
-const GRID_CSS_VARS: GridCssVars = {
+export const GRID_CSS_VARS: GridCssVars = {
   columns: '1fr',
   rows: 'auto',
   gap: 0,
@@ -56,11 +70,11 @@ const GRID_CSS_VARS: GridCssVars = {
   placeContent: 'start',
 }
 
-const CLUSTER_CSS_VARS: ClusterCssVars = {
+export const CLUSTER_CSS_VARS: ClusterCssVars = {
   minItemWidth: 'auto',
 }
 
-const NAV_LAYOUT_CSS_VARS: NavLayoutCssVars = {
+export const NAV_LAYOUT_CSS_VARS: NavLayoutCssVars = {
   sideWidth: 80,
 }
 

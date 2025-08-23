@@ -8,8 +8,7 @@ import type { StackOwnProps } from 'lib/components'
 expectType<JSX.Element>(<VStack />)
 
 // gap comes from StackOwnProps (rowGap/columnGap omitted)
-const gap: StackOwnProps['gap'] = 4
-expectType<JSX.Element>(<VStack gap={gap} />)
+expectType<JSX.Element>(<VStack gap={4} />)
 
 // style / className passthrough
 expectType<JSX.Element>(<VStack className="col" style={{ display: 'flex' }} />)
@@ -39,7 +38,3 @@ expectAssignable<ComponentProps<typeof VStack>>({})
 
 // Unknown props should fail
 expectError(<VStack nope="x" />)
-
-// Own props compatibility
-const own: VStackOwnProps = { gap }
-expectType<JSX.Element>(<VStack {...own} />)

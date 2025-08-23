@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { Flex, FlexOwnProps } from 'lib/components'
 import { withPrefix, getCssVars } from 'lib/helpers'
-import { PolymorphicProps, ResponsiveProp, ScaleValue } from 'lib/definitions'
+import { CLUSTER_CSS_VARS, PolymorphicProps, ResponsiveProp, ScaleValue } from 'lib/definitions'
 
 import './cluster.scss'
 
@@ -21,7 +21,7 @@ export const Cluster = <E extends ElementType = 'div'>({
   align = 'center',
   justify = 'flex-start',
   gap = 4,
-  minItemWidth,
+  minItemWidth = CLUSTER_CSS_VARS.minItemWidth,
   className,
   style,
   ...rest

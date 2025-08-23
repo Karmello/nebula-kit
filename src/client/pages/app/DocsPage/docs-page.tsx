@@ -10,7 +10,7 @@ import { formatAsQueryString, useNavigateTo } from 'client/services'
 import { DOCS_ROUTING_CONFIG, RoutingCategoryKey, RoutingItemKey } from 'client/definitions'
 import { CompMetaRenderer } from 'client/components'
 
-const DOCS_PAGES = DOCS_ROUTING_CONFIG.map(({ key, items }, index) => ({
+const DOCS_PAGES = DOCS_ROUTING_CONFIG.map(({ key, items }) => ({
   key,
   label: sentenceCase(key),
   items: items.map(key => ({ key, label: pascalCase(key) })),

@@ -65,7 +65,7 @@ const TYPOGRAPHY_TO_PROPS: Record<
 export const Text = ({
   children,
   ref,
-  as = 'p',
+  as,
   intent = 'neutral',
   fontSize = 8,
   lineHeight = 'normal',

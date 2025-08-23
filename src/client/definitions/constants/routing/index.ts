@@ -3,7 +3,7 @@ import { RoutingCategoryKey, RoutingItemKey } from 'client/definitions'
 export const PLAYGROUND_ROUTING_CONFIG = [
   {
     key: RoutingCategoryKey.primitive,
-    items: [RoutingItemKey.box, RoutingItemKey.flex, RoutingItemKey.grid],
+    items: [RoutingItemKey.box, RoutingItemKey.flex, RoutingItemKey.grid, RoutingItemKey.table],
   },
   {
     key: RoutingCategoryKey.controls,

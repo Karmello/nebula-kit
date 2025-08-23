@@ -1,3 +1,4 @@
+import { Text, Table, TableHead, TableBody, TableRow, TableHeadCell, TableCell } from 'lib/components'
 import { ComponentMeta } from 'lib/definitions'
 
 export const CompMetaRenderer = ({ data }: { data: ComponentMeta }) => {
@@ -7,32 +8,32 @@ export const CompMetaRenderer = ({ data }: { data: ComponentMeta }) => {
 
   return (
     <>
-      <p>{data.name}</p>
-      <p>{data.description}</p>
-      <table>
-        <thead>
-          <tr>
-            <td>Name</td>
-            <td>Type</td>
-            <td>Options</td>
-            <td>Required</td>
-            <td>Default</td>
-            <td>Description</td>
-          </tr>
-        </thead>
-        <tbody>
+      <Text>{data.name}</Text>
+      <Text>{data.description}</Text>
+      <Table zebra>
+        <TableHead>
+          <TableRow>
+            <TableHeadCell>Name</TableHeadCell>
+            <TableHeadCell>Type</TableHeadCell>
+            <TableHeadCell>Options</TableHeadCell>
+            <TableHeadCell>Required</TableHeadCell>
+            <TableHeadCell>Default</TableHeadCell>
+            <TableHeadCell>Description</TableHeadCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
           {data.props.map(({ name, type, options, required, defaultValue, description }) => (
-            <tr key={name}>
-              <td>{name}</td>
-              <td>{type}</td>
-              <td>{typeof options === 'string' ? options : options.join(' | ')}</td>
-              <td>{required ? 'true' : ''}</td>
-              <td>{defaultValue}</td>
-              <td>{description}</td>
-            </tr>
+            <TableRow key={name}>
+              <TableCell>{name}</TableCell>
+              <TableCell>{type}</TableCell>
+              <TableCell>{typeof options === 'string' ? options : options.join(' | ')}</TableCell>
+              <TableCell>{required ? 'true' : ''}</TableCell>
+              <TableCell>{defaultValue}</TableCell>
+              <TableCell>{description}</TableCell>
+            </TableRow>
           ))}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
     </>
   )
 }

@@ -1,0 +1,79 @@
+{
+  "name": "Table",
+  "description": "Table is a low-level primitive for rendering semantic HTML tables with consistent styling and theming. It always renders a native <table> element and exposes props for layout (auto or fixed), borders, zebra striping, and sticky headers. Use it with companion components (TableHead, TableBody, TableRow, TableCell, etc.) to build accessible, fully-customizable tabular layouts.",
+  "props": [
+    {
+      "name": "layout",
+      "type": "TableLayout",
+      "options": [
+        "auto",
+        "fixed"
+      ],
+      "required": false,
+      "defaultValue": "'auto'",
+      "description": "Table layout algorithm; maps to CSS table-layout"
+    },
+    {
+      "name": "zebra",
+      "type": "boolean",
+      "options": [],
+      "required": false,
+      "defaultValue": "false",
+      "description": "Adds row striping via data attribute"
+    },
+    {
+      "name": "bordered",
+      "type": "boolean",
+      "options": [],
+      "required": false,
+      "defaultValue": "false",
+      "description": "Renders borders via data attribute"
+    },
+    {
+      "name": "stickyHeader",
+      "type": "boolean",
+      "options": [],
+      "required": false,
+      "defaultValue": "false",
+      "description": "Makes header sticky (requires a set height/overflow on the container)"
+    },
+    {
+      "name": "scrollable",
+      "type": "boolean",
+      "options": [],
+      "required": false,
+      "defaultValue": "false",
+      "description": "Wraps the table in a scroll container when true"
+    },
+    {
+      "name": "variant",
+      "type": "BoxOwnProps['variant']",
+      "options": [
+        "solid",
+        "outline",
+        "ghost"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": "Visual style of the box surface (e.g. solid, outline)"
+    },
+    {
+      "name": "intent",
+      "type": "BoxOwnProps['intent']",
+      "options": [
+        "neutral",
+        "primary",
+        "secondary",
+        "tertiary",
+        "success",
+        "info",
+        "warning",
+        "danger",
+        "inverse"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": "Semantic tone or purpose (e.g. neutral, success, danger)"
+    }
+  ]
+}

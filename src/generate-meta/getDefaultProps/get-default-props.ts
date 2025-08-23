@@ -8,10 +8,8 @@ export const getDefaultProps = (program: Program, source: string, componentName:
 
   // --- helpers ---------------------------------------------------------------
 
-  // Strip type assertions and wrappers: "('div' as E)", "<E>'div'", "'x' as const", "expr satisfies T", parentheses
   const unwrapValue = (expr: ts.Expression): ts.Expression => {
     let e: ts.Expression = expr
-    // unwrap loops in case of nested assertions/paren
     for (;;) {
       if (ts.isAsExpression(e)) {
         e = e.expression
@@ -34,15 +32,16 @@ export const getDefaultProps = (program: Program, source: string, componentName:
     return e
   }
 
-  // Try to resolve enum members like Language.DEFAULT -> 'en' or 0
   const resolveEnumMemberLiteral = (expr: ts.Expression): string | number | undefined => {
     const e = unwrapValue(expr)
     const targetNode = ts.isPropertyAccessExpression(e) ? e.name : e
     let sym = checker.getSymbolAtLocation(targetNode)
     if (!sym) return
-
     if (sym.flags & ts.SymbolFlags.Alias) {
-      sym = checker.getAliasedSymbol(sym)
+      try {
+        sym = checker.getAliasedSymbol(sym)
+        // eslint-disable-next-line no-empty
+      } catch {}
     }
 
     const decl = (sym.valueDeclaration ?? sym.declarations?.[0]) as ts.Declaration | undefined
@@ -78,32 +77,147 @@ export const getDefaultProps = (program: Program, source: string, componentName:
     return
   }
 
+  const getResolvedSymbol = (node: ts.Node): ts.Symbol | undefined => {
+    let sym = checker.getSymbolAtLocation(node)
+    if (!sym) return
+    if (sym.flags & ts.SymbolFlags.Alias) {
+      try {
+        sym = checker.getAliasedSymbol(sym)
+        // eslint-disable-next-line no-empty
+      } catch {}
+    }
+    return sym
+  }
+
+  const getInitializerFromSymbol = (sym: ts.Symbol): ts.Expression | undefined => {
+    const decl = (sym.valueDeclaration ?? sym.declarations?.[0]) as ts.Declaration | undefined
+    if (!decl) return
+    if (ts.isVariableDeclaration(decl) && decl.initializer) return decl.initializer
+    if (ts.isPropertyAssignment(decl) && decl.initializer) return decl.initializer
+    if (ts.isShorthandPropertyAssignment(decl)) {
+      const s = getResolvedSymbol(decl.name)
+      return s ? getInitializerFromSymbol(s) : undefined
+    }
+    return
+  }
+
+  const getPropFromObjectLiteral = (
+    obj: ts.ObjectLiteralExpression,
+    key: string
+  ): ts.Expression | undefined => {
+    for (const p of obj.properties) {
+      if (!ts.isPropertyAssignment(p) && !ts.isShorthandPropertyAssignment(p)) continue
+      const nameNode = ts.isPropertyAssignment(p) ? p.name : p.name
+      let name: string | undefined
+      if (ts.isIdentifier(nameNode)) name = nameNode.text
+      else if (ts.isStringLiteral(nameNode) || ts.isNumericLiteral(nameNode)) name = nameNode.text
+      if (name === key) {
+        if (ts.isPropertyAssignment(p)) return p.initializer
+        if (ts.isShorthandPropertyAssignment(p)) {
+          const s = getResolvedSymbol(p.name)
+          return s ? getInitializerFromSymbol(s) : undefined
+        }
+      }
+    }
+    return
+  }
+
+  const resolvePropertyAccessChain = (expr: ts.Expression, depth = 0): ts.Expression | undefined => {
+    if (depth > 10) return
+    const e = unwrapValue(expr)
+
+    if (ts.isIdentifier(e)) {
+      const sym = getResolvedSymbol(e)
+      if (!sym) return
+      const init = getInitializerFromSymbol(sym)
+      if (!init) return
+      return unwrapValue(init)
+    }
+
+    if (ts.isPropertyAccessExpression(e)) {
+      // NEW: try resolving the whole A.B via symbol (covers namespace imports / re-exports)
+      const paSym = getResolvedSymbol(e)
+      if (paSym) {
+        const init = getInitializerFromSymbol(paSym)
+        if (init) return resolvePropertyAccessChain(init, depth + 1) ?? unwrapValue(init)
+      }
+
+      // Then try resolving base → object literal
+      const base = resolvePropertyAccessChain(e.expression, depth + 1) ?? unwrapValue(e.expression)
+
+      if (ts.isObjectLiteralExpression(base)) {
+        const propInit = getPropFromObjectLiteral(base, e.name.text)
+        if (propInit) return resolvePropertyAccessChain(propInit, depth + 1) ?? unwrapValue(propInit)
+      }
+
+      if (ts.isIdentifier(base)) {
+        const sym = getResolvedSymbol(base)
+        const init = sym ? getInitializerFromSymbol(sym) : undefined
+        if (init && ts.isObjectLiteralExpression(unwrapValue(init))) {
+          const obj = unwrapValue(init) as ts.ObjectLiteralExpression
+          const propInit = getPropFromObjectLiteral(obj, e.name.text)
+          if (propInit) return resolvePropertyAccessChain(propInit, depth + 1) ?? unwrapValue(propInit)
+        }
+      }
+      return
+    }
+
+    if (ts.isElementAccessExpression(e)) {
+      const arg = e.argumentExpression && unwrapValue(e.argumentExpression)
+      const key =
+        arg && (ts.isStringLiteral(arg) || ts.isNoSubstitutionTemplateLiteral(arg) || ts.isIdentifier(arg))
+          ? ts.isIdentifier(arg)
+            ? arg.text
+            : arg.text
+          : undefined
+      if (!key) return
+      const base = resolvePropertyAccessChain(e.expression, depth + 1) ?? unwrapValue(e.expression)
+      if (ts.isObjectLiteralExpression(base)) {
+        const propInit = getPropFromObjectLiteral(base, key)
+        if (propInit) return resolvePropertyAccessChain(propInit, depth + 1) ?? unwrapValue(propInit)
+      }
+      if (ts.isIdentifier(base)) {
+        const sym = getResolvedSymbol(base)
+        const init = sym ? getInitializerFromSymbol(sym) : undefined
+        if (init && ts.isObjectLiteralExpression(unwrapValue(init))) {
+          const obj = unwrapValue(init) as ts.ObjectLiteralExpression
+          const propInit = getPropFromObjectLiteral(obj, key)
+          if (propInit) return resolvePropertyAccessChain(propInit, depth + 1) ?? unwrapValue(propInit)
+        }
+      }
+      return
+    }
+
+    return e
+  }
+
   const recordDefault = (key: string, valueNode: ts.Expression) => {
     const unwrapped = unwrapValue(valueNode)
 
-    // 1) Enums → literal values when possible
     const maybeEnum = resolveEnumMemberLiteral(unwrapped)
     if (maybeEnum !== undefined) {
       defaults[key] = String(maybeEnum)
       return
     }
 
-    // 2) Clean literal text (e.g., "'div'") or any other expression without the type coercion suffix
-    defaults[key] = unwrapped.getText(sf)
+    const resolved = resolvePropertyAccessChain(unwrapped)
+    if (resolved && resolved !== unwrapped) {
+      const clean = unwrapValue(resolved)
+      defaults[key] = clean.getText() // FIX: use node's own source file
+      return
+    }
+
+    defaults[key] = unwrapped.getText() // FIX: use node's own source file
   }
 
-  // Extract defaults from an ObjectBindingPattern like: ({ a = 1, b: c = 2 })
   const collectFromBinding = (binding: ts.ObjectBindingPattern) => {
     for (const el of binding.elements) {
       const nameNode = el.name
       const key = ts.isIdentifier(nameNode) ? nameNode.text : undefined
-      if (el.initializer && key) {
-        recordDefault(key, el.initializer)
-      }
+      if (el.initializer && key) recordDefault(key, el.initializer)
     }
   }
 
-  // Extract defaults from param default object: ( { a } = { a: 1 } )
   const collectFromParamDefaultObject = (param: ts.ParameterDeclaration) => {
     if (!param.initializer || !ts.isObjectLiteralExpression(param.initializer)) return
     for (const prop of param.initializer.properties) {
@@ -113,7 +227,6 @@ export const getDefaultProps = (program: Program, source: string, componentName:
     }
   }
 
-  // Given any node, peel off HOCs until you find an ArrowFunction/FunctionExpression
   const findInnerFunction = (node: ts.Node): ts.ArrowFunction | ts.FunctionExpression | undefined => {
     if (ts.isArrowFunction(node) || ts.isFunctionExpression(node)) return node
     if (ts.isCallExpression(node)) {
@@ -129,7 +242,6 @@ export const getDefaultProps = (program: Program, source: string, componentName:
   const handleComponentFunction = (fn: ts.ArrowFunction | ts.FunctionExpression) => {
     const firstParam = fn.parameters[0]
     if (!firstParam) return
-
     if (firstParam.name && ts.isObjectBindingPattern(firstParam.name)) {
       collectFromBinding(firstParam.name)
     }
@@ -137,7 +249,6 @@ export const getDefaultProps = (program: Program, source: string, componentName:
   }
 
   const visit = (node: Node) => {
-    // 1) const Component = (...) => {}
     if (ts.isVariableStatement(node)) {
       for (const decl of node.declarationList.declarations) {
         if (!ts.isIdentifier(decl.name) || decl.name.text !== componentName) continue
@@ -153,7 +264,6 @@ export const getDefaultProps = (program: Program, source: string, componentName:
       }
     }
 
-    // 2) function Component({ a = 1 }) {}
     if (ts.isFunctionDeclaration(node) && node.name?.text === componentName) {
       const params = node.parameters
       if (params.length) {

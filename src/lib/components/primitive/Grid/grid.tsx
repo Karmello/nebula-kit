@@ -4,6 +4,7 @@ import { Box, BoxOwnProps } from 'lib/components'
 import { withPrefix, getCssVars } from 'lib/helpers'
 
 import {
+  GRID_CSS_VARS,
   GridAutoFlow,
   GridPlaceContent,
   GridPlaceItems,
@@ -48,16 +49,16 @@ export const Grid = <E extends GridAs = 'div'>({
   as = 'div' as E,
   className,
   style,
-  columns = '1fr',
-  rows = 'auto',
-  gap = 0,
-  rowGap = 0,
-  columnGap = 0,
-  autoFlow = 'row',
-  autoRows = 'auto',
-  autoColumns = 'auto',
-  placeItems = 'stretch',
-  placeContent = 'start',
+  columns = GRID_CSS_VARS.columns,
+  rows = GRID_CSS_VARS.rows,
+  gap = GRID_CSS_VARS.gap,
+  rowGap = GRID_CSS_VARS.rowGap,
+  columnGap = GRID_CSS_VARS.columnGap,
+  autoFlow = GRID_CSS_VARS.autoFlow,
+  autoRows = GRID_CSS_VARS.autoRows,
+  autoColumns = GRID_CSS_VARS.autoColumns,
+  placeItems = GRID_CSS_VARS.placeItems,
+  placeContent = GRID_CSS_VARS.placeContent,
   ...rest
 }: GridProps<E>) => {
   return (

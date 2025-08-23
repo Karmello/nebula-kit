@@ -1,10 +1,14 @@
+import { kebabCase } from 'lodash'
+
 import { BoxOwnProps, TextOwnProps, NavLayoutProps } from 'lib/components'
+import { TableOwnProps } from 'lib/components/primitive/Table'
 
 type DataAttrProps = Pick<BoxOwnProps, 'variant' | 'intent' | 'interactive' | 'disabled'> &
   Pick<TextOwnProps, 'typography'> &
+  Pick<TableOwnProps, 'layout' | 'zebra' | 'bordered' | 'stickyHeader'> &
   Pick<NavLayoutProps, 'side' | 'open'>
 
-type Prefix = 'box' | 'text' | 'nav-layout'
+type Prefix = 'box' | 'text' | 'table' | 'nav-layout'
 
 const getDataAttr = (prefix: Prefix, props: DataAttrProps, propName: keyof DataAttrProps) => {
   const propValue = props[propName]
@@ -14,7 +18,7 @@ const getDataAttr = (prefix: Prefix, props: DataAttrProps, propName: keyof DataA
     return dataAttrs
   }
 
-  dataAttrs[`data-${prefix}-${propName}`] = propValue
+  dataAttrs[`data-${prefix}-${kebabCase(propName)}`] = propValue
   return dataAttrs
 }
 

@@ -3,7 +3,6 @@
 @use './variants/box-ghost.scss';
 
 .neb-box {
-  display: block;
   width: auto;
   max-width: 100%;
   letter-spacing: 0.5px;
@@ -18,9 +17,9 @@
   font-size: var(--box-font-size-base, inherit);
   line-height: var(--box-line-height-base, normal);
   text-align: var(--box-text-align-base, initial);
-  height: var(--box-height-base, inherit);
-  min-height: var(--box-min-height-base, inherit);
-  max-height: var(--box-max-height-base, inherit);
+  height: var(--box-height-base, auto);
+  min-height: var(--box-min-height-base, auto);
+  max-height: var(--box-max-height-base, none);
   margin-top: var(--box-mt-base, var(--box-my-base, var(--box-m-base, 0)));
   margin-right: var(--box-mr-base, var(--box-mx-base, var(--box-m-base, 0)));
   margin-bottom: var(--box-mb-base, var(--box-my-base, var(--box-m-base, 0)));
@@ -34,9 +33,9 @@
     font-size: var(--box-font-size-sm, inherit);
     line-height: var(--box-line-height-sm, normal);
     text-align: var(--box-text-align-sm, initial);
-    height: var(--box-height-sm, inherit);
-    min-height: var(--box-min-height-sm, inherit);
-    max-height: var(--box-max-height-sm, inherit);
+    height: var(--box-height-sm, auto);
+    min-height: var(--box-min-height-sm, auto);
+    max-height: var(--box-max-height-sm, none);
     margin-top: var(--box-mt-sm, var(--box-my-sm, var(--box-m-sm, 0)));
     margin-right: var(--box-mr-sm, var(--box-mx-sm, var(--box-m-sm, 0)));
     margin-bottom: var(--box-mb-sm, var(--box-my-sm, var(--box-m-sm, 0)));
@@ -51,9 +50,9 @@
     font-size: var(--box-font-size-md, inherit);
     line-height: var(--box-line-height-md, normal);
     text-align: var(--box-text-align-md, initial);
-    height: var(--box-height-md, inherit);
-    min-height: var(--box-min-height-md, inherit);
-    max-height: var(--box-max-height-md, inherit);
+    height: var(--box-height-md, auto);
+    min-height: var(--box-min-height-md, auto);
+    max-height: var(--box-max-height-md, none);
     margin-top: var(--box-mt-md, var(--box-my-md, var(--box-m-md, 0)));
     margin-right: var(--box-mr-md, var(--box-mx-md, var(--box-m-md, 0)));
     margin-bottom: var(--box-mb-md, var(--box-my-md, var(--box-m-md, 0)));
@@ -68,9 +67,9 @@
     font-size: var(--box-font-size-lg, inherit);
     line-height: var(--box-line-height-lg, normal);
     text-align: var(--box-text-align-lg, initial);
-    height: var(--box-height-lg, inherit);
-    min-height: var(--box-min-height-lg, inherit);
-    max-height: var(--box-max-height-lg, inherit);
+    height: var(--box-height-lg, auto);
+    min-height: var(--box-min-height-lg, auto);
+    max-height: var(--box-max-height-lg, none);
     margin-top: var(--box-mt-lg, var(--box-my-lg, var(--box-m-lg, 0)));
     margin-right: var(--box-mr-lg, var(--box-mx-lg, var(--box-m-lg, 0)));
     margin-bottom: var(--box-mb-lg, var(--box-my-lg, var(--box-m-lg, 0)));
@@ -85,9 +84,9 @@
     font-size: var(--box-font-size-xl, inherit);
     line-height: var(--box-line-height-xl, normal);
     text-align: var(--box-text-align-xl, initial);
-    height: var(--box-height-xl, inherit);
-    min-height: var(--box-min-height-xl, inherit);
-    max-height: var(--box-max-height-xl, inherit);
+    height: var(--box-height-xl, auto);
+    min-height: var(--box-min-height-xl, auto);
+    max-height: var(--box-max-height-xl, none);
     margin-top: var(--box-mt-xl, var(--box-my-xl, var(--box-m-xl, 0)));
     margin-right: var(--box-mr-xl, var(--box-mx-xl, var(--box-m-xl, 0)));
     margin-bottom: var(--box-mb-xl, var(--box-my-xl, var(--box-m-xl, 0)));

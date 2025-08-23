@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { withPrefix, getDataAttrs, getCssVars } from 'lib/helpers'
 import { Box } from 'lib/components'
-import { ResponsiveProp, ScaleValue } from 'lib/definitions'
+import { NAV_LAYOUT_CSS_VARS, ResponsiveProp, ScaleValue } from 'lib/definitions'
 
 import { NavLayoutContext } from './useNavLayoutContext'
 
@@ -18,7 +18,7 @@ export interface NavLayoutProps extends ComponentProps<typeof Box> {
 
 export const NavLayout = ({
   side = 'left',
-  sideWidth = 80,
+  sideWidth = NAV_LAYOUT_CSS_VARS.sideWidth,
   defaultOpen = true,
   className,
   style,

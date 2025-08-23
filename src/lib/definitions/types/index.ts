@@ -1,7 +1,7 @@
 import { ComponentPropsWithRef, ElementType } from 'react'
 
 import { BoxOwnProps, ClusterOwnProps, FlexOwnProps, GridOwnProps, NavLayoutProps } from 'lib/components'
-import { BREAKPOINTS, SCALE } from '..'
+import { BOX_INTENTS, BOX_VARIANTS, BREAKPOINTS, SCALE } from '..'
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl'
 
@@ -16,6 +16,9 @@ export type PolymorphicProps<E extends ElementType, OwnProps> = Omit<ComponentPr
 } & OwnProps
 
 export type CompWithCssVarsPrefix = 'box' | 'flex' | 'grid' | 'cluster' | 'nav-layout'
+
+export type BoxVariant = (typeof BOX_VARIANTS)[number]
+export type BoxIntent = (typeof BOX_INTENTS)[number]
 
 export type BoxCssVars = Pick<
   BoxOwnProps,

@@ -1,0 +1,50 @@
+.neb-table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.neb-table {
+  width: 100%;
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+.neb-table[data-table-layout='auto'] {
+  table-layout: auto;
+}
+
+.neb-table[data-table-layout='fixed'] {
+  table-layout: fixed;
+}
+
+.neb-table[data-table-zebra='true'] tbody tr:nth-child(odd) {
+  background: var(--bg-tertiary);
+}
+
+.neb-table[data-table-bordered='true'] th,
+.neb-table[data-table-bordered='true'] td {
+  border: 1px solid var(--neb-border-color);
+}
+
+.neb-table[data-table-sticky-header='true'] thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--bg-neutral);
+}
+
+.neb-table [data-table-head-cell-align='start'],
+.neb-table [data-table-cell-align='start'] {
+  text-align: start;
+}
+
+.neb-table [data-table-head-cell-align='center'],
+.neb-table [data-table-cell-align='center'] {
+  text-align: center;
+}
+
+.neb-table [data-table-head-cell-align='end'],
+.neb-table [data-table-cell-align='end'] {
+  text-align: end;
+}

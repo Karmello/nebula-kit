@@ -88,7 +88,7 @@
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "'inherit'",
+      "defaultValue": "'auto'",
       "description": "Explicit height of the box"
     },
     {
@@ -96,7 +96,7 @@
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "'inherit'",
+      "defaultValue": "'auto'",
       "description": "Minimum height constraint"
     },
     {
@@ -104,7 +104,7 @@
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "'inherit'",
+      "defaultValue": "'none'",
       "description": "Maximum height constraint"
     },
     {
