@@ -1,44 +1,55 @@
 html[data-theme='light'] {
   // neutral
   --neb-text-neutral: var(--neb-gray-9);
+  --neb-text-neutral-subtle: var(--neb-gray-6);
+  --neb-text-neutral-accent: var(--neb-gray-8);
+  --neb-text-neutral-intense: var(--neb-gray-7);
 
   // primary
   --neb-text-primary: var(--neb-blue-7);
-  --neb-text-primary-hover: var(--neb-blue-8);
-  --neb-text-primary-active: var(--neb-blue-9);
+  --neb-text-primary-subtle: var(--neb-blue-6);
+  --neb-text-primary-accent: var(--neb-blue-8);
+  --neb-text-primary-intense: var(--neb-blue-9);
 
   // secondary
   --neb-text-secondary: var(--neb-blue-5);
-  --neb-text-secondary-hover: var(--neb-blue-6);
-  --neb-text-secondary-active: var(--neb-blue-7);
+  --neb-text-secondary-subtle: var(--neb-blue-4);
+  --neb-text-secondary-accent: var(--neb-blue-6);
+  --neb-text-secondary-intense: var(--neb-blue-7);
 
   // tertiary
   --neb-text-tertiary: var(--neb-gray-5);
-  --neb-text-tertiary-hover: var(--neb-gray-6);
-  --neb-text-tertiary-active: var(--neb-gray-7);
+  --neb-text-tertiary-subtle: var(--neb-gray-4);
+  --neb-text-tertiary-accent: var(--neb-gray-6);
+  --neb-text-tertiary-intense: var(--neb-gray-7);
 
   // success
   --neb-text-success: var(--neb-green-6);
-  --neb-text-success-hover: var(--neb-green-7);
-  --neb-text-success-active: var(--neb-green-8);
+  --neb-text-success-subtle: var(--neb-green-5);
+  --neb-text-success-accent: var(--neb-green-7);
+  --neb-text-success-intense: var(--neb-green-8);
 
   // info
   --neb-text-info: var(--neb-sky-5);
-  --neb-text-info-hover: var(--neb-sky-6);
-  --neb-text-info-active: var(--neb-sky-7);
+  --neb-text-info-subtle: var(--neb-sky-4);
+  --neb-text-info-accent: var(--neb-sky-6);
+  --neb-text-info-intense: var(--neb-sky-7);
 
   // warning
   --neb-text-warning: var(--neb-amber-5);
-  --neb-text-warning-hover: var(--neb-amber-6);
-  --neb-text-warning-active: var(--neb-amber-7);
+  --neb-text-warning-subtle: var(--neb-amber-4);
+  --neb-text-warning-accent: var(--neb-amber-6);
+  --neb-text-warning-intense: var(--neb-amber-7);
 
   // danger
   --neb-text-danger: var(--neb-red-6);
-  --neb-text-danger-hover: var(--neb-red-7);
-  --neb-text-danger-active: var(--neb-red-8);
+  --neb-text-danger-subtle: var(--neb-red-5);
+  --neb-text-danger-accent: var(--neb-red-7);
+  --neb-text-danger-intense: var(--neb-red-8);
 
   // inverse
   --neb-text-inverse: var(--neb-gray-1);
-  --neb-text-inverse-hover: var(--neb-gray-2);
-  --neb-text-inverse-active: var(--neb-gray-3);
+  --neb-text-inverse-subtle: var(--neb-gray-4);
+  --neb-text-inverse-accent: var(--neb-gray-2);
+  --neb-text-inverse-intense: var(--neb-gray-3);
 }

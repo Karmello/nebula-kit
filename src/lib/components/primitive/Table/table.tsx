@@ -13,8 +13,6 @@ export type TableOwnProps = {
   layout?: TableLayout
   /** Adds row striping via data attribute */
   zebra?: boolean
-  /** Renders borders via data attribute */
-  bordered?: boolean
   /** Makes header sticky (requires a set height/overflow on the container) */
   stickyHeader?: boolean
   /** Wraps the table in a scroll container when true */
@@ -38,10 +36,9 @@ export const Table = ({
   className,
   layout = 'auto',
   zebra = false,
-  bordered = false,
   stickyHeader = false,
   scrollable = false,
-  variant = 'solid',
+  variant = 'outline',
   intent = 'neutral',
   ...rest
 }: TableProps) => {
@@ -50,7 +47,9 @@ export const Table = ({
       <Box
         as="table"
         className={classNames(withPrefix('table'), className)}
-        {...getDataAttrs('table', { layout, zebra, bordered, stickyHeader })}
+        {...getDataAttrs('table', { layout, zebra, stickyHeader })}
+        variant={variant}
+        intent={intent}
         {...rest}
       >
         {children}

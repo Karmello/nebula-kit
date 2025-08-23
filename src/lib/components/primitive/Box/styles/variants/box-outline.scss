@@ -41,68 +41,68 @@
 
 .neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:hover {
   &[data-neb-box-intent='neutral'] {
-    border-color: var(--neb-border-neutral-hover);
+    border-color: var(--neb-border-neutral-accent);
   }
   &[data-neb-box-intent='primary'] {
-    border-color: var(--neb-border-primary-hover);
-    color: var(--neb-text-primary-hover);
+    border-color: var(--neb-border-primary-accent);
+    color: var(--neb-text-primary-accent);
   }
   &[data-neb-box-intent='secondary'] {
-    border-color: var(--neb-border-secondary-hover);
-    color: var(--neb-text-secondary-hover);
+    border-color: var(--neb-border-secondary-accent);
+    color: var(--neb-text-secondary-accent);
   }
   &[data-neb-box-intent='tertiary'] {
-    border-color: var(--neb-border-tertiary-hover);
-    color: var(--neb-text-tertiary-hover);
+    border-color: var(--neb-border-tertiary-accent);
+    color: var(--neb-text-tertiary-accent);
   }
   &[data-neb-box-intent='success'] {
-    border-color: var(--neb-border-success-hover);
-    color: var(--neb-text-success-hover);
+    border-color: var(--neb-border-success-accent);
+    color: var(--neb-text-success-accent);
   }
   &[data-neb-box-intent='info'] {
-    border-color: var(--neb-border-info-hover);
-    color: var(--neb-text-info-hover);
+    border-color: var(--neb-border-info-accent);
+    color: var(--neb-text-info-accent);
   }
   &[data-neb-box-intent='warning'] {
-    border-color: var(--neb-border-warning-hover);
-    color: var(--neb-text-warning-hover);
+    border-color: var(--neb-border-warning-accent);
+    color: var(--neb-text-warning-accent);
   }
   &[data-neb-box-intent='danger'] {
-    border-color: var(--neb-border-danger-hover);
-    color: var(--neb-text-danger-hover);
+    border-color: var(--neb-border-danger-accent);
+    color: var(--neb-text-danger-accent);
   }
 }
 
 .neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:active {
   &[data-neb-box-intent='neutral'] {
-    border-color: var(--neb-border-neutral-active);
+    border-color: var(--neb-border-neutral-intense);
   }
   &[data-neb-box-intent='primary'] {
-    border-color: var(--neb-border-primary-active);
-    color: var(--neb-text-primary-active);
+    border-color: var(--neb-border-primary-intense);
+    color: var(--neb-text-primary-intense);
   }
   &[data-neb-box-intent='secondary'] {
-    border-color: var(--neb-border-secondary-active);
-    color: var(--neb-text-secondary-active);
+    border-color: var(--neb-border-secondary-intense);
+    color: var(--neb-text-secondary-intense);
   }
   &[data-neb-box-intent='tertiary'] {
-    border-color: var(--neb-border-tertiary-active);
-    color: var(--neb-text-tertiary-active);
+    border-color: var(--neb-border-tertiary-intense);
+    color: var(--neb-text-tertiary-intense);
   }
   &[data-neb-box-intent='success'] {
-    border-color: var(--neb-border-success-active);
-    color: var(--neb-text-success-active);
+    border-color: var(--neb-border-success-intense);
+    color: var(--neb-text-success-intense);
   }
   &[data-neb-box-intent='info'] {
-    border-color: var(--neb-border-info-active);
-    color: var(--neb-text-info-active);
+    border-color: var(--neb-border-info-intense);
+    color: var(--neb-text-info-intense);
   }
   &[data-neb-box-intent='warning'] {
-    border-color: var(--neb-border-warning-active);
-    color: var(--neb-text-warning-active);
+    border-color: var(--neb-border-warning-intense);
+    color: var(--neb-text-warning-intense);
   }
   &[data-neb-box-intent='danger'] {
-    border-color: var(--neb-border-danger-active);
-    color: var(--neb-text-danger-active);
+    border-color: var(--neb-border-danger-intense);
+    color: var(--neb-text-danger-intense);
   }
 }

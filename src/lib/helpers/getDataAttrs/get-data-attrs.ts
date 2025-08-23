@@ -5,7 +5,7 @@ import { LIB_PREFIX } from 'lib/definitions'
 
 type DataAttrProps = Pick<BoxOwnProps, 'variant' | 'intent' | 'interactive' | 'disabled'> &
   Pick<TextOwnProps, 'typography'> &
-  Pick<TableOwnProps, 'layout' | 'zebra' | 'bordered' | 'stickyHeader'> &
+  Pick<TableOwnProps, 'layout' | 'zebra' | 'stickyHeader'> &
   Pick<NavLayoutProps, 'side' | 'open'>
 
 type Prefix = 'box' | 'text' | 'table' | 'nav-layout'

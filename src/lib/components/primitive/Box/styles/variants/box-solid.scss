@@ -48,70 +48,70 @@
 
 .neb-box[data-neb-box-variant='solid'][data-neb-box-interactive='true']:hover {
   &[data-neb-box-intent='neutral'] {
-    background-color: var(--neb-bg-neutral-hover);
-    border-color: var(--neb-bg-neutral-hover);
+    background-color: var(--neb-bg-neutral-accent);
+    border-color: var(--neb-bg-neutral-accent);
   }
   &[data-neb-box-intent='primary'] {
-    background-color: var(--neb-bg-primary-hover);
-    border-color: var(--neb-bg-primary-hover);
+    background-color: var(--neb-bg-primary-accent);
+    border-color: var(--neb-bg-primary-accent);
   }
   &[data-neb-box-intent='secondary'] {
-    background-color: var(--neb-bg-secondary-hover);
-    border-color: var(--neb-bg-secondary-hover);
+    background-color: var(--neb-bg-secondary-accent);
+    border-color: var(--neb-bg-secondary-accent);
   }
   &[data-neb-box-intent='tertiary'] {
-    background-color: var(--neb-bg-tertiary-hover);
-    border-color: var(--neb-bg-tertiary-hover);
+    background-color: var(--neb-bg-tertiary-accent);
+    border-color: var(--neb-bg-tertiary-accent);
   }
   &[data-neb-box-intent='success'] {
-    background-color: var(--neb-bg-success-hover);
-    border-color: var(--neb-bg-success-hover);
+    background-color: var(--neb-bg-success-accent);
+    border-color: var(--neb-bg-success-accent);
   }
   &[data-neb-box-intent='info'] {
-    background-color: var(--neb-bg-info-hover);
-    border-color: var(--neb-bg-info-hover);
+    background-color: var(--neb-bg-info-accent);
+    border-color: var(--neb-bg-info-accent);
   }
   &[data-neb-box-intent='warning'] {
-    background-color: var(--neb-bg-warning-hover);
-    border-color: var(--neb-bg-warning-hover);
+    background-color: var(--neb-bg-warning-accent);
+    border-color: var(--neb-bg-warning-accent);
   }
   &[data-neb-box-intent='danger'] {
-    background-color: var(--neb-bg-danger-hover);
-    border-color: var(--neb-bg-danger-hover);
+    background-color: var(--neb-bg-danger-accent);
+    border-color: var(--neb-bg-danger-accent);
   }
 }
 
 .neb-box[data-neb-box-variant='solid'][data-neb-box-interactive='true']:active {
   &[data-neb-box-intent='neutral'] {
-    background-color: var(--neb-bg-neutral-active);
-    border-color: var(--neb-bg-neutral-active);
+    background-color: var(--neb-bg-neutral-intense);
+    border-color: var(--neb-bg-neutral-intense);
   }
   &[data-neb-box-intent='primary'] {
-    background-color: var(--neb-bg-primary-active);
-    border-color: var(--neb-bg-primary-active);
+    background-color: var(--neb-bg-primary-intense);
+    border-color: var(--neb-bg-primary-intense);
   }
   &[data-neb-box-intent='secondary'] {
-    background-color: var(--neb-bg-secondary-active);
-    border-color: var(--neb-bg-secondary-active);
+    background-color: var(--neb-bg-secondary-intense);
+    border-color: var(--neb-bg-secondary-intense);
   }
   &[data-neb-box-intent='tertiary'] {
-    background-color: var(--neb-bg-tertiary-active);
-    border-color: var(--neb-bg-tertiary-active);
+    background-color: var(--neb-bg-tertiary-intense);
+    border-color: var(--neb-bg-tertiary-intense);
   }
   &[data-neb-box-intent='success'] {
-    background-color: var(--neb-bg-success-active);
-    border-color: var(--neb-bg-success-active);
+    background-color: var(--neb-bg-success-intense);
+    border-color: var(--neb-bg-success-intense);
   }
   &[data-neb-box-intent='info'] {
-    background-color: var(--neb-bg-info-active);
-    border-color: var(--neb-bg-info-active);
+    background-color: var(--neb-bg-info-intense);
+    border-color: var(--neb-bg-info-intense);
   }
   &[data-neb-box-intent='warning'] {
-    background-color: var(--neb-bg-warning-active);
-    border-color: var(--neb-bg-warning-active);
+    background-color: var(--neb-bg-warning-intense);
+    border-color: var(--neb-bg-warning-intense);
   }
   &[data-neb-box-intent='danger'] {
-    background-color: var(--neb-bg-danger-active);
-    border-color: var(--neb-bg-danger-active);
+    background-color: var(--neb-bg-danger-intense);
+    border-color: var(--neb-bg-danger-intense);
   }
 }

@@ -1,44 +1,55 @@
 html[data-theme='light'] {
   // neutral
   --neb-bg-neutral: var(--neb-gray-1);
-  --neb-bg-neutral-hover: var(--neb-gray-3);
-  --neb-bg-neutral-active: var(--neb-gray-4);
+  --neb-bg-neutral-subtle: var(--neb-gray-2);
+  --neb-bg-neutral-accent: var(--neb-gray-3);
+  --neb-bg-neutral-intense: var(--neb-gray-4);
 
   // primary
   --neb-bg-primary: var(--neb-blue-6);
-  --neb-bg-primary-hover: var(--neb-blue-7);
-  --neb-bg-primary-active: var(--neb-blue-8);
+  --neb-bg-primary-subtle: var(--neb-blue-2);
+  --neb-bg-primary-accent: var(--neb-blue-7);
+  --neb-bg-primary-intense: var(--neb-blue-8);
 
   // secondary
   --neb-bg-secondary: var(--neb-blue-3);
-  --neb-bg-secondary-hover: var(--neb-blue-4);
-  --neb-bg-secondary-active: var(--neb-blue-5);
+  --neb-bg-secondary-subtle: var(--neb-blue-1);
+  --neb-bg-secondary-accent: var(--neb-blue-4);
+  --neb-bg-secondary-intense: var(--neb-blue-5);
 
   // tertiary
   --neb-bg-tertiary: var(--neb-gray-2);
-  --neb-bg-tertiary-hover: var(--neb-gray-3);
-  --neb-bg-tertiary-active: var(--neb-gray-4);
+  --neb-bg-tertiary-subtle: var(--neb-gray-2);
+  --neb-bg-tertiary-accent: var(--neb-gray-3);
+  --neb-bg-tertiary-intense: var(--neb-gray-4);
 
   // success
   --neb-bg-success: var(--neb-green-6);
-  --neb-bg-success-hover: var(--neb-green-7);
-  --neb-bg-success-active: var(--neb-green-8);
+  --neb-bg-success-subtle: var(--neb-green-2);
+  --neb-bg-success-accent: var(--neb-green-7);
+  --neb-bg-success-intense: var(--neb-green-8);
 
   // info
   --neb-bg-info: var(--neb-sky-5);
-  --neb-bg-info-hover: var(--neb-sky-6);
-  --neb-bg-info-active: var(--neb-sky-7);
+  --neb-bg-info-subtle: var(--neb-sky-2);
+  --neb-bg-info-accent: var(--neb-sky-6);
+  --neb-bg-info-intense: var(--neb-sky-7);
 
   // warning
   --neb-bg-warning: var(--neb-amber-4);
-  --neb-bg-warning-hover: var(--neb-amber-5);
-  --neb-bg-warning-active: var(--neb-amber-6);
+  --neb-bg-warning-subtle: var(--neb-amber-2);
+  --neb-bg-warning-accent: var(--neb-amber-5);
+  --neb-bg-warning-intense: var(--neb-amber-6);
 
   // danger
   --neb-bg-danger: var(--neb-red-6);
-  --neb-bg-danger-hover: var(--neb-red-7);
-  --neb-bg-danger-active: var(--neb-red-8);
+  --neb-bg-danger-subtle: var(--neb-red-2);
+  --neb-bg-danger-accent: var(--neb-red-7);
+  --neb-bg-danger-intense: var(--neb-red-8);
 
   // inverse
   --neb-bg-inverse: var(--neb-gray-9);
+  --neb-bg-inverse-subtle: var(--neb-gray-5);
+  --neb-bg-inverse-accent: var(--neb-gray-8);
+  --neb-bg-inverse-intense: var(--neb-gray-7);
 }

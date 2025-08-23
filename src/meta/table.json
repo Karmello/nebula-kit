@@ -22,14 +22,6 @@
       "description": "Adds row striping via data attribute"
     },
     {
-      "name": "bordered",
-      "type": "boolean",
-      "options": [],
-      "required": false,
-      "defaultValue": "false",
-      "description": "Renders borders via data attribute"
-    },
-    {
       "name": "stickyHeader",
       "type": "boolean",
       "options": [],
@@ -54,7 +46,7 @@
         "ghost"
       ],
       "required": false,
-      "defaultValue": "'solid'",
+      "defaultValue": "'outline'",
       "description": "Visual style of the box surface (e.g. solid, outline)"
     },
     {
