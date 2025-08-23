@@ -4,9 +4,11 @@ import { pascalCase, sentenceCase } from 'change-case'
 
 import { useLibStore } from 'lib/state'
 import { Button } from 'lib/components'
+import { ComponentMeta } from 'lib/definitions'
 import { useDocsStore } from 'client/store'
 import { formatAsQueryString, useNavigateTo } from 'client/services'
 import { DOCS_ROUTING_CONFIG, RoutingCategoryKey, RoutingItemKey } from 'client/definitions'
+import { CompMetaRenderer } from 'client/components'
 
 const DOCS_PAGES = DOCS_ROUTING_CONFIG.map(({ key, items }, index) => ({
   key,
@@ -35,6 +37,14 @@ export const DocsPage = () => {
     docsStore.setItemKey(itemKey as RoutingItemKey)
   }, [pathname])
 
+  let META_DATA: ComponentMeta
+
+  try {
+    META_DATA = require(`../../../../meta/${docsStore.itemKey}.json`) as ComponentMeta
+  } catch {
+    META_DATA = null
+  }
+
   return (
     <>
       <nav>
@@ -51,6 +61,7 @@ export const DocsPage = () => {
           </Button>
         ))}
       </nav>
+      <CompMetaRenderer data={META_DATA} />
       <Routes>
         {DOCS_PAGES.flatMap(({ key: categoryKey, items }) =>
           items.map(({ key: itemKey, Component }) => {

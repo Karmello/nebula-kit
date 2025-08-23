@@ -4,7 +4,7 @@
   "props": [
     {
       "name": "align",
-      "type": "",
+      "type": "e = 'HStack'\n",
       "options": [
         "center",
         "flex-start",
@@ -26,7 +26,7 @@
     },
     {
       "name": "justify",
-      "type": "gap} {...props} />\n}\n\nHStack.displayName = 'HStack'\n",
+      "type": "ap} {...props} />\n}\n\nHStack.",
       "options": [
         "center",
         "flex-start",

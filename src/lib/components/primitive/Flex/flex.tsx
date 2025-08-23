@@ -3,17 +3,24 @@ import classNames from 'classnames'
 
 import { Box, BoxOwnProps } from 'lib/components'
 import { withPrefix, getCssVars } from 'lib/helpers'
-import { PolymorphicProps, ResponsiveProp, ScaleValue } from 'lib/definitions'
+
+import {
+  FlexAlign,
+  FlexDirection,
+  FlexJustify,
+  FlexWrap,
+  PolymorphicProps,
+  ResponsiveProp,
+  ScaleValue,
+} from 'lib/definitions'
 
 import './flex.scss'
 
 export type FlexOwnProps = {
-  direction?: ResponsiveProp<'row' | 'row-reverse' | 'column' | 'column-reverse'>
-  wrap?: ResponsiveProp<'nowrap' | 'wrap' | 'wrap-reverse'>
-  justify?: ResponsiveProp<
-    'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly'
-  >
-  align?: ResponsiveProp<'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'>
+  direction?: ResponsiveProp<FlexDirection>
+  wrap?: ResponsiveProp<FlexWrap>
+  justify?: ResponsiveProp<FlexJustify>
+  align?: ResponsiveProp<FlexAlign>
   gap?: ResponsiveProp<ScaleValue | string>
   rowGap?: ResponsiveProp<ScaleValue | string>
   columnGap?: ResponsiveProp<ScaleValue | string>

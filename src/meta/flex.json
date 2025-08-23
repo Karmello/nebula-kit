@@ -4,7 +4,7 @@
   "props": [
     {
       "name": "direction",
-      "type": "ResponsiveProp<'row' | 'row-reverse' | 'column' | 'column-reverse'>",
+      "type": "ResponsiveProp<FlexDirection>",
       "options": [
         "column",
         "row",
@@ -17,7 +17,7 @@
     },
     {
       "name": "wrap",
-      "type": "ResponsiveProp<'nowrap' | 'wrap' | 'wrap-reverse'>",
+      "type": "ResponsiveProp<FlexWrap>",
       "options": [
         "wrap",
         "nowrap",
@@ -29,7 +29,7 @@
     },
     {
       "name": "justify",
-      "type": "ResponsiveProp<\n    'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly'\n  >",
+      "type": "ResponsiveProp<FlexJustify>",
       "options": [
         "center",
         "flex-start",
@@ -44,7 +44,7 @@
     },
     {
       "name": "align",
-      "type": "ResponsiveProp<'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'>",
+      "type": "ResponsiveProp<FlexAlign>",
       "options": [
         "center",
         "flex-start",

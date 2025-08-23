@@ -4,7 +4,7 @@
   "props": [
     {
       "name": "align",
-      "type": ",\n  gap = 8,\n  ...rest\n}: StackProps<E>) => {\n  return <Flex direction={direct",
+      "type": "st Stack = <E extends Stac",
       "options": [
         "center",
         "flex-start",
@@ -18,7 +18,7 @@
     },
     {
       "name": "gap",
-      "type": "gn={align} gap={gap} {...(rest as St",
+      "type": "iv'>({\n  direction = 'column',\n  ali",
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "8",
@@ -26,7 +26,7 @@
     },
     {
       "name": "rowGap",
-      "type": ")} />\n}\n\nStack.displayName = 'Stack'",
+      "type": "ch',\n  gap = 8,\n  ...rest\n}: StackPr",
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "",
@@ -34,7 +34,7 @@
     },
     {
       "name": "columnGap",
-      "type": "",
+      "type": "return <Flex direction={direction} ",
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "",

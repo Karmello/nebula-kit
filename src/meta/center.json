@@ -4,7 +4,7 @@
   "props": [
     {
       "name": "wrap",
-      "type": "tends ElementType = 'div'>({\n  fill,\n  screen,\n  gr",
+      "type": "{\n  fill,\n  screen,\n  gro",
       "options": [
         "wrap",
         "nowrap",
@@ -16,7 +16,7 @@
     },
     {
       "name": "gap",
-      "type": ".(screen ? { width: '100%', minHeigh",
+      "type": "row\"\n      justify=\"center\"\n      al",
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "",
@@ -24,7 +24,7 @@
     },
     {
       "name": "rowGap",
-      "type": "} : null),\n        ...(grow ? { fle",
+      "type": "\"\n      style={{\n        ...(fill ? ",
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "",
@@ -32,7 +32,7 @@
     },
     {
       "name": "columnGap",
-      "type": "} : null),\n        ...style,\n      }",
+      "type": "', height: '100%' } : null),\n       ",
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "",

@@ -4,7 +4,7 @@
   "props": [
     {
       "name": "variant",
-      "type": "abled'> & {",
+      "type": "ref?: Ref<a",
       "options": [
         "solid",
         "outline",
@@ -16,7 +16,7 @@
     },
     {
       "name": "intent",
-      "type": "iconPosi",
+      "type": "?: WithIco",
       "options": [
         "neutral",
         "primary",
@@ -34,7 +34,7 @@
     },
     {
       "name": "disabled",
-      "type": "nSize,\n ",
+      "type": "height:",
       "options": [],
       "required": false,
       "defaultValue": "",

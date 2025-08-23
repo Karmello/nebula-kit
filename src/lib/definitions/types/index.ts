@@ -76,6 +76,20 @@ export type TextAlign =
   | 'unset'
   | 'revert'
 
+export type FlexDirection = 'row' | 'row-reverse' | 'column' | 'column-reverse'
+
+export type FlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse'
+
+export type FlexJustify =
+  | 'flex-start'
+  | 'center'
+  | 'flex-end'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
+
+export type FlexAlign = 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'
+
 export type ComponentMeta = {
   name: string
   description: string
