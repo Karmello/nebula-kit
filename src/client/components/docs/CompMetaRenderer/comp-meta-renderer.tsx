@@ -10,7 +10,7 @@ export const CompMetaRenderer = ({ data }: { data: ComponentMeta }) => {
     <>
       <Text>{data.name}</Text>
       <Text>{data.description}</Text>
-      <Table zebra>
+      <Table layout="fixed" variant="solid" intent="primary">
         <TableHead>
           <TableRow>
             <TableHeadCell>Name</TableHeadCell>

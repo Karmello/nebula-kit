@@ -1,7 +1,7 @@
 import { CSSProperties, ReactNode } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps } from 'lib/components'
+import { Box, BoxOwnProps, TableContext } from 'lib/components'
 import { withPrefix, getDataAttrs } from 'lib/helpers'
 
 import './table.scss'
@@ -41,17 +41,21 @@ export const Table = ({
   bordered = false,
   stickyHeader = false,
   scrollable = false,
+  variant = 'solid',
+  intent = 'neutral',
   ...rest
 }: TableProps) => {
   const tableElement = (
-    <Box
-      as="table"
-      className={classNames(withPrefix('table'), className)}
-      {...getDataAttrs('table', { layout, zebra, bordered, stickyHeader })}
-      {...rest}
-    >
-      {children}
-    </Box>
+    <TableContext value={{ variant, intent }}>
+      <Box
+        as="table"
+        className={classNames(withPrefix('table'), className)}
+        {...getDataAttrs('table', { layout, zebra, bordered, stickyHeader })}
+        {...rest}
+      >
+        {children}
+      </Box>
+    </TableContext>
   )
 
   if (!scrollable) {

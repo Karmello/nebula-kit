@@ -18,14 +18,9 @@
   table-layout: fixed;
 }
 
-.neb-table[data-table-zebra='true'] tbody tr:nth-child(odd) {
-  background: var(--bg-tertiary);
-}
-
-.neb-table[data-table-bordered='true'] th,
-.neb-table[data-table-bordered='true'] td {
-  border: 1px solid var(--neb-border-color);
-}
+// .neb-table[data-table-zebra='true'] tbody tr:nth-child(odd) > :is(td, th) {
+//   background: var(--bg-tertiary);
+// }
 
 .neb-table[data-table-sticky-header='true'] thead th {
   position: sticky;

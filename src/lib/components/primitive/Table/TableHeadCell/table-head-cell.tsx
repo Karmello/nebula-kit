@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
+import { Box, useTableContext } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 export type TableHeadCellProps = {
@@ -14,12 +14,16 @@ export type TableHeadCellProps = {
 }
 
 export const TableHeadCell = ({ className, scope = 'col', align = 'start', ...rest }: TableHeadCellProps) => {
+  const { variant, intent } = useTableContext()
+
   return (
     <Box
       as="th"
       className={classNames(withPrefix('table-head-cell'), className)}
       scope={scope}
       data-table-head-cell-align={align}
+      variant={variant}
+      intent={intent}
       {...rest}
     />
   )
