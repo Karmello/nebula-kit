@@ -2,6 +2,8 @@ import { Flex, FlexOwnProps, StackAs, StackOwnProps } from 'lib/components'
 import { PolymorphicProps } from 'lib/definitions'
 
 export type HStackOwnProps = {
+  /** Polymorphic prop to change the rendered element type */
+  as?: StackAs
   /** Distribution of items along the main axis, supports responsive values */
   justify?: FlexOwnProps['justify']
 } & {
@@ -15,12 +17,15 @@ export type HStackProps<E extends StackAs = 'div'> = PolymorphicProps<E, HStackO
 
 /** HStack is a horizontal layout primitive built on Flex. It arranges items in a row with configurable justification, alignment, and spacing, making it an easy drop-in for horizontal stacks of elements. */
 export const HStack = <E extends StackAs = 'div'>({
+  as = 'div' as E,
   justify = 'flex-start',
   align = 'stretch',
   gap = 8,
   ...rest
 }: HStackProps<E>) => {
-  return <Flex direction="row" justify={justify} align={align} gap={gap} {...(rest as HStackProps<E>)} />
+  return (
+    <Flex as={as} direction="row" justify={justify} align={align} gap={gap} {...(rest as HStackProps<E>)} />
+  )
 }
 
 HStack.displayName = 'HStack'

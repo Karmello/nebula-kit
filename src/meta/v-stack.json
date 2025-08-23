@@ -1,32 +1,10 @@
 {
   "name": "VStack",
-  "description": "",
+  "description": "VStack is a vertical layout primitive built on Stack. It arranges elements in a column with configurable alignment and spacing, providing a simple way to stack items top-to-bottom without managing full flexbox props.",
   "props": [
     {
-      "name": "align",
-      "type": "",
-      "options": [
-        "center",
-        "flex-start",
-        "flex-end",
-        "stretch",
-        "baseline"
-      ],
-      "required": false,
-      "defaultValue": "",
-      "description": "Alignment of items along the cross axis, supports responsive values"
-    },
-    {
-      "name": "gap",
-      "type": "",
-      "options": "0, 1, 2 ... 80",
-      "required": false,
-      "defaultValue": "",
-      "description": "Shorthand spacing between items, supports responsive values"
-    },
-    {
       "name": "as",
-      "type": "n\" {...p",
+      "type": "StackAs",
       "options": [
         "div",
         "section",
@@ -40,8 +18,30 @@
         "ol"
       ],
       "required": false,
-      "defaultValue": "",
+      "defaultValue": "'div'",
       "description": "Polymorphic prop to change the rendered element type"
+    },
+    {
+      "name": "align",
+      "type": "StackOwnProps['align']",
+      "options": [
+        "center",
+        "flex-start",
+        "flex-end",
+        "stretch",
+        "baseline"
+      ],
+      "required": false,
+      "defaultValue": "'stretch'",
+      "description": "Alignment of items along the cross axis, supports responsive values"
+    },
+    {
+      "name": "gap",
+      "type": "StackOwnProps['gap']",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "8",
+      "description": "Shorthand spacing between items, supports responsive values"
     }
   ]
 }

@@ -3,6 +3,25 @@
   "description": "HStack is a horizontal layout primitive built on Flex. It arranges items in a row with configurable justification, alignment, and spacing, making it an easy drop-in for horizontal stacks of elements.",
   "props": [
     {
+      "name": "as",
+      "type": "StackAs",
+      "options": [
+        "div",
+        "section",
+        "article",
+        "aside",
+        "main",
+        "header",
+        "footer",
+        "nav",
+        "ul",
+        "ol"
+      ],
+      "required": false,
+      "defaultValue": "'div'",
+      "description": "Polymorphic prop to change the rendered element type"
+    },
+    {
       "name": "justify",
       "type": "FlexOwnProps['justify']",
       "options": [
