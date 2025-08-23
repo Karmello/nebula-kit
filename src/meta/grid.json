@@ -109,10 +109,10 @@
         "center",
         "start",
         "end",
-        "stretch",
         "space-between",
         "space-around",
-        "space-evenly"
+        "space-evenly",
+        "stretch"
       ],
       "required": false,
       "defaultValue": "'start'",

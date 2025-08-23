@@ -1,10 +1,29 @@
 {
   "name": "Stack",
-  "description": "",
+  "description": "Stack is a convenience wrapper around Flex for building one-dimensional layouts. It defaults to a vertical flow (direction=\"column\"), with configurable alignment and spacing between items, and supports responsive values. Use it when you just need a simple stack of elements without dealing with the full flexbox API.",
   "props": [
     {
+      "name": "as",
+      "type": "StackAs",
+      "options": [
+        "div",
+        "section",
+        "article",
+        "aside",
+        "main",
+        "header",
+        "footer",
+        "nav",
+        "ul",
+        "ol"
+      ],
+      "required": false,
+      "defaultValue": "'div'",
+      "description": "Polymorphic prop to change the rendered element type"
+    },
+    {
       "name": "align",
-      "type": "",
+      "type": "FlexOwnProps['align']",
       "options": [
         "center",
         "flex-start",
@@ -18,7 +37,7 @@
     },
     {
       "name": "gap",
-      "type": "",
+      "type": "FlexOwnProps['gap']",
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "8",
@@ -26,7 +45,7 @@
     },
     {
       "name": "rowGap",
-      "type": "",
+      "type": "FlexOwnProps['rowGap']",
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "",
@@ -34,7 +53,7 @@
     },
     {
       "name": "columnGap",
-      "type": "",
+      "type": "FlexOwnProps['columnGap']",
       "options": "0, 1, 2 ... 80",
       "required": false,
       "defaultValue": "",
@@ -42,14 +61,14 @@
     },
     {
       "name": "direction",
-      "type": "ResponsiveProp<'column' | 'row'>",
+      "type": "ResponsiveProp<StackDirection>",
       "options": [
         "column",
         "row"
       ],
       "required": false,
       "defaultValue": "'column'",
-      "description": ""
+      "description": "Main axis direction, supports responsive values"
     }
   ]
 }

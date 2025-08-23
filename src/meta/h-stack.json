@@ -1,32 +1,10 @@
 {
   "name": "HStack",
-  "description": "",
+  "description": "HStack is a horizontal layout primitive built on Flex. It arranges items in a row with configurable justification, alignment, and spacing, making it an easy drop-in for horizontal stacks of elements.",
   "props": [
     {
-      "name": "align",
-      "type": "",
-      "options": [
-        "center",
-        "flex-start",
-        "flex-end",
-        "stretch",
-        "baseline"
-      ],
-      "required": false,
-      "defaultValue": "",
-      "description": "Alignment of items along the cross axis, supports responsive values"
-    },
-    {
-      "name": "gap",
-      "type": "",
-      "options": "0, 1, 2 ... 80",
-      "required": false,
-      "defaultValue": "",
-      "description": "Shorthand spacing between items, supports responsive values"
-    },
-    {
       "name": "justify",
-      "type": "",
+      "type": "FlexOwnProps['justify']",
       "options": [
         "center",
         "flex-start",
@@ -36,8 +14,30 @@
         "space-evenly"
       ],
       "required": false,
-      "defaultValue": "",
+      "defaultValue": "'flex-start'",
       "description": "Distribution of items along the main axis, supports responsive values"
+    },
+    {
+      "name": "align",
+      "type": "StackOwnProps['align']",
+      "options": [
+        "center",
+        "flex-start",
+        "flex-end",
+        "stretch",
+        "baseline"
+      ],
+      "required": false,
+      "defaultValue": "'stretch'",
+      "description": "Alignment of items along the cross axis, supports responsive values"
+    },
+    {
+      "name": "gap",
+      "type": "StackOwnProps['gap']",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "8",
+      "description": "Shorthand spacing between items, supports responsive values"
     }
   ]
 }

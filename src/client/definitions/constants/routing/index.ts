@@ -14,6 +14,10 @@ export const PLAYGROUND_ROUTING_CONFIG = [
     items: [RoutingItemKey.text],
   },
   {
+    key: RoutingCategoryKey.layout,
+    items: [RoutingItemKey.stack, RoutingItemKey.hstack, RoutingItemKey.vstack],
+  },
+  {
     key: RoutingCategoryKey.utility,
     items: [RoutingItemKey.nebKitProvider],
   },
