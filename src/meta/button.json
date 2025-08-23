@@ -1,22 +1,22 @@
 {
   "name": "Button",
-  "description": "",
+  "description": "Button is a polymorphic action component built on Box. It supports variants, intents, and sizes, with optional icons on either side. Padding and height adjust automatically per size, and when no children are provided it renders as a square icon-only button.",
   "props": [
     {
       "name": "variant",
-      "type": "ref?: Ref<a",
+      "type": "BoxOwnProps['variant']",
       "options": [
         "solid",
         "outline",
         "ghost"
       ],
       "required": false,
-      "defaultValue": "",
-      "description": "Visual style of the box surface (e.g. solid, outline)"
+      "defaultValue": "'solid'",
+      "description": "Visual style variant of the button (e.g. solid, outline, ghost)"
     },
     {
       "name": "intent",
-      "type": "?: WithIco",
+      "type": "BoxOwnProps['intent']",
       "options": [
         "neutral",
         "primary",
@@ -29,24 +29,16 @@
         "inverse"
       ],
       "required": false,
-      "defaultValue": "",
-      "description": "Semantic tone or purpose (e.g. neutral, success, danger)"
+      "defaultValue": "'neutral'",
+      "description": "Semantic intent for coloring (e.g. primary, success, danger, neutral)"
     },
     {
       "name": "disabled",
-      "type": "height:",
+      "type": "BoxOwnProps['disabled']",
       "options": [],
       "required": false,
-      "defaultValue": "",
-      "description": "Disables interaction and applies a muted style"
-    },
-    {
-      "name": "ref",
-      "type": "Ref<any>",
-      "options": [],
-      "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "false",
+      "description": "Disables interaction and applies disabled styling"
     },
     {
       "name": "size",
@@ -58,7 +50,7 @@
       ],
       "required": false,
       "defaultValue": "'md'",
-      "description": ""
+      "description": "Button size controlling height, padding, and font size"
     },
     {
       "name": "iconName",
@@ -70,7 +62,7 @@
       ],
       "required": false,
       "defaultValue": "",
-      "description": ""
+      "description": "Optional icon name to render inside the button"
     },
     {
       "name": "iconPosition",
@@ -81,7 +73,7 @@
       ],
       "required": false,
       "defaultValue": "",
-      "description": ""
+      "description": "Position of the icon relative to text (e.g. left or right)"
     }
   ]
 }

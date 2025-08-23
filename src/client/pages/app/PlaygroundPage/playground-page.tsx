@@ -11,13 +11,7 @@ import { PLAYGROUND_ROUTING_CONFIG } from 'client/definitions'
 const PLAYGROUND_PAGES = PLAYGROUND_ROUTING_CONFIG.map(({ key, items }) => ({
   key,
   label: sentenceCase(key),
-  items: items.map(key => {
-    return {
-      key,
-      label: pascalCase(key),
-      Component: require(`../../playground/${pascalCase(key)}Playground`)[`${pascalCase(key)}Playground`],
-    }
-  }),
+  items: items.map(key => ({ key, label: pascalCase(key) })),
 }))
 
 const DEFAULT_PATHNAME = `${PLAYGROUND_PAGES[0].key}/${PLAYGROUND_PAGES[0].items[0].key}`
@@ -39,21 +33,39 @@ export const PlaygroundPage = () => {
     <>
       <nav>
         {PLAYGROUND_PAGES.map(({ key, label }) => (
-          <Button key={key} onClick={() => navigateTo(`/playground/${key}/${playgroundStore.itemKey}`)}>
+          <Button
+            key={key}
+            intent={playgroundStore.categoryKey === key ? 'primary' : 'neutral'}
+            onClick={() =>
+              navigateTo(`/playground/${key}/${PLAYGROUND_PAGES.find(p => p.key === key).items[0].key}`)
+            }
+          >
             {label}
           </Button>
         ))}
       </nav>
       <nav>
         {PLAYGROUND_PAGES.find(obj => obj.key === playgroundStore.categoryKey).items.map(({ key, label }) => (
-          <Button key={key} onClick={() => navigateTo(`/playground/${playgroundStore.categoryKey}/${key}`)}>
+          <Button
+            key={key}
+            intent={playgroundStore.itemKey === key ? 'primary' : 'neutral'}
+            onClick={() => navigateTo(`/playground/${playgroundStore.categoryKey}/${key}`)}
+          >
             {label}
           </Button>
         ))}
       </nav>
       <Routes>
         {PLAYGROUND_PAGES.flatMap(({ key: categoryKey, items }) =>
-          items.map(({ key: itemKey, Component }) => {
+          items.map(({ key: itemKey }) => {
+            let Component
+            try {
+              Component = require(`../../playground/${pascalCase(itemKey)}Playground`)[
+                `${pascalCase(itemKey)}Playground`
+              ]
+            } catch {
+              Component = null
+            }
             return <Route key={itemKey} path={`${categoryKey}/${itemKey}`} Component={Component} />
           })
         )}

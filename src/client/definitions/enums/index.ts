@@ -1,11 +1,15 @@
 export enum RoutingCategoryKey {
-  // playground
   primitive = 'primitive',
+  controls = 'controls',
+  elements = 'elements',
+  utility = 'utility',
 }
 
 export enum RoutingItemKey {
-  // playground
   box = 'box',
   flex = 'flex',
   grid = 'grid',
+  text = 'text',
+  button = 'button',
+  nebKitProvider = 'neb-kit-provider',
 }

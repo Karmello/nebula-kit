@@ -13,13 +13,7 @@ import { CompMetaRenderer } from 'client/components'
 const DOCS_PAGES = DOCS_ROUTING_CONFIG.map(({ key, items }, index) => ({
   key,
   label: sentenceCase(key),
-  items: items.map(key => {
-    return {
-      key,
-      label: index < 2 ? sentenceCase(key) : pascalCase(key),
-      Component: require(`../../docs/${pascalCase(key)}Docs`)[`${pascalCase(key)}Docs`],
-    }
-  }),
+  items: items.map(key => ({ key, label: pascalCase(key) })),
 }))
 
 const DEFAULT_PATHNAME = `${DOCS_PAGES[0].key}/${DOCS_PAGES[0].items[0].key}`
@@ -49,14 +43,22 @@ export const DocsPage = () => {
     <>
       <nav>
         {DOCS_PAGES.map(({ key, label }) => (
-          <Button key={key} onClick={() => navigateTo(`/docs/${key}/${docsStore.itemKey}`)}>
+          <Button
+            key={key}
+            intent={docsStore.categoryKey === key ? 'primary' : 'neutral'}
+            onClick={() => navigateTo(`/docs/${key}/${DOCS_PAGES.find(p => p.key === key).items[0].key}`)}
+          >
             {label}
           </Button>
         ))}
       </nav>
       <nav>
         {DOCS_PAGES.find(obj => obj.key === docsStore.categoryKey).items.map(({ key, label }) => (
-          <Button key={key} onClick={() => navigateTo(`/docs/${docsStore.categoryKey}/${key}`)}>
+          <Button
+            key={key}
+            intent={docsStore.itemKey === key ? 'primary' : 'neutral'}
+            onClick={() => navigateTo(`/docs/${docsStore.categoryKey}/${key}`)}
+          >
             {label}
           </Button>
         ))}
@@ -64,7 +66,13 @@ export const DocsPage = () => {
       <CompMetaRenderer data={META_DATA} />
       <Routes>
         {DOCS_PAGES.flatMap(({ key: categoryKey, items }) =>
-          items.map(({ key: itemKey, Component }) => {
+          items.map(({ key: itemKey }) => {
+            let Component
+            try {
+              Component = require(`../../docs/${pascalCase(itemKey)}Docs`)[`${pascalCase(itemKey)}Docs`]
+            } catch {
+              Component = null
+            }
             return <Route key={itemKey} path={`${categoryKey}/${itemKey}`} Component={Component} />
           })
         )}

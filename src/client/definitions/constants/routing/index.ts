@@ -5,6 +5,18 @@ export const PLAYGROUND_ROUTING_CONFIG = [
     key: RoutingCategoryKey.primitive,
     items: [RoutingItemKey.box, RoutingItemKey.flex, RoutingItemKey.grid],
   },
+  {
+    key: RoutingCategoryKey.controls,
+    items: [RoutingItemKey.button],
+  },
+  {
+    key: RoutingCategoryKey.elements,
+    items: [RoutingItemKey.text],
+  },
+  {
+    key: RoutingCategoryKey.utility,
+    items: [RoutingItemKey.nebKitProvider],
+  },
 ]
 
 export const DOCS_ROUTING_CONFIG = [...PLAYGROUND_ROUTING_CONFIG]

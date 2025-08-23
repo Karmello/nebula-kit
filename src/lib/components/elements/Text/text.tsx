@@ -3,25 +3,41 @@ import classNames from 'classnames'
 
 import { Box, BoxOwnProps, WithIcon, WithIconProps } from 'lib/components'
 import { withPrefix, getDataAttrs } from 'lib/helpers'
+import { TextTypography } from 'lib/definitions'
 
 import './text.scss'
 
 type TextAs = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'
-type TextTypography = 'caption' | 'secondary' | 'body' | 'lead' | 'h6' | 'h5' | 'h4' | 'h3' | 'h2' | 'h1'
 
-export type TextOwnProps = Pick<BoxOwnProps, 'intent' | 'fontSize' | 'lineHeight' | 'textAlign'> & {
+export type TextOwnProps = {
+  /** Underlying HTML tag to render for the text element (defaults to the tag implied by typography) */
+  as?: TextAs
+  /** Semantic color/style intent for the text (e.g. neutral, success, danger) */
+  intent?: BoxOwnProps['intent']
+  /** Explicit font size override; falls back to preset from typography */
+  fontSize?: BoxOwnProps['fontSize']
+  /** Line height of the text */
+  lineHeight?: BoxOwnProps['lineHeight']
+  /** Horizontal text alignment (e.g. left, right, center) */
+  textAlign?: BoxOwnProps['textAlign']
+} & {
+  /** Typography preset mapping to tag and font size (h1–h6, body, lead, etc.) */
   typography?: TextTypography
+  /** Prevents wrapping, rendering all text on a single line */
   noWrap?: boolean
-  clampLines?: number
+  /** Truncates overflowing text with an ellipsis */
   truncate?: boolean
+  /** Number of lines before truncating with line-clamp */
+  clampLines?: number
+  /** Optional icon name to display alongside text */
   iconName?: WithIconProps['iconName']
+  /** Position of the icon relative to the text (left or right) */
   iconPosition?: WithIconProps['iconPosition']
 }
 
 export type TextProps = TextOwnProps & {
   children: ReactNode
   ref?: Ref<any>
-  as?: TextAs
   className?: string
   style?: CSSProperties
 }
@@ -45,18 +61,19 @@ const TYPOGRAPHY_TO_PROPS: Record<
   h1: { as: 'h1', fontSize: 30 },
 }
 
+/** Text is a polymorphic typography component built on Box. It maps semantic variants (h1-h6, body, lead, secondary, caption) to matching HTML tags and font sizes, while also exposing fine-grained props for alignment, wrapping, truncation, line-clamping, and optional icons. It’s meant to be the single entry point for consistent text styling across the system. */
 export const Text = ({
   children,
   ref,
-  as,
+  as = 'p',
   intent = 'neutral',
-  fontSize,
-  lineHeight,
-  textAlign,
+  fontSize = 8,
+  lineHeight = 'normal',
+  textAlign = 'initial',
   typography = 'body',
-  noWrap,
+  noWrap = false,
+  truncate = false,
   clampLines,
-  truncate,
   iconName,
   iconPosition,
   className,

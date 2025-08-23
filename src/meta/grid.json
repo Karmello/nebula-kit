@@ -3,6 +3,23 @@
   "description": "Grid is a polymorphic, responsive 2‑D layout primitive built on Box. It exposes a CSS‑variable API for track templates, auto‑placement, alignment, and per‑axis gaps - great for card grids, dashboards, and complex layouts.",
   "props": [
     {
+      "name": "as",
+      "type": "GridAs",
+      "options": [
+        "div",
+        "section",
+        "main",
+        "article",
+        "aside",
+        "nav",
+        "ul",
+        "ol"
+      ],
+      "required": false,
+      "defaultValue": "'div'",
+      "description": "Polymorphic prop to change the rendered element type"
+    },
+    {
       "name": "columns",
       "type": "ResponsiveProp<string | number>",
       "options": [],

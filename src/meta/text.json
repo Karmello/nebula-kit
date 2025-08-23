@@ -1,10 +1,27 @@
 {
   "name": "Text",
-  "description": "",
+  "description": "Text is a polymorphic typography component built on Box. It maps semantic variants (h1-h6, body, lead, secondary, caption) to matching HTML tags and font sizes, while also exposing fine-grained props for alignment, wrapping, truncation, line-clamping, and optional icons. It’s meant to be the single entry point for consistent text styling across the system.",
   "props": [
     {
+      "name": "as",
+      "type": "TextAs",
+      "options": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "p",
+        "span"
+      ],
+      "required": false,
+      "defaultValue": "'p'",
+      "description": "Underlying HTML tag to render for the text element (defaults to the tag implied by typography)"
+    },
+    {
       "name": "intent",
-      "type": "'textAlig",
+      "type": "BoxOwnProps['intent']",
       "options": [
         "neutral",
         "primary",
@@ -18,27 +35,27 @@
       ],
       "required": false,
       "defaultValue": "'neutral'",
-      "description": "Semantic tone or purpose (e.g. neutral, success, danger)"
+      "description": "Semantic color/style intent for the text (e.g. neutral, success, danger)"
     },
     {
       "name": "fontSize",
-      "type": "ReactNode\n  ref?: Ref<any>\n  as?: Te",
+      "type": "BoxOwnProps['fontSize']",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": "Sets font size using scale values or raw CSS values"
+      "defaultValue": "8",
+      "description": "Explicit font size override; falls back to preset from typography"
     },
     {
       "name": "lineHeight",
-      "type": "OGRAPHY_TO_PROPS: Record<\n  Text",
+      "type": "BoxOwnProps['lineHeight']",
       "options": [],
       "required": false,
-      "defaultValue": "",
-      "description": "Controls line height for text content"
+      "defaultValue": "'normal'",
+      "description": "Line height of the text"
     },
     {
       "name": "textAlign",
-      "type": "caption: { as: 'p', font",
+      "type": "BoxOwnProps['textAlign']",
       "options": [
         "left",
         "right",
@@ -52,35 +69,43 @@
         "revert"
       ],
       "required": false,
-      "defaultValue": "",
-      "description": "Horizontal alignment of text (start, center, end, etc.)"
+      "defaultValue": "'initial'",
+      "description": "Horizontal text alignment (e.g. left, right, center)"
     },
     {
       "name": "typography",
       "type": "TextTypography",
       "options": [
-        "secondary",
-        "caption",
-        "body",
-        "lead",
-        "h6",
-        "h5",
-        "h4",
-        "h3",
+        "h1",
         "h2",
-        "h1"
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "lead",
+        "body",
+        "secondary",
+        "caption"
       ],
       "required": false,
       "defaultValue": "'body'",
-      "description": ""
+      "description": "Typography preset mapping to tag and font size (h1–h6, body, lead, etc.)"
     },
     {
       "name": "noWrap",
       "type": "boolean",
       "options": [],
       "required": false,
-      "defaultValue": "",
-      "description": ""
+      "defaultValue": "false",
+      "description": "Prevents wrapping, rendering all text on a single line"
+    },
+    {
+      "name": "truncate",
+      "type": "boolean",
+      "options": [],
+      "required": false,
+      "defaultValue": "false",
+      "description": "Truncates overflowing text with an ellipsis"
     },
     {
       "name": "clampLines",
@@ -88,15 +113,7 @@
       "options": [],
       "required": false,
       "defaultValue": "",
-      "description": ""
-    },
-    {
-      "name": "truncate",
-      "type": "boolean",
-      "options": [],
-      "required": false,
-      "defaultValue": "",
-      "description": ""
+      "description": "Number of lines before truncating with line-clamp"
     },
     {
       "name": "iconName",
@@ -108,7 +125,7 @@
       ],
       "required": false,
       "defaultValue": "",
-      "description": ""
+      "description": "Optional icon name to display alongside text"
     },
     {
       "name": "iconPosition",
@@ -119,7 +136,7 @@
       ],
       "required": false,
       "defaultValue": "",
-      "description": ""
+      "description": "Position of the icon relative to the text (left or right)"
     }
   ]
 }

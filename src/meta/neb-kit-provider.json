@@ -1,0 +1,37 @@
+{
+  "name": "NebKitProvider",
+  "description": "NebKitProvider is the root context wrapper for the library. It initializes language and theme, wires them into the internal store, syncs with i18next for translations, and applies the active theme as a data-theme attribute on the document. Consumers wrap their app in it once to enable consistent theming, localization, and shared state across all Nebula-kit components.",
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactElement",
+      "options": [],
+      "required": true,
+      "defaultValue": "",
+      "description": "The single React element to wrap with provider context"
+    },
+    {
+      "name": "defaultLang",
+      "type": "Language",
+      "options": [
+        "en",
+        "pl"
+      ],
+      "required": false,
+      "defaultValue": "en",
+      "description": "Initial language to set in the store and i18next"
+    },
+    {
+      "name": "defaultTheme",
+      "type": "Theme",
+      "options": [
+        "light",
+        "gray",
+        "dark"
+      ],
+      "required": false,
+      "defaultValue": "light",
+      "description": "Initial theme applied as data-theme attribute"
+    }
+  ]
+}

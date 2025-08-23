@@ -64,6 +64,18 @@ export type ClusterCssVars = Pick<ClusterOwnProps, 'minItemWidth'>
 
 export type NavLayoutCssVars = Pick<NavLayoutProps, 'sideWidth'>
 
+export type TextTypography =
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6'
+  | 'lead'
+  | 'body'
+  | 'secondary'
+  | 'caption'
+
 export type TextAlign =
   | 'left'
   | 'right'
