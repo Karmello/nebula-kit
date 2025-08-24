@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-import { Button } from 'lib/components'
+import { NavBar } from 'lib/components'
 import { useDocsStore, usePlaygroundStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
 
@@ -16,22 +16,28 @@ export const AppNavBar = () => {
   const [pageKey] = pathname.split('/').filter(s => s)
 
   return (
-    <nav>
-      <Button intent={pageKey === 'home' ? 'primary' : 'neutral'} onClick={() => navigateTo('/home')}>
-        {t('common.home')}
-      </Button>
-      <Button
-        intent={pageKey === 'playground' ? 'primary' : 'neutral'}
-        onClick={() => navigateTo(`/playground/${playgroundStore.categoryKey}/${playgroundStore.itemKey}`)}
-      >
-        {t('common.playground')}
-      </Button>
-      <Button
-        intent={pageKey === 'docs' ? 'primary' : 'neutral'}
-        onClick={() => navigateTo(`/docs/${docsStore.categoryKey}/${docsStore.itemKey}`)}
-      >
-        {t('common.docs')}
-      </Button>
-    </nav>
+    <NavBar
+      buttons={[
+        { value: 'home', label: t('common.home') },
+        { value: 'playground', label: t('common.playground') },
+        { value: 'docs', label: t('common.docs') },
+      ]}
+      selectedValue={pageKey}
+      onSelect={value => {
+        switch (value) {
+          case 'home': {
+            navigateTo('/home')
+            break
+          }
+          case 'playground': {
+            navigateTo(`/playground/${playgroundStore.categoryKey}/${playgroundStore.itemKey}`)
+            break
+          }
+          case 'docs': {
+            navigateTo(`/docs/${docsStore.categoryKey}/${docsStore.itemKey}`)
+          }
+        }
+      }}
+    />
   )
 }

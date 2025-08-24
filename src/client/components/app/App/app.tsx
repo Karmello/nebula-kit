@@ -3,12 +3,12 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 import { useLibStore } from 'lib/state'
-import { Spacer } from 'lib/components'
+import { AppLayout } from 'lib/components'
 import { validateQueryParams } from 'client/services'
-import { useAppStore } from 'client/store'
 
-import { RootPage } from '../RootPage'
 import { AppNavBar } from './AppNavBar'
+import { RootPage } from '../RootPage'
+import { ThemeSelect } from '../ThemeSelect'
 
 export const App = () => {
   const { i18n } = useTranslation()
@@ -16,29 +16,29 @@ export const App = () => {
   const push = useNavigate()
 
   const { lang, setLang, theme, setTheme } = useLibStore()
-  const { setLoading } = useAppStore()
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const validated = validateQueryParams(search)
     setLang(validated.lang)
     setTheme(validated.theme)
   }, [])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     i18n.changeLanguage(lang)
     push(`${pathname}?lang=${lang}&theme=${theme}`, { replace: true })
   }, [lang, theme])
 
-  useEffect(() => {
-    window.scrollTo({ top: 0 })
-    setTimeout(() => setLoading(false), 1000)
-  }, [])
-
   return (
     <>
-      <AppNavBar />
-      <Spacer size={20} />
-      <RootPage />
+      <AppLayout stickyHeader>
+        <AppLayout.Header>
+          <AppNavBar />
+        </AppLayout.Header>
+        <AppLayout.Main>
+          <RootPage />
+        </AppLayout.Main>
+        {/* <AppLayout.Footer>footer</AppLayout.Footer> */}
+      </AppLayout>
     </>
   )
 }

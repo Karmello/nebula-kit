@@ -91,6 +91,8 @@ export type TextTypography =
   | 'secondary'
   | 'caption'
 
+export type Display = 'block' | 'inline' | 'inline-block' | 'none' | 'revert'
+
 export type TextAlign =
   | 'left'
   | 'right'

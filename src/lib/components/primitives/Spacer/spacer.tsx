@@ -18,6 +18,7 @@ export const Spacer = ({ size = 2, axis = 'block', ...rest }: SpacerOwnProps) =>
       role="presentation"
       aria-hidden="true"
       className={withPrefix('spacer')}
+      variant="ghost"
       blockSize={axis === 'block' ? size : undefined}
       inlineSize={axis === 'inline' ? size : undefined}
       style={{ display: axis === 'block' ? 'block' : 'inline-block' }}

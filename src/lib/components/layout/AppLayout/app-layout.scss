@@ -1,0 +1,16 @@
+.neb-app-layout {
+  min-height: 100dvh;
+
+  .neb-app-layout-main {
+    min-block-size: 0;
+    min-inline-size: 0;
+  }
+}
+
+.neb-app-layout[data-neb-app-layout-sticky-header='true'] {
+  .neb-app-layout-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+}

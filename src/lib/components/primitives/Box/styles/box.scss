@@ -10,10 +10,10 @@
   transition: all 0.15s linear;
 
   border-style: solid;
+  border-width: 0;
   border-radius: var(--neb-scale-3);
-  border-width: var(--neb-scale-1);
-  border-color: transparent;
 
+  display: var(--neb-box-display-base, revert);
   font-size: var(--neb-box-font-size-base, inherit);
   line-height: var(--neb-box-line-height-base, normal);
   text-align: var(--neb-box-text-align-base, initial);
@@ -33,6 +33,7 @@
   padding-left: var(--neb-box-pl-base, var(--neb-box-px-base, var(--neb-box-p-base, 0)));
 
   @media (min-width: 480px) {
+    display: var(--neb-box-display-sm, revert);
     font-size: var(--neb-box-font-size-sm, inherit);
     line-height: var(--neb-box-line-height-sm, normal);
     text-align: var(--neb-box-text-align-sm, initial);
@@ -53,6 +54,7 @@
   }
 
   @media (min-width: 768px) {
+    display: var(--neb-box-display-md, revert);
     font-size: var(--neb-box-font-size-md, inherit);
     line-height: var(--neb-box-line-height-md, normal);
     text-align: var(--neb-box-text-align-md, initial);
@@ -73,6 +75,7 @@
   }
 
   @media (min-width: 1024px) {
+    display: var(--neb-box-display-lg, revert);
     font-size: var(--neb-box-font-size-lg, inherit);
     line-height: var(--neb-box-line-height-lg, normal);
     text-align: var(--neb-box-text-align-lg, initial);
@@ -93,6 +96,7 @@
   }
 
   @media (min-width: 1280px) {
+    display: var(--neb-box-display-xl, revert);
     font-size: var(--neb-box-font-size-xl, inherit);
     line-height: var(--neb-box-line-height-xl, normal);
     text-align: var(--neb-box-text-align-xl, initial);

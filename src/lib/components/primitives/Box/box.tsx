@@ -11,6 +11,7 @@ import {
   TextAlign,
   BoxVariant,
   BoxIntent,
+  Display,
 } from 'lib/definitions'
 
 import './styles/box.scss'
@@ -25,6 +26,7 @@ export type BoxOwnProps = {
   /** Disables interaction and applies a muted style */
   disabled?: boolean
   /** Sets font size using scale values or raw CSS values */
+  display?: ResponsiveProp<Display>
   fontSize?: ResponsiveProp<ScaleValue | string>
   /** Controls line height for text content */
   lineHeight?: ResponsiveProp<number | string>
@@ -83,6 +85,7 @@ export const Box = <E extends ElementType = 'div'>({
   intent = 'neutral',
   interactive = false,
   disabled = false,
+  display,
   fontSize = BOX_CSS_VARS.fontSize,
   lineHeight = BOX_CSS_VARS.lineHeight,
   textAlign = BOX_CSS_VARS.textAlign,
@@ -115,6 +118,7 @@ export const Box = <E extends ElementType = 'div'>({
       className={classNames(withPrefix('box'), className)}
       style={{
         ...getCssVars('box', {
+          display,
           fontSize,
           lineHeight,
           textAlign,

@@ -12,16 +12,24 @@ export const PLAYGROUND_ROUTING_CONFIG = [
     ],
   },
   {
-    key: RoutingCategoryKey.controls,
-    items: [RoutingItemKey.button, RoutingItemKey.iconButton],
-  },
-  {
     key: RoutingCategoryKey.elements,
     items: [RoutingItemKey.text, RoutingItemKey.svgIcon, RoutingItemKey.divider],
   },
   {
+    key: RoutingCategoryKey.controls,
+    items: [RoutingItemKey.button, RoutingItemKey.iconButton],
+  },
+  {
     key: RoutingCategoryKey.layout,
     items: [RoutingItemKey.flow, RoutingItemKey.stack, RoutingItemKey.hStack, RoutingItemKey.vStack],
+  },
+  {
+    key: RoutingCategoryKey.form,
+    items: [RoutingItemKey.select],
+  },
+  {
+    key: RoutingCategoryKey.navigation,
+    items: [RoutingItemKey.navBar],
   },
   {
     key: RoutingCategoryKey.utility,

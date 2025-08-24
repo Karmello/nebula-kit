@@ -1,14 +1,22 @@
 import { kebabCase } from 'lodash'
 
-import { BoxOwnProps, TextOwnProps, NavLayoutOwnProps, TableOwnProps } from 'lib/components'
+import {
+  BoxOwnProps,
+  TextOwnProps,
+  NavLayoutOwnProps,
+  TableOwnProps,
+  AppLayoutOwnProps,
+} from 'lib/components'
+
 import { LIB_PREFIX } from 'lib/definitions'
 
 type DataAttrProps = Pick<BoxOwnProps, 'variant' | 'intent' | 'interactive' | 'disabled'> &
   Pick<TextOwnProps, 'typography'> &
   Pick<TableOwnProps, 'layout' | 'zebra' | 'stickyHeader'> &
-  Pick<NavLayoutOwnProps, 'side' | 'open'>
+  Pick<NavLayoutOwnProps, 'side' | 'open'> &
+  Pick<AppLayoutOwnProps, 'stickyHeader'>
 
-type Prefix = 'box' | 'text' | 'table' | 'nav-layout'
+type Prefix = 'box' | 'text' | 'table' | 'nav-layout' | 'app-layout'
 
 const getDataAttr = (prefix: Prefix, props: DataAttrProps, propName: keyof DataAttrProps) => {
   const propValue = props[propName]

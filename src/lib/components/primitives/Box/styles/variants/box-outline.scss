@@ -1,5 +1,6 @@
 .neb-box[data-neb-box-variant='outline'] {
   background-color: transparent;
+  border-width: var(--neb-scale-1);
 
   &[data-neb-box-intent='neutral'] {
     border-color: var(--neb-border-neutral);

@@ -1,15 +1,16 @@
 import { useId, useState, ComponentProps } from 'react'
 import classNames from 'classnames'
 
+import { Grid } from 'lib/components'
 import { withPrefix, getDataAttrs, getCssVars } from 'lib/helpers'
-import { Box } from 'lib/components'
 import { NAV_LAYOUT_CSS_VARS, ResponsiveProp, ScaleValue } from 'lib/definitions'
 
 import { NavLayoutContext } from './useNavLayoutContext'
 
 import './nav-layout.scss'
 
-export interface NavLayoutOwnProps extends ComponentProps<typeof Box> {
+export type NavLayoutOwnProps = {
+  children?: any
   side?: 'left' | 'right'
   sideWidth?: ResponsiveProp<ScaleValue | string>
   defaultOpen?: boolean
@@ -17,11 +18,12 @@ export interface NavLayoutOwnProps extends ComponentProps<typeof Box> {
 }
 
 export const NavLayout = ({
+  children,
   side = 'left',
   sideWidth = NAV_LAYOUT_CSS_VARS.sideWidth,
   defaultOpen = true,
-  className,
-  style,
+  // className,
+  // style,
   ...rest
 }: NavLayoutOwnProps) => {
   const id = useId()
@@ -30,7 +32,8 @@ export const NavLayout = ({
 
   return (
     <NavLayoutContext.Provider value={{ sideId, open, setOpen }}>
-      <Box
+      <Grid columns={2}>{children}</Grid>
+      {/* <Box
         className={classNames(withPrefix('nav-layout'), className)}
         style={{
           ...getCssVars('nav-layout', { sideWidth }),
@@ -38,7 +41,7 @@ export const NavLayout = ({
         }}
         {...getDataAttrs('nav-layout', { side, open })}
         {...rest}
-      />
+      /> */}
     </NavLayoutContext.Provider>
   )
 }

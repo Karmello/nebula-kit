@@ -3,7 +3,7 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { sentenceCase, pascalCase } from 'change-case'
 
 import { useLibStore } from 'lib/state'
-import { Button, Spacer } from 'lib/components'
+import { Button, Spacer, Select } from 'lib/components'
 import { BOX_INTENTS, BOX_VARIANTS, BoxIntent, BoxVariant } from 'lib/definitions'
 import { formatAsQueryString, useNavigateTo } from 'client/services'
 import { usePlaygroundStore } from 'client/store'
@@ -58,26 +58,17 @@ export const PlaygroundPage = () => {
         ))}
       </nav>
       <Spacer size={10} />
-      <select
+      <Select
         value={playgroundStore.variant}
-        onChange={e => playgroundStore.setVariant(e.target.value as BoxVariant)}
-      >
-        {BOX_VARIANTS.map(v => (
-          <option key={v} value={v}>
-            {v}
-          </option>
-        ))}
-      </select>
-      <select
+        onChange={value => playgroundStore.setVariant(value as BoxVariant)}
+        options={BOX_VARIANTS.map(v => ({ value: v, label: v }))}
+      />
+      <Select
         value={playgroundStore.intent}
-        onChange={e => playgroundStore.setIntent(e.target.value as BoxIntent)}
-      >
-        {BOX_INTENTS.map(v => (
-          <option key={v} value={v}>
-            {v}
-          </option>
-        ))}
-      </select>
+        onChange={value => playgroundStore.setIntent(value as BoxIntent)}
+        options={BOX_INTENTS.map(v => ({ value: v, label: v }))}
+      />
+      <Spacer size={20} />
       <Routes>
         {PLAYGROUND_PAGES.flatMap(({ key: categoryKey, items }) =>
           items.map(({ key: itemKey }) => {

@@ -1,6 +1,6 @@
 import { JSX, SVGProps } from 'react'
 
-export const ICON_NAMES = ['check', 'close', 'search'] as const
+export const ICON_NAMES = ['check', 'close', 'search', 'menu'] as const
 
 export type IconName = (typeof ICON_NAMES)[number]
 

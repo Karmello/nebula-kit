@@ -11,7 +11,7 @@ export const CompMetaRenderer = ({ data }: { data: ComponentMeta }) => {
       <Text>{data.name}</Text>
       <Text>{data.description}</Text>
       <Spacer size={10} />
-      <Table layout="fixed" scrollable>
+      <Table key={data.name} layout="fixed" scrollable>
         <TableHead>
           <TableRow>
             <TableHeadCell style={{ width: '15ch' }}>Name</TableHeadCell>
