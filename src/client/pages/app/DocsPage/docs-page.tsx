@@ -3,7 +3,7 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { pascalCase, sentenceCase } from 'change-case'
 
 import { useLibStore } from 'lib/state'
-import { Button } from 'lib/components'
+import { Button, Spacer } from 'lib/components'
 import { ComponentMeta } from 'lib/definitions'
 import { useDocsStore } from 'client/store'
 import { formatAsQueryString, useNavigateTo } from 'client/services'
@@ -52,6 +52,7 @@ export const DocsPage = () => {
           </Button>
         ))}
       </nav>
+      <Spacer size={20} />
       <nav>
         {DOCS_PAGES.find(obj => obj.key === docsStore.categoryKey).items.map(({ key, label }) => (
           <Button
@@ -63,6 +64,7 @@ export const DocsPage = () => {
           </Button>
         ))}
       </nav>
+      <Spacer size={10} />
       <CompMetaRenderer data={META_DATA} />
       <Routes>
         {DOCS_PAGES.flatMap(({ key: categoryKey, items }) =>

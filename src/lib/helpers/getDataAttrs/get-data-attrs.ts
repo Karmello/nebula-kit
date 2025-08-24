@@ -1,12 +1,12 @@
 import { kebabCase } from 'lodash'
 
-import { BoxOwnProps, TextOwnProps, NavLayoutProps, TableOwnProps } from 'lib/components'
+import { BoxOwnProps, TextOwnProps, NavLayoutOwnProps, TableOwnProps } from 'lib/components'
 import { LIB_PREFIX } from 'lib/definitions'
 
 type DataAttrProps = Pick<BoxOwnProps, 'variant' | 'intent' | 'interactive' | 'disabled'> &
   Pick<TextOwnProps, 'typography'> &
   Pick<TableOwnProps, 'layout' | 'zebra' | 'stickyHeader'> &
-  Pick<NavLayoutProps, 'side' | 'open'>
+  Pick<NavLayoutOwnProps, 'side' | 'open'>
 
 type Prefix = 'box' | 'text' | 'table' | 'nav-layout'
 

@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 import { useLibStore } from 'lib/state'
+import { Spacer } from 'lib/components'
 import { validateQueryParams } from 'client/services'
 import { useAppStore } from 'client/store'
 
@@ -36,6 +37,7 @@ export const App = () => {
   return (
     <>
       <AppNavBar />
+      <Spacer size={20} />
       <RootPage />
     </>
   )

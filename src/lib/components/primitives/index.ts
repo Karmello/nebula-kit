@@ -1,6 +1,5 @@
 export * from './Box'
 export * from './Flex'
 export * from './Grid'
-export * from './SvgIcon'
+export * from './Spacer'
 export * from './Table'
-export * from './WithIcon'

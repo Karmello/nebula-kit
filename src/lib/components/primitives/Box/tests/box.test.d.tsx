@@ -37,9 +37,9 @@ expectType<JSX.Element>(<Box textAlign="center" />)
 expectType<JSX.Element>(<Box textAlign={{ base: 'left', md: 'right' }} />)
 expectError(<Box textAlign="middle" />)
 
-// height/min/max (token | string, responsive ok)
-expectType<JSX.Element>(<Box height={20} />)
-expectType<JSX.Element>(<Box maxHeight={{ lg: '50vh' }} />)
+// blockSize/minBlockSize/maxBlockSize (token | string, responsive ok)
+expectType<JSX.Element>(<Box blockSize={20} />)
+expectType<JSX.Element>(<Box blockSize={{ lg: '50vh' }} />)
 
 // padding shorthands (token | string | responsive)
 expectType<JSX.Element>(<Box p={8} />)

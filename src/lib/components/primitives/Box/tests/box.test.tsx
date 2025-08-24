@@ -68,13 +68,20 @@ describe('<Box /> runtime', () => {
     expect(style).toContain('--neb-box-text-align-md: center')
   })
 
-  it('emits height/minHeight/maxHeight vars (token or string)', () => {
-    render(<Box data-testid="box" height={{ base: 20, md: '40vh' }} minHeight={12} maxHeight={{ lg: 30 }} />)
+  it('emits blockSize/minBlockSize/maxBlockSize vars (token or string)', () => {
+    render(
+      <Box
+        data-testid="box"
+        blockSize={{ base: 20, md: '40vh' }}
+        minBlockSize={12}
+        maxBlockSize={{ lg: 30 }}
+      />
+    )
     const style = screen.getByTestId('box').getAttribute('style') || ''
-    expect(style).toContain('--neb-box-height-base: var(--neb-scale-20)')
-    expect(style).toContain('--neb-box-height-md: 40vh')
-    expect(style).toContain('--neb-box-min-height-base: var(--neb-scale-12)')
-    expect(style).toContain('--neb-box-max-height-lg: var(--neb-scale-30)')
+    expect(style).toContain('--neb-box-block-size-base: var(--neb-scale-20)')
+    expect(style).toContain('--neb-box-block-size-md: 40vh')
+    expect(style).toContain('--neb-box-min-block-size-base: var(--neb-scale-12)')
+    expect(style).toContain('--neb-box-max-block-size-lg: var(--neb-scale-30)')
   })
 
   it('forwards unknown props to the DOM element', () => {

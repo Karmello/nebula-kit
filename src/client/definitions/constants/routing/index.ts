@@ -2,8 +2,14 @@ import { RoutingCategoryKey, RoutingItemKey } from 'client/definitions'
 
 export const PLAYGROUND_ROUTING_CONFIG = [
   {
-    key: RoutingCategoryKey.primitive,
-    items: [RoutingItemKey.box, RoutingItemKey.flex, RoutingItemKey.grid, RoutingItemKey.table],
+    key: RoutingCategoryKey.primitives,
+    items: [
+      RoutingItemKey.box,
+      RoutingItemKey.flex,
+      RoutingItemKey.grid,
+      RoutingItemKey.table,
+      RoutingItemKey.spacer,
+    ],
   },
   {
     key: RoutingCategoryKey.controls,
@@ -11,15 +17,15 @@ export const PLAYGROUND_ROUTING_CONFIG = [
   },
   {
     key: RoutingCategoryKey.elements,
-    items: [RoutingItemKey.text],
+    items: [RoutingItemKey.text, RoutingItemKey.svgIcon, RoutingItemKey.divider],
   },
   {
     key: RoutingCategoryKey.layout,
-    items: [RoutingItemKey.stack, RoutingItemKey.hstack, RoutingItemKey.vstack],
+    items: [RoutingItemKey.flow, RoutingItemKey.stack, RoutingItemKey.hStack, RoutingItemKey.vStack],
   },
   {
     key: RoutingCategoryKey.utility,
-    items: [RoutingItemKey.nebKitProvider],
+    items: [RoutingItemKey.nebKitProvider, RoutingItemKey.withIcon],
   },
 ]
 

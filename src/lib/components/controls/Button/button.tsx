@@ -33,15 +33,15 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
 const SIZE_TO_PROPS: Record<
   ButtonSize,
   {
-    height: BoxOwnProps['height']
+    blockSize: BoxOwnProps['blockSize']
     pl: BoxOwnProps['pl']
     pr: BoxOwnProps['pr']
     fontSize: BoxOwnProps['fontSize']
   }
 > = {
-  sm: { height: 19, pl: 6, pr: 6, fontSize: 7 },
-  md: { height: 22, pl: 8, pr: 8, fontSize: 8 },
-  lg: { height: 26, pl: 12, pr: 12, fontSize: 9 },
+  sm: { blockSize: 19, pl: 6, pr: 6, fontSize: 7 },
+  md: { blockSize: 22, pl: 8, pr: 8, fontSize: 8 },
+  lg: { blockSize: 26, pl: 12, pr: 12, fontSize: 9 },
 }
 
 /** Button is a polymorphic action component built on Box. It supports variants, intents, and sizes, with optional icons on either side. Padding and height adjust automatically per size. */

@@ -30,12 +30,18 @@ export type BoxOwnProps = {
   lineHeight?: ResponsiveProp<number | string>
   /** Horizontal alignment of text (start, center, end, etc.) */
   textAlign?: ResponsiveProp<TextAlign>
-  /** Explicit height of the box */
-  height?: ResponsiveProp<ScaleValue | string>
-  /** Minimum height constraint */
-  minHeight?: ResponsiveProp<ScaleValue | string>
-  /** Maximum height constraint */
-  maxHeight?: ResponsiveProp<ScaleValue | string>
+  /** Logical size of the element in the block axis (like height) */
+  blockSize?: ResponsiveProp<ScaleValue | string>
+  /** Minimum logical size of the element in the block axis */
+  minBlockSize?: ResponsiveProp<ScaleValue | string>
+  /** Maximum logical size of the element in the block axis */
+  maxBlockSize?: ResponsiveProp<ScaleValue | string>
+  /** Logical size of the element in the inline axis (like width) */
+  inlineSize?: ResponsiveProp<ScaleValue | string>
+  /** Minimum logical size of the element in the inline axis */
+  minInlineSize?: ResponsiveProp<ScaleValue | string>
+  /** Maximum logical size of the element in the inline axis */
+  maxInlineSize?: ResponsiveProp<ScaleValue | string>
   /** Padding top */
   pt?: ResponsiveProp<ScaleValue | string>
   /** Padding right */
@@ -80,9 +86,12 @@ export const Box = <E extends ElementType = 'div'>({
   fontSize = BOX_CSS_VARS.fontSize,
   lineHeight = BOX_CSS_VARS.lineHeight,
   textAlign = BOX_CSS_VARS.textAlign,
-  height = BOX_CSS_VARS.height,
-  minHeight = BOX_CSS_VARS.minHeight,
-  maxHeight = BOX_CSS_VARS.maxHeight,
+  blockSize = BOX_CSS_VARS.blockSize,
+  minBlockSize = BOX_CSS_VARS.minBlockSize,
+  maxBlockSize = BOX_CSS_VARS.maxBlockSize,
+  inlineSize = BOX_CSS_VARS.inlineSize,
+  minInlineSize = BOX_CSS_VARS.minInlineSize,
+  maxInlineSize = BOX_CSS_VARS.maxInlineSize,
   pt = BOX_CSS_VARS.pt,
   pr = BOX_CSS_VARS.pr,
   pb = BOX_CSS_VARS.pb,
@@ -106,6 +115,15 @@ export const Box = <E extends ElementType = 'div'>({
       className={classNames(withPrefix('box'), className)}
       style={{
         ...getCssVars('box', {
+          fontSize,
+          lineHeight,
+          textAlign,
+          blockSize,
+          minBlockSize,
+          maxBlockSize,
+          inlineSize,
+          minInlineSize,
+          maxInlineSize,
           p,
           px,
           py,
@@ -120,12 +138,6 @@ export const Box = <E extends ElementType = 'div'>({
           mr,
           mb,
           ml,
-          fontSize,
-          lineHeight,
-          textAlign,
-          height,
-          minHeight,
-          maxHeight,
         }),
         ...style,
       }}

@@ -1,4 +1,4 @@
-import { Text, Table, TableHead, TableBody, TableRow, TableHeadCell, TableCell } from 'lib/components'
+import { Text, Table, TableHead, TableBody, TableRow, TableHeadCell, TableCell, Spacer } from 'lib/components'
 import { ComponentMeta } from 'lib/definitions'
 
 export const CompMetaRenderer = ({ data }: { data: ComponentMeta }) => {
@@ -10,7 +10,8 @@ export const CompMetaRenderer = ({ data }: { data: ComponentMeta }) => {
     <>
       <Text>{data.name}</Text>
       <Text>{data.description}</Text>
-      <Table layout="fixed" variant="ghost" intent="inverse" zebra>
+      <Spacer size={10} />
+      <Table layout="fixed" zebra>
         <TableHead>
           <TableRow>
             <TableHeadCell>Name</TableHeadCell>

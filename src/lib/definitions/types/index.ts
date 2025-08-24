@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef, ElementType } from 'react'
 
-import { BoxOwnProps, ClusterOwnProps, FlexOwnProps, GridOwnProps, NavLayoutProps } from 'lib/components'
+import { BoxOwnProps, ClusterOwnProps, FlexOwnProps, GridOwnProps, NavLayoutOwnProps } from 'lib/components'
 import { BOX_INTENTS, BOX_VARIANTS, BREAKPOINTS, SCALE } from '..'
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl'
@@ -25,9 +25,12 @@ export type BoxCssVars = Pick<
   | 'fontSize'
   | 'lineHeight'
   | 'textAlign'
-  | 'height'
-  | 'minHeight'
-  | 'maxHeight'
+  | 'blockSize'
+  | 'minBlockSize'
+  | 'maxBlockSize'
+  | 'inlineSize'
+  | 'minInlineSize'
+  | 'maxInlineSize'
   | 'p'
   | 'pb'
   | 'pl'
@@ -65,7 +68,7 @@ export type GridCssVars = Pick<
 
 export type ClusterCssVars = Pick<ClusterOwnProps, 'minItemWidth'>
 
-export type NavLayoutCssVars = Pick<NavLayoutProps, 'sideWidth'>
+export type NavLayoutCssVars = Pick<NavLayoutOwnProps, 'sideWidth'>
 
 export type TextTypography =
   | 'h1'
