@@ -2,7 +2,8 @@ import { CSSProperties, ReactNode } from 'react'
 import classNames from 'classnames'
 
 import { Box, BoxOwnProps, TableContext } from 'lib/components'
-import { withPrefix, getDataAttrs } from 'lib/helpers'
+import { ResponsiveProp, ScaleValue } from 'lib/definitions'
+import { withPrefix, getCssVars, getDataAttrs } from 'lib/helpers'
 
 import './table.scss'
 
@@ -17,6 +18,8 @@ export type TableOwnProps = {
   stickyHeader?: boolean
   /** Wraps the table in a scroll container when true */
   scrollable?: boolean
+  /** Minimum width of the table, useful to trigger horizontal scrolling in fixed layout. */
+  minWidth?: ResponsiveProp<ScaleValue | string>
 } & {
   /** Visual style of the box surface (e.g. solid, outline) */
   variant?: BoxOwnProps['variant']
@@ -35,11 +38,13 @@ export const Table = ({
   children,
   className,
   layout = 'auto',
-  zebra = false,
+  zebra = true,
   stickyHeader = false,
   scrollable = false,
+  minWidth = '40rem',
   variant = 'outline',
   intent = 'neutral',
+  style,
   ...rest
 }: TableProps) => {
   const tableElement = (
@@ -50,6 +55,10 @@ export const Table = ({
         {...getDataAttrs('table', { layout, zebra, stickyHeader })}
         variant={variant}
         intent={intent}
+        style={{
+          ...getCssVars('table', { minWidth }),
+          ...style,
+        }}
         {...rest}
       >
         {children}

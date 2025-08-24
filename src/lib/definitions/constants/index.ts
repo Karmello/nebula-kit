@@ -1,4 +1,11 @@
-import { BoxCssVars, FlexCssVars, GridCssVars, ClusterCssVars, NavLayoutCssVars } from 'lib/definitions'
+import {
+  BoxCssVars,
+  FlexCssVars,
+  GridCssVars,
+  ClusterCssVars,
+  NavLayoutCssVars,
+  TableCssVars,
+} from 'lib/definitions'
 
 export const LIB_PREFIX = 'neb'
 
@@ -73,6 +80,10 @@ export const GRID_CSS_VARS: GridCssVars = {
   placeContent: 'start',
 }
 
+export const TABLE_CSS_VARS: TableCssVars = {
+  minWidth: '40rem',
+}
+
 export const CLUSTER_CSS_VARS: ClusterCssVars = {
   minItemWidth: 'auto',
 }
@@ -85,6 +96,7 @@ export const CSS_VARS_CONFIG = {
   box: BOX_CSS_VARS,
   flex: FLEX_CSS_VARS,
   grid: GRID_CSS_VARS,
+  table: TABLE_CSS_VARS,
   cluster: CLUSTER_CSS_VARS,
   'nav-layout': NAV_LAYOUT_CSS_VARS,
 }

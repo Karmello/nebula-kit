@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, CSSProperties } from 'react'
 import classNames from 'classnames'
 
 import { Box, useTableContext } from 'lib/components'
@@ -7,6 +7,7 @@ import { withPrefix } from 'lib/helpers'
 export type TableHeadCellProps = {
   children?: ReactNode
   className?: string
+  style?: CSSProperties
   /** Scope for header cell (column/row) */
   scope?: 'col' | 'row' | 'colgroup' | 'rowgroup'
   /** Text alignment */

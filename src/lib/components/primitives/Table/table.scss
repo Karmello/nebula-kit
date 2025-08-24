@@ -8,8 +8,9 @@
 
 .neb-table {
   width: 100%;
-  min-width: 100%;
   border-collapse: collapse;
+
+  min-width: var(--neb-table-min-width-base, 40rem);
 
   &[data-neb-table-layout='auto'] {
     table-layout: auto;
@@ -31,6 +32,26 @@
   th,
   td {
     border-radius: 0;
+    padding: 0.5rem;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  @media (min-width: 480px) {
+    min-width: var(--neb-table-min-width-sm, 40rem);
+  }
+
+  @media (min-width: 768px) {
+    min-width: var(--neb-table-min-width-md, 40rem);
+  }
+
+  @media (min-width: 1024px) {
+    min-width: var(--neb-table-min-width-lg, 40rem);
+  }
+
+  @media (min-width: 1280px) {
+    min-width: var(--neb-table-min-width-xl, 40rem);
   }
 }
 

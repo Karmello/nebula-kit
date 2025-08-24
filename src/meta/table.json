@@ -18,7 +18,7 @@
       "type": "boolean",
       "options": [],
       "required": false,
-      "defaultValue": "false",
+      "defaultValue": "true",
       "description": "Adds row striping via data attribute"
     },
     {
@@ -36,6 +36,14 @@
       "required": false,
       "defaultValue": "false",
       "description": "Wraps the table in a scroll container when true"
+    },
+    {
+      "name": "minWidth",
+      "type": "ResponsiveProp<ScaleValue | string>",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "'40rem'",
+      "description": "Minimum width of the table, useful to trigger horizontal scrolling in fixed layout."
     },
     {
       "name": "variant",

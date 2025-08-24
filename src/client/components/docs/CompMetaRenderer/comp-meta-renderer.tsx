@@ -11,15 +11,15 @@ export const CompMetaRenderer = ({ data }: { data: ComponentMeta }) => {
       <Text>{data.name}</Text>
       <Text>{data.description}</Text>
       <Spacer size={10} />
-      <Table layout="fixed" zebra>
+      <Table layout="fixed" scrollable>
         <TableHead>
           <TableRow>
-            <TableHeadCell>Name</TableHeadCell>
-            <TableHeadCell>Type</TableHeadCell>
-            <TableHeadCell>Options</TableHeadCell>
-            <TableHeadCell>Required</TableHeadCell>
-            <TableHeadCell>Default</TableHeadCell>
-            <TableHeadCell>Description</TableHeadCell>
+            <TableHeadCell style={{ width: '15ch' }}>Name</TableHeadCell>
+            <TableHeadCell style={{ width: '30ch' }}>Type</TableHeadCell>
+            <TableHeadCell style={{ width: '30ch' }}>Options</TableHeadCell>
+            <TableHeadCell style={{ width: '8ch' }}>Required</TableHeadCell>
+            <TableHeadCell style={{ width: '10ch' }}>Default</TableHeadCell>
+            <TableHeadCell style={{ width: '50ch' }}>Description</TableHeadCell>
           </TableRow>
         </TableHead>
         <TableBody>
