@@ -1,98 +1,78 @@
-import { kebabCase } from 'lodash'
+import { BREAKPOINTS, LIB_PREFIX } from 'lib/definitions'
+import type { CompWithCssVarsPrefix } from 'lib/definitions'
 
-import { BREAKPOINTS, CSS_VARS_CONFIG, LIB_PREFIX } from 'lib/definitions'
-import { getSingleCssVar } from '../getSingleCssVar'
+import { getSingleCssVar } from '.'
+import { formatCssVarValue } from '../formatCssVarValue'
+import type { GetCssVarsProps } from '../get-css-vars'
 
 describe('getSingleCssVar', () => {
-  // pick a real prefix from your config so the generated var names are valid
-  const prefix = Object.keys(CSS_VARS_CONFIG)[0] as keyof typeof CSS_VARS_CONFIG
+  const prefix: CompWithCssVarsPrefix = 'box'
 
-  it('returns empty object when the prop is undefined', () => {
-    const out = getSingleCssVar(prefix as any, {}, 'gap')
+  test('returns empty object when prop is undefined', () => {
+    const props = {} as GetCssVarsProps<string | number>
+    const out = getSingleCssVar(prefix, props, 'marginTop')
     expect(out).toEqual({})
   })
 
-  it('emits vars for every breakpoint for a primitive string value (passes through)', () => {
-    const propName = 'gap'
-    const value = 'var(--space-m)'
-    const out = getSingleCssVar(prefix as any, { [propName]: value } as any, propName)
+  test('emits base var for scalar number', () => {
+    const props = { marginTop: 8 } as unknown as GetCssVarsProps<string | number>
+    const out = getSingleCssVar(prefix, props, 'marginTop')
 
-    const kebab = kebabCase(propName)
-    const expectedKeys = BREAKPOINTS.map(bp => `--${LIB_PREFIX}-${prefix}-${kebab}-${bp}`)
-    expect(Object.keys(out)).toEqual(expectedKeys)
-    expectedKeys.forEach(k => expect(out[k]).toBe(value))
+    const key = `--${LIB_PREFIX}-${prefix}-margin-top-base`
+    const val = formatCssVarValue('marginTop', 8)
+
+    expect(Object.keys(out)).toEqual([key])
+    expect(out[key]).toBe(val)
   })
 
-  it('emits vars for every breakpoint for a primitive number and wraps with scale (non-special prop)', () => {
-    const propName = 'gap'
-    const value = 4
-    const out = getSingleCssVar(prefix as any, { [propName]: value } as any, propName)
+  test('emits base var for scalar string', () => {
+    const props = { display: 'block' } as unknown as GetCssVarsProps<string | number>
+    const out = getSingleCssVar(prefix, props, 'display')
 
-    const kebab = kebabCase(propName)
-    BREAKPOINTS.forEach(bp => {
-      const key = `--${LIB_PREFIX}-${prefix}-${kebab}-${bp}`
-      expect(out[key]).toBe(`var(--${LIB_PREFIX}-scale-4)`)
-    })
+    const key = `--${LIB_PREFIX}-${prefix}-display-base`
+    const val = formatCssVarValue('display', 'block')
+
+    expect(Object.keys(out)).toEqual([key])
+    expect(out[key]).toBe(val)
   })
 
-  it('formats columns as repeat(n, 1fr) when given a number', () => {
-    const propName = 'columns'
-    const out = getSingleCssVar(prefix as any, { [propName]: 3 } as any, propName)
+  test('emits vars only for defined breakpoints in an object value', () => {
+    // define a sparse responsive value: base, md, xl
+    const props = {
+      marginTop: {
+        base: 0,
+        md: 16,
+        xl: 32,
+      },
+    } as unknown as GetCssVarsProps<string | number>
 
-    const kebab = kebabCase(propName)
-    BREAKPOINTS.forEach(bp => {
-      const key = `--${LIB_PREFIX}-${prefix}-${kebab}-${bp}`
-      expect(out[key]).toBe('repeat(3, 1fr)')
-    })
+    const out = getSingleCssVar(prefix, props, 'marginTop')
+
+    // expected keys only for the breakpoints we set
+    const expectedKeys = ['base', 'md', 'xl'].map(bp => `--${LIB_PREFIX}-${prefix}-margin-top-${bp}`)
+
+    // also assert that none of the other BREAKPOINTS were emitted
+    const unexpected = BREAKPOINTS.filter(bp => !['base', 'md', 'xl'].includes(bp)).map(
+      bp => `--${LIB_PREFIX}-${prefix}-margin-top-${bp}`
+    )
+
+    expect(Object.keys(out).sort()).toEqual(expectedKeys.sort())
+
+    // values are formatted via your formatter
+    expect(out[`--${LIB_PREFIX}-${prefix}-margin-top-base`]).toBe(formatCssVarValue('marginTop', 0))
+    expect(out[`--${LIB_PREFIX}-${prefix}-margin-top-md`]).toBe(formatCssVarValue('marginTop', 16))
+    expect(out[`--${LIB_PREFIX}-${prefix}-margin-top-xl`]).toBe(formatCssVarValue('marginTop', 32))
+
+    // ensure no stray keys
+    unexpected.forEach(k => expect(out[k]).toBeUndefined())
   })
 
-  it('returns a raw number for lineHeight', () => {
-    const propName = 'lineHeight'
-    const out = getSingleCssVar(prefix as any, { [propName]: 1.6 } as any, propName)
+  test('kebab-cases the propName for variable key', () => {
+    const props = { lineHeight: 1.4 } as unknown as GetCssVarsProps<string | number>
+    const out = getSingleCssVar(prefix, props, 'lineHeight')
 
-    const kebab = kebabCase(propName)
-    BREAKPOINTS.forEach(bp => {
-      const key = `--${LIB_PREFIX}-${prefix}-${kebab}-${bp}`
-      expect(out[key]).toBe(1.6)
-      expect(typeof out[key]).toBe('number')
-    })
-  })
-
-  it('handles responsive object values, overriding per breakpoint', () => {
-    const propName = 'gap'
-    // build a value per breakpoint so we don't depend on defaults
-    const responsive: Record<string, number> = {}
-    BREAKPOINTS.forEach((bp, i) => {
-      responsive[bp] = i + 1 // 1,2,3,...
-    })
-
-    const out = getSingleCssVar(prefix as any, { [propName]: responsive } as any, propName)
-    const kebab = kebabCase(propName)
-
-    BREAKPOINTS.forEach((bp, i) => {
-      const key = `--${LIB_PREFIX}-${prefix}-${kebab}-${bp}`
-      expect(out[key]).toBe(`var(--neb-scale-${i + 1})`)
-    })
-  })
-
-  it('carries forward last seen value when some breakpoints are missing', () => {
-    const propName = 'gap'
-    // only define the first two breakpoints
-    const partial: Record<string, number> = {}
-    if (BREAKPOINTS.length >= 2) {
-      partial[BREAKPOINTS[0]] = 2
-      partial[BREAKPOINTS[1]] = 3
-    }
-
-    const out = getSingleCssVar(prefix as any, { [propName]: partial } as any, propName)
-    const kebab = kebabCase(propName)
-
-    let last = partial[BREAKPOINTS[0]] ?? (undefined as unknown as number)
-    BREAKPOINTS.forEach(bp => {
-      if (partial[bp] !== undefined) last = partial[bp]
-      const key = `--${LIB_PREFIX}-${prefix}-${kebab}-${bp}`
-      // once a number is set, it should persist forward
-      expect(out[key]).toBe(`var(--${LIB_PREFIX}-scale-${last})`)
-    })
+    const key = `--${LIB_PREFIX}-${prefix}-line-height-base`
+    expect(Object.keys(out)).toEqual([key])
+    expect(out[key]).toBe(formatCssVarValue('lineHeight', 1.4))
   })
 })

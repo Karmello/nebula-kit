@@ -1,6 +1,6 @@
 import { kebabCase } from 'lodash'
 
-import { BREAKPOINTS, CSS_VARS_CONFIG, CompWithCssVarsPrefix, LIB_PREFIX } from 'lib/definitions'
+import { BREAKPOINTS, CompWithCssVarsPrefix, LIB_PREFIX } from 'lib/definitions'
 
 import { GetCssVarsProps } from '../get-css-vars'
 import { formatCssVarValue } from '../formatCssVarValue'
@@ -18,16 +18,19 @@ export const getSingleCssVar = (
   }
 
   const propNameKebab = kebabCase(propName)
-  let currentValue = CSS_VARS_CONFIG[prefix][propName as never] as string | number
 
-  BREAKPOINTS.forEach(bp => {
-    if (typeof propValue === 'object') {
-      if (propValue[bp] !== undefined) currentValue = propValue[bp]
-    } else {
-      if (propValue !== undefined) currentValue = propValue
-    }
-    cssVars[`--${LIB_PREFIX}-${prefix}-${propNameKebab}-${bp}`] = formatCssVarValue(propName, currentValue)
-  })
+  if (typeof propValue === 'object') {
+    BREAKPOINTS.forEach(bp => {
+      if (propValue[bp] !== undefined) {
+        cssVars[`--${LIB_PREFIX}-${prefix}-${propNameKebab}-${bp}`] = formatCssVarValue(
+          propName,
+          propValue[bp]
+        )
+      }
+    })
+  } else {
+    cssVars[`--${LIB_PREFIX}-${prefix}-${propNameKebab}-base`] = formatCssVarValue(propName, propValue)
+  }
 
   return cssVars
 }

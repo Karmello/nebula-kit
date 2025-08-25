@@ -1,103 +1,73 @@
-import { kebabCase } from 'lodash'
-import { BREAKPOINTS, CSS_VARS_CONFIG, LIB_PREFIX } from 'lib/definitions'
+import { LIB_PREFIX } from 'lib/definitions'
+import type { CompWithCssVarsPrefix } from 'lib/definitions'
 
-import { getCssVars } from '../getCssVars'
+import { getCssVars } from '.'
+import { formatCssVarValue } from './formatCssVarValue'
 
 describe('getCssVars', () => {
-  const prefix = Object.keys(CSS_VARS_CONFIG)[0] as keyof typeof CSS_VARS_CONFIG
+  const prefix: CompWithCssVarsPrefix = 'box'
 
-  it('returns empty object when props is undefined', () => {
-    expect(getCssVars(prefix as any, undefined)).toEqual({})
+  test('returns empty object when props is empty', () => {
+    const out = getCssVars(prefix, {})
+    expect(out).toEqual({})
   })
 
-  it('returns empty object when props is an empty object', () => {
-    expect(getCssVars(prefix as any, {} as any)).toEqual({})
+  test('returns empty object when props is undefined', () => {
+    expect(getCssVars(prefix, undefined)).toEqual({})
   })
 
-  it('merges css vars from multiple primitive props across all breakpoints', () => {
-    const out = getCssVars(
-      prefix as any,
-      {
-        gap: 2,
-        columns: 3,
-      } as any
-    )
+  test('aggregates base scalar props into CSS vars', () => {
+    const props = {
+      display: 'flex',
+      lineHeight: 1.5,
+    }
+    const out = getCssVars(prefix, props)
 
-    const g = kebabCase('gap')
-    const c = kebabCase('columns')
-
-    BREAKPOINTS.forEach(bp => {
-      const gapKey = `--${LIB_PREFIX}-${prefix}-${g}-${bp}`
-      const colKey = `--${LIB_PREFIX}-${prefix}-${c}-${bp}`
-
-      expect(out[gapKey as never]).toBe('var(--neb-scale-2)')
-      expect(out[colKey as never]).toBe('repeat(3, 1fr)')
-    })
-
-    // sanity: has exactly 2 * BREAKPOINTS keys
-    expect(Object.keys(out).length).toBe(BREAKPOINTS.length * 2)
-  })
-
-  it('passes through string values and mixes with numeric ones', () => {
-    const out = getCssVars(
-      prefix as any,
-      {
-        padding: 'var(--space-m)',
-        lineHeight: 1.5,
-      } as any
-    )
-
-    const p = kebabCase('padding')
-    const lh = kebabCase('lineHeight')
-
-    BREAKPOINTS.forEach(bp => {
-      expect(out[`--${LIB_PREFIX}-${prefix}-${p}-${bp}` as never]).toBe('var(--space-m)')
-      expect(out[`--${LIB_PREFIX}-${prefix}-${lh}-${bp}` as never]).toBe(1.5)
-    })
-  })
-
-  it('handles responsive objects and carries forward last specified breakpoint value', () => {
-    const propName = 'gap'
-    const kebab = kebabCase(propName)
-
-    // define only some breakpoints to exercise carry-forward logic
-    const responsive: Record<string, number> = {}
-    if (BREAKPOINTS.length >= 3) {
-      responsive[BREAKPOINTS[0]] = 1
-      responsive[BREAKPOINTS[2]] = 3
-    } else {
-      // fallback: at least set the first
-      responsive[BREAKPOINTS[0]] = 1
+    const expected = {
+      [`--${LIB_PREFIX}-${prefix}-display-base`]: formatCssVarValue('display', 'flex'),
+      [`--${LIB_PREFIX}-${prefix}-line-height-base`]: formatCssVarValue('lineHeight', 1.5),
     }
 
-    const out = getCssVars(prefix as any, { [propName]: responsive } as any)
-
-    // walk in order, mirroring getSingleCssVar behavior
-    let last = (responsive[BREAKPOINTS[0]] ?? undefined) as number | undefined
-    BREAKPOINTS.forEach(bp => {
-      if (responsive[bp] !== undefined) last = responsive[bp]
-      const key = `--${LIB_PREFIX}-${prefix}-${kebab}-${bp}`
-      // once a number appears, it should be wrapped with the scale token and persist forward
-      expect(out[key as never]).toBe(`var(--neb-scale-${last})`)
-    })
+    expect(out).toEqual(expected)
   })
 
-  it('combines responsive and primitive props without overwriting each other', () => {
-    const out = getCssVars(
-      prefix as any,
-      {
-        gap: { [BREAKPOINTS[0]]: 2 } as any,
-        columns: 4,
-      } as any
-    )
+  test('handles responsive object props', () => {
+    const props = {
+      marginTop: {
+        base: 0,
+        md: 16,
+        xl: 32,
+      },
+    }
 
-    const g = kebabCase('gap')
-    const c = kebabCase('columns')
+    const out = getCssVars(prefix, props)
 
-    // gap should carry 2 forward
-    BREAKPOINTS.forEach(bp => {
-      expect(out[`--${LIB_PREFIX}-${prefix}-${g}-${bp}` as never]).toBe(`var(--${LIB_PREFIX}-scale-2)`)
-      expect(out[`--${LIB_PREFIX}-${prefix}-${c}-${bp}` as never]).toBe('repeat(4, 1fr)')
-    })
+    const expected = {
+      [`--${LIB_PREFIX}-${prefix}-margin-top-base`]: formatCssVarValue('marginTop', 0),
+      [`--${LIB_PREFIX}-${prefix}-margin-top-md`]: formatCssVarValue('marginTop', 16),
+      [`--${LIB_PREFIX}-${prefix}-margin-top-xl`]: formatCssVarValue('marginTop', 32),
+    }
+
+    expect(out).toEqual(expected)
+  })
+
+  test('merges multiple props (scalar + responsive)', () => {
+    const props = {
+      display: 'block',
+      paddingLeft: {
+        base: 4,
+        lg: 12,
+      },
+    }
+
+    const out = getCssVars(prefix, props)
+
+    const expected = {
+      [`--${LIB_PREFIX}-${prefix}-display-base`]: formatCssVarValue('display', 'block'),
+      [`--${LIB_PREFIX}-${prefix}-padding-left-base`]: formatCssVarValue('paddingLeft', 4),
+      [`--${LIB_PREFIX}-${prefix}-padding-left-lg`]: formatCssVarValue('paddingLeft', 12),
+    }
+
+    expect(out).toEqual(expected)
   })
 })

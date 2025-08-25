@@ -1,74 +1,46 @@
+@use 'styles/mixins/generate-css-vars.scss' as *;
+
+$neb-grid-props:
+  grid-template-columns, grid-template-rows, gap, row-gap, column-gap, grid-auto-flow, grid-auto-rows,
+  grid-auto-columns, place-items, place-content;
+
 .neb-grid {
   display: grid;
 
-  grid-template-columns: var(--neb-grid-columns-base, 1fr);
-  grid-template-rows: var(--neb-grid-rows-base, auto);
-  gap: var(--neb-grid-gap-base, 0);
-  row-gap: var(--neb-grid-row-gap-base, var(--neb-grid-gap-base, 0));
-  column-gap: var(--neb-grid-column-gap-base, var(--neb-grid-gap-base, 0));
-  grid-auto-flow: var(--neb-grid-auto-flow-base, row);
-  grid-auto-rows: var(--neb-grid-auto-rows-base, auto);
-  grid-auto-columns: var(--neb-grid-auto-columns-base, auto);
-  place-items: var(--neb-grid-place-items-base, stretch);
-  place-content: var(--neb-grid-place-content-base, start);
+  --neb-grid-columns-base: 1fr;
+  --neb-grid-rows-base: auto;
+  --neb-grid-gap-base: 0;
+  --neb-grid-row-gap-base: 0;
+  --neb-grid-column-gap-base: 0;
+  --neb-grid-auto-flow-base: row;
+  --neb-grid-auto-rows-base: auto;
+  --neb-grid-auto-columns-base: auto;
+  --neb-grid-place-items-base: stretch;
+  --neb-grid-place-content-base: start;
+
+  @include generate-css-vars($neb-grid-props, base, grid);
 }
 
 @media (min-width: 480px) {
   .neb-grid {
-    grid-template-columns: var(--neb-grid-columns-sm, 1fr);
-    grid-template-rows: var(--neb-grid-rows-sm, auto);
-    gap: var(--neb-grid-gap-sm, 0);
-    row-gap: var(--neb-grid-row-gap-sm, var(--neb-grid-gap-sm, 0));
-    column-gap: var(--neb-grid-column-gap-sm, var(--neb-grid-gap-sm, 0));
-    grid-auto-flow: var(--neb-grid-auto-flow-sm, row);
-    grid-auto-rows: var(--neb-grid-auto-rows-sm, auto);
-    grid-auto-columns: var(--neb-grid-auto-columns-sm, auto);
-    place-items: var(--neb-grid-place-items-sm, stretch);
-    place-content: var(--neb-grid-place-content-sm, start);
+    @include generate-css-vars($neb-grid-props, sm, grid);
   }
 }
 
 @media (min-width: 768px) {
   .neb-grid {
-    grid-template-columns: var(--neb-grid-columns-md, 1fr);
-    grid-template-rows: var(--neb-grid-rows-md, auto);
-    gap: var(--neb-grid-gap-md, 0);
-    row-gap: var(--neb-grid-row-gap-md, var(--neb-grid-gap-md, 0));
-    column-gap: var(--neb-grid-column-gap-md, var(--neb-grid-gap-md, 0));
-    grid-auto-flow: var(--neb-grid-auto-flow-md, row);
-    grid-auto-rows: var(--neb-grid-auto-rows-md, auto);
-    grid-auto-columns: var(--neb-grid-auto-columns-md, auto);
-    place-items: var(--neb-grid-place-items-md, stretch);
-    place-content: var(--neb-grid-place-content-md, start);
+    @include generate-css-vars($neb-grid-props, md, grid);
   }
 }
 
 @media (min-width: 1024px) {
   .neb-grid {
-    grid-template-columns: var(--neb-grid-columns-lg, 1fr);
-    grid-template-rows: var(--neb-grid-rows-lg, auto);
-    gap: var(--neb-grid-gap-lg, 0);
-    row-gap: var(--neb-grid-row-gap-lg, var(--neb-grid-gap-lg, 0));
-    column-gap: var(--neb-grid-column-gap-lg, var(--neb-grid-gap-lg, 0));
-    grid-auto-flow: var(--neb-grid-auto-flow-lg, row);
-    grid-auto-rows: var(--neb-grid-auto-rows-lg, auto);
-    grid-auto-columns: var(--neb-grid-auto-columns-lg, auto);
-    place-items: var(--neb-grid-place-items-lg, stretch);
-    place-content: var(--neb-grid-place-content-lg, start);
+    @include generate-css-vars($neb-grid-props, lg, grid);
   }
 }
 
 @media (min-width: 1280px) {
   .neb-grid {
-    grid-template-columns: var(--neb-grid-columns-xl, 1fr);
-    grid-template-rows: var(--neb-grid-rows-xl, auto);
-    gap: var(--neb-grid-gap-xl, 0);
-    row-gap: var(--neb-grid-row-gap-xl, var(--neb-grid-gap-xl, 0));
-    column-gap: var(--neb-grid-column-gap-xl, var(--neb-grid-gap-xl, 0));
-    grid-auto-flow: var(--neb-grid-auto-flow-xl, row);
-    grid-auto-rows: var(--neb-grid-auto-rows-xl, auto);
-    grid-auto-columns: var(--neb-grid-auto-columns-xl, auto);
-    place-items: var(--neb-grid-place-items-xl, stretch);
-    place-content: var(--neb-grid-place-content-xl, start);
+    @include generate-css-vars($neb-grid-props, xl, grid);
   }
 }

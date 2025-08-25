@@ -61,10 +61,10 @@ describe('Grid (no mocks)', () => {
     expect(style).toContain('--neb-grid-row-gap-base')
     expect(style).toContain('--neb-grid-column-gap-base')
     expect(style).toContain('--neb-grid-auto-flow-base')
-    expect(style).toContain('--neb-grid-auto-rows-sm')
-    expect(style).toContain('--neb-grid-auto-columns-md')
-    expect(style).toContain('--neb-grid-place-items-lg')
-    expect(style).toContain('--neb-grid-place-content-xl')
+    expect(style).toContain('--neb-grid-auto-rows-base')
+    expect(style).toContain('--neb-grid-auto-columns-base')
+    expect(style).toContain('--neb-grid-place-items-md')
+    expect(style).toContain('--neb-grid-place-content-base')
   })
 
   it('user style overrides helper-provided CSS vars (merge order)', () => {

@@ -1,59 +1,41 @@
+@use 'styles/mixins/generate-css-vars.scss' as *;
+
+$neb-flex-props: flex-direction, flex-wrap, justify-content, align-items, gap, row-gap, column-gap;
+
 .neb-flex {
   display: flex;
 
-  flex-direction: var(--neb-flex-direction-base, row);
-  flex-wrap: var(--neb-flex-wrap-base, nowrap);
-  justify-content: var(--neb-flex-justify-base, flex-start);
-  align-items: var(--neb-flex-align-base, flex-start);
-  gap: var(--neb-flex-gap-base, 0);
-  row-gap: var(--neb-flex-row-gap-base, var(--neb-flex-gap-base, 0));
-  column-gap: var(--neb-flex-column-gap-base, var(--neb-flex-gap-base, 0));
+  --neb-flex-direction-base: row;
+  --neb-flex-wrap-base: nowrap;
+  --neb-flex-justify-base: flex-start;
+  --neb-flex-align-base: flex-start;
+  --neb-flex-gap-base: 0;
+  --neb-flex-row-gap-base: 0;
+  --neb-flex-column-gap-base: 0;
+
+  @include generate-css-vars($neb-flex-props, base, flex);
 }
 
 @media (min-width: 480px) {
   .neb-flex {
-    flex-direction: var(--neb-flex-direction-sm, row);
-    flex-wrap: var(--neb-flex-wrap-sm, nowrap);
-    justify-content: var(--neb-flex-justify-sm, flex-start);
-    align-items: var(--neb-flex-align-sm, flex-start);
-    gap: var(--neb-flex-gap-sm, 0);
-    row-gap: var(--neb-flex-row-gap-sm, var(--neb-flex-gap-sm, 0));
-    column-gap: var(--neb-flex-column-gap-sm, var(--neb-flex-gap-sm, 0));
+    @include generate-css-vars($neb-flex-props, sm, flex);
   }
 }
 
 @media (min-width: 768px) {
   .neb-flex {
-    flex-direction: var(--neb-flex-direction-md, row);
-    flex-wrap: var(--neb-flex-wrap-md, nowrap);
-    justify-content: var(--neb-flex-justify-md, flex-start);
-    align-items: var(--neb-flex-align-md, flex-start);
-    gap: var(--neb-flex-gap-md, 0);
-    row-gap: var(--neb-flex-row-gap-md, var(--neb-flex-gap-md, 0));
-    column-gap: var(--neb-flex-column-gap-md, var(--neb-flex-gap-md, 0));
+    @include generate-css-vars($neb-flex-props, md, flex);
   }
 }
 
 @media (min-width: 1024px) {
   .neb-flex {
-    flex-direction: var(--neb-flex-direction-lg, row);
-    flex-wrap: var(--neb-flex-wrap-lg, nowrap);
-    justify-content: var(--neb-flex-justify-lg, flex-start);
-    align-items: var(--neb-flex-align-lg, flex-start);
-    gap: var(--neb-flex-gap-lg, 0);
-    row-gap: var(--neb-flex-row-gap-lg, var(--neb-flex-gap-lg, 0));
-    column-gap: var(--neb-flex-column-gap-lg, var(--neb-flex-gap-lg, 0));
+    @include generate-css-vars($neb-flex-props, lg, flex);
   }
 }
 
 @media (min-width: 1280px) {
   .neb-flex {
-    flex-direction: var(--neb-flex-direction-xl, row);
-    flex-wrap: var(--neb-flex-wrap-xl, nowrap);
-    justify-content: var(--neb-flex-justify-xl, flex-start);
-    align-items: var(--neb-flex-align-xl, flex-start);
-    gap: var(--neb-flex-gap-xl, 0);
-    row-gap: var(--neb-flex-row-gap-xl, var(--neb-flex-gap-xl, 0));
-    column-gap: var(--neb-flex-column-gap-xl, var(--neb-flex-gap-xl, 0));
+    @include generate-css-vars($neb-flex-props, xl, flex);
   }
 }

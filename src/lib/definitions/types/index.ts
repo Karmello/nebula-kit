@@ -1,13 +1,5 @@
 import { ComponentPropsWithRef, ElementType } from 'react'
 
-import {
-  BoxOwnProps,
-  ClusterOwnProps,
-  FlexOwnProps,
-  GridOwnProps,
-  PageNavLayoutOwnProps,
-  TableOwnProps,
-} from 'lib/components'
 import { BOX_INTENTS, BOX_VARIANTS, BREAKPOINTS, SCALE } from '..'
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl'
@@ -26,65 +18,6 @@ export type CompWithCssVarsPrefix = 'box' | 'flex' | 'grid' | 'table' | 'cluster
 
 export type BoxVariant = (typeof BOX_VARIANTS)[number]
 export type BoxIntent = (typeof BOX_INTENTS)[number]
-
-export type BoxCssVars = Pick<
-  BoxOwnProps,
-  | 'display'
-  | 'opacity'
-  | 'position'
-  | 'top'
-  | 'right'
-  | 'bottom'
-  | 'left'
-  | 'fontSize'
-  | 'lineHeight'
-  | 'textAlign'
-  | 'blockSize'
-  | 'minBlockSize'
-  | 'maxBlockSize'
-  | 'inlineSize'
-  | 'minInlineSize'
-  | 'maxInlineSize'
-  | 'p'
-  | 'pb'
-  | 'pl'
-  | 'pr'
-  | 'pt'
-  | 'px'
-  | 'py'
-  | 'm'
-  | 'mb'
-  | 'ml'
-  | 'mr'
-  | 'mt'
-  | 'mx'
-  | 'my'
->
-
-export type FlexCssVars = Pick<
-  FlexOwnProps,
-  'direction' | 'wrap' | 'justify' | 'align' | 'gap' | 'rowGap' | 'columnGap'
->
-
-export type GridCssVars = Pick<
-  GridOwnProps,
-  | 'columns'
-  | 'rows'
-  | 'gap'
-  | 'rowGap'
-  | 'columnGap'
-  | 'autoFlow'
-  | 'autoRows'
-  | 'autoColumns'
-  | 'placeItems'
-  | 'placeContent'
->
-
-export type TableCssVars = Pick<TableOwnProps, 'minWidth'>
-
-export type ClusterCssVars = Pick<ClusterOwnProps, 'minItemWidth'>
-
-// export type NavLayoutCssVars = Pick<PageNavLayoutOwnProps, 'sideWidth'>
 
 export type TextTypography =
   | 'h1'

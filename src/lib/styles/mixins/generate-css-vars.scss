@@ -18,7 +18,20 @@ $neb-shorthand-map: (
   padding-top: pt,
   padding-bottom: pb,
   padding-left: pl,
-  padding-right: pr
+  padding-right: pr,
+
+  // flex
+  flex-direction: direction,
+  flex-wrap: wrap,
+  justify-content: justify,
+  align-items: align,
+
+  // grid
+  grid-template-columns: columns,
+  grid-template-rows: rows,
+  grid-auto-flow: auto-flow,
+  grid-auto-rows: auto-rows,
+  grid-auto-columns: auto-columns
 );
 
 // Alias precedence (first wins, then fallback within the same bp)
@@ -38,7 +51,10 @@ $neb-spacing-aliases: (
   pl: (pl, px, p),
   pr: (pr, px, p),
   px: (px, p),
-  py: (py, p)
+  py: (py, p),
+  // gap family
+  row-gap: (row-gap, gap),
+  column-gap: (column-gap, gap)
 );
 
 // ----- helpers
