@@ -1,6 +1,13 @@
+@use 'styles/mixins/generate-css-vars.scss' as *;
+
 @use './variants/box-solid.scss';
 @use './variants/box-outline.scss';
 @use './variants/box-ghost.scss';
+
+$neb-box-props:
+  display, opacity, position, top, right, bottom, left, font-size, line-height, text-align, block-size,
+  min-block-size, max-block-size, inline-size, min-inline-size, max-inline-size, margin-top, margin-right,
+  margin-bottom, margin-left, padding-top, padding-right, padding-bottom, padding-left;
 
 .neb-box {
   width: auto;
@@ -13,137 +20,39 @@
   border-width: 0;
   border-radius: var(--neb-scale-3);
 
-  display: var(--neb-box-display-base, revert);
-  opacity: var(--neb-box-opacity-base, 1);
-  position: var(--neb-box-position-base, static);
-  top: var(--neb-box-top-base, auto);
-  right: var(--neb-box-right-base, auto);
-  bottom: var(--neb-box-bottom-base, auto);
-  left: var(--neb-box-left-base, auto);
-  font-size: var(--neb-box-font-size-base, inherit);
-  line-height: var(--neb-box-line-height-base, normal);
-  text-align: var(--neb-box-text-align-base, initial);
-  block-size: var(--neb-box-block-size-base, auto);
-  min-block-size: var(--neb-box-min-block-size-base, auto);
-  max-block-size: var(--neb-box-max-block-size-base, auto);
-  inline-size: var(--neb-box-inline-size-base, auto);
-  min-inline-size: var(--neb-box-min-inline-size-base, auto);
-  max-inline-size: var(--neb-box-max-inline-size-base, auto);
-  margin-top: var(--neb-box-mt-base, var(--neb-box-my-base, var(--neb-box-m-base, 0)));
-  margin-right: var(--neb-box-mr-base, var(--neb-box-mx-base, var(--neb-box-m-base, 0)));
-  margin-bottom: var(--neb-box-mb-base, var(--neb-box-my-base, var(--neb-box-m-base, 0)));
-  margin-left: var(--neb-box-ml-base, var(--neb-box-mx-base, var(--neb-box-m-base, 0)));
-  padding-top: var(--neb-box-pt-base, var(--neb-box-py-base, var(--neb-box-p-base, 0)));
-  padding-right: var(--neb-box-pr-base, var(--neb-box-px-base, var(--neb-box-p-base, 0)));
-  padding-bottom: var(--neb-box-pb-base, var(--neb-box-py-base, var(--neb-box-p-base, 0)));
-  padding-left: var(--neb-box-pl-base, var(--neb-box-px-base, var(--neb-box-p-base, 0)));
+  --neb-box-display-base: revert;
+  --neb-box-opacity-base: 1;
+  --neb-box-position-base: static;
+  --neb-box-top-base: auto;
+  --neb-box-right-base: auto;
+  --neb-box-bottom-base: auto;
+  --neb-box-left-base: auto;
+  --neb-box-font-size-base: inherit;
+  --neb-box-line-height-base: normal;
+  --neb-box-text-align-base: initial;
+  --neb-box-block-size-base: auto;
+  --neb-box-min-block-size-base: auto;
+  --neb-box-max-block-size-base: auto;
+  --neb-box-inline-size-base: auto;
+  --neb-box-min-inline-size-base: auto;
+  --neb-box-max-inline-size-base: auto;
+
+  @include generate-css-vars($neb-box-props, base, box);
 
   @media (min-width: 480px) {
-    display: var(--neb-box-display-sm, revert);
-    opacity: var(--neb-box-opacity-sm, 1);
-    position: var(--neb-box-position-sm, static);
-    top: var(--neb-box-top-sm, auto);
-    right: var(--neb-box-right-sm, auto);
-    bottom: var(--neb-box-bottom-sm, auto);
-    left: var(--neb-box-left-sm, auto);
-    font-size: var(--neb-box-font-size-sm, inherit);
-    line-height: var(--neb-box-line-height-sm, normal);
-    text-align: var(--neb-box-text-align-sm, initial);
-    block-size: var(--neb-box-block-size-sm, auto);
-    min-block-size: var(--neb-box-min-block-size-sm, auto);
-    max-block-size: var(--neb-box-max-block-size-sm, auto);
-    inline-size: var(--neb-box-inline-size-sm, auto);
-    min-inline-size: var(--neb-box-min-inline-size-sm, auto);
-    max-inline-size: var(--neb-box-max-inline-size-sm, auto);
-    margin-top: var(--neb-box-mt-sm, var(--neb-box-my-sm, var(--neb-box-m-sm, 0)));
-    margin-right: var(--neb-box-mr-sm, var(--neb-box-mx-sm, var(--neb-box-m-sm, 0)));
-    margin-bottom: var(--neb-box-mb-sm, var(--neb-box-my-sm, var(--neb-box-m-sm, 0)));
-    margin-left: var(--neb-box-ml-sm, var(--neb-box-mx-sm, var(--neb-box-m-sm, 0)));
-    padding-top: var(--neb-box-pt-sm, var(--neb-box-py-sm, var(--neb-box-p-sm, 0)));
-    padding-right: var(--neb-box-pr-sm, var(--neb-box-px-sm, var(--neb-box-p-sm, 0)));
-    padding-bottom: var(--neb-box-pb-sm, var(--neb-box-py-sm, var(--neb-box-p-sm, 0)));
-    padding-left: var(--neb-box-pl-sm, var(--neb-box-px-sm, var(--neb-box-p-sm, 0)));
+    @include generate-css-vars($neb-box-props, sm, box);
   }
 
   @media (min-width: 768px) {
-    display: var(--neb-box-display-md, revert);
-    opacity: var(--neb-box-opacity-md, 1);
-    position: var(--neb-box-position-md, static);
-    top: var(--neb-box-top-md, auto);
-    right: var(--neb-box-right-md, auto);
-    bottom: var(--neb-box-bottom-md, auto);
-    left: var(--neb-box-left-md, auto);
-    font-size: var(--neb-box-font-size-md, inherit);
-    line-height: var(--neb-box-line-height-md, normal);
-    text-align: var(--neb-box-text-align-md, initial);
-    block-size: var(--neb-box-block-size-md, auto);
-    min-block-size: var(--neb-box-min-block-size-md, auto);
-    max-block-size: var(--neb-box-max-block-size-md, auto);
-    inline-size: var(--neb-box-inline-size-md, auto);
-    min-inline-size: var(--neb-box-min-inline-size-md, auto);
-    max-inline-size: var(--neb-box-max-inline-size-md, auto);
-    margin-top: var(--neb-box-mt-md, var(--neb-box-my-md, var(--neb-box-m-md, 0)));
-    margin-right: var(--neb-box-mr-md, var(--neb-box-mx-md, var(--neb-box-m-md, 0)));
-    margin-bottom: var(--neb-box-mb-md, var(--neb-box-my-md, var(--neb-box-m-md, 0)));
-    margin-left: var(--neb-box-ml-md, var(--neb-box-mx-md, var(--neb-box-m-md, 0)));
-    padding-top: var(--neb-box-pt-md, var(--neb-box-py-md, var(--neb-box-p-md, 0)));
-    padding-right: var(--neb-box-pr-md, var(--neb-box-px-md, var(--neb-box-p-md, 0)));
-    padding-bottom: var(--neb-box-pb-md, var(--neb-box-py-md, var(--neb-box-p-md, 0)));
-    padding-left: var(--neb-box-pl-md, var(--neb-box-px-md, var(--neb-box-p-md, 0)));
+    @include generate-css-vars($neb-box-props, md, box);
   }
 
   @media (min-width: 1024px) {
-    display: var(--neb-box-display-lg, revert);
-    opacity: var(--neb-box-opacity-lg, 1);
-    position: var(--neb-box-position-lg, static);
-    top: var(--neb-box-top-lg, auto);
-    right: var(--neb-box-right-lg, auto);
-    bottom: var(--neb-box-bottom-lg, auto);
-    left: var(--neb-box-left-lg, auto);
-    font-size: var(--neb-box-font-size-lg, inherit);
-    line-height: var(--neb-box-line-height-lg, normal);
-    text-align: var(--neb-box-text-align-lg, initial);
-    block-size: var(--neb-box-block-size-lg, auto);
-    min-block-size: var(--neb-box-min-block-size-lg, auto);
-    max-block-size: var(--neb-box-max-block-size-lg, auto);
-    inline-size: var(--neb-box-inline-size-lg, auto);
-    min-inline-size: var(--neb-box-min-inline-size-lg, auto);
-    max-inline-size: var(--neb-box-max-inline-size-lg, auto);
-    margin-top: var(--neb-box-mt-lg, var(--neb-box-my-lg, var(--neb-box-m-lg, 0)));
-    margin-right: var(--neb-box-mr-lg, var(--neb-box-mx-lg, var(--neb-box-m-lg, 0)));
-    margin-bottom: var(--neb-box-mb-lg, var(--neb-box-my-lg, var(--neb-box-m-lg, 0)));
-    margin-left: var(--neb-box-ml-lg, var(--neb-box-mx-lg, var(--neb-box-m-lg, 0)));
-    padding-top: var(--neb-box-pt-lg, var(--neb-box-py-lg, var(--neb-box-p-lg, 0)));
-    padding-right: var(--neb-box-pr-lg, var(--neb-box-px-lg, var(--neb-box-p-lg, 0)));
-    padding-bottom: var(--neb-box-pb-lg, var(--neb-box-py-lg, var(--neb-box-p-lg, 0)));
-    padding-left: var(--neb-box-pl-lg, var(--neb-box-px-lg, var(--neb-box-p-lg, 0)));
+    @include generate-css-vars($neb-box-props, lg, box);
   }
 
   @media (min-width: 1280px) {
-    display: var(--neb-box-display-xl, revert);
-    opacity: var(--neb-box-opacity-xl, 1);
-    position: var(--neb-box-position-xl, static);
-    top: var(--neb-box-top-xl, auto);
-    right: var(--neb-box-right-xl, auto);
-    bottom: var(--neb-box-bottom-xl, auto);
-    left: var(--neb-box-left-xl, auto);
-    font-size: var(--neb-box-font-size-xl, inherit);
-    line-height: var(--neb-box-line-height-xl, normal);
-    text-align: var(--neb-box-text-align-xl, initial);
-    block-size: var(--neb-box-block-size-xl, auto);
-    min-block-size: var(--neb-box-min-block-size-xl, auto);
-    max-block-size: var(--neb-box-max-block-size-xl, auto);
-    inline-size: var(--neb-box-inline-size-xl, auto);
-    min-inline-size: var(--neb-box-min-inline-size-xl, auto);
-    max-inline-size: var(--neb-box-max-inline-size-xl, auto);
-    margin-top: var(--neb-box-mt-xl, var(--neb-box-my-xl, var(--neb-box-m-xl, 0)));
-    margin-right: var(--neb-box-mr-xl, var(--neb-box-mx-xl, var(--neb-box-m-xl, 0)));
-    margin-bottom: var(--neb-box-mb-xl, var(--neb-box-my-xl, var(--neb-box-m-xl, 0)));
-    margin-left: var(--neb-box-ml-xl, var(--neb-box-mx-xl, var(--neb-box-m-xl, 0)));
-    padding-top: var(--neb-box-pt-xl, var(--neb-box-py-xl, var(--neb-box-p-xl, 0)));
-    padding-right: var(--neb-box-pr-xl, var(--neb-box-px-xl, var(--neb-box-p-xl, 0)));
-    padding-bottom: var(--neb-box-pb-xl, var(--neb-box-py-xl, var(--neb-box-p-xl, 0)));
-    padding-left: var(--neb-box-pl-xl, var(--neb-box-px-xl, var(--neb-box-p-xl, 0)));
+    @include generate-css-vars($neb-box-props, xl, box);
   }
 }
 
