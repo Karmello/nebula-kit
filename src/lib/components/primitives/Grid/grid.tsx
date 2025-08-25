@@ -5,9 +5,9 @@ import { withPrefix, getCssVars } from 'lib/helpers'
 
 import {
   GRID_CSS_VARS,
-  GridAutoFlow,
-  GridPlaceContent,
-  GridPlaceItems,
+  CssGridAutoFlow,
+  CssGridPlaceContent,
+  CssGridPlaceItems,
   PolymorphicProps,
   ResponsiveProp,
   ScaleValue,
@@ -31,15 +31,15 @@ export interface GridOwnProps {
   /** Horizontal spacing between columns; overrides gap on the inline axis; responsive */
   columnGap?: ResponsiveProp<ScaleValue | string>
   /** Auto‑placement strategy for items (grid-auto-flow); responsive */
-  autoFlow?: ResponsiveProp<GridAutoFlow>
+  autoFlow?: ResponsiveProp<CssGridAutoFlow>
   /** Size for implicitly created rows (grid-auto-rows); responsive */
   autoRows?: ResponsiveProp<string>
   /** Size for implicitly created columns (grid-auto-columns); responsive */
   autoColumns?: ResponsiveProp<string>
   /** Shorthand alignment for items within their cells (place-items); responsive */
-  placeItems?: ResponsiveProp<GridPlaceItems>
+  placeItems?: ResponsiveProp<CssGridPlaceItems>
   /** Shorthand alignment for the grid within its container (place-content); responsive */
-  placeContent?: ResponsiveProp<GridPlaceContent>
+  placeContent?: ResponsiveProp<CssGridPlaceContent>
 }
 
 export type GridProps<E extends GridAs = 'div'> = PolymorphicProps<E, BoxOwnProps & GridOwnProps>

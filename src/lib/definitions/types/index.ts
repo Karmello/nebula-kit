@@ -29,6 +29,12 @@ export type BoxIntent = (typeof BOX_INTENTS)[number]
 
 export type BoxCssVars = Pick<
   BoxOwnProps,
+  | 'opacity'
+  | 'position'
+  | 'top'
+  | 'right'
+  | 'bottom'
+  | 'left'
   | 'fontSize'
   | 'lineHeight'
   | 'textAlign'
@@ -91,9 +97,11 @@ export type TextTypography =
   | 'secondary'
   | 'caption'
 
-export type Display = 'block' | 'inline' | 'inline-block' | 'none' | 'revert'
+export type CssDisplay = 'block' | 'inline' | 'inline-block' | 'none' | 'revert'
 
-export type TextAlign =
+export type CssPosition = 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky'
+
+export type CssTextAlign =
   | 'left'
   | 'right'
   | 'center'
@@ -105,11 +113,11 @@ export type TextAlign =
   | 'unset'
   | 'revert'
 
-export type FlexDirection = 'row' | 'row-reverse' | 'column' | 'column-reverse'
+export type CssFlexDirection = 'row' | 'row-reverse' | 'column' | 'column-reverse'
 
-export type FlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse'
+export type CssFlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse'
 
-export type FlexJustify =
+export type CssFlexJustify =
   | 'flex-start'
   | 'center'
   | 'flex-end'
@@ -117,13 +125,13 @@ export type FlexJustify =
   | 'space-around'
   | 'space-evenly'
 
-export type FlexAlign = 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'
+export type CssFlexAlign = 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'
 
-export type GridAutoFlow = 'row' | 'column' | 'dense' | 'row dense' | 'column dense'
+export type CssGridAutoFlow = 'row' | 'column' | 'dense' | 'row dense' | 'column dense'
 
-export type GridPlaceItems = 'start' | 'center' | 'end' | 'stretch'
+export type CssGridPlaceItems = 'start' | 'center' | 'end' | 'stretch'
 
-export type GridPlaceContent =
+export type CssGridPlaceContent =
   | 'start'
   | 'center'
   | 'end'

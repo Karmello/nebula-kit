@@ -30,7 +30,7 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
     ref?: Ref<any>
   }
 
-const SIZE_TO_PROPS: Record<
+export const BUTTON_SIZE_TO_PROPS: Record<
   ButtonSize,
   {
     blockSize: BoxOwnProps['blockSize']
@@ -69,7 +69,7 @@ export const Button = ({
       intent={intent}
       disabled={disabled}
       interactive
-      {...SIZE_TO_PROPS[size]}
+      {...BUTTON_SIZE_TO_PROPS[size]}
     >
       <WithIcon iconName={iconName} iconPosition={iconPosition}>
         {children}

@@ -8,10 +8,11 @@ import {
   PolymorphicProps,
   ResponsiveProp,
   ScaleValue,
-  TextAlign,
+  CssTextAlign,
   BoxVariant,
   BoxIntent,
-  Display,
+  CssDisplay,
+  CssPosition,
 } from 'lib/definitions'
 
 import './styles/box.scss'
@@ -26,12 +27,18 @@ export type BoxOwnProps = {
   /** Disables interaction and applies a muted style */
   disabled?: boolean
   /** Sets font size using scale values or raw CSS values */
-  display?: ResponsiveProp<Display>
+  display?: ResponsiveProp<CssDisplay>
+  opacity?: ResponsiveProp<number>
+  position?: ResponsiveProp<CssPosition>
+  top?: ResponsiveProp<ScaleValue | string>
+  right?: ResponsiveProp<ScaleValue | string>
+  bottom?: ResponsiveProp<ScaleValue | string>
+  left?: ResponsiveProp<ScaleValue | string>
   fontSize?: ResponsiveProp<ScaleValue | string>
   /** Controls line height for text content */
   lineHeight?: ResponsiveProp<number | string>
   /** Horizontal alignment of text (start, center, end, etc.) */
-  textAlign?: ResponsiveProp<TextAlign>
+  textAlign?: ResponsiveProp<CssTextAlign>
   /** Logical size of the element in the block axis (like height) */
   blockSize?: ResponsiveProp<ScaleValue | string>
   /** Minimum logical size of the element in the block axis */
@@ -86,6 +93,12 @@ export const Box = <E extends ElementType = 'div'>({
   interactive = false,
   disabled = false,
   display,
+  opacity = BOX_CSS_VARS.opacity,
+  position = BOX_CSS_VARS.position,
+  top = BOX_CSS_VARS.top,
+  right = BOX_CSS_VARS.right,
+  bottom = BOX_CSS_VARS.bottom,
+  left = BOX_CSS_VARS.left,
   fontSize = BOX_CSS_VARS.fontSize,
   lineHeight = BOX_CSS_VARS.lineHeight,
   textAlign = BOX_CSS_VARS.textAlign,
@@ -119,6 +132,12 @@ export const Box = <E extends ElementType = 'div'>({
       style={{
         ...getCssVars('box', {
           display,
+          opacity,
+          position,
+          top,
+          right,
+          bottom,
+          left,
           fontSize,
           lineHeight,
           textAlign,

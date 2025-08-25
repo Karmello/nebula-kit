@@ -5,7 +5,7 @@ export const formatCssVarValue = (
   propValue: string | number
 ): string | number => {
   if (typeof propValue === 'number') {
-    if (propName === 'lineHeight') {
+    if (['lineHeight', 'opacity'].includes(propName)) {
       return propValue
     } else if (propName === 'columns') {
       return `repeat(${propValue}, 1fr)`

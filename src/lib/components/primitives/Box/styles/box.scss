@@ -14,6 +14,12 @@
   border-radius: var(--neb-scale-3);
 
   display: var(--neb-box-display-base, revert);
+  opacity: var(--neb-box-opacity-base, 1);
+  position: var(--neb-box-position-base, static);
+  top: var(--neb-box-top-base, auto);
+  right: var(--neb-box-right-base, auto);
+  bottom: var(--neb-box-bottom-base, auto);
+  left: var(--neb-box-left-base, auto);
   font-size: var(--neb-box-font-size-base, inherit);
   line-height: var(--neb-box-line-height-base, normal);
   text-align: var(--neb-box-text-align-base, initial);
@@ -34,6 +40,12 @@
 
   @media (min-width: 480px) {
     display: var(--neb-box-display-sm, revert);
+    opacity: var(--neb-box-opacity-sm, 1);
+    position: var(--neb-box-position-sm, static);
+    top: var(--neb-box-top-sm, auto);
+    right: var(--neb-box-right-sm, auto);
+    bottom: var(--neb-box-bottom-sm, auto);
+    left: var(--neb-box-left-sm, auto);
     font-size: var(--neb-box-font-size-sm, inherit);
     line-height: var(--neb-box-line-height-sm, normal);
     text-align: var(--neb-box-text-align-sm, initial);
@@ -55,6 +67,12 @@
 
   @media (min-width: 768px) {
     display: var(--neb-box-display-md, revert);
+    opacity: var(--neb-box-opacity-md, 1);
+    position: var(--neb-box-position-md, static);
+    top: var(--neb-box-top-md, auto);
+    right: var(--neb-box-right-md, auto);
+    bottom: var(--neb-box-bottom-md, auto);
+    left: var(--neb-box-left-md, auto);
     font-size: var(--neb-box-font-size-md, inherit);
     line-height: var(--neb-box-line-height-md, normal);
     text-align: var(--neb-box-text-align-md, initial);
@@ -76,6 +94,12 @@
 
   @media (min-width: 1024px) {
     display: var(--neb-box-display-lg, revert);
+    opacity: var(--neb-box-opacity-lg, 1);
+    position: var(--neb-box-position-lg, static);
+    top: var(--neb-box-top-lg, auto);
+    right: var(--neb-box-right-lg, auto);
+    bottom: var(--neb-box-bottom-lg, auto);
+    left: var(--neb-box-left-lg, auto);
     font-size: var(--neb-box-font-size-lg, inherit);
     line-height: var(--neb-box-line-height-lg, normal);
     text-align: var(--neb-box-text-align-lg, initial);
@@ -97,6 +121,12 @@
 
   @media (min-width: 1280px) {
     display: var(--neb-box-display-xl, revert);
+    opacity: var(--neb-box-opacity-xl, 1);
+    position: var(--neb-box-position-xl, static);
+    top: var(--neb-box-top-xl, auto);
+    right: var(--neb-box-right-xl, auto);
+    bottom: var(--neb-box-bottom-xl, auto);
+    left: var(--neb-box-left-xl, auto);
     font-size: var(--neb-box-font-size-xl, inherit);
     line-height: var(--neb-box-line-height-xl, normal);
     text-align: var(--neb-box-text-align-xl, initial);

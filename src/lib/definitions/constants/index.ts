@@ -32,6 +32,12 @@ export const BOX_INTENTS = [
 ] as const
 
 export const BOX_CSS_VARS: BoxCssVars = {
+  opacity: 1,
+  position: 'static',
+  top: 'auto',
+  right: 'auto',
+  bottom: 'auto',
+  left: 'auto',
   fontSize: 'inherit',
   lineHeight: 'normal',
   textAlign: 'initial',

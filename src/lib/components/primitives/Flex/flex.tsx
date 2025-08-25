@@ -6,10 +6,10 @@ import { withPrefix, getCssVars } from 'lib/helpers'
 
 import {
   FLEX_CSS_VARS,
-  FlexAlign,
-  FlexDirection,
-  FlexJustify,
-  FlexWrap,
+  CssFlexAlign,
+  CssFlexDirection,
+  CssFlexJustify,
+  CssFlexWrap,
   PolymorphicProps,
   ResponsiveProp,
   ScaleValue,
@@ -19,13 +19,13 @@ import './flex.scss'
 
 export type FlexOwnProps = {
   /** Main axis direction (row, column, etc.), supports responsive values */
-  direction?: ResponsiveProp<FlexDirection>
+  direction?: ResponsiveProp<CssFlexDirection>
   /** How flex items wrap onto multiple lines, supports responsive values */
-  wrap?: ResponsiveProp<FlexWrap>
+  wrap?: ResponsiveProp<CssFlexWrap>
   /** Distribution of items along the main axis, supports responsive values */
-  justify?: ResponsiveProp<FlexJustify>
+  justify?: ResponsiveProp<CssFlexJustify>
   /** Alignment of items along the cross axis, supports responsive values */
-  align?: ResponsiveProp<FlexAlign>
+  align?: ResponsiveProp<CssFlexAlign>
   /** Shorthand spacing between items, supports responsive values */
   gap?: ResponsiveProp<ScaleValue | string>
   /** Vertical spacing between rows, overrides gap on block axis */
