@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-import { NavBar } from 'lib/components'
+import { AppNavBar as NebAppNavBar } from 'lib/components'
 import { useDocsStore, usePlaygroundStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
 
@@ -16,7 +16,7 @@ export const AppNavBar = () => {
   const [pageKey] = pathname.split('/').filter(s => s)
 
   return (
-    <NavBar
+    <NebAppNavBar
       buttons={[
         { value: 'home', label: t('common.home') },
         { value: 'playground', label: t('common.playground') },

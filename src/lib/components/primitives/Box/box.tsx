@@ -4,7 +4,6 @@ import classNames from 'classnames'
 import { withPrefix, getCssVars, getDataAttrs } from 'lib/helpers'
 
 import {
-  BOX_CSS_VARS,
   PolymorphicProps,
   ResponsiveProp,
   ScaleValue,
@@ -13,6 +12,7 @@ import {
   BoxIntent,
   CssDisplay,
   CssPosition,
+  BOX_CSS_VARS,
 } from 'lib/definitions'
 
 import './styles/box.scss'
@@ -92,7 +92,7 @@ export const Box = <E extends ElementType = 'div'>({
   intent = 'neutral',
   interactive = false,
   disabled = false,
-  display,
+  display = BOX_CSS_VARS.display,
   opacity = BOX_CSS_VARS.opacity,
   position = BOX_CSS_VARS.position,
   top = BOX_CSS_VARS.top,

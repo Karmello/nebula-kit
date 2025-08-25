@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from 'react'
+import { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
@@ -8,7 +8,6 @@ import { validateQueryParams } from 'client/services'
 
 import { AppNavBar } from './AppNavBar'
 import { RootPage } from '../RootPage'
-import { ThemeSelect } from '../ThemeSelect'
 
 export const App = () => {
   const { i18n } = useTranslation()

@@ -16,7 +16,7 @@ export type VStackProps<E extends StackAs = 'div'> = PolymorphicProps<E, VStackO
 export const VStack = <E extends StackAs = 'div'>({
   as = 'div' as E,
   align = 'stretch',
-  gap = 8,
+  gap,
   ...rest
 }: VStackProps<E>) => {
   return <Stack as={as} direction="column" align={align} gap={gap} {...(rest as VStackProps<E>)} />

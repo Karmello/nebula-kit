@@ -5,7 +5,6 @@ import { Box, BoxOwnProps } from 'lib/components'
 import { withPrefix, getCssVars } from 'lib/helpers'
 
 import {
-  FLEX_CSS_VARS,
   CssFlexAlign,
   CssFlexDirection,
   CssFlexJustify,
@@ -40,13 +39,13 @@ export type FlexProps<E extends ElementType = 'div'> = PolymorphicProps<E, BoxOw
 export const Flex = <E extends ElementType = 'div'>({
   className,
   style,
-  direction = FLEX_CSS_VARS.direction,
-  wrap = FLEX_CSS_VARS.wrap,
-  justify = FLEX_CSS_VARS.justify,
-  align = FLEX_CSS_VARS.align,
-  gap = FLEX_CSS_VARS.gap,
-  rowGap = FLEX_CSS_VARS.rowGap,
-  columnGap = FLEX_CSS_VARS.columnGap,
+  direction,
+  wrap,
+  justify,
+  align,
+  gap,
+  rowGap,
+  columnGap,
   ...rest
 }: FlexProps<E>) => {
   return (

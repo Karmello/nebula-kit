@@ -3,7 +3,7 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { sentenceCase, pascalCase } from 'change-case'
 
 import { useLibStore } from 'lib/state'
-import { Button, Spacer, Select } from 'lib/components'
+import { Button, Spacer, Select, PageNavLayout, VStack } from 'lib/components'
 import { BOX_INTENTS, BOX_VARIANTS, BoxIntent, BoxVariant } from 'lib/definitions'
 import { formatAsQueryString, useNavigateTo } from 'client/services'
 import { usePlaygroundStore } from 'client/store'
@@ -31,65 +31,71 @@ export const PlaygroundPage = () => {
   }, [pathname])
 
   return (
-    <>
-      <nav>
-        {PLAYGROUND_PAGES.map(({ key, label }) => (
-          <Button
-            key={key}
-            intent={playgroundStore.categoryKey === key ? 'primary' : 'neutral'}
-            onClick={() =>
-              navigateTo(`/playground/${key}/${PLAYGROUND_PAGES.find(p => p.key === key).items[0].key}`)
-            }
-          >
-            {label}
-          </Button>
-        ))}
-      </nav>
-      <Spacer size={20} />
-      <nav>
-        {PLAYGROUND_PAGES.find(obj => obj.key === playgroundStore.categoryKey).items.map(({ key, label }) => (
-          <Button
-            key={key}
-            intent={playgroundStore.itemKey === key ? 'primary' : 'neutral'}
-            onClick={() => navigateTo(`/playground/${playgroundStore.categoryKey}/${key}`)}
-          >
-            {label}
-          </Button>
-        ))}
-      </nav>
-      <Spacer size={10} />
-      <Select
-        value={playgroundStore.variant}
-        onChange={value => playgroundStore.setVariant(value as BoxVariant)}
-        options={BOX_VARIANTS.map(v => ({ value: v, label: v }))}
-      />
-      <Select
-        value={playgroundStore.intent}
-        onChange={value => playgroundStore.setIntent(value as BoxIntent)}
-        options={BOX_INTENTS.map(v => ({ value: v, label: v }))}
-      />
-      <Spacer size={20} />
-      <Routes>
-        {PLAYGROUND_PAGES.flatMap(({ key: categoryKey, items }) =>
-          items.map(({ key: itemKey }) => {
-            let Component
-            try {
-              Component = require(`../../playground/${pascalCase(itemKey)}Playground`)[
-                `${pascalCase(itemKey)}Playground`
-              ]
-            } catch {
-              Component = null
-            }
-            return <Route key={itemKey} path={`${categoryKey}/${itemKey}`} Component={Component} />
-          })
-        )}
-        <Route
-          path="*"
-          element={
-            <Navigate to={{ pathname: DEFAULT_PATHNAME, search: formatAsQueryString({ lang, theme }) }} />
-          }
+    <PageNavLayout>
+      <PageNavLayout.Side>
+        <VStack>
+          {PLAYGROUND_PAGES.map(({ key, label }) => (
+            <Button
+              key={key}
+              intent={playgroundStore.categoryKey === key ? 'tertiary' : 'neutral'}
+              size="sm"
+              onClick={() =>
+                navigateTo(`/playground/${key}/${PLAYGROUND_PAGES.find(p => p.key === key).items[0].key}`)
+              }
+            >
+              {label}
+            </Button>
+          ))}
+        </VStack>
+      </PageNavLayout.Side>
+      <PageNavLayout.Main>
+        <nav>
+          {PLAYGROUND_PAGES.find(obj => obj.key === playgroundStore.categoryKey).items.map(
+            ({ key, label }) => (
+              <Button
+                key={key}
+                intent={playgroundStore.itemKey === key ? 'primary' : 'neutral'}
+                onClick={() => navigateTo(`/playground/${playgroundStore.categoryKey}/${key}`)}
+              >
+                {label}
+              </Button>
+            )
+          )}
+        </nav>
+        <Spacer size={10} />
+        <Select
+          value={playgroundStore.variant}
+          onChange={value => playgroundStore.setVariant(value as BoxVariant)}
+          options={BOX_VARIANTS.map(v => ({ value: v, label: v }))}
         />
-      </Routes>
-    </>
+        <Select
+          value={playgroundStore.intent}
+          onChange={value => playgroundStore.setIntent(value as BoxIntent)}
+          options={BOX_INTENTS.map(v => ({ value: v, label: v }))}
+        />
+        <Spacer size={20} />
+        <Routes>
+          {PLAYGROUND_PAGES.flatMap(({ key: categoryKey, items }) =>
+            items.map(({ key: itemKey }) => {
+              let Component
+              try {
+                Component = require(`../../playground/${pascalCase(itemKey)}Playground`)[
+                  `${pascalCase(itemKey)}Playground`
+                ]
+              } catch {
+                Component = null
+              }
+              return <Route key={itemKey} path={`${categoryKey}/${itemKey}`} Component={Component} />
+            })
+          )}
+          <Route
+            path="*"
+            element={
+              <Navigate to={{ pathname: DEFAULT_PATHNAME, search: formatAsQueryString({ lang, theme }) }} />
+            }
+          />
+        </Routes>
+      </PageNavLayout.Main>
+    </PageNavLayout>
   )
 }

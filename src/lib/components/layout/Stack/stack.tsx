@@ -37,7 +37,7 @@ export const Stack = <E extends StackAs = 'div'>({
   as = 'div' as E,
   direction = 'column',
   align = 'stretch',
-  gap = 8,
+  gap,
   ...rest
 }: StackProps<E>) => {
   return <Flex as={as} direction={direction} align={align} gap={gap} {...(rest as StackProps<E>)} />
