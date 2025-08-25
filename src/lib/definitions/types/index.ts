@@ -31,7 +31,19 @@ export type TextTypography =
   | 'secondary'
   | 'caption'
 
-export type CssDisplay = 'block' | 'inline' | 'inline-block' | 'none' | 'revert'
+export type CssDisplay =
+  | 'block'
+  | 'inline'
+  | 'inline-block'
+  | 'table'
+  | 'table-header-group'
+  | 'table-row-group'
+  | 'table-footer-group'
+  | 'table-row'
+  | 'table-cell'
+  | 'revert'
+  | 'initial'
+  | 'none'
 
 export type CssPosition = 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky'
 

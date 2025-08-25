@@ -44,10 +44,10 @@ export const PageNavLayout = ({ children }: PageNavLayoutOwnProps) => {
         <Box
           as="aside"
           aria-label="Section navigation"
-          className={withPrefix('page-nav-layout-side')}
+          className={withPrefix('page-nav-layout-side-desktop')}
           display={{
             base: 'none',
-            md: 'revert',
+            md: 'block',
           }}
         >
           {Side}
@@ -57,7 +57,7 @@ export const PageNavLayout = ({ children }: PageNavLayoutOwnProps) => {
         <Box
           as="aside"
           aria-label="Section navigation"
-          className={withPrefix('page-nav-layout-side')}
+          className={withPrefix('page-nav-layout-side-mobile')}
           intent="tertiary"
           display={{ md: 'none' }}
           position="fixed"

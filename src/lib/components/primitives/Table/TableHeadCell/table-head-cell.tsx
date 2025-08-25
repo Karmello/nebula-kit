@@ -20,6 +20,7 @@ export const TableHeadCell = ({ className, scope = 'col', align = 'start', ...re
   return (
     <Box
       as="th"
+      display="table-cell"
       className={classNames(withPrefix('table-head-cell'), className)}
       scope={scope}
       data-table-head-cell-align={align}

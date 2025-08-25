@@ -51,6 +51,7 @@ export const Table = ({
     <TableContext value={{ variant, intent }}>
       <Box
         as="table"
+        display="table"
         className={classNames(withPrefix('table'), className)}
         {...getDataAttrs('table', { layout, zebra, stickyHeader })}
         variant={variant}

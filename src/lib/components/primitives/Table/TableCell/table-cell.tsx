@@ -17,6 +17,7 @@ export const TableCell = ({ align = 'start', className, ...rest }: TableCellProp
   return (
     <Box
       as="td"
+      display="table-cell"
       className={classNames(withPrefix('table-cell'), className)}
       data-table-cell-align={align}
       variant={variant}
