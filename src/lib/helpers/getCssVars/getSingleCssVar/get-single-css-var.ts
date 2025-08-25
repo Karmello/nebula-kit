@@ -13,7 +13,7 @@ export const getSingleCssVar = (
   const propValue = props[propName]
   const cssVars: Record<string, typeof propValue> = {}
 
-  if (propValue === undefined || propValue === CSS_VARS_CONFIG[prefix][propName as never]) {
+  if (propValue === undefined) {
     return cssVars
   }
 

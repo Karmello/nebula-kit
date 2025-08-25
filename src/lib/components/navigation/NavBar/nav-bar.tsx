@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react'
+import { useLayoutEffect, useMemo, useState } from 'react'
 import classNames from 'classnames'
 
 import { Box, Flex, Button, IconButton, BUTTON_SIZE_TO_PROPS } from 'lib/components'
@@ -22,49 +22,50 @@ export const NavBar = ({ className, buttons = [], selectedValue, onSelect }: Nav
     setMenuOpen(bp !== 'base')
   }, [bp])
 
+  const MENU_BUTTONS = useMemo(() => {
+    return buttons.map(({ value, label }) => {
+      return (
+        <Box key={value} as="li" intent="tertiary">
+          <Button
+            intent={selectedValue === value ? 'secondary' : 'tertiary'}
+            onClick={() => {
+              setMenuOpen(false)
+              onSelect(value)
+            }}
+          >
+            {label}
+          </Button>
+        </Box>
+      )
+    })
+  }, [selectedValue])
+
   return (
-    <Box
-      as="nav"
-      intent="tertiary"
-      className={classNames(withPrefix('nav-bar'), className)}
-      style={{ overflow: 'hidden' }}
-    >
-      <Flex as="ul" gap={0} intent="tertiary" direction="column">
-        <Box as="li" intent="tertiary" display={{ sm: 'none' }}>
+    <Box as="nav" className={classNames(withPrefix('nav-bar'), className)} style={{ overflow: 'hidden' }}>
+      <Flex intent="tertiary" direction="column">
+        <Box display={{ sm: 'none' }}>
           <IconButton
             iconName={menuOpen ? 'close' : 'menu'}
             intent="tertiary"
             onClick={() => setMenuOpen(!menuOpen)}
           />
         </Box>
-        <Box
-          as="li"
-          intent="tertiary"
-          blockSize={{
-            base:
+        <Box inlineSize={{ base: '100%' }}>
+          <Flex
+            as="ul"
+            intent="tertiary"
+            display={{ sm: 'none' }}
+            direction="column"
+            blockSize={
               bp === 'base' && menuOpen
                 ? `calc(var(--neb-scale-${BUTTON_SIZE_TO_PROPS.md.blockSize}) * ${buttons.length})`
-                : 0,
-            sm: 'auto',
-          }}
-          inlineSize={{ base: '100%', sm: 'auto' }}
-        >
-          <Flex as="ul" intent="tertiary" direction={{ base: 'column', sm: 'row' }}>
-            {buttons.map(({ value, label }) => {
-              return (
-                <Box key={value} as="li" intent="tertiary">
-                  <Button
-                    intent={selectedValue === value ? 'secondary' : 'tertiary'}
-                    onClick={() => {
-                      setMenuOpen(false)
-                      onSelect(value)
-                    }}
-                  >
-                    {label}
-                  </Button>
-                </Box>
-              )
-            })}
+                : 0
+            }
+          >
+            {MENU_BUTTONS}
+          </Flex>
+          <Flex as="ul" intent="tertiary" direction="row" inlineSize="100%">
+            {MENU_BUTTONS}
           </Flex>
         </Box>
       </Flex>
