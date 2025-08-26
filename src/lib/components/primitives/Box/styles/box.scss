@@ -38,6 +38,20 @@ $neb-box-props:
   --neb-box-inline-size-base: auto;
   --neb-box-min-inline-size-base: auto;
   --neb-box-max-inline-size-base: auto;
+  --neb-box-mt-base: initial;
+  --neb-box-mr-base: initial;
+  --neb-box-mb-base: initial;
+  --neb-box-ml-base: initial;
+  --neb-box-mx-base: initial;
+  --neb-box-my-base: initial;
+  --neb-box-m-base: initial;
+  --neb-box-pt-base: initial;
+  --neb-box-pr-base: initial;
+  --neb-box-pb-base: initial;
+  --neb-box-pl-base: initial;
+  --neb-box-px-base: initial;
+  --neb-box-py-base: initial;
+  --neb-box-p-base: initial;
 
   @include generate-css-vars($neb-box-props, base, box);
 

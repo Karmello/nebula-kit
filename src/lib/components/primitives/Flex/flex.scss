@@ -9,6 +9,9 @@ $neb-flex-props: flex-direction, flex-wrap, justify-content, align-items, gap, r
   --neb-flex-wrap-base: nowrap;
   --neb-flex-justify-base: flex-start;
   --neb-flex-align-base: flex-start;
+  --neb-flex-gap-base: initial;
+  --neb-flex-row-gap-base: initial;
+  --neb-flex-column-gap-base: initial;
 
   @include generate-css-vars($neb-flex-props, base, flex);
 }

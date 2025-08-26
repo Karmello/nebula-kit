@@ -45,8 +45,9 @@ const PageNavLayoutBase = ({ children }: PageNavLayoutOwnProps) => {
             <Box>
               <IconButton
                 iconName={sideOpen ? 'panel-right-open' : 'panel-left-open'}
-                variant="ghost"
-                intent="secondary"
+                // variant="ghost"
+                intent="tertiary"
+                size="sm"
                 onClick={() => setSideOpen(!sideOpen)}
               />
             </Box>
@@ -89,7 +90,7 @@ const PageNavLayoutBase = ({ children }: PageNavLayoutOwnProps) => {
                 className={withPrefix('page-nav-layout-main')}
                 minBlockSize={0}
                 overflowX="auto"
-                p={5}
+                m={10}
               >
                 {slots.Main}
               </Box>
