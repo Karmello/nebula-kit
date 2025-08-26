@@ -29,12 +29,14 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
       style={{ overflow: 'hidden' }}
       direction="column"
       align="flex-end"
+      borderRadius={0}
     >
       <Box blockSize={{ base: `var(--neb-scale-${BUTTON_SIZE_TO_PROPS.md.blockSize})`, sm: 0 }}>
         <IconButton
           iconName={bp === 'base' ? (menuOpen ? 'close' : 'menu') : undefined}
           onClick={() => setMenuOpen(!menuOpen)}
           intent="tertiary"
+          borderRadius={0}
         />
       </Box>
       <Flex
@@ -50,6 +52,7 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
             <Box key={value} as="li">
               <Button
                 intent={selectedValue === value ? 'secondary' : 'tertiary'}
+                borderRadius={0}
                 onClick={() => {
                   setMenuOpen(false)
                   onSelect(value)
@@ -77,6 +80,7 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
             <Box key={value} as="li" inlineSize="100%">
               <Button
                 intent={selectedValue === value ? 'secondary' : 'tertiary'}
+                borderRadius={0}
                 onClick={() => {
                   setMenuOpen(false)
                   onSelect(value)

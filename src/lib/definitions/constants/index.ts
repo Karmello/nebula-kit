@@ -1,3 +1,5 @@
+import { ScaleValue } from '../types'
+
 export const LIB_NAME = 'NebulaKit'
 export const LIB_PREFIX = 'neb'
 
@@ -22,3 +24,5 @@ export const BOX_INTENTS = [
   'danger',
   'inverse',
 ] as const
+
+export const DEFAULT_BORDER_RADIUS: ScaleValue = 2

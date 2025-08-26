@@ -18,7 +18,6 @@ $neb-box-props:
 
   border-style: solid;
   border-width: 0;
-  border-radius: var(--neb-scale-3);
 
   --neb-box-display-base: block;
   --neb-box-opacity-base: 1;
@@ -36,20 +35,6 @@ $neb-box-props:
   --neb-box-inline-size-base: auto;
   --neb-box-min-inline-size-base: auto;
   --neb-box-max-inline-size-base: auto;
-  --neb-box-mt-base: 0;
-  --neb-box-mr-base: 0;
-  --neb-box-mb-base: 0;
-  --neb-box-ml-base: 0;
-  --neb-box-mx-base: 0;
-  --neb-box-my-base: 0;
-  --neb-box-m-base: 0;
-  --neb-box-pt-base: 0;
-  --neb-box-pr-base: 0;
-  --neb-box-pb-base: 0;
-  --neb-box-pl-base: 0;
-  --neb-box-px-base: 0;
-  --neb-box-py-base: 0;
-  --neb-box-p-base: 0;
 
   @include generate-css-vars($neb-box-props, base, box);
 

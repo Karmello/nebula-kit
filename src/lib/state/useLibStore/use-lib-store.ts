@@ -1,13 +1,15 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-import { Language, LIB_PREFIX, Theme } from 'lib/definitions'
+import { DEFAULT_BORDER_RADIUS, Language, LIB_PREFIX, ScaleValue, Theme } from 'lib/definitions'
 
 type LibState = {
   theme: Theme
   setTheme: (theme: Theme) => void
   lang: Language
   setLang: (lang: Language) => void
+  borderRadius: ScaleValue | string
+  setBorderRadius: (borderRadius: ScaleValue | string) => void
 }
 
 export const useLibStore = create<LibState>()(
@@ -17,6 +19,8 @@ export const useLibStore = create<LibState>()(
       setTheme: theme => set({ theme }),
       lang: Language.DEFAULT,
       setLang: lang => set({ lang }),
+      borderRadius: DEFAULT_BORDER_RADIUS,
+      setBorderRadius: borderRadius => set({ borderRadius }),
     }),
     {
       name: `${LIB_PREFIX}.theme`,

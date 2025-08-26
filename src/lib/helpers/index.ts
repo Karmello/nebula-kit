@@ -1,4 +1,5 @@
 export * from './getCssVars'
 export * from './getDataAttrs'
+export * from './scale'
 export * from './useScreen'
 export * from './withPrefix'

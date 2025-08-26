@@ -16,6 +16,7 @@ export type ButtonOwnProps = {
   intent?: BoxOwnProps['intent']
   /** Disables interaction and applies disabled styling */
   disabled?: BoxOwnProps['disabled']
+  borderRadius?: BoxOwnProps['borderRadius']
 } & {
   /** Button size controlling height, padding, and font size */
   size?: ButtonSize

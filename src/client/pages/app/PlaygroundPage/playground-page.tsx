@@ -40,6 +40,7 @@ export const PlaygroundPage = () => {
                 key={key}
                 size="sm"
                 intent={playgroundStore.categoryKey === key ? 'primary' : 'secondary'}
+                borderRadius={0}
                 onClick={() => {
                   setSideOpen(false)
                   navigateTo(`/playground/${key}/${PLAYGROUND_PAGES.find(p => p.key === key).items[0].key}`)
@@ -58,6 +59,7 @@ export const PlaygroundPage = () => {
               key={key}
               size="sm"
               intent={playgroundStore.categoryKey === key ? 'secondary' : 'neutral'}
+              borderRadius={0}
               onClick={() =>
                 navigateTo(`/playground/${key}/${PLAYGROUND_PAGES.find(p => p.key === key).items[0].key}`)
               }

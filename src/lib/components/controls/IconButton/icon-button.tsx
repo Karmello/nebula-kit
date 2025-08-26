@@ -15,6 +15,7 @@ export type IconButtonOwnProps = {
   disabled?: ButtonOwnProps['disabled']
   /** Button size controlling height and font size */
   size?: ButtonOwnProps['size']
+  borderRadius?: ButtonOwnProps['borderRadius']
 }
 
 export type IconButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'> &

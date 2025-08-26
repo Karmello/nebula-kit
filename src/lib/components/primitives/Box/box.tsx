@@ -1,7 +1,8 @@
 import { ElementType } from 'react'
 import classNames from 'classnames'
 
-import { withPrefix, getCssVars, getDataAttrs } from 'lib/helpers'
+import { withPrefix, getCssVars, getDataAttrs, scale } from 'lib/helpers'
+import { useLibStore } from 'lib/state'
 
 import {
   PolymorphicProps,
@@ -37,6 +38,7 @@ export type BoxOwnProps = {
   /** Controls line height for text content */
   lineHeight?: ResponsiveProp<number | string>
   /** Horizontal alignment of text (start, center, end, etc.) */
+  borderRadius?: ScaleValue | string
   textAlign?: ResponsiveProp<CssTextAlign>
   /** Logical size of the element in the block axis (like height) */
   blockSize?: ResponsiveProp<ScaleValue | string>
@@ -91,6 +93,7 @@ export const Box = <E extends ElementType = 'div'>({
   intent = 'neutral',
   interactive = false,
   disabled = false,
+  // css vars
   display,
   opacity,
   position,
@@ -100,6 +103,7 @@ export const Box = <E extends ElementType = 'div'>({
   left,
   fontSize,
   lineHeight,
+  borderRadius,
   textAlign,
   blockSize,
   minBlockSize,
@@ -123,6 +127,8 @@ export const Box = <E extends ElementType = 'div'>({
   m,
   ...rest
 }: BoxProps<E>) => {
+  const { borderRadius: globalBorderRadius } = useLibStore()
+
   const As = (as || 'div') as ElementType
 
   return (
@@ -161,6 +167,10 @@ export const Box = <E extends ElementType = 'div'>({
           mb,
           ml,
         }),
+        borderRadius:
+          variant !== 'ghost'
+            ? scale(borderRadius !== undefined ? borderRadius : globalBorderRadius)
+            : undefined,
         ...style,
       }}
       disabled={disabled}
