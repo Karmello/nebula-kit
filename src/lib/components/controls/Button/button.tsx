@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { Box, BoxOwnProps, WithIcon, WithIconProps } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { Size } from 'lib/definitions'
+import { ScaleValue, Size } from 'lib/definitions'
 
 import './button.scss'
 
@@ -34,10 +34,10 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
 export const BUTTON_SIZE_TO_PROPS: Record<
   ButtonSize,
   {
-    blockSize: BoxOwnProps['blockSize']
-    pl: BoxOwnProps['pl']
-    pr: BoxOwnProps['pr']
-    fontSize: BoxOwnProps['fontSize']
+    blockSize: ScaleValue
+    pl: ScaleValue
+    pr: ScaleValue
+    fontSize: ScaleValue
   }
 > = {
   sm: { blockSize: 19, pl: 6, pr: 6, fontSize: 7 },

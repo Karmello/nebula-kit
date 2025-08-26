@@ -13,6 +13,7 @@ import {
   BoxIntent,
   CssDisplay,
   CssPosition,
+  CssOverflow,
 } from 'lib/definitions'
 
 import './styles/box.scss'
@@ -28,6 +29,8 @@ export type BoxOwnProps = {
   disabled?: boolean
   /** Sets font size using scale values or raw CSS values */
   display?: ResponsiveProp<CssDisplay>
+  overflowX?: CssOverflow
+  overflowY?: CssOverflow
   opacity?: ResponsiveProp<number>
   position?: ResponsiveProp<CssPosition>
   top?: ResponsiveProp<ScaleValue | string>
@@ -95,6 +98,8 @@ export const Box = <E extends ElementType = 'div'>({
   disabled = false,
   // css vars
   display,
+  overflowX,
+  overflowY,
   opacity,
   position,
   top,
@@ -137,6 +142,8 @@ export const Box = <E extends ElementType = 'div'>({
       style={{
         ...getCssVars('box', {
           display,
+          overflowX,
+          overflowY,
           opacity,
           position,
           top,

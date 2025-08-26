@@ -3,7 +3,7 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { sentenceCase, pascalCase } from 'change-case'
 
 import { useLibStore } from 'lib/state'
-import { Button, Spacer, Select, PageNavLayout, VStack } from 'lib/components'
+import { Button, Spacer, Select, PageNavLayout, PageSideNav } from 'lib/components'
 import { BOX_INTENTS, BOX_VARIANTS, BoxIntent, BoxVariant } from 'lib/definitions'
 import { formatAsQueryString, useNavigateTo } from 'client/services'
 import { usePlaygroundStore } from 'client/store'
@@ -34,56 +34,41 @@ export const PlaygroundPage = () => {
     <PageNavLayout>
       <PageNavLayout.SideMobile>
         {({ setSideOpen }) => (
-          <VStack>
-            {PLAYGROUND_PAGES.map(({ key, label }) => (
-              <Button
-                key={key}
-                size="sm"
-                intent={playgroundStore.categoryKey === key ? 'primary' : 'secondary'}
-                borderRadius={0}
-                onClick={() => {
+          <PageSideNav
+            items={PLAYGROUND_PAGES.map(({ key, label }) => ({
+              label,
+              variant: 'ghost',
+              intent: 'neutral',
+              subItems: PLAYGROUND_PAGES.find(obj => obj.key === key).items.map(({ key, label }) => ({
+                label,
+                intent: key === playgroundStore.itemKey ? 'tertiary' : 'secondary',
+                onClick: () => {
                   setSideOpen(false)
-                  navigateTo(`/playground/${key}/${PLAYGROUND_PAGES.find(p => p.key === key).items[0].key}`)
-                }}
-              >
-                {label}
-              </Button>
-            ))}
-          </VStack>
+                  navigateTo(`/playground/${playgroundStore.categoryKey}/${key}`)
+                },
+              })),
+            }))}
+          />
         )}
       </PageNavLayout.SideMobile>
       <PageNavLayout.SideDesktop>
-        <VStack>
-          {PLAYGROUND_PAGES.map(({ key, label }) => (
-            <Button
-              key={key}
-              size="sm"
-              intent={playgroundStore.categoryKey === key ? 'secondary' : 'neutral'}
-              borderRadius={0}
-              onClick={() =>
-                navigateTo(`/playground/${key}/${PLAYGROUND_PAGES.find(p => p.key === key).items[0].key}`)
-              }
-            >
-              {label}
-            </Button>
-          ))}
-        </VStack>
+        <PageSideNav
+          items={PLAYGROUND_PAGES.map(({ key, label }) => ({
+            label,
+            variant: 'ghost',
+            intent: 'neutral',
+            subItems: PLAYGROUND_PAGES.find(obj => obj.key === key).items.map(({ key, label }) => ({
+              label,
+              intent: key === playgroundStore.itemKey ? 'tertiary' : 'neutral',
+              onClick: () => {
+                navigateTo(`/playground/${playgroundStore.categoryKey}/${key}`)
+              },
+            })),
+          }))}
+        />
       </PageNavLayout.SideDesktop>
       <PageNavLayout.Main>
-        <nav>
-          {PLAYGROUND_PAGES.find(obj => obj.key === playgroundStore.categoryKey).items.map(
-            ({ key, label }) => (
-              <Button
-                key={key}
-                intent={playgroundStore.itemKey === key ? 'primary' : 'neutral'}
-                onClick={() => navigateTo(`/playground/${playgroundStore.categoryKey}/${key}`)}
-              >
-                {label}
-              </Button>
-            )
-          )}
-        </nav>
-        <Spacer size={10} />
+        {/* <Spacer size={10} />
         <Select
           value={playgroundStore.variant}
           onChange={value => playgroundStore.setVariant(value as BoxVariant)}
@@ -94,7 +79,7 @@ export const PlaygroundPage = () => {
           onChange={value => playgroundStore.setIntent(value as BoxIntent)}
           options={BOX_INTENTS.map(v => ({ value: v, label: v }))}
         />
-        <Spacer size={20} />
+        <Spacer size={20} /> */}
         <Routes>
           {PLAYGROUND_PAGES.flatMap(({ key: categoryKey, items }) =>
             items.map(({ key: itemKey }) => {

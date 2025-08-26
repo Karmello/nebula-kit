@@ -55,9 +55,9 @@ const PageNavLayoutBase = ({ children }: PageNavLayoutOwnProps) => {
                 as="aside"
                 aria-label="Section navigation"
                 className={withPrefix('page-nav-layout-side-desktop')}
-                inlineSize={isDesktop && sideOpen ? '200px' : 0}
+                inlineSize={isDesktop && sideOpen ? '250px' : 0}
                 blockSize={isMobile ? 0 : undefined}
-                style={{ overflow: 'hidden' }}
+                overflowX="hidden"
               >
                 {slots.SideDesktop}
               </Box>
@@ -74,7 +74,8 @@ const PageNavLayoutBase = ({ children }: PageNavLayoutOwnProps) => {
                 minBlockSize="100dvh"
                 variant="solid"
                 intent="secondary"
-                style={{ zIndex: 20, overflow: 'auto' }}
+                overflowY="auto"
+                style={{ zIndex: 20 }}
               >
                 <HAlign position="right">
                   <IconButton iconName="close" variant="ghost" size="sm" onClick={() => setSideOpen(false)} />

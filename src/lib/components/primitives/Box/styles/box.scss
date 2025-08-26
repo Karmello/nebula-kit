@@ -5,9 +5,10 @@
 @use './variants/box-ghost.scss';
 
 $neb-box-props:
-  display, opacity, position, top, right, bottom, left, font-size, line-height, text-align, block-size,
-  min-block-size, max-block-size, inline-size, min-inline-size, max-inline-size, margin-top, margin-right,
-  margin-bottom, margin-left, padding-top, padding-right, padding-bottom, padding-left;
+  display, overflow-x, overflow-y, opacity, position, top, right, bottom, left, font-size, line-height,
+  text-align, block-size, min-block-size, max-block-size, inline-size, min-inline-size, max-inline-size,
+  margin-top, margin-right, margin-bottom, margin-left, padding-top, padding-right, padding-bottom,
+  padding-left;
 
 .neb-box {
   width: auto;
@@ -20,6 +21,8 @@ $neb-box-props:
   border-width: 0;
 
   --neb-box-display-base: block;
+  --neb-box-overflow-x-base: visible;
+  --neb-box-overflow-y-base: visible;
   --neb-box-opacity-base: 1;
   --neb-box-position-base: static;
   --neb-box-top-base: auto;

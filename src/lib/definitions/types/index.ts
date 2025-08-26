@@ -45,6 +45,8 @@ export type CssDisplay =
   | 'initial'
   | 'none'
 
+export type CssOverflow = 'visible' | 'auto' | 'hidden' | 'scroll'
+
 export type CssPosition = 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky'
 
 export type CssTextAlign =
