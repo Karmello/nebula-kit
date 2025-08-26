@@ -1,7 +1,7 @@
 import { useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
-import { Box, Flex, Button, IconButton, BUTTON_SIZE_TO_PROPS } from 'lib/components'
+import { Box, Flex, Button, IconButton, BUTTON_SIZE_TO_PROPS, HAlign } from 'lib/components'
 import { useCurrentBreakpoint, withPrefix } from 'lib/helpers'
 
 import './app-nav-bar.scss'
@@ -27,30 +27,27 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
       as="nav"
       className={classNames(withPrefix('app-nav-bar'), className)}
       style={{ overflow: 'hidden' }}
-      intent="tertiary"
       direction="column"
+      align="flex-end"
     >
-      <Box
-        intent="tertiary"
-        blockSize={{ base: `var(--neb-scale-${BUTTON_SIZE_TO_PROPS.md.blockSize})`, sm: 0 }}
-      >
+      <Box blockSize={{ base: `var(--neb-scale-${BUTTON_SIZE_TO_PROPS.md.blockSize})`, sm: 0 }}>
         <IconButton
           iconName={bp === 'base' ? (menuOpen ? 'close' : 'menu') : undefined}
-          intent="tertiary"
           onClick={() => setMenuOpen(!menuOpen)}
+          intent="tertiary"
         />
       </Box>
       <Flex
         className={withPrefix('app-nav-bar-buttons-horizontal')}
         as="ul"
-        intent="tertiary"
         direction="row"
         inlineSize="100%"
+        intent="tertiary"
         blockSize={{ base: 0, sm: `var(--neb-scale-${BUTTON_SIZE_TO_PROPS.md.blockSize})` }}
       >
         {buttons.map(({ value, label }) => {
           return (
-            <Box key={value} as="li" intent="tertiary">
+            <Box key={value} as="li">
               <Button
                 intent={selectedValue === value ? 'secondary' : 'tertiary'}
                 onClick={() => {
@@ -77,7 +74,7 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
       >
         {buttons.map(({ value, label }) => {
           return (
-            <Box key={value} as="li" intent="tertiary" inlineSize="100%">
+            <Box key={value} as="li" inlineSize="100%">
               <Button
                 intent={selectedValue === value ? 'secondary' : 'tertiary'}
                 onClick={() => {

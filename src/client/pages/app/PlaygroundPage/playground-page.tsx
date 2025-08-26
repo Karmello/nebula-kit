@@ -37,7 +37,6 @@ export const PlaygroundPage = () => {
           {PLAYGROUND_PAGES.map(({ key, label }) => (
             <Button
               key={key}
-              intent={playgroundStore.categoryKey === key ? 'tertiary' : 'neutral'}
               size="sm"
               onClick={() =>
                 navigateTo(`/playground/${key}/${PLAYGROUND_PAGES.find(p => p.key === key).items[0].key}`)

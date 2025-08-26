@@ -87,7 +87,7 @@ export const Box = <E extends ElementType = 'div'>({
   as,
   className,
   style,
-  variant = 'solid',
+  variant = 'ghost',
   intent = 'neutral',
   interactive = false,
   disabled = false,

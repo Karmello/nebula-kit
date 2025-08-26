@@ -20,7 +20,7 @@ export const AppLayout = ({ children, stickyHeader = false }: AppLayoutOwnProps)
           {...getDataAttrs('app-layout', { stickyHeader })}
         >
           {slots.header ? (
-            <Box as="header" className={withPrefix('app-layout-header')}>
+            <Box as="header" className={withPrefix('app-layout-header')} variant="solid" intent="tertiary">
               {slots.header}
             </Box>
           ) : null}

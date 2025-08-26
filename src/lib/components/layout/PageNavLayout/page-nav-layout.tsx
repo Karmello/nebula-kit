@@ -1,6 +1,6 @@
 import { ReactNode, useLayoutEffect, useState } from 'react'
 
-import { Box, Grid, IconButton, WithSlots } from 'lib/components'
+import { Box, Grid, IconButton, WithSlots, HAlign } from 'lib/components'
 import { withPrefix, useCurrentBreakpoint } from 'lib/helpers'
 
 export type PageNavLayoutOwnProps = {
@@ -59,14 +59,23 @@ export const PageNavLayout = ({ children }: PageNavLayoutOwnProps) => {
                 as="aside"
                 aria-label="Section navigation"
                 className={withPrefix('page-nav-layout-side-mobile')}
-                intent="tertiary"
                 position="fixed"
                 top={0}
                 left={0}
                 inlineSize={isMobile && panelOpen ? 'min(85vw, 320px)' : 0}
                 minBlockSize="100dvh"
+                variant="solid"
+                intent="tertiary"
                 style={{ zIndex: 20, overflow: 'auto' }}
               >
+                <HAlign position="right">
+                  <IconButton
+                    iconName="close"
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setPanelOpen(false)}
+                  />
+                </HAlign>
                 {slots.side}
               </Box>
             ) : null}

@@ -1,6 +1,7 @@
 export * from './AppLayout'
 export * from './Center'
 export * from './Cluster'
+export * from './HAlign'
 export * from './HStack'
 export * from './Inline'
 export * from './PageNavLayout'
