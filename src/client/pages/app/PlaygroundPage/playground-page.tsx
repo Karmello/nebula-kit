@@ -3,8 +3,7 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { sentenceCase, pascalCase } from 'change-case'
 
 import { useLibStore } from 'lib/state'
-import { Button, Spacer, Select, PageNavLayout, PageSideNav } from 'lib/components'
-import { BOX_INTENTS, BOX_VARIANTS, BoxIntent, BoxVariant } from 'lib/definitions'
+import { PageNavLayout, PageSideNav } from 'lib/components'
 import { formatAsQueryString, useNavigateTo } from 'client/services'
 import { usePlaygroundStore } from 'client/store'
 import { PLAYGROUND_ROUTING_CONFIG } from 'client/definitions'
@@ -68,18 +67,6 @@ export const PlaygroundPage = () => {
         />
       </PageNavLayout.SideDesktop>
       <PageNavLayout.Main>
-        {/* <Spacer size={10} />
-        <Select
-          value={playgroundStore.variant}
-          onChange={value => playgroundStore.setVariant(value as BoxVariant)}
-          options={BOX_VARIANTS.map(v => ({ value: v, label: v }))}
-        />
-        <Select
-          value={playgroundStore.intent}
-          onChange={value => playgroundStore.setIntent(value as BoxIntent)}
-          options={BOX_INTENTS.map(v => ({ value: v, label: v }))}
-        />
-        <Spacer size={20} /> */}
         <Routes>
           {PLAYGROUND_PAGES.flatMap(({ key: categoryKey, items }) =>
             items.map(({ key: itemKey }) => {

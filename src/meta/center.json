@@ -4,7 +4,7 @@
   "props": [
     {
       "name": "wrap",
-      "type": "{\n        ...(fill ? { wi",
+      "type": "={{\n        ...(fill ? { wid",
       "options": [
         "wrap",
         "nowrap",

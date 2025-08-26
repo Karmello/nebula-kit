@@ -29,7 +29,7 @@
         "inverse"
       ],
       "required": false,
-      "defaultValue": "'neutral'",
+      "defaultValue": "'tertiary'",
       "description": "Semantic intent for coloring (e.g. primary, success, danger, neutral)"
     },
     {
@@ -39,6 +39,14 @@
       "required": false,
       "defaultValue": "false",
       "description": "Disables interaction and applies disabled styling"
+    },
+    {
+      "name": "borderRadius",
+      "type": "BoxOwnProps['borderRadius']",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
     },
     {
       "name": "size",
@@ -58,7 +66,12 @@
       "options": [
         "check",
         "close",
-        "search"
+        "search",
+        "menu",
+        "panel-left-open",
+        "panel-right-open",
+        "chevron-down",
+        "chevron-up"
       ],
       "required": false,
       "defaultValue": "",

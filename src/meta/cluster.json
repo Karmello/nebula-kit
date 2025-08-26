@@ -7,7 +7,7 @@
       "type": "ResponsiveProp<ScaleValue | string>",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "'auto'",
+      "defaultValue": "",
       "description": ""
     }
   ]

@@ -8,7 +8,12 @@
       "options": [
         "check",
         "close",
-        "search"
+        "search",
+        "menu",
+        "panel-left-open",
+        "panel-right-open",
+        "chevron-down",
+        "chevron-up"
       ],
       "required": true,
       "defaultValue": "",
@@ -63,6 +68,14 @@
       "required": false,
       "defaultValue": "'md'",
       "description": "Button size controlling height and font size"
+    },
+    {
+      "name": "borderRadius",
+      "type": "ButtonOwnProps['borderRadius']",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
     }
   ]
 }

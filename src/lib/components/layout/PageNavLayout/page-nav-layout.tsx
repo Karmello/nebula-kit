@@ -84,7 +84,13 @@ const PageNavLayoutBase = ({ children }: PageNavLayoutOwnProps) => {
               </Box>
             ) : null}
             {slots.Main ? (
-              <Box as="section" className={withPrefix('page-nav-layout-main')} minBlockSize={0}>
+              <Box
+                as="section"
+                className={withPrefix('page-nav-layout-main')}
+                minBlockSize={0}
+                overflowX="auto"
+                p={5}
+              >
                 {slots.Main}
               </Box>
             ) : null}

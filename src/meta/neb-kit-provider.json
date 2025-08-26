@@ -32,6 +32,14 @@
       "required": false,
       "defaultValue": "light",
       "description": "Initial theme applied as data-theme attribute"
+    },
+    {
+      "name": "defaultBorderRadius",
+      "type": "ScaleValue | string",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "2",
+      "description": ""
     }
   ]
 }

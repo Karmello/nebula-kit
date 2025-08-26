@@ -36,7 +36,7 @@ export const App = () => {
         <AppLayout.Main>
           <RootPage />
         </AppLayout.Main>
-        <AppLayout.Footer>footer</AppLayout.Footer>
+        {/* <AppLayout.Footer>footer</AppLayout.Footer> */}
       </AppLayout>
     </>
   )

@@ -8,8 +8,8 @@ export const CompMetaRenderer = ({ data }: { data: ComponentMeta }) => {
 
   return (
     <>
-      <Text>{data.name}</Text>
-      <Text>{data.description}</Text>
+      <Text typography="h3">{data.name}</Text>
+      <Text typography="lead">{data.description}</Text>
       <Spacer size={10} />
       <Table key={data.name} layout="fixed" scrollable>
         <TableHead>

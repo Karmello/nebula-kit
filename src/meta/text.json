@@ -121,7 +121,12 @@
       "options": [
         "check",
         "close",
-        "search"
+        "search",
+        "menu",
+        "panel-left-open",
+        "panel-right-open",
+        "chevron-down",
+        "chevron-up"
       ],
       "required": false,
       "defaultValue": "",

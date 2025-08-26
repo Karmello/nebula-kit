@@ -20,14 +20,12 @@ export const PageSideNav = ({ items }: PageSideNavProps) => {
   return (
     <VStack>
       {items.map(({ label, subItems, ...rest }, index) => (
-        <>
+        <Box key={`item-${index}`}>
           <Button
-            key={index}
             size={DEFAULT_SIZE}
             borderRadius={0}
             iconName={expandedIndex !== index ? 'chevron-down' : 'chevron-up'}
-            // iconPosition="right"
-            style={{ justifyContent: 'flex-start' }}
+            style={{ justifyContent: 'flex-start', width: '100%' }}
             {...rest}
             onClick={e => {
               setExpandedIndex(expandedIndex !== index ? index : -1)
@@ -45,14 +43,14 @@ export const PageSideNav = ({ items }: PageSideNavProps) => {
             overflowY="hidden"
           >
             <VStack>
-              {subItems?.map(({ label, ...rest }) => (
-                <Button key={index} size={DEFAULT_SIZE} borderRadius={0} {...rest}>
+              {subItems?.map(({ label, ...rest }, index) => (
+                <Button key={`sub-item-${index}`} size={DEFAULT_SIZE} borderRadius={0} {...rest}>
                   {label}
                 </Button>
               ))}
             </VStack>
           </Box>
-        </>
+        </Box>
       ))}
     </VStack>
   )

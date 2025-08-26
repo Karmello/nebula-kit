@@ -67,7 +67,7 @@ export const Text = ({
   ref,
   as,
   intent = 'neutral',
-  fontSize = 8,
+  fontSize,
   lineHeight = 'normal',
   textAlign = 'initial',
   typography = 'body',

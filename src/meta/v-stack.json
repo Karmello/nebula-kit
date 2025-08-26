@@ -40,7 +40,7 @@
       "type": "StackOwnProps['gap']",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "8",
+      "defaultValue": "",
       "description": "Shorthand spacing between items, supports responsive values"
     }
   ]

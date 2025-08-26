@@ -1,0 +1,38 @@
+{
+  "name": "AppNavBar",
+  "description": "",
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "options": [],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "buttons",
+      "type": "{ value: string; label: string }[]",
+      "options": [],
+      "required": true,
+      "defaultValue": "[]",
+      "description": ""
+    },
+    {
+      "name": "selectedValue",
+      "type": "string",
+      "options": [],
+      "required": true,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "onSelect",
+      "type": "(value: string) => void",
+      "options": [],
+      "required": true,
+      "defaultValue": "",
+      "description": ""
+    }
+  ]
+}
