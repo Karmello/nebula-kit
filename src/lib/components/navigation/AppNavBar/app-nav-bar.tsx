@@ -1,8 +1,8 @@
 import { useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
-import { Box, Flex, Button, IconButton, BUTTON_SIZE_TO_PROPS, HAlign } from 'lib/components'
-import { useCurrentBreakpoint, withPrefix } from 'lib/helpers'
+import { Box, Flex, Button, IconButton, BUTTON_SIZE_TO_PROPS } from 'lib/components'
+import { useScreen, withPrefix } from 'lib/helpers'
 
 import './app-nav-bar.scss'
 
@@ -16,7 +16,7 @@ export type AppNavBarOwnProps = {
 export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: AppNavBarOwnProps) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
 
-  const { bp } = useCurrentBreakpoint()
+  const { bp } = useScreen()
 
   useLayoutEffect(() => {
     setMenuOpen(bp !== 'base')

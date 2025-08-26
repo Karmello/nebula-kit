@@ -1,15 +1,13 @@
 import { Children, isValidElement, JSX, ReactNode } from 'react'
-import { sentenceCase } from 'change-case'
 
-import { LIB_NAME } from 'lib/definitions'
+import { LIB_NAME, Slot } from 'lib/definitions'
 
-type SlotType = 'header' | 'side' | 'main' | 'footer'
-type SlotsReturnObject = Record<SlotType, ReactNode>
+type SlotsReturnObject = Partial<Record<Slot, ReactNode>>
 
 export type WithSlotsProps = {
   children: (slots: SlotsReturnObject) => JSX.Element
   componentName: string
-  slotNames: SlotType[]
+  slotNames: Slot[]
   childrenToVerify: ReactNode
 }
 
@@ -20,9 +18,9 @@ export const WithSlots = ({ children, componentName, slotNames = [], childrenToV
     )
 
   const getWarnMsg = (slotName: string) =>
-    `[${LIB_NAME}]: ${componentName} expects ${componentName}.${sentenceCase(slotName)}`
+    `[${LIB_NAME}]: ${componentName} expects ${componentName}.${slotName}`
 
-  const slots: SlotsReturnObject = { header: null, side: null, main: null, footer: null }
+  const slots: SlotsReturnObject = {}
 
   slotNames.forEach(slotName => {
     const slot = pickSlot(slotName)

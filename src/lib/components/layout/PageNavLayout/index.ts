@@ -1,11 +1,15 @@
 import { PageNavLayout as PageNavLayoutBase } from './page-nav-layout'
 
 import { PageNavLayoutMain } from './PageNavLayoutMain'
-import { PageNavLayoutSide } from './PageNavLayoutSide'
+import { PageNavLayoutSideMobile } from './PageNavLayoutSideMobile'
+import { PageNavLayoutSideDesktop } from './PageNavLayoutSideDesktop'
 
 export const PageNavLayout = Object.assign(PageNavLayoutBase, {
   Main: PageNavLayoutMain,
-  Side: PageNavLayoutSide,
+  SideMobile: PageNavLayoutSideMobile,
+  SideDesktop: PageNavLayoutSideDesktop,
 })
 
 export * from './page-nav-layout'
+
+export { usePageNavLayout } from './PageNavLayoutProvider'

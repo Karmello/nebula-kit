@@ -1,31 +1,38 @@
-import { ReactNode, useLayoutEffect, useState } from 'react'
+import { ReactNode, useLayoutEffect } from 'react'
 
 import { Box, Grid, IconButton, WithSlots, HAlign } from 'lib/components'
-import { withPrefix, useCurrentBreakpoint } from 'lib/helpers'
+import { withPrefix, useScreen } from 'lib/helpers'
+import { Slot } from 'lib/definitions'
+
+import { PageNavLayoutProvider, usePageNavLayout } from './PageNavLayoutProvider'
 
 export type PageNavLayoutOwnProps = {
   children: ReactNode
 }
 
-export const PageNavLayout = ({ children }: PageNavLayoutOwnProps) => {
-  const [panelOpen, setPanelOpen] = useState<boolean>(false)
+const PageNavLayoutBase = ({ children }: PageNavLayoutOwnProps) => {
+  const { isMobile, isDesktop } = useScreen()
 
-  const { isMobile, isDesktop } = useCurrentBreakpoint()
+  const { sideOpen, setSideOpen } = usePageNavLayout()
 
   useLayoutEffect(() => {
     if (isMobile) {
-      setPanelOpen(false)
+      setSideOpen(false)
     }
   }, [isMobile])
 
   useLayoutEffect(() => {
     if (isDesktop) {
-      setPanelOpen(true)
+      setSideOpen(true)
     }
   }, [isDesktop])
 
   return (
-    <WithSlots componentName="PageNavLayout" slotNames={['main', 'side']} childrenToVerify={children}>
+    <WithSlots
+      componentName="PageNavLayout"
+      slotNames={[Slot.main, Slot.sideMobile, Slot.sideDesktop]}
+      childrenToVerify={children}
+    >
       {slots => {
         return (
           <Grid
@@ -37,24 +44,24 @@ export const PageNavLayout = ({ children }: PageNavLayoutOwnProps) => {
             <Box />
             <Box>
               <IconButton
-                iconName={panelOpen ? 'panel-right-open' : 'panel-left-open'}
+                iconName={sideOpen ? 'panel-right-open' : 'panel-left-open'}
                 variant="ghost"
                 intent="secondary"
-                onClick={() => setPanelOpen(!panelOpen)}
+                onClick={() => setSideOpen(!sideOpen)}
               />
             </Box>
-            {slots.side ? (
+            {slots.SideDesktop ? (
               <Box
                 as="aside"
                 aria-label="Section navigation"
                 className={withPrefix('page-nav-layout-side-desktop')}
-                inlineSize={isDesktop && panelOpen ? '200px' : 0}
+                inlineSize={isDesktop && sideOpen ? '200px' : 0}
                 style={{ overflow: 'hidden' }}
               >
-                {slots.side}
+                {slots.SideDesktop}
               </Box>
             ) : null}
-            {slots.side ? (
+            {slots.SideMobile ? (
               <Box
                 as="aside"
                 aria-label="Section navigation"
@@ -62,26 +69,21 @@ export const PageNavLayout = ({ children }: PageNavLayoutOwnProps) => {
                 position="fixed"
                 top={0}
                 left={0}
-                inlineSize={isMobile && panelOpen ? 'min(85vw, 320px)' : 0}
+                inlineSize={isMobile && sideOpen ? 'min(85vw, 320px)' : 0}
                 minBlockSize="100dvh"
                 variant="solid"
-                intent="tertiary"
+                intent="secondary"
                 style={{ zIndex: 20, overflow: 'auto' }}
               >
                 <HAlign position="right">
-                  <IconButton
-                    iconName="close"
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => setPanelOpen(false)}
-                  />
+                  <IconButton iconName="close" variant="ghost" size="sm" onClick={() => setSideOpen(false)} />
                 </HAlign>
-                {slots.side}
+                {slots.SideMobile}
               </Box>
             ) : null}
-            {slots.main ? (
+            {slots.Main ? (
               <Box as="section" className={withPrefix('page-nav-layout-main')} minBlockSize={0}>
-                {slots.main}
+                {slots.Main}
               </Box>
             ) : null}
           </Grid>
@@ -90,3 +92,9 @@ export const PageNavLayout = ({ children }: PageNavLayoutOwnProps) => {
     </WithSlots>
   )
 }
+
+export const PageNavLayout = ({ children }: PageNavLayoutOwnProps) => (
+  <PageNavLayoutProvider>
+    <PageNavLayoutBase>{children}</PageNavLayoutBase>
+  </PageNavLayoutProvider>
+)

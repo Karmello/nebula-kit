@@ -10,3 +10,12 @@ export enum Theme {
   GRAY = 'gray',
   DARK = 'dark',
 }
+
+export enum Slot {
+  header = 'Header',
+  side = 'Side',
+  sideMobile = 'SideMobile',
+  sideDesktop = 'SideDesktop',
+  main = 'Main',
+  footer = 'Footer',
+}

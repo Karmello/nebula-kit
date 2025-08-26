@@ -50,7 +50,7 @@ export const Button = ({
   type = 'button',
   className,
   variant = 'solid',
-  intent = 'neutral',
+  intent = 'tertiary',
   disabled = false,
   size = 'md',
   iconName,

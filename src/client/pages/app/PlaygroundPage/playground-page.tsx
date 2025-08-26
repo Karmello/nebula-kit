@@ -32,12 +32,32 @@ export const PlaygroundPage = () => {
 
   return (
     <PageNavLayout>
-      <PageNavLayout.Side>
+      <PageNavLayout.SideMobile>
+        {({ setSideOpen }) => (
+          <VStack>
+            {PLAYGROUND_PAGES.map(({ key, label }) => (
+              <Button
+                key={key}
+                size="sm"
+                intent={playgroundStore.categoryKey === key ? 'primary' : 'secondary'}
+                onClick={() => {
+                  setSideOpen(false)
+                  navigateTo(`/playground/${key}/${PLAYGROUND_PAGES.find(p => p.key === key).items[0].key}`)
+                }}
+              >
+                {label}
+              </Button>
+            ))}
+          </VStack>
+        )}
+      </PageNavLayout.SideMobile>
+      <PageNavLayout.SideDesktop>
         <VStack>
           {PLAYGROUND_PAGES.map(({ key, label }) => (
             <Button
               key={key}
               size="sm"
+              intent={playgroundStore.categoryKey === key ? 'secondary' : 'neutral'}
               onClick={() =>
                 navigateTo(`/playground/${key}/${PLAYGROUND_PAGES.find(p => p.key === key).items[0].key}`)
               }
@@ -46,7 +66,7 @@ export const PlaygroundPage = () => {
             </Button>
           ))}
         </VStack>
-      </PageNavLayout.Side>
+      </PageNavLayout.SideDesktop>
       <PageNavLayout.Main>
         {/* <nav>
           {PLAYGROUND_PAGES.find(obj => obj.key === playgroundStore.categoryKey).items.map(

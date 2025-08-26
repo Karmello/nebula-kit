@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 
+import { Slot } from 'lib/definitions'
 import { Box, Grid, WithSlots } from 'lib/components'
 import { getDataAttrs, withPrefix } from 'lib/helpers'
 
@@ -12,26 +13,30 @@ export type AppLayoutOwnProps = {
 
 export const AppLayout = ({ children, stickyHeader = false }: AppLayoutOwnProps) => {
   return (
-    <WithSlots componentName="AppLayout" slotNames={['header', 'main', 'footer']} childrenToVerify={children}>
+    <WithSlots
+      componentName="AppLayout"
+      slotNames={[Slot.header, Slot.main, Slot.footer]}
+      childrenToVerify={children}
+    >
       {slots => (
         <Grid
           rows="auto 1fr auto"
           className={withPrefix('app-layout')}
           {...getDataAttrs('app-layout', { stickyHeader })}
         >
-          {slots.header ? (
+          {slots.Header ? (
             <Box as="header" className={withPrefix('app-layout-header')} variant="solid" intent="tertiary">
-              {slots.header}
+              {slots.Header}
             </Box>
           ) : null}
-          {slots.main ? (
+          {slots.Main ? (
             <Box as="main" className={withPrefix('app-layout-main')}>
-              {slots.main}
+              {slots.Main}
             </Box>
           ) : null}
-          {slots.footer ? (
+          {slots.Footer ? (
             <Box as="footer" className={withPrefix('app-layout-footer')}>
-              {slots.footer}
+              {slots.Footer}
             </Box>
           ) : null}
         </Grid>
