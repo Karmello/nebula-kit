@@ -56,6 +56,7 @@ const PageNavLayoutBase = ({ children }: PageNavLayoutOwnProps) => {
                 aria-label="Section navigation"
                 className={withPrefix('page-nav-layout-side-desktop')}
                 inlineSize={isDesktop && sideOpen ? '200px' : 0}
+                blockSize={isMobile ? 0 : undefined}
                 style={{ overflow: 'hidden' }}
               >
                 {slots.SideDesktop}
