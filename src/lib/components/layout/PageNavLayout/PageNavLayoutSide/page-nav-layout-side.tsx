@@ -10,4 +10,4 @@ export const PageNavLayoutSide = ({ children }: PageNavLayoutSideProps) => {
   return <Box as="section">{children}</Box>
 }
 
-PageNavLayoutSide.pageNavLayoutSlotName = 'side'
+PageNavLayoutSide.slotName = 'side'

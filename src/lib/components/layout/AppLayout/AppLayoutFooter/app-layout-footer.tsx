@@ -10,4 +10,4 @@ export const AppLayoutFooter = ({ children }: AppLayoutFooterProps) => {
   return <Box as="section">{children}</Box>
 }
 
-AppLayoutFooter.appLayoutSlotName = 'footer'
+AppLayoutFooter.slotName = 'footer'

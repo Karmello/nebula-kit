@@ -10,4 +10,4 @@ export const AppLayoutMain = ({ children }: AppLayoutMainProps) => {
   return <Box as="section">{children}</Box>
 }
 
-AppLayoutMain.appLayoutSlotName = 'main'
+AppLayoutMain.slotName = 'main'

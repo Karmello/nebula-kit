@@ -10,4 +10,4 @@ export const AppLayoutHeader = ({ children }: AppLayoutHeaderProps) => {
   return <Box as="section">{children}</Box>
 }
 
-AppLayoutHeader.appLayoutSlotName = 'header'
+AppLayoutHeader.slotName = 'header'
