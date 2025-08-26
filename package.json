@@ -37,8 +37,8 @@
     "lib": "git push && yarn dist && npm publish",
     "meta": "rimraf src/meta && ts-node src/generate-meta/index.ts",
     "tsd": "tsc -p tsconfig.types.json && tsd -t dist/types/index.d.ts -f src/lib/components/**/*.test.d.tsx",
-    "test:ct": "playwright test -c playwright.config.ts",
-    "test:ct:ui": "playwright test -c playwright.config.ts --ui",
+    "test:ct": "PLAYWRIGHT_BROWSERS_PATH=0 playwright test -c playwright.config.ts",
+    "test:ct:ui": "PLAYWRIGHT_BROWSERS_PATH=0 playwright test -c playwright.config.ts --ui",
     "test:ct:debug": "PWDEBUG=1 playwright test -c playwright.config.ts"
   },
   "dependencies": {
