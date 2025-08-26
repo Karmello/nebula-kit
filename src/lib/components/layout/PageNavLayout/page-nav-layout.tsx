@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react'
+import { ReactNode, useLayoutEffect, useState } from 'react'
 
 import { Box, Grid, IconButton, WithSlots } from 'lib/components'
 import { withPrefix, useCurrentBreakpoint } from 'lib/helpers'
@@ -10,7 +10,19 @@ export type PageNavLayoutOwnProps = {
 export const PageNavLayout = ({ children }: PageNavLayoutOwnProps) => {
   const [panelOpen, setPanelOpen] = useState<boolean>(false)
 
-  const bp = useCurrentBreakpoint()
+  const { isMobile, isDesktop } = useCurrentBreakpoint()
+
+  useLayoutEffect(() => {
+    if (isMobile) {
+      setPanelOpen(false)
+    }
+  }, [isMobile])
+
+  useLayoutEffect(() => {
+    if (isDesktop) {
+      setPanelOpen(true)
+    }
+  }, [isDesktop])
 
   return (
     <WithSlots componentName="PageNavLayout" slotNames={['main', 'side']} childrenToVerify={children}>
@@ -22,21 +34,21 @@ export const PageNavLayout = ({ children }: PageNavLayoutOwnProps) => {
             columns={{ md: 'auto minmax(0, 1fr)' }}
             minBlockSize="100dvh"
           >
-            <div>
+            <Box />
+            <Box>
               <IconButton
                 iconName={panelOpen ? 'panel-right-open' : 'panel-left-open'}
                 variant="ghost"
                 intent="secondary"
                 onClick={() => setPanelOpen(!panelOpen)}
               />
-            </div>
-            <div>hello</div>
+            </Box>
             {slots.side ? (
               <Box
                 as="aside"
                 aria-label="Section navigation"
                 className={withPrefix('page-nav-layout-side-desktop')}
-                inlineSize={panelOpen ? '200px' : 0}
+                inlineSize={isDesktop && panelOpen ? '200px' : 0}
                 style={{ overflow: 'hidden' }}
               >
                 {slots.side}
@@ -48,11 +60,10 @@ export const PageNavLayout = ({ children }: PageNavLayoutOwnProps) => {
                 aria-label="Section navigation"
                 className={withPrefix('page-nav-layout-side-mobile')}
                 intent="tertiary"
-                display={{ md: 'none' }}
                 position="fixed"
                 top={0}
                 left={0}
-                inlineSize="min(85vw, 320px)"
+                inlineSize={isMobile && panelOpen ? 'min(85vw, 320px)' : 0}
                 minBlockSize="100dvh"
                 style={{ zIndex: 20, overflow: 'auto' }}
               >

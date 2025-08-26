@@ -16,7 +16,7 @@ export type AppNavBarOwnProps = {
 export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: AppNavBarOwnProps) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
 
-  const bp = useCurrentBreakpoint()
+  const { bp } = useCurrentBreakpoint()
 
   useLayoutEffect(() => {
     setMenuOpen(bp !== 'base')

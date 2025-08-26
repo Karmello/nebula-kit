@@ -49,7 +49,7 @@ export const PlaygroundPage = () => {
         </VStack>
       </PageNavLayout.Side>
       <PageNavLayout.Main>
-        <nav>
+        {/* <nav>
           {PLAYGROUND_PAGES.find(obj => obj.key === playgroundStore.categoryKey).items.map(
             ({ key, label }) => (
               <Button
@@ -94,7 +94,8 @@ export const PlaygroundPage = () => {
               <Navigate to={{ pathname: DEFAULT_PATHNAME, search: formatAsQueryString({ lang, theme }) }} />
             }
           />
-        </Routes>
+        </Routes> */}
+        <div />
       </PageNavLayout.Main>
     </PageNavLayout>
   )

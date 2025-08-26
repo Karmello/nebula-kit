@@ -64,4 +64,12 @@ const subscribe = (cb: () => void) => {
 const getSnapshot = () => current
 const getServerSnapshot = (): Breakpoint => 'base'
 
-export const useCurrentBreakpoint = () => useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
+export const useCurrentBreakpoint = () => {
+  const bp = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
+
+  return {
+    bp,
+    isMobile: ['base', 'sm', 'md'].includes(bp),
+    isDesktop: ['lg', 'xl'].includes(bp),
+  }
+}
