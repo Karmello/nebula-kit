@@ -5,7 +5,7 @@ import { CssFlexJustify } from 'lib/definitions'
 
 type Position = 'left' | 'center' | 'right'
 
-export type HAlignProps = {
+export type HAlignOwnProps = {
   children: ReactNode
   position: Position
 }
@@ -16,7 +16,7 @@ const MAP: Record<Position, CssFlexJustify> = {
   right: 'flex-end',
 }
 
-export const HAlign = ({ children, position }: HAlignProps) => {
+export const HAlign = ({ children, position }: HAlignOwnProps) => {
   return (
     <Flex variant="ghost" justify={MAP[position]}>
       {children}

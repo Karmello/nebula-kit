@@ -1,0 +1,26 @@
+{
+  "name": "HAlign",
+  "description": "",
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "options": [],
+      "required": true,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "position",
+      "type": "Position",
+      "options": [
+        "left",
+        "center",
+        "right"
+      ],
+      "required": true,
+      "defaultValue": "",
+      "description": ""
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, Ref } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, WithIcon, WithIconProps } from 'lib/components'
+import { Box, BoxOwnProps, WithIcon, WithIconOwnProps } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { ScaleValue, Size } from 'lib/definitions'
 
@@ -22,9 +22,9 @@ export type ButtonOwnProps = {
   /** Button size controlling height, padding, and font size */
   size?: ButtonSize
   /** Optional icon name to render inside the button */
-  iconName?: WithIconProps['iconName']
+  iconName?: WithIconOwnProps['iconName']
   /** Position of the icon relative to text (e.g. left or right) */
-  iconPosition?: WithIconProps['iconPosition']
+  iconPosition?: WithIconOwnProps['iconPosition']
 }
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &

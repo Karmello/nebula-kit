@@ -1,0 +1,30 @@
+{
+  "name": "PageNavLayout",
+  "description": "",
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "options": [],
+      "required": true,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "sideWidthDesktop",
+      "type": "ScaleValue | string",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "breadcrumpItems",
+      "type": "BreadcrumbOwnProps['items']",
+      "options": [],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    }
+  ]
+}

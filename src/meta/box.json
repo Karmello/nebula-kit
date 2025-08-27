@@ -91,9 +91,9 @@
       "name": "overflowX",
       "type": "ResponsiveProp<CssOverflow>",
       "options": [
+        "hidden",
         "visible",
         "auto",
-        "hidden",
         "scroll"
       ],
       "required": false,
@@ -104,9 +104,9 @@
       "name": "overflowY",
       "type": "ResponsiveProp<CssOverflow>",
       "options": [
+        "hidden",
         "visible",
         "auto",
-        "hidden",
         "scroll"
       ],
       "required": false,

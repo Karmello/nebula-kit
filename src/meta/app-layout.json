@@ -1,0 +1,22 @@
+{
+  "name": "AppLayout",
+  "description": "",
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "options": [],
+      "required": true,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "stickyHeader",
+      "type": "boolean",
+      "options": [],
+      "required": false,
+      "defaultValue": "false",
+      "description": ""
+    }
+  ]
+}

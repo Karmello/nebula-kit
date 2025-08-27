@@ -1,12 +1,12 @@
 import { IconName, getSvgIconComponent } from 'lib/icons'
 import { ScaleValue } from 'lib/definitions'
 
-export type SvgIconProps = {
+export type SvgIconOwnProps = {
   name: IconName
   size?: ScaleValue
 }
 
-export const SvgIcon = ({ name, size }: SvgIconProps) => {
+export const SvgIcon = ({ name, size }: SvgIconOwnProps) => {
   const Svg = getSvgIconComponent(name)
 
   return (

@@ -1,0 +1,44 @@
+{
+  "name": "WithIcon",
+  "description": "",
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "options": [],
+      "required": true,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "iconName",
+      "type": "IconName",
+      "options": [
+        "check",
+        "close",
+        "search",
+        "menu",
+        "panel-left-open",
+        "panel-right-open",
+        "chevron-down",
+        "chevron-up",
+        "chevron-left",
+        "chevron-right"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "iconPosition",
+      "type": "'left' | 'right'",
+      "options": [
+        "left",
+        "right"
+      ],
+      "required": false,
+      "defaultValue": "'left'",
+      "description": ""
+    }
+  ]
+}

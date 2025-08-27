@@ -13,7 +13,9 @@
         "panel-left-open",
         "panel-right-open",
         "chevron-down",
-        "chevron-up"
+        "chevron-up",
+        "chevron-left",
+        "chevron-right"
       ],
       "required": true,
       "defaultValue": "",

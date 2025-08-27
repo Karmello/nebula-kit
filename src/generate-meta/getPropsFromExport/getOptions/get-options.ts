@@ -20,20 +20,45 @@ const looksLikeScaleValueUnion = (t: ts.Type): boolean => {
 }
 
 // Recursively detect if a type *uses* ScaleValue anywhere (alias or expanded)
-const typeUsesScaleValue = (checker: ts.TypeChecker, t: ts.Type): boolean => {
+// Now with cycle protection to avoid ReactNode-style recursive explosions
+const typeUsesScaleValue = (
+  checker: ts.TypeChecker,
+  t: ts.Type,
+  seen: WeakSet<ts.Type> = new WeakSet(),
+  depth = 0
+): boolean => {
+  // bail if we've already seen this node in the current walk
+  if (seen.has(t)) return false
+  seen.add(t)
+
+  // hard depth cap as an extra fuse against pathological types
+  if (depth > 200) return false
+
   const aliasName = (t as any).aliasSymbol?.getName?.()
   if (aliasName === 'ScaleValue') return true
   if (looksLikeScaleValueUnion(t)) return true
-  if (t.isUnion()) return t.types.some(tt => typeUsesScaleValue(checker, tt))
 
+  // Unions
+  if (t.isUnion()) {
+    return t.types.some(tt => typeUsesScaleValue(checker, tt, seen, depth + 1))
+  }
+
+  // References / generics (e.g., Array<T>, Promise<T>, etc.)
   const objFlags = (t.flags & ts.TypeFlags.Object) !== 0 ? (t as any).objectFlags : 0
   const isRef = (objFlags & ts.ObjectFlags.Reference) !== 0
   if (isRef) {
     const aliasArgs: ts.Type[] | undefined = (t as any).aliasTypeArguments
     const typeArgs: ts.Type[] | undefined = (t as any).typeArguments
     const args = (aliasArgs && aliasArgs.length ? aliasArgs : typeArgs) || []
-    if (args.some(arg => typeUsesScaleValue(checker, arg))) return true
+    if (args.some(arg => typeUsesScaleValue(checker, arg, seen, depth + 1))) return true
+
+    // Some references also expose a 'target' that can chain into more args
+    const target: ts.Type | undefined = (t as any).target
+    if (target && !seen.has(target)) {
+      if (typeUsesScaleValue(checker, target, seen, depth + 1)) return true
+    }
   }
+
   return false
 }
 

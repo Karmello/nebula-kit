@@ -80,7 +80,7 @@
     },
     {
       "name": "iconName",
-      "type": "WithIconProps['iconName']",
+      "type": "WithIconOwnProps['iconName']",
       "options": [
         "check",
         "close",
@@ -89,7 +89,9 @@
         "panel-left-open",
         "panel-right-open",
         "chevron-down",
-        "chevron-up"
+        "chevron-up",
+        "chevron-left",
+        "chevron-right"
       ],
       "required": false,
       "defaultValue": "",
@@ -97,7 +99,7 @@
     },
     {
       "name": "iconPosition",
-      "type": "WithIconProps['iconPosition']",
+      "type": "WithIconOwnProps['iconPosition']",
       "options": [
         "left",
         "right"

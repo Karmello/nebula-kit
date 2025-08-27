@@ -1,0 +1,33 @@
+{
+  "name": "SvgIcon",
+  "description": "",
+  "props": [
+    {
+      "name": "name",
+      "type": "IconName",
+      "options": [
+        "check",
+        "close",
+        "search",
+        "menu",
+        "panel-left-open",
+        "panel-right-open",
+        "chevron-down",
+        "chevron-up",
+        "chevron-left",
+        "chevron-right"
+      ],
+      "required": true,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "size",
+      "type": "ScaleValue",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    }
+  ]
+}

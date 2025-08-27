@@ -21,7 +21,14 @@ export const PLAYGROUND_ROUTING_CONFIG = [
   },
   {
     key: RoutingCategoryKey.layout,
-    items: [RoutingItemKey.flow, RoutingItemKey.stack, RoutingItemKey.hStack, RoutingItemKey.vStack],
+    items: [
+      RoutingItemKey.appLayout,
+      RoutingItemKey.flow,
+      RoutingItemKey.stack,
+      RoutingItemKey.hStack,
+      RoutingItemKey.vStack,
+      RoutingItemKey.hAlign,
+    ],
   },
   {
     key: RoutingCategoryKey.form,
@@ -29,7 +36,7 @@ export const PLAYGROUND_ROUTING_CONFIG = [
   },
   {
     key: RoutingCategoryKey.navigation,
-    items: [RoutingItemKey.navBar, RoutingItemKey.breadcrumb],
+    items: [RoutingItemKey.appNavBar, RoutingItemKey.pageSideNav, RoutingItemKey.breadcrumb],
   },
   {
     key: RoutingCategoryKey.utility,

@@ -10,6 +10,8 @@ export enum RoutingCategoryKey {
 }
 
 export enum RoutingItemKey {
+  appLayout = 'app-layout',
+  appNavBar = 'app-nav-bar',
   box = 'box',
   breadcrumb = 'breadcrumb',
   button = 'button',
@@ -17,11 +19,12 @@ export enum RoutingItemKey {
   flex = 'flex',
   flow = 'flow',
   grid = 'grid',
+  hAlign = 'h-align',
   hStack = 'h-stack',
   iconButton = 'icon-button',
   installation = 'installation',
-  navBar = 'nav-bar',
   nebKitProvider = 'neb-kit-provider',
+  pageSideNav = 'page-side-nav',
   select = 'select',
   spacer = 'spacer',
   stack = 'stack',

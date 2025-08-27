@@ -1,7 +1,7 @@
 import { CSSProperties, ReactNode, Ref } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, WithIcon, WithIconProps } from 'lib/components'
+import { Box, BoxOwnProps, WithIcon, WithIconOwnProps } from 'lib/components'
 import { withPrefix, getDataAttrs } from 'lib/helpers'
 import { TextTypography } from 'lib/definitions'
 
@@ -30,9 +30,9 @@ export type TextOwnProps = {
   /** Number of lines before truncating with line-clamp */
   clampLines?: number
   /** Optional icon name to display alongside text */
-  iconName?: WithIconProps['iconName']
+  iconName?: WithIconOwnProps['iconName']
   /** Position of the icon relative to the text (left or right) */
-  iconPosition?: WithIconProps['iconPosition']
+  iconPosition?: WithIconOwnProps['iconPosition']
 }
 
 export type TextProps = TextOwnProps & {

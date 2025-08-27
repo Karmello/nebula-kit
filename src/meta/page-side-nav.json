@@ -1,0 +1,38 @@
+{
+  "name": "PageSideNav",
+  "description": "",
+  "props": [
+    {
+      "name": "groups",
+      "type": "Group[]",
+      "options": [],
+      "required": true,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "activeItemKey",
+      "type": "string",
+      "options": [],
+      "required": true,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "groupConfig",
+      "type": "Config",
+      "options": [],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "itemConfig",
+      "type": "Config",
+      "options": [],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    }
+  ]
+}
