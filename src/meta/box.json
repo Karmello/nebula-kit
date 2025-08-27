@@ -33,6 +33,24 @@
       "description": "Semantic tone or purpose (e.g. neutral, success, danger)"
     },
     {
+      "name": "textIntent",
+      "type": "BoxIntent",
+      "options": [
+        "neutral",
+        "primary",
+        "secondary",
+        "tertiary",
+        "success",
+        "info",
+        "warning",
+        "danger",
+        "inverse"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
       "name": "interactive",
       "type": "boolean",
       "options": [],
@@ -71,7 +89,7 @@
     },
     {
       "name": "overflowX",
-      "type": "CssOverflow",
+      "type": "ResponsiveProp<CssOverflow>",
       "options": [
         "visible",
         "auto",
@@ -84,7 +102,7 @@
     },
     {
       "name": "overflowY",
-      "type": "CssOverflow",
+      "type": "ResponsiveProp<CssOverflow>",
       "options": [
         "visible",
         "auto",

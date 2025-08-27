@@ -37,4 +37,10 @@ export const PLAYGROUND_ROUTING_CONFIG = [
   },
 ]
 
-export const DOCS_ROUTING_CONFIG = [...PLAYGROUND_ROUTING_CONFIG]
+export const DOCS_ROUTING_CONFIG = [
+  {
+    key: RoutingCategoryKey.overview,
+    items: [RoutingItemKey.installation],
+  },
+  ...PLAYGROUND_ROUTING_CONFIG,
+]

@@ -1,0 +1,21 @@
+{
+  "folders": [
+	{
+		"name": "nebula-kit",
+		"path": "."
+	},
+	{
+		"name": "src",
+		"path": "src"
+	},
+	{
+		"name": "client",
+		"path": "src/client"
+	},
+	{
+		"name": "lib",
+		"path": "src/lib"
+	}
+],
+  "settings": {}
+}

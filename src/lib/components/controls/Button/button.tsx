@@ -14,6 +14,7 @@ export type ButtonOwnProps = {
   variant?: BoxOwnProps['variant']
   /** Semantic intent for coloring (e.g. primary, success, danger, neutral) */
   intent?: BoxOwnProps['intent']
+  textIntent?: BoxOwnProps['textIntent']
   /** Disables interaction and applies disabled styling */
   disabled?: BoxOwnProps['disabled']
   borderRadius?: BoxOwnProps['borderRadius']
@@ -52,6 +53,7 @@ export const Button = ({
   className,
   variant = 'solid',
   intent = 'tertiary',
+  textIntent,
   disabled = false,
   size = 'md',
   iconName,
@@ -68,8 +70,10 @@ export const Button = ({
       as="button"
       variant={variant}
       intent={intent}
+      textIntent={textIntent}
       disabled={disabled}
       interactive
+      overflowX="hidden"
       {...BUTTON_SIZE_TO_PROPS[size]}
     >
       <WithIcon iconName={iconName} iconPosition={iconPosition}>

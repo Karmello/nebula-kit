@@ -23,6 +23,7 @@ export type BoxOwnProps = {
   variant?: BoxVariant
   /** Semantic tone or purpose (e.g. neutral, success, danger) */
   intent?: BoxIntent
+  textIntent?: BoxIntent
   /** Marks the box as interactive, enabling hover/focus styles */
   interactive?: boolean
   /** Disables interaction and applies a muted style */
@@ -94,6 +95,7 @@ export const Box = <E extends ElementType = 'div'>({
   style,
   variant = 'ghost',
   intent = 'neutral',
+  textIntent,
   interactive = false,
   disabled = false,
   // css vars
@@ -174,6 +176,7 @@ export const Box = <E extends ElementType = 'div'>({
           mb,
           ml,
         }),
+        color: textIntent ? `var(--neb-text-${textIntent})` : undefined,
         borderRadius:
           variant !== 'ghost'
             ? scale(borderRadius !== undefined ? borderRadius : globalBorderRadius)

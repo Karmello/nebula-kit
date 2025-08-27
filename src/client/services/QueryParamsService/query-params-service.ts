@@ -38,9 +38,11 @@ export const useNavigateTo = () => {
   const push = useNavigate()
   const { theme, lang } = useLibStore()
 
-  return (path: string) => {
+  return (path: string): boolean => {
     if (path !== pathname) {
       push(`${path}?${formatAsQueryString({ lang, theme })}`)
     }
+
+    return path !== pathname
   }
 }

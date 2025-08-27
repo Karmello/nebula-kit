@@ -33,6 +33,24 @@
       "description": "Semantic intent for coloring (e.g. primary, success, danger, neutral)"
     },
     {
+      "name": "textIntent",
+      "type": "BoxOwnProps['textIntent']",
+      "options": [
+        "neutral",
+        "primary",
+        "secondary",
+        "tertiary",
+        "success",
+        "info",
+        "warning",
+        "danger",
+        "inverse"
+      ],
+      "required": false,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
       "name": "disabled",
       "type": "BoxOwnProps['disabled']",
       "options": [],

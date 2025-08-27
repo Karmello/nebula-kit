@@ -42,7 +42,7 @@
       "type": "BoxOwnProps['fontSize']",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "8",
+      "defaultValue": "",
       "description": "Explicit font size override; falls back to preset from typography"
     },
     {

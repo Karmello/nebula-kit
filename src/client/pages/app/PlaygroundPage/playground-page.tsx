@@ -34,36 +34,41 @@ export const PlaygroundPage = () => {
       <PageNavLayout.SideMobile>
         {({ setSideOpen }) => (
           <PageSideNav
-            items={PLAYGROUND_PAGES.map(({ key, label }) => ({
+            groups={PLAYGROUND_PAGES.map(({ key: categoryKey, label }) => ({
+              key: categoryKey,
               label,
-              variant: 'ghost',
-              intent: 'neutral',
-              subItems: PLAYGROUND_PAGES.find(obj => obj.key === key).items.map(({ key, label }) => ({
-                label,
-                intent: key === playgroundStore.itemKey ? 'tertiary' : 'secondary',
-                onClick: () => {
-                  setSideOpen(false)
-                  navigateTo(`/playground/${playgroundStore.categoryKey}/${key}`)
-                },
-              })),
+              items: PLAYGROUND_PAGES.find(obj => obj.key === categoryKey).items.map(
+                ({ key: itemKey, label }) => ({
+                  key: itemKey,
+                  label,
+                  onClick: () => {
+                    if (navigateTo(`/playground/${categoryKey}/${itemKey}`)) {
+                      setSideOpen(false)
+                    }
+                  },
+                })
+              ),
             }))}
+            activeItemKey={playgroundStore.itemKey}
           />
         )}
       </PageNavLayout.SideMobile>
       <PageNavLayout.SideDesktop>
         <PageSideNav
-          items={PLAYGROUND_PAGES.map(({ key, label }) => ({
+          groups={PLAYGROUND_PAGES.map(({ key: categoryKey, label }) => ({
+            key: categoryKey,
             label,
-            variant: 'ghost',
-            intent: 'neutral',
-            subItems: PLAYGROUND_PAGES.find(obj => obj.key === key).items.map(({ key, label }) => ({
-              label,
-              intent: key === playgroundStore.itemKey ? 'tertiary' : 'neutral',
-              onClick: () => {
-                navigateTo(`/playground/${playgroundStore.categoryKey}/${key}`)
-              },
-            })),
+            items: PLAYGROUND_PAGES.find(obj => obj.key === categoryKey).items.map(
+              ({ key: itemKey, label }) => ({
+                key: itemKey,
+                label,
+                onClick: () => {
+                  navigateTo(`/playground/${categoryKey}/${itemKey}`)
+                },
+              })
+            ),
           }))}
+          activeItemKey={playgroundStore.itemKey}
         />
       </PageNavLayout.SideDesktop>
       <PageNavLayout.Main>

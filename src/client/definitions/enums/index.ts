@@ -4,6 +4,7 @@ export enum RoutingCategoryKey {
   form = 'form',
   layout = 'layout',
   navigation = 'navigation',
+  overview = 'overview',
   primitives = 'primitives',
   utility = 'utility',
 }
@@ -17,6 +18,7 @@ export enum RoutingItemKey {
   grid = 'grid',
   hStack = 'h-stack',
   iconButton = 'icon-button',
+  installation = 'installation',
   navBar = 'nav-bar',
   nebKitProvider = 'neb-kit-provider',
   select = 'select',

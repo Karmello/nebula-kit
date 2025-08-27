@@ -44,36 +44,38 @@ export const DocsPage = () => {
       <PageNavLayout.SideMobile>
         {({ setSideOpen }) => (
           <PageSideNav
-            items={DOCS_PAGES.map(({ key, label }) => ({
+            groups={DOCS_PAGES.map(({ key: categoryKey, label }) => ({
+              key: categoryKey,
               label,
-              variant: 'ghost',
-              intent: 'neutral',
-              subItems: DOCS_PAGES.find(obj => obj.key === key).items.map(({ key, label }) => ({
+              items: DOCS_PAGES.find(obj => obj.key === categoryKey).items.map(({ key: itemKey, label }) => ({
+                key: itemKey,
                 label,
-                intent: key === docsStore.itemKey ? 'tertiary' : 'secondary',
                 onClick: () => {
-                  setSideOpen(false)
-                  navigateTo(`/docs/${docsStore.categoryKey}/${key}`)
+                  if (navigateTo(`/docs/${categoryKey}/${itemKey}`)) {
+                    setSideOpen(false)
+                  }
                 },
               })),
             }))}
+            activeItemKey={docsStore.itemKey}
+            itemConfig={{ default: { intent: 'secondary' }, active: { variant: 'ghost' } }}
           />
         )}
       </PageNavLayout.SideMobile>
       <PageNavLayout.SideDesktop>
         <PageSideNav
-          items={DOCS_PAGES.map(({ key, label }) => ({
+          groups={DOCS_PAGES.map(({ key: categoryKey, label }) => ({
+            key: categoryKey,
             label,
-            variant: 'ghost',
-            intent: 'neutral',
-            subItems: DOCS_PAGES.find(obj => obj.key === key).items.map(({ key, label }) => ({
+            items: DOCS_PAGES.find(obj => obj.key === categoryKey).items.map(({ key: itemKey, label }) => ({
+              key: itemKey,
               label,
-              intent: key === docsStore.itemKey ? 'tertiary' : 'neutral',
               onClick: () => {
-                navigateTo(`/docs/${docsStore.categoryKey}/${key}`)
+                navigateTo(`/docs/${categoryKey}/${itemKey}`)
               },
             })),
           }))}
+          activeItemKey={docsStore.itemKey}
         />
       </PageNavLayout.SideDesktop>
       <PageNavLayout.Main>

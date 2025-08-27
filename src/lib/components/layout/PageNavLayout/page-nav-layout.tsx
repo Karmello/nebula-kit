@@ -1,16 +1,17 @@
 import { ReactNode, useLayoutEffect } from 'react'
 
 import { Box, Grid, IconButton, WithSlots, HAlign } from 'lib/components'
-import { withPrefix, useScreen } from 'lib/helpers'
-import { Slot } from 'lib/definitions'
+import { withPrefix, useScreen, scale } from 'lib/helpers'
+import { ScaleValue, Slot } from 'lib/definitions'
 
 import { PageNavLayoutProvider, usePageNavLayout } from './PageNavLayoutProvider'
 
 export type PageNavLayoutOwnProps = {
   children: ReactNode
+  sideWidthDesktop?: ScaleValue | string
 }
 
-const PageNavLayoutBase = ({ children }: PageNavLayoutOwnProps) => {
+const PageNavLayoutBase = ({ children, sideWidthDesktop = '225px' }: PageNavLayoutOwnProps) => {
   const { isMobile, isDesktop } = useScreen()
 
   const { sideOpen, setSideOpen } = usePageNavLayout()
@@ -45,7 +46,6 @@ const PageNavLayoutBase = ({ children }: PageNavLayoutOwnProps) => {
             <Box m={10}>
               <IconButton
                 iconName={sideOpen ? 'panel-right-open' : 'panel-left-open'}
-                // variant="ghost"
                 intent="tertiary"
                 size="sm"
                 onClick={() => setSideOpen(!sideOpen)}
@@ -56,7 +56,7 @@ const PageNavLayoutBase = ({ children }: PageNavLayoutOwnProps) => {
                 as="aside"
                 aria-label="Section navigation"
                 className={withPrefix('page-nav-layout-side-desktop')}
-                inlineSize={isDesktop && sideOpen ? '250px' : 0}
+                inlineSize={isDesktop && sideOpen ? scale(sideWidthDesktop) : 0}
                 blockSize={isMobile ? 0 : undefined}
                 overflowX="hidden"
               >
@@ -102,8 +102,8 @@ const PageNavLayoutBase = ({ children }: PageNavLayoutOwnProps) => {
   )
 }
 
-export const PageNavLayout = ({ children }: PageNavLayoutOwnProps) => (
+export const PageNavLayout = (props: PageNavLayoutOwnProps) => (
   <PageNavLayoutProvider>
-    <PageNavLayoutBase>{children}</PageNavLayoutBase>
+    <PageNavLayoutBase {...props} />
   </PageNavLayoutProvider>
 )
