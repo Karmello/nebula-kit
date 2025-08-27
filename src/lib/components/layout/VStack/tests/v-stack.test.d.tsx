@@ -1,8 +1,7 @@
 import { JSX, ComponentProps } from 'react'
 import { expectType, expectAssignable, expectError } from 'tsd'
 
-import { VStack, type VStackOwnProps } from '..'
-import type { StackOwnProps } from 'lib/components'
+import { VStack } from '..'
 
 // --- Basic render & own props ---
 expectType<JSX.Element>(<VStack />)

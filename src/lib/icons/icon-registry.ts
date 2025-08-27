@@ -13,7 +13,7 @@ export const ICON_NAMES = [
 
 export type IconName = (typeof ICON_NAMES)[number]
 
-let REGISTRY: Record<IconName, (props: SVGProps<SVGElement>) => JSX.Element>
+let REGISTRY: Record<IconName, () => JSX.Element>
 
 export const registerIcons = (map: typeof REGISTRY) => {
   REGISTRY = map
