@@ -22,7 +22,8 @@ export const PLAYGROUND_ROUTING_CONFIG = [
   {
     key: RoutingCategoryKey.layout,
     items: [
-      RoutingItemKey.appLayout,
+      RoutingItemKey.appFrame,
+      RoutingItemKey.pageNavLayout,
       RoutingItemKey.flow,
       RoutingItemKey.stack,
       RoutingItemKey.hStack,
@@ -47,6 +48,10 @@ export const PLAYGROUND_ROUTING_CONFIG = [
 export const DOCS_ROUTING_CONFIG = [
   {
     key: RoutingCategoryKey.overview,
+    items: [RoutingItemKey.foundations],
+  },
+  {
+    key: RoutingCategoryKey.gettingStarted,
     items: [RoutingItemKey.installation],
   },
   ...PLAYGROUND_ROUTING_CONFIG,

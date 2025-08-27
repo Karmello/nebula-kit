@@ -1,5 +1,18 @@
-import { Text, Table, TableHead, TableBody, TableRow, TableHeadCell, TableCell, Spacer } from 'lib/components'
+import {
+  Text,
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableHeadCell,
+  TableCell,
+  Spacer,
+  SvgIcon,
+} from 'lib/components'
+
 import { ComponentMeta } from 'lib/definitions'
+
+const EMPTY_CELL_MARKER = '-'
 
 export const CompMetaRenderer = ({ data }: { data: ComponentMeta }) => {
   if (!data) {
@@ -17,7 +30,7 @@ export const CompMetaRenderer = ({ data }: { data: ComponentMeta }) => {
       <Table key={data.name} layout="fixed" scrollable>
         <TableHead>
           <TableRow>
-            <TableHeadCell style={{ width: '15ch' }}>Name</TableHeadCell>
+            <TableHeadCell style={{ width: '17ch' }}>Name</TableHeadCell>
             <TableHeadCell style={{ width: '30ch' }}>Type</TableHeadCell>
             <TableHeadCell style={{ width: '30ch' }}>Options</TableHeadCell>
             <TableHeadCell style={{ width: '8ch' }}>Required</TableHeadCell>
@@ -29,11 +42,15 @@ export const CompMetaRenderer = ({ data }: { data: ComponentMeta }) => {
           {data.props.map(({ name, type, options, required, defaultValue, description }) => (
             <TableRow key={name}>
               <TableCell>{name}</TableCell>
-              <TableCell>{type}</TableCell>
-              <TableCell>{typeof options === 'string' ? options : options.join(' | ')}</TableCell>
-              <TableCell>{required ? 'true' : ''}</TableCell>
+              <TableCell>
+                <Text italic>{type}</Text>
+              </TableCell>
+              <TableCell>
+                {typeof options === 'string' ? options : options.join(' | ') || EMPTY_CELL_MARKER}
+              </TableCell>
+              <TableCell textAlign="center">{required ? <SvgIcon name="check" /> : ''}</TableCell>
               <TableCell>{defaultValue}</TableCell>
-              <TableCell>{description}</TableCell>
+              <TableCell>{description || EMPTY_CELL_MARKER}</TableCell>
             </TableRow>
           ))}
         </TableBody>

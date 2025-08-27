@@ -43,11 +43,7 @@ export const DocsPage = () => {
 
   return (
     <PageNavLayout
-      breadcrumpItems={[
-        t('common.docs'),
-        sentenceCase(docsStore.categoryKey),
-        sentenceCase(docsStore.itemKey),
-      ]}
+      breadcrumpItems={[t('common.docs'), sentenceCase(docsStore.categoryKey), pascalCase(docsStore.itemKey)]}
     >
       <PageNavLayout.SideMobile>
         {({ setSideOpen }) => (

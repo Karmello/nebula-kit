@@ -36,7 +36,7 @@ export const PlaygroundPage = () => {
       breadcrumpItems={[
         t('common.playground'),
         sentenceCase(playgroundStore.categoryKey),
-        sentenceCase(playgroundStore.itemKey),
+        pascalCase(playgroundStore.itemKey),
       ]}
     >
       <PageNavLayout.SideMobile>

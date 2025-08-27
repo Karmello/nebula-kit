@@ -3,12 +3,12 @@ import { ReactNode } from 'react'
 import { Box } from 'lib/components'
 import { Slot } from 'lib/definitions'
 
-export type AppLayoutMainProps = {
+export type AppFrameMainProps = {
   children: ReactNode
 }
 
-export const AppLayoutMain = ({ children }: AppLayoutMainProps) => {
+export const AppFrameMain = ({ children }: AppFrameMainProps) => {
   return <Box as="section">{children}</Box>
 }
 
-AppLayoutMain.slotName = Slot.main
+AppFrameMain.slotName = Slot.main

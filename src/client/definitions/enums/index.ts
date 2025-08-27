@@ -2,6 +2,7 @@ export enum RoutingCategoryKey {
   controls = 'controls',
   elements = 'elements',
   form = 'form',
+  gettingStarted = 'getting-started',
   layout = 'layout',
   navigation = 'navigation',
   overview = 'overview',
@@ -10,7 +11,7 @@ export enum RoutingCategoryKey {
 }
 
 export enum RoutingItemKey {
-  appLayout = 'app-layout',
+  appFrame = 'app-frame',
   appNavBar = 'app-nav-bar',
   box = 'box',
   breadcrumb = 'breadcrumb',
@@ -18,12 +19,14 @@ export enum RoutingItemKey {
   divider = 'divider',
   flex = 'flex',
   flow = 'flow',
+  foundations = 'foundations',
   grid = 'grid',
   hAlign = 'h-align',
   hStack = 'h-stack',
   iconButton = 'icon-button',
   installation = 'installation',
   nebKitProvider = 'neb-kit-provider',
+  pageNavLayout = 'page-nav-layout',
   pageSideNav = 'page-side-nav',
   select = 'select',
   spacer = 'spacer',

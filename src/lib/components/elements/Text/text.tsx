@@ -24,6 +24,7 @@ export type TextOwnProps = {
   /** Typography preset mapping to tag and font size (h1–h6, body, lead, etc.) */
   typography?: TextTypography
   /** Prevents wrapping, rendering all text on a single line */
+  italic?: boolean
   noWrap?: boolean
   /** Truncates overflowing text with an ellipsis */
   truncate?: boolean
@@ -71,6 +72,7 @@ export const Text = ({
   lineHeight = 'normal',
   textAlign = 'initial',
   typography = 'body',
+  italic = false,
   noWrap = false,
   truncate = false,
   clampLines,
@@ -101,6 +103,7 @@ export const Text = ({
               overflow: 'hidden',
             }
           : {}),
+        ...(italic ? { fontStyle: 'italic' } : {}),
         ...(noWrap ? { whiteSpace: 'nowrap' } : {}),
         ...(truncate ? { whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' } : {}),
         ...style,

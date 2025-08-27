@@ -1,0 +1,22 @@
+{
+  "name": "AppFrame",
+  "description": "This component gives your app a skeleton to live in. AppFrame arranges the classic trio - header, main content, and footer - into a responsive grid, handling their structure so you can focus on what goes inside. It supports an optional sticky header and provides named slots, making it easy to compose a consistent layout across pages.",
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "options": [],
+      "required": true,
+      "defaultValue": "",
+      "description": ""
+    },
+    {
+      "name": "stickyHeader",
+      "type": "boolean",
+      "options": [],
+      "required": false,
+      "defaultValue": "false",
+      "description": ""
+    }
+  ]
+}

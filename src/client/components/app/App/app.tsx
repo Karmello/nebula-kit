@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 import { useLibStore } from 'lib/state'
-import { AppLayout } from 'lib/components'
+import { AppFrame } from 'lib/components'
 import { validateQueryParams } from 'client/services'
 
 import { AppNavBar } from './AppNavBar'
@@ -29,17 +29,17 @@ export const App = () => {
 
   return (
     <>
-      <AppLayout stickyHeader>
-        <AppLayout.Header>
+      <AppFrame stickyHeader>
+        <AppFrame.Header>
           <AppNavBar />
-        </AppLayout.Header>
-        <AppLayout.Main>
+        </AppFrame.Header>
+        <AppFrame.Main>
           <RootPage />
-        </AppLayout.Main>
-        <AppLayout.Footer>
+        </AppFrame.Main>
+        <AppFrame.Footer>
           <div />
-        </AppLayout.Footer>
-      </AppLayout>
+        </AppFrame.Footer>
+      </AppFrame>
     </>
   )
 }

@@ -1,17 +1,15 @@
 import { ReactNode } from 'react'
 import classNames from 'classnames'
 
-import { Box, useTableContext } from 'lib/components'
+import { Box, BoxOwnProps, useTableContext } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-export type TableCellProps = {
+export type TableCellOwnProps = Pick<BoxOwnProps, 'textAlign'> & {
   children?: ReactNode
   className?: string
-  /** Text alignment */
-  align?: 'start' | 'center' | 'end'
 }
 
-export const TableCell = ({ align = 'start', className, ...rest }: TableCellProps) => {
+export const TableCell = ({ className, ...rest }: TableCellOwnProps) => {
   const { variant, intent } = useTableContext()
 
   return (
@@ -19,7 +17,6 @@ export const TableCell = ({ align = 'start', className, ...rest }: TableCellProp
       as="td"
       display="table-cell"
       className={classNames(withPrefix('table-cell'), className)}
-      data-table-cell-align={align}
       variant={variant}
       intent={intent}
       {...rest}

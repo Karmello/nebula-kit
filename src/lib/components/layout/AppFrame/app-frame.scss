@@ -1,14 +1,14 @@
-.neb-app-layout {
+.neb-app-frame {
   min-height: 100dvh;
 
-  .neb-app-layout-main {
+  .neb-app-frame-main {
     min-block-size: 0;
     min-inline-size: 0;
   }
 }
 
-.neb-app-layout[data-neb-app-layout-sticky-header='true'] {
-  .neb-app-layout-header {
+.neb-app-frame[data-neb-app-frame-sticky-header='true'] {
+  .neb-app-frame-header {
     position: sticky;
     top: 0;
     z-index: 10;

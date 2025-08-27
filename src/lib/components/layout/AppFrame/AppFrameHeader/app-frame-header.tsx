@@ -3,12 +3,12 @@ import { ReactNode } from 'react'
 import { Box } from 'lib/components'
 import { Slot } from 'lib/definitions'
 
-export type AppLayoutFooterProps = {
+export type AppframeHeaderProps = {
   children: ReactNode
 }
 
-export const AppLayoutFooter = ({ children }: AppLayoutFooterProps) => {
+export const AppFrameHeader = ({ children }: AppframeHeaderProps) => {
   return <Box as="section">{children}</Box>
 }
 
-AppLayoutFooter.slotName = Slot.footer
+AppFrameHeader.slotName = Slot.header

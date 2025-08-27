@@ -1,4 +1,4 @@
-export * from './AppLayout'
+export * from './AppFrame'
 export * from './Center'
 export * from './Cluster'
 export * from './HAlign'

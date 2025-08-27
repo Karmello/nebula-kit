@@ -12,7 +12,7 @@ export const Breadcrumb = ({ items }: BreadcrumbOwnProps) => {
   return (
     <HStack gap={5}>
       {items.map((item, i) => (
-        <Text key={i} typography="secondary" iconName={i > 0 ? 'chevron-right' : undefined}>
+        <Text key={i} typography="secondary" intent="primary" iconName={i > 0 ? 'chevron-right' : undefined}>
           {item}
         </Text>
       ))}
