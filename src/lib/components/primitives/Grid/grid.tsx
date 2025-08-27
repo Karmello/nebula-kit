@@ -23,12 +23,6 @@ export interface GridOwnProps {
   columns?: ResponsiveProp<string | number>
   /** Row track template or count (e.g. "auto 1fr auto" or 3); supports responsive values */
   rows?: ResponsiveProp<string | number>
-  /** Shorthand gap between grid items; accepts scale tokens or raw CSS; responsive */
-  gap?: ResponsiveProp<ScaleValue | string>
-  /** Vertical spacing between rows; overrides gap on the block axis; responsive */
-  rowGap?: ResponsiveProp<ScaleValue | string>
-  /** Horizontal spacing between columns; overrides gap on the inline axis; responsive */
-  columnGap?: ResponsiveProp<ScaleValue | string>
   /** Auto‑placement strategy for items (grid-auto-flow); responsive */
   autoFlow?: ResponsiveProp<CssGridAutoFlow>
   /** Size for implicitly created rows (grid-auto-rows); responsive */
@@ -39,6 +33,12 @@ export interface GridOwnProps {
   placeItems?: ResponsiveProp<CssGridPlaceItems>
   /** Shorthand alignment for the grid within its container (place-content); responsive */
   placeContent?: ResponsiveProp<CssGridPlaceContent>
+  /** Shorthand gap between grid items; accepts scale tokens or raw CSS; responsive */
+  gap?: ResponsiveProp<ScaleValue | string>
+  /** Vertical spacing between rows; overrides gap on the block axis; responsive */
+  rowGap?: ResponsiveProp<ScaleValue | string>
+  /** Horizontal spacing between columns; overrides gap on the inline axis; responsive */
+  columnGap?: ResponsiveProp<ScaleValue | string>
 }
 
 export type GridProps<E extends GridAs = 'div'> = PolymorphicProps<E, BoxOwnProps & GridOwnProps>

@@ -29,8 +29,8 @@ export type BoxOwnProps = {
   disabled?: boolean
   /** Sets font size using scale values or raw CSS values */
   display?: ResponsiveProp<CssDisplay>
-  overflowX?: CssOverflow
-  overflowY?: CssOverflow
+  overflowX?: ResponsiveProp<CssOverflow>
+  overflowY?: ResponsiveProp<CssOverflow>
   opacity?: ResponsiveProp<number>
   position?: ResponsiveProp<CssPosition>
   top?: ResponsiveProp<ScaleValue | string>

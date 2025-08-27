@@ -42,7 +42,7 @@ const PageNavLayoutBase = ({ children }: PageNavLayoutOwnProps) => {
             minBlockSize="100dvh"
           >
             <Box />
-            <Box>
+            <Box m={10}>
               <IconButton
                 iconName={sideOpen ? 'panel-right-open' : 'panel-left-open'}
                 // variant="ghost"
