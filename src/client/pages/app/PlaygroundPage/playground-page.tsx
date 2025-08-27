@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { sentenceCase, pascalCase } from 'change-case'
 
 import { useLibStore } from 'lib/state'
@@ -17,6 +18,7 @@ const PLAYGROUND_PAGES = PLAYGROUND_ROUTING_CONFIG.map(({ key, items }) => ({
 const DEFAULT_PATHNAME = `${PLAYGROUND_PAGES[0].key}/${PLAYGROUND_PAGES[0].items[0].key}`
 
 export const PlaygroundPage = () => {
+  const { t } = useTranslation()
   const { pathname } = useLocation()
 
   const navigateTo = useNavigateTo()
@@ -30,7 +32,13 @@ export const PlaygroundPage = () => {
   }, [pathname])
 
   return (
-    <PageNavLayout>
+    <PageNavLayout
+      breadcrumpItems={[
+        t('common.playground'),
+        sentenceCase(playgroundStore.categoryKey),
+        sentenceCase(playgroundStore.itemKey),
+      ]}
+    >
       <PageNavLayout.SideMobile>
         {({ setSideOpen }) => (
           <PageSideNav
@@ -50,6 +58,10 @@ export const PlaygroundPage = () => {
               ),
             }))}
             activeItemKey={playgroundStore.itemKey}
+            itemConfig={{
+              default: { intent: 'secondary' },
+              active: { intent: 'tertiary' },
+            }}
           />
         )}
       </PageNavLayout.SideMobile>

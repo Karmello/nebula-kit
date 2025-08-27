@@ -11,6 +11,7 @@ export enum RoutingCategoryKey {
 
 export enum RoutingItemKey {
   box = 'box',
+  breadcrumb = 'breadcrumb',
   button = 'button',
   divider = 'divider',
   flex = 'flex',

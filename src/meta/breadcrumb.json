@@ -1,0 +1,14 @@
+{
+  "name": "Breadcrumb",
+  "description": "",
+  "props": [
+    {
+      "name": "items",
+      "type": "string[]",
+      "options": [],
+      "required": true,
+      "defaultValue": "",
+      "description": ""
+    }
+  ]
+}

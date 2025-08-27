@@ -1,6 +1,15 @@
 import { ReactNode, useLayoutEffect } from 'react'
 
-import { Box, Grid, IconButton, WithSlots, HAlign } from 'lib/components'
+import {
+  Box,
+  Grid,
+  IconButton,
+  WithSlots,
+  HAlign,
+  Breadcrumb,
+  Flex,
+  BreadcrumbOwnProps,
+} from 'lib/components'
 import { withPrefix, useScreen, scale } from 'lib/helpers'
 import { ScaleValue, Slot } from 'lib/definitions'
 
@@ -9,9 +18,14 @@ import { PageNavLayoutProvider, usePageNavLayout } from './PageNavLayoutProvider
 export type PageNavLayoutOwnProps = {
   children: ReactNode
   sideWidthDesktop?: ScaleValue | string
+  breadcrumpItems?: BreadcrumbOwnProps['items']
 }
 
-const PageNavLayoutBase = ({ children, sideWidthDesktop = '225px' }: PageNavLayoutOwnProps) => {
+const PageNavLayoutBase = ({
+  children,
+  sideWidthDesktop = '225px',
+  breadcrumpItems,
+}: PageNavLayoutOwnProps) => {
   const { isMobile, isDesktop } = useScreen()
 
   const { sideOpen, setSideOpen } = usePageNavLayout()
@@ -43,14 +57,15 @@ const PageNavLayoutBase = ({ children, sideWidthDesktop = '225px' }: PageNavLayo
             minBlockSize="100dvh"
           >
             <Box />
-            <Box m={10}>
+            <Flex direction="row" align="center" gap={10} m={10}>
               <IconButton
                 iconName={sideOpen ? 'panel-right-open' : 'panel-left-open'}
                 intent="tertiary"
                 size="sm"
                 onClick={() => setSideOpen(!sideOpen)}
               />
-            </Box>
+              <Breadcrumb items={breadcrumpItems} />
+            </Flex>
             {slots.SideDesktop ? (
               <Box
                 as="aside"

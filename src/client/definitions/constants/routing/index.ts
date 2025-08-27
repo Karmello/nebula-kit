@@ -29,7 +29,7 @@ export const PLAYGROUND_ROUTING_CONFIG = [
   },
   {
     key: RoutingCategoryKey.navigation,
-    items: [RoutingItemKey.navBar],
+    items: [RoutingItemKey.navBar, RoutingItemKey.breadcrumb],
   },
   {
     key: RoutingCategoryKey.utility,

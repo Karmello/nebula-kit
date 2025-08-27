@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { pascalCase, sentenceCase } from 'change-case'
 
 import { useLibStore } from 'lib/state'
@@ -19,6 +20,7 @@ const DOCS_PAGES = DOCS_ROUTING_CONFIG.map(({ key, items }) => ({
 const DEFAULT_PATHNAME = `${DOCS_PAGES[0].key}/${DOCS_PAGES[0].items[0].key}`
 
 export const DocsPage = () => {
+  const { t } = useTranslation()
   const { pathname } = useLocation()
 
   const navigateTo = useNavigateTo()
@@ -40,7 +42,13 @@ export const DocsPage = () => {
   }
 
   return (
-    <PageNavLayout>
+    <PageNavLayout
+      breadcrumpItems={[
+        t('common.docs'),
+        sentenceCase(docsStore.categoryKey),
+        sentenceCase(docsStore.itemKey),
+      ]}
+    >
       <PageNavLayout.SideMobile>
         {({ setSideOpen }) => (
           <PageSideNav
@@ -58,7 +66,10 @@ export const DocsPage = () => {
               })),
             }))}
             activeItemKey={docsStore.itemKey}
-            itemConfig={{ default: { intent: 'secondary' }, active: { variant: 'ghost' } }}
+            itemConfig={{
+              default: { intent: 'secondary' },
+              active: { intent: 'tertiary' },
+            }}
           />
         )}
       </PageNavLayout.SideMobile>

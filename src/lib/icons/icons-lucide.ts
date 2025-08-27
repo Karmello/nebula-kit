@@ -1,8 +1,19 @@
-import { Check, X, Search, Menu, PanelLeftOpen, PanelRightOpen, ChevronDown, ChevronUp } from 'lucide-react'
+import {
+  Check,
+  X,
+  Search,
+  Menu,
+  PanelLeftOpen,
+  PanelRightOpen,
+  ChevronDown,
+  ChevronUp,
+  ChevronLeft,
+  ChevronRight,
+} from 'lucide-react'
 
-import { registerIcons } from './icon-registry'
+import { IconName, registerIcons } from './icon-registry'
 
-registerIcons({
+const ICONS: Record<IconName, any> = {
   check: Check,
   close: X,
   search: Search,
@@ -11,4 +22,8 @@ registerIcons({
   'panel-right-open': PanelRightOpen,
   'chevron-down': ChevronDown,
   'chevron-up': ChevronUp,
-} as never)
+  'chevron-left': ChevronLeft,
+  'chevron-right': ChevronRight,
+}
+
+registerIcons(ICONS)

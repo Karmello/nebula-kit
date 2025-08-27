@@ -9,6 +9,8 @@ export const ICON_NAMES = [
   'panel-right-open',
   'chevron-down',
   'chevron-up',
+  'chevron-left',
+  'chevron-right',
 ] as const
 
 export type IconName = (typeof ICON_NAMES)[number]
