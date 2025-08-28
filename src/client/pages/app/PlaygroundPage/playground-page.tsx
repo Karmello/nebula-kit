@@ -7,13 +7,7 @@ import { useLibStore } from 'lib/state'
 import { SidePanelLayout, PageSideNav, Breadcrumb } from 'lib/components'
 import { formatAsQueryString, useNavigateTo } from 'client/services'
 import { usePlaygroundStore } from 'client/store'
-import { PLAYGROUND_ROUTING_CONFIG } from 'client/definitions'
-
-const PLAYGROUND_PAGES = PLAYGROUND_ROUTING_CONFIG.map(({ key, items }) => ({
-  key,
-  label: sentenceCase(key),
-  items: items.map(key => ({ key, label: pascalCase(key) })),
-}))
+import { PLAYGROUND_PAGES } from 'client/definitions'
 
 const DEFAULT_PATHNAME = `${PLAYGROUND_PAGES[0].key}/${PLAYGROUND_PAGES[0].items[0].key}`
 

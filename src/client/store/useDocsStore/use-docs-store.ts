@@ -1,17 +1,17 @@
 import { create } from 'zustand'
 
-import { RoutingCategoryKey, RoutingItemKey } from 'client/definitions'
+import { DOCS_PAGES } from 'client/definitions'
 
 export type DocsStore = {
-  categoryKey: RoutingCategoryKey
-  itemKey: RoutingItemKey
-  setCategoryKey: (categoryKey: RoutingCategoryKey) => void
-  setItemKey: (itemKey: RoutingItemKey) => void
+  categoryKey: string
+  itemKey: string
+  setCategoryKey: (categoryKey: string) => void
+  setItemKey: (itemKey: string) => void
 }
 
 export const useDocsStore = create<DocsStore>(set => ({
-  categoryKey: Object.keys(RoutingCategoryKey)[0] as RoutingCategoryKey,
-  itemKey: Object.keys(RoutingItemKey)[0] as RoutingItemKey,
+  categoryKey: DOCS_PAGES[0].key,
+  itemKey: DOCS_PAGES[0].items[0].key,
   setCategoryKey: categoryKey => set(() => ({ categoryKey })),
   setItemKey: itemKey => set(() => ({ itemKey })),
 }))

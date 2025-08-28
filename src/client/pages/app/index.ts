@@ -1,3 +1,4 @@
+export * from './CompDocPage'
 export * from './DocsPage'
 export * from './FeedbackPage'
 export * from './HomePage'

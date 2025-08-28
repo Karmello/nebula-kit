@@ -1,23 +1,13 @@
 import { useEffect } from 'react'
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { pascalCase, sentenceCase } from 'change-case'
 
-import { useLibStore } from 'lib/state'
-import { SidePanelLayout, PageSideNav, Breadcrumb } from 'lib/components'
-import { ComponentMeta } from 'lib/definitions'
+import { SidePanelLayout, PageSideNav, Breadcrumb, Text, Divider } from 'lib/components'
 import { useDocsStore } from 'client/store'
-import { formatAsQueryString, useNavigateTo } from 'client/services'
-import { DOCS_ROUTING_CONFIG, RoutingCategoryKey, RoutingItemKey } from 'client/definitions'
-import { CompMetaRenderer } from 'client/components'
-
-const DOCS_PAGES = DOCS_ROUTING_CONFIG.map(({ key, items }) => ({
-  key,
-  label: sentenceCase(key),
-  items: items.map(key => ({ key, label: pascalCase(key) })),
-}))
-
-const DEFAULT_PATHNAME = `${DOCS_PAGES[0].key}/${DOCS_PAGES[0].items[0].key}`
+import { useNavigateTo } from 'client/services'
+import { DOCS_PAGES } from 'client/definitions'
+import { CompDocPage } from '../CompDocPage'
 
 export const DocsPage = () => {
   const { t } = useTranslation()
@@ -25,21 +15,14 @@ export const DocsPage = () => {
 
   const navigateTo = useNavigateTo()
   const docsStore = useDocsStore()
-  const { lang, theme } = useLibStore()
 
   useEffect(() => {
     const [, categoryKey, itemKey] = pathname.split('/').filter(s => s)
-    docsStore.setCategoryKey(categoryKey as RoutingCategoryKey)
-    docsStore.setItemKey(itemKey as RoutingItemKey)
+    docsStore.setCategoryKey(categoryKey)
+    docsStore.setItemKey(itemKey)
   }, [pathname])
 
-  let META_DATA: ComponentMeta
-
-  try {
-    META_DATA = require(`../../../../meta/${docsStore.itemKey}.json`) as ComponentMeta
-  } catch {
-    META_DATA = null
-  }
+  const isCompDocPage = DOCS_PAGES.findIndex(page => page.key === docsStore.categoryKey) >= 2
 
   return (
     <SidePanelLayout>
@@ -49,26 +32,14 @@ export const DocsPage = () => {
         />
       </SidePanelLayout.Header>
       <SidePanelLayout.Main mx={10}>
-        <CompMetaRenderer data={META_DATA} />
-        <Routes>
-          {DOCS_PAGES.flatMap(({ key: categoryKey, items }) =>
-            items.map(({ key: itemKey }) => {
-              let Component
-              try {
-                Component = require(`../../docs/${pascalCase(itemKey)}Docs`)[`${pascalCase(itemKey)}Docs`]
-              } catch {
-                Component = null
-              }
-              return <Route key={itemKey} path={`${categoryKey}/${itemKey}`} Component={Component} />
-            })
-          )}
-          <Route
-            path="*"
-            element={
-              <Navigate to={{ pathname: DEFAULT_PATHNAME, search: formatAsQueryString({ lang, theme }) }} />
-            }
-          />
-        </Routes>
+        <SidePanelLayout sidePosition="right">
+          <SidePanelLayout.Header>
+            <Text typography="h3">{pascalCase(docsStore.itemKey)}</Text>
+            <Divider />
+          </SidePanelLayout.Header>
+          <SidePanelLayout.SideDesktop>side desktop</SidePanelLayout.SideDesktop>
+          <SidePanelLayout.Main>{isCompDocPage ? <CompDocPage /> : null}</SidePanelLayout.Main>
+        </SidePanelLayout>
       </SidePanelLayout.Main>
       <SidePanelLayout.SideDesktop>
         <PageSideNav

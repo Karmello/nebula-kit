@@ -1,16 +1,19 @@
-export enum RoutingCategoryKey {
+export enum CompCategoryKey {
   base = 'base',
   controls = 'controls',
   elements = 'elements',
   form = 'form',
-  gettingStarted = 'getting-started',
   layout = 'layout',
   navigation = 'navigation',
-  overview = 'overview',
   utility = 'utility',
 }
 
-export enum RoutingItemKey {
+export enum DocCategoryKey {
+  gettingStarted = 'getting-started',
+  overview = 'overview',
+}
+
+export enum CompKey {
   appFrame = 'app-frame',
   appNavBar = 'app-nav-bar',
   box = 'box',
@@ -19,12 +22,10 @@ export enum RoutingItemKey {
   divider = 'divider',
   flex = 'flex',
   flow = 'flow',
-  foundations = 'foundations',
   grid = 'grid',
   hAlign = 'h-align',
   hStack = 'h-stack',
   iconButton = 'icon-button',
-  installation = 'installation',
   nebKitProvider = 'neb-kit-provider',
   pageSideNav = 'page-side-nav',
   select = 'select',
@@ -36,4 +37,15 @@ export enum RoutingItemKey {
   text = 'text',
   vStack = 'v-stack',
   withIcon = 'with-icon',
+}
+
+export enum DocKey {
+  foundations = 'foundations',
+  installation = 'installation',
+}
+
+export enum CompSectionKey {
+  overview = 'overview',
+  props = 'props',
+  usage = 'usage',
 }

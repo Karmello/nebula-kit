@@ -1,58 +1,65 @@
-import { RoutingCategoryKey, RoutingItemKey } from 'client/definitions'
+import { pascalCase, sentenceCase } from 'change-case'
+import { CompCategoryKey, CompKey, DocCategoryKey, DocKey } from 'client/definitions'
 
-export const PLAYGROUND_ROUTING_CONFIG = [
+const PLAYGROUND_ROUTING_CONFIG = [
   {
-    key: RoutingCategoryKey.base,
+    key: CompCategoryKey.base,
+    items: [CompKey.box, CompKey.flex, CompKey.grid, CompKey.table, CompKey.spacer],
+  },
+  {
+    key: CompCategoryKey.elements,
+    items: [CompKey.text, CompKey.svgIcon, CompKey.divider],
+  },
+  {
+    key: CompCategoryKey.controls,
+    items: [CompKey.button, CompKey.iconButton],
+  },
+  {
+    key: CompCategoryKey.layout,
     items: [
-      RoutingItemKey.box,
-      RoutingItemKey.flex,
-      RoutingItemKey.grid,
-      RoutingItemKey.table,
-      RoutingItemKey.spacer,
+      CompKey.appFrame,
+      CompKey.sidePanelLayout,
+      CompKey.flow,
+      CompKey.stack,
+      CompKey.hStack,
+      CompKey.vStack,
+      CompKey.hAlign,
     ],
   },
   {
-    key: RoutingCategoryKey.elements,
-    items: [RoutingItemKey.text, RoutingItemKey.svgIcon, RoutingItemKey.divider],
+    key: CompCategoryKey.form,
+    items: [CompKey.select],
   },
   {
-    key: RoutingCategoryKey.controls,
-    items: [RoutingItemKey.button, RoutingItemKey.iconButton],
+    key: CompCategoryKey.navigation,
+    items: [CompKey.appNavBar, CompKey.pageSideNav, CompKey.breadcrumb],
   },
   {
-    key: RoutingCategoryKey.layout,
-    items: [
-      RoutingItemKey.appFrame,
-      RoutingItemKey.sidePanelLayout,
-      RoutingItemKey.flow,
-      RoutingItemKey.stack,
-      RoutingItemKey.hStack,
-      RoutingItemKey.vStack,
-      RoutingItemKey.hAlign,
-    ],
-  },
-  {
-    key: RoutingCategoryKey.form,
-    items: [RoutingItemKey.select],
-  },
-  {
-    key: RoutingCategoryKey.navigation,
-    items: [RoutingItemKey.appNavBar, RoutingItemKey.pageSideNav, RoutingItemKey.breadcrumb],
-  },
-  {
-    key: RoutingCategoryKey.utility,
-    items: [RoutingItemKey.nebKitProvider, RoutingItemKey.withIcon],
+    key: CompCategoryKey.utility,
+    items: [CompKey.nebKitProvider, CompKey.withIcon],
   },
 ]
 
-export const DOCS_ROUTING_CONFIG = [
+const DOCS_ROUTING_CONFIG = [
   {
-    key: RoutingCategoryKey.overview,
-    items: [RoutingItemKey.foundations],
+    key: DocCategoryKey.overview,
+    items: [DocKey.foundations],
   },
   {
-    key: RoutingCategoryKey.gettingStarted,
-    items: [RoutingItemKey.installation],
+    key: DocCategoryKey.gettingStarted,
+    items: [DocKey.installation],
   },
   ...PLAYGROUND_ROUTING_CONFIG,
 ]
+
+export const PLAYGROUND_PAGES = PLAYGROUND_ROUTING_CONFIG.map(({ key, items }) => ({
+  key,
+  label: sentenceCase(key),
+  items: items.map(key => ({ key, label: pascalCase(key) })),
+}))
+
+export const DOCS_PAGES = DOCS_ROUTING_CONFIG.map(({ key, items }) => ({
+  key,
+  label: sentenceCase(key),
+  items: items.map(key => ({ key, label: pascalCase(key) })),
+}))

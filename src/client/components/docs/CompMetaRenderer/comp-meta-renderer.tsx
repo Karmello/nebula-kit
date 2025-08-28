@@ -22,9 +22,9 @@ export const CompMetaRenderer = ({ data }: { data: ComponentMeta }) => {
 
   return (
     <>
-      <Text typography="h3">{data.name}</Text>
+      {/* <Text typography="h3">{data.name}</Text>
       <Divider />
-      <Spacer size={10} />
+      <Spacer size={10} /> */}
       <Text typography="lead" intent="primary">
         {data.description}
       </Text>

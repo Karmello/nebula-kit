@@ -1,13 +1,13 @@
 import { create } from 'zustand'
 
-import { RoutingCategoryKey, RoutingItemKey } from 'client/definitions'
+import { PLAYGROUND_PAGES } from 'client/definitions'
 import { BoxVariant, BoxIntent } from 'lib/definitions'
 
 export type PlaygroundStore = {
-  categoryKey: RoutingCategoryKey
-  setCategoryKey: (categoryKey: RoutingCategoryKey) => void
-  itemKey: RoutingItemKey
-  setItemKey: (itemKey: RoutingItemKey) => void
+  categoryKey: string
+  setCategoryKey: (categoryKey: string) => void
+  itemKey: string
+  setItemKey: (itemKey: string) => void
   variant: BoxVariant
   setVariant: (variant: BoxVariant) => void
   intent: BoxIntent
@@ -15,9 +15,9 @@ export type PlaygroundStore = {
 }
 
 export const usePlaygroundStore = create<PlaygroundStore>(set => ({
-  categoryKey: RoutingCategoryKey.base,
+  categoryKey: PLAYGROUND_PAGES[0].key,
   setCategoryKey: categoryKey => set(() => ({ categoryKey })),
-  itemKey: RoutingItemKey.box,
+  itemKey: PLAYGROUND_PAGES[0].items[0].key,
   setItemKey: itemKey => set(() => ({ itemKey })),
   variant: 'solid',
   setVariant: variant => set(() => ({ variant })),
