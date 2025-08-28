@@ -3,12 +3,12 @@ import { camelCase } from 'lodash'
 
 import { LIB_NAME, Slot } from 'lib/definitions'
 
-export type SlotsReturnObject = Partial<Record<Slot, ReactNode | null>>
+export type WithSlotsReturnObject = Partial<Record<Slot, ReactNode | null>>
 
 type SlotType = 'required' | 'optional'
 
 export type WithSlotsProps = {
-  children: (slots: SlotsReturnObject) => JSX.Element
+  children: (slots: WithSlotsReturnObject) => JSX.Element
   componentName: string
   header?: SlotType
   side?: SlotType
@@ -28,7 +28,7 @@ export const WithSlots = (props: WithSlotsProps) => {
   const getWarnMsg = (slotName: string) =>
     `[${LIB_NAME}]: ${props.componentName} expects ${props.componentName}.${slotName}`
 
-  const slots: SlotsReturnObject = {
+  const slots: WithSlotsReturnObject = {
     Header: null,
     Side: null,
     SideMobile: null,
@@ -37,11 +37,11 @@ export const WithSlots = (props: WithSlotsProps) => {
     Footer: null,
   }
 
-  Object.keys(slots).forEach((slotName: Slot) => {
-    const slot = pickSlot(slotName)
+  Object.keys(slots).forEach(slotName => {
+    const slot = pickSlot(slotName as Slot)
 
     if (slot) {
-      slots[slotName] = slot
+      slots[slotName as Slot] = slot
     } else if ((props[camelCase(slotName) as never] as SlotType) === 'required') {
       console.warn(getWarnMsg(slotName))
     }

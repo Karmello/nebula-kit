@@ -1,14 +1,20 @@
 import { createContext, useContext, useState, ReactNode } from 'react'
 
-import { SlotsReturnObject } from 'lib/components'
+import { WithSlotsReturnObject } from 'lib/components'
 
 import { SidePanelLayoutOwnProps } from '../side-panel-layout'
 
-const SidePanelLayoutContext = createContext(null)
+type SidePanelLayoutContextValue = {
+  sideOpen: boolean
+  setSideOpen: (sideOpen: boolean) => void
+  slots: WithSlotsReturnObject
+} & Pick<SidePanelLayoutOwnProps, 'sidePosition' | 'sideWidthDesktop'>
+
+const SidePanelLayoutContext = createContext<SidePanelLayoutContextValue | null>(null)
 
 type SidePanelLayoutProviderProps = {
   children: ReactNode
-  slots: SlotsReturnObject
+  slots: WithSlotsReturnObject
 } & Pick<SidePanelLayoutOwnProps, 'sidePosition' | 'sideWidthDesktop'>
 
 export const SidePanelLayoutProvider = ({

@@ -2,7 +2,7 @@ import { JSX, createRef } from 'react'
 import { expectType, expectAssignable, expectError } from 'tsd'
 
 import { Button, type ButtonProps, type ButtonSize } from '..'
-import type { BoxOwnProps, WithIconProps } from 'lib/components'
+import type { BoxOwnProps, WithIconOwnProps } from 'lib/components'
 
 // --- Basic render ---
 expectType<JSX.Element>(<Button />)
@@ -31,8 +31,8 @@ expectType<JSX.Element>(<Button size="lg" />)
 expectError(<Button size="xl" />)
 
 // iconName / iconPosition should line up with WithIconProps
-const iconName: WithIconProps['iconName'] = 'search'
-const iconPosition: WithIconProps['iconPosition'] = 'left'
+const iconName: WithIconOwnProps['iconName'] = 'search'
+const iconPosition: WithIconOwnProps['iconPosition'] = 'left'
 expectType<JSX.Element>(<Button iconName={iconName} />)
 expectType<JSX.Element>(<Button iconPosition={iconPosition} />)
 

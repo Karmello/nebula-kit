@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react'
+import { useLayoutEffect, useMemo, useState } from 'react'
 
 import { Box, Button, BUTTON_SIZE_TO_PROPS, ButtonProps, VStack } from 'lib/components'
 import { scale } from 'lib/helpers'
@@ -44,31 +44,37 @@ export const PageSideNav = ({ groups, activeItemKey, groupConfig, itemConfig }: 
     }
   }, [activeItemKey])
 
-  const FINAL_GROUP_CONFIG: Config = {
-    default: {
-      variant: groupConfig?.default?.variant || 'ghost',
-      intent: groupConfig?.default?.intent || 'neutral',
-      textIntent: groupConfig?.default?.textIntent || 'neutral',
-    },
-    active: {
-      variant: groupConfig?.active?.variant || 'ghost',
-      intent: groupConfig?.active?.intent || 'primary',
-      textIntent: groupConfig?.active?.textIntent || 'primary',
-    },
-  }
+  const FINAL_GROUP_CONFIG: Config = useMemo(
+    () => ({
+      default: {
+        variant: groupConfig?.default?.variant || 'ghost',
+        intent: groupConfig?.default?.intent || 'neutral',
+        textIntent: groupConfig?.default?.textIntent || 'neutral',
+      },
+      active: {
+        variant: groupConfig?.active?.variant || 'ghost',
+        intent: groupConfig?.active?.intent || 'primary',
+        textIntent: groupConfig?.active?.textIntent || 'primary',
+      },
+    }),
+    [groupConfig]
+  )
 
-  const FINAL_ITEM_CONFIG: Config = {
-    default: {
-      variant: itemConfig?.default?.variant || 'solid',
-      intent: itemConfig?.default?.intent || 'neutral',
-      textIntent: itemConfig?.default?.textIntent || 'neutral',
-    },
-    active: {
-      variant: itemConfig?.active?.variant || 'solid',
-      intent: itemConfig?.active?.intent || 'tertiary',
-      textIntent: itemConfig?.active?.textIntent || 'primary',
-    },
-  }
+  const FINAL_ITEM_CONFIG: Config = useMemo(
+    () => ({
+      default: {
+        variant: itemConfig?.default?.variant || 'solid',
+        intent: itemConfig?.default?.intent || 'neutral',
+        textIntent: itemConfig?.default?.textIntent || 'neutral',
+      },
+      active: {
+        variant: itemConfig?.active?.variant || 'solid',
+        intent: itemConfig?.active?.intent || 'tertiary',
+        textIntent: itemConfig?.active?.textIntent || 'primary',
+      },
+    }),
+    [itemConfig]
+  )
 
   return (
     <VStack>
@@ -80,10 +86,12 @@ export const PageSideNav = ({ groups, activeItemKey, groupConfig, itemConfig }: 
           <Box key={key}>
             <Button
               size="md"
-              variant={isGroupActive ? FINAL_GROUP_CONFIG.active.variant : FINAL_GROUP_CONFIG.default.variant}
-              intent={isGroupActive ? FINAL_GROUP_CONFIG.active.intent : FINAL_GROUP_CONFIG.default.intent}
+              variant={
+                isGroupActive ? FINAL_GROUP_CONFIG.active?.variant : FINAL_GROUP_CONFIG.default?.variant
+              }
+              intent={isGroupActive ? FINAL_GROUP_CONFIG.active?.intent : FINAL_GROUP_CONFIG.default?.intent}
               textIntent={
-                isGroupActive ? FINAL_GROUP_CONFIG.active.textIntent : FINAL_GROUP_CONFIG.default.textIntent
+                isGroupActive ? FINAL_GROUP_CONFIG.active?.textIntent : FINAL_GROUP_CONFIG.default?.textIntent
               }
               borderRadius={0}
               iconName={isGroupOpen ? 'chevron-up' : 'chevron-down'}
@@ -110,15 +118,15 @@ export const PageSideNav = ({ groups, activeItemKey, groupConfig, itemConfig }: 
                     <Button
                       key={key}
                       variant={
-                        isItemActive ? FINAL_ITEM_CONFIG.active.variant : FINAL_ITEM_CONFIG.default.variant
+                        isItemActive ? FINAL_ITEM_CONFIG.active?.variant : FINAL_ITEM_CONFIG.default?.variant
                       }
                       intent={
-                        isItemActive ? FINAL_ITEM_CONFIG.active.intent : FINAL_ITEM_CONFIG.default.intent
+                        isItemActive ? FINAL_ITEM_CONFIG.active?.intent : FINAL_ITEM_CONFIG.default?.intent
                       }
                       textIntent={
                         isItemActive
-                          ? FINAL_ITEM_CONFIG.active.textIntent
-                          : FINAL_ITEM_CONFIG.default.textIntent
+                          ? FINAL_ITEM_CONFIG.active?.textIntent
+                          : FINAL_ITEM_CONFIG.default?.textIntent
                       }
                       borderRadius={0}
                       {...rest}

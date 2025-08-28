@@ -35,7 +35,14 @@ export const SideMobile = ({
       style={{ zIndex: 20, ...rest.style }}
     >
       <HAlign position="right">
-        <IconButton iconName="close" variant="ghost" size="sm" onClick={() => setSideOpen(false)} />
+        <IconButton
+          iconName="close"
+          variant="ghost"
+          size="sm"
+          onClick={() => {
+            setSideOpen(false)
+          }}
+        />
       </HAlign>
       {typeof children === 'function' ? children({ setSideOpen }) : children}
     </Box>
