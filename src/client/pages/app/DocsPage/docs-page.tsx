@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { pascalCase, sentenceCase } from 'change-case'
 
 import { useLibStore } from 'lib/state'
-import { PageNavLayout, PageSideNav } from 'lib/components'
+import { SidePanelLayout, PageSideNav } from 'lib/components'
 import { ComponentMeta } from 'lib/definitions'
 import { useDocsStore } from 'client/store'
 import { formatAsQueryString, useNavigateTo } from 'client/services'
@@ -42,10 +42,10 @@ export const DocsPage = () => {
   }
 
   return (
-    <PageNavLayout
+    <SidePanelLayout
       breadcrumpItems={[t('common.docs'), sentenceCase(docsStore.categoryKey), pascalCase(docsStore.itemKey)]}
     >
-      <PageNavLayout.SideMobile>
+      <SidePanelLayout.SideMobile>
         {({ setSideOpen }) => (
           <PageSideNav
             groups={DOCS_PAGES.map(({ key: categoryKey, label }) => ({
@@ -68,8 +68,8 @@ export const DocsPage = () => {
             }}
           />
         )}
-      </PageNavLayout.SideMobile>
-      <PageNavLayout.SideDesktop>
+      </SidePanelLayout.SideMobile>
+      <SidePanelLayout.SideDesktop>
         <PageSideNav
           groups={DOCS_PAGES.map(({ key: categoryKey, label }) => ({
             key: categoryKey,
@@ -84,8 +84,8 @@ export const DocsPage = () => {
           }))}
           activeItemKey={docsStore.itemKey}
         />
-      </PageNavLayout.SideDesktop>
-      <PageNavLayout.Main>
+      </SidePanelLayout.SideDesktop>
+      <SidePanelLayout.Main>
         <CompMetaRenderer data={META_DATA} />
         <Routes>
           {DOCS_PAGES.flatMap(({ key: categoryKey, items }) =>
@@ -106,7 +106,7 @@ export const DocsPage = () => {
             }
           />
         </Routes>
-      </PageNavLayout.Main>
-    </PageNavLayout>
+      </SidePanelLayout.Main>
+    </SidePanelLayout>
   )
 }

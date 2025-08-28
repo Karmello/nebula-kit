@@ -1,4 +1,4 @@
-export * from './primitives'
+export * from './base'
 export * from './layout'
 export * from './elements'
 export * from './controls'

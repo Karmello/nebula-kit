@@ -3,12 +3,12 @@ import { ReactNode } from 'react'
 import { Box } from 'lib/components'
 import { Slot } from 'lib/definitions'
 
-export type PageNavLayoutMainProps = {
+export type SidePanelLayoutDesktopProps = {
   children: ReactNode
 }
 
-export const PageNavLayoutMain = ({ children }: PageNavLayoutMainProps) => {
+export const SidePanelLayoutDesktop = ({ children }: SidePanelLayoutDesktopProps) => {
   return <Box as="section">{children}</Box>
 }
 
-PageNavLayoutMain.slotName = Slot.main
+SidePanelLayoutDesktop.slotName = Slot.sideDesktop

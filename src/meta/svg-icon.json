@@ -28,6 +28,24 @@
       "required": false,
       "defaultValue": "",
       "description": ""
+    },
+    {
+      "name": "intent",
+      "type": "BoxIntent",
+      "options": [
+        "neutral",
+        "primary",
+        "secondary",
+        "tertiary",
+        "success",
+        "info",
+        "warning",
+        "danger",
+        "inverse"
+      ],
+      "required": false,
+      "defaultValue": "'neutral'",
+      "description": ""
     }
   ]
 }

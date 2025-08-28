@@ -10,25 +10,26 @@ import {
   Flex,
   BreadcrumbOwnProps,
 } from 'lib/components'
+
 import { withPrefix, useScreen, scale } from 'lib/helpers'
 import { ScaleValue, Slot } from 'lib/definitions'
 
-import { PageNavLayoutProvider, usePageNavLayout } from './PageNavLayoutProvider'
+import { SidePanelLayoutProvider, useSidePanelLayout } from './SidePanelLayoutProvider'
 
-export type PageNavLayoutOwnProps = {
+export type SidePanelLayoutOwnProps = {
   children: ReactNode
   sideWidthDesktop?: ScaleValue | string
   breadcrumpItems?: BreadcrumbOwnProps['items']
 }
 
-const PageNavLayoutBase = ({
+const SidePanelLayoutBase = ({
   children,
   sideWidthDesktop = '225px',
   breadcrumpItems,
-}: PageNavLayoutOwnProps) => {
+}: SidePanelLayoutOwnProps) => {
   const { isMobile, isDesktop } = useScreen()
 
-  const { sideOpen, setSideOpen } = usePageNavLayout()
+  const { sideOpen, setSideOpen } = useSidePanelLayout()
 
   useLayoutEffect(() => {
     if (isMobile) {
@@ -44,7 +45,7 @@ const PageNavLayoutBase = ({
 
   return (
     <WithSlots
-      componentName="PageNavLayout"
+      componentName="SidePanelLayout"
       slotNames={[Slot.main, Slot.sideMobile, Slot.sideDesktop]}
       childrenToVerify={children}
     >
@@ -117,8 +118,9 @@ const PageNavLayoutBase = ({
   )
 }
 
-export const PageNavLayout = (props: PageNavLayoutOwnProps) => (
-  <PageNavLayoutProvider>
-    <PageNavLayoutBase {...props} />
-  </PageNavLayoutProvider>
+/** SidePanelLayout arranges a persistent side panel together with the main content area. On desktop, the panel is fixed to the left or right with a defined width. On smaller screens it collapses into an overlaying drawer, so content remains the focus while navigation or utilities stay accessible. It supports breadcrumb navigation out of the box and gives you control over the panel’s width for desktop layouts. */
+export const SidePanelLayout = (props: SidePanelLayoutOwnProps) => (
+  <SidePanelLayoutProvider>
+    <SidePanelLayoutBase {...props} />
+  </SidePanelLayoutProvider>
 )

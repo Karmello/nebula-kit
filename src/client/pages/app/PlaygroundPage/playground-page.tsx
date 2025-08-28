@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { sentenceCase, pascalCase } from 'change-case'
 
 import { useLibStore } from 'lib/state'
-import { PageNavLayout, PageSideNav } from 'lib/components'
+import { SidePanelLayout, PageSideNav } from 'lib/components'
 import { formatAsQueryString, useNavigateTo } from 'client/services'
 import { usePlaygroundStore } from 'client/store'
 import { PLAYGROUND_ROUTING_CONFIG } from 'client/definitions'
@@ -32,14 +32,14 @@ export const PlaygroundPage = () => {
   }, [pathname])
 
   return (
-    <PageNavLayout
+    <SidePanelLayout
       breadcrumpItems={[
         t('common.playground'),
         sentenceCase(playgroundStore.categoryKey),
         pascalCase(playgroundStore.itemKey),
       ]}
     >
-      <PageNavLayout.SideMobile>
+      <SidePanelLayout.SideMobile>
         {({ setSideOpen }) => (
           <PageSideNav
             groups={PLAYGROUND_PAGES.map(({ key: categoryKey, label }) => ({
@@ -64,8 +64,8 @@ export const PlaygroundPage = () => {
             }}
           />
         )}
-      </PageNavLayout.SideMobile>
-      <PageNavLayout.SideDesktop>
+      </SidePanelLayout.SideMobile>
+      <SidePanelLayout.SideDesktop>
         <PageSideNav
           groups={PLAYGROUND_PAGES.map(({ key: categoryKey, label }) => ({
             key: categoryKey,
@@ -82,8 +82,8 @@ export const PlaygroundPage = () => {
           }))}
           activeItemKey={playgroundStore.itemKey}
         />
-      </PageNavLayout.SideDesktop>
-      <PageNavLayout.Main>
+      </SidePanelLayout.SideDesktop>
+      <SidePanelLayout.Main>
         <Routes>
           {PLAYGROUND_PAGES.flatMap(({ key: categoryKey, items }) =>
             items.map(({ key: itemKey }) => {
@@ -105,7 +105,7 @@ export const PlaygroundPage = () => {
             }
           />
         </Routes>
-      </PageNavLayout.Main>
-    </PageNavLayout>
+      </SidePanelLayout.Main>
+    </SidePanelLayout>
   )
 }

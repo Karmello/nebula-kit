@@ -1,20 +1,20 @@
 import { JSX, ReactNode } from 'react'
 
-import { Box, usePageNavLayout } from 'lib/components'
+import { Box, useSidePanelLayout } from 'lib/components'
 import { Slot } from 'lib/definitions'
 
 type ChildrenAsFuncArgs = {
   setSideOpen: (open: boolean) => void
 }
 
-export type PageNavLayoutSideMobileProps = {
+export type SidePanelLayoutMobileProps = {
   children: ReactNode | ((args: ChildrenAsFuncArgs) => JSX.Element)
 }
 
-export const PageNavLayoutSideMobile = ({ children }: PageNavLayoutSideMobileProps) => {
-  const { setSideOpen } = usePageNavLayout()
+export const SidePanelLayoutMobile = ({ children }: SidePanelLayoutMobileProps) => {
+  const { setSideOpen } = useSidePanelLayout()
 
   return <Box as="section">{typeof children === 'function' ? children({ setSideOpen }) : children}</Box>
 }
 
-PageNavLayoutSideMobile.slotName = Slot.sideMobile
+SidePanelLayoutMobile.slotName = Slot.sideMobile

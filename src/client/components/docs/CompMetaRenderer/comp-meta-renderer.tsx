@@ -8,6 +8,7 @@ import {
   TableCell,
   Spacer,
   SvgIcon,
+  Divider,
 } from 'lib/components'
 
 import { ComponentMeta } from 'lib/definitions'
@@ -22,8 +23,9 @@ export const CompMetaRenderer = ({ data }: { data: ComponentMeta }) => {
   return (
     <>
       <Text typography="h3">{data.name}</Text>
+      <Divider />
       <Spacer size={10} />
-      <Text typography="lead" intent="secondary">
+      <Text typography="lead" intent="primary">
         {data.description}
       </Text>
       <Spacer size={20} />
@@ -43,12 +45,16 @@ export const CompMetaRenderer = ({ data }: { data: ComponentMeta }) => {
             <TableRow key={name}>
               <TableCell>{name}</TableCell>
               <TableCell>
-                <Text italic>{type}</Text>
+                <Text italic intent="primary">
+                  {type}
+                </Text>
               </TableCell>
               <TableCell>
                 {typeof options === 'string' ? options : options.join(' | ') || EMPTY_CELL_MARKER}
               </TableCell>
-              <TableCell textAlign="center">{required ? <SvgIcon name="check" /> : ''}</TableCell>
+              <TableCell textAlign="center">
+                {required ? <SvgIcon name="check" intent="primary" /> : ''}
+              </TableCell>
               <TableCell>{defaultValue}</TableCell>
               <TableCell>{description || EMPTY_CELL_MARKER}</TableCell>
             </TableRow>

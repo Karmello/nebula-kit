@@ -1,6 +1,6 @@
 {
-  "name": "PageNavLayout",
-  "description": "",
+  "name": "SidePanelLayout",
+  "description": "SidePanelLayout arranges a persistent side panel together with the main content area. On desktop, the panel is fixed to the left or right with a defined width. On smaller screens it collapses into an overlaying drawer, so content remains the focus while navigation or utilities stay accessible. It supports breadcrumb navigation out of the box and gives you control over the panel’s width for desktop layouts.",
   "props": [
     {
       "name": "children",

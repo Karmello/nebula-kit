@@ -15,7 +15,7 @@ export type PlaygroundStore = {
 }
 
 export const usePlaygroundStore = create<PlaygroundStore>(set => ({
-  categoryKey: RoutingCategoryKey.primitives,
+  categoryKey: RoutingCategoryKey.base,
   setCategoryKey: categoryKey => set(() => ({ categoryKey })),
   itemKey: RoutingItemKey.box,
   setItemKey: itemKey => set(() => ({ itemKey })),

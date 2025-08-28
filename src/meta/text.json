@@ -92,12 +92,20 @@
       "description": "Typography preset mapping to tag and font size (h1–h6, body, lead, etc.)"
     },
     {
-      "name": "noWrap",
+      "name": "italic",
       "type": "boolean",
       "options": [],
       "required": false,
       "defaultValue": "false",
       "description": "Prevents wrapping, rendering all text on a single line"
+    },
+    {
+      "name": "noWrap",
+      "type": "boolean",
+      "options": [],
+      "required": false,
+      "defaultValue": "false",
+      "description": ""
     },
     {
       "name": "truncate",
