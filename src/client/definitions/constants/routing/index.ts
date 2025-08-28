@@ -1,65 +1,90 @@
 import { pascalCase, sentenceCase } from 'change-case'
-import { CompCategoryKey, CompKey, DocCategoryKey, DocKey } from 'client/definitions'
 
-const PLAYGROUND_ROUTING_CONFIG = [
+import { CompCategoryKey, CompKey, CompSectionKey, DocCategoryKey, DocKey } from 'client/definitions'
+
+const PLAYGROUND_CATEGORIES_CONFIG = [
   {
     key: CompCategoryKey.base,
-    items: [CompKey.box, CompKey.flex, CompKey.grid, CompKey.table, CompKey.spacer],
+    items: [
+      { key: CompKey.box },
+      { key: CompKey.flex },
+      { key: CompKey.grid },
+      { key: CompKey.table },
+      { key: CompKey.spacer },
+    ],
   },
   {
     key: CompCategoryKey.elements,
-    items: [CompKey.text, CompKey.svgIcon, CompKey.divider],
+    items: [{ key: CompKey.text }, { key: CompKey.svgIcon }, { key: CompKey.divider }],
   },
   {
     key: CompCategoryKey.controls,
-    items: [CompKey.button, CompKey.iconButton],
+    items: [{ key: CompKey.button }, { key: CompKey.iconButton }],
   },
   {
     key: CompCategoryKey.layout,
     items: [
-      CompKey.appFrame,
-      CompKey.sidePanelLayout,
-      CompKey.flow,
-      CompKey.stack,
-      CompKey.hStack,
-      CompKey.vStack,
-      CompKey.hAlign,
+      { key: CompKey.appFrame },
+      { key: CompKey.sidePanelLayout },
+      { key: CompKey.flow },
+      { key: CompKey.stack },
+      { key: CompKey.hStack },
+      { key: CompKey.vStack },
+      { key: CompKey.hAlign },
     ],
   },
   {
     key: CompCategoryKey.form,
-    items: [CompKey.select],
+    items: [{ key: CompKey.select }],
   },
   {
     key: CompCategoryKey.navigation,
-    items: [CompKey.appNavBar, CompKey.pageSideNav, CompKey.breadcrumb],
+    items: [{ key: CompKey.appNavBar }, { key: CompKey.pageSideNav }, { key: CompKey.breadcrumb }],
   },
   {
     key: CompCategoryKey.utility,
-    items: [CompKey.nebKitProvider, CompKey.withIcon],
+    items: [{ key: CompKey.nebKitProvider }, { key: CompKey.withIcon }],
   },
 ]
 
-const DOCS_ROUTING_CONFIG = [
+const DOCS_SECTIONS = Object.keys(CompSectionKey).map(key => ({
+  key,
+  label: sentenceCase(key),
+}))
+
+const DOCS_CATEGORIES_CONFIG = [
   {
     key: DocCategoryKey.overview,
-    items: [DocKey.foundations],
+    items: [{ key: DocKey.foundations, sections: [{ key: 'section1' }] }],
   },
   {
     key: DocCategoryKey.gettingStarted,
-    items: [DocKey.installation],
+    items: [{ key: DocKey.installation, sections: [{ key: 'section1' }] }],
   },
-  ...PLAYGROUND_ROUTING_CONFIG,
+  ...PLAYGROUND_CATEGORIES_CONFIG.map(({ key, items }) => ({
+    key,
+    items: items.map(item => ({
+      ...item,
+      sections: DOCS_SECTIONS,
+    })),
+  })),
 ]
 
-export const PLAYGROUND_PAGES = PLAYGROUND_ROUTING_CONFIG.map(({ key, items }) => ({
+export const PLAYGROUND_CATEGORIES = PLAYGROUND_CATEGORIES_CONFIG.map(({ key, items }) => ({
   key,
   label: sentenceCase(key),
-  items: items.map(key => ({ key, label: pascalCase(key) })),
+  items: items.map(({ key }) => ({ key, label: pascalCase(key) })),
 }))
 
-export const DOCS_PAGES = DOCS_ROUTING_CONFIG.map(({ key, items }) => ({
+export const DOCS_CATEGORIES = DOCS_CATEGORIES_CONFIG.map(({ key, items }) => ({
   key,
   label: sentenceCase(key),
-  items: items.map(key => ({ key, label: pascalCase(key) })),
+  items: items.map(({ key, sections }) => ({
+    key,
+    label: pascalCase(key),
+    sections: sections.map(({ key }) => ({
+      key,
+      label: sentenceCase(key),
+    })),
+  })),
 }))

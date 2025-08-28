@@ -34,7 +34,9 @@ export const AppNavBar = () => {
             break
           }
           case 'docs': {
-            navigateTo(`/docs/${docsPageStore.categoryKey}/${docsPageStore.itemKey}`)
+            navigateTo(
+              `/docs/${docsPageStore.categoryKey}/${docsPageStore.itemKey}/${docsPageStore.sectionKey}`
+            )
           }
         }
       }}

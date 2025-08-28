@@ -18,7 +18,9 @@ export const RootPage = () => {
         <Route path="/feedback" Component={FeedbackPage} />
         <Route
           path="*"
-          element={<Navigate to={{ pathname: '/home', search: formatAsQueryString({ lang, theme }) }} />}
+          element={
+            <Navigate to={{ pathname: '/home', search: formatAsQueryString({ lang, theme }) }} replace />
+          }
         />
       </Routes>
     </div>

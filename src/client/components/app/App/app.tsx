@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
@@ -16,13 +16,13 @@ export const App = () => {
 
   const { lang, setLang, theme, setTheme } = useLibStore()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const validated = validateQueryParams(search)
     setLang(validated.lang)
     setTheme(validated.theme)
   }, [])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     i18n.changeLanguage(lang)
     push(`${pathname}?lang=${lang}&theme=${theme}`, { replace: true })
   }, [lang, theme])

@@ -4,12 +4,12 @@ import { useTranslation } from 'react-i18next'
 import { sentenceCase, pascalCase } from 'change-case'
 
 import { useLibStore } from 'lib/state'
-import { SidePanelLayout, PageSideNav, Breadcrumb } from 'lib/components'
+import { SidePanelLayout, SideNav, Breadcrumb } from 'lib/components'
 import { formatAsQueryString, useNavigateTo } from 'client/services'
 import { usePlaygroundPageStore } from 'client/store'
-import { PLAYGROUND_PAGES } from 'client/definitions'
+import { PLAYGROUND_CATEGORIES } from 'client/definitions'
 
-const DEFAULT_PATHNAME = `${PLAYGROUND_PAGES[0].key}/${PLAYGROUND_PAGES[0].items[0].key}`
+const DEFAULT_PATHNAME = `${PLAYGROUND_CATEGORIES[0].key}/${PLAYGROUND_CATEGORIES[0].items[0].key}`
 
 export const PlaygroundPage = () => {
   const { t } = useTranslation()
@@ -38,7 +38,7 @@ export const PlaygroundPage = () => {
       </SidePanelLayout.Header>
       <SidePanelLayout.Main>
         <Routes>
-          {PLAYGROUND_PAGES.flatMap(({ key: categoryKey, items }) =>
+          {PLAYGROUND_CATEGORIES.flatMap(({ key: categoryKey, items }) =>
             items.map(({ key: itemKey }) => {
               let Component
               try {
@@ -60,11 +60,11 @@ export const PlaygroundPage = () => {
         </Routes>
       </SidePanelLayout.Main>
       <SidePanelLayout.SideDesktop>
-        <PageSideNav
-          groups={PLAYGROUND_PAGES.map(({ key: categoryKey, label }) => ({
+        <SideNav
+          groups={PLAYGROUND_CATEGORIES.map(({ key: categoryKey, label }) => ({
             key: categoryKey,
             label,
-            items: PLAYGROUND_PAGES.find(obj => obj.key === categoryKey).items.map(
+            items: PLAYGROUND_CATEGORIES.find(obj => obj.key === categoryKey).items.map(
               ({ key: itemKey, label }) => ({
                 key: itemKey,
                 label,
@@ -74,16 +74,16 @@ export const PlaygroundPage = () => {
               })
             ),
           }))}
-          activeItemKey={playgroundPageStore.itemKey}
+          activeKey={playgroundPageStore.itemKey}
         />
       </SidePanelLayout.SideDesktop>
       <SidePanelLayout.SideMobile>
         {({ setSideOpen }) => (
-          <PageSideNav
-            groups={PLAYGROUND_PAGES.map(({ key: categoryKey, label }) => ({
+          <SideNav
+            groups={PLAYGROUND_CATEGORIES.map(({ key: categoryKey, label }) => ({
               key: categoryKey,
               label,
-              items: PLAYGROUND_PAGES.find(obj => obj.key === categoryKey).items.map(
+              items: PLAYGROUND_CATEGORIES.find(obj => obj.key === categoryKey).items.map(
                 ({ key: itemKey, label }) => ({
                   key: itemKey,
                   label,
@@ -95,7 +95,7 @@ export const PlaygroundPage = () => {
                 })
               ),
             }))}
-            activeItemKey={playgroundPageStore.itemKey}
+            activeKey={playgroundPageStore.itemKey}
             itemConfig={{
               default: { intent: 'secondary' },
               active: { intent: 'tertiary' },

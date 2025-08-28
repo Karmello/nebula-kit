@@ -6,7 +6,7 @@ import { scale } from 'lib/helpers'
 type Group = Omit<ButtonProps, 'children' | 'size' | 'variant' | 'intent'> & {
   key: string
   label: string
-  items: Item[]
+  items?: Item[]
 }
 
 type Item = Omit<ButtonProps, 'children' | 'size' | 'variant' | 'intent'> & {
@@ -29,20 +29,22 @@ type Config = {
 
 export type PageSideNavOwnProps = {
   groups: Group[]
-  activeItemKey: string
+  activeKey: string
   groupConfig?: Config
   itemConfig?: Config
 }
 
-export const PageSideNav = ({ groups, activeItemKey, groupConfig, itemConfig }: PageSideNavOwnProps) => {
+export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: PageSideNavOwnProps) => {
   const [openGroupKey, setOpenGroupKey] = useState<string>('')
 
   useLayoutEffect(() => {
-    const newOpenGroupKey = groups.find(group => group.items.some(item => item.key === activeItemKey))?.key
-    if (newOpenGroupKey) {
-      setOpenGroupKey(newOpenGroupKey)
+    if (activeKey) {
+      const newOpenGroupKey = groups.find(group => group.items?.some(item => item.key === activeKey))?.key
+      if (newOpenGroupKey) {
+        setOpenGroupKey(newOpenGroupKey)
+      }
     }
-  }, [activeItemKey])
+  }, [activeKey])
 
   const FINAL_GROUP_CONFIG: Config = useMemo(
     () => ({
@@ -79,8 +81,9 @@ export const PageSideNav = ({ groups, activeItemKey, groupConfig, itemConfig }: 
   return (
     <VStack>
       {groups.map(({ key, label, items, ...rest }) => {
-        const isGroupActive = items.some(item => item.key === activeItemKey)
+        const isGroupActive = items?.some(item => item.key === activeKey) || key === activeKey
         const isGroupOpen = key === openGroupKey
+        const hasItems = !!items?.length
 
         return (
           <Box key={key}>
@@ -94,7 +97,7 @@ export const PageSideNav = ({ groups, activeItemKey, groupConfig, itemConfig }: 
                 isGroupActive ? FINAL_GROUP_CONFIG.active?.textIntent : FINAL_GROUP_CONFIG.default?.textIntent
               }
               borderRadius={0}
-              iconName={isGroupOpen ? 'chevron-up' : 'chevron-down'}
+              iconName={hasItems ? (isGroupOpen ? 'chevron-up' : 'chevron-down') : undefined}
               style={{ justifyContent: 'flex-start', inlineSize: '100%' }}
               {...rest}
               onClick={e => {
@@ -112,7 +115,7 @@ export const PageSideNav = ({ groups, activeItemKey, groupConfig, itemConfig }: 
             >
               <VStack>
                 {items?.map(({ key, label, ...rest }) => {
-                  const isItemActive = key === activeItemKey
+                  const isItemActive = key === activeKey
 
                   return (
                     <Button

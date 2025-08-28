@@ -18,7 +18,7 @@ export const SideMobile = ({
   children: ReactNode | ((args: ChildrenAsFuncArgs) => JSX.Element)
 }) => {
   const { isMobile } = useScreen()
-  const { sideOpen, setSideOpen } = useSidePanelLayout()
+  const { sideOpen, setSideOpen, sidePosition } = useSidePanelLayout()
 
   return (
     <Box
@@ -28,7 +28,8 @@ export const SideMobile = ({
       as="aside"
       position="fixed"
       top={0}
-      left={0}
+      left={sidePosition === 'left' ? 0 : undefined}
+      right={sidePosition === 'right' ? 0 : undefined}
       inlineSize={isMobile && sideOpen ? 'min(85vw, 320px)' : 0}
       minBlockSize="100dvh"
       overflowY="auto"

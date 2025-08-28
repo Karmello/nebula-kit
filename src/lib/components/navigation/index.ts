@@ -1,3 +1,3 @@
 export * from './AppNavBar'
 export * from './Breadcrumb'
-export * from './PageSideNav'
+export * from './SideNav'

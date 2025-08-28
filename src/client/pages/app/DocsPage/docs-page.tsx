@@ -3,11 +3,12 @@ import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { pascalCase, sentenceCase } from 'change-case'
 
-import { SidePanelLayout, PageSideNav, Breadcrumb, Text, Divider } from 'lib/components'
+import { SidePanelLayout, SideNav, Breadcrumb, Text, Divider } from 'lib/components'
 import { useDocsPageStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
-import { DOCS_PAGES } from 'client/definitions'
-import { CompDocPage } from '../CompDocPage'
+import { DOCS_CATEGORIES } from 'client/definitions'
+
+import { DocPage } from './DocPage'
 
 export const DocsPage = () => {
   const { t } = useTranslation()
@@ -17,12 +18,11 @@ export const DocsPage = () => {
   const docsPageStore = useDocsPageStore()
 
   useEffect(() => {
-    const [, categoryKey, itemKey] = pathname.split('/').filter(s => s)
-    docsPageStore.setCategoryKey(categoryKey)
-    docsPageStore.setItemKey(itemKey)
+    const [, categoryKey, itemKey, sectionKey] = pathname.split('/').filter(s => s)
+    docsPageStore.setCategoryKey(categoryKey || DOCS_CATEGORIES[0].key)
+    docsPageStore.setItemKey(itemKey || DOCS_CATEGORIES[0].items[0].key)
+    docsPageStore.setSectionKey(sectionKey || DOCS_CATEGORIES[0].items[0].sections[0].key)
   }, [pathname])
-
-  const isCompDocPage = DOCS_PAGES.findIndex(page => page.key === docsPageStore.categoryKey) >= 2
 
   return (
     <SidePanelLayout>
@@ -32,6 +32,7 @@ export const DocsPage = () => {
             t('common.docs'),
             sentenceCase(docsPageStore.categoryKey),
             pascalCase(docsPageStore.itemKey),
+            sentenceCase(docsPageStore.sectionKey),
           ]}
         />
       </SidePanelLayout.Header>
@@ -41,43 +42,88 @@ export const DocsPage = () => {
             <Text typography="h3">{pascalCase(docsPageStore.itemKey)}</Text>
             <Divider />
           </SidePanelLayout.Header>
-          <SidePanelLayout.SideDesktop>side desktop</SidePanelLayout.SideDesktop>
-          <SidePanelLayout.Main>{isCompDocPage ? <CompDocPage /> : null}</SidePanelLayout.Main>
+          <SidePanelLayout.SideDesktop>
+            <SideNav
+              groups={DOCS_CATEGORIES.find(c => c.key === docsPageStore.categoryKey)
+                ?.items.find(i => i.key === docsPageStore.itemKey)
+                ?.sections.map(({ key: sectionKey, label }) => ({
+                  key: sectionKey,
+                  label,
+                  onClick: () => {
+                    navigateTo(`/docs/${docsPageStore.categoryKey}/${docsPageStore.itemKey}/${sectionKey}`)
+                  },
+                }))}
+              activeKey={docsPageStore.sectionKey}
+              groupConfig={{
+                default: { variant: 'solid' },
+                active: { variant: 'solid', intent: 'tertiary' },
+              }}
+            />
+          </SidePanelLayout.SideDesktop>
+          <SidePanelLayout.SideMobile>
+            {({ setSideOpen }) => (
+              <SideNav
+                groups={DOCS_CATEGORIES.find(c => c.key === docsPageStore.categoryKey)
+                  ?.items.find(i => i.key === docsPageStore.itemKey)
+                  ?.sections.map(({ key: sectionKey, label }) => ({
+                    key: sectionKey,
+                    label,
+                    onClick: () => {
+                      if (
+                        navigateTo(
+                          `/docs/${docsPageStore.categoryKey}/${docsPageStore.itemKey}/${sectionKey}`
+                        )
+                      ) {
+                        setSideOpen(false)
+                      }
+                    },
+                  }))}
+                activeKey={docsPageStore.sectionKey}
+                groupConfig={{
+                  default: { variant: 'solid', intent: 'secondary' },
+                  active: { variant: 'solid', intent: 'tertiary' },
+                }}
+              />
+            )}
+          </SidePanelLayout.SideMobile>
+          <SidePanelLayout.Main mx={10}>
+            <DocPage />
+          </SidePanelLayout.Main>
         </SidePanelLayout>
       </SidePanelLayout.Main>
       <SidePanelLayout.SideDesktop>
-        <PageSideNav
-          groups={DOCS_PAGES.map(({ key: categoryKey, label }) => ({
+        <SideNav
+          groups={DOCS_CATEGORIES.map(({ key: categoryKey, label, items }) => ({
             key: categoryKey,
             label,
-            items: DOCS_PAGES.find(obj => obj.key === categoryKey).items.map(({ key: itemKey, label }) => ({
+            items: items.map(({ key: itemKey, label, sections }) => ({
               key: itemKey,
               label,
               onClick: () => {
-                navigateTo(`/docs/${categoryKey}/${itemKey}`)
+                navigateTo(`/docs/${categoryKey}/${itemKey}/${sections[0].key}`)
               },
             })),
           }))}
-          activeItemKey={docsPageStore.itemKey}
+          activeKey={docsPageStore.itemKey}
         />
       </SidePanelLayout.SideDesktop>
       <SidePanelLayout.SideMobile>
         {({ setSideOpen }) => (
-          <PageSideNav
-            groups={DOCS_PAGES.map(({ key: categoryKey, label }) => ({
+          <SideNav
+            groups={DOCS_CATEGORIES.map(({ key: categoryKey, label, items }) => ({
               key: categoryKey,
               label,
-              items: DOCS_PAGES.find(obj => obj.key === categoryKey).items.map(({ key: itemKey, label }) => ({
+              items: items.map(({ key: itemKey, label, sections }) => ({
                 key: itemKey,
                 label,
                 onClick: () => {
-                  if (navigateTo(`/docs/${categoryKey}/${itemKey}`)) {
+                  if (navigateTo(`/docs/${categoryKey}/${itemKey}/${sections[0].key}`)) {
                     setSideOpen(false)
                   }
                 },
               })),
             }))}
-            activeItemKey={docsPageStore.itemKey}
+            activeKey={docsPageStore.itemKey}
             itemConfig={{
               default: { intent: 'secondary' },
               active: { intent: 'tertiary' },

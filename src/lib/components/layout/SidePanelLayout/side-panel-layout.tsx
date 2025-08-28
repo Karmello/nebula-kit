@@ -23,7 +23,7 @@ export const SidePanelLayout = ({
       componentName="SidePanelLayout"
       main="required"
       sideDesktop="required"
-      sideMobile="optional"
+      sideMobile="required"
       header="optional"
       childrenToVerify={children}
     >
