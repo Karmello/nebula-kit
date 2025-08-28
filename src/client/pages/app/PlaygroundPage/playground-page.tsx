@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { sentenceCase, pascalCase } from 'change-case'
 
 import { useLibStore } from 'lib/state'
-import { SidePanelLayout, PageSideNav } from 'lib/components'
+import { SidePanelLayout, PageSideNav, Breadcrumb } from 'lib/components'
 import { formatAsQueryString, useNavigateTo } from 'client/services'
 import { usePlaygroundStore } from 'client/store'
 import { PLAYGROUND_ROUTING_CONFIG } from 'client/definitions'
@@ -32,13 +32,57 @@ export const PlaygroundPage = () => {
   }, [pathname])
 
   return (
-    <SidePanelLayout
-      breadcrumpItems={[
-        t('common.playground'),
-        sentenceCase(playgroundStore.categoryKey),
-        pascalCase(playgroundStore.itemKey),
-      ]}
-    >
+    <SidePanelLayout>
+      <SidePanelLayout.Header>
+        <Breadcrumb
+          items={[
+            t('common.playground'),
+            sentenceCase(playgroundStore.categoryKey),
+            pascalCase(playgroundStore.itemKey),
+          ]}
+        />
+      </SidePanelLayout.Header>
+      <SidePanelLayout.Main>
+        <Routes>
+          {PLAYGROUND_PAGES.flatMap(({ key: categoryKey, items }) =>
+            items.map(({ key: itemKey }) => {
+              let Component
+              try {
+                Component = require(`../../playground/${pascalCase(itemKey)}Playground`)[
+                  `${pascalCase(itemKey)}Playground`
+                ]
+              } catch {
+                Component = null
+              }
+              return <Route key={itemKey} path={`${categoryKey}/${itemKey}`} Component={Component} />
+            })
+          )}
+          <Route
+            path="*"
+            element={
+              <Navigate to={{ pathname: DEFAULT_PATHNAME, search: formatAsQueryString({ lang, theme }) }} />
+            }
+          />
+        </Routes>
+      </SidePanelLayout.Main>
+      <SidePanelLayout.SideDesktop>
+        <PageSideNav
+          groups={PLAYGROUND_PAGES.map(({ key: categoryKey, label }) => ({
+            key: categoryKey,
+            label,
+            items: PLAYGROUND_PAGES.find(obj => obj.key === categoryKey).items.map(
+              ({ key: itemKey, label }) => ({
+                key: itemKey,
+                label,
+                onClick: () => {
+                  navigateTo(`/playground/${categoryKey}/${itemKey}`)
+                },
+              })
+            ),
+          }))}
+          activeItemKey={playgroundStore.itemKey}
+        />
+      </SidePanelLayout.SideDesktop>
       <SidePanelLayout.SideMobile>
         {({ setSideOpen }) => (
           <PageSideNav
@@ -65,47 +109,6 @@ export const PlaygroundPage = () => {
           />
         )}
       </SidePanelLayout.SideMobile>
-      <SidePanelLayout.SideDesktop>
-        <PageSideNav
-          groups={PLAYGROUND_PAGES.map(({ key: categoryKey, label }) => ({
-            key: categoryKey,
-            label,
-            items: PLAYGROUND_PAGES.find(obj => obj.key === categoryKey).items.map(
-              ({ key: itemKey, label }) => ({
-                key: itemKey,
-                label,
-                onClick: () => {
-                  navigateTo(`/playground/${categoryKey}/${itemKey}`)
-                },
-              })
-            ),
-          }))}
-          activeItemKey={playgroundStore.itemKey}
-        />
-      </SidePanelLayout.SideDesktop>
-      <SidePanelLayout.Main>
-        <Routes>
-          {PLAYGROUND_PAGES.flatMap(({ key: categoryKey, items }) =>
-            items.map(({ key: itemKey }) => {
-              let Component
-              try {
-                Component = require(`../../playground/${pascalCase(itemKey)}Playground`)[
-                  `${pascalCase(itemKey)}Playground`
-                ]
-              } catch {
-                Component = null
-              }
-              return <Route key={itemKey} path={`${categoryKey}/${itemKey}`} Component={Component} />
-            })
-          )}
-          <Route
-            path="*"
-            element={
-              <Navigate to={{ pathname: DEFAULT_PATHNAME, search: formatAsQueryString({ lang, theme }) }} />
-            }
-          />
-        </Routes>
-      </SidePanelLayout.Main>
     </SidePanelLayout>
   )
 }

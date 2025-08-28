@@ -1,16 +1,14 @@
 import { ReactNode } from 'react'
 
 import { Flex } from 'lib/components'
-import { CssFlexJustify } from 'lib/definitions'
-
-type Position = 'left' | 'center' | 'right'
+import { CssFlexJustify, HorizontalPosition } from 'lib/definitions'
 
 export type HAlignOwnProps = {
   children: ReactNode
-  position: Position
+  position: HorizontalPosition
 }
 
-const MAP: Record<Position, CssFlexJustify> = {
+const MAP: Record<HorizontalPosition, CssFlexJustify> = {
   left: 'flex-start',
   center: 'center',
   right: 'flex-end',

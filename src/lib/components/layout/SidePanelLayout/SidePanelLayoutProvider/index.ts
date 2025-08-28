@@ -1,1 +1,1 @@
-export * from './use-side-panel-layout-ctx'
+export * from './use-side-panel-layout'

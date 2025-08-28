@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { pascalCase, sentenceCase } from 'change-case'
 
 import { useLibStore } from 'lib/state'
-import { SidePanelLayout, PageSideNav } from 'lib/components'
+import { SidePanelLayout, PageSideNav, Breadcrumb } from 'lib/components'
 import { ComponentMeta } from 'lib/definitions'
 import { useDocsStore } from 'client/store'
 import { formatAsQueryString, useNavigateTo } from 'client/services'
@@ -42,9 +42,50 @@ export const DocsPage = () => {
   }
 
   return (
-    <SidePanelLayout
-      breadcrumpItems={[t('common.docs'), sentenceCase(docsStore.categoryKey), pascalCase(docsStore.itemKey)]}
-    >
+    <SidePanelLayout>
+      <SidePanelLayout.Header>
+        <Breadcrumb
+          items={[t('common.docs'), sentenceCase(docsStore.categoryKey), pascalCase(docsStore.itemKey)]}
+        />
+      </SidePanelLayout.Header>
+      <SidePanelLayout.Main mx={10}>
+        <CompMetaRenderer data={META_DATA} />
+        <Routes>
+          {DOCS_PAGES.flatMap(({ key: categoryKey, items }) =>
+            items.map(({ key: itemKey }) => {
+              let Component
+              try {
+                Component = require(`../../docs/${pascalCase(itemKey)}Docs`)[`${pascalCase(itemKey)}Docs`]
+              } catch {
+                Component = null
+              }
+              return <Route key={itemKey} path={`${categoryKey}/${itemKey}`} Component={Component} />
+            })
+          )}
+          <Route
+            path="*"
+            element={
+              <Navigate to={{ pathname: DEFAULT_PATHNAME, search: formatAsQueryString({ lang, theme }) }} />
+            }
+          />
+        </Routes>
+      </SidePanelLayout.Main>
+      <SidePanelLayout.SideDesktop>
+        <PageSideNav
+          groups={DOCS_PAGES.map(({ key: categoryKey, label }) => ({
+            key: categoryKey,
+            label,
+            items: DOCS_PAGES.find(obj => obj.key === categoryKey).items.map(({ key: itemKey, label }) => ({
+              key: itemKey,
+              label,
+              onClick: () => {
+                navigateTo(`/docs/${categoryKey}/${itemKey}`)
+              },
+            })),
+          }))}
+          activeItemKey={docsStore.itemKey}
+        />
+      </SidePanelLayout.SideDesktop>
       <SidePanelLayout.SideMobile>
         {({ setSideOpen }) => (
           <PageSideNav
@@ -69,44 +110,6 @@ export const DocsPage = () => {
           />
         )}
       </SidePanelLayout.SideMobile>
-      <SidePanelLayout.SideDesktop>
-        <PageSideNav
-          groups={DOCS_PAGES.map(({ key: categoryKey, label }) => ({
-            key: categoryKey,
-            label,
-            items: DOCS_PAGES.find(obj => obj.key === categoryKey).items.map(({ key: itemKey, label }) => ({
-              key: itemKey,
-              label,
-              onClick: () => {
-                navigateTo(`/docs/${categoryKey}/${itemKey}`)
-              },
-            })),
-          }))}
-          activeItemKey={docsStore.itemKey}
-        />
-      </SidePanelLayout.SideDesktop>
-      <SidePanelLayout.Main>
-        <CompMetaRenderer data={META_DATA} />
-        <Routes>
-          {DOCS_PAGES.flatMap(({ key: categoryKey, items }) =>
-            items.map(({ key: itemKey }) => {
-              let Component
-              try {
-                Component = require(`../../docs/${pascalCase(itemKey)}Docs`)[`${pascalCase(itemKey)}Docs`]
-              } catch {
-                Component = null
-              }
-              return <Route key={itemKey} path={`${categoryKey}/${itemKey}`} Component={Component} />
-            })
-          )}
-          <Route
-            path="*"
-            element={
-              <Navigate to={{ pathname: DEFAULT_PATHNAME, search: formatAsQueryString({ lang, theme }) }} />
-            }
-          />
-        </Routes>
-      </SidePanelLayout.Main>
     </SidePanelLayout>
   )
 }

@@ -33,12 +33,9 @@ export const App = () => {
         <AppFrame.Header>
           <AppNavBar />
         </AppFrame.Header>
-        <AppFrame.Main>
+        <AppFrame.Main mt={10}>
           <RootPage />
         </AppFrame.Main>
-        <AppFrame.Footer>
-          <div />
-        </AppFrame.Footer>
       </AppFrame>
     </>
   )
