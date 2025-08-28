@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { pascalCase } from 'change-case'
 
-import { useDocsStore } from 'client/store'
+import { useDocsPageStore } from 'client/store'
 import { DOCS_PAGES } from 'client/definitions'
 import { formatAsQueryString } from 'client/services'
 import { useLibStore } from 'lib/state'
@@ -12,12 +12,12 @@ const DEFAULT_PATHNAME = `${DOCS_PAGES[0].key}/${DOCS_PAGES[0].items[0].key}`
 
 export const CompDocPage = () => {
   const { lang, theme } = useLibStore()
-  const docsStore = useDocsStore()
+  const docsPageStore = useDocsPageStore()
 
   let META_DATA: ComponentMeta
 
   try {
-    META_DATA = require(`../../../../meta/${docsStore.itemKey}.json`) as ComponentMeta
+    META_DATA = require(`../../../../meta/${docsPageStore.itemKey}.json`) as ComponentMeta
   } catch {
     META_DATA = null
   }

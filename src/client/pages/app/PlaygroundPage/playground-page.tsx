@@ -6,7 +6,7 @@ import { sentenceCase, pascalCase } from 'change-case'
 import { useLibStore } from 'lib/state'
 import { SidePanelLayout, PageSideNav, Breadcrumb } from 'lib/components'
 import { formatAsQueryString, useNavigateTo } from 'client/services'
-import { usePlaygroundStore } from 'client/store'
+import { usePlaygroundPageStore } from 'client/store'
 import { PLAYGROUND_PAGES } from 'client/definitions'
 
 const DEFAULT_PATHNAME = `${PLAYGROUND_PAGES[0].key}/${PLAYGROUND_PAGES[0].items[0].key}`
@@ -17,12 +17,12 @@ export const PlaygroundPage = () => {
 
   const navigateTo = useNavigateTo()
   const { lang, theme } = useLibStore()
-  const playgroundStore = usePlaygroundStore()
+  const playgroundPageStore = usePlaygroundPageStore()
 
   useEffect(() => {
     const [, categoryKey, itemKey] = pathname.split('/').filter(s => s)
-    playgroundStore.setCategoryKey(categoryKey as never)
-    playgroundStore.setItemKey(itemKey as never)
+    playgroundPageStore.setCategoryKey(categoryKey as never)
+    playgroundPageStore.setItemKey(itemKey as never)
   }, [pathname])
 
   return (
@@ -31,8 +31,8 @@ export const PlaygroundPage = () => {
         <Breadcrumb
           items={[
             t('common.playground'),
-            sentenceCase(playgroundStore.categoryKey),
-            pascalCase(playgroundStore.itemKey),
+            sentenceCase(playgroundPageStore.categoryKey),
+            pascalCase(playgroundPageStore.itemKey),
           ]}
         />
       </SidePanelLayout.Header>
@@ -74,7 +74,7 @@ export const PlaygroundPage = () => {
               })
             ),
           }))}
-          activeItemKey={playgroundStore.itemKey}
+          activeItemKey={playgroundPageStore.itemKey}
         />
       </SidePanelLayout.SideDesktop>
       <SidePanelLayout.SideMobile>
@@ -95,7 +95,7 @@ export const PlaygroundPage = () => {
                 })
               ),
             }))}
-            activeItemKey={playgroundStore.itemKey}
+            activeItemKey={playgroundPageStore.itemKey}
             itemConfig={{
               default: { intent: 'secondary' },
               active: { intent: 'tertiary' },

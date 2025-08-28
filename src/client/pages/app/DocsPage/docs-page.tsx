@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { pascalCase, sentenceCase } from 'change-case'
 
 import { SidePanelLayout, PageSideNav, Breadcrumb, Text, Divider } from 'lib/components'
-import { useDocsStore } from 'client/store'
+import { useDocsPageStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
 import { DOCS_PAGES } from 'client/definitions'
 import { CompDocPage } from '../CompDocPage'
@@ -14,27 +14,31 @@ export const DocsPage = () => {
   const { pathname } = useLocation()
 
   const navigateTo = useNavigateTo()
-  const docsStore = useDocsStore()
+  const docsPageStore = useDocsPageStore()
 
   useEffect(() => {
     const [, categoryKey, itemKey] = pathname.split('/').filter(s => s)
-    docsStore.setCategoryKey(categoryKey)
-    docsStore.setItemKey(itemKey)
+    docsPageStore.setCategoryKey(categoryKey)
+    docsPageStore.setItemKey(itemKey)
   }, [pathname])
 
-  const isCompDocPage = DOCS_PAGES.findIndex(page => page.key === docsStore.categoryKey) >= 2
+  const isCompDocPage = DOCS_PAGES.findIndex(page => page.key === docsPageStore.categoryKey) >= 2
 
   return (
     <SidePanelLayout>
       <SidePanelLayout.Header>
         <Breadcrumb
-          items={[t('common.docs'), sentenceCase(docsStore.categoryKey), pascalCase(docsStore.itemKey)]}
+          items={[
+            t('common.docs'),
+            sentenceCase(docsPageStore.categoryKey),
+            pascalCase(docsPageStore.itemKey),
+          ]}
         />
       </SidePanelLayout.Header>
       <SidePanelLayout.Main mx={10}>
         <SidePanelLayout sidePosition="right">
           <SidePanelLayout.Header>
-            <Text typography="h3">{pascalCase(docsStore.itemKey)}</Text>
+            <Text typography="h3">{pascalCase(docsPageStore.itemKey)}</Text>
             <Divider />
           </SidePanelLayout.Header>
           <SidePanelLayout.SideDesktop>side desktop</SidePanelLayout.SideDesktop>
@@ -54,7 +58,7 @@ export const DocsPage = () => {
               },
             })),
           }))}
-          activeItemKey={docsStore.itemKey}
+          activeItemKey={docsPageStore.itemKey}
         />
       </SidePanelLayout.SideDesktop>
       <SidePanelLayout.SideMobile>
@@ -73,7 +77,7 @@ export const DocsPage = () => {
                 },
               })),
             }))}
-            activeItemKey={docsStore.itemKey}
+            activeItemKey={docsPageStore.itemKey}
             itemConfig={{
               default: { intent: 'secondary' },
               active: { intent: 'tertiary' },

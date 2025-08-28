@@ -3,7 +3,7 @@ import { create } from 'zustand'
 import { PLAYGROUND_PAGES } from 'client/definitions'
 import { BoxVariant, BoxIntent } from 'lib/definitions'
 
-export type PlaygroundStore = {
+export type PlaygroundPageStore = {
   categoryKey: string
   setCategoryKey: (categoryKey: string) => void
   itemKey: string
@@ -14,7 +14,7 @@ export type PlaygroundStore = {
   setIntent: (intent: BoxIntent) => void
 }
 
-export const usePlaygroundStore = create<PlaygroundStore>(set => ({
+export const usePlaygroundPageStore = create<PlaygroundPageStore>(set => ({
   categoryKey: PLAYGROUND_PAGES[0].key,
   setCategoryKey: categoryKey => set(() => ({ categoryKey })),
   itemKey: PLAYGROUND_PAGES[0].items[0].key,

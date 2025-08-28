@@ -2,15 +2,15 @@ import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 import { AppNavBar as NebAppNavBar } from 'lib/components'
-import { useDocsStore, usePlaygroundStore } from 'client/store'
+import { useDocsPageStore, usePlaygroundPageStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
 
 export const AppNavBar = () => {
   const { t } = useTranslation()
   const { pathname } = useLocation()
 
-  const playgroundStore = usePlaygroundStore()
-  const docsStore = useDocsStore()
+  const playgroundPageStore = usePlaygroundPageStore()
+  const docsPageStore = useDocsPageStore()
   const navigateTo = useNavigateTo()
 
   const [pageKey] = pathname.split('/').filter(s => s)
@@ -30,11 +30,11 @@ export const AppNavBar = () => {
             break
           }
           case 'playground': {
-            navigateTo(`/playground/${playgroundStore.categoryKey}/${playgroundStore.itemKey}`)
+            navigateTo(`/playground/${playgroundPageStore.categoryKey}/${playgroundPageStore.itemKey}`)
             break
           }
           case 'docs': {
-            navigateTo(`/docs/${docsStore.categoryKey}/${docsStore.itemKey}`)
+            navigateTo(`/docs/${docsPageStore.categoryKey}/${docsPageStore.itemKey}`)
           }
         }
       }}
