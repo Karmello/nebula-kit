@@ -1,9 +1,11 @@
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
+import { Box, BoxOwnProps, BoxProps } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-export const TableFoot = ({ className, ...rest }: any) => {
+export type TableFootProps = Pick<BoxProps, 'children' | 'className' | 'style'> & Omit<BoxOwnProps, 'display'>
+
+export const TableFoot = ({ className, ...rest }: TableFootProps) => {
   return (
     <Box
       as="tfoot"

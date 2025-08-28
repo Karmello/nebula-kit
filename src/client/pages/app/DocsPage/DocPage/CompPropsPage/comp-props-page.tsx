@@ -1,20 +1,14 @@
+import { useTranslation } from 'react-i18next'
+
 import { useDocsPageStore } from 'client/store'
 import { ComponentMeta } from 'lib/definitions'
-
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeadCell,
-  TableRow,
-  Text,
-  SvgIcon,
-} from 'lib/components'
+import { Table, Text, SvgIcon, Spacer } from 'lib/components'
 
 const EMPTY_CELL_MARKER = '-'
 
 export const CompPropsPage = () => {
+  const { t } = useTranslation()
+
   const { itemKey } = useDocsPageStore()
 
   let META_DATA: ComponentMeta
@@ -30,37 +24,43 @@ export const CompPropsPage = () => {
   }
 
   return (
-    <Table scrollable>
-      <TableHead>
-        <TableRow>
-          <TableHeadCell style={{ width: '17ch' }}>Name</TableHeadCell>
-          <TableHeadCell style={{ width: '30ch' }}>Type</TableHeadCell>
-          <TableHeadCell style={{ width: '30ch' }}>Options</TableHeadCell>
-          <TableHeadCell style={{ width: '10ch' }}>Required</TableHeadCell>
-          <TableHeadCell style={{ width: '10ch' }}>Default</TableHeadCell>
-          <TableHeadCell style={{ width: '50ch' }}>Description</TableHeadCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {META_DATA.props.map(({ name, type, options, required, defaultValue, description }) => (
-          <TableRow key={name}>
-            <TableCell>{name}</TableCell>
-            <TableCell>
-              <Text italic intent="primary">
-                {type}
-              </Text>
-            </TableCell>
-            <TableCell>
-              {typeof options === 'string' ? options : options.join(' | ') || EMPTY_CELL_MARKER}
-            </TableCell>
-            <TableCell textAlign="center">
-              {required ? <SvgIcon name="check" intent="primary" /> : ''}
-            </TableCell>
-            <TableCell>{defaultValue}</TableCell>
-            <TableCell>{description || EMPTY_CELL_MARKER}</TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+    <>
+      <Text typography="h6">{t('common.props')}</Text>
+      <Spacer size={5} />
+      <Table zebra>
+        <Table.Head>
+          <Table.Row>
+            <Table.HeadCell style={{ width: '17ch' }}>Name</Table.HeadCell>
+            <Table.HeadCell style={{ width: '30ch' }}>Type</Table.HeadCell>
+            <Table.HeadCell style={{ width: '30ch' }}>Options</Table.HeadCell>
+            <Table.HeadCell style={{ width: '10ch' }}>Default</Table.HeadCell>
+            <Table.HeadCell style={{ width: '50ch' }}>Description</Table.HeadCell>
+            <Table.HeadCell style={{ width: '10ch' }}>Required</Table.HeadCell>
+          </Table.Row>
+        </Table.Head>
+        <Table.Body>
+          {META_DATA.props.map(({ name, type, options, required, defaultValue, description }) => (
+            <Table.Row key={name}>
+              <Table.Cell>
+                <Text bold>{name}</Text>
+              </Table.Cell>
+              <Table.Cell>
+                <Text italic intent="primary">
+                  {type}
+                </Text>
+              </Table.Cell>
+              <Table.Cell>
+                {typeof options === 'string' ? options : options.join(' | ') || EMPTY_CELL_MARKER}
+              </Table.Cell>
+              <Table.Cell>{defaultValue}</Table.Cell>
+              <Table.Cell>{description || EMPTY_CELL_MARKER}</Table.Cell>
+              <Table.Cell textAlign="center">
+                {required ? <SvgIcon name="check" intent="primary" /> : ''}
+              </Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </Table>
+    </>
   )
 }

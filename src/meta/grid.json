@@ -39,8 +39,8 @@
       "name": "autoFlow",
       "type": "ResponsiveProp<CssGridAutoFlow>",
       "options": [
-        "column",
         "row",
+        "column",
         "dense",
         "row dense",
         "column dense"

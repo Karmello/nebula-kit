@@ -12,7 +12,7 @@
     },
     {
       "name": "position",
-      "type": "Position",
+      "type": "HorizontalPosition",
       "options": [
         "left",
         "center",

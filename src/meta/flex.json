@@ -6,9 +6,9 @@
       "name": "direction",
       "type": "ResponsiveProp<CssFlexDirection>",
       "options": [
-        "column",
         "row",
         "row-reverse",
+        "column",
         "column-reverse"
       ],
       "required": false,
@@ -19,8 +19,8 @@
       "name": "wrap",
       "type": "ResponsiveProp<CssFlexWrap>",
       "options": [
-        "wrap",
         "nowrap",
+        "wrap",
         "wrap-reverse"
       ],
       "required": false,

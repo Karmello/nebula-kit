@@ -6,8 +6,8 @@
       "name": "wrap",
       "type": "={{\n        ...(fill ? { wid",
       "options": [
-        "wrap",
         "nowrap",
+        "wrap",
         "wrap-reverse"
       ],
       "required": false,

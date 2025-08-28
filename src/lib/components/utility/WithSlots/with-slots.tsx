@@ -7,7 +7,7 @@ export type WithSlotsReturnObject = Partial<Record<Slot, ReactNode | null>>
 
 type SlotType = 'required' | 'optional'
 
-export type WithSlotsProps = {
+export type WithSlotsOwnProps = {
   children: (slots: WithSlotsReturnObject) => JSX.Element
   componentName: string
   header?: SlotType
@@ -19,7 +19,7 @@ export type WithSlotsProps = {
   childrenToVerify: ReactNode
 }
 
-export const WithSlots = (props: WithSlotsProps) => {
+export const WithSlots = (props: WithSlotsOwnProps) => {
   const pickSlot = (slotName: Slot) =>
     Children.toArray(props.childrenToVerify).find(
       el => isValidElement(el) && (el.type as any).slotName === slotName

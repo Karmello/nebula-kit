@@ -11,19 +11,22 @@
       "description": ""
     },
     {
+      "name": "sidePosition",
+      "type": "Extract<HorizontalPosition, 'left' | 'right'>",
+      "options": [
+        "left",
+        "right"
+      ],
+      "required": false,
+      "defaultValue": "'left'",
+      "description": ""
+    },
+    {
       "name": "sideWidthDesktop",
       "type": "ScaleValue | string",
       "options": "0, 1, 2 ... 80",
       "required": false,
-      "defaultValue": "",
-      "description": ""
-    },
-    {
-      "name": "breadcrumpItems",
-      "type": "BreadcrumbOwnProps['items']",
-      "options": [],
-      "required": false,
-      "defaultValue": "",
+      "defaultValue": "'225px'",
       "description": ""
     }
   ]

@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { pascalCase, sentenceCase } from 'change-case'
 
-import { SidePanelLayout, SideNav, Breadcrumb, Text, Divider } from 'lib/components'
+import { SidePanelLayout, SideNav, Breadcrumb, Text, Divider, Spacer } from 'lib/components'
 import { useDocsPageStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
 import { DOCS_CATEGORIES } from 'client/definitions'
@@ -41,6 +41,7 @@ export const DocsPage = () => {
           <SidePanelLayout.Header>
             <Text typography="h3">{pascalCase(docsPageStore.itemKey)}</Text>
             <Divider />
+            <Spacer size={5} />
           </SidePanelLayout.Header>
           <SidePanelLayout.SideDesktop>
             <SideNav

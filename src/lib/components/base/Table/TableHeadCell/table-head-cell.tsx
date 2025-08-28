@@ -1,32 +1,23 @@
-import { ReactNode, CSSProperties } from 'react'
 import classNames from 'classnames'
 
-import { Box, useTableContext } from 'lib/components'
+import { Box, BoxOwnProps, BoxProps, useTableContext } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-export type TableHeadCellProps = {
-  children?: ReactNode
-  className?: string
-  style?: CSSProperties
-  /** Scope for header cell (column/row) */
-  scope?: 'col' | 'row' | 'colgroup' | 'rowgroup'
-  /** Text alignment */
-  align?: 'start' | 'center' | 'end'
-}
+export type TableHeadCellProps = Pick<BoxProps, 'children' | 'className' | 'style'> &
+  Omit<BoxOwnProps, 'display'>
 
-export const TableHeadCell = ({ className, scope = 'col', align = 'start', ...rest }: TableHeadCellProps) => {
+export const TableHeadCell = ({ className, ...rest }: TableHeadCellProps) => {
   const { variant, intent } = useTableContext()
 
   return (
     <Box
+      variant={variant}
+      intent={intent}
+      p={5}
+      {...rest}
       as="th"
       display="table-cell"
       className={classNames(withPrefix('table-head-cell'), className)}
-      scope={scope}
-      data-table-head-cell-align={align}
-      variant={variant}
-      intent={intent}
-      {...rest}
     />
   )
 }

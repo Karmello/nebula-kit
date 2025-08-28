@@ -1,5 +1,5 @@
 {
-  "name": "PageSideNav",
+  "name": "SideNav",
   "description": "",
   "props": [
     {
@@ -7,11 +7,11 @@
       "type": "Group[]",
       "options": [],
       "required": true,
-      "defaultValue": "",
+      "defaultValue": "[]",
       "description": ""
     },
     {
-      "name": "activeItemKey",
+      "name": "activeKey",
       "type": "string",
       "options": [],
       "required": true,

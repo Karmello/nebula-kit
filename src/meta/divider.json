@@ -1,0 +1,32 @@
+{
+  "name": "Divider",
+  "description": "",
+  "props": [
+    {
+      "name": "intent",
+      "type": "BoxOwnProps['intent']",
+      "options": [
+        "neutral",
+        "primary",
+        "secondary",
+        "tertiary",
+        "success",
+        "info",
+        "warning",
+        "danger",
+        "inverse"
+      ],
+      "required": false,
+      "defaultValue": "'tertiary'",
+      "description": ""
+    },
+    {
+      "name": "thickness",
+      "type": "ScaleValue | string",
+      "options": "0, 1, 2 ... 80",
+      "required": false,
+      "defaultValue": "1",
+      "description": ""
+    }
+  ]
+}

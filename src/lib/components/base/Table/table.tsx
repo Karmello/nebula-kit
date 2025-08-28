@@ -1,77 +1,64 @@
-import { CSSProperties, ReactNode } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, TableContext } from 'lib/components'
-import { ResponsiveProp, ScaleValue } from 'lib/definitions'
-import { withPrefix, getCssVars, getDataAttrs } from 'lib/helpers'
+import { Box, BoxOwnProps, BoxProps, TableContext } from 'lib/components'
+import { withPrefix, getDataAttrs } from 'lib/helpers'
 
 import './table.scss'
 
 export type TableLayout = 'auto' | 'fixed'
 
 export type TableOwnProps = {
-  /** Table layout algorithm; maps to CSS table-layout */
+  /** Sets the CSS table-layout algorithm: 'auto' (content-driven) or 'fixed' (width-driven). */
   layout?: TableLayout
-  /** Adds row striping via data attribute */
+  /** Enables alternating background colors for rows to improve readability. */
   zebra?: boolean
-  /** Makes header sticky (requires a set height/overflow on the container) */
+  /** Keeps the header row visible at the top while scrolling the table body. */
   stickyHeader?: boolean
-  /** Wraps the table in a scroll container when true */
-  scrollable?: boolean
-  /** Minimum width of the table, useful to trigger horizontal scrolling in fixed layout. */
-  minWidth?: ResponsiveProp<ScaleValue | string>
-} & {
-  /** Visual style of the box surface (e.g. solid, outline) */
-  variant?: BoxOwnProps['variant']
-  /** Semantic tone or purpose (e.g. neutral, success, danger) */
-  intent?: BoxOwnProps['intent']
 }
 
-export type TableProps = TableOwnProps & {
-  children: ReactNode
-  className?: string
-  style?: CSSProperties
-}
+export type TableProps = Pick<BoxProps, 'children' | 'className' | 'style'> &
+  Omit<BoxOwnProps, 'display'> &
+  TableOwnProps
 
-/** Table is a low-level primitive for rendering semantic HTML tables with consistent styling and theming. It always renders a native <table> element and exposes props for layout (auto or fixed), borders, zebra striping, and sticky headers. Use it with companion components (TableHead, TableBody, TableRow, TableCell, etc.) to build accessible, fully-customizable tabular layouts. */
+/** Table is a styled wrapper around the native <table> element. It supports automatic or fixed layouts, optional zebra striping, and sticky headers, while passing through theming from Box. Use it together with TableHead, TableBody, TableRow, and TableCell to build accessible, consistent data tables. */
 export const Table = ({
-  children,
   className,
-  layout = 'auto',
-  zebra = true,
-  stickyHeader = false,
-  scrollable = false,
-  minWidth = '40rem',
-  variant = 'outline',
-  intent = 'neutral',
   style,
+  variant,
+  intent,
+  layout = 'auto',
+  zebra = false,
+  stickyHeader = false,
   ...rest
 }: TableProps) => {
-  const tableElement = (
-    <TableContext value={{ variant, intent }}>
-      <Box
-        as="table"
-        display="table"
-        className={classNames(withPrefix('table'), className)}
-        {...getDataAttrs('table', { layout, zebra, stickyHeader })}
-        variant={variant}
-        intent={intent}
-        style={{
-          ...getCssVars('table', { minWidth }),
-          ...style,
-        }}
-        {...rest}
-      >
-        {children}
+  return (
+    <TableContext value={{ variant, intent, layout }}>
+      <Box className={withPrefix('table-container')}>
+        <Box
+          variant={variant}
+          intent={intent}
+          {...rest}
+          className={classNames(withPrefix('table'), className)}
+          as="table"
+          display="table"
+          {...getDataAttrs('table', { zebra })}
+          style={{
+            borderCollapse: 'collapse',
+            tableLayout: layout,
+            width: '100%',
+            ...(stickyHeader
+              ? {
+                  position: 'sticky',
+                  top: 0,
+                  zIndex: 1,
+                }
+              : {}),
+            ...style,
+          }}
+        />
       </Box>
     </TableContext>
   )
-
-  if (!scrollable) {
-    return tableElement
-  }
-
-  return <div className={withPrefix('table-container')}>{tableElement}</div>
 }
 
 Table.displayName = 'Table'

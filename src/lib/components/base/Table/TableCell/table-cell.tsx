@@ -1,25 +1,22 @@
-import { ReactNode } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, useTableContext } from 'lib/components'
+import { Box, BoxOwnProps, BoxProps, useTableContext } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-export type TableCellOwnProps = Pick<BoxOwnProps, 'textAlign'> & {
-  children?: ReactNode
-  className?: string
-}
+export type TableCellProps = Pick<BoxProps, 'children' | 'className' | 'style'> & Omit<BoxOwnProps, 'display'>
 
-export const TableCell = ({ className, ...rest }: TableCellOwnProps) => {
+export const TableCell = ({ className, ...rest }: TableCellProps) => {
   const { variant, intent } = useTableContext()
 
   return (
     <Box
+      variant={variant}
+      intent={intent}
+      p={5}
+      {...rest}
       as="td"
       display="table-cell"
       className={classNames(withPrefix('table-cell'), className)}
-      variant={variant}
-      intent={intent}
-      {...rest}
     />
   )
 }

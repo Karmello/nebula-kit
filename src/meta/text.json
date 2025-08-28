@@ -57,6 +57,8 @@
       "name": "textAlign",
       "type": "BoxOwnProps['textAlign']",
       "options": [
+        "revert",
+        "initial",
         "left",
         "right",
         "center",
@@ -64,9 +66,7 @@
         "start",
         "end",
         "inherit",
-        "initial",
-        "unset",
-        "revert"
+        "unset"
       ],
       "required": false,
       "defaultValue": "'initial'",

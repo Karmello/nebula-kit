@@ -63,8 +63,8 @@
       "name": "direction",
       "type": "ResponsiveProp<StackDirection>",
       "options": [
-        "column",
-        "row"
+        "row",
+        "column"
       ],
       "required": false,
       "defaultValue": "'column'",

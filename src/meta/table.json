@@ -1,6 +1,6 @@
 {
   "name": "Table",
-  "description": "Table is a low-level primitive for rendering semantic HTML tables with consistent styling and theming. It always renders a native <table> element and exposes props for layout (auto or fixed), borders, zebra striping, and sticky headers. Use it with companion components (TableHead, TableBody, TableRow, TableCell, etc.) to build accessible, fully-customizable tabular layouts.",
+  "description": "Table is a styled wrapper around the native <table> element. It supports automatic or fixed layouts, optional zebra striping, and sticky headers, while passing through theming from Box. Use it together with TableHead, TableBody, TableRow, and TableCell to build accessible, consistent data tables.",
   "props": [
     {
       "name": "layout",
@@ -11,15 +11,15 @@
       ],
       "required": false,
       "defaultValue": "'auto'",
-      "description": "Table layout algorithm; maps to CSS table-layout"
+      "description": "Sets the CSS table-layout algorithm: 'auto' (content-driven) or 'fixed' (width-driven)."
     },
     {
       "name": "zebra",
       "type": "boolean",
       "options": [],
       "required": false,
-      "defaultValue": "true",
-      "description": "Adds row striping via data attribute"
+      "defaultValue": "false",
+      "description": "Enables alternating background colors for rows to improve readability."
     },
     {
       "name": "stickyHeader",
@@ -27,53 +27,7 @@
       "options": [],
       "required": false,
       "defaultValue": "false",
-      "description": "Makes header sticky (requires a set height/overflow on the container)"
-    },
-    {
-      "name": "scrollable",
-      "type": "boolean",
-      "options": [],
-      "required": false,
-      "defaultValue": "false",
-      "description": "Wraps the table in a scroll container when true"
-    },
-    {
-      "name": "minWidth",
-      "type": "ResponsiveProp<ScaleValue | string>",
-      "options": "0, 1, 2 ... 80",
-      "required": false,
-      "defaultValue": "'40rem'",
-      "description": "Minimum width of the table, useful to trigger horizontal scrolling in fixed layout."
-    },
-    {
-      "name": "variant",
-      "type": "BoxOwnProps['variant']",
-      "options": [
-        "solid",
-        "outline",
-        "ghost"
-      ],
-      "required": false,
-      "defaultValue": "'outline'",
-      "description": "Visual style of the box surface (e.g. solid, outline)"
-    },
-    {
-      "name": "intent",
-      "type": "BoxOwnProps['intent']",
-      "options": [
-        "neutral",
-        "primary",
-        "secondary",
-        "tertiary",
-        "success",
-        "info",
-        "warning",
-        "danger",
-        "inverse"
-      ],
-      "required": false,
-      "defaultValue": "'neutral'",
-      "description": "Semantic tone or purpose (e.g. neutral, success, danger)"
+      "description": "Keeps the header row visible at the top while scrolling the table body."
     }
   ]
 }

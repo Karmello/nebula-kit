@@ -1,8 +1,8 @@
 import { createContext, useContext } from 'react'
 
-import { TableOwnProps } from 'lib/components'
+import { TableProps } from 'lib/components'
 
-type TableContextValue = { variant?: TableOwnProps['variant']; intent?: TableOwnProps['intent'] }
+type TableContextValue = Pick<TableProps, 'variant' | 'intent' | 'layout'>
 
 export const TableContext = createContext<TableContextValue>({})
 

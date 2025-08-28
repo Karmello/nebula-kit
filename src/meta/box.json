@@ -70,8 +70,6 @@
       "name": "display",
       "type": "ResponsiveProp<CssDisplay>",
       "options": [
-        "initial",
-        "revert",
         "block",
         "inline",
         "inline-block",
@@ -81,6 +79,8 @@
         "table-footer-group",
         "table-row",
         "table-cell",
+        "revert",
+        "initial",
         "none"
       ],
       "required": false,
@@ -91,9 +91,9 @@
       "name": "overflowX",
       "type": "ResponsiveProp<CssOverflow>",
       "options": [
-        "hidden",
         "visible",
         "auto",
+        "hidden",
         "scroll"
       ],
       "required": false,
@@ -104,9 +104,9 @@
       "name": "overflowY",
       "type": "ResponsiveProp<CssOverflow>",
       "options": [
-        "hidden",
         "visible",
         "auto",
+        "hidden",
         "scroll"
       ],
       "required": false,
@@ -195,6 +195,8 @@
       "name": "textAlign",
       "type": "ResponsiveProp<CssTextAlign>",
       "options": [
+        "revert",
+        "initial",
         "left",
         "right",
         "center",
@@ -202,9 +204,7 @@
         "start",
         "end",
         "inherit",
-        "initial",
-        "unset",
-        "revert"
+        "unset"
       ],
       "required": false,
       "defaultValue": "",

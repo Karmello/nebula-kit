@@ -1,15 +1,17 @@
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
+import { Box, BoxOwnProps, BoxProps } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-export const TableHead = ({ className, ...rest }: any) => {
+export type TableHeadProps = Pick<BoxProps, 'children' | 'className' | 'style'> & Omit<BoxOwnProps, 'display'>
+
+export const TableHead = ({ className, ...rest }: TableHeadProps) => {
   return (
     <Box
+      {...rest}
       as="thead"
       display="table-header-group"
       className={classNames(withPrefix('table-head'), className)}
-      {...rest}
     />
   )
 }

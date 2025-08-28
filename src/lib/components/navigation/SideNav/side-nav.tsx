@@ -27,14 +27,14 @@ type Config = {
   }
 }
 
-export type PageSideNavOwnProps = {
+export type SideNavOwnProps = {
   groups: Group[]
   activeKey: string
   groupConfig?: Config
   itemConfig?: Config
 }
 
-export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: PageSideNavOwnProps) => {
+export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: SideNavOwnProps) => {
   const [openGroupKey, setOpenGroupKey] = useState<string>('')
 
   useLayoutEffect(() => {
