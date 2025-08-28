@@ -38,9 +38,6 @@ export type BoxOwnProps = {
   right?: ResponsiveProp<ScaleValue | string>
   bottom?: ResponsiveProp<ScaleValue | string>
   left?: ResponsiveProp<ScaleValue | string>
-  fontSize?: ResponsiveProp<ScaleValue | string>
-  /** Controls line height for text content */
-  lineHeight?: ResponsiveProp<number | string>
   /** Horizontal alignment of text (start, center, end, etc.) */
   borderRadius?: ScaleValue | string
   textAlign?: ResponsiveProp<CssTextAlign>
@@ -108,8 +105,6 @@ export const Box = <E extends ElementType = 'div'>({
   right,
   bottom,
   left,
-  fontSize,
-  lineHeight,
   borderRadius,
   textAlign,
   blockSize,
@@ -152,8 +147,6 @@ export const Box = <E extends ElementType = 'div'>({
           right,
           bottom,
           left,
-          fontSize,
-          lineHeight,
           textAlign,
           blockSize,
           minBlockSize,

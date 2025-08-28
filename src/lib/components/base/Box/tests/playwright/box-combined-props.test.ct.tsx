@@ -42,7 +42,7 @@ test.describe('Box - combined props smoke tests', () => {
     await expect(cmp).toHaveCSS('margin-left', '4px') // m
   })
 
-  test('sizes + position + borderRadius + typography co-exist', async ({ mount }) => {
+  test('sizes + position + borderRadius', async ({ mount }) => {
     const cmp = await mount(
       <Box
         variant="solid"
@@ -56,8 +56,6 @@ test.describe('Box - combined props smoke tests', () => {
         inlineSize="240px"
         minInlineSize="180px"
         maxInlineSize="300px"
-        fontSize="16px"
-        lineHeight={1.5}
         textAlign="right"
       />
     )
@@ -74,15 +72,10 @@ test.describe('Box - combined props smoke tests', () => {
     await expect(cmp).toHaveCSS('min-inline-size', '180px')
     await expect(cmp).toHaveCSS('max-inline-size', '300px')
 
-    await expect(cmp).toHaveCSS('font-size', '16px')
-    await expect(cmp).toHaveCSS('line-height', '24px') // 1.5 * 16px
     await expect(cmp).toHaveCSS('text-align', 'right')
   })
 
-  test('responsive mix: display/overflow at md, typography at lg, paddings remain intact', async ({
-    mount,
-    page,
-  }) => {
+  test('responsive mix: display/overflow at md, paddings remain intact', async ({ mount, page }) => {
     await page.setViewportSize(vp.md)
     const cmp = await mount(
       <Box
@@ -93,9 +86,6 @@ test.describe('Box - combined props smoke tests', () => {
         // responsive display/overflow
         display={{ base: 'block', md: 'inline-block' }}
         overflowY={{ md: 'hidden' }}
-        // responsive typography (only at lg)
-        fontSize={{ lg: '20px' }}
-        lineHeight={1.2}
       />
     )
 
@@ -108,13 +98,9 @@ test.describe('Box - combined props smoke tests', () => {
     await expect(cmp).toHaveCSS('padding-bottom', '9px')
     await expect(cmp).toHaveCSS('padding-left', '13px')
     await expect(cmp).toHaveCSS('padding-right', '5px')
-
-    // typography still at base on md
-    await expect(cmp).toHaveCSS('font-size', '16px') // default base (if your base differs, adjust)
-    await expect(cmp).toHaveCSS('line-height', '19.2px') // 1.2 * 16px (adjust if base font size differs)
   })
 
-  test('at lg: typography override kicks in; paddings still unchanged', async ({ mount, page }) => {
+  test('at lg: paddings', async ({ mount, page }) => {
     await page.setViewportSize(vp.lg)
     const cmp = await mount(
       <Box
@@ -123,18 +109,12 @@ test.describe('Box - combined props smoke tests', () => {
         pl="13px"
         display={{ base: 'block', md: 'inline-block' }}
         overflowY={{ md: 'hidden' }}
-        fontSize={{ lg: '20px' }}
-        lineHeight={1.2}
       />
     )
 
     // display/overflow: md override still valid at lg unless changed again
     await expect(cmp).toHaveCSS('display', 'inline-block')
     await expect(cmp).toHaveCSS('overflow-y', 'hidden')
-
-    // typography: lg override applied
-    await expect(cmp).toHaveCSS('font-size', '20px')
-    await expect(cmp).toHaveCSS('line-height', '24px') // 1.2 * 20px
 
     // paddings unchanged
     await expect(cmp).toHaveCSS('padding-top', '9px')

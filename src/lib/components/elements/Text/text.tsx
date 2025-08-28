@@ -2,8 +2,8 @@ import { CSSProperties, ReactNode, Ref } from 'react'
 import classNames from 'classnames'
 
 import { Box, BoxOwnProps, WithIcon, WithIconOwnProps } from 'lib/components'
-import { withPrefix, getDataAttrs } from 'lib/helpers'
-import { TextTypography } from 'lib/definitions'
+import { ResponsiveProp, ScaleValue, TextTypography } from 'lib/definitions'
+import { withPrefix, getDataAttrs, getCssVars } from 'lib/helpers'
 
 import './text.scss'
 
@@ -14,15 +14,13 @@ export type TextOwnProps = {
   as?: TextAs
   /** Semantic color/style intent for the text (e.g. neutral, success, danger) */
   intent?: BoxOwnProps['intent']
-  /** Explicit font size override; falls back to preset from typography */
-  fontSize?: BoxOwnProps['fontSize']
-  /** Line height of the text */
-  lineHeight?: BoxOwnProps['lineHeight']
   /** Horizontal text alignment (e.g. left, right, center) */
   textAlign?: BoxOwnProps['textAlign']
 } & {
   /** Typography preset mapping to tag and font size (h1–h6, body, lead, etc.) */
   typography?: TextTypography
+  fontSize?: ResponsiveProp<ScaleValue | string>
+  lineHeight?: ResponsiveProp<number | string>
   bold?: boolean
   /** Prevents wrapping, rendering all text on a single line */
   italic?: boolean
@@ -48,7 +46,7 @@ const TYPOGRAPHY_TO_PROPS: Record<
   TextTypography,
   {
     as: TextAs
-    fontSize: BoxOwnProps['fontSize']
+    fontSize: TextOwnProps['fontSize']
   }
 > = {
   caption: { as: 'p', fontSize: 6 },
@@ -84,8 +82,6 @@ export const Text = ({
   style,
   ...rest
 }: TextProps) => {
-  const preset = { ...TYPOGRAPHY_TO_PROPS[typography] }
-
   return (
     <Box
       ref={ref}
@@ -93,8 +89,6 @@ export const Text = ({
       className={classNames(withPrefix('text'), className)}
       variant="ghost"
       intent={intent}
-      fontSize={fontSize ?? preset.fontSize}
-      lineHeight={lineHeight}
       textAlign={textAlign}
       style={{
         ...(clampLines && clampLines > 0
@@ -109,6 +103,10 @@ export const Text = ({
         ...(italic ? { fontStyle: 'italic' } : {}),
         ...(noWrap ? { whiteSpace: 'nowrap' } : {}),
         ...(truncate ? { whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' } : {}),
+        ...getCssVars('text', {
+          fontSize: fontSize !== undefined ? fontSize : TYPOGRAPHY_TO_PROPS[typography].fontSize,
+          lineHeight,
+        }),
         ...style,
       }}
       {...getDataAttrs('text', { typography })}

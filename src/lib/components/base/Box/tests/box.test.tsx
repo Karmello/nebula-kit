@@ -50,20 +50,9 @@ describe('<Box /> runtime', () => {
     expect(style).toContain('--neb-box-ml-base: var(--neb-scale-12)')
   })
 
-  it('emits fontSize (token or string), lineHeight (number|string), textAlign', () => {
-    render(
-      <Box
-        data-testid="box"
-        fontSize={{ base: 10, lg: 14 }}
-        lineHeight={{ base: 1.3, md: '150%' }}
-        textAlign={{ base: 'left', md: 'center' }}
-      />
-    )
+  it('emits textAlign', () => {
+    render(<Box data-testid="box" textAlign={{ base: 'left', md: 'center' }} />)
     const style = screen.getByTestId('box').getAttribute('style') || ''
-    expect(style).toContain('--neb-box-font-size-base: var(--neb-scale-10)')
-    expect(style).toContain('--neb-box-font-size-lg: var(--neb-scale-14)')
-    expect(style).toContain('--neb-box-line-height-base: 1.3')
-    expect(style).toContain('--neb-box-line-height-md: 150%')
     expect(style).toContain('--neb-box-text-align-base: left')
     expect(style).toContain('--neb-box-text-align-md: center')
   })

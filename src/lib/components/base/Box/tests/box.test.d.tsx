@@ -22,16 +22,6 @@ expectError(<Box variant="made-up" />)
 // data attrs booleans
 expectType<JSX.Element>(<Box interactive disabled />)
 
-// fontSize (token | string, responsive ok)
-expectType<JSX.Element>(<Box fontSize={10} />)
-expectType<JSX.Element>(<Box fontSize="14px" />)
-expectType<JSX.Element>(<Box fontSize={{ base: 8, md: 12 }} />)
-
-// lineHeight (number | string)
-expectType<JSX.Element>(<Box lineHeight={1.4} />)
-expectType<JSX.Element>(<Box lineHeight="150%" />)
-expectType<JSX.Element>(<Box lineHeight={{ base: 1.2, lg: 'normal' }} />)
-
 // textAlign (union with globals if you used csstype)
 expectType<JSX.Element>(<Box textAlign="center" />)
 expectType<JSX.Element>(<Box textAlign={{ base: 'left', md: 'right' }} />)

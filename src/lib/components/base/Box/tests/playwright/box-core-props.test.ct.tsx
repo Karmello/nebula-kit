@@ -33,18 +33,9 @@ test.describe('Box - core props', () => {
     await expect(cmp).toHaveCSS('bottom', '11px')
   })
 
-  test('fontSize / lineHeight / textAlign (base)', async ({ mount }) => {
-    const cmp = await mount(<Box fontSize="18px" lineHeight="1.4" textAlign="center" />)
-    await expect(cmp).toHaveCSS('font-size', '18px')
-    await expect(cmp).toHaveCSS('line-height', '25.2px')
+  test('textAlign (base)', async ({ mount }) => {
+    const cmp = await mount(<Box textAlign="center" />)
     await expect(cmp).toHaveCSS('text-align', 'center')
-  })
-
-  test('fontSize responsive override (lg beats base), lineHeight fallback', async ({ mount, page }) => {
-    await page.setViewportSize(vp.lg)
-    const cmp = await mount(<Box fontSize={{ base: '14px', lg: '20px' }} lineHeight="1.2" />)
-    await expect(cmp).toHaveCSS('font-size', '20px')
-    await expect(cmp).toHaveCSS('line-height', '24px')
   })
 
   test('block/inline sizes (width/height) + min/max', async ({ mount }) => {

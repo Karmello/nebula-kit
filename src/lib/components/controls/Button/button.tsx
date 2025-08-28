@@ -1,11 +1,9 @@
 import { ButtonHTMLAttributes, Ref } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, WithIcon, WithIconOwnProps } from 'lib/components'
+import { Box, BoxOwnProps, Text, WithIcon, WithIconOwnProps } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { ScaleValue, Size } from 'lib/definitions'
-
-import './button.scss'
 
 export type ButtonSize = Extract<Size, 'sm' | 'md' | 'lg'>
 
@@ -74,10 +72,21 @@ export const Button = ({
       disabled={disabled}
       interactive
       overflowX="hidden"
+      style={{
+        fontFamily: 'inherit',
+        lineHeight: 1,
+        cursor: 'pointer',
+        display: 'inline-flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        whiteSpace: 'nowrap',
+        userSelect: 'none',
+        ...rest.style,
+      }}
       {...BUTTON_SIZE_TO_PROPS[size]}
     >
       <WithIcon iconName={iconName} iconPosition={iconPosition}>
-        {children}
+        <Text bold>{children}</Text>
       </WithIcon>
     </Box>
   )

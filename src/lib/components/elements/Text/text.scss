@@ -1,7 +1,34 @@
+@use 'styles/mixins/generate-css-vars.scss' as *;
+
+$neb-text-props: font-size, line-height;
+
 .neb-text {
-  margin: 0;
   font-family: inherit;
   color: inherit;
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+
+  --neb-box-font-size-base: inherit;
+  --neb-box-line-height-base: normal;
+
+  @include generate-css-vars($neb-text-props, base, text);
+
+  @media (min-width: 480px) {
+    @include generate-css-vars($neb-text-props, sm, text);
+  }
+
+  @media (min-width: 768px) {
+    @include generate-css-vars($neb-text-props, md, text);
+  }
+
+  @media (min-width: 1024px) {
+    @include generate-css-vars($neb-text-props, lg, text);
+  }
+
+  @media (min-width: 1280px) {
+    @include generate-css-vars($neb-text-props, xl, text);
+  }
 }
 
 .neb-text[data-neb-text-typography='h1'],

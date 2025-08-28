@@ -16,7 +16,7 @@ export type PolymorphicProps<E extends ElementType, OwnProps> = Omit<ComponentPr
   as?: E
 } & OwnProps
 
-export type CompWithCssVarsPrefix = 'box' | 'flex' | 'grid' | 'table' | 'cluster'
+export type CompWithCssVarsPrefix = 'box' | 'text' | 'flex' | 'grid' | 'table' | 'cluster'
 
 export type BoxVariant = (typeof BOX_VARIANTS)[number]
 export type BoxIntent = (typeof BOX_INTENTS)[number]
