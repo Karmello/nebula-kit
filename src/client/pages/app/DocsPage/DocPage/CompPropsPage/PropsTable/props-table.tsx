@@ -17,7 +17,9 @@ export const PropsTable = ({ data }: Props) => {
           <Table.Row intent="tertiary">
             <Table.HeadCell style={{ width: '17ch' }}>Name</Table.HeadCell>
             <Table.HeadCell style={{ width: '30ch' }}>Options</Table.HeadCell>
-            <Table.HeadCell style={{ width: '10ch' }}>Default</Table.HeadCell>
+            <Table.HeadCell textAlign="center" style={{ width: '10ch' }}>
+              Default
+            </Table.HeadCell>
             {isSomeRequired ? <Table.HeadCell style={{ width: '10ch' }}>Required</Table.HeadCell> : null}
             {isSomeResponsive ? <Table.HeadCell style={{ width: '10ch' }}>Responsive</Table.HeadCell> : null}
             <Table.HeadCell style={{ width: '50ch' }}>Description</Table.HeadCell>
@@ -30,7 +32,7 @@ export const PropsTable = ({ data }: Props) => {
                 <Text bold>{name}</Text>
               </Table.Cell>
               <Table.Cell>{typeof options === 'string' ? options : options.join(', ')}</Table.Cell>
-              <Table.Cell>{defaultValue}</Table.Cell>
+              <Table.Cell textAlign="center">{defaultValue}</Table.Cell>
               {isSomeRequired ? (
                 <Table.Cell textAlign="center">
                   {isRequired ? <SvgIcon name="check" intent="primary" /> : ''}

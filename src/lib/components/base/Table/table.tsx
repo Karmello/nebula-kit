@@ -33,7 +33,7 @@ export const Table = ({
 }: TableProps) => {
   return (
     <TableContext value={{ variant, intent, layout }}>
-      <Box className={withPrefix('table-container')} maxBlockSize="100%">
+      <Box className={withPrefix('table-container')} overflowX="auto">
         <Box
           variant={variant}
           intent={intent}
@@ -45,7 +45,7 @@ export const Table = ({
             display: 'table',
             borderCollapse: 'collapse',
             tableLayout: layout,
-            width: '100%',
+            inlineSize: '100%',
             ...(stickyHeader
               ? {
                   position: 'sticky',

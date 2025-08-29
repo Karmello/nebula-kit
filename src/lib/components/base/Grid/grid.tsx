@@ -17,27 +17,16 @@ import './grid.scss'
 type GridAs = 'div' | 'section' | 'main' | 'article' | 'aside' | 'nav' | 'ul' | 'ol'
 
 export interface GridOwnProps {
-  /** Polymorphic prop to change the rendered element type */
   as?: GridAs
-  /** Column track template or count (e.g. "repeat(12, 1fr)" or 12); supports responsive values */
   columns?: ResponsiveProp<string | number>
-  /** Row track template or count (e.g. "auto 1fr auto" or 3); supports responsive values */
   rows?: ResponsiveProp<string | number>
-  /** Auto‑placement strategy for items (grid-auto-flow); responsive */
-  autoFlow?: ResponsiveProp<CssGridAutoFlow>
-  /** Size for implicitly created rows (grid-auto-rows); responsive */
   autoRows?: ResponsiveProp<string>
-  /** Size for implicitly created columns (grid-auto-columns); responsive */
   autoColumns?: ResponsiveProp<string>
-  /** Shorthand alignment for items within their cells (place-items); responsive */
-  placeItems?: ResponsiveProp<CssGridPlaceItems>
-  /** Shorthand alignment for the grid within its container (place-content); responsive */
-  placeContent?: ResponsiveProp<CssGridPlaceContent>
-  /** Shorthand gap between grid items; accepts scale tokens or raw CSS; responsive */
+  autoFlow?: ResponsiveProp<`${CssGridAutoFlow}`>
+  placeItems?: ResponsiveProp<`${CssGridPlaceItems}`>
+  placeContent?: ResponsiveProp<`${CssGridPlaceContent}`>
   gap?: ResponsiveProp<ScaleValue | string>
-  /** Vertical spacing between rows; overrides gap on the block axis; responsive */
   rowGap?: ResponsiveProp<ScaleValue | string>
-  /** Horizontal spacing between columns; overrides gap on the inline axis; responsive */
   columnGap?: ResponsiveProp<ScaleValue | string>
 }
 

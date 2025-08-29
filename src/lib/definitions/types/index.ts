@@ -30,19 +30,6 @@ export type TextTypography =
   | 'secondary'
   | 'caption'
 
-export type CssGridAutoFlow = 'row' | 'column' | 'dense' | 'row dense' | 'column dense'
-
-export type CssGridPlaceItems = 'start' | 'center' | 'end' | 'stretch'
-
-export type CssGridPlaceContent =
-  | 'start'
-  | 'center'
-  | 'end'
-  | 'stretch'
-  | 'space-between'
-  | 'space-around'
-  | 'space-evenly'
-
 export type ComponentMeta<PropsType> = {
   name: string
   description: string

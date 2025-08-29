@@ -23,7 +23,7 @@ export const Main = ({ children, ...rest }: Omit<BoxProps, 'as' | 'minBlockSize'
   }, [isDesktop])
 
   return (
-    <Box {...rest} as="section" minBlockSize={0}>
+    <Box {...rest} as="section" minInlineSize={0}>
       <Flex align="center" direction={sidePosition === 'left' ? 'row' : 'row-reverse'} gap={10}>
         <IconButton
           iconName={getToggleIconName(sidePosition, sideOpen)}
@@ -34,7 +34,7 @@ export const Main = ({ children, ...rest }: Omit<BoxProps, 'as' | 'minBlockSize'
         {slots.Header}
       </Flex>
       <Spacer size={10} />
-      <Box overflowX="auto">{children}</Box>
+      <Box>{children}</Box>
     </Box>
   )
 }

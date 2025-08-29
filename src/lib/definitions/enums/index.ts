@@ -98,3 +98,28 @@ export enum CssFlexAlign {
   'stretch' = 'stretch',
   'baseline' = 'baseline',
 }
+
+export enum CssGridAutoFlow {
+  'row' = 'row',
+  'column' = 'column',
+  'dense' = 'dense',
+  'row dense' = 'row dense',
+  'column dense' = 'column dense',
+}
+
+export enum CssGridPlaceItems {
+  'start' = 'start',
+  'center' = 'center',
+  'end' = 'end',
+  'stretch' = 'stretch',
+}
+
+export enum CssGridPlaceContent {
+  'start' = 'start',
+  'center' = 'center',
+  'end' = 'end',
+  'stretch' = 'stretch',
+  'space-between' = 'space-between',
+  'space-around' = 'space-around',
+  'space-evenly' = 'space-evenly',
+}
