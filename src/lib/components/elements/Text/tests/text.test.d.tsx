@@ -32,8 +32,7 @@ expectType<JSX.Element>(<Text lineHeight="normal">text</Text>)
 
 // textAlign
 expectType<JSX.Element>(<Text textAlign="center">text</Text>)
-expectType<JSX.Element>(<Text textAlign={{ base: 'left', md: 'right' }}>text</Text>)
-expectType<JSX.Element>(<Text textAlign="inherit">text</Text>)
+expectType<JSX.Element>(<Text textAlign={{ base: 'start', md: 'end' }}>text</Text>)
 expectError(<Text textAlign="middle">text</Text>)
 
 // iconName

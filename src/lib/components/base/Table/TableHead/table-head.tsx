@@ -10,8 +10,11 @@ export const TableHead = ({ className, ...rest }: TableHeadProps) => {
     <Box
       {...rest}
       as="thead"
-      display="table-header-group"
       className={classNames(withPrefix('table-head'), className)}
+      style={{
+        ...rest.style,
+        display: 'table-header-group',
+      }}
     />
   )
 }

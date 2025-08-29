@@ -19,3 +19,9 @@ export enum Slot {
   main = 'Main',
   footer = 'Footer',
 }
+
+// export enum BoxVariant {
+//   solid = 'solid',
+//   outline = 'outline',
+//   ghost = 'ghost',
+// }

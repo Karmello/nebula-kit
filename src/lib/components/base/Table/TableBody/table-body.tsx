@@ -10,8 +10,11 @@ export const TableBody = ({ className, ...rest }: TableBodyProps) => {
     <Box
       {...rest}
       as="tbody"
-      display="table-row-group"
       className={classNames(withPrefix('table-body'), className)}
+      style={{
+        ...rest.style,
+        display: 'table-row-group',
+      }}
     />
   )
 }

@@ -51,9 +51,9 @@ describe('<Box /> runtime', () => {
   })
 
   it('emits textAlign', () => {
-    render(<Box data-testid="box" textAlign={{ base: 'left', md: 'center' }} />)
+    render(<Box data-testid="box" textAlign={{ base: 'start', md: 'center' }} />)
     const style = screen.getByTestId('box').getAttribute('style') || ''
-    expect(style).toContain('--neb-box-text-align-base: left')
+    expect(style).toContain('--neb-box-text-align-base: start')
     expect(style).toContain('--neb-box-text-align-md: center')
   })
 

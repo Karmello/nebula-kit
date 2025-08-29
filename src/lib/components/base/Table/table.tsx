@@ -33,16 +33,16 @@ export const Table = ({
 }: TableProps) => {
   return (
     <TableContext value={{ variant, intent, layout }}>
-      <Box className={withPrefix('table-container')}>
+      <Box className={withPrefix('table-container')} maxBlockSize="100%">
         <Box
           variant={variant}
           intent={intent}
           {...rest}
           className={classNames(withPrefix('table'), className)}
           as="table"
-          display="table"
           {...getDataAttrs('table', { zebra })}
           style={{
+            display: 'table',
             borderCollapse: 'collapse',
             tableLayout: layout,
             width: '100%',

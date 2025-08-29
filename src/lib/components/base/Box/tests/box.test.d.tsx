@@ -24,7 +24,7 @@ expectType<JSX.Element>(<Box interactive disabled />)
 
 // textAlign (union with globals if you used csstype)
 expectType<JSX.Element>(<Box textAlign="center" />)
-expectType<JSX.Element>(<Box textAlign={{ base: 'left', md: 'right' }} />)
+expectType<JSX.Element>(<Box textAlign={{ base: 'start', md: 'end' }} />)
 expectError(<Box textAlign="middle" />)
 
 // blockSize/minBlockSize/maxBlockSize (token | string, responsive ok)

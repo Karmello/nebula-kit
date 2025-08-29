@@ -1,0 +1,51 @@
+import { SvgIcon, Table, Text } from 'lib/components'
+import { ComponentMeta } from 'lib/definitions'
+
+type Props = {
+  data: ComponentMeta['props']
+}
+
+export const PropsTable = ({ data }: Props) => {
+  const isSomeRequired = data.some(prop => prop.required)
+  const isSomeResponsive = data.some(prop => prop.responsive)
+
+  return (
+    <>
+      <Text typography="h6">{data[0].category}</Text>
+      <Table zebra mt={5} mb={30}>
+        <Table.Head>
+          <Table.Row intent="tertiary">
+            <Table.HeadCell style={{ width: '17ch' }}>Name</Table.HeadCell>
+            <Table.HeadCell style={{ width: '30ch' }}>Options</Table.HeadCell>
+            <Table.HeadCell style={{ width: '10ch' }}>Default</Table.HeadCell>
+            {isSomeRequired ? <Table.HeadCell style={{ width: '10ch' }}>Required</Table.HeadCell> : null}
+            {isSomeResponsive ? <Table.HeadCell style={{ width: '10ch' }}>Responsive</Table.HeadCell> : null}
+            <Table.HeadCell style={{ width: '50ch' }}>Description</Table.HeadCell>
+          </Table.Row>
+        </Table.Head>
+        <Table.Body>
+          {data.map(({ name, options, required, responsive, defaultValue, description }) => (
+            <Table.Row key={name}>
+              <Table.Cell>
+                <Text bold>{name}</Text>
+              </Table.Cell>
+              <Table.Cell>{typeof options === 'string' ? options : options.join(', ')}</Table.Cell>
+              <Table.Cell>{defaultValue}</Table.Cell>
+              {isSomeRequired ? (
+                <Table.Cell textAlign="center">
+                  {required ? <SvgIcon name="check" intent="primary" /> : ''}
+                </Table.Cell>
+              ) : null}
+              {isSomeResponsive ? (
+                <Table.Cell textAlign="center">
+                  {responsive ? <SvgIcon name="check" intent="primary" /> : ''}
+                </Table.Cell>
+              ) : null}
+              <Table.Cell>{description}</Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </Table>
+    </>
+  )
+}

@@ -14,10 +14,10 @@
     "sourceMap": true,
     "baseUrl": ".",
     "outDir": "dist",
-    "lib": ["ES2021.String"],
+    "lib": ["ES2021.String", "ES2024"],
     "paths": {
       "client/*": ["src/client/*"],
-      "lib/*": ["src/lib/*"],
+      "lib/*": ["src/lib/*"]
     }
   },
   "include": ["src/**/*"]

@@ -7,7 +7,15 @@ export type TableRowProps = Pick<BoxProps, 'children' | 'className' | 'style'> &
 
 export const TableRow = ({ className, ...rest }: TableRowProps) => {
   return (
-    <Box {...rest} as="tr" display="table-row" className={classNames(withPrefix('table-row'), className)} />
+    <Box
+      {...rest}
+      as="tr"
+      className={classNames(withPrefix('table-row'), className)}
+      style={{
+        ...rest.style,
+        display: 'table-row',
+      }}
+    />
   )
 }
 

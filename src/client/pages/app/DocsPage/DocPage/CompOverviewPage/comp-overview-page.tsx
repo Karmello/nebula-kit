@@ -7,11 +7,11 @@ export const CompOverviewPage = () => {
 
   let META_DATA: ComponentMeta
 
-  try {
-    META_DATA = require(`../../../../../../meta/${itemKey}.json`)
-  } catch {
-    META_DATA = null
-  }
+  // try {
+  //   META_DATA = require(`../../../../../../meta/${itemKey}.json`)
+  // } catch {
+  //   META_DATA = null
+  // }
 
   if (!META_DATA) {
     return null

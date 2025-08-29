@@ -25,4 +25,4 @@ export const BOX_INTENTS = [
   'inverse',
 ] as const
 
-export const DEFAULT_BORDER_RADIUS: ScaleValue = 2
+export const DEFAULT_BORDER_RADIUS: ScaleValue = 0

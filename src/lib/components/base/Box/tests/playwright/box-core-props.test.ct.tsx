@@ -89,7 +89,7 @@ test.describe('Box - core props', () => {
 
   test('text alignment responsive override', async ({ mount, page }) => {
     await page.setViewportSize(vp.sm)
-    const cmp = await mount(<Box textAlign={{ base: 'left', sm: 'right' }} />)
-    await expect(cmp).toHaveCSS('text-align', 'right')
+    const cmp = await mount(<Box textAlign={{ base: 'start', sm: 'end' }} />)
+    await expect(cmp).toHaveCSS('text-align', 'end')
   })
 })

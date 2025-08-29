@@ -15,8 +15,11 @@ export const TableCell = ({ className, ...rest }: TableCellProps) => {
       p={5}
       {...rest}
       as="td"
-      display="table-cell"
       className={classNames(withPrefix('table-cell'), className)}
+      style={{
+        ...rest.style,
+        display: 'table-cell',
+      }}
     />
   )
 }

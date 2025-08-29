@@ -2,7 +2,7 @@ import { CSSProperties, ReactNode, Ref } from 'react'
 import classNames from 'classnames'
 
 import { Box, BoxOwnProps, WithIcon, WithIconOwnProps } from 'lib/components'
-import { ResponsiveProp, ScaleValue, TextTypography } from 'lib/definitions'
+import { BoxIntent, ResponsiveProp, ScaleValue, TextTypography } from 'lib/definitions'
 import { withPrefix, getDataAttrs, getCssVars } from 'lib/helpers'
 
 import './text.scss'
@@ -12,11 +12,10 @@ type TextAs = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'
 export type TextOwnProps = {
   /** Underlying HTML tag to render for the text element (defaults to the tag implied by typography) */
   as?: TextAs
-  /** Semantic color/style intent for the text (e.g. neutral, success, danger) */
-  intent?: BoxOwnProps['intent']
   /** Horizontal text alignment (e.g. left, right, center) */
   textAlign?: BoxOwnProps['textAlign']
 } & {
+  intent?: BoxIntent
   /** Typography preset mapping to tag and font size (h1–h6, body, lead, etc.) */
   typography?: TextTypography
   fontSize?: ResponsiveProp<ScaleValue | string>
@@ -69,7 +68,7 @@ export const Text = ({
   intent = 'neutral',
   fontSize,
   lineHeight = 'normal',
-  textAlign = 'initial',
+  textAlign = 'start',
   typography = 'body',
   bold = false,
   italic = false,
@@ -88,9 +87,9 @@ export const Text = ({
       as={as || TYPOGRAPHY_TO_PROPS[typography].as}
       className={classNames(withPrefix('text'), className)}
       variant="ghost"
-      intent={intent}
       textAlign={textAlign}
       style={{
+        color: intent ? `var(--neb-text-${intent})` : undefined,
         ...(clampLines && clampLines > 0
           ? {
               display: '-webkit-box',

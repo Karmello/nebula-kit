@@ -33,35 +33,13 @@ export type TextTypography =
   | 'secondary'
   | 'caption'
 
-export type CssDisplay =
-  | 'block'
-  | 'inline'
-  | 'inline-block'
-  | 'table'
-  | 'table-header-group'
-  | 'table-row-group'
-  | 'table-footer-group'
-  | 'table-row'
-  | 'table-cell'
-  | 'revert'
-  | 'initial'
-  | 'none'
+export type CssDisplay = 'block' | 'inline' | 'inline-block' | 'flow-root' | 'contents' | 'none'
 
-export type CssOverflow = 'visible' | 'auto' | 'hidden' | 'scroll'
+export type CssOverflow = 'visible' | 'hidden' | 'auto' | 'scroll'
 
 export type CssPosition = 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky'
 
-export type CssTextAlign =
-  | 'left'
-  | 'right'
-  | 'center'
-  | 'justify'
-  | 'start'
-  | 'end'
-  | 'inherit'
-  | 'initial'
-  | 'unset'
-  | 'revert'
+export type CssTextAlign = 'start' | 'center' | 'end' | 'justify'
 
 export type CssFlexDirection = 'row' | 'row-reverse' | 'column' | 'column-reverse'
 
@@ -94,10 +72,11 @@ export type ComponentMeta = {
   name: string
   description: string
   props: {
+    category: string
     name: string
-    type: string
     options: (string | number)[] | string
     required: boolean
+    responsive: boolean
     defaultValue: string
     description: string
   }[]

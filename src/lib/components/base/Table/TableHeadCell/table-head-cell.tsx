@@ -16,8 +16,11 @@ export const TableHeadCell = ({ className, ...rest }: TableHeadCellProps) => {
       p={5}
       {...rest}
       as="th"
-      display="table-cell"
       className={classNames(withPrefix('table-head-cell'), className)}
+      style={{
+        ...rest.style,
+        display: 'table-cell',
+      }}
     />
   )
 }

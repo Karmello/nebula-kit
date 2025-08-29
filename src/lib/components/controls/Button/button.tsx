@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, Ref } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, Text, WithIcon, WithIconOwnProps } from 'lib/components'
+import { Box, BoxOwnProps, Text, TextOwnProps, WithIcon, WithIconOwnProps } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { ScaleValue, Size } from 'lib/definitions'
 
@@ -12,7 +12,7 @@ export type ButtonOwnProps = {
   variant?: BoxOwnProps['variant']
   /** Semantic intent for coloring (e.g. primary, success, danger, neutral) */
   intent?: BoxOwnProps['intent']
-  textIntent?: BoxOwnProps['textIntent']
+  textIntent?: TextOwnProps['intent']
   /** Disables interaction and applies disabled styling */
   disabled?: BoxOwnProps['disabled']
   borderRadius?: BoxOwnProps['borderRadius']
@@ -68,7 +68,6 @@ export const Button = ({
       as="button"
       variant={variant}
       intent={intent}
-      textIntent={textIntent}
       disabled={disabled}
       interactive
       overflowX="hidden"
@@ -86,7 +85,11 @@ export const Button = ({
       {...BUTTON_SIZE_TO_PROPS[size]}
     >
       <WithIcon iconName={iconName} iconPosition={iconPosition}>
-        <Text bold>{children}</Text>
+        {children ? (
+          <Text intent={textIntent} bold>
+            {children}
+          </Text>
+        ) : null}
       </WithIcon>
     </Box>
   )

@@ -56,7 +56,7 @@ test.describe('Box - combined props smoke tests', () => {
         inlineSize="240px"
         minInlineSize="180px"
         maxInlineSize="300px"
-        textAlign="right"
+        textAlign="end"
       />
     )
 
@@ -72,7 +72,7 @@ test.describe('Box - combined props smoke tests', () => {
     await expect(cmp).toHaveCSS('min-inline-size', '180px')
     await expect(cmp).toHaveCSS('max-inline-size', '300px')
 
-    await expect(cmp).toHaveCSS('text-align', 'right')
+    await expect(cmp).toHaveCSS('text-align', 'end')
   })
 
   test('responsive mix: display/overflow at md, paddings remain intact', async ({ mount, page }) => {

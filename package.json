@@ -34,7 +34,6 @@
     "jest-ci": "NODE_ENV=test jest --silent --detectOpenHandles",
     "jest-cov": "NODE_ENV=test jest --watchAll --coverage -u",
     "pw": "playwright test -c playwright.config.ts",
-    "meta": "rimraf src/meta && ts-node src/generate-meta/index.ts",
     "dist": "./scripts/distribute.sh",
     "lib": "git push && yarn dist && npm publish",
     "prepare": "husky install"

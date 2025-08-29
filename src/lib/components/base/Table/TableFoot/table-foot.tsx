@@ -8,10 +8,13 @@ export type TableFootProps = Pick<BoxProps, 'children' | 'className' | 'style'> 
 export const TableFoot = ({ className, ...rest }: TableFootProps) => {
   return (
     <Box
-      as="tfoot"
-      display="table-footer-group"
-      className={classNames(withPrefix('table-foot'), className)}
       {...rest}
+      as="tfoot"
+      className={classNames(withPrefix('table-foot'), className)}
+      style={{
+        ...rest.style,
+        display: 'table-footer-group',
+      }}
     />
   )
 }
