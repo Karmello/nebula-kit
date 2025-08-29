@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
@@ -26,6 +26,10 @@ export const App = () => {
     i18n.changeLanguage(lang)
     push(`${pathname}?lang=${lang}&theme=${theme}`, { replace: true })
   }, [lang, theme])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
 
   return (
     <>

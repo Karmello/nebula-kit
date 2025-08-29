@@ -18,18 +18,6 @@ export type PolymorphicProps<E extends ElementType, OwnProps> = Omit<ComponentPr
 
 export type CompWithCssVarsPrefix = 'box' | 'text' | 'flex' | 'grid' | 'table' | 'cluster'
 
-export type TextTypography =
-  | 'h1'
-  | 'h2'
-  | 'h3'
-  | 'h4'
-  | 'h5'
-  | 'h6'
-  | 'lead'
-  | 'body'
-  | 'secondary'
-  | 'caption'
-
 export type ComponentMeta<PropsType> = {
   name: string
   description: string

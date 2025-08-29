@@ -123,3 +123,43 @@ export enum CssGridPlaceContent {
   'space-around' = 'space-around',
   'space-evenly' = 'space-evenly',
 }
+
+export enum GridAs {
+  'div' = 'div',
+  'section' = 'section',
+  'main' = 'main',
+  'article' = 'article',
+  'aside' = 'article',
+  'nav' = 'nav',
+  'ul' = 'ul',
+  'ol' = 'ol',
+}
+
+export enum TextAs {
+  'h1' = 'h1',
+  'h2' = 'h2',
+  'h3' = 'h3',
+  'h4' = 'h4',
+  'h5' = 'h5',
+  'h6' = 'h6',
+  'p' = 'p',
+  'span' = 'span',
+}
+
+export enum TextTypography {
+  'h1' = 'h1',
+  'h2' = 'h2',
+  'h3' = 'h3',
+  'h4' = 'h4',
+  'h5' = 'h5',
+  'h6' = 'h6',
+  'lead' = 'lead',
+  'body' = 'body',
+  'secondary' = 'secondary',
+  'caption' = 'caption',
+}
+
+export enum IconPosition {
+  'left' = 'left',
+  'right' = 'right',
+}

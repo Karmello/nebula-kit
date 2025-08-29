@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 
+import { IconPosition } from 'lib/definitions'
 import { SvgIcon } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { IconName } from 'lib/icons'
@@ -9,7 +10,7 @@ import './with-icon.scss'
 export type WithIconOwnProps = {
   children: ReactNode
   iconName?: IconName
-  iconPosition?: 'left' | 'right'
+  iconPosition?: `${IconPosition}`
 }
 
 export const WithIcon = ({ children, iconName, iconPosition = 'left' }: WithIconOwnProps) => {

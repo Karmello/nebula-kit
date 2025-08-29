@@ -2,35 +2,25 @@ import { CSSProperties, ReactNode, Ref } from 'react'
 import classNames from 'classnames'
 
 import { Box, BoxOwnProps, WithIcon, WithIconOwnProps } from 'lib/components'
-import { BoxIntent, ResponsiveProp, ScaleValue, TextTypography } from 'lib/definitions'
+import { BoxIntent, ResponsiveProp, ScaleValue, TextAs, TextTypography } from 'lib/definitions'
 import { withPrefix, getDataAttrs, getCssVars } from 'lib/helpers'
 
 import './text.scss'
 
-type TextAs = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'
-
 export type TextOwnProps = {
-  /** Underlying HTML tag to render for the text element (defaults to the tag implied by typography) */
-  as?: TextAs
-  /** Horizontal text alignment (e.g. left, right, center) */
+  as?: `${TextAs}`
   textAlign?: BoxOwnProps['textAlign']
 } & {
   intent?: `${BoxIntent}`
-  /** Typography preset mapping to tag and font size (h1–h6, body, lead, etc.) */
-  typography?: TextTypography
+  typography?: `${TextTypography}`
   fontSize?: ResponsiveProp<ScaleValue | string>
   lineHeight?: ResponsiveProp<number | string>
   bold?: boolean
-  /** Prevents wrapping, rendering all text on a single line */
   italic?: boolean
   noWrap?: boolean
-  /** Truncates overflowing text with an ellipsis */
   truncate?: boolean
-  /** Number of lines before truncating with line-clamp */
   clampLines?: number
-  /** Optional icon name to display alongside text */
   iconName?: WithIconOwnProps['iconName']
-  /** Position of the icon relative to the text (left or right) */
   iconPosition?: WithIconOwnProps['iconPosition']
 }
 
@@ -41,10 +31,10 @@ export type TextProps = TextOwnProps & {
   style?: CSSProperties
 }
 
-const TYPOGRAPHY_TO_PROPS: Record<
+export const TYPOGRAPHY_TO_PROPS: Record<
   TextTypography,
   {
-    as: TextAs
+    as: `${TextAs}`
     fontSize: TextOwnProps['fontSize']
   }
 > = {
@@ -60,7 +50,6 @@ const TYPOGRAPHY_TO_PROPS: Record<
   h1: { as: 'h1', fontSize: 30 },
 }
 
-/** Text is a polymorphic typography component built on Box. It maps semantic variants (h1-h6, body, lead, secondary, caption) to matching HTML tags and font sizes, while also exposing fine-grained props for alignment, wrapping, truncation, line-clamping, and optional icons. It’s meant to be the single entry point for consistent text styling across the system. */
 export const Text = ({
   children,
   ref,

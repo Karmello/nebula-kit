@@ -29,7 +29,9 @@ export const PropsTable = ({ data }: Props) => {
           {data.map(({ name, options, isRequired, isResponsive, defaultValue, description }) => (
             <Table.Row key={name}>
               <Table.Cell>
-                <Text bold>{name}</Text>
+                <Text intent="primary" bold>
+                  {name}
+                </Text>
               </Table.Cell>
               <Table.Cell>{typeof options === 'string' ? options : options.join(', ')}</Table.Cell>
               <Table.Cell textAlign="center">{defaultValue}</Table.Cell>

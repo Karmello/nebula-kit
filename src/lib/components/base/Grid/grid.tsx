@@ -7,6 +7,7 @@ import {
   CssGridAutoFlow,
   CssGridPlaceContent,
   CssGridPlaceItems,
+  GridAs,
   PolymorphicProps,
   ResponsiveProp,
   ScaleValue,
@@ -14,10 +15,10 @@ import {
 
 import './grid.scss'
 
-type GridAs = 'div' | 'section' | 'main' | 'article' | 'aside' | 'nav' | 'ul' | 'ol'
+type GridAsType = `${GridAs}`
 
 export interface GridOwnProps {
-  as?: GridAs
+  as?: GridAsType
   columns?: ResponsiveProp<string | number>
   rows?: ResponsiveProp<string | number>
   autoRows?: ResponsiveProp<string>
@@ -30,10 +31,9 @@ export interface GridOwnProps {
   columnGap?: ResponsiveProp<ScaleValue | string>
 }
 
-export type GridProps<E extends GridAs = 'div'> = PolymorphicProps<E, BoxOwnProps & GridOwnProps>
+export type GridProps<E extends GridAsType = 'div'> = PolymorphicProps<E, BoxOwnProps & GridOwnProps>
 
-/** Grid is a polymorphic, responsive 2‑D layout primitive built on Box. It exposes a CSS‑variable API for track templates, auto‑placement, alignment, and per‑axis gaps - great for card grids, dashboards, and complex layouts. */
-export const Grid = <E extends GridAs = 'div'>({
+export const Grid = <E extends GridAsType = 'div'>({
   as = 'div' as E,
   className,
   style,

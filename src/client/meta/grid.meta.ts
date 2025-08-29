@@ -1,11 +1,18 @@
 import { GridOwnProps } from 'lib/components'
 
-import { ComponentMeta, CssGridAutoFlow, CssGridPlaceItems, CssGridPlaceContent } from 'lib/definitions'
+import {
+  ComponentMeta,
+  CssGridAutoFlow,
+  CssGridPlaceItems,
+  CssGridPlaceContent,
+  GridAs,
+} from 'lib/definitions'
 
 enum PropCategory {
   layout = 'Layout',
   alignment = 'Alignment',
   spacing = 'Spacing',
+  other = 'Other',
 }
 
 const GRID_META: ComponentMeta<GridOwnProps> = {
@@ -102,6 +109,16 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
       isRequired: false,
       isResponsive: true,
       description: 'Sets the spacing between grid columns.',
+    },
+    {
+      category: PropCategory.other,
+      name: 'as',
+      options: Object.values(GridAs),
+      defaultValue: GridAs.div,
+      isRequired: false,
+      isResponsive: false,
+      description:
+        'Specifies which HTML element the grid should render as, allowing you to match semantic structure without changing its layout behavior.',
     },
   ],
 }
