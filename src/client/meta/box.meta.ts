@@ -1,4 +1,4 @@
-import { BoxOwnProps } from 'lib/components'
+import { BOX_DEFAULT_INTENT, BOX_DEFAULT_VARIANT, BoxOwnProps } from 'lib/components'
 
 import {
   BoxIntent,
@@ -27,7 +27,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
       category: PropCategory.appearance,
       name: 'variant',
       options: Object.values(BoxVariant),
-      defaultValue: BoxVariant.ghost,
+      defaultValue: BOX_DEFAULT_VARIANT,
       isRequired: false,
       isResponsive: false,
       description:
@@ -37,7 +37,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
       category: PropCategory.appearance,
       name: 'intent',
       options: Object.values(BoxIntent),
-      defaultValue: BoxIntent.neutral,
+      defaultValue: BOX_DEFAULT_INTENT,
       isRequired: false,
       isResponsive: false,
       description:

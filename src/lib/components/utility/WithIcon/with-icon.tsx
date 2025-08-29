@@ -7,13 +7,19 @@ import { IconName } from 'lib/icons'
 
 import './with-icon.scss'
 
+export const WITH_ICON_DEFAULT_ICON_POSITION: `${IconPosition}` = 'left'
+
 export type WithIconOwnProps = {
   children: ReactNode
   iconName?: IconName
   iconPosition?: `${IconPosition}`
 }
 
-export const WithIcon = ({ children, iconName, iconPosition = 'left' }: WithIconOwnProps) => {
+export const WithIcon = ({
+  children,
+  iconName,
+  iconPosition = WITH_ICON_DEFAULT_ICON_POSITION,
+}: WithIconOwnProps) => {
   if (!iconName) {
     return children
   }

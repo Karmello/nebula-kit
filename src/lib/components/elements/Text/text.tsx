@@ -2,7 +2,7 @@ import { CSSProperties, ReactNode, Ref } from 'react'
 import classNames from 'classnames'
 
 import { Box, BoxOwnProps, WithIcon, WithIconOwnProps } from 'lib/components'
-import { BoxIntent, ResponsiveProp, ScaleValue, TextAs, TextTypography } from 'lib/definitions'
+import { BoxIntent, CssTextAlign, ResponsiveProp, ScaleValue, TextAs, TextTypography } from 'lib/definitions'
 import { withPrefix, getDataAttrs, getCssVars } from 'lib/helpers'
 
 import './text.scss'
@@ -50,15 +50,20 @@ export const TYPOGRAPHY_TO_PROPS: Record<
   h1: { as: 'h1', fontSize: 30 },
 }
 
+export const TEXT_DEFAULT_INTENT: `${BoxIntent}` = 'neutral'
+export const TEXT_DEFAULT_LINE_HEIGHT = 'normal'
+export const TEXT_DEFAULT_TEXT_ALIGN: `${CssTextAlign}` = 'start'
+export const TEXT_DEFAULT_TYPOGRAPHY: `${TextTypography}` = 'body'
+
 export const Text = ({
   children,
   ref,
   as,
-  intent = 'neutral',
+  intent = TEXT_DEFAULT_INTENT,
   fontSize,
-  lineHeight = 'normal',
-  textAlign = 'start',
-  typography = 'body',
+  lineHeight = TEXT_DEFAULT_LINE_HEIGHT,
+  textAlign = TEXT_DEFAULT_TEXT_ALIGN,
+  typography = TEXT_DEFAULT_TYPOGRAPHY,
   bold = false,
   italic = false,
   noWrap = false,

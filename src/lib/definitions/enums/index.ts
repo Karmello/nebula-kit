@@ -163,3 +163,22 @@ export enum IconPosition {
   'left' = 'left',
   'right' = 'right',
 }
+
+export enum Size {
+  'xs' = 'xs',
+  'sm' = 'sm',
+  'md' = 'md',
+  'lg' = 'lg',
+  'xl' = 'xl',
+  '2xl' = '2xl',
+  '3xl' = '3xl',
+  '4xl' = '4xl',
+  '5xl' = '5xl',
+  '6xl' = '6xl',
+}
+
+export enum ButtonSize {
+  'sm' = 'sm',
+  'md' = 'md',
+  'lg' = 'lg',
+}

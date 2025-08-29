@@ -8,7 +8,7 @@ import './dictionary'
 
 const Node = () => (
   <BrowserRouter>
-    <NebKitProvider>
+    <NebKitProvider defaultBorderRadius={3}>
       <App />
     </NebKitProvider>
   </BrowserRouter>

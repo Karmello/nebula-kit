@@ -1,4 +1,12 @@
-import { TextOwnProps } from 'lib/components'
+import {
+  TEXT_DEFAULT_INTENT,
+  TEXT_DEFAULT_LINE_HEIGHT,
+  TEXT_DEFAULT_TEXT_ALIGN,
+  TEXT_DEFAULT_TYPOGRAPHY,
+  TextOwnProps,
+  WITH_ICON_DEFAULT_ICON_POSITION,
+} from 'lib/components'
+
 import { BoxIntent, ComponentMeta, CssTextAlign, IconPosition, TextAs, TextTypography } from 'lib/definitions'
 
 import { TYPOGRAPHY_TO_PROPS } from 'lib/components'
@@ -23,7 +31,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       category: PropCategory.appearance,
       name: 'intent',
       options: Object.values(BoxIntent),
-      defaultValue: BoxIntent.neutral,
+      defaultValue: TEXT_DEFAULT_INTENT,
       isRequired: false,
       isResponsive: false,
       description: 'Applies a themed style that conveys meaning or emphasis through color and tone.',
@@ -32,7 +40,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       category: PropCategory.typography,
       name: 'typography',
       options: Object.values(TextTypography),
-      defaultValue: TextTypography.body,
+      defaultValue: TEXT_DEFAULT_TYPOGRAPHY,
       isRequired: false,
       isResponsive: false,
       description:
@@ -42,7 +50,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       category: PropCategory.typography,
       name: 'fontSize',
       options: ['ScaleValue', 'CSS'],
-      defaultValue: String(TYPOGRAPHY_TO_PROPS[TextTypography.body].fontSize),
+      defaultValue: String(TYPOGRAPHY_TO_PROPS[TEXT_DEFAULT_TYPOGRAPHY].fontSize),
       isRequired: false,
       isResponsive: true,
       description: 'Sets the text size, overriding the value provided by typography.',
@@ -51,7 +59,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       category: PropCategory.typography,
       name: 'lineHeight',
       options: ['CSS (string, number)'],
-      defaultValue: 'normal',
+      defaultValue: TEXT_DEFAULT_LINE_HEIGHT,
       isRequired: false,
       isResponsive: true,
       description: 'Sets the vertical spacing between lines of text.',
@@ -60,7 +68,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       category: PropCategory.alignment,
       name: 'textAlign',
       options: Object.values(CssTextAlign),
-      defaultValue: CssTextAlign.start,
+      defaultValue: TEXT_DEFAULT_TEXT_ALIGN,
       isRequired: false,
       isResponsive: true,
       description: 'Sets the horizontal alignment of the text within its container.',
@@ -123,7 +131,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       category: PropCategory.adornments,
       name: 'iconPosition',
       options: Object.values(IconPosition),
-      defaultValue: IconPosition.left,
+      defaultValue: WITH_ICON_DEFAULT_ICON_POSITION,
       isRequired: false,
       isResponsive: false,
       description: 'Sets where the icon appears in relation to the text.',
@@ -132,7 +140,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       category: PropCategory.other,
       name: 'as',
       options: Object.values(TextAs),
-      defaultValue: TYPOGRAPHY_TO_PROPS.body.as,
+      defaultValue: TYPOGRAPHY_TO_PROPS[TEXT_DEFAULT_TYPOGRAPHY].as,
       isRequired: false,
       isResponsive: false,
       description:

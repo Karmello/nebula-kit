@@ -3,19 +3,22 @@ import classNames from 'classnames'
 
 import { withPrefix, getCssVars, getDataAttrs, scale } from 'lib/helpers'
 import { useLibStore } from 'lib/state'
-import { PolymorphicProps } from 'lib/definitions'
+import { BoxIntent, BoxVariant, PolymorphicProps } from 'lib/definitions'
 
 import { BoxOwnProps } from './types'
 import './styles/box.scss'
 
 export type BoxProps<E extends ElementType = 'div'> = PolymorphicProps<E, BoxOwnProps>
 
+export const BOX_DEFAULT_VARIANT: `${BoxVariant}` = 'ghost'
+export const BOX_DEFAULT_INTENT: `${BoxIntent}` = 'neutral'
+
 export const Box = <E extends ElementType = 'div'>({
   as,
   className,
   style,
-  variant = 'ghost',
-  intent = 'neutral',
+  variant = BOX_DEFAULT_VARIANT,
+  intent = BOX_DEFAULT_INTENT,
   interactive = false,
   disabled = false,
   // css vars

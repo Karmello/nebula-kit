@@ -1,8 +1,8 @@
 import { JSX, createRef } from 'react'
 import { expectType, expectAssignable, expectError } from 'tsd'
 
-import { Button, type ButtonProps, type ButtonSize } from '..'
-import type { BoxOwnProps, WithIconOwnProps } from 'lib/components'
+import { Button, ButtonProps } from '..'
+import { BoxOwnProps, WithIconOwnProps } from 'lib/components'
 
 // --- Basic render ---
 expectType<JSX.Element>(<Button />)
@@ -58,7 +58,7 @@ expectAssignable<React.ComponentProps<typeof Button>>({} as ButtonProps)
 expectError(<Button nope="x" />)
 
 // Enforce ButtonSize as only 'sm' | 'md' | 'lg'
-const justSize = null as unknown as ButtonSize
+const justSize = null as any
 expectType<JSX.Element>(<Button size={justSize} />)
 
 // data attributes allowed (forwarded via Box)

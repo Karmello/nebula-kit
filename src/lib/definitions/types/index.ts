@@ -2,8 +2,6 @@ import { ComponentPropsWithRef, ElementType } from 'react'
 
 import { BREAKPOINTS, SCALE } from '..'
 
-export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl'
-
 export type Breakpoint = (typeof BREAKPOINTS)[number]
 
 export type ScaleValue = (typeof SCALE)[number]

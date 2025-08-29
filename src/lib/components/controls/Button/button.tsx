@@ -1,27 +1,27 @@
 import { ButtonHTMLAttributes, Ref } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, Text, TextOwnProps, WithIcon, WithIconOwnProps } from 'lib/components'
-import { withPrefix } from 'lib/helpers'
-import { ScaleValue, Size } from 'lib/definitions'
+import {
+  Box,
+  BoxOwnProps,
+  Text,
+  TEXT_DEFAULT_INTENT,
+  TextOwnProps,
+  WithIcon,
+  WithIconOwnProps,
+} from 'lib/components'
 
-export type ButtonSize = Extract<Size, 'sm' | 'md' | 'lg'>
+import { withPrefix } from 'lib/helpers'
+import { BoxIntent, BoxVariant, ButtonSize, ScaleValue } from 'lib/definitions'
 
 export type ButtonOwnProps = {
-  /** Visual style variant of the button (e.g. solid, outline, ghost) */
   variant?: BoxOwnProps['variant']
-  /** Semantic intent for coloring (e.g. primary, success, danger, neutral) */
   intent?: BoxOwnProps['intent']
   textIntent?: TextOwnProps['intent']
-  /** Disables interaction and applies disabled styling */
-  disabled?: BoxOwnProps['disabled']
+  size?: `${ButtonSize}`
   borderRadius?: BoxOwnProps['borderRadius']
-} & {
-  /** Button size controlling height, padding, and font size */
-  size?: ButtonSize
-  /** Optional icon name to render inside the button */
+  disabled?: BoxOwnProps['disabled']
   iconName?: WithIconOwnProps['iconName']
-  /** Position of the icon relative to text (e.g. left or right) */
   iconPosition?: WithIconOwnProps['iconPosition']
 }
 
@@ -44,16 +44,19 @@ export const BUTTON_SIZE_TO_PROPS: Record<
   lg: { blockSize: 26, pl: 12, pr: 12, fontSize: 9 },
 }
 
-/** Button is a polymorphic action component built on Box. It supports variants, intents, and sizes, with optional icons on either side. Padding and height adjust automatically per size. */
+export const BUTTON_DEFAULT_VARIANT: `${BoxVariant}` = 'solid'
+export const BUTTON_DEFAULT_INTENT: `${BoxIntent}` = 'tertiary'
+export const BUTTON_DEFAULT_SIZE: `${ButtonSize}` = 'md'
+
 export const Button = ({
   ref,
   type = 'button',
   className,
-  variant = 'solid',
-  intent = 'tertiary',
-  textIntent,
+  variant = BUTTON_DEFAULT_VARIANT,
+  intent = BUTTON_DEFAULT_INTENT,
+  textIntent = TEXT_DEFAULT_INTENT,
+  size = BUTTON_DEFAULT_SIZE,
   disabled = false,
-  size = 'md',
   iconName,
   iconPosition,
   children,
