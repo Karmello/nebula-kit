@@ -68,3 +68,33 @@ export enum CssPosition {
   'fixed' = 'fixed',
   'sticky' = 'sticky',
 }
+
+export enum CssFlexDirection {
+  'row' = 'row',
+  'row-reverse' = 'row-reverse',
+  'column' = 'column',
+  'column-reverse' = 'column-reverse',
+}
+
+export enum CssFlexWrap {
+  'nowrap' = 'nowrap',
+  'wrap' = 'wrap',
+  'wrap-reverse' = 'wrap-reverse',
+}
+
+export enum CssFlexJustify {
+  'flex-start' = 'flex-start',
+  'center' = 'center',
+  'flex-end' = 'flex-end',
+  'space-between' = 'space-between',
+  'space-around' = 'space-around',
+  'space-evenly' = 'space-evenly',
+}
+
+export enum CssFlexAlign {
+  'flex-start' = 'flex-start',
+  'center' = 'center',
+  'flex-end' = 'flex-end',
+  'stretch' = 'stretch',
+  'baseline' = 'baseline',
+}

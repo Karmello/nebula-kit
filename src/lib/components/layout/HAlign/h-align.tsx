@@ -9,9 +9,9 @@ export type HAlignOwnProps = {
 }
 
 const MAP: Record<HorizontalPosition, CssFlexJustify> = {
-  left: 'flex-start',
-  center: 'center',
-  right: 'flex-end',
+  left: CssFlexJustify['flex-start'],
+  center: CssFlexJustify.center,
+  right: CssFlexJustify['flex-end'],
 }
 
 export const HAlign = ({ children, position }: HAlignOwnProps) => {

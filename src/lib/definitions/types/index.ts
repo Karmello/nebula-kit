@@ -30,20 +30,6 @@ export type TextTypography =
   | 'secondary'
   | 'caption'
 
-export type CssFlexDirection = 'row' | 'row-reverse' | 'column' | 'column-reverse'
-
-export type CssFlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse'
-
-export type CssFlexJustify =
-  | 'flex-start'
-  | 'center'
-  | 'flex-end'
-  | 'space-between'
-  | 'space-around'
-  | 'space-evenly'
-
-export type CssFlexAlign = 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'
-
 export type CssGridAutoFlow = 'row' | 'column' | 'dense' | 'row dense' | 'column dense'
 
 export type CssGridPlaceItems = 'start' | 'center' | 'end' | 'stretch'
