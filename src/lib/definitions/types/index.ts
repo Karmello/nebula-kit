@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef, ElementType } from 'react'
 
-import { BOX_INTENTS, BOX_VARIANTS, BREAKPOINTS, SCALE } from '..'
+import { BREAKPOINTS, SCALE } from '..'
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl'
 
@@ -18,9 +18,6 @@ export type PolymorphicProps<E extends ElementType, OwnProps> = Omit<ComponentPr
 
 export type CompWithCssVarsPrefix = 'box' | 'text' | 'flex' | 'grid' | 'table' | 'cluster'
 
-export type BoxVariant = (typeof BOX_VARIANTS)[number]
-export type BoxIntent = (typeof BOX_INTENTS)[number]
-
 export type TextTypography =
   | 'h1'
   | 'h2'
@@ -32,14 +29,6 @@ export type TextTypography =
   | 'body'
   | 'secondary'
   | 'caption'
-
-export type CssDisplay = 'block' | 'inline' | 'inline-block' | 'flow-root' | 'contents' | 'none'
-
-export type CssOverflow = 'visible' | 'hidden' | 'auto' | 'scroll'
-
-export type CssPosition = 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky'
-
-export type CssTextAlign = 'start' | 'center' | 'end' | 'justify'
 
 export type CssFlexDirection = 'row' | 'row-reverse' | 'column' | 'column-reverse'
 
@@ -68,16 +57,16 @@ export type CssGridPlaceContent =
   | 'space-around'
   | 'space-evenly'
 
-export type ComponentMeta = {
+export type ComponentMeta<PropsType> = {
   name: string
   description: string
   props: {
     category: string
-    name: string
-    options: (string | number)[] | string
-    required: boolean
-    responsive: boolean
+    name: keyof PropsType
+    options: string[]
     defaultValue: string
+    isRequired: boolean
+    isResponsive: boolean
     description: string
   }[]
 }

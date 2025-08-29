@@ -6,13 +6,13 @@ import { PropsTable } from './PropsTable'
 export const CompPropsPage = () => {
   const { itemKey } = useDocsPageStore()
 
-  let META_DATA: ComponentMeta
+  let META_DATA: ComponentMeta<unknown>
 
-  // try {
-  //   META_DATA = require(`../../../../../../meta/${itemKey}.json`)
-  // } catch {
-  //   META_DATA = null
-  // }
+  try {
+    META_DATA = require(`../../../../../meta/${itemKey}.meta.ts`).default
+  } catch {
+    META_DATA = null
+  }
 
   if (!META_DATA) {
     return null

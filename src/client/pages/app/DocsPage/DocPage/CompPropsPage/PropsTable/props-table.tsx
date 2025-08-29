@@ -2,12 +2,12 @@ import { SvgIcon, Table, Text } from 'lib/components'
 import { ComponentMeta } from 'lib/definitions'
 
 type Props = {
-  data: ComponentMeta['props']
+  data: ComponentMeta<unknown>['props']
 }
 
 export const PropsTable = ({ data }: Props) => {
-  const isSomeRequired = data.some(prop => prop.required)
-  const isSomeResponsive = data.some(prop => prop.responsive)
+  const isSomeRequired = data.some(prop => prop.isRequired)
+  const isSomeResponsive = data.some(prop => prop.isResponsive)
 
   return (
     <>
@@ -24,7 +24,7 @@ export const PropsTable = ({ data }: Props) => {
           </Table.Row>
         </Table.Head>
         <Table.Body>
-          {data.map(({ name, options, required, responsive, defaultValue, description }) => (
+          {data.map(({ name, options, isRequired, isResponsive, defaultValue, description }) => (
             <Table.Row key={name}>
               <Table.Cell>
                 <Text bold>{name}</Text>
@@ -33,12 +33,12 @@ export const PropsTable = ({ data }: Props) => {
               <Table.Cell>{defaultValue}</Table.Cell>
               {isSomeRequired ? (
                 <Table.Cell textAlign="center">
-                  {required ? <SvgIcon name="check" intent="primary" /> : ''}
+                  {isRequired ? <SvgIcon name="check" intent="primary" /> : ''}
                 </Table.Cell>
               ) : null}
               {isSomeResponsive ? (
                 <Table.Cell textAlign="center">
-                  {responsive ? <SvgIcon name="check" intent="primary" /> : ''}
+                  {isResponsive ? <SvgIcon name="check" intent="primary" /> : ''}
                 </Table.Cell>
               ) : null}
               <Table.Cell>{description}</Table.Cell>

@@ -5,7 +5,7 @@ import { Text } from 'lib/components'
 export const CompOverviewPage = () => {
   const { itemKey } = useDocsPageStore()
 
-  let META_DATA: ComponentMeta
+  let META_DATA: ComponentMeta<unknown>
 
   // try {
   //   META_DATA = require(`../../../../../../meta/${itemKey}.json`)

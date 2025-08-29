@@ -15,7 +15,7 @@ export type TextOwnProps = {
   /** Horizontal text alignment (e.g. left, right, center) */
   textAlign?: BoxOwnProps['textAlign']
 } & {
-  intent?: BoxIntent
+  intent?: `${BoxIntent}`
   /** Typography preset mapping to tag and font size (h1–h6, body, lead, etc.) */
   typography?: TextTypography
   fontSize?: ResponsiveProp<ScaleValue | string>

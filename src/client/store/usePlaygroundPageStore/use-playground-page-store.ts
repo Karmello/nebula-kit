@@ -19,8 +19,8 @@ export const usePlaygroundPageStore = create<PlaygroundPageStore>(set => ({
   setCategoryKey: categoryKey => set(() => ({ categoryKey })),
   itemKey: PLAYGROUND_CATEGORIES[0].items[0].key,
   setItemKey: itemKey => set(() => ({ itemKey })),
-  variant: 'solid',
+  variant: BoxVariant.solid,
   setVariant: variant => set(() => ({ variant })),
-  intent: 'neutral',
+  intent: BoxIntent.neutral,
   setIntent: intent => set(() => ({ intent })),
 }))

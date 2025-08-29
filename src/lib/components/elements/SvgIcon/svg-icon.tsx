@@ -4,7 +4,7 @@ import { BoxIntent, ScaleValue } from 'lib/definitions'
 export type SvgIconOwnProps = {
   name: IconName
   size?: ScaleValue
-  intent?: BoxIntent
+  intent?: `${BoxIntent}`
 }
 
 export const SvgIcon = ({ name, size, intent = 'neutral' }: SvgIconOwnProps) => {
