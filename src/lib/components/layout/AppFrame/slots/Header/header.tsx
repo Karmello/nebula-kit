@@ -1,11 +1,11 @@
-import { CSSProperties } from 'react'
+import { ComponentPropsWithRef, CSSProperties } from 'react'
 
-import { Box, BoxProps } from 'lib/components'
+import { Box, BoxOwnProps } from 'lib/components'
 import { Slot } from 'lib/definitions'
 
 import { useAppFrame } from '../../AppFrameProvider'
 
-export const Header = (props: Omit<BoxProps, 'as'>) => {
+export const Header = (props: ComponentPropsWithRef<'header'> & BoxOwnProps) => {
   const { stickyHeader } = useAppFrame()
 
   return (

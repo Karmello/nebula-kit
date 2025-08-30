@@ -8,7 +8,7 @@ import { BoxIntent, BoxVariant, PolymorphicProps } from 'lib/definitions'
 import { BoxOwnProps } from './types'
 import './styles/box.scss'
 
-export type BoxProps<E extends ElementType = 'div'> = PolymorphicProps<E, BoxOwnProps>
+type BoxProps<E extends ElementType = 'div'> = PolymorphicProps<E, BoxOwnProps>
 
 export const BOX_DEFAULT_VARIANT: `${BoxVariant}` = 'ghost'
 export const BOX_DEFAULT_INTENT: `${BoxIntent}` = 'neutral'

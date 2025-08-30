@@ -1,6 +1,7 @@
+import { ComponentPropsWithRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, BoxProps, TableContext } from 'lib/components'
+import { Box, BoxOwnProps, TableContext } from 'lib/components'
 import { withPrefix, getDataAttrs } from 'lib/helpers'
 
 import './table.scss'
@@ -8,19 +9,13 @@ import './table.scss'
 export type TableLayout = 'auto' | 'fixed'
 
 export type TableOwnProps = {
-  /** Sets the CSS table-layout algorithm: 'auto' (content-driven) or 'fixed' (width-driven). */
   layout?: TableLayout
-  /** Enables alternating background colors for rows to improve readability. */
   zebra?: boolean
-  /** Keeps the header row visible at the top while scrolling the table body. */
   stickyHeader?: boolean
 }
 
-export type TableProps = Pick<BoxProps, 'children' | 'className' | 'style'> &
-  Omit<BoxOwnProps, 'display'> &
-  TableOwnProps
+export type TableProps = ComponentPropsWithRef<'table'> & Omit<BoxOwnProps, 'display'> & TableOwnProps
 
-/** Table is a styled wrapper around the native <table> element. It supports automatic or fixed layouts, optional zebra striping, and sticky headers, while passing through theming from Box. Use it together with TableHead, TableBody, TableRow, and TableCell to build accessible, consistent data tables. */
 export const Table = ({
   className,
   style,

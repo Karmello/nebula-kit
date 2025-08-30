@@ -1,6 +1,6 @@
-import { JSX, ReactNode } from 'react'
+import { ComponentPropsWithRef, JSX, ReactNode } from 'react'
 
-import { Box, BoxProps, HAlign, IconButton, useSidePanelLayout } from 'lib/components'
+import { Box, BoxOwnProps, HAlign, IconButton, useSidePanelLayout } from 'lib/components'
 import { Slot } from 'lib/definitions'
 import { useScreen } from 'lib/helpers'
 
@@ -11,12 +11,10 @@ type ChildrenAsFuncArgs = {
 export const SideMobile = ({
   children,
   ...rest
-}: Omit<
-  BoxProps,
-  'children' | 'as' | 'position' | 'top' | 'left' | 'inlineSize' | 'minBlockSize' | 'overflowY'
-> & {
-  children: ReactNode | ((args: ChildrenAsFuncArgs) => JSX.Element)
-}) => {
+}: Omit<ComponentPropsWithRef<'aside'>, 'children'> &
+  Omit<BoxOwnProps, 'position' | 'top' | 'left' | 'inlineSize' | 'minBlockSize' | 'overflowY'> & {
+    children: ReactNode | ((args: ChildrenAsFuncArgs) => JSX.Element)
+  }) => {
   const { isMobile } = useScreen()
   const { sideOpen, setSideOpen, sidePosition } = useSidePanelLayout()
 

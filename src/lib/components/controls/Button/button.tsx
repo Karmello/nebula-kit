@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, Ref } from 'react'
+import { ComponentPropsWithRef } from 'react'
 import classNames from 'classnames'
 
 import {
@@ -25,10 +25,7 @@ export type ButtonOwnProps = {
   iconPosition?: WithIconOwnProps['iconPosition']
 }
 
-export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
-  ButtonOwnProps & {
-    ref?: Ref<any>
-  }
+export type ButtonProps = ComponentPropsWithRef<'button'> & ButtonOwnProps
 
 export const BUTTON_SIZE_TO_PROPS: Record<
   ButtonSize,
@@ -49,9 +46,9 @@ export const BUTTON_DEFAULT_INTENT: `${BoxIntent}` = 'tertiary'
 export const BUTTON_DEFAULT_SIZE: `${ButtonSize}` = 'md'
 
 export const Button = ({
-  ref,
-  type = 'button',
+  children,
   className,
+  type = 'button',
   variant = BUTTON_DEFAULT_VARIANT,
   intent = BUTTON_DEFAULT_INTENT,
   textIntent = TEXT_DEFAULT_INTENT,
@@ -59,12 +56,10 @@ export const Button = ({
   disabled = false,
   iconName,
   iconPosition,
-  children,
   ...rest
 }: ButtonProps) => {
   return (
     <Box
-      ref={ref}
       type={type}
       {...rest}
       className={classNames(withPrefix('btn'), className)}

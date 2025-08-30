@@ -1,8 +1,10 @@
-import { Box, BoxProps } from 'lib/components'
+import { ComponentPropsWithRef } from 'react'
+
+import { Box, BoxOwnProps } from 'lib/components'
 import { Slot } from 'lib/definitions'
 
-export const Main = (props: Omit<BoxProps, 'as' | 'minBlockSize' | 'minInlineSize'>) => {
-  return <Box {...props} as="main" minBlockSize={0} minInlineSize={0} />
+export const Main = (props: ComponentPropsWithRef<'main'> & BoxOwnProps) => {
+  return <Box minBlockSize={0} minInlineSize={0} {...props} as="main" />
 }
 
 Main.slotName = Slot.main

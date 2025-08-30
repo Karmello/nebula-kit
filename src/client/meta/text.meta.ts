@@ -138,6 +138,15 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
     },
     {
       category: PropCategory.other,
+      name: 'children',
+      options: ['ReactNode'],
+      defaultValue: '',
+      isRequired: true,
+      isResponsive: false,
+      description: 'The content to be rendered inside the Text component.',
+    },
+    {
+      category: PropCategory.other,
       name: 'as',
       options: Object.values(TextAs),
       defaultValue: TYPOGRAPHY_TO_PROPS[TEXT_DEFAULT_TYPOGRAPHY].as,

@@ -1,12 +1,12 @@
-import { useLayoutEffect } from 'react'
+import { ComponentPropsWithRef, useLayoutEffect } from 'react'
 
-import { Box, BoxProps, Flex, IconButton, Spacer, useSidePanelLayout } from 'lib/components'
+import { Box, BoxOwnProps, Flex, IconButton, Spacer, useSidePanelLayout } from 'lib/components'
 import { Slot } from 'lib/definitions'
 import { useScreen } from 'lib/helpers'
 
 import { getToggleIconName } from '../../helpers'
 
-export const Main = ({ children, ...rest }: Omit<BoxProps, 'as' | 'minBlockSize'>) => {
+export const Main = ({ children, ...rest }: ComponentPropsWithRef<'section'> & BoxOwnProps) => {
   const { isMobile, isDesktop } = useScreen()
   const { sideOpen, setSideOpen, sidePosition, slots } = useSidePanelLayout()
 
@@ -23,7 +23,7 @@ export const Main = ({ children, ...rest }: Omit<BoxProps, 'as' | 'minBlockSize'
   }, [isDesktop])
 
   return (
-    <Box {...rest} as="section" minInlineSize={0}>
+    <Box minInlineSize={0} {...rest} as="section">
       <Flex align="center" direction={sidePosition === 'left' ? 'row' : 'row-reverse'} gap={10}>
         <IconButton
           iconName={getToggleIconName(sidePosition, sideOpen)}

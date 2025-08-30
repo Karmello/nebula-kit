@@ -1,9 +1,10 @@
+import { ComponentPropsWithRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, BoxProps } from 'lib/components'
+import { Box, BoxOwnProps } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-export type TableHeadProps = Pick<BoxProps, 'children' | 'className' | 'style'> & Omit<BoxOwnProps, 'display'>
+export type TableHeadProps = ComponentPropsWithRef<'thead'> & Omit<BoxOwnProps, 'display'>
 
 export const TableHead = ({ className, ...rest }: TableHeadProps) => {
   return (

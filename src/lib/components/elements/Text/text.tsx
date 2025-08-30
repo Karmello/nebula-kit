@@ -1,16 +1,27 @@
-import { CSSProperties, ReactNode, Ref } from 'react'
+import { ReactNode } from 'react'
 import classNames from 'classnames'
 
 import { Box, BoxOwnProps, WithIcon, WithIconOwnProps } from 'lib/components'
-import { BoxIntent, CssTextAlign, ResponsiveProp, ScaleValue, TextAs, TextTypography } from 'lib/definitions'
 import { withPrefix, getDataAttrs, getCssVars } from 'lib/helpers'
+
+import {
+  BoxIntent,
+  CssTextAlign,
+  PolymorphicProps,
+  ResponsiveProp,
+  ScaleValue,
+  TextAs,
+  TextTypography,
+} from 'lib/definitions'
 
 import './text.scss'
 
+type TextAsType = `${TextAs}`
+
 export type TextOwnProps = {
-  as?: `${TextAs}`
+  children: ReactNode
+  as?: TextAsType
   textAlign?: BoxOwnProps['textAlign']
-} & {
   intent?: `${BoxIntent}`
   typography?: `${TextTypography}`
   fontSize?: ResponsiveProp<ScaleValue | string>
@@ -24,12 +35,7 @@ export type TextOwnProps = {
   iconPosition?: WithIconOwnProps['iconPosition']
 }
 
-export type TextProps = TextOwnProps & {
-  children: ReactNode
-  ref?: Ref<any>
-  className?: string
-  style?: CSSProperties
-}
+type TextProps<E extends TextAsType = 'p'> = PolymorphicProps<E, TextOwnProps>
 
 export const TYPOGRAPHY_TO_PROPS: Record<
   TextTypography,
@@ -55,10 +61,11 @@ export const TEXT_DEFAULT_LINE_HEIGHT = 'normal'
 export const TEXT_DEFAULT_TEXT_ALIGN: `${CssTextAlign}` = 'start'
 export const TEXT_DEFAULT_TYPOGRAPHY: `${TextTypography}` = 'body'
 
-export const Text = ({
+export const Text = <E extends TextAsType = 'p'>({
   children,
-  ref,
   as,
+  className,
+  style,
   intent = TEXT_DEFAULT_INTENT,
   fontSize,
   lineHeight = TEXT_DEFAULT_LINE_HEIGHT,
@@ -71,13 +78,10 @@ export const Text = ({
   clampLines,
   iconName,
   iconPosition,
-  className,
-  style,
   ...rest
-}: TextProps) => {
+}: TextProps<E>) => {
   return (
     <Box
-      ref={ref}
       as={as || TYPOGRAPHY_TO_PROPS[typography].as}
       className={classNames(withPrefix('text'), className)}
       variant="ghost"

@@ -17,7 +17,7 @@ import './grid.scss'
 
 type GridAsType = `${GridAs}`
 
-export interface GridOwnProps {
+export type GridOwnProps = {
   as?: GridAsType
   columns?: ResponsiveProp<string | number>
   rows?: ResponsiveProp<string | number>

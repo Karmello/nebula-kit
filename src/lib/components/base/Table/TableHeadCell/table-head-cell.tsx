@@ -1,10 +1,10 @@
+import { ComponentPropsWithRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, BoxProps, useTableContext } from 'lib/components'
+import { Box, BoxOwnProps, useTableContext } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-export type TableHeadCellProps = Pick<BoxProps, 'children' | 'className' | 'style'> &
-  Omit<BoxOwnProps, 'display'>
+export type TableHeadCellProps = ComponentPropsWithRef<'th'> & Omit<BoxOwnProps, 'display'>
 
 export const TableHeadCell = ({ className, ...rest }: TableHeadCellProps) => {
   const { variant, intent } = useTableContext()
