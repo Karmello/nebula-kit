@@ -9,6 +9,8 @@ import { formatAsQueryString, useNavigateTo } from 'client/services'
 import { usePlaygroundPageStore } from 'client/store'
 import { PLAYGROUND_CATEGORIES } from 'client/definitions'
 
+import { CompPlaygroundPage } from './CompPlaygroundPage'
+
 const DEFAULT_PATHNAME = `${PLAYGROUND_CATEGORIES[0].key}/${PLAYGROUND_CATEGORIES[0].items[0].key}`
 
 export const PlaygroundPage = () => {
@@ -36,20 +38,12 @@ export const PlaygroundPage = () => {
           ]}
         />
       </SidePanelLayout.Header>
-      <SidePanelLayout.Main>
+      <SidePanelLayout.Main mx={10}>
         <Routes>
           {PLAYGROUND_CATEGORIES.flatMap(({ key: categoryKey, items }) =>
-            items.map(({ key: itemKey }) => {
-              let Component
-              try {
-                Component = require(`../../playground/${pascalCase(itemKey)}Playground`)[
-                  `${pascalCase(itemKey)}Playground`
-                ]
-              } catch {
-                Component = null
-              }
-              return <Route key={itemKey} path={`${categoryKey}/${itemKey}`} Component={Component} />
-            })
+            items.map(({ key: itemKey }) => (
+              <Route key={itemKey} path={`${categoryKey}/${itemKey}`} Component={CompPlaygroundPage} />
+            ))
           )}
           <Route
             path="*"

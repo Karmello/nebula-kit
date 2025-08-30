@@ -34,6 +34,10 @@ const PLAYGROUND_CATEGORIES_CONFIG = [
     ],
   },
   {
+    key: CompCategoryKey.containers,
+    items: [{ key: CompKey.section }],
+  },
+  {
     key: CompCategoryKey.form,
     items: [{ key: CompKey.select }],
   },

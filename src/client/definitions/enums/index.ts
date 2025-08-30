@@ -1,5 +1,6 @@
 export enum CompCategoryKey {
   base = 'base',
+  containers = 'containers',
   controls = 'controls',
   elements = 'elements',
   form = 'form',
@@ -28,6 +29,7 @@ export enum CompKey {
   iconButton = 'icon-button',
   nebKitProvider = 'neb-kit-provider',
   pageSideNav = 'page-side-nav',
+  section = 'section',
   select = 'select',
   sidePanelLayout = 'side-panel-layout',
   spacer = 'spacer',

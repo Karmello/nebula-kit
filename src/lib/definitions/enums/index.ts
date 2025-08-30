@@ -182,3 +182,8 @@ export enum ButtonSize {
   'md' = 'md',
   'lg' = 'lg',
 }
+
+export enum StackDirection {
+  'column' = 'column',
+  'row' = 'row',
+}

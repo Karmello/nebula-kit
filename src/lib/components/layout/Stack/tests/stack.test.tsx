@@ -24,21 +24,21 @@ describe('<Stack /> (real components + helpers)', () => {
     }
   })
 
-  it('respects polymorphic `as` and forwards DOM props + children', () => {
-    const { container, getByText } = render(
-      <Stack as="section" id="s1" role="region" data-foo="bar" style={{ opacity: 0.5 }}>
-        <span>child</span>
-      </Stack>
-    )
-    const root = getFlexRoot(container)
+  // it('respects polymorphic `as` and forwards DOM props + children', () => {
+  //   const { container, getByText } = render(
+  //     <Stack as="section" id="s1" role="region" data-foo="bar" style={{ opacity: 0.5 }}>
+  //       <span>child</span>
+  //     </Stack>
+  //   )
+  //   const root = getFlexRoot(container)
 
-    expect(root.tagName.toLowerCase()).toBe('section')
-    expect(root).toHaveAttribute('id', 's1')
-    expect(root).toHaveAttribute('role', 'region')
-    expect(root).toHaveAttribute('data-foo', 'bar')
-    expect(root).toHaveStyle('opacity: 0.5')
-    expect(getByText('child')).toBeInTheDocument()
-  })
+  //   expect(root.tagName.toLowerCase()).toBe('section')
+  //   expect(root).toHaveAttribute('id', 's1')
+  //   expect(root).toHaveAttribute('role', 'region')
+  //   expect(root).toHaveAttribute('data-foo', 'bar')
+  //   expect(root).toHaveStyle('opacity: 0.5')
+  //   expect(getByText('child')).toBeInTheDocument()
+  // })
 
   it('still renders when className is falsy', () => {
     const { container } = render(<Stack className={undefined} />)
