@@ -1,5 +1,4 @@
 import {
-  TEXT_DEFAULT_INTENT,
   TEXT_DEFAULT_LINE_HEIGHT,
   TEXT_DEFAULT_TEXT_ALIGN,
   TEXT_DEFAULT_TYPOGRAPHY,
@@ -31,7 +30,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       category: PropCategory.appearance,
       name: 'intent',
       options: Object.values(BoxIntent),
-      defaultValue: TEXT_DEFAULT_INTENT,
+      defaultValue: '',
       isRequired: false,
       isResponsive: false,
       description: 'Applies a themed style that conveys meaning or emphasis through color and tone.',

@@ -1,25 +1,14 @@
-import { Stack, StackAs, StackOwnProps } from 'lib/components'
-import { PolymorphicProps } from 'lib/definitions'
+import { Stack, StackOwnProps } from 'lib/components'
+import { PolymorphicProps, StackAs } from 'lib/definitions'
 
-export type VStackOwnProps = {
-  /** Polymorphic prop to change the rendered element type */
-  as?: StackAs
-  /** Alignment of items along the cross axis, supports responsive values */
-  align?: StackOwnProps['align']
-  /** Shorthand spacing between items, supports responsive values */
-  gap?: StackOwnProps['gap']
-}
+type StackAsType = `${StackAs}`
 
-export type VStackProps<E extends StackAs = 'div'> = PolymorphicProps<E, VStackOwnProps>
+export type VStackOwnProps = Omit<StackOwnProps, 'direction' | 'wrap' | 'rowGap'>
 
-/** VStack is a vertical layout primitive built on Stack. It arranges elements in a column with configurable alignment and spacing, providing a simple way to stack items top-to-bottom without managing full flexbox props. */
-export const VStack = <E extends StackAs = 'div'>({
-  as = 'div' as E,
-  align = 'stretch',
-  gap,
-  ...rest
-}: VStackProps<E>) => {
-  return <Stack as={as} direction="column" align={align} gap={gap} {...(rest as VStackProps<E>)} />
+export type VStackProps<E extends StackAsType = 'div'> = PolymorphicProps<E, VStackOwnProps>
+
+export const VStack = <E extends StackAsType = 'div'>(props: VStackProps<E>) => {
+  return <Stack {...props} direction="column" wrap="nowrap" />
 }
 
 VStack.displayName = 'VStack'

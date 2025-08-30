@@ -3,7 +3,6 @@ import {
   BUTTON_DEFAULT_SIZE,
   BUTTON_DEFAULT_VARIANT,
   ButtonOwnProps,
-  TEXT_DEFAULT_INTENT,
   WITH_ICON_DEFAULT_ICON_POSITION,
 } from 'lib/components'
 
@@ -51,7 +50,7 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
       category: PropCategory.appearance,
       name: 'textIntent',
       options: Object.values(BoxIntent),
-      defaultValue: TEXT_DEFAULT_INTENT,
+      defaultValue: '',
       isRequired: false,
       isResponsive: false,
       description:

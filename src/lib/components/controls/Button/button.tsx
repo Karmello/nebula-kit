@@ -1,15 +1,7 @@
 import { ComponentPropsWithRef } from 'react'
 import classNames from 'classnames'
 
-import {
-  Box,
-  BoxOwnProps,
-  Text,
-  TEXT_DEFAULT_INTENT,
-  TextOwnProps,
-  WithIcon,
-  WithIconOwnProps,
-} from 'lib/components'
+import { Box, BoxOwnProps, Text, TextOwnProps, WithIcon, WithIconOwnProps } from 'lib/components'
 
 import { withPrefix } from 'lib/helpers'
 import { BoxIntent, BoxVariant, ButtonSize, ScaleValue } from 'lib/definitions'
@@ -51,7 +43,7 @@ export const Button = ({
   type = 'button',
   variant = BUTTON_DEFAULT_VARIANT,
   intent = BUTTON_DEFAULT_INTENT,
-  textIntent = TEXT_DEFAULT_INTENT,
+  textIntent,
   size = BUTTON_DEFAULT_SIZE,
   disabled = false,
   iconName,

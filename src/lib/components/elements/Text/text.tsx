@@ -56,7 +56,6 @@ export const TYPOGRAPHY_TO_PROPS: Record<
   h1: { as: 'h1', fontSize: 30 },
 }
 
-export const TEXT_DEFAULT_INTENT: `${BoxIntent}` = 'neutral'
 export const TEXT_DEFAULT_LINE_HEIGHT = 'normal'
 export const TEXT_DEFAULT_TEXT_ALIGN: `${CssTextAlign}` = 'start'
 export const TEXT_DEFAULT_TYPOGRAPHY: `${TextTypography}` = 'body'
@@ -66,7 +65,7 @@ export const Text = <E extends TextAsType = 'p'>({
   as,
   className,
   style,
-  intent = TEXT_DEFAULT_INTENT,
+  intent,
   fontSize,
   lineHeight = TEXT_DEFAULT_LINE_HEIGHT,
   textAlign = TEXT_DEFAULT_TEXT_ALIGN,

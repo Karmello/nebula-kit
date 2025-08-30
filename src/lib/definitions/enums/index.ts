@@ -187,3 +187,16 @@ export enum StackDirection {
   'column' = 'column',
   'row' = 'row',
 }
+
+export enum StackAs {
+  'div' = 'div',
+  'section' = 'section',
+  'article' = 'article',
+  'aside' = 'aside',
+  'main' = 'main',
+  'header' = 'header',
+  'footer' = 'footer',
+  'nav' = 'nav',
+  'ul' = 'ul',
+  'ol' = 'ol',
+}

@@ -1,37 +1,21 @@
-import { Flex, FlexOwnProps } from 'lib/components'
-import { ResponsiveProp, PolymorphicProps, StackDirection } from 'lib/definitions'
+import { BoxOwnProps, Flex, FlexOwnProps } from 'lib/components'
+import { ResponsiveProp, PolymorphicProps, StackDirection, StackAs } from 'lib/definitions'
 
-export type StackAs =
-  | 'div'
-  | 'section'
-  | 'article'
-  | 'aside'
-  | 'main'
-  | 'header'
-  | 'footer'
-  | 'nav'
-  | 'ul'
-  | 'ol'
+type StackAsType = `${StackAs}`
 
 export type StackOwnProps = {
-  as?: StackAs
+  as?: StackAsType
   direction?: ResponsiveProp<`${StackDirection}`>
-  align?: FlexOwnProps['align']
+  wrap?: FlexOwnProps['wrap']
   gap?: FlexOwnProps['gap']
   rowGap?: FlexOwnProps['rowGap']
   columnGap?: FlexOwnProps['columnGap']
 }
 
-export type StackProps<E extends StackAs = 'div'> = PolymorphicProps<E, StackOwnProps>
+export type StackProps<E extends StackAsType = 'div'> = PolymorphicProps<E, StackOwnProps & BoxOwnProps>
 
-export const Stack = <E extends StackAs = 'div'>({
-  as = 'div' as E,
-  direction = 'column',
-  align = 'stretch',
-  gap,
-  ...rest
-}: StackProps<E>) => {
-  return <Flex as={as} direction={direction} align={align} gap={gap} {...(rest as StackProps<E>)} />
+export const Stack = <E extends StackAsType = 'div'>(props: StackProps<E>) => {
+  return <Flex {...props} align="stretch" />
 }
 
 Stack.displayName = 'Stack'
