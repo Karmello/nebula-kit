@@ -96,7 +96,6 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
               textIntent={
                 isGroupActive ? FINAL_GROUP_CONFIG.active?.textIntent : FINAL_GROUP_CONFIG.default?.textIntent
               }
-              borderRadius={0}
               iconName={hasItems ? (isGroupOpen ? 'chevron-up' : 'chevron-down') : undefined}
               style={{ justifyContent: 'flex-start', inlineSize: '100%' }}
               {...rest}
@@ -131,7 +130,7 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
                           ? FINAL_ITEM_CONFIG.active?.textIntent
                           : FINAL_ITEM_CONFIG.default?.textIntent
                       }
-                      borderRadius={0}
+                      style={{ justifyContent: 'flex-start', paddingLeft: '40px', inlineSize: '100%' }}
                       {...rest}
                     >
                       {label}

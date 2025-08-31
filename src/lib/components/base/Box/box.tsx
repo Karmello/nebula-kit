@@ -95,10 +95,7 @@ export const Box = <E extends ElementType = 'div'>({
           mb,
           ml,
         }),
-        borderRadius:
-          variant !== 'ghost'
-            ? scale(borderRadius !== undefined ? borderRadius : globalBorderRadius)
-            : undefined,
+        borderRadius: scale(borderRadius !== undefined ? borderRadius : globalBorderRadius),
         ...style,
       }}
       disabled={disabled}

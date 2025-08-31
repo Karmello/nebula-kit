@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { pascalCase, sentenceCase } from 'change-case'
 
 import { SidePanelLayout, SideNav, Breadcrumb, Section } from 'lib/components'
 import { useDocsPageStore } from 'client/store'
@@ -24,22 +23,21 @@ export const DocsPage = () => {
     docsPageStore.setSectionKey(sectionKey || DOCS_CATEGORIES[0].items[0].sections[0].key)
   }, [pathname])
 
+  const activeCategoryObj = DOCS_CATEGORIES.find(c => c.key === docsPageStore.categoryKey)
+  const activeItemObj = activeCategoryObj.items.find(i => i.key === docsPageStore.itemKey)
+  const activeSectionObj = activeItemObj.sections.find(s => s.key === docsPageStore.sectionKey)
+
   return (
     <SidePanelLayout>
       <SidePanelLayout.Header>
         <Breadcrumb
-          items={[
-            t('common.docs'),
-            sentenceCase(docsPageStore.categoryKey),
-            pascalCase(docsPageStore.itemKey),
-            sentenceCase(docsPageStore.sectionKey),
-          ]}
+          items={[t('common.docs'), activeCategoryObj.label, activeItemObj.label, activeSectionObj.label]}
         />
       </SidePanelLayout.Header>
       <SidePanelLayout.Main mx={10}>
         <SidePanelLayout sidePosition="right">
           <SidePanelLayout.Header>
-            <Section heading={pascalCase(docsPageStore.itemKey)} headingProps={{ typography: 'h3' }} />
+            <Section heading={activeSectionObj.label} headingProps={{ typography: 'h3' }} />
           </SidePanelLayout.Header>
           <SidePanelLayout.SideDesktop>
             <SideNav

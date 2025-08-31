@@ -32,5 +32,6 @@ export type ComponentPropsMeta<PropsType> = {
 }[]
 
 export type ComponentUsageMeta = {
-  code: ''
+  heading: string
+  code: string
 }[]

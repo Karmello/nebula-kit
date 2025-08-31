@@ -1,1 +1,1 @@
-export * from './get-shiki'
+export * from './get-shiki-highlighter'

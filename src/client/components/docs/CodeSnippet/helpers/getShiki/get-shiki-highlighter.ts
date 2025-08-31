@@ -3,16 +3,16 @@ import { createHighlighterCore } from '@shikijs/core'
 import { createJavaScriptRegexEngine } from '@shikijs/engine-javascript'
 
 import tsx from '@shikijs/langs/tsx'
-import githubLight from '@shikijs/themes/github-light'
+import nightOwl from '@shikijs/themes/night-owl'
 
 let highlighter: Promise<HighlighterCore> | null = null
 
-export const getShiki = () => {
+export const getShikiHighlighter = () => {
   if (!highlighter) {
     highlighter = createHighlighterCore({
       engine: createJavaScriptRegexEngine(),
       langs: [tsx],
-      themes: [githubLight],
+      themes: [nightOwl],
     })
   }
 

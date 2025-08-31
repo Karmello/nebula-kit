@@ -1,19 +1,9 @@
-import { BundledLanguage } from 'shiki'
+import { BundledLanguage, TokensResult } from 'shiki'
 
-import { getShiki } from '../'
+import { getShikiHighlighter } from '../'
 
-export type ShikiToken = {
-  content: string
-  color: string
-  fontStyle: number
-}
+export const tokenizeCode = async (code: string, lang: BundledLanguage): Promise<TokensResult> => {
+  const highlighter = await getShikiHighlighter()
 
-export type ShikiLine = ShikiToken[]
-
-export const highlightTokens = async (code: string, lang: BundledLanguage): Promise<ShikiLine[]> => {
-  const highlighter = await getShiki()
-
-  const lines = highlighter.codeToTokens(code, { lang, theme: 'github-light' })
-
-  return lines as unknown as ShikiLine[]
+  return highlighter.codeToTokens(code, { lang, theme: 'night-owl', includeExplanation: true })
 }

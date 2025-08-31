@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { sentenceCase, pascalCase } from 'change-case'
 
 import { useLibStore } from 'lib/state'
 import { SidePanelLayout, SideNav, Breadcrumb } from 'lib/components'
@@ -27,16 +26,13 @@ export const PlaygroundPage = () => {
     playgroundPageStore.setItemKey(itemKey as never)
   }, [pathname])
 
+  const activeCategoryObj = PLAYGROUND_CATEGORIES.find(c => c.key === playgroundPageStore.categoryKey)
+  const activeItemObj = activeCategoryObj.items.find(i => i.key === playgroundPageStore.itemKey)
+
   return (
     <SidePanelLayout>
       <SidePanelLayout.Header>
-        <Breadcrumb
-          items={[
-            t('common.playground'),
-            sentenceCase(playgroundPageStore.categoryKey),
-            pascalCase(playgroundPageStore.itemKey),
-          ]}
-        />
+        <Breadcrumb items={[t('common.playground'), activeCategoryObj.label, activeItemObj.label]} />
       </SidePanelLayout.Header>
       <SidePanelLayout.Main mx={10}>
         <Routes>

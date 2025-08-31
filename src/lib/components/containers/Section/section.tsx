@@ -7,15 +7,22 @@ export type SectionOwnProps = ComponentPropsWithRef<'section'> &
     children?: ReactNode
     heading: string
     headingProps?: Omit<TextOwnProps, 'children'>
+    hideDivider?: boolean
   }
 
-export const Section = ({ children, heading, headingProps, ...rest }: SectionOwnProps) => {
+export const Section = ({
+  children,
+  heading,
+  headingProps,
+  hideDivider = false,
+  ...rest
+}: SectionOwnProps) => {
   return (
     <Box {...rest} as="section">
       <Text typography="h5" {...headingProps}>
         {heading}
       </Text>
-      <Divider />
+      {!hideDivider ? <Divider /> : null}
       {children ? (
         <>
           <Spacer size={10} />
