@@ -4,9 +4,9 @@ import { Box, BoxOwnProps, Divider, Spacer, Text, TextOwnProps } from 'lib/compo
 
 export type SectionOwnProps = ComponentPropsWithRef<'section'> &
   BoxOwnProps & {
-    children: ReactNode
+    children?: ReactNode
     heading: string
-    headingProps?: TextOwnProps
+    headingProps?: Omit<TextOwnProps, 'children'>
   }
 
 export const Section = ({ children, heading, headingProps, ...rest }: SectionOwnProps) => {
@@ -16,9 +16,13 @@ export const Section = ({ children, heading, headingProps, ...rest }: SectionOwn
         {heading}
       </Text>
       <Divider />
-      <Spacer size={10} />
-      {children}
-      <Spacer size={20} />
+      {children ? (
+        <>
+          <Spacer size={10} />
+          {children}
+          <Spacer size={20} />
+        </>
+      ) : null}
     </Box>
   )
 }

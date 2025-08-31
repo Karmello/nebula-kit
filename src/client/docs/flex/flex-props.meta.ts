@@ -1,0 +1,83 @@
+import { FlexOwnProps } from 'lib/components'
+
+import {
+  ComponentPropsMeta,
+  CssFlexAlign,
+  CssFlexDirection,
+  CssFlexJustify,
+  CssFlexWrap,
+} from 'lib/definitions'
+
+enum PropCategory {
+  layout = 'Layout',
+  alignment = 'Alignment',
+  spacing = 'Spacing',
+}
+
+const FLEX_PROPS_META: ComponentPropsMeta<FlexOwnProps> = [
+  {
+    category: PropCategory.layout,
+    name: 'direction',
+    options: Object.values(CssFlexDirection),
+    defaultValue: CssFlexDirection.row,
+    isRequired: false,
+    isResponsive: true,
+    description: 'Sets the flow of flex items along the main axis.',
+  },
+  {
+    category: PropCategory.layout,
+    name: 'wrap',
+    options: Object.values(CssFlexWrap),
+    defaultValue: CssFlexWrap.nowrap,
+    isRequired: false,
+    isResponsive: true,
+    description: 'Controls whether flex items stay on one line or wrap onto multiple lines.',
+  },
+  {
+    category: PropCategory.alignment,
+    name: 'justify',
+    options: Object.values(CssFlexJustify),
+    defaultValue: CssFlexJustify['flex-start'],
+    isRequired: false,
+    isResponsive: true,
+    description: 'Distributes flex items along the main axis.',
+  },
+  {
+    category: PropCategory.alignment,
+    name: 'align',
+    options: Object.values(CssFlexAlign),
+    defaultValue: CssFlexAlign['flex-start'],
+    isRequired: false,
+    isResponsive: true,
+    description: 'Aligns flex items along the cross axis.',
+  },
+  {
+    category: PropCategory.spacing,
+    name: 'gap',
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'initial',
+    isRequired: false,
+    isResponsive: true,
+    description: 'Defines spacing between flex items on both axes.',
+  },
+  {
+    category: PropCategory.spacing,
+    name: 'rowGap',
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'initial',
+    isRequired: false,
+    isResponsive: true,
+    description: 'Defines vertical spacing between rows of flex items.',
+  },
+  {
+    category: PropCategory.spacing,
+    name: 'columnGap',
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'initial',
+    isRequired: false,
+    isResponsive: true,
+    description: 'Defines horizontal spacing between columns of flex items.',
+  },
+]
+
+export default FLEX_PROPS_META

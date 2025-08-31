@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { pascalCase, sentenceCase } from 'change-case'
 
-import { SidePanelLayout, SideNav, Breadcrumb, Text, Divider, Spacer } from 'lib/components'
+import { SidePanelLayout, SideNav, Breadcrumb, Section } from 'lib/components'
 import { useDocsPageStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
 import { DOCS_CATEGORIES } from 'client/definitions'
@@ -39,9 +39,7 @@ export const DocsPage = () => {
       <SidePanelLayout.Main mx={10}>
         <SidePanelLayout sidePosition="right">
           <SidePanelLayout.Header>
-            <Text typography="h3">{pascalCase(docsPageStore.itemKey)}</Text>
-            <Divider />
-            <Spacer size={5} />
+            <Section heading={pascalCase(docsPageStore.itemKey)} headingProps={{ typography: 'h3' }} />
           </SidePanelLayout.Header>
           <SidePanelLayout.SideDesktop>
             <SideNav
@@ -101,7 +99,10 @@ export const DocsPage = () => {
               key: itemKey,
               label,
               onClick: () => {
-                navigateTo(`/docs/${categoryKey}/${itemKey}/${sections[0].key}`)
+                const sectionIndex = sections.findIndex(s => s.key === docsPageStore.sectionKey)
+                navigateTo(
+                  `/docs/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
+                )
               },
             })),
           }))}
@@ -118,7 +119,12 @@ export const DocsPage = () => {
                 key: itemKey,
                 label,
                 onClick: () => {
-                  if (navigateTo(`/docs/${categoryKey}/${itemKey}/${sections[0].key}`)) {
+                  const sectionIndex = sections.findIndex(s => s.key === docsPageStore.sectionKey)
+                  if (
+                    navigateTo(
+                      `/docs/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
+                    )
+                  ) {
                     setSideOpen(false)
                   }
                 },

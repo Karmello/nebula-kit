@@ -1,21 +1,21 @@
 import { useDocsPageStore } from 'client/store'
-import { ComponentMeta } from 'lib/definitions'
+import { ComponentOverviewMeta } from 'lib/definitions'
 import { Text } from 'lib/components'
 
 export const CompOverviewPage = () => {
   const { itemKey } = useDocsPageStore()
 
-  let META_DATA: ComponentMeta<unknown>
+  let OVERVIEW_META: ComponentOverviewMeta
 
   try {
-    META_DATA = require(`../../../../../meta/${itemKey}.meta.ts`).default
+    OVERVIEW_META = require(`../../../../../docs/${itemKey}/${itemKey}-overview.meta.ts`).default
   } catch {
-    META_DATA = null
+    OVERVIEW_META = null
   }
 
-  if (!META_DATA) {
+  if (!OVERVIEW_META) {
     return null
   }
 
-  return <Text>{META_DATA.description}</Text>
+  return <Text>{OVERVIEW_META.description}</Text>
 }

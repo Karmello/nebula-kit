@@ -16,16 +16,17 @@ export type PolymorphicProps<E extends ElementType, OwnProps> = Omit<ComponentPr
 
 export type CompWithCssVarsPrefix = 'box' | 'text' | 'flex' | 'grid' | 'table' | 'cluster'
 
-export type ComponentMeta<PropsType> = {
+export type ComponentOverviewMeta = {
   name: string
   description: string
-  props: {
-    category: string
-    name: keyof PropsType
-    options: string[]
-    defaultValue: string
-    isRequired: boolean
-    isResponsive: boolean
-    description: string
-  }[]
 }
+
+export type ComponentPropsMeta<PropsType> = {
+  category: string
+  name: keyof PropsType
+  options: string[]
+  defaultValue: string
+  isRequired: boolean
+  isResponsive: boolean
+  description: string
+}[]

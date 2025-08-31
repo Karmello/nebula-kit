@@ -1,7 +1,7 @@
 import { pascalCase } from 'change-case'
 
 import { usePlaygroundPageStore } from 'client/store'
-import { Divider, Spacer, Text } from 'lib/components'
+import { Section } from 'lib/components'
 
 export const CompPlaygroundPage = () => {
   const { itemKey } = usePlaygroundPageStore()
@@ -17,11 +17,8 @@ export const CompPlaygroundPage = () => {
   }
 
   return (
-    <>
-      <Text typography="h3">{pascalCase(itemKey)}</Text>
-      <Divider />
-      <Spacer size={10} />
+    <Section heading={pascalCase(itemKey)} headingProps={{ typography: 'h3' }}>
       {Component ? <Component /> : null}
-    </>
+    </Section>
   )
 }

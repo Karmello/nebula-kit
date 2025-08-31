@@ -1,8 +1,8 @@
 import { SvgIcon, Table, Text } from 'lib/components'
-import { ComponentMeta } from 'lib/definitions'
+import { ComponentPropsMeta } from 'lib/definitions'
 
 type Props = {
-  data: ComponentMeta<unknown>['props']
+  data: ComponentPropsMeta<unknown>
 }
 
 export const PropsTable = ({ data }: Props) => {
@@ -20,9 +20,9 @@ export const PropsTable = ({ data }: Props) => {
             <Table.HeadCell textAlign="center" style={{ width: '10ch' }}>
               Default
             </Table.HeadCell>
-            {isSomeRequired ? <Table.HeadCell style={{ width: '10ch' }}>Required</Table.HeadCell> : null}
+            {isSomeRequired ? <Table.HeadCell style={{ width: '8ch' }}>Required</Table.HeadCell> : null}
             {isSomeResponsive ? <Table.HeadCell style={{ width: '10ch' }}>Responsive</Table.HeadCell> : null}
-            <Table.HeadCell style={{ width: '50ch' }}>Description</Table.HeadCell>
+            <Table.HeadCell style={{ width: '40ch' }}>Description</Table.HeadCell>
           </Table.Row>
         </Table.Head>
         <Table.Body>

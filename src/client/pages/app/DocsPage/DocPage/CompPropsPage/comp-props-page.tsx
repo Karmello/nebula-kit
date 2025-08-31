@@ -1,24 +1,24 @@
 import { useDocsPageStore } from 'client/store'
-import { ComponentMeta } from 'lib/definitions'
+import { ComponentPropsMeta } from 'lib/definitions'
 
 import { PropsTable } from './PropsTable'
 
 export const CompPropsPage = () => {
   const { itemKey } = useDocsPageStore()
 
-  let META_DATA: ComponentMeta<unknown>
+  let PROPS_META: ComponentPropsMeta<unknown>
 
   try {
-    META_DATA = require(`../../../../../meta/${itemKey}.meta.ts`).default
+    PROPS_META = require(`../../../../../docs/${itemKey}/${itemKey}-props.meta.ts`).default
   } catch {
-    META_DATA = null
+    PROPS_META = null
   }
 
-  if (!META_DATA) {
+  if (!PROPS_META) {
     return null
   }
 
-  const groupedByCategory = Object.groupBy(META_DATA.props, prop => prop.category)
+  const groupedByCategory = Object.groupBy(PROPS_META, prop => prop.category)
 
   return Object.keys(groupedByCategory).map(category => (
     <PropsTable key={category} data={groupedByCategory[category]} />
