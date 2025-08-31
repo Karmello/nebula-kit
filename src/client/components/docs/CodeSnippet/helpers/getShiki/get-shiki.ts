@@ -1,12 +1,18 @@
-import { Highlighter, getSingletonHighlighter } from 'shiki'
+import { HighlighterCore } from 'shiki'
+import { createHighlighterCore } from '@shikijs/core'
+import { createJavaScriptRegexEngine } from '@shikijs/engine-javascript'
 
-let highlighter: Promise<Highlighter> | null = null
+import tsx from '@shikijs/langs/tsx'
+import githubLight from '@shikijs/themes/github-light'
+
+let highlighter: Promise<HighlighterCore> | null = null
 
 export const getShiki = () => {
   if (!highlighter) {
-    highlighter = getSingletonHighlighter({
-      langs: ['tsx'],
-      themes: ['github-light'],
+    highlighter = createHighlighterCore({
+      engine: createJavaScriptRegexEngine(),
+      langs: [tsx],
+      themes: [githubLight],
     })
   }
 

@@ -3,9 +3,11 @@
     "transpileOnly": true
   },
   "compilerOptions": {
-    "moduleResolution": "node",
-    "module": "commonjs",
-    "target": "es6",
+    "target": "es2022",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "lib": ["ES2024", "DOM", "DOM.Iterable"],
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
     "esModuleInterop": true,
     "allowJs": true,
     "jsx": "react-jsx",
@@ -14,7 +16,6 @@
     "sourceMap": true,
     "baseUrl": ".",
     "outDir": "dist",
-    "lib": ["ES2021.String", "ES2024"],
     "paths": {
       "client/*": ["src/client/*"],
       "lib/*": ["src/lib/*"]

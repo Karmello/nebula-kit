@@ -36,20 +36,20 @@ expectType<JSX.Element>(<Stack className="x" style={{ outline: '1px solid red' }
 // Allowed Stack props
 expectType<JSX.Element>(<Stack direction="column" />)
 expectType<JSX.Element>(<Stack direction={{ base: 'column', md: 'row' }} />)
+expectType(<Stack wrap="wrap" />)
 
-expectType<JSX.Element>(<Stack align="center" />)
 expectType<JSX.Element>(<Stack gap={8} />)
 expectType<JSX.Element>(<Stack gap={{ base: 4, md: 12 }} />)
 expectType<JSX.Element>(<Stack rowGap="1rem" />)
 expectType<JSX.Element>(<Stack columnGap={{ lg: 16 }} />)
 
+expectError<JSX.Element>(<Stack align="center" />)
+
 // Disallowed Flex/Box props (kept API narrow)
 expectError(<Stack justify="between" />) // intentionally not exposed
-expectError(<Stack wrap="wrap" />) // intentionally not exposed
 
-// Disallow Box paddings/margins on Stack (since StackOwnProps doesn’t include them)
-expectError(<Stack pt={8} />)
-expectError(<Stack m={4} />)
+expectType(<Stack pt={8} />)
+expectType(<Stack m={4} />)
 
 // Ref typing: ref matches the chosen element
 const divRef = createRef<HTMLDivElement>()

@@ -30,3 +30,7 @@ export type ComponentPropsMeta<PropsType> = {
   isResponsive: boolean
   description: string
 }[]
+
+export type ComponentUsageMeta = {
+  code: ''
+}[]

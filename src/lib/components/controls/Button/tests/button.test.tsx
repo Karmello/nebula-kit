@@ -61,7 +61,7 @@ describe('<Button /> (real components + system helpers)', () => {
   })
 
   it('forwards arbitrary DOM props and events', () => {
-    const onClick = jest.fn()
+    const onClick = vi.fn()
     const { container, getByText } = render(
       <Button id="btn1" role="button" data-foo="bar" aria-label="primary" onClick={onClick}>
         Hit

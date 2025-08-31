@@ -1,11 +1,9 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
+import { sentenceCase } from 'change-case'
 
 import { DOCS_CATEGORIES } from 'client/definitions'
 import { formatAsQueryString } from 'client/services'
 import { useLibStore } from 'lib/state'
-
-import { CompOverviewPage } from './CompOverviewPage'
-import { CompPropsPage } from './CompPropsPage'
 
 export const DocPage = () => {
   const { lang, theme } = useLibStore()
@@ -21,13 +19,15 @@ export const DocPage = () => {
                   key={`${categoryKey}/${itemKey}/${sectionKey}`}
                   path={`${categoryKey}/${itemKey}/${sectionKey}`}
                   Component={() => {
-                    if (sectionKey === 'overview') {
-                      return <CompOverviewPage />
-                    } else if (sectionKey === 'props') {
-                      return <CompPropsPage />
-                    } else {
-                      return null
+                    let Component
+                    try {
+                      Component = require(`./Comp${sentenceCase(sectionKey)}Page`)[
+                        `Comp${sentenceCase(sectionKey)}Page`
+                      ]
+                    } catch {
+                      Component = null
                     }
+                    return Component ? <Component /> : null
                   }}
                 />
               )

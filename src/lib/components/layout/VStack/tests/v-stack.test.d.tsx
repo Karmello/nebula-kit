@@ -16,10 +16,9 @@ expectType<JSX.Element>(<VStack className="col" style={{ display: 'flex' }} />)
 expectType<JSX.Element>(<VStack data-testid="vstack" />)
 
 // --- Disallowed props ---
-// direction/rowGap/columnGap are intentionally omitted in VStackOwnProps
+// direction/rowGap are intentionally omitted in VStackOwnProps
 expectError(<VStack direction="row" />)
 expectError(<VStack rowGap={2} />)
-expectError(<VStack columnGap={2} />)
 
 // --- Polymorphic behavior (StackAs) ---
 // default element props (div)

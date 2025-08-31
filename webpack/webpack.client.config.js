@@ -64,10 +64,16 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     symlinks: false,
     cacheWithContext: false,
+    alias: {
+      'process/browser': require.resolve('process/browser.js'),
+    },
+    fallback: {
+      process: require.resolve('process/browser'),
+    },
   },
   plugins: [
     new NodePolyfillPlugin(),
-    new ProvidePlugin({ process: 'process/browser' }),
+    new ProvidePlugin({ process: ['process', 'default'] }),
     ...(isDevMode
       ? [new webpack.EnvironmentPlugin([])]
       : [

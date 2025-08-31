@@ -22,7 +22,7 @@ describe('IconButton', () => {
 
   it('respects disabled state and blocks clicks', async () => {
     const user = userEvent.setup()
-    const onClick = jest.fn()
+    const onClick = vi.fn()
     render(<IconButton iconName="search" disabled onClick={onClick} aria-label="Add" />)
 
     const btn = screen.getByRole('button')
@@ -34,7 +34,7 @@ describe('IconButton', () => {
 
   it('fires onClick when enabled', async () => {
     const user = userEvent.setup()
-    const onClick = jest.fn()
+    const onClick = vi.fn()
     render(<IconButton iconName="search" onClick={onClick} aria-label="Add" />)
 
     await user.click(screen.getByRole('button', { name: /add/i }))
