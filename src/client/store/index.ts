@@ -1,3 +1,3 @@
 export * from './useAppStore'
-export * from './useDocsPageStore'
-export * from './usePlaygroundPageStore'
+export * from './useComponentsPageStore'
+export * from './useFoundationsPageStore'

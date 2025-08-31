@@ -1,7 +1,8 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 
-import { HomePage, PlaygroundPage, DocsPage, FeedbackPage } from 'client/pages'
+import { HomePage, FoundationsPage, ComponentsPage } from 'client/pages'
 import { formatAsQueryString } from 'client/services'
+import { PageKey } from 'client/definitions'
 import { useLibStore } from 'lib/state'
 
 import styles from './root-page.module.scss'
@@ -12,14 +13,16 @@ export const RootPage = () => {
   return (
     <div className={styles.RootPage}>
       <Routes>
-        <Route path="/home" Component={HomePage} />
-        <Route path="/playground/*" Component={PlaygroundPage} />
-        <Route path="/docs/*" Component={DocsPage} />
-        <Route path="/feedback" Component={FeedbackPage} />
+        <Route path={`/${PageKey.home}`} Component={HomePage} />
+        <Route path={`/${PageKey.foundations}/*`} Component={FoundationsPage} />
+        <Route path={`/${PageKey.components}/*`} Component={ComponentsPage} />
         <Route
           path="*"
           element={
-            <Navigate to={{ pathname: '/home', search: formatAsQueryString({ lang, theme }) }} replace />
+            <Navigate
+              to={{ pathname: `/${PageKey.home}`, search: formatAsQueryString({ lang, theme }) }}
+              replace
+            />
           }
         />
       </Routes>

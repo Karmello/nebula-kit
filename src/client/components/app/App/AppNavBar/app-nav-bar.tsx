@@ -2,15 +2,16 @@ import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 import { AppNavBar as NebAppNavBar } from 'lib/components'
-import { useDocsPageStore, usePlaygroundPageStore } from 'client/store'
+import { useFoundationsPageStore, useComponentsPageStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
+import { PageKey } from 'client/definitions'
 
 export const AppNavBar = () => {
   const { t } = useTranslation()
   const { pathname } = useLocation()
 
-  const playgroundPageStore = usePlaygroundPageStore()
-  const docsPageStore = useDocsPageStore()
+  const foundationsPageStore = useFoundationsPageStore()
+  const componentsPageStore = useComponentsPageStore()
   const navigateTo = useNavigateTo()
 
   const [pageKey] = pathname.split('/').filter(s => s)
@@ -18,24 +19,26 @@ export const AppNavBar = () => {
   return (
     <NebAppNavBar
       buttons={[
-        { value: 'home', label: t('common.home') },
-        { value: 'playground', label: t('common.playground') },
-        { value: 'docs', label: t('common.docs') },
+        { value: PageKey.home, label: t('common.home') },
+        { value: PageKey.foundations, label: t('common.foundations') },
+        { value: PageKey.components, label: t('common.components') },
       ]}
       selectedValue={pageKey}
       onSelect={value => {
         switch (value) {
-          case 'home': {
-            navigateTo('/home')
+          case PageKey.home: {
+            navigateTo(`/${PageKey.home}`)
             break
           }
-          case 'playground': {
-            navigateTo(`/playground/${playgroundPageStore.categoryKey}/${playgroundPageStore.itemKey}`)
-            break
-          }
-          case 'docs': {
+          case PageKey.foundations: {
             navigateTo(
-              `/docs/${docsPageStore.categoryKey}/${docsPageStore.itemKey}/${docsPageStore.sectionKey}`
+              `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}`
+            )
+            break
+          }
+          case PageKey.components: {
+            navigateTo(
+              `/${PageKey.components}/${componentsPageStore.categoryKey}/${componentsPageStore.itemKey}/${componentsPageStore.sectionKey}`
             )
           }
         }
