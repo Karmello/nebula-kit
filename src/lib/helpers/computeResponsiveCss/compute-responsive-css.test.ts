@@ -28,8 +28,8 @@ describe('computeResponsiveCss', () => {
       marginTop: '10px',
     })
 
-    expect(ref.current!.style.backgroundColor).toBe('red')
-    expect(ref.current!.style.marginTop).toBe('10px')
+    expect(ref.current.style.backgroundColor).toBe('red')
+    expect(ref.current.style.marginTop).toBe('10px')
   })
 
   it('applies multiple props together (simple mix: string + number)', () => {
@@ -39,9 +39,9 @@ describe('computeResponsiveCss', () => {
       gridTemplateColumns: '1fr 2fr',
     })
 
-    expect(ref.current!.style.opacity).toBe('0.4')
-    expect(ref.current!.style.display).toBe('grid')
-    expect(ref.current!.style.gridTemplateColumns).toBe('1fr 2fr')
+    expect(ref.current.style.opacity).toBe('0.4')
+    expect(ref.current.style.display).toBe('grid')
+    expect(ref.current.style.gridTemplateColumns).toBe('1fr 2fr')
   })
 
   it('cascades responsive values base→sm→md→lg→xl with carry-over per prop', () => {
@@ -63,24 +63,24 @@ describe('computeResponsiveCss', () => {
     }
 
     computeResponsiveCss(ref, 'base' as Breakpoint, props)
-    expect(ref.current!.style.backgroundColor).toBe('red')
-    expect(ref.current!.style.marginTop).toBe('2px')
+    expect(ref.current.style.backgroundColor).toBe('red')
+    expect(ref.current.style.marginTop).toBe('2px')
 
     computeResponsiveCss(ref, 'sm' as Breakpoint, props)
-    expect(ref.current!.style.backgroundColor).toBe('blue')
-    expect(ref.current!.style.marginTop).toBe('2px')
+    expect(ref.current.style.backgroundColor).toBe('blue')
+    expect(ref.current.style.marginTop).toBe('2px')
 
     computeResponsiveCss(ref, 'md' as Breakpoint, props)
-    expect(ref.current!.style.backgroundColor).toBe('orange')
-    expect(ref.current!.style.marginTop).toBe('2px') // md undefined -> still base
+    expect(ref.current.style.backgroundColor).toBe('orange')
+    expect(ref.current.style.marginTop).toBe('2px') // md undefined -> still base
 
     computeResponsiveCss(ref, 'lg' as Breakpoint, props)
-    expect(ref.current!.style.backgroundColor).toBe('orange') // carry from md
-    expect(ref.current!.style.marginTop).toBe('12px')
+    expect(ref.current.style.backgroundColor).toBe('orange') // carry from md
+    expect(ref.current.style.marginTop).toBe('12px')
 
     computeResponsiveCss(ref, 'xl' as Breakpoint, props)
-    expect(ref.current!.style.backgroundColor).toBe('purple')
-    expect(ref.current!.style.marginTop).toBe('12px') // carry from lg
+    expect(ref.current.style.backgroundColor).toBe('purple')
+    expect(ref.current.style.marginTop).toBe('12px') // carry from lg
   })
 
   it('stops at the requested breakpoint (no leaking higher values)', () => {
@@ -95,10 +95,10 @@ describe('computeResponsiveCss', () => {
     }
 
     computeResponsiveCss(ref, 'md' as Breakpoint, props)
-    expect(ref.current!.style.backgroundColor).toBe('orange')
+    expect(ref.current.style.backgroundColor).toBe('orange')
     // ensure nothing beyond md was applied
-    expect(ref.current!.style.backgroundColor).not.toBe('black')
-    expect(ref.current!.style.backgroundColor).not.toBe('white')
+    expect(ref.current.style.backgroundColor).not.toBe('black')
+    expect(ref.current.style.backgroundColor).not.toBe('white')
   })
 
   it('ignores null/undefined entries inside responsive objects', () => {
@@ -112,13 +112,13 @@ describe('computeResponsiveCss', () => {
     }
 
     computeResponsiveCss(ref, 'sm' as Breakpoint, props)
-    expect(ref.current!.style.marginLeft).toBe('4px') // sm null -> keep base
+    expect(ref.current.style.marginLeft).toBe('4px') // sm null -> keep base
 
     computeResponsiveCss(ref, 'md' as Breakpoint, props)
-    expect(ref.current!.style.marginLeft).toBe('4px') // md undefined -> keep base
+    expect(ref.current.style.marginLeft).toBe('4px') // md undefined -> keep base
 
     computeResponsiveCss(ref, 'xl' as Breakpoint, props)
-    expect(ref.current!.style.marginLeft).toBe('20px') // xl defined overrides
+    expect(ref.current.style.marginLeft).toBe('20px') // xl defined overrides
   })
 
   it('handles numeric responsive values without scale-sensitive props (opacity)', () => {
@@ -127,10 +127,10 @@ describe('computeResponsiveCss', () => {
     }
 
     computeResponsiveCss(ref, 'base' as Breakpoint, props)
-    expect(ref.current!.style.opacity).toBe('0.25')
+    expect(ref.current.style.opacity).toBe('0.25')
 
     computeResponsiveCss(ref, 'lg' as Breakpoint, props)
-    expect(ref.current!.style.opacity).toBe('0.9')
+    expect(ref.current.style.opacity).toBe('0.9')
   })
 
   it('respects insertion order for shorthand → longhand precedence', () => {
@@ -140,7 +140,7 @@ describe('computeResponsiveCss', () => {
       marginTop: '2px',
     })
 
-    expect(ref.current!.style.marginTop).toBe('2px')
+    expect(ref.current.style.marginTop).toBe('2px')
     // The shorthand still applies to the other sides:
     // jsdom keeps shorthand as a token string; check a different side via computed string
     // but a direct check on marginRight may be empty in inline style; assert top override is the key.
@@ -169,7 +169,7 @@ describe('computeResponsiveCss', () => {
               : bp === 'lg'
                 ? 'black'
                 : 'white'
-      expect(ref.current!.style.backgroundColor).toBe(expected)
+      expect(ref.current.style.backgroundColor).toBe(expected)
     }
   })
 })
