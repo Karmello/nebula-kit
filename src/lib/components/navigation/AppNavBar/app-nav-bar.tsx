@@ -27,8 +27,8 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
       as="nav"
       className={classNames(withPrefix('app-nav-bar'), className)}
       style={{ overflow: 'hidden' }}
-      direction="column"
-      align="flex-end"
+      flexDirection="column"
+      alignItems="flex-end"
       borderRadius={0}
     >
       <Box blockSize={{ base: `var(--neb-scale-${BUTTON_SIZE_TO_PROPS.md.blockSize})`, sm: 0 }}>
@@ -42,7 +42,7 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
       <Flex
         className={withPrefix('app-nav-bar-buttons-horizontal')}
         as="ul"
-        direction="row"
+        flexDirection="row"
         inlineSize="100%"
         intent="tertiary"
         blockSize={{ base: 0, sm: `var(--neb-scale-${BUTTON_SIZE_TO_PROPS.md.blockSize})` }}
@@ -67,7 +67,7 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
       <Flex
         className={withPrefix('app-nav-bar-buttons-vertical')}
         as="ul"
-        direction="column"
+        flexDirection="column"
         blockSize={
           bp === 'base' && menuOpen
             ? `calc(var(--neb-scale-${BUTTON_SIZE_TO_PROPS.md.blockSize}) * ${buttons.length})`

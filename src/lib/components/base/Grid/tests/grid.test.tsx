@@ -39,14 +39,14 @@ describe('Grid (no mocks)', () => {
     render(
       <Grid
         data-testid="grid"
-        columns={{ base: 1, md: 3 }}
-        rows="auto auto"
+        gridTemplateColumns={{ base: 1, md: 3 }}
+        gridTemplateRows="auto auto"
         gap={{ base: '4px', md: '8px' }}
         rowGap="2ch"
         columnGap="1rem"
-        autoFlow="row dense"
-        autoRows="minmax(0,1fr)"
-        autoColumns="minmax(10ch,auto)"
+        gridAutoFlow="row dense"
+        gridAutoRows="minmax(0,1fr)"
+        gridAutoColumns="minmax(10ch,auto)"
         placeItems={{ base: 'start', md: 'stretch' }}
         placeContent="space-between"
       />
@@ -101,7 +101,7 @@ describe('Grid (no mocks)', () => {
     const { rerender } = render(<Grid data-testid="grid" />)
     const baseStyle = screen.getByTestId('grid').getAttribute('style') || ''
 
-    rerender(<Grid data-testid="grid" columns={3} />)
+    rerender(<Grid data-testid="grid" gridTemplateColumns={3} />)
     const withColumnsStyle = screen.getByTestId('grid').getAttribute('style') || ''
 
     // Adding a prop should increase or change the style text (vars added)

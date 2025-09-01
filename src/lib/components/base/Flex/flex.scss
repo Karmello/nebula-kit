@@ -1,41 +1,11 @@
-@use 'styles/mixins/generate-fallback-chains.scss' as *;
-
-$neb-flex-props: flex-direction, flex-wrap, justify-content, align-items, gap, row-gap, column-gap;
-
 .neb-flex {
   display: flex;
 
-  --neb-flex-direction-base: row;
-  --neb-flex-wrap-base: nowrap;
-  --neb-flex-justify-base: flex-start;
-  --neb-flex-align-base: flex-start;
-  --neb-flex-gap-base: initial;
-  --neb-flex-row-gap-base: initial;
-  --neb-flex-column-gap-base: initial;
-
-  @include generate-fallback-chains($neb-flex-props, base, flex);
-}
-
-@media (min-width: 480px) {
-  .neb-flex {
-    @include generate-fallback-chains($neb-flex-props, sm, flex);
-  }
-}
-
-@media (min-width: 768px) {
-  .neb-flex {
-    @include generate-fallback-chains($neb-flex-props, md, flex);
-  }
-}
-
-@media (min-width: 1024px) {
-  .neb-flex {
-    @include generate-fallback-chains($neb-flex-props, lg, flex);
-  }
-}
-
-@media (min-width: 1280px) {
-  .neb-flex {
-    @include generate-fallback-chains($neb-flex-props, xl, flex);
-  }
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: initial;
+  row-gap: initial;
+  column-gap: initial;
 }

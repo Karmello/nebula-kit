@@ -1,46 +1,14 @@
-@use 'styles/mixins/generate-fallback-chains.scss' as *;
-
-$neb-grid-props:
-  grid-template-columns, grid-template-rows, grid-auto-flow, grid-auto-rows, grid-auto-columns, place-items,
-  place-content, gap, row-gap, column-gap;
-
 .neb-grid {
   display: grid;
 
-  --neb-grid-columns-base: 1fr;
-  --neb-grid-rows-base: auto;
-  --neb-grid-auto-rows-base: auto;
-  --neb-grid-auto-columns-base: auto;
-  --neb-grid-auto-flow-base: row;
-  --neb-grid-place-items-base: stretch;
-  --neb-grid-place-content-base: start;
-  --neb-grid-gap-base: initial;
-  --neb-grid-row-gap-base: initial;
-  --neb-grid-column-gap-base: initial;
-
-  @include generate-fallback-chains($neb-grid-props, base, grid);
-}
-
-@media (min-width: 480px) {
-  .neb-grid {
-    @include generate-fallback-chains($neb-grid-props, sm, grid);
-  }
-}
-
-@media (min-width: 768px) {
-  .neb-grid {
-    @include generate-fallback-chains($neb-grid-props, md, grid);
-  }
-}
-
-@media (min-width: 1024px) {
-  .neb-grid {
-    @include generate-fallback-chains($neb-grid-props, lg, grid);
-  }
-}
-
-@media (min-width: 1280px) {
-  .neb-grid {
-    @include generate-fallback-chains($neb-grid-props, xl, grid);
-  }
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+  grid-auto-columns: auto;
+  grid-auto-flow: row;
+  place-items: stretch;
+  place-content: start;
+  gap: initial;
+  row-gap: initial;
+  column-gap: initial;
 }

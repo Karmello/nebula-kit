@@ -1,19 +1,11 @@
-import { ComponentPropsWithRef, ElementType } from 'react'
+import { ComponentProps, ComponentRef, ElementType, JSX, RefObject } from 'react'
 
 import { BREAKPOINTS, SCALE } from '..'
 
 export type Breakpoint = (typeof BREAKPOINTS)[number]
-
 export type ScaleValue = (typeof SCALE)[number]
 
 export type HorizontalPosition = 'left' | 'center' | 'right'
-
-export type ResponsiveProp<T> = T | Partial<Record<Breakpoint, T>>
-
-export type PolymorphicProps<E extends ElementType, OwnProps> = Omit<ComponentPropsWithRef<E>, 'as'> & {
-  as?: E
-} & OwnProps
-
 export type CompWithCssVarsPrefix = 'box' | 'text' | 'flex' | 'grid' | 'table' | 'cluster'
 
 export type ComponentMeta<PropsType> = {
@@ -30,3 +22,12 @@ export type ComponentMeta<PropsType> = {
     description: string
   }[]
 }
+
+export type ResponsiveProp<T> = T | Partial<Record<Breakpoint, T>>
+
+export type PropsOf<E extends ElementType> = JSX.LibraryManagedAttributes<E, ComponentProps<E>>
+
+export type PolymorphicProps<E extends ElementType, Own> = Own & {
+  as?: E
+  innerRef?: RefObject<ComponentRef<E>>
+} & Omit<PropsOf<E>, keyof Own | 'as' | 'ref'>

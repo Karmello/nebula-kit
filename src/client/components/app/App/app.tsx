@@ -32,15 +32,13 @@ export const App = () => {
   }, [pathname])
 
   return (
-    <>
-      <AppFrame stickyHeader>
-        <AppFrame.Header>
-          <AppNavBar />
-        </AppFrame.Header>
-        <AppFrame.Main marginTop={10}>
-          <RootPage />
-        </AppFrame.Main>
-      </AppFrame>
-    </>
+    <AppFrame stickyHeader>
+      <AppFrame.Header>
+        <AppNavBar />
+      </AppFrame.Header>
+      <AppFrame.Main marginTop={10}>
+        <RootPage />
+      </AppFrame.Main>
+    </AppFrame>
   )
 }

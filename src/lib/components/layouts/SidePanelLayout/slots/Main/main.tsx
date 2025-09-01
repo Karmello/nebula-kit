@@ -24,7 +24,7 @@ export const Main = ({ children, ...rest }: ComponentPropsWithRef<'section'> & B
 
   return (
     <Box minInlineSize={0} {...rest} as="section">
-      <Flex align="center" direction={sidePosition === 'left' ? 'row' : 'row-reverse'} gap={10}>
+      <Flex alignItems="center" flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'} gap={10}>
         <IconButton
           iconName={getToggleIconName(sidePosition, sideOpen)}
           intent="tertiary"

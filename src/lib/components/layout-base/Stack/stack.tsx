@@ -1,21 +1,38 @@
 import { BoxOwnProps, Flex, FlexOwnProps } from 'lib/components'
-import { ResponsiveProp, PolymorphicProps, StackDirection, StackAs } from 'lib/definitions'
+import { ResponsiveProp, PolymorphicProps, StackDirection, StackAs, PropsOf } from 'lib/definitions'
 
 type StackAsType = `${StackAs}`
 
 export type StackOwnProps = {
   as?: StackAsType
-  direction?: ResponsiveProp<`${StackDirection}`>
-  wrap?: FlexOwnProps['wrap']
+  flexDirection?: ResponsiveProp<`${StackDirection}`>
+  flexWrap?: FlexOwnProps['flexWrap']
   gap?: FlexOwnProps['gap']
   rowGap?: FlexOwnProps['rowGap']
   columnGap?: FlexOwnProps['columnGap']
 }
 
-export type StackProps<E extends StackAsType = 'div'> = PolymorphicProps<E, StackOwnProps & BoxOwnProps>
-
-export const Stack = <E extends StackAsType = 'div'>(props: StackProps<E>) => {
-  return <Flex {...props} align="stretch" />
+export const Stack = <E extends StackAsType = 'div'>({
+  as,
+  flexDirection,
+  flexWrap,
+  gap,
+  rowGap,
+  columnGap,
+  ...rest
+}: PolymorphicProps<E, StackOwnProps & BoxOwnProps>) => {
+  return (
+    <Flex
+      as={as}
+      flexDirection={flexDirection}
+      flexWrap={flexWrap}
+      gap={gap}
+      rowGap={rowGap}
+      columnGap={columnGap}
+      alignItems="stretch"
+      {...(rest as PropsOf<E>)}
+    />
+  )
 }
 
 Stack.displayName = 'Stack'

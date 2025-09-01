@@ -8,6 +8,7 @@ import {
   BoxIntent,
   CssTextAlign,
   PolymorphicProps,
+  PropsOf,
   ResponsiveProp,
   ScaleValue,
   TextAs,
@@ -34,8 +35,6 @@ export type TextOwnProps = {
   iconName?: WithIconOwnProps['iconName']
   iconPosition?: WithIconOwnProps['iconPosition']
 }
-
-type TextProps<E extends TextAsType = 'p'> = PolymorphicProps<E, TextOwnProps>
 
 export const TYPOGRAPHY_TO_PROPS: Record<
   TextTypography,
@@ -78,7 +77,7 @@ export const Text = <E extends TextAsType = 'p'>({
   iconName,
   iconPosition,
   ...rest
-}: TextProps<E>) => {
+}: PolymorphicProps<E, TextOwnProps>) => {
   return (
     <Box
       as={as || TYPOGRAPHY_TO_PROPS[typography].as}
@@ -106,7 +105,7 @@ export const Text = <E extends TextAsType = 'p'>({
         ...style,
       }}
       {...getDataAttrs('text', { typography })}
-      {...rest}
+      {...(rest as PropsOf<E>)}
     >
       <WithIcon iconName={iconName} iconPosition={iconPosition}>
         {children}

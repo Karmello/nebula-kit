@@ -22,7 +22,7 @@ export const AppFrame = ({ children, stickyHeader = false }: AppFrameOwnProps) =
         childrenToVerify={children}
       >
         {slots => (
-          <Grid rows="auto 1fr auto" className={withPrefix('app-frame')} minBlockSize="100dvh">
+          <Grid gridTemplateRows="auto 1fr auto" className={withPrefix('app-frame')} minBlockSize="100dvh">
             {slots.Header}
             {slots.Main}
             {slots.Footer}

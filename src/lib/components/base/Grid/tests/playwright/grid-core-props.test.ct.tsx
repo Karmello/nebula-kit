@@ -14,11 +14,11 @@ test.describe('Grid - core props', () => {
   test('base: display grid + core props compute', async ({ mount }) => {
     const cmp = await mount(
       <Grid
-        columns="repeat(12, 1fr)"
-        rows="auto 1fr auto"
-        autoFlow="row dense"
-        autoRows="minmax(100px, auto)"
-        autoColumns="1fr"
+        gridTemplateColumns="repeat(12, 1fr)"
+        gridTemplateRows="auto 1fr auto"
+        gridAutoFlow="row dense"
+        gridAutoRows="minmax(100px, auto)"
+        gridAutoColumns="1fr"
         placeItems="center"
         placeContent="space-between"
       />
@@ -39,11 +39,11 @@ test.describe('Grid - core props', () => {
 
     const cmp = await mount(
       <Grid
-        columns={{ base: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }}
-        rows={{ base: 'auto 1fr', md: 'auto auto' }}
-        autoFlow={{ base: 'row', md: 'column' }}
-        autoRows={{ base: 'minmax(60px, auto)', md: 'minmax(80px, auto)' }}
-        autoColumns={{ base: 'auto', md: 'minmax(120px, 1fr)' }}
+        gridTemplateColumns={{ base: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }}
+        gridTemplateRows={{ base: 'auto 1fr', md: 'auto auto' }}
+        gridAutoFlow={{ base: 'row', md: 'column' }}
+        gridAutoRows={{ base: 'minmax(60px, auto)', md: 'minmax(80px, auto)' }}
+        gridAutoColumns={{ base: 'auto', md: 'minmax(120px, 1fr)' }}
         placeItems={{ base: 'start', md: 'end' }}
         placeContent={{ base: 'start', md: 'center' }}
       />
@@ -64,13 +64,13 @@ test.describe('Grid - core props', () => {
     const cmp = await mount(
       <Grid
         // only lg provided → should apply at xl
-        columns={{ lg: 'repeat(6, 1fr)' }}
-        rows={{ lg: 'auto 1fr' }}
-        autoFlow={{ lg: 'row dense' }}
+        gridTemplateColumns={{ lg: 'repeat(6, 1fr)' }}
+        gridTemplateRows={{ lg: 'auto 1fr' }}
+        gridAutoFlow={{ lg: 'row dense' }}
         placeItems={{ lg: 'center' }}
         // only md provided → also should apply at xl (no lg/xl)
-        autoRows={{ md: 'minmax(70px, auto)' }}
-        autoColumns={{ md: 'minmax(100px, 1fr)' }}
+        gridAutoRows={{ md: 'minmax(70px, auto)' }}
+        gridAutoColumns={{ md: 'minmax(100px, 1fr)' }}
         placeContent={{ md: 'space-around' }}
       />
     )
@@ -89,11 +89,11 @@ test.describe('Grid - core props', () => {
 
     const cmp = await mount(
       <Grid
-        rows="auto auto"
-        autoFlow="row"
+        gridTemplateRows="auto auto"
+        gridAutoFlow="row"
         placeContent="stretch"
         // change only columns & placeItems at lg
-        columns={{ lg: 'repeat(5, 1fr)' }}
+        gridTemplateColumns={{ lg: 'repeat(5, 1fr)' }}
         placeItems={{ lg: 'end' }}
       />
     )

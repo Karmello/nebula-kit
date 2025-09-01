@@ -1,8 +1,8 @@
-import { ElementType } from 'react'
+import { ComponentRef, ElementType, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
 import { Box, BoxOwnProps } from 'lib/components'
-import { withPrefix, getCssVars } from 'lib/helpers'
+import { withPrefix, computeResponsiveCss, useScreen } from 'lib/helpers'
 
 import {
   CssFlexAlign,
@@ -10,6 +10,7 @@ import {
   CssFlexJustify,
   CssFlexWrap,
   PolymorphicProps,
+  PropsOf,
   ResponsiveProp,
   ScaleValue,
 } from 'lib/definitions'
@@ -17,40 +18,50 @@ import {
 import './flex.scss'
 
 export type FlexOwnProps = {
-  direction?: ResponsiveProp<`${CssFlexDirection}`>
-  wrap?: ResponsiveProp<`${CssFlexWrap}`>
-  justify?: ResponsiveProp<`${CssFlexJustify}`>
-  align?: ResponsiveProp<`${CssFlexAlign}`>
+  flexDirection?: ResponsiveProp<`${CssFlexDirection}`>
+  flexWrap?: ResponsiveProp<`${CssFlexWrap}`>
+  justifyContent?: ResponsiveProp<`${CssFlexJustify}`>
+  alignItems?: ResponsiveProp<`${CssFlexAlign}`>
   gap?: ResponsiveProp<ScaleValue | string>
   rowGap?: ResponsiveProp<ScaleValue | string>
   columnGap?: ResponsiveProp<ScaleValue | string>
 }
 
-export type FlexProps<E extends ElementType = 'div'> = PolymorphicProps<
-  E,
-  Omit<BoxOwnProps, 'display'> & FlexOwnProps
->
-
 export const Flex = <E extends ElementType = 'div'>({
   className,
   style,
-  direction,
-  wrap,
-  justify,
-  align,
+  // css
+  flexDirection,
+  flexWrap,
+  justifyContent,
+  alignItems,
   gap,
   rowGap,
   columnGap,
   ...rest
-}: FlexProps<E>) => {
+}: PolymorphicProps<E, Omit<BoxOwnProps, 'display'> & FlexOwnProps>) => {
+  const localRef = useRef<ComponentRef<E>>(null)
+
+  const { bp } = useScreen()
+
+  useLayoutEffect(() => {
+    computeResponsiveCss(localRef, bp, {
+      flexDirection,
+      flexWrap,
+      justifyContent,
+      alignItems,
+      gap,
+      rowGap,
+      columnGap,
+    })
+  }, [bp, flexDirection, flexWrap, justifyContent, alignItems, gap, rowGap, columnGap])
+
   return (
     <Box
+      innerRef={localRef}
       className={classNames(withPrefix('flex'), className)}
-      style={{
-        ...getCssVars('flex', { direction, wrap, justify, align, gap, rowGap, columnGap }),
-        ...style,
-      }}
-      {...(rest as FlexProps<E>)}
+      style={style}
+      {...(rest as PropsOf<E>)}
     />
   )
 }

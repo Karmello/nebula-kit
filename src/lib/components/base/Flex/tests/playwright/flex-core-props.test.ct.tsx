@@ -18,7 +18,13 @@ test.describe('Flex - core props (direction, wrap, justify, align)', () => {
 
   test('base: direction / wrap / justify / align set computed styles', async ({ mount }) => {
     const cmp = await mount(
-      <Flex direction="row" wrap="wrap" justify="space-between" align="center" data-testid="flex" />
+      <Flex
+        flexDirection="row"
+        flexWrap="wrap"
+        justifyContent="space-between"
+        alignItems="center"
+        data-testid="flex"
+      />
     )
 
     await expect(cmp).toHaveCSS('flex-direction', 'row')
@@ -28,7 +34,9 @@ test.describe('Flex - core props (direction, wrap, justify, align)', () => {
   })
 
   test('base: direction column + nowrap + start/start', async ({ mount }) => {
-    const cmp = await mount(<Flex direction="column" wrap="nowrap" justify="flex-start" align="flex-start" />)
+    const cmp = await mount(
+      <Flex flexDirection="column" flexWrap="nowrap" justifyContent="flex-start" alignItems="flex-start" />
+    )
 
     await expect(cmp).toHaveCSS('flex-direction', 'column')
     await expect(cmp).toHaveCSS('flex-wrap', 'nowrap')
@@ -41,10 +49,10 @@ test.describe('Flex - core props (direction, wrap, justify, align)', () => {
     const cmp = await mount(
       <Flex
         // responsive overrides at md
-        justify={{ md: 'center' }}
-        align={{ md: 'flex-end' }}
-        direction={{ md: 'column' }}
-        wrap={{ md: 'wrap' }}
+        justifyContent={{ md: 'center' }}
+        alignItems={{ md: 'flex-end' }}
+        flexDirection={{ md: 'column' }}
+        flexWrap={{ md: 'wrap' }}
       />
     )
 
@@ -59,9 +67,9 @@ test.describe('Flex - core props (direction, wrap, justify, align)', () => {
     const cmp = await mount(
       <Flex
         // only lg provided
-        direction={{ lg: 'column' }}
-        justify={{ lg: 'space-around' }}
-        align={{ lg: 'center' }}
+        flexDirection={{ lg: 'column' }}
+        justifyContent={{ lg: 'space-around' }}
+        alignItems={{ lg: 'center' }}
       />
     )
 
@@ -78,9 +86,9 @@ test.describe('Flex - core props (direction, wrap, justify, align)', () => {
     const cmp = await mount(
       <Flex
         // overrides at lg
-        direction={{ lg: 'row' }}
-        justify={{ lg: 'space-between' }}
-        align={{ lg: 'stretch' }}
+        flexDirection={{ lg: 'row' }}
+        justifyContent={{ lg: 'space-between' }}
+        alignItems={{ lg: 'stretch' }}
       />
     )
 
@@ -93,11 +101,11 @@ test.describe('Flex - core props (direction, wrap, justify, align)', () => {
     await page.setViewportSize(vp.md)
     const cmp = await mount(
       <Flex
-        direction="row"
-        wrap="nowrap"
-        align="center"
+        flexDirection="row"
+        flexWrap="nowrap"
+        alignItems="center"
         // only override justify at md
-        justify={{ md: 'space-evenly' }}
+        justifyContent={{ md: 'space-evenly' }}
       />
     )
 

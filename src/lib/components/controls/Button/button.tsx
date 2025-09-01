@@ -23,14 +23,14 @@ export const BUTTON_SIZE_TO_PROPS: Record<
   ButtonSize,
   {
     blockSize: ScaleValue
-    pl: ScaleValue
-    pr: ScaleValue
+    paddingLeft: ScaleValue
+    paddingRight: ScaleValue
     fontSize: ScaleValue
   }
 > = {
-  sm: { blockSize: 19, pl: 6, pr: 6, fontSize: 7 },
-  md: { blockSize: 22, pl: 8, pr: 8, fontSize: 8 },
-  lg: { blockSize: 26, pl: 12, pr: 12, fontSize: 9 },
+  sm: { blockSize: 19, paddingLeft: 6, paddingRight: 6, fontSize: 7 },
+  md: { blockSize: 22, paddingLeft: 8, paddingRight: 8, fontSize: 8 },
+  lg: { blockSize: 26, paddingLeft: 12, paddingRight: 12, fontSize: 9 },
 }
 
 export const BUTTON_DEFAULT_VARIANT: `${BoxVariant}` = 'solid'

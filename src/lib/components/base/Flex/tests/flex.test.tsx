@@ -36,7 +36,15 @@ describe('Flex', () => {
   })
 
   it('sets base CSS vars for direction/wrap/justify/align', () => {
-    render(<Flex data-testid="flex" direction="column" wrap="wrap" justify="space-between" align="center" />)
+    render(
+      <Flex
+        data-testid="flex"
+        flexDirection="column"
+        flexWrap="wrap"
+        justifyContent="space-between"
+        alignItems="center"
+      />
+    )
     const el = screen.getByTestId('flex')
 
     expect(readVar(el, 'direction').trim()).toBe('column')
@@ -49,8 +57,8 @@ describe('Flex', () => {
     render(
       <Flex
         data-testid="flex"
-        direction={{ base: 'row', md: 'column' }}
-        justify={{ base: 'flex-start', lg: 'center' }}
+        flexDirection={{ base: 'row', md: 'column' }}
+        justifyContent={{ base: 'flex-start', lg: 'center' }}
       />
     )
     const el = screen.getByTestId('flex')
@@ -90,7 +98,7 @@ describe('Flex', () => {
   })
 
   it('does not clobber inline style prop (merges with CSS vars)', () => {
-    render(<Flex data-testid="flex" style={{ opacity: 0.5 }} direction="row-reverse" />)
+    render(<Flex data-testid="flex" style={{ opacity: 0.5 }} flexDirection="row-reverse" />)
     const el = screen.getByTestId('flex')
     expect(el).toHaveStyle({ opacity: '0.5' })
     expect(readVar(el, 'direction').trim()).toBe('row-reverse')

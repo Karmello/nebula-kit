@@ -1,13 +1,6 @@
-@use 'styles/mixins/generate-fallback-chains.scss' as *;
-
 @use './variants/box-solid.scss';
 @use './variants/box-outline.scss';
 @use './variants/box-ghost.scss';
-
-$neb-box-props:
-  display, overflow-x, overflow-y, opacity, position, top, right, bottom, left, text-align, block-size,
-  min-block-size, max-block-size, inline-size, min-inline-size, max-inline-size, margin-top, margin-right,
-  margin-bottom, margin-left, padding-top, padding-right, padding-bottom, padding-left;
 
 .neb-box {
   width: auto;
@@ -19,54 +12,36 @@ $neb-box-props:
   border-style: solid;
   border-width: 0;
 
-  --neb-box-display-base: block;
-  --neb-box-overflow-x-base: visible;
-  --neb-box-overflow-y-base: visible;
-  --neb-box-opacity-base: 1;
-  --neb-box-position-base: static;
-  --neb-box-top-base: auto;
-  --neb-box-right-base: auto;
-  --neb-box-bottom-base: auto;
-  --neb-box-left-base: auto;
-  --neb-box-text-align-base: start;
-  --neb-box-block-size-base: auto;
-  --neb-box-min-block-size-base: auto;
-  --neb-box-max-block-size-base: none;
-  --neb-box-inline-size-base: auto;
-  --neb-box-min-inline-size-base: auto;
-  --neb-box-max-inline-size-base: none;
-  --neb-box-mt-base: initial;
-  --neb-box-mr-base: initial;
-  --neb-box-mb-base: initial;
-  --neb-box-ml-base: initial;
-  --neb-box-mx-base: initial;
-  --neb-box-my-base: initial;
-  --neb-box-m-base: initial;
-  --neb-box-pt-base: initial;
-  --neb-box-pr-base: initial;
-  --neb-box-pb-base: initial;
-  --neb-box-pl-base: initial;
-  --neb-box-px-base: initial;
-  --neb-box-py-base: initial;
-  --neb-box-p-base: initial;
-
-  @include generate-fallback-chains($neb-box-props, base, box);
-
-  @media (min-width: 480px) {
-    @include generate-fallback-chains($neb-box-props, sm, box);
-  }
-
-  @media (min-width: 768px) {
-    @include generate-fallback-chains($neb-box-props, md, box);
-  }
-
-  @media (min-width: 1024px) {
-    @include generate-fallback-chains($neb-box-props, lg, box);
-  }
-
-  @media (min-width: 1280px) {
-    @include generate-fallback-chains($neb-box-props, xl, box);
-  }
+  display: block;
+  overflow-x: visible;
+  overflow-y: visible;
+  opacity: 1;
+  position: static;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  text-align: start;
+  block-size: auto;
+  min-block-size: auto;
+  max-block-size: none;
+  inline-size: auto;
+  min-inline-size: auto;
+  max-inline-size: none;
+  margin-top: initial;
+  margin-right: initial;
+  margin-bottom: initial;
+  margin-left: initial;
+  margin-inline: initial;
+  margin-block: initial;
+  margin: initial;
+  padding-top: initial;
+  padding-right: initial;
+  padding-bottom: initial;
+  padding-left: initial;
+  padding-inline: initial;
+  padding-block: initial;
+  padding: initial;
 }
 
 .neb-box[data-neb-box-variant][data-neb-box-intent]:focus-visible {

@@ -1,27 +1,26 @@
-import { ElementType, useEffect, useRef } from 'react'
+import { ElementType, ComponentRef, useRef, useLayoutEffect } from 'react'
 import classNames from 'classnames'
 
-import { withPrefix, getCssVars, getDataAttrs, scale, useScreen, computeResponsiveCss } from 'lib/helpers'
-import { BoxIntent, BoxVariant, PolymorphicProps } from 'lib/definitions'
 import { useLibStore } from 'lib/state'
+import { BoxIntent, BoxVariant, PolymorphicProps, PropsOf } from 'lib/definitions'
+import { computeResponsiveCss, getDataAttrs, scale, useScreen, withPrefix } from 'lib/helpers'
 
 import { BoxOwnProps } from './types'
 import './styles/box.scss'
-
-type BoxProps<E extends ElementType = 'div'> = PolymorphicProps<E, BoxOwnProps>
 
 export const BOX_DEFAULT_VARIANT: `${BoxVariant}` = 'ghost'
 export const BOX_DEFAULT_INTENT: `${BoxIntent}` = 'neutral'
 
 export const Box = <E extends ElementType = 'div'>({
   as,
+  innerRef,
   className,
   style,
   variant = BOX_DEFAULT_VARIANT,
   intent = BOX_DEFAULT_INTENT,
   interactive = false,
   disabled = false,
-  // css vars
+  // css
   display,
   opacity,
   overflowX,
@@ -39,78 +38,109 @@ export const Box = <E extends ElementType = 'div'>({
   inlineSize,
   minInlineSize,
   maxInlineSize,
-  pt,
-  pr,
-  pb,
-  pl,
-  px,
-  py,
-  p,
-  mt,
-  mr,
-  mb,
-  ml,
-  mx,
-  my,
-  m,
+  padding,
+  paddingInline,
+  paddingBlock,
+  paddingTop,
+  paddingRight,
+  paddingBottom,
+  paddingLeft,
+  margin,
+  marginInline,
+  marginBlock,
+  marginTop,
+  marginRight,
+  marginBottom,
+  marginLeft,
   ...rest
-}: BoxProps<E>) => {
-  const ref = useRef(null)
+}: PolymorphicProps<E, BoxOwnProps>) => {
+  const localRef = useRef<ComponentRef<E>>(null)
 
   const { borderRadius: globalBorderRadius } = useLibStore()
   const { bp } = useScreen()
 
-  useEffect(() => {
-    computeResponsiveCss(ref, bp, { display })
-  }, [bp])
+  useLayoutEffect(() => {
+    computeResponsiveCss(innerRef || localRef, bp, {
+      display,
+      opacity,
+      overflowX,
+      overflowY,
+      position,
+      top,
+      right,
+      bottom,
+      left,
+      borderRadius,
+      textAlign,
+      blockSize,
+      minBlockSize,
+      maxBlockSize,
+      inlineSize,
+      minInlineSize,
+      maxInlineSize,
+      padding,
+      paddingInline,
+      paddingBlock,
+      paddingTop,
+      paddingRight,
+      paddingBottom,
+      paddingLeft,
+      margin,
+      marginInline,
+      marginBlock,
+      marginTop,
+      marginRight,
+      marginBottom,
+      marginLeft,
+    })
+  }, [
+    bp,
+    display,
+    opacity,
+    overflowX,
+    overflowY,
+    position,
+    top,
+    right,
+    bottom,
+    left,
+    borderRadius,
+    textAlign,
+    blockSize,
+    minBlockSize,
+    maxBlockSize,
+    inlineSize,
+    minInlineSize,
+    maxInlineSize,
+    padding,
+    paddingInline,
+    paddingBlock,
+    paddingTop,
+    paddingRight,
+    paddingBottom,
+    paddingLeft,
+    margin,
+    marginInline,
+    marginBlock,
+    marginTop,
+    marginRight,
+    marginBottom,
+    marginLeft,
+  ])
 
-  const As = (as || 'div') as ElementType
+  const As = (as ?? 'div') as E
 
   return (
     <As
-      ref={ref}
+      ref={innerRef || localRef}
       className={classNames(withPrefix('box'), className)}
       style={{
-        ...getCssVars('box', {
-          display,
-          opacity,
-          overflowX,
-          overflowY,
-          position,
-          top,
-          right,
-          bottom,
-          left,
-          textAlign,
-          blockSize,
-          minBlockSize,
-          maxBlockSize,
-          inlineSize,
-          minInlineSize,
-          maxInlineSize,
-          p,
-          px,
-          py,
-          pt,
-          pr,
-          pb,
-          pl,
-          m,
-          mx,
-          my,
-          mt,
-          mr,
-          mb,
-          ml,
-        }),
         borderRadius: scale(borderRadius !== undefined ? borderRadius : globalBorderRadius),
         ...style,
       }}
       disabled={disabled}
       {...getDataAttrs('box', { variant, intent, interactive, disabled })}
-      {...rest}
+      {...(rest as PropsOf<E>)}
     />
   )
 }
-
-Box.displayName = 'Box'

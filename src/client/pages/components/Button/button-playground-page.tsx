@@ -6,7 +6,7 @@ import { BoxIntent, BoxVariant } from 'lib/definitions'
 const ButtonPlaygroundPage = () => {
   return Object.values(BoxVariant).map(variant => (
     <Section key={variant} heading={sentenceCase(variant)} marginTop={10}>
-      <Stack wrap="wrap" gap={5}>
+      <Stack flexWrap="wrap" gap={5}>
         {Object.values(BoxIntent).map(intent => (
           <Button key={intent} variant={variant} intent={intent}>
             {sentenceCase(intent)}

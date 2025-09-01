@@ -8,7 +8,7 @@ export type HStackOwnProps = Omit<StackOwnProps, 'direction' | 'wrap' | 'columnG
 export type HStackProps<E extends StackAsType = 'div'> = PolymorphicProps<E, HStackOwnProps>
 
 export const HStack = <E extends StackAsType = 'div'>(props: HStackProps<E>) => {
-  return <Stack {...props} direction="row" wrap="nowrap" />
+  return <Stack {...(props as any)} flexDirection="row" flexWrap="nowrap" />
 }
 
 HStack.displayName = 'HStack'

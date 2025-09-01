@@ -36,7 +36,9 @@ export const SidePanelLayout = ({
           >
             <Grid
               className={withPrefix('page-nav-layout')}
-              columns={{ md: sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto' }}
+              gridTemplateColumns={{
+                md: sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto',
+              }}
               minBlockSize="100dvh"
             >
               {sidePosition === 'right' ? slots.Main : null}

@@ -8,7 +8,7 @@ export type VStackOwnProps = Omit<StackOwnProps, 'direction' | 'wrap' | 'rowGap'
 export type VStackProps<E extends StackAsType = 'div'> = PolymorphicProps<E, VStackOwnProps>
 
 export const VStack = <E extends StackAsType = 'div'>(props: VStackProps<E>) => {
-  return <Stack {...props} direction="column" wrap="nowrap" />
+  return <Stack {...(props as any)} flexWrap="nowrap" />
 }
 
 VStack.displayName = 'VStack'

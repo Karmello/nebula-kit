@@ -16,7 +16,7 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
   props: [
     {
       category: PropCategory.layout,
-      name: 'direction',
+      name: 'flexDirection',
       options: Object.values(CssFlexDirection),
       defaultValue: CssFlexDirection.row,
       isRequired: false,
@@ -25,7 +25,7 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
     },
     {
       category: PropCategory.layout,
-      name: 'wrap',
+      name: 'flexWrap',
       options: Object.values(CssFlexWrap),
       defaultValue: CssFlexWrap.nowrap,
       isRequired: false,
@@ -34,7 +34,7 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
     },
     {
       category: PropCategory.alignment,
-      name: 'justify',
+      name: 'justifyContent',
       options: Object.values(CssFlexJustify),
       defaultValue: CssFlexJustify['flex-start'],
       isRequired: false,
@@ -43,7 +43,7 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
     },
     {
       category: PropCategory.alignment,
-      name: 'align',
+      name: 'alignItems',
       options: Object.values(CssFlexAlign),
       defaultValue: CssFlexAlign['flex-start'],
       isRequired: false,

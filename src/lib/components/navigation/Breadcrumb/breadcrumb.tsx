@@ -10,7 +10,7 @@ export const Breadcrumb = ({ items }: BreadcrumbOwnProps) => {
   }
 
   return (
-    <Stack gap={5} wrap="wrap">
+    <Stack gap={5} flexWrap="wrap">
       {items
         .filter(item => item)
         .map((item, i) => (

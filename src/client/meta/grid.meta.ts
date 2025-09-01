@@ -23,7 +23,7 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
   props: [
     {
       category: PropCategory.layout,
-      name: 'columns',
+      name: 'gridTemplateColumns',
       options: ['string', 'number'],
       defaultValue: '1fr',
       isRequired: false,
@@ -32,7 +32,7 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
     },
     {
       category: PropCategory.layout,
-      name: 'rows',
+      name: 'gridTemplateRows',
       options: ['string', 'number'],
       defaultValue: 'auto',
       isRequired: false,
@@ -41,7 +41,7 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
     },
     {
       category: PropCategory.layout,
-      name: 'autoRows',
+      name: 'gridAutoRows',
       options: ['string'],
       defaultValue: 'auto',
       isRequired: false,
@@ -50,7 +50,7 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
     },
     {
       category: PropCategory.layout,
-      name: 'autoColumns',
+      name: 'gridAutoColumns',
       options: ['string'],
       defaultValue: 'auto',
       isRequired: false,
@@ -59,7 +59,7 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
     },
     {
       category: PropCategory.layout,
-      name: 'autoFlow',
+      name: 'gridAutoFlow',
       options: Object.values(CssGridAutoFlow),
       defaultValue: CssGridAutoFlow.row,
       isRequired: false,
