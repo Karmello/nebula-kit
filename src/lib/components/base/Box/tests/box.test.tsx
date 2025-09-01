@@ -21,20 +21,20 @@ describe('<Box /> runtime', () => {
   })
 
   it('writes CSS vars for padding (scalar token) with box prefix', () => {
-    render(<Box data-testid="box" p={8} />)
+    render(<Box data-testid="box" padding={8} />)
     const style = screen.getByTestId('box').getAttribute('style') || ''
     expect(style).toContain('--neb-box-p-base: var(--neb-scale-8)')
   })
 
   it('writes CSS vars for padding (responsive object)', () => {
-    render(<Box data-testid="box" p={{ base: 8, md: 16 }} />)
+    render(<Box data-testid="box" padding={{ base: 8, md: 16 }} />)
     const style = screen.getByTestId('box').getAttribute('style') || ''
     expect(style).toContain('--neb-box-p-base: var(--neb-scale-8)')
     expect(style).toContain('--neb-box-p-md: var(--neb-scale-16)')
   })
 
   it('writes CSS vars for px/py/pt/pr/pb/pl (so CSS can apply precedence)', () => {
-    render(<Box data-testid="box" p={4} px={{ base: 6, lg: 12 }} pt={10} />)
+    render(<Box data-testid="box" padding={4} paddingInline={{ base: 6, lg: 12 }} paddingTop={10} />)
     const style = screen.getByTestId('box').getAttribute('style') || ''
     expect(style).toContain('--neb-box-p-base: var(--neb-scale-4)')
     expect(style).toContain('--neb-box-px-base: var(--neb-scale-6)')
@@ -43,7 +43,7 @@ describe('<Box /> runtime', () => {
   })
 
   it('writes CSS vars for margin shorthands and sides', () => {
-    render(<Box data-testid="box" m={2} my={{ md: 6 }} ml={12} />)
+    render(<Box data-testid="box" margin={2} marginBlock={{ md: 6 }} marginLeft={12} />)
     const style = screen.getByTestId('box').getAttribute('style') || ''
     expect(style).toContain('--neb-box-m-base: var(--neb-scale-2)')
     expect(style).toContain('--neb-box-my-md: var(--neb-scale-6)')

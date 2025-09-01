@@ -37,7 +37,7 @@ export const App = () => {
         <AppFrame.Header>
           <AppNavBar />
         </AppFrame.Header>
-        <AppFrame.Main mt={10}>
+        <AppFrame.Main marginTop={10}>
           <RootPage />
         </AppFrame.Main>
       </AppFrame>

@@ -31,18 +31,18 @@ export type BoxOwnProps = {
   inlineSize?: ResponsiveProp<ScaleValue | string>
   minInlineSize?: ResponsiveProp<ScaleValue | string>
   maxInlineSize?: ResponsiveProp<ScaleValue | string>
-  p?: ResponsiveProp<ScaleValue | string>
-  px?: ResponsiveProp<ScaleValue | string>
-  py?: ResponsiveProp<ScaleValue | string>
-  pt?: ResponsiveProp<ScaleValue | string>
-  pr?: ResponsiveProp<ScaleValue | string>
-  pb?: ResponsiveProp<ScaleValue | string>
-  pl?: ResponsiveProp<ScaleValue | string>
-  m?: ResponsiveProp<ScaleValue | string>
-  mx?: ResponsiveProp<ScaleValue | string>
-  my?: ResponsiveProp<ScaleValue | string>
-  mt?: ResponsiveProp<ScaleValue | string>
-  mr?: ResponsiveProp<ScaleValue | string>
-  mb?: ResponsiveProp<ScaleValue | string>
-  ml?: ResponsiveProp<ScaleValue | string>
+  padding?: ResponsiveProp<ScaleValue | string>
+  paddingInline?: ResponsiveProp<ScaleValue | string>
+  paddingBlock?: ResponsiveProp<ScaleValue | string>
+  paddingTop?: ResponsiveProp<ScaleValue | string>
+  paddingRight?: ResponsiveProp<ScaleValue | string>
+  paddingBottom?: ResponsiveProp<ScaleValue | string>
+  paddingLeft?: ResponsiveProp<ScaleValue | string>
+  margin?: ResponsiveProp<ScaleValue | string>
+  marginInline?: ResponsiveProp<ScaleValue | string>
+  marginBlock?: ResponsiveProp<ScaleValue | string>
+  marginTop?: ResponsiveProp<ScaleValue | string>
+  marginRight?: ResponsiveProp<ScaleValue | string>
+  marginBottom?: ResponsiveProp<ScaleValue | string>
+  marginLeft?: ResponsiveProp<ScaleValue | string>
 }

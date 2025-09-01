@@ -12,7 +12,9 @@ const vp = {
 
 test.describe('Box - padding precedence & responsive behavior', () => {
   test('base: pb > py > p; pt uses py > p; left/right use px > p', async ({ mount }) => {
-    const cmp = await mount(<Box p="5px" px="7px" py="9px" pb="20px" data-testid="box" />)
+    const cmp = await mount(
+      <Box padding="5px" paddingInline="7px" paddingBlock="9px" paddingBottom="20px" data-testid="box" />
+    )
 
     await expect(cmp).toHaveCSS('padding-bottom', '20px') // pb > py > p
     await expect(cmp).toHaveCSS('padding-top', '9px') // py > p
@@ -21,7 +23,9 @@ test.describe('Box - padding precedence & responsive behavior', () => {
   })
 
   test('base: side-only props set the expected edges', async ({ mount }) => {
-    const cmp = await mount(<Box pt="1px" pr="2px" pb="3px" pl="4px" data-testid="box" />)
+    const cmp = await mount(
+      <Box paddingTop="1px" paddingRight="2px" paddingBottom="3px" paddingLeft="4px" data-testid="box" />
+    )
 
     await expect(cmp).toHaveCSS('padding-top', '1px')
     await expect(cmp).toHaveCSS('padding-right', '2px')
@@ -30,7 +34,7 @@ test.describe('Box - padding precedence & responsive behavior', () => {
   })
 
   test('base: px does not affect top/bottom; py does not affect left/right', async ({ mount }) => {
-    const cmp = await mount(<Box px="10px" py="6px" data-testid="box" />)
+    const cmp = await mount(<Box paddingInline="10px" paddingBlock="6px" data-testid="box" />)
 
     await expect(cmp).toHaveCSS('padding-left', '10px')
     await expect(cmp).toHaveCSS('padding-right', '10px')
@@ -40,7 +44,9 @@ test.describe('Box - padding precedence & responsive behavior', () => {
 
   test('md: py@md overrides pb@base (breakpoint wins over base specificity)', async ({ mount, page }) => {
     await page.setViewportSize(vp.md)
-    const cmp = await mount(<Box p="5px" pb="20px" py={{ md: '10px' }} data-testid="box" />)
+    const cmp = await mount(
+      <Box padding="5px" paddingBottom="20px" paddingBlock={{ md: '10px' }} data-testid="box" />
+    )
 
     await expect(cmp).toHaveCSS('padding-bottom', '10px') // md value beats base pb
     await expect(cmp).toHaveCSS('padding-top', '10px')
@@ -48,14 +54,16 @@ test.describe('Box - padding precedence & responsive behavior', () => {
 
   test('md: pb@md beats py@md (side > axis within same bp)', async ({ mount, page }) => {
     await page.setViewportSize(vp.md)
-    const cmp = await mount(<Box pb={{ md: '14px' }} py={{ md: '10px' }} data-testid="box" />)
+    const cmp = await mount(
+      <Box paddingBottom={{ md: '14px' }} paddingBlock={{ md: '10px' }} data-testid="box" />
+    )
 
     await expect(cmp).toHaveCSS('padding-bottom', '14px') // side beats axis at md
   })
 
   test('md: fallback from sm when md missing (py@sm overrides p@base)', async ({ mount, page }) => {
     await page.setViewportSize(vp.md)
-    const cmp = await mount(<Box p="6px" py={{ sm: '11px' }} data-testid="box" />)
+    const cmp = await mount(<Box padding="6px" paddingBlock={{ sm: '11px' }} data-testid="box" />)
 
     await expect(cmp).toHaveCSS('padding-top', '11px')
     await expect(cmp).toHaveCSS('padding-bottom', '11px')
@@ -63,7 +71,7 @@ test.describe('Box - padding precedence & responsive behavior', () => {
 
   test('xl: pb@lg should apply at xl when xl missing (xl→lg→md→sm→base)', async ({ mount, page }) => {
     await page.setViewportSize(vp.xl)
-    const cmp = await mount(<Box p="4px" pb={{ lg: '18px' }} data-testid="box" />)
+    const cmp = await mount(<Box padding="4px" paddingBottom={{ lg: '18px' }} data-testid="box" />)
 
     await expect(cmp).toHaveCSS('padding-bottom', '18px') // falls back from xl to lg
     await expect(cmp).toHaveCSS('padding-top', '4px')
@@ -74,7 +82,7 @@ test.describe('Box - padding precedence & responsive behavior', () => {
     page,
   }) => {
     await page.setViewportSize(vp.lg)
-    const cmp = await mount(<Box p={{ lg: '12px' }} pl="1px" data-testid="box" />)
+    const cmp = await mount(<Box padding={{ lg: '12px' }} paddingLeft="1px" data-testid="box" />)
 
     await expect(cmp).toHaveCSS('padding-top', '12px')
     await expect(cmp).toHaveCSS('padding-right', '12px')
@@ -85,7 +93,9 @@ test.describe('Box - padding precedence & responsive behavior', () => {
 
 test.describe('Box - margin precedence & responsive behavior', () => {
   test('base: mb > my > m; mt uses my > m; left/right use mx > m', async ({ mount }) => {
-    const cmp = await mount(<Box m="4px" mx="8px" my="10px" mb="20px" data-testid="box" />)
+    const cmp = await mount(
+      <Box margin="4px" marginInline="8px" marginBlock="10px" marginBottom="20px" data-testid="box" />
+    )
 
     await expect(cmp).toHaveCSS('margin-bottom', '20px') // mb > my > m
     await expect(cmp).toHaveCSS('margin-top', '10px') // my > m
@@ -94,7 +104,9 @@ test.describe('Box - margin precedence & responsive behavior', () => {
   })
 
   test('base: side-only margins', async ({ mount }) => {
-    const cmp = await mount(<Box mt="1px" mr="2px" mb="3px" ml="4px" data-testid="box" />)
+    const cmp = await mount(
+      <Box marginTop="1px" marginRight="2px" marginBottom="3px" marginLeft="4px" data-testid="box" />
+    )
 
     await expect(cmp).toHaveCSS('margin-top', '1px')
     await expect(cmp).toHaveCSS('margin-right', '2px')
@@ -104,7 +116,9 @@ test.describe('Box - margin precedence & responsive behavior', () => {
 
   test('md: my@md overrides mb@base (bp wins over base specificity)', async ({ mount, page }) => {
     await page.setViewportSize(vp.md)
-    const cmp = await mount(<Box m="4px" mb="20px" my={{ md: '10px' }} data-testid="box" />)
+    const cmp = await mount(
+      <Box margin="4px" marginBottom="20px" marginBlock={{ md: '10px' }} data-testid="box" />
+    )
 
     await expect(cmp).toHaveCSS('margin-bottom', '10px')
     await expect(cmp).toHaveCSS('margin-top', '10px')
@@ -112,14 +126,16 @@ test.describe('Box - margin precedence & responsive behavior', () => {
 
   test('md: mb@md beats my@md (side > axis within same bp)', async ({ mount, page }) => {
     await page.setViewportSize(vp.md)
-    const cmp = await mount(<Box my={{ md: '10px' }} mb={{ md: '14px' }} data-testid="box" />)
+    const cmp = await mount(
+      <Box marginBlock={{ md: '10px' }} marginBottom={{ md: '14px' }} data-testid="box" />
+    )
 
     await expect(cmp).toHaveCSS('margin-bottom', '14px')
   })
 
   test('lg: fallback chain picks sm over base when md/lg missing', async ({ mount, page }) => {
     await page.setViewportSize(vp.lg)
-    const cmp = await mount(<Box m="6px" my={{ sm: '12px' }} data-testid="box" />)
+    const cmp = await mount(<Box margin="6px" marginBlock={{ sm: '12px' }} data-testid="box" />)
 
     await expect(cmp).toHaveCSS('margin-top', '12px')
     await expect(cmp).toHaveCSS('margin-bottom', '12px')
@@ -127,7 +143,7 @@ test.describe('Box - margin precedence & responsive behavior', () => {
 
   test('xl: m@lg applies at xl if no xl override', async ({ mount, page }) => {
     await page.setViewportSize(vp.xl)
-    const cmp = await mount(<Box m={{ lg: '13px' }} ml="1px" data-testid="box" />)
+    const cmp = await mount(<Box margin={{ lg: '13px' }} marginLeft="1px" data-testid="box" />)
 
     await expect(cmp).toHaveCSS('margin-top', '13px')
     await expect(cmp).toHaveCSS('margin-right', '13px')
@@ -138,7 +154,9 @@ test.describe('Box - margin precedence & responsive behavior', () => {
 
 test.describe('Box - mixed padding + margin (no cross-bleed)', () => {
   test('padding props don’t affect margins and vice versa', async ({ mount }) => {
-    const cmp = await mount(<Box p="5px" pb="9px" m="7px" mb="11px" data-testid="box" />)
+    const cmp = await mount(
+      <Box padding="5px" paddingBottom="9px" margin="7px" marginBottom="11px" data-testid="box" />
+    )
 
     await expect(cmp).toHaveCSS('padding-top', '5px')
     await expect(cmp).toHaveCSS('padding-bottom', '9px')

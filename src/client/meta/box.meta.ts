@@ -225,7 +225,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     },
     {
       category: PropCategory.spacing,
-      name: 'p',
+      name: 'padding',
       options: ['ScaleValue', 'CSS'],
       defaultValue: '0',
       isRequired: false,
@@ -234,7 +234,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     },
     {
       category: PropCategory.spacing,
-      name: 'px',
+      name: 'paddingInline',
       options: ['ScaleValue', 'CSS'],
       defaultValue: '0',
       isRequired: false,
@@ -243,7 +243,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     },
     {
       category: PropCategory.spacing,
-      name: 'py',
+      name: 'paddingBlock',
       options: ['ScaleValue', 'CSS'],
       defaultValue: '0',
       isRequired: false,
@@ -252,7 +252,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     },
     {
       category: PropCategory.spacing,
-      name: 'pt',
+      name: 'paddingTop',
       options: ['ScaleValue', 'CSS'],
       defaultValue: '0',
       isRequired: false,
@@ -261,7 +261,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     },
     {
       category: PropCategory.spacing,
-      name: 'pr',
+      name: 'paddingRight',
       options: ['ScaleValue', 'CSS'],
       defaultValue: '0',
       isRequired: false,
@@ -270,7 +270,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     },
     {
       category: PropCategory.spacing,
-      name: 'pb',
+      name: 'paddingBottom',
       options: ['ScaleValue', 'CSS'],
       defaultValue: '0',
       isRequired: false,
@@ -279,7 +279,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     },
     {
       category: PropCategory.spacing,
-      name: 'pl',
+      name: 'paddingLeft',
       options: ['ScaleValue', 'CSS'],
       defaultValue: '0',
       isRequired: false,
@@ -288,7 +288,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     },
     {
       category: PropCategory.spacing,
-      name: 'm',
+      name: 'margin',
       options: ['ScaleValue', 'CSS'],
       defaultValue: '0',
       isRequired: false,
@@ -297,7 +297,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     },
     {
       category: PropCategory.spacing,
-      name: 'mx',
+      name: 'marginInline',
       options: ['ScaleValue', 'CSS'],
       defaultValue: '0',
       isRequired: false,
@@ -306,7 +306,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     },
     {
       category: PropCategory.spacing,
-      name: 'my',
+      name: 'marginBlock',
       options: ['ScaleValue', 'CSS'],
       defaultValue: '0',
       isRequired: false,
@@ -315,7 +315,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     },
     {
       category: PropCategory.spacing,
-      name: 'mt',
+      name: 'marginTop',
       options: ['ScaleValue', 'CSS'],
       defaultValue: '0',
       isRequired: false,
@@ -324,7 +324,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     },
     {
       category: PropCategory.spacing,
-      name: 'mr',
+      name: 'marginRight',
       options: ['ScaleValue', 'CSS'],
       defaultValue: '0',
       isRequired: false,
@@ -333,7 +333,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     },
     {
       category: PropCategory.spacing,
-      name: 'mb',
+      name: 'marginBottom',
       options: ['ScaleValue', 'CSS'],
       defaultValue: '0',
       isRequired: false,
@@ -342,7 +342,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     },
     {
       category: PropCategory.spacing,
-      name: 'ml',
+      name: 'marginLeft',
       options: ['ScaleValue', 'CSS'],
       defaultValue: '0',
       isRequired: false,

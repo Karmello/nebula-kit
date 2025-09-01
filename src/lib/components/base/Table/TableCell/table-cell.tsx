@@ -13,8 +13,8 @@ export const TableCell = ({ className, ...rest }: TableCellProps) => {
     <Box
       variant={variant}
       intent={intent}
-      px={10}
-      py={5}
+      paddingInline={10}
+      paddingBlock={5}
       borderRadius={0}
       {...rest}
       as="td"

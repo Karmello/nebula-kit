@@ -15,12 +15,12 @@ test.describe('Box - combined props smoke tests', () => {
         display="block"
         overflowX="auto"
         overflowY="scroll"
-        p="6px"
-        py="8px"
-        pl="12px"
-        m="4px"
-        my="10px"
-        mr="2px"
+        padding="6px"
+        paddingBlock="8px"
+        paddingLeft="12px"
+        margin="4px"
+        marginBlock="10px"
+        marginRight="2px"
       />
     )
 
@@ -80,9 +80,9 @@ test.describe('Box - combined props smoke tests', () => {
     const cmp = await mount(
       <Box
         // base paddings that should remain unless overridden at bp
-        p="5px"
-        py="9px"
-        pl="13px"
+        padding="5px"
+        paddingBlock="9px"
+        paddingLeft="13px"
         // responsive display/overflow
         display={{ base: 'block', md: 'inline-block' }}
         overflowY={{ md: 'hidden' }}
@@ -104,9 +104,9 @@ test.describe('Box - combined props smoke tests', () => {
     await page.setViewportSize(vp.lg)
     const cmp = await mount(
       <Box
-        p="5px"
-        py="9px"
-        pl="13px"
+        padding="5px"
+        paddingBlock="9px"
+        paddingLeft="13px"
         display={{ base: 'block', md: 'inline-block' }}
         overflowY={{ md: 'hidden' }}
       />

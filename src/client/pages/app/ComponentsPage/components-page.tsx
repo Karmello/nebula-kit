@@ -39,7 +39,7 @@ export const ComponentsPage = () => {
           ]}
         />
       </SidePanelLayout.Header>
-      <SidePanelLayout.Main mx={10}>
+      <SidePanelLayout.Main marginInline={10}>
         <Spacer size={10} />
         <SidePanelLayout sidePosition="right">
           <SidePanelLayout.Header>
@@ -91,7 +91,7 @@ export const ComponentsPage = () => {
               />
             )}
           </SidePanelLayout.SideMobile>
-          <SidePanelLayout.Main mx={10}>
+          <SidePanelLayout.Main marginInline={10}>
             <Spacer size={10} />
             <ComponentsPageRoutes />
           </SidePanelLayout.Main>
