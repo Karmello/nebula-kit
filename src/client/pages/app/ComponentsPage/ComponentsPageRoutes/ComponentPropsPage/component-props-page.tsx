@@ -1,26 +1,37 @@
 import { useComponentsPageStore } from 'client/store'
-import { ComponentPropsMeta } from 'lib/definitions'
+import { ComponentMeta } from 'lib/definitions'
+import { Spacer, Text } from 'lib/components'
 
 import { PropsTable } from './PropsTable'
 
 export const ComponentPropsPage = () => {
   const { itemKey } = useComponentsPageStore()
 
-  let PROPS_META: ComponentPropsMeta<unknown>
+  let meta: ComponentMeta<unknown>
 
   try {
-    PROPS_META = require(`../../../../../docs/${itemKey}/${itemKey}-props.meta.ts`).default
+    meta = require(`../../../../../meta/${itemKey}.meta.ts`).default
   } catch {
-    PROPS_META = null
+    meta = null
   }
 
-  if (!PROPS_META) {
+  if (!meta) {
     return null
   }
 
-  const groupedByCategory = Object.groupBy(PROPS_META, prop => prop.category)
+  const groupedByCategory = Object.groupBy(meta.props, prop => prop.category)
 
-  return Object.keys(groupedByCategory).map(category => (
-    <PropsTable key={category} data={groupedByCategory[category]} />
-  ))
+  return (
+    <>
+      {meta.propsInfo ? (
+        <>
+          <Text intent="secondary">{meta.propsInfo}</Text>
+          <Spacer size={15} />
+        </>
+      ) : null}
+      {Object.keys(groupedByCategory).map(category => (
+        <PropsTable key={category} data={groupedByCategory[category]} />
+      ))}
+    </>
+  )
 }

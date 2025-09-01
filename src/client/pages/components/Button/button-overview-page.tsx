@@ -1,5 +1,8 @@
+import data from 'client/meta/button.meta'
+import { Text } from 'lib/components'
+
 const ButtonOverviewPage = () => {
-  return <div>ButtonOverview</div>
+  return <Text>{data.description}</Text>
 }
 
 export default ButtonOverviewPage

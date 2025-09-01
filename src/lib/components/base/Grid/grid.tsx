@@ -31,7 +31,10 @@ export type GridOwnProps = {
   columnGap?: ResponsiveProp<ScaleValue | string>
 }
 
-export type GridProps<E extends GridAsType = 'div'> = PolymorphicProps<E, BoxOwnProps & GridOwnProps>
+export type GridProps<E extends GridAsType = 'div'> = PolymorphicProps<
+  E,
+  Omit<BoxOwnProps, 'display'> & GridOwnProps
+>
 
 export const Grid = <E extends GridAsType = 'div'>({
   as = 'div' as E,

@@ -1,8 +1,8 @@
-import { SvgIcon, Table, Text } from 'lib/components'
-import { ComponentPropsMeta } from 'lib/definitions'
+import { Section, SvgIcon, Table, Text } from 'lib/components'
+import { ComponentMeta } from 'lib/definitions'
 
 type Props = {
-  data: ComponentPropsMeta<unknown>
+  data: ComponentMeta<unknown>['props']
 }
 
 export const PropsTable = ({ data }: Props) => {
@@ -10,9 +10,8 @@ export const PropsTable = ({ data }: Props) => {
   const isSomeResponsive = data.some(prop => prop.isResponsive)
 
   return (
-    <>
-      <Text typography="h6">{data[0].category}</Text>
-      <Table zebra mt={5} mb={30}>
+    <Section heading={data[0].category} hideDivider>
+      <Table zebra>
         <Table.Head>
           <Table.Row intent="tertiary">
             <Table.HeadCell style={{ width: '17ch' }}>Name</Table.HeadCell>
@@ -45,11 +44,11 @@ export const PropsTable = ({ data }: Props) => {
                   {isResponsive ? <SvgIcon name="check" intent="primary" /> : ''}
                 </Table.Cell>
               ) : null}
-              <Table.Cell>{description}</Table.Cell>
+              <Table.Cell variant="solid">{description}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
       </Table>
-    </>
+    </Section>
   )
 }

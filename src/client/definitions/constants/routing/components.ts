@@ -1,7 +1,7 @@
 const COMPONENT_SECTIONS = [
   { key: 'overview', label: 'Overview' },
-  { key: 'props', label: 'Props' },
   { key: 'usage', label: 'Usage' },
+  { key: 'props', label: 'Props' },
   { key: 'playground', label: 'Playground' },
 ]
 
@@ -38,5 +38,10 @@ export const COMPONENT_CATEGORIES = [
       { key: 'app-frame', label: 'AppFrame', sections: COMPONENT_SECTIONS },
       { key: 'side-panel-layout', label: 'SidePanelLayout', sections: COMPONENT_SECTIONS },
     ],
+  },
+  {
+    key: 'feedback',
+    label: 'Feedback',
+    items: [{ key: 'callout', label: 'Callout', sections: COMPONENT_SECTIONS }],
   },
 ]

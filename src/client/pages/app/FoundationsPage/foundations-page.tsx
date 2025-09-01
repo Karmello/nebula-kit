@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-import { SidePanelLayout, SideNav, Breadcrumb, Section } from 'lib/components'
+import { SidePanelLayout, SideNav, Breadcrumb, Section, Spacer } from 'lib/components'
 import { useFoundationsPageStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
 import { FOUNDATION_CATEGORIES, PageKey } from 'client/definitions'
@@ -40,6 +40,7 @@ export const FoundationsPage = () => {
         />
       </SidePanelLayout.Header>
       <SidePanelLayout.Main mx={10}>
+        <Spacer size={10} />
         <SidePanelLayout sidePosition="right">
           <SidePanelLayout.Header>
             <Section heading={activeSectionObj?.label} headingProps={{ typography: 'h3' }} />

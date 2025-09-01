@@ -26,7 +26,10 @@ export type FlexOwnProps = {
   columnGap?: ResponsiveProp<ScaleValue | string>
 }
 
-export type FlexProps<E extends ElementType = 'div'> = PolymorphicProps<E, BoxOwnProps & FlexOwnProps>
+export type FlexProps<E extends ElementType = 'div'> = PolymorphicProps<
+  E,
+  Omit<BoxOwnProps, 'display'> & FlexOwnProps
+>
 
 export const Flex = <E extends ElementType = 'div'>({
   className,

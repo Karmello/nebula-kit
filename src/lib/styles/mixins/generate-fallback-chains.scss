@@ -112,7 +112,7 @@ $neb-spacing-aliases: (
 }
 
 // Emit multiple properties for one breakpoint
-@mixin generate-css-vars($props, $bp, $component: box, $final-default: null) {
+@mixin generate-fallback-chains($props, $bp, $component: box, $final-default: null) {
   @each $prop in $props {
     #{$prop}: neb-fallback-chain($prop, $bp, $component, $final-default);
   }

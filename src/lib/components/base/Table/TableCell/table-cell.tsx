@@ -13,7 +13,9 @@ export const TableCell = ({ className, ...rest }: TableCellProps) => {
     <Box
       variant={variant}
       intent={intent}
-      p={5}
+      px={10}
+      py={5}
+      borderRadius={0}
       {...rest}
       as="td"
       className={classNames(withPrefix('table-cell'), className)}

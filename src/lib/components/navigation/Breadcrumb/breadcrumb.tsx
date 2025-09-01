@@ -1,4 +1,4 @@
-import { HStack, Text } from 'lib/components'
+import { Stack, Text } from 'lib/components'
 
 export type BreadcrumbOwnProps = {
   items: string[]
@@ -10,7 +10,7 @@ export const Breadcrumb = ({ items }: BreadcrumbOwnProps) => {
   }
 
   return (
-    <HStack gap={5}>
+    <Stack gap={5} wrap="wrap">
       {items
         .filter(item => item)
         .map((item, i) => (
@@ -23,6 +23,6 @@ export const Breadcrumb = ({ items }: BreadcrumbOwnProps) => {
             {item}
           </Text>
         ))}
-    </HStack>
+    </Stack>
   )
 }

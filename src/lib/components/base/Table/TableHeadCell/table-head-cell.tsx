@@ -13,7 +13,9 @@ export const TableHeadCell = ({ className, ...rest }: TableHeadCellProps) => {
     <Box
       variant={variant}
       intent={intent}
-      p={5}
+      px={10}
+      py={5}
+      borderRadius={0}
       {...rest}
       as="th"
       className={classNames(withPrefix('table-head-cell'), className)}

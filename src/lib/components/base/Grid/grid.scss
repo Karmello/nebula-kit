@@ -1,4 +1,4 @@
-@use 'styles/mixins/generate-css-vars.scss' as *;
+@use 'styles/mixins/generate-fallback-chains.scss' as *;
 
 $neb-grid-props:
   grid-template-columns, grid-template-rows, grid-auto-flow, grid-auto-rows, grid-auto-columns, place-items,
@@ -18,29 +18,29 @@ $neb-grid-props:
   --neb-grid-row-gap-base: initial;
   --neb-grid-column-gap-base: initial;
 
-  @include generate-css-vars($neb-grid-props, base, grid);
+  @include generate-fallback-chains($neb-grid-props, base, grid);
 }
 
 @media (min-width: 480px) {
   .neb-grid {
-    @include generate-css-vars($neb-grid-props, sm, grid);
+    @include generate-fallback-chains($neb-grid-props, sm, grid);
   }
 }
 
 @media (min-width: 768px) {
   .neb-grid {
-    @include generate-css-vars($neb-grid-props, md, grid);
+    @include generate-fallback-chains($neb-grid-props, md, grid);
   }
 }
 
 @media (min-width: 1024px) {
   .neb-grid {
-    @include generate-css-vars($neb-grid-props, lg, grid);
+    @include generate-fallback-chains($neb-grid-props, lg, grid);
   }
 }
 
 @media (min-width: 1280px) {
   .neb-grid {
-    @include generate-css-vars($neb-grid-props, xl, grid);
+    @include generate-fallback-chains($neb-grid-props, xl, grid);
   }
 }

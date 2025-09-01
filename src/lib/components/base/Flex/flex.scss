@@ -1,4 +1,4 @@
-@use 'styles/mixins/generate-css-vars.scss' as *;
+@use 'styles/mixins/generate-fallback-chains.scss' as *;
 
 $neb-flex-props: flex-direction, flex-wrap, justify-content, align-items, gap, row-gap, column-gap;
 
@@ -13,29 +13,29 @@ $neb-flex-props: flex-direction, flex-wrap, justify-content, align-items, gap, r
   --neb-flex-row-gap-base: initial;
   --neb-flex-column-gap-base: initial;
 
-  @include generate-css-vars($neb-flex-props, base, flex);
+  @include generate-fallback-chains($neb-flex-props, base, flex);
 }
 
 @media (min-width: 480px) {
   .neb-flex {
-    @include generate-css-vars($neb-flex-props, sm, flex);
+    @include generate-fallback-chains($neb-flex-props, sm, flex);
   }
 }
 
 @media (min-width: 768px) {
   .neb-flex {
-    @include generate-css-vars($neb-flex-props, md, flex);
+    @include generate-fallback-chains($neb-flex-props, md, flex);
   }
 }
 
 @media (min-width: 1024px) {
   .neb-flex {
-    @include generate-css-vars($neb-flex-props, lg, flex);
+    @include generate-fallback-chains($neb-flex-props, lg, flex);
   }
 }
 
 @media (min-width: 1280px) {
   .neb-flex {
-    @include generate-css-vars($neb-flex-props, xl, flex);
+    @include generate-fallback-chains($neb-flex-props, xl, flex);
   }
 }

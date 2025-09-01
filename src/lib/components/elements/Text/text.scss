@@ -1,4 +1,4 @@
-@use 'styles/mixins/generate-css-vars.scss' as *;
+@use 'styles/mixins/generate-fallback-chains.scss' as *;
 
 $neb-text-props: font-size, line-height;
 
@@ -12,22 +12,22 @@ $neb-text-props: font-size, line-height;
   --neb-box-font-size-base: inherit;
   --neb-box-line-height-base: normal;
 
-  @include generate-css-vars($neb-text-props, base, text);
+  @include generate-fallback-chains($neb-text-props, base, text);
 
   @media (min-width: 480px) {
-    @include generate-css-vars($neb-text-props, sm, text);
+    @include generate-fallback-chains($neb-text-props, sm, text);
   }
 
   @media (min-width: 768px) {
-    @include generate-css-vars($neb-text-props, md, text);
+    @include generate-fallback-chains($neb-text-props, md, text);
   }
 
   @media (min-width: 1024px) {
-    @include generate-css-vars($neb-text-props, lg, text);
+    @include generate-fallback-chains($neb-text-props, lg, text);
   }
 
   @media (min-width: 1280px) {
-    @include generate-css-vars($neb-text-props, xl, text);
+    @include generate-fallback-chains($neb-text-props, xl, text);
   }
 }
 

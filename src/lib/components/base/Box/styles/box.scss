@@ -1,4 +1,4 @@
-@use 'styles/mixins/generate-css-vars.scss' as *;
+@use 'styles/mixins/generate-fallback-chains.scss' as *;
 
 @use './variants/box-solid.scss';
 @use './variants/box-outline.scss';
@@ -50,22 +50,22 @@ $neb-box-props:
   --neb-box-py-base: initial;
   --neb-box-p-base: initial;
 
-  @include generate-css-vars($neb-box-props, base, box);
+  @include generate-fallback-chains($neb-box-props, base, box);
 
   @media (min-width: 480px) {
-    @include generate-css-vars($neb-box-props, sm, box);
+    @include generate-fallback-chains($neb-box-props, sm, box);
   }
 
   @media (min-width: 768px) {
-    @include generate-css-vars($neb-box-props, md, box);
+    @include generate-fallback-chains($neb-box-props, md, box);
   }
 
   @media (min-width: 1024px) {
-    @include generate-css-vars($neb-box-props, lg, box);
+    @include generate-fallback-chains($neb-box-props, lg, box);
   }
 
   @media (min-width: 1280px) {
-    @include generate-css-vars($neb-box-props, xl, box);
+    @include generate-fallback-chains($neb-box-props, xl, box);
   }
 }
 
