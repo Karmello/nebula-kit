@@ -1,9 +1,9 @@
-import { ElementType } from 'react'
+import { ElementType, useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { withPrefix, getCssVars, getDataAttrs, scale } from 'lib/helpers'
-import { useLibStore } from 'lib/state'
+import { withPrefix, getCssVars, getDataAttrs, scale, useScreen, computeResponsiveCss } from 'lib/helpers'
 import { BoxIntent, BoxVariant, PolymorphicProps } from 'lib/definitions'
+import { useLibStore } from 'lib/state'
 
 import { BoxOwnProps } from './types'
 import './styles/box.scss'
@@ -55,12 +55,20 @@ export const Box = <E extends ElementType = 'div'>({
   m,
   ...rest
 }: BoxProps<E>) => {
+  const ref = useRef(null)
+
   const { borderRadius: globalBorderRadius } = useLibStore()
+  const { bp } = useScreen()
+
+  useEffect(() => {
+    computeResponsiveCss(ref, bp, { display })
+  }, [bp])
 
   const As = (as || 'div') as ElementType
 
   return (
     <As
+      ref={ref}
       className={classNames(withPrefix('box'), className)}
       style={{
         ...getCssVars('box', {

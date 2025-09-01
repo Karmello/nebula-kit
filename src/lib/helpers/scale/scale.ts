@@ -1,6 +1,6 @@
 import { ScaleValue, LIB_PREFIX } from 'lib/definitions'
 
-export const scale = (scale: ScaleValue | string | undefined): string | undefined => {
+export const scale = (scale: ScaleValue | string | number | undefined): string | undefined => {
   if (scale === undefined) {
     return
   }
