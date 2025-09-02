@@ -39,7 +39,7 @@ export const FoundationsPage = () => {
           ]}
         />
       </SidePanelLayout.Header>
-      <SidePanelLayout.Main>
+      <SidePanelLayout.Main paddingLeft={10}>
         <Spacer size={10} />
         <SidePanelLayout sidePosition="right">
           <SidePanelLayout.Header>
@@ -52,10 +52,12 @@ export const FoundationsPage = () => {
                 ?.sections.map(({ key: sectionKey, label }) => ({
                   key: sectionKey,
                   label,
-                  onClick: () => {
-                    navigateTo(
-                      `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${sectionKey}`
-                    )
+                  elemProps: {
+                    onClick: () => {
+                      navigateTo(
+                        `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${sectionKey}`
+                      )
+                    },
                   },
                 }))}
               activeKey={foundationsPageStore.sectionKey}
@@ -73,14 +75,16 @@ export const FoundationsPage = () => {
                   ?.sections.map(({ key: sectionKey, label }) => ({
                     key: sectionKey,
                     label,
-                    onClick: () => {
-                      if (
-                        navigateTo(
-                          `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${sectionKey}`
-                        )
-                      ) {
-                        setSideOpen(false)
-                      }
+                    elemProps: {
+                      onClick: () => {
+                        if (
+                          navigateTo(
+                            `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${sectionKey}`
+                          )
+                        ) {
+                          setSideOpen(false)
+                        }
+                      },
                     },
                   }))}
                 activeKey={foundationsPageStore.sectionKey}
@@ -91,7 +95,7 @@ export const FoundationsPage = () => {
               />
             )}
           </SidePanelLayout.SideMobile>
-          <SidePanelLayout.Main>
+          <SidePanelLayout.Main paddingRight={10}>
             <FoundationsPageRoutes />
           </SidePanelLayout.Main>
         </SidePanelLayout>
@@ -104,11 +108,13 @@ export const FoundationsPage = () => {
             items: items.map(({ key: itemKey, label, sections }) => ({
               key: itemKey,
               label,
-              onClick: () => {
-                const sectionIndex = sections.findIndex(s => s.key === foundationsPageStore.sectionKey)
-                navigateTo(
-                  `/${PageKey.foundations}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
-                )
+              elemProps: {
+                onClick: () => {
+                  const sectionIndex = sections.findIndex(s => s.key === foundationsPageStore.sectionKey)
+                  navigateTo(
+                    `/${PageKey.foundations}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
+                  )
+                },
               },
             })),
           }))}
@@ -124,15 +130,17 @@ export const FoundationsPage = () => {
               items: items.map(({ key: itemKey, label, sections }) => ({
                 key: itemKey,
                 label,
-                onClick: () => {
-                  const sectionIndex = sections.findIndex(s => s.key === foundationsPageStore.sectionKey)
-                  if (
-                    navigateTo(
-                      `/${PageKey.foundations}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
-                    )
-                  ) {
-                    setSideOpen(false)
-                  }
+                elemProps: {
+                  onClick: () => {
+                    const sectionIndex = sections.findIndex(s => s.key === foundationsPageStore.sectionKey)
+                    if (
+                      navigateTo(
+                        `/${PageKey.foundations}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
+                      )
+                    ) {
+                      setSideOpen(false)
+                    }
+                  },
                 },
               })),
             }))}

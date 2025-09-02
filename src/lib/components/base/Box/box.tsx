@@ -66,11 +66,3 @@ export const Box = <E extends ElementType = 'div'>({
     </Elem>
   )
 }
-
-// const Test = () => {
-//   return (
-//     <Box elem="a" elemProps={{ href: 'href' }} elemRef={useRef<HTMLAnchorElement>(null)} variant="ghost">
-//       box
-//     </Box>
-//   )
-// }

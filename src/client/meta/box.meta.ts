@@ -1,5 +1,5 @@
 import { PropCategory } from 'client/definitions'
-import { BOX_DEFAULT_INTENT, BOX_DEFAULT_VARIANT, BoxOwnProps } from 'lib/components'
+import { BOX_DEFAULT_INTENT, BOX_DEFAULT_VARIANT, BoxProps } from 'lib/components'
 
 import {
   BoxIntent,
@@ -11,11 +11,47 @@ import {
   CssTextAlign,
 } from 'lib/definitions'
 
-const BOX_META: ComponentMeta<BoxOwnProps> = {
+const BOX_META: ComponentMeta<BoxProps> = {
   name: 'Box',
   description:
     'Box is the foundational layout primitive. It renders as any element (div by default) and provides consistent spacing, typography, sizing, and surface styling through responsive props and CSS variables. Use it as the base container or building block for more complex components.',
   props: [
+    {
+      category: PropCategory.element,
+      name: 'children',
+      options: ['ReactNode'],
+      defaultValue: '',
+      isRequired: false,
+      isResponsive: false,
+      description: 'Content rendered inside the box.',
+    },
+    {
+      category: PropCategory.element,
+      name: 'elem',
+      options: ['HTML tag'],
+      defaultValue: 'div',
+      isRequired: false,
+      isResponsive: false,
+      description: 'Specifies the HTML tag that will be rendered as the Box container.',
+    },
+    {
+      category: PropCategory.element,
+      name: 'elemProps',
+      options: ['HTML tag attributes'],
+      defaultValue: '',
+      isRequired: false,
+      isResponsive: false,
+      description: 'Additional HTML attributes applied to the chosen tag.',
+    },
+    {
+      category: PropCategory.element,
+      name: 'elemRef',
+      options: ['RefObject'],
+      defaultValue: '',
+      isRequired: false,
+      isResponsive: false,
+      description: 'Reference to the rendered HTML element.',
+    },
     {
       category: PropCategory.appearance,
       name: 'variant',

@@ -2,13 +2,13 @@ import { Language, Theme } from 'lib/definitions'
 
 export const COMMON_EN = {
   components: 'Components',
+  demo: 'Demo',
   foundations: 'Foundations',
   home: 'Home',
   languages: {
     [Language.EN]: 'English',
     [Language.PL]: 'Polish',
   },
-  playground: 'Playground',
   props: 'Props',
   themes: {
     [Theme.LIGHT]: 'Light',

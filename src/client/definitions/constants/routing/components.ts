@@ -2,7 +2,7 @@ const COMPONENT_SECTIONS = [
   { key: 'overview', label: 'Overview' },
   { key: 'usage', label: 'Usage' },
   { key: 'props', label: 'Props' },
-  { key: 'playground', label: 'Playground' },
+  { key: 'demo', label: 'Demo' },
 ]
 
 export const COMPONENT_CATEGORIES = [
@@ -19,7 +19,10 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'elements',
     label: 'Elements',
-    items: [{ key: 'text', label: 'Text', sections: COMPONENT_SECTIONS }],
+    items: [
+      { key: 'text', label: 'Text', sections: COMPONENT_SECTIONS },
+      { key: 'list', label: 'List', sections: COMPONENT_SECTIONS },
+    ],
   },
   {
     key: 'controls',
