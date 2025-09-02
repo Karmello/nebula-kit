@@ -84,7 +84,7 @@ export const Grid = <E extends GridElemUnion = 'div'>({
       elem={elem}
       elemProps={{ ...elemProps, className: classNames(withPrefix('grid'), elemProps?.className) }}
       elemRef={elemRef || ref}
-      {...boxProps}
+      {...(boxProps as any)}
     />
   )
 }

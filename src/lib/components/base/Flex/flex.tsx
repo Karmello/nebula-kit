@@ -25,7 +25,7 @@ export type FlexOwnProps = {
   columnGap?: ResponsiveProp<ScaleValue | string>
 }
 
-export type FlexProps<E extends ElementType> = Omit<BoxProps<E>, 'display'> & FlexOwnProps
+export type FlexProps<E extends ElementType = 'div'> = Omit<BoxProps<E>, 'display'> & FlexOwnProps
 
 export const Flex = <E extends ElementType = 'div'>({
   elem,
@@ -61,7 +61,7 @@ export const Flex = <E extends ElementType = 'div'>({
       elem={elem}
       elemProps={{ ...elemProps, className: classNames(withPrefix('flex'), elemProps?.className) }}
       elemRef={elemRef || ref}
-      {...boxProps}
+      {...(boxProps as any)}
     />
   )
 }

@@ -7,7 +7,7 @@ export const formatCssValue = (propName: string, propValue: string | number): st
     } else if (propName === 'columns') {
       return `repeat(${propValue}, 1fr)`
     } else {
-      return scale(propValue)
+      return scale(propValue) || ''
     }
   } else {
     return propValue
