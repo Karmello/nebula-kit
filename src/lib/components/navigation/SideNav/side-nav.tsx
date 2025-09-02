@@ -80,7 +80,7 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
 
   return (
     <VStack>
-      {groups.map(({ key, label, items, ...rest }) => {
+      {groups.map(({ key, label, items, elemProps, ...rest }) => {
         const isGroupActive = items?.some(item => item.key === activeKey) || key === activeKey
         const isGroupOpen = key === openGroupKey
         const hasItems = !!items?.length
@@ -88,12 +88,14 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
         return (
           <Box key={key}>
             <Button
+              {...rest}
               elemProps={{
+                ...elemProps,
                 onClick: e => {
                   setOpenGroupKey(key === openGroupKey ? '' : key)
-                  rest.elemProps?.onClick?.(e)
+                  elemProps?.onClick?.(e)
                 },
-                style: { justifyContent: 'flex-start', inlineSize: '100%' },
+                style: { justifyContent: 'flex-start', inlineSize: '100%', ...elemProps?.style },
               }}
               size="md"
               variant={
@@ -104,7 +106,6 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
                 isGroupActive ? FINAL_GROUP_CONFIG.active?.textIntent : FINAL_GROUP_CONFIG.default?.textIntent
               }
               iconName={hasItems ? (isGroupOpen ? 'chevron-up' : 'chevron-down') : undefined}
-              {...rest}
             >
               {label}
             </Button>
@@ -112,17 +113,25 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
               blockSize={
                 isGroupOpen ? `calc(${scale(BUTTON_SIZE_TO_PROPS.md.blockSize)} * ${items?.length || 0})` : 0
               }
+              overflowX="hidden"
               overflowY="hidden"
             >
               <VStack>
-                {items?.map(({ key, label, ...rest }) => {
+                {items?.map(({ key, label, elemProps, ...rest }) => {
                   const isItemActive = key === activeKey
 
                   return (
                     <Button
                       key={key}
+                      {...rest}
                       elemProps={{
-                        style: { justifyContent: 'flex-start', paddingLeft: '40px', inlineSize: '100%' },
+                        ...elemProps,
+                        style: {
+                          justifyContent: 'flex-start',
+                          paddingLeft: '45px',
+                          inlineSize: '100%',
+                          ...elemProps?.style,
+                        },
                       }}
                       variant={
                         isItemActive ? FINAL_ITEM_CONFIG.active?.variant : FINAL_ITEM_CONFIG.default?.variant
@@ -135,7 +144,6 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
                           ? FINAL_ITEM_CONFIG.active?.textIntent
                           : FINAL_ITEM_CONFIG.default?.textIntent
                       }
-                      {...rest}
                     >
                       {label}
                     </Button>

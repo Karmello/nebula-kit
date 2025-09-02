@@ -7,6 +7,8 @@ import { Slot } from 'lib/definitions'
 
 import { getToggleIconName } from '../../helpers'
 
+import '../../side-panel-layout.scss'
+
 export const Main = ({ children, elemProps, ...rest }: Omit<BoxProps<'main'>, 'elem'>) => {
   const { isMobile, isDesktop } = useScreen()
   const { sideOpen, setSideOpen, sidePosition, slots } = useSidePanelLayout()
@@ -25,12 +27,12 @@ export const Main = ({ children, elemProps, ...rest }: Omit<BoxProps<'main'>, 'e
 
   return (
     <Box
+      {...rest}
       elem="section"
       elemProps={{
         ...elemProps,
         className: classNames(withPrefix('side-panel-layout-main'), elemProps?.className),
       }}
-      {...rest}
     >
       <Flex alignItems="center" flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'} gap={10}>
         <IconButton

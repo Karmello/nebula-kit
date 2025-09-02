@@ -1,21 +1,23 @@
 {
   "folders": [
-	{
-		"name": "nebula-kit",
-		"path": "."
-	},
-	{
-		"name": "src",
-		"path": "src"
-	},
-	{
-		"name": "client",
-		"path": "src/client"
-	},
-	{
-		"name": "lib",
-		"path": "src/lib"
-	}
-],
-  "settings": {}
+    {
+      "name": "nebula-kit",
+      "path": ".",
+    },
+    {
+      "name": "src",
+      "path": "src",
+    },
+    {
+      "name": "client",
+      "path": "src/client",
+    },
+    {
+      "name": "lib",
+      "path": "src/lib",
+    },
+  ],
+  "settings": {
+    "typescript.tsdk": "nebula-kit/node_modules/typescript/lib",
+  },
 }

@@ -1,3 +1,4 @@
+import { PropCategory } from 'client/definitions'
 import {
   BUTTON_DEFAULT_INTENT,
   BUTTON_DEFAULT_SIZE,
@@ -16,12 +17,6 @@ import {
 } from 'lib/definitions'
 
 import { ICON_NAMES } from 'lib/icons'
-
-enum PropCategory {
-  appearance = 'Appearance',
-  state = 'State',
-  adornments = 'Adornments',
-}
 
 const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
   name: 'Button',

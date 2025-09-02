@@ -1,12 +1,7 @@
+import { PropCategory } from 'client/definitions'
 import { FlexOwnProps } from 'lib/components'
 
 import { ComponentMeta, CssFlexAlign, CssFlexDirection, CssFlexJustify, CssFlexWrap } from 'lib/definitions'
-
-enum PropCategory {
-  layout = 'Layout',
-  alignment = 'Alignment',
-  spacing = 'Spacing',
-}
 
 const FLEX_META: ComponentMeta<FlexOwnProps> = {
   name: 'Flex',

@@ -8,6 +8,8 @@ type ChildrenAsFuncArgs = {
   setSideOpen: (open: boolean) => void
 }
 
+import '../../side-panel-layout.scss'
+
 export const SideMobile = ({
   children,
   ...rest

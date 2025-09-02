@@ -35,8 +35,8 @@ export const Box = <E extends ElementType = 'div'>({
   // own
   variant = BOX_DEFAULT_VARIANT,
   intent = BOX_DEFAULT_INTENT,
-  interactive = false,
-  disabled = false,
+  interactive,
+  disabled,
   ...css
 }: BoxProps<E>) => {
   const ref = useRef<ComponentRef<E>>(null)
@@ -45,19 +45,20 @@ export const Box = <E extends ElementType = 'div'>({
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    computeResponsiveCss(elemRef || ref, bp, css)
+    computeResponsiveCss(elemRef || ref, bp, {
+      ...css,
+      borderRadius: scale(css.borderRadius !== undefined ? css.borderRadius : globalBorderRadius),
+      ...elemProps?.style,
+    })
   }, [bp, css])
 
   const Elem = (elem ?? 'div') as any
 
   return (
     <Elem
+      {...elemProps}
       ref={elemRef || ref}
       className={classNames(withPrefix('box'), elemProps?.className)}
-      style={{
-        borderRadius: scale(css.borderRadius !== undefined ? css.borderRadius : globalBorderRadius),
-        ...(elemProps?.style || {}),
-      }}
       disabled={disabled}
       {...getDataAttrs('box', { variant, intent, interactive, disabled })}
     >

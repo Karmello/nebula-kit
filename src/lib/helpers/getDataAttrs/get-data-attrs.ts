@@ -1,15 +1,8 @@
 import { kebabCase } from 'lodash'
 
-import { BoxOwnProps, TextOwnProps, TableOwnProps, AppFrameOwnProps } from 'lib/components'
-
 import { LIB_PREFIX } from 'lib/definitions'
 
-type DataAttrProps = Pick<BoxOwnProps, 'variant' | 'intent' | 'interactive' | 'disabled'> &
-  Pick<TextOwnProps, 'typography'> &
-  Pick<TableOwnProps, 'layout' | 'zebra' | 'stickyHeader'> &
-  Pick<AppFrameOwnProps, 'stickyHeader'>
-
-const getDataAttr = (prefix: string, props: DataAttrProps, propName: keyof DataAttrProps) => {
+const getDataAttr = (prefix: string, props: Record<string, unknown>, propName: string) => {
   const propValue = props[propName]
   const dataAttrs: Record<string, typeof propValue> = {}
 
@@ -21,18 +14,16 @@ const getDataAttr = (prefix: string, props: DataAttrProps, propName: keyof DataA
   return dataAttrs
 }
 
-export const getDataAttrs = (prefix: string, props: DataAttrProps) => {
+export const getDataAttrs = (prefix: string, props: Record<string, unknown>) => {
   let dataAttrs = {}
 
   if (props) {
-    const propNames = Object.keys(props) as (keyof DataAttrProps)[]
-
-    propNames.forEach(name => {
+    for (const propName in props) {
       dataAttrs = {
         ...dataAttrs,
-        ...getDataAttr(prefix, props, name),
+        ...getDataAttr(prefix, props, propName),
       }
-    })
+    }
   }
 
   return dataAttrs

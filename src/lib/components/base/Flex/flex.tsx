@@ -60,7 +60,7 @@ export const Flex = <E extends ElementType = 'div'>({
     <Box
       elem={elem}
       elemProps={{ ...elemProps, className: classNames(withPrefix('flex'), elemProps?.className) }}
-      elemRef={elemRef}
+      elemRef={elemRef || ref}
       {...boxProps}
     />
   )

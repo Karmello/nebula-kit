@@ -17,16 +17,7 @@ import {
 
 import { TYPOGRAPHY_TO_PROPS } from 'lib/components'
 import { ICON_NAMES } from 'lib/icons'
-
-enum PropCategory {
-  appearance = 'Appearance',
-  typography = 'Typography',
-  alignment = 'Alignment',
-  emphasis = 'Emphasis',
-  textBehavior = 'Text behavior',
-  adornments = 'Adornments',
-  other = 'Other',
-}
+import { PropCategory } from 'client/definitions'
 
 const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
   name: 'Text',
@@ -98,7 +89,7 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       description: 'Toggles italic styling for the text.',
     },
     {
-      category: PropCategory.textBehavior,
+      category: PropCategory.behavior,
       name: 'noWrap',
       options: ['boolean'],
       defaultValue: 'false',
@@ -107,7 +98,7 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       description: 'Prevents the text from wrapping onto multiple lines.',
     },
     {
-      category: PropCategory.textBehavior,
+      category: PropCategory.behavior,
       name: 'truncate',
       options: ['boolean'],
       defaultValue: 'false',
@@ -116,7 +107,7 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       description: 'Shortens overflowing text to a single line with an ellipsis.',
     },
     {
-      category: PropCategory.textBehavior,
+      category: PropCategory.behavior,
       name: 'clampLines',
       options: ['number'],
       defaultValue: '',

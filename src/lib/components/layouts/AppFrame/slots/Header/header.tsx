@@ -1,19 +1,44 @@
 import { Box, BoxProps } from 'lib/components'
-import { getDataAttrs } from 'lib/helpers'
+import { getDataAttrs, withPrefix } from 'lib/helpers'
 import { Slot } from 'lib/definitions'
 
 import { useAppFrame } from '../../AppFrameProvider'
 
-export const Header = (props: Omit<BoxProps<'header'>, 'elem'>) => {
+import '../../app-frame.scss'
+
+export const Header = (
+  props: Pick<
+    BoxProps<'header'>,
+    | 'children'
+    | 'elemProps'
+    | 'elemRef'
+    | 'intent'
+    | 'blockSize'
+    | 'minBlockSize'
+    | 'maxBlockSize'
+    | 'padding'
+    | 'paddingInline'
+    | 'paddingBlock'
+    | 'paddingTop'
+    | 'paddingRight'
+    | 'paddingBottom'
+    | 'paddingLeft'
+  >
+) => {
   const { stickyHeader } = useAppFrame()
 
   return (
     <Box
-      elem="header"
       variant="solid"
-      intent="tertiary"
+      intent="secondary"
+      minBlockSize={22}
+      borderRadius={0}
       {...props}
-      {...getDataAttrs('app-frame-header', { stickyHeader })}
+      elem="header"
+      elemProps={{
+        className: withPrefix('app-frame-header'),
+        ...getDataAttrs('app-frame-header', { stickyHeader }),
+      }}
     />
   )
 }

@@ -4,6 +4,8 @@ import { Box, BoxOwnProps, BoxProps, Text, TextOwnProps, WithIcon, WithIconOwnPr
 import { BoxIntent, BoxVariant, ButtonSize, ScaleValue } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
+import './button.scss'
+
 export type ButtonOwnProps = {
   variant?: BoxOwnProps['variant']
   intent?: BoxOwnProps['intent']
@@ -43,6 +45,7 @@ export const Button = ({
   intent = BUTTON_DEFAULT_INTENT,
   textIntent,
   size = BUTTON_DEFAULT_SIZE,
+  borderRadius,
   disabled = false,
   iconName,
   iconPosition,
@@ -58,6 +61,7 @@ export const Button = ({
       elemRef={elemRef}
       variant={variant}
       intent={intent}
+      borderRadius={borderRadius}
       disabled={disabled}
       interactive
       {...BUTTON_SIZE_TO_PROPS[size]}

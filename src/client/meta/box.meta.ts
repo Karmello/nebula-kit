@@ -1,3 +1,4 @@
+import { PropCategory } from 'client/definitions'
 import { BOX_DEFAULT_INTENT, BOX_DEFAULT_VARIANT, BoxOwnProps } from 'lib/components'
 
 import {
@@ -9,14 +10,6 @@ import {
   CssPosition,
   CssTextAlign,
 } from 'lib/definitions'
-
-enum PropCategory {
-  appearance = 'Appearance',
-  typographyAlignment = 'Typography alignment',
-  layoutAndDisplay = 'Layout & Display',
-  sizing = 'Sizing',
-  spacing = 'Spacing',
-}
 
 const BOX_META: ComponentMeta<BoxOwnProps> = {
   name: 'Box',
@@ -83,7 +76,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
         'Defines the corner rounding of the Box. By default corners are square, but you can customize rounding per component or set a global border radius through the provider for consistent styling across the system.',
     },
     {
-      category: PropCategory.typographyAlignment,
+      category: PropCategory.alignment,
       name: 'textAlign',
       options: Object.values(CssTextAlign),
       defaultValue: CssTextAlign.start,
@@ -92,7 +85,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
       description: 'Controls the horizontal alignment of text content inside the Box.',
     },
     {
-      category: PropCategory.layoutAndDisplay,
+      category: PropCategory.display,
       name: 'display',
       options: Object.values(CssDisplay),
       defaultValue: CssDisplay.block,
@@ -102,7 +95,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
         'Determines how the Box is rendered in the layout, controlling its display behavior relative to surrounding elements.',
     },
     {
-      category: PropCategory.layoutAndDisplay,
+      category: PropCategory.display,
       name: 'overflowX',
       options: Object.values(CssOverflow),
       defaultValue: CssOverflow.visible,
@@ -112,7 +105,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
         'Controls how content that exceeds the Box’s inline (horizontal) bounds is handled, including clipping and scroll behavior.',
     },
     {
-      category: PropCategory.layoutAndDisplay,
+      category: PropCategory.display,
       name: 'overflowY',
       options: Object.values(CssOverflow),
       defaultValue: CssOverflow.visible,
@@ -122,7 +115,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
         'Controls how content that exceeds the Box’s block (vertical) bounds is handled, including clipping and scroll behavior.',
     },
     {
-      category: PropCategory.layoutAndDisplay,
+      category: PropCategory.display,
       name: 'position',
       options: Object.values(CssPosition),
       defaultValue: CssPosition.static,
@@ -132,7 +125,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
         'Defines how the Box participates in the layout flow and how it’s positioned relative to its containing block.',
     },
     {
-      category: PropCategory.layoutAndDisplay,
+      category: PropCategory.display,
       name: 'top',
       options: ['ScaleValue', 'CSS'],
       defaultValue: 'auto',
@@ -141,7 +134,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
       description: 'Sets the offset from the top edge of the containing block when the Box is positioned.',
     },
     {
-      category: PropCategory.layoutAndDisplay,
+      category: PropCategory.display,
       name: 'right',
       options: ['ScaleValue', 'CSS'],
       defaultValue: 'auto',
@@ -150,7 +143,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
       description: 'Sets the offset from the right edge of the containing block when the Box is positioned.',
     },
     {
-      category: PropCategory.layoutAndDisplay,
+      category: PropCategory.display,
       name: 'bottom',
       options: ['ScaleValue', 'CSS'],
       defaultValue: 'auto',
@@ -159,7 +152,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
       description: 'Sets the offset from the bottom edge of the containing block when the Box is positioned.',
     },
     {
-      category: PropCategory.layoutAndDisplay,
+      category: PropCategory.display,
       name: 'left',
       options: ['ScaleValue', 'CSS'],
       defaultValue: 'auto',

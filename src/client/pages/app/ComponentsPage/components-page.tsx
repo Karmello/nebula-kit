@@ -39,7 +39,7 @@ export const ComponentsPage = () => {
           ]}
         />
       </SidePanelLayout.Header>
-      <SidePanelLayout.Main marginInline={10}>
+      <SidePanelLayout.Main>
         <Spacer size={10} />
         <SidePanelLayout sidePosition="right">
           <SidePanelLayout.Header>
@@ -52,10 +52,12 @@ export const ComponentsPage = () => {
                 ?.sections.map(({ key: sectionKey, label }) => ({
                   key: sectionKey,
                   label,
-                  onClick: () => {
-                    navigateTo(
-                      `/${PageKey.components}/${componentsPageStore.categoryKey}/${componentsPageStore.itemKey}/${sectionKey}`
-                    )
+                  elemProps: {
+                    onClick: () => {
+                      navigateTo(
+                        `/${PageKey.components}/${componentsPageStore.categoryKey}/${componentsPageStore.itemKey}/${sectionKey}`
+                      )
+                    },
                   },
                 }))}
               activeKey={componentsPageStore.sectionKey}
@@ -73,14 +75,16 @@ export const ComponentsPage = () => {
                   ?.sections.map(({ key: sectionKey, label }) => ({
                     key: sectionKey,
                     label,
-                    onClick: () => {
-                      if (
-                        navigateTo(
-                          `/${PageKey.components}/${componentsPageStore.categoryKey}/${componentsPageStore.itemKey}/${sectionKey}`
-                        )
-                      ) {
-                        setSideOpen(false)
-                      }
+                    elemProps: {
+                      onClick: () => {
+                        if (
+                          navigateTo(
+                            `/${PageKey.components}/${componentsPageStore.categoryKey}/${componentsPageStore.itemKey}/${sectionKey}`
+                          )
+                        ) {
+                          setSideOpen(false)
+                        }
+                      },
                     },
                   }))}
                 activeKey={componentsPageStore.sectionKey}
@@ -91,7 +95,7 @@ export const ComponentsPage = () => {
               />
             )}
           </SidePanelLayout.SideMobile>
-          <SidePanelLayout.Main marginInline={10}>
+          <SidePanelLayout.Main>
             <Spacer size={10} />
             <ComponentsPageRoutes />
           </SidePanelLayout.Main>
@@ -105,11 +109,13 @@ export const ComponentsPage = () => {
             items: items.map(({ key: itemKey, label, sections }) => ({
               key: itemKey,
               label,
-              onClick: () => {
-                const sectionIndex = sections.findIndex(s => s.key === componentsPageStore.sectionKey)
-                navigateTo(
-                  `/${PageKey.components}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
-                )
+              elemProps: {
+                onClick: () => {
+                  const sectionIndex = sections.findIndex(s => s.key === componentsPageStore.sectionKey)
+                  navigateTo(
+                    `/${PageKey.components}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
+                  )
+                },
               },
             })),
           }))}
@@ -125,15 +131,17 @@ export const ComponentsPage = () => {
               items: items.map(({ key: itemKey, label, sections }) => ({
                 key: itemKey,
                 label,
-                onClick: () => {
-                  const sectionIndex = sections.findIndex(s => s.key === componentsPageStore.sectionKey)
-                  if (
-                    navigateTo(
-                      `/${PageKey.components}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
-                    )
-                  ) {
-                    setSideOpen(false)
-                  }
+                elemProps: {
+                  onClick: () => {
+                    const sectionIndex = sections.findIndex(s => s.key === componentsPageStore.sectionKey)
+                    if (
+                      navigateTo(
+                        `/${PageKey.components}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
+                      )
+                    ) {
+                      setSideOpen(false)
+                    }
+                  },
                 },
               })),
             }))}

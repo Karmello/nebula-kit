@@ -33,12 +33,13 @@ export const App = () => {
 
   return (
     <AppFrame stickyHeader>
-      <AppFrame.Header>
+      <AppFrame.Header intent="tertiary">
         <AppNavBar />
       </AppFrame.Header>
-      <AppFrame.Main marginTop={10}>
+      <AppFrame.Main paddingTop={{ base: 5, lg: 20 }} paddingBottom={40}>
         <RootPage />
       </AppFrame.Main>
+      <AppFrame.Footer intent="tertiary"></AppFrame.Footer>
     </AppFrame>
   )
 }

@@ -23,13 +23,9 @@ export const AppFrame = ({ children, stickyHeader = false }: AppFrameOwnProps) =
         childrenToVerify={children}
       >
         {slots => (
-          <Grid
-            elemProps={{
-              className: withPrefix('app-frame'),
-            }}
-          >
-            {slots.Header}
-            {slots.Main}
+          <Grid elemProps={{ className: withPrefix('app-frame') }}>
+            {slots.Header || <div />}
+            {slots.Main || <div />}
             {slots.Footer}
           </Grid>
         )}

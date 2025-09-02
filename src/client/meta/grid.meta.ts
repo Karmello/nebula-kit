@@ -1,3 +1,4 @@
+import { PropCategory } from 'client/definitions'
 import { GridProps } from 'lib/components'
 
 import {
@@ -7,13 +8,6 @@ import {
   CssGridPlaceContent,
   GridElem,
 } from 'lib/definitions'
-
-enum PropCategory {
-  layout = 'Layout',
-  alignment = 'Alignment',
-  spacing = 'Spacing',
-  other = 'Other',
-}
 
 const GRID_META: ComponentMeta<GridProps<GridElem>> = {
   name: 'Grid',

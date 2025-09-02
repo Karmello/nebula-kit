@@ -85,15 +85,16 @@ export const Text = <E extends TextElemUnion = 'p'>({
 
   useLayoutEffect(() => {
     computeResponsiveCss(elemRef || ref, bp, {
-      fontSize,
+      fontSize: fontSize || TYPOGRAPHY_TO_PROPS[typography].fontSize,
       lineHeight,
       textAlign,
     })
-  }, [bp, fontSize, lineHeight, textAlign])
+  }, [bp, fontSize, lineHeight])
 
   return (
     <Box
-      elem={elem}
+      elem={elem || TYPOGRAPHY_TO_PROPS[typography].elem}
+      elemRef={(elemRef || ref) as any}
       elemProps={{
         ...elemProps,
         className: classNames(withPrefix('text'), elemProps?.className),
@@ -114,7 +115,6 @@ export const Text = <E extends TextElemUnion = 'p'>({
           ...(elemProps?.style || {}),
         },
       }}
-      elemRef={elemRef}
       variant="ghost"
       textAlign={textAlign}
       {...getDataAttrs('text', { typography })}
