@@ -9,9 +9,7 @@ type DataAttrProps = Pick<BoxOwnProps, 'variant' | 'intent' | 'interactive' | 'd
   Pick<TableOwnProps, 'layout' | 'zebra' | 'stickyHeader'> &
   Pick<AppFrameOwnProps, 'stickyHeader'>
 
-type Prefix = 'box' | 'text' | 'table' | 'nav-layout' | 'app-frame'
-
-const getDataAttr = (prefix: Prefix, props: DataAttrProps, propName: keyof DataAttrProps) => {
+const getDataAttr = (prefix: string, props: DataAttrProps, propName: keyof DataAttrProps) => {
   const propValue = props[propName]
   const dataAttrs: Record<string, typeof propValue> = {}
 
@@ -23,7 +21,7 @@ const getDataAttr = (prefix: Prefix, props: DataAttrProps, propName: keyof DataA
   return dataAttrs
 }
 
-export const getDataAttrs = (prefix: Prefix, props: DataAttrProps) => {
+export const getDataAttrs = (prefix: string, props: DataAttrProps) => {
   let dataAttrs = {}
 
   if (props) {

@@ -1,7 +1,7 @@
 import { ComponentRef, ElementType, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps } from 'lib/components'
+import { Box, BoxProps } from 'lib/components'
 import { withPrefix, computeResponsiveCss, useScreen } from 'lib/helpers'
 
 import {
@@ -9,8 +9,6 @@ import {
   CssFlexDirection,
   CssFlexJustify,
   CssFlexWrap,
-  PolymorphicProps,
-  PropsOf,
   ResponsiveProp,
   ScaleValue,
 } from 'lib/definitions'
@@ -27,10 +25,12 @@ export type FlexOwnProps = {
   columnGap?: ResponsiveProp<ScaleValue | string>
 }
 
+export type FlexProps<E extends ElementType> = Omit<BoxProps<E>, 'display'> & FlexOwnProps
+
 export const Flex = <E extends ElementType = 'div'>({
-  className,
-  style,
-  // css
+  elem,
+  elemProps,
+  elemRef,
   flexDirection,
   flexWrap,
   justifyContent,
@@ -38,14 +38,14 @@ export const Flex = <E extends ElementType = 'div'>({
   gap,
   rowGap,
   columnGap,
-  ...rest
-}: PolymorphicProps<E, Omit<BoxOwnProps, 'display'> & FlexOwnProps>) => {
-  const localRef = useRef<ComponentRef<E>>(null)
+  ...boxProps
+}: FlexProps<E>) => {
+  const ref = useRef<ComponentRef<E>>(null)
 
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    computeResponsiveCss(localRef, bp, {
+    computeResponsiveCss(elemRef || ref, bp, {
       flexDirection,
       flexWrap,
       justifyContent,
@@ -58,12 +58,20 @@ export const Flex = <E extends ElementType = 'div'>({
 
   return (
     <Box
-      innerRef={localRef}
-      className={classNames(withPrefix('flex'), className)}
-      style={style}
-      {...(rest as PropsOf<E>)}
+      elem={elem}
+      elemProps={{ ...elemProps, className: classNames(withPrefix('flex'), elemProps?.className) }}
+      elemRef={elemRef}
+      {...boxProps}
     />
   )
 }
 
 Flex.displayName = 'Flex'
+
+// const Test = () => {
+//   return (
+//     <Flex elem="a" elemProps={{ href: 'href' }} variant="ghost" margin={10}>
+//       flex
+//     </Flex>
+//   )
+// }

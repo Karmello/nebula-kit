@@ -1,10 +1,8 @@
-import { ComponentPropsWithRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, Text, TextOwnProps, WithIcon, WithIconOwnProps } from 'lib/components'
-
-import { withPrefix } from 'lib/helpers'
+import { Box, BoxOwnProps, BoxProps, Text, TextOwnProps, WithIcon, WithIconOwnProps } from 'lib/components'
 import { BoxIntent, BoxVariant, ButtonSize, ScaleValue } from 'lib/definitions'
+import { withPrefix } from 'lib/helpers'
 
 export type ButtonOwnProps = {
   variant?: BoxOwnProps['variant']
@@ -17,7 +15,7 @@ export type ButtonOwnProps = {
   iconPosition?: WithIconOwnProps['iconPosition']
 }
 
-export type ButtonProps = ComponentPropsWithRef<'button'> & ButtonOwnProps
+export type ButtonProps = Pick<BoxProps<'button'>, 'children' | 'elemProps' | 'elemRef'> & ButtonOwnProps
 
 export const BUTTON_SIZE_TO_PROPS: Record<
   ButtonSize,
@@ -39,8 +37,8 @@ export const BUTTON_DEFAULT_SIZE: `${ButtonSize}` = 'md'
 
 export const Button = ({
   children,
-  className,
-  type = 'button',
+  elemProps,
+  elemRef,
   variant = BUTTON_DEFAULT_VARIANT,
   intent = BUTTON_DEFAULT_INTENT,
   textIntent,
@@ -48,30 +46,20 @@ export const Button = ({
   disabled = false,
   iconName,
   iconPosition,
-  ...rest
 }: ButtonProps) => {
   return (
     <Box
-      type={type}
-      {...rest}
-      className={classNames(withPrefix('btn'), className)}
-      as="button"
+      elem="button"
+      elemProps={{
+        ...elemProps,
+        className: classNames(withPrefix('btn'), elemProps?.className),
+        type: elemProps?.type || 'button',
+      }}
+      elemRef={elemRef}
       variant={variant}
       intent={intent}
       disabled={disabled}
       interactive
-      overflowX="hidden"
-      style={{
-        fontFamily: 'inherit',
-        lineHeight: 1,
-        cursor: 'pointer',
-        display: 'inline-flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        whiteSpace: 'nowrap',
-        userSelect: 'none',
-        ...rest.style,
-      }}
       {...BUTTON_SIZE_TO_PROPS[size]}
     >
       <WithIcon iconName={iconName} iconPosition={iconPosition}>
@@ -86,3 +74,7 @@ export const Button = ({
 }
 
 Button.displayName = 'Button'
+
+// const Test = () => {
+//   return <Button elemProps={{ type: 'submit' }}>button</Button>
+// }

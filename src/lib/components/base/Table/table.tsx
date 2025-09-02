@@ -1,7 +1,6 @@
-import { ComponentPropsWithRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, TableContext } from 'lib/components'
+import { Box, BoxProps, TableContext } from 'lib/components'
 import { withPrefix, getDataAttrs } from 'lib/helpers'
 
 import './table.scss'
@@ -14,43 +13,42 @@ export type TableOwnProps = {
   stickyHeader?: boolean
 }
 
-export type TableProps = ComponentPropsWithRef<'table'> & Omit<BoxOwnProps, 'display'> & TableOwnProps
+export type TableProps = Pick<
+  BoxProps<'table'>,
+  'children' | 'elemProps' | 'elemRef' | 'variant' | 'intent'
+> &
+  TableOwnProps
 
 export const Table = ({
-  className,
-  style,
+  children,
+  elemProps,
+  elemRef,
   variant,
   intent,
   layout = 'auto',
   zebra = false,
   stickyHeader = false,
-  ...rest
 }: TableProps) => {
   return (
     <TableContext value={{ variant, intent, layout }}>
-      <Box className={withPrefix('table-container')} overflowX="auto">
+      <Box elemProps={{ className: withPrefix('table-container') }}>
         <Box
+          elem="table"
+          elemProps={{
+            ...elemProps,
+            className: classNames(withPrefix('table'), elemProps?.className),
+            style: {
+              tableLayout: layout,
+              ...(elemProps?.style || {}),
+            },
+          }}
+          elemRef={elemRef}
           variant={variant}
           intent={intent}
-          {...rest}
-          className={classNames(withPrefix('table'), className)}
-          as="table"
-          {...getDataAttrs('table', { zebra })}
-          style={{
-            display: 'table',
-            borderCollapse: 'collapse',
-            tableLayout: layout,
-            inlineSize: '100%',
-            ...(stickyHeader
-              ? {
-                  position: 'sticky',
-                  top: 0,
-                  zIndex: 1,
-                }
-              : {}),
-            ...style,
-          }}
-        />
+          {...getDataAttrs('table', { zebra, stickyHeader })}
+        >
+          {children}
+        </Box>
       </Box>
     </TableContext>
   )

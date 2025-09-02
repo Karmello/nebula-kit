@@ -1,7 +1,3 @@
-@use 'styles/mixins/generate-fallback-chains.scss' as *;
-
-$neb-text-props: font-size, line-height;
-
 .neb-text {
   font-family: inherit;
   color: inherit;
@@ -9,26 +5,8 @@ $neb-text-props: font-size, line-height;
   align-items: center;
   margin: 0;
 
-  --neb-box-font-size-base: inherit;
-  --neb-box-line-height-base: normal;
-
-  @include generate-fallback-chains($neb-text-props, base, text);
-
-  @media (min-width: 480px) {
-    @include generate-fallback-chains($neb-text-props, sm, text);
-  }
-
-  @media (min-width: 768px) {
-    @include generate-fallback-chains($neb-text-props, md, text);
-  }
-
-  @media (min-width: 1024px) {
-    @include generate-fallback-chains($neb-text-props, lg, text);
-  }
-
-  @media (min-width: 1280px) {
-    @include generate-fallback-chains($neb-text-props, xl, text);
-  }
+  font-size: inherit;
+  line-height: normal;
 }
 
 .neb-text[data-neb-text-typography='h1'],

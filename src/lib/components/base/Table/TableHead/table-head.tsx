@@ -1,22 +1,22 @@
-import { ComponentPropsWithRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps } from 'lib/components'
+import { Box, BoxProps } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-export type TableHeadProps = ComponentPropsWithRef<'thead'> & Omit<BoxOwnProps, 'display'>
+export type TableHeadProps = Pick<BoxProps<'thead'>, 'children' | 'elemProps' | 'elemRef'>
 
-export const TableHead = ({ className, ...rest }: TableHeadProps) => {
+export const TableHead = ({ children, elemProps, elemRef }: TableHeadProps) => {
   return (
     <Box
-      {...rest}
-      as="thead"
-      className={classNames(withPrefix('table-head'), className)}
-      style={{
-        ...rest.style,
-        display: 'table-header-group',
+      elem="thead"
+      elemProps={{
+        ...elemProps,
+        className: classNames(withPrefix('table-head'), elemProps?.className),
       }}
-    />
+      elemRef={elemRef}
+    >
+      {children}
+    </Box>
   )
 }
 

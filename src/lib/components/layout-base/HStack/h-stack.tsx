@@ -1,14 +1,15 @@
-import { Stack, StackOwnProps } from 'lib/components'
-import { PolymorphicProps, StackAs } from 'lib/definitions'
+import { Stack, StackProps } from 'lib/components'
+import { StackElem } from 'lib/definitions'
 
-type StackAsType = `${StackAs}`
+type StackElemUnion = `${StackElem}`
 
-export type HStackOwnProps = Omit<StackOwnProps, 'direction' | 'wrap' | 'columnGap'>
+export type HStackProps<E extends StackElemUnion = 'div'> = Omit<
+  StackProps<E>,
+  'flexDirection' | 'flexWrap' | 'columnGap'
+>
 
-export type HStackProps<E extends StackAsType = 'div'> = PolymorphicProps<E, HStackOwnProps>
-
-export const HStack = <E extends StackAsType = 'div'>(props: HStackProps<E>) => {
-  return <Stack {...(props as any)} flexDirection="row" flexWrap="nowrap" />
+export const HStack = <E extends StackElemUnion = 'div'>(props: HStackProps<E>) => {
+  return <Stack {...props} flexDirection="row" flexWrap="nowrap" />
 }
 
 HStack.displayName = 'HStack'

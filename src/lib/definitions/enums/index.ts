@@ -124,7 +124,7 @@ export enum CssGridPlaceContent {
   'space-evenly' = 'space-evenly',
 }
 
-export enum GridAs {
+export enum GridElem {
   'div' = 'div',
   'section' = 'section',
   'main' = 'main',
@@ -135,7 +135,7 @@ export enum GridAs {
   'ol' = 'ol',
 }
 
-export enum TextAs {
+export enum TextElem {
   'h1' = 'h1',
   'h2' = 'h2',
   'h3' = 'h3',
@@ -188,7 +188,7 @@ export enum StackDirection {
   'row' = 'row',
 }
 
-export enum StackAs {
+export enum StackElem {
   'div' = 'div',
   'section' = 'section',
   'article' = 'article',

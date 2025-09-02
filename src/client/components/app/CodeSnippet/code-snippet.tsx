@@ -27,12 +27,12 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
   }
 
   return (
-    <Box as="pre" borderRadius={3} overflowX="auto" style={{ backgroundColor: data.bg }}>
-      <Box as="code" paddingInline={12} paddingBlock={10} minInlineSize="400px">
+    <Box elem="pre" elemProps={{ style: { backgroundColor: data.bg } }} borderRadius={3} overflowX="auto">
+      <Box elem="code" paddingInline={12} paddingBlock={10} minInlineSize="400px">
         {data.tokens.map((token, i) => (
           <Box key={i} marginBottom={i < data.tokens.length - 1 ? 2 : 0}>
             {token.map(({ content, color }, j) => (
-              <Text key={j} as="span" fontSize={7} style={{ display: 'inline', color }}>
+              <Text key={j} elem="span" elemProps={{ style: { display: 'inline', color } }} fontSize={7}>
                 {content}
               </Text>
             ))}

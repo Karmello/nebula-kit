@@ -20,10 +20,11 @@ export const SideMobile = ({
 
   return (
     <Box
+      elem="aside"
+      elemProps={{ style: { zIndex: 20, ...rest.style } }}
       variant="solid"
       intent="secondary"
       {...rest}
-      as="aside"
       position="fixed"
       top={0}
       left={sidePosition === 'left' ? 0 : undefined}
@@ -31,16 +32,17 @@ export const SideMobile = ({
       inlineSize={isMobile && sideOpen ? 'min(85vw, 320px)' : 0}
       minBlockSize="100dvh"
       overflowY="auto"
-      style={{ zIndex: 20, ...rest.style }}
     >
       <HAlign position="right">
         <IconButton
+          elemProps={{
+            onClick: () => {
+              setSideOpen(false)
+            },
+          }}
           iconName="close"
           variant="ghost"
           size="sm"
-          onClick={() => {
-            setSideOpen(false)
-          }}
         />
       </HAlign>
       {typeof children === 'function' ? children({ setSideOpen }) : children}

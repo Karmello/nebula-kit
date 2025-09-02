@@ -1,13 +1,23 @@
-import { ComponentPropsWithRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps } from 'lib/components'
+import { Box, BoxProps } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-export type TableCaptionProps = ComponentPropsWithRef<'caption'> & BoxOwnProps
+export type TableCaptionProps = Pick<BoxProps<'td'>, 'children' | 'elemProps' | 'elemRef'>
 
-export const TableCaption = ({ className, ...rest }: TableCaptionProps) => {
-  return <Box {...rest} as="caption" className={classNames(withPrefix('table-caption'), className)} />
+export const TableCaption = ({ children, elemProps, elemRef }: TableCaptionProps) => {
+  return (
+    <Box
+      elem="caption"
+      elemProps={{
+        ...elemProps,
+        className: classNames(withPrefix('table-caption'), elemProps?.className),
+      }}
+      elemRef={elemRef}
+    >
+      {children}
+    </Box>
+  )
 }
 
 TableCaption.displayName = 'TableCaption'

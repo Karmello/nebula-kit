@@ -13,15 +13,19 @@ export const PropsTable = ({ data }: Props) => {
     <Section heading={data[0].category} hideDivider>
       <Table zebra>
         <Table.Head>
-          <Table.Row intent="tertiary">
-            <Table.HeadCell style={{ width: '17ch' }}>Name</Table.HeadCell>
-            <Table.HeadCell style={{ width: '30ch' }}>Options</Table.HeadCell>
-            <Table.HeadCell textAlign="center" style={{ width: '10ch' }}>
+          <Table.Row>
+            <Table.HeadCell elemProps={{ style: { width: '17ch' } }}>Name</Table.HeadCell>
+            <Table.HeadCell elemProps={{ style: { width: '30ch' } }}>Options</Table.HeadCell>
+            <Table.HeadCell elemProps={{ style: { width: '10ch', textAlign: 'center' } }}>
               Default
             </Table.HeadCell>
-            {isSomeRequired ? <Table.HeadCell style={{ width: '8ch' }}>Required</Table.HeadCell> : null}
-            {isSomeResponsive ? <Table.HeadCell style={{ width: '10ch' }}>Responsive</Table.HeadCell> : null}
-            <Table.HeadCell style={{ width: '40ch' }}>Description</Table.HeadCell>
+            {isSomeRequired ? (
+              <Table.HeadCell elemProps={{ style: { width: '8ch' } }}>Required</Table.HeadCell>
+            ) : null}
+            {isSomeResponsive ? (
+              <Table.HeadCell elemProps={{ style: { width: '10ch' } }}>Responsive</Table.HeadCell>
+            ) : null}
+            <Table.HeadCell elemProps={{ style: { width: '40ch' } }}>Description</Table.HeadCell>
           </Table.Row>
         </Table.Head>
         <Table.Body>
@@ -33,18 +37,18 @@ export const PropsTable = ({ data }: Props) => {
                 </Text>
               </Table.Cell>
               <Table.Cell>{typeof options === 'string' ? options : options.join(', ')}</Table.Cell>
-              <Table.Cell textAlign="center">{defaultValue}</Table.Cell>
+              <Table.Cell elemProps={{ style: { textAlign: 'center' } }}>{defaultValue}</Table.Cell>
               {isSomeRequired ? (
-                <Table.Cell textAlign="center">
+                <Table.Cell elemProps={{ style: { textAlign: 'center' } }}>
                   {isRequired ? <SvgIcon name="check" intent="primary" /> : ''}
                 </Table.Cell>
               ) : null}
               {isSomeResponsive ? (
-                <Table.Cell textAlign="center">
+                <Table.Cell elemProps={{ style: { textAlign: 'center' } }}>
                   {isResponsive ? <SvgIcon name="check" intent="primary" /> : ''}
                 </Table.Cell>
               ) : null}
-              <Table.Cell variant="solid">{description}</Table.Cell>
+              <Table.Cell>{description}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

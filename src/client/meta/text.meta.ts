@@ -2,11 +2,18 @@ import {
   TEXT_DEFAULT_LINE_HEIGHT,
   TEXT_DEFAULT_TEXT_ALIGN,
   TEXT_DEFAULT_TYPOGRAPHY,
-  TextOwnProps,
+  TextProps,
   WITH_ICON_DEFAULT_ICON_POSITION,
 } from 'lib/components'
 
-import { BoxIntent, ComponentMeta, CssTextAlign, IconPosition, TextAs, TextTypography } from 'lib/definitions'
+import {
+  BoxIntent,
+  ComponentMeta,
+  CssTextAlign,
+  IconPosition,
+  TextElem,
+  TextTypography,
+} from 'lib/definitions'
 
 import { TYPOGRAPHY_TO_PROPS } from 'lib/components'
 import { ICON_NAMES } from 'lib/icons'
@@ -21,7 +28,7 @@ enum PropCategory {
   other = 'Other',
 }
 
-const TEXT_META: ComponentMeta<TextOwnProps> = {
+const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
   name: 'Text',
   description:
     'Text is a typography component that renders semantic text elements with consistent styles. It provides a unified API for alignment, intent, and typography presets, while still allowing fine-grained control over size, line height, and emphasis. Use Text when you need readable, theme-aware text that can adapt responsively, handle truncation or clamping, and optionally include icons alongside content.',
@@ -146,9 +153,9 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
     },
     {
       category: PropCategory.other,
-      name: 'as',
-      options: Object.values(TextAs),
-      defaultValue: TYPOGRAPHY_TO_PROPS[TEXT_DEFAULT_TYPOGRAPHY].as,
+      name: 'elem',
+      options: Object.values(TextElem),
+      defaultValue: TYPOGRAPHY_TO_PROPS[TEXT_DEFAULT_TYPOGRAPHY].elem,
       isRequired: false,
       isResponsive: false,
       description:

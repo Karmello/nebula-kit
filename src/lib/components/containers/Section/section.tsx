@@ -1,24 +1,22 @@
-import { ComponentPropsWithRef, ReactNode } from 'react'
+import { Box, BoxProps, Divider, Spacer, Text, TextOwnProps } from 'lib/components'
 
-import { Box, BoxOwnProps, Divider, Spacer, Text, TextOwnProps } from 'lib/components'
+export type SectionOwnProps = {
+  heading: string
+  headingProps?: Omit<TextOwnProps, 'children'>
+  hideDivider?: boolean
+}
 
-export type SectionOwnProps = ComponentPropsWithRef<'section'> &
-  BoxOwnProps & {
-    children?: ReactNode
-    heading: string
-    headingProps?: Omit<TextOwnProps, 'children'>
-    hideDivider?: boolean
-  }
+export type SectionProps = Omit<BoxProps, 'elem'> & SectionOwnProps
 
 export const Section = ({
-  children,
   heading,
   headingProps,
   hideDivider = false,
-  ...rest
-}: SectionOwnProps) => {
+  children,
+  ...boxProps
+}: SectionProps) => {
   return (
-    <Box {...rest} as="section">
+    <Box elem="section" {...boxProps}>
       <Text typography="h5" {...headingProps}>
         {heading}
       </Text>

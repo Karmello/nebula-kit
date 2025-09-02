@@ -1,5 +1,3 @@
-import { ComponentProps, ComponentRef, ElementType, JSX, RefObject } from 'react'
-
 import { BREAKPOINTS, SCALE } from '..'
 
 export type Breakpoint = (typeof BREAKPOINTS)[number]
@@ -24,10 +22,3 @@ export type ComponentMeta<PropsType> = {
 }
 
 export type ResponsiveProp<T> = T | Partial<Record<Breakpoint, T>>
-
-export type PropsOf<E extends ElementType> = JSX.LibraryManagedAttributes<E, ComponentProps<E>>
-
-export type PolymorphicProps<E extends ElementType, Own> = Own & {
-  as?: E
-  innerRef?: RefObject<ComponentRef<E>>
-} & Omit<PropsOf<E>, keyof Own | 'as' | 'ref'>

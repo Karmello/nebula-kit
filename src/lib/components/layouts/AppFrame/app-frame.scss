@@ -1,0 +1,15 @@
+.neb-app-frame {
+  grid-template-rows: auto 1fr auto;
+  min-block-size: 100dvh;
+}
+
+.neb-app-frame-header[data-neb-app-frame-header-sticky-header='true'] {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.neb-app-frame-main {
+  min-block-size: 0;
+  min-inline-size: 0;
+}

@@ -1,22 +1,23 @@
-import { ComponentPropsWithRef } from 'react'
+import classNames from 'classnames'
 
-import { Box, BoxOwnProps, useSidePanelLayout } from 'lib/components'
+import { Box, BoxProps, useSidePanelLayout } from 'lib/components'
+import { scale, useScreen, withPrefix } from 'lib/helpers'
 import { Slot } from 'lib/definitions'
-import { scale, useScreen } from 'lib/helpers'
 
-export const SideDesktop = (
-  props: ComponentPropsWithRef<'aside'> & Omit<BoxOwnProps, 'inlineSize' | 'blockSize' | 'overflowX'>
-) => {
+export const SideDesktop = ({ elemProps, ...rest }: Omit<BoxProps<'aside'>, 'elem'>) => {
   const { isMobile, isDesktop } = useScreen()
   const { sideOpen, sideWidthDesktop } = useSidePanelLayout()
 
   return (
     <Box
-      {...props}
-      as="aside"
+      elem="aside"
+      elemProps={{
+        ...elemProps,
+        className: classNames(withPrefix('side-panel-layout-side-desktop'), elemProps?.className),
+      }}
       inlineSize={isDesktop && sideOpen ? scale(sideWidthDesktop) : 0}
       blockSize={isMobile ? 0 : undefined}
-      overflowX="hidden"
+      {...rest}
     />
   )
 }

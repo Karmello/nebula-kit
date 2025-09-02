@@ -1,14 +1,19 @@
-import { Stack, StackOwnProps } from 'lib/components'
-import { PolymorphicProps, StackAs } from 'lib/definitions'
+import { Stack, StackProps } from 'lib/components'
+import { StackElem } from 'lib/definitions'
 
-type StackAsType = `${StackAs}`
+type StackElemUnion = `${StackElem}`
 
-export type VStackOwnProps = Omit<StackOwnProps, 'direction' | 'wrap' | 'rowGap'>
+export type VStackProps<E extends StackElemUnion = 'div'> = Omit<
+  StackProps<E>,
+  'flexDirection' | 'flexWrap' | 'rowGap'
+>
 
-export type VStackProps<E extends StackAsType = 'div'> = PolymorphicProps<E, VStackOwnProps>
-
-export const VStack = <E extends StackAsType = 'div'>(props: VStackProps<E>) => {
-  return <Stack {...(props as any)} flexWrap="nowrap" />
+export const VStack = <E extends StackElemUnion = 'div'>(props: VStackProps<E>) => {
+  return <Stack {...props} flexDirection="column" flexWrap="nowrap" />
 }
 
 VStack.displayName = 'VStack'
+
+// const Test = () => {
+//   return <VStack>v-stack</VStack>
+// }

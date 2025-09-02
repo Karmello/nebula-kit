@@ -1,0 +1,15 @@
+.neb-side-panel-layout {
+  min-block-size: 100dvh;
+}
+
+.neb-side-panel-layout-header {
+  inline-size: 100%;
+}
+
+.neb-side-panel-layout-main {
+  min-inline-size: 0;
+}
+
+.neb-side-panel-layout-side-desktop {
+  overflow-x: hidden;
+}

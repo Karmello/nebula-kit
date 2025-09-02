@@ -1,9 +1,19 @@
-import { Box, BoxOwnProps } from 'lib/components'
+import classNames from 'classnames'
+import { Box, BoxProps } from 'lib/components'
 import { Slot } from 'lib/definitions'
-import { ComponentPropsWithRef } from 'react'
+import { withPrefix } from 'lib/helpers'
 
-export const Header = (props: ComponentPropsWithRef<'header'> & BoxOwnProps) => {
-  return <Box inlineSize="100%" {...props} as="header" />
+export const Header = ({ elemProps, ...rest }: Omit<BoxProps<'header'>, 'elem'>) => {
+  return (
+    <Box
+      elem="header"
+      elemProps={{
+        ...elemProps,
+        className: classNames(withPrefix('side-panel-layout-header'), elemProps?.className),
+      }}
+      {...rest}
+    />
+  )
 }
 
 Header.slotName = Slot.header

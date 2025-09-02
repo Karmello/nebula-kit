@@ -88,6 +88,13 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
         return (
           <Box key={key}>
             <Button
+              elemProps={{
+                onClick: e => {
+                  setOpenGroupKey(key === openGroupKey ? '' : key)
+                  rest.elemProps?.onClick?.(e)
+                },
+                style: { justifyContent: 'flex-start', inlineSize: '100%' },
+              }}
               size="md"
               variant={
                 isGroupActive ? FINAL_GROUP_CONFIG.active?.variant : FINAL_GROUP_CONFIG.default?.variant
@@ -97,12 +104,7 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
                 isGroupActive ? FINAL_GROUP_CONFIG.active?.textIntent : FINAL_GROUP_CONFIG.default?.textIntent
               }
               iconName={hasItems ? (isGroupOpen ? 'chevron-up' : 'chevron-down') : undefined}
-              style={{ justifyContent: 'flex-start', inlineSize: '100%' }}
               {...rest}
-              onClick={e => {
-                setOpenGroupKey(key === openGroupKey ? '' : key)
-                rest.onClick?.(e)
-              }}
             >
               {label}
             </Button>
@@ -119,6 +121,9 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
                   return (
                     <Button
                       key={key}
+                      elemProps={{
+                        style: { justifyContent: 'flex-start', paddingLeft: '40px', inlineSize: '100%' },
+                      }}
                       variant={
                         isItemActive ? FINAL_ITEM_CONFIG.active?.variant : FINAL_ITEM_CONFIG.default?.variant
                       }
@@ -130,7 +135,6 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
                           ? FINAL_ITEM_CONFIG.active?.textIntent
                           : FINAL_ITEM_CONFIG.default?.textIntent
                       }
-                      style={{ justifyContent: 'flex-start', paddingLeft: '40px', inlineSize: '100%' }}
                       {...rest}
                     >
                       {label}

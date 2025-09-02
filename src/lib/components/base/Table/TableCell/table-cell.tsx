@@ -1,29 +1,29 @@
-import { ComponentPropsWithRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, useTableContext } from 'lib/components'
+import { Box, BoxProps, useTableContext } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-export type TableCellProps = ComponentPropsWithRef<'td'> & Omit<BoxOwnProps, 'display'>
+export type TableCellProps = Pick<BoxProps<'td'>, 'children' | 'elemProps' | 'elemRef'>
 
-export const TableCell = ({ className, ...rest }: TableCellProps) => {
+export const TableCell = ({ children, elemProps, elemRef }: TableCellProps) => {
   const { variant, intent } = useTableContext()
 
   return (
     <Box
+      elem="td"
+      elemProps={{
+        ...elemProps,
+        className: classNames(withPrefix('table-cell'), elemProps?.className),
+      }}
+      elemRef={elemRef}
       variant={variant}
       intent={intent}
       paddingInline={10}
       paddingBlock={5}
       borderRadius={0}
-      {...rest}
-      as="td"
-      className={classNames(withPrefix('table-cell'), className)}
-      style={{
-        ...rest.style,
-        display: 'table-cell',
-      }}
-    />
+    >
+      {children}
+    </Box>
   )
 }
 

@@ -1,32 +1,28 @@
-import { ReactNode } from 'react'
+import { ComponentRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, WithIcon, WithIconOwnProps } from 'lib/components'
-import { withPrefix, getDataAttrs, getCssVars } from 'lib/helpers'
+import { Box, BoxOwnProps, BoxProps, WithIcon, WithIconOwnProps } from 'lib/components'
+import { withPrefix, getDataAttrs, useScreen, computeResponsiveCss } from 'lib/helpers'
 
 import {
   BoxIntent,
   CssTextAlign,
-  PolymorphicProps,
-  PropsOf,
   ResponsiveProp,
   ScaleValue,
-  TextAs,
+  TextElem,
   TextTypography,
 } from 'lib/definitions'
 
 import './text.scss'
 
-type TextAsType = `${TextAs}`
+type TextElemUnion = `${TextElem}`
 
 export type TextOwnProps = {
-  children: ReactNode
-  as?: TextAsType
-  textAlign?: BoxOwnProps['textAlign']
   intent?: `${BoxIntent}`
   typography?: `${TextTypography}`
   fontSize?: ResponsiveProp<ScaleValue | string>
   lineHeight?: ResponsiveProp<number | string>
+  textAlign?: BoxOwnProps['textAlign']
   bold?: boolean
   italic?: boolean
   noWrap?: boolean
@@ -39,31 +35,37 @@ export type TextOwnProps = {
 export const TYPOGRAPHY_TO_PROPS: Record<
   TextTypography,
   {
-    as: `${TextAs}`
+    elem: `${TextElemUnion}`
     fontSize: TextOwnProps['fontSize']
   }
 > = {
-  caption: { as: 'p', fontSize: 6 },
-  secondary: { as: 'p', fontSize: 7 },
-  body: { as: 'p', fontSize: 8 },
-  lead: { as: 'p', fontSize: 9 },
-  h6: { as: 'h6', fontSize: 10 },
-  h5: { as: 'h5', fontSize: 12 },
-  h4: { as: 'h4', fontSize: 15 },
-  h3: { as: 'h3', fontSize: 18 },
-  h2: { as: 'h2', fontSize: 24 },
-  h1: { as: 'h1', fontSize: 30 },
+  caption: { elem: 'p', fontSize: 6 },
+  secondary: { elem: 'p', fontSize: 7 },
+  body: { elem: 'p', fontSize: 8 },
+  lead: { elem: 'p', fontSize: 9 },
+  h6: { elem: 'h6', fontSize: 10 },
+  h5: { elem: 'h5', fontSize: 12 },
+  h4: { elem: 'h4', fontSize: 15 },
+  h3: { elem: 'h3', fontSize: 18 },
+  h2: { elem: 'h2', fontSize: 24 },
+  h1: { elem: 'h1', fontSize: 30 },
 }
 
 export const TEXT_DEFAULT_LINE_HEIGHT = 'normal'
 export const TEXT_DEFAULT_TEXT_ALIGN: `${CssTextAlign}` = 'start'
 export const TEXT_DEFAULT_TYPOGRAPHY: `${TextTypography}` = 'body'
 
-export const Text = <E extends TextAsType = 'p'>({
+export type TextProps<E extends TextElemUnion> = Pick<
+  BoxProps<E>,
+  'children' | 'elem' | 'elemProps' | 'elemRef'
+> &
+  TextOwnProps
+
+export const Text = <E extends TextElemUnion = 'p'>({
   children,
-  as,
-  className,
-  style,
+  elem,
+  elemProps,
+  elemRef,
   intent,
   fontSize,
   lineHeight = TEXT_DEFAULT_LINE_HEIGHT,
@@ -76,36 +78,46 @@ export const Text = <E extends TextAsType = 'p'>({
   clampLines,
   iconName,
   iconPosition,
-  ...rest
-}: PolymorphicProps<E, TextOwnProps>) => {
+}: TextProps<E>) => {
+  const ref = useRef<ComponentRef<E>>(null)
+
+  const { bp } = useScreen()
+
+  useLayoutEffect(() => {
+    computeResponsiveCss(elemRef || ref, bp, {
+      fontSize,
+      lineHeight,
+      textAlign,
+    })
+  }, [bp, fontSize, lineHeight, textAlign])
+
   return (
     <Box
-      as={as || TYPOGRAPHY_TO_PROPS[typography].as}
-      className={classNames(withPrefix('text'), className)}
+      elem={elem}
+      elemProps={{
+        ...elemProps,
+        className: classNames(withPrefix('text'), elemProps?.className),
+        style: {
+          color: intent ? `var(--neb-text-${intent})` : undefined,
+          ...(clampLines && clampLines > 0
+            ? {
+                display: '-webkit-box',
+                WebkitLineClamp: clampLines,
+                WebkitBoxOrient: 'vertical' as const,
+                overflow: 'hidden',
+              }
+            : {}),
+          ...(bold ? { fontWeight: 'bold' } : {}),
+          ...(italic ? { fontStyle: 'italic' } : {}),
+          ...(noWrap ? { whiteSpace: 'nowrap' } : {}),
+          ...(truncate ? { whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' } : {}),
+          ...(elemProps?.style || {}),
+        },
+      }}
+      elemRef={elemRef}
       variant="ghost"
       textAlign={textAlign}
-      style={{
-        color: intent ? `var(--neb-text-${intent})` : undefined,
-        ...(clampLines && clampLines > 0
-          ? {
-              display: '-webkit-box',
-              WebkitLineClamp: clampLines,
-              WebkitBoxOrient: 'vertical' as const,
-              overflow: 'hidden',
-            }
-          : {}),
-        ...(bold ? { fontWeight: 'bold' } : {}),
-        ...(italic ? { fontStyle: 'italic' } : {}),
-        ...(noWrap ? { whiteSpace: 'nowrap' } : {}),
-        ...(truncate ? { whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' } : {}),
-        ...getCssVars('text', {
-          fontSize: fontSize !== undefined ? fontSize : TYPOGRAPHY_TO_PROPS[typography].fontSize,
-          lineHeight,
-        }),
-        ...style,
-      }}
       {...getDataAttrs('text', { typography })}
-      {...(rest as PropsOf<E>)}
     >
       <WithIcon iconName={iconName} iconPosition={iconPosition}>
         {children}
@@ -115,3 +127,11 @@ export const Text = <E extends TextAsType = 'p'>({
 }
 
 Text.displayName = 'Text'
+
+// const Test = () => {
+//   return (
+//     <Text elem="h5">
+//       text
+//     </Text>
+//   )
+// }

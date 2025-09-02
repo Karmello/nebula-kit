@@ -1,29 +1,19 @@
-import { ComponentPropsWithRef, CSSProperties } from 'react'
-
-import { Box, BoxOwnProps } from 'lib/components'
+import { Box, BoxProps } from 'lib/components'
+import { getDataAttrs } from 'lib/helpers'
 import { Slot } from 'lib/definitions'
 
 import { useAppFrame } from '../../AppFrameProvider'
 
-export const Header = (props: ComponentPropsWithRef<'header'> & BoxOwnProps) => {
+export const Header = (props: Omit<BoxProps<'header'>, 'elem'>) => {
   const { stickyHeader } = useAppFrame()
 
   return (
     <Box
+      elem="header"
       variant="solid"
       intent="tertiary"
       {...props}
-      as="header"
-      style={
-        stickyHeader
-          ? ({
-              ...props.style,
-              position: 'sticky',
-              top: 0,
-              zIndex: 10,
-            } as CSSProperties)
-          : props.style
-      }
+      {...getDataAttrs('app-frame-header', { stickyHeader })}
     />
   )
 }

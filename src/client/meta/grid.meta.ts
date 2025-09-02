@@ -1,11 +1,11 @@
-import { GridOwnProps } from 'lib/components'
+import { GridProps } from 'lib/components'
 
 import {
   ComponentMeta,
   CssGridAutoFlow,
   CssGridPlaceItems,
   CssGridPlaceContent,
-  GridAs,
+  GridElem,
 } from 'lib/definitions'
 
 enum PropCategory {
@@ -15,7 +15,7 @@ enum PropCategory {
   other = 'Other',
 }
 
-const GRID_META: ComponentMeta<GridOwnProps> = {
+const GRID_META: ComponentMeta<GridProps<GridElem>> = {
   name: 'Grid',
   description:
     'Grid is a layout component that arranges its children using CSS Grid. It provides a consistent API for defining rows, columns, gaps, and alignment, so you can create two-dimensional layouts without writing raw grid styles. Use Grid when you need precise control over track sizes, auto-placement, and spacing in both directions, or as the foundation for more complex, responsive layout primitives.',
@@ -113,9 +113,9 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
     },
     {
       category: PropCategory.other,
-      name: 'as',
-      options: Object.values(GridAs),
-      defaultValue: GridAs.div,
+      name: 'elem',
+      options: Object.values(GridElem),
+      defaultValue: GridElem.div,
       isRequired: false,
       isResponsive: false,
       description:

@@ -1,10 +1,20 @@
-import { ComponentPropsWithRef } from 'react'
+import classNames from 'classnames'
 
-import { Box, BoxOwnProps } from 'lib/components'
+import { Box, BoxProps } from 'lib/components'
 import { Slot } from 'lib/definitions'
+import { withPrefix } from 'lib/helpers'
 
-export const Main = (props: ComponentPropsWithRef<'main'> & BoxOwnProps) => {
-  return <Box minBlockSize={0} minInlineSize={0} {...props} as="main" />
+export const Main = ({ elemProps, ...rest }: Omit<BoxProps<'main'>, 'elem'>) => {
+  return (
+    <Box
+      elem="main"
+      elemProps={{
+        ...elemProps,
+        className: classNames(withPrefix('app-frame-main'), elemProps?.className),
+      }}
+      {...rest}
+    />
+  )
 }
 
 Main.slotName = Slot.main

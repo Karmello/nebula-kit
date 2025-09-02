@@ -1,22 +1,22 @@
-import { ComponentPropsWithRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps } from 'lib/components'
+import { Box, BoxProps } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-export type TableFootProps = ComponentPropsWithRef<'tfoot'> & Omit<BoxOwnProps, 'display'>
+export type TableFootProps = Pick<BoxProps<'tfoot'>, 'children' | 'elemProps' | 'elemRef'>
 
-export const TableFoot = ({ className, ...rest }: TableFootProps) => {
+export const TableFoot = ({ children, elemProps, elemRef }: TableFootProps) => {
   return (
     <Box
-      {...rest}
-      as="tfoot"
-      className={classNames(withPrefix('table-foot'), className)}
-      style={{
-        ...rest.style,
-        display: 'table-footer-group',
+      elem="tfoot"
+      elemProps={{
+        ...elemProps,
+        className: classNames(withPrefix('table-foot'), elemProps?.className),
       }}
-    />
+      elemRef={elemRef}
+    >
+      {children}
+    </Box>
   )
 }
 

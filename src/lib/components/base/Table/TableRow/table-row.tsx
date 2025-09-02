@@ -1,22 +1,22 @@
-import { ComponentPropsWithRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps } from 'lib/components'
+import { Box, BoxProps } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-export type TableRowProps = ComponentPropsWithRef<'tr'> & Omit<BoxOwnProps, 'display'>
+export type TableRowProps = Pick<BoxProps<'tr'>, 'children' | 'elemProps' | 'elemRef'>
 
-export const TableRow = ({ className, ...rest }: TableRowProps) => {
+export const TableRow = ({ children, elemProps, elemRef }: TableRowProps) => {
   return (
     <Box
-      {...rest}
-      as="tr"
-      className={classNames(withPrefix('table-row'), className)}
-      style={{
-        ...rest.style,
-        display: 'table-row',
+      elem="tr"
+      elemProps={{
+        ...elemProps,
+        className: classNames(withPrefix('table-row'), elemProps?.className),
       }}
-    />
+      elemRef={elemRef}
+    >
+      {children}
+    </Box>
   )
 }
 
