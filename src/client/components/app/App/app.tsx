@@ -36,7 +36,7 @@ export const App = () => {
       <AppFrame.Header intent="tertiary">
         <AppNavBar />
       </AppFrame.Header>
-      <AppFrame.Main paddingTop={{ base: 5, lg: 20 }} paddingBottom={40}>
+      <AppFrame.Main paddingTop={{ base: 10, lg: 20 }} paddingBottom={40}>
         <RootPage />
       </AppFrame.Main>
       <AppFrame.Footer intent="tertiary"></AppFrame.Footer>

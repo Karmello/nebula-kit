@@ -1,31 +1,12 @@
 import classNames from 'classnames'
 
-import { Box, BoxProps } from 'lib/components'
-import { Slot } from 'lib/definitions'
+import { Box } from 'lib/components'
+import { LayoutSlotProps, Slot } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
 import '../../app-frame.scss'
 
-export const Main = ({
-  elemProps,
-  ...rest
-}: Pick<
-  BoxProps<'main'>,
-  | 'children'
-  | 'elemProps'
-  | 'elemRef'
-  | 'intent'
-  | 'blockSize'
-  | 'minBlockSize'
-  | 'maxBlockSize'
-  | 'padding'
-  | 'paddingInline'
-  | 'paddingBlock'
-  | 'paddingTop'
-  | 'paddingRight'
-  | 'paddingBottom'
-  | 'paddingLeft'
->) => {
+export const Main = ({ elemProps, ...rest }: LayoutSlotProps<'main'>) => {
   return (
     <Box
       borderRadius={0}

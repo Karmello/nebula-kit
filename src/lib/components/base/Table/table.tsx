@@ -41,11 +41,11 @@ export const Table = ({
               tableLayout: layout,
               ...(elemProps?.style || {}),
             },
+            ...getDataAttrs('table', { zebra, stickyHeader }),
           }}
           elemRef={elemRef}
           variant={variant}
           intent={intent}
-          {...getDataAttrs('table', { zebra, stickyHeader })}
         >
           {children}
         </Box>

@@ -8,14 +8,16 @@ import { SidePanelLayoutProvider } from './SidePanelLayoutProvider'
 
 export type SidePanelLayoutOwnProps = {
   children: ReactNode
-  sidePosition?: Extract<HorizontalPosition, 'left' | 'right'>
+  sidePosition?: Extract<keyof typeof HorizontalPosition, 'left' | 'right'>
   sideWidthDesktop?: ScaleValue | string
 }
 
+export const SIDE_PANEL_LAYOUT_DEFAULT_SIDE_WITH_DESKTOP = '225px'
+
 export const SidePanelLayout = ({
   children,
-  sidePosition = 'left',
-  sideWidthDesktop = '225px',
+  sidePosition = HorizontalPosition.left,
+  sideWidthDesktop = SIDE_PANEL_LAYOUT_DEFAULT_SIDE_WITH_DESKTOP,
 }: SidePanelLayoutOwnProps) => {
   return (
     <WithSlots

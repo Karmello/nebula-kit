@@ -1,30 +1,12 @@
-import { Box, BoxProps } from 'lib/components'
+import { Box } from 'lib/components'
 import { getDataAttrs, withPrefix } from 'lib/helpers'
-import { Slot } from 'lib/definitions'
+import { LayoutSlotProps, Slot } from 'lib/definitions'
 
 import { useAppFrame } from '../../AppFrameProvider'
 
 import '../../app-frame.scss'
 
-export const Header = (
-  props: Pick<
-    BoxProps<'header'>,
-    | 'children'
-    | 'elemProps'
-    | 'elemRef'
-    | 'intent'
-    | 'blockSize'
-    | 'minBlockSize'
-    | 'maxBlockSize'
-    | 'padding'
-    | 'paddingInline'
-    | 'paddingBlock'
-    | 'paddingTop'
-    | 'paddingRight'
-    | 'paddingBottom'
-    | 'paddingLeft'
-  >
-) => {
+export const Header = (props: LayoutSlotProps<'header'>) => {
   const { stickyHeader } = useAppFrame()
 
   return (

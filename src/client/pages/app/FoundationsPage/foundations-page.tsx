@@ -39,7 +39,7 @@ export const FoundationsPage = () => {
           ]}
         />
       </SidePanelLayout.Header>
-      <SidePanelLayout.Main marginInline={10}>
+      <SidePanelLayout.Main>
         <Spacer size={10} />
         <SidePanelLayout sidePosition="right">
           <SidePanelLayout.Header>
@@ -91,7 +91,7 @@ export const FoundationsPage = () => {
               />
             )}
           </SidePanelLayout.SideMobile>
-          <SidePanelLayout.Main marginInline={10}>
+          <SidePanelLayout.Main>
             <FoundationsPageRoutes />
           </SidePanelLayout.Main>
         </SidePanelLayout>

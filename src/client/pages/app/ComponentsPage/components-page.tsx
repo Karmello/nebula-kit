@@ -39,12 +39,9 @@ export const ComponentsPage = () => {
           ]}
         />
       </SidePanelLayout.Header>
-      <SidePanelLayout.Main>
+      <SidePanelLayout.Main paddingLeft={10}>
         <Spacer size={10} />
         <SidePanelLayout sidePosition="right">
-          <SidePanelLayout.Header>
-            <Section heading={activeItemObj?.label} headingProps={{ typography: 'h3' }} />
-          </SidePanelLayout.Header>
           <SidePanelLayout.SideDesktop>
             <SideNav
               groups={COMPONENT_CATEGORIES.find(c => c.key === componentsPageStore.categoryKey)
@@ -95,7 +92,10 @@ export const ComponentsPage = () => {
               />
             )}
           </SidePanelLayout.SideMobile>
-          <SidePanelLayout.Main>
+          <SidePanelLayout.Header>
+            <Section heading={activeItemObj?.label} headingProps={{ typography: 'h3' }} />
+          </SidePanelLayout.Header>
+          <SidePanelLayout.Main paddingRight={10}>
             <Spacer size={10} />
             <ComponentsPageRoutes />
           </SidePanelLayout.Main>

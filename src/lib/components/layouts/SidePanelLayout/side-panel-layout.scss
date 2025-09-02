@@ -13,3 +13,11 @@
 .neb-side-panel-layout-side-desktop {
   overflow: hidden;
 }
+
+.neb-side-panel-layout-side-mobile {
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  min-block-size: 100dvh;
+  overflow-y: auto;
+}

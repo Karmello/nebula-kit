@@ -200,3 +200,9 @@ export enum StackElem {
   'ul' = 'ul',
   'ol' = 'ol',
 }
+
+export enum HorizontalPosition {
+  'left' = 'left',
+  'center' = 'center',
+  'right' = 'right',
+}

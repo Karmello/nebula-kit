@@ -5,7 +5,7 @@ import { CssFlexJustify, HorizontalPosition } from 'lib/definitions'
 
 export type HAlignOwnProps = {
   children: ReactNode
-  position: HorizontalPosition
+  position: `${HorizontalPosition}`
 }
 
 const MAP: Record<HorizontalPosition, CssFlexJustify> = {

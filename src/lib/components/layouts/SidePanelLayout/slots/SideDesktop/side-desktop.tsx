@@ -1,12 +1,12 @@
 import classNames from 'classnames'
 
-import { Box, BoxProps, useSidePanelLayout } from 'lib/components'
+import { Box, useSidePanelLayout } from 'lib/components'
 import { scale, useScreen, withPrefix } from 'lib/helpers'
-import { Slot } from 'lib/definitions'
+import { LayoutSlotProps, Slot } from 'lib/definitions'
 
 import '../../side-panel-layout.scss'
 
-export const SideDesktop = ({ elemProps, ...rest }: Omit<BoxProps<'aside'>, 'elem'>) => {
+export const SideDesktop = ({ elemProps, ...rest }: LayoutSlotProps<'aside'>) => {
   const { isMobile, isDesktop } = useScreen()
   const { sideOpen, sideWidthDesktop } = useSidePanelLayout()
 

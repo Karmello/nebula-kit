@@ -1,15 +1,15 @@
 import { useLayoutEffect } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxProps, Flex, IconButton, Spacer, useSidePanelLayout } from 'lib/components'
+import { Box, Flex, IconButton, Spacer, useSidePanelLayout } from 'lib/components'
 import { useScreen, withPrefix } from 'lib/helpers'
-import { Slot } from 'lib/definitions'
+import { LayoutSlotProps, Slot } from 'lib/definitions'
 
 import { getToggleIconName } from '../../helpers'
 
 import '../../side-panel-layout.scss'
 
-export const Main = ({ children, elemProps, ...rest }: Omit<BoxProps<'main'>, 'elem'>) => {
+export const Main = ({ children, elemProps, ...rest }: LayoutSlotProps<'main'>) => {
   const { isMobile, isDesktop } = useScreen()
   const { sideOpen, setSideOpen, sidePosition, slots } = useSidePanelLayout()
 

@@ -114,10 +114,10 @@ export const Text = <E extends TextElemUnion = 'p'>({
           ...(truncate ? { whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' } : {}),
           ...(elemProps?.style || {}),
         },
+        ...getDataAttrs('text', { typography }),
       }}
       variant="ghost"
       textAlign={textAlign}
-      {...getDataAttrs('text', { typography })}
     >
       <WithIcon iconName={iconName} iconPosition={iconPosition}>
         {children}
