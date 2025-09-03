@@ -14,44 +14,8 @@ import {
 const BOX_META: ComponentMeta<BoxProps> = {
   name: 'Box',
   description:
-    'Box is the foundational layout primitive. It renders as any element (div by default) and provides consistent spacing, typography, sizing, and surface styling through responsive props and CSS variables. Use it as the base container or building block for more complex components.',
+    'Box is the foundational layout primitive. It renders as any element (div by default) and provides consistent spacing, typography, sizing, and surface styling through responsive props. Use it as the base container or building block for more complex components.',
   props: [
-    {
-      category: PropCategory.element,
-      name: 'children',
-      options: ['ReactNode'],
-      defaultValue: '',
-      isRequired: false,
-      isResponsive: false,
-      description: 'Content rendered inside the box.',
-    },
-    {
-      category: PropCategory.element,
-      name: 'elem',
-      options: ['HTML tag'],
-      defaultValue: 'div',
-      isRequired: false,
-      isResponsive: false,
-      description: 'Specifies the HTML tag that will be rendered as the Box container.',
-    },
-    {
-      category: PropCategory.element,
-      name: 'elemProps',
-      options: ['HTML tag attributes'],
-      defaultValue: '',
-      isRequired: false,
-      isResponsive: false,
-      description: 'Additional HTML attributes applied to the chosen tag.',
-    },
-    {
-      category: PropCategory.element,
-      name: 'elemRef',
-      options: ['RefObject'],
-      defaultValue: '',
-      isRequired: false,
-      isResponsive: false,
-      description: 'Reference to the rendered HTML element.',
-    },
     {
       category: PropCategory.appearance,
       name: 'variant',
@@ -74,26 +38,6 @@ const BOX_META: ComponentMeta<BoxProps> = {
     },
     {
       category: PropCategory.appearance,
-      name: 'interactive',
-      options: ['boolean'],
-      defaultValue: 'false',
-      isRequired: false,
-      isResponsive: false,
-      description:
-        'Marks the Box as interactive, enabling visual feedback (such as hover or focus styles) and signaling that the element can respond to user actions.',
-    },
-    {
-      category: PropCategory.appearance,
-      name: 'disabled',
-      options: ['boolean'],
-      defaultValue: 'false',
-      isRequired: false,
-      isResponsive: false,
-      description:
-        'Indicates that the Box is inactive and non-interactive, applying visual styles and state to reflect its disabled condition.',
-    },
-    {
-      category: PropCategory.appearance,
       name: 'opacity',
       options: ['0 - 1'],
       defaultValue: '1',
@@ -110,6 +54,26 @@ const BOX_META: ComponentMeta<BoxProps> = {
       isResponsive: false,
       description:
         'Defines the corner rounding of the Box. By default corners are square, but you can customize rounding per component or set a global border radius through the provider for consistent styling across the system.',
+    },
+    {
+      category: PropCategory.behavior,
+      name: 'interactive',
+      options: ['boolean'],
+      defaultValue: 'false',
+      isRequired: false,
+      isResponsive: false,
+      description:
+        'Marks the Box as interactive, enabling visual feedback (such as hover or focus styles) and signaling that the element can respond to user actions.',
+    },
+    {
+      category: PropCategory.behavior,
+      name: 'disabled',
+      options: ['boolean'],
+      defaultValue: 'false',
+      isRequired: false,
+      isResponsive: false,
+      description:
+        'Indicates that the Box is inactive and non-interactive, applying visual styles and state to reflect its disabled condition.',
     },
     {
       category: PropCategory.alignment,

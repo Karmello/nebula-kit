@@ -19,9 +19,13 @@ export const Section = <E extends SectionElemUnion = 'section'>({
   children,
   ...boxProps
 }: SectionProps<E>) => {
+  if (!heading) {
+    return children
+  }
+
   return (
     <Box elem={elem || 'section'} {...boxProps}>
-      <Text typography="h5" {...headingProps}>
+      <Text typography="h6" {...headingProps}>
         {heading}
       </Text>
       {!hideDivider ? <Divider /> : null}

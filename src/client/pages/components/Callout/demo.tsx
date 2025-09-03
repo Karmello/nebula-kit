@@ -1,7 +1,5 @@
 import { Callout } from 'lib/components'
 
-const CalloutDemoPage = () => {
+export default () => {
   return <Callout heading="Heading">Content</Callout>
 }
-
-export default CalloutDemoPage

@@ -1,6 +1,6 @@
 import { Box, VStack } from 'lib/components'
 
-const BoxDemoPage = () => {
+export default () => {
   return (
     <VStack gap={20}>
       <Box variant="outline" intent="primary">
@@ -10,10 +10,8 @@ const BoxDemoPage = () => {
         Box with padding
       </Box>
       <Box variant="outline" intent="primary" padding={10} textAlign="center">
-        Box with text centered
+        Box with centered content
       </Box>
     </VStack>
   )
 }
-
-export default BoxDemoPage

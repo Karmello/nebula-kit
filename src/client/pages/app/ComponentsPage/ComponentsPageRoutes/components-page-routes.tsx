@@ -26,7 +26,7 @@ export const ComponentsPageRoutes = () => {
                         let Component
                         try {
                           Component = require(
-                            `../../../components/${pascalCase(itemKey)}/${itemKey}-${sectionKey}-page`
+                            `../../../components/${pascalCase(itemKey)}/${sectionKey}`
                           ).default
                         } catch {
                           Component = null

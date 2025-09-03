@@ -1,7 +1,12 @@
-const COMPONENT_SECTIONS = [
+const MINIMAL_COMPONENT_SECTIONS = [
   { key: 'overview', label: 'Overview' },
-  { key: 'usage', label: 'Usage' },
   { key: 'props', label: 'Props' },
+]
+
+const COMPONENT_SECTIONS = [
+  MINIMAL_COMPONENT_SECTIONS[0],
+  { key: 'usage', label: 'Usage' },
+  MINIMAL_COMPONENT_SECTIONS[1],
   { key: 'demo', label: 'Demo' },
 ]
 
@@ -51,5 +56,13 @@ export const COMPONENT_CATEGORIES = [
     key: 'feedback',
     label: 'Feedback',
     items: [{ key: 'callout', label: 'Callout', sections: COMPONENT_SECTIONS }],
+  },
+  {
+    key: 'utility',
+    label: 'Utility',
+    items: [
+      { key: 'nebkit-provider', label: 'NebKitProvider', sections: COMPONENT_SECTIONS },
+      { key: 'native-elem', label: 'NativeElem', sections: MINIMAL_COMPONENT_SECTIONS },
+    ],
   },
 ]

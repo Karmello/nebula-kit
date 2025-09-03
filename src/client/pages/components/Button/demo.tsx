@@ -3,7 +3,7 @@ import { sentenceCase } from 'change-case'
 import { Section, Button, Stack } from 'lib/components'
 import { BoxIntent, BoxVariant } from 'lib/definitions'
 
-const ButtonDemoPage = () => {
+export default () => {
   return Object.values(BoxVariant).map(variant => (
     <Section key={variant} heading={sentenceCase(variant)} marginTop={10}>
       <Stack flexWrap="wrap" gap={5}>
@@ -16,5 +16,3 @@ const ButtonDemoPage = () => {
     </Section>
   ))
 }
-
-export default ButtonDemoPage

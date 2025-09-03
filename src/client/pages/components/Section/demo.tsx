@@ -1,7 +1,5 @@
 import { Section } from 'lib/components'
 
-const SectionDemoPage = () => {
+export default () => {
   return <Section heading="Heading">Content</Section>
 }
-
-export default SectionDemoPage

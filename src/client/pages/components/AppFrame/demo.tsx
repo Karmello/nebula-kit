@@ -1,6 +1,6 @@
 import { Box, AppFrame, Text } from 'lib/components'
 
-const AppFrameDemoPage = () => {
+export default () => {
   return (
     <Box variant="outline" borderRadius={0} elemProps={{ style: { borderStyle: 'dashed' } }}>
       <AppFrame>
@@ -17,5 +17,3 @@ const AppFrameDemoPage = () => {
     </Box>
   )
 }
-
-export default AppFrameDemoPage

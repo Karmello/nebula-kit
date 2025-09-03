@@ -1,16 +1,8 @@
-import {
-  ElementType,
-  ComponentRef,
-  useRef,
-  useLayoutEffect,
-  ComponentPropsWithoutRef,
-  ReactNode,
-  RefObject,
-} from 'react'
-
+import { ElementType, ComponentRef, useRef, useLayoutEffect } from 'react'
 import classNames from 'classnames'
 
 import { useLibStore } from 'lib/state'
+import { NativeElem, NativeElemProps } from 'lib/components'
 import { BoxIntent, BoxVariant } from 'lib/definitions'
 import { computeResponsiveCss, getDataAttrs, scale, useScreen, withPrefix } from 'lib/helpers'
 
@@ -20,14 +12,10 @@ import './styles/box.scss'
 export const BOX_DEFAULT_VARIANT: `${BoxVariant}` = 'ghost'
 export const BOX_DEFAULT_INTENT: `${BoxIntent}` = 'neutral'
 
-export type BoxProps<E extends ElementType = 'div'> = {
-  children?: ReactNode
-  elem?: E
-  elemProps?: ComponentPropsWithoutRef<E>
-  elemRef?: RefObject<ComponentRef<E>>
-} & BoxOwnProps
+export type BoxProps<E extends ElementType = 'div'> = NativeElemProps<E> & BoxOwnProps
 
 export const Box = <E extends ElementType = 'div'>({
+  // native elem
   children,
   elem,
   elemProps,
@@ -52,17 +40,18 @@ export const Box = <E extends ElementType = 'div'>({
     })
   }, [bp, css])
 
-  const Elem = (elem ?? 'div') as any
-
   return (
-    <Elem
-      {...elemProps}
-      ref={elemRef || ref}
-      className={classNames(withPrefix('box'), elemProps?.className)}
-      disabled={disabled}
-      {...getDataAttrs('box', { variant, intent, interactive, disabled })}
+    <NativeElem
+      elem={elem}
+      elemProps={{
+        ...elemProps,
+        className: classNames(withPrefix('box'), elemProps?.className),
+        disabled,
+        ...getDataAttrs('box', { variant, intent, interactive, disabled }),
+      }}
+      elemRef={elemRef || ref}
     >
       {children}
-    </Elem>
+    </NativeElem>
   )
 }

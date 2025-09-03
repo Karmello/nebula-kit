@@ -1,6 +1,6 @@
 import { CodeSnippet } from 'client/components'
 
-const AppFrameUsagePage = () => {
+export default () => {
   return (
     <CodeSnippet
       code={`
@@ -19,5 +19,3 @@ const AppFrameUsagePage = () => {
     />
   )
 }
-
-export default AppFrameUsagePage

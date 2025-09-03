@@ -1,7 +1,5 @@
 import { CodeSnippet } from 'client/components'
 
-const BoxUsagePage = () => {
+export default () => {
   return <CodeSnippet code="<Box />" />
 }
-
-export default BoxUsagePage

@@ -106,6 +106,7 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
                 isGroupActive ? FINAL_GROUP_CONFIG.active?.textIntent : FINAL_GROUP_CONFIG.default?.textIntent
               }
               iconName={hasItems ? (isGroupOpen ? 'chevron-up' : 'chevron-down') : undefined}
+              bold={isGroupActive}
             >
               {label}
             </Button>

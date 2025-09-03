@@ -1,6 +1,6 @@
 import { List } from 'lib/components'
 
-const ListDemoPage = () => {
+export default () => {
   return (
     <List listStyle="square">
       <List.Item>Item 1</List.Item>
@@ -9,5 +9,3 @@ const ListDemoPage = () => {
     </List>
   )
 }
-
-export default ListDemoPage

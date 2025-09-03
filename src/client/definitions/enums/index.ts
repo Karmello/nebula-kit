@@ -5,7 +5,7 @@ export enum PageKey {
 }
 
 export enum PropCategory {
-  element = 'Element',
+  props = 'Props',
   appearance = 'Appearance',
   typography = 'Typography',
   alignment = 'Alignment',
