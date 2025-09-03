@@ -62,6 +62,7 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
                 }}
                 intent={selectedValue === value ? 'secondary' : 'tertiary'}
                 borderRadius={0}
+                bold
               >
                 {label}
               </Button>

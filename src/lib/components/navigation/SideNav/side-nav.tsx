@@ -144,6 +144,7 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
                           ? FINAL_ITEM_CONFIG.active?.textIntent
                           : FINAL_ITEM_CONFIG.default?.textIntent
                       }
+                      bold={isItemActive}
                     >
                       {label}
                     </Button>

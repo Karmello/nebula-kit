@@ -12,6 +12,7 @@ export type ButtonOwnProps = {
   textIntent?: TextOwnProps['intent']
   size?: `${ButtonSize}`
   borderRadius?: BoxOwnProps['borderRadius']
+  bold?: TextOwnProps['bold']
   disabled?: BoxOwnProps['disabled']
   iconName?: WithIconOwnProps['iconName']
   iconPosition?: WithIconOwnProps['iconPosition']
@@ -46,7 +47,8 @@ export const Button = ({
   textIntent,
   size = BUTTON_DEFAULT_SIZE,
   borderRadius,
-  disabled = false,
+  bold,
+  disabled,
   iconName,
   iconPosition,
 }: ButtonProps) => {
@@ -68,7 +70,7 @@ export const Button = ({
     >
       <WithIcon iconName={iconName} iconPosition={iconPosition}>
         {children ? (
-          <Text intent={textIntent} bold>
+          <Text elem="span" intent={textIntent} bold={bold}>
             {children}
           </Text>
         ) : null}
@@ -78,7 +80,3 @@ export const Button = ({
 }
 
 Button.displayName = 'Button'
-
-// const Test = () => {
-//   return <Button elemProps={{ type: 'submit' }}>button</Button>
-// }

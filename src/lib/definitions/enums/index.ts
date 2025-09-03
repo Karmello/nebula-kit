@@ -206,6 +206,12 @@ export enum ListElem {
   'ol' = 'ol',
 }
 
+export enum SectionElem {
+  'section' = 'section',
+  'aside' = 'aside',
+  'div' = 'div',
+}
+
 export enum HorizontalPosition {
   'left' = 'left',
   'center' = 'center',

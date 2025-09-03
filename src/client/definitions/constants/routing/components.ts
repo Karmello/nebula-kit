@@ -25,6 +25,11 @@ export const COMPONENT_CATEGORIES = [
     ],
   },
   {
+    key: 'containers',
+    label: 'Containers',
+    items: [{ key: 'section', label: 'Section', sections: COMPONENT_SECTIONS }],
+  },
+  {
     key: 'controls',
     label: 'Controls',
     items: [{ key: 'button', label: 'Button', sections: COMPONENT_SECTIONS }],

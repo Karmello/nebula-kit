@@ -71,6 +71,15 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
       description: "Defines the roundness of the button's corners, shaping its overall silhouette.",
     },
     {
+      category: PropCategory.typography,
+      name: 'bold',
+      options: ['boolean'],
+      defaultValue: 'false',
+      isRequired: false,
+      isResponsive: false,
+      description: 'Toggles bold styling for the text.',
+    },
+    {
       category: PropCategory.state,
       name: 'disabled',
       options: ['boolean'],
