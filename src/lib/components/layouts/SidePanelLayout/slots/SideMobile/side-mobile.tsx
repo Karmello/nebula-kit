@@ -34,6 +34,7 @@ export const SideMobile = ({
       left={sidePosition === 'left' ? 0 : undefined}
       right={sidePosition === 'right' ? 0 : undefined}
       inlineSize={isMobile && sideOpen ? 'min(85vw, 320px)' : 0}
+      display={!isMobile ? 'none' : 'block'}
     >
       <HAlign position="right">
         <IconButton

@@ -10,19 +10,11 @@ import { getToggleIconName } from '../../helpers'
 import '../../side-panel-layout.scss'
 
 export const Main = ({ children, elemProps, ...rest }: LayoutSlotProps<'main'>) => {
-  const { isMobile, isDesktop } = useScreen()
+  const { isDesktop } = useScreen()
   const { sideOpen, setSideOpen, sidePosition, slots } = useSidePanelLayout()
 
   useLayoutEffect(() => {
-    if (isMobile) {
-      setSideOpen(false)
-    }
-  }, [isMobile])
-
-  useLayoutEffect(() => {
-    if (isDesktop) {
-      setSideOpen(true)
-    }
+    setSideOpen(isDesktop)
   }, [isDesktop])
 
   return (

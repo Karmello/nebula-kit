@@ -23,7 +23,7 @@ export const SidePanelLayoutProvider = ({
   sidePosition,
   sideWidthDesktop,
 }: SidePanelLayoutProviderProps) => {
-  const [sideOpen, setSideOpen] = useState(false)
+  const [sideOpen, setSideOpen] = useState(true)
 
   return (
     <SidePanelLayoutContext.Provider value={{ sideOpen, setSideOpen, slots, sidePosition, sideWidthDesktop }}>

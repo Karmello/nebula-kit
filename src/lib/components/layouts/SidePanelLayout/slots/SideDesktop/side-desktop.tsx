@@ -19,7 +19,7 @@ export const SideDesktop = ({ elemProps, ...rest }: LayoutSlotProps<'aside'>) =>
         className: classNames(withPrefix('side-panel-layout-side-desktop'), elemProps?.className),
       }}
       inlineSize={isDesktop && sideOpen ? scale(sideWidthDesktop) : 0}
-      blockSize={isMobile ? 0 : '100%'}
+      display={isMobile ? 'none' : 'block'}
     />
   )
 }
