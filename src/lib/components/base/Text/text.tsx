@@ -89,7 +89,7 @@ export const Text = <E extends TextElemUnion = 'p'>({
       lineHeight,
       textAlign,
     })
-  }, [bp, fontSize, lineHeight])
+  }, [bp, fontSize, lineHeight, textAlign])
 
   return (
     <Box
@@ -127,11 +127,3 @@ export const Text = <E extends TextElemUnion = 'p'>({
 }
 
 Text.displayName = 'Text'
-
-// const Test = () => {
-//   return (
-//     <Text elem="h5">
-//       text
-//     </Text>
-//   )
-// }

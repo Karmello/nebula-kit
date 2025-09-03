@@ -25,4 +25,5 @@ export const Header = (props: LayoutSlotProps<'header'>) => {
   )
 }
 
+Header.displayName = 'AppFrame.Header'
 Header.slotName = Slot.header

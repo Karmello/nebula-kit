@@ -9,4 +9,5 @@ export const Footer = (props: LayoutSlotProps<'footer'>) => {
   )
 }
 
+Footer.displayName = 'AppFrame.Footer'
 Footer.slotName = Slot.footer

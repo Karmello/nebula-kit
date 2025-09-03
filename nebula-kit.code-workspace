@@ -13,8 +13,16 @@
       "path": "src/client",
     },
     {
+      "name": "pages",
+      "path": "src/client/pages",
+    },
+    {
       "name": "lib",
       "path": "src/lib",
+    },
+    {
+      "name": "components",
+      "path": "src/lib/components",
     },
   ],
   "settings": {

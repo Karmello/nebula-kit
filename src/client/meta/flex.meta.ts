@@ -1,7 +1,13 @@
 import { PropCategory } from 'client/definitions'
 import { FlexOwnProps } from 'lib/components'
 
-import { ComponentMeta, CssFlexAlign, CssFlexDirection, CssFlexJustify, CssFlexWrap } from 'lib/definitions'
+import {
+  ComponentMeta,
+  CssFlexAlignItems,
+  CssFlexDirection,
+  CssFlexJustifyContent,
+  CssFlexWrap,
+} from 'lib/definitions'
 
 const FLEX_META: ComponentMeta<FlexOwnProps> = {
   name: 'Flex',
@@ -30,8 +36,8 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
     {
       category: PropCategory.alignment,
       name: 'justifyContent',
-      options: Object.values(CssFlexJustify),
-      defaultValue: CssFlexJustify['flex-start'],
+      options: Object.values(CssFlexJustifyContent),
+      defaultValue: CssFlexJustifyContent['flex-start'],
       isRequired: false,
       isResponsive: true,
       description: 'Distributes flex items along the main axis.',
@@ -39,8 +45,8 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
     {
       category: PropCategory.alignment,
       name: 'alignItems',
-      options: Object.values(CssFlexAlign),
-      defaultValue: CssFlexAlign['flex-start'],
+      options: Object.values(CssFlexAlignItems),
+      defaultValue: CssFlexAlignItems['flex-start'],
       isRequired: false,
       isResponsive: true,
       description: 'Aligns flex items along the cross axis.',

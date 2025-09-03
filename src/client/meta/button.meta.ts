@@ -21,7 +21,7 @@ import { ICON_NAMES } from 'lib/icons'
 const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
   name: 'Button',
   description:
-    'A Button is a control used to initiate an action or event. It can adapt its visual style and shape, scale to different sizes, display text with varying emphasis, and include an icon alongside its label when needed.',
+    "Button is Nebula-kit's standard action control. It adapts to different contexts by supporting visual variants, sizing, typography options, and optional icon integration, while staying consistent with the system's design language.",
   props: [
     {
       category: PropCategory.appearance,

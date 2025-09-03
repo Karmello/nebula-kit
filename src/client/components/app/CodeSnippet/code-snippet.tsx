@@ -17,7 +17,6 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
     const run = async () => {
       const data = await tokenizeCode(code, lang)
       setData(data)
-      console.log(data)
     }
     run()
   }, [])

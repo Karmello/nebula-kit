@@ -5,9 +5,9 @@ import { Box, BoxProps } from 'lib/components'
 import { withPrefix, computeResponsiveCss, useScreen } from 'lib/helpers'
 
 import {
-  CssFlexAlign,
+  CssFlexAlignItems,
   CssFlexDirection,
-  CssFlexJustify,
+  CssFlexJustifyContent,
   CssFlexWrap,
   ResponsiveProp,
   ScaleValue,
@@ -18,8 +18,8 @@ import './flex.scss'
 export type FlexOwnProps = {
   flexDirection?: ResponsiveProp<`${CssFlexDirection}`>
   flexWrap?: ResponsiveProp<`${CssFlexWrap}`>
-  justifyContent?: ResponsiveProp<`${CssFlexJustify}`>
-  alignItems?: ResponsiveProp<`${CssFlexAlign}`>
+  justifyContent?: ResponsiveProp<`${CssFlexJustifyContent}`>
+  alignItems?: ResponsiveProp<`${CssFlexAlignItems}`>
   gap?: ResponsiveProp<ScaleValue | string>
   rowGap?: ResponsiveProp<ScaleValue | string>
   columnGap?: ResponsiveProp<ScaleValue | string>
@@ -31,6 +31,7 @@ export const Flex = <E extends ElementType = 'div'>({
   elem,
   elemProps,
   elemRef,
+  // css
   flexDirection,
   flexWrap,
   justifyContent,
@@ -67,11 +68,3 @@ export const Flex = <E extends ElementType = 'div'>({
 }
 
 Flex.displayName = 'Flex'
-
-// const Test = () => {
-//   return (
-//     <Flex elem="a" elemProps={{ href: 'href' }} variant="ghost" margin={10}>
-//       flex
-//     </Flex>
-//   )
-// }

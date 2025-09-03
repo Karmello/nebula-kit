@@ -90,11 +90,3 @@ export const Grid = <E extends GridElemUnion = 'div'>({
 }
 
 Grid.displayName = 'Grid'
-
-// const Test = () => {
-//   return (
-//     <Grid elem="a" elemProps={{ href: 'href' }} variant="ghost" margin={10}>
-//       grid
-//     </Grid>
-//   )
-// }

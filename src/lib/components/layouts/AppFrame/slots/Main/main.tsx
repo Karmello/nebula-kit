@@ -20,4 +20,5 @@ export const Main = ({ elemProps, ...rest }: LayoutSlotProps<'main'>) => {
   )
 }
 
+Main.displayName = 'AppFrame.Main'
 Main.slotName = Slot.main

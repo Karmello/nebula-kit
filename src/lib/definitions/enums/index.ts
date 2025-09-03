@@ -82,7 +82,7 @@ export enum CssFlexWrap {
   'wrap-reverse' = 'wrap-reverse',
 }
 
-export enum CssFlexJustify {
+export enum CssFlexJustifyContent {
   'flex-start' = 'flex-start',
   'center' = 'center',
   'flex-end' = 'flex-end',
@@ -91,10 +91,19 @@ export enum CssFlexJustify {
   'space-evenly' = 'space-evenly',
 }
 
-export enum CssFlexAlign {
+export enum CssFlexAlignItems {
   'flex-start' = 'flex-start',
   'center' = 'center',
   'flex-end' = 'flex-end',
+  'stretch' = 'stretch',
+  'baseline' = 'baseline',
+}
+
+export enum CssFlexItemAlignSelf {
+  'auto' = 'auto',
+  'flex-start' = 'flex-start',
+  'flex-end' = 'flex-end',
+  'center' = 'center',
   'stretch' = 'stretch',
   'baseline' = 'baseline',
 }
