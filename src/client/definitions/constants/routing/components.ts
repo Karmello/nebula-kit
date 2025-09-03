@@ -11,18 +11,13 @@ export const COMPONENT_CATEGORIES = [
     label: 'Base',
     items: [
       { key: 'box', label: 'Box', sections: COMPONENT_SECTIONS },
-      { key: 'flex', label: 'Flex', sections: COMPONENT_SECTIONS },
-      { key: 'grid', label: 'Grid', sections: COMPONENT_SECTIONS },
-      { key: 'table', label: 'Table', sections: COMPONENT_SECTIONS },
+      { key: 'text', label: 'Text', sections: COMPONENT_SECTIONS },
     ],
   },
   {
     key: 'elements',
     label: 'Elements',
-    items: [
-      { key: 'text', label: 'Text', sections: COMPONENT_SECTIONS },
-      { key: 'list', label: 'List', sections: COMPONENT_SECTIONS },
-    ],
+    items: [{ key: 'list', label: 'List', sections: COMPONENT_SECTIONS }],
   },
   {
     key: 'containers',
@@ -37,7 +32,12 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'layout-base',
     label: 'Layout base',
-    items: [{ key: 'stack', label: 'Stack', sections: COMPONENT_SECTIONS }],
+    items: [
+      { key: 'flex', label: 'Flex', sections: COMPONENT_SECTIONS },
+      { key: 'grid', label: 'Grid', sections: COMPONENT_SECTIONS },
+      { key: 'table', label: 'Table', sections: COMPONENT_SECTIONS },
+      { key: 'stack', label: 'Stack', sections: COMPONENT_SECTIONS },
+    ],
   },
   {
     key: 'layouts',

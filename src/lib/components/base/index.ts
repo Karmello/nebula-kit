@@ -1,5 +1,2 @@
 export * from './Box'
-export * from './Flex'
-export * from './Grid'
-export * from './Spacer'
-export * from './Table'
+export * from './Text'
