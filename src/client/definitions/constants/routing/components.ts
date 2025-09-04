@@ -24,6 +24,14 @@ export const COMPONENT_CATEGORIES = [
     ],
   },
   {
+    key: 'controls',
+    label: 'Controls',
+    items: [
+      { key: 'button', label: 'Button', sections: ALL_COMPONENT_SECTIONS },
+      { key: 'icon-button', label: 'IconButton', sections: ALL_COMPONENT_SECTIONS },
+    ],
+  },
+  {
     key: 'elements',
     label: 'Elements',
     items: [{ key: 'list', label: 'List', sections: ALL_COMPONENT_SECTIONS }],
@@ -34,9 +42,9 @@ export const COMPONENT_CATEGORIES = [
     items: [{ key: 'section', label: 'Section', sections: ALL_COMPONENT_SECTIONS }],
   },
   {
-    key: 'controls',
-    label: 'Controls',
-    items: [{ key: 'button', label: 'Button', sections: ALL_COMPONENT_SECTIONS }],
+    key: 'feedback',
+    label: 'Feedback',
+    items: [{ key: 'callout', label: 'Callout', sections: ALL_COMPONENT_SECTIONS }],
   },
   {
     key: 'layouts',
@@ -45,11 +53,6 @@ export const COMPONENT_CATEGORIES = [
       { key: 'app-frame', label: 'AppFrame', sections: ALL_COMPONENT_SECTIONS },
       { key: 'side-panel-layout', label: 'SidePanelLayout', sections: ALL_COMPONENT_SECTIONS },
     ],
-  },
-  {
-    key: 'feedback',
-    label: 'Feedback',
-    items: [{ key: 'callout', label: 'Callout', sections: ALL_COMPONENT_SECTIONS }],
   },
   {
     key: 'utility',

@@ -1,5 +1,5 @@
 import { CodeSnippet } from 'client/components'
-import { Box, AppFrame, Text } from 'lib/components'
+import { Box, AppFrame, Text, Spacer } from 'lib/components'
 import { elemToStringService } from 'client/services'
 
 const Example = (
@@ -21,10 +21,11 @@ export default () => {
 
   return (
     <>
-      <CodeSnippet code={elemToString(Example)} />
       <Box variant="outline" borderRadius={0} elemProps={{ style: { borderStyle: 'dashed' } }}>
         {Example}
       </Box>
+      <Spacer size={30} />
+      <CodeSnippet code={elemToString(Example)} />
     </>
   )
 }
