@@ -1,35 +1,24 @@
 import { ComponentRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, BoxProps, WithIcon, WithIconOwnProps } from 'lib/components'
+import { Box, BoxPaddingProps, BoxProps, ButtonOwnProps, WithIcon } from 'lib/components'
 import { withPrefix, getDataAttrs, useScreen, computeResponsiveCss } from 'lib/helpers'
 
-import {
-  BoxIntent,
-  CssTextAlign,
-  ResponsiveProp,
-  ScaleValue,
-  TextElem,
-  TextTypography,
-} from 'lib/definitions'
+import { CssTextAlign, ResponsiveProp, ScaleValue, TextElem, TextTypography } from 'lib/definitions'
 
 import './text.scss'
 
 type TextElemUnion = `${TextElem}`
 
 export type TextOwnProps = {
-  intent?: `${BoxIntent}`
   typography?: `${TextTypography}`
   fontSize?: ResponsiveProp<ScaleValue | string>
   lineHeight?: ResponsiveProp<number | string>
-  textAlign?: BoxOwnProps['textAlign']
   bold?: boolean
   italic?: boolean
   noWrap?: boolean
   truncate?: boolean
   clampLines?: number
-  iconName?: WithIconOwnProps['iconName']
-  iconPosition?: WithIconOwnProps['iconPosition']
 }
 
 export const TYPOGRAPHY_TO_PROPS: Record<
@@ -55,10 +44,11 @@ export const TEXT_DEFAULT_LINE_HEIGHT = 'normal'
 export const TEXT_DEFAULT_TEXT_ALIGN: `${CssTextAlign}` = 'start'
 export const TEXT_DEFAULT_TYPOGRAPHY: `${TextTypography}` = 'body'
 
-export type TextProps<E extends TextElemUnion> = Pick<
+export type TextProps<E extends TextElemUnion> = Omit<
   BoxProps<E>,
-  'children' | 'elem' | 'elemProps' | 'elemRef'
+  'display' | 'variant' | 'interactive' | 'borderRadius' | keyof BoxPaddingProps
 > &
+  Pick<ButtonOwnProps, 'iconName' | 'iconPosition'> &
   TextOwnProps
 
 export const Text = <E extends TextElemUnion = 'p'>({
@@ -78,6 +68,7 @@ export const Text = <E extends TextElemUnion = 'p'>({
   clampLines,
   iconName,
   iconPosition,
+  ...boxProps
 }: TextProps<E>) => {
   const ref = useRef<ComponentRef<E>>(null)
 
@@ -93,6 +84,7 @@ export const Text = <E extends TextElemUnion = 'p'>({
 
   return (
     <Box
+      {...boxProps}
       elem={elem || TYPOGRAPHY_TO_PROPS[typography].elem}
       elemRef={(elemRef || ref) as any}
       elemProps={{
@@ -108,13 +100,9 @@ export const Text = <E extends TextElemUnion = 'p'>({
                 overflow: 'hidden',
               }
             : {}),
-          ...(bold ? { fontWeight: 'bold' } : {}),
-          ...(italic ? { fontStyle: 'italic' } : {}),
-          ...(noWrap ? { whiteSpace: 'nowrap' } : {}),
-          ...(truncate ? { whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' } : {}),
           ...(elemProps?.style || {}),
         },
-        ...getDataAttrs('text', { typography }),
+        ...getDataAttrs('text', { typography, bold, italic, noWrap, truncate }),
       }}
       variant="ghost"
       textAlign={textAlign}

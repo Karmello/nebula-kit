@@ -1,6 +1,15 @@
 import classNames from 'classnames'
 
-import { Box, BoxOwnProps, BoxProps, Text, TextOwnProps, WithIcon, WithIconOwnProps } from 'lib/components'
+import {
+  Box,
+  BoxOwnProps,
+  BoxProps,
+  Text,
+  TextOwnProps,
+  TextProps,
+  WithIcon,
+  WithIconOwnProps,
+} from 'lib/components'
 import { BoxIntent, BoxVariant, ButtonSize, ScaleValue } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
@@ -9,7 +18,7 @@ import './button.scss'
 export type ButtonOwnProps = {
   variant?: BoxOwnProps['variant']
   intent?: BoxOwnProps['intent']
-  textIntent?: TextOwnProps['intent']
+  textIntent?: TextProps<'span'>['intent']
   size?: `${ButtonSize}`
   borderRadius?: BoxOwnProps['borderRadius']
   bold?: TextOwnProps['bold']

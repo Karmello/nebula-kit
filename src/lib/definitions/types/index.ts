@@ -21,7 +21,10 @@ export type ComponentMeta<PropsType> = {
     isResponsive: boolean
     description: string
   }[]
-  examples: JSX.Element[]
+  examples: {
+    jsx: JSX.Element
+    description?: string
+  }[]
 }
 
 export type ResponsiveProp<T> = T | Partial<Record<Breakpoint, T>>

@@ -9,14 +9,19 @@ import {
   ScaleValue,
 } from 'lib/definitions'
 
-export type BoxOwnProps = {
+export type BoxAppearanceProps = {
   variant?: `${BoxVariant}`
   intent?: `${BoxIntent}`
-  interactive?: boolean
-  disabled?: boolean
   opacity?: ResponsiveProp<number>
   borderRadius?: ScaleValue | string
-  textAlign?: ResponsiveProp<`${CssTextAlign}`>
+}
+
+export type BoxBehaviorProps = {
+  interactive?: boolean
+  disabled?: boolean
+}
+
+export type BoxDisplayProps = {
   display?: ResponsiveProp<`${CssDisplay}`>
   overflowX?: ResponsiveProp<`${CssOverflow}`>
   overflowY?: ResponsiveProp<`${CssOverflow}`>
@@ -25,19 +30,19 @@ export type BoxOwnProps = {
   right?: ResponsiveProp<ScaleValue | string>
   bottom?: ResponsiveProp<ScaleValue | string>
   left?: ResponsiveProp<ScaleValue | string>
+  textAlign?: ResponsiveProp<`${CssTextAlign}`>
+}
+
+export type BoxSizingProps = {
   blockSize?: ResponsiveProp<ScaleValue | string>
   minBlockSize?: ResponsiveProp<ScaleValue | string>
   maxBlockSize?: ResponsiveProp<ScaleValue | string>
   inlineSize?: ResponsiveProp<ScaleValue | string>
   minInlineSize?: ResponsiveProp<ScaleValue | string>
   maxInlineSize?: ResponsiveProp<ScaleValue | string>
-  padding?: ResponsiveProp<ScaleValue | string>
-  paddingInline?: ResponsiveProp<ScaleValue | string>
-  paddingBlock?: ResponsiveProp<ScaleValue | string>
-  paddingTop?: ResponsiveProp<ScaleValue | string>
-  paddingRight?: ResponsiveProp<ScaleValue | string>
-  paddingBottom?: ResponsiveProp<ScaleValue | string>
-  paddingLeft?: ResponsiveProp<ScaleValue | string>
+}
+
+export type BoxMarginProps = {
   margin?: ResponsiveProp<ScaleValue | string>
   marginInline?: ResponsiveProp<ScaleValue | string>
   marginBlock?: ResponsiveProp<ScaleValue | string>
@@ -46,3 +51,20 @@ export type BoxOwnProps = {
   marginBottom?: ResponsiveProp<ScaleValue | string>
   marginLeft?: ResponsiveProp<ScaleValue | string>
 }
+
+export type BoxPaddingProps = {
+  padding?: ResponsiveProp<ScaleValue | string>
+  paddingInline?: ResponsiveProp<ScaleValue | string>
+  paddingBlock?: ResponsiveProp<ScaleValue | string>
+  paddingTop?: ResponsiveProp<ScaleValue | string>
+  paddingRight?: ResponsiveProp<ScaleValue | string>
+  paddingBottom?: ResponsiveProp<ScaleValue | string>
+  paddingLeft?: ResponsiveProp<ScaleValue | string>
+}
+
+export type BoxOwnProps = BoxAppearanceProps &
+  BoxBehaviorProps &
+  BoxDisplayProps &
+  BoxSizingProps &
+  BoxPaddingProps &
+  BoxMarginProps

@@ -36,3 +36,21 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
+
+.neb-text[data-neb-text-bold='true'] {
+  font-weight: bold;
+}
+
+.neb-text[data-neb-text-italic='true'] {
+  font-style: italic;
+}
+
+.neb-text[data-neb-text-no-wrap='true'] {
+  white-space: nowrap;
+}
+
+.neb-text[data-neb-text-truncate='true'] {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

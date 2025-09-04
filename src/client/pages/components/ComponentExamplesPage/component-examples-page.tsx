@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react'
 
 import { CodeSnippet } from 'client/components'
-import { Divider, Flex, Spacer } from 'lib/components'
+import { Box, Flex, Spacer, Text } from 'lib/components'
 import { elemToStringService } from 'client/services'
 import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'lib/definitions'
@@ -20,14 +20,15 @@ export const ComponentExamplesPage = memo(() => {
   }
 
   const memorized = useMemo(() => {
-    return meta?.examples?.map((Example, i) => (
-      <Flex key={i} flexDirection="column">
-        {Example}
-        <Spacer size={20} />
-        <CodeSnippet code={elemToString(Example)} />
-        <Spacer size={20} />
-        <Divider />
-        <Spacer size={20} />
+    return meta?.examples?.map(({ jsx, description }, i) => (
+      <Flex key={i} flexDirection="column" alignItems="stretch">
+        {description ? <Text marginBottom={5}>{description}</Text> : null}
+        <Box variant="outline" padding={20} elemProps={{ style: { borderStyle: 'dashed' } }}>
+          {jsx}
+        </Box>
+        <Spacer size={5} />
+        <CodeSnippet code={elemToString(jsx)} />
+        <Spacer size={30} />
       </Flex>
     ))
   }, [meta])

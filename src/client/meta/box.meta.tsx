@@ -76,15 +76,6 @@ const BOX_META: ComponentMeta<BoxProps> = {
         'Indicates that the Box is inactive and non-interactive, applying visual styles and state to reflect its disabled condition.',
     },
     {
-      category: PropCategory.alignment,
-      name: 'textAlign',
-      options: Object.values(CssTextAlign),
-      defaultValue: CssTextAlign.start,
-      isRequired: false,
-      isResponsive: true,
-      description: 'Controls the horizontal alignment of text content inside the Box.',
-    },
-    {
       category: PropCategory.display,
       name: 'display',
       options: Object.values(CssDisplay),
@@ -159,6 +150,15 @@ const BOX_META: ComponentMeta<BoxProps> = {
       isRequired: false,
       isResponsive: true,
       description: 'Sets the offset from the left edge of the containing block when the Box is positioned.',
+    },
+    {
+      category: PropCategory.display,
+      name: 'textAlign',
+      options: Object.values(CssTextAlign),
+      defaultValue: CssTextAlign.start,
+      isRequired: false,
+      isResponsive: true,
+      description: 'Controls the horizontal alignment of text content inside the Box.',
     },
     {
       category: PropCategory.sizing,
@@ -344,15 +344,30 @@ const BOX_META: ComponentMeta<BoxProps> = {
     },
   ],
   examples: [
-    <Box key={1} variant="outline" intent="primary">
-      Default
-    </Box>,
-    <Box key={2} variant="outline" intent="primary" padding={10}>
-      Padding
-    </Box>,
-    <Box key={2} variant="outline" intent="primary" padding={10} minInlineSize="200px" textAlign="center">
-      Centered content
-    </Box>,
+    {
+      jsx: (
+        <Box variant="outline" intent="primary">
+          Default
+        </Box>
+      ),
+      description: 'A default block-level Box with an outline variant and primary intent.',
+    },
+    {
+      jsx: (
+        <Box variant="outline" intent="primary" padding={10}>
+          Padding
+        </Box>
+      ),
+      description: 'Same as the default outline primary Box, but with padding added.',
+    },
+    {
+      jsx: (
+        <Box variant="outline" intent="primary" padding={10} textAlign="center">
+          Centered content
+        </Box>
+      ),
+      description: 'Same as the padded version, but with the content centered.',
+    },
   ],
 }
 
