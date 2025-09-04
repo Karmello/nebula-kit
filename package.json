@@ -107,7 +107,7 @@
     "nodemon": "^3.1.9",
     "prettier": "^3.5.3",
     "react-element-to-jsx-string": "^17.0.1",
-    "sass": "^1.86.3",
+    "sass": "^1.92.0",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.2",
