@@ -116,6 +116,7 @@ const GRID_META: ComponentMeta<GridProps<GridElem>> = {
         'Specifies which HTML element the grid should render as, allowing you to match semantic structure without changing its layout behavior.',
     },
   ],
+  examples: [],
 }
 
 export default GRID_META

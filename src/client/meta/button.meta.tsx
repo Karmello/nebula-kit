@@ -107,6 +107,7 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
       description: "Defines where the icon is placed in relation to the button's label.",
     },
   ],
+  examples: [],
 }
 
 export default BUTTON_META

@@ -153,6 +153,7 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
         'Specifies which HTML element the text should render as, for semantic control without affecting its appearance.',
     },
   ],
+  examples: [],
 }
 
 export default TEXT_META

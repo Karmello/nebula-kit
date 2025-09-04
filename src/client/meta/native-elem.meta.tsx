@@ -43,4 +43,5 @@ export default {
       description: 'Reference to the rendered HTML element.',
     },
   ],
+  examples: [],
 } as ComponentMeta<NativeElemProps>

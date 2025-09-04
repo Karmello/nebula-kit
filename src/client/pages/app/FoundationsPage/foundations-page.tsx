@@ -6,8 +6,7 @@ import { SidePanelLayout, SideNav, Breadcrumb, Section, Spacer } from 'lib/compo
 import { useFoundationsPageStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
 import { FOUNDATION_CATEGORIES, PageKey } from 'client/definitions'
-
-import { FoundationsPageRoutes } from './FoundationsPageRoutes'
+import { FoundationsPageRoutes } from 'client/pages'
 
 export const FoundationsPage = () => {
   const { t } = useTranslation()

@@ -31,9 +31,9 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
       elemProps={{ style: { backgroundColor: data.bg } }}
       borderRadius={3}
       overflowX="auto"
-      padding={10}
+      maxInlineSize="100%"
     >
-      <Box elem="code">
+      <Box elem="code" padding={10}>
         {data.tokens.map((token, i) => (
           <Box key={i} marginBottom={i < data.tokens.length - 1 ? 2 : 0}>
             {token.map(({ content, color }, j) => (

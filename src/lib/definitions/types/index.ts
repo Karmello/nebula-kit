@@ -1,4 +1,4 @@
-import { ElementType } from 'react'
+import { ElementType, JSX } from 'react'
 
 import { BoxProps } from 'lib/components'
 import { BREAKPOINTS, SCALE } from '..'
@@ -21,6 +21,7 @@ export type ComponentMeta<PropsType> = {
     isResponsive: boolean
     description: string
   }[]
+  examples: JSX.Element[]
 }
 
 export type ResponsiveProp<T> = T | Partial<Record<Breakpoint, T>>

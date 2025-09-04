@@ -79,6 +79,7 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
       description: 'Defines horizontal spacing between columns of flex items.',
     },
   ],
+  examples: [],
 }
 
 export default FLEX_META

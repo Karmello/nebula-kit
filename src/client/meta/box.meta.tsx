@@ -1,5 +1,5 @@
 import { PropCategory } from 'client/definitions'
-import { BOX_DEFAULT_INTENT, BOX_DEFAULT_VARIANT, BoxProps } from 'lib/components'
+import { BOX_DEFAULT_INTENT, BOX_DEFAULT_VARIANT, Box, BoxProps } from 'lib/components'
 
 import {
   BoxIntent,
@@ -342,6 +342,17 @@ const BOX_META: ComponentMeta<BoxProps> = {
       isResponsive: true,
       description: 'Sets margin on the inline-start (left) side.',
     },
+  ],
+  examples: [
+    <Box key={1} variant="outline" intent="primary">
+      Default
+    </Box>,
+    <Box key={2} variant="outline" intent="primary" padding={10}>
+      Padding
+    </Box>,
+    <Box key={2} variant="outline" intent="primary" padding={10} minInlineSize="200px" textAlign="center">
+      Centered content
+    </Box>,
   ],
 }
 

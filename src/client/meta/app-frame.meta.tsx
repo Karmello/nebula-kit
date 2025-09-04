@@ -1,6 +1,6 @@
 import { PropCategory } from 'client/definitions'
-import { AppFrameOwnProps } from 'lib/components'
 import { ComponentMeta } from 'lib/definitions'
+import { AppFrame, AppFrameOwnProps, Text } from 'lib/components'
 
 const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
   name: 'AppFrame',
@@ -25,6 +25,19 @@ const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
       isResponsive: false,
       description: '',
     },
+  ],
+  examples: [
+    <AppFrame key={1}>
+      <AppFrame.Header paddingTop={5} paddingLeft={5}>
+        <Text>Header</Text>
+      </AppFrame.Header>
+      <AppFrame.Main paddingTop={5} paddingLeft={5}>
+        <Text>Main</Text>
+      </AppFrame.Main>
+      <AppFrame.Footer paddingTop={5} paddingLeft={5}>
+        <Text>Footer</Text>
+      </AppFrame.Footer>
+    </AppFrame>,
   ],
 }
 

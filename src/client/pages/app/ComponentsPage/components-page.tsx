@@ -6,8 +6,7 @@ import { SidePanelLayout, SideNav, Breadcrumb, Section, Spacer } from 'lib/compo
 import { useComponentsPageStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
-
-import { ComponentsPageRoutes } from './ComponentsPageRoutes'
+import { ComponentsPageRoutes } from 'client/pages'
 
 export const ComponentsPage = () => {
   const { t } = useTranslation()

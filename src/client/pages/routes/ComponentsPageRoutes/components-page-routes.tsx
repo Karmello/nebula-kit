@@ -1,11 +1,9 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { pascalCase } from 'change-case'
 
+import { ComponentOverviewPage, ComponentPropsPage, ComponentExamplesPage } from 'client/pages'
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
 import { formatAsQueryString } from 'client/services'
 import { useLibStore } from 'lib/state'
-
-import { ComponentPropsPage } from './ComponentPropsPage'
 
 export const ComponentsPageRoutes = () => {
   const { lang, theme } = useLibStore()
@@ -19,21 +17,18 @@ export const ComponentsPageRoutes = () => {
               <Route
                 key={`${categoryKey}/${itemKey}/${sectionKey}`}
                 path={`${categoryKey}/${itemKey}/${sectionKey}`}
-                Component={
-                  sectionKey === 'props'
-                    ? ComponentPropsPage
-                    : () => {
-                        let Component
-                        try {
-                          Component = require(
-                            `../../../components/${pascalCase(itemKey)}/${sectionKey}`
-                          ).default
-                        } catch {
-                          Component = null
-                        }
-                        return Component ? <Component /> : null
-                      }
-                }
+                Component={() => {
+                  switch (sectionKey) {
+                    case 'overview':
+                      return <ComponentOverviewPage />
+                    case 'props':
+                      return <ComponentPropsPage />
+                    case 'examples':
+                      return <ComponentExamplesPage />
+                    default:
+                      return null
+                  }
+                }}
               />
             )
           })

@@ -1,25 +1,33 @@
+import { memo, useMemo } from 'react'
+
 import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'lib/definitions'
 import { Spacer, Text } from 'lib/components'
 
 import { PropsTable } from './PropsTable'
 
-export const ComponentPropsPage = () => {
+export const ComponentPropsPage = memo(() => {
   const { itemKey } = useComponentsPageStore()
 
   let meta: ComponentMeta<unknown>
 
   try {
-    meta = require(`../../../../../meta/${itemKey}.meta.ts`).default
+    meta = require(`../../../meta/${itemKey}.meta.tsx`).default
   } catch {
     meta = null
   }
 
+  const groupedByCategory = Object.groupBy(meta?.props || [], prop => prop.category)
+
+  const memorized = useMemo(() => {
+    return Object.keys(groupedByCategory).map(category => (
+      <PropsTable key={category} data={groupedByCategory[category]} />
+    ))
+  }, [groupedByCategory])
+
   if (!meta) {
     return null
   }
-
-  const groupedByCategory = Object.groupBy(meta.props, prop => prop.category)
 
   return (
     <>
@@ -29,9 +37,7 @@ export const ComponentPropsPage = () => {
           <Spacer size={15} />
         </>
       ) : null}
-      {Object.keys(groupedByCategory).map(category => (
-        <PropsTable key={category} data={groupedByCategory[category]} />
-      ))}
+      {memorized}
     </>
   )
-}
+})

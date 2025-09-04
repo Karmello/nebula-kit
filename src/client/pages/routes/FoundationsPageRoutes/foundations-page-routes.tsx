@@ -20,9 +20,7 @@ export const FoundationsPageRoutes = () => {
                 Component={() => {
                   let Component
                   try {
-                    Component = require(
-                      `../../../foundations/${pascalCase(sectionKey)}/${sectionKey}`
-                    ).default
+                    Component = require(`../../foundations/${pascalCase(sectionKey)}/${sectionKey}`).default
                   } catch {
                     Component = null
                   }

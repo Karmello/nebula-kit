@@ -35,6 +35,7 @@ const SIDE_PANEL_LAYOUT_META: ComponentMeta<SidePanelLayoutOwnProps> = {
       description: '',
     },
   ],
+  examples: [],
 }
 
 export default SIDE_PANEL_LAYOUT_META
