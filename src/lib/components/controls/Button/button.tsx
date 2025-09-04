@@ -10,7 +10,15 @@ import {
   WithIcon,
   WithIconOwnProps,
 } from 'lib/components'
-import { BoxIntent, BoxVariant, ButtonSize, ScaleValue } from 'lib/definitions'
+
+import {
+  ButtonSize,
+  DEFAULT_BUTTON_INTENT,
+  DEFAULT_BUTTON_SIZE,
+  DEFAULT_BUTTON_VARIANT,
+  ScaleValue,
+} from 'lib/definitions'
+
 import { withPrefix } from 'lib/helpers'
 
 import './button.scss'
@@ -19,7 +27,7 @@ export type ButtonOwnProps = {
   variant?: BoxOwnProps['variant']
   intent?: BoxOwnProps['intent']
   textIntent?: TextProps<'span'>['intent']
-  size?: `${ButtonSize}`
+  size?: ButtonSize
   borderRadius?: BoxOwnProps['borderRadius']
   bold?: TextOwnProps['bold']
   disabled?: BoxOwnProps['disabled']
@@ -43,18 +51,14 @@ export const BUTTON_SIZE_TO_PROPS: Record<
   lg: { blockSize: 26, paddingLeft: 12, paddingRight: 12, fontSize: 9 },
 }
 
-export const BUTTON_DEFAULT_VARIANT: `${BoxVariant}` = 'solid'
-export const BUTTON_DEFAULT_INTENT: `${BoxIntent}` = 'tertiary'
-export const BUTTON_DEFAULT_SIZE: `${ButtonSize}` = 'md'
-
 export const Button = ({
   children,
   elemProps,
   elemRef,
-  variant = BUTTON_DEFAULT_VARIANT,
-  intent = BUTTON_DEFAULT_INTENT,
+  variant = DEFAULT_BUTTON_VARIANT,
+  intent = DEFAULT_BUTTON_INTENT,
   textIntent,
-  size = BUTTON_DEFAULT_SIZE,
+  size = DEFAULT_BUTTON_SIZE,
   borderRadius,
   bold,
   disabled,

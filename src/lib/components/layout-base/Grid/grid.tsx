@@ -15,24 +15,22 @@ import {
 
 import './grid.scss'
 
-type GridElemUnion = `${GridElem}`
-
 export type GridOwnProps = {
   gridTemplateColumns?: ResponsiveProp<string | number>
   gridTemplateRows?: ResponsiveProp<string | number>
   gridAutoRows?: ResponsiveProp<string>
   gridAutoColumns?: ResponsiveProp<string>
-  gridAutoFlow?: ResponsiveProp<`${CssGridAutoFlow}`>
-  placeItems?: ResponsiveProp<`${CssGridPlaceItems}`>
-  placeContent?: ResponsiveProp<`${CssGridPlaceContent}`>
+  gridAutoFlow?: ResponsiveProp<CssGridAutoFlow>
+  placeItems?: ResponsiveProp<CssGridPlaceItems>
+  placeContent?: ResponsiveProp<CssGridPlaceContent>
   gap?: ResponsiveProp<ScaleValue | string>
   rowGap?: ResponsiveProp<ScaleValue | string>
   columnGap?: ResponsiveProp<ScaleValue | string>
 }
 
-export type GridProps<E extends GridElemUnion> = Omit<BoxProps<E>, 'display'> & GridOwnProps
+export type GridProps<E extends GridElem> = Omit<BoxProps<E>, 'display'> & GridOwnProps
 
-export const Grid = <E extends GridElemUnion = 'div'>({
+export const Grid = <E extends GridElem = 'div'>({
   elem,
   elemProps,
   elemRef,

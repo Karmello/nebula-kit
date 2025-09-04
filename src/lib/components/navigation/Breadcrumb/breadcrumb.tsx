@@ -1,4 +1,4 @@
-import { Stack, Text } from 'lib/components'
+import { Flex, Text } from 'lib/components'
 
 export type BreadcrumbOwnProps = {
   items: string[]
@@ -10,7 +10,7 @@ export const Breadcrumb = ({ items }: BreadcrumbOwnProps) => {
   }
 
   return (
-    <Stack gap={5} flexWrap="wrap">
+    <Flex gap={5} flexDirection="row" flexWrap="wrap">
       {items
         .filter(item => item)
         .map((item, i) => (
@@ -23,6 +23,6 @@ export const Breadcrumb = ({ items }: BreadcrumbOwnProps) => {
             {item}
           </Text>
         ))}
-    </Stack>
+    </Flex>
   )
 }

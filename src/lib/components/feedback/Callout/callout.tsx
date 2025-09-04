@@ -1,7 +1,8 @@
-import { Section, SectionElemUnion, SectionProps } from 'lib/components'
+import { Section, SectionProps } from 'lib/components'
+import { SectionElem } from 'lib/definitions'
 
-export type CalloutProps<E extends SectionElemUnion> = SectionProps<E>
+export type CalloutProps<E extends SectionElem> = SectionProps<E>
 
-export const Callout = <E extends SectionElemUnion = 'aside'>(props: CalloutProps<E>) => {
+export const Callout = <E extends SectionElem = 'aside'>(props: CalloutProps<E>) => {
   return <Section elem="aside" variant="outline" intent="info" padding={10} {...props} />
 }

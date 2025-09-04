@@ -1,6 +1,6 @@
 import { useLayoutEffect, useMemo, useState } from 'react'
 
-import { Box, Button, BUTTON_SIZE_TO_PROPS, ButtonProps, VStack } from 'lib/components'
+import { Box, Button, BUTTON_SIZE_TO_PROPS, ButtonProps, Flex } from 'lib/components'
 import { scale } from 'lib/helpers'
 
 type Group = Omit<ButtonProps, 'children' | 'size' | 'variant' | 'intent'> & {
@@ -79,7 +79,7 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
   )
 
   return (
-    <VStack>
+    <Flex flexDirection="column" alignItems="stretch">
       {groups.map(({ key, label, items, elemProps, ...rest }) => {
         const isGroupActive = items?.some(item => item.key === activeKey) || key === activeKey
         const isGroupOpen = key === openGroupKey
@@ -117,7 +117,7 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
               overflowX="hidden"
               overflowY="hidden"
             >
-              <VStack>
+              <Flex flexDirection="column" alignItems="stretch">
                 {items?.map(({ key, label, elemProps, ...rest }) => {
                   const isItemActive = key === activeKey
 
@@ -151,11 +151,11 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
                     </Button>
                   )
                 })}
-              </VStack>
+              </Flex>
             </Box>
           </Box>
         )
       })}
-    </VStack>
+    </Flex>
   )
 }

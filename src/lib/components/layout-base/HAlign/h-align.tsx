@@ -5,13 +5,13 @@ import { CssFlexJustifyContent, HorizontalPosition } from 'lib/definitions'
 
 export type HAlignOwnProps = {
   children: ReactNode
-  position: `${HorizontalPosition}`
+  position: HorizontalPosition
 }
 
 const MAP: Record<HorizontalPosition, CssFlexJustifyContent> = {
-  left: CssFlexJustifyContent['flex-start'],
-  center: CssFlexJustifyContent.center,
-  right: CssFlexJustifyContent['flex-end'],
+  left: 'flex-start',
+  center: 'center',
+  right: 'flex-end',
 }
 
 export const HAlign = ({ children, position }: HAlignOwnProps) => {

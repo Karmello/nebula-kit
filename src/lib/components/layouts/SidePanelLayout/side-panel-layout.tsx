@@ -2,13 +2,13 @@ import { ReactNode } from 'react'
 
 import { Grid, WithSlots } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { HorizontalPosition, ScaleValue } from 'lib/definitions'
+import { HorizontalPosition, HorizontalPosition as HorizontalPositionType, ScaleValue } from 'lib/definitions'
 
 import { SidePanelLayoutProvider } from './SidePanelLayoutProvider'
 
 export type SidePanelLayoutOwnProps = {
   children: ReactNode
-  sidePosition?: Extract<keyof typeof HorizontalPosition, 'left' | 'right'>
+  sidePosition?: Extract<HorizontalPositionType, 'left' | 'right'>
   sideWidthDesktop?: ScaleValue | string
 }
 
@@ -16,7 +16,7 @@ export const SIDE_PANEL_LAYOUT_DEFAULT_SIDE_WITH_DESKTOP = '225px'
 
 export const SidePanelLayout = ({
   children,
-  sidePosition = HorizontalPosition.left,
+  sidePosition = HorizontalPosition[0],
   sideWidthDesktop = SIDE_PANEL_LAYOUT_DEFAULT_SIDE_WITH_DESKTOP,
 }: SidePanelLayoutOwnProps) => {
   return (

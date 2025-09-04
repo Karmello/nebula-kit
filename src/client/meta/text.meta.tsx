@@ -1,10 +1,9 @@
 import {
-  TEXT_DEFAULT_LINE_HEIGHT,
-  TEXT_DEFAULT_TEXT_ALIGN,
-  TEXT_DEFAULT_TYPOGRAPHY,
-  TextProps,
+  DEFAULT_TEXT_LINE_HEIGHT,
+  DEFAULT_TEXT_TEXT_ALIGN,
+  DEFAULT_TEXT_TYPOGRAPHY,
   WITH_ICON_DEFAULT_ICON_POSITION,
-} from 'lib/components'
+} from 'lib/definitions'
 
 import {
   BoxIntent,
@@ -15,7 +14,7 @@ import {
   TextTypography,
 } from 'lib/definitions'
 
-import { TYPOGRAPHY_TO_PROPS } from 'lib/components'
+import { TextProps, TYPOGRAPHY_TO_PROPS } from 'lib/components'
 import { ICON_NAMES } from 'lib/icons'
 import { PropCategory } from 'client/definitions'
 
@@ -37,7 +36,7 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       category: PropCategory.typography,
       name: 'typography',
       options: Object.values(TextTypography),
-      defaultValue: TEXT_DEFAULT_TYPOGRAPHY,
+      defaultValue: DEFAULT_TEXT_LINE_HEIGHT,
       isRequired: false,
       isResponsive: false,
       description:
@@ -47,7 +46,7 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       category: PropCategory.typography,
       name: 'fontSize',
       options: ['ScaleValue', 'CSS'],
-      defaultValue: String(TYPOGRAPHY_TO_PROPS[TEXT_DEFAULT_TYPOGRAPHY].fontSize),
+      defaultValue: String(TYPOGRAPHY_TO_PROPS[DEFAULT_TEXT_TYPOGRAPHY].fontSize),
       isRequired: false,
       isResponsive: true,
       description: 'Sets the text size, overriding the value provided by typography.',
@@ -56,7 +55,7 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       category: PropCategory.typography,
       name: 'lineHeight',
       options: ['CSS (string, number)'],
-      defaultValue: TEXT_DEFAULT_LINE_HEIGHT,
+      defaultValue: DEFAULT_TEXT_LINE_HEIGHT,
       isRequired: false,
       isResponsive: true,
       description: 'Sets the vertical spacing between lines of text.',
@@ -65,7 +64,7 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       category: PropCategory.alignment,
       name: 'textAlign',
       options: Object.values(CssTextAlign),
-      defaultValue: TEXT_DEFAULT_TEXT_ALIGN,
+      defaultValue: DEFAULT_TEXT_TEXT_ALIGN,
       isRequired: false,
       isResponsive: true,
       description: 'Sets the horizontal alignment of the text within its container.',
@@ -146,7 +145,7 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       category: PropCategory.other,
       name: 'elem',
       options: Object.values(TextElem),
-      defaultValue: TYPOGRAPHY_TO_PROPS[TEXT_DEFAULT_TYPOGRAPHY].elem,
+      defaultValue: TYPOGRAPHY_TO_PROPS[DEFAULT_TEXT_TYPOGRAPHY].elem,
       isRequired: false,
       isResponsive: false,
       description:

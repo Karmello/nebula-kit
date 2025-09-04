@@ -10,8 +10,8 @@ const SIDE_PANEL_LAYOUT_META: ComponentMeta<SidePanelLayoutOwnProps> = {
     {
       category: PropCategory.alignment,
       name: 'sidePosition',
-      options: [HorizontalPosition.left, HorizontalPosition.right],
-      defaultValue: HorizontalPosition.left,
+      options: [HorizontalPosition[0], HorizontalPosition[2]],
+      defaultValue: HorizontalPosition[0],
       isRequired: false,
       isResponsive: false,
       description: '',

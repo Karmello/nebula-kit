@@ -1,5 +1,5 @@
 import { PropCategory } from 'client/definitions'
-import { BOX_DEFAULT_INTENT, BOX_DEFAULT_VARIANT, Box, BoxProps } from 'lib/components'
+import { Box, BoxProps } from 'lib/components'
 
 import {
   BoxIntent,
@@ -9,6 +9,8 @@ import {
   CssOverflow,
   CssPosition,
   CssTextAlign,
+  DEFAULT_BOX_INTENT,
+  DEFAULT_BOX_VARIANT,
 } from 'lib/definitions'
 
 const BOX_META: ComponentMeta<BoxProps> = {
@@ -20,7 +22,7 @@ const BOX_META: ComponentMeta<BoxProps> = {
       category: PropCategory.appearance,
       name: 'variant',
       options: Object.values(BoxVariant),
-      defaultValue: BOX_DEFAULT_VARIANT,
+      defaultValue: DEFAULT_BOX_VARIANT,
       isRequired: false,
       isResponsive: false,
       description:
@@ -30,7 +32,7 @@ const BOX_META: ComponentMeta<BoxProps> = {
       category: PropCategory.appearance,
       name: 'intent',
       options: Object.values(BoxIntent),
-      defaultValue: BOX_DEFAULT_INTENT,
+      defaultValue: DEFAULT_BOX_INTENT,
       isRequired: false,
       isResponsive: false,
       description:
@@ -79,7 +81,7 @@ const BOX_META: ComponentMeta<BoxProps> = {
       category: PropCategory.display,
       name: 'display',
       options: Object.values(CssDisplay),
-      defaultValue: CssDisplay.block,
+      defaultValue: CssDisplay[0],
       isRequired: false,
       isResponsive: true,
       description:
@@ -89,7 +91,7 @@ const BOX_META: ComponentMeta<BoxProps> = {
       category: PropCategory.display,
       name: 'overflowX',
       options: Object.values(CssOverflow),
-      defaultValue: CssOverflow.visible,
+      defaultValue: CssOverflow[0],
       isRequired: false,
       isResponsive: true,
       description:
@@ -99,7 +101,7 @@ const BOX_META: ComponentMeta<BoxProps> = {
       category: PropCategory.display,
       name: 'overflowY',
       options: Object.values(CssOverflow),
-      defaultValue: CssOverflow.visible,
+      defaultValue: CssOverflow[0],
       isRequired: false,
       isResponsive: true,
       description:
@@ -109,7 +111,7 @@ const BOX_META: ComponentMeta<BoxProps> = {
       category: PropCategory.display,
       name: 'position',
       options: Object.values(CssPosition),
-      defaultValue: CssPosition.static,
+      defaultValue: CssPosition[0],
       isRequired: false,
       isResponsive: true,
       description:
@@ -155,7 +157,7 @@ const BOX_META: ComponentMeta<BoxProps> = {
       category: PropCategory.display,
       name: 'textAlign',
       options: Object.values(CssTextAlign),
-      defaultValue: CssTextAlign.start,
+      defaultValue: CssTextAlign[0],
       isRequired: false,
       isResponsive: true,
       description: 'Controls the horizontal alignment of text content inside the Box.',

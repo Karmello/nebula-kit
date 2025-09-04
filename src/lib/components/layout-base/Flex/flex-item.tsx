@@ -7,14 +7,12 @@ import { ResponsiveProp, CssFlexItemAlignSelf } from 'lib/definitions'
 
 import './flex.scss'
 
-export type CssFlexItemAlignSelfUnion = `${CssFlexItemAlignSelf}`
-
 export type FlexItemOwnProps = {
   flex?: ResponsiveProp<string | number>
   flexGrow?: ResponsiveProp<number>
   flexShrink?: ResponsiveProp<number>
   flexBasis?: ResponsiveProp<string | number>
-  alignSelf?: ResponsiveProp<`${CssFlexItemAlignSelfUnion}`>
+  alignSelf?: ResponsiveProp<CssFlexItemAlignSelf>
   order?: ResponsiveProp<number>
 }
 

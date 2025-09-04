@@ -1,11 +1,5 @@
 import { PropCategory } from 'client/definitions'
-import {
-  BUTTON_DEFAULT_INTENT,
-  BUTTON_DEFAULT_SIZE,
-  BUTTON_DEFAULT_VARIANT,
-  ButtonOwnProps,
-  WITH_ICON_DEFAULT_ICON_POSITION,
-} from 'lib/components'
+import { ButtonOwnProps } from 'lib/components'
 
 import {
   ComponentMeta,
@@ -14,6 +8,10 @@ import {
   ButtonSize,
   DEFAULT_BORDER_RADIUS,
   IconPosition,
+  DEFAULT_BUTTON_VARIANT,
+  DEFAULT_BUTTON_INTENT,
+  DEFAULT_BUTTON_SIZE,
+  WITH_ICON_DEFAULT_ICON_POSITION,
 } from 'lib/definitions'
 
 import { ICON_NAMES } from 'lib/icons'
@@ -27,7 +25,7 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
       category: PropCategory.appearance,
       name: 'variant',
       options: Object.values(BoxVariant),
-      defaultValue: BUTTON_DEFAULT_VARIANT,
+      defaultValue: DEFAULT_BUTTON_VARIANT,
       isRequired: false,
       isResponsive: false,
       description: 'Controls the overall visual style of the button’s container.',
@@ -36,7 +34,7 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
       category: PropCategory.appearance,
       name: 'intent',
       options: Object.values(BoxIntent),
-      defaultValue: BUTTON_DEFAULT_INTENT,
+      defaultValue: DEFAULT_BUTTON_INTENT,
       isRequired: false,
       isResponsive: false,
       description:
@@ -56,7 +54,7 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
       category: PropCategory.appearance,
       name: 'size',
       options: Object.values(ButtonSize),
-      defaultValue: BUTTON_DEFAULT_SIZE,
+      defaultValue: DEFAULT_BUTTON_SIZE,
       isRequired: false,
       isResponsive: false,
       description: "Determines the button's height and scales its content accordingly.",

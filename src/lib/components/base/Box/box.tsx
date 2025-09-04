@@ -3,14 +3,11 @@ import classNames from 'classnames'
 
 import { useLibStore } from 'lib/state'
 import { NativeElem, NativeElemProps } from 'lib/components'
-import { BoxIntent, BoxVariant } from 'lib/definitions'
+import { DEFAULT_BOX_INTENT, DEFAULT_BOX_VARIANT } from 'lib/definitions'
 import { computeResponsiveCss, getDataAttrs, scale, useScreen, withPrefix } from 'lib/helpers'
 
 import { BoxOwnProps } from './types'
 import './styles/box.scss'
-
-export const BOX_DEFAULT_VARIANT: `${BoxVariant}` = 'ghost'
-export const BOX_DEFAULT_INTENT: `${BoxIntent}` = 'neutral'
 
 export type BoxProps<E extends ElementType = 'div'> = NativeElemProps<E> & BoxOwnProps
 
@@ -21,8 +18,8 @@ export const Box = <E extends ElementType = 'div'>({
   elemProps,
   elemRef,
   // own
-  variant = BOX_DEFAULT_VARIANT,
-  intent = BOX_DEFAULT_INTENT,
+  variant = DEFAULT_BOX_VARIANT,
+  intent = DEFAULT_BOX_INTENT,
   interactive,
   disabled,
   //

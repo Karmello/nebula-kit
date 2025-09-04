@@ -16,10 +16,10 @@ import {
 import './flex.scss'
 
 export type FlexOwnProps = {
-  flexDirection?: ResponsiveProp<`${CssFlexDirection}`>
-  flexWrap?: ResponsiveProp<`${CssFlexWrap}`>
-  justifyContent?: ResponsiveProp<`${CssFlexJustifyContent}`>
-  alignItems?: ResponsiveProp<`${CssFlexAlignItems}`>
+  flexDirection?: ResponsiveProp<CssFlexDirection>
+  flexWrap?: ResponsiveProp<CssFlexWrap>
+  justifyContent?: ResponsiveProp<CssFlexJustifyContent>
+  alignItems?: ResponsiveProp<CssFlexAlignItems>
   gap?: ResponsiveProp<ScaleValue | string>
   rowGap?: ResponsiveProp<ScaleValue | string>
   columnGap?: ResponsiveProp<ScaleValue | string>

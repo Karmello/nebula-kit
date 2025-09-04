@@ -4,11 +4,17 @@ import classNames from 'classnames'
 import { Box, BoxPaddingProps, BoxProps, ButtonOwnProps, WithIcon } from 'lib/components'
 import { withPrefix, getDataAttrs, useScreen, computeResponsiveCss } from 'lib/helpers'
 
-import { CssTextAlign, ResponsiveProp, ScaleValue, TextElem, TextTypography } from 'lib/definitions'
+import {
+  DEFAULT_TEXT_LINE_HEIGHT,
+  DEFAULT_TEXT_TEXT_ALIGN,
+  DEFAULT_TEXT_TYPOGRAPHY,
+  ResponsiveProp,
+  ScaleValue,
+  TextElem,
+  TextTypography,
+} from 'lib/definitions'
 
 import './text.scss'
-
-type TextElemUnion = `${TextElem}`
 
 export type TextOwnProps = {
   typography?: `${TextTypography}`
@@ -24,7 +30,7 @@ export type TextOwnProps = {
 export const TYPOGRAPHY_TO_PROPS: Record<
   TextTypography,
   {
-    elem: `${TextElemUnion}`
+    elem: TextElem
     fontSize: TextOwnProps['fontSize']
   }
 > = {
@@ -40,27 +46,23 @@ export const TYPOGRAPHY_TO_PROPS: Record<
   h1: { elem: 'h1', fontSize: 30 },
 }
 
-export const TEXT_DEFAULT_LINE_HEIGHT = 'normal'
-export const TEXT_DEFAULT_TEXT_ALIGN: `${CssTextAlign}` = 'start'
-export const TEXT_DEFAULT_TYPOGRAPHY: `${TextTypography}` = 'body'
-
-export type TextProps<E extends TextElemUnion> = Omit<
+export type TextProps<E extends TextElem> = Omit<
   BoxProps<E>,
   'display' | 'variant' | 'interactive' | 'borderRadius' | keyof BoxPaddingProps
 > &
   Pick<ButtonOwnProps, 'iconName' | 'iconPosition'> &
   TextOwnProps
 
-export const Text = <E extends TextElemUnion = 'p'>({
+export const Text = <E extends TextElem = 'p'>({
   children,
   elem,
   elemProps,
   elemRef,
   intent,
   fontSize,
-  lineHeight = TEXT_DEFAULT_LINE_HEIGHT,
-  textAlign = TEXT_DEFAULT_TEXT_ALIGN,
-  typography = TEXT_DEFAULT_TYPOGRAPHY,
+  lineHeight = DEFAULT_TEXT_LINE_HEIGHT,
+  textAlign = DEFAULT_TEXT_TEXT_ALIGN,
+  typography = DEFAULT_TEXT_TYPOGRAPHY,
   bold = false,
   italic = false,
   noWrap = false,

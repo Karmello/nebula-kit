@@ -25,6 +25,10 @@
       "path": "src/lib",
     },
     {
+      "name": "definitions",
+      "path": "src/lib/definitions",
+    },
+    {
       "name": "components",
       "path": "src/lib/components",
     },

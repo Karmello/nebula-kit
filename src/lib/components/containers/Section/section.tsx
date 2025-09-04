@@ -1,17 +1,15 @@
 import { Box, BoxProps, Divider, Spacer, Text, TextOwnProps } from 'lib/components'
 import { SectionElem } from 'lib/definitions'
 
-export type SectionElemUnion = `${SectionElem}`
-
 export type SectionOwnProps = {
   heading: string
   headingProps?: Omit<TextOwnProps, 'children'>
   hideDivider?: boolean
 }
 
-export type SectionProps<E extends SectionElemUnion> = BoxProps<E> & SectionOwnProps
+export type SectionProps<E extends SectionElem> = BoxProps<E> & SectionOwnProps
 
-export const Section = <E extends SectionElemUnion = 'section'>({
+export const Section = <E extends SectionElem = 'section'>({
   elem,
   heading,
   headingProps,

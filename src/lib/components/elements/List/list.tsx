@@ -5,20 +5,13 @@ import { withPrefix } from 'lib/helpers'
 
 import './list.scss'
 
-export type ListElemUnion = `${ListElem}`
-
 export type ListOwnProps = {
   listStyle?: 'disc' | 'circle' | 'square' | 'decimal' | 'none'
 }
 
-export type ListProps<E extends ListElemUnion> = Omit<BoxProps<E>, 'display'> & ListOwnProps
+export type ListProps<E extends ListElem> = Omit<BoxProps<E>, 'display'> & ListOwnProps
 
-export const List = <E extends ListElemUnion = 'ul'>({
-  elem,
-  elemProps,
-  listStyle,
-  ...rest
-}: ListProps<E>) => {
+export const List = <E extends ListElem = 'ul'>({ elem, elemProps, listStyle, ...rest }: ListProps<E>) => {
   return (
     <Box
       {...rest}
