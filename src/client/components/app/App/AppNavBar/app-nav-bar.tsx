@@ -32,7 +32,7 @@ export const AppNavBar = () => {
           }
           case PageKey.foundations: {
             navigateTo(
-              `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}`
+              `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${foundationsPageStore.sectionKey}`
             )
             break
           }

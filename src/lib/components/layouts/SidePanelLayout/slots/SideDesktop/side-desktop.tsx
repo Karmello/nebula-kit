@@ -6,7 +6,7 @@ import { LayoutSlotProps, Slot } from 'lib/definitions'
 
 import '../../side-panel-layout.scss'
 
-export const SideDesktop = ({ elemProps, ...rest }: LayoutSlotProps<'aside'>) => {
+export const SideDesktop = ({ children, elemProps, ...rest }: LayoutSlotProps<'aside'>) => {
   const { isMobile, isDesktop } = useScreen()
   const { sideOpen, sideWidthDesktop } = useSidePanelLayout()
 
@@ -19,8 +19,9 @@ export const SideDesktop = ({ elemProps, ...rest }: LayoutSlotProps<'aside'>) =>
         className: classNames(withPrefix('side-panel-layout-side-desktop'), elemProps?.className),
       }}
       inlineSize={isDesktop && sideOpen ? scale(sideWidthDesktop) : 0}
-      display={isMobile ? 'none' : 'block'}
-    />
+    >
+      <Box display={isMobile ? 'none' : 'block'}>{children}</Box>
+    </Box>
   )
 }
 

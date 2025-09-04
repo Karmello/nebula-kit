@@ -1,8 +1,10 @@
 import { scale } from 'lib/helpers'
 
+const KEEP_NUMBER_PROPS = ['lineHeight', 'opacity', 'flex', 'flexGrow', 'flexShrink', 'flexBasis', 'order']
+
 export const formatCssValue = (propName: string, propValue: string | number): string => {
   if (typeof propValue === 'number') {
-    if (['lineHeight', 'opacity'].includes(propName)) {
+    if (KEEP_NUMBER_PROPS.includes(propName)) {
       return String(propValue)
     } else if (propName === 'columns') {
       return `repeat(${propValue}, 1fr)`

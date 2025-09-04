@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { BundledLanguage, TokensResult } from 'shiki'
 
-import { Box, Text } from 'lib/components'
+import { Box, Flex, Text } from 'lib/components'
 
 import { tokenizeCode } from './helpers'
 
@@ -26,8 +26,14 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
   }
 
   return (
-    <Box elem="pre" elemProps={{ style: { backgroundColor: data.bg } }} borderRadius={3} overflowX="auto">
-      <Box elem="code" paddingInline={12} paddingBlock={10} minInlineSize="400px">
+    <Flex
+      elem="pre"
+      elemProps={{ style: { backgroundColor: data.bg } }}
+      borderRadius={3}
+      overflowX="auto"
+      padding={10}
+    >
+      <Box elem="code">
         {data.tokens.map((token, i) => (
           <Box key={i} marginBottom={i < data.tokens.length - 1 ? 2 : 0}>
             {token.map(({ content, color }, j) => (
@@ -38,6 +44,6 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
           </Box>
         ))}
       </Box>
-    </Box>
+    </Flex>
   )
 }

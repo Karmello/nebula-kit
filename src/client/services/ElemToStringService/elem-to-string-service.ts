@@ -7,6 +7,7 @@ export const elemToStringService = () => {
   return (elem: JSX.Element) => {
     return jsxToString(elem, {
       maxInlineAttributesLineLength: Infinity,
+      sortProps: false,
       filterProps: (value, key) => !FILTER_PROPS.includes(key),
     })
   }
