@@ -54,10 +54,8 @@ export const ComponentOverviewPage = memo(() => {
   }
 
   return (
-    <Flex flexDirection="column" alignItems="stretch" gap={20}>
-      <Text typography="lead" maxInlineSize="100ch">
-        {meta.overview.description}
-      </Text>
+    <Flex flexDirection="column" alignItems="stretch" gap={20} maxInlineSize="55rem">
+      <Text typography="lead">{meta.overview.description}</Text>
       {meta.examples?.[0] ? <CodeSnippet code={elemToString(meta.examples[0].jsx)} /> : null}
       {meta.overview.responsibilities ? (
         <ListWithHeading heading="Responsibilities:" items={meta.overview.responsibilities} />

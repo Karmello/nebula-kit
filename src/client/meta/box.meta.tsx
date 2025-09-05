@@ -39,7 +39,7 @@ const BOX_META: ComponentMeta<BoxProps> = {
       category: PropCategory.element,
       name: 'elem',
       options: ['HTML tag'],
-      defaultValue: '<div />',
+      defaultValue: 'div',
       isRequired: false,
       isResponsive: false,
       description: 'Specifies which HTML element the Box should render as.',

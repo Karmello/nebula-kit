@@ -2,7 +2,7 @@
 
 export const CssTextAlign = ['start', 'center', 'end', 'justify'] as const
 export const CssDisplay = ['block', 'inline', 'inline-block', 'flow-root', 'contents', 'none'] as const
-export const CssOverflow = ['visible', 'hidden', 'auto', 'scroll'] as const
+export const CssOverflow = ['visible', 'scroll', 'hidden', 'clip', 'auto'] as const
 export const CssPosition = ['static', 'relative', 'absolute', 'fixed', 'sticky'] as const
 export const CssFlexDirection = ['row', 'row-reverse', 'column', 'column-reverse'] as const
 export const CssFlexWrap = ['nowrap', 'wrap', 'wrap-reverse'] as const

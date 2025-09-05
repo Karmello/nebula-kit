@@ -21,7 +21,7 @@ export const ComponentExamplesPage = memo(() => {
 
   const memorized = useMemo(() => {
     return meta?.examples?.map(({ jsx, description, noSandBox }, i) => (
-      <Flex key={i} flexDirection="column" alignItems="stretch">
+      <Flex key={i} flexDirection="column" alignItems="stretch" maxInlineSize="55rem">
         {description ? <Text marginBottom={5}>{description}</Text> : null}
         {!noSandBox ? (
           <>

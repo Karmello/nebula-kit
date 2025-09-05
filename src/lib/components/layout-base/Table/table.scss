@@ -1,12 +1,14 @@
 @use 'styles/definitions/definitions.scss' as *;
 
 .neb-table-container {
+  inline-size: 100%;
+  max-inline-size: 100%;
   overflow-x: auto;
 }
 
 .neb-table {
   display: table;
-  border-collapse: collapse;
+  // border-collapse: collapse;
   inline-size: 100%;
 }
 

@@ -25,6 +25,13 @@ export type TextOwnProps = {
   clampLines?: number
 }
 
+export type TextProps<E extends TextElem> = Omit<
+  BoxProps<E>,
+  'display' | 'variant' | 'interactive' | 'borderRadius' | keyof BoxPaddingProps
+> &
+  Pick<ButtonOwnProps, 'iconName' | 'iconPosition'> &
+  TextOwnProps
+
 export const TYPOGRAPHY_TO_PROPS: Record<
   TextTypography,
   {
@@ -44,13 +51,6 @@ export const TYPOGRAPHY_TO_PROPS: Record<
   h2: { elem: 'h2', fontSize: 24, lineHeight: 1.2 },
   h1: { elem: 'h1', fontSize: 30, lineHeight: 1.1 },
 }
-
-export type TextProps<E extends TextElem> = Omit<
-  BoxProps<E>,
-  'display' | 'variant' | 'interactive' | 'borderRadius' | keyof BoxPaddingProps
-> &
-  Pick<ButtonOwnProps, 'iconName' | 'iconPosition'> &
-  TextOwnProps
 
 export const Text = <E extends TextElem = 'p'>({
   children,
@@ -77,8 +77,8 @@ export const Text = <E extends TextElem = 'p'>({
 
   useLayoutEffect(() => {
     computeResponsiveCss(elemRef || ref, bp, {
-      fontSize: fontSize || TYPOGRAPHY_TO_PROPS[typography].fontSize,
-      lineHeight: lineHeight || TYPOGRAPHY_TO_PROPS[typography].lineHeight,
+      fontSize: fontSize !== undefined ? fontSize : TYPOGRAPHY_TO_PROPS[typography].fontSize,
+      lineHeight: lineHeight !== undefined ? lineHeight : TYPOGRAPHY_TO_PROPS[typography].lineHeight,
       textAlign,
     })
   }, [bp, fontSize, lineHeight, textAlign])
