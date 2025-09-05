@@ -95,7 +95,6 @@ export const ComponentsPage = () => {
             <Section heading={activeItemObj?.label} headingProps={{ typography: 'h3' }} />
           </SidePanelLayout.Header>
           <SidePanelLayout.Main paddingRight={10}>
-            <Spacer size={10} />
             <ComponentsPageRoutes />
           </SidePanelLayout.Main>
         </SidePanelLayout>

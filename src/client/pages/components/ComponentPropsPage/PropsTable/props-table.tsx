@@ -10,7 +10,7 @@ export const PropsTable = ({ data }: Props) => {
   const isSomeResponsive = data.some(prop => prop.isResponsive)
 
   return (
-    <Section heading={data[0].category}>
+    <Section heading={data[0].category} marginBottom={20}>
       <Table zebra>
         <Table.Head>
           <Table.Row>

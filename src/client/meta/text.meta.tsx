@@ -1,33 +1,41 @@
-import {
-  DEFAULT_TEXT_LINE_HEIGHT,
-  DEFAULT_TEXT_TEXT_ALIGN,
-  DEFAULT_TEXT_TYPOGRAPHY,
-  WITH_ICON_DEFAULT_ICON_POSITION,
-} from 'lib/definitions'
+import { DEFAULT_BOX_INTENT, DEFAULT_TEXT_TYPOGRAPHY, WITH_ICON_DEFAULT_ICON_POSITION } from 'lib/definitions'
 
-import {
-  BoxIntent,
-  ComponentMeta,
-  CssTextAlign,
-  IconPosition,
-  TextElem,
-  TextTypography,
-} from 'lib/definitions'
-
+import { BoxIntent, ComponentMeta, IconPosition, TextElem, TextTypography } from 'lib/definitions'
 import { TextProps, TYPOGRAPHY_TO_PROPS } from 'lib/components'
 import { ICON_NAMES } from 'lib/icons'
 import { PropCategory } from 'client/definitions'
 
 const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
-  name: 'Text',
-  description:
-    'Text is a typography component that renders semantic text elements with consistent styles. It provides a unified API for alignment, intent, and typography presets, while still allowing fine-grained control over size, line height, and emphasis. Use Text when you need readable, theme-aware text that can adapt responsively, handle truncation or clamping, and optionally include icons alongside content.',
+  overview: {
+    name: 'Text',
+    description:
+      'Text is a typography component that renders semantic text elements with consistent styles. It provides a unified API for alignment, intent, and typography presets, while still allowing fine-grained control over size, line height, and emphasis. Use Text when you need readable, theme-aware text that can adapt responsively, handle truncation or clamping, and optionally include icons alongside content.',
+    propsDescription: '',
+  },
   props: [
+    {
+      category: PropCategory.element,
+      name: 'children',
+      options: ['ReactNode'],
+      defaultValue: '',
+      isRequired: true,
+      isResponsive: false,
+      description: 'Content rendered inside the tag is required for Text.',
+    },
+    {
+      category: PropCategory.element,
+      name: 'elem',
+      options: Object.values(TextElem),
+      defaultValue: TextElem[0],
+      isRequired: false,
+      isResponsive: false,
+      description: 'Specifies which HTML element the text should render as.',
+    },
     {
       category: PropCategory.appearance,
       name: 'intent',
       options: Object.values(BoxIntent),
-      defaultValue: 'set by theme',
+      defaultValue: DEFAULT_BOX_INTENT,
       isRequired: false,
       isResponsive: false,
       description: 'Applies a themed style that conveys meaning or emphasis through color and tone.',
@@ -36,11 +44,11 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       category: PropCategory.typography,
       name: 'typography',
       options: Object.values(TextTypography),
-      defaultValue: DEFAULT_TEXT_LINE_HEIGHT,
+      defaultValue: DEFAULT_TEXT_TYPOGRAPHY,
       isRequired: false,
       isResponsive: false,
       description:
-        'Applies a predefined typography style from the design system, controlling as and fontSize together.',
+        'Applies a predefined typography style from the design system, controlling elem and fontSize together.',
     },
     {
       category: PropCategory.typography,
@@ -55,22 +63,13 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       category: PropCategory.typography,
       name: 'lineHeight',
       options: ['CSS (string, number)'],
-      defaultValue: DEFAULT_TEXT_LINE_HEIGHT,
+      defaultValue: String(TYPOGRAPHY_TO_PROPS[DEFAULT_TEXT_TYPOGRAPHY].lineHeight),
       isRequired: false,
       isResponsive: true,
       description: 'Sets the vertical spacing between lines of text.',
     },
     {
-      category: PropCategory.alignment,
-      name: 'textAlign',
-      options: Object.values(CssTextAlign),
-      defaultValue: DEFAULT_TEXT_TEXT_ALIGN,
-      isRequired: false,
-      isResponsive: true,
-      description: 'Sets the horizontal alignment of the text within its container.',
-    },
-    {
-      category: PropCategory.emphasis,
+      category: PropCategory.typography,
       name: 'bold',
       options: ['boolean'],
       defaultValue: 'false',
@@ -79,7 +78,7 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       description: 'Toggles bold styling for the text.',
     },
     {
-      category: PropCategory.emphasis,
+      category: PropCategory.typography,
       name: 'italic',
       options: ['boolean'],
       defaultValue: 'false',
@@ -132,27 +131,7 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       isResponsive: false,
       description: 'Sets where the icon appears in relation to the text.',
     },
-    {
-      category: PropCategory.other,
-      name: 'children',
-      options: ['ReactNode'],
-      defaultValue: '',
-      isRequired: true,
-      isResponsive: false,
-      description: 'The content to be rendered inside the Text component.',
-    },
-    {
-      category: PropCategory.other,
-      name: 'elem',
-      options: Object.values(TextElem),
-      defaultValue: TYPOGRAPHY_TO_PROPS[DEFAULT_TEXT_TYPOGRAPHY].elem,
-      isRequired: false,
-      isResponsive: false,
-      description:
-        'Specifies which HTML element the text should render as, for semantic control without affecting its appearance.',
-    },
   ],
-  examples: [],
 }
 
 export default TEXT_META

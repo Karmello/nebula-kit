@@ -17,9 +17,12 @@ import {
 import { ICON_NAMES } from 'lib/icons'
 
 const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
-  name: 'Button',
-  description:
-    "Button is Nebula-kit's standard action control. It adapts to different contexts by supporting visual variants, sizing, typography options, and optional icon integration, while staying consistent with the system's design language.",
+  overview: {
+    name: 'Button',
+    description:
+      "Button is Nebula-kit's standard action control. It adapts to different contexts by supporting visual variants, sizing, typography options, and optional icon integration, while staying consistent with the system's design language.",
+    propsDescription: '',
+  },
   props: [
     {
       category: PropCategory.appearance,
@@ -105,7 +108,6 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
       description: "Defines where the icon is placed in relation to the button's label.",
     },
   ],
-  examples: [],
 }
 
 export default BUTTON_META

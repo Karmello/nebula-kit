@@ -1,7 +1,7 @@
 import { ElementType } from 'react'
 
 import { BoxProps } from 'lib/components'
-import { Breakpoint, CssTextAlign } from 'lib/definitions'
+import { Breakpoint } from 'lib/definitions'
 
 // constants
 
@@ -67,8 +67,6 @@ export type LayoutSlotProps<E extends ElementType> = Pick<
 export const DEFAULT_BOX_VARIANT: BoxVariant = 'ghost'
 export const DEFAULT_BOX_INTENT: BoxIntent = 'neutral'
 
-export const DEFAULT_TEXT_LINE_HEIGHT = 'normal'
-export const DEFAULT_TEXT_TEXT_ALIGN: CssTextAlign = 'start'
 export const DEFAULT_TEXT_TYPOGRAPHY: TextTypography = 'body'
 
 export const DEFAULT_BUTTON_VARIANT: BoxVariant = 'solid'

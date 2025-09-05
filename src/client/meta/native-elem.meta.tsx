@@ -1,10 +1,23 @@
-import { NativeElemProps } from 'lib/components'
+import { NativeElem, NativeElemProps } from 'lib/components'
 import { ComponentMeta } from 'lib/definitions'
 
 export default {
-  name: 'NativeElem',
-  description:
-    "NativeElem is a low-level utility that renders the final HTML element using Nebula-kit's internal conventions. It standardizes creation and styling so higher-level components stay consistent - and, in the end, every component in the system funnels down to this layer to output the actual tag.",
+  overview: {
+    name: 'NativeElem',
+    description:
+      'NativeElem is a low-level utility that renders the chosen HTML tag. Its polymorphic design means you can swap the underlying element while still getting the correct props, ensuring every NebulaKit component resolves to a predictable, semantic element.',
+    responsibilities: [
+      'renders the chosen HTML tag',
+      'forwards the relevant attributes for the tag',
+      'passes through the ref',
+    ],
+    useCases: [
+      'rarely needed in everyday code - usually you would want to use Box, Flex, Grid, or other higher-level component instead',
+      'could be helpful as an escape hatch if you need the absolute lowest layer without extra props or behaviors',
+    ],
+    defaultBehavior: ['renders as div'],
+    propsDescription: '',
+  },
   props: [
     {
       category: '',
@@ -43,5 +56,16 @@ export default {
       description: 'Reference to the rendered HTML element.',
     },
   ],
-  examples: [],
+  examples: [
+    {
+      description: 'This renders an empty div by default.',
+      jsx: <NativeElem />,
+      noSandBox: true,
+    },
+    {
+      description: 'All <a /> tag related properties are present on elemProps.',
+      jsx: <NativeElem elem="a" elemProps={{ href: '...' }} />,
+      noSandBox: true,
+    },
+  ],
 } as ComponentMeta<NativeElemProps>

@@ -20,13 +20,17 @@ export const ComponentExamplesPage = memo(() => {
   }
 
   const memorized = useMemo(() => {
-    return meta?.examples?.map(({ jsx, description }, i) => (
+    return meta?.examples?.map(({ jsx, description, noSandBox }, i) => (
       <Flex key={i} flexDirection="column" alignItems="stretch">
         {description ? <Text marginBottom={5}>{description}</Text> : null}
-        <Box variant="outline" padding={20} elemProps={{ style: { borderStyle: 'dashed' } }}>
-          {jsx}
-        </Box>
-        <Spacer size={5} />
+        {!noSandBox ? (
+          <>
+            <Box variant="outline" padding={20} elemProps={{ style: { borderStyle: 'dashed' } }}>
+              {jsx}
+            </Box>
+            <Spacer size={5} />
+          </>
+        ) : null}
         <CodeSnippet code={elemToString(jsx)} />
         <Spacer size={30} />
       </Flex>

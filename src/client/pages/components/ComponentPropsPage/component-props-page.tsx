@@ -31,9 +31,9 @@ export const ComponentPropsPage = memo(() => {
 
   return (
     <>
-      {meta.propsInfo ? (
+      {meta.overview.propsDescription ? (
         <>
-          <Text intent="secondary">{meta.propsInfo}</Text>
+          <Text intent="secondary">{meta.overview.propsDescription}</Text>
           <Spacer size={15} />
         </>
       ) : null}

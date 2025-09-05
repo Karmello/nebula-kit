@@ -10,10 +10,13 @@ import {
 } from 'lib/definitions'
 
 const FLEX_META: ComponentMeta<FlexOwnProps> = {
-  name: 'Flex',
-  description:
-    'Flex is a layout component that arranges its children using CSS flexbox. It provides a consistent API for direction, wrapping, alignment, and spacing, so you can build responsive row or column layouts without writing raw flex styles. Use Flex when you need predictable alignment and gaps between elements, or as the foundation for higher-level layout primitives.',
-  propsInfo: 'Flex extends Box, so it accepts all Box props in addition to the flex-specific ones below.',
+  overview: {
+    name: 'Flex',
+    description:
+      'Flex is a layout component that arranges its children using CSS flexbox. It provides a consistent API for direction, wrapping, alignment, and spacing, so you can build responsive row or column layouts without writing raw flex styles. Use Flex when you need predictable alignment and gaps between elements, or as the foundation for higher-level layout primitives.',
+    propsDescription:
+      'Flex extends Box, so it accepts all Box props in addition to the flex-specific ones below.',
+  },
   props: [
     {
       category: PropCategory.layout,
@@ -79,7 +82,6 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
       description: 'Defines horizontal spacing between columns of flex items.',
     },
   ],
-  examples: [],
 }
 
 export default FLEX_META

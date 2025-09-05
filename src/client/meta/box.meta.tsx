@@ -14,10 +14,36 @@ import {
 } from 'lib/definitions'
 
 const BOX_META: ComponentMeta<BoxProps> = {
-  name: 'Box',
-  description:
-    'Box is the foundational layout primitive. It renders as any element (div by default) and provides consistent spacing, typography, sizing, and surface styling through responsive props. Use it as the base container or building block for more complex components.',
+  overview: {
+    name: 'Box',
+    description:
+      "Box is Nebula-kit's foundational surface. It exposes a curated set of core CSS properties - appearance, spacing, sizing, and positioning - so you can style a plain block-level element directly in JSX.",
+    responsibilities: [
+      'acts as the surface foundation that higher-level components (e.g. Flex, Grid, Table) inherit from',
+    ],
+    useCases: [
+      "use as a simple wrapper, the way you'd normally reach for a div",
+      "use when you need a semantic element that isn't yet provided as a dedicated component in the library",
+      'use as the base building block when creating your own custom component',
+    ],
+    defaultBehavior: [
+      'inherits all NativeElem props',
+      'block element (renders as a div)',
+      'children and all props are optional',
+      'ghost variant + neutral intent',
+      'all spacings zeroed',
+    ],
+  },
   props: [
+    {
+      category: PropCategory.element,
+      name: 'elem',
+      options: ['HTML tag'],
+      defaultValue: '<div />',
+      isRequired: false,
+      isResponsive: false,
+      description: 'Specifies which HTML element the Box should render as.',
+    },
     {
       category: PropCategory.appearance,
       name: 'variant',
@@ -347,20 +373,25 @@ const BOX_META: ComponentMeta<BoxProps> = {
   ],
   examples: [
     {
+      jsx: <Box>Default box</Box>,
+      description: 'A plain default Box with ghost variant and neutral intent.',
+    },
+    {
       jsx: (
         <Box variant="outline" intent="primary">
-          Default
+          Box is a block
         </Box>
       ),
-      description: 'A default block-level Box with an outline variant and primary intent.',
+      description:
+        'A Box in outline variant with primary intent, rendering as a block that stretches full width by default.',
     },
     {
       jsx: (
         <Box variant="outline" intent="primary" padding={10}>
-          Padding
+          Padded box
         </Box>
       ),
-      description: 'Same as the default outline primary Box, but with padding added.',
+      description: 'Box with padding applied.',
     },
     {
       jsx: (
@@ -368,9 +399,43 @@ const BOX_META: ComponentMeta<BoxProps> = {
           Centered content
         </Box>
       ),
-      description: 'Same as the padded version, but with the content centered.',
+      description: 'Box with the content centered.',
+    },
+    {
+      jsx: (
+        <Box variant="outline" intent="primary" padding={10} display="inline-block">
+          Box as inline
+        </Box>
+      ),
+      description:
+        "A Box rendered as inline-block, so it's only as wide as its content instead of stretching full width.",
+    },
+    {
+      jsx: (
+        <Box
+          variant="outline"
+          intent="primary"
+          padding={10}
+          display="inline-block"
+          elem="a"
+          elemProps={{ href: 'http://google.com', target: '_blank' }}
+        >
+          Box as link
+        </Box>
+      ),
+      description: 'Box rendered as link element',
     },
   ],
 }
+
+const responsiveProps: typeof BOX_META.overview.responsiveProps = []
+
+BOX_META.props.forEach(prop => {
+  if (prop.isResponsive) {
+    responsiveProps.push(prop.name)
+  }
+})
+
+BOX_META.overview.responsiveProps = responsiveProps
 
 export default BOX_META

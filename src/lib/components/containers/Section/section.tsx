@@ -31,7 +31,6 @@ export const Section = <E extends SectionElem = 'section'>({
         <>
           <Spacer size={10} />
           {children}
-          <Spacer size={20} />
         </>
       ) : null}
     </Box>

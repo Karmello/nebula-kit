@@ -22,7 +22,7 @@ export const List = <E extends ListElem = 'ul'>({ elem, elemProps, listStyle, ..
         style: {
           ...elemProps?.style,
           listStyle,
-          listStylePosition: 'inside',
+          listStylePosition: 'outside',
         },
       }}
       display="block"

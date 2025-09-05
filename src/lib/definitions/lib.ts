@@ -21,9 +21,15 @@ export type ScaleValue = (typeof SCALE)[number]
 export type CompWithCssVarsPrefix = 'box' | 'text' | 'flex' | 'grid' | 'table' | 'cluster'
 
 export type ComponentMeta<PropsType> = {
-  name: string
-  description: string
-  propsInfo?: string
+  overview: {
+    name: string
+    description: string
+    responsibilities?: string[]
+    useCases?: string[]
+    defaultBehavior?: string[]
+    responsiveProps?: string[]
+    propsDescription?: string
+  }
   props: {
     category: string
     name: keyof PropsType
@@ -33,9 +39,10 @@ export type ComponentMeta<PropsType> = {
     isResponsive: boolean
     description: string
   }[]
-  examples: {
+  examples?: {
     jsx: JSX.Element
     description?: string
+    noSandBox?: boolean
   }[]
 }
 

@@ -4,48 +4,52 @@ import { ComponentOverviewPage, ComponentPropsPage, ComponentExamplesPage } from
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
 import { formatAsQueryString } from 'client/services'
 import { useLibStore } from 'lib/state'
+import { Spacer } from 'lib/components'
 
 export const ComponentsPageRoutes = () => {
   const { lang, theme } = useLibStore()
 
   return (
-    <Routes>
-      {COMPONENT_CATEGORIES.map(({ key: categoryKey, items }) =>
-        items.map(({ key: itemKey, sections }) =>
-          sections.map(({ key: sectionKey }) => {
-            return (
-              <Route
-                key={`${categoryKey}/${itemKey}/${sectionKey}`}
-                path={`${categoryKey}/${itemKey}/${sectionKey}`}
-                Component={() => {
-                  switch (sectionKey) {
-                    case 'overview':
-                      return <ComponentOverviewPage />
-                    case 'props':
-                      return <ComponentPropsPage />
-                    case 'examples':
-                      return <ComponentExamplesPage />
-                    default:
-                      return null
-                  }
-                }}
-              />
-            )
-          })
-        )
-      )}
-      <Route
-        path="*"
-        element={
-          <Navigate
-            to={{
-              pathname: `/${PageKey.components}/${COMPONENT_CATEGORIES[0].key}/${COMPONENT_CATEGORIES[0].items[0].key}/${COMPONENT_CATEGORIES[0].items[0].sections[0].key}`,
-              search: formatAsQueryString({ lang, theme }),
-            }}
-            replace
-          />
-        }
-      />
-    </Routes>
+    <>
+      <Spacer size={10} />
+      <Routes>
+        {COMPONENT_CATEGORIES.map(({ key: categoryKey, items }) =>
+          items.map(({ key: itemKey, sections }) =>
+            sections.map(({ key: sectionKey }) => {
+              return (
+                <Route
+                  key={`${categoryKey}/${itemKey}/${sectionKey}`}
+                  path={`${categoryKey}/${itemKey}/${sectionKey}`}
+                  Component={() => {
+                    switch (sectionKey) {
+                      case 'overview':
+                        return <ComponentOverviewPage />
+                      case 'props':
+                        return <ComponentPropsPage />
+                      case 'examples':
+                        return <ComponentExamplesPage />
+                      default:
+                        return null
+                    }
+                  }}
+                />
+              )
+            })
+          )
+        )}
+        <Route
+          path="*"
+          element={
+            <Navigate
+              to={{
+                pathname: `/${PageKey.components}/${COMPONENT_CATEGORIES[0].key}/${COMPONENT_CATEGORIES[0].items[0].key}/${COMPONENT_CATEGORIES[0].items[0].sections[0].key}`,
+                search: formatAsQueryString({ lang, theme }),
+              }}
+              replace
+            />
+          }
+        />
+      </Routes>
+    </>
   )
 }

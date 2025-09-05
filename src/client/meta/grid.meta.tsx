@@ -10,10 +10,13 @@ import {
 } from 'lib/definitions'
 
 const GRID_META: ComponentMeta<GridProps<GridElem>> = {
-  name: 'Grid',
-  description:
-    'Grid is a layout component that arranges its children using CSS Grid. It provides a consistent API for defining rows, columns, gaps, and alignment, so you can create two-dimensional layouts without writing raw grid styles. Use Grid when you need precise control over track sizes, auto-placement, and spacing in both directions, or as the foundation for more complex, responsive layout primitives.',
-  propsInfo: 'Grid extends Box, so it accepts all Box props in addition to the grid-specific ones below.',
+  overview: {
+    name: 'Grid',
+    description:
+      'Grid is a layout component that arranges its children using CSS Grid. It provides a consistent API for defining rows, columns, gaps, and alignment, so you can create two-dimensional layouts without writing raw grid styles. Use Grid when you need precise control over track sizes, auto-placement, and spacing in both directions, or as the foundation for more complex, responsive layout primitives.',
+    propsDescription:
+      'Grid extends Box, so it accepts all Box props in addition to the grid-specific ones below.',
+  },
   props: [
     {
       category: PropCategory.layout,
@@ -116,7 +119,6 @@ const GRID_META: ComponentMeta<GridProps<GridElem>> = {
         'Specifies which HTML element the grid should render as, allowing you to match semantic structure without changing its layout behavior.',
     },
   ],
-  examples: [],
 }
 
 export default GRID_META
