@@ -40,12 +40,12 @@ export const PropsTable = ({ data }: Props) => {
               <Table.Cell elemProps={{ style: { textAlign: 'center' } }}>{defaultValue}</Table.Cell>
               {isSomeRequired ? (
                 <Table.Cell elemProps={{ style: { textAlign: 'center' } }}>
-                  {isRequired ? <SvgIcon name="check" intent="primary" /> : '-'}
+                  {isRequired ? <SvgIcon iconName="check" iconIntent="primary" /> : '-'}
                 </Table.Cell>
               ) : null}
               {isSomeResponsive ? (
                 <Table.Cell elemProps={{ style: { textAlign: 'center' } }}>
-                  {isResponsive ? <SvgIcon name="check" intent="primary" /> : '-'}
+                  {isResponsive ? <SvgIcon iconName="check" iconIntent="primary" /> : '-'}
                 </Table.Cell>
               ) : null}
               <Table.Cell>{description}</Table.Cell>

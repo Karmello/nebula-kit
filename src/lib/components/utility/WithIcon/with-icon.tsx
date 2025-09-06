@@ -6,6 +6,7 @@ import './with-icon.scss'
 
 export const WithIcon = ({
   children,
+  elemRef,
   iconName,
   iconPosition = WITH_ICON_DEFAULT_ICON_POSITION,
 }: WithIconProps) => {
@@ -14,10 +15,10 @@ export const WithIcon = ({
   }
 
   return (
-    <NativeElem elem="span" elemProps={{ className: withPrefix('with-icon') }}>
-      {iconPosition === 'left' ? <SvgIcon name={iconName} /> : null}
+    <NativeElem elem="span" elemProps={{ className: withPrefix('with-icon') }} elemRef={elemRef}>
+      {iconPosition === 'left' ? <SvgIcon iconName={iconName} /> : null}
       {children}
-      {iconPosition === 'right' ? <SvgIcon name={iconName} /> : null}
+      {iconPosition === 'right' ? <SvgIcon iconName={iconName} /> : null}
     </NativeElem>
   )
 }

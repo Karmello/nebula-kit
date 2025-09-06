@@ -1,6 +1,5 @@
 import { SvgIcon, SvgIconProps } from 'lib/components'
 import { BoxIntent, ComponentMeta, DEFAULT_BOX_INTENT, DEFAULT_SVG_ICON_SIZE } from 'lib/definitions'
-import { ICON_NAMES } from 'lib/icons'
 
 export default {
   overview: {
@@ -15,15 +14,15 @@ export default {
     ],
     defaultBehavior: [
       'name is required to resolve and render the correct icon',
-      'size defaults to 8 (16 px) for standard readability',
+      'size defaults to 8 (16px) for standard readability',
       'intent defaults to neutral for balanced, non-emphasized color',
     ],
   },
   props: [
     {
       category: '',
-      name: 'name',
-      options: ICON_NAMES as unknown as string[],
+      name: 'iconName',
+      options: ['IconName'],
       defaultValue: '',
       isRequired: false,
       isResponsive: false,
@@ -31,7 +30,7 @@ export default {
     },
     {
       category: '',
-      name: 'size',
+      name: 'iconSize',
       options: ['ScaleValue'],
       defaultValue: DEFAULT_SVG_ICON_SIZE,
       isRequired: false,
@@ -40,7 +39,7 @@ export default {
     },
     {
       category: '',
-      name: 'intent',
+      name: 'iconIntent',
       options: BoxIntent,
       defaultValue: DEFAULT_BOX_INTENT,
       isRequired: false,
@@ -50,16 +49,16 @@ export default {
   ],
   examples: [
     {
-      description: 'Renders the search icon at the default size 8 (16 px) with neutral color.',
-      jsx: <SvgIcon name="search" />,
+      description: 'Renders the search icon at the default size 8 (16px) with neutral color.',
+      jsx: <SvgIcon iconName="search" />,
     },
     {
-      description: 'Renders the search icon at size 20 (40 px) with the default neutral color.',
-      jsx: <SvgIcon name="search" size={20} />,
+      description: 'Renders the search icon at size 20 (40px) with the default neutral color.',
+      jsx: <SvgIcon iconName="search" iconSize={20} />,
     },
     {
-      description: 'Renders the search icon at size 20 (40 px) with the primary color intent.',
-      jsx: <SvgIcon name="search" size={20} intent="primary" />,
+      description: 'Renders the search icon at size 20 (40px) with the primary color intent.',
+      jsx: <SvgIcon iconName="search" iconSize={20} iconIntent="primary" />,
     },
   ],
 } as ComponentMeta<SvgIconProps>
