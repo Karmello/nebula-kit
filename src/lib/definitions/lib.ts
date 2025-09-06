@@ -25,8 +25,9 @@ export type ComponentMeta<PropsType> = {
     name: string
     description: string
     responsibilities?: string[]
-    useCases?: string[]
+    characteristics?: string[]
     defaultBehavior?: string[]
+    useCases?: string[]
     responsiveProps?: string[]
     inheritedProps?: Record<string, readonly string[]>
     propsDescription?: string

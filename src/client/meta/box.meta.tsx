@@ -24,17 +24,16 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
       'acts as the surface foundation that higher-level components (e.g. Flex, Grid, Table) inherit from',
       'provides optional interactivity (hover, focus, press states) for clickable or focusable surfaces',
     ],
+    characteristics: ['inherits all NativeElem props', 'accepts optional children and props'],
+    defaultBehavior: [
+      'renders as a block-level <div>',
+      'uses ghost variant with neutral intent',
+      'applies zero spacing',
+    ],
     useCases: [
       "use as a simple wrapper, the way you'd normally reach for a div",
       "use when you need a semantic element that isn't yet provided as a dedicated component in the library",
       'use as the base building block when creating your own custom component',
-    ],
-    defaultBehavior: [
-      'inherits all NativeElem props',
-      'renders as a block-level <div>',
-      'accepts optional children and props',
-      'uses ghost variant with neutral intent',
-      'applies zero spacing by default',
     ],
     inheritedProps: BOX_INHERITED_PROPS,
   },

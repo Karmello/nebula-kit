@@ -6,12 +6,12 @@ export default {
     name: 'WithIcon',
     description: 'Utility wrapper that aligns an icon alongside its children.',
     responsibilities: ['insert an icon', 'render children exactly as passed'],
-    useCases: ['add an icon to text or inline content', 'compose higher-level components that support icons'],
-    defaultBehavior: [
+    characteristics: [
       'iconName is required to render an icon',
       'if no children are provided, only the icon is rendered',
-      'iconPosition defaults to left',
     ],
+    defaultBehavior: ['iconPosition defaults to left'],
+    useCases: ['add an icon to text or inline content', 'compose higher-level components that support icons'],
     inheritedProps: WITH_ICON_INHERITED_PROPS,
   },
   props: [

@@ -53,7 +53,15 @@ export const ComponentOverviewPage = memo(() => {
   }
 
   const {
-    overview: { description, responsibilities, useCases, defaultBehavior, responsiveProps, inheritedProps },
+    overview: {
+      description,
+      responsibilities,
+      characteristics,
+      defaultBehavior,
+      useCases,
+      responsiveProps,
+      inheritedProps,
+    },
     examples,
   } = meta
 
@@ -62,8 +70,9 @@ export const ComponentOverviewPage = memo(() => {
       <Text typography="lead">{description}</Text>
       {examples?.[0] ? <CodeSnippet code={elemToString(examples[0].jsx)} /> : null}
       {responsibilities ? <ListWithHeading heading="Responsibilities:" items={responsibilities} /> : null}
-      {useCases ? <ListWithHeading heading="Use cases:" items={useCases} /> : null}
+      {characteristics ? <ListWithHeading heading="Characteristics:" items={characteristics} /> : null}
       {defaultBehavior ? <ListWithHeading heading="Default behavior:" items={defaultBehavior} /> : null}
+      {useCases ? <ListWithHeading heading="Use cases:" items={useCases} /> : null}
       {responsiveProps ? <ListWithChips heading="Responsive own props:" items={responsiveProps} /> : null}
       {inheritedProps
         ? Object.keys(inheritedProps).map(componentName => (

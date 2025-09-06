@@ -15,16 +15,15 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       'provide common text styling and formatting options',
       'allow integration of inline icons alongside text',
     ],
+    characteristics: [
+      'requires children',
+      'The elem prop is restricted to <p>, <span>, <h1>, <h2>, <h3>, <h4>, <h5>, <h6>,',
+    ],
+    defaultBehavior: ['renders as a <p> tag', 'uses neutral text intent'],
     useCases: [
       'display body copy, captions, and headings',
       'present truncated or clamped snippets of text',
       'combine text with icons for labels or actions',
-    ],
-    defaultBehavior: [
-      'requires children',
-      'renders as a <p> tag',
-      'uses neutral text intent',
-      'inherits additional props from Box',
     ],
     inheritedProps: TEXT_INHERITED_PROPS,
     propsDescription: '',

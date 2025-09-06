@@ -11,11 +11,11 @@ export default {
       'forwards the relevant attributes for the tag',
       'passes through the ref',
     ],
+    defaultBehavior: ['renders as div'],
     useCases: [
       'rarely needed in everyday code - usually you would want to use Box, Flex, Grid, or other higher-level component instead',
       'could be helpful as an escape hatch if you need the absolute lowest layer without extra props or behaviors',
     ],
-    defaultBehavior: ['renders as div'],
     propsDescription: '',
   },
   props: [
