@@ -1,4 +1,4 @@
-import { IconPosition, MakeRequired } from 'lib/definitions'
+import { IconPosition } from 'lib/definitions'
 import { IconName } from 'lib/icons'
 
 import { NativeElemProps } from '../NativeElem'
