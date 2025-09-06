@@ -1,6 +1,6 @@
 import { DEFAULT_BOX_INTENT, DEFAULT_TEXT_TYPOGRAPHY, WITH_ICON_DEFAULT_ICON_POSITION } from 'lib/definitions'
 import { BoxIntent, ComponentMeta, IconPosition, TextElem, TextTypography } from 'lib/definitions'
-import { Text, TextProps, TYPOGRAPHY_TO_PROPS } from 'lib/components'
+import { Text, TextProps, TEXT_TYPOGRAPHY_CONFIG } from 'lib/components'
 import { ICON_NAMES } from 'lib/icons'
 import { PropCategory } from 'client/definitions'
 
@@ -62,7 +62,7 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       category: PropCategory.typography,
       name: 'fontSize',
       options: ['ScaleValue', 'CSS'],
-      defaultValue: String(TYPOGRAPHY_TO_PROPS[DEFAULT_TEXT_TYPOGRAPHY].fontSize),
+      defaultValue: String(TEXT_TYPOGRAPHY_CONFIG[DEFAULT_TEXT_TYPOGRAPHY].fontSize),
       isRequired: false,
       isResponsive: true,
       description: 'Sets the text size, overriding the value provided by typography.',
@@ -71,7 +71,7 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       category: PropCategory.typography,
       name: 'lineHeight',
       options: ['CSS (string, number)'],
-      defaultValue: String(TYPOGRAPHY_TO_PROPS[DEFAULT_TEXT_TYPOGRAPHY].lineHeight),
+      defaultValue: String(TEXT_TYPOGRAPHY_CONFIG[DEFAULT_TEXT_TYPOGRAPHY].lineHeight),
       isRequired: false,
       isResponsive: true,
       description: 'Sets the vertical spacing between lines of text.',

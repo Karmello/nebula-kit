@@ -1,5 +1,5 @@
 import { PropCategory } from 'client/definitions'
-import { Box, BoxProps } from 'lib/components'
+import { Box, BoxProps, BOX_INHERITED_PROPS } from 'lib/components'
 
 import {
   BoxIntent,
@@ -13,7 +13,6 @@ import {
   DEFAULT_BOX_VARIANT,
 } from 'lib/definitions'
 
-import NATIVE_ELEM_META from './native-elem.meta'
 import { applyResponsiveProps } from './_helpers'
 
 const BOX_META: ComponentMeta<BoxProps> = {
@@ -37,7 +36,7 @@ const BOX_META: ComponentMeta<BoxProps> = {
       'uses ghost variant with neutral intent',
       'applies zero spacing by default',
     ],
-    inheritedProps: NATIVE_ELEM_META.props.map(({ name }) => name),
+    inheritedProps: BOX_INHERITED_PROPS,
   },
   props: [
     {

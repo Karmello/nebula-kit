@@ -1,3 +1,5 @@
+import { ElementType } from 'react'
+
 import {
   BoxVariant,
   BoxIntent,
@@ -8,6 +10,8 @@ import {
   ResponsiveProp,
   ScaleValue,
 } from 'lib/definitions'
+
+import { NATIVE_ELEM_PROP, NativeElemProps } from 'lib/components/utility'
 
 export type BoxAppearanceProps = {
   variant?: `${BoxVariant}`
@@ -68,3 +72,9 @@ export type BoxOwnProps = BoxAppearanceProps &
   BoxSizingProps &
   BoxPaddingProps &
   BoxMarginProps
+
+export const BOX_INHERITED_PROPS = {
+  NativeElem: NATIVE_ELEM_PROP,
+}
+
+export type BoxInheritedProps<E extends ElementType> = NativeElemProps<E>

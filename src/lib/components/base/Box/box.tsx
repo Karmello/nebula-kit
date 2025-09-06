@@ -2,14 +2,14 @@ import { ElementType, ComponentRef, useRef, useLayoutEffect } from 'react'
 import classNames from 'classnames'
 
 import { useLibStore } from 'lib/state'
-import { NativeElem, NativeElemProps } from 'lib/components'
+import { NativeElem } from 'lib/components'
 import { DEFAULT_BOX_INTENT, DEFAULT_BOX_VARIANT } from 'lib/definitions'
 import { computeResponsiveCss, getDataAttrs, scale, useScreen, withPrefix } from 'lib/helpers'
 
-import { BoxOwnProps } from './types'
+import { BoxOwnProps, BoxInheritedProps } from './definitions'
 import './styles/box.scss'
 
-export type BoxProps<E extends ElementType = 'div'> = NativeElemProps<E> & BoxOwnProps
+export type BoxProps<E extends ElementType = 'div'> = BoxOwnProps & BoxInheritedProps<E>
 
 export const Box = <E extends ElementType = 'div'>({
   // native elem

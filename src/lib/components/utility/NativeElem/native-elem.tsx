@@ -1,14 +1,8 @@
-import { ElementType, ComponentRef, ComponentPropsWithoutRef, ReactNode, RefObject } from 'react'
+import { ElementType } from 'react'
 import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
-
-export type NativeElemProps<E extends ElementType = 'div'> = {
-  children?: ReactNode
-  elem?: E
-  elemProps?: ComponentPropsWithoutRef<E>
-  elemRef?: RefObject<ComponentRef<E>>
-}
+import { NativeElemProps } from './definitions'
 
 export const NativeElem = <E extends ElementType = 'div'>({
   children,
