@@ -8,7 +8,7 @@ import {
   TextOwnProps,
   TextProps,
   WithIcon,
-  WithIconOwnProps,
+  WithIconProps,
 } from 'lib/components'
 
 import {
@@ -31,8 +31,8 @@ export type ButtonOwnProps = {
   borderRadius?: BoxOwnProps['borderRadius']
   bold?: TextOwnProps['bold']
   disabled?: BoxOwnProps['disabled']
-  iconName?: WithIconOwnProps['iconName']
-  iconPosition?: WithIconOwnProps['iconPosition']
+  iconName?: WithIconProps['iconName']
+  iconPosition?: WithIconProps['iconPosition']
 }
 
 export type ButtonProps = Pick<BoxProps<'button'>, 'children' | 'elemProps' | 'elemRef'> & ButtonOwnProps

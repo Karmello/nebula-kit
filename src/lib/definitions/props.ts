@@ -45,6 +45,8 @@ export type ButtonSize = (typeof ButtonSize)[number]
 export type HorizontalPosition = (typeof HorizontalPosition)[number]
 export type IconPosition = (typeof IconPosition)[number]
 
+export type MakeRequired<T, K extends keyof T> = Omit<T, K> & Required<Pick<T, K>>
+
 export type LayoutSlotProps<E extends ElementType> = Pick<
   BoxProps<E>,
   | 'children'

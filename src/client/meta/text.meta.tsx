@@ -1,12 +1,11 @@
-import { DEFAULT_BOX_INTENT, DEFAULT_TEXT_TYPOGRAPHY, WITH_ICON_DEFAULT_ICON_POSITION } from 'lib/definitions'
-import { BoxIntent, ComponentMeta, IconPosition, TextElem, TextTypography } from 'lib/definitions'
-import { Text, TextProps, TEXT_TYPOGRAPHY_CONFIG } from 'lib/components'
-import { ICON_NAMES } from 'lib/icons'
+import { DEFAULT_TEXT_TYPOGRAPHY } from 'lib/definitions'
+import { ComponentMeta, TextTypography } from 'lib/definitions'
+import { Text, TEXT_TYPOGRAPHY_CONFIG, TEXT_INHERITED_PROPS, TextOwnProps } from 'lib/components'
 import { PropCategory } from 'client/definitions'
 
 import { applyResponsiveProps } from './_helpers'
 
-const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
+const TEXT_META: ComponentMeta<TextOwnProps> = {
   overview: {
     name: 'Text',
     description:
@@ -27,27 +26,10 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       'uses neutral text intent',
       'inherits additional props from Box',
     ],
+    inheritedProps: TEXT_INHERITED_PROPS,
     propsDescription: '',
   },
   props: [
-    {
-      category: PropCategory.element,
-      name: 'children',
-      options: ['ReactNode'],
-      defaultValue: '',
-      isRequired: true,
-      isResponsive: false,
-      description: 'Content rendered inside the tag is required for Text.',
-    },
-    {
-      category: PropCategory.element,
-      name: 'elem',
-      options: Object.values(TextElem),
-      defaultValue: TextElem[0],
-      isRequired: false,
-      isResponsive: false,
-      description: 'Specifies which HTML element the text should render as.',
-    },
     {
       category: PropCategory.typography,
       name: 'typography',
@@ -95,15 +77,6 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       description: 'Toggles italic styling for the text.',
     },
     {
-      category: PropCategory.appearance,
-      name: 'intent',
-      options: Object.values(BoxIntent),
-      defaultValue: DEFAULT_BOX_INTENT,
-      isRequired: false,
-      isResponsive: false,
-      description: 'Applies a themed style that conveys meaning or emphasis through color and tone.',
-    },
-    {
       category: PropCategory.behavior,
       name: 'noWrap',
       options: ['boolean'],
@@ -129,24 +102,6 @@ const TEXT_META: ComponentMeta<TextProps<TextElem>> = {
       isRequired: false,
       isResponsive: false,
       description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
-    },
-    {
-      category: PropCategory.adornments,
-      name: 'iconName',
-      options: Object.values(ICON_NAMES),
-      defaultValue: '',
-      isRequired: false,
-      isResponsive: false,
-      description: 'Adds an icon alongside the text.',
-    },
-    {
-      category: PropCategory.adornments,
-      name: 'iconPosition',
-      options: Object.values(IconPosition),
-      defaultValue: WITH_ICON_DEFAULT_ICON_POSITION,
-      isRequired: false,
-      isResponsive: false,
-      description: 'Sets where the icon appears in relation to the text.',
     },
   ],
   examples: [

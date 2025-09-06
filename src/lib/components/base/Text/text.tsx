@@ -1,37 +1,13 @@
 import { ComponentRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxPaddingProps, BoxProps, WithIcon, WithIconOwnProps } from 'lib/components'
 import { withPrefix, getDataAttrs, useScreen, computeResponsiveCss } from 'lib/helpers'
+import { DEFAULT_TEXT_TYPOGRAPHY, TextElem } from 'lib/definitions'
+import { Box, WithIcon } from 'lib/components'
 
-import {
-  DEFAULT_TEXT_TYPOGRAPHY,
-  ResponsiveProp,
-  ScaleValue,
-  TextElem,
-  TextTypography,
-} from 'lib/definitions'
+import { TEXT_TYPOGRAPHY_CONFIG, TextProps } from './definitions'
 
-import { TEXT_TYPOGRAPHY_CONFIG } from './definitions'
 import './text.scss'
-
-export type TextOwnProps = {
-  typography?: `${TextTypography}`
-  fontSize?: ResponsiveProp<ScaleValue | string>
-  lineHeight?: ResponsiveProp<number | string>
-  bold?: boolean
-  italic?: boolean
-  noWrap?: boolean
-  truncate?: boolean
-  clampLines?: number
-}
-
-export type TextProps<E extends TextElem> = Omit<
-  BoxProps<E>,
-  'display' | 'variant' | 'interactive' | 'borderRadius' | keyof BoxPaddingProps
-> &
-  Pick<WithIconOwnProps, 'iconName' | 'iconPosition'> &
-  TextOwnProps
 
 export const Text = <E extends TextElem = 'p'>({
   children,

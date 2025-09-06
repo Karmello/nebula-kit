@@ -68,4 +68,4 @@ export default {
       noSandBox: true,
     },
   ],
-} as ComponentMeta<NativeElemProps>
+} as ComponentMeta<NativeElemProps<any>>

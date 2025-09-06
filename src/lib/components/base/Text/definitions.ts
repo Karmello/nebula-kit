@@ -1,6 +1,71 @@
-import { TextElem, TextTypography } from 'lib/definitions'
+import { ElementType } from 'react'
 
-import { TextOwnProps } from './text'
+import { MakeRequired, ResponsiveProp, ScaleValue, TextElem, TextTypography } from 'lib/definitions'
+import { WithIconProps } from 'lib/components'
+
+import { BoxProps } from '../Box'
+
+export type TextOwnProps = {
+  typography?: TextTypography
+  fontSize?: ResponsiveProp<ScaleValue | string>
+  lineHeight?: ResponsiveProp<number | string>
+  bold?: boolean
+  italic?: boolean
+  noWrap?: boolean
+  truncate?: boolean
+  clampLines?: number
+}
+
+const PROPS_INHERITED_FROM_BOX = [
+  'children',
+  'elem',
+  'elemProps',
+  'elemRef',
+  'intent',
+  'opacity',
+  'disabled',
+  'overflowX',
+  'overflowY',
+  'position',
+  'top',
+  'right',
+  'bottom',
+  'left',
+  'textAlign',
+  'blockSize',
+  'minBlockSize',
+  'maxBlockSize',
+  'inlineSize',
+  'minInlineSize',
+  'maxInlineSize',
+  'margin',
+  'marginInline',
+  'marginBlock',
+  'marginTop',
+  'marginRight',
+  'marginBottom',
+  'marginLeft',
+] as const satisfies readonly (keyof BoxProps<any>)[]
+
+const PROPS_INHERITED_FROM_WITH_ICON = [
+  'iconName',
+  'iconPosition',
+] as const satisfies readonly (keyof WithIconProps)[]
+
+export const TEXT_INHERITED_PROPS = {
+  Box: PROPS_INHERITED_FROM_BOX,
+  WithIcon: PROPS_INHERITED_FROM_WITH_ICON,
+}
+
+export type TextInheritedProps<E extends ElementType> = MakeRequired<
+  Pick<BoxProps<E>, (typeof PROPS_INHERITED_FROM_BOX)[number]>,
+  'children'
+> &
+  Pick<WithIconProps, (typeof PROPS_INHERITED_FROM_WITH_ICON)[number]>
+
+export type TextProps<E extends ElementType = 'div'> = TextOwnProps & TextInheritedProps<E>
+
+// constants
 
 export const TEXT_TYPOGRAPHY_CONFIG: Record<
   TextTypography,

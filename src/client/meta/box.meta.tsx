@@ -1,5 +1,5 @@
 import { PropCategory } from 'client/definitions'
-import { Box, BoxProps, BOX_INHERITED_PROPS } from 'lib/components'
+import { Box, BOX_INHERITED_PROPS, BoxOwnProps } from 'lib/components'
 
 import {
   BoxIntent,
@@ -15,7 +15,7 @@ import {
 
 import { applyResponsiveProps } from './_helpers'
 
-const BOX_META: ComponentMeta<BoxProps> = {
+const BOX_META: ComponentMeta<BoxOwnProps> = {
   overview: {
     name: 'Box',
     description:
@@ -39,15 +39,6 @@ const BOX_META: ComponentMeta<BoxProps> = {
     inheritedProps: BOX_INHERITED_PROPS,
   },
   props: [
-    {
-      category: PropCategory.element,
-      name: 'elem',
-      options: ['HTML tag'],
-      defaultValue: 'div',
-      isRequired: false,
-      isResponsive: false,
-      description: 'Specifies which HTML element the Box should render as.',
-    },
     {
       category: PropCategory.appearance,
       name: 'variant',
