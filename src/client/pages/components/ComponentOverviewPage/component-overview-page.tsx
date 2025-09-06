@@ -5,7 +5,6 @@ import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'lib/definitions'
 import { CodeSnippet } from 'client/components'
 import { elemToStringService } from 'client/services'
-import BOX_META from 'client/meta/box.meta'
 
 const ListWithHeading = ({ heading, items }: { heading: string; items: string[] }) => (
   <Box>
@@ -67,7 +66,10 @@ export const ComponentOverviewPage = memo(() => {
         <ListWithHeading heading="Default behavior:" items={meta.overview.defaultBehavior} />
       ) : null}
       {meta.overview.responsiveProps ? (
-        <ListWithChips heading="Responsive props:" items={BOX_META.overview.responsiveProps} />
+        <ListWithChips heading="Responsive props:" items={meta.overview.responsiveProps} />
+      ) : null}
+      {meta.overview.inheritedProps ? (
+        <ListWithChips heading="Inherited props:" items={meta.overview.inheritedProps} />
       ) : null}
     </Flex>
   )

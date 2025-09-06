@@ -52,3 +52,7 @@
   pointer-events: none;
   opacity: 0.4;
 }
+
+.neb-box[data-neb-box-interactive='true'] {
+  user-select: none;
+}

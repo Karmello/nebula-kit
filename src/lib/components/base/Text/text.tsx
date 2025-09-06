@@ -1,7 +1,7 @@
 import { ComponentRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxPaddingProps, BoxProps, ButtonOwnProps, WithIcon } from 'lib/components'
+import { Box, BoxPaddingProps, BoxProps, WithIcon, WithIconOwnProps } from 'lib/components'
 import { withPrefix, getDataAttrs, useScreen, computeResponsiveCss } from 'lib/helpers'
 
 import {
@@ -29,7 +29,7 @@ export type TextProps<E extends TextElem> = Omit<
   BoxProps<E>,
   'display' | 'variant' | 'interactive' | 'borderRadius' | keyof BoxPaddingProps
 > &
-  Pick<ButtonOwnProps, 'iconName' | 'iconPosition'> &
+  Pick<WithIconOwnProps, 'iconName' | 'iconPosition'> &
   TextOwnProps
 
 export const TYPOGRAPHY_TO_PROPS: Record<

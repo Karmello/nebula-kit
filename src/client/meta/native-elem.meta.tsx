@@ -58,12 +58,12 @@ export default {
   ],
   examples: [
     {
-      description: 'This renders an empty div by default.',
+      description: 'NativeElem renders a div tag by default.',
       jsx: <NativeElem />,
       noSandBox: true,
     },
     {
-      description: 'All <a /> tag related properties are present on elemProps.',
+      description: 'When elem="a", all <a> tag attributes are available on elemProps.',
       jsx: <NativeElem elem="a" elemProps={{ href: '...' }} />,
       noSandBox: true,
     },

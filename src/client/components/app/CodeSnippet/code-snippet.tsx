@@ -35,7 +35,7 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
     >
       <Box elem="code" padding={10}>
         {data.tokens.map((token, i) => (
-          <Box key={i} marginBottom={i < data.tokens.length - 1 ? 2 : 0}>
+          <Box key={i}>
             {token.map(({ content, color }, j) => (
               <Text key={j} elem="span" elemProps={{ style: { display: 'inline', color } }} fontSize={7}>
                 {content}

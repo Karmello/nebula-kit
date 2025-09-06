@@ -28,6 +28,7 @@ export type ComponentMeta<PropsType> = {
     useCases?: string[]
     defaultBehavior?: string[]
     responsiveProps?: string[]
+    inheritedProps?: string[]
     propsDescription?: string
   }
   props: {

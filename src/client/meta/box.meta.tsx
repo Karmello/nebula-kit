@@ -13,13 +13,17 @@ import {
   DEFAULT_BOX_VARIANT,
 } from 'lib/definitions'
 
+import NATIVE_ELEM_META from './native-elem.meta'
+import { applyResponsiveProps } from './_helpers'
+
 const BOX_META: ComponentMeta<BoxProps> = {
   overview: {
     name: 'Box',
     description:
-      "Box is Nebula-kit's foundational surface. It exposes a curated set of core CSS properties - appearance, spacing, sizing, and positioning - so you can style a plain block-level element directly in JSX.",
+      'Box is the foundational surface component. It exposes a curated set of core CSS properties - appearance, spacing, sizing, and positioning - so you can style a plain block-level element directly in JSX.',
     responsibilities: [
       'acts as the surface foundation that higher-level components (e.g. Flex, Grid, Table) inherit from',
+      'provides optional interactivity (hover, focus, press states) for clickable or focusable surfaces',
     ],
     useCases: [
       "use as a simple wrapper, the way you'd normally reach for a div",
@@ -28,11 +32,12 @@ const BOX_META: ComponentMeta<BoxProps> = {
     ],
     defaultBehavior: [
       'inherits all NativeElem props',
-      'block element (renders as a div)',
-      'children and all props are optional',
-      'ghost variant + neutral intent',
-      'all spacings zeroed',
+      'renders as a block-level <div>',
+      'accepts optional children and props',
+      'uses ghost variant with neutral intent',
+      'applies zero spacing by default',
     ],
+    inheritedProps: NATIVE_ELEM_META.props.map(({ name }) => name),
   },
   props: [
     {
@@ -186,7 +191,8 @@ const BOX_META: ComponentMeta<BoxProps> = {
       defaultValue: CssTextAlign[0],
       isRequired: false,
       isResponsive: true,
-      description: 'Controls the horizontal alignment of text content inside the Box.',
+      description:
+        'Controls horizontal alignment of inline-level content (text and inline elements) inside the Box.',
     },
     {
       category: PropCategory.sizing,
@@ -423,19 +429,19 @@ const BOX_META: ComponentMeta<BoxProps> = {
           Box as link
         </Box>
       ),
-      description: 'Box rendered as link element',
+      description: 'Box rendered as link element.',
+    },
+    {
+      jsx: (
+        <Box variant="solid" intent="secondary" padding={10} interactive>
+          Interactive Box
+        </Box>
+      ),
+      description: 'An example of a Box component with a solid secondary style, and interactive behavior.',
     },
   ],
 }
 
-const responsiveProps: typeof BOX_META.overview.responsiveProps = []
-
-BOX_META.props.forEach(prop => {
-  if (prop.isResponsive) {
-    responsiveProps.push(prop.name)
-  }
-})
-
-BOX_META.overview.responsiveProps = responsiveProps
+applyResponsiveProps(BOX_META)
 
 export default BOX_META
