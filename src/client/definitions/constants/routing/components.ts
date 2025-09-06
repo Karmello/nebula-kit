@@ -1,7 +1,7 @@
 const COMPONENT_SECTIONS = [
   { key: 'overview', label: 'Overview' },
   { key: 'examples', label: 'Examples' },
-  { key: 'props', label: 'Props' },
+  { key: 'props', label: 'Own props' },
 ]
 
 export const COMPONENT_CATEGORIES = [
@@ -33,7 +33,10 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'elements',
     label: 'Elements',
-    items: [{ key: 'list', label: 'List', sections: COMPONENT_SECTIONS }],
+    items: [
+      { key: 'list', label: 'List', sections: COMPONENT_SECTIONS },
+      { key: 'svg-icon', label: 'SvgIcon', sections: COMPONENT_SECTIONS },
+    ],
   },
   {
     key: 'containers',
@@ -59,6 +62,7 @@ export const COMPONENT_CATEGORIES = [
     items: [
       { key: 'nebkit-provider', label: 'NebKitProvider', sections: COMPONENT_SECTIONS },
       { key: 'native-elem', label: 'NativeElem', sections: COMPONENT_SECTIONS },
+      { key: 'with-icon', label: 'WithIcon', sections: COMPONENT_SECTIONS },
     ],
   },
 ]

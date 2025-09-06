@@ -61,7 +61,7 @@ export type TextInheritedProps<E extends ElementType> = MakeRequired<
   Pick<BoxProps<E>, (typeof PROPS_INHERITED_FROM_BOX)[number]>,
   'children'
 > &
-  Pick<WithIconProps, (typeof PROPS_INHERITED_FROM_WITH_ICON)[number]>
+  Partial<Pick<WithIconProps, (typeof PROPS_INHERITED_FROM_WITH_ICON)[number]>>
 
 export type TextProps<E extends ElementType = 'div'> = TextOwnProps & TextInheritedProps<E>
 

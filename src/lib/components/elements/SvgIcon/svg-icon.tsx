@@ -1,13 +1,17 @@
 import { IconName, getSvgIconComponent } from 'lib/icons'
-import { BoxIntent, ScaleValue } from 'lib/definitions'
+import { BoxIntent, DEFAULT_BOX_INTENT, DEFAULT_SVG_ICON_SIZE, ScaleValue } from 'lib/definitions'
 
-export type SvgIconOwnProps = {
+export type SvgIconProps = {
   name: IconName
   size?: ScaleValue
-  intent?: `${BoxIntent}`
+  intent?: BoxIntent
 }
 
-export const SvgIcon = ({ name, size, intent = 'neutral' }: SvgIconOwnProps) => {
+export const SvgIcon = ({
+  name,
+  size = DEFAULT_SVG_ICON_SIZE,
+  intent = DEFAULT_BOX_INTENT,
+}: SvgIconProps) => {
   const Svg = getSvgIconComponent(name)
 
   return (

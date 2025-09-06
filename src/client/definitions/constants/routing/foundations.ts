@@ -55,4 +55,15 @@ export const FOUNDATION_CATEGORIES = [
       },
     ],
   },
+  {
+    key: 'resources',
+    label: 'Resources',
+    items: [
+      {
+        key: 'assets',
+        label: 'Assets',
+        sections: [{ key: 'icons', label: 'Icons' }],
+      },
+    ],
+  },
 ]

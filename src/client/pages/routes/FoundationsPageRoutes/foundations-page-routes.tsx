@@ -21,7 +21,6 @@ export const FoundationsPageRoutes = () => {
                   key={`${categoryKey}/${itemKey}/${sectionKey}`}
                   path={`${categoryKey}/${itemKey}/${sectionKey}`}
                   Component={() => {
-                    console.log(`../../foundations/${pascalCase(sectionKey)}/${kebabCase(sectionKey)}`)
                     let Component
                     try {
                       Component = require(

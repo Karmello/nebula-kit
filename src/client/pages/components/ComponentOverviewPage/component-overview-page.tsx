@@ -64,7 +64,7 @@ export const ComponentOverviewPage = memo(() => {
       {responsibilities ? <ListWithHeading heading="Responsibilities:" items={responsibilities} /> : null}
       {useCases ? <ListWithHeading heading="Use cases:" items={useCases} /> : null}
       {defaultBehavior ? <ListWithHeading heading="Default behavior:" items={defaultBehavior} /> : null}
-      {responsiveProps ? <ListWithChips heading="Responsive props:" items={responsiveProps} /> : null}
+      {responsiveProps ? <ListWithChips heading="Responsive own props:" items={responsiveProps} /> : null}
       {inheritedProps
         ? Object.keys(inheritedProps).map(componentName => (
             <ListWithChips
