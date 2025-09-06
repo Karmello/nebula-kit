@@ -11,7 +11,7 @@ import {
   ScaleValue,
 } from 'lib/definitions'
 
-import { NativeElem, NativeElemProps } from 'lib/components/utility'
+import { NativeElemProps } from 'lib/components/utility'
 
 export type BoxOwnProps = {
   variant?: BoxVariant
