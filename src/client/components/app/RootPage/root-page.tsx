@@ -8,7 +8,7 @@ import { useLibStore } from 'lib/state'
 import styles from './root-page.module.scss'
 
 export const RootPage = () => {
-  const { lang, theme } = useLibStore()
+  const { theme } = useLibStore()
 
   return (
     <div className={styles.RootPage}>
@@ -19,10 +19,7 @@ export const RootPage = () => {
         <Route
           path="*"
           element={
-            <Navigate
-              to={{ pathname: `/${PageKey.home}`, search: formatAsQueryString({ lang, theme }) }}
-              replace
-            />
+            <Navigate to={{ pathname: `/${PageKey.home}`, search: formatAsQueryString({ theme }) }} replace />
           }
         />
       </Routes>

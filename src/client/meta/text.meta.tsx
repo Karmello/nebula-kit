@@ -17,7 +17,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
     ],
     characteristics: [
       'requires children',
-      'The elem prop is restricted to <p>, <span>, <h1>, <h2>, <h3>, <h4>, <h5>, <h6>,',
+      'the elem prop is restricted to <p>, <span>, <h1>, <h2>, <h3>, <h4>, <h5>, <h6>,',
     ],
     defaultBehavior: ['renders as a <p> tag', 'uses neutral text intent'],
     useCases: [

@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 
 import { SidePanelLayout, SideNav, Breadcrumb, Section, Spacer } from 'lib/components'
 import { useFoundationsPageStore } from 'client/store'
@@ -9,7 +8,6 @@ import { FOUNDATION_CATEGORIES, PageKey } from 'client/definitions'
 import { FoundationsPageRoutes } from 'client/pages'
 
 export const FoundationsPage = () => {
-  const { t } = useTranslation()
   const { pathname } = useLocation()
 
   const navigateTo = useNavigateTo()
@@ -30,12 +28,7 @@ export const FoundationsPage = () => {
     <SidePanelLayout>
       <SidePanelLayout.Header>
         <Breadcrumb
-          items={[
-            t('common.foundations'),
-            activeCategoryObj?.label,
-            activeItemObj?.label,
-            activeSectionObj?.label,
-          ]}
+          items={['Foundations', activeCategoryObj?.label, activeItemObj?.label, activeSectionObj?.label]}
         />
       </SidePanelLayout.Header>
       <SidePanelLayout.Main paddingLeft={10}>

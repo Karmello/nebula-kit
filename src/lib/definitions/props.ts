@@ -1,9 +1,11 @@
 import { ElementType } from 'react'
 
 import { BoxProps } from 'lib/components'
-import { Breakpoint } from 'lib/definitions'
+import { Breakpoint, ScaleValue } from 'lib/definitions'
 
 // constants
+
+export const Theme = ['light', 'gray', 'dark'] as const
 
 export const BoxVariant = ['solid', 'outline', 'ghost'] as const
 
@@ -37,6 +39,7 @@ export const ButtonSize = ['sm', 'md', 'lg'] as const
 export const HorizontalPosition = ['left', 'center', 'right'] as const
 
 // types
+export type Theme = (typeof Theme)[number]
 export type BoxVariant = (typeof BoxVariant)[number]
 export type BoxIntent = (typeof BoxIntent)[number]
 export type ResponsiveProp<T> = T | Partial<Record<Breakpoint, T>>
@@ -66,6 +69,9 @@ export type LayoutSlotProps<E extends ElementType> = Pick<
 >
 
 // defaults
+export const DEFAULT_THEME: Theme = 'light'
+export const DEFAULT_BORDER_RADIUS: ScaleValue = 0
+
 export const DEFAULT_BOX_VARIANT: BoxVariant = 'ghost'
 export const DEFAULT_BOX_INTENT: BoxIntent = 'neutral'
 

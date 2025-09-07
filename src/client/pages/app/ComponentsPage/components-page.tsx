@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 
 import { SidePanelLayout, SideNav, Breadcrumb, Section, Spacer } from 'lib/components'
 import { useComponentsPageStore } from 'client/store'
@@ -9,7 +8,6 @@ import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
 import { ComponentsPageRoutes } from 'client/pages'
 
 export const ComponentsPage = () => {
-  const { t } = useTranslation()
   const { pathname } = useLocation()
 
   const navigateTo = useNavigateTo()
@@ -30,12 +28,7 @@ export const ComponentsPage = () => {
     <SidePanelLayout>
       <SidePanelLayout.Header>
         <Breadcrumb
-          items={[
-            t('common.components'),
-            activeCategoryObj?.label,
-            activeItemObj?.label,
-            activeSectionObj?.label,
-          ]}
+          items={['Components', activeCategoryObj?.label, activeItemObj?.label, activeSectionObj?.label]}
         />
       </SidePanelLayout.Header>
       <SidePanelLayout.Main paddingLeft={10}>

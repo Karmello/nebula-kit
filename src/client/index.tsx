@@ -4,8 +4,6 @@ import { BrowserRouter } from 'react-router-dom'
 import { App } from 'client/components'
 import { NebKitProvider } from 'lib/components'
 
-import './dictionary'
-
 const Node = () => (
   <BrowserRouter>
     <NebKitProvider defaultBorderRadius={3}>

@@ -1,5 +1,4 @@
 import { useLocation } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 
 import { AppNavBar as NebAppNavBar } from 'lib/components'
 import { useFoundationsPageStore, useComponentsPageStore } from 'client/store'
@@ -7,7 +6,6 @@ import { useNavigateTo } from 'client/services'
 import { PageKey } from 'client/definitions'
 
 export const AppNavBar = () => {
-  const { t } = useTranslation()
   const { pathname } = useLocation()
 
   const foundationsPageStore = useFoundationsPageStore()
@@ -19,9 +17,9 @@ export const AppNavBar = () => {
   return (
     <NebAppNavBar
       buttons={[
-        { value: PageKey.home, label: t('common.home') },
-        { value: PageKey.foundations, label: t('common.foundations') },
-        { value: PageKey.components, label: t('common.components') },
+        { value: PageKey.home, label: 'Home' },
+        { value: PageKey.foundations, label: 'Foundations' },
+        { value: PageKey.components, label: 'Components' },
       ]}
       selectedValue={pageKey}
       onSelect={value => {

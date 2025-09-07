@@ -7,7 +7,7 @@ import { useLibStore } from 'lib/state'
 import { Spacer } from 'lib/components'
 
 export const FoundationsPageRoutes = () => {
-  const { lang, theme } = useLibStore()
+  const { theme } = useLibStore()
 
   return (
     <>
@@ -42,7 +42,7 @@ export const FoundationsPageRoutes = () => {
             <Navigate
               to={{
                 pathname: `/${PageKey.foundations}/${FOUNDATION_CATEGORIES[0].key}/${FOUNDATION_CATEGORIES[0].items[0].key}/${FOUNDATION_CATEGORIES[0].items[0].sections[0].key}`,
-                search: formatAsQueryString({ lang, theme }),
+                search: formatAsQueryString({ theme }),
               }}
               replace
             />
