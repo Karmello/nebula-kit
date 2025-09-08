@@ -7,6 +7,7 @@ export default {
     description: 'Utility wrapper that aligns an icon alongside its children.',
     responsibilities: ['insert an icon', 'render children exactly as passed'],
     characteristics: [
+      'wraps the icon and children in a <span> element',
       'iconName is required to render an icon',
       'if no children are provided, only the icon is rendered',
     ],

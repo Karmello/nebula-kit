@@ -1,14 +1,14 @@
 import { IconPosition } from 'lib/definitions'
+import { SvgIconProps } from 'lib/components'
 
 import { NativeElemProps } from '../NativeElem'
-import { SvgIconProps } from 'lib/components/elements'
 
 export type WithIconOwnProps = {
   iconPosition?: IconPosition
 }
 
 export const WITH_ICON_INHERITED_PROPS = {
-  NativeElem: ['children', 'elemRef'] as const satisfies readonly (keyof NativeElemProps<any>)[],
+  NativeElem: ['children', 'elemProps'] as const satisfies readonly (keyof NativeElemProps<'span'>)[],
   SvgIcon: ['iconName'] as const satisfies readonly (keyof SvgIconProps)[],
 }
 

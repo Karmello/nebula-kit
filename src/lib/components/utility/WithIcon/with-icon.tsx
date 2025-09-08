@@ -1,3 +1,5 @@
+import classNames from 'classnames'
+
 import { WITH_ICON_DEFAULT_ICON_POSITION } from 'lib/definitions'
 import { NativeElem, SvgIcon, WithIconProps } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
@@ -5,17 +7,19 @@ import { withPrefix } from 'lib/helpers'
 import './with-icon.scss'
 
 export const WithIcon = ({
-  children,
-  elemRef,
-  iconName,
+  // own
   iconPosition = WITH_ICON_DEFAULT_ICON_POSITION,
+  // NativeElem
+  children,
+  elemProps,
+  // SvgIcon
+  iconName,
 }: WithIconProps) => {
-  if (!iconName) {
-    return children
-  }
-
   return (
-    <NativeElem elem="span" elemProps={{ className: withPrefix('with-icon') }} elemRef={elemRef}>
+    <NativeElem
+      elem="span"
+      elemProps={{ ...elemProps, className: classNames(withPrefix('with-icon'), elemProps?.className || '') }}
+    >
       {iconPosition === 'left' ? <SvgIcon iconName={iconName} /> : null}
       {children}
       {iconPosition === 'right' ? <SvgIcon iconName={iconName} /> : null}
