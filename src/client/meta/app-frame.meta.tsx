@@ -23,7 +23,6 @@ const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
       category: PropCategory.other,
       name: 'children',
       options: ['ReactNode'],
-      defaultValue: '',
       isRequired: true,
       isResponsive: false,
       description: '',

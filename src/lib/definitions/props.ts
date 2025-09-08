@@ -81,5 +81,5 @@ export const DEFAULT_BUTTON_VARIANT: BoxVariant = 'solid'
 export const DEFAULT_BUTTON_INTENT: BoxIntent = 'tertiary'
 export const DEFAULT_BUTTON_SIZE: ButtonSize = 'md'
 
-export const DEFAULT_SVG_ICON_SIZE = 8
+export const DEFAULT_SVG_ICON_SIZE = 10
 export const WITH_ICON_DEFAULT_ICON_POSITION: IconPosition = 'left'

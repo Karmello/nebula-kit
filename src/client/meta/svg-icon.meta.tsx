@@ -23,7 +23,6 @@ export default {
       category: '',
       name: 'iconName',
       options: ['IconName'],
-      defaultValue: '',
       isRequired: true,
       isResponsive: false,
       description: 'Specifies which icon from the library to render.',

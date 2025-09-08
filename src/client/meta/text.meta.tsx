@@ -97,7 +97,6 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       category: PropCategory.behavior,
       name: 'clampLines',
       options: ['number'],
-      defaultValue: '',
       isRequired: false,
       isResponsive: false,
       description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',

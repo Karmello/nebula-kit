@@ -32,7 +32,6 @@ const SIDE_PANEL_LAYOUT_META: ComponentMeta<SidePanelLayoutOwnProps> = {
       category: PropCategory.other,
       name: 'children',
       options: ['ReactNode'],
-      defaultValue: '',
       isRequired: true,
       isResponsive: false,
       description: '',

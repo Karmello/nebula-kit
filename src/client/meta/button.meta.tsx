@@ -1,58 +1,15 @@
 import { PropCategory } from 'client/definitions'
-import { ButtonOwnProps } from 'lib/components'
-
-import {
-  ComponentMeta,
-  BoxVariant,
-  BoxIntent,
-  ButtonSize,
-  DEFAULT_BORDER_RADIUS,
-  IconPosition,
-  DEFAULT_BUTTON_VARIANT,
-  DEFAULT_BUTTON_INTENT,
-  DEFAULT_BUTTON_SIZE,
-  WITH_ICON_DEFAULT_ICON_POSITION,
-} from 'lib/definitions'
-
-import { ICON_NAMES } from 'lib/icons'
+import { BUTTON_INHERITED_PROPS, ButtonOwnProps } from 'lib/components'
+import { ComponentMeta, BoxIntent, ButtonSize, DEFAULT_BUTTON_SIZE } from 'lib/definitions'
 
 const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
   overview: {
     name: 'Button',
     description:
       "Button is Nebula-kit's standard action control. It adapts to different contexts by supporting visual variants, sizing, typography options, and optional icon integration, while staying consistent with the system's design language.",
-    propsDescription: '',
+    inheritedProps: BUTTON_INHERITED_PROPS,
   },
   props: [
-    {
-      category: PropCategory.appearance,
-      name: 'variant',
-      options: Object.values(BoxVariant),
-      defaultValue: DEFAULT_BUTTON_VARIANT,
-      isRequired: false,
-      isResponsive: false,
-      description: 'Controls the overall visual style of the button’s container.',
-    },
-    {
-      category: PropCategory.appearance,
-      name: 'intent',
-      options: Object.values(BoxIntent),
-      defaultValue: DEFAULT_BUTTON_INTENT,
-      isRequired: false,
-      isResponsive: false,
-      description:
-        'Communicates the purpose of the button through its visual styling, indicating how the action should be interpreted.',
-    },
-    {
-      category: PropCategory.appearance,
-      name: 'textIntent',
-      options: Object.values(BoxIntent),
-      defaultValue: '',
-      isRequired: false,
-      isResponsive: false,
-      description:
-        "Adjusts the visual styling of the button's label to reflect emphasis or semantic meaning, independent of the button's container style.",
-    },
     {
       category: PropCategory.appearance,
       name: 'size',
@@ -64,48 +21,12 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
     },
     {
       category: PropCategory.appearance,
-      name: 'borderRadius',
-      options: ['ScaleValue', 'CSS'],
-      defaultValue: String(DEFAULT_BORDER_RADIUS),
+      name: 'textIntent',
+      options: Object.values(BoxIntent),
       isRequired: false,
       isResponsive: false,
-      description: "Defines the roundness of the button's corners, shaping its overall silhouette.",
-    },
-    {
-      category: PropCategory.typography,
-      name: 'bold',
-      options: ['boolean'],
-      defaultValue: 'false',
-      isRequired: false,
-      isResponsive: false,
-      description: 'Toggles bold styling for the text.',
-    },
-    {
-      category: PropCategory.state,
-      name: 'disabled',
-      options: ['boolean'],
-      defaultValue: 'false',
-      isRequired: false,
-      isResponsive: false,
-      description: "Prevents user interaction and signals that the button's action is unavailable.",
-    },
-    {
-      category: PropCategory.adornments,
-      name: 'iconName',
-      options: Object.values(ICON_NAMES),
-      defaultValue: '',
-      isRequired: false,
-      isResponsive: false,
-      description: 'Specifies which icon is rendered inside the button.',
-    },
-    {
-      category: PropCategory.adornments,
-      name: 'iconPosition',
-      options: Object.values(IconPosition),
-      defaultValue: WITH_ICON_DEFAULT_ICON_POSITION,
-      isRequired: false,
-      isResponsive: false,
-      description: "Defines where the icon is placed in relation to the button's label.",
+      description:
+        "Adjusts the visual styling of the button's label to reflect emphasis or semantic meaning, independent of the button's container style.",
     },
   ],
 }

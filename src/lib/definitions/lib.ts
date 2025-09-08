@@ -35,7 +35,7 @@ export type ComponentMeta<PropsType> = {
     category: string
     name: keyof PropsType
     options: string[]
-    defaultValue: string
+    defaultValue?: string
     isRequired: boolean
     isResponsive: boolean
     description: string

@@ -1,10 +1,11 @@
 import { useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
-import { Box, Flex, Button, IconButton, BUTTON_SIZE_TO_PROPS } from 'lib/components'
+import { Box, Flex, Button, IconButton } from 'lib/components'
 import { useScreen, withPrefix } from 'lib/helpers'
 
 import './app-nav-bar.scss'
+import { BUTTON_SIZE_CONFIG } from 'lib/components/controls/Button/definitions'
 
 export type AppNavBarOwnProps = {
   className?: string
@@ -30,12 +31,12 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
       alignItems="flex-end"
       borderRadius={0}
     >
-      <Box blockSize={{ base: `var(--neb-scale-${BUTTON_SIZE_TO_PROPS.md.blockSize})`, sm: 0 }}>
+      <Box display={{ sm: 'none' }}>
         <IconButton
           elemProps={{
             onClick: () => setMenuOpen(!menuOpen),
           }}
-          iconName={bp === 'base' ? (menuOpen ? 'close' : 'menu') : undefined}
+          iconName={menuOpen ? 'close' : 'menu'}
           intent="tertiary"
           borderRadius={0}
         />
@@ -48,7 +49,7 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
         flexDirection="row"
         inlineSize="100%"
         intent="tertiary"
-        blockSize={{ base: 0, sm: `var(--neb-scale-${BUTTON_SIZE_TO_PROPS.md.blockSize})` }}
+        blockSize={{ base: 0, sm: `var(--neb-scale-${BUTTON_SIZE_CONFIG.md.blockSize})` }}
       >
         {buttons.map(({ value, label }) => {
           return (
@@ -76,7 +77,7 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
         flexDirection="column"
         blockSize={
           bp === 'base' && menuOpen
-            ? `calc(var(--neb-scale-${BUTTON_SIZE_TO_PROPS.md.blockSize}) * ${buttons.length})`
+            ? `calc(var(--neb-scale-${BUTTON_SIZE_CONFIG.md.blockSize}) * ${buttons.length})`
             : 0
         }
         inlineSize="100%"

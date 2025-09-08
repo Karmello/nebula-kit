@@ -32,7 +32,6 @@ export default {
       category: '',
       name: 'children',
       options: ['ReactElement'],
-      defaultValue: '',
       isRequired: true,
       isResponsive: false,
       description: 'The application or subtree wrapped by the provider.',

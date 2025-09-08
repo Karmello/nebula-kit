@@ -1,6 +1,6 @@
 import { useLayoutEffect, useMemo, useState } from 'react'
 
-import { Box, Button, BUTTON_SIZE_TO_PROPS, ButtonProps, Flex } from 'lib/components'
+import { Box, Button, ButtonProps, Flex, BUTTON_SIZE_CONFIG } from 'lib/components'
 import { scale } from 'lib/helpers'
 
 type Group = Omit<ButtonProps, 'children' | 'size' | 'variant' | 'intent'> & {
@@ -112,7 +112,7 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
             </Button>
             <Box
               blockSize={
-                isGroupOpen ? `calc(${scale(BUTTON_SIZE_TO_PROPS.md.blockSize)} * ${items?.length || 0})` : 0
+                isGroupOpen ? `calc(${scale(BUTTON_SIZE_CONFIG.md.blockSize)} * ${items?.length || 0})` : 0
               }
               overflowX="hidden"
               overflowY="hidden"

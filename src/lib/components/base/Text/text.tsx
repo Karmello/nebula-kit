@@ -10,20 +10,21 @@ import { TEXT_TYPOGRAPHY_CONFIG, TextProps } from './definitions'
 import './text.scss'
 
 export const Text = <E extends TextElem = 'p'>({
-  children,
-  elem,
-  elemProps,
-  elemRef,
-  intent,
+  // own
+  typography = DEFAULT_TEXT_TYPOGRAPHY,
   fontSize,
   lineHeight,
-  textAlign,
-  typography = DEFAULT_TEXT_TYPOGRAPHY,
   bold = false,
   italic = false,
   noWrap = false,
   truncate = false,
   clampLines,
+  // box
+  children,
+  elem,
+  elemProps,
+  elemRef,
+  intent,
   iconName,
   iconPosition,
   ...boxProps
@@ -36,9 +37,8 @@ export const Text = <E extends TextElem = 'p'>({
     computeResponsiveCss(elemRef || ref, bp, {
       fontSize: fontSize !== undefined ? fontSize : TEXT_TYPOGRAPHY_CONFIG[typography].fontSize,
       lineHeight: lineHeight !== undefined ? lineHeight : TEXT_TYPOGRAPHY_CONFIG[typography].lineHeight,
-      textAlign,
     })
-  }, [bp, fontSize, lineHeight, textAlign])
+  }, [bp, fontSize, lineHeight])
 
   return (
     <Box
@@ -63,11 +63,14 @@ export const Text = <E extends TextElem = 'p'>({
         ...getDataAttrs('text', { typography, bold, italic, noWrap, truncate }),
       }}
       variant="ghost"
-      textAlign={textAlign}
     >
-      <WithIcon iconName={iconName} iconPosition={iconPosition}>
-        {children}
-      </WithIcon>
+      {iconName ? (
+        <WithIcon iconName={iconName} iconPosition={iconPosition}>
+          {children}
+        </WithIcon>
+      ) : (
+        children
+      )}
     </Box>
   )
 }

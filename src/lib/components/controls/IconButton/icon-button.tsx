@@ -1,13 +1,10 @@
 import classNames from 'classnames'
 
-import { Button, ButtonProps, WithIconProps } from 'lib/components'
+import { Button } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
+import { IconButtonProps } from './definitions'
 import './icon-button.scss'
-
-export type IconButtonProps = Omit<ButtonProps, 'children' | 'iconName' | 'iconPosition'> & {
-  iconName: WithIconProps['iconName']
-}
 
 export const IconButton = ({ elemProps, ...rest }: IconButtonProps) => {
   return (
@@ -17,7 +14,9 @@ export const IconButton = ({ elemProps, ...rest }: IconButtonProps) => {
         className: classNames(withPrefix('icon-btn'), elemProps?.className),
       }}
       {...rest}
-    />
+    >
+      {''}
+    </Button>
   )
 }
 

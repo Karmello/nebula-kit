@@ -1,4 +1,4 @@
-import { ElementType, ComponentRef, useRef, useLayoutEffect } from 'react'
+import { ElementType, ComponentRef, useRef, useLayoutEffect, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
 import { useLibStore } from 'lib/state'
@@ -18,8 +18,8 @@ export const Box = <E extends ElementType = 'div'>({
   variant = DEFAULT_BOX_VARIANT,
   intent = DEFAULT_BOX_INTENT,
   interactive,
-  disabled,
-  //
+  disabled = false,
+  // css
   opacity,
   borderRadius,
   textAlign,
@@ -130,12 +130,14 @@ export const Box = <E extends ElementType = 'div'>({
   return (
     <NativeElem
       elem={elem}
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('box'), elemProps?.className),
-        disabled,
-        ...getDataAttrs('box', { variant, intent, interactive, disabled }),
-      }}
+      elemProps={
+        {
+          ...elemProps,
+          className: classNames(withPrefix('box'), elemProps?.className || ''),
+          disabled,
+          ...getDataAttrs('box', { variant, intent, interactive, disabled }),
+        } as PropsWithoutRef<React.ComponentProps<E>>
+      }
       elemRef={elemRef || ref}
     >
       {children}
