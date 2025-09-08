@@ -1,7 +1,7 @@
+import { createRef } from 'react'
 import { expectType, expectError } from 'tsd'
 
 import { NativeElem } from '../'
-import { createRef } from 'react'
 
 // no children required
 expectType(<NativeElem />)
