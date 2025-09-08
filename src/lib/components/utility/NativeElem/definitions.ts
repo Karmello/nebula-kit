@@ -5,7 +5,7 @@ type DataAttrs = {
   [K in `data-${string}`]?: string | number | boolean | undefined
 }
 
-export type NativeElemProps<E extends ElementType> = {
+export type NativeElemProps<E extends ElementType = 'div'> = {
   children?: ReactNode
   elem?: E
   elemProps?: ComponentPropsWithoutRef<E> & DataAttrs

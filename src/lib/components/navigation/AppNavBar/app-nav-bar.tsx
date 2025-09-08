@@ -31,12 +31,15 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
       alignItems="flex-end"
       borderRadius={0}
     >
-      <Box display={{ sm: 'none' }}>
+      <Box
+        blockSize={{ base: `var(--neb-scale-${BUTTON_SIZE_CONFIG.md.blockSize})`, sm: 0 }}
+        inlineSize={{ base: `var(--neb-scale-${BUTTON_SIZE_CONFIG.md.blockSize})`, sm: 0 }}
+      >
         <IconButton
           elemProps={{
             onClick: () => setMenuOpen(!menuOpen),
           }}
-          iconName={menuOpen ? 'close' : 'menu'}
+          iconName={bp === 'base' ? (menuOpen ? 'close' : 'menu') : 'menu'}
           intent="tertiary"
           borderRadius={0}
         />

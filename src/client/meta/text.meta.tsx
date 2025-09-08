@@ -1,4 +1,4 @@
-import { DEFAULT_TEXT_TYPOGRAPHY } from 'lib/definitions'
+import { DEFAULT_TEXT_TYPOGRAPHY, TextElem } from 'lib/definitions'
 import { ComponentMeta, TextTypography } from 'lib/definitions'
 import { Text, TEXT_TYPOGRAPHY_CONFIG, TEXT_INHERITED_PROPS, TextOwnProps } from 'lib/components'
 import { PropCategory } from 'client/definitions'
@@ -17,7 +17,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
     ],
     characteristics: [
       'requires children',
-      'the elem prop is restricted to <p>, <span>, <h1>, <h2>, <h3>, <h4>, <h5>, <h6>,',
+      `the elem prop is restricted to ${TextElem.map(s => `<${s}>`).join(', ')}`,
     ],
     defaultBehavior: ['renders as a <p> tag', 'uses neutral text intent'],
     useCases: [
@@ -37,7 +37,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       isRequired: false,
       isResponsive: false,
       description:
-        'Applies a predefined typography style from the design system, controlling elem and fontSize together.',
+        'Applies a predefined typography style from the design system, controlling elem, fontSize and lineHeight together.',
     },
     {
       category: PropCategory.typography,
@@ -55,7 +55,8 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       defaultValue: String(TEXT_TYPOGRAPHY_CONFIG[DEFAULT_TEXT_TYPOGRAPHY].lineHeight),
       isRequired: false,
       isResponsive: true,
-      description: 'Sets the vertical spacing between lines of text.',
+      description:
+        'Sets the vertical spacing between lines of text, overriding lineHeight value provided by typography.',
     },
     {
       category: PropCategory.typography,
@@ -108,6 +109,10 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       description: 'Uses body typography and renders a <p> tag by default.',
     },
     {
+      jsx: <Text bold>Bold paragraph</Text>,
+      description: 'Renders bold paragraph.',
+    },
+    {
       jsx: <Text italic>Italic paragraph</Text>,
       description: 'Renders text in italic style.',
     },
@@ -120,7 +125,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       description: 'Supports inline icons aligned with text.',
     },
     {
-      jsx: <Text typography="h6">Heading 6</Text>,
+      jsx: <Text typography="h5">Heading 5</Text>,
       description: 'The typography prop sets the HTML tag, font size, and line height automatically.',
     },
   ],
