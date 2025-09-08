@@ -1,6 +1,5 @@
-import { BoxOwnProps, BoxProps, TextOwnProps, TextProps } from 'lib/components/base'
+import { BoxProps, TextProps } from 'lib/components/base'
 import { ButtonSize, MakeRequired, ScaleValue } from 'lib/definitions'
-import { ElementType } from 'react'
 
 export type ButtonOwnProps = {
   size?: ButtonSize
