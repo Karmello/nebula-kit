@@ -1,35 +1,12 @@
 import { RefObject, CSSProperties, ComponentRef } from 'react'
 import isNil from 'lodash/isNil'
-import isObject from 'lodash/isObject'
 
 import { Breakpoint, ResponsiveProp, BREAKPOINTS } from 'lib/definitions'
-import { formatCssValue } from './formatCssValue'
 
-type ResponsiveProps<T> = Partial<Record<keyof CSSProperties, ResponsiveProp<T>>>
+import { getCssValuesPerBp } from './getCssValuesPerBp'
 
-type Bucket = Partial<Record<keyof CSSProperties, unknown>>
-
-const getCssValuesPerBp = (breakpoint: Breakpoint, props: ResponsiveProps<string | number>) => {
-  const bucket: Bucket = {}
-
-  for (const key in props) {
-    const propName = key as keyof CSSProperties
-    const propValue = props[propName]
-
-    if (isNil(propValue)) {
-      continue
-    }
-
-    if (breakpoint === 'base' || isObject(propValue)) {
-      const value = isObject(propValue) ? propValue[breakpoint] : propValue
-      if (!isNil(value)) {
-        bucket[propName] = formatCssValue(propName, value)
-      }
-    }
-  }
-
-  return bucket
-}
+export type ResponsiveProps<T> = Partial<Record<keyof CSSProperties, ResponsiveProp<T>>>
+export type Bucket = Partial<Record<keyof CSSProperties, unknown>>
 
 export const computeResponsiveCss = (
   ref: RefObject<ComponentRef<any>>,

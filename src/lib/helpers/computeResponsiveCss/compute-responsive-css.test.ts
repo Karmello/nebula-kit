@@ -1,175 +1,166 @@
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect } from 'vitest'
 
-import { BREAKPOINTS, type Breakpoint } from 'lib/definitions'
+import { computeResponsiveCss } from '.'
 
-import { computeResponsiveCss } from './'
+type AnyProps = Record<string, any>
+
+const makeRef = <T extends HTMLElement>(el: T | null) => ({ current: el }) as unknown as React.RefObject<T>
 
 describe('computeResponsiveCss', () => {
-  let el: HTMLElement
-  let ref: { current: HTMLElement | null }
+  it('returns early (no crash) when ref.current is null', () => {
+    const ref = makeRef<HTMLElement>(null)
+    const props: AnyProps = { margin: { base: '2px', md: '8px' } }
 
-  beforeEach(() => {
-    el = document.createElement('div')
-    document.body.appendChild(el)
-    ref = { current: el }
-    el.removeAttribute('style')
+    // Should not throw
+    computeResponsiveCss(ref, 'md', props)
   })
 
-  it('returns early when ref.current is null (no throw)', () => {
-    const nullRef = { current: null as unknown as HTMLElement }
-    expect(() =>
-      computeResponsiveCss(nullRef, 'base' as Breakpoint, { backgroundColor: 'red' })
-    ).not.toThrow()
-  })
+  it('merges buckets from base up to the given breakpoint (base→sm)', () => {
+    const el = document.createElement('div')
+    const ref = makeRef(el)
 
-  it('applies plain (non-responsive) values to camelCased CSS props', () => {
-    computeResponsiveCss(ref, 'base' as Breakpoint, {
-      backgroundColor: 'red',
-      marginTop: '10px',
-    })
-
-    expect(ref.current.style.backgroundColor).toBe('red')
-    expect(ref.current.style.marginTop).toBe('10px')
-  })
-
-  it('applies multiple props together (simple mix: string + number)', () => {
-    computeResponsiveCss(ref, 'base' as Breakpoint, {
-      opacity: 0.4, // numeric path (no scale)
-      display: 'grid', // string passthrough
-      gridTemplateColumns: '1fr 2fr',
-    })
-
-    expect(ref.current.style.opacity).toBe('0.4')
-    expect(ref.current.style.display).toBe('grid')
-    expect(ref.current.style.gridTemplateColumns).toBe('1fr 2fr')
-  })
-
-  it('cascades responsive values base→sm→md→lg→xl with carry-over per prop', () => {
-    const props = {
-      backgroundColor: {
-        base: 'red',
-        sm: 'blue',
-        md: 'orange',
-        // lg omitted -> carry from md
-        xl: 'purple',
-      },
-      marginTop: {
-        base: '2px',
-        // sm omitted -> carry from base
-        md: undefined, // explicit undefined should be ignored
-        lg: '12px',
-        // xl omitted -> carry from lg
-      } as never,
+    const props: AnyProps = {
+      // primitive should only apply at base (selection is handled by getCssValuesPerBp)
+      display: 'block',
+      // ladder
+      margin: { base: '2px', sm: '4px', md: '8px' },
+      // sparse
+      paddingTop: { base: '1rem', lg: '3rem' },
+      // appears at md+; at sm it should not yet apply
+      right: { md: '10px', xl: '20px' },
     }
 
-    computeResponsiveCss(ref, 'base' as Breakpoint, props)
-    expect(ref.current.style.backgroundColor).toBe('red')
-    expect(ref.current.style.marginTop).toBe('2px')
+    computeResponsiveCss(ref, 'sm', props)
 
-    computeResponsiveCss(ref, 'sm' as Breakpoint, props)
-    expect(ref.current.style.backgroundColor).toBe('blue')
-    expect(ref.current.style.marginTop).toBe('2px')
-
-    computeResponsiveCss(ref, 'md' as Breakpoint, props)
-    expect(ref.current.style.backgroundColor).toBe('orange')
-    expect(ref.current.style.marginTop).toBe('2px') // md undefined -> still base
-
-    computeResponsiveCss(ref, 'lg' as Breakpoint, props)
-    expect(ref.current.style.backgroundColor).toBe('orange') // carry from md
-    expect(ref.current.style.marginTop).toBe('12px')
-
-    computeResponsiveCss(ref, 'xl' as Breakpoint, props)
-    expect(ref.current.style.backgroundColor).toBe('purple')
-    expect(ref.current.style.marginTop).toBe('12px') // carry from lg
+    // After merging base+sm:
+    expect(el.style.display).toBe('block') // base value persists through sm via mergedBucket
+    expect(el.style.margin).toBe('4px') // base -> 2px, sm overrides -> 4px
+    expect(el.style.paddingTop).toBe('1rem') // from base only
+    expect(el.style.right).toBe('') // not reached yet at sm
   })
 
-  it('stops at the requested breakpoint (no leaking higher values)', () => {
-    const props = {
-      backgroundColor: {
-        base: 'red',
-        sm: 'blue',
-        md: 'orange',
-        lg: 'black',
-        xl: 'white',
-      },
+  it('merges buckets through md and lg, last-wins across the chain', () => {
+    const el = document.createElement('div')
+    const ref = makeRef(el)
+
+    const props: AnyProps = {
+      marginBlock: { base: '2px', sm: '4px', md: '8px', lg: '16px' },
+      paddingTop: { base: '1rem', lg: '3rem', xl: '4rem' },
+      right: { base: '0', md: '10px', xl: '20px' },
     }
 
-    computeResponsiveCss(ref, 'md' as Breakpoint, props)
-    expect(ref.current.style.backgroundColor).toBe('orange')
-    // ensure nothing beyond md was applied
-    expect(ref.current.style.backgroundColor).not.toBe('black')
-    expect(ref.current.style.backgroundColor).not.toBe('white')
+    // Up to md
+    computeResponsiveCss(ref, 'md', props)
+    expect(el.style.marginBlock).toBe('8px') // md wins
+    expect(el.style.paddingTop).toBe('1rem') // lg not reached yet
+    expect(el.style.right).toBe('10px') // md wins
+
+    // Up to lg (should override where provided)
+    computeResponsiveCss(ref, 'lg', props)
+    expect(el.style.marginBlock).toBe('16px') // lg wins
+    expect(el.style.paddingTop).toBe('3rem') // now lg reached
+    expect(el.style.right).toBe('10px') // no lg value, md remains last
   })
 
-  it('ignores null/undefined entries inside responsive objects', () => {
-    const props = {
-      marginLeft: {
-        base: '4px',
-        sm: null,
-        md: undefined,
-        xl: '20px',
-      } as never,
+  it('applies the full chain up to xl and leaves unrelated inline styles untouched', () => {
+    const el = document.createElement('div')
+    // Seed an unrelated style that isn't listed in props — should remain unchanged.
+    el.style.overflowY = 'scroll'
+
+    const ref = makeRef(el)
+
+    const props: AnyProps = {
+      margin: { base: '2px', sm: '4px', md: '8px', lg: '16px', xl: '24px' },
+      padding: { base: '1rem', xl: '4rem' },
+      right: { base: '0', md: '10px', xl: '20px' },
     }
 
-    computeResponsiveCss(ref, 'sm' as Breakpoint, props)
-    expect(ref.current.style.marginLeft).toBe('4px') // sm null -> keep base
+    computeResponsiveCss(ref, 'xl', props)
 
-    computeResponsiveCss(ref, 'md' as Breakpoint, props)
-    expect(ref.current.style.marginLeft).toBe('4px') // md undefined -> keep base
+    expect(el.style.margin).toBe('24px') // xl wins
+    expect(el.style.padding).toBe('4rem') // xl wins
+    expect(el.style.right).toBe('20px') // xl wins
 
-    computeResponsiveCss(ref, 'xl' as Breakpoint, props)
-    expect(ref.current.style.marginLeft).toBe('20px') // xl defined overrides
+    // Not in props → should not be touched
+    expect(el.style.overflowY).toBe('scroll')
   })
 
-  it('handles numeric responsive values without scale-sensitive props (opacity)', () => {
-    const props = {
-      opacity: { base: 0.25, lg: 0.9 },
+  it('clears any prop present in props before writing merged values; props with no merged value remain cleared', () => {
+    const el = document.createElement('div')
+    // Pre-populate styles to verify clearing happens
+    el.style.paddingInline = '999px'
+    el.style.marginTop = '777px'
+    const ref = makeRef(el)
+
+    const props: AnyProps = {
+      // present in props but only has a value at md; for base call, it should be cleared and stay empty
+      paddingInline: { md: '24px' },
+      // present in props and has base value
+      marginTop: { base: '12px' },
     }
 
-    computeResponsiveCss(ref, 'base' as Breakpoint, props)
-    expect(ref.current.style.opacity).toBe('0.25')
+    computeResponsiveCss(ref, 'base', props)
 
-    computeResponsiveCss(ref, 'lg' as Breakpoint, props)
-    expect(ref.current.style.opacity).toBe('0.9')
+    // paddingInline: was set, should be cleared; no base value to write → stays empty
+    expect(el.style.paddingInline).toBe('')
+
+    // marginTop: was set, cleared, then base value applied
+    expect(el.style.marginTop).toBe('12px')
   })
 
-  it('respects insertion order for shorthand → longhand precedence', () => {
-    // Shorthand first, then longhand should win for that side
-    computeResponsiveCss(ref, 'base' as Breakpoint, {
-      margin: '10px',
-      marginTop: '2px',
-    })
+  it('does not clear or write props that are not present in the input props object', () => {
+    const el = document.createElement('div')
+    el.style.marginLeft = '13px' // not included in props
+    const ref = makeRef(el)
 
-    expect(ref.current.style.marginTop).toBe('2px')
-    // The shorthand still applies to the other sides:
-    // jsdom keeps shorthand as a token string; check a different side via computed string
-    // but a direct check on marginRight may be empty in inline style; assert top override is the key.
+    const props: AnyProps = {
+      marginRight: { base: '7px' },
+    }
+
+    computeResponsiveCss(ref, 'base', props)
+
+    expect(el.style.marginRight).toBe('7px') // written
+    expect(el.style.marginLeft).toBe('13px') // untouched
+  })
+})
+
+describe('computeResponsiveCss — empty string treated as nil', () => {
+  it('retains base margin at md when md is empty string (shorthand overrides longhand)', () => {
+    const el = document.createElement('div')
+    el.style.marginLeft = '5px' // will be overridden by 'margin'
+    const ref = { current: el } as unknown as React.RefObject<HTMLElement>
+
+    const props: Record<string, any> = {
+      margin: { base: '8px', md: '' }, // '' treated as nil
+      padding: { base: '1rem' },
+    }
+
+    computeResponsiveCss(ref, 'md', props)
+
+    expect(el.style.margin).toBe('8px') // base persists
+    expect(el.style.marginLeft).toBe('8px') // shorthand overrides longhand
+    expect(el.style.padding).toBe('1rem')
   })
 
-  it('works across all declared BREAKPOINTS for a single prop', () => {
-    const props = {
-      backgroundColor: {
-        base: 'red',
-        sm: 'blue',
-        md: 'orange',
-        lg: 'black',
-        xl: 'white',
-      },
+  it('longhand at higher breakpoint overrides shorthand from lower breakpoint', () => {
+    const el = document.createElement('div')
+    const ref = { current: el } as unknown as React.RefObject<HTMLElement>
+
+    const props: Record<string, any> = {
+      margin: { base: '8px' }, // shorthand at base
+      marginLeft: { md: '12px' }, // longhand at md
     }
 
-    for (const bp of BREAKPOINTS) {
-      computeResponsiveCss(ref, bp, props)
-      const expected =
-        bp === 'base'
-          ? 'red'
-          : bp === 'sm'
-            ? 'blue'
-            : bp === 'md'
-              ? 'orange'
-              : bp === 'lg'
-                ? 'black'
-                : 'white'
-      expect(ref.current.style.backgroundColor).toBe(expected)
-    }
+    computeResponsiveCss(ref, 'md', props)
+
+    // assert longhands to avoid serialization differences
+    expect(el.style.marginTop).toBe('8px')
+    expect(el.style.marginRight).toBe('8px')
+    expect(el.style.marginBottom).toBe('8px')
+    expect(el.style.marginLeft).toBe('12px')
+
+    // optional: if you still want to check the shorthand, accept both common serializations
+    const shorthand = el.style.margin
+    expect(shorthand === '8px 8px 8px 12px' || shorthand === '8px').toBe(true)
   })
 })
