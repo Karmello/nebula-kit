@@ -69,6 +69,7 @@ export const ComponentOverviewPage = memo(() => {
     <Flex flexDirection="column" alignItems="stretch" gap={20} maxInlineSize="55rem">
       <Text typography="lead">{description}</Text>
       {examples?.[0] ? <CodeSnippet code={elemToString(examples[0].jsx)} /> : null}
+      {inheritedProps ? <ListWithChips heading="Inherits from:" items={Object.keys(inheritedProps)} /> : null}
       {responsibilities ? <ListWithHeading heading="Responsibilities:" items={responsibilities} /> : null}
       {characteristics ? <ListWithHeading heading="Characteristics:" items={characteristics} /> : null}
       {defaultBehavior ? <ListWithHeading heading="Default behavior:" items={defaultBehavior} /> : null}
