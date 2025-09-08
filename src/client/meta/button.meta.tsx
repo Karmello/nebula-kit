@@ -1,12 +1,20 @@
 import { PropCategory } from 'client/definitions'
-import { BUTTON_INHERITED_PROPS, ButtonOwnProps } from 'lib/components'
+import { Button, BUTTON_INHERITED_PROPS, ButtonOwnProps } from 'lib/components'
 import { ComponentMeta, BoxIntent, ButtonSize, DEFAULT_BUTTON_SIZE } from 'lib/definitions'
 
 const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
   overview: {
     name: 'Button',
     description:
-      "Button is Nebula-kit's standard action control. It adapts to different contexts by supporting visual variants, sizing, typography options, and optional icon integration, while staying consistent with the system's design language.",
+      "Button is the primary interactive control for triggering actions in the interface. It wraps Nebula-kit's surface and text systems to provide a consistent, accessible entry point for user interaction.",
+    responsibilities: [
+      'provide a consistent, accessible trigger for user actions',
+      'handle interactivity states such as hover, focus, active, and disabled',
+      'support optional icon and text composition for clarity of meaning',
+    ],
+    characteristics: ['renders as a <button> element', 'requires children'],
+    defaultBehavior: ['medium size', 'solid variant', 'tertiary intent'],
+    useCases: ['applied wherever a clear, consistent action trigger is needed in the interface'],
     inheritedProps: BUTTON_INHERITED_PROPS,
   },
   props: [
@@ -17,7 +25,8 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
       defaultValue: DEFAULT_BUTTON_SIZE,
       isRequired: false,
       isResponsive: false,
-      description: "Determines the button's height and scales its content accordingly.",
+      description:
+        "Controls the button's overall proportions - adjusting height, horizontal padding, and font size to keep content balanced at each size.",
     },
     {
       category: PropCategory.appearance,
@@ -27,6 +36,47 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
       isResponsive: false,
       description:
         "Adjusts the visual styling of the button's label to reflect emphasis or semantic meaning, independent of the button's container style.",
+    },
+  ],
+  examples: [
+    {
+      description:
+        'By default, Button renders in medium size with a solid variant and tertiary intent, providing a standard, baseline action control.',
+      jsx: <Button>Default button</Button>,
+    },
+    {
+      description: 'Large size with primary intent makes the button stand out as a key call to action.',
+      jsx: (
+        <Button size="lg" intent="primary">
+          Large button
+        </Button>
+      ),
+    },
+    {
+      description: 'Outline variant with secondary intent, suited for less prominent or supporting actions.',
+      jsx: (
+        <Button variant="outline" intent="secondary">
+          Outline button
+        </Button>
+      ),
+    },
+    {
+      description:
+        'Ghost variant with danger intent, useful for destructive actions presented in a lighter, less dominant style.',
+      jsx: (
+        <Button variant="ghost" intent="danger">
+          Ghost button
+        </Button>
+      ),
+    },
+    {
+      description:
+        'Solid tertiary button with text styled in primary intent, showing that button surface and text color can be controlled independently.',
+      jsx: (
+        <Button variant="solid" intent="tertiary" textIntent="primary">
+          Button
+        </Button>
+      ),
     },
   ],
 }

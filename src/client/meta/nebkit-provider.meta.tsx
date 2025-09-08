@@ -22,10 +22,7 @@ export default {
       'applies the light theme to the document root',
       'sets border radius to 0 for all components',
     ],
-    useCases: [
-      'wrap the app to enable theming and shared configuration',
-      'provide consistent global defaults without manual setup',
-    ],
+    useCases: ['always wrap with NebKitProvider to inherit theming and global configuration across the app'],
   },
   props: [
     {
