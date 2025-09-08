@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef, ComponentRef, ElementType, ReactNode, RefObject } from 'react'
 
 type DataAttrs = {
-  [K in `data-${string}`]?: string | number | boolean | undefined
+  [_ in `data-${string}`]?: string | number | boolean | undefined
 }
 
 export type NativeElemProps<E extends ElementType> = {
