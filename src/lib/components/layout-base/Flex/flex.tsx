@@ -1,37 +1,15 @@
-import { ComponentRef, ElementType, useLayoutEffect, useRef } from 'react'
+import { ComponentRef, ElementType, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxProps } from 'lib/components'
+import { Box } from 'lib/components'
 import { withPrefix, computeResponsiveCss, useScreen } from 'lib/helpers'
 
-import {
-  CssFlexAlignItems,
-  CssFlexDirection,
-  CssFlexJustifyContent,
-  CssFlexWrap,
-  ResponsiveProp,
-  ScaleValue,
-} from 'lib/definitions'
+import { FlexProps } from './definitions'
 
 import './flex.scss'
 
-export type FlexOwnProps = {
-  flexDirection?: ResponsiveProp<CssFlexDirection>
-  flexWrap?: ResponsiveProp<CssFlexWrap>
-  justifyContent?: ResponsiveProp<CssFlexJustifyContent>
-  alignItems?: ResponsiveProp<CssFlexAlignItems>
-  gap?: ResponsiveProp<ScaleValue | string>
-  rowGap?: ResponsiveProp<ScaleValue | string>
-  columnGap?: ResponsiveProp<ScaleValue | string>
-}
-
-export type FlexProps<E extends ElementType = 'div'> = Omit<BoxProps<E>, 'display'> & FlexOwnProps
-
 export const Flex = <E extends ElementType = 'div'>({
-  elem,
-  elemProps,
-  elemRef,
-  // css
+  // own
   flexDirection,
   flexWrap,
   justifyContent,
@@ -39,7 +17,11 @@ export const Flex = <E extends ElementType = 'div'>({
   gap,
   rowGap,
   columnGap,
-  ...boxProps
+  // NativeElem
+  children,
+  elem,
+  elemProps,
+  elemRef,
 }: FlexProps<E>) => {
   const ref = useRef<ComponentRef<E>>(null)
 
@@ -60,10 +42,16 @@ export const Flex = <E extends ElementType = 'div'>({
   return (
     <Box
       elem={elem}
-      elemProps={{ ...elemProps, className: classNames(withPrefix('flex'), elemProps?.className) }}
+      elemProps={
+        {
+          ...elemProps,
+          className: classNames(withPrefix('flex'), elemProps?.className || ''),
+        } as PropsWithoutRef<React.ComponentProps<E>>
+      }
       elemRef={elemRef || ref}
-      {...(boxProps as any)}
-    />
+    >
+      {children}
+    </Box>
   )
 }
 

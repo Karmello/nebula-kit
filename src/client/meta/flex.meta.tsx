@@ -1,5 +1,5 @@
 import { PropCategory } from 'client/definitions'
-import { FlexOwnProps } from 'lib/components'
+import { FLEX_INHERITED_PROPS, FlexOwnProps } from 'lib/components'
 
 import {
   ComponentMeta,
@@ -14,8 +14,7 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
     name: 'Flex',
     description:
       'Flex is a layout component that arranges its children using CSS flexbox. It provides a consistent API for direction, wrapping, alignment, and spacing, so you can build responsive row or column layouts without writing raw flex styles. Use Flex when you need predictable alignment and gaps between elements, or as the foundation for higher-level layout primitives.',
-    propsDescription:
-      'Flex extends Box, so it accepts all Box props in addition to the flex-specific ones below.',
+    inheritedProps: FLEX_INHERITED_PROPS,
   },
   props: [
     {

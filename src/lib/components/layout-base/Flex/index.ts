@@ -7,3 +7,4 @@ export const Flex = Object.assign(FlexBase, {
 })
 
 export * from './flex'
+export * from './definitions'

@@ -60,8 +60,9 @@ export const BOX_INHERITED_PROPS = {
   ] as const satisfies readonly (keyof NativeElemProps<any>)[],
 }
 
-export type BoxInheritedProps<E extends ElementType> = Partial<
-  Pick<NativeElemProps<E>, (typeof BOX_INHERITED_PROPS)['NativeElem'][number]>
+export type BoxInheritedProps<E extends ElementType> = Pick<
+  NativeElemProps<E>,
+  (typeof BOX_INHERITED_PROPS)['NativeElem'][number]
 >
 
 export type BoxProps<E extends ElementType = 'div'> = BoxOwnProps & BoxInheritedProps<E>

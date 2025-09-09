@@ -26,29 +26,25 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
   }
 
   return (
-    <Flex
-      elem="pre"
-      elemProps={{ style: { backgroundColor: data.bg } }}
-      borderRadius={3}
-      overflowX="auto"
-      maxInlineSize="100%"
-    >
-      <Box elem="code" padding={10}>
-        {data.tokens.map((token, i) => (
-          <Box key={i}>
-            {token.map(({ content, color }, j) => (
-              <Text
-                key={j}
-                elem="span"
-                elemProps={{ style: { display: 'inline', color } }}
-                typography="secondary"
-              >
-                {content}
-              </Text>
-            ))}
-          </Box>
-        ))}
-      </Box>
-    </Flex>
+    <Box elem="pre" elemProps={{ style: { backgroundColor: data.bg } }} overflowX="auto" maxInlineSize="100%">
+      <Flex>
+        <Box elem="code" padding={10}>
+          {data.tokens.map((token, i) => (
+            <Box key={i}>
+              {token.map(({ content, color }, j) => (
+                <Text
+                  key={j}
+                  elem="span"
+                  elemProps={{ style: { display: 'inline', color } }}
+                  typography="secondary"
+                >
+                  {content}
+                </Text>
+              ))}
+            </Box>
+          ))}
+        </Box>
+      </Flex>
+    </Box>
   )
 }

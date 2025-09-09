@@ -62,24 +62,28 @@ export const ComponentOverviewPage = memo(() => {
   } = meta
 
   return (
-    <Flex flexDirection="column" alignItems="stretch" gap={20} maxInlineSize="55rem">
-      <Text typography="lead">{description}</Text>
-      {examples?.[0] ? <CodeSnippet code={elemToString(examples[0].jsx)} /> : null}
-      {inheritedProps ? <ListWithChips heading="Inherits from:" items={Object.keys(inheritedProps)} /> : null}
-      {responsibilities ? <ListWithHeading heading="Responsibilities:" items={responsibilities} /> : null}
-      {characteristics ? <ListWithHeading heading="Characteristics:" items={characteristics} /> : null}
-      {defaultBehavior ? <ListWithHeading heading="Default behavior:" items={defaultBehavior} /> : null}
-      {useCases ? <ListWithHeading heading="Use cases:" items={useCases} /> : null}
-      {responsiveProps ? <ListWithChips heading="Responsive own props:" items={responsiveProps} /> : null}
-      {inheritedProps
-        ? Object.keys(inheritedProps).map(componentName => (
-            <ListWithChips
-              key={componentName}
-              heading={`Props inherited from ${componentName}:`}
-              items={inheritedProps[componentName]}
-            />
-          ))
-        : null}
-    </Flex>
+    <Box maxInlineSize="55rem">
+      <Flex flexDirection="column" alignItems="stretch" gap={20}>
+        <Text typography="lead">{description}</Text>
+        {examples?.[0] ? <CodeSnippet code={elemToString(examples[0].jsx)} /> : null}
+        {inheritedProps ? (
+          <ListWithChips heading="Inherits from:" items={Object.keys(inheritedProps)} />
+        ) : null}
+        {responsibilities ? <ListWithHeading heading="Responsibilities:" items={responsibilities} /> : null}
+        {characteristics ? <ListWithHeading heading="Characteristics:" items={characteristics} /> : null}
+        {defaultBehavior ? <ListWithHeading heading="Default behavior:" items={defaultBehavior} /> : null}
+        {useCases ? <ListWithHeading heading="Use cases:" items={useCases} /> : null}
+        {responsiveProps ? <ListWithChips heading="Responsive own props:" items={responsiveProps} /> : null}
+        {inheritedProps
+          ? Object.keys(inheritedProps).map(componentName => (
+              <ListWithChips
+                key={componentName}
+                heading={`Props inherited from ${componentName}:`}
+                items={inheritedProps[componentName]}
+              />
+            ))
+          : null}
+      </Flex>
+    </Box>
   )
 })

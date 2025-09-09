@@ -15,9 +15,5 @@ const MAP: Record<HorizontalPosition, CssFlexJustifyContent> = {
 }
 
 export const HAlign = ({ children, position }: HAlignOwnProps) => {
-  return (
-    <Flex variant="ghost" justifyContent={MAP[position]}>
-      {children}
-    </Flex>
-  )
+  return <Flex justifyContent={MAP[position]}>{children}</Flex>
 }

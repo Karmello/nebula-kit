@@ -29,7 +29,6 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
       elemProps={{ className: classNames(withPrefix('app-nav-bar'), className) }}
       flexDirection="column"
       alignItems="flex-end"
-      borderRadius={0}
     >
       <Box
         blockSize={{ base: `var(--neb-scale-${BUTTON_SIZE_CONFIG.md.blockSize})`, sm: 0 }}
@@ -43,38 +42,38 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
           intent="tertiary"
         />
       </Box>
-      <Flex
-        elem="ul"
-        elemProps={{
-          className: withPrefix('app-nav-bar-buttons-horizontal'),
-        }}
-        flexDirection="row"
+      <Box
         inlineSize="100%"
         intent="tertiary"
         blockSize={{ base: 0, sm: `var(--neb-scale-${BUTTON_SIZE_CONFIG.md.blockSize})` }}
       >
-        {buttons.map(({ value, label }) => {
-          return (
-            <Box key={value} elem="li">
-              <Button
-                elemProps={{
-                  onClick: () => {
-                    setMenuOpen(false)
-                    onSelect(value)
-                  },
-                }}
-                intent={selectedValue === value ? 'secondary' : 'tertiary'}
-              >
-                {label}
-              </Button>
-            </Box>
-          )
-        })}
-      </Flex>
-      <Flex
-        elem="ul"
-        elemProps={{ className: withPrefix('app-nav-bar-buttons-vertical') }}
-        flexDirection="column"
+        <Flex
+          elem="ul"
+          elemProps={{
+            className: withPrefix('app-nav-bar-buttons-horizontal'),
+          }}
+          flexDirection="row"
+        >
+          {buttons.map(({ value, label }) => {
+            return (
+              <Box key={value} elem="li">
+                <Button
+                  elemProps={{
+                    onClick: () => {
+                      setMenuOpen(false)
+                      onSelect(value)
+                    },
+                  }}
+                  intent={selectedValue === value ? 'secondary' : 'tertiary'}
+                >
+                  {label}
+                </Button>
+              </Box>
+            )
+          })}
+        </Flex>
+      </Box>
+      <Box
         blockSize={
           bp === 'base' && menuOpen
             ? `calc(var(--neb-scale-${BUTTON_SIZE_CONFIG.md.blockSize}) * ${buttons.length})`
@@ -82,25 +81,31 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
         }
         inlineSize="100%"
       >
-        {buttons.map(({ value, label }) => {
-          return (
-            <Box key={value} elem="li" inlineSize="100%">
-              <Button
-                elemProps={{
-                  onClick: () => {
-                    setMenuOpen(false)
-                    onSelect(value)
-                  },
-                  style: { width: '100%' },
-                }}
-                intent={selectedValue === value ? 'secondary' : 'tertiary'}
-              >
-                {label}
-              </Button>
-            </Box>
-          )
-        })}
-      </Flex>
+        <Flex
+          elem="ul"
+          elemProps={{ className: withPrefix('app-nav-bar-buttons-vertical') }}
+          flexDirection="column"
+        >
+          {buttons.map(({ value, label }) => {
+            return (
+              <Box key={value} elem="li" inlineSize="100%">
+                <Button
+                  elemProps={{
+                    onClick: () => {
+                      setMenuOpen(false)
+                      onSelect(value)
+                    },
+                    style: { width: '100%' },
+                  }}
+                  intent={selectedValue === value ? 'secondary' : 'tertiary'}
+                >
+                  {label}
+                </Button>
+              </Box>
+            )
+          })}
+        </Flex>
+      </Box>
     </Flex>
   )
 }
