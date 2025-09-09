@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from 'react'
 
-import { WithSlotsReturnObject } from 'lib/components'
+import { WithSlotsReturnObject } from 'lib/components/internal'
 
 import { SidePanelLayoutOwnProps } from '../side-panel-layout'
 

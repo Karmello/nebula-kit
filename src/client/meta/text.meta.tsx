@@ -1,6 +1,6 @@
 import { DEFAULT_TEXT_TYPOGRAPHY, TextElem } from 'lib/definitions'
 import { ComponentMeta, TextTypography } from 'lib/definitions'
-import { Text, TEXT_TYPOGRAPHY_CONFIG, TEXT_INHERITED_PROPS, TextOwnProps } from 'lib/components'
+import { Text, TEXT_INHERITED_PROPS, TextOwnProps } from 'lib/components'
 import { PropCategory } from 'client/definitions'
 
 import { applyResponsiveProps } from './_helpers'
@@ -38,25 +38,6 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       isResponsive: false,
       description:
         'Applies a predefined typography style from the design system, controlling elem, fontSize and lineHeight together.',
-    },
-    {
-      category: PropCategory.typography,
-      name: 'fontSize',
-      options: ['ScaleValue', 'CSS'],
-      defaultValue: String(TEXT_TYPOGRAPHY_CONFIG[DEFAULT_TEXT_TYPOGRAPHY].fontSize),
-      isRequired: false,
-      isResponsive: true,
-      description: 'Sets the text size, overriding the value provided by typography.',
-    },
-    {
-      category: PropCategory.typography,
-      name: 'lineHeight',
-      options: ['CSS (string, number)'],
-      defaultValue: String(TEXT_TYPOGRAPHY_CONFIG[DEFAULT_TEXT_TYPOGRAPHY].lineHeight),
-      isRequired: false,
-      isResponsive: true,
-      description:
-        'Sets the vertical spacing between lines of text, overriding lineHeight value provided by typography.',
     },
     {
       category: PropCategory.typography,

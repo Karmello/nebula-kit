@@ -26,7 +26,7 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
       isRequired: false,
       isResponsive: false,
       description:
-        "Controls the button's overall proportions - adjusting height, horizontal padding, and font size to keep content balanced at each size.",
+        "Controls the button's overall proportions - adjusting blockSize, horizontal padding, and fontSize to keep content balanced at each size.",
     },
     {
       category: PropCategory.appearance,

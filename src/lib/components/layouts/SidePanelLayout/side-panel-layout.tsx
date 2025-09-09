@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 
-import { Grid, WithSlots } from 'lib/components'
+import { Grid } from 'lib/components'
+import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 import { HorizontalPosition, HorizontalPosition as HorizontalPositionType, ScaleValue } from 'lib/definitions'
 

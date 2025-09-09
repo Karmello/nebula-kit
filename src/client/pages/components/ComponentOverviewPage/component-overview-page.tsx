@@ -7,10 +7,8 @@ import { CodeSnippet } from 'client/components'
 import { elemToStringService } from 'client/services'
 
 const ListWithHeading = ({ heading, items }: { heading: string; items: string[] }) => (
-  <Box>
-    <Text marginBottom={7} bold>
-      {heading}
-    </Text>
+  <Flex flexDirection="column" gap={5}>
+    <Text bold>{heading}</Text>
     <List listStyle="circle">
       {items.map((s, i) => (
         <List.Item key={i} marginBottom={i < items.length - 1 ? 5 : 0}>
@@ -18,14 +16,12 @@ const ListWithHeading = ({ heading, items }: { heading: string; items: string[] 
         </List.Item>
       ))}
     </List>
-  </Box>
+  </Flex>
 )
 
 const ListWithChips = ({ heading, items }: { heading: string; items: readonly string[] }) => (
-  <Box>
-    <Text marginBottom={7} bold>
-      {heading}
-    </Text>
+  <Flex flexDirection="column" gap={5}>
+    <Text bold>{heading}</Text>
     <Flex flexDirection="row" flexWrap="wrap" gap={5}>
       {items.map((s, i) => (
         <Box key={i} variant="solid" intent="secondary" paddingInline={5} paddingBlock={3}>
@@ -33,7 +29,7 @@ const ListWithChips = ({ heading, items }: { heading: string; items: readonly st
         </Box>
       ))}
     </Flex>
-  </Box>
+  </Flex>
 )
 
 export const ComponentOverviewPage = memo(() => {

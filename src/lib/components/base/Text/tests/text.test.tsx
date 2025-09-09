@@ -13,7 +13,7 @@ describe('<Text />', () => {
 
     it('renders as <h1> tag', () => {
       render(
-        <Text elem="h1" elemProps={{ 'data-testid': 'elem' }}>
+        <Text elemProps={{ 'data-testid': 'elem' }} typography="h1">
           text
         </Text>
       )

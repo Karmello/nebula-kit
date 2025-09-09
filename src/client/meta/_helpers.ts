@@ -9,5 +9,5 @@ export const applyResponsiveProps = (meta: ComponentMeta<unknown>) => {
     }
   })
 
-  meta.overview.responsiveProps = responsiveProps
+  meta.overview.responsiveProps = responsiveProps.length ? responsiveProps : undefined
 }

@@ -12,22 +12,21 @@ import './text.scss'
 export const Text = <E extends TextElem = 'p'>({
   // own
   typography = DEFAULT_TEXT_TYPOGRAPHY,
-  fontSize,
-  lineHeight,
   bold = false,
   italic = false,
   noWrap = false,
   truncate = false,
   clampLines,
-  // box
+  // Box
   children,
   elem,
   elemProps,
   elemRef,
   intent,
+  textAlign,
+  // WithIcon
   iconName,
   iconPosition,
-  ...boxProps
 }: TextProps<E>) => {
   const ref = useRef<ComponentRef<E>>(null)
 
@@ -35,14 +34,13 @@ export const Text = <E extends TextElem = 'p'>({
 
   useLayoutEffect(() => {
     computeResponsiveCss(elemRef || ref, bp, {
-      fontSize: fontSize !== undefined ? fontSize : TEXT_TYPOGRAPHY_CONFIG[typography].fontSize,
-      lineHeight: lineHeight !== undefined ? lineHeight : TEXT_TYPOGRAPHY_CONFIG[typography].lineHeight,
+      fontSize: TEXT_TYPOGRAPHY_CONFIG[typography].fontSize,
+      lineHeight: TEXT_TYPOGRAPHY_CONFIG[typography].lineHeight,
     })
-  }, [bp, fontSize, lineHeight])
+  }, [bp])
 
   return (
     <Box
-      {...boxProps}
       elem={elem || TEXT_TYPOGRAPHY_CONFIG[typography].elem}
       elemRef={(elemRef || ref) as any}
       elemProps={{
@@ -63,6 +61,7 @@ export const Text = <E extends TextElem = 'p'>({
         ...getDataAttrs('text', { typography, bold, italic, noWrap, truncate }),
       }}
       variant="ghost"
+      textAlign={textAlign}
     >
       {iconName ? (
         <WithIcon iconName={iconName} iconPosition={iconPosition}>

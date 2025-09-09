@@ -26,8 +26,9 @@ expectType(
 )
 
 // allowed prop
-expectType(<Text margin={10}>text</Text>)
+expectType(<Text textAlign="center">text</Text>)
 
 // not allowed props
 expectError(<Text variant="solid">text</Text>)
+expectError(<Text margin={10}>text</Text>)
 expectError(<Text padding={10}>text</Text>)
