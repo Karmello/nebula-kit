@@ -1,43 +1,41 @@
 import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { withPrefix, computeResponsiveCss, useScreen } from 'lib/helpers'
+import { Box } from 'lib/components'
 
-import { FlexProps } from './definitions'
+import { FlexItemProps } from './definitions'
 
-import './flex.scss'
+import './flex-item.scss'
 
-export const Flex = <E extends ElementType = 'div'>({
+export const FlexItem = <E extends ElementType = 'div'>({
   // own
-  flexDirection,
-  flexWrap,
-  justifyContent,
-  alignItems,
-  gap,
-  rowGap,
-  columnGap,
+  flex,
+  flexGrow,
+  flexShrink,
+  flexBasis,
+  alignSelf,
+  order,
   // NativeElem
   children,
   elem,
   elemProps,
   elemRef,
-}: FlexProps<E>) => {
+}: FlexItemProps<E>) => {
   const ref = useRef<ComponentRef<E>>(null)
 
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
     computeResponsiveCss(elemRef || ref, bp, {
-      flexDirection,
-      flexWrap,
-      justifyContent,
-      alignItems,
-      gap,
-      rowGap,
-      columnGap,
+      flex,
+      flexGrow,
+      flexShrink,
+      flexBasis,
+      alignSelf,
+      order,
     })
-  }, [bp, flexDirection, flexWrap, justifyContent, alignItems, gap, rowGap, columnGap])
+  }, [bp, flex, flexGrow, flexShrink, flexBasis, alignSelf, order])
 
   return (
     <Box
@@ -45,7 +43,7 @@ export const Flex = <E extends ElementType = 'div'>({
       elemProps={
         {
           ...elemProps,
-          className: classNames(withPrefix('flex'), elemProps?.className),
+          className: classNames(withPrefix('flex-item'), elemProps?.className),
         } as PropsWithoutRef<ComponentProps<E>>
       }
       elemRef={elemRef || ref}
@@ -55,4 +53,4 @@ export const Flex = <E extends ElementType = 'div'>({
   )
 }
 
-Flex.displayName = 'Flex'
+FlexItem.displayName = 'Flex.Item'

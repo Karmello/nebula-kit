@@ -42,12 +42,12 @@ export const PropsTable = ({ data }: Props) => {
               </Table.Cell>
               {isSomeRequired ? (
                 <Table.Cell elemProps={{ style: { textAlign: 'center' } }}>
-                  {isRequired ? <SvgIcon iconName="check" iconIntent="primary" /> : '-'}
+                  {isRequired ? <SvgIcon iconName="check" iconIntent="primary" iconSize={10} /> : '-'}
                 </Table.Cell>
               ) : null}
               {isSomeResponsive ? (
                 <Table.Cell elemProps={{ style: { textAlign: 'center' } }}>
-                  {isResponsive ? <SvgIcon iconName="check" iconIntent="primary" /> : '-'}
+                  {isResponsive ? <SvgIcon iconName="check" iconIntent="primary" iconSize={10} /> : '-'}
                 </Table.Cell>
               ) : null}
               <Table.Cell>{description}</Table.Cell>

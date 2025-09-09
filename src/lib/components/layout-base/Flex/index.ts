@@ -1,6 +1,6 @@
 import { Flex as FlexBase } from './flex'
 
-import { FlexItem } from './flex-item'
+import { FlexItem } from './FlexItem'
 
 export const Flex = Object.assign(FlexBase, {
   Item: FlexItem,
@@ -8,3 +8,4 @@ export const Flex = Object.assign(FlexBase, {
 
 export * from './flex'
 export * from './definitions'
+export * from './FlexItem'

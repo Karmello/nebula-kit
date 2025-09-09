@@ -18,4 +18,6 @@ export enum PropCategory {
   behavior = 'Behavior',
   adornments = 'Adornments',
   other = 'Other',
+  flex = 'Flex',
+  flexItem = 'Flex.Item',
 }
