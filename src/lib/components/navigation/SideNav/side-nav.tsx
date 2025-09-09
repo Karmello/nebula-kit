@@ -18,12 +18,10 @@ type Config = {
   default?: {
     variant?: ButtonProps['variant']
     intent?: ButtonProps['intent']
-    textIntent?: ButtonProps['textIntent']
   }
   active?: {
     variant?: ButtonProps['variant']
     intent?: ButtonProps['intent']
-    textIntent?: ButtonProps['textIntent']
   }
 }
 
@@ -51,12 +49,10 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
       default: {
         variant: groupConfig?.default?.variant || 'ghost',
         intent: groupConfig?.default?.intent || 'neutral',
-        textIntent: groupConfig?.default?.textIntent || 'neutral',
       },
       active: {
         variant: groupConfig?.active?.variant || 'ghost',
         intent: groupConfig?.active?.intent || 'primary',
-        textIntent: groupConfig?.active?.textIntent || 'primary',
       },
     }),
     [groupConfig]
@@ -67,12 +63,10 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
       default: {
         variant: itemConfig?.default?.variant || 'solid',
         intent: itemConfig?.default?.intent || 'neutral',
-        textIntent: itemConfig?.default?.textIntent || 'neutral',
       },
       active: {
         variant: itemConfig?.active?.variant || 'solid',
         intent: itemConfig?.active?.intent || 'tertiary',
-        textIntent: itemConfig?.active?.textIntent || 'primary',
       },
     }),
     [itemConfig]
@@ -102,11 +96,11 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
                 isGroupActive ? FINAL_GROUP_CONFIG.active?.variant : FINAL_GROUP_CONFIG.default?.variant
               }
               intent={isGroupActive ? FINAL_GROUP_CONFIG.active?.intent : FINAL_GROUP_CONFIG.default?.intent}
-              textIntent={
-                isGroupActive ? FINAL_GROUP_CONFIG.active?.textIntent : FINAL_GROUP_CONFIG.default?.textIntent
-              }
+              // textIntent={
+              //   isGroupActive ? FINAL_GROUP_CONFIG.active?.textIntent : FINAL_GROUP_CONFIG.default?.textIntent
+              // }
               iconName={hasItems ? (isGroupOpen ? 'chevron-up' : 'chevron-down') : undefined}
-              bold={isGroupActive}
+              // bold={isGroupActive}
             >
               {label}
             </Button>
@@ -140,12 +134,12 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
                       intent={
                         isItemActive ? FINAL_ITEM_CONFIG.active?.intent : FINAL_ITEM_CONFIG.default?.intent
                       }
-                      textIntent={
-                        isItemActive
-                          ? FINAL_ITEM_CONFIG.active?.textIntent
-                          : FINAL_ITEM_CONFIG.default?.textIntent
-                      }
-                      bold={isItemActive}
+                      // textIntent={
+                      //   isItemActive
+                      //     ? FINAL_ITEM_CONFIG.active?.textIntent
+                      //     : FINAL_ITEM_CONFIG.default?.textIntent
+                      // }
+                      // bold={isItemActive}
                     >
                       {label}
                     </Button>

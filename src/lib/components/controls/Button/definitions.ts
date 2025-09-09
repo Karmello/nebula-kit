@@ -3,7 +3,6 @@ import { ButtonSize, MakeRequired, ScaleValue } from 'lib/definitions'
 
 export type ButtonOwnProps = {
   size?: ButtonSize
-  textIntent?: TextProps<'span'>['intent']
 }
 
 export const BUTTON_INHERITED_PROPS = {
@@ -13,31 +12,9 @@ export const BUTTON_INHERITED_PROPS = {
     'elemRef',
     'variant',
     'intent',
-    'borderRadius',
     'disabled',
-    'display',
-    'position',
-    'top',
-    'right',
-    'bottom',
-    'left',
-    'inlineSize',
-    'minInlineSize',
-    'maxInlineSize',
-    'margin',
-    'marginInline',
-    'marginBlock',
-    'marginTop',
-    'marginRight',
-    'marginBottom',
-    'marginLeft',
   ] as const satisfies readonly (keyof BoxProps<'button'>)[],
-  Text: [
-    'textAlign',
-    'bold',
-    'iconName',
-    'iconPosition',
-  ] as const satisfies readonly (keyof TextProps<'span'>)[],
+  Text: ['iconName', 'iconPosition'] as const satisfies readonly (keyof TextProps<'span'>)[],
 }
 
 export type ButtonInheritedProps = MakeRequired<

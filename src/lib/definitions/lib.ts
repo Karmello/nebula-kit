@@ -31,7 +31,7 @@ export type ComponentMeta<PropsType> = {
     inheritedProps?: Record<string, readonly string[]>
     propsDescription?: string
   }
-  props: {
+  props?: {
     category: string
     name: keyof PropsType
     options: string[]

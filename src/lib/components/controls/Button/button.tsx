@@ -10,18 +10,16 @@ import './button.scss'
 export const Button = ({
   // own
   size = DEFAULT_BUTTON_SIZE,
-  textIntent,
   // text
-  textAlign,
-  bold,
   iconName,
   iconPosition,
   // box
   children,
   elemProps,
+  elemRef,
   variant = DEFAULT_BUTTON_VARIANT,
   intent = DEFAULT_BUTTON_INTENT,
-  ...boxProps
+  disabled,
 }: ButtonProps) => {
   return (
     <Box
@@ -31,20 +29,14 @@ export const Button = ({
         className: classNames(withPrefix('btn'), elemProps?.className),
         type: elemProps?.type || 'button',
       }}
+      elemRef={elemRef}
       variant={variant}
       intent={intent}
+      disabled={disabled}
       interactive
       {...BUTTON_SIZE_CONFIG[size]}
-      {...boxProps}
     >
-      <Text
-        elem="span"
-        intent={textIntent}
-        textAlign={textAlign}
-        bold={bold}
-        iconName={iconName}
-        iconPosition={iconPosition}
-      >
+      <Text elem="span" iconName={iconName} iconPosition={iconPosition}>
         {children}
       </Text>
     </Box>

@@ -1,6 +1,6 @@
 import { PropCategory } from 'client/definitions'
 import { Button, BUTTON_INHERITED_PROPS, ButtonOwnProps } from 'lib/components'
-import { ComponentMeta, BoxIntent, ButtonSize, DEFAULT_BUTTON_SIZE } from 'lib/definitions'
+import { ComponentMeta, ButtonSize, DEFAULT_BUTTON_SIZE } from 'lib/definitions'
 
 const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
   overview: {
@@ -28,21 +28,16 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
       description:
         "Controls the button's overall proportions - adjusting blockSize, horizontal padding, and fontSize to keep content balanced at each size.",
     },
-    {
-      category: PropCategory.appearance,
-      name: 'textIntent',
-      options: Object.values(BoxIntent),
-      isRequired: false,
-      isResponsive: false,
-      description:
-        "Adjusts the visual styling of the button's label to reflect emphasis or semantic meaning, independent of the button's container style.",
-    },
   ],
   examples: [
     {
       description:
         'By default, Button renders in medium size with a solid variant and tertiary intent, providing a standard, baseline action control.',
       jsx: <Button>Default button</Button>,
+    },
+    {
+      description: 'This shows how to render a button that combines text with an icon for clearer meaning.',
+      jsx: <Button iconName="search">Button with icon</Button>,
     },
     {
       description: 'Large size with primary intent makes the button stand out as a key call to action.',
@@ -66,15 +61,6 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
       jsx: (
         <Button variant="ghost" intent="danger">
           Ghost button
-        </Button>
-      ),
-    },
-    {
-      description:
-        'Solid tertiary button with text styled in primary intent, showing that button surface and text color can be controlled independently.',
-      jsx: (
-        <Button variant="solid" intent="tertiary" textIntent="primary">
-          Button
         </Button>
       ),
     },

@@ -27,7 +27,11 @@ export const COMPONENT_CATEGORIES = [
     label: 'Controls',
     items: [
       { key: 'button', label: 'Button', sections: COMPONENT_SECTIONS },
-      { key: 'icon-button', label: 'IconButton', sections: COMPONENT_SECTIONS },
+      {
+        key: 'icon-button',
+        label: 'IconButton',
+        sections: COMPONENT_SECTIONS.filter(s => s.key !== 'props'),
+      },
     ],
   },
   {

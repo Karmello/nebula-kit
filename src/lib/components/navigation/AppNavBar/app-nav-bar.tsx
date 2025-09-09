@@ -41,7 +41,6 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
           }}
           iconName={bp === 'base' ? (menuOpen ? 'close' : 'menu') : 'menu'}
           intent="tertiary"
-          borderRadius={0}
         />
       </Box>
       <Flex
@@ -65,8 +64,6 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
                   },
                 }}
                 intent={selectedValue === value ? 'secondary' : 'tertiary'}
-                borderRadius={0}
-                bold
               >
                 {label}
               </Button>
@@ -97,8 +94,6 @@ export const AppNavBar = ({ className, buttons = [], selectedValue, onSelect }: 
                   style: { width: '100%' },
                 }}
                 intent={selectedValue === value ? 'secondary' : 'tertiary'}
-                borderRadius={0}
-                bold
               >
                 {label}
               </Button>
