@@ -4,7 +4,7 @@ import { ButtonSize, DEFAULT_BUTTON_SIZE } from 'lib/definitions'
 
 const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
   overview: {
-    name: 'Button',
+    title: 'Button',
     description:
       "Button is the primary interactive control for triggering actions in the interface. It wraps Nebula-kit's surface and text systems to provide a consistent, accessible entry point for user interaction.",
     responsibilities: [
@@ -66,4 +66,6 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
   ],
 }
 
-export default BUTTON_META
+export default {
+  Button: BUTTON_META,
+}

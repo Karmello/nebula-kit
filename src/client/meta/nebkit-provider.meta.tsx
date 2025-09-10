@@ -4,9 +4,9 @@ import { DEFAULT_BORDER_RADIUS, Theme } from 'lib/definitions'
 
 const App = (): null => null
 
-export default {
+const NEB_KIT_PROVIDER_META: ComponentMeta<NebKitProviderProps> = {
   overview: {
-    name: 'NebKitProvider',
+    title: 'NebKitProvider',
     description:
       'NebKitProvider is the root setup component for Nebula-kit. It initializes global configuration, connects the internal store, and keeps the application environment in sync so that all components work consistently.',
     responsibilities: [
@@ -35,7 +35,7 @@ export default {
     },
     {
       name: 'defaultTheme',
-      options: Theme,
+      options: Theme as unknown as string[],
       defaultValue: Theme[0],
       isRequired: false,
       isResponsive: false,
@@ -44,7 +44,7 @@ export default {
     {
       name: 'defaultBorderRadius',
       options: ['ScaleValue', 'CSS'],
-      defaultValue: DEFAULT_BORDER_RADIUS,
+      defaultValue: String(DEFAULT_BORDER_RADIUS),
       isRequired: false,
       isResponsive: false,
       description: 'Starting border radius scale or custom value.',
@@ -71,4 +71,8 @@ export default {
       noSandBox: true,
     },
   ],
-} as ComponentMeta<NebKitProviderProps>
+}
+
+export default {
+  NebKitProvider: NEB_KIT_PROVIDER_META,
+}

@@ -2,9 +2,9 @@ import { ComponentMeta } from 'client/definitions'
 import { SvgIcon, SvgIconProps } from 'lib/components'
 import { BoxIntent, DEFAULT_BOX_INTENT, DEFAULT_SVG_ICON_SIZE } from 'lib/definitions'
 
-export default {
+const SVG_ICON_META: ComponentMeta<SvgIconProps> = {
   overview: {
-    name: 'SvgIcon',
+    title: 'SvgIcon',
     description:
       'SvgIcon is a wrapper that renders an SVG from the icon set by name and applies system styles.',
     responsibilities: ['resolve icon by name', 'apply sizing and color'],
@@ -30,14 +30,14 @@ export default {
     {
       name: 'iconSize',
       options: ['ScaleValue'],
-      defaultValue: DEFAULT_SVG_ICON_SIZE,
+      defaultValue: String(DEFAULT_SVG_ICON_SIZE),
       isRequired: false,
       isResponsive: false,
       description: "Sets the icon's width and height using the scale system.",
     },
     {
       name: 'iconIntent',
-      options: BoxIntent,
+      options: BoxIntent as unknown as string[],
       defaultValue: DEFAULT_BOX_INTENT,
       isRequired: false,
       isResponsive: false,
@@ -58,4 +58,8 @@ export default {
       jsx: <SvgIcon iconName="search" iconSize={20} iconIntent="primary" />,
     },
   ],
-} as ComponentMeta<SvgIconProps>
+}
+
+export default {
+  SvgIcon: SVG_ICON_META,
+}

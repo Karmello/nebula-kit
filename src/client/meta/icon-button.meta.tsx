@@ -1,9 +1,9 @@
-import { IconButton, ICON_BUTTON_INHERITED_PROPS, ButtonOwnProps } from 'lib/components'
+import { IconButton, ICON_BUTTON_INHERITED_PROPS, IconButtonProps } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 
-export default {
+const ICON_BUTTON_META: ComponentMeta<IconButtonProps> = {
   overview: {
-    name: 'IconButton',
+    title: 'IconButton',
     description: 'A button that relies on an icon as its main content.',
     responsibilities: ['render an icon as the content of a button'],
     characteristics: ['renders as a <button> element', 'does not accept children', 'iconName is required'],
@@ -17,4 +17,8 @@ export default {
       jsx: <IconButton iconName="close" />,
     },
   ],
-} as ComponentMeta<ButtonOwnProps>
+}
+
+export default {
+  IconButton: ICON_BUTTON_META,
+}

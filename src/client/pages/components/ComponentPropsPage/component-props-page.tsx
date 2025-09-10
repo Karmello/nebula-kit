@@ -1,15 +1,12 @@
-import { memo, useMemo } from 'react'
-
 import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'client/definitions'
-import { Spacer, Text } from 'lib/components'
 
 import { PropsTable } from './PropsTable'
 
-export const ComponentPropsPage = memo(() => {
+export const ComponentPropsPage = () => {
   const { itemKey } = useComponentsPageStore()
 
-  let meta: ComponentMeta<unknown>
+  let meta: Record<string, ComponentMeta<unknown>>
 
   try {
     meta = require(`../../../meta/${itemKey}.meta.tsx`).default
@@ -17,27 +14,7 @@ export const ComponentPropsPage = memo(() => {
     meta = null
   }
 
-  const groupedByCategory = Object.groupBy(meta?.props || [], prop => prop.category)
+  if (!meta) return null
 
-  const memorized = useMemo(() => {
-    return Object.keys(groupedByCategory).map(category => (
-      <PropsTable key={category} data={groupedByCategory[category]} />
-    ))
-  }, [groupedByCategory])
-
-  if (!meta) {
-    return null
-  }
-
-  return (
-    <>
-      {meta.overview.propsDescription ? (
-        <>
-          <Text intent="secondary">{meta.overview.propsDescription}</Text>
-          <Spacer size={15} />
-        </>
-      ) : null}
-      {memorized}
-    </>
-  )
-})
+  return Object.keys(meta || []).map(key => <PropsTable key={key} data={meta[key].props} />)
+}

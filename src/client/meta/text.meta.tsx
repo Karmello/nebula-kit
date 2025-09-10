@@ -6,7 +6,7 @@ import { applyResponsiveProps } from './_helpers'
 
 const TEXT_META: ComponentMeta<TextOwnProps> = {
   overview: {
-    name: 'Text',
+    title: 'Text',
     description:
       'Text is the foundational component for displaying and styling textual content. It ensures consistent typography across the system.',
     responsibilities: [
@@ -25,7 +25,6 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       'combine text with icons for labels or actions',
     ],
     inheritedProps: TEXT_INHERITED_PROPS,
-    propsDescription: '',
   },
   props: [
     {
@@ -105,6 +104,10 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
   ],
 }
 
-applyResponsiveProps(TEXT_META)
+const META = {
+  Text: TEXT_META,
+}
 
-export default TEXT_META
+applyResponsiveProps(META)
+
+export default META

@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Flex, Box, FLEX_INHERITED_PROPS, FlexOwnProps, FlexItemProps } from 'lib/components'
+import { Flex, Box, FLEX_INHERITED_PROPS, FlexOwnProps, FlexItemOwnProps } from 'lib/components'
 
 import {
   CssFlexAlignItems,
@@ -11,9 +11,9 @@ import {
 
 import { applyResponsiveProps } from './_helpers'
 
-const FLEX_META: ComponentMeta<FlexOwnProps & FlexItemProps> = {
+const FLEX_META: ComponentMeta<FlexOwnProps> = {
   overview: {
-    name: 'Flex + Flex.Item',
+    title: 'Flex + Flex.Item',
     description: 'A layout container that arranges its children using CSS flexbox.',
     responsibilities: [
       'provide a flexbox-based layout wrapper',
@@ -101,6 +101,47 @@ const FLEX_META: ComponentMeta<FlexOwnProps & FlexItemProps> = {
       isResponsive: true,
       description: 'Defines horizontal spacing between columns of flex items.',
     },
+  ],
+  examples: [
+    {
+      description: 'Flex arranging two outlined boxes side by side.',
+      jsx: (
+        <Flex>
+          <Box variant="outline" intent="primary">
+            Item 1
+          </Box>
+          <Box variant="outline" intent="primary">
+            Item 2
+          </Box>
+        </Flex>
+      ),
+    },
+    {
+      description: 'Using Flex.Item to let one item expand while the other keeps its natural size.',
+      jsx: (
+        <Flex>
+          <Flex.Item flex={1}>
+            <Box variant="outline" intent="primary">
+              Item 1
+            </Box>
+          </Flex.Item>
+          <Flex.Item>
+            <Box variant="outline" intent="primary">
+              Item 2
+            </Box>
+          </Flex.Item>
+        </Flex>
+      ),
+    },
+  ],
+}
+
+const FLEX_ITEM_META: ComponentMeta<FlexItemOwnProps> = {
+  overview: {
+    title: '',
+    description: '',
+  },
+  props: [
     {
       name: 'flex',
       category: 'Flex.Item',
@@ -157,40 +198,13 @@ const FLEX_META: ComponentMeta<FlexOwnProps & FlexItemProps> = {
       description: "defines the item's order relative to other flex items, independent of source order",
     },
   ],
-  examples: [
-    {
-      description: 'Flex arranging two outlined boxes side by side.',
-      jsx: (
-        <Flex>
-          <Box variant="outline" intent="primary">
-            Item 1
-          </Box>
-          <Box variant="outline" intent="primary">
-            Item 2
-          </Box>
-        </Flex>
-      ),
-    },
-    {
-      description: 'Using Flex.Item to let one item expand while the other keeps its natural size.',
-      jsx: (
-        <Flex>
-          <Flex.Item flex={1}>
-            <Box variant="outline" intent="primary">
-              Item 1
-            </Box>
-          </Flex.Item>
-          <Flex.Item>
-            <Box variant="outline" intent="primary">
-              Item 2
-            </Box>
-          </Flex.Item>
-        </Flex>
-      ),
-    },
-  ],
 }
 
-applyResponsiveProps(FLEX_META)
+const META = {
+  Flex: FLEX_META,
+  'Flex.Item': FLEX_ITEM_META,
+}
 
-export default FLEX_META
+applyResponsiveProps(META)
+
+export default META

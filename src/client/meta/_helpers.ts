@@ -1,13 +1,15 @@
 import { ComponentMeta } from 'client/definitions'
 
-export const applyResponsiveProps = (meta: ComponentMeta<unknown>) => {
-  const responsiveProps: typeof meta.overview.responsiveProps = []
+export const applyResponsiveProps = (meta: Record<string, ComponentMeta<unknown>>) => {
+  for (const key in meta) {
+    const responsiveProps: string[] = []
 
-  meta.props.forEach(prop => {
-    if (prop.isResponsive) {
-      responsiveProps.push(prop.name)
-    }
-  })
+    meta[key].props.forEach(prop => {
+      if (prop.isResponsive) {
+        responsiveProps.push(prop.name)
+      }
+    })
 
-  meta.overview.responsiveProps = responsiveProps.length ? responsiveProps : undefined
+    meta[key].overview.responsiveProps = responsiveProps.length ? responsiveProps : undefined
+  }
 }

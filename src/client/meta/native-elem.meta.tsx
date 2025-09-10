@@ -1,9 +1,9 @@
 import { NativeElem, NativeElemProps } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 
-export default {
+const NATIVE_ELEM_META: ComponentMeta<NativeElemProps<any>> = {
   overview: {
-    name: 'NativeElem',
+    title: 'NativeElem',
     description:
       'NativeElem is a low-level utility that renders the chosen HTML tag. Its polymorphic design means you can swap the underlying element while still getting the correct props, ensuring every NebulaKit component resolves to a predictable, semantic element.',
     responsibilities: [
@@ -16,7 +16,6 @@ export default {
       'rarely needed in everyday code - usually you would want to use Box, Flex, Grid, or other higher-level component instead',
       'could be helpful as an escape hatch if you need the absolute lowest layer without extra props or behaviors',
     ],
-    propsDescription: '',
   },
   props: [
     {
@@ -61,4 +60,8 @@ export default {
       noSandBox: true,
     },
   ],
-} as ComponentMeta<NativeElemProps<any>>
+}
+
+export default {
+  NativeElem: NATIVE_ELEM_META,
+}

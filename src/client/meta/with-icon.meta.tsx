@@ -2,9 +2,9 @@ import { ComponentMeta } from 'client/definitions'
 import { WITH_ICON_INHERITED_PROPS, WithIcon, WithIconOwnProps } from 'lib/components'
 import { IconPosition, WITH_ICON_DEFAULT_ICON_POSITION } from 'lib/definitions'
 
-export default {
+const WITH_ICON_META: ComponentMeta<WithIconOwnProps> = {
   overview: {
-    name: 'WithIcon',
+    title: 'WithIcon',
     description: 'Utility wrapper that aligns an icon alongside its children.',
     responsibilities: ['insert an icon', 'render children exactly as passed'],
     characteristics: [
@@ -44,4 +44,8 @@ export default {
       ),
     },
   ],
-} as ComponentMeta<WithIconOwnProps>
+}
+
+export default {
+  WithIcon: WITH_ICON_META,
+}

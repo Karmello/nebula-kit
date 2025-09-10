@@ -6,6 +6,19 @@ import { formatAsQueryString } from 'client/services'
 import { useLibStore } from 'lib/state'
 import { Spacer } from 'lib/components'
 
+const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
+  switch (sectionKey) {
+    case 'overview':
+      return <ComponentOverviewPage />
+    case 'props':
+      return <ComponentPropsPage />
+    case 'examples':
+      return <ComponentExamplesPage />
+    default:
+      return null
+  }
+}
+
 export const ComponentsPageRoutes = () => {
   const { theme } = useLibStore()
 
@@ -20,18 +33,7 @@ export const ComponentsPageRoutes = () => {
                 <Route
                   key={`${categoryKey}/${itemKey}/${sectionKey}`}
                   path={`${categoryKey}/${itemKey}/${sectionKey}`}
-                  Component={() => {
-                    switch (sectionKey) {
-                      case 'overview':
-                        return <ComponentOverviewPage />
-                      case 'props':
-                        return <ComponentPropsPage />
-                      case 'examples':
-                        return <ComponentExamplesPage />
-                      default:
-                        return null
-                    }
-                  }}
+                  element={<PageResolver sectionKey={sectionKey} />}
                 />
               )
             })
