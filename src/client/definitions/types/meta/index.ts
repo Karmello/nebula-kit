@@ -13,7 +13,6 @@ type Overview = {
 
 type Prop<PropsType> = {
   name: keyof PropsType
-  category?: string
   options: string[]
   defaultValue?: string
   isRequired: boolean

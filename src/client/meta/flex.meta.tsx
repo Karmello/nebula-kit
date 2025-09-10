@@ -1,5 +1,12 @@
 import { ComponentMeta } from 'client/definitions'
-import { Flex, Box, FLEX_INHERITED_PROPS, FlexOwnProps, FlexItemOwnProps } from 'lib/components'
+import {
+  Flex,
+  Box,
+  FLEX_INHERITED_PROPS,
+  FlexOwnProps,
+  FlexItemOwnProps,
+  FLEX_ITEM_INHERITED_PROPS,
+} from 'lib/components'
 
 import {
   CssFlexAlignItems,
@@ -13,7 +20,7 @@ import { applyResponsiveProps } from './_helpers'
 
 const FLEX_META: ComponentMeta<FlexOwnProps> = {
   overview: {
-    title: 'Flex + Flex.Item',
+    title: 'Flex container',
     description: 'A layout container that arranges its children using CSS flexbox.',
     responsibilities: [
       'provide a flexbox-based layout wrapper',
@@ -40,7 +47,6 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
   props: [
     {
       name: 'flexDirection',
-      category: 'Flex',
       options: Object.values(CssFlexDirection),
       defaultValue: CssFlexDirection[0],
       isRequired: false,
@@ -49,7 +55,6 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
     },
     {
       name: 'flexWrap',
-      category: 'Flex',
       options: Object.values(CssFlexWrap),
       defaultValue: CssFlexWrap[0],
       isRequired: false,
@@ -58,7 +63,6 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
     },
     {
       name: 'justifyContent',
-      category: 'Flex',
       options: Object.values(CssFlexJustifyContent),
       defaultValue: CssFlexJustifyContent[0],
       isRequired: false,
@@ -67,7 +71,6 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
     },
     {
       name: 'alignItems',
-      category: 'Flex',
       options: Object.values(CssFlexAlignItems),
       defaultValue: CssFlexAlignItems[0],
       isRequired: false,
@@ -76,7 +79,6 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
     },
     {
       name: 'gap',
-      category: 'Flex',
       options: ['ScaleValue', 'CSS'],
       defaultValue: 'initial',
       isRequired: false,
@@ -85,7 +87,6 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
     },
     {
       name: 'rowGap',
-      category: 'Flex',
       options: ['ScaleValue', 'CSS'],
       defaultValue: 'initial',
       isRequired: false,
@@ -94,7 +95,6 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
     },
     {
       name: 'columnGap',
-      category: 'Flex',
       options: ['ScaleValue', 'CSS'],
       defaultValue: 'initial',
       isRequired: false,
@@ -116,6 +116,84 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
         </Flex>
       ),
     },
+  ],
+}
+
+const FLEX_ITEM_META: ComponentMeta<FlexItemOwnProps> = {
+  overview: {
+    title: 'Flex item',
+    description: 'Flex item represents a single child inside a Flex container.',
+    responsibilities: [
+      'control per-item growth, shrink, and basis in the flex layout',
+      'allow item-level alignment overrides relative to the parent',
+    ],
+    characteristics: [
+      'must be used inside a Flex container',
+      'wraps its child with Box for consistent styling and reset',
+    ],
+    defaultBehavior: [
+      'renders as a <div> element',
+      "aligns according to the parent's alignment rules unless overridden",
+    ],
+    useCases: [
+      "fixing one item's width while others flex around it",
+      'aligning a single child differently from siblings',
+      'making an element grow or shrink independently in a shared row or column',
+    ],
+    inheritedProps: FLEX_ITEM_INHERITED_PROPS,
+  },
+  props: [
+    {
+      name: 'flex',
+      options: ['CSS'],
+      defaultValue: '0 1 auto',
+      isRequired: false,
+      isResponsive: true,
+      description: 'defines how the item grows, shrinks, and sets its base size within the Flex container',
+    },
+    {
+      name: 'flexGrow',
+      options: ['CSS'],
+      defaultValue: '0',
+      isRequired: false,
+      isResponsive: true,
+      description:
+        'controls how much the item can grow relative to the other items when extra space is available',
+    },
+    {
+      name: 'flexShrink',
+      options: ['CSS'],
+      defaultValue: '1',
+      isRequired: false,
+      isResponsive: true,
+      description: 'controls how much the item can shrink relative to the other items when space is limited',
+    },
+    {
+      name: 'flexBasis',
+      options: ['CSS'],
+      defaultValue: 'auto',
+      isRequired: false,
+      isResponsive: true,
+      description: "sets the item's initial main-size before free space is distributed",
+    },
+    {
+      name: 'alignSelf',
+      options: CssFlexItemAlignSelf as unknown as string[],
+      defaultValue: 'auto',
+      isRequired: false,
+      isResponsive: true,
+      description: "overrides the container's alignItems value for this specific item",
+    },
+    {
+      name: 'order',
+      options: ['CSS'],
+      defaultValue: '0',
+      isRequired: false,
+      isResponsive: true,
+      description: "defines the item's order relative to other flex items, independent of source order",
+    },
+  ],
+  examples: [
     {
       description: 'Using Flex.Item to let one item expand while the other keeps its natural size.',
       jsx: (
@@ -132,70 +210,6 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
           </Flex.Item>
         </Flex>
       ),
-    },
-  ],
-}
-
-const FLEX_ITEM_META: ComponentMeta<FlexItemOwnProps> = {
-  overview: {
-    title: '',
-    description: '',
-  },
-  props: [
-    {
-      name: 'flex',
-      category: 'Flex.Item',
-      options: ['CSS'],
-      defaultValue: '0 1 auto',
-      isRequired: false,
-      isResponsive: true,
-      description: 'defines how the item grows, shrinks, and sets its base size within the Flex container',
-    },
-    {
-      name: 'flexGrow',
-      category: 'Flex.Item',
-      options: ['CSS'],
-      defaultValue: '0',
-      isRequired: false,
-      isResponsive: true,
-      description:
-        'controls how much the item can grow relative to the other items when extra space is available',
-    },
-    {
-      name: 'flexShrink',
-      category: 'Flex.Item',
-      options: ['CSS'],
-      defaultValue: '1',
-      isRequired: false,
-      isResponsive: true,
-      description: 'controls how much the item can shrink relative to the other items when space is limited',
-    },
-    {
-      name: 'flexBasis',
-      category: 'Flex.Item',
-      options: ['CSS'],
-      defaultValue: 'auto',
-      isRequired: false,
-      isResponsive: true,
-      description: "sets the item's initial main-size before free space is distributed",
-    },
-    {
-      name: 'alignSelf',
-      category: 'Flex.Item',
-      options: CssFlexItemAlignSelf as unknown as string[],
-      defaultValue: 'auto',
-      isRequired: false,
-      isResponsive: true,
-      description: "overrides the container's alignItems value for this specific item",
-    },
-    {
-      name: 'order',
-      category: 'Flex.Item',
-      options: ['CSS'],
-      defaultValue: '0',
-      isRequired: false,
-      isResponsive: true,
-      description: "defines the item's order relative to other flex items, independent of source order",
     },
   ],
 }

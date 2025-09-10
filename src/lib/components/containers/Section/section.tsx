@@ -22,11 +22,7 @@ export const Section = <E extends SectionElem = 'section'>({
   }
 
   return (
-    <Box
-      elem={elem}
-      // elem={elem || 'section'}
-      {...boxProps}
-    >
+    <Box elem={elem || ('section' as any)} {...boxProps}>
       <Text typography="h6" {...headingProps}>
         {heading}
       </Text>

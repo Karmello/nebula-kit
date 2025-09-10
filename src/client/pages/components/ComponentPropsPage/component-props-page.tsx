@@ -16,5 +16,15 @@ export const ComponentPropsPage = () => {
 
   if (!meta) return null
 
-  return Object.keys(meta || []).map(key => <PropsTable key={key} data={meta[key].props} />)
+  const metaKeys = Object.keys(meta || [])
+
+  return metaKeys.map(key =>
+    meta[key].props ? (
+      <PropsTable
+        key={key}
+        category={metaKeys.length > 1 ? meta[key].overview.title : undefined}
+        data={meta[key].props}
+      />
+    ) : null
+  )
 }
