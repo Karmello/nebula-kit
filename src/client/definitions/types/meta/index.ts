@@ -1,14 +1,14 @@
 import { JSX } from 'react'
 
 type Overview = {
-  title: string
+  title?: string
   description: string
   responsibilities?: string[]
   characteristics?: string[]
   defaultBehavior?: string[]
   useCases?: string[]
   responsiveProps?: string[]
-  inheritedProps?: Record<string, readonly string[]>
+  composedOf?: Record<string, readonly string[]>
 }
 
 type Prop<PropsType> = {

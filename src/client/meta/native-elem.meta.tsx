@@ -3,7 +3,6 @@ import { ComponentMeta } from 'client/definitions'
 
 const NATIVE_ELEM_META: ComponentMeta<NativeElemProps<any>> = {
   overview: {
-    title: 'NativeElem',
     description:
       'NativeElem is a low-level utility that renders the chosen HTML tag. Its polymorphic design means you can swap the underlying element while still getting the correct props, ensuring every NebulaKit component resolves to a predictable, semantic element.',
     responsibilities: [

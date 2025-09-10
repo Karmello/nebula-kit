@@ -6,7 +6,6 @@ import { applyResponsiveProps } from './_helpers'
 
 const GRID_META: ComponentMeta<GridOwnProps> = {
   overview: {
-    title: 'Grid',
     description:
       "Grid provides a flexible two-dimensional layout system, letting you arrange content into rows and columns with consistent spacing and alignment. It's built to handle both simple and complex page structures while staying accessible and responsive.",
     responsibilities: [
@@ -29,7 +28,7 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
       'aligning items consistently across multiple rows',
       'building responsive page sections',
     ],
-    inheritedProps: GRID_INHERITED_PROPS,
+    composedOf: GRID_INHERITED_PROPS,
   },
   props: [
     {

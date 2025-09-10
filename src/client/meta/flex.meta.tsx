@@ -20,7 +20,6 @@ import { applyResponsiveProps } from './_helpers'
 
 const FLEX_META: ComponentMeta<FlexOwnProps> = {
   overview: {
-    title: 'Flex container',
     description: 'A layout container that arranges its children using CSS flexbox.',
     responsibilities: [
       'provide a flexbox-based layout wrapper',
@@ -42,7 +41,7 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
       'distributing space between elements with gaps or justification',
       'building responsive layouts that adapt across breakpoints',
     ],
-    inheritedProps: FLEX_INHERITED_PROPS,
+    composedOf: FLEX_INHERITED_PROPS,
   },
   props: [
     {
@@ -121,7 +120,7 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
 
 const FLEX_ITEM_META: ComponentMeta<FlexItemOwnProps> = {
   overview: {
-    title: 'Flex item',
+    title: 'Flex.Item',
     description: 'Flex item represents a single child inside a Flex container.',
     responsibilities: [
       'control per-item growth, shrink, and basis in the flex layout',
@@ -140,7 +139,7 @@ const FLEX_ITEM_META: ComponentMeta<FlexItemOwnProps> = {
       'aligning a single child differently from siblings',
       'making an element grow or shrink independently in a shared row or column',
     ],
-    inheritedProps: FLEX_ITEM_INHERITED_PROPS,
+    composedOf: FLEX_ITEM_INHERITED_PROPS,
   },
   props: [
     {

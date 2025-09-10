@@ -1,11 +1,34 @@
 import { Box } from 'lib/components'
-import { LayoutSlotProps, Slot } from 'lib/definitions'
+import { Slot } from 'lib/definitions'
 
-import '../../app-frame.scss'
+import { AppFrameFooterProps } from './definitions'
+import classNames from 'classnames'
+import { withPrefix } from 'lib/helpers'
 
-export const Footer = (props: LayoutSlotProps<'footer'>) => {
+export const Footer = ({
+  children,
+  elemProps,
+  elemRef,
+  intent = 'secondary',
+  minBlockSize = 80,
+  ...paddings
+}: AppFrameFooterProps) => {
   return (
-    <Box variant="solid" intent="secondary" minBlockSize={80} borderRadius={0} {...props} elem="footer" />
+    <Box
+      elem="footer"
+      elemProps={{
+        ...elemProps,
+        className: classNames(withPrefix('app-frame-footer'), elemProps?.className),
+      }}
+      elemRef={elemRef}
+      variant="solid"
+      intent={intent}
+      minBlockSize={minBlockSize}
+      borderRadius={0}
+      {...paddings}
+    >
+      {children}
+    </Box>
   )
 }
 

@@ -11,3 +11,4 @@ export const AppFrame = Object.assign(AppFrameBase, {
 })
 
 export * from './app-frame'
+export * from './definitions'

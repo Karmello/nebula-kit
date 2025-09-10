@@ -6,7 +6,6 @@ const App = (): null => null
 
 const NEB_KIT_PROVIDER_META: ComponentMeta<NebKitProviderProps> = {
   overview: {
-    title: 'NebKitProvider',
     description:
       'NebKitProvider is the root setup component for Nebula-kit. It initializes global configuration, connects the internal store, and keeps the application environment in sync so that all components work consistently.',
     responsibilities: [

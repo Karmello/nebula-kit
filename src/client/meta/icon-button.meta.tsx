@@ -3,13 +3,12 @@ import { ComponentMeta } from 'client/definitions'
 
 const ICON_BUTTON_META: ComponentMeta<IconButtonProps> = {
   overview: {
-    title: 'IconButton',
     description: 'A button that relies on an icon as its main content.',
     responsibilities: ['render an icon as the content of a button'],
     characteristics: ['renders as a <button> element', 'does not accept children', 'iconName is required'],
     defaultBehavior: ['medium size', 'solid variant', 'tertiary intent'],
     useCases: ["useful for quick actions where text isn't needed"],
-    inheritedProps: ICON_BUTTON_INHERITED_PROPS,
+    composedOf: ICON_BUTTON_INHERITED_PROPS,
   },
   examples: [
     {

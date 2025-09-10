@@ -35,7 +35,7 @@ export const App = () => {
       <AppFrame.Main paddingTop={{ base: 10, lg: 20 }} paddingBottom={40}>
         <RootPage />
       </AppFrame.Main>
-      <AppFrame.Footer intent="tertiary"></AppFrame.Footer>
+      <AppFrame.Footer intent="tertiary">{''}</AppFrame.Footer>
     </AppFrame>
   )
 }

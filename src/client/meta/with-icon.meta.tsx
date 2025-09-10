@@ -4,7 +4,6 @@ import { IconPosition, WITH_ICON_DEFAULT_ICON_POSITION } from 'lib/definitions'
 
 const WITH_ICON_META: ComponentMeta<WithIconOwnProps> = {
   overview: {
-    title: 'WithIcon',
     description: 'Utility wrapper that aligns an icon alongside its children.',
     responsibilities: ['insert an icon', 'render children exactly as passed'],
     characteristics: [
@@ -14,7 +13,7 @@ const WITH_ICON_META: ComponentMeta<WithIconOwnProps> = {
     ],
     defaultBehavior: ['iconPosition defaults to left'],
     useCases: ['add an icon to text or inline content', 'compose higher-level components that support icons'],
-    inheritedProps: WITH_ICON_INHERITED_PROPS,
+    composedOf: WITH_ICON_INHERITED_PROPS,
   },
   props: [
     {

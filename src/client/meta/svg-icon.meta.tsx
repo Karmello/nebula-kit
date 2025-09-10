@@ -4,7 +4,6 @@ import { BoxIntent, DEFAULT_BOX_INTENT, DEFAULT_SVG_ICON_SIZE } from 'lib/defini
 
 const SVG_ICON_META: ComponentMeta<SvgIconProps> = {
   overview: {
-    title: 'SvgIcon',
     description:
       'SvgIcon is a wrapper that renders an SVG from the icon set by name and applies system styles.',
     responsibilities: ['resolve icon by name', 'apply sizing and color'],

@@ -16,7 +16,6 @@ import { applyResponsiveProps } from './_helpers'
 
 const BOX_META: ComponentMeta<BoxOwnProps> = {
   overview: {
-    title: 'Box',
     description:
       'Box is the foundational surface component. It exposes a curated set of core CSS properties - appearance, spacing, sizing, and positioning - so you can style a plain block-level element directly in JSX.',
     responsibilities: [
@@ -34,7 +33,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
       "use when you need a semantic element that isn't yet provided as a dedicated component in the library",
       'use as the base building block when creating your own custom component',
     ],
-    inheritedProps: BOX_INHERITED_PROPS,
+    composedOf: BOX_INHERITED_PROPS,
   },
   props: [
     {

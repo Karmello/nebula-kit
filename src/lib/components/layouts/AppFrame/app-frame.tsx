@@ -1,19 +1,13 @@
-import { ReactNode } from 'react'
-
-import { Grid } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
+import { Grid } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import { AppFrameProvider } from './AppFrameProvider'
+import { AppFrameProps } from './definitions'
 
 import './app-frame.scss'
 
-export type AppFrameOwnProps = {
-  children: ReactNode
-  stickyHeader?: boolean
-}
-
-export const AppFrame = ({ children, stickyHeader = false }: AppFrameOwnProps) => {
+export const AppFrame = ({ children, stickyHeader = false }: AppFrameProps) => {
   return (
     <AppFrameProvider stickyHeader={stickyHeader}>
       <WithSlots

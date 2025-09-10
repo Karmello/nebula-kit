@@ -1,22 +1,27 @@
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { LayoutSlotProps, Slot } from 'lib/definitions'
+import { Slot } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
-import '../../app-frame.scss'
+import { AppFrameMainProps } from './definitions'
 
-export const Main = ({ elemProps, ...rest }: LayoutSlotProps<'main'>) => {
+import './main.scss'
+
+export const Main = ({ children, elemProps, elemRef, ...paddings }: AppFrameMainProps) => {
   return (
     <Box
-      borderRadius={0}
-      {...rest}
       elem="main"
       elemProps={{
         ...elemProps,
         className: classNames(withPrefix('app-frame-main'), elemProps?.className),
       }}
-    />
+      elemRef={elemRef}
+      borderRadius={0}
+      {...paddings}
+    >
+      {children}
+    </Box>
   )
 }
 
