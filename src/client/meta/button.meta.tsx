@@ -1,5 +1,6 @@
+import { ComponentMeta } from 'client/definitions'
 import { Button, BUTTON_INHERITED_PROPS, ButtonOwnProps } from 'lib/components'
-import { ComponentMeta, ButtonSize, DEFAULT_BUTTON_SIZE } from 'lib/definitions'
+import { ButtonSize, DEFAULT_BUTTON_SIZE } from 'lib/definitions'
 
 const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
   overview: {

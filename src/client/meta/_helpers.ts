@@ -1,4 +1,4 @@
-import { ComponentMeta } from 'lib/definitions'
+import { ComponentMeta } from 'client/definitions'
 
 export const applyResponsiveProps = (meta: ComponentMeta<unknown>) => {
   const responsiveProps: typeof meta.overview.responsiveProps = []

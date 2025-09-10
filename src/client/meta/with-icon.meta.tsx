@@ -1,5 +1,6 @@
+import { ComponentMeta } from 'client/definitions'
 import { WITH_ICON_INHERITED_PROPS, WithIcon, WithIconOwnProps } from 'lib/components'
-import { ComponentMeta, IconPosition, WITH_ICON_DEFAULT_ICON_POSITION } from 'lib/definitions'
+import { IconPosition, WITH_ICON_DEFAULT_ICON_POSITION } from 'lib/definitions'
 
 export default {
   overview: {

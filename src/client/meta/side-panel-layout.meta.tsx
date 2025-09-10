@@ -1,5 +1,6 @@
+import { ComponentMeta } from 'client/definitions'
 import { SIDE_PANEL_LAYOUT_DEFAULT_SIDE_WITH_DESKTOP, SidePanelLayoutOwnProps } from 'lib/components'
-import { ComponentMeta, HorizontalPosition } from 'lib/definitions'
+import { HorizontalPosition } from 'lib/definitions'
 
 const SIDE_PANEL_LAYOUT_META: ComponentMeta<SidePanelLayoutOwnProps> = {
   overview: {

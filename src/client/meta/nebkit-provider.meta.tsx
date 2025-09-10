@@ -1,5 +1,6 @@
+import { ComponentMeta } from 'client/definitions'
 import { NebKitProvider, NebKitProviderProps } from 'lib/components'
-import { ComponentMeta, DEFAULT_BORDER_RADIUS, Theme } from 'lib/definitions'
+import { DEFAULT_BORDER_RADIUS, Theme } from 'lib/definitions'
 
 const App = (): null => null
 

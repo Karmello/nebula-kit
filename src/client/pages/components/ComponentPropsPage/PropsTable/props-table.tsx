@@ -1,5 +1,5 @@
 import { Section, SvgIcon, Table, Text } from 'lib/components'
-import { ComponentMeta } from 'lib/definitions'
+import { ComponentMeta } from 'client/definitions'
 
 type Props = {
   data: ComponentMeta<unknown>['props']

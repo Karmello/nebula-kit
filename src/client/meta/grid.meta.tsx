@@ -1,12 +1,6 @@
+import { ComponentMeta } from 'client/definitions'
 import { Box, Grid, GRID_INHERITED_PROPS, GridOwnProps } from 'lib/components'
-
-import {
-  ComponentMeta,
-  CssGridAutoFlow,
-  CssGridPlaceItems,
-  CssGridPlaceContent,
-  GridElem,
-} from 'lib/definitions'
+import { CssGridAutoFlow, CssGridPlaceItems, CssGridPlaceContent, GridElem } from 'lib/definitions'
 
 import { applyResponsiveProps } from './_helpers'
 

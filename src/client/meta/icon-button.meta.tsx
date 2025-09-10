@@ -1,5 +1,5 @@
 import { IconButton, ICON_BUTTON_INHERITED_PROPS, ButtonOwnProps } from 'lib/components'
-import { ComponentMeta } from 'lib/definitions'
+import { ComponentMeta } from 'client/definitions'
 
 export default {
   overview: {

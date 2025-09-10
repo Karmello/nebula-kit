@@ -1,5 +1,5 @@
-import { DEFAULT_TEXT_TYPOGRAPHY, TextElem } from 'lib/definitions'
-import { ComponentMeta, TextTypography } from 'lib/definitions'
+import { ComponentMeta } from 'client/definitions'
+import { DEFAULT_TEXT_TYPOGRAPHY, TextElem, TextTypography } from 'lib/definitions'
 import { Text, TEXT_INHERITED_PROPS, TextOwnProps } from 'lib/components'
 
 import { applyResponsiveProps } from './_helpers'

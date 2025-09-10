@@ -1,9 +1,9 @@
+import { ComponentMeta } from 'client/definitions'
 import { Box, BOX_INHERITED_PROPS, BoxOwnProps } from 'lib/components'
 
 import {
   BoxIntent,
   BoxVariant,
-  ComponentMeta,
   CssDisplay,
   CssOverflow,
   CssPosition,

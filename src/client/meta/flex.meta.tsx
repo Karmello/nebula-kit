@@ -1,7 +1,7 @@
+import { ComponentMeta } from 'client/definitions'
 import { Flex, Box, FLEX_INHERITED_PROPS, FlexOwnProps, FlexItemProps } from 'lib/components'
 
 import {
-  ComponentMeta,
   CssFlexAlignItems,
   CssFlexDirection,
   CssFlexItemAlignSelf,

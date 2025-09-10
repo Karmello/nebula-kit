@@ -1,4 +1,4 @@
-import { ComponentMeta } from 'lib/definitions'
+import { ComponentMeta } from 'client/definitions'
 import { AppFrame, AppFrameOwnProps, Text } from 'lib/components'
 
 const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {

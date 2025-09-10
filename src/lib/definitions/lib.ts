@@ -1,5 +1,3 @@
-import { JSX } from 'react'
-
 // constants
 
 export const LIB_NAME = 'NebulaKit'
@@ -16,37 +14,6 @@ export const SCALE = [
 
 export type Breakpoint = (typeof BREAKPOINTS)[number]
 export type ScaleValue = (typeof SCALE)[number]
-
-export type CompWithCssVarsPrefix = 'box' | 'text' | 'flex' | 'grid' | 'table' | 'cluster'
-
-export type ComponentMeta<PropsType> = {
-  overview: {
-    name: string
-    description: string
-    responsibilities?: string[]
-    characteristics?: string[]
-    defaultBehavior?: string[]
-    useCases?: string[]
-    responsiveProps?: string[]
-    inheritedProps?: Record<string, readonly string[]>
-    propsDescription?: string
-  }
-  props?: {
-    name: keyof PropsType
-    category?: string
-    options: string[]
-    defaultValue?: string
-    isRequired: boolean
-    isResponsive: boolean
-    description: string
-  }[]
-  examples?: {
-    jsx: JSX.Element
-    description?: string
-    noSandBox?: boolean
-    sandBoxWithNoPadding?: boolean
-  }[]
-}
 
 // enums
 

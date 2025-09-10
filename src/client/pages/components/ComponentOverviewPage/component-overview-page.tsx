@@ -1,10 +1,10 @@
 import { memo } from 'react'
 
-import { Text, List, Flex, Box } from 'lib/components'
 import { useComponentsPageStore } from 'client/store'
-import { ComponentMeta } from 'lib/definitions'
+import { ComponentMeta } from 'client/definitions'
 import { CodeSnippet } from 'client/components'
 import { elemToStringService } from 'client/services'
+import { Text, List, Flex, Box } from 'lib/components'
 
 const ListWithHeading = ({ heading, items }: { heading: string; items: string[] }) => (
   <Flex flexDirection="column" gap={5}>

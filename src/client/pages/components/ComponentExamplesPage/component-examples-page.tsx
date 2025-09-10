@@ -1,10 +1,10 @@
 import { memo, useMemo } from 'react'
 
 import { CodeSnippet } from 'client/components'
-import { Box, Flex, Spacer, Text } from 'lib/components'
 import { elemToStringService } from 'client/services'
 import { useComponentsPageStore } from 'client/store'
-import { ComponentMeta } from 'lib/definitions'
+import { ComponentMeta } from 'client/definitions'
+import { Box, Flex, Spacer, Text } from 'lib/components'
 
 export const ComponentExamplesPage = memo(() => {
   const elemToString = elemToStringService()

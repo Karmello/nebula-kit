@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react'
 
 import { useComponentsPageStore } from 'client/store'
-import { ComponentMeta } from 'lib/definitions'
+import { ComponentMeta } from 'client/definitions'
 import { Spacer, Text } from 'lib/components'
 
 import { PropsTable } from './PropsTable'
