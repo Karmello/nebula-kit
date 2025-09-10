@@ -20,7 +20,6 @@ export default {
   },
   props: [
     {
-      category: '',
       name: 'children',
       options: ['ReactNode'],
       isRequired: false,
@@ -28,7 +27,6 @@ export default {
       description: 'Content rendered inside the element.',
     },
     {
-      category: '',
       name: 'elem',
       options: ['HTML tag'],
       defaultValue: 'div',
@@ -37,7 +35,6 @@ export default {
       description: 'Specifies the HTML tag that will be rendered as the container.',
     },
     {
-      category: '',
       name: 'elemProps',
       options: ['HTML tag attributes'],
       isRequired: false,
@@ -45,7 +42,6 @@ export default {
       description: 'Additional HTML attributes applied to the chosen tag.',
     },
     {
-      category: '',
       name: 'elemRef',
       options: ['RefObject'],
       isRequired: false,

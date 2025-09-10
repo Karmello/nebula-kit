@@ -5,6 +5,7 @@ import {
   CssFlexDirection,
   CssFlexJustifyContent,
   CssFlexWrap,
+  MakeRequired,
   ResponsiveProp,
   ScaleValue,
 } from 'lib/definitions'
@@ -25,9 +26,9 @@ export const FLEX_INHERITED_PROPS = {
   Box: ['children', 'elem', 'elemProps', 'elemRef'] as const satisfies readonly (keyof BoxProps)[],
 }
 
-export type FlexInheritedProps<E extends ElementType> = Pick<
-  BoxProps<E>,
-  (typeof FLEX_INHERITED_PROPS)['Box'][number]
+export type FlexInheritedProps<E extends ElementType> = MakeRequired<
+  Pick<BoxProps<E>, (typeof FLEX_INHERITED_PROPS)['Box'][number]>,
+  'children'
 >
 
 export type FlexProps<E extends ElementType = 'div'> = FlexOwnProps & FlexInheritedProps<E>

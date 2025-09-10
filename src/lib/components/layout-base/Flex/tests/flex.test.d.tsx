@@ -5,8 +5,8 @@ import { Box } from 'lib/components'
 
 import { Flex } from '..'
 
-// children not required
-expectType(<Flex />)
+// children required
+expectError(<Flex />)
 
 // children passed
 expectType(
@@ -17,21 +17,56 @@ expectType(
 )
 
 // elem possible to change
-expectType(<Flex elem="ul" />)
+expectType(
+  <Flex elem="ul">
+    <Box>Item 1</Box>
+    <Box>Item 2</Box>
+  </Flex>
+)
 
 // wrong ref type not allowed
-expectError(<Flex elem="ul" elemRef={createRef<HTMLButtonElement>()} />)
+expectError(
+  <Flex elem="ul" elemRef={createRef<HTMLButtonElement>()}>
+    <Box>Item 1</Box>
+    <Box>Item 2</Box>
+  </Flex>
+)
 
 // right ref type allowed
-expectType(<Flex elem="ul" elemRef={createRef<HTMLUListElement>()} />)
+expectType(
+  <Flex elem="ul" elemRef={createRef<HTMLUListElement>()}>
+    <Box>Item 1</Box>
+    <Box>Item 2</Box>
+  </Flex>
+)
 
 // right props passed
-expectType(<Flex flexDirection="column" flexWrap="wrap" />)
+expectType(
+  <Flex flexDirection="column" flexWrap="wrap">
+    <Box>Item 1</Box>
+    <Box>Item 2</Box>
+  </Flex>
+)
 
 // wrong props passed
-expectError(<Flex blockSize={5} />)
-expectError(<Flex margin={5} />)
-expectError(<Flex padding={5} />)
+expectError(
+  <Flex blockSize={5}>
+    <Box>Item 1</Box>
+    <Box>Item 2</Box>
+  </Flex>
+)
+expectError(
+  <Flex margin={5}>
+    <Box>Item 1</Box>
+    <Box>Item 2</Box>
+  </Flex>
+)
+expectError(
+  <Flex padding={5}>
+    <Box>Item 1</Box>
+    <Box>Item 2</Box>
+  </Flex>
+)
 
 // Flex.Item used
 expectType(

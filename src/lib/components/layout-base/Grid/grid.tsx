@@ -1,39 +1,16 @@
-import { ComponentRef, useLayoutEffect, useRef } from 'react'
+import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxProps } from 'lib/components'
+import { Box } from 'lib/components'
 import { withPrefix, useScreen, computeResponsiveCss } from 'lib/helpers'
+import { GridElem } from 'lib/definitions'
 
-import {
-  CssGridAutoFlow,
-  CssGridPlaceContent,
-  CssGridPlaceItems,
-  GridElem,
-  ResponsiveProp,
-  ScaleValue,
-} from 'lib/definitions'
+import { GridProps } from './definitions'
 
 import './grid.scss'
 
-export type GridOwnProps = {
-  gridTemplateColumns?: ResponsiveProp<string | number>
-  gridTemplateRows?: ResponsiveProp<string | number>
-  gridAutoRows?: ResponsiveProp<string>
-  gridAutoColumns?: ResponsiveProp<string>
-  gridAutoFlow?: ResponsiveProp<CssGridAutoFlow>
-  placeItems?: ResponsiveProp<CssGridPlaceItems>
-  placeContent?: ResponsiveProp<CssGridPlaceContent>
-  gap?: ResponsiveProp<ScaleValue | string>
-  rowGap?: ResponsiveProp<ScaleValue | string>
-  columnGap?: ResponsiveProp<ScaleValue | string>
-}
-
-export type GridProps<E extends GridElem> = Omit<BoxProps<E>, 'display'> & GridOwnProps
-
 export const Grid = <E extends GridElem = 'div'>({
-  elem,
-  elemProps,
-  elemRef,
+  // own
   gridTemplateColumns,
   gridTemplateRows,
   gridAutoRows,
@@ -44,7 +21,11 @@ export const Grid = <E extends GridElem = 'div'>({
   gap,
   rowGap,
   columnGap,
-  ...boxProps
+  // Box
+  children,
+  elem,
+  elemProps,
+  elemRef,
 }: GridProps<E>) => {
   const ref = useRef<ComponentRef<E>>(null)
 
@@ -80,10 +61,15 @@ export const Grid = <E extends GridElem = 'div'>({
   return (
     <Box
       elem={elem}
-      elemProps={{ ...elemProps, className: classNames(withPrefix('grid'), elemProps?.className) }}
+      elemProps={
+        { ...elemProps, className: classNames(withPrefix('grid'), elemProps?.className) } as PropsWithoutRef<
+          ComponentProps<E>
+        >
+      }
       elemRef={elemRef || ref}
-      {...(boxProps as any)}
-    />
+    >
+      {children}
+    </Box>
   )
 }
 

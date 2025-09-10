@@ -1,4 +1,3 @@
-import { PropCategory } from 'client/definitions'
 import { ComponentMeta } from 'lib/definitions'
 import { AppFrame, AppFrameOwnProps, Text } from 'lib/components'
 
@@ -11,7 +10,6 @@ const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
   },
   props: [
     {
-      category: PropCategory.behavior,
       name: 'stickyHeader',
       options: ['boolean'],
       defaultValue: 'false',
@@ -20,7 +18,6 @@ const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
       description: '',
     },
     {
-      category: PropCategory.other,
       name: 'children',
       options: ['ReactNode'],
       isRequired: true,

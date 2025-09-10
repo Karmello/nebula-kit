@@ -1,10 +1,10 @@
-import { PropCategory } from 'client/definitions'
 import { Flex, Box, FLEX_INHERITED_PROPS, FlexOwnProps, FlexItemProps } from 'lib/components'
 
 import {
   ComponentMeta,
   CssFlexAlignItems,
   CssFlexDirection,
+  CssFlexItemAlignSelf,
   CssFlexJustifyContent,
   CssFlexWrap,
 } from 'lib/definitions'
@@ -39,8 +39,8 @@ const FLEX_META: ComponentMeta<FlexOwnProps & FlexItemProps> = {
   },
   props: [
     {
-      category: PropCategory.flex,
       name: 'flexDirection',
+      category: 'Flex',
       options: Object.values(CssFlexDirection),
       defaultValue: CssFlexDirection[0],
       isRequired: false,
@@ -48,8 +48,8 @@ const FLEX_META: ComponentMeta<FlexOwnProps & FlexItemProps> = {
       description: 'Sets the flow of flex items along the main axis.',
     },
     {
-      category: PropCategory.flex,
       name: 'flexWrap',
+      category: 'Flex',
       options: Object.values(CssFlexWrap),
       defaultValue: CssFlexWrap[0],
       isRequired: false,
@@ -57,8 +57,8 @@ const FLEX_META: ComponentMeta<FlexOwnProps & FlexItemProps> = {
       description: 'Controls whether flex items stay on one line or wrap onto multiple lines.',
     },
     {
-      category: PropCategory.flex,
       name: 'justifyContent',
+      category: 'Flex',
       options: Object.values(CssFlexJustifyContent),
       defaultValue: CssFlexJustifyContent[0],
       isRequired: false,
@@ -66,8 +66,8 @@ const FLEX_META: ComponentMeta<FlexOwnProps & FlexItemProps> = {
       description: 'Distributes flex items along the main axis.',
     },
     {
-      category: PropCategory.flex,
       name: 'alignItems',
+      category: 'Flex',
       options: Object.values(CssFlexAlignItems),
       defaultValue: CssFlexAlignItems[0],
       isRequired: false,
@@ -75,8 +75,8 @@ const FLEX_META: ComponentMeta<FlexOwnProps & FlexItemProps> = {
       description: 'Aligns flex items along the cross axis.',
     },
     {
-      category: PropCategory.flex,
       name: 'gap',
+      category: 'Flex',
       options: ['ScaleValue', 'CSS'],
       defaultValue: 'initial',
       isRequired: false,
@@ -84,8 +84,8 @@ const FLEX_META: ComponentMeta<FlexOwnProps & FlexItemProps> = {
       description: 'Defines spacing between flex items on both axes.',
     },
     {
-      category: PropCategory.flex,
       name: 'rowGap',
+      category: 'Flex',
       options: ['ScaleValue', 'CSS'],
       defaultValue: 'initial',
       isRequired: false,
@@ -93,8 +93,8 @@ const FLEX_META: ComponentMeta<FlexOwnProps & FlexItemProps> = {
       description: 'Defines vertical spacing between rows of flex items.',
     },
     {
-      category: PropCategory.flex,
       name: 'columnGap',
+      category: 'Flex',
       options: ['ScaleValue', 'CSS'],
       defaultValue: 'initial',
       isRequired: false,
@@ -102,8 +102,8 @@ const FLEX_META: ComponentMeta<FlexOwnProps & FlexItemProps> = {
       description: 'Defines horizontal spacing between columns of flex items.',
     },
     {
-      category: PropCategory.flexItem,
       name: 'flex',
+      category: 'Flex.Item',
       options: ['CSS'],
       defaultValue: '0 1 auto',
       isRequired: false,
@@ -111,8 +111,8 @@ const FLEX_META: ComponentMeta<FlexOwnProps & FlexItemProps> = {
       description: 'defines how the item grows, shrinks, and sets its base size within the Flex container',
     },
     {
-      category: PropCategory.flexItem,
       name: 'flexGrow',
+      category: 'Flex.Item',
       options: ['CSS'],
       defaultValue: '0',
       isRequired: false,
@@ -121,8 +121,8 @@ const FLEX_META: ComponentMeta<FlexOwnProps & FlexItemProps> = {
         'controls how much the item can grow relative to the other items when extra space is available',
     },
     {
-      category: PropCategory.flexItem,
       name: 'flexShrink',
+      category: 'Flex.Item',
       options: ['CSS'],
       defaultValue: '1',
       isRequired: false,
@@ -130,8 +130,8 @@ const FLEX_META: ComponentMeta<FlexOwnProps & FlexItemProps> = {
       description: 'controls how much the item can shrink relative to the other items when space is limited',
     },
     {
-      category: PropCategory.flexItem,
       name: 'flexBasis',
+      category: 'Flex.Item',
       options: ['CSS'],
       defaultValue: 'auto',
       isRequired: false,
@@ -139,17 +139,17 @@ const FLEX_META: ComponentMeta<FlexOwnProps & FlexItemProps> = {
       description: "sets the item's initial main-size before free space is distributed",
     },
     {
-      category: PropCategory.flexItem,
       name: 'alignSelf',
-      options: ['CSS'],
+      category: 'Flex.Item',
+      options: CssFlexItemAlignSelf as unknown as string[],
       defaultValue: 'auto',
       isRequired: false,
       isResponsive: true,
       description: "overrides the container's alignItems value for this specific item",
     },
     {
-      category: PropCategory.flexItem,
       name: 'order',
+      category: 'Flex.Item',
       options: ['CSS'],
       defaultValue: '0',
       isRequired: false,

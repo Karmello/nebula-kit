@@ -1,7 +1,6 @@
 import { DEFAULT_TEXT_TYPOGRAPHY, TextElem } from 'lib/definitions'
 import { ComponentMeta, TextTypography } from 'lib/definitions'
 import { Text, TEXT_INHERITED_PROPS, TextOwnProps } from 'lib/components'
-import { PropCategory } from 'client/definitions'
 
 import { applyResponsiveProps } from './_helpers'
 
@@ -30,7 +29,6 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
   },
   props: [
     {
-      category: PropCategory.typography,
       name: 'typography',
       options: Object.values(TextTypography),
       defaultValue: DEFAULT_TEXT_TYPOGRAPHY,
@@ -40,7 +38,6 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
         'Applies a predefined typography style from the design system, controlling elem, fontSize and lineHeight together.',
     },
     {
-      category: PropCategory.typography,
       name: 'bold',
       options: ['boolean'],
       defaultValue: 'false',
@@ -49,7 +46,6 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       description: 'Toggles bold styling for the text.',
     },
     {
-      category: PropCategory.typography,
       name: 'italic',
       options: ['boolean'],
       defaultValue: 'false',
@@ -58,7 +54,6 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       description: 'Toggles italic styling for the text.',
     },
     {
-      category: PropCategory.behavior,
       name: 'noWrap',
       options: ['boolean'],
       defaultValue: 'false',
@@ -67,7 +62,6 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       description: 'Prevents the text from wrapping onto multiple lines.',
     },
     {
-      category: PropCategory.behavior,
       name: 'truncate',
       options: ['boolean'],
       defaultValue: 'false',
@@ -76,7 +70,6 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       description: 'Shortens overflowing text to a single line with an ellipsis.',
     },
     {
-      category: PropCategory.behavior,
       name: 'clampLines',
       options: ['number'],
       isRequired: false,

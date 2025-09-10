@@ -17,7 +17,7 @@ export const Flex = <E extends ElementType = 'div'>({
   gap,
   rowGap,
   columnGap,
-  // NativeElem
+  // Box
   children,
   elem,
   elemProps,

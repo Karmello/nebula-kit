@@ -1,10 +1,10 @@
-import { ReactNode } from 'react'
+import { ReactElement } from 'react'
 
 import { Flex } from 'lib/components'
 import { CssFlexJustifyContent, HorizontalPosition } from 'lib/definitions'
 
 export type HAlignOwnProps = {
-  children: ReactNode
+  children: ReactElement
   position: HorizontalPosition
 }
 

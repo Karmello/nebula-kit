@@ -1,5 +1,4 @@
-import { PropCategory } from 'client/definitions'
-import { GridProps } from 'lib/components'
+import { Box, Grid, GRID_INHERITED_PROPS, GridOwnProps } from 'lib/components'
 
 import {
   ComponentMeta,
@@ -9,17 +8,37 @@ import {
   GridElem,
 } from 'lib/definitions'
 
-const GRID_META: ComponentMeta<GridProps<GridElem>> = {
+import { applyResponsiveProps } from './_helpers'
+
+const GRID_META: ComponentMeta<GridOwnProps> = {
   overview: {
     name: 'Grid',
     description:
-      'Grid is a layout component that arranges its children using CSS Grid. It provides a consistent API for defining rows, columns, gaps, and alignment, so you can create two-dimensional layouts without writing raw grid styles. Use Grid when you need precise control over track sizes, auto-placement, and spacing in both directions, or as the foundation for more complex, responsive layout primitives.',
-    propsDescription:
-      'Grid extends Box, so it accepts all Box props in addition to the grid-specific ones below.',
+      "Grid provides a flexible two-dimensional layout system, letting you arrange content into rows and columns with consistent spacing and alignment. It's built to handle both simple and complex page structures while staying accessible and responsive.",
+    responsibilities: [
+      'provide a CSS Grid-based layout wrapper',
+      'establish rows and columns to align and distribute children',
+      'manage spacing between items with gap properties',
+    ],
+    characteristics: [
+      'always applies display: grid',
+      'uses Box internally to ensure consistent reset and baseline styles',
+      `restricts elem to structural HTML tags: ${GridElem.map(s => `<${s}>`).join(', ')}`,
+    ],
+    defaultBehavior: [
+      'renders as a <div> element',
+      'arranges children into a single column',
+      'does not apply any gap between children',
+    ],
+    useCases: [
+      'creating two-dimensional layouts with rows and columns',
+      'aligning items consistently across multiple rows',
+      'building responsive page sections',
+    ],
+    inheritedProps: GRID_INHERITED_PROPS,
   },
   props: [
     {
-      category: PropCategory.layout,
       name: 'gridTemplateColumns',
       options: ['string', 'number'],
       defaultValue: '1fr',
@@ -28,7 +47,6 @@ const GRID_META: ComponentMeta<GridProps<GridElem>> = {
       description: 'Defines the column structure of the grid.',
     },
     {
-      category: PropCategory.layout,
       name: 'gridTemplateRows',
       options: ['string', 'number'],
       defaultValue: 'auto',
@@ -37,7 +55,6 @@ const GRID_META: ComponentMeta<GridProps<GridElem>> = {
       description: 'Sets how the grid’s rows are laid out.',
     },
     {
-      category: PropCategory.layout,
       name: 'gridAutoRows',
       options: ['string'],
       defaultValue: 'auto',
@@ -46,7 +63,6 @@ const GRID_META: ComponentMeta<GridProps<GridElem>> = {
       description: 'Defines the size of rows that are created automatically.',
     },
     {
-      category: PropCategory.layout,
       name: 'gridAutoColumns',
       options: ['string'],
       defaultValue: 'auto',
@@ -55,7 +71,6 @@ const GRID_META: ComponentMeta<GridProps<GridElem>> = {
       description: 'Defines the size of columns that are created automatically.',
     },
     {
-      category: PropCategory.layout,
       name: 'gridAutoFlow',
       options: Object.values(CssGridAutoFlow),
       defaultValue: CssGridAutoFlow[0],
@@ -64,7 +79,6 @@ const GRID_META: ComponentMeta<GridProps<GridElem>> = {
       description: 'Controls how items are automatically placed into the grid.',
     },
     {
-      category: PropCategory.alignment,
       name: 'placeItems',
       options: Object.values(CssGridPlaceItems),
       defaultValue: CssGridPlaceItems[0],
@@ -73,7 +87,6 @@ const GRID_META: ComponentMeta<GridProps<GridElem>> = {
       description: 'Controls how grid items are aligned within their cells.',
     },
     {
-      category: PropCategory.alignment,
       name: 'placeContent',
       options: Object.values(CssGridPlaceContent),
       defaultValue: CssGridPlaceContent[0],
@@ -82,7 +95,6 @@ const GRID_META: ComponentMeta<GridProps<GridElem>> = {
       description: 'Controls how the grid as a whole is aligned within its container.',
     },
     {
-      category: PropCategory.spacing,
       name: 'gap',
       options: ['ScaleValue', 'CSS'],
       defaultValue: 'initial',
@@ -91,7 +103,6 @@ const GRID_META: ComponentMeta<GridProps<GridElem>> = {
       description: 'Sets the spacing between rows and columns in the grid.',
     },
     {
-      category: PropCategory.spacing,
       name: 'rowGap',
       options: ['ScaleValue', 'CSS'],
       defaultValue: 'initial',
@@ -100,7 +111,6 @@ const GRID_META: ComponentMeta<GridProps<GridElem>> = {
       description: 'Sets the spacing between grid rows.',
     },
     {
-      category: PropCategory.spacing,
       name: 'columnGap',
       options: ['ScaleValue', 'CSS'],
       defaultValue: 'initial',
@@ -108,17 +118,25 @@ const GRID_META: ComponentMeta<GridProps<GridElem>> = {
       isResponsive: true,
       description: 'Sets the spacing between grid columns.',
     },
+  ],
+  examples: [
     {
-      category: PropCategory.other,
-      name: 'elem',
-      options: Object.values(GridElem),
-      defaultValue: GridElem[0],
-      isRequired: false,
-      isResponsive: false,
       description:
-        'Specifies which HTML element the grid should render as, allowing you to match semantic structure without changing its layout behavior.',
+        'Two-column layout with main content and sidebar, where the article takes more space and the aside sits alongside it.',
+      jsx: (
+        <Grid gridTemplateColumns="2fr 1fr">
+          <Box elem="article" variant="outline" intent="primary">
+            Article
+          </Box>
+          <Box elem="aside" variant="outline" intent="primary">
+            Aside
+          </Box>
+        </Grid>
+      ),
     },
   ],
 }
+
+applyResponsiveProps(GRID_META)
 
 export default GRID_META

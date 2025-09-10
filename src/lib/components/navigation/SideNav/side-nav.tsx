@@ -112,7 +112,7 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
               overflowY="hidden"
             >
               <Flex flexDirection="column" alignItems="stretch">
-                {items?.map(({ key, label, elemProps, ...rest }) => {
+                {(items || []).map(({ key, label, elemProps, ...rest }) => {
                   const isItemActive = key === activeKey
 
                   return (

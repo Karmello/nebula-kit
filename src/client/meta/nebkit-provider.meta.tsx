@@ -26,7 +26,6 @@ export default {
   },
   props: [
     {
-      category: '',
       name: 'children',
       options: ['ReactElement'],
       isRequired: true,
@@ -34,7 +33,6 @@ export default {
       description: 'The application or subtree wrapped by the provider.',
     },
     {
-      category: '',
       name: 'defaultTheme',
       options: Theme,
       defaultValue: Theme[0],
@@ -43,7 +41,6 @@ export default {
       description: 'Starting theme for the app.',
     },
     {
-      category: '',
       name: 'defaultBorderRadius',
       options: ['ScaleValue', 'CSS'],
       defaultValue: DEFAULT_BORDER_RADIUS,

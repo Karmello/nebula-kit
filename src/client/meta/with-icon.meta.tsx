@@ -17,7 +17,6 @@ export default {
   },
   props: [
     {
-      category: '',
       name: 'iconPosition',
       options: IconPosition as unknown as string[],
       defaultValue: WITH_ICON_DEFAULT_ICON_POSITION,

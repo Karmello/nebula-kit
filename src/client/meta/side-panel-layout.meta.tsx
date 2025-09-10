@@ -1,4 +1,3 @@
-import { PropCategory } from 'client/definitions'
 import { SIDE_PANEL_LAYOUT_DEFAULT_SIDE_WITH_DESKTOP, SidePanelLayoutOwnProps } from 'lib/components'
 import { ComponentMeta, HorizontalPosition } from 'lib/definitions'
 
@@ -11,7 +10,6 @@ const SIDE_PANEL_LAYOUT_META: ComponentMeta<SidePanelLayoutOwnProps> = {
   },
   props: [
     {
-      category: PropCategory.alignment,
       name: 'sidePosition',
       options: [HorizontalPosition[0], HorizontalPosition[2]],
       defaultValue: HorizontalPosition[0],
@@ -20,7 +18,6 @@ const SIDE_PANEL_LAYOUT_META: ComponentMeta<SidePanelLayoutOwnProps> = {
       description: '',
     },
     {
-      category: PropCategory.sizing,
       name: 'sideWidthDesktop',
       options: ['ScaleValue', 'CSS'],
       defaultValue: SIDE_PANEL_LAYOUT_DEFAULT_SIDE_WITH_DESKTOP,
@@ -29,7 +26,6 @@ const SIDE_PANEL_LAYOUT_META: ComponentMeta<SidePanelLayoutOwnProps> = {
       description: '',
     },
     {
-      category: PropCategory.other,
       name: 'children',
       options: ['ReactNode'],
       isRequired: true,

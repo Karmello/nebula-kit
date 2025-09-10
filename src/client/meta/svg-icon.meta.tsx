@@ -20,7 +20,6 @@ export default {
   },
   props: [
     {
-      category: '',
       name: 'iconName',
       options: ['IconName'],
       isRequired: true,
@@ -28,7 +27,6 @@ export default {
       description: 'Specifies which icon from the library to render.',
     },
     {
-      category: '',
       name: 'iconSize',
       options: ['ScaleValue'],
       defaultValue: DEFAULT_SVG_ICON_SIZE,
@@ -37,7 +35,6 @@ export default {
       description: "Sets the icon's width and height using the scale system.",
     },
     {
-      category: '',
       name: 'iconIntent',
       options: BoxIntent,
       defaultValue: DEFAULT_BOX_INTENT,

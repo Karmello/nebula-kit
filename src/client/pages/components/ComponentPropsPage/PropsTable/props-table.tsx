@@ -37,7 +37,7 @@ export const PropsTable = ({ data }: Props) => {
                 </Text>
               </Table.Cell>
               <Table.Cell>{typeof options === 'string' ? options : options.join(', ')}</Table.Cell>
-              <Table.Cell elemProps={{ style: { textAlign: 'center' } }}>
+              <Table.Cell elemProps={{ style: { textAlign: 'center', whiteSpace: 'nowrap' } }}>
                 {defaultValue !== undefined ? defaultValue : '-'}
               </Table.Cell>
               {isSomeRequired ? (
