@@ -20,14 +20,18 @@ export const ComponentExamplesPage = memo(() => {
   }
 
   const memorized = useMemo(() => {
-    return meta?.examples?.map(({ jsx, description, noSandBox }, i) => (
+    return meta?.examples?.map(({ jsx, description, noSandBox, sandBoxWithNoPadding }, i) => (
       <Box key={i} maxInlineSize="55rem">
         <Flex flexDirection="column" alignItems="stretch">
           {description ? <Text>{description}</Text> : null}
           <Spacer size={5} />
           {!noSandBox ? (
             <>
-              <Box variant="outline" padding={20} elemProps={{ style: { borderStyle: 'dashed' } }}>
+              <Box
+                variant="outline"
+                padding={sandBoxWithNoPadding ? 0 : 20}
+                elemProps={{ style: { borderStyle: 'dashed' } }}
+              >
                 {jsx}
               </Box>
               <Spacer size={5} />

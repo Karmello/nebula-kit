@@ -17,13 +17,6 @@ const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
       isResponsive: false,
       description: '',
     },
-    {
-      name: 'children',
-      options: ['ReactNode'],
-      isRequired: true,
-      isResponsive: false,
-      description: '',
-    },
   ],
   examples: [
     {
@@ -40,6 +33,7 @@ const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
           </AppFrame.Footer>
         </AppFrame>
       ),
+      sandBoxWithNoPadding: true,
     },
   ],
 }

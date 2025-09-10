@@ -13,7 +13,7 @@ import { applyResponsiveProps } from './_helpers'
 
 const FLEX_META: ComponentMeta<FlexOwnProps & FlexItemProps> = {
   overview: {
-    name: 'Flex',
+    name: 'Flex + Flex.Item',
     description: 'A layout container that arranges its children using CSS flexbox.',
     responsibilities: [
       'provide a flexbox-based layout wrapper',

@@ -44,6 +44,7 @@ export type ComponentMeta<PropsType> = {
     jsx: JSX.Element
     description?: string
     noSandBox?: boolean
+    sandBoxWithNoPadding?: boolean
   }[]
 }
 
