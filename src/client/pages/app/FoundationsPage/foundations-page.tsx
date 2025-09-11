@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
-import { SidePanelLayout, SideNav, Breadcrumb, Section, Spacer } from 'lib/components'
+import { SidePanelLayout, SideNav, Breadcrumb, Section, Spacer, Box } from 'lib/components'
 import { useFoundationsPageStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
 import { FOUNDATION_CATEGORIES, PageKey } from 'client/definitions'
@@ -26,17 +26,30 @@ export const FoundationsPage = () => {
 
   return (
     <SidePanelLayout>
-      <SidePanelLayout.MainBar>
-        <Breadcrumb
-          items={['Foundations', activeCategoryObj?.label, activeItemObj?.label, activeSectionObj?.label]}
+      <SidePanelLayout.Side>
+        <SideNav
+          groups={FOUNDATION_CATEGORIES.map(({ key: categoryKey, label, items }) => ({
+            key: categoryKey,
+            label,
+            items: items.map(({ key: itemKey, label, sections }) => ({
+              key: itemKey,
+              label,
+              elemProps: {
+                onClick: () => {
+                  const sectionIndex = sections.findIndex(s => s.key === foundationsPageStore.sectionKey)
+                  navigateTo(
+                    `/${PageKey.foundations}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
+                  )
+                },
+              },
+            })),
+          }))}
+          activeKey={foundationsPageStore.itemKey}
         />
-      </SidePanelLayout.MainBar>
+      </SidePanelLayout.Side>
       <SidePanelLayout.Main paddingLeft={10}>
-        <Spacer size={10} />
+        <Spacer size={15} />
         <SidePanelLayout sidePosition="right">
-          <SidePanelLayout.MainBar>
-            <Section heading={activeSectionObj?.label} headingProps={{ typography: 'h3' }} />
-          </SidePanelLayout.MainBar>
           <SidePanelLayout.Side>
             <SideNav
               groups={FOUNDATION_CATEGORIES.find(c => c.key === foundationsPageStore.categoryKey)
@@ -62,29 +75,18 @@ export const FoundationsPage = () => {
           <SidePanelLayout.Main paddingRight={10}>
             <FoundationsPageRoutes />
           </SidePanelLayout.Main>
+          <SidePanelLayout.MainBar>
+            <Section heading={activeSectionObj?.label} headingProps={{ typography: 'h3' }} />
+          </SidePanelLayout.MainBar>
         </SidePanelLayout>
       </SidePanelLayout.Main>
-      <SidePanelLayout.Side>
-        <SideNav
-          groups={FOUNDATION_CATEGORIES.map(({ key: categoryKey, label, items }) => ({
-            key: categoryKey,
-            label,
-            items: items.map(({ key: itemKey, label, sections }) => ({
-              key: itemKey,
-              label,
-              elemProps: {
-                onClick: () => {
-                  const sectionIndex = sections.findIndex(s => s.key === foundationsPageStore.sectionKey)
-                  navigateTo(
-                    `/${PageKey.foundations}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
-                  )
-                },
-              },
-            })),
-          }))}
-          activeKey={foundationsPageStore.itemKey}
-        />
-      </SidePanelLayout.Side>
+      <SidePanelLayout.MainBar>
+        <Box marginRight={10}>
+          <Breadcrumb
+            items={['Foundations', activeCategoryObj?.label, activeItemObj?.label, activeSectionObj?.label]}
+          />
+        </Box>
+      </SidePanelLayout.MainBar>
     </SidePanelLayout>
   )
 }

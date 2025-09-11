@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
-import { SidePanelLayout, SideNav, Breadcrumb, Section, Spacer } from 'lib/components'
+import { SidePanelLayout, SideNav, Breadcrumb, Section, Spacer, Box } from 'lib/components'
 import { useComponentsPageStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
@@ -26,13 +26,29 @@ export const ComponentsPage = () => {
 
   return (
     <SidePanelLayout>
-      <SidePanelLayout.MainBar>
-        <Breadcrumb
-          items={['Components', activeCategoryObj?.label, activeItemObj?.label, activeSectionObj?.label]}
+      <SidePanelLayout.Side>
+        <SideNav
+          groups={COMPONENT_CATEGORIES.map(({ key: categoryKey, label, items }) => ({
+            key: categoryKey,
+            label,
+            items: items.map(({ key: itemKey, label, sections }) => ({
+              key: itemKey,
+              label,
+              elemProps: {
+                onClick: () => {
+                  const sectionIndex = sections.findIndex(s => s.key === componentsPageStore.sectionKey)
+                  navigateTo(
+                    `/${PageKey.components}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
+                  )
+                },
+              },
+            })),
+          }))}
+          activeKey={componentsPageStore.itemKey}
         />
-      </SidePanelLayout.MainBar>
+      </SidePanelLayout.Side>
       <SidePanelLayout.Main paddingLeft={10}>
-        <Spacer size={10} />
+        <Spacer size={15} />
         <SidePanelLayout sidePosition="right">
           <SidePanelLayout.Side>
             <SideNav
@@ -56,35 +72,21 @@ export const ComponentsPage = () => {
               }}
             />
           </SidePanelLayout.Side>
-          <SidePanelLayout.MainBar>
-            <Section heading={activeItemObj?.label} headingProps={{ typography: 'h3' }} />
-          </SidePanelLayout.MainBar>
           <SidePanelLayout.Main paddingRight={10}>
             <ComponentsPageRoutes />
           </SidePanelLayout.Main>
+          <SidePanelLayout.MainBar>
+            <Section heading={activeItemObj?.label} headingProps={{ typography: 'h3' }} />
+          </SidePanelLayout.MainBar>
         </SidePanelLayout>
       </SidePanelLayout.Main>
-      <SidePanelLayout.Side>
-        <SideNav
-          groups={COMPONENT_CATEGORIES.map(({ key: categoryKey, label, items }) => ({
-            key: categoryKey,
-            label,
-            items: items.map(({ key: itemKey, label, sections }) => ({
-              key: itemKey,
-              label,
-              elemProps: {
-                onClick: () => {
-                  const sectionIndex = sections.findIndex(s => s.key === componentsPageStore.sectionKey)
-                  navigateTo(
-                    `/${PageKey.components}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
-                  )
-                },
-              },
-            })),
-          }))}
-          activeKey={componentsPageStore.itemKey}
-        />
-      </SidePanelLayout.Side>
+      <SidePanelLayout.MainBar>
+        <Box marginRight={10}>
+          <Breadcrumb
+            items={['Components', activeCategoryObj?.label, activeItemObj?.label, activeSectionObj?.label]}
+          />
+        </Box>
+      </SidePanelLayout.MainBar>
     </SidePanelLayout>
   )
 }

@@ -12,7 +12,6 @@ export const Side = ({
   elemRef,
   intent,
   inlineSize = DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WIDTH,
-  ...paddings
 }: SidePanelLayoutSideProps) => {
   const { sideOpen, setSideOpen, sidePosition, mode } = useSidePanelLayout()
 
@@ -30,7 +29,6 @@ export const Side = ({
       intent={intent}
       inlineSize={sideOpen ? inlineSize : 0}
       borderRadius={0}
-      {...paddings}
     >
       {mode === 'overlay' ? (
         <HAlign position="right">

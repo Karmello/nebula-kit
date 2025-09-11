@@ -23,7 +23,6 @@ export const Main = ({ children, elemProps, elemRef, ...paddings }: SidePanelLay
         className: classNames(withPrefix('side-panel-layout-main'), elemProps?.className),
       }}
       elemRef={elemRef}
-      padding={5}
       {...paddings}
     >
       <Flex alignItems="center" flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'} gap={7}>
