@@ -33,12 +33,9 @@ const SIDE_PANEL_LAYOUT_META: ComponentMeta<SidePanelLayoutOwnProps> = {
       'stretches to fill the full height of its parent container',
       'shows the side panel in inline mode',
       'hides the side panel in overlay mode',
-      'changes the side panel from an overlay to an inline layout at a breakpoint',
+      'changes the side panel from an overlay to an inline layout at a breakpoint (switchAt prop)',
     ],
-    byDefault: [
-      'positions the side panel on the left',
-      'changes between inline and overlay at the lg breakpoint',
-    ],
+    byDefault: ['sidePosition is set to left', 'switchAt prop is set to lg'],
     examplesOfUse: [
       'creating a layout with a collapsible navigation sidebar',
       'displaying filters or tools alongside main content',
@@ -96,7 +93,7 @@ const SIDE_PANEL_LAYOUT_SIDE_META: ComponentMeta<any> = {
     description: 'The side panel region of the layout.',
     composedOf: SIDE_PANEL_LAYOUT_SIDE_INHERITED_PROPS,
     behavior: ['renders as <aside> element'],
-    byDefault: [`set inlineSize to ${DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WIDTH}`],
+    byDefault: [`sets inlineSize to ${DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WIDTH}`],
   },
 }
 
