@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { SvgIcon, SvgIconProps } from 'lib/components'
-import { BoxIntent, DEFAULT_BOX_INTENT, DEFAULT_SVG_ICON_SIZE } from 'lib/definitions'
+import { BoxIntent, DEFAULT_SVG_ICON_SIZE } from 'lib/definitions'
 
 const SVG_ICON_META: ComponentMeta<SvgIconProps> = {
   overview: {
@@ -37,7 +37,6 @@ const SVG_ICON_META: ComponentMeta<SvgIconProps> = {
     {
       name: 'iconIntent',
       options: BoxIntent as unknown as string[],
-      defaultValue: DEFAULT_BOX_INTENT,
       isRequired: false,
       isResponsive: false,
       description: 'Applies a semantic color style from the design system.',

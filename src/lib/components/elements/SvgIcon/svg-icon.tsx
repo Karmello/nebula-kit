@@ -1,4 +1,5 @@
-import { BoxIntent, DEFAULT_BOX_INTENT, DEFAULT_SVG_ICON_SIZE, ScaleValue } from 'lib/definitions'
+import { BoxIntent, DEFAULT_SVG_ICON_SIZE, ScaleValue } from 'lib/definitions'
+import { withPrefix } from 'lib/helpers'
 import { IconName, getSvgIconComponent } from 'lib/icons'
 
 export type SvgIconProps = {
@@ -10,13 +11,14 @@ export type SvgIconProps = {
 export const SvgIcon = ({
   iconName,
   iconSize = DEFAULT_SVG_ICON_SIZE,
-  iconIntent = DEFAULT_BOX_INTENT,
+  iconIntent,
   ...rest
 }: SvgIconProps) => {
   const Svg = getSvgIconComponent(iconName)
 
   return (
     <Svg
+      className={withPrefix('svg-icon')}
       style={{
         width: iconSize !== undefined ? `var(--neb-scale-${iconSize})` : undefined,
         height: iconSize !== undefined ? `var(--neb-scale-${iconSize})` : undefined,

@@ -36,6 +36,7 @@ export const BUTTON_SIZE_CONFIG: Record<
     fontSize: ScaleValue
   }
 > = {
+  xs: { blockSize: 14, paddingLeft: 4, paddingRight: 4, fontSize: 4 },
   sm: { blockSize: 19, paddingLeft: 6, paddingRight: 6, fontSize: 7 },
   md: { blockSize: 22, paddingLeft: 8, paddingRight: 8, fontSize: 8 },
   lg: { blockSize: 26, paddingLeft: 12, paddingRight: 12, fontSize: 9 },

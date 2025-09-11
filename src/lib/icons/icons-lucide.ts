@@ -9,6 +9,8 @@ import {
   ChevronUp,
   ChevronLeft,
   ChevronRight,
+  Copy,
+  CopyCheck,
 } from 'lucide-react'
 
 import { IconName, registerIcons } from './icon-registry'
@@ -24,6 +26,8 @@ const ICONS: Record<IconName, any> = {
   'chevron-up': ChevronUp,
   'chevron-left': ChevronLeft,
   'chevron-right': ChevronRight,
+  copy: Copy,
+  'copy-check': CopyCheck,
 }
 
 registerIcons(ICONS)

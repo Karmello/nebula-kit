@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Button, BUTTON_INHERITED_PROPS, ButtonOwnProps } from 'lib/components'
+import { Button, BUTTON_INHERITED_PROPS, ButtonOwnProps, Flex } from 'lib/components'
 import { ButtonSize, DEFAULT_BUTTON_SIZE } from 'lib/definitions'
 
 const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
@@ -60,6 +60,18 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
         <Button variant="ghost" intent="danger">
           Ghost button
         </Button>
+      ),
+    },
+    {
+      description: 'Different button sizes.',
+      jsx: (
+        <Flex alignItems="center" gap={5}>
+          {ButtonSize.map(size => (
+            <Button key={size} size={size}>
+              {size}
+            </Button>
+          ))}
+        </Flex>
       ),
     },
   ],

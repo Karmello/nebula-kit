@@ -31,7 +31,7 @@ export const TextTypography = [
 ] as const
 
 export const IconPosition = ['left', 'right'] as const
-export const ButtonSize = ['sm', 'md', 'lg'] as const
+export const ButtonSize = ['xs', 'sm', 'md', 'lg'] as const
 export const HorizontalPosition = ['left', 'center', 'right'] as const
 export const SidePanelLayoutSwitchAt = [...BREAKPOINTS.filter(bp => bp !== 'base')] as const
 

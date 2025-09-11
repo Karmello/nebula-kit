@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { BundledLanguage, TokensResult } from 'shiki'
 
-import { Box, Flex, Text } from 'lib/components'
+import { Box, Flex, IconButton, Text } from 'lib/components'
 
 import { tokenizeCode } from './helpers'
 
@@ -12,6 +12,7 @@ export type CodeSnippetProps = {
 
 export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
   const [data, setData] = useState<TokensResult>()
+  const [copied, setCopied] = useState<boolean>(false)
 
   useEffect(() => {
     const run = async () => {
@@ -25,8 +26,20 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
     return null
   }
 
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(code)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 1000)
+  }
+
   return (
-    <Box elem="pre" elemProps={{ style: { backgroundColor: data.bg } }} overflowX="auto" maxInlineSize="100%">
+    <Box
+      elem="pre"
+      elemProps={{ style: { backgroundColor: data.bg } }}
+      position="relative"
+      overflowX="auto"
+      maxInlineSize="100%"
+    >
       <Flex>
         <Box elem="code" padding={10}>
           {data.tokens.map((token, i) => (
@@ -45,6 +58,15 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
           ))}
         </Box>
       </Flex>
+      <Box position="absolute" top={3} right={3}>
+        <IconButton
+          iconName={copied ? 'check' : 'copy'}
+          size="xs"
+          variant="ghost"
+          intent={copied ? 'success' : 'primary'}
+          elemProps={{ onClick: handleCopy, 'aria-label': copied ? 'Copied' : 'Copy code' }}
+        />
+      </Box>
     </Box>
   )
 }
