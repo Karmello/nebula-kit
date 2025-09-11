@@ -43,4 +43,5 @@ export const Main = ({ children, elemProps, ...rest }: LayoutSlotProps<'main'>) 
   )
 }
 
+Main.displayName = 'SidePanelLayout.Main'
 Main.slotName = Slot.main

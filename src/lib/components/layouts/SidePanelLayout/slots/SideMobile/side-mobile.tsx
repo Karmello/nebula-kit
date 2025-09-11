@@ -53,4 +53,5 @@ export const SideMobile = ({
   )
 }
 
+SideMobile.displayName = 'SidePanelLayout.SideMobile'
 SideMobile.slotName = Slot.sideMobile

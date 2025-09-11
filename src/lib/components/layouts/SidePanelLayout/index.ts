@@ -13,5 +13,6 @@ export const SidePanelLayout = Object.assign(SidePanelLayoutBase, {
 })
 
 export * from './side-panel-layout'
+export * from './definitions'
 
 export { useSidePanelLayout } from './SidePanelLayoutProvider'

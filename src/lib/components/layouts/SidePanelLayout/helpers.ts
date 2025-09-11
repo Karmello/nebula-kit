@@ -1,9 +1,6 @@
-import { SidePanelLayoutOwnProps } from './side-panel-layout'
+import { SidePanelLayoutProps } from './definitions'
 
-export const getToggleIconName = (
-  sidePosition: SidePanelLayoutOwnProps['sidePosition'],
-  sideOpen: boolean
-) => {
+export const getToggleIconName = (sidePosition: SidePanelLayoutProps['sidePosition'], sideOpen: boolean) => {
   return sidePosition === 'left'
     ? sideOpen
       ? 'panel-right-open'

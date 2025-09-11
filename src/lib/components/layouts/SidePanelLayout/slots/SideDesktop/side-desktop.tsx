@@ -25,4 +25,5 @@ export const SideDesktop = ({ children, elemProps, ...rest }: LayoutSlotProps<'a
   )
 }
 
+SideDesktop.displayName = 'SidePanelLayout.SideDesktop'
 SideDesktop.slotName = Slot.sideDesktop

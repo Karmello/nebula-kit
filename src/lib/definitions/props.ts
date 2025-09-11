@@ -82,4 +82,6 @@ export const DEFAULT_BUTTON_INTENT: BoxIntent = 'tertiary'
 export const DEFAULT_BUTTON_SIZE: ButtonSize = 'md'
 
 export const DEFAULT_SVG_ICON_SIZE = 8
-export const WITH_ICON_DEFAULT_ICON_POSITION: IconPosition = 'left'
+export const DEFAULT_WITH_ICON_ICON_POSITION: IconPosition = 'left'
+
+export const DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WITH_DESKTOP = '225px'

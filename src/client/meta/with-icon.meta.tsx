@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { WITH_ICON_INHERITED_PROPS, WithIcon, WithIconOwnProps } from 'lib/components'
-import { IconPosition, WITH_ICON_DEFAULT_ICON_POSITION } from 'lib/definitions'
+import { IconPosition, DEFAULT_WITH_ICON_ICON_POSITION } from 'lib/definitions'
 
 const WITH_ICON_META: ComponentMeta<WithIconOwnProps> = {
   overview: {
@@ -22,7 +22,7 @@ const WITH_ICON_META: ComponentMeta<WithIconOwnProps> = {
     {
       name: 'iconPosition',
       options: IconPosition as unknown as string[],
-      defaultValue: WITH_ICON_DEFAULT_ICON_POSITION,
+      defaultValue: DEFAULT_WITH_ICON_ICON_POSITION,
       isRequired: false,
       isResponsive: false,
       description: 'Controls how the icon is aligned relative to the children.',

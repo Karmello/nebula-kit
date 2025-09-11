@@ -18,4 +18,5 @@ export const Header = ({ elemProps, ...rest }: LayoutSlotProps<'header'>) => {
   )
 }
 
+Header.displayName = 'SidePanelLayout.Header'
 Header.slotName = Slot.header

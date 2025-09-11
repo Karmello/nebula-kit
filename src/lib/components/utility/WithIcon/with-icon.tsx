@@ -1,14 +1,15 @@
 import classNames from 'classnames'
 
-import { WITH_ICON_DEFAULT_ICON_POSITION } from 'lib/definitions'
-import { NativeElem, SvgIcon, WithIconProps } from 'lib/components'
+import { DEFAULT_WITH_ICON_ICON_POSITION } from 'lib/definitions'
+import { NativeElem, SvgIcon } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
+import { WithIconProps } from './definitions'
 import './with-icon.scss'
 
 export const WithIcon = ({
   // own
-  iconPosition = WITH_ICON_DEFAULT_ICON_POSITION,
+  iconPosition = DEFAULT_WITH_ICON_ICON_POSITION,
   // NativeElem
   children,
   elemProps,
