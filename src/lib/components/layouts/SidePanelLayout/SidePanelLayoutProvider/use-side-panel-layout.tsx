@@ -17,7 +17,7 @@ type ContextProps = Omit<ProviderProps, 'children'> & {
   setSideOpen: (sideOpen: boolean) => void
 }
 
-const SidePanelLayoutContext = createContext<ContextProps | null>(null)
+const SidePanelLayoutContext = createContext<ContextProps>({} as ContextProps)
 
 export const SidePanelLayoutProvider = ({ children, slots, mode, sidePosition, switchAt }: ProviderProps) => {
   const [sideOpen, setSideOpen] = useState(true)

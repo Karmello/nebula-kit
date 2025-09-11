@@ -1,4 +1,4 @@
-import { ElementType } from 'react'
+import { ComponentProps, ElementType, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
@@ -16,10 +16,12 @@ export const MainBar = <E extends ElementType = 'div'>({
   return (
     <Box
       elem={elem}
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('side-panel-layout-main-bar'), elemProps?.className),
-      }}
+      elemProps={
+        {
+          ...elemProps,
+          className: classNames(withPrefix('side-panel-layout-main-bar'), elemProps?.className),
+        } as PropsWithoutRef<ComponentProps<E>>
+      }
       elemRef={elemRef}
     >
       {children}
