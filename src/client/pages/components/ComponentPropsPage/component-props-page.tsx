@@ -2,6 +2,7 @@ import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'client/definitions'
 
 import { PropsTable } from './PropsTable'
+import { Spacer } from 'lib/components'
 
 export const ComponentPropsPage = () => {
   const { itemKey } = useComponentsPageStore()
@@ -20,11 +21,14 @@ export const ComponentPropsPage = () => {
 
   return metaKeys.map(key =>
     meta[key].props ? (
-      <PropsTable
-        key={key}
-        category={metaKeys.length > 1 ? meta[key].overview.title : undefined}
-        data={meta[key].props}
-      />
+      <>
+        <PropsTable
+          key={key}
+          category={metaKeys.length > 1 ? meta[key].overview.title : undefined}
+          data={meta[key].props}
+        />
+        <Spacer size={30} />
+      </>
     ) : null
   )
 }

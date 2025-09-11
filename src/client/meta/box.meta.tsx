@@ -18,17 +18,17 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
   overview: {
     description:
       'Box is the foundational surface component. It exposes a curated set of core CSS properties - appearance, spacing, sizing, and positioning - so you can style a plain block-level element directly in JSX.',
-    responsibilities: [
+    role: [
       'acts as the surface foundation that higher-level components (e.g. Flex, Grid, Table) inherit from',
       'provides optional interactivity (hover, focus, press states) for clickable or focusable surfaces',
     ],
-    characteristics: ['inherits all NativeElem props', 'accepts optional children and props'],
-    defaultBehavior: [
+    behavior: ['inherits all NativeElem props', 'accepts optional children and props'],
+    byDefault: [
       'renders as a block-level <div>',
       'uses ghost variant with neutral intent',
       'applies zero spacing',
     ],
-    useCases: [
+    examplesOfUse: [
       "use as a simple wrapper, the way you'd normally reach for a div",
       "use when you need a semantic element that isn't yet provided as a dedicated component in the library",
       'use as the base building block when creating your own custom component',

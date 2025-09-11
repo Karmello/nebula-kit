@@ -6,14 +6,14 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
   overview: {
     description:
       "Button is the primary interactive control for triggering actions in the interface. It wraps Nebula-kit's surface and text systems to provide a consistent, accessible entry point for user interaction.",
-    responsibilities: [
+    role: [
       'provide a consistent, accessible trigger for user actions',
       'handle interactivity states such as hover, focus, active, and disabled',
       'support optional icon and text composition for clarity of meaning',
     ],
-    characteristics: ['renders as a <button> element', 'requires children'],
-    defaultBehavior: ['medium size', 'solid variant', 'tertiary intent'],
-    useCases: ['applied wherever a clear, consistent action trigger is needed in the interface'],
+    behavior: ['renders as a <button> element', 'requires children'],
+    byDefault: ['medium size', 'solid variant', 'tertiary intent'],
+    examplesOfUse: ['applied wherever a clear, consistent action trigger is needed in the interface'],
     composedOf: BUTTON_INHERITED_PROPS,
   },
   props: [

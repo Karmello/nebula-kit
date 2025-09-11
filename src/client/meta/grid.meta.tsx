@@ -8,22 +8,22 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
   overview: {
     description:
       "Grid provides a flexible two-dimensional layout system, letting you arrange content into rows and columns with consistent spacing and alignment. It's built to handle both simple and complex page structures while staying accessible and responsive.",
-    responsibilities: [
+    role: [
       'provide a CSS Grid-based layout wrapper',
       'establish rows and columns to align and distribute children',
       'manage spacing between items with gap properties',
     ],
-    characteristics: [
+    behavior: [
       'always applies display: grid',
       'uses Box internally to ensure consistent reset and baseline styles',
       `restricts elem to structural HTML tags: ${GridElem.map(s => `<${s}>`).join(', ')}`,
     ],
-    defaultBehavior: [
+    byDefault: [
       'renders as a <div> element',
       'arranges children into a single column',
       'does not apply any gap between children',
     ],
-    useCases: [
+    examplesOfUse: [
       'creating two-dimensional layouts with rows and columns',
       'aligning items consistently across multiple rows',
       'building responsive page sections',

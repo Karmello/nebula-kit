@@ -3,10 +3,10 @@ import { JSX } from 'react'
 type Overview = {
   title?: string
   description: string
-  responsibilities?: string[]
-  characteristics?: string[]
-  defaultBehavior?: string[]
-  useCases?: string[]
+  role?: string[]
+  behavior?: string[]
+  byDefault?: string[]
+  examplesOfUse?: string[]
   responsiveProps?: string[]
   composedOf?: Record<string, readonly string[]>
 }

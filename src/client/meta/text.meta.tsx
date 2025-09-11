@@ -8,17 +8,17 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
   overview: {
     description:
       'Text is the foundational component for displaying and styling textual content. It ensures consistent typography across the system.',
-    responsibilities: [
+    role: [
       'render semantic text elements with consistent typography',
       'provide common text styling and formatting options',
       'allow integration of inline icons alongside text',
     ],
-    characteristics: [
+    behavior: [
       'requires children',
       `the elem prop is restricted to ${TextElem.map(s => `<${s}>`).join(', ')}`,
     ],
-    defaultBehavior: ['renders as a <p> tag', 'uses neutral text intent'],
-    useCases: [
+    byDefault: ['renders as a <p> tag', 'uses neutral text intent'],
+    examplesOfUse: [
       'display body copy, captions, and headings',
       'present truncated or clamped snippets of text',
       'combine text with icons for labels or actions',

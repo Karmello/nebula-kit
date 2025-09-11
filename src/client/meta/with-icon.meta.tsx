@@ -5,14 +5,17 @@ import { IconPosition, WITH_ICON_DEFAULT_ICON_POSITION } from 'lib/definitions'
 const WITH_ICON_META: ComponentMeta<WithIconOwnProps> = {
   overview: {
     description: 'Utility wrapper that aligns an icon alongside its children.',
-    responsibilities: ['insert an icon', 'render children exactly as passed'],
-    characteristics: [
+    role: ['insert an icon', 'render children exactly as passed'],
+    behavior: [
       'wraps the icon and children in a <span> element',
       'iconName is required to render an icon',
       'if no children are provided, only the icon is rendered',
     ],
-    defaultBehavior: ['iconPosition defaults to left'],
-    useCases: ['add an icon to text or inline content', 'compose higher-level components that support icons'],
+    byDefault: ['iconPosition defaults to left'],
+    examplesOfUse: [
+      'add an icon to text or inline content',
+      'compose higher-level components that support icons',
+    ],
     composedOf: WITH_ICON_INHERITED_PROPS,
   },
   props: [

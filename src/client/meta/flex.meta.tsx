@@ -21,22 +21,22 @@ import { applyResponsiveProps } from './_helpers'
 const FLEX_META: ComponentMeta<FlexOwnProps> = {
   overview: {
     description: 'A layout container that arranges its children using CSS flexbox.',
-    responsibilities: [
+    role: [
       'provide a flexbox-based layout wrapper',
       'control flow, alignment, and wrapping of children',
       'manage spacing between items with gap properties',
     ],
-    characteristics: [
+    behavior: [
       'always applies display: flex',
       'uses Box internally to ensure consistent reset and baseline styles',
       'provides a <Flex.Item> subcomponent for per-child layout control',
     ],
-    defaultBehavior: [
+    byDefault: [
       'renders as a <div> element',
       'arranges children in a row without wrapping',
       'does not apply any gap between children',
     ],
-    useCases: [
+    examplesOfUse: [
       'arranging items in a one-dimensional row or column',
       'distributing space between elements with gaps or justification',
       'building responsive layouts that adapt across breakpoints',
@@ -122,19 +122,19 @@ const FLEX_ITEM_META: ComponentMeta<FlexItemOwnProps> = {
   overview: {
     title: 'Flex.Item',
     description: 'Flex item represents a single child inside a Flex container.',
-    responsibilities: [
+    role: [
       'control per-item growth, shrink, and basis in the flex layout',
       'allow item-level alignment overrides relative to the parent',
     ],
-    characteristics: [
+    behavior: [
       'must be used inside a Flex container',
       'wraps its child with Box for consistent styling and reset',
     ],
-    defaultBehavior: [
+    byDefault: [
       'renders as a <div> element',
       "aligns according to the parent's alignment rules unless overridden",
     ],
-    useCases: [
+    examplesOfUse: [
       "fixing one item's width while others flex around it",
       'aligning a single child differently from siblings',
       'making an element grow or shrink independently in a shared row or column',
