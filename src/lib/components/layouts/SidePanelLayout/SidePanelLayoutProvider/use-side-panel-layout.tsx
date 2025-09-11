@@ -2,42 +2,33 @@ import { createContext, useContext, useState, ReactNode } from 'react'
 
 import { WithSlotsReturnObject } from 'lib/components/internal'
 
-import { SidePanelLayoutProps } from '../definitions'
+import { SidePanelLayoutOwnProps } from '../definitions'
 
-type SidePanelLayoutContextValue = {
-  sideOpen: boolean
-  setSideOpen: (sideOpen: boolean) => void
-  slots: WithSlotsReturnObject
-} & Pick<SidePanelLayoutProps, 'sidePosition' | 'sideWidthDesktop'>
-
-const SidePanelLayoutContext = createContext<SidePanelLayoutContextValue | null>(null)
-
-type SidePanelLayoutProviderProps = {
+type ProviderProps = SidePanelLayoutOwnProps & {
   children: ReactNode
   slots: WithSlotsReturnObject
-} & Pick<SidePanelLayoutProps, 'sidePosition' | 'sideWidthDesktop'>
+  mode: SidePanelLayoutMode
+}
 
-export const SidePanelLayoutProvider = ({
-  children,
-  slots,
-  sidePosition,
-  sideWidthDesktop,
-}: SidePanelLayoutProviderProps) => {
+export type SidePanelLayoutMode = 'overlay' | 'inline'
+
+type ContextProps = Omit<ProviderProps, 'children'> & {
+  sideOpen: boolean
+  setSideOpen: (sideOpen: boolean) => void
+}
+
+const SidePanelLayoutContext = createContext<ContextProps | null>(null)
+
+export const SidePanelLayoutProvider = ({ children, slots, mode, sidePosition, switchAt }: ProviderProps) => {
   const [sideOpen, setSideOpen] = useState(true)
 
   return (
-    <SidePanelLayoutContext.Provider value={{ sideOpen, setSideOpen, slots, sidePosition, sideWidthDesktop }}>
+    <SidePanelLayoutContext.Provider value={{ mode, sideOpen, setSideOpen, slots, sidePosition, switchAt }}>
       {children}
     </SidePanelLayoutContext.Provider>
   )
 }
 
 export const useSidePanelLayout = () => {
-  const ctx = useContext(SidePanelLayoutContext)
-
-  if (!ctx) {
-    throw new Error('useSidePanelLayout must be used within a SidePanelLayoutProvider')
-  }
-
-  return ctx
+  return useContext(SidePanelLayoutContext)
 }

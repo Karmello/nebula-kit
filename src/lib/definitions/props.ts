@@ -1,12 +1,8 @@
-import { ElementType } from 'react'
-
-import { BoxProps } from 'lib/components'
-import { Breakpoint, ScaleValue } from 'lib/definitions'
+import { Breakpoint, BREAKPOINTS, ScaleValue } from 'lib/definitions'
 
 // constants
 
 export const Theme = ['light', 'gray', 'dark'] as const
-
 export const BoxVariant = ['solid', 'outline', 'ghost'] as const
 
 export const BoxIntent = [
@@ -37,6 +33,7 @@ export const TextTypography = [
 export const IconPosition = ['left', 'right'] as const
 export const ButtonSize = ['sm', 'md', 'lg'] as const
 export const HorizontalPosition = ['left', 'center', 'right'] as const
+export const SidePanelLayoutSwitchAt = [...BREAKPOINTS.filter(bp => bp !== 'base')] as const
 
 // types
 export type Theme = (typeof Theme)[number]
@@ -47,26 +44,9 @@ export type TextTypography = (typeof TextTypography)[number]
 export type ButtonSize = (typeof ButtonSize)[number]
 export type HorizontalPosition = (typeof HorizontalPosition)[number]
 export type IconPosition = (typeof IconPosition)[number]
+export type SidePanelLayoutSwitchAt = (typeof SidePanelLayoutSwitchAt)[number]
 
 export type MakeRequired<T, K extends keyof T> = Omit<T, K> & Required<Pick<T, K>>
-
-export type LayoutSlotProps<E extends ElementType> = Pick<
-  BoxProps<E>,
-  | 'children'
-  | 'elemProps'
-  | 'elemRef'
-  | 'intent'
-  | 'blockSize'
-  | 'minBlockSize'
-  | 'maxBlockSize'
-  | 'padding'
-  | 'paddingInline'
-  | 'paddingBlock'
-  | 'paddingTop'
-  | 'paddingRight'
-  | 'paddingBottom'
-  | 'paddingLeft'
->
 
 // defaults
 export const DEFAULT_THEME: Theme = 'light'
@@ -84,4 +64,5 @@ export const DEFAULT_BUTTON_SIZE: ButtonSize = 'md'
 export const DEFAULT_SVG_ICON_SIZE = 8
 export const DEFAULT_WITH_ICON_ICON_POSITION: IconPosition = 'left'
 
-export const DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WITH_DESKTOP = '225px'
+export const DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WIDTH = '225px'
+export const DEFAULT_SIDE_PANEL_LAYOUT_SWITCH_AT: SidePanelLayoutSwitchAt = 'lg'

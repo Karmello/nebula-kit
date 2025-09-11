@@ -8,18 +8,11 @@ export const APP_FRAME_HEADER_INHERITED_PROPS = {
     'elemRef',
     'intent',
     'minBlockSize',
-    'padding',
-    'paddingInline',
-    'paddingBlock',
-    'paddingTop',
-    'paddingRight',
-    'paddingBottom',
-    'paddingLeft',
-  ] as const satisfies readonly (keyof BoxProps<'div'>)[],
+  ] as const satisfies readonly (keyof BoxProps<'header'>)[],
 }
 
 export type AppFrameHeaderInheritedProps = MakeRequired<
-  Pick<BoxProps<'div'>, (typeof APP_FRAME_HEADER_INHERITED_PROPS)['Box'][number]>,
+  Pick<BoxProps<'header'>, (typeof APP_FRAME_HEADER_INHERITED_PROPS)['Box'][number]>,
   'children'
 >
 

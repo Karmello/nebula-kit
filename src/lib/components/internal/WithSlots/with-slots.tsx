@@ -12,10 +12,9 @@ export type WithSlotsOwnProps = {
   componentName: string
   header?: SlotType
   side?: SlotType
-  sideMobile?: SlotType
-  sideDesktop?: SlotType
   main?: SlotType
   footer?: SlotType
+  mainBar?: SlotType
   childrenToVerify: ReactNode
 }
 
@@ -31,10 +30,9 @@ export const WithSlots = (props: WithSlotsOwnProps) => {
   const slots: WithSlotsReturnObject = {
     Header: null,
     Side: null,
-    SideMobile: null,
-    SideDesktop: null,
     Main: null,
     Footer: null,
+    MainBar: null,
   }
 
   Object.keys(slots).forEach(slotName => {

@@ -1,42 +1,52 @@
 import { Grid } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
-import { withPrefix } from 'lib/helpers'
-import { DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WITH_DESKTOP, HorizontalPosition } from 'lib/definitions'
+import { withPrefix, getDataAttrs, useScreen } from 'lib/helpers'
+import { BREAKPOINTS, DEFAULT_SIDE_PANEL_LAYOUT_SWITCH_AT, HorizontalPosition } from 'lib/definitions'
 
-import { SidePanelLayoutProvider } from './SidePanelLayoutProvider'
+import { SidePanelLayoutMode, SidePanelLayoutProvider } from './SidePanelLayoutProvider'
 import { SidePanelLayoutProps } from './definitions'
 
+import './side-panel-layout.scss'
+
 export const SidePanelLayout = ({
+  // Grid
   children,
+  elemProps,
+  elemRef,
+  // own
   sidePosition = HorizontalPosition[0],
-  sideWidthDesktop = DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WITH_DESKTOP,
+  switchAt = DEFAULT_SIDE_PANEL_LAYOUT_SWITCH_AT,
 }: SidePanelLayoutProps) => {
+  const { bp } = useScreen()
+
+  const mode: SidePanelLayoutMode = BREAKPOINTS.slice(0, BREAKPOINTS.indexOf(switchAt)).includes(bp)
+    ? 'overlay'
+    : 'inline'
+
   return (
     <WithSlots
       componentName="SidePanelLayout"
       main="required"
-      sideDesktop="required"
-      sideMobile="required"
-      header="optional"
+      mainBar="optional"
+      side="required"
       childrenToVerify={children}
     >
       {slots => {
         return (
-          <SidePanelLayoutProvider
-            sidePosition={sidePosition}
-            sideWidthDesktop={sideWidthDesktop}
-            slots={slots}
-          >
+          <SidePanelLayoutProvider slots={slots} mode={mode} sidePosition={sidePosition} switchAt={switchAt}>
             <Grid
-              elemProps={{ className: withPrefix('side-panel-layout') }}
-              gridTemplateColumns={{
-                md: sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto',
+              elemProps={{
+                ...elemProps,
+                className: withPrefix('side-panel-layout'),
+                ...getDataAttrs('side-panel-layout', { mode }),
               }}
+              elemRef={elemRef}
+              gridTemplateColumns={sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto'}
+              gridTemplateRows="1fr"
             >
               {sidePosition === 'right' ? slots.Main : null}
-              {slots.SideDesktop}
+              {slots.Side}
               {sidePosition === 'left' ? slots.Main : null}
-              {slots.SideMobile}
             </Grid>
           </SidePanelLayoutProvider>
         )

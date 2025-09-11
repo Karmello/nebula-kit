@@ -26,15 +26,15 @@ export const ComponentsPage = () => {
 
   return (
     <SidePanelLayout>
-      <SidePanelLayout.Header>
+      <SidePanelLayout.MainBar>
         <Breadcrumb
           items={['Components', activeCategoryObj?.label, activeItemObj?.label, activeSectionObj?.label]}
         />
-      </SidePanelLayout.Header>
+      </SidePanelLayout.MainBar>
       <SidePanelLayout.Main paddingLeft={10}>
         <Spacer size={10} />
         <SidePanelLayout sidePosition="right">
-          <SidePanelLayout.SideDesktop>
+          <SidePanelLayout.Side>
             <SideNav
               groups={COMPONENT_CATEGORIES.find(c => c.key === componentsPageStore.categoryKey)
                 ?.items.find(i => i.key === componentsPageStore.itemKey)
@@ -55,44 +55,16 @@ export const ComponentsPage = () => {
                 active: { variant: 'solid', intent: 'tertiary' },
               }}
             />
-          </SidePanelLayout.SideDesktop>
-          <SidePanelLayout.SideMobile>
-            {({ setSideOpen }) => (
-              <SideNav
-                groups={COMPONENT_CATEGORIES.find(c => c.key === componentsPageStore.categoryKey)
-                  ?.items.find(i => i.key === componentsPageStore.itemKey)
-                  ?.sections.map(({ key: sectionKey, label }) => ({
-                    key: sectionKey,
-                    label,
-                    elemProps: {
-                      onClick: () => {
-                        if (
-                          navigateTo(
-                            `/${PageKey.components}/${componentsPageStore.categoryKey}/${componentsPageStore.itemKey}/${sectionKey}`
-                          )
-                        ) {
-                          setSideOpen(false)
-                        }
-                      },
-                    },
-                  }))}
-                activeKey={componentsPageStore.sectionKey}
-                groupConfig={{
-                  default: { variant: 'solid', intent: 'secondary' },
-                  active: { variant: 'solid', intent: 'tertiary' },
-                }}
-              />
-            )}
-          </SidePanelLayout.SideMobile>
-          <SidePanelLayout.Header>
+          </SidePanelLayout.Side>
+          <SidePanelLayout.MainBar>
             <Section heading={activeItemObj?.label} headingProps={{ typography: 'h3' }} />
-          </SidePanelLayout.Header>
+          </SidePanelLayout.MainBar>
           <SidePanelLayout.Main paddingRight={10}>
             <ComponentsPageRoutes />
           </SidePanelLayout.Main>
         </SidePanelLayout>
       </SidePanelLayout.Main>
-      <SidePanelLayout.SideDesktop>
+      <SidePanelLayout.Side>
         <SideNav
           groups={COMPONENT_CATEGORIES.map(({ key: categoryKey, label, items }) => ({
             key: categoryKey,
@@ -112,38 +84,7 @@ export const ComponentsPage = () => {
           }))}
           activeKey={componentsPageStore.itemKey}
         />
-      </SidePanelLayout.SideDesktop>
-      <SidePanelLayout.SideMobile>
-        {({ setSideOpen }) => (
-          <SideNav
-            groups={COMPONENT_CATEGORIES.map(({ key: categoryKey, label, items }) => ({
-              key: categoryKey,
-              label,
-              items: items.map(({ key: itemKey, label, sections }) => ({
-                key: itemKey,
-                label,
-                elemProps: {
-                  onClick: () => {
-                    const sectionIndex = sections.findIndex(s => s.key === componentsPageStore.sectionKey)
-                    if (
-                      navigateTo(
-                        `/${PageKey.components}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
-                      )
-                    ) {
-                      setSideOpen(false)
-                    }
-                  },
-                },
-              })),
-            }))}
-            activeKey={componentsPageStore.itemKey}
-            itemConfig={{
-              default: { intent: 'secondary' },
-              active: { intent: 'tertiary' },
-            }}
-          />
-        )}
-      </SidePanelLayout.SideMobile>
+      </SidePanelLayout.Side>
     </SidePanelLayout>
   )
 }

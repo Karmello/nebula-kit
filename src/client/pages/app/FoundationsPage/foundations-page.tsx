@@ -26,18 +26,18 @@ export const FoundationsPage = () => {
 
   return (
     <SidePanelLayout>
-      <SidePanelLayout.Header>
+      <SidePanelLayout.MainBar>
         <Breadcrumb
           items={['Foundations', activeCategoryObj?.label, activeItemObj?.label, activeSectionObj?.label]}
         />
-      </SidePanelLayout.Header>
+      </SidePanelLayout.MainBar>
       <SidePanelLayout.Main paddingLeft={10}>
         <Spacer size={10} />
         <SidePanelLayout sidePosition="right">
-          <SidePanelLayout.Header>
+          <SidePanelLayout.MainBar>
             <Section heading={activeSectionObj?.label} headingProps={{ typography: 'h3' }} />
-          </SidePanelLayout.Header>
-          <SidePanelLayout.SideDesktop>
+          </SidePanelLayout.MainBar>
+          <SidePanelLayout.Side>
             <SideNav
               groups={FOUNDATION_CATEGORIES.find(c => c.key === foundationsPageStore.categoryKey)
                 ?.items.find(i => i.key === foundationsPageStore.itemKey)
@@ -58,41 +58,13 @@ export const FoundationsPage = () => {
                 active: { variant: 'solid', intent: 'tertiary' },
               }}
             />
-          </SidePanelLayout.SideDesktop>
-          <SidePanelLayout.SideMobile>
-            {({ setSideOpen }) => (
-              <SideNav
-                groups={FOUNDATION_CATEGORIES.find(c => c.key === foundationsPageStore.categoryKey)
-                  ?.items.find(i => i.key === foundationsPageStore.itemKey)
-                  ?.sections.map(({ key: sectionKey, label }) => ({
-                    key: sectionKey,
-                    label,
-                    elemProps: {
-                      onClick: () => {
-                        if (
-                          navigateTo(
-                            `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${sectionKey}`
-                          )
-                        ) {
-                          setSideOpen(false)
-                        }
-                      },
-                    },
-                  }))}
-                activeKey={foundationsPageStore.sectionKey}
-                groupConfig={{
-                  default: { variant: 'solid', intent: 'secondary' },
-                  active: { variant: 'solid', intent: 'tertiary' },
-                }}
-              />
-            )}
-          </SidePanelLayout.SideMobile>
+          </SidePanelLayout.Side>
           <SidePanelLayout.Main paddingRight={10}>
             <FoundationsPageRoutes />
           </SidePanelLayout.Main>
         </SidePanelLayout>
       </SidePanelLayout.Main>
-      <SidePanelLayout.SideDesktop>
+      <SidePanelLayout.Side>
         <SideNav
           groups={FOUNDATION_CATEGORIES.map(({ key: categoryKey, label, items }) => ({
             key: categoryKey,
@@ -112,38 +84,7 @@ export const FoundationsPage = () => {
           }))}
           activeKey={foundationsPageStore.itemKey}
         />
-      </SidePanelLayout.SideDesktop>
-      <SidePanelLayout.SideMobile>
-        {({ setSideOpen }) => (
-          <SideNav
-            groups={FOUNDATION_CATEGORIES.map(({ key: categoryKey, label, items }) => ({
-              key: categoryKey,
-              label,
-              items: items.map(({ key: itemKey, label, sections }) => ({
-                key: itemKey,
-                label,
-                elemProps: {
-                  onClick: () => {
-                    const sectionIndex = sections.findIndex(s => s.key === foundationsPageStore.sectionKey)
-                    if (
-                      navigateTo(
-                        `/${PageKey.foundations}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
-                      )
-                    ) {
-                      setSideOpen(false)
-                    }
-                  },
-                },
-              })),
-            }))}
-            activeKey={foundationsPageStore.itemKey}
-            itemConfig={{
-              default: { intent: 'secondary' },
-              active: { intent: 'tertiary' },
-            }}
-          />
-        )}
-      </SidePanelLayout.SideMobile>
+      </SidePanelLayout.Side>
     </SidePanelLayout>
   )
 }

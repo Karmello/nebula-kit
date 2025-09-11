@@ -2,31 +2,31 @@ import { useLayoutEffect } from 'react'
 import classNames from 'classnames'
 
 import { Box, Flex, IconButton, Spacer, useSidePanelLayout } from 'lib/components'
-import { useScreen, withPrefix } from 'lib/helpers'
-import { LayoutSlotProps, Slot } from 'lib/definitions'
+import { withPrefix } from 'lib/helpers'
+import { Slot } from 'lib/definitions'
 
+import { SidePanelLayoutMainProps } from './definitions'
 import { getToggleIconName } from '../../helpers'
 
-import '../../side-panel-layout.scss'
-
-export const Main = ({ children, elemProps, ...rest }: LayoutSlotProps<'main'>) => {
-  const { isDesktop } = useScreen()
-  const { sideOpen, setSideOpen, sidePosition, slots } = useSidePanelLayout()
+export const Main = ({ children, elemProps, elemRef, ...paddings }: SidePanelLayoutMainProps) => {
+  const { sideOpen, setSideOpen, sidePosition, slots, mode } = useSidePanelLayout()
 
   useLayoutEffect(() => {
-    setSideOpen(isDesktop)
-  }, [isDesktop])
+    setSideOpen(mode === 'inline')
+  }, [mode])
 
   return (
     <Box
-      {...rest}
       elem="section"
       elemProps={{
         ...elemProps,
         className: classNames(withPrefix('side-panel-layout-main'), elemProps?.className),
       }}
+      elemRef={elemRef}
+      padding={5}
+      {...paddings}
     >
-      <Flex alignItems="center" flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'} gap={10}>
+      <Flex alignItems="center" flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'} gap={7}>
         <IconButton
           elemProps={{
             onClick: () => setSideOpen(!sideOpen),
@@ -35,9 +35,9 @@ export const Main = ({ children, elemProps, ...rest }: LayoutSlotProps<'main'>) 
           intent="tertiary"
           size="sm"
         />
-        {slots.Header}
+        {slots.MainBar}
       </Flex>
-      <Spacer size={10} />
+      <Spacer size={5} />
       <Box>{children}</Box>
     </Box>
   )

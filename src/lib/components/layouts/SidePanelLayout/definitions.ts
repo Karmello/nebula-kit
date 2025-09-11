@@ -1,9 +1,9 @@
-import { HorizontalPosition, MakeRequired, ScaleValue } from 'lib/definitions'
+import { HorizontalPosition, MakeRequired, SidePanelLayoutSwitchAt } from 'lib/definitions'
 import { GridProps } from 'lib/components'
 
 export type SidePanelLayoutOwnProps = {
   sidePosition?: Extract<HorizontalPosition, 'left' | 'right'>
-  sideWidthDesktop?: ScaleValue | string
+  switchAt?: SidePanelLayoutSwitchAt
 }
 
 export const SIDE_PANEL_LAYOUT_INHERITED_PROPS = {

@@ -20,8 +20,7 @@ export type ScaleValue = (typeof SCALE)[number]
 export enum Slot {
   header = 'Header',
   side = 'Side',
-  sideMobile = 'SideMobile',
-  sideDesktop = 'SideDesktop',
   main = 'Main',
   footer = 'Footer',
+  mainBar = 'MainBar',
 }

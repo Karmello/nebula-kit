@@ -1,24 +1,31 @@
 .neb-side-panel-layout {
-  min-block-size: 100dvh;
+  block-size: 100%;
+
+  .neb-side-panel-layout-main-bar {
+    inline-size: 100%;
+  }
+
+  .neb-side-panel-layout-main {
+    min-inline-size: 0;
+    overflow-x: clip;
+  }
+
+  .neb-side-panel-layout-side {
+    block-size: 100%;
+  }
 }
 
-.neb-side-panel-layout-header {
-  inline-size: 100%;
+.neb-side-panel-layout[data-neb-side-panel-layout-mode='overlay'] {
+  .neb-side-panel-layout-side {
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    overflow-y: auto;
+  }
 }
 
-.neb-side-panel-layout-main {
-  min-inline-size: 0;
-  overflow-x: clip;
-}
-
-.neb-side-panel-layout-side-desktop {
-  overflow: hidden;
-}
-
-.neb-side-panel-layout-side-mobile {
-  z-index: 20;
-  position: fixed;
-  top: 0;
-  min-block-size: 100dvh;
-  overflow-y: auto;
+.neb-side-panel-layout[data-neb-side-panel-layout-mode='inline'] {
+  .neb-side-panel-layout-side {
+    overflow: hidden;
+  }
 }

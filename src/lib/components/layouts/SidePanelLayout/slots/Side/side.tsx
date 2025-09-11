@@ -1,0 +1,55 @@
+import classNames from 'classnames'
+
+import { Box, HAlign, IconButton, useSidePanelLayout } from 'lib/components'
+import { DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WIDTH, Slot } from 'lib/definitions'
+import { withPrefix } from 'lib/helpers'
+
+import { SidePanelLayoutSideProps } from './definitions'
+
+export const Side = ({
+  children,
+  elemProps,
+  elemRef,
+  intent,
+  inlineSize = DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WIDTH,
+  ...paddings
+}: SidePanelLayoutSideProps) => {
+  const { sideOpen, setSideOpen, sidePosition, mode } = useSidePanelLayout()
+
+  return (
+    <Box
+      elem="aside"
+      elemProps={{
+        ...elemProps,
+        className: classNames(withPrefix('side-panel-layout-side'), elemProps?.className),
+      }}
+      elemRef={elemRef}
+      variant="solid"
+      left={sidePosition === 'left' ? 0 : undefined}
+      right={sidePosition === 'right' ? 0 : undefined}
+      intent={intent}
+      inlineSize={sideOpen ? inlineSize : 0}
+      borderRadius={0}
+      {...paddings}
+    >
+      {mode === 'overlay' ? (
+        <HAlign position="right">
+          <IconButton
+            elemProps={{
+              onClick: () => {
+                setSideOpen(false)
+              },
+            }}
+            iconName="close"
+            variant="ghost"
+            size="sm"
+          />
+        </HAlign>
+      ) : null}
+      {children}
+    </Box>
+  )
+}
+
+Side.displayName = 'SidePanelLayout.Side'
+Side.slotName = Slot.side

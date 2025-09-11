@@ -15,11 +15,11 @@ export const APP_FRAME_FOOTER_INHERITED_PROPS = {
     'paddingRight',
     'paddingBottom',
     'paddingLeft',
-  ] as const satisfies readonly (keyof BoxProps<'div'>)[],
+  ] as const satisfies readonly (keyof BoxProps<'footer'>)[],
 }
 
 export type AppFrameFooterInheritedProps = MakeRequired<
-  Pick<BoxProps<'div'>, (typeof APP_FRAME_FOOTER_INHERITED_PROPS)['Box'][number]>,
+  Pick<BoxProps<'footer'>, (typeof APP_FRAME_FOOTER_INHERITED_PROPS)['Box'][number]>,
   'children'
 >
 

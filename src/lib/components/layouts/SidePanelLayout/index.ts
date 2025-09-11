@@ -1,15 +1,13 @@
 import { SidePanelLayout as SidePanelLayoutBase } from './side-panel-layout'
 
 import { Main } from './slots/Main'
-import { Header } from './slots/Header'
-import { SideMobile } from './slots/SideMobile'
-import { SideDesktop } from './slots/SideDesktop'
+import { MainBar } from './slots/MainBar'
+import { Side } from './slots/Side'
 
 export const SidePanelLayout = Object.assign(SidePanelLayoutBase, {
   Main,
-  Header,
-  SideMobile,
-  SideDesktop,
+  MainBar,
+  Side,
 })
 
 export * from './side-panel-layout'
