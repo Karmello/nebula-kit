@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { BundledLanguage, TokensResult } from 'shiki'
 
 import { Box, Flex, IconButton, Text } from 'lib/components'
@@ -14,6 +14,8 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
   const [data, setData] = useState<TokensResult>()
   const [copied, setCopied] = useState<boolean>(false)
 
+  const timeoutRef = useRef<NodeJS.Timeout>(null)
+
   useEffect(() => {
     const run = async () => {
       const data = await tokenizeCode(code, lang)
@@ -27,38 +29,43 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
   }
 
   const handleCopy = async () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+      timeoutRef.current = null
+    }
     await navigator.clipboard.writeText(code)
     setCopied(true)
-    setTimeout(() => setCopied(false), 1000)
+    timeoutRef.current = setTimeout(() => setCopied(false), 1000)
   }
 
   return (
-    <Box
-      elem="pre"
-      elemProps={{ style: { backgroundColor: data.bg } }}
-      position="relative"
-      overflowX="auto"
-      maxInlineSize="100%"
-    >
-      <Flex>
-        <Box elem="code" padding={10}>
-          {data.tokens.map((token, i) => (
-            <Box key={i}>
-              {token.map(({ content, color }, j) => (
-                <Text
-                  key={j}
-                  elem="span"
-                  elemProps={{ style: { display: 'inline', color } }}
-                  typography="secondary"
-                >
-                  {content}
-                </Text>
-              ))}
-            </Box>
-          ))}
-        </Box>
-      </Flex>
-      <Box position="absolute" top={3} right={3}>
+    <Box position="relative">
+      <Box
+        elem="pre"
+        elemProps={{ style: { backgroundColor: data.bg } }}
+        overflowX="auto"
+        maxInlineSize="100%"
+      >
+        <Flex>
+          <Box elem="code" padding={13}>
+            {data.tokens.map((token, i) => (
+              <Box key={i}>
+                {token.map(({ content, color }, j) => (
+                  <Text
+                    key={j}
+                    elem="span"
+                    elemProps={{ style: { display: 'inline', color } }}
+                    typography="secondary"
+                  >
+                    {content}
+                  </Text>
+                ))}
+              </Box>
+            ))}
+          </Box>
+        </Flex>
+      </Box>
+      <Box position="absolute" top={0} right={0}>
         <IconButton
           iconName={copied ? 'check' : 'copy'}
           size="xs"

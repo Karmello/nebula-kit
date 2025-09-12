@@ -1,31 +1,16 @@
-import { Box, BoxProps, Divider, Spacer, Text, TextOwnProps } from 'lib/components'
+import { Box, Divider, SectionProps, Spacer, Text } from 'lib/components'
 import { SectionElem } from 'lib/definitions'
-
-export type SectionOwnProps = {
-  heading: string
-  headingProps?: Omit<TextOwnProps, 'children'>
-  hideDivider?: boolean
-}
-
-export type SectionProps<E extends SectionElem> = BoxProps<E> & SectionOwnProps
 
 export const Section = <E extends SectionElem = 'section'>({
   elem,
   heading,
-  headingProps,
   hideDivider = false,
   children,
   ...boxProps
 }: SectionProps<E>) => {
-  if (!heading) {
-    return children
-  }
-
   return (
     <Box elem={elem || ('section' as any)} {...boxProps}>
-      <Text typography="h6" {...headingProps}>
-        {heading}
-      </Text>
+      {typeof heading === 'string' ? <Text typography="h6">{heading}</Text> : heading}
       {!hideDivider ? <Divider /> : null}
       {children ? (
         <>

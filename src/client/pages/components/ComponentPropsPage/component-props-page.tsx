@@ -20,12 +20,12 @@ export const ComponentPropsPage = () => {
   const metaKeys = Object.keys(meta || [])
 
   return metaKeys.map(key =>
-    meta[key].props ? (
+    meta[key].ownProps ? (
       <>
         <PropsTable
           key={key}
           category={metaKeys.length > 1 ? meta[key].overview.title : undefined}
-          data={meta[key].props}
+          data={meta[key].ownProps}
         />
         <Spacer size={30} />
       </>

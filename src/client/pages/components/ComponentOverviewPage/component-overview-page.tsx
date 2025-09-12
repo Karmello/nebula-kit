@@ -11,20 +11,23 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<unknown> }) => {
   const elemToString = elemToStringService()
 
   const {
-    overview: { title, description, role, behavior, byDefault, examplesOfUse, responsiveProps, composedOf },
+    overview: { title, description, role, behavior, byDefault, examplesOfUse, composedOf },
     examples,
+    ownProps,
   } = meta
 
   const content = (
     <Flex flexDirection="column" alignItems="stretch" gap={20}>
       <Text typography="lead">{description}</Text>
       {examples?.[0] ? <CodeSnippet code={elemToString(examples[0].jsx)} /> : null}
-      {composedOf ? <ListWithChips heading="Composed of:" items={Object.keys(composedOf)} /> : null}
+      {composedOf ? (
+        <ListWithChips heading="Composed of:" items={Object.keys(composedOf)} intent="warning" />
+      ) : null}
       {role ? <ListWithHeading heading="Role:" items={role} /> : null}
       {behavior ? <ListWithHeading heading="Behavior:" items={behavior} /> : null}
       {byDefault ? <ListWithHeading heading="By default:" items={byDefault} /> : null}
       {examplesOfUse ? <ListWithHeading heading="Examples of use:" items={examplesOfUse} /> : null}
-      {responsiveProps ? <ListWithChips heading="Responsive own props:" items={responsiveProps} /> : null}
+      {ownProps ? <ListWithChips heading="Own props:" items={ownProps.map(prop => prop.name)} /> : null}
       {composedOf
         ? Object.keys(composedOf).map(componentName =>
             composedOf[componentName]?.length ? (
@@ -42,7 +45,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<unknown> }) => {
   return (
     <>
       {title ? (
-        <Section heading={title} headingProps={{ typography: 'h5' }} variant="outline" padding={10}>
+        <Section heading={<Text typography="h5">{title}</Text>} variant="outline" padding={10}>
           {content}
         </Section>
       ) : (

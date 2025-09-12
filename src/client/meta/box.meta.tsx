@@ -12,8 +12,6 @@ import {
   DEFAULT_BOX_VARIANT,
 } from 'lib/definitions'
 
-import { applyResponsiveProps } from './_helpers'
-
 const BOX_META: ComponentMeta<BoxOwnProps> = {
   overview: {
     description:
@@ -35,7 +33,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     ],
     composedOf: BOX_INHERITED_PROPS,
   },
-  props: [
+  ownProps: [
     {
       name: 'variant',
       options: Object.values(BoxVariant),
@@ -394,10 +392,6 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
   ],
 }
 
-const META = {
+export default {
   Box: BOX_META,
 }
-
-applyResponsiveProps(META)
-
-export default META

@@ -2,12 +2,10 @@ import { ComponentMeta } from 'client/definitions'
 import { Box, Grid, GRID_INHERITED_PROPS, GridOwnProps } from 'lib/components'
 import { CssGridAutoFlow, CssGridPlaceItems, CssGridPlaceContent, GridElem } from 'lib/definitions'
 
-import { applyResponsiveProps } from './_helpers'
-
 const GRID_META: ComponentMeta<GridOwnProps> = {
   overview: {
     description:
-      "Grid provides a flexible two-dimensional layout system, letting you arrange content into rows and columns with consistent spacing and alignment. It's built to handle both simple and complex page structures while staying accessible and responsive.",
+      'Grid is a layout component built on CSS Grid, providing a flexible two-dimensional system for arranging content into rows and columns with consistent spacing and alignment.',
     role: [
       'provide a CSS Grid-based layout wrapper',
       'establish rows and columns to align and distribute children',
@@ -30,7 +28,7 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
     ],
     composedOf: GRID_INHERITED_PROPS,
   },
-  props: [
+  ownProps: [
     {
       name: 'gridTemplateColumns',
       options: ['string', 'number'],
@@ -130,10 +128,6 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
   ],
 }
 
-const META = {
+export default {
   Grid: GRID_META,
 }
-
-applyResponsiveProps(META)
-
-export default META

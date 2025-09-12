@@ -18,7 +18,7 @@ const WITH_ICON_META: ComponentMeta<WithIconOwnProps> = {
     ],
     composedOf: WITH_ICON_INHERITED_PROPS,
   },
-  props: [
+  ownProps: [
     {
       name: 'iconPosition',
       options: IconPosition as unknown as string[],

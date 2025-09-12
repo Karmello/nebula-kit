@@ -1,9 +1,9 @@
-import { Section, SvgIcon, Table, Text } from 'lib/components'
+import { Section, Spacer, SvgIcon, Table, Text } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 
 type Props = {
   category?: string
-  data: ComponentMeta<unknown>['props']
+  data: ComponentMeta<unknown>['ownProps']
 }
 
 export const PropsTable = ({ category, data }: Props) => {
@@ -59,9 +59,10 @@ export const PropsTable = ({ category, data }: Props) => {
 
   if (category) {
     return (
-      <Section heading={category} marginBottom={20}>
-        {table}
-      </Section>
+      <>
+        <Section heading={category}>{table}</Section>
+        <Spacer size={20} />
+      </>
     )
   } else {
     return table

@@ -16,11 +16,10 @@ import {
   CssFlexWrap,
 } from 'lib/definitions'
 
-import { applyResponsiveProps } from './_helpers'
-
 const FLEX_META: ComponentMeta<FlexOwnProps> = {
   overview: {
-    description: 'A layout container that arranges its children using CSS flexbox.',
+    description:
+      'Flex is a layout component built on CSS Flexbox, providing a one-dimensional system for arranging children in a row or column.',
     role: [
       'provide a flexbox-based layout wrapper',
       'control flow, alignment, and wrapping of children',
@@ -43,7 +42,7 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
     ],
     composedOf: FLEX_INHERITED_PROPS,
   },
-  props: [
+  ownProps: [
     {
       name: 'flexDirection',
       options: Object.values(CssFlexDirection),
@@ -141,7 +140,7 @@ const FLEX_ITEM_META: ComponentMeta<FlexItemOwnProps> = {
     ],
     composedOf: FLEX_ITEM_INHERITED_PROPS,
   },
-  props: [
+  ownProps: [
     {
       name: 'flex',
       options: ['CSS'],
@@ -213,11 +212,7 @@ const FLEX_ITEM_META: ComponentMeta<FlexItemOwnProps> = {
   ],
 }
 
-const META = {
+export default {
   Flex: FLEX_META,
   'Flex.Item': FLEX_ITEM_META,
 }
-
-applyResponsiveProps(META)
-
-export default META

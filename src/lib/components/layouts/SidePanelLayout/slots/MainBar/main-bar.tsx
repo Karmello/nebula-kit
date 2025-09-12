@@ -23,6 +23,7 @@ export const MainBar = <E extends ElementType = 'div'>({
         } as PropsWithoutRef<ComponentProps<E>>
       }
       elemRef={elemRef}
+      borderRadius={0}
     >
       {children}
     </Box>

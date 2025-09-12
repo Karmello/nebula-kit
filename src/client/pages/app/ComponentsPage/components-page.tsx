@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
-import { SidePanelLayout, SideNav, Breadcrumb, Section, Spacer, Box } from 'lib/components'
+import { SidePanelLayout, SideNav, Breadcrumb, Section, Spacer, Box, Text } from 'lib/components'
 import { useComponentsPageStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
@@ -76,7 +76,7 @@ export const ComponentsPage = () => {
             <ComponentsPageRoutes />
           </SidePanelLayout.Main>
           <SidePanelLayout.MainBar>
-            <Section heading={activeItemObj?.label} headingProps={{ typography: 'h3' }} />
+            <Section heading={<Text typography="h3">{activeItemObj?.label}</Text>}>{null}</Section>
           </SidePanelLayout.MainBar>
         </SidePanelLayout>
       </SidePanelLayout.Main>

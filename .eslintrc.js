@@ -30,6 +30,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     'react/jsx-indent': 'off',
     'react/jsx-indent-props': 'off',
+    'react/prop-types': 'off',
     'react/display-name': 'off',
     'react/jsx-uses-react': 2,
     'react-hooks/rules-of-hooks': 'warn',

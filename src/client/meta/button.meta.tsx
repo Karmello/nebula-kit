@@ -16,7 +16,7 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
     examplesOfUse: ['applied wherever a clear, consistent action trigger is needed in the interface'],
     composedOf: BUTTON_INHERITED_PROPS,
   },
-  props: [
+  ownProps: [
     {
       name: 'size',
       options: Object.values(ButtonSize),

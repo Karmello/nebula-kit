@@ -2,8 +2,6 @@ import { ComponentMeta } from 'client/definitions'
 import { DEFAULT_TEXT_TYPOGRAPHY, TextElem, TextTypography } from 'lib/definitions'
 import { Text, TEXT_INHERITED_PROPS, TextOwnProps } from 'lib/components'
 
-import { applyResponsiveProps } from './_helpers'
-
 const TEXT_META: ComponentMeta<TextOwnProps> = {
   overview: {
     description:
@@ -25,7 +23,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
     ],
     composedOf: TEXT_INHERITED_PROPS,
   },
-  props: [
+  ownProps: [
     {
       name: 'typography',
       options: Object.values(TextTypography),
@@ -103,10 +101,6 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
   ],
 }
 
-const META = {
+export default {
   Text: TEXT_META,
 }
-
-applyResponsiveProps(META)
-
-export default META

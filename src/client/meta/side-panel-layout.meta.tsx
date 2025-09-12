@@ -42,7 +42,7 @@ const SIDE_PANEL_LAYOUT_META: ComponentMeta<SidePanelLayoutOwnProps> = {
       'building dashboards where the side panel supplements the primary view',
     ],
   },
-  props: [
+  ownProps: [
     {
       name: 'sidePosition',
       options: [HorizontalPosition[0], HorizontalPosition[2]],

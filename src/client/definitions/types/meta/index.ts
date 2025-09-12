@@ -29,6 +29,6 @@ type Example = {
 
 export type ComponentMeta<PropsType> = {
   overview: Overview
-  props?: Prop<PropsType>[]
+  ownProps?: Prop<PropsType>[]
   examples?: Example[]
 }

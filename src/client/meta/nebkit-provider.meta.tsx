@@ -23,7 +23,7 @@ const NEB_KIT_PROVIDER_META: ComponentMeta<NebKitProviderProps> = {
       'always wrap with NebKitProvider to inherit theming and global configuration across the app',
     ],
   },
-  props: [
+  ownProps: [
     {
       name: 'children',
       options: ['ReactElement'],

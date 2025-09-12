@@ -16,7 +16,7 @@ const NATIVE_ELEM_META: ComponentMeta<NativeElemProps<any>> = {
       'could be helpful as an escape hatch if you need the absolute lowest layer without extra props or behaviors',
     ],
   },
-  props: [
+  ownProps: [
     {
       name: 'children',
       options: ['ReactNode'],

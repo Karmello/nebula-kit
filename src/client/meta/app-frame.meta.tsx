@@ -20,7 +20,7 @@ const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
     ],
     composedOf: APP_FRAME_INHERITED_PROPS,
   },
-  props: [
+  ownProps: [
     {
       name: 'stickyHeader',
       options: ['boolean'],

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
-import { SidePanelLayout, SideNav, Breadcrumb, Section, Spacer, Box } from 'lib/components'
+import { SidePanelLayout, SideNav, Breadcrumb, Section, Spacer, Box, Text } from 'lib/components'
 import { useFoundationsPageStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
 import { FOUNDATION_CATEGORIES, PageKey } from 'client/definitions'
@@ -76,7 +76,7 @@ export const FoundationsPage = () => {
             <FoundationsPageRoutes />
           </SidePanelLayout.Main>
           <SidePanelLayout.MainBar>
-            <Section heading={activeSectionObj?.label} headingProps={{ typography: 'h3' }} />
+            <Section heading={<Text typography="h3">{activeSectionObj?.label}</Text>}>{null}</Section>
           </SidePanelLayout.MainBar>
         </SidePanelLayout>
       </SidePanelLayout.Main>

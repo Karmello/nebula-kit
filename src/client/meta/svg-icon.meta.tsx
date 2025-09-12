@@ -18,7 +18,7 @@ const SVG_ICON_META: ComponentMeta<SvgIconProps> = {
       'access the raw SVG for custom sizing or color overrides',
     ],
   },
-  props: [
+  ownProps: [
     {
       name: 'iconName',
       options: ['IconName'],
