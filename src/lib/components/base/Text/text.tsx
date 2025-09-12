@@ -64,7 +64,11 @@ export const Text = <E extends TextElem = 'p'>({
       textAlign={textAlign}
     >
       {iconName ? (
-        <WithIcon iconName={iconName} iconPosition={iconPosition}>
+        <WithIcon
+          iconName={iconName}
+          iconPosition={iconPosition}
+          iconSize={TEXT_TYPOGRAPHY_CONFIG[typography].iconSize}
+        >
           {children}
         </WithIcon>
       ) : (

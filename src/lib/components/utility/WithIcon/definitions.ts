@@ -9,7 +9,7 @@ export type WithIconOwnProps = {
 
 export const WITH_ICON_INHERITED_PROPS = {
   NativeElem: ['children', 'elemProps'] as const satisfies readonly (keyof NativeElemProps<'span'>)[],
-  SvgIcon: ['iconName'] as const satisfies readonly (keyof SvgIconProps)[],
+  SvgIcon: ['iconName', 'iconSize'] as const satisfies readonly (keyof SvgIconProps)[],
 }
 
 export type WithIconInheritedProps = Pick<

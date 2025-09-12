@@ -11,6 +11,10 @@ import {
   ChevronRight,
   Copy,
   CopyCheck,
+  Info,
+  TriangleAlert,
+  CheckCircle,
+  CircleAlert,
 } from 'lucide-react'
 
 import { IconName, registerIcons } from './icon-registry'
@@ -28,6 +32,10 @@ const ICONS: Record<IconName, any> = {
   'chevron-right': ChevronRight,
   copy: Copy,
   'copy-check': CopyCheck,
+  info: Info,
+  'triangle-alert': TriangleAlert,
+  'check-circle': CheckCircle,
+  'circle-alert': CircleAlert,
 }
 
 registerIcons(ICONS)

@@ -15,15 +15,16 @@ export const WithIcon = ({
   elemProps,
   // SvgIcon
   iconName,
+  iconSize,
 }: WithIconProps) => {
   return (
     <NativeElem
       elem="span"
       elemProps={{ ...elemProps, className: classNames(withPrefix('with-icon'), elemProps?.className || '') }}
     >
-      {iconPosition === 'left' ? <SvgIcon iconName={iconName} /> : null}
+      {iconPosition === 'left' ? <SvgIcon iconName={iconName} iconSize={iconSize} /> : null}
       {children}
-      {iconPosition === 'right' ? <SvgIcon iconName={iconName} /> : null}
+      {iconPosition === 'right' ? <SvgIcon iconName={iconName} iconSize={iconSize} /> : null}
     </NativeElem>
   )
 }
