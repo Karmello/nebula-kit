@@ -36,7 +36,7 @@ export const HorizontalPosition = ['left', 'center', 'right'] as const
 export const SidePanelLayoutSwitchAt = [...BREAKPOINTS.filter(bp => bp !== 'base')] as const
 export const CalloutVariant = ['solid', 'outline'] as const
 export const CalloutIntent = ['info', 'success', 'warning', 'danger'] as const
-export const ListStyle = ['disc', 'circle', 'square', 'decimal', 'none'] as const
+export const MarkerListStyle = ['disc', 'circle', 'square', 'decimal'] as const
 
 // types
 export type Theme = (typeof Theme)[number]
@@ -50,7 +50,7 @@ export type IconPosition = (typeof IconPosition)[number]
 export type SidePanelLayoutSwitchAt = (typeof SidePanelLayoutSwitchAt)[number]
 export type CalloutVariant = (typeof CalloutVariant)[number]
 export type CalloutIntent = (typeof CalloutIntent)[number]
-export type ListStyle = (typeof ListStyle)[number]
+export type MarkerListStyle = (typeof MarkerListStyle)[number]
 
 export type MakeRequired<T, K extends keyof T> = Omit<T, K> & Required<Pick<T, K>>
 

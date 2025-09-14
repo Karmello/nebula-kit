@@ -1,44 +1,48 @@
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
+import { Flex } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
-import { ListElem } from 'lib/definitions'
+import { MarkerListElem } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
-import { ListProps } from './definitions'
-import './list.scss'
+import { MarkerListProps } from './definitions'
+import './marker-list.scss'
 
-export const List = <E extends ListElem = 'ul'>({
+export const MarkerList = <E extends MarkerListElem = 'ul'>({
   children,
   elem,
   elemProps,
   elemRef,
+  gap = 3,
   // own
   listStyle,
-}: ListProps<E>) => {
+}: MarkerListProps<E>) => {
   return (
     <WithSlots<'Item'>
-      componentName="List"
+      componentName="MarkerList"
       slotsConfig={[{ name: 'Item', required: true, allowMultiple: true }]}
       childrenToVerify={children}
     >
       {slots => {
         return (
-          <Box
+          <Flex
             elem={elem || 'ul'}
             elemProps={{
               ...elemProps,
-              className: classNames(withPrefix('list'), elemProps?.className),
+              className: classNames(withPrefix('marker-list'), elemProps?.className),
               style: {
                 ...elemProps?.style,
                 listStyle,
                 listStylePosition: 'outside',
               },
+              role: 'list',
             }}
             elemRef={elemRef}
+            flexDirection="column"
+            gap={gap}
           >
             {slots.Item}
-          </Box>
+          </Flex>
         )
       }}
     </WithSlots>

@@ -17,7 +17,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<unknown> }) => {
   } = meta
 
   const content = (
-    <Flex flexDirection="column" alignItems="stretch" gap={20}>
+    <Flex flexDirection="column" alignItems="stretch" gap={15}>
       <Text typography="lead">{description}</Text>
       {examples?.[0] ? <CodeSnippet code={elemToString(examples[0].jsx)} /> : null}
       {composedOf ? (

@@ -38,7 +38,7 @@ export const COMPONENT_CATEGORIES = [
     key: 'elements',
     label: 'Elements',
     items: [
-      { key: 'list', label: 'List', sections: COMPONENT_SECTIONS },
+      { key: 'marker-list', label: 'MarkerList', sections: COMPONENT_SECTIONS },
       { key: 'svg-icon', label: 'SvgIcon', sections: COMPONENT_SECTIONS },
     ],
   },
