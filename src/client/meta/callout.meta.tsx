@@ -1,5 +1,6 @@
 import { Callout, CALLOUT_INHERITED_PROPS, CalloutOwnProps, CALLOUT_CONFIG, Spacer } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
+import { DEFAULT_CALLOUT_INTENT } from 'lib/definitions'
 
 const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
   overview: {
@@ -10,8 +11,17 @@ const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
       'provides clear visual cues through color, icon, and heading',
       'helps users quickly distinguish between neutral notes, successes, warnings, and errors',
     ],
-    behavior: ['...'],
-    byDefault: ['...'],
+    behavior: [
+      'requires content text',
+      'provides an automatic icon for each intent',
+      'renders a heading with h5 typography',
+    ],
+    byDefault: [
+      'renders as a <div> element',
+      'uses the info intent',
+      'uses the solid variant',
+      'applies padding of 10',
+    ],
     examplesOfUse: [
       'highlighting important information in documentation or forms',
       'displaying a success message after a completed action',
@@ -35,8 +45,9 @@ const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
       options: [
         Object.values(CALLOUT_CONFIG)
           .map(o => o.heading)
-          .join(' | '),
+          .join(', '),
       ],
+      defaultValue: CALLOUT_CONFIG[DEFAULT_CALLOUT_INTENT].heading,
       isRequired: false,
       isResponsive: false,
     },
