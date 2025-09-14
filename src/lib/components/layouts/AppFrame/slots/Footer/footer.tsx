@@ -1,5 +1,4 @@
 import { Box } from 'lib/components'
-import { Slot } from 'lib/definitions'
 
 import { AppFrameFooterProps } from './definitions'
 import classNames from 'classnames'
@@ -33,4 +32,4 @@ export const Footer = ({
 }
 
 Footer.displayName = 'AppFrame.Footer'
-Footer.slotName = Slot.footer
+Footer.slotName = 'Footer'

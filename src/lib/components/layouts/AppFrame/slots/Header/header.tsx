@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 
 import { getDataAttrs, withPrefix } from 'lib/helpers'
-import { Slot } from 'lib/definitions'
 import { Box } from 'lib/components'
 
 import { useAppFrame } from '../../AppFrameProvider'
@@ -40,4 +39,4 @@ export const Header = ({
 }
 
 Header.displayName = 'AppFrame.Header'
-Header.slotName = Slot.header
+Header.slotName = 'Header'

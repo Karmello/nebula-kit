@@ -10,11 +10,13 @@ import './app-frame.scss'
 export const AppFrame = ({ children, stickyHeader = false }: AppFrameProps) => {
   return (
     <AppFrameProvider stickyHeader={stickyHeader}>
-      <WithSlots
+      <WithSlots<'Header' | 'Main' | 'Footer'>
         componentName="AppFrame"
-        header="required"
-        main="required"
-        footer="optional"
+        slotsConfig={[
+          { name: 'Header', required: true },
+          { name: 'Main', required: true },
+          { name: 'Footer' },
+        ]}
         childrenToVerify={children}
       >
         {slots => (

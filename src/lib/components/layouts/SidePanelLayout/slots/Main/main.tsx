@@ -3,7 +3,6 @@ import classNames from 'classnames'
 
 import { Box, Flex, IconButton, Spacer, useSidePanelLayout } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { Slot } from 'lib/definitions'
 
 import { SidePanelLayoutMainProps } from './definitions'
 import { getToggleIconName } from '../../helpers'
@@ -44,4 +43,4 @@ export const Main = ({ children, elemProps, elemRef, ...paddings }: SidePanelLay
 }
 
 Main.displayName = 'SidePanelLayout.Main'
-Main.slotName = Slot.main
+Main.slotName = 'Main'

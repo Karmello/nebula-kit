@@ -14,13 +14,3 @@ export const SCALE = [
 
 export type Breakpoint = (typeof BREAKPOINTS)[number]
 export type ScaleValue = (typeof SCALE)[number]
-
-// enums
-
-export enum Slot {
-  header = 'Header',
-  side = 'Side',
-  main = 'Main',
-  footer = 'Footer',
-  mainBar = 'MainBar',
-}

@@ -1,49 +1,49 @@
 import { Children, isValidElement, JSX, ReactNode } from 'react'
-import { camelCase } from 'lodash'
 
-import { LIB_NAME, Slot } from 'lib/definitions'
+import { LIB_NAME } from 'lib/definitions'
 
-export type WithSlotsReturnObject = Partial<Record<Slot, ReactNode | null>>
-
-type SlotType = 'required' | 'optional'
-
-export type WithSlotsOwnProps = {
-  children: (slots: WithSlotsReturnObject) => JSX.Element
+export type WithSlotsProps<SlotName extends string> = {
   componentName: string
-  header?: SlotType
-  side?: SlotType
-  main?: SlotType
-  footer?: SlotType
-  mainBar?: SlotType
   childrenToVerify: ReactNode
+  slotsConfig: { name: SlotName; required?: boolean; allowMultiple?: boolean }[]
+  children: (slots: Record<SlotName, ReactNode>) => JSX.Element
 }
 
-export const WithSlots = (props: WithSlotsOwnProps) => {
-  const pickSlot = (slotName: Slot) =>
-    Children.toArray(props.childrenToVerify).find(
-      el => isValidElement(el) && (el.type as any).slotName === slotName
-    )
+export const WithSlots = <SlotName extends string>({
+  componentName,
+  childrenToVerify,
+  slotsConfig,
+  children,
+}: WithSlotsProps<SlotName>) => {
+  const getWarnMsg = (slotName: SlotName) =>
+    `[${LIB_NAME}]: ${componentName} expects ${componentName}.${slotName} as a child`
 
-  const getWarnMsg = (slotName: string) =>
-    `[${LIB_NAME}]: ${props.componentName} expects ${props.componentName}.${slotName}`
+  const validChildren: Record<SlotName, ReactNode[]> = {} as never
+  slotsConfig.forEach(({ name }) => {
+    validChildren[name] = []
+  })
 
-  const slots: WithSlotsReturnObject = {
-    Header: null,
-    Side: null,
-    Main: null,
-    Footer: null,
-    MainBar: null,
-  }
+  Children.toArray(childrenToVerify).forEach(child => {
+    if (!isValidElement(child)) return
 
-  Object.keys(slots).forEach(slotName => {
-    const slot = pickSlot(slotName as Slot)
+    const slotName: string = (child.type as any).slotName
+    if (!slotName) return
 
-    if (slot) {
-      slots[slotName as Slot] = slot
-    } else if ((props[camelCase(slotName) as never] as SlotType) === 'required') {
-      console.warn(getWarnMsg(slotName))
+    const slotConfig = slotsConfig.find(c => c.name === slotName)
+    if (!slotConfig) return
+
+    if (slotConfig.allowMultiple) {
+      validChildren[slotConfig.name].push(child)
+    } else {
+      validChildren[slotConfig.name] = [child]
     }
   })
 
-  return props.children(slots)
+  slotsConfig.forEach(({ name, required }) => {
+    if (required && !validChildren[name].length) {
+      console.warn(getWarnMsg(name))
+    }
+  })
+
+  return children(validChildren)
 }

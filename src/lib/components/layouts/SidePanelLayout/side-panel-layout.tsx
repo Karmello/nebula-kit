@@ -24,11 +24,9 @@ export const SidePanelLayout = ({
     : 'inline'
 
   return (
-    <WithSlots
+    <WithSlots<'Main' | 'MainBar' | 'Side'>
       componentName="SidePanelLayout"
-      main="required"
-      mainBar="optional"
-      side="required"
+      slotsConfig={[{ name: 'Main', required: true }, { name: 'MainBar' }, { name: 'Side', required: true }]}
       childrenToVerify={children}
     >
       {slots => {

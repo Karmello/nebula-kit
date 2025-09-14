@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 import { Box, HAlign, IconButton, useSidePanelLayout } from 'lib/components'
-import { DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WIDTH, Slot } from 'lib/definitions'
+import { DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WIDTH } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
 import { SidePanelLayoutSideProps } from './definitions'
@@ -50,4 +50,4 @@ export const Side = ({
 }
 
 Side.displayName = 'SidePanelLayout.Side'
-Side.slotName = Slot.side
+Side.slotName = 'Side'

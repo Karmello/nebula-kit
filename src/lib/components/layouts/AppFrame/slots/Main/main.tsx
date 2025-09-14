@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { Slot } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
 import { AppFrameMainProps } from './definitions'
@@ -26,4 +25,4 @@ export const Main = ({ children, elemProps, elemRef, ...paddings }: AppFrameMain
 }
 
 Main.displayName = 'AppFrame.Main'
-Main.slotName = Slot.main
+Main.slotName = 'Main'

@@ -1,12 +1,10 @@
 import { createContext, useContext, useState, ReactNode } from 'react'
 
-import { WithSlotsReturnObject } from 'lib/components/internal'
-
 import { SidePanelLayoutOwnProps } from '../definitions'
 
 type ProviderProps = SidePanelLayoutOwnProps & {
   children: ReactNode
-  slots: WithSlotsReturnObject
+  slots: Record<'Main' | 'MainBar' | 'Side', ReactNode>
   mode: SidePanelLayoutMode
 }
 

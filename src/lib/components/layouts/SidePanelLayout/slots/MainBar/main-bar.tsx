@@ -2,7 +2,6 @@ import { ComponentProps, ElementType, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { Slot } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
 import { SidePanelLayoutMainBarProps } from './definitions'
@@ -31,4 +30,4 @@ export const MainBar = <E extends ElementType = 'div'>({
 }
 
 MainBar.displayName = 'SidePanelLayout.MainBar'
-MainBar.slotName = Slot.mainBar
+MainBar.slotName = 'MainBar'
