@@ -1,19 +1,16 @@
 import fs from 'fs'
 import { Request, Response } from 'express'
 import ReactDOMServer from 'react-dom/server'
-import { createMemoryHistory } from 'history'
 import { StaticRouter } from 'react-router-dom/server'
 
 import { App } from 'client/components'
 import { NebKitProvider } from 'lib/components'
 
 export const RootController = (req: Request, res: Response) => {
-  const { location } = createMemoryHistory()
-
   const env = {}
 
   const app = ReactDOMServer.renderToString(
-    <StaticRouter location={location}>
+    <StaticRouter location={req.url}>
       <NebKitProvider defaultBorderRadius={3}>
         <App />
       </NebKitProvider>
