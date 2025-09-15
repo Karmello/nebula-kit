@@ -48,6 +48,9 @@ jobs:
       - name: Run Vitest tests
         run: yarn test
 
+      - name: Run Playwright tests
+        run: yarn pw
+
       - name: Trigger Heroku deployment
         uses: akhileshns/heroku-deploy@v3.12.14
         env:

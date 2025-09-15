@@ -5,6 +5,7 @@ import { createMemoryHistory } from 'history'
 import { StaticRouter } from 'react-router-dom/server'
 
 import { App } from 'client/components'
+import { NebKitProvider } from 'lib/components'
 
 export const RootController = (req: Request, res: Response) => {
   const { location } = createMemoryHistory()
@@ -13,7 +14,9 @@ export const RootController = (req: Request, res: Response) => {
 
   const app = ReactDOMServer.renderToString(
     <StaticRouter location={location}>
-      <App />
+      <NebKitProvider defaultBorderRadius={3}>
+        <App />
+      </NebKitProvider>
     </StaticRouter>
   )
 
