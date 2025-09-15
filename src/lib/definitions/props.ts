@@ -75,3 +75,6 @@ export const DEFAULT_SIDE_PANEL_LAYOUT_SWITCH_AT: SidePanelLayoutSwitchAt = 'lg'
 
 export const DEFAULT_CALLOUT_VARIANT: CalloutVariant = 'solid'
 export const DEFAULT_CALLOUT_INTENT: CalloutIntent = 'info'
+
+export const DEFAULT_DIVIDER_INTENT: BoxIntent = 'tertiary'
+export const DEFAULT_DIVIDER_THICKNESS = 1
