@@ -15,7 +15,11 @@ const Node = () => (
 const container = document.getElementById('root')
 
 if (process.env.NODE_ENV === 'production') {
-  hydrateRoot(container, <Node />)
+  hydrateRoot(container, <Node />, {
+    onRecoverableError: (err, info) => {
+      console.error('[hydrate]', err, info)
+    },
+  })
 } else {
   const root = createRoot(container)
   root.render(<Node />)

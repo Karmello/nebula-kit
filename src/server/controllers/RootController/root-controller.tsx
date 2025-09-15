@@ -10,7 +10,7 @@ export const RootController = (req: Request, res: Response) => {
   const env = {}
 
   const app = ReactDOMServer.renderToString(
-    <StaticRouter location={req.url}>
+    <StaticRouter location={req.originalUrl}>
       <NebKitProvider defaultBorderRadius={3}>
         <App />
       </NebKitProvider>
