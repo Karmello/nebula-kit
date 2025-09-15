@@ -27,7 +27,7 @@ export const ComponentPropsPage = () => {
           category={metaKeys.length > 1 ? meta[key].overview.title : undefined}
           data={meta[key].ownProps}
         />
-        <Spacer size={30} />
+        <Spacer blockSize={30} />
       </>
     ) : null
   )

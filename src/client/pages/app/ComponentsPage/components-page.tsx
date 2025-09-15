@@ -48,7 +48,7 @@ export const ComponentsPage = () => {
         />
       </SidePanelLayout.Side>
       <SidePanelLayout.Main paddingLeft={10}>
-        <Spacer size={15} />
+        <Spacer blockSize={15} />
         <SidePanelLayout sidePosition="right">
           <SidePanelLayout.Side>
             <SideNav

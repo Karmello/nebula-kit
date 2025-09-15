@@ -20,6 +20,7 @@ export const COMPONENT_CATEGORIES = [
       { key: 'flex', label: 'Flex', sections: COMPONENT_SECTIONS },
       { key: 'grid', label: 'Grid', sections: COMPONENT_SECTIONS },
       { key: 'table', label: 'Table', sections: COMPONENT_SECTIONS },
+      { key: 'spacer', label: 'Spacer', sections: COMPONENT_SECTIONS.filter(s => s.key !== 'props') },
     ],
   },
   {

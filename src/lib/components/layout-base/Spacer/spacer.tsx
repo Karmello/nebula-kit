@@ -1,17 +1,23 @@
+import classNames from 'classnames'
+
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { ResponsiveProp, ScaleValue } from 'lib/definitions'
+import { DEFAULT_SPACER_BLOCK_SIZE } from 'lib/definitions'
 
-export type SpacerOwnProps = {
-  size?: ResponsiveProp<ScaleValue | string>
-}
+import { SpacerProps } from './definitions'
 
-export const Spacer = ({ size = 2 }: SpacerOwnProps) => {
+export const Spacer = ({ elemProps, elemRef, blockSize = DEFAULT_SPACER_BLOCK_SIZE }: SpacerProps) => {
   return (
     <Box
-      elemProps={{ className: withPrefix('spacer'), role: 'presentation', 'aria-hidden': 'true' }}
+      elemProps={{
+        ...elemProps,
+        className: classNames(withPrefix('spacer'), elemProps?.className),
+        role: 'presentation',
+        'aria-hidden': 'true',
+      }}
+      elemRef={elemRef}
       variant="ghost"
-      blockSize={size}
+      blockSize={blockSize}
     />
   )
 }

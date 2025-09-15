@@ -36,7 +36,7 @@ export const Main = ({ children, elemProps, elemRef, ...paddings }: SidePanelLay
         />
         {slots.MainBar}
       </Flex>
-      <Spacer size={5} />
+      <Spacer blockSize={5} />
       <Box>{children}</Box>
     </Box>
   )

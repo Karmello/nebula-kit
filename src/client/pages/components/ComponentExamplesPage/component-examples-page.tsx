@@ -12,7 +12,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   return (
     <>
       {description ? <Text>{description}</Text> : null}
-      <Spacer size={5} />
+      <Spacer blockSize={5} />
       {!noSandBox ? (
         <>
           <Box
@@ -22,11 +22,11 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           >
             {jsx}
           </Box>
-          <Spacer size={5} />
+          <Spacer blockSize={5} />
         </>
       ) : null}
       <CodeSnippet code={elemToString(jsx)} />
-      <Spacer size={30} />
+      <Spacer blockSize={30} />
     </>
   )
 }

@@ -24,7 +24,7 @@ export const ComponentsPageRoutes = () => {
 
   return (
     <>
-      <Spacer size={10} />
+      <Spacer blockSize={10} />
       <Routes>
         {COMPONENT_CATEGORIES.map(({ key: categoryKey, items }) =>
           items.map(({ key: itemKey, sections }) =>

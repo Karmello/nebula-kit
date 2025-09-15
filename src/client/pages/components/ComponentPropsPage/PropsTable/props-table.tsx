@@ -61,7 +61,7 @@ export const PropsTable = ({ category, data }: Props) => {
     return (
       <>
         <Section heading={category}>{table}</Section>
-        <Spacer size={20} />
+        <Spacer blockSize={20} />
       </>
     )
   } else {

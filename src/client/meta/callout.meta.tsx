@@ -58,7 +58,7 @@ const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
       jsx: (
         <>
           <Callout content="Callout text content" />
-          <Spacer size={10} />
+          <Spacer blockSize={10} />
           <Callout content="Callout text content" variant="outline" />
         </>
       ),
@@ -69,7 +69,7 @@ const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
       jsx: (
         <>
           <Callout content="Callout text content" intent="success" />
-          <Spacer size={10} />
+          <Spacer blockSize={10} />
           <Callout content="Callout text content" variant="outline" intent="success" />
         </>
       ),
@@ -79,7 +79,7 @@ const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
       jsx: (
         <>
           <Callout content="Callout text content" intent="warning" />
-          <Spacer size={10} />
+          <Spacer blockSize={10} />
           <Callout content="Callout text content" variant="outline" intent="warning" />
         </>
       ),
@@ -89,7 +89,7 @@ const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
       jsx: (
         <>
           <Callout content="Callout text content" intent="danger" />
-          <Spacer size={10} />
+          <Spacer blockSize={10} />
           <Callout content="Callout text content" variant="outline" intent="danger" />
         </>
       ),

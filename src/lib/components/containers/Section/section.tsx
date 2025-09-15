@@ -14,7 +14,7 @@ export const Section = <E extends SectionElem = 'section'>({
       {!hideDivider ? <Divider /> : null}
       {children ? (
         <>
-          <Spacer size={10} />
+          <Spacer blockSize={10} />
           {children}
         </>
       ) : null}

@@ -11,7 +11,7 @@ export const FoundationsPageRoutes = () => {
 
   return (
     <>
-      <Spacer size={10} />
+      <Spacer blockSize={10} />
       <Routes>
         {FOUNDATION_CATEGORIES.map(({ key: categoryKey, items }) =>
           items.map(({ key: itemKey, sections }) =>

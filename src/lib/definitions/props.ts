@@ -78,3 +78,5 @@ export const DEFAULT_CALLOUT_INTENT: CalloutIntent = 'info'
 
 export const DEFAULT_DIVIDER_INTENT: BoxIntent = 'tertiary'
 export const DEFAULT_DIVIDER_THICKNESS = 1
+
+export const DEFAULT_SPACER_BLOCK_SIZE = 2

@@ -1,0 +1,9 @@
+import { BoxProps } from 'lib/components'
+
+export const SPACER_INHERITED_PROPS = {
+  Box: ['elemProps', 'elemRef', 'blockSize'] as const satisfies readonly (keyof BoxProps<'div'>)[],
+}
+
+export type SpacerInheritedProps = Pick<BoxProps<'div'>, (typeof SPACER_INHERITED_PROPS)['Box'][number]>
+
+export type SpacerProps = SpacerInheritedProps
