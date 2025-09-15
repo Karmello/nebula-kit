@@ -3,6 +3,7 @@ import { NebKitProvider, NebKitProviderProps } from 'lib/components'
 import { DEFAULT_BORDER_RADIUS, Theme } from 'lib/definitions'
 
 const App = (): null => null
+App.displayName = 'App'
 
 const NEB_KIT_PROVIDER_META: ComponentMeta<NebKitProviderProps> = {
   overview: {

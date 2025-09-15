@@ -45,6 +45,9 @@ jobs:
       - name: Run TSD tests
         run: yarn tsd
 
+      - name: Run Vitest tests
+        run: yarn test
+
       - name: Trigger Heroku deployment
         uses: akhileshns/heroku-deploy@v3.12.14
         env:
