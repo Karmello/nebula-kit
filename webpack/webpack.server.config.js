@@ -29,6 +29,7 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         include: path.resolve(__dirname, '../src'),
         loader: 'ts-loader',
+        options: { configFile: 'tsconfig.webpack.json' },
       },
       {
         test: /\.(scss|jpg|jpeg|png)$/,
