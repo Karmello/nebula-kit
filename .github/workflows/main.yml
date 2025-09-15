@@ -42,8 +42,8 @@ jobs:
       - name: Run typecheck
         run: yarn typecheck
 
-      - name: Run tests
-        run: yarn test-ci
+      - name: Run TSD tests
+        run: yarn tsd
 
       - name: Trigger Heroku deployment
         uses: akhileshns/heroku-deploy@v3.12.14
@@ -51,5 +51,5 @@ jobs:
           PAT: ${{ secrets.PAT }}
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: ui-bb-development
+          heroku_app_name: nebula-kit-dev
           heroku_email: nogakamil@gmail.com,

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
 
-import { DEFAULT_BOX_INTENT, DEFAULT_SVG_ICON_SIZE } from 'lib/definitions'
+import { DEFAULT_SVG_ICON_SIZE } from 'lib/definitions'
 
 import { SvgIcon } from '..'
 
@@ -18,7 +18,6 @@ describe('<SvgIcon />', () => {
     expect(el).toHaveStyle({
       width: `var(--neb-scale-${DEFAULT_SVG_ICON_SIZE})`,
       height: `var(--neb-scale-${DEFAULT_SVG_ICON_SIZE})`,
-      color: `var(--neb-text-${DEFAULT_BOX_INTENT})`,
     })
   })
 

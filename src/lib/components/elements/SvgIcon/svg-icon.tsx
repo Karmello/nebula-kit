@@ -22,7 +22,7 @@ export const SvgIcon = ({
       style={{
         width: iconSize !== undefined ? `var(--neb-scale-${iconSize})` : undefined,
         height: iconSize !== undefined ? `var(--neb-scale-${iconSize})` : undefined,
-        color: `var(--neb-text-${iconIntent})`,
+        color: iconIntent ? `var(--neb-text-${iconIntent})` : undefined,
       }}
       {...rest}
     />

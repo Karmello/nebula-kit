@@ -41,7 +41,7 @@ export const MarkerList = <E extends MarkerListElem = 'ul'>({
             flexDirection="column"
             gap={gap}
           >
-            {slots.Item}
+            {slots.Item || ''}
           </Flex>
         )
       }}
