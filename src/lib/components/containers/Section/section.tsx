@@ -21,3 +21,5 @@ export const Section = <E extends SectionElem = 'section'>({
     </Box>
   )
 }
+
+Section.displayName = 'Section'

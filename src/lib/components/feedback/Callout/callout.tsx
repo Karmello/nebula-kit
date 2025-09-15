@@ -35,3 +35,5 @@ export const Callout = <E extends CalloutElem = 'div'>({
     </Box>
   )
 }
+
+Callout.displayName = 'Callout'

@@ -48,3 +48,5 @@ export const MarkerList = <E extends MarkerListElem = 'ul'>({
     </WithSlots>
   )
 }
+
+MarkerList.displayName = 'MarkerList'

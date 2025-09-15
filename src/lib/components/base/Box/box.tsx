@@ -144,3 +144,5 @@ export const Box = <E extends ElementType = 'div'>({
     </NativeElem>
   )
 }
+
+Box.displayName = 'Box'

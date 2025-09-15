@@ -28,3 +28,5 @@ export const WithIcon = ({
     </NativeElem>
   )
 }
+
+WithIcon.displayName = 'WithIcon'

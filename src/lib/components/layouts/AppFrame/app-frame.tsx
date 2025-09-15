@@ -30,3 +30,5 @@ export const AppFrame = ({ children, stickyHeader = false }: AppFrameProps) => {
     </AppFrameProvider>
   )
 }
+
+AppFrame.displayName = 'AppFrame'

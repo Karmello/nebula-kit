@@ -52,3 +52,5 @@ export const SidePanelLayout = ({
     </WithSlots>
   )
 }
+
+SidePanelLayout.displayName = 'SidePanelLayout'

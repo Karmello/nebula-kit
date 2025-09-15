@@ -21,3 +21,5 @@ export const Spacer = ({ elemProps, elemRef, blockSize = DEFAULT_SPACER_BLOCK_SI
     />
   )
 }
+
+Spacer.displayName = 'Spacer'

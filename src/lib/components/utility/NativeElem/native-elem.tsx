@@ -22,3 +22,5 @@ export const NativeElem = <E extends ElementType = 'div'>({
     </Elem>
   )
 }
+
+NativeElem.displayName = 'NativeElem'

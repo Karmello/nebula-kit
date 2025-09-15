@@ -30,3 +30,5 @@ export const NebKitProvider = ({
 
   return children
 }
+
+NebKitProvider.displayName = 'NebKitProvider'
