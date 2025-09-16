@@ -16,9 +16,9 @@
     "node": "22.18.0"
   },
   "scripts": {
+    "dev": "yarn dev-server & yarn dev-client",
     "dev-server": "nodemon -L --config nodemon.server.json",
     "dev-client": "nodemon -L --config nodemon.client.json",
-    "start-dev": "yarn dev-server & yarn dev-client",
     "start": "NODE_ENV=production node build/server.js",
     "start-local-prod": "SERVER_PORT=10200 NODE_ENV=production LOCAL_ENV=true node build/server.js",
     "build-server": "webpack --config webpack/webpack.server.config",

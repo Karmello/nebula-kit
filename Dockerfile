@@ -15,4 +15,4 @@ RUN yarn install --frozen-lockfile
 
 ENV CHROMIUM_PATH=/usr/bin/chromium
 
-CMD ["yarn", "start-dev", ";", "tail", "-f", "/dev/null"]
+CMD ["yarn", "dev", ";", "tail", "-f", "/dev/null"]
