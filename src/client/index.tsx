@@ -14,7 +14,7 @@ const Node = () => (
 
 const container = document.getElementById('root')
 
-if (process.env.NODE_ENV === 'production') {
+if (container.firstElementChild !== null) {
   hydrateRoot(container, <Node />, {
     onRecoverableError: (err, info) => {
       console.error('[hydrate]', err, info)

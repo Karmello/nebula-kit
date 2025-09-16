@@ -1,11 +1,10 @@
 import { useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
-import { Box, Flex, Button, IconButton } from 'lib/components'
+import { Box, Flex, Button, IconButton, BUTTON_SIZE_CONFIG } from 'lib/components'
 import { useScreen, withPrefix } from 'lib/helpers'
 
 import './app-nav-bar.scss'
-import { BUTTON_SIZE_CONFIG } from 'lib/components/controls/Button/definitions'
 
 export type AppNavBarOwnProps = {
   className?: string

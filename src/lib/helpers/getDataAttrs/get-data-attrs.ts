@@ -1,4 +1,4 @@
-import { kebabCase } from 'lodash'
+import { kebabCase } from 'change-case'
 
 import { LIB_PREFIX } from 'lib/definitions'
 

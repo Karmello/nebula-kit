@@ -5,6 +5,13 @@ import react from '@vitejs/plugin-react-swc'
 
 export default defineConfig(({ mode }) => ({
   plugins: [tsconfigPaths(), react()],
+  resolve: {
+    alias: {
+      client: path.resolve(__dirname, 'src/client'),
+      lib: path.resolve(__dirname, 'src/lib'),
+    },
+    preserveSymlinks: true,
+  },
   css: {
     preprocessorOptions: {
       scss: {

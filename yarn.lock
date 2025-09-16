@@ -3111,7 +3111,7 @@ es-to-primitive@^1.3.0:
     is-date-object "^1.0.5"
     is-symbol "^1.0.4"
 
-esbuild@^0.25.0:
+esbuild@^0.25.0, esbuild@~0.25.0:
   version "0.25.9"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.25.9.tgz#15ab8e39ae6cdc64c24ff8a2c0aef5b3fd9fa976"
   integrity sha512-CRbODhYyQx3qp7ZEwzxOk4JBqmD/seJrzPa/cGjY1VtIn5E09Oi9/dB4JwctnfZ8Q8iT7rioVv5k/FNT/uf54g==
@@ -3555,7 +3555,7 @@ get-symbol-description@^1.1.0:
     es-errors "^1.3.0"
     get-intrinsic "^1.2.6"
 
-get-tsconfig@^4.10.0:
+get-tsconfig@^4.10.0, get-tsconfig@^4.7.5:
   version "4.10.1"
   resolved "https://registry.yarnpkg.com/get-tsconfig/-/get-tsconfig-4.10.1.tgz#d34c1c01f47d65a606c37aa7a177bc3e56ab4b2e"
   integrity sha512-auHyJ4AgMz7vgS8Hp3N6HXSmlMdUyhSUrfBF16w153rxtLIEOE+HGqaBppczZvnHLqQJfiHotCYpNhl0lUROFQ==
@@ -5072,7 +5072,7 @@ raw-body@^3.0.0:
     iconv-lite "0.6.3"
     unpipe "1.0.0"
 
-react-dom@^19.0.0:
+react-dom@^19.1.1:
   version "19.1.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-19.1.1.tgz#2daa9ff7f3ae384aeb30e76d5ee38c046dc89893"
   integrity sha512-Dlq/5LAZgF0Gaz6yiqZCf6VCcZs1ghAJyrsu84Q/GT0gV+mCxbfmKNoGRKBYMJ8IEdGPqu49YWXD02GCknEDkw==
@@ -5127,7 +5127,7 @@ react-refresh@^0.17.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.17.0.tgz#b7e579c3657f23d04eccbe4ad2e58a8ed51e7e53"
   integrity sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==
 
-react-router-dom@^7:
+react-router-dom@^7.9.1:
   version "7.9.1"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-7.9.1.tgz#48044923701773da6362f9003ec46f308f293f15"
   integrity sha512-U9WBQssBE9B1vmRjo9qTM7YRzfZ3lUxESIZnsf4VjR/lXYz9MHjvOxHzr/aUm4efpktbVOrF09rL/y4VHa8RMw==
@@ -5149,7 +5149,7 @@ react-toastify@^9.1.3:
   dependencies:
     clsx "^1.1.1"
 
-react@^19.0.0:
+react@^19.1.1:
   version "19.1.1"
   resolved "https://registry.yarnpkg.com/react/-/react-19.1.1.tgz#06d9149ec5e083a67f9a1e39ce97b06a03b644af"
   integrity sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ==
@@ -6066,6 +6066,16 @@ tsutils@^3.21.0:
   integrity sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==
   dependencies:
     tslib "^1.8.1"
+
+tsx@^4.20.5:
+  version "4.20.5"
+  resolved "https://registry.yarnpkg.com/tsx/-/tsx-4.20.5.tgz#856c8b2f114c50a9f4ae108126967a167f240dc7"
+  integrity sha512-+wKjMNU9w/EaQayHXb7WA7ZaHY6hN8WgfvHNQ3t1PnU91/7O8TcTnIhCDYTZwnt8JsO9IBqZ30Ln1r7pPF52Aw==
+  dependencies:
+    esbuild "~0.25.0"
+    get-tsconfig "^4.7.5"
+  optionalDependencies:
+    fsevents "~2.3.3"
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"

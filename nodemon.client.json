@@ -1,5 +1,0 @@
-{
-  "exec": "vite --config vite.client.dev.ts",
-  "verbose": true,
-  "watch": "vite.client.dev.ts"
-}
