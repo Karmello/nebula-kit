@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router'
 
 import { useLibStore } from 'lib/state'
 import { AppFrame } from 'lib/components'

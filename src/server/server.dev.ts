@@ -1,29 +1,25 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import express from 'express'
-import { createServer as createViteServer } from 'vite'
-
+import { createServer as createViteServer, ViteDevServer } from 'vite'
 import { createElement } from 'react'
 import { renderToString } from 'react-dom/server'
-import { StaticRouter } from 'react-router-dom'
 
-const renderApp = async (vite: import('vite').ViteDevServer, url: string) => {
-  // const { createElement } = await vite.ssrLoadModule('react')
-  // const { renderToString } = await vite.ssrLoadModule('react-dom/server')
-  // const { StaticRouter } = await vite.ssrLoadModule('react-router-dom')
+const renderApp = async (vite: ViteDevServer, url: string) => {
+  const { StaticRouter } = await vite.ssrLoadModule('react-router')
   const { NebKitProvider } = await vite.ssrLoadModule('src/lib/components/index.ts')
-  const { App } = await vite.ssrLoadModule('/src/client/components/index.ts')
+  const { App } = await vite.ssrLoadModule('src/client/components/index.ts')
 
-  const tree = createElement(
-    StaticRouter,
-    { location: url },
-    createElement(NebKitProvider, { defaultBorderRadius: 3 }, createElement(App, null))
+  return renderToString(
+    createElement(
+      StaticRouter,
+      { location: url },
+      createElement(NebKitProvider, { defaultBorderRadius: 3 }, createElement(App))
+    )
   )
-
-  return renderToString(tree)
 }
 
-async function start() {
+const start = async () => {
   const app = express()
 
   const vite = await createViteServer({
@@ -31,6 +27,8 @@ async function start() {
     server: { middlewareMode: true },
     appType: 'custom',
   })
+
+  const css: string = (await vite.ssrLoadModule('/src/server/ssr-dev-styles.scss?inline')).default
 
   app.use(vite.middlewares)
 
@@ -40,6 +38,7 @@ async function start() {
 
       let template = fs.readFileSync(path.resolve(__dirname, '../../index.html'), 'utf-8')
       template = await vite.transformIndexHtml(url, template)
+      template = template.replace('</head>', `<style id='neb-ssr-dev-styles'>${css}</style></head>`)
 
       const appHtml = await renderApp(vite, url)
 

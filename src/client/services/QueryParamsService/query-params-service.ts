@@ -2,7 +2,7 @@ import qs from 'qs'
 
 import { Theme } from 'lib/definitions'
 import { useLibStore } from 'lib/state'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router'
 
 export type QueryParams = {
   theme: Theme

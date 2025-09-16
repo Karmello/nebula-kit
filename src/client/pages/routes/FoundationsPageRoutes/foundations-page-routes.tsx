@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router'
 import { pascalCase, kebabCase } from 'change-case'
 
 import { FOUNDATION_CATEGORIES, PageKey } from 'client/definitions'
@@ -38,15 +38,18 @@ export const FoundationsPageRoutes = () => {
         )}
         <Route
           path="*"
-          element={
-            <Navigate
-              to={{
-                pathname: `/${PageKey.foundations}/${FOUNDATION_CATEGORIES[0].key}/${FOUNDATION_CATEGORIES[0].items[0].key}/${FOUNDATION_CATEGORIES[0].items[0].sections[0].key}`,
-                search: formatAsQueryString({ theme }),
-              }}
-              replace
-            />
-          }
+          Component={() => {
+            if (typeof window === 'undefined') return null
+            return (
+              <Navigate
+                to={{
+                  pathname: `/${PageKey.foundations}/${FOUNDATION_CATEGORIES[0].key}/${FOUNDATION_CATEGORIES[0].items[0].key}/${FOUNDATION_CATEGORIES[0].items[0].sections[0].key}`,
+                  search: formatAsQueryString({ theme }),
+                }}
+                replace
+              />
+            )
+          }}
         />
       </Routes>
     </>

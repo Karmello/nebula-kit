@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router'
 
 import { HomePage, FoundationsPage, ComponentsPage } from 'client/pages'
 import { formatAsQueryString } from 'client/services'
@@ -18,9 +18,15 @@ export const RootPage = () => {
         <Route path={`/${PageKey.components}/*`} Component={ComponentsPage} />
         <Route
           path="*"
-          element={
-            <Navigate to={{ pathname: `/${PageKey.home}`, search: formatAsQueryString({ theme }) }} replace />
-          }
+          Component={() => {
+            if (typeof window === 'undefined') return null
+            return (
+              <Navigate
+                to={{ pathname: `/${PageKey.home}`, search: formatAsQueryString({ theme }) }}
+                replace
+              />
+            )
+          }}
         />
       </Routes>
     </div>

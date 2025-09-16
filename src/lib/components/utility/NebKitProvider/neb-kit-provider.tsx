@@ -3,6 +3,7 @@ import { ReactElement, useEffect } from 'react'
 import { DEFAULT_BORDER_RADIUS, DEFAULT_THEME, ScaleValue, Theme } from 'lib/definitions'
 import { useLibStore } from 'lib/state'
 
+import '@fontsource-variable/inter'
 import 'lib/icons'
 import 'lib/styles/index.scss'
 

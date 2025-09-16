@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router'
 
 import { AppNavBar as NebAppNavBar } from 'lib/components'
 import { useFoundationsPageStore, useComponentsPageStore } from 'client/store'

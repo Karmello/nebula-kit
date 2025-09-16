@@ -10,7 +10,6 @@ export default defineConfig(({ mode }) => ({
       client: path.resolve(__dirname, 'src/client'),
       lib: path.resolve(__dirname, 'src/lib'),
     },
-    preserveSymlinks: true,
   },
   css: {
     preprocessorOptions: {

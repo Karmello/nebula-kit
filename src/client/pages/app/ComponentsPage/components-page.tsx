@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router'
 
 import { SidePanelLayout, SideNav, Breadcrumb, Section, Spacer, Box, Text } from 'lib/components'
 import { useComponentsPageStore } from 'client/store'
