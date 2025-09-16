@@ -5,7 +5,18 @@
 :root {
   color: var(--neb-text-neutral);
   background: var(--neb-bg-neutral);
-  font-family: 'Inter Variable', 'Inter var', system-ui, sans-serif;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    'Noto Sans',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    sans-serif;
 }
 
 body {

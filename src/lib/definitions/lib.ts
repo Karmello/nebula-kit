@@ -10,7 +10,27 @@ export const SCALE = [
   56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80,
 ] as const
 
+export const ICON_NAMES = [
+  'check',
+  'close',
+  'search',
+  'menu',
+  'panel-left-open',
+  'panel-right-open',
+  'chevron-down',
+  'chevron-up',
+  'chevron-left',
+  'chevron-right',
+  'copy',
+  'copy-check',
+  'info',
+  'triangle-alert',
+  'check-circle',
+  'circle-alert',
+] as const
+
 // types
 
 export type Breakpoint = (typeof BREAKPOINTS)[number]
 export type ScaleValue = (typeof SCALE)[number]
+export type IconName = (typeof ICON_NAMES)[number]

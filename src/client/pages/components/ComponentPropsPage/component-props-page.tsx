@@ -1,23 +1,21 @@
 import { useComponentsPageStore } from 'client/store'
-import { getMetaSync } from 'client/meta'
+import meta from 'client/meta'
 
 import { PropsTable } from './PropsTable'
 
 export const ComponentPropsPage = () => {
   const { itemKey } = useComponentsPageStore()
 
-  const meta = getMetaSync(itemKey)
+  if (!meta[itemKey]) return null
 
-  if (!meta) return null
-
-  const metaKeys = Object.keys(meta || [])
+  const metaKeys = Object.keys(meta[itemKey] || [])
 
   return metaKeys.map(key =>
-    meta[key].ownProps ? (
+    meta[itemKey][key].ownProps ? (
       <PropsTable
         key={key}
-        category={metaKeys.length > 1 ? meta[key].overview.title : undefined}
-        data={meta[key].ownProps}
+        category={metaKeys.length > 1 ? meta[itemKey][key].overview.title : undefined}
+        data={meta[itemKey][key].ownProps}
       />
     ) : null
   )

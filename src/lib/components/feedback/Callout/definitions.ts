@@ -1,6 +1,5 @@
 import { BoxProps } from 'lib/components'
-import { CalloutElem, CalloutIntent, CalloutVariant } from 'lib/definitions'
-import { IconName } from 'lib/icons'
+import { CalloutElem, CalloutIntent, CalloutVariant, IconName } from 'lib/definitions'
 
 // types
 

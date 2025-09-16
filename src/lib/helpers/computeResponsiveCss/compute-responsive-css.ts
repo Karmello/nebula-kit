@@ -1,5 +1,5 @@
 import { RefObject, CSSProperties, ComponentRef } from 'react'
-import isNil from 'lodash/isNil'
+import isNil from 'lodash-es/isNil.js'
 
 import { Breakpoint, ResponsiveProp, BREAKPOINTS } from 'lib/definitions'
 

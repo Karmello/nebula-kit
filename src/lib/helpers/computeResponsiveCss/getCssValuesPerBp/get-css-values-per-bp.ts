@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react'
-import isNil from 'lodash/isNil'
-import isObject from 'lodash/isObject'
+import isNil from 'lodash-es/isNil.js'
+import isObject from 'lodash-es/isObject.js'
 
 import { Breakpoint } from 'lib/definitions'
 

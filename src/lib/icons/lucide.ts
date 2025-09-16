@@ -1,3 +1,5 @@
+import { JSX, SVGProps } from 'react'
+
 import {
   Check,
   X,
@@ -17,7 +19,7 @@ import {
   CircleAlert,
 } from 'lucide-react'
 
-import { IconName, registerIcons } from './icon-registry'
+import { IconName } from 'lib/definitions'
 
 const ICONS: Record<IconName, any> = {
   check: Check,
@@ -38,4 +40,6 @@ const ICONS: Record<IconName, any> = {
   'circle-alert': CircleAlert,
 }
 
-registerIcons(ICONS)
+export const getSvgIconComponent = (name: IconName): ((props: SVGProps<SVGElement>) => JSX.Element) => {
+  return ICONS[name]
+}

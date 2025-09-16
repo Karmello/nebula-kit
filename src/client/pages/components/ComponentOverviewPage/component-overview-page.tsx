@@ -2,7 +2,7 @@ import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'client/definitions'
 import { CodeSnippet } from 'client/components'
 import { elemToStringService } from 'client/services'
-import { getMetaSync } from 'client/meta'
+import meta from 'client/meta'
 import { Text, Flex, Box, Spacer, Section } from 'lib/components'
 
 import { ListWithHeading } from './ListWithHeading'
@@ -60,16 +60,14 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<unknown> }) => {
 export const ComponentOverviewPage = () => {
   const { itemKey } = useComponentsPageStore()
 
-  const meta = getMetaSync(itemKey)
+  if (!meta[itemKey]) return null
 
-  if (!meta) return null
-
-  const metaKeys = Object.keys(meta)
+  const metaKeys = Object.keys(meta[itemKey])
 
   return (
     <Box maxInlineSize="55rem">
       {metaKeys.map(key => (
-        <SingleOverview key={key} meta={meta[key]} />
+        <SingleOverview key={key} meta={meta[itemKey][key]} />
       ))}
     </Box>
   )

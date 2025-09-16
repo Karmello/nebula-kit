@@ -2,8 +2,8 @@ import { CodeSnippet } from 'client/components'
 import { elemToStringService } from 'client/services'
 import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'client/definitions'
+import meta from 'client/meta'
 import { Box, Flex, Spacer, Text } from 'lib/components'
-import { getMetaSync } from 'client/meta'
 
 const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   const elemToString = elemToStringService()
@@ -35,15 +35,13 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
 export const ComponentExamplesPage = () => {
   const { itemKey } = useComponentsPageStore()
 
-  const meta = getMetaSync(itemKey)
-
-  if (!meta) return null
+  if (!meta[itemKey]) return null
 
   return (
     <Box maxInlineSize="55rem">
       <Flex flexDirection="column" alignItems="stretch">
-        {Object.keys(meta || []).map(key => {
-          return (meta[key].examples || []).map((example, i) => (
+        {Object.keys(meta[itemKey] || []).map(key => {
+          return (meta[itemKey][key].examples || []).map((example, i) => (
             <SingleExample key={`${key}_${i}`} {...example} />
           ))
         })}
