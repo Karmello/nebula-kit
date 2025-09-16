@@ -2,7 +2,7 @@
   "id": "/",
   "name": "Nebula Kit",
   "short_name": "neb",
-  "description": "User interface components to speed up building apps",
+  "description": "NebulaKit is a UI library created with React, TypeScript, and CSS for building web applications.",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",

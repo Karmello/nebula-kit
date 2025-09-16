@@ -2,6 +2,7 @@ import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'client/definitions'
 import { CodeSnippet } from 'client/components'
 import { elemToStringService } from 'client/services'
+import { getMetaSync } from 'client/meta'
 import { Text, Flex, Box, Spacer, Section } from 'lib/components'
 
 import { ListWithHeading } from './ListWithHeading'
@@ -59,13 +60,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<unknown> }) => {
 export const ComponentOverviewPage = () => {
   const { itemKey } = useComponentsPageStore()
 
-  let meta: Record<string, ComponentMeta<unknown>>
-
-  try {
-    meta = require(`../../../meta/${itemKey}.meta.tsx`).default
-  } catch {
-    meta = null
-  }
+  const meta = getMetaSync(itemKey)
 
   if (!meta) return null
 

@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import { BundledLanguage, TokensResult } from 'shiki'
 
 import { Box, Flex, IconButton, Text } from 'lib/components'
 
-import { tokenizeCode } from './helpers'
+import { tokenizeCode } from './highlight-tokens'
 
 export type CodeSnippetProps = {
   code: string
@@ -16,13 +16,9 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
 
   const timeoutRef = useRef<NodeJS.Timeout>(null)
 
-  useEffect(() => {
-    const run = async () => {
-      const data = await tokenizeCode(code, lang)
-      setData(data)
-    }
-    run()
-  }, [])
+  useLayoutEffect(() => {
+    setData(tokenizeCode(code, lang))
+  }, [code])
 
   if (!data) {
     return null

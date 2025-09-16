@@ -9,6 +9,10 @@
       "path": "src",
     },
     {
+      "name": "server",
+      "path": "src/server",
+    },
+    {
       "name": "client",
       "path": "src/client",
     },

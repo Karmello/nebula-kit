@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { Request, Response } from 'express'
 import ReactDOMServer from 'react-dom/server'
-import { StaticRouter } from 'react-router-dom/server'
+import { StaticRouter } from 'react-router'
 
 import { App } from 'client/components'
 import { NebKitProvider } from 'lib/components'

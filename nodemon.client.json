@@ -1,5 +1,5 @@
 {
-  "exec": "NODE_ENV=development webpack serve --config webpack/webpack.client.config",
+  "exec": "vite --config vite.client.dev.ts",
   "verbose": true,
-  "watch": "./webpack"
+  "watch": "vite.client.dev.ts"
 }

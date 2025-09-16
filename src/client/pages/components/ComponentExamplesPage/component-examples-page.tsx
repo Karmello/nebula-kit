@@ -3,6 +3,7 @@ import { elemToStringService } from 'client/services'
 import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'client/definitions'
 import { Box, Flex, Spacer, Text } from 'lib/components'
+import { getMetaSync } from 'client/meta'
 
 const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   const elemToString = elemToStringService()
@@ -34,13 +35,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
 export const ComponentExamplesPage = () => {
   const { itemKey } = useComponentsPageStore()
 
-  let meta: Record<string, ComponentMeta<unknown>>
-
-  try {
-    meta = require(`../../../meta/${itemKey}.meta.tsx`).default
-  } catch {
-    meta = null
-  }
+  const meta = getMetaSync(itemKey)
 
   if (!meta) return null
 
