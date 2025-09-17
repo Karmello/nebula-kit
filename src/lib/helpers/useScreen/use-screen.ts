@@ -44,8 +44,11 @@ const start = () => {
     }
   }
   const add = (mql: MediaQueryList) => {
-    // older Safari fallback
-    mql.addEventListener ? mql.addEventListener('change', onChange) : mql.addListener(onChange)
+    if (mql.addEventListener) {
+      mql.addEventListener('change', onChange)
+    } else {
+      mql.addListener(onChange)
+    }
   }
   add(sm)
   add(md)

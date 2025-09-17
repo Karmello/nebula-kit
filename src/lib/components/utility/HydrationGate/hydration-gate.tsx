@@ -35,3 +35,5 @@ export const HydrationGate = ({ children, minDelay = 0, fallback = null }: Hydra
     </div>
   )
 }
+
+HydrationGate.displayName = 'HydrationGate'

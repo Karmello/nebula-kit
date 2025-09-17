@@ -21,15 +21,13 @@ export const FoundationsPageRoutes = () => {
                   key={`${categoryKey}/${itemKey}/${sectionKey}`}
                   path={`${categoryKey}/${itemKey}/${sectionKey}`}
                   Component={() => {
-                    let Component
-                    try {
-                      Component = require(
-                        `../../foundations/${pascalCase(sectionKey)}/${kebabCase(sectionKey)}`
-                      ).default
-                    } catch {
-                      Component = null
-                    }
-                    return Component ? <Component /> : null
+                    let Component = (): null => null
+                    import(`../../foundations/${pascalCase(sectionKey)}/${kebabCase(sectionKey)}`).then(
+                      mod => {
+                        Component = mod.default
+                      }
+                    )
+                    return <Component />
                   }}
                 />
               )
