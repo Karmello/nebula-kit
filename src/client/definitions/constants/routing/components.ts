@@ -67,6 +67,7 @@ export const COMPONENT_CATEGORIES = [
     label: 'Utility',
     items: [
       { key: 'nebkit-provider', label: 'NebKitProvider', sections: COMPONENT_SECTIONS },
+      { key: 'hydration-gate', label: 'HydrationGate', sections: COMPONENT_SECTIONS },
       { key: 'native-elem', label: 'NativeElem', sections: COMPONENT_SECTIONS },
       { key: 'with-icon', label: 'WithIcon', sections: COMPONENT_SECTIONS },
     ],
