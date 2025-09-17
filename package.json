@@ -47,7 +47,7 @@
     "classnames": "^2.5.1",
     "express": "^5.1.0",
     "lodash-es": "^4.17.21",
-    "lucide-react": "^0.539.0",
+    "lucide-react": "^0.544.0",
     "react-element-to-jsx-string": "^17.0.1",
     "react-is": "^19.1.1",
     "react-router-dom": "^7.9.1",
