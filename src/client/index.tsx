@@ -2,13 +2,15 @@ import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router'
 
 import { App } from 'client/components'
-import { NebKitProvider } from 'lib/components'
+import { NebKitProvider, HydrationGate } from 'lib/components'
 
 const Node = () => (
   <BrowserRouter>
-    <NebKitProvider defaultBorderRadius={3}>
-      <App />
-    </NebKitProvider>
+    <HydrationGate>
+      <NebKitProvider defaultBorderRadius={3}>
+        <App />
+      </NebKitProvider>
+    </HydrationGate>
   </BrowserRouter>
 )
 

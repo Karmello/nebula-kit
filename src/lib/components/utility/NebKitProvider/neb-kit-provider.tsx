@@ -1,4 +1,4 @@
-import { ReactElement, useEffect } from 'react'
+import { ReactElement, useEffect, useLayoutEffect } from 'react'
 
 import { DEFAULT_BORDER_RADIUS, DEFAULT_THEME, ScaleValue, Theme } from 'lib/definitions'
 import { useLibStore } from 'lib/state'
@@ -17,6 +17,15 @@ export const NebKitProvider = ({
   defaultBorderRadius = DEFAULT_BORDER_RADIUS,
 }: NebKitProviderProps): ReactElement => {
   const { theme, setTheme, setBorderRadius } = useLibStore()
+
+  useLayoutEffect(() => {
+    requestAnimationFrame(() => {
+      window.dispatchEvent(new CustomEvent('neb:hydrated'))
+      requestAnimationFrame(() => {
+        document.documentElement.classList.add('neb-transitions')
+      })
+    })
+  }, [])
 
   useEffect(() => {
     setTheme(defaultTheme)

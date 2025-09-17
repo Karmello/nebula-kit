@@ -1,12 +1,14 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import express from 'express'
+import getPort from 'get-port'
 import { createServer as createViteServer, ViteDevServer } from 'vite'
 import { createElement } from 'react'
 import { renderToString } from 'react-dom/server'
 
 const renderApp = async (vite: ViteDevServer, url: string) => {
   const { StaticRouter } = await vite.ssrLoadModule('react-router')
+  const { HydrationGate } = await vite.ssrLoadModule('src/lib/components/index.ts')
   const { NebKitProvider } = await vite.ssrLoadModule('src/lib/components/index.ts')
   const { App } = await vite.ssrLoadModule('src/client/components/index.ts')
 
@@ -14,7 +16,11 @@ const renderApp = async (vite: ViteDevServer, url: string) => {
     createElement(
       StaticRouter,
       { location: url },
-      createElement(NebKitProvider, { defaultBorderRadius: 3 }, createElement(App))
+      createElement(
+        HydrationGate,
+        null,
+        createElement(NebKitProvider, { defaultBorderRadius: 3 }, createElement(App))
+      )
     )
   )
 }
@@ -50,8 +56,10 @@ const start = async () => {
     }
   })
 
-  app.listen(5174, () => {
-    console.log('SSR dev server running at http://localhost:5174')
+  const port = await getPort({ port: 5174 })
+
+  app.listen(port, () => {
+    console.log(`▶ SSR dev server at http://localhost:${port}`)
   })
 }
 
