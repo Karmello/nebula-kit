@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: nebula-kit
-    runtime: docker
-    dockerfilePath: ./Dockerfile.prod
-    dockerContext: .
-    envVars:
-      - key: NODE_ENV
-        value: production
