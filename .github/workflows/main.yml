@@ -27,9 +27,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install heroku client
-        run: yarn global add heroku --ignore-engines
-
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
@@ -50,12 +47,3 @@ jobs:
 
       - name: Run Playwright tests
         run: yarn pw
-
-      - name: Trigger Heroku deployment
-        uses: akhileshns/heroku-deploy@v3.12.14
-        env:
-          PAT: ${{ secrets.PAT }}
-        with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: nebula-kit-dev
-          heroku_email: nogakamil@gmail.com,
