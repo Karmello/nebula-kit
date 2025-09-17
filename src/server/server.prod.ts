@@ -39,8 +39,8 @@ app.get(/.*/, (req, res) => {
   }
 })
 
-const port = await getPort({ port: 5175 })
+const port = process.env.PORT || (await getPort({ port: 5175 }))
 
-app.listen(port, () => {
+app.listen(Number(port), '0.0.0.0', () => {
   console.log(`▶ SSR prod server at http://localhost:${port}`)
 })

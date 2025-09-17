@@ -1,0 +1,26 @@
+FROM node:20-alpine AS builder
+WORKDIR /app
+
+RUN corepack enable
+
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
+
+COPY . .
+ENV NODE_ENV=production
+RUN yarn build
+
+FROM node:20-alpine AS runner
+WORKDIR /app
+
+COPY package.json yarn.lock ./
+RUN yarn workspaces focus --production || yarn install --production --frozen-lockfile
+
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/index.html ./index.html
+
+ENV NODE_ENV=production
+ENV NODE_OPTIONS=--enable-source-maps
+
+EXPOSE 3000
+CMD ["yarn", "start"]

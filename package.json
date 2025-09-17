@@ -21,7 +21,7 @@
     "build:client": "NODE_ENV=production vite build --config vite.client.prod.ts",
     "build:server": "NODE_ENV=production tsup --config tsup.server.ts",
     "build": "yarn build:client && yarn build:server",
-    "run:prod": "NODE_ENV=production node dist/server/server.prod.mjs",
+    "start": "NODE_ENV=production node dist/server/server.prod.mjs",
     "clean": "rimraf build",
     "prettier": "prettier --check src/**/*.{ts,tsx}",
     "prettify": "prettier --write src/**/*.{ts,tsx}",
