@@ -7,7 +7,7 @@ import prettier from 'eslint-config-prettier'
 
 export default [
   {
-    ignores: ['node_modules', 'coverage', 'build', 'dist', 'src/setup', 'src/meta'],
+    ignores: ['node_modules', 'coverage', 'build', 'dist', 'src/setup', 'src/meta', 'playwright.config.cjs'],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,

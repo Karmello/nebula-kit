@@ -30,7 +30,7 @@
     "typecheck": "tsc --noEmit -p tsconfig.typecheck.json",
     "tsd": "tsc -p tsconfig.types.json && tsd -t dist/types/index.d.ts -f src/lib/components/**/*.test.d.tsx",
     "test": "vitest run",
-    "pw": "playwright test -c playwright.config.ts",
+    "pw": "playwright test -c playwright.config.cjs",
     "dist": "./scripts/distribute.sh",
     "lib": "git push && yarn dist && npm publish",
     "prepare": "husky install"

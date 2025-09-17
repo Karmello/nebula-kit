@@ -22,7 +22,7 @@ export const FoundationsPageRoutes = () => {
                   path={`${categoryKey}/${itemKey}/${sectionKey}`}
                   Component={() => {
                     let Component = (): null => null
-                    import(`../../foundations/${pascalCase(sectionKey)}/${kebabCase(sectionKey)}`).then(
+                    import(`../../foundations/${pascalCase(sectionKey)}/${kebabCase(sectionKey)}.tsx`).then(
                       mod => {
                         Component = mod.default
                       }
