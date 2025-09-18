@@ -12,5 +12,3 @@ export const SplitView = Object.assign(SplitViewBase, {
 
 export * from './split-view'
 export * from './definitions'
-
-export { useSplitView } from './SplitViewProvider'

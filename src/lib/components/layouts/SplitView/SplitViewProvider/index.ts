@@ -1,1 +1,1 @@
-export * from './use-split-view'
+export * from './split-view-provider'

@@ -13,7 +13,7 @@ export const AppFrameProvider = ({
   return <AppFrameContext.Provider value={{ stickyHeader }}>{children}</AppFrameContext.Provider>
 }
 
-export const useAppFrame = () => {
+export const useAppFrameContext = () => {
   const ctx = useContext(AppFrameContext)
 
   if (!ctx) {

@@ -1,10 +1,13 @@
 import { Flex } from 'lib/components'
 
 import { ToolbarStartProps } from './definitions'
+import { useToolbarContext } from '../../ToolbarProvider'
 
 export const Start = ({ children, elemProps, elemRef }: ToolbarStartProps) => {
+  const { switchAt } = useToolbarContext()
+
   return (
-    <Flex.Item elem="div" elemProps={elemProps} elemRef={elemRef}>
+    <Flex.Item elemProps={elemProps} elemRef={elemRef}>
       {children}
     </Flex.Item>
   )

@@ -34,6 +34,7 @@ export default [
       semi: ['error', 'never'],
       '@typescript-eslint/no-var-requires': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unused-vars': 'warn',
       'react/jsx-indent': 'off',
       'react/jsx-indent-props': 'off',
       'react/prop-types': 'off',

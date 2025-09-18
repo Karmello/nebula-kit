@@ -1,14 +1,15 @@
 import { useLayoutEffect } from 'react'
 import classNames from 'classnames'
 
-import { Box, Flex, IconButton, Spacer, useSplitView } from 'lib/components'
+import { Box, Flex, IconButton, Spacer } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import { SplitViewMainProps } from './definitions'
 import { getToggleIconName } from '../../helpers'
+import { useSplitViewContext } from '../../SplitViewProvider'
 
 export const Main = ({ children, elemProps, elemRef, ...paddings }: SplitViewMainProps) => {
-  const { sideOpen, setSideOpen, sidePosition, slots, mode } = useSplitView()
+  const { sideOpen, setSideOpen, sidePosition, slots, mode } = useSplitViewContext()
 
   useLayoutEffect(() => {
     setSideOpen(mode === 'inline')

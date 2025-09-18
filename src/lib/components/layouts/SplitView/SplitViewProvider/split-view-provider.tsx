@@ -27,6 +27,6 @@ export const SplitViewProvider = ({ children, slots, mode, sidePosition, switchA
   )
 }
 
-export const useSplitView = () => {
+export const useSplitViewContext = () => {
   return useContext(SplitViewContext)
 }

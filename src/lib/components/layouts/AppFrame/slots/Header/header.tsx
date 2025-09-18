@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { getDataAttrs, withPrefix } from 'lib/helpers'
 import { Box } from 'lib/components'
 
-import { useAppFrame } from '../../AppFrameProvider'
+import { useAppFrameContext } from '../../AppFrameProvider'
 import { AppFrameHeaderProps } from './definitions'
 
 import './header.scss'
@@ -16,7 +16,7 @@ export const Header = ({
   minBlockSize = 22,
   ...paddings
 }: AppFrameHeaderProps) => {
-  const { stickyHeader } = useAppFrame()
+  const { stickyHeader } = useAppFrameContext()
 
   return (
     <Box

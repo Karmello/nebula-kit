@@ -1,1 +1,1 @@
-export * from './use-app-frame'
+export * from './app-frame-provider'

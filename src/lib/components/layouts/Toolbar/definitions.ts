@@ -1,8 +1,8 @@
 import { FlexProps } from 'lib/components'
-import { MakeRequired } from 'lib/definitions'
+import { MakeRequired, SwitchAt } from 'lib/definitions'
 
 export type ToolbarOwnProps = {
-  switchAt?: any
+  switchAt?: SwitchAt
 }
 
 export const TOOLBAR_INHERITED_PROPS = {

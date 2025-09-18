@@ -1,10 +1,11 @@
 import classNames from 'classnames'
 
-import { Box, Flex, IconButton, useSplitView } from 'lib/components'
+import { Box, Flex, IconButton } from 'lib/components'
 import { DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
 import { SplitViewSideProps } from './definitions'
+import { useSplitViewContext } from '../../SplitViewProvider'
 
 export const Side = ({
   children,
@@ -13,7 +14,7 @@ export const Side = ({
   intent,
   inlineSize = DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
 }: SplitViewSideProps) => {
-  const { sideOpen, setSideOpen, sidePosition, mode } = useSplitView()
+  const { sideOpen, setSideOpen, sidePosition, mode } = useSplitViewContext()
 
   return (
     <Box
