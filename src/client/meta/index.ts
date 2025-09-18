@@ -13,8 +13,8 @@ import markerListMeta from './marker-list.meta'
 import nativeElemMeta from './native-elem.meta'
 import nebkitProviderMeta from './nebkit-provider.meta'
 import sectionMeta from './section.meta'
-import sidePanelLayoutMeta from './side-panel-layout.meta'
 import spacerMeta from './spacer.meta'
+import splitViewMeta from './split-view.meta'
 import svgIconMeta from './svg-icon.meta'
 import textMeta from './text.meta'
 import toolbarMeta from './toolbar.meta'
@@ -34,8 +34,8 @@ export default {
   'native-elem': nativeElemMeta,
   'nebkit-provider': nebkitProviderMeta,
   section: sectionMeta,
-  'side-panel-layout': sidePanelLayoutMeta,
   spacer: spacerMeta,
+  'split-view': splitViewMeta,
   'svg-icon': svgIconMeta,
   text: textMeta,
   toolbar: toolbarMeta,

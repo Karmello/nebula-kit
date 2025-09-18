@@ -33,7 +33,7 @@ export const TextTypography = [
 export const IconPosition = ['left', 'right'] as const
 export const ButtonSize = ['xs', 'sm', 'md', 'lg'] as const
 export const HorizontalPosition = ['left', 'center', 'right'] as const
-export const SidePanelLayoutSwitchAt = [...BREAKPOINTS.filter(bp => bp !== 'base')] as const
+export const SplitViewSwitchAt = [...BREAKPOINTS.filter(bp => bp !== 'base')] as const
 export const CalloutVariant = ['solid', 'outline'] as const
 export const CalloutIntent = ['info', 'success', 'warning', 'danger'] as const
 export const MarkerListStyle = ['disc', 'circle', 'square', 'decimal'] as const
@@ -47,7 +47,7 @@ export type TextTypography = (typeof TextTypography)[number]
 export type ButtonSize = (typeof ButtonSize)[number]
 export type HorizontalPosition = (typeof HorizontalPosition)[number]
 export type IconPosition = (typeof IconPosition)[number]
-export type SidePanelLayoutSwitchAt = (typeof SidePanelLayoutSwitchAt)[number]
+export type SplitViewSwitchAt = (typeof SplitViewSwitchAt)[number]
 export type CalloutVariant = (typeof CalloutVariant)[number]
 export type CalloutIntent = (typeof CalloutIntent)[number]
 export type MarkerListStyle = (typeof MarkerListStyle)[number]
@@ -70,8 +70,8 @@ export const DEFAULT_BUTTON_SIZE: ButtonSize = 'md'
 export const DEFAULT_SVG_ICON_SIZE = 8
 export const DEFAULT_WITH_ICON_ICON_POSITION: IconPosition = 'left'
 
-export const DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WIDTH = '225px'
-export const DEFAULT_SIDE_PANEL_LAYOUT_SWITCH_AT: SidePanelLayoutSwitchAt = 'lg'
+export const DEFAULT_SPLIT_VIEW_SIDE_WIDTH = '225px'
+export const DEFAULT_SPLIT_VIEW_SWITCH_AT: SplitViewSwitchAt = 'lg'
 
 export const DEFAULT_CALLOUT_VARIANT: CalloutVariant = 'solid'
 export const DEFAULT_CALLOUT_INTENT: CalloutIntent = 'info'

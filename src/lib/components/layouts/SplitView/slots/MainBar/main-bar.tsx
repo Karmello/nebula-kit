@@ -4,21 +4,21 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { SidePanelLayoutMainBarProps } from './definitions'
+import { SplitViewMainBarProps } from './definitions'
 
 export const MainBar = <E extends ElementType = 'div'>({
   children,
   elem,
   elemProps,
   elemRef,
-}: SidePanelLayoutMainBarProps<E>) => {
+}: SplitViewMainBarProps<E>) => {
   return (
     <Box
       elem={elem}
       elemProps={
         {
           ...elemProps,
-          className: classNames(withPrefix('side-panel-layout-main-bar'), elemProps?.className),
+          className: classNames(withPrefix('split-view-main-bar'), elemProps?.className),
         } as PropsWithoutRef<ComponentProps<E>>
       }
       elemRef={elemRef}
@@ -29,5 +29,5 @@ export const MainBar = <E extends ElementType = 'div'>({
   )
 }
 
-MainBar.displayName = 'SidePanelLayout.MainBar'
+MainBar.displayName = 'SplitView.MainBar'
 MainBar.slotName = 'MainBar'

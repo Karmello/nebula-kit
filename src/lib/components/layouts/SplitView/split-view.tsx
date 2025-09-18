@@ -1,42 +1,42 @@
 import { Grid } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { withPrefix, getDataAttrs, useScreen } from 'lib/helpers'
-import { BREAKPOINTS, DEFAULT_SIDE_PANEL_LAYOUT_SWITCH_AT, HorizontalPosition } from 'lib/definitions'
+import { BREAKPOINTS, DEFAULT_SPLIT_VIEW_SWITCH_AT, HorizontalPosition } from 'lib/definitions'
 
-import { SidePanelLayoutMode, SidePanelLayoutProvider } from './SidePanelLayoutProvider'
-import { SidePanelLayoutProps } from './definitions'
+import { SplitViewMode, SplitViewProvider } from './SplitViewProvider'
+import { SplitViewProps } from './definitions'
 
-import './side-panel-layout.scss'
+import './split-view.scss'
 
-export const SidePanelLayout = ({
+export const SplitView = ({
   // Grid
   children,
   elemProps,
   elemRef,
   // own
   sidePosition = HorizontalPosition[0],
-  switchAt = DEFAULT_SIDE_PANEL_LAYOUT_SWITCH_AT,
-}: SidePanelLayoutProps) => {
+  switchAt = DEFAULT_SPLIT_VIEW_SWITCH_AT,
+}: SplitViewProps) => {
   const { bp } = useScreen()
 
-  const mode: SidePanelLayoutMode = BREAKPOINTS.slice(0, BREAKPOINTS.indexOf(switchAt)).includes(bp)
+  const mode: SplitViewMode = BREAKPOINTS.slice(0, BREAKPOINTS.indexOf(switchAt)).includes(bp)
     ? 'overlay'
     : 'inline'
 
   return (
     <WithSlots<'Main' | 'MainBar' | 'Side'>
-      componentName="SidePanelLayout"
+      componentName="SplitView"
       slotsConfig={[{ name: 'Main', required: true }, { name: 'MainBar' }, { name: 'Side', required: true }]}
       childrenToVerify={children}
     >
       {slots => {
         return (
-          <SidePanelLayoutProvider slots={slots} mode={mode} sidePosition={sidePosition} switchAt={switchAt}>
+          <SplitViewProvider slots={slots} mode={mode} sidePosition={sidePosition} switchAt={switchAt}>
             <Grid
               elemProps={{
                 ...elemProps,
-                className: withPrefix('side-panel-layout'),
-                ...getDataAttrs('side-panel-layout', { mode }),
+                className: withPrefix('split-view'),
+                ...getDataAttrs('split-view', { mode }),
               }}
               elemRef={elemRef}
               gridTemplateColumns={sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto'}
@@ -46,11 +46,11 @@ export const SidePanelLayout = ({
               {slots.Side}
               {sidePosition === 'left' ? slots.Main : null}
             </Grid>
-          </SidePanelLayoutProvider>
+          </SplitViewProvider>
         )
       }}
     </WithSlots>
   )
 }
 
-SidePanelLayout.displayName = 'SidePanelLayout'
+SplitView.displayName = 'SplitView'

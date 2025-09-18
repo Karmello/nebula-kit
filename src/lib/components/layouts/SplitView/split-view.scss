@@ -1,0 +1,37 @@
+.neb-split-view {
+  block-size: 100%;
+
+  .neb-split-view-main-bar {
+    inline-size: 100%;
+  }
+
+  .neb-split-view-main {
+    min-inline-size: 0;
+    overflow: clip;
+  }
+
+  .neb-split-view-side {
+    block-size: 100%;
+    max-inline-size: 100%;
+    overflow: clip;
+  }
+}
+
+.neb-split-view[data-neb-split-view-mode='overlay'] {
+  .neb-split-view-main {
+    grid-column: 1 / -1;
+  }
+
+  .neb-split-view-side {
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    overflow-y: auto;
+  }
+}
+
+.neb-split-view[data-neb-split-view-mode='inline'] {
+  .neb-split-view-side {
+    overflow: hidden;
+  }
+}

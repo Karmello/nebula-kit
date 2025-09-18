@@ -1,30 +1,23 @@
 import { ComponentMeta } from 'client/definitions'
+import { Box, SPLIT_VIEW_INHERITED_PROPS, SplitView, SplitViewOwnProps, Text } from 'lib/components'
 
 import {
-  DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WIDTH,
-  DEFAULT_SIDE_PANEL_LAYOUT_SWITCH_AT,
+  DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
+  DEFAULT_SPLIT_VIEW_SWITCH_AT,
   HorizontalPosition,
-  SidePanelLayoutSwitchAt,
+  SplitViewSwitchAt,
 } from 'lib/definitions'
 
 import {
-  Box,
-  SIDE_PANEL_LAYOUT_INHERITED_PROPS,
-  SidePanelLayout,
-  SidePanelLayoutOwnProps,
-  Text,
-} from 'lib/components'
+  SPLIT_VIEW_MAIN_BAR_INHERITED_PROPS,
+  SPLIT_VIEW_MAIN_INHERITED_PROPS,
+  SPLIT_VIEW_SIDE_INHERITED_PROPS,
+} from 'lib/components/layouts/SplitView/slots'
 
-import {
-  SIDE_PANEL_LAYOUT_SIDE_INHERITED_PROPS,
-  SIDE_PANEL_LAYOUT_MAIN_INHERITED_PROPS,
-  SIDE_PANEL_LAYOUT_MAIN_BAR_INHERITED_PROPS,
-} from 'lib/components/layouts/SidePanelLayout/slots'
-
-const SIDE_PANEL_LAYOUT_META: ComponentMeta<SidePanelLayoutOwnProps> = {
+const SPLIT_VIEW_META: ComponentMeta<SplitViewOwnProps> = {
   overview: {
     description: 'A two-panel layout designed for building side navigation alongside main content.',
-    composedOf: SIDE_PANEL_LAYOUT_INHERITED_PROPS,
+    composedOf: SPLIT_VIEW_INHERITED_PROPS,
     role: [
       'provides a two-panel horizontal layout with a main content area and side panel',
       'manages side panel visibility',
@@ -53,8 +46,8 @@ const SIDE_PANEL_LAYOUT_META: ComponentMeta<SidePanelLayoutOwnProps> = {
     },
     {
       name: 'switchAt',
-      options: SidePanelLayoutSwitchAt as unknown as string[],
-      defaultValue: DEFAULT_SIDE_PANEL_LAYOUT_SWITCH_AT,
+      options: SplitViewSwitchAt as unknown as string[],
+      defaultValue: DEFAULT_SPLIT_VIEW_SWITCH_AT,
       isRequired: false,
       isResponsive: false,
       description:
@@ -64,22 +57,22 @@ const SIDE_PANEL_LAYOUT_META: ComponentMeta<SidePanelLayoutOwnProps> = {
   examples: [
     {
       description:
-        "Demonstrates SidePanelLayout filling its parent's height, with a side panel, a main content area, and an optional MainBar above the main content. Resize the viewport to a smaller width to see the side panel switch to its overlay version.",
+        "Demonstrates SplitView filling its parent's height, with a side panel, a main content area, and an optional MainBar above the main content. Resize the viewport to a smaller width to see the side panel switch to its overlay version.",
       jsx: (
         <Box blockSize="500px">
-          <SidePanelLayout>
-            <SidePanelLayout.Side intent="secondary" inlineSize={{ base: '300px', md: '500px', lg: '150px' }}>
+          <SplitView>
+            <SplitView.Side intent="secondary" inlineSize={{ base: '300px', md: '500px', lg: '150px' }}>
               <Box margin={5}>
                 <Text noWrap>Side</Text>
               </Box>
-            </SidePanelLayout.Side>
-            <SidePanelLayout.Main padding={5}>
+            </SplitView.Side>
+            <SplitView.Main padding={5}>
               <Text>Main</Text>
-            </SidePanelLayout.Main>
-            <SidePanelLayout.MainBar>
+            </SplitView.Main>
+            <SplitView.MainBar>
               <Text>MainBar</Text>
-            </SidePanelLayout.MainBar>
-          </SidePanelLayout>
+            </SplitView.MainBar>
+          </SplitView>
         </Box>
       ),
       sandBoxWithNoPadding: true,
@@ -87,38 +80,38 @@ const SIDE_PANEL_LAYOUT_META: ComponentMeta<SidePanelLayoutOwnProps> = {
   ],
 }
 
-const SIDE_PANEL_LAYOUT_SIDE_META: ComponentMeta<any> = {
+const SPLIT_VIEW_SIDE_META: ComponentMeta<any> = {
   overview: {
-    title: 'SidePanelLayout.Side',
+    title: 'SplitView.Side',
     description: 'The side panel region of the layout.',
-    composedOf: SIDE_PANEL_LAYOUT_SIDE_INHERITED_PROPS,
+    composedOf: SPLIT_VIEW_SIDE_INHERITED_PROPS,
     behavior: ['renders as <aside> element'],
-    byDefault: [`sets inlineSize to ${DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WIDTH}`],
+    byDefault: [`sets inlineSize to ${DEFAULT_SPLIT_VIEW_SIDE_WIDTH}`],
   },
 }
 
-const SIDE_PANEL_LAYOUT_MAIN_META: ComponentMeta<any> = {
+const SPLIT_VIEW_MAIN_META: ComponentMeta<any> = {
   overview: {
-    title: 'SidePanelLayout.Main',
+    title: 'SplitView.Main',
     description: 'The main panel region of the layout.',
-    composedOf: SIDE_PANEL_LAYOUT_MAIN_INHERITED_PROPS,
+    composedOf: SPLIT_VIEW_MAIN_INHERITED_PROPS,
     behavior: ['renders as <section> element'],
     byDefault: ['no padding applied'],
   },
 }
 
-const SIDE_PANEL_LAYOUT_MAIN_BAR_META: ComponentMeta<any> = {
+const SPLIT_VIEW_MAIN_BAR_META: ComponentMeta<any> = {
   overview: {
-    title: 'SidePanelLayout.MainBar (optional)',
+    title: 'SplitView.MainBar (optional)',
     description: 'Optional horizontal slot above main content.',
     byDefault: ['renders as <div> element'],
-    composedOf: SIDE_PANEL_LAYOUT_MAIN_BAR_INHERITED_PROPS,
+    composedOf: SPLIT_VIEW_MAIN_BAR_INHERITED_PROPS,
   },
 }
 
 export default {
-  SidePanelLayout: SIDE_PANEL_LAYOUT_META,
-  SidePanelLayoutSide: SIDE_PANEL_LAYOUT_SIDE_META,
-  SidePanelLayoutMain: SIDE_PANEL_LAYOUT_MAIN_META,
-  SidePanelLayoutMainBar: SIDE_PANEL_LAYOUT_MAIN_BAR_META,
+  SplitView: SPLIT_VIEW_META,
+  SplitViewSide: SPLIT_VIEW_SIDE_META,
+  SplitViewMain: SPLIT_VIEW_MAIN_META,
+  SplitViewMainBar: SPLIT_VIEW_MAIN_BAR_META,
 }

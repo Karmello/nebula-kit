@@ -1,14 +1,14 @@
 import { useLayoutEffect } from 'react'
 import classNames from 'classnames'
 
-import { Box, Flex, IconButton, Spacer, useSidePanelLayout } from 'lib/components'
+import { Box, Flex, IconButton, Spacer, useSplitView } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { SidePanelLayoutMainProps } from './definitions'
+import { SplitViewMainProps } from './definitions'
 import { getToggleIconName } from '../../helpers'
 
-export const Main = ({ children, elemProps, elemRef, ...paddings }: SidePanelLayoutMainProps) => {
-  const { sideOpen, setSideOpen, sidePosition, slots, mode } = useSidePanelLayout()
+export const Main = ({ children, elemProps, elemRef, ...paddings }: SplitViewMainProps) => {
+  const { sideOpen, setSideOpen, sidePosition, slots, mode } = useSplitView()
 
   useLayoutEffect(() => {
     setSideOpen(mode === 'inline')
@@ -19,7 +19,7 @@ export const Main = ({ children, elemProps, elemRef, ...paddings }: SidePanelLay
       elem="section"
       elemProps={{
         ...elemProps,
-        className: classNames(withPrefix('side-panel-layout-main'), elemProps?.className),
+        className: classNames(withPrefix('split-view-main'), elemProps?.className),
       }}
       elemRef={elemRef}
       borderRadius={0}
@@ -42,5 +42,5 @@ export const Main = ({ children, elemProps, elemRef, ...paddings }: SidePanelLay
   )
 }
 
-Main.displayName = 'SidePanelLayout.Main'
+Main.displayName = 'SplitView.Main'
 Main.slotName = 'Main'

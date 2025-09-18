@@ -1,7 +1,7 @@
 import { BoxProps } from 'lib/components'
 import { MakeRequired } from 'lib/definitions'
 
-export const SIDE_PANEL_LAYOUT_MAIN_INHERITED_PROPS = {
+export const SPLIT_VIEW_MAIN_INHERITED_PROPS = {
   Box: [
     'children',
     'elemProps',
@@ -19,9 +19,9 @@ export const SIDE_PANEL_LAYOUT_MAIN_INHERITED_PROPS = {
   Spacer: [] as const,
 }
 
-export type SidePanelLayoutMainInheritedProps = MakeRequired<
-  Pick<BoxProps<'section'>, (typeof SIDE_PANEL_LAYOUT_MAIN_INHERITED_PROPS)['Box'][number]>,
+export type SplitViewMainInheritedProps = MakeRequired<
+  Pick<BoxProps<'section'>, (typeof SPLIT_VIEW_MAIN_INHERITED_PROPS)['Box'][number]>,
   'children'
 >
 
-export type SidePanelLayoutMainProps = SidePanelLayoutMainInheritedProps
+export type SplitViewMainProps = SplitViewMainInheritedProps

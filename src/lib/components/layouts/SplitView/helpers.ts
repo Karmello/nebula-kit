@@ -1,6 +1,6 @@
-import { SidePanelLayoutProps } from './definitions'
+import { SplitViewProps } from './definitions'
 
-export const getToggleIconName = (sidePosition: SidePanelLayoutProps['sidePosition'], sideOpen: boolean) => {
+export const getToggleIconName = (sidePosition: SplitViewProps['sidePosition'], sideOpen: boolean) => {
   return sidePosition === 'left'
     ? sideOpen
       ? 'panel-right-open'

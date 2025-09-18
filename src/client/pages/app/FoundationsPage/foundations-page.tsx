@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 
-import { SidePanelLayout, SideNav, Breadcrumb, Section, Spacer, Box, Text } from 'lib/components'
+import { SplitView, SideNav, Breadcrumb, Section, Spacer, Box, Text } from 'lib/components'
 import { useFoundationsPageStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
 import { FOUNDATION_CATEGORIES, PageKey } from 'client/definitions'
@@ -25,8 +25,8 @@ export const FoundationsPage = () => {
   const activeSectionObj = activeItemObj?.sections.find(s => s.key === foundationsPageStore.sectionKey)
 
   return (
-    <SidePanelLayout>
-      <SidePanelLayout.Side>
+    <SplitView>
+      <SplitView.Side>
         <SideNav
           groups={FOUNDATION_CATEGORIES.map(({ key: categoryKey, label, items }) => ({
             key: categoryKey,
@@ -46,11 +46,11 @@ export const FoundationsPage = () => {
           }))}
           activeKey={foundationsPageStore.itemKey}
         />
-      </SidePanelLayout.Side>
-      <SidePanelLayout.Main paddingLeft={10}>
+      </SplitView.Side>
+      <SplitView.Main paddingLeft={10}>
         <Spacer blockSize={15} />
-        <SidePanelLayout sidePosition="right">
-          <SidePanelLayout.Side>
+        <SplitView sidePosition="right">
+          <SplitView.Side>
             <SideNav
               groups={FOUNDATION_CATEGORIES.find(c => c.key === foundationsPageStore.categoryKey)
                 ?.items.find(i => i.key === foundationsPageStore.itemKey)
@@ -71,22 +71,22 @@ export const FoundationsPage = () => {
                 active: { variant: 'solid', intent: 'tertiary' },
               }}
             />
-          </SidePanelLayout.Side>
-          <SidePanelLayout.Main paddingRight={10}>
+          </SplitView.Side>
+          <SplitView.Main paddingRight={10}>
             <FoundationsPageRoutes />
-          </SidePanelLayout.Main>
-          <SidePanelLayout.MainBar>
+          </SplitView.Main>
+          <SplitView.MainBar>
             <Section heading={<Text typography="h3">{activeSectionObj?.label}</Text>}>{null}</Section>
-          </SidePanelLayout.MainBar>
-        </SidePanelLayout>
-      </SidePanelLayout.Main>
-      <SidePanelLayout.MainBar>
+          </SplitView.MainBar>
+        </SplitView>
+      </SplitView.Main>
+      <SplitView.MainBar>
         <Box marginRight={10}>
           <Breadcrumb
             items={['Foundations', activeCategoryObj?.label, activeItemObj?.label, activeSectionObj?.label]}
           />
         </Box>
-      </SidePanelLayout.MainBar>
-    </SidePanelLayout>
+      </SplitView.MainBar>
+    </SplitView>
   )
 }

@@ -1,3 +1,3 @@
 export * from './AppFrame'
-export * from './SidePanelLayout'
+export * from './SplitView'
 export * from './Toolbar'

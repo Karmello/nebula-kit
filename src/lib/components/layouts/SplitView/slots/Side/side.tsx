@@ -1,26 +1,26 @@
 import classNames from 'classnames'
 
-import { Box, Flex, IconButton, useSidePanelLayout } from 'lib/components'
-import { DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WIDTH } from 'lib/definitions'
+import { Box, Flex, IconButton, useSplitView } from 'lib/components'
+import { DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
-import { SidePanelLayoutSideProps } from './definitions'
+import { SplitViewSideProps } from './definitions'
 
 export const Side = ({
   children,
   elemProps,
   elemRef,
   intent,
-  inlineSize = DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WIDTH,
-}: SidePanelLayoutSideProps) => {
-  const { sideOpen, setSideOpen, sidePosition, mode } = useSidePanelLayout()
+  inlineSize = DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
+}: SplitViewSideProps) => {
+  const { sideOpen, setSideOpen, sidePosition, mode } = useSplitView()
 
   return (
     <Box
       elem="aside"
       elemProps={{
         ...elemProps,
-        className: classNames(withPrefix('side-panel-layout-side'), elemProps?.className),
+        className: classNames(withPrefix('split-view-side'), elemProps?.className),
       }}
       elemRef={elemRef}
       variant="solid"
@@ -49,5 +49,5 @@ export const Side = ({
   )
 }
 
-Side.displayName = 'SidePanelLayout.Side'
+Side.displayName = 'SplitView.Side'
 Side.slotName = 'Side'
