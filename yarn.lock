@@ -438,6 +438,11 @@
     "@eslint/core" "^0.15.2"
     levn "^0.4.1"
 
+"@hiogawa/vite-plugin-error-overlay@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@hiogawa/vite-plugin-error-overlay/-/vite-plugin-error-overlay-0.0.1.tgz#4993043cbeceb7dcc513a66ef7cc94af0046dd8c"
+  integrity sha512-yGUu3EiAj+hdTgWKWoWhD3ZDINGylcHW7Pz3ii1VAdD8XoMCKAmuph9HtEYE2/sP8k1kzTKXnw9vAGU7cQm9Jg==
+
 "@humanfs/core@^0.19.1":
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/@humanfs/core/-/core-0.19.1.tgz#17c55ca7d426733fe3c561906b8173c336b40a77"

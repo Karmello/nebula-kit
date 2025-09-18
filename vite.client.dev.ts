@@ -2,12 +2,11 @@ import path from 'path'
 import { defineConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import react from '@vitejs/plugin-react-swc'
+import { vitePluginErrorOverlay } from '@hiogawa/vite-plugin-error-overlay'
 
 export default defineConfig(({ mode }) => ({
-  plugins: [tsconfigPaths(), react()],
+  plugins: [tsconfigPaths(), react(), vitePluginErrorOverlay()],
   server: {
-    host: true,
-    port: 5173,
     hmr: {
       overlay: true,
       host: 'localhost',
