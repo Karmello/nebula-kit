@@ -1,9 +1,9 @@
-import { HorizontalPosition, MakeRequired, SplitViewSwitchAt } from 'lib/definitions'
+import { HorizontalPosition, MakeRequired, SwitchAt } from 'lib/definitions'
 import { GridProps } from 'lib/components'
 
 export type SplitViewOwnProps = {
   sidePosition?: Extract<HorizontalPosition, 'left' | 'right'>
-  switchAt?: SplitViewSwitchAt
+  switchAt?: SwitchAt
 }
 
 export const SPLIT_VIEW_INHERITED_PROPS = {

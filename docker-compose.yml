@@ -10,8 +10,9 @@ services:
       args:
         - PAT=$PAT
     ports:
-      - "$CLIENT_PORT:$CLIENT_PORT"
-      - "$SERVER_PORT:$SERVER_PORT"
+      - '$CLIENT_PORT:$CLIENT_PORT'
+      - '$SERVER_PORT:$SERVER_PORT'
+      - 5173:5173
     environment:
       - NODE_ENV=$NODE_ENV
       - CLIENT_PORT=$CLIENT_PORT

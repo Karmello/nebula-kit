@@ -3,9 +3,9 @@ import { Box, SPLIT_VIEW_INHERITED_PROPS, SplitView, SplitViewOwnProps, Text } f
 
 import {
   DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
-  DEFAULT_SPLIT_VIEW_SWITCH_AT,
+  DEFAULT_SWITCH_AT,
   HorizontalPosition,
-  SplitViewSwitchAt,
+  SwitchAt,
 } from 'lib/definitions'
 
 import {
@@ -46,8 +46,8 @@ const SPLIT_VIEW_META: ComponentMeta<SplitViewOwnProps> = {
     },
     {
       name: 'switchAt',
-      options: SplitViewSwitchAt as unknown as string[],
-      defaultValue: DEFAULT_SPLIT_VIEW_SWITCH_AT,
+      options: SwitchAt as unknown as string[],
+      defaultValue: DEFAULT_SWITCH_AT,
       isRequired: false,
       isResponsive: false,
       description:

@@ -5,6 +5,16 @@ import react from '@vitejs/plugin-react-swc'
 
 export default defineConfig(({ mode }) => ({
   plugins: [tsconfigPaths(), react()],
+  server: {
+    host: true,
+    port: 5173,
+    hmr: {
+      overlay: true,
+      host: 'localhost',
+      clientPort: 5173,
+      protocol: 'ws',
+    },
+  },
   resolve: {
     alias: {
       client: path.resolve(__dirname, 'src/client'),
