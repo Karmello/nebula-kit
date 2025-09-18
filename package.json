@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "license": "UNLICENSED",
   "repository": {
-    "url": "git+https://github.com/Karmello/ui-bb.git"
+    "url": "git+https://github.com/Karmello/nebula-kit.git"
   },
   "private": true,
   "type": "module",
@@ -23,7 +23,6 @@
     "build:server": "NODE_ENV=production tsup --config tsup.server.ts",
     "build": "yarn build:client && yarn build:server",
     "start": "NODE_ENV=production node dist/server/server.prod.js",
-    "clean": "rimraf build",
     "prettier": "prettier --check src/**/*.{ts,tsx}",
     "prettify": "prettier --write src/**/*.{ts,tsx}",
     "lint": "eslint src/**/*.{ts,tsx}",
