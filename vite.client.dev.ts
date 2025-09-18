@@ -7,6 +7,8 @@ import { vitePluginErrorOverlay } from '@hiogawa/vite-plugin-error-overlay'
 export default defineConfig(({ mode }) => ({
   plugins: [tsconfigPaths(), react(), vitePluginErrorOverlay()],
   server: {
+    host: true,
+    port: 5173,
     hmr: {
       overlay: true,
       host: 'localhost',
