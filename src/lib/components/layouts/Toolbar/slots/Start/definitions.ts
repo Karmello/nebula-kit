@@ -1,16 +1,16 @@
-import { FlexItemProps } from 'lib/components'
+import { GridItemProps } from 'lib/components'
 import { MakeRequired } from 'lib/definitions'
 
 export const TOOLBAR_START_INHERITED_PROPS = {
-  'Flex.Item': [
+  'Grid.Item': [
     'children',
     'elemProps',
     'elemRef',
-  ] as const satisfies readonly (keyof FlexItemProps<'div'>)[],
+  ] as const satisfies readonly (keyof GridItemProps<'div'>)[],
 }
 
 export type ToolbarStartInheritedProps = MakeRequired<
-  Pick<FlexItemProps<'div'>, (typeof TOOLBAR_START_INHERITED_PROPS)['Flex.Item'][number]>,
+  Pick<GridItemProps<'div'>, (typeof TOOLBAR_START_INHERITED_PROPS)['Grid.Item'][number]>,
   'children'
 >
 

@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 import { WithSlots } from 'lib/components/internal'
-import { Flex } from 'lib/components'
+import { Grid } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { DEFAULT_SWITCH_AT } from 'lib/definitions'
 
@@ -17,18 +17,20 @@ export const Toolbar = ({ children, elemProps, elemRef, switchAt = DEFAULT_SWITC
         childrenToVerify={children}
       >
         {slots => (
-          <Flex
+          <Grid
             elem="nav"
             elemProps={{
               ...elemProps,
               className: classNames(withPrefix('toolbar'), elemProps?.className),
             }}
             elemRef={elemRef}
+            gridTemplateColumns="auto 1fr auto"
+            gridAutoFlow="row"
           >
             {slots.Start}
             {slots.Main || <div />}
             {slots.End}
-          </Flex>
+          </Grid>
         )}
       </WithSlots>
     </ToolbarProvider>

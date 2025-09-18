@@ -207,8 +207,8 @@ const GRID_ITEM_META: ComponentMeta<GridItemOwnProps> = {
       description:
         'This example shows how Grid.Item can explicitly control placement: on small screens, Start and End stay on the first row while Middle drops below, and from the md breakpoint up all three align in one row. Resize the viewport to see the layout switch in action.',
       jsx: (
-        <Grid gridTemplateColumns={{ base: 'auto 1fr auto', md: 'auto 1fr auto' }} gridAutoFlow="row">
-          <Grid.Item gridRow={{ base: '1 / 2', md: '1 / 2' }} gridColumn={{ base: '1 / 2', md: '1 / 2' }}>
+        <Grid gridTemplateColumns="auto 1fr auto" gridAutoFlow="row">
+          <Grid.Item gridRow="1 / 2" gridColumn="1 / 2">
             <Box variant="outline" intent="primary">
               Start
             </Box>
@@ -218,7 +218,7 @@ const GRID_ITEM_META: ComponentMeta<GridItemOwnProps> = {
               Middle
             </Box>
           </Grid.Item>
-          <Grid.Item gridRow={{ base: '1 / 2', md: '1 / 2' }} gridColumn={{ base: '3 / 4', md: '3 / 4' }}>
+          <Grid.Item gridRow="1 / 2" gridColumn="3 / 4">
             <Box variant="outline" intent="primary">
               End
             </Box>

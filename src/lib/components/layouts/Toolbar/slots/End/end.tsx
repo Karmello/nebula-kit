@@ -1,15 +1,12 @@
-import { Flex } from 'lib/components'
+import { Grid } from 'lib/components'
 
 import { ToolbarEndProps } from './definitions'
-import { useToolbarContext } from '../../ToolbarProvider'
 
 export const End = ({ children, elemProps, elemRef }: ToolbarEndProps) => {
-  const { switchAt } = useToolbarContext()
-
   return (
-    <Flex.Item elemProps={elemProps} elemRef={elemRef}>
+    <Grid.Item elemProps={elemProps} elemRef={elemRef} gridRow="1 / 2" gridColumn="3 / 4">
       {children}
-    </Flex.Item>
+    </Grid.Item>
   )
 }
 

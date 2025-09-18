@@ -1,4 +1,4 @@
-import { Flex } from 'lib/components'
+import { Grid } from 'lib/components'
 
 import { ToolbarMainProps } from './definitions'
 import { useToolbarContext } from '../../ToolbarProvider'
@@ -7,7 +7,7 @@ export const Main = ({ children, elemProps, elemRef }: ToolbarMainProps) => {
   const { switchAt } = useToolbarContext()
 
   return (
-    <Flex.Item
+    <Grid.Item
       elemProps={{
         ...elemProps,
         style: {
@@ -16,10 +16,11 @@ export const Main = ({ children, elemProps, elemRef }: ToolbarMainProps) => {
         },
       }}
       elemRef={elemRef}
-      flex={1}
+      gridRow={{ base: '2 / 3', [switchAt]: '1 / 2' }}
+      gridColumn={{ base: '1 / -1', [switchAt]: '2 / 3' }}
     >
       {children}
-    </Flex.Item>
+    </Grid.Item>
   )
 }
 

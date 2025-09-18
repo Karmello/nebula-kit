@@ -1,4 +1,4 @@
-import { FlexProps } from 'lib/components'
+import { GridProps } from 'lib/components'
 import { MakeRequired, SwitchAt } from 'lib/definitions'
 
 export type ToolbarOwnProps = {
@@ -6,11 +6,11 @@ export type ToolbarOwnProps = {
 }
 
 export const TOOLBAR_INHERITED_PROPS = {
-  Flex: ['children', 'elemProps', 'elemRef'] as const satisfies readonly (keyof FlexProps<'nav'>)[],
+  Grid: ['children', 'elemProps', 'elemRef'] as const satisfies readonly (keyof GridProps<'nav'>)[],
 }
 
 export type ToolbarInheritedProps = MakeRequired<
-  Pick<FlexProps<'nav'>, (typeof TOOLBAR_INHERITED_PROPS)['Flex'][number]>,
+  Pick<GridProps<'nav'>, (typeof TOOLBAR_INHERITED_PROPS)['Grid'][number]>,
   'children'
 >
 
