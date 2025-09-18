@@ -18,6 +18,10 @@
 }
 
 .neb-side-panel-layout[data-neb-side-panel-layout-mode='overlay'] {
+  .neb-side-panel-layout-main {
+    grid-column: 1 / -1;
+  }
+
   .neb-side-panel-layout-side {
     z-index: 20;
     position: fixed;

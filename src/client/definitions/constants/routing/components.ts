@@ -63,6 +63,11 @@ export const COMPONENT_CATEGORIES = [
     ],
   },
   {
+    key: 'navigation',
+    label: 'Navigation',
+    items: [{ key: 'app-nav-bar', label: 'AppNavBar', sections: COMPONENT_SECTIONS }],
+  },
+  {
     key: 'utility',
     label: 'Utility',
     items: [
