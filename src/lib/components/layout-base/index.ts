@@ -1,5 +1,4 @@
 export * from './Flex'
 export * from './Grid'
-export * from './HAlign'
 export * from './Spacer'
 export * from './Table'

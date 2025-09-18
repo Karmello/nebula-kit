@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import { Box, HAlign, IconButton, useSidePanelLayout } from 'lib/components'
+import { Box, Flex, IconButton, useSidePanelLayout } from 'lib/components'
 import { DEFAULT_SIDE_PANEL_LAYOUT_SIDE_WIDTH } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
@@ -31,7 +31,7 @@ export const Side = ({
       borderRadius={0}
     >
       {mode === 'overlay' ? (
-        <HAlign position="right">
+        <Flex justifyContent="flex-end">
           <IconButton
             elemProps={{
               onClick: () => {
@@ -42,7 +42,7 @@ export const Side = ({
             variant="ghost"
             size="sm"
           />
-        </HAlign>
+        </Flex>
       ) : null}
       {children}
     </Box>

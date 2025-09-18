@@ -9,7 +9,7 @@ export const SIDE_PANEL_LAYOUT_SIDE_INHERITED_PROPS = {
     'intent',
     'inlineSize',
   ] as const satisfies readonly (keyof BoxProps<'aside'>)[],
-  HAlign: [] as const,
+  Flex: [] as const,
   IconButton: [] as const,
 }
 
