@@ -374,7 +374,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
           padding={10}
           display="inline-block"
           elem="a"
-          elemProps={{ href: 'http://google.com', target: '_blank' }}
+          elemProps={{ href: 'https://google.com', target: '_blank' }}
         >
           Box as link
         </Box>

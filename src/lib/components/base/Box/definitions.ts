@@ -57,7 +57,7 @@ export const BOX_INHERITED_PROPS = {
     'elem',
     'elemProps',
     'elemRef',
-  ] as const satisfies readonly (keyof NativeElemProps<any>)[],
+  ] as const satisfies readonly (keyof NativeElemProps<ElementType>)[],
 }
 
 export type BoxInheritedProps<E extends ElementType> = Pick<

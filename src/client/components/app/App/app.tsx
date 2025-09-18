@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router'
 
 import { useLibStore } from 'lib/state'
-import { AppFrame, Toolbar } from 'lib/components'
+import { AppFrame, Button, Toolbar } from 'lib/components'
 import { validateQueryParams } from 'client/services'
 
 import { RootPage } from '../RootPage'
@@ -31,7 +31,9 @@ export const App = () => {
       <AppFrame.Header intent="tertiary">
         <Toolbar>
           <Toolbar.Start>start</Toolbar.Start>
-          <Toolbar.Main>main</Toolbar.Main>
+          <Toolbar.Main>
+            <Button>Home</Button>
+          </Toolbar.Main>
           <Toolbar.End>end</Toolbar.End>
         </Toolbar>
       </AppFrame.Header>

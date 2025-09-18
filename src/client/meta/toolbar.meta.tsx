@@ -29,7 +29,9 @@ const TOOLBAR_META: ComponentMeta<ToolbarOwnProps> = {
     {
       jsx: (
         <Toolbar>
-          <Toolbar.Main>main</Toolbar.Main>
+          <Toolbar.Start>Start</Toolbar.Start>
+          <Toolbar.Main>Main</Toolbar.Main>
+          <Toolbar.End>End</Toolbar.End>
         </Toolbar>
       ),
       sandBoxWithNoPadding: true,

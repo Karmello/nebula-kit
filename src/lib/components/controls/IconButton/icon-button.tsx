@@ -2,12 +2,14 @@ import classNames from 'classnames'
 
 import { Button } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { ButtonElem } from 'lib/definitions'
 
 import { IconButtonProps } from './definitions'
 
 import './icon-button.scss'
 
-export const IconButton = ({
+export const IconButton = <E extends ButtonElem = 'button'>({
+  elem,
   elemProps,
   elemRef,
   size,
@@ -15,9 +17,10 @@ export const IconButton = ({
   intent,
   disabled,
   iconName,
-}: IconButtonProps) => {
+}: IconButtonProps<E>) => {
   return (
     <Button
+      elem={elem || 'button'}
       elemProps={{
         ...elemProps,
         className: classNames(withPrefix('icon-btn'), elemProps?.className || ''),

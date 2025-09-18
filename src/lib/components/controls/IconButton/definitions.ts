@@ -1,9 +1,10 @@
-import { MakeRequired } from 'lib/definitions'
+import { ButtonElem, MakeRequired } from 'lib/definitions'
 
 import { ButtonProps } from '../Button'
 
 export const ICON_BUTTON_INHERITED_PROPS = {
   Button: [
+    'elem',
     'elemProps',
     'elemRef',
     'size',
@@ -11,12 +12,12 @@ export const ICON_BUTTON_INHERITED_PROPS = {
     'intent',
     'disabled',
     'iconName',
-  ] as const satisfies readonly (keyof ButtonProps)[],
+  ] as const satisfies readonly (keyof ButtonProps<ButtonElem>)[],
 }
 
-export type IconButtonInheritedProps = MakeRequired<
-  Pick<ButtonProps, (typeof ICON_BUTTON_INHERITED_PROPS)['Button'][number]>,
+export type IconButtonInheritedProps<E extends ButtonElem = 'button'> = MakeRequired<
+  Pick<ButtonProps<E>, (typeof ICON_BUTTON_INHERITED_PROPS)['Button'][number]>,
   'iconName'
 >
 
-export type IconButtonProps = IconButtonInheritedProps
+export type IconButtonProps<E extends ButtonElem = 'button'> = IconButtonInheritedProps<E>

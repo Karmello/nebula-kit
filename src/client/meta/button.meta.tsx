@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { Button, BUTTON_INHERITED_PROPS, ButtonOwnProps, Flex } from 'lib/components'
-import { ButtonSize, DEFAULT_BUTTON_SIZE } from 'lib/definitions'
+import { ButtonElem, ButtonSize, DEFAULT_BUTTON_SIZE } from 'lib/definitions'
 
 const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
   overview: {
@@ -11,7 +11,10 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
       'handle interactivity states such as hover, focus, active, and disabled',
       'support optional icon and text composition for clarity of meaning',
     ],
-    behavior: ['renders as a <button> element', 'requires children'],
+    behavior: [
+      `the elem prop is restricted to ${ButtonElem.map(s => `<${s}>`).join(', ')}`,
+      'requires children',
+    ],
     byDefault: ['medium size', 'solid variant', 'tertiary intent'],
     examplesOfUse: ['applied wherever a clear, consistent action trigger is needed in the interface'],
     composedOf: BUTTON_INHERITED_PROPS,
@@ -59,6 +62,15 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
       jsx: (
         <Button variant="ghost" intent="danger">
           Ghost button
+        </Button>
+      ),
+    },
+    {
+      description:
+        'When rendered as an <a>, Button keeps the same appearance as a regular button - semantics change to navigation, but visuals stay consistent.',
+      jsx: (
+        <Button elem="a" elemProps={{ href: 'https://google.com', target: '_blank' }} intent="primary">
+          Link button
         </Button>
       ),
     },

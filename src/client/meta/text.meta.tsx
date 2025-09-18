@@ -98,6 +98,15 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       jsx: <Text typography="h5">Heading 5</Text>,
       description: 'The typography prop sets the HTML tag, font size, and line height automatically.',
     },
+    {
+      jsx: (
+        <Text elem="a" intent="primary" elemProps={{ href: 'https://google.com', target: '_blank' }}>
+          Link
+        </Text>
+      ),
+      description:
+        'A semantic anchor rendered through Text, keeping the underline and styled with the primary intent color for emphasis.',
+    },
   ],
 }
 

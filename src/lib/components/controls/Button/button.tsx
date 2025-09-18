@@ -1,13 +1,19 @@
 import classNames from 'classnames'
 
 import { Box, Text } from 'lib/components'
-import { DEFAULT_BUTTON_SIZE, DEFAULT_BUTTON_INTENT, DEFAULT_BUTTON_VARIANT } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
+
+import {
+  DEFAULT_BUTTON_SIZE,
+  DEFAULT_BUTTON_INTENT,
+  DEFAULT_BUTTON_VARIANT,
+  ButtonElem,
+} from 'lib/definitions'
 
 import { BUTTON_SIZE_CONFIG, ButtonProps } from './definitions'
 import './button.scss'
 
-export const Button = ({
+export const Button = <E extends ButtonElem = 'button'>({
   // own
   size = DEFAULT_BUTTON_SIZE,
   // text
@@ -15,15 +21,16 @@ export const Button = ({
   iconPosition,
   // box
   children,
+  elem,
   elemProps,
   elemRef,
   variant = DEFAULT_BUTTON_VARIANT,
   intent = DEFAULT_BUTTON_INTENT,
   disabled,
-}: ButtonProps) => {
+}: ButtonProps<E>) => {
   return (
     <Box
-      elem="button"
+      elem={elem || 'button'}
       elemProps={{
         ...elemProps,
         className: classNames(withPrefix('btn'), elemProps?.className),

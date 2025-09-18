@@ -1,5 +1,3 @@
-import { ElementType } from 'react'
-
 import { MakeRequired, ScaleValue, TextElem, TextTypography } from 'lib/definitions'
 import { WithIconProps } from 'lib/components'
 
@@ -33,13 +31,13 @@ export const TEXT_INHERITED_PROPS = {
   WithIcon: PROPS_INHERITED_FROM_WITH_ICON,
 }
 
-export type TextInheritedProps<E extends ElementType> = MakeRequired<
+export type TextInheritedProps<E extends TextElem = 'p'> = MakeRequired<
   Pick<BoxProps<E>, (typeof PROPS_INHERITED_FROM_BOX)[number]>,
   'children'
 > &
   Partial<Pick<WithIconProps, (typeof PROPS_INHERITED_FROM_WITH_ICON)[number]>>
 
-export type TextProps<E extends ElementType = 'div'> = TextOwnProps & TextInheritedProps<E>
+export type TextProps<E extends TextElem = 'p'> = TextOwnProps & TextInheritedProps<E>
 
 // constants
 

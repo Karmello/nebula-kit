@@ -17,6 +17,7 @@ import {
   TriangleAlert,
   CheckCircle,
   CircleAlert,
+  ExternalLink,
 } from 'lucide-react'
 
 import { IconName } from 'lib/definitions'
@@ -38,6 +39,7 @@ const ICONS: Record<IconName, any> = {
   'triangle-alert': TriangleAlert,
   'check-circle': CheckCircle,
   'circle-alert': CircleAlert,
+  'external-link': ExternalLink,
 }
 
 export const getSvgIconComponent = (name: IconName): ((props: SVGProps<SVGElement>) => JSX.Element) => {

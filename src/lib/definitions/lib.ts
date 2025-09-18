@@ -27,6 +27,7 @@ export const ICON_NAMES = [
   'triangle-alert',
   'check-circle',
   'circle-alert',
+  'external-link',
 ] as const
 
 // types

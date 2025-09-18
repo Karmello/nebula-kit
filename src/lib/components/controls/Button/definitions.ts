@@ -1,5 +1,5 @@
 import { BoxProps, TextProps } from 'lib/components/base'
-import { ButtonSize, MakeRequired, ScaleValue } from 'lib/definitions'
+import { ButtonElem, ButtonSize, MakeRequired, ScaleValue } from 'lib/definitions'
 
 export type ButtonOwnProps = {
   size?: ButtonSize
@@ -8,22 +8,23 @@ export type ButtonOwnProps = {
 export const BUTTON_INHERITED_PROPS = {
   Box: [
     'children',
+    'elem',
     'elemProps',
     'elemRef',
     'variant',
     'intent',
     'disabled',
-  ] as const satisfies readonly (keyof BoxProps<'button'>)[],
+  ] as const satisfies readonly (keyof BoxProps<ButtonElem>)[],
   Text: ['iconName', 'iconPosition'] as const satisfies readonly (keyof TextProps<'span'>)[],
 }
 
-export type ButtonInheritedProps = MakeRequired<
-  Pick<BoxProps<'button'>, (typeof BUTTON_INHERITED_PROPS)['Box'][number]>,
+export type ButtonInheritedProps<E extends ButtonElem = 'button'> = MakeRequired<
+  Pick<BoxProps<E>, (typeof BUTTON_INHERITED_PROPS)['Box'][number]>,
   'children'
 > &
   Partial<Pick<TextProps<'span'>, (typeof BUTTON_INHERITED_PROPS)['Text'][number]>>
 
-export type ButtonProps = ButtonOwnProps & ButtonInheritedProps
+export type ButtonProps<E extends ButtonElem = 'button'> = ButtonOwnProps & ButtonInheritedProps<E>
 
 // constants
 
