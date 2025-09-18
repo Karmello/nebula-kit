@@ -109,7 +109,7 @@ const SIDE_PANEL_LAYOUT_MAIN_META: ComponentMeta<any> = {
 
 const SIDE_PANEL_LAYOUT_MAIN_BAR_META: ComponentMeta<any> = {
   overview: {
-    title: 'SidePanelLayout.MainBar',
+    title: 'SidePanelLayout.MainBar (optional)',
     description: 'Optional horizontal slot above main content.',
     byDefault: ['renders as <div> element'],
     composedOf: SIDE_PANEL_LAYOUT_MAIN_BAR_INHERITED_PROPS,

@@ -17,6 +17,7 @@ import sidePanelLayoutMeta from './side-panel-layout.meta'
 import spacerMeta from './spacer.meta'
 import svgIconMeta from './svg-icon.meta'
 import textMeta from './text.meta'
+import toolbarMeta from './toolbar.meta'
 import withIconMeta from './with-icon.meta'
 
 export default {
@@ -37,5 +38,6 @@ export default {
   spacer: spacerMeta,
   'svg-icon': svgIconMeta,
   text: textMeta,
+  toolbar: toolbarMeta,
   'with-icon': withIconMeta,
 } as Record<string, Record<string, ComponentMeta<unknown>>>

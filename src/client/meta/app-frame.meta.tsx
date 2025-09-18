@@ -77,7 +77,7 @@ const APP_FRAME_MAIN_META: ComponentMeta<AppFrameOwnProps> = {
 
 const APP_FRAME_FOOTER_META: ComponentMeta<AppFrameOwnProps> = {
   overview: {
-    title: 'AppFrame.Footer',
+    title: 'AppFrame.Footer (optional)',
     description: 'Defines the bottom region of AppFrame.',
     behavior: ['renders as a <footer> element'],
     byDefault: [

@@ -2,10 +2,9 @@ import { useEffect, useLayoutEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router'
 
 import { useLibStore } from 'lib/state'
-import { AppFrame } from 'lib/components'
+import { AppFrame, Toolbar } from 'lib/components'
 import { validateQueryParams } from 'client/services'
 
-import { AppNavBar } from './AppNavBar'
 import { RootPage } from '../RootPage'
 
 export const App = () => {
@@ -30,7 +29,11 @@ export const App = () => {
   return (
     <AppFrame stickyHeader>
       <AppFrame.Header intent="tertiary">
-        <AppNavBar />
+        <Toolbar>
+          <Toolbar.Start>start</Toolbar.Start>
+          <Toolbar.Main>main</Toolbar.Main>
+          <Toolbar.End>end</Toolbar.End>
+        </Toolbar>
       </AppFrame.Header>
       <AppFrame.Main paddingTop={{ base: 10, lg: 20 }} paddingBottom={40}>
         <RootPage />

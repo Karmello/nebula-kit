@@ -1,3 +1,5 @@
+import classNames from 'classnames'
+
 import { WithSlots } from 'lib/components/internal'
 import { Grid } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
@@ -7,7 +9,7 @@ import { AppFrameProps } from './definitions'
 
 import './app-frame.scss'
 
-export const AppFrame = ({ children, stickyHeader = false }: AppFrameProps) => {
+export const AppFrame = ({ children, elemProps, elemRef, stickyHeader = false }: AppFrameProps) => {
   return (
     <AppFrameProvider stickyHeader={stickyHeader}>
       <WithSlots<'Header' | 'Main' | 'Footer'>
@@ -20,7 +22,10 @@ export const AppFrame = ({ children, stickyHeader = false }: AppFrameProps) => {
         childrenToVerify={children}
       >
         {slots => (
-          <Grid elemProps={{ className: withPrefix('app-frame') }}>
+          <Grid
+            elemProps={{ ...elemProps, className: classNames(withPrefix('app-frame'), elemProps?.className) }}
+            elemRef={elemRef}
+          >
             {slots.Header || <div />}
             {slots.Main || <div />}
             {slots.Footer}
