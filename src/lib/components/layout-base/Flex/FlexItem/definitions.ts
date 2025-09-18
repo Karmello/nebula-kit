@@ -13,7 +13,12 @@ export type FlexItemOwnProps = {
 }
 
 export const FLEX_ITEM_INHERITED_PROPS = {
-  Box: ['children', 'elem', 'elemProps', 'elemRef'] as const satisfies readonly (keyof BoxProps)[],
+  Box: [
+    'children',
+    'elem',
+    'elemProps',
+    'elemRef',
+  ] as const satisfies readonly (keyof BoxProps<ElementType>)[],
 }
 
 export type FlexItemInheritedProps<E extends ElementType> = Pick<

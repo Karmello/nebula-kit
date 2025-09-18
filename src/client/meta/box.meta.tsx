@@ -368,21 +368,6 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     },
     {
       jsx: (
-        <Box
-          variant="outline"
-          intent="primary"
-          padding={10}
-          display="inline-block"
-          elem="a"
-          elemProps={{ href: 'https://google.com', target: '_blank' }}
-        >
-          Box as link
-        </Box>
-      ),
-      description: 'Box rendered as link element.',
-    },
-    {
-      jsx: (
         <Box variant="solid" intent="secondary" padding={10} interactive>
           Interactive Box
         </Box>

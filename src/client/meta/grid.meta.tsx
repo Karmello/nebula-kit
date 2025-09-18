@@ -1,6 +1,22 @@
 import { ComponentMeta } from 'client/definitions'
-import { Box, Grid, GRID_INHERITED_PROPS, GridOwnProps } from 'lib/components'
-import { CssGridAutoFlow, CssGridPlaceItems, CssGridPlaceContent, GridElem } from 'lib/definitions'
+
+import {
+  CssGridAutoFlow,
+  CssGridPlaceItems,
+  CssGridPlaceContent,
+  GridElem,
+  CssGridItemJustifySelf,
+  CssGridItemAlignSelf,
+} from 'lib/definitions'
+
+import {
+  Box,
+  Grid,
+  GRID_INHERITED_PROPS,
+  GRID_ITEM_INHERITED_PROPS,
+  GridItemOwnProps,
+  GridOwnProps,
+} from 'lib/components'
 
 const GRID_META: ComponentMeta<GridOwnProps> = {
   overview: {
@@ -128,6 +144,92 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
   ],
 }
 
+const GRID_ITEM_META: ComponentMeta<GridItemOwnProps> = {
+  overview: {
+    title: 'Grid.Item',
+    description:
+      'Grid.Item is a child component of Grid that provides explicit control over the placement and alignment of individual items within the grid.',
+    role: [
+      'position a child in a specific row and/or column',
+      "override the item's alignment relative to its cell",
+    ],
+    behavior: [
+      'must be used inside a Grid container',
+      'wraps its child with Box for consistent styling and reset',
+    ],
+    byDefault: [
+      'renders as a <div> element',
+      "aligns according to the parent's alignment rules unless overridden",
+    ],
+    examplesOfUse: [
+      'spanning an item across multiple columns or rows',
+      'pinning a child to a specific grid cell at a breakpoint',
+      'overriding alignment for a single child while others follow the parent',
+    ],
+    composedOf: GRID_ITEM_INHERITED_PROPS,
+  },
+  ownProps: [
+    {
+      name: 'gridColumn',
+      options: ['CSS'],
+      defaultValue: 'auto',
+      isRequired: false,
+      isResponsive: true,
+      description: "Sets the item's horizontal position or span between grid columns.",
+    },
+    {
+      name: 'gridRow',
+      options: ['CSS'],
+      defaultValue: 'auto',
+      isRequired: false,
+      isResponsive: true,
+      description: "Sets the item's vertical position or span between grid rows.",
+    },
+    {
+      name: 'justifySelf',
+      options: Object.values(CssGridItemJustifySelf),
+      defaultValue: CssGridItemJustifySelf[0],
+      isRequired: false,
+      isResponsive: true,
+      description: 'Controls horizontal alignment of the item within its grid cell.',
+    },
+    {
+      name: 'alignSelf',
+      options: Object.values(CssGridItemAlignSelf),
+      defaultValue: CssGridItemAlignSelf[0],
+      isRequired: false,
+      isResponsive: true,
+      description: 'Controls vertical alignment of the item within its grid cell.',
+    },
+  ],
+  examples: [
+    {
+      description:
+        'This example shows how Grid.Item can explicitly control placement: on small screens, Start and End stay on the first row while Middle drops below, and from the md breakpoint up all three align in one row. Resize the viewport to see the layout switch in action.',
+      jsx: (
+        <Grid gridTemplateColumns={{ base: 'auto 1fr auto', md: 'auto 1fr auto' }} gridAutoFlow="row">
+          <Grid.Item gridRow={{ base: '1 / 2', md: '1 / 2' }} gridColumn={{ base: '1 / 2', md: '1 / 2' }}>
+            <Box variant="outline" intent="primary">
+              Start
+            </Box>
+          </Grid.Item>
+          <Grid.Item gridRow={{ base: '2 / 3', md: '1 / 2' }} gridColumn={{ base: '1 / -1', md: '2 / 3' }}>
+            <Box variant="outline" intent="primary">
+              Middle
+            </Box>
+          </Grid.Item>
+          <Grid.Item gridRow={{ base: '1 / 2', md: '1 / 2' }} gridColumn={{ base: '3 / 4', md: '3 / 4' }}>
+            <Box variant="outline" intent="primary">
+              End
+            </Box>
+          </Grid.Item>
+        </Grid>
+      ),
+    },
+  ],
+}
+
 export default {
   Grid: GRID_META,
+  'Grid.Item': GRID_ITEM_META,
 }

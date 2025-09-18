@@ -40,6 +40,9 @@ export const CssGridPlaceContent = [
   'space-evenly',
 ] as const
 
+export const CssGridItemJustifySelf = ['auto', 'start', 'center', 'end', 'stretch'] as const
+export const CssGridItemAlignSelf = ['auto', 'start', 'center', 'end', 'stretch'] as const
+
 // types
 
 export type CssDisplay = (typeof CssDisplay)[number]
@@ -56,3 +59,5 @@ export type CssFlexItemAlignSelf = (typeof CssFlexItemAlignSelf)[number]
 export type CssGridAutoFlow = (typeof CssGridAutoFlow)[number]
 export type CssGridPlaceItems = (typeof CssGridPlaceItems)[number]
 export type CssGridPlaceContent = (typeof CssGridPlaceItems)[number]
+export type CssGridItemJustifySelf = (typeof CssGridItemJustifySelf)[number]
+export type CssGridItemAlignSelf = (typeof CssGridItemAlignSelf)[number]
