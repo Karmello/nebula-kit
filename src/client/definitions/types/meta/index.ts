@@ -9,6 +9,7 @@ type Overview = {
   examplesOfUse?: string[]
   responsiveProps?: string[]
   composedOf?: Record<string, readonly string[]>
+  rendersAs?: readonly string[]
 }
 
 type Prop<PropsType> = {

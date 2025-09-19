@@ -17,6 +17,7 @@ const WITH_ICON_META: ComponentMeta<WithIconOwnProps> = {
       'compose higher-level components that support icons',
     ],
     composedOf: WITH_ICON_INHERITED_PROPS,
+    rendersAs: ['span'],
   },
   ownProps: [
     {

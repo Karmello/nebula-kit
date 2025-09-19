@@ -11,13 +11,11 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
       'handle interactivity states such as hover, focus, active, and disabled',
       'support optional icon and text composition for clarity of meaning',
     ],
-    behavior: [
-      `the elem prop is restricted to ${ButtonElem.map(s => `<${s}>`).join(', ')}`,
-      'requires children',
-    ],
+    behavior: ['requires children'],
     byDefault: ['medium size', 'solid variant', 'tertiary intent'],
     examplesOfUse: ['applied wherever a clear, consistent action trigger is needed in the interface'],
     composedOf: BUTTON_INHERITED_PROPS,
+    rendersAs: ButtonElem,
   },
   ownProps: [
     {

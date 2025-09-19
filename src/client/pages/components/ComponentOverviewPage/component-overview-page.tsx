@@ -12,7 +12,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<unknown> }) => {
   const elemToString = elemToStringService()
 
   const {
-    overview: { title, description, role, behavior, byDefault, examplesOfUse, composedOf },
+    overview: { title, description, role, behavior, byDefault, examplesOfUse, composedOf, rendersAs },
     examples,
     ownProps,
   } = meta
@@ -24,6 +24,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<unknown> }) => {
       {composedOf ? (
         <ListWithChips heading="Composed of:" items={Object.keys(composedOf)} intent="warning" />
       ) : null}
+      {rendersAs ? <ListWithChips heading="Renders as:" items={rendersAs} intent="danger" /> : null}
       {role ? <ListWithHeading heading="Role:" items={role} /> : null}
       {behavior ? <ListWithHeading heading="Behavior:" items={behavior} /> : null}
       {byDefault ? <ListWithHeading heading="By default:" items={byDefault} /> : null}

@@ -34,6 +34,7 @@ const SPLIT_VIEW_META: ComponentMeta<SplitViewOwnProps> = {
       'displaying filters or tools alongside main content',
       'building dashboards where the side panel supplements the primary view',
     ],
+    rendersAs: ['div'],
   },
   ownProps: [
     {
@@ -85,8 +86,8 @@ const SPLIT_VIEW_SIDE_META: ComponentMeta<any> = {
     title: 'SplitView.Side',
     description: 'The side panel region of the layout.',
     composedOf: SPLIT_VIEW_SIDE_INHERITED_PROPS,
-    behavior: ['renders as <aside> element'],
     byDefault: [`sets inlineSize to ${DEFAULT_SPLIT_VIEW_SIDE_WIDTH}`],
+    rendersAs: ['aside'],
   },
 }
 
@@ -95,8 +96,8 @@ const SPLIT_VIEW_MAIN_META: ComponentMeta<any> = {
     title: 'SplitView.Main',
     description: 'The main panel region of the layout.',
     composedOf: SPLIT_VIEW_MAIN_INHERITED_PROPS,
-    behavior: ['renders as <section> element'],
     byDefault: ['no padding applied'],
+    rendersAs: ['section'],
   },
 }
 

@@ -14,6 +14,7 @@ const TOOLBAR_META: ComponentMeta<ToolbarOwnProps> = {
     behavior: ['...'],
     examplesOfUse: ['...'],
     composedOf: TOOLBAR_INHERITED_PROPS,
+    rendersAs: ['nav'],
   },
   ownProps: [
     {

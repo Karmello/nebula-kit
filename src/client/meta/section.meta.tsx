@@ -10,11 +10,7 @@ const SECTION_META: ComponentMeta<SectionOwnProps> = {
       'groups related content into a distinct, semantic block',
       'separates content visually with a divider and spacing',
     ],
-    behavior: [
-      'requires children',
-      'requires a heading prop',
-      `restricts the elem prop to ${SectionElem.map(s => `<${s}>`).join(', ')}`,
-    ],
+    behavior: ['requires children', 'requires a heading prop'],
     byDefault: [
       'renders as a <section> element',
       'renders the heading as a Text component with h6 typography',
@@ -26,6 +22,7 @@ const SECTION_META: ComponentMeta<SectionOwnProps> = {
       'organizing dashboard widgets with headings',
     ],
     composedOf: SECTION_INHERITED_PROPS,
+    rendersAs: SectionElem,
   },
   ownProps: [
     {

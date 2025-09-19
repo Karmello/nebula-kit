@@ -17,7 +17,6 @@ const MARKER_LIST_META: ComponentMeta<MarkerListOwnProps> = {
       'establishes a semantic list container with native markers',
       'ensures each item is rendered as part of an accessible list structure',
     ],
-    behavior: [`restricts the elem prop to ${MarkerListElem.map(s => `<${s}>`).join(', ')}`],
     byDefault: [
       'renders as a <ul> element',
       'expects children to be <MarkerList.Item>',
@@ -29,6 +28,7 @@ const MARKER_LIST_META: ComponentMeta<MarkerListOwnProps> = {
       'grouping related information where the marker itself carries meaning',
     ],
     composedOf: MARKER_LIST_INHERITED_PROPS,
+    rendersAs: MarkerListElem,
   },
   ownProps: [
     {
@@ -83,8 +83,8 @@ const MARKER_LIST_ITEM_META: ComponentMeta<any> = {
   overview: {
     title: 'MarkerList.Item',
     description: 'Represents an individual element within a MarkerList.',
-    behavior: ['renders as a <li> element'],
     composedOf: MARKER_LIST_ITEM_INHERITED_PROPS,
+    rendersAs: ['li'],
   },
 }
 

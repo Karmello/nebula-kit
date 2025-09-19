@@ -11,10 +11,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       'provide common text styling and formatting options',
       'allow integration of inline icons alongside text',
     ],
-    behavior: [
-      'requires children',
-      `the elem prop is restricted to ${TextElem.map(s => `<${s}>`).join(', ')}`,
-    ],
+    behavior: ['requires children'],
     byDefault: ['renders as a <p> tag', 'uses neutral text intent'],
     examplesOfUse: [
       'display body copy, captions, and headings',
@@ -22,6 +19,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       'combine text with icons for labels or actions',
     ],
     composedOf: TEXT_INHERITED_PROPS,
+    rendersAs: TextElem,
   },
   ownProps: [
     {

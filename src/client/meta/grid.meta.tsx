@@ -30,7 +30,6 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
     behavior: [
       'always applies display: grid',
       'uses Box internally to ensure consistent reset and baseline styles',
-      `restricts elem to structural HTML tags: ${GridElem.map(s => `<${s}>`).join(', ')}`,
     ],
     byDefault: [
       'renders as a <div> element',
@@ -43,6 +42,7 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
       'building responsive page sections',
     ],
     composedOf: GRID_INHERITED_PROPS,
+    rendersAs: GridElem,
   },
   ownProps: [
     {
