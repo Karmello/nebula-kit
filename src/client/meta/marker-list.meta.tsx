@@ -1,14 +1,14 @@
-import {
-  MarkerListOwnProps,
-  MarkerList,
-  Box,
-  MARKER_LIST_INHERITED_PROPS,
-  MARKER_LIST_ITEM_INHERITED_PROPS,
-  MarkerListStyle,
-  MarkerListElem,
-} from 'lib/components'
-
+import { MarkerList, Box } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
+
+import {
+  MARKER_LIST_INHERITED_PROPS,
+  MarkerListElem,
+  MarkerListOwnProps,
+  MarkerListStyle,
+} from 'lib/components/elements/MarkerList/definitions'
+
+import { MARKER_LIST_ITEM_INHERITED_PROPS } from 'lib/components/elements/MarkerList/MarkerListItem/definitions'
 
 const MARKER_LIST_META: ComponentMeta<MarkerListOwnProps> = {
   overview: {

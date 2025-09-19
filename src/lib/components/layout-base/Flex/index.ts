@@ -6,6 +6,5 @@ export const Flex = Object.assign(FlexBase, {
   Item: FlexItem,
 })
 
-export * from './flex'
-export * from './definitions'
+export { type FlexProps } from './definitions'
 export * from './FlexItem'

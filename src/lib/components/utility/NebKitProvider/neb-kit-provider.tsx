@@ -1,15 +1,10 @@
 import { ReactElement, useEffect, useLayoutEffect } from 'react'
 
-import { DEFAULT_BORDER_RADIUS, DEFAULT_THEME, ScaleValue, Theme } from 'lib/definitions'
+import { DEFAULT_BORDER_RADIUS, DEFAULT_THEME } from 'lib/definitions'
 import { useLibStore } from 'lib/state'
 
+import { NebKitProviderProps } from './definitions'
 import 'lib/styles/index.scss'
-
-export type NebKitProviderProps = {
-  children: ReactElement
-  defaultTheme?: Theme
-  defaultBorderRadius?: ScaleValue | string
-}
 
 export const NebKitProvider = ({
   children,

@@ -1,8 +1,10 @@
+import { ComponentProps, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
-import { Button, ButtonElem } from 'lib/components'
+import { Button } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
+import { ButtonElem } from '../Button/definitions'
 import { IconButtonProps } from './definitions'
 
 import './icon-button.scss'
@@ -20,10 +22,12 @@ export const IconButton = <E extends ButtonElem = 'button'>({
   return (
     <Button
       elem={elem || 'button'}
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('icon-btn'), elemProps?.className || ''),
-      }}
+      elemProps={
+        {
+          ...elemProps,
+          className: classNames(withPrefix('icon-btn'), elemProps?.className || ''),
+        } as PropsWithoutRef<ComponentProps<E>>
+      }
       elemRef={elemRef}
       size={size}
       variant={variant}

@@ -1,2 +1,2 @@
-export * from './box'
-export * from './definitions'
+export { Box } from './box'
+export { type BoxProps } from './definitions'

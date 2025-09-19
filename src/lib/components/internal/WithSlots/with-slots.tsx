@@ -1,13 +1,8 @@
-import { Children, isValidElement, JSX, ReactNode } from 'react'
+import { Children, isValidElement, ReactNode } from 'react'
 
 import { LIB_NAME } from 'lib/definitions'
 
-export type WithSlotsProps<SlotName extends string> = {
-  componentName: string
-  childrenToVerify: ReactNode
-  slotsConfig: { name: SlotName; required?: boolean; allowMultiple?: boolean }[]
-  children: (slots: Record<SlotName, ReactNode>) => JSX.Element
-}
+import { WithSlotsProps } from './definitions'
 
 export const WithSlots = <SlotName extends string>({
   componentName,

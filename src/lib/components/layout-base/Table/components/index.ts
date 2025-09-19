@@ -1,0 +1,7 @@
+export * from './TableBody'
+export * from './TableCaption'
+export * from './TableCell'
+export * from './TableFoot'
+export * from './TableHead'
+export * from './TableHeadCell'
+export * from './TableRow'

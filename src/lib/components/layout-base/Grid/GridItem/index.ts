@@ -1,2 +1,2 @@
-export * from './grid-item'
-export * from './definitions'
+export { GridItem } from './grid-item'
+export { type GridItemProps } from './definitions'

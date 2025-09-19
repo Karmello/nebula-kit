@@ -1,3 +1,4 @@
+import { ComponentProps, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
 import { Box, Text } from 'lib/components'
@@ -32,11 +33,13 @@ export const Button = <E extends ButtonElem = 'button'>({
   return (
     <Box
       elem={elem || 'button'}
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('btn'), elemProps?.className),
-        type: elemProps?.type || 'button',
-      }}
+      elemProps={
+        {
+          ...elemProps,
+          className: classNames(withPrefix('btn'), elemProps?.className),
+          type: elemProps?.type || 'button',
+        } as PropsWithoutRef<ComponentProps<E>>
+      }
       elemRef={elemRef}
       variant={variant}
       intent={intent}

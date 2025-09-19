@@ -1,11 +1,9 @@
 import { ComponentMeta } from 'client/definitions'
-import { APP_FRAME_INHERITED_PROPS, AppFrame, AppFrameOwnProps, Text } from 'lib/components'
-
-import {
-  APP_FRAME_FOOTER_INHERITED_PROPS,
-  APP_FRAME_HEADER_INHERITED_PROPS,
-  APP_FRAME_MAIN_INHERITED_PROPS,
-} from 'lib/components/layouts/AppFrame/slots'
+import { AppFrame, Text } from 'lib/components'
+import { APP_FRAME_INHERITED_PROPS, AppFrameOwnProps } from 'lib/components/layouts/AppFrame/definitions'
+import { APP_FRAME_FOOTER_INHERITED_PROPS } from 'lib/components/layouts/AppFrame/slots/AppFrameFooter/definitions'
+import { APP_FRAME_HEADER_INHERITED_PROPS } from 'lib/components/layouts/AppFrame/slots/AppFrameHeader/definitions'
+import { APP_FRAME_MAIN_INHERITED_PROPS } from 'lib/components/layouts/AppFrame/slots/AppFrameMain/definitions'
 
 const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
   overview: {

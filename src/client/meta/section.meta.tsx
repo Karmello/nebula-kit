@@ -1,5 +1,11 @@
-import { Section, Text, SECTION_INHERITED_PROPS, SectionOwnProps, SectionElem } from 'lib/components'
+import { Section, Text } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
+
+import {
+  SECTION_INHERITED_PROPS,
+  SectionElem,
+  SectionOwnProps,
+} from 'lib/components/containers/Section/definitions'
 
 const SECTION_META: ComponentMeta<SectionOwnProps> = {
   overview: {

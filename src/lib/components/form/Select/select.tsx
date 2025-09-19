@@ -1,15 +1,6 @@
-export type SelectOption = {
-  value: string
-  label: string
-}
+import { SelectProps } from './definitions'
 
-export type SelectOwnProps = {
-  value: string
-  onChange: (value: string) => void
-  options: SelectOption[]
-}
-
-export const Select = ({ value, onChange, options = [] }: SelectOwnProps) => {
+export const Select = ({ value, onChange, options = [] }: SelectProps) => {
   return (
     <select value={value} onChange={e => onChange(e.target.value)}>
       {options.map(({ value, label }) => (

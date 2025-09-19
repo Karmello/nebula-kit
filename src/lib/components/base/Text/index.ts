@@ -1,2 +1,2 @@
-export * from './text'
-export * from './definitions'
+export { Text } from './text'
+export { type TextProps } from './definitions'

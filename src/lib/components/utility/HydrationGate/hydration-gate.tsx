@@ -1,10 +1,6 @@
-import { ReactElement, ReactNode, useLayoutEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 
-export type HydrationGateProps = {
-  children: ReactElement
-  minDelay?: number
-  fallback?: ReactNode
-}
+import { HydrationGateProps } from './definitions'
 
 export const HydrationGate = ({ children, minDelay = 0, fallback = null }: HydrationGateProps) => {
   const [visible, setVisible] = useState(false)

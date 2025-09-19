@@ -10,7 +10,7 @@ expectError(<Text />)
 expectType(<Text>text</Text>)
 
 // not allowed tag used
-expectError(<Text elem="a">text</Text>)
+expectError(<Text elem="ul">text</Text>)
 
 // not allowed ref type passed
 expectError(<Text elemRef={createRef<HTMLAnchorElement>()}>text</Text>)

@@ -1,10 +1,8 @@
 import { Flex, Text } from 'lib/components'
 
-export type BreadcrumbOwnProps = {
-  items: string[]
-}
+import { BreadcrumbProps } from './definitions'
 
-export const Breadcrumb = ({ items }: BreadcrumbOwnProps) => {
+export const Breadcrumb = ({ items }: BreadcrumbProps) => {
   if (!items?.length) {
     return null
   }

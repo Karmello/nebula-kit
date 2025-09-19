@@ -1,5 +1,6 @@
-import { BoxIntent, BoxProps, BoxVariant, TextProps } from 'lib/components/base'
+import { BoxProps, TextProps } from 'lib/components'
 import { MakeRequired, ScaleValue } from 'lib/definitions'
+import { BoxIntent, BoxVariant } from 'lib/components/base/Box/definitions'
 
 export const ButtonElem = ['button', 'a'] as const
 export type ButtonElem = (typeof ButtonElem)[number]

@@ -1,5 +1,10 @@
-import { DEFAULT_SPACER_BLOCK_SIZE, Spacer, SPACER_INHERITED_PROPS, Text } from 'lib/components'
+import { Spacer, Text } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
+
+import {
+  DEFAULT_SPACER_BLOCK_SIZE,
+  SPACER_INHERITED_PROPS,
+} from 'lib/components/layout-base/Spacer/definitions'
 
 const SPACER_META: ComponentMeta<any> = {
   overview: {

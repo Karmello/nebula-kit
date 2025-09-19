@@ -1,1 +1,2 @@
-export * from './breadcrumb'
+export { Breadcrumb } from './breadcrumb'
+export { type BreadcrumbProps } from './definitions'

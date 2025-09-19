@@ -2,6 +2,7 @@ import { ElementType } from 'react'
 import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
+
 import { NativeElemProps } from './definitions'
 
 export const NativeElem = <E extends ElementType = 'div'>({

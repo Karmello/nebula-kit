@@ -6,6 +6,5 @@ export const Grid = Object.assign(GridBase, {
   Item: GridItem,
 })
 
-export * from './grid'
-export * from './definitions'
+export { type GridProps } from './definitions'
 export * from './GridItem'

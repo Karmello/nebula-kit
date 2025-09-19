@@ -1,13 +1,7 @@
-import { BoxIntent, DEFAULT_SVG_ICON_SIZE } from 'lib/components'
-import { IconName, ScaleValue } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 import { getSvgIconComponent } from 'lib/icons/lucide'
 
-export type SvgIconProps = {
-  iconName: IconName
-  iconSize?: ScaleValue
-  iconIntent?: BoxIntent
-}
+import { DEFAULT_SVG_ICON_SIZE, SvgIconProps } from './definitions'
 
 export const SvgIcon = ({
   iconName,

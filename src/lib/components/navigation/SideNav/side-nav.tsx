@@ -1,38 +1,12 @@
 import { useLayoutEffect, useMemo, useState } from 'react'
 
-import { Box, Button, ButtonProps, Flex, BUTTON_SIZE_CONFIG } from 'lib/components'
+import { Box, Button, Flex } from 'lib/components'
 import { scale } from 'lib/helpers'
+import { BUTTON_SIZE_CONFIG } from 'lib/components/controls/Button/definitions'
 
-type Group = Omit<ButtonProps, 'children' | 'size' | 'variant' | 'intent'> & {
-  key: string
-  label: string
-  items?: Item[]
-}
+import { Config, SideNavProps } from './definitions'
 
-type Item = Omit<ButtonProps, 'children' | 'size' | 'variant' | 'intent'> & {
-  key: string
-  label: string
-}
-
-type Config = {
-  default?: {
-    variant?: ButtonProps['variant']
-    intent?: ButtonProps['intent']
-  }
-  active?: {
-    variant?: ButtonProps['variant']
-    intent?: ButtonProps['intent']
-  }
-}
-
-export type SideNavOwnProps = {
-  groups: Group[]
-  activeKey: string
-  groupConfig?: Config
-  itemConfig?: Config
-}
-
-export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: SideNavOwnProps) => {
+export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: SideNavProps) => {
   const [openGroupKey, setOpenGroupKey] = useState<string>('')
 
   useLayoutEffect(() => {

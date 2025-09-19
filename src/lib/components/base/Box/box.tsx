@@ -1,10 +1,11 @@
-import { ElementType, ComponentRef, useRef, useLayoutEffect, PropsWithoutRef } from 'react'
+import { ElementType, ComponentRef, useRef, useLayoutEffect, PropsWithoutRef, ComponentProps } from 'react'
 import classNames from 'classnames'
 
 import { useLibStore } from 'lib/state'
-import { BoxProps, DEFAULT_BOX_INTENT, DEFAULT_BOX_VARIANT, NativeElem } from 'lib/components'
+import { BoxProps, NativeElem } from 'lib/components'
 import { computeResponsiveCss, getDataAttrs, scale, useScreen, withPrefix } from 'lib/helpers'
 
+import { DEFAULT_BOX_INTENT, DEFAULT_BOX_VARIANT } from './definitions'
 import './styles/box.scss'
 
 export const Box = <E extends ElementType = 'div'>({
@@ -135,7 +136,7 @@ export const Box = <E extends ElementType = 'div'>({
           className: classNames(withPrefix('box'), elemProps?.className || ''),
           disabled,
           ...getDataAttrs('box', { variant, intent, interactive, disabled }),
-        } as PropsWithoutRef<React.ComponentProps<E>>
+        } as PropsWithoutRef<ComponentProps<E>>
       }
       elemRef={elemRef || ref}
     >

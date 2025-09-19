@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
 
-import { DEFAULT_SVG_ICON_SIZE, SvgIcon } from '..'
+import { DEFAULT_SVG_ICON_SIZE } from '../definitions'
+import { SvgIcon } from '..'
 
 describe('<SvgIcon />', () => {
   it('renders SVG component', () => {

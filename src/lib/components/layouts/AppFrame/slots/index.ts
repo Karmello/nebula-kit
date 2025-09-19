@@ -1,3 +1,3 @@
-export * from './Footer'
-export * from './Header'
-export * from './Main'
+export * from './AppFrameFooter'
+export * from './AppFrameHeader'
+export * from './AppFrameMain'

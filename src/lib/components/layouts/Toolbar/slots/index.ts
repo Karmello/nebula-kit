@@ -1,3 +1,3 @@
-export * from './Start'
-export * from './Main'
-export * from './End'
+export * from './ToolbarStart'
+export * from './ToolbarMain'
+export * from './ToolbarEnd'

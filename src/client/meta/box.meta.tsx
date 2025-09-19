@@ -1,15 +1,15 @@
+import { Box } from 'lib/components'
+import { CssDisplay, CssOverflow, CssPosition, CssTextAlign } from 'lib/definitions'
+import { ComponentMeta } from 'client/definitions'
+
 import {
-  Box,
   BOX_INHERITED_PROPS,
   BoxIntent,
   BoxOwnProps,
   BoxVariant,
   DEFAULT_BOX_INTENT,
   DEFAULT_BOX_VARIANT,
-} from 'lib/components'
-
-import { CssDisplay, CssOverflow, CssPosition, CssTextAlign } from 'lib/definitions'
-import { ComponentMeta } from 'client/definitions'
+} from 'lib/components/base/Box/definitions'
 
 const BOX_META: ComponentMeta<BoxOwnProps> = {
   overview: {

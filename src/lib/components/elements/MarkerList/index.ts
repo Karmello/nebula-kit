@@ -6,6 +6,5 @@ export const MarkerList = Object.assign(MarkerListBase, {
   Item: MarkerListItem,
 })
 
-export * from './marker-list'
-export * from './definitions'
+export { type MarkerListProps } from './definitions'
 export * from './MarkerListItem'

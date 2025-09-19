@@ -1,5 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
-import { BoxIntent, DEFAULT_SVG_ICON_SIZE, SvgIcon, SvgIconProps } from 'lib/components'
+import { SvgIcon, SvgIconProps } from 'lib/components'
+import { BoxIntent } from 'lib/components/base/Box/definitions'
+import { DEFAULT_SVG_ICON_SIZE } from 'lib/components/elements/SvgIcon/definitions'
 
 const SVG_ICON_META: ComponentMeta<SvgIconProps> = {
   overview: {

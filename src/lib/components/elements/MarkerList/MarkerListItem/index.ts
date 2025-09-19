@@ -1,2 +1,2 @@
-export * from './marker-list-item'
-export * from './definitions'
+export { MarkerListItem } from './marker-list-item'
+export { type MarkerListItemProps } from './definitions'

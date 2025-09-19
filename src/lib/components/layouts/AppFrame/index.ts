@@ -1,14 +1,12 @@
 import { AppFrame as AppFrameBase } from './app-frame'
 
-import { Header } from './slots/Header'
-import { Main } from './slots/Main'
-import { Footer } from './slots/Footer'
+import { AppFrameHeader, AppFrameMain, AppFrameFooter } from './slots'
 
 export const AppFrame = Object.assign(AppFrameBase, {
-  Header,
-  Main,
-  Footer,
+  Header: AppFrameHeader,
+  Main: AppFrameMain,
+  Footer: AppFrameFooter,
 })
 
-export * from './app-frame'
-export * from './definitions'
+export { type AppFrameProps } from './definitions'
+export type { AppFrameHeaderProps, AppFrameMainProps, AppFrameFooterProps } from './slots'

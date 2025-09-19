@@ -1,3 +1,3 @@
-export * from './Main'
-export * from './MainBar'
-export * from './Side'
+export * from './SplitViewMain'
+export * from './SplitViewMainBar'
+export * from './SplitViewSide'

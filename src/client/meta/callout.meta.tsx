@@ -1,14 +1,13 @@
-import {
-  Callout,
-  CALLOUT_INHERITED_PROPS,
-  CalloutOwnProps,
-  CALLOUT_CONFIG,
-  Spacer,
-  DEFAULT_CALLOUT_INTENT,
-  CalloutElem,
-} from 'lib/components'
-
+import { Callout, Spacer } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
+
+import {
+  CALLOUT_CONFIG,
+  CALLOUT_INHERITED_PROPS,
+  CalloutElem,
+  CalloutOwnProps,
+  DEFAULT_CALLOUT_INTENT,
+} from 'lib/components/feedback/Callout/definitions'
 
 const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
   overview: {

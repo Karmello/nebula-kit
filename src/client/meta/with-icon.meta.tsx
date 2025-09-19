@@ -1,12 +1,12 @@
 import { ComponentMeta } from 'client/definitions'
+import { WithIcon } from 'lib/components'
 
 import {
   DEFAULT_WITH_ICON_ICON_POSITION,
   IconPosition,
   WITH_ICON_INHERITED_PROPS,
-  WithIcon,
   WithIconOwnProps,
-} from 'lib/components'
+} from 'lib/components/utility/WithIcon/definitions'
 
 const WITH_ICON_META: ComponentMeta<WithIconOwnProps> = {
   overview: {

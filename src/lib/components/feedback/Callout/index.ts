@@ -1,2 +1,2 @@
-export * from './callout'
-export * from './definitions'
+export { Callout } from './callout'
+export { type CalloutProps } from './definitions'

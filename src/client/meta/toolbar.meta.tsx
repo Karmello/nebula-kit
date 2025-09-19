@@ -1,11 +1,9 @@
 import { ComponentMeta } from 'client/definitions'
-import { TOOLBAR_INHERITED_PROPS, Toolbar, ToolbarOwnProps } from 'lib/components'
-
-import {
-  TOOLBAR_END_INHERITED_PROPS,
-  TOOLBAR_MAIN_INHERITED_PROPS,
-  TOOLBAR_START_INHERITED_PROPS,
-} from 'lib/components/layouts/Toolbar/slots'
+import { Toolbar } from 'lib/components'
+import { TOOLBAR_INHERITED_PROPS, ToolbarOwnProps } from 'lib/components/layouts/Toolbar/definitions'
+import { TOOLBAR_END_INHERITED_PROPS } from 'lib/components/layouts/Toolbar/slots/ToolbarEnd/definitions'
+import { TOOLBAR_MAIN_INHERITED_PROPS } from 'lib/components/layouts/Toolbar/slots/ToolbarMain/definitions'
+import { TOOLBAR_START_INHERITED_PROPS } from 'lib/components/layouts/Toolbar/slots/ToolbarStart/definitions'
 
 const TOOLBAR_META: ComponentMeta<ToolbarOwnProps> = {
   overview: {

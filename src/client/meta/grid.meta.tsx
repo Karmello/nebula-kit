@@ -1,4 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
+import { Box, Grid } from 'lib/components'
 
 import {
   CssGridAutoFlow,
@@ -8,15 +9,12 @@ import {
   CssGridItemAlignSelf,
 } from 'lib/definitions'
 
+import { GRID_INHERITED_PROPS, GridElem, GridOwnProps } from 'lib/components/layout-base/Grid/definitions'
+
 import {
-  Box,
-  Grid,
-  GRID_INHERITED_PROPS,
   GRID_ITEM_INHERITED_PROPS,
-  GridElem,
   GridItemOwnProps,
-  GridOwnProps,
-} from 'lib/components'
+} from 'lib/components/layout-base/Grid/GridItem/definitions'
 
 const GRID_META: ComponentMeta<GridOwnProps> = {
   overview: {

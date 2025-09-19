@@ -1,21 +1,16 @@
-import { DEFAULT_SWITCH_AT, SwitchAt } from 'lib/definitions'
 import { ComponentMeta } from 'client/definitions'
+import { DEFAULT_SWITCH_AT, SwitchAt } from 'lib/definitions'
+import { Box, SplitView, Text } from 'lib/components'
+import { SPLIT_VIEW_SIDE_INHERITED_PROPS } from 'lib/components/layouts/SplitView/slots/SplitViewSide/definitions'
+import { SPLIT_VIEW_MAIN_INHERITED_PROPS } from 'lib/components/layouts/SplitView/slots/SplitViewMain/definitions'
+import { SPLIT_VIEW_MAIN_BAR_INHERITED_PROPS } from 'lib/components/layouts/SplitView/slots/SplitViewMainBar/definitions'
 
 import {
-  Box,
   DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
   SPLIT_VIEW_INHERITED_PROPS,
-  SplitView,
   SplitViewOwnProps,
   SplitViewSidePosition,
-  Text,
-} from 'lib/components'
-
-import {
-  SPLIT_VIEW_MAIN_BAR_INHERITED_PROPS,
-  SPLIT_VIEW_MAIN_INHERITED_PROPS,
-  SPLIT_VIEW_SIDE_INHERITED_PROPS,
-} from 'lib/components/layouts/SplitView/slots'
+} from 'lib/components/layouts/SplitView/definitions'
 
 const SPLIT_VIEW_META: ComponentMeta<SplitViewOwnProps> = {
   overview: {

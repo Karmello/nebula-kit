@@ -1,2 +1,2 @@
-export * from './svg-icon'
-export * from './definitions'
+export { SvgIcon } from './svg-icon'
+export { type SvgIconProps } from './definitions'

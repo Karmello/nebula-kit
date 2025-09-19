@@ -1,23 +1,11 @@
 import classNames from 'classnames'
 
-import { Box, BoxProps, TableContext } from 'lib/components'
+import { Box } from 'lib/components'
 import { withPrefix, getDataAttrs } from 'lib/helpers'
 
+import { TableContext } from './use-table-context'
+import { TableProps } from './definitions'
 import './table.scss'
-
-export type TableLayout = 'auto' | 'fixed'
-
-export type TableOwnProps = {
-  layout?: TableLayout
-  zebra?: boolean
-  stickyHeader?: boolean
-}
-
-export type TableProps = Pick<
-  BoxProps<'table'>,
-  'children' | 'elemProps' | 'elemRef' | 'variant' | 'intent'
-> &
-  TableOwnProps
 
 export const Table = ({
   children,

@@ -1,12 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
+import { Flex, Box } from 'lib/components'
+import { FLEX_INHERITED_PROPS, FlexOwnProps } from 'lib/components/layout-base/Flex/definitions'
+
 import {
-  Flex,
-  Box,
-  FLEX_INHERITED_PROPS,
-  FlexOwnProps,
-  FlexItemOwnProps,
   FLEX_ITEM_INHERITED_PROPS,
-} from 'lib/components'
+  FlexItemOwnProps,
+} from 'lib/components/layout-base/Flex/FlexItem/definitions'
 
 import {
   CssFlexAlignItems,
