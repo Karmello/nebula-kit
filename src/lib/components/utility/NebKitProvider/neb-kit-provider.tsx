@@ -25,6 +25,8 @@ export const NebKitProvider = ({
   useEffect(() => {
     setTheme(defaultTheme)
     setBorderRadius(defaultBorderRadius)
+
+    document.documentElement.style.setProperty('--neb-border-radius', `${defaultBorderRadius}px`)
   }, [])
 
   useEffect(() => {

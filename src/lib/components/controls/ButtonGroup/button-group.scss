@@ -1,0 +1,11 @@
+.neb-btn-group {
+  .neb-btn {
+    inline-size: 100%;
+  }
+}
+
+.neb-btn-group[data-neb-btn-group-attached='true'] {
+  .neb-btn {
+    border-radius: 0;
+  }
+}

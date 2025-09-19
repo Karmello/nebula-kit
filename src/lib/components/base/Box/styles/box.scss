@@ -47,6 +47,8 @@ html.neb-transitions {
   padding-inline: initial;
   padding-block: initial;
   padding: initial;
+
+  border-radius: var(--neb-border-radius, 0);
 }
 
 .neb-box[data-neb-box-variant][data-neb-box-intent]:focus-visible {

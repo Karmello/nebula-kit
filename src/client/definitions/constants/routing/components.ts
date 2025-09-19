@@ -33,6 +33,7 @@ export const COMPONENT_CATEGORIES = [
         label: 'IconButton',
         sections: COMPONENT_SECTIONS.filter(s => s.key !== 'props'),
       },
+      { key: 'button-group', label: 'ButtonGroup', sections: COMPONENT_SECTIONS },
     ],
   },
   {

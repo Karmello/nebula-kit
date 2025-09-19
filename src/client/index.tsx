@@ -7,7 +7,7 @@ import { NebKitProvider, HydrationGate } from 'lib/components'
 const Node = () => (
   <BrowserRouter>
     <HydrationGate>
-      <NebKitProvider defaultBorderRadius={3}>
+      <NebKitProvider defaultBorderRadius={5}>
         <App />
       </NebKitProvider>
     </HydrationGate>

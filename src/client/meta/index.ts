@@ -2,6 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 
 import appFrameMeta from './app-frame.meta'
 import boxMeta from './box.meta'
+import buttonGroupMeta from './button-group.meta'
 import buttonMeta from './button.meta'
 import calloutMeta from './callout.meta'
 import dividerMeta from './divider.meta'
@@ -23,6 +24,7 @@ import withIconMeta from './with-icon.meta'
 export default {
   'app-frame': appFrameMeta,
   box: boxMeta,
+  'button-group': buttonGroupMeta,
   button: buttonMeta,
   callout: calloutMeta,
   divider: dividerMeta,

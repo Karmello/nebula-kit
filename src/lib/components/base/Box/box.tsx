@@ -1,9 +1,8 @@
 import { ElementType, ComponentRef, useRef, useLayoutEffect, PropsWithoutRef, ComponentProps } from 'react'
 import classNames from 'classnames'
 
-import { useLibStore } from 'lib/state'
 import { BoxProps, NativeElem } from 'lib/components'
-import { computeResponsiveCss, getDataAttrs, scale, useScreen, withPrefix } from 'lib/helpers'
+import { computeResponsiveCss, getDataAttrs, useScreen, withPrefix } from 'lib/helpers'
 
 import { DEFAULT_BOX_INTENT, DEFAULT_BOX_VARIANT } from './definitions'
 import './styles/box.scss'
@@ -54,13 +53,12 @@ export const Box = <E extends ElementType = 'div'>({
 }: BoxProps<E>) => {
   const ref = useRef<ComponentRef<E>>(null)
 
-  const { borderRadius: globalBorderRadius } = useLibStore()
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
     computeResponsiveCss(elemRef || ref, bp, {
       opacity,
-      borderRadius: scale(borderRadius !== undefined ? borderRadius : globalBorderRadius),
+      borderRadius,
       textAlign,
       display,
       overflowX,
