@@ -1,5 +1,11 @@
 import { FlexProps } from 'lib/components'
-import { MarkerListElem, MarkerListStyle, MakeRequired } from 'lib/definitions'
+import { MakeRequired } from 'lib/definitions'
+
+export const MarkerListElem = ['ul', 'ol'] as const
+export type MarkerListElem = (typeof MarkerListElem)[number]
+
+export const MarkerListStyle = ['disc', 'circle', 'square', 'decimal'] as const
+export type MarkerListStyle = (typeof MarkerListStyle)[number]
 
 export type MarkerListOwnProps = {
   listStyle?: MarkerListStyle

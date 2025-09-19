@@ -1,8 +1,13 @@
-import { HorizontalPosition, MakeRequired, SwitchAt } from 'lib/definitions'
+import { MakeRequired, SwitchAt } from 'lib/definitions'
 import { GridProps } from 'lib/components'
 
+export const SplitViewSidePosition = ['left', 'right'] as const
+export type SplitViewSidePosition = (typeof SplitViewSidePosition)[number]
+
+export const DEFAULT_SPLIT_VIEW_SIDE_WIDTH = '225px'
+
 export type SplitViewOwnProps = {
-  sidePosition?: Extract<HorizontalPosition, 'left' | 'right'>
+  sidePosition?: SplitViewSidePosition
   switchAt?: SwitchAt
 }
 

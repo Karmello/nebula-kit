@@ -1,6 +1,6 @@
-import { ButtonElem, MakeRequired } from 'lib/definitions'
+import { MakeRequired } from 'lib/definitions'
 
-import { ButtonProps } from '../Button'
+import { ButtonElem, ButtonProps } from '../Button'
 
 export const ICON_BUTTON_INHERITED_PROPS = {
   Button: [

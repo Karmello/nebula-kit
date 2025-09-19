@@ -1,7 +1,17 @@
 import { BoxProps } from 'lib/components'
-import { CalloutElem, CalloutIntent, CalloutVariant, IconName } from 'lib/definitions'
+import { IconName } from 'lib/definitions'
 
-// types
+export const CalloutElem = ['div', 'section', 'article', 'aside'] as const
+export type CalloutElem = (typeof CalloutElem)[number]
+
+export const CalloutVariant = ['solid', 'outline'] as const
+export const CalloutIntent = ['info', 'success', 'warning', 'danger'] as const
+
+export type CalloutVariant = (typeof CalloutVariant)[number]
+export type CalloutIntent = (typeof CalloutIntent)[number]
+
+export const DEFAULT_CALLOUT_VARIANT: CalloutVariant = 'solid'
+export const DEFAULT_CALLOUT_INTENT: CalloutIntent = 'info'
 
 export type CalloutOwnProps = {
   content: string
@@ -32,8 +42,6 @@ export type CalloutInheritedProps<E extends CalloutElem = 'div'> = Pick<
 }
 
 export type CalloutProps<E extends CalloutElem = 'div'> = CalloutOwnProps & CalloutInheritedProps<E>
-
-// constants
 
 export const CALLOUT_CONFIG: Record<CalloutIntent, { heading: string; iconName: IconName }> = {
   info: { heading: 'Info', iconName: 'info' },

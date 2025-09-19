@@ -1,8 +1,6 @@
 import { ElementType } from 'react'
 
 import {
-  BoxVariant,
-  BoxIntent,
   CssDisplay,
   CssOverflow,
   CssPosition,
@@ -12,6 +10,26 @@ import {
 } from 'lib/definitions'
 
 import { NativeElemProps } from 'lib/components/utility'
+
+export const BoxVariant = ['solid', 'outline', 'ghost'] as const
+
+export const BoxIntent = [
+  'neutral',
+  'primary',
+  'secondary',
+  'tertiary',
+  'success',
+  'info',
+  'warning',
+  'danger',
+  'inverse',
+] as const
+
+export type BoxVariant = (typeof BoxVariant)[number]
+export type BoxIntent = (typeof BoxIntent)[number]
+
+export const DEFAULT_BOX_VARIANT: BoxVariant = 'ghost'
+export const DEFAULT_BOX_INTENT: BoxIntent = 'neutral'
 
 export type BoxOwnProps = {
   variant?: BoxVariant

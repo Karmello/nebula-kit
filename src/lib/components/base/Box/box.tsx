@@ -2,8 +2,7 @@ import { ElementType, ComponentRef, useRef, useLayoutEffect, PropsWithoutRef } f
 import classNames from 'classnames'
 
 import { useLibStore } from 'lib/state'
-import { BoxProps, NativeElem } from 'lib/components'
-import { DEFAULT_BOX_INTENT, DEFAULT_BOX_VARIANT } from 'lib/definitions'
+import { BoxProps, DEFAULT_BOX_INTENT, DEFAULT_BOX_VARIANT, NativeElem } from 'lib/components'
 import { computeResponsiveCss, getDataAttrs, scale, useScreen, withPrefix } from 'lib/helpers'
 
 import './styles/box.scss'

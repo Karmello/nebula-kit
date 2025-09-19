@@ -1,7 +1,11 @@
-import { IconPosition } from 'lib/definitions'
 import { SvgIconProps } from 'lib/components'
 
 import { NativeElemProps } from '../NativeElem'
+
+export const IconPosition = ['left', 'right'] as const
+export type IconPosition = (typeof IconPosition)[number]
+
+export const DEFAULT_WITH_ICON_ICON_POSITION: IconPosition = 'left'
 
 export type WithIconOwnProps = {
   iconPosition?: IconPosition

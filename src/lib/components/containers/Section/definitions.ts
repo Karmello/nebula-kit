@@ -1,7 +1,10 @@
 import { JSX } from 'react'
 
 import { BoxProps } from 'lib/components'
-import { MakeRequired, SectionElem } from 'lib/definitions'
+import { MakeRequired } from 'lib/definitions'
+
+export const SectionElem = ['section', 'article', 'aside', 'div'] as const
+export type SectionElem = (typeof SectionElem)[number]
 
 export type SectionOwnProps = {
   heading: string | JSX.Element

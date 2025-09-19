@@ -2,10 +2,9 @@ import { ComponentRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
 import { withPrefix, getDataAttrs, useScreen, computeResponsiveCss } from 'lib/helpers'
-import { DEFAULT_TEXT_TYPOGRAPHY, TextElem } from 'lib/definitions'
 import { Box, WithIcon } from 'lib/components'
 
-import { TEXT_TYPOGRAPHY_CONFIG, TextProps } from './definitions'
+import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_TYPOGRAPHY_CONFIG, TextElem, TextProps } from './definitions'
 
 import './text.scss'
 

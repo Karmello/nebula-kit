@@ -4,9 +4,9 @@ import {
   Box,
   MARKER_LIST_INHERITED_PROPS,
   MARKER_LIST_ITEM_INHERITED_PROPS,
+  MarkerListStyle,
+  MarkerListElem,
 } from 'lib/components'
-
-import { MarkerListElem, MarkerListStyle } from 'lib/definitions'
 
 import { ComponentMeta } from 'client/definitions'
 

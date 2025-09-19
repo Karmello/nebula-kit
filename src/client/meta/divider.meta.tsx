@@ -1,6 +1,12 @@
-import { Divider, DIVIDER_INHERITED_PROPS, DividerOwnProps, Text } from 'lib/components'
+import {
+  DEFAULT_DIVIDER_THICKNESS,
+  Divider,
+  DIVIDER_INHERITED_PROPS,
+  DividerOwnProps,
+  Text,
+} from 'lib/components'
+
 import { ComponentMeta } from 'client/definitions'
-import { DEFAULT_DIVIDER_THICKNESS } from 'lib/definitions'
 
 const DIVIDER_META: ComponentMeta<DividerOwnProps> = {
   overview: {

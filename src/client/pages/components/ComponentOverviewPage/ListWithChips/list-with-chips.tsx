@@ -1,5 +1,4 @@
-import { Box, Flex, Text } from 'lib/components'
-import { BoxIntent } from 'lib/definitions'
+import { Box, BoxIntent, Flex, Text } from 'lib/components'
 
 export const ListWithChips = ({
   heading,

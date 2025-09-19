@@ -1,6 +1,14 @@
-import { Callout, CALLOUT_INHERITED_PROPS, CalloutOwnProps, CALLOUT_CONFIG, Spacer } from 'lib/components'
+import {
+  Callout,
+  CALLOUT_INHERITED_PROPS,
+  CalloutOwnProps,
+  CALLOUT_CONFIG,
+  Spacer,
+  DEFAULT_CALLOUT_INTENT,
+  CalloutElem,
+} from 'lib/components'
+
 import { ComponentMeta } from 'client/definitions'
-import { DEFAULT_CALLOUT_INTENT } from 'lib/definitions'
 
 const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
   overview: {
@@ -29,6 +37,7 @@ const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
       'showing error details that require immediate attention',
     ],
     composedOf: CALLOUT_INHERITED_PROPS,
+    rendersAs: CalloutElem,
   },
   ownProps: [
     {

@@ -1,5 +1,15 @@
-import { BoxProps, TextProps } from 'lib/components/base'
-import { ButtonElem, ButtonSize, MakeRequired, ScaleValue } from 'lib/definitions'
+import { BoxIntent, BoxProps, BoxVariant, TextProps } from 'lib/components/base'
+import { MakeRequired, ScaleValue } from 'lib/definitions'
+
+export const ButtonElem = ['button', 'a'] as const
+export type ButtonElem = (typeof ButtonElem)[number]
+
+export const ButtonSize = ['xs', 'sm', 'md', 'lg'] as const
+export type ButtonSize = (typeof ButtonSize)[number]
+
+export const DEFAULT_BUTTON_VARIANT: BoxVariant = 'solid'
+export const DEFAULT_BUTTON_INTENT: BoxIntent = 'tertiary'
+export const DEFAULT_BUTTON_SIZE: ButtonSize = 'md'
 
 export type ButtonOwnProps = {
   size?: ButtonSize

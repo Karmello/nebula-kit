@@ -1,16 +1,15 @@
-import { ComponentMeta } from 'client/definitions'
-import { Box, BOX_INHERITED_PROPS, BoxOwnProps } from 'lib/components'
-
 import {
+  Box,
+  BOX_INHERITED_PROPS,
   BoxIntent,
+  BoxOwnProps,
   BoxVariant,
-  CssDisplay,
-  CssOverflow,
-  CssPosition,
-  CssTextAlign,
   DEFAULT_BOX_INTENT,
   DEFAULT_BOX_VARIANT,
-} from 'lib/definitions'
+} from 'lib/components'
+
+import { CssDisplay, CssOverflow, CssPosition, CssTextAlign } from 'lib/definitions'
+import { ComponentMeta } from 'client/definitions'
 
 const BOX_META: ComponentMeta<BoxOwnProps> = {
   overview: {

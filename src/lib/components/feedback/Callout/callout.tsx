@@ -1,7 +1,12 @@
 import { Box, Spacer, Text } from 'lib/components'
-import { CalloutElem, DEFAULT_CALLOUT_INTENT, DEFAULT_CALLOUT_VARIANT } from 'lib/definitions'
 
-import { CalloutProps, CALLOUT_CONFIG } from './definitions'
+import {
+  CalloutProps,
+  CALLOUT_CONFIG,
+  DEFAULT_CALLOUT_VARIANT,
+  DEFAULT_CALLOUT_INTENT,
+  CalloutElem,
+} from './definitions'
 
 export const Callout = <E extends CalloutElem = 'div'>({
   elem,

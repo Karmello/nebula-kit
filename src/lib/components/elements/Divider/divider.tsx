@@ -1,10 +1,9 @@
 import classNames from 'classnames'
 
-import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_THICKNESS } from 'lib/definitions'
 import { Box } from 'lib/components'
 import { scale, withPrefix } from 'lib/helpers'
 
-import { DividerProps } from './definitions'
+import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_THICKNESS, DividerProps } from './definitions'
 import './divider.scss'
 
 export const Divider = ({

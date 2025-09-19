@@ -1,10 +1,10 @@
 import { Grid } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { withPrefix, getDataAttrs, useScreen } from 'lib/helpers'
-import { BREAKPOINTS, DEFAULT_SWITCH_AT, HorizontalPosition } from 'lib/definitions'
+import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
 
 import { SplitViewMode, SplitViewProvider } from './SplitViewProvider'
-import { SplitViewProps } from './definitions'
+import { SplitViewProps, SplitViewSidePosition } from './definitions'
 
 import './split-view.scss'
 
@@ -14,7 +14,7 @@ export const SplitView = ({
   elemProps,
   elemRef,
   // own
-  sidePosition = HorizontalPosition[0],
+  sidePosition = SplitViewSidePosition[0],
   switchAt = DEFAULT_SWITCH_AT,
 }: SplitViewProps) => {
   const { bp } = useScreen()

@@ -2,13 +2,15 @@ import {
   CssGridAutoFlow,
   CssGridPlaceContent,
   CssGridPlaceItems,
-  GridElem,
   MakeRequired,
   ResponsiveProp,
   ScaleValue,
 } from 'lib/definitions'
 
 import { BoxProps } from 'lib/components'
+
+export const GridElem = ['div', 'section', 'main', 'article', 'aside', 'nav', 'ul', 'ol'] as const
+export type GridElem = (typeof GridElem)[number]
 
 export type GridOwnProps = {
   gridTemplateColumns?: ResponsiveProp<string | number>

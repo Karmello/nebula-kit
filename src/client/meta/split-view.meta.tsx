@@ -1,12 +1,15 @@
+import { DEFAULT_SWITCH_AT, SwitchAt } from 'lib/definitions'
 import { ComponentMeta } from 'client/definitions'
-import { Box, SPLIT_VIEW_INHERITED_PROPS, SplitView, SplitViewOwnProps, Text } from 'lib/components'
 
 import {
+  Box,
   DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
-  DEFAULT_SWITCH_AT,
-  HorizontalPosition,
-  SwitchAt,
-} from 'lib/definitions'
+  SPLIT_VIEW_INHERITED_PROPS,
+  SplitView,
+  SplitViewOwnProps,
+  SplitViewSidePosition,
+  Text,
+} from 'lib/components'
 
 import {
   SPLIT_VIEW_MAIN_BAR_INHERITED_PROPS,
@@ -39,8 +42,8 @@ const SPLIT_VIEW_META: ComponentMeta<SplitViewOwnProps> = {
   ownProps: [
     {
       name: 'sidePosition',
-      options: [HorizontalPosition[0], HorizontalPosition[2]],
-      defaultValue: HorizontalPosition[0],
+      options: SplitViewSidePosition as unknown as string[],
+      defaultValue: SplitViewSidePosition[0],
       isRequired: false,
       isResponsive: false,
       description: 'Controls which horizontal side of the layout the panel is attached to.',

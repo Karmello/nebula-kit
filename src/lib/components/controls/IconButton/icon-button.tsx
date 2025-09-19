@@ -1,8 +1,7 @@
 import classNames from 'classnames'
 
-import { Button } from 'lib/components'
+import { Button, ButtonElem } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { ButtonElem } from 'lib/definitions'
 
 import { IconButtonProps } from './definitions'
 

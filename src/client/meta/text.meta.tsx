@@ -1,6 +1,13 @@
 import { ComponentMeta } from 'client/definitions'
-import { DEFAULT_TEXT_TYPOGRAPHY, TextElem, TextTypography } from 'lib/definitions'
-import { Text, TEXT_INHERITED_PROPS, TextOwnProps } from 'lib/components'
+
+import {
+  DEFAULT_TEXT_TYPOGRAPHY,
+  Text,
+  TEXT_INHERITED_PROPS,
+  TextElem,
+  TextOwnProps,
+  TextTypography,
+} from 'lib/components'
 
 const TEXT_META: ComponentMeta<TextOwnProps> = {
   overview: {

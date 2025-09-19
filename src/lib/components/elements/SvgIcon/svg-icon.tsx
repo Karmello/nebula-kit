@@ -1,4 +1,5 @@
-import { BoxIntent, DEFAULT_SVG_ICON_SIZE, IconName, ScaleValue } from 'lib/definitions'
+import { BoxIntent, DEFAULT_SVG_ICON_SIZE } from 'lib/components'
+import { IconName, ScaleValue } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 import { getSvgIconComponent } from 'lib/icons/lucide'
 

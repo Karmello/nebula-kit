@@ -3,9 +3,8 @@ import classNames from 'classnames'
 
 import { Box } from 'lib/components'
 import { withPrefix, useScreen, computeResponsiveCss } from 'lib/helpers'
-import { GridElem } from 'lib/definitions'
 
-import { GridProps } from './definitions'
+import { GridElem, GridProps } from './definitions'
 
 import './grid.scss'
 

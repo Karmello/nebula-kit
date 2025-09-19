@@ -4,7 +4,6 @@ import {
   CssGridAutoFlow,
   CssGridPlaceItems,
   CssGridPlaceContent,
-  GridElem,
   CssGridItemJustifySelf,
   CssGridItemAlignSelf,
 } from 'lib/definitions'
@@ -14,6 +13,7 @@ import {
   Grid,
   GRID_INHERITED_PROPS,
   GRID_ITEM_INHERITED_PROPS,
+  GridElem,
   GridItemOwnProps,
   GridOwnProps,
 } from 'lib/components'

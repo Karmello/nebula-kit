@@ -1,6 +1,5 @@
-import { IconButton, ICON_BUTTON_INHERITED_PROPS, IconButtonProps } from 'lib/components'
+import { IconButton, ICON_BUTTON_INHERITED_PROPS, IconButtonProps, ButtonElem } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
-import { ButtonElem } from 'lib/definitions'
 
 const ICON_BUTTON_META: ComponentMeta<IconButtonProps> = {
   overview: {

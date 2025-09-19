@@ -1,7 +1,27 @@
-import { MakeRequired, ScaleValue, TextElem, TextTypography } from 'lib/definitions'
+import { MakeRequired, ScaleValue } from 'lib/definitions'
 import { WithIconProps } from 'lib/components'
 
 import { BoxProps } from '../Box'
+
+export const TextElem = ['p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a'] as const
+export type TextElem = (typeof TextElem)[number]
+
+export const TextTypography = [
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'h5',
+  'h6',
+  'lead',
+  'body',
+  'secondary',
+  'caption',
+] as const
+
+export type TextTypography = (typeof TextTypography)[number]
+
+export const DEFAULT_TEXT_TYPOGRAPHY: TextTypography = 'body'
 
 export type TextOwnProps = {
   typography?: TextTypography

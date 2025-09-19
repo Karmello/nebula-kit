@@ -1,5 +1,4 @@
-import { Box, Divider, SectionProps, Spacer, Text } from 'lib/components'
-import { SectionElem } from 'lib/definitions'
+import { Box, Divider, SectionElem, SectionProps, Spacer, Text } from 'lib/components'
 
 export const Section = <E extends SectionElem = 'section'>({
   elem,

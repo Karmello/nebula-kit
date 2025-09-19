@@ -4,13 +4,14 @@ import { Box, Text } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import {
-  DEFAULT_BUTTON_SIZE,
-  DEFAULT_BUTTON_INTENT,
-  DEFAULT_BUTTON_VARIANT,
+  BUTTON_SIZE_CONFIG,
   ButtonElem,
-} from 'lib/definitions'
+  ButtonProps,
+  DEFAULT_BUTTON_INTENT,
+  DEFAULT_BUTTON_SIZE,
+  DEFAULT_BUTTON_VARIANT,
+} from './definitions'
 
-import { BUTTON_SIZE_CONFIG, ButtonProps } from './definitions'
 import './button.scss'
 
 export const Button = <E extends ButtonElem = 'button'>({

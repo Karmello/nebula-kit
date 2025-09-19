@@ -1,5 +1,8 @@
-import { BoxProps } from 'lib/components'
+import { BoxIntent, BoxProps } from 'lib/components'
 import { ScaleValue } from 'lib/definitions'
+
+export const DEFAULT_DIVIDER_INTENT: BoxIntent = 'tertiary'
+export const DEFAULT_DIVIDER_THICKNESS = 1
 
 export type DividerOwnProps = {
   thickness?: ScaleValue | string

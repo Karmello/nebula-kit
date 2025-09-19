@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 
-import { Box, Flex, IconButton } from 'lib/components'
-import { DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from 'lib/definitions'
+import { Box, DEFAULT_SPLIT_VIEW_SIDE_WIDTH, Flex, IconButton } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import { SplitViewSideProps } from './definitions'

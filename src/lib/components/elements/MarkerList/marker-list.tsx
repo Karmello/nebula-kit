@@ -2,10 +2,9 @@ import classNames from 'classnames'
 
 import { Flex } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
-import { MarkerListElem } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
-import { MarkerListProps } from './definitions'
+import { MarkerListElem, MarkerListProps } from './definitions'
 import './marker-list.scss'
 
 export const MarkerList = <E extends MarkerListElem = 'ul'>({
