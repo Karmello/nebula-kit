@@ -8,7 +8,7 @@ import { APP_FRAME_MAIN_INHERITED_PROPS } from 'lib/components/layouts/AppFrame/
 
 const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
   overview: {
-    description: 'AppFrame is a structural component meant to wrap an entire application view.',
+    description: 'A structural component that locks the overall layout for an application view.',
     role: [
       'structure the application into top, center, and bottom regions',
       'control how those regions are arranged and related',

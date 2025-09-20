@@ -32,11 +32,11 @@ export const Callout = <E extends CalloutElem = 'div'>({
       padding={10}
       {...paddings}
     >
-      <Text typography="h5" iconName={CALLOUT_CONFIG[intent].iconName}>
+      <Text intent="neutral" typography="h5" iconName={CALLOUT_CONFIG[intent].iconName}>
         {heading || CALLOUT_CONFIG[intent].heading}
       </Text>
       <Spacer blockSize={5} />
-      <Text>{content}</Text>
+      <Text intent="neutral">{content}</Text>
     </Box>
   )
 }

@@ -16,7 +16,7 @@ type ContextProps = Omit<ProviderProps, 'children'> & {
 const ToolbarContext = createContext<ContextProps | null>(null)
 
 export const ToolbarProvider = ({ children, switchAt }: ProviderProps) => {
-  const [mainOpen, setMainOpen] = useState<boolean>(false)
+  const [mainOpen, setMainOpen] = useState<boolean>(true)
 
   return (
     <ToolbarContext.Provider value={{ switchAt, mainOpen, setMainOpen }}>{children}</ToolbarContext.Provider>

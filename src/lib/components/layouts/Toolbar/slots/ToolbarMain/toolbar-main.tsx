@@ -12,13 +12,13 @@ export const ToolbarMain = ({ children, elemProps, elemRef }: ToolbarMainProps) 
   const { switchAt, mainOpen, setMainOpen } = useToolbarContext()
   const { bp } = useScreen()
 
-  const isSwitchAtHit = BREAKPOINTS.indexOf(bp) >= BREAKPOINTS.indexOf(switchAt as Breakpoint)
-
   useLayoutEffect(() => {
     if (BREAKPOINTS.indexOf(bp) >= BREAKPOINTS.indexOf(switchAt as Breakpoint)) {
       setMainOpen(false)
     }
-  }, [isSwitchAtHit])
+  }, [bp])
+
+  const isSwitchAtHit = BREAKPOINTS.indexOf(bp) >= BREAKPOINTS.indexOf(switchAt as Breakpoint)
 
   return (
     <Grid.Item
@@ -33,6 +33,7 @@ export const ToolbarMain = ({ children, elemProps, elemRef }: ToolbarMainProps) 
       elemRef={elemRef}
       gridRow={{ base: '2 / 3', [String(switchAt)]: '1 / 2' }}
       gridColumn={{ base: '1 / -1', [String(switchAt)]: '3 / 4' }}
+      alignSelf="center"
     >
       <Box display={mainOpen || isSwitchAtHit ? 'block' : 'none'}>{children}</Box>
     </Grid.Item>
