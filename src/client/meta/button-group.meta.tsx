@@ -30,37 +30,7 @@ const BUTTON_GROUP_META: ComponentMeta<ButtonGroupOwnProps> = {
     {
       description: '...',
       jsx: (
-        <ButtonGroup intent="primary" gap={3} size="lg" attached>
-          <Button>Button 1</Button>
-          <Button>Button 2</Button>
-          <Button>Button 3</Button>
-        </ButtonGroup>
-      ),
-    },
-    {
-      description: '...',
-      jsx: (
-        <ButtonGroup intent="primary" alignItems="stretch" attached>
-          <Button>Button 1</Button>
-          <Button>Button 2</Button>
-          <Button>Button 3</Button>
-        </ButtonGroup>
-      ),
-    },
-    {
-      description: '...',
-      jsx: (
-        <ButtonGroup intent="primary" flexDirection="column" attached>
-          <Button>Button 1</Button>
-          <Button>Button 2</Button>
-          <Button>Button 3</Button>
-        </ButtonGroup>
-      ),
-    },
-    {
-      description: '...',
-      jsx: (
-        <ButtonGroup variant="outline" intent="primary" flexDirection="column" alignItems="stretch">
+        <ButtonGroup intent="primary" direction="column" stretch attached>
           <Button>Button 1</Button>
           <Button>Button 2</Button>
           <Button>Button 3</Button>

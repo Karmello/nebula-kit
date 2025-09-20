@@ -38,7 +38,7 @@ export const App = () => {
         <Toolbar switchAt="md">
           <Toolbar.Start>start</Toolbar.Start>
           <Toolbar.Main>
-            <ButtonGroup attached flexDirection={{ base: 'column', md: 'row' }}>
+            <ButtonGroup attached direction={{ base: 'column', md: 'row' }}>
               <Button
                 elem="a"
                 elemProps={{

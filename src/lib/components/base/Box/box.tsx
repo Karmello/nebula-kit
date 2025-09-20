@@ -89,7 +89,6 @@ export const Box = <E extends ElementType = 'div'>({
       marginRight,
       marginBottom,
       marginLeft,
-      ...elemProps?.style,
     })
   }, [
     bp,

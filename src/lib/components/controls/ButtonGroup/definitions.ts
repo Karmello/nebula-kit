@@ -7,6 +7,8 @@ export const ButtonGroupElem = ['div', 'nav', 'section', 'aside', 'form', 'field
 export type ButtonGroupElem = (typeof ButtonGroupElem)[number]
 
 export type ButtonGroupOwnProps = {
+  direction?: RespValue<Extract<CssFlexDirection, 'row' | 'column'>>
+  stretch?: RespValue<boolean>
   attached?: boolean
 }
 
@@ -16,8 +18,6 @@ export const BUTTON_GROUP_INHERITED_PROPS = {
     'elem',
     'elemProps',
     'elemRef',
-    'flexDirection',
-    'alignItems',
     'gap',
   ] as const satisfies readonly (keyof FlexProps<ButtonGroupElem>)[],
   'Flex.Item': [] as never,
@@ -25,13 +25,7 @@ export const BUTTON_GROUP_INHERITED_PROPS = {
 }
 
 export type ButtonGroupInheritedProps<E extends ButtonGroupElem = 'div'> = MakeRequired<
-  Omit<
-    Pick<FlexProps<E>, (typeof BUTTON_GROUP_INHERITED_PROPS)['Flex'][number]>,
-    'flexDirection' | 'alignItems'
-  > & {
-    flexDirection?: RespValue<Extract<CssFlexDirection, 'row' | 'column'>>
-    alignItems?: RespValue<Extract<CssFlexAlignItems, 'stretch'>>
-  },
+  Pick<FlexProps<E>, (typeof BUTTON_GROUP_INHERITED_PROPS)['Flex'][number]>,
   'children'
 > &
   Pick<ButtonProps<ButtonElem>, (typeof BUTTON_GROUP_INHERITED_PROPS)['Button'][number]>

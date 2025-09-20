@@ -4,6 +4,18 @@
   }
 }
 
+.neb-btn-group[data-neb-btn-group-direction='column'] {
+  flex-direction: column;
+}
+
+.neb-btn-group[data-neb-btn-group-stretch='true'] {
+  align-items: stretch;
+
+  .neb-flex-item {
+    flex: 1;
+  }
+}
+
 .neb-btn-group[data-neb-btn-group-attached='true'] {
   .neb-btn {
     border-radius: 0;

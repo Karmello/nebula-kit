@@ -2,17 +2,20 @@ import {
   Children,
   cloneElement,
   ComponentProps,
+  ComponentRef,
   isValidElement,
   PropsWithoutRef,
   ReactElement,
   ReactNode,
+  useLayoutEffect,
+  useRef,
 } from 'react'
 
 import classNames from 'classnames'
 
-import { Button, ButtonProps, Flex, FlexItemProps } from 'lib/components'
-import { withPrefix } from 'lib/helpers'
-import { applyStaticDataset } from 'lib/service'
+import { Button, ButtonProps, Flex } from 'lib/components'
+import { applyRespValues, applyStaticDataset } from 'lib/service'
+import { useScreen, withPrefix } from 'lib/helpers'
 
 import { ButtonGroupElem, ButtonGroupProps } from './definitions'
 import './button-group.scss'
@@ -30,25 +33,28 @@ export const ButtonGroup = <E extends ButtonGroupElem = 'div'>({
   intent,
   size,
   // flex
-  flexDirection = 'row',
-  alignItems,
   gap,
   // own
+  direction = 'row',
+  stretch = false,
   attached = false,
 }: ButtonGroupProps<E>) => {
-  let flex: FlexItemProps['flex'] = 0
+  const ref = useRef<ComponentRef<E>>(null)
 
-  if (typeof alignItems === 'object') {
-    flex = {
-      base: alignItems.base === 'stretch' ? 1 : undefined,
-      sm: alignItems.sm === 'stretch' ? 1 : undefined,
-      md: alignItems.md === 'stretch' ? 1 : undefined,
-      lg: alignItems.lg === 'stretch' ? 1 : undefined,
-      xl: alignItems.xl === 'stretch' ? 1 : undefined,
-    }
-  } else if (alignItems === 'stretch') {
-    flex = 1
-  }
+  const { bp } = useScreen()
+
+  useLayoutEffect(() => {
+    applyRespValues(
+      'dataset',
+      elemRef || ref,
+      bp,
+      {
+        direction,
+        stretch: String(stretch),
+      },
+      'BtnGroup'
+    )
+  }, [bp, direction, stretch])
 
   return (
     <Flex
@@ -60,43 +66,20 @@ export const ButtonGroup = <E extends ButtonGroupElem = 'div'>({
           ...applyStaticDataset('btn-group', { attached }),
         } as PropsWithoutRef<ComponentProps<E>>
       }
-      elemRef={elemRef}
-      flexDirection={flexDirection}
-      alignItems={alignItems}
+      elemRef={elemRef || ref}
       gap={attached ? 0 : gap}
       flexWrap="nowrap"
     >
-      {Children.map(children as any, (child, i) => {
+      {Children.map(children as any, child => {
         if (!isButtonElement(child)) return null
 
-        const isLastChild = i === Children.toArray(children).length - 1
-
         return (
-          <Flex.Item flex={flex} alignSelf="center">
+          <Flex.Item>
             {cloneElement<ButtonProps>(child, {
               ...child.props,
               variant: child.props.variant ?? variant,
               intent: child.props.intent ?? intent,
               size: child.props.size ?? size,
-              elemProps: {
-                ...child.props.elemProps,
-                style: {
-                  ...child.props.elemProps?.style,
-                  ...(flexDirection === 'row'
-                    ? {
-                        borderTopLeftRadius: i === 0 ? 'var(--neb-border-radius)' : undefined,
-                        borderBottomLeftRadius: i === 0 ? 'var(--neb-border-radius)' : undefined,
-                        borderTopRightRadius: isLastChild ? 'var(--neb-border-radius)' : undefined,
-                        borderBottomRightRadius: isLastChild ? 'var(--neb-border-radius)' : undefined,
-                      }
-                    : {
-                        borderTopLeftRadius: i === 0 ? 'var(--neb-border-radius)' : undefined,
-                        borderTopRightRadius: i === 0 ? 'var(--neb-border-radius)' : undefined,
-                        borderBottomLeftRadius: isLastChild ? 'var(--neb-border-radius)' : undefined,
-                        borderBottomRightRadius: isLastChild ? 'var(--neb-border-radius)' : undefined,
-                      }),
-                },
-              },
             })}
           </Flex.Item>
         )

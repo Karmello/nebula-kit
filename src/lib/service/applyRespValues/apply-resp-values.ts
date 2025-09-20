@@ -1,8 +1,9 @@
 import { RefObject } from 'react'
+import { pascalCase } from 'change-case'
 import isNil from 'lodash-es/isNil.js'
 import isObject from 'lodash-es/isObject.js'
 
-import { Breakpoint, BREAKPOINTS, RespValue } from 'lib/definitions'
+import { Breakpoint, BREAKPOINTS, LIB_PREFIX, RespValue } from 'lib/definitions'
 import { scale } from 'lib/helpers'
 
 type ValuesType = 'style' | 'dataset'
@@ -27,7 +28,15 @@ const formatCssValue = (propName: string, propValue: string | number): string =>
   }
 }
 
-const getRespValuesPerBp = (type: ValuesType, breakpoint: Breakpoint, values: InputValues): Bucket => {
+const getDataAttrName = (prefix: string | undefined, name: string) =>
+  `${LIB_PREFIX}${prefix}${pascalCase(name)}`
+
+const getRespValuesPerBp = (
+  type: ValuesType,
+  breakpoint: Breakpoint,
+  values: InputValues,
+  prefix?: string
+): Bucket => {
   const bucket: Bucket = {}
 
   for (const name in values) {
@@ -43,7 +52,7 @@ const getRespValuesPerBp = (type: ValuesType, breakpoint: Breakpoint, values: In
         if (type === 'style') {
           bucket[name] = formatCssValue(name, finalValue)
         } else if (type === 'dataset') {
-          bucket[name] = String(finalValue)
+          bucket[getDataAttrName(prefix, name)] = String(finalValue)
         }
       }
     }
@@ -56,7 +65,8 @@ export const applyRespValues = (
   type: ValuesType,
   ref: RefObject<any>,
   breakpoint: Breakpoint,
-  values: InputValues
+  values: InputValues,
+  prefix?: string
 ): void => {
   if (!ref.current) {
     return
@@ -65,14 +75,14 @@ export const applyRespValues = (
   let mergedBucket: Bucket = {}
 
   for (const bp of BREAKPOINTS) {
-    const bucket = getRespValuesPerBp(type, bp, values)
+    const bucket = getRespValuesPerBp(type, bp, values, prefix)
     mergedBucket = { ...mergedBucket, ...bucket }
     if (bp === breakpoint) break
   }
 
   for (const name in values) {
-    if (!isNil(values[name])) {
-      ref.current[type][name] = ''
+    if (!isNil(values[name]) && !isBlank(values[name])) {
+      ref.current[type][type === 'dataset' ? getDataAttrName(prefix, name) : name] = ''
     }
   }
 
