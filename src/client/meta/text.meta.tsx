@@ -26,9 +26,16 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       'combine text with icons for labels or actions',
     ],
     composedOf: TEXT_INHERITED_PROPS,
-    rendersAs: TextElem,
   },
   ownProps: [
+    {
+      name: 'elem',
+      options: TextElem as unknown as string[],
+      defaultValue: TextElem[0],
+      isRequired: false,
+      isResponsive: false,
+      description: 'Specifies the HTML tag that will be rendered as the container.',
+    },
     {
       name: 'typography',
       options: Object.values(TextTypography),

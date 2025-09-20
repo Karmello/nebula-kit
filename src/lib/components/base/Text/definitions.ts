@@ -23,7 +23,8 @@ export type TextTypography = (typeof TextTypography)[number]
 
 export const DEFAULT_TEXT_TYPOGRAPHY: TextTypography = 'body'
 
-export type TextOwnProps = {
+export type TextOwnProps<E extends TextElem = 'p'> = {
+  elem?: E
   typography?: TextTypography
   bold?: boolean
   italic?: boolean
@@ -34,7 +35,6 @@ export type TextOwnProps = {
 
 const PROPS_INHERITED_FROM_BOX = [
   'children',
-  'elem',
   'elemProps',
   'elemRef',
   'intent',
@@ -57,7 +57,7 @@ export type TextInheritedProps<E extends TextElem = 'p'> = MakeRequired<
 > &
   Partial<Pick<WithIconProps, (typeof PROPS_INHERITED_FROM_WITH_ICON)[number]>>
 
-export type TextProps<E extends TextElem = 'p'> = TextOwnProps & TextInheritedProps<E>
+export type TextProps<E extends TextElem = 'p'> = TextOwnProps<E> & TextInheritedProps<E>
 
 // constants
 
