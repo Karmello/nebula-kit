@@ -5,7 +5,7 @@ import { ICON_BUTTON_INHERITED_PROPS } from 'lib/components/controls/IconButton/
 
 const ICON_BUTTON_META: ComponentMeta<IconButtonProps> = {
   overview: {
-    description: 'A button that relies on an icon as its main content.',
+    description: 'An interactive control that uses an icon as its primary content.',
     role: ['render an icon as the content of a button'],
     behavior: ['does not accept children', 'iconName is required'],
     byDefault: ['medium size', 'solid variant', 'tertiary intent'],

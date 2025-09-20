@@ -10,7 +10,7 @@ import {
 
 const WITH_ICON_META: ComponentMeta<WithIconOwnProps> = {
   overview: {
-    description: 'Utility wrapper that aligns an icon alongside its children.',
+    description: 'A wrapper that positions an icon in line with its content.',
     role: ['insert an icon', 'render children exactly as passed'],
     behavior: [
       'wraps the icon and children in a <span> element',

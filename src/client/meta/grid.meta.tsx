@@ -19,7 +19,7 @@ import {
 const GRID_META: ComponentMeta<GridOwnProps> = {
   overview: {
     description:
-      'Grid is a layout component built on CSS Grid, providing a flexible two-dimensional system for arranging content into rows and columns with consistent spacing and alignment.',
+      'A layout component built on CSS Grid, providing a flexible two-dimensional system for arranging content into rows and columns with consistent spacing and alignment.',
     role: [
       'provide a CSS Grid-based layout wrapper',
       'establish rows and columns to align and distribute children',

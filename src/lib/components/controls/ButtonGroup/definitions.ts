@@ -1,13 +1,18 @@
 import { ButtonProps, FlexProps } from 'lib/components'
-import { CssFlexDirection, MakeRequired, RespValue } from 'lib/definitions'
+import { MakeRequired, RespValue } from 'lib/definitions'
 
 import { ButtonElem } from '../Button/definitions'
 
+export const DEFAULT_BUTTON_GROUP_GAP = 3
+
+export const ButtonGroupDirection = ['row', 'column'] as const
 export const ButtonGroupElem = ['div', 'nav', 'section', 'aside', 'form', 'fieldset'] as const
 export type ButtonGroupElem = (typeof ButtonGroupElem)[number]
 
+export type ButtonGroupDirection = (typeof ButtonGroupDirection)[number]
+
 export type ButtonGroupOwnProps = {
-  direction?: RespValue<Extract<CssFlexDirection, 'row' | 'column'>>
+  direction?: RespValue<ButtonGroupDirection>
   stretch?: RespValue<boolean>
   attached?: boolean
 }

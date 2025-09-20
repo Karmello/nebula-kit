@@ -5,8 +5,7 @@ import { DEFAULT_SVG_ICON_SIZE } from 'lib/components/elements/SvgIcon/definitio
 
 const SVG_ICON_META: ComponentMeta<SvgIconProps> = {
   overview: {
-    description:
-      'SvgIcon is a wrapper that renders an SVG from the icon set by name and applies system styles.',
+    description: 'A wrapper that renders an SVG from the icon set by name and applies system styles.',
     role: ['resolve icon by name', 'apply sizing and color'],
     behavior: ['name is required to resolve and render the correct icon'],
     byDefault: [

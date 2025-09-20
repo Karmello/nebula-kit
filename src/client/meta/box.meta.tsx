@@ -14,7 +14,7 @@ import {
 const BOX_META: ComponentMeta<BoxOwnProps> = {
   overview: {
     description:
-      'Box is the foundational surface component. It exposes a curated set of core CSS properties - appearance, spacing, sizing, and positioning - so you can style a plain block-level element directly in JSX.',
+      'A foundational surface component that exposes a curated set of core CSS properties - appearance, spacing, sizing, and positioning - so you can style a plain block-level element directly in JSX.',
     role: [
       'acts as the surface foundation that higher-level components (e.g. Flex, Grid, Table) inherit from',
       'provides optional interactivity (hover, focus, press states) for clickable or focusable surfaces',

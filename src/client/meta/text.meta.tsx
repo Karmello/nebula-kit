@@ -12,7 +12,7 @@ import {
 const TEXT_META: ComponentMeta<TextOwnProps> = {
   overview: {
     description:
-      'Text is the foundational component for displaying and styling textual content. It ensures consistent typography across the system.',
+      'A foundational component for displaying and styling textual content. It ensures consistent typography across the system.',
     role: [
       'render semantic text elements with consistent typography',
       'provide common text styling and formatting options',

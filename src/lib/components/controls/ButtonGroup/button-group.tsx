@@ -17,7 +17,12 @@ import { Button, ButtonProps, Flex } from 'lib/components'
 import { applyRespValues, applyStaticDataset } from 'lib/service'
 import { useScreen, withPrefix } from 'lib/helpers'
 
-import { ButtonGroupElem, ButtonGroupProps } from './definitions'
+import {
+  ButtonGroupDirection,
+  ButtonGroupElem,
+  ButtonGroupProps,
+  DEFAULT_BUTTON_GROUP_GAP,
+} from './definitions'
 import './button-group.scss'
 
 const isButtonElement = (node: ReactNode): node is ReactElement<ButtonProps, typeof Button> =>
@@ -33,9 +38,9 @@ export const ButtonGroup = <E extends ButtonGroupElem = 'div'>({
   intent,
   size,
   // flex
-  gap = 3,
+  gap = DEFAULT_BUTTON_GROUP_GAP,
   // own
-  direction = 'row',
+  direction = ButtonGroupDirection[0],
   stretch = false,
   attached = false,
 }: ButtonGroupProps<E>) => {

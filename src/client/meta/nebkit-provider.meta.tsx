@@ -8,7 +8,7 @@ App.displayName = 'App'
 const NEB_KIT_PROVIDER_META: ComponentMeta<NebKitProviderProps> = {
   overview: {
     description:
-      'NebKitProvider is the root setup component for Nebula-kit. It initializes global configuration, connects the internal store, and keeps the application environment in sync so that all components work consistently.',
+      'The root setup component for Nebula-kit. It initializes global configuration, connects the internal store, and keeps the application environment in sync so that all components work consistently.',
     role: [
       'initialize global configuration and keep theme tokens in sync with the environment',
       'provide a consistent context for all Nebula-kit components to operate within',

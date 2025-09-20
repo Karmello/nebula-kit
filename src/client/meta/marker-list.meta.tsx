@@ -12,7 +12,7 @@ import { MARKER_LIST_ITEM_INHERITED_PROPS } from 'lib/components/elements/Marker
 
 const MARKER_LIST_META: ComponentMeta<MarkerListOwnProps> = {
   overview: {
-    description: 'MarkerList is a semantic list component that displays native markers for its items.',
+    description: 'A semantic list component that displays native markers for its items.',
     role: [
       'establishes a semantic list container with native markers',
       'ensures each item is rendered as part of an accessible list structure',

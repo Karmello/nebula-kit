@@ -18,7 +18,7 @@ import {
 const FLEX_META: ComponentMeta<FlexOwnProps> = {
   overview: {
     description:
-      'Flex is a layout component built on CSS Flexbox, providing a one-dimensional system for arranging children in a row or column.',
+      'A layout component built on CSS Flexbox, providing a one-dimensional system for arranging children in a row or column.',
     role: [
       'provide a flexbox-based layout wrapper',
       'control flow, alignment, and wrapping of children',

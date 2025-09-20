@@ -8,7 +8,7 @@ import {
 
 const SPACER_META: ComponentMeta<any> = {
   overview: {
-    description: 'Adds empty vertical space between elements to control layout spacing.',
+    description: 'A layout component that introduces controlled empty space between elements.',
     role: [
       'provides consistent vertical spacing between elements',
       'improves readability by preventing content from feeling crowded',
