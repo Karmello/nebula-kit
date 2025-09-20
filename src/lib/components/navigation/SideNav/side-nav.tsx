@@ -96,8 +96,8 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
                       elemProps={{
                         ...elemProps,
                         style: {
-                          justifyContent: 'flex-start',
-                          paddingLeft: '45px',
+                          // justifyContent: 'flex-start',
+                          // paddingLeft: '45px',
                           inlineSize: '100%',
                           ...elemProps?.style,
                         },

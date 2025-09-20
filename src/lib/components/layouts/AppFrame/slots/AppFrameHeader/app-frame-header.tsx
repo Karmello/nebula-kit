@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { applyStaticDataset } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
 import { Box } from 'lib/components'
+import { BUTTON_SIZE_CONFIG, DEFAULT_BUTTON_SIZE } from 'lib/components/controls/Button/definitions'
 
 import { useAppFrameContext } from '../../AppFrameProvider'
 import { AppFrameHeaderProps } from './definitions'
@@ -14,7 +15,7 @@ export const AppFrameHeader = ({
   elemProps,
   elemRef,
   intent = 'secondary',
-  minBlockSize = 22,
+  minBlockSize = BUTTON_SIZE_CONFIG[DEFAULT_BUTTON_SIZE].blockSize,
   ...paddings
 }: AppFrameHeaderProps) => {
   const { stickyHeader } = useAppFrameContext()

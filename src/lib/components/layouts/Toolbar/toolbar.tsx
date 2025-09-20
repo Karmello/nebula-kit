@@ -8,6 +8,8 @@ import { DEFAULT_SWITCH_AT } from 'lib/definitions'
 import { ToolbarProvider } from './ToolbarProvider'
 import { ToolbarProps } from './definitions'
 
+import './toolbar.scss'
+
 export const Toolbar = ({ children, elemProps, elemRef, switchAt = DEFAULT_SWITCH_AT }: ToolbarProps) => {
   return (
     <ToolbarProvider switchAt={switchAt}>

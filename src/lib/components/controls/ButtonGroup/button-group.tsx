@@ -33,7 +33,7 @@ export const ButtonGroup = <E extends ButtonGroupElem = 'div'>({
   intent,
   size,
   // flex
-  gap,
+  gap = 3,
   // own
   direction = 'row',
   stretch = false,
@@ -50,7 +50,7 @@ export const ButtonGroup = <E extends ButtonGroupElem = 'div'>({
       bp,
       {
         direction,
-        stretch: String(stretch),
+        stretch,
       },
       'BtnGroup'
     )

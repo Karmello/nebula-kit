@@ -30,8 +30,88 @@ const BUTTON_GROUP_META: ComponentMeta<ButtonGroupOwnProps> = {
     {
       description: '...',
       jsx: (
-        <ButtonGroup intent="primary" direction="column" stretch attached>
+        <ButtonGroup direction="row">
           <Button>Button 1</Button>
+          <Button>Button 2</Button>
+          <Button>Button 3</Button>
+        </ButtonGroup>
+      ),
+    },
+    {
+      description: '...',
+      jsx: (
+        <ButtonGroup direction="row" stretch>
+          <Button>Button 1</Button>
+          <Button>Button 2</Button>
+          <Button>Button 3</Button>
+        </ButtonGroup>
+      ),
+    },
+    {
+      description: '...',
+      jsx: (
+        <ButtonGroup intent="secondary" direction="column">
+          <Button>Button 1</Button>
+          <Button>Button 2</Button>
+          <Button>Button 3</Button>
+        </ButtonGroup>
+      ),
+    },
+    {
+      description: '...',
+      jsx: (
+        <ButtonGroup intent="secondary" direction="column" stretch>
+          <Button>Button 1</Button>
+          <Button>Button 2</Button>
+          <Button>Button 3</Button>
+        </ButtonGroup>
+      ),
+    },
+    {
+      description: '...',
+      jsx: (
+        <ButtonGroup intent="primary" direction="row" attached>
+          <Button>Button 1</Button>
+          <Button>Button 2</Button>
+          <Button>Button 3</Button>
+        </ButtonGroup>
+      ),
+    },
+    {
+      description: '...',
+      jsx: (
+        <ButtonGroup intent="primary" direction="column" attached>
+          <Button>Button 1</Button>
+          <Button>Button 2</Button>
+          <Button>Button 3</Button>
+        </ButtonGroup>
+      ),
+    },
+    {
+      description: '...',
+      jsx: (
+        <ButtonGroup variant="outline" intent="primary" direction="row" attached stretch>
+          <Button>Button 1</Button>
+          <Button>Button 2</Button>
+          <Button>Button 3</Button>
+        </ButtonGroup>
+      ),
+    },
+    {
+      description: '...',
+      jsx: (
+        <ButtonGroup variant="outline" intent="primary" direction="column" attached stretch>
+          <Button>Button 1</Button>
+          <Button>Button 2</Button>
+          <Button>Button 3</Button>
+        </ButtonGroup>
+      ),
+    },
+    {
+      description: '...',
+      jsx: (
+        <ButtonGroup intent="tertiary">
+          <Button intent="secondary">Button 1</Button>
           <Button>Button 2</Button>
           <Button>Button 3</Button>
         </ButtonGroup>

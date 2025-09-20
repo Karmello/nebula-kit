@@ -1,4 +1,7 @@
+import classNames from 'classnames'
+
 import { Grid } from 'lib/components'
+import { withPrefix } from 'lib/helpers'
 
 import { ToolbarMainProps } from './definitions'
 import { useToolbarContext } from '../../ToolbarProvider'
@@ -10,6 +13,7 @@ export const ToolbarMain = ({ children, elemProps, elemRef }: ToolbarMainProps) 
     <Grid.Item
       elemProps={{
         ...elemProps,
+        className: classNames(withPrefix('toolbar-main'), elemProps?.className),
         style: {
           ...elemProps?.style,
           minInlineSize: 0,

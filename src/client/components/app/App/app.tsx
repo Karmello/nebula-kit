@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router'
 
 import { useLibStore } from 'lib/state'
-import { AppFrame, Button, ButtonGroup, Toolbar } from 'lib/components'
+import { AppFrame, Button, ButtonGroup, IconButton, Toolbar } from 'lib/components'
 import { useNavigateTo, validateQueryParams } from 'client/services'
 import { PageKey } from 'client/definitions'
 import { useFoundationsPageStore, useComponentsPageStore } from 'client/store'
@@ -32,13 +32,21 @@ export const App = () => {
     window.scrollTo(0, 0)
   }, [pathname])
 
+  const currentPageKey = pathname.split('/')[1]
+
   return (
     <AppFrame stickyHeader>
       <AppFrame.Header intent="tertiary">
         <Toolbar switchAt="md">
-          <Toolbar.Start>start</Toolbar.Start>
+          <Toolbar.Start>
+            <IconButton iconName="menu" />
+          </Toolbar.Start>
           <Toolbar.Main>
-            <ButtonGroup attached direction={{ base: 'column', md: 'row' }}>
+            <ButtonGroup
+              direction={{ base: 'column', md: 'row' }}
+              attached
+              stretch={{ base: true, md: false }}
+            >
               <Button
                 elem="a"
                 elemProps={{
@@ -48,6 +56,7 @@ export const App = () => {
                     navigateTo(`/${PageKey.home}`)
                   },
                 }}
+                intent={currentPageKey === PageKey.home ? 'secondary' : 'tertiary'}
               >
                 Home
               </Button>
@@ -62,6 +71,7 @@ export const App = () => {
                     )
                   },
                 }}
+                intent={currentPageKey === PageKey.foundations ? 'secondary' : 'tertiary'}
               >
                 Foundations
               </Button>
@@ -76,12 +86,12 @@ export const App = () => {
                     )
                   },
                 }}
+                intent={currentPageKey === PageKey.components ? 'secondary' : 'tertiary'}
               >
                 Components
               </Button>
             </ButtonGroup>
           </Toolbar.Main>
-          <Toolbar.End>end</Toolbar.End>
         </Toolbar>
       </AppFrame.Header>
       <AppFrame.Main paddingTop={{ base: 10, lg: 20 }} paddingBottom={40}>

@@ -7,14 +7,14 @@ import { Breakpoint, BREAKPOINTS, LIB_PREFIX, RespValue } from 'lib/definitions'
 import { scale } from 'lib/helpers'
 
 type ValuesType = 'style' | 'dataset'
-type InputValues = Record<string, RespValue<string | number> | undefined>
+type InputValues = Record<string, RespValue<string | number | boolean> | undefined>
 type Bucket = Record<string, string>
 
 const KEEP_NUMBER_PROPS = ['lineHeight', 'opacity', 'flex', 'flexGrow', 'flexShrink', 'flexBasis', 'order']
 
 const isBlank = (v: unknown): v is '' => typeof v === 'string' && v === ''
 
-const formatCssValue = (propName: string, propValue: string | number): string => {
+const formatCssValue = (propName: string, propValue: string | number | boolean): string => {
   if (typeof propValue === 'number') {
     if (KEEP_NUMBER_PROPS.includes(propName)) {
       return String(propValue)
@@ -24,7 +24,7 @@ const formatCssValue = (propName: string, propValue: string | number): string =>
       return scale(propValue) || ''
     }
   } else {
-    return propValue
+    return String(propValue)
   }
 }
 
