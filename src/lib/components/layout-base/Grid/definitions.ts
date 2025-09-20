@@ -3,7 +3,7 @@ import {
   CssGridPlaceContent,
   CssGridPlaceItems,
   MakeRequired,
-  ResponsiveProp,
+  RespValue,
   ScaleValue,
 } from 'lib/definitions'
 
@@ -13,16 +13,16 @@ export const GridElem = ['div', 'section', 'main', 'article', 'aside', 'nav', 'u
 export type GridElem = (typeof GridElem)[number]
 
 export type GridOwnProps = {
-  gridTemplateColumns?: ResponsiveProp<string | number>
-  gridTemplateRows?: ResponsiveProp<string | number>
-  gridAutoRows?: ResponsiveProp<string>
-  gridAutoColumns?: ResponsiveProp<string>
-  gridAutoFlow?: ResponsiveProp<CssGridAutoFlow>
-  placeItems?: ResponsiveProp<CssGridPlaceItems>
-  placeContent?: ResponsiveProp<CssGridPlaceContent>
-  gap?: ResponsiveProp<ScaleValue | string>
-  rowGap?: ResponsiveProp<ScaleValue | string>
-  columnGap?: ResponsiveProp<ScaleValue | string>
+  gridTemplateColumns?: RespValue<string | number>
+  gridTemplateRows?: RespValue<string | number>
+  gridAutoRows?: RespValue<string>
+  gridAutoColumns?: RespValue<string>
+  gridAutoFlow?: RespValue<CssGridAutoFlow>
+  placeItems?: RespValue<CssGridPlaceItems>
+  placeContent?: RespValue<CssGridPlaceContent>
+  gap?: RespValue<ScaleValue | string>
+  rowGap?: RespValue<ScaleValue | string>
+  columnGap?: RespValue<ScaleValue | string>
 }
 
 export const GRID_INHERITED_PROPS = {

@@ -1,7 +1,8 @@
 import { Grid } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
-import { withPrefix, getDataAttrs, useScreen } from 'lib/helpers'
+import { withPrefix, useScreen } from 'lib/helpers'
 import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
+import { applyStaticDataset } from 'lib/service'
 
 import { SplitViewMode, SplitViewProvider } from './SplitViewProvider'
 import { SplitViewProps, SplitViewSidePosition } from './definitions'
@@ -36,7 +37,7 @@ export const SplitView = ({
               elemProps={{
                 ...elemProps,
                 className: withPrefix('split-view'),
-                ...getDataAttrs('split-view', { mode }),
+                ...applyStaticDataset('split-view', { mode }),
               }}
               elemRef={elemRef}
               gridTemplateColumns={sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto'}

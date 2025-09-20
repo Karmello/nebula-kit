@@ -6,20 +6,20 @@ import {
   CssFlexJustifyContent,
   CssFlexWrap,
   MakeRequired,
-  ResponsiveProp,
+  RespValue,
   ScaleValue,
 } from 'lib/definitions'
 
 import { BoxProps } from 'lib/components'
 
 export type FlexOwnProps = {
-  flexDirection?: ResponsiveProp<CssFlexDirection>
-  flexWrap?: ResponsiveProp<CssFlexWrap>
-  justifyContent?: ResponsiveProp<CssFlexJustifyContent>
-  alignItems?: ResponsiveProp<CssFlexAlignItems>
-  gap?: ResponsiveProp<ScaleValue | string>
-  rowGap?: ResponsiveProp<ScaleValue | string>
-  columnGap?: ResponsiveProp<ScaleValue | string>
+  flexDirection?: RespValue<CssFlexDirection>
+  flexWrap?: RespValue<CssFlexWrap>
+  justifyContent?: RespValue<CssFlexJustifyContent>
+  alignItems?: RespValue<CssFlexAlignItems>
+  gap?: RespValue<ScaleValue | string>
+  rowGap?: RespValue<ScaleValue | string>
+  columnGap?: RespValue<ScaleValue | string>
 }
 
 export const FLEX_INHERITED_PROPS = {

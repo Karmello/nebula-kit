@@ -1,5 +1,5 @@
 import { ButtonProps, FlexItemProps, FlexProps } from 'lib/components'
-import { CssFlexAlignItems, CssFlexDirection, MakeRequired, ResponsiveProp } from 'lib/definitions'
+import { CssFlexAlignItems, CssFlexDirection, MakeRequired, RespValue } from 'lib/definitions'
 
 import { ButtonElem } from '../Button/definitions'
 
@@ -29,8 +29,8 @@ export type ButtonGroupInheritedProps<E extends ButtonGroupElem = 'div'> = MakeR
     Pick<FlexProps<E>, (typeof BUTTON_GROUP_INHERITED_PROPS)['Flex'][number]>,
     'flexDirection' | 'alignItems'
   > & {
-    flexDirection?: ResponsiveProp<Extract<CssFlexDirection, 'row' | 'column'>>
-    alignItems?: ResponsiveProp<Extract<CssFlexAlignItems, 'stretch'>>
+    flexDirection?: RespValue<Extract<CssFlexDirection, 'row' | 'column'>>
+    alignItems?: RespValue<Extract<CssFlexAlignItems, 'stretch'>>
   },
   'children'
 > &

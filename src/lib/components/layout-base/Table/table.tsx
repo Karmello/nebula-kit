@@ -1,7 +1,8 @@
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { withPrefix, getDataAttrs } from 'lib/helpers'
+import { withPrefix } from 'lib/helpers'
+import { applyStaticDataset } from 'lib/service'
 
 import { TableContext } from './use-table-context'
 import { TableProps } from './definitions'
@@ -29,7 +30,7 @@ export const Table = ({
               tableLayout: layout,
               ...(elemProps?.style || {}),
             },
-            ...getDataAttrs('table', { zebra, stickyHeader }),
+            ...applyStaticDataset('table', { zebra, stickyHeader }),
           }}
           elemRef={elemRef}
           variant={variant}

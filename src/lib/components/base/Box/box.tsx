@@ -2,7 +2,8 @@ import { ElementType, ComponentRef, useRef, useLayoutEffect, PropsWithoutRef, Co
 import classNames from 'classnames'
 
 import { BoxProps, NativeElem } from 'lib/components'
-import { computeResponsiveCss, getDataAttrs, useScreen, withPrefix } from 'lib/helpers'
+import { useScreen, withPrefix } from 'lib/helpers'
+import { applyRespValues, applyStaticDataset } from 'lib/service'
 
 import { DEFAULT_BOX_INTENT, DEFAULT_BOX_VARIANT } from './definitions'
 import './styles/box.scss'
@@ -56,7 +57,7 @@ export const Box = <E extends ElementType = 'div'>({
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    computeResponsiveCss(elemRef || ref, bp, {
+    applyRespValues('style', elemRef || ref, bp, {
       opacity,
       borderRadius,
       textAlign,
@@ -133,7 +134,7 @@ export const Box = <E extends ElementType = 'div'>({
           ...elemProps,
           className: classNames(withPrefix('box'), elemProps?.className || ''),
           disabled,
-          ...getDataAttrs('box', { variant, intent, interactive, disabled }),
+          ...applyStaticDataset('box', { variant, intent, interactive, disabled }),
         } as PropsWithoutRef<ComponentProps<E>>
       }
       elemRef={elemRef || ref}

@@ -1,8 +1,9 @@
 import { ComponentRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { withPrefix, getDataAttrs, useScreen, computeResponsiveCss } from 'lib/helpers'
+import { withPrefix, useScreen } from 'lib/helpers'
 import { Box, WithIcon } from 'lib/components'
+import { applyRespValues, applyStaticDataset } from 'lib/service'
 
 import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_TYPOGRAPHY_CONFIG, TextElem, TextProps } from './definitions'
 
@@ -32,7 +33,7 @@ export const Text = <E extends TextElem = 'p'>({
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    computeResponsiveCss(elemRef || ref, bp, {
+    applyRespValues('style', elemRef || ref, bp, {
       fontSize: TEXT_TYPOGRAPHY_CONFIG[typography].fontSize,
       lineHeight: TEXT_TYPOGRAPHY_CONFIG[typography].lineHeight,
     })
@@ -57,7 +58,7 @@ export const Text = <E extends TextElem = 'p'>({
             : {}),
           ...(elemProps?.style || {}),
         },
-        ...getDataAttrs('text', { typography, bold, italic, noWrap, truncate }),
+        ...applyStaticDataset('text', { typography, bold, italic, noWrap, truncate }),
       }}
       variant="ghost"
       textAlign={textAlign}

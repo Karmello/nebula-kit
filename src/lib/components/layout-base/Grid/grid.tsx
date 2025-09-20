@@ -2,7 +2,8 @@ import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef 
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { withPrefix, useScreen, computeResponsiveCss } from 'lib/helpers'
+import { withPrefix, useScreen } from 'lib/helpers'
+import { applyRespValues } from 'lib/service'
 
 import { GridElem, GridProps } from './definitions'
 
@@ -31,7 +32,7 @@ export const Grid = <E extends GridElem = 'div'>({
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    computeResponsiveCss(elemRef || ref, bp, {
+    applyRespValues('style', elemRef || ref, bp, {
       gridTemplateColumns,
       gridTemplateRows,
       gridAutoRows,

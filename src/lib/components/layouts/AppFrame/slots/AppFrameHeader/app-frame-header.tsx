@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 
-import { getDataAttrs, withPrefix } from 'lib/helpers'
+import { applyStaticDataset } from 'lib/service'
+import { withPrefix } from 'lib/helpers'
 import { Box } from 'lib/components'
 
 import { useAppFrameContext } from '../../AppFrameProvider'
@@ -24,7 +25,7 @@ export const AppFrameHeader = ({
       elemProps={{
         ...elemProps,
         className: classNames(withPrefix('app-frame-header'), elemProps?.className),
-        ...getDataAttrs('app-frame-header', { stickyHeader }),
+        ...applyStaticDataset('app-frame-header', { stickyHeader }),
       }}
       elemRef={elemRef}
       variant="solid"

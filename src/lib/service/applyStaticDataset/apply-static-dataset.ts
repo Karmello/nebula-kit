@@ -14,7 +14,7 @@ const getDataAttr = (prefix: string, props: Record<string, unknown>, propName: s
   return dataAttrs
 }
 
-export const getDataAttrs = (prefix: string, props: Record<string, unknown>) => {
+export const applyStaticDataset = (prefix: string, props: Record<string, unknown>) => {
   let dataAttrs = {}
 
   if (props) {

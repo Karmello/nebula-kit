@@ -1,8 +1,9 @@
 import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { withPrefix, computeResponsiveCss, useScreen } from 'lib/helpers'
+import { withPrefix, useScreen } from 'lib/helpers'
 import { Box } from 'lib/components'
+import { applyRespValues } from 'lib/service'
 
 import { FlexItemProps } from './definitions'
 
@@ -27,7 +28,7 @@ export const FlexItem = <E extends ElementType = 'div'>({
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    computeResponsiveCss(elemRef || ref, bp, {
+    applyRespValues('style', elemRef || ref, bp, {
       flex,
       flexGrow,
       flexShrink,

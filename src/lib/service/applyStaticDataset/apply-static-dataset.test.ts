@@ -1,16 +1,16 @@
-import { getDataAttrs } from '../getDataAttrs'
+import { applyStaticDataset } from '../applyStaticDataset'
 
-describe('getDataAttrs', () => {
+describe('applyStaticDataset', () => {
   it('returns empty object when props is undefined', () => {
-    expect(getDataAttrs('box', undefined)).toEqual({})
+    expect(applyStaticDataset('box', undefined)).toEqual({})
   })
 
   it('returns empty object when props is empty', () => {
-    expect(getDataAttrs('text', {} as any)).toEqual({})
+    expect(applyStaticDataset('text', {} as any)).toEqual({})
   })
 
   it('builds data attributes for defined props only', () => {
-    const out = getDataAttrs('box', {
+    const out = applyStaticDataset('box', {
       variant: 'primary',
       intent: 'success',
       interactive: true,
@@ -32,7 +32,7 @@ describe('getDataAttrs', () => {
   })
 
   it('skips undefined props', () => {
-    const out = getDataAttrs('box', {
+    const out = applyStaticDataset('box', {
       variant: undefined,
       intent: 'danger',
       interactive: undefined,
@@ -46,7 +46,7 @@ describe('getDataAttrs', () => {
   })
 
   it('supports the dashed prefix "nav-layout"', () => {
-    const out = getDataAttrs('nav-layout', {
+    const out = applyStaticDataset('nav-layout', {
       side: 'start',
       open: false,
     } as any)
@@ -58,7 +58,7 @@ describe('getDataAttrs', () => {
   })
 
   it('booleans are preserved as booleans', () => {
-    const out = getDataAttrs('text', {
+    const out = applyStaticDataset('text', {
       disabled: true,
       interactive: false,
     } as any)
@@ -70,7 +70,7 @@ describe('getDataAttrs', () => {
   })
 
   it('current behavior: unknown keys are forwarded if present on the object', () => {
-    const out = getDataAttrs('box', {
+    const out = applyStaticDataset('box', {
       // valid keys
       variant: 'ghost',
       // extra key not part of DataAttrProps at type level

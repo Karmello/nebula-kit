@@ -1,8 +1,18 @@
-import { Children, cloneElement, isValidElement, ReactElement, ReactNode } from 'react'
+import {
+  Children,
+  cloneElement,
+  ComponentProps,
+  isValidElement,
+  PropsWithoutRef,
+  ReactElement,
+  ReactNode,
+} from 'react'
+
 import classNames from 'classnames'
 
 import { Button, ButtonProps, Flex, FlexItemProps } from 'lib/components'
-import { getDataAttrs, withPrefix } from 'lib/helpers'
+import { withPrefix } from 'lib/helpers'
+import { applyStaticDataset } from 'lib/service'
 
 import { ButtonGroupElem, ButtonGroupProps } from './definitions'
 import './button-group.scss'
@@ -43,18 +53,20 @@ export const ButtonGroup = <E extends ButtonGroupElem = 'div'>({
   return (
     <Flex
       elem={elem}
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('btn-group'), elemProps?.className),
-        ...getDataAttrs('btn-group', { attached }),
-      }}
+      elemProps={
+        {
+          ...elemProps,
+          className: classNames(withPrefix('btn-group'), elemProps?.className),
+          ...applyStaticDataset('btn-group', { attached }),
+        } as PropsWithoutRef<ComponentProps<E>>
+      }
       elemRef={elemRef}
       flexDirection={flexDirection}
       alignItems={alignItems}
       gap={attached ? 0 : gap}
       flexWrap="nowrap"
     >
-      {Children.map(children, (child, i) => {
+      {Children.map(children as any, (child, i) => {
         if (!isButtonElement(child)) return null
 
         const isLastChild = i === Children.toArray(children).length - 1

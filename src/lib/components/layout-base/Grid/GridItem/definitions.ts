@@ -1,13 +1,13 @@
 import { ElementType } from 'react'
 
-import { ResponsiveProp, CssGridItemJustifySelf, CssGridItemAlignSelf } from 'lib/definitions'
+import { RespValue, CssGridItemJustifySelf, CssGridItemAlignSelf } from 'lib/definitions'
 import { BoxProps } from 'lib/components/base'
 
 export type GridItemOwnProps = {
-  gridColumn?: ResponsiveProp<string | number>
-  gridRow?: ResponsiveProp<string | number>
-  justifySelf?: ResponsiveProp<CssGridItemJustifySelf>
-  alignSelf?: ResponsiveProp<CssGridItemAlignSelf>
+  gridColumn?: RespValue<string | number>
+  gridRow?: RespValue<string | number>
+  justifySelf?: RespValue<CssGridItemJustifySelf>
+  alignSelf?: RespValue<CssGridItemAlignSelf>
 }
 
 export const GRID_ITEM_INHERITED_PROPS = {

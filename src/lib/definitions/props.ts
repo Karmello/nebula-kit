@@ -5,7 +5,7 @@ export const Theme = ['light', 'gray', 'dark'] as const
 export const SwitchAt = [...BREAKPOINTS.filter(bp => bp !== 'base')] as const
 
 // types
-export type ResponsiveProp<T> = T | Partial<Record<Breakpoint, T>>
+export type RespValue<T> = T | Partial<Record<Breakpoint, T>>
 export type MakeRequired<T, K extends keyof T> = Omit<T, K> & Required<Pick<T, K>>
 export type Theme = (typeof Theme)[number]
 export type SwitchAt = (typeof SwitchAt)[number]

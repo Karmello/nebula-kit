@@ -1,13 +1,6 @@
 import { ElementType } from 'react'
 
-import {
-  CssDisplay,
-  CssOverflow,
-  CssPosition,
-  CssTextAlign,
-  ResponsiveProp,
-  ScaleValue,
-} from 'lib/definitions'
+import { CssDisplay, CssOverflow, CssPosition, CssTextAlign, RespValue, ScaleValue } from 'lib/definitions'
 
 import { NativeElemProps } from 'lib/components/utility'
 
@@ -34,39 +27,39 @@ export const DEFAULT_BOX_INTENT: BoxIntent = 'neutral'
 export type BoxOwnProps = {
   variant?: BoxVariant
   intent?: BoxIntent
-  opacity?: ResponsiveProp<number>
+  opacity?: RespValue<number>
   borderRadius?: ScaleValue | string
   interactive?: boolean
   disabled?: boolean
-  display?: ResponsiveProp<CssDisplay>
-  overflowX?: ResponsiveProp<CssOverflow>
-  overflowY?: ResponsiveProp<CssOverflow>
-  position?: ResponsiveProp<CssPosition>
-  top?: ResponsiveProp<ScaleValue | string>
-  right?: ResponsiveProp<ScaleValue | string>
-  bottom?: ResponsiveProp<ScaleValue | string>
-  left?: ResponsiveProp<ScaleValue | string>
-  textAlign?: ResponsiveProp<CssTextAlign>
-  blockSize?: ResponsiveProp<ScaleValue | string>
-  minBlockSize?: ResponsiveProp<ScaleValue | string>
-  maxBlockSize?: ResponsiveProp<ScaleValue | string>
-  inlineSize?: ResponsiveProp<ScaleValue | string>
-  minInlineSize?: ResponsiveProp<ScaleValue | string>
-  maxInlineSize?: ResponsiveProp<ScaleValue | string>
-  margin?: ResponsiveProp<ScaleValue | string>
-  marginInline?: ResponsiveProp<ScaleValue | string>
-  marginBlock?: ResponsiveProp<ScaleValue | string>
-  marginTop?: ResponsiveProp<ScaleValue | string>
-  marginRight?: ResponsiveProp<ScaleValue | string>
-  marginBottom?: ResponsiveProp<ScaleValue | string>
-  marginLeft?: ResponsiveProp<ScaleValue | string>
-  padding?: ResponsiveProp<ScaleValue | string>
-  paddingInline?: ResponsiveProp<ScaleValue | string>
-  paddingBlock?: ResponsiveProp<ScaleValue | string>
-  paddingTop?: ResponsiveProp<ScaleValue | string>
-  paddingRight?: ResponsiveProp<ScaleValue | string>
-  paddingBottom?: ResponsiveProp<ScaleValue | string>
-  paddingLeft?: ResponsiveProp<ScaleValue | string>
+  display?: RespValue<CssDisplay>
+  overflowX?: RespValue<CssOverflow>
+  overflowY?: RespValue<CssOverflow>
+  position?: RespValue<CssPosition>
+  top?: RespValue<ScaleValue | string>
+  right?: RespValue<ScaleValue | string>
+  bottom?: RespValue<ScaleValue | string>
+  left?: RespValue<ScaleValue | string>
+  textAlign?: RespValue<CssTextAlign>
+  blockSize?: RespValue<ScaleValue | string>
+  minBlockSize?: RespValue<ScaleValue | string>
+  maxBlockSize?: RespValue<ScaleValue | string>
+  inlineSize?: RespValue<ScaleValue | string>
+  minInlineSize?: RespValue<ScaleValue | string>
+  maxInlineSize?: RespValue<ScaleValue | string>
+  margin?: RespValue<ScaleValue | string>
+  marginInline?: RespValue<ScaleValue | string>
+  marginBlock?: RespValue<ScaleValue | string>
+  marginTop?: RespValue<ScaleValue | string>
+  marginRight?: RespValue<ScaleValue | string>
+  marginBottom?: RespValue<ScaleValue | string>
+  marginLeft?: RespValue<ScaleValue | string>
+  padding?: RespValue<ScaleValue | string>
+  paddingInline?: RespValue<ScaleValue | string>
+  paddingBlock?: RespValue<ScaleValue | string>
+  paddingTop?: RespValue<ScaleValue | string>
+  paddingRight?: RespValue<ScaleValue | string>
+  paddingBottom?: RespValue<ScaleValue | string>
+  paddingLeft?: RespValue<ScaleValue | string>
 }
 
 export const BOX_INHERITED_PROPS = {

@@ -1,5 +1,3 @@
-export * from './computeResponsiveCss'
-export * from './getDataAttrs'
 export * from './scale'
 export * from './useScreen'
 export * from './withPrefix'

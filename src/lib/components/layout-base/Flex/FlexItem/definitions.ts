@@ -1,15 +1,15 @@
 import { ElementType } from 'react'
 
-import { ResponsiveProp, CssFlexItemAlignSelf } from 'lib/definitions'
+import { RespValue, CssFlexItemAlignSelf } from 'lib/definitions'
 import { BoxProps } from 'lib/components/base'
 
 export type FlexItemOwnProps = {
-  flex?: ResponsiveProp<string | number>
-  flexGrow?: ResponsiveProp<number>
-  flexShrink?: ResponsiveProp<number>
-  flexBasis?: ResponsiveProp<string | number>
-  alignSelf?: ResponsiveProp<CssFlexItemAlignSelf>
-  order?: ResponsiveProp<number>
+  flex?: RespValue<string | number>
+  flexGrow?: RespValue<number>
+  flexShrink?: RespValue<number>
+  flexBasis?: RespValue<string | number>
+  alignSelf?: RespValue<CssFlexItemAlignSelf>
+  order?: RespValue<number>
 }
 
 export const FLEX_ITEM_INHERITED_PROPS = {
