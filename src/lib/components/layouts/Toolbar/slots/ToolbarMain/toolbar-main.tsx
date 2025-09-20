@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react'
+import { ComponentRef, useEffect, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
 import { Box, Grid } from 'lib/components'
@@ -9,16 +9,23 @@ import { ToolbarMainProps } from './definitions'
 import { useToolbarContext } from '../../ToolbarProvider'
 
 export const ToolbarMain = ({ children, elemProps, elemRef }: ToolbarMainProps) => {
+  const ref = useRef<ComponentRef<'div'>>(null)
+  const height = useRef<string>('')
+
   const { switchAt, mainOpen, setMainOpen } = useToolbarContext()
   const { bp } = useScreen()
 
+  const isSwitchAtHit = BREAKPOINTS.indexOf(bp) >= BREAKPOINTS.indexOf(switchAt as Breakpoint)
+
+  useEffect(() => {
+    height.current = `${elemRef ? elemRef.current?.scrollHeight : ref.current?.scrollHeight}px`
+  }, [])
+
   useLayoutEffect(() => {
-    if (BREAKPOINTS.indexOf(bp) >= BREAKPOINTS.indexOf(switchAt as Breakpoint)) {
+    if (isSwitchAtHit) {
       setMainOpen(false)
     }
-  }, [bp])
-
-  const isSwitchAtHit = BREAKPOINTS.indexOf(bp) >= BREAKPOINTS.indexOf(switchAt as Breakpoint)
+  }, [bp, isSwitchAtHit])
 
   return (
     <Grid.Item
@@ -30,12 +37,14 @@ export const ToolbarMain = ({ children, elemProps, elemRef }: ToolbarMainProps) 
           minInlineSize: 0,
         },
       }}
-      elemRef={elemRef}
+      elemRef={elemRef || ref}
       gridRow={{ base: '2 / 3', [String(switchAt)]: '1 / 2' }}
       gridColumn={{ base: '1 / -1', [String(switchAt)]: '3 / 4' }}
       alignSelf="center"
     >
-      <Box display={mainOpen || isSwitchAtHit ? 'block' : 'none'}>{children}</Box>
+      <Box blockSize={!isSwitchAtHit ? (mainOpen ? height.current : '0px') : 'auto'} overflowY="hidden">
+        {children}
+      </Box>
     </Grid.Item>
   )
 }

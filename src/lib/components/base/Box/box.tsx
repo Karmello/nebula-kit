@@ -125,6 +125,10 @@ export const Box = <E extends ElementType = 'div'>({
     marginLeft,
   ])
 
+  useLayoutEffect(() => {
+    applyRespValues('dataset', elemRef || ref, bp, { intent }, 'Box')
+  }, [bp, intent])
+
   return (
     <NativeElem
       elem={elem}
@@ -133,7 +137,7 @@ export const Box = <E extends ElementType = 'div'>({
           ...elemProps,
           className: classNames(withPrefix('box'), elemProps?.className || ''),
           disabled,
-          ...applyStaticDataset('box', { variant, intent, interactive, disabled }),
+          ...applyStaticDataset('box', { variant, interactive, disabled }),
         } as PropsWithoutRef<ComponentProps<E>>
       }
       elemRef={elemRef || ref}

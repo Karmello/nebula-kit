@@ -26,7 +26,7 @@ export const DEFAULT_BOX_INTENT: BoxIntent = 'neutral'
 
 export type BoxOwnProps = {
   variant?: BoxVariant
-  intent?: BoxIntent
+  intent?: RespValue<BoxIntent>
   opacity?: RespValue<number>
   borderRadius?: ScaleValue | string
   interactive?: boolean

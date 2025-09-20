@@ -14,7 +14,7 @@ export const SplitViewSide = ({
   intent,
   inlineSize = DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
 }: SplitViewSideProps) => {
-  const { sideOpen, setSideOpen, sidePosition, mode } = useSplitViewContext()
+  const { sideOpen, setSideOpen, sidePosition, mode, switchAt } = useSplitViewContext()
 
   return (
     <Box
@@ -27,7 +27,7 @@ export const SplitViewSide = ({
       variant="solid"
       left={sidePosition === 'left' ? 0 : undefined}
       right={sidePosition === 'right' ? 0 : undefined}
-      intent={intent}
+      intent={intent || { base: 'secondary', [String(switchAt)]: 'neutral' }}
       inlineSize={sideOpen ? inlineSize : 0}
       borderRadius={0}
     >
@@ -41,6 +41,7 @@ export const SplitViewSide = ({
             }}
             iconName="close"
             variant="ghost"
+            intent="neutral"
             size="sm"
           />
         </Flex>

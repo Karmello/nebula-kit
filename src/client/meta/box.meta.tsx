@@ -47,7 +47,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
       options: Object.values(BoxIntent),
       defaultValue: DEFAULT_BOX_INTENT,
       isRequired: false,
-      isResponsive: false,
+      isResponsive: true,
       description:
         'Defines the semantic role or tone of the Box, applying design-system colors and states consistently across components.',
     },

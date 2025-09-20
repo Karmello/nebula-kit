@@ -33,9 +33,9 @@ export const CALLOUT_INHERITED_PROPS = {
   Text: [] as const,
 }
 
-export type CalloutInheritedProps<E extends CalloutElem = 'div'> = Pick<
-  BoxProps<E>,
-  (typeof CALLOUT_INHERITED_PROPS)['Box'][number]
+export type CalloutInheritedProps<E extends CalloutElem = 'div'> = Omit<
+  Pick<BoxProps<E>, (typeof CALLOUT_INHERITED_PROPS)['Box'][number]>,
+  'variant' | 'intent'
 > & {
   variant?: CalloutVariant
   intent?: CalloutIntent
