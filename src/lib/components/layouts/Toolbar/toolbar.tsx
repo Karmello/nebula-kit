@@ -6,6 +6,7 @@ import { withPrefix } from 'lib/helpers'
 import { DEFAULT_SWITCH_AT } from 'lib/definitions'
 
 import { ToolbarProvider } from './ToolbarProvider'
+import { ToolbarToggle } from './ToolbarToggle'
 import { ToolbarProps } from './definitions'
 
 import './toolbar.scss'
@@ -15,7 +16,7 @@ export const Toolbar = ({ children, elemProps, elemRef, switchAt = DEFAULT_SWITC
     <ToolbarProvider switchAt={switchAt}>
       <WithSlots<'Start' | 'Main' | 'End'>
         componentName="Toolbar"
-        slotsConfig={[{ name: 'Start', required: true }, { name: 'Main' }, { name: 'End' }]}
+        slotsConfig={[{ name: 'Start' }, { name: 'Main', required: true }, { name: 'End' }]}
         childrenToVerify={children}
       >
         {slots => (
@@ -26,9 +27,10 @@ export const Toolbar = ({ children, elemProps, elemRef, switchAt = DEFAULT_SWITC
               className: classNames(withPrefix('toolbar'), elemProps?.className),
             }}
             elemRef={elemRef}
-            gridTemplateColumns="auto 1fr auto"
+            gridTemplateColumns="auto auto 1fr auto"
             gridAutoFlow="row"
           >
+            <ToolbarToggle />
             {slots.Start}
             {slots.Main || <div />}
             {slots.End}

@@ -1,6 +1,6 @@
 import { Children, isValidElement, ReactNode } from 'react'
 
-import { LIB_NAME } from 'lib/definitions'
+import { getLibMsg } from 'lib/helpers'
 
 import { WithSlotsProps } from './definitions'
 
@@ -11,7 +11,7 @@ export const WithSlots = <SlotName extends string>({
   children,
 }: WithSlotsProps<SlotName>) => {
   const getWarnMsg = (slotName: SlotName) =>
-    `[${LIB_NAME}]: ${componentName} expects ${componentName}.${slotName} as a child`
+    getLibMsg(`${componentName} expects ${componentName}.${slotName} as a child`)
 
   const validChildren: Record<SlotName, ReactNode[]> = {} as never
   slotsConfig.forEach(({ name }) => {

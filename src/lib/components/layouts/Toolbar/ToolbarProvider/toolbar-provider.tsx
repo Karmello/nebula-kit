@@ -1,4 +1,6 @@
-import { createContext, useContext, ReactNode } from 'react'
+import { createContext, useContext, ReactNode, useState } from 'react'
+
+import { getLibMsg } from 'lib/helpers'
 
 import { ToolbarOwnProps } from '../definitions'
 
@@ -6,14 +8,23 @@ type ProviderProps = ToolbarOwnProps & {
   children: ReactNode
 }
 
-type ContextProps = Omit<ProviderProps, 'children'>
+type ContextProps = Omit<ProviderProps, 'children'> & {
+  mainOpen: boolean
+  setMainOpen: (mainOpen: boolean) => void
+}
 
-const ToolbarContext = createContext<ContextProps>({} as ContextProps)
+const ToolbarContext = createContext<ContextProps | null>(null)
 
 export const ToolbarProvider = ({ children, switchAt }: ProviderProps) => {
-  return <ToolbarContext.Provider value={{ switchAt }}>{children}</ToolbarContext.Provider>
+  const [mainOpen, setMainOpen] = useState<boolean>(false)
+
+  return (
+    <ToolbarContext.Provider value={{ switchAt, mainOpen, setMainOpen }}>{children}</ToolbarContext.Provider>
+  )
 }
 
 export const useToolbarContext = () => {
-  return useContext(ToolbarContext)
+  const ctx = useContext(ToolbarContext)
+  if (!ctx) throw new Error(getLibMsg('useToolbarContext must be used inside <Toolbar>'))
+  return ctx
 }

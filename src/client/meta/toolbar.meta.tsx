@@ -38,25 +38,25 @@ const TOOLBAR_META: ComponentMeta<ToolbarOwnProps> = {
   ],
 }
 
-const TOOLBAR_START_META: ComponentMeta<unknown> = {
-  overview: {
-    title: 'Toolbar.Start',
-    description: '...',
-    behavior: ['...'],
-    byDefault: ['...'],
-    examplesOfUse: ['...'],
-    composedOf: TOOLBAR_START_INHERITED_PROPS,
-  },
-}
-
 const TOOLBAR_MAIN_META: ComponentMeta<unknown> = {
   overview: {
-    title: 'Toolbar.Main (optional)',
+    title: 'Toolbar.Main',
     description: '...',
     behavior: ['...'],
     byDefault: ['...'],
     examplesOfUse: ['...'],
     composedOf: TOOLBAR_MAIN_INHERITED_PROPS,
+  },
+}
+
+const TOOLBAR_START_META: ComponentMeta<unknown> = {
+  overview: {
+    title: 'Toolbar.Start (optional)',
+    description: '...',
+    behavior: ['...'],
+    byDefault: ['...'],
+    examplesOfUse: ['...'],
+    composedOf: TOOLBAR_START_INHERITED_PROPS,
   },
 }
 
@@ -73,7 +73,7 @@ const TOOLBAR_END_META: ComponentMeta<unknown> = {
 
 export default {
   Toolbar: TOOLBAR_META,
-  'Toolbar.Start': TOOLBAR_START_META,
   'Toolbar.Main': TOOLBAR_MAIN_META,
+  'Toolbar.Start': TOOLBAR_START_META,
   'Toolbar.End': TOOLBAR_END_META,
 }

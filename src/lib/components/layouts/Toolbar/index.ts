@@ -10,3 +10,4 @@ export const Toolbar = Object.assign(ToolbarBase, {
 
 export { type ToolbarProps } from './definitions'
 export type { ToolbarStartProps, ToolbarMainProps, ToolbarEndProps } from './slots'
+export { useToolbarContext } from './ToolbarProvider'

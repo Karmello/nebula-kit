@@ -1,5 +1,5 @@
-import { ButtonProps, FlexItemProps, FlexProps } from 'lib/components'
-import { CssFlexAlignItems, CssFlexDirection, MakeRequired, RespValue } from 'lib/definitions'
+import { ButtonProps, FlexProps } from 'lib/components'
+import { CssFlexDirection, MakeRequired, RespValue } from 'lib/definitions'
 
 import { ButtonElem } from '../Button/definitions'
 
