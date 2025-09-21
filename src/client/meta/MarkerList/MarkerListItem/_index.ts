@@ -11,4 +11,4 @@ const MARKER_LIST_ITEM_META: ComponentMeta<MarkerListOwnProps> = {
   },
 }
 
-export default MARKER_LIST_ITEM_META
+export { MARKER_LIST_ITEM_META }

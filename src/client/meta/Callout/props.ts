@@ -29,4 +29,4 @@ const CALLOUT_PROPS_META: ComponentMeta<CalloutOwnProps>['props'] = {
   },
 }
 
-export default CALLOUT_PROPS_META
+export { CALLOUT_PROPS_META }

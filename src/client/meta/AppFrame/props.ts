@@ -13,4 +13,4 @@ const APP_FRAME_PROPS_META: ComponentMeta<AppFrameOwnProps>['props'] = {
   },
 }
 
-export default APP_FRAME_PROPS_META
+export { APP_FRAME_PROPS_META }

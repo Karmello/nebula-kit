@@ -18,4 +18,4 @@ const ICON_BUTTON_EXAMPLES_META: ComponentMeta<IconButtonProps>['examples'] = [
   },
 ]
 
-export default ICON_BUTTON_EXAMPLES_META
+export { ICON_BUTTON_EXAMPLES_META }

@@ -18,4 +18,4 @@ const FLEX_EXAMPLES_META: ComponentMeta<FlexOwnProps>['examples'] = [
   },
 ]
 
-export default FLEX_EXAMPLES_META
+export { FLEX_EXAMPLES_META }

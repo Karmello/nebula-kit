@@ -21,4 +21,4 @@ const APP_FRAME_EXAMPLES_META: ComponentMeta<AppFrameOwnProps>['examples'] = [
   },
 ]
 
-export default APP_FRAME_EXAMPLES_META
+export { APP_FRAME_EXAMPLES_META }

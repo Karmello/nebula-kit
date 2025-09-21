@@ -3,7 +3,7 @@ import { ComponentMeta } from 'client/definitions'
 import { ButtonTag } from 'lib/components/controls/Button/definitions'
 import { ICON_BUTTON_INHERITED_PROPS } from 'lib/components/controls/IconButton/definitions'
 
-import examples from './examples'
+import { ICON_BUTTON_EXAMPLES_META } from './examples'
 
 const ICON_BUTTON_META: ComponentMeta<IconButtonProps> = {
   overview: {
@@ -15,7 +15,7 @@ const ICON_BUTTON_META: ComponentMeta<IconButtonProps> = {
     composedOf: ICON_BUTTON_INHERITED_PROPS,
     rendersAs: ButtonTag,
   },
-  examples,
+  examples: ICON_BUTTON_EXAMPLES_META,
 }
 
 export default {

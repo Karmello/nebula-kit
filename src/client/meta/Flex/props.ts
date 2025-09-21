@@ -61,4 +61,4 @@ const FLEX_PROPS_META: ComponentMeta<FlexOwnProps>['props'] = {
   },
 }
 
-export default FLEX_PROPS_META
+export { FLEX_PROPS_META }

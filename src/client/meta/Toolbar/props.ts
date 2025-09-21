@@ -13,4 +13,4 @@ const TOOLBAR_PROPS_META: ComponentMeta<ToolbarOwnProps>['props'] = {
   },
 }
 
-export default TOOLBAR_PROPS_META
+export { TOOLBAR_PROPS_META }

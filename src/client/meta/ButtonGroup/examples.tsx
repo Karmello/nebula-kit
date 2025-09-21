@@ -95,4 +95,4 @@ const BUTTON_GROUP_EXAMPLES_META: ComponentMeta<ButtonGroupOwnProps>['examples']
   },
 ]
 
-export default BUTTON_GROUP_EXAMPLES_META
+export { BUTTON_GROUP_EXAMPLES_META }

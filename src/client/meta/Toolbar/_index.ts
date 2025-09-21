@@ -1,12 +1,12 @@
 import { ComponentMeta } from 'client/definitions'
 import { TOOLBAR_INHERITED_PROPS, ToolbarOwnProps } from 'lib/components/layouts/Toolbar/definitions'
 
-import props from './props'
-import examples from './examples'
+import { TOOLBAR_PROPS_META } from './props'
+import { TOOLBAR_EXAMPLES_META } from './examples'
 
-import TOOLBAR_MAIN_META from './ToolbarMain/_index'
-import TOOLBAR_START_META from './ToolbarStart/_index'
-import TOOLBAR_END_META from './ToolbarEnd/_index'
+import { TOOLBAR_MAIN_META } from './ToolbarMain/_index'
+import { TOOLBAR_START_META } from './ToolbarStart/_index'
+import { TOOLBAR_END_META } from './ToolbarEnd/_index'
 
 const TOOLBAR_META: ComponentMeta<ToolbarOwnProps> = {
   overview: {
@@ -26,8 +26,8 @@ const TOOLBAR_META: ComponentMeta<ToolbarOwnProps> = {
     composedOf: TOOLBAR_INHERITED_PROPS,
     rendersAs: ['nav'],
   },
-  props,
-  examples,
+  props: TOOLBAR_PROPS_META,
+  examples: TOOLBAR_EXAMPLES_META,
 }
 
 export default {

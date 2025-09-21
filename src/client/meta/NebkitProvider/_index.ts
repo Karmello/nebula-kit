@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { NebkitProviderProps } from 'lib/components'
 
-import props from './props'
-import examples from './examples'
+import { NEBKIT_PROVIDER_PROPS_META } from './props'
+import { NEBKIT_PROVIDER_EXAMPLES_META } from './examples'
 
 const NEBKIT_PROVIDER_META: ComponentMeta<NebkitProviderProps> = {
   overview: {
@@ -23,8 +23,8 @@ const NEBKIT_PROVIDER_META: ComponentMeta<NebkitProviderProps> = {
       'always wrap with NebkitProvider to inherit theming and global configuration across the app',
     ],
   },
-  props,
-  examples,
+  props: NEBKIT_PROVIDER_PROPS_META,
+  examples: NEBKIT_PROVIDER_EXAMPLES_META,
 }
 
 export default {

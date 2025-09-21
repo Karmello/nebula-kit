@@ -6,10 +6,10 @@ import {
   MarkerListOwnProps,
 } from 'lib/components/elements/MarkerList/definitions'
 
-import props from './props'
-import examples from './examples'
+import { MARKER_LIST_PROPS_META } from './props'
+import { MARKER_LIST_EXAMPLES_META } from './examples'
 
-import MARKER_LIST_ITEM_META from './MarkerListItem/_index'
+import { MARKER_LIST_ITEM_META } from './MarkerListItem/_index'
 
 const MARKER_LIST_META: ComponentMeta<MarkerListOwnProps> = {
   overview: {
@@ -31,8 +31,8 @@ const MARKER_LIST_META: ComponentMeta<MarkerListOwnProps> = {
     composedOf: MARKER_LIST_INHERITED_PROPS,
     rendersAs: MarkerListTag,
   },
-  props,
-  examples,
+  props: MARKER_LIST_PROPS_META,
+  examples: MARKER_LIST_EXAMPLES_META,
 }
 
 export default {

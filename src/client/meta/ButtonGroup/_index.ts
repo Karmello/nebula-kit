@@ -7,8 +7,8 @@ import {
   DEFAULT_BUTTON_GROUP_GAP,
 } from 'lib/components/controls/ButtonGroup/definitions'
 
-import props from './props'
-import examples from './examples'
+import { BUTTON_GROUP_PROPS_META } from './props'
+import { BUTTON_GROUP_EXAMPLES_META } from './examples'
 
 const BUTTON_GROUP_META: ComponentMeta<ButtonGroupOwnProps> = {
   overview: {
@@ -25,8 +25,8 @@ const BUTTON_GROUP_META: ComponentMeta<ButtonGroupOwnProps> = {
     composedOf: BUTTON_GROUP_INHERITED_PROPS,
     rendersAs: ButtonGroupTag,
   },
-  props,
-  examples,
+  props: BUTTON_GROUP_PROPS_META,
+  examples: BUTTON_GROUP_EXAMPLES_META,
 }
 
 export default {

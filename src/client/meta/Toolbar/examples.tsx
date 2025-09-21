@@ -26,4 +26,4 @@ const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarOwnProps>['examples'] = [
   },
 ]
 
-export default TOOLBAR_EXAMPLES_META
+export { TOOLBAR_EXAMPLES_META }

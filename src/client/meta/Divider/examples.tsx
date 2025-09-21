@@ -24,4 +24,4 @@ const DIVIDER_EXAMPLES_META: ComponentMeta<DividerOwnProps>['examples'] = [
   },
 ]
 
-export default DIVIDER_EXAMPLES_META
+export { DIVIDER_EXAMPLES_META }

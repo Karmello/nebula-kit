@@ -27,4 +27,4 @@ const HYDRATION_GATE_PROPS_META: ComponentMeta<HydrationGateProps>['props'] = {
   },
 }
 
-export default HYDRATION_GATE_PROPS_META
+export { HYDRATION_GATE_PROPS_META }

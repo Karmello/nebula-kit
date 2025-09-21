@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { TEXT_INHERITED_PROPS, TextTag, TextOwnProps } from 'lib/components/base/Text/definitions'
 
-import props from './props'
-import examples from './examples'
+import { TEXT_PROPS_META } from './props'
+import { TEXT_EXAMPLES_META } from './examples'
 
 const TEXT_META: ComponentMeta<TextOwnProps> = {
   overview: {
@@ -23,8 +23,8 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
     composedOf: TEXT_INHERITED_PROPS,
     rendersAs: TextTag,
   },
-  props,
-  examples,
+  props: TEXT_PROPS_META,
+  examples: TEXT_EXAMPLES_META,
 }
 
 export default {

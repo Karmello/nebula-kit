@@ -28,4 +28,4 @@ const SVG_ICON_PROPS_META: ComponentMeta<SvgIconProps>['props'] = {
   },
 }
 
-export default SVG_ICON_PROPS_META
+export { SVG_ICON_PROPS_META }

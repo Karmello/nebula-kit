@@ -13,4 +13,4 @@ const TOOLBAR_END_META: ComponentMeta<ToolbarEndProps> = {
   },
 }
 
-export default TOOLBAR_END_META
+export { TOOLBAR_END_META }

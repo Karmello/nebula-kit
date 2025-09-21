@@ -21,4 +21,4 @@ const SECTION_EXAMPLES_META: ComponentMeta<SectionOwnProps>['examples'] = [
   },
 ]
 
-export default SECTION_EXAMPLES_META
+export { SECTION_EXAMPLES_META }

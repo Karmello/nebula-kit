@@ -15,9 +15,9 @@ type Prop<PropsType> = {
   name: keyof PropsType
   options: string[]
   defaultValue?: string
-  isRequired: boolean
-  isResponsive: boolean
-  description: string
+  isRequired?: boolean
+  isResponsive?: boolean
+  description?: string
 }
 
 type Example = {

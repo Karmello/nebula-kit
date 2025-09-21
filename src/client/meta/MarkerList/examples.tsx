@@ -40,4 +40,4 @@ const MARKER_LIST_EXAMPLES_META: ComponentMeta<MarkerListOwnProps>['examples'] =
   },
 ]
 
-export default MARKER_LIST_EXAMPLES_META
+export { MARKER_LIST_EXAMPLES_META }

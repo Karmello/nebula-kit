@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { DIVIDER_INHERITED_PROPS, DividerOwnProps } from 'lib/components/elements/Divider/definitions'
 
-import props from './props'
-import examples from './examples'
+import { DIVIDER_PROPS_META } from './props'
+import { DIVIDER_EXAMPLES_META } from './examples'
 
 const DIVIDER_META: ComponentMeta<DividerOwnProps> = {
   overview: {
@@ -19,8 +19,8 @@ const DIVIDER_META: ComponentMeta<DividerOwnProps> = {
     composedOf: DIVIDER_INHERITED_PROPS,
     rendersAs: ['hr'],
   },
-  props,
-  examples,
+  props: DIVIDER_PROPS_META,
+  examples: DIVIDER_EXAMPLES_META,
 }
 
 export default {

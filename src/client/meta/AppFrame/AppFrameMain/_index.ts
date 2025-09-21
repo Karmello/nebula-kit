@@ -12,4 +12,4 @@ const APP_FRAME_MAIN_META: ComponentMeta<AppFrameOwnProps> = {
   },
 }
 
-export default APP_FRAME_MAIN_META
+export { APP_FRAME_MAIN_META }

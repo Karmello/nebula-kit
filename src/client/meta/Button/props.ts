@@ -13,4 +13,4 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonOwnProps>['props'] = {
   },
 }
 
-export default BUTTON_PROPS_META
+export { BUTTON_PROPS_META }

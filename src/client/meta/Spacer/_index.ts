@@ -6,7 +6,7 @@ import {
   SpacerProps,
 } from 'lib/components/layout-base/Spacer/definitions'
 
-import examples from './examples'
+import { SPACER_EXAMPLES_META } from './examples'
 
 const SPACER_META: ComponentMeta<SpacerProps> = {
   overview: {
@@ -24,7 +24,7 @@ const SPACER_META: ComponentMeta<SpacerProps> = {
     ],
     composedOf: SPACER_INHERITED_PROPS,
   },
-  examples,
+  examples: SPACER_EXAMPLES_META,
 }
 
 export default {

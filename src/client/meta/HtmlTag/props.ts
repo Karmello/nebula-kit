@@ -35,4 +35,4 @@ const HTML_TAG_PROPS_META: ComponentMeta<HtmlTagProps<ElementType>>['props'] = {
   },
 }
 
-export default HTML_TAG_PROPS_META
+export { HTML_TAG_PROPS_META }

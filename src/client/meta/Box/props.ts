@@ -304,4 +304,4 @@ const BOX_PROPS_META: ComponentMeta<BoxOwnProps>['props'] = {
   },
 }
 
-export default BOX_PROPS_META
+export { BOX_PROPS_META }

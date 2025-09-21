@@ -19,4 +19,4 @@ const SPLIT_VIEW_SIDE_META: ComponentMeta<SplitViewSideProps> = {
   },
 }
 
-export default SPLIT_VIEW_SIDE_META
+export { SPLIT_VIEW_SIDE_META }

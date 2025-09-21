@@ -19,4 +19,4 @@ const HYDRATION_GATE_EXAMPLES_META: ComponentMeta<HydrationGateProps>['examples'
   },
 ]
 
-export default HYDRATION_GATE_EXAMPLES_META
+export { HYDRATION_GATE_EXAMPLES_META }

@@ -11,4 +11,4 @@ const TOOLBAR_MAIN_META: ComponentMeta<ToolbarMainProps> = {
   },
 }
 
-export default TOOLBAR_MAIN_META
+export { TOOLBAR_MAIN_META }

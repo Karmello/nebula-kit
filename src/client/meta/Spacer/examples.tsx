@@ -14,4 +14,4 @@ const SPACER_EXAMPLES_META: ComponentMeta<any>['examples'] = [
   },
 ]
 
-export default SPACER_EXAMPLES_META
+export { SPACER_EXAMPLES_META }

@@ -19,4 +19,4 @@ const GRID_EXAMPLES_META: ComponentMeta<GridOwnProps>['examples'] = [
   },
 ]
 
-export default GRID_EXAMPLES_META
+export { GRID_EXAMPLES_META }

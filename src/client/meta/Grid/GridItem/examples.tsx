@@ -28,4 +28,4 @@ const GRID_ITEM_EXAMPLES_META: ComponentMeta<GridItemOwnProps>['examples'] = [
   },
 ]
 
-export default GRID_ITEM_EXAMPLES_META
+export { GRID_ITEM_EXAMPLES_META }

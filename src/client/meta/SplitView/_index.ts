@@ -1,12 +1,12 @@
 import { ComponentMeta } from 'client/definitions'
 import { SPLIT_VIEW_INHERITED_PROPS, SplitViewOwnProps } from 'lib/components/layouts/SplitView/definitions'
 
-import props from './props'
-import examples from './examples'
+import { SPLIT_VIEW_PROPS_META } from './props'
+import { SPLIT_VIEW_EXAMPLES_META } from './examples'
 
-import SPLIT_VIEW_SIDE_META from './SplitViewSide/_index'
-import SPLIT_VIEW_MAIN_META from './SplitViewMain/_index'
-import SPLIT_VIEW_MAIN_BAR_META from './SplitViewMainBar/_index'
+import { SPLIT_VIEW_SIDE_META } from './SplitViewSide/_index'
+import { SPLIT_VIEW_MAIN_META } from './SplitViewMain/_index'
+import { SPLIT_VIEW_MAIN_BAR_META } from './SplitViewMainBar/_index'
 
 const SPLIT_VIEW_META: ComponentMeta<SplitViewOwnProps> = {
   overview: {
@@ -30,8 +30,8 @@ const SPLIT_VIEW_META: ComponentMeta<SplitViewOwnProps> = {
     ],
     rendersAs: ['div'],
   },
-  props,
-  examples,
+  props: SPLIT_VIEW_PROPS_META,
+  examples: SPLIT_VIEW_EXAMPLES_META,
 }
 
 export default {

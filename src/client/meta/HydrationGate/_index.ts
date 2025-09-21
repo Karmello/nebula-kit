@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { HydrationGateProps } from 'lib/components'
 
-import props from './props'
-import examples from './examples'
+import { HYDRATION_GATE_PROPS_META } from './props'
+import { HYDRATION_GATE_EXAMPLES_META } from './examples'
 
 const HYDRATION_GATE_META: ComponentMeta<HydrationGateProps> = {
   overview: {
@@ -22,8 +22,8 @@ const HYDRATION_GATE_META: ComponentMeta<HydrationGateProps> = {
     ],
     examplesOfUse: ['building an app with SSR where initial flicker of unstyled components is unacceptable'],
   },
-  props,
-  examples,
+  props: HYDRATION_GATE_PROPS_META,
+  examples: HYDRATION_GATE_EXAMPLES_META,
 }
 
 export default {

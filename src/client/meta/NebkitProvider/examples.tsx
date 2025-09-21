@@ -26,4 +26,4 @@ const NEBKIT_PROVIDER_EXAMPLES_META: ComponentMeta<NebkitProviderProps>['example
   },
 ]
 
-export default NEBKIT_PROVIDER_EXAMPLES_META
+export { NEBKIT_PROVIDER_EXAMPLES_META }

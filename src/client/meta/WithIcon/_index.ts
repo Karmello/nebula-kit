@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { WITH_ICON_INHERITED_PROPS, WithIconOwnProps } from 'lib/components/utility/WithIcon/definitions'
 
-import props from './props'
-import examples from './examples'
+import { WITH_ICON_PROPS_META } from './props'
+import { WITH_ICON_EXAMPLES_META } from './examples'
 
 const WITH_ICON_META: ComponentMeta<WithIconOwnProps> = {
   overview: {
@@ -21,8 +21,8 @@ const WITH_ICON_META: ComponentMeta<WithIconOwnProps> = {
     composedOf: WITH_ICON_INHERITED_PROPS,
     rendersAs: ['span'],
   },
-  props,
-  examples,
+  props: WITH_ICON_PROPS_META,
+  examples: WITH_ICON_EXAMPLES_META,
 }
 
 export default {

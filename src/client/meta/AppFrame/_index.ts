@@ -1,12 +1,12 @@
 import { ComponentMeta } from 'client/definitions'
 import { APP_FRAME_INHERITED_PROPS, AppFrameOwnProps } from 'lib/components/layouts/AppFrame/definitions'
 
-import props from './props'
-import examples from './examples'
+import { APP_FRAME_PROPS_META } from './props'
+import { APP_FRAME_EXAMPLES_META } from './examples'
 
-import APP_FRAME_HEADER_META from './AppFrameHeader/_index'
-import APP_FRAME_MAIN_META from './AppFrameMain/_index'
-import APP_FRAME_FOOTER_META from './AppFrameFooter/_index'
+import { APP_FRAME_HEADER_META } from './AppFrameHeader/_index'
+import { APP_FRAME_MAIN_META } from './AppFrameMain/_index'
+import { APP_FRAME_FOOTER_META } from './AppFrameFooter/_index'
 
 const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
   overview: {
@@ -21,8 +21,8 @@ const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
     composedOf: APP_FRAME_INHERITED_PROPS,
     rendersAs: ['div'],
   },
-  props,
-  examples,
+  props: APP_FRAME_PROPS_META,
+  examples: APP_FRAME_EXAMPLES_META,
 }
 
 export default {

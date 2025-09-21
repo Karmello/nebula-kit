@@ -17,4 +17,4 @@ const WITH_ICON_PROPS_META: ComponentMeta<WithIconOwnProps>['props'] = {
   },
 }
 
-export default WITH_ICON_PROPS_META
+export { WITH_ICON_PROPS_META }

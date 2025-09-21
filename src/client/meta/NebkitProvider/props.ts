@@ -28,4 +28,4 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = 
   },
 }
 
-export default NEBKIT_PROVIDER_PROPS_META
+export { NEBKIT_PROVIDER_PROPS_META }

@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { BOX_INHERITED_PROPS, BoxOwnProps } from 'lib/components/base/Box/definitions'
 
-import props from './props'
-import examples from './examples'
+import { BOX_PROPS_META } from './props'
+import { BOX_EXAMPLES_META } from './examples'
 
 const BOX_META: ComponentMeta<BoxOwnProps> = {
   overview: {
@@ -25,8 +25,8 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     ],
     composedOf: BOX_INHERITED_PROPS,
   },
-  props,
-  examples,
+  props: BOX_PROPS_META,
+  examples: BOX_EXAMPLES_META,
 }
 
 export default {

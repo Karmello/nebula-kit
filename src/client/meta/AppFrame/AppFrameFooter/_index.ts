@@ -16,4 +16,4 @@ const APP_FRAME_FOOTER_META: ComponentMeta<AppFrameOwnProps> = {
   },
 }
 
-export default APP_FRAME_FOOTER_META
+export { APP_FRAME_FOOTER_META }

@@ -2,8 +2,8 @@ import { ComponentMeta } from 'client/definitions'
 
 import { BUTTON_INHERITED_PROPS, ButtonTag, ButtonOwnProps } from 'lib/components/controls/Button/definitions'
 
-import props from './props'
-import examples from './examples'
+import { BUTTON_PROPS_META } from './props'
+import { BUTTON_EXAMPLES_META } from './examples'
 
 const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
   overview: {
@@ -20,8 +20,8 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
     composedOf: BUTTON_INHERITED_PROPS,
     rendersAs: ButtonTag,
   },
-  props,
-  examples,
+  props: BUTTON_PROPS_META,
+  examples: BUTTON_EXAMPLES_META,
 }
 
 export default {

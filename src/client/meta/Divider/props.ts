@@ -12,4 +12,4 @@ const DIVIDER_PROPS_META: ComponentMeta<DividerOwnProps>['props'] = {
   },
 }
 
-export default DIVIDER_PROPS_META
+export { DIVIDER_PROPS_META }

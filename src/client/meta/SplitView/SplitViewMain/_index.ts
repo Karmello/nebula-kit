@@ -15,4 +15,4 @@ const SPLIT_VIEW_MAIN_META: ComponentMeta<SplitViewMainProps> = {
   },
 }
 
-export default SPLIT_VIEW_MAIN_META
+export { SPLIT_VIEW_MAIN_META }

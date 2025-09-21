@@ -1,4 +1,4 @@
-import { Section, Spacer, SvgIcon, Table, Text } from 'lib/components'
+import { Section, Spacer, Table, Text } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 
 type Props = {
@@ -7,9 +7,6 @@ type Props = {
 }
 
 export const PropsTable = ({ category, data }: Props) => {
-  const isSomeRequired = Object.values<any>(data).some(prop => prop.isRequired)
-  const isSomeResponsive = Object.values<any>(data).some(prop => prop.isResponsive)
-
   const table = (
     <Table zebra>
       <Table.Head>
@@ -17,12 +14,6 @@ export const PropsTable = ({ category, data }: Props) => {
           <Table.HeadCell>Name</Table.HeadCell>
           <Table.HeadCell tagAttrs={{ style: { minWidth: '15ch' } }}>Options</Table.HeadCell>
           <Table.HeadCell tagAttrs={{ style: { textAlign: 'center' } }}>Default</Table.HeadCell>
-          {isSomeRequired ? (
-            <Table.HeadCell tagAttrs={{ style: { textAlign: 'center' } }}>Required</Table.HeadCell>
-          ) : null}
-          {isSomeResponsive ? (
-            <Table.HeadCell tagAttrs={{ style: { textAlign: 'center' } }}>Responsive</Table.HeadCell>
-          ) : null}
           <Table.HeadCell tagAttrs={{ style: { width: '40%', minWidth: '40ch' } }}>
             Description
           </Table.HeadCell>
@@ -33,23 +24,13 @@ export const PropsTable = ({ category, data }: Props) => {
           <Table.Row key={name}>
             <Table.Cell>
               <Text intent="primary" bold>
-                {name}
+                {`${name}${!isRequired ? '?' : ''}${isResponsive ? ' (resp)' : ''}`}
               </Text>
             </Table.Cell>
             <Table.Cell>{typeof options === 'string' ? options : options.join(', ')}</Table.Cell>
             <Table.Cell tagAttrs={{ style: { textAlign: 'center', whiteSpace: 'nowrap' } }}>
               {defaultValue !== undefined ? defaultValue : '-'}
             </Table.Cell>
-            {isSomeRequired ? (
-              <Table.Cell tagAttrs={{ style: { textAlign: 'center' } }}>
-                {isRequired ? <SvgIcon iconName="check" iconIntent="primary" iconSize={10} /> : '-'}
-              </Table.Cell>
-            ) : null}
-            {isSomeResponsive ? (
-              <Table.Cell tagAttrs={{ style: { textAlign: 'center' } }}>
-                {isResponsive ? <SvgIcon iconName="check" iconIntent="primary" iconSize={10} /> : '-'}
-              </Table.Cell>
-            ) : null}
             <Table.Cell>{description}</Table.Cell>
           </Table.Row>
         ))}

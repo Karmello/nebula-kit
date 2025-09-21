@@ -16,4 +16,4 @@ const HTML_TAG_EXAMPLES_META: ComponentMeta<HtmlTagProps<ElementType>>['examples
   },
 ]
 
-export default HTML_TAG_EXAMPLES_META
+export { HTML_TAG_EXAMPLES_META }

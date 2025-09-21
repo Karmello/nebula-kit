@@ -5,8 +5,8 @@ import {
   GridItemOwnProps,
 } from 'lib/components/layout-base/Grid/GridItem/definitions'
 
-import props from './props'
-import examples from './examples'
+import { GRID_ITEM_PROPS_META } from './props'
+import { GRID_ITEM_EXAMPLES_META } from './examples'
 
 const GRID_ITEM_META: ComponentMeta<GridItemOwnProps> = {
   overview: {
@@ -32,8 +32,8 @@ const GRID_ITEM_META: ComponentMeta<GridItemOwnProps> = {
     ],
     composedOf: GRID_ITEM_INHERITED_PROPS,
   },
-  props,
-  examples,
+  props: GRID_ITEM_PROPS_META,
+  examples: GRID_ITEM_EXAMPLES_META,
 }
 
-export default GRID_ITEM_META
+export { GRID_ITEM_META }

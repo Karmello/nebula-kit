@@ -51,4 +51,4 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxOwnProps>['examples'] = [
   },
 ]
 
-export default BOX_EXAMPLES_META
+export { BOX_EXAMPLES_META }

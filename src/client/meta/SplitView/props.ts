@@ -22,4 +22,4 @@ const SPLIT_VIEW_PROPS_META: ComponentMeta<SplitViewOwnProps>['props'] = {
   },
 }
 
-export default SPLIT_VIEW_PROPS_META
+export { SPLIT_VIEW_PROPS_META }

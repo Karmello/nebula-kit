@@ -37,4 +37,4 @@ const GRID_ITEM_PROPS_META: ComponentMeta<GridItemOwnProps>['props'] = {
   },
 }
 
-export default GRID_ITEM_PROPS_META
+export { GRID_ITEM_PROPS_META }

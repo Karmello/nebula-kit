@@ -14,4 +14,4 @@ const SPLIT_VIEW_MAIN_BAR_META: ComponentMeta<SplitViewMainBarProps> = {
   },
 }
 
-export default SPLIT_VIEW_MAIN_BAR_META
+export { SPLIT_VIEW_MAIN_BAR_META }

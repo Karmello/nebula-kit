@@ -28,4 +28,4 @@ const BUTTON_GROUP_PROPS_META: ComponentMeta<ButtonGroupOwnProps>['props'] = {
   },
 }
 
-export default BUTTON_GROUP_PROPS_META
+export { BUTTON_GROUP_PROPS_META }

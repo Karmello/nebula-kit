@@ -21,4 +21,4 @@ const WITH_ICON_EXAMPLES_META: ComponentMeta<WithIconOwnProps>['examples'] = [
   },
 ]
 
-export default WITH_ICON_EXAMPLES_META
+export { WITH_ICON_EXAMPLES_META }

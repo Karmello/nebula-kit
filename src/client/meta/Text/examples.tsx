@@ -38,4 +38,4 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextOwnProps>['examples'] = [
   },
 ]
 
-export default TEXT_EXAMPLES_META
+export { TEXT_EXAMPLES_META }

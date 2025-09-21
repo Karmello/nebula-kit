@@ -46,4 +46,4 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutOwnProps>['examples'] = [
   },
 ]
 
-export default CALLOUT_EXAMPLES_META
+export { CALLOUT_EXAMPLES_META }

@@ -52,4 +52,4 @@ const TEXT_PROPS_META: ComponentMeta<TextOwnProps>['props'] = {
   },
 }
 
-export default TEXT_PROPS_META
+export { TEXT_PROPS_META }

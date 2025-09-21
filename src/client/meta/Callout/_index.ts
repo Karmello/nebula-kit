@@ -6,8 +6,8 @@ import {
   CalloutOwnProps,
 } from 'lib/components/feedback/Callout/definitions'
 
-import props from './props'
-import examples from './examples'
+import { CALLOUT_PROPS_META } from './props'
+import { CALLOUT_EXAMPLES_META } from './examples'
 
 const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
   overview: {
@@ -38,8 +38,8 @@ const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
     composedOf: CALLOUT_INHERITED_PROPS,
     rendersAs: CalloutTag,
   },
-  props,
-  examples,
+  props: CALLOUT_PROPS_META,
+  examples: CALLOUT_EXAMPLES_META,
 }
 
 export default {

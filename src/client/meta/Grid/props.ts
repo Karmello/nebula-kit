@@ -85,4 +85,4 @@ const GRID_PROPS_META: ComponentMeta<GridOwnProps>['props'] = {
   },
 }
 
-export default GRID_PROPS_META
+export { GRID_PROPS_META }

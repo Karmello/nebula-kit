@@ -1,10 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
 import { GRID_INHERITED_PROPS, GridTag, GridOwnProps } from 'lib/components/layout-base/Grid/definitions'
 
-import props from './props'
-import examples from './examples'
+import { GRID_PROPS_META } from './props'
+import { GRID_EXAMPLES_META } from './examples'
 
-import GRID_ITEM_META from './GridItem/_index'
+import { GRID_ITEM_META } from './GridItem/_index'
 
 const GRID_META: ComponentMeta<GridOwnProps> = {
   overview: {
@@ -32,8 +32,8 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
     composedOf: GRID_INHERITED_PROPS,
     rendersAs: GridTag,
   },
-  props,
-  examples,
+  props: GRID_PROPS_META,
+  examples: GRID_EXAMPLES_META,
 }
 
 export default {

@@ -20,4 +20,4 @@ const SECTION_PROPS_META: ComponentMeta<SectionOwnProps>['props'] = {
   },
 }
 
-export default SECTION_PROPS_META
+export { SECTION_PROPS_META }

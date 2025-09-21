@@ -3,8 +3,8 @@ import { ElementType } from 'react'
 import { HtmlTagProps } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 
-import props from './props'
-import examples from './examples'
+import { HTML_TAG_PROPS_META } from './props'
+import { HTML_TAG_EXAMPLES_META } from './examples'
 
 const HTML_TAG_META: ComponentMeta<HtmlTagProps<ElementType>> = {
   overview: {
@@ -21,8 +21,8 @@ const HTML_TAG_META: ComponentMeta<HtmlTagProps<ElementType>> = {
       'could be helpful as an escape hatch if you need the absolute lowest layer without extra props or behaviors',
     ],
   },
-  props,
-  examples,
+  props: HTML_TAG_PROPS_META,
+  examples: HTML_TAG_EXAMPLES_META,
 }
 
 export default {

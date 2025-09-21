@@ -16,4 +16,4 @@ const SVG_ICON_EXAMPLES_META: ComponentMeta<SvgIconProps>['examples'] = [
   },
 ]
 
-export default SVG_ICON_EXAMPLES_META
+export { SVG_ICON_EXAMPLES_META }

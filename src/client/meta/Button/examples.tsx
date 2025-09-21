@@ -60,4 +60,4 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonOwnProps>['examples'] = [
   },
 ]
 
-export default BUTTON_EXAMPLES_META
+export { BUTTON_EXAMPLES_META }

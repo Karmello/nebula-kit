@@ -27,4 +27,4 @@ const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewOwnProps>['examples'] = [
   },
 ]
 
-export default SPLIT_VIEW_EXAMPLES_META
+export { SPLIT_VIEW_EXAMPLES_META }

@@ -16,4 +16,4 @@ const TOOLBAR_START_META: ComponentMeta<ToolbarStartProps> = {
   },
 }
 
-export default TOOLBAR_START_META
+export { TOOLBAR_START_META }

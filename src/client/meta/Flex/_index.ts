@@ -1,10 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
 import { FLEX_INHERITED_PROPS, FlexOwnProps } from 'lib/components/layout-base/Flex/definitions'
 
-import props from './props'
-import examples from './examples'
+import { FLEX_PROPS_META } from './props'
+import { FLEX_EXAMPLES_META } from './examples'
 
-import FLEX_ITEM_META from './FlexItem/_index'
+import { FLEX_ITEM_META } from './FlexItem/_index'
 
 const FLEX_META: ComponentMeta<FlexOwnProps> = {
   overview: {
@@ -32,8 +32,8 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
     ],
     composedOf: FLEX_INHERITED_PROPS,
   },
-  props,
-  examples,
+  props: FLEX_PROPS_META,
+  examples: FLEX_EXAMPLES_META,
 }
 
 export default {

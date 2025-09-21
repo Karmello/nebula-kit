@@ -54,4 +54,4 @@ const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemOwnProps>['props'] = {
   },
 }
 
-export default FLEX_ITEM_PROPS_META
+export { FLEX_ITEM_PROPS_META }

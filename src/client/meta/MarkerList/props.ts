@@ -12,4 +12,4 @@ const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListOwnProps>['props'] = {
   },
 }
 
-export default MARKER_LIST_PROPS_META
+export { MARKER_LIST_PROPS_META }
