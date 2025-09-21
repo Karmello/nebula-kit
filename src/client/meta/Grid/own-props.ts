@@ -1,0 +1,86 @@
+import { ComponentMeta } from 'client/definitions'
+import { GridOwnProps } from 'lib/components/layout-base/Grid/definitions'
+import { CssGridAutoFlow, CssGridPlaceContent, CssGridPlaceItems } from 'lib/definitions'
+
+export default [
+  {
+    name: 'gridTemplateColumns',
+    options: ['string', 'number'],
+    defaultValue: '1fr',
+    isRequired: false,
+    isResponsive: true,
+    description: 'Defines the column structure of the grid.',
+  },
+  {
+    name: 'gridTemplateRows',
+    options: ['string', 'number'],
+    defaultValue: 'auto',
+    isRequired: false,
+    isResponsive: true,
+    description: "Sets how the grid's rows are laid out.",
+  },
+  {
+    name: 'gridAutoRows',
+    options: ['string'],
+    defaultValue: 'auto',
+    isRequired: false,
+    isResponsive: true,
+    description: 'Defines the size of rows that are created automatically.',
+  },
+  {
+    name: 'gridAutoColumns',
+    options: ['string'],
+    defaultValue: 'auto',
+    isRequired: false,
+    isResponsive: true,
+    description: 'Defines the size of columns that are created automatically.',
+  },
+  {
+    name: 'gridAutoFlow',
+    options: Object.values(CssGridAutoFlow),
+    defaultValue: CssGridAutoFlow[0],
+    isRequired: false,
+    isResponsive: true,
+    description: 'Controls how items are automatically placed into the grid.',
+  },
+  {
+    name: 'placeItems',
+    options: Object.values(CssGridPlaceItems),
+    defaultValue: CssGridPlaceItems[0],
+    isRequired: false,
+    isResponsive: true,
+    description: 'Controls how grid items are aligned within their cells.',
+  },
+  {
+    name: 'placeContent',
+    options: Object.values(CssGridPlaceContent),
+    defaultValue: CssGridPlaceContent[0],
+    isRequired: false,
+    isResponsive: true,
+    description: 'Controls how the grid as a whole is aligned within its container.',
+  },
+  {
+    name: 'gap',
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'initial',
+    isRequired: false,
+    isResponsive: true,
+    description: 'Sets the spacing between rows and columns in the grid.',
+  },
+  {
+    name: 'rowGap',
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'initial',
+    isRequired: false,
+    isResponsive: true,
+    description: 'Sets the spacing between grid rows.',
+  },
+  {
+    name: 'columnGap',
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'initial',
+    isRequired: false,
+    isResponsive: true,
+    description: 'Sets the spacing between grid columns.',
+  },
+] as ComponentMeta<GridOwnProps>['ownProps']
