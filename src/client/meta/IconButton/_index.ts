@@ -1,7 +1,9 @@
-import { IconButton, IconButtonProps } from 'lib/components'
+import { IconButtonProps } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 import { ButtonTag } from 'lib/components/controls/Button/definitions'
 import { ICON_BUTTON_INHERITED_PROPS } from 'lib/components/controls/IconButton/definitions'
+
+import examples from './examples'
 
 const ICON_BUTTON_META: ComponentMeta<IconButtonProps> = {
   overview: {
@@ -13,22 +15,7 @@ const ICON_BUTTON_META: ComponentMeta<IconButtonProps> = {
     composedOf: ICON_BUTTON_INHERITED_PROPS,
     rendersAs: ButtonTag,
   },
-  examples: [
-    {
-      description: 'Renders the default IconButton with a close icon as its content.',
-      jsx: <IconButton iconName="close" />,
-    },
-    {
-      description: 'Renders the IconButton as a link that opens an external page in a new tab.',
-      jsx: (
-        <IconButton
-          iconName="external-link"
-          tag="a"
-          tagAttrs={{ href: 'https://google.com', target: '_blank' }}
-        />
-      ),
-    },
-  ],
+  examples,
 }
 
 export default {
