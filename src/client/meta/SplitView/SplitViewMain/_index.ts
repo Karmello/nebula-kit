@@ -5,7 +5,7 @@ import {
   SplitViewMainProps,
 } from 'lib/components/layouts/SplitView/slots/SplitViewMain/definitions'
 
-export default {
+const SPLIT_VIEW_MAIN_META: ComponentMeta<SplitViewMainProps> = {
   overview: {
     title: 'SplitView.Main',
     description: 'The main panel region of the layout.',
@@ -13,4 +13,6 @@ export default {
     byDefault: ['no padding applied'],
     rendersAs: ['section'],
   },
-} as ComponentMeta<SplitViewMainProps>
+}
+
+export default SPLIT_VIEW_MAIN_META

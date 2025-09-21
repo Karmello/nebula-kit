@@ -3,7 +3,7 @@ import { SvgIconProps } from 'lib/components'
 import { BoxIntent } from 'lib/components/base/Box/definitions'
 import { DEFAULT_SVG_ICON_SIZE } from 'lib/components/elements/SvgIcon/definitions'
 
-export default {
+const SVG_ICON_PROPS_META: ComponentMeta<SvgIconProps>['props'] = {
   iconName: {
     name: 'iconName',
     options: ['IconName'],
@@ -26,4 +26,6 @@ export default {
     isResponsive: false,
     description: 'Applies a semantic color style from the design system.',
   },
-} as ComponentMeta<SvgIconProps>['props']
+}
+
+export default SVG_ICON_PROPS_META

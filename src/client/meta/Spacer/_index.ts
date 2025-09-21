@@ -3,11 +3,12 @@ import { ComponentMeta } from 'client/definitions'
 import {
   DEFAULT_SPACER_BLOCK_SIZE,
   SPACER_INHERITED_PROPS,
+  SpacerProps,
 } from 'lib/components/layout-base/Spacer/definitions'
 
 import examples from './examples'
 
-const SPACER_META: ComponentMeta<any> = {
+const SPACER_META: ComponentMeta<SpacerProps> = {
   overview: {
     description: 'A layout component that introduces controlled empty space between elements.',
     role: [

@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { GridOwnProps } from 'lib/components/layout-base/Grid/definitions'
 import { CssGridAutoFlow, CssGridPlaceContent, CssGridPlaceItems } from 'lib/definitions'
 
-export default {
+const GRID_PROPS_META: ComponentMeta<GridOwnProps>['props'] = {
   gridTemplateColumns: {
     name: 'gridTemplateColumns',
     options: ['string', 'number'],
@@ -83,4 +83,6 @@ export default {
     isResponsive: true,
     description: 'Sets the spacing between grid columns.',
   },
-} as ComponentMeta<GridOwnProps>['props']
+}
+
+export default GRID_PROPS_META

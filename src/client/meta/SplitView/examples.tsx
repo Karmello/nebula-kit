@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { Box, SplitView, Text } from 'lib/components'
 import { SplitViewOwnProps } from 'lib/components/layouts/SplitView/definitions'
 
-export default [
+const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewOwnProps>['examples'] = [
   {
     description:
       "Demonstrates SplitView filling its parent's height, with a side panel, a main content area, and an optional MainBar above the main content. Resize the viewport to a smaller width to see the side panel switch to its overlay version.",
@@ -25,4 +25,6 @@ export default [
     ),
     sandBoxWithNoPadding: true,
   },
-] as ComponentMeta<SplitViewOwnProps>['examples']
+]
+
+export default SPLIT_VIEW_EXAMPLES_META

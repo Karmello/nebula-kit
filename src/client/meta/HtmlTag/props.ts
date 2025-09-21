@@ -3,7 +3,7 @@ import { ElementType } from 'react'
 import { ComponentMeta } from 'client/definitions'
 import { HtmlTagProps } from 'lib/components'
 
-export default {
+const HTML_TAG_PROPS_META: ComponentMeta<HtmlTagProps<ElementType>>['props'] = {
   children: {
     name: 'children',
     options: ['ReactNode'],
@@ -33,4 +33,6 @@ export default {
     isResponsive: false,
     description: 'Reference to the rendered HTML element.',
   },
-} as ComponentMeta<HtmlTagProps<ElementType>>['props']
+}
+
+export default HTML_TAG_PROPS_META

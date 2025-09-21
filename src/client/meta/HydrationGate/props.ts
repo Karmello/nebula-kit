@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { HydrationGateProps } from 'lib/components'
 
-export default {
+const HYDRATION_GATE_PROPS_META: ComponentMeta<HydrationGateProps>['props'] = {
   children: {
     name: 'children',
     options: ['ReactElement'],
@@ -25,4 +25,6 @@ export default {
     description:
       'An optional React node displayed while the children are hidden. Typically used to show a loader or placeholder during hydration.',
   },
-} as ComponentMeta<HydrationGateProps>['props']
+}
+
+export default HYDRATION_GATE_PROPS_META

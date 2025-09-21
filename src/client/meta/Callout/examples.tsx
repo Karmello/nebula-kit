@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { Callout, Spacer } from 'lib/components'
 import { CalloutOwnProps } from 'lib/components/feedback/Callout/definitions'
 
-export default [
+const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutOwnProps>['examples'] = [
   {
     description: 'Highlights neutral or contextual information for the user.',
     jsx: (
@@ -44,4 +44,6 @@ export default [
       </>
     ),
   },
-] as ComponentMeta<CalloutOwnProps>['examples']
+]
+
+export default CALLOUT_EXAMPLES_META

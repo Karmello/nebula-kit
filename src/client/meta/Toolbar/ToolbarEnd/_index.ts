@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { ToolbarEndProps } from 'lib/components'
 import { TOOLBAR_END_INHERITED_PROPS } from 'lib/components/layouts/Toolbar/slots/ToolbarEnd/definitions'
 
-export default {
+const TOOLBAR_END_META: ComponentMeta<ToolbarEndProps> = {
   overview: {
     title: 'Toolbar.End (optional)',
     description: 'The end slot of the toolbar.',
@@ -11,4 +11,6 @@ export default {
     examplesOfUse: ['placing a user menu', 'showing a profile avatar', 'displaying notification icons'],
     composedOf: TOOLBAR_END_INHERITED_PROPS,
   },
-} as ComponentMeta<ToolbarEndProps>
+}
+
+export default TOOLBAR_END_META

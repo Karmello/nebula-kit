@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { SectionOwnProps } from 'lib/components/containers/Section/definitions'
 
-export default {
+const SECTION_PROPS_META: ComponentMeta<SectionOwnProps>['props'] = {
   heading: {
     name: 'heading',
     options: ['string', 'JSX.Element'],
@@ -18,4 +18,6 @@ export default {
     isResponsive: false,
     description: 'Controls the visibility of the divider below the heading.',
   },
-} as ComponentMeta<SectionOwnProps>['props']
+}
+
+export default SECTION_PROPS_META

@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { Divider, Text } from 'lib/components'
 import { DividerOwnProps } from 'lib/components/elements/Divider/definitions'
 
-export default [
+const DIVIDER_EXAMPLES_META: ComponentMeta<DividerOwnProps>['examples'] = [
   {
     description:
       'By default, renders a horizontal line with standard thickness (scale 1) and tertiary intent.',
@@ -22,4 +22,6 @@ export default [
       </>
     ),
   },
-] as ComponentMeta<DividerOwnProps>['examples']
+]
+
+export default DIVIDER_EXAMPLES_META

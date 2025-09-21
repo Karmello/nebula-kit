@@ -9,7 +9,7 @@ import {
   DEFAULT_BOX_VARIANT,
 } from 'lib/components/base/Box/definitions'
 
-export default {
+const BOX_PROPS_META: ComponentMeta<BoxOwnProps>['props'] = {
   variant: {
     name: 'variant',
     options: Object.values(BoxVariant),
@@ -302,4 +302,6 @@ export default {
     isResponsive: true,
     description: 'Sets margin on the inline-start (left) side.',
   },
-} as ComponentMeta<BoxOwnProps>['props']
+}
+
+export default BOX_PROPS_META

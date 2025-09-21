@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { ToolbarStartProps } from 'lib/components'
 import { TOOLBAR_START_INHERITED_PROPS } from 'lib/components/layouts/Toolbar/slots/ToolbarStart/definitions'
 
-export default {
+const TOOLBAR_START_META: ComponentMeta<ToolbarStartProps> = {
   overview: {
     title: 'Toolbar.Start (optional)',
     description: 'The start slot of the toolbar.',
@@ -14,4 +14,6 @@ export default {
     ],
     composedOf: TOOLBAR_START_INHERITED_PROPS,
   },
-} as ComponentMeta<ToolbarStartProps>
+}
+
+export default TOOLBAR_START_META

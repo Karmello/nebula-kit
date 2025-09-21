@@ -6,7 +6,7 @@ import {
   SplitViewSideProps,
 } from 'lib/components/layouts/SplitView/slots/SplitViewSide/definitions'
 
-export default {
+const SPLIT_VIEW_SIDE_META: ComponentMeta<SplitViewSideProps> = {
   overview: {
     title: 'SplitView.Side',
     description: 'The side panel region of the layout.',
@@ -17,4 +17,6 @@ export default {
     ],
     rendersAs: ['aside'],
   },
-} as ComponentMeta<SplitViewSideProps>
+}
+
+export default SPLIT_VIEW_SIDE_META

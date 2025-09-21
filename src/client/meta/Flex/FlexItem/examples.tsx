@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { Flex, Box } from 'lib/components'
 import { FlexItemOwnProps } from 'lib/components/layout-base/Flex/FlexItem/definitions'
 
-export default [
+const FLEX_ITEM_EXAMPLES_META: ComponentMeta<FlexItemOwnProps>['examples'] = [
   {
     description: 'Using Flex.Item to let one item expand while the other keeps its natural size.',
     jsx: (
@@ -20,4 +20,6 @@ export default [
       </Flex>
     ),
   },
-] as ComponentMeta<FlexItemOwnProps>['examples']
+]
+
+export default FLEX_ITEM_EXAMPLES_META

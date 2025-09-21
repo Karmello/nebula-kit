@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { Grid, Box } from 'lib/components'
 import { GridItemOwnProps } from 'lib/components/layout-base/Grid/GridItem/definitions'
 
-export default [
+const GRID_ITEM_EXAMPLES_META: ComponentMeta<GridItemOwnProps>['examples'] = [
   {
     description:
       'This example shows how Grid.Item can explicitly control placement: on small screens, Start and End stay on the first row while Middle drops below, and from the md breakpoint up all three align in one row. Resize the viewport to see the layout switch in action.',
@@ -26,4 +26,6 @@ export default [
       </Grid>
     ),
   },
-] as ComponentMeta<GridItemOwnProps>['examples']
+]
+
+export default GRID_ITEM_EXAMPLES_META

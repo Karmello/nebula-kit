@@ -1,12 +1,12 @@
 import { ComponentMeta } from 'client/definitions'
-import { BUTTON_SIZE_CONFIG, DEFAULT_BUTTON_SIZE } from 'lib/components/controls/Button/definitions'
 import { APP_FRAME_INHERITED_PROPS, AppFrameOwnProps } from 'lib/components/layouts/AppFrame/definitions'
-import { APP_FRAME_FOOTER_INHERITED_PROPS } from 'lib/components/layouts/AppFrame/slots/AppFrameFooter/definitions'
-import { APP_FRAME_HEADER_INHERITED_PROPS } from 'lib/components/layouts/AppFrame/slots/AppFrameHeader/definitions'
-import { APP_FRAME_MAIN_INHERITED_PROPS } from 'lib/components/layouts/AppFrame/slots/AppFrameMain/definitions'
 
 import props from './props'
 import examples from './examples'
+
+import APP_FRAME_HEADER_META from './AppFrameHeader/_index'
+import APP_FRAME_MAIN_META from './AppFrameMain/_index'
+import APP_FRAME_FOOTER_META from './AppFrameFooter/_index'
 
 const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
   overview: {
@@ -23,44 +23,6 @@ const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
   },
   props,
   examples,
-}
-
-const APP_FRAME_HEADER_META: ComponentMeta<AppFrameOwnProps> = {
-  overview: {
-    title: 'AppFrame.Header',
-    description: 'Defines the top region of AppFrame.',
-    byDefault: [
-      'applies the secondary background',
-      `ensures the region has at least ${BUTTON_SIZE_CONFIG[DEFAULT_BUTTON_SIZE].blockSize} units of vertical height`,
-    ],
-    examplesOfUse: ['used for navigation or branding'],
-    composedOf: APP_FRAME_HEADER_INHERITED_PROPS,
-    rendersAs: ['header'],
-  },
-}
-
-const APP_FRAME_MAIN_META: ComponentMeta<AppFrameOwnProps> = {
-  overview: {
-    title: 'AppFrame.Main',
-    description: 'Defines the central content region of AppFrame.',
-    examplesOfUse: ['used for the primary application view'],
-    composedOf: APP_FRAME_MAIN_INHERITED_PROPS,
-    rendersAs: ['main'],
-  },
-}
-
-const APP_FRAME_FOOTER_META: ComponentMeta<AppFrameOwnProps> = {
-  overview: {
-    title: 'AppFrame.Footer (optional)',
-    description: 'Defines the bottom region of AppFrame.',
-    byDefault: [
-      'applies the secondary background',
-      'ensures the region has at least 80 units of vertical height',
-    ],
-    examplesOfUse: ['used for legal notices, links, or supplementary information'],
-    composedOf: APP_FRAME_FOOTER_INHERITED_PROPS,
-    rendersAs: ['footer'],
-  },
 }
 
 export default {

@@ -1,3 +1,5 @@
+import { pascalCase } from 'change-case'
+
 import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'client/definitions'
 import { CodeSnippet } from 'client/components'
@@ -63,14 +65,16 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
 export const ComponentOverviewPage = () => {
   const { itemKey } = useComponentsPageStore()
 
-  if (!meta[itemKey]) return null
+  const itemKeyPascal = pascalCase(itemKey)
 
-  const metaKeys = Object.keys(meta[itemKey])
+  if (!meta[itemKeyPascal]) return null
+
+  const metaKeys = Object.keys(meta[itemKeyPascal])
 
   return (
     <Box maxInlineSize="55rem">
       {metaKeys.map(key => (
-        <SingleOverview key={key} meta={meta[itemKey][key]} />
+        <SingleOverview key={key} meta={meta[itemKeyPascal][key]} />
       ))}
     </Box>
   )

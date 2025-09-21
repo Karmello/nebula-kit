@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { SplitViewOwnProps, SplitViewSidePosition } from 'lib/components/layouts/SplitView/definitions'
 import { DEFAULT_SWITCH_AT, SwitchAt } from 'lib/definitions'
 
-export default {
+const SPLIT_VIEW_PROPS_META: ComponentMeta<SplitViewOwnProps>['props'] = {
   sidePosition: {
     name: 'sidePosition',
     options: SplitViewSidePosition as unknown as string[],
@@ -20,4 +20,6 @@ export default {
     description:
       'Defines the breakpoint at which the side panel changes its behavior from overlaying the content to sitting inline within the layout.',
   },
-} as ComponentMeta<SplitViewOwnProps>['props']
+}
+
+export default SPLIT_VIEW_PROPS_META

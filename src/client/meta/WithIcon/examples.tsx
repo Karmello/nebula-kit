@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { WithIcon } from 'lib/components'
 import { WithIconOwnProps } from 'lib/components/utility/WithIcon/definitions'
 
-export default [
+const WITH_ICON_EXAMPLES_META: ComponentMeta<WithIconOwnProps>['examples'] = [
   {
     description: 'Renders only the search icon with no accompanying content.',
     jsx: <WithIcon iconName="search" />,
@@ -19,4 +19,6 @@ export default [
       </WithIcon>
     ),
   },
-] as ComponentMeta<WithIconOwnProps>['examples']
+]
+
+export default WITH_ICON_EXAMPLES_META

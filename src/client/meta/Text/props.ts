@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { DEFAULT_TEXT_TYPOGRAPHY, TextOwnProps, TextTypography } from 'lib/components/base/Text/definitions'
 
-export default {
+const TEXT_PROPS_META: ComponentMeta<TextOwnProps>['props'] = {
   typography: {
     name: 'typography',
     options: Object.values(TextTypography),
@@ -50,4 +50,6 @@ export default {
     isResponsive: false,
     description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
   },
-} as ComponentMeta<TextOwnProps>['props']
+}
+
+export default TEXT_PROPS_META

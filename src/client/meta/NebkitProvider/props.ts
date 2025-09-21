@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { NebkitProviderProps } from 'lib/components'
 import { DEFAULT_BORDER_RADIUS, Theme } from 'lib/definitions'
 
-export default {
+const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = {
   children: {
     name: 'children',
     options: ['ReactElement'],
@@ -26,4 +26,6 @@ export default {
     isResponsive: false,
     description: 'Starting border radius scale or custom value.',
   },
-} as ComponentMeta<NebkitProviderProps>['props']
+}
+
+export default NEBKIT_PROVIDER_PROPS_META

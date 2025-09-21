@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { GridItemOwnProps } from 'lib/components/layout-base/Grid/GridItem/definitions'
 import { CssGridItemAlignSelf, CssGridItemJustifySelf } from 'lib/definitions'
 
-export default {
+const GRID_ITEM_PROPS_META: ComponentMeta<GridItemOwnProps>['props'] = {
   gridColumn: {
     name: 'gridColumn',
     options: ['CSS'],
@@ -35,4 +35,6 @@ export default {
     isResponsive: true,
     description: 'Controls vertical alignment of the item within its grid cell.',
   },
-} as ComponentMeta<GridItemOwnProps>['props']
+}
+
+export default GRID_ITEM_PROPS_META

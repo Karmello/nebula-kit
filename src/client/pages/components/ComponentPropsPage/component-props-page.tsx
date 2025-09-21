@@ -1,3 +1,5 @@
+import { pascalCase } from 'change-case'
+
 import { useComponentsPageStore } from 'client/store'
 import meta from 'client/meta'
 
@@ -6,16 +8,18 @@ import { PropsTable } from './PropsTable'
 export const ComponentPropsPage = () => {
   const { itemKey } = useComponentsPageStore()
 
-  if (!meta[itemKey]) return null
+  const itemKeyPascal = pascalCase(itemKey)
 
-  const metaKeys = Object.keys(meta[itemKey] || [])
+  if (!meta[itemKeyPascal]) return null
+
+  const metaKeys = Object.keys(meta[itemKeyPascal] || [])
 
   return metaKeys.map(key =>
-    meta[itemKey][key].props ? (
+    meta[itemKeyPascal][key].props ? (
       <PropsTable
         key={key}
-        category={metaKeys.length > 1 ? meta[itemKey][key].overview.title : undefined}
-        data={meta[itemKey][key].props}
+        category={metaKeys.length > 1 ? meta[itemKeyPascal][key].overview.title : undefined}
+        data={meta[itemKeyPascal][key].props}
       />
     ) : null
   )

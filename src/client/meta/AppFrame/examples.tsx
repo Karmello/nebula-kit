@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { AppFrame, Text } from 'lib/components'
 import { AppFrameOwnProps } from 'lib/components/layouts/AppFrame/definitions'
 
-export default [
+const APP_FRAME_EXAMPLES_META: ComponentMeta<AppFrameOwnProps>['examples'] = [
   {
     jsx: (
       <AppFrame>
@@ -19,4 +19,6 @@ export default [
     ),
     sandBoxWithNoPadding: true,
   },
-] as ComponentMeta<AppFrameOwnProps>['examples']
+]
+
+export default APP_FRAME_EXAMPLES_META

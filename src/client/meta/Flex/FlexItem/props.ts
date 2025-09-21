@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { FlexItemOwnProps } from 'lib/components/layout-base/Flex/FlexItem/definitions'
 import { CssFlexItemAlignSelf } from 'lib/definitions'
 
-export default {
+const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemOwnProps>['props'] = {
   flex: {
     name: 'flex',
     options: ['CSS'],
@@ -52,4 +52,6 @@ export default {
     isResponsive: true,
     description: "defines the item's order relative to other flex items, independent of source order",
   },
-} as ComponentMeta<FlexItemOwnProps>['props']
+}
+
+export default FLEX_ITEM_PROPS_META

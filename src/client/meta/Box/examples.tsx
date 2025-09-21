@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { Box } from 'lib/components'
 import { BoxOwnProps } from 'lib/components/base/Box/definitions'
 
-export default [
+const BOX_EXAMPLES_META: ComponentMeta<BoxOwnProps>['examples'] = [
   {
     jsx: <Box>Default box</Box>,
     description: 'A plain default Box with ghost variant and neutral intent.',
@@ -49,4 +49,6 @@ export default [
     ),
     description: 'An example of a Box component with a solid secondary style, and interactive behavior.',
   },
-] as ComponentMeta<BoxOwnProps>['examples']
+]
+
+export default BOX_EXAMPLES_META

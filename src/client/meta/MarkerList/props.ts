@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { MarkerListOwnProps, MarkerListStyle } from 'lib/components/elements/MarkerList/definitions'
 
-export default {
+const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListOwnProps>['props'] = {
   listStyle: {
     name: 'listStyle',
     options: MarkerListStyle as unknown as string[],
@@ -10,4 +10,6 @@ export default {
     isResponsive: false,
     description: 'Defines the style of the markers used for list items.',
   },
-} as ComponentMeta<MarkerListOwnProps>['props']
+}
+
+export default MARKER_LIST_PROPS_META

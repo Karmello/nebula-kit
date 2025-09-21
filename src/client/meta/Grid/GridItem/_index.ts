@@ -8,7 +8,7 @@ import {
 import props from './props'
 import examples from './examples'
 
-export default {
+const GRID_ITEM_META: ComponentMeta<GridItemOwnProps> = {
   overview: {
     title: 'Grid.Item',
     description:
@@ -34,4 +34,6 @@ export default {
   },
   props,
   examples,
-} as ComponentMeta<GridItemOwnProps>
+}
+
+export default GRID_ITEM_META

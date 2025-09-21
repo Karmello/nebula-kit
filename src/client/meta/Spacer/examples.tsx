@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { Spacer, Text } from 'lib/components'
 
-export default [
+const SPACER_EXAMPLES_META: ComponentMeta<any>['examples'] = [
   {
     description: 'Inserts vertical spacing of scale 10 between two text blocks.',
     jsx: (
@@ -12,4 +12,6 @@ export default [
       </>
     ),
   },
-] as ComponentMeta<any>['examples']
+]
+
+export default SPACER_EXAMPLES_META

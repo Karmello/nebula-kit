@@ -6,7 +6,7 @@ import {
   WithIconOwnProps,
 } from 'lib/components/utility/WithIcon/definitions'
 
-export default {
+const WITH_ICON_PROPS_META: ComponentMeta<WithIconOwnProps>['props'] = {
   iconPosition: {
     name: 'iconPosition',
     options: IconPosition as unknown as string[],
@@ -15,4 +15,6 @@ export default {
     isResponsive: false,
     description: 'Controls how the icon is aligned relative to the children.',
   },
-} as ComponentMeta<WithIconOwnProps>['props']
+}
+
+export default WITH_ICON_PROPS_META

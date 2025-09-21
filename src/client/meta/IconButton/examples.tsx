@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { IconButton, IconButtonProps } from 'lib/components'
 
-export default [
+const ICON_BUTTON_EXAMPLES_META: ComponentMeta<IconButtonProps>['examples'] = [
   {
     description: 'Renders the default IconButton with a close icon as its content.',
     jsx: <IconButton iconName="close" />,
@@ -16,4 +16,6 @@ export default [
       />
     ),
   },
-] as ComponentMeta<IconButtonProps>['examples']
+]
+
+export default ICON_BUTTON_EXAMPLES_META

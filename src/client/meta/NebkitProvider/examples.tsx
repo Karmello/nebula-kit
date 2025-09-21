@@ -4,7 +4,7 @@ import { NebkitProvider, NebkitProviderProps } from 'lib/components'
 const App = (): null => null
 App.displayName = 'App'
 
-export default [
+const NEBKIT_PROVIDER_EXAMPLES_META: ComponentMeta<NebkitProviderProps>['examples'] = [
   {
     description:
       "Wraps the entire application with NebkitProvider to enable Nebula-kit's global configuration and defaults.",
@@ -24,4 +24,6 @@ export default [
     ),
     noSandBox: true,
   },
-] as ComponentMeta<NebkitProviderProps>['examples']
+]
+
+export default NEBKIT_PROVIDER_EXAMPLES_META

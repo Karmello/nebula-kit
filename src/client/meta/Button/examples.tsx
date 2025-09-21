@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { Button, Flex } from 'lib/components'
 import { ButtonOwnProps, ButtonSize } from 'lib/components/controls/Button/definitions'
 
-export default [
+const BUTTON_EXAMPLES_META: ComponentMeta<ButtonOwnProps>['examples'] = [
   {
     description:
       'By default, Button renders in medium size with a solid variant and tertiary intent, providing a standard, baseline action control.',
@@ -58,4 +58,6 @@ export default [
       </Flex>
     ),
   },
-] as ComponentMeta<ButtonOwnProps>['examples']
+]
+
+export default BUTTON_EXAMPLES_META

@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { ToolbarOwnProps } from 'lib/components/layouts/Toolbar/definitions'
 import { DEFAULT_SWITCH_AT, SwitchAt } from 'lib/definitions'
 
-export default {
+const TOOLBAR_PROPS_META: ComponentMeta<ToolbarOwnProps>['props'] = {
   switchAt: {
     name: 'switchAt',
     options: SwitchAt as unknown as string[],
@@ -11,4 +11,6 @@ export default {
     isResponsive: false,
     description: 'Specifies the breakpoint at which the main section turns from collapsed to inline.',
   },
-} as ComponentMeta<ToolbarOwnProps>['props']
+}
+
+export default TOOLBAR_PROPS_META

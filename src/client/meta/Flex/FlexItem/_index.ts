@@ -8,7 +8,7 @@ import {
 import examples from './examples'
 import props from './props'
 
-export default {
+const FLEX_ITEM_META: ComponentMeta<FlexItemOwnProps> = {
   overview: {
     title: 'Flex.Item',
     description: 'Flex item represents a single child inside a Flex container.',
@@ -33,4 +33,6 @@ export default {
   },
   props,
   examples,
-} as ComponentMeta<FlexItemOwnProps>
+}
+
+export default FLEX_ITEM_META

@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { Box, Button, ButtonGroup, IconButton, Toolbar } from 'lib/components'
 import { ToolbarOwnProps } from 'lib/components/layouts/Toolbar/definitions'
 
-export default [
+const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarOwnProps>['examples'] = [
   {
     description:
       'An application header with a brand label on the left, navigation links in the main section that adapt responsively from column to row, and an action button on the right.',
@@ -24,4 +24,6 @@ export default [
     ),
     sandBoxWithNoPadding: true,
   },
-] as ComponentMeta<ToolbarOwnProps>['examples']
+]
+
+export default TOOLBAR_EXAMPLES_META

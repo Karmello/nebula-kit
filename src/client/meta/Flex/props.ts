@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { FlexOwnProps } from 'lib/components/layout-base/Flex/definitions'
 import { CssFlexAlignItems, CssFlexDirection, CssFlexJustifyContent, CssFlexWrap } from 'lib/definitions'
 
-export default {
+const FLEX_PROPS_META: ComponentMeta<FlexOwnProps>['props'] = {
   flexDirection: {
     name: 'flexDirection',
     options: Object.values(CssFlexDirection),
@@ -59,4 +59,6 @@ export default {
     isResponsive: true,
     description: 'Defines horizontal spacing between columns of flex items.',
   },
-} as ComponentMeta<FlexOwnProps>['props']
+}
+
+export default FLEX_PROPS_META

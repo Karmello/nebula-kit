@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { Text } from 'lib/components'
 import { TextOwnProps } from 'lib/components/base/Text/definitions'
 
-export default [
+const TEXT_EXAMPLES_META: ComponentMeta<TextOwnProps>['examples'] = [
   {
     jsx: <Text>Paragraph</Text>,
     description: 'Uses body typography and renders a <p> tag by default.',
@@ -36,4 +36,6 @@ export default [
     description:
       'A semantic anchor rendered through Text, keeping the underline and styled with the primary intent color for emphasis.',
   },
-] as ComponentMeta<TextOwnProps>['examples']
+]
+
+export default TEXT_EXAMPLES_META

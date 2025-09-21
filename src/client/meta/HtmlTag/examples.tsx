@@ -3,7 +3,7 @@ import { ElementType } from 'react'
 import { ComponentMeta } from 'client/definitions'
 import { HtmlTag, HtmlTagProps } from 'lib/components'
 
-export default [
+const HTML_TAG_EXAMPLES_META: ComponentMeta<HtmlTagProps<ElementType>>['examples'] = [
   {
     description: 'HtmlTag renders a div tag by default.',
     jsx: <HtmlTag />,
@@ -14,4 +14,6 @@ export default [
     jsx: <HtmlTag tag="a" tagAttrs={{ href: '...' }} />,
     noSandBox: true,
   },
-] as ComponentMeta<HtmlTagProps<ElementType>>['examples']
+]
+
+export default HTML_TAG_EXAMPLES_META

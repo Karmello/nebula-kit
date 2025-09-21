@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { ButtonGroupDirection, ButtonGroupOwnProps } from 'lib/components/controls/ButtonGroup/definitions'
 
-export default {
+const BUTTON_GROUP_PROPS_META: ComponentMeta<ButtonGroupOwnProps>['props'] = {
   direction: {
     name: 'direction',
     options: Object.values(ButtonGroupDirection),
@@ -26,4 +26,6 @@ export default {
     isResponsive: false,
     description: 'Removes spacing between buttons so they appear as a single connected element.',
   },
-} as ComponentMeta<ButtonGroupOwnProps>['props']
+}
+
+export default BUTTON_GROUP_PROPS_META

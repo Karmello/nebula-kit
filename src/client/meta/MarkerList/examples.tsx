@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { Box, MarkerList } from 'lib/components'
 import { MarkerListOwnProps } from 'lib/components/elements/MarkerList/definitions'
 
-export default [
+const MARKER_LIST_EXAMPLES_META: ComponentMeta<MarkerListOwnProps>['examples'] = [
   {
     description: 'Displays a basic list with two items.',
     jsx: (
@@ -38,4 +38,6 @@ export default [
       </MarkerList>
     ),
   },
-] as ComponentMeta<MarkerListOwnProps>['examples']
+]
+
+export default MARKER_LIST_EXAMPLES_META

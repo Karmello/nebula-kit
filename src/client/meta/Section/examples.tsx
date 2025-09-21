@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { Section, Text } from 'lib/components'
 import { SectionOwnProps } from 'lib/components/containers/Section/definitions'
 
-export default [
+const SECTION_EXAMPLES_META: ComponentMeta<SectionOwnProps>['examples'] = [
   {
     description: 'A basic section with a text heading and body content.',
     jsx: <Section heading="Default heading">Content</Section>,
@@ -19,4 +19,6 @@ export default [
       </Section>
     ),
   },
-] as ComponentMeta<SectionOwnProps>['examples']
+]
+
+export default SECTION_EXAMPLES_META

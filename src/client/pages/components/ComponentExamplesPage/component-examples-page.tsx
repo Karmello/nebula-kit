@@ -1,3 +1,5 @@
+import { pascalCase } from 'change-case'
+
 import { CodeSnippet } from 'client/components'
 import { elemToStringService } from 'client/services'
 import { useComponentsPageStore } from 'client/store'
@@ -35,13 +37,15 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
 export const ComponentExamplesPage = () => {
   const { itemKey } = useComponentsPageStore()
 
-  if (!meta[itemKey]) return null
+  const itemKeyPascal = pascalCase(itemKey)
+
+  if (!meta[itemKeyPascal]) return null
 
   return (
     <Box maxInlineSize="55rem">
       <Flex flexDirection="column" alignItems="stretch">
-        {Object.keys(meta[itemKey] || []).map(key => {
-          return (meta[itemKey][key].examples || []).map((example, i) => (
+        {Object.keys(meta[itemKeyPascal] || []).map(key => {
+          return (meta[itemKeyPascal][key].examples || []).map((example, i) => (
             <SingleExample key={`${key}_${i}`} {...example} />
           ))
         })}

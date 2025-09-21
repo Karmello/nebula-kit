@@ -6,7 +6,7 @@ import {
   DEFAULT_CALLOUT_INTENT,
 } from 'lib/components/feedback/Callout/definitions'
 
-export default {
+const CALLOUT_PROPS_META: ComponentMeta<CalloutOwnProps>['props'] = {
   content: {
     name: 'content',
     description: 'A text string displayed as the main body of the callout.',
@@ -27,4 +27,6 @@ export default {
     isRequired: false,
     isResponsive: false,
   },
-} as ComponentMeta<CalloutOwnProps>['props']
+}
+
+export default CALLOUT_PROPS_META
