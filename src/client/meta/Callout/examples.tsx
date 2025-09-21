@@ -1,0 +1,47 @@
+import { ComponentMeta } from 'client/definitions'
+import { Callout, Spacer } from 'lib/components'
+import { CalloutOwnProps } from 'lib/components/feedback/Callout/definitions'
+
+export default [
+  {
+    description: 'Highlights neutral or contextual information for the user.',
+    jsx: (
+      <>
+        <Callout content="Callout text content" />
+        <Spacer blockSize={10} />
+        <Callout content="Callout text content" variant="outline" />
+      </>
+    ),
+  },
+
+  {
+    description: 'Indicates a positive outcome or confirmation.',
+    jsx: (
+      <>
+        <Callout content="Callout text content" intent="success" />
+        <Spacer blockSize={10} />
+        <Callout content="Callout text content" variant="outline" intent="success" />
+      </>
+    ),
+  },
+  {
+    description: 'Draws attention to a caution or potential issue.',
+    jsx: (
+      <>
+        <Callout content="Callout text content" intent="warning" />
+        <Spacer blockSize={10} />
+        <Callout content="Callout text content" variant="outline" intent="warning" />
+      </>
+    ),
+  },
+  {
+    description: 'Signals an error or critical problem that requires attention.',
+    jsx: (
+      <>
+        <Callout content="Callout text content" intent="danger" />
+        <Spacer blockSize={10} />
+        <Callout content="Callout text content" variant="outline" intent="danger" />
+      </>
+    ),
+  },
+] as ComponentMeta<CalloutOwnProps>['examples']

@@ -1,10 +1,12 @@
 import { ComponentMeta } from 'client/definitions'
-import { AppFrame, Text } from 'lib/components'
 import { BUTTON_SIZE_CONFIG, DEFAULT_BUTTON_SIZE } from 'lib/components/controls/Button/definitions'
 import { APP_FRAME_INHERITED_PROPS, AppFrameOwnProps } from 'lib/components/layouts/AppFrame/definitions'
 import { APP_FRAME_FOOTER_INHERITED_PROPS } from 'lib/components/layouts/AppFrame/slots/AppFrameFooter/definitions'
 import { APP_FRAME_HEADER_INHERITED_PROPS } from 'lib/components/layouts/AppFrame/slots/AppFrameHeader/definitions'
 import { APP_FRAME_MAIN_INHERITED_PROPS } from 'lib/components/layouts/AppFrame/slots/AppFrameMain/definitions'
+
+import ownProps from './own-props'
+import examples from './examples'
 
 const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
   overview: {
@@ -19,35 +21,8 @@ const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
     composedOf: APP_FRAME_INHERITED_PROPS,
     rendersAs: ['div'],
   },
-  ownProps: [
-    {
-      name: 'stickyHeader',
-      options: ['boolean'],
-      defaultValue: 'false',
-      isRequired: false,
-      isResponsive: false,
-      description:
-        'makes the AppFrame.Header remain fixed at the top of the viewport while scrolling the main content',
-    },
-  ],
-  examples: [
-    {
-      jsx: (
-        <AppFrame>
-          <AppFrame.Header>
-            <Text>Header</Text>
-          </AppFrame.Header>
-          <AppFrame.Main>
-            <Text>Main</Text>
-          </AppFrame.Main>
-          <AppFrame.Footer>
-            <Text>Footer</Text>
-          </AppFrame.Footer>
-        </AppFrame>
-      ),
-      sandBoxWithNoPadding: true,
-    },
-  ],
+  ownProps,
+  examples,
 }
 
 const APP_FRAME_HEADER_META: ComponentMeta<AppFrameOwnProps> = {
