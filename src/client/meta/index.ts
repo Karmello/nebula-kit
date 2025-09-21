@@ -14,12 +14,12 @@ import iconButtonMeta from './IconButton/_index'
 import markerListMeta from './MarkerList/_index'
 import nebkitProviderMeta from './NebkitProvider/_index'
 import sectionMeta from './Section/_index'
-import spacerMeta from './Spacer/spacer.meta'
-import splitViewMeta from './SplitView/split-view.meta'
-import svgIconMeta from './SvgIcon/svg-icon.meta'
-import textMeta from './Text/text.meta'
-import toolbarMeta from './Toolbar/toolbar.meta'
-import withIconMeta from './WithIcon/with-icon.meta'
+import spacerMeta from './Spacer/_index'
+import splitViewMeta from './SplitView/_index'
+import svgIconMeta from './SvgIcon/_index'
+import textMeta from './Text/_index'
+import toolbarMeta from './Toolbar/_index'
+import withIconMeta from './WithIcon/_index'
 
 export default {
   'app-frame': appFrameMeta,

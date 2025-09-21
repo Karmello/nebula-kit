@@ -1,10 +1,11 @@
-import { Spacer, Text } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 
 import {
   DEFAULT_SPACER_BLOCK_SIZE,
   SPACER_INHERITED_PROPS,
 } from 'lib/components/layout-base/Spacer/definitions'
+
+import examples from './examples'
 
 const SPACER_META: ComponentMeta<any> = {
   overview: {
@@ -22,18 +23,7 @@ const SPACER_META: ComponentMeta<any> = {
     ],
     composedOf: SPACER_INHERITED_PROPS,
   },
-  examples: [
-    {
-      description: 'Inserts vertical spacing of scale 10 between two text blocks.',
-      jsx: (
-        <>
-          <Text>Text 1</Text>
-          <Spacer blockSize={10} />
-          <Text>Text 2</Text>
-        </>
-      ),
-    },
-  ],
+  examples,
 }
 
 export default {
