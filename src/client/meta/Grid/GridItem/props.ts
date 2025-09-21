@@ -35,4 +35,4 @@ export default {
     isResponsive: true,
     description: 'Controls vertical alignment of the item within its grid cell.',
   },
-} as ComponentMeta<GridItemOwnProps>['ownProps']
+} as ComponentMeta<GridItemOwnProps>['props']

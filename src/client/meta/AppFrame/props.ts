@@ -11,4 +11,4 @@ export default {
     description:
       'makes the AppFrame.Header remain fixed at the top of the viewport while scrolling the main content',
   },
-} as ComponentMeta<AppFrameOwnProps>['ownProps']
+} as ComponentMeta<AppFrameOwnProps>['props']

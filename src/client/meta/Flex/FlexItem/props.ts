@@ -52,4 +52,4 @@ export default {
     isResponsive: true,
     description: "defines the item's order relative to other flex items, independent of source order",
   },
-} as ComponentMeta<FlexItemOwnProps>['ownProps']
+} as ComponentMeta<FlexItemOwnProps>['props']

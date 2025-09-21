@@ -10,4 +10,4 @@ export default {
     isRequired: false,
     isResponsive: false,
   },
-} as ComponentMeta<DividerOwnProps>['ownProps']
+} as ComponentMeta<DividerOwnProps>['props']

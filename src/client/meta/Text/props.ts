@@ -50,4 +50,4 @@ export default {
     isResponsive: false,
     description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
   },
-} as ComponentMeta<TextOwnProps>['ownProps']
+} as ComponentMeta<TextOwnProps>['props']

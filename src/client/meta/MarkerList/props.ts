@@ -10,4 +10,4 @@ export default {
     isResponsive: false,
     description: 'Defines the style of the markers used for list items.',
   },
-} as ComponentMeta<MarkerListOwnProps>['ownProps']
+} as ComponentMeta<MarkerListOwnProps>['props']

@@ -20,4 +20,4 @@ export default {
     description:
       'Defines the breakpoint at which the side panel changes its behavior from overlaying the content to sitting inline within the layout.',
   },
-} as ComponentMeta<SplitViewOwnProps>['ownProps']
+} as ComponentMeta<SplitViewOwnProps>['props']

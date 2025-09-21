@@ -5,7 +5,7 @@ import {
   GridItemOwnProps,
 } from 'lib/components/layout-base/Grid/GridItem/definitions'
 
-import ownProps from './own-props'
+import props from './props'
 import examples from './examples'
 
 export default {
@@ -32,6 +32,6 @@ export default {
     ],
     composedOf: GRID_ITEM_INHERITED_PROPS,
   },
-  ownProps,
+  props,
   examples,
 } as ComponentMeta<GridItemOwnProps>

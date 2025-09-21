@@ -6,7 +6,7 @@ import {
   MarkerListOwnProps,
 } from 'lib/components/elements/MarkerList/definitions'
 
-import ownProps from './own-props'
+import props from './props'
 import examples from './examples'
 
 import MARKER_LIST_ITEM_META from './MarkerListItem/_index'
@@ -31,7 +31,7 @@ const MARKER_LIST_META: ComponentMeta<MarkerListOwnProps> = {
     composedOf: MARKER_LIST_INHERITED_PROPS,
     rendersAs: MarkerListTag,
   },
-  ownProps,
+  props,
   examples,
 }
 

@@ -6,7 +6,7 @@ import {
   CalloutOwnProps,
 } from 'lib/components/feedback/Callout/definitions'
 
-import ownProps from './own-props'
+import props from './props'
 import examples from './examples'
 
 const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
@@ -38,7 +38,7 @@ const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
     composedOf: CALLOUT_INHERITED_PROPS,
     rendersAs: CalloutTag,
   },
-  ownProps,
+  props,
   examples,
 }
 

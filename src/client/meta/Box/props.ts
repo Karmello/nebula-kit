@@ -302,4 +302,4 @@ export default {
     isResponsive: true,
     description: 'Sets margin on the inline-start (left) side.',
   },
-} as ComponentMeta<BoxOwnProps>['ownProps']
+} as ComponentMeta<BoxOwnProps>['props']

@@ -18,4 +18,4 @@ export default {
     isResponsive: false,
     description: 'Controls the visibility of the divider below the heading.',
   },
-} as ComponentMeta<SectionOwnProps>['ownProps']
+} as ComponentMeta<SectionOwnProps>['props']

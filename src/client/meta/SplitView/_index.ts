@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { SPLIT_VIEW_INHERITED_PROPS, SplitViewOwnProps } from 'lib/components/layouts/SplitView/definitions'
 
-import ownProps from './own-props'
+import props from './props'
 import examples from './examples'
 
 import SPLIT_VIEW_SIDE_META from './SplitViewSide/_index'
@@ -30,7 +30,7 @@ const SPLIT_VIEW_META: ComponentMeta<SplitViewOwnProps> = {
     ],
     rendersAs: ['div'],
   },
-  ownProps,
+  props,
   examples,
 }
 

@@ -3,7 +3,7 @@ import { ComponentMeta } from 'client/definitions'
 
 type Props = {
   category?: string
-  data: ComponentMeta<object>['ownProps']
+  data: ComponentMeta<object>['props']
 }
 
 export const PropsTable = ({ category, data }: Props) => {

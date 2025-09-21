@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { SvgIconProps } from 'lib/components'
 
-import ownProps from './own-props'
+import props from './props'
 import examples from './examples'
 
 const SVG_ICON_META: ComponentMeta<SvgIconProps> = {
@@ -19,7 +19,7 @@ const SVG_ICON_META: ComponentMeta<SvgIconProps> = {
       'access the raw SVG for custom sizing or color overrides',
     ],
   },
-  ownProps,
+  props,
   examples,
 }
 

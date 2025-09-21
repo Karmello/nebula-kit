@@ -11,11 +11,11 @@ export const ComponentPropsPage = () => {
   const metaKeys = Object.keys(meta[itemKey] || [])
 
   return metaKeys.map(key =>
-    meta[itemKey][key].ownProps ? (
+    meta[itemKey][key].props ? (
       <PropsTable
         key={key}
         category={metaKeys.length > 1 ? meta[itemKey][key].overview.title : undefined}
-        data={meta[itemKey][key].ownProps}
+        data={meta[itemKey][key].props}
       />
     ) : null
   )

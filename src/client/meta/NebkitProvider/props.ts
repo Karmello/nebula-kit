@@ -26,4 +26,4 @@ export default {
     isResponsive: false,
     description: 'Starting border radius scale or custom value.',
   },
-} as ComponentMeta<NebkitProviderProps>['ownProps']
+} as ComponentMeta<NebkitProviderProps>['props']

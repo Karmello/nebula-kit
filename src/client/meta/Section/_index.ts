@@ -6,7 +6,7 @@ import {
   SectionOwnProps,
 } from 'lib/components/containers/Section/definitions'
 
-import ownProps from './own-props'
+import props from './props'
 import examples from './examples'
 
 const SECTION_META: ComponentMeta<SectionOwnProps> = {
@@ -31,7 +31,7 @@ const SECTION_META: ComponentMeta<SectionOwnProps> = {
     composedOf: SECTION_INHERITED_PROPS,
     rendersAs: SectionTag,
   },
-  ownProps,
+  props,
   examples,
 }
 

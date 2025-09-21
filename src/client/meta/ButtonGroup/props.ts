@@ -26,4 +26,4 @@ export default {
     isResponsive: false,
     description: 'Removes spacing between buttons so they appear as a single connected element.',
   },
-} as ComponentMeta<ButtonGroupOwnProps>['ownProps']
+} as ComponentMeta<ButtonGroupOwnProps>['props']

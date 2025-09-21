@@ -11,4 +11,4 @@ export default {
     description:
       "Controls the button's overall proportions - adjusting blockSize, horizontal padding, and fontSize to keep content balanced at each size.",
   },
-} as ComponentMeta<ButtonOwnProps>['ownProps']
+} as ComponentMeta<ButtonOwnProps>['props']

@@ -25,4 +25,4 @@ export default {
     description:
       'An optional React node displayed while the children are hidden. Typically used to show a loader or placeholder during hydration.',
   },
-} as ComponentMeta<HydrationGateProps>['ownProps']
+} as ComponentMeta<HydrationGateProps>['props']

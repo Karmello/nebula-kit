@@ -33,4 +33,4 @@ export default {
     isResponsive: false,
     description: 'Reference to the rendered HTML element.',
   },
-} as ComponentMeta<HtmlTagProps<ElementType>>['ownProps']
+} as ComponentMeta<HtmlTagProps<ElementType>>['props']

@@ -5,7 +5,7 @@ import { APP_FRAME_FOOTER_INHERITED_PROPS } from 'lib/components/layouts/AppFram
 import { APP_FRAME_HEADER_INHERITED_PROPS } from 'lib/components/layouts/AppFrame/slots/AppFrameHeader/definitions'
 import { APP_FRAME_MAIN_INHERITED_PROPS } from 'lib/components/layouts/AppFrame/slots/AppFrameMain/definitions'
 
-import ownProps from './own-props'
+import props from './props'
 import examples from './examples'
 
 const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
@@ -21,7 +21,7 @@ const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
     composedOf: APP_FRAME_INHERITED_PROPS,
     rendersAs: ['div'],
   },
-  ownProps,
+  props,
   examples,
 }
 

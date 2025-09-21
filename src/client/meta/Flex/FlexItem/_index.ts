@@ -6,7 +6,7 @@ import {
 } from 'lib/components/layout-base/Flex/FlexItem/definitions'
 
 import examples from './examples'
-import ownProps from './own-props'
+import props from './props'
 
 export default {
   overview: {
@@ -31,6 +31,6 @@ export default {
     ],
     composedOf: FLEX_ITEM_INHERITED_PROPS,
   },
-  ownProps,
+  props,
   examples,
 } as ComponentMeta<FlexItemOwnProps>

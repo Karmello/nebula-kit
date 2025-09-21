@@ -7,7 +7,6 @@ type Overview = {
   behavior?: string[]
   byDefault?: string[]
   examplesOfUse?: string[]
-  responsiveProps?: string[]
   composedOf?: Record<string, readonly string[]>
   rendersAs?: readonly string[]
 }
@@ -30,6 +29,6 @@ type Example = {
 
 export type ComponentMeta<PropsType> = {
   overview: Overview
-  ownProps?: Record<keyof PropsType, Prop<PropsType>>
+  props?: Record<keyof PropsType, Prop<PropsType>>
   examples?: Example[]
 }

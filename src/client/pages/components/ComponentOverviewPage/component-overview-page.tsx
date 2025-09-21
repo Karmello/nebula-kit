@@ -14,7 +14,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const {
     overview: { title, description, role, behavior, byDefault, examplesOfUse, composedOf, rendersAs },
     examples,
-    ownProps,
+    props,
   } = meta
 
   const content = (
@@ -29,8 +29,8 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       {behavior ? <ListWithHeading heading="Behavior:" items={behavior} /> : null}
       {byDefault ? <ListWithHeading heading="By default:" items={byDefault} /> : null}
       {examplesOfUse ? <ListWithHeading heading="Examples of use:" items={examplesOfUse} /> : null}
-      {ownProps ? (
-        <ListWithChips heading="Own props:" items={Object.values<any>(ownProps).map(prop => prop.name)} />
+      {props ? (
+        <ListWithChips heading="Props:" items={Object.values<any>(props).map(prop => prop.name)} />
       ) : null}
       {composedOf
         ? Object.keys(composedOf).map(componentName =>

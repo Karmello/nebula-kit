@@ -26,4 +26,4 @@ export default {
     isResponsive: false,
     description: 'Applies a semantic color style from the design system.',
   },
-} as ComponentMeta<SvgIconProps>['ownProps']
+} as ComponentMeta<SvgIconProps>['props']

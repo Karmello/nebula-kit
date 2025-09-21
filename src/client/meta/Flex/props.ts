@@ -59,4 +59,4 @@ export default {
     isResponsive: true,
     description: 'Defines horizontal spacing between columns of flex items.',
   },
-} as ComponentMeta<FlexOwnProps>['ownProps']
+} as ComponentMeta<FlexOwnProps>['props']

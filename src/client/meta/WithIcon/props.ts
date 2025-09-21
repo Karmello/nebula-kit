@@ -15,4 +15,4 @@ export default {
     isResponsive: false,
     description: 'Controls how the icon is aligned relative to the children.',
   },
-} as ComponentMeta<WithIconOwnProps>['ownProps']
+} as ComponentMeta<WithIconOwnProps>['props']

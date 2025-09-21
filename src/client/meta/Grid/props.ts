@@ -83,4 +83,4 @@ export default {
     isResponsive: true,
     description: 'Sets the spacing between grid columns.',
   },
-} as ComponentMeta<GridOwnProps>['ownProps']
+} as ComponentMeta<GridOwnProps>['props']

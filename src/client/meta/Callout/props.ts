@@ -27,4 +27,4 @@ export default {
     isRequired: false,
     isResponsive: false,
   },
-} as ComponentMeta<CalloutOwnProps>['ownProps']
+} as ComponentMeta<CalloutOwnProps>['props']

@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { FLEX_INHERITED_PROPS, FlexOwnProps } from 'lib/components/layout-base/Flex/definitions'
 
-import ownProps from './own-props'
+import props from './props'
 import examples from './examples'
 
 import FLEX_ITEM_META from './FlexItem/_index'
@@ -32,7 +32,7 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
     ],
     composedOf: FLEX_INHERITED_PROPS,
   },
-  ownProps,
+  props,
   examples,
 }
 

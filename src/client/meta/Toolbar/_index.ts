@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { TOOLBAR_INHERITED_PROPS, ToolbarOwnProps } from 'lib/components/layouts/Toolbar/definitions'
 
-import ownProps from './own-props'
+import props from './props'
 import examples from './examples'
 
 import TOOLBAR_MAIN_META from './ToolbarMain/_index'
@@ -26,7 +26,7 @@ const TOOLBAR_META: ComponentMeta<ToolbarOwnProps> = {
     composedOf: TOOLBAR_INHERITED_PROPS,
     rendersAs: ['nav'],
   },
-  ownProps,
+  props,
   examples,
 }
 
