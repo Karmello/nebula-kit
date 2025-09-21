@@ -3,10 +3,18 @@ import { ComponentMeta } from 'client/definitions'
 import {
   DEFAULT_WITH_ICON_ICON_POSITION,
   IconPosition,
-  WithIconOwnProps,
+  WithIconProps,
 } from 'lib/components/utility/WithIcon/definitions'
 
-const WITH_ICON_PROPS_META: ComponentMeta<WithIconOwnProps>['props'] = {
+import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
+import { SVG_ICON_PROPS_META } from '../SvgIcon/props'
+
+const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
+  children: HTML_TAG_PROPS_META['children'],
+  tagAttrs: HTML_TAG_PROPS_META['tagAttrs'],
+  tagRef: HTML_TAG_PROPS_META['tagRef'],
+  iconName: SVG_ICON_PROPS_META['iconName'],
+  iconSize: SVG_ICON_PROPS_META['iconSize'],
   iconPosition: {
     name: 'iconPosition',
     options: IconPosition as unknown as string[],

@@ -19,7 +19,6 @@ export const Box = <T extends ElementType = 'div'>({
   intent = DEFAULT_BOX_INTENT,
   interactive,
   disabled = false,
-  // css
   opacity,
   borderRadius,
   textAlign,

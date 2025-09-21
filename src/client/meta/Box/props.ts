@@ -3,13 +3,16 @@ import { CssDisplay, CssOverflow, CssPosition, CssTextAlign } from 'lib/definiti
 
 import {
   BoxIntent,
-  BoxOwnProps,
+  BoxProps,
   BoxVariant,
   DEFAULT_BOX_INTENT,
   DEFAULT_BOX_VARIANT,
 } from 'lib/components/base/Box/definitions'
 
-const BOX_PROPS_META: ComponentMeta<BoxOwnProps>['props'] = {
+import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
+
+const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
+  ...HTML_TAG_PROPS_META,
   variant: {
     name: 'variant',
     options: Object.values(BoxVariant),

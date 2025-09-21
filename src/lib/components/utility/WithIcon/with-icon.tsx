@@ -7,19 +7,21 @@ import { DEFAULT_WITH_ICON_ICON_POSITION, WithIconProps } from './definitions'
 import './with-icon.scss'
 
 export const WithIcon = ({
-  // own
-  iconPosition = DEFAULT_WITH_ICON_ICON_POSITION,
   // HtmlTag
   children,
   tagAttrs,
+  tagRef,
   // SvgIcon
   iconName,
   iconSize,
+  // own
+  iconPosition = DEFAULT_WITH_ICON_ICON_POSITION,
 }: WithIconProps) => {
   return (
     <HtmlTag
       tag="span"
       tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('with-icon'), tagAttrs?.className || '') }}
+      tagRef={tagRef}
     >
       {iconPosition === 'left' ? <SvgIcon iconName={iconName} iconSize={iconSize} /> : null}
       {children}

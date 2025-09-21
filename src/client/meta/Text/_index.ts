@@ -1,10 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
-import { TEXT_INHERITED_PROPS, TextTag, TextOwnProps } from 'lib/components/base/Text/definitions'
+import { TextTag, TextProps } from 'lib/components/base/Text/definitions'
 
 import { TEXT_PROPS_META } from './props'
 import { TEXT_EXAMPLES_META } from './examples'
 
-const TEXT_META: ComponentMeta<TextOwnProps> = {
+const TEXT_META: ComponentMeta<TextProps> = {
   overview: {
     description:
       'A foundational component for displaying and styling textual content. It ensures consistent typography across the system.',
@@ -20,7 +20,6 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       'present truncated or clamped snippets of text',
       'combine text with icons for labels or actions',
     ],
-    composedOf: TEXT_INHERITED_PROPS,
     rendersAs: TextTag,
   },
   props: TEXT_PROPS_META,

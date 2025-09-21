@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { BOX_INHERITED_PROPS, BoxOwnProps } from 'lib/components/base/Box/definitions'
+import { BoxOwnProps } from 'lib/components/base/Box/definitions'
 
 import { BOX_PROPS_META } from './props'
 import { BOX_EXAMPLES_META } from './examples'
@@ -23,7 +23,6 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
       "use when you need a semantic element that isn't yet provided as a dedicated component in the library",
       'use as the base building block when creating your own custom component',
     ],
-    composedOf: BOX_INHERITED_PROPS,
   },
   props: BOX_PROPS_META,
   examples: BOX_EXAMPLES_META,

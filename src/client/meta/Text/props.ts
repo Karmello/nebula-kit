@@ -1,7 +1,23 @@
 import { ComponentMeta } from 'client/definitions'
-import { DEFAULT_TEXT_TYPOGRAPHY, TextOwnProps, TextTypography } from 'lib/components/base/Text/definitions'
+import { DEFAULT_TEXT_TYPOGRAPHY, TextProps, TextTypography } from 'lib/components/base/Text/definitions'
 
-const TEXT_PROPS_META: ComponentMeta<TextOwnProps>['props'] = {
+import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
+import { BOX_PROPS_META } from '../Box/props'
+import { WITH_ICON_PROPS_META } from '../WithIcon/props'
+
+const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
+  ...HTML_TAG_PROPS_META,
+  children: {
+    ...HTML_TAG_PROPS_META['children'],
+    isRequired: true,
+  },
+  intent: BOX_PROPS_META['intent'] as never,
+  textAlign: BOX_PROPS_META['textAlign'] as never,
+  iconName: {
+    ...WITH_ICON_PROPS_META['iconName'],
+    isRequired: false,
+  } as never,
+  iconPosition: WITH_ICON_PROPS_META['iconPosition'] as never,
   typography: {
     name: 'typography',
     options: Object.values(TextTypography),

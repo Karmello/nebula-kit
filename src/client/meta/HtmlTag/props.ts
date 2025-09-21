@@ -9,7 +9,7 @@ const HTML_TAG_PROPS_META: ComponentMeta<HtmlTagProps<ElementType>>['props'] = {
     options: ['ReactNode'],
     isRequired: false,
     isResponsive: false,
-    description: 'Content rendered inside the element.',
+    description: 'Content rendered inside the tag.',
   },
   tag: {
     name: 'tag',
@@ -31,7 +31,7 @@ const HTML_TAG_PROPS_META: ComponentMeta<HtmlTagProps<ElementType>>['props'] = {
     options: ['RefObject'],
     isRequired: false,
     isResponsive: false,
-    description: 'Reference to the rendered HTML element.',
+    description: 'Reference to the rendered HTML tag.',
   },
 }
 

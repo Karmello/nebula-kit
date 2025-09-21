@@ -24,7 +24,7 @@ const SVG_ICON_PROPS_META: ComponentMeta<SvgIconProps>['props'] = {
     options: BoxIntent as unknown as string[],
     isRequired: false,
     isResponsive: false,
-    description: 'Applies a semantic color style from the design system.',
+    description: "Sets the icon's semantic color style from the design system.",
   },
 }
 

@@ -1,5 +1,5 @@
-import { MakeRequired, ScaleValue } from 'lib/definitions'
-import { WithIconProps } from 'lib/components'
+import { ScaleValue } from 'lib/definitions'
+import { HtmlTagProps, WithIconProps } from 'lib/components'
 
 import { BoxProps } from '../Box'
 
@@ -25,7 +25,7 @@ export const TEXT_TYPOGRAPHY_CONFIG: Record<
 }
 
 export const TextTag = ['p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a'] as const
-export type TextTag = (typeof TextTag)[number]
+export const DEFAULT_TEXT_TYPOGRAPHY: TextTypography = 'body'
 
 export const TextTypography = [
   'h1',
@@ -40,9 +40,8 @@ export const TextTypography = [
   'caption',
 ] as const
 
+export type TextTag = (typeof TextTag)[number]
 export type TextTypography = (typeof TextTypography)[number]
-
-export const DEFAULT_TEXT_TYPOGRAPHY: TextTypography = 'body'
 
 export type TextOwnProps = {
   typography?: TextTypography
@@ -53,29 +52,8 @@ export type TextOwnProps = {
   clampLines?: number
 }
 
-const PROPS_INHERITED_FROM_BOX = [
-  'children',
-  'tag',
-  'tagAttrs',
-  'tagRef',
-  'intent',
-  'textAlign',
-] as const satisfies readonly (keyof BoxProps)[]
-
-const PROPS_INHERITED_FROM_WITH_ICON = [
-  'iconName',
-  'iconPosition',
-] as const satisfies readonly (keyof WithIconProps)[]
-
-export const TEXT_INHERITED_PROPS = {
-  Box: PROPS_INHERITED_FROM_BOX,
-  WithIcon: PROPS_INHERITED_FROM_WITH_ICON,
-}
-
-export type TextInheritedProps<T extends TextTag = 'p'> = MakeRequired<
-  Pick<BoxProps<T>, (typeof PROPS_INHERITED_FROM_BOX)[number]>,
-  'children'
-> &
-  Partial<Pick<WithIconProps, (typeof PROPS_INHERITED_FROM_WITH_ICON)[number]>>
-
-export type TextProps<T extends TextTag = 'p'> = TextOwnProps & TextInheritedProps<T>
+export type TextProps<T extends TextTag = 'p'> = Omit<HtmlTagProps<T>, 'children'> & {
+  children: HtmlTagProps<T>['children']
+} & Pick<BoxProps<T>, 'intent' | 'textAlign'> &
+  Pick<Partial<WithIconProps>, 'iconName' | 'iconPosition'> &
+  TextOwnProps

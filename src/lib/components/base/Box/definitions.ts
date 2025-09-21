@@ -1,7 +1,6 @@
 import { ElementType } from 'react'
 
 import { CssDisplay, CssOverflow, CssPosition, CssTextAlign, RespValue, ScaleValue } from 'lib/definitions'
-
 import { HtmlTagProps } from 'lib/components/utility'
 
 export const BoxVariant = ['solid', 'outline', 'ghost'] as const
@@ -18,11 +17,11 @@ export const BoxIntent = [
   'inverse',
 ] as const
 
-export type BoxVariant = (typeof BoxVariant)[number]
-export type BoxIntent = (typeof BoxIntent)[number]
-
 export const DEFAULT_BOX_VARIANT: BoxVariant = 'ghost'
 export const DEFAULT_BOX_INTENT: BoxIntent = 'neutral'
+
+export type BoxVariant = (typeof BoxVariant)[number]
+export type BoxIntent = (typeof BoxIntent)[number]
 
 export type BoxOwnProps = {
   variant?: BoxVariant
@@ -62,18 +61,4 @@ export type BoxOwnProps = {
   paddingLeft?: RespValue<ScaleValue | string>
 }
 
-export const BOX_INHERITED_PROPS = {
-  HtmlTag: [
-    'children',
-    'tag',
-    'tagAttrs',
-    'tagRef',
-  ] as const satisfies readonly (keyof HtmlTagProps<ElementType>)[],
-}
-
-export type BoxInheritedProps<T extends ElementType> = Pick<
-  HtmlTagProps<T>,
-  (typeof BOX_INHERITED_PROPS)['HtmlTag'][number]
->
-
-export type BoxProps<T extends ElementType = 'div'> = BoxOwnProps & BoxInheritedProps<T>
+export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & BoxOwnProps
