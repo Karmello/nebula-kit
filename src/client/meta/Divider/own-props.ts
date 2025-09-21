@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { DEFAULT_DIVIDER_THICKNESS, DividerOwnProps } from 'lib/components/elements/Divider/definitions'
 
-export default [
-  {
+export default {
+  thickness: {
     name: 'thickness',
     description: 'Controls the stroke weight of the divider.',
     options: ['ScaleValue'],
@@ -10,4 +10,4 @@ export default [
     isRequired: false,
     isResponsive: false,
   },
-] as ComponentMeta<DividerOwnProps>['ownProps']
+} as ComponentMeta<DividerOwnProps>['ownProps']

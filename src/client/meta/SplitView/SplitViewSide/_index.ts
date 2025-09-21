@@ -1,6 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
 import { DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from 'lib/components/layouts/SplitView/definitions'
-import { SPLIT_VIEW_SIDE_INHERITED_PROPS } from 'lib/components/layouts/SplitView/slots/SplitViewSide/definitions'
+
+import {
+  SPLIT_VIEW_SIDE_INHERITED_PROPS,
+  SplitViewSideProps,
+} from 'lib/components/layouts/SplitView/slots/SplitViewSide/definitions'
 
 export default {
   overview: {
@@ -13,4 +17,4 @@ export default {
     ],
     rendersAs: ['aside'],
   },
-} as ComponentMeta<any>
+} as ComponentMeta<SplitViewSideProps>

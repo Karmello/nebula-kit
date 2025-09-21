@@ -42,4 +42,4 @@ export default {
   text: textMeta,
   toolbar: toolbarMeta,
   'with-icon': withIconMeta,
-} as Record<string, Record<string, ComponentMeta<unknown>>>
+} as Record<string, Record<string, ComponentMeta<object>>>

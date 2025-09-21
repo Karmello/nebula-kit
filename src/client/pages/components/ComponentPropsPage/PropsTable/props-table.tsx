@@ -3,12 +3,12 @@ import { ComponentMeta } from 'client/definitions'
 
 type Props = {
   category?: string
-  data: ComponentMeta<unknown>['ownProps']
+  data: ComponentMeta<object>['ownProps']
 }
 
 export const PropsTable = ({ category, data }: Props) => {
-  const isSomeRequired = data.some(prop => prop.isRequired)
-  const isSomeResponsive = data.some(prop => prop.isResponsive)
+  const isSomeRequired = Object.values<any>(data).some(prop => prop.isRequired)
+  const isSomeResponsive = Object.values<any>(data).some(prop => prop.isResponsive)
 
   const table = (
     <Table zebra>
@@ -29,7 +29,7 @@ export const PropsTable = ({ category, data }: Props) => {
         </Table.Row>
       </Table.Head>
       <Table.Body>
-        {data.map(({ name, options, isRequired, isResponsive, defaultValue, description }) => (
+        {Object.values(data).map(({ name, options, isRequired, isResponsive, defaultValue, description }) => (
           <Table.Row key={name}>
             <Table.Cell>
               <Text intent="primary" bold>

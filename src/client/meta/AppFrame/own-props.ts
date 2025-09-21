@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { AppFrameOwnProps } from 'lib/components/layouts/AppFrame/definitions'
 
-export default [
-  {
+export default {
+  stickyHeader: {
     name: 'stickyHeader',
     options: ['boolean'],
     defaultValue: 'false',
@@ -11,4 +11,4 @@ export default [
     description:
       'makes the AppFrame.Header remain fixed at the top of the viewport while scrolling the main content',
   },
-] as ComponentMeta<AppFrameOwnProps>['ownProps']
+} as ComponentMeta<AppFrameOwnProps>['ownProps']

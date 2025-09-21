@@ -1,5 +1,9 @@
 import { ComponentMeta } from 'client/definitions'
-import { SPLIT_VIEW_MAIN_INHERITED_PROPS } from 'lib/components/layouts/SplitView/slots/SplitViewMain/definitions'
+
+import {
+  SPLIT_VIEW_MAIN_INHERITED_PROPS,
+  SplitViewMainProps,
+} from 'lib/components/layouts/SplitView/slots/SplitViewMain/definitions'
 
 export default {
   overview: {
@@ -9,4 +13,4 @@ export default {
     byDefault: ['no padding applied'],
     rendersAs: ['section'],
   },
-} as ComponentMeta<any>
+} as ComponentMeta<SplitViewMainProps>

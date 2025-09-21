@@ -9,8 +9,8 @@ import {
   DEFAULT_BOX_VARIANT,
 } from 'lib/components/base/Box/definitions'
 
-export default [
-  {
+export default {
+  variant: {
     name: 'variant',
     options: Object.values(BoxVariant),
     defaultValue: DEFAULT_BOX_VARIANT,
@@ -19,7 +19,7 @@ export default [
     description:
       'Controls the visual style of the Box, such as background or border treatment. Variants come from the design system to ensure consistent presentation across components.',
   },
-  {
+  intent: {
     name: 'intent',
     options: Object.values(BoxIntent),
     defaultValue: DEFAULT_BOX_INTENT,
@@ -28,7 +28,7 @@ export default [
     description:
       'Defines the semantic role or tone of the Box, applying design-system colors and states consistently across components.',
   },
-  {
+  opacity: {
     name: 'opacity',
     options: ['0 - 1'],
     defaultValue: '1',
@@ -36,7 +36,7 @@ export default [
     isResponsive: true,
     description: 'Sets the transparency level of the Box, from fully visible to fully transparent.',
   },
-  {
+  borderRadius: {
     name: 'borderRadius',
     options: ['ScaleValue', 'CSS'],
     defaultValue: '0',
@@ -45,7 +45,7 @@ export default [
     description:
       'Defines the corner rounding of the Box. By default corners are square, but you can customize rounding per component or set a global border radius through the provider for consistent styling across the system.',
   },
-  {
+  interactive: {
     name: 'interactive',
     options: ['boolean'],
     defaultValue: 'false',
@@ -54,7 +54,7 @@ export default [
     description:
       'Marks the Box as interactive, enabling visual feedback (such as hover or focus styles) and signaling that the element can respond to user actions.',
   },
-  {
+  disabled: {
     name: 'disabled',
     options: ['boolean'],
     defaultValue: 'false',
@@ -63,7 +63,7 @@ export default [
     description:
       'Indicates that the Box is inactive and non-interactive, applying visual styles and state to reflect its disabled condition.',
   },
-  {
+  display: {
     name: 'display',
     options: Object.values(CssDisplay),
     defaultValue: CssDisplay[0],
@@ -72,7 +72,7 @@ export default [
     description:
       'Determines how the Box is rendered in the layout, controlling its display behavior relative to surrounding elements.',
   },
-  {
+  overflowX: {
     name: 'overflowX',
     options: Object.values(CssOverflow),
     defaultValue: CssOverflow[0],
@@ -81,7 +81,7 @@ export default [
     description:
       'Controls how content that exceeds the Box’s inline (horizontal) bounds is handled, including clipping and scroll behavior.',
   },
-  {
+  overflowY: {
     name: 'overflowY',
     options: Object.values(CssOverflow),
     defaultValue: CssOverflow[0],
@@ -90,7 +90,7 @@ export default [
     description:
       'Controls how content that exceeds the Box’s block (vertical) bounds is handled, including clipping and scroll behavior.',
   },
-  {
+  position: {
     name: 'position',
     options: Object.values(CssPosition),
     defaultValue: CssPosition[0],
@@ -99,7 +99,7 @@ export default [
     description:
       'Defines how the Box participates in the layout flow and how it’s positioned relative to its containing block.',
   },
-  {
+  top: {
     name: 'top',
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'auto',
@@ -107,7 +107,7 @@ export default [
     isResponsive: true,
     description: 'Sets the offset from the top edge of the containing block when the Box is positioned.',
   },
-  {
+  right: {
     name: 'right',
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'auto',
@@ -115,7 +115,7 @@ export default [
     isResponsive: true,
     description: 'Sets the offset from the right edge of the containing block when the Box is positioned.',
   },
-  {
+  bottom: {
     name: 'bottom',
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'auto',
@@ -123,7 +123,7 @@ export default [
     isResponsive: true,
     description: 'Sets the offset from the bottom edge of the containing block when the Box is positioned.',
   },
-  {
+  left: {
     name: 'left',
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'auto',
@@ -131,7 +131,7 @@ export default [
     isResponsive: true,
     description: 'Sets the offset from the left edge of the containing block when the Box is positioned.',
   },
-  {
+  textAlign: {
     name: 'textAlign',
     options: Object.values(CssTextAlign),
     defaultValue: CssTextAlign[0],
@@ -140,7 +140,7 @@ export default [
     description:
       'Controls horizontal alignment of inline-level content (text and inline elements) inside the Box.',
   },
-  {
+  blockSize: {
     name: 'blockSize',
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'auto',
@@ -149,7 +149,7 @@ export default [
     description:
       "Sets the Box's logical block dimension (commonly height). Respects writing mode and the min/max block-size constraints.",
   },
-  {
+  minBlockSize: {
     name: 'minBlockSize',
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'auto',
@@ -157,7 +157,7 @@ export default [
     isResponsive: true,
     description: 'Defines the minimum block dimension the Box can shrink to.',
   },
-  {
+  maxBlockSize: {
     name: 'maxBlockSize',
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'none',
@@ -165,7 +165,7 @@ export default [
     isResponsive: true,
     description: 'Defines the maximum block dimension the Box can grow to.',
   },
-  {
+  inlineSize: {
     name: 'inlineSize',
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'auto',
@@ -174,7 +174,7 @@ export default [
     description:
       'Sets the Box’s logical inline dimension (commonly width). Respects writing mode and the min/max inline-size constraints.',
   },
-  {
+  minInlineSize: {
     name: 'minInlineSize',
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'auto',
@@ -182,7 +182,7 @@ export default [
     isResponsive: true,
     description: 'Defines the minimum inline dimension the Box can shrink to.',
   },
-  {
+  maxInlineSize: {
     name: 'maxInlineSize',
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'none',
@@ -190,7 +190,7 @@ export default [
     isResponsive: true,
     description: 'Defines the maximum inline dimension the Box can grow to.',
   },
-  {
+  padding: {
     name: 'padding',
     options: ['ScaleValue', 'CSS'],
     defaultValue: '0',
@@ -198,7 +198,7 @@ export default [
     isResponsive: true,
     description: 'Sets padding on all sides of the Box.',
   },
-  {
+  paddingInline: {
     name: 'paddingInline',
     options: ['ScaleValue', 'CSS'],
     defaultValue: '0',
@@ -206,7 +206,7 @@ export default [
     isResponsive: true,
     description: 'Sets padding on the inline (horizontal) axis.',
   },
-  {
+  paddingBlock: {
     name: 'paddingBlock',
     options: ['ScaleValue', 'CSS'],
     defaultValue: '0',
@@ -214,7 +214,7 @@ export default [
     isResponsive: true,
     description: 'Sets padding on the block (vertical) axis.',
   },
-  {
+  paddingTop: {
     name: 'paddingTop',
     options: ['ScaleValue', 'CSS'],
     defaultValue: '0',
@@ -222,7 +222,7 @@ export default [
     isResponsive: true,
     description: 'Sets padding on the block-start (top) side.',
   },
-  {
+  paddingRight: {
     name: 'paddingRight',
     options: ['ScaleValue', 'CSS'],
     defaultValue: '0',
@@ -230,7 +230,7 @@ export default [
     isResponsive: true,
     description: 'Sets padding on the inline-end (right) side.',
   },
-  {
+  paddingBottom: {
     name: 'paddingBottom',
     options: ['ScaleValue', 'CSS'],
     defaultValue: '0',
@@ -238,7 +238,7 @@ export default [
     isResponsive: true,
     description: 'Sets padding on the block-end (bottom) side.',
   },
-  {
+  paddingLeft: {
     name: 'paddingLeft',
     options: ['ScaleValue', 'CSS'],
     defaultValue: '0',
@@ -246,7 +246,7 @@ export default [
     isResponsive: true,
     description: 'Sets padding on the inline-start (left) side.',
   },
-  {
+  margin: {
     name: 'margin',
     options: ['ScaleValue', 'CSS'],
     defaultValue: '0',
@@ -254,7 +254,7 @@ export default [
     isResponsive: true,
     description: 'Sets margin on all sides of the Box.',
   },
-  {
+  marginInline: {
     name: 'marginInline',
     options: ['ScaleValue', 'CSS'],
     defaultValue: '0',
@@ -262,7 +262,7 @@ export default [
     isResponsive: true,
     description: 'Sets margin on the inline (horizontal) axis.',
   },
-  {
+  marginBlock: {
     name: 'marginBlock',
     options: ['ScaleValue', 'CSS'],
     defaultValue: '0',
@@ -270,7 +270,7 @@ export default [
     isResponsive: true,
     description: 'Sets margin on the block (vertical) axis.',
   },
-  {
+  marginTop: {
     name: 'marginTop',
     options: ['ScaleValue', 'CSS'],
     defaultValue: '0',
@@ -278,7 +278,7 @@ export default [
     isResponsive: true,
     description: 'Sets margin on the block-start (top) side.',
   },
-  {
+  marginRight: {
     name: 'marginRight',
     options: ['ScaleValue', 'CSS'],
     defaultValue: '0',
@@ -286,7 +286,7 @@ export default [
     isResponsive: true,
     description: 'Sets margin on the inline-end (right) side.',
   },
-  {
+  marginBottom: {
     name: 'marginBottom',
     options: ['ScaleValue', 'CSS'],
     defaultValue: '0',
@@ -294,7 +294,7 @@ export default [
     isResponsive: true,
     description: 'Sets margin on the block-end (bottom) side.',
   },
-  {
+  marginLeft: {
     name: 'marginLeft',
     options: ['ScaleValue', 'CSS'],
     defaultValue: '0',
@@ -302,4 +302,4 @@ export default [
     isResponsive: true,
     description: 'Sets margin on the inline-start (left) side.',
   },
-] as ComponentMeta<BoxOwnProps>['ownProps']
+} as ComponentMeta<BoxOwnProps>['ownProps']

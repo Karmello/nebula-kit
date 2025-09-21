@@ -30,6 +30,6 @@ type Example = {
 
 export type ComponentMeta<PropsType> = {
   overview: Overview
-  ownProps?: Prop<PropsType>[]
+  ownProps?: Record<keyof PropsType, Prop<PropsType>>
   examples?: Example[]
 }

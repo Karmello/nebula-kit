@@ -8,7 +8,7 @@ import { Text, Flex, Box, Spacer, Section } from 'lib/components'
 import { ListWithHeading } from './ListWithHeading'
 import { ListWithChips } from './ListWithChips'
 
-const SingleOverview = ({ meta }: { meta: ComponentMeta<unknown> }) => {
+const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const elemToString = elemToStringService()
 
   const {
@@ -29,7 +29,9 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<unknown> }) => {
       {behavior ? <ListWithHeading heading="Behavior:" items={behavior} /> : null}
       {byDefault ? <ListWithHeading heading="By default:" items={byDefault} /> : null}
       {examplesOfUse ? <ListWithHeading heading="Examples of use:" items={examplesOfUse} /> : null}
-      {ownProps ? <ListWithChips heading="Own props:" items={ownProps.map(prop => prop.name)} /> : null}
+      {ownProps ? (
+        <ListWithChips heading="Own props:" items={Object.values<any>(ownProps).map(prop => prop.name)} />
+      ) : null}
       {composedOf
         ? Object.keys(composedOf).map(componentName =>
             composedOf[componentName]?.length ? (

@@ -1,5 +1,9 @@
 import { ComponentMeta } from 'client/definitions'
-import { SPLIT_VIEW_MAIN_BAR_INHERITED_PROPS } from 'lib/components/layouts/SplitView/slots/SplitViewMainBar/definitions'
+
+import {
+  SPLIT_VIEW_MAIN_BAR_INHERITED_PROPS,
+  SplitViewMainBarProps,
+} from 'lib/components/layouts/SplitView/slots/SplitViewMainBar/definitions'
 
 export default {
   overview: {
@@ -8,4 +12,4 @@ export default {
     byDefault: ['renders as <div> element'],
     composedOf: SPLIT_VIEW_MAIN_BAR_INHERITED_PROPS,
   },
-} as ComponentMeta<any>
+} as ComponentMeta<SplitViewMainBarProps>

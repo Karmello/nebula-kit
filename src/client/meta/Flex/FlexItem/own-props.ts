@@ -2,8 +2,8 @@ import { ComponentMeta } from 'client/definitions'
 import { FlexItemOwnProps } from 'lib/components/layout-base/Flex/FlexItem/definitions'
 import { CssFlexItemAlignSelf } from 'lib/definitions'
 
-export default [
-  {
+export default {
+  flex: {
     name: 'flex',
     options: ['CSS'],
     defaultValue: '0 1 auto',
@@ -11,7 +11,7 @@ export default [
     isResponsive: true,
     description: 'defines how the item grows, shrinks, and sets its base size within the Flex container',
   },
-  {
+  flexGrow: {
     name: 'flexGrow',
     options: ['CSS'],
     defaultValue: '0',
@@ -20,7 +20,7 @@ export default [
     description:
       'controls how much the item can grow relative to the other items when extra space is available',
   },
-  {
+  flexShrink: {
     name: 'flexShrink',
     options: ['CSS'],
     defaultValue: '1',
@@ -28,7 +28,7 @@ export default [
     isResponsive: true,
     description: 'controls how much the item can shrink relative to the other items when space is limited',
   },
-  {
+  flexBasis: {
     name: 'flexBasis',
     options: ['CSS'],
     defaultValue: 'auto',
@@ -36,7 +36,7 @@ export default [
     isResponsive: true,
     description: "sets the item's initial main-size before free space is distributed",
   },
-  {
+  alignSelf: {
     name: 'alignSelf',
     options: CssFlexItemAlignSelf as unknown as string[],
     defaultValue: 'auto',
@@ -44,7 +44,7 @@ export default [
     isResponsive: true,
     description: "overrides the container's alignItems value for this specific item",
   },
-  {
+  order: {
     name: 'order',
     options: ['CSS'],
     defaultValue: '0',
@@ -52,4 +52,4 @@ export default [
     isResponsive: true,
     description: "defines the item's order relative to other flex items, independent of source order",
   },
-] as ComponentMeta<FlexItemOwnProps>['ownProps']
+} as ComponentMeta<FlexItemOwnProps>['ownProps']

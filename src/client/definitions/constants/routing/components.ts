@@ -1,7 +1,7 @@
 const COMPONENT_SECTIONS = [
   { key: 'overview', label: 'Overview' },
   { key: 'examples', label: 'Examples' },
-  { key: 'props', label: 'Own props' },
+  { key: 'props', label: 'Props' },
 ]
 
 export const COMPONENT_CATEGORIES = [

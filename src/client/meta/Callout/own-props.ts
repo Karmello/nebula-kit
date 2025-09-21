@@ -6,15 +6,15 @@ import {
   DEFAULT_CALLOUT_INTENT,
 } from 'lib/components/feedback/Callout/definitions'
 
-export default [
-  {
+export default {
+  content: {
     name: 'content',
     description: 'A text string displayed as the main body of the callout.',
     options: ['string'],
     isRequired: true,
     isResponsive: false,
   },
-  {
+  heading: {
     name: 'heading',
     description:
       'Text displayed as the title of the callout. Overrides the default heading provided for each intent.',
@@ -27,4 +27,4 @@ export default [
     isRequired: false,
     isResponsive: false,
   },
-] as ComponentMeta<CalloutOwnProps>['ownProps']
+} as ComponentMeta<CalloutOwnProps>['ownProps']
