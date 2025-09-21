@@ -23,6 +23,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
       "use when you need a semantic element that isn't yet provided as a dedicated component in the library",
       'use as the base building block when creating your own custom component',
     ],
+    composedOf: { HtmlTag: [] },
   },
   props: BOX_PROPS_META,
   examples: BOX_EXAMPLES_META,

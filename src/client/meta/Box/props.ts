@@ -12,7 +12,6 @@ import {
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
-  ...HTML_TAG_PROPS_META,
   variant: {
     name: 'variant',
     options: Object.values(BoxVariant),
@@ -305,6 +304,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     isResponsive: true,
     description: 'Sets margin on the inline-start (left) side.',
   },
+  ...HTML_TAG_PROPS_META,
 }
 
 export { BOX_PROPS_META }
