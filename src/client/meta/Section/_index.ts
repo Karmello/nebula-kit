@@ -1,10 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-
-import {
-  SECTION_INHERITED_PROPS,
-  SectionTag,
-  SectionOwnProps,
-} from 'lib/components/containers/Section/definitions'
+import { SectionTag, SectionOwnProps } from 'lib/components/containers/Section/definitions'
 
 import { SECTION_PROPS_META } from './props'
 import { SECTION_EXAMPLES_META } from './examples'
@@ -28,7 +23,7 @@ const SECTION_META: ComponentMeta<SectionOwnProps> = {
       'breaking long content into titled sections for readability',
       'organizing dashboard widgets with headings',
     ],
-    composedOf: SECTION_INHERITED_PROPS,
+    composedOf: ['Box', 'Text', 'Divider', 'Spacer'],
     rendersAs: SectionTag,
   },
   props: SECTION_PROPS_META,

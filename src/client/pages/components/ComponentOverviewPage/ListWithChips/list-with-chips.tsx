@@ -7,7 +7,7 @@ export const ListWithChips = ({
   intent = 'secondary',
 }: {
   heading: string
-  items: readonly string[]
+  items: string[]
   intent?: BoxIntent
 }) => (
   <Flex flexDirection="column" gap={5}>

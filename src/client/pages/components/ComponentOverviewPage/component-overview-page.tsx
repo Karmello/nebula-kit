@@ -23,28 +23,15 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
     <Flex flexDirection="column" alignItems="stretch" gap={15}>
       <Text typography="lead">{description}</Text>
       {examples?.[0] ? <CodeSnippet code={elemToString(examples[0].jsx)} /> : null}
-      {rendersAs ? <ListWithChips heading="Renders as:" items={rendersAs} intent="danger" /> : null}
       {role ? <ListWithHeading heading="Role:" items={role} /> : null}
       {behavior ? <ListWithHeading heading="Behavior:" items={behavior} /> : null}
       {byDefault ? <ListWithHeading heading="By default:" items={byDefault} /> : null}
       {examplesOfUse ? <ListWithHeading heading="Examples of use:" items={examplesOfUse} /> : null}
-      {composedOf ? (
-        <ListWithChips heading="Composed of:" items={Object.keys(composedOf)} intent="warning" />
+      {rendersAs ? (
+        <ListWithChips heading="Renders as:" items={rendersAs as string[]} intent="danger" />
       ) : null}
-      {props ? (
-        <ListWithChips heading="Props:" items={Object.values<any>(props).map(prop => prop.name)} />
-      ) : null}
-      {composedOf
-        ? Object.keys(composedOf).map(componentName =>
-            composedOf[componentName]?.length ? (
-              <ListWithChips
-                key={componentName}
-                heading={`Props inherited from ${componentName}:`}
-                items={composedOf[componentName]}
-              />
-            ) : null
-          )
-        : null}
+      {composedOf ? <ListWithChips heading="Composed of:" items={composedOf} intent="warning" /> : null}
+      {props ? <ListWithChips heading="Props:" items={Object.keys(props)} /> : null}
     </Flex>
   )
 

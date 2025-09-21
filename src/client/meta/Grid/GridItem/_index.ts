@@ -1,9 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-
-import {
-  GRID_ITEM_INHERITED_PROPS,
-  GridItemOwnProps,
-} from 'lib/components/layout-base/Grid/GridItem/definitions'
+import { GridItemOwnProps } from 'lib/components/layout-base/Grid/GridItem/definitions'
 
 import { GRID_ITEM_PROPS_META } from './props'
 import { GRID_ITEM_EXAMPLES_META } from './examples'
@@ -30,7 +26,7 @@ const GRID_ITEM_META: ComponentMeta<GridItemOwnProps> = {
       'pinning a child to a specific grid cell at a breakpoint',
       'overriding alignment for a single child while others follow the parent',
     ],
-    composedOf: GRID_ITEM_INHERITED_PROPS,
+    composedOf: ['Box'],
   },
   props: GRID_ITEM_PROPS_META,
   examples: GRID_ITEM_EXAMPLES_META,

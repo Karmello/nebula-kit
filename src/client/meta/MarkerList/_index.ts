@@ -1,10 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-
-import {
-  MARKER_LIST_INHERITED_PROPS,
-  MarkerListTag,
-  MarkerListOwnProps,
-} from 'lib/components/elements/MarkerList/definitions'
+import { MarkerListTag, MarkerListOwnProps } from 'lib/components/elements/MarkerList/definitions'
 
 import { MARKER_LIST_PROPS_META } from './props'
 import { MARKER_LIST_EXAMPLES_META } from './examples'
@@ -28,7 +23,7 @@ const MARKER_LIST_META: ComponentMeta<MarkerListOwnProps> = {
       'presenting short collections of text items with bullets or numbers',
       'grouping related information where the marker itself carries meaning',
     ],
-    composedOf: MARKER_LIST_INHERITED_PROPS,
+    composedOf: ['Flex'],
     rendersAs: MarkerListTag,
   },
   props: MARKER_LIST_PROPS_META,

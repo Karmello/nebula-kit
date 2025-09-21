@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { APP_FRAME_INHERITED_PROPS, AppFrameOwnProps } from 'lib/components/layouts/AppFrame/definitions'
+import { AppFrameOwnProps } from 'lib/components/layouts/AppFrame/definitions'
 
 import { APP_FRAME_PROPS_META } from './props'
 import { APP_FRAME_EXAMPLES_META } from './examples'
@@ -18,7 +18,7 @@ const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
     examplesOfUse: [
       'wrap an application layout that needs a persistent header and footer around the main content',
     ],
-    composedOf: APP_FRAME_INHERITED_PROPS,
+    composedOf: ['Grid'],
     rendersAs: ['div'],
   },
   props: APP_FRAME_PROPS_META,

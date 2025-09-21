@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { SPLIT_VIEW_INHERITED_PROPS, SplitViewOwnProps } from 'lib/components/layouts/SplitView/definitions'
+import { SplitViewOwnProps } from 'lib/components/layouts/SplitView/definitions'
 
 import { SPLIT_VIEW_PROPS_META } from './props'
 import { SPLIT_VIEW_EXAMPLES_META } from './examples'
@@ -11,7 +11,7 @@ import { SPLIT_VIEW_MAIN_BAR_META } from './SplitViewMainBar/_index'
 const SPLIT_VIEW_META: ComponentMeta<SplitViewOwnProps> = {
   overview: {
     description: 'A two-panel layout designed for building side navigation alongside main content.',
-    composedOf: SPLIT_VIEW_INHERITED_PROPS,
+    composedOf: ['Grid'],
     role: [
       'provides a two-panel horizontal layout with a main content area and side panel',
       'manages side panel visibility',

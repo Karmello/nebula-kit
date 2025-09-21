@@ -7,12 +7,11 @@ type Overview = {
   behavior?: string[]
   byDefault?: string[]
   examplesOfUse?: string[]
-  composedOf?: Record<string, readonly string[]>
+  composedOf?: string[]
   rendersAs?: readonly string[]
 }
 
-type Prop<PropsType> = {
-  name: keyof PropsType
+type Prop = {
   options: string[]
   defaultValue?: string
   isRequired?: boolean
@@ -29,6 +28,6 @@ type Example = {
 
 export type ComponentMeta<PropsType> = {
   overview: Overview
-  props?: Record<keyof PropsType, Prop<PropsType>>
+  props?: Record<keyof PropsType, Prop>
   examples?: Example[]
 }

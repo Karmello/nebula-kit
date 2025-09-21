@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { GRID_INHERITED_PROPS, GridTag, GridOwnProps } from 'lib/components/layout-base/Grid/definitions'
+import { GridTag, GridOwnProps } from 'lib/components/layout-base/Grid/definitions'
 
 import { GRID_PROPS_META } from './props'
 import { GRID_EXAMPLES_META } from './examples'
@@ -29,7 +29,7 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
       'aligning items consistently across multiple rows',
       'building responsive page sections',
     ],
-    composedOf: GRID_INHERITED_PROPS,
+    composedOf: ['Box'],
     rendersAs: GridTag,
   },
   props: GRID_PROPS_META,

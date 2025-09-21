@@ -1,9 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-
-import {
-  FLEX_ITEM_INHERITED_PROPS,
-  FlexItemOwnProps,
-} from 'lib/components/layout-base/Flex/FlexItem/definitions'
+import { FlexItemOwnProps } from 'lib/components/layout-base/Flex/FlexItem/definitions'
 
 import { FLEX_ITEM_EXAMPLES_META } from './examples'
 import { FLEX_ITEM_PROPS_META } from './props'
@@ -29,7 +25,7 @@ const FLEX_ITEM_META: ComponentMeta<FlexItemOwnProps> = {
       'aligning a single child differently from siblings',
       'making an element grow or shrink independently in a shared row or column',
     ],
-    composedOf: FLEX_ITEM_INHERITED_PROPS,
+    composedOf: ['Box'],
   },
   props: FLEX_ITEM_PROPS_META,
   examples: FLEX_ITEM_EXAMPLES_META,

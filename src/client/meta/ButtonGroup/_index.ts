@@ -1,7 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 
 import {
-  BUTTON_GROUP_INHERITED_PROPS,
   ButtonGroupTag,
   ButtonGroupOwnProps,
   DEFAULT_BUTTON_GROUP_GAP,
@@ -22,7 +21,7 @@ const BUTTON_GROUP_META: ComponentMeta<ButtonGroupOwnProps> = {
       'displaying confirm/cancel buttons as a pair',
       'building pagination or step navigation',
     ],
-    composedOf: BUTTON_GROUP_INHERITED_PROPS,
+    composedOf: ['Flex', 'Flex.Item', 'Button'],
     rendersAs: ButtonGroupTag,
   },
   props: BUTTON_GROUP_PROPS_META,

@@ -3,7 +3,6 @@ import { MarkerListOwnProps, MarkerListStyle } from 'lib/components/elements/Mar
 
 const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListOwnProps>['props'] = {
   listStyle: {
-    name: 'listStyle',
     options: MarkerListStyle as unknown as string[],
     defaultValue: MarkerListStyle[0],
     isRequired: false,

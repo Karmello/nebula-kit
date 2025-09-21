@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 
-import { BUTTON_INHERITED_PROPS, ButtonTag, ButtonOwnProps } from 'lib/components/controls/Button/definitions'
+import { ButtonTag, ButtonOwnProps } from 'lib/components/controls/Button/definitions'
 
 import { BUTTON_PROPS_META } from './props'
 import { BUTTON_EXAMPLES_META } from './examples'
@@ -17,7 +17,7 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
     behavior: ['requires children'],
     byDefault: ['medium size', 'solid variant', 'tertiary intent'],
     examplesOfUse: ['applied wherever a clear, consistent action trigger is needed in the interface'],
-    composedOf: BUTTON_INHERITED_PROPS,
+    composedOf: ['Box', 'Text'],
     rendersAs: ButtonTag,
   },
   props: BUTTON_PROPS_META,

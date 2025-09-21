@@ -3,7 +3,6 @@ import { AppFrameOwnProps } from 'lib/components/layouts/AppFrame/definitions'
 
 const APP_FRAME_PROPS_META: ComponentMeta<AppFrameOwnProps>['props'] = {
   stickyHeader: {
-    name: 'stickyHeader',
     options: ['boolean'],
     defaultValue: 'false',
     isRequired: false,

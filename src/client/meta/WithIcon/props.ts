@@ -13,7 +13,6 @@ const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
   iconName: SVG_ICON_PROPS_META['iconName'],
   iconSize: SVG_ICON_PROPS_META['iconSize'],
   iconPosition: {
-    name: 'iconPosition',
     options: IconPosition as unknown as string[],
     defaultValue: DEFAULT_WITH_ICON_ICON_POSITION,
     isRequired: false,

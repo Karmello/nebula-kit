@@ -3,7 +3,7 @@ import { ComponentMeta } from 'client/definitions'
 
 type Props = {
   category?: string
-  data: ComponentMeta<object>['props']
+  data: ComponentMeta<Record<string, object>>['props']
 }
 
 export const PropsTable = ({ category, data }: Props) => {
@@ -20,20 +20,23 @@ export const PropsTable = ({ category, data }: Props) => {
         </Table.Row>
       </Table.Head>
       <Table.Body>
-        {Object.values(data).map(({ name, options, isRequired, isResponsive, defaultValue, description }) => (
-          <Table.Row key={name}>
-            <Table.Cell>
-              <Text intent="primary" bold>
-                {`${name}${!isRequired ? '?' : ''}${isResponsive ? ' (resp)' : ''}`}
-              </Text>
-            </Table.Cell>
-            <Table.Cell>{typeof options === 'string' ? options : options.join(', ')}</Table.Cell>
-            <Table.Cell tagAttrs={{ style: { textAlign: 'center', whiteSpace: 'nowrap' } }}>
-              {defaultValue !== undefined ? defaultValue : '-'}
-            </Table.Cell>
-            <Table.Cell>{description}</Table.Cell>
-          </Table.Row>
-        ))}
+        {Object.keys(data).map(name => {
+          const { options, isRequired, isResponsive, defaultValue, description } = data[name]
+          return (
+            <Table.Row key={name}>
+              <Table.Cell>
+                <Text intent="primary" bold>
+                  {`${name}${!isRequired ? '?' : ''}${isResponsive ? ' (resp)' : ''}`}
+                </Text>
+              </Table.Cell>
+              <Table.Cell>{typeof options === 'string' ? options : options.join(', ')}</Table.Cell>
+              <Table.Cell tagAttrs={{ style: { textAlign: 'center', whiteSpace: 'nowrap' } }}>
+                {defaultValue !== undefined ? defaultValue : '-'}
+              </Table.Cell>
+              <Table.Cell>{description}</Table.Cell>
+            </Table.Row>
+          )
+        })}
       </Table.Body>
     </Table>
   )

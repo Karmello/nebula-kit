@@ -3,7 +3,6 @@ import { ButtonOwnProps, ButtonSize, DEFAULT_BUTTON_SIZE } from 'lib/components/
 
 const BUTTON_PROPS_META: ComponentMeta<ButtonOwnProps>['props'] = {
   size: {
-    name: 'size',
     options: Object.values(ButtonSize),
     defaultValue: DEFAULT_BUTTON_SIZE,
     isRequired: false,

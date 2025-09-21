@@ -1,10 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-
-import {
-  DEFAULT_SPACER_BLOCK_SIZE,
-  SPACER_INHERITED_PROPS,
-  SpacerProps,
-} from 'lib/components/layout-base/Spacer/definitions'
+import { DEFAULT_SPACER_BLOCK_SIZE, SpacerProps } from 'lib/components/layout-base/Spacer/definitions'
 
 import { SPACER_EXAMPLES_META } from './examples'
 
@@ -22,7 +17,7 @@ const SPACER_META: ComponentMeta<SpacerProps> = {
       'separating paragraphs of text in a content block',
       'adding breathing room between form fields',
     ],
-    composedOf: SPACER_INHERITED_PROPS,
+    composedOf: ['Box'],
   },
   examples: SPACER_EXAMPLES_META,
 }

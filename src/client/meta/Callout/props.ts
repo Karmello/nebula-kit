@@ -8,14 +8,12 @@ import {
 
 const CALLOUT_PROPS_META: ComponentMeta<CalloutOwnProps>['props'] = {
   content: {
-    name: 'content',
     description: 'A text string displayed as the main body of the callout.',
     options: ['string'],
     isRequired: true,
     isResponsive: false,
   },
   heading: {
-    name: 'heading',
     description:
       'Text displayed as the title of the callout. Overrides the default heading provided for each intent.',
     options: [

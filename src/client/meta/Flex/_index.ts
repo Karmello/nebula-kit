@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { FLEX_INHERITED_PROPS, FlexOwnProps } from 'lib/components/layout-base/Flex/definitions'
+import { FlexOwnProps } from 'lib/components/layout-base/Flex/definitions'
 
 import { FLEX_PROPS_META } from './props'
 import { FLEX_EXAMPLES_META } from './examples'
@@ -30,7 +30,7 @@ const FLEX_META: ComponentMeta<FlexOwnProps> = {
       'distributing space between elements with gaps or justification',
       'building responsive layouts that adapt across breakpoints',
     ],
-    composedOf: FLEX_INHERITED_PROPS,
+    composedOf: ['Box'],
   },
   props: FLEX_PROPS_META,
   examples: FLEX_EXAMPLES_META,

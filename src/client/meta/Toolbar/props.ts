@@ -4,7 +4,6 @@ import { DEFAULT_SWITCH_AT, SwitchAt } from 'lib/definitions'
 
 const TOOLBAR_PROPS_META: ComponentMeta<ToolbarOwnProps>['props'] = {
   switchAt: {
-    name: 'switchAt',
     options: SwitchAt as unknown as string[],
     defaultValue: DEFAULT_SWITCH_AT,
     isRequired: false,

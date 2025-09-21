@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { DIVIDER_INHERITED_PROPS, DividerOwnProps } from 'lib/components/elements/Divider/definitions'
+import { DividerOwnProps } from 'lib/components/elements/Divider/definitions'
 
 import { DIVIDER_PROPS_META } from './props'
 import { DIVIDER_EXAMPLES_META } from './examples'
@@ -16,7 +16,7 @@ const DIVIDER_META: ComponentMeta<DividerOwnProps> = {
       'placed under a heading to emphasize separation from following content',
       'used between sections of a form or card to group related information',
     ],
-    composedOf: DIVIDER_INHERITED_PROPS,
+    composedOf: ['Box'],
     rendersAs: ['hr'],
   },
   props: DIVIDER_PROPS_META,

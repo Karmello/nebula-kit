@@ -1,6 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
 import { AppFrameOwnProps } from 'lib/components/layouts/AppFrame/definitions'
-import { APP_FRAME_FOOTER_INHERITED_PROPS } from 'lib/components/layouts/AppFrame/slots/AppFrameFooter/definitions'
 
 const APP_FRAME_FOOTER_META: ComponentMeta<AppFrameOwnProps> = {
   overview: {
@@ -11,7 +10,7 @@ const APP_FRAME_FOOTER_META: ComponentMeta<AppFrameOwnProps> = {
       'ensures the region has at least 80 units of vertical height',
     ],
     examplesOfUse: ['used for legal notices, links, or supplementary information'],
-    composedOf: APP_FRAME_FOOTER_INHERITED_PROPS,
+    composedOf: ['Box'],
     rendersAs: ['footer'],
   },
 }

@@ -3,7 +3,6 @@ import { ButtonGroupDirection, ButtonGroupOwnProps } from 'lib/components/contro
 
 const BUTTON_GROUP_PROPS_META: ComponentMeta<ButtonGroupOwnProps>['props'] = {
   direction: {
-    name: 'direction',
     options: Object.values(ButtonGroupDirection),
     defaultValue: ButtonGroupDirection[0],
     isRequired: false,
@@ -11,7 +10,6 @@ const BUTTON_GROUP_PROPS_META: ComponentMeta<ButtonGroupOwnProps>['props'] = {
     description: 'Controls whether buttons are arranged horizontally or vertically.',
   },
   stretch: {
-    name: 'stretch',
     options: ['boolean'],
     defaultValue: 'false',
     isRequired: false,
@@ -19,7 +17,6 @@ const BUTTON_GROUP_PROPS_META: ComponentMeta<ButtonGroupOwnProps>['props'] = {
     description: 'Makes all grouped buttons expand to fill the available space evenly.',
   },
   attached: {
-    name: 'attached',
     options: ['boolean'],
     defaultValue: 'false',
     isRequired: false,

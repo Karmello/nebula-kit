@@ -1,10 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-
-import {
-  CALLOUT_INHERITED_PROPS,
-  CalloutTag,
-  CalloutOwnProps,
-} from 'lib/components/feedback/Callout/definitions'
+import { CalloutTag, CalloutOwnProps } from 'lib/components/feedback/Callout/definitions'
 
 import { CALLOUT_PROPS_META } from './props'
 import { CALLOUT_EXAMPLES_META } from './examples'
@@ -35,7 +30,7 @@ const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
       'warning users about potential issues or side effects',
       'showing error details that require immediate attention',
     ],
-    composedOf: CALLOUT_INHERITED_PROPS,
+    composedOf: ['Box', 'Text'],
     rendersAs: CalloutTag,
   },
   props: CALLOUT_PROPS_META,

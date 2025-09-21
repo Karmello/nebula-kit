@@ -1,6 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
 import { ToolbarStartProps } from 'lib/components'
-import { TOOLBAR_START_INHERITED_PROPS } from 'lib/components/layouts/Toolbar/slots/ToolbarStart/definitions'
 
 const TOOLBAR_START_META: ComponentMeta<ToolbarStartProps> = {
   overview: {
@@ -12,7 +11,7 @@ const TOOLBAR_START_META: ComponentMeta<ToolbarStartProps> = {
       'showing a brand label or logo',
       'adding small auxiliary elements that sit next to the toggle button',
     ],
-    composedOf: TOOLBAR_START_INHERITED_PROPS,
+    composedOf: ['Grid.Item'],
   },
 }
 

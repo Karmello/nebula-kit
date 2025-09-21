@@ -4,14 +4,12 @@ import { DEFAULT_BORDER_RADIUS, Theme } from 'lib/definitions'
 
 const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = {
   children: {
-    name: 'children',
     options: ['ReactElement'],
     isRequired: true,
     isResponsive: false,
     description: 'The application or subtree wrapped by the provider.',
   },
   defaultTheme: {
-    name: 'defaultTheme',
     options: Theme as unknown as string[],
     defaultValue: Theme[0],
     isRequired: false,
@@ -19,7 +17,6 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = 
     description: 'Starting theme for the app.',
   },
   defaultBorderRadius: {
-    name: 'defaultBorderRadius',
     options: ['ScaleValue', 'CSS'],
     defaultValue: String(DEFAULT_BORDER_RADIUS),
     isRequired: false,

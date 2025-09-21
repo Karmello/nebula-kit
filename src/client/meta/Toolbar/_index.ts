@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { TOOLBAR_INHERITED_PROPS, ToolbarOwnProps } from 'lib/components/layouts/Toolbar/definitions'
+import { ToolbarOwnProps } from 'lib/components/layouts/Toolbar/definitions'
 
 import { TOOLBAR_PROPS_META } from './props'
 import { TOOLBAR_EXAMPLES_META } from './examples'
@@ -23,7 +23,7 @@ const TOOLBAR_META: ComponentMeta<ToolbarOwnProps> = {
       'often used inside an application header to control navigation and provide additional tools',
       'often paired with a ButtonGroup rendered inside the main section',
     ],
-    composedOf: TOOLBAR_INHERITED_PROPS,
+    composedOf: ['Grid'],
     rendersAs: ['nav'],
   },
   props: TOOLBAR_PROPS_META,

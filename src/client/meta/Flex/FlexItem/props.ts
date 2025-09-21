@@ -4,7 +4,6 @@ import { CssFlexItemAlignSelf } from 'lib/definitions'
 
 const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemOwnProps>['props'] = {
   flex: {
-    name: 'flex',
     options: ['CSS'],
     defaultValue: '0 1 auto',
     isRequired: false,
@@ -12,7 +11,6 @@ const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemOwnProps>['props'] = {
     description: 'defines how the item grows, shrinks, and sets its base size within the Flex container',
   },
   flexGrow: {
-    name: 'flexGrow',
     options: ['CSS'],
     defaultValue: '0',
     isRequired: false,
@@ -21,7 +19,6 @@ const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemOwnProps>['props'] = {
       'controls how much the item can grow relative to the other items when extra space is available',
   },
   flexShrink: {
-    name: 'flexShrink',
     options: ['CSS'],
     defaultValue: '1',
     isRequired: false,
@@ -29,7 +26,6 @@ const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemOwnProps>['props'] = {
     description: 'controls how much the item can shrink relative to the other items when space is limited',
   },
   flexBasis: {
-    name: 'flexBasis',
     options: ['CSS'],
     defaultValue: 'auto',
     isRequired: false,
@@ -37,7 +33,6 @@ const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemOwnProps>['props'] = {
     description: "sets the item's initial main-size before free space is distributed",
   },
   alignSelf: {
-    name: 'alignSelf',
     options: CssFlexItemAlignSelf as unknown as string[],
     defaultValue: 'auto',
     isRequired: false,
@@ -45,7 +40,6 @@ const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemOwnProps>['props'] = {
     description: "overrides the container's alignItems value for this specific item",
   },
   order: {
-    name: 'order',
     options: ['CSS'],
     defaultValue: '0',
     isRequired: false,

@@ -7,7 +7,6 @@ import { WITH_ICON_PROPS_META } from '../WithIcon/props'
 
 const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
   typography: {
-    name: 'typography',
     options: Object.values(TextTypography),
     defaultValue: DEFAULT_TEXT_TYPOGRAPHY,
     isRequired: false,
@@ -16,7 +15,6 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
       'Applies a predefined typography style from the design system, controlling tag, fontSize and lineHeight together.',
   },
   bold: {
-    name: 'bold',
     options: ['boolean'],
     defaultValue: 'false',
     isRequired: false,
@@ -24,7 +22,6 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     description: 'Toggles bold styling for the text.',
   },
   italic: {
-    name: 'italic',
     options: ['boolean'],
     defaultValue: 'false',
     isRequired: false,
@@ -32,7 +29,6 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     description: 'Toggles italic styling for the text.',
   },
   noWrap: {
-    name: 'noWrap',
     options: ['boolean'],
     defaultValue: 'false',
     isRequired: false,
@@ -40,7 +36,6 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     description: 'Prevents the text from wrapping onto multiple lines.',
   },
   truncate: {
-    name: 'truncate',
     options: ['boolean'],
     defaultValue: 'false',
     isRequired: false,
@@ -48,7 +43,6 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     description: 'Shortens overflowing text to a single line with an ellipsis.',
   },
   clampLines: {
-    name: 'clampLines',
     options: ['number'],
     isRequired: false,
     isResponsive: false,

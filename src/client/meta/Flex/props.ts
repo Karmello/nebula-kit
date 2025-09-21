@@ -4,7 +4,6 @@ import { CssFlexAlignItems, CssFlexDirection, CssFlexJustifyContent, CssFlexWrap
 
 const FLEX_PROPS_META: ComponentMeta<FlexOwnProps>['props'] = {
   flexDirection: {
-    name: 'flexDirection',
     options: Object.values(CssFlexDirection),
     defaultValue: CssFlexDirection[0],
     isRequired: false,
@@ -12,7 +11,6 @@ const FLEX_PROPS_META: ComponentMeta<FlexOwnProps>['props'] = {
     description: 'Sets the flow of flex items along the main axis.',
   },
   flexWrap: {
-    name: 'flexWrap',
     options: Object.values(CssFlexWrap),
     defaultValue: CssFlexWrap[0],
     isRequired: false,
@@ -20,7 +18,6 @@ const FLEX_PROPS_META: ComponentMeta<FlexOwnProps>['props'] = {
     description: 'Controls whether flex items stay on one line or wrap onto multiple lines.',
   },
   justifyContent: {
-    name: 'justifyContent',
     options: Object.values(CssFlexJustifyContent),
     defaultValue: CssFlexJustifyContent[0],
     isRequired: false,
@@ -28,7 +25,6 @@ const FLEX_PROPS_META: ComponentMeta<FlexOwnProps>['props'] = {
     description: 'Distributes flex items along the main axis.',
   },
   alignItems: {
-    name: 'alignItems',
     options: Object.values(CssFlexAlignItems),
     defaultValue: CssFlexAlignItems[0],
     isRequired: false,
@@ -36,7 +32,6 @@ const FLEX_PROPS_META: ComponentMeta<FlexOwnProps>['props'] = {
     description: 'Aligns flex items along the cross axis.',
   },
   gap: {
-    name: 'gap',
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'initial',
     isRequired: false,
@@ -44,7 +39,6 @@ const FLEX_PROPS_META: ComponentMeta<FlexOwnProps>['props'] = {
     description: 'Defines spacing between flex items on both axes.',
   },
   rowGap: {
-    name: 'rowGap',
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'initial',
     isRequired: false,
@@ -52,7 +46,6 @@ const FLEX_PROPS_META: ComponentMeta<FlexOwnProps>['props'] = {
     description: 'Defines vertical spacing between rows of flex items.',
   },
   columnGap: {
-    name: 'columnGap',
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'initial',
     isRequired: false,
