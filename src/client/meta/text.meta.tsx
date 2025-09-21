@@ -4,7 +4,7 @@ import { Text } from 'lib/components'
 import {
   DEFAULT_TEXT_TYPOGRAPHY,
   TEXT_INHERITED_PROPS,
-  TextElem,
+  TextTag,
   TextOwnProps,
   TextTypography,
 } from 'lib/components/base/Text/definitions'
@@ -29,9 +29,9 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
   },
   ownProps: [
     {
-      name: 'elem',
-      options: TextElem as unknown as string[],
-      defaultValue: TextElem[0],
+      name: 'tag',
+      options: TextTag as unknown as string[],
+      defaultValue: TextTag[0],
       isRequired: false,
       isResponsive: false,
       description: 'Specifies the HTML tag that will be rendered as the container.',
@@ -43,7 +43,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
       isRequired: false,
       isResponsive: false,
       description:
-        'Applies a predefined typography style from the design system, controlling elem, fontSize and lineHeight together.',
+        'Applies a predefined typography style from the design system, controlling tag, fontSize and lineHeight together.',
     },
     {
       name: 'bold',
@@ -112,7 +112,7 @@ const TEXT_META: ComponentMeta<TextOwnProps> = {
     },
     {
       jsx: (
-        <Text elem="a" intent="primary" elemProps={{ href: 'https://google.com', target: '_blank' }}>
+        <Text tag="a" intent="primary" tagAttrs={{ href: 'https://google.com', target: '_blank' }}>
           Link
         </Text>
       ),

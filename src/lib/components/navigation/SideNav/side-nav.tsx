@@ -48,7 +48,7 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
 
   return (
     <Flex flexDirection="column" alignItems="stretch">
-      {groups.map(({ key, label, items, elemProps, ...rest }) => {
+      {groups.map(({ key, label, items, tagAttrs, ...rest }) => {
         const isGroupActive = items?.some(item => item.key === activeKey) || key === activeKey
         const isGroupOpen = key === openGroupKey
         const hasItems = !!items?.length
@@ -57,13 +57,13 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
           <Box key={key}>
             <Button
               {...rest}
-              elemProps={{
-                ...elemProps,
+              tagAttrs={{
+                ...tagAttrs,
                 onClick: e => {
                   setOpenGroupKey(key === openGroupKey ? '' : key)
-                  elemProps?.onClick?.(e)
+                  tagAttrs?.onClick?.(e)
                 },
-                style: { justifyContent: 'flex-start', inlineSize: '100%', ...elemProps?.style },
+                style: { justifyContent: 'flex-start', inlineSize: '100%', ...tagAttrs?.style },
               }}
               size="md"
               variant={
@@ -86,20 +86,20 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
               overflowY="hidden"
             >
               <Flex flexDirection="column" alignItems="stretch">
-                {(items || []).map(({ key, label, elemProps, ...rest }) => {
+                {(items || []).map(({ key, label, tagAttrs, ...rest }) => {
                   const isItemActive = key === activeKey
 
                   return (
                     <Button
                       key={key}
                       {...rest}
-                      elemProps={{
-                        ...elemProps,
+                      tagAttrs={{
+                        ...tagAttrs,
                         style: {
                           // justifyContent: 'flex-start',
                           // paddingLeft: '45px',
                           inlineSize: '100%',
-                          ...elemProps?.style,
+                          ...tagAttrs?.style,
                         },
                       }}
                       variant={

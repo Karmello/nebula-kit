@@ -9,7 +9,7 @@ import { FlexItemProps } from './definitions'
 
 import './flex-item.scss'
 
-export const FlexItem = <E extends ElementType = 'div'>({
+export const FlexItem = <T extends ElementType = 'div'>({
   // own
   flex,
   flexGrow,
@@ -17,18 +17,18 @@ export const FlexItem = <E extends ElementType = 'div'>({
   flexBasis,
   alignSelf,
   order,
-  // NativeElem
+  // HtmlTag
   children,
-  elem,
-  elemProps,
-  elemRef,
-}: FlexItemProps<E>) => {
-  const ref = useRef<ComponentRef<E>>(null)
+  tag,
+  tagAttrs,
+  tagRef,
+}: FlexItemProps<T>) => {
+  const ref = useRef<ComponentRef<T>>(null)
 
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    applyRespValues('style', elemRef || ref, bp, {
+    applyRespValues('style', tagRef || ref, bp, {
       flex,
       flexGrow,
       flexShrink,
@@ -40,14 +40,14 @@ export const FlexItem = <E extends ElementType = 'div'>({
 
   return (
     <Box
-      elem={elem}
-      elemProps={
+      tag={tag}
+      tagAttrs={
         {
-          ...elemProps,
-          className: classNames(withPrefix('flex-item'), elemProps?.className),
-        } as PropsWithoutRef<ComponentProps<E>>
+          ...tagAttrs,
+          className: classNames(withPrefix('flex-item'), tagAttrs?.className),
+        } as PropsWithoutRef<ComponentProps<T>>
       }
-      elemRef={elemRef || ref}
+      tagRef={tagRef || ref}
     >
       {children}
     </Box>

@@ -5,11 +5,11 @@ import { withPrefix, useScreen } from 'lib/helpers'
 import { Box, WithIcon } from 'lib/components'
 import { applyRespValues, applyStaticDataset } from 'lib/service'
 
-import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_TYPOGRAPHY_CONFIG, TextElem, TextProps } from './definitions'
+import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_TYPOGRAPHY_CONFIG, TextTag, TextProps } from './definitions'
 
 import './text.scss'
 
-export const Text = <E extends TextElem = 'p'>({
+export const Text = <T extends TextTag = 'p'>({
   // own
   typography = DEFAULT_TEXT_TYPOGRAPHY,
   bold = false,
@@ -19,21 +19,21 @@ export const Text = <E extends TextElem = 'p'>({
   clampLines,
   // Box
   children,
-  elem,
-  elemProps,
-  elemRef,
+  tag,
+  tagAttrs,
+  tagRef,
   intent,
   textAlign,
   // WithIcon
   iconName,
   iconPosition,
-}: TextProps<E>) => {
-  const ref = useRef<ComponentRef<E>>(null)
+}: TextProps<T>) => {
+  const ref = useRef<ComponentRef<T>>(null)
 
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    applyRespValues('style', elemRef || ref, bp, {
+    applyRespValues('style', tagRef || ref, bp, {
       fontSize: TEXT_TYPOGRAPHY_CONFIG[typography].fontSize,
       lineHeight: TEXT_TYPOGRAPHY_CONFIG[typography].lineHeight,
     })
@@ -41,11 +41,11 @@ export const Text = <E extends TextElem = 'p'>({
 
   return (
     <Box
-      elem={elem || TEXT_TYPOGRAPHY_CONFIG[typography].elem}
-      elemRef={(elemRef || ref) as any}
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('text'), elemProps?.className),
+      tag={tag || TEXT_TYPOGRAPHY_CONFIG[typography].tag}
+      tagRef={(tagRef || ref) as any}
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('text'), tagAttrs?.className),
         style: {
           color: intent ? `var(--neb-text-${intent})` : undefined,
           ...(clampLines && clampLines > 0
@@ -56,7 +56,7 @@ export const Text = <E extends TextElem = 'p'>({
                 overflow: 'hidden',
               }
             : {}),
-          ...(elemProps?.style || {}),
+          ...(tagAttrs?.style || {}),
         },
         ...applyStaticDataset('text', { typography, bold, italic, noWrap, truncate }),
       }}

@@ -3,7 +3,7 @@ import { ComponentMeta } from 'client/definitions'
 
 import {
   MARKER_LIST_INHERITED_PROPS,
-  MarkerListElem,
+  MarkerListTag,
   MarkerListOwnProps,
   MarkerListStyle,
 } from 'lib/components/elements/MarkerList/definitions'
@@ -28,7 +28,7 @@ const MARKER_LIST_META: ComponentMeta<MarkerListOwnProps> = {
       'grouping related information where the marker itself carries meaning',
     ],
     composedOf: MARKER_LIST_INHERITED_PROPS,
-    rendersAs: MarkerListElem,
+    rendersAs: MarkerListTag,
   },
   ownProps: [
     {

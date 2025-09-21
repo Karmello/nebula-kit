@@ -15,15 +15,15 @@ export const PropsTable = ({ category, data }: Props) => {
       <Table.Head>
         <Table.Row>
           <Table.HeadCell>Name</Table.HeadCell>
-          <Table.HeadCell elemProps={{ style: { minWidth: '15ch' } }}>Options</Table.HeadCell>
-          <Table.HeadCell elemProps={{ style: { textAlign: 'center' } }}>Default</Table.HeadCell>
+          <Table.HeadCell tagAttrs={{ style: { minWidth: '15ch' } }}>Options</Table.HeadCell>
+          <Table.HeadCell tagAttrs={{ style: { textAlign: 'center' } }}>Default</Table.HeadCell>
           {isSomeRequired ? (
-            <Table.HeadCell elemProps={{ style: { textAlign: 'center' } }}>Required</Table.HeadCell>
+            <Table.HeadCell tagAttrs={{ style: { textAlign: 'center' } }}>Required</Table.HeadCell>
           ) : null}
           {isSomeResponsive ? (
-            <Table.HeadCell elemProps={{ style: { textAlign: 'center' } }}>Responsive</Table.HeadCell>
+            <Table.HeadCell tagAttrs={{ style: { textAlign: 'center' } }}>Responsive</Table.HeadCell>
           ) : null}
-          <Table.HeadCell elemProps={{ style: { width: '40%', minWidth: '40ch' } }}>
+          <Table.HeadCell tagAttrs={{ style: { width: '40%', minWidth: '40ch' } }}>
             Description
           </Table.HeadCell>
         </Table.Row>
@@ -37,16 +37,16 @@ export const PropsTable = ({ category, data }: Props) => {
               </Text>
             </Table.Cell>
             <Table.Cell>{typeof options === 'string' ? options : options.join(', ')}</Table.Cell>
-            <Table.Cell elemProps={{ style: { textAlign: 'center', whiteSpace: 'nowrap' } }}>
+            <Table.Cell tagAttrs={{ style: { textAlign: 'center', whiteSpace: 'nowrap' } }}>
               {defaultValue !== undefined ? defaultValue : '-'}
             </Table.Cell>
             {isSomeRequired ? (
-              <Table.Cell elemProps={{ style: { textAlign: 'center' } }}>
+              <Table.Cell tagAttrs={{ style: { textAlign: 'center' } }}>
                 {isRequired ? <SvgIcon iconName="check" iconIntent="primary" iconSize={10} /> : '-'}
               </Table.Cell>
             ) : null}
             {isSomeResponsive ? (
-              <Table.Cell elemProps={{ style: { textAlign: 'center' } }}>
+              <Table.Cell tagAttrs={{ style: { textAlign: 'center' } }}>
                 {isResponsive ? <SvgIcon iconName="check" iconIntent="primary" iconSize={10} /> : '-'}
               </Table.Cell>
             ) : null}

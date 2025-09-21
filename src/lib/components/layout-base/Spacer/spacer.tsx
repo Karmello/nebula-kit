@@ -5,16 +5,16 @@ import { withPrefix } from 'lib/helpers'
 
 import { DEFAULT_SPACER_BLOCK_SIZE, SpacerProps } from './definitions'
 
-export const Spacer = ({ elemProps, elemRef, blockSize = DEFAULT_SPACER_BLOCK_SIZE }: SpacerProps) => {
+export const Spacer = ({ tagAttrs, tagRef, blockSize = DEFAULT_SPACER_BLOCK_SIZE }: SpacerProps) => {
   return (
     <Box
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('spacer'), elemProps?.className),
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('spacer'), tagAttrs?.className),
         role: 'presentation',
         'aria-hidden': 'true',
       }}
-      elemRef={elemRef}
+      tagRef={tagRef}
       variant="ghost"
       blockSize={blockSize}
     />

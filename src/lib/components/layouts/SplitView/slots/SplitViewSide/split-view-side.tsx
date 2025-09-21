@@ -9,8 +9,8 @@ import { SplitViewSideProps } from './definitions'
 
 export const SplitViewSide = ({
   children,
-  elemProps,
-  elemRef,
+  tagAttrs,
+  tagRef,
   intent,
   inlineSize = DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
 }: SplitViewSideProps) => {
@@ -18,12 +18,12 @@ export const SplitViewSide = ({
 
   return (
     <Box
-      elem="aside"
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('split-view-side'), elemProps?.className),
+      tag="aside"
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('split-view-side'), tagAttrs?.className),
       }}
-      elemRef={elemRef}
+      tagRef={tagRef}
       variant="solid"
       left={sidePosition === 'left' ? 0 : undefined}
       right={sidePosition === 'right' ? 0 : undefined}
@@ -34,7 +34,7 @@ export const SplitViewSide = ({
       {mode === 'overlay' ? (
         <Flex justifyContent="flex-end">
           <IconButton
-            elemProps={{
+            tagAttrs={{
               onClick: () => {
                 setSideOpen(false)
               },

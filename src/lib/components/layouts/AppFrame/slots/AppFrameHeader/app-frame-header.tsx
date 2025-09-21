@@ -12,8 +12,8 @@ import './app-frame-header.scss'
 
 export const AppFrameHeader = ({
   children,
-  elemProps,
-  elemRef,
+  tagAttrs,
+  tagRef,
   intent = 'secondary',
   minBlockSize = BUTTON_SIZE_CONFIG[DEFAULT_BUTTON_SIZE].blockSize,
   ...paddings
@@ -22,13 +22,13 @@ export const AppFrameHeader = ({
 
   return (
     <Box
-      elem="header"
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('app-frame-header'), elemProps?.className),
+      tag="header"
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('app-frame-header'), tagAttrs?.className),
         ...applyStaticDataset('app-frame-header', { stickyHeader }),
       }}
-      elemRef={elemRef}
+      tagRef={tagRef}
       variant="solid"
       intent={intent}
       minBlockSize={minBlockSize}

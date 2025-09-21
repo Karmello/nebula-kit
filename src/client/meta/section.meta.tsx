@@ -3,7 +3,7 @@ import { ComponentMeta } from 'client/definitions'
 
 import {
   SECTION_INHERITED_PROPS,
-  SectionElem,
+  SectionTag,
   SectionOwnProps,
 } from 'lib/components/containers/Section/definitions'
 
@@ -27,7 +27,7 @@ const SECTION_META: ComponentMeta<SectionOwnProps> = {
       'organizing dashboard widgets with headings',
     ],
     composedOf: SECTION_INHERITED_PROPS,
-    rendersAs: SectionElem,
+    rendersAs: SectionTag,
   },
   ownProps: [
     {

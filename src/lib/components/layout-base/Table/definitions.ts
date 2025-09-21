@@ -8,8 +8,5 @@ export type TableOwnProps = {
   stickyHeader?: boolean
 }
 
-export type TableProps = Pick<
-  BoxProps<'table'>,
-  'children' | 'elemProps' | 'elemRef' | 'variant' | 'intent'
-> &
+export type TableProps = Pick<BoxProps<'table'>, 'children' | 'tagAttrs' | 'tagRef' | 'variant' | 'intent'> &
   TableOwnProps

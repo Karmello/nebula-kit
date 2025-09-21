@@ -5,15 +5,15 @@ import { withPrefix } from 'lib/helpers'
 
 import { TableFootProps } from './definitions'
 
-export const TableFoot = ({ children, elemProps, elemRef }: TableFootProps) => {
+export const TableFoot = ({ children, tagAttrs, tagRef }: TableFootProps) => {
   return (
     <Box
-      elem="tfoot"
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('table-foot'), elemProps?.className),
+      tag="tfoot"
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('table-foot'), tagAttrs?.className),
       }}
-      elemRef={elemRef}
+      tagRef={tagRef}
     >
       {children}
     </Box>

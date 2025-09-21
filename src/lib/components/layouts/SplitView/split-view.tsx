@@ -12,8 +12,8 @@ import './split-view.scss'
 export const SplitView = ({
   // Grid
   children,
-  elemProps,
-  elemRef,
+  tagAttrs,
+  tagRef,
   // own
   sidePosition = SplitViewSidePosition[0],
   switchAt = DEFAULT_SWITCH_AT,
@@ -34,12 +34,12 @@ export const SplitView = ({
         return (
           <SplitViewProvider slots={slots} mode={mode} sidePosition={sidePosition} switchAt={switchAt}>
             <Grid
-              elemProps={{
-                ...elemProps,
+              tagAttrs={{
+                ...tagAttrs,
                 className: withPrefix('split-view'),
                 ...applyStaticDataset('split-view', { mode }),
               }}
-              elemRef={elemRef}
+              tagRef={tagRef}
               gridTemplateColumns={sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto'}
               gridTemplateRows="1fr"
             >

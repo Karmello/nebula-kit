@@ -8,7 +8,7 @@ import { SplitViewMainProps } from './definitions'
 import { getToggleIconName } from '../../helpers'
 import { useSplitViewContext } from '../../SplitViewProvider'
 
-export const SplitViewMain = ({ children, elemProps, elemRef, ...paddings }: SplitViewMainProps) => {
+export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: SplitViewMainProps) => {
   const { sideOpen, setSideOpen, sidePosition, slots, mode } = useSplitViewContext()
 
   useLayoutEffect(() => {
@@ -17,18 +17,18 @@ export const SplitViewMain = ({ children, elemProps, elemRef, ...paddings }: Spl
 
   return (
     <Box
-      elem="section"
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('split-view-main'), elemProps?.className),
+      tag="section"
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('split-view-main'), tagAttrs?.className),
       }}
-      elemRef={elemRef}
+      tagRef={tagRef}
       borderRadius={0}
       {...paddings}
     >
       <Flex alignItems="center" flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'} gap={7}>
         <IconButton
-          elemProps={{
+          tagAttrs={{
             onClick: () => setSideOpen(!sideOpen),
           }}
           iconName={getToggleIconName(sidePosition, sideOpen)}

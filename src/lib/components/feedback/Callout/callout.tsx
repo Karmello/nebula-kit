@@ -5,13 +5,13 @@ import {
   CALLOUT_CONFIG,
   DEFAULT_CALLOUT_VARIANT,
   DEFAULT_CALLOUT_INTENT,
-  CalloutElem,
+  CalloutTag,
 } from './definitions'
 
-export const Callout = <E extends CalloutElem = 'div'>({
-  elem,
-  elemProps,
-  elemRef,
+export const Callout = <T extends CalloutTag = 'div'>({
+  tag,
+  tagAttrs,
+  tagRef,
   // own
   content,
   heading,
@@ -20,12 +20,12 @@ export const Callout = <E extends CalloutElem = 'div'>({
   intent = DEFAULT_CALLOUT_INTENT,
   borderRadius,
   ...paddings
-}: CalloutProps<E>) => {
+}: CalloutProps<T>) => {
   return (
     <Box
-      elem={elem}
-      elemProps={elemProps}
-      elemRef={elemRef}
+      tag={tag}
+      tagAttrs={tagAttrs}
+      tagRef={tagRef}
       variant={variant}
       intent={intent}
       borderRadius={borderRadius}

@@ -5,7 +5,7 @@ import { Flex } from 'lib/components'
 test.describe('Flex responsive props', () => {
   test('flexDirection switches by breakpoint', async ({ mount, page }) => {
     await mount(
-      <Flex flexDirection={{ base: 'column', md: 'row' }} elemProps={{ 'data-testid': 'flex' }}>
+      <Flex flexDirection={{ base: 'column', md: 'row' }} tagAttrs={{ 'data-testid': 'flex' }}>
         <div />
       </Flex>
     )
@@ -21,7 +21,7 @@ test.describe('Flex responsive props', () => {
 
   test('gap switches by breakpoint', async ({ mount, page }) => {
     await mount(
-      <Flex gap={{ base: '0px', md: '16px' }} elemProps={{ 'data-testid': 'flex' }}>
+      <Flex gap={{ base: '0px', md: '16px' }} tagAttrs={{ 'data-testid': 'flex' }}>
         <div />
         <div />
       </Flex>
@@ -40,7 +40,7 @@ test.describe('Flex responsive props', () => {
 test('Flex.Item flex property changes at breakpoint', async ({ mount, page }) => {
   await mount(
     <Flex>
-      <Flex.Item flex={{ base: '0 1 auto', md: '1 1 0%' }} elemProps={{ 'data-testid': 'item' }}>
+      <Flex.Item flex={{ base: '0 1 auto', md: '1 1 0%' }} tagAttrs={{ 'data-testid': 'item' }}>
         A
       </Flex.Item>
     </Flex>

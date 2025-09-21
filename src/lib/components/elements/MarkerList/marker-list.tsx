@@ -4,18 +4,18 @@ import { Flex } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
-import { MarkerListElem, MarkerListProps } from './definitions'
+import { MarkerListTag, MarkerListProps } from './definitions'
 import './marker-list.scss'
 
-export const MarkerList = <E extends MarkerListElem = 'ul'>({
+export const MarkerList = <T extends MarkerListTag = 'ul'>({
   children,
-  elem,
-  elemProps,
-  elemRef,
+  tag,
+  tagAttrs,
+  tagRef,
   gap = 3,
   // own
   listStyle,
-}: MarkerListProps<E>) => {
+}: MarkerListProps<T>) => {
   return (
     <WithSlots<'Item'>
       componentName="MarkerList"
@@ -25,18 +25,18 @@ export const MarkerList = <E extends MarkerListElem = 'ul'>({
       {slots => {
         return (
           <Flex
-            elem={elem || 'ul'}
-            elemProps={{
-              ...elemProps,
-              className: classNames(withPrefix('marker-list'), elemProps?.className),
+            tag={tag || 'ul'}
+            tagAttrs={{
+              ...tagAttrs,
+              className: classNames(withPrefix('marker-list'), tagAttrs?.className),
               style: {
-                ...elemProps?.style,
+                ...tagAttrs?.style,
                 listStyle,
                 listStylePosition: 'outside',
               },
               role: 'list',
             }}
-            elemRef={elemRef}
+            tagRef={tagRef}
             flexDirection="column"
             gap={gap}
           >

@@ -1,6 +1,6 @@
 import { IconButton, IconButtonProps } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
-import { ButtonElem } from 'lib/components/controls/Button/definitions'
+import { ButtonTag } from 'lib/components/controls/Button/definitions'
 import { ICON_BUTTON_INHERITED_PROPS } from 'lib/components/controls/IconButton/definitions'
 
 const ICON_BUTTON_META: ComponentMeta<IconButtonProps> = {
@@ -11,7 +11,7 @@ const ICON_BUTTON_META: ComponentMeta<IconButtonProps> = {
     byDefault: ['medium size', 'solid variant', 'tertiary intent'],
     examplesOfUse: ["useful for quick actions where text isn't needed"],
     composedOf: ICON_BUTTON_INHERITED_PROPS,
-    rendersAs: ButtonElem,
+    rendersAs: ButtonTag,
   },
   examples: [
     {
@@ -23,8 +23,8 @@ const ICON_BUTTON_META: ComponentMeta<IconButtonProps> = {
       jsx: (
         <IconButton
           iconName="external-link"
-          elem="a"
-          elemProps={{ href: 'https://google.com', target: '_blank' }}
+          tag="a"
+          tagAttrs={{ href: 'https://google.com', target: '_blank' }}
         />
       ),
     },

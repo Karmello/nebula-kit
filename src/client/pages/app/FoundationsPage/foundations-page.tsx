@@ -34,7 +34,7 @@ export const FoundationsPage = () => {
             items: items.map(({ key: itemKey, label, sections }) => ({
               key: itemKey,
               label,
-              elemProps: {
+              tagAttrs: {
                 onClick: () => {
                   const sectionIndex = sections.findIndex(s => s.key === foundationsPageStore.sectionKey)
                   navigateTo(
@@ -57,7 +57,7 @@ export const FoundationsPage = () => {
                 ?.sections.map(({ key: sectionKey, label }) => ({
                   key: sectionKey,
                   label,
-                  elemProps: {
+                  tagAttrs: {
                     onClick: () => {
                       navigateTo(
                         `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${sectionKey}`

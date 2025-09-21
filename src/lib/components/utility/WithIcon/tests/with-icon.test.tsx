@@ -5,7 +5,7 @@ import { WithIcon } from '..'
 
 describe('<WithIcon />', () => {
   it('renders just the icon when no children are provided', () => {
-    render(<WithIcon elemProps={{ 'data-testid': 'with-icon' }} iconName="search" />)
+    render(<WithIcon tagAttrs={{ 'data-testid': 'with-icon' }} iconName="search" />)
     const el = screen.getByTestId('with-icon')
     expect(el).toBeInTheDocument()
     expect(el.textContent).toBe('')

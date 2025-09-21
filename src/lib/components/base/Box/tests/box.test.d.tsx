@@ -13,16 +13,16 @@ expectType(<Box>Box</Box>)
 expectError(<Box unknown="v" />)
 
 // <div> attrs available by default
-expectType(<Box elemProps={{ onClick: () => null }} />)
+expectType(<Box tagAttrs={{ onClick: () => null }} />)
 
 // <a> attrs not available by default
-expectError(<Box elemProps={{ href: 'href' }} />)
+expectError(<Box tagAttrs={{ href: 'href' }} />)
 
 // wrong ref type not allowed
-expectError(<Box elemRef={createRef<HTMLAnchorElement>()} />)
+expectError(<Box tagRef={createRef<HTMLAnchorElement>()} />)
 
 // possible to render as <a> and pass right ref type
-expectType(<Box elem="a" elemProps={{ href: 'href' }} elemRef={createRef<HTMLAnchorElement>()} />)
+expectType(<Box tag="a" tagAttrs={{ href: 'href' }} tagRef={createRef<HTMLAnchorElement>()} />)
 
 // variant
 expectError(<Box variant="wrong">Box</Box>)

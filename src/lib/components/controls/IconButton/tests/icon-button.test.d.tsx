@@ -13,10 +13,10 @@ expectType(<IconButton iconName="check" />)
 expectError(<IconButton iconName="check">children</IconButton>)
 
 // wrong ref type not accepted
-expectError(<IconButton iconName="check" elemRef={createRef<HTMLParagraphElement>()} />)
+expectError(<IconButton iconName="check" tagRef={createRef<HTMLParagraphElement>()} />)
 
 // right ref type passed
-expectType(<IconButton iconName="check" elemRef={createRef<HTMLButtonElement>()} />)
+expectType(<IconButton iconName="check" tagRef={createRef<HTMLButtonElement>()} />)
 
 // allowed props
 expectType(<IconButton variant="solid" intent="primary" disabled iconName="check" size="lg" />)

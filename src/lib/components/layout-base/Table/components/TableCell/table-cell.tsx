@@ -6,17 +6,17 @@ import { withPrefix } from 'lib/helpers'
 import { TableCellProps } from './definitions'
 import { useTableContext } from '../../use-table-context'
 
-export const TableCell = ({ children, elemProps, elemRef }: TableCellProps) => {
+export const TableCell = ({ children, tagAttrs, tagRef }: TableCellProps) => {
   const { variant, intent } = useTableContext()
 
   return (
     <Box
-      elem="td"
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('table-cell'), elemProps?.className),
+      tag="td"
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('table-cell'), tagAttrs?.className),
       }}
-      elemRef={elemRef}
+      tagRef={tagRef}
       variant={variant}
       intent={intent}
       paddingInline={10}

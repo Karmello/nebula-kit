@@ -6,7 +6,7 @@ import { Flex } from '..'
 describe('Flex', () => {
   it('renders with default classname and children', () => {
     render(
-      <Flex elemProps={{ 'data-testid': 'flex' }}>
+      <Flex tagAttrs={{ 'data-testid': 'flex' }}>
         <div>child</div>
       </Flex>
     )
@@ -16,9 +16,9 @@ describe('Flex', () => {
     expect(flex).toHaveClass('neb-flex')
   })
 
-  it('applies elem prop', () => {
+  it('applies tag prop', () => {
     render(
-      <Flex elem="section" elemProps={{ 'data-testid': 'flex' }}>
+      <Flex tag="section" tagAttrs={{ 'data-testid': 'flex' }}>
         section child
       </Flex>
     )
@@ -29,15 +29,15 @@ describe('Flex', () => {
 
 describe('FlexItem', () => {
   it('renders with default classname and children', () => {
-    render(<Flex.Item elemProps={{ 'data-testid': 'flex-item' }}>item</Flex.Item>)
+    render(<Flex.Item tagAttrs={{ 'data-testid': 'flex-item' }}>item</Flex.Item>)
     const item = screen.getByTestId('flex-item')
     expect(item).toBeInTheDocument()
     expect(item).toHaveClass('neb-flex-item')
   })
 
-  it('accepts elem prop', () => {
+  it('accepts tag prop', () => {
     render(
-      <Flex.Item elem="li" elemProps={{ 'data-testid': 'flex-item' }}>
+      <Flex.Item tag="li" tagAttrs={{ 'data-testid': 'flex-item' }}>
         list item
       </Flex.Item>
     )

@@ -3,8 +3,8 @@ import { JSX } from 'react'
 import { BoxProps } from 'lib/components'
 import { MakeRequired } from 'lib/definitions'
 
-export const SectionElem = ['section', 'article', 'aside', 'div'] as const
-export type SectionElem = (typeof SectionElem)[number]
+export const SectionTag = ['section', 'article', 'aside', 'div'] as const
+export type SectionTag = (typeof SectionTag)[number]
 
 export type SectionOwnProps = {
   heading: string | JSX.Element
@@ -14,9 +14,9 @@ export type SectionOwnProps = {
 export const SECTION_INHERITED_PROPS = {
   Box: [
     'children',
-    'elem',
-    'elemProps',
-    'elemRef',
+    'tag',
+    'tagAttrs',
+    'tagRef',
     'variant',
     'intent',
     'borderRadius',
@@ -27,15 +27,15 @@ export const SECTION_INHERITED_PROPS = {
     'paddingRight',
     'paddingBottom',
     'paddingLeft',
-  ] as const satisfies readonly (keyof BoxProps<SectionElem>)[],
+  ] as const satisfies readonly (keyof BoxProps<SectionTag>)[],
   Text: [] as const,
   Divider: [] as const,
   Spacer: [] as const,
 }
 
-export type SectionInheritedProps<E extends SectionElem = 'section'> = MakeRequired<
-  Pick<BoxProps<E>, (typeof SECTION_INHERITED_PROPS)['Box'][number]>,
+export type SectionInheritedProps<T extends SectionTag = 'section'> = MakeRequired<
+  Pick<BoxProps<T>, (typeof SECTION_INHERITED_PROPS)['Box'][number]>,
   'children'
 >
 
-export type SectionProps<E extends SectionElem = 'section'> = SectionOwnProps & SectionInheritedProps<E>
+export type SectionProps<T extends SectionTag = 'section'> = SectionOwnProps & SectionInheritedProps<T>

@@ -6,7 +6,7 @@ export type ToolbarOwnProps = {
 }
 
 export const TOOLBAR_INHERITED_PROPS = {
-  Grid: ['children', 'elemProps', 'elemRef'] as const satisfies readonly (keyof GridProps<'nav'>)[],
+  Grid: ['children', 'tagAttrs', 'tagRef'] as const satisfies readonly (keyof GridProps<'nav'>)[],
 }
 
 export type ToolbarInheritedProps = MakeRequired<

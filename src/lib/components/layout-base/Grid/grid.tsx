@@ -5,11 +5,11 @@ import { Box } from 'lib/components'
 import { withPrefix, useScreen } from 'lib/helpers'
 import { applyRespValues } from 'lib/service'
 
-import { GridElem, GridProps } from './definitions'
+import { GridTag, GridProps } from './definitions'
 
 import './grid.scss'
 
-export const Grid = <E extends GridElem = 'div'>({
+export const Grid = <T extends GridTag = 'div'>({
   // own
   gridTemplateColumns,
   gridTemplateRows,
@@ -23,16 +23,16 @@ export const Grid = <E extends GridElem = 'div'>({
   columnGap,
   // Box
   children,
-  elem,
-  elemProps,
-  elemRef,
-}: GridProps<E>) => {
-  const ref = useRef<ComponentRef<E>>(null)
+  tag,
+  tagAttrs,
+  tagRef,
+}: GridProps<T>) => {
+  const ref = useRef<ComponentRef<T>>(null)
 
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    applyRespValues('style', elemRef || ref, bp, {
+    applyRespValues('style', tagRef || ref, bp, {
       gridTemplateColumns,
       gridTemplateRows,
       gridAutoRows,
@@ -60,13 +60,13 @@ export const Grid = <E extends GridElem = 'div'>({
 
   return (
     <Box
-      elem={elem}
-      elemProps={
-        { ...elemProps, className: classNames(withPrefix('grid'), elemProps?.className) } as PropsWithoutRef<
-          ComponentProps<E>
+      tag={tag}
+      tagAttrs={
+        { ...tagAttrs, className: classNames(withPrefix('grid'), tagAttrs?.className) } as PropsWithoutRef<
+          ComponentProps<T>
         >
       }
-      elemRef={elemRef || ref}
+      tagRef={tagRef || ref}
     >
       {children}
     </Box>

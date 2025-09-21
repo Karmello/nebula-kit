@@ -9,24 +9,24 @@ import { GridItemProps } from './definitions'
 
 import './grid-item.scss'
 
-export const GridItem = <E extends ElementType = 'div'>({
+export const GridItem = <T extends ElementType = 'div'>({
   // own
   gridColumn,
   gridRow,
   justifySelf,
   alignSelf,
-  // NativeElem
+  // HtmlTag
   children,
-  elem,
-  elemProps,
-  elemRef,
-}: GridItemProps<E>) => {
-  const ref = useRef<ComponentRef<E>>(null)
+  tag,
+  tagAttrs,
+  tagRef,
+}: GridItemProps<T>) => {
+  const ref = useRef<ComponentRef<T>>(null)
 
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    applyRespValues('style', elemRef || ref, bp, {
+    applyRespValues('style', tagRef || ref, bp, {
       gridColumn,
       gridRow,
       justifySelf,
@@ -36,14 +36,14 @@ export const GridItem = <E extends ElementType = 'div'>({
 
   return (
     <Box
-      elem={elem}
-      elemProps={
+      tag={tag}
+      tagAttrs={
         {
-          ...elemProps,
-          className: classNames(withPrefix('grid-item'), elemProps?.className),
-        } as PropsWithoutRef<ComponentProps<E>>
+          ...tagAttrs,
+          className: classNames(withPrefix('grid-item'), tagAttrs?.className),
+        } as PropsWithoutRef<ComponentProps<T>>
       }
-      elemRef={elemRef || ref}
+      tagRef={tagRef || ref}
     >
       {children}
     </Box>

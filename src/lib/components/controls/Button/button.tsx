@@ -6,7 +6,7 @@ import { withPrefix } from 'lib/helpers'
 
 import {
   BUTTON_SIZE_CONFIG,
-  ButtonElem,
+  ButtonTag,
   ButtonProps,
   DEFAULT_BUTTON_INTENT,
   DEFAULT_BUTTON_SIZE,
@@ -15,7 +15,7 @@ import {
 
 import './button.scss'
 
-export const Button = <E extends ButtonElem = 'button'>({
+export const Button = <T extends ButtonTag = 'button'>({
   // own
   size = DEFAULT_BUTTON_SIZE,
   // text
@@ -23,31 +23,31 @@ export const Button = <E extends ButtonElem = 'button'>({
   iconPosition,
   // box
   children,
-  elem,
-  elemProps,
-  elemRef,
+  tag,
+  tagAttrs,
+  tagRef,
   variant = DEFAULT_BUTTON_VARIANT,
   intent = DEFAULT_BUTTON_INTENT,
   disabled,
-}: ButtonProps<E>) => {
+}: ButtonProps<T>) => {
   return (
     <Box
-      elem={elem || 'button'}
-      elemProps={
+      tag={tag || 'button'}
+      tagAttrs={
         {
-          ...elemProps,
-          className: classNames(withPrefix('btn'), elemProps?.className),
-          type: elemProps?.type || 'button',
-        } as PropsWithoutRef<ComponentProps<E>>
+          ...tagAttrs,
+          className: classNames(withPrefix('btn'), tagAttrs?.className),
+          type: tagAttrs?.type || 'button',
+        } as PropsWithoutRef<ComponentProps<T>>
       }
-      elemRef={elemRef}
+      tagRef={tagRef}
       variant={variant}
       intent={intent}
       disabled={disabled}
       interactive
       {...BUTTON_SIZE_CONFIG[size]}
     >
-      <Text elem="span" iconName={iconName} iconPosition={iconPosition}>
+      <Text tag="span" iconName={iconName} iconPosition={iconPosition}>
         {children}
       </Text>
     </Box>

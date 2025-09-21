@@ -4,8 +4,8 @@ import { MakeRequired } from 'lib/definitions'
 export const SPLIT_VIEW_MAIN_INHERITED_PROPS = {
   Box: [
     'children',
-    'elemProps',
-    'elemRef',
+    'tagAttrs',
+    'tagRef',
     'padding',
     'paddingBlock',
     'paddingInline',

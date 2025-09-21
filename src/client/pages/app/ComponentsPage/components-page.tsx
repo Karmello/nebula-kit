@@ -34,7 +34,7 @@ export const ComponentsPage = () => {
             items: items.map(({ key: itemKey, label, sections }) => ({
               key: itemKey,
               label,
-              elemProps: {
+              tagAttrs: {
                 onClick: () => {
                   const sectionIndex = sections.findIndex(s => s.key === componentsPageStore.sectionKey)
                   navigateTo(
@@ -57,7 +57,7 @@ export const ComponentsPage = () => {
                 ?.sections.map(({ key: sectionKey, label }) => ({
                   key: sectionKey,
                   label,
-                  elemProps: {
+                  tagAttrs: {
                     onClick: () => {
                       navigateTo(
                         `/${PageKey.components}/${componentsPageStore.categoryKey}/${componentsPageStore.itemKey}/${sectionKey}`

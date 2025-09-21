@@ -1,13 +1,13 @@
 import { ButtonProps, FlexProps } from 'lib/components'
 import { MakeRequired, RespValue } from 'lib/definitions'
 
-import { ButtonElem } from '../Button/definitions'
+import { ButtonTag } from '../Button/definitions'
 
 export const DEFAULT_BUTTON_GROUP_GAP = 3
 
 export const ButtonGroupDirection = ['row', 'column'] as const
-export const ButtonGroupElem = ['div', 'nav', 'section', 'aside', 'form', 'fieldset'] as const
-export type ButtonGroupElem = (typeof ButtonGroupElem)[number]
+export const ButtonGroupTag = ['div', 'nav', 'section', 'aside', 'form', 'fieldset'] as const
+export type ButtonGroupTag = (typeof ButtonGroupTag)[number]
 
 export type ButtonGroupDirection = (typeof ButtonGroupDirection)[number]
 
@@ -20,20 +20,20 @@ export type ButtonGroupOwnProps = {
 export const BUTTON_GROUP_INHERITED_PROPS = {
   Flex: [
     'children',
-    'elem',
-    'elemProps',
-    'elemRef',
+    'tag',
+    'tagAttrs',
+    'tagRef',
     'gap',
-  ] as const satisfies readonly (keyof FlexProps<ButtonGroupElem>)[],
+  ] as const satisfies readonly (keyof FlexProps<ButtonGroupTag>)[],
   'Flex.Item': [] as never,
-  Button: ['variant', 'intent', 'size'] as const satisfies readonly (keyof ButtonProps<ButtonElem>)[],
+  Button: ['variant', 'intent', 'size'] as const satisfies readonly (keyof ButtonProps<ButtonTag>)[],
 }
 
-export type ButtonGroupInheritedProps<E extends ButtonGroupElem = 'div'> = MakeRequired<
-  Pick<FlexProps<E>, (typeof BUTTON_GROUP_INHERITED_PROPS)['Flex'][number]>,
+export type ButtonGroupInheritedProps<T extends ButtonGroupTag = 'div'> = MakeRequired<
+  Pick<FlexProps<T>, (typeof BUTTON_GROUP_INHERITED_PROPS)['Flex'][number]>,
   'children'
 > &
-  Pick<ButtonProps<ButtonElem>, (typeof BUTTON_GROUP_INHERITED_PROPS)['Button'][number]>
+  Pick<ButtonProps<ButtonTag>, (typeof BUTTON_GROUP_INHERITED_PROPS)['Button'][number]>
 
-export type ButtonGroupProps<E extends ButtonGroupElem = 'div'> = ButtonGroupOwnProps &
-  ButtonGroupInheritedProps<E>
+export type ButtonGroupProps<T extends ButtonGroupTag = 'div'> = ButtonGroupOwnProps &
+  ButtonGroupInheritedProps<T>

@@ -2,7 +2,7 @@ import { ElementType } from 'react'
 
 import { CssDisplay, CssOverflow, CssPosition, CssTextAlign, RespValue, ScaleValue } from 'lib/definitions'
 
-import { NativeElemProps } from 'lib/components/utility'
+import { HtmlTagProps } from 'lib/components/utility'
 
 export const BoxVariant = ['solid', 'outline', 'ghost'] as const
 
@@ -63,17 +63,17 @@ export type BoxOwnProps = {
 }
 
 export const BOX_INHERITED_PROPS = {
-  NativeElem: [
+  HtmlTag: [
     'children',
-    'elem',
-    'elemProps',
-    'elemRef',
-  ] as const satisfies readonly (keyof NativeElemProps<ElementType>)[],
+    'tag',
+    'tagAttrs',
+    'tagRef',
+  ] as const satisfies readonly (keyof HtmlTagProps<ElementType>)[],
 }
 
-export type BoxInheritedProps<E extends ElementType> = Pick<
-  NativeElemProps<E>,
-  (typeof BOX_INHERITED_PROPS)['NativeElem'][number]
+export type BoxInheritedProps<T extends ElementType> = Pick<
+  HtmlTagProps<T>,
+  (typeof BOX_INHERITED_PROPS)['HtmlTag'][number]
 >
 
-export type BoxProps<E extends ElementType = 'div'> = BoxOwnProps & BoxInheritedProps<E>
+export type BoxProps<T extends ElementType = 'div'> = BoxOwnProps & BoxInheritedProps<T>

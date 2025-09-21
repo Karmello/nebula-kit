@@ -9,7 +9,7 @@ import { FlexProps } from './definitions'
 
 import './flex.scss'
 
-export const Flex = <E extends ElementType = 'div'>({
+export const Flex = <T extends ElementType = 'div'>({
   // own
   flexDirection,
   flexWrap,
@@ -20,16 +20,16 @@ export const Flex = <E extends ElementType = 'div'>({
   columnGap,
   // Box
   children,
-  elem,
-  elemProps,
-  elemRef,
-}: FlexProps<E>) => {
-  const ref = useRef<ComponentRef<E>>(null)
+  tag,
+  tagAttrs,
+  tagRef,
+}: FlexProps<T>) => {
+  const ref = useRef<ComponentRef<T>>(null)
 
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    applyRespValues('style', elemRef || ref, bp, {
+    applyRespValues('style', tagRef || ref, bp, {
       flexDirection,
       flexWrap,
       justifyContent,
@@ -42,14 +42,14 @@ export const Flex = <E extends ElementType = 'div'>({
 
   return (
     <Box
-      elem={elem}
-      elemProps={
+      tag={tag}
+      tagAttrs={
         {
-          ...elemProps,
-          className: classNames(withPrefix('flex'), elemProps?.className),
-        } as PropsWithoutRef<ComponentProps<E>>
+          ...tagAttrs,
+          className: classNames(withPrefix('flex'), tagAttrs?.className),
+        } as PropsWithoutRef<ComponentProps<T>>
       }
-      elemRef={elemRef || ref}
+      tagRef={tagRef || ref}
     >
       {children}
     </Box>

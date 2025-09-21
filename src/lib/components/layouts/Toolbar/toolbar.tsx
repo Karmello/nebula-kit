@@ -11,7 +11,7 @@ import { ToolbarProps } from './definitions'
 
 import './toolbar.scss'
 
-export const Toolbar = ({ children, elemProps, elemRef, switchAt = DEFAULT_SWITCH_AT }: ToolbarProps) => {
+export const Toolbar = ({ children, tagAttrs, tagRef, switchAt = DEFAULT_SWITCH_AT }: ToolbarProps) => {
   return (
     <ToolbarProvider switchAt={switchAt}>
       <WithSlots<'Start' | 'Main' | 'End'>
@@ -21,12 +21,12 @@ export const Toolbar = ({ children, elemProps, elemRef, switchAt = DEFAULT_SWITC
       >
         {slots => (
           <Grid
-            elem="nav"
-            elemProps={{
-              ...elemProps,
-              className: classNames(withPrefix('toolbar'), elemProps?.className),
+            tag="nav"
+            tagAttrs={{
+              ...tagAttrs,
+              className: classNames(withPrefix('toolbar'), tagAttrs?.className),
             }}
-            elemRef={elemRef}
+            tagRef={tagRef}
             gridTemplateColumns="auto auto 1fr auto"
             gridAutoFlow="row"
           >

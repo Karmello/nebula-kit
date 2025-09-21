@@ -6,22 +6,22 @@ import { withPrefix } from 'lib/helpers'
 
 import { SplitViewMainBarProps } from './definitions'
 
-export const SplitViewMainBar = <E extends ElementType = 'div'>({
+export const SplitViewMainBar = <T extends ElementType = 'div'>({
   children,
-  elem,
-  elemProps,
-  elemRef,
-}: SplitViewMainBarProps<E>) => {
+  tag,
+  tagAttrs,
+  tagRef,
+}: SplitViewMainBarProps<T>) => {
   return (
     <Box
-      elem={elem}
-      elemProps={
+      tag={tag}
+      tagAttrs={
         {
-          ...elemProps,
-          className: classNames(withPrefix('split-view-main-bar'), elemProps?.className),
-        } as PropsWithoutRef<ComponentProps<E>>
+          ...tagAttrs,
+          className: classNames(withPrefix('split-view-main-bar'), tagAttrs?.className),
+        } as PropsWithoutRef<ComponentProps<T>>
       }
-      elemRef={elemRef}
+      tagRef={tagRef}
       borderRadius={0}
     >
       {children}

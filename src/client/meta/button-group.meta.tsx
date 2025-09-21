@@ -4,7 +4,7 @@ import { ButtonGroup, Button } from 'lib/components'
 import {
   BUTTON_GROUP_INHERITED_PROPS,
   ButtonGroupDirection,
-  ButtonGroupElem,
+  ButtonGroupTag,
   ButtonGroupOwnProps,
   DEFAULT_BUTTON_GROUP_GAP,
 } from 'lib/components/controls/ButtonGroup/definitions'
@@ -22,7 +22,7 @@ const BUTTON_GROUP_META: ComponentMeta<ButtonGroupOwnProps> = {
       'building pagination or step navigation',
     ],
     composedOf: BUTTON_GROUP_INHERITED_PROPS,
-    rendersAs: ButtonGroupElem,
+    rendersAs: ButtonGroupTag,
   },
   ownProps: [
     {

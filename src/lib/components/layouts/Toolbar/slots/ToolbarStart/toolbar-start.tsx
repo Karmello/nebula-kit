@@ -2,9 +2,9 @@ import { Grid } from 'lib/components'
 
 import { ToolbarStartProps } from './definitions'
 
-export const ToolbarStart = ({ children, elemProps, elemRef }: ToolbarStartProps) => {
+export const ToolbarStart = ({ children, tagAttrs, tagRef }: ToolbarStartProps) => {
   return (
-    <Grid.Item elemProps={elemProps} elemRef={elemRef} gridRow="1 / 2" gridColumn="2 / 3" alignSelf="center">
+    <Grid.Item tagAttrs={tagAttrs} tagRef={tagRef} gridRow="1 / 2" gridColumn="2 / 3" alignSelf="center">
       {children}
     </Grid.Item>
   )

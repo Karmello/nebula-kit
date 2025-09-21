@@ -6,20 +6,20 @@ import { withPrefix } from 'lib/helpers'
 
 export const AppFrameFooter = ({
   children,
-  elemProps,
-  elemRef,
+  tagAttrs,
+  tagRef,
   intent = 'secondary',
   minBlockSize = 80,
   ...paddings
 }: AppFrameFooterProps) => {
   return (
     <Box
-      elem="footer"
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('app-frame-footer'), elemProps?.className),
+      tag="footer"
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('app-frame-footer'), tagAttrs?.className),
       }}
-      elemRef={elemRef}
+      tagRef={tagRef}
       variant="solid"
       intent={intent}
       minBlockSize={minBlockSize}

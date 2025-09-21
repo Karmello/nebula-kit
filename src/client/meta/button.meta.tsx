@@ -3,7 +3,7 @@ import { Button, Flex } from 'lib/components'
 
 import {
   BUTTON_INHERITED_PROPS,
-  ButtonElem,
+  ButtonTag,
   ButtonOwnProps,
   ButtonSize,
   DEFAULT_BUTTON_SIZE,
@@ -22,7 +22,7 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
     byDefault: ['medium size', 'solid variant', 'tertiary intent'],
     examplesOfUse: ['applied wherever a clear, consistent action trigger is needed in the interface'],
     composedOf: BUTTON_INHERITED_PROPS,
-    rendersAs: ButtonElem,
+    rendersAs: ButtonTag,
   },
   ownProps: [
     {
@@ -74,7 +74,7 @@ const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
       description:
         'When rendered as an <a>, Button keeps the same appearance as a regular button - semantics change to navigation, but visuals stay consistent.',
       jsx: (
-        <Button elem="a" elemProps={{ href: 'https://google.com', target: '_blank' }} intent="primary">
+        <Button tag="a" tagAttrs={{ href: 'https://google.com', target: '_blank' }} intent="primary">
           Link button
         </Button>
       ),

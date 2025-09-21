@@ -10,7 +10,7 @@ export type DividerOwnProps = {
 }
 
 export const DIVIDER_INHERITED_PROPS = {
-  Box: ['elemProps', 'elemRef', 'intent'] as const satisfies readonly (keyof BoxProps<'hr'>)[],
+  Box: ['tagAttrs', 'tagRef', 'intent'] as const satisfies readonly (keyof BoxProps<'hr'>)[],
 }
 
 export type DividerInheritedProps = Pick<BoxProps<'hr'>, (typeof DIVIDER_INHERITED_PROPS)['Box'][number]>

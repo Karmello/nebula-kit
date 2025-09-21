@@ -19,7 +19,7 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
       'acts as the surface foundation that higher-level components (e.g. Flex, Grid, Table) render under the hood',
       'provides optional interactivity (hover, focus, press states) for clickable or focusable surfaces',
     ],
-    behavior: ['inherits all NativeElem props', 'accepts optional children and props'],
+    behavior: ['inherits all HtmlTag props', 'accepts optional children and props'],
     byDefault: [
       'renders as a block-level <div>',
       'uses ghost variant with neutral intent',

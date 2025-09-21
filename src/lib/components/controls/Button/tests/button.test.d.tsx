@@ -10,10 +10,10 @@ expectError(<Button />)
 expectType(<Button>Button</Button>)
 
 // wrong ref type not accepted
-expectError(<Button elemRef={createRef<HTMLParagraphElement>()}>Button</Button>)
+expectError(<Button tagRef={createRef<HTMLParagraphElement>()}>Button</Button>)
 
 // right ref type passed
-expectType(<Button elemRef={createRef<HTMLButtonElement>()}>Button</Button>)
+expectType(<Button tagRef={createRef<HTMLButtonElement>()}>Button</Button>)
 
 // allowed props
 expectType(

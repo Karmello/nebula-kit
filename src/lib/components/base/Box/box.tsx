@@ -1,19 +1,19 @@
 import { ElementType, ComponentRef, useRef, useLayoutEffect, PropsWithoutRef, ComponentProps } from 'react'
 import classNames from 'classnames'
 
-import { BoxProps, NativeElem } from 'lib/components'
+import { BoxProps, HtmlTag } from 'lib/components'
 import { useScreen, withPrefix } from 'lib/helpers'
 import { applyRespValues, applyStaticDataset } from 'lib/service'
 
 import { DEFAULT_BOX_INTENT, DEFAULT_BOX_VARIANT } from './definitions'
 import './styles/box.scss'
 
-export const Box = <E extends ElementType = 'div'>({
-  // native elem
+export const Box = <T extends ElementType = 'div'>({
+  // HtmlTag
   children,
-  elem,
-  elemProps,
-  elemRef,
+  tag,
+  tagAttrs,
+  tagRef,
   // own
   variant = DEFAULT_BOX_VARIANT,
   intent = DEFAULT_BOX_INTENT,
@@ -51,13 +51,13 @@ export const Box = <E extends ElementType = 'div'>({
   marginRight,
   marginBottom,
   marginLeft,
-}: BoxProps<E>) => {
-  const ref = useRef<ComponentRef<E>>(null)
+}: BoxProps<T>) => {
+  const ref = useRef<ComponentRef<T>>(null)
 
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    applyRespValues('style', elemRef || ref, bp, {
+    applyRespValues('style', tagRef || ref, bp, {
       opacity,
       borderRadius,
       textAlign,
@@ -126,24 +126,24 @@ export const Box = <E extends ElementType = 'div'>({
   ])
 
   useLayoutEffect(() => {
-    applyRespValues('dataset', elemRef || ref, bp, { intent }, 'Box')
+    applyRespValues('dataset', tagRef || ref, bp, { intent }, 'Box')
   }, [bp, intent])
 
   return (
-    <NativeElem
-      elem={elem}
-      elemProps={
+    <HtmlTag
+      tag={tag}
+      tagAttrs={
         {
-          ...elemProps,
-          className: classNames(withPrefix('box'), elemProps?.className || ''),
+          ...tagAttrs,
+          className: classNames(withPrefix('box'), tagAttrs?.className || ''),
           disabled,
           ...applyStaticDataset('box', { variant, interactive, disabled }),
-        } as PropsWithoutRef<ComponentProps<E>>
+        } as PropsWithoutRef<ComponentProps<T>>
       }
-      elemRef={elemRef || ref}
+      tagRef={tagRef || ref}
     >
       {children}
-    </NativeElem>
+    </HtmlTag>
   )
 }
 

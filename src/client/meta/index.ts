@@ -8,10 +8,10 @@ import calloutMeta from './callout.meta'
 import dividerMeta from './divider.meta'
 import flexMeta from './flex.meta'
 import gridMeta from './grid.meta'
+import htmlTagMeta from './html-tag.meta'
 import hydrationGateMeta from './hydration-gate.meta'
 import iconButtonMeta from './icon-button.meta'
 import markerListMeta from './marker-list.meta'
-import nativeElemMeta from './native-elem.meta'
 import nebkitProviderMeta from './nebkit-provider.meta'
 import sectionMeta from './section.meta'
 import spacerMeta from './spacer.meta'
@@ -30,10 +30,10 @@ export default {
   divider: dividerMeta,
   flex: flexMeta,
   grid: gridMeta,
+  'html-tag': htmlTagMeta,
   'hydration-gate': hydrationGateMeta,
   'icon-button': iconButtonMeta,
   'marker-list': markerListMeta,
-  'native-elem': nativeElemMeta,
   'nebkit-provider': nebkitProviderMeta,
   section: sectionMeta,
   spacer: spacerMeta,

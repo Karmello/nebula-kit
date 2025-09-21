@@ -36,21 +36,16 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
 
   return (
     <Box position="relative">
-      <Box
-        elem="pre"
-        elemProps={{ style: { backgroundColor: data.bg } }}
-        overflowX="auto"
-        maxInlineSize="100%"
-      >
+      <Box tag="pre" tagAttrs={{ style: { backgroundColor: data.bg } }} overflowX="auto" maxInlineSize="100%">
         <Flex>
-          <Box elem="code" padding={13}>
+          <Box tag="code" padding={13}>
             {data.tokens.map((token, i) => (
               <Box key={i}>
                 {token.map(({ content, color }, j) => (
                   <Text
                     key={j}
-                    elem="span"
-                    elemProps={{ style: { display: 'inline', color } }}
+                    tag="span"
+                    tagAttrs={{ style: { display: 'inline', color } }}
                     typography="secondary"
                   >
                     {content}
@@ -67,7 +62,7 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
           size="xs"
           variant="ghost"
           intent={copied ? 'success' : 'primary'}
-          elemProps={{ onClick: handleCopy, 'aria-label': copied ? 'Copied' : 'Copy code' }}
+          tagAttrs={{ onClick: handleCopy, 'aria-label': copied ? 'Copied' : 'Copy code' }}
         />
       </Box>
     </Box>

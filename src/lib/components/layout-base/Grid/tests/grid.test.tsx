@@ -16,15 +16,15 @@ describe('Grid (basic)', () => {
   })
 
   it('renders as div by default and adds the prefixed class', () => {
-    render(<Grid elemProps={{ 'data-testid': 'elem' }}>x</Grid>)
+    render(<Grid tagAttrs={{ 'data-testid': 'elem' }}>x</Grid>)
     const el = screen.getByTestId('elem')
     expect(el.tagName.toLowerCase()).toBe('div')
     expect(el.className).toMatch(/neb-?grid/)
   })
 
-  it('respects elem and merges elemProps.className', () => {
+  it('respects tag and merges tagAttrs.className', () => {
     render(
-      <Grid elem="section" elemProps={{ 'data-testid': 'elem', className: 'extra' }}>
+      <Grid tag="section" tagAttrs={{ 'data-testid': 'elem', className: 'extra' }}>
         x
       </Grid>
     )
@@ -34,10 +34,10 @@ describe('Grid (basic)', () => {
     expect(el.className).toMatch(/neb-?grid/)
   })
 
-  it('forwards elemRef', () => {
+  it('forwards tagRef', () => {
     const ref = createRef<HTMLDivElement>()
     render(
-      <Grid elemRef={ref}>
+      <Grid tagRef={ref}>
         <div />
       </Grid>
     )

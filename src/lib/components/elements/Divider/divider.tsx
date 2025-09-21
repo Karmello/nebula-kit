@@ -7,19 +7,19 @@ import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_THICKNESS, DividerProps } from 
 import './divider.scss'
 
 export const Divider = ({
-  elemProps,
-  elemRef,
+  tagAttrs,
+  tagRef,
   intent = DEFAULT_DIVIDER_INTENT,
   thickness = DEFAULT_DIVIDER_THICKNESS,
 }: DividerProps) => {
   return (
     <Box
-      elem="hr"
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('divider'), elemProps?.className),
+      tag="hr"
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('divider'), tagAttrs?.className),
       }}
-      elemRef={elemRef}
+      tagRef={tagRef}
       variant="solid"
       intent={intent}
       blockSize={scale(thickness)}

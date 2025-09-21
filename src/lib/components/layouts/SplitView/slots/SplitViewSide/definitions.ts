@@ -4,8 +4,8 @@ import { MakeRequired } from 'lib/definitions'
 export const SPLIT_VIEW_SIDE_INHERITED_PROPS = {
   Box: [
     'children',
-    'elemProps',
-    'elemRef',
+    'tagAttrs',
+    'tagRef',
     'intent',
     'inlineSize',
   ] as const satisfies readonly (keyof BoxProps<'aside'>)[],

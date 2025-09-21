@@ -6,7 +6,7 @@ export type AppFrameOwnProps = {
 }
 
 export const APP_FRAME_INHERITED_PROPS = {
-  Grid: ['children', 'elemProps', 'elemRef'] as const satisfies readonly (keyof GridProps<'div'>)[],
+  Grid: ['children', 'tagAttrs', 'tagRef'] as const satisfies readonly (keyof GridProps<'div'>)[],
 }
 
 export type AppFrameInheritedProps = MakeRequired<

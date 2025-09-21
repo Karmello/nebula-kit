@@ -5,15 +5,15 @@ import { withPrefix } from 'lib/helpers'
 
 import { TableBodyProps } from './definitions'
 
-export const TableBody = ({ children, elemProps, elemRef }: TableBodyProps) => {
+export const TableBody = ({ children, tagAttrs, tagRef }: TableBodyProps) => {
   return (
     <Box
-      elem="tbody"
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('table-body'), elemProps?.className),
+      tag="tbody"
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('table-body'), tagAttrs?.className),
       }}
-      elemRef={elemRef}
+      tagRef={tagRef}
     >
       {children}
     </Box>

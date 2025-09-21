@@ -9,7 +9,7 @@ import { AppFrameProps } from './definitions'
 
 import './app-frame.scss'
 
-export const AppFrame = ({ children, elemProps, elemRef, stickyHeader = false }: AppFrameProps) => {
+export const AppFrame = ({ children, tagAttrs, tagRef, stickyHeader = false }: AppFrameProps) => {
   return (
     <AppFrameProvider stickyHeader={stickyHeader}>
       <WithSlots<'Header' | 'Main' | 'Footer'>
@@ -23,8 +23,8 @@ export const AppFrame = ({ children, elemProps, elemRef, stickyHeader = false }:
       >
         {slots => (
           <Grid
-            elemProps={{ ...elemProps, className: classNames(withPrefix('app-frame'), elemProps?.className) }}
-            elemRef={elemRef}
+            tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('app-frame'), tagAttrs?.className) }}
+            tagRef={tagRef}
           >
             {slots.Header || <div />}
             {slots.Main || <div />}

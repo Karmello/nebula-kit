@@ -4,9 +4,9 @@ type DataAttrs = {
   [K in `data-${string}`]?: string | number | boolean | undefined
 }
 
-export type NativeElemProps<E extends ElementType = 'div'> = {
+export type HtmlTagProps<T extends ElementType = 'div'> = {
   children?: ReactNode
-  elem?: E
-  elemProps?: ComponentPropsWithoutRef<E> & DataAttrs
-  elemRef?: RefObject<ComponentRef<E> | null>
+  tag?: T
+  tagAttrs?: ComponentPropsWithoutRef<T> & DataAttrs
+  tagRef?: RefObject<ComponentRef<T> | null>
 }

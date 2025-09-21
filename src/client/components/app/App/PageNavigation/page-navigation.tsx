@@ -24,8 +24,8 @@ export const PageNavigation = () => {
   return (
     <ButtonGroup direction={{ base: 'column', md: 'row' }} attached stretch={{ base: true, md: false }}>
       <Button
-        elem="a"
-        elemProps={{
+        tag="a"
+        tagAttrs={{
           href: `/${PageKey.home}`,
           onClick: e => {
             e.preventDefault()
@@ -37,8 +37,8 @@ export const PageNavigation = () => {
         Home
       </Button>
       <Button
-        elem="a"
-        elemProps={{
+        tag="a"
+        tagAttrs={{
           href: `/${PageKey.foundations}`,
           onClick: e => {
             e.preventDefault()
@@ -52,8 +52,8 @@ export const PageNavigation = () => {
         Foundations
       </Button>
       <Button
-        elem="a"
-        elemProps={{
+        tag="a"
+        tagAttrs={{
           href: `/${PageKey.components}`,
           onClick: e => {
             e.preventDefault()

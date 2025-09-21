@@ -5,15 +5,15 @@ import { withPrefix } from 'lib/helpers'
 
 import { TableHeadProps } from './definitions'
 
-export const TableHead = ({ children, elemProps, elemRef }: TableHeadProps) => {
+export const TableHead = ({ children, tagAttrs, tagRef }: TableHeadProps) => {
   return (
     <Box
-      elem="thead"
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('table-head'), elemProps?.className),
+      tag="thead"
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('table-head'), tagAttrs?.className),
       }}
-      elemRef={elemRef}
+      tagRef={tagRef}
     >
       {children}
     </Box>

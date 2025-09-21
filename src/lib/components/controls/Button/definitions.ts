@@ -2,8 +2,8 @@ import { BoxProps, TextProps } from 'lib/components'
 import { MakeRequired, ScaleValue } from 'lib/definitions'
 import { BoxIntent, BoxVariant } from 'lib/components/base/Box/definitions'
 
-export const ButtonElem = ['button', 'a'] as const
-export type ButtonElem = (typeof ButtonElem)[number]
+export const ButtonTag = ['button', 'a'] as const
+export type ButtonTag = (typeof ButtonTag)[number]
 
 export const ButtonSize = ['xs', 'sm', 'md', 'lg'] as const
 export type ButtonSize = (typeof ButtonSize)[number]
@@ -19,23 +19,23 @@ export type ButtonOwnProps = {
 export const BUTTON_INHERITED_PROPS = {
   Box: [
     'children',
-    'elem',
-    'elemProps',
-    'elemRef',
+    'tag',
+    'tagAttrs',
+    'tagRef',
     'variant',
     'intent',
     'disabled',
-  ] as const satisfies readonly (keyof BoxProps<ButtonElem>)[],
+  ] as const satisfies readonly (keyof BoxProps<ButtonTag>)[],
   Text: ['iconName', 'iconPosition'] as const satisfies readonly (keyof TextProps<'span'>)[],
 }
 
-export type ButtonInheritedProps<E extends ButtonElem = 'button'> = MakeRequired<
-  Pick<BoxProps<E>, (typeof BUTTON_INHERITED_PROPS)['Box'][number]>,
+export type ButtonInheritedProps<T extends ButtonTag = 'button'> = MakeRequired<
+  Pick<BoxProps<T>, (typeof BUTTON_INHERITED_PROPS)['Box'][number]>,
   'children'
 > &
   Partial<Pick<TextProps<'span'>, (typeof BUTTON_INHERITED_PROPS)['Text'][number]>>
 
-export type ButtonProps<E extends ButtonElem = 'button'> = ButtonOwnProps & ButtonInheritedProps<E>
+export type ButtonProps<T extends ButtonTag = 'button'> = ButtonOwnProps & ButtonInheritedProps<T>
 
 // constants
 

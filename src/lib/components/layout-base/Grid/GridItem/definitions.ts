@@ -11,17 +11,12 @@ export type GridItemOwnProps = {
 }
 
 export const GRID_ITEM_INHERITED_PROPS = {
-  Box: [
-    'children',
-    'elem',
-    'elemProps',
-    'elemRef',
-  ] as const satisfies readonly (keyof BoxProps<ElementType>)[],
+  Box: ['children', 'tag', 'tagAttrs', 'tagRef'] as const satisfies readonly (keyof BoxProps<ElementType>)[],
 }
 
-export type GridItemInheritedProps<E extends ElementType> = Pick<
-  BoxProps<E>,
+export type GridItemInheritedProps<T extends ElementType> = Pick<
+  BoxProps<T>,
   (typeof GRID_ITEM_INHERITED_PROPS)['Box'][number]
 >
 
-export type GridItemProps<E extends ElementType = 'div'> = GridItemOwnProps & GridItemInheritedProps<E>
+export type GridItemProps<T extends ElementType = 'div'> = GridItemOwnProps & GridItemInheritedProps<T>

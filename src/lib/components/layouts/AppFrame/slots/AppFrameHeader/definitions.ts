@@ -4,8 +4,8 @@ import { MakeRequired } from 'lib/definitions'
 export const APP_FRAME_HEADER_INHERITED_PROPS = {
   Box: [
     'children',
-    'elemProps',
-    'elemRef',
+    'tagAttrs',
+    'tagRef',
     'intent',
     'minBlockSize',
   ] as const satisfies readonly (keyof BoxProps<'header'>)[],

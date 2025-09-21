@@ -5,7 +5,7 @@ import { Grid } from 'lib/components'
 test.describe('Grid responsive props', () => {
   test('gridTemplateColumns switches by breakpoint', async ({ mount, page }) => {
     await mount(
-      <Grid gridTemplateColumns={{ base: '100px', md: '200px 300px' }} elemProps={{ 'data-testid': 'grid' }}>
+      <Grid gridTemplateColumns={{ base: '100px', md: '200px 300px' }} tagAttrs={{ 'data-testid': 'grid' }}>
         <div />
         <div />
       </Grid>
@@ -22,7 +22,7 @@ test.describe('Grid responsive props', () => {
 
   test('gap switches by breakpoint', async ({ mount, page }) => {
     await mount(
-      <Grid gap={{ base: '4px', md: '16px' }} elemProps={{ 'data-testid': 'grid' }}>
+      <Grid gap={{ base: '4px', md: '16px' }} tagAttrs={{ 'data-testid': 'grid' }}>
         <div />
         <div />
       </Grid>

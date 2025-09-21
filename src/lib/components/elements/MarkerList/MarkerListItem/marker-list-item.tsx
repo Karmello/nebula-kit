@@ -5,16 +5,16 @@ import { withPrefix } from 'lib/helpers'
 
 import { MarkerListItemProps } from './definitions'
 
-export const MarkerListItem = ({ children, elemProps, elemRef }: MarkerListItemProps) => {
+export const MarkerListItem = ({ children, tagAttrs, tagRef }: MarkerListItemProps) => {
   return (
     <Box
-      elem="li"
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('marker-list-item'), elemProps?.className),
+      tag="li"
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('marker-list-item'), tagAttrs?.className),
         role: 'listitem',
       }}
-      elemRef={elemRef}
+      tagRef={tagRef}
     >
       {children}
     </Box>

@@ -16,9 +16,9 @@ expectType(
   </Flex>
 )
 
-// elem possible to change
+// tag possible to change
 expectType(
-  <Flex elem="ul">
+  <Flex tag="ul">
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Flex>
@@ -26,7 +26,7 @@ expectType(
 
 // wrong ref type not allowed
 expectError(
-  <Flex elem="ul" elemRef={createRef<HTMLButtonElement>()}>
+  <Flex tag="ul" tagRef={createRef<HTMLButtonElement>()}>
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Flex>
@@ -34,7 +34,7 @@ expectError(
 
 // right ref type allowed
 expectType(
-  <Flex elem="ul" elemRef={createRef<HTMLUListElement>()}>
+  <Flex tag="ul" tagRef={createRef<HTMLUListElement>()}>
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Flex>

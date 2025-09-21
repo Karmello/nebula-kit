@@ -16,17 +16,17 @@ expectType(
   </Grid>
 )
 
-// elem possible to change
+// tag possible to change
 expectType(
-  <Grid elem="ul">
+  <Grid tag="ul">
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Grid>
 )
 
-// certain elems not allowed
+// certain tags not allowed
 expectError(
-  <Grid elem="span">
+  <Grid tag="span">
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Grid>
@@ -34,7 +34,7 @@ expectError(
 
 // wrong ref type not allowed
 expectError(
-  <Grid elem="ul" elemRef={createRef<HTMLButtonElement>()}>
+  <Grid tag="ul" tagRef={createRef<HTMLButtonElement>()}>
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Grid>
@@ -42,7 +42,7 @@ expectError(
 
 // right ref type allowed
 expectType(
-  <Grid elem="ul" elemRef={createRef<HTMLUListElement>()}>
+  <Grid tag="ul" tagRef={createRef<HTMLUListElement>()}>
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Grid>

@@ -1,8 +1,8 @@
 import { BoxProps } from 'lib/components'
 import { IconName } from 'lib/definitions'
 
-export const CalloutElem = ['div', 'section', 'article', 'aside'] as const
-export type CalloutElem = (typeof CalloutElem)[number]
+export const CalloutTag = ['div', 'section', 'article', 'aside'] as const
+export type CalloutTag = (typeof CalloutTag)[number]
 
 export const CalloutVariant = ['solid', 'outline'] as const
 export const CalloutIntent = ['info', 'success', 'warning', 'danger'] as const
@@ -20,28 +20,28 @@ export type CalloutOwnProps = {
 
 export const CALLOUT_INHERITED_PROPS = {
   Box: [
-    'elem',
-    'elemProps',
-    'elemRef',
+    'tag',
+    'tagAttrs',
+    'tagRef',
     'variant',
     'intent',
     'borderRadius',
     'padding',
     'paddingBlock',
     'paddingInline',
-  ] as const satisfies readonly (keyof BoxProps<CalloutElem>)[],
+  ] as const satisfies readonly (keyof BoxProps<CalloutTag>)[],
   Text: [] as const,
 }
 
-export type CalloutInheritedProps<E extends CalloutElem = 'div'> = Omit<
-  Pick<BoxProps<E>, (typeof CALLOUT_INHERITED_PROPS)['Box'][number]>,
+export type CalloutInheritedProps<T extends CalloutTag = 'div'> = Omit<
+  Pick<BoxProps<T>, (typeof CALLOUT_INHERITED_PROPS)['Box'][number]>,
   'variant' | 'intent'
 > & {
   variant?: CalloutVariant
   intent?: CalloutIntent
 }
 
-export type CalloutProps<E extends CalloutElem = 'div'> = CalloutOwnProps & CalloutInheritedProps<E>
+export type CalloutProps<T extends CalloutTag = 'div'> = CalloutOwnProps & CalloutInheritedProps<T>
 
 export const CALLOUT_CONFIG: Record<CalloutIntent, { heading: string; iconName: IconName }> = {
   info: { heading: 'Info', iconName: 'info' },

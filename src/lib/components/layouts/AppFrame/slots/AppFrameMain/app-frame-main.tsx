@@ -7,15 +7,15 @@ import { AppFrameMainProps } from './definitions'
 
 import './app-frame-main.scss'
 
-export const AppFrameMain = ({ children, elemProps, elemRef, ...paddings }: AppFrameMainProps) => {
+export const AppFrameMain = ({ children, tagAttrs, tagRef, ...paddings }: AppFrameMainProps) => {
   return (
     <Box
-      elem="main"
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('app-frame-main'), elemProps?.className),
+      tag="main"
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('app-frame-main'), tagAttrs?.className),
       }}
-      elemRef={elemRef}
+      tagRef={tagRef}
       borderRadius={0}
       {...paddings}
     >

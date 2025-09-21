@@ -19,20 +19,21 @@ import { useScreen, withPrefix } from 'lib/helpers'
 
 import {
   ButtonGroupDirection,
-  ButtonGroupElem,
+  ButtonGroupTag,
   ButtonGroupProps,
   DEFAULT_BUTTON_GROUP_GAP,
 } from './definitions'
+
 import './button-group.scss'
 
 const isButtonElement = (node: ReactNode): node is ReactElement<ButtonProps, typeof Button> =>
   isValidElement(node) && node.type === Button
 
-export const ButtonGroup = <E extends ButtonGroupElem = 'div'>({
+export const ButtonGroup = <T extends ButtonGroupTag = 'div'>({
   children,
-  elem,
-  elemProps,
-  elemRef,
+  tag,
+  tagAttrs,
+  tagRef,
   // button
   variant,
   intent,
@@ -43,15 +44,15 @@ export const ButtonGroup = <E extends ButtonGroupElem = 'div'>({
   direction = ButtonGroupDirection[0],
   stretch = false,
   attached = false,
-}: ButtonGroupProps<E>) => {
-  const ref = useRef<ComponentRef<E>>(null)
+}: ButtonGroupProps<T>) => {
+  const ref = useRef<ComponentRef<T>>(null)
 
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
     applyRespValues(
       'dataset',
-      elemRef || ref,
+      tagRef || ref,
       bp,
       {
         direction,
@@ -63,15 +64,15 @@ export const ButtonGroup = <E extends ButtonGroupElem = 'div'>({
 
   return (
     <Flex
-      elem={elem}
-      elemProps={
+      tag={tag}
+      tagAttrs={
         {
-          ...elemProps,
-          className: classNames(withPrefix('btn-group'), elemProps?.className),
+          ...tagAttrs,
+          className: classNames(withPrefix('btn-group'), tagAttrs?.className),
           ...applyStaticDataset('btn-group', { attached }),
-        } as PropsWithoutRef<ComponentProps<E>>
+        } as PropsWithoutRef<ComponentProps<T>>
       }
-      elemRef={elemRef || ref}
+      tagRef={tagRef || ref}
       gap={attached ? 0 : gap}
       flexWrap="nowrap"
     >

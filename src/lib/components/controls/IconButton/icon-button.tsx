@@ -4,31 +4,31 @@ import classNames from 'classnames'
 import { Button } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { ButtonElem } from '../Button/definitions'
+import { ButtonTag } from '../Button/definitions'
 import { IconButtonProps } from './definitions'
 
 import './icon-button.scss'
 
-export const IconButton = <E extends ButtonElem = 'button'>({
-  elem,
-  elemProps,
-  elemRef,
+export const IconButton = <T extends ButtonTag = 'button'>({
+  tag,
+  tagAttrs,
+  tagRef,
   size,
   variant,
   intent,
   disabled,
   iconName,
-}: IconButtonProps<E>) => {
+}: IconButtonProps<T>) => {
   return (
     <Button
-      elem={elem || 'button'}
-      elemProps={
+      tag={tag || 'button'}
+      tagAttrs={
         {
-          ...elemProps,
-          className: classNames(withPrefix('icon-btn'), elemProps?.className || ''),
-        } as PropsWithoutRef<ComponentProps<E>>
+          ...tagAttrs,
+          className: classNames(withPrefix('icon-btn'), tagAttrs?.className || ''),
+        } as PropsWithoutRef<ComponentProps<T>>
       }
-      elemRef={elemRef}
+      tagRef={tagRef}
       size={size}
       variant={variant}
       intent={intent}

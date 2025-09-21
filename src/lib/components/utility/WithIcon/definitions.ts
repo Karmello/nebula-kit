@@ -1,6 +1,6 @@
 import { SvgIconProps } from 'lib/components'
 
-import { NativeElemProps } from '../NativeElem'
+import { HtmlTagProps } from '../HtmlTag'
 
 export const IconPosition = ['left', 'right'] as const
 export type IconPosition = (typeof IconPosition)[number]
@@ -12,13 +12,13 @@ export type WithIconOwnProps = {
 }
 
 export const WITH_ICON_INHERITED_PROPS = {
-  NativeElem: ['children', 'elemProps'] as const satisfies readonly (keyof NativeElemProps<'span'>)[],
+  HtmlTag: ['children', 'tagAttrs'] as const satisfies readonly (keyof HtmlTagProps<'span'>)[],
   SvgIcon: ['iconName', 'iconSize'] as const satisfies readonly (keyof SvgIconProps)[],
 }
 
 export type WithIconInheritedProps = Pick<
-  NativeElemProps<'span'>,
-  (typeof WITH_ICON_INHERITED_PROPS)['NativeElem'][number]
+  HtmlTagProps<'span'>,
+  (typeof WITH_ICON_INHERITED_PROPS)['HtmlTag'][number]
 > &
   Pick<SvgIconProps, (typeof WITH_ICON_INHERITED_PROPS)['SvgIcon'][number]>
 

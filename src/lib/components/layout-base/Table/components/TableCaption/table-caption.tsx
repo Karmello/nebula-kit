@@ -5,15 +5,15 @@ import { withPrefix } from 'lib/helpers'
 
 import { TableCaptionProps } from './definitions'
 
-export const TableCaption = ({ children, elemProps, elemRef }: TableCaptionProps) => {
+export const TableCaption = ({ children, tagAttrs, tagRef }: TableCaptionProps) => {
   return (
     <Box
-      elem="caption"
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('table-caption'), elemProps?.className),
+      tag="caption"
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('table-caption'), tagAttrs?.className),
       }}
-      elemRef={elemRef}
+      tagRef={tagRef}
     >
       {children}
     </Box>

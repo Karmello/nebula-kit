@@ -9,7 +9,7 @@ import {
   CssGridItemAlignSelf,
 } from 'lib/definitions'
 
-import { GRID_INHERITED_PROPS, GridElem, GridOwnProps } from 'lib/components/layout-base/Grid/definitions'
+import { GRID_INHERITED_PROPS, GridTag, GridOwnProps } from 'lib/components/layout-base/Grid/definitions'
 
 import {
   GRID_ITEM_INHERITED_PROPS,
@@ -40,7 +40,7 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
       'building responsive page sections',
     ],
     composedOf: GRID_INHERITED_PROPS,
-    rendersAs: GridElem,
+    rendersAs: GridTag,
   },
   ownProps: [
     {
@@ -130,10 +130,10 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
         'Two-column layout with main content and sidebar, where the article takes more space and the aside sits alongside it.',
       jsx: (
         <Grid gridTemplateColumns="2fr 1fr">
-          <Box elem="article" variant="outline" intent="primary">
+          <Box tag="article" variant="outline" intent="primary">
             Article
           </Box>
-          <Box elem="aside" variant="outline" intent="primary">
+          <Box tag="aside" variant="outline" intent="primary">
             Aside
           </Box>
         </Grid>

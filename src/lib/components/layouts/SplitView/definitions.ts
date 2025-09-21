@@ -12,7 +12,7 @@ export type SplitViewOwnProps = {
 }
 
 export const SPLIT_VIEW_INHERITED_PROPS = {
-  Grid: ['children', 'elemProps', 'elemRef'] as const satisfies readonly (keyof GridProps<'div'>)[],
+  Grid: ['children', 'tagAttrs', 'tagRef'] as const satisfies readonly (keyof GridProps<'div'>)[],
 }
 
 export type SplitViewInheritedProps = MakeRequired<

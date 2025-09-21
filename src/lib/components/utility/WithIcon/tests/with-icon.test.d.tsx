@@ -28,9 +28,9 @@ expectType(
   </WithIcon>
 )
 
-// attrs for <a> not allowed when elem = <span>
+// attrs for <a> not allowed when tag = <span>
 expectError(
-  <WithIcon iconName="check" elemProps={{ href: 'href' }}>
+  <WithIcon iconName="check" tagAttrs={{ href: 'href' }}>
     children
   </WithIcon>
 )

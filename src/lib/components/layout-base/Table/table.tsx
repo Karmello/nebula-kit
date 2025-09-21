@@ -10,8 +10,8 @@ import './table.scss'
 
 export const Table = ({
   children,
-  elemProps,
-  elemRef,
+  tagAttrs,
+  tagRef,
   variant,
   intent,
   layout = 'auto',
@@ -20,19 +20,19 @@ export const Table = ({
 }: TableProps) => {
   return (
     <TableContext value={{ variant, intent, layout }}>
-      <Box elemProps={{ className: withPrefix('table-container') }}>
+      <Box tagAttrs={{ className: withPrefix('table-container') }}>
         <Box
-          elem="table"
-          elemProps={{
-            ...elemProps,
-            className: classNames(withPrefix('table'), elemProps?.className),
+          tag="table"
+          tagAttrs={{
+            ...tagAttrs,
+            className: classNames(withPrefix('table'), tagAttrs?.className),
             style: {
               tableLayout: layout,
-              ...(elemProps?.style || {}),
+              ...(tagAttrs?.style || {}),
             },
             ...applyStaticDataset('table', { zebra, stickyHeader }),
           }}
-          elemRef={elemRef}
+          tagRef={tagRef}
           variant={variant}
           intent={intent}
         >

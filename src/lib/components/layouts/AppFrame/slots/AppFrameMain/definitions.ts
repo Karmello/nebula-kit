@@ -4,8 +4,8 @@ import { MakeRequired } from 'lib/definitions'
 export const APP_FRAME_MAIN_INHERITED_PROPS = {
   Box: [
     'children',
-    'elemProps',
-    'elemRef',
+    'tagAttrs',
+    'tagRef',
     'padding',
     'paddingInline',
     'paddingBlock',

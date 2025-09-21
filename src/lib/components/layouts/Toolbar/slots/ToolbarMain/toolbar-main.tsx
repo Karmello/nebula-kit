@@ -8,7 +8,7 @@ import { useScreen, withPrefix } from 'lib/helpers'
 import { ToolbarMainProps } from './definitions'
 import { useToolbarContext } from '../../ToolbarProvider'
 
-export const ToolbarMain = ({ children, elemProps, elemRef }: ToolbarMainProps) => {
+export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) => {
   const ref = useRef<ComponentRef<'div'>>(null)
   const height = useRef<string>('')
 
@@ -18,7 +18,7 @@ export const ToolbarMain = ({ children, elemProps, elemRef }: ToolbarMainProps) 
   const isSwitchAtHit = BREAKPOINTS.indexOf(bp) >= BREAKPOINTS.indexOf(switchAt as Breakpoint)
 
   useEffect(() => {
-    height.current = `${elemRef ? elemRef.current?.scrollHeight : ref.current?.scrollHeight}px`
+    height.current = `${tagRef ? tagRef.current?.scrollHeight : ref.current?.scrollHeight}px`
   }, [])
 
   useLayoutEffect(() => {
@@ -29,15 +29,15 @@ export const ToolbarMain = ({ children, elemProps, elemRef }: ToolbarMainProps) 
 
   return (
     <Grid.Item
-      elemProps={{
-        ...elemProps,
-        className: classNames(withPrefix('toolbar-main'), elemProps?.className),
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('toolbar-main'), tagAttrs?.className),
         style: {
-          ...elemProps?.style,
+          ...tagAttrs?.style,
           minInlineSize: 0,
         },
       }}
-      elemRef={elemRef || ref}
+      tagRef={tagRef || ref}
       gridRow={{ base: '2 / 3', [String(switchAt)]: '1 / 2' }}
       gridColumn={{ base: '1 / -1', [String(switchAt)]: '3 / 4' }}
       alignSelf="center"

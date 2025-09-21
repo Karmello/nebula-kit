@@ -3,12 +3,12 @@ import { MakeRequired } from 'lib/definitions'
 import { ElementType } from 'react'
 
 export const SPLIT_VIEW_MAIN_BAR_INHERITED_PROPS = {
-  Box: ['children', 'elem', 'elemProps', 'elemRef'] as const satisfies readonly (keyof BoxProps<'div'>)[],
+  Box: ['children', 'tag', 'tagAttrs', 'tagRef'] as const satisfies readonly (keyof BoxProps<'div'>)[],
 }
 
-export type SplitViewMainBarInheritedProps<E extends ElementType = 'div'> = MakeRequired<
-  Pick<BoxProps<E>, (typeof SPLIT_VIEW_MAIN_BAR_INHERITED_PROPS)['Box'][number]>,
+export type SplitViewMainBarInheritedProps<T extends ElementType = 'div'> = MakeRequired<
+  Pick<BoxProps<T>, (typeof SPLIT_VIEW_MAIN_BAR_INHERITED_PROPS)['Box'][number]>,
   'children'
 >
 
-export type SplitViewMainBarProps<E extends ElementType = 'div'> = SplitViewMainBarInheritedProps<E>
+export type SplitViewMainBarProps<T extends ElementType = 'div'> = SplitViewMainBarInheritedProps<T>

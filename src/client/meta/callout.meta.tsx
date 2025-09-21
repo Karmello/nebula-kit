@@ -4,7 +4,7 @@ import { ComponentMeta } from 'client/definitions'
 import {
   CALLOUT_CONFIG,
   CALLOUT_INHERITED_PROPS,
-  CalloutElem,
+  CalloutTag,
   CalloutOwnProps,
   DEFAULT_CALLOUT_INTENT,
 } from 'lib/components/feedback/Callout/definitions'
@@ -36,7 +36,7 @@ const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
       'showing error details that require immediate attention',
     ],
     composedOf: CALLOUT_INHERITED_PROPS,
-    rendersAs: CalloutElem,
+    rendersAs: CalloutTag,
   },
   ownProps: [
     {

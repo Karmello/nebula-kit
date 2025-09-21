@@ -4,8 +4,8 @@ import { MakeRequired } from 'lib/definitions'
 export const APP_FRAME_FOOTER_INHERITED_PROPS = {
   Box: [
     'children',
-    'elemProps',
-    'elemRef',
+    'tagAttrs',
+    'tagRef',
     'intent',
     'minBlockSize',
     'padding',

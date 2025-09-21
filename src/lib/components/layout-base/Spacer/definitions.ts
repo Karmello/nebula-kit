@@ -3,7 +3,7 @@ import { BoxProps } from 'lib/components'
 export const DEFAULT_SPACER_BLOCK_SIZE = 2
 
 export const SPACER_INHERITED_PROPS = {
-  Box: ['elemProps', 'elemRef', 'blockSize'] as const satisfies readonly (keyof BoxProps<'div'>)[],
+  Box: ['tagAttrs', 'tagRef', 'blockSize'] as const satisfies readonly (keyof BoxProps<'div'>)[],
 }
 
 export type SpacerInheritedProps = Pick<BoxProps<'div'>, (typeof SPACER_INHERITED_PROPS)['Box'][number]>
