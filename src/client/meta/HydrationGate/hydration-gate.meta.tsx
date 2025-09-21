@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { HydrationGate, HydrationGateProps, NebKitProvider } from 'lib/components'
+import { HydrationGate, HydrationGateProps, NebkitProvider } from 'lib/components'
 
 const App = (): null => null
 App.displayName = 'App'
@@ -53,9 +53,9 @@ const HYDRATION_GATE_META: ComponentMeta<HydrationGateProps> = {
         'Wrap the entire application with HydrationGate so that no content is shown until hydration completes. This prevents initial flicker in SSR environments while keeping setup minimal.',
       jsx: (
         <HydrationGate>
-          <NebKitProvider>
+          <NebkitProvider>
             <App />
-          </NebKitProvider>
+          </NebkitProvider>
         </HydrationGate>
       ),
       noSandBox: true,

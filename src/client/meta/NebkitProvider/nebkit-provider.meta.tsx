@@ -1,11 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
-import { NebKitProvider, NebKitProviderProps } from 'lib/components'
+import { NebkitProvider, NebkitProviderProps } from 'lib/components'
 import { DEFAULT_BORDER_RADIUS, Theme } from 'lib/definitions'
 
 const App = (): null => null
 App.displayName = 'App'
 
-const NEB_KIT_PROVIDER_META: ComponentMeta<NebKitProviderProps> = {
+const NEBKIT_PROVIDER_META: ComponentMeta<NebkitProviderProps> = {
   overview: {
     description:
       'The root setup component for Nebula-kit. It initializes global configuration, connects the internal store, and keeps the application environment in sync so that all components work consistently.',
@@ -21,7 +21,7 @@ const NEB_KIT_PROVIDER_META: ComponentMeta<NebKitProviderProps> = {
     ],
     byDefault: ['applies the light theme to the document root', 'sets border radius to 0 for all components'],
     examplesOfUse: [
-      'always wrap with NebKitProvider to inherit theming and global configuration across the app',
+      'always wrap with NebkitProvider to inherit theming and global configuration across the app',
     ],
   },
   ownProps: [
@@ -52,20 +52,20 @@ const NEB_KIT_PROVIDER_META: ComponentMeta<NebKitProviderProps> = {
   examples: [
     {
       description:
-        "Wraps the entire application with NebKitProvider to enable Nebula-kit's global configuration and defaults.",
+        "Wraps the entire application with NebkitProvider to enable Nebula-kit's global configuration and defaults.",
       jsx: (
-        <NebKitProvider>
+        <NebkitProvider>
           <App />
-        </NebKitProvider>
+        </NebkitProvider>
       ),
       noSandBox: true,
     },
     {
-      description: 'Wraps the application with NebKitProvider and applies the dark theme as the default.',
+      description: 'Wraps the application with NebkitProvider and applies the dark theme as the default.',
       jsx: (
-        <NebKitProvider defaultTheme="dark">
+        <NebkitProvider defaultTheme="dark">
           <App />
-        </NebKitProvider>
+        </NebkitProvider>
       ),
       noSandBox: true,
     },
@@ -73,5 +73,5 @@ const NEB_KIT_PROVIDER_META: ComponentMeta<NebKitProviderProps> = {
 }
 
 export default {
-  NebKitProvider: NEB_KIT_PROVIDER_META,
+  NebkitProvider: NEBKIT_PROVIDER_META,
 }

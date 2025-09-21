@@ -1,27 +1,27 @@
 import { expectType, expectError } from 'tsd'
 
-import { NebKitProvider } from '../'
+import { NebkitProvider } from '..'
 
 // children required
-expectError(<NebKitProvider />)
+expectError(<NebkitProvider />)
 
 // children passed
 expectType(
-  <NebKitProvider>
+  <NebkitProvider>
     <div />
-  </NebKitProvider>
+  </NebkitProvider>
 )
 
 // wrong value for defaultTheme
 expectError(
-  <NebKitProvider defaultTheme="wrong">
+  <NebkitProvider defaultTheme="wrong">
     <div />
-  </NebKitProvider>
+  </NebkitProvider>
 )
 
 // right value for defaultTheme
 expectType(
-  <NebKitProvider defaultTheme="dark">
+  <NebkitProvider defaultTheme="dark">
     <div />
-  </NebKitProvider>
+  </NebkitProvider>
 )

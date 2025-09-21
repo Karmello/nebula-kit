@@ -3,14 +3,14 @@ import { ReactElement, useEffect, useLayoutEffect } from 'react'
 import { DEFAULT_BORDER_RADIUS, DEFAULT_THEME } from 'lib/definitions'
 import { useLibStore } from 'lib/state'
 
-import { NebKitProviderProps } from './definitions'
+import { NebkitProviderProps } from './definitions'
 import 'lib/styles/index.scss'
 
-export const NebKitProvider = ({
+export const NebkitProvider = ({
   children,
   defaultTheme = DEFAULT_THEME,
   defaultBorderRadius = DEFAULT_BORDER_RADIUS,
-}: NebKitProviderProps): ReactElement => {
+}: NebkitProviderProps): ReactElement => {
   const { theme, setTheme, setBorderRadius } = useLibStore()
 
   useLayoutEffect(() => {
@@ -36,4 +36,4 @@ export const NebKitProvider = ({
   return children
 }
 
-NebKitProvider.displayName = 'NebKitProvider'
+NebkitProvider.displayName = 'NebkitProvider'

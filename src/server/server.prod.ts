@@ -6,7 +6,7 @@ import { createElement } from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router'
 
-import { HydrationGate, NebKitProvider } from 'src/lib/components'
+import { HydrationGate, NebkitProvider } from 'src/lib/components'
 import { App } from 'src/client/components'
 
 const distDir = path.resolve(process.cwd(), 'dist/client')
@@ -25,7 +25,7 @@ app.get(/.*/, (req, res) => {
         createElement(
           HydrationGate,
           null,
-          createElement(NebKitProvider, { defaultBorderRadius: 5 } as any, createElement(App))
+          createElement(NebkitProvider, { defaultBorderRadius: 5 } as any, createElement(App))
         )
       )
     )

@@ -9,7 +9,7 @@ import { renderToString } from 'react-dom/server'
 const renderApp = async (vite: ViteDevServer, url: string) => {
   const { StaticRouter } = await vite.ssrLoadModule('react-router')
   const { HydrationGate } = await vite.ssrLoadModule('src/lib/components/index.ts')
-  const { NebKitProvider } = await vite.ssrLoadModule('src/lib/components/index.ts')
+  const { NebkitProvider } = await vite.ssrLoadModule('src/lib/components/index.ts')
   const { App } = await vite.ssrLoadModule('src/client/components/index.ts')
 
   return renderToString(
@@ -19,7 +19,7 @@ const renderApp = async (vite: ViteDevServer, url: string) => {
       createElement(
         HydrationGate,
         null,
-        createElement(NebKitProvider, { defaultBorderRadius: 5 }, createElement(App))
+        createElement(NebkitProvider, { defaultBorderRadius: 5 }, createElement(App))
       )
     )
   )
