@@ -1,10 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
-import { SvgIconProps } from 'lib/components'
+import { IconProps } from 'lib/components'
 
-import { SVG_ICON_PROPS_META } from './props'
-import { SVG_ICON_EXAMPLES_META } from './examples'
+import { ICON_PROPS_META } from './props'
+import { ICON_EXAMPLES_META } from './examples'
 
-const SVG_ICON_META: ComponentMeta<SvgIconProps> = {
+const ICON_META: ComponentMeta<IconProps> = {
   overview: {
     description: 'A wrapper that renders an SVG from the icon set by name and applies system styles.',
     role: ['resolve icon by name', 'apply sizing and color'],
@@ -19,10 +19,10 @@ const SVG_ICON_META: ComponentMeta<SvgIconProps> = {
       'access the raw SVG for custom sizing or color overrides',
     ],
   },
-  props: SVG_ICON_PROPS_META,
-  examples: SVG_ICON_EXAMPLES_META,
+  props: ICON_PROPS_META,
+  examples: ICON_EXAMPLES_META,
 }
 
 export default {
-  SvgIcon: SVG_ICON_META,
+  Icon: ICON_META,
 }

@@ -8,7 +8,7 @@ import { PropsTable } from './PropsTable'
 export const ComponentPropsPage = () => {
   const { itemKey } = useComponentsPageStore()
 
-  const itemKeyPascal = pascalCase(itemKey)
+  const itemKeyPascal = pascalCase(itemKey || '')
 
   if (!meta[itemKeyPascal]) return null
 

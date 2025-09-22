@@ -1,9 +1,9 @@
 import { ComponentMeta } from 'client/definitions'
-import { SvgIconProps } from 'lib/components'
+import { IconProps } from 'lib/components'
 import { BoxIntent } from 'lib/components/base/Box/definitions'
-import { DEFAULT_SVG_ICON_SIZE } from 'lib/components/elements/SvgIcon/definitions'
+import { DEFAULT_ICON_SIZE } from 'lib/components/elements/Icon/definitions'
 
-const SVG_ICON_PROPS_META: ComponentMeta<SvgIconProps>['props'] = {
+const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
   iconName: {
     options: ['IconName'],
     isRequired: true,
@@ -12,7 +12,7 @@ const SVG_ICON_PROPS_META: ComponentMeta<SvgIconProps>['props'] = {
   },
   iconSize: {
     options: ['ScaleValue'],
-    defaultValue: String(DEFAULT_SVG_ICON_SIZE),
+    defaultValue: String(DEFAULT_ICON_SIZE),
     isRequired: false,
     isResponsive: false,
     description: "Sets the icon's width and height using the scale system.",
@@ -25,4 +25,4 @@ const SVG_ICON_PROPS_META: ComponentMeta<SvgIconProps>['props'] = {
   },
 }
 
-export { SVG_ICON_PROPS_META }
+export { ICON_PROPS_META }

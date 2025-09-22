@@ -52,7 +52,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
 export const ComponentOverviewPage = () => {
   const { itemKey } = useComponentsPageStore()
 
-  const itemKeyPascal = pascalCase(itemKey)
+  const itemKeyPascal = pascalCase(itemKey || '')
 
   if (!meta[itemKeyPascal]) return null
 

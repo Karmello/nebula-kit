@@ -1,4 +1,4 @@
-import { SvgIconProps } from 'lib/components'
+import { IconProps } from 'lib/components'
 
 import { HtmlTagProps } from '../HtmlTag'
 
@@ -12,5 +12,5 @@ export type WithIconOwnProps = {
 }
 
 export type WithIconProps = Omit<HtmlTagProps<'span'>, 'tag'> &
-  Pick<SvgIconProps, 'iconName' | 'iconSize'> &
+  Pick<IconProps, 'iconName' | 'iconSize'> &
   WithIconOwnProps

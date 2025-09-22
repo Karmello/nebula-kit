@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import { HtmlTag, SvgIcon } from 'lib/components'
+import { HtmlTag, Icon } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import { DEFAULT_WITH_ICON_ICON_POSITION, WithIconProps } from './definitions'
@@ -23,9 +23,9 @@ export const WithIcon = ({
       tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('with-icon'), tagAttrs?.className || '') }}
       tagRef={tagRef}
     >
-      {iconPosition === 'left' ? <SvgIcon iconName={iconName} iconSize={iconSize} /> : null}
+      {iconPosition === 'left' ? <Icon iconName={iconName} iconSize={iconSize} /> : null}
       {children}
-      {iconPosition === 'right' ? <SvgIcon iconName={iconName} iconSize={iconSize} /> : null}
+      {iconPosition === 'right' ? <Icon iconName={iconName} iconSize={iconSize} /> : null}
     </HtmlTag>
   )
 }

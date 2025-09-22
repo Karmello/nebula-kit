@@ -37,7 +37,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
 export const ComponentExamplesPage = () => {
   const { itemKey } = useComponentsPageStore()
 
-  const itemKeyPascal = pascalCase(itemKey)
+  const itemKeyPascal = pascalCase(itemKey || '')
 
   if (!meta[itemKeyPascal]) return null
 

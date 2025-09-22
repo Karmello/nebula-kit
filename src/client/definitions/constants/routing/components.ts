@@ -40,9 +40,9 @@ export const COMPONENT_CATEGORIES = [
     key: 'elements',
     label: 'Elements',
     items: [
-      { key: 'marker-list', label: 'MarkerList', sections: COMPONENT_SECTIONS },
-      { key: 'svg-icon', label: 'SvgIcon', sections: COMPONENT_SECTIONS },
+      { key: 'icon', label: 'Icon', sections: COMPONENT_SECTIONS },
       { key: 'divider', label: 'Divider', sections: COMPONENT_SECTIONS },
+      { key: 'marker-list', label: 'MarkerList', sections: COMPONENT_SECTIONS },
     ],
   },
   {

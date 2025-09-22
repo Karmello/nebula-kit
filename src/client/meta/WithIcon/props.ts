@@ -7,11 +7,11 @@ import {
 } from 'lib/components/utility/WithIcon/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-import { SVG_ICON_PROPS_META } from '../SvgIcon/props'
+import { ICON_PROPS_META } from '../Icon/props'
 
 const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
-  iconName: SVG_ICON_PROPS_META['iconName'],
-  iconSize: SVG_ICON_PROPS_META['iconSize'],
+  iconName: ICON_PROPS_META['iconName'],
+  iconSize: ICON_PROPS_META['iconSize'],
   iconPosition: {
     options: IconPosition as unknown as string[],
     defaultValue: DEFAULT_WITH_ICON_ICON_POSITION,
