@@ -7,12 +7,12 @@ import { HYDRATION_GATE_EXAMPLES_META } from './examples'
 const HYDRATION_GATE_META: ComponentMeta<HydrationGateProps> = {
   overview: {
     title:
-      'A top-level utility component for SSR setups preventing flashes of unstyled or mismatched content.',
+      'Top-level utility component for SSR setups that prevents flashes of unstyled or mismatched content.',
     description: [
-      'acts as a wrapper that delays visibility of the app until hydration is complete',
-      'provides an escape hatch for SSR users to prevent first-paint flicker',
-      'children are rendered immediately so their effects can run, but remain hidden until hydration completes',
-      'building an app with SSR where initial flicker of unstyled components is unacceptable',
+      'acts as a wrapper that delays app visibility until hydration is complete',
+      'provides an escape hatch for SSR users to avoid first-paint flicker',
+      'renders children immediately so their effects can run, but keeps them hidden until hydration finishes',
+      'useful when building an SSR app where initial flicker of unstyled components is unacceptable',
     ],
   },
   props: HYDRATION_GATE_PROPS_META,
