@@ -10,12 +10,12 @@ const HTML_TAG_META: ComponentMeta<HtmlTagProps<ElementType>> = {
   overview: {
     title: 'Low-level utility that renders an HTML tag.',
     description: [
-      'renders the chosen HTML tag',
+      'renders the specified HTML tag',
       'forwards the relevant attributes for the tag',
       'passes through the ref',
       'polymorphic design lets you swap the underlying element while still receiving the correct props, ensuring the component resolves to a predictable, semantic element',
-      'rarely needed in everyday code - usually you would want to use Box, Flex, Grid, or other higher-level component instead',
-      'could be helpful as an escape hatch if you need the absolute lowest layer without extra props or behaviors',
+      'rarely needed - Box, Flex, Grid, or other higher-level components usually fit better',
+      'could be helpful as an escape hatch, if you need the absolute lowest layer without extra props or behaviors',
     ],
   },
   props: HTML_TAG_PROPS_META,
