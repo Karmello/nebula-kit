@@ -31,7 +31,9 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
         <ListWithChips heading="Renders as:" items={rendersAs as string[]} intent="danger" />
       ) : null}
       {composedOf ? <ListWithChips heading="Composed of:" items={composedOf} intent="warning" /> : null}
-      {props ? <ListWithChips heading="Props:" items={Object.keys(props)} /> : null}
+      {props ? (
+        <ListWithChips heading="Props:" items={Object.keys(props).sort((a, b) => a.localeCompare(b))} />
+      ) : null}
     </Flex>
   )
 
