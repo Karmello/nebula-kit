@@ -10,10 +10,8 @@ const SPACER_META: ComponentMeta<SpacerProps> = {
       'provides consistent vertical spacing between elements',
       'improves readability by preventing content from feeling crowded',
       'acts as a structural tool for rhythm in layouts',
-    ],
-    behavior: ['renders as a <div> element'],
-    byDefault: [`uses the blockSize of ${DEFAULT_SPACER_BLOCK_SIZE}`],
-    examplesOfUse: [
+      'renders as a <div> element',
+      `uses the blockSize of ${DEFAULT_SPACER_BLOCK_SIZE}`,
       'separating paragraphs of text in a content block',
       'adding breathing room between form fields',
     ],

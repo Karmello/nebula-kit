@@ -8,16 +8,12 @@ import { HTML_TAG_EXAMPLES_META } from './examples'
 
 const HTML_TAG_META: ComponentMeta<HtmlTagProps<ElementType>> = {
   overview: {
-    description: 'A low-level utility that renders the HTML tag.',
+    description: 'Low-level utility that renders an HTML tag.',
     role: [
       'renders the chosen HTML tag',
       'forwards the relevant attributes for the tag',
       'passes through the ref',
-    ],
-    behavior: [
       'polymorphic design lets you swap the underlying element while still receiving the correct props, ensuring the component resolves to a predictable, semantic element',
-    ],
-    examplesOfUse: [
       'rarely needed in everyday code - usually you would want to use Box, Flex, Grid, or other higher-level component instead',
       'could be helpful as an escape hatch if you need the absolute lowest layer without extra props or behaviors',
     ],

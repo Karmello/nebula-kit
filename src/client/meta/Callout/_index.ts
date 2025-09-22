@@ -12,19 +12,13 @@ const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
       'emphasizes key information or status within the content flow',
       'provides clear visual cues through color, icon, and heading',
       'helps users quickly distinguish between neutral notes, successes, warnings, and errors',
-    ],
-    behavior: [
       'requires content text',
       'provides an automatic icon for each intent',
       'renders a heading with h5 typography',
-    ],
-    byDefault: [
       'renders as a <div> element',
       'uses the info intent',
       'uses the solid variant',
       'applies padding of 10',
-    ],
-    examplesOfUse: [
       'highlighting important information in documentation or forms',
       'displaying a success message after a completed action',
       'warning users about potential issues or side effects',

@@ -12,14 +12,10 @@ const MARKER_LIST_META: ComponentMeta<MarkerListOwnProps> = {
     role: [
       'establishes a semantic list container with native markers',
       'ensures each item is rendered as part of an accessible list structure',
-    ],
-    byDefault: [
       'renders as a <ul> element',
       'expects children to be <MarkerList.Item>',
       'uses disc as the list style',
       'applies a gap of 3',
-    ],
-    examplesOfUse: [
       'presenting short collections of text items with bullets or numbers',
       'grouping related information where the marker itself carries meaning',
     ],

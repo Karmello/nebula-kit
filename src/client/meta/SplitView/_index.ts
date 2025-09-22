@@ -15,15 +15,12 @@ const SPLIT_VIEW_META: ComponentMeta<SplitViewOwnProps> = {
     role: [
       'provides a two-panel horizontal layout with a main content area and side panel',
       'manages side panel visibility',
-    ],
-    behavior: [
       'stretches to fill the full height of its parent container',
       'shows the side panel in inline mode',
       'hides the side panel in overlay mode',
       'changes the side panel from an overlay to an inline layout at a breakpoint (switchAt prop)',
-    ],
-    byDefault: ['sidePosition is set to left', 'switchAt prop is set to lg'],
-    examplesOfUse: [
+      'sidePosition is set to left',
+      'switchAt prop is set to lg',
       'creating a layout with a collapsible navigation sidebar',
       'displaying filters or tools alongside main content',
       'building dashboards where the side panel supplements the primary view',

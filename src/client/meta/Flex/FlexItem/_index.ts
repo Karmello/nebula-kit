@@ -11,16 +11,10 @@ const FLEX_ITEM_META: ComponentMeta<FlexItemOwnProps> = {
     role: [
       'control per-item growth, shrink, and basis in the flex layout',
       'allow item-level alignment overrides relative to the parent',
-    ],
-    behavior: [
       'must be used inside a Flex container',
       'wraps its child with Box for consistent styling and reset',
-    ],
-    byDefault: [
       'renders as a <div> element',
       "aligns according to the parent's alignment rules unless overridden",
-    ],
-    examplesOfUse: [
       "fixing one item's width while others flex around it",
       'aligning a single child differently from siblings',
       'making an element grow or shrink independently in a shared row or column',

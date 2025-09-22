@@ -5,11 +5,11 @@ const APP_FRAME_FOOTER_META: ComponentMeta<AppFrameOwnProps> = {
   overview: {
     title: 'AppFrame.Footer (optional)',
     description: 'Defines the bottom region of AppFrame.',
-    byDefault: [
+    role: [
       'applies the secondary background',
       'ensures the region has at least 80 units of vertical height',
+      'used for legal notices, links, or supplementary information',
     ],
-    examplesOfUse: ['used for legal notices, links, or supplementary information'],
     composedOf: ['Box'],
     rendersAs: ['footer'],
   },

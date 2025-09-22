@@ -14,17 +14,11 @@ const GRID_META: ComponentMeta<GridOwnProps> = {
       'provide a CSS Grid-based layout wrapper',
       'establish rows and columns to align and distribute children',
       'manage spacing between items with gap properties',
-    ],
-    behavior: [
       'always applies display: grid',
       'uses Box internally to ensure consistent reset and baseline styles',
-    ],
-    byDefault: [
       'renders as a <div> element',
       'arranges children into a single column',
       'does not apply any gap between children',
-    ],
-    examplesOfUse: [
       'creating two-dimensional layouts with rows and columns',
       'aligning items consistently across multiple rows',
       'building responsive page sections',

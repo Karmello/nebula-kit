@@ -14,7 +14,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const elemToString = elemToStringService()
 
   const {
-    overview: { title, description, role, behavior, byDefault, examplesOfUse, composedOf, rendersAs },
+    overview: { title, description, role, composedOf, rendersAs },
     examples,
     props,
   } = meta
@@ -24,9 +24,6 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       <Text typography="lead">{description}</Text>
       {examples?.[0] ? <CodeSnippet code={elemToString(examples[0].jsx)} /> : null}
       {role ? <ListWithHeading heading="Role:" items={role} /> : null}
-      {behavior ? <ListWithHeading heading="Behavior:" items={behavior} /> : null}
-      {byDefault ? <ListWithHeading heading="By default:" items={byDefault} /> : null}
-      {examplesOfUse ? <ListWithHeading heading="Examples of use:" items={examplesOfUse} /> : null}
       {rendersAs ? (
         <ListWithChips heading="Renders as:" items={rendersAs as string[]} intent="danger" />
       ) : null}

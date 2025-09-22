@@ -11,14 +11,11 @@ const SECTION_META: ComponentMeta<SectionOwnProps> = {
     role: [
       'groups related content into a distinct, semantic block',
       'separates content visually with a divider and spacing',
-    ],
-    behavior: ['requires children', 'requires a heading prop'],
-    byDefault: [
+      'requires children',
+      'requires a heading prop',
       'renders as a <section> element',
       'renders the heading as a Text component with h6 typography',
       'renders a horizontal divider',
-    ],
-    examplesOfUse: [
       'separating content areas',
       'breaking long content into titled sections for readability',
       'organizing dashboard widgets with headings',

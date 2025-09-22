@@ -5,7 +5,7 @@ const SPLIT_VIEW_MAIN_BAR_META: ComponentMeta<SplitViewMainBarProps> = {
   overview: {
     title: 'SplitView.MainBar (optional)',
     description: 'Optional horizontal slot above main content.',
-    byDefault: ['renders as <div> element'],
+    role: ['renders as <div> element'],
     composedOf: ['Box'],
   },
 }

@@ -14,8 +14,6 @@ const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
     role: [
       'structure the application into top, center, and bottom regions',
       'control how those regions are arranged and related',
-    ],
-    examplesOfUse: [
       'wrap an application layout that needs a persistent header and footer around the main content',
     ],
     composedOf: ['Grid'],

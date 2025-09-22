@@ -11,14 +11,11 @@ const BOX_META: ComponentMeta<BoxOwnProps> = {
     role: [
       'acts as the surface foundation that higher-level components (e.g. Flex, Grid, Table) render under the hood',
       'provides optional interactivity (hover, focus, press states) for clickable or focusable surfaces',
-    ],
-    behavior: ['inherits all HtmlTag props', 'accepts optional children and props'],
-    byDefault: [
+      'inherits all HtmlTag props',
+      'accepts optional children and props',
       'renders as a block-level <div>',
       'uses ghost variant with neutral intent',
       'applies zero spacing',
-    ],
-    examplesOfUse: [
       "use as a simple wrapper, the way you'd normally reach for a div",
       "use when you need a semantic element that isn't yet provided as a dedicated component in the library",
       'use as the base building block when creating your own custom component',

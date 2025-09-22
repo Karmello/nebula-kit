@@ -12,10 +12,9 @@ const TEXT_META: ComponentMeta<TextProps> = {
       'render semantic text elements with consistent typography',
       'provide common text styling and formatting options',
       'allow integration of inline icons alongside text',
-    ],
-    behavior: ['requires children'],
-    byDefault: ['renders as a <p> tag', 'uses neutral text intent'],
-    examplesOfUse: [
+      'requires children',
+      'renders as a <p> tag',
+      'uses neutral text intent',
       'display body copy, captions, and headings',
       'present truncated or clamped snippets of text',
       'combine text with icons for labels or actions',

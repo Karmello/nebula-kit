@@ -4,9 +4,6 @@ type Overview = {
   title?: string
   description: string
   role?: string[]
-  behavior?: string[]
-  byDefault?: string[]
-  examplesOfUse?: string[]
   composedOf?: string[]
   rendersAs?: readonly string[]
 }

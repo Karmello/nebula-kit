@@ -11,11 +11,9 @@ const HYDRATION_GATE_META: ComponentMeta<HydrationGateProps> = {
     role: [
       'acts as a wrapper that delays visibility of the app until hydration is complete',
       'provides an escape hatch for SSR users to prevent first-paint flicker',
-    ],
-    behavior: [
       'children are rendered immediately so their effects can run, but remain hidden until hydration completes',
+      'building an app with SSR where initial flicker of unstyled components is unacceptable',
     ],
-    examplesOfUse: ['building an app with SSR where initial flicker of unstyled components is unacceptable'],
   },
   props: HYDRATION_GATE_PROPS_META,
   examples: HYDRATION_GATE_EXAMPLES_META,
