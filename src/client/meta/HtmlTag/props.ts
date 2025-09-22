@@ -7,7 +7,7 @@ const HTML_TAG_PROPS_META: ComponentMeta<HtmlTagProps<ElementType>>['props'] = {
   tag: {
     options: ['HTML tag'],
     defaultValue: 'div',
-    description: 'Specifies the HTML tag that will be rendered as the container.',
+    description: 'The HTML tag to be rendered as the container.',
   },
   tagAttrs: {
     options: ['HTML tag attributes'],

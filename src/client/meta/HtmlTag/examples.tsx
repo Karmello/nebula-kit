@@ -5,12 +5,12 @@ import { HtmlTag, HtmlTagProps } from 'lib/components'
 
 const HTML_TAG_EXAMPLES_META: ComponentMeta<HtmlTagProps<ElementType>>['examples'] = [
   {
-    description: 'HtmlTag renders a div tag by default.',
+    description: 'Renders a <div> tag.',
     jsx: <HtmlTag />,
     noSandBox: true,
   },
   {
-    description: 'When tag="a", all <a> tag attributes are available on tagAttrs.',
+    description: 'Setting the tag prop to "a" makes <a> tag attributes available on tagAttrs.',
     jsx: <HtmlTag tag="a" tagAttrs={{ href: '...' }} />,
     noSandBox: true,
   },

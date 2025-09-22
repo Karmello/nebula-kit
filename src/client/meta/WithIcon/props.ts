@@ -17,7 +17,7 @@ const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
     defaultValue: DEFAULT_WITH_ICON_ICON_POSITION,
     isRequired: false,
     isResponsive: false,
-    description: 'Controls how the icon is aligned relative to the children.',
+    description: 'Icon position relative to children.',
   },
   tagAttrs: HTML_TAG_PROPS_META['tagAttrs'],
   tagRef: HTML_TAG_PROPS_META['tagRef'],

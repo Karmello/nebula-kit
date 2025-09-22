@@ -7,18 +7,11 @@ import { BOX_EXAMPLES_META } from './examples'
 const BOX_META: ComponentMeta<BoxOwnProps> = {
   overview: {
     title:
-      'A foundational surface component that exposes a curated set of core CSS properties - appearance, spacing, sizing, and positioning - so you can style a plain block-level element directly in JSX.',
+      'Foundational surface component that exposes a curated set of core CSS properties - appearance, spacing, sizing, and positioning - so you can style a plain block-level element directly in JSX.',
     description: [
-      'acts as the surface foundation that higher-level components (e.g. Flex, Grid, Table) render under the hood',
+      'acts as the surface foundation that higher-level components (e.g. Flex, Grid) render under the hood',
       'provides optional interactivity (hover, focus, press states) for clickable or focusable surfaces',
-      'inherits all HtmlTag props',
-      'accepts optional children and props',
-      'renders as a block-level <div>',
-      'uses ghost variant with neutral intent',
-      'applies zero spacing',
-      "use as a simple wrapper, the way you'd normally reach for a div",
-      "use when you need a semantic element that isn't yet provided as a dedicated component in the library",
-      'use as the base building block when creating your own custom component',
+      "can be used as a simple wrapper, similar to how you'd normally reach for <div>",
     ],
     composedOf: ['HtmlTag'],
   },

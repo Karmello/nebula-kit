@@ -6,8 +6,7 @@ App.displayName = 'App'
 
 const NEBKIT_PROVIDER_EXAMPLES_META: ComponentMeta<NebkitProviderProps>['examples'] = [
   {
-    description:
-      "Wraps the entire application with NebkitProvider to enable Nebula-kit's global configuration and defaults.",
+    description: 'Wraps the entire application.',
     jsx: (
       <NebkitProvider>
         <App />
@@ -16,7 +15,7 @@ const NEBKIT_PROVIDER_EXAMPLES_META: ComponentMeta<NebkitProviderProps>['example
     noSandBox: true,
   },
   {
-    description: 'Wraps the application with NebkitProvider and applies the dark theme as the default.',
+    description: 'Wraps the entire application and sets the dark theme.',
     jsx: (
       <NebkitProvider defaultTheme="dark">
         <App />

@@ -6,15 +6,8 @@ import { ICON_EXAMPLES_META } from './examples'
 
 const ICON_META: ComponentMeta<IconProps> = {
   overview: {
-    title: 'A wrapper that renders an SVG from the icon set by name and applies system styles.',
-    description: [
-      'resolve icon by name',
-      'apply sizing and color',
-      'name is required to resolve and render the correct icon',
-      'render an icon on its own when only the symbol is needed',
-      'compose new components that require direct icon control',
-      'access the raw SVG for custom sizing or color overrides',
-    ],
+    title: 'SVG icon from the "Lucide React" set.',
+    description: ['exposes a subset of icons provided by "Lucide React"'],
   },
   props: ICON_PROPS_META,
   examples: ICON_EXAMPLES_META,

@@ -5,7 +5,7 @@ import { BoxOwnProps } from 'lib/components/base/Box/definitions'
 const BOX_EXAMPLES_META: ComponentMeta<BoxOwnProps>['examples'] = [
   {
     jsx: <Box>Default box</Box>,
-    description: 'A plain default Box with ghost variant and neutral intent.',
+    description: 'Plain default Box.',
   },
   {
     jsx: (
@@ -13,8 +13,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxOwnProps>['examples'] = [
         Box is a block
       </Box>
     ),
-    description:
-      'A Box in outline variant with primary intent, rendering as a block that stretches full width by default.',
+    description: 'Box renders as a block element that stretches to full width by default.',
   },
   {
     jsx: (
@@ -38,8 +37,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxOwnProps>['examples'] = [
         Box as inline
       </Box>
     ),
-    description:
-      "A Box rendered as inline-block, so it's only as wide as its content instead of stretching full width.",
+    description: "Box rendered as inline-block, so it's only as wide as its content.",
   },
   {
     jsx: (
@@ -47,7 +45,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxOwnProps>['examples'] = [
         Interactive Box
       </Box>
     ),
-    description: 'An example of a Box component with a solid secondary style, and interactive behavior.',
+    description: 'Box with interactive behavior.',
   },
 ]
 

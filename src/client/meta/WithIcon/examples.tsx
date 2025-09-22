@@ -8,7 +8,7 @@ const WITH_ICON_EXAMPLES_META: ComponentMeta<WithIconProps>['examples'] = [
     jsx: <WithIcon name="search">Text content</WithIcon>,
   },
   {
-    description: 'Renders the search icon aligned to the right of the provided text content.',
+    description: 'Renders the icon aligned to the right',
     jsx: (
       <WithIcon name="search" position="right">
         Text content

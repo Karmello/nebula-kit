@@ -6,8 +6,7 @@ App.displayName = 'App'
 
 const HYDRATION_GATE_EXAMPLES_META: ComponentMeta<HydrationGateProps>['examples'] = [
   {
-    description:
-      'Wrap the entire application with HydrationGate so that no content is shown until hydration completes. This prevents initial flicker in SSR environments while keeping setup minimal.',
+    description: 'Always used as a wrapper of NebkitProvider.',
     jsx: (
       <HydrationGate>
         <NebkitProvider>

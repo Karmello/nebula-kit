@@ -7,21 +7,21 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = 
     options: ['ReactElement'],
     isRequired: true,
     isResponsive: false,
-    description: 'The application or subtree wrapped by the provider.',
+    description: 'Application component to be wrapped by the provider.',
   },
   defaultTheme: {
     options: Theme as unknown as string[],
     defaultValue: Theme[0],
     isRequired: false,
     isResponsive: false,
-    description: 'Starting theme for the app.',
+    description: 'Default theme for the app.',
   },
   defaultBorderRadius: {
     options: ['ScaleValue', 'CSS'],
     defaultValue: String(DEFAULT_BORDER_RADIUS),
     isRequired: false,
     isResponsive: false,
-    description: 'Starting border radius scale or custom value.',
+    description: 'Global border radius value for components that use border radius.',
   },
 }
 
