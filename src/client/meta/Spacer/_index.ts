@@ -6,7 +6,7 @@ import { SPACER_EXAMPLES_META } from './examples'
 const SPACER_META: ComponentMeta<SpacerProps> = {
   overview: {
     title: 'A layout component that introduces controlled empty space between elements.',
-    role: [
+    description: [
       'provides consistent vertical spacing between elements',
       'improves readability by preventing content from feeling crowded',
       'acts as a structural tool for rhythm in layouts',

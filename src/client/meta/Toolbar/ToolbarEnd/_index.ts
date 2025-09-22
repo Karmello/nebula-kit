@@ -5,7 +5,7 @@ const TOOLBAR_END_META: ComponentMeta<ToolbarEndProps> = {
   overview: {
     name: 'Toolbar.End (optional)',
     title: 'The end slot of the toolbar.',
-    role: [
+    description: [
       'provides a fixed region at the end of the toolbar layout',
       'always visible, even when the main section is collapsed and hidden',
       'placing a user menu',

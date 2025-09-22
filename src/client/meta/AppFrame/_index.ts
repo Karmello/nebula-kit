@@ -11,7 +11,7 @@ import { APP_FRAME_FOOTER_META } from './AppFrameFooter/_index'
 const APP_FRAME_META: ComponentMeta<AppFrameOwnProps> = {
   overview: {
     title: 'A structural component that locks the overall layout for an application view.',
-    role: [
+    description: [
       'structure the application into top, center, and bottom regions',
       'control how those regions are arranged and related',
       'wrap an application layout that needs a persistent header and footer around the main content',

@@ -8,7 +8,7 @@ const FLEX_ITEM_META: ComponentMeta<FlexItemOwnProps> = {
   overview: {
     name: 'Flex.Item',
     title: 'Flex item represents a single child inside a Flex container.',
-    role: [
+    description: [
       'control per-item growth, shrink, and basis in the flex layout',
       'allow item-level alignment overrides relative to the parent',
       'must be used inside a Flex container',

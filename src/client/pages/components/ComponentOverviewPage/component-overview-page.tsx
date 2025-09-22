@@ -14,7 +14,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const elemToString = elemToStringService()
 
   const {
-    overview: { name, title, role, composedOf, rendersAs },
+    overview: { name, title, description, composedOf, rendersAs },
     examples,
     props,
   } = meta
@@ -23,7 +23,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
     <Flex flexDirection="column" alignItems="stretch" gap={15}>
       <Text typography="lead">{title}</Text>
       {examples?.[0] ? <CodeSnippet code={elemToString(examples[0].jsx)} /> : null}
-      {role ? <ListWithHeading heading="Role:" items={role} /> : null}
+      {description ? <ListWithHeading heading="Description:" items={description} /> : null}
       {rendersAs ? (
         <ListWithChips heading="Renders as:" items={rendersAs as string[]} intent="danger" />
       ) : null}

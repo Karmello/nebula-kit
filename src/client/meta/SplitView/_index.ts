@@ -12,7 +12,7 @@ const SPLIT_VIEW_META: ComponentMeta<SplitViewOwnProps> = {
   overview: {
     title: 'A two-panel layout designed for building side navigation alongside main content.',
     composedOf: ['Grid'],
-    role: [
+    description: [
       'provides a two-panel horizontal layout with a main content area and side panel',
       'manages side panel visibility',
       'stretches to fill the full height of its parent container',

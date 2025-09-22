@@ -9,7 +9,7 @@ const GRID_ITEM_META: ComponentMeta<GridItemOwnProps> = {
     name: 'Grid.Item',
     title:
       'Grid.Item is a child component of Grid that provides explicit control over the placement and alignment of individual items within the grid.',
-    role: [
+    description: [
       'position a child in a specific row and/or column',
       "override the item's alignment relative to its cell",
       'must be used inside a Grid container',

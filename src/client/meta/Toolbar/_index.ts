@@ -12,7 +12,7 @@ const TOOLBAR_META: ComponentMeta<ToolbarOwnProps> = {
   overview: {
     title:
       'A horizontal bar with start, main, and end slots, designed to present different types of action items.',
-    role: [
+    description: [
       'acts as a container for navigation and actions',
       'the main section is toggleable in collapsed mode and always visible in inline mode',
       'in collapsed mode, the toggle button is rendered to control the main section',

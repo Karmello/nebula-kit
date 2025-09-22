@@ -12,7 +12,7 @@ import { BUTTON_GROUP_EXAMPLES_META } from './examples'
 const BUTTON_GROUP_META: ComponentMeta<ButtonGroupOwnProps> = {
   overview: {
     title: 'A composite control that unifies several buttons into a single interface element.',
-    role: [
+    description: [
       'groups multiple buttons together into a single block',
       'provides consistent styling',
       'aligns buttons horizontally or vertically',

@@ -7,7 +7,7 @@ import { ICON_BUTTON_EXAMPLES_META } from './examples'
 const ICON_BUTTON_META: ComponentMeta<IconButtonProps> = {
   overview: {
     title: 'An interactive control that uses an icon as its primary content.',
-    role: [
+    description: [
       'render an icon as the content of a button',
       'does not accept children',
       'iconName is required',

@@ -8,7 +8,7 @@ const SECTION_META: ComponentMeta<SectionOwnProps> = {
   overview: {
     title:
       'A semantic content block with a heading, a divider, and consistent padding, used to organize related content within a page.',
-    role: [
+    description: [
       'groups related content into a distinct, semantic block',
       'separates content visually with a divider and spacing',
       'requires children',

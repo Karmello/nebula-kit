@@ -6,7 +6,7 @@ const SPLIT_VIEW_SIDE_META: ComponentMeta<SplitViewSideProps> = {
   overview: {
     name: 'SplitView.Side',
     title: 'The side panel region of the layout.',
-    role: [
+    description: [
       `sets inlineSize to ${DEFAULT_SPLIT_VIEW_SIDE_WIDTH}`,
       'sets intent to secondary in overlay mode to visually separate the side section background from the app background',
     ],

@@ -8,7 +8,7 @@ const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
   overview: {
     title:
       'A highlighted content block with a heading, icon, and supporting text, used to draw attention to important information, confirmations, warnings, or errors within a page.',
-    role: [
+    description: [
       'emphasizes key information or status within the content flow',
       'provides clear visual cues through color, icon, and heading',
       'helps users quickly distinguish between neutral notes, successes, warnings, and errors',

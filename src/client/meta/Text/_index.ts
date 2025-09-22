@@ -8,7 +8,7 @@ const TEXT_META: ComponentMeta<TextProps> = {
   overview: {
     title:
       'A foundational component for displaying and styling textual content. It ensures consistent typography across the system.',
-    role: [
+    description: [
       'render semantic text elements with consistent typography',
       'provide common text styling and formatting options',
       'allow integration of inline icons alongside text',

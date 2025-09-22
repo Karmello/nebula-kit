@@ -3,7 +3,7 @@ import { JSX } from 'react'
 type Overview = {
   name?: string
   title: string
-  role?: string[]
+  description?: string[]
   composedOf?: string[]
   rendersAs?: readonly string[]
 }
