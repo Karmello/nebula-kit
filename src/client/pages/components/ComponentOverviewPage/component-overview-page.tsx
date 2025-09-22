@@ -14,7 +14,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const elemToString = elemToStringService()
 
   const {
-    overview: { title, description, role, composedOf, rendersAs },
+    overview: { name, description, role, composedOf, rendersAs },
     examples,
     props,
   } = meta
@@ -36,8 +36,8 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
 
   return (
     <>
-      {title ? (
-        <Section heading={<Text typography="h5">{title}</Text>} variant="outline" padding={10}>
+      {name ? (
+        <Section heading={<Text typography="h5">{name}</Text>} variant="outline" padding={10}>
           {content}
         </Section>
       ) : (

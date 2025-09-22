@@ -3,7 +3,7 @@ import { AppFrameOwnProps } from 'lib/components/layouts/AppFrame/definitions'
 
 const APP_FRAME_FOOTER_META: ComponentMeta<AppFrameOwnProps> = {
   overview: {
-    title: 'AppFrame.Footer (optional)',
+    name: 'AppFrame.Footer (optional)',
     description: 'Defines the bottom region of AppFrame.',
     role: [
       'applies the secondary background',

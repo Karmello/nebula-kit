@@ -4,7 +4,7 @@ import { SplitViewSideProps } from 'lib/components/layouts/SplitView/slots/Split
 
 const SPLIT_VIEW_SIDE_META: ComponentMeta<SplitViewSideProps> = {
   overview: {
-    title: 'SplitView.Side',
+    name: 'SplitView.Side',
     description: 'The side panel region of the layout.',
     role: [
       `sets inlineSize to ${DEFAULT_SPLIT_VIEW_SIDE_WIDTH}`,

@@ -6,7 +6,7 @@ import { FLEX_ITEM_PROPS_META } from './props'
 
 const FLEX_ITEM_META: ComponentMeta<FlexItemOwnProps> = {
   overview: {
-    title: 'Flex.Item',
+    name: 'Flex.Item',
     description: 'Flex item represents a single child inside a Flex container.',
     role: [
       'control per-item growth, shrink, and basis in the flex layout',

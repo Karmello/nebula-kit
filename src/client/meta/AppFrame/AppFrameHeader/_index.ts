@@ -4,7 +4,7 @@ import { AppFrameOwnProps } from 'lib/components/layouts/AppFrame/definitions'
 
 const APP_FRAME_HEADER_META: ComponentMeta<AppFrameOwnProps> = {
   overview: {
-    title: 'AppFrame.Header',
+    name: 'AppFrame.Header',
     description: 'Defines the top region of AppFrame.',
     role: [
       'applies the secondary background',

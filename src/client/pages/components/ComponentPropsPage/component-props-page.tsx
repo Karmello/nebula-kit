@@ -18,7 +18,7 @@ export const ComponentPropsPage = () => {
     meta[itemKeyPascal][key].props ? (
       <PropsTable
         key={key}
-        category={metaKeys.length > 1 ? meta[itemKeyPascal][key].overview.title : undefined}
+        category={metaKeys.length > 1 ? meta[itemKeyPascal][key].overview.name : undefined}
         data={meta[itemKeyPascal][key].props}
       />
     ) : null

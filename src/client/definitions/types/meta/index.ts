@@ -1,7 +1,7 @@
 import { JSX } from 'react'
 
 type Overview = {
-  title?: string
+  name?: string
   description: string
   role?: string[]
   composedOf?: string[]

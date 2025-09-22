@@ -3,7 +3,7 @@ import { MarkerListOwnProps } from 'lib/components/elements/MarkerList/definitio
 
 const MARKER_LIST_ITEM_META: ComponentMeta<MarkerListOwnProps> = {
   overview: {
-    title: 'MarkerList.Item',
+    name: 'MarkerList.Item',
     description: 'Represents an individual element within a MarkerList.',
     composedOf: ['Box'],
     rendersAs: ['li'],
