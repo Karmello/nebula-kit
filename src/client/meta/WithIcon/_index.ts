@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { WithIconProps } from 'lib/components/utility/WithIcon/definitions'
+import { WithIconProps } from 'lib/components/elements/WithIcon/definitions'
 
 import { WITH_ICON_PROPS_META } from './props'
 import { WITH_ICON_EXAMPLES_META } from './examples'

@@ -1,6 +1,4 @@
-import { IconProps } from 'lib/components'
-
-import { HtmlTagProps } from '../HtmlTag'
+import { HtmlTagProps, IconProps } from 'lib/components'
 
 export const DEFAULT_WITH_ICON_ICON_POSITION: IconPosition = 'left'
 export const IconPosition = ['left', 'right'] as const

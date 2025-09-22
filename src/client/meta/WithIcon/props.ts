@@ -4,7 +4,7 @@ import {
   DEFAULT_WITH_ICON_ICON_POSITION,
   IconPosition,
   WithIconProps,
-} from 'lib/components/utility/WithIcon/definitions'
+} from 'lib/components/elements/WithIcon/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { ICON_PROPS_META } from '../Icon/props'

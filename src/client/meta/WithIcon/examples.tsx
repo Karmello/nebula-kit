@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { WithIcon } from 'lib/components'
-import { WithIconProps } from 'lib/components/utility/WithIcon/definitions'
+import { WithIconProps } from 'lib/components/elements/WithIcon/definitions'
 
 const WITH_ICON_EXAMPLES_META: ComponentMeta<WithIconProps>['examples'] = [
   {
