@@ -5,7 +5,9 @@ export const ListWithHeading = ({ heading, items }: { heading: string; items: st
     <Text bold>{heading}</Text>
     <MarkerList listStyle="circle">
       {items.map((s, i) => (
-        <MarkerList.Item key={i}>{s}</MarkerList.Item>
+        <MarkerList.Item key={i}>
+          <Text>{s}</Text>
+        </MarkerList.Item>
       ))}
     </MarkerList>
   </Flex>
