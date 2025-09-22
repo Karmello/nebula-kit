@@ -19,9 +19,12 @@ const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
     isResponsive: false,
     description: 'Controls how the icon is aligned relative to the children.',
   },
-  children: HTML_TAG_PROPS_META['children'],
   tagAttrs: HTML_TAG_PROPS_META['tagAttrs'],
   tagRef: HTML_TAG_PROPS_META['tagRef'],
+  children: {
+    ...HTML_TAG_PROPS_META['children'],
+    isRequired: true,
+  },
 }
 
 export { WITH_ICON_PROPS_META }

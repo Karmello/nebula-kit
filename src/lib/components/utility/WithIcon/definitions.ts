@@ -7,10 +7,14 @@ export const IconPosition = ['left', 'right'] as const
 
 export type IconPosition = (typeof IconPosition)[number]
 
-export type WithIconOwnProps = {
+type WithIconOwnProps = {
   position?: IconPosition
 }
 
-export type WithIconProps = Omit<HtmlTagProps<'span'>, 'tag'> &
-  Pick<IconProps, 'name' | 'size'> &
-  WithIconOwnProps
+type PropsFromIcon = Pick<IconProps, 'name' | 'size'>
+
+type PropsFromHtmlTag = Omit<HtmlTagProps<'span'>, 'tag' | 'children'> & {
+  children: HtmlTagProps<'span'>['children']
+}
+
+export type WithIconProps = WithIconOwnProps & PropsFromIcon & PropsFromHtmlTag

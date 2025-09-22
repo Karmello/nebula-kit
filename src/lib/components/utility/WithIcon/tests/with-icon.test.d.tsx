@@ -2,16 +2,13 @@ import { expectType, expectError } from 'tsd'
 
 import { WithIcon } from '../'
 
-// some props are required
-expectError(<WithIcon />)
+// children are required
+expectError(<WithIcon name="check" />)
 
 // wrong name value not allowed
-expectError(<WithIcon name="xyz" />)
+expectError(<WithIcon name="xyz">children</WithIcon>)
 
 // right name value allowed
-expectType(<WithIcon name="check" />)
-
-// passing children along with icon
 expectType(<WithIcon name="check">children</WithIcon>)
 
 // wrong position value not allowed

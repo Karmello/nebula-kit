@@ -8,12 +8,6 @@ const WITH_ICON_META: ComponentMeta<WithIconProps> = {
   overview: {
     description: 'A wrapper that positions an icon in line with its content.',
     role: ['insert an icon', 'render children exactly as passed'],
-    behavior: [
-      'wraps the icon and children in a <span> element',
-      'iconName is required to render an icon',
-      'if no children are provided, only the icon is rendered',
-    ],
-    byDefault: ['iconPosition defaults to left'],
     examplesOfUse: [
       'add an icon to text or inline content',
       'compose higher-level components that support icons',
