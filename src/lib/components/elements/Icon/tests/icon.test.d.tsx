@@ -5,20 +5,20 @@ import { Icon } from '../'
 // some props required
 expectError(<Icon />)
 
-// wrong iconName value not allowed
-expectError(<Icon iconName="xyz" />)
+// wrong name value not allowed
+expectError(<Icon name="xyz" />)
 
-// right iconName value allowed
-expectType(<Icon iconName="check" />)
+// right name value allowed
+expectType(<Icon name="check" />)
 
-// wrong iconSize not allowed
-expectError(<Icon iconName="check" iconSize={81} />)
+// wrong size not allowed
+expectError(<Icon name="check" size={81} />)
 
-// right iconSize allowed
-expectType(<Icon iconName="check" iconSize={80} />)
+// right size allowed
+expectType(<Icon name="check" size={80} />)
 
-// wrong iconIntent not allowed
-expectError(<Icon iconName="check" iconSize={10} iconIntent="xyz" />)
+// wrong intent not allowed
+expectError(<Icon name="check" size={10} intent="xyz" />)
 
 // right iconIntent allowed
-expectType(<Icon iconName="check" iconSize={10} iconIntent="primary" />)
+expectType(<Icon name="check" size={10} intent="primary" />)

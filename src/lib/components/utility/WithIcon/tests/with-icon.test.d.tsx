@@ -5,32 +5,32 @@ import { WithIcon } from '../'
 // some props are required
 expectError(<WithIcon />)
 
-// wrong iconName value not allowed
-expectError(<WithIcon iconName="xyz" />)
+// wrong name value not allowed
+expectError(<WithIcon name="xyz" />)
 
-// right iconName value allowed
-expectType(<WithIcon iconName="check" />)
+// right name value allowed
+expectType(<WithIcon name="check" />)
 
 // passing children along with icon
-expectType(<WithIcon iconName="check">children</WithIcon>)
+expectType(<WithIcon name="check">children</WithIcon>)
 
-// wrong iconPosition value not allowed
+// wrong position value not allowed
 expectError(
-  <WithIcon iconName="check" iconPosition="center">
+  <WithIcon name="check" position="center">
     children
   </WithIcon>
 )
 
-// right iconPosition value allowed
+// right position value allowed
 expectType(
-  <WithIcon iconName="check" iconPosition="right">
+  <WithIcon name="check" position="right">
     children
   </WithIcon>
 )
 
 // attrs for <a> not allowed when tag = <span>
 expectError(
-  <WithIcon iconName="check" tagAttrs={{ href: 'href' }}>
+  <WithIcon name="check" tagAttrs={{ href: 'href' }}>
     children
   </WithIcon>
 )

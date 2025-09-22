@@ -54,6 +54,7 @@ export type TextOwnProps = {
 
 export type TextProps<T extends TextTag = 'p'> = Omit<HtmlTagProps<T>, 'children'> & {
   children: HtmlTagProps<T>['children']
-} & Pick<BoxProps<T>, 'intent' | 'textAlign'> &
-  Pick<Partial<WithIconProps>, 'iconName' | 'iconPosition'> &
-  TextOwnProps
+} & Pick<BoxProps<T>, 'intent' | 'textAlign'> & {
+    iconName?: WithIconProps['name']
+    iconPosition?: WithIconProps['position']
+  } & TextOwnProps

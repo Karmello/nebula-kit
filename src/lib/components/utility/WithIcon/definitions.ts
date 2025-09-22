@@ -8,9 +8,9 @@ export const IconPosition = ['left', 'right'] as const
 export type IconPosition = (typeof IconPosition)[number]
 
 export type WithIconOwnProps = {
-  iconPosition?: IconPosition
+  position?: IconPosition
 }
 
 export type WithIconProps = Omit<HtmlTagProps<'span'>, 'tag'> &
-  Pick<IconProps, 'iconName' | 'iconSize'> &
+  Pick<IconProps, 'name' | 'size'> &
   WithIconOwnProps

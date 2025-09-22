@@ -64,11 +64,7 @@ export const Text = <T extends TextTag = 'p'>({
       textAlign={textAlign}
     >
       {iconName ? (
-        <WithIcon
-          iconName={iconName}
-          iconPosition={iconPosition}
-          iconSize={TEXT_TYPOGRAPHY_CONFIG[typography].iconSize}
-        >
+        <WithIcon name={iconName} position={iconPosition} size={TEXT_TYPOGRAPHY_CONFIG[typography].iconSize}>
           {children}
         </WithIcon>
       ) : (

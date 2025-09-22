@@ -51,10 +51,10 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
   intent: BOX_PROPS_META['intent'] as never,
   textAlign: BOX_PROPS_META['textAlign'] as never,
   iconName: {
-    ...WITH_ICON_PROPS_META['iconName'],
+    ...WITH_ICON_PROPS_META['name'],
     isRequired: false,
   } as never,
-  iconPosition: WITH_ICON_PROPS_META['iconPosition'] as never,
+  iconPosition: WITH_ICON_PROPS_META['position'] as never,
   ...HTML_TAG_PROPS_META,
   children: {
     ...HTML_TAG_PROPS_META['children'],
