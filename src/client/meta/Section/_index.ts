@@ -6,7 +6,7 @@ import { SECTION_EXAMPLES_META } from './examples'
 
 const SECTION_META: ComponentMeta<SectionOwnProps> = {
   overview: {
-    description:
+    title:
       'A semantic content block with a heading, a divider, and consistent padding, used to organize related content within a page.',
     role: [
       'groups related content into a distinct, semantic block',

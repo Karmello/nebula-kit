@@ -8,7 +8,7 @@ import { MARKER_LIST_ITEM_META } from './MarkerListItem/_index'
 
 const MARKER_LIST_META: ComponentMeta<MarkerListOwnProps> = {
   overview: {
-    description: 'A semantic list component that displays native markers for its items.',
+    title: 'A semantic list component that displays native markers for its items.',
     role: [
       'establishes a semantic list container with native markers',
       'ensures each item is rendered as part of an accessible list structure',

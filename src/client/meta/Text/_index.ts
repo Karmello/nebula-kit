@@ -6,7 +6,7 @@ import { TEXT_EXAMPLES_META } from './examples'
 
 const TEXT_META: ComponentMeta<TextProps> = {
   overview: {
-    description:
+    title:
       'A foundational component for displaying and styling textual content. It ensures consistent typography across the system.',
     role: [
       'render semantic text elements with consistent typography',

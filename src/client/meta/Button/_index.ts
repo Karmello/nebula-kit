@@ -7,7 +7,7 @@ import { BUTTON_EXAMPLES_META } from './examples'
 
 const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
   overview: {
-    description:
+    title:
       'The primary interactive control for triggering actions, combining surface and text systems to provide a consistent, accessible entry point for user interaction.',
     role: [
       'provide a consistent, accessible trigger for user actions',

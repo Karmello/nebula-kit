@@ -4,7 +4,7 @@ import { ToolbarStartProps } from 'lib/components'
 const TOOLBAR_START_META: ComponentMeta<ToolbarStartProps> = {
   overview: {
     name: 'Toolbar.Start (optional)',
-    description: 'The start slot of the toolbar.',
+    title: 'The start slot of the toolbar.',
     role: [
       'provides a fixed region at the beginning of the toolbar layout',
       'always visible, even when the main section is collapsed and hidden',

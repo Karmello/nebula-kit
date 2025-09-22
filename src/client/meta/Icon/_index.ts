@@ -6,7 +6,7 @@ import { ICON_EXAMPLES_META } from './examples'
 
 const ICON_META: ComponentMeta<IconProps> = {
   overview: {
-    description: 'A wrapper that renders an SVG from the icon set by name and applies system styles.',
+    title: 'A wrapper that renders an SVG from the icon set by name and applies system styles.',
     role: [
       'resolve icon by name',
       'apply sizing and color',

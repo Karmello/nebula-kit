@@ -7,7 +7,7 @@ import { GRID_ITEM_EXAMPLES_META } from './examples'
 const GRID_ITEM_META: ComponentMeta<GridItemOwnProps> = {
   overview: {
     name: 'Grid.Item',
-    description:
+    title:
       'Grid.Item is a child component of Grid that provides explicit control over the placement and alignment of individual items within the grid.',
     role: [
       'position a child in a specific row and/or column',

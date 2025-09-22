@@ -6,7 +6,7 @@ import { CALLOUT_EXAMPLES_META } from './examples'
 
 const CALLOUT_META: ComponentMeta<CalloutOwnProps> = {
   overview: {
-    description:
+    title:
       'A highlighted content block with a heading, icon, and supporting text, used to draw attention to important information, confirmations, warnings, or errors within a page.',
     role: [
       'emphasizes key information or status within the content flow',

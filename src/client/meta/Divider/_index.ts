@@ -6,7 +6,7 @@ import { DIVIDER_EXAMPLES_META } from './examples'
 
 const DIVIDER_META: ComponentMeta<DividerOwnProps> = {
   overview: {
-    description: 'A visual element that marks a boundary between sections of content.',
+    title: 'A visual element that marks a boundary between sections of content.',
     role: [
       'creates clear visual separation to reduce scanning effort',
       'marks a thematic break between related blocks of content',

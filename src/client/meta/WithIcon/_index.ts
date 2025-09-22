@@ -6,7 +6,7 @@ import { WITH_ICON_EXAMPLES_META } from './examples'
 
 const WITH_ICON_META: ComponentMeta<WithIconProps> = {
   overview: {
-    description: 'A wrapper that positions an icon in line with its content.',
+    title: 'A wrapper that positions an icon in line with its content.',
     role: [
       'insert an icon',
       'render children exactly as passed',

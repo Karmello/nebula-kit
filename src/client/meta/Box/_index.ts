@@ -6,7 +6,7 @@ import { BOX_EXAMPLES_META } from './examples'
 
 const BOX_META: ComponentMeta<BoxOwnProps> = {
   overview: {
-    description:
+    title:
       'A foundational surface component that exposes a curated set of core CSS properties - appearance, spacing, sizing, and positioning - so you can style a plain block-level element directly in JSX.',
     role: [
       'acts as the surface foundation that higher-level components (e.g. Flex, Grid, Table) render under the hood',

@@ -6,7 +6,7 @@ import { NEBKIT_PROVIDER_EXAMPLES_META } from './examples'
 
 const NEBKIT_PROVIDER_META: ComponentMeta<NebkitProviderProps> = {
   overview: {
-    description: 'The root setup component for Nebula-kit.',
+    title: 'The root setup component for Nebula-kit.',
     role: [
       'provide a consistent context for all Nebula-kit components to operate within',
       'initialize global configuration and keep theme tokens in sync with the environment',

@@ -8,7 +8,7 @@ import { GRID_ITEM_META } from './GridItem/_index'
 
 const GRID_META: ComponentMeta<GridOwnProps> = {
   overview: {
-    description:
+    title:
       'A layout component built on CSS Grid, providing a flexible two-dimensional system for arranging content into rows and columns with consistent spacing and alignment.',
     role: [
       'provide a CSS Grid-based layout wrapper',

@@ -6,7 +6,7 @@ import { HYDRATION_GATE_EXAMPLES_META } from './examples'
 
 const HYDRATION_GATE_META: ComponentMeta<HydrationGateProps> = {
   overview: {
-    description:
+    title:
       'A top-level utility component for SSR setups preventing flashes of unstyled or mismatched content.',
     role: [
       'acts as a wrapper that delays visibility of the app until hydration is complete',

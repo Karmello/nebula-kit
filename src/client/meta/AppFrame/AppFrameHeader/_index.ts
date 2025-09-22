@@ -5,7 +5,7 @@ import { AppFrameOwnProps } from 'lib/components/layouts/AppFrame/definitions'
 const APP_FRAME_HEADER_META: ComponentMeta<AppFrameOwnProps> = {
   overview: {
     name: 'AppFrame.Header',
-    description: 'Defines the top region of AppFrame.',
+    title: 'Defines the top region of AppFrame.',
     role: [
       'applies the secondary background',
       `ensures the region has at least ${BUTTON_SIZE_CONFIG[DEFAULT_BUTTON_SIZE].blockSize} units of vertical height`,
