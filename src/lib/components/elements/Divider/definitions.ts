@@ -1,11 +1,12 @@
 import { ScaleValue } from 'lib/definitions'
-import { BoxProps, HtmlTagProps } from 'lib/components'
+import { HtmlTagProps } from 'lib/components'
 import { BoxIntent } from 'lib/components/base/Box/definitions'
 
 export const DEFAULT_DIVIDER_INTENT: BoxIntent = 'tertiary'
 export const DEFAULT_DIVIDER_THICKNESS = 1
 
 export type DividerOwnProps = {
+  intent?: BoxIntent
   thickness?: ScaleValue | string
 }
 
@@ -14,8 +15,4 @@ type PropsFromHtmlTag = {
   tagRef?: HtmlTagProps<'hr'>['tagRef']
 }
 
-type PropsFromBox = {
-  intent?: BoxIntent
-}
-
-export type DividerProps = PropsFromHtmlTag & PropsFromBox & DividerOwnProps
+export type DividerProps = PropsFromHtmlTag & DividerOwnProps
