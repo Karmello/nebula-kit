@@ -4,7 +4,7 @@ import { MarkerListOwnProps } from 'lib/components/elements/MarkerList/definitio
 
 const MARKER_LIST_EXAMPLES_META: ComponentMeta<MarkerListOwnProps>['examples'] = [
   {
-    description: 'Displays a basic list with two items.',
+    description: 'Basic MarkerList with two list items.',
     jsx: (
       <MarkerList>
         <MarkerList.Item>Item 1</MarkerList.Item>
@@ -13,16 +13,16 @@ const MARKER_LIST_EXAMPLES_META: ComponentMeta<MarkerListOwnProps>['examples'] =
     ),
   },
   {
-    description: 'Shows a list with circular markers and custom spacing between items.',
+    description: 'MarkerList with circular markers and custom spacing between items.',
     jsx: (
-      <MarkerList listStyle="circle" gap={10}>
+      <MarkerList listStyle="circle" rowGap={10}>
         <MarkerList.Item>Item 1</MarkerList.Item>
         <MarkerList.Item>Item 2</MarkerList.Item>
       </MarkerList>
     ),
   },
   {
-    description: 'Displays a numbered list where each item contains a styled box.',
+    description: 'Numbered MarkerList where each item contains a styled Box.',
     jsx: (
       <MarkerList listStyle="decimal">
         <MarkerList.Item>

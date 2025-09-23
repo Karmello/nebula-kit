@@ -17,7 +17,7 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = 
     description: 'Default theme for the app.',
   },
   defaultBorderRadius: {
-    options: ['ScaleValue', 'CSS'],
+    options: ['CSS', 'ScaleValue'],
     defaultValue: String(DEFAULT_BORDER_RADIUS),
     isRequired: false,
     isResponsive: false,
