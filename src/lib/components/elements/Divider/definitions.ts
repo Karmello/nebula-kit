@@ -1,5 +1,5 @@
 import { ScaleValue } from 'lib/definitions'
-import { BoxProps } from 'lib/components'
+import { BoxProps, HtmlTagProps } from 'lib/components'
 import { BoxIntent } from 'lib/components/base/Box/definitions'
 
 export const DEFAULT_DIVIDER_INTENT: BoxIntent = 'tertiary'
@@ -9,10 +9,13 @@ export type DividerOwnProps = {
   thickness?: ScaleValue | string
 }
 
-export const DIVIDER_INHERITED_PROPS = {
-  Box: ['tagAttrs', 'tagRef', 'intent'] as const satisfies readonly (keyof BoxProps<'hr'>)[],
+type PropsFromHtmlTag = {
+  tagAttrs?: HtmlTagProps<'hr'>['tagAttrs']
+  tagRef?: HtmlTagProps<'hr'>['tagRef']
 }
 
-export type DividerInheritedProps = Pick<BoxProps<'hr'>, (typeof DIVIDER_INHERITED_PROPS)['Box'][number]>
+type PropsFromBox = {
+  intent?: BoxIntent
+}
 
-export type DividerProps = DividerOwnProps & DividerInheritedProps
+export type DividerProps = PropsFromHtmlTag & PropsFromBox & DividerOwnProps

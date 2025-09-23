@@ -1,7 +1,7 @@
+import { createRef } from 'react'
 import { expectType, expectError } from 'tsd'
 
 import { Icon } from '../'
-import { createRef } from 'react'
 
 // some props required
 expectError(<Icon />)

@@ -4,17 +4,15 @@ import { DividerOwnProps } from 'lib/components/elements/Divider/definitions'
 
 const DIVIDER_EXAMPLES_META: ComponentMeta<DividerOwnProps>['examples'] = [
   {
-    description:
-      'By default, renders a horizontal line with standard thickness (scale 1) and tertiary intent.',
+    description: 'Default Divider.',
     jsx: <Divider />,
   },
   {
-    description: 'Renders a horizontal line with thickness set to scale 3 and primary intent.',
+    description: 'Divider with custom thickness and intent.',
     jsx: <Divider thickness={3} intent="primary" />,
   },
   {
-    description:
-      'A divider placed directly under a heading to visually separate the title from the content that follows.',
+    description: 'Divider placed directly under heading.',
     jsx: (
       <>
         <Text typography="h6">Heading</Text>
