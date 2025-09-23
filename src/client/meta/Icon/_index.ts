@@ -8,6 +8,7 @@ const ICON_META: ComponentMeta<IconProps> = {
   overview: {
     title: 'SVG icon from the "Lucide React" set.',
     description: ['exposes a subset of icons provided by "Lucide React"'],
+    rendersAs: ['Svg'],
   },
   props: ICON_PROPS_META,
   examples: ICON_EXAMPLES_META,

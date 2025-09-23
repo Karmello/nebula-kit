@@ -8,6 +8,7 @@ const WITH_ICON_META: ComponentMeta<WithIconProps> = {
   overview: {
     title: 'Wrapper that positions an icon in line with its content.',
     description: ['renders an icon next to the children passed, either on the left or right'],
+    composedOf: ['HtmlTag'],
     rendersAs: ['span'],
   },
   props: WITH_ICON_PROPS_META,

@@ -24,10 +24,10 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       <Text typography="lead">{title}</Text>
       {examples?.[0] ? <CodeSnippet code={elemToString(examples[0].jsx)} /> : null}
       {description ? <ListWithHeading heading="Description:" items={description} /> : null}
+      {composedOf ? <ListWithChips heading="Composed of:" items={composedOf} intent="warning" /> : null}
       {rendersAs ? (
         <ListWithChips heading="Renders as:" items={rendersAs as string[]} intent="danger" />
       ) : null}
-      {composedOf ? <ListWithChips heading="Composed of:" items={composedOf} intent="warning" /> : null}
       {props ? (
         <ListWithChips heading="Props:" items={Object.keys(props).sort((a, b) => a.localeCompare(b))} />
       ) : null}

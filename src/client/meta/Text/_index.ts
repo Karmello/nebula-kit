@@ -13,6 +13,7 @@ const TEXT_META: ComponentMeta<TextProps> = {
       'provides common text styling and formatting options',
       'allows integration of inline icons alongside text',
     ],
+    composedOf: ['Box', 'WithIcon'],
     rendersAs: TextTag,
   },
   props: TEXT_PROPS_META,
