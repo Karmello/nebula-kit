@@ -16,6 +16,12 @@ describe('Flex', () => {
     expect(flex).toHaveClass('neb-flex')
   })
 
+  it('renders as <div> by default', () => {
+    render(<Flex tagAttrs={{ 'data-testid': 'elem' }}>children</Flex>)
+    const el = screen.getByTestId('elem')
+    expect(el.tagName.toLowerCase()).toBe('div')
+  })
+
   it('applies tag prop', () => {
     render(
       <Flex tag="section" tagAttrs={{ 'data-testid': 'flex' }}>

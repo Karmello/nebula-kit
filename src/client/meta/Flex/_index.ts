@@ -1,28 +1,19 @@
 import { ComponentMeta } from 'client/definitions'
-import { FlexOwnProps } from 'lib/components/layout-base/Flex/definitions'
+import { FlexProps } from 'lib/components/layout-base/Flex/definitions'
 
 import { FLEX_PROPS_META } from './props'
 import { FLEX_EXAMPLES_META } from './examples'
 
 import { FLEX_ITEM_META } from './FlexItem/_index'
 
-const FLEX_META: ComponentMeta<FlexOwnProps> = {
+const FLEX_META: ComponentMeta<FlexProps> = {
   overview: {
     title:
-      'A layout component built on CSS Flexbox, providing a one-dimensional system for arranging children in a row or column.',
+      'Layout component built on CSS Flexbox, providing a one-dimensional system for arranging children in a row or column.',
     description: [
       'provide a flexbox-based layout wrapper',
       'control flow, alignment, and wrapping of children',
       'manage spacing between items with gap properties',
-      'always applies display: flex',
-      'uses Box internally to ensure consistent reset and baseline styles',
-      'provides a <Flex.Item> subcomponent for per-child layout control',
-      'renders as a <div> element',
-      'arranges children in a row without wrapping',
-      'does not apply any gap between children',
-      'arranging items in a one-dimensional row or column',
-      'distributing space between elements with gaps or justification',
-      'building responsive layouts that adapt across breakpoints',
     ],
     composedOf: ['Box'],
   },

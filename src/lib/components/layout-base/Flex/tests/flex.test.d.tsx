@@ -42,7 +42,23 @@ expectType(
 
 // right props passed
 expectType(
-  <Flex flexDirection="column" flexWrap="wrap">
+  <Flex flexDirection="column" flexWrap="wrap" justifyContent="center" alignItems="center">
+    <Box>Item 1</Box>
+    <Box>Item 2</Box>
+  </Flex>
+)
+
+// gaps possible to set as scale value
+expectType(
+  <Flex gap={5} rowGap={5} columnGap={5}>
+    <Box>Item 1</Box>
+    <Box>Item 2</Box>
+  </Flex>
+)
+
+// gaps possible to set as CSS string
+expectType(
+  <Flex gap="5px" rowGap="5px" columnGap="5px">
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Flex>

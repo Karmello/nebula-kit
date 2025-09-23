@@ -5,12 +5,11 @@ import {
   CssFlexDirection,
   CssFlexJustifyContent,
   CssFlexWrap,
-  MakeRequired,
   RespValue,
   ScaleValue,
 } from 'lib/definitions'
 
-import { BoxProps } from 'lib/components'
+import { HtmlTagProps } from 'lib/components'
 
 export type FlexOwnProps = {
   flexDirection?: RespValue<CssFlexDirection>
@@ -22,13 +21,8 @@ export type FlexOwnProps = {
   columnGap?: RespValue<ScaleValue | string>
 }
 
-export const FLEX_INHERITED_PROPS = {
-  Box: ['children', 'tag', 'tagAttrs', 'tagRef'] as const satisfies readonly (keyof BoxProps)[],
+type PropsFromHtmlTag<T extends ElementType = 'div'> = Omit<HtmlTagProps<T>, 'children'> & {
+  children: HtmlTagProps<T>['children']
 }
 
-export type FlexInheritedProps<T extends ElementType> = MakeRequired<
-  Pick<BoxProps<T>, (typeof FLEX_INHERITED_PROPS)['Box'][number]>,
-  'children'
->
-
-export type FlexProps<T extends ElementType = 'div'> = FlexOwnProps & FlexInheritedProps<T>
+export type FlexProps<T extends ElementType = 'div'> = PropsFromHtmlTag<T> & FlexOwnProps

@@ -7,17 +7,10 @@ import { FLEX_ITEM_PROPS_META } from './props'
 const FLEX_ITEM_META: ComponentMeta<FlexItemOwnProps> = {
   overview: {
     name: 'Flex.Item',
-    title: 'Flex item represents a single child inside a Flex container.',
+    title: 'Flex child wrapper used to control layout of a single item.',
     description: [
       'control per-item growth, shrink, and basis in the flex layout',
       'allow item-level alignment overrides relative to the parent',
-      'must be used inside a Flex container',
-      'wraps its child with Box for consistent styling and reset',
-      'renders as a <div> element',
-      "aligns according to the parent's alignment rules unless overridden",
-      "fixing one item's width while others flex around it",
-      'aligning a single child differently from siblings',
-      'making an element grow or shrink independently in a shared row or column',
     ],
     composedOf: ['Box'],
   },

@@ -1,7 +1,7 @@
 import { ElementType } from 'react'
 
 import { RespValue, CssFlexItemAlignSelf } from 'lib/definitions'
-import { BoxProps } from 'lib/components/base'
+import { HtmlTagProps } from 'lib/components/utility'
 
 export type FlexItemOwnProps = {
   flex?: RespValue<string | number>
@@ -12,13 +12,8 @@ export type FlexItemOwnProps = {
   order?: RespValue<number>
 }
 
-export const FLEX_ITEM_INHERITED_PROPS = {
-  Box: ['children', 'tag', 'tagAttrs', 'tagRef'] as const satisfies readonly (keyof BoxProps<ElementType>)[],
+type PropsFromHtmlTag<T extends ElementType = 'div'> = Omit<HtmlTagProps<T>, 'children'> & {
+  children: HtmlTagProps<T>['children']
 }
 
-export type FlexItemInheritedProps<T extends ElementType> = Pick<
-  BoxProps<T>,
-  (typeof FLEX_ITEM_INHERITED_PROPS)['Box'][number]
->
-
-export type FlexItemProps<T extends ElementType = 'div'> = FlexItemOwnProps & FlexItemInheritedProps<T>
+export type FlexItemProps<T extends ElementType = 'div'> = PropsFromHtmlTag<T> & FlexItemOwnProps

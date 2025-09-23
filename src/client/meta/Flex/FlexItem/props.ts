@@ -1,14 +1,20 @@
 import { ComponentMeta } from 'client/definitions'
-import { FlexItemOwnProps } from 'lib/components/layout-base/Flex/FlexItem/definitions'
+import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
+import { FlexItemProps } from 'lib/components/layout-base/Flex/FlexItem/definitions'
 import { CssFlexItemAlignSelf } from 'lib/definitions'
 
-const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemOwnProps>['props'] = {
+const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemProps>['props'] = {
+  ...HTML_TAG_PROPS_META,
+  children: {
+    ...HTML_TAG_PROPS_META.children,
+    isRequired: true,
+  },
   flex: {
     options: ['CSS'],
     defaultValue: '0 1 auto',
     isRequired: false,
     isResponsive: true,
-    description: 'defines how the item grows, shrinks, and sets its base size within the Flex container',
+    description: 'Defines how the item grows, shrinks, and sets its base size within the container.',
   },
   flexGrow: {
     options: ['CSS'],
@@ -16,35 +22,35 @@ const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemOwnProps>['props'] = {
     isRequired: false,
     isResponsive: true,
     description:
-      'controls how much the item can grow relative to the other items when extra space is available',
+      'Controls how much the item can grow relative to the other items when extra space is available.',
   },
   flexShrink: {
     options: ['CSS'],
     defaultValue: '1',
     isRequired: false,
     isResponsive: true,
-    description: 'controls how much the item can shrink relative to the other items when space is limited',
+    description: 'Controls how much the item can shrink relative to the other items when space is limited.',
   },
   flexBasis: {
     options: ['CSS'],
     defaultValue: 'auto',
     isRequired: false,
     isResponsive: true,
-    description: "sets the item's initial main-size before free space is distributed",
+    description: "Sets the item's initial main-size before free space is distributed.",
   },
   alignSelf: {
     options: CssFlexItemAlignSelf as unknown as string[],
     defaultValue: 'auto',
     isRequired: false,
     isResponsive: true,
-    description: "overrides the container's alignItems value for this specific item",
+    description: "Overrides the container's alignItems value for this specific item.",
   },
   order: {
     options: ['CSS'],
     defaultValue: '0',
     isRequired: false,
     isResponsive: true,
-    description: "defines the item's order relative to other flex items, independent of source order",
+    description: "Defines the item's order relative to other items, independent of source order.",
   },
 }
 
