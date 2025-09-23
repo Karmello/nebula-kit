@@ -14,6 +14,7 @@ export const WithIcon = ({
   // SvgIcon
   name,
   size,
+  intent,
   // own
   position = DEFAULT_WITH_ICON_ICON_POSITION,
 }: WithIconProps) => {
@@ -23,9 +24,9 @@ export const WithIcon = ({
       tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('with-icon'), tagAttrs?.className || '') }}
       tagRef={tagRef}
     >
-      {position === 'left' ? <Icon name={name} size={size} /> : null}
+      {position === 'left' ? <Icon name={name} size={size} intent={intent} /> : null}
       {children}
-      {position === 'right' ? <Icon name={name} size={size} /> : null}
+      {position === 'right' ? <Icon name={name} size={size} intent={intent} /> : null}
     </HtmlTag>
   )
 }

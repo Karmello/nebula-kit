@@ -19,14 +19,14 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     defaultValue: 'false',
     isRequired: false,
     isResponsive: false,
-    description: 'Toggles bold styling for the text.',
+    description: 'Toggles bold styling.',
   },
   italic: {
     options: ['boolean'],
     defaultValue: 'false',
     isRequired: false,
     isResponsive: false,
-    description: 'Toggles italic styling for the text.',
+    description: 'Toggles italic styling.',
   },
   noWrap: {
     options: ['boolean'],
@@ -48,17 +48,24 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     isResponsive: false,
     description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
   },
-  intent: BOX_PROPS_META['intent'] as never,
-  textAlign: BOX_PROPS_META['textAlign'] as never,
+  intent: {
+    ...BOX_PROPS_META['intent'],
+    defaultValue: '(inherited)',
+  },
+  textAlign: BOX_PROPS_META['textAlign'],
   iconName: {
     ...WITH_ICON_PROPS_META['name'],
     isRequired: false,
-  } as never,
-  iconPosition: WITH_ICON_PROPS_META['position'] as never,
+  },
+  iconPosition: WITH_ICON_PROPS_META['position'],
   ...HTML_TAG_PROPS_META,
   children: {
     ...HTML_TAG_PROPS_META['children'],
     isRequired: true,
+  },
+  tag: {
+    ...HTML_TAG_PROPS_META['tag'],
+    defaultValue: '<p>',
   },
 }
 

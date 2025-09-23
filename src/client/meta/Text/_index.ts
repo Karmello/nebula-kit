@@ -7,17 +7,11 @@ import { TEXT_EXAMPLES_META } from './examples'
 const TEXT_META: ComponentMeta<TextProps> = {
   overview: {
     title:
-      'A foundational component for displaying and styling textual content. It ensures consistent typography across the system.',
+      'Foundational component for displaying and styling textual content that ensures consistent typography across the system.',
     description: [
-      'render semantic text elements with consistent typography',
-      'provide common text styling and formatting options',
-      'allow integration of inline icons alongside text',
-      'requires children',
-      'renders as a <p> tag',
-      'uses neutral text intent',
-      'display body copy, captions, and headings',
-      'present truncated or clamped snippets of text',
-      'combine text with icons for labels or actions',
+      'renders semantic text elements with consistent typography',
+      'provides common text styling and formatting options',
+      'allows integration of inline icons alongside text',
     ],
     rendersAs: TextTag,
   },

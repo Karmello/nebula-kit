@@ -54,6 +54,7 @@ export const Text = <T extends TextTag = 'p'>({
                 WebkitLineClamp: clampLines,
                 WebkitBoxOrient: 'vertical' as const,
                 overflow: 'hidden',
+                borderRadius: 0,
               }
             : {}),
           ...(tagAttrs?.style || {}),

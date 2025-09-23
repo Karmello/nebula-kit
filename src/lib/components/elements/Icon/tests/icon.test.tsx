@@ -6,13 +6,13 @@ import { Icon } from '..'
 
 describe('<Icon />', () => {
   it('renders Icon component', () => {
-    render(<Icon data-testid="icon" name="search" />)
+    render(<Icon tagAttrs={{ 'data-testid': 'icon' }} name="search" />)
     const icon = screen.getByTestId('icon')
     expect(icon).toBeInTheDocument()
   })
 
   it('applies default size and intent', () => {
-    render(<Icon data-testid="icon" name="search" />)
+    render(<Icon tagAttrs={{ 'data-testid': 'icon' }} name="search" />)
     const el = screen.getByTestId('icon')
     expect(el).toHaveStyle({
       width: `var(--neb-scale-${DEFAULT_ICON_SIZE})`,
@@ -21,7 +21,7 @@ describe('<Icon />', () => {
   })
 
   it('applies custom size and intent', () => {
-    render(<Icon data-testid="icon" name="search" size={20} intent="primary" />)
+    render(<Icon tagAttrs={{ 'data-testid': 'icon' }} name="search" size={20} intent="primary" />)
     const el = screen.getByTestId('icon')
     expect(el).toHaveStyle({
       width: 'var(--neb-scale-20)',

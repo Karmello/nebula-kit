@@ -9,10 +9,8 @@ type WithIconOwnProps = {
   position?: IconPosition
 }
 
-type PropsFromIcon = Pick<IconProps, 'name' | 'size'>
-
 type PropsFromHtmlTag = Omit<HtmlTagProps<'span'>, 'tag' | 'children'> & {
   children: HtmlTagProps<'span'>['children']
 }
 
-export type WithIconProps = WithIconOwnProps & PropsFromIcon & PropsFromHtmlTag
+export type WithIconProps = WithIconOwnProps & IconProps & PropsFromHtmlTag

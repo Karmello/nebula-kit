@@ -10,8 +10,7 @@ import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { ICON_PROPS_META } from '../Icon/props'
 
 const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
-  name: ICON_PROPS_META['name'],
-  size: ICON_PROPS_META['size'],
+  ...ICON_PROPS_META,
   position: {
     options: IconPosition as unknown as string[],
     defaultValue: DEFAULT_WITH_ICON_ICON_POSITION,

@@ -35,7 +35,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   borderRadius: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: 'global',
+    defaultValue: '(global)',
     isRequired: false,
     isResponsive: false,
     description: 'Border radius of the component, overrides the global value.',

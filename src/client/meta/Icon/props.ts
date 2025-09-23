@@ -1,9 +1,12 @@
 import { ComponentMeta } from 'client/definitions'
 import { IconProps } from 'lib/components'
 import { BoxIntent } from 'lib/components/base/Box/definitions'
-import { DEFAULT_ICON_INTENT, DEFAULT_ICON_SIZE } from 'lib/components/elements/Icon/definitions'
+import { DEFAULT_ICON_SIZE } from 'lib/components/elements/Icon/definitions'
+import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
+  tagAttrs: HTML_TAG_PROPS_META['tagAttrs'],
+  tagRef: HTML_TAG_PROPS_META['tagRef'],
   name: {
     options: ['IconName'],
     isRequired: true,
@@ -16,7 +19,7 @@ const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
   },
   intent: {
     options: BoxIntent as unknown as string[],
-    defaultValue: String(DEFAULT_ICON_INTENT),
+    defaultValue: '(inherited)',
     description: 'System semantic color style for the icon.',
   },
 }
