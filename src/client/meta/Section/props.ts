@@ -27,8 +27,7 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
     options: ['string', 'JSX.Element'],
     isRequired: true,
     isResponsive: false,
-    description:
-      "Defines the section's heading, provided as a plain string or a JSX element (typically a Text component for consistent typography).",
+    description: "Section's heading as a plain string or a JSX element (typically a Text component).",
   },
   hideDivider: {
     options: ['boolean'],
