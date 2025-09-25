@@ -1,11 +1,8 @@
-import { BoxProps } from 'lib/components'
+import { BoxProps, HtmlTagProps } from 'lib/components'
 
 export const DEFAULT_SPACER_BLOCK_SIZE = 2
 
-export const SPACER_INHERITED_PROPS = {
-  Box: ['tagAttrs', 'tagRef', 'blockSize'] as const satisfies readonly (keyof BoxProps<'div'>)[],
-}
+type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'>
+type PropsFromBox = Pick<BoxProps<'div'>, 'blockSize'>
 
-export type SpacerInheritedProps = Pick<BoxProps<'div'>, (typeof SPACER_INHERITED_PROPS)['Box'][number]>
-
-export type SpacerProps = SpacerInheritedProps
+export type SpacerProps = PropsFromHtmlTag & PropsFromBox
