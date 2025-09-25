@@ -1,14 +1,46 @@
 import { ComponentMeta } from 'client/definitions'
-import { ButtonOwnProps, ButtonSize, DEFAULT_BUTTON_SIZE } from 'lib/components/controls/Button/definitions'
+import {
+  ButtonProps,
+  ButtonSize,
+  ButtonTag,
+  DEFAULT_BUTTON_INTENT,
+  DEFAULT_BUTTON_SIZE,
+  DEFAULT_BUTTON_VARIANT,
+} from 'lib/components/controls/Button/definitions'
+import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
+import { BOX_PROPS_META } from '../Box/props'
+import { TEXT_PROPS_META } from '../Text/props'
 
-const BUTTON_PROPS_META: ComponentMeta<ButtonOwnProps>['props'] = {
+const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
+  children: {
+    ...HTML_TAG_PROPS_META.children,
+    isRequired: true,
+  },
+  tag: {
+    ...HTML_TAG_PROPS_META.tag,
+    options: ButtonTag as unknown as string[],
+    defaultValue: '<button>',
+  },
+  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
+  tagRef: HTML_TAG_PROPS_META.tagRef,
+  variant: {
+    ...BOX_PROPS_META.variant,
+    defaultValue: DEFAULT_BUTTON_VARIANT,
+  },
+  intent: {
+    ...BOX_PROPS_META.intent,
+    defaultValue: DEFAULT_BUTTON_INTENT,
+  },
+  disabled: BOX_PROPS_META.disabled,
+  iconName: TEXT_PROPS_META.iconName,
+  iconPosition: TEXT_PROPS_META.iconPosition,
   size: {
     options: Object.values(ButtonSize),
     defaultValue: DEFAULT_BUTTON_SIZE,
     isRequired: false,
     isResponsive: false,
     description:
-      "Controls the button's overall proportions - adjusting blockSize, horizontal padding, and fontSize to keep content balanced at each size.",
+      'Controls overall proportions - adjusting blockSize, horizontal padding, and fontSize to keep content balanced at each size.',
   },
 }
 

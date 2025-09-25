@@ -5,7 +5,7 @@ import { BoxIntent } from 'lib/components/base/Box/definitions'
 export const DEFAULT_DIVIDER_INTENT: BoxIntent = 'tertiary'
 export const DEFAULT_DIVIDER_THICKNESS = 1
 
-export type DividerOwnProps = {
+type DividerOwnProps = {
   intent?: BoxIntent
   thickness?: ScaleValue | string
 }

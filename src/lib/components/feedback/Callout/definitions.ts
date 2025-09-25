@@ -19,7 +19,7 @@ export type CalloutTag = (typeof CalloutTag)[number]
 export type CalloutVariant = (typeof CalloutVariant)[number]
 export type CalloutIntent = (typeof CalloutIntent)[number]
 
-export type CalloutOwnProps = {
+type CalloutOwnProps = {
   content: string
   heading?: string
   variant?: CalloutVariant

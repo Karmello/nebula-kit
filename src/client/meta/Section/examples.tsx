@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { Section, Text } from 'lib/components'
-import { SectionOwnProps } from 'lib/components/containers/Section/definitions'
+import { SectionProps } from 'lib/components/containers/Section/definitions'
 
-const SECTION_EXAMPLES_META: ComponentMeta<SectionOwnProps>['examples'] = [
+const SECTION_EXAMPLES_META: ComponentMeta<SectionProps>['examples'] = [
   {
     description: 'Basic section with a heading and body content.',
     jsx: <Section heading="Default heading">Content</Section>,

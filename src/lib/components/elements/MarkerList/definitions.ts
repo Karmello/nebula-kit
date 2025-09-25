@@ -7,7 +7,7 @@ export const DEFAULT_MARKER_LIST_ROW_GAP = 3
 export type MarkerListTag = (typeof MarkerListTag)[number]
 export type MarkerListStyle = (typeof MarkerListStyle)[number]
 
-export type MarkerListOwnProps = {
+type MarkerListOwnProps = {
   listStyle?: MarkerListStyle
 }
 

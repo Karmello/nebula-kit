@@ -5,7 +5,7 @@ import { BoxProps, HtmlTagProps } from 'lib/components'
 export const SectionTag = ['section', 'article', 'aside', 'div'] as const
 export type SectionTag = (typeof SectionTag)[number]
 
-export type SectionOwnProps = {
+type SectionOwnProps = {
   heading: string | JSX.Element
   hideDivider?: boolean
 }

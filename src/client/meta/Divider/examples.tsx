@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { Divider, Text } from 'lib/components'
-import { DividerOwnProps } from 'lib/components/elements/Divider/definitions'
+import { DividerProps } from 'lib/components/elements/Divider/definitions'
 
-const DIVIDER_EXAMPLES_META: ComponentMeta<DividerOwnProps>['examples'] = [
+const DIVIDER_EXAMPLES_META: ComponentMeta<DividerProps>['examples'] = [
   {
     description: 'Default Divider.',
     jsx: <Divider />,

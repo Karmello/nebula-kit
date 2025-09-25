@@ -16,23 +16,24 @@ import {
 import './button.scss'
 
 export const Button = <T extends ButtonTag = 'button'>({
-  // own
-  size = DEFAULT_BUTTON_SIZE,
-  // text
-  iconName,
-  iconPosition,
-  // box
-  children,
-  tag,
+  // HtmlTag
+  tag = 'button' as T,
   tagAttrs,
   tagRef,
+  children,
+  // Box
   variant = DEFAULT_BUTTON_VARIANT,
   intent = DEFAULT_BUTTON_INTENT,
   disabled,
+  // Text
+  iconName,
+  iconPosition,
+  // own
+  size = DEFAULT_BUTTON_SIZE,
 }: ButtonProps<T>) => {
   return (
     <Box
-      tag={tag || 'button'}
+      tag={tag}
       tagAttrs={
         {
           ...tagAttrs,

@@ -23,7 +23,7 @@ export const DEFAULT_BOX_INTENT: BoxIntent = 'neutral'
 export type BoxVariant = (typeof BoxVariant)[number]
 export type BoxIntent = (typeof BoxIntent)[number]
 
-export type BoxOwnProps = {
+type BoxOwnProps = {
   variant?: BoxVariant
   intent?: RespValue<BoxIntent>
   opacity?: RespValue<number>

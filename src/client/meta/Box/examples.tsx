@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { Box } from 'lib/components'
-import { BoxOwnProps } from 'lib/components/base/Box/definitions'
+import { BoxProps } from 'lib/components/base/Box/definitions'
 
-const BOX_EXAMPLES_META: ComponentMeta<BoxOwnProps>['examples'] = [
+const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   {
     jsx: <Box>Default box</Box>,
     description: 'Plain default Box.',

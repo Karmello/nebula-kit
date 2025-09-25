@@ -43,7 +43,7 @@ export const TextTypography = [
 export type TextTag = (typeof TextTag)[number]
 export type TextTypography = (typeof TextTypography)[number]
 
-export type TextOwnProps = {
+type TextOwnProps = {
   typography?: TextTypography
   bold?: boolean
   italic?: boolean

@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { Grid, Box } from 'lib/components'
-import { GridItemOwnProps } from 'lib/components/layout-base/Grid/GridItem/definitions'
+import { GridItemProps } from 'lib/components/layout-base/Grid/GridItem/definitions'
 
-const GRID_ITEM_EXAMPLES_META: ComponentMeta<GridItemOwnProps>['examples'] = [
+const GRID_ITEM_EXAMPLES_META: ComponentMeta<GridItemProps>['examples'] = [
   {
     description:
       'Grid.Item with explicit placement: on small screens, Start and End slots share the first row while the Middle slot drops below; from the md breakpoint up, all three align in a single row. Resize the viewport to see the layout switch.',

@@ -11,7 +11,7 @@ import { HtmlTagProps } from 'lib/components'
 export const GridTag = ['div', 'section', 'main', 'article', 'aside', 'nav', 'ul', 'ol'] as const
 export type GridTag = (typeof GridTag)[number]
 
-export type GridOwnProps = {
+type GridOwnProps = {
   gridTemplateColumns?: RespValue<string | number>
   gridTemplateRows?: RespValue<string | number>
   gridAutoRows?: RespValue<string>

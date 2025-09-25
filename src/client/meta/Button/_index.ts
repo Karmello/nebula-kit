@@ -1,23 +1,18 @@
 import { ComponentMeta } from 'client/definitions'
 
-import { ButtonTag, ButtonOwnProps } from 'lib/components/controls/Button/definitions'
+import { ButtonTag, ButtonProps } from 'lib/components/controls/Button/definitions'
 
 import { BUTTON_PROPS_META } from './props'
 import { BUTTON_EXAMPLES_META } from './examples'
 
-const BUTTON_META: ComponentMeta<ButtonOwnProps> = {
+const BUTTON_META: ComponentMeta<ButtonProps> = {
   overview: {
     title:
-      'The primary interactive control for triggering actions, combining surface and text systems to provide a consistent, accessible entry point for user interaction.',
+      'Interactive control for triggering actions, combining surface and text systems to provide a consistent, accessible entry point.',
     description: [
-      'provide a consistent, accessible trigger for user actions',
-      'handle interactivity states such as hover, focus, active, and disabled',
-      'support optional icon and text composition for clarity of meaning',
-      'requires children',
-      'medium size',
-      'solid variant',
-      'tertiary intent',
-      'applied wherever a clear, consistent action trigger is needed in the interface',
+      'provides a consistent, accessible trigger for user actions',
+      'handles interactive states: hover, focus, active, disabled',
+      'supports optional icon and text composition for clarity',
     ],
     composedOf: ['Box', 'Text'],
     rendersAs: ButtonTag,

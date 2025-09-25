@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { Grid, Box } from 'lib/components'
-import { GridOwnProps } from 'lib/components/layout-base/Grid/definitions'
+import { GridProps } from 'lib/components/layout-base/Grid/definitions'
 
-const GRID_EXAMPLES_META: ComponentMeta<GridOwnProps>['examples'] = [
+const GRID_EXAMPLES_META: ComponentMeta<GridProps>['examples'] = [
   {
     description:
       'Two-column layout with main content and sidebar, where the article takes more space and the aside sits beside it.',

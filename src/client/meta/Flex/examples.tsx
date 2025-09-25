@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { Box, Flex } from 'lib/components'
-import { FlexOwnProps } from 'lib/components/layout-base/Flex/definitions'
+import { FlexProps } from 'lib/components/layout-base/Flex/definitions'
 
-const FLEX_EXAMPLES_META: ComponentMeta<FlexOwnProps>['examples'] = [
+const FLEX_EXAMPLES_META: ComponentMeta<FlexProps>['examples'] = [
   {
     description: 'Flex arranging two outlined boxes side by side.',
     jsx: (

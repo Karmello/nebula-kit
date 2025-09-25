@@ -1,10 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
-import { BoxOwnProps } from 'lib/components/base/Box/definitions'
+import { BoxProps } from 'lib/components/base/Box/definitions'
 
 import { BOX_PROPS_META } from './props'
 import { BOX_EXAMPLES_META } from './examples'
 
-const BOX_META: ComponentMeta<BoxOwnProps> = {
+const BOX_META: ComponentMeta<BoxProps> = {
   overview: {
     title:
       'Foundational surface component that exposes a curated set of core CSS properties - appearance, spacing, sizing, and positioning - so you can style a plain block-level element directly in JSX.',

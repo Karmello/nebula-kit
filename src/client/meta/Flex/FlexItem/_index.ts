@@ -1,10 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
-import { FlexItemOwnProps } from 'lib/components/layout-base/Flex/FlexItem/definitions'
+import { FlexItemProps } from 'lib/components/layout-base/Flex/FlexItem/definitions'
 
 import { FLEX_ITEM_EXAMPLES_META } from './examples'
 import { FLEX_ITEM_PROPS_META } from './props'
 
-const FLEX_ITEM_META: ComponentMeta<FlexItemOwnProps> = {
+const FLEX_ITEM_META: ComponentMeta<FlexItemProps> = {
   overview: {
     name: 'Flex.Item',
     title: 'Flex child wrapper used to control layout of a single item.',

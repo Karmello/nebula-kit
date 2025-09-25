@@ -11,7 +11,7 @@ import {
 
 import { HtmlTagProps } from 'lib/components'
 
-export type FlexOwnProps = {
+type FlexOwnProps = {
   flexDirection?: RespValue<CssFlexDirection>
   flexWrap?: RespValue<CssFlexWrap>
   justifyContent?: RespValue<CssFlexJustifyContent>

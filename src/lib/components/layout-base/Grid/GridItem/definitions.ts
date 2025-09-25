@@ -3,7 +3,7 @@ import { ElementType } from 'react'
 import { RespValue, CssGridItemJustifySelf, CssGridItemAlignSelf } from 'lib/definitions'
 import { HtmlTagProps } from 'lib/components'
 
-export type GridItemOwnProps = {
+type GridItemOwnProps = {
   gridColumn?: RespValue<string | number>
   gridRow?: RespValue<string | number>
   justifySelf?: RespValue<CssGridItemJustifySelf>

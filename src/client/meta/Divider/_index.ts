@@ -1,10 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
-import { DividerOwnProps } from 'lib/components/elements/Divider/definitions'
+import { DividerProps } from 'lib/components/elements/Divider/definitions'
 
 import { DIVIDER_PROPS_META } from './props'
 import { DIVIDER_EXAMPLES_META } from './examples'
 
-const DIVIDER_META: ComponentMeta<DividerOwnProps> = {
+const DIVIDER_META: ComponentMeta<DividerProps> = {
   overview: {
     title: 'Boundary marker between content sections.',
     description: [

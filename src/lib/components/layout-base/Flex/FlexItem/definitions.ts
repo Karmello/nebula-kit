@@ -3,7 +3,7 @@ import { ElementType } from 'react'
 import { RespValue, CssFlexItemAlignSelf } from 'lib/definitions'
 import { HtmlTagProps } from 'lib/components/utility'
 
-export type FlexItemOwnProps = {
+type FlexItemOwnProps = {
   flex?: RespValue<string | number>
   flexGrow?: RespValue<number>
   flexShrink?: RespValue<number>

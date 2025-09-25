@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { Box, MarkerList } from 'lib/components'
-import { MarkerListOwnProps } from 'lib/components/elements/MarkerList/definitions'
+import { MarkerListProps } from 'lib/components/elements/MarkerList/definitions'
 
-const MARKER_LIST_EXAMPLES_META: ComponentMeta<MarkerListOwnProps>['examples'] = [
+const MARKER_LIST_EXAMPLES_META: ComponentMeta<MarkerListProps>['examples'] = [
   {
     description: 'Basic MarkerList with two list items.',
     jsx: (
