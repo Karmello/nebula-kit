@@ -1,7 +1,6 @@
 import { JSX } from 'react'
 
-import { BoxProps } from 'lib/components'
-import { MakeRequired } from 'lib/definitions'
+import { BoxProps, HtmlTagProps } from 'lib/components'
 
 export const SectionTag = ['section', 'article', 'aside', 'div'] as const
 export type SectionTag = (typeof SectionTag)[number]
@@ -11,31 +10,24 @@ export type SectionOwnProps = {
   hideDivider?: boolean
 }
 
-export const SECTION_INHERITED_PROPS = {
-  Box: [
-    'children',
-    'tag',
-    'tagAttrs',
-    'tagRef',
-    'variant',
-    'intent',
-    'borderRadius',
-    'padding',
-    'paddingBlock',
-    'paddingInline',
-    'paddingTop',
-    'paddingRight',
-    'paddingBottom',
-    'paddingLeft',
-  ] as const satisfies readonly (keyof BoxProps<SectionTag>)[],
-  Text: [] as const,
-  Divider: [] as const,
-  Spacer: [] as const,
+type PropsFromHtmlTag<T extends SectionTag = 'section'> = Omit<HtmlTagProps<T>, 'children'> & {
+  children: HtmlTagProps<T>['children']
 }
 
-export type SectionInheritedProps<T extends SectionTag = 'section'> = MakeRequired<
-  Pick<BoxProps<T>, (typeof SECTION_INHERITED_PROPS)['Box'][number]>,
-  'children'
+type PropsFromBox<T extends SectionTag = 'section'> = Pick<
+  BoxProps<T>,
+  | 'variant'
+  | 'intent'
+  | 'borderRadius'
+  | 'padding'
+  | 'paddingInline'
+  | 'paddingBlock'
+  | 'paddingTop'
+  | 'paddingRight'
+  | 'paddingBottom'
+  | 'paddingLeft'
 >
 
-export type SectionProps<T extends SectionTag = 'section'> = SectionOwnProps & SectionInheritedProps<T>
+export type SectionProps<T extends SectionTag = 'section'> = PropsFromHtmlTag<T> &
+  PropsFromBox<T> &
+  SectionOwnProps
