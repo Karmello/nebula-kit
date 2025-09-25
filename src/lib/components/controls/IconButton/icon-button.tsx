@@ -10,18 +10,20 @@ import { IconButtonProps } from './definitions'
 import './icon-button.scss'
 
 export const IconButton = <T extends ButtonTag = 'button'>({
-  tag,
+  // HtmlTag
+  tag = 'button' as T,
   tagAttrs,
   tagRef,
-  size,
+  // Button
   variant,
   intent,
+  size,
   disabled,
   iconName,
 }: IconButtonProps<T>) => {
   return (
     <Button
-      tag={tag || 'button'}
+      tag={tag}
       tagAttrs={
         {
           ...tagAttrs,
@@ -29,9 +31,9 @@ export const IconButton = <T extends ButtonTag = 'button'>({
         } as PropsWithoutRef<ComponentProps<T>>
       }
       tagRef={tagRef}
-      size={size}
       variant={variant}
       intent={intent}
+      size={size}
       disabled={disabled}
       iconName={iconName}
     >

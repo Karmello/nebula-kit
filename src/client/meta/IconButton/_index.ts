@@ -3,22 +3,19 @@ import { ComponentMeta } from 'client/definitions'
 import { ButtonTag } from 'lib/components/controls/Button/definitions'
 
 import { ICON_BUTTON_EXAMPLES_META } from './examples'
+import { ICON_BUTTON_PROPS_META } from './props'
 
 const ICON_BUTTON_META: ComponentMeta<IconButtonProps> = {
   overview: {
-    title: 'An interactive control that uses an icon as its primary content.',
+    title: 'Interactive control that uses an icon as its primary content.',
     description: [
-      'render an icon as the content of a button',
-      'does not accept children',
-      'iconName is required',
-      'medium size',
-      'solid variant',
-      'tertiary intent',
+      'renders an icon as the content of a button',
       "useful for quick actions where text isn't needed",
     ],
     composedOf: ['Button'],
     rendersAs: ButtonTag,
   },
+  props: ICON_BUTTON_PROPS_META,
   examples: ICON_BUTTON_EXAMPLES_META,
 }
 

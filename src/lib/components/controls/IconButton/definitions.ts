@@ -1,24 +1,14 @@
-import { MakeRequired } from 'lib/definitions'
-
 import { ButtonProps } from '../Button'
 import { ButtonTag } from '../Button/definitions'
+import { HtmlTagProps } from 'lib/components/utility'
 
-export const ICON_BUTTON_INHERITED_PROPS = {
-  Button: [
-    'tag',
-    'tagAttrs',
-    'tagRef',
-    'size',
-    'variant',
-    'intent',
-    'disabled',
-    'iconName',
-  ] as const satisfies readonly (keyof ButtonProps<ButtonTag>)[],
+type PropsFromHtmlTag<T extends ButtonTag = 'button'> = Pick<HtmlTagProps<T>, 'tag' | 'tagAttrs' | 'tagRef'>
+
+type PropsFromButton<T extends ButtonTag = 'button'> = Pick<
+  ButtonProps<T>,
+  'variant' | 'intent' | 'size' | 'disabled'
+> & {
+  iconName: ButtonProps<T>['iconName']
 }
 
-export type IconButtonInheritedProps<T extends ButtonTag = 'button'> = MakeRequired<
-  Pick<ButtonProps<T>, (typeof ICON_BUTTON_INHERITED_PROPS)['Button'][number]>,
-  'iconName'
->
-
-export type IconButtonProps<T extends ButtonTag = 'button'> = IconButtonInheritedProps<T>
+export type IconButtonProps<T extends ButtonTag = 'button'> = PropsFromHtmlTag<T> & PropsFromButton<T>
