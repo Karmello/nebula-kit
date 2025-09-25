@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { Button, ButtonGroup } from 'lib/components'
-import { ButtonGroupOwnProps } from 'lib/components/controls/ButtonGroup/definitions'
+import { ButtonGroupProps } from 'lib/components/controls/ButtonGroup/definitions'
 
-const BUTTON_GROUP_EXAMPLES_META: ComponentMeta<ButtonGroupOwnProps>['examples'] = [
+const BUTTON_GROUP_EXAMPLES_META: ComponentMeta<ButtonGroupProps>['examples'] = [
   {
     description: 'Displays three buttons arranged in a horizontal row.',
     jsx: (

@@ -1,27 +1,16 @@
 import { ComponentMeta } from 'client/definitions'
-
-import {
-  ButtonGroupTag,
-  ButtonGroupOwnProps,
-  DEFAULT_BUTTON_GROUP_GAP,
-} from 'lib/components/controls/ButtonGroup/definitions'
+import { ButtonGroupTag, ButtonGroupProps } from 'lib/components/controls/ButtonGroup/definitions'
 
 import { BUTTON_GROUP_PROPS_META } from './props'
 import { BUTTON_GROUP_EXAMPLES_META } from './examples'
 
-const BUTTON_GROUP_META: ComponentMeta<ButtonGroupOwnProps> = {
+const BUTTON_GROUP_META: ComponentMeta<ButtonGroupProps> = {
   overview: {
-    title: 'A composite control that unifies several buttons into a single interface element.',
+    title: 'Composite control that unifies several buttons into a single interface element.',
     description: [
-      'groups multiple buttons together into a single block',
-      'provides consistent styling',
-      'aligns buttons horizontally or vertically',
-      'renders buttons in a horizontal row',
-      `applies gap of ${DEFAULT_BUTTON_GROUP_GAP}`,
-      'grouping actions in a toolbar',
-      'creating a segmented control for switching views',
-      'displaying confirm/cancel buttons as a pair',
-      'building pagination or step navigation',
+      'groups multiple buttons into a single horizontal or vertical block',
+      'can appear as a separated group or an attached group',
+      'props set on individual buttons override props inherited from the group',
     ],
 
     composedOf: ['Flex', 'Flex.Item', 'Button'],

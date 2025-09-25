@@ -8,6 +8,7 @@ const GRID_PROPS_META: ComponentMeta<GridProps>['props'] = {
   children: {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
+    description: 'Grid.Item or any React node.',
   },
   gridTemplateColumns: {
     options: ['string', 'number'],

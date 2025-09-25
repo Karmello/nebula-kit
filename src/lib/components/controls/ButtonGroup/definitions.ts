@@ -1,39 +1,30 @@
-import { ButtonProps, FlexProps } from 'lib/components'
-import { MakeRequired, RespValue } from 'lib/definitions'
+import { ButtonProps, FlexProps, HtmlTagProps } from 'lib/components'
+import { RespValue } from 'lib/definitions'
 
 import { ButtonTag } from '../Button/definitions'
 
 export const DEFAULT_BUTTON_GROUP_GAP = 3
-
 export const ButtonGroupDirection = ['row', 'column'] as const
 export const ButtonGroupTag = ['div', 'nav', 'section', 'aside', 'form', 'fieldset'] as const
-export type ButtonGroupTag = (typeof ButtonGroupTag)[number]
 
+export type ButtonGroupTag = (typeof ButtonGroupTag)[number]
 export type ButtonGroupDirection = (typeof ButtonGroupDirection)[number]
 
-export type ButtonGroupOwnProps = {
+type ButtonGroupOwnProps = {
   direction?: RespValue<ButtonGroupDirection>
   stretch?: RespValue<boolean>
   attached?: boolean
 }
 
-export const BUTTON_GROUP_INHERITED_PROPS = {
-  Flex: [
-    'children',
-    'tag',
-    'tagAttrs',
-    'tagRef',
-    'gap',
-  ] as const satisfies readonly (keyof FlexProps<ButtonGroupTag>)[],
-  'Flex.Item': [] as never,
-  Button: ['variant', 'intent', 'size'] as const satisfies readonly (keyof ButtonProps<ButtonTag>)[],
+type PropsFromHtmlTag<T extends ButtonGroupTag = 'div'> = Omit<HtmlTagProps<T>, 'children'> & {
+  children: HtmlTagProps<T>['children']
 }
 
-export type ButtonGroupInheritedProps<T extends ButtonGroupTag = 'div'> = MakeRequired<
-  Pick<FlexProps<T>, (typeof BUTTON_GROUP_INHERITED_PROPS)['Flex'][number]>,
-  'children'
-> &
-  Pick<ButtonProps<ButtonTag>, (typeof BUTTON_GROUP_INHERITED_PROPS)['Button'][number]>
+type PropsFromFlex<T extends ButtonGroupTag = 'div'> = Pick<FlexProps<T>, 'gap'>
 
-export type ButtonGroupProps<T extends ButtonGroupTag = 'div'> = ButtonGroupOwnProps &
-  ButtonGroupInheritedProps<T>
+type PropsFromButton = Pick<ButtonProps<ButtonTag>, 'variant' | 'intent' | 'size'>
+
+export type ButtonGroupProps<T extends ButtonGroupTag = 'div'> = PropsFromHtmlTag<T> &
+  PropsFromFlex<T> &
+  PropsFromButton &
+  ButtonGroupOwnProps
