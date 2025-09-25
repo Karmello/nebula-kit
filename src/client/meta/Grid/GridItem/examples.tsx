@@ -5,7 +5,7 @@ import { GridItemOwnProps } from 'lib/components/layout-base/Grid/GridItem/defin
 const GRID_ITEM_EXAMPLES_META: ComponentMeta<GridItemOwnProps>['examples'] = [
   {
     description:
-      'This example shows how Grid.Item can explicitly control placement: on small screens, Start and End stay on the first row while Middle drops below, and from the md breakpoint up all three align in one row. Resize the viewport to see the layout switch in action.',
+      'Grid.Item with explicit placement: on small screens, Start and End slots share the first row while the Middle slot drops below; from the md breakpoint up, all three align in a single row. Resize the viewport to see the layout switch.',
     jsx: (
       <Grid gridTemplateColumns="auto 1fr auto" gridAutoFlow="row">
         <Grid.Item gridRow="1 / 2" gridColumn="1 / 2">

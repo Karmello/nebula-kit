@@ -1,8 +1,14 @@
 import { ComponentMeta } from 'client/definitions'
-import { GridOwnProps } from 'lib/components/layout-base/Grid/definitions'
+import { GridProps } from 'lib/components/layout-base/Grid/definitions'
 import { CssGridAutoFlow, CssGridPlaceContent, CssGridPlaceItems } from 'lib/definitions'
+import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
-const GRID_PROPS_META: ComponentMeta<GridOwnProps>['props'] = {
+const GRID_PROPS_META: ComponentMeta<GridProps>['props'] = {
+  ...HTML_TAG_PROPS_META,
+  children: {
+    ...HTML_TAG_PROPS_META.children,
+    isRequired: true,
+  },
   gridTemplateColumns: {
     options: ['string', 'number'],
     defaultValue: '1fr',

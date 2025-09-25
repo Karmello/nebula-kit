@@ -11,9 +11,9 @@ const FLEX_META: ComponentMeta<FlexProps> = {
     title:
       'Layout component built on CSS Flexbox, providing a one-dimensional system for arranging children in a row or column.',
     description: [
-      'provide a flexbox-based layout wrapper',
-      'control flow, alignment, and wrapping of children',
-      'manage spacing between items with gap properties',
+      'provides a flexbox-based layout wrapper',
+      'controls flow, alignment, and wrapping of children',
+      'manages spacing between items with gap properties',
     ],
     composedOf: ['Box'],
   },
