@@ -1,18 +1,20 @@
 import { ComponentMeta } from 'client/definitions'
 import { ToolbarStartProps } from 'lib/components'
 
+import { TOOLBAR_START_PROPS_META } from './props'
+
 const TOOLBAR_START_META: ComponentMeta<ToolbarStartProps> = {
   overview: {
     name: 'Toolbar.Start (optional)',
-    title: 'The start slot of the toolbar.',
+    title: 'Defines the start slot of Toolbar.',
     description: [
-      'provides a fixed region at the beginning of the toolbar layout',
-      'always visible, even when the main section is collapsed and hidden',
-      'showing a brand label or logo',
-      'adding small auxiliary elements that sit next to the toggle button',
+      'provides a fixed region at the start of the Toolbar layout',
+      'remains visible even if the main section is collapsed',
+      'commonly used to display a brand label or logo',
     ],
     composedOf: ['Grid.Item'],
   },
+  props: TOOLBAR_START_PROPS_META,
 }
 
 export { TOOLBAR_START_META }

@@ -1,13 +1,16 @@
 import { ComponentMeta } from 'client/definitions'
 import { ToolbarMainProps } from 'lib/components'
 
+import { TOOLBAR_MAIN_PROPS_META } from './props'
+
 const TOOLBAR_MAIN_META: ComponentMeta<ToolbarMainProps> = {
   overview: {
     name: 'Toolbar.Main',
-    title: 'The main slot of the toolbar.',
-    description: ['provides space for the primary content of the toolbar'],
+    title: 'Defines the main slot of Toolbar.',
+    description: ["provides space for Toolbar's primary content"],
     composedOf: ['Grid.Item'],
   },
+  props: TOOLBAR_MAIN_PROPS_META,
 }
 
 export { TOOLBAR_MAIN_META }

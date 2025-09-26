@@ -6,6 +6,7 @@ const APP_FRAME_PROPS_META: ComponentMeta<AppFrameProps>['props'] = {
   children: {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
+    options: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer'],
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
