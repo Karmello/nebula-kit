@@ -1,5 +1,5 @@
-import { MakeRequired, SwitchAt } from 'lib/definitions'
-import { GridProps } from 'lib/components'
+import { SwitchAt } from 'lib/definitions'
+import { HtmlTagProps } from 'lib/components'
 
 export const SplitViewSidePosition = ['left', 'right'] as const
 export type SplitViewSidePosition = (typeof SplitViewSidePosition)[number]
@@ -11,13 +11,8 @@ export type SplitViewOwnProps = {
   switchAt?: SwitchAt
 }
 
-export const SPLIT_VIEW_INHERITED_PROPS = {
-  Grid: ['children', 'tagAttrs', 'tagRef'] as const satisfies readonly (keyof GridProps<'div'>)[],
+type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
+  children: HtmlTagProps<'div'>['children']
 }
 
-export type SplitViewInheritedProps = MakeRequired<
-  Pick<GridProps<'div'>, (typeof SPLIT_VIEW_INHERITED_PROPS)['Grid'][number]>,
-  'children'
->
-
-export type SplitViewProps = SplitViewOwnProps & SplitViewInheritedProps
+export type SplitViewProps = PropsFromHtmlTag & SplitViewOwnProps

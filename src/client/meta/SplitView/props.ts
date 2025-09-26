@@ -1,8 +1,16 @@
 import { ComponentMeta } from 'client/definitions'
-import { SplitViewOwnProps, SplitViewSidePosition } from 'lib/components/layouts/SplitView/definitions'
+import { SplitViewProps, SplitViewSidePosition } from 'lib/components/layouts/SplitView/definitions'
 import { DEFAULT_SWITCH_AT, SwitchAt } from 'lib/definitions'
+import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
-const SPLIT_VIEW_PROPS_META: ComponentMeta<SplitViewOwnProps>['props'] = {
+const SPLIT_VIEW_PROPS_META: ComponentMeta<SplitViewProps>['props'] = {
+  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
+  tagRef: HTML_TAG_PROPS_META.tagRef,
+  children: {
+    ...HTML_TAG_PROPS_META.children,
+    isRequired: true,
+    description: 'SplitView.Side, SplitView.Main, SplitView.MainBar',
+  },
   sidePosition: {
     options: SplitViewSidePosition as unknown as string[],
     defaultValue: SplitViewSidePosition[0],

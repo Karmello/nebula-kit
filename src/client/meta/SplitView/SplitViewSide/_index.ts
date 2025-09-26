@@ -1,18 +1,17 @@
 import { ComponentMeta } from 'client/definitions'
-import { DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from 'lib/components/layouts/SplitView/definitions'
 import { SplitViewSideProps } from 'lib/components/layouts/SplitView/slots/SplitViewSide/definitions'
+
+import { SPLIT_VIEW_SIDE_PROPS_META } from './props'
 
 const SPLIT_VIEW_SIDE_META: ComponentMeta<SplitViewSideProps> = {
   overview: {
     name: 'SplitView.Side',
-    title: 'The side panel region of the layout.',
-    description: [
-      `sets inlineSize to ${DEFAULT_SPLIT_VIEW_SIDE_WIDTH}`,
-      'sets intent to secondary in overlay mode to visually separate the side section background from the app background',
-    ],
+    title: 'Defines the side panel region of SplitView.',
+    description: ['typically used for navigation, menus, or supplementary content'],
     composedOf: ['Box', 'Flex', 'IconButton'],
     rendersAs: ['aside'],
   },
+  props: SPLIT_VIEW_SIDE_PROPS_META,
 }
 
 export { SPLIT_VIEW_SIDE_META }

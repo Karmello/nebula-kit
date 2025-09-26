@@ -1,21 +1,9 @@
-import { BoxProps } from 'lib/components'
-import { MakeRequired } from 'lib/definitions'
+import { BoxProps, HtmlTagProps } from 'lib/components'
 
-export const SPLIT_VIEW_SIDE_INHERITED_PROPS = {
-  Box: [
-    'children',
-    'tagAttrs',
-    'tagRef',
-    'intent',
-    'inlineSize',
-  ] as const satisfies readonly (keyof BoxProps<'aside'>)[],
-  Flex: [] as const,
-  IconButton: [] as const,
+type PropsFromHtmlTag = Pick<HtmlTagProps<'aside'>, 'tagAttrs' | 'tagRef'> & {
+  children: HtmlTagProps<'aside'>['children']
 }
 
-export type SplitViewSideInheritedProps = MakeRequired<
-  Pick<BoxProps<'aside'>, (typeof SPLIT_VIEW_SIDE_INHERITED_PROPS)['Box'][number]>,
-  'children'
->
+type PropsFromBox = Pick<BoxProps<'aside'>, 'intent' | 'inlineSize'>
 
-export type SplitViewSideProps = SplitViewSideInheritedProps
+export type SplitViewSideProps = PropsFromHtmlTag & PropsFromBox

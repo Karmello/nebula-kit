@@ -1,8 +1,19 @@
 import { ComponentMeta } from 'client/definitions'
 import { Box, SplitView, Text } from 'lib/components'
-import { SplitViewOwnProps } from 'lib/components/layouts/SplitView/definitions'
+import { SplitViewProps } from 'lib/components/layouts/SplitView/definitions'
 
-const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewOwnProps>['examples'] = [
+const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewProps>['examples'] = [
+  {
+    description: 'Basic render case for SplitView.',
+    jsx: (
+      <SplitView>
+        <SplitView.Side>Side</SplitView.Side>
+        <SplitView.Main>Main</SplitView.Main>
+        <SplitView.MainBar>MainBar</SplitView.MainBar>
+      </SplitView>
+    ),
+    noSandBox: true,
+  },
   {
     description:
       "Demonstrates SplitView filling its parent's height, with a side panel, a main content area, and an optional MainBar above the main content. Resize the viewport to a smaller width to see the side panel switch to its overlay version.",
