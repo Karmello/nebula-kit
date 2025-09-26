@@ -1,19 +1,17 @@
 import { ComponentMeta } from 'client/definitions'
-import { BUTTON_SIZE_CONFIG, DEFAULT_BUTTON_SIZE } from 'lib/components/controls/Button/definitions'
-import { AppFrameOwnProps } from 'lib/components/layouts/AppFrame/definitions'
+import { AppFrameHeaderProps } from 'lib/components'
 
-const APP_FRAME_HEADER_META: ComponentMeta<AppFrameOwnProps> = {
+import { APP_FRAME_HEADER_PROPS_META } from './props'
+
+const APP_FRAME_HEADER_META: ComponentMeta<AppFrameHeaderProps> = {
   overview: {
     name: 'AppFrame.Header',
     title: 'Defines the top region of AppFrame.',
-    description: [
-      'applies the secondary background',
-      `ensures the region has at least ${BUTTON_SIZE_CONFIG[DEFAULT_BUTTON_SIZE].blockSize} units of vertical height`,
-      'used for navigation or branding',
-    ],
+    description: ['typically used for navigation, branding, or other global actions'],
     composedOf: ['Box'],
     rendersAs: ['header'],
   },
+  props: APP_FRAME_HEADER_PROPS_META,
 }
 
 export { APP_FRAME_HEADER_META }

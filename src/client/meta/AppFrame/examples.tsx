@@ -1,9 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
 import { AppFrame, Text } from 'lib/components'
-import { AppFrameOwnProps } from 'lib/components/layouts/AppFrame/definitions'
+import { AppFrameProps } from 'lib/components/layouts/AppFrame/definitions'
 
-const APP_FRAME_EXAMPLES_META: ComponentMeta<AppFrameOwnProps>['examples'] = [
+const APP_FRAME_EXAMPLES_META: ComponentMeta<AppFrameProps>['examples'] = [
   {
+    description: 'Application view composed of header, main area, and footer.',
     jsx: (
       <AppFrame>
         <AppFrame.Header>

@@ -1,19 +1,9 @@
-import { BoxProps } from 'lib/components'
-import { MakeRequired } from 'lib/definitions'
+import { BoxProps, HtmlTagProps } from 'lib/components'
 
-export const APP_FRAME_HEADER_INHERITED_PROPS = {
-  Box: [
-    'children',
-    'tagAttrs',
-    'tagRef',
-    'intent',
-    'minBlockSize',
-  ] as const satisfies readonly (keyof BoxProps<'header'>)[],
+type PropsFromHtmlTag = Pick<HtmlTagProps<'header'>, 'tagAttrs' | 'tagRef'> & {
+  children: HtmlTagProps<'header'>['children']
 }
 
-export type AppFrameHeaderInheritedProps = MakeRequired<
-  Pick<BoxProps<'header'>, (typeof APP_FRAME_HEADER_INHERITED_PROPS)['Box'][number]>,
-  'children'
->
+type PropsFromBox = Pick<BoxProps<'header'>, 'intent' | 'minBlockSize'>
 
-export type AppFrameHeaderProps = AppFrameHeaderInheritedProps
+export type AppFrameHeaderProps = PropsFromHtmlTag & PropsFromBox

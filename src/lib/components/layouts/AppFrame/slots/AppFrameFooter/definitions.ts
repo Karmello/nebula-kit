@@ -1,26 +1,20 @@
-import { BoxProps } from 'lib/components'
-import { MakeRequired } from 'lib/definitions'
+import { BoxProps, HtmlTagProps } from 'lib/components'
 
-export const APP_FRAME_FOOTER_INHERITED_PROPS = {
-  Box: [
-    'children',
-    'tagAttrs',
-    'tagRef',
-    'intent',
-    'minBlockSize',
-    'padding',
-    'paddingInline',
-    'paddingBlock',
-    'paddingTop',
-    'paddingRight',
-    'paddingBottom',
-    'paddingLeft',
-  ] as const satisfies readonly (keyof BoxProps<'footer'>)[],
+type PropsFromHtmlTag = Pick<HtmlTagProps<'footer'>, 'tagAttrs' | 'tagRef'> & {
+  children: HtmlTagProps<'footer'>['children']
 }
 
-export type AppFrameFooterInheritedProps = MakeRequired<
-  Pick<BoxProps<'footer'>, (typeof APP_FRAME_FOOTER_INHERITED_PROPS)['Box'][number]>,
-  'children'
+type PropsFromBox = Pick<
+  BoxProps<'footer'>,
+  | 'intent'
+  | 'minBlockSize'
+  | 'padding'
+  | 'paddingInline'
+  | 'paddingBlock'
+  | 'paddingTop'
+  | 'paddingRight'
+  | 'paddingBottom'
+  | 'paddingLeft'
 >
 
-export type AppFrameFooterProps = AppFrameFooterInheritedProps
+export type AppFrameFooterProps = PropsFromHtmlTag & PropsFromBox

@@ -93,3 +93,5 @@ export const ButtonGroup = <T extends ButtonGroupTag = 'div'>({
     </Flex>
   )
 }
+
+ButtonGroup.displayName = 'ButtonGroup'

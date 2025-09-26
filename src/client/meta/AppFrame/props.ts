@@ -1,14 +1,20 @@
 import { ComponentMeta } from 'client/definitions'
-import { AppFrameOwnProps } from 'lib/components/layouts/AppFrame/definitions'
+import { AppFrameProps } from 'lib/components/layouts/AppFrame/definitions'
+import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
-const APP_FRAME_PROPS_META: ComponentMeta<AppFrameOwnProps>['props'] = {
+const APP_FRAME_PROPS_META: ComponentMeta<AppFrameProps>['props'] = {
+  children: {
+    ...HTML_TAG_PROPS_META.children,
+    isRequired: true,
+  },
+  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
+  tagRef: HTML_TAG_PROPS_META.tagRef,
   stickyHeader: {
     options: ['boolean'],
     defaultValue: 'false',
     isRequired: false,
     isResponsive: false,
-    description:
-      'makes the AppFrame.Header remain fixed at the top of the viewport while scrolling the main content',
+    description: 'keeps the header fixed at the top of the viewport',
   },
 }
 
