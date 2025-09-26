@@ -1,12 +1,19 @@
-import { BoxProps } from 'lib/components'
+import { BoxProps, HtmlTagProps } from 'lib/components'
 
-export type TableLayout = 'auto' | 'fixed'
+export const TableLayout = ['auto', 'fixed'] as const
+export const DEFAULT_TABLE_LAYOUT: TableLayout = 'auto'
 
-export type TableOwnProps = {
+export type TableLayout = (typeof TableLayout)[number]
+
+type TableOwnProps = {
   layout?: TableLayout
   zebra?: boolean
-  stickyHeader?: boolean
 }
 
-export type TableProps = Pick<BoxProps<'table'>, 'children' | 'tagAttrs' | 'tagRef' | 'variant' | 'intent'> &
-  TableOwnProps
+type PropsFromHtmlTag = Pick<HtmlTagProps<'table'>, 'tagAttrs' | 'tagRef'> & {
+  children: HtmlTagProps<'table'>['children']
+}
+
+type PropsFromBox = Pick<BoxProps<'table'>, 'variant' | 'intent'>
+
+export type TableProps = PropsFromHtmlTag & PropsFromBox & TableOwnProps

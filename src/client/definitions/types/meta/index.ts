@@ -18,6 +18,7 @@ type Prop = {
 
 type Example = {
   jsx: JSX.Element
+  code?: string
   description?: string
   noSandBox?: boolean
   sandBoxWithNoPadding?: boolean

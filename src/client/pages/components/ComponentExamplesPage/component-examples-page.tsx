@@ -10,7 +10,7 @@ import { Box, Flex, Spacer, Text } from 'lib/components'
 const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   const elemToString = elemToStringService()
 
-  const { description, jsx, noSandBox, sandBoxWithNoPadding } = props
+  const { description, jsx, code, noSandBox, sandBoxWithNoPadding } = props
 
   return (
     <>
@@ -28,7 +28,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           <Spacer blockSize={5} />
         </>
       ) : null}
-      <CodeSnippet code={elemToString(jsx)} />
+      <CodeSnippet code={code || elemToString(jsx)} />
       <Spacer blockSize={30} />
     </>
   )

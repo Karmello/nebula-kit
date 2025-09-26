@@ -65,11 +65,6 @@ export const COMPONENT_CATEGORIES = [
       { key: 'toolbar', label: 'Toolbar', sections: COMPONENT_SECTIONS },
     ],
   },
-  // {
-  //   key: 'navigation',
-  //   label: 'Navigation',
-  //   items: [],
-  // },
   {
     key: 'utility',
     label: 'Utility',
@@ -77,6 +72,7 @@ export const COMPONENT_CATEGORIES = [
       { key: 'nebkit-provider', label: 'NebkitProvider', sections: COMPONENT_SECTIONS },
       { key: 'hydration-gate', label: 'HydrationGate', sections: COMPONENT_SECTIONS },
       { key: 'html-tag', label: 'HtmlTag', sections: COMPONENT_SECTIONS },
+      { key: 'animate', label: 'Animate', sections: COMPONENT_SECTIONS },
     ],
   },
 ]

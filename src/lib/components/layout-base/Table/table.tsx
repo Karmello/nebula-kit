@@ -4,19 +4,21 @@ import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { applyStaticDataset } from 'lib/service'
 
-import { TableContext } from './use-table-context'
-import { TableProps } from './definitions'
+import { TableContext } from './TableContext'
+import { DEFAULT_TABLE_LAYOUT, TableProps } from './definitions'
 import './table.scss'
 
 export const Table = ({
-  children,
+  // HtmlTag
   tagAttrs,
   tagRef,
+  children,
+  // Box
   variant,
   intent,
-  layout = 'auto',
+  // own
+  layout = DEFAULT_TABLE_LAYOUT,
   zebra = false,
-  stickyHeader = false,
 }: TableProps) => {
   return (
     <TableContext value={{ variant, intent, layout }}>
@@ -30,7 +32,7 @@ export const Table = ({
               tableLayout: layout,
               ...(tagAttrs?.style || {}),
             },
-            ...applyStaticDataset('table', { zebra, stickyHeader }),
+            ...applyStaticDataset('table', { zebra }),
           }}
           tagRef={tagRef}
           variant={variant}

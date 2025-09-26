@@ -22,7 +22,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const content = (
     <Flex flexDirection="column" alignItems="stretch" gap={15}>
       <Text typography="lead">{title}</Text>
-      {examples?.[0] ? <CodeSnippet code={elemToString(examples[0].jsx)} /> : null}
+      {examples?.[0] ? <CodeSnippet code={examples[0].code || elemToString(examples[0].jsx)} /> : null}
       {description ? <ListWithHeading heading="Description:" items={description} /> : null}
       {composedOf ? <ListWithChips heading="Composed of:" items={composedOf} intent="warning" /> : null}
       {rendersAs ? (

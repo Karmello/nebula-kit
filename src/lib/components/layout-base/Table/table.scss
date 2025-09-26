@@ -8,14 +8,7 @@
 
 .neb-table {
   display: table;
-  // border-collapse: collapse;
   inline-size: 100%;
-}
-
-.neb-table[data-neb-table-sticky-header='true'] {
-  position: sticky;
-  top: 0;
-  z-index: 1;
 }
 
 .neb-table-head {

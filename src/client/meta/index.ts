@@ -1,5 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 
+import animateMeta from './Animate/_index'
 import appFrameMeta from './AppFrame/_index'
 import boxMeta from './Box/_index'
 import buttonMeta from './Button/_index'
@@ -17,11 +18,13 @@ import nebkitProviderMeta from './NebkitProvider/_index'
 import sectionMeta from './Section/_index'
 import spacerMeta from './Spacer/_index'
 import splitViewMeta from './SplitView/_index'
+import tableMeta from './Table/_index'
 import textMeta from './Text/_index'
 import toolbarMeta from './Toolbar/_index'
 import withIconMeta from './WithIcon/_index'
 
 export default {
+  Animate: animateMeta,
   AppFrame: appFrameMeta,
   Box: boxMeta,
   ButtonGroup: buttonGroupMeta,
@@ -39,6 +42,7 @@ export default {
   Section: sectionMeta,
   Spacer: spacerMeta,
   SplitView: splitViewMeta,
+  Table: tableMeta,
   Text: textMeta,
   Toolbar: toolbarMeta,
   WithIcon: withIconMeta,

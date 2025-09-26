@@ -4,7 +4,7 @@ import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import { TableCellProps } from './definitions'
-import { useTableContext } from '../../use-table-context'
+import { useTableContext } from '../../TableContext'
 
 export const TableCell = ({ children, tagAttrs, tagRef }: TableCellProps) => {
   const { variant, intent } = useTableContext()
