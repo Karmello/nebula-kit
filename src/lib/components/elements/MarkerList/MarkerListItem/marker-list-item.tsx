@@ -22,4 +22,3 @@ export const MarkerListItem = ({ children, tagAttrs, tagRef }: MarkerListItemPro
 }
 
 MarkerListItem.displayName = 'MarkerList.Item'
-MarkerListItem.slotName = 'Item'

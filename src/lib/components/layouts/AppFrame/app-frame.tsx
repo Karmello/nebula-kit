@@ -12,23 +12,23 @@ import './app-frame.scss'
 export const AppFrame = ({ children, tagAttrs, tagRef, stickyHeader = false }: AppFrameProps) => {
   return (
     <AppFrameProvider stickyHeader={stickyHeader}>
-      <WithSlots<'Header' | 'Main' | 'Footer'>
+      <WithSlots<'AppFrame.Header' | 'AppFrame.Main' | 'AppFrame.Footer'>
         componentName="AppFrame"
         slotsConfig={[
-          { name: 'Header', required: true },
-          { name: 'Main', required: true },
-          { name: 'Footer' },
+          { name: 'AppFrame.Header', required: true },
+          { name: 'AppFrame.Main', required: true },
+          { name: 'AppFrame.Footer' },
         ]}
         childrenToVerify={children}
       >
-        {slots => (
+        {({ slots }) => (
           <Grid
             tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('app-frame'), tagAttrs?.className) }}
             tagRef={tagRef}
           >
-            {slots.Header || <div />}
-            {slots.Main || <div />}
-            {slots.Footer}
+            {slots['AppFrame.Header'] || <div />}
+            {slots['AppFrame.Main'] || <div />}
+            {slots['AppFrame.Footer']}
           </Grid>
         )}
       </WithSlots>

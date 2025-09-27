@@ -14,12 +14,16 @@ import './toolbar.scss'
 export const Toolbar = ({ children, tagAttrs, tagRef, switchAt = DEFAULT_SWITCH_AT }: ToolbarProps) => {
   return (
     <ToolbarProvider switchAt={switchAt}>
-      <WithSlots<'Start' | 'Main' | 'End'>
+      <WithSlots<'Toolbar.Start' | 'Toolbar.Main' | 'Toolbar.End'>
         componentName="Toolbar"
-        slotsConfig={[{ name: 'Start' }, { name: 'Main', required: true }, { name: 'End' }]}
+        slotsConfig={[
+          { name: 'Toolbar.Start' },
+          { name: 'Toolbar.Main', required: true },
+          { name: 'Toolbar.End' },
+        ]}
         childrenToVerify={children}
       >
-        {slots => (
+        {({ slots }) => (
           <Grid
             tag="nav"
             tagAttrs={{
@@ -31,9 +35,9 @@ export const Toolbar = ({ children, tagAttrs, tagRef, switchAt = DEFAULT_SWITCH_
             gridAutoFlow="row"
           >
             <ToolbarToggle />
-            {slots.Start}
-            {slots.Main || <div />}
-            {slots.End}
+            {slots['Toolbar.Start']}
+            {slots['Toolbar.Main'] || <div />}
+            {slots['Toolbar.End']}
           </Grid>
         )}
       </WithSlots>

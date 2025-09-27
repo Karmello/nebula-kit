@@ -18,6 +18,8 @@ import {
   CheckCircle,
   CircleAlert,
   ExternalLink,
+  ListChevronsDownUp,
+  ListChevronsUpDown,
 } from 'lucide-react'
 
 import { IconName } from 'lib/definitions'
@@ -40,6 +42,8 @@ const ICONS: Record<IconName, any> = {
   'check-circle': CheckCircle,
   'circle-alert': CircleAlert,
   'external-link': ExternalLink,
+  'list-chevrons-down-up': ListChevronsDownUp,
+  'list-chevrons-up-down': ListChevronsUpDown,
 }
 
 export const getSvgIconComponent = (name: IconName): ((props: SVGProps<SVGElement>) => JSX.Element) => {

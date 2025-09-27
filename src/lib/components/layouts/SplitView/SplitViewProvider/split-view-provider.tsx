@@ -4,7 +4,7 @@ import { SplitViewOwnProps } from '../definitions'
 
 type ProviderProps = SplitViewOwnProps & {
   children: ReactNode
-  slots: Record<'Main' | 'MainBar' | 'Side', ReactNode>
+  slots: Record<'SplitView.Main' | 'SplitView.MainBar' | 'SplitView.Side', ReactNode>
   mode: SplitViewMode
 }
 
@@ -18,7 +18,7 @@ type ContextProps = Omit<ProviderProps, 'children'> & {
 const SplitViewContext = createContext<ContextProps>({} as ContextProps)
 
 export const SplitViewProvider = ({ children, slots, mode, sidePosition, switchAt }: ProviderProps) => {
-  const [sideOpen, setSideOpen] = useState(true)
+  const [sideOpen, setSideOpen] = useState(mode === 'inline')
 
   return (
     <SplitViewContext.Provider value={{ mode, sideOpen, setSideOpen, slots, sidePosition, switchAt }}>

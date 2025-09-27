@@ -17,12 +17,12 @@ export const MarkerList = <T extends MarkerListTag = 'ul'>({
   listStyle,
 }: MarkerListProps<T>) => {
   return (
-    <WithSlots<'Item'>
+    <WithSlots<'MarkerList.Item'>
       componentName="MarkerList"
-      slotsConfig={[{ name: 'Item', required: true, allowMultiple: true }]}
+      slotsConfig={[{ name: 'MarkerList.Item', required: true, allowMultiple: true }]}
       childrenToVerify={children}
     >
-      {slots => {
+      {({ slots }) => {
         return (
           <Flex
             tag={tag || 'ul'}
@@ -40,7 +40,7 @@ export const MarkerList = <T extends MarkerListTag = 'ul'>({
             flexDirection="column"
             rowGap={rowGap}
           >
-            {slots.Item || ''}
+            {slots['MarkerList.Item'] || ''}
           </Flex>
         )
       }}

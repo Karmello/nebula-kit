@@ -8,37 +8,45 @@ export const WithSlots = <SlotName extends string>({
   componentName,
   childrenToVerify,
   slotsConfig,
+  someRequired,
   children,
 }: WithSlotsProps<SlotName>) => {
-  const getWarnMsg = (slotName: SlotName) =>
-    getLibMsg(`${componentName} expects ${componentName}.${slotName} as a child`)
+  if (!childrenToVerify) return null
 
-  const validChildren: Record<SlotName, ReactNode[]> = {} as never
+  const slots: Record<SlotName, ReactNode[]> = {} as never
+  const validNodes: ReactNode[] = []
+
   slotsConfig.forEach(({ name }) => {
-    validChildren[name] = []
+    slots[name] = []
   })
 
   Children.toArray(childrenToVerify).forEach(child => {
     if (!isValidElement(child)) return
 
-    const slotName: string = (child.type as any).slotName
-    if (!slotName) return
+    const displayName: string = (child.type as any).displayName
+    if (!displayName) return
 
-    const slotConfig = slotsConfig.find(c => c.name === slotName)
+    const slotConfig = slotsConfig.find(c => c.name === displayName)
     if (!slotConfig) return
 
     if (slotConfig.allowMultiple) {
-      validChildren[slotConfig.name].push(child)
+      slots[slotConfig.name].push(child)
     } else {
-      validChildren[slotConfig.name] = [child]
+      slots[slotConfig.name] = [child]
     }
+
+    validNodes.push(child)
   })
 
-  slotsConfig.forEach(({ name, required }) => {
-    if (required && !validChildren[name].length) {
-      console.warn(getWarnMsg(name))
-    }
-  })
+  if (someRequired && !validNodes.length) {
+    console.warn(getLibMsg(`${componentName} expects ${Object.keys(slots).join(' or ')} to be its child`))
+  } else {
+    slotsConfig.forEach(({ name, required }) => {
+      if (required && !slots[name].length) {
+        console.warn(getLibMsg(`${componentName} expects ${name} to be its child`))
+      }
+    })
+  }
 
-  return children(validChildren)
+  return children({ slots, validNodes })
 }

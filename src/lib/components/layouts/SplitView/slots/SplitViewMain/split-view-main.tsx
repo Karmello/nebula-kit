@@ -35,7 +35,7 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
           intent="tertiary"
           size="sm"
         />
-        {slots.MainBar}
+        {slots['SplitView.MainBar']}
       </Flex>
       <Spacer blockSize={5} />
       <Box>{children}</Box>
@@ -44,4 +44,3 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
 }
 
 SplitViewMain.displayName = 'SplitView.Main'
-SplitViewMain.slotName = 'Main'

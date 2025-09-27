@@ -25,4 +25,3 @@ export const AppFrameMain = ({ children, tagAttrs, tagRef, ...paddings }: AppFra
 }
 
 AppFrameMain.displayName = 'AppFrame.Main'
-AppFrameMain.slotName = 'Main'

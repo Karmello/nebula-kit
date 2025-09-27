@@ -25,12 +25,16 @@ export const SplitView = ({
     : 'inline'
 
   return (
-    <WithSlots<'Main' | 'MainBar' | 'Side'>
+    <WithSlots<'SplitView.Main' | 'SplitView.MainBar' | 'SplitView.Side'>
       componentName="SplitView"
-      slotsConfig={[{ name: 'Main', required: true }, { name: 'MainBar' }, { name: 'Side', required: true }]}
+      slotsConfig={[
+        { name: 'SplitView.Main', required: true },
+        { name: 'SplitView.MainBar' },
+        { name: 'SplitView.Side', required: true },
+      ]}
       childrenToVerify={children}
     >
-      {slots => {
+      {({ slots }) => {
         return (
           <SplitViewProvider slots={slots} mode={mode} sidePosition={sidePosition} switchAt={switchAt}>
             <Grid
@@ -43,9 +47,9 @@ export const SplitView = ({
               gridTemplateColumns={sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto'}
               gridTemplateRows="1fr"
             >
-              {sidePosition === 'right' ? slots.Main : null}
-              {slots.Side}
-              {sidePosition === 'left' ? slots.Main : null}
+              {sidePosition === 'right' ? slots['SplitView.Main'] : null}
+              {slots['SplitView.Side']}
+              {sidePosition === 'left' ? slots['SplitView.Main'] : null}
             </Grid>
           </SplitViewProvider>
         )

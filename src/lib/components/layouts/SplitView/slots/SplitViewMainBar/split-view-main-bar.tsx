@@ -30,4 +30,3 @@ export const SplitViewMainBar = <T extends ElementType = 'div'>({
 }
 
 SplitViewMainBar.displayName = 'SplitView.MainBar'
-SplitViewMainBar.slotName = 'MainBar'

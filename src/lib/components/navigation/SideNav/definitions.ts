@@ -1,30 +1,16 @@
-import { ButtonProps } from 'lib/components'
+import { HtmlTagProps } from 'lib/components'
 
-type Group = Omit<ButtonProps, 'children' | 'size' | 'variant' | 'intent'> & {
-  key: string
-  label: string
-  items?: Item[]
+export const SideNavExpandMode = ['single', 'multiple'] as const
+export const DEFAULT_SIDE_NAV_EXPAND_MODE: SideNavExpandMode = 'multiple'
+
+export type SideNavExpandMode = (typeof SideNavExpandMode)[number]
+
+export type SideNavOwnProps = {
+  expandMode?: SideNavExpandMode
 }
 
-type Item = Omit<ButtonProps, 'children' | 'size' | 'variant' | 'intent'> & {
-  key: string
-  label: string
+type PropsFromHtmlTag = Pick<HtmlTagProps<'nav'>, 'tagAttrs' | 'tagRef'> & {
+  children: HtmlTagProps<'nav'>['children']
 }
 
-export type Config = {
-  default?: {
-    variant?: ButtonProps['variant']
-    intent?: ButtonProps['intent']
-  }
-  active?: {
-    variant?: ButtonProps['variant']
-    intent?: ButtonProps['intent']
-  }
-}
-
-export type SideNavProps = {
-  groups: Group[]
-  activeKey: string
-  groupConfig?: Config
-  itemConfig?: Config
-}
+export type SideNavProps = PropsFromHtmlTag & SideNavOwnProps

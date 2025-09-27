@@ -52,4 +52,3 @@ export const SplitViewSide = ({
 }
 
 SplitViewSide.displayName = 'SplitView.Side'
-SplitViewSide.slotName = 'Side'

@@ -11,4 +11,3 @@ export const ToolbarStart = ({ children, tagAttrs, tagRef }: ToolbarStartProps) 
 }
 
 ToolbarStart.displayName = 'Toolbar.Start'
-ToolbarStart.slotName = 'Start'

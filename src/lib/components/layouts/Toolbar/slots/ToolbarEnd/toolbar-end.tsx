@@ -11,4 +11,3 @@ export const ToolbarEnd = ({ children, tagAttrs, tagRef }: ToolbarEndProps) => {
 }
 
 ToolbarEnd.displayName = 'Toolbar.End'
-ToolbarEnd.slotName = 'End'

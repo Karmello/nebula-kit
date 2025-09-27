@@ -28,6 +28,8 @@ export const ICON_NAMES = [
   'check-circle',
   'circle-alert',
   'external-link',
+  'list-chevrons-down-up',
+  'list-chevrons-up-down',
 ] as const
 
 // types

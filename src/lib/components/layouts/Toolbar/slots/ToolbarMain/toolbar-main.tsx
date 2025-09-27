@@ -47,4 +47,3 @@ export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) =>
 }
 
 ToolbarMain.displayName = 'Toolbar.Main'
-ToolbarMain.slotName = 'Main'

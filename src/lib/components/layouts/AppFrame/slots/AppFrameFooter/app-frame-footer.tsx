@@ -32,4 +32,3 @@ export const AppFrameFooter = ({
 }
 
 AppFrameFooter.displayName = 'AppFrame.Footer'
-AppFrameFooter.slotName = 'Footer'

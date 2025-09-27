@@ -27,50 +27,64 @@ export const FoundationsPage = () => {
   return (
     <SplitView>
       <SplitView.Side>
-        <SideNav
-          groups={FOUNDATION_CATEGORIES.map(({ key: categoryKey, label, items }) => ({
-            key: categoryKey,
-            label,
-            items: items.map(({ key: itemKey, label, sections }) => ({
-              key: itemKey,
-              label,
-              tagAttrs: {
-                onClick: () => {
-                  const sectionIndex = sections.findIndex(s => s.key === foundationsPageStore.sectionKey)
-                  navigateTo(
-                    `/${PageKey.foundations}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
-                  )
-                },
-              },
-            })),
-          }))}
-          activeKey={foundationsPageStore.itemKey}
-        />
+        <SideNav>
+          {FOUNDATION_CATEGORIES.map(({ key: categoryKey, label, items }) => (
+            <SideNav.Category
+              key={categoryKey}
+              label={label}
+              intent={activeCategoryObj?.key === categoryKey ? 'primary' : 'neutral'}
+            >
+              {items.map(({ key: itemKey, label, sections }) => {
+                const sectionIndex = sections.findIndex(s => s.key === foundationsPageStore.sectionKey)
+                const href = `/${PageKey.foundations}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
+                const isSelected = pathname === href
+                return (
+                  <SideNav.Item
+                    key={itemKey}
+                    tagAttrs={{
+                      href,
+                      onClick: e => {
+                        e.preventDefault()
+                        navigateTo(href)
+                      },
+                    }}
+                    intent={isSelected ? 'primary' : 'neutral'}
+                  >
+                    {label}
+                  </SideNav.Item>
+                )
+              })}
+            </SideNav.Category>
+          ))}
+        </SideNav>
       </SplitView.Side>
       <SplitView.Main paddingLeft={10}>
         <Spacer blockSize={15} />
         <SplitView sidePosition="right">
           <SplitView.Side>
-            <SideNav
-              groups={FOUNDATION_CATEGORIES.find(c => c.key === foundationsPageStore.categoryKey)
+            <SideNav>
+              {FOUNDATION_CATEGORIES.find(c => c.key === foundationsPageStore.categoryKey)
                 ?.items.find(i => i.key === foundationsPageStore.itemKey)
-                ?.sections.map(({ key: sectionKey, label }) => ({
-                  key: sectionKey,
-                  label,
-                  tagAttrs: {
-                    onClick: () => {
-                      navigateTo(
-                        `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${sectionKey}`
-                      )
-                    },
-                  },
-                }))}
-              activeKey={foundationsPageStore.sectionKey}
-              groupConfig={{
-                default: { variant: 'solid' },
-                active: { variant: 'solid', intent: 'tertiary' },
-              }}
-            />
+                ?.sections.map(({ key: sectionKey, label }) => {
+                  const href = `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${sectionKey}`
+                  const isSelected = pathname === href
+                  return (
+                    <SideNav.Item
+                      key={sectionKey}
+                      tagAttrs={{
+                        href,
+                        onClick: e => {
+                          e.preventDefault()
+                          navigateTo(href)
+                        },
+                      }}
+                      intent={isSelected ? 'primary' : 'neutral'}
+                    >
+                      {label}
+                    </SideNav.Item>
+                  )
+                })}
+            </SideNav>
           </SplitView.Side>
           <SplitView.Main paddingRight={10}>
             <FoundationsPageRoutes />

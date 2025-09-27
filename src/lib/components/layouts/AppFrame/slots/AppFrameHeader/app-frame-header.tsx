@@ -41,4 +41,3 @@ export const AppFrameHeader = ({
 }
 
 AppFrameHeader.displayName = 'AppFrame.Header'
-AppFrameHeader.slotName = 'Header'
