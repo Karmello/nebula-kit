@@ -66,10 +66,10 @@ export const ComponentsPage = () => {
                   },
                 }))}
               activeKey={componentsPageStore.sectionKey}
-              groupConfig={{
-                default: { variant: 'solid' },
-                active: { variant: 'solid', intent: 'tertiary' },
-              }}
+              // groupConfig={{
+              //   default: { variant: 'solid' },
+              //   active: { variant: 'solid', intent: 'tertiary' },
+              // }}
             />
           </SplitView.Side>
           <SplitView.Main paddingRight={10}>

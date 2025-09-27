@@ -3,17 +3,14 @@ import {
   cloneElement,
   ComponentProps,
   ComponentRef,
-  isValidElement,
   PropsWithoutRef,
-  ReactElement,
-  ReactNode,
   useLayoutEffect,
   useRef,
 } from 'react'
 
 import classNames from 'classnames'
 
-import { Button, ButtonProps, Flex } from 'lib/components'
+import { ButtonProps, Flex } from 'lib/components'
 import { applyRespValues, applyStaticDataset } from 'lib/service'
 import { useScreen, withPrefix } from 'lib/helpers'
 
@@ -25,9 +22,6 @@ import {
 } from './definitions'
 
 import './button-group.scss'
-
-const isButtonElement = (node: ReactNode): node is ReactElement<ButtonProps, typeof Button> =>
-  isValidElement(node) && node.type === Button
 
 export const ButtonGroup = <T extends ButtonGroupTag = 'div'>({
   children,
@@ -77,8 +71,6 @@ export const ButtonGroup = <T extends ButtonGroupTag = 'div'>({
       flexWrap="nowrap"
     >
       {Children.map(children as any, child => {
-        if (!isButtonElement(child)) return null
-
         return (
           <Flex.Item>
             {cloneElement<ButtonProps>(child, {

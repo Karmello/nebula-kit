@@ -66,6 +66,22 @@ export const COMPONENT_CATEGORIES = [
     ],
   },
   {
+    key: 'navigation',
+    label: 'Navigation',
+    items: [
+      {
+        key: 'breadcrumb',
+        label: 'Breadcrumb',
+        sections: COMPONENT_SECTIONS,
+      },
+      {
+        key: 'side-nav',
+        label: 'SideNav',
+        sections: COMPONENT_SECTIONS,
+      },
+    ],
+  },
+  {
     key: 'utility',
     label: 'Utility',
     items: [

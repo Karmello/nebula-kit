@@ -1,10 +1,12 @@
 import { useLayoutEffect, useMemo, useState } from 'react'
 
 import { Box, Button, Flex } from 'lib/components'
-import { scale } from 'lib/helpers'
+import { scale, withPrefix } from 'lib/helpers'
 import { BUTTON_SIZE_CONFIG } from 'lib/components/controls/Button/definitions'
 
 import { Config, SideNavProps } from './definitions'
+
+import './side-nav.scss'
 
 export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: SideNavProps) => {
   const [openGroupKey, setOpenGroupKey] = useState<string>('')
@@ -35,19 +37,25 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
   const FINAL_ITEM_CONFIG: Config = useMemo(
     () => ({
       default: {
-        variant: itemConfig?.default?.variant || 'solid',
+        variant: itemConfig?.default?.variant || 'ghost',
         intent: itemConfig?.default?.intent || 'neutral',
       },
       active: {
-        variant: itemConfig?.active?.variant || 'solid',
-        intent: itemConfig?.active?.intent || 'tertiary',
+        variant: itemConfig?.active?.variant || 'ghost',
+        intent: itemConfig?.active?.intent || 'primary',
       },
     }),
     [itemConfig]
   )
 
   return (
-    <Flex flexDirection="column" alignItems="stretch">
+    <Flex
+      tagAttrs={{
+        className: withPrefix('side-nav'),
+      }}
+      flexDirection="column"
+      alignItems="stretch"
+    >
       {groups.map(({ key, label, items, tagAttrs, ...rest }) => {
         const isGroupActive = items?.some(item => item.key === activeKey) || key === activeKey
         const isGroupOpen = key === openGroupKey
@@ -65,7 +73,7 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
                 },
                 style: { justifyContent: 'flex-start', inlineSize: '100%', ...tagAttrs?.style },
               }}
-              size="md"
+              size="sm"
               variant={
                 isGroupActive ? FINAL_GROUP_CONFIG.active?.variant : FINAL_GROUP_CONFIG.default?.variant
               }
@@ -102,6 +110,7 @@ export const SideNav = ({ groups = [], activeKey, groupConfig, itemConfig }: Sid
                           ...tagAttrs?.style,
                         },
                       }}
+                      size="sm"
                       variant={
                         isItemActive ? FINAL_ITEM_CONFIG.active?.variant : FINAL_ITEM_CONFIG.default?.variant
                       }
