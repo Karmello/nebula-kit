@@ -2,6 +2,7 @@ import { useEffect, useId } from 'react'
 
 import { WithSlots } from 'lib/components/internal'
 import { Animate, Box, Button } from 'lib/components'
+import { DEFAULT_BOX_INTENT, DEFAULT_BOX_VARIANT } from 'lib/components/base/Box/definitions'
 
 import { useSideNavContext } from '../../SideNavProvider'
 import { SideNavCategoryProps } from './definitions'
@@ -10,8 +11,8 @@ export const SideNavCategory = ({
   tagAttrs,
   tagRef,
   children,
-  variant = 'ghost',
-  intent = 'neutral',
+  variant = DEFAULT_BOX_VARIANT,
+  intent = DEFAULT_BOX_INTENT,
   label,
 }: SideNavCategoryProps) => {
   const { expandedCategories, setExpandedCategories, expandMode } = useSideNavContext()
@@ -40,7 +41,9 @@ export const SideNavCategory = ({
                       setExpandedCategories(state => ({ ...state, [id]: !state[id] }))
                     } else {
                       setExpandedCategories(state =>
-                        Object.fromEntries(Object.keys(state).map(_id => [_id, _id === id]))
+                        Object.fromEntries(
+                          Object.keys(state).map(_id => [_id, _id === id ? !state[id] : false])
+                        )
                       )
                     }
                   },

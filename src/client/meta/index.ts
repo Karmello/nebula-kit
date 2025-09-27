@@ -16,6 +16,7 @@ import iconButtonMeta from './IconButton/_index'
 import markerListMeta from './MarkerList/_index'
 import nebkitProviderMeta from './NebkitProvider/_index'
 import sectionMeta from './Section/_index'
+import sideNavMeta from './SideNav/_index'
 import spacerMeta from './Spacer/_index'
 import splitViewMeta from './SplitView/_index'
 import tableMeta from './Table/_index'
@@ -40,6 +41,7 @@ export default {
   MarkerList: markerListMeta,
   NebkitProvider: nebkitProviderMeta,
   Section: sectionMeta,
+  SideNav: sideNavMeta,
   Spacer: spacerMeta,
   SplitView: splitViewMeta,
   Table: tableMeta,
