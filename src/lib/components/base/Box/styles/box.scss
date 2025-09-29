@@ -51,10 +51,6 @@ html.neb-transitions {
   border-radius: var(--neb-border-radius, 0);
 }
 
-.neb-box[data-neb-box-variant][data-neb-box-intent]:focus-visible {
-  border-color: var(--neb-border-inverse);
-}
-
 .neb-box[data-neb-box-disabled='true'] {
   pointer-events: none;
   opacity: 0.4;
@@ -62,4 +58,10 @@ html.neb-transitions {
 
 .neb-box[data-neb-box-interactive='true'] {
   user-select: none;
+  border-width: var(--neb-scale-1);
+}
+
+.neb-box[data-neb-box-variant][data-neb-box-intent]:focus-visible,
+.neb-box[data-neb-box-variant][data-neb-box-intent]:focus-visible:hover {
+  border-color: var(--neb-border-inverse);
 }

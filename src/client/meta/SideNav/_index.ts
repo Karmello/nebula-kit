@@ -11,8 +11,8 @@ const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
   overview: {
     title: 'Vertical navigation component for organizing page links.',
     description: [
-      'supports flat items or expandable sections',
-      'collapse-all/expand-all button is available when multiple sections can be open',
+      'supports expandable categories and flat items',
+      'supports an expand-all / collapse-all control',
       'ideal for use inside SplitView.Side',
     ],
     composedOf: ['Box'],

@@ -25,7 +25,7 @@ const SIDE_NAV_CATEGORY_PROPS_META: ComponentMeta<SideNavCategoryProps>['props']
   label: {
     options: ['string'],
     isRequired: true,
-    description: '...',
+    description: 'Text label for the category.',
   },
 }
 

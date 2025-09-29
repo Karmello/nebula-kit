@@ -27,7 +27,7 @@ export const FoundationsPage = () => {
   return (
     <SplitView>
       <SplitView.Side>
-        <SideNav>
+        <SideNav variant="ghost" intent="neutral">
           {FOUNDATION_CATEGORIES.map(({ key: categoryKey, label, items }) => (
             <SideNav.Category
               key={categoryKey}
@@ -62,7 +62,7 @@ export const FoundationsPage = () => {
         <Spacer blockSize={15} />
         <SplitView sidePosition="right">
           <SplitView.Side>
-            <SideNav>
+            <SideNav variant="ghost" intent="neutral">
               {FOUNDATION_CATEGORIES.find(c => c.key === foundationsPageStore.categoryKey)
                 ?.items.find(i => i.key === foundationsPageStore.itemKey)
                 ?.sections.map(({ key: sectionKey, label }) => {

@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 
 import { Button, ButtonGroup, useToolbarContext } from 'lib/components'
@@ -17,10 +16,6 @@ export const PageNavigation = () => {
 
   const currentPageKey = pathname.split('/')[1]
 
-  useEffect(() => {
-    setMainOpen(false)
-  }, [currentPageKey])
-
   return (
     <ButtonGroup direction={{ base: 'column', md: 'row' }} attached stretch={{ base: true, md: false }}>
       <Button
@@ -30,6 +25,7 @@ export const PageNavigation = () => {
           onClick: e => {
             e.preventDefault()
             navigateTo(`/${PageKey.home}`)
+            setMainOpen(false)
           },
         }}
         intent={currentPageKey === PageKey.home ? 'secondary' : 'tertiary'}
@@ -45,6 +41,7 @@ export const PageNavigation = () => {
             navigateTo(
               `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${foundationsPageStore.sectionKey}`
             )
+            setMainOpen(false)
           },
         }}
         intent={currentPageKey === PageKey.foundations ? 'secondary' : 'tertiary'}
@@ -60,6 +57,7 @@ export const PageNavigation = () => {
             navigateTo(
               `/${PageKey.components}/${componentsPageStore.categoryKey}/${componentsPageStore.itemKey}/${componentsPageStore.sectionKey}`
             )
+            setMainOpen(false)
           },
         }}
         intent={currentPageKey === PageKey.components ? 'secondary' : 'tertiary'}

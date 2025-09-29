@@ -46,7 +46,7 @@ export const FOUNDATION_CATEGORIES = [
       {
         key: 'theming',
         label: 'Theming',
-        sections: [{ key: 'section-1', label: 'Section 1' }],
+        sections: [{ key: 'variants-and-intents', label: 'Variants and intents' }],
       },
       {
         key: 'scale',

@@ -1,8 +1,8 @@
 import { createContext, useContext, useState, ReactNode } from 'react'
 
-import { SideNavOwnProps } from '../definitions'
+import { SideNavProps } from '../definitions'
 
-type ProviderProps = SideNavOwnProps & {
+type ProviderProps = SideNavProps & {
   children: ReactNode
 }
 
@@ -15,11 +15,13 @@ type ContextProps = Omit<ProviderProps, 'children'> & {
 
 const SideNavContext = createContext<ContextProps>({} as ContextProps)
 
-export const SideNavProvider = ({ children, expandMode }: ProviderProps) => {
+export const SideNavProvider = ({ children, variant, intent, expandMode }: ProviderProps) => {
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({})
 
   return (
-    <SideNavContext.Provider value={{ expandMode, expandedCategories, setExpandedCategories }}>
+    <SideNavContext.Provider
+      value={{ variant, intent, expandMode, expandedCategories, setExpandedCategories }}
+    >
       {children}
     </SideNavContext.Provider>
   )

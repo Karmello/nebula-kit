@@ -21,7 +21,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           <Box
             variant="outline"
             padding={sandBoxWithNoPadding ? 0 : 20}
-            tagAttrs={{ style: { borderStyle: 'dashed' } }}
+            tagAttrs={{ style: { borderStyle: 'dashed', borderWidth: 'var(--neb-scale-1)' } }}
           >
             {jsx}
           </Box>

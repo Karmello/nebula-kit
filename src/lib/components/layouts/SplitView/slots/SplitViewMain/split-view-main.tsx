@@ -30,6 +30,7 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
         <IconButton
           tagAttrs={{
             onClick: () => setSideOpen(!sideOpen),
+            'aria-expanded': sideOpen,
           }}
           iconName={getToggleIconName(sidePosition, sideOpen)}
           intent="tertiary"

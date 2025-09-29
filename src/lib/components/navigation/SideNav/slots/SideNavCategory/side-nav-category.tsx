@@ -2,7 +2,6 @@ import { useEffect, useId } from 'react'
 
 import { WithSlots } from 'lib/components/internal'
 import { Animate, Box, Button } from 'lib/components'
-import { DEFAULT_BOX_INTENT, DEFAULT_BOX_VARIANT } from 'lib/components/base/Box/definitions'
 
 import { useSideNavContext } from '../../SideNavProvider'
 import { SideNavCategoryProps } from './definitions'
@@ -11,11 +10,17 @@ export const SideNavCategory = ({
   tagAttrs,
   tagRef,
   children,
-  variant = DEFAULT_BOX_VARIANT,
-  intent = DEFAULT_BOX_INTENT,
+  variant,
+  intent,
   label,
 }: SideNavCategoryProps) => {
-  const { expandedCategories, setExpandedCategories, expandMode } = useSideNavContext()
+  const {
+    expandedCategories,
+    setExpandedCategories,
+    variant: rootVariant,
+    intent: rootIntent,
+    expandMode,
+  } = useSideNavContext()
 
   const id = useId()
 
@@ -47,16 +52,22 @@ export const SideNavCategory = ({
                       )
                     }
                   },
+                  'aria-expanded': expandedCategories[id],
                 }}
                 iconName={expandedCategories[id] ? 'chevron-down' : 'chevron-right'}
-                variant={variant}
-                intent={intent}
+                variant={variant || rootVariant}
+                intent={intent || rootIntent}
                 size="sm"
               >
                 {label}
               </Button>
             </Box>
-            <Box tag="li">
+            <Box
+              tag="li"
+              tagAttrs={{
+                inert: !expandedCategories[id],
+              }}
+            >
               <Box tag="ul">
                 <Animate property="blockSize" visible={expandedCategories[id]}>
                   {slots['SideNav.Item'].map((slot, key) => (

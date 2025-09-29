@@ -27,7 +27,7 @@ export const ComponentsPage = () => {
   return (
     <SplitView>
       <SplitView.Side>
-        <SideNav>
+        <SideNav variant="ghost" intent="neutral">
           {COMPONENT_CATEGORIES.map(({ key: categoryKey, label, items }) => (
             <SideNav.Category
               key={categoryKey}
@@ -62,7 +62,7 @@ export const ComponentsPage = () => {
         <Spacer blockSize={15} />
         <SplitView sidePosition="right">
           <SplitView.Side>
-            <SideNav>
+            <SideNav variant="ghost" intent="neutral">
               {COMPONENT_CATEGORIES.find(c => c.key === componentsPageStore.categoryKey)
                 ?.items.find(i => i.key === componentsPageStore.itemKey)
                 ?.sections.map(({ key: sectionKey, label }) => {

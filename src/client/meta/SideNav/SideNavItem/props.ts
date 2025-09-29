@@ -11,7 +11,7 @@ const SIDE_NAV_ITEM_PROPS_META: ComponentMeta<SideNavItemProps>['props'] = {
   children: {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
-    description: 'SideNav.Item content rendered inside Button.',
+    description: 'Content rendered inside Button.',
   },
   variant: {
     ...BUTTON_PROPS_META.variant,

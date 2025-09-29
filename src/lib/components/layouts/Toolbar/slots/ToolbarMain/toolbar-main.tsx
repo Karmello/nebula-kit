@@ -2,23 +2,17 @@ import { useLayoutEffect } from 'react'
 import classNames from 'classnames'
 
 import { Grid, Animate } from 'lib/components'
-import { Breakpoint, BREAKPOINTS } from 'lib/definitions'
-import { useScreen, withPrefix } from 'lib/helpers'
+import { withPrefix } from 'lib/helpers'
 
 import { ToolbarMainProps } from './definitions'
 import { useToolbarContext } from '../../ToolbarProvider'
 
 export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) => {
-  const { switchAt, mainOpen, setMainOpen } = useToolbarContext()
-  const { bp } = useScreen()
-
-  const isSwitchAtHit = BREAKPOINTS.indexOf(bp) >= BREAKPOINTS.indexOf(switchAt as Breakpoint)
+  const { switchAt, mainOpen, setMainOpen, isSwitchAtHit } = useToolbarContext()
 
   useLayoutEffect(() => {
-    if (isSwitchAtHit) {
-      setMainOpen(false)
-    }
-  }, [bp, isSwitchAtHit])
+    setMainOpen(isSwitchAtHit)
+  }, [isSwitchAtHit])
 
   return (
     <Grid.Item
@@ -29,6 +23,7 @@ export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) =>
           ...tagAttrs?.style,
           minInlineSize: 0,
         },
+        inert: !isSwitchAtHit && !mainOpen,
       }}
       tagRef={tagRef}
       gridRow={{ base: '2 / 3', [String(switchAt)]: '1 / 2' }}

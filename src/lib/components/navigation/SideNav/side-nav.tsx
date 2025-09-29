@@ -3,12 +3,23 @@ import { Box } from 'lib/components'
 
 import { SideNavProvider } from './SideNavProvider'
 import { SideNavToggle } from './components'
-import { DEFAULT_SIDE_NAV_EXPAND_MODE, SideNavProps } from './definitions'
+
+import {
+  DEFAULT_SIDE_NAV_EXPAND_MODE,
+  DEFAULT_SIDE_NAV_INTENT,
+  DEFAULT_SIDE_NAV_VARIANT,
+  SideNavProps,
+} from './definitions'
 
 export const SideNav = ({
+  // HtmlTag
   tagAttrs,
   tagRef,
   children,
+  // Box
+  variant = DEFAULT_SIDE_NAV_VARIANT,
+  intent = DEFAULT_SIDE_NAV_INTENT,
+  // own
   expandMode = DEFAULT_SIDE_NAV_EXPAND_MODE,
 }: SideNavProps) => {
   return (
@@ -22,9 +33,9 @@ export const SideNav = ({
       childrenToVerify={children}
     >
       {({ slots, validNodes }) => (
-        <SideNavProvider expandMode={expandMode}>
-          {slots['SideNav.Category'].length ? <SideNavToggle /> : null}
-          <Box tag="nav" tagAttrs={tagAttrs} tagRef={tagRef}>
+        <SideNavProvider variant={variant} intent={intent} expandMode={expandMode}>
+          <Box tag="nav" tagAttrs={tagAttrs} tagRef={tagRef} variant={variant} intent={intent}>
+            {slots['SideNav.Category'].length ? <SideNavToggle /> : null}
             {validNodes}
           </Box>
         </SideNavProvider>

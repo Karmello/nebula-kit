@@ -1,6 +1,7 @@
 import { createContext, useContext, ReactNode, useState } from 'react'
 
-import { getLibMsg } from 'lib/helpers'
+import { Breakpoint, BREAKPOINTS } from 'lib/definitions'
+import { getLibMsg, useScreen } from 'lib/helpers'
 
 import { ToolbarOwnProps } from '../definitions'
 
@@ -11,6 +12,7 @@ type ProviderProps = ToolbarOwnProps & {
 type ContextProps = Omit<ProviderProps, 'children'> & {
   mainOpen: boolean
   setMainOpen: (mainOpen: boolean) => void
+  isSwitchAtHit: boolean
 }
 
 const ToolbarContext = createContext<ContextProps | null>(null)
@@ -18,8 +20,14 @@ const ToolbarContext = createContext<ContextProps | null>(null)
 export const ToolbarProvider = ({ children, switchAt }: ProviderProps) => {
   const [mainOpen, setMainOpen] = useState<boolean>(true)
 
+  const { bp } = useScreen()
+
+  const isSwitchAtHit = BREAKPOINTS.indexOf(bp) >= BREAKPOINTS.indexOf(switchAt as Breakpoint)
+
   return (
-    <ToolbarContext.Provider value={{ switchAt, mainOpen, setMainOpen }}>{children}</ToolbarContext.Provider>
+    <ToolbarContext.Provider value={{ switchAt, mainOpen, setMainOpen, isSwitchAtHit }}>
+      {children}
+    </ToolbarContext.Provider>
   )
 }
 
