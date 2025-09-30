@@ -13,10 +13,10 @@ export default () => {
         {BoxVariant.map(variant => {
           return (
             <Section key={variant} heading={`${pascalCase(variant)} variant`}>
-              <Flex gap={5}>
+              <Flex flexWrap="wrap" gap={3}>
                 {BoxIntent.map(intent => {
                   return (
-                    <Button key={`${variant}_${intent}`} variant={variant} intent={intent} size="lg">
+                    <Button key={`${variant}_${intent}`} variant={variant} intent={intent} size="sm">
                       {intent}
                     </Button>
                   )

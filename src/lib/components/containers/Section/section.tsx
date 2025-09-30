@@ -1,6 +1,11 @@
+import classNames from 'classnames'
+
 import { Box, Divider, SectionProps, Spacer, Text } from 'lib/components'
+import { withPrefix } from 'lib/helpers'
 
 import { SectionTag } from './definitions'
+
+import './section.scss'
 
 export const Section = <T extends SectionTag = 'section'>({
   // HtmlTag
@@ -26,7 +31,10 @@ export const Section = <T extends SectionTag = 'section'>({
   return (
     <Box
       tag={tag}
-      tagAttrs={tagAttrs}
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('section'), tagAttrs?.className),
+      }}
       tagRef={tagRef}
       variant={variant}
       intent={intent}
@@ -38,6 +46,7 @@ export const Section = <T extends SectionTag = 'section'>({
       paddingRight={paddingRight}
       paddingBottom={paddingBottom}
       paddingLeft={paddingLeft}
+      overflowX="auto"
     >
       {typeof heading === 'string' ? <Text typography="h6">{heading}</Text> : heading}
       {!hideDivider ? <Divider /> : null}

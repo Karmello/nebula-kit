@@ -1,4 +1,7 @@
+import classNames from 'classnames'
+
 import { Box, Spacer, Text } from 'lib/components'
+import { withPrefix } from 'lib/helpers'
 
 import {
   CalloutProps,
@@ -7,6 +10,8 @@ import {
   DEFAULT_CALLOUT_INTENT,
   CalloutTag,
 } from './definitions'
+
+import './callout.scss'
 
 export const Callout = <T extends CalloutTag = 'div'>({
   tag,
@@ -24,7 +29,10 @@ export const Callout = <T extends CalloutTag = 'div'>({
   return (
     <Box
       tag={tag}
-      tagAttrs={tagAttrs}
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('callout'), tagAttrs?.className),
+      }}
       tagRef={tagRef}
       variant={variant}
       intent={intent}
