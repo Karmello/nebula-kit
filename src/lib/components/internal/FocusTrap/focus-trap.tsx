@@ -12,7 +12,7 @@ export const FocusTrap = <T extends ElementType>({
 
   const onTargetKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Tab') {
-      const target = tagRef.current as HTMLElement
+      const target = tagRef?.current as HTMLElement
 
       const interactiveBoxes = Array.from(
         target.querySelectorAll<HTMLElement>("[data-neb-box-interactive='true']")
@@ -37,7 +37,7 @@ export const FocusTrap = <T extends ElementType>({
   }, [])
 
   const onDocumentPointerDown = useCallback((e: PointerEvent) => {
-    const target = tagRef.current as HTMLElement
+    const target = tagRef?.current as HTMLElement
 
     if (!target.contains(e.target as Node)) {
       onClose?.()
@@ -45,7 +45,7 @@ export const FocusTrap = <T extends ElementType>({
   }, [])
 
   useEffect(() => {
-    const target = tagRef.current as HTMLElement
+    const target = tagRef?.current as HTMLElement
 
     if (active) {
       trigger.current = document.activeElement as HTMLElement
