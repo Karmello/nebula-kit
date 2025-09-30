@@ -1,3 +1,4 @@
+import { ComponentProps, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
 import { Box, Divider, SectionProps, Spacer, Text } from 'lib/components'
@@ -31,10 +32,12 @@ export const Section = <T extends SectionTag = 'section'>({
   return (
     <Box
       tag={tag}
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('section'), tagAttrs?.className),
-      }}
+      tagAttrs={
+        {
+          ...tagAttrs,
+          className: classNames(withPrefix('section'), tagAttrs?.className),
+        } as PropsWithoutRef<ComponentProps<T>>
+      }
       tagRef={tagRef}
       variant={variant}
       intent={intent}

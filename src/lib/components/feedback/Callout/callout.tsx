@@ -1,3 +1,4 @@
+import { ComponentProps, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
 import { Box, Spacer, Text } from 'lib/components'
@@ -29,10 +30,12 @@ export const Callout = <T extends CalloutTag = 'div'>({
   return (
     <Box
       tag={tag}
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('callout'), tagAttrs?.className),
-      }}
+      tagAttrs={
+        {
+          ...tagAttrs,
+          className: classNames(withPrefix('callout'), tagAttrs?.className),
+        } as PropsWithoutRef<ComponentProps<T>>
+      }
       tagRef={tagRef}
       variant={variant}
       intent={intent}
