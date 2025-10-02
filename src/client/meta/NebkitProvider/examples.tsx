@@ -1,10 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
 import { NebkitProvider, NebkitProviderProps } from 'lib/components'
+import { Theme } from 'lib/definitions'
 
 const App = (): null => null
 App.displayName = 'App'
 
-const NEBKIT_PROVIDER_EXAMPLES_META: ComponentMeta<NebkitProviderProps>['examples'] = [
+const NEBKIT_PROVIDER_EXAMPLES_META: ComponentMeta<NebkitProviderProps<Theme>>['examples'] = [
   {
     description: 'Wraps the entire application.',
     jsx: (
@@ -17,7 +18,7 @@ const NEBKIT_PROVIDER_EXAMPLES_META: ComponentMeta<NebkitProviderProps>['example
   {
     description: 'Wraps the entire application and sets the dark theme.',
     jsx: (
-      <NebkitProvider defaultTheme="dark">
+      <NebkitProvider theme="dark">
         <App />
       </NebkitProvider>
     ),

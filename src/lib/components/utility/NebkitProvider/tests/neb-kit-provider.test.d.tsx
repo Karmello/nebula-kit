@@ -12,16 +12,37 @@ expectType(
   </NebkitProvider>
 )
 
-// wrong value for defaultTheme
+// wrong value for theme
 expectError(
-  <NebkitProvider defaultTheme="wrong">
+  <NebkitProvider theme="wrong">
     <div />
   </NebkitProvider>
 )
 
-// right value for defaultTheme
+// right value for theme
 expectType(
-  <NebkitProvider defaultTheme="dark">
+  <NebkitProvider theme="dark">
+    <div />
+  </NebkitProvider>
+)
+
+// valid background for default theme
+expectType(
+  <NebkitProvider background="light-yellow">
+    <div />
+  </NebkitProvider>
+)
+
+// valid background for dark theme
+expectType(
+  <NebkitProvider theme="dark" background="dark-blue">
+    <div />
+  </NebkitProvider>
+)
+
+// can't set light's theme bg value
+expectError(
+  <NebkitProvider theme="dark" background="white">
     <div />
   </NebkitProvider>
 )

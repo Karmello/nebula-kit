@@ -25,7 +25,7 @@ app.get(/.*/, (req, res) => {
         createElement(
           HydrationGate,
           null,
-          createElement(NebkitProvider, { defaultBorderRadius: 5 } as any, createElement(App))
+          createElement(NebkitProvider, { borderRadius: 5 } as any, createElement(App))
         )
       )
     )

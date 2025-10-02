@@ -3,8 +3,8 @@
 @use './themes/themes.scss';
 
 :root {
-  color: var(--neb-text-neutral);
-  background: var(--neb-bg-neutral);
+  background: var(--neb-background);
+  color: var(--neb-text);
 
   font-family:
     system-ui,

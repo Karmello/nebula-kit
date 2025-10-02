@@ -1,6 +1,6 @@
-@use './variants/box-solid.scss';
-@use './variants/box-outline.scss';
-@use './variants/box-ghost.scss';
+@use './box-solid.scss';
+@use './box-outline.scss';
+@use './box-ghost.scss';
 
 html.neb-transitions {
   .neb-box {
@@ -63,5 +63,5 @@ html.neb-transitions {
 
 .neb-box[data-neb-box-variant][data-neb-box-intent]:focus-visible,
 .neb-box[data-neb-box-variant][data-neb-box-intent]:focus-visible:hover {
-  border-color: var(--neb-border-inverse);
+  border-color: var(--neb-border);
 }

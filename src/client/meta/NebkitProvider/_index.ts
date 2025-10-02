@@ -1,10 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
 import { NebkitProviderProps } from 'lib/components'
+import { Theme } from 'lib/definitions'
 
 import { NEBKIT_PROVIDER_PROPS_META } from './props'
 import { NEBKIT_PROVIDER_EXAMPLES_META } from './examples'
 
-const NEBKIT_PROVIDER_META: ComponentMeta<NebkitProviderProps> = {
+const NEBKIT_PROVIDER_META: ComponentMeta<NebkitProviderProps<Theme>> = {
   overview: {
     title: 'The root setup component for Nebula-kit.',
     description: [

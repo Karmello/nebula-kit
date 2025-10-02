@@ -1,7 +1,12 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-import { DEFAULT_BORDER_RADIUS, DEFAULT_THEME, LIB_PREFIX, ScaleValue, Theme } from 'lib/definitions'
+import { LIB_PREFIX, ScaleValue, Theme } from 'lib/definitions'
+
+import {
+  DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS,
+  DEFAULT_NEBKIT_PROVIDER_THEME,
+} from 'lib/components/utility/NebkitProvider/definitions'
 
 type LibState = {
   theme: Theme
@@ -13,9 +18,9 @@ type LibState = {
 export const useLibStore = create<LibState>()(
   persist(
     set => ({
-      theme: DEFAULT_THEME,
+      theme: DEFAULT_NEBKIT_PROVIDER_THEME,
       setTheme: theme => set({ theme }),
-      borderRadius: DEFAULT_BORDER_RADIUS,
+      borderRadius: DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS,
       setBorderRadius: borderRadius => set({ borderRadius }),
     }),
     {

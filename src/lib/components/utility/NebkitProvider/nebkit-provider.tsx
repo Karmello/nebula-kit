@@ -1,17 +1,25 @@
 import { ReactElement, useEffect, useLayoutEffect } from 'react'
 
-import { DEFAULT_BORDER_RADIUS, DEFAULT_THEME } from 'lib/definitions'
 import { useLibStore } from 'lib/state'
+import { Theme } from 'lib/definitions'
 
-import { NebkitProviderProps } from './definitions'
+import {
+  THEME_BACKGROUNDS_MAP,
+  DEFAULT_NEBKIT_PROVIDER_BACKGROUND,
+  DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS,
+  DEFAULT_NEBKIT_PROVIDER_THEME,
+  NebkitProviderProps,
+} from './definitions'
+
 import 'lib/styles/index.scss'
 
-export const NebkitProvider = ({
+export const NebkitProvider = <T extends Theme = 'light'>({
   children,
-  defaultTheme = DEFAULT_THEME,
-  defaultBorderRadius = DEFAULT_BORDER_RADIUS,
-}: NebkitProviderProps): ReactElement => {
-  const { theme, setTheme, setBorderRadius } = useLibStore()
+  theme = DEFAULT_NEBKIT_PROVIDER_THEME as T,
+  background,
+  borderRadius = DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS,
+}: NebkitProviderProps<T>): ReactElement => {
+  const libStore = useLibStore()
 
   useLayoutEffect(() => {
     requestAnimationFrame(() => {
@@ -23,10 +31,16 @@ export const NebkitProvider = ({
   }, [])
 
   useEffect(() => {
-    setTheme(defaultTheme)
-    setBorderRadius(defaultBorderRadius)
+    libStore.setTheme(theme)
+    libStore.setBorderRadius(borderRadius)
 
-    document.documentElement.style.setProperty('--neb-border-radius', `${defaultBorderRadius}px`)
+    document.documentElement.style.setProperty('--neb-border-radius', `${borderRadius}px`)
+
+    const CSS_VAR_CONFIG = THEME_BACKGROUNDS_MAP[background || DEFAULT_NEBKIT_PROVIDER_BACKGROUND[theme]]
+
+    for (const cssVarName in CSS_VAR_CONFIG) {
+      document.documentElement.style.setProperty(cssVarName, String(CSS_VAR_CONFIG[cssVarName]))
+    }
   }, [])
 
   useEffect(() => {

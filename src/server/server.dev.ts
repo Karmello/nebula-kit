@@ -19,7 +19,7 @@ const renderApp = async (vite: ViteDevServer, url: string) => {
       createElement(
         HydrationGate,
         null,
-        createElement(NebkitProvider, { defaultBorderRadius: 5 }, createElement(App))
+        createElement(NebkitProvider, { borderRadius: 5 }, createElement(App))
       )
     )
   )
