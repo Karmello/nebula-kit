@@ -26,7 +26,7 @@ describe('<Icon />', () => {
     expect(el).toHaveStyle({
       width: 'var(--neb-scale-20)',
       height: 'var(--neb-scale-20)',
-      color: 'var(--neb-text-primary)',
+      color: 'var(--neb-primary-solid-bg)',
     })
   })
 })

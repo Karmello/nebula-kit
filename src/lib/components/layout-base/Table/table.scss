@@ -35,7 +35,7 @@
 .neb-table[data-neb-table-zebra='true'][data-neb-box-variant='solid'] {
   @each $intent in $neb-intents {
     &[data-neb-box-intent='#{$intent}'] tbody tr:nth-child(odd) > :is(td, th) {
-      background-color: var(--neb-bg-#{$intent}-accent);
+      background-color: var(--neb-#{$intent}-solid-bg);
     }
   }
 }
@@ -45,7 +45,7 @@
   &[data-neb-box-variant='ghost'] {
     @each $intent in $neb-intents {
       &[data-neb-box-intent='#{$intent}'] tbody tr:nth-child(odd) > :is(td, th) {
-        background-color: var(--neb-bg-#{$intent}-subtle);
+        background-color: var(--neb-#{$intent}-solid-bg);
       }
     }
   }

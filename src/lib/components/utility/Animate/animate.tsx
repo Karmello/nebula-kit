@@ -42,6 +42,7 @@ export const Animate = ({
         },
       }}
       tagRef={tagRef || ref}
+      overflowX="hidden"
       {...props}
     >
       {children}

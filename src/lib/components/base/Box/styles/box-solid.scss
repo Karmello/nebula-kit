@@ -2,7 +2,7 @@
 .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='neutral'] {
   background-color: var(--neb-neutral-solid-bg);
   border-color: var(--neb-neutral-solid-bg);
-  color: var(--neb-neutral-solid-text);
+  color: var(--neb-text);
 }
 .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='neutral'][data-neb-box-interactive='true']:hover {
   background-color: var(--neb-neutral-solid-bg-hover);

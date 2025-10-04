@@ -47,7 +47,6 @@ export const Text = <T extends TextTag = 'p'>({
         ...tagAttrs,
         className: classNames(withPrefix('text'), tagAttrs?.className),
         style: {
-          color: intent ? `var(--neb-text-${intent})` : undefined,
           ...(clampLines && clampLines > 0
             ? {
                 display: '-webkit-box',
@@ -62,6 +61,7 @@ export const Text = <T extends TextTag = 'p'>({
         ...applyStaticDataset('text', { typography, bold, italic, noWrap, truncate }),
       }}
       variant="ghost"
+      intent={intent}
       textAlign={textAlign}
     >
       {iconName ? (

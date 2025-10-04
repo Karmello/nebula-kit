@@ -28,14 +28,14 @@ expectType(
 
 // valid background for default theme
 expectType(
-  <NebkitProvider background="light-yellow">
+  <NebkitProvider background="white">
     <div />
   </NebkitProvider>
 )
 
 // valid background for dark theme
 expectType(
-  <NebkitProvider theme="dark" background="dark-blue">
+  <NebkitProvider theme="dark" background="black">
     <div />
   </NebkitProvider>
 )

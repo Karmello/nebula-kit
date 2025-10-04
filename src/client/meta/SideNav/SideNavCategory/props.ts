@@ -3,7 +3,7 @@ import { SideNavCategoryProps } from 'lib/components'
 
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { BUTTON_PROPS_META } from 'client/meta/Button/props'
-import { DEFAULT_BOX_INTENT, DEFAULT_BOX_VARIANT } from 'lib/components/base/Box/definitions'
+import { DEFAULT_BOX_VARIANT } from 'lib/components/base/Box/definitions'
 
 const SIDE_NAV_CATEGORY_PROPS_META: ComponentMeta<SideNavCategoryProps>['props'] = {
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
@@ -18,10 +18,7 @@ const SIDE_NAV_CATEGORY_PROPS_META: ComponentMeta<SideNavCategoryProps>['props']
     ...BUTTON_PROPS_META.variant,
     defaultValue: DEFAULT_BOX_VARIANT,
   },
-  intent: {
-    ...BUTTON_PROPS_META.intent,
-    defaultValue: DEFAULT_BOX_INTENT,
-  },
+  intent: BUTTON_PROPS_META.intent,
   label: {
     options: ['string'],
     isRequired: true,

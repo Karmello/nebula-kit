@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { AnimateProps } from 'lib/components'
-import { AnimateProperty } from 'lib/components/utility/Animate/definitions'
+import { AnimateProperty, DEFAULT_ANIMATE_DURATION } from 'lib/components/utility/Animate/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
@@ -24,7 +24,7 @@ const ANIMATE_PROPS_META: ComponentMeta<AnimateProps>['props'] = {
   },
   duration: {
     options: ['number'],
-    defaultValue: '125',
+    defaultValue: String(DEFAULT_ANIMATE_DURATION),
     description: 'Animation duration in milliseconds.',
   },
 }

@@ -2,6 +2,7 @@ import { ComponentProps, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
 import { Box, Divider, SectionProps, Spacer, Text } from 'lib/components'
+import { DEFAULT_BOX_VARIANT } from 'lib/components/base/Box/definitions'
 import { withPrefix } from 'lib/helpers'
 
 import { SectionTag } from './definitions'
@@ -15,7 +16,7 @@ export const Section = <T extends SectionTag = 'section'>({
   tagRef,
   children,
   // Box
-  variant,
+  variant = DEFAULT_BOX_VARIANT,
   intent,
   borderRadius,
   padding,
@@ -41,7 +42,7 @@ export const Section = <T extends SectionTag = 'section'>({
       tagRef={tagRef}
       variant={variant}
       intent={intent}
-      borderRadius={borderRadius}
+      borderRadius={variant !== 'ghost' ? borderRadius : 0}
       padding={padding}
       paddingInline={paddingInline}
       paddingBlock={paddingBlock}
@@ -49,6 +50,7 @@ export const Section = <T extends SectionTag = 'section'>({
       paddingRight={paddingRight}
       paddingBottom={paddingBottom}
       paddingLeft={paddingLeft}
+      maxInlineSize="100%"
       overflowX="auto"
     >
       {typeof heading === 'string' ? <Text typography="h6">{heading}</Text> : heading}

@@ -3,7 +3,7 @@ import { ElementType } from 'react'
 import { CssDisplay, CssOverflow, CssPosition, CssTextAlign, RespValue, ScaleValue } from 'lib/definitions'
 import { HtmlTagProps } from 'lib/components/utility'
 
-export const BoxVariant = ['solid', 'outline', 'ghost'] as const
+export const BoxVariant = ['ghost', 'outline', 'solid'] as const
 
 export const BoxIntent = [
   'neutral',
@@ -18,7 +18,6 @@ export const BoxIntent = [
 ] as const
 
 export const DEFAULT_BOX_VARIANT: BoxVariant = 'ghost'
-export const DEFAULT_BOX_INTENT: BoxIntent = 'neutral'
 
 export type BoxVariant = (typeof BoxVariant)[number]
 export type BoxIntent = (typeof BoxIntent)[number]

@@ -20,10 +20,13 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
         <>
           <Box
             variant="outline"
+            intent="warning"
             padding={sandBoxWithNoPadding ? 0 : 20}
-            tagAttrs={{ style: { borderStyle: 'dashed', borderWidth: 'var(--neb-scale-1)' } }}
+            tagAttrs={{
+              style: { borderStyle: 'dashed' },
+            }}
           >
-            {jsx}
+            <Box intent="neutral">{jsx}</Box>
           </Box>
           <Spacer blockSize={5} />
         </>

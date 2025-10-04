@@ -4,7 +4,7 @@ export const LIB_NAME = 'NebulaKit'
 export const LIB_PREFIX = 'neb'
 
 export const BREAKPOINTS = ['base', 'sm', 'md', 'lg', 'xl'] as const
-export const COLORS = ['amber', 'blue', 'gray', 'green', 'purple', 'red', 'sky', 'teal', 'yellow'] as const
+export const COLORS = ['gray', 'red', 'green', 'blue', 'amber'] as const
 
 export const SCALE = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,

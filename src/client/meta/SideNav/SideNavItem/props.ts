@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { SideNavItemProps } from 'lib/components'
-import { DEFAULT_BOX_INTENT, DEFAULT_BOX_VARIANT } from 'lib/components/base/Box/definitions'
+import { DEFAULT_BOX_VARIANT } from 'lib/components/base/Box/definitions'
 
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { BUTTON_PROPS_META } from 'client/meta/Button/props'
@@ -17,10 +17,7 @@ const SIDE_NAV_ITEM_PROPS_META: ComponentMeta<SideNavItemProps>['props'] = {
     ...BUTTON_PROPS_META.variant,
     defaultValue: DEFAULT_BOX_VARIANT,
   },
-  intent: {
-    ...BUTTON_PROPS_META.intent,
-    defaultValue: DEFAULT_BOX_INTENT,
-  },
+  intent: BUTTON_PROPS_META.intent,
 }
 
 export { SIDE_NAV_ITEM_PROPS_META }

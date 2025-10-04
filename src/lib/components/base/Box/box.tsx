@@ -5,7 +5,7 @@ import { BoxProps, HtmlTag } from 'lib/components'
 import { useScreen, withPrefix } from 'lib/helpers'
 import { applyRespValues, applyStaticDataset } from 'lib/service'
 
-import { DEFAULT_BOX_INTENT, DEFAULT_BOX_VARIANT } from './definitions'
+import { DEFAULT_BOX_VARIANT } from './definitions'
 import './styles/box.scss'
 
 export const Box = <T extends ElementType = 'div'>({
@@ -16,7 +16,7 @@ export const Box = <T extends ElementType = 'div'>({
   tagRef,
   // own
   variant = DEFAULT_BOX_VARIANT,
-  intent = DEFAULT_BOX_INTENT,
+  intent,
   interactive,
   disabled = false,
   opacity,

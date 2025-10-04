@@ -1,15 +1,15 @@
 .neb-box[data-neb-box-variant='outline'] {
-  background-color: transparent;
+  background-color: var(--neb-background);
+  border-width: var(--neb-scale-1);
 }
 
 // neutral
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='neutral'] {
   border-color: var(--neb-neutral-outline-border);
-  color: var(--neb-neutral-outline-text);
+  color: var(--neb-text);
 }
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='neutral'][data-neb-box-interactive='true']:hover {
   border-color: var(--neb-neutral-outline-border-hover);
-  background-color: var(--neb-neutral-outline-bg-hover);
 }
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='neutral'][data-neb-box-interactive='true']:active {
   border-color: var(--neb-neutral-outline-border-active);
@@ -23,7 +23,6 @@
 }
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='inverse'][data-neb-box-interactive='true']:hover {
   border-color: var(--neb-inverse-outline-border-hover);
-  background-color: var(--neb-inverse-outline-bg-hover);
 }
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='inverse'][data-neb-box-interactive='true']:active {
   border-color: var(--neb-inverse-outline-border-active);
@@ -38,7 +37,6 @@
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='primary'][data-neb-box-interactive='true']:hover {
   border-color: var(--neb-primary-outline-border-hover);
   color: var(--neb-primary-outline-border-hover);
-  background-color: var(--neb-primary-outline-bg-hover);
 }
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='primary'][data-neb-box-interactive='true']:active {
   border-color: var(--neb-primary-outline-border-active);
@@ -54,7 +52,6 @@
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='secondary'][data-neb-box-interactive='true']:hover {
   border-color: var(--neb-secondary-outline-border-hover);
   color: var(--neb-secondary-outline-border-hover);
-  background-color: var(--neb-secondary-outline-bg-hover);
 }
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='secondary'][data-neb-box-interactive='true']:active {
   border-color: var(--neb-secondary-outline-border-active);
@@ -70,7 +67,6 @@
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='tertiary'][data-neb-box-interactive='true']:hover {
   border-color: var(--neb-tertiary-outline-border-hover);
   color: var(--neb-tertiary-outline-border-hover);
-  background-color: var(--neb-tertiary-outline-bg-hover);
 }
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='tertiary'][data-neb-box-interactive='true']:active {
   border-color: var(--neb-tertiary-outline-border-active);
@@ -86,7 +82,6 @@
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='success'][data-neb-box-interactive='true']:hover {
   border-color: var(--neb-success-outline-border-hover);
   color: var(--neb-success-outline-border-hover);
-  background-color: var(--neb-success-outline-bg-hover);
 }
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='success'][data-neb-box-interactive='true']:active {
   border-color: var(--neb-success-outline-border-active);
@@ -102,7 +97,6 @@
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='info'][data-neb-box-interactive='true']:hover {
   border-color: var(--neb-info-outline-border-hover);
   color: var(--neb-info-outline-border-hover);
-  background-color: var(--neb-info-outline-bg-hover);
 }
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='info'][data-neb-box-interactive='true']:active {
   border-color: var(--neb-info-outline-border-active);
@@ -118,7 +112,6 @@
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='warning'][data-neb-box-interactive='true']:hover {
   border-color: var(--neb-warning-outline-border-hover);
   color: var(--neb-warning-outline-border-hover);
-  background-color: var(--neb-warning-outline-bg-hover);
 }
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='warning'][data-neb-box-interactive='true']:active {
   border-color: var(--neb-warning-outline-border-active);
@@ -134,7 +127,6 @@
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='danger'][data-neb-box-interactive='true']:hover {
   border-color: var(--neb-danger-outline-border-hover);
   color: var(--neb-danger-outline-border-hover);
-  background-color: var(--neb-danger-outline-bg-hover);
 }
 .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='danger'][data-neb-box-interactive='true']:active {
   border-color: var(--neb-danger-outline-border-active);

@@ -1,13 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { CssDisplay, CssOverflow, CssPosition, CssTextAlign } from 'lib/definitions'
 
-import {
-  BoxIntent,
-  BoxProps,
-  BoxVariant,
-  DEFAULT_BOX_INTENT,
-  DEFAULT_BOX_VARIANT,
-} from 'lib/components/base/Box/definitions'
+import { BoxIntent, BoxProps, BoxVariant, DEFAULT_BOX_VARIANT } from 'lib/components/base/Box/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
@@ -21,7 +15,6 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   intent: {
     options: Object.values(BoxIntent),
-    defaultValue: DEFAULT_BOX_INTENT,
     isRequired: false,
     isResponsive: true,
     description: 'Semantic color intent applied.',

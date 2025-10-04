@@ -1,4 +1,5 @@
 import { pascalCase } from 'change-case'
+
 import { Box, Button, Flex, MarkerList, MarkerListItem, Section, Text } from 'lib/components'
 import { BoxVariant, BoxIntent } from 'lib/components/base/Box/definitions'
 
@@ -16,7 +17,7 @@ export default () => {
               <Flex flexWrap="wrap" gap={3}>
                 {BoxIntent.map(intent => {
                   return (
-                    <Button key={`${variant}_${intent}`} variant={variant} intent={intent} size="sm">
+                    <Button key={`${variant}_${intent}`} variant={variant} intent={intent}>
                       {intent}
                     </Button>
                   )
@@ -29,15 +30,15 @@ export default () => {
           <MarkerList listStyle="circle">
             <MarkerList.Item>
               <Text bold>{BoxVariant[0]}</Text>
-              <Text>&nbsp;- filled surface, strong emphasis</Text>
+              <Text>&nbsp;- minimal, blends into background</Text>
             </MarkerList.Item>
             <MarkerList.Item>
               <Text bold>{BoxVariant[1]}</Text>
-              <Text>&nbsp;- border only, no fill</Text>
+              <Text>&nbsp;- border only, background matches the app's surface</Text>
             </MarkerList.Item>
             <MarkerList.Item>
               <Text bold>{BoxVariant[2]}</Text>
-              <Text>&nbsp;- minimal, blends into background</Text>
+              <Text>&nbsp;- filled surface, strong emphasis</Text>
             </MarkerList.Item>
           </MarkerList>
         </Section>
@@ -77,7 +78,7 @@ export default () => {
             </MarkerListItem>
             <MarkerListItem>
               <Text bold>{BoxIntent[8]}</Text>
-              <Text>&nbsp;- contrast against dark/light backgrounds</Text>
+              <Text>&nbsp;- contrast against app's surface</Text>
             </MarkerListItem>
           </MarkerList>
         </Section>

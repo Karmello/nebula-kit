@@ -27,11 +27,12 @@ export const ComponentsPage = () => {
   return (
     <SplitView>
       <SplitView.Side>
-        <SideNav variant="ghost" intent="neutral">
+        <SideNav>
           {COMPONENT_CATEGORIES.map(({ key: categoryKey, label, items }) => (
             <SideNav.Category
               key={categoryKey}
               label={label}
+              variant={activeCategoryObj?.key === categoryKey ? 'ghost' : 'solid'}
               intent={activeCategoryObj?.key === categoryKey ? 'primary' : 'neutral'}
             >
               {items.map(({ key: itemKey, label, sections }) => {
@@ -48,7 +49,7 @@ export const ComponentsPage = () => {
                         navigateTo(href)
                       },
                     }}
-                    intent={isSelected ? 'primary' : 'neutral'}
+                    intent={isSelected ? 'tertiary' : 'neutral'}
                   >
                     {label}
                   </SideNav.Item>
@@ -62,7 +63,7 @@ export const ComponentsPage = () => {
         <Spacer blockSize={15} />
         <SplitView sidePosition="right">
           <SplitView.Side>
-            <SideNav variant="ghost" intent="neutral">
+            <SideNav>
               {COMPONENT_CATEGORIES.find(c => c.key === componentsPageStore.categoryKey)
                 ?.items.find(i => i.key === componentsPageStore.itemKey)
                 ?.sections.map(({ key: sectionKey, label }) => {
@@ -78,7 +79,7 @@ export const ComponentsPage = () => {
                           navigateTo(href)
                         },
                       }}
-                      intent={isSelected ? 'primary' : 'neutral'}
+                      intent={isSelected ? 'tertiary' : 'neutral'}
                     >
                       {label}
                     </SideNav.Item>

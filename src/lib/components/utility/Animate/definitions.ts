@@ -1,6 +1,6 @@
 import { HtmlTagProps, BoxProps } from 'lib/components'
 
-export const DEFAULT_ANIMATE_DURATION = 125
+export const DEFAULT_ANIMATE_DURATION = 200
 export const AnimateProperty = ['blockSize', 'inlineSize'] as const satisfies (keyof BoxProps)[]
 
 export type AnimateProperty = (typeof AnimateProperty)[number]

@@ -4,16 +4,18 @@
 
 html.neb-transitions {
   .neb-box {
-    transition: all 0.125s linear;
+    transition: all 0.2s ease-in-out;
   }
 }
 
 .neb-box {
+  color: inherit;
+  border-radius: var(--neb-border-radius, 0);
+
   width: auto;
   max-width: 100%;
   letter-spacing: 0.5px;
   outline: none;
-
   border-style: solid;
   border-width: 0;
 
@@ -47,8 +49,6 @@ html.neb-transitions {
   padding-inline: initial;
   padding-block: initial;
   padding: initial;
-
-  border-radius: var(--neb-border-radius, 0);
 }
 
 .neb-box[data-neb-box-disabled='true'] {
@@ -63,5 +63,5 @@ html.neb-transitions {
 
 .neb-box[data-neb-box-variant][data-neb-box-intent]:focus-visible,
 .neb-box[data-neb-box-variant][data-neb-box-intent]:focus-visible:hover {
-  border-color: var(--neb-border);
+  border-color: var(--neb-focus-border);
 }

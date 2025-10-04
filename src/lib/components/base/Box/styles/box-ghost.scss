@@ -1,7 +1,11 @@
 .neb-box[data-neb-box-variant='ghost'] {
   background-color: transparent;
   border-color: transparent;
-  border-radius: 0;
+}
+
+// neutral
+.neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='neutral'] {
+  color: var(--neb-text);
 }
 
 // inverse
