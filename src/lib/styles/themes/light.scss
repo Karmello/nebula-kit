@@ -5,7 +5,7 @@ html[data-theme='light'] {
 
   // primary outline
   --neb-primary-outline-border: var(--neb-blue-6);
-  --neb-primary-outline-border-hover: var(--neb-blue-8);
+  --neb-primary-outline-border-hover: var(--neb-blue-7);
   --neb-primary-outline-bg-hover: var(--neb-blue-2);
   --neb-primary-outline-bg-active: var(--neb-blue-3);
 
@@ -80,7 +80,7 @@ html[data-theme='light'] {
 
   // warning ghost
   --neb-warning-ghost-text: var(--neb-amber-6);
-  --neb-warning-ghost-text-active: var(--neb-amber-8);
+  --neb-warning-ghost-text-active: var(--neb-amber-7);
 
   // warning outline
   --neb-warning-outline-border: var(--neb-amber-6);
@@ -108,5 +108,5 @@ html[data-theme='light'] {
   --neb-danger-solid-bg: var(--neb-red-5);
   --neb-danger-solid-bg-hover: var(--neb-red-6);
   --neb-danger-solid-bg-active: var(--neb-red-7);
-  --neb-danger-solid-text-hover: var(--neb-gray-1);
+  --neb-danger-solid-text: var(--neb-gray-1);
 }

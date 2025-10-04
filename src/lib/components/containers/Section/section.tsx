@@ -7,8 +7,6 @@ import { withPrefix } from 'lib/helpers'
 
 import { SectionTag } from './definitions'
 
-import './section.scss'
-
 export const Section = <T extends SectionTag = 'section'>({
   // HtmlTag
   tag = 'section' as T,
