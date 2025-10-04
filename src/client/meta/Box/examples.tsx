@@ -5,7 +5,8 @@ import { BoxProps } from 'lib/components/base/Box/definitions'
 const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   {
     jsx: <Box>Default box</Box>,
-    description: 'Plain default Box.',
+    description:
+      'Plain Box - renders with no intent applied. Inherits its text color from the nearest parent that defines a CSS color property.',
   },
   {
     jsx: (

@@ -26,7 +26,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
               style: { borderStyle: 'dashed' },
             }}
           >
-            <Box intent="neutral">{jsx}</Box>
+            {jsx}
           </Box>
           <Spacer blockSize={5} />
         </>
