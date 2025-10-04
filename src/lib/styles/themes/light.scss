@@ -1,119 +1,112 @@
 html[data-theme='light'] {
-  // primary solid
-  --neb-primary-solid-bg: var(--neb-blue-7);
-  --neb-primary-solid-bg-hover: var(--neb-blue-8);
-  --neb-primary-solid-bg-active: var(--neb-blue-9);
-  --neb-primary-solid-text: var(--neb-gray-1);
+  // primary ghost
+  --neb-primary-ghost-text: var(--neb-blue-6);
+  --neb-primary-ghost-text-active: var(--neb-blue-9);
 
   // primary outline
-  --neb-primary-outline-border: var(--neb-blue-7);
+  --neb-primary-outline-border: var(--neb-blue-6);
   --neb-primary-outline-border-hover: var(--neb-blue-8);
-  --neb-primary-outline-border-active: var(--neb-blue-9);
-  --neb-primary-outline-bg-active: var(--neb-blue-1);
+  --neb-primary-outline-bg-hover: var(--neb-blue-2);
+  --neb-primary-outline-bg-active: var(--neb-blue-3);
 
-  // primary ghost
-  --neb-primary-ghost-text: var(--neb-blue-7);
-  --neb-primary-ghost-text-hover: var(--neb-blue-8);
-  --neb-primary-ghost-text-active: var(--neb-blue-9);
+  // primary solid
+  --neb-primary-solid-bg: var(--neb-blue-6);
+  --neb-primary-solid-bg-hover: var(--neb-blue-7);
+  --neb-primary-solid-bg-active: var(--neb-blue-8);
+  --neb-primary-solid-text: var(--neb-gray-1);
+
+  // secondary ghost
+  --neb-secondary-ghost-text: var(--neb-blue-4);
+  --neb-secondary-ghost-text-active: var(--neb-blue-6);
+
+  // secondary outline
+  --neb-secondary-outline-border: var(--neb-blue-4);
+  --neb-secondary-outline-border-hover: var(--neb-blue-5);
+  --neb-secondary-outline-bg-hover: var(--neb-blue-1);
+  --neb-secondary-outline-bg-active: var(--neb-blue-2);
 
   // secondary solid
   --neb-secondary-solid-bg: var(--neb-blue-3);
   --neb-secondary-solid-bg-hover: var(--neb-blue-4);
   --neb-secondary-solid-bg-active: var(--neb-blue-5);
-  --neb-secondary-solid-text: var(--neb-gray-9);
+  --neb-secondary-solid-text-active: var(--neb-gray-1);
 
-  // secondary outline
-  --neb-secondary-outline-border: var(--neb-blue-5);
-  --neb-secondary-outline-border-hover: var(--neb-blue-6);
-  --neb-secondary-outline-border-active: var(--neb-blue-7);
-  --neb-secondary-outline-bg-active: var(--neb-blue-1);
+  // tertiary ghost
+  --neb-tertiary-ghost-text: var(--neb-gray-4);
+  --neb-tertiary-ghost-text-active: var(--neb-gray-5);
 
-  // secondary ghost
-  --neb-secondary-ghost-text: var(--neb-blue-3);
-  --neb-secondary-ghost-text-hover: var(--neb-blue-4);
-  --neb-secondary-ghost-text-active: var(--neb-blue-5);
+  // tertiary outline
+  --neb-tertiary-outline-border: var(--neb-gray-4);
+  --neb-tertiary-outline-border-hover: var(--neb-gray-5);
+  --neb-tertiary-outline-bg-hover: var(--neb-gray-2);
+  --neb-tertiary-outline-bg-active: var(--neb-gray-3);
 
   // tertiary solid
   --neb-tertiary-solid-bg: var(--neb-gray-2);
   --neb-tertiary-solid-bg-hover: var(--neb-gray-3);
   --neb-tertiary-solid-bg-active: var(--neb-gray-4);
-  --neb-tertiary-solid-text: var(--neb-gray-9);
 
-  // tertiary outline
-  --neb-tertiary-outline-border: var(--neb-gray-4);
-  --neb-tertiary-outline-border-hover: var(--neb-gray-5);
-  --neb-tertiary-outline-border-active: var(--neb-gray-6);
-  --neb-tertiary-outline-bg-active: var(--neb-gray-2);
+  // success ghost
+  --neb-success-ghost-text: var(--neb-green-5);
+  --neb-success-ghost-text-active: var(--neb-green-7);
 
-  // tertiary ghost
-  --neb-tertiary-ghost-text: var(--neb-gray-3);
-  --neb-tertiary-ghost-text-hover: var(--neb-gray-4);
-  --neb-tertiary-ghost-text-active: var(--neb-gray-5);
+  // success outline
+  --neb-success-outline-border: var(--neb-green-5);
+  --neb-success-outline-border-hover: var(--neb-green-6);
+  --neb-success-outline-bg-hover: var(--neb-green-1);
+  --neb-success-outline-bg-active: var(--neb-green-2);
 
   // success solid
   --neb-success-solid-bg: var(--neb-green-5);
   --neb-success-solid-bg-hover: var(--neb-green-6);
   --neb-success-solid-bg-active: var(--neb-green-7);
+  --neb-success-solid-text-hover: var(--neb-gray-1);
 
-  // success outline
-  --neb-success-outline-border: var(--neb-green-5);
-  --neb-success-outline-border-hover: var(--neb-green-6);
-  --neb-success-outline-border-active: var(--neb-green-7);
-  --neb-success-outline-bg-active: var(--neb-green-1);
+  // info ghost
+  --neb-info-ghost-text: var(--neb-blue-5);
+  --neb-info-ghost-text-active: var(--neb-blue-7);
 
-  // success ghost
-  --neb-success-ghost-text: var(--neb-green-5);
-  --neb-success-ghost-text-hover: var(--neb-green-6);
-  --neb-success-ghost-text-active: var(--neb-green-7);
+  // info outline
+  --neb-info-outline-border: var(--neb-blue-5);
+  --neb-info-outline-border-hover: var(--neb-blue-6);
+  --neb-info-outline-bg-hover: var(--neb-blue-1);
+  --neb-info-outline-bg-active: var(--neb-blue-2);
 
   // info solid
   --neb-info-solid-bg: var(--neb-blue-5);
   --neb-info-solid-bg-hover: var(--neb-blue-6);
   --neb-info-solid-bg-active: var(--neb-blue-7);
-  --neb-info-solid-text: var(--neb-gray-1);
+  --neb-info-solid-text-hover: var(--neb-gray-1);
 
-  // info outline
-  --neb-info-outline-border: var(--neb-blue-5);
-  --neb-info-outline-border-hover: var(--neb-blue-6);
-  --neb-info-outline-border-active: var(--neb-blue-7);
-  --neb-info-outline-bg-active: var(--neb-blue-1);
+  // warning ghost
+  --neb-warning-ghost-text: var(--neb-amber-6);
+  --neb-warning-ghost-text-active: var(--neb-amber-8);
 
-  // info ghost
-  --neb-info-ghost-text: var(--neb-blue-5);
-  --neb-info-ghost-text-hover: var(--neb-blue-6);
-  --neb-info-ghost-text-active: var(--neb-blue-7);
+  // warning outline
+  --neb-warning-outline-border: var(--neb-amber-6);
+  --neb-warning-outline-border-hover: var(--neb-amber-7);
+  --neb-warning-outline-bg-hover: var(--neb-amber-1);
+  --neb-warning-outline-bg-active: var(--neb-amber-2);
 
   // warning solid
   --neb-warning-solid-bg: var(--neb-amber-5);
   --neb-warning-solid-bg-hover: var(--neb-amber-6);
   --neb-warning-solid-bg-active: var(--neb-amber-7);
-  --neb-warning-solid-text: var(--neb-gray-9);
+  --neb-warning-solid-text-active: var(--neb-gray-1);
 
-  // warning outline
-  --neb-warning-outline-border: var(--neb-amber-6);
-  --neb-warning-outline-border-hover: var(--neb-amber-7);
-  --neb-warning-outline-border-active: var(--neb-amber-8);
-  --neb-warning-outline-bg-active: var(--neb-amber-1);
+  // danger ghost
+  --neb-danger-ghost-text: var(--neb-red-5);
+  --neb-danger-ghost-text-active: var(--neb-red-7);
 
-  // warning ghost
-  --neb-warning-ghost-text: var(--neb-amber-5);
-  --neb-warning-ghost-text-hover: var(--neb-amber-6);
-  --neb-warning-ghost-text-active: var(--neb-amber-7);
+  // danger outline
+  --neb-danger-outline-border: var(--neb-red-5);
+  --neb-danger-outline-border-hover: var(--neb-red-6);
+  --neb-danger-outline-bg-hover: var(--neb-red-1);
+  --neb-danger-outline-bg-active: var(--neb-red-2);
 
   // danger solid
   --neb-danger-solid-bg: var(--neb-red-5);
   --neb-danger-solid-bg-hover: var(--neb-red-6);
   --neb-danger-solid-bg-active: var(--neb-red-7);
-  --neb-danger-solid-text: var(--neb-gray-1);
-
-  // danger outline
-  --neb-danger-outline-border: var(--neb-red-5);
-  --neb-danger-outline-border-hover: var(--neb-red-6);
-  --neb-danger-outline-border-active: var(--neb-red-7);
-  --neb-danger-outline-bg-active: var(--neb-red-1);
-
-  // danger ghost
-  --neb-danger-ghost-text: var(--neb-red-5);
-  --neb-danger-ghost-text-hover: var(--neb-red-6);
-  --neb-danger-ghost-text-active: var(--neb-red-7);
+  --neb-danger-solid-text-hover: var(--neb-gray-1);
 }

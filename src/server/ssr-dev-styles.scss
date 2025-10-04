@@ -1,9 +1,6 @@
 @use '../lib/styles/index.scss';
 
-@use '../lib/components/base/Box/styles/box.scss';
-@use '../lib/components/base/Box/styles/variants/box-ghost.scss';
-@use '../lib/components/base/Box/styles/variants/box-outline.scss';
-@use '../lib/components/base/Box/styles/variants/box-solid.scss';
+@use '../lib/components/base/Box/box.scss';
 @use '../lib/components/base/Text/text.scss';
 
 @use '../lib/components/controls/Button/button.scss';

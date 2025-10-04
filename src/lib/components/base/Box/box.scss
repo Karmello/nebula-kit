@@ -1,0 +1,142 @@
+@use 'styles/definitions/definitions.scss' as *;
+
+.neb-box {
+  color: inherit;
+  border-radius: var(--neb-border-radius, 0);
+
+  width: auto;
+  max-width: 100%;
+  letter-spacing: 0.5px;
+  outline: none;
+  border-style: solid;
+  border-width: 0;
+
+  display: block;
+  overflow-x: visible;
+  overflow-y: visible;
+  opacity: 1;
+  position: static;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  text-align: start;
+  block-size: auto;
+  min-block-size: auto;
+  max-block-size: none;
+  inline-size: auto;
+  min-inline-size: auto;
+  max-inline-size: none;
+  margin-top: initial;
+  margin-right: initial;
+  margin-bottom: initial;
+  margin-left: initial;
+  margin-inline: initial;
+  margin-block: initial;
+  margin: initial;
+  padding-top: initial;
+  padding-right: initial;
+  padding-bottom: initial;
+  padding-left: initial;
+  padding-inline: initial;
+  padding-block: initial;
+  padding: initial;
+}
+
+.neb-box[data-neb-box-interactive='true'] {
+  user-select: none;
+  border-width: var(--neb-scale-1);
+}
+
+.neb-box[data-neb-box-disabled='true'] {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.neb-box[data-neb-box-variant][data-neb-box-intent]:focus-visible,
+.neb-box[data-neb-box-variant][data-neb-box-intent]:focus-visible:hover {
+  border-color: var(--neb-focus-border);
+}
+
+.neb-box[data-neb-box-variant='outline'] {
+  border-width: var(--neb-scale-1);
+}
+
+@each $intent in $neb-intents {
+  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'] {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--neb-#{$intent}-ghost-text, var(--neb-text));
+  }
+  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:active {
+    color: var(
+      --neb-#{$intent}-ghost-text-active,
+      var(--neb-#{$intent}-ghost-text-hover, var(--neb-#{$intent}-ghost-text, var(--neb-text)))
+    );
+  }
+}
+
+@each $intent in $neb-intents {
+  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'] {
+    $mainColor: var(--neb-#{$intent}-outline-border, var(--neb-text));
+    background-color: var(--neb-background);
+    border-color: $mainColor;
+    color: $mainColor;
+  }
+  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:hover {
+    $mainColor: var(
+      --neb-#{$intent}-outline-border-hover,
+      var(--neb-#{$intent}-outline-border, var(--neb-text))
+    );
+    border-color: $mainColor;
+    color: $mainColor;
+    background-color: var(--neb-#{$intent}-outline-bg-hover, var(--neb-background));
+  }
+  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:active {
+    $mainColor: var(
+      --neb-#{$intent}-outline-border-active,
+      var(--neb-#{$intent}-outline-border-hover, var(--neb-#{$intent}-outline-border, var(--neb-text)))
+    );
+    border-color: $mainColor;
+    color: $mainColor;
+    background-color: var(
+      --neb-#{$intent}-outline-bg-active,
+      var(--neb-#{$intent}-outline-bg-hover, var(--neb-background))
+    );
+  }
+}
+
+@each $intent in $neb-intents {
+  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'] {
+    $mainColor: var(--neb-#{$intent}-solid-bg, var(--neb-background));
+    background-color: $mainColor;
+    border-color: $mainColor;
+    color: var(--neb-#{$intent}-solid-text, var(--neb-text));
+  }
+  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:hover {
+    $mainColor: var(--neb-#{$intent}-solid-bg-hover, var(--neb-#{$intent}-solid-bg, var(--neb-background)));
+    background-color: $mainColor;
+    border-color: $mainColor;
+    color: var(--neb-#{$intent}-solid-text-hover, var(--neb-#{$intent}-solid-text, var(--neb-text)));
+  }
+  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:active {
+    $mainColor: var(
+      --neb-#{$intent}-solid-bg-active,
+      var(--neb-#{$intent}-solid-bg-hover, var(--neb-#{$intent}-solid-bg, var(--neb-background)))
+    );
+    background-color: $mainColor;
+    border-color: $mainColor;
+    color: var(
+      --neb-#{$intent}-solid-text-active,
+      var(--neb-#{$intent}-solid-text-hover, var(--neb-#{$intent}-solid-text, var(--neb-text)))
+    );
+  }
+}
+
+.neb-box[data-neb-box-variant='outline'],
+.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:hover {
+  &[data-neb-box-intent='neutral'],
+  &[data-neb-box-intent='inverse'] {
+    color: var(--neb-text);
+  }
+}

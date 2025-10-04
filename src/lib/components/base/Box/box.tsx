@@ -6,7 +6,7 @@ import { useScreen, withPrefix } from 'lib/helpers'
 import { applyRespValues, applyStaticDataset } from 'lib/service'
 
 import { DEFAULT_BOX_VARIANT } from './definitions'
-import './styles/box.scss'
+import './box.scss'
 
 export const Box = <T extends ElementType = 'div'>({
   // HtmlTag

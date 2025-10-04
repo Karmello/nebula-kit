@@ -1,8 +1,8 @@
-@use './colors/colors.scss';
+@use './palette/palette.scss';
 @use './scale/scale.scss';
 @use './themes/themes.scss';
 
-:root {
+html {
   background: var(--neb-background);
   color: var(--neb-text);
 
@@ -17,6 +17,12 @@
     'Apple Color Emoji',
     'Segoe UI Emoji',
     sans-serif;
+}
+
+html.neb-transitions {
+  .neb-box {
+    transition: all 0.2s ease-in-out;
+  }
 }
 
 body {
