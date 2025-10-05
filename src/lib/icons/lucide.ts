@@ -24,7 +24,7 @@ import {
 
 import { IconName } from 'lib/definitions'
 
-const ICONS: Record<IconName, any> = {
+export const ICONS: Record<IconName, any> = {
   check: Check,
   close: X,
   search: Search,

@@ -2,10 +2,9 @@ import { ComponentProps, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
 import { Box, Divider, SectionProps, Spacer, Text } from 'lib/components'
-import { DEFAULT_BOX_VARIANT } from 'lib/components/base/Box/definitions'
 import { withPrefix } from 'lib/helpers'
 
-import { SectionTag } from './definitions'
+import { DEFAULT_SECTION_INTENT, DEFAULT_SECTION_VARIANT, SectionTag } from './definitions'
 
 export const Section = <T extends SectionTag = 'section'>({
   // HtmlTag
@@ -14,8 +13,8 @@ export const Section = <T extends SectionTag = 'section'>({
   tagRef,
   children,
   // Box
-  variant = DEFAULT_BOX_VARIANT,
-  intent,
+  variant = DEFAULT_SECTION_VARIANT,
+  intent = DEFAULT_SECTION_INTENT,
   borderRadius,
   padding,
   paddingInline,
@@ -50,6 +49,7 @@ export const Section = <T extends SectionTag = 'section'>({
       paddingLeft={paddingLeft}
       maxInlineSize="100%"
       overflowX="auto"
+      overflowY="hidden"
     >
       {typeof heading === 'string' ? <Text typography="h6">{heading}</Text> : heading}
       {!hideDivider ? <Divider /> : null}

@@ -1,8 +1,12 @@
 import { JSX } from 'react'
 
 import { BoxProps, HtmlTagProps } from 'lib/components'
+import { BoxIntent, BoxVariant } from 'lib/components/base/Box/definitions'
 
+export const DEFAULT_SECTION_VARIANT: BoxVariant = 'ghost'
+export const DEFAULT_SECTION_INTENT: BoxIntent = 'neutral'
 export const SectionTag = ['section', 'article', 'aside', 'div'] as const
+
 export type SectionTag = (typeof SectionTag)[number]
 
 type SectionOwnProps = {

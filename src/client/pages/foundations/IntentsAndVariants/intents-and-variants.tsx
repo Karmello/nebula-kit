@@ -1,49 +1,16 @@
-import { pascalCase } from 'change-case'
-
-import { Box, Button, Flex, MarkerList, MarkerListItem, Section, Text } from 'lib/components'
-import { BoxVariant, BoxIntent } from 'lib/components/base/Box/definitions'
+import { Box, Button, Flex, MarkerList, MarkerListItem, Section, Spacer, Text } from 'lib/components'
+import { BoxIntent } from 'lib/components/base/Box/definitions'
 
 export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Flex flexDirection="column" alignItems="stretch" gap={25}>
-        <Text>
-          Variants and intents define the visual language of NebulaKit. All components build on these
-          foundations, and this page lists every available option.
+        <Text typography="lead">
+          Intents and variants available in the system, showing how semantic roles combine with visual styles
+          across components.
         </Text>
-        {BoxVariant.map(variant => {
-          return (
-            <Section key={variant} heading={`${pascalCase(variant)} variant`}>
-              <Flex flexWrap="wrap" gap={3}>
-                {BoxIntent.map(intent => {
-                  return (
-                    <Button key={`${variant}_${intent}`} variant={variant} intent={intent}>
-                      {intent}
-                    </Button>
-                  )
-                })}
-              </Flex>
-            </Section>
-          )
-        })}
-        <Section heading="Variants">
-          <MarkerList listStyle="circle">
-            <MarkerList.Item>
-              <Text bold>{BoxVariant[0]}</Text>
-              <Text>&nbsp;- minimal, blends into background</Text>
-            </MarkerList.Item>
-            <MarkerList.Item>
-              <Text bold>{BoxVariant[1]}</Text>
-              <Text>&nbsp;- border only, background matches the app's surface</Text>
-            </MarkerList.Item>
-            <MarkerList.Item>
-              <Text bold>{BoxVariant[2]}</Text>
-              <Text>&nbsp;- filled surface, strong emphasis</Text>
-            </MarkerList.Item>
-          </MarkerList>
-        </Section>
         <Section heading="Intents">
-          <MarkerList listStyle="circle">
+          <MarkerList>
             <MarkerListItem>
               <Text bold>{BoxIntent[0]}</Text>
               <Text>&nbsp;- surface without meaning, default tone</Text>
@@ -81,6 +48,45 @@ export default () => {
               <Text>&nbsp;- contrast against app's surface</Text>
             </MarkerListItem>
           </MarkerList>
+        </Section>
+        <Section heading="Ghost variant">
+          <Text>Minimal, blends into background.</Text>
+          <Spacer blockSize={15} />
+          <Flex flexWrap="wrap" gap={3}>
+            {BoxIntent.map(intent => {
+              return (
+                <Button key={intent} variant="ghost" intent={intent}>
+                  {intent}
+                </Button>
+              )
+            })}
+          </Flex>
+        </Section>
+        <Section heading="Outline variant">
+          <Text>Border only, background matches the app's surface.</Text>
+          <Spacer blockSize={15} />
+          <Flex flexWrap="wrap" gap={3}>
+            {BoxIntent.map(intent => {
+              return (
+                <Button key={intent} variant="outline" intent={intent}>
+                  {intent}
+                </Button>
+              )
+            })}
+          </Flex>
+        </Section>
+        <Section heading="Solid variant">
+          <Text>Filled surface, strong emphasis.</Text>
+          <Spacer blockSize={15} />
+          <Flex flexWrap="wrap" gap={3}>
+            {BoxIntent.map(intent => {
+              return (
+                <Button key={intent} variant="solid" intent={intent}>
+                  {intent}
+                </Button>
+              )
+            })}
+          </Flex>
         </Section>
       </Flex>
     </Box>

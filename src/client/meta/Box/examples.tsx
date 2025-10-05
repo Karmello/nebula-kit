@@ -6,7 +6,11 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   {
     jsx: <Box>Default box</Box>,
     description:
-      'Plain Box - renders with no intent applied. Inherits its text color from the nearest parent that defines a CSS color property.',
+      'By default Box renders with no intent applied and inherits its text color from the nearest parent that defines a CSS color property.',
+  },
+  {
+    jsx: <Box intent="neutral">Neutral box</Box>,
+    description: "Neutral Box uses the app's global text color for its content.",
   },
   {
     jsx: (

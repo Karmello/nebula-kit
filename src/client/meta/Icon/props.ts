@@ -19,7 +19,6 @@ const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
   },
   intent: {
     options: BoxIntent as unknown as string[],
-    defaultValue: '(inherited)',
     description: 'System semantic color style for the icon.',
   },
 }

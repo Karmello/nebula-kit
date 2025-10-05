@@ -1,5 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
-import { SectionProps } from 'lib/components/containers/Section/definitions'
+
+import {
+  DEFAULT_SECTION_INTENT,
+  DEFAULT_SECTION_VARIANT,
+  SectionProps,
+} from 'lib/components/containers/Section/definitions'
+
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
@@ -13,8 +19,14 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
   },
-  variant: BOX_PROPS_META.variant,
-  intent: BOX_PROPS_META.intent,
+  variant: {
+    ...BOX_PROPS_META.variant,
+    defaultValue: DEFAULT_SECTION_VARIANT,
+  },
+  intent: {
+    ...BOX_PROPS_META.intent,
+    defaultValue: DEFAULT_SECTION_INTENT,
+  },
   borderRadius: BOX_PROPS_META.borderRadius,
   padding: BOX_PROPS_META.padding,
   paddingInline: BOX_PROPS_META.paddingInline,

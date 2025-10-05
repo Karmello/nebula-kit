@@ -12,10 +12,19 @@ const SECTION_EXAMPLES_META: ComponentMeta<SectionProps>['examples'] = [
     jsx: <Section heading={<Text typography="h3">Custom heading</Text>}>Content</Section>,
   },
   {
-    description: 'Section with an outlined border, primary intent styling, and custom padding.',
+    description: 'Section fully customized.',
     jsx: (
-      <Section heading="Bordered section" variant="outline" intent="primary" padding={10}>
-        Content
+      <Section
+        heading={
+          <Text typography="h3" intent="primary">
+            Custom heading
+          </Text>
+        }
+        variant="outline"
+        intent="secondary"
+        padding={10}
+      >
+        <Text intent="neutral">Content</Text>
       </Section>
     ),
   },

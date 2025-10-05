@@ -48,10 +48,7 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     isResponsive: false,
     description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
   },
-  intent: {
-    ...BOX_PROPS_META['intent'],
-    defaultValue: '(inherited)',
-  },
+  intent: BOX_PROPS_META['intent'],
   textAlign: BOX_PROPS_META['textAlign'],
   iconName: {
     ...WITH_ICON_PROPS_META['name'],

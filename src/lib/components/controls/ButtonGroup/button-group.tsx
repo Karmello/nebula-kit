@@ -70,11 +70,18 @@ export const ButtonGroup = <T extends ButtonGroupTag = 'div'>({
       gap={attached ? 0 : gap}
       flexWrap="nowrap"
     >
-      {Children.map(children as any, child => {
+      {Children.map(children as any, (child, index) => {
         return (
           <Flex.Item>
             {cloneElement<ButtonProps>(child, {
               ...child.props,
+              tagAttrs: {
+                ...child.props.tagAttrs,
+                style: {
+                  ...child.props.tagAttrs?.style,
+                  '--i': index,
+                },
+              },
               variant: child.props.variant ?? variant,
               intent: child.props.intent ?? intent,
               size: child.props.size ?? size,

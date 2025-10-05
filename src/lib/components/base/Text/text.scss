@@ -27,7 +27,11 @@
 }
 
 .neb-text[data-neb-text-typography='secondary'] {
-  color: var(--neb-text-secondary);
+  color: var(--neb-secondary-ghost-text);
+}
+
+.neb-text[data-neb-text-typography='tertiary'] {
+  color: var(--neb-tertiary-ghost-text);
 }
 
 .neb-text[data-neb-text-typography='caption'] {

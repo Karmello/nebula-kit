@@ -11,16 +11,10 @@ export const FOUNDATION_CATEGORIES = [
           { key: 'philosophy', label: 'Philosophy' },
         ],
       },
-    ],
-  },
-  {
-    key: 'getting-started',
-    label: 'Getting Started',
-    items: [
       {
-        key: 'installation',
-        label: 'Installation',
-        sections: [{ key: 'section-1', label: 'Section 1' }],
+        key: 'getting-started',
+        label: 'Getting started',
+        sections: [{ key: 'installation', label: 'Installation' }],
       },
     ],
   },
@@ -29,43 +23,15 @@ export const FOUNDATION_CATEGORIES = [
     label: 'Concepts',
     items: [
       {
-        key: 'inheritance',
-        label: 'Inheritance',
-        sections: [{ key: 'section-1', label: 'Section 1' }],
-      },
-      {
-        key: 'responsive-props',
-        label: 'Responsive props',
-        sections: [{ key: 'section-1', label: 'Section 1' }],
-      },
-      {
-        key: 'animations',
-        label: 'Animations',
-        sections: [{ key: 'section-1', label: 'Section 1' }],
-      },
-      {
-        key: 'theming',
-        label: 'Theming',
+        key: 'styling-system',
+        label: 'Styling system',
         sections: [
           { key: 'color-palettes', label: 'Color palettes' },
-          { key: 'variants-and-intents', label: 'Variants and intents' },
+          { key: 'sizing-scale', label: 'Sizing scale' },
+          { key: 'typography', label: 'Typography' },
+          { key: 'intents_and_variants', label: 'Intents + variants' },
+          { key: 'icons', label: 'Icons' },
         ],
-      },
-      {
-        key: 'scale',
-        label: 'Scale',
-        sections: [{ key: 'section-1', label: 'Section 1' }],
-      },
-    ],
-  },
-  {
-    key: 'resources',
-    label: 'Resources',
-    items: [
-      {
-        key: 'assets',
-        label: 'Assets',
-        sections: [{ key: 'icons', label: 'Icons' }],
       },
     ],
   },
