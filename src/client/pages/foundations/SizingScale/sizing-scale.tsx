@@ -17,7 +17,7 @@ export default () => {
         </Table.Head>
         <Table.Body>
           {Array.from({ length: 81 }, (v, k) => k).map(n => (
-            <Table.Row>
+            <Table.Row key={n}>
               <Table.Cell>
                 <Text>{n}</Text>
               </Table.Cell>
