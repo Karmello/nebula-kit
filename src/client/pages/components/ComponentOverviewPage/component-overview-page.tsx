@@ -37,7 +37,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   return (
     <>
       {name ? (
-        <Section heading={<Text typography="h5">{name}</Text>} variant="outline" padding={10}>
+        <Section headingText={name} variant="outline">
           {content}
         </Section>
       ) : (

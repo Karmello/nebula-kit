@@ -10,7 +10,7 @@ export default () => {
         <Text typography="lead">All color palettes defined in the system.</Text>
         {COLORS.map(colorName => {
           return (
-            <Section key={colorName} heading={pascalCase(colorName)}>
+            <Section key={colorName} headingText={pascalCase(colorName)}>
               <Box overflowX="auto">
                 <Flex flexDirection="row">
                   {Array.from({ length: 9 }, (v, k) => {

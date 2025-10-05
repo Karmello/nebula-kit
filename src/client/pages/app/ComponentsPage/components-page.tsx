@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 
-import { SplitView, SideNav, Breadcrumb, Section, Spacer, Box, Text } from 'lib/components'
+import { SplitView, SideNav, Breadcrumb, Section, Spacer, Box } from 'lib/components'
 import { useComponentsPageStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
@@ -91,7 +91,9 @@ export const ComponentsPage = () => {
             <ComponentsPageRoutes />
           </SplitView.Main>
           <SplitView.MainBar>
-            <Section heading={<Text typography="h3">{activeItemObj?.label}</Text>}>{null}</Section>
+            <Section headingText={activeItemObj?.label} size="xl">
+              {null}
+            </Section>
           </SplitView.MainBar>
         </SplitView>
       </SplitView.Main>

@@ -1,30 +1,25 @@
 import { ComponentMeta } from 'client/definitions'
-import { Section, Text } from 'lib/components'
+import { Section } from 'lib/components'
 import { SectionProps } from 'lib/components/containers/Section/definitions'
 
 const SECTION_EXAMPLES_META: ComponentMeta<SectionProps>['examples'] = [
   {
-    description: 'Basic section with a heading and body content.',
-    jsx: <Section heading="Default heading">Content</Section>,
+    description: 'Default section with a heading and body content.',
+    jsx: <Section headingText="Default section">Content</Section>,
   },
   {
-    description: 'Section with a custom heading component for more control over typography.',
-    jsx: <Section heading={<Text typography="h3">Custom heading</Text>}>Content</Section>,
-  },
-  {
-    description: 'Section fully customized.',
+    description: 'Section in custom size and variant.',
     jsx: (
-      <Section
-        heading={
-          <Text typography="h3" intent="primary">
-            Custom heading
-          </Text>
-        }
-        variant="outline"
-        intent="secondary"
-        padding={10}
-      >
-        <Text intent="neutral">Content</Text>
+      <Section size="lg" variant="outline" headingText="Outline section">
+        Content
+      </Section>
+    ),
+  },
+  {
+    description: 'Section in custom size, intent and variant.',
+    jsx: (
+      <Section size="lg" intent="primary" variant="outline" headingText="Primary intent section">
+        Content
       </Section>
     ),
   },

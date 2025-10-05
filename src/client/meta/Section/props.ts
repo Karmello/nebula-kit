@@ -1,9 +1,12 @@
 import { ComponentMeta } from 'client/definitions'
 
 import {
+  DEFAULT_SECTION_SIZE,
   DEFAULT_SECTION_INTENT,
   DEFAULT_SECTION_VARIANT,
+  SectionSize,
   SectionProps,
+  SectionVariant,
 } from 'lib/components/containers/Section/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -21,32 +24,22 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
   },
   variant: {
     ...BOX_PROPS_META.variant,
+    options: SectionVariant as unknown as string[],
     defaultValue: DEFAULT_SECTION_VARIANT,
   },
   intent: {
     ...BOX_PROPS_META.intent,
     defaultValue: DEFAULT_SECTION_INTENT,
   },
-  borderRadius: BOX_PROPS_META.borderRadius,
-  padding: BOX_PROPS_META.padding,
-  paddingInline: BOX_PROPS_META.paddingInline,
-  paddingBlock: BOX_PROPS_META.paddingBlock,
-  paddingTop: BOX_PROPS_META.paddingTop,
-  paddingRight: BOX_PROPS_META.paddingRight,
-  paddingBottom: BOX_PROPS_META.paddingBottom,
-  paddingLeft: BOX_PROPS_META.paddingLeft,
-  heading: {
-    options: ['string', 'JSX.Element'],
+  headingText: {
+    options: ['string'],
     isRequired: true,
-    isResponsive: false,
-    description: "Section's heading as a plain string or a JSX element (typically a Text component).",
+    description: "Section's heading as a plain string.",
   },
-  hideDivider: {
-    options: ['boolean'],
-    defaultValue: 'false',
-    isRequired: false,
-    isResponsive: false,
-    description: 'Controls the visibility of the divider below the heading.',
+  size: {
+    options: SectionSize as unknown as string[],
+    defaultValue: DEFAULT_SECTION_SIZE,
+    description: 'Controls overall proportions - adjusting heading size, spacing and padding.',
   },
 }
 

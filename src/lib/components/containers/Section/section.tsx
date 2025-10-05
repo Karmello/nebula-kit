@@ -4,7 +4,13 @@ import classNames from 'classnames'
 import { Box, Divider, SectionProps, Spacer, Text } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { DEFAULT_SECTION_INTENT, DEFAULT_SECTION_VARIANT, SectionTag } from './definitions'
+import {
+  SECTION_SIZE_CONFIG,
+  DEFAULT_SECTION_SIZE,
+  DEFAULT_SECTION_INTENT,
+  DEFAULT_SECTION_VARIANT,
+  SectionTag,
+} from './definitions'
 
 export const Section = <T extends SectionTag = 'section'>({
   // HtmlTag
@@ -15,17 +21,9 @@ export const Section = <T extends SectionTag = 'section'>({
   // Box
   variant = DEFAULT_SECTION_VARIANT,
   intent = DEFAULT_SECTION_INTENT,
-  borderRadius,
-  padding,
-  paddingInline,
-  paddingBlock,
-  paddingTop,
-  paddingRight,
-  paddingBottom,
-  paddingLeft,
   // own
-  heading,
-  hideDivider = false,
+  headingText,
+  size = DEFAULT_SECTION_SIZE,
 }: SectionProps<T>) => {
   return (
     <Box
@@ -39,23 +37,17 @@ export const Section = <T extends SectionTag = 'section'>({
       tagRef={tagRef}
       variant={variant}
       intent={intent}
-      borderRadius={variant !== 'ghost' ? borderRadius : 0}
-      padding={padding}
-      paddingInline={paddingInline}
-      paddingBlock={paddingBlock}
-      paddingTop={paddingTop}
-      paddingRight={paddingRight}
-      paddingBottom={paddingBottom}
-      paddingLeft={paddingLeft}
+      borderRadius={variant === 'ghost' ? 0 : undefined}
+      padding={variant === 'outline' ? SECTION_SIZE_CONFIG[size].spacing : 0}
       maxInlineSize="100%"
       overflowX="auto"
       overflowY="hidden"
     >
-      {typeof heading === 'string' ? <Text typography="h6">{heading}</Text> : heading}
-      {!hideDivider ? <Divider /> : null}
+      <Text typography={SECTION_SIZE_CONFIG[size].typography}>{headingText}</Text>
+      <Divider />
       {children ? (
         <>
-          <Spacer blockSize={10} />
+          <Spacer blockSize={SECTION_SIZE_CONFIG[size].spacing} />
           {children}
         </>
       ) : null}
