@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import classNames from 'classnames'
 
 import { Box, Flex, IconButton } from 'lib/components'
@@ -7,7 +8,6 @@ import { withPrefix } from 'lib/helpers'
 import { useSplitViewContext } from '../../SplitViewProvider'
 import { DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from '../../definitions'
 import { SplitViewSideProps } from './definitions'
-import { useRef } from 'react'
 
 export const SplitViewSide = ({
   children,
@@ -57,7 +57,7 @@ export const SplitViewSide = ({
             />
           </Flex>
         ) : null}
-        {children}
+        {typeof children === 'function' ? children({ setSideOpen, mode }) : children}
       </Box>
     </FocusTrap>
   )

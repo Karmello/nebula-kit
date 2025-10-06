@@ -7,6 +7,7 @@ import { TOOLBAR_EXAMPLES_META } from './examples'
 import { TOOLBAR_MAIN_META } from './ToolbarMain/_index'
 import { TOOLBAR_START_META } from './ToolbarStart/_index'
 import { TOOLBAR_END_META } from './ToolbarEnd/_index'
+import { TOOLBAR_PROVIDER_META } from './ToolbarProvider/_index'
 
 const TOOLBAR_META: ComponentMeta<ToolbarProps> = {
   overview: {
@@ -30,4 +31,5 @@ export default {
   'Toolbar.Main': TOOLBAR_MAIN_META,
   'Toolbar.Start': TOOLBAR_START_META,
   'Toolbar.End': TOOLBAR_END_META,
+  'Toolbar.Provider': TOOLBAR_PROVIDER_META,
 }

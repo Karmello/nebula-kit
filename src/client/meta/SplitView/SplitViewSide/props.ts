@@ -9,7 +9,10 @@ const SPLIT_VIEW_SIDE_PROPS_META: ComponentMeta<SplitViewSideProps>['props'] = {
   tagRef: HTML_TAG_PROPS_META.tagRef,
   children: {
     ...HTML_TAG_PROPS_META.children,
+    options: ['ReactNode', '(context) => JSX.Element'],
     isRequired: true,
+    description:
+      'Accepts either a ReactNode or a render function that receives the SplitView context as its argument.',
   },
   inlineSize: {
     ...BOX_PROPS_META.inlineSize,

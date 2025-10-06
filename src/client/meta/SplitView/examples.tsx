@@ -36,6 +36,33 @@ const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewProps>['examples'] = [
     ),
     sandBoxWithNoPadding: true,
   },
+  {
+    description:
+      'Demonstrates using a render function in the Side slot to access SplitView context values and control its open state in overlay mode.',
+    code: `
+<SplitView>
+  <SplitView.Side>
+    {({ setSideOpen, mode }) => {
+      return (
+        <Button
+          tagAttrs={{
+            onClick: () => {
+              if (mode === 'overlay') {
+                setSideOpen(false)
+              }
+            },
+          }}
+        >
+          Menu button
+        </Button>
+      )
+    }}
+  </SplitView.Side>
+  <SplitView.Main>Main</SplitView.Main>
+  <SplitView.MainBar>MainBar</SplitView.MainBar>
+</SplitView>`,
+    noSandBox: true,
+  },
 ]
 
 export { SPLIT_VIEW_EXAMPLES_META }

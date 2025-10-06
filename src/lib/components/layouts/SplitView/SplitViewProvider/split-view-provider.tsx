@@ -1,5 +1,7 @@
 import { createContext, useContext, useState, ReactNode } from 'react'
 
+import { getLibMsg } from 'lib/helpers'
+
 import { SplitViewOwnProps } from '../definitions'
 
 type ProviderProps = SplitViewOwnProps & {
@@ -10,12 +12,12 @@ type ProviderProps = SplitViewOwnProps & {
 
 export type SplitViewMode = 'overlay' | 'inline'
 
-type ContextProps = Omit<ProviderProps, 'children'> & {
+export type SplitViewContextProps = Omit<ProviderProps, 'children'> & {
   sideOpen: boolean
   setSideOpen: (sideOpen: boolean) => void
 }
 
-const SplitViewContext = createContext<ContextProps>({} as ContextProps)
+const SplitViewContext = createContext<SplitViewContextProps | undefined>(undefined)
 
 export const SplitViewProvider = ({ children, slots, mode, sidePosition, switchAt }: ProviderProps) => {
   const [sideOpen, setSideOpen] = useState(mode === 'inline')
@@ -28,5 +30,7 @@ export const SplitViewProvider = ({ children, slots, mode, sidePosition, switchA
 }
 
 export const useSplitViewContext = () => {
-  return useContext(SplitViewContext)
+  const ctx = useContext(SplitViewContext)
+  if (!ctx) throw new Error(getLibMsg('useSplitViewContext must be used inside <SplitView>'))
+  return ctx
 }
