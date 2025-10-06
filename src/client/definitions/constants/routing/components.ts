@@ -70,13 +70,13 @@ export const COMPONENT_CATEGORIES = [
     label: 'Navigation',
     items: [
       {
-        key: 'breadcrumb',
-        label: 'Breadcrumb',
+        key: 'side-nav',
+        label: 'SideNav',
         sections: COMPONENT_SECTIONS,
       },
       {
-        key: 'side-nav',
-        label: 'SideNav',
+        key: 'breadcrumb',
+        label: 'Breadcrumb',
         sections: COMPONENT_SECTIONS,
       },
     ],

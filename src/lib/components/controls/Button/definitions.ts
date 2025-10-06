@@ -37,7 +37,9 @@ type PropsFromHtmlTag<T extends ButtonTag = 'button'> = Omit<HtmlTagProps<T>, 'c
 
 type PropsFromBox<T extends ButtonTag = 'button'> = Pick<BoxProps<T>, 'variant' | 'intent' | 'disabled'>
 
-type PropsFromText = Pick<TextProps<'span'>, 'iconName' | 'iconPosition'>
+type PropsFromText = Pick<TextProps<'span'>, 'iconName' | 'iconPosition'> & {
+  textIntent?: TextProps<'span'>['intent']
+}
 
 export type ButtonProps<T extends ButtonTag = 'button'> = PropsFromHtmlTag<T> &
   PropsFromBox<T> &

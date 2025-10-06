@@ -1,5 +1,4 @@
 import { ComponentMeta } from 'client/definitions'
-import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { MarkerListItemProps } from 'lib/components'
 
 import { MARKER_LIST_PROPS_META } from './props'

@@ -12,6 +12,7 @@ export const SideNavCategory = ({
   children,
   variant,
   intent,
+  textIntent,
   label,
 }: SideNavCategoryProps) => {
   const {
@@ -57,6 +58,7 @@ export const SideNavCategory = ({
                 iconName={expandedCategories[id] ? 'chevron-down' : 'chevron-right'}
                 variant={variant || rootVariant}
                 intent={intent || rootIntent}
+                textIntent={textIntent}
                 size="sm"
               >
                 {label}

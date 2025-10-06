@@ -8,6 +8,6 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'ul'>, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<'ul'>['children']
 }
 
-type PropsFromButton = Pick<ButtonProps<'button'>, 'variant' | 'intent'>
+type PropsFromButton = Pick<ButtonProps<'button'>, 'variant' | 'intent' | 'textIntent'>
 
 export type SideNavCategoryProps = PropsFromHtmlTag & PropsFromButton & SideNavCategoryOwnProps

@@ -125,7 +125,7 @@ export const Box = <T extends ElementType = 'div'>({
   ])
 
   useLayoutEffect(() => {
-    applyRespValues('dataset', tagRef || ref, bp, { intent }, 'Box')
+    applyRespValues('dataset', tagRef || ref, bp, { intent, variant }, 'Box')
   }, [bp, intent])
 
   return (
@@ -136,7 +136,7 @@ export const Box = <T extends ElementType = 'div'>({
           ...tagAttrs,
           className: classNames(withPrefix('box'), tagAttrs?.className || ''),
           disabled,
-          ...applyStaticDataset('box', { variant, interactive, disabled }),
+          ...applyStaticDataset('box', { interactive, disabled }),
         } as PropsWithoutRef<ComponentProps<T>>
       }
       tagRef={tagRef || ref}

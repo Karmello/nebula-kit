@@ -11,7 +11,7 @@ const SIDE_NAV_CATEGORY_META: ComponentMeta<SideNavCategoryProps> = {
       'can be used multiple times next to each other within SideNav',
       'expects SideNav.Item elements as children',
     ],
-    composedOf: ['Box'],
+    composedOf: ['Box', 'Button', 'Animate'],
     rendersAs: ['ul'],
   },
   props: SIDE_NAV_CATEGORY_PROPS_META,

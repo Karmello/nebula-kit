@@ -36,6 +36,10 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   disabled: BOX_PROPS_META.disabled,
   iconName: TEXT_PROPS_META.iconName,
   iconPosition: TEXT_PROPS_META.iconPosition,
+  textIntent: {
+    ...TEXT_PROPS_META.intent,
+    description: 'Semantic color intent applied only to text.',
+  },
   size: {
     options: Object.values(ButtonSize),
     defaultValue: DEFAULT_BUTTON_SIZE,

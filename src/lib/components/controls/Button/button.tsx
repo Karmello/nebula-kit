@@ -28,6 +28,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   // Text
   iconName,
   iconPosition,
+  textIntent,
   // own
   size = DEFAULT_BUTTON_SIZE,
 }: ButtonProps<T>) => {
@@ -48,7 +49,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       interactive
       {...BUTTON_SIZE_CONFIG[size]}
     >
-      <Text tag="span" iconName={iconName} iconPosition={iconPosition}>
+      <Text tag="span" iconName={iconName} iconPosition={iconPosition} intent={textIntent}>
         {children}
       </Text>
     </Box>

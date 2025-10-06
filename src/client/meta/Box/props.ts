@@ -10,7 +10,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: Object.values(BoxVariant),
     defaultValue: DEFAULT_BOX_VARIANT,
     isRequired: false,
-    isResponsive: false,
+    isResponsive: true,
     description: 'Visual style variant from the system design.',
   },
   intent: {

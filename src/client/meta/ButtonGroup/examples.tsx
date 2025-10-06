@@ -86,7 +86,7 @@ const BUTTON_GROUP_EXAMPLES_META: ComponentMeta<ButtonGroupProps>['examples'] = 
   {
     description: 'Shows a group with a shared style while overriding the appearance of a single button.',
     jsx: (
-      <ButtonGroup intent="tertiary">
+      <ButtonGroup intent="tertiary" attached>
         <Button intent="secondary">Button 1</Button>
         <Button>Button 2</Button>
         <Button>Button 3</Button>

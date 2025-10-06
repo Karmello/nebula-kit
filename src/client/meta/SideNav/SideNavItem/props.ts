@@ -18,6 +18,7 @@ const SIDE_NAV_ITEM_PROPS_META: ComponentMeta<SideNavItemProps>['props'] = {
     defaultValue: DEFAULT_BOX_VARIANT,
   },
   intent: BUTTON_PROPS_META.intent,
+  textIntent: BUTTON_PROPS_META.textIntent,
 }
 
 export { SIDE_NAV_ITEM_PROPS_META }

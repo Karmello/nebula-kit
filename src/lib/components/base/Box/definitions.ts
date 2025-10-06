@@ -23,7 +23,7 @@ export type BoxVariant = (typeof BoxVariant)[number]
 export type BoxIntent = (typeof BoxIntent)[number]
 
 type BoxOwnProps = {
-  variant?: BoxVariant
+  variant?: RespValue<BoxVariant>
   intent?: RespValue<BoxIntent>
   opacity?: RespValue<number>
   borderRadius?: ScaleValue | string

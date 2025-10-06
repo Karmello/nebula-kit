@@ -52,8 +52,7 @@ export const SplitViewSide = ({
                 },
               }}
               iconName="close"
-              variant="ghost"
-              intent="neutral"
+              intent={intent || 'secondary'}
               size="sm"
             />
           </Flex>

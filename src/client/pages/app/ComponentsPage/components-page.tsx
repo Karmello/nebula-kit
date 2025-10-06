@@ -27,48 +27,55 @@ export const ComponentsPage = () => {
   return (
     <SplitView>
       <SplitView.Side>
-        <SideNav>
-          {COMPONENT_CATEGORIES.map(({ key: categoryKey, label, items }) => (
-            <SideNav.Category
-              key={categoryKey}
-              label={label}
-              variant={activeCategoryObj?.key === categoryKey ? 'ghost' : 'solid'}
-              intent={activeCategoryObj?.key === categoryKey ? 'primary' : 'neutral'}
-            >
-              {items.map(({ key: itemKey, label, sections }) => {
-                const sectionIndex = sections.findIndex(s => s.key === componentsPageStore.sectionKey)
-                const href = `/${PageKey.components}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
-                const isSelected = pathname === href
-                return (
-                  <SideNav.Item
-                    key={itemKey}
-                    tagAttrs={{
-                      href,
-                      onClick: e => {
-                        e.preventDefault()
-                        navigateTo(href)
-                      },
-                    }}
-                    intent={isSelected ? 'tertiary' : 'neutral'}
-                  >
-                    {label}
-                  </SideNav.Item>
-                )
-              })}
-            </SideNav.Category>
-          ))}
+        <SideNav intent={{ base: 'secondary', lg: 'neutral' }}>
+          {COMPONENT_CATEGORIES.map(({ key: categoryKey, label, items }) => {
+            const isCategorySelected = activeCategoryObj?.key === categoryKey
+            return (
+              <SideNav.Category
+                key={categoryKey}
+                label={label}
+                variant="ghost"
+                intent={isCategorySelected ? 'primary' : 'neutral'}
+              >
+                {items.map(({ key: itemKey, label, sections }) => {
+                  const sectionIndex = sections.findIndex(s => s.key === componentsPageStore.sectionKey)
+                  const href = `/${PageKey.components}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
+                  const isItemSelected = pathname === href
+                  return (
+                    <SideNav.Item
+                      key={itemKey}
+                      tagAttrs={{
+                        href,
+                        onClick: e => {
+                          e.preventDefault()
+                          navigateTo(href)
+                        },
+                      }}
+                      textIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
+                      intent={{
+                        base: isItemSelected ? 'primary' : 'secondary',
+                        lg: isItemSelected ? 'tertiary' : 'neutral',
+                      }}
+                    >
+                      {label}
+                    </SideNav.Item>
+                  )
+                })}
+              </SideNav.Category>
+            )
+          })}
         </SideNav>
       </SplitView.Side>
       <SplitView.Main paddingLeft={10}>
         <Spacer blockSize={15} />
         <SplitView sidePosition="right">
           <SplitView.Side>
-            <SideNav>
+            <SideNav intent={{ base: 'secondary', lg: 'neutral' }}>
               {COMPONENT_CATEGORIES.find(c => c.key === componentsPageStore.categoryKey)
                 ?.items.find(i => i.key === componentsPageStore.itemKey)
                 ?.sections.map(({ key: sectionKey, label }) => {
                   const href = `/${PageKey.components}/${componentsPageStore.categoryKey}/${componentsPageStore.itemKey}/${sectionKey}`
-                  const isSelected = pathname === href
+                  const isItemSelected = pathname === href
                   return (
                     <SideNav.Item
                       key={sectionKey}
@@ -79,7 +86,11 @@ export const ComponentsPage = () => {
                           navigateTo(href)
                         },
                       }}
-                      intent={isSelected ? 'tertiary' : 'neutral'}
+                      textIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
+                      intent={{
+                        base: isItemSelected ? 'primary' : 'secondary',
+                        lg: isItemSelected ? 'tertiary' : 'neutral',
+                      }}
                     >
                       {label}
                     </SideNav.Item>
