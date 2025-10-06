@@ -31,15 +31,15 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
     ...BOX_PROPS_META.intent,
     defaultValue: DEFAULT_SECTION_INTENT,
   },
-  headingText: {
+  heading: {
     options: ['string'],
     isRequired: true,
-    description: "Section's heading as a plain string.",
+    description: 'Heading text.',
   },
   size: {
     options: SectionSize as unknown as string[],
     defaultValue: DEFAULT_SECTION_SIZE,
-    description: 'Controls overall proportions - adjusting heading size, spacing and padding.',
+    description: 'Controls overall proportions - adjusting heading size and spacings.',
   },
 }
 

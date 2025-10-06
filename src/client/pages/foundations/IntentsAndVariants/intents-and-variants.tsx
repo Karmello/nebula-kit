@@ -9,7 +9,7 @@ export default () => {
           Intents and variants available in the system, showing how semantic roles combine with visual styles
           across components.
         </Text>
-        <Section headingText="Intents">
+        <Section heading="Intents">
           <MarkerList>
             <MarkerListItem>
               <Text bold>{BoxIntent[0]}</Text>
@@ -49,7 +49,7 @@ export default () => {
             </MarkerListItem>
           </MarkerList>
         </Section>
-        <Section headingText="Ghost variant">
+        <Section heading="Ghost variant">
           <Text>Minimal, blends into background.</Text>
           <Spacer blockSize={15} />
           <Flex flexWrap="wrap" gap={3}>
@@ -62,7 +62,7 @@ export default () => {
             })}
           </Flex>
         </Section>
-        <Section headingText="Outline variant">
+        <Section heading="Outline variant">
           <Text>Border only, background matches the app's surface.</Text>
           <Spacer blockSize={15} />
           <Flex flexWrap="wrap" gap={3}>
@@ -75,7 +75,7 @@ export default () => {
             })}
           </Flex>
         </Section>
-        <Section headingText="Solid variant">
+        <Section heading="Solid variant">
           <Text>Filled surface, strong emphasis.</Text>
           <Spacer blockSize={15} />
           <Flex flexWrap="wrap" gap={3}>

@@ -5,56 +5,56 @@ import { Section } from '../'
 // children required
 expectError(<Section />)
 
-// headingText prop required
+// heading prop required
 expectError(<Section>content</Section>)
 
-// headingText passed
-expectType(<Section headingText="Heading">Content</Section>)
+// heading passed
+expectType(<Section heading="Heading">Content</Section>)
 
 // valid tags passed
 expectType(
-  <Section headingText="Heading" tag="section">
+  <Section heading="Heading" tag="section">
     Content
   </Section>
 )
 expectType(
-  <Section headingText="Heading" tag="article">
+  <Section heading="Heading" tag="article">
     Content
   </Section>
 )
 expectType(
-  <Section headingText="Heading" tag="aside">
+  <Section heading="Heading" tag="aside">
     Content
   </Section>
 )
 expectType(
-  <Section headingText="Heading" tag="div">
+  <Section heading="Heading" tag="div">
     Content
   </Section>
 )
 
 // invalid variant passed
 expectError(
-  <Section headingText="Heading" variant="solid">
+  <Section heading="Heading" variant="solid">
     Content
   </Section>
 )
 
 // valid variants passed
 expectType(
-  <Section headingText="Heading" variant="ghost">
+  <Section heading="Heading" variant="ghost">
     Content
   </Section>
 )
 expectType(
-  <Section headingText="Heading" variant="outline">
+  <Section heading="Heading" variant="outline">
     Content
   </Section>
 )
 
 // size passed
 expectType(
-  <Section headingText="Heading" size="lg">
+  <Section heading="Heading" size="lg">
     Content
   </Section>
 )

@@ -91,7 +91,7 @@ export const FoundationsPage = () => {
             <FoundationsPageRoutes />
           </SplitView.Main>
           <SplitView.MainBar>
-            <Section headingText={activeSectionObj?.label} size="xl">
+            <Section heading={activeSectionObj?.label} size="xl">
               {null}
             </Section>
           </SplitView.MainBar>

@@ -91,7 +91,7 @@ export const ComponentsPage = () => {
             <ComponentsPageRoutes />
           </SplitView.Main>
           <SplitView.MainBar>
-            <Section headingText={activeItemObj?.label} size="xl">
+            <Section heading={activeItemObj?.label} size="xl">
               {null}
             </Section>
           </SplitView.MainBar>

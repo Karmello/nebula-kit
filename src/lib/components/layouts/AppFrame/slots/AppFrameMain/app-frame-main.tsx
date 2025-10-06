@@ -16,6 +16,7 @@ export const AppFrameMain = ({ children, tagAttrs, tagRef, ...paddings }: AppFra
         className: classNames(withPrefix('app-frame-main'), tagAttrs?.className),
       }}
       tagRef={tagRef}
+      intent="neutral"
       borderRadius={0}
       {...paddings}
     >

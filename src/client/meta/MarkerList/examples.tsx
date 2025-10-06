@@ -6,7 +6,7 @@ const MARKER_LIST_EXAMPLES_META: ComponentMeta<MarkerListProps>['examples'] = [
   {
     description: 'Basic MarkerList with two list items.',
     jsx: (
-      <MarkerList>
+      <MarkerList intent="neutral">
         <MarkerList.Item>Item 1</MarkerList.Item>
         <MarkerList.Item>Item 2</MarkerList.Item>
       </MarkerList>
@@ -15,7 +15,7 @@ const MARKER_LIST_EXAMPLES_META: ComponentMeta<MarkerListProps>['examples'] = [
   {
     description: 'MarkerList with circular markers and custom spacing between items.',
     jsx: (
-      <MarkerList listStyle="circle" rowGap={10}>
+      <MarkerList intent="neutral" listStyle="circle" rowGap={10}>
         <MarkerList.Item>Item 1</MarkerList.Item>
         <MarkerList.Item>Item 2</MarkerList.Item>
       </MarkerList>
@@ -24,7 +24,7 @@ const MARKER_LIST_EXAMPLES_META: ComponentMeta<MarkerListProps>['examples'] = [
   {
     description: 'Numbered MarkerList where each item contains a styled Box.',
     jsx: (
-      <MarkerList listStyle="decimal">
+      <MarkerList intent="neutral" listStyle="decimal">
         <MarkerList.Item>
           <Box variant="solid" intent="primary" padding={3}>
             Item

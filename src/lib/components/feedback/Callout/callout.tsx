@@ -6,13 +6,13 @@ import { withPrefix } from 'lib/helpers'
 
 import {
   CalloutProps,
+  CalloutTag,
   CALLOUT_CONFIG,
   DEFAULT_CALLOUT_VARIANT,
   DEFAULT_CALLOUT_INTENT,
-  CalloutTag,
+  DEFAULT_CALLOUT_SIZE,
+  CALLOUT_SIZE_CONFIG,
 } from './definitions'
-
-import './callout.scss'
 
 export const Callout = <T extends CalloutTag = 'div'>({
   tag,
@@ -22,10 +22,9 @@ export const Callout = <T extends CalloutTag = 'div'>({
   content,
   heading,
   // Box
+  size = DEFAULT_CALLOUT_SIZE,
   variant = DEFAULT_CALLOUT_VARIANT,
   intent = DEFAULT_CALLOUT_INTENT,
-  borderRadius,
-  ...paddings
 }: CalloutProps<T>) => {
   return (
     <Box
@@ -39,14 +38,12 @@ export const Callout = <T extends CalloutTag = 'div'>({
       tagRef={tagRef}
       variant={variant}
       intent={intent}
-      borderRadius={borderRadius}
-      padding={10}
-      {...paddings}
+      padding={CALLOUT_SIZE_CONFIG[size].spacing}
     >
-      <Text typography="h5" iconName={CALLOUT_CONFIG[intent].iconName}>
+      <Text typography={CALLOUT_SIZE_CONFIG[size].typography} iconName={CALLOUT_CONFIG[intent].iconName}>
         {heading || CALLOUT_CONFIG[intent].heading}
       </Text>
-      <Spacer blockSize={5} />
+      <Spacer blockSize={CALLOUT_SIZE_CONFIG[size].spacing} />
       <Text>{content}</Text>
     </Box>
   )

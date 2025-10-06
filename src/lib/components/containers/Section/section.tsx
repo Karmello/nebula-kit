@@ -22,7 +22,7 @@ export const Section = <T extends SectionTag = 'section'>({
   variant = DEFAULT_SECTION_VARIANT,
   intent = DEFAULT_SECTION_INTENT,
   // own
-  headingText,
+  heading,
   size = DEFAULT_SECTION_SIZE,
 }: SectionProps<T>) => {
   return (
@@ -43,7 +43,7 @@ export const Section = <T extends SectionTag = 'section'>({
       overflowX="auto"
       overflowY="hidden"
     >
-      <Text typography={SECTION_SIZE_CONFIG[size].typography}>{headingText}</Text>
+      <Text typography={SECTION_SIZE_CONFIG[size].typography}>{heading}</Text>
       <Divider />
       {children ? (
         <>

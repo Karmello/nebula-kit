@@ -20,7 +20,9 @@ const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarProps>['examples'] = [
     jsx: (
       <Toolbar switchAt="md">
         <Toolbar.Start>
-          <Box paddingInline={10}>Brand</Box>
+          <Box intent="neutral" paddingInline={10}>
+            Brand
+          </Box>
         </Toolbar.Start>
         <Toolbar.Main>
           <ButtonGroup attached direction={{ base: 'column', md: 'row' }} stretch={{ base: true, md: false }}>

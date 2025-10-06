@@ -27,7 +27,7 @@ export type SectionSize = (typeof SectionSize)[number]
 export type SectionVariant = (typeof SectionVariant)[number]
 
 type SectionOwnProps = {
-  headingText: string
+  heading: string
   size?: SectionSize
   variant?: SectionVariant
 }

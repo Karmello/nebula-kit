@@ -17,7 +17,7 @@ export const useAppFrameContext = () => {
   const ctx = useContext(AppFrameContext)
 
   if (!ctx) {
-    throw new Error('useAppFrame must be used within a AppFrameProvider')
+    throw new Error('useAppFrameContext must be used within a AppFrameProvider')
   }
 
   return ctx

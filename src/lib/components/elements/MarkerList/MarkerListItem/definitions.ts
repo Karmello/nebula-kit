@@ -1,5 +1,9 @@
-import { HtmlTagProps } from 'lib/components'
+import { BoxProps, HtmlTagProps } from 'lib/components'
 
-export type MarkerListItemProps = Pick<HtmlTagProps<'li'>, 'tagAttrs' | 'tagRef'> & {
+type PropsFromHtmlTag = Pick<HtmlTagProps<'li'>, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<'li'>['children']
 }
+
+type PropsFromBox = Pick<BoxProps<'li'>, 'intent'>
+
+export type MarkerListItemProps = PropsFromHtmlTag & PropsFromBox

@@ -9,6 +9,7 @@ import {
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { FLEX_PROPS_META } from '../Flex/props'
+import { BOX_PROPS_META } from '../Box/props'
 
 const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListProps>['props'] = {
   ...HTML_TAG_PROPS_META,
@@ -31,6 +32,10 @@ const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListProps>['props'] = {
     isRequired: false,
     isResponsive: false,
     description: 'Defines the style of the markers used for list items.',
+  },
+  intent: {
+    ...BOX_PROPS_META.intent,
+    description: 'Semantic color intent applied to all items at once.',
   },
 }
 

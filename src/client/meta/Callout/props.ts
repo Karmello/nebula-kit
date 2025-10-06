@@ -7,6 +7,8 @@ import {
   CalloutIntent,
   CalloutProps,
   CalloutVariant,
+  CalloutSize,
+  DEFAULT_CALLOUT_SIZE,
 } from 'lib/components/feedback/Callout/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -16,10 +18,6 @@ const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
   tag: HTML_TAG_PROPS_META.tag,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
-  borderRadius: BOX_PROPS_META.borderRadius,
-  padding: BOX_PROPS_META.padding,
-  paddingInline: BOX_PROPS_META.paddingInline,
-  paddingBlock: BOX_PROPS_META.paddingBlock,
   variant: {
     ...BOX_PROPS_META.variant,
     options: Object.values(CalloutVariant),
@@ -43,6 +41,11 @@ const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
     defaultValue: CALLOUT_CONFIG[DEFAULT_CALLOUT_INTENT].heading,
     isRequired: false,
     isResponsive: false,
+  },
+  size: {
+    options: CalloutSize as unknown as string[],
+    defaultValue: DEFAULT_CALLOUT_SIZE,
+    description: 'Controls overall proportions - adjusting heading size and spacings.',
   },
 }
 

@@ -1,5 +1,17 @@
-import { BoxProps, HtmlTagProps } from 'lib/components'
-import { IconName } from 'lib/definitions'
+import { HtmlTagProps } from 'lib/components'
+import { TextTypography } from 'lib/components/base/Text/definitions'
+import { IconName, ScaleValue } from 'lib/definitions'
+
+export const CALLOUT_SIZE_CONFIG: Record<
+  CalloutSize,
+  { typography: Extract<TextTypography, 'h6' | 'h5' | 'h4' | 'h3' | 'h2'>; spacing: ScaleValue }
+> = {
+  sm: { typography: 'h6', spacing: 8 },
+  md: { typography: 'h5', spacing: 10 },
+  lg: { typography: 'h4', spacing: 12 },
+  xl: { typography: 'h3', spacing: 13 },
+  xxl: { typography: 'h2', spacing: 15 },
+}
 
 export const CALLOUT_CONFIG: Record<CalloutIntent, { heading: string; iconName: IconName }> = {
   info: { heading: 'Info', iconName: 'info' },
@@ -8,31 +20,28 @@ export const CALLOUT_CONFIG: Record<CalloutIntent, { heading: string; iconName: 
   danger: { heading: 'Attention', iconName: 'circle-alert' },
 }
 
+export const DEFAULT_CALLOUT_SIZE: CalloutSize = 'md'
 export const DEFAULT_CALLOUT_VARIANT: CalloutVariant = 'solid'
 export const DEFAULT_CALLOUT_INTENT: CalloutIntent = 'info'
 
 export const CalloutTag = ['div', 'section', 'article', 'aside'] as const
+export const CalloutSize = ['sm', 'md', 'lg', 'xl', 'xxl'] as const
 export const CalloutVariant = ['solid', 'outline'] as const
 export const CalloutIntent = ['info', 'success', 'warning', 'danger'] as const
 
 export type CalloutTag = (typeof CalloutTag)[number]
+export type CalloutSize = (typeof CalloutSize)[number]
 export type CalloutVariant = (typeof CalloutVariant)[number]
 export type CalloutIntent = (typeof CalloutIntent)[number]
 
 type CalloutOwnProps = {
   content: string
   heading?: string
+  size?: CalloutSize
   variant?: CalloutVariant
   intent?: CalloutIntent
 }
 
 type PropsFromHtmlTag<T extends CalloutTag = 'div'> = Omit<HtmlTagProps<T>, 'children'>
 
-type PropsFromBox<T extends CalloutTag = 'div'> = Pick<
-  BoxProps<T>,
-  'borderRadius' | 'padding' | 'paddingInline' | 'paddingBlock'
->
-
-export type CalloutProps<T extends CalloutTag = 'div'> = PropsFromHtmlTag<T> &
-  PropsFromBox<T> &
-  CalloutOwnProps
+export type CalloutProps<T extends CalloutTag = 'div'> = PropsFromHtmlTag<T> & CalloutOwnProps

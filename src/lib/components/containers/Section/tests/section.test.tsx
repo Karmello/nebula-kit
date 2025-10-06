@@ -7,7 +7,7 @@ describe('<Section />', () => {
   describe('basic rendering', () => {
     it('renders as <section> by default', () => {
       render(
-        <Section headingText="Heading" tagAttrs={{ 'data-testid': 'elem' }}>
+        <Section heading="Heading" tagAttrs={{ 'data-testid': 'elem' }}>
           Content
         </Section>
       )

@@ -22,6 +22,7 @@ export const SplitViewMainBar = <T extends ElementType = 'div'>({
         } as PropsWithoutRef<ComponentProps<T>>
       }
       tagRef={tagRef}
+      intent="neutral"
       borderRadius={0}
     >
       {children}

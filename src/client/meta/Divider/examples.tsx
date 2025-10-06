@@ -15,7 +15,9 @@ const DIVIDER_EXAMPLES_META: ComponentMeta<DividerProps>['examples'] = [
     description: 'Divider placed directly under heading.',
     jsx: (
       <>
-        <Text typography="h6">Heading</Text>
+        <Text intent="neutral" typography="h6">
+          Heading
+        </Text>
         <Divider />
       </>
     ),

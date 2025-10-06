@@ -3,9 +3,12 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
+import { useMarkerListContext } from '../MarkerListProvider'
 import { MarkerListItemProps } from './definitions'
 
-export const MarkerListItem = ({ children, tagAttrs, tagRef }: MarkerListItemProps) => {
+export const MarkerListItem = ({ children, tagAttrs, tagRef, intent }: MarkerListItemProps) => {
+  const { intent: rootIntent } = useMarkerListContext()
+
   return (
     <Box
       tag="li"
@@ -15,6 +18,7 @@ export const MarkerListItem = ({ children, tagAttrs, tagRef }: MarkerListItemPro
         role: 'listitem',
       }}
       tagRef={tagRef}
+      intent={intent || rootIntent}
     >
       {children}
     </Box>

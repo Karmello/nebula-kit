@@ -24,7 +24,9 @@ const AnimateWrapper = ({ property }: { property: AnimateProps['property'] }) =>
 
   return (
     <Animate visible={visible} property={property} duration={1000}>
-      <Text noWrap>Animated content.</Text>
+      <Text intent="neutral" noWrap>
+        Animated content.
+      </Text>
     </Animate>
   )
 }
