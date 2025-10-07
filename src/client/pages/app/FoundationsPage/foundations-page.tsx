@@ -28,7 +28,7 @@ export const FoundationsPage = () => {
     <SplitView>
       <SplitView.Side>
         {({ setSideOpen, mode }) => (
-          <SideNav intent={{ base: 'secondary', lg: 'neutral' }}>
+          <SideNav>
             {FOUNDATION_CATEGORIES.map(({ key: categoryKey, label, items }) => {
               const isCategorySelected = activeCategoryObj?.key === categoryKey
               return (
@@ -76,7 +76,7 @@ export const FoundationsPage = () => {
         <SplitView sidePosition="right">
           <SplitView.Side>
             {({ setSideOpen, mode }) => (
-              <SideNav intent={{ base: 'secondary', lg: 'neutral' }}>
+              <SideNav>
                 {FOUNDATION_CATEGORIES.find(c => c.key === foundationsPageStore.categoryKey)
                   ?.items.find(i => i.key === foundationsPageStore.itemKey)
                   ?.sections.map(({ key: sectionKey, label }) => {

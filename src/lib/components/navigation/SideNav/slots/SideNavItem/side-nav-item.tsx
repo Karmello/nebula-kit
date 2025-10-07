@@ -1,6 +1,5 @@
 import { Button } from 'lib/components'
 
-import { useSideNavContext } from '../../SideNavProvider'
 import { SideNavItemProps } from './definitions'
 
 export const SideNavItem = ({
@@ -11,8 +10,6 @@ export const SideNavItem = ({
   intent,
   textIntent,
 }: SideNavItemProps) => {
-  const { variant: rootVariant, intent: rootIntent } = useSideNavContext()
-
   return (
     <Button
       tag="a"
@@ -21,8 +18,8 @@ export const SideNavItem = ({
         style: { ...tagAttrs?.style, inlineSize: '100%' },
       }}
       tagRef={tagRef}
-      variant={variant || rootVariant}
-      intent={intent || rootIntent}
+      variant={variant}
+      intent={intent}
       textIntent={textIntent}
       size="sm"
     >

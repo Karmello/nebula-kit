@@ -1,7 +1,7 @@
 import { useEffect, useId } from 'react'
 
 import { WithSlots } from 'lib/components/internal'
-import { Animate, Box, Button, Flex } from 'lib/components'
+import { Animate, Box, Button, Flex, Spacer } from 'lib/components'
 
 import { useSideNavContext } from '../../SideNavProvider'
 import { SideNavCategoryProps } from './definitions'
@@ -15,13 +15,7 @@ export const SideNavCategory = ({
   textIntent,
   label,
 }: SideNavCategoryProps) => {
-  const {
-    expandedCategories,
-    setExpandedCategories,
-    variant: rootVariant,
-    intent: rootIntent,
-    expandMode,
-  } = useSideNavContext()
+  const { expandedCategories, setExpandedCategories, expandMode } = useSideNavContext()
 
   const id = useId()
 
@@ -56,8 +50,8 @@ export const SideNavCategory = ({
                   'aria-expanded': expandedCategories[id],
                 }}
                 iconName={expandedCategories[id] ? 'chevron-down' : 'chevron-right'}
-                variant={variant || rootVariant}
-                intent={intent || rootIntent}
+                variant={variant}
+                intent={intent}
                 textIntent={textIntent}
                 size="sm"
               >
@@ -71,6 +65,7 @@ export const SideNavCategory = ({
               }}
             >
               <Animate property="blockSize" visible={expandedCategories[id]}>
+                <Spacer blockSize={2} />
                 <Flex tag="ul" flexDirection="column" gap={2}>
                   {slots['SideNav.Item'].map((slot, key) => (
                     <Box key={key} tag="li" inlineSize="100%">

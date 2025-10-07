@@ -3,22 +3,13 @@ import { Flex } from 'lib/components'
 
 import { SideNavProvider } from './SideNavProvider'
 import { SideNavToggle } from './components'
-
-import {
-  DEFAULT_SIDE_NAV_EXPAND_MODE,
-  DEFAULT_SIDE_NAV_INTENT,
-  DEFAULT_SIDE_NAV_VARIANT,
-  SideNavProps,
-} from './definitions'
+import { DEFAULT_SIDE_NAV_EXPAND_MODE, SideNavProps } from './definitions'
 
 export const SideNav = ({
   // HtmlTag
   tagAttrs,
   tagRef,
   children,
-  // Box
-  variant = DEFAULT_SIDE_NAV_VARIANT,
-  intent = DEFAULT_SIDE_NAV_INTENT,
   // own
   expandMode = DEFAULT_SIDE_NAV_EXPAND_MODE,
 }: SideNavProps) => {
@@ -33,7 +24,7 @@ export const SideNav = ({
       childrenToVerify={children}
     >
       {({ slots, validNodes }) => (
-        <SideNavProvider variant={variant} intent={intent} expandMode={expandMode}>
+        <SideNavProvider expandMode={expandMode}>
           <Flex tag="nav" tagAttrs={tagAttrs} tagRef={tagRef} flexDirection="column" gap={2}>
             {slots['SideNav.Category'].length ? <SideNavToggle /> : null}
             {validNodes}

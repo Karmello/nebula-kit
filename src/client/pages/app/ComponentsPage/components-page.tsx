@@ -28,7 +28,7 @@ export const ComponentsPage = () => {
     <SplitView>
       <SplitView.Side>
         {({ setSideOpen, mode }) => (
-          <SideNav intent={{ base: 'secondary', lg: 'neutral' }}>
+          <SideNav>
             {COMPONENT_CATEGORIES.map(({ key: categoryKey, label, items }) => {
               const isCategorySelected = activeCategoryObj?.key === categoryKey
               return (
@@ -76,7 +76,7 @@ export const ComponentsPage = () => {
         <SplitView sidePosition="right">
           <SplitView.Side>
             {({ setSideOpen, mode }) => (
-              <SideNav intent={{ base: 'secondary', lg: 'neutral' }}>
+              <SideNav>
                 {COMPONENT_CATEGORIES.find(c => c.key === componentsPageStore.categoryKey)
                   ?.items.find(i => i.key === componentsPageStore.itemKey)
                   ?.sections.map(({ key: sectionKey, label }) => {
