@@ -15,7 +15,7 @@ const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
       'supports an expand-all / collapse-all control',
       'ideal for use inside SplitView.Side',
     ],
-    composedOf: ['Box'],
+    composedOf: ['Flex'],
     rendersAs: ['nav'],
   },
   examples: SIDE_NAV_EXAMPLES_META,

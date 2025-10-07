@@ -1,5 +1,5 @@
 import { WithSlots } from 'lib/components/internal'
-import { Box } from 'lib/components'
+import { Flex } from 'lib/components'
 
 import { SideNavProvider } from './SideNavProvider'
 import { SideNavToggle } from './components'
@@ -34,10 +34,10 @@ export const SideNav = ({
     >
       {({ slots, validNodes }) => (
         <SideNavProvider variant={variant} intent={intent} expandMode={expandMode}>
-          <Box tag="nav" tagAttrs={tagAttrs} tagRef={tagRef} variant={variant} intent={intent}>
+          <Flex tag="nav" tagAttrs={tagAttrs} tagRef={tagRef} flexDirection="column" gap={2}>
             {slots['SideNav.Category'].length ? <SideNavToggle /> : null}
             {validNodes}
-          </Box>
+          </Flex>
         </SideNavProvider>
       )}
     </WithSlots>

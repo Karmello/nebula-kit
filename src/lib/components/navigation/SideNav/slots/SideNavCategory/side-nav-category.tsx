@@ -1,7 +1,7 @@
 import { useEffect, useId } from 'react'
 
 import { WithSlots } from 'lib/components/internal'
-import { Animate, Box, Button } from 'lib/components'
+import { Animate, Box, Button, Flex } from 'lib/components'
 
 import { useSideNavContext } from '../../SideNavProvider'
 import { SideNavCategoryProps } from './definitions'
@@ -37,7 +37,7 @@ export const SideNavCategory = ({
     >
       {({ slots }) => {
         return (
-          <Box tag="ul" tagAttrs={tagAttrs} tagRef={tagRef}>
+          <Box tag="ul" tagAttrs={tagAttrs} tagRef={tagRef} inlineSize="100%">
             <Box tag="li">
               <Button
                 tagAttrs={{
@@ -70,15 +70,15 @@ export const SideNavCategory = ({
                 inert: !expandedCategories[id],
               }}
             >
-              <Box tag="ul">
-                <Animate property="blockSize" visible={expandedCategories[id]}>
+              <Animate property="blockSize" visible={expandedCategories[id]}>
+                <Flex tag="ul" flexDirection="column" gap={2}>
                   {slots['SideNav.Item'].map((slot, key) => (
-                    <Box key={key} tag="li">
+                    <Box key={key} tag="li" inlineSize="100%">
                       {slot}
                     </Box>
                   ))}
-                </Animate>
-              </Box>
+                </Flex>
+              </Animate>
             </Box>
           </Box>
         )
