@@ -28,4 +28,4 @@ export const TableCell = ({ children, tagAttrs, tagRef }: TableCellProps) => {
   )
 }
 
-TableCell.displayName = 'TableCell'
+TableCell.displayName = 'Table.Cell'

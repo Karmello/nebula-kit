@@ -21,7 +21,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           <Box
             variant="outline"
             intent="warning"
-            padding={sandBoxWithNoPadding ? 0 : 20}
+            padding={sandBoxWithNoPadding ? 0 : { base: 10, lg: 20 }}
             tagAttrs={{
               style: { borderStyle: 'dashed' },
             }}

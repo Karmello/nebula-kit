@@ -20,4 +20,4 @@ export const TableCaption = ({ children, tagAttrs, tagRef }: TableCaptionProps) 
   )
 }
 
-TableCaption.displayName = 'TableCaption'
+TableCaption.displayName = 'Table.Caption'

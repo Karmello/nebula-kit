@@ -20,4 +20,4 @@ export const TableFoot = ({ children, tagAttrs, tagRef }: TableFootProps) => {
   )
 }
 
-TableFoot.displayName = 'TableFoot'
+TableFoot.displayName = 'Table.Foot'

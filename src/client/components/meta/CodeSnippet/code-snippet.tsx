@@ -35,10 +35,19 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
   }
 
   return (
-    <Box position="relative">
-      <Box tag="pre" tagAttrs={{ style: { backgroundColor: data.bg } }} overflowX="auto" maxInlineSize="100%">
-        <Flex>
-          <Box tag="code" padding={13}>
+    <Flex flexDirection="column" alignItems="stretch" tagAttrs={{ style: { backgroundColor: data.bg } }}>
+      <Box padding={1}>
+        <IconButton
+          iconName={copied ? 'check' : 'copy'}
+          size="xs"
+          variant="ghost"
+          intent={copied ? 'success' : 'primary'}
+          tagAttrs={{ onClick: handleCopy, 'aria-label': copied ? 'Copied' : 'Copy code' }}
+        />
+      </Box>
+      <Box maxBlockSize="350px" overflowY="auto">
+        <Flex tag="pre">
+          <Box tag="code" paddingInline={12} paddingBottom={7}>
             {data.tokens.map((token, i) => (
               <Box key={i}>
                 {token.map(({ content, color }, j) => (
@@ -56,15 +65,6 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
           </Box>
         </Flex>
       </Box>
-      <Box position="absolute" top={0} right={0}>
-        <IconButton
-          iconName={copied ? 'check' : 'copy'}
-          size="xs"
-          variant="ghost"
-          intent={copied ? 'success' : 'primary'}
-          tagAttrs={{ onClick: handleCopy, 'aria-label': copied ? 'Copied' : 'Copy code' }}
-        />
-      </Box>
-    </Box>
+    </Flex>
   )
 }

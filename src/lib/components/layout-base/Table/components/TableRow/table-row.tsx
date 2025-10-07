@@ -20,4 +20,4 @@ export const TableRow = ({ children, tagAttrs, tagRef }: TableRowProps) => {
   )
 }
 
-TableRow.displayName = 'TableRow'
+TableRow.displayName = 'Table.Row'

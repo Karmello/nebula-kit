@@ -10,5 +10,9 @@ const highlighter = await createHighlighterCore({
 })
 
 export const tokenizeCode = (code: string, lang: BundledLanguage): TokensResult => {
-  return highlighter.codeToTokens(code, { lang, theme: 'night-owl', includeExplanation: true })
+  return highlighter.codeToTokens(code, {
+    lang,
+    theme: 'night-owl',
+    includeExplanation: true,
+  })
 }

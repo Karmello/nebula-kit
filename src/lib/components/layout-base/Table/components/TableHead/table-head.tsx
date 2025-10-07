@@ -20,4 +20,4 @@ export const TableHead = ({ children, tagAttrs, tagRef }: TableHeadProps) => {
   )
 }
 
-TableHead.displayName = 'TableHead'
+TableHead.displayName = 'Table.Head'
