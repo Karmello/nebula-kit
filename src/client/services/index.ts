@@ -1,2 +1,2 @@
 export * from './ElemToStringService'
-export * from './QueryParamsService'
+export * from './NavigateService'

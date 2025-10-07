@@ -3,13 +3,9 @@ import { Navigate, Route, Routes } from 'react-router'
 import { pascalCase, kebabCase } from 'change-case'
 
 import { FOUNDATION_CATEGORIES, PageKey } from 'client/definitions'
-import { formatAsQueryString } from 'client/services'
-import { useLibStore } from 'lib/state'
 import { Spacer } from 'lib/components'
 
 export const FoundationsPageRoutes = () => {
-  const { theme } = useLibStore()
-
   return (
     <>
       <Spacer blockSize={10} />
@@ -47,7 +43,6 @@ export const FoundationsPageRoutes = () => {
               <Navigate
                 to={{
                   pathname: `/${PageKey.foundations}/${FOUNDATION_CATEGORIES[0].key}/${FOUNDATION_CATEGORIES[0].items[0].key}/${FOUNDATION_CATEGORIES[0].items[0].sections[0].key}`,
-                  search: formatAsQueryString({ theme }),
                 }}
                 replace
               />

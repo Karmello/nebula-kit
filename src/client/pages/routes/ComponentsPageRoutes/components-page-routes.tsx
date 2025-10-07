@@ -2,8 +2,6 @@ import { Navigate, Route, Routes } from 'react-router'
 
 import { ComponentOverviewPage, ComponentPropsPage, ComponentExamplesPage } from 'client/pages'
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
-import { formatAsQueryString } from 'client/services'
-import { useLibStore } from 'lib/state'
 import { Spacer } from 'lib/components'
 
 const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
@@ -20,8 +18,6 @@ const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
 }
 
 export const ComponentsPageRoutes = () => {
-  const { theme } = useLibStore()
-
   return (
     <>
       <Spacer blockSize={10} />
@@ -47,7 +43,6 @@ export const ComponentsPageRoutes = () => {
               <Navigate
                 to={{
                   pathname: `/${PageKey.components}/${COMPONENT_CATEGORIES[0].key}/${COMPONENT_CATEGORIES[0].items[0].key}/${COMPONENT_CATEGORIES[0].items[0].sections[0].key}`,
-                  search: formatAsQueryString({ theme }),
                 }}
                 replace
               />

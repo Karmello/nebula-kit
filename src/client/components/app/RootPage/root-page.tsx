@@ -1,15 +1,11 @@
 import { Routes, Route, Navigate } from 'react-router'
 
 import { HomePage, FoundationsPage, ComponentsPage } from 'client/pages'
-import { formatAsQueryString } from 'client/services'
 import { PageKey } from 'client/definitions'
-import { useLibStore } from 'lib/state'
 
 import styles from './root-page.module.scss'
 
 export const RootPage = () => {
-  const { theme } = useLibStore()
-
   return (
     <div className={styles.RootPage}>
       <Routes>
@@ -20,12 +16,7 @@ export const RootPage = () => {
           path="*"
           Component={() => {
             if (typeof window === 'undefined') return null
-            return (
-              <Navigate
-                to={{ pathname: `/${PageKey.home}`, search: formatAsQueryString({ theme }) }}
-                replace
-              />
-            )
+            return <Navigate to={{ pathname: `/${PageKey.home}` }} replace />
           }}
         />
       </Routes>
