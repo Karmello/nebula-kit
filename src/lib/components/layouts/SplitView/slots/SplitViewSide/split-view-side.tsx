@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import classNames from 'classnames'
 
 import { Box, Flex, IconButton } from 'lib/components'
+import { DEFAULT_ANIMATE_DURATION } from 'lib/components/utility/Animate/definitions'
 import { FocusTrap } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
@@ -19,6 +20,12 @@ export const SplitViewSide = ({
   const { sideOpen, setSideOpen, sidePosition, mode, switchAt } = useSplitViewContext()
 
   const ref = useRef(null)
+
+  const setSideOpenASync = async (sideOpen: boolean) =>
+    new Promise<boolean>(resolve => {
+      setSideOpen(sideOpen)
+      setTimeout(() => resolve(sideOpen), DEFAULT_ANIMATE_DURATION)
+    })
 
   return (
     <FocusTrap
@@ -57,7 +64,12 @@ export const SplitViewSide = ({
             />
           </Flex>
         ) : null}
-        {typeof children === 'function' ? children({ setSideOpen, mode }) : children}
+        {typeof children === 'function'
+          ? children({
+              setSideOpen: setSideOpenASync,
+              mode,
+            })
+          : children}
       </Box>
     </FocusTrap>
   )

@@ -1,5 +1,6 @@
-import { createContext, useContext, useState, ReactNode } from 'react'
+import { createContext, useContext, useState, ReactNode, useEffect } from 'react'
 
+import { DEFAULT_ANIMATE_DURATION } from 'lib/components/utility/Animate/definitions'
 import { getLibMsg } from 'lib/helpers'
 
 import { SplitViewOwnProps } from '../definitions'
@@ -21,6 +22,16 @@ const SplitViewContext = createContext<SplitViewContextProps | undefined>(undefi
 
 export const SplitViewProvider = ({ children, slots, mode, sidePosition, switchAt }: ProviderProps) => {
   const [sideOpen, setSideOpen] = useState(mode === 'inline')
+
+  useEffect(() => {
+    if (mode === 'overlay' && sideOpen) {
+      document.documentElement.classList.add('neb-scrollbar-off')
+    } else {
+      setTimeout(() => {
+        document.documentElement.classList.remove('neb-scrollbar-off')
+      }, DEFAULT_ANIMATE_DURATION)
+    }
+  }, [sideOpen, mode])
 
   return (
     <SplitViewContext.Provider value={{ mode, sideOpen, setSideOpen, slots, sidePosition, switchAt }}>

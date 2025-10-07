@@ -25,6 +25,10 @@ html.neb-transitions {
   }
 }
 
+html.neb-scrollbar-off {
+  overflow: clip;
+}
+
 body {
   margin: 0;
   padding: 0;

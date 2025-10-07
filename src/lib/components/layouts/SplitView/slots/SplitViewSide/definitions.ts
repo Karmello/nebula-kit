@@ -5,7 +5,7 @@ import { BoxProps, HtmlTagProps } from 'lib/components'
 import { SplitViewContextProps } from '../../SplitViewProvider'
 
 type ChildrenAsFuncArgs = {
-  setSideOpen: SplitViewContextProps['setSideOpen']
+  setSideOpen: (sideOpen: boolean) => Promise<boolean>
   mode: SplitViewContextProps['mode']
 }
 

@@ -47,9 +47,12 @@ const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewProps>['examples'] = [
         <Button
           tagAttrs={{
             onClick: () => {
+              // auto-close side panel on button click
               if (mode === 'overlay') {
-                setSideOpen(false)
+                await setSideOpen(false)
               }
+              // navigate to different route when animation done
+              ...
             },
           }}
         >

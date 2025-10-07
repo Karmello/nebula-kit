@@ -47,12 +47,12 @@ export const ComponentsPage = () => {
                         key={itemKey}
                         tagAttrs={{
                           href,
-                          onClick: e => {
+                          onClick: async e => {
                             e.preventDefault()
-                            navigateTo(href)
                             if (mode === 'overlay') {
-                              setSideOpen(false)
+                              await setSideOpen(false)
                             }
+                            navigateTo(href)
                           },
                         }}
                         textIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
@@ -87,12 +87,12 @@ export const ComponentsPage = () => {
                         key={sectionKey}
                         tagAttrs={{
                           href,
-                          onClick: e => {
+                          onClick: async e => {
                             e.preventDefault()
-                            navigateTo(href)
                             if (mode === 'overlay') {
-                              setSideOpen(false)
+                              await setSideOpen(false)
                             }
+                            navigateTo(href)
                           },
                         }}
                         textIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
