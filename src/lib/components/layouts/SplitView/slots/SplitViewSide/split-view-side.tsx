@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useCallback, useRef } from 'react'
 import classNames from 'classnames'
 
 import { Box, Flex, IconButton } from 'lib/components'
@@ -21,11 +21,14 @@ export const SplitViewSide = ({
 
   const ref = useRef(null)
 
-  const setSideOpenASync = async (sideOpen: boolean) =>
-    new Promise<boolean>(resolve => {
-      setSideOpen(sideOpen)
-      setTimeout(() => resolve(sideOpen), DEFAULT_ANIMATE_DURATION)
-    })
+  const setSideOpenASync = useCallback(
+    async (sideOpen: boolean) =>
+      new Promise<boolean>(resolve => {
+        setSideOpen(sideOpen)
+        setTimeout(() => resolve(sideOpen), DEFAULT_ANIMATE_DURATION)
+      }),
+    []
+  )
 
   return (
     <FocusTrap

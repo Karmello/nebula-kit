@@ -1,15 +1,18 @@
 import { useLocation } from 'react-router'
 
-import { Button, ButtonGroup, useToolbarContext } from 'lib/components'
+import { Button, ButtonGroup } from 'lib/components'
 import { useNavigateTo } from 'client/services'
 import { PageKey } from 'client/definitions'
 import { useComponentsPageStore, useFoundationsPageStore } from 'client/store'
 
-export const PageNavigation = () => {
+type Props = {
+  setMainOpen: (mainOpen: boolean) => Promise<boolean>
+}
+
+export const PageNavigation = ({ setMainOpen }: Props) => {
   const { pathname } = useLocation()
 
   const navigateTo = useNavigateTo()
-  const { setMainOpen } = useToolbarContext()
 
   const foundationsPageStore = useFoundationsPageStore()
   const componentsPageStore = useComponentsPageStore()
@@ -22,10 +25,10 @@ export const PageNavigation = () => {
         tag="a"
         tagAttrs={{
           href: `/${PageKey.home}`,
-          onClick: e => {
+          onClick: async e => {
             e.preventDefault()
+            await setMainOpen(false)
             navigateTo(`/${PageKey.home}`)
-            setMainOpen(false)
           },
         }}
         intent={currentPageKey === PageKey.home ? 'secondary' : 'tertiary'}
@@ -36,12 +39,12 @@ export const PageNavigation = () => {
         tag="a"
         tagAttrs={{
           href: `/${PageKey.foundations}`,
-          onClick: e => {
+          onClick: async e => {
             e.preventDefault()
+            await setMainOpen(false)
             navigateTo(
               `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${foundationsPageStore.sectionKey}`
             )
-            setMainOpen(false)
           },
         }}
         intent={currentPageKey === PageKey.foundations ? 'secondary' : 'tertiary'}
@@ -52,12 +55,12 @@ export const PageNavigation = () => {
         tag="a"
         tagAttrs={{
           href: `/${PageKey.components}`,
-          onClick: e => {
+          onClick: async e => {
             e.preventDefault()
+            await setMainOpen(false)
             navigateTo(
               `/${PageKey.components}/${componentsPageStore.categoryKey}/${componentsPageStore.itemKey}/${componentsPageStore.sectionKey}`
             )
-            setMainOpen(false)
           },
         }}
         intent={currentPageKey === PageKey.components ? 'secondary' : 'tertiary'}

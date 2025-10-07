@@ -1,8 +1,9 @@
-import { useLayoutEffect } from 'react'
+import { useCallback, useLayoutEffect } from 'react'
 import classNames from 'classnames'
 
 import { Grid, Animate } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { DEFAULT_ANIMATE_DURATION } from 'lib/components/utility/Animate/definitions'
 
 import { ToolbarMainProps } from './definitions'
 import { useToolbarContext } from '../../ToolbarProvider'
@@ -13,6 +14,15 @@ export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) =>
   useLayoutEffect(() => {
     setMainOpen(isSwitchAtHit)
   }, [isSwitchAtHit])
+
+  const setMainOpenAsync = useCallback(
+    async (mainOpen: boolean) =>
+      new Promise<boolean>(resolve => {
+        setMainOpen(mainOpen)
+        setTimeout(() => resolve(mainOpen), DEFAULT_ANIMATE_DURATION)
+      }),
+    []
+  )
 
   return (
     <Grid.Item
@@ -32,8 +42,10 @@ export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) =>
     >
       {!isSwitchAtHit ? (
         <Animate property="blockSize" visible={mainOpen}>
-          {children}
+          {typeof children === 'function' ? children({ setMainOpen: setMainOpenAsync }) : children}
         </Animate>
+      ) : typeof children === 'function' ? (
+        children({ setMainOpen: setMainOpenAsync })
       ) : (
         children
       )}

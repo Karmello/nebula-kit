@@ -31,9 +31,7 @@ export const App = () => {
     <AppFrame stickyHeader>
       <AppFrame.Header intent="tertiary">
         <Toolbar switchAt="md">
-          <Toolbar.Main>
-            <PageNavigation />
-          </Toolbar.Main>
+          <Toolbar.Main>{({ setMainOpen }) => <PageNavigation setMainOpen={setMainOpen} />}</Toolbar.Main>
         </Toolbar>
       </AppFrame.Header>
       <AppFrame.Main paddingTop={{ base: 10, lg: 20 }} paddingBottom={40}>
