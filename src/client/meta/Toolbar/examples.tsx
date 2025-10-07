@@ -13,6 +13,7 @@ const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarProps>['examples'] = [
       </Toolbar>
     ),
     noSandBox: true,
+    skip: true,
   },
   {
     description:

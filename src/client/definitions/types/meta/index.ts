@@ -22,6 +22,7 @@ type Example = {
   description?: string
   noSandBox?: boolean
   sandBoxWithNoPadding?: boolean
+  skip?: boolean
 }
 
 export type ComponentMeta<PropsType> = {

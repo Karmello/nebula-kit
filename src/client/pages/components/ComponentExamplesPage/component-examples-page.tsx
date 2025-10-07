@@ -48,9 +48,9 @@ export const ComponentExamplesPage = () => {
     <Box maxInlineSize="55rem">
       <Flex flexDirection="column" alignItems="stretch">
         {Object.keys(meta[itemKeyPascal] || []).map(key => {
-          return (meta[itemKeyPascal][key].examples || []).map((example, i) => (
-            <SingleExample key={`${key}_${i}`} {...example} />
-          ))
+          return (meta[itemKeyPascal][key].examples || [])
+            .filter(example => !example.skip)
+            .map((example, i) => <SingleExample key={`${key}_${i}`} {...example} />)
         })}
       </Flex>
     </Box>

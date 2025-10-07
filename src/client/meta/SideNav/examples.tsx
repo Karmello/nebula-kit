@@ -12,6 +12,7 @@ const SIDE_NAV_EXAMPLES_META: ComponentMeta<SideNavProps>['examples'] = [
       </SideNav>
     ),
     noSandBox: true,
+    skip: true,
   },
   {
     description: 'Flat navigation.',

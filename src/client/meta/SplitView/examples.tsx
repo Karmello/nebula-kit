@@ -13,6 +13,7 @@ const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewProps>['examples'] = [
       </SplitView>
     ),
     noSandBox: true,
+    skip: true,
   },
   {
     description:
