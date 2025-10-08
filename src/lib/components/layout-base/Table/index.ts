@@ -4,10 +4,10 @@ import {
   TableBody,
   TableCaption,
   TableCell,
-  TableFoot,
-  TableHead,
+  TableFooter,
   TableHeadCell,
-  TableHeadRow,
+  TableHeader,
+  TableHeaderRow,
   TableRow,
 } from './slots'
 
@@ -15,10 +15,10 @@ export const Table = Object.assign(TableBase, {
   Body: TableBody,
   Caption: TableCaption,
   Cell: TableCell,
-  Foot: TableFoot,
-  Head: TableHead,
+  Footer: TableFooter,
   HeadCell: TableHeadCell,
-  HeadRow: TableHeadRow,
+  Header: TableHeader,
+  HeaderRow: TableHeaderRow,
   Row: TableRow,
 })
 
@@ -28,9 +28,9 @@ export type {
   TableBodyProps,
   TableCaptionProps,
   TableCellProps,
-  TableFootProps,
-  TableHeadProps,
+  TableFooterProps,
   TableHeadCellProps,
-  TableHeadRowProps,
+  TableHeaderProps,
+  TableHeaderRowProps,
   TableRowProps,
 } from './slots'

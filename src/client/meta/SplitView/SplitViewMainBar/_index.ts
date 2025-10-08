@@ -5,7 +5,7 @@ import { SPLIT_VIEW_MAIN_BAR_PROPS_META } from './props'
 
 const SPLIT_VIEW_MAIN_BAR_META: ComponentMeta<SplitViewMainBarProps> = {
   overview: {
-    name: 'SplitView.MainBar (optional)',
+    name: 'SplitView.MainBar?',
     title: 'Defines the horizontal slot above the main content.',
     description: ['can contain any custom content, such as breadcrumbs or controls'],
     composedOf: ['Box'],

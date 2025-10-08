@@ -21,13 +21,13 @@ export const Table = ({
   zebra = false,
 }: TableProps) => {
   return (
-    <WithSlots<'Table.Head' | 'Table.Body' | 'Table.Foot' | 'Table.Caption'>
+    <WithSlots<'Table.Header' | 'Table.Body' | 'Table.Footer' | 'Table.Caption'>
       childrenToVerify={children}
       componentName="Table"
       slotsConfig={[
-        { name: 'Table.Head' },
+        { name: 'Table.Header' },
         { name: 'Table.Body', required: true, allowMultiple: true },
-        { name: 'Table.Foot' },
+        { name: 'Table.Footer' },
         { name: 'Table.Caption' },
       ]}
     >
@@ -50,10 +50,10 @@ export const Table = ({
                 variant="solid"
                 intent={intent}
               >
-                {slots['Table.Head']}
+                {slots['Table.Header']}
                 {slots['Table.Caption']}
                 {slots['Table.Body']}
-                {slots['Table.Foot']}
+                {slots['Table.Footer']}
               </Box>
             </Box>
           </TableContext>

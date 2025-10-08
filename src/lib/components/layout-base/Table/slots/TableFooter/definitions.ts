@@ -4,4 +4,4 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'tfoot'>, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<'tfoot'>['children']
 }
 
-export type TableFootProps = PropsFromHtmlTag
+export type TableFooterProps = PropsFromHtmlTag

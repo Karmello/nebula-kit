@@ -5,13 +5,13 @@ import { Box } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
-import { TableHeadRowProps } from './definitions'
+import { TableHeaderRowProps } from './definitions'
 
-export const TableHeadRow = ({ children, tagAttrs, tagRef }: TableHeadRowProps) => {
+export const TableHeaderRow = ({ children, tagAttrs, tagRef }: TableHeaderRowProps) => {
   return (
     <WithSlots<'Table.HeadCell'>
       childrenToVerify={children}
-      componentName="Table.HeadRow"
+      componentName="Table.HeaderRow"
       slotsConfig={[{ name: 'Table.HeadCell', required: true, allowMultiple: true }]}
     >
       {({ slots }) => {
@@ -20,7 +20,7 @@ export const TableHeadRow = ({ children, tagAttrs, tagRef }: TableHeadRowProps) 
             tag="tr"
             tagAttrs={{
               ...tagAttrs,
-              className: classNames(withPrefix('table-row'), tagAttrs?.className),
+              className: classNames(withPrefix('table-header-row'), tagAttrs?.className),
             }}
             tagRef={tagRef}
           >
@@ -32,4 +32,4 @@ export const TableHeadRow = ({ children, tagAttrs, tagRef }: TableHeadRowProps) 
   )
 }
 
-TableHeadRow.displayName = 'Table.HeadRow'
+TableHeaderRow.displayName = 'Table.HeaderRow'

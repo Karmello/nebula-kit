@@ -13,7 +13,7 @@
   border-radius: 0;
 }
 
-.neb-table-head {
+.neb-table-header {
   display: table-header-group;
 }
 
@@ -21,11 +21,12 @@
   display: table-row-group;
 }
 
-.neb-table-foot {
+.neb-table-footer {
   display: table-footer-group;
 }
 
-.neb-table-row {
+.neb-table-row,
+.neb-table-header-row {
   display: table-row;
 }
 

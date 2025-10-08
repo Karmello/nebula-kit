@@ -4,14 +4,14 @@ import { Box } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
-import { TableHeadProps } from './definitions'
+import { TableHeaderProps } from './definitions'
 
-export const TableHead = ({ children, tagAttrs, tagRef }: TableHeadProps) => {
+export const TableHeader = ({ children, tagAttrs, tagRef }: TableHeaderProps) => {
   return (
-    <WithSlots<'Table.HeadRow'>
+    <WithSlots<'Table.HeaderRow'>
       childrenToVerify={children}
-      componentName="Table.Head"
-      slotsConfig={[{ name: 'Table.HeadRow', required: true, allowMultiple: true }]}
+      componentName="Table.Header"
+      slotsConfig={[{ name: 'Table.HeaderRow', required: true, allowMultiple: true }]}
     >
       {({ slots }) => {
         return (
@@ -19,11 +19,11 @@ export const TableHead = ({ children, tagAttrs, tagRef }: TableHeadProps) => {
             tag="thead"
             tagAttrs={{
               ...tagAttrs,
-              className: classNames(withPrefix('table-head'), tagAttrs?.className),
+              className: classNames(withPrefix('table-header'), tagAttrs?.className),
             }}
             tagRef={tagRef}
           >
-            {slots['Table.HeadRow']}
+            {slots['Table.HeaderRow']}
           </Box>
         )
       }}
@@ -31,4 +31,4 @@ export const TableHead = ({ children, tagAttrs, tagRef }: TableHeadProps) => {
   )
 }
 
-TableHead.displayName = 'Table.Head'
+TableHeader.displayName = 'Table.Header'

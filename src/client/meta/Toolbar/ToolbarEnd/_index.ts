@@ -5,7 +5,7 @@ import { TOOLBAR_END_PROPS_META } from './props'
 
 const TOOLBAR_END_META: ComponentMeta<ToolbarEndProps> = {
   overview: {
-    name: 'Toolbar.End (optional)',
+    name: 'Toolbar.End?',
     title: 'Defines the end slot of Toolbar.',
     description: [
       'provides a fixed region at the end of the Toolbar layout',

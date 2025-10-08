@@ -4,8 +4,8 @@ import { SideNavProps } from 'lib/components'
 import { SIDE_NAV_EXAMPLES_META } from './examples'
 import { SIDE_NAV_PROPS_META } from './props'
 
-import { SIDE_NAV_CATEGORY_META } from './SideNavCategory/_index'
 import { SIDE_NAV_ITEM_META } from './SideNavItem/_index'
+import { SIDE_NAV_CATEGORY_META } from './SideNavCategory/_index'
 
 const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
   overview: {
@@ -17,7 +17,7 @@ const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
     ],
     composedOf: ['Flex'],
     rendersAs: ['nav'],
-    slots: ['SideNav.Category', 'SideNav.Item'],
+    slots: ['SideNav.Item', 'SideNav.Category'],
   },
   examples: SIDE_NAV_EXAMPLES_META,
   props: SIDE_NAV_PROPS_META,
@@ -25,6 +25,6 @@ const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
 
 export default {
   SideNav: SIDE_NAV_META,
-  SideNavCategory: SIDE_NAV_CATEGORY_META,
   SideNavItem: SIDE_NAV_ITEM_META,
+  SideNavCategory: SIDE_NAV_CATEGORY_META,
 }

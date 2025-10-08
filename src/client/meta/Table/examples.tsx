@@ -6,11 +6,11 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
     description: 'Minimal valid table markup.',
     jsx: (
       <Table>
-        <Table.Head>
+        <Table.Header>
           <Table.Row>
             <Table.HeadCell>Head cell</Table.HeadCell>
           </Table.Row>
-        </Table.Head>
+        </Table.Header>
         <Table.Body>
           <Table.Row>
             <Table.Cell>Body cell</Table.Cell>
@@ -25,14 +25,14 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
     jsx: (
       <Table>
         {/* <Table.Caption>Caption</Table.Caption> */}
-        <Table.Head>
-          <Table.HeadRow>
+        <Table.Header>
+          <Table.HeaderRow>
             <Table.HeadCell>First name</Table.HeadCell>
             <Table.HeadCell>Last name</Table.HeadCell>
             <Table.HeadCell>Club</Table.HeadCell>
             <Table.HeadCell>Position</Table.HeadCell>
-          </Table.HeadRow>
-        </Table.Head>
+          </Table.HeaderRow>
+        </Table.Header>
         <Table.Body>
           <Table.Row>
             <Table.Cell>Robert</Table.Cell>
@@ -47,11 +47,11 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
             <Table.Cell>ST</Table.Cell>
           </Table.Row>
         </Table.Body>
-        <Table.Foot>
+        <Table.Footer>
           <Table.Row>
             <Table.Cell colSpan={4}>Foot</Table.Cell>
           </Table.Row>
-        </Table.Foot>
+        </Table.Footer>
       </Table>
     ),
   },

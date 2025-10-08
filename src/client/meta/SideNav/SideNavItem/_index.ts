@@ -8,8 +8,8 @@ const SIDE_NAV_ITEM_META: ComponentMeta<SideNavItemProps> = {
     name: 'SideNav.Item',
     title: 'Defines a single navigational entry within SideNav.',
     description: [
+      'can be used directly inside SideNav for flat navigation',
       'should be used as a child of SideNav.Category for nested navigation',
-      'can be also used directly inside SideNav for flat navigation',
     ],
     composedOf: ['Button'],
     rendersAs: ['a'],

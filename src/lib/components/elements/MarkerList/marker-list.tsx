@@ -46,7 +46,7 @@ export const MarkerList = <T extends MarkerListTag = 'ul'>({
               flexDirection="column"
               rowGap={rowGap}
             >
-              {slots['MarkerList.Item'] || ''}
+              {slots['MarkerList.Item']}
             </Flex>
           </MarkerListProvider>
         )

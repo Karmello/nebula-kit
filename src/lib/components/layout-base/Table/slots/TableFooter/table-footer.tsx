@@ -4,13 +4,13 @@ import { Box } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
-import { TableFootProps } from './definitions'
+import { TableFooterProps } from './definitions'
 
-export const TableFoot = ({ children, tagAttrs, tagRef }: TableFootProps) => {
+export const TableFooter = ({ children, tagAttrs, tagRef }: TableFooterProps) => {
   return (
     <WithSlots<'Table.Row'>
       childrenToVerify={children}
-      componentName="Table.Foot"
+      componentName="Table.Footer"
       slotsConfig={[{ name: 'Table.Row', required: true, allowMultiple: true }]}
     >
       {({ slots }) => {
@@ -19,7 +19,7 @@ export const TableFoot = ({ children, tagAttrs, tagRef }: TableFootProps) => {
             tag="tfoot"
             tagAttrs={{
               ...tagAttrs,
-              className: classNames(withPrefix('table-foot'), tagAttrs?.className),
+              className: classNames(withPrefix('table-footer'), tagAttrs?.className),
             }}
             tagRef={tagRef}
           >
@@ -31,4 +31,4 @@ export const TableFoot = ({ children, tagAttrs, tagRef }: TableFootProps) => {
   )
 }
 
-TableFoot.displayName = 'Table.Foot'
+TableFooter.displayName = 'Table.Footer'
