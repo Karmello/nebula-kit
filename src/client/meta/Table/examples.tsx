@@ -3,17 +3,11 @@ import { Table, TableProps } from 'lib/components'
 
 const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
   {
-    description: 'Minimal valid table markup.',
     jsx: (
       <Table>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeadCell>Head cell</Table.HeadCell>
-          </Table.Row>
-        </Table.Header>
         <Table.Body>
           <Table.Row>
-            <Table.Cell>Body cell</Table.Cell>
+            <Table.Cell>Data</Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table>
@@ -21,10 +15,36 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
     skip: true,
   },
   {
-    description: '...',
+    description: 'Simple table displaying only data rows without a header.',
     jsx: (
       <Table>
-        {/* <Table.Caption>Caption</Table.Caption> */}
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell>Robert</Table.Cell>
+            <Table.Cell>Lewandowski</Table.Cell>
+            <Table.Cell>FC Barcelona</Table.Cell>
+            <Table.Cell>ST</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Piotr</Table.Cell>
+            <Table.Cell>Zieliński</Table.Cell>
+            <Table.Cell>Inter Milan</Table.Cell>
+            <Table.Cell>CDM</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Sebastian</Table.Cell>
+            <Table.Cell>Szymański</Table.Cell>
+            <Table.Cell>Fenerbahçe SK</Table.Cell>
+            <Table.Cell>CAM</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table>
+    ),
+  },
+  {
+    description: 'Table displaying the same data with a header row added.',
+    jsx: (
+      <Table>
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeadCell>First name</Table.HeadCell>
@@ -41,17 +61,18 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
             <Table.Cell>ST</Table.Cell>
           </Table.Row>
           <Table.Row>
-            <Table.Cell>Erling</Table.Cell>
-            <Table.Cell>Haaland</Table.Cell>
-            <Table.Cell>Manchester City</Table.Cell>
-            <Table.Cell>ST</Table.Cell>
+            <Table.Cell>Piotr</Table.Cell>
+            <Table.Cell>Zieliński</Table.Cell>
+            <Table.Cell>Inter Milan</Table.Cell>
+            <Table.Cell>CDM</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Sebastian</Table.Cell>
+            <Table.Cell>Szymański</Table.Cell>
+            <Table.Cell>Fenerbahçe SK</Table.Cell>
+            <Table.Cell>CAM</Table.Cell>
           </Table.Row>
         </Table.Body>
-        <Table.Footer>
-          <Table.Row>
-            <Table.Cell colSpan={4}>Foot</Table.Cell>
-          </Table.Row>
-        </Table.Footer>
       </Table>
     ),
   },
