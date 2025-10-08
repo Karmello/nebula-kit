@@ -10,15 +10,7 @@ const TABLE_PROPS_META: ComponentMeta<TableProps>['props'] = {
   tagRef: HTML_TAG_PROPS_META.tagRef,
   children: {
     ...HTML_TAG_PROPS_META.children,
-    options: [
-      'Table.Head',
-      'Table.Body',
-      'Table.Foot',
-      'Table.Row',
-      'Table.Cell',
-      'Table.HeadCell',
-      'Table.Caption',
-    ],
+    options: ['Table.Head', 'Table.Body', 'Table.Foot', 'Table.Caption'],
     isRequired: true,
   },
   intent: BOX_PROPS_META.intent,

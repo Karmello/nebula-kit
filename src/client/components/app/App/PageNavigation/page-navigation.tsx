@@ -7,9 +7,10 @@ import { useComponentsPageStore, useFoundationsPageStore } from 'client/store'
 
 type Props = {
   setMainOpen: (mainOpen: boolean) => Promise<boolean>
+  mainOpen: boolean
 }
 
-export const PageNavigation = ({ setMainOpen }: Props) => {
+export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
   const { pathname } = useLocation()
 
   const navigateTo = useNavigateTo()
@@ -27,7 +28,7 @@ export const PageNavigation = ({ setMainOpen }: Props) => {
           href: `/${PageKey.home}`,
           onClick: async e => {
             e.preventDefault()
-            await setMainOpen(false)
+            if (mainOpen) await setMainOpen(false)
             navigateTo(`/${PageKey.home}`)
           },
         }}
@@ -41,7 +42,7 @@ export const PageNavigation = ({ setMainOpen }: Props) => {
           href: `/${PageKey.foundations}`,
           onClick: async e => {
             e.preventDefault()
-            await setMainOpen(false)
+            if (mainOpen) await setMainOpen(false)
             navigateTo(
               `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${foundationsPageStore.sectionKey}`
             )
@@ -57,7 +58,7 @@ export const PageNavigation = ({ setMainOpen }: Props) => {
           href: `/${PageKey.components}`,
           onClick: async e => {
             e.preventDefault()
-            await setMainOpen(false)
+            if (mainOpen) await setMainOpen(false)
             navigateTo(
               `/${PageKey.components}/${componentsPageStore.categoryKey}/${componentsPageStore.itemKey}/${componentsPageStore.sectionKey}`
             )

@@ -6,7 +6,17 @@ import { withPrefix } from 'lib/helpers'
 import { TableCellProps } from './definitions'
 import { useTableContext } from '../../TableContext'
 
-export const TableCell = ({ children, tagAttrs, tagRef, intent = 'neutral' }: TableCellProps) => {
+export const TableCell = ({
+  // HtmlTag
+  children,
+  tagAttrs,
+  tagRef,
+  // Box
+  intent = 'neutral',
+  // own
+  colSpan,
+  rowSpan,
+}: TableCellProps) => {
   const { intent: rootIntent } = useTableContext()
 
   return (
@@ -15,6 +25,8 @@ export const TableCell = ({ children, tagAttrs, tagRef, intent = 'neutral' }: Ta
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('table-cell'), tagAttrs?.className),
+        colSpan,
+        rowSpan,
       }}
       tagRef={tagRef}
       variant="solid"

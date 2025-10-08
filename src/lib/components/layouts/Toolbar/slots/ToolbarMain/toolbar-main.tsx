@@ -42,10 +42,10 @@ export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) =>
     >
       {!isSwitchAtHit ? (
         <Animate property="blockSize" visible={mainOpen}>
-          {typeof children === 'function' ? children({ setMainOpen: setMainOpenAsync }) : children}
+          {typeof children === 'function' ? children({ setMainOpen: setMainOpenAsync, mainOpen }) : children}
         </Animate>
       ) : typeof children === 'function' ? (
-        children({ setMainOpen: setMainOpenAsync })
+        children({ setMainOpen: setMainOpenAsync, mainOpen })
       ) : (
         children
       )}

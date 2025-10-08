@@ -1,23 +1,25 @@
 import { Table as TableBase } from './table'
 
 import {
-  TableHead,
   TableBody,
-  TableRow,
-  TableFoot,
-  TableHeadCell,
-  TableCell,
   TableCaption,
-} from './components'
+  TableCell,
+  TableFoot,
+  TableHead,
+  TableHeadCell,
+  TableHeadRow,
+  TableRow,
+} from './slots'
 
 export const Table = Object.assign(TableBase, {
-  Head: TableHead,
   Body: TableBody,
-  Row: TableRow,
-  Foot: TableFoot,
-  HeadCell: TableHeadCell,
-  Cell: TableCell,
   Caption: TableCaption,
+  Cell: TableCell,
+  Foot: TableFoot,
+  Head: TableHead,
+  HeadCell: TableHeadCell,
+  HeadRow: TableHeadRow,
+  Row: TableRow,
 })
 
 export { type TableProps } from './definitions'
@@ -29,5 +31,6 @@ export type {
   TableFootProps,
   TableHeadProps,
   TableHeadCellProps,
+  TableHeadRowProps,
   TableRowProps,
-} from './components'
+} from './slots'

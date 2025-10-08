@@ -24,6 +24,15 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
     description: '...',
     jsx: (
       <Table>
+        {/* <Table.Caption>Caption</Table.Caption> */}
+        <Table.Head>
+          <Table.HeadRow>
+            <Table.HeadCell>First name</Table.HeadCell>
+            <Table.HeadCell>Last name</Table.HeadCell>
+            <Table.HeadCell>Club</Table.HeadCell>
+            <Table.HeadCell>Position</Table.HeadCell>
+          </Table.HeadRow>
+        </Table.Head>
         <Table.Body>
           <Table.Row>
             <Table.Cell>Robert</Table.Cell>
@@ -38,6 +47,11 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
             <Table.Cell>ST</Table.Cell>
           </Table.Row>
         </Table.Body>
+        <Table.Foot>
+          <Table.Row>
+            <Table.Cell colSpan={4}>Foot</Table.Cell>
+          </Table.Row>
+        </Table.Foot>
       </Table>
     ),
   },

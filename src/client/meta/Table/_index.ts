@@ -4,6 +4,10 @@ import { TableProps } from 'lib/components'
 import { TABLE_PROPS_META } from './props'
 import { TABLE_EXAMPLES_META } from './examples'
 
+import { TABLE_BODY_META } from './TableBody/_index'
+import { TABLE_HEAD_META } from './TableHead/_index'
+import { TABLE_FOOT_META } from './TableFoot/_index'
+
 const TABLE_META: ComponentMeta<TableProps> = {
   overview: {
     title:
@@ -22,4 +26,7 @@ const TABLE_META: ComponentMeta<TableProps> = {
 
 export default {
   Table: TABLE_META,
+  TableBody: TABLE_BODY_META,
+  TableHead: TABLE_HEAD_META,
+  TableFoot: TABLE_FOOT_META,
 }

@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router'
+import { pascalCase } from 'change-case'
 
 import { useNavigateTo } from 'client/services'
 import { Box, Breadcrumb, SideNav, Spacer, SplitView, Text, Divider } from 'lib/components'
@@ -128,7 +129,12 @@ export const CatalogPageTemplate = ({
       <SplitView.MainBar>
         <Box marginRight={10}>
           <Breadcrumb
-            items={['Foundations', activeCategoryObj?.label, activeItemObj?.label, activeSectionObj?.label]}
+            items={[
+              pascalCase(pageKey),
+              activeCategoryObj?.label,
+              activeItemObj?.label,
+              activeSectionObj?.label,
+            ]}
           />
         </Box>
       </SplitView.MainBar>

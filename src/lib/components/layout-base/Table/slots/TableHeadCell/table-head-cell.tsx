@@ -6,8 +6,15 @@ import { withPrefix } from 'lib/helpers'
 import { TableHeadCellProps } from './definitions'
 import { useTableContext } from '../../TableContext'
 
-export const TableHeadCell = ({ children, tagAttrs, tagRef }: TableHeadCellProps) => {
-  const { intent } = useTableContext()
+export const TableHeadCell = ({
+  children,
+  tagAttrs,
+  tagRef,
+  intent,
+  colSpan,
+  rowSpan,
+}: TableHeadCellProps) => {
+  const { intent: rootIntent } = useTableContext()
 
   return (
     <Box
@@ -15,10 +22,12 @@ export const TableHeadCell = ({ children, tagAttrs, tagRef }: TableHeadCellProps
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('table-head-cell'), tagAttrs?.className),
+        colSpan,
+        rowSpan,
       }}
       tagRef={tagRef}
       variant="solid"
-      intent={intent}
+      intent={intent || rootIntent}
       paddingInline={10}
       paddingBlock={5}
     >
