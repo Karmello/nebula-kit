@@ -8,8 +8,8 @@ const DIVIDER_EXAMPLES_META: ComponentMeta<DividerProps>['examples'] = [
     jsx: <Divider />,
   },
   {
-    description: 'Divider with custom thickness and intent.',
-    jsx: <Divider thickness={3} intent="primary" />,
+    description: 'Divider with custom blockSize and intent.',
+    jsx: <Divider blockSize={3} intent="primary" />,
   },
   {
     description: 'Divider placed directly under heading.',

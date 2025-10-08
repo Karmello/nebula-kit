@@ -5,7 +5,7 @@ import { withPrefix } from 'lib/helpers'
 import { applyStaticDataset } from 'lib/service'
 
 import { TableContext } from './TableContext'
-import { DEFAULT_TABLE_LAYOUT, TableProps } from './definitions'
+import { DEFAULT_TABLE_LAYOUT, DEFAULT_TABLE_INTENT, TableProps } from './definitions'
 import './table.scss'
 
 export const Table = ({
@@ -14,14 +14,13 @@ export const Table = ({
   tagRef,
   children,
   // Box
-  variant,
-  intent,
+  intent = DEFAULT_TABLE_INTENT,
   // own
   layout = DEFAULT_TABLE_LAYOUT,
   zebra = false,
 }: TableProps) => {
   return (
-    <TableContext value={{ variant, intent, layout }}>
+    <TableContext value={{ intent, layout }}>
       <Box tagAttrs={{ className: withPrefix('table-container') }}>
         <Box
           tag="table"
@@ -35,7 +34,7 @@ export const Table = ({
             ...applyStaticDataset('table', { zebra }),
           }}
           tagRef={tagRef}
-          variant={variant}
+          variant="solid"
           intent={intent}
         >
           {children}

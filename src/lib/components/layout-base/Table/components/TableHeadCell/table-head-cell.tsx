@@ -7,7 +7,7 @@ import { TableHeadCellProps } from './definitions'
 import { useTableContext } from '../../TableContext'
 
 export const TableHeadCell = ({ children, tagAttrs, tagRef }: TableHeadCellProps) => {
-  const { variant, intent } = useTableContext()
+  const { intent } = useTableContext()
 
   return (
     <Box
@@ -17,11 +17,10 @@ export const TableHeadCell = ({ children, tagAttrs, tagRef }: TableHeadCellProps
         className: classNames(withPrefix('table-head-cell'), tagAttrs?.className),
       }}
       tagRef={tagRef}
-      variant={variant}
+      variant="solid"
       intent={intent}
       paddingInline={10}
       paddingBlock={5}
-      borderRadius={0}
     >
       {children}
     </Box>

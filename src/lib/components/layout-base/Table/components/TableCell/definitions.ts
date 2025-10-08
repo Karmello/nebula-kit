@@ -1,3 +1,7 @@
 import { BoxProps } from 'lib/components'
 
-export type TableCellProps = Pick<BoxProps<'td'>, 'children' | 'tagAttrs' | 'tagRef'>
+type PropsFromHtmlTag = Pick<BoxProps<'td'>, 'children' | 'tagAttrs' | 'tagRef'>
+
+type PropsFromBox = Pick<BoxProps<'td'>, 'intent'>
+
+export type TableCellProps = PropsFromHtmlTag & PropsFromBox

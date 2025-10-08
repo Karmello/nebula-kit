@@ -21,7 +21,6 @@ const TABLE_PROPS_META: ComponentMeta<TableProps>['props'] = {
     ],
     isRequired: true,
   },
-  variant: BOX_PROPS_META.variant,
   intent: BOX_PROPS_META.intent,
   layout: {
     options: TableLayout as unknown as string[],

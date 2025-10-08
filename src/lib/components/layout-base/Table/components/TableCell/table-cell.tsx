@@ -6,8 +6,8 @@ import { withPrefix } from 'lib/helpers'
 import { TableCellProps } from './definitions'
 import { useTableContext } from '../../TableContext'
 
-export const TableCell = ({ children, tagAttrs, tagRef }: TableCellProps) => {
-  const { variant, intent } = useTableContext()
+export const TableCell = ({ children, tagAttrs, tagRef, intent = 'neutral' }: TableCellProps) => {
+  const { intent: rootIntent } = useTableContext()
 
   return (
     <Box
@@ -17,8 +17,8 @@ export const TableCell = ({ children, tagAttrs, tagRef }: TableCellProps) => {
         className: classNames(withPrefix('table-cell'), tagAttrs?.className),
       }}
       tagRef={tagRef}
-      variant={variant}
-      intent={intent}
+      variant="solid"
+      intent={intent || rootIntent}
       paddingInline={10}
       paddingBlock={5}
       borderRadius={0}

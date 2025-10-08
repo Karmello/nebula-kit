@@ -23,7 +23,7 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
   {
     description: '...',
     jsx: (
-      <Table intent="neutral">
+      <Table>
         <Table.Body>
           <Table.Row>
             <Table.Cell>Robert</Table.Cell>
@@ -40,7 +40,6 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
         </Table.Body>
       </Table>
     ),
-    sandBoxWithNoPadding: true,
   },
 ]
 

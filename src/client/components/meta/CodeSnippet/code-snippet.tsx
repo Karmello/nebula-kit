@@ -48,20 +48,22 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
       <Box maxBlockSize="350px" overflowY="auto">
         <Flex tag="pre">
           <Box tag="code" paddingInline={12} paddingBottom={7}>
-            {data.tokens.map((token, i) => (
-              <Box key={i}>
-                {token.map(({ content, color }, j) => (
-                  <Text
-                    key={j}
-                    tag="span"
-                    tagAttrs={{ style: { display: 'inline', color } }}
-                    typography="secondary"
-                  >
-                    {content}
-                  </Text>
-                ))}
-              </Box>
-            ))}
+            {data.tokens.map((token, i) => {
+              return (
+                <Box key={i}>
+                  {token.map(({ content, color }, j) => (
+                    <Text
+                      key={j}
+                      tag="span"
+                      tagAttrs={{ style: { display: 'inline', color } }}
+                      typography="secondary"
+                    >
+                      {content}
+                    </Text>
+                  ))}
+                </Box>
+              )
+            })}
           </Box>
         </Flex>
       </Box>

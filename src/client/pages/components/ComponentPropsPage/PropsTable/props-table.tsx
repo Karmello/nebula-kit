@@ -8,7 +8,7 @@ type Props = {
 
 export const PropsTable = ({ category, data }: Props) => {
   const table = (
-    <Table zebra>
+    <Table>
       <Table.Head>
         <Table.Row>
           <Table.HeadCell>Name</Table.HeadCell>

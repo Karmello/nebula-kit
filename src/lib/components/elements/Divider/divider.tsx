@@ -3,14 +3,14 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { scale, withPrefix } from 'lib/helpers'
 
-import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_THICKNESS, DividerProps } from './definitions'
+import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_BLOCK_SIZE, DividerProps } from './definitions'
 import './divider.scss'
 
 export const Divider = ({
   tagAttrs,
   tagRef,
   intent = DEFAULT_DIVIDER_INTENT,
-  thickness = DEFAULT_DIVIDER_THICKNESS,
+  blockSize = DEFAULT_DIVIDER_BLOCK_SIZE,
 }: DividerProps) => {
   return (
     <Box
@@ -22,7 +22,7 @@ export const Divider = ({
       tagRef={tagRef}
       variant="solid"
       intent={intent}
-      blockSize={scale(thickness)}
+      blockSize={scale(blockSize)}
     />
   )
 }
