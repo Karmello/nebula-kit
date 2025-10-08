@@ -1,4 +1,4 @@
-import { Children, isValidElement, ReactNode } from 'react'
+import { Children, isValidElement, ReactNode, useLayoutEffect, useState } from 'react'
 
 import { getLibMsg } from 'lib/helpers'
 
@@ -11,42 +11,56 @@ export const WithSlots = <SlotName extends string>({
   someRequired,
   children,
 }: WithSlotsProps<SlotName>) => {
-  if (!childrenToVerify) return null
+  const [slots, setSlots] = useState<Record<SlotName, ReactNode[]> | null>(null)
+  const [validNodes, setValidNodes] = useState<ReactNode[] | null>(null)
 
-  const slots: Record<SlotName, ReactNode[]> = {} as never
-  const validNodes: ReactNode[] = []
+  useLayoutEffect(() => {
+    if (!childrenToVerify) return
 
-  slotsConfig.forEach(({ name }) => {
-    slots[name] = []
-  })
+    const slots = {} as Record<SlotName, ReactNode[]>
+    const validNodes = [] as ReactNode[]
 
-  Children.toArray(childrenToVerify).forEach(child => {
-    if (!isValidElement(child)) return
-
-    const displayName: string = (child.type as any).displayName
-    if (!displayName) return
-
-    const slotConfig = slotsConfig.find(c => c.name === displayName)
-    if (!slotConfig) return
-
-    if (slotConfig.allowMultiple) {
-      slots[slotConfig.name].push(child)
-    } else {
-      slots[slotConfig.name] = [child]
-    }
-
-    validNodes.push(child)
-  })
-
-  if (someRequired && !validNodes.length) {
-    console.warn(getLibMsg(`${componentName} expects ${Object.keys(slots).join(' or ')} to be its child`))
-  } else {
-    slotsConfig.forEach(({ name, required }) => {
-      if (required && !slots[name].length) {
-        console.warn(getLibMsg(`${componentName} expects ${name} to be its child`))
-      }
+    slotsConfig.forEach(({ name }) => {
+      slots[name] = []
     })
-  }
+
+    Children.toArray(childrenToVerify).forEach(child => {
+      if (!isValidElement(child)) return
+
+      const displayName: string = (child.type as any).displayName
+      if (!displayName) return
+
+      const slotConfig = slotsConfig.find(c => c.name === displayName)
+      if (!slotConfig) return
+
+      if (slotConfig.allowMultiple) {
+        slots[slotConfig.name].push(child)
+      } else {
+        slots[slotConfig.name] = [child]
+      }
+
+      validNodes.push(child)
+    })
+
+    setSlots(slots)
+    setValidNodes(validNodes)
+  }, [childrenToVerify])
+
+  useLayoutEffect(() => {
+    if (slots && validNodes) {
+      if (someRequired && !validNodes.length) {
+        console.warn(getLibMsg(`${componentName} expects ${Object.keys(slots).join(' or ')} to be its child`))
+      } else {
+        slotsConfig.forEach(({ name, required }) => {
+          if (required && !slots[name].length) {
+            console.warn(getLibMsg(`${componentName} expects ${name} to be its child`))
+          }
+        })
+      }
+    }
+  }, [slots, validNodes])
+
+  if (!childrenToVerify || !slots || !validNodes) return null
 
   return children({ slots, validNodes })
 }

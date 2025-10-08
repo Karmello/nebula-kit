@@ -76,6 +76,47 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
       </Table>
     ),
   },
+  {
+    description: 'Same table with caption and footer sections added.',
+    jsx: (
+      <Table>
+        <Table.Header>
+          <Table.HeaderRow>
+            <Table.HeadCell>First name</Table.HeadCell>
+            <Table.HeadCell>Last name</Table.HeadCell>
+            <Table.HeadCell>Club</Table.HeadCell>
+            <Table.HeadCell>Position</Table.HeadCell>
+          </Table.HeaderRow>
+        </Table.Header>
+        <Table.Caption>Polish football players and their club positions.</Table.Caption>
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell>Robert</Table.Cell>
+            <Table.Cell>Lewandowski</Table.Cell>
+            <Table.Cell>FC Barcelona</Table.Cell>
+            <Table.Cell>ST</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Piotr</Table.Cell>
+            <Table.Cell>Zieliński</Table.Cell>
+            <Table.Cell>Inter Milan</Table.Cell>
+            <Table.Cell>CDM</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Sebastian</Table.Cell>
+            <Table.Cell>Szymański</Table.Cell>
+            <Table.Cell>Fenerbahçe SK</Table.Cell>
+            <Table.Cell>CAM</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+        <Table.Footer>
+          <Table.Row>
+            <Table.Cell colSpan={4}>Data as of 2025 season.</Table.Cell>
+          </Table.Row>
+        </Table.Footer>
+      </Table>
+    ),
+  },
 ]
 
 export { TABLE_EXAMPLES_META }

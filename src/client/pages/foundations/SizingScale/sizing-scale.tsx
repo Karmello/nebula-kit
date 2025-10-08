@@ -9,11 +9,11 @@ export default () => {
       <Spacer blockSize={20} />
       <Table>
         <Table.Header>
-          <Table.Row>
+          <Table.HeaderRow>
             <Table.HeadCell>Value</Table.HeadCell>
             <Table.HeadCell>CSS variable name</Table.HeadCell>
             <Table.HeadCell>Pixels</Table.HeadCell>
-          </Table.Row>
+          </Table.HeaderRow>
         </Table.Header>
         <Table.Body>
           {Array.from({ length: 81 }, (v, k) => k).map(n => (

@@ -50,8 +50,8 @@ export const Table = ({
                 variant="solid"
                 intent={intent}
               >
-                {slots['Table.Header']}
                 {slots['Table.Caption']}
+                {slots['Table.Header']}
                 {slots['Table.Body']}
                 {slots['Table.Footer']}
               </Box>
