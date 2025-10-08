@@ -14,7 +14,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const elemToString = elemToStringService()
 
   const {
-    overview: { name, title, description, composedOf, rendersAs },
+    overview: { name, title, description, composedOf, rendersAs, slots },
     examples,
     props,
   } = meta
@@ -31,6 +31,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       {props ? (
         <ListWithChips heading="Props:" items={Object.keys(props).sort((a, b) => a.localeCompare(b))} />
       ) : null}
+      {slots ? <ListWithChips heading="Slots:" items={slots} intent="inverse" /> : null}
     </Flex>
   )
 

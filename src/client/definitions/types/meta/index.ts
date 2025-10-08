@@ -6,6 +6,7 @@ type Overview = {
   description?: string[]
   composedOf?: string[]
   rendersAs?: readonly string[]
+  slots?: string[]
 }
 
 type Prop = {

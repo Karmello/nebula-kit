@@ -19,6 +19,7 @@ const TABLE_META: ComponentMeta<TableProps> = {
     ],
     composedOf: ['Box'],
     rendersAs: ['table'],
+    slots: ['Table.Body', 'Table.Head', 'Table.Foot'],
   },
   props: TABLE_PROPS_META,
   examples: TABLE_EXAMPLES_META,

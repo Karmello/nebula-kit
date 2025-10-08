@@ -17,6 +17,7 @@ const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
     ],
     composedOf: ['Flex'],
     rendersAs: ['nav'],
+    slots: ['SideNav.Category', 'SideNav.Item'],
   },
   examples: SIDE_NAV_EXAMPLES_META,
   props: SIDE_NAV_PROPS_META,

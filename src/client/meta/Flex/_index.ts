@@ -16,6 +16,7 @@ const FLEX_META: ComponentMeta<FlexProps> = {
       'manages spacing between items with gap properties',
     ],
     composedOf: ['Box'],
+    slots: ['Flex.Item'],
   },
   props: FLEX_PROPS_META,
   examples: FLEX_EXAMPLES_META,

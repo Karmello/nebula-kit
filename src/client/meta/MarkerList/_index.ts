@@ -12,6 +12,7 @@ const MARKER_LIST_META: ComponentMeta<MarkerListProps> = {
     description: ['presents short text collections with bullets or numbers'],
     composedOf: ['Flex'],
     rendersAs: MarkerListTag,
+    slots: ['MarkerList.Item'],
   },
   props: MARKER_LIST_PROPS_META,
   examples: MARKER_LIST_EXAMPLES_META,

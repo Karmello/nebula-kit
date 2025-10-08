@@ -14,6 +14,7 @@ const APP_FRAME_META: ComponentMeta<AppFrameProps> = {
     description: ['provides header, main area, and footer regions for the application'],
     composedOf: ['Grid'],
     rendersAs: ['div'],
+    slots: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer'],
   },
   props: APP_FRAME_PROPS_META,
   examples: APP_FRAME_EXAMPLES_META,

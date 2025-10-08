@@ -17,6 +17,7 @@ const GRID_META: ComponentMeta<GridProps> = {
     ],
     composedOf: ['Box'],
     rendersAs: GridTag,
+    slots: ['Grid.Item'],
   },
   props: GRID_PROPS_META,
   examples: GRID_EXAMPLES_META,

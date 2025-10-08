@@ -20,6 +20,7 @@ const TOOLBAR_META: ComponentMeta<ToolbarProps> = {
     ],
     composedOf: ['Grid'],
     rendersAs: ['nav'],
+    slots: ['Toolbar.Main', 'Toolbar.Start', 'Toolbar.End'],
   },
   props: TOOLBAR_PROPS_META,
   examples: TOOLBAR_EXAMPLES_META,
