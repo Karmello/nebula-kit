@@ -14,10 +14,17 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
 
   return (
     <>
-      {description ? <Text intent="primary">{description}</Text> : null}
+      {description ? <Text bold>{description}</Text> : null}
       <Spacer blockSize={5} />
+      <Reveal label="Code" intent="neutral" contentIntent="primary">
+        <Box padding={2}>
+          <CodeSnippet code={code || elemToString(jsx)} borderRadius={0} />
+        </Box>
+      </Reveal>
       {!noSandBox ? (
         <>
+          <Spacer blockSize={5} />
+
           <Box
             variant="outline"
             intent="warning"
@@ -31,11 +38,6 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           <Spacer blockSize={5} />
         </>
       ) : null}
-      <Reveal label="Code" intent="neutral" contentIntent="primary">
-        <Box padding={2}>
-          <CodeSnippet code={code || elemToString(jsx)} borderRadius={0} />
-        </Box>
-      </Reveal>
       <Spacer blockSize={30} />
     </>
   )
