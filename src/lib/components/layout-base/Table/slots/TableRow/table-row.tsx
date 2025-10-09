@@ -1,19 +1,19 @@
 import { cloneElement } from 'react'
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
+import { Box, TableCellProps, TableHeaderCellProps } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
 import { TableRowProps } from './definitions'
 
-export const TableRow = ({ children, tagAttrs, tagRef }: TableRowProps) => {
+export const TableRow = ({ children, tagAttrs, tagRef, intent }: TableRowProps) => {
   return (
-    <WithSlots<'Table.HeadCell' | 'Table.Cell'>
+    <WithSlots<'Table.HeaderCell' | 'Table.Cell'>
       childrenToVerify={children}
       componentName="Table.Row"
       slotsConfig={[
-        { name: 'Table.HeadCell', allowMultiple: true },
+        { name: 'Table.HeaderCell', allowMultiple: true },
         { name: 'Table.Cell', allowMultiple: true },
       ]}
       someRequired
@@ -29,10 +29,13 @@ export const TableRow = ({ children, tagAttrs, tagRef }: TableRowProps) => {
             tagRef={tagRef}
           >
             {validNodes.map((slot: any) => {
-              if (slot.type.displayName === 'Table.HeadCell') {
-                return cloneElement(slot as any, { tagAttrs: { scope: 'row' } })
+              if (slot.type.displayName === 'Table.HeaderCell') {
+                return cloneElement<TableHeaderCellProps>(slot, {
+                  tagAttrs: { scope: 'row' },
+                  intent: slot.props.intent || intent,
+                })
               } else {
-                return slot
+                return cloneElement<TableCellProps>(slot, { intent: slot.props.intent || intent })
               }
             })}
           </Box>

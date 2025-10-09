@@ -5,8 +5,8 @@ import {
   TableCaption,
   TableCell,
   TableFooter,
-  TableHeadCell,
   TableHeader,
+  TableHeaderCell,
   TableHeaderRow,
   TableRow,
 } from './slots'
@@ -16,8 +16,8 @@ export const Table = Object.assign(TableBase, {
   Caption: TableCaption,
   Cell: TableCell,
   Footer: TableFooter,
-  HeadCell: TableHeadCell,
   Header: TableHeader,
+  HeaderCell: TableHeaderCell,
   HeaderRow: TableHeaderRow,
   Row: TableRow,
 })
@@ -29,8 +29,8 @@ export type {
   TableCaptionProps,
   TableCellProps,
   TableFooterProps,
-  TableHeadCellProps,
   TableHeaderProps,
+  TableHeaderCellProps,
   TableHeaderRowProps,
   TableRowProps,
 } from './slots'

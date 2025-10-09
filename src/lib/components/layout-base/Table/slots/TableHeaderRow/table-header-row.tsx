@@ -1,18 +1,18 @@
 import { cloneElement } from 'react'
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
+import { Box, TableHeaderCellProps } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
 import { TableHeaderRowProps } from './definitions'
 
-export const TableHeaderRow = ({ children, tagAttrs, tagRef }: TableHeaderRowProps) => {
+export const TableHeaderRow = ({ children, tagAttrs, tagRef, intent }: TableHeaderRowProps) => {
   return (
-    <WithSlots<'Table.HeadCell'>
+    <WithSlots<'Table.HeaderCell'>
       childrenToVerify={children}
       componentName="Table.HeaderRow"
-      slotsConfig={[{ name: 'Table.HeadCell', required: true, allowMultiple: true }]}
+      slotsConfig={[{ name: 'Table.HeaderCell', required: true, allowMultiple: true }]}
     >
       {({ slots }) => {
         return (
@@ -24,7 +24,12 @@ export const TableHeaderRow = ({ children, tagAttrs, tagRef }: TableHeaderRowPro
             }}
             tagRef={tagRef}
           >
-            {slots['Table.HeadCell'].map(slot => cloneElement(slot as any, { tagAttrs: { scope: 'col' } }))}
+            {slots['Table.HeaderCell'].map((slot: any) =>
+              cloneElement<TableHeaderCellProps>(slot, {
+                intent: slot.props.intent || intent,
+                tagAttrs: { scope: 'col' },
+              })
+            )}
           </Box>
         )
       }}

@@ -8,17 +8,17 @@ type Props = {
 
 export const PropsTable = ({ category, data }: Props) => {
   const table = (
-    <Table>
+    <Table intent="secondary">
       <Table.Header>
         <Table.HeaderRow>
-          <Table.HeadCell>Name</Table.HeadCell>
-          <Table.HeadCell tagAttrs={{ style: { minWidth: '15ch' } }}>Options</Table.HeadCell>
-          <Table.HeadCell tagAttrs={{ style: { textAlign: 'center' } }}>Default</Table.HeadCell>
-          <Table.HeadCell tagAttrs={{ style: { width: '8ch' } }}>Required</Table.HeadCell>
-          <Table.HeadCell tagAttrs={{ style: { width: '10ch' } }}>Responsive</Table.HeadCell>
-          <Table.HeadCell tagAttrs={{ style: { width: '40%', minWidth: '40ch' } }}>
+          <Table.HeaderCell>Name</Table.HeaderCell>
+          <Table.HeaderCell tagAttrs={{ style: { minWidth: '15ch' } }}>Options</Table.HeaderCell>
+          <Table.HeaderCell tagAttrs={{ style: { textAlign: 'center' } }}>Default</Table.HeaderCell>
+          <Table.HeaderCell tagAttrs={{ style: { width: '8ch' } }}>Required</Table.HeaderCell>
+          <Table.HeaderCell tagAttrs={{ style: { width: '10ch' } }}>Responsive</Table.HeaderCell>
+          <Table.HeaderCell tagAttrs={{ style: { width: '40%', minWidth: '40ch' } }}>
             Description
-          </Table.HeadCell>
+          </Table.HeaderCell>
         </Table.HeaderRow>
       </Table.Header>
       <Table.Body>

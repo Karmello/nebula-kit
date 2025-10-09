@@ -3,17 +3,17 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { TableHeadCellProps } from './definitions'
+import { TableHeaderCellProps } from './definitions'
 import { useTableContext } from '../../TableContext'
 
-export const TableHeadCell = ({
+export const TableHeaderCell = ({
   children,
   tagAttrs,
   tagRef,
   intent,
   colSpan,
   rowSpan,
-}: TableHeadCellProps) => {
+}: TableHeaderCellProps) => {
   const { intent: rootIntent } = useTableContext()
 
   return (
@@ -21,7 +21,7 @@ export const TableHeadCell = ({
       tag="th"
       tagAttrs={{
         ...tagAttrs,
-        className: classNames(withPrefix('table-head-cell'), tagAttrs?.className),
+        className: classNames(withPrefix('table-header-cell'), tagAttrs?.className),
         colSpan,
         rowSpan,
       }}
@@ -30,10 +30,11 @@ export const TableHeadCell = ({
       intent={intent || rootIntent}
       paddingInline={10}
       paddingBlock={5}
+      borderRadius={0}
     >
       {children}
     </Box>
   )
 }
 
-TableHeadCell.displayName = 'Table.HeadCell'
+TableHeaderCell.displayName = 'Table.HeaderCell'

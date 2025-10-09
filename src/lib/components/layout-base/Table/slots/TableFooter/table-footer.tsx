@@ -1,12 +1,13 @@
+import { cloneElement } from 'react'
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
+import { Box, TableRowProps } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
 import { TableFooterProps } from './definitions'
 
-export const TableFooter = ({ children, tagAttrs, tagRef }: TableFooterProps) => {
+export const TableFooter = ({ children, tagAttrs, tagRef, intent }: TableFooterProps) => {
   return (
     <WithSlots<'Table.Row'>
       childrenToVerify={children}
@@ -23,7 +24,9 @@ export const TableFooter = ({ children, tagAttrs, tagRef }: TableFooterProps) =>
             }}
             tagRef={tagRef}
           >
-            {slots['Table.Row']}
+            {slots['Table.Row'].map((slot: any) =>
+              cloneElement<TableRowProps>(slot, { intent: slot.props.intent || intent })
+            )}
           </Box>
         )
       }}

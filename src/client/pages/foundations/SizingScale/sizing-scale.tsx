@@ -10,9 +10,9 @@ export default () => {
       <Table>
         <Table.Header>
           <Table.HeaderRow>
-            <Table.HeadCell>Value</Table.HeadCell>
-            <Table.HeadCell>CSS variable name</Table.HeadCell>
-            <Table.HeadCell>Pixels</Table.HeadCell>
+            <Table.HeaderCell>Value</Table.HeaderCell>
+            <Table.HeaderCell>CSS variable name</Table.HeaderCell>
+            <Table.HeaderCell>Pixels</Table.HeaderCell>
           </Table.HeaderRow>
         </Table.Header>
         <Table.Body>

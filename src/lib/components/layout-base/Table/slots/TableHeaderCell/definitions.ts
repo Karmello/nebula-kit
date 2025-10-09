@@ -1,6 +1,6 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
 
-type TableHeadCellOwnProps = {
+type TableHeaderCellOwnProps = {
   colSpan?: number
   rowSpan?: number
 }
@@ -11,4 +11,4 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'th'>, 'tagAttrs' | 'tagRef'> & {
 
 type PropsFromBox = Pick<BoxProps<'th'>, 'intent'>
 
-export type TableHeadCellProps = PropsFromHtmlTag & PropsFromBox & TableHeadCellOwnProps
+export type TableHeaderCellProps = PropsFromHtmlTag & PropsFromBox & TableHeaderCellOwnProps
