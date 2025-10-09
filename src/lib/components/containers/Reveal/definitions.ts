@@ -1,0 +1,27 @@
+import { BoxProps } from 'lib/components/base'
+import { ButtonProps } from 'lib/components/controls'
+import { HtmlTagProps } from 'lib/components/utility'
+
+export const RevealTag = ['div', 'section', 'article', 'aside', 'li'] as const
+export const DEFAULT_REVEAL_INTENT: RevealProps['intent'] = 'tertiary'
+export const DEFAULT_REVEAL_SIZE: RevealProps['size'] = 'sm'
+export const DEFAULT_REVEAL_CONTENT_ALIGN: RevealProps['contentAlign'] = 'left'
+
+export type RevealTag = (typeof RevealTag)[number]
+
+type RevealOwnProps = {
+  label: string
+}
+
+type PropsFromHtmlTag<T extends RevealTag = 'div'> = Omit<HtmlTagProps<T>, 'children'> & {
+  children: HtmlTagProps<T>['children']
+}
+
+type PropsFromBox<T extends RevealTag = 'div'> = Pick<BoxProps<T>, 'intent'>
+
+type PropsFromButton = Pick<ButtonProps<'button'>, 'size' | 'disabled' | 'contentIntent' | 'contentAlign'>
+
+export type RevealProps<T extends RevealTag = 'div'> = PropsFromHtmlTag<T> &
+  PropsFromBox<T> &
+  PropsFromButton &
+  RevealOwnProps

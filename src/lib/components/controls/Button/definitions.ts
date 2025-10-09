@@ -20,15 +20,19 @@ export const BUTTON_SIZE_CONFIG: Record<
 export const DEFAULT_BUTTON_VARIANT: BoxVariant = 'solid'
 export const DEFAULT_BUTTON_INTENT: BoxIntent = 'tertiary'
 export const DEFAULT_BUTTON_SIZE: ButtonSize = 'md'
+export const DEFAULT_BUTTON_CONTENT_ALIGN: ButtonContentAlign = 'center'
 
 export const ButtonTag = ['button', 'a'] as const
 export const ButtonSize = ['xs', 'sm', 'md', 'lg'] as const
+export const ButtonContentAlign = ['center', 'left'] as const
 
 export type ButtonTag = (typeof ButtonTag)[number]
 export type ButtonSize = (typeof ButtonSize)[number]
+export type ButtonContentAlign = (typeof ButtonContentAlign)[number]
 
 type ButtonOwnProps = {
   size?: ButtonSize
+  contentAlign?: ButtonContentAlign
 }
 
 type PropsFromHtmlTag<T extends ButtonTag = 'button'> = Omit<HtmlTagProps<T>, 'children'> & {
@@ -38,7 +42,7 @@ type PropsFromHtmlTag<T extends ButtonTag = 'button'> = Omit<HtmlTagProps<T>, 'c
 type PropsFromBox<T extends ButtonTag = 'button'> = Pick<BoxProps<T>, 'variant' | 'intent' | 'disabled'>
 
 type PropsFromText = Pick<TextProps<'span'>, 'iconName' | 'iconPosition'> & {
-  textIntent?: TextProps<'span'>['intent']
+  contentIntent?: TextProps<'span'>['intent']
 }
 
 export type ButtonProps<T extends ButtonTag = 'button'> = PropsFromHtmlTag<T> &

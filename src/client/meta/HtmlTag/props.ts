@@ -6,7 +6,7 @@ import { HtmlTagProps } from 'lib/components'
 const HTML_TAG_PROPS_META: ComponentMeta<HtmlTagProps<ElementType>>['props'] = {
   tag: {
     options: ['HTML tag'],
-    defaultValue: '<div>',
+    defaultValue: 'div',
     description: 'The HTML tag to be rendered as the container.',
   },
   tagAttrs: {

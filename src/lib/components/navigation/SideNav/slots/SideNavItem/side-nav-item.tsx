@@ -8,7 +8,7 @@ export const SideNavItem = ({
   children,
   variant,
   intent,
-  textIntent,
+  contentIntent,
 }: SideNavItemProps) => {
   return (
     <Button
@@ -20,7 +20,7 @@ export const SideNavItem = ({
       tagRef={tagRef}
       variant={variant}
       intent={intent}
-      textIntent={textIntent}
+      contentIntent={contentIntent}
       size="sm"
     >
       {children}

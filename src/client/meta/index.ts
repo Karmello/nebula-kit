@@ -15,6 +15,7 @@ import iconMeta from './Icon/_index'
 import iconButtonMeta from './IconButton/_index'
 import markerListMeta from './MarkerList/_index'
 import nebkitProviderMeta from './NebkitProvider/_index'
+import revealMeta from './Reveal/_index'
 import sectionMeta from './Section/_index'
 import sideNavMeta from './SideNav/_index'
 import spacerMeta from './Spacer/_index'
@@ -40,6 +41,7 @@ export default {
   IconButton: iconButtonMeta,
   MarkerList: markerListMeta,
   NebkitProvider: nebkitProviderMeta,
+  Reveal: revealMeta,
   Section: sectionMeta,
   SideNav: sideNavMeta,
   Spacer: spacerMeta,

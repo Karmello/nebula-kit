@@ -62,7 +62,7 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
   },
   tag: {
     ...HTML_TAG_PROPS_META['tag'],
-    defaultValue: '<p>',
+    defaultValue: 'p',
   },
 }
 

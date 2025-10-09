@@ -4,13 +4,15 @@ import { BundledLanguage, TokensResult } from 'shiki'
 import { Box, Flex, IconButton, Text } from 'lib/components'
 
 import { tokenizeCode } from './highlight-tokens'
+import { ScaleValue } from 'lib/definitions'
 
 export type CodeSnippetProps = {
   code: string
   lang?: BundledLanguage
+  borderRadius?: ScaleValue
 }
 
-export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
+export const CodeSnippet = ({ code, lang = 'tsx', borderRadius }: CodeSnippetProps) => {
   const [data, setData] = useState<TokensResult>()
   const [copied, setCopied] = useState<boolean>(false)
 
@@ -35,7 +37,11 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
   }
 
   return (
-    <Flex flexDirection="column" alignItems="stretch" tagAttrs={{ style: { backgroundColor: data.bg } }}>
+    <Flex
+      flexDirection="column"
+      alignItems="stretch"
+      tagAttrs={{ style: { backgroundColor: data.bg, borderRadius } }}
+    >
       <Box padding={1}>
         <IconButton
           iconName={copied ? 'check' : 'copy'}
@@ -45,7 +51,7 @@ export const CodeSnippet = ({ code, lang = 'tsx' }: CodeSnippetProps) => {
           tagAttrs={{ onClick: handleCopy, 'aria-label': copied ? 'Copied' : 'Copy code' }}
         />
       </Box>
-      <Box maxBlockSize="350px" overflowY="auto">
+      <Box overflowY="auto">
         <Flex tag="pre">
           <Box tag="code" paddingInline={12} paddingBottom={7}>
             {data.tokens.map((token, i) => {

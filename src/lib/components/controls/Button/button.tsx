@@ -11,6 +11,7 @@ import {
   DEFAULT_BUTTON_INTENT,
   DEFAULT_BUTTON_SIZE,
   DEFAULT_BUTTON_VARIANT,
+  DEFAULT_BUTTON_CONTENT_ALIGN,
 } from './definitions'
 
 import './button.scss'
@@ -28,9 +29,10 @@ export const Button = <T extends ButtonTag = 'button'>({
   // Text
   iconName,
   iconPosition,
-  textIntent,
+  contentIntent,
   // own
   size = DEFAULT_BUTTON_SIZE,
+  contentAlign = DEFAULT_BUTTON_CONTENT_ALIGN,
 }: ButtonProps<T>) => {
   return (
     <Box
@@ -40,6 +42,10 @@ export const Button = <T extends ButtonTag = 'button'>({
           ...tagAttrs,
           className: classNames(withPrefix('btn'), tagAttrs?.className),
           type: tagAttrs?.type || 'button',
+          style: {
+            ...tagAttrs?.style,
+            justifyContent: contentAlign === 'left' ? 'flex-start' : 'center',
+          },
         } as PropsWithoutRef<ComponentProps<T>>
       }
       tagRef={tagRef}
@@ -49,7 +55,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       interactive
       {...BUTTON_SIZE_CONFIG[size]}
     >
-      <Text tag="span" iconName={iconName} iconPosition={iconPosition} intent={textIntent}>
+      <Text tag="span" iconName={iconName} iconPosition={iconPosition} intent={contentIntent}>
         {children}
       </Text>
     </Box>

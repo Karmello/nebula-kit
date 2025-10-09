@@ -1,9 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
 
 import {
+  ButtonContentAlign,
   ButtonProps,
   ButtonSize,
   ButtonTag,
+  DEFAULT_BUTTON_CONTENT_ALIGN,
   DEFAULT_BUTTON_INTENT,
   DEFAULT_BUTTON_SIZE,
   DEFAULT_BUTTON_VARIANT,
@@ -21,7 +23,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   tag: {
     ...HTML_TAG_PROPS_META.tag,
     options: ButtonTag as unknown as string[],
-    defaultValue: '<button>',
+    defaultValue: 'button',
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
@@ -36,9 +38,14 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   disabled: BOX_PROPS_META.disabled,
   iconName: TEXT_PROPS_META.iconName,
   iconPosition: TEXT_PROPS_META.iconPosition,
-  textIntent: {
+  contentIntent: {
     ...TEXT_PROPS_META.intent,
-    description: 'Semantic color intent applied only to text.',
+    description: "Semantic color intent applied to the button's inner content.",
+  },
+  contentAlign: {
+    options: ButtonContentAlign as unknown as string[],
+    defaultValue: DEFAULT_BUTTON_CONTENT_ALIGN,
+    description: "Aligns the button's inner content.",
   },
   size: {
     options: Object.values(ButtonSize),

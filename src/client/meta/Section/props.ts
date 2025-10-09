@@ -16,7 +16,7 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
   ...HTML_TAG_PROPS_META,
   tag: {
     ...HTML_TAG_PROPS_META.tag,
-    defaultValue: '<section>',
+    defaultValue: 'section',
   },
   children: {
     ...HTML_TAG_PROPS_META.children,

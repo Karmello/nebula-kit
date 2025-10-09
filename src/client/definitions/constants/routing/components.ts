@@ -49,7 +49,10 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'containers',
     label: 'Containers',
-    items: [{ key: 'section', label: 'Section', sections: COMPONENT_SECTIONS }],
+    items: [
+      { key: 'section', label: 'Section', sections: COMPONENT_SECTIONS },
+      { key: 'reveal', label: 'Reveal', sections: COMPONENT_SECTIONS },
+    ],
   },
   {
     key: 'feedback',

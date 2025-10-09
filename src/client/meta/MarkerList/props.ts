@@ -16,7 +16,7 @@ const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListProps>['props'] = {
   tag: {
     ...HTML_TAG_PROPS_META.tag,
     options: MarkerListTag as unknown as string[],
-    defaultValue: '<ul>',
+    defaultValue: 'ul',
   },
   children: {
     ...HTML_TAG_PROPS_META.children,

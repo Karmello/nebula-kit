@@ -5,7 +5,7 @@ import { elemToStringService } from 'client/services'
 import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'client/definitions'
 import meta from 'client/meta'
-import { Box, Flex, Spacer, Text } from 'lib/components'
+import { Box, Flex, Reveal, Spacer, Text } from 'lib/components'
 
 const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   const elemToString = elemToStringService()
@@ -14,7 +14,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
 
   return (
     <>
-      {description ? <Text>{description}</Text> : null}
+      {description ? <Text intent="primary">{description}</Text> : null}
       <Spacer blockSize={5} />
       {!noSandBox ? (
         <>
@@ -31,7 +31,11 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           <Spacer blockSize={5} />
         </>
       ) : null}
-      <CodeSnippet code={code || elemToString(jsx)} />
+      <Reveal label="Code" intent="neutral" contentIntent="primary">
+        <Box padding={2}>
+          <CodeSnippet code={code || elemToString(jsx)} borderRadius={0} />
+        </Box>
+      </Reveal>
       <Spacer blockSize={30} />
     </>
   )

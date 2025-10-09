@@ -20,7 +20,7 @@ export const Animate = ({
   useEffect(() => {
     width.current = `${tagRef ? tagRef.current?.scrollWidth : ref.current?.scrollWidth}px`
     height.current = `${tagRef ? tagRef.current?.scrollHeight : ref.current?.scrollHeight}px`
-  }, [])
+  }, [children])
 
   const props: Partial<BoxProps> = {}
 
@@ -43,6 +43,7 @@ export const Animate = ({
       }}
       tagRef={tagRef || ref}
       overflowX="hidden"
+      borderRadius={0}
       {...props}
     >
       {children}
