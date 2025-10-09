@@ -1,7 +1,7 @@
 import { useCallback, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Flex, IconButton } from 'lib/components'
+import { Animate, Box, Flex, IconButton } from 'lib/components'
 import { DEFAULT_ANIMATE_DURATION } from 'lib/components/utility/Animate/definitions'
 import { FocusTrap } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
@@ -47,32 +47,37 @@ export const SplitViewSide = ({
         }}
         tagRef={tagRef || ref}
         variant="solid"
+        intent={intent || { base: 'secondary', [String(switchAt)]: 'neutral' }}
         left={sidePosition === 'left' ? 0 : undefined}
         right={sidePosition === 'right' ? 0 : undefined}
-        intent={intent || { base: 'secondary', [String(switchAt)]: 'neutral' }}
-        inlineSize={sideOpen ? inlineSize : 0}
         borderRadius={0}
       >
-        {mode === 'overlay' ? (
-          <Flex justifyContent="flex-end">
-            <IconButton
-              tagAttrs={{
-                onClick: () => {
-                  setSideOpen(false)
-                },
-              }}
-              iconName="close"
-              intent={intent || 'secondary'}
-              size="sm"
-            />
-          </Flex>
-        ) : null}
-        {typeof children === 'function'
-          ? children({
-              setSideOpen: setSideOpenASync,
-              mode,
-            })
-          : children}
+        <Animate property="inlineSize" visible={sideOpen}>
+          <Box inlineSize={inlineSize}>
+            {mode === 'overlay' ? (
+              <Flex justifyContent="flex-end">
+                <Box padding={3} paddingBottom={10}>
+                  <IconButton
+                    tagAttrs={{
+                      onClick: () => {
+                        setSideOpen(false)
+                      },
+                    }}
+                    iconName="close"
+                    intent={intent || 'secondary'}
+                    size="sm"
+                  />
+                </Box>
+              </Flex>
+            ) : null}
+            {typeof children === 'function'
+              ? children({
+                  setSideOpen: setSideOpenASync,
+                  mode,
+                })
+              : children}
+          </Box>
+        </Animate>
       </Box>
     </FocusTrap>
   )

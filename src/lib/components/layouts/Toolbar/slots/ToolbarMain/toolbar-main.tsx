@@ -24,6 +24,9 @@ export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) =>
     []
   )
 
+  const finalChildren =
+    typeof children === 'function' ? children({ setMainOpen: setMainOpenAsync, mainOpen }) : children
+
   return (
     <Grid.Item
       tagAttrs={{
@@ -40,15 +43,9 @@ export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) =>
       gridColumn={{ base: '1 / -1', [String(switchAt)]: '3 / 4' }}
       alignSelf="center"
     >
-      {!isSwitchAtHit ? (
-        <Animate property="blockSize" visible={mainOpen}>
-          {typeof children === 'function' ? children({ setMainOpen: setMainOpenAsync, mainOpen }) : children}
-        </Animate>
-      ) : typeof children === 'function' ? (
-        children({ setMainOpen: setMainOpenAsync, mainOpen })
-      ) : (
-        children
-      )}
+      <Animate key={String(isSwitchAtHit)} property="blockSize" visible={isSwitchAtHit || mainOpen}>
+        {finalChildren}
+      </Animate>
     </Grid.Item>
   )
 }

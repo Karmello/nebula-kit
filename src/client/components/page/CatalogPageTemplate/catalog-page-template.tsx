@@ -60,7 +60,7 @@ export const CatalogPageTemplate = ({
                             navigateTo(href)
                           },
                         }}
-                        contentIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
+                        labelIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
                         intent={{
                           base: isItemSelected ? 'primary' : 'secondary',
                           lg: isItemSelected ? 'tertiary' : 'neutral',
@@ -101,7 +101,7 @@ export const CatalogPageTemplate = ({
                             navigateTo(href)
                           },
                         }}
-                        contentIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
+                        labelIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
                         intent={{
                           base: isItemSelected ? 'primary' : 'secondary',
                           lg: isItemSelected ? 'tertiary' : 'neutral',

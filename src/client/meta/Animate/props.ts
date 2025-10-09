@@ -22,6 +22,10 @@ const ANIMATE_PROPS_META: ComponentMeta<AnimateProps>['props'] = {
     isRequired: true,
     description: 'Toggles the visibility of the content.',
   },
+  calcSizeTrigger: {
+    options: ['any'],
+    description: 'Value that triggers size recalculation when changed.',
+  },
   duration: {
     options: ['number'],
     defaultValue: String(DEFAULT_ANIMATE_DURATION),

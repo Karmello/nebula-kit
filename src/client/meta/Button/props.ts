@@ -1,11 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
 
 import {
-  ButtonContentAlign,
+  ButtonLabelAlign,
   ButtonProps,
   ButtonSize,
   ButtonTag,
-  DEFAULT_BUTTON_CONTENT_ALIGN,
+  DEFAULT_BUTTON_LABEL_ALIGN,
   DEFAULT_BUTTON_INTENT,
   DEFAULT_BUTTON_SIZE,
   DEFAULT_BUTTON_VARIANT,
@@ -38,13 +38,13 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   disabled: BOX_PROPS_META.disabled,
   iconName: TEXT_PROPS_META.iconName,
   iconPosition: TEXT_PROPS_META.iconPosition,
-  contentIntent: {
+  labelIntent: {
     ...TEXT_PROPS_META.intent,
     description: "Semantic color intent applied to the button's inner content.",
   },
-  contentAlign: {
-    options: ButtonContentAlign as unknown as string[],
-    defaultValue: DEFAULT_BUTTON_CONTENT_ALIGN,
+  labelAlign: {
+    options: ButtonLabelAlign as unknown as string[],
+    defaultValue: DEFAULT_BUTTON_LABEL_ALIGN,
     description: "Aligns the button's inner content.",
   },
   size: {

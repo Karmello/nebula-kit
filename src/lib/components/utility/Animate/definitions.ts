@@ -8,6 +8,7 @@ export type AnimateProperty = (typeof AnimateProperty)[number]
 type AnimateOwnProps = {
   property: AnimateProperty
   visible: boolean
+  calcSizeTrigger?: any
   duration?: number
 }
 

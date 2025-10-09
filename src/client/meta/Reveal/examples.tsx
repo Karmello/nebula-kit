@@ -9,7 +9,7 @@ const REVEAL_EXAMPLES_META: ComponentMeta<RevealProps>['examples'] = [
   {
     description: 'Reveal with a centered label and secondary intent applied.',
     jsx: (
-      <Reveal label="Label" intent="secondary" contentAlign="center">
+      <Reveal label="Label" intent="secondary" labelAlign="center">
         Content
       </Reveal>
     ),
@@ -17,7 +17,7 @@ const REVEAL_EXAMPLES_META: ComponentMeta<RevealProps>['examples'] = [
   {
     description: 'Disabled state of the Reveal.',
     jsx: (
-      <Reveal label="Label" intent="secondary" contentAlign="center" disabled>
+      <Reveal label="Label" intent="secondary" labelAlign="center" disabled>
         Content
       </Reveal>
     ),

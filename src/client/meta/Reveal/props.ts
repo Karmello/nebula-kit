@@ -26,8 +26,8 @@ const REVEAL_PROPS_META: ComponentMeta<RevealProps>['props'] = {
     isRequired: true,
     description: 'Text displayed on the reveal button.',
   },
-  contentIntent: BUTTON_PROPS_META.contentIntent,
-  contentAlign: BUTTON_PROPS_META.contentAlign,
+  labelIntent: BUTTON_PROPS_META.labelIntent,
+  labelAlign: BUTTON_PROPS_META.labelAlign,
 }
 
 export { REVEAL_PROPS_META }

@@ -19,7 +19,7 @@ const SIDE_NAV_CATEGORY_PROPS_META: ComponentMeta<SideNavCategoryProps>['props']
     defaultValue: DEFAULT_BOX_VARIANT,
   },
   intent: BUTTON_PROPS_META.intent,
-  contentIntent: BUTTON_PROPS_META.contentIntent,
+  labelIntent: BUTTON_PROPS_META.labelIntent,
   label: {
     options: ['string'],
     isRequired: true,

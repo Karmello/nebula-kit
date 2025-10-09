@@ -12,7 +12,7 @@ export const SideNavCategory = ({
   children,
   variant,
   intent,
-  contentIntent,
+  labelIntent,
   label,
 }: SideNavCategoryProps) => {
   const { expandedCategories, setExpandedCategories, expandMode } = useSideNavContext()
@@ -52,8 +52,8 @@ export const SideNavCategory = ({
                 iconName={expandedCategories[id] ? 'chevron-down' : 'chevron-right'}
                 variant={variant}
                 intent={intent}
-                contentIntent={contentIntent}
-                contentAlign="left"
+                labelIntent={labelIntent}
+                labelAlign="left"
                 size="sm"
               >
                 {label}

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Box, Flex, Button, Animate, RevealProps } from 'lib/components'
 
 import {
-  DEFAULT_REVEAL_CONTENT_ALIGN,
+  DEFAULT_REVEAL_LABEL_ALIGN,
   DEFAULT_REVEAL_INTENT,
   DEFAULT_REVEAL_SIZE,
   RevealTag,
@@ -20,8 +20,8 @@ export const Reveal = <T extends RevealTag = 'div'>({
   // Button
   disabled,
   size = DEFAULT_REVEAL_SIZE,
-  contentIntent,
-  contentAlign = DEFAULT_REVEAL_CONTENT_ALIGN,
+  labelIntent,
+  labelAlign = DEFAULT_REVEAL_LABEL_ALIGN,
   // own
   label,
 }: RevealProps<T>) => {
@@ -41,8 +41,8 @@ export const Reveal = <T extends RevealTag = 'div'>({
         <Button
           disabled={disabled}
           size={size}
-          contentIntent={contentIntent}
-          contentAlign={contentAlign}
+          labelIntent={labelIntent}
+          labelAlign={labelAlign}
           intent={intent}
           iconName={open ? 'chevron-up' : 'chevron-down'}
           iconPosition="right"
@@ -55,9 +55,11 @@ export const Reveal = <T extends RevealTag = 'div'>({
         >
           {label}
         </Button>
-        <Animate property="blockSize" visible={open}>
-          <Box intent="neutral">{children}</Box>
-        </Animate>
+        <Box intent="neutral">
+          <Animate property="blockSize" visible={open} calcSizeTrigger={open}>
+            {children}
+          </Animate>
+        </Box>
       </Flex>
     </Box>
   )
