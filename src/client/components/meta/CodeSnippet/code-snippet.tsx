@@ -53,7 +53,7 @@ export const CodeSnippet = ({ code, lang = 'tsx', borderRadius }: CodeSnippetPro
       </Box>
       <Box overflowY="auto" maxBlockSize="350px">
         <Flex tag="pre">
-          <Box tag="code" paddingInline={12} paddingBottom={7}>
+          <Box tag="code" paddingInline={12} paddingBottom={12}>
             {data.tokens.map((token, i) => {
               return (
                 <Box key={i}>

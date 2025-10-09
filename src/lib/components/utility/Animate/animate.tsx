@@ -26,12 +26,14 @@ export const Animate = ({
   }, [calcSizeTrigger])
 
   useEffect(() => {
-    if (property === 'blockSize') {
-      finalRef.current.style.blockSize = visible ? height.current : '0px'
-      finalRef.current.style.overflowY = 'hidden'
-    } else if (property === 'inlineSize') {
-      finalRef.current.style.inlineSize = visible ? width.current : '0px'
-      finalRef.current.style.overflowX = 'hidden'
+    if (finalRef.current) {
+      if (property === 'blockSize') {
+        finalRef.current.style.blockSize = visible ? height.current : '0px'
+        finalRef.current.style.overflowY = 'hidden'
+      } else if (property === 'inlineSize') {
+        finalRef.current.style.inlineSize = visible ? width.current : '0px'
+        finalRef.current.style.overflowX = 'hidden'
+      }
     }
   }, [visible])
 

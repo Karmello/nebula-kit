@@ -15,7 +15,7 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
     skip: true,
   },
   {
-    description: 'Simple table displaying only data rows without a header.',
+    description: 'Table displaying data rows only.',
     jsx: (
       <Table>
         <Table.Body>
@@ -42,7 +42,7 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
     ),
   },
   {
-    description: 'Table displaying the same data with a header row added.',
+    description: 'Table displaying data rows and a header.',
     jsx: (
       <Table>
         <Table.Header>
@@ -77,7 +77,7 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
     ),
   },
   {
-    description: 'Same table with caption and footer sections added.',
+    description: 'Table with caption and footer.',
     jsx: (
       <Table>
         <Table.Header>
@@ -118,7 +118,7 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
     ),
   },
   {
-    description: 'The secondary intent applied to the table.',
+    description: 'Custom intent applied to the table.',
     jsx: (
       <Table intent="secondary">
         <Table.Header>

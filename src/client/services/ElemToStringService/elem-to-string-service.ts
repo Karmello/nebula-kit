@@ -9,6 +9,6 @@ export const elemToStringService = () => {
       maxInlineAttributesLineLength: Infinity,
       sortProps: false,
       filterProps: (value, key) => !FILTER_PROPS.includes(key),
-    })
+    }).replaceAll(/(\r?\n[ \t]*<[^/][^>]*>)\s*\r?\n\s*([^<\r\n]+)\s*\r?\n\s*([ \t]*<\/[^>]+>)/g, '$1$2$3')
   }
 }
