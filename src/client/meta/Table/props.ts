@@ -14,7 +14,10 @@ const TABLE_PROPS_META: ComponentMeta<TableProps>['props'] = {
     isRequired: true,
     description: 'Table.Body is required, the rest optional.',
   },
-  intent: BOX_PROPS_META.intent,
+  intent: {
+    ...BOX_PROPS_META.intent,
+    description: "Semantic color intent applied to the table's background surface.",
+  },
   layout: {
     options: TableLayout as unknown as string[],
     defaultValue: DEFAULT_TABLE_LAYOUT,

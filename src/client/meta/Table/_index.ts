@@ -8,6 +8,10 @@ import { TABLE_BODY_META } from './TableBody/_index'
 import { TABLE_HEADER_META } from './TableHeader/_index'
 import { TABLE_FOOTER_META } from './TableFooter/_index'
 import { TABLE_CAPTION_META } from './TableCaption/_index'
+import { TABLE_ROW_META } from './TableRow/_index'
+import { TABLE_HEADER_ROW_META } from './TableHeaderRow/_index'
+import { TABLE_CELL_META } from './TableCell/_index'
+import { TABLE_HEADER_CELL_META } from './TableHeaderCell/_index'
 
 const TABLE_META: ComponentMeta<TableProps> = {
   overview: {
@@ -32,4 +36,8 @@ export default {
   TableHeader: TABLE_HEADER_META,
   TableFooter: TABLE_FOOTER_META,
   TableCaption: TABLE_CAPTION_META,
+  TableRow: TABLE_ROW_META,
+  TableHeaderRow: TABLE_HEADER_ROW_META,
+  TableCell: TABLE_CELL_META,
+  TableHeaderCell: TABLE_HEADER_CELL_META,
 }

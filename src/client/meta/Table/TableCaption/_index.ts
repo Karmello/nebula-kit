@@ -1,6 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { TableCaptionProps } from 'lib/components'
 
+import { TABLE_CAPTION_PROPS_META } from './props'
+
 const TABLE_CAPTION_META: ComponentMeta<TableCaptionProps> = {
   overview: {
     name: 'Table.Caption?',
@@ -9,6 +11,7 @@ const TABLE_CAPTION_META: ComponentMeta<TableCaptionProps> = {
     composedOf: ['Box'],
     rendersAs: ['caption'],
   },
+  props: TABLE_CAPTION_PROPS_META,
 }
 
 export { TABLE_CAPTION_META }
