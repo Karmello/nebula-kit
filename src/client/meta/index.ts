@@ -3,6 +3,7 @@ import { ComponentMeta } from 'client/definitions'
 import animateMeta from './Animate/_index'
 import appFrameMeta from './AppFrame/_index'
 import boxMeta from './Box/_index'
+import breadcrumbMeta from './Breadcrumb/_index'
 import buttonMeta from './Button/_index'
 import buttonGroupMeta from './ButtonGroup/_index'
 import calloutMeta from './Callout/_index'
@@ -29,6 +30,7 @@ export default {
   Animate: animateMeta,
   AppFrame: appFrameMeta,
   Box: boxMeta,
+  Breadcrumb: breadcrumbMeta,
   ButtonGroup: buttonGroupMeta,
   Button: buttonMeta,
   Callout: calloutMeta,

@@ -43,9 +43,13 @@ export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) =>
       gridColumn={{ base: '1 / -1', [String(switchAt)]: '3 / 4' }}
       alignSelf="center"
     >
-      <Animate key={String(isSwitchAtHit)} property="blockSize" visible={isSwitchAtHit || mainOpen}>
-        {finalChildren}
-      </Animate>
+      {!isSwitchAtHit ? (
+        <Animate property="blockSize" visible={mainOpen}>
+          {finalChildren}
+        </Animate>
+      ) : (
+        finalChildren
+      )}
     </Grid.Item>
   )
 }

@@ -10,7 +10,6 @@ export const Animate = ({
   children,
   property,
   visible,
-  calcSizeTrigger,
   duration = DEFAULT_ANIMATE_DURATION,
 }: AnimateProps) => {
   const ref = useRef<HTMLDivElement>(null)
@@ -23,7 +22,7 @@ export const Animate = ({
   useEffect(() => {
     width.current = `${finalRef.current?.scrollWidth || 0}px`
     height.current = `${finalRef.current?.scrollHeight || 0}px`
-  }, [calcSizeTrigger])
+  }, [finalRef.current])
 
   useEffect(() => {
     if (finalRef.current) {
@@ -35,7 +34,7 @@ export const Animate = ({
         finalRef.current.style.overflowX = 'hidden'
       }
     }
-  }, [visible])
+  }, [finalRef.current, visible])
 
   return (
     <Box

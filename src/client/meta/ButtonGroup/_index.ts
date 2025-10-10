@@ -13,8 +13,9 @@ const BUTTON_GROUP_META: ComponentMeta<ButtonGroupProps> = {
       'props set on individual buttons override props inherited from the group',
     ],
 
-    composedOf: ['Flex', 'Flex.Item', 'Button'],
+    composedOf: ['Flex', 'Flex.Item'],
     rendersAs: ButtonGroupTag,
+    slots: ['Button'],
   },
   props: BUTTON_GROUP_PROPS_META,
   examples: BUTTON_GROUP_EXAMPLES_META,

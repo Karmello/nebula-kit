@@ -11,6 +11,7 @@ import {
 import classNames from 'classnames'
 
 import { ButtonProps, Flex } from 'lib/components'
+import { WithSlots } from 'lib/components/internal'
 import { applyRespValues, applyStaticDataset } from 'lib/service'
 import { useScreen, withPrefix } from 'lib/helpers'
 
@@ -70,25 +71,33 @@ export const ButtonGroup = <T extends ButtonGroupTag = 'div'>({
       gap={attached ? 0 : gap}
       flexWrap="nowrap"
     >
-      {Children.map(children as any, (child, index) => {
-        return (
-          <Flex.Item>
-            {cloneElement<ButtonProps>(child, {
-              ...child.props,
-              tagAttrs: {
-                ...child.props.tagAttrs,
-                style: {
-                  ...child.props.tagAttrs?.style,
-                  '--i': index,
-                },
-              },
-              variant: child.props.variant ?? variant,
-              intent: child.props.intent ?? intent,
-              size: child.props.size ?? size,
-            })}
-          </Flex.Item>
-        )
-      })}
+      <WithSlots<'Button'>
+        childrenToVerify={children}
+        componentName="ButtonGroup"
+        slotsConfig={[{ name: 'Button', required: true, allowMultiple: true }]}
+      >
+        {({ slots }) => {
+          return Children.map(slots.Button as any, (child, index) => {
+            return (
+              <Flex.Item key={index}>
+                {cloneElement<ButtonProps>(child, {
+                  ...child.props,
+                  tagAttrs: {
+                    ...child.props.tagAttrs,
+                    style: {
+                      ...child.props.tagAttrs?.style,
+                      '--i': index,
+                    },
+                  },
+                  variant: child.props.variant ?? variant,
+                  intent: child.props.intent ?? intent,
+                  size: child.props.size ?? size,
+                })}
+              </Flex.Item>
+            )
+          })
+        }}
+      </WithSlots>
     </Flex>
   )
 }

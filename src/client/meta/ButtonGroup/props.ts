@@ -1,5 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { ButtonGroupDirection, ButtonGroupProps } from 'lib/components/controls/ButtonGroup/definitions'
+
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { FLEX_PROPS_META } from '../Flex/props'
 import { BUTTON_PROPS_META } from '../Button/props'
@@ -9,9 +10,12 @@ const BUTTON_GROUP_PROPS_META: ComponentMeta<ButtonGroupProps>['props'] = {
   children: {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
-    description: 'One or more <Button> elements.',
+    description: 'One or more Button components.',
   },
-  gap: FLEX_PROPS_META.gap,
+  gap: {
+    ...FLEX_PROPS_META.gap,
+    description: 'Defines spacing between items on both axes. Applied only when attached is false.',
+  },
   variant: BUTTON_PROPS_META.variant,
   intent: BUTTON_PROPS_META.intent,
   size: BUTTON_PROPS_META.size,
