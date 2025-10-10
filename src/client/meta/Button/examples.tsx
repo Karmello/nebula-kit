@@ -4,8 +4,7 @@ import { ButtonProps, ButtonSize } from 'lib/components/controls/Button/definiti
 
 const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
   {
-    description:
-      'Renders in medium size with a solid variant and tertiary intent by default, providing a baseline action control.',
+    description: 'Default button has medium size, solid variant and tertiary intent.',
     jsx: <Button>Default button</Button>,
   },
   {
@@ -21,7 +20,7 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     ),
   },
   {
-    description: 'Large size with primary intent highlights the button as a key call to action.',
+    description: 'Large button with primary intent.',
     jsx: (
       <Button size="lg" intent="primary">
         Large button
@@ -29,7 +28,7 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     ),
   },
   {
-    description: 'Outline variant with secondary intent, suited for supporting or less prominent actions.',
+    description: 'Outline variant with secondary intent.',
     jsx: (
       <Button variant="outline" intent="secondary">
         Outline button
@@ -37,8 +36,7 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     ),
   },
   {
-    description:
-      'Ghost variant with danger intent, used for destructive actions in a lighter, less dominant style.',
+    description: 'Ghost variant with danger intent.',
     jsx: (
       <Button variant="ghost" intent="danger">
         Ghost button
@@ -46,8 +44,7 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     ),
   },
   {
-    description:
-      'Button rendered as a link, using the anchor tag to navigate to an external page while keeping button styling and interaction states.',
+    description: 'Button rendered as a link.',
     jsx: (
       <Button tag="a" tagAttrs={{ href: 'https://google.com', target: '_blank' }} intent="primary">
         Link button
@@ -55,7 +52,7 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     ),
   },
   {
-    description: 'Button with text and icon for clearer meaning.',
+    description: 'Button with text and icon.',
     jsx: <Button iconName="search">Button with icon</Button>,
   },
 ]

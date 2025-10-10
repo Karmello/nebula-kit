@@ -6,7 +6,7 @@ App.displayName = 'App'
 
 const HYDRATION_GATE_EXAMPLES_META: ComponentMeta<HydrationGateProps>['examples'] = [
   {
-    description: 'Always used as a wrapper of NebkitProvider.',
+    description: 'Always use it as a wrapper of NebkitProvider.',
     jsx: (
       <HydrationGate>
         <NebkitProvider>

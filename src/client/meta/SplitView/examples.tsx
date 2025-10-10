@@ -17,7 +17,7 @@ const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewProps>['examples'] = [
   },
   {
     description:
-      "Demonstrates SplitView filling its parent's height, with a side panel, a main content area, and an optional MainBar above the main content. Resize the viewport to a smaller width to see the side panel switch to its overlay version.",
+      "SplitView with side panel, main content area and MainBar above the main content. It fills its parent's height. Resize the viewport to a smaller width to see the side panel switch to its overlay version.",
     jsx: (
       <Box blockSize="500px">
         <SplitView>
@@ -39,7 +39,7 @@ const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewProps>['examples'] = [
   },
   {
     description:
-      'Demonstrates using a render function in the Side slot to access SplitView context values and control its open state in overlay mode.',
+      'Render function in the Side slot to access SplitView context values and control its open state in overlay mode.',
     code: `
 <SplitView>
   <SplitView.Side>

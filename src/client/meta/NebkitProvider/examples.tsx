@@ -7,7 +7,7 @@ App.displayName = 'App'
 
 const NEBKIT_PROVIDER_EXAMPLES_META: ComponentMeta<NebkitProviderProps<Theme>>['examples'] = [
   {
-    description: 'Wraps the entire application.',
+    description: 'Use it as a wrapper around your entire app.',
     jsx: (
       <NebkitProvider>
         <App />
@@ -16,7 +16,7 @@ const NEBKIT_PROVIDER_EXAMPLES_META: ComponentMeta<NebkitProviderProps<Theme>>['
     noSandBox: true,
   },
   {
-    description: 'Wraps the entire application and sets the dark theme.',
+    description: 'Setting the dark mode as default.',
     jsx: (
       <NebkitProvider theme="dark">
         <App />

@@ -3,11 +3,11 @@ import { IconButton, IconButtonProps } from 'lib/components'
 
 const ICON_BUTTON_EXAMPLES_META: ComponentMeta<IconButtonProps>['examples'] = [
   {
-    description: 'Renders the default IconButton with a close icon as its content.',
+    description: 'Default IconButton with a close icon as its content.',
     jsx: <IconButton iconName="close" />,
   },
   {
-    description: 'Renders the IconButton as a link that opens an external page in a new tab.',
+    description: 'IconButton as a link that opens an external page in a new tab.',
     jsx: (
       <IconButton
         iconName="external-link"

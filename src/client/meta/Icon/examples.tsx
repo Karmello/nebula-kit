@@ -3,15 +3,15 @@ import { Icon, IconProps } from 'lib/components'
 
 const ICON_EXAMPLES_META: ComponentMeta<IconProps>['examples'] = [
   {
-    description: 'Renders the search icon.',
+    description: 'Search icon.',
     jsx: <Icon name="search" intent="neutral" />,
   },
   {
-    description: 'Renders the search icon at a larger size.',
+    description: 'Search icon at a larger size.',
     jsx: <Icon name="search" intent="neutral" size={20} />,
   },
   {
-    description: 'Sets icon intent to primary.',
+    description: 'Icon with intent set to primary.',
     jsx: <Icon name="search" intent="primary" size={20} />,
   },
 ]
