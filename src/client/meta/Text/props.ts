@@ -28,6 +28,13 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     isResponsive: false,
     description: 'Toggles italic styling.',
   },
+  underline: {
+    options: ['boolean'],
+    defaultValue: 'false',
+    isRequired: false,
+    isResponsive: false,
+    description: 'Toggles underlined styling.',
+  },
   noWrap: {
     options: ['boolean'],
     defaultValue: 'false',

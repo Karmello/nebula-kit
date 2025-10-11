@@ -14,6 +14,7 @@ export const Text = <T extends TextTag = 'p'>({
   typography = DEFAULT_TEXT_TYPOGRAPHY,
   bold = false,
   italic = false,
+  underline = false,
   noWrap = false,
   truncate = false,
   clampLines,
@@ -58,7 +59,7 @@ export const Text = <T extends TextTag = 'p'>({
             : {}),
           ...(tagAttrs?.style || {}),
         },
-        ...applyStaticDataset('text', { typography, bold, italic, noWrap, truncate }),
+        ...applyStaticDataset('text', { typography, bold, italic, underline, noWrap, truncate }),
       }}
       variant="ghost"
       intent={intent}

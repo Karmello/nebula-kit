@@ -24,6 +24,14 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
     description: 'Text can be italic.',
   },
   {
+    jsx: (
+      <Text intent="neutral" underline>
+        Underlined paragraph
+      </Text>
+    ),
+    description: 'Text can be underlined.',
+  },
+  {
     jsx: <Text intent="primary">Primary text intent</Text>,
     description: 'Text with primary intent color applied.',
   },

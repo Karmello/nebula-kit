@@ -12,11 +12,11 @@ export const TEXT_TYPOGRAPHY_CONFIG: Record<
     iconSize: ScaleValue
   }
 > = {
-  caption: { tag: 'p', fontSize: 6, lineHeight: 1.4, iconSize: 7 },
-  secondary: { tag: 'p', fontSize: 7, lineHeight: 1.5, iconSize: 7 },
-  tertiary: { tag: 'p', fontSize: 7, lineHeight: 1.5, iconSize: 7 },
   body: { tag: 'p', fontSize: 8, lineHeight: 1.6, iconSize: 8 },
   lead: { tag: 'p', fontSize: 9, lineHeight: 1.6, iconSize: 9 },
+  secondary: { tag: 'p', fontSize: 7, lineHeight: 1.5, iconSize: 7 },
+  tertiary: { tag: 'p', fontSize: 7, lineHeight: 1.5, iconSize: 7 },
+  caption: { tag: 'p', fontSize: 6, lineHeight: 1.4, iconSize: 7 },
   h6: { tag: 'h6', fontSize: 10, lineHeight: 1.3, iconSize: 9 },
   h5: { tag: 'h5', fontSize: 12, lineHeight: 1.3, iconSize: 11 },
   h4: { tag: 'h4', fontSize: 15, lineHeight: 1.25, iconSize: 13 },
@@ -29,17 +29,17 @@ export const TextTag = ['p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a'] as
 export const DEFAULT_TEXT_TYPOGRAPHY: TextTypography = 'body'
 
 export const TextTypography = [
-  'h1',
-  'h2',
-  'h3',
-  'h4',
-  'h5',
-  'h6',
-  'lead',
   'body',
+  'lead',
   'secondary',
   'tertiary',
   'caption',
+  'h6',
+  'h5',
+  'h4',
+  'h3',
+  'h2',
+  'h1',
 ] as const
 
 export type TextTag = (typeof TextTag)[number]
@@ -49,6 +49,7 @@ type TextOwnProps = {
   typography?: TextTypography
   bold?: boolean
   italic?: boolean
+  underline?: boolean
   noWrap?: boolean
   truncate?: boolean
   clampLines?: number
