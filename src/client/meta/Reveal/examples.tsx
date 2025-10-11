@@ -1,16 +1,24 @@
 import { ComponentMeta } from 'client/definitions'
-import { Reveal, RevealProps } from 'lib/components'
+import { Box, Reveal, RevealProps } from 'lib/components'
 
 const REVEAL_EXAMPLES_META: ComponentMeta<RevealProps>['examples'] = [
   {
     description: 'Default reveal with a label and content provided.',
-    jsx: <Reveal label="Label">Content</Reveal>,
+    jsx: (
+      <Reveal label="Label">
+        <Box blockSize={40} padding={10}>
+          Content
+        </Box>
+      </Reveal>
+    ),
   },
   {
     description: 'Reveal with a centered label and secondary intent applied.',
     jsx: (
       <Reveal label="Label" intent="secondary" labelAlign="center">
-        Content
+        <Box blockSize={40} padding={10}>
+          Content
+        </Box>
       </Reveal>
     ),
   },
@@ -18,7 +26,9 @@ const REVEAL_EXAMPLES_META: ComponentMeta<RevealProps>['examples'] = [
     description: 'Disabled state of the Reveal.',
     jsx: (
       <Reveal label="Label" intent="secondary" labelAlign="center" disabled>
-        Content
+        <Box blockSize={40} padding={10}>
+          Content
+        </Box>
       </Reveal>
     ),
   },
