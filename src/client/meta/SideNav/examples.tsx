@@ -7,7 +7,7 @@ const SIDE_NAV_EXAMPLES_META: ComponentMeta<SideNavProps>['examples'] = [
     jsx: (
       <SideNav>
         <SideNav.Category label="Category">
-          <SideNav.Item>Item</SideNav.Item>
+          <SideNav.Item href="/path">Item</SideNav.Item>
         </SideNav.Category>
       </SideNav>
     ),
@@ -18,9 +18,9 @@ const SIDE_NAV_EXAMPLES_META: ComponentMeta<SideNavProps>['examples'] = [
     description: 'Flat navigation.',
     jsx: (
       <SideNav>
-        <SideNav.Item>Item 1</SideNav.Item>
-        <SideNav.Item>Item 2</SideNav.Item>
-        <SideNav.Item>Item 3</SideNav.Item>
+        <SideNav.Item href="/path">Item 1</SideNav.Item>
+        <SideNav.Item href="/path">Item 2</SideNav.Item>
+        <SideNav.Item href="/path">Item 3</SideNav.Item>
       </SideNav>
     ),
     sandBoxWithNoPadding: true,
@@ -29,17 +29,17 @@ const SIDE_NAV_EXAMPLES_META: ComponentMeta<SideNavProps>['examples'] = [
     description: 'Expandable navigation.',
     jsx: (
       <SideNav>
-        <SideNav.Item>Flat item 1</SideNav.Item>
-        <SideNav.Item>Flat item 2</SideNav.Item>
+        <SideNav.Item href="/path">Flat item 1</SideNav.Item>
+        <SideNav.Item href="/path">Flat item 2</SideNav.Item>
         <SideNav.Category label="Category 1">
-          <SideNav.Item>Item 1</SideNav.Item>
-          <SideNav.Item>Item 2</SideNav.Item>
-          <SideNav.Item>Item 3</SideNav.Item>
+          <SideNav.Item href="/path">Item 1</SideNav.Item>
+          <SideNav.Item href="/path">Item 2</SideNav.Item>
+          <SideNav.Item href="/path">Item 3</SideNav.Item>
         </SideNav.Category>
         <SideNav.Category label="Category 2">
-          <SideNav.Item>Item 1</SideNav.Item>
-          <SideNav.Item>Item 2</SideNav.Item>
-          <SideNav.Item>Item 3</SideNav.Item>
+          <SideNav.Item href="/path">Item 1</SideNav.Item>
+          <SideNav.Item href="/path">Item 2</SideNav.Item>
+          <SideNav.Item href="/path">Item 3</SideNav.Item>
         </SideNav.Category>
       </SideNav>
     ),
@@ -50,14 +50,14 @@ const SIDE_NAV_EXAMPLES_META: ComponentMeta<SideNavProps>['examples'] = [
     jsx: (
       <SideNav expandMode="single">
         <SideNav.Category label="Category 1">
-          <SideNav.Item>Item 1</SideNav.Item>
-          <SideNav.Item>Item 2</SideNav.Item>
-          <SideNav.Item>Item 3</SideNav.Item>
+          <SideNav.Item href="/path">Item 1</SideNav.Item>
+          <SideNav.Item href="/path">Item 2</SideNav.Item>
+          <SideNav.Item href="/path">Item 3</SideNav.Item>
         </SideNav.Category>
         <SideNav.Category label="Category 2">
-          <SideNav.Item>Item 1</SideNav.Item>
-          <SideNav.Item>Item 2</SideNav.Item>
-          <SideNav.Item>Item 3</SideNav.Item>
+          <SideNav.Item href="/path">Item 1</SideNav.Item>
+          <SideNav.Item href="/path">Item 2</SideNav.Item>
+          <SideNav.Item href="/path">Item 3</SideNav.Item>
         </SideNav.Category>
       </SideNav>
     ),

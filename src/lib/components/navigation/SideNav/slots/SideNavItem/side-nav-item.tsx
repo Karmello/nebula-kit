@@ -1,30 +1,35 @@
-import { Button } from 'lib/components'
+import { LinkButton } from 'lib/components'
 
 import { SideNavItemProps } from './definitions'
 
 export const SideNavItem = ({
+  // HtmlTag
   tagAttrs,
   tagRef,
   children,
+  // LinkButton
+  href,
+  onClick,
   variant,
   intent,
   labelIntent,
 }: SideNavItemProps) => {
   return (
-    <Button
-      tag="a"
+    <LinkButton
       tagAttrs={{
         ...tagAttrs,
         style: { ...tagAttrs?.style, inlineSize: '100%' },
       }}
       tagRef={tagRef}
+      onClick={onClick}
+      href={href}
       variant={variant}
       intent={intent}
       labelIntent={labelIntent}
       size="sm"
     >
       {children}
-    </Button>
+    </LinkButton>
   )
 }
 

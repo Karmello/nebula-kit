@@ -29,13 +29,19 @@ const LINK_BUTTON_PROPS_META: ComponentMeta<LinkButtonProps>['props'] = {
   iconName: BUTTON_PROPS_META.iconName,
   href: {
     options: ['string'],
+    isRequired: true,
+    description: 'Destination URL.',
   },
   target: {
     options: ['_self', '_blank', '_parent', '_top'],
     defaultValue: DEFAULT_LINK_BUTTON_TARGET,
+    description:
+      'Specifies where to open the linked document, following the standard HTML target attribute behavior.',
   },
   onClick: {
     options: ['(e) => void'],
+    description:
+      'Callback fired when the component is clicked. Automatically prevents default navigation when provided.',
   },
 }
 

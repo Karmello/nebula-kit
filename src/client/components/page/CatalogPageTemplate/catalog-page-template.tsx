@@ -50,15 +50,12 @@ export const CatalogPageTemplate = ({
                     return (
                       <SideNav.Item
                         key={itemKey}
-                        tagAttrs={{
-                          href,
-                          onClick: async e => {
-                            e.preventDefault()
-                            if (mode === 'overlay') {
-                              await setSideOpen(false)
-                            }
-                            navigateTo(href)
-                          },
+                        href={href}
+                        onClick={async () => {
+                          if (mode === 'overlay') {
+                            await setSideOpen(false)
+                          }
+                          navigateTo(href)
                         }}
                         labelIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
                         intent={{
@@ -91,15 +88,12 @@ export const CatalogPageTemplate = ({
                     return (
                       <SideNav.Item
                         key={sectionKey}
-                        tagAttrs={{
-                          href,
-                          onClick: async e => {
-                            e.preventDefault()
-                            if (mode === 'overlay') {
-                              await setSideOpen(false)
-                            }
-                            navigateTo(href)
-                          },
+                        href={href}
+                        onClick={async () => {
+                          if (mode === 'overlay') {
+                            await setSideOpen(false)
+                          }
+                          navigateTo(href)
                         }}
                         labelIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
                         intent={{
