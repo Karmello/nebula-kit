@@ -2,7 +2,7 @@ import { useSyncExternalStore } from 'react'
 
 import { Breakpoint } from 'lib/definitions'
 
-const BP = { sm: 480, md: 768, lg: 1024, xl: 1280 } as const
+export const BP = { sm: 480, md: 768, lg: 1024, xl: 1280 } as const
 
 const hasWindow = () => typeof window !== 'undefined' && 'matchMedia' in window
 const q = (px: number) => `(min-width: ${px}px)`

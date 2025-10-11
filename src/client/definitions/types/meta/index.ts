@@ -7,6 +7,10 @@ type Overview = {
   composedOf?: string[]
   rendersAs?: readonly string[]
   slots?: string[]
+  readMoreLink?: {
+    label: string
+    href: string
+  }
 }
 
 type Prop = {

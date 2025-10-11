@@ -11,6 +11,7 @@ const SPACER_PROPS_META: ComponentMeta<SpacerProps>['props'] = {
   blockSize: {
     ...BOX_PROPS_META.blockSize,
     defaultValue: String(DEFAULT_SPACER_BLOCK_SIZE),
+    description: 'Thickness.',
   },
 }
 

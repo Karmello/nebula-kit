@@ -11,6 +11,8 @@ const TABLE_HEADER_CELL_PROPS_META: ComponentMeta<TableHeaderCellProps>['props']
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
   intent: BOX_PROPS_META.intent,
+  inlineSize: BOX_PROPS_META.inlineSize,
+  textAlign: BOX_PROPS_META.textAlign,
   colSpan: {
     options: ['number'],
     description: 'Specifies how many columns the cell should span across within a table row.',

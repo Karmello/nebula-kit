@@ -17,6 +17,7 @@ export const IconButton = <T extends ButtonTag = 'button'>({
   // Button
   variant,
   intent,
+  labelIntent,
   size,
   disabled,
   iconName,
@@ -33,6 +34,7 @@ export const IconButton = <T extends ButtonTag = 'button'>({
       tagRef={tagRef}
       variant={variant}
       intent={intent}
+      labelIntent={labelIntent}
       size={size}
       disabled={disabled}
       iconName={iconName}

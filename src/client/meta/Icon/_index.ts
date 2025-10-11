@@ -9,6 +9,10 @@ const ICON_META: ComponentMeta<IconProps> = {
     title: 'SVG icon from the "Lucide React" set.',
     description: ['exposes a subset of icons provided by "Lucide React"'],
     rendersAs: ['Svg'],
+    readMoreLink: {
+      label: 'See all icons',
+      href: '/foundations/resources/assets/icons',
+    },
   },
   props: ICON_PROPS_META,
   examples: ICON_EXAMPLES_META,

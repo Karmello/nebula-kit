@@ -7,10 +7,15 @@ import { TableHeaderCellProps } from './definitions'
 import { useTableContext } from '../../TableContext'
 
 export const TableHeaderCell = ({
+  // HtmlTag
   children,
   tagAttrs,
   tagRef,
+  // Box
+  inlineSize,
+  textAlign,
   intent,
+  // own
   colSpan,
   rowSpan,
 }: TableHeaderCellProps) => {
@@ -28,6 +33,8 @@ export const TableHeaderCell = ({
       tagRef={tagRef}
       variant="solid"
       intent={intent || rootIntent}
+      inlineSize={inlineSize}
+      textAlign={textAlign}
       paddingInline={10}
       paddingBlock={5}
       borderRadius={0}

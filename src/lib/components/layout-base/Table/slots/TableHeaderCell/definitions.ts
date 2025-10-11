@@ -9,6 +9,6 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'th'>, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<'th'>['children']
 }
 
-type PropsFromBox = Pick<BoxProps<'th'>, 'intent'>
+type PropsFromBox = Pick<BoxProps<'th'>, 'inlineSize' | 'textAlign' | 'intent'>
 
 export type TableHeaderCellProps = PropsFromHtmlTag & PropsFromBox & TableHeaderCellOwnProps

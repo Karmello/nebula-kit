@@ -3,7 +3,6 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
-import { applyStaticDataset } from 'lib/service'
 
 import { TableContext } from './TableContext'
 import { DEFAULT_TABLE_LAYOUT, DEFAULT_TABLE_INTENT, TableProps } from './definitions'
@@ -15,10 +14,10 @@ export const Table = ({
   tagRef,
   children,
   // Box
+  inlineSize,
   intent = DEFAULT_TABLE_INTENT,
   // own
   layout = DEFAULT_TABLE_LAYOUT,
-  zebra = false,
 }: TableProps) => {
   return (
     <WithSlots<'Table.Header' | 'Table.Body' | 'Table.Footer' | 'Table.Caption'>
@@ -34,7 +33,7 @@ export const Table = ({
       {({ slots }) => {
         return (
           <TableContext value={{ intent, layout }}>
-            <Box tagAttrs={{ className: withPrefix('table-container') }}>
+            <Box tagAttrs={{ className: withPrefix('table-container') }} inlineSize={inlineSize}>
               <Box
                 tag="table"
                 tagAttrs={{
@@ -44,7 +43,6 @@ export const Table = ({
                     tableLayout: layout,
                     ...(tagAttrs?.style || {}),
                   },
-                  ...applyStaticDataset('table', { zebra }),
                 }}
                 tagRef={tagRef}
                 variant="solid"

@@ -10,7 +10,7 @@ const DIVIDER_PROPS_META: ComponentMeta<DividerProps>['props'] = {
   intent: BOX_PROPS_META.intent,
   blockSize: {
     description: 'Controls the stroke weight of the divider.',
-    options: ['CSS', 'ScaleValue'],
+    options: ['ScaleValue', 'CSS'],
     defaultValue: String(DEFAULT_DIVIDER_BLOCK_SIZE),
   },
 }

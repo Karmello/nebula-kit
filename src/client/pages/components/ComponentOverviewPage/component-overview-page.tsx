@@ -3,9 +3,9 @@ import { pascalCase } from 'change-case'
 import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'client/definitions'
 import { CodeSnippet } from 'client/components'
-import { elemToStringService } from 'client/services'
+import { elemToStringService, useNavigateTo } from 'client/services'
 import meta from 'client/meta'
-import { Text, Flex, Box, Spacer, Section } from 'lib/components'
+import { Text, Flex, Box, Spacer, Section, LinkButton } from 'lib/components'
 
 import { ListWithHeading } from './ListWithHeading'
 import { ListWithChips } from './ListWithChips'
@@ -13,8 +13,10 @@ import { ListWithChips } from './ListWithChips'
 const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const elemToString = elemToStringService()
 
+  const navigateTo = useNavigateTo()
+
   const {
-    overview: { name, title, description, composedOf, rendersAs, slots },
+    overview: { name, title, description, composedOf, rendersAs, slots, readMoreLink },
     examples,
     props,
   } = meta
@@ -32,6 +34,20 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
         <ListWithChips heading="Props:" items={Object.keys(props).sort((a, b) => a.localeCompare(b))} />
       ) : null}
       {slots ? <ListWithChips heading="Slots:" items={slots} intent="inverse" /> : null}
+      {readMoreLink ? (
+        <Box>
+          <LinkButton
+            href={readMoreLink.href}
+            iconName="arrow-right"
+            onClick={() => {
+              navigateTo(readMoreLink.href)
+            }}
+            variant="ghost"
+          >
+            {readMoreLink.label}
+          </LinkButton>
+        </Box>
+      ) : null}
     </Flex>
   )
 

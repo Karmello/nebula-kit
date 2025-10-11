@@ -33,6 +33,7 @@ export const COMPONENT_CATEGORIES = [
         label: 'IconButton',
         sections: COMPONENT_SECTIONS,
       },
+      { key: 'link-button', label: 'LinkButton', sections: COMPONENT_SECTIONS },
       { key: 'button-group', label: 'ButtonGroup', sections: COMPONENT_SECTIONS },
     ],
   },

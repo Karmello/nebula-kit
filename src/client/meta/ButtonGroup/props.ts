@@ -9,6 +9,7 @@ const BUTTON_GROUP_PROPS_META: ComponentMeta<ButtonGroupProps>['props'] = {
   ...HTML_TAG_PROPS_META,
   children: {
     ...HTML_TAG_PROPS_META.children,
+    options: ['Button'],
     isRequired: true,
     description: 'One or more Button components.',
   },

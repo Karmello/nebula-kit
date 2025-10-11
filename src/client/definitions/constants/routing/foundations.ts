@@ -27,11 +27,22 @@ export const FOUNDATION_CATEGORIES = [
         label: 'Styling system',
         sections: [
           { key: 'color-palettes', label: 'Color palettes' },
-          { key: 'sizing-scale', label: 'Sizing scale' },
-          { key: 'typography', label: 'Typography' },
           { key: 'intents_and_variants', label: 'Intents + variants' },
-          { key: 'icons', label: 'Icons' },
+          { key: 'typography', label: 'Typography' },
+          { key: 'sizing-scale', label: 'Sizing scale' },
+          { key: 'responsiveness', label: 'Responsiveness' },
         ],
+      },
+    ],
+  },
+  {
+    key: 'resources',
+    label: 'Resources',
+    items: [
+      {
+        key: 'assets',
+        label: 'Assets',
+        sections: [{ key: 'icons', label: 'Icons' }],
       },
     ],
   },

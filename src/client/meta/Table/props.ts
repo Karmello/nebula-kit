@@ -14,6 +14,7 @@ const TABLE_PROPS_META: ComponentMeta<TableProps>['props'] = {
     isRequired: true,
     description: 'Table.Body is required, the rest optional.',
   },
+  inlineSize: BOX_PROPS_META.inlineSize,
   intent: {
     ...BOX_PROPS_META.intent,
     description: "Semantic color intent applied to the table's background surface.",
@@ -23,11 +24,6 @@ const TABLE_PROPS_META: ComponentMeta<TableProps>['props'] = {
     defaultValue: DEFAULT_TABLE_LAYOUT,
     description:
       'Defines the layout algorithm: "auto" sizes columns by content, "fixed" by table width and column widths.',
-  },
-  zebra: {
-    options: ['boolean'],
-    defaultValue: 'false',
-    description: 'Applies alternating background colors to rows for easier readability.',
   },
 }
 

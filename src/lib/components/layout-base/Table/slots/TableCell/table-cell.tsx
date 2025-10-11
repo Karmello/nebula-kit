@@ -12,6 +12,8 @@ export const TableCell = ({
   tagAttrs,
   tagRef,
   // Box
+  inlineSize,
+  textAlign,
   intent = 'neutral',
   // own
   colSpan,
@@ -31,6 +33,8 @@ export const TableCell = ({
       tagRef={tagRef}
       variant="solid"
       intent={intent || rootIntent}
+      inlineSize={inlineSize}
+      textAlign={textAlign}
       paddingInline={10}
       paddingBlock={5}
       borderRadius={0}

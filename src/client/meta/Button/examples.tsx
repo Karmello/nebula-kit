@@ -44,14 +44,6 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     ),
   },
   {
-    description: 'Button rendered as a link.',
-    jsx: (
-      <Button tag="a" tagAttrs={{ href: 'https://google.com', target: '_blank' }} intent="primary">
-        Link button
-      </Button>
-    ),
-  },
-  {
     description: 'Button with text and icon.',
     jsx: <Button iconName="search">Button with icon</Button>,
   },

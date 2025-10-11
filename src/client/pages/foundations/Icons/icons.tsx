@@ -1,4 +1,4 @@
-import { Box, Flex, Icon, Spacer, Text } from 'lib/components'
+import { Box, Icon, Spacer, Table, Text } from 'lib/components'
 import { IconName } from 'lib/definitions'
 import { ICONS } from 'lib/icons/lucide'
 
@@ -10,11 +10,26 @@ export default () => {
         use across components and interfaces.
       </Text>
       <Spacer blockSize={30} />
-      <Flex flexWrap="wrap" gap={12}>
-        {Object.keys(ICONS).map(iconName => (
-          <Icon key={iconName} name={iconName as IconName} size={30} intent="success" />
-        ))}
-      </Flex>
+      <Table inlineSize={{ base: '100%', lg: '500px' }}>
+        <Table.Header>
+          <Table.HeaderRow>
+            <Table.HeaderCell>Name</Table.HeaderCell>
+            <Table.HeaderCell textAlign="center">Icon</Table.HeaderCell>
+          </Table.HeaderRow>
+        </Table.Header>
+        <Table.Body>
+          {Object.keys(ICONS).map(iconName => (
+            <Table.Row key={iconName}>
+              <Table.Cell inlineSize="70%">
+                <Text intent="primary">{iconName}</Text>
+              </Table.Cell>
+              <Table.Cell inlineSize="30%" textAlign="center">
+                <Icon name={iconName as IconName} size={15} intent="success" />
+              </Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </Table>
     </Box>
   )
 }

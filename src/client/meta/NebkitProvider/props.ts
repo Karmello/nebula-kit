@@ -21,7 +21,7 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps<Theme>>['pro
     options: [],
   },
   borderRadius: {
-    options: ['CSS', 'ScaleValue'],
+    options: ['ScaleValue', 'CSS'],
     defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS),
     isRequired: false,
     isResponsive: false,

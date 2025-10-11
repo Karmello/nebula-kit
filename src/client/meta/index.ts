@@ -14,6 +14,7 @@ import htmlTagMeta from './HtmlTag/_index'
 import hydrationGateMeta from './HydrationGate/_index'
 import iconMeta from './Icon/_index'
 import iconButtonMeta from './IconButton/_index'
+import linkButtonMeta from './LinkButton/_index'
 import markerListMeta from './MarkerList/_index'
 import nebkitProviderMeta from './NebkitProvider/_index'
 import revealMeta from './Reveal/_index'
@@ -41,6 +42,7 @@ export default {
   HydrationGate: hydrationGateMeta,
   Icon: iconMeta,
   IconButton: iconButtonMeta,
+  LinkButton: linkButtonMeta,
   MarkerList: markerListMeta,
   NebkitProvider: nebkitProviderMeta,
   Reveal: revealMeta,
