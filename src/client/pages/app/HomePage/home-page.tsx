@@ -23,9 +23,9 @@ export const HomePage = () => {
             intent="primary"
             iconName="arrow-right"
             size="sm"
-            href="/foundations/overview/philosophy/one-foundation"
+            href="/foundations/overview/introduction/why-nebula"
             onClick={() => {
-              navigateTo('/foundations/overview/philosophy/one-foundation')
+              navigateTo('/foundations/overview/introduction/why-nebula')
             }}
           >
             Explore

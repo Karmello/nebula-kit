@@ -4,6 +4,20 @@ export const FOUNDATION_CATEGORIES = [
     label: 'Overview',
     items: [
       {
+        key: 'introduction',
+        label: 'Introduction',
+        sections: [
+          {
+            key: 'why-nebula',
+            label: 'Why Nebula',
+          },
+          {
+            key: 'how-nebulakit-behaves',
+            label: 'How NebulaKit behaves',
+          },
+        ],
+      },
+      {
         key: 'philosophy',
         label: 'Philosophy',
         sections: [
