@@ -1,6 +1,6 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
 import { BoxIntent } from 'lib/components/base/Box/definitions'
-import { TextTypography } from 'lib/components/base/Text/definitions'
+import { TextProps, TextTypography } from 'lib/components/base/Text/definitions'
 import { ScaleValue } from 'lib/definitions'
 
 export const SectionTag = ['section', 'article', 'aside', 'div'] as const
@@ -38,6 +38,9 @@ type PropsFromHtmlTag<T extends SectionTag = 'section'> = Omit<HtmlTagProps<T>, 
 
 type PropsFromBox<T extends SectionTag = 'section'> = Pick<BoxProps<T>, 'intent'>
 
+type PropsFromText = Pick<TextProps, 'iconName' | 'iconPosition'>
+
 export type SectionProps<T extends SectionTag = 'section'> = PropsFromHtmlTag<T> &
   PropsFromBox<T> &
+  PropsFromText &
   SectionOwnProps

@@ -21,6 +21,9 @@ export const Section = <T extends SectionTag = 'section'>({
   // Box
   variant = DEFAULT_SECTION_VARIANT,
   intent = DEFAULT_SECTION_INTENT,
+  // text
+  iconName,
+  iconPosition,
   // own
   heading,
   size = DEFAULT_SECTION_SIZE,
@@ -43,7 +46,9 @@ export const Section = <T extends SectionTag = 'section'>({
       overflowX="auto"
       overflowY="hidden"
     >
-      <Text typography={SECTION_SIZE_CONFIG[size].typography}>{heading}</Text>
+      <Text typography={SECTION_SIZE_CONFIG[size].typography} iconName={iconName} iconPosition={iconPosition}>
+        {heading}
+      </Text>
       <Divider />
       {children ? (
         <>

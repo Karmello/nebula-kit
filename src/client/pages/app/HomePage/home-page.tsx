@@ -33,24 +33,24 @@ export const HomePage = () => {
         </Flex.Item>
         <Flex.Item flex={1}>
           <Flex flexDirection="column" gap={15}>
-            <Section heading="One foundation" intent="primary">
+            <Section heading="One foundation" intent="primary" iconName="box">
               <Text intent="neutral">
                 Every component shares the same core primitives. Consistency isn't enforced - it's designed
                 in.
               </Text>
             </Section>
-            <Section heading="Systemic growth" intent="primary">
+            <Section heading="Systemic growth" intent="primary" iconName="tree-pine">
               <Text intent="neutral">
                 Higher-order components extend existing logic instead of reinventing it. As the system
                 expands, elements remain clear and composed.
               </Text>
             </Section>
-            <Section heading="Predictable behavior" intent="primary">
+            <Section heading="Predictable behavior" intent="primary" iconName="orbit">
               <Text intent="neutral">
                 Shared patterns mean fewer surprises - changes flow cleanly through the system.
               </Text>
             </Section>
-            <Section heading="Visual coherence" intent="primary">
+            <Section heading="Visual coherence" intent="primary" iconName="blend">
               <Text intent="neutral">
                 Common building blocks keep layout and rhythm consistent across the system.
               </Text>

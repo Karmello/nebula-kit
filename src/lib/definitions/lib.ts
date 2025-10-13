@@ -15,6 +15,8 @@ export const SCALE = [
 export const ICON_NAMES = [
   'arrow-left',
   'arrow-right',
+  'blend',
+  'box',
   'check',
   'check-circle',
   'chevron-down',
@@ -30,9 +32,11 @@ export const ICON_NAMES = [
   'list-chevrons-down-up',
   'list-chevrons-up-down',
   'menu',
+  'orbit',
   'panel-left-open',
   'panel-right-open',
   'search',
+  'tree-pine',
   'triangle-alert',
 ] as const
 

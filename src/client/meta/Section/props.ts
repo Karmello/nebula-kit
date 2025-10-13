@@ -11,6 +11,7 @@ import {
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
+import { TEXT_PROPS_META } from '../Text/props'
 
 const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
   ...HTML_TAG_PROPS_META,
@@ -30,6 +31,11 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
   intent: {
     ...BOX_PROPS_META.intent,
     defaultValue: DEFAULT_SECTION_INTENT,
+  },
+  iconName: TEXT_PROPS_META.iconName,
+  iconPosition: {
+    ...TEXT_PROPS_META.iconPosition,
+    description: 'Icon position relative to heading.',
   },
   heading: {
     options: ['string'],
