@@ -26,6 +26,7 @@ export const TEXT_TYPOGRAPHY_CONFIG: Record<
 }
 
 export const TextTag = ['p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a'] as const
+export const TextSpace = ['start', 'end', 'both'] as const
 export const DEFAULT_TEXT_TYPOGRAPHY: TextTypography = 'body'
 
 export const TextTypography = [
@@ -43,6 +44,7 @@ export const TextTypography = [
 ] as const
 
 export type TextTag = (typeof TextTag)[number]
+export type TextSpace = (typeof TextSpace)[number]
 export type TextTypography = (typeof TextTypography)[number]
 
 type TextOwnProps = {
@@ -53,6 +55,7 @@ type TextOwnProps = {
   noWrap?: boolean
   truncate?: boolean
   clampLines?: number
+  space?: TextSpace
 }
 
 export type TextProps<T extends TextTag = 'p'> = Omit<HtmlTagProps<T>, 'children'> & {

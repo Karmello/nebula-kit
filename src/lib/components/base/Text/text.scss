@@ -1,11 +1,23 @@
 .neb-text {
   font-family: inherit;
-  display: inline-flex;
-  align-items: center;
-  margin: 0;
-
   font-size: inherit;
+  margin: 0;
   line-height: normal;
+}
+
+p.neb-text,
+h1.neb-text,
+h2.neb-text,
+h3.neb-text,
+h4.neb-text,
+h5.neb-text,
+h6.neb-text {
+  display: block;
+}
+
+span.neb-text,
+a.neb-text {
+  display: inline;
 }
 
 .neb-text[data-neb-text-typography='h1'],

@@ -1,5 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
-import { DEFAULT_TEXT_TYPOGRAPHY, TextProps, TextTypography } from 'lib/components/base/Text/definitions'
+import {
+  DEFAULT_TEXT_TYPOGRAPHY,
+  TextProps,
+  TextSpace,
+  TextTypography,
+} from 'lib/components/base/Text/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
@@ -54,6 +59,11 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     isRequired: false,
     isResponsive: false,
     description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
+  },
+  space: {
+    options: TextSpace as unknown as string[],
+    description:
+      'Controls the insertion of non-breaking spaces before and/or after the text content. Useful when composing multiple inline Text elements.',
   },
   intent: BOX_PROPS_META['intent'],
   textAlign: BOX_PROPS_META['textAlign'],

@@ -4,7 +4,6 @@ import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BUTTON_PROPS_META } from '../Button/props'
 import {
   DEFAULT_LINK_BUTTON_INTENT,
-  DEFAULT_LINK_BUTTON_LABEL_INTENT,
   DEFAULT_LINK_BUTTON_TARGET,
   DEFAULT_LINK_BUTTON_VARIANT,
 } from 'lib/components/controls/LinkButton/definitions'
@@ -21,10 +20,7 @@ const LINK_BUTTON_PROPS_META: ComponentMeta<LinkButtonProps>['props'] = {
     ...BUTTON_PROPS_META.intent,
     defaultValue: String(DEFAULT_LINK_BUTTON_INTENT),
   },
-  labelIntent: {
-    ...BUTTON_PROPS_META.labelIntent,
-    defaultValue: String(DEFAULT_LINK_BUTTON_LABEL_INTENT),
-  },
+  labelIntent: BUTTON_PROPS_META.labelIntent,
   size: BUTTON_PROPS_META.size,
   iconName: BUTTON_PROPS_META.iconName,
   href: {

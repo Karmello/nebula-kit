@@ -5,7 +5,6 @@ import { Button, IconButton } from 'lib/components'
 import {
   DEFAULT_LINK_BUTTON_ICONNAME,
   DEFAULT_LINK_BUTTON_INTENT,
-  DEFAULT_LINK_BUTTON_LABEL_INTENT,
   DEFAULT_LINK_BUTTON_TARGET,
   DEFAULT_LINK_BUTTON_VARIANT,
   LinkButtonProps,
@@ -19,7 +18,7 @@ export const LinkButton = ({
   // Button
   variant = DEFAULT_LINK_BUTTON_VARIANT,
   intent = DEFAULT_LINK_BUTTON_INTENT,
-  labelIntent = DEFAULT_LINK_BUTTON_LABEL_INTENT,
+  labelIntent,
   size,
   iconName,
   // own

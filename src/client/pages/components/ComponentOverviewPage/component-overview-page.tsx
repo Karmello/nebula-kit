@@ -38,6 +38,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
         <Box>
           <LinkButton
             href={readMoreLink.href}
+            intent="primary"
             iconName="arrow-right"
             onClick={() => {
               navigateTo(readMoreLink.href)

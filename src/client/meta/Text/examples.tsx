@@ -96,6 +96,22 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
     ),
     description: 'Text without wrapping.',
   },
+  {
+    jsx: (
+      <Text intent="neutral">
+        This paragraph combines different text styles like
+        <Text tag="span" bold space="both">
+          bold emphasis
+        </Text>
+        and
+        <Text tag="span" italic space="both">
+          italic highlights
+        </Text>
+        within the same line to demonstrate how inline formatting behaves in longer text blocks.
+      </Text>
+    ),
+    description: 'Inline formatting.',
+  },
 ]
 
 export { TEXT_EXAMPLES_META }

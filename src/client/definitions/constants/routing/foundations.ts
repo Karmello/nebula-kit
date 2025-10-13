@@ -4,17 +4,14 @@ export const FOUNDATION_CATEGORIES = [
     label: 'Overview',
     items: [
       {
-        key: 'introduction',
-        label: 'Introduction',
+        key: 'philosophy',
+        label: 'Philosophy',
         sections: [
-          { key: 'about-nebula', label: 'About NebulaKit' },
-          { key: 'philosophy', label: 'Philosophy' },
+          { key: 'one-foundation', label: 'One foundation' },
+          { key: 'systemic-growth', label: 'Systemic growth' },
+          { key: 'predictable-behavior', label: 'Predictable behavior' },
+          { key: 'visual-coherence', label: 'Visual coherence' },
         ],
-      },
-      {
-        key: 'getting-started',
-        label: 'Getting started',
-        sections: [{ key: 'installation', label: 'Installation' }],
       },
     ],
   },

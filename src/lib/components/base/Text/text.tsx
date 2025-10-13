@@ -10,6 +10,17 @@ import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_TYPOGRAPHY_CONFIG, TextTag, TextProps } f
 import './text.scss'
 
 export const Text = <T extends TextTag = 'p'>({
+  // HtmlTag
+  children,
+  tag,
+  tagAttrs,
+  tagRef,
+  // Box
+  intent,
+  textAlign,
+  // WithIcon
+  iconName,
+  iconPosition,
   // own
   typography = DEFAULT_TEXT_TYPOGRAPHY,
   bold = false,
@@ -18,16 +29,7 @@ export const Text = <T extends TextTag = 'p'>({
   noWrap = false,
   truncate = false,
   clampLines,
-  // Box
-  children,
-  tag,
-  tagAttrs,
-  tagRef,
-  intent,
-  textAlign,
-  // WithIcon
-  iconName,
-  iconPosition,
+  space,
 }: TextProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
 
@@ -65,6 +67,7 @@ export const Text = <T extends TextTag = 'p'>({
       intent={intent}
       textAlign={textAlign}
     >
+      {space === 'start' || space === 'both' ? <> </> : null}
       {iconName ? (
         <WithIcon name={iconName} position={iconPosition} size={TEXT_TYPOGRAPHY_CONFIG[typography].iconSize}>
           {children}
@@ -72,6 +75,7 @@ export const Text = <T extends TextTag = 'p'>({
       ) : (
         children
       )}
+      {space === 'end' || space === 'both' ? <> </> : null}
     </Box>
   )
 }

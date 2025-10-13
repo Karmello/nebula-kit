@@ -7,7 +7,6 @@ import { ButtonProps } from '../Button'
 export const DEFAULT_LINK_BUTTON_TARGET: LinkButtonProps['target'] = '_self'
 export const DEFAULT_LINK_BUTTON_ICONNAME: LinkButtonProps['iconName'] = 'arrow-right'
 export const DEFAULT_LINK_BUTTON_INTENT: LinkButtonProps['intent'] = 'tertiary'
-export const DEFAULT_LINK_BUTTON_LABEL_INTENT: LinkButtonProps['labelIntent'] = 'primary'
 export const DEFAULT_LINK_BUTTON_VARIANT: LinkButtonProps['variant'] = 'solid'
 
 type LinkButtonOwnProps = {
