@@ -28,16 +28,16 @@ export default () => {
           </Table.Caption>
           <Table.Header>
             <Table.HeaderRow>
-              <Table.HeaderCell inlineSize="25%">
+              <Table.HeaderCell minInlineSize="25%">
                 Tag: {TEXT_TYPOGRAPHY_CONFIG[typography].tag}
               </Table.HeaderCell>
-              <Table.HeaderCell inlineSize="25%">
+              <Table.HeaderCell minInlineSize="25%">
                 Font size: {TEXT_TYPOGRAPHY_CONFIG[typography].fontSize}
               </Table.HeaderCell>
-              <Table.HeaderCell inlineSize="25%">
+              <Table.HeaderCell minInlineSize="25%">
                 Line height: {TEXT_TYPOGRAPHY_CONFIG[typography].lineHeight}
               </Table.HeaderCell>
-              <Table.HeaderCell inlineSize="25%">
+              <Table.HeaderCell minInlineSize="25%">
                 Icon size: {TEXT_TYPOGRAPHY_CONFIG[typography].iconSize}
               </Table.HeaderCell>
             </Table.HeaderRow>

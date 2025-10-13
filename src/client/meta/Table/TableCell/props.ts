@@ -11,7 +11,8 @@ const TABLE_CELL_PROPS_META: ComponentMeta<TableCellProps>['props'] = {
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
   intent: BOX_PROPS_META.intent,
-  inlineSize: BOX_PROPS_META.inlineSize,
+  minInlineSize: BOX_PROPS_META.minInlineSize,
+  maxInlineSize: BOX_PROPS_META.maxInlineSize,
   textAlign: BOX_PROPS_META.textAlign,
   colSpan: {
     options: ['number'],

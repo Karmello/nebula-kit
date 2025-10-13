@@ -12,13 +12,11 @@ export const PropsTable = ({ category, data }: Props) => {
       <Table.Header>
         <Table.HeaderRow>
           <Table.HeaderCell>Name</Table.HeaderCell>
-          <Table.HeaderCell tagAttrs={{ style: { minWidth: '15ch' } }}>Value</Table.HeaderCell>
-          <Table.HeaderCell tagAttrs={{ style: { textAlign: 'center' } }}>Default</Table.HeaderCell>
-          <Table.HeaderCell tagAttrs={{ style: { width: '8ch' } }}>Required</Table.HeaderCell>
-          <Table.HeaderCell tagAttrs={{ style: { width: '10ch' } }}>Responsive</Table.HeaderCell>
-          <Table.HeaderCell tagAttrs={{ style: { width: '40%', minWidth: '40ch' } }}>
-            Description
-          </Table.HeaderCell>
+          <Table.HeaderCell>Value</Table.HeaderCell>
+          <Table.HeaderCell textAlign="center">Default</Table.HeaderCell>
+          <Table.HeaderCell textAlign="center">Required</Table.HeaderCell>
+          <Table.HeaderCell textAlign="center">Responsive</Table.HeaderCell>
+          <Table.HeaderCell minInlineSize="30ch">Description</Table.HeaderCell>
         </Table.HeaderRow>
       </Table.Header>
       <Table.Body>

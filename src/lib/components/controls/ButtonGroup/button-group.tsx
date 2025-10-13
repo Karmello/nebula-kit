@@ -71,13 +71,17 @@ export const ButtonGroup = <T extends ButtonGroupTag = 'div'>({
       gap={attached ? 0 : gap}
       flexWrap="nowrap"
     >
-      <WithSlots<'Button'>
+      <WithSlots<'Button' | 'LinkButton'>
         childrenToVerify={children}
         componentName="ButtonGroup"
-        slotsConfig={[{ name: 'Button', required: true, allowMultiple: true }]}
+        slotsConfig={[
+          { name: 'Button', allowMultiple: true },
+          { name: 'LinkButton', allowMultiple: true },
+        ]}
+        someRequired
       >
-        {({ slots }) => {
-          return Children.map(slots.Button as any, (child, index) => {
+        {({ validNodes }) => {
+          return Children.map(validNodes as any, (child, index) => {
             return (
               <Flex.Item key={index}>
                 {cloneElement<ButtonProps>(child, {

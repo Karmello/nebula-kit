@@ -20,10 +20,10 @@ export default () => {
         <Table.Body>
           {Object.keys(ICONS).map(iconName => (
             <Table.Row key={iconName}>
-              <Table.Cell inlineSize="70%">
+              <Table.Cell minInlineSize="70%">
                 <Text intent="primary">{iconName}</Text>
               </Table.Cell>
-              <Table.Cell inlineSize="30%" textAlign="center">
+              <Table.Cell minInlineSize="30%" textAlign="center">
                 <Icon name={iconName as IconName} size={15} intent="success" />
               </Table.Cell>
             </Table.Row>

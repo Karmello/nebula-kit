@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 
-import { AppFrame, Box, Toolbar } from 'lib/components'
+import { AppFrame, LinkButton, Toolbar } from 'lib/components'
+import { PageKey } from 'client/definitions'
+import { useNavigateTo } from 'client/services'
 
 import { RootPage } from '../RootPage'
 import { PageNavigation } from './PageNavigation'
@@ -9,18 +11,28 @@ import { PageNavigation } from './PageNavigation'
 export const App = () => {
   const { pathname } = useLocation()
 
+  const navigateTo = useNavigateTo()
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [pathname])
+
+  const currentPageKey = pathname.split('/')[1]
 
   return (
     <AppFrame stickyHeader>
       <AppFrame.Header intent="tertiary">
         <Toolbar switchAt="md">
           <Toolbar.Start>
-            <Box marginInline={10} intent="primary">
+            <LinkButton
+              href={`/${PageKey.home}`}
+              onClick={async () => {
+                navigateTo(`/${PageKey.home}`)
+              }}
+              intent={currentPageKey === PageKey.home ? 'secondary' : 'tertiary'}
+            >
               NebulaKit
-            </Box>
+            </LinkButton>
           </Toolbar.Start>
           <Toolbar.Main>
             {({ setMainOpen, mainOpen }) => <PageNavigation setMainOpen={setMainOpen} mainOpen={mainOpen} />}

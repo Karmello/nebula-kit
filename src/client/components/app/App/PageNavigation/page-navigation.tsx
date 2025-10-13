@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router'
 
-import { Button, ButtonGroup } from 'lib/components'
+import { ButtonGroup, LinkButton } from 'lib/components'
 import { useNavigateTo } from 'client/services'
 import { PageKey } from 'client/definitions'
 import { useComponentsPageStore, useFoundationsPageStore } from 'client/store'
@@ -22,52 +22,30 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
 
   return (
     <ButtonGroup direction={{ base: 'column', md: 'row' }} attached stretch={{ base: true, md: false }}>
-      <Button
-        tag="a"
-        tagAttrs={{
-          href: `/${PageKey.home}`,
-          onClick: async e => {
-            e.preventDefault()
-            if (mainOpen) await setMainOpen(false)
-            navigateTo(`/${PageKey.home}`)
-          },
-        }}
-        intent={currentPageKey === PageKey.home ? 'secondary' : 'tertiary'}
-      >
-        Home
-      </Button>
-      <Button
-        tag="a"
-        tagAttrs={{
-          href: `/${PageKey.foundations}`,
-          onClick: async e => {
-            e.preventDefault()
-            if (mainOpen) await setMainOpen(false)
-            navigateTo(
-              `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${foundationsPageStore.sectionKey}`
-            )
-          },
+      <LinkButton
+        href={`/${PageKey.foundations}`}
+        onClick={async () => {
+          if (mainOpen) await setMainOpen(false)
+          navigateTo(
+            `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${foundationsPageStore.sectionKey}`
+          )
         }}
         intent={currentPageKey === PageKey.foundations ? 'secondary' : 'tertiary'}
       >
         Foundations
-      </Button>
-      <Button
-        tag="a"
-        tagAttrs={{
-          href: `/${PageKey.components}`,
-          onClick: async e => {
-            e.preventDefault()
-            if (mainOpen) await setMainOpen(false)
-            navigateTo(
-              `/${PageKey.components}/${componentsPageStore.categoryKey}/${componentsPageStore.itemKey}/${componentsPageStore.sectionKey}`
-            )
-          },
+      </LinkButton>
+      <LinkButton
+        href={`/${PageKey.components}`}
+        onClick={async () => {
+          if (mainOpen) await setMainOpen(false)
+          navigateTo(
+            `/${PageKey.components}/${componentsPageStore.categoryKey}/${componentsPageStore.itemKey}/${componentsPageStore.sectionKey}`
+          )
         }}
         intent={currentPageKey === PageKey.components ? 'secondary' : 'tertiary'}
       >
         Components
-      </Button>
+      </LinkButton>
     </ButtonGroup>
   )
 }

@@ -64,7 +64,7 @@ export default () => {
             <Text>Vitest handles runtime testing for logic and rendering</Text>
           </MarkerList.Item>
           <MarkerList.Item>
-            Playwright verifies computed DOM values and accessibility in real browsers
+            <Text>Playwright verifies computed DOM values and accessibility in real browsers</Text>
           </MarkerList.Item>
         </MarkerList>
         <Spacer blockSize={5} />

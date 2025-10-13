@@ -24,3 +24,5 @@ export const Breadcrumb = ({ items }: BreadcrumbProps) => {
     </Flex>
   )
 }
+
+Breadcrumb.displayName = 'Breadcrumb'

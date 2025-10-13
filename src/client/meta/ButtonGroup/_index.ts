@@ -15,7 +15,7 @@ const BUTTON_GROUP_META: ComponentMeta<ButtonGroupProps> = {
 
     composedOf: ['Flex', 'Flex.Item'],
     rendersAs: ButtonGroupTag,
-    slots: ['Button'],
+    slots: ['Button', 'LinkButton'],
   },
   props: BUTTON_GROUP_PROPS_META,
   examples: BUTTON_GROUP_EXAMPLES_META,
