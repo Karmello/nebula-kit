@@ -35,6 +35,13 @@ export default () => {
         because the library does more, but because it behaves the same everywhere. Every element, no matter
         how small, fits into the same architecture - order from chaos, by design.
       </Text>
+      <Spacer blockSize={7} />
+      <Text>
+        And just like real nebula, this one was born from what came before. Older frameworks burned bright,
+        then scattered their patterns and lessons into the air. From that dust, NebulaKit formed - smaller,
+        steadier, and shaped by everything those systems left behind. Not a reinvention, but a refinement born
+        from their collapse.
+      </Text>
     </Box>
   )
 }
