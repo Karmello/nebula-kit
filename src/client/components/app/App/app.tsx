@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 
-import { AppFrame, Toolbar } from 'lib/components'
+import { AppFrame, Box, Toolbar } from 'lib/components'
 
 import { RootPage } from '../RootPage'
 import { PageNavigation } from './PageNavigation'
@@ -17,6 +17,11 @@ export const App = () => {
     <AppFrame stickyHeader>
       <AppFrame.Header intent="tertiary">
         <Toolbar switchAt="md">
+          <Toolbar.Start>
+            <Box marginInline={10} intent="primary">
+              NebulaKit
+            </Box>
+          </Toolbar.Start>
           <Toolbar.Main>
             {({ setMainOpen, mainOpen }) => <PageNavigation setMainOpen={setMainOpen} mainOpen={mainOpen} />}
           </Toolbar.Main>

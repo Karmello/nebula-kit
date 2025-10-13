@@ -42,6 +42,7 @@ export const CatalogPageTemplate = ({
                   label={label}
                   variant="ghost"
                   intent={isCategorySelected ? 'primary' : 'neutral'}
+                  initiallyExpanded={isCategorySelected}
                 >
                   {items.map(({ key: itemKey, label, sections }) => {
                     const sectionIndex = sections.findIndex(s => s.key === activeSectionObj?.key)

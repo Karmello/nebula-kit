@@ -1,4 +1,4 @@
-import { useEffect, useId } from 'react'
+import { useEffect, useId, useLayoutEffect } from 'react'
 
 import { WithSlots } from 'lib/components/internal'
 import { Animate, Box, Button, Flex, Spacer } from 'lib/components'
@@ -7,21 +7,31 @@ import { useSideNavContext } from '../../SideNavProvider'
 import { SideNavCategoryProps } from './definitions'
 
 export const SideNavCategory = ({
+  // HtmlTag
   tagAttrs,
   tagRef,
   children,
+  // Box
   variant,
   intent,
   labelIntent,
+  // own
   label,
+  initiallyExpanded = false,
 }: SideNavCategoryProps) => {
   const { expandedCategories, setExpandedCategories, expandMode } = useSideNavContext()
 
   const id = useId()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setExpandedCategories(state => ({ ...state, [id]: false }))
   }, [id])
+
+  useEffect(() => {
+    if (initiallyExpanded) {
+      setExpandedCategories(state => ({ ...state, [id]: true }))
+    }
+  }, [initiallyExpanded])
 
   return (
     <WithSlots<'SideNav.Item'>

@@ -18,7 +18,7 @@ export const HomePage = () => {
             with clarity and control. Each component follows the same foundation, producing apps that stay
             predictable, stable, and effortless to scale.
           </Text>
-          <Spacer blockSize={10} />
+          <Spacer blockSize={15} />
           <LinkButton
             intent="primary"
             iconName="arrow-right"

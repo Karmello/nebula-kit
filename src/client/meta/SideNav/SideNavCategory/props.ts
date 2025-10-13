@@ -25,6 +25,11 @@ const SIDE_NAV_CATEGORY_PROPS_META: ComponentMeta<SideNavCategoryProps>['props']
     isRequired: true,
     description: 'Text label for the category.',
   },
+  initiallyExpanded: {
+    options: ['boolean'],
+    defaultValue: 'false',
+    description: 'Use when you want to expand the active category at the initial render.',
+  },
 }
 
 export { SIDE_NAV_CATEGORY_PROPS_META }

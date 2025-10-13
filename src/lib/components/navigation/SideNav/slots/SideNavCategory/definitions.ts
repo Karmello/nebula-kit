@@ -2,6 +2,7 @@ import { ButtonProps, HtmlTagProps } from 'lib/components'
 
 type SideNavCategoryOwnProps = {
   label: string
+  initiallyExpanded?: boolean
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'ul'>, 'tagAttrs' | 'tagRef'> & {
