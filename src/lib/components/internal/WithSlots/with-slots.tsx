@@ -1,4 +1,4 @@
-import { Children, isValidElement, ReactNode, useLayoutEffect, useState } from 'react'
+import { Children, Fragment, isValidElement, ReactNode, useLayoutEffect, useState } from 'react'
 
 import { getLibMsg } from 'lib/helpers'
 
@@ -17,6 +17,11 @@ export const WithSlots = <SlotName extends string>({
   useLayoutEffect(() => {
     if (!childrenToVerify) return
 
+    const finalChildrenToVerify =
+      (childrenToVerify as any).type === Fragment
+        ? (childrenToVerify as any).props.children
+        : childrenToVerify
+
     const slots = {} as Record<SlotName, ReactNode[]>
     const validNodes = [] as ReactNode[]
 
@@ -24,7 +29,7 @@ export const WithSlots = <SlotName extends string>({
       slots[name] = []
     })
 
-    Children.toArray(childrenToVerify).forEach(child => {
+    Children.toArray(finalChildrenToVerify).forEach(child => {
       if (!isValidElement(child)) return
 
       const displayName: string = (child.type as any).displayName

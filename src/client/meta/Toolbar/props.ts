@@ -8,6 +8,7 @@ const TOOLBAR_PROPS_META: ComponentMeta<ToolbarProps>['props'] = {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
     options: ['Toolbar.Start', 'Toolbar.Main', 'Toolbar.End'],
+    description: 'Accepts slots directly or via a render function with access to the context argument.',
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,

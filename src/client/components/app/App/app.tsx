@@ -23,20 +23,24 @@ export const App = () => {
     <AppFrame stickyHeader>
       <AppFrame.Header intent="tertiary">
         <Toolbar switchAt="md">
-          <Toolbar.Start>
-            <LinkButton
-              href={`/${PageKey.home}`}
-              onClick={async () => {
-                navigateTo(`/${PageKey.home}`)
-              }}
-              intent={currentPageKey === PageKey.home ? 'secondary' : 'tertiary'}
-            >
-              NebulaKit
-            </LinkButton>
-          </Toolbar.Start>
-          <Toolbar.Main>
-            {({ setMainOpen, mainOpen }) => <PageNavigation setMainOpen={setMainOpen} mainOpen={mainOpen} />}
-          </Toolbar.Main>
+          {({ setMainOpen, mainOpen }) => (
+            <>
+              <Toolbar.Start>
+                <LinkButton
+                  href={`/${PageKey.home}`}
+                  onClick={async () => {
+                    navigateTo(`/${PageKey.home}`)
+                  }}
+                  intent={currentPageKey === PageKey.home ? 'secondary' : 'tertiary'}
+                >
+                  NebulaKit
+                </LinkButton>
+              </Toolbar.Start>
+              <Toolbar.Main>
+                <PageNavigation setMainOpen={setMainOpen} mainOpen={mainOpen} />
+              </Toolbar.Main>
+            </>
+          )}
         </Toolbar>
       </AppFrame.Header>
       <AppFrame.Main paddingTop={{ base: 10, lg: 20 }} paddingBottom={40}>

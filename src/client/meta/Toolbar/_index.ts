@@ -15,8 +15,8 @@ const TOOLBAR_META: ComponentMeta<ToolbarProps> = {
     description: [
       'the main section is toggleable in collapsed mode and always visible in inline mode',
       'any Box inside the Toolbar is overridden to be square',
-      'often used inside an application header to control navigation and provide additional tools',
-      'often paired with a ButtonGroup rendered inside the main section',
+      'often used inside AppFrame.Header to control navigation and provide additional tools',
+      'often paired with ButtonGroup rendered inside the main section',
     ],
     composedOf: ['Grid'],
     rendersAs: ['nav'],

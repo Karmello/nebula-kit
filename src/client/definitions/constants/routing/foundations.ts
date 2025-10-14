@@ -7,8 +7,8 @@ export const FOUNDATION_CATEGORIES = [
         key: 'introduction',
         label: 'Introduction',
         sections: [
-          { key: 'why-nebula', label: 'Why Nebula' },
-          { key: 'how-nebulakit-behaves', label: 'How NebulaKit behaves' },
+          { key: 'why-nebula', label: 'Why "Nebula"' },
+          { key: 'about-nebula-kit', label: 'About NebuleKit' },
           { key: 'under-the-hood', label: 'Under the hood' },
         ],
       },
