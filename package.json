@@ -48,11 +48,10 @@
     "test": "vitest run",
     "pw": "playwright test -c playwright.config.cjs",
     "prepare": "husky install",
-    "dist:css:global": "sass src/lib/styles/index.scss dist/styles/index.css --no-source-map",
-    "dist:css:components": "sass src/lib/components:dist/lib/components --no-source-map",
-    "dist": "tsup --config tsup.pkg.ts && yarn dist:css:global && yarn dist:css:components",
+    "dist:css": "sass --load-path src/lib src/lib/styles/index.pkg.scss dist/lib/styles/index.css --no-source-map",
+    "dist": "tsup --config tsup.pkg.ts && yarn dist:css",
     "clean": "rimraf dist",
-    "prepack": "yarn clean && yarn dist && rimraf dist/types",
+    "prepack": "yarn clean && yarn dist && rimraf dist/index.d.cts dist/types",
     "pack": "yarn pack -o nebula-kit-core.tgz"
   },
   "peerDependencies": {
