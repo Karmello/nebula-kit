@@ -2,7 +2,7 @@ import { createContext, useContext, useState, ReactNode, useEffect } from 'react
 
 import { DEFAULT_ANIMATE_DURATION } from 'lib/components/utility/Animate/definitions'
 import { getLibMsg, useScreen } from 'lib/helpers'
-import { BREAKPOINTS } from 'lib/definitions'
+import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
 
 import { SplitViewOwnProps } from '../definitions'
 
@@ -20,7 +20,11 @@ export type SplitViewContextProps = Omit<ProviderProps, 'children'> & {
 
 const SplitViewContext = createContext<SplitViewContextProps | undefined>(undefined)
 
-export const SplitViewProvider = ({ children, sidePosition, switchAt }: ProviderProps) => {
+export const SplitViewProvider = ({
+  children,
+  sidePosition,
+  switchAt = DEFAULT_SWITCH_AT,
+}: ProviderProps) => {
   const { bp } = useScreen()
 
   const [mode, setMode] = useState<SplitViewMode>(

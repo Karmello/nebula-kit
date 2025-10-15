@@ -8,6 +8,6 @@ export type WithSlotsProps<SlotName extends string> = {
   children: (args: {
     slotsByName: Record<SlotName, ReactNode[]>
     allValidSlots: ReactNode[]
-    allNonSlots: ReactNode[]
+    allNonSlots: ReactNode[] | null
   }) => JSX.Element
 }
