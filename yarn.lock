@@ -907,7 +907,7 @@ __metadata:
     "@hiogawa/vite-plugin-error-overlay": "npm:^0.0.1"
     "@playwright/experimental-ct-react": "npm:^1.55.0"
     "@playwright/test": "npm:^1.55.0"
-    "@shikijs/core": "npm:^3.12.0"
+    "@shikijs/core": "npm:^3.13.0"
     "@shikijs/engine-javascript": "npm:^3.12.0"
     "@shikijs/langs": "npm:^3.12.0"
     "@shikijs/themes": "npm:^3.12.0"
@@ -1645,7 +1645,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shikijs/core@npm:3.12.0, @shikijs/core@npm:^3.12.0":
+"@shikijs/core@npm:3.12.0":
   version: 3.12.0
   resolution: "@shikijs/core@npm:3.12.0"
   dependencies:
@@ -1654,6 +1654,18 @@ __metadata:
     "@types/hast": "npm:^3.0.4"
     hast-util-to-html: "npm:^9.0.5"
   checksum: 10c0/c3b0816d412cb39844348974840ca4dcbd8b2932127e6834b94068479b75adb79670027e0e41c70955a4f433dcf9ec2ee620e3c87380aa7944d249352e46e4e6
+  languageName: node
+  linkType: hard
+
+"@shikijs/core@npm:^3.13.0":
+  version: 3.13.0
+  resolution: "@shikijs/core@npm:3.13.0"
+  dependencies:
+    "@shikijs/types": "npm:3.13.0"
+    "@shikijs/vscode-textmate": "npm:^10.0.2"
+    "@types/hast": "npm:^3.0.4"
+    hast-util-to-html: "npm:^9.0.5"
+  checksum: 10c0/eed294190fce38393a2a20d89d3a73f2cc7542fd0bbbb96c68b37dbe5054dc269d81d3224e02adab896de5df4b97d240ac814aecb934ae75f036bd7d3391b1b8
   languageName: node
   linkType: hard
 
@@ -1703,6 +1715,16 @@ __metadata:
     "@shikijs/vscode-textmate": "npm:^10.0.2"
     "@types/hast": "npm:^3.0.4"
   checksum: 10c0/b946ce2995cca3e714170a5fb4386de18f9d8aa9a3bc5de47daaa9d63116f5075930cfb137d69c03fd5d62147ab9ecbf44d0c06a1b8bf5c214da0273ad920b16
+  languageName: node
+  linkType: hard
+
+"@shikijs/types@npm:3.13.0":
+  version: 3.13.0
+  resolution: "@shikijs/types@npm:3.13.0"
+  dependencies:
+    "@shikijs/vscode-textmate": "npm:^10.0.2"
+    "@types/hast": "npm:^3.0.4"
+  checksum: 10c0/5f0ceca1dad4f4dfb8c424f1aa78953ace7eb2215d82b863500f1ea023faf55acaa54373f3b59a8ada85f15c304cf658b95eae128c43505855d13607d979a726
   languageName: node
   linkType: hard
 
