@@ -27,7 +27,7 @@ export const MarkerList = <T extends MarkerListTag = 'ul'>({
       slotsConfig={[{ name: 'MarkerList.Item', required: true, allowMultiple: true }]}
       childrenToVerify={children}
     >
-      {({ slots }) => {
+      {({ slotsByName }) => {
         return (
           <MarkerListProvider intent={intent}>
             <Flex
@@ -46,7 +46,7 @@ export const MarkerList = <T extends MarkerListTag = 'ul'>({
               flexDirection="column"
               rowGap={rowGap}
             >
-              {slots['MarkerList.Item']}
+              {slotsByName['MarkerList.Item']}
             </Flex>
           </MarkerListProvider>
         )

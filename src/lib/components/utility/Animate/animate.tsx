@@ -1,52 +1,45 @@
 import { useEffect, useRef } from 'react'
+import classNames from 'classnames'
 
 import { Box } from 'lib/components'
+import { withPrefix } from 'lib/helpers'
 
-import { AnimateProps, DEFAULT_ANIMATE_DURATION } from './definitions'
+import { AnimateProps } from './definitions'
 
-export const Animate = ({
-  tagAttrs,
-  tagRef,
-  children,
-  property,
-  visible,
-  duration = DEFAULT_ANIMATE_DURATION,
-}: AnimateProps) => {
+export const Animate = ({ tagAttrs, tagRef, children, property, visible, duration }: AnimateProps) => {
   const ref = useRef<HTMLDivElement>(null)
 
   const finalRef = tagRef || ref
 
-  const width = useRef<string>('')
-  const height = useRef<string>('')
+  const resolvedSizes = useRef<Record<AnimateProps['property'], string>>({ blockSize: '', inlineSize: '' })
 
   useEffect(() => {
-    width.current = `${finalRef.current?.scrollWidth || 0}px`
-    height.current = `${finalRef.current?.scrollHeight || 0}px`
+    if (finalRef.current) {
+      resolvedSizes.current.inlineSize = `${finalRef.current.scrollWidth}px`
+      resolvedSizes.current.blockSize = `${finalRef.current.scrollHeight}px`
+    }
   }, [finalRef.current])
 
   useEffect(() => {
     if (finalRef.current) {
-      if (property === 'blockSize') {
-        finalRef.current.style.blockSize = visible ? height.current : '0px'
-        finalRef.current.style.overflowY = 'hidden'
-      } else if (property === 'inlineSize') {
-        finalRef.current.style.inlineSize = visible ? width.current : '0px'
-        finalRef.current.style.overflowX = 'hidden'
-      }
+      finalRef.current.style[property] = visible ? resolvedSizes.current[property] : '0px'
     }
-  }, [finalRef.current, visible])
+  }, [visible])
 
   return (
     <Box
       tagAttrs={{
         ...tagAttrs,
+        className: classNames(withPrefix('animate'), tagAttrs?.className || ''),
         style: {
           ...tagAttrs?.style,
-          transitionDuration: `${duration}ms`,
+          transitionDuration: duration ? `${duration}ms` : undefined,
         },
       }}
       tagRef={finalRef}
       borderRadius={0}
+      overflowX="hidden"
+      overflowY="hidden"
     >
       {children}
     </Box>

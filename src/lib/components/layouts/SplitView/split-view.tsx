@@ -1,13 +1,67 @@
+import { useCallback } from 'react'
+
 import { Grid } from 'lib/components'
+import { DEFAULT_ANIMATE_DURATION } from 'lib/components/utility/Animate/definitions'
 import { WithSlots } from 'lib/components/internal'
-import { withPrefix, useScreen } from 'lib/helpers'
-import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
+import { withPrefix } from 'lib/helpers'
+import { DEFAULT_SWITCH_AT } from 'lib/definitions'
 import { applyStaticDataset } from 'lib/service'
 
-import { SplitViewMode, SplitViewProvider } from './SplitViewProvider'
+import { SplitViewProvider, useSplitViewContext } from './SplitViewProvider'
 import { SplitViewProps, SplitViewSidePosition } from './definitions'
 
 import './split-view.scss'
+
+const SplitViewComponent = ({
+  // Grid
+  children,
+  tagAttrs,
+  tagRef,
+}: SplitViewProps) => {
+  const { mode, setSideOpen, sidePosition } = useSplitViewContext()
+
+  const setSideOpenASync = useCallback(
+    async (sideOpen: boolean) =>
+      new Promise<boolean>(resolve => {
+        setSideOpen(sideOpen)
+        setTimeout(() => resolve(sideOpen), DEFAULT_ANIMATE_DURATION)
+      }),
+    []
+  )
+
+  const finalChildren =
+    typeof children === 'function' ? children({ setSideOpen: setSideOpenASync, mode }) : children
+
+  return (
+    <WithSlots<'SplitView.Main' | 'SplitView.Side'>
+      componentName="SplitView"
+      slotsConfig={[
+        { name: 'SplitView.Main', required: true },
+        { name: 'SplitView.Side', required: true },
+      ]}
+      childrenToVerify={finalChildren}
+    >
+      {({ slotsByName }) => {
+        return (
+          <Grid
+            tagAttrs={{
+              ...tagAttrs,
+              className: withPrefix('split-view'),
+              ...applyStaticDataset('split-view', { mode }),
+            }}
+            tagRef={tagRef}
+            gridTemplateColumns={sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto'}
+            gridTemplateRows="1fr"
+          >
+            {sidePosition === 'left' ? slotsByName['SplitView.Side'] : null}
+            {slotsByName['SplitView.Main']}
+            {sidePosition === 'right' ? slotsByName['SplitView.Side'] : null}
+          </Grid>
+        )
+      }}
+    </WithSlots>
+  )
+}
 
 export const SplitView = ({
   // Grid
@@ -18,43 +72,12 @@ export const SplitView = ({
   sidePosition = SplitViewSidePosition[0],
   switchAt = DEFAULT_SWITCH_AT,
 }: SplitViewProps) => {
-  const { bp } = useScreen()
-
-  const mode: SplitViewMode = BREAKPOINTS.slice(0, BREAKPOINTS.indexOf(switchAt)).includes(bp)
-    ? 'overlay'
-    : 'inline'
-
   return (
-    <WithSlots<'SplitView.Main' | 'SplitView.MainBar' | 'SplitView.Side'>
-      componentName="SplitView"
-      slotsConfig={[
-        { name: 'SplitView.Main', required: true },
-        { name: 'SplitView.MainBar' },
-        { name: 'SplitView.Side', required: true },
-      ]}
-      childrenToVerify={children}
-    >
-      {({ slots }) => {
-        return (
-          <SplitViewProvider slots={slots} mode={mode} sidePosition={sidePosition} switchAt={switchAt}>
-            <Grid
-              tagAttrs={{
-                ...tagAttrs,
-                className: withPrefix('split-view'),
-                ...applyStaticDataset('split-view', { mode }),
-              }}
-              tagRef={tagRef}
-              gridTemplateColumns={sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto'}
-              gridTemplateRows="1fr"
-            >
-              {sidePosition === 'right' ? slots['SplitView.Main'] : null}
-              {slots['SplitView.Side']}
-              {sidePosition === 'left' ? slots['SplitView.Main'] : null}
-            </Grid>
-          </SplitViewProvider>
-        )
-      }}
-    </WithSlots>
+    <SplitViewProvider sidePosition={sidePosition} switchAt={switchAt}>
+      <SplitViewComponent tagAttrs={tagAttrs} tagRef={tagRef}>
+        {children}
+      </SplitViewComponent>
+    </SplitViewProvider>
   )
 }
 

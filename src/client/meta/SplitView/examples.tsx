@@ -8,8 +8,10 @@ const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewProps>['examples'] = [
     jsx: (
       <SplitView>
         <SplitView.Side>Side</SplitView.Side>
-        <SplitView.Main>Main</SplitView.Main>
-        <SplitView.MainBar>MainBar</SplitView.MainBar>
+        <SplitView.Main>
+          <SplitView.MainBar>MainBar</SplitView.MainBar>
+          Main
+        </SplitView.Main>
       </SplitView>
     ),
     noSandBox: true,
@@ -27,11 +29,11 @@ const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewProps>['examples'] = [
             </Box>
           </SplitView.Side>
           <SplitView.Main padding={5}>
+            <SplitView.MainBar>
+              <Text>MainBar</Text>
+            </SplitView.MainBar>
             <Text>Main</Text>
           </SplitView.Main>
-          <SplitView.MainBar>
-            <Text>MainBar</Text>
-          </SplitView.MainBar>
         </SplitView>
       </Box>
     ),
@@ -39,12 +41,12 @@ const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewProps>['examples'] = [
   },
   {
     description:
-      'Render function in the Side slot to access SplitView context values and control its open state in overlay mode.',
+      'Using render function to access SplitView context and control its open state in overlay mode.',
     code: `
 <SplitView>
-  <SplitView.Side>
-    {({ setSideOpen, mode }) => {
-      return (
+  {({ setSideOpen, mode }) => (
+    <>
+      <SplitView.Side>
         <Button
           tagAttrs={{
             onClick: () => {
@@ -59,11 +61,13 @@ const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewProps>['examples'] = [
         >
           Menu button
         </Button>
-      )
-    }}
-  </SplitView.Side>
-  <SplitView.Main>Main</SplitView.Main>
-  <SplitView.MainBar>MainBar</SplitView.MainBar>
+      </SplitView.Side>
+      <SplitView.Main>
+        <SplitView.MainBar>MainBar</SplitView.MainBar>
+        Main
+      </SplitView.Main>
+    </>
+  )}
 </SplitView>`,
     noSandBox: true,
   },

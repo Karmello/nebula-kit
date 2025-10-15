@@ -29,6 +29,7 @@ export const App = () => {
                 <LinkButton
                   href={`/${PageKey.home}`}
                   onClick={async () => {
+                    if (mainOpen) await setMainOpen(false)
                     navigateTo(`/${PageKey.home}`)
                   }}
                   intent={currentPageKey === PageKey.home ? 'secondary' : 'tertiary'}

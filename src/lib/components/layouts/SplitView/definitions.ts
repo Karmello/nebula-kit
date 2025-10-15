@@ -1,10 +1,17 @@
+import { JSX } from 'react'
+
 import { SwitchAt } from 'lib/definitions'
 import { HtmlTagProps } from 'lib/components'
+
+import { SplitViewContextProps } from './SplitViewProvider'
 
 export const SplitViewSidePosition = ['left', 'right'] as const
 export type SplitViewSidePosition = (typeof SplitViewSidePosition)[number]
 
-export const DEFAULT_SPLIT_VIEW_SIDE_WIDTH = '225px'
+type ChildrenAsFuncArgs = {
+  setSideOpen: (sideOpen: boolean) => Promise<boolean>
+  mode: SplitViewContextProps['mode']
+}
 
 export type SplitViewOwnProps = {
   sidePosition?: SplitViewSidePosition
@@ -12,7 +19,7 @@ export type SplitViewOwnProps = {
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'div'>['children']
+  children: HtmlTagProps<'div'>['children'] | ((args: ChildrenAsFuncArgs) => JSX.Element)
 }
 
 export type SplitViewProps = PropsFromHtmlTag & SplitViewOwnProps

@@ -21,14 +21,14 @@ export const AppFrame = ({ children, tagAttrs, tagRef, stickyHeader = false }: A
         ]}
         childrenToVerify={children}
       >
-        {({ slots }) => (
+        {({ slotsByName }) => (
           <Grid
             tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('app-frame'), tagAttrs?.className) }}
             tagRef={tagRef}
           >
-            {slots['AppFrame.Header'] || <div />}
-            {slots['AppFrame.Main'] || <div />}
-            {slots['AppFrame.Footer']}
+            {slotsByName['AppFrame.Header']}
+            {slotsByName['AppFrame.Main']}
+            {slotsByName['AppFrame.Footer']}
           </Grid>
         )}
       </WithSlots>

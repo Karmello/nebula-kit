@@ -19,7 +19,7 @@ const SPLIT_VIEW_META: ComponentMeta<SplitViewProps> = {
       'changes the side panel from an overlay to an inline layout at a breakpoint (switchAt prop)',
     ],
     rendersAs: ['div'],
-    slots: ['SplitView.Side', 'SplitView.Main', 'SplitView.MainBar'],
+    slots: ['SplitView.Side', 'SplitView.Main'],
   },
   props: SPLIT_VIEW_PROPS_META,
   examples: SPLIT_VIEW_EXAMPLES_META,

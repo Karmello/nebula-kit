@@ -18,7 +18,7 @@ export const TableRow = ({ children, tagAttrs, tagRef, intent }: TableRowProps) 
       ]}
       someRequired
     >
-      {({ validNodes }) => {
+      {({ allValidSlots }) => {
         return (
           <Box
             tag="tr"
@@ -28,7 +28,7 @@ export const TableRow = ({ children, tagAttrs, tagRef, intent }: TableRowProps) 
             }}
             tagRef={tagRef}
           >
-            {validNodes.map((slot: any) => {
+            {allValidSlots.map((slot: any) => {
               if (slot.type.displayName === 'Table.HeaderCell') {
                 return cloneElement<TableHeaderCellProps>(slot, {
                   tagAttrs: { scope: 'row' },

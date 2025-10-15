@@ -2,17 +2,14 @@ import { ComponentMeta } from 'client/definitions'
 import { BOX_PROPS_META } from 'client/meta/Box/props'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { SplitViewSideProps } from 'lib/components'
-import { DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from 'lib/components/layouts/SplitView/definitions'
+import { DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from 'lib/components/layouts/SplitView/slots/SplitViewSide/definitions'
 
 const SPLIT_VIEW_SIDE_PROPS_META: ComponentMeta<SplitViewSideProps>['props'] = {
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
   children: {
     ...HTML_TAG_PROPS_META.children,
-    options: ['ReactNode', '(context) => ReactNode'],
     isRequired: true,
-    description:
-      'Accepts either a ReactNode or a render function that receives the SplitView context as its argument.',
   },
   inlineSize: {
     ...BOX_PROPS_META.inlineSize,

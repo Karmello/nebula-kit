@@ -31,108 +31,112 @@ export const CatalogPageTemplate = ({
 
   return (
     <SplitView>
-      <SplitView.Side>
-        {({ setSideOpen, mode }) => (
-          <SideNav>
-            {data.map(({ key: categoryKey, label, items }) => {
-              const isCategorySelected = activeCategoryObj?.key === categoryKey
-              return (
-                <SideNav.Category
-                  key={categoryKey}
-                  label={label}
-                  variant="ghost"
-                  intent={isCategorySelected ? 'primary' : 'neutral'}
-                  initiallyExpanded={isCategorySelected}
-                >
-                  {items.map(({ key: itemKey, label, sections }) => {
-                    const sectionIndex = sections.findIndex(s => s.key === activeSectionObj?.key)
-                    const href = `/${pageKey}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
-                    const isItemSelected = pathname === href
-                    return (
-                      <SideNav.Item
-                        key={itemKey}
-                        href={href}
-                        onClick={async () => {
-                          if (mode === 'overlay') {
-                            await setSideOpen(false)
-                          }
-                          navigateTo(href)
-                        }}
-                        labelIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
-                        intent={{
-                          base: isItemSelected ? 'primary' : 'secondary',
-                          lg: isItemSelected ? 'tertiary' : 'neutral',
-                        }}
-                      >
-                        {label}
-                      </SideNav.Item>
-                    )
-                  })}
-                </SideNav.Category>
-              )
-            })}
-          </SideNav>
-        )}
-      </SplitView.Side>
-      <SplitView.Main paddingLeft={10}>
-        <Spacer blockSize={15} />
-        <SplitView sidePosition="right">
+      {({ mode, setSideOpen }) => (
+        <>
           <SplitView.Side>
-            {({ setSideOpen, mode }) => (
-              <SideNav>
-                {data
-                  .find(c => c.key === activeCategoryObj?.key)
-                  ?.items.find(i => i.key === activeItemObj?.key)
-                  ?.sections.map(({ key: sectionKey, label }) => {
-                    const href = `/${pageKey}/${activeCategoryObj?.key}/${activeItemObj?.key}/${sectionKey}`
-                    const isItemSelected = pathname === href
-                    return (
-                      <SideNav.Item
-                        key={sectionKey}
-                        href={href}
-                        onClick={async () => {
-                          if (mode === 'overlay') {
-                            await setSideOpen(false)
-                          }
-                          navigateTo(href)
-                        }}
-                        labelIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
-                        intent={{
-                          base: isItemSelected ? 'primary' : 'secondary',
-                          lg: isItemSelected ? 'tertiary' : 'neutral',
-                        }}
-                      >
-                        {label}
-                      </SideNav.Item>
-                    )
-                  })}
-              </SideNav>
-            )}
+            <SideNav>
+              {data.map(({ key: categoryKey, label, items }) => {
+                const isCategorySelected = activeCategoryObj?.key === categoryKey
+                return (
+                  <SideNav.Category
+                    key={categoryKey}
+                    label={label}
+                    variant="ghost"
+                    intent={isCategorySelected ? 'primary' : 'neutral'}
+                    initiallyExpanded={isCategorySelected}
+                  >
+                    {items.map(({ key: itemKey, label, sections }) => {
+                      const sectionIndex = sections.findIndex(s => s.key === activeSectionObj?.key)
+                      const href = `/${pageKey}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
+                      const isItemSelected = pathname === href
+                      return (
+                        <SideNav.Item
+                          key={itemKey}
+                          href={href}
+                          onClick={async () => {
+                            if (mode === 'overlay') {
+                              await setSideOpen(false)
+                            }
+                            navigateTo(href)
+                          }}
+                          labelIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
+                          intent={{
+                            base: isItemSelected ? 'primary' : 'secondary',
+                            lg: isItemSelected ? 'tertiary' : 'neutral',
+                          }}
+                        >
+                          {label}
+                        </SideNav.Item>
+                      )
+                    })}
+                  </SideNav.Category>
+                )
+              })}
+            </SideNav>
           </SplitView.Side>
-          <SplitView.Main paddingRight={10}>
-            {pageKey === PageKey.foundations ? <FoundationsPageRoutes /> : null}
-            {pageKey === PageKey.components ? <ComponentsPageRoutes /> : null}
+          <SplitView.Main paddingLeft={10}>
+            <SplitView.MainBar>
+              <Box marginRight={10}>
+                <Breadcrumb
+                  items={[
+                    pascalCase(pageKey),
+                    activeCategoryObj?.label,
+                    activeItemObj?.label,
+                    activeSectionObj?.label,
+                  ]}
+                />
+              </Box>
+            </SplitView.MainBar>
+            <Spacer blockSize={15} />
+            <SplitView sidePosition="right">
+              {({ mode, setSideOpen }) => (
+                <>
+                  <SplitView.Side>
+                    <SideNav>
+                      {data
+                        .find(c => c.key === activeCategoryObj?.key)
+                        ?.items.find(i => i.key === activeItemObj?.key)
+                        ?.sections.map(({ key: sectionKey, label }) => {
+                          const href = `/${pageKey}/${activeCategoryObj?.key}/${activeItemObj?.key}/${sectionKey}`
+                          const isItemSelected = pathname === href
+                          return (
+                            <SideNav.Item
+                              key={sectionKey}
+                              href={href}
+                              onClick={async () => {
+                                if (mode === 'overlay') {
+                                  await setSideOpen(false)
+                                }
+                                navigateTo(href)
+                              }}
+                              labelIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
+                              intent={{
+                                base: isItemSelected ? 'primary' : 'secondary',
+                                lg: isItemSelected ? 'tertiary' : 'neutral',
+                              }}
+                            >
+                              {label}
+                            </SideNav.Item>
+                          )
+                        })}
+                    </SideNav>
+                  </SplitView.Side>
+                  <SplitView.Main paddingRight={10}>
+                    <SplitView.MainBar>
+                      <Text typography="h3">
+                        {pageKey === PageKey.foundations ? activeSectionObj?.label : activeItemObj?.label}
+                      </Text>
+                      <Divider />
+                    </SplitView.MainBar>
+                    {pageKey === PageKey.foundations ? <FoundationsPageRoutes /> : null}
+                    {pageKey === PageKey.components ? <ComponentsPageRoutes /> : null}
+                  </SplitView.Main>
+                </>
+              )}
+            </SplitView>
           </SplitView.Main>
-          <SplitView.MainBar>
-            <Text typography="h3">
-              {pageKey === PageKey.foundations ? activeSectionObj?.label : activeItemObj?.label}
-            </Text>
-            <Divider />
-          </SplitView.MainBar>
-        </SplitView>
-      </SplitView.Main>
-      <SplitView.MainBar>
-        <Box marginRight={10}>
-          <Breadcrumb
-            items={[
-              pascalCase(pageKey),
-              activeCategoryObj?.label,
-              activeItemObj?.label,
-              activeSectionObj?.label,
-            ]}
-          />
-        </Box>
-      </SplitView.MainBar>
+        </>
+      )}
     </SplitView>
   )
 }

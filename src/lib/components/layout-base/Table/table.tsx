@@ -30,7 +30,7 @@ export const Table = ({
         { name: 'Table.Caption' },
       ]}
     >
-      {({ slots }) => {
+      {({ slotsByName }) => {
         return (
           <TableContext value={{ intent, layout }}>
             <Box tagAttrs={{ className: withPrefix('table-container') }} inlineSize={inlineSize}>
@@ -48,10 +48,10 @@ export const Table = ({
                 variant="solid"
                 intent={intent}
               >
-                {slots['Table.Caption']}
-                {slots['Table.Header']}
-                {slots['Table.Body']}
-                {slots['Table.Footer']}
+                {slotsByName['Table.Caption']}
+                {slotsByName['Table.Header']}
+                {slotsByName['Table.Body']}
+                {slotsByName['Table.Footer']}
               </Box>
             </Box>
           </TableContext>

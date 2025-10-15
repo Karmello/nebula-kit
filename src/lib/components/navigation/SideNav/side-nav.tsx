@@ -23,11 +23,11 @@ export const SideNav = ({
       someRequired
       childrenToVerify={children}
     >
-      {({ slots, validNodes }) => (
+      {({ slotsByName, allValidSlots }) => (
         <SideNavProvider expandMode={expandMode}>
           <Flex tag="nav" tagAttrs={tagAttrs} tagRef={tagRef} flexDirection="column" gap={2}>
-            {slots['SideNav.Category'].length ? <SideNavToggle /> : null}
-            {validNodes}
+            {slotsByName['SideNav.Category'].length ? <SideNavToggle /> : null}
+            {allValidSlots}
           </Flex>
         </SideNavProvider>
       )}

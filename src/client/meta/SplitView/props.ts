@@ -9,7 +9,8 @@ const SPLIT_VIEW_PROPS_META: ComponentMeta<SplitViewProps>['props'] = {
   children: {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
-    options: ['SplitView.Side', 'SplitView.Main', 'SplitView.MainBar'],
+    options: ['SplitView.Side', 'SplitView.Main'],
+    description: 'Accepts slots directly or via a render function with access to the context argument.',
   },
   sidePosition: {
     options: SplitViewSidePosition as unknown as string[],

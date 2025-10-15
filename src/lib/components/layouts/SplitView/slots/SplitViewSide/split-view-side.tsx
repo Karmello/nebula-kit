@@ -1,14 +1,12 @@
-import { useCallback, useRef } from 'react'
+import { useRef } from 'react'
 import classNames from 'classnames'
 
 import { Animate, Box, Flex, IconButton } from 'lib/components'
-import { DEFAULT_ANIMATE_DURATION } from 'lib/components/utility/Animate/definitions'
 import { FocusTrap } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
+import { SplitViewSideProps, DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from './definitions'
 import { useSplitViewContext } from '../../SplitViewProvider'
-import { DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from '../../definitions'
-import { SplitViewSideProps } from './definitions'
 
 export const SplitViewSide = ({
   children,
@@ -17,18 +15,9 @@ export const SplitViewSide = ({
   intent,
   inlineSize = DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
 }: SplitViewSideProps) => {
-  const { sideOpen, setSideOpen, sidePosition, mode, switchAt } = useSplitViewContext()
+  const { sideOpen, setSideOpen, sidePosition, switchAt, mode } = useSplitViewContext()
 
   const ref = useRef(null)
-
-  const setSideOpenASync = useCallback(
-    async (sideOpen: boolean) =>
-      new Promise<boolean>(resolve => {
-        setSideOpen(sideOpen)
-        setTimeout(() => resolve(sideOpen), DEFAULT_ANIMATE_DURATION)
-      }),
-    []
-  )
 
   return (
     <FocusTrap
@@ -51,6 +40,7 @@ export const SplitViewSide = ({
         left={sidePosition === 'left' ? 0 : undefined}
         right={sidePosition === 'right' ? 0 : undefined}
         borderRadius={0}
+        maxInlineSize={inlineSize}
       >
         <Animate property="inlineSize" visible={sideOpen}>
           <Box inlineSize={inlineSize}>
@@ -70,12 +60,7 @@ export const SplitViewSide = ({
                 </Box>
               </Flex>
             ) : null}
-            {typeof children === 'function'
-              ? children({
-                  setSideOpen: setSideOpenASync,
-                  mode,
-                })
-              : children}
+            {children}
           </Box>
         </Animate>
       </Box>

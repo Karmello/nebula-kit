@@ -5,5 +5,9 @@ export type WithSlotsProps<SlotName extends string> = {
   childrenToVerify: ReactNode
   slotsConfig: { name: SlotName; required?: boolean; allowMultiple?: boolean }[]
   someRequired?: boolean
-  children: (args: { slots: Record<SlotName, ReactNode[]>; validNodes: ReactNode[] }) => JSX.Element
+  children: (args: {
+    slotsByName: Record<SlotName, ReactNode[]>
+    allValidSlots: ReactNode[]
+    allNonSlots: ReactNode[]
+  }) => JSX.Element
 }

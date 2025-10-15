@@ -14,7 +14,7 @@ export const TableHeaderRow = ({ children, tagAttrs, tagRef, intent }: TableHead
       componentName="Table.HeaderRow"
       slotsConfig={[{ name: 'Table.HeaderCell', required: true, allowMultiple: true }]}
     >
-      {({ slots }) => {
+      {({ slotsByName }) => {
         return (
           <Box
             tag="tr"
@@ -24,7 +24,7 @@ export const TableHeaderRow = ({ children, tagAttrs, tagRef, intent }: TableHead
             }}
             tagRef={tagRef}
           >
-            {slots['Table.HeaderCell'].map((slot: any) =>
+            {slotsByName['Table.HeaderCell'].map((slot: any) =>
               cloneElement<TableHeaderCellProps>(slot, {
                 intent: slot.props.intent || intent,
                 tagAttrs: { scope: 'col' },

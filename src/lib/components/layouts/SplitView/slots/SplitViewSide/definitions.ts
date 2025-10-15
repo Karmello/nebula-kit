@@ -1,16 +1,9 @@
-import { JSX } from 'react'
-
 import { BoxProps, HtmlTagProps } from 'lib/components'
 
-import { SplitViewContextProps } from '../../SplitViewProvider'
-
-type ChildrenAsFuncArgs = {
-  setSideOpen: (sideOpen: boolean) => Promise<boolean>
-  mode: SplitViewContextProps['mode']
-}
+export const DEFAULT_SPLIT_VIEW_SIDE_WIDTH = '225px'
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'aside'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'aside'>['children'] | ((args: ChildrenAsFuncArgs) => JSX.Element)
+  children: HtmlTagProps<'aside'>['children']
 }
 
 type PropsFromBox = Pick<BoxProps<'aside'>, 'intent' | 'inlineSize'>

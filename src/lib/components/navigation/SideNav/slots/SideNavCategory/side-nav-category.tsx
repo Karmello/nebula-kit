@@ -39,7 +39,7 @@ export const SideNavCategory = ({
       slotsConfig={[{ name: 'SideNav.Item', required: true, allowMultiple: true }]}
       childrenToVerify={children}
     >
-      {({ slots }) => {
+      {({ slotsByName }) => {
         return (
           <Box tag="ul" tagAttrs={tagAttrs} tagRef={tagRef} inlineSize="100%">
             <Box tag="li">
@@ -78,7 +78,7 @@ export const SideNavCategory = ({
               <Animate property="blockSize" visible={expandedCategories[id]}>
                 <Spacer blockSize={2} />
                 <Flex tag="ul" flexDirection="column" gap={2}>
-                  {slots['SideNav.Item'].map((slot, key) => (
+                  {slotsByName['SideNav.Item'].map((slot, key) => (
                     <Box key={key} tag="li" inlineSize="100%">
                       {slot}
                     </Box>

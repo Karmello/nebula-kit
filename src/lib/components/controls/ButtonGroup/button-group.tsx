@@ -80,8 +80,8 @@ export const ButtonGroup = <T extends ButtonGroupTag = 'div'>({
         ]}
         someRequired
       >
-        {({ validNodes }) => {
-          return Children.map(validNodes as any, (child, index) => {
+        {({ allValidSlots }) => {
+          return Children.map(allValidSlots as any, (child, index) => {
             return (
               <Flex.Item key={index}>
                 {cloneElement<ButtonProps>(child, {

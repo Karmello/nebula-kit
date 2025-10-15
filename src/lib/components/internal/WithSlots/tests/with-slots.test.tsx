@@ -26,10 +26,10 @@ describe('<WithSlots />', () => {
         ]}
         childrenToVerify={[<NotASlot />, <Component.Slot />, <NotASlot />]}
       >
-        {({ slots, validNodes }) => {
-          expect(Object.keys(slots)).toHaveLength(1)
-          expect(slots['Component.Slot']).toBeDefined()
-          expect(validNodes).toHaveLength(1)
+        {({ slotsByName, allValidSlots }) => {
+          expect(Object.keys(slotsByName)).toHaveLength(1)
+          expect(slotsByName['Component.Slot']).toBeDefined()
+          expect(allValidSlots).toHaveLength(1)
           return null
         }}
       </WithSlots>

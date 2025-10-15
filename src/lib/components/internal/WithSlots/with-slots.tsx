@@ -11,8 +11,9 @@ export const WithSlots = <SlotName extends string>({
   someRequired,
   children,
 }: WithSlotsProps<SlotName>) => {
-  const [slots, setSlots] = useState<Record<SlotName, ReactNode[]> | null>(null)
-  const [validNodes, setValidNodes] = useState<ReactNode[] | null>(null)
+  const [slotsByName, setSlotsByName] = useState<Record<SlotName, ReactNode[]> | null>(null)
+  const [allValidSlots, setAllValidSlots] = useState<ReactNode[] | null>(null)
+  const [allNonSlots, setAllNonSlots] = useState<ReactNode[] | null>(null)
 
   useLayoutEffect(() => {
     if (!childrenToVerify) return
@@ -22,50 +23,60 @@ export const WithSlots = <SlotName extends string>({
         ? (childrenToVerify as any).props.children
         : childrenToVerify
 
-    const slots = {} as Record<SlotName, ReactNode[]>
-    const validNodes = [] as ReactNode[]
+    const slotsByName = {} as Record<SlotName, ReactNode[]>
+    const allValidSlots = [] as ReactNode[]
+    const allNonSlots = [] as ReactNode[]
 
     slotsConfig.forEach(({ name }) => {
-      slots[name] = []
+      slotsByName[name] = []
     })
 
     Children.toArray(finalChildrenToVerify).forEach(child => {
       if (!isValidElement(child)) return
 
       const displayName: string = (child.type as any).displayName
-      if (!displayName) return
-
-      const slotConfig = slotsConfig.find(c => c.name === displayName)
-      if (!slotConfig) return
-
-      if (slotConfig.allowMultiple) {
-        slots[slotConfig.name].push(child)
-      } else {
-        slots[slotConfig.name] = [child]
+      if (!displayName) {
+        allNonSlots.push(child)
+        return
       }
 
-      validNodes.push(child)
+      const slotConfig = slotsConfig.find(c => c.name === displayName)
+      if (!slotConfig) {
+        allNonSlots.push(child)
+        return
+      }
+
+      if (slotConfig.allowMultiple) {
+        slotsByName[slotConfig.name].push(child)
+      } else {
+        slotsByName[slotConfig.name] = [child]
+      }
+
+      allValidSlots.push(child)
     })
 
-    setSlots(slots)
-    setValidNodes(validNodes)
+    setSlotsByName(slotsByName)
+    setAllValidSlots(allValidSlots)
+    setAllNonSlots(allNonSlots)
   }, [childrenToVerify])
 
   useLayoutEffect(() => {
-    if (slots && validNodes) {
-      if (someRequired && !validNodes.length) {
-        console.warn(getLibMsg(`${componentName} expects ${Object.keys(slots).join(' or ')} to be its child`))
+    if (slotsByName && allValidSlots) {
+      if (someRequired && !allValidSlots.length) {
+        console.warn(
+          getLibMsg(`${componentName} expects ${Object.keys(slotsByName).join(' or ')} to be its child`)
+        )
       } else {
         slotsConfig.forEach(({ name, required }) => {
-          if (required && !slots[name].length) {
+          if (required && !slotsByName[name].length) {
             console.warn(getLibMsg(`${componentName} expects ${name} to be its child`))
           }
         })
       }
     }
-  }, [slots, validNodes])
+  }, [slotsByName, allValidSlots])
 
-  if (!childrenToVerify || !slots || !validNodes) return null
+  if (!childrenToVerify || !slotsByName || !allValidSlots) return null
 
-  return children({ slots, validNodes })
+  return children({ slotsByName, allValidSlots, allNonSlots })
 }

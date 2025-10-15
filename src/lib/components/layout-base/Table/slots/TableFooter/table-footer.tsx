@@ -14,7 +14,7 @@ export const TableFooter = ({ children, tagAttrs, tagRef, intent }: TableFooterP
       componentName="Table.Footer"
       slotsConfig={[{ name: 'Table.Row', required: true, allowMultiple: true }]}
     >
-      {({ slots }) => {
+      {({ slotsByName }) => {
         return (
           <Box
             tag="tfoot"
@@ -24,7 +24,7 @@ export const TableFooter = ({ children, tagAttrs, tagRef, intent }: TableFooterP
             }}
             tagRef={tagRef}
           >
-            {slots['Table.Row'].map((slot: any) =>
+            {slotsByName['Table.Row'].map((slot: any) =>
               cloneElement<TableRowProps>(slot, { intent: slot.props.intent || intent })
             )}
           </Box>

@@ -8,7 +8,9 @@ const SPLIT_VIEW_MAIN_PROPS_META: ComponentMeta<SplitViewMainProps>['props'] = {
   tagRef: HTML_TAG_PROPS_META.tagRef,
   children: {
     ...HTML_TAG_PROPS_META.children,
+    options: ['ReactNode', 'SplitView.MainBar'],
     isRequired: true,
+    description: 'Main slot content plus optional MainBar slot.',
   },
   padding: BOX_PROPS_META.padding,
   paddingInline: BOX_PROPS_META.paddingInline,

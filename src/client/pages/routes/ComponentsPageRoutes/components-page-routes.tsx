@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router'
 import { ComponentOverviewPage, ComponentPropsPage, ComponentExamplesPage } from 'client/pages'
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
 import { Spacer } from 'lib/components'
+import { useMemo } from 'react'
 
 const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
   switch (sectionKey) {
@@ -18,23 +19,27 @@ const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
 }
 
 export const ComponentsPageRoutes = () => {
+  const ROUTES = useMemo(() => {
+    return COMPONENT_CATEGORIES.map(({ key: categoryKey, items }) =>
+      items.map(({ key: itemKey, sections }) =>
+        sections.map(({ key: sectionKey }) => {
+          return (
+            <Route
+              key={`${categoryKey}/${itemKey}/${sectionKey}`}
+              path={`${categoryKey}/${itemKey}/${sectionKey}`}
+              element={<PageResolver sectionKey={sectionKey} />}
+            />
+          )
+        })
+      )
+    )
+  }, [])
+
   return (
     <>
       <Spacer blockSize={10} />
       <Routes>
-        {COMPONENT_CATEGORIES.map(({ key: categoryKey, items }) =>
-          items.map(({ key: itemKey, sections }) =>
-            sections.map(({ key: sectionKey }) => {
-              return (
-                <Route
-                  key={`${categoryKey}/${itemKey}/${sectionKey}`}
-                  path={`${categoryKey}/${itemKey}/${sectionKey}`}
-                  element={<PageResolver sectionKey={sectionKey} />}
-                />
-              )
-            })
-          )
-        )}
+        {ROUTES}
         <Route
           path="*"
           Component={() => {

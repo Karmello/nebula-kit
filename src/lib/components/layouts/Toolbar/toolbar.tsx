@@ -38,7 +38,7 @@ const ToolbarComponent = ({ children, tagAttrs, tagRef }: ToolbarProps) => {
       ]}
       childrenToVerify={finalChildren}
     >
-      {({ slots }) => (
+      {({ slotsByName }) => (
         <Grid
           tag="nav"
           tagAttrs={{
@@ -50,9 +50,9 @@ const ToolbarComponent = ({ children, tagAttrs, tagRef }: ToolbarProps) => {
           gridAutoFlow="row"
         >
           <ToolbarToggle />
-          {slots['Toolbar.Start']}
-          {slots['Toolbar.Main'] || <div />}
-          {slots['Toolbar.End']}
+          {slotsByName['Toolbar.Start']}
+          {slotsByName['Toolbar.Main']}
+          {slotsByName['Toolbar.End']}
         </Grid>
       )}
     </WithSlots>
