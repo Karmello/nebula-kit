@@ -8,7 +8,7 @@ export const FOUNDATION_CATEGORIES = [
         label: 'Introduction',
         sections: [
           { key: 'why-nebula', label: 'Why "Nebula"' },
-          { key: 'about-nebula-kit', label: 'About NebuleKit' },
+          { key: 'about-nebula-kit', label: 'About NebulaKit' },
           { key: 'under-the-hood', label: 'Under the hood' },
         ],
       },
@@ -38,6 +38,11 @@ export const FOUNDATION_CATEGORIES = [
           { key: 'sizing-scale', label: 'Sizing scale' },
           { key: 'responsiveness', label: 'Responsiveness' },
         ],
+      },
+      {
+        key: 'architecture',
+        label: 'Architecture',
+        sections: [{ key: 'slots', label: 'Slots' }],
       },
     ],
   },

@@ -23,7 +23,6 @@ export default () => {
         NebulaKit isn't a blank canvas, it's a framework with a voice. One that helps you move forward instead
         of second-guessing every choice.
       </Text>
-      <Spacer blockSize={7} />
     </Box>
   )
 }

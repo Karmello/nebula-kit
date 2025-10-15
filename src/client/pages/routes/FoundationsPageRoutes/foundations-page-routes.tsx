@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router'
 import { pascalCase, kebabCase } from 'change-case'
 
 import { FOUNDATION_CATEGORIES, PageKey } from 'client/definitions'
+import { NextPageButton } from 'client/components'
 import { Spacer } from 'lib/components'
 
 export const FoundationsPageRoutes = () => {
@@ -21,7 +22,14 @@ export const FoundationsPageRoutes = () => {
                   console.warn(ex)
                 })
             }, [])
-            return Component
+            if (!Component) return null
+            return (
+              <>
+                {Component}
+                <Spacer blockSize={30} />
+                <NextPageButton pageKey="foundations" currentSectionKey={sectionKey} />
+              </>
+            )
           }
 
           return (
