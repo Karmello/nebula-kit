@@ -11,7 +11,7 @@ import { TOOLBAR_END_META } from './ToolbarEnd/_index'
 const TOOLBAR_META: ComponentMeta<ToolbarProps> = {
   overview: {
     title:
-      'Horizontal bar with Start, Main, and End slots, designed to present different types of action items.',
+      'Horizontal bar with Start, Main and End slots, designed to present different types of action items.',
     description: [
       'the main section is toggleable in collapsed mode and always visible in inline mode',
       'any Box inside the Toolbar is overridden to be square',

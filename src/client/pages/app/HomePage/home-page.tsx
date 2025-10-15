@@ -16,7 +16,7 @@ export const HomePage = () => {
           <Text typography="h6">
             React UI system built on composition - small, consistent parts combining into larger structures
             with clarity and control. Each component follows the same foundation, producing apps that stay
-            predictable, stable, and effortless to scale.
+            predictable, stable and effortless to scale.
           </Text>
           <Spacer blockSize={15} />
           <ButtonGroup gap={5}>

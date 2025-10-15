@@ -17,7 +17,7 @@ const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarProps>['examples'] = [
   },
   {
     description:
-      'Application header with a brand label on the left, navigation links in the main section that adapt responsively from column to row, and an action button on the right.',
+      'Application header with a brand label on the left, navigation links in the main section that adapt responsively from column to row and an action button on the right.',
     jsx: (
       <Toolbar switchAt="md">
         <Toolbar.Start>

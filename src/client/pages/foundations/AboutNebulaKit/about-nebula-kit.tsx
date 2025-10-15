@@ -10,12 +10,12 @@ export default () => {
       <Spacer blockSize={7} />
       <Text>
         You don't configure every color, every corner, every motion. You compose with what's already stable.
-        That stability is what keeps interfaces consistent, predictable, and unmistakably Nebula.
+        That stability is what keeps interfaces consistent, predictable and unmistakably Nebula.
       </Text>
       <Spacer blockSize={7} />
       <Text>
         The goal isn't infinite flexibility, it's effortless clarity. When the base is right, you don't need
-        to reinvent it. You just keep building - faster, steadier, and with more trust in what you're building
+        to reinvent it. You just keep building - faster, steadier and with more trust in what you're building
         on.
       </Text>
       <Spacer blockSize={7} />

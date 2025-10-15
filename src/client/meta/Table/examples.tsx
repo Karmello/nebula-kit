@@ -188,7 +188,7 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
     ),
   },
   {
-    description: 'Table with emphasized intent applied to data cells instead of header cells.',
+    description: 'Table with emphasized intent applied to data instead of header cells.',
     jsx: (
       <Table intent="neutral">
         <Table.Header>

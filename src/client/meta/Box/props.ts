@@ -38,7 +38,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     defaultValue: 'false',
     isRequired: false,
     isResponsive: false,
-    description: 'Enables hover, focus, and press states.',
+    description: 'Enables hover, focus and press states.',
   },
   disabled: {
     options: ['boolean'],

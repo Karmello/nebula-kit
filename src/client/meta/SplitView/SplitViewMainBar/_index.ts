@@ -9,7 +9,7 @@ const SPLIT_VIEW_MAIN_BAR_META: ComponentMeta<SplitViewMainBarProps> = {
     title: 'Defines the horizontal slot above the main content.',
     description: [
       'can contain any custom content, such as breadcrumbs or controls',
-      'should be place inside SplitView.Main slot',
+      'should be placed inside SplitView.Main slot',
     ],
     composedOf: ['Box'],
   },

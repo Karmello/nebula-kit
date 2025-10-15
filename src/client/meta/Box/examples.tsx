@@ -10,7 +10,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: <Box intent="neutral">Neutral box</Box>,
-    description: "Neutral Box uses the app's global text color for its content.",
+    description: 'Neutral Box uses the global text color for its content.',
   },
   {
     jsx: (

@@ -41,7 +41,7 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
         Heading 5
       </Text>
     ),
-    description: 'Typography prop sets HTML tag, font size, and line height automatically.',
+    description: 'Typography prop sets HTML tag, font size and line height automatically.',
   },
   {
     jsx: (
@@ -81,7 +81,7 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
     jsx: (
       <Text intent="neutral" clampLines={2}>
         This text demonstrates the clampLines prop in action. It keeps flowing with extra words so that it can
-        wrap naturally, and once it reaches the set limit of three lines, the remaining content will be
+        wrap naturally and once it reaches the set limit of three lines, the remaining content will be
         truncated with an ellipsis.
       </Text>
     ),

@@ -5,7 +5,7 @@ export default () => {
     <Box maxInlineSize="55rem">
       <Text>
         Nebula Kit keeps visual language consistent across every layer of the interface. Colors, typography,
-        spacing, and motion all stem from the same scale system and design tokens. What looks aligned is also
+        spacing and motion all stem from the same scale system and design tokens. What looks aligned is also
         aligned in code.
       </Text>
       <Spacer blockSize={7} />
@@ -26,7 +26,7 @@ export default () => {
         <MarkerList.Item>
           <Text bold>Unified design language.</Text>
           <Text>
-            All components speak the same visual grammar - surface, scale, motion, and type operate on common
+            All components speak the same visual grammar - surface, scale, motion and type operate on common
             rules.
           </Text>
         </MarkerList.Item>
@@ -37,7 +37,7 @@ export default () => {
         <MarkerList.Item>
           <Text bold>Consistent rhythm.</Text>
           <Text>
-            Spacing, sizing, and typography follow one numeric scale - visual relationships never drift.
+            Spacing, sizing and typography follow one numeric scale - visual relationships never drift.
           </Text>
         </MarkerList.Item>
         <MarkerList.Item>

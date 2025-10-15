@@ -6,9 +6,9 @@ import { CALLOUT_EXAMPLES_META } from './examples'
 
 const CALLOUT_META: ComponentMeta<CalloutProps> = {
   overview: {
-    title: 'Highlighted content block with a heading, icon, and supporting text.',
+    title: 'Highlighted content block with a heading, icon and supporting text.',
     description: [
-      'used to draw attention to important information, confirmations, warnings, or errors within a page',
+      'used to draw attention to important information, confirmations, warnings or errors within a page',
     ],
     composedOf: ['Box', 'Text'],
     rendersAs: CalloutTag,

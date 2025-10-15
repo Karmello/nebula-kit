@@ -9,7 +9,7 @@ const ICON_BUTTON_META: ComponentMeta<IconButtonProps> = {
   overview: {
     title: 'Interactive control that uses an icon as its primary content.',
     description: [
-      'renders an icon as the content of a button',
+      'renders an icon as the content of Button',
       "useful for quick actions where text isn't needed",
     ],
     composedOf: ['Button'],

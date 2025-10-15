@@ -4,13 +4,13 @@ export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Text>
-        Nebula Kit is built so that components never surprise you. Each one responds to props, states, and
+        Nebula Kit is built so that components never surprise you. Each one responds to props, states and
         themes through shared logic, not isolated implementations. What happens in one part of the system
         happens the same way everywhere else.
       </Text>
       <Spacer blockSize={7} />
       <Text>
-        Interactivity, motion, and responsive layout are all handled by unified mechanisms. Animations rely on
+        Interactivity, motion and responsive layout are all handled by unified mechanisms. Animations rely on
         the same sizing and color variables that drive static states. Breakpoints follow the same responsive
         props used across every component.
       </Text>
@@ -32,7 +32,7 @@ export default () => {
         <MarkerList.Item>
           <Text bold>State is transparent.</Text>
           <Text>
-            Hover, focus, and active states use common patterns. Visual feedback behaves consistently, not
+            Hover, focus and active states use common patterns. Visual feedback behaves consistently, not
             contextually.
           </Text>
         </MarkerList.Item>
@@ -53,7 +53,7 @@ export default () => {
       </MarkerList>
       <Spacer blockSize={15} />
       <Text>
-        Predictability isn't just about stability — it's about trust. You can modify, extend, and animate
+        Predictability isn't just about stability — it's about trust. You can modify, extend and animate
         without fear of breaking the system because it behaves exactly the way it says it will.
       </Text>
     </Box>

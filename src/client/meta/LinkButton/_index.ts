@@ -8,9 +8,9 @@ const LINK_BUTTON_META: ComponentMeta<LinkButtonProps> = {
   overview: {
     title: 'Button-like link component that handles navigation and click behavior automatically.',
     description: [
-      'renders Button when children are provided, or IconButton with a default arrow icon when not',
+      'renders Button when children are provided or IconButton with a default arrow icon when not',
       'automatically prevents the default link navigation when a custom onClick handler is passed',
-      'simplifies navigation logic by allowing custom route handling without manual e.preventDefault',
+      'simplifies navigation logic by allowing custom route handling without manual e.preventDefault()',
       'designed for cases where links need to look and behave like buttons while preserving accessibility',
     ],
     composedOf: ['Button', 'IconButton'],

@@ -14,7 +14,7 @@ const HTML_TAG_META: ComponentMeta<HtmlTagProps<ElementType>> = {
       'forwards the relevant attributes for the tag',
       'passes through the ref',
       'polymorphic design lets you swap the underlying element while still receiving the correct props, ensuring the component resolves to a predictable, semantic element',
-      'rarely needed - Box, Flex, Grid, or other higher-level components usually fit better',
+      'rarely needed - Box, Flex, Grid or other higher-level components usually fit better',
       'could be helpful as an escape hatch, if you need the absolute lowest layer without extra props or behaviors',
     ],
   },

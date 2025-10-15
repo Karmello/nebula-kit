@@ -14,7 +14,7 @@ const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemProps>['props'] = {
     defaultValue: '0 1 auto',
     isRequired: false,
     isResponsive: true,
-    description: 'Defines how the item grows, shrinks, and sets its base size within the container.',
+    description: 'Defines how the item grows, shrinks and sets its base size within the container.',
   },
   flexGrow: {
     options: ['CSS'],

@@ -27,7 +27,7 @@ export default () => {
       <Spacer blockSize={7} />
       <Text>
         Nebula Kit isn't named for what it looks like, but for what it does - it turns scattered parts into
-        structure, and structure into light.
+        structure and structure into light.
       </Text>
       <Spacer blockSize={7} />
       <Text>
@@ -39,7 +39,7 @@ export default () => {
       <Text>
         And just like real nebula, this one was born from what came before. Older frameworks burned bright,
         then scattered their patterns and lessons into the air. From that dust, NebulaKit formed - smaller,
-        steadier, and shaped by everything those systems left behind. Not a reinvention, but a refinement born
+        steadier and shaped by everything those systems left behind. Not a reinvention, but a refinement born
         from their collapse.
       </Text>
     </Box>

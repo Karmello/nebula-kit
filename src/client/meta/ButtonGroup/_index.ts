@@ -9,7 +9,7 @@ const BUTTON_GROUP_META: ComponentMeta<ButtonGroupProps> = {
     title: 'Composite control that unifies several buttons into a single interface element.',
     description: [
       'groups multiple buttons into a single horizontal or vertical block',
-      'can appear as a separated group or an attached group',
+      'can appear as a separated or an attached group',
       'props set on individual buttons override props inherited from the group',
     ],
 

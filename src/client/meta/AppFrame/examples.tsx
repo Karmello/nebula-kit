@@ -4,7 +4,7 @@ import { AppFrameProps } from 'lib/components/layouts/AppFrame/definitions'
 
 const APP_FRAME_EXAMPLES_META: ComponentMeta<AppFrameProps>['examples'] = [
   {
-    description: 'Application view composed of header, main area, and footer.',
+    description: 'Application view composed of header, main area and footer.',
     jsx: (
       <AppFrame>
         <AppFrame.Header>Header</AppFrame.Header>

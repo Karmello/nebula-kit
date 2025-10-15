@@ -53,7 +53,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     isRequired: false,
     isResponsive: false,
     description:
-      'Controls overall proportions - adjusting blockSize, horizontal padding, and fontSize to keep content balanced at each size.',
+      'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
   },
 }
 
