@@ -32,6 +32,9 @@ jobs:
           corepack enable
           corepack use yarn@4.10.3
 
+      - name: Prep Yarn cache folder
+        run: mkdir -p .yarn/cache
+
       - name: Cache Yarn artifacts
         uses: actions/cache@v4
         with:
