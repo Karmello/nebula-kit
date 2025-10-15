@@ -1,13 +1,19 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-ARG PAT
-ENV PAT=$PAT
+# If you need private registry auth, set it here (optional)
+ARG NPM_TOKEN
+ENV NPM_TOKEN=$NPM_TOKEN
 
-RUN corepack enable
+# Corepack -> Yarn 4
+RUN corepack enable && corepack use yarn@4.10.3
 
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+# Bring in Yarn config early so install works (Berry expects these if present)
+COPY package.json yarn.lock .yarnrc.yml ./
+# Copy Yarn folders if you track releases/plugins/patches (safe if missing)
+COPY .yarn/ .yarn/
+
+RUN yarn install --immutable
 
 COPY . .
 ENV NODE_ENV=production
@@ -16,9 +22,16 @@ RUN yarn build
 FROM node:20-alpine AS runner
 WORKDIR /app
 
-COPY package.json yarn.lock ./
-RUN yarn install --production --frozen-lockfile
+# Corepack -> Yarn 4 for runtime scripts too
+RUN corepack enable && corepack use yarn@4.10.3
 
+COPY package.json yarn.lock .yarnrc.yml ./
+COPY .yarn/ .yarn/
+
+# Install only prod deps (Yarn 4)
+RUN yarn install --immutable --production
+
+# App artifacts
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/index.html ./index.html
 
