@@ -4,8 +4,15 @@
 /dist
 /playwright/.cache/
 
+.env
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-.env
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/patches
+.pnp.*

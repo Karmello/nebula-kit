@@ -1,21 +1,38 @@
 {
   "name": "@nebula-kit/core",
   "description": "NebulaKit is a UI library created with React, TypeScript, and CSS for building web applications.",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "license": "UNLICENSED",
   "repository": {
     "url": "git+https://github.com/Karmello/nebula-kit.git"
   },
   "private": true,
   "type": "module",
-  "main": "dist/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.css"
+  ],
   "engines": {
     "node": ">=18"
   },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "packageManager": "yarn@4.10.3",
   "scripts": {
     "dev": "nodemon -L --exec \"vite --config vite.client.dev.ts\" --watch vite.client.dev.ts --verbose",
     "dev:ssr": "nodemon -L --exec \"tsx src/server/server.dev.ts\" --watch src/server/server.dev.ts --verbose",
@@ -27,16 +44,20 @@
     "prettify": "prettier --write src/**/*.{ts,tsx}",
     "lint": "eslint src/**/*.{ts,tsx}",
     "typecheck": "tsc --noEmit -p tsconfig.typecheck.json",
-    "tsd": "tsc -p tsconfig.types.json && tsd -t dist/types/index.d.ts -f src/lib/components/**/*.test.d.tsx",
+    "tsd": "tsc -p tsconfig.types.json && tsd --cwd . -t dist/types/index.d.ts -f \"src/lib/components/**/*.test.d.tsx\"",
     "test": "vitest run",
     "pw": "playwright test -c playwright.config.cjs",
-    "dist": "./scripts/distribute.sh",
-    "lib": "git push && yarn dist && npm publish",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "dist:css:global": "sass src/lib/styles/index.scss dist/styles/index.css --no-source-map",
+    "dist:css:components": "sass src/lib/components:dist/lib/components --no-source-map",
+    "dist": "tsup --config tsup.pkg.ts && yarn dist:css:global && yarn dist:css:components",
+    "clean": "rimraf dist",
+    "prepack": "yarn clean && yarn dist && rimraf dist/types",
+    "pack": "yarn pack -o nebula-kit-core.tgz"
   },
   "peerDependencies": {
-    "react": "^19",
-    "react-dom": "^19"
+    "react": ">=19",
+    "react-dom": ">=19"
   },
   "dependencies": {
     "@shikijs/core": "^3.12.0",
@@ -73,6 +94,7 @@
     "@typescript-eslint/eslint-plugin": "^8.44.0",
     "@typescript-eslint/parser": "^8.44.0",
     "@vitejs/plugin-react-swc": "^4.1.0",
+    "esbuild": "^0.25.11",
     "eslint": "^9.35.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react": "^7.37.5",
@@ -84,6 +106,7 @@
     "prettier": "^3.6.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "rimraf": "^6.0.1",
     "sass": "^1.92.1",
     "tsd": "^0.33.0",
     "tsup": "^8.5.0",
