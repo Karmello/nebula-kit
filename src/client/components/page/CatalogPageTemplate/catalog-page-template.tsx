@@ -46,9 +46,8 @@ export const CatalogPageTemplate = ({
                     initiallyExpanded={isCategorySelected}
                   >
                     {items.map(({ key: itemKey, label, sections }) => {
-                      const sectionIndex = sections.findIndex(s => s.key === activeSectionObj?.key)
-                      const href = `/${pageKey}/${categoryKey}/${itemKey}/${sections[sectionIndex > -1 ? sectionIndex : 0].key}`
-                      const isItemSelected = pathname === href
+                      const href = `/${pageKey}/${categoryKey}/${itemKey}/${sections[0].key}`
+                      const isItemSelected = isCategorySelected && itemKey === activeItemObj?.key
                       return (
                         <SideNav.Item
                           key={itemKey}

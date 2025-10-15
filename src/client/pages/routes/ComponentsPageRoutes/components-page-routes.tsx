@@ -1,9 +1,9 @@
+import { useMemo } from 'react'
 import { Navigate, Route, Routes } from 'react-router'
 
 import { ComponentOverviewPage, ComponentPropsPage, ComponentExamplesPage } from 'client/pages'
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
 import { Spacer } from 'lib/components'
-import { useMemo } from 'react'
 
 const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
   switch (sectionKey) {

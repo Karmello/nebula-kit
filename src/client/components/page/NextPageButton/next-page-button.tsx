@@ -45,7 +45,7 @@ export const NextPageButton = ({ pageKey, currentSectionKey }: NextPageButtonPro
         navigateTo(href)
       }}
       iconName="arrow-right"
-      intent="primary"
+      intent="warning"
       size="sm"
     >
       Continue

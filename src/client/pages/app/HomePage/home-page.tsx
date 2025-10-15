@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, LinkButton, Section, Spacer, Text } from 'lib/components'
+import { Box, ButtonGroup, Divider, Flex, LinkButton, Section, Spacer, Text } from 'lib/components'
 import { useNavigateTo } from 'client/services'
 
 export const HomePage = () => {
@@ -19,17 +19,31 @@ export const HomePage = () => {
             predictable, stable, and effortless to scale.
           </Text>
           <Spacer blockSize={15} />
-          <LinkButton
-            intent="primary"
-            iconName="arrow-right"
-            size="sm"
-            href="/foundations/overview/introduction/why-nebula"
-            onClick={() => {
-              navigateTo('/foundations/overview/introduction/why-nebula')
-            }}
-          >
-            Explore
-          </LinkButton>
+          <ButtonGroup gap={5}>
+            <LinkButton
+              intent="primary"
+              iconName="arrow-right"
+              size="sm"
+              href="/foundations"
+              onClick={() => {
+                navigateTo('/foundations')
+              }}
+            >
+              Foundations
+            </LinkButton>
+            <LinkButton
+              variant="outline"
+              intent="primary"
+              iconName="arrow-right"
+              size="sm"
+              href="/components"
+              onClick={() => {
+                navigateTo('/components')
+              }}
+            >
+              Components
+            </LinkButton>
+          </ButtonGroup>
         </Flex.Item>
         <Flex.Item flex={1}>
           <Flex flexDirection="column" gap={15}>
