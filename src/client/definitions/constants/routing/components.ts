@@ -14,8 +14,8 @@ export const COMPONENT_CATEGORIES = [
     ],
   },
   {
-    key: 'layout-base',
-    label: 'Layout base',
+    key: 'layout',
+    label: 'Layout',
     items: [
       { key: 'flex', label: 'Flex', sections: COMPONENT_SECTIONS },
       { key: 'grid', label: 'Grid', sections: COMPONENT_SECTIONS },
