@@ -7,12 +7,15 @@ WORKDIR /usr/src
 
 ARG PAT
 ENV PAT=${PAT}
+
+RUN corepack enable && corepack use yarn@4.10.3
 RUN git clone https://$PAT@github.com/Karmello/nebula-kit.git
 
 WORKDIR /usr/src/nebula-kit
 
-RUN yarn install --frozen-lockfile
+RUN yarn install --immutable
 
+ENV NODE_ENV=development
 ENV CHROMIUM_PATH=/usr/bin/chromium
 
 CMD ["yarn", "dev", ";", "tail", "-f", "/dev/null"]
