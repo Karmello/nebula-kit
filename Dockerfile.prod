@@ -19,7 +19,7 @@ WORKDIR /app
 RUN corepack enable && corepack use yarn@4.10.3
 
 COPY package.json yarn.lock ./
-RUN yarn install --production --immutable
+RUN yarn install --immutable
 
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/index.html ./index.html
