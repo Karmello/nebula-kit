@@ -6,21 +6,29 @@ ENV PAT=$PAT
 
 RUN corepack enable && corepack use yarn@4.10.3
 
-COPY package.json yarn.lock ./
+# copy package files first
+COPY package.json yarn.lock .yarnrc.yml ./
+
+# install dependencies (classic node_modules linker)
 RUN yarn install --immutable
 
+# now bring in the rest of your source
 COPY . .
+
 ENV NODE_ENV=production
+
+# run build with node_modules intact
 RUN yarn build
+
 
 FROM node:20-alpine AS runner
 WORKDIR /app
 
 RUN corepack enable && corepack use yarn@4.10.3
 
-COPY package.json yarn.lock ./
-RUN yarn install --immutable
-
+# copy only the production subset
+COPY package.json yarn.lock .yarnrc.yml ./
+COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/index.html ./index.html
 
