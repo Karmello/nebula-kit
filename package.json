@@ -6,7 +6,6 @@
   "repository": {
     "url": "git+https://github.com/Karmello/nebula-kit.git"
   },
-  "private": true,
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -51,8 +50,7 @@
     "dist:css": "sass --load-path src/lib src/lib/styles/index.pkg.scss dist/lib/styles/index.css --no-source-map",
     "dist": "tsup --config tsup.pkg.ts && yarn dist:css",
     "clean": "rimraf dist",
-    "prepack": "yarn clean && yarn dist && rimraf dist/index.d.cts dist/types",
-    "pack": "yarn pack -o nebula-kit-core.tgz"
+    "prepack": "yarn clean && yarn dist && rimraf dist/index.d.cts dist/types"
   },
   "peerDependencies": {
     "react": ">=19",
