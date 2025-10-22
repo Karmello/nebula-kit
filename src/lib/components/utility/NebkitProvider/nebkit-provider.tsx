@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useLayoutEffect } from 'react'
 
-import { useLibStore } from 'lib/state'
+import { useNebkitStore } from 'lib/state'
 import { Theme } from 'lib/definitions'
 
 import {
@@ -21,7 +21,7 @@ export const NebkitProvider = <T extends Theme = 'light'>({
   background,
   borderRadius = DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS,
 }: NebkitProviderProps<T>): ReactElement => {
-  const libStore = useLibStore()
+  const nebkitStore = useNebkitStore()
 
   useLayoutEffect(() => {
     requestAnimationFrame(() => {
@@ -33,33 +33,36 @@ export const NebkitProvider = <T extends Theme = 'light'>({
   }, [])
 
   useEffect(() => {
-    libStore.setBorderRadius(borderRadius)
+    nebkitStore.setBorderRadius(borderRadius)
     document.documentElement.style.setProperty('--neb-border-radius', `${borderRadius}px`)
-    document.documentElement.setAttribute('data-brand', brand)
-  }, [])
+  }, [borderRadius, brand])
 
   useEffect(() => {
     if (theme) {
-      libStore.setTheme(theme)
+      nebkitStore.setTheme(theme)
     } else {
-      if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-        libStore.setTheme('light')
-      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        libStore.setTheme('dark')
-      } else {
-        libStore.setTheme(DEFAULT_NEBKIT_PROVIDER_THEME)
-      }
+      // if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      //   nebkitStore.setTheme('light')
+      // } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      //   nebkitStore.setTheme('dark')
+      // } else {
+      //   nebkitStore.setTheme(DEFAULT_NEBKIT_PROVIDER_THEME)
+      // }
     }
   }, [theme])
 
   useEffect(() => {
     const CSS_VAR_CONFIG =
-      THEME_BACKGROUNDS_MAP[background || DEFAULT_NEBKIT_PROVIDER_BACKGROUND[libStore.theme]]
+      THEME_BACKGROUNDS_MAP[background || DEFAULT_NEBKIT_PROVIDER_BACKGROUND[nebkitStore.theme]]
     for (const cssVarName in CSS_VAR_CONFIG) {
       document.documentElement.style.setProperty(cssVarName, String(CSS_VAR_CONFIG[cssVarName]))
     }
-    document?.documentElement.setAttribute('data-theme', libStore.theme)
-  }, [libStore.theme])
+    document?.documentElement.setAttribute('data-theme', nebkitStore.theme)
+  }, [nebkitStore.theme])
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-brand', nebkitStore.brand)
+  }, [nebkitStore.brand])
 
   return children
 }

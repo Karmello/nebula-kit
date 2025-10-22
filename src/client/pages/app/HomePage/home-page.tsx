@@ -1,8 +1,11 @@
-import { Box, ButtonGroup, Divider, Flex, LinkButton, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, ButtonGroup, Divider, Flex, LinkButton, Section, Spacer, Text } from 'lib/components'
+import { useNebkitStore } from 'lib/state'
 import { useNavigateTo } from 'client/services'
 
 export const HomePage = () => {
   const navigateTo = useNavigateTo()
+
+  const { theme, setTheme, brand, setBrand } = useNebkitStore()
 
   return (
     <Box padding={{ base: 10, lg: 25 }}>
@@ -44,6 +47,51 @@ export const HomePage = () => {
               Components
             </LinkButton>
           </ButtonGroup>
+          <Spacer blockSize={25} />
+          <Divider />
+          <Spacer blockSize={15} />
+          <Flex gap={15}>
+            <Flex.Item>
+              <Text bold>Theme</Text>
+              <ButtonGroup key={theme} attached size="sm" intent="primary">
+                <Button
+                  intent={theme === 'light' ? 'primary' : 'tertiary'}
+                  tagAttrs={{ onClick: () => setTheme('light') }}
+                >
+                  Light
+                </Button>
+                <Button
+                  intent={theme === 'dark' ? 'primary' : 'tertiary'}
+                  tagAttrs={{ onClick: () => setTheme('dark') }}
+                >
+                  Dark
+                </Button>
+              </ButtonGroup>
+            </Flex.Item>
+            <Flex.Item>
+              <Text bold>Brand</Text>
+              <ButtonGroup key={brand} attached size="sm" intent="primary">
+                <Button
+                  intent={brand === 'blue' ? 'primary' : 'tertiary'}
+                  tagAttrs={{ onClick: () => setBrand('blue') }}
+                >
+                  Blue
+                </Button>
+                <Button
+                  intent={brand === 'red' ? 'primary' : 'tertiary'}
+                  tagAttrs={{ onClick: () => setBrand('red') }}
+                >
+                  Red
+                </Button>
+                <Button
+                  intent={brand === 'green' ? 'primary' : 'tertiary'}
+                  tagAttrs={{ onClick: () => setBrand('green') }}
+                >
+                  Green
+                </Button>
+              </ButtonGroup>
+            </Flex.Item>
+          </Flex>
         </Flex.Item>
         <Flex.Item flex={1}>
           <Flex flexDirection="column" gap={15}>
