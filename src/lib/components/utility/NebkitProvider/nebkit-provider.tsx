@@ -8,6 +8,7 @@ import {
   DEFAULT_NEBKIT_PROVIDER_BACKGROUND,
   DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS,
   DEFAULT_NEBKIT_PROVIDER_THEME,
+  DEFAULT_NEBKIT_PROVIDER_BRAND,
   NebkitProviderProps,
 } from './definitions'
 
@@ -16,6 +17,7 @@ import 'lib/styles/index.scss'
 export const NebkitProvider = <T extends Theme = 'light'>({
   children,
   theme,
+  brand = DEFAULT_NEBKIT_PROVIDER_BRAND,
   background,
   borderRadius = DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS,
 }: NebkitProviderProps<T>): ReactElement => {
@@ -33,6 +35,7 @@ export const NebkitProvider = <T extends Theme = 'light'>({
   useEffect(() => {
     libStore.setBorderRadius(borderRadius)
     document.documentElement.style.setProperty('--neb-border-radius', `${borderRadius}px`)
+    document.documentElement.setAttribute('data-brand', brand)
   }, [])
 
   useEffect(() => {

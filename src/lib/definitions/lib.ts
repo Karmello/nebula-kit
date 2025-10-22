@@ -5,6 +5,7 @@ export const LIB_PREFIX = 'neb'
 
 export const BREAKPOINTS = ['base', 'sm', 'md', 'lg', 'xl'] as const
 export const COLORS = ['gray', 'red', 'green', 'blue', 'amber'] as const
+export const BRANDS = ['blue', 'red', 'green'] as const
 
 export const SCALE = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,
@@ -44,5 +45,6 @@ export const ICON_NAMES = [
 
 export type Breakpoint = (typeof BREAKPOINTS)[number]
 export type Color = (typeof COLORS)[number]
+export type Brand = (typeof BRANDS)[number]
 export type ScaleValue = (typeof SCALE)[number]
 export type IconName = (typeof ICON_NAMES)[number]

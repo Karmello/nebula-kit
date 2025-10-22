@@ -7,7 +7,7 @@ import { NebkitProvider, HydrationGate } from 'lib/components'
 const Node = () => (
   <BrowserRouter>
     <HydrationGate>
-      <NebkitProvider>
+      <NebkitProvider theme="light" brand="blue">
         <App />
       </NebkitProvider>
     </HydrationGate>

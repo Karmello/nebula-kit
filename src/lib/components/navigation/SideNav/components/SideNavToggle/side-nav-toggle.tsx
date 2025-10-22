@@ -25,6 +25,8 @@ export const SideNavToggle = () => {
           }}
           iconName={isAnyCategoryExpanded ? 'list-chevrons-down-up' : 'list-chevrons-up-down'}
           size="xs"
+          intent="neutral"
+          variant="ghost"
         />
       </Box>
       <Divider />

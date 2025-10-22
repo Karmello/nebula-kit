@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-import { ScaleValue, Theme } from 'lib/definitions'
+import { Brand, ScaleValue, Theme } from 'lib/definitions'
 
 type ThemeBackgroundLight = 'white'
 type ThemeBackgroundDark = 'black'
@@ -12,53 +12,33 @@ export const DEFAULT_NEBKIT_PROVIDER_BACKGROUND: Record<Theme, ThemeBackgroundCo
   dark: 'black',
 }
 export const DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS: ScaleValue = 5
+export const DEFAULT_NEBKIT_PROVIDER_BRAND: Brand = 'blue'
 
 export const THEME_BACKGROUNDS_MAP: Record<ThemeBackgroundColor, object> = {
   white: {
     '--neb-background': 'var(--neb-gray-1)',
-    '--neb-text': 'var(--neb-gray-9)',
-    '--neb-focus-border': 'var(--neb-gray-9)',
-    '--neb-neutral-outline-border': 'var(--neb-gray-3)',
-    '--neb-neutral-outline-border-hover': 'var(--neb-gray-4)',
-    '--neb-neutral-outline-bg-hover': 'var(--neb-gray-2)',
-    '--neb-neutral-outline-bg-active': 'var(--neb-gray-3)',
-    '--neb-neutral-solid-bg-hover': 'var(--neb-gray-2)',
-    '--neb-neutral-solid-bg-active': 'var(--neb-gray-3)',
-    '--neb-inverse-ghost-text': 'var(--neb-gray-2)',
-    '--neb-inverse-outline-border': 'var(--neb-gray-5)',
-    '--neb-inverse-outline-border-hover': 'var(--neb-gray-6)',
-    '--neb-inverse-outline-bg-hover': 'var(--neb-gray-2)',
-    '--neb-inverse-outline-bg-active': 'var(--neb-gray-3)',
-    '--neb-inverse-solid-bg': 'var(--neb-gray-6)',
-    '--neb-inverse-solid-bg-hover': 'var(--neb-gray-7)',
-    '--neb-inverse-solid-bg-active': 'var(--neb-gray-9)',
-    '--neb-inverse-solid-text': 'var(--neb-gray-1)',
+    '--neb-text': 'var(--neb-gray-15)',
+    '--neb-focus-border': 'var(--neb-gray-15)',
+    '--neb-inverse-ghost-text': 'var(--neb-gray-3)',
+    '--neb-inverse-outline-border': 'var(--neb-gray-11)',
+    '--neb-inverse-outline-border-active': 'var(--neb-gray-15)',
+    '--neb-inverse-outline-bg-hover': 'var(--neb-gray-3)',
   },
   black: {
-    '--neb-background': 'var(--neb-gray-9)',
+    '--neb-background': 'var(--neb-gray-15)',
     '--neb-text': 'var(--neb-gray-1)',
     '--neb-focus-border': 'var(--neb-gray-1)',
-    '--neb-neutral-outline-border': 'var(--neb-gray-7)',
-    '--neb-neutral-outline-border-hover': 'var(--neb-gray-6)',
-    '--neb-neutral-outline-bg-hover': 'var(--neb-gray-9)',
-    '--neb-neutral-outline-bg-active': 'var(--neb-gray-8)',
-    '--neb-neutral-solid-bg-hover': 'var(--neb-gray-8)',
-    '--neb-neutral-solid-bg-active': 'var(--neb-gray-7)',
-    '--neb-inverse-ghost-text': 'var(--neb-gray-8)',
-    '--neb-inverse-outline-border': 'var(--neb-gray-5)',
-    '--neb-inverse-outline-border-hover': 'var(--neb-gray-4)',
-    '--neb-inverse-outline-bg-hover': 'var(--neb-gray-9)',
-    '--neb-inverse-outline-bg-active': 'var(--neb-gray-8)',
-    '--neb-inverse-solid-bg': 'var(--neb-gray-5)',
-    '--neb-inverse-solid-bg-hover': 'var(--neb-gray-4)',
-    '--neb-inverse-solid-bg-active': 'var(--neb-gray-1)',
-    '--neb-inverse-solid-text': 'var(--neb-gray-9)',
+    '--neb-inverse-ghost-text': 'var(--neb-gray-13)',
+    '--neb-inverse-outline-border': 'var(--neb-gray-6)',
+    '--neb-inverse-outline-border-active': 'var(--neb-gray-1)',
+    '--neb-inverse-outline-bg-hover': 'var(--neb-gray-14)',
   },
 }
 
 export type NebkitProviderProps<T extends Theme = 'light'> = {
   children: ReactElement
   theme?: T
+  brand?: Brand
   background?: T extends 'light' ? ThemeBackgroundLight : ThemeBackgroundDark
   borderRadius?: ScaleValue | string
 }

@@ -1,6 +1,19 @@
 import { Box, Button, Flex, MarkerList, MarkerListItem, Section, Spacer, Text } from 'lib/components'
 import { BoxIntent } from 'lib/components/base/Box/definitions'
 
+const INTENTS_INFO_MAP: Record<BoxIntent, string> = {
+  primary: 'main call-to-action or highlight',
+  secondary: 'supporting action, less emphasis than primary',
+  tertiary: 'subtle, lowest emphasis action',
+  neutral: 'surface without meaning, default tone',
+  inverse: "contrast against app's surface",
+  success: 'positive or completed state',
+  info: 'informative, non-critical highlight',
+  warning: 'cautionary or attention-needed',
+  danger: 'destructive or error state',
+  highlight: 'draws focus to key content or elements without implying urgency or status',
+}
+
 export default () => {
   return (
     <Box maxInlineSize="55rem">
@@ -11,42 +24,12 @@ export default () => {
         </Text>
         <Section heading="Intents">
           <MarkerList>
-            <MarkerListItem>
-              <Text bold>{BoxIntent[0]}</Text>
-              <Text>&nbsp;- surface without meaning, default tone</Text>
-            </MarkerListItem>
-            <MarkerListItem>
-              <Text bold>{BoxIntent[1]}</Text>
-              <Text>&nbsp;- main call-to-action or highlight</Text>
-            </MarkerListItem>
-            <MarkerListItem>
-              <Text bold>{BoxIntent[2]}</Text>
-              <Text>&nbsp;- supporting action, less emphasis than primary</Text>
-            </MarkerListItem>
-            <MarkerListItem>
-              <Text bold>{BoxIntent[3]}</Text>
-              <Text>&nbsp;- subtle, lowest emphasis action</Text>
-            </MarkerListItem>
-            <MarkerListItem>
-              <Text bold>{BoxIntent[4]}</Text>
-              <Text>&nbsp;- positive or completed state</Text>
-            </MarkerListItem>
-            <MarkerListItem>
-              <Text bold>{BoxIntent[5]}</Text>
-              <Text>&nbsp;- informative, non-critical highlight</Text>
-            </MarkerListItem>
-            <MarkerListItem>
-              <Text bold>{BoxIntent[6]}</Text>
-              <Text>&nbsp;- cautionary or attention-needed</Text>
-            </MarkerListItem>
-            <MarkerListItem>
-              <Text bold>{BoxIntent[7]}</Text>
-              <Text>&nbsp;- destructive or error state</Text>
-            </MarkerListItem>
-            <MarkerListItem>
-              <Text bold>{BoxIntent[8]}</Text>
-              <Text>&nbsp;- contrast against app's surface</Text>
-            </MarkerListItem>
+            {Object.keys(INTENTS_INFO_MAP).map(intent => (
+              <MarkerListItem key={intent}>
+                <Text bold>{intent}</Text>
+                <Text>&nbsp;- {INTENTS_INFO_MAP[intent as BoxIntent]}</Text>
+              </MarkerListItem>
+            ))}
           </MarkerList>
         </Section>
         <Section heading="Ghost variant">

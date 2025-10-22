@@ -6,15 +6,16 @@ import { HtmlTagProps } from 'lib/components/utility'
 export const BoxVariant = ['ghost', 'outline', 'solid'] as const
 
 export const BoxIntent = [
-  'neutral',
   'primary',
   'secondary',
   'tertiary',
+  'neutral',
+  'inverse',
   'success',
   'info',
   'warning',
   'danger',
-  'inverse',
+  'highlight',
 ] as const
 
 export const DEFAULT_BOX_VARIANT: BoxVariant = 'ghost'

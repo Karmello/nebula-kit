@@ -38,7 +38,7 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
                 }}
                 iconName={getToggleIconName(sidePosition, sideOpen)}
                 intent="tertiary"
-                size="sm"
+                size="xs"
               />
               {slotsByName['SplitView.MainBar']}
             </Flex>

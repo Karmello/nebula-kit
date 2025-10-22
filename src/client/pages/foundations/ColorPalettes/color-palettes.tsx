@@ -13,7 +13,7 @@ export default () => {
             <Section key={colorName} heading={pascalCase(colorName)}>
               <Box overflowX="auto">
                 <Flex flexDirection="row">
-                  {Array.from({ length: 9 }, (v, k) => {
+                  {Array.from({ length: 15 }, (v, k) => {
                     return (
                       <Flex.Item key={k} flex={1}>
                         <Box

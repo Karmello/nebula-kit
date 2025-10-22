@@ -55,7 +55,7 @@ export const SplitViewSide = ({
                     }}
                     iconName="close"
                     intent={intent || 'secondary'}
-                    size="sm"
+                    size="xs"
                   />
                 </Box>
               </Flex>
