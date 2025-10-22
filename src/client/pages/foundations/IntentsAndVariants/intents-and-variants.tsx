@@ -6,7 +6,7 @@ const INTENTS_INFO_MAP: Record<BoxIntent, string> = {
   secondary: 'supporting action, less emphasis than primary',
   tertiary: 'subtle, lowest emphasis action',
   neutral: 'surface without meaning, default tone',
-  inverse: "contrast against app's surface",
+  inverse: 'flips contrast relative to context',
   success: 'positive or completed state',
   info: 'informative, non-critical highlight',
   warning: 'cautionary or attention-needed',
