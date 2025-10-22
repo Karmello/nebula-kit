@@ -4,7 +4,7 @@ import { BoxIntent } from 'lib/components/base/Box/definitions'
 export const ListWithChips = ({
   heading,
   items,
-  intent = 'secondary',
+  intent = 'info',
 }: {
   heading: string
   items: string[]

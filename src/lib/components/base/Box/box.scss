@@ -68,6 +68,9 @@
     border-color: transparent;
     color: var(--neb-#{$intent}-ghost-text, var(--neb-text));
   }
+  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:hover {
+    color: var(--neb-#{$intent}-ghost-text-hover, var(--neb-#{$intent}-ghost-text, var(--neb-text)));
+  }
   .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:active {
     color: var(
       --neb-#{$intent}-ghost-text-active,

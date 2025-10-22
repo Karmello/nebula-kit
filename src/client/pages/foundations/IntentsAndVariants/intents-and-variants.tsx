@@ -22,23 +22,13 @@ export default () => {
           Intents and variants available in the system, showing how semantic roles combine with visual styles
           across components.
         </Text>
-        <Section heading="Intents">
-          <MarkerList>
-            {Object.keys(INTENTS_INFO_MAP).map(intent => (
-              <MarkerListItem key={intent}>
-                <Text bold>{intent}</Text>
-                <Text>&nbsp;- {INTENTS_INFO_MAP[intent as BoxIntent]}</Text>
-              </MarkerListItem>
-            ))}
-          </MarkerList>
-        </Section>
-        <Section heading="Ghost variant">
-          <Text>Minimal, blends into background.</Text>
+        <Section heading="Solid variant">
+          <Text>Filled surface, strong emphasis.</Text>
           <Spacer blockSize={15} />
           <Flex flexWrap="wrap" gap={3}>
             {BoxIntent.map(intent => {
               return (
-                <Button key={intent} variant="ghost" intent={intent}>
+                <Button key={intent} variant="solid" intent={intent}>
                   {intent}
                 </Button>
               )
@@ -58,18 +48,28 @@ export default () => {
             })}
           </Flex>
         </Section>
-        <Section heading="Solid variant">
-          <Text>Filled surface, strong emphasis.</Text>
+        <Section heading="Ghost variant">
+          <Text>Minimal, blends into background.</Text>
           <Spacer blockSize={15} />
           <Flex flexWrap="wrap" gap={3}>
             {BoxIntent.map(intent => {
               return (
-                <Button key={intent} variant="solid" intent={intent}>
+                <Button key={intent} variant="ghost" intent={intent}>
                   {intent}
                 </Button>
               )
             })}
           </Flex>
+        </Section>
+        <Section heading="Intents">
+          <MarkerList>
+            {Object.keys(INTENTS_INFO_MAP).map(intent => (
+              <MarkerListItem key={intent}>
+                <Text bold>{intent}</Text>
+                <Text>&nbsp;- {INTENTS_INFO_MAP[intent as BoxIntent]}</Text>
+              </MarkerListItem>
+            ))}
+          </MarkerList>
         </Section>
       </Flex>
     </Box>
