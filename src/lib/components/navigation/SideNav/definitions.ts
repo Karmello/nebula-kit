@@ -1,7 +1,8 @@
-import { HtmlTagProps } from 'lib/components'
+import { FlexProps, HtmlTagProps } from 'lib/components'
 
 export const SideNavExpandMode = ['single', 'multiple'] as const
 export const DEFAULT_SIDE_NAV_EXPAND_MODE: SideNavExpandMode = 'multiple'
+export const DEFAULT_SIDE_NAV_ROW_GAP: FlexProps['rowGap'] = 1
 
 export type SideNavExpandMode = (typeof SideNavExpandMode)[number]
 
@@ -13,4 +14,6 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'nav'>, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<'nav'>['children']
 }
 
-export type SideNavProps = PropsFromHtmlTag & SideNavOwnProps
+type PropsFromFlex = Pick<FlexProps, 'rowGap'>
+
+export type SideNavProps = PropsFromHtmlTag & PropsFromFlex & SideNavOwnProps

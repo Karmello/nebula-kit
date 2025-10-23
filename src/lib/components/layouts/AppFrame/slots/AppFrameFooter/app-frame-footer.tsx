@@ -31,7 +31,7 @@ export const AppFrameFooter = ({
       intent={intent}
       borderIntent={borderIntent}
       minBlockSize={minBlockSize}
-      borderWidth={1}
+      borderTopWidth={1}
       borderRadius={0}
       {...paddings}
     >

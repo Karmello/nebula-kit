@@ -26,6 +26,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   variant = DEFAULT_BUTTON_VARIANT,
   intent = DEFAULT_BUTTON_INTENT,
   disabled,
+  borderRadius,
   // Text
   iconName,
   iconPosition,
@@ -52,6 +53,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       variant={variant}
       intent={intent}
       disabled={disabled}
+      borderRadius={borderRadius}
       interactive
       {...BUTTON_SIZE_CONFIG[size]}
     >

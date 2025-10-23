@@ -4,6 +4,9 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'a'>, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<'a'>['children']
 }
 
-type PropsFromLinkButton = Pick<LinkButtonProps, 'href' | 'onClick' | 'variant' | 'intent' | 'labelIntent'>
+type PropsFromLinkButton = Pick<
+  LinkButtonProps,
+  'href' | 'onClick' | 'variant' | 'intent' | 'labelIntent' | 'borderRadius'
+>
 
 export type SideNavItemProps = PropsFromHtmlTag & PropsFromLinkButton

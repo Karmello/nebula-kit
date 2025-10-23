@@ -21,6 +21,7 @@ export const LinkButton = ({
   labelIntent,
   size,
   iconName,
+  borderRadius,
   // own
   href,
   target = DEFAULT_LINK_BUTTON_TARGET,
@@ -50,6 +51,7 @@ export const LinkButton = ({
         size={size}
         iconName={iconName}
         iconPosition="right"
+        borderRadius={borderRadius}
       >
         {children}
       </Button>

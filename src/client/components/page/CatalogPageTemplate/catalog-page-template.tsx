@@ -34,7 +34,7 @@ export const CatalogPageTemplate = ({
       {({ mode, setSideOpen }) => (
         <>
           <SplitView.Side>
-            <SideNav>
+            <SideNav rowGap={{ base: 0, lg: 2 }}>
               {data.map(({ key: categoryKey, label, items }) => {
                 const isCategorySelected = activeCategoryObj?.key === categoryKey
                 return (
@@ -63,6 +63,7 @@ export const CatalogPageTemplate = ({
                             base: isItemSelected ? 'primary' : 'secondary',
                             lg: isItemSelected ? 'tertiary' : 'neutral',
                           }}
+                          borderRadius={{ base: 0, lg: 2 }}
                         >
                           {label}
                         </SideNav.Item>
@@ -91,7 +92,7 @@ export const CatalogPageTemplate = ({
               {({ mode, setSideOpen }) => (
                 <>
                   <SplitView.Side>
-                    <SideNav>
+                    <SideNav rowGap={{ base: 0, lg: 2 }}>
                       {data
                         .find(c => c.key === activeCategoryObj?.key)
                         ?.items.find(i => i.key === activeItemObj?.key)
@@ -113,6 +114,7 @@ export const CatalogPageTemplate = ({
                                 base: isItemSelected ? 'primary' : 'secondary',
                                 lg: isItemSelected ? 'tertiary' : 'neutral',
                               }}
+                              borderRadius={{ base: 0, lg: 2 }}
                             >
                               {label}
                             </SideNav.Item>

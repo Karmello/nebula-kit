@@ -36,6 +36,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     defaultValue: DEFAULT_BUTTON_INTENT,
   },
   disabled: BOX_PROPS_META.disabled,
+  borderRadius: BOX_PROPS_META.borderRadius,
   iconName: TEXT_PROPS_META.iconName,
   iconPosition: TEXT_PROPS_META.iconPosition,
   labelIntent: {

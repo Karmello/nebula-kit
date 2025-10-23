@@ -141,13 +141,8 @@ export const Box = <T extends ElementType = 'div'>({
   ])
 
   useLayoutEffect(() => {
-    if (borderIntent === undefined) return
-    applyRespValues('style', tagRef || ref, bp, { borderColor: `var(--neb-${borderIntent}-solid-bg)` })
-  }, [bp, borderIntent])
-
-  useLayoutEffect(() => {
-    applyRespValues('dataset', tagRef || ref, bp, { intent, variant }, 'Box')
-  }, [bp, intent, variant])
+    applyRespValues('dataset', tagRef || ref, bp, { intent, borderIntent, variant }, 'Box')
+  }, [bp, intent, borderIntent, variant])
 
   return (
     <HtmlTag

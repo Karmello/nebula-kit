@@ -21,6 +21,7 @@ export const IconButton = <T extends ButtonTag = 'button'>({
   size,
   disabled,
   iconName,
+  borderRadius,
 }: IconButtonProps<T>) => {
   return (
     <Button
@@ -38,6 +39,7 @@ export const IconButton = <T extends ButtonTag = 'button'>({
       size={size}
       disabled={disabled}
       iconName={iconName}
+      borderRadius={borderRadius}
     >
       {''}
     </Button>

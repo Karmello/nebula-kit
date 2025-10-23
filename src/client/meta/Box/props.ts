@@ -35,7 +35,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   borderWidth: {
     options: ['ScaleValue', 'CSS'],
     defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH),
-    description: 'The default borderWidth value can be overridden via NebkitProvider.',
+    description: 'Sets border width overriding global value set by NebkitProvider.',
   },
   borderTopWidth: {
     options: ['ScaleValue', 'CSS'],
@@ -60,7 +60,8 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   borderRadius: {
     options: ['ScaleValue', 'CSS'],
     defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS),
-    description: 'The default borderRadius value can be overridden via NebkitProvider.',
+    isResponsive: true,
+    description: 'Sets border radius overriding global value set by NebkitProvider.',
   },
   interactive: {
     options: ['boolean'],

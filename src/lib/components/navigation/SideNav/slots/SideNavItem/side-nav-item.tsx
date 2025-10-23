@@ -13,6 +13,7 @@ export const SideNavItem = ({
   variant,
   intent,
   labelIntent,
+  borderRadius,
 }: SideNavItemProps) => {
   return (
     <LinkButton
@@ -26,6 +27,7 @@ export const SideNavItem = ({
       variant={variant}
       intent={intent}
       labelIntent={labelIntent}
+      borderRadius={borderRadius}
       size="sm"
     >
       {children}

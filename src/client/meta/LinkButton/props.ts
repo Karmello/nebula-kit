@@ -1,12 +1,14 @@
 import { ComponentMeta } from 'client/definitions'
 import { LinkButtonProps } from 'lib/components'
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-import { BUTTON_PROPS_META } from '../Button/props'
+
 import {
   DEFAULT_LINK_BUTTON_INTENT,
   DEFAULT_LINK_BUTTON_TARGET,
   DEFAULT_LINK_BUTTON_VARIANT,
 } from 'lib/components/controls/LinkButton/definitions'
+
+import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
+import { BUTTON_PROPS_META } from '../Button/props'
 
 const LINK_BUTTON_PROPS_META: ComponentMeta<LinkButtonProps>['props'] = {
   children: HTML_TAG_PROPS_META.children,
@@ -23,6 +25,7 @@ const LINK_BUTTON_PROPS_META: ComponentMeta<LinkButtonProps>['props'] = {
   labelIntent: BUTTON_PROPS_META.labelIntent,
   size: BUTTON_PROPS_META.size,
   iconName: BUTTON_PROPS_META.iconName,
+  borderRadius: BUTTON_PROPS_META.borderRadius,
   href: {
     options: ['string'],
     isRequired: true,

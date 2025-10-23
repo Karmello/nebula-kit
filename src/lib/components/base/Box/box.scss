@@ -143,3 +143,9 @@
     color: var(--neb-text);
   }
 }
+
+@each $intent in $neb-intents {
+  .neb-box[data-neb-box-variant][data-neb-box-border-intent='#{$intent}'] {
+    border-color: var(--neb-#{$intent}-solid-bg);
+  }
+}

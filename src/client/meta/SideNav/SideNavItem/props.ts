@@ -21,6 +21,7 @@ const SIDE_NAV_ITEM_PROPS_META: ComponentMeta<SideNavItemProps>['props'] = {
   },
   intent: LINK_BUTTON_PROPS_META.intent,
   labelIntent: LINK_BUTTON_PROPS_META.labelIntent,
+  borderRadius: LINK_BUTTON_PROPS_META.borderRadius,
 }
 
 export { SIDE_NAV_ITEM_PROPS_META }

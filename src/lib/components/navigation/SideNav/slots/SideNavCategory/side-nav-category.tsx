@@ -11,15 +11,16 @@ export const SideNavCategory = ({
   tagAttrs,
   tagRef,
   children,
-  // Box
+  // Button
   variant,
   intent,
   labelIntent,
+  borderRadius,
   // own
   label,
   initiallyExpanded = false,
 }: SideNavCategoryProps) => {
-  const { expandedCategories, setExpandedCategories, expandMode } = useSideNavContext()
+  const { expandedCategories, setExpandedCategories, expandMode, rowGap } = useSideNavContext()
 
   const id = useId()
 
@@ -63,6 +64,7 @@ export const SideNavCategory = ({
                 variant={variant}
                 intent={intent}
                 labelIntent={labelIntent}
+                borderRadius={borderRadius}
                 labelAlign="left"
                 size="sm"
               >
@@ -76,8 +78,8 @@ export const SideNavCategory = ({
               }}
             >
               <Animate property="blockSize" visible={expandedCategories[id]}>
-                <Spacer blockSize={2} />
-                <Flex tag="ul" flexDirection="column" gap={2}>
+                <Spacer blockSize={rowGap !== undefined ? rowGap : 0} />
+                <Flex tag="ul" flexDirection="column" rowGap={rowGap}>
                   {slotsByName['SideNav.Item'].map((slot, key) => (
                     <Box key={key} tag="li" inlineSize="100%">
                       {slot}

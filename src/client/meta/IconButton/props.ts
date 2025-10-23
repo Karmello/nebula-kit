@@ -16,6 +16,7 @@ const ICON_BUTTON_PROPS_META: ComponentMeta<IconButtonProps>['props'] = {
     ...BUTTON_PROPS_META.iconName,
     isRequired: true,
   },
+  borderRadius: BUTTON_PROPS_META.borderRadius,
 }
 
 export { ICON_BUTTON_PROPS_META }

@@ -17,7 +17,11 @@ const SPLIT_VIEW_SIDE_PROPS_META: ComponentMeta<SplitViewSideProps>['props'] = {
   },
   intent: {
     ...BOX_PROPS_META.intent,
-    defaultValue: "{ base: 'secondary', lg: 'neutral' }",
+    defaultValue: "{ base: 'secondary', [switchAt]: 'neutral' }",
+  },
+  borderIntent: {
+    ...BOX_PROPS_META.borderIntent,
+    defaultValue: "{ base: 'primary', [switchAt]: 'neutral' }",
   },
 }
 

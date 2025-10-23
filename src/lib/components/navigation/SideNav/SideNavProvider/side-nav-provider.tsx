@@ -15,11 +15,11 @@ type ContextProps = Omit<ProviderProps, 'children'> & {
 
 const SideNavContext = createContext<ContextProps>({} as ContextProps)
 
-export const SideNavProvider = ({ children, expandMode }: ProviderProps) => {
+export const SideNavProvider = ({ children, expandMode, rowGap }: ProviderProps) => {
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({})
 
   return (
-    <SideNavContext.Provider value={{ expandMode, expandedCategories, setExpandedCategories }}>
+    <SideNavContext.Provider value={{ expandMode, expandedCategories, setExpandedCategories, rowGap }}>
       {children}
     </SideNavContext.Provider>
   )

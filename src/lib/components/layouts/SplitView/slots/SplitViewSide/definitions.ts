@@ -6,6 +6,6 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'aside'>, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<'aside'>['children']
 }
 
-type PropsFromBox = Pick<BoxProps<'aside'>, 'intent' | 'inlineSize'>
+type PropsFromBox = Pick<BoxProps<'aside'>, 'intent' | 'borderIntent' | 'inlineSize'>
 
 export type SplitViewSideProps = PropsFromHtmlTag & PropsFromBox

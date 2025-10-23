@@ -33,7 +33,7 @@ type BoxOwnProps = {
   borderRightWidth?: ScaleValue | string
   borderBottomWidth?: ScaleValue | string
   borderLeftWidth?: ScaleValue | string
-  borderRadius?: ScaleValue | string
+  borderRadius?: RespValue<ScaleValue | string>
   interactive?: boolean
   disabled?: boolean
   display?: RespValue<CssDisplay>
