@@ -50,7 +50,7 @@ export const HomePage = () => {
           <Spacer blockSize={25} />
           <Divider />
           <Spacer blockSize={15} />
-          <Flex gap={15}>
+          <Flex flexWrap="wrap" gap={15}>
             <Flex.Item>
               <Text bold>Theme</Text>
               <ButtonGroup key={theme} attached size="sm" intent="primary">
