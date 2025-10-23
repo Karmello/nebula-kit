@@ -12,7 +12,7 @@ export const DEFAULT_NEBKIT_PROVIDER_BACKGROUND: Record<Theme, ThemeBackgroundCo
   dark: 'black',
 }
 export const DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS: ScaleValue = 5
-export const DEFAULT_NEBKIT_PROVIDER_BRAND: Brand = 'blue'
+export const DEFAULT_NEBKIT_PROVIDER_BRAND: Brand = 'gray'
 
 export const THEME_BACKGROUNDS_MAP: Record<ThemeBackgroundColor, object> = {
   white: {
@@ -23,8 +23,8 @@ export const THEME_BACKGROUNDS_MAP: Record<ThemeBackgroundColor, object> = {
     '--neb-inverse-outline-border': 'var(--neb-gray-10)',
     '--neb-inverse-outline-border-hover': 'var(--neb-gray-12)',
     '--neb-inverse-outline-border-active': 'var(--neb-gray-15)',
-    '--neb-inverse-outline-bg-hover': 'var(--neb-gray-4)',
-    '--neb-inverse-outline-bg-active': 'var(--neb-gray-5)',
+    '--neb-inverse-outline-bg-hover': 'var(--neb-gray-2)',
+    '--neb-inverse-outline-bg-active': 'var(--neb-gray-4)',
     '--neb-inverse-solid-bg': 'var(--neb-gray-12)',
     '--neb-inverse-solid-bg-hover': 'var(--neb-gray-13)',
     '--neb-inverse-solid-bg-active': 'var(--neb-gray-15)',

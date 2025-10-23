@@ -12,8 +12,8 @@
     --neb-primary-outline-border: var(--neb-#{$brand}-4);
     --neb-primary-outline-border-hover: var(--neb-#{$brand}-3);
     --neb-primary-outline-border-active: var(--neb-#{$brand}-2);
-    --neb-primary-outline-bg-hover: var(--neb-#{$brand}-15);
-    --neb-primary-outline-bg-active: var(--neb-#{$brand}-14);
+    --neb-primary-outline-bg-hover: var(--neb-#{$brand}-14);
+    --neb-primary-outline-bg-active: var(--neb-#{$brand}-13);
 
     // primary ghost
     --neb-primary-ghost-text: var(--neb-#{$brand}-5);
@@ -29,8 +29,8 @@
     --neb-secondary-outline-border: var(--neb-#{$brand}-8);
     --neb-secondary-outline-border-hover: var(--neb-#{$brand}-7);
     --neb-secondary-outline-border-active: var(--neb-#{$brand}-6);
-    --neb-secondary-outline-bg-hover: var(--neb-#{$brand}-15);
-    --neb-secondary-outline-bg-active: var(--neb-#{$brand}-14);
+    --neb-secondary-outline-bg-hover: var(--neb-#{$brand}-14);
+    --neb-secondary-outline-bg-active: var(--neb-#{$brand}-13);
 
     // secondary ghost
     --neb-secondary-ghost-text: var(--neb-#{$brand}-9);
@@ -38,16 +38,16 @@
     --neb-secondary-ghost-text-active: var(--neb-#{$brand}-7);
 
     // tertiary solid
-    --neb-tertiary-solid-bg: var(--neb-#{$brand}-15);
-    --neb-tertiary-solid-bg-hover: var(--neb-#{$brand}-14);
-    --neb-tertiary-solid-bg-active: var(--neb-#{$brand}-13);
+    --neb-tertiary-solid-bg: var(--neb-#{$brand}-14);
+    --neb-tertiary-solid-bg-hover: var(--neb-#{$brand}-13);
+    --neb-tertiary-solid-bg-active: var(--neb-#{$brand}-12);
 
     // tertiary outline
     --neb-tertiary-outline-border: var(--neb-#{$brand}-11);
     --neb-tertiary-outline-border-hover: var(--neb-#{$brand}-10);
     --neb-tertiary-outline-border-active: var(--neb-#{$brand}-9);
-    --neb-tertiary-outline-bg-hover: var(--neb-#{$brand}-15);
-    --neb-tertiary-outline-bg-active: var(--neb-#{$brand}-14);
+    --neb-tertiary-outline-bg-hover: var(--neb-#{$brand}-14);
+    --neb-tertiary-outline-bg-active: var(--neb-#{$brand}-13);
 
     // tertiary ghost
     --neb-tertiary-ghost-text: var(--neb-#{$brand}-11);
@@ -56,15 +56,15 @@
 
     // neutral solid
     --neb-neutral-solid-bg: var(--neb-background);
-    --neb-neutral-solid-bg-hover: var(--neb-#{$brand}-15);
-    --neb-neutral-solid-bg-active: var(--neb-#{$brand}-14);
+    --neb-neutral-solid-bg-hover: var(--neb-#{$brand}-14);
+    --neb-neutral-solid-bg-active: var(--neb-#{$brand}-13);
 
     // neutral outline
     --neb-neutral-outline-border: var(--neb-#{$brand}-11);
     --neb-neutral-outline-border-hover: var(--neb-#{$brand}-10);
     --neb-neutral-outline-border-active: var(--neb-#{$brand}-9);
-    --neb-neutral-outline-bg-hover: var(--neb-#{$brand}-15);
-    --neb-neutral-outline-bg-active: var(--neb-#{$brand}-14);
+    --neb-neutral-outline-bg-hover: var(--neb-#{$brand}-14);
+    --neb-neutral-outline-bg-active: var(--neb-#{$brand}-13);
 
     // neutral ghost
     --neb-neutral-ghost-text: var(--neb-text);
@@ -85,8 +85,8 @@ html[data-theme='dark'] {
   --neb-success-outline-border: var(--neb-green-7);
   --neb-success-outline-border-hover: var(--neb-green-6);
   --neb-success-outline-border-active: var(--neb-green-5);
-  --neb-success-outline-bg-hover: var(--neb-green-15);
-  --neb-success-outline-bg-active: var(--neb-green-14);
+  --neb-success-outline-bg-hover: var(--neb-green-14);
+  --neb-success-outline-bg-active: var(--neb-green-13);
 
   // success ghost
   --neb-success-ghost-text: var(--neb-green-7);
@@ -103,8 +103,8 @@ html[data-theme='dark'] {
   --neb-info-outline-border: var(--neb-blue-6);
   --neb-info-outline-border-hover: var(--neb-blue-5);
   --neb-info-outline-border-active: var(--neb-blue-4);
-  --neb-info-outline-bg-hover: var(--neb-blue-15);
-  --neb-info-outline-bg-active: var(--neb-blue-14);
+  --neb-info-outline-bg-hover: var(--neb-blue-14);
+  --neb-info-outline-bg-active: var(--neb-blue-13);
 
   // info ghost
   --neb-info-ghost-text: var(--neb-blue-7);
@@ -139,8 +139,8 @@ html[data-theme='dark'] {
   --neb-danger-outline-border: var(--neb-red-6);
   --neb-danger-outline-border-hover: var(--neb-red-5);
   --neb-danger-outline-border-active: var(--neb-red-4);
-  --neb-danger-outline-bg-hover: var(--neb-red-15);
-  --neb-danger-outline-bg-active: var(--neb-red-14);
+  --neb-danger-outline-bg-hover: var(--neb-red-14);
+  --neb-danger-outline-bg-active: var(--neb-red-13);
 
   // danger ghost
   --neb-danger-ghost-text: var(--neb-red-7);

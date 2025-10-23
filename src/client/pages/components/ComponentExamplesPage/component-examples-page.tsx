@@ -20,7 +20,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
         <>
           <Box
             variant="outline"
-            intent="warning"
+            intent="highlight"
             padding={sandBoxWithNoPadding ? 0 : { base: 10, lg: 20 }}
             tagAttrs={{
               style: { borderStyle: 'dashed' },
@@ -32,7 +32,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
         </>
       ) : null}
       {!noSandBox ? (
-        <Reveal label="Code" intent="info">
+        <Reveal label="Code" intent="highlight">
           <Box padding={2}>
             <CodeSnippet code={code || elemToString(jsx)} borderRadius={0} />
           </Box>

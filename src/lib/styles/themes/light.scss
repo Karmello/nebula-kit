@@ -56,8 +56,8 @@
 
     // neutral solid
     --neb-neutral-solid-bg: var(--neb-background);
-    --neb-neutral-solid-bg-hover: var(--neb-#{$brand}-1);
-    --neb-neutral-solid-bg-active: var(--neb-#{$brand}-2);
+    --neb-neutral-solid-bg-hover: var(--neb-#{$brand}-2);
+    --neb-neutral-solid-bg-active: var(--neb-#{$brand}-3);
 
     // neutral outline
     --neb-neutral-outline-border: var(--neb-#{$brand}-3);

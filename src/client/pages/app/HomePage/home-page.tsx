@@ -72,6 +72,12 @@ export const HomePage = () => {
               <Text bold>Brand</Text>
               <ButtonGroup key={brand} attached size="sm" intent="primary">
                 <Button
+                  intent={brand === 'gray' ? 'primary' : 'tertiary'}
+                  tagAttrs={{ onClick: () => setBrand('gray') }}
+                >
+                  Gray
+                </Button>
+                <Button
                   intent={brand === 'blue' ? 'primary' : 'tertiary'}
                   tagAttrs={{ onClick: () => setBrand('blue') }}
                 >
