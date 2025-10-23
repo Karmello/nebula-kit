@@ -1,6 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
 import { AppFrameFooterProps } from 'lib/components'
-import { BoxIntent } from 'lib/components/base/Box/definitions'
+
+import {
+  DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT,
+  DEFAULT_APP_FRAME_FOOTER_INTENT,
+  DEFAULT_APP_FRAME_FOOTER_MIN_BLOCK_SIZE,
+} from 'lib/components/layouts/AppFrame/slots/AppFrameFooter/definitions'
 
 import { HTML_TAG_PROPS_META } from '../../HtmlTag/props'
 import { BOX_PROPS_META } from '../../Box/props'
@@ -14,11 +19,15 @@ const APP_FRAME_FOOTER_PROPS_META: ComponentMeta<AppFrameFooterProps>['props'] =
   tagRef: HTML_TAG_PROPS_META.tagRef,
   intent: {
     ...BOX_PROPS_META.intent,
-    defaultValue: 'secondary' as BoxIntent,
+    defaultValue: String(DEFAULT_APP_FRAME_FOOTER_INTENT),
+  },
+  borderIntent: {
+    ...BOX_PROPS_META.borderIntent,
+    defaultValue: String(DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT),
   },
   minBlockSize: {
     ...BOX_PROPS_META.minBlockSize,
-    defaultValue: String(80),
+    defaultValue: String(DEFAULT_APP_FRAME_FOOTER_MIN_BLOCK_SIZE),
   },
   padding: BOX_PROPS_META.padding,
   paddingInline: BOX_PROPS_META.paddingInline,

@@ -4,6 +4,7 @@ import { BRANDS, Theme } from 'lib/definitions'
 
 import {
   DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS,
+  DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH,
   DEFAULT_NEBKIT_PROVIDER_BRAND,
 } from 'lib/components/utility/NebkitProvider/definitions'
 
@@ -26,10 +27,15 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps<Theme>>['pro
   background: {
     options: [],
   },
+  borderWidth: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH),
+    description: 'Global border width value for components that use border.',
+  },
   borderRadius: {
     options: ['ScaleValue', 'CSS'],
     defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS),
-    description: 'Global border radius value for components that use border radius.',
+    description: 'Global border radius value for components that use border.',
   },
 }
 

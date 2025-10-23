@@ -11,11 +11,11 @@
 @use '../lib/components/elements/MarkerList/marker-list.scss';
 @use '../lib/components/elements/WithIcon/with-icon.scss';
 
-@use '../lib/components/layout-base/Flex/flex.scss';
-@use '../lib/components/layout-base/Flex/FlexItem/flex-item.scss';
-@use '../lib/components/layout-base/Grid/grid.scss';
-@use '../lib/components/layout-base/Grid/GridItem/grid-item.scss';
-@use '../lib/components/layout-base/Table/table.scss';
+@use '../lib/components/layout/Flex/flex.scss';
+@use '../lib/components/layout/Flex/FlexItem/flex-item.scss';
+@use '../lib/components/layout/Grid/grid.scss';
+@use '../lib/components/layout/Grid/GridItem/grid-item.scss';
+@use '../lib/components/layout/Table/table.scss';
 
 @use '../lib/components/layouts/AppFrame/app-frame.scss';
 @use '../lib/components/layouts/AppFrame/slots/AppFrameHeader/app-frame-header.scss';

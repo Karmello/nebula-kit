@@ -32,7 +32,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
         </>
       ) : null}
       {!noSandBox ? (
-        <Reveal label="Code" intent="highlight">
+        <Reveal label="Code" intent="tertiary">
           <Box padding={2}>
             <CodeSnippet code={code || elemToString(jsx)} borderRadius={0} />
           </Box>

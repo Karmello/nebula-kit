@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { SpacerProps } from 'lib/components/layout-base/Spacer/definitions'
+import { SpacerProps } from 'lib/components/layout/Spacer/definitions'
 
 import { SPACER_EXAMPLES_META } from './examples'
 import { SPACER_PROPS_META } from './props'

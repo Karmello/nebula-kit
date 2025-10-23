@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { GridProps } from 'lib/components/layout-base/Grid/definitions'
+import { GridProps } from 'lib/components/layout/Grid/definitions'
 import { CssGridAutoFlow, CssGridPlaceContent, CssGridPlaceItems } from 'lib/definitions'
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 

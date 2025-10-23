@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
-import { FlexItemProps } from 'lib/components/layout-base/Flex/FlexItem/definitions'
+import { FlexItemProps } from 'lib/components/layout/Flex/FlexItem/definitions'
 import { CssFlexItemAlignSelf } from 'lib/definitions'
 
 const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemProps>['props'] = {

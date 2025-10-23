@@ -2,12 +2,13 @@ import { ReactElement, useEffect, useLayoutEffect } from 'react'
 
 import { useNebkitStore } from 'lib/state'
 import { Theme } from 'lib/definitions'
+import { scale } from 'lib/helpers'
 
 import {
   THEME_BACKGROUNDS_MAP,
   DEFAULT_NEBKIT_PROVIDER_BACKGROUND,
+  DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH,
   DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS,
-  DEFAULT_NEBKIT_PROVIDER_THEME,
   DEFAULT_NEBKIT_PROVIDER_BRAND,
   NebkitProviderProps,
 } from './definitions'
@@ -19,6 +20,7 @@ export const NebkitProvider = <T extends Theme = 'light'>({
   theme,
   brand = DEFAULT_NEBKIT_PROVIDER_BRAND,
   background,
+  borderWidth = DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH,
   borderRadius = DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS,
 }: NebkitProviderProps<T>): ReactElement => {
   const nebkitStore = useNebkitStore()
@@ -33,9 +35,9 @@ export const NebkitProvider = <T extends Theme = 'light'>({
   }, [])
 
   useEffect(() => {
-    nebkitStore.setBorderRadius(borderRadius)
-    document.documentElement.style.setProperty('--neb-border-radius', `${borderRadius}px`)
-  }, [borderRadius, brand])
+    document.documentElement.style.setProperty('--neb-border-width', scale(borderWidth) || '')
+    document.documentElement.style.setProperty('--neb-border-radius', scale(borderRadius) || '')
+  }, [borderWidth, borderRadius, brand])
 
   useEffect(() => {
     if (theme) {

@@ -21,7 +21,7 @@ export const App = () => {
 
   return (
     <AppFrame stickyHeader>
-      <AppFrame.Header intent="tertiary">
+      <AppFrame.Header>
         <Toolbar switchAt="md">
           {({ setMainOpen, mainOpen }) => (
             <>
@@ -47,7 +47,7 @@ export const App = () => {
       <AppFrame.Main paddingTop={{ base: 10, lg: 20 }} paddingBottom={40}>
         <RootPage />
       </AppFrame.Main>
-      <AppFrame.Footer intent="tertiary">{''}</AppFrame.Footer>
+      <AppFrame.Footer>{''}</AppFrame.Footer>
     </AppFrame>
   )
 }

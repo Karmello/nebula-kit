@@ -1,5 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
-import { DEFAULT_DIVIDER_BLOCK_SIZE, DividerProps } from 'lib/components/elements/Divider/definitions'
+import { DividerProps } from 'lib/components/elements/Divider/definitions'
+import { DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH } from 'lib/components/utility/NebkitProvider/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
@@ -11,7 +12,7 @@ const DIVIDER_PROPS_META: ComponentMeta<DividerProps>['props'] = {
   blockSize: {
     description: 'Controls the stroke weight of the divider.',
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_DIVIDER_BLOCK_SIZE),
+    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH),
   },
 }
 

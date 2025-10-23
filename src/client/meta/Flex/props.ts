@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { FlexProps } from 'lib/components/layout-base/Flex/definitions'
+import { FlexProps } from 'lib/components/layout/Flex/definitions'
 import { CssFlexAlignItems, CssFlexDirection, CssFlexJustifyContent, CssFlexWrap } from 'lib/definitions'
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 

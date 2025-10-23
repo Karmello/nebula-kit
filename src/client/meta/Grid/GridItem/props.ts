@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
-import { GridItemProps } from 'lib/components/layout-base/Grid/GridItem/definitions'
+import { GridItemProps } from 'lib/components/layout/Grid/GridItem/definitions'
 import { CssGridItemAlignSelf, CssGridItemJustifySelf } from 'lib/definitions'
 
 const GRID_ITEM_PROPS_META: ComponentMeta<GridItemProps>['props'] = {

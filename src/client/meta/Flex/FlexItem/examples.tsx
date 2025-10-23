@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { Flex, Box } from 'lib/components'
-import { FlexItemProps } from 'lib/components/layout-base/Flex/FlexItem/definitions'
+import { FlexItemProps } from 'lib/components/layout/Flex/FlexItem/definitions'
 
 const FLEX_ITEM_EXAMPLES_META: ComponentMeta<FlexItemProps>['examples'] = [
   {

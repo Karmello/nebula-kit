@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { TableProps } from 'lib/components'
-import { DEFAULT_TABLE_LAYOUT, TableLayout } from 'lib/components/layout-base/Table/definitions'
+import { DEFAULT_TABLE_LAYOUT, TableLayout } from 'lib/components/layout/Table/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

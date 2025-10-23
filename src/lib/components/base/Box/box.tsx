@@ -17,9 +17,15 @@ export const Box = <T extends ElementType = 'div'>({
   // own
   variant = DEFAULT_BOX_VARIANT,
   intent,
+  borderIntent,
   interactive,
   disabled = false,
   opacity,
+  borderWidth,
+  borderTopWidth,
+  borderRightWidth,
+  borderBottomWidth,
+  borderLeftWidth,
   borderRadius,
   textAlign,
   display,
@@ -58,6 +64,11 @@ export const Box = <T extends ElementType = 'div'>({
   useLayoutEffect(() => {
     applyRespValues('style', tagRef || ref, bp, {
       opacity,
+      borderWidth,
+      borderTopWidth,
+      borderRightWidth,
+      borderBottomWidth,
+      borderLeftWidth,
       borderRadius,
       textAlign,
       display,
@@ -92,6 +103,11 @@ export const Box = <T extends ElementType = 'div'>({
   }, [
     bp,
     opacity,
+    borderWidth,
+    borderTopWidth,
+    borderRightWidth,
+    borderBottomWidth,
+    borderLeftWidth,
     borderRadius,
     textAlign,
     display,
@@ -125,8 +141,13 @@ export const Box = <T extends ElementType = 'div'>({
   ])
 
   useLayoutEffect(() => {
+    if (borderIntent === undefined) return
+    applyRespValues('style', tagRef || ref, bp, { borderColor: `var(--neb-${borderIntent}-solid-bg)` })
+  }, [bp, borderIntent])
+
+  useLayoutEffect(() => {
     applyRespValues('dataset', tagRef || ref, bp, { intent, variant }, 'Box')
-  }, [bp, intent])
+  }, [bp, intent, variant])
 
   return (
     <HtmlTag

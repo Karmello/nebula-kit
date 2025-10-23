@@ -1,5 +1,9 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
 
+export const DEFAULT_APP_FRAME_FOOTER_INTENT: AppFrameFooterProps['intent'] = 'tertiary'
+export const DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT: AppFrameFooterProps['borderIntent'] = 'secondary'
+export const DEFAULT_APP_FRAME_FOOTER_MIN_BLOCK_SIZE: AppFrameFooterProps['minBlockSize'] = 80
+
 type PropsFromHtmlTag = Pick<HtmlTagProps<'footer'>, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<'footer'>['children']
 }
@@ -7,6 +11,7 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'footer'>, 'tagAttrs' | 'tagRef'> & {
 type PropsFromBox = Pick<
   BoxProps<'footer'>,
   | 'intent'
+  | 'borderIntent'
   | 'minBlockSize'
   | 'padding'
   | 'paddingInline'

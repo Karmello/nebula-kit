@@ -26,7 +26,13 @@ export type BoxIntent = (typeof BoxIntent)[number]
 type BoxOwnProps = {
   variant?: RespValue<BoxVariant>
   intent?: RespValue<BoxIntent>
+  borderIntent?: RespValue<BoxIntent>
   opacity?: RespValue<number>
+  borderWidth?: ScaleValue | string
+  borderTopWidth?: ScaleValue | string
+  borderRightWidth?: ScaleValue | string
+  borderBottomWidth?: ScaleValue | string
+  borderLeftWidth?: ScaleValue | string
   borderRadius?: ScaleValue | string
   interactive?: boolean
   disabled?: boolean

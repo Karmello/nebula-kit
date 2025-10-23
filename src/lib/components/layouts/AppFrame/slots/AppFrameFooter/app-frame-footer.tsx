@@ -1,15 +1,22 @@
-import { Box } from 'lib/components'
-
-import { AppFrameFooterProps } from './definitions'
 import classNames from 'classnames'
+
+import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+
+import {
+  AppFrameFooterProps,
+  DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT,
+  DEFAULT_APP_FRAME_FOOTER_INTENT,
+  DEFAULT_APP_FRAME_FOOTER_MIN_BLOCK_SIZE,
+} from './definitions'
 
 export const AppFrameFooter = ({
   children,
   tagAttrs,
   tagRef,
-  intent = 'secondary',
-  minBlockSize = 80,
+  intent = DEFAULT_APP_FRAME_FOOTER_INTENT,
+  borderIntent = DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT,
+  minBlockSize = DEFAULT_APP_FRAME_FOOTER_MIN_BLOCK_SIZE,
   ...paddings
 }: AppFrameFooterProps) => {
   return (
@@ -22,7 +29,9 @@ export const AppFrameFooter = ({
       tagRef={tagRef}
       variant="solid"
       intent={intent}
+      borderIntent={borderIntent}
       minBlockSize={minBlockSize}
+      borderWidth={1}
       borderRadius={0}
       {...paddings}
     >

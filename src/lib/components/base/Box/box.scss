@@ -45,7 +45,7 @@
 
 .neb-box[data-neb-box-interactive='true'] {
   user-select: none;
-  border-width: var(--neb-scale-1);
+  border-width: var(--neb-border-width);
 }
 
 .neb-box[data-neb-box-disabled='true'] {
@@ -59,7 +59,7 @@
 }
 
 .neb-box[data-neb-box-variant='outline'] {
-  border-width: var(--neb-scale-1);
+  border-width: var(--neb-border-width);
 }
 
 @each $intent in $neb-intents {
