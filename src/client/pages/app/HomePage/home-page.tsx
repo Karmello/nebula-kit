@@ -95,6 +95,12 @@ export const HomePage = () => {
                 >
                   Green
                 </Button>
+                <Button
+                  intent={brand === 'amber' ? 'primary' : 'tertiary'}
+                  tagAttrs={{ onClick: () => setBrand('amber') }}
+                >
+                  Amber
+                </Button>
               </ButtonGroup>
             </Flex.Item>
           </Flex>
