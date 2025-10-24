@@ -1,3 +1,4 @@
 $neb-brands: 'gray', 'blue', 'red', 'green', 'amber';
 
-$neb-intents: primary, secondary, tertiary, neutral, inverse, success, info, warning, danger, highlight;
+$neb-intents:
+  neutral, muted, tertiary, secondary, primary, inverse, highlight, success, info, warning, danger;

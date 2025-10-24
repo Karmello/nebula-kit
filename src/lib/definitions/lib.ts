@@ -4,7 +4,6 @@ export const LIB_NAME = 'NebulaKit'
 export const LIB_PREFIX = 'neb'
 
 export const BREAKPOINTS = ['base', 'sm', 'md', 'lg', 'xl'] as const
-export const COLORS = ['gray', 'blue', 'red', 'green', 'amber'] as const
 export const BRANDS = ['gray', 'blue', 'red', 'green', 'amber'] as const
 
 export const SCALE = [
@@ -44,7 +43,6 @@ export const ICON_NAMES = [
 // types
 
 export type Breakpoint = (typeof BREAKPOINTS)[number]
-export type Color = (typeof COLORS)[number]
 export type Brand = (typeof BRANDS)[number]
 export type ScaleValue = (typeof SCALE)[number]
 export type IconName = (typeof ICON_NAMES)[number]

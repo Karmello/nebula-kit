@@ -2,16 +2,17 @@ import { Box, Button, Flex, MarkerList, MarkerListItem, Section, Spacer, Text } 
 import { BoxIntent } from 'lib/components/base/Box/definitions'
 
 const INTENTS_INFO_MAP: Record<BoxIntent, string> = {
-  primary: 'main call-to-action or highlight',
-  secondary: 'supporting action, less emphasis than primary',
-  tertiary: 'subtle, lowest emphasis action',
   neutral: 'surface without meaning, default tone',
+  muted: 'calm, low-contrast tone used for understated surfaces or background accents',
+  tertiary: 'subtle, lowest emphasis action',
+  secondary: 'supporting action, less emphasis than primary',
+  primary: 'main call-to-action or highlight',
   inverse: 'flips contrast relative to context',
+  highlight: 'draws focus to key content or elements without implying urgency or status',
   success: 'positive or completed state',
   info: 'informative, non-critical highlight',
   warning: 'cautionary or attention-needed',
   danger: 'destructive or error state',
-  highlight: 'draws focus to key content or elements without implying urgency or status',
 }
 
 export default () => {

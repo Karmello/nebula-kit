@@ -18,11 +18,11 @@ export const DEFAULT_NEBKIT_PROVIDER_BRAND: Brand = 'gray'
 export const THEME_BACKGROUNDS_MAP: Record<ThemeBackgroundColor, object> = {
   white: {
     '--neb-background': 'var(--neb-gray-1)',
-    '--neb-text': 'var(--neb-gray-11)',
-    '--neb-focus-border': 'var(--neb-gray-11)',
+    '--neb-text': 'var(--neb-gray-15)',
+    '--neb-focus-border': 'var(--neb-gray-15)',
   },
   black: {
-    '--neb-background': 'var(--neb-gray-11)',
+    '--neb-background': 'var(--neb-gray-15)',
     '--neb-text': 'var(--neb-gray-1)',
     '--neb-focus-border': 'var(--neb-gray-1)',
   },
