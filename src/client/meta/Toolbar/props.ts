@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { ToolbarProps } from 'lib/components/layouts/Toolbar/definitions'
-import { DEFAULT_SWITCH_AT, SwitchAt } from 'lib/definitions'
+import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/definitions'
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const TOOLBAR_PROPS_META: ComponentMeta<ToolbarProps>['props'] = {
@@ -13,7 +13,7 @@ const TOOLBAR_PROPS_META: ComponentMeta<ToolbarProps>['props'] = {
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
   switchAt: {
-    options: SwitchAt as unknown as string[],
+    options: SWITCH_AT as unknown as string[],
     defaultValue: DEFAULT_SWITCH_AT,
     isRequired: false,
     isResponsive: false,

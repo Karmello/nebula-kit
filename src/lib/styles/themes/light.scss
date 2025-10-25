@@ -116,6 +116,17 @@ html[data-theme='light'][data-brand='amber'] {
   --neb-primary-solid-text-hover: var(--neb-amber-1);
 }
 
+html[data-theme='light'][data-brand='cyan'] {
+  // primary solid
+  --neb-primary-solid-text: var(--neb-cyan-15);
+  --neb-primary-solid-text-hover: var(--neb-cyan-1);
+}
+
+html[data-theme='light'][data-brand='purple'] {
+  // secondary solid
+  --neb-secondary-solid-text-hover: var(--neb-purple-1);
+}
+
 html[data-theme='light'] {
   // highlight solid
   --neb-highlight-solid-bg: var(--neb-amber-3);

@@ -1,5 +1,5 @@
+import { HtmlTagProps } from 'lib/components'
 import { BoxIntent } from 'lib/components/base/Box/definitions'
-import { HtmlTagProps } from 'lib/components/utility'
 import { IconName, ScaleValue } from 'lib/definitions'
 
 export const DEFAULT_ICON_SIZE: ScaleValue = 8

@@ -8,6 +8,7 @@ import buttonMeta from './Button/_index'
 import buttonGroupMeta from './ButtonGroup/_index'
 import calloutMeta from './Callout/_index'
 import dividerMeta from './Divider/_index'
+import dropdownList from './DropdownList/_index'
 import flexMeta from './Flex/_index'
 import gridMeta from './Grid/_index'
 import htmlTagMeta from './HtmlTag/_index'
@@ -17,6 +18,7 @@ import iconButtonMeta from './IconButton/_index'
 import linkButtonMeta from './LinkButton/_index'
 import markerListMeta from './MarkerList/_index'
 import nebkitProviderMeta from './NebkitProvider/_index'
+import portalMeta from './Portal/_index'
 import revealMeta from './Reveal/_index'
 import sectionMeta from './Section/_index'
 import sideNavMeta from './SideNav/_index'
@@ -36,6 +38,7 @@ export default {
   Button: buttonMeta,
   Callout: calloutMeta,
   Divider: dividerMeta,
+  DropdownList: dropdownList,
   Flex: flexMeta,
   Grid: gridMeta,
   HtmlTag: htmlTagMeta,
@@ -45,6 +48,7 @@ export default {
   LinkButton: linkButtonMeta,
   MarkerList: markerListMeta,
   NebkitProvider: nebkitProviderMeta,
+  Portal: portalMeta,
   Reveal: revealMeta,
   Section: sectionMeta,
   SideNav: sideNavMeta,

@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { SplitViewProps, SplitViewSidePosition } from 'lib/components/layouts/SplitView/definitions'
-import { DEFAULT_SWITCH_AT, SwitchAt } from 'lib/definitions'
+import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/definitions'
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const SPLIT_VIEW_PROPS_META: ComponentMeta<SplitViewProps>['props'] = {
@@ -20,7 +20,7 @@ const SPLIT_VIEW_PROPS_META: ComponentMeta<SplitViewProps>['props'] = {
     description: 'Controls which horizontal side of the layout the panel is attached to.',
   },
   switchAt: {
-    options: SwitchAt as unknown as string[],
+    options: SWITCH_AT as unknown as string[],
     defaultValue: DEFAULT_SWITCH_AT,
     isRequired: false,
     isResponsive: false,

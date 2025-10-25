@@ -1,19 +1,19 @@
 html {
-  --neb-gray-1: hsl(0 0% 100%);
-  --neb-gray-2: hsl(0 0% 96%);
-  --neb-gray-3: hsl(0 0% 91%);
-  --neb-gray-4: hsl(0 0% 85%);
-  --neb-gray-5: hsl(0 0% 78%);
-  --neb-gray-6: hsl(0 0% 70%);
-  --neb-gray-7: hsl(0 0% 61%);
-  --neb-gray-8: hsl(0 0% 51%);
-  --neb-gray-9: hsl(0 0% 41%);
-  --neb-gray-10: hsl(0 0% 32%);
-  --neb-gray-11: hsl(0 0% 24%);
-  --neb-gray-12: hsl(0 0% 17%);
-  --neb-gray-13: hsl(0 0% 11%);
-  --neb-gray-14: hsl(0 0% 6%);
-  --neb-gray-15: hsl(0 0% 0%);
+  --neb-purple-1: hsl(270 85% 100%);
+  --neb-purple-2: hsl(270 83% 96%);
+  --neb-purple-3: hsl(270 81% 91%);
+  --neb-purple-4: hsl(270 79% 85%);
+  --neb-purple-5: hsl(270 75% 78%);
+  --neb-purple-6: hsl(270 71% 70%);
+  --neb-purple-7: hsl(270 67% 61%);
+  --neb-purple-8: hsl(270 63% 51%);
+  --neb-purple-9: hsl(270 59% 41%);
+  --neb-purple-10: hsl(270 55% 32%);
+  --neb-purple-11: hsl(270 51% 24%);
+  --neb-purple-12: hsl(270 47% 17%);
+  --neb-purple-13: hsl(270 43% 11%);
+  --neb-purple-14: hsl(270 39% 6%);
+  --neb-purple-15: hsl(270 35% 0%);
 
   --neb-blue-1: hsl(210 88% 100%);
   --neb-blue-2: hsl(210 86% 96%);
@@ -31,6 +31,38 @@ html {
   --neb-blue-14: hsl(210 42% 6%);
   --neb-blue-15: hsl(210 38% 0%);
 
+  --neb-teal-1: hsl(195 88% 100%);
+  --neb-teal-2: hsl(195 86% 96%);
+  --neb-teal-3: hsl(195 84% 91%);
+  --neb-teal-4: hsl(195 82% 85%);
+  --neb-teal-5: hsl(195 78% 78%);
+  --neb-teal-6: hsl(195 74% 70%);
+  --neb-teal-7: hsl(195 70% 61%);
+  --neb-teal-8: hsl(195 66% 51%);
+  --neb-teal-9: hsl(195 62% 41%);
+  --neb-teal-10: hsl(195 58% 32%);
+  --neb-teal-11: hsl(195 54% 24%);
+  --neb-teal-12: hsl(195 50% 17%);
+  --neb-teal-13: hsl(195 46% 11%);
+  --neb-teal-14: hsl(195 42% 6%);
+  --neb-teal-15: hsl(195 38% 0%);
+
+  --neb-cyan-1: hsl(185 92% 100%);
+  --neb-cyan-2: hsl(185 90% 96%);
+  --neb-cyan-3: hsl(185 88% 91%);
+  --neb-cyan-4: hsl(185 86% 85%);
+  --neb-cyan-5: hsl(185 84% 78%);
+  --neb-cyan-6: hsl(185 80% 70%);
+  --neb-cyan-7: hsl(185 78% 61%);
+  --neb-cyan-8: hsl(185 76% 51%);
+  --neb-cyan-9: hsl(185 74% 41%);
+  --neb-cyan-10: hsl(185 70% 32%);
+  --neb-cyan-11: hsl(185 66% 24%);
+  --neb-cyan-12: hsl(185 62% 17%);
+  --neb-cyan-13: hsl(185 58% 11%);
+  --neb-cyan-14: hsl(185 54% 6%);
+  --neb-cyan-15: hsl(185 50% 0%);
+
   --neb-red-1: hsl(0 90% 100%);
   --neb-red-2: hsl(0 88% 96%);
   --neb-red-3: hsl(0 86% 91%);
@@ -46,6 +78,54 @@ html {
   --neb-red-13: hsl(0 48% 11%);
   --neb-red-14: hsl(0 44% 6%);
   --neb-red-15: hsl(0 40% 0%);
+
+  --neb-brown-1: hsl(15 65% 100%);
+  --neb-brown-2: hsl(15 63% 93%);
+  --neb-brown-3: hsl(15 60% 86%);
+  --neb-brown-4: hsl(15 58% 78%);
+  --neb-brown-5: hsl(15 55% 69%);
+  --neb-brown-6: hsl(15 52% 60%);
+  --neb-brown-7: hsl(15 48% 50%);
+  --neb-brown-8: hsl(15 44% 40%);
+  --neb-brown-9: hsl(15 40% 31%);
+  --neb-brown-10: hsl(15 38% 23%);
+  --neb-brown-11: hsl(15 36% 17%);
+  --neb-brown-12: hsl(15 34% 12%);
+  --neb-brown-13: hsl(15 32% 8%);
+  --neb-brown-14: hsl(15 30% 4%);
+  --neb-brown-15: hsl(15 28% 0%);
+
+  --neb-magenta-1: hsl(315 88% 100%);
+  --neb-magenta-2: hsl(315 86% 96%);
+  --neb-magenta-3: hsl(315 84% 91%);
+  --neb-magenta-4: hsl(315 82% 85%);
+  --neb-magenta-5: hsl(315 78% 78%);
+  --neb-magenta-6: hsl(315 74% 70%);
+  --neb-magenta-7: hsl(315 70% 61%);
+  --neb-magenta-8: hsl(315 66% 51%);
+  --neb-magenta-9: hsl(315 62% 41%);
+  --neb-magenta-10: hsl(315 58% 32%);
+  --neb-magenta-11: hsl(315 54% 24%);
+  --neb-magenta-12: hsl(315 50% 17%);
+  --neb-magenta-13: hsl(315 46% 11%);
+  --neb-magenta-14: hsl(315 42% 6%);
+  --neb-magenta-15: hsl(315 38% 0%);
+
+  --neb-pink-1: hsl(330 88% 100%);
+  --neb-pink-2: hsl(330 86% 96%);
+  --neb-pink-3: hsl(330 84% 91%);
+  --neb-pink-4: hsl(330 82% 85%);
+  --neb-pink-5: hsl(330 78% 78%);
+  --neb-pink-6: hsl(330 74% 70%);
+  --neb-pink-7: hsl(330 70% 61%);
+  --neb-pink-8: hsl(330 66% 51%);
+  --neb-pink-9: hsl(330 62% 41%);
+  --neb-pink-10: hsl(330 58% 32%);
+  --neb-pink-11: hsl(330 54% 24%);
+  --neb-pink-12: hsl(330 50% 17%);
+  --neb-pink-13: hsl(330 46% 11%);
+  --neb-pink-14: hsl(330 42% 6%);
+  --neb-pink-15: hsl(330 38% 0%);
 
   --neb-green-1: hsl(140 82% 100%);
   --neb-green-2: hsl(140 80% 96%);
@@ -78,4 +158,36 @@ html {
   --neb-amber-13: hsl(42 50% 11%);
   --neb-amber-14: hsl(42 46% 6%);
   --neb-amber-15: hsl(42 42% 0%);
+
+  --neb-olive-1: hsl(60 35% 100%);
+  --neb-olive-2: hsl(60 33% 95%);
+  --neb-olive-3: hsl(60 30% 89%);
+  --neb-olive-4: hsl(60 28% 82%);
+  --neb-olive-5: hsl(60 25% 73%);
+  --neb-olive-6: hsl(60 23% 64%);
+  --neb-olive-7: hsl(60 20% 55%);
+  --neb-olive-8: hsl(60 18% 46%);
+  --neb-olive-9: hsl(60 16% 38%);
+  --neb-olive-10: hsl(60 15% 30%);
+  --neb-olive-11: hsl(60 14% 23%);
+  --neb-olive-12: hsl(60 13% 16%);
+  --neb-olive-13: hsl(60 12% 10%);
+  --neb-olive-14: hsl(60 11% 6%);
+  --neb-olive-15: hsl(60 10% 0%);
+
+  --neb-gray-1: hsl(0 0% 100%);
+  --neb-gray-2: hsl(0 0% 96%);
+  --neb-gray-3: hsl(0 0% 91%);
+  --neb-gray-4: hsl(0 0% 85%);
+  --neb-gray-5: hsl(0 0% 78%);
+  --neb-gray-6: hsl(0 0% 70%);
+  --neb-gray-7: hsl(0 0% 61%);
+  --neb-gray-8: hsl(0 0% 51%);
+  --neb-gray-9: hsl(0 0% 41%);
+  --neb-gray-10: hsl(0 0% 32%);
+  --neb-gray-11: hsl(0 0% 24%);
+  --neb-gray-12: hsl(0 0% 17%);
+  --neb-gray-13: hsl(0 0% 11%);
+  --neb-gray-14: hsl(0 0% 6%);
+  --neb-gray-15: hsl(0 0% 0%);
 }

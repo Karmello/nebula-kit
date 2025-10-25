@@ -1,4 +1,4 @@
-import { HtmlTagProps } from 'lib/components/utility'
+import { HtmlTagProps } from 'lib/components'
 
 type BreadcrumbOwnProps = {
   items: string[]

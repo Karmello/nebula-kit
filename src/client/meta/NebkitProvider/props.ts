@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { NebkitProviderProps } from 'lib/components'
-import { BRANDS, Theme } from 'lib/definitions'
+import { BRANDS, Theme, THEME } from 'lib/definitions'
 
 import {
   DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS,
@@ -15,8 +15,8 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps<Theme>>['pro
     description: 'Application component to be wrapped by the provider.',
   },
   theme: {
-    options: Theme as unknown as string[],
-    defaultValue: Theme[0],
+    options: THEME as unknown as string[],
+    defaultValue: THEME[0],
     description: 'Theme applied.',
   },
   brand: {

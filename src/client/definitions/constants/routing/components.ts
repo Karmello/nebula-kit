@@ -9,8 +9,10 @@ export const COMPONENT_CATEGORIES = [
     key: 'base',
     label: 'Base',
     items: [
+      { key: 'html-tag', label: 'HtmlTag', sections: COMPONENT_SECTIONS },
       { key: 'box', label: 'Box', sections: COMPONENT_SECTIONS },
       { key: 'text', label: 'Text', sections: COMPONENT_SECTIONS },
+      { key: 'animate', label: 'Animate', sections: COMPONENT_SECTIONS },
     ],
   },
   {
@@ -61,6 +63,11 @@ export const COMPONENT_CATEGORIES = [
     items: [{ key: 'callout', label: 'Callout', sections: COMPONENT_SECTIONS }],
   },
   {
+    key: 'overlays',
+    label: 'Overlays',
+    items: [{ key: 'dropdown-list', label: 'DropdownList', sections: COMPONENT_SECTIONS }],
+  },
+  {
     key: 'layouts',
     label: 'Layouts',
     items: [
@@ -73,17 +80,14 @@ export const COMPONENT_CATEGORIES = [
     key: 'navigation',
     label: 'Navigation',
     items: [
-      {
-        key: 'side-nav',
-        label: 'SideNav',
-        sections: COMPONENT_SECTIONS,
-      },
-      {
-        key: 'breadcrumb',
-        label: 'Breadcrumb',
-        sections: COMPONENT_SECTIONS,
-      },
+      { key: 'side-nav', label: 'SideNav', sections: COMPONENT_SECTIONS },
+      { key: 'breadcrumb', label: 'Breadcrumb', sections: COMPONENT_SECTIONS },
     ],
+  },
+  {
+    key: 'forms',
+    label: 'Forms',
+    items: [{ key: 'select', label: 'Select', sections: COMPONENT_SECTIONS }],
   },
   {
     key: 'utility',
@@ -91,8 +95,7 @@ export const COMPONENT_CATEGORIES = [
     items: [
       { key: 'nebkit-provider', label: 'NebkitProvider', sections: COMPONENT_SECTIONS },
       { key: 'hydration-gate', label: 'HydrationGate', sections: COMPONENT_SECTIONS },
-      { key: 'html-tag', label: 'HtmlTag', sections: COMPONENT_SECTIONS },
-      { key: 'animate', label: 'Animate', sections: COMPONENT_SECTIONS },
+      { key: 'portal', label: 'Portal', sections: COMPONENT_SECTIONS },
     ],
   },
 ]

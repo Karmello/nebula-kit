@@ -1,6 +1,6 @@
 import { HTMLAttributeAnchorTarget, MouseEventHandler } from 'react'
 
-import { HtmlTagProps } from 'lib/components/utility'
+import { HtmlTagProps } from 'lib/components'
 
 import { ButtonProps } from '../Button'
 

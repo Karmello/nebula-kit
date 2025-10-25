@@ -248,6 +248,10 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Margin for the left side.',
   },
   ...HTML_TAG_PROPS_META,
+  zIndex: {
+    options: ['number'],
+    description: 'Controls the stacking order.',
+  },
 }
 
 export { BOX_PROPS_META }

@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { AnimateProps } from 'lib/components'
-import { AnimateProperty, DEFAULT_ANIMATE_DURATION } from 'lib/components/utility/Animate/definitions'
+import { AnimateProperty, DEFAULT_ANIMATE_DURATION } from 'lib/components/base/Animate/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 

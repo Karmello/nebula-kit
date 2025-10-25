@@ -13,7 +13,7 @@ export const DEFAULT_NEBKIT_PROVIDER_BACKGROUND: Record<Theme, ThemeBackgroundCo
 }
 export const DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH: ScaleValue = 1
 export const DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS: ScaleValue = 2
-export const DEFAULT_NEBKIT_PROVIDER_BRAND: Brand = 'gray'
+export const DEFAULT_NEBKIT_PROVIDER_BRAND: Brand = 'purple'
 
 export const THEME_BACKGROUNDS_MAP: Record<ThemeBackgroundColor, object> = {
   white: {

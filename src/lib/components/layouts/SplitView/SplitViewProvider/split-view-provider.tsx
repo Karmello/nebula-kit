@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react'
 
-import { DEFAULT_ANIMATE_DURATION } from 'lib/components/utility/Animate/definitions'
+import { DEFAULT_ANIMATE_DURATION } from 'lib/components/base/Animate/definitions'
 import { getLibMsg, useScreen } from 'lib/helpers'
 import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
 

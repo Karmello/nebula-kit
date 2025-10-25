@@ -114,6 +114,11 @@ html[data-theme='dark'][data-brand='amber'] {
   --neb-primary-solid-text: var(--neb-amber-15);
 }
 
+html[data-theme='dark'][data-brand='cyan'] {
+  // primary solid
+  --neb-primary-solid-text: var(--neb-cyan-15);
+}
+
 html[data-theme='dark'] {
   // highlight solid
   --neb-highlight-solid-bg: var(--neb-amber-4);

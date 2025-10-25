@@ -1,10 +1,11 @@
-export type SelectOption = {
-  value: string
-  label: string
-}
+import { BoxProps } from 'lib/components/base'
 
-export type SelectProps = {
+type SelectOwnProps = {
+  options: { value: string; label: string }[]
   value: string
   onChange: (value: string) => void
-  options: SelectOption[]
 }
+
+type PropsFromBox = Pick<BoxProps, 'variant' | 'intent'>
+
+export type SelectProps = PropsFromBox & SelectOwnProps

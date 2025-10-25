@@ -56,6 +56,7 @@ export const Box = <T extends ElementType = 'div'>({
   marginRight,
   marginBottom,
   marginLeft,
+  zIndex,
 }: BoxProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
 
@@ -152,6 +153,10 @@ export const Box = <T extends ElementType = 'div'>({
           ...tagAttrs,
           className: classNames(withPrefix('box'), tagAttrs?.className || ''),
           disabled,
+          style: {
+            ...tagAttrs?.style,
+            zIndex,
+          },
           ...applyStaticDataset('box', { interactive, disabled }),
         } as PropsWithoutRef<ComponentProps<T>>
       }

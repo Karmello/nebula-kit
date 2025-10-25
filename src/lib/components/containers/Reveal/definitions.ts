@@ -1,6 +1,4 @@
-import { BoxProps } from 'lib/components/base'
-import { ButtonProps } from 'lib/components/controls'
-import { HtmlTagProps } from 'lib/components/utility'
+import { BoxProps, ButtonProps, HtmlTagProps } from 'lib/components'
 
 export const RevealTag = ['div', 'section', 'article', 'aside', 'li'] as const
 export const DEFAULT_REVEAL_INTENT: RevealProps['intent'] = 'tertiary'

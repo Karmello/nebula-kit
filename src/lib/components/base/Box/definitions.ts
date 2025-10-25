@@ -1,7 +1,7 @@
 import { ElementType } from 'react'
 
 import { CssDisplay, CssOverflow, CssPosition, CssTextAlign, RespValue, ScaleValue } from 'lib/definitions'
-import { HtmlTagProps } from 'lib/components/utility'
+import { HtmlTagProps } from 'lib/components'
 
 export const BoxVariant = ['solid', 'outline', 'ghost'] as const
 
@@ -66,6 +66,7 @@ type BoxOwnProps = {
   paddingRight?: RespValue<ScaleValue | string>
   paddingBottom?: RespValue<ScaleValue | string>
   paddingLeft?: RespValue<ScaleValue | string>
+  zIndex?: number
 }
 
 export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & BoxOwnProps

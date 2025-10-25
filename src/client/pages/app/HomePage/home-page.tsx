@@ -1,5 +1,20 @@
-import { Box, Button, ButtonGroup, Divider, Flex, LinkButton, Section, Spacer, Text } from 'lib/components'
+import { sentenceCase } from 'change-case'
+
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Divider,
+  Flex,
+  LinkButton,
+  Section,
+  Select,
+  Spacer,
+  Text,
+} from 'lib/components'
+
 import { useNebkitStore } from 'lib/state'
+import { Brand, BRANDS, THEME } from 'lib/definitions'
 import { useNavigateTo } from 'client/services'
 
 export const HomePage = () => {
@@ -54,54 +69,26 @@ export const HomePage = () => {
             <Flex.Item>
               <Text bold>Theme</Text>
               <ButtonGroup key={theme} attached size="sm" intent="primary">
-                <Button
-                  intent={theme === 'light' ? 'primary' : 'tertiary'}
-                  tagAttrs={{ onClick: () => setTheme('light') }}
-                >
-                  Light
-                </Button>
-                <Button
-                  intent={theme === 'dark' ? 'primary' : 'tertiary'}
-                  tagAttrs={{ onClick: () => setTheme('dark') }}
-                >
-                  Dark
-                </Button>
+                {THEME.map(key => (
+                  <Button
+                    key={key}
+                    intent={key === theme ? 'primary' : 'tertiary'}
+                    tagAttrs={{ onClick: () => setTheme(key) }}
+                  >
+                    {sentenceCase(key)}
+                  </Button>
+                ))}
               </ButtonGroup>
             </Flex.Item>
             <Flex.Item>
               <Text bold>Brand</Text>
-              <ButtonGroup key={brand} attached size="sm" intent="primary">
-                <Button
-                  intent={brand === 'gray' ? 'primary' : 'tertiary'}
-                  tagAttrs={{ onClick: () => setBrand('gray') }}
-                >
-                  Gray
-                </Button>
-                <Button
-                  intent={brand === 'blue' ? 'primary' : 'tertiary'}
-                  tagAttrs={{ onClick: () => setBrand('blue') }}
-                >
-                  Blue
-                </Button>
-                <Button
-                  intent={brand === 'red' ? 'primary' : 'tertiary'}
-                  tagAttrs={{ onClick: () => setBrand('red') }}
-                >
-                  Red
-                </Button>
-                <Button
-                  intent={brand === 'green' ? 'primary' : 'tertiary'}
-                  tagAttrs={{ onClick: () => setBrand('green') }}
-                >
-                  Green
-                </Button>
-                <Button
-                  intent={brand === 'amber' ? 'primary' : 'tertiary'}
-                  tagAttrs={{ onClick: () => setBrand('amber') }}
-                >
-                  Amber
-                </Button>
-              </ButtonGroup>
+              <Select
+                options={BRANDS.map(brand => ({ value: brand, label: sentenceCase(brand) }))}
+                value={brand}
+                onChange={value => setBrand(value as Brand)}
+                variant="outline"
+                intent="primary"
+              />
             </Flex.Item>
           </Flex>
         </Flex.Item>

@@ -1,6 +1,7 @@
+import { HtmlTagProps } from 'lib/components'
+
 import { ButtonProps } from '../Button'
 import { ButtonTag } from '../Button/definitions'
-import { HtmlTagProps } from 'lib/components/utility'
 
 type PropsFromHtmlTag<T extends ButtonTag = 'button'> = Pick<HtmlTagProps<T>, 'tag' | 'tagAttrs' | 'tagRef'>
 
