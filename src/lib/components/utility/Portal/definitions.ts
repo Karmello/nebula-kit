@@ -1,5 +1,5 @@
-import { BoxProps } from 'lib/components/base'
-import { ReactNode, RefObject } from 'react'
+import { BoxProps, HtmlTagProps } from 'lib/components/base'
+import { RefObject } from 'react'
 
 export const DEFAULT_PORTAL_PLACEMENT: PortalProps['placement'] = 'bottom'
 export const PORTAL_PLACEMENT = ['top', 'right', 'bottom', 'left'] as const
@@ -7,11 +7,14 @@ export const PORTAL_PLACEMENT = ['top', 'right', 'bottom', 'left'] as const
 export type PortalPlacement = (typeof PORTAL_PLACEMENT)[number]
 
 type PortalOwnProps = {
-  children: ReactNode
-  anchorRef: RefObject<HTMLElement>
+  anchorRef: RefObject<HTMLElement | null>
   placement?: PortalPlacement
 }
 
-type PropsFromBox = Pick<BoxProps<'div'>, 'inlineSize'>
+type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
+  children: HtmlTagProps<'div'>['children']
+}
+
+type PropsFromBox = PropsFromHtmlTag & Pick<BoxProps<'div'>, 'inlineSize'>
 
 export type PortalProps = PortalOwnProps & PropsFromBox

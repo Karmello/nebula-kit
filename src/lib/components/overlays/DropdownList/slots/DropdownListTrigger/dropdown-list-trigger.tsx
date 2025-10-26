@@ -12,7 +12,7 @@ export const DropdownListTrigger = ({
 
   return (
     <Box
-      tagRef={triggerRef}
+      tagRef={triggerRef as any}
       tagAttrs={{
         className: withPrefix('dropdown-list-trigger'),
         'aria-haspopup': 'listbox',

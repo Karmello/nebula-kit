@@ -2,8 +2,9 @@ import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef 
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { withPrefix, useScreen } from 'lib/helpers'
+import { withPrefix } from 'lib/helpers'
 import { applyRespValues } from 'lib/service'
+import { useScreen } from 'lib/hooks'
 
 import { GridTag, GridProps } from './definitions'
 

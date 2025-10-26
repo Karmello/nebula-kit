@@ -6,7 +6,11 @@ import { Box } from 'lib/components'
 import { DEFAULT_PORTAL_PLACEMENT, PortalProps } from './definitions'
 
 export const Portal = ({
+  // HtmlTag
   children,
+  tagRef,
+  tagAttrs,
+  // own
   anchorRef,
   placement = DEFAULT_PORTAL_PLACEMENT,
   inlineSize,
@@ -16,17 +20,19 @@ export const Portal = ({
     top: undefined,
     left: undefined,
   })
-  const contentRef = useRef<HTMLDivElement | null>(null)
+
+  const ref = useRef<HTMLDivElement | null>(null)
+  const rootRef = tagRef || ref
 
   const updatePosition = useCallback(() => {
-    if (!anchorRef.current || !contentRef.current) return
+    if (!anchorRef.current || !rootRef.current) return
     const anchorRect = anchorRef.current.getBoundingClientRect()
     let top = anchorRect.top + window.scrollY
     let left = anchorRect.left + window.scrollX
-    if (placement === 'top') top -= contentRef.current.offsetHeight
+    if (placement === 'top') top -= rootRef.current.offsetHeight
     else if (placement === 'right') left += anchorRect.width
     else if (placement === 'bottom') top += anchorRect.height
-    else if (placement === 'left') left -= contentRef.current.offsetWidth
+    else if (placement === 'left') left -= rootRef.current.offsetWidth
     setPosition({ top, left })
   }, [])
 
@@ -58,8 +64,11 @@ export const Portal = ({
 
   return createPortal(
     <Box
-      tagRef={contentRef}
-      tagAttrs={{ style: { transition: 'none' } }}
+      tagRef={rootRef}
+      tagAttrs={{
+        ...tagAttrs,
+        style: { ...tagAttrs?.style, transition: 'none' },
+      }}
       position="absolute"
       zIndex={1000}
       inlineSize={inlineSize}

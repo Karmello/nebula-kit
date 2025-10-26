@@ -13,7 +13,8 @@ import classNames from 'classnames'
 import { ButtonProps, Flex } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { applyRespValues, applyStaticDataset } from 'lib/service'
-import { useScreen, withPrefix } from 'lib/helpers'
+import { withPrefix } from 'lib/helpers'
+import { useScreen } from 'lib/hooks'
 
 import {
   ButtonGroupDirection,

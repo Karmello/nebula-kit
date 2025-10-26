@@ -1,5 +1,5 @@
 import { BoxProps, HtmlTagProps, TextProps } from 'lib/components'
-import { ScaleValue } from 'lib/definitions'
+import { RespValue, ScaleValue } from 'lib/definitions'
 import { BoxIntent, BoxVariant } from 'lib/components/base/Box/definitions'
 
 export const BUTTON_SIZE_CONFIG: Record<
@@ -32,6 +32,7 @@ export type ButtonLabelAlign = (typeof ButtonLabelAlign)[number]
 
 type ButtonOwnProps = {
   size?: ButtonSize
+  fullWidth?: RespValue<boolean>
   labelAlign?: ButtonLabelAlign
 }
 

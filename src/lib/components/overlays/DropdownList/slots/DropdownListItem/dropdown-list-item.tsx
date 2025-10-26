@@ -17,7 +17,7 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
   tagAttrs,
   ...buttonProps
 }: DropdownListItemProps<T>) => {
-  const { setAnimateVisible, closeOnItemClick, size, itemVariant, itemIntent } = useDropdownListContext()
+  const { setAnimateVisible, keepOpen, size, itemVariant, itemIntent } = useDropdownListContext()
 
   return (
     <Button
@@ -27,16 +27,12 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
         {
           ...tagAttrs,
           className: classNames(withPrefix('dropdown-list-item'), tagAttrs?.className),
-          style: {
-            ...tagAttrs?.style,
-            inlineSize: '100%',
-          },
           role: 'option',
           onClick: (
             e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> &
               MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>
           ) => {
-            if (closeOnItemClick) {
+            if (!keepOpen) {
               setAnimateVisible(false)
             }
             tagAttrs?.onClick?.(e)
@@ -46,6 +42,7 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
       variant={itemVariant}
       intent={itemIntent}
       size={size}
+      fullWidth
       {...buttonProps}
     >
       {children}

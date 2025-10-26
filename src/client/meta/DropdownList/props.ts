@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { DropdownListProps } from 'lib/components'
 
 import {
-  DEFAULT_DROPDOWN_LIST_CLOSE_ON_ITEM_CLICK,
+  DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
   DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT,
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
 } from 'lib/components/overlays/DropdownList/definitions'
@@ -20,10 +20,10 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
   },
   tagRef: HTML_TAG_PROPS_META.tagRef,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  closeOnItemClick: {
+  keepOpen: {
     options: ['boolean'],
-    defaultValue: String(DEFAULT_DROPDOWN_LIST_CLOSE_ON_ITEM_CLICK),
-    description: 'When true, the list will be closed on item click.',
+    defaultValue: String(DEFAULT_DROPDOWN_LIST_KEEP_OPEN),
+    description: "When true, the list won't be auto-closed on item click.",
   },
   inlineSize: BOX_PROPS_META.inlineSize,
   itemBorderIntent: {

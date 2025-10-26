@@ -24,6 +24,7 @@ const LINK_BUTTON_PROPS_META: ComponentMeta<LinkButtonProps>['props'] = {
   },
   labelIntent: BUTTON_PROPS_META.labelIntent,
   size: BUTTON_PROPS_META.size,
+  fullWidth: BUTTON_PROPS_META.fullWidth,
   iconName: BUTTON_PROPS_META.iconName,
   href: {
     options: ['string'],

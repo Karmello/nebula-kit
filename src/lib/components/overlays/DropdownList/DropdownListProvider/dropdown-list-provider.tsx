@@ -7,8 +7,8 @@ type Props = {
   setOpen: (open: boolean) => void
   animateVisible: boolean
   setAnimateVisible: (animateVisible: boolean) => void
-  triggerRef: RefObject<any>
-  closeOnItemClick: DropdownListProps['closeOnItemClick']
+  triggerRef: RefObject<HTMLElement | null>
+  keepOpen: DropdownListProps['keepOpen']
   size: DropdownListProps['size']
   inlineSize: DropdownListProps['inlineSize']
   itemVariant: DropdownListProps['itemVariant']
@@ -28,7 +28,7 @@ export const DropdownListProvider = ({
   animateVisible,
   setAnimateVisible,
   triggerRef,
-  closeOnItemClick,
+  keepOpen,
   size,
   inlineSize,
   itemVariant,
@@ -42,7 +42,7 @@ export const DropdownListProvider = ({
         animateVisible,
         setAnimateVisible,
         triggerRef,
-        closeOnItemClick,
+        keepOpen,
         size,
         inlineSize,
         itemVariant,

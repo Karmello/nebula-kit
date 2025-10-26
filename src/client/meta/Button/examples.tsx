@@ -20,6 +20,10 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     ),
   },
   {
+    description: 'Button stretched to fill the full width of its container.',
+    jsx: <Button fullWidth>Full width button</Button>,
+  },
+  {
     description: 'Large button with primary intent.',
     jsx: (
       <Button size="lg" intent="primary">

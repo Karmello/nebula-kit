@@ -1,9 +1,10 @@
 import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { withPrefix, useScreen } from 'lib/helpers'
 import { Box } from 'lib/components'
 import { applyRespValues } from 'lib/service'
+import { withPrefix } from 'lib/helpers'
+import { useScreen } from 'lib/hooks'
 
 import { FlexItemProps } from './definitions'
 

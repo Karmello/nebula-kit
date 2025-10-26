@@ -11,11 +11,11 @@ const HTML_TAG_PROPS_META: ComponentMeta<HtmlTagProps<ElementType>>['props'] = {
   },
   tagAttrs: {
     options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the rendered tag.',
+    description: 'Additional HTML attributes applied to the root tag.',
   },
   tagRef: {
     options: ['RefObject'],
-    description: 'Reference to the rendered HTML tag.',
+    description: 'Reference to the root HTML tag.',
   },
   children: {
     options: ['ReactNode'],

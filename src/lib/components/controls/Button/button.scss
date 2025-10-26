@@ -14,3 +14,7 @@
 a.neb-btn {
   text-decoration: none;
 }
+
+.neb-btn[data-neb-btn-full-width='true'] {
+  inline-size: 100%;
+}

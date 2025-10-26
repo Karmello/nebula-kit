@@ -1,8 +1,10 @@
-import { ComponentProps, PropsWithoutRef } from 'react'
+import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
 import { Box, Text } from 'lib/components'
+import { applyRespValues } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
+import { useScreen } from 'lib/hooks'
 
 import {
   BUTTON_SIZE_CONFIG,
@@ -32,8 +34,17 @@ export const Button = <T extends ButtonTag = 'button'>({
   labelIntent,
   // own
   size = DEFAULT_BUTTON_SIZE,
+  fullWidth,
   labelAlign = DEFAULT_BUTTON_LABEL_ALIGN,
 }: ButtonProps<T>) => {
+  const ref = useRef<ComponentRef<T>>(null)
+
+  const { bp } = useScreen()
+
+  useLayoutEffect(() => {
+    applyRespValues('dataset', tagRef || ref, bp, { fullWidth }, 'Btn')
+  }, [bp, fullWidth])
+
   return (
     <Box
       tag={tag}
@@ -48,7 +59,7 @@ export const Button = <T extends ButtonTag = 'button'>({
           },
         } as PropsWithoutRef<ComponentProps<T>>
       }
-      tagRef={tagRef}
+      tagRef={tagRef || ref}
       variant={variant}
       intent={intent}
       disabled={disabled}

@@ -13,6 +13,7 @@ const BUTTON_META: ComponentMeta<ButtonProps> = {
       'provides a consistent, accessible trigger for user actions',
       'handles interactive states: hover, focus, active, disabled',
       'supports optional icon and text composition for clarity',
+      'supports full-width layout to span the entire container',
     ],
     composedOf: ['Box', 'Text'],
     rendersAs: ButtonTag,

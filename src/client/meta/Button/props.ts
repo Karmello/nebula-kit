@@ -55,6 +55,12 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     description:
       'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
   },
+  fullWidth: {
+    options: ['boolean'],
+    defaultValue: 'false',
+    isResponsive: true,
+    description: 'Expands the button to match the full width of its container.',
+  },
 }
 
 export { BUTTON_PROPS_META }

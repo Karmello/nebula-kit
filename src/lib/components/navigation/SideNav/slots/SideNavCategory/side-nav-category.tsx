@@ -45,7 +45,6 @@ export const SideNavCategory = ({
             <Box tag="li">
               <Button
                 tagAttrs={{
-                  style: { inlineSize: '100%', justifyContent: 'flex-start' },
                   onClick: () => {
                     if (expandMode === 'multiple') {
                       setExpandedCategories(state => ({ ...state, [id]: !state[id] }))
@@ -65,6 +64,7 @@ export const SideNavCategory = ({
                 labelIntent={labelIntent}
                 labelAlign="left"
                 size="sm"
+                fullWidth
               >
                 {label}
               </Button>

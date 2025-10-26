@@ -1,9 +1,8 @@
-import { ComponentRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { withPrefix, useScreen } from 'lib/helpers'
 import { Box, WithIcon } from 'lib/components'
-import { applyRespValues, applyStaticDataset } from 'lib/service'
+import { applyStaticDataset } from 'lib/service'
+import { scaleToPixels, withPrefix } from 'lib/helpers'
 
 import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_TYPOGRAPHY_CONFIG, TextTag, TextProps } from './definitions'
 
@@ -31,25 +30,16 @@ export const Text = <T extends TextTag = 'p'>({
   clampLines,
   space,
 }: TextProps<T>) => {
-  const ref = useRef<ComponentRef<T>>(null)
-
-  const { bp } = useScreen()
-
-  useLayoutEffect(() => {
-    applyRespValues('style', tagRef || ref, bp, {
-      fontSize: TEXT_TYPOGRAPHY_CONFIG[typography].fontSize,
-      lineHeight: TEXT_TYPOGRAPHY_CONFIG[typography].lineHeight,
-    })
-  }, [bp])
-
   return (
     <Box
       tag={tag || TEXT_TYPOGRAPHY_CONFIG[typography].tag}
-      tagRef={(tagRef || ref) as any}
+      tagRef={tagRef as any}
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('text'), tagAttrs?.className),
         style: {
+          fontSize: scaleToPixels(TEXT_TYPOGRAPHY_CONFIG[typography].fontSize),
+          lineHeight: TEXT_TYPOGRAPHY_CONFIG[typography].lineHeight,
           ...(clampLines && clampLines > 0
             ? {
                 display: '-webkit-box',

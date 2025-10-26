@@ -2,7 +2,8 @@ import { ElementType, ComponentRef, useRef, useLayoutEffect, PropsWithoutRef, Co
 import classNames from 'classnames'
 
 import { BoxProps, HtmlTag } from 'lib/components'
-import { useScreen, withPrefix } from 'lib/helpers'
+import { withPrefix } from 'lib/helpers'
+import { useScreen } from 'lib/hooks'
 import { applyRespValues, applyStaticDataset } from 'lib/service'
 
 import { DEFAULT_BOX_VARIANT } from './definitions'

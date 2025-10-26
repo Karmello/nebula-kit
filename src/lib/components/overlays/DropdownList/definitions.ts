@@ -2,7 +2,7 @@ import { JSX } from 'react'
 
 import { BoxProps, ButtonProps, HtmlTagProps } from 'lib/components'
 
-export const DEFAULT_DROPDOWN_LIST_CLOSE_ON_ITEM_CLICK: DropdownListProps['closeOnItemClick'] = false
+export const DEFAULT_DROPDOWN_LIST_KEEP_OPEN: DropdownListProps['keepOpen'] = false
 export const DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT: DropdownListProps['visibleItemsCount'] = 5
 export const DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT: DropdownListProps['itemBorderIntent'] = 'muted'
 
@@ -12,8 +12,8 @@ type ChildrenAsFuncArgs = {
 }
 
 type DropdownListOwnProps = {
-  closeOnItemClick?: boolean
   visibleItemsCount?: number
+  keepOpen?: boolean
   itemVariant?: ButtonProps['variant']
   itemIntent?: ButtonProps['intent']
   listBorderIntent?: BoxProps['borderIntent']

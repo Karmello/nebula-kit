@@ -20,6 +20,7 @@ export const LinkButton = ({
   intent = DEFAULT_LINK_BUTTON_INTENT,
   labelIntent,
   size,
+  fullWidth,
   iconName,
   // own
   href,
@@ -48,6 +49,7 @@ export const LinkButton = ({
         intent={intent}
         labelIntent={labelIntent}
         size={size}
+        fullWidth={fullWidth}
         iconName={iconName}
         iconPosition="right"
       >

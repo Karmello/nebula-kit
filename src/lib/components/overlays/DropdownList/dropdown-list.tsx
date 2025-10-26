@@ -6,9 +6,10 @@ import { DEFAULT_ANIMATE_DURATION } from 'lib/components/base/Animate/definition
 import { BUTTON_SIZE_CONFIG, DEFAULT_BUTTON_SIZE } from 'lib/components/controls/Button/definitions'
 import { scaleToPixels } from 'lib/helpers'
 import { useNebkitStore } from 'lib/state'
+import { useOutsideClick } from 'lib/hooks'
 
 import {
-  DEFAULT_DROPDOWN_LIST_CLOSE_ON_ITEM_CLICK,
+  DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
   DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT,
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DropdownListProps,
@@ -26,8 +27,8 @@ export const DropdownList = ({
   // Button
   size = DEFAULT_BUTTON_SIZE,
   // own
-  closeOnItemClick = DEFAULT_DROPDOWN_LIST_CLOSE_ON_ITEM_CLICK,
   visibleItemsCount = DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
+  keepOpen = DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
   itemVariant,
   itemIntent,
   listBorderIntent,
@@ -38,7 +39,11 @@ export const DropdownList = ({
 
   const { borderWidth } = useNebkitStore()
 
-  const triggerRef = useRef<any>(null)
+  const ref = useRef<HTMLDivElement>(null)
+  const triggerRef = useRef<HTMLElement>(null)
+  const portalRef = useRef<HTMLDivElement>(null)
+
+  useOutsideClick([triggerRef, portalRef], () => setAnimateVisible(false))
 
   const getItemsContainerBlockSize = useCallback(() => {
     if (visibleItemsCount === undefined || borderWidth === undefined) return 0
@@ -86,22 +91,17 @@ export const DropdownList = ({
             animateVisible={animateVisible}
             setAnimateVisible={setAnimateVisible}
             triggerRef={triggerRef}
-            closeOnItemClick={closeOnItemClick}
+            keepOpen={keepOpen}
             size={size}
             inlineSize={inlineSize}
             itemVariant={itemVariant}
             itemIntent={itemIntent}
           >
             <Box
-              tagRef={tagRef}
+              tagRef={tagRef || ref}
               tagAttrs={{
                 ...tagAttrs,
                 role: 'listbox',
-                onBlur: () => {
-                  if (open) {
-                    setAnimateVisible(false)
-                  }
-                },
                 onKeyDown: e => {
                   if (e.key === 'Escape') {
                     e.stopPropagation()
@@ -114,6 +114,7 @@ export const DropdownList = ({
               {slotsByName['DropdownList.Trigger']}
               {open ? (
                 <Portal
+                  tagRef={portalRef}
                   anchorRef={triggerRef}
                   placement="bottom"
                   inlineSize={triggerWidth !== undefined ? triggerWidth + 'px' : undefined}

@@ -18,7 +18,6 @@ export const Select = ({
   return (
     <DropdownList
       tagAttrs={{ className: withPrefix('select') }}
-      closeOnItemClick
       size={size}
       inlineSize={inlineSize}
       itemVariant={variant}

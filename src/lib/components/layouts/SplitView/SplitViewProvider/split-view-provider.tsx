@@ -1,8 +1,9 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react'
 
 import { DEFAULT_ANIMATE_DURATION } from 'lib/components/base/Animate/definitions'
-import { getLibMsg, useScreen } from 'lib/helpers'
 import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
+import { getLibMsg } from 'lib/helpers'
+import { useScreen } from 'lib/hooks'
 
 import { SplitViewOwnProps } from '../definitions'
 

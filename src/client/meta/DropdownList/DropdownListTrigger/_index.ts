@@ -6,7 +6,8 @@ import { DROPDOWN_LIST_TRIGGER_PROPS_META } from './props'
 const DROPDOWN_LIST_TRIGGER_META: ComponentMeta<DropdownListTriggerProps> = {
   overview: {
     name: 'DropdownList.Trigger',
-    title: 'Represents the interactive element used to open or close the dropdown list.',
+    title: 'Represents a wrapper around the interactive element used to open or close the dropdown list.',
+    description: ['components such as Button, Input or IconButton could be provided as children'],
     composedOf: ['Box'],
     rendersAs: ['div'],
   },

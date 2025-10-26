@@ -10,6 +10,8 @@ const PORTAL_PROPS_META: ComponentMeta<PortalProps>['props'] = {
     isRequired: true,
     description: 'Content rendered inside Portal.',
   },
+  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
+  tagRef: HTML_TAG_PROPS_META.tagRef,
   anchorRef: {
     options: ['RefObject'],
     isRequired: true,

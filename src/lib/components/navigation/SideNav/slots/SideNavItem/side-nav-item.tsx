@@ -20,7 +20,7 @@ export const SideNavItem = ({
     <LinkButton
       tagAttrs={{
         ...tagAttrs,
-        style: { ...tagAttrs?.style, inlineSize: '100%', '--neb-border-radius': 0 } as CSSProperties,
+        style: { ...tagAttrs?.style, '--neb-border-radius': 0 } as CSSProperties,
       }}
       tagRef={tagRef}
       onClick={onClick}
@@ -29,6 +29,7 @@ export const SideNavItem = ({
       intent={intent}
       labelIntent={labelIntent}
       size="sm"
+      fullWidth
     >
       {children}
     </LinkButton>

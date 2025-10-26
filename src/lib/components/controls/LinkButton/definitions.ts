@@ -17,6 +17,9 @@ type LinkButtonOwnProps = {
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'a'>, 'children' | 'tagAttrs' | 'tagRef'>
 
-type PropsFromButton = Pick<ButtonProps<'a'>, 'variant' | 'intent' | 'labelIntent' | 'size' | 'iconName'>
+type PropsFromButton = Pick<
+  ButtonProps<'a'>,
+  'variant' | 'intent' | 'labelIntent' | 'size' | 'fullWidth' | 'iconName'
+>
 
 export type LinkButtonProps = PropsFromHtmlTag & PropsFromButton & LinkButtonOwnProps

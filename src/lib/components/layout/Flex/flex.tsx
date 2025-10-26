@@ -2,7 +2,8 @@ import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, useLayoutEf
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { withPrefix, useScreen } from 'lib/helpers'
+import { withPrefix } from 'lib/helpers'
+import { useScreen } from 'lib/hooks'
 import { applyRespValues } from 'lib/service'
 
 import { FlexProps } from './definitions'

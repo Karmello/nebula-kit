@@ -1,6 +1,6 @@
 import { CodeSnippet } from 'client/components'
 import { Box, Flex, Spacer, Table, Text } from 'lib/components'
-import { BP } from 'lib/helpers'
+import { BP } from 'lib/hooks'
 
 export default () => {
   return (
