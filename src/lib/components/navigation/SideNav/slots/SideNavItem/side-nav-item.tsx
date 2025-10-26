@@ -1,3 +1,5 @@
+import { CSSProperties } from 'react'
+
 import { LinkButton } from 'lib/components'
 
 import { SideNavItemProps } from './definitions'
@@ -13,13 +15,12 @@ export const SideNavItem = ({
   variant,
   intent,
   labelIntent,
-  borderRadius,
 }: SideNavItemProps) => {
   return (
     <LinkButton
       tagAttrs={{
         ...tagAttrs,
-        style: { ...tagAttrs?.style, inlineSize: '100%' },
+        style: { ...tagAttrs?.style, inlineSize: '100%', '--neb-border-radius': 0 } as CSSProperties,
       }}
       tagRef={tagRef}
       onClick={onClick}
@@ -27,7 +28,6 @@ export const SideNavItem = ({
       variant={variant}
       intent={intent}
       labelIntent={labelIntent}
-      borderRadius={borderRadius}
       size="sm"
     >
       {children}

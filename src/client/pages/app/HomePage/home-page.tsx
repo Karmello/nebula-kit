@@ -86,9 +86,8 @@ export const HomePage = () => {
                 options={BRANDS.map(brand => ({ value: brand, label: sentenceCase(brand) }))}
                 value={brand}
                 onChange={value => setBrand(value as Brand)}
-                inlineSize="200px"
-                variant="ghost"
-                intent="success"
+                inlineSize="150px"
+                size="sm"
               />
             </Flex.Item>
           </Flex>

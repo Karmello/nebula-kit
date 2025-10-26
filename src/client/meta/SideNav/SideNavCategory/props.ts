@@ -1,8 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
-import { SideNavCategoryProps } from 'lib/components'
-
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { BUTTON_PROPS_META } from 'client/meta/Button/props'
+import { SideNavCategoryProps } from 'lib/components'
 import { DEFAULT_BOX_VARIANT } from 'lib/components/base/Box/definitions'
 
 const SIDE_NAV_CATEGORY_PROPS_META: ComponentMeta<SideNavCategoryProps>['props'] = {
@@ -25,7 +24,6 @@ const SIDE_NAV_CATEGORY_PROPS_META: ComponentMeta<SideNavCategoryProps>['props']
     isRequired: true,
     description: 'Text label for the category.',
   },
-  borderRadius: BUTTON_PROPS_META.borderRadius,
   initiallyExpanded: {
     options: ['boolean'],
     defaultValue: 'false',

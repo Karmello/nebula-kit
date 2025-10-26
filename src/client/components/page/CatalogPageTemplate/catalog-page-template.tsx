@@ -63,7 +63,6 @@ export const CatalogPageTemplate = ({
                             base: isItemSelected ? 'primary' : 'secondary',
                             lg: isItemSelected ? 'tertiary' : 'neutral',
                           }}
-                          borderRadius={{ base: 0, lg: 2 }}
                         >
                           {label}
                         </SideNav.Item>
@@ -114,7 +113,6 @@ export const CatalogPageTemplate = ({
                                 base: isItemSelected ? 'primary' : 'secondary',
                                 lg: isItemSelected ? 'tertiary' : 'neutral',
                               }}
-                              borderRadius={{ base: 0, lg: 2 }}
                             >
                               {label}
                             </SideNav.Item>

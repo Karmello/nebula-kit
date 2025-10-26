@@ -47,7 +47,7 @@ export const SplitViewSide = ({
         maxInlineSize={inlineSize}
         overflowY={sideOpen ? 'auto' : 'hidden'}
       >
-        <Animate property="inlineSize" visible={sideOpen}>
+        <Animate key={mode} property="inlineSize" visible={sideOpen}>
           <Box inlineSize={inlineSize}>
             {mode === 'overlay' ? (
               <Flex justifyContent="flex-end">

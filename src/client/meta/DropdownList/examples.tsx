@@ -1,11 +1,13 @@
 import { ComponentMeta } from 'client/definitions'
-import { DropdownList, DropdownListProps } from 'lib/components'
+import { Button, DropdownList, DropdownListProps } from 'lib/components'
 
 const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] = [
   {
     jsx: (
       <DropdownList>
-        <DropdownList.Trigger>Trigger</DropdownList.Trigger>
+        <DropdownList.Trigger>
+          <Button>Trigger</Button>
+        </DropdownList.Trigger>
         {Array.from({ length: 3 }, (v, k) => (
           <DropdownList.Item key={k} disabled>
             Item {k + 1}
@@ -20,7 +22,9 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
       'By default, DropdownList items render with the solid variant, tertiary intent and a muted divider between items.',
     jsx: (
       <DropdownList>
-        <DropdownList.Trigger>Trigger</DropdownList.Trigger>
+        <DropdownList.Trigger>
+          <Button>Trigger</Button>
+        </DropdownList.Trigger>
         {Array.from({ length: 10 }, (v, k) => (
           <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
         ))}
@@ -31,7 +35,9 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     description: 'DropdownList rendered with a fixed inline size.',
     jsx: (
       <DropdownList inlineSize="200px">
-        <DropdownList.Trigger>Trigger</DropdownList.Trigger>
+        <DropdownList.Trigger>
+          <Button>Trigger</Button>
+        </DropdownList.Trigger>
         {Array.from({ length: 10 }, (v, k) => (
           <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
         ))}
@@ -42,7 +48,9 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     description: 'DropdownList configured to close when an item is clicked.',
     jsx: (
       <DropdownList inlineSize="200px" closeOnItemClick>
-        <DropdownList.Trigger>Trigger</DropdownList.Trigger>
+        <DropdownList.Trigger>
+          <Button>Trigger</Button>
+        </DropdownList.Trigger>
         {Array.from({ length: 10 }, (v, k) => (
           <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
         ))}
@@ -53,7 +61,9 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     description: 'DropdownList with all items disabled.',
     jsx: (
       <DropdownList inlineSize="200px" closeOnItemClick>
-        <DropdownList.Trigger>Trigger</DropdownList.Trigger>
+        <DropdownList.Trigger>
+          <Button>Trigger</Button>
+        </DropdownList.Trigger>
         {Array.from({ length: 10 }, (v, k) => (
           <DropdownList.Item key={k} disabled>
             Item {k + 1}
@@ -66,7 +76,9 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     description: 'DropdownList configured to display a custom number of visible items at a time.',
     jsx: (
       <DropdownList inlineSize="200px" closeOnItemClick visibleItemsCount={3}>
-        <DropdownList.Trigger>Trigger</DropdownList.Trigger>
+        <DropdownList.Trigger>
+          <Button>Trigger</Button>
+        </DropdownList.Trigger>
         {Array.from({ length: 10 }, (v, k) => (
           <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
         ))}
@@ -83,7 +95,9 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
         listBorderIntent="primary"
         itemBorderIntent="tertiary"
       >
-        <DropdownList.Trigger>Trigger</DropdownList.Trigger>
+        <DropdownList.Trigger>
+          <Button>Trigger</Button>
+        </DropdownList.Trigger>
         {Array.from({ length: 10 }, (v, k) => (
           <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
         ))}
@@ -95,7 +109,9 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
       'DropdownList rendered using the ghost variant with danger intent applied to items and muted intent applied to the list border.',
     jsx: (
       <DropdownList itemVariant="ghost" itemIntent="danger" listBorderIntent="muted">
-        <DropdownList.Trigger>Trigger</DropdownList.Trigger>
+        <DropdownList.Trigger>
+          <Button>Trigger</Button>
+        </DropdownList.Trigger>
         {Array.from({ length: 10 }, (v, k) => (
           <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
         ))}

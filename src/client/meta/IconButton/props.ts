@@ -1,5 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { IconButtonProps } from 'lib/components'
+
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BUTTON_PROPS_META } from '../Button/props'
 
@@ -16,7 +17,6 @@ const ICON_BUTTON_PROPS_META: ComponentMeta<IconButtonProps>['props'] = {
     ...BUTTON_PROPS_META.iconName,
     isRequired: true,
   },
-  borderRadius: BUTTON_PROPS_META.borderRadius,
 }
 
 export { ICON_BUTTON_PROPS_META }

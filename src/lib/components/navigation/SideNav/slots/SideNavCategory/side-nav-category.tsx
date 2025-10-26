@@ -15,7 +15,6 @@ export const SideNavCategory = ({
   variant,
   intent,
   labelIntent,
-  borderRadius,
   // own
   label,
   initiallyExpanded = false,
@@ -64,7 +63,6 @@ export const SideNavCategory = ({
                 variant={variant}
                 intent={intent}
                 labelIntent={labelIntent}
-                borderRadius={borderRadius}
                 labelAlign="left"
                 size="sm"
               >

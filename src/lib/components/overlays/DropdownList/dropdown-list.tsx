@@ -97,6 +97,17 @@ export const DropdownList = ({
               tagAttrs={{
                 ...tagAttrs,
                 role: 'listbox',
+                onBlur: () => {
+                  if (open) {
+                    setAnimateVisible(false)
+                  }
+                },
+                onKeyDown: e => {
+                  if (e.key === 'Escape') {
+                    e.stopPropagation()
+                    setAnimateVisible(false)
+                  }
+                },
               }}
               intent="neutral"
             >

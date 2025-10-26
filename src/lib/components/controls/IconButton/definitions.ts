@@ -7,7 +7,7 @@ type PropsFromHtmlTag<T extends ButtonTag = 'button'> = Pick<HtmlTagProps<T>, 't
 
 type PropsFromButton<T extends ButtonTag = 'button'> = Pick<
   ButtonProps<T>,
-  'variant' | 'intent' | 'labelIntent' | 'size' | 'disabled' | 'borderRadius'
+  'variant' | 'intent' | 'labelIntent' | 'size' | 'disabled'
 > & {
   iconName: ButtonProps<T>['iconName']
 }

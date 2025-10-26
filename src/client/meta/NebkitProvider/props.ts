@@ -30,12 +30,12 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps<Theme>>['pro
   borderWidth: {
     options: ['ScaleValue', 'CSS'],
     defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH),
-    description: 'Global border width value for components that use border.',
+    description: 'Global border width value.',
   },
   borderRadius: {
     options: ['ScaleValue', 'CSS'],
     defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS),
-    description: 'Global border radius value for components that use border.',
+    description: 'Global border radius value.',
   },
 }
 

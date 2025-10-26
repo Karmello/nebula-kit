@@ -1,9 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
-import { SideNavItemProps } from 'lib/components'
-import { DEFAULT_BOX_VARIANT } from 'lib/components/base/Box/definitions'
-
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { LINK_BUTTON_PROPS_META } from 'client/meta/LinkButton/props'
+import { SideNavItemProps } from 'lib/components'
+import { DEFAULT_BOX_VARIANT } from 'lib/components/base/Box/definitions'
 
 const SIDE_NAV_ITEM_PROPS_META: ComponentMeta<SideNavItemProps>['props'] = {
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
@@ -21,7 +20,6 @@ const SIDE_NAV_ITEM_PROPS_META: ComponentMeta<SideNavItemProps>['props'] = {
   },
   intent: LINK_BUTTON_PROPS_META.intent,
   labelIntent: LINK_BUTTON_PROPS_META.labelIntent,
-  borderRadius: LINK_BUTTON_PROPS_META.borderRadius,
 }
 
 export { SIDE_NAV_ITEM_PROPS_META }
