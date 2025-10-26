@@ -33,6 +33,6 @@ export type NebkitProviderProps<T extends Theme = 'light'> = {
   theme?: T
   brand?: Brand
   background?: T extends 'light' ? ThemeBackgroundLight : ThemeBackgroundDark
-  borderWidth?: ScaleValue | string
+  borderWidth?: ScaleValue
   borderRadius?: ScaleValue | string
 }

@@ -1,17 +1,57 @@
 import { ComponentMeta } from 'client/definitions'
 import { DropdownListProps } from 'lib/components'
 
+import {
+  DEFAULT_DROPDOWN_LIST_CLOSE_ON_ITEM_CLICK,
+  DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT,
+  DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
+} from 'lib/components/overlays/DropdownList/definitions'
+
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
+import { BOX_PROPS_META } from '../Box/props'
+import { BUTTON_PROPS_META } from '../Button/props'
 
 const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
   children: {
     ...HTML_TAG_PROPS_META.children,
-    options: ['DropdownList.Item'],
+    options: ['DropdownList.Trigger', 'DropdownList.Item'],
     isRequired: true,
-    description: 'Item slots rendered.',
+    description: 'Accepts slots directly or via a render function with access to the context argument.',
   },
   tagRef: HTML_TAG_PROPS_META.tagRef,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
+  closeOnItemClick: {
+    options: ['boolean'],
+    defaultValue: String(DEFAULT_DROPDOWN_LIST_CLOSE_ON_ITEM_CLICK),
+    description: 'When true, the list will be closed on item click.',
+  },
+  inlineSize: BOX_PROPS_META.inlineSize,
+  itemBorderIntent: {
+    ...BOX_PROPS_META.borderIntent,
+    defaultValue: String(DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT),
+    description: 'Semantic color intent applied to the dividers between list items.',
+  },
+  itemIntent: {
+    ...BUTTON_PROPS_META.intent,
+    description: 'Semantic color intent applied to all items.',
+  },
+  itemVariant: {
+    ...BUTTON_PROPS_META.variant,
+    description: 'Visual style variant applied to all items.',
+  },
+  listBorderIntent: {
+    ...BOX_PROPS_META.borderIntent,
+    description: 'Semantic color intent applied to the list container border.',
+  },
+  size: {
+    ...BUTTON_PROPS_META.size,
+    description: 'Size applied to all items.',
+  },
+  visibleItemsCount: {
+    options: ['number'],
+    defaultValue: String(DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT),
+    description: 'Specifies the number of list items visible before scrolling is enabled.',
+  },
 }
 
 export { DROPDOWN_LIST_PROPS_META }

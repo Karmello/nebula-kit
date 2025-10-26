@@ -43,7 +43,10 @@ export const FOUNDATION_CATEGORIES = [
       {
         key: 'architecture',
         label: 'Architecture',
-        sections: [{ key: 'slots', label: 'Slots' }],
+        sections: [
+          { key: 'slots', label: 'Slots' },
+          { key: 'render-function', label: 'Render function' },
+        ],
       },
     ],
   },

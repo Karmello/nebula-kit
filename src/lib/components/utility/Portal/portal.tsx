@@ -5,7 +5,12 @@ import { Box } from 'lib/components'
 
 import { DEFAULT_PORTAL_PLACEMENT, PortalProps } from './definitions'
 
-export const Portal = ({ children, anchorRef, placement = DEFAULT_PORTAL_PLACEMENT }: PortalProps) => {
+export const Portal = ({
+  children,
+  anchorRef,
+  placement = DEFAULT_PORTAL_PLACEMENT,
+  inlineSize,
+}: PortalProps) => {
   const [container, setContainer] = useState<HTMLElement | null>(null)
   const [position, setPosition] = useState<{ top?: number; left?: number }>({
     top: undefined,
@@ -57,6 +62,7 @@ export const Portal = ({ children, anchorRef, placement = DEFAULT_PORTAL_PLACEME
       tagAttrs={{ style: { transition: 'none' } }}
       position="absolute"
       zIndex={1000}
+      inlineSize={inlineSize}
       top={position.top !== undefined ? position.top + 'px' : undefined}
       left={position.left !== undefined ? position.left + 'px' : undefined}
     >

@@ -1,7 +1,7 @@
-import { HtmlTagProps } from 'lib/components'
+import { ButtonProps } from 'lib/components'
+import { ButtonTag } from 'lib/components/controls/Button/definitions'
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagRef' | 'tagAttrs'> & {
-  children: HtmlTagProps<'div'>['children']
-}
-
-export type DropdownListItemProps = PropsFromHtmlTag
+export type DropdownListItemProps<T extends ButtonTag = 'button'> = Omit<
+  ButtonProps<T>,
+  'variant' | 'intent' | 'size'
+>

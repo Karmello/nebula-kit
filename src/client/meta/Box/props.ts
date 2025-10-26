@@ -63,6 +63,30 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     isResponsive: true,
     description: 'Sets border radius overriding global value set by NebkitProvider.',
   },
+  borderTopLeftRadius: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS),
+    isResponsive: true,
+    description: 'Border radius for the top left corner.',
+  },
+  borderTopRightRadius: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS),
+    isResponsive: true,
+    description: 'Border radius for the top right corner.',
+  },
+  borderBottomRightRadius: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS),
+    isResponsive: true,
+    description: 'Border radius for the bottom right corner.',
+  },
+  borderBottomLeftRadius: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS),
+    isResponsive: true,
+    description: 'Border radius for the bottom left corner.',
+  },
   interactive: {
     options: ['boolean'],
     defaultValue: 'false',

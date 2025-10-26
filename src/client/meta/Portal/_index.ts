@@ -11,7 +11,7 @@ const PORTAL_META: ComponentMeta<PortalProps> = {
     description: [
       'mounts content in a dedicated layer outside the parent hierarchy',
       'supports dynamic positioning relative to an anchor element',
-      'commonly used for dropdowns, modals, and tooltips',
+      'commonly used for dropdowns, modals and tooltips',
     ],
     composedOf: ['Box'],
     rendersAs: ['div'],

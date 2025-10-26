@@ -4,8 +4,10 @@ import { persist } from 'zustand/middleware'
 import { Brand, LIB_PREFIX, Theme } from 'lib/definitions'
 
 import {
+  DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH,
   DEFAULT_NEBKIT_PROVIDER_BRAND,
   DEFAULT_NEBKIT_PROVIDER_THEME,
+  NebkitProviderProps,
 } from 'lib/components/utility/NebkitProvider/definitions'
 
 type NebkitState = {
@@ -13,6 +15,8 @@ type NebkitState = {
   setTheme: (theme: Theme) => void
   brand: Brand
   setBrand: (brand: Brand) => void
+  borderWidth: NebkitProviderProps['borderWidth']
+  setBorderWidth: (borderWidth: NebkitProviderProps['borderWidth']) => void
 }
 
 export const useNebkitStore = create<NebkitState>()(
@@ -22,6 +26,8 @@ export const useNebkitStore = create<NebkitState>()(
       setTheme: theme => set({ theme }),
       brand: DEFAULT_NEBKIT_PROVIDER_BRAND,
       setBrand: brand => set({ brand }),
+      borderWidth: DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH,
+      setBorderWidth: borderWidth => set({ borderWidth }),
     }),
     {
       name: `${LIB_PREFIX}.store`,

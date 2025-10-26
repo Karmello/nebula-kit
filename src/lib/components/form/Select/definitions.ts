@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/components/base'
+import { BoxProps, ButtonProps } from 'lib/components'
 
 type SelectOwnProps = {
   options: { value: string; label: string }[]
@@ -6,6 +6,8 @@ type SelectOwnProps = {
   onChange: (value: string) => void
 }
 
-type PropsFromBox = Pick<BoxProps, 'variant' | 'intent'>
+type PropsFromBox = Pick<BoxProps, 'inlineSize'>
 
-export type SelectProps = PropsFromBox & SelectOwnProps
+type PropsFromButton = Pick<ButtonProps, 'variant' | 'intent' | 'size'>
+
+export type SelectProps = PropsFromBox & PropsFromButton & SelectOwnProps

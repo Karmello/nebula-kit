@@ -47,6 +47,10 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     description: 'Button with text and icon.',
     jsx: <Button iconName="search">Button with icon</Button>,
   },
+  {
+    description: 'Disabled button.',
+    jsx: <Button disabled>Disabled</Button>,
+  },
 ]
 
 export { BUTTON_EXAMPLES_META }

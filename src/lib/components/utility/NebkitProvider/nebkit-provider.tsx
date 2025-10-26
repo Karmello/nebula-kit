@@ -37,19 +37,12 @@ export const NebkitProvider = <T extends Theme = 'light'>({
   useEffect(() => {
     document.documentElement.style.setProperty('--neb-border-width', scale(borderWidth) || '')
     document.documentElement.style.setProperty('--neb-border-radius', scale(borderRadius) || '')
+    nebkitStore.setBorderWidth(borderWidth)
   }, [borderWidth, borderRadius, brand])
 
   useEffect(() => {
     if (theme) {
       nebkitStore.setTheme(theme)
-    } else {
-      // if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-      //   nebkitStore.setTheme('light')
-      // } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      //   nebkitStore.setTheme('dark')
-      // } else {
-      //   nebkitStore.setTheme(DEFAULT_NEBKIT_PROVIDER_THEME)
-      // }
     }
   }, [theme])
 
