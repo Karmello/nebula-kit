@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { GridTag, GridProps } from 'lib/components/layout/Grid/definitions'
+import { GRID_TAGS, GridProps } from 'lib/components/layout/Grid/definitions'
 
 import { GRID_PROPS_META } from './props'
 import { GRID_EXAMPLES_META } from './examples'
@@ -16,7 +16,7 @@ const GRID_META: ComponentMeta<GridProps> = {
       'manages spacing between items with gap properties',
     ],
     composedOf: ['Box'],
-    rendersAs: GridTag,
+    rendersAs: GRID_TAGS,
     slots: ['Grid.Item'],
   },
   props: GRID_PROPS_META,

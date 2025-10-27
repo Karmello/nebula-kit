@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { FlexItemProps } from 'lib/components/layout/Flex/FlexItem/definitions'
-import { CssFlexItemAlignSelf } from 'lib/definitions'
+import { CSS_FLEX_ITEM_ALIGN_SELF } from 'lib/definitions'
 
 const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemProps>['props'] = {
   ...HTML_TAG_PROPS_META,
@@ -39,7 +39,7 @@ const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemProps>['props'] = {
     description: "Sets the item's initial main-size before free space is distributed.",
   },
   alignSelf: {
-    options: CssFlexItemAlignSelf as unknown as string[],
+    options: CSS_FLEX_ITEM_ALIGN_SELF as unknown as string[],
     defaultValue: 'auto',
     isRequired: false,
     isResponsive: true,

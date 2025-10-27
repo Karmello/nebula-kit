@@ -8,8 +8,9 @@ import {
 
 import { HtmlTagProps } from 'lib/components'
 
-export const GridTag = ['div', 'section', 'main', 'article', 'aside', 'nav', 'ul', 'ol'] as const
-export type GridTag = (typeof GridTag)[number]
+export const GRID_TAGS = ['div', 'section', 'main', 'article', 'aside', 'nav', 'ul', 'ol'] as const
+
+export type GridTag = (typeof GRID_TAGS)[number]
 
 type GridOwnProps = {
   gridTemplateColumns?: RespValue<string | number>

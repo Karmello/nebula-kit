@@ -8,7 +8,7 @@ import { DEFAULT_SWITCH_AT } from 'lib/definitions'
 import { applyStaticDataset } from 'lib/service'
 
 import { SplitViewProvider, useSplitViewContext } from './SplitViewProvider'
-import { SplitViewProps, SplitViewSidePosition } from './definitions'
+import { SPLIT_VIEW_SIDE_POSITIONS, SplitViewProps } from './definitions'
 
 import './split-view.scss'
 
@@ -69,7 +69,7 @@ export const SplitView = ({
   tagAttrs,
   tagRef,
   // own
-  sidePosition = SplitViewSidePosition[0],
+  sidePosition = SPLIT_VIEW_SIDE_POSITIONS[0],
   switchAt = DEFAULT_SWITCH_AT,
 }: SplitViewProps) => {
   return (

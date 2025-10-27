@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 
-import { ButtonTag, ButtonProps } from 'lib/components/controls/Button/definitions'
+import { BUTTON_TAGS, ButtonProps } from 'lib/components/controls/Button/definitions'
 
 import { BUTTON_PROPS_META } from './props'
 import { BUTTON_EXAMPLES_META } from './examples'
@@ -16,7 +16,7 @@ const BUTTON_META: ComponentMeta<ButtonProps> = {
       'supports full-width layout to span the entire container',
     ],
     composedOf: ['Box', 'Text'],
-    rendersAs: ButtonTag,
+    rendersAs: BUTTON_TAGS,
   },
   props: BUTTON_PROPS_META,
   examples: BUTTON_EXAMPLES_META,

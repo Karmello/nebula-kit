@@ -1,11 +1,11 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
 import { BoxIntent } from 'lib/components/base/Box/definitions'
 
-export const TableLayout = ['auto', 'fixed'] as const
+export const TABLE_LAYOUTS = ['auto', 'fixed'] as const
 export const DEFAULT_TABLE_LAYOUT: TableLayout = 'auto'
 export const DEFAULT_TABLE_INTENT: BoxIntent = 'tertiary'
 
-export type TableLayout = (typeof TableLayout)[number]
+export type TableLayout = (typeof TABLE_LAYOUTS)[number]
 
 type TableOwnProps = {
   layout?: TableLayout

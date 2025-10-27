@@ -94,9 +94,12 @@ export const HomePage = () => {
             <Flex.Item>
               <Text bold>Border width</Text>
               <Select
-                options={Array.from({ length: 6 }, (v, k) => String(k)).map(k => ({ value: k, label: k }))}
+                options={Array.from({ length: 2 }, (v, k) => k).map(k => ({
+                  value: String(k + 1),
+                  label: String(k + 1),
+                }))}
                 value={String(borderWidth)}
-                onChange={value => setBorderWidth(Number(value) as ScaleValue)}
+                onChange={value => setBorderWidth(Number(value) as never)}
                 inlineSize="150px"
                 size="sm"
               />

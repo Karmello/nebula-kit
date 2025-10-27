@@ -4,7 +4,6 @@ import { Animate, Box, Flex, Portal } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { DEFAULT_ANIMATE_DURATION } from 'lib/components/base/Animate/definitions'
 import { BUTTON_SIZE_CONFIG, DEFAULT_BUTTON_SIZE } from 'lib/components/controls/Button/definitions'
-import { scaleToPixels } from 'lib/helpers'
 import { useNebkitStore } from 'lib/state'
 import { useOutsideClick } from 'lib/hooks'
 
@@ -49,7 +48,7 @@ export const DropdownList = ({
     if (visibleItemsCount === undefined || borderWidth === undefined) return 0
     const allItemsBlockSize = visibleItemsCount * BUTTON_SIZE_CONFIG[size].blockSize
     const allItemsBorderWidth = (visibleItemsCount - 1) * borderWidth
-    return `${scaleToPixels(allItemsBlockSize + allItemsBorderWidth)}px`
+    return `${allItemsBlockSize + allItemsBorderWidth}px`
   }, [])
 
   useEffect(() => {

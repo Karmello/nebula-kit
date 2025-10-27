@@ -5,8 +5,9 @@ import { HtmlTagProps } from 'lib/components'
 
 import { SplitViewContextProps } from './SplitViewProvider'
 
-export const SplitViewSidePosition = ['left', 'right'] as const
-export type SplitViewSidePosition = (typeof SplitViewSidePosition)[number]
+export const SPLIT_VIEW_SIDE_POSITIONS = ['left', 'right'] as const
+
+export type SplitViewSidePosition = (typeof SPLIT_VIEW_SIDE_POSITIONS)[number]
 
 type ChildrenAsFuncArgs = {
   setSideOpen: (sideOpen: boolean) => Promise<boolean>

@@ -1,13 +1,13 @@
 // constants
 
-export const CssTextAlign = ['start', 'center', 'end', 'justify'] as const
-export const CssDisplay = ['block', 'inline', 'inline-block', 'flow-root', 'contents', 'none'] as const
-export const CssOverflow = ['visible', 'scroll', 'hidden', 'clip', 'auto'] as const
-export const CssPosition = ['static', 'relative', 'absolute', 'fixed', 'sticky'] as const
-export const CssFlexDirection = ['row', 'row-reverse', 'column', 'column-reverse'] as const
-export const CssFlexWrap = ['nowrap', 'wrap', 'wrap-reverse'] as const
+export const CSS_TEXT_ALIGN = ['start', 'center', 'end', 'justify'] as const
+export const CSS_DISPLAY = ['block', 'inline', 'inline-block', 'flow-root', 'contents', 'none'] as const
+export const CSS_OVERFLOW = ['visible', 'scroll', 'hidden', 'clip', 'auto'] as const
+export const CSS_POSITION = ['static', 'relative', 'absolute', 'fixed', 'sticky'] as const
+export const CSS_FLEX_DIRECTION = ['row', 'row-reverse', 'column', 'column-reverse'] as const
+export const CSS_FLEX_WRAP = ['nowrap', 'wrap', 'wrap-reverse'] as const
 
-export const CssFlexJustifyContent = [
+export const CSS_FLEX_JUSTIFY_CONTENT = [
   'flex-start',
   'center',
   'flex-end',
@@ -16,9 +16,9 @@ export const CssFlexJustifyContent = [
   'space-evenly',
 ] as const
 
-export const CssFlexAlignItems = ['flex-start', 'center', 'flex-end', 'stretch', 'baseline'] as const
+export const CSS_FLEX_ALIGN_ITEMS = ['flex-start', 'center', 'flex-end', 'stretch', 'baseline'] as const
 
-export const CssFlexItemAlignSelf = [
+export const CSS_FLEX_ITEM_ALIGN_SELF = [
   'auto',
   'flex-start',
   'flex-end',
@@ -27,10 +27,10 @@ export const CssFlexItemAlignSelf = [
   'baseline',
 ] as const
 
-export const CssGridAutoFlow = ['row', 'column', 'dense', 'row dense', 'column dense'] as const
-export const CssGridPlaceItems = ['stretch', 'start', 'center', 'end'] as const
+export const CSS_GRID_AUTO_FLOW = ['row', 'column', 'dense', 'row dense', 'column dense'] as const
+export const CSS_GRID_PLACE_ITEMS = ['stretch', 'start', 'center', 'end'] as const
 
-export const CssGridPlaceContent = [
+export const CSS_GRID_PLACE_CONTENT = [
   'start',
   'center',
   'end',
@@ -40,24 +40,24 @@ export const CssGridPlaceContent = [
   'space-evenly',
 ] as const
 
-export const CssGridItemJustifySelf = ['auto', 'start', 'center', 'end', 'stretch'] as const
-export const CssGridItemAlignSelf = ['auto', 'start', 'center', 'end', 'stretch'] as const
+export const CSS_GRID_ITEM_JUSTIFY_SELF = ['auto', 'start', 'center', 'end', 'stretch'] as const
+export const CSS_GRID_ITEM_ALIGN_SELF = ['auto', 'start', 'center', 'end', 'stretch'] as const
 
 // types
 
-export type CssDisplay = (typeof CssDisplay)[number]
-export type CssOverflow = (typeof CssOverflow)[number]
-export type CssPosition = (typeof CssPosition)[number]
-export type CssTextAlign = (typeof CssTextAlign)[number]
+export type CssDisplay = (typeof CSS_DISPLAY)[number]
+export type CssOverflow = (typeof CSS_OVERFLOW)[number]
+export type CssPosition = (typeof CSS_POSITION)[number]
+export type CssTextAlign = (typeof CSS_TEXT_ALIGN)[number]
 
-export type CssFlexDirection = (typeof CssFlexDirection)[number]
-export type CssFlexWrap = (typeof CssFlexWrap)[number]
-export type CssFlexJustifyContent = (typeof CssFlexJustifyContent)[number]
-export type CssFlexAlignItems = (typeof CssFlexAlignItems)[number]
-export type CssFlexItemAlignSelf = (typeof CssFlexItemAlignSelf)[number]
+export type CssFlexDirection = (typeof CSS_FLEX_DIRECTION)[number]
+export type CssFlexWrap = (typeof CSS_FLEX_WRAP)[number]
+export type CssFlexJustifyContent = (typeof CSS_FLEX_JUSTIFY_CONTENT)[number]
+export type CssFlexAlignItems = (typeof CSS_FLEX_ALIGN_ITEMS)[number]
+export type CssFlexItemAlignSelf = (typeof CSS_FLEX_ITEM_ALIGN_SELF)[number]
 
-export type CssGridAutoFlow = (typeof CssGridAutoFlow)[number]
-export type CssGridPlaceItems = (typeof CssGridPlaceItems)[number]
-export type CssGridPlaceContent = (typeof CssGridPlaceItems)[number]
-export type CssGridItemJustifySelf = (typeof CssGridItemJustifySelf)[number]
-export type CssGridItemAlignSelf = (typeof CssGridItemAlignSelf)[number]
+export type CssGridAutoFlow = (typeof CSS_GRID_AUTO_FLOW)[number]
+export type CssGridPlaceItems = (typeof CSS_GRID_PLACE_ITEMS)[number]
+export type CssGridPlaceContent = (typeof CSS_GRID_PLACE_CONTENT)[number]
+export type CssGridItemJustifySelf = (typeof CSS_GRID_ITEM_JUSTIFY_SELF)[number]
+export type CssGridItemAlignSelf = (typeof CSS_GRID_ITEM_ALIGN_SELF)[number]

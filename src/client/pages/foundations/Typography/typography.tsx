@@ -1,5 +1,5 @@
 import { Flex, Table, Text } from 'lib/components'
-import { TEXT_TYPOGRAPHY_CONFIG, TextTypography } from 'lib/components/base/Text/definitions'
+import { TEXT_TYPOGRAPHY, TEXT_TYPOGRAPHY_CONFIG, TextTypography } from 'lib/components/base/Text/definitions'
 
 const MAP: Record<TextTypography, string> = {
   body: 'Default text for reading and general content. Balanced for legibility and rhythm across devices.',
@@ -19,7 +19,7 @@ export default () => {
   return (
     <Flex flexDirection="column" gap={40}>
       <Text typography="lead">All typography styles defined in the system.</Text>
-      {TextTypography.map(typography => (
+      {TEXT_TYPOGRAPHY.map(typography => (
         <Table key={typography}>
           <Table.Caption>
             <Text intent="primary" bold underline iconName="arrow-right">

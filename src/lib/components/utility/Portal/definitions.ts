@@ -2,9 +2,9 @@ import { BoxProps, HtmlTagProps } from 'lib/components/base'
 import { RefObject } from 'react'
 
 export const DEFAULT_PORTAL_PLACEMENT: PortalProps['placement'] = 'bottom'
-export const PortalPlacement = ['top', 'right', 'bottom', 'left'] as const
+export const PORTAL_PLACEMENTS = ['top', 'right', 'bottom', 'left'] as const
 
-export type PortalPlacement = (typeof PortalPlacement)[number]
+export type PortalPlacement = (typeof PORTAL_PLACEMENTS)[number]
 
 type PortalOwnProps = {
   anchorRef: RefObject<HTMLElement | null>

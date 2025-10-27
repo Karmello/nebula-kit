@@ -1,10 +1,10 @@
 import { BoxProps, ButtonProps, HtmlTagProps } from 'lib/components'
 
-export const RevealTag = ['div', 'section', 'article', 'aside', 'li'] as const
+export const REVEAL_TAGS = ['div', 'section', 'article', 'aside', 'li'] as const
 export const DEFAULT_REVEAL_INTENT: RevealProps['intent'] = 'tertiary'
 export const DEFAULT_REVEAL_SIZE: RevealProps['size'] = 'sm'
 
-export type RevealTag = (typeof RevealTag)[number]
+export type RevealTag = (typeof REVEAL_TAGS)[number]
 
 type RevealOwnProps = {
   label: string

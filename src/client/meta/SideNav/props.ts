@@ -4,7 +4,7 @@ import { SideNavProps } from 'lib/components'
 import {
   DEFAULT_SIDE_NAV_EXPAND_MODE,
   DEFAULT_SIDE_NAV_ROW_GAP,
-  SideNavExpandMode,
+  SIDE_NAV_EXPAND_MODES,
 } from 'lib/components/navigation/SideNav/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -24,7 +24,7 @@ const SIDE_NAV_PROPS_META: ComponentMeta<SideNavProps>['props'] = {
     defaultValue: String(DEFAULT_SIDE_NAV_ROW_GAP),
   },
   expandMode: {
-    options: SideNavExpandMode as unknown as string[],
+    options: SIDE_NAV_EXPAND_MODES as unknown as string[],
     defaultValue: DEFAULT_SIDE_NAV_EXPAND_MODE,
     description: 'Controls whether single or multiple categories can remain open at a time.',
   },

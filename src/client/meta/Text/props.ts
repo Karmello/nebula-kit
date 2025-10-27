@@ -1,9 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
+
 import {
   DEFAULT_TEXT_TYPOGRAPHY,
   TextProps,
-  TextSpace,
-  TextTypography,
+  TEXT_SPACE,
+  TEXT_TYPOGRAPHY,
 } from 'lib/components/base/Text/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -12,7 +13,7 @@ import { WITH_ICON_PROPS_META } from '../WithIcon/props'
 
 const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
   typography: {
-    options: Object.values(TextTypography),
+    options: Object.values(TEXT_TYPOGRAPHY),
     defaultValue: DEFAULT_TEXT_TYPOGRAPHY,
     isRequired: false,
     isResponsive: false,
@@ -61,7 +62,7 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
   },
   space: {
-    options: TextSpace as unknown as string[],
+    options: TEXT_SPACE as unknown as string[],
     description:
       'Controls the insertion of non-breaking spaces before and/or after the text content. Useful when composing multiple inline Text elements.',
   },

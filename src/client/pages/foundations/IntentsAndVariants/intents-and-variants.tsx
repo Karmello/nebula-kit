@@ -1,5 +1,5 @@
 import { Box, Button, Flex, MarkerList, MarkerListItem, Section, Spacer, Text } from 'lib/components'
-import { BoxIntent } from 'lib/components/base/Box/definitions'
+import { BOX_INTENTS, BoxIntent } from 'lib/components/base/Box/definitions'
 
 const INTENTS_INFO_MAP: Record<BoxIntent, string> = {
   neutral: 'surface without meaning, default tone',
@@ -27,7 +27,7 @@ export default () => {
           <Text>Filled surface, strong emphasis.</Text>
           <Spacer blockSize={30} />
           <Flex flexWrap="wrap" gap={6}>
-            {BoxIntent.map(intent => {
+            {BOX_INTENTS.map(intent => {
               return (
                 <Button key={intent} variant="solid" intent={intent}>
                   {intent}
@@ -40,7 +40,7 @@ export default () => {
           <Text>Border only, background matches the app's surface.</Text>
           <Spacer blockSize={30} />
           <Flex flexWrap="wrap" gap={6}>
-            {BoxIntent.map(intent => {
+            {BOX_INTENTS.map(intent => {
               return (
                 <Button key={intent} variant="outline" intent={intent}>
                   {intent}
@@ -53,7 +53,7 @@ export default () => {
           <Text>Minimal, blends into background.</Text>
           <Spacer blockSize={30} />
           <Flex flexWrap="wrap" gap={6}>
-            {BoxIntent.map(intent => {
+            {BOX_INTENTS.map(intent => {
               return (
                 <Button key={intent} variant="ghost" intent={intent}>
                   {intent}

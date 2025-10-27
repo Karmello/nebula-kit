@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { SplitViewProps, SplitViewSidePosition } from 'lib/components/layouts/SplitView/definitions'
+import { SplitViewProps, SPLIT_VIEW_SIDE_POSITIONS } from 'lib/components/layouts/SplitView/definitions'
 import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/definitions'
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
@@ -13,8 +13,8 @@ const SPLIT_VIEW_PROPS_META: ComponentMeta<SplitViewProps>['props'] = {
     description: 'Accepts slots directly or via a render function with access to the context argument.',
   },
   sidePosition: {
-    options: SplitViewSidePosition as unknown as string[],
-    defaultValue: SplitViewSidePosition[0],
+    options: SPLIT_VIEW_SIDE_POSITIONS as unknown as string[],
+    defaultValue: SPLIT_VIEW_SIDE_POSITIONS[0],
     isRequired: false,
     isResponsive: false,
     description: 'Controls which horizontal side of the layout the panel is attached to.',

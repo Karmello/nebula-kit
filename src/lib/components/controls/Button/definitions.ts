@@ -22,11 +22,11 @@ export const DEFAULT_BUTTON_INTENT: BoxIntent = 'tertiary'
 export const DEFAULT_BUTTON_SIZE: ButtonSize = 'md'
 export const DEFAULT_BUTTON_JUSTIFY_CONTENT: FlexProps['justifyContent'] = 'center'
 
-export const ButtonTag = ['button', 'a'] as const
-export const ButtonSize = ['xs', 'sm', 'md', 'lg'] as const
+export const BUTTON_TAGS = ['button', 'a'] as const
+export const BUTTON_SIZES = ['xs', 'sm', 'md', 'lg'] as const
 
-export type ButtonTag = (typeof ButtonTag)[number]
-export type ButtonSize = (typeof ButtonSize)[number]
+export type ButtonTag = (typeof BUTTON_TAGS)[number]
+export type ButtonSize = (typeof BUTTON_SIZES)[number]
 
 type ButtonOwnProps = {
   size?: ButtonSize

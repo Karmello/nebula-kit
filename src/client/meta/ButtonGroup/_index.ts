@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { ButtonGroupTag, ButtonGroupProps } from 'lib/components/controls/ButtonGroup/definitions'
+import { BUTTON_GROUP_TAGS, ButtonGroupProps } from 'lib/components/controls/ButtonGroup/definitions'
 
 import { BUTTON_GROUP_PROPS_META } from './props'
 import { BUTTON_GROUP_EXAMPLES_META } from './examples'
@@ -14,7 +14,7 @@ const BUTTON_GROUP_META: ComponentMeta<ButtonGroupProps> = {
     ],
 
     composedOf: ['Flex', 'Flex.Item'],
-    rendersAs: ButtonGroupTag,
+    rendersAs: BUTTON_GROUP_TAGS,
     slots: ['Button', 'LinkButton'],
   },
   props: BUTTON_GROUP_PROPS_META,

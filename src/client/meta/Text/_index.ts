@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { TextTag, TextProps } from 'lib/components/base/Text/definitions'
+import { TEXT_TAGS, TextProps } from 'lib/components/base/Text/definitions'
 
 import { TEXT_PROPS_META } from './props'
 import { TEXT_EXAMPLES_META } from './examples'
@@ -14,7 +14,7 @@ const TEXT_META: ComponentMeta<TextProps> = {
       'allows integration of inline icons alongside text',
     ],
     composedOf: ['Box', 'WithIcon'],
-    rendersAs: TextTag,
+    rendersAs: TEXT_TAGS,
   },
   props: TEXT_PROPS_META,
   examples: TEXT_EXAMPLES_META,

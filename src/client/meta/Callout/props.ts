@@ -4,10 +4,10 @@ import {
   CALLOUT_CONFIG,
   DEFAULT_CALLOUT_INTENT,
   DEFAULT_CALLOUT_VARIANT,
-  CalloutIntent,
+  CALLOUT_INTENTS,
   CalloutProps,
-  CalloutVariant,
-  CalloutSize,
+  CALLOUT_VARIANTS,
+  CALLOUT_SIZES,
   DEFAULT_CALLOUT_SIZE,
 } from 'lib/components/feedback/Callout/definitions'
 
@@ -20,12 +20,12 @@ const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
   tagRef: HTML_TAG_PROPS_META.tagRef,
   variant: {
     ...BOX_PROPS_META.variant,
-    options: Object.values(CalloutVariant),
+    options: Object.values(CALLOUT_VARIANTS),
     defaultValue: DEFAULT_CALLOUT_VARIANT,
   },
   intent: {
     ...BOX_PROPS_META.intent,
-    options: Object.values(CalloutIntent),
+    options: Object.values(CALLOUT_INTENTS),
     defaultValue: DEFAULT_CALLOUT_INTENT,
   },
   content: {
@@ -43,7 +43,7 @@ const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
     isResponsive: false,
   },
   size: {
-    options: CalloutSize as unknown as string[],
+    options: CALLOUT_SIZES as unknown as string[],
     defaultValue: DEFAULT_CALLOUT_SIZE,
     description: 'Controls overall proportions - adjusting heading size and spacings.',
   },

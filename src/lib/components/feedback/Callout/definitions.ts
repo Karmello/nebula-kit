@@ -24,15 +24,15 @@ export const DEFAULT_CALLOUT_SIZE: CalloutSize = 'md'
 export const DEFAULT_CALLOUT_VARIANT: CalloutVariant = 'solid'
 export const DEFAULT_CALLOUT_INTENT: CalloutIntent = 'info'
 
-export const CalloutTag = ['div', 'section', 'article', 'aside'] as const
-export const CalloutSize = ['sm', 'md', 'lg', 'xl', 'xxl'] as const
-export const CalloutVariant = ['solid', 'outline'] as const
-export const CalloutIntent = ['info', 'success', 'warning', 'danger'] as const
+export const CALLOUT_TAGS = ['div', 'section', 'article', 'aside'] as const
+export const CALLOUT_SIZES = ['sm', 'md', 'lg', 'xl', 'xxl'] as const
+export const CALLOUT_VARIANTS = ['solid', 'outline'] as const
+export const CALLOUT_INTENTS = ['info', 'success', 'warning', 'danger'] as const
 
-export type CalloutTag = (typeof CalloutTag)[number]
-export type CalloutSize = (typeof CalloutSize)[number]
-export type CalloutVariant = (typeof CalloutVariant)[number]
-export type CalloutIntent = (typeof CalloutIntent)[number]
+export type CalloutTag = (typeof CALLOUT_TAGS)[number]
+export type CalloutSize = (typeof CALLOUT_SIZES)[number]
+export type CalloutVariant = (typeof CALLOUT_VARIANTS)[number]
+export type CalloutIntent = (typeof CALLOUT_INTENTS)[number]
 
 type CalloutOwnProps = {
   content: string

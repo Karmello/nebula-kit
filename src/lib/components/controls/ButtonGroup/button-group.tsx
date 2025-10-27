@@ -17,7 +17,7 @@ import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 
 import {
-  ButtonGroupDirection,
+  BUTTON_GROUP_DIRECTIONS,
   ButtonGroupTag,
   ButtonGroupProps,
   DEFAULT_BUTTON_GROUP_GAP,
@@ -37,7 +37,7 @@ export const ButtonGroup = <T extends ButtonGroupTag = 'div'>({
   // flex
   gap = DEFAULT_BUTTON_GROUP_GAP,
   // own
-  direction = ButtonGroupDirection[0],
+  direction = BUTTON_GROUP_DIRECTIONS[0],
   stretch = false,
   attached = false,
 }: ButtonGroupProps<T>) => {

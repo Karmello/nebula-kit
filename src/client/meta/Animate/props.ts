@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { AnimateProps } from 'lib/components'
-import { AnimateProperty, DEFAULT_ANIMATE_DURATION } from 'lib/components/base/Animate/definitions'
+import { ANIMATE_PROPERTIES, DEFAULT_ANIMATE_DURATION } from 'lib/components/base/Animate/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
@@ -13,7 +13,7 @@ const ANIMATE_PROPS_META: ComponentMeta<AnimateProps>['props'] = {
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
   property: {
-    options: AnimateProperty as unknown as string[],
+    options: ANIMATE_PROPERTIES as unknown as string[],
     isRequired: true,
     description: 'Property to animate.',
   },

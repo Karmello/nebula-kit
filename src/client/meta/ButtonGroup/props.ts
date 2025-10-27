@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { ButtonGroupDirection, ButtonGroupProps } from 'lib/components/controls/ButtonGroup/definitions'
+import { BUTTON_GROUP_DIRECTIONS, ButtonGroupProps } from 'lib/components/controls/ButtonGroup/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { FLEX_PROPS_META } from '../Flex/props'
@@ -21,8 +21,8 @@ const BUTTON_GROUP_PROPS_META: ComponentMeta<ButtonGroupProps>['props'] = {
   intent: BUTTON_PROPS_META.intent,
   size: BUTTON_PROPS_META.size,
   direction: {
-    options: Object.values(ButtonGroupDirection),
-    defaultValue: ButtonGroupDirection[0],
+    options: Object.values(BUTTON_GROUP_DIRECTIONS),
+    defaultValue: BUTTON_GROUP_DIRECTIONS[0],
     isRequired: false,
     isResponsive: true,
     description: 'Controls whether buttons are arranged horizontally or vertically.',

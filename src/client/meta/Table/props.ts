@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { TableProps } from 'lib/components'
-import { DEFAULT_TABLE_LAYOUT, TableLayout } from 'lib/components/layout/Table/definitions'
+import { DEFAULT_TABLE_LAYOUT, TABLE_LAYOUTS } from 'lib/components/layout/Table/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
@@ -20,7 +20,7 @@ const TABLE_PROPS_META: ComponentMeta<TableProps>['props'] = {
     description: "Semantic color intent applied to the table's background surface.",
   },
   layout: {
-    options: TableLayout as unknown as string[],
+    options: TABLE_LAYOUTS as unknown as string[],
     defaultValue: DEFAULT_TABLE_LAYOUT,
     description:
       'Defines the layout algorithm: "auto" sizes columns by content, "fixed" by table width and column widths.',

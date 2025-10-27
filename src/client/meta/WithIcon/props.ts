@@ -3,7 +3,7 @@ import { ComponentMeta } from 'client/definitions'
 import {
   DEFAULT_WITH_ICON_COLUMN_GAP,
   DEFAULT_WITH_ICON_ICON_POSITION,
-  IconPosition,
+  ICON_POSITIONS,
   WithIconProps,
 } from 'lib/components/layout/WithIcon/definitions'
 
@@ -25,7 +25,7 @@ const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
   },
   ...ICON_PROPS_META,
   position: {
-    options: IconPosition as unknown as string[],
+    options: ICON_POSITIONS as unknown as string[],
     defaultValue: DEFAULT_WITH_ICON_ICON_POSITION,
     isRequired: false,
     isResponsive: false,

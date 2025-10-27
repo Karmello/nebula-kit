@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
-import { CssDisplay, CssOverflow, CssPosition, CssTextAlign } from 'lib/definitions'
-import { BoxIntent, BoxProps, BoxVariant, DEFAULT_BOX_VARIANT } from 'lib/components/base/Box/definitions'
+import { CSS_DISPLAY, CSS_OVERFLOW, CSS_POSITION, CSS_TEXT_ALIGN } from 'lib/definitions'
+import { BoxProps, BOX_VARIANTS, DEFAULT_BOX_VARIANT, BOX_INTENTS } from 'lib/components/base/Box/definitions'
 
 import {
   DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS,
@@ -11,18 +11,18 @@ import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   variant: {
-    options: Object.values(BoxVariant),
+    options: Object.values(BOX_VARIANTS),
     defaultValue: DEFAULT_BOX_VARIANT,
     isResponsive: true,
     description: 'Visual style variant from the system design.',
   },
   intent: {
-    options: Object.values(BoxIntent),
+    options: Object.values(BOX_INTENTS),
     isResponsive: true,
     description: 'Semantic color intent applied.',
   },
   borderIntent: {
-    options: Object.values(BoxIntent),
+    options: Object.values(BOX_INTENTS),
     isResponsive: true,
     description: 'Semantic color intent applied to the border.',
   },
@@ -98,26 +98,26 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Disables the component and its interactions.',
   },
   display: {
-    options: Object.values(CssDisplay),
-    defaultValue: CssDisplay[0],
+    options: Object.values(CSS_DISPLAY),
+    defaultValue: CSS_DISPLAY[0],
     isResponsive: true,
     description: 'Display type controlling how the component is laid out.',
   },
   overflowX: {
-    options: Object.values(CssOverflow),
-    defaultValue: CssOverflow[0],
+    options: Object.values(CSS_OVERFLOW),
+    defaultValue: CSS_OVERFLOW[0],
     isResponsive: true,
     description: 'Overflow behavior on the horizontal axis.',
   },
   overflowY: {
-    options: Object.values(CssOverflow),
-    defaultValue: CssOverflow[0],
+    options: Object.values(CSS_OVERFLOW),
+    defaultValue: CSS_OVERFLOW[0],
     isResponsive: true,
     description: 'Overflow behavior on the vertical axis.',
   },
   position: {
-    options: Object.values(CssPosition),
-    defaultValue: CssPosition[0],
+    options: Object.values(CSS_POSITION),
+    defaultValue: CSS_POSITION[0],
     isResponsive: true,
     description: 'Position in the layout flow.',
   },
@@ -146,8 +146,8 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Left offset.',
   },
   textAlign: {
-    options: Object.values(CssTextAlign),
-    defaultValue: CssTextAlign[0],
+    options: Object.values(CSS_TEXT_ALIGN),
+    defaultValue: CSS_TEXT_ALIGN[0],
     isResponsive: true,
     description: 'Text alignment within the component.',
   },

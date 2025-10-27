@@ -25,11 +25,11 @@ export const TEXT_TYPOGRAPHY_CONFIG: Record<
   h1: { tag: 'h1', fontSize: 60, lineHeight: 1.1, iconSize: 46 },
 }
 
-export const TextTag = ['p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a'] as const
-export const TextSpace = ['start', 'end', 'both'] as const
+export const TEXT_TAGS = ['p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a'] as const
+export const TEXT_SPACE = ['start', 'end', 'both'] as const
 export const DEFAULT_TEXT_TYPOGRAPHY: TextTypography = 'body'
 
-export const TextTypography = [
+export const TEXT_TYPOGRAPHY = [
   'body',
   'lead',
   'secondary',
@@ -43,9 +43,9 @@ export const TextTypography = [
   'h1',
 ] as const
 
-export type TextTag = (typeof TextTag)[number]
-export type TextSpace = (typeof TextSpace)[number]
-export type TextTypography = (typeof TextTypography)[number]
+export type TextTag = (typeof TEXT_TAGS)[number]
+export type TextSpace = (typeof TEXT_SPACE)[number]
+export type TextTypography = (typeof TEXT_TYPOGRAPHY)[number]
 
 type TextOwnProps = {
   typography?: TextTypography

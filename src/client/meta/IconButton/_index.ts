@@ -1,6 +1,6 @@
 import { IconButtonProps } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
-import { ButtonTag } from 'lib/components/controls/Button/definitions'
+import { BUTTON_TAGS } from 'lib/components/controls/Button/definitions'
 
 import { ICON_BUTTON_EXAMPLES_META } from './examples'
 import { ICON_BUTTON_PROPS_META } from './props'
@@ -13,7 +13,7 @@ const ICON_BUTTON_META: ComponentMeta<IconButtonProps> = {
       "useful for quick actions where text isn't needed",
     ],
     composedOf: ['Button'],
-    rendersAs: ButtonTag,
+    rendersAs: BUTTON_TAGS,
   },
   props: ICON_BUTTON_PROPS_META,
   examples: ICON_BUTTON_EXAMPLES_META,

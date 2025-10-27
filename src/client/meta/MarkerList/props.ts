@@ -3,8 +3,8 @@ import { ComponentMeta } from 'client/definitions'
 import {
   DEFAULT_MARKER_LIST_ROW_GAP,
   MarkerListProps,
-  MarkerListStyle,
-  MarkerListTag,
+  MARKER_LIST_STYLES,
+  MARKER_LIST_TAGS,
 } from 'lib/components/elements/MarkerList/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -15,7 +15,7 @@ const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListProps>['props'] = {
   ...HTML_TAG_PROPS_META,
   tag: {
     ...HTML_TAG_PROPS_META.tag,
-    options: MarkerListTag as unknown as string[],
+    options: MARKER_LIST_TAGS as unknown as string[],
     defaultValue: 'ul',
   },
   children: {
@@ -27,8 +27,8 @@ const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListProps>['props'] = {
     defaultValue: String(DEFAULT_MARKER_LIST_ROW_GAP),
   },
   listStyle: {
-    options: MarkerListStyle as unknown as string[],
-    defaultValue: MarkerListStyle[0],
+    options: MARKER_LIST_STYLES as unknown as string[],
+    defaultValue: MARKER_LIST_STYLES[0],
     isRequired: false,
     isResponsive: false,
     description: 'Defines the style of the markers used for list items.',

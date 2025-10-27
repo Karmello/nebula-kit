@@ -3,9 +3,9 @@ import { ElementType } from 'react'
 import { CssDisplay, CssOverflow, CssPosition, CssTextAlign, RespValue, ScaleValue } from 'lib/definitions'
 import { HtmlTagProps } from 'lib/components'
 
-export const BoxVariant = ['solid', 'outline', 'ghost'] as const
+export const BOX_VARIANTS = ['solid', 'outline', 'ghost'] as const
 
-export const BoxIntent = [
+export const BOX_INTENTS = [
   'neutral',
   'muted',
   'tertiary',
@@ -21,8 +21,8 @@ export const BoxIntent = [
 
 export const DEFAULT_BOX_VARIANT: BoxVariant = 'ghost'
 
-export type BoxVariant = (typeof BoxVariant)[number]
-export type BoxIntent = (typeof BoxIntent)[number]
+export type BoxVariant = (typeof BOX_VARIANTS)[number]
+export type BoxIntent = (typeof BOX_INTENTS)[number]
 
 type BoxOwnProps = {
   variant?: RespValue<BoxVariant>

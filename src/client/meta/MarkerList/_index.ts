@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { MarkerListTag, MarkerListProps } from 'lib/components/elements/MarkerList/definitions'
+import { MARKER_LIST_TAGS, MarkerListProps } from 'lib/components/elements/MarkerList/definitions'
 
 import { MARKER_LIST_PROPS_META } from './props'
 import { MARKER_LIST_EXAMPLES_META } from './examples'
@@ -11,7 +11,7 @@ const MARKER_LIST_META: ComponentMeta<MarkerListProps> = {
     title: 'List component that displays items with native markers.',
     description: ['presents short text collections with bullets or numbers'],
     composedOf: ['Flex'],
-    rendersAs: MarkerListTag,
+    rendersAs: MARKER_LIST_TAGS,
     slots: ['MarkerList.Item'],
   },
   props: MARKER_LIST_PROPS_META,

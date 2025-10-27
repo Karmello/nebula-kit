@@ -2,8 +2,8 @@ import { ComponentMeta } from 'client/definitions'
 
 import {
   ButtonProps,
-  ButtonSize,
-  ButtonTag,
+  BUTTON_SIZES,
+  BUTTON_TAGS,
   DEFAULT_BUTTON_INTENT,
   DEFAULT_BUTTON_JUSTIFY_CONTENT,
   DEFAULT_BUTTON_SIZE,
@@ -22,7 +22,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   },
   tag: {
     ...HTML_TAG_PROPS_META.tag,
-    options: ButtonTag as unknown as string[],
+    options: BUTTON_TAGS as unknown as string[],
     defaultValue: 'button',
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
@@ -48,7 +48,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     description: 'Distributes text and icon along the main axis.',
   },
   size: {
-    options: Object.values(ButtonSize),
+    options: Object.values(BUTTON_SIZES),
     defaultValue: DEFAULT_BUTTON_SIZE,
     isRequired: false,
     isResponsive: false,
