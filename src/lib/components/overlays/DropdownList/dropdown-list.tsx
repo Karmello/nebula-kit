@@ -46,7 +46,6 @@ export const DropdownList = ({
 
   const getItemsContainerBlockSize = useCallback(
     (visibleItemsCount: number) => {
-      if (visibleItemsCount === undefined || borderWidth === undefined) return 0
       const allItemsBlockSize = visibleItemsCount * BUTTON_SIZE_CONFIG[size].blockSize
       const allItemsBorderWidth = (visibleItemsCount - 1) * borderWidth
       return `${allItemsBlockSize + allItemsBorderWidth}px`
@@ -85,9 +84,10 @@ export const DropdownList = ({
         const triggerWidth = (triggerRef as RefObject<HTMLDivElement>).current?.offsetWidth
 
         const itemsLength = slotsByName['DropdownList.Item'].length
-        const itemsContainerBlockSize = getItemsContainerBlockSize(
-          itemsLength < visibleItemsCount ? itemsLength : visibleItemsCount
-        )
+        const itemsContainerBlockSize =
+          visibleItemsCount !== undefined
+            ? getItemsContainerBlockSize(itemsLength < visibleItemsCount ? itemsLength : visibleItemsCount)
+            : 0
 
         return (
           <DropdownListProvider
