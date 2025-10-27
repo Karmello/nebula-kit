@@ -15,32 +15,32 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   return (
     <>
       {description ? <Text bold>{description}</Text> : null}
-      <Spacer blockSize={5} />
+      <Spacer blockSize={10} />
       {!noSandBox ? (
         <>
           <Box
             variant="outline"
             intent="highlight"
-            padding={sandBoxWithNoPadding ? 0 : { base: 10, lg: 20 }}
+            padding={sandBoxWithNoPadding ? 0 : { base: 20, lg: 40 }}
             tagAttrs={{
               style: { borderStyle: 'dashed' },
             }}
           >
             {jsx}
           </Box>
-          <Spacer blockSize={5} />
+          <Spacer blockSize={10} />
         </>
       ) : null}
       {!noSandBox ? (
         <Reveal label="Code" intent="muted">
-          <Box padding={2}>
+          <Box padding={4}>
             <CodeSnippet code={code || elemToString(jsx)} borderRadius={0} />
           </Box>
         </Reveal>
       ) : (
         <CodeSnippet code={code || elemToString(jsx)} />
       )}
-      <Spacer blockSize={30} />
+      <Spacer blockSize={60} />
     </>
   )
 }

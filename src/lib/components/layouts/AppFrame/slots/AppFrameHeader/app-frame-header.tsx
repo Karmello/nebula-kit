@@ -39,7 +39,7 @@ export const AppFrameHeader = ({
       intent={intent}
       borderIntent={borderIntent}
       minBlockSize={minBlockSize}
-      borderBottomWidth={1}
+      borderBottomWidth={2}
       borderRadius={0}
       {...paddings}
     >

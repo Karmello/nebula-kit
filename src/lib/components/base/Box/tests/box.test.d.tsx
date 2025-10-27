@@ -73,21 +73,21 @@ expectType(<Box textAlign="center">Box</Box>)
 expectType(<Box textAlign={{ xl: 'end' }}>Box</Box>)
 
 // blockSize
-expectError(<Box blockSize={81}>Box</Box>)
+expectError(<Box blockSize={161}>Box</Box>)
 expectType(<Box blockSize="20px">Box</Box>)
 expectType(<Box blockSize={{ md: 5 }}>Box</Box>)
 
 // inlineSize
-expectError(<Box inlineSize={81}>Box</Box>)
+expectError(<Box inlineSize={161}>Box</Box>)
 expectType(<Box inlineSize="20px">Box</Box>)
 expectType(<Box inlineSize={{ md: 5 }}>Box</Box>)
 
 // marginLeft
-expectError(<Box marginLeft={81}>Box</Box>)
+expectError(<Box marginLeft={161}>Box</Box>)
 expectType(<Box marginLeft="20px">Box</Box>)
 expectType(<Box marginLeft={{ md: 5 }}>Box</Box>)
 
 // paddingBottom
-expectError(<Box paddingBottom={81}>Box</Box>)
+expectError(<Box paddingBottom={161}>Box</Box>)
 expectType(<Box paddingBottom="20px">Box</Box>)
 expectType(<Box paddingBottom={{ md: 5 }}>Box</Box>)

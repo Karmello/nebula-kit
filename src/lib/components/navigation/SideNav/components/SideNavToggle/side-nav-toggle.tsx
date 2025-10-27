@@ -13,7 +13,7 @@ export const SideNavToggle = () => {
 
   return (
     <>
-      <Box padding={5}>
+      <Box padding={10}>
         <IconButton
           tagAttrs={{
             onClick: () => {
@@ -30,7 +30,7 @@ export const SideNavToggle = () => {
         />
       </Box>
       <Divider />
-      <Spacer blockSize={7} />
+      <Spacer blockSize={15} />
     </>
   )
 }

@@ -6,7 +6,7 @@ import { BRANDS } from 'lib/definitions'
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap={30} alignItems="stretch">
+      <Flex flexDirection="column" gap={60} alignItems="stretch">
         <Text typography="lead">All color palettes defined in the system.</Text>
         {BRANDS.map(colorName => {
           return (

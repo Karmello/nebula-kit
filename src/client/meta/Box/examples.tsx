@@ -22,7 +22,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="outline" intent="primary" padding={10}>
+      <Box variant="outline" intent="primary" padding={20}>
         Padded box
       </Box>
     ),
@@ -30,7 +30,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="outline" intent="primary" padding={10} textAlign="center">
+      <Box variant="outline" intent="primary" padding={20} textAlign="center">
         Centered content
       </Box>
     ),
@@ -38,7 +38,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="outline" intent="primary" padding={10} display="inline-block">
+      <Box variant="outline" intent="primary" padding={20} display="inline-block">
         Box as inline
       </Box>
     ),
@@ -46,7 +46,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="solid" intent="secondary" padding={10} interactive>
+      <Box variant="solid" intent="secondary" padding={20} interactive>
         Interactive Box
       </Box>
     ),

@@ -25,7 +25,7 @@ expectType(
 // no Box props
 expectError(
   <Flex>
-    <Flex.Item textAlign={5}>Item 1</Flex.Item>
+    <Flex.Item textAlign="center">Item 1</Flex.Item>
     <Flex.Item opacity={1}>Item 2</Flex.Item>
   </Flex>
 )

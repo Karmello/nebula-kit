@@ -5,12 +5,12 @@ import { Theme } from 'lib/definitions'
 import { scale } from 'lib/helpers'
 
 import {
+  NebkitProviderProps,
   THEME_BACKGROUNDS_MAP,
   DEFAULT_NEBKIT_PROVIDER_BACKGROUND,
   DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH,
   DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS,
   DEFAULT_NEBKIT_PROVIDER_BRAND,
-  NebkitProviderProps,
 } from './definitions'
 
 import 'lib/styles/index.scss'
@@ -35,16 +35,11 @@ export const NebkitProvider = <T extends Theme = 'light'>({
   }, [])
 
   useEffect(() => {
-    document.documentElement.style.setProperty('--neb-border-width', scale(borderWidth) || '')
-    document.documentElement.style.setProperty('--neb-border-radius', scale(borderRadius) || '')
+    if (theme) nebkitStore.setTheme(theme)
+    nebkitStore.setBrand(brand)
     nebkitStore.setBorderWidth(borderWidth)
-  }, [borderWidth, borderRadius, brand])
-
-  useEffect(() => {
-    if (theme) {
-      nebkitStore.setTheme(theme)
-    }
-  }, [theme])
+    nebkitStore.setBorderRadius(borderRadius)
+  }, [theme, brand, borderWidth, borderRadius])
 
   useEffect(() => {
     const CSS_VAR_CONFIG =
@@ -58,6 +53,14 @@ export const NebkitProvider = <T extends Theme = 'light'>({
   useEffect(() => {
     document.documentElement.setAttribute('data-brand', nebkitStore.brand)
   }, [nebkitStore.brand])
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--neb-border-width', scale(nebkitStore.borderWidth) || '')
+  }, [nebkitStore.borderWidth])
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--neb-border-radius', scale(nebkitStore.borderRadius) || '')
+  }, [nebkitStore.borderRadius])
 
   return children
 }

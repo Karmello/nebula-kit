@@ -12,17 +12,17 @@ export const TEXT_TYPOGRAPHY_CONFIG: Record<
     iconSize: ScaleValue
   }
 > = {
-  body: { tag: 'p', fontSize: 8, lineHeight: 1.6, iconSize: 8 },
-  lead: { tag: 'p', fontSize: 9, lineHeight: 1.6, iconSize: 9 },
-  secondary: { tag: 'p', fontSize: 7, lineHeight: 1.5, iconSize: 7 },
-  tertiary: { tag: 'p', fontSize: 7, lineHeight: 1.5, iconSize: 7 },
-  caption: { tag: 'p', fontSize: 6, lineHeight: 1.4, iconSize: 7 },
-  h6: { tag: 'h6', fontSize: 10, lineHeight: 1.3, iconSize: 9 },
-  h5: { tag: 'h5', fontSize: 12, lineHeight: 1.3, iconSize: 11 },
-  h4: { tag: 'h4', fontSize: 15, lineHeight: 1.25, iconSize: 13 },
-  h3: { tag: 'h3', fontSize: 18, lineHeight: 1.25, iconSize: 15 },
-  h2: { tag: 'h2', fontSize: 24, lineHeight: 1.2, iconSize: 19 },
-  h1: { tag: 'h1', fontSize: 30, lineHeight: 1.1, iconSize: 23 },
+  body: { tag: 'p', fontSize: 16, lineHeight: 1.6, iconSize: 16 },
+  lead: { tag: 'p', fontSize: 18, lineHeight: 1.6, iconSize: 18 },
+  secondary: { tag: 'p', fontSize: 14, lineHeight: 1.5, iconSize: 14 },
+  tertiary: { tag: 'p', fontSize: 14, lineHeight: 1.5, iconSize: 14 },
+  caption: { tag: 'p', fontSize: 12, lineHeight: 1.4, iconSize: 14 },
+  h6: { tag: 'h6', fontSize: 20, lineHeight: 1.3, iconSize: 18 },
+  h5: { tag: 'h5', fontSize: 24, lineHeight: 1.3, iconSize: 22 },
+  h4: { tag: 'h4', fontSize: 30, lineHeight: 1.25, iconSize: 26 },
+  h3: { tag: 'h3', fontSize: 36, lineHeight: 1.25, iconSize: 30 },
+  h2: { tag: 'h2', fontSize: 48, lineHeight: 1.2, iconSize: 38 },
+  h1: { tag: 'h1', fontSize: 60, lineHeight: 1.1, iconSize: 46 },
 }
 
 export const TextTag = ['p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a'] as const

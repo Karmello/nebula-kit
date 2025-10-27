@@ -8,20 +8,20 @@ export default () => {
         themes through shared logic, not isolated implementations. What happens in one part of the system
         happens the same way everywhere else.
       </Text>
-      <Spacer blockSize={7} />
+      <Spacer blockSize={15} />
       <Text>
         Interactivity, motion and responsive layout are all handled by unified mechanisms. Animations rely on
         the same sizing and color variables that drive static states. Breakpoints follow the same responsive
         props used across every component.
       </Text>
-      <Spacer blockSize={7} />
+      <Spacer blockSize={15} />
       <Text>
         This alignment means a single mental model covers the entire library. When you understand one
         component, you already understand the rest.
       </Text>
-      <Spacer blockSize={15} />
+      <Spacer blockSize={30} />
       <Text>Predictable behavior means:</Text>
-      <Spacer blockSize={7} />
+      <Spacer blockSize={15} />
       <MarkerList>
         <MarkerList.Item>
           <Text bold>Shared logic, shared outcome.</Text>
@@ -51,7 +51,7 @@ export default () => {
           </Text>
         </MarkerList.Item>
       </MarkerList>
-      <Spacer blockSize={15} />
+      <Spacer blockSize={30} />
       <Text>
         Predictability isn't just about stability — it's about trust. You can modify, extend and animate
         without fear of breaking the system because it behaves exactly the way it says it will.

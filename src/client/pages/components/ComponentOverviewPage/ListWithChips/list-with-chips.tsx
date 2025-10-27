@@ -10,11 +10,11 @@ export const ListWithChips = ({
   items: string[]
   intent?: BoxIntent
 }) => (
-  <Flex flexDirection="column" gap={5}>
+  <Flex flexDirection="column" gap={10}>
     <Text bold>{heading}</Text>
-    <Flex flexDirection="row" flexWrap="wrap" gap={3}>
+    <Flex flexDirection="row" flexWrap="wrap" gap={6}>
       {items.map((s, i) => (
-        <Box key={i} variant="solid" intent={intent} paddingInline={5} paddingBlock={3}>
+        <Box key={i} variant="solid" intent={intent} paddingInline={10} paddingBlock={6}>
           {s}
         </Box>
       ))}

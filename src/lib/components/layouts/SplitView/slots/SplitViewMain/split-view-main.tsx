@@ -30,7 +30,11 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
             borderRadius={0}
             {...paddings}
           >
-            <Flex alignItems="center" flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'} gap={7}>
+            <Flex
+              alignItems="center"
+              flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'}
+              gap={15}
+            >
               <IconButton
                 tagAttrs={{
                   onClick: () => setSideOpen(!sideOpen),
@@ -42,7 +46,7 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
               />
               {slotsByName['SplitView.MainBar']}
             </Flex>
-            <Spacer blockSize={5} />
+            <Spacer blockSize={10} />
             {allNonSlots}
           </Box>
         )

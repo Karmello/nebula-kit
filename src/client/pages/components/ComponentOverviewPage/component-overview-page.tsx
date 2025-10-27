@@ -22,7 +22,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   } = meta
 
   const content = (
-    <Flex flexDirection="column" alignItems="stretch" gap={15}>
+    <Flex flexDirection="column" alignItems="stretch" gap={30}>
       <Text typography="lead">{title}</Text>
       {examples?.[0] ? <CodeSnippet code={examples[0].code || elemToString(examples[0].jsx)} /> : null}
       {description ? <ListWithHeading heading="Description:" items={description} /> : null}
@@ -61,7 +61,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       ) : (
         content
       )}
-      <Spacer blockSize={30} />
+      <Spacer blockSize={60} />
     </>
   )
 }

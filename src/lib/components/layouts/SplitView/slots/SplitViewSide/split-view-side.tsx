@@ -51,7 +51,7 @@ export const SplitViewSide = ({
           <Box inlineSize={inlineSize}>
             {mode === 'overlay' ? (
               <Flex justifyContent="flex-end">
-                <Box padding={3} paddingBottom={10}>
+                <Box padding={6} paddingBottom={20}>
                   <IconButton
                     tagAttrs={{
                       onClick: () => {

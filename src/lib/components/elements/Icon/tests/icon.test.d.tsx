@@ -16,10 +16,10 @@ expectError(<Icon name="xyz" />)
 expectType(<Icon name="check" />)
 
 // wrong size not allowed
-expectError(<Icon name="check" size={81} />)
+expectError(<Icon name="check" size={161} />)
 
 // right size allowed
-expectType(<Icon name="check" size={80} />)
+expectType(<Icon name="check" size={160} />)
 
 // wrong intent not allowed
 expectError(<Icon name="check" size={10} intent="xyz" />)

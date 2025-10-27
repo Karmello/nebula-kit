@@ -5,7 +5,7 @@ import { BP } from 'lib/hooks'
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" alignItems="stretch" gap={25}>
+      <Flex flexDirection="column" alignItems="stretch" gap={50}>
         <Table>
           <Table.Caption>Responsive breakpoints with their pixel ranges defined in the system.</Table.Caption>
           <Table.Header>
@@ -49,8 +49,8 @@ export default () => {
             single value or an object of breakpoint-specific values, like in this example where padding
             changes between the base and md breakpoints.
           </Text>
-          <Spacer blockSize={10} />
-          <CodeSnippet code={`<Box padding={{ base: 5, md: 15 }} />`} />
+          <Spacer blockSize={20} />
+          <CodeSnippet code={`<Box padding={{ base: 10, md: 50 }} />`} />
         </Box>
       </Flex>
     </Box>

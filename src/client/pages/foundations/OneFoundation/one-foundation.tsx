@@ -10,7 +10,7 @@ export default () => {
         </Text>
         There are no exceptions, no hidden styling layers, no one-off solutions.
       </Text>
-      <Spacer blockSize={7} />
+      <Spacer blockSize={15} />
       <Text>
         <Text tag="span" bold space="end">
           Box
@@ -25,9 +25,9 @@ export default () => {
         </Text>
         handles typography and inline behavior. Everything else is composed from these few elements.
       </Text>
-      <Spacer blockSize={15} />
+      <Spacer blockSize={30} />
       <Text>This shared foundation means:</Text>
-      <Spacer blockSize={7} />
+      <Spacer blockSize={15} />
       <MarkerList>
         <MarkerList.Item>
           <Text bold>Consistency emerges naturally.</Text>
@@ -58,7 +58,7 @@ export default () => {
           </Text>
         </MarkerList.Item>
       </MarkerList>
-      <Spacer blockSize={15} />
+      <Spacer blockSize={30} />
       <Text>
         The result is a framework where new pieces don't compete with old ones - they extend them. This is
         what makes Nebula Kit feel cohesive even as it grows - one foundation, many expressions.

@@ -8,11 +8,11 @@ const ICON_EXAMPLES_META: ComponentMeta<IconProps>['examples'] = [
   },
   {
     description: 'Search icon at a larger size.',
-    jsx: <Icon name="search" intent="neutral" size={20} />,
+    jsx: <Icon name="search" intent="neutral" size={40} />,
   },
   {
     description: 'Icon with intent set to primary.',
-    jsx: <Icon name="search" intent="primary" size={20} />,
+    jsx: <Icon name="search" intent="primary" size={40} />,
   },
 ]
 

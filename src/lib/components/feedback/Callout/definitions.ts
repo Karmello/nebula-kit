@@ -6,11 +6,11 @@ export const CALLOUT_SIZE_CONFIG: Record<
   CalloutSize,
   { typography: Extract<TextTypography, 'h6' | 'h5' | 'h4' | 'h3' | 'h2'>; spacing: ScaleValue }
 > = {
-  sm: { typography: 'h6', spacing: 8 },
-  md: { typography: 'h5', spacing: 10 },
-  lg: { typography: 'h4', spacing: 12 },
-  xl: { typography: 'h3', spacing: 13 },
-  xxl: { typography: 'h2', spacing: 15 },
+  sm: { typography: 'h6', spacing: 16 },
+  md: { typography: 'h5', spacing: 20 },
+  lg: { typography: 'h4', spacing: 24 },
+  xl: { typography: 'h3', spacing: 26 },
+  xxl: { typography: 'h2', spacing: 30 },
 }
 
 export const CALLOUT_CONFIG: Record<CalloutIntent, { heading: string; iconName: IconName }> = {

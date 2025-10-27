@@ -14,30 +14,31 @@ import {
 } from 'lib/components'
 
 import { useNebkitStore } from 'lib/state'
-import { Brand, BRANDS, THEME } from 'lib/definitions'
+import { Brand, BRANDS, ScaleValue, THEME } from 'lib/definitions'
 import { useNavigateTo } from 'client/services'
 
 export const HomePage = () => {
   const navigateTo = useNavigateTo()
 
-  const { theme, setTheme, brand, setBrand } = useNebkitStore()
+  const { theme, setTheme, brand, setBrand, borderWidth, setBorderWidth, borderRadius, setBorderRadius } =
+    useNebkitStore()
 
   return (
-    <Box padding={{ base: 10, lg: 25 }}>
-      <Flex flexDirection={{ base: 'column', lg: 'row' }} rowGap={40} columnGap={80}>
+    <Box padding={{ base: 20, lg: 50 }}>
+      <Flex flexDirection={{ base: 'column', lg: 'row' }} rowGap={80} columnGap={160}>
         <Flex.Item flex={2}>
           <Text typography="h1" intent="primary">
             NebulaKit
           </Text>
           <Divider />
-          <Spacer blockSize={10} />
+          <Spacer blockSize={20} />
           <Text typography="h6">
             React UI system built on composition - small, consistent parts combining into larger structures
             with clarity and control. Each component follows the same foundation, producing apps that stay
             predictable, stable and effortless to scale.
           </Text>
-          <Spacer blockSize={15} />
-          <ButtonGroup gap={5}>
+          <Spacer blockSize={30} />
+          <ButtonGroup gap={10}>
             <LinkButton
               intent="primary"
               iconName="arrow-right"
@@ -62,10 +63,10 @@ export const HomePage = () => {
               Components
             </LinkButton>
           </ButtonGroup>
-          <Spacer blockSize={25} />
+          <Spacer blockSize={50} />
           <Divider />
-          <Spacer blockSize={15} />
-          <Flex flexWrap="wrap" gap={15}>
+          <Spacer blockSize={30} />
+          <Flex flexWrap="wrap" gap={30}>
             <Flex.Item>
               <Text bold>Theme</Text>
               <ButtonGroup key={theme} attached size="sm" intent="primary">
@@ -90,10 +91,30 @@ export const HomePage = () => {
                 size="sm"
               />
             </Flex.Item>
+            <Flex.Item>
+              <Text bold>Border width</Text>
+              <Select
+                options={Array.from({ length: 6 }, (v, k) => String(k)).map(k => ({ value: k, label: k }))}
+                value={String(borderWidth)}
+                onChange={value => setBorderWidth(Number(value) as ScaleValue)}
+                inlineSize="150px"
+                size="sm"
+              />
+            </Flex.Item>
+            <Flex.Item>
+              <Text bold>Border radius</Text>
+              <Select
+                options={Array.from({ length: 6 }, (v, k) => String(k)).map(k => ({ value: k, label: k }))}
+                value={String(borderRadius)}
+                onChange={value => setBorderRadius(Number(value) as ScaleValue)}
+                inlineSize="150px"
+                size="sm"
+              />
+            </Flex.Item>
           </Flex>
         </Flex.Item>
         <Flex.Item flex={1}>
-          <Flex flexDirection="column" gap={15}>
+          <Flex flexDirection="column" gap={30}>
             <Section heading="One foundation" intent="primary" iconName="box">
               <Text intent="neutral">
                 Every component shares the same core primitives. Consistency isn't enforced - it's designed

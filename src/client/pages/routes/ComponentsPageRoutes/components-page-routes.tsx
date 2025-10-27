@@ -37,7 +37,7 @@ export const ComponentsPageRoutes = () => {
 
   return (
     <>
-      <Spacer blockSize={10} />
+      <Spacer blockSize={20} />
       <Routes>
         {ROUTES}
         <Route

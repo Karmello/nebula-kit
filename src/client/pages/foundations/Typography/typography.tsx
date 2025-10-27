@@ -17,7 +17,7 @@ const MAP: Record<TextTypography, string> = {
 
 export default () => {
   return (
-    <Flex flexDirection="column" gap={20}>
+    <Flex flexDirection="column" gap={40}>
       <Text typography="lead">All typography styles defined in the system.</Text>
       {TextTypography.map(typography => (
         <Table key={typography}>

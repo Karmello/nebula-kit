@@ -37,8 +37,8 @@ export const TableHeaderCell = ({
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
       textAlign={textAlign}
-      paddingInline={10}
-      paddingBlock={5}
+      paddingInline={20}
+      paddingBlock={10}
       borderRadius={0}
     >
       {children}

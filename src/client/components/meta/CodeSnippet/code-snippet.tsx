@@ -42,7 +42,7 @@ export const CodeSnippet = ({ code, lang = 'tsx', borderRadius }: CodeSnippetPro
       alignItems="stretch"
       tagAttrs={{ style: { backgroundColor: data.bg, borderRadius } }}
     >
-      <Box padding={1} textAlign="end">
+      <Box padding={2} textAlign="end">
         <IconButton
           iconName={copied ? 'check' : 'copy'}
           size="xs"
@@ -53,7 +53,7 @@ export const CodeSnippet = ({ code, lang = 'tsx', borderRadius }: CodeSnippetPro
       </Box>
       <Box overflowY="auto" maxBlockSize="350px">
         <Flex tag="pre">
-          <Box tag="code" paddingInline={12} paddingBottom={12}>
+          <Box tag="code" paddingInline={24} paddingBottom={24}>
             {data.tokens.map((token, i) => {
               return (
                 <Box key={i}>

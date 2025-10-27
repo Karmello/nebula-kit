@@ -11,10 +11,10 @@ export const BUTTON_SIZE_CONFIG: Record<
     fontSize: ScaleValue
   }
 > = {
-  xs: { blockSize: 14, paddingLeft: 4, paddingRight: 4, fontSize: 4 },
-  sm: { blockSize: 19, paddingLeft: 6, paddingRight: 6, fontSize: 7 },
-  md: { blockSize: 22, paddingLeft: 8, paddingRight: 8, fontSize: 8 },
-  lg: { blockSize: 26, paddingLeft: 12, paddingRight: 12, fontSize: 9 },
+  xs: { blockSize: 28, paddingLeft: 8, paddingRight: 8, fontSize: 8 },
+  sm: { blockSize: 38, paddingLeft: 12, paddingRight: 12, fontSize: 14 },
+  md: { blockSize: 44, paddingLeft: 16, paddingRight: 16, fontSize: 16 },
+  lg: { blockSize: 52, paddingLeft: 24, paddingRight: 24, fontSize: 18 },
 }
 
 export const DEFAULT_BUTTON_VARIANT: BoxVariant = 'solid'

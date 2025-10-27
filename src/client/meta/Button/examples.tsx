@@ -10,7 +10,7 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
   {
     description: 'Examples of different button sizes.',
     jsx: (
-      <Flex alignItems="center" gap={5}>
+      <Flex alignItems="center" gap={10}>
         {ButtonSize.map(size => (
           <Button key={size} size={size}>
             {size}

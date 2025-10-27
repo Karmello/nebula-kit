@@ -18,15 +18,15 @@ const INTENTS_INFO_MAP: Record<BoxIntent, string> = {
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" alignItems="stretch" gap={25}>
+      <Flex flexDirection="column" alignItems="stretch" gap={50}>
         <Text typography="lead">
           Intents and variants available in the system, showing how semantic roles combine with visual styles
           across components.
         </Text>
         <Section heading="Solid variant">
           <Text>Filled surface, strong emphasis.</Text>
-          <Spacer blockSize={15} />
-          <Flex flexWrap="wrap" gap={3}>
+          <Spacer blockSize={30} />
+          <Flex flexWrap="wrap" gap={6}>
             {BoxIntent.map(intent => {
               return (
                 <Button key={intent} variant="solid" intent={intent}>
@@ -38,8 +38,8 @@ export default () => {
         </Section>
         <Section heading="Outline variant">
           <Text>Border only, background matches the app's surface.</Text>
-          <Spacer blockSize={15} />
-          <Flex flexWrap="wrap" gap={3}>
+          <Spacer blockSize={30} />
+          <Flex flexWrap="wrap" gap={6}>
             {BoxIntent.map(intent => {
               return (
                 <Button key={intent} variant="outline" intent={intent}>
@@ -51,8 +51,8 @@ export default () => {
         </Section>
         <Section heading="Ghost variant">
           <Text>Minimal, blends into background.</Text>
-          <Spacer blockSize={15} />
-          <Flex flexWrap="wrap" gap={3}>
+          <Spacer blockSize={30} />
+          <Flex flexWrap="wrap" gap={6}>
             {BoxIntent.map(intent => {
               return (
                 <Button key={intent} variant="ghost" intent={intent}>

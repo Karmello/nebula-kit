@@ -1,7 +1,7 @@
 import { FlexProps, HtmlTagProps, IconProps } from 'lib/components'
 
 export const DEFAULT_WITH_ICON_ICON_POSITION: IconPosition = 'left'
-export const DEFAULT_WITH_ICON_COLUMN_GAP: WithIconProps['columnGap'] = 4
+export const DEFAULT_WITH_ICON_COLUMN_GAP: WithIconProps['columnGap'] = 10
 export const IconPosition = ['left', 'right'] as const
 
 export type IconPosition = (typeof IconPosition)[number]
