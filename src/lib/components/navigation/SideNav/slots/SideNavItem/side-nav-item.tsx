@@ -1,5 +1,3 @@
-import { CSSProperties } from 'react'
-
 import { LinkButton } from 'lib/components'
 
 import { SideNavItemProps } from './definitions'
@@ -18,10 +16,7 @@ export const SideNavItem = ({
 }: SideNavItemProps) => {
   return (
     <LinkButton
-      tagAttrs={{
-        ...tagAttrs,
-        style: { ...tagAttrs?.style, '--neb-border-radius': 0 } as CSSProperties,
-      }}
+      tagAttrs={tagAttrs}
       tagRef={tagRef}
       onClick={onClick}
       href={href}

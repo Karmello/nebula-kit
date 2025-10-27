@@ -1,17 +1,19 @@
 import classNames from 'classnames'
 
-import { HtmlTag, Icon } from 'lib/components'
+import { Flex, Icon } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { DEFAULT_WITH_ICON_ICON_POSITION, WithIconProps } from './definitions'
-import './with-icon.scss'
+import { DEFAULT_WITH_ICON_COLUMN_GAP, DEFAULT_WITH_ICON_ICON_POSITION, WithIconProps } from './definitions'
 
 export const WithIcon = ({
   // HtmlTag
   children,
   tagAttrs,
   tagRef,
-  // SvgIcon
+  // Flex
+  justifyContent,
+  columnGap = DEFAULT_WITH_ICON_COLUMN_GAP,
+  // Icon
   name,
   size,
   intent,
@@ -19,15 +21,23 @@ export const WithIcon = ({
   position = DEFAULT_WITH_ICON_ICON_POSITION,
 }: WithIconProps) => {
   return (
-    <HtmlTag
+    <Flex
       tag="span"
-      tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('with-icon'), tagAttrs?.className || '') }}
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('with-icon'), tagAttrs?.className || ''),
+      }}
       tagRef={tagRef}
+      alignItems="center"
+      flexDirection="row"
+      flexWrap="nowrap"
+      justifyContent={justifyContent}
+      columnGap={columnGap}
     >
       {position === 'left' ? <Icon name={name} size={size} intent={intent} /> : null}
       {children}
       {position === 'right' ? <Icon name={name} size={size} intent={intent} /> : null}
-    </HtmlTag>
+    </Flex>
   )
 }
 

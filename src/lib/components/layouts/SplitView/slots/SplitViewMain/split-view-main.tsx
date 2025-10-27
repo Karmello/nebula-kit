@@ -37,7 +37,7 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
                   'aria-expanded': sideOpen,
                 }}
                 iconName={getToggleIconName(sidePosition, sideOpen)}
-                intent="tertiary"
+                intent="neutral"
                 size="xs"
               />
               {slotsByName['SplitView.MainBar']}

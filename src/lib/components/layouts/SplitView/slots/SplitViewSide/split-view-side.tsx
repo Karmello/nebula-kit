@@ -37,8 +37,8 @@ export const SplitViewSide = ({
         }}
         tagRef={tagRef || ref}
         variant="solid"
-        intent={intent || { base: 'secondary', [String(switchAt)]: 'neutral' }}
-        borderIntent={borderIntent || { base: 'tertiary', [String(switchAt)]: 'neutral' }}
+        intent={intent || { base: 'tertiary', [String(switchAt)]: 'neutral' }}
+        borderIntent={borderIntent || { base: 'muted', [String(switchAt)]: 'neutral' }}
         borderLeftWidth={sidePosition === 'right' && sideOpen ? 1 : 0}
         borderRightWidth={sidePosition === 'left' && sideOpen ? 1 : 0}
         left={sidePosition === 'left' ? 0 : undefined}
@@ -59,7 +59,7 @@ export const SplitViewSide = ({
                       },
                     }}
                     iconName="close"
-                    intent={intent || 'secondary'}
+                    intent={intent || 'tertiary'}
                     size="xs"
                   />
                 </Box>

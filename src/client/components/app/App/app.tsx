@@ -32,7 +32,7 @@ export const App = () => {
                     if (mainOpen) await setMainOpen(false)
                     navigateTo(`/${PageKey.home}`)
                   }}
-                  intent={currentPageKey === PageKey.home ? 'secondary' : 'tertiary'}
+                  intent={currentPageKey === PageKey.home ? 'tertiary' : 'muted'}
                 >
                   NebulaKit
                 </LinkButton>

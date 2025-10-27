@@ -1,12 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
 
 import {
-  ButtonLabelAlign,
   ButtonProps,
   ButtonSize,
   ButtonTag,
-  DEFAULT_BUTTON_LABEL_ALIGN,
   DEFAULT_BUTTON_INTENT,
+  DEFAULT_BUTTON_JUSTIFY_CONTENT,
   DEFAULT_BUTTON_SIZE,
   DEFAULT_BUTTON_VARIANT,
 } from 'lib/components/controls/Button/definitions'
@@ -14,6 +13,7 @@ import {
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 import { TEXT_PROPS_META } from '../Text/props'
+import { FLEX_PROPS_META } from '../Flex/props'
 
 const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   children: {
@@ -42,10 +42,10 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     ...TEXT_PROPS_META.intent,
     description: "Semantic color intent applied to the button's inner content.",
   },
-  labelAlign: {
-    options: ButtonLabelAlign as unknown as string[],
-    defaultValue: DEFAULT_BUTTON_LABEL_ALIGN,
-    description: "Aligns the button's inner content.",
+  justifyContent: {
+    ...FLEX_PROPS_META.justifyContent,
+    defaultValue: String(DEFAULT_BUTTON_JUSTIFY_CONTENT),
+    description: 'Distributes text and icon along the main axis.',
   },
   size: {
     options: Object.values(ButtonSize),

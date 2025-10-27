@@ -58,9 +58,18 @@ type TextOwnProps = {
   space?: TextSpace
 }
 
-export type TextProps<T extends TextTag = 'p'> = Omit<HtmlTagProps<T>, 'children'> & {
+type PropsFromHtmlTag<T extends TextTag = 'p'> = Omit<HtmlTagProps<T>, 'children'> & {
   children: HtmlTagProps<T>['children']
-} & Pick<BoxProps<T>, 'intent' | 'textAlign'> & {
-    iconName?: WithIconProps['name']
-    iconPosition?: WithIconProps['position']
-  } & TextOwnProps
+}
+
+type PropsFromBox<T extends TextTag = 'p'> = Pick<BoxProps<T>, 'intent' | 'textAlign'>
+
+type PropsFromWithIcon = {
+  iconName?: WithIconProps['name']
+  iconPosition?: WithIconProps['position']
+}
+
+export type TextProps<T extends TextTag = 'p'> = PropsFromHtmlTag<T> &
+  PropsFromBox<T> &
+  PropsFromWithIcon &
+  TextOwnProps

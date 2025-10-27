@@ -2,12 +2,7 @@ import { useState } from 'react'
 
 import { Box, Flex, Button, Animate, RevealProps } from 'lib/components'
 
-import {
-  DEFAULT_REVEAL_LABEL_ALIGN,
-  DEFAULT_REVEAL_INTENT,
-  DEFAULT_REVEAL_SIZE,
-  RevealTag,
-} from './definitions'
+import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SIZE, RevealTag } from './definitions'
 
 export const Reveal = <T extends RevealTag = 'div'>({
   // HtmlTag
@@ -21,7 +16,6 @@ export const Reveal = <T extends RevealTag = 'div'>({
   disabled,
   size = DEFAULT_REVEAL_SIZE,
   labelIntent,
-  labelAlign = DEFAULT_REVEAL_LABEL_ALIGN,
   // own
   label,
 }: RevealProps<T>) => {
@@ -42,7 +36,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
           disabled={disabled}
           size={size}
           labelIntent={labelIntent}
-          labelAlign={labelAlign}
+          justifyContent="space-between"
           intent={intent}
           iconName={open ? 'chevron-up' : 'chevron-down'}
           iconPosition="right"

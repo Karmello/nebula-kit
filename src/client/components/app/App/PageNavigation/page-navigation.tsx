@@ -30,7 +30,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${foundationsPageStore.sectionKey}`
           )
         }}
-        intent={currentPageKey === PageKey.foundations ? 'secondary' : 'tertiary'}
+        intent={currentPageKey === PageKey.foundations ? 'tertiary' : 'muted'}
       >
         Foundations
       </LinkButton>
@@ -42,7 +42,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             `/${PageKey.components}/${componentsPageStore.categoryKey}/${componentsPageStore.itemKey}/${componentsPageStore.sectionKey}`
           )
         }}
-        intent={currentPageKey === PageKey.components ? 'secondary' : 'tertiary'}
+        intent={currentPageKey === PageKey.components ? 'tertiary' : 'muted'}
       >
         Components
       </LinkButton>

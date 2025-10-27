@@ -23,6 +23,7 @@ export const COMPONENT_CATEGORIES = [
       { key: 'grid', label: 'Grid', sections: COMPONENT_SECTIONS },
       { key: 'table', label: 'Table', sections: COMPONENT_SECTIONS },
       { key: 'spacer', label: 'Spacer', sections: COMPONENT_SECTIONS },
+      { key: 'with-icon', label: 'WithIcon', sections: COMPONENT_SECTIONS },
     ],
   },
   {
@@ -46,7 +47,6 @@ export const COMPONENT_CATEGORIES = [
       { key: 'icon', label: 'Icon', sections: COMPONENT_SECTIONS },
       { key: 'divider', label: 'Divider', sections: COMPONENT_SECTIONS },
       { key: 'marker-list', label: 'MarkerList', sections: COMPONENT_SECTIONS },
-      { key: 'with-icon', label: 'WithIcon', sections: COMPONENT_SECTIONS },
     ],
   },
   {

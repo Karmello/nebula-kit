@@ -103,7 +103,7 @@ export const DropdownList = ({
                 ...tagAttrs,
                 role: 'listbox',
                 onKeyDown: e => {
-                  if (e.key === 'Escape') {
+                  if (e.key === 'Escape' || e.key === 'Tab') {
                     e.stopPropagation()
                     setAnimateVisible(false)
                   }

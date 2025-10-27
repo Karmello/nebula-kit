@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { DEFAULT_PORTAL_PLACEMENT, PORTAL_PLACEMENT, PortalProps } from 'lib/components'
+import { DEFAULT_PORTAL_PLACEMENT, PortalPlacement, PortalProps } from 'lib/components'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
@@ -18,7 +18,7 @@ const PORTAL_PROPS_META: ComponentMeta<PortalProps>['props'] = {
     description: 'Reference to the element the portal content is positioned relative to.',
   },
   placement: {
-    options: PORTAL_PLACEMENT as unknown as string[],
+    options: PortalPlacement as unknown as string[],
     defaultValue: DEFAULT_PORTAL_PLACEMENT,
     description: 'Defines the position of the portal content relative to the anchor element.',
   },

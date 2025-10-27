@@ -1,9 +1,14 @@
+import classNames from 'classnames'
+
 import { WithSlots } from 'lib/components/internal'
 import { Flex } from 'lib/components'
+import { withPrefix } from 'lib/helpers'
 
 import { SideNavProvider } from './SideNavProvider'
 import { SideNavToggle } from './components'
 import { DEFAULT_SIDE_NAV_EXPAND_MODE, DEFAULT_SIDE_NAV_ROW_GAP, SideNavProps } from './definitions'
+
+import './side-nav.scss'
 
 export const SideNav = ({
   // HtmlTag
@@ -27,7 +32,16 @@ export const SideNav = ({
     >
       {({ slotsByName, allValidSlots }) => (
         <SideNavProvider expandMode={expandMode} rowGap={rowGap}>
-          <Flex tag="nav" tagAttrs={tagAttrs} tagRef={tagRef} flexDirection="column" rowGap={rowGap}>
+          <Flex
+            tag="nav"
+            tagAttrs={{
+              ...tagAttrs,
+              className: classNames(withPrefix('side-nav'), tagAttrs?.className || ''),
+            }}
+            tagRef={tagRef}
+            flexDirection="column"
+            rowGap={rowGap}
+          >
             {slotsByName['SideNav.Category'].length ? <SideNavToggle /> : null}
             {allValidSlots}
           </Flex>

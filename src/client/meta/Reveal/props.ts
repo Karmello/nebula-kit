@@ -1,9 +1,9 @@
 import { ComponentMeta } from 'client/definitions'
 import { RevealProps } from 'lib/components'
+import { DEFAULT_REVEAL_SIZE } from 'lib/components/containers/Reveal/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BUTTON_PROPS_META } from '../Button/props'
-import { DEFAULT_REVEAL_SIZE } from 'lib/components/containers/Reveal/definitions'
 import { BOX_PROPS_META } from '../Box/props'
 
 const REVEAL_PROPS_META: ComponentMeta<RevealProps>['props'] = {
@@ -27,7 +27,6 @@ const REVEAL_PROPS_META: ComponentMeta<RevealProps>['props'] = {
     description: 'Text displayed on the reveal button.',
   },
   labelIntent: BUTTON_PROPS_META.labelIntent,
-  labelAlign: BUTTON_PROPS_META.labelAlign,
 }
 
 export { REVEAL_PROPS_META }

@@ -44,6 +44,7 @@ export const CatalogPageTemplate = ({
                     variant="ghost"
                     intent={isCategorySelected ? 'primary' : 'neutral'}
                     initiallyExpanded={isCategorySelected}
+                    justifyContent="flex-start"
                   >
                     {items.map(({ key: itemKey, label, sections }) => {
                       const href = `/${pageKey}/${categoryKey}/${itemKey}/${sections[0].key}`
@@ -58,11 +59,11 @@ export const CatalogPageTemplate = ({
                             }
                             navigateTo(href)
                           }}
-                          labelIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
                           intent={{
-                            base: isItemSelected ? 'primary' : 'secondary',
-                            lg: isItemSelected ? 'tertiary' : 'neutral',
+                            base: isItemSelected ? 'secondary' : 'tertiary',
+                            lg: isItemSelected ? 'muted' : 'neutral',
                           }}
+                          labelIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
                         >
                           {label}
                         </SideNav.Item>
@@ -108,11 +109,11 @@ export const CatalogPageTemplate = ({
                                 }
                                 navigateTo(href)
                               }}
-                              labelIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
                               intent={{
-                                base: isItemSelected ? 'primary' : 'secondary',
-                                lg: isItemSelected ? 'tertiary' : 'neutral',
+                                base: isItemSelected ? 'secondary' : 'tertiary',
+                                lg: isItemSelected ? 'muted' : 'neutral',
                               }}
+                              labelIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
                             >
                               {label}
                             </SideNav.Item>

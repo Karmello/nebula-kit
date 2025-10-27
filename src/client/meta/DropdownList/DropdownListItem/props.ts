@@ -14,7 +14,7 @@ const DROPDOWN_LIST_ITEM_PROPS_META: ComponentMeta<DropdownListItemProps>['props
   disabled: BUTTON_PROPS_META.disabled,
   iconName: BUTTON_PROPS_META.iconName,
   iconPosition: BUTTON_PROPS_META.iconPosition,
-  labelAlign: BUTTON_PROPS_META.labelAlign,
+  justifyContent: BUTTON_PROPS_META.justifyContent,
   labelIntent: BUTTON_PROPS_META.labelIntent,
   tag: BUTTON_PROPS_META.tag,
 }

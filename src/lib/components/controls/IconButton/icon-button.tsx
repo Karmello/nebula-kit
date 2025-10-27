@@ -39,7 +39,7 @@ export const IconButton = <T extends ButtonTag = 'button'>({
       disabled={disabled}
       iconName={iconName}
     >
-      {''}
+      {null}
     </Button>
   )
 }

@@ -39,6 +39,7 @@ export const Select = ({
               size={size}
               variant={variant}
               intent={intent}
+              justifyContent="space-between"
             >
               {options.find(o => o.value === value)?.label}
             </Button>
@@ -49,6 +50,7 @@ export const Select = ({
               tagAttrs={{
                 onClick: () => onChange(value),
               }}
+              justifyContent="flex-start"
             >
               {label}
             </DropdownList.Item>

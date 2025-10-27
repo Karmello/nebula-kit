@@ -52,6 +52,14 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     jsx: <Button iconName="search">Button with icon</Button>,
   },
   {
+    description: 'Full width Button with an icon aligned to the right edge.',
+    jsx: (
+      <Button fullWidth iconName="search" iconPosition="right" justifyContent="space-between">
+        Button with icon
+      </Button>
+    ),
+  },
+  {
     description: 'Disabled button.',
     jsx: <Button disabled>Disabled</Button>,
   },

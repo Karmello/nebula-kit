@@ -15,6 +15,7 @@ export const SideNavCategory = ({
   variant,
   intent,
   labelIntent,
+  justifyContent,
   // own
   label,
   initiallyExpanded = false,
@@ -62,7 +63,7 @@ export const SideNavCategory = ({
                 variant={variant}
                 intent={intent}
                 labelIntent={labelIntent}
-                labelAlign="left"
+                justifyContent={justifyContent}
                 size="sm"
                 fullWidth
               >

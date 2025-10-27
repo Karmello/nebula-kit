@@ -6,14 +6,10 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     jsx: (
       <DropdownList>
         <DropdownList.Trigger>
-          <Button variant="ghost" intent="primary" fullWidth>
-            Trigger
-          </Button>
+          <Button>Trigger</Button>
         </DropdownList.Trigger>
         {Array.from({ length: 3 }, (v, k) => (
-          <DropdownList.Item key={k} disabled>
-            Item {k + 1}
-          </DropdownList.Item>
+          <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
         ))}
       </DropdownList>
     ),
@@ -25,7 +21,7 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     jsx: (
       <DropdownList>
         <DropdownList.Trigger>
-          <Button variant="ghost" intent="primary" fullWidth>
+          <Button variant="outline" intent="primary" fullWidth>
             Trigger
           </Button>
         </DropdownList.Trigger>
@@ -40,7 +36,7 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     jsx: (
       <DropdownList inlineSize="200px">
         <DropdownList.Trigger>
-          <Button variant="ghost" intent="primary" fullWidth>
+          <Button variant="outline" intent="primary" fullWidth>
             Trigger
           </Button>
         </DropdownList.Trigger>
@@ -55,7 +51,7 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     jsx: (
       <DropdownList inlineSize="200px" keepOpen>
         <DropdownList.Trigger>
-          <Button variant="ghost" intent="primary" fullWidth>
+          <Button variant="outline" intent="primary" fullWidth>
             Trigger
           </Button>
         </DropdownList.Trigger>
@@ -70,7 +66,7 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     jsx: (
       <DropdownList inlineSize="200px">
         <DropdownList.Trigger>
-          <Button variant="ghost" intent="primary" fullWidth>
+          <Button variant="outline" intent="primary" fullWidth>
             Trigger
           </Button>
         </DropdownList.Trigger>
@@ -87,7 +83,7 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     jsx: (
       <DropdownList inlineSize="200px" visibleItemsCount={3}>
         <DropdownList.Trigger>
-          <Button variant="ghost" intent="primary" fullWidth>
+          <Button variant="outline" intent="primary" fullWidth>
             Trigger
           </Button>
         </DropdownList.Trigger>
@@ -109,7 +105,7 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
         itemBorderIntent="tertiary"
       >
         <DropdownList.Trigger>
-          <Button variant="ghost" intent="primary" fullWidth>
+          <Button variant="outline" intent="primary" fullWidth>
             Trigger
           </Button>
         </DropdownList.Trigger>
@@ -125,7 +121,7 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     jsx: (
       <DropdownList inlineSize="200px" itemVariant="ghost" itemIntent="danger" listBorderIntent="muted">
         <DropdownList.Trigger>
-          <Button variant="ghost" intent="primary" fullWidth>
+          <Button variant="outline" intent="primary" fullWidth>
             Trigger
           </Button>
         </DropdownList.Trigger>

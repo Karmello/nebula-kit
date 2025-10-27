@@ -1,4 +1,4 @@
-import { BoxProps, HtmlTagProps, TextProps } from 'lib/components'
+import { BoxProps, FlexProps, HtmlTagProps, TextProps } from 'lib/components'
 import { RespValue, ScaleValue } from 'lib/definitions'
 import { BoxIntent, BoxVariant } from 'lib/components/base/Box/definitions'
 
@@ -20,20 +20,17 @@ export const BUTTON_SIZE_CONFIG: Record<
 export const DEFAULT_BUTTON_VARIANT: BoxVariant = 'solid'
 export const DEFAULT_BUTTON_INTENT: BoxIntent = 'tertiary'
 export const DEFAULT_BUTTON_SIZE: ButtonSize = 'md'
-export const DEFAULT_BUTTON_LABEL_ALIGN: ButtonLabelAlign = 'center'
+export const DEFAULT_BUTTON_JUSTIFY_CONTENT: FlexProps['justifyContent'] = 'center'
 
 export const ButtonTag = ['button', 'a'] as const
 export const ButtonSize = ['xs', 'sm', 'md', 'lg'] as const
-export const ButtonLabelAlign = ['center', 'left'] as const
 
 export type ButtonTag = (typeof ButtonTag)[number]
 export type ButtonSize = (typeof ButtonSize)[number]
-export type ButtonLabelAlign = (typeof ButtonLabelAlign)[number]
 
 type ButtonOwnProps = {
   size?: ButtonSize
   fullWidth?: RespValue<boolean>
-  labelAlign?: ButtonLabelAlign
 }
 
 type PropsFromHtmlTag<T extends ButtonTag = 'button'> = Omit<HtmlTagProps<T>, 'children'> & {
@@ -42,11 +39,14 @@ type PropsFromHtmlTag<T extends ButtonTag = 'button'> = Omit<HtmlTagProps<T>, 'c
 
 type PropsFromBox<T extends ButtonTag = 'button'> = Pick<BoxProps<T>, 'variant' | 'intent' | 'disabled'>
 
+type PropsFromFlex = Pick<FlexProps<'span'>, 'justifyContent'>
+
 type PropsFromText = Pick<TextProps<'span'>, 'iconName' | 'iconPosition'> & {
   labelIntent?: TextProps<'span'>['intent']
 }
 
 export type ButtonProps<T extends ButtonTag = 'button'> = PropsFromHtmlTag<T> &
   PropsFromBox<T> &
+  PropsFromFlex &
   PropsFromText &
   ButtonOwnProps
