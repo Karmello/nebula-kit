@@ -13,12 +13,12 @@ import {
 
 type NebkitState = {
   theme: Theme
-  setTheme: (theme: Theme) => void
   brand: Brand
-  setBrand: (brand: Brand) => void
   borderWidth: NebkitProviderProps['borderWidth']
-  setBorderWidth: (borderWidth: NebkitProviderProps['borderWidth']) => void
   borderRadius: NebkitProviderProps['borderRadius']
+  setTheme: (theme: Theme) => void
+  setBrand: (brand: Brand) => void
+  setBorderWidth: (borderWidth: NebkitProviderProps['borderWidth']) => void
   setBorderRadius: (borderRadius: NebkitProviderProps['borderRadius']) => void
 }
 
@@ -26,12 +26,12 @@ export const useNebkitStore = create<NebkitState>()(
   persist(
     set => ({
       theme: DEFAULT_NEBKIT_PROVIDER_THEME,
-      setTheme: theme => set({ theme }),
       brand: DEFAULT_NEBKIT_PROVIDER_BRAND,
-      setBrand: brand => set({ brand }),
       borderWidth: DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH,
-      setBorderWidth: borderWidth => set({ borderWidth }),
       borderRadius: DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS,
+      setTheme: theme => set({ theme }),
+      setBrand: brand => set({ brand }),
+      setBorderWidth: borderWidth => set({ borderWidth }),
       setBorderRadius: borderRadius => set({ borderRadius }),
     }),
     {

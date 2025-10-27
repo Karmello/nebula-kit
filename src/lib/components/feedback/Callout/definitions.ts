@@ -1,6 +1,6 @@
 import { HtmlTagProps } from 'lib/components'
 import { TextTypography } from 'lib/components/base/Text/definitions'
-import { IconName, ScaleValue } from 'lib/definitions'
+import { IconName, ScaleValue, Sizes } from 'lib/definitions'
 
 export const CALLOUT_SIZE_CONFIG: Record<
   CalloutSize,
@@ -25,7 +25,7 @@ export const DEFAULT_CALLOUT_VARIANT: CalloutVariant = 'solid'
 export const DEFAULT_CALLOUT_INTENT: CalloutIntent = 'info'
 
 export const CALLOUT_TAGS = ['div', 'section', 'article', 'aside'] as const
-export const CALLOUT_SIZES = ['sm', 'md', 'lg', 'xl', 'xxl'] as const
+export const CALLOUT_SIZES = ['sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies Sizes[]
 export const CALLOUT_VARIANTS = ['solid', 'outline'] as const
 export const CALLOUT_INTENTS = ['info', 'success', 'warning', 'danger'] as const
 

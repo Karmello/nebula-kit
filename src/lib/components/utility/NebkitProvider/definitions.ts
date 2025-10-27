@@ -1,15 +1,24 @@
 import { ReactElement } from 'react'
 
-import { Brand, ScaleValue, Theme } from 'lib/definitions'
+import { Brand, ScaleValue, Sizes, Theme } from 'lib/definitions'
 
 export const DEFAULT_NEBKIT_PROVIDER_THEME: Theme = 'light'
+export const DEFAULT_NEBKIT_PROVIDER_BRAND: Brand = 'purple'
+export const DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH: NebkitProviderProps['borderWidth'] = 'md'
+export const DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS: NebkitProviderProps['borderRadius'] = 'md'
+
+export const NEBKIT_PROVIDER_SIZES_MAP: {
+  borderWidth: Record<BorderWidthSize, ScaleValue>
+  borderRadius: Record<BorderRadiusSize, ScaleValue>
+} = {
+  borderWidth: { sm: 1, md: 2, lg: 3 },
+  borderRadius: { xs: 1, sm: 3, md: 5, lg: 8, xl: 12 },
+}
+
 export const DEFAULT_NEBKIT_PROVIDER_BACKGROUND: Record<Theme, ThemeBackgroundColor> = {
   light: 'white',
   dark: 'black',
 }
-export const DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH: NebkitProviderProps['borderWidth'] = 2
-export const DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS: ScaleValue = 4
-export const DEFAULT_NEBKIT_PROVIDER_BRAND: Brand = 'purple'
 
 export const THEME_BACKGROUNDS_MAP: Record<ThemeBackgroundColor, object> = {
   white: {
@@ -24,18 +33,20 @@ export const THEME_BACKGROUNDS_MAP: Record<ThemeBackgroundColor, object> = {
   },
 }
 
-export const BORDER_WIDTHS = [1, 2, 3] as const
+export const BORDER_WIDTH_SIZES = ['sm', 'md', 'lg'] as const satisfies Sizes[]
+export const BORDER_RADIUS_SIZES = ['xs', 'sm', 'md', 'lg', 'xl'] as const satisfies Sizes[]
 
 type ThemeBackgroundLight = 'white'
 type ThemeBackgroundDark = 'black'
 type ThemeBackgroundColor = ThemeBackgroundLight | ThemeBackgroundDark
-type BorderWidth = (typeof BORDER_WIDTHS)[number]
+type BorderWidthSize = (typeof BORDER_WIDTH_SIZES)[number]
+type BorderRadiusSize = (typeof BORDER_RADIUS_SIZES)[number]
 
 export type NebkitProviderProps<T extends Theme = 'light'> = {
   children: ReactElement
   theme?: T
   brand?: Brand
   background?: T extends 'light' ? ThemeBackgroundLight : ThemeBackgroundDark
-  borderWidth?: BorderWidth
-  borderRadius?: ScaleValue
+  borderWidth?: BorderWidthSize
+  borderRadius?: BorderRadiusSize
 }

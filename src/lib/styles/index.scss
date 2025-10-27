@@ -21,7 +21,12 @@ html {
 
 html.neb-transitions {
   .neb-box {
-    transition: all 0.2s ease-in-out;
+    transition:
+      background-color 0.2s ease-in-out,
+      border-color 0.2s ease-in-out,
+      color 0.2s ease-in-out,
+      block-size 0.2s ease-in-out,
+      inline-size 0.2s ease-in-out;
   }
 }
 

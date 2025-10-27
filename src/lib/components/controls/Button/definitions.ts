@@ -1,5 +1,5 @@
 import { BoxProps, FlexProps, HtmlTagProps, TextProps } from 'lib/components'
-import { RespValue, ScaleValue } from 'lib/definitions'
+import { RespValue, ScaleValue, Sizes } from 'lib/definitions'
 import { BoxIntent, BoxVariant } from 'lib/components/base/Box/definitions'
 
 export const BUTTON_SIZE_CONFIG: Record<
@@ -23,7 +23,7 @@ export const DEFAULT_BUTTON_SIZE: ButtonSize = 'md'
 export const DEFAULT_BUTTON_JUSTIFY_CONTENT: FlexProps['justifyContent'] = 'center'
 
 export const BUTTON_TAGS = ['button', 'a'] as const
-export const BUTTON_SIZES = ['xs', 'sm', 'md', 'lg'] as const
+export const BUTTON_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies Sizes[]
 
 export type ButtonTag = (typeof BUTTON_TAGS)[number]
 export type ButtonSize = (typeof BUTTON_SIZES)[number]

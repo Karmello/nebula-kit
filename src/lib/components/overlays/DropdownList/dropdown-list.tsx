@@ -1,9 +1,10 @@
-import { RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { RefObject, useCallback, useEffect, useRef, useState } from 'react'
 
 import { Animate, Box, Flex, Portal } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { DEFAULT_ANIMATE_DURATION } from 'lib/components/base/Animate/definitions'
 import { BUTTON_SIZE_CONFIG, DEFAULT_BUTTON_SIZE } from 'lib/components/controls/Button/definitions'
+import { NEBKIT_PROVIDER_SIZES_MAP } from 'lib/components/utility/NebkitProvider/definitions'
 import { useNebkitStore } from 'lib/state'
 import { useOutsideClick } from 'lib/hooks'
 
@@ -44,12 +45,15 @@ export const DropdownList = ({
 
   useOutsideClick([triggerRef, portalRef], () => setAnimateVisible(false))
 
-  const getItemsContainerBlockSize = useCallback(() => {
-    if (visibleItemsCount === undefined || borderWidth === undefined) return 0
-    const allItemsBlockSize = visibleItemsCount * BUTTON_SIZE_CONFIG[size].blockSize
-    const allItemsBorderWidth = (visibleItemsCount - 1) * borderWidth
-    return `${allItemsBlockSize + allItemsBorderWidth}px`
-  }, [])
+  const getItemsContainerBlockSize = useCallback(
+    (visibleItemsCount: number) => {
+      if (visibleItemsCount === undefined || borderWidth === undefined) return 0
+      const allItemsBlockSize = visibleItemsCount * BUTTON_SIZE_CONFIG[size].blockSize
+      const allItemsBorderWidth = (visibleItemsCount - 1) * NEBKIT_PROVIDER_SIZES_MAP.borderWidth[borderWidth]
+      return `${allItemsBlockSize + allItemsBorderWidth}px`
+    },
+    [borderWidth]
+  )
 
   useEffect(() => {
     if (open) {
@@ -67,8 +71,6 @@ export const DropdownList = ({
     }
   }, [animateVisible])
 
-  const itemsContainerBlockSize = useMemo(getItemsContainerBlockSize, [])
-
   const finalChildren = typeof children === 'function' ? children({ open, animateVisible }) : children
 
   return (
@@ -82,6 +84,11 @@ export const DropdownList = ({
     >
       {({ slotsByName }) => {
         const triggerWidth = (triggerRef as RefObject<HTMLDivElement>).current?.offsetWidth
+
+        const itemsLength = slotsByName['DropdownList.Item'].length
+        const itemsContainerBlockSize = getItemsContainerBlockSize(
+          itemsLength < visibleItemsCount ? itemsLength : visibleItemsCount
+        )
 
         return (
           <DropdownListProvider

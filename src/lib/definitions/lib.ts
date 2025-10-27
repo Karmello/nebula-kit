@@ -4,6 +4,7 @@ export const LIB_NAME = 'NebulaKit'
 export const LIB_PREFIX = 'neb'
 
 export const BREAKPOINTS = ['base', 'sm', 'md', 'lg', 'xl'] as const
+export const SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
 
 export const BRANDS = [
   'purple',
@@ -61,6 +62,7 @@ export const ICON_NAMES = [
 // types
 
 export type Breakpoint = (typeof BREAKPOINTS)[number]
+export type Sizes = (typeof SIZES)[number]
 export type Brand = (typeof BRANDS)[number]
 export type ScaleValue = (typeof SCALE)[number]
 export type IconName = (typeof ICON_NAMES)[number]
