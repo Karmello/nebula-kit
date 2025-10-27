@@ -55,7 +55,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   return (
     <>
       {name ? (
-        <Section heading={name} variant="outline" intent="secondary">
+        <Section heading={name} variant="outline" intent="inverse">
           <Box intent="neutral">{content}</Box>
         </Section>
       ) : (
