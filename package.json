@@ -59,7 +59,7 @@
   "dependencies": {
     "@shikijs/core": "^3.12.0",
     "@shikijs/engine-javascript": "^3.12.0",
-    "@shikijs/langs": "^3.12.0",
+    "@shikijs/langs": "^3.14.0",
     "@shikijs/themes": "^3.12.0",
     "change-case": "^5.4.4",
     "classnames": "^2.5.1",
