@@ -4,12 +4,7 @@ import { useNebkitStore } from 'lib/state'
 import { Theme } from 'lib/definitions'
 import { scale } from 'lib/helpers'
 
-import {
-  NebkitProviderProps,
-  THEME_BACKGROUNDS_MAP,
-  DEFAULT_NEBKIT_PROVIDER_BACKGROUND,
-  NEBKIT_PROVIDER_SIZES_MAP,
-} from './definitions'
+import { NebkitProviderProps, THEME_BACKGROUNDS_MAP, DEFAULT_NEBKIT_PROVIDER_BACKGROUND } from './definitions'
 
 import 'lib/styles/index.scss'
 
@@ -18,8 +13,8 @@ export const NebkitProvider = <T extends Theme = 'light'>({
   theme,
   brand,
   background,
-  borderWidth,
-  borderRadius,
+  borderWidthSize,
+  borderRadiusSize,
 }: NebkitProviderProps<T>): ReactElement => {
   const nebkitStore = useNebkitStore()
 
@@ -35,9 +30,9 @@ export const NebkitProvider = <T extends Theme = 'light'>({
   useEffect(() => {
     if (theme) nebkitStore.setTheme(theme)
     if (brand) nebkitStore.setBrand(brand)
-    if (borderWidth) nebkitStore.setBorderWidth(borderWidth)
-    if (borderRadius) nebkitStore.setBorderRadius(borderRadius)
-  }, [theme, brand, borderWidth, borderRadius])
+    if (borderWidthSize) nebkitStore.setBorderWidthSize(borderWidthSize)
+    if (borderRadiusSize) nebkitStore.setBorderRadiusSize(borderRadiusSize)
+  }, [theme, brand, borderWidthSize, borderRadiusSize])
 
   useEffect(() => {
     const CSS_VAR_CONFIG =
@@ -47,14 +42,8 @@ export const NebkitProvider = <T extends Theme = 'light'>({
     }
     document?.documentElement.setAttribute('data-theme', nebkitStore.theme)
     document.documentElement.setAttribute('data-brand', nebkitStore.brand)
-    document.documentElement.style.setProperty(
-      '--neb-border-width',
-      scale(NEBKIT_PROVIDER_SIZES_MAP.borderWidth[nebkitStore.borderWidth]) || ''
-    )
-    document.documentElement.style.setProperty(
-      '--neb-border-radius',
-      scale(NEBKIT_PROVIDER_SIZES_MAP.borderRadius[nebkitStore.borderRadius]) || ''
-    )
+    document.documentElement.style.setProperty('--neb-border-width', scale(nebkitStore.borderWidth) || '')
+    document.documentElement.style.setProperty('--neb-border-radius', scale(nebkitStore.borderRadius) || '')
   }, [nebkitStore])
 
   return children

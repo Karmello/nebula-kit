@@ -21,8 +21,16 @@ import { useNavigateTo } from 'client/services'
 export const HomePage = () => {
   const navigateTo = useNavigateTo()
 
-  const { theme, setTheme, brand, setBrand, borderWidth, setBorderWidth, borderRadius, setBorderRadius } =
-    useNebkitStore()
+  const {
+    theme,
+    setTheme,
+    brand,
+    setBrand,
+    borderWidthSize,
+    setBorderWidthSize,
+    borderRadiusSize,
+    setBorderRadiusSize,
+  } = useNebkitStore()
 
   return (
     <Box padding={{ base: 20, lg: 50 }}>
@@ -96,8 +104,8 @@ export const HomePage = () => {
               <Text bold>Border width</Text>
               <Select
                 options={BORDER_WIDTH_SIZES.map(n => ({ value: String(n), label: String(n) }))}
-                value={borderWidth}
-                onChange={value => setBorderWidth(value as never)}
+                value={borderWidthSize}
+                onChange={value => setBorderWidthSize(value as never)}
                 inlineSize="150px"
                 size="sm"
               />
@@ -106,8 +114,8 @@ export const HomePage = () => {
               <Text bold>Border radius</Text>
               <Select
                 options={BORDER_RADIUS_SIZES.map(n => ({ value: String(n), label: String(n) }))}
-                value={borderRadius}
-                onChange={value => setBorderRadius(value as never)}
+                value={borderRadiusSize}
+                onChange={value => setBorderRadiusSize(value as never)}
                 inlineSize="150px"
                 size="sm"
               />

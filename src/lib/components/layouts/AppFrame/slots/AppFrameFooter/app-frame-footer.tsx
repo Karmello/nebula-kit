@@ -3,7 +3,6 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { useNebkitStore } from 'lib/state'
-import { NEBKIT_PROVIDER_SIZES_MAP } from 'lib/components/utility/NebkitProvider/definitions'
 
 import {
   AppFrameFooterProps,
@@ -35,7 +34,7 @@ export const AppFrameFooter = ({
       intent={intent}
       borderIntent={borderIntent}
       minBlockSize={minBlockSize}
-      borderTopWidth={NEBKIT_PROVIDER_SIZES_MAP.borderWidth[borderWidth]}
+      borderTopWidth={borderWidth}
       borderRadius={0}
       {...paddings}
     >

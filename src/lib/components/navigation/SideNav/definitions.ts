@@ -2,7 +2,6 @@ import { FlexProps, HtmlTagProps } from 'lib/components'
 
 export const SIDE_NAV_EXPAND_MODES = ['single', 'multiple'] as const
 export const DEFAULT_SIDE_NAV_EXPAND_MODE: SideNavExpandMode = 'multiple'
-export const DEFAULT_SIDE_NAV_ROW_GAP: FlexProps['rowGap'] = 1
 
 export type SideNavExpandMode = (typeof SIDE_NAV_EXPAND_MODES)[number]
 

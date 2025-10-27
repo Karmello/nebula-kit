@@ -5,7 +5,6 @@ import { withPrefix } from 'lib/helpers'
 import { Box } from 'lib/components'
 import { useNebkitStore } from 'lib/state'
 import { BUTTON_SIZE_CONFIG, DEFAULT_BUTTON_SIZE } from 'lib/components/controls/Button/definitions'
-import { NEBKIT_PROVIDER_SIZES_MAP } from 'lib/components/utility/NebkitProvider/definitions'
 
 import { useAppFrameContext } from '../../AppFrameProvider'
 
@@ -42,7 +41,7 @@ export const AppFrameHeader = ({
       intent={intent}
       borderIntent={borderIntent}
       minBlockSize={minBlockSize}
-      borderBottomWidth={NEBKIT_PROVIDER_SIZES_MAP.borderWidth[borderWidth]}
+      borderBottomWidth={borderWidth}
       borderRadius={0}
       {...paddings}
     >

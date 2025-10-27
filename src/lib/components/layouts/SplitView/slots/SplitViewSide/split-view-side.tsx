@@ -5,7 +5,6 @@ import { Animate, Box, Flex, IconButton } from 'lib/components'
 import { FocusTrap } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 import { useNebkitStore } from 'lib/state'
-import { NEBKIT_PROVIDER_SIZES_MAP } from 'lib/components/utility/NebkitProvider/definitions'
 
 import { SplitViewSideProps, DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from './definitions'
 import { useSplitViewContext } from '../../SplitViewProvider'
@@ -42,12 +41,8 @@ export const SplitViewSide = ({
         variant="solid"
         intent={intent || { base: 'tertiary', [String(switchAt)]: 'neutral' }}
         borderIntent={borderIntent || { base: 'muted', [String(switchAt)]: 'neutral' }}
-        borderLeftWidth={
-          sidePosition === 'right' && sideOpen ? NEBKIT_PROVIDER_SIZES_MAP.borderWidth[borderWidth] : 0
-        }
-        borderRightWidth={
-          sidePosition === 'left' && sideOpen ? NEBKIT_PROVIDER_SIZES_MAP.borderWidth[borderWidth] : 0
-        }
+        borderLeftWidth={sidePosition === 'right' && sideOpen ? borderWidth : 0}
+        borderRightWidth={sidePosition === 'left' && sideOpen ? borderWidth : 0}
         left={sidePosition === 'left' ? 0 : undefined}
         right={sidePosition === 'right' ? 0 : undefined}
         borderRadius={0}

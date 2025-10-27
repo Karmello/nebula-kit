@@ -4,15 +4,15 @@ import { Brand, ScaleValue, Sizes, Theme } from 'lib/definitions'
 
 export const DEFAULT_NEBKIT_PROVIDER_THEME: Theme = 'light'
 export const DEFAULT_NEBKIT_PROVIDER_BRAND: Brand = 'purple'
-export const DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH: NebkitProviderProps['borderWidth'] = 'md'
-export const DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS: NebkitProviderProps['borderRadius'] = 'md'
+export const DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH_SIZE: NebkitProviderProps['borderWidthSize'] = 'md'
+export const DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE: NebkitProviderProps['borderRadiusSize'] = 'md'
 
 export const NEBKIT_PROVIDER_SIZES_MAP: {
-  borderWidth: Record<BorderWidthSize, ScaleValue>
-  borderRadius: Record<BorderRadiusSize, ScaleValue>
+  borderWidthSize: Record<BorderWidthSize, ScaleValue>
+  borderRadiusSize: Record<BorderRadiusSize, ScaleValue>
 } = {
-  borderWidth: { sm: 1, md: 2, lg: 3 },
-  borderRadius: { xs: 1, sm: 3, md: 5, lg: 8, xl: 12 },
+  borderWidthSize: { sm: 1, md: 2, lg: 3 },
+  borderRadiusSize: { xs: 1, sm: 3, md: 5, lg: 8, xl: 12 },
 }
 
 export const DEFAULT_NEBKIT_PROVIDER_BACKGROUND: Record<Theme, ThemeBackgroundColor> = {
@@ -47,6 +47,6 @@ export type NebkitProviderProps<T extends Theme = 'light'> = {
   theme?: T
   brand?: Brand
   background?: T extends 'light' ? ThemeBackgroundLight : ThemeBackgroundDark
-  borderWidth?: BorderWidthSize
-  borderRadius?: BorderRadiusSize
+  borderWidthSize?: BorderWidthSize
+  borderRadiusSize?: BorderRadiusSize
 }

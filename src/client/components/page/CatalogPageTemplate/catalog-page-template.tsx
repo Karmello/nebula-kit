@@ -26,7 +26,6 @@ export const CatalogPageTemplate = ({
   activeSectionObj,
 }: Props) => {
   const { pathname } = useLocation()
-
   const navigateTo = useNavigateTo()
 
   return (
@@ -34,7 +33,7 @@ export const CatalogPageTemplate = ({
       {({ mode, setSideOpen }) => (
         <>
           <SplitView.Side>
-            <SideNav rowGap={{ base: 0, lg: 2 }}>
+            <SideNav>
               {data.map(({ key: categoryKey, label, items }) => {
                 const isCategorySelected = activeCategoryObj?.key === categoryKey
                 return (
@@ -92,7 +91,7 @@ export const CatalogPageTemplate = ({
               {({ mode, setSideOpen }) => (
                 <>
                   <SplitView.Side>
-                    <SideNav rowGap={{ base: 0, lg: 2 }}>
+                    <SideNav>
                       {data
                         .find(c => c.key === activeCategoryObj?.key)
                         ?.items.find(i => i.key === activeItemObj?.key)

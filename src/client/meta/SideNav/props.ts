@@ -3,7 +3,6 @@ import { SideNavProps } from 'lib/components'
 
 import {
   DEFAULT_SIDE_NAV_EXPAND_MODE,
-  DEFAULT_SIDE_NAV_ROW_GAP,
   SIDE_NAV_EXPAND_MODES,
 } from 'lib/components/navigation/SideNav/definitions'
 
@@ -21,7 +20,7 @@ const SIDE_NAV_PROPS_META: ComponentMeta<SideNavProps>['props'] = {
   },
   rowGap: {
     ...FLEX_PROPS_META.rowGap,
-    defaultValue: String(DEFAULT_SIDE_NAV_ROW_GAP),
+    defaultValue: 'global border width',
   },
   expandMode: {
     options: SIDE_NAV_EXPAND_MODES as unknown as string[],

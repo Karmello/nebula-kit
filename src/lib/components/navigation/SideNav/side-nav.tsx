@@ -3,10 +3,11 @@ import classNames from 'classnames'
 import { WithSlots } from 'lib/components/internal'
 import { Flex } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { useNebkitStore } from 'lib/state'
 
 import { SideNavProvider } from './SideNavProvider'
 import { SideNavToggle } from './components'
-import { DEFAULT_SIDE_NAV_EXPAND_MODE, DEFAULT_SIDE_NAV_ROW_GAP, SideNavProps } from './definitions'
+import { DEFAULT_SIDE_NAV_EXPAND_MODE, SideNavProps } from './definitions'
 
 import './side-nav.scss'
 
@@ -16,10 +17,14 @@ export const SideNav = ({
   tagRef,
   children,
   // Flex
-  rowGap = DEFAULT_SIDE_NAV_ROW_GAP,
+  rowGap,
   // own
   expandMode = DEFAULT_SIDE_NAV_EXPAND_MODE,
 }: SideNavProps) => {
+  const { borderWidth } = useNebkitStore()
+
+  const finalRowGap = rowGap !== undefined ? rowGap : borderWidth
+
   return (
     <WithSlots<'SideNav.Category' | 'SideNav.Item'>
       componentName="SideNav"
@@ -31,7 +36,7 @@ export const SideNav = ({
       childrenToVerify={children}
     >
       {({ slotsByName, allValidSlots }) => (
-        <SideNavProvider expandMode={expandMode} rowGap={rowGap}>
+        <SideNavProvider expandMode={expandMode} rowGap={finalRowGap}>
           <Flex
             tag="nav"
             tagAttrs={{
@@ -40,7 +45,7 @@ export const SideNav = ({
             }}
             tagRef={tagRef}
             flexDirection="column"
-            rowGap={rowGap}
+            rowGap={finalRowGap}
           >
             {slotsByName['SideNav.Category'].length ? <SideNavToggle /> : null}
             {allValidSlots}

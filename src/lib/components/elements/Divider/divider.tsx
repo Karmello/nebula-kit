@@ -3,7 +3,6 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { useNebkitStore } from 'lib/state'
-import { NEBKIT_PROVIDER_SIZES_MAP } from 'lib/components/utility/NebkitProvider/definitions'
 
 import { DEFAULT_DIVIDER_INTENT, DividerProps } from './definitions'
 
@@ -22,7 +21,7 @@ export const Divider = ({ tagAttrs, tagRef, intent = DEFAULT_DIVIDER_INTENT, blo
       tagRef={tagRef}
       variant="solid"
       intent={intent}
-      blockSize={blockSize !== undefined ? blockSize : NEBKIT_PROVIDER_SIZES_MAP.borderWidth[borderWidth]}
+      blockSize={blockSize !== undefined ? blockSize : borderWidth}
     />
   )
 }
