@@ -16,9 +16,9 @@ const NEBKIT_PROVIDER_EXAMPLES_META: ComponentMeta<NebkitProviderProps<Theme>>['
     noSandBox: true,
   },
   {
-    description: 'Setting the dark mode as default.',
+    description: 'Changing global configuration.',
     jsx: (
-      <NebkitProvider theme="dark">
+      <NebkitProvider theme="dark" brand="brown" borderWidthSize="lg" borderRadiusSize="xs">
         <App />
       </NebkitProvider>
     ),

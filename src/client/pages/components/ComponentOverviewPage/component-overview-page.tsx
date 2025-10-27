@@ -26,9 +26,9 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       <Text typography="lead">{title}</Text>
       {examples?.[0] ? <CodeSnippet code={examples[0].code || elemToString(examples[0].jsx)} /> : null}
       {description ? <ListWithHeading heading="Description:" items={description} /> : null}
-      {composedOf ? <ListWithChips heading="Composed of:" items={composedOf} intent="warning" /> : null}
+      {composedOf ? <ListWithChips heading="Composed of:" items={composedOf} intent="danger" /> : null}
       {rendersAs ? (
-        <ListWithChips heading="Renders as:" items={rendersAs as string[]} intent="danger" />
+        <ListWithChips heading="Renders as:" items={rendersAs as string[]} intent="warning" />
       ) : null}
       {props ? (
         <ListWithChips heading="Props:" items={Object.keys(props).sort((a, b) => a.localeCompare(b))} />

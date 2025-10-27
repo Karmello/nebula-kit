@@ -1,4 +1,4 @@
-import { BoxProps, ButtonProps } from 'lib/components'
+import { BoxProps, ButtonProps, HtmlTagProps } from 'lib/components'
 
 type SelectOwnProps = {
   options: { value: string; label: string }[]
@@ -6,8 +6,10 @@ type SelectOwnProps = {
   onChange: (value: string) => void
 }
 
+type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagRef' | 'tagAttrs'>
+
 type PropsFromBox = Pick<BoxProps, 'inlineSize'>
 
 type PropsFromButton = Pick<ButtonProps, 'variant' | 'intent' | 'size'>
 
-export type SelectProps = PropsFromBox & PropsFromButton & SelectOwnProps
+export type SelectProps = PropsFromHtmlTag & PropsFromBox & PropsFromButton & SelectOwnProps
