@@ -3,7 +3,7 @@ import { FOUNDATION_CATEGORIES, COMPONENT_CATEGORIES, PageKey } from 'client/def
 import { useNavigateTo } from 'client/services'
 
 export type NextPageButtonProps = {
-  pageKey: Exclude<keyof typeof PageKey, 'home'>
+  pageKey: Extract<keyof typeof PageKey, 'foundations' | 'components'>
   currentSectionKey: string
 }
 

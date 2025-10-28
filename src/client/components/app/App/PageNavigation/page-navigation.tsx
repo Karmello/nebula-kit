@@ -46,6 +46,16 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
       >
         Components
       </LinkButton>
+      <LinkButton
+        href={`/${PageKey.pricing}`}
+        onClick={async () => {
+          if (mainOpen) await setMainOpen(false)
+          navigateTo(`/${PageKey.pricing}`)
+        }}
+        intent={currentPageKey === PageKey.pricing ? 'tertiary' : 'muted'}
+      >
+        Pricing
+      </LinkButton>
     </ButtonGroup>
   )
 }

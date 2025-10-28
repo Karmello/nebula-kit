@@ -3,22 +3,13 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { useNebkitStore } from 'lib/state'
-
-import {
-  DEFAULT_NEBKIT_BORDER_WIDTH_SIZE,
-  NEBKIT_SIZES_MAP,
-} from 'lib/components/utility/NebkitProvider/definitions'
+import { NEBKIT_SIZES_MAP } from 'lib/components/utility/NebkitProvider/definitions'
 
 import { DEFAULT_DIVIDER_INTENT, DividerProps } from './definitions'
 
 import './divider.scss'
 
-export const Divider = ({
-  tagAttrs,
-  tagRef,
-  intent = DEFAULT_DIVIDER_INTENT,
-  size = DEFAULT_NEBKIT_BORDER_WIDTH_SIZE,
-}: DividerProps) => {
+export const Divider = ({ tagAttrs, tagRef, intent = DEFAULT_DIVIDER_INTENT, size }: DividerProps) => {
   const { borderWidth } = useNebkitStore()
 
   return (
