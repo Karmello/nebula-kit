@@ -4,11 +4,11 @@ import { persist } from 'zustand/middleware'
 import { Brand, LIB_PREFIX, ScaleValue, Theme } from 'lib/definitions'
 
 import {
-  DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE,
-  DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH_SIZE,
-  DEFAULT_NEBKIT_PROVIDER_BRAND,
-  DEFAULT_NEBKIT_PROVIDER_THEME,
-  NEBKIT_PROVIDER_SIZES_MAP,
+  DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
+  DEFAULT_NEBKIT_BORDER_WIDTH_SIZE,
+  DEFAULT_NEBKIT_BRAND,
+  DEFAULT_NEBKIT_THEME,
+  NEBKIT_SIZES_MAP,
   NebkitProviderProps,
 } from 'lib/components/utility/NebkitProvider/definitions'
 
@@ -28,25 +28,23 @@ type NebkitState = {
 export const useNebkitStore = create<NebkitState>()(
   persist(
     set => ({
-      theme: DEFAULT_NEBKIT_PROVIDER_THEME,
-      brand: DEFAULT_NEBKIT_PROVIDER_BRAND,
-      borderWidthSize: DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH_SIZE,
-      borderRadiusSize: DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE,
-      borderWidth:
-        NEBKIT_PROVIDER_SIZES_MAP.borderWidthSize[DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH_SIZE || 'md'],
-      borderRadius:
-        NEBKIT_PROVIDER_SIZES_MAP.borderRadiusSize[DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE || 'md'],
+      theme: DEFAULT_NEBKIT_THEME,
+      brand: DEFAULT_NEBKIT_BRAND,
+      borderWidthSize: DEFAULT_NEBKIT_BORDER_WIDTH_SIZE,
+      borderRadiusSize: DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
+      borderWidth: NEBKIT_SIZES_MAP.borderWidthSize[DEFAULT_NEBKIT_BORDER_WIDTH_SIZE || 'md'],
+      borderRadius: NEBKIT_SIZES_MAP.borderRadiusSize[DEFAULT_NEBKIT_BORDER_RADIUS_SIZE || 'md'],
       setTheme: theme => set({ theme }),
       setBrand: brand => set({ brand }),
       setBorderWidthSize: borderWidthSize =>
         set({
           borderWidthSize,
-          borderWidth: NEBKIT_PROVIDER_SIZES_MAP.borderWidthSize[borderWidthSize || 'md'],
+          borderWidth: NEBKIT_SIZES_MAP.borderWidthSize[borderWidthSize || 'md'],
         }),
       setBorderRadiusSize: borderRadiusSize =>
         set({
           borderRadiusSize,
-          borderRadius: NEBKIT_PROVIDER_SIZES_MAP.borderRadiusSize[borderRadiusSize || 'md'],
+          borderRadius: NEBKIT_SIZES_MAP.borderRadiusSize[borderRadiusSize || 'md'],
         }),
     }),
     {

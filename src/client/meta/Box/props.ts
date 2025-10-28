@@ -3,8 +3,8 @@ import { CSS_DISPLAY, CSS_OVERFLOW, CSS_POSITION, CSS_TEXT_ALIGN } from 'lib/def
 import { BoxProps, BOX_VARIANTS, DEFAULT_BOX_VARIANT, BOX_INTENTS } from 'lib/components/base/Box/definitions'
 
 import {
-  DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE,
-  DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH_SIZE,
+  DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
+  DEFAULT_NEBKIT_BORDER_WIDTH_SIZE,
 } from 'lib/components/utility/NebkitProvider/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -34,56 +34,56 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   borderWidth: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH_SIZE),
+    defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
     description: 'Sets border width overriding global value set by NebkitProvider.',
   },
   borderTopWidth: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH_SIZE),
+    defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
     description: 'Border width for the top side.',
   },
   borderRightWidth: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH_SIZE),
+    defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
     description: 'Border width for the right side.',
   },
   borderBottomWidth: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH_SIZE),
+    defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
     description: 'Border width for the bottom side.',
   },
   borderLeftWidth: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_WIDTH_SIZE),
+    defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
     description: 'Border width for the left side.',
   },
   borderRadius: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE),
+    defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
     isResponsive: true,
     description: 'Sets border radius overriding global value set by NebkitProvider.',
   },
   borderTopLeftRadius: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE),
+    defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
     isResponsive: true,
     description: 'Border radius for the top left corner.',
   },
   borderTopRightRadius: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE),
+    defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
     isResponsive: true,
     description: 'Border radius for the top right corner.',
   },
   borderBottomRightRadius: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE),
+    defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
     isResponsive: true,
     description: 'Border radius for the bottom right corner.',
   },
   borderBottomLeftRadius: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE),
+    defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
     isResponsive: true,
     description: 'Border radius for the bottom left corner.',
   },

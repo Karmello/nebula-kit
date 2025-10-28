@@ -1,11 +1,11 @@
-import { ScaleValue } from 'lib/definitions'
 import { HtmlTagProps } from 'lib/components'
 import { BoxIntent, BoxProps } from 'lib/components/base/Box/definitions'
+import { NebkitBorderWidthSize } from 'lib/components/utility/NebkitProvider/definitions'
 
-export const DEFAULT_DIVIDER_INTENT: BoxIntent = 'muted'
+export const DEFAULT_DIVIDER_INTENT: BoxIntent = 'tertiary'
 
 type DividerOwnProps = {
-  blockSize?: ScaleValue | string
+  size?: NebkitBorderWidthSize
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'hr'>, 'tagAttrs' | 'tagRef'>

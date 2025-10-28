@@ -15,8 +15,12 @@ import {
 
 import { useNebkitStore } from 'lib/state'
 import { Brand, BRANDS, THEME } from 'lib/definitions'
-import { BORDER_RADIUS_SIZES, BORDER_WIDTH_SIZES } from 'lib/components/utility/NebkitProvider/definitions'
 import { useNavigateTo } from 'client/services'
+
+import {
+  NEBKIT_BORDER_RADIUS_SIZES,
+  NEBKIT_BORDER_WIDTH_SIZES,
+} from 'lib/components/utility/NebkitProvider/definitions'
 
 export const HomePage = () => {
   const navigateTo = useNavigateTo()
@@ -103,7 +107,7 @@ export const HomePage = () => {
             <Flex.Item>
               <Text bold>Border width</Text>
               <Select
-                options={BORDER_WIDTH_SIZES.map(n => ({ value: String(n), label: String(n) }))}
+                options={NEBKIT_BORDER_WIDTH_SIZES.map(n => ({ value: String(n), label: String(n) }))}
                 value={borderWidthSize}
                 onChange={value => setBorderWidthSize(value as never)}
                 inlineSize="150px"
@@ -113,7 +117,7 @@ export const HomePage = () => {
             <Flex.Item>
               <Text bold>Border radius</Text>
               <Select
-                options={BORDER_RADIUS_SIZES.map(n => ({ value: String(n), label: String(n) }))}
+                options={NEBKIT_BORDER_RADIUS_SIZES.map(n => ({ value: String(n), label: String(n) }))}
                 value={borderRadiusSize}
                 onChange={value => setBorderRadiusSize(value as never)}
                 inlineSize="150px"

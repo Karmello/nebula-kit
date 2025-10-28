@@ -4,7 +4,7 @@ import { useNebkitStore } from 'lib/state'
 import { Theme } from 'lib/definitions'
 import { scale } from 'lib/helpers'
 
-import { NebkitProviderProps, THEME_BACKGROUNDS_MAP, DEFAULT_NEBKIT_PROVIDER_BACKGROUND } from './definitions'
+import { NebkitProviderProps, NEBKIT_THEME_BACKGROUNDS_MAP, DEFAULT_NEBKIT_BACKGROUND } from './definitions'
 
 import 'lib/styles/index.scss'
 
@@ -36,7 +36,7 @@ export const NebkitProvider = <T extends Theme = 'light'>({
 
   useEffect(() => {
     const CSS_VAR_CONFIG =
-      THEME_BACKGROUNDS_MAP[background || DEFAULT_NEBKIT_PROVIDER_BACKGROUND[nebkitStore.theme]]
+      NEBKIT_THEME_BACKGROUNDS_MAP[background || DEFAULT_NEBKIT_BACKGROUND[nebkitStore.theme]]
     for (const cssVarName in CSS_VAR_CONFIG) {
       document.documentElement.style.setProperty(cssVarName, String(CSS_VAR_CONFIG[cssVarName]))
     }

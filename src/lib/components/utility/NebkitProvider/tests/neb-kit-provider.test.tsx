@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach } from 'vitest'
 import { render, screen } from '@testing-library/react'
 
 import { NebkitProvider } from '..'
-import { DEFAULT_NEBKIT_PROVIDER_THEME } from '../definitions'
+import { DEFAULT_NEBKIT_THEME } from '../definitions'
 
 beforeEach(() => {
   document.documentElement.removeAttribute('data-theme')
@@ -25,7 +25,7 @@ describe('<NebkitProvider />', () => {
         <div />
       </NebkitProvider>
     )
-    expect(document.documentElement.getAttribute('data-theme')).toBe(DEFAULT_NEBKIT_PROVIDER_THEME)
+    expect(document.documentElement.getAttribute('data-theme')).toBe(DEFAULT_NEBKIT_THEME)
   })
 
   it('applies custom theme via defaultTheme prop', async () => {
