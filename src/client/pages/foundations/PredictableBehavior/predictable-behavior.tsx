@@ -4,7 +4,7 @@ export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Text>
-        Nebula Kit is built so that components never surprise you. Each one responds to props, states and
+        NebulaKit is built so that components never surprise you. Each one responds to props, states and
         themes through shared logic, not isolated implementations. What happens in one part of the system
         happens the same way everywhere else.
       </Text>

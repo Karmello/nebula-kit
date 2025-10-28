@@ -46,6 +46,7 @@ export const FOUNDATION_CATEGORIES = [
         sections: [
           { key: 'slots', label: 'Slots' },
           { key: 'render-function', label: 'Render function' },
+          { key: 'react-refs', label: 'React refs' },
         ],
       },
     ],

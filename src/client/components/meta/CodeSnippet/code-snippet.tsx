@@ -40,6 +40,8 @@ const COLOR_MAP = {
   '#C792EA': { light: 'var(--neb-gray-15)', dark: 'var(--neb-gray-1)' },
   // quotes
   '#D9F5DD': { light: 'var(--neb-gray-15)', dark: 'var(--neb-gray-1)' },
+  // comments
+  '#637777': { light: 'var(--neb-text)', dark: 'var(--neb-text)' },
 }
 
 export const CodeSnippet = ({ code, lang = 'tsx', borderRadius }: CodeSnippetProps) => {

@@ -4,7 +4,7 @@ export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Text>
-        Nebula Kit keeps visual language consistent across every layer of the interface. Colors, typography,
+        NebulaKit keeps visual language consistent across every layer of the interface. Colors, typography,
         spacing and motion all stem from the same scale system and design tokens. What looks aligned is also
         aligned in code.
       </Text>

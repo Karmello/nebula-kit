@@ -4,7 +4,7 @@ export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Text>
-        Nebula Kit begins with a single rule -
+        NebulaKit begins with a single rule -
         <Text tag="span" bold space="both">
           every component grows from the same core primitives.
         </Text>
@@ -61,7 +61,7 @@ export default () => {
       <Spacer blockSize={30} />
       <Text>
         The result is a framework where new pieces don't compete with old ones - they extend them. This is
-        what makes Nebula Kit feel cohesive even as it grows - one foundation, many expressions.
+        what makes NebulaKit feel cohesive even as it grows - one foundation, many expressions.
       </Text>
     </Box>
   )

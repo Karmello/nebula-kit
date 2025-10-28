@@ -9,9 +9,9 @@ export default () => {
       </Text>
       <Spacer blockSize={15} />
       <Text>
-        Nebula Kit was born from that same idea. In the early stages of any interface, there's motion
+        NebulaKit was born from that same idea. In the early stages of any interface, there's motion
         everywhere - new components, new layouts, new intentions. Without structure, it all drifts apart.
-        Nebula Kit gives that motion a center.
+        NebulaKit gives that motion a center.
       </Text>
       <Spacer blockSize={15} />
       <Text>
@@ -26,7 +26,7 @@ export default () => {
       </Text>
       <Spacer blockSize={15} />
       <Text>
-        Nebula Kit isn't named for what it looks like, but for what it does - it turns scattered parts into
+        NebulaKit isn't named for what it looks like, but for what it does - it turns scattered parts into
         structure and structure into light.
       </Text>
       <Spacer blockSize={15} />
