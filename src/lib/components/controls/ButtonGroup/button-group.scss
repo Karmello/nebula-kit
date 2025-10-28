@@ -46,7 +46,7 @@
     .neb-flex-item:not(:first-child) {
       .neb-btn[data-neb-box-variant='outline'] {
         position: relative;
-        left: calc(var(--neb-scale-1) * var(--i) * -1);
+        left: calc(var(--neb-border-width) * var(--i) * -1);
       }
     }
   }
@@ -67,7 +67,7 @@
     .neb-flex-item:not(:first-child) {
       .neb-btn[data-neb-box-variant='outline'] {
         position: relative;
-        top: calc(var(--neb-scale-1) * var(--i) * -1);
+        top: calc(var(--neb-border-width) * var(--i) * -1);
       }
     }
   }
