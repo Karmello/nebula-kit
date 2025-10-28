@@ -10,6 +10,7 @@ import calloutMeta from './Callout/_index'
 import dividerMeta from './Divider/_index'
 import dropdownList from './DropdownList/_index'
 import flexMeta from './Flex/_index'
+import footerMeta from './Footer/_index'
 import gridMeta from './Grid/_index'
 import htmlTagMeta from './HtmlTag/_index'
 import hydrationGateMeta from './HydrationGate/_index'
@@ -41,6 +42,7 @@ export default {
   Divider: dividerMeta,
   DropdownList: dropdownList,
   Flex: flexMeta,
+  Footer: footerMeta,
   Grid: gridMeta,
   HtmlTag: htmlTagMeta,
   HydrationGate: hydrationGateMeta,

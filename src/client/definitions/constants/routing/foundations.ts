@@ -62,4 +62,19 @@ export const FOUNDATION_CATEGORIES = [
       },
     ],
   },
+  {
+    key: 'other',
+    label: 'Other',
+    items: [
+      {
+        key: 'legal',
+        label: 'Legal',
+        sections: [
+          { key: 'license', label: 'License' },
+          { key: 'terms-of-use', label: 'Terms of Use' },
+          { key: 'privacy', label: 'Privacy' },
+        ],
+      },
+    ],
+  },
 ]

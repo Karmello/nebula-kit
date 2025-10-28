@@ -16,7 +16,7 @@ export const FoundationsPageRoutes = () => {
             useLayoutEffect(() => {
               import(`../../foundations/${pascalCase(sectionKey)}/${kebabCase(sectionKey)}.tsx`)
                 .then(mod => {
-                  setComponent(mod.default)
+                  setComponent(() => mod.default)
                 })
                 .catch(ex => {
                   console.warn(ex)
@@ -25,9 +25,9 @@ export const FoundationsPageRoutes = () => {
             if (!Component) return null
             return (
               <>
-                {Component}
+                <Component />
                 <Spacer blockSize={60} />
-                <NextPageButton pageKey="foundations" currentSectionKey={sectionKey} />
+                <NextPageButton pageKey="foundations" />
               </>
             )
           }

@@ -4,7 +4,6 @@ import { AppFrameFooterProps } from 'lib/components'
 import {
   DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT,
   DEFAULT_APP_FRAME_FOOTER_INTENT,
-  DEFAULT_APP_FRAME_FOOTER_MIN_BLOCK_SIZE,
 } from 'lib/components/layouts/AppFrame/slots/AppFrameFooter/definitions'
 
 import { HTML_TAG_PROPS_META } from '../../HtmlTag/props'
@@ -24,10 +23,6 @@ const APP_FRAME_FOOTER_PROPS_META: ComponentMeta<AppFrameFooterProps>['props'] =
   borderIntent: {
     ...BOX_PROPS_META.borderIntent,
     defaultValue: String(DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT),
-  },
-  minBlockSize: {
-    ...BOX_PROPS_META.minBlockSize,
-    defaultValue: String(DEFAULT_APP_FRAME_FOOTER_MIN_BLOCK_SIZE),
   },
   padding: BOX_PROPS_META.padding,
   paddingInline: BOX_PROPS_META.paddingInline,

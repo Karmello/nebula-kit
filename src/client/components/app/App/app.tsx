@@ -7,6 +7,7 @@ import { useNavigateTo } from 'client/services'
 
 import { RootPage } from '../RootPage'
 import { PageNavigation } from './PageNavigation'
+import { AppFooter } from './AppFooter'
 
 export const App = () => {
   const { pathname } = useLocation()
@@ -47,7 +48,9 @@ export const App = () => {
       <AppFrame.Main paddingTop={{ base: 20, lg: 40 }} paddingBottom={80}>
         <RootPage />
       </AppFrame.Main>
-      <AppFrame.Footer>{''}</AppFrame.Footer>
+      <AppFrame.Footer>
+        <AppFooter />
+      </AppFrame.Footer>
     </AppFrame>
   )
 }

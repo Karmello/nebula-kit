@@ -4,7 +4,6 @@ import { applyStaticDataset } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
 import { Box } from 'lib/components'
 import { useNebkitStore } from 'lib/state'
-import { BUTTON_SIZE_CONFIG, DEFAULT_BUTTON_SIZE } from 'lib/components/controls/Button/definitions'
 
 import { useAppFrameContext } from '../../AppFrameProvider'
 
@@ -22,7 +21,6 @@ export const AppFrameHeader = ({
   tagRef,
   intent = DEFAULT_APP_FRAME_HEADER_INTENT,
   borderIntent = DEFAULT_APP_FRAME_HEADER_BORDER_INTENT,
-  minBlockSize = BUTTON_SIZE_CONFIG[DEFAULT_BUTTON_SIZE].blockSize,
   ...paddings
 }: AppFrameHeaderProps) => {
   const { borderWidth } = useNebkitStore()
@@ -40,7 +38,6 @@ export const AppFrameHeader = ({
       variant="solid"
       intent={intent}
       borderIntent={borderIntent}
-      minBlockSize={minBlockSize}
       borderBottomWidth={borderWidth}
       borderRadius={0}
       {...paddings}

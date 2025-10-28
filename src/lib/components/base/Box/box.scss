@@ -1,15 +1,16 @@
 @use 'styles/definitions/definitions.scss' as *;
 
 .neb-box {
-  color: inherit;
   border-radius: var(--neb-border-radius, 0);
 
+  color: inherit;
   width: auto;
   max-width: 100%;
   letter-spacing: 0.5px;
   outline: none;
   border-style: solid;
   border-width: 0;
+  box-sizing: border-box;
 
   display: block;
   overflow-x: visible;

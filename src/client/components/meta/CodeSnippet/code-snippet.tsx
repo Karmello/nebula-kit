@@ -18,6 +18,8 @@ const COLOR_MAP = {
   bg: { light: 'var(--neb-gray-2)', dark: 'var(--neb-gray-14)' },
   // component name
   '#F78C6C': { light: 'var(--neb-danger-ghost-text)', dark: 'var(--neb-danger-ghost-text)' },
+  // native html tag name
+  '#CAECE6': { light: 'var(--neb-danger-ghost-text)', dark: 'var(--neb-danger-ghost-text)' },
   // prop name
   '#C5E478': { light: 'var(--neb-info-ghost-text)', dark: 'var(--neb-info-ghost-text)' },
   // object name, object key names

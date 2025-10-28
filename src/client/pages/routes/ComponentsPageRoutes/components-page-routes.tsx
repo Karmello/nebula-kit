@@ -4,6 +4,7 @@ import { Navigate, Route, Routes } from 'react-router'
 import { ComponentOverviewPage, ComponentPropsPage, ComponentExamplesPage } from 'client/pages'
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
 import { Spacer } from 'lib/components'
+import { NextPageButton } from 'client/components'
 
 const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
   switch (sectionKey) {
@@ -27,7 +28,12 @@ export const ComponentsPageRoutes = () => {
             <Route
               key={`${categoryKey}/${itemKey}/${sectionKey}`}
               path={`${categoryKey}/${itemKey}/${sectionKey}`}
-              element={<PageResolver sectionKey={sectionKey} />}
+              element={
+                <>
+                  <PageResolver sectionKey={sectionKey} />
+                  <NextPageButton pageKey="components" />
+                </>
+              }
             />
           )
         })

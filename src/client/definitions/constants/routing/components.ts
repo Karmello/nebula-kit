@@ -72,6 +72,7 @@ export const COMPONENT_CATEGORIES = [
     label: 'Layouts',
     items: [
       { key: 'app-frame', label: 'AppFrame', sections: COMPONENT_SECTIONS },
+      { key: 'footer', label: 'Footer', sections: COMPONENT_SECTIONS },
       { key: 'split-view', label: 'SplitView', sections: COMPONENT_SECTIONS },
       { key: 'toolbar', label: 'Toolbar', sections: COMPONENT_SECTIONS },
     ],

@@ -15,15 +15,11 @@ const SPLIT_VIEW_PROPS_META: ComponentMeta<SplitViewProps>['props'] = {
   sidePosition: {
     options: SPLIT_VIEW_SIDE_POSITIONS as unknown as string[],
     defaultValue: SPLIT_VIEW_SIDE_POSITIONS[0],
-    isRequired: false,
-    isResponsive: false,
     description: 'Controls which horizontal side of the layout the panel is attached to.',
   },
   switchAt: {
     options: SWITCH_AT as unknown as string[],
     defaultValue: DEFAULT_SWITCH_AT,
-    isRequired: false,
-    isResponsive: false,
     description:
       'Defines the breakpoint at which the side panel changes its behavior from overlaying the content to sitting inline within the layout.',
   },

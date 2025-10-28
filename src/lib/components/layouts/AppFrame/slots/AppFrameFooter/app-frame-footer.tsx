@@ -8,7 +8,6 @@ import {
   AppFrameFooterProps,
   DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT,
   DEFAULT_APP_FRAME_FOOTER_INTENT,
-  DEFAULT_APP_FRAME_FOOTER_MIN_BLOCK_SIZE,
 } from './definitions'
 
 export const AppFrameFooter = ({
@@ -17,7 +16,6 @@ export const AppFrameFooter = ({
   tagRef,
   intent = DEFAULT_APP_FRAME_FOOTER_INTENT,
   borderIntent = DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT,
-  minBlockSize = DEFAULT_APP_FRAME_FOOTER_MIN_BLOCK_SIZE,
   ...paddings
 }: AppFrameFooterProps) => {
   const { borderWidth } = useNebkitStore()
@@ -33,7 +31,6 @@ export const AppFrameFooter = ({
       variant="solid"
       intent={intent}
       borderIntent={borderIntent}
-      minBlockSize={minBlockSize}
       borderTopWidth={borderWidth}
       borderRadius={0}
       {...paddings}

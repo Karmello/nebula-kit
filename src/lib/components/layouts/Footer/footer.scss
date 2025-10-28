@@ -1,0 +1,35 @@
+.neb-footer {
+  .neb-footer-section {
+    > .neb-box {
+      border-top: 0;
+      border-right: 0;
+      background-color: transparent;
+    }
+  }
+}
+
+.neb-footer[data-neb-footer-direction='column'] {
+  .neb-footer-section {
+    > .neb-box {
+      border-left: 0;
+    }
+  }
+  .neb-footer-section:last-child {
+    > .neb-box {
+      border-bottom: 0;
+    }
+  }
+}
+
+.neb-footer[data-neb-footer-direction='row'] {
+  .neb-footer-section {
+    > .neb-box {
+      border-bottom: 0;
+    }
+  }
+  .neb-footer-section:first-child {
+    > .neb-box {
+      border-left: 0;
+    }
+  }
+}

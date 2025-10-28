@@ -1,0 +1,19 @@
+import { ComponentMeta } from 'client/definitions'
+import { FooterSectionProps } from 'lib/components'
+
+import { FOOTER_SECTION_PROPS_META } from './props'
+
+const FOOTER_SECTION_META: ComponentMeta<FooterSectionProps> = {
+  overview: {
+    name: 'Footer.Section',
+    title: 'Flexible subcomponent that represents an individual area within the footer.',
+    description: [
+      'lets you control how sections stretch along the horizontal axis and align their content along the vertical axis',
+    ],
+    composedOf: ['Flex.Item', 'Box'],
+    rendersAs: ['section'],
+  },
+  props: FOOTER_SECTION_PROPS_META,
+}
+
+export { FOOTER_SECTION_META }
