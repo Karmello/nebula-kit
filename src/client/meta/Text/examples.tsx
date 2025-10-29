@@ -53,14 +53,6 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
   },
   {
     jsx: (
-      <Text tag="a" intent="primary" tagAttrs={{ href: 'https://google.com', target: '_blank' }}>
-        Link
-      </Text>
-    ),
-    description: 'Text as link.',
-  },
-  {
-    jsx: (
       <Text intent="neutral" textAlign="center">
         This is an intentionally long line of text that stretches across the container so you can clearly see
         how the textAlign prop changes the alignment inside the element.

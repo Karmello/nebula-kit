@@ -6,7 +6,6 @@ import boxMeta from './Box/_index'
 import breadcrumbMeta from './Breadcrumb/_index'
 import buttonMeta from './Button/_index'
 import buttonGroupMeta from './ButtonGroup/_index'
-import buttonLinkMeta from './ButtonLink/_index'
 import calloutMeta from './Callout/_index'
 import dividerMeta from './Divider/_index'
 import dropdownList from './DropdownList/_index'
@@ -16,6 +15,7 @@ import gridMeta from './Grid/_index'
 import htmlTagMeta from './HtmlTag/_index'
 import hydrationGateMeta from './HydrationGate/_index'
 import iconMeta from './Icon/_index'
+import linkMeta from './Link/_index'
 import markerListMeta from './MarkerList/_index'
 import nebkitProviderMeta from './NebkitProvider/_index'
 import portalMeta from './Portal/_index'
@@ -37,7 +37,6 @@ export default {
   Breadcrumb: breadcrumbMeta,
   ButtonGroup: buttonGroupMeta,
   Button: buttonMeta,
-  ButtonLink: buttonLinkMeta,
   Callout: calloutMeta,
   Divider: dividerMeta,
   DropdownList: dropdownList,
@@ -47,6 +46,7 @@ export default {
   HtmlTag: htmlTagMeta,
   HydrationGate: hydrationGateMeta,
   Icon: iconMeta,
+  Link: linkMeta,
   MarkerList: markerListMeta,
   NebkitProvider: nebkitProviderMeta,
   Portal: portalMeta,

@@ -1,6 +1,6 @@
 import { useNavigateTo } from 'client/services'
-import { Box, Text, Spacer } from 'lib/components'
 import { getCopyrightInfo } from 'client/helpers'
+import { Box, Text, Spacer, Link } from 'lib/components'
 
 export default () => {
   const navigateTo = useNavigateTo()
@@ -16,19 +16,14 @@ export default () => {
       <Text>
         Certain advanced features and components are available under a paid license. Details can be found on
         the{' '}
-        <Text
-          tag="a"
-          intent="info"
-          tagAttrs={{
-            href: '/pricing',
-            onClick: e => {
-              e.preventDefault()
-              navigateTo('/pricing')
-            },
+        <Link
+          href="/pricing"
+          onClick={() => {
+            navigateTo('/pricing')
           }}
         >
-          Pricing page
-        </Text>
+          <Text intent="info">Pricing page</Text>
+        </Link>
         .
       </Text>
       <Spacer />

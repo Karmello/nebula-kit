@@ -1,9 +1,11 @@
-import { HtmlTagProps, ButtonLinkProps } from 'lib/components'
+import { HtmlTagProps, LinkProps, ButtonProps } from 'lib/components'
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'a'>, 'tagAttrs' | 'tagRef'> & {
+type PropsFromHtmlTag = Pick<HtmlTagProps<'a'>, 'tagRef' | 'tagAttrs'> & {
   children: HtmlTagProps<'a'>['children']
 }
 
-type PropsFromButtonLink = Pick<ButtonLinkProps, 'href' | 'onClick' | 'variant' | 'intent' | 'labelIntent'>
+type PropsFromButton = Pick<ButtonProps, 'variant' | 'intent' | 'labelIntent'>
 
-export type SideNavItemProps = PropsFromHtmlTag & PropsFromButtonLink
+type PropsFromLink = Pick<LinkProps, 'href' | 'onClick'>
+
+export type SideNavItemProps = PropsFromHtmlTag & PropsFromButton & PropsFromLink

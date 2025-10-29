@@ -1,17 +1,6 @@
 import { sentenceCase } from 'change-case'
 
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Divider,
-  Flex,
-  ButtonLink,
-  Section,
-  Select,
-  Spacer,
-  Text,
-} from 'lib/components'
+import { Box, ButtonGroup, Divider, Flex, Button, Link, Section, Select, Spacer, Text } from 'lib/components'
 
 import { useNebkitStore } from 'lib/state'
 import { Brand, BRANDS, THEME } from 'lib/definitions'
@@ -52,29 +41,32 @@ export const HomePage = () => {
           </Text>
           <Spacer blockSize={30} />
           <ButtonGroup gap={10}>
-            <ButtonLink
-              intent="primary"
-              iconName="arrow-right"
-              size="sm"
+            <Link
               href="/foundations"
               onClick={() => {
                 navigateTo('/foundations')
               }}
             >
-              Foundations
-            </ButtonLink>
-            <ButtonLink
-              variant="outline"
-              intent="primary"
-              iconName="arrow-right"
-              size="sm"
+              <Button intent="primary" iconName="arrow-right" iconPosition="right" size="sm">
+                Foundations
+              </Button>
+            </Link>
+            <Link
               href="/components"
               onClick={() => {
                 navigateTo('/components')
               }}
             >
-              Components
-            </ButtonLink>
+              <Button
+                variant="outline"
+                intent="primary"
+                iconName="arrow-right"
+                iconPosition="right"
+                size="sm"
+              >
+                Components
+              </Button>
+            </Link>
           </ButtonGroup>
           <Spacer blockSize={50} />
           <Divider />

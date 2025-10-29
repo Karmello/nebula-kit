@@ -1,0 +1,25 @@
+import { ComponentMeta } from 'client/definitions'
+import { LinkProps } from 'lib/components'
+
+import { LINK_EXAMPLES_META } from './examples'
+import { LINK_PROPS_META } from './props'
+
+const LINK_META: ComponentMeta<LinkProps> = {
+  overview: {
+    title: 'Wrapper that turns any interactive element into a navigable link.',
+    description: [
+      'renders its child as <a> tag to enable navigation behavior',
+      'removes the need to manually pass tag, onClick or e.preventDefault() in components',
+      'automatically prevents default browser navigation when onClick is provided, supporting custom routing',
+      'accepts href and target for standard link attributes',
+      'commonly used with Button or Text components for consistent navigation handling',
+    ],
+    rendersAs: ['a'],
+  },
+  examples: LINK_EXAMPLES_META,
+  props: LINK_PROPS_META,
+}
+
+export default {
+  Link: LINK_META,
+}

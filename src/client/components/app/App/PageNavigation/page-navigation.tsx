@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router'
 
-import { ButtonGroup, ButtonLink } from 'lib/components'
+import { ButtonGroup, Button, Link } from 'lib/components'
 import { useNavigateTo } from 'client/services'
 import { PageKey } from 'client/definitions'
 import { useComponentsPageStore, useFoundationsPageStore } from 'client/store'
@@ -22,7 +22,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
 
   return (
     <ButtonGroup direction={{ base: 'column', md: 'row' }} attached stretch={{ base: true, md: false }}>
-      <ButtonLink
+      <Link
         href={`/${PageKey.foundations}`}
         onClick={async () => {
           if (mainOpen) await setMainOpen(false)
@@ -30,11 +30,10 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${foundationsPageStore.sectionKey}`
           )
         }}
-        intent={currentPageKey === PageKey.foundations ? 'tertiary' : 'muted'}
       >
-        Foundations
-      </ButtonLink>
-      <ButtonLink
+        <Button intent={currentPageKey === PageKey.foundations ? 'tertiary' : 'muted'}>Foundations</Button>
+      </Link>
+      <Link
         href={`/${PageKey.components}`}
         onClick={async () => {
           if (mainOpen) await setMainOpen(false)
@@ -42,20 +41,18 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             `/${PageKey.components}/${componentsPageStore.categoryKey}/${componentsPageStore.itemKey}/${componentsPageStore.sectionKey}`
           )
         }}
-        intent={currentPageKey === PageKey.components ? 'tertiary' : 'muted'}
       >
-        Components
-      </ButtonLink>
-      <ButtonLink
+        <Button intent={currentPageKey === PageKey.components ? 'tertiary' : 'muted'}>Components</Button>
+      </Link>
+      <Link
         href={`/${PageKey.pricing}`}
         onClick={async () => {
           if (mainOpen) await setMainOpen(false)
           navigateTo(`/${PageKey.pricing}`)
         }}
-        intent={currentPageKey === PageKey.pricing ? 'tertiary' : 'muted'}
       >
-        Pricing
-      </ButtonLink>
+        <Button intent={currentPageKey === PageKey.pricing ? 'tertiary' : 'muted'}>Pricing</Button>
+      </Link>
     </ButtonGroup>
   )
 }

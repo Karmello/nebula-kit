@@ -5,7 +5,7 @@ import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'client/definitions'
 import { CodeSnippet } from 'client/components'
 import { elemToStringService, useNavigateTo } from 'client/services'
-import { Text, Flex, Box, Spacer, Section, ButtonLink } from 'lib/components'
+import { Text, Flex, Box, Spacer, Section, Button, Link } from 'lib/components'
 
 import { ListWithHeading } from './ListWithHeading'
 import { ListWithChips } from './ListWithChips'
@@ -36,17 +36,16 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       {slots ? <ListWithChips heading="Slots:" items={slots} intent="inverse" /> : null}
       {readMoreLink ? (
         <Box>
-          <ButtonLink
+          <Link
             href={readMoreLink.href}
-            intent="primary"
-            iconName="arrow-right"
             onClick={() => {
               navigateTo(readMoreLink.href)
             }}
-            variant="ghost"
           >
-            {readMoreLink.label}
-          </ButtonLink>
+            <Button intent="primary" iconName="arrow-right" variant="ghost">
+              {readMoreLink.label}
+            </Button>
+          </Link>
         </Box>
       ) : null}
     </Flex>

@@ -1,6 +1,6 @@
 import { useLayoutEffect, useState } from 'react'
 
-import { Flex, ButtonLink } from 'lib/components'
+import { Flex, Button, Link } from 'lib/components'
 import { FOUNDATION_CATEGORIES, COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
 import { useComponentsPageStore, useFoundationsPageStore } from 'client/store'
 import { useNavigateTo } from 'client/services'
@@ -59,18 +59,16 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
 
   return (
     <Flex justifyContent={{ base: 'center', lg: 'flex-start' }}>
-      <ButtonLink
+      <Link
         href={href}
         onClick={() => {
           navigateTo(href)
         }}
-        iconName="arrow-right"
-        iconPosition="right"
-        intent="highlight"
-        size="sm"
       >
-        Continue
-      </ButtonLink>
+        <Button iconName="arrow-right" iconPosition="right" intent="highlight" size="sm">
+          Continue
+        </Button>
+      </Link>
     </Flex>
   )
 }
