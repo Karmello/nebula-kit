@@ -2,7 +2,7 @@ import { RefObject, useCallback, useEffect, useLayoutEffect, useRef, useState } 
 
 import { Animate, Box, Flex, Portal } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
-import { DEFAULT_ANIMATE_DURATION } from 'lib/components/base/Animate/definitions'
+import { DEFAULT_ANIMATE_DURATION } from 'lib/components/motion/Animate/definitions'
 import { BUTTON_SIZE_CONFIG, DEFAULT_BUTTON_SIZE } from 'lib/components/controls/Button/definitions'
 import { useNebkitStore } from 'lib/state'
 import { useOutsideClick } from 'lib/hooks'

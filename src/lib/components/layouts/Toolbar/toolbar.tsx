@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { WithSlots } from 'lib/components/internal'
 import { Grid } from 'lib/components'
-import { DEFAULT_ANIMATE_DURATION } from 'lib/components/base/Animate/definitions'
+import { DEFAULT_ANIMATE_DURATION } from 'lib/components/motion/Animate/definitions'
 import { withPrefix } from 'lib/helpers'
 import { DEFAULT_SWITCH_AT } from 'lib/definitions'
 

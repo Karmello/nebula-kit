@@ -1,7 +1,8 @@
 import { FlexProps, HtmlTagProps, IconProps } from 'lib/components'
+import { RotateProps } from 'lib/components/motion/Rotate/definitions'
 
 export const DEFAULT_WITH_ICON_ICON_POSITION: IconPosition = 'left'
-export const DEFAULT_WITH_ICON_COLUMN_GAP: WithIconProps['columnGap'] = 10
+export const DEFAULT_WITH_ICON_COLUMN_GAP: WithIconProps['columnGap'] = 7
 export const ICON_POSITIONS = ['left', 'right'] as const
 
 export type IconPosition = (typeof ICON_POSITIONS)[number]
@@ -18,4 +19,12 @@ type PropsFromFlex = Pick<FlexProps<'span'>, 'justifyContent' | 'columnGap'>
 
 type PropsFromIcon = Pick<IconProps, 'name' | 'size' | 'intent'>
 
-export type WithIconProps = PropsFromHtmlTag & PropsFromFlex & PropsFromIcon & WithIconOwnProps
+type PropsFromRotate = {
+  iconAngle?: RotateProps['angle']
+}
+
+export type WithIconProps = PropsFromHtmlTag &
+  PropsFromFlex &
+  PropsFromIcon &
+  PropsFromRotate &
+  WithIconOwnProps

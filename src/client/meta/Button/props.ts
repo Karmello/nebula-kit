@@ -14,6 +14,7 @@ import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 import { TEXT_PROPS_META } from '../Text/props'
 import { FLEX_PROPS_META } from '../Flex/props'
+import { WITH_ICON_PROPS_META } from '../WithIcon/props'
 
 const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   children: {
@@ -47,6 +48,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     defaultValue: String(DEFAULT_BUTTON_JUSTIFY_CONTENT),
     description: 'Distributes text and icon along the main axis.',
   },
+  iconAngle: WITH_ICON_PROPS_META.iconAngle,
   size: {
     options: Object.values(BUTTON_SIZES),
     defaultValue: DEFAULT_BUTTON_SIZE,

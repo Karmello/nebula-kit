@@ -1,6 +1,7 @@
-import { BoxProps, FlexProps, HtmlTagProps, TextProps } from 'lib/components'
+import { BoxProps, FlexProps, HtmlTagProps, TextProps, WithIconProps } from 'lib/components'
 import { RespValue, ScaleValue, Sizes } from 'lib/definitions'
 import { BoxIntent, BoxVariant } from 'lib/components/base/Box/definitions'
+import { TextScale } from 'lib/components/base/Text/definitions'
 
 export const BUTTON_SIZE_CONFIG: Record<
   ButtonSize,
@@ -8,13 +9,14 @@ export const BUTTON_SIZE_CONFIG: Record<
     blockSize: ScaleValue
     paddingLeft: ScaleValue
     paddingRight: ScaleValue
-    fontSize: ScaleValue
+    textScale: TextScale
+    iconSize: ScaleValue
   }
 > = {
-  xs: { blockSize: 28, paddingLeft: 8, paddingRight: 8, fontSize: 8 },
-  sm: { blockSize: 38, paddingLeft: 12, paddingRight: 12, fontSize: 14 },
-  md: { blockSize: 44, paddingLeft: 16, paddingRight: 16, fontSize: 16 },
-  lg: { blockSize: 52, paddingLeft: 24, paddingRight: 24, fontSize: 18 },
+  xs: { blockSize: 28, paddingLeft: 8, paddingRight: 8, textScale: 'compact', iconSize: 13 },
+  sm: { blockSize: 38, paddingLeft: 12, paddingRight: 12, textScale: 'regular', iconSize: 15 },
+  md: { blockSize: 44, paddingLeft: 16, paddingRight: 16, textScale: 'regular', iconSize: 16 },
+  lg: { blockSize: 52, paddingLeft: 24, paddingRight: 24, textScale: 'regular', iconSize: 17 },
 }
 
 export const DEFAULT_BUTTON_VARIANT: BoxVariant = 'solid'
@@ -43,8 +45,11 @@ type PropsFromText = Pick<TextProps<'span'>, 'iconName' | 'iconPosition'> & {
   labelIntent?: TextProps<'span'>['intent']
 }
 
+type PropsFromWithIcon = Pick<WithIconProps, 'iconAngle'>
+
 export type ButtonProps<T extends ButtonTag = 'button'> = PropsFromHtmlTag<T> &
   PropsFromBox<T> &
   PropsFromFlex &
   PropsFromText &
+  PropsFromWithIcon &
   ButtonOwnProps

@@ -38,7 +38,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
           labelIntent={labelIntent}
           justifyContent="space-between"
           intent={intent}
-          iconName={open ? 'chevron-up' : 'chevron-down'}
+          iconName="chevron-down"
           iconPosition="right"
           tagAttrs={{
             style: { borderRadius: 0 },
@@ -46,6 +46,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
               setOpen(!open)
             },
           }}
+          iconAngle={open ? 180 : 0}
         >
           {label}
         </Button>

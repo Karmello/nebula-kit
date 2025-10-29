@@ -10,6 +10,7 @@ import {
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { ICON_PROPS_META } from '../Icon/props'
 import { FLEX_PROPS_META } from '../Flex/props'
+import { ROTATE_PROPS_META } from '../Rotate/props'
 
 const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
   children: {
@@ -22,6 +23,11 @@ const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
   columnGap: {
     ...FLEX_PROPS_META.columnGap,
     defaultValue: String(DEFAULT_WITH_ICON_COLUMN_GAP),
+  },
+  iconAngle: {
+    ...ROTATE_PROPS_META.angle,
+    isRequired: false,
+    description: 'Defines the rotation angle of the icon, animating when the value changes.',
   },
   ...ICON_PROPS_META,
   position: {

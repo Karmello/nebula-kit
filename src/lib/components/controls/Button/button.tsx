@@ -33,6 +33,8 @@ export const Button = <T extends ButtonTag = 'button'>({
   iconPosition,
   labelIntent,
   justifyContent = DEFAULT_BUTTON_JUSTIFY_CONTENT,
+  // WithIcon
+  iconAngle,
   // own
   size = DEFAULT_BUTTON_SIZE,
   fullWidth,
@@ -74,13 +76,15 @@ export const Button = <T extends ButtonTag = 'button'>({
           position={iconPosition}
           columnGap={children === undefined ? 0 : undefined}
           justifyContent={justifyContent}
+          size={BUTTON_SIZE_CONFIG[size].iconSize}
+          iconAngle={iconAngle}
         >
-          <Text tag="span" intent={labelIntent}>
+          <Text tag="span" intent={labelIntent} scale={BUTTON_SIZE_CONFIG[size].textScale}>
             {children}
           </Text>
         </WithIcon>
       ) : (
-        <Text tag="span" intent={labelIntent}>
+        <Text tag="span" intent={labelIntent} scale={BUTTON_SIZE_CONFIG[size].textScale}>
           {children}
         </Text>
       )}

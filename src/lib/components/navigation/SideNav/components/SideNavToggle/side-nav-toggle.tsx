@@ -24,7 +24,7 @@ export const SideNavToggle = () => {
             'aria-expanded': isAnyCategoryExpanded,
           }}
           iconName={isAnyCategoryExpanded ? 'list-chevrons-down-up' : 'list-chevrons-up-down'}
-          size="xs"
+          size="sm"
           intent="neutral"
           variant="ghost"
         />

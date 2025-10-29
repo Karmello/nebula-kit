@@ -12,7 +12,6 @@ export const COMPONENT_CATEGORIES = [
       { key: 'html-tag', label: 'HtmlTag', sections: COMPONENT_SECTIONS },
       { key: 'box', label: 'Box', sections: COMPONENT_SECTIONS },
       { key: 'text', label: 'Text', sections: COMPONENT_SECTIONS },
-      { key: 'animate', label: 'Animate', sections: COMPONENT_SECTIONS },
     ],
   },
   {
@@ -24,6 +23,14 @@ export const COMPONENT_CATEGORIES = [
       { key: 'table', label: 'Table', sections: COMPONENT_SECTIONS },
       { key: 'spacer', label: 'Spacer', sections: COMPONENT_SECTIONS },
       { key: 'with-icon', label: 'WithIcon', sections: COMPONENT_SECTIONS },
+    ],
+  },
+  {
+    key: 'motion',
+    label: 'Motion',
+    items: [
+      { key: 'animate', label: 'Animate', sections: COMPONENT_SECTIONS },
+      { key: 'rotate', label: 'Rotate', sections: COMPONENT_SECTIONS },
     ],
   },
   {

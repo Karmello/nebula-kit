@@ -17,6 +17,7 @@ const DROPDOWN_LIST_ITEM_PROPS_META: ComponentMeta<DropdownListItemProps>['props
   justifyContent: BUTTON_PROPS_META.justifyContent,
   labelIntent: BUTTON_PROPS_META.labelIntent,
   tag: BUTTON_PROPS_META.tag,
+  iconAngle: BUTTON_PROPS_META.iconAngle,
 }
 
 export { DROPDOWN_LIST_ITEM_PROPS_META }

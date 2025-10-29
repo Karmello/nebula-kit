@@ -20,6 +20,7 @@ import markerListMeta from './MarkerList/_index'
 import nebkitProviderMeta from './NebkitProvider/_index'
 import portalMeta from './Portal/_index'
 import revealMeta from './Reveal/_index'
+import rotateMeta from './Rotate/_index'
 import sectionMeta from './Section/_index'
 import selectMeta from './Select/_index'
 import sideNavMeta from './SideNav/_index'
@@ -51,6 +52,7 @@ export default {
   NebkitProvider: nebkitProviderMeta,
   Portal: portalMeta,
   Reveal: revealMeta,
+  Rotate: rotateMeta,
   Section: sectionMeta,
   Select: selectMeta,
   SideNav: sideNavMeta,

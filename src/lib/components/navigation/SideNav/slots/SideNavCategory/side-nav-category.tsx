@@ -59,7 +59,8 @@ export const SideNavCategory = ({
                   },
                   'aria-expanded': expandedCategories[id],
                 }}
-                iconName={expandedCategories[id] ? 'chevron-down' : 'chevron-right'}
+                iconName="chevron-right"
+                iconAngle={expandedCategories[id] ? 90 : 0}
                 variant={variant}
                 intent={intent}
                 labelIntent={labelIntent}
