@@ -3,8 +3,8 @@ import { expectType, expectError } from 'tsd'
 
 import { Button } from '..'
 
-// children are required
-expectError(<Button />)
+// children are optional
+expectType(<Button />)
 
 // children passed
 expectType(<Button>Button</Button>)
