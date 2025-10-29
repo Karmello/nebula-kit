@@ -73,7 +73,7 @@ export const FOUNDATION_CATEGORIES = [
         sections: [
           { key: 'license', label: 'License' },
           { key: 'terms-of-use', label: 'Terms of Use' },
-          { key: 'privacy', label: 'Privacy' },
+          { key: 'privacy-policy', label: 'Privacy Policy' },
         ],
       },
     ],
