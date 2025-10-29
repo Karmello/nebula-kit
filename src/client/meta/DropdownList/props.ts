@@ -5,6 +5,9 @@ import {
   DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
   DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT,
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
+  DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
+  DROPDOWN_LIST_SCROLL_ALIGN,
+  DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
 } from 'lib/components/overlays/DropdownList/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -24,6 +27,16 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
     options: ['boolean'],
     defaultValue: String(DEFAULT_DROPDOWN_LIST_KEEP_OPEN),
     description: "When true, the list won't be auto-closed on item click.",
+  },
+  scrollToIndex: {
+    options: ['number'],
+    defaultValue: String(DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX),
+    description: 'Scrolls the list to the item at the given index on render.',
+  },
+  scrollAlign: {
+    options: Object.values(DROPDOWN_LIST_SCROLL_ALIGN),
+    defaultValue: String(DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN),
+    description: 'Defines how the target item is positioned within the scroll area.',
   },
   inlineSize: BOX_PROPS_META.inlineSize,
   itemBorderIntent: {

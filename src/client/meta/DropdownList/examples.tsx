@@ -131,6 +131,21 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
       </DropdownList>
     ),
   },
+  {
+    description: 'DropdownList configured to center a specific item on render.',
+    jsx: (
+      <DropdownList inlineSize="200px" scrollToIndex={3} scrollAlign="center">
+        <DropdownList.Trigger>
+          <Button variant="outline" intent="primary" fullWidth>
+            Trigger
+          </Button>
+        </DropdownList.Trigger>
+        {Array.from({ length: 10 }, (v, k) => (
+          <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
+        ))}
+      </DropdownList>
+    ),
+  },
 ]
 
 export { DROPDOWN_LIST_EXAMPLES_META }

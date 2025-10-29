@@ -6,7 +6,7 @@ export const AppFooter = () => {
   const navigateTo = useNavigateTo()
 
   return (
-    <Footer paddingBlock={15} paddingInline={25} paddingBottom={{ base: 15, lg: 35 }}>
+    <Footer switchAt="md" paddingBlock={15} paddingInline={25} paddingBottom={{ base: 15, lg: 35 }}>
       <Footer.Section>
         <Text scale="compact" bold>
           Project

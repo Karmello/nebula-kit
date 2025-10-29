@@ -15,6 +15,7 @@ const DROPDOWN_LIST_META: ComponentMeta<DropdownListProps> = {
       'controls the open and closed state of the list',
       'handles entry and exit animations',
       'adjusts scrolling based on the "visibleItemsCount" prop',
+      'scrolls to a specific item index based on "scrollToIndex" and "scrollAlign" props',
       'manages the inline size of the list container',
       'supports variant and intent styling for list items',
       'supports separate intent styling for the list container border',

@@ -1,4 +1,4 @@
-import { RefObject, useCallback, useEffect, useRef, useState } from 'react'
+import { RefObject, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 
 import { Animate, Box, Flex, Portal } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
@@ -8,10 +8,12 @@ import { useNebkitStore } from 'lib/state'
 import { useOutsideClick } from 'lib/hooks'
 
 import {
+  DropdownListProps,
   DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
   DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT,
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
-  DropdownListProps,
+  DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
+  DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
 } from './definitions'
 
 import { DropdownListProvider } from './DropdownListProvider'
@@ -28,6 +30,8 @@ export const DropdownList = ({
   // own
   visibleItemsCount = DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   keepOpen = DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
+  scrollToIndex = DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
+  scrollAlign = DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
   itemVariant,
   itemIntent,
   listBorderIntent,
@@ -38,9 +42,10 @@ export const DropdownList = ({
 
   const { borderWidth } = useNebkitStore()
 
-  const ref = useRef<HTMLDivElement>(null)
+  const rootRef = useRef<HTMLDivElement>(null)
   const triggerRef = useRef<HTMLElement>(null)
   const portalRef = useRef<HTMLDivElement>(null)
+  const scrollWrapperRef = useRef<HTMLDivElement>(null)
 
   useOutsideClick([triggerRef, portalRef], () => setAnimateVisible(false))
 
@@ -68,6 +73,20 @@ export const DropdownList = ({
       }, DEFAULT_ANIMATE_DURATION)
     }
   }, [animateVisible])
+
+  useLayoutEffect(() => {
+    if (scrollWrapperRef.current) {
+      if (scrollToIndex === undefined || visibleItemsCount === undefined) return
+      let baseIndex = scrollToIndex
+      if (scrollAlign === 'center') baseIndex -= (visibleItemsCount - 1) / 2
+      else if (scrollAlign === 'end') baseIndex -= visibleItemsCount - 1
+      if (baseIndex >= 0) {
+        const allItemsBlockSize = baseIndex * BUTTON_SIZE_CONFIG[size].blockSize
+        const allItemsBorderWidth = baseIndex * borderWidth
+        scrollWrapperRef.current.scrollTop = allItemsBlockSize + allItemsBorderWidth
+      }
+    }
+  }, [scrollWrapperRef.current, scrollToIndex, scrollAlign])
 
   const finalChildren = typeof children === 'function' ? children({ open, animateVisible }) : children
 
@@ -103,7 +122,7 @@ export const DropdownList = ({
             itemIntent={itemIntent}
           >
             <Box
-              tagRef={tagRef || ref}
+              tagRef={tagRef || rootRef}
               tagAttrs={{
                 ...tagAttrs,
                 role: 'listbox',
@@ -126,6 +145,7 @@ export const DropdownList = ({
                 >
                   <Animate property="blockSize" visible={animateVisible}>
                     <Box
+                      tagRef={scrollWrapperRef}
                       blockSize={itemsContainerBlockSize}
                       overflowY="auto"
                       overflowX="hidden"
