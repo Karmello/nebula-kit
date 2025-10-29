@@ -5,31 +5,37 @@ export const AppFooter = () => {
   return (
     <Footer paddingBlock={15} paddingInline={25} paddingBottom={{ base: 15, lg: 35 }}>
       <Footer.Section>
-        <Text bold>Project</Text>
+        <Text scale="compact" bold>
+          Project
+        </Text>
         <Spacer blockSize={10} />
-        <Text>v0.0.1</Text>
+        <Text scale="compact">v0.0.1</Text>
       </Footer.Section>
       <Footer.Section>
-        <Text bold>Contact</Text>
+        <Text scale="compact" bold>
+          Contact
+        </Text>
         <Spacer blockSize={10} />
-        <Text>nebulakit@gmail.com</Text>
+        <Text scale="compact">nebulakit@gmail.com</Text>
       </Footer.Section>
       <Footer.Section>
-        <Text bold>Legal</Text>
+        <Text scale="compact" bold>
+          Legal
+        </Text>
         <Spacer blockSize={10} />
         <MarkerList>
           <MarkerList.Item>
-            <Text>License</Text>
+            <Text scale="compact">License</Text>
           </MarkerList.Item>
           <MarkerList.Item>
-            <Text>Terms of Use</Text>
+            <Text scale="compact">Terms of Use</Text>
           </MarkerList.Item>
           <MarkerList.Item>
-            <Text>Privacy</Text>
+            <Text scale="compact">Privacy</Text>
           </MarkerList.Item>
         </MarkerList>
         <Spacer />
-        <Text typography="caption" intent="primary">
+        <Text scale="compact" typography="caption" intent="primary">
           {getCopyrightInfo()}
         </Text>
       </Footer.Section>

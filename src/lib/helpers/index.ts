@@ -1,3 +1,3 @@
 export * from './getLibMsg'
-export * from './scale'
+export * from './resolveScale'
 export * from './withPrefix'

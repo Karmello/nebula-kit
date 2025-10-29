@@ -2,9 +2,11 @@ import { ComponentMeta } from 'client/definitions'
 
 import {
   DEFAULT_TEXT_TYPOGRAPHY,
-  TextProps,
+  DEFAULT_TEXT_SCALE,
   TEXT_SPACE,
   TEXT_TYPOGRAPHY,
+  TEXT_SCALE,
+  TextProps,
 } from 'lib/components/base/Text/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -19,6 +21,11 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     isResponsive: false,
     description:
       'Applies a predefined typography style from the design system, controlling tag, fontSize and lineHeight together.',
+  },
+  scale: {
+    options: Object.values(TEXT_SCALE),
+    defaultValue: DEFAULT_TEXT_SCALE,
+    description: 'Defines the size system used for text rendering.',
   },
   bold: {
     options: ['boolean'],

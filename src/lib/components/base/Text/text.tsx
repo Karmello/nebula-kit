@@ -2,9 +2,15 @@ import classNames from 'classnames'
 
 import { Box, WithIcon } from 'lib/components'
 import { applyStaticDataset } from 'lib/service'
-import { scale, withPrefix } from 'lib/helpers'
+import { withPrefix, resolveScale } from 'lib/helpers'
 
-import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_TYPOGRAPHY_CONFIG, TextTag, TextProps } from './definitions'
+import {
+  TEXT_TYPOGRAPHY_CONFIG,
+  DEFAULT_TEXT_TYPOGRAPHY,
+  DEFAULT_TEXT_SCALE,
+  TextTag,
+  TextProps,
+} from './definitions'
 
 import './text.scss'
 
@@ -22,6 +28,7 @@ export const Text = <T extends TextTag = 'p'>({
   iconPosition,
   // own
   typography = DEFAULT_TEXT_TYPOGRAPHY,
+  scale = DEFAULT_TEXT_SCALE,
   bold = false,
   italic = false,
   underline = false,
@@ -32,14 +39,14 @@ export const Text = <T extends TextTag = 'p'>({
 }: TextProps<T>) => {
   return (
     <Box
-      tag={tag || TEXT_TYPOGRAPHY_CONFIG[typography].tag}
+      tag={tag || TEXT_TYPOGRAPHY_CONFIG[scale][typography].tag}
       tagRef={tagRef as any}
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('text'), tagAttrs?.className),
         style: {
-          fontSize: scale(TEXT_TYPOGRAPHY_CONFIG[typography].fontSize),
-          lineHeight: TEXT_TYPOGRAPHY_CONFIG[typography].lineHeight,
+          fontSize: resolveScale(TEXT_TYPOGRAPHY_CONFIG[scale][typography].fontSize),
+          lineHeight: TEXT_TYPOGRAPHY_CONFIG[scale][typography].lineHeight,
           ...(clampLines && clampLines > 0
             ? {
                 display: '-webkit-box',
@@ -59,7 +66,11 @@ export const Text = <T extends TextTag = 'p'>({
     >
       {space === 'start' || space === 'both' ? <> </> : null}
       {iconName ? (
-        <WithIcon name={iconName} position={iconPosition} size={TEXT_TYPOGRAPHY_CONFIG[typography].iconSize}>
+        <WithIcon
+          name={iconName}
+          position={iconPosition}
+          size={TEXT_TYPOGRAPHY_CONFIG[scale][typography].iconSize}
+        >
           {children}
         </WithIcon>
       ) : (

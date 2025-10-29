@@ -11,7 +11,8 @@ const TEXT_META: ComponentMeta<TextProps> = {
     description: [
       'renders semantic text elements with consistent typography',
       'provides common text styling and formatting options',
-      'allows integration of inline icons alongside text',
+      'supports inline icons alongside text',
+      'adapts to different layout contexts through adjustable text scale',
     ],
     composedOf: ['Box', 'WithIcon'],
     rendersAs: TEXT_TAGS,

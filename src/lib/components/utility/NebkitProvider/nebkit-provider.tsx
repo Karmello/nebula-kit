@@ -2,7 +2,7 @@ import { ReactElement, useEffect, useLayoutEffect } from 'react'
 
 import { useNebkitStore } from 'lib/state'
 import { Theme } from 'lib/definitions'
-import { scale } from 'lib/helpers'
+import { resolveScale } from 'lib/helpers'
 
 import { NebkitProviderProps, NEBKIT_THEME_BACKGROUNDS_MAP, DEFAULT_NEBKIT_BACKGROUND } from './definitions'
 
@@ -42,8 +42,14 @@ export const NebkitProvider = <T extends Theme = 'light'>({
     }
     document?.documentElement.setAttribute('data-theme', nebkitStore.theme)
     document.documentElement.setAttribute('data-brand', nebkitStore.brand)
-    document.documentElement.style.setProperty('--neb-border-width', scale(nebkitStore.borderWidth) || '')
-    document.documentElement.style.setProperty('--neb-border-radius', scale(nebkitStore.borderRadius) || '')
+    document.documentElement.style.setProperty(
+      '--neb-border-width',
+      resolveScale(nebkitStore.borderWidth) || ''
+    )
+    document.documentElement.style.setProperty(
+      '--neb-border-radius',
+      resolveScale(nebkitStore.borderRadius) || ''
+    )
   }, [nebkitStore])
 
   return children
