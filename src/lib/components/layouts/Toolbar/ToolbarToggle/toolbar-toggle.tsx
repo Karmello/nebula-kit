@@ -1,4 +1,4 @@
-import { Box, IconButton } from 'lib/components'
+import { Box, Button } from 'lib/components'
 
 import { useToolbarContext } from '../ToolbarProvider'
 
@@ -8,7 +8,7 @@ export const ToolbarToggle = () => {
   return (
     <Box>
       <Box display={{ [String(switchAt)]: 'none' }}>
-        <IconButton
+        <Button
           intent="neutral"
           iconName={mainOpen ? 'close' : 'menu'}
           tagAttrs={{

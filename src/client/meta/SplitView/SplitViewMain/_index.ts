@@ -8,7 +8,7 @@ const SPLIT_VIEW_MAIN_META: ComponentMeta<SplitViewMainProps> = {
     name: 'SplitView.Main',
     title: 'Defines the main panel region of SplitView.',
     description: ['holds the primary content displayed alongside the side panel'],
-    composedOf: ['Box', 'Flex', 'IconButton', 'Spacer'],
+    composedOf: ['Box', 'Flex', 'Button', 'Spacer'],
     rendersAs: ['section'],
     slots: ['SplitView.MainBar'],
   },

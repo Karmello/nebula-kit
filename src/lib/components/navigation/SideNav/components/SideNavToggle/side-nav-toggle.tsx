@@ -1,4 +1,4 @@
-import { Box, Divider, IconButton, Spacer } from 'lib/components'
+import { Box, Divider, Button, Spacer } from 'lib/components'
 
 import { useSideNavContext } from '../../SideNavProvider'
 
@@ -14,7 +14,7 @@ export const SideNavToggle = () => {
   return (
     <>
       <Box padding={10}>
-        <IconButton
+        <Button
           tagAttrs={{
             onClick: () => {
               setExpandedCategories(state =>

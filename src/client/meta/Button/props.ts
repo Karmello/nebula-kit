@@ -18,7 +18,7 @@ import { FLEX_PROPS_META } from '../Flex/props'
 const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   children: {
     ...HTML_TAG_PROPS_META.children,
-    isRequired: true,
+    description: 'Label rendered.',
   },
   tag: {
     ...HTML_TAG_PROPS_META.tag,

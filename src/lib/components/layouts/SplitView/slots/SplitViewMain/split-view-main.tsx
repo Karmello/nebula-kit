@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import { Box, Flex, IconButton, Spacer } from 'lib/components'
+import { Box, Flex, Spacer, Button } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
@@ -35,7 +35,7 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
               flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'}
               gap={15}
             >
-              <IconButton
+              <Button
                 tagAttrs={{
                   onClick: () => setSideOpen(!sideOpen),
                   'aria-expanded': sideOpen,

@@ -2,13 +2,17 @@
   font-family: inherit;
   line-height: 1;
   cursor: pointer;
-  box-sizing: border-box;
+  overflow: hidden;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+.neb-btn-square {
+  aspect-ratio: 1 / 1;
 }
 
 a.neb-btn {

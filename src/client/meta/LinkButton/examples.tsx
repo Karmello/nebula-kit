@@ -4,8 +4,7 @@ import { LinkButton, LinkButtonProps } from 'lib/components/controls/LinkButton'
 const LINK_BUTTON_EXAMPLES_META: ComponentMeta<LinkButtonProps>['examples'] = [
   {
     jsx: <LinkButton href="https://google.com" />,
-    description:
-      'By default, LinkButton renders IconButton with "arrow-right" icon and navigates to the URL provided through the href prop.',
+    description: 'LinkButton that navigates to the URL provided through the href prop.',
   },
   {
     jsx: <LinkButton href="https://google.com" target="_blank" iconName="external-link" />,

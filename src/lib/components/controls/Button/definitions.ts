@@ -33,9 +33,7 @@ type ButtonOwnProps = {
   fullWidth?: RespValue<boolean>
 }
 
-type PropsFromHtmlTag<T extends ButtonTag = 'button'> = Omit<HtmlTagProps<T>, 'children'> & {
-  children: HtmlTagProps<T>['children']
-}
+type PropsFromHtmlTag<T extends ButtonTag = 'button'> = HtmlTagProps<T>
 
 type PropsFromBox<T extends ButtonTag = 'button'> = Pick<BoxProps<T>, 'variant' | 'intent' | 'disabled'>
 

@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 import { BundledLanguage, TokensResult } from 'shiki'
 
-import { Box, Flex, IconButton, Text } from 'lib/components'
+import { Box, Flex, Button, Text } from 'lib/components'
 
 import { tokenizeCode } from './highlight-tokens'
 import { ScaleValue } from 'lib/definitions'
@@ -79,7 +79,7 @@ export const CodeSnippet = ({ code, lang = 'tsx', borderRadius }: CodeSnippetPro
       tagAttrs={{ style: { backgroundColor: COLOR_MAP.bg[theme], borderRadius } }}
     >
       <Box padding={2} textAlign="end">
-        <IconButton
+        <Button
           iconName={copied ? 'check' : 'copy'}
           size="xs"
           variant="ghost"

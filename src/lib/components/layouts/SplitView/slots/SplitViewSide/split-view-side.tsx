@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import classNames from 'classnames'
 
-import { Animate, Box, Flex, IconButton } from 'lib/components'
+import { Animate, Box, Flex, Button } from 'lib/components'
 import { FocusTrap } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 import { useNebkitStore } from 'lib/state'
@@ -54,7 +54,7 @@ export const SplitViewSide = ({
             {mode === 'overlay' ? (
               <Flex justifyContent="flex-end">
                 <Box padding={6} paddingBottom={20}>
-                  <IconButton
+                  <Button
                     tagAttrs={{
                       onClick: () => {
                         setSideOpen(false)

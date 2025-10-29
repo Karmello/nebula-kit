@@ -7,12 +7,11 @@ import { BUTTON_EXAMPLES_META } from './examples'
 
 const BUTTON_META: ComponentMeta<ButtonProps> = {
   overview: {
-    title:
-      'Interactive control for triggering actions, combining surface and text systems to provide a consistent, accessible entry point.',
+    title: 'Interactive control for triggering actions.',
     description: [
       'provides a consistent, accessible trigger for user actions',
       'handles interactive states: hover, focus, active, disabled',
-      'supports optional icon and text composition for clarity',
+      'supports text and icon composition',
       'supports full-width layout to span the entire container',
     ],
     composedOf: ['Box', 'Text'],

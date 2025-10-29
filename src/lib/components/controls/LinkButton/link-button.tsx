@@ -1,6 +1,6 @@
 import { MouseEvent } from 'react'
 
-import { Button, IconButton } from 'lib/components'
+import { Button } from 'lib/components'
 
 import {
   DEFAULT_LINK_BUTTON_ICONNAME,
@@ -58,7 +58,7 @@ export const LinkButton = ({
     )
   } else {
     return (
-      <IconButton
+      <Button
         tag="a"
         tagAttrs={{ ...tagAttrs, href, target, onClick: finalOnClick }}
         tagRef={tagRef}

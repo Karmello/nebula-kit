@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Box, Button, ButtonGroup, IconButton, Toolbar } from 'lib/components'
+import { Box, Button, ButtonGroup, Toolbar } from 'lib/components'
 import { ToolbarProps } from 'lib/components/layouts/Toolbar/definitions'
 
 const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarProps>['examples'] = [
@@ -32,7 +32,7 @@ const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarProps>['examples'] = [
           </ButtonGroup>
         </Toolbar.Main>
         <Toolbar.End>
-          <IconButton iconName="chevron-down" />
+          <Button iconName="chevron-down" />
         </Toolbar.End>
       </Toolbar>
     ),

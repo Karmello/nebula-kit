@@ -51,7 +51,11 @@ export const Button = <T extends ButtonTag = 'button'>({
       tagAttrs={
         {
           ...tagAttrs,
-          className: classNames(withPrefix('btn'), tagAttrs?.className),
+          className: classNames(
+            withPrefix('btn'),
+            children === undefined ? withPrefix('btn-square') : undefined,
+            tagAttrs?.className
+          ),
           type: tagAttrs?.type || 'button',
           style: { ...tagAttrs?.style, justifyContent },
         } as PropsWithoutRef<ComponentProps<T>>
@@ -65,10 +69,10 @@ export const Button = <T extends ButtonTag = 'button'>({
     >
       {iconName ? (
         <WithIcon
-          tagAttrs={{ style: { inlineSize: children !== null ? '100%' : undefined } }}
+          tagAttrs={{ style: { inlineSize: children !== undefined ? '100%' : undefined } }}
           name={iconName}
           position={iconPosition}
-          columnGap={children === null ? 0 : undefined}
+          columnGap={children === undefined ? 0 : undefined}
           justifyContent={justifyContent}
         >
           <Text tag="span" intent={labelIntent}>
