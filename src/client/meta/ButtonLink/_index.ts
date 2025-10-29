@@ -1,10 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
-import { LinkButtonProps } from 'lib/components/controls/LinkButton'
+import { ButtonLinkProps } from 'lib/components/controls/ButtonLink'
 
-import { LINK_BUTTON_EXAMPLES_META } from './examples'
-import { LINK_BUTTON_PROPS_META } from './props'
+import { BUTTON_LINK_EXAMPLES_META } from './examples'
+import { BUTTON_LINK_PROPS_META } from './props'
 
-const LINK_BUTTON_META: ComponentMeta<LinkButtonProps> = {
+const BUTTON_LINK_META: ComponentMeta<ButtonLinkProps> = {
   overview: {
     title: 'Button-like link component that handles navigation and click behavior automatically.',
     description: [
@@ -15,10 +15,10 @@ const LINK_BUTTON_META: ComponentMeta<LinkButtonProps> = {
     composedOf: ['Button'],
     rendersAs: ['a'],
   },
-  examples: LINK_BUTTON_EXAMPLES_META,
-  props: LINK_BUTTON_PROPS_META,
+  examples: BUTTON_LINK_EXAMPLES_META,
+  props: BUTTON_LINK_PROPS_META,
 }
 
 export default {
-  LinkButton: LINK_BUTTON_META,
+  ButtonLink: BUTTON_LINK_META,
 }

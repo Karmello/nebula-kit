@@ -32,7 +32,7 @@ export const COMPONENT_CATEGORIES = [
     items: [
       { key: 'button', label: 'Button', sections: COMPONENT_SECTIONS },
       { key: 'button-group', label: 'ButtonGroup', sections: COMPONENT_SECTIONS },
-      { key: 'link-button', label: 'LinkButton', sections: COMPONENT_SECTIONS },
+      { key: 'button-link', label: 'ButtonLink', sections: COMPONENT_SECTIONS },
     ],
   },
   {

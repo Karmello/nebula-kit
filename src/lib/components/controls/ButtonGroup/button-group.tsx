@@ -72,12 +72,12 @@ export const ButtonGroup = <T extends ButtonGroupTag = 'div'>({
       gap={attached ? 0 : gap}
       flexWrap="nowrap"
     >
-      <WithSlots<'Button' | 'LinkButton'>
+      <WithSlots<'Button' | 'ButtonLink'>
         childrenToVerify={children}
         componentName="ButtonGroup"
         slotsConfig={[
           { name: 'Button', allowMultiple: true },
-          { name: 'LinkButton', allowMultiple: true },
+          { name: 'ButtonLink', allowMultiple: true },
         ]}
         someRequired
       >

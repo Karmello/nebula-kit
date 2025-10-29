@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 
-import { AppFrame, LinkButton, Toolbar } from 'lib/components'
+import { AppFrame, ButtonLink, Toolbar } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/services'
 
@@ -27,7 +27,7 @@ export const App = () => {
           {({ setMainOpen, mainOpen }) => (
             <>
               <Toolbar.Start>
-                <LinkButton
+                <ButtonLink
                   href={`/${PageKey.home}`}
                   onClick={async () => {
                     if (mainOpen) await setMainOpen(false)
@@ -36,7 +36,7 @@ export const App = () => {
                   intent={currentPageKey === PageKey.home ? 'tertiary' : 'muted'}
                 >
                   NebulaKit
-                </LinkButton>
+                </ButtonLink>
               </Toolbar.Start>
               <Toolbar.Main>
                 <PageNavigation setMainOpen={setMainOpen} mainOpen={mainOpen} />

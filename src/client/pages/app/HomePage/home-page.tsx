@@ -6,7 +6,7 @@ import {
   ButtonGroup,
   Divider,
   Flex,
-  LinkButton,
+  ButtonLink,
   Section,
   Select,
   Spacer,
@@ -52,7 +52,7 @@ export const HomePage = () => {
           </Text>
           <Spacer blockSize={30} />
           <ButtonGroup gap={10}>
-            <LinkButton
+            <ButtonLink
               intent="primary"
               iconName="arrow-right"
               size="sm"
@@ -62,8 +62,8 @@ export const HomePage = () => {
               }}
             >
               Foundations
-            </LinkButton>
-            <LinkButton
+            </ButtonLink>
+            <ButtonLink
               variant="outline"
               intent="primary"
               iconName="arrow-right"
@@ -74,7 +74,7 @@ export const HomePage = () => {
               }}
             >
               Components
-            </LinkButton>
+            </ButtonLink>
           </ButtonGroup>
           <Spacer blockSize={50} />
           <Divider />

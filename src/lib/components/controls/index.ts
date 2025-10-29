@@ -1,3 +1,3 @@
 export * from './Button'
 export * from './ButtonGroup'
-export * from './LinkButton'
+export * from './ButtonLink'

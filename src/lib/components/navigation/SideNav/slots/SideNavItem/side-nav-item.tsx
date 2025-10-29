@@ -1,4 +1,4 @@
-import { LinkButton } from 'lib/components'
+import { ButtonLink } from 'lib/components'
 
 import { SideNavItemProps } from './definitions'
 
@@ -7,7 +7,7 @@ export const SideNavItem = ({
   tagAttrs,
   tagRef,
   children,
-  // LinkButton
+  // ButtonLink
   href,
   onClick,
   variant,
@@ -15,7 +15,7 @@ export const SideNavItem = ({
   labelIntent,
 }: SideNavItemProps) => {
   return (
-    <LinkButton
+    <ButtonLink
       tagAttrs={tagAttrs}
       tagRef={tagRef}
       onClick={onClick}
@@ -27,7 +27,7 @@ export const SideNavItem = ({
       fullWidth
     >
       {children}
-    </LinkButton>
+    </ButtonLink>
   )
 }
 

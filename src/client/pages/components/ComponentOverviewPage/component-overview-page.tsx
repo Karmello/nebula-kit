@@ -1,11 +1,11 @@
 import { pascalCase } from 'change-case'
 
+import meta from 'client/meta'
 import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'client/definitions'
 import { CodeSnippet } from 'client/components'
 import { elemToStringService, useNavigateTo } from 'client/services'
-import meta from 'client/meta'
-import { Text, Flex, Box, Spacer, Section, LinkButton } from 'lib/components'
+import { Text, Flex, Box, Spacer, Section, ButtonLink } from 'lib/components'
 
 import { ListWithHeading } from './ListWithHeading'
 import { ListWithChips } from './ListWithChips'
@@ -36,7 +36,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       {slots ? <ListWithChips heading="Slots:" items={slots} intent="inverse" /> : null}
       {readMoreLink ? (
         <Box>
-          <LinkButton
+          <ButtonLink
             href={readMoreLink.href}
             intent="primary"
             iconName="arrow-right"
@@ -46,7 +46,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
             variant="ghost"
           >
             {readMoreLink.label}
-          </LinkButton>
+          </ButtonLink>
         </Box>
       ) : null}
     </Flex>

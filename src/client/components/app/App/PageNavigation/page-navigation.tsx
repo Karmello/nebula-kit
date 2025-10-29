@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router'
 
-import { ButtonGroup, LinkButton } from 'lib/components'
+import { ButtonGroup, ButtonLink } from 'lib/components'
 import { useNavigateTo } from 'client/services'
 import { PageKey } from 'client/definitions'
 import { useComponentsPageStore, useFoundationsPageStore } from 'client/store'
@@ -22,7 +22,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
 
   return (
     <ButtonGroup direction={{ base: 'column', md: 'row' }} attached stretch={{ base: true, md: false }}>
-      <LinkButton
+      <ButtonLink
         href={`/${PageKey.foundations}`}
         onClick={async () => {
           if (mainOpen) await setMainOpen(false)
@@ -33,8 +33,8 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         intent={currentPageKey === PageKey.foundations ? 'tertiary' : 'muted'}
       >
         Foundations
-      </LinkButton>
-      <LinkButton
+      </ButtonLink>
+      <ButtonLink
         href={`/${PageKey.components}`}
         onClick={async () => {
           if (mainOpen) await setMainOpen(false)
@@ -45,8 +45,8 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         intent={currentPageKey === PageKey.components ? 'tertiary' : 'muted'}
       >
         Components
-      </LinkButton>
-      <LinkButton
+      </ButtonLink>
+      <ButtonLink
         href={`/${PageKey.pricing}`}
         onClick={async () => {
           if (mainOpen) await setMainOpen(false)
@@ -55,7 +55,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         intent={currentPageKey === PageKey.pricing ? 'tertiary' : 'muted'}
       >
         Pricing
-      </LinkButton>
+      </ButtonLink>
     </ButtonGroup>
   )
 }
