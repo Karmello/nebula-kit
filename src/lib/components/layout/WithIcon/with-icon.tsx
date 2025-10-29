@@ -22,6 +22,8 @@ export const WithIcon = ({
   // own
   position = DEFAULT_WITH_ICON_ICON_POSITION,
 }: WithIconProps) => {
+  const icon = <Icon name={name} size={size} intent={intent} />
+
   return (
     <Flex
       tag="span"
@@ -37,15 +39,19 @@ export const WithIcon = ({
       columnGap={columnGap}
     >
       {position === 'left' ? (
-        <Rotate angle={iconAngle || 0}>
-          <Icon name={name} size={size} intent={intent} />
-        </Rotate>
+        iconAngle !== undefined ? (
+          <Rotate angle={iconAngle}>{icon}</Rotate>
+        ) : (
+          icon
+        )
       ) : null}
       {children}
       {position === 'right' ? (
-        <Rotate angle={iconAngle || 0}>
-          <Icon name={name} size={size} intent={intent} />
-        </Rotate>
+        iconAngle !== undefined ? (
+          <Rotate angle={iconAngle}>{icon}</Rotate>
+        ) : (
+          icon
+        )
       ) : null}
     </Flex>
   )
