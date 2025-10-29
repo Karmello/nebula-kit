@@ -34,8 +34,9 @@ export const Select = ({
                   borderBottomRightRadius: open ? 0 : undefined,
                 },
               }}
-              iconName={open ? 'chevron-up' : 'chevron-down'}
+              iconName="chevron-down"
               iconPosition="right"
+              iconAngle={open ? 180 : 0}
               size={size}
               variant={variant}
               intent={intent}
