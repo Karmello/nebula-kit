@@ -20,7 +20,7 @@ a.neb-btn {
 }
 
 .neb-btn[data-neb-btn-full-width='true'] {
-  inline-size: 100%;
+  inline-size: calc(100% - var(--neb-border-width));
 }
 
 .neb-btn[data-neb-box-disabled='true'] {

@@ -63,6 +63,7 @@ export const Text = <T extends TextTag = 'p'>({
       variant="ghost"
       intent={intent}
       textAlign={textAlign}
+      interactive={tag === 'a'}
     >
       {space === 'start' || space === 'both' ? <> </> : null}
       {iconName ? (
