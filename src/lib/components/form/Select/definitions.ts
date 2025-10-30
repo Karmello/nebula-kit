@@ -1,4 +1,4 @@
-import { BoxProps, ButtonProps, DropdownListProps, HtmlTagProps } from 'lib/components'
+import { DropdownListProps, HtmlTagProps } from 'lib/components'
 
 type SelectOwnProps = {
   options: { value: string; label: string }[]
@@ -9,14 +9,9 @@ type SelectOwnProps = {
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagRef' | 'tagAttrs'>
 
-type PropsFromDropdownList = Pick<DropdownListProps, 'itemBorderIntent' | 'scrollAlign'>
+type PropsFromDropdownList = Pick<
+  DropdownListProps,
+  'variant' | 'intent' | 'size' | 'itemBorderIntent' | 'scrollAlign' | 'inlineSize'
+>
 
-type PropsFromBox = Pick<BoxProps, 'inlineSize'>
-
-type PropsFromButton = Pick<ButtonProps, 'variant' | 'intent' | 'size'>
-
-export type SelectProps = PropsFromHtmlTag &
-  PropsFromDropdownList &
-  PropsFromBox &
-  PropsFromButton &
-  SelectOwnProps
+export type SelectProps = PropsFromHtmlTag & PropsFromDropdownList & SelectOwnProps

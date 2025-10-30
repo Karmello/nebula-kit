@@ -86,7 +86,7 @@ export const DropdownList = ({
         scrollWrapperRef.current.scrollTop = allItemsBlockSize + allItemsBorderWidth
       }
     }
-  }, [scrollWrapperRef.current, scrollToIndex, scrollAlign])
+  }, [scrollWrapperRef.current])
 
   const finalChildren = typeof children === 'function' ? children({ open, animateVisible }) : children
 

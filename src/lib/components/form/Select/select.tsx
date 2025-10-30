@@ -11,14 +11,12 @@ export const Select = ({
   tagAttrs,
   tagRef,
   // DropdownList
-  itemBorderIntent,
-  scrollAlign,
-  // Box
-  inlineSize,
-  // Button
   variant,
   intent,
   size,
+  itemBorderIntent,
+  scrollAlign,
+  inlineSize,
   // own
   options,
   defaultValue,
@@ -56,7 +54,7 @@ export const Select = ({
               iconAngle={open ? 180 : 0}
               justifyContent="space-between"
             >
-              {options.find(o => o.value === currentValue)?.label}
+              {options.find(o => o.value === currentValue)?.label || '...'}
             </Button>
           </DropdownList.Trigger>
           {options.map(({ value, label }) => (
