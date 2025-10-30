@@ -11,6 +11,7 @@ const DROPDOWN_LIST_ITEM_PROPS_META: ComponentMeta<DropdownListItemProps>['props
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
   },
+  selected: BUTTON_PROPS_META.selected,
   disabled: BUTTON_PROPS_META.disabled,
   iconName: BUTTON_PROPS_META.iconName,
   iconPosition: BUTTON_PROPS_META.iconPosition,

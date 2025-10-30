@@ -64,6 +64,10 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     jsx: <Button iconName="close" />,
   },
   {
+    description: 'Selected button.',
+    jsx: <Button selected>Selected</Button>,
+  },
+  {
     description: 'Disabled button.',
     jsx: <Button disabled>Disabled</Button>,
   },

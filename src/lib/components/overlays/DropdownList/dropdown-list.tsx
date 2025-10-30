@@ -145,35 +145,40 @@ export const DropdownList = ({
                 >
                   <Animate property="blockSize" visible={animateVisible}>
                     <Box
-                      tagRef={scrollWrapperRef}
-                      blockSize={itemsContainerBlockSize}
-                      overflowY="auto"
-                      overflowX="hidden"
                       variant={variant === 'ghost' ? 'solid' : variant}
                       intent={variant === 'ghost' ? 'neutral' : intent}
                       borderTopWidth={0}
                       borderTopLeftRadius={0}
                       borderTopRightRadius={0}
                     >
-                      <Flex flexDirection="column" flexWrap="nowrap" alignItems="stretch">
-                        {slotsByName['DropdownList.Item'].map((slot, key) => (
-                          <Box
-                            key={key}
-                            variant="outline"
-                            inlineSize={inlineSize}
-                            borderLeftWidth={0}
-                            borderRightWidth={0}
-                            borderTopWidth={0}
-                            borderBottomWidth={
-                              key === slotsByName['DropdownList.Item'].length - 1 ? 0 : undefined
-                            }
-                            borderRadius={0}
-                            borderIntent={itemBorderIntent}
-                          >
-                            {slot}
-                          </Box>
-                        ))}
-                      </Flex>
+                      <Box
+                        tagRef={scrollWrapperRef}
+                        blockSize={itemsContainerBlockSize}
+                        overflowY="auto"
+                        overflowX="hidden"
+                        borderTopLeftRadius={0}
+                        borderTopRightRadius={0}
+                      >
+                        <Flex flexDirection="column" flexWrap="nowrap" alignItems="stretch">
+                          {slotsByName['DropdownList.Item'].map((slot, key) => (
+                            <Box
+                              key={key}
+                              variant="outline"
+                              inlineSize={inlineSize}
+                              borderLeftWidth={0}
+                              borderRightWidth={0}
+                              borderTopWidth={0}
+                              borderBottomWidth={
+                                key === slotsByName['DropdownList.Item'].length - 1 ? 0 : undefined
+                              }
+                              borderRadius={0}
+                              borderIntent={itemBorderIntent}
+                            >
+                              {slot}
+                            </Box>
+                          ))}
+                        </Flex>
+                      </Box>
                     </Box>
                   </Animate>
                 </Portal>

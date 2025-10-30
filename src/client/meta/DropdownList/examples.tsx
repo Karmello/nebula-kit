@@ -43,9 +43,9 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     ),
   },
   {
-    description: 'DropdownList with ghost variant and neutral intent.',
+    description: 'DropdownList with ghost variant and primary intent.',
     jsx: (
-      <DropdownList variant="ghost" intent="neutral">
+      <DropdownList variant="ghost" intent="primary">
         <DropdownList.Trigger>
           <Button>Trigger</Button>
         </DropdownList.Trigger>

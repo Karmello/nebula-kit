@@ -58,7 +58,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
         Disabled Box
       </Box>
     ),
-    description: 'Interactive Box in disabled mode.',
+    description: 'Interactive Box in disabled state.',
   },
 ]
 

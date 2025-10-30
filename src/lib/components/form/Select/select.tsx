@@ -39,6 +39,8 @@ export const Select = ({
     <DropdownList
       tagRef={tagRef}
       tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('select'), tagAttrs?.className) }}
+      variant={variant}
+      intent={intent}
       size={size}
       inlineSize={inlineSize}
       itemBorderIntent={itemBorderIntent}
@@ -52,9 +54,6 @@ export const Select = ({
               iconName="chevron-down"
               iconPosition="right"
               iconAngle={open ? 180 : 0}
-              size={size}
-              variant={variant}
-              intent={intent}
               justifyContent="space-between"
             >
               {options.find(o => o.value === currentValue)?.label}
@@ -67,6 +66,7 @@ export const Select = ({
                 onClick: () => handleChange(value),
               }}
               justifyContent="flex-start"
+              selected={value === currentValue}
             >
               {label}
             </DropdownList.Item>

@@ -63,6 +63,11 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     isResponsive: true,
     description: 'Expands the button to match the full width of its container.',
   },
+  selected: {
+    options: ['boolean'],
+    defaultValue: 'false',
+    description: 'Marks the component as selected by rendering its text in bold.',
+  },
 }
 
 export { BUTTON_PROPS_META }
