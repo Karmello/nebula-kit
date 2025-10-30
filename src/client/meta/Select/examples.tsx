@@ -13,6 +13,10 @@ const SELECT_EXAMPLES_META: ComponentMeta<SelectProps>['examples'] = [
         ]}
         value="option-1"
         onChange={() => null}
+        intent="primary"
+        // listBorderIntent="primary"
+        // itemBorderIntent="secondary"
+        variant="outline"
       />
     ),
     code: `<Select

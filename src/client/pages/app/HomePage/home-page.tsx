@@ -94,6 +94,7 @@ export const HomePage = () => {
                 onChange={value => setBrand(value as Brand)}
                 inlineSize="150px"
                 size="sm"
+                scrollAlign="center"
               />
             </Flex.Item>
             <Flex.Item>
@@ -104,6 +105,7 @@ export const HomePage = () => {
                 onChange={value => setBorderWidthSize(value as never)}
                 inlineSize="150px"
                 size="sm"
+                scrollAlign="center"
               />
             </Flex.Item>
             <Flex.Item>
@@ -114,6 +116,7 @@ export const HomePage = () => {
                 onChange={value => setBorderRadiusSize(value as never)}
                 inlineSize="150px"
                 size="sm"
+                scrollAlign="center"
               />
             </Flex.Item>
           </Flex>

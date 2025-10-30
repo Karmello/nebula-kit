@@ -1,3 +1,5 @@
+import { cloneElement } from 'react'
+
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
@@ -8,7 +10,10 @@ export const DropdownListTrigger = ({
   // HtmlTag
   children,
 }: DropdownListTriggerProps) => {
-  const { open, setOpen, setAnimateVisible, triggerRef, inlineSize } = useDropdownListContext()
+  const { open, setOpen, setAnimateVisible, triggerRef, inlineSize, variant, intent, size } =
+    useDropdownListContext()
+
+  const finalChildren = children as any
 
   return (
     <Box
@@ -22,7 +27,21 @@ export const DropdownListTrigger = ({
       }}
       inlineSize={inlineSize}
     >
-      {children}
+      {cloneElement(finalChildren, {
+        ...finalChildren.props,
+        tagAttrs: {
+          ...finalChildren.props.tagAttrs,
+          style: {
+            ...finalChildren.props.tagAttrs?.style,
+            inlineSize: '100%',
+            borderBottomLeftRadius: open ? 0 : undefined,
+            borderBottomRightRadius: open ? 0 : undefined,
+          },
+        },
+        variant,
+        intent,
+        size,
+      })}
     </Box>
   )
 }

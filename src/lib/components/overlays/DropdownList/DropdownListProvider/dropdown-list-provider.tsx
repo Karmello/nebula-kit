@@ -11,8 +11,8 @@ type Props = {
   keepOpen: DropdownListProps['keepOpen']
   size: DropdownListProps['size']
   inlineSize: DropdownListProps['inlineSize']
-  itemVariant: DropdownListProps['itemVariant']
-  itemIntent: DropdownListProps['itemIntent']
+  variant: DropdownListProps['variant']
+  intent: DropdownListProps['intent']
 }
 
 type ProviderProps = {
@@ -31,8 +31,8 @@ export const DropdownListProvider = ({
   keepOpen,
   size,
   inlineSize,
-  itemVariant,
-  itemIntent,
+  variant,
+  intent,
 }: ProviderProps) => {
   return (
     <DropdownListContext.Provider
@@ -45,8 +45,8 @@ export const DropdownListProvider = ({
         keepOpen,
         size,
         inlineSize,
-        itemVariant,
-        itemIntent,
+        variant,
+        intent,
       }}
     >
       {children}

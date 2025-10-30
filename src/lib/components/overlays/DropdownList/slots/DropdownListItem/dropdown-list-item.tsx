@@ -17,7 +17,7 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
   tagAttrs,
   ...buttonProps
 }: DropdownListItemProps<T>) => {
-  const { setAnimateVisible, keepOpen, size, itemVariant, itemIntent } = useDropdownListContext()
+  const { setAnimateVisible, keepOpen, size, variant, intent } = useDropdownListContext()
 
   return (
     <Button
@@ -39,8 +39,8 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
           },
         } as PropsWithoutRef<ComponentProps<T>>
       }
-      variant={itemVariant}
-      intent={itemIntent}
+      variant={variant}
+      intent={intent}
       size={size}
       fullWidth
       {...buttonProps}

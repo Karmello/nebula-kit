@@ -22,3 +22,9 @@ a.neb-btn {
 .neb-btn[data-neb-btn-full-width='true'] {
   inline-size: 100%;
 }
+
+.neb-btn[data-neb-box-disabled='true'] {
+  span {
+    opacity: 0.4;
+  }
+}

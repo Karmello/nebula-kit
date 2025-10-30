@@ -47,6 +47,12 @@ export const Button = <T extends ButtonTag = 'button'>({
     applyRespValues('dataset', tagRef || ref, bp, { fullWidth }, 'Btn')
   }, [bp, fullWidth])
 
+  const text = (
+    <Text tag="span" intent={labelIntent} scale={BUTTON_SIZE_CONFIG[size].textScale}>
+      {children}
+    </Text>
+  )
+
   return (
     <Box
       tag={tag}
@@ -79,14 +85,10 @@ export const Button = <T extends ButtonTag = 'button'>({
           size={BUTTON_SIZE_CONFIG[size].iconSize}
           iconAngle={iconAngle}
         >
-          <Text tag="span" intent={labelIntent} scale={BUTTON_SIZE_CONFIG[size].textScale}>
-            {children}
-          </Text>
+          {text}
         </WithIcon>
       ) : (
-        <Text tag="span" intent={labelIntent} scale={BUTTON_SIZE_CONFIG[size].textScale}>
-          {children}
-        </Text>
+        text
       )}
     </Box>
   )

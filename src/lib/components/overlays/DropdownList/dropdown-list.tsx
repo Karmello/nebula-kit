@@ -14,6 +14,7 @@ import {
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
   DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
+  DEFAULT_DROPDOWN_LIST_INTENT,
 } from './definitions'
 
 import { DropdownListProvider } from './DropdownListProvider'
@@ -26,15 +27,14 @@ export const DropdownList = ({
   // Box
   inlineSize,
   // Button
+  variant,
+  intent = DEFAULT_DROPDOWN_LIST_INTENT,
   size = DEFAULT_BUTTON_SIZE,
   // own
   visibleItemsCount = DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   keepOpen = DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
   scrollToIndex = DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
   scrollAlign = DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
-  itemVariant,
-  itemIntent,
-  listBorderIntent,
   itemBorderIntent = DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT,
 }: DropdownListProps) => {
   const [open, setOpen] = useState<boolean>(false)
@@ -118,8 +118,8 @@ export const DropdownList = ({
             keepOpen={keepOpen}
             size={size}
             inlineSize={inlineSize}
-            itemVariant={itemVariant}
-            itemIntent={itemIntent}
+            variant={variant}
+            intent={intent}
           >
             <Box
               tagRef={tagRef || rootRef}
@@ -149,12 +149,11 @@ export const DropdownList = ({
                       blockSize={itemsContainerBlockSize}
                       overflowY="auto"
                       overflowX="hidden"
+                      variant={variant === 'ghost' ? 'solid' : variant}
+                      intent={variant === 'ghost' ? 'neutral' : intent}
+                      borderTopWidth={0}
                       borderTopLeftRadius={0}
                       borderTopRightRadius={0}
-                      borderTopWidth={0}
-                      variant={listBorderIntent ? 'outline' : 'solid'}
-                      intent="neutral"
-                      borderIntent={listBorderIntent}
                     >
                       <Flex flexDirection="column" flexWrap="nowrap" alignItems="stretch">
                         {slotsByName['DropdownList.Item'].map((slot, key) => (

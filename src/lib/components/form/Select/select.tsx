@@ -1,9 +1,18 @@
-import { Button, DropdownList } from 'lib/components'
+import { useState } from 'react'
+import classNames from 'classnames'
+
+import { DropdownList, Button } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import { SelectProps } from './definitions'
 
 export const Select = ({
+  // HtmlTag
+  tagAttrs,
+  tagRef,
+  // DropdownList
+  itemBorderIntent,
+  scrollAlign,
   // Box
   inlineSize,
   // Button
@@ -12,28 +21,34 @@ export const Select = ({
   size,
   // own
   options,
+  defaultValue,
   value,
   onChange,
 }: SelectProps) => {
+  const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
+
+  const isControlled = value !== undefined
+  const currentValue = isControlled ? value : internalValue
+
+  const handleChange = (value: string) => {
+    if (!isControlled) setInternalValue(value)
+    onChange?.(value)
+  }
+
   return (
     <DropdownList
-      tagAttrs={{ className: withPrefix('select') }}
+      tagRef={tagRef}
+      tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('select'), tagAttrs?.className) }}
       size={size}
       inlineSize={inlineSize}
-      itemVariant={variant}
-      itemIntent={intent}
+      itemBorderIntent={itemBorderIntent}
+      scrollToIndex={options.findIndex(o => o.value === currentValue)}
+      scrollAlign={scrollAlign}
     >
       {({ open }) => (
         <>
           <DropdownList.Trigger>
             <Button
-              tagAttrs={{
-                style: {
-                  inlineSize: '100%',
-                  borderBottomLeftRadius: open ? 0 : undefined,
-                  borderBottomRightRadius: open ? 0 : undefined,
-                },
-              }}
               iconName="chevron-down"
               iconPosition="right"
               iconAngle={open ? 180 : 0}
@@ -42,14 +57,14 @@ export const Select = ({
               intent={intent}
               justifyContent="space-between"
             >
-              {options.find(o => o.value === value)?.label}
+              {options.find(o => o.value === currentValue)?.label}
             </Button>
           </DropdownList.Trigger>
           {options.map(({ value, label }) => (
             <DropdownList.Item
               key={value}
               tagAttrs={{
-                onClick: () => onChange(value),
+                onClick: () => handleChange(value),
               }}
               justifyContent="flex-start"
             >

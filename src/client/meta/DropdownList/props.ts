@@ -38,27 +38,20 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
     defaultValue: String(DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN),
     description: 'Defines how the target item is positioned within the scroll area.',
   },
-  inlineSize: BOX_PROPS_META.inlineSize,
+  inlineSize: {
+    ...BOX_PROPS_META.inlineSize,
+    description: 'Fixed width.',
+  },
   itemBorderIntent: {
     ...BOX_PROPS_META.borderIntent,
     defaultValue: String(DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT),
     description: 'Semantic color intent applied to the dividers between list items.',
   },
-  itemIntent: {
-    ...BUTTON_PROPS_META.intent,
-    description: 'Semantic color intent applied to all items.',
-  },
-  itemVariant: {
-    ...BUTTON_PROPS_META.variant,
-    description: 'Visual style variant applied to all items.',
-  },
-  listBorderIntent: {
-    ...BOX_PROPS_META.borderIntent,
-    description: 'Semantic color intent applied to the list container border.',
-  },
+  variant: BUTTON_PROPS_META.variant,
+  intent: BUTTON_PROPS_META.intent,
   size: {
     ...BUTTON_PROPS_META.size,
-    description: 'Size applied to all items.',
+    description: 'Applies the selected size to both the trigger and all dropdown items.',
   },
   visibleItemsCount: {
     options: ['number'],

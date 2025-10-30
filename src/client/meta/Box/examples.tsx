@@ -52,6 +52,14 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
     ),
     description: 'Box with interactive behavior.',
   },
+  {
+    jsx: (
+      <Box variant="solid" intent="secondary" padding={20} interactive disabled>
+        Disabled Box
+      </Box>
+    ),
+    description: 'Interactive Box in disabled mode.',
+  },
 ]
 
 export { BOX_EXAMPLES_META }
