@@ -54,6 +54,14 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
+      <Box variant="solid" intent="secondary" padding={20} interactive hovered>
+        Hovered Box
+      </Box>
+    ),
+    description: 'Interactive Box in a programmatically set hovered state.',
+  },
+  {
+    jsx: (
       <Box variant="solid" intent="secondary" padding={20} interactive disabled>
         Disabled Box
       </Box>

@@ -17,7 +17,19 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
   tagAttrs,
   ...buttonProps
 }: DropdownListItemProps<T>) => {
-  const { setAnimateVisible, keepOpen, size, variant, intent } = useDropdownListContext()
+  const {
+    setAnimateVisible,
+    keepOpen,
+    size,
+    variant,
+    intent,
+    hoveredIndex,
+    setHoveredIndex,
+    blockMouse,
+    setBlockMouse,
+  } = useDropdownListContext()
+
+  const index = (buttonProps as any).index
 
   return (
     <Button
@@ -37,11 +49,19 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
             }
             tagAttrs?.onClick?.(e)
           },
+          onMouseMove: () => {
+            setBlockMouse(false)
+            setHoveredIndex(index)
+          },
+          onMouseLeave: () => {
+            if (!blockMouse) setHoveredIndex(-1)
+          },
         } as PropsWithoutRef<ComponentProps<T>>
       }
       variant={variant}
       intent={intent}
       size={size}
+      hovered={blockMouse ? index === hoveredIndex : undefined}
       fullWidth
       {...buttonProps}
     >

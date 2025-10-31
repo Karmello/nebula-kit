@@ -8,11 +8,15 @@ type Props = {
   animateVisible: boolean
   setAnimateVisible: (animateVisible: boolean) => void
   triggerRef: RefObject<HTMLElement | null>
+  hoveredIndex: number
+  setHoveredIndex: (hoveredIndex: number) => void
   keepOpen: DropdownListProps['keepOpen']
   size: DropdownListProps['size']
   inlineSize: DropdownListProps['inlineSize']
   variant: DropdownListProps['variant']
   intent: DropdownListProps['intent']
+  blockMouse: boolean
+  setBlockMouse: (blockMouse: boolean) => void
 }
 
 type ProviderProps = {
@@ -28,11 +32,15 @@ export const DropdownListProvider = ({
   animateVisible,
   setAnimateVisible,
   triggerRef,
+  hoveredIndex,
+  setHoveredIndex,
   keepOpen,
   size,
   inlineSize,
   variant,
   intent,
+  blockMouse,
+  setBlockMouse,
 }: ProviderProps) => {
   return (
     <DropdownListContext.Provider
@@ -42,11 +50,15 @@ export const DropdownListProvider = ({
         animateVisible,
         setAnimateVisible,
         triggerRef,
+        hoveredIndex,
+        setHoveredIndex,
         keepOpen,
         size,
         inlineSize,
         variant,
         intent,
+        blockMouse,
+        setBlockMouse,
       }}
     >
       {children}

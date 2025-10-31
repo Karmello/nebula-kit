@@ -20,6 +20,9 @@ a.neb-btn {
 }
 
 .neb-btn[data-neb-btn-full-width='true'] {
+  inline-size: 100%;
+}
+.neb-btn[data-neb-btn-full-width='true']:focus-visible {
   inline-size: calc(100% - var(--neb-border-width));
 }
 

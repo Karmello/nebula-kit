@@ -43,7 +43,7 @@
     "prettify": "prettier --write src/**/*.{ts,tsx}",
     "lint": "eslint src/**/*.{ts,tsx}",
     "typecheck": "tsc --noEmit -p tsconfig.typecheck.json",
-    "tsd": "tsc -p tsconfig.types.json && tsd --cwd . -t dist/types/index.d.ts -f \"src/lib/components/**/*.test.d.tsx\"",
+    "tsd": "tsc -p tsconfig.tsd.json && tsd --cwd . -t dist/types/index.d.ts -f \"src/lib/components/**/*.test.d.tsx\"",
     "test": "vitest run",
     "pw": "playwright test -c playwright.config.cjs",
     "prepare": "husky install",

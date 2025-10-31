@@ -17,6 +17,7 @@ export const Select = ({
   itemBorderIntent,
   scrollAlign,
   inlineSize,
+  visibleItemsCount,
   // own
   options,
   defaultValue,
@@ -44,6 +45,7 @@ export const Select = ({
       itemBorderIntent={itemBorderIntent}
       scrollToIndex={options.findIndex(o => o.value === currentValue)}
       scrollAlign={scrollAlign}
+      visibleItemsCount={visibleItemsCount}
     >
       {({ open }) => (
         <>

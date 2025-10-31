@@ -62,16 +62,29 @@
   border-width: var(--neb-border-width);
 }
 
+// ghost
 @each $intent in $neb-intents {
+  // rest
   .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'] {
     background-color: transparent;
     border-color: transparent;
     color: var(--neb-#{$intent}-ghost-text, var(--neb-text));
   }
-  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:hover {
+
+  // hover
+  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
+      [data-neb-box-hovered]
+    ):hover,
+  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true'][data-neb-box-hovered='true'] {
     color: var(--neb-#{$intent}-ghost-text-hover, var(--neb-#{$intent}-ghost-text, var(--neb-text)));
   }
-  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:active {
+
+  // active
+  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:active,
+  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
+      [data-neb-box-hovered]
+    ):hover:active,
+  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true'][data-neb-box-hovered='true']:active {
     color: var(
       --neb-#{$intent}-ghost-text-active,
       var(--neb-#{$intent}-ghost-text-hover, var(--neb-#{$intent}-ghost-text, var(--neb-text)))
@@ -79,14 +92,21 @@
   }
 }
 
+// outline
 @each $intent in $neb-intents {
+  // rest
   .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'] {
     $mainColor: var(--neb-#{$intent}-outline-border, var(--neb-text));
     background-color: var(--neb-background);
     border-color: $mainColor;
     color: $mainColor;
   }
-  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:hover {
+
+  // hover
+  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
+      [data-neb-box-hovered]
+    ):hover,
+  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true'][data-neb-box-hovered='true'] {
     $mainColor: var(
       --neb-#{$intent}-outline-border-hover,
       var(--neb-#{$intent}-outline-border, var(--neb-text))
@@ -95,7 +115,13 @@
     color: $mainColor;
     background-color: var(--neb-#{$intent}-outline-bg-hover, var(--neb-background));
   }
-  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:active {
+
+  // active
+  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:active,
+  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
+      [data-neb-box-hovered]
+    ):hover:active,
+  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true'][data-neb-box-hovered='true']:active {
     $mainColor: var(
       --neb-#{$intent}-outline-border-active,
       var(--neb-#{$intent}-outline-border-hover, var(--neb-#{$intent}-outline-border, var(--neb-text)))
@@ -109,20 +135,33 @@
   }
 }
 
+// solid
 @each $intent in $neb-intents {
+  // rest
   .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'] {
     $mainColor: var(--neb-#{$intent}-solid-bg, var(--neb-background));
     background-color: $mainColor;
     border-color: $mainColor;
     color: var(--neb-#{$intent}-solid-text, var(--neb-text));
   }
-  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:hover {
+
+  // hover
+  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
+      [data-neb-box-hovered]
+    ):hover,
+  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true'][data-neb-box-hovered='true'] {
     $mainColor: var(--neb-#{$intent}-solid-bg-hover, var(--neb-#{$intent}-solid-bg, var(--neb-background)));
     background-color: $mainColor;
     border-color: $mainColor;
     color: var(--neb-#{$intent}-solid-text-hover, var(--neb-#{$intent}-solid-text, var(--neb-text)));
   }
-  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:active {
+
+  // active
+  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:active,
+  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
+      [data-neb-box-hovered]
+    ):hover:active,
+  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true'][data-neb-box-hovered='true']:active {
     $mainColor: var(
       --neb-#{$intent}-solid-bg-active,
       var(--neb-#{$intent}-solid-bg-hover, var(--neb-#{$intent}-solid-bg, var(--neb-background)))
@@ -136,8 +175,11 @@
   }
 }
 
+// misc
+
 .neb-box[data-neb-box-variant='outline'],
-.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:hover {
+.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:not([data-neb-box-hovered]):hover,
+.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true'][data-neb-box-hovered='true'] {
   &[data-neb-box-intent='neutral'],
   &[data-neb-box-intent='inverse'] {
     color: var(--neb-text);

@@ -11,7 +11,7 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagRef' | 'tagAttrs'>
 
 type PropsFromDropdownList = Pick<
   DropdownListProps,
-  'variant' | 'intent' | 'size' | 'itemBorderIntent' | 'scrollAlign' | 'inlineSize'
+  'variant' | 'intent' | 'size' | 'itemBorderIntent' | 'scrollAlign' | 'inlineSize' | 'visibleItemsCount'
 >
 
 export type SelectProps = PropsFromHtmlTag & PropsFromDropdownList & SelectOwnProps

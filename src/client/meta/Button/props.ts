@@ -68,6 +68,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     defaultValue: 'false',
     description: 'Marks the component as selected by rendering its text in bold.',
   },
+  hovered: BOX_PROPS_META.hovered,
 }
 
 export { BUTTON_PROPS_META }
