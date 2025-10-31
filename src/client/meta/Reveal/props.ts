@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { RevealProps } from 'lib/components'
-import { DEFAULT_REVEAL_SIZE } from 'lib/components/containers/Reveal/definitions'
+import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SIZE } from 'lib/components/containers/Reveal/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BUTTON_PROPS_META } from '../Button/props'
@@ -20,7 +20,10 @@ const REVEAL_PROPS_META: ComponentMeta<RevealProps>['props'] = {
     description: 'Size of the reveal button.',
   },
   disabled: BUTTON_PROPS_META.disabled,
-  intent: BOX_PROPS_META.intent,
+  intent: {
+    ...BOX_PROPS_META.intent,
+    defaultValue: String(DEFAULT_REVEAL_INTENT),
+  },
   label: {
     options: ['string'],
     isRequired: true,

@@ -15,7 +15,7 @@ const REVEAL_EXAMPLES_META: ComponentMeta<RevealProps>['examples'] = [
   {
     description: 'Disabled state of the Reveal.',
     jsx: (
-      <Reveal label="Label" intent="secondary" disabled>
+      <Reveal label="Label" disabled>
         <Box blockSize={80} padding={20}>
           Content
         </Box>

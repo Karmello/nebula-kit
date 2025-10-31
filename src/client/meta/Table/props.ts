@@ -1,6 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
 import { TableProps } from 'lib/components'
-import { DEFAULT_TABLE_LAYOUT, TABLE_LAYOUTS } from 'lib/components/layout/Table/definitions'
+
+import {
+  DEFAULT_TABLE_INTENT,
+  DEFAULT_TABLE_LAYOUT,
+  TABLE_LAYOUTS,
+} from 'lib/components/layout/Table/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
@@ -17,6 +22,7 @@ const TABLE_PROPS_META: ComponentMeta<TableProps>['props'] = {
   inlineSize: BOX_PROPS_META.inlineSize,
   intent: {
     ...BOX_PROPS_META.intent,
+    defaultValue: String(DEFAULT_TABLE_INTENT),
     description: "Semantic color intent applied to the table's background surface.",
   },
   layout: {

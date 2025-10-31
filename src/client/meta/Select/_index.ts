@@ -7,7 +7,7 @@ import { SELECT_PROPS_META } from './props'
 const SELECT_META: ComponentMeta<SelectProps> = {
   overview: {
     title: 'Form control for choosing a single option from a list.',
-    description: ['handles both controlled and uncontrolled selection states'],
+    description: ['supports both controlled and uncontrolled modes'],
     composedOf: ['DropdownList', 'Button'],
     rendersAs: ['div'],
   },
