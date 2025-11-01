@@ -115,6 +115,8 @@ export const PricingPage = () => {
             </Flex>
           </Section>
         </Grid>
+        <Spacer />
+        <Text italic>* All prices in USD</Text>
       </Section>
     </Box>
   )
