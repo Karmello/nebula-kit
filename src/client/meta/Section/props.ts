@@ -34,6 +34,7 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
   },
   interactive: BOX_PROPS_META.interactive,
   disableActiveState: BOX_PROPS_META.disableActiveState,
+  hoveredByDefault: BOX_PROPS_META.hoveredByDefault,
   iconName: TEXT_PROPS_META.iconName,
   iconPosition: {
     ...TEXT_PROPS_META.iconPosition,

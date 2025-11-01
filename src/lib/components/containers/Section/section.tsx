@@ -23,6 +23,7 @@ export const Section = <T extends SectionTag = 'section'>({
   intent = DEFAULT_SECTION_INTENT,
   interactive,
   disableActiveState,
+  hoveredByDefault,
   // text
   iconName,
   iconPosition,
@@ -49,6 +50,7 @@ export const Section = <T extends SectionTag = 'section'>({
       overflowY="hidden"
       interactive={interactive}
       disableActiveState={disableActiveState}
+      hoveredByDefault={hoveredByDefault}
     >
       <Text typography={SECTION_SIZE_CONFIG[size].typography} iconName={iconName} iconPosition={iconPosition}>
         {heading}

@@ -38,7 +38,7 @@ type PropsFromHtmlTag<T extends SectionTag = 'section'> = Omit<HtmlTagProps<T>, 
 
 type PropsFromBox<T extends SectionTag = 'section'> = Pick<
   BoxProps<T>,
-  'intent' | 'interactive' | 'disableActiveState'
+  'intent' | 'interactive' | 'disableActiveState' | 'hoveredByDefault'
 >
 
 type PropsFromText = Pick<TextProps, 'iconName' | 'iconPosition'>
