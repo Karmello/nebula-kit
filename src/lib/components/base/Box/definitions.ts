@@ -42,6 +42,7 @@ type BoxOwnProps = {
   interactive?: boolean
   disabled?: boolean
   hoveredByDefault?: boolean
+  disableActiveState?: boolean
   display?: RespValue<CssDisplay>
   overflowX?: RespValue<CssOverflow>
   overflowY?: RespValue<CssOverflow>

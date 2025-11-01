@@ -98,6 +98,12 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description:
       'Shows the element in its hovered visual state by default, without requiring user interaction.',
   },
+  disableActiveState: {
+    options: ['boolean'],
+    defaultValue: 'false',
+    description:
+      'Disables the active (pressed) visual state, keeping the element unchanged when clicked or held.',
+  },
   disabled: {
     options: ['boolean'],
     defaultValue: 'false',

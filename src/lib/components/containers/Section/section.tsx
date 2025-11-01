@@ -21,6 +21,8 @@ export const Section = <T extends SectionTag = 'section'>({
   // Box
   variant = DEFAULT_SECTION_VARIANT,
   intent = DEFAULT_SECTION_INTENT,
+  interactive,
+  disableActiveState,
   // text
   iconName,
   iconPosition,
@@ -45,6 +47,8 @@ export const Section = <T extends SectionTag = 'section'>({
       maxInlineSize="100%"
       overflowX="auto"
       overflowY="hidden"
+      interactive={interactive}
+      disableActiveState={disableActiveState}
     >
       <Text typography={SECTION_SIZE_CONFIG[size].typography} iconName={iconName} iconPosition={iconPosition}>
         {heading}

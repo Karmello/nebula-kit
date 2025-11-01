@@ -32,6 +32,8 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
     ...BOX_PROPS_META.intent,
     defaultValue: DEFAULT_SECTION_INTENT,
   },
+  interactive: BOX_PROPS_META.interactive,
+  disableActiveState: BOX_PROPS_META.disableActiveState,
   iconName: TEXT_PROPS_META.iconName,
   iconPosition: {
     ...TEXT_PROPS_META.iconPosition,

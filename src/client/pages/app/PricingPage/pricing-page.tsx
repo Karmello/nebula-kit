@@ -10,7 +10,7 @@ export const PricingPage = () => {
         <Text>Choose the plan that fits your workflow.</Text>
         <Spacer blockSize={50} />
         <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }} gap={20}>
-          <Section heading="Free" variant="outline" iconName="leaf">
+          <Section heading="Free" variant="outline" iconName="leaf" interactive disableActiveState>
             <Text intent="neutral" bold>
               Get started with core components.
             </Text>
@@ -30,13 +30,20 @@ export const PricingPage = () => {
                   navigateTo('/foundations/overview/get-started/installation')
                 }}
               >
-                <Button size="sm" intent="tertiary">
+                <Button size="sm" intent="secondary">
                   Get started
                 </Button>
               </Link>
             </Flex>
           </Section>
-          <Section heading="Professional" variant="outline" intent="inverse" iconName="zap">
+          <Section
+            heading="Professional"
+            variant="outline"
+            intent="inverse"
+            iconName="zap"
+            interactive
+            disableActiveState
+          >
             <Text intent="neutral" bold>
               Full component set for individuals.
             </Text>
@@ -62,7 +69,14 @@ export const PricingPage = () => {
               </Link>
             </Flex>
           </Section>
-          <Section heading="Business" variant="outline" intent="info" iconName="users">
+          <Section
+            heading="Business"
+            variant="outline"
+            intent="info"
+            iconName="users"
+            interactive
+            disableActiveState
+          >
             <Text intent="neutral" bold>
               For small teams who need support.
             </Text>
@@ -88,7 +102,14 @@ export const PricingPage = () => {
               </Link>
             </Flex>
           </Section>
-          <Section heading="Enterprise" variant="outline" intent="danger" iconName="globe">
+          <Section
+            heading="Enterprise"
+            variant="outline"
+            intent="danger"
+            iconName="globe"
+            interactive
+            disableActiveState
+          >
             <Text intent="neutral" bold>
               Tailored for larger orgs and custom needs.
             </Text>

@@ -80,11 +80,15 @@
   }
 
   // active
-  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:active,
   .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
-      [data-neb-box-hovered-by-default]
-    ):hover:active,
-  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true'][data-neb-box-hovered-by-default='true']:active {
+      [data-neb-box-disable-active-state]
+    ):active,
+  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
+      [data-neb-box-disable-active-state]
+    ):not([data-neb-box-hovered-by-default]):hover:active,
+  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
+      [data-neb-box-disable-active-state]
+    )[data-neb-box-hovered-by-default='true']:active {
     color: var(
       --neb-#{$intent}-ghost-text-active,
       var(--neb-#{$intent}-ghost-text-hover, var(--neb-#{$intent}-ghost-text, var(--neb-text)))
@@ -117,11 +121,15 @@
   }
 
   // active
-  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:active,
   .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
-      [data-neb-box-hovered-by-default]
-    ):hover:active,
-  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true'][data-neb-box-hovered-by-default='true']:active {
+      [data-neb-box-disable-active-state]
+    ):active,
+  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
+      [data-neb-box-disable-active-state]
+    ):not([data-neb-box-hovered-by-default]):hover:active,
+  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
+      [data-neb-box-disable-active-state]
+    )[data-neb-box-hovered-by-default='true']:active {
     $mainColor: var(
       --neb-#{$intent}-outline-border-active,
       var(--neb-#{$intent}-outline-border-hover, var(--neb-#{$intent}-outline-border, var(--neb-text)))
@@ -157,11 +165,15 @@
   }
 
   // active
-  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:active,
   .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
-      [data-neb-box-hovered-by-default]
-    ):hover:active,
-  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true'][data-neb-box-hovered-by-default='true']:active {
+      [data-neb-box-disable-active-state]
+    ):active,
+  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
+      [data-neb-box-disable-active-state]
+    ):not([data-neb-box-hovered-by-default]):hover:active,
+  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
+      [data-neb-box-disable-active-state]
+    )[data-neb-box-hovered-by-default='true']:active {
     $mainColor: var(
       --neb-#{$intent}-solid-bg-active,
       var(--neb-#{$intent}-solid-bg-hover, var(--neb-#{$intent}-solid-bg, var(--neb-background)))
@@ -183,12 +195,14 @@
   ):hover,
 .neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true'][data-neb-box-hovered-by-default='true'],
 .neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:not(
-    [data-neb-box-hovered-by-default]
-  ):active,
+    [data-neb-box-disable-active-state]
+  ):not([data-neb-box-hovered-by-default]):active,
 .neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:not(
-    [data-neb-box-hovered-by-default]
-  ):not([data-neb-box-hovered-by-default]):hover:active,
-.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true'][data-neb-box-hovered-by-default='true']:active {
+    [data-neb-box-disable-active-state]
+  ):not([data-neb-box-hovered-by-default]):not([data-neb-box-hovered-by-default]):hover:active,
+.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:not(
+    [data-neb-box-disable-active-state]
+  )[data-neb-box-hovered-by-default='true']:active {
   &[data-neb-box-intent='neutral'],
   &[data-neb-box-intent='inverse'] {
     color: var(--neb-text);
