@@ -47,7 +47,9 @@ export const ICON_NAMES = [
   'copy',
   'copy-check',
   'external-link',
+  'globe',
   'info',
+  'leaf',
   'list-chevrons-down-up',
   'list-chevrons-up-down',
   'menu',
@@ -57,6 +59,8 @@ export const ICON_NAMES = [
   'search',
   'tree-pine',
   'triangle-alert',
+  'users',
+  'zap',
 ] as const
 
 // types

@@ -33,7 +33,6 @@ export type ButtonSize = (typeof BUTTON_SIZES)[number]
 type ButtonOwnProps = {
   size?: ButtonSize
   fullWidth?: RespValue<boolean>
-  selected?: boolean
 }
 
 type PropsFromHtmlTag<T extends ButtonTag = 'button'> = HtmlTagProps<T>
@@ -45,7 +44,7 @@ type PropsFromBox<T extends ButtonTag = 'button'> = Pick<
 
 type PropsFromFlex = Pick<FlexProps<'span'>, 'justifyContent'>
 
-type PropsFromText = Pick<TextProps<'span'>, 'iconName' | 'iconPosition'> & {
+type PropsFromText = Pick<TextProps<'span'>, 'iconName' | 'iconPosition' | 'bold'> & {
   labelIntent?: TextProps<'span'>['intent']
 }
 

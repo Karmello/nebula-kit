@@ -66,7 +66,7 @@ export const Select = ({
                 onClick: () => handleChange(value),
               }}
               justifyContent="flex-start"
-              selected={value === currentValue}
+              bold={value === currentValue}
             >
               {label}
             </DropdownList.Item>

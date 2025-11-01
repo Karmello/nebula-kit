@@ -34,12 +34,12 @@ export const Button = <T extends ButtonTag = 'button'>({
   iconPosition,
   labelIntent,
   justifyContent = DEFAULT_BUTTON_JUSTIFY_CONTENT,
+  bold,
   // WithIcon
   iconAngle,
   // own
   size = DEFAULT_BUTTON_SIZE,
   fullWidth,
-  selected,
 }: ButtonProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
 
@@ -50,7 +50,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   }, [bp, fullWidth])
 
   const text = (
-    <Text tag="span" intent={labelIntent} scale={BUTTON_SIZE_CONFIG[size].textScale} bold={selected}>
+    <Text tag="span" intent={labelIntent} scale={BUTTON_SIZE_CONFIG[size].textScale} bold={bold}>
       {children}
     </Text>
   )

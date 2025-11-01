@@ -12,11 +12,12 @@ import {
   ChevronRight,
   ChevronUp,
   CircleAlert,
-  X,
   Copy,
   CopyCheck,
   ExternalLink,
+  Globe,
   Info,
+  Leaf,
   ListChevronsDownUp,
   ListChevronsUpDown,
   Menu,
@@ -26,6 +27,9 @@ import {
   Search,
   TreePine,
   TriangleAlert,
+  Users,
+  X,
+  Zap,
 } from 'lucide-react'
 
 import { IconName } from 'lib/definitions'
@@ -46,7 +50,9 @@ export const ICONS: Record<IconName, any> = {
   copy: Copy,
   'copy-check': CopyCheck,
   'external-link': ExternalLink,
+  globe: Globe,
   info: Info,
+  leaf: Leaf,
   'list-chevrons-down-up': ListChevronsDownUp,
   'list-chevrons-up-down': ListChevronsUpDown,
   menu: Menu,
@@ -56,6 +62,8 @@ export const ICONS: Record<IconName, any> = {
   search: Search,
   'tree-pine': TreePine,
   'triangle-alert': TriangleAlert,
+  users: Users,
+  zap: Zap,
 }
 
 export const getSvgIconComponent = (name: IconName): ((props: SVGProps<SVGElement>) => JSX.Element) => {

@@ -23,6 +23,11 @@ export const FOUNDATION_CATEGORIES = [
           { key: 'visual-coherence', label: 'Visual coherence' },
         ],
       },
+      {
+        key: 'get-started',
+        label: 'Get started',
+        sections: [{ key: 'installation', label: 'Installation' }],
+      },
     ],
   },
   {

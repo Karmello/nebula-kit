@@ -43,6 +43,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     ...TEXT_PROPS_META.intent,
     description: "Semantic color intent applied to the button's inner content.",
   },
+  bold: TEXT_PROPS_META.bold,
   justifyContent: {
     ...FLEX_PROPS_META.justifyContent,
     defaultValue: String(DEFAULT_BUTTON_JUSTIFY_CONTENT),
@@ -62,11 +63,6 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     defaultValue: 'false',
     isResponsive: true,
     description: 'Expands the button to match the full width of its container.',
-  },
-  selected: {
-    options: ['boolean'],
-    defaultValue: 'false',
-    description: 'Marks the component as selected by rendering its text in bold.',
   },
   hovered: BOX_PROPS_META.hovered,
 }
