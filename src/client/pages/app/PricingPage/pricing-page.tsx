@@ -6,7 +6,7 @@ export const PricingPage = () => {
 
   return (
     <Box paddingTop={15} paddingInline={{ base: 20, lg: 50 }}>
-      <Section heading="Plans & Pricing">
+      <Section heading="Plans & Pricing" intent="neutral">
         <Text>Choose the plan that fits your workflow.</Text>
         <Spacer blockSize={50} />
         <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }} gap={20}>
@@ -41,7 +41,7 @@ export const PricingPage = () => {
               Full component set for individuals.
             </Text>
             <Spacer />
-            <Text typography="h6">$29 / month</Text>
+            <Text typography="h6">$19 / month</Text>
             <Spacer />
             <Text intent="neutral">
               Unlock the complete component library, including advanced UI patterns and extended customization

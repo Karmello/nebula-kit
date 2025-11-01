@@ -179,7 +179,12 @@
 
 .neb-box[data-neb-box-variant='outline'],
 .neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:not([data-neb-box-hovered]):hover,
-.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true'][data-neb-box-hovered='true'] {
+.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true'][data-neb-box-hovered='true'],
+.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:not([data-neb-box-hovered]):active,
+.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:not([data-neb-box-hovered]):not(
+    [data-neb-box-hovered]
+  ):hover:active,
+.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true'][data-neb-box-hovered='true']:active {
   &[data-neb-box-intent='neutral'],
   &[data-neb-box-intent='inverse'] {
     color: var(--neb-text);
