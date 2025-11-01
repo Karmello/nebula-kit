@@ -30,7 +30,7 @@ export const PricingPage = () => {
                   navigateTo('/foundations/overview/get-started/installation')
                 }}
               >
-                <Button size="sm" intent="secondary">
+                <Button size="sm" intent="highlight">
                   Get started
                 </Button>
               </Link>
