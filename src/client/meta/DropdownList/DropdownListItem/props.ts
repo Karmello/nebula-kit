@@ -12,7 +12,6 @@ const DROPDOWN_LIST_ITEM_PROPS_META: ComponentMeta<DropdownListItemProps>['props
     isRequired: true,
   },
   bold: BUTTON_PROPS_META.bold,
-  hovered: BUTTON_PROPS_META.hovered,
   disabled: BUTTON_PROPS_META.disabled,
   iconName: BUTTON_PROPS_META.iconName,
   iconPosition: BUTTON_PROPS_META.iconPosition,

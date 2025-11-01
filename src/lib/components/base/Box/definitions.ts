@@ -41,7 +41,7 @@ type BoxOwnProps = {
   borderBottomLeftRadius?: RespValue<ScaleValue | string>
   interactive?: boolean
   disabled?: boolean
-  hovered?: boolean
+  hoveredByDefault?: boolean
   display?: RespValue<CssDisplay>
   overflowX?: RespValue<CssOverflow>
   overflowY?: RespValue<CssOverflow>

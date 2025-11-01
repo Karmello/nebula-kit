@@ -21,7 +21,7 @@ export const Box = <T extends ElementType = 'div'>({
   borderIntent,
   interactive,
   disabled,
-  hovered,
+  hoveredByDefault,
   opacity,
   borderWidth,
   borderTopWidth,
@@ -171,7 +171,7 @@ export const Box = <T extends ElementType = 'div'>({
             ...tagAttrs?.style,
             zIndex,
           },
-          ...applyStaticDataset('box', { interactive, disabled, hovered }),
+          ...applyStaticDataset('box', { interactive, disabled, hoveredByDefault }),
         } as PropsWithoutRef<ComponentProps<T>>
       }
       tagRef={tagRef || ref}

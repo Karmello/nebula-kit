@@ -61,7 +61,7 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
       variant={variant}
       intent={intent}
       size={size}
-      hovered={blockMouse ? index === hoveredIndex : undefined}
+      hoveredByDefault={blockMouse ? index === hoveredIndex : undefined}
       fullWidth
       {...buttonProps}
     >

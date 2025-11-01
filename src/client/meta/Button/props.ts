@@ -64,7 +64,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     isResponsive: true,
     description: 'Expands the button to match the full width of its container.',
   },
-  hovered: BOX_PROPS_META.hovered,
+  hoveredByDefault: BOX_PROPS_META.hoveredByDefault,
 }
 
 export { BUTTON_PROPS_META }

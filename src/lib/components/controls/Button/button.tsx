@@ -27,7 +27,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   // Box
   variant = DEFAULT_BUTTON_VARIANT,
   intent = DEFAULT_BUTTON_INTENT,
-  hovered,
+  hoveredByDefault,
   disabled,
   // Text
   iconName,
@@ -73,7 +73,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       tagRef={tagRef || ref}
       variant={variant}
       intent={intent}
-      hovered={hovered}
+      hoveredByDefault={hoveredByDefault}
       disabled={disabled}
       interactive
       {...BUTTON_SIZE_CONFIG[size]}

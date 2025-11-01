@@ -92,10 +92,11 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     defaultValue: 'false',
     description: 'Enables hover, focus and press states.',
   },
-  hovered: {
+  hoveredByDefault: {
     options: ['boolean'],
     defaultValue: 'false',
-    description: 'Visually indicates a hovered state, matching the appearance shown on mouse hover.',
+    description:
+      'Shows the element in its hovered visual state by default, without requiring user interaction.',
   },
   disabled: {
     options: ['boolean'],
