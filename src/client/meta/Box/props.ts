@@ -90,19 +90,19 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   interactive: {
     options: ['boolean'],
     defaultValue: 'false',
-    description: 'Enables hover, focus and press states.',
+    description: 'Enables hover, active and focus states.',
   },
   hoveredByDefault: {
     options: ['boolean'],
     defaultValue: 'false',
     description:
-      'Shows the element in its hovered visual state by default, without requiring user interaction.',
+      'Shows the element in its hovered visual state by default, without requiring user interaction. Works only with interactive on.',
   },
   disableActiveState: {
     options: ['boolean'],
     defaultValue: 'false',
     description:
-      'Disables the active (pressed) visual state, keeping the element unchanged when clicked or held.',
+      'Disables the active visual state, keeping the element unchanged when clicked or held. Works only with interactive on.',
   },
   disabled: {
     options: ['boolean'],

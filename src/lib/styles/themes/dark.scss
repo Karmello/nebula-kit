@@ -29,7 +29,7 @@
     --neb-primary-solid-text-hover: var(--neb-#{$brand}-15);
 
     // inverse solid
-    --neb-inverse-solid-bg: var(--neb-#{$brand}-5);
+    --neb-inverse-solid-bg: var(--neb-#{$brand}-4);
     --neb-inverse-solid-bg-hover: var(--neb-#{$brand}-3);
     --neb-inverse-solid-bg-active: var(--neb-#{$brand}-1);
     --neb-inverse-solid-text: var(--neb-#{$brand}-15);
@@ -70,7 +70,7 @@
     --neb-primary-outline-bg-active: var(--neb-#{$brand}-13);
 
     // inverse outline
-    --neb-inverse-outline-border: var(--neb-#{$brand}-5);
+    --neb-inverse-outline-border: var(--neb-#{$brand}-4);
     --neb-inverse-outline-border-hover: var(--neb-#{$brand}-3);
     --neb-inverse-outline-border-active: var(--neb-#{$brand}-1);
     --neb-inverse-outline-bg-hover: var(--neb-#{$brand}-14);
@@ -107,6 +107,11 @@
 html[data-theme='dark'][data-brand='green'] {
   // primary solid
   --neb-primary-solid-text: var(--neb-green-15);
+}
+
+html[data-theme='dark'][data-brand='yellow'] {
+  // primary solid
+  --neb-primary-solid-text: var(--neb-yellow-15);
 }
 
 html[data-theme='dark'][data-brand='amber'] {

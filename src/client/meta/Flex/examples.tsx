@@ -4,7 +4,7 @@ import { FlexProps } from 'lib/components/layout/Flex/definitions'
 
 const FLEX_EXAMPLES_META: ComponentMeta<FlexProps>['examples'] = [
   {
-    description: 'Flex arranging two outlined boxes side by side.',
+    description: 'Flex arranging two boxes side by side.',
     jsx: (
       <Flex>
         <Box variant="outline" intent="primary">

@@ -203,8 +203,7 @@
 .neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:not(
     [data-neb-box-disable-active-state]
   )[data-neb-box-hovered-by-default='true']:active {
-  &[data-neb-box-intent='neutral'],
-  &[data-neb-box-intent='inverse'] {
+  &[data-neb-box-intent='neutral'] {
     color: var(--neb-text);
   }
 }

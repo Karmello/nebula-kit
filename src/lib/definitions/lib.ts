@@ -17,6 +17,7 @@ export const BRANDS = [
   'brown',
   'olive',
   'green',
+  'yellow',
   'amber',
   'gray',
 ] as const
