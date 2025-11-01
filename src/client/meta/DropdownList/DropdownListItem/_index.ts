@@ -7,6 +7,7 @@ const DROPDOWN_LIST_ITEM_META: ComponentMeta<DropdownListItemProps> = {
   overview: {
     name: 'DropdownList.Item',
     title: 'Represents a single option within a dropdown list.',
+    description: ['inherits core behavior from Button'],
     composedOf: ['Button'],
     rendersAs: ['button', 'a'],
   },

@@ -13,10 +13,10 @@ const TOOLBAR_META: ComponentMeta<ToolbarProps> = {
     title:
       'Horizontal bar with Start, Main and End slots, designed to present different types of action items.',
     description: [
-      'the main section is toggleable in collapsed mode and always visible in inline mode',
-      'any Box inside the Toolbar is overridden to be square',
       'often used inside AppFrame.Header to control navigation and provide additional tools',
       'often paired with ButtonGroup rendered inside the main section',
+      'the main section is toggleable in collapsed mode and always visible in inline mode',
+      'any Box inside the Toolbar is overridden to be square',
     ],
     composedOf: ['Grid'],
     rendersAs: ['nav'],

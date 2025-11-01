@@ -9,7 +9,7 @@ const ROTATE_META: ComponentMeta<RotateProps> = {
     title: 'Wrapper component that animates its children by rotating them.',
     description: [
       'rotates its children based on the "angle" prop',
-      'animates rotation when the angle value changes',
+      'performs animation when the prop value changes',
     ],
     composedOf: ['Box'],
     rendersAs: ['span'],

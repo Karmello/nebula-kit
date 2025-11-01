@@ -16,6 +16,7 @@ const DROPDOWN_LIST_META: ComponentMeta<DropdownListProps> = {
       'handles entry and exit animations',
       'adjusts scrolling based on the "visibleItemsCount" prop',
       'scrolls to a specific item index based on "scrollToIndex" and "scrollAlign" props',
+      'handles keyboard navigation with proper arrow key support for moving between items',
       'manages the inline size of the list container',
       'supports variant and intent styling',
       'supports separate intent styling for dividers between list items',

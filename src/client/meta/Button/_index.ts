@@ -10,7 +10,7 @@ const BUTTON_META: ComponentMeta<ButtonProps> = {
     title: 'Interactive control for triggering actions.',
     description: [
       'provides a consistent, accessible trigger for user actions',
-      'handles interactive states: hover, focus, active, disabled',
+      'handles interactive states: hover, active, focus, selected, disabled',
       'supports text and icon composition',
       'supports full-width layout to span the entire container',
     ],

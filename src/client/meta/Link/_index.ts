@@ -9,9 +9,9 @@ const LINK_META: ComponentMeta<LinkProps> = {
     title: 'Wrapper that turns any interactive element into a navigable link.',
     description: [
       'renders its child as <a> tag to enable navigation behavior',
-      'removes the need to manually pass tag, onClick or e.preventDefault() in components',
-      'automatically prevents default browser navigation when onClick is provided, supporting custom routing',
-      'accepts href and target for standard link attributes',
+      'removes the need to manually pass "tag", "onClick" or e.preventDefault() in components',
+      'automatically prevents default browser navigation when "onClick" is provided, supporting custom routing',
+      'accepts "href" and "target" for standard link attributes',
       'commonly used with Button or Text components for consistent navigation handling',
     ],
     rendersAs: ['a'],
