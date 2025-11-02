@@ -8,6 +8,7 @@ import { FLEX_ITEM_META } from './FlexItem/_index'
 
 const FLEX_META: ComponentMeta<FlexProps> = {
   overview: {
+    plan: 'free',
     title:
       'Layout component built on CSS Flexbox, providing a one-dimensional system for arranging children in a row or column.',
     description: [

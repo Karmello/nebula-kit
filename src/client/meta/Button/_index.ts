@@ -7,6 +7,7 @@ import { BUTTON_EXAMPLES_META } from './examples'
 
 const BUTTON_META: ComponentMeta<ButtonProps> = {
   overview: {
+    plan: 'free',
     title: 'Interactive control for triggering actions.',
     description: [
       'provides a consistent, accessible trigger for user actions',

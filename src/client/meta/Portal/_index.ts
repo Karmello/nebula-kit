@@ -6,6 +6,7 @@ import { PORTAL_EXAMPLES_META } from './examples'
 
 const PORTAL_META: ComponentMeta<PortalProps> = {
   overview: {
+    plan: 'free',
     title:
       'Container that renders its children into a separate DOM node, allowing content to appear above the main document flow.',
     description: [

@@ -6,6 +6,7 @@ import { SPACER_PROPS_META } from './props'
 
 const SPACER_META: ComponentMeta<SpacerProps> = {
   overview: {
+    plan: 'free',
     title: 'Layout component that introduces controlled empty space between elements.',
     description: [
       'provides consistent vertical spacing between elements',

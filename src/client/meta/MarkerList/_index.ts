@@ -8,6 +8,7 @@ import { MARKER_LIST_ITEM_META } from './MarkerListItem/_index'
 
 const MARKER_LIST_META: ComponentMeta<MarkerListProps> = {
   overview: {
+    plan: 'free',
     title: 'List component that displays items with native markers.',
     description: ['presents short text collections with bullets or numbers'],
     composedOf: ['Flex'],

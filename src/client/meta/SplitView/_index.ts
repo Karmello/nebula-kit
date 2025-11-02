@@ -10,6 +10,7 @@ import { SPLIT_VIEW_MAIN_BAR_META } from './SplitViewMainBar/_index'
 
 const SPLIT_VIEW_META: ComponentMeta<SplitViewProps> = {
   overview: {
+    plan: 'pro',
     title: 'Two-panel layout designed for building side navigation alongside main content.',
     composedOf: ['Grid'],
     description: [

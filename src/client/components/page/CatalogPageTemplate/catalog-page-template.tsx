@@ -1,10 +1,11 @@
 import { useLocation } from 'react-router'
 import { pascalCase } from 'change-case'
 
+import meta from 'client/meta'
 import { useNavigateTo } from 'client/services'
-import { Box, Breadcrumb, SideNav, Spacer, SplitView, Text, Divider } from 'lib/components'
 import { ComponentsPageRoutes, FoundationsPageRoutes } from 'client/pages'
 import { PageKey } from 'client/definitions'
+import { Box, Breadcrumb, SideNav, Spacer, SplitView, Text, Divider, Flex } from 'lib/components'
 
 type Props = {
   pageKey: string
@@ -27,6 +28,8 @@ export const CatalogPageTemplate = ({
 }: Props) => {
   const { pathname } = useLocation()
   const navigateTo = useNavigateTo()
+
+  const planLabel = meta[activeItemObj?.label]?.[activeItemObj?.label]?.overview.plan
 
   return (
     <SplitView>
@@ -122,9 +125,22 @@ export const CatalogPageTemplate = ({
                   </SplitView.Side>
                   <SplitView.Main paddingRight={20}>
                     <SplitView.MainBar>
-                      <Text typography="h3">
-                        {pageKey === PageKey.foundations ? activeSectionObj?.label : activeItemObj?.label}
-                      </Text>
+                      <Flex gap={15} alignItems="center">
+                        <Text typography="h3">
+                          {pageKey === PageKey.foundations ? activeSectionObj?.label : activeItemObj?.label}
+                        </Text>
+                        {pageKey === PageKey.components && planLabel ? (
+                          <Box
+                            variant="solid"
+                            intent={planLabel === 'free' ? 'tertiary' : 'info'}
+                            borderRadius={10}
+                            paddingBlock={3}
+                            paddingInline={7}
+                          >
+                            <Text scale="compact">{planLabel}</Text>
+                          </Box>
+                        ) : null}
+                      </Flex>
                       <Divider />
                     </SplitView.MainBar>
                     {pageKey === PageKey.foundations ? <FoundationsPageRoutes /> : null}

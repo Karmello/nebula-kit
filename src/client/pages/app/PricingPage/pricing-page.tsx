@@ -1,5 +1,5 @@
 import { useNavigateTo } from 'client/services'
-import { Box, Button, Flex, Section, Spacer, Text, Link, Grid } from 'lib/components'
+import { Box, Button, Flex, Section, Spacer, Text, Link, Grid, MarkerList } from 'lib/components'
 
 export const PricingPage = () => {
   const navigateTo = useNavigateTo()
@@ -12,16 +12,21 @@ export const PricingPage = () => {
         <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }} gap={20}>
           <Section heading="Free" variant="outline" iconName="leaf" interactive disableActiveState>
             <Text intent="neutral" bold>
-              Get started with core components.
+              For newcomers.
             </Text>
             <Spacer />
-            <Text typography="h6">$0 / month</Text>
+            <Text typography="h6">$0</Text>
             <Spacer />
             <Text intent="neutral">
-              Access the essential NebulaKit components and design tokens to start building right away.
-              Perfect for hobby projects, learning or exploring the system before committing. Includes
-              community support and regular updates to the core library.
+              Access the essential NebulaKit components to start building right away. Perfect for hobby
+              projects, learning or exploring before committing.
             </Text>
+            <Spacer />
+            <MarkerList rowGap={7}>
+              <MarkerList.Item>
+                <Text italic>Core building blocks included</Text>
+              </MarkerList.Item>
+            </MarkerList>
             <Spacer blockSize={40} />
             <Flex justifyContent="center">
               <Link
@@ -45,16 +50,24 @@ export const PricingPage = () => {
             disableActiveState
           >
             <Text intent="neutral" bold>
-              Full component set for individuals.
+              For individual developers.
             </Text>
             <Spacer />
             <Text typography="h6">$19 / month</Text>
             <Spacer />
             <Text intent="neutral">
-              Unlock the complete component library, including advanced UI patterns and extended customization
-              options. Designed for individual developers or freelancers who need production-ready quality and
-              dedicated support. Includes priority bug fixes and early feature previews.
+              Unlock NebulaKit's full component library built on the core primitives. Perfect for individual
+              developers and freelancers who want complete access to every building block.
             </Text>
+            <Spacer />
+            <MarkerList rowGap={7}>
+              <MarkerList.Item>
+                <Text italic>All components included</Text>
+              </MarkerList.Item>
+              <MarkerList.Item>
+                <Text italic>Direct support available</Text>
+              </MarkerList.Item>
+            </MarkerList>
             <Spacer blockSize={40} />
             <Flex justifyContent="center">
               <Link
@@ -64,7 +77,7 @@ export const PricingPage = () => {
                 }}
               >
                 <Button size="sm" intent="inverse">
-                  Buy now or upgrade
+                  Choose
                 </Button>
               </Link>
             </Flex>
@@ -78,16 +91,24 @@ export const PricingPage = () => {
             disableActiveState
           >
             <Text intent="neutral" bold>
-              For small teams who need support.
+              For small teams up to 10 members.
             </Text>
             <Spacer />
             <Text typography="h6">$49 / month</Text>
             <Spacer />
             <Text intent="neutral">
-              Built for small teams that ship fast. Share access across your organization, manage licenses
-              easily and receive responsive technical support. Includes everything in Professional plus
-              collaboration-focused components and team-oriented updates.
+              Ideal for small teams building together under one license. Includes everything from the
+              Professional plan.
             </Text>
+            <Spacer />
+            <MarkerList rowGap={7}>
+              <MarkerList.Item>
+                <Text italic>All components included</Text>
+              </MarkerList.Item>
+              <MarkerList.Item>
+                <Text italic>Higher priority support available</Text>
+              </MarkerList.Item>
+            </MarkerList>
             <Spacer blockSize={40} />
             <Flex justifyContent="center">
               <Link
@@ -97,7 +118,7 @@ export const PricingPage = () => {
                 }}
               >
                 <Button size="sm" intent="info">
-                  Start team plan
+                  Choose
                 </Button>
               </Link>
             </Flex>
@@ -111,16 +132,27 @@ export const PricingPage = () => {
             disableActiveState
           >
             <Text intent="neutral" bold>
-              Tailored for larger orgs and custom needs.
+              For large organizations.
             </Text>
             <Spacer />
-            <Text typography="h6">$199 / month</Text>
+            <Text typography="h6">From $199 / month</Text>
             <Spacer />
             <Text intent="neutral">
-              Tailored for larger organizations with complex needs. Get full access to NebulaKit, custom
-              licensing, invoicing and integration assistance. Includes direct communication with the
-              maintainer and priority roadmap influence.
+              Tailored for large organizations and specialized use cases that need flexible agreements.
+              Includes everything from the Business plan.
             </Text>
+            <Spacer />
+            <MarkerList rowGap={7}>
+              <MarkerList.Item>
+                <Text italic>All components included</Text>
+              </MarkerList.Item>
+              <MarkerList.Item>
+                <Text italic>Top-priority support available</Text>
+              </MarkerList.Item>
+              <MarkerList.Item>
+                <Text italic>Feature influence on the library's development</Text>
+              </MarkerList.Item>
+            </MarkerList>
             <Spacer blockSize={40} />
             <Flex justifyContent="center">
               <Link

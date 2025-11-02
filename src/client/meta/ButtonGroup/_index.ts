@@ -6,6 +6,7 @@ import { BUTTON_GROUP_EXAMPLES_META } from './examples'
 
 const BUTTON_GROUP_META: ComponentMeta<ButtonGroupProps> = {
   overview: {
+    plan: 'free',
     title: 'Composite control that unifies several buttons into a single interface element.',
     description: [
       'groups multiple buttons into a single horizontal or vertical block',

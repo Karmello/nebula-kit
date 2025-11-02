@@ -9,6 +9,7 @@ import { SIDE_NAV_CATEGORY_META } from './SideNavCategory/_index'
 
 const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
   overview: {
+    plan: 'pro',
     title: 'Vertical navigation component for organizing page links.',
     description: [
       'ideal for use inside SplitView.Side',

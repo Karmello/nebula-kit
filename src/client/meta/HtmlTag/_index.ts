@@ -8,6 +8,7 @@ import { HTML_TAG_EXAMPLES_META } from './examples'
 
 const HTML_TAG_META: ComponentMeta<HtmlTagProps<ElementType>> = {
   overview: {
+    plan: 'free',
     title: 'Low-level component that renders an HTML tag.',
     description: [
       'renders the specified HTML tag',

@@ -8,6 +8,7 @@ import { FOOTER_SECTION_META } from './FooterSection/_index'
 
 const FOOTER_META: ComponentMeta<FooterProps> = {
   overview: {
+    plan: 'free',
     title:
       'Layout component that arranges content into adaptive sections, wrapping automatically to fit available space.',
     description: [

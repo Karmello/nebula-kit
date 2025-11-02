@@ -6,6 +6,7 @@ import { TEXT_EXAMPLES_META } from './examples'
 
 const TEXT_META: ComponentMeta<TextProps> = {
   overview: {
+    plan: 'free',
     title:
       'Foundational component for displaying and styling textual content that ensures consistent typography across the system.',
     description: [

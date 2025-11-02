@@ -7,6 +7,7 @@ import { NEBKIT_PROVIDER_EXAMPLES_META } from './examples'
 
 const NEBKIT_PROVIDER_META: ComponentMeta<NebkitProviderProps<Theme>> = {
   overview: {
+    plan: 'free',
     title: 'The root setup component for NebulaKit.',
     description: [
       'provides a consistent context for all NebulaKit components to operate within',

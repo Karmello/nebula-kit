@@ -10,6 +10,7 @@ import { APP_FRAME_FOOTER_META } from './AppFrameFooter/_index'
 
 const APP_FRAME_META: ComponentMeta<AppFrameProps> = {
   overview: {
+    plan: 'free',
     title: 'Structural component that defines the overall layout of an application view.',
     description: ['provides header, main area and footer regions for the application'],
     composedOf: ['Grid'],

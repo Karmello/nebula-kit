@@ -6,6 +6,7 @@ import { ANIMATE_EXAMPLES_META } from './examples'
 
 const ANIMATE_META: ComponentMeta<AnimateProps> = {
   overview: {
+    plan: 'free',
     title: 'Wrapper component for simple show-and-hide transitions.',
     description: [
       'wraps content in a Box and toggles its visibility by animating a specified property',
