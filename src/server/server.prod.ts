@@ -9,12 +9,12 @@ import { StaticRouter } from 'react-router'
 import { HydrationGate, NebkitProvider } from 'src/lib/components'
 import { App } from 'src/client/components'
 
-const distDir = path.resolve(process.cwd(), 'dist/client')
-const indexHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf-8')
+const buildDir = path.resolve(process.cwd(), 'build/client')
+const indexHtml = fs.readFileSync(path.join(buildDir, 'index.html'), 'utf-8')
 
 const app = express()
 
-app.use(express.static(distDir, { index: false }))
+app.use(express.static(buildDir, { index: false }))
 
 app.get(/.*/, (req, res) => {
   try {

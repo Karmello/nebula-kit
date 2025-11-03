@@ -37,8 +37,8 @@
     "dev:ssr": "nodemon -L --exec \"tsx src/server/server.dev.ts\" --watch src/server/server.dev.ts --verbose",
     "build:client": "NODE_ENV=production vite build --config vite.client.prod.ts",
     "build:server": "NODE_ENV=production tsup --config tsup.server.ts",
-    "build": "yarn build:client && yarn build:server",
-    "start": "NODE_ENV=production node dist/server/server.prod.js",
+    "build": "rimraf build && yarn build:client && yarn build:server",
+    "start": "NODE_ENV=production node build/server/server.prod.js",
     "prettier": "prettier --check src/**/*.{ts,tsx}",
     "prettify": "prettier --write src/**/*.{ts,tsx}",
     "lint": "eslint src/**/*.{ts,tsx}",
@@ -49,8 +49,7 @@
     "prepare": "husky install",
     "dist:css": "sass --load-path src/lib src/lib/styles/index.pkg.scss dist/lib/styles/index.css --no-source-map",
     "dist": "tsup --config tsup.pkg.ts && yarn dist:css",
-    "clean": "rimraf dist",
-    "prepack": "yarn clean && yarn dist && rimraf dist/index.d.cts dist/types"
+    "prepack": "rimraf dist && yarn dist && rimraf dist/index.d.cts dist/types"
   },
   "peerDependencies": {
     "react": ">=19",

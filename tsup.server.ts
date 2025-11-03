@@ -5,7 +5,7 @@ export default defineConfig({
   platform: 'node',
   target: 'node20',
   format: ['esm'],
-  outDir: 'dist/server',
+  outDir: 'build/server',
   sourcemap: false,
   external: ['react', 'react-dom', 'qs', 'object-inspect', 'side-channel'],
   loader: { '.scss': 'text' },
