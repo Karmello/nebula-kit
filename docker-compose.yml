@@ -1,6 +1,6 @@
 services:
-  neb-kit:
-    container_name: neb-kit
+  neb-app:
+    container_name: neb-app
     build:
       context: .
       dockerfile: Dockerfile
