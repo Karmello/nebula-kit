@@ -1,6 +1,3 @@
-networks:
-  default:
-    name: neb_net
 services:
   neb-kit:
     container_name: neb-kit
