@@ -10,7 +10,6 @@ export const SelectOption = ({
   tagAttrs,
   tagRef,
   // Button
-  bold,
   disabled,
   iconAngle,
   iconName,

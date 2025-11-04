@@ -7,7 +7,6 @@ const SELECT_OPTION_PROPS_META: ComponentMeta<SelectOptionProps>['props'] = {
   tagAttrs: DROPDOWN_LIST_ITEM_PROPS_META.tagAttrs,
   tagRef: DROPDOWN_LIST_ITEM_PROPS_META.tagRef,
   children: DROPDOWN_LIST_ITEM_PROPS_META.children,
-  bold: DROPDOWN_LIST_ITEM_PROPS_META.bold,
   disabled: DROPDOWN_LIST_ITEM_PROPS_META.disabled,
   iconName: DROPDOWN_LIST_ITEM_PROPS_META.iconName,
   iconPosition: DROPDOWN_LIST_ITEM_PROPS_META.iconPosition,

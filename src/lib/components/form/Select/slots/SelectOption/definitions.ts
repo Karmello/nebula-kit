@@ -7,5 +7,7 @@ type SelectOptionOwnProps = {
   value: string
 }
 
-export type SelectOptionProps<T extends ButtonTag = 'button'> = DropdownListItemProps<T> &
+type PropsFromDropdownListItem<T extends ButtonTag = 'button'> = Omit<DropdownListItemProps<T>, 'bold'>
+
+export type SelectOptionProps<T extends ButtonTag = 'button'> = PropsFromDropdownListItem<T> &
   SelectOptionOwnProps

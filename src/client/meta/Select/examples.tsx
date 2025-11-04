@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { ComponentMeta } from 'client/definitions'
-import { DropdownList, Select, SelectProps } from 'lib/components'
+import { Select, SelectProps } from 'lib/components'
 
 const SelectControlled = () => {
   const [value, setValue] = useState<string>('option-1')
