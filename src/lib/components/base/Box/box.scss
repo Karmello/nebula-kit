@@ -44,6 +44,7 @@
   padding: initial;
 }
 
+.neb-box[data-neb-box-variant='outline'],
 .neb-box[data-neb-box-interactive='true'] {
   border-width: var(--neb-border-width);
 }
@@ -52,163 +53,138 @@
   pointer-events: none;
 }
 
-.neb-box[data-neb-box-variant='outline'] {
-  border-width: var(--neb-border-width);
-}
-
 // ghost
 @each $intent in $neb-intents {
-  // rest
-  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'] {
+  .neb-box[data-neb-box-intent='#{$intent}'][data-neb-box-variant='ghost'] {
+    // rest
     background-color: transparent;
     border-color: transparent;
     color: var(--neb-#{$intent}-ghost-text, var(--neb-text));
-  }
 
-  // hover
-  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
-      [data-neb-box-hovered-by-default]
-    ):hover,
-  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true'][data-neb-box-hovered-by-default='true'] {
-    color: var(--neb-#{$intent}-ghost-text-hover, var(--neb-#{$intent}-ghost-text, var(--neb-text)));
-  }
+    // interactive
+    &[data-neb-box-interactive='true'] {
+      // hover
+      &:not([data-neb-box-hovered-by-default]):hover,
+      &[data-neb-box-hovered-by-default='true'] {
+        color: var(--neb-#{$intent}-ghost-text-hover, var(--neb-#{$intent}-ghost-text, var(--neb-text)));
+      }
 
-  // active
-  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
-      [data-neb-box-disable-active-state]
-    ):active,
-  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
-      [data-neb-box-disable-active-state]
-    ):not([data-neb-box-hovered-by-default]):hover:active,
-  .neb-box[data-neb-box-variant='ghost'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
-      [data-neb-box-disable-active-state]
-    )[data-neb-box-hovered-by-default='true']:active {
-    color: var(
-      --neb-#{$intent}-ghost-text-active,
-      var(--neb-#{$intent}-ghost-text-hover, var(--neb-#{$intent}-ghost-text, var(--neb-text)))
-    );
+      // active
+      &:not([data-neb-box-disable-active-state]):active,
+      &:not([data-neb-box-disable-active-state]):not([data-neb-box-hovered-by-default]):hover:active,
+      &:not([data-neb-box-disable-active-state])[data-neb-box-hovered-by-default='true']:active,
+      &:not([data-neb-box-disable-active-state])[data-neb-box-active-on-focus='true']:focus-visible {
+        color: var(
+          --neb-#{$intent}-ghost-text-active,
+          var(--neb-#{$intent}-ghost-text-hover, var(--neb-#{$intent}-ghost-text, var(--neb-text)))
+        );
+      }
+    }
   }
 }
 
 // outline
 @each $intent in $neb-intents {
-  // rest
-  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'] {
+  .neb-box[data-neb-box-intent='#{$intent}'][data-neb-box-variant='outline'] {
+    // rest
     $mainColor: var(--neb-#{$intent}-outline-border, var(--neb-text));
     background-color: var(--neb-background);
     border-color: $mainColor;
     color: $mainColor;
-  }
 
-  // hover
-  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
-      [data-neb-box-hovered-by-default]
-    ):hover,
-  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true'][data-neb-box-hovered-by-default='true'] {
-    $mainColor: var(
-      --neb-#{$intent}-outline-border-hover,
-      var(--neb-#{$intent}-outline-border, var(--neb-text))
-    );
-    border-color: $mainColor;
-    color: $mainColor;
-    background-color: var(--neb-#{$intent}-outline-bg-hover, var(--neb-background));
-  }
+    // interactive
+    &[data-neb-box-interactive='true'] {
+      // hover
+      &:not([data-neb-box-hovered-by-default]):hover,
+      &[data-neb-box-hovered-by-default='true'] {
+        $mainColor: var(
+          --neb-#{$intent}-outline-border-hover,
+          var(--neb-#{$intent}-outline-border, var(--neb-text))
+        );
+        border-color: $mainColor;
+        color: $mainColor;
+        background-color: var(--neb-#{$intent}-outline-bg-hover, var(--neb-background));
+      }
 
-  // active
-  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
-      [data-neb-box-disable-active-state]
-    ):active,
-  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
-      [data-neb-box-disable-active-state]
-    ):not([data-neb-box-hovered-by-default]):hover:active,
-  .neb-box[data-neb-box-variant='outline'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
-      [data-neb-box-disable-active-state]
-    )[data-neb-box-hovered-by-default='true']:active {
-    $mainColor: var(
-      --neb-#{$intent}-outline-border-active,
-      var(--neb-#{$intent}-outline-border-hover, var(--neb-#{$intent}-outline-border, var(--neb-text)))
-    );
-    border-color: $mainColor;
-    color: $mainColor;
-    background-color: var(
-      --neb-#{$intent}-outline-bg-active,
-      var(--neb-#{$intent}-outline-bg-hover, var(--neb-background))
-    );
+      // active
+      &:not([data-neb-box-disable-active-state]):active,
+      &:not([data-neb-box-disable-active-state]):not([data-neb-box-hovered-by-default]):hover:active,
+      &:not([data-neb-box-disable-active-state])[data-neb-box-hovered-by-default='true']:active,
+      &:not([data-neb-box-disable-active-state])[data-neb-box-active-on-focus='true']:focus-visible {
+        $mainColor: var(
+          --neb-#{$intent}-outline-border-active,
+          var(--neb-#{$intent}-outline-border-hover, var(--neb-#{$intent}-outline-border, var(--neb-text)))
+        );
+        border-color: $mainColor;
+        color: $mainColor;
+        background-color: var(
+          --neb-#{$intent}-outline-bg-active,
+          var(--neb-#{$intent}-outline-bg-hover, var(--neb-background))
+        );
+      }
+    }
   }
 }
 
 // solid
 @each $intent in $neb-intents {
-  // rest
-  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'] {
+  .neb-box[data-neb-box-intent='#{$intent}'][data-neb-box-variant='solid'] {
+    // rest
     $mainColor: var(--neb-#{$intent}-solid-bg, var(--neb-background));
     background-color: $mainColor;
     border-color: $mainColor;
     color: var(--neb-#{$intent}-solid-text, var(--neb-text));
-  }
 
-  // hover
-  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
-      [data-neb-box-hovered-by-default]
-    ):hover,
-  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true'][data-neb-box-hovered-by-default='true'] {
-    $mainColor: var(--neb-#{$intent}-solid-bg-hover, var(--neb-#{$intent}-solid-bg, var(--neb-background)));
-    background-color: $mainColor;
-    border-color: $mainColor;
-    color: var(--neb-#{$intent}-solid-text-hover, var(--neb-#{$intent}-solid-text, var(--neb-text)));
-  }
+    // interactive
+    &[data-neb-box-interactive='true'] {
+      // hover
+      &:not([data-neb-box-hovered-by-default]):hover,
+      &[data-neb-box-hovered-by-default='true'] {
+        $mainColor: var(
+          --neb-#{$intent}-solid-bg-hover,
+          var(--neb-#{$intent}-solid-bg, var(--neb-background))
+        );
+        background-color: $mainColor;
+        border-color: $mainColor;
+        color: var(--neb-#{$intent}-solid-text-hover, var(--neb-#{$intent}-solid-text, var(--neb-text)));
+      }
 
-  // active
-  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
-      [data-neb-box-disable-active-state]
-    ):active,
-  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
-      [data-neb-box-disable-active-state]
-    ):not([data-neb-box-hovered-by-default]):hover:active,
-  .neb-box[data-neb-box-variant='solid'][data-neb-box-intent='#{$intent}'][data-neb-box-interactive='true']:not(
-      [data-neb-box-disable-active-state]
-    )[data-neb-box-hovered-by-default='true']:active {
-    $mainColor: var(
-      --neb-#{$intent}-solid-bg-active,
-      var(--neb-#{$intent}-solid-bg-hover, var(--neb-#{$intent}-solid-bg, var(--neb-background)))
-    );
-    background-color: $mainColor;
-    border-color: $mainColor;
-    color: var(
-      --neb-#{$intent}-solid-text-active,
-      var(--neb-#{$intent}-solid-text-hover, var(--neb-#{$intent}-solid-text, var(--neb-text)))
-    );
-  }
-}
-
-// misc
-
-.neb-box[data-neb-box-variant='outline'],
-.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:not(
-    [data-neb-box-hovered-by-default]
-  ):hover,
-.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true'][data-neb-box-hovered-by-default='true'],
-.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:not(
-    [data-neb-box-disable-active-state]
-  ):not([data-neb-box-hovered-by-default]):active,
-.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:not(
-    [data-neb-box-disable-active-state]
-  ):not([data-neb-box-hovered-by-default]):not([data-neb-box-hovered-by-default]):hover:active,
-.neb-box[data-neb-box-variant='outline'][data-neb-box-interactive='true']:not(
-    [data-neb-box-disable-active-state]
-  )[data-neb-box-hovered-by-default='true']:active {
-  &[data-neb-box-intent='neutral'] {
-    color: var(--neb-text);
+      // active
+      &:not([data-neb-box-disable-active-state]):active,
+      &:not([data-neb-box-disable-active-state]):not([data-neb-box-hovered-by-default]):hover:active,
+      &:not([data-neb-box-disable-active-state])[data-neb-box-hovered-by-default='true']:active,
+      &:not([data-neb-box-disable-active-state])[data-neb-box-active-on-focus='true']:focus-visible {
+        $mainColor: var(
+          --neb-#{$intent}-solid-bg-active,
+          var(--neb-#{$intent}-solid-bg-hover, var(--neb-#{$intent}-solid-bg, var(--neb-background)))
+        );
+        background-color: $mainColor;
+        border-color: $mainColor;
+        color: var(
+          --neb-#{$intent}-solid-text-active,
+          var(--neb-#{$intent}-solid-text-hover, var(--neb-#{$intent}-solid-text, var(--neb-text)))
+        );
+      }
+    }
   }
 }
 
+// outline variant + neutral intent text
+.neb-box[data-neb-box-variant='outline'][data-neb-box-intent='neutral'] {
+  color: var(--neb-text) !important;
+}
+
+// border intent
 @each $intent in $neb-intents {
   .neb-box[data-neb-box-variant][data-neb-box-border-intent='#{$intent}'] {
     border-color: var(--neb-#{$intent}-solid-bg);
   }
 }
 
-.neb-box[data-neb-box-variant][data-neb-box-intent][data-neb-box-interactive='true']:focus-visible,
-.neb-box[data-neb-box-variant][data-neb-box-intent][data-neb-box-interactive='true']:focus-visible:hover {
-  border-color: var(--neb-focus-border);
+// focus
+.neb-box[data-neb-box-variant][data-neb-box-intent][data-neb-box-interactive='true'] {
+  &:focus-visible,
+  &:focus-visible:hover {
+    border-color: var(--neb-focus-border) !important;
+  }
 }

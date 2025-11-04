@@ -104,6 +104,12 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description:
       'Disables the active visual state, keeping the element unchanged when clicked or held. Works only with interactive on.',
   },
+  activeOnFocus: {
+    options: ['boolean'],
+    defaultValue: 'false',
+    description:
+      'Activates the active visual state when the element gains focus. Works only with interactive on.',
+  },
   disabled: {
     options: ['boolean'],
     defaultValue: 'false',

@@ -19,20 +19,20 @@ export const INPUT_SIZE_CONFIG: Record<
   },
   sm: {
     blockSize: 38,
-    paddingLeft: 12,
-    paddingRight: 12,
+    paddingLeft: 10,
+    paddingRight: 10,
     fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
   },
   md: {
     blockSize: 44,
-    paddingLeft: 16,
-    paddingRight: 16,
+    paddingLeft: 13,
+    paddingRight: 13,
     fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
   },
   lg: {
     blockSize: 52,
-    paddingLeft: 24,
-    paddingRight: 24,
+    paddingLeft: 16,
+    paddingRight: 16,
     fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
   },
 }

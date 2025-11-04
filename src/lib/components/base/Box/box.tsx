@@ -19,36 +19,46 @@ export const Box = <T extends ElementType = 'div'>({
   variant = DEFAULT_BOX_VARIANT,
   intent,
   borderIntent,
+  // state
   interactive,
   disabled,
   hoveredByDefault,
   disableActiveState,
+  activeOnFocus,
+  // css
   opacity,
+  textAlign,
+  zIndex,
+  // border
   borderWidth,
   borderTopWidth,
   borderRightWidth,
   borderBottomWidth,
   borderLeftWidth,
+  // border radius
   borderRadius,
   borderTopLeftRadius,
   borderTopRightRadius,
   borderBottomRightRadius,
   borderBottomLeftRadius,
-  textAlign,
+  // display
   display,
   overflowX,
   overflowY,
+  // position
   position,
   top,
   right,
   bottom,
   left,
+  // size
   blockSize,
   minBlockSize,
   maxBlockSize,
   inlineSize,
   minInlineSize,
   maxInlineSize,
+  // padding
   padding,
   paddingInline,
   paddingBlock,
@@ -56,6 +66,7 @@ export const Box = <T extends ElementType = 'div'>({
   paddingRight,
   paddingBottom,
   paddingLeft,
+  // margin
   margin,
   marginInline,
   marginBlock,
@@ -63,7 +74,6 @@ export const Box = <T extends ElementType = 'div'>({
   marginRight,
   marginBottom,
   marginLeft,
-  zIndex,
 }: BoxProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
 
@@ -172,7 +182,13 @@ export const Box = <T extends ElementType = 'div'>({
             ...tagAttrs?.style,
             zIndex,
           },
-          ...applyStaticDataset('box', { interactive, disabled, hoveredByDefault, disableActiveState }),
+          ...applyStaticDataset('box', {
+            interactive,
+            disabled,
+            hoveredByDefault,
+            disableActiveState,
+            activeOnFocus,
+          }),
         } as PropsWithoutRef<ComponentProps<T>>
       }
       tagRef={tagRef || ref}
