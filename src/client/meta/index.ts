@@ -15,6 +15,7 @@ import gridMeta from './Grid/_index'
 import htmlTagMeta from './HtmlTag/_index'
 import hydrationGateMeta from './HydrationGate/_index'
 import iconMeta from './Icon/_index'
+import inputMeta from './Input/_index'
 import linkMeta from './Link/_index'
 import markerListMeta from './MarkerList/_index'
 import nebkitProviderMeta from './NebkitProvider/_index'
@@ -47,6 +48,7 @@ export default {
   HtmlTag: htmlTagMeta,
   HydrationGate: hydrationGateMeta,
   Icon: iconMeta,
+  Input: inputMeta,
   Link: linkMeta,
   MarkerList: markerListMeta,
   NebkitProvider: nebkitProviderMeta,

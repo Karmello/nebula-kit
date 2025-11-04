@@ -52,11 +52,6 @@
   pointer-events: none;
 }
 
-.neb-box[data-neb-box-variant][data-neb-box-intent]:focus-visible,
-.neb-box[data-neb-box-variant][data-neb-box-intent]:focus-visible:hover {
-  border-color: var(--neb-focus-border);
-}
-
 .neb-box[data-neb-box-variant='outline'] {
   border-width: var(--neb-border-width);
 }
@@ -211,4 +206,9 @@
   .neb-box[data-neb-box-variant][data-neb-box-border-intent='#{$intent}'] {
     border-color: var(--neb-#{$intent}-solid-bg);
   }
+}
+
+.neb-box[data-neb-box-variant][data-neb-box-intent][data-neb-box-interactive='true']:focus-visible,
+.neb-box[data-neb-box-variant][data-neb-box-intent][data-neb-box-interactive='true']:focus-visible:hover {
+  border-color: var(--neb-focus-border);
 }

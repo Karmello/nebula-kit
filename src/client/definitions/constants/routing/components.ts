@@ -90,7 +90,10 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'form',
     label: 'Form',
-    items: [{ key: 'select', label: 'Select', sections: COMPONENT_SECTIONS }],
+    items: [
+      { key: 'input', label: 'Input', sections: COMPONENT_SECTIONS },
+      { key: 'select', label: 'Select', sections: COMPONENT_SECTIONS },
+    ],
   },
   {
     key: 'utility',

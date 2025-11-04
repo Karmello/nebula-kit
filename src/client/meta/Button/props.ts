@@ -53,8 +53,6 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   size: {
     options: Object.values(BUTTON_SIZES),
     defaultValue: DEFAULT_BUTTON_SIZE,
-    isRequired: false,
-    isResponsive: false,
     description:
       'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
   },
