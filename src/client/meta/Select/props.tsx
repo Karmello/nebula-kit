@@ -5,6 +5,11 @@ import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'
 
 const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
+  children: {
+    ...DROPDOWN_LIST_PROPS_META.children,
+    options: ['Select.Option'],
+    description: 'Option slots rendered.',
+  },
   defaultValue: {
     options: ['string'],
     description: 'Initial selected item value when the component is used in uncontrolled mode.',
@@ -15,11 +20,6 @@ const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
   onChange: {
     options: ['(value: string) => void'],
     description: 'Callback fired when the selected value changes.',
-  },
-  options: {
-    options: ['{ value: string; label: string }[]'],
-    isRequired: true,
-    description: 'Array of selectable items displayed in the dropdown list.',
   },
   scrollAlign: DROPDOWN_LIST_PROPS_META.scrollAlign,
   size: DROPDOWN_LIST_PROPS_META.size,

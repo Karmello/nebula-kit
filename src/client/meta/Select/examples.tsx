@@ -1,31 +1,34 @@
 import { useState } from 'react'
 
 import { ComponentMeta } from 'client/definitions'
-import { Select, SelectProps } from 'lib/components'
-
-const OPTIONS = [
-  { value: 'option-1', label: 'Option 1' },
-  { value: 'option-2', label: 'Option 2' },
-  { value: 'option-3', label: 'Option 3' },
-]
+import { DropdownList, Select, SelectProps } from 'lib/components'
 
 const SelectControlled = () => {
   const [value, setValue] = useState<string>('option-1')
-  return <Select options={OPTIONS} value={value} onChange={setValue} />
+  return (
+    <Select value={value} onChange={setValue}>
+      <Select.Option value="option-1">Option 1</Select.Option>
+      <Select.Option value="option-2">Option 2</Select.Option>
+      <Select.Option value="option-3">Option 3</Select.Option>
+    </Select>
+  )
 }
 
 const SELECT_EXAMPLES_META: ComponentMeta<SelectProps>['examples'] = [
   {
     description: 'Select used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
-    jsx: <Select options={OPTIONS} defaultValue="option-1" />,
-    code: `<Select
-  options={[
-    { value: 'option-1', label: 'Option 1' },
-    { value: 'option-2', label: 'Option 2' },
-    { value: 'option-3', label: 'Option 3' },
-  ]}
-  defaultValue="option-1"
-/>`,
+    jsx: (
+      <Select defaultValue="option-1">
+        <Select.Option value="option-1">Option 1</Select.Option>
+        <Select.Option value="option-2">Option 2</Select.Option>
+        <Select.Option value="option-3">Option 3</Select.Option>
+      </Select>
+    ),
+    code: `<Select defaultValue="option-1">
+  <Select.Option value='option-1'>Option 1</Select.Option>
+  <Select.Option value='option-2'>Option 2</Select.Option>
+  <Select.Option value='option-3'>Option 3</Select.Option>
+</Select>`,
   },
   {
     description: 'Select used in controlled mode with its value managed through external state.',
@@ -33,15 +36,11 @@ const SELECT_EXAMPLES_META: ComponentMeta<SelectProps>['examples'] = [
     code: `const [value, setValue] = useState<string>('option-1')
     \n
 return (
-  <Select
-    options={[
-      { value: 'option-1', label: 'Option 1' },
-      { value: 'option-2', label: 'Option 2' },
-      { value: 'option-3', label: 'Option 3' },
-    ]}
-    value={value}
-    onChange={setValue}
-  />
+  <Select value={value} onChange={onChange}>
+    <Select.Option value='option-1'>Option 1</Select.Option>
+    <Select.Option value='option-2'>Option 2</Select.Option>
+    <Select.Option value='option-3'>Option 3</Select.Option>
+  </Select>
 )`,
   },
 ]

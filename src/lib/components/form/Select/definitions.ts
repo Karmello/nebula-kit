@@ -1,13 +1,14 @@
 import { DropdownListProps, HtmlTagProps } from 'lib/components'
 
 type SelectOwnProps = {
-  options: { value: string; label: string }[]
   defaultValue?: string
   value?: string
   onChange?: (value: string) => void
 }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagRef' | 'tagAttrs'>
+type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
+  children: HtmlTagProps<'div'>['children']
+}
 
 type PropsFromDropdownList = Pick<
   DropdownListProps,

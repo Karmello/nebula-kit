@@ -89,35 +89,44 @@ export const HomePage = () => {
             <Flex.Item>
               <Text bold>Brand</Text>
               <Select
-                options={BRANDS.map(brand => ({ value: brand, label: sentenceCase(brand) }))}
                 value={brand}
                 onChange={value => setBrand(value as Brand)}
                 inlineSize="150px"
                 size="sm"
                 scrollAlign="center"
-              />
+              >
+                {BRANDS.map(brand => (
+                  <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
+                ))}
+              </Select>
             </Flex.Item>
             <Flex.Item>
               <Text bold>Border width</Text>
               <Select
-                options={NEBKIT_BORDER_WIDTH_SIZES.map(n => ({ value: String(n), label: String(n) }))}
                 value={borderWidthSize}
                 onChange={value => setBorderWidthSize(value as never)}
                 inlineSize="150px"
                 size="sm"
                 scrollAlign="center"
-              />
+              >
+                {NEBKIT_BORDER_WIDTH_SIZES.map(n => (
+                  <Select.Option value={n}>{n}</Select.Option>
+                ))}
+              </Select>
             </Flex.Item>
             <Flex.Item>
               <Text bold>Border radius</Text>
               <Select
-                options={NEBKIT_BORDER_RADIUS_SIZES.map(n => ({ value: String(n), label: String(n) }))}
                 value={borderRadiusSize}
                 onChange={value => setBorderRadiusSize(value as never)}
                 inlineSize="150px"
                 size="sm"
                 scrollAlign="center"
-              />
+              >
+                {NEBKIT_BORDER_RADIUS_SIZES.map(n => (
+                  <Select.Option value={n}>{n}</Select.Option>
+                ))}
+              </Select>
             </Flex.Item>
           </Flex>
         </Flex.Item>
