@@ -1,4 +1,4 @@
-import { ReactElement, useState } from 'react'
+import { ReactElement, useMemo, useState } from 'react'
 import classNames from 'classnames'
 
 import { DropdownList, Button } from 'lib/components'
@@ -37,17 +37,43 @@ export const Select = ({
   }
 
   return (
-    <WithSlots<'DropdownList.Item'>
+    <WithSlots<'Select.Option'>
       childrenToVerify={children}
       componentName="Select"
-      slotsConfig={[{ name: 'DropdownList.Item', required: true, allowMultiple: true }]}
+      slotsConfig={[{ name: 'Select.Option', required: true, allowMultiple: true }]}
     >
       {({ slotsByName }) => {
-        const currentSlotIndex = slotsByName['DropdownList.Item'].findIndex(
+        const currentSlotIndex = slotsByName['Select.Option'].findIndex(
           slot => (slot as any).props.value === currentValue
         )
 
-        const currentSlot = slotsByName['DropdownList.Item'][currentSlotIndex] as ReactElement<any>
+        const currentSlot = slotsByName['Select.Option'][currentSlotIndex] as ReactElement<any>
+
+        const RenderDropdownListInner = ({ open }: { open: boolean }) => {
+          const items = useMemo(() => {
+            return slotsByName['Select.Option'].map(slot => {
+              const Wrapped = () => slot
+              Wrapped.displayName = 'DropdownList.Item'
+              return <Wrapped />
+            })
+          }, [])
+
+          return (
+            <>
+              <DropdownList.Trigger>
+                <Button
+                  iconName="chevron-down"
+                  iconPosition="right"
+                  iconAngle={open ? 180 : 0}
+                  justifyContent="space-between"
+                >
+                  {currentSlot?.props.children || '...'}
+                </Button>
+              </DropdownList.Trigger>
+              {items}
+            </>
+          )
+        }
 
         return (
           <SelectProvider currentValue={currentValue} handleChange={handleChange}>
@@ -63,21 +89,7 @@ export const Select = ({
               scrollAlign={scrollAlign}
               visibleItemsCount={visibleItemsCount}
             >
-              {({ open }) => (
-                <>
-                  <DropdownList.Trigger>
-                    <Button
-                      iconName="chevron-down"
-                      iconPosition="right"
-                      iconAngle={open ? 180 : 0}
-                      justifyContent="space-between"
-                    >
-                      {currentSlot.props.children || '...'}
-                    </Button>
-                  </DropdownList.Trigger>
-                  {slotsByName['DropdownList.Item']}
-                </>
-              )}
+              {RenderDropdownListInner}
             </DropdownList>
           </SelectProvider>
         )

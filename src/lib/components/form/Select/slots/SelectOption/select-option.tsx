@@ -42,4 +42,4 @@ export const SelectOption = ({
   )
 }
 
-SelectOption.displayName = 'DropdownList.Item'
+SelectOption.displayName = 'Select.Option'

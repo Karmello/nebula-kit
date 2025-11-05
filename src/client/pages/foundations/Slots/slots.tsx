@@ -1,5 +1,5 @@
 import { CodeSnippet } from 'client/components'
-import { Box, Spacer, Text } from 'lib/components'
+import { Box, Callout, Spacer, Text } from 'lib/components'
 
 export default () => {
   return (
@@ -24,6 +24,14 @@ export default () => {
         intuitively and recognize where NebulaKit handles structure for you.
       </Text>
       <Spacer blockSize={40} />
+      <Callout
+        variant="outline"
+        size="sm"
+        content="Components that rely on slots automatically check for required ones during render.
+If a required slot is missing, NebulaKit logs a warning in the console to help you catch structural issues early.
+Optional slots are ignored when absent, so you can extend layouts without noise."
+      />
+      <Spacer blockSize={60} />
       <Text bold>Example 1</Text>
       <CodeSnippet
         code={`<DropdownList>

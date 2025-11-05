@@ -91,6 +91,7 @@ export const COMPONENT_CATEGORIES = [
     key: 'form',
     label: 'Form',
     items: [
+      { key: 'Form', label: 'Form', sections: COMPONENT_SECTIONS },
       { key: 'input', label: 'Input', sections: COMPONENT_SECTIONS },
       { key: 'select', label: 'Select', sections: COMPONENT_SECTIONS },
     ],
