@@ -17,11 +17,10 @@ export const FormActions = ({
   rowGap,
 }: FormActionsProps) => {
   return (
-    <WithSlots<'Form.SubmitButton' | 'Form.ResetButton'>
+    <WithSlots<'Form.ActionButton'>
       childrenToVerify={children}
       componentName="FormActions"
-      slotsConfig={[{ name: 'Form.SubmitButton' }, { name: 'Form.ResetButton' }]}
-      someRequired
+      slotsConfig={[{ name: 'Form.ActionButton', required: true, allowMultiple: true }]}
     >
       {({ slotsByName }) => {
         return (
@@ -36,8 +35,7 @@ export const FormActions = ({
             columnGap={columnGap}
             rowGap={rowGap}
           >
-            {slotsByName['Form.SubmitButton']}
-            {slotsByName['Form.ResetButton']}
+            {slotsByName['Form.ActionButton']}
           </Flex>
         )
       }}

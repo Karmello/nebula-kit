@@ -7,8 +7,7 @@ import { FORM_EXAMPLES_META } from './examples'
 import { FORM_FIELDS_META } from './FormFields/_index'
 import { FORM_ACTIONS_META } from './FormActions/_index'
 import { FORM_FIELD_META } from './FormField/_index'
-import { FORM_SUBMIT_BUTTON_META } from './FormSubmitButton/_index'
-import { FORM_RESET_BUTTON_META } from './FormResetButton/_index'
+import { FORM_ACTION_BUTTON_META } from './FormActionButton/_index'
 
 const FORM_META: ComponentMeta<FormProps> = {
   overview: {
@@ -33,6 +32,5 @@ export default {
   FormFields: FORM_FIELDS_META,
   FormActions: FORM_ACTIONS_META,
   FormField: FORM_FIELD_META,
-  FormSubmitButton: FORM_SUBMIT_BUTTON_META,
-  FormResetButton: FORM_RESET_BUTTON_META,
+  FormActionButton: FORM_ACTION_BUTTON_META,
 }

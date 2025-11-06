@@ -7,8 +7,8 @@ const FORM_ACTIONS_PROPS_META: ComponentMeta<FormActionsProps>['props'] = {
   alignItems: FLEX_PROPS_META.alignItems,
   children: {
     ...FLEX_PROPS_META.children,
-    options: ['Form.SubmitButton', 'Form.ResetButton'],
-    description: 'Action slots.',
+    options: ['Form.ActionButton'],
+    description: 'Action button slots.',
   },
   columnGap: FLEX_PROPS_META.columnGap,
   flexDirection: FLEX_PROPS_META.flexDirection,

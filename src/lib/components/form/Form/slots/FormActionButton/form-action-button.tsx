@@ -1,0 +1,74 @@
+import { useFormContext } from 'react-hook-form'
+
+import { Button, Flex } from 'lib/components'
+import { DEFAULT_BUTTON_INTENT } from 'lib/components/controls/Button/definitions'
+import { withPrefix } from 'lib/helpers'
+
+import { DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT, FormActionButtonProps } from './definitions'
+
+export const FormActionButton = ({
+  // FlexItem
+  tagAttrs,
+  tagRef,
+  flex,
+  flexBasis,
+  flexGrow,
+  flexShrink,
+  alignSelf,
+  order,
+  // Button
+  children,
+  variant,
+  intent,
+  size,
+  disabled,
+  iconName,
+  iconPosition,
+  // own
+  type,
+  onClick,
+}: FormActionButtonProps) => {
+  const { reset } = useFormContext()
+
+  const finalDefaultIntent =
+    type === 'submit' ? DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT : DEFAULT_BUTTON_INTENT
+
+  return (
+    <Flex.Item
+      tagAttrs={tagAttrs}
+      tagRef={tagRef}
+      flex={flex}
+      flexBasis={flexBasis}
+      flexGrow={flexGrow}
+      flexShrink={flexShrink}
+      alignSelf={alignSelf}
+      order={order}
+    >
+      <Button
+        tagAttrs={{
+          className: withPrefix('form-action-button'),
+          type: ([undefined, 'clear'].includes(type) ? 'button' : type) as never,
+          onClick: e => {
+            if (type === 'reset') {
+              reset()
+            } else if (type === 'clear') {
+              reset({})
+            }
+            onClick?.(e)
+          },
+        }}
+        fullWidth
+        variant={variant}
+        intent={intent ?? finalDefaultIntent}
+        size={size}
+        disabled={disabled}
+        iconName={iconName}
+        iconPosition={iconPosition}
+      >
+        {children}
+      </Button>
+    </Flex.Item>
+  )
+}
+
+FormActionButton.displayName = 'Form.ActionButton'

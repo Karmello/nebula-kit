@@ -10,7 +10,7 @@ const FORM_ACTIONS_META: ComponentMeta<FormActionsProps> = {
     description: ['controls layout between its slots'],
     composedOf: ['Flex'],
     rendersAs: ['div'],
-    slots: ['Form.SubmitButton', 'Form.ResetButton'],
+    slots: ['Form.ActionButton'],
   },
   props: FORM_ACTIONS_PROPS_META,
 }

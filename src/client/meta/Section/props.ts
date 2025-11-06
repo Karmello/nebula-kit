@@ -32,6 +32,7 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
     ...BOX_PROPS_META.intent,
     defaultValue: DEFAULT_SECTION_INTENT,
   },
+  borderIntent: BOX_PROPS_META.borderIntent,
   interactive: BOX_PROPS_META.interactive,
   disableActiveState: BOX_PROPS_META.disableActiveState,
   hoveredByDefault: BOX_PROPS_META.hoveredByDefault,

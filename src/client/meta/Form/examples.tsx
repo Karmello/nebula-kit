@@ -20,8 +20,8 @@ const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
     </Form.Field>
   </Form.Fields>
   <Form.Actions>
-    <Form.SubmitButton>Submit</Form.SubmitButton>
-    <Form.ResetButton>Reset</Form.ResetButton>
+    <Form.ActionButton type="submit">Submit</Form.ActionButton>
+    <Form.ActionButton type='reset'>Reset</Form.ActionButton>
   </Form.Actions>
 </Form>`,
     skip: true,
@@ -45,8 +45,8 @@ const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
           </Form.Field>
         </Form.Fields>
         <Form.Actions flexDirection={{ base: 'column', md: 'row' }} alignItems="stretch">
-          <Form.SubmitButton>Submit</Form.SubmitButton>
-          <Form.ResetButton>Reset</Form.ResetButton>
+          <Form.ActionButton type="submit">Submit</Form.ActionButton>
+          <Form.ActionButton type="reset">Reset</Form.ActionButton>
         </Form.Actions>
       </Form>
     ),
@@ -74,8 +74,8 @@ const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
           </Form.Field>
         </Form.Fields>
         <Form.Actions flexDirection={{ base: 'column', md: 'row' }} alignItems="stretch">
-          <Form.SubmitButton>Submit</Form.SubmitButton>
-          <Form.ResetButton>Reset</Form.ResetButton>
+          <Form.ActionButton type="submit">Submit</Form.ActionButton>
+          <Form.ActionButton type="reset">Reset</Form.ActionButton>
         </Form.Actions>
       </Form>
     ),

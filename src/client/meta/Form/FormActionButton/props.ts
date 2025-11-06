@@ -1,10 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
 import { BUTTON_PROPS_META } from 'client/meta/Button/props'
 import { FLEX_ITEM_PROPS_META } from 'client/meta/Flex/FlexItem/props'
-import { FormSubmitButtonProps } from 'lib/components'
-import { DEFAULT_FORM_SUBMIT_BUTTON_INTENT } from 'lib/components/form/Form/slots'
+import { FormActionButtonProps } from 'lib/components'
+import { DEFAULT_BUTTON_INTENT } from 'lib/components/controls/Button/definitions'
+import { DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT } from 'lib/components/form/Form/slots'
 
-const FORM_SUBMIT_BUTTON_PROPS_META: ComponentMeta<FormSubmitButtonProps>['props'] = {
+const FORM_ACTION_BUTTON_PROPS_META: ComponentMeta<FormActionButtonProps>['props'] = {
   alignSelf: FLEX_ITEM_PROPS_META.alignSelf,
   children: BUTTON_PROPS_META.children,
   disabled: BUTTON_PROPS_META.disabled,
@@ -16,13 +17,21 @@ const FORM_SUBMIT_BUTTON_PROPS_META: ComponentMeta<FormSubmitButtonProps>['props
   iconPosition: BUTTON_PROPS_META.iconPosition,
   intent: {
     ...BUTTON_PROPS_META.intent,
-    defaultValue: String(DEFAULT_FORM_SUBMIT_BUTTON_INTENT),
+    defaultValue: `${DEFAULT_BUTTON_INTENT}, ${DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT} for submit`,
+  },
+  onClick: {
+    options: ['e => { ... }'],
+    description: 'Callback fired when the button is clicked.',
   },
   order: FLEX_ITEM_PROPS_META.order,
   size: BUTTON_PROPS_META.size,
   tagAttrs: FLEX_ITEM_PROPS_META.tagAttrs,
   tagRef: FLEX_ITEM_PROPS_META.tagRef,
+  type: {
+    options: ['submit', 'reset', 'clear'],
+    description: "Defines the button's action behavior. Do omit for custom buttons.",
+  },
   variant: BUTTON_PROPS_META.variant,
 }
 
-export { FORM_SUBMIT_BUTTON_PROPS_META }
+export { FORM_ACTION_BUTTON_PROPS_META }

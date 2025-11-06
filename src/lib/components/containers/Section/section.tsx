@@ -21,6 +21,7 @@ export const Section = <T extends SectionTag = 'section'>({
   // Box
   variant = DEFAULT_SECTION_VARIANT,
   intent = DEFAULT_SECTION_INTENT,
+  borderIntent,
   interactive,
   disableActiveState,
   hoveredByDefault,
@@ -43,6 +44,7 @@ export const Section = <T extends SectionTag = 'section'>({
       tagRef={tagRef}
       variant={variant}
       intent={intent}
+      borderIntent={borderIntent}
       borderRadius={variant === 'ghost' ? 0 : undefined}
       padding={variant === 'outline' ? SECTION_SIZE_CONFIG[size].spacing : 0}
       maxInlineSize="100%"
