@@ -4,16 +4,25 @@ import { FormProps } from 'lib/components'
 import { FORM_PROPS_META } from './props'
 import { FORM_EXAMPLES_META } from './examples'
 
+import { FORM_FIELDS_META } from './FormFields/_index'
+import { FORM_ACTIONS_META } from './FormActions/_index'
 import { FORM_FIELD_META } from './FormField/_index'
+import { FORM_SUBMIT_BUTTON_META } from './FormSubmitButton/_index'
+import { FORM_RESET_BUTTON_META } from './FormResetButton/_index'
 
 const FORM_META: ComponentMeta<FormProps> = {
   overview: {
     plan: 'pro',
-    title: 'Wrapper around form related components combining them into a functional unit.',
-    description: ['collects and manages user input data', 'handles validation and submission logic'],
-    composedOf: ['Flex'],
+    title:
+      'Wrapper around form related components combining them into a functional unit using "React Hook Form" under the hood.',
+    description: [
+      'controls layout between its slots',
+      'receives RHF configuration props and passes them to "useForm" hook internally',
+      'maps "onValidSubmission" and "onInvalidSubmission" to RHF "handleSubmit" internally',
+    ],
+    composedOf: ['Flex', 'Flex.Item'],
     rendersAs: ['form'],
-    slots: ['Form.Field'],
+    slots: ['Form.Fields', 'Form.Actions'],
   },
   props: FORM_PROPS_META,
   examples: FORM_EXAMPLES_META,
@@ -21,5 +30,9 @@ const FORM_META: ComponentMeta<FormProps> = {
 
 export default {
   Form: FORM_META,
-  'Form.Field': FORM_FIELD_META,
+  FormFields: FORM_FIELDS_META,
+  FormActions: FORM_ACTIONS_META,
+  FormField: FORM_FIELD_META,
+  FormSubmitButton: FORM_SUBMIT_BUTTON_META,
+  FormResetButton: FORM_RESET_BUTTON_META,
 }

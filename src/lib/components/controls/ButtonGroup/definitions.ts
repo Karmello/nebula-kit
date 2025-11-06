@@ -3,7 +3,7 @@ import { RespValue } from 'lib/definitions'
 
 import { ButtonTag } from '../Button/definitions'
 
-export const DEFAULT_BUTTON_GROUP_GAP = 3
+export const DEFAULT_BUTTON_GROUP_GAP = 5
 export const BUTTON_GROUP_DIRECTIONS = ['row', 'column'] as const
 export const BUTTON_GROUP_TAGS = ['div', 'nav', 'section', 'aside', 'form', 'fieldset'] as const
 

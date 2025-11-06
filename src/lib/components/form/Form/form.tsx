@@ -1,3 +1,4 @@
+import { FieldValues, FormProvider, useForm } from 'react-hook-form'
 import classNames from 'classnames'
 
 import { Flex } from 'lib/components'
@@ -11,7 +12,15 @@ import {
   FormProps,
 } from './definitions'
 
-export const Form = ({
+export const Form = <
+  TFieldValues extends FieldValues = FieldValues,
+  TContext = any,
+  TTransformedValues = TFieldValues,
+>({
+  // RHF
+  useFormProps,
+  onValidSubmission,
+  onInvalidSubmission,
   // HtmlTag
   children,
   tagAttrs,
@@ -22,32 +31,41 @@ export const Form = ({
   justifyContent,
   alignItems = DEFAULT_FORM_ALIGN_ITEMS,
   gap = DEFAULT_FORM_GAP,
-}: FormProps) => {
+  rowGap,
+  columnGap,
+}: FormProps<TFieldValues, TContext, TTransformedValues>) => {
+  const form = useForm<TFieldValues, TContext, TTransformedValues>(useFormProps)
+  const handleSubmit = form.handleSubmit(onValidSubmission, onInvalidSubmission)
+
   return (
-    <WithSlots<'Form.Field'>
+    <WithSlots<'Form.Fields' | 'Form.Actions'>
       childrenToVerify={children}
       componentName="Form"
-      slotsConfig={[{ name: 'Form.Field', required: true, allowMultiple: true }]}
+      slotsConfig={[{ name: 'Form.Fields', required: true }, { name: 'Form.Actions' }]}
     >
       {({ slotsByName }) => {
         return (
-          <Flex
-            tag="form"
-            tagAttrs={{
-              ...tagAttrs,
-              className: classNames(withPrefix('form'), tagAttrs?.className),
-            }}
-            tagRef={tagRef}
-            flexDirection={flexDirection}
-            flexWrap={flexWrap}
-            justifyContent={justifyContent}
-            alignItems={alignItems}
-            gap={gap}
-          >
-            {slotsByName['Form.Field'].map(slot => (
-              <Flex.Item flex={1}>{slot}</Flex.Item>
-            ))}
-          </Flex>
+          <FormProvider {...form}>
+            <Flex
+              tag="form"
+              tagAttrs={{
+                ...tagAttrs,
+                className: classNames(withPrefix('form'), tagAttrs?.className),
+                onSubmit: handleSubmit,
+              }}
+              tagRef={tagRef}
+              flexDirection={flexDirection}
+              flexWrap={flexWrap}
+              justifyContent={justifyContent}
+              alignItems={alignItems}
+              gap={gap}
+              rowGap={rowGap}
+              columnGap={columnGap}
+            >
+              <Flex.Item flex={1}>{slotsByName['Form.Fields']}</Flex.Item>
+              <Flex.Item>{slotsByName['Form.Actions']}</Flex.Item>
+            </Flex>
+          </FormProvider>
         )
       }}
     </WithSlots>

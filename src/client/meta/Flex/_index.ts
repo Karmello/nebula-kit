@@ -14,7 +14,7 @@ const FLEX_META: ComponentMeta<FlexProps> = {
     description: [
       'provides a flexbox-based layout wrapper',
       'controls flow, alignment and wrapping of children',
-      'manages spacing between items with gap properties',
+      'manages spacing between children with gap properties',
     ],
     composedOf: ['Box'],
     slots: ['Flex.Item'],
