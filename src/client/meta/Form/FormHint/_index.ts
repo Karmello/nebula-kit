@@ -7,6 +7,7 @@ const FORM_HINT_META: ComponentMeta<FormHintProps> = {
   overview: {
     name: 'Form.Hint',
     title: 'Slot for providing additional helper text or guidance for the field.',
+    description: ['overrides the "hint" prop on Form.Field when provided'],
     composedOf: ['Text', 'Spacer'],
     rendersAs: ['span'],
   },
