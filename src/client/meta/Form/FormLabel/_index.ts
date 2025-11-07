@@ -8,7 +8,7 @@ const FORM_LABEL_META: ComponentMeta<FormLabelProps> = {
     name: 'Form.Label',
     title: 'Slot for providing a custom label element for the field.',
     description: ['overrides the "label" prop when provided'],
-    composedOf: ['Text'],
+    composedOf: ['Text', 'Spacer'],
     rendersAs: ['label'],
   },
   props: FORM_LABEL_PROPS_META,

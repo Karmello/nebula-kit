@@ -1,9 +1,10 @@
 import { TextProps } from 'lib/components/base'
 
-export const DEFAULT_FORM_LABEL_INTENT: FormLabelProps['intent'] = 'neutral'
+export const DEFAULT_FORM_HINT_INTENT: FormHintProps['intent'] = 'info'
+export const DEFAULT_FORM_HINT_SCALE: FormHintProps['scale'] = 'compact'
 
 type PropsFromText = Pick<
-  TextProps<'label'>,
+  TextProps<'span'>,
   | 'bold'
   | 'children'
   | 'iconName'
@@ -17,4 +18,4 @@ type PropsFromText = Pick<
   | 'truncate'
 >
 
-export type FormLabelProps = PropsFromText
+export type FormHintProps = PropsFromText

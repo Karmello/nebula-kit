@@ -14,7 +14,7 @@ const FORM_FIELD_META: ComponentMeta<FormFieldProps> = {
     ],
     composedOf: ['Flex.Item'],
     rendersAs: ['div'],
-    slots: ['Form.Label'],
+    slots: ['Form.Label', 'Form.Hint'],
   },
   props: FORM_FIELD_PROPS_META,
 }

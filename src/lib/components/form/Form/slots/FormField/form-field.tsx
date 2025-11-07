@@ -3,7 +3,7 @@ import { useFormContext, Controller } from 'react-hook-form'
 import classNames from 'classnames'
 import { omit } from 'lodash-es'
 
-import { Flex, Form, FormLabelProps } from 'lib/components'
+import { Flex, Form, FormHintProps, FormLabelProps } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
@@ -23,6 +23,7 @@ export const FormField = ({
   // own
   name,
   label,
+  hint,
   options,
 }: FormFieldProps) => {
   const formContext = useFormContext()
@@ -31,14 +32,15 @@ export const FormField = ({
   const labelId = `${formId}-${name}-label`
 
   return (
-    <WithSlots<'Form.Label'>
+    <WithSlots<'Form.Label' | 'Form.Hint'>
       childrenToVerify={children}
       componentName="Form.Field"
-      slotsConfig={[{ name: 'Form.Label' }]}
+      slotsConfig={[{ name: 'Form.Label' }, { name: 'Form.Hint' }]}
     >
       {({ slotsByName, allNonSlots }) => {
         const formFieldComponent = allNonSlots?.[0] as ReactElement<any>
         const customFormLabelComponent = slotsByName['Form.Label']?.[0] as ReactElement<FormLabelProps>
+        const customFormHintComponent = slotsByName['Form.Hint']?.[0] as ReactElement<FormHintProps>
 
         return (
           <Flex.Item
@@ -81,6 +83,7 @@ export const FormField = ({
                 })
               }
             />
+            {customFormHintComponent ? customFormHintComponent : hint ? <Form.Hint>{hint}</Form.Hint> : null}
           </Flex.Item>
         )
       }}

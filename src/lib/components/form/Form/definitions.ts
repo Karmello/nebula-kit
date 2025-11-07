@@ -4,7 +4,8 @@ import { HtmlTagProps, FlexProps } from 'lib/components'
 
 export const DEFAULT_FORM_FLEX_DIRECTION: FormProps['flexDirection'] = 'column'
 export const DEFAULT_FORM_ALIGN_ITEMS: FormProps['alignItems'] = 'stretch'
-export const DEFAULT_FORM_GAP: FormProps['gap'] = 30
+export const DEFAULT_FORM_COLUMN_GAP: FormProps['columnGap'] = 10
+export const DEFAULT_FORM_ROW_GAP: FormProps['rowGap'] = 30
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'form'>, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<'form'>['children']

@@ -34,10 +34,10 @@ const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
         }}
       >
         <Form.Fields>
-          <Form.Field name="firstName" label="First name">
+          <Form.Field name="firstName" label="First name" hint="This will appear on your public profile.">
             <Input />
           </Form.Field>
-          <Form.Field name="gender" label="Gender">
+          <Form.Field name="gender" label="Gender" hint="Used for profile personalization.">
             <Select>
               <Select.Option value="male">Male</Select.Option>
               <Select.Option value="female">Female</Select.Option>

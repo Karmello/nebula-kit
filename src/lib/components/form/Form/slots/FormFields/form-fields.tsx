@@ -7,7 +7,8 @@ import { withPrefix } from 'lib/helpers'
 import {
   DEFAULT_FORM_FIELDS_FLEX_DIRECTION,
   DEFAULT_FORM_FIELDS_ALIGN_ITEMS,
-  DEFAULT_FORM_FIELDS_GAP,
+  DEFAULT_FORM_FIELDS_COLUMN_GAP,
+  DEFAULT_FORM_FIELDS_ROW_GAP,
   FormFieldsProps,
 } from './definitions'
 
@@ -19,9 +20,9 @@ export const FormFields = ({
   flexWrap,
   justifyContent,
   alignItems = DEFAULT_FORM_FIELDS_ALIGN_ITEMS,
-  gap = DEFAULT_FORM_FIELDS_GAP,
-  columnGap,
-  rowGap,
+  gap,
+  columnGap = DEFAULT_FORM_FIELDS_COLUMN_GAP,
+  rowGap = DEFAULT_FORM_FIELDS_ROW_GAP,
 }: FormFieldsProps) => {
   return (
     <WithSlots<'Form.Field'>

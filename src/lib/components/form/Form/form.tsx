@@ -9,7 +9,8 @@ import { withPrefix } from 'lib/helpers'
 import {
   DEFAULT_FORM_ALIGN_ITEMS,
   DEFAULT_FORM_FLEX_DIRECTION,
-  DEFAULT_FORM_GAP,
+  DEFAULT_FORM_COLUMN_GAP,
+  DEFAULT_FORM_ROW_GAP,
   FormProps,
 } from './definitions'
 
@@ -31,9 +32,9 @@ export const Form = <
   flexWrap,
   justifyContent,
   alignItems = DEFAULT_FORM_ALIGN_ITEMS,
-  gap = DEFAULT_FORM_GAP,
-  rowGap,
-  columnGap,
+  gap,
+  rowGap = DEFAULT_FORM_ROW_GAP,
+  columnGap = DEFAULT_FORM_COLUMN_GAP,
 }: FormProps<TFieldValues, TContext, TTransformedValues>) => {
   const form = useForm<TFieldValues, TContext, TTransformedValues>(useFormProps)
   const handleSubmit = form.handleSubmit(onValidSubmission, onInvalidSubmission)

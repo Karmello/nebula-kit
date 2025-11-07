@@ -5,7 +5,8 @@ import { FormFieldsProps } from 'lib/components'
 import {
   DEFAULT_FORM_FIELDS_ALIGN_ITEMS,
   DEFAULT_FORM_FIELDS_FLEX_DIRECTION,
-  DEFAULT_FORM_FIELDS_GAP,
+  DEFAULT_FORM_FIELDS_ROW_GAP,
+  DEFAULT_FORM_FIELDS_COLUMN_GAP,
 } from 'lib/components/form/Form/slots'
 
 const FORM_FIELDS_PROPS_META: ComponentMeta<FormFieldsProps>['props'] = {
@@ -18,18 +19,21 @@ const FORM_FIELDS_PROPS_META: ComponentMeta<FormFieldsProps>['props'] = {
     options: ['Form.Field'],
     description: 'Any number of Form.Field slots.',
   },
-  columnGap: FLEX_PROPS_META.columnGap,
+  columnGap: {
+    ...FLEX_PROPS_META.columnGap,
+    defaultValue: String(DEFAULT_FORM_FIELDS_COLUMN_GAP),
+  },
   flexDirection: {
     ...FLEX_PROPS_META.flexDirection,
     defaultValue: String(DEFAULT_FORM_FIELDS_FLEX_DIRECTION),
   },
   flexWrap: FLEX_PROPS_META.flexWrap,
-  gap: {
-    ...FLEX_PROPS_META.gap,
-    defaultValue: String(DEFAULT_FORM_FIELDS_GAP),
-  },
+  gap: FLEX_PROPS_META.gap,
   justifyContent: FLEX_PROPS_META.justifyContent,
-  rowGap: FLEX_PROPS_META.rowGap,
+  rowGap: {
+    ...FLEX_PROPS_META.rowGap,
+    defaultValue: String(DEFAULT_FORM_FIELDS_ROW_GAP),
+  },
   tagAttrs: FLEX_PROPS_META.tagAttrs,
   tagRef: FLEX_PROPS_META.tagRef,
 }

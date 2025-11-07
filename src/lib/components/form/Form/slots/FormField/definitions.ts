@@ -7,6 +7,7 @@ export const DEFAULT_FORM_FIELD_FLEX: FormFieldProps['flex'] = 1
 type FormFieldOwnProps = {
   name: string
   label?: string
+  hint?: string
   options?: RegisterOptions<FieldValues, string>
 }
 

@@ -1,6 +1,6 @@
 import { Form as FormBase } from './form'
 
-import { FormFields, FormField, FormActions, FormActionButton, FormLabel } from './slots'
+import { FormFields, FormField, FormActions, FormActionButton, FormLabel, FormHint } from './slots'
 
 export const Form = Object.assign(FormBase, {
   Fields: FormFields,
@@ -8,6 +8,7 @@ export const Form = Object.assign(FormBase, {
   Actions: FormActions,
   ActionButton: FormActionButton,
   Label: FormLabel,
+  Hint: FormHint,
 })
 
 export type { FormProps } from './definitions'
@@ -18,4 +19,5 @@ export type {
   FormActionsProps,
   FormActionButtonProps,
   FormLabelProps,
+  FormHintProps,
 } from './slots'

@@ -1,6 +1,6 @@
 import { FlexProps } from 'lib/components'
 
-export const DEFAULT_FORM_ACTIONS_GAP: FormActionsProps['gap'] = 7
+export const DEFAULT_FORM_ACTIONS_GAP: FormActionsProps['gap'] = 10
 
 type PropsFromFlex = Omit<FlexProps<'div'>, 'tag'>
 

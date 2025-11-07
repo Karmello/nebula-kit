@@ -1,8 +1,8 @@
 import { Spacer, Text } from 'lib/components'
 
-import { DEFAULT_FORM_LABEL_INTENT, FormLabelProps } from './definitions'
+import { DEFAULT_FORM_HINT_INTENT, DEFAULT_FORM_HINT_SCALE, FormHintProps } from './definitions'
 
-export const FormLabel = ({
+export const FormHint = ({
   // Text
   children,
   tagAttrs,
@@ -10,32 +10,32 @@ export const FormLabel = ({
   bold,
   iconName,
   iconPosition,
-  intent = DEFAULT_FORM_LABEL_INTENT,
+  intent = DEFAULT_FORM_HINT_INTENT,
   noWrap,
-  scale,
+  scale = DEFAULT_FORM_HINT_SCALE,
   textAlign,
   truncate,
-}: FormLabelProps) => {
+}: FormHintProps) => {
   return (
     <>
+      <Spacer blockSize={3} />
       <Text
-        tag="label"
+        tag="span"
         tagAttrs={tagAttrs}
         tagRef={tagRef}
+        scale={scale}
         bold={bold}
         iconName={iconName}
         iconPosition={iconPosition}
         intent={intent}
         noWrap={noWrap}
-        scale={scale}
         textAlign={textAlign}
         truncate={truncate}
       >
         {children}
       </Text>
-      <Spacer blockSize={3} />
     </>
   )
 }
 
-FormLabel.displayName = 'Form.Label'
+FormHint.displayName = 'Form.Hint'

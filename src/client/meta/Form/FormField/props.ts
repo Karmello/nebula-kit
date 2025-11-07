@@ -16,6 +16,11 @@ const FORM_FIELD_PROPS_META: ComponentMeta<FormFieldProps>['props'] = {
   flexBasis: FLEX_ITEM_PROPS_META.flexBasis,
   flexGrow: FLEX_ITEM_PROPS_META.flexGrow,
   flexShrink: FLEX_ITEM_PROPS_META.flexShrink,
+  hint: {
+    options: ['string'],
+    description:
+      'Text used to render hint when no custom Form.Hint slot is defined. Acts as a shorthand for simple hints.',
+  },
   label: {
     options: ['string'],
     description:
