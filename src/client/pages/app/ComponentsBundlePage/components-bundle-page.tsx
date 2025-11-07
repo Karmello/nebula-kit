@@ -49,7 +49,6 @@ export const ComponentsBundlePage = ({ plan }: Props) => {
               variant="outline"
               borderIntent="tertiary"
               intent="primary"
-              interactive
             >
               <Text intent="neutral">{item.title}</Text>
             </Section>
