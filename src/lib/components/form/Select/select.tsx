@@ -64,30 +64,37 @@ export const Select = ({
               scrollAlign={scrollAlign}
               visibleItemsCount={visibleItemsCount}
             >
-              <DropdownList.Trigger>
-                <Button
-                  iconName="chevron-down"
-                  iconPosition="right"
-                  iconAngle={open ? 180 : 0}
-                  justifyContent="space-between"
-                >
-                  {currentSlot?.props.children || '...'}
-                </Button>
-              </DropdownList.Trigger>
-              {slotsByName['Select.Option'].map((slot: ReactElement<any>, index) => (
-                <DropdownList.Item
-                  key={index}
-                  {...slot.props}
-                  tagAttrs={{
-                    ...slot.props.tagAttrs,
-                    onClick: () => handleChange(slot.props.value),
-                  }}
-                  bold={slot.props.value === currentValue}
-                  justifyContent={slot.props.justifyContent || DEFAULT_SELECT_JUSTIFY_CONTENT}
-                >
-                  {slot}
-                </DropdownList.Item>
-              ))}
+              {({ open }) => (
+                <>
+                  <DropdownList.Trigger>
+                    <Button
+                      iconName="chevron-down"
+                      iconPosition="right"
+                      iconAngle={open ? 180 : 0}
+                      justifyContent="space-between"
+                    >
+                      {currentSlot?.props.children || '...'}
+                    </Button>
+                  </DropdownList.Trigger>
+                  {slotsByName['Select.Option'].map((slot, index) => {
+                    const slotProps = (slot as ReactElement<any>).props
+                    return (
+                      <DropdownList.Item
+                        key={index}
+                        {...slotProps}
+                        tagAttrs={{
+                          ...slotProps.tagAttrs,
+                          onClick: () => handleChange(slotProps.value),
+                        }}
+                        bold={slotProps.value === currentValue}
+                        justifyContent={slotProps.justifyContent || DEFAULT_SELECT_JUSTIFY_CONTENT}
+                      >
+                        {slot}
+                      </DropdownList.Item>
+                    )
+                  })}
+                </>
+              )}
             </DropdownList>
           </SelectProvider>
         )
