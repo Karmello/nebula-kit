@@ -37,8 +37,8 @@ export const INPUT_SIZE_CONFIG: Record<
   },
 }
 
-export const DEFAULT_INPUT_VARIANT: InputProps['variant'] = 'outline'
-export const DEFAULT_INPUT_INTENT: InputProps['intent'] = 'neutral'
+export const DEFAULT_INPUT_VARIANT: InputProps['variant'] = 'solid'
+export const DEFAULT_INPUT_INTENT: InputProps['intent'] = 'tertiary'
 export const DEFAULT_INPUT_SIZE: InputProps['size'] = 'md'
 export const INPUT_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies Sizes[]
 
@@ -49,6 +49,7 @@ type InputOwnProps = {
   value?: string
   onChange?: (value: string) => void
   size?: InputSize
+  textIntent?: BoxProps['intent']
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'input'>, 'tagAttrs' | 'tagRef'>

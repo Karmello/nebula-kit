@@ -70,7 +70,7 @@ const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
             </Select>
           </Form.Field>
           <Form.Field name="search" flex={4}>
-            <Input />
+            <Input variant="outline" textIntent="neutral" />
           </Form.Field>
         </Form.Fields>
         <Form.Actions flexDirection={{ base: 'column', md: 'row' }} alignItems="stretch">

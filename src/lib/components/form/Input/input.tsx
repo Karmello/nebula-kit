@@ -24,6 +24,7 @@ export const Input = ({
   value,
   onChange,
   size = DEFAULT_INPUT_SIZE,
+  textIntent,
 }: InputProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
@@ -44,6 +45,7 @@ export const Input = ({
         style: {
           ...tagAttrs?.style,
           fontSize: INPUT_SIZE_CONFIG[size || 'md'].fontSize + 'px',
+          color: textIntent ? `var(--neb-${textIntent}-ghost-text)` : undefined,
         },
         value: currentValue,
         onChange: e => {
