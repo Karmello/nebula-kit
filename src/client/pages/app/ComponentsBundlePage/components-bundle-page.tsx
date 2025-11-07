@@ -25,14 +25,11 @@ export const ComponentsBundlePage = ({ plan }: Props) => {
 
   return (
     <Box paddingTop={15} paddingInline={{ base: 20, lg: 50 }}>
-      <Section
-        heading={plan === 'free' ? 'Core components bundle' : 'Pro components bundle'}
-        intent="neutral"
-      >
+      <Section heading={plan === 'free' ? 'Core bundle' : 'Pro bundle'} intent="neutral">
         {plan === 'free' ? (
           <Text>All components available for free.</Text>
         ) : (
-          <Text>Come with the paid plans.</Text>
+          <Text>Comes with the paid plans.</Text>
         )}
         <Spacer blockSize={50} />
         <Grid
