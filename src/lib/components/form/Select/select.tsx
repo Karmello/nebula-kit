@@ -1,4 +1,4 @@
-import { ReactElement, useMemo, useState } from 'react'
+import { ReactElement, useState } from 'react'
 import classNames from 'classnames'
 
 import { DropdownList, Button } from 'lib/components'
@@ -50,17 +50,20 @@ export const Select = ({
 
         const currentSlot = slotsByName['Select.Option'][currentSlotIndex] as ReactElement<any>
 
-        const RenderDropdownListInner = ({ open }: { open: boolean }) => {
-          const items = useMemo(() => {
-            return slotsByName['Select.Option'].map(slot => {
-              const Wrapped = () => slot
-              Wrapped.displayName = 'DropdownList.Item'
-              return <Wrapped />
-            })
-          }, [])
-
-          return (
-            <>
+        return (
+          <SelectProvider currentValue={currentValue} handleChange={handleChange}>
+            <DropdownList
+              tagRef={tagRef}
+              tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('select'), tagAttrs?.className) }}
+              variant={variant}
+              intent={intent}
+              size={size}
+              inlineSize={inlineSize}
+              itemBorderIntent={itemBorderIntent}
+              scrollToIndex={currentSlotIndex}
+              scrollAlign={scrollAlign}
+              visibleItemsCount={visibleItemsCount}
+            >
               <DropdownList.Trigger>
                 <Button
                   iconName="chevron-down"
@@ -85,25 +88,6 @@ export const Select = ({
                   {slot}
                 </DropdownList.Item>
               ))}
-            </>
-          )
-        }
-
-        return (
-          <SelectProvider currentValue={currentValue} handleChange={handleChange}>
-            <DropdownList
-              tagRef={tagRef}
-              tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('select'), tagAttrs?.className) }}
-              variant={variant}
-              intent={intent}
-              size={size}
-              inlineSize={inlineSize}
-              itemBorderIntent={itemBorderIntent}
-              scrollToIndex={currentSlotIndex}
-              scrollAlign={scrollAlign}
-              visibleItemsCount={visibleItemsCount}
-            >
-              {RenderDropdownListInner}
             </DropdownList>
           </SelectProvider>
         )
