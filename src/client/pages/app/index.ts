@@ -1,3 +1,4 @@
+export * from './ComponentsBundlePage'
 export * from './ComponentsPage'
 export * from './FoundationsPage'
 export * from './HomePage'

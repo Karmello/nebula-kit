@@ -4,6 +4,28 @@ import { Box, Button, Flex, Section, Spacer, Text, Link, Grid, MarkerList } from
 export const PricingPage = () => {
   const navigateTo = useNavigateTo()
 
+  const coreBundleLink = (
+    <Link
+      href="/pricing/core"
+      onClick={() => {
+        navigateTo('/pricing/core')
+      }}
+    >
+      <Text italic>Core bundle included</Text>
+    </Link>
+  )
+
+  const proBundleLink = (
+    <Link
+      href="/pricing/pro"
+      onClick={() => {
+        navigateTo('/pricing/pro')
+      }}
+    >
+      <Text italic>Pro bundle included</Text>
+    </Link>
+  )
+
   return (
     <Box paddingTop={15} paddingInline={{ base: 20, lg: 50 }}>
       <Section heading="Plans & Pricing" intent="neutral">
@@ -23,9 +45,7 @@ export const PricingPage = () => {
             </Text>
             <Spacer />
             <MarkerList rowGap={7}>
-              <MarkerList.Item>
-                <Text italic>Core building blocks included</Text>
-              </MarkerList.Item>
+              <MarkerList.Item>{coreBundleLink}</MarkerList.Item>
             </MarkerList>
             <Spacer blockSize={40} />
             <Flex justifyContent="center">
@@ -61,9 +81,8 @@ export const PricingPage = () => {
             </Text>
             <Spacer />
             <MarkerList rowGap={7}>
-              <MarkerList.Item>
-                <Text italic>All components included</Text>
-              </MarkerList.Item>
+              <MarkerList.Item>{coreBundleLink}</MarkerList.Item>
+              <MarkerList.Item>{proBundleLink}</MarkerList.Item>
               <MarkerList.Item>
                 <Text italic>Direct support available</Text>
               </MarkerList.Item>
@@ -102,9 +121,8 @@ export const PricingPage = () => {
             </Text>
             <Spacer />
             <MarkerList rowGap={7}>
-              <MarkerList.Item>
-                <Text italic>All components included</Text>
-              </MarkerList.Item>
+              <MarkerList.Item>{coreBundleLink}</MarkerList.Item>
+              <MarkerList.Item>{proBundleLink}</MarkerList.Item>
               <MarkerList.Item>
                 <Text italic>Higher priority support available</Text>
               </MarkerList.Item>
@@ -143,9 +161,8 @@ export const PricingPage = () => {
             </Text>
             <Spacer />
             <MarkerList rowGap={7}>
-              <MarkerList.Item>
-                <Text italic>All components included</Text>
-              </MarkerList.Item>
+              <MarkerList.Item>{coreBundleLink}</MarkerList.Item>
+              <MarkerList.Item>{proBundleLink}</MarkerList.Item>
               <MarkerList.Item>
                 <Text italic>Top-priority support available</Text>
               </MarkerList.Item>

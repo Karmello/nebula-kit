@@ -12,8 +12,7 @@ import { FORM_ACTION_BUTTON_META } from './FormActionButton/_index'
 const FORM_META: ComponentMeta<FormProps> = {
   overview: {
     plan: 'pro',
-    title:
-      'Wrapper around form related components combining them into a functional unit using "React Hook Form" under the hood.',
+    title: 'Component for building and managing forms, powered by React Hook Form under the hood.',
     description: [
       'controls layout between its slots',
       'receives RHF configuration props and passes them to "useForm" hook internally',
