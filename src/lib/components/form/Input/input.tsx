@@ -4,6 +4,8 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
+import './input.scss'
+
 import {
   DEFAULT_INPUT_INTENT,
   DEFAULT_INPUT_SIZE,
@@ -24,7 +26,6 @@ export const Input = ({
   value,
   onChange,
   size = DEFAULT_INPUT_SIZE,
-  textIntent,
 }: InputProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
@@ -45,7 +46,8 @@ export const Input = ({
         style: {
           ...tagAttrs?.style,
           fontSize: INPUT_SIZE_CONFIG[size || 'md'].fontSize + 'px',
-          color: textIntent ? `var(--neb-${textIntent}-ghost-text)` : undefined,
+          color: 'var(--neb-text)',
+          caretColor: 'var(--neb-text)',
         },
         value: currentValue,
         onChange: e => {

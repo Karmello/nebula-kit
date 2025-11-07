@@ -89,7 +89,8 @@
   .neb-box[data-neb-box-intent='#{$intent}'][data-neb-box-variant='outline'] {
     // rest
     $mainColor: var(--neb-#{$intent}-outline-border, var(--neb-text));
-    background-color: var(--neb-background);
+    $bgColor: var(--neb-background);
+    background-color: $bgColor;
     border-color: $mainColor;
     color: $mainColor;
 
@@ -102,9 +103,10 @@
           --neb-#{$intent}-outline-border-hover,
           var(--neb-#{$intent}-outline-border, var(--neb-text))
         );
+        $bgColor: var(--neb-#{$intent}-outline-bg-hover, var(--neb-background));
         border-color: $mainColor;
         color: $mainColor;
-        background-color: var(--neb-#{$intent}-outline-bg-hover, var(--neb-background));
+        background-color: $bgColor;
       }
 
       // active
@@ -116,12 +118,13 @@
           --neb-#{$intent}-outline-border-active,
           var(--neb-#{$intent}-outline-border-hover, var(--neb-#{$intent}-outline-border, var(--neb-text)))
         );
-        border-color: $mainColor;
-        color: $mainColor;
-        background-color: var(
+        $bgColor: var(
           --neb-#{$intent}-outline-bg-active,
           var(--neb-#{$intent}-outline-bg-hover, var(--neb-background))
         );
+        border-color: $mainColor;
+        color: $mainColor;
+        background-color: $bgColor;
       }
     }
   }
@@ -132,9 +135,10 @@
   .neb-box[data-neb-box-intent='#{$intent}'][data-neb-box-variant='solid'] {
     // rest
     $mainColor: var(--neb-#{$intent}-solid-bg, var(--neb-background));
+    $textColor: var(--neb-#{$intent}-solid-text, var(--neb-text));
     background-color: $mainColor;
     border-color: $mainColor;
-    color: var(--neb-#{$intent}-solid-text, var(--neb-text));
+    color: $textColor;
 
     // interactive
     &[data-neb-box-interactive='true'] {
@@ -145,9 +149,10 @@
           --neb-#{$intent}-solid-bg-hover,
           var(--neb-#{$intent}-solid-bg, var(--neb-background))
         );
+        $textColor: var(--neb-#{$intent}-solid-text-hover, var(--neb-#{$intent}-solid-text, var(--neb-text)));
         background-color: $mainColor;
         border-color: $mainColor;
-        color: var(--neb-#{$intent}-solid-text-hover, var(--neb-#{$intent}-solid-text, var(--neb-text)));
+        color: $textColor;
       }
 
       // active
@@ -159,12 +164,13 @@
           --neb-#{$intent}-solid-bg-active,
           var(--neb-#{$intent}-solid-bg-hover, var(--neb-#{$intent}-solid-bg, var(--neb-background)))
         );
-        background-color: $mainColor;
-        border-color: $mainColor;
-        color: var(
+        $textColor: var(
           --neb-#{$intent}-solid-text-active,
           var(--neb-#{$intent}-solid-text-hover, var(--neb-#{$intent}-solid-text, var(--neb-text)))
         );
+        background-color: $mainColor;
+        border-color: $mainColor;
+        color: $textColor;
       }
     }
   }

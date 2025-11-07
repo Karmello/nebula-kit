@@ -22,10 +22,6 @@ const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
     ...BOX_PROPS_META.intent,
     defaultValue: String(DEFAULT_INPUT_INTENT),
   },
-  textIntent: {
-    ...BOX_PROPS_META.intent,
-    description: "Semantic color intent applied to the input's text.",
-  },
   size: {
     options: Object.values(INPUT_SIZES),
     defaultValue: DEFAULT_INPUT_SIZE,

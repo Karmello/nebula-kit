@@ -47,6 +47,7 @@ const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
         <Form.Actions flexDirection={{ base: 'column', md: 'row' }} alignItems="stretch">
           <Form.ActionButton type="submit">Submit</Form.ActionButton>
           <Form.ActionButton type="reset">Reset</Form.ActionButton>
+          <Form.ActionButton type="clear">Clear</Form.ActionButton>
         </Form.Actions>
       </Form>
     ),
@@ -70,12 +71,13 @@ const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
             </Select>
           </Form.Field>
           <Form.Field name="search" flex={4}>
-            <Input variant="outline" textIntent="neutral" />
+            <Input variant="outline" />
           </Form.Field>
         </Form.Fields>
         <Form.Actions flexDirection={{ base: 'column', md: 'row' }} alignItems="stretch">
           <Form.ActionButton type="submit">Submit</Form.ActionButton>
           <Form.ActionButton type="reset">Reset</Form.ActionButton>
+          <Form.ActionButton type="clear">Clear</Form.ActionButton>
         </Form.Actions>
       </Form>
     ),

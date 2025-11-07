@@ -49,7 +49,6 @@ type InputOwnProps = {
   value?: string
   onChange?: (value: string) => void
   size?: InputSize
-  textIntent?: BoxProps['intent']
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'input'>, 'tagAttrs' | 'tagRef'>
