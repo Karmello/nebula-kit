@@ -11,7 +11,7 @@ export const PricingPage = () => {
         navigateTo('/pricing/core')
       }}
     >
-      <Text italic>Core bundle included</Text>
+      <Text>Core bundle included</Text>
     </Link>
   )
 
@@ -22,13 +22,13 @@ export const PricingPage = () => {
         navigateTo('/pricing/pro')
       }}
     >
-      <Text italic>Pro bundle included</Text>
+      <Text>Pro bundle included</Text>
     </Link>
   )
 
   return (
     <Box paddingTop={15} paddingInline={{ base: 20, lg: 50 }}>
-      <Section heading="Plans & Pricing" intent="neutral">
+      <Section heading="Plans & Pricing" intent="neutral" iconName="credit-card">
         <Text>Choose the plan that fits your workflow.</Text>
         <Spacer blockSize={50} />
         <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }} gap={20}>
@@ -44,7 +44,7 @@ export const PricingPage = () => {
               projects, learning or exploring before committing.
             </Text>
             <Spacer />
-            <MarkerList rowGap={7}>
+            <MarkerList rowGap={7} intent="neutral">
               <MarkerList.Item>{coreBundleLink}</MarkerList.Item>
             </MarkerList>
             <Spacer blockSize={40} />
@@ -80,11 +80,11 @@ export const PricingPage = () => {
               developers and freelancers who want complete access to every building block.
             </Text>
             <Spacer />
-            <MarkerList rowGap={7}>
+            <MarkerList rowGap={7} intent="neutral">
               <MarkerList.Item>{coreBundleLink}</MarkerList.Item>
               <MarkerList.Item>{proBundleLink}</MarkerList.Item>
               <MarkerList.Item>
-                <Text italic>Direct support available</Text>
+                <Text>Direct support available</Text>
               </MarkerList.Item>
             </MarkerList>
             <Spacer blockSize={40} />
@@ -120,11 +120,11 @@ export const PricingPage = () => {
               Professional plan.
             </Text>
             <Spacer />
-            <MarkerList rowGap={7}>
+            <MarkerList rowGap={7} intent="neutral">
               <MarkerList.Item>{coreBundleLink}</MarkerList.Item>
               <MarkerList.Item>{proBundleLink}</MarkerList.Item>
               <MarkerList.Item>
-                <Text italic>Higher priority support available</Text>
+                <Text>Higher priority support available</Text>
               </MarkerList.Item>
             </MarkerList>
             <Spacer blockSize={40} />
@@ -160,14 +160,14 @@ export const PricingPage = () => {
               Includes everything from the Business plan.
             </Text>
             <Spacer />
-            <MarkerList rowGap={7}>
+            <MarkerList rowGap={7} intent="neutral">
               <MarkerList.Item>{coreBundleLink}</MarkerList.Item>
               <MarkerList.Item>{proBundleLink}</MarkerList.Item>
               <MarkerList.Item>
-                <Text italic>Top-priority support available</Text>
+                <Text>Top-priority support available</Text>
               </MarkerList.Item>
               <MarkerList.Item>
-                <Text italic>Feature influence on the library's development</Text>
+                <Text>Feature influence on the library's development</Text>
               </MarkerList.Item>
             </MarkerList>
             <Spacer blockSize={40} />

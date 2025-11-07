@@ -6,6 +6,7 @@ import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
 import { SelectProvider } from './SelectProvider'
+import { DEFAULT_SELECT_JUSTIFY_CONTENT } from './slots'
 import { SelectProps } from './definitions'
 
 export const Select = ({
@@ -70,7 +71,20 @@ export const Select = ({
                   {currentSlot?.props.children || '...'}
                 </Button>
               </DropdownList.Trigger>
-              {items}
+              {slotsByName['Select.Option'].map((slot: ReactElement<any>, index) => (
+                <DropdownList.Item
+                  key={index}
+                  {...slot.props}
+                  tagAttrs={{
+                    ...slot.props.tagAttrs,
+                    onClick: () => handleChange(slot.props.value),
+                  }}
+                  bold={slot.props.value === currentValue}
+                  justifyContent={slot.props.justifyContent || DEFAULT_SELECT_JUSTIFY_CONTENT}
+                >
+                  {slot}
+                </DropdownList.Item>
+              ))}
             </>
           )
         }

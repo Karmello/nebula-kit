@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Link, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, Flex, Grid, Link, Section, Spacer, Text } from 'lib/components'
 import { useNavigateTo } from 'client/services'
 import meta from 'client/meta'
 
@@ -25,7 +25,7 @@ export const ComponentsBundlePage = ({ plan }: Props) => {
 
   return (
     <Box paddingTop={15} paddingInline={{ base: 20, lg: 50 }}>
-      <Section heading={plan === 'free' ? 'Core bundle' : 'Pro bundle'} intent="neutral">
+      <Section heading={plan === 'free' ? 'Core bundle' : 'Pro bundle'} intent="neutral" iconName="package">
         {plan === 'free' ? (
           <Text>All components available for free.</Text>
         ) : (
@@ -55,16 +55,18 @@ export const ComponentsBundlePage = ({ plan }: Props) => {
           ))}
         </Grid>
         <Spacer blockSize={50} />
-        <Link
-          href={plan === 'free' ? '/pricing/pro' : '/pricing/core'}
-          onClick={() => {
-            navigateTo(plan === 'free' ? '/pricing/pro' : '/pricing/core')
-          }}
-        >
-          <Button size="sm" intent="highlight">
-            {plan === 'free' ? 'Pro bundle' : 'Core bundle'}
-          </Button>
-        </Link>
+        <Flex justifyContent="center">
+          <Link
+            href={plan === 'free' ? '/pricing/pro' : '/pricing/core'}
+            onClick={() => {
+              navigateTo(plan === 'free' ? '/pricing/pro' : '/pricing/core')
+            }}
+          >
+            <Button size="sm" intent="highlight" iconName="package">
+              {plan === 'free' ? 'Pro bundle' : 'Core bundle'}
+            </Button>
+          </Link>
+        </Flex>
       </Section>
     </Box>
   )

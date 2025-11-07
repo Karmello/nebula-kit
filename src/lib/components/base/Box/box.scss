@@ -183,7 +183,7 @@
 }
 
 // focus
-.neb-box[data-neb-box-variant][data-neb-box-intent][data-neb-box-interactive='true'] {
+.neb-box[data-neb-box-interactive='true'] {
   &:focus-visible,
   &:focus-visible:hover {
     border-color: var(--neb-focus-border) !important;
