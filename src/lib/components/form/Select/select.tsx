@@ -68,6 +68,9 @@ export const Select = ({
                 <>
                   <DropdownList.Trigger>
                     <Button
+                      tagAttrs={{
+                        'aria-labelledby': tagAttrs?.['aria-labelledby'],
+                      }}
                       iconName="chevron-down"
                       iconPosition="right"
                       iconAngle={open ? 180 : 0}

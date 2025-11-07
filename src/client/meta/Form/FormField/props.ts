@@ -16,6 +16,11 @@ const FORM_FIELD_PROPS_META: ComponentMeta<FormFieldProps>['props'] = {
   flexBasis: FLEX_ITEM_PROPS_META.flexBasis,
   flexGrow: FLEX_ITEM_PROPS_META.flexGrow,
   flexShrink: FLEX_ITEM_PROPS_META.flexShrink,
+  label: {
+    options: ['string'],
+    description:
+      'Text used to render label when no custom Form.Label slot is defined. Acts as a shorthand for simple labels.',
+  },
   name: {
     options: ['string'],
     isRequired: true,

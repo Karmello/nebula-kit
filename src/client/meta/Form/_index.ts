@@ -8,6 +8,7 @@ import { FORM_FIELDS_META } from './FormFields/_index'
 import { FORM_ACTIONS_META } from './FormActions/_index'
 import { FORM_FIELD_META } from './FormField/_index'
 import { FORM_ACTION_BUTTON_META } from './FormActionButton/_index'
+import { FORM_LABEL_META } from './FormLabel/_index'
 
 const FORM_META: ComponentMeta<FormProps> = {
   overview: {
@@ -32,4 +33,5 @@ export default {
   FormActions: FORM_ACTIONS_META,
   FormField: FORM_FIELD_META,
   FormActionButton: FORM_ACTION_BUTTON_META,
+  FormLabel: FORM_LABEL_META,
 }

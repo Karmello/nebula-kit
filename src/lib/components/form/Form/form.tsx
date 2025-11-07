@@ -1,3 +1,4 @@
+import { useId } from 'react'
 import { FieldValues, FormProvider, useForm } from 'react-hook-form'
 import classNames from 'classnames'
 
@@ -37,6 +38,8 @@ export const Form = <
   const form = useForm<TFieldValues, TContext, TTransformedValues>(useFormProps)
   const handleSubmit = form.handleSubmit(onValidSubmission, onInvalidSubmission)
 
+  const formId = useId()
+
   return (
     <WithSlots<'Form.Fields' | 'Form.Actions'>
       childrenToVerify={children}
@@ -45,7 +48,7 @@ export const Form = <
     >
       {({ slotsByName }) => {
         return (
-          <FormProvider {...form}>
+          <FormProvider {...(form as any)} formId={formId}>
             <Flex
               tag="form"
               tagAttrs={{

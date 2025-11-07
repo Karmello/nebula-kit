@@ -9,10 +9,12 @@ const FORM_FIELD_META: ComponentMeta<FormFieldProps> = {
     title: 'Container for individual form controls.',
     description: [
       'uses RHF Controller under the hood to manage field registration and value control',
+      'automatically links the label and control for accessibility using the "name" prop',
       'exposes the Flex.Item interface for per-item layout control',
     ],
     composedOf: ['Flex.Item'],
-    rendersAs: ['label'],
+    rendersAs: ['div'],
+    slots: ['Form.Label'],
   },
   props: FORM_FIELD_PROPS_META,
 }

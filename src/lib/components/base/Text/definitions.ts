@@ -43,7 +43,7 @@ export const TEXT_TYPOGRAPHY_CONFIG: Record<
   },
 }
 
-export const TEXT_TAGS = ['p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a'] as const
+export const TEXT_TAGS = ['p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a', 'label'] as const
 export const TEXT_SPACE = ['start', 'end', 'both'] as const
 export const DEFAULT_TEXT_TYPOGRAPHY: TextTypography = 'body'
 export const DEFAULT_TEXT_SCALE: TextScale = 'regular'

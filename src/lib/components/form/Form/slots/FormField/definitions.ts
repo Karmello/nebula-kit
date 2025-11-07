@@ -6,9 +6,10 @@ export const DEFAULT_FORM_FIELD_FLEX: FormFieldProps['flex'] = 1
 
 type FormFieldOwnProps = {
   name: string
+  label?: string
   options?: RegisterOptions<FieldValues, string>
 }
 
-type PropsFromFlexItem = Omit<FlexItemProps<'label'>, 'tag'>
+type PropsFromFlexItem = Omit<FlexItemProps<'div'>, 'tag'>
 
 export type FormFieldProps = PropsFromFlexItem & FormFieldOwnProps
