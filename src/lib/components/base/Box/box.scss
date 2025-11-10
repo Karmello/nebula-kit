@@ -80,6 +80,11 @@
           var(--neb-#{$intent}-ghost-text-hover, var(--neb-#{$intent}-ghost-text, var(--neb-text)))
         );
       }
+
+      // focus
+      &:focus-visible {
+        border-color: var(--neb-focus-border, transparent);
+      }
     }
   }
 }
@@ -125,6 +130,11 @@
         border-color: $mainColor;
         color: $mainColor;
         background-color: $bgColor;
+      }
+
+      // focus
+      &:focus-visible {
+        border-color: var(--neb-focus-border, $mainColor);
       }
     }
   }
@@ -172,6 +182,11 @@
         border-color: $mainColor;
         color: $textColor;
       }
+
+      // focus
+      &:focus-visible {
+        border-color: var(--neb-focus-border, $mainColor);
+      }
     }
   }
 }
@@ -185,13 +200,5 @@
 @each $intent in $neb-intents {
   .neb-box[data-neb-box-variant][data-neb-box-border-intent='#{$intent}'] {
     border-color: var(--neb-#{$intent}-solid-bg);
-  }
-}
-
-// focus
-.neb-box[data-neb-box-interactive='true'] {
-  &:focus-visible,
-  &:focus-visible:hover {
-    border-color: var(--neb-focus-border) !important;
   }
 }
