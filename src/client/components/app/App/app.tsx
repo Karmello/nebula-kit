@@ -8,6 +8,7 @@ import { useNavigateTo } from 'client/services'
 import { RootPage } from '../RootPage'
 import { PageNavigation } from './PageNavigation'
 import { AppFooter } from './AppFooter'
+import { UserActionMenu } from './UserActionMenu'
 
 export const App = () => {
   const { pathname } = useLocation()
@@ -40,6 +41,9 @@ export const App = () => {
               <Toolbar.Main>
                 <PageNavigation setMainOpen={setMainOpen} mainOpen={mainOpen} />
               </Toolbar.Main>
+              <Toolbar.End>
+                <UserActionMenu />
+              </Toolbar.End>
             </>
           )}
         </Toolbar>

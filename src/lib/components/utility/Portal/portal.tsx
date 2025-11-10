@@ -27,14 +27,53 @@ export const Portal = ({
   const updatePosition = useCallback(() => {
     if (!anchorRef.current || !rootRef.current) return
     const anchorRect = anchorRef.current.getBoundingClientRect()
+    const rootEl = rootRef.current
+
     let top = anchorRect.top + window.scrollY
     let left = anchorRect.left + window.scrollX
-    if (placement === 'top') top -= rootRef.current.offsetHeight
-    else if (placement === 'right') left += anchorRect.width
-    else if (placement === 'bottom') top += anchorRect.height
-    else if (placement === 'left') left -= rootRef.current.offsetWidth
+
+    // Split placement into main side and alignment part
+    // e.g. "bottom-end" → side="bottom", align="end"
+    const [side, align] = (placement || 'bottom-start').split('-') as [string, string | undefined]
+
+    // Vertical placement
+    if (side === 'top') {
+      top -= rootEl.offsetHeight
+    } else if (side === 'bottom') {
+      top += anchorRect.height
+    }
+
+    // Horizontal placement
+    if (side === 'left') {
+      left -= rootEl.offsetWidth
+    } else if (side === 'right') {
+      left += anchorRect.width
+    }
+
+    // Horizontal alignment
+    if (side === 'top' || side === 'bottom') {
+      if (align === 'end') {
+        // Align dropdown’s right edge to anchor’s right edge
+        left += anchorRect.width - rootEl.offsetWidth
+      } else if (align === 'center') {
+        // Center horizontally
+        left += (anchorRect.width - rootEl.offsetWidth) / 2
+      }
+    }
+
+    // Vertical alignment
+    if (side === 'left' || side === 'right') {
+      if (align === 'end') {
+        // Align dropdown’s bottom edge to anchor’s bottom edge
+        top += anchorRect.height - rootEl.offsetHeight
+      } else if (align === 'center') {
+        // Center vertically
+        top += (anchorRect.height - rootEl.offsetHeight) / 2
+      }
+    }
+
     setPosition({ top, left })
-  }, [])
+  }, [placement, anchorRef, rootRef])
 
   useLayoutEffect(() => {
     const div = document.createElement('div')
@@ -56,7 +95,7 @@ export const Portal = ({
     return () => {
       cancelAnimationFrame(frame)
     }
-  }, [])
+  }, [updatePosition])
 
   if (!container) {
     return null

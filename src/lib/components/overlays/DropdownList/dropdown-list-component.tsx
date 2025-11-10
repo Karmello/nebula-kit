@@ -12,6 +12,7 @@ export const DropdownListComponent = ({
   slotsByName,
   tagRef,
   tagAttrs,
+  placement,
   visibleItemsCount,
   scrollToIndex,
   scrollAlign,
@@ -119,7 +120,7 @@ export const DropdownListComponent = ({
         <Portal
           tagRef={portalRef}
           anchorRef={triggerRef}
-          placement="bottom"
+          placement={placement}
           inlineSize={triggerWidth !== undefined ? triggerWidth + 'px' : undefined}
         >
           <Animate property="blockSize" visible={animateVisible}>

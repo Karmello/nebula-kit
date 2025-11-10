@@ -27,6 +27,8 @@ export const DropdownList = ({
   variant,
   intent = DEFAULT_DROPDOWN_LIST_INTENT,
   size = DEFAULT_BUTTON_SIZE,
+  // Portal
+  placement,
   // own
   visibleItemsCount = DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   keepOpen = DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
@@ -74,6 +76,7 @@ export const DropdownList = ({
               slotsByName={slotsByName}
               tagRef={tagRef}
               tagAttrs={tagAttrs}
+              placement={placement}
               visibleItemsCount={visibleItemsCount}
               scrollToIndex={scrollToIndex}
               scrollAlign={scrollAlign}

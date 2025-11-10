@@ -1,6 +1,6 @@
 import { JSX } from 'react'
 
-import { BoxProps, ButtonProps, HtmlTagProps } from 'lib/components'
+import { BoxProps, ButtonProps, HtmlTagProps, PortalProps } from 'lib/components'
 
 export const DROPDOWN_LIST_SCROLL_ALIGN = ['start', 'center', 'end'] as const
 
@@ -34,4 +34,10 @@ type PropsFromBox = Pick<BoxProps, 'inlineSize'>
 
 type PropsFromButton = Pick<ButtonProps, 'variant' | 'intent' | 'size'>
 
-export type DropdownListProps = PropsFromHtmlTag & PropsFromBox & PropsFromButton & DropdownListOwnProps
+type PropsFromPortal = Pick<PortalProps, 'placement'>
+
+export type DropdownListProps = PropsFromHtmlTag &
+  PropsFromBox &
+  PropsFromButton &
+  PropsFromPortal &
+  DropdownListOwnProps

@@ -6,6 +6,10 @@ html {
   background: var(--neb-background);
   color: var(--neb-text);
 
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+
   font-family:
     system-ui,
     -apple-system,
