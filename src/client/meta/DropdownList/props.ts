@@ -22,11 +22,10 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
     isRequired: true,
     description: 'Accepts slots directly or via a render function with access to the context argument.',
   },
-  inlineSize: {
-    ...BOX_PROPS_META.inlineSize,
-    description: 'Fixed width.',
+  intent: {
+    ...BUTTON_PROPS_META.intent,
+    description: 'Semantic color intent applied to the list items.',
   },
-  intent: BUTTON_PROPS_META.intent,
   itemBorderIntent: {
     ...BOX_PROPS_META.borderIntent,
     defaultValue: String(DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT),
@@ -39,12 +38,13 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
   },
   placement: {
     ...PORTAL_PROPS_META.placement,
-    description: 'Defines the position of the list relative to the trigger element.',
+    description: 'Defines the position of the dropdown list relative to the trigger element.',
   },
   scrollAlign: {
     options: Object.values(DROPDOWN_LIST_SCROLL_ALIGN),
     defaultValue: String(DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN),
-    description: 'Defines how the target item is positioned within the scroll area.',
+    description:
+      'Defines how the item targeted by the "scrollToIndex" prop is positioned within the scroll area.',
   },
   scrollToIndex: {
     options: ['number'],
@@ -53,11 +53,14 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
   },
   size: {
     ...BUTTON_PROPS_META.size,
-    description: 'Applies the selected size to both the trigger and all dropdown items.',
+    description: 'Applies the selected size to the list items.',
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
-  variant: BUTTON_PROPS_META.variant,
+  variant: {
+    ...BUTTON_PROPS_META.variant,
+    description: 'Visual style variant from the system design applied to the list items.',
+  },
   visibleItemsCount: {
     options: ['number'],
     defaultValue: String(DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT),

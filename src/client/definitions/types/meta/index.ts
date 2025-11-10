@@ -27,6 +27,7 @@ type Example = {
   code?: string
   description?: string
   noSandBox?: boolean
+  noCode?: boolean
   sandBoxWithNoPadding?: boolean
   skip?: boolean
 }

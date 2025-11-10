@@ -1,5 +1,3 @@
-import { cloneElement } from 'react'
-
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
@@ -9,11 +7,10 @@ import { useDropdownListContext } from '../../DropdownListProvider'
 export const DropdownListTrigger = ({
   // HtmlTag
   children,
+  // Box
+  inlineSize,
 }: DropdownListTriggerProps) => {
-  const { open, setOpen, setAnimateVisible, triggerRef, inlineSize, variant, intent, size } =
-    useDropdownListContext()
-
-  const finalChildren = children as any
+  const { open, setOpen, setAnimateVisible, triggerRef } = useDropdownListContext()
 
   return (
     <Box
@@ -23,25 +20,11 @@ export const DropdownListTrigger = ({
         'aria-haspopup': 'listbox',
         'aria-expanded': false,
         onClick: () => (open ? setAnimateVisible(false) : setOpen(true)),
-        style: { transition: 'none' },
       }}
+      display="inline-block"
       inlineSize={inlineSize}
     >
-      {cloneElement(finalChildren, {
-        ...finalChildren.props,
-        tagAttrs: {
-          ...finalChildren.props.tagAttrs,
-          style: {
-            ...finalChildren.props.tagAttrs?.style,
-            inlineSize: '100%',
-            borderBottomLeftRadius: open ? 0 : undefined,
-            borderBottomRightRadius: open ? 0 : undefined,
-          },
-        },
-        variant,
-        intent,
-        size,
-      })}
+      {children}
     </Box>
   )
 }

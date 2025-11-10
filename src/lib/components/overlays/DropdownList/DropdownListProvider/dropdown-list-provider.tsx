@@ -12,7 +12,6 @@ type Props = {
   setHoveredIndex: (hoveredIndex: number) => void
   keepOpen: DropdownListProps['keepOpen']
   size: DropdownListProps['size']
-  inlineSize: DropdownListProps['inlineSize']
   variant: DropdownListProps['variant']
   intent: DropdownListProps['intent']
   blockMouse: boolean
@@ -36,7 +35,6 @@ export const DropdownListProvider = ({
   setHoveredIndex,
   keepOpen,
   size,
-  inlineSize,
   variant,
   intent,
   blockMouse,
@@ -54,7 +52,6 @@ export const DropdownListProvider = ({
         setHoveredIndex,
         keepOpen,
         size,
-        inlineSize,
         variant,
         intent,
         blockMouse,

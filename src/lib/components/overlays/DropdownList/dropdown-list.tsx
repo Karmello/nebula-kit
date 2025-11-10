@@ -21,8 +21,6 @@ export const DropdownList = ({
   children,
   tagRef,
   tagAttrs,
-  // Box
-  inlineSize,
   // Button
   variant,
   intent = DEFAULT_DROPDOWN_LIST_INTENT,
@@ -66,7 +64,6 @@ export const DropdownList = ({
             setHoveredIndex={setHoveredIndex}
             keepOpen={keepOpen}
             size={size}
-            inlineSize={inlineSize}
             variant={variant}
             intent={intent}
             blockMouse={blockMouse}

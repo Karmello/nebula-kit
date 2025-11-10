@@ -3,10 +3,10 @@ import { useState } from 'react'
 import { ComponentMeta } from 'client/definitions'
 import { Select, SelectProps } from 'lib/components'
 
-const SelectControlled = () => {
+const SelectControlled = (selectProps: Partial<SelectProps>) => {
   const [value, setValue] = useState<string>('option-1')
   return (
-    <Select value={value} onChange={setValue}>
+    <Select {...selectProps} value={value} onChange={setValue}>
       <Select.Option value="option-1">Option 1</Select.Option>
       <Select.Option value="option-2">Option 2</Select.Option>
       <Select.Option value="option-3">Option 3</Select.Option>
@@ -37,6 +37,32 @@ const SELECT_EXAMPLES_META: ComponentMeta<SelectProps>['examples'] = [
     \n
 return (
   <Select value={value} onChange={onChange}>
+    <Select.Option value='option-1'>Option 1</Select.Option>
+    <Select.Option value='option-2'>Option 2</Select.Option>
+    <Select.Option value='option-3'>Option 3</Select.Option>
+  </Select>
+)`,
+  },
+  {
+    description: 'Select rendered with a custom inline size.',
+    jsx: <SelectControlled inlineSize="200px" />,
+    code: `const [value, setValue] = useState<string>('option-1')
+    \n
+return (
+  <Select value={value} onChange={onChange} inlineSize="200px">
+    <Select.Option value='option-1'>Option 1</Select.Option>
+    <Select.Option value='option-2'>Option 2</Select.Option>
+    <Select.Option value='option-3'>Option 3</Select.Option>
+  </Select>
+)`,
+  },
+  {
+    description: 'Select configured to open above the trigger element.',
+    jsx: <SelectControlled inlineSize="200px" dropdownPlacement="top-start" />,
+    code: `const [value, setValue] = useState<string>('option-1')
+    \n
+return (
+  <Select value={value} onChange={onChange} inlineSize="200px">
     <Select.Option value='option-1'>Option 1</Select.Option>
     <Select.Option value='option-2'>Option 2</Select.Option>
     <Select.Option value='option-3'>Option 3</Select.Option>

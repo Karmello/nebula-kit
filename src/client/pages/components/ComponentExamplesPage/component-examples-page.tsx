@@ -10,7 +10,7 @@ import { Box, Flex, Reveal, Spacer, Text } from 'lib/components'
 const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   const elemToString = elemToStringService()
 
-  const { description, jsx, code, noSandBox, sandBoxWithNoPadding } = props
+  const { description, jsx, code, noSandBox, noCode, sandBoxWithNoPadding } = props
 
   return (
     <>
@@ -31,16 +31,20 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           <Spacer blockSize={10} />
         </>
       ) : null}
-      {!noSandBox ? (
-        <Reveal label="Code" intent="muted">
-          <Box padding={4}>
-            <CodeSnippet code={code || elemToString(jsx)} borderRadius={0} />
-          </Box>
-        </Reveal>
-      ) : (
-        <CodeSnippet code={code || elemToString(jsx)} />
-      )}
-      <Spacer blockSize={60} />
+      {!noCode ? (
+        <>
+          {!noSandBox ? (
+            <Reveal label="Code" intent="muted">
+              <Box padding={4}>
+                <CodeSnippet code={code || elemToString(jsx)} borderRadius={0} />
+              </Box>
+            </Reveal>
+          ) : (
+            <CodeSnippet code={code || elemToString(jsx)} />
+          )}
+        </>
+      ) : null}
+      <Spacer blockSize={50} />
     </>
   )
 }

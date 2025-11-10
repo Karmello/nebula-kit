@@ -1,6 +1,6 @@
 import { RefObject } from 'react'
 
-import { BoxProps, HtmlTagProps } from 'lib/components'
+import { HtmlTagProps } from 'lib/components'
 
 export const DEFAULT_PORTAL_PLACEMENT: PortalProps['placement'] = 'bottom-start'
 
@@ -26,6 +26,4 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<'div'>['children']
 }
 
-type PropsFromBox = PropsFromHtmlTag & Pick<BoxProps<'div'>, 'inlineSize'>
-
-export type PortalProps = PortalOwnProps & PropsFromBox
+export type PortalProps = PropsFromHtmlTag & PortalOwnProps

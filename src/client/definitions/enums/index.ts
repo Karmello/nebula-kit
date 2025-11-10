@@ -3,4 +3,6 @@ export enum PageKey {
   foundations = 'foundations',
   components = 'components',
   pricing = 'pricing',
+  login = 'login',
+  register = 'register',
 }

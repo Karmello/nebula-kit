@@ -6,7 +6,7 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     jsx: (
       <DropdownList>
         <DropdownList.Trigger>
-          <Button>Trigger</Button>
+          <Button>Toggle list</Button>
         </DropdownList.Trigger>
         {Array.from({ length: 3 }, (v, k) => (
           <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
@@ -17,11 +17,11 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
   },
   {
     description:
-      'Default DropdownList renders with solid variant, tertiary intent and muted divider between items. It stretches to fill the full horizontal space.',
+      'Default DropdownList renders with solid variant, tertiary intent and muted divider between items.',
     jsx: (
       <DropdownList>
         <DropdownList.Trigger>
-          <Button>Trigger</Button>
+          <Button>Toggle list</Button>
         </DropdownList.Trigger>
         {Array.from({ length: 10 }, (v, k) => (
           <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
@@ -34,7 +34,7 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     jsx: (
       <DropdownList variant="outline" intent="primary">
         <DropdownList.Trigger>
-          <Button>Trigger</Button>
+          <Button>Toggle list</Button>
         </DropdownList.Trigger>
         {Array.from({ length: 10 }, (v, k) => (
           <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
@@ -47,7 +47,7 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     jsx: (
       <DropdownList variant="ghost" intent="primary">
         <DropdownList.Trigger>
-          <Button>Trigger</Button>
+          <Button>Toggle list</Button>
         </DropdownList.Trigger>
         {Array.from({ length: 10 }, (v, k) => (
           <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
@@ -56,11 +56,11 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     ),
   },
   {
-    description: 'DropdownList rendered with a large size.',
+    description: 'DropdownList rendered with items of a custom size.',
     jsx: (
       <DropdownList size="lg">
         <DropdownList.Trigger>
-          <Button>Trigger</Button>
+          <Button>Toggle list</Button>
         </DropdownList.Trigger>
         {Array.from({ length: 10 }, (v, k) => (
           <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
@@ -69,24 +69,11 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     ),
   },
   {
-    description: 'DropdownList rendered with a fixed inline size.',
-    jsx: (
-      <DropdownList inlineSize="200px">
-        <DropdownList.Trigger>
-          <Button>Trigger</Button>
-        </DropdownList.Trigger>
-        {Array.from({ length: 10 }, (v, k) => (
-          <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
-        ))}
-      </DropdownList>
-    ),
-  },
-  {
-    description: 'DropdownList configured to stay open even when an item is chosen.',
+    description: 'DropdownList configured to stay open after an item is chosen.',
     jsx: (
       <DropdownList keepOpen>
         <DropdownList.Trigger>
-          <Button>Trigger</Button>
+          <Button>Toggle list</Button>
         </DropdownList.Trigger>
         {Array.from({ length: 10 }, (v, k) => (
           <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
@@ -99,7 +86,7 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     jsx: (
       <DropdownList>
         <DropdownList.Trigger>
-          <Button>Trigger</Button>
+          <Button>Toggle list</Button>
         </DropdownList.Trigger>
         {Array.from({ length: 10 }, (v, k) => (
           <DropdownList.Item key={k} disabled>
@@ -110,11 +97,11 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     ),
   },
   {
-    description: 'DropdownList configured to display a custom number of visible items at a time.',
+    description: 'DropdownList showing a custom number of visible items.',
     jsx: (
       <DropdownList visibleItemsCount={3}>
         <DropdownList.Trigger>
-          <Button>Trigger</Button>
+          <Button>Toggle list</Button>
         </DropdownList.Trigger>
         {Array.from({ length: 10 }, (v, k) => (
           <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
@@ -123,11 +110,37 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     ),
   },
   {
-    description: 'DropdownList configured to center a specific item on render.',
+    description: 'DropdownList centered on a specific item when rendered.',
     jsx: (
       <DropdownList scrollToIndex={4} scrollAlign="center">
         <DropdownList.Trigger>
-          <Button>Trigger</Button>
+          <Button>Toggle list</Button>
+        </DropdownList.Trigger>
+        {Array.from({ length: 10 }, (v, k) => (
+          <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
+        ))}
+      </DropdownList>
+    ),
+  },
+  {
+    description: 'DropdownList positioned above the trigger element, aligned to its left edge.',
+    jsx: (
+      <DropdownList placement="top-start">
+        <DropdownList.Trigger>
+          <Button>Toggle list</Button>
+        </DropdownList.Trigger>
+        {Array.from({ length: 10 }, (v, k) => (
+          <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
+        ))}
+      </DropdownList>
+    ),
+  },
+  {
+    description: 'DropdownList positioned to the right of the trigger element, aligned to its top edge.',
+    jsx: (
+      <DropdownList placement="right-start">
+        <DropdownList.Trigger>
+          <Button>Toggle list</Button>
         </DropdownList.Trigger>
         {Array.from({ length: 10 }, (v, k) => (
           <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>

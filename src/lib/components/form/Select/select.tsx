@@ -6,8 +6,8 @@ import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
 import { SelectProvider } from './SelectProvider'
-import { DEFAULT_SELECT_JUSTIFY_CONTENT } from './slots'
-import { SelectProps } from './definitions'
+import { DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT } from './slots'
+import { DEFAULT_SELECT_INLINE_SIZE, SelectProps } from './definitions'
 
 export const Select = ({
   // HtmlTag
@@ -20,17 +20,22 @@ export const Select = ({
   size,
   itemBorderIntent,
   scrollAlign,
-  inlineSize,
   visibleItemsCount,
+  // Box
+  inlineSize = DEFAULT_SELECT_INLINE_SIZE,
   // own
   defaultValue,
   value,
   onChange,
+  dropdownPlacement,
+  staticLabel,
 }: SelectProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
   const isControlled = value !== undefined
   const currentValue = isControlled ? value : internalValue
+
+  const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(dropdownPlacement)
 
   const handleChange = (value: string) => {
     if (!isControlled) setInternalValue(value)
@@ -58,25 +63,27 @@ export const Select = ({
               variant={variant}
               intent={intent}
               size={size}
-              inlineSize={inlineSize}
               itemBorderIntent={itemBorderIntent}
               scrollToIndex={currentSlotIndex}
               scrollAlign={scrollAlign}
               visibleItemsCount={visibleItemsCount}
+              placement={dropdownPlacement}
             >
               {({ open }) => (
                 <>
-                  <DropdownList.Trigger>
+                  <DropdownList.Trigger inlineSize={inlineSize}>
                     <Button
                       tagAttrs={{
                         'aria-labelledby': tagAttrs?.['aria-labelledby'],
                       }}
-                      iconName="chevron-down"
+                      iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
                       iconPosition="right"
-                      iconAngle={open ? 180 : 0}
+                      iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
                       justifyContent="space-between"
+                      size={size}
+                      fullWidth
                     >
-                      {currentSlot?.props.children || '...'}
+                      {staticLabel || currentSlot?.props.children || '...'}
                     </Button>
                   </DropdownList.Trigger>
                   {slotsByName['Select.Option'].map((slot, index) => {
@@ -90,7 +97,7 @@ export const Select = ({
                           onClick: () => handleChange(slotProps.value),
                         }}
                         bold={slotProps.value === currentValue}
-                        justifyContent={slotProps.justifyContent || DEFAULT_SELECT_JUSTIFY_CONTENT}
+                        justifyContent={slotProps.justifyContent || DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT}
                       >
                         {slot}
                       </DropdownList.Item>

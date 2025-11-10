@@ -1,6 +1,6 @@
 import { cloneElement, ReactElement, ReactNode, RefObject, useEffect, useLayoutEffect, useRef } from 'react'
 
-import { Animate, Box, DropdownListProps, Flex, Portal } from 'lib/components'
+import { Flex, Box, Animate, Portal, DropdownListProps } from 'lib/components'
 import { DEFAULT_ANIMATE_DURATION } from 'lib/components/motion/Animate/definitions'
 import { useNebkitStore } from 'lib/state'
 import { useOutsideClick } from 'lib/hooks'
@@ -21,7 +21,6 @@ export const DropdownListComponent = ({
   const {
     variant,
     intent,
-    inlineSize,
     animateVisible,
     setAnimateVisible,
     open,
@@ -117,39 +116,29 @@ export const DropdownListComponent = ({
     >
       {slotsByName['DropdownList.Trigger']}
       {open ? (
-        <Portal
-          tagRef={portalRef}
-          anchorRef={triggerRef}
-          placement={placement}
-          inlineSize={triggerWidth !== undefined ? triggerWidth + 'px' : undefined}
-        >
+        <Portal tagRef={portalRef} anchorRef={triggerRef} placement={placement}>
           <Animate property="blockSize" visible={animateVisible}>
             <Box
               variant={variant === 'ghost' ? 'solid' : variant}
               intent={variant === 'ghost' ? 'neutral' : intent}
               borderTopWidth={0}
-              borderTopLeftRadius={0}
-              borderTopRightRadius={0}
+              minInlineSize={`${triggerWidth}px`}
             >
               <Box
                 tagRef={scrollWrapperRef}
                 blockSize={itemsContainerBlockSize}
                 overflowY="auto"
                 overflowX="hidden"
-                borderTopLeftRadius={0}
-                borderTopRightRadius={0}
               >
                 <Flex flexDirection="column" flexWrap="nowrap" alignItems="stretch">
                   {slotsByName['DropdownList.Item'].map((slot, index) => (
                     <Box
                       key={index}
                       variant="outline"
-                      inlineSize={inlineSize}
                       borderLeftWidth={0}
                       borderRightWidth={0}
                       borderTopWidth={0}
                       borderBottomWidth={index === itemsCount - 1 ? 0 : undefined}
-                      borderRadius={0}
                       borderIntent={itemBorderIntent}
                     >
                       {cloneElement(slot as ReactElement<any>, { index })}

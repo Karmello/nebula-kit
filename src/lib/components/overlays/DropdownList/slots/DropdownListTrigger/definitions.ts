@@ -1,7 +1,9 @@
-import { HtmlTagProps } from 'lib/components'
+import { BoxProps, HtmlTagProps } from 'lib/components'
 
 type PropsFromHtmlTag = {
   children: HtmlTagProps<'div'>['children']
 }
 
-export type DropdownListTriggerProps = PropsFromHtmlTag
+type PropsFromBox = Pick<BoxProps, 'inlineSize'>
+
+export type DropdownListTriggerProps = PropsFromHtmlTag & PropsFromBox

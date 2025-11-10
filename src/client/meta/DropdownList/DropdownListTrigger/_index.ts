@@ -6,12 +6,8 @@ import { DROPDOWN_LIST_TRIGGER_PROPS_META } from './props'
 const DROPDOWN_LIST_TRIGGER_META: ComponentMeta<DropdownListTriggerProps> = {
   overview: {
     name: 'DropdownList.Trigger',
-    title: 'Represents a wrapper around the interactive element used to open or close the dropdown list.',
-    description: [
-      'passes "variant", "intent" and "size" props from DropdownList down to the trigger component',
-      'best used with components that support the above props such as Box, Button or Input',
-      'automatically adjusts border radius when the list is open',
-    ],
+    title:
+      'Represents a wrapper around the interactive element used to control visibility of the dropdown list.',
     composedOf: ['Box'],
     rendersAs: ['div'],
   },
