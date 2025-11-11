@@ -11,6 +11,7 @@ import {
   DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
   DEFAULT_DROPDOWN_LIST_INTENT,
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
+  DEFAULT_DROPDOWN_LIST_PLACEMENT,
 } from './definitions'
 
 import { DropdownListProvider } from './DropdownListProvider'
@@ -26,7 +27,7 @@ export const DropdownList = ({
   intent = DEFAULT_DROPDOWN_LIST_INTENT,
   size = DEFAULT_BUTTON_SIZE,
   // Portal
-  placement,
+  placement = DEFAULT_DROPDOWN_LIST_PLACEMENT,
   // own
   visibleItemsCount = DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   keepOpen = DEFAULT_DROPDOWN_LIST_KEEP_OPEN,

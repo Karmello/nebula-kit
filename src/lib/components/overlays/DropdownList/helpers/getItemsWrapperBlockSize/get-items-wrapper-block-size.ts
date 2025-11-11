@@ -6,6 +6,6 @@ export const getItemsWrapperBlockSize = (
   borderWidth: number
 ) => {
   const allItemsBlockSize = visibleItemsCount * BUTTON_SIZE_CONFIG[size].blockSize
-  const allItemsBorderWidth = (visibleItemsCount - 1) * borderWidth
+  const allItemsBorderWidth = visibleItemsCount * borderWidth
   return `${allItemsBlockSize + allItemsBorderWidth}px`
 }

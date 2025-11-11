@@ -74,6 +74,7 @@ export const DropdownListComponent = ({
 
   const triggerWidth = (triggerRef as RefObject<HTMLDivElement>).current?.offsetWidth
   const itemsContainerBlockSize = getItemsWrapperBlockSize(finalVisibleItemsCount, size ?? 'md', borderWidth)
+  const opensUpDownwards = (placement || 'bottom-start').startsWith('bottom')
 
   return (
     <Box
@@ -122,6 +123,10 @@ export const DropdownListComponent = ({
               variant={variant === 'ghost' ? 'solid' : variant}
               intent={variant === 'ghost' ? 'neutral' : intent}
               borderTopWidth={0}
+              borderTopLeftRadius={opensUpDownwards ? 0 : undefined}
+              borderTopRightRadius={opensUpDownwards ? 0 : undefined}
+              borderBottomLeftRadius={!opensUpDownwards ? 0 : undefined}
+              borderBottomRightRadius={!opensUpDownwards ? 0 : undefined}
               minInlineSize={`${triggerWidth}px`}
             >
               <Box
@@ -129,16 +134,23 @@ export const DropdownListComponent = ({
                 blockSize={itemsContainerBlockSize}
                 overflowY="auto"
                 overflowX="hidden"
+                borderTopLeftRadius={opensUpDownwards ? 0 : undefined}
+                borderTopRightRadius={opensUpDownwards ? 0 : undefined}
+                borderBottomLeftRadius={!opensUpDownwards ? 0 : undefined}
+                borderBottomRightRadius={!opensUpDownwards ? 0 : undefined}
               >
                 <Flex flexDirection="column" flexWrap="nowrap" alignItems="stretch">
                   {slotsByName['DropdownList.Item'].map((slot, index) => (
                     <Box
                       key={index}
                       variant="outline"
+                      borderRadius={0}
                       borderLeftWidth={0}
                       borderRightWidth={0}
-                      borderTopWidth={0}
-                      borderBottomWidth={index === itemsCount - 1 ? 0 : undefined}
+                      borderTopWidth={opensUpDownwards ? (index > 0 ? 0 : undefined) : 0}
+                      borderBottomWidth={
+                        opensUpDownwards ? (index === itemsCount - 1 ? 0 : undefined) : undefined
+                      }
                       borderIntent={itemBorderIntent}
                     >
                       {cloneElement(slot as ReactElement<any>, { index })}

@@ -62,7 +62,7 @@ return (
     code: `const [value, setValue] = useState<string>('option-1')
     \n
 return (
-  <Select value={value} onChange={onChange} inlineSize="200px">
+  <Select value={value} onChange={onChange} inlineSize="200px" dropdownPlacement="top-start">
     <Select.Option value='option-1'>Option 1</Select.Option>
     <Select.Option value='option-2'>Option 2</Select.Option>
     <Select.Option value='option-3'>Option 3</Select.Option>

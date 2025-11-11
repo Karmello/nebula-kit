@@ -1,10 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { SelectProps } from 'lib/components'
-
-import {
-  DEFAULT_SELECT_INLINE_SIZE,
-  SELECT_DROPDOWN_PLACEMENTS,
-} from 'lib/components/form/Select/definitions'
+import { DEFAULT_SELECT_INLINE_SIZE } from 'lib/components/form/Select/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'
@@ -20,10 +16,7 @@ const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
     options: ['string'],
     description: 'Initial selected item value when the component is used in uncontrolled mode.',
   },
-  dropdownPlacement: {
-    ...DROPDOWN_LIST_PROPS_META.placement,
-    options: SELECT_DROPDOWN_PLACEMENTS,
-  },
+  dropdownPlacement: DROPDOWN_LIST_PROPS_META.placement,
   inlineSize: {
     ...BOX_PROPS_META.inlineSize,
     defaultValue: String(DEFAULT_SELECT_INLINE_SIZE),

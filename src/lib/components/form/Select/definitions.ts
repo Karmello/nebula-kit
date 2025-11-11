@@ -1,21 +1,12 @@
-import { BoxProps, DropdownListProps, HtmlTagProps, PortalPlacement } from 'lib/components'
-
-export const SELECT_DROPDOWN_PLACEMENTS = [
-  'bottom-start',
-  'bottom-end',
-  'top-start',
-  'top-end',
-] as const satisfies PortalPlacement[]
+import { BoxProps, DropdownListProps, HtmlTagProps } from 'lib/components'
 
 export const DEFAULT_SELECT_INLINE_SIZE: SelectProps['inlineSize'] = '100%'
-
-export type SelectDropdownPlacement = (typeof SELECT_DROPDOWN_PLACEMENTS)[number]
 
 type SelectOwnProps = {
   defaultValue?: string
   value?: string
   onChange?: (value: string) => void
-  dropdownPlacement?: SelectDropdownPlacement
+  dropdownPlacement?: DropdownListProps['placement']
   staticLabel?: string
 }
 

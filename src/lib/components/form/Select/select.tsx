@@ -75,12 +75,22 @@ export const Select = ({
                     <Button
                       tagAttrs={{
                         'aria-labelledby': tagAttrs?.['aria-labelledby'],
+                        style: opensUpDownwards
+                          ? {
+                              borderBottomLeftRadius: open ? 0 : undefined,
+                              borderBottomRightRadius: open ? 0 : undefined,
+                            }
+                          : {
+                              borderTopLeftRadius: open ? 0 : undefined,
+                              borderTopRightRadius: open ? 0 : undefined,
+                            },
                       }}
                       iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
                       iconPosition="right"
                       iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
                       justifyContent="space-between"
                       size={size}
+                      intent={intent}
                       fullWidth
                     >
                       {staticLabel || currentSlot?.props.children || '...'}

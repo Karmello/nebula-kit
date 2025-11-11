@@ -8,6 +8,8 @@ import {
   DROPDOWN_LIST_SCROLL_ALIGN,
   DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
+  DEFAULT_DROPDOWN_LIST_PLACEMENT,
+  DROPDOWN_LIST_PLACEMENTS,
 } from 'lib/components/overlays/DropdownList/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -38,6 +40,8 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
   },
   placement: {
     ...PORTAL_PROPS_META.placement,
+    options: DROPDOWN_LIST_PLACEMENTS,
+    defaultValue: String(DEFAULT_DROPDOWN_LIST_PLACEMENT),
     description: 'Defines the position of the dropdown list relative to the trigger element.',
   },
   scrollAlign: {
