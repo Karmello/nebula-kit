@@ -48,6 +48,7 @@ type InputOwnProps = {
   defaultValue?: string
   value?: string
   onChange?: (value: string) => void
+  onBlur?: React.FocusEventHandler<HTMLInputElement>
   size?: InputSize
 }
 

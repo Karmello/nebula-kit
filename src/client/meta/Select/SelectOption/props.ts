@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { DROPDOWN_LIST_ITEM_PROPS_META } from 'client/meta/DropdownList/DropdownListItem/props'
 import { SelectOptionProps } from 'lib/components'
-import { DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT } from 'lib/components/form/Select/slots'
+import { DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT } from 'lib/components/form-elements/Select/slots'
 
 const SELECT_OPTION_PROPS_META: ComponentMeta<SelectOptionProps>['props'] = {
   children: DROPDOWN_LIST_ITEM_PROPS_META.children,

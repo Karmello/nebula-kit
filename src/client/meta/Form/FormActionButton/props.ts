@@ -3,7 +3,7 @@ import { BUTTON_PROPS_META } from 'client/meta/Button/props'
 import { FLEX_ITEM_PROPS_META } from 'client/meta/Flex/FlexItem/props'
 import { FormActionButtonProps } from 'lib/components'
 import { DEFAULT_BUTTON_INTENT } from 'lib/components/controls/Button/definitions'
-import { DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT } from 'lib/components/form/Form/slots'
+import { DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT } from 'lib/components/form-elements/Form/slots'
 
 const FORM_ACTION_BUTTON_PROPS_META: ComponentMeta<FormActionButtonProps>['props'] = {
   alignSelf: FLEX_ITEM_PROPS_META.alignSelf,

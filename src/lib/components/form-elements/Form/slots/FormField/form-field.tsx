@@ -8,6 +8,7 @@ import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
 import { DEFAULT_FORM_FIELD_FLEX, FormFieldProps } from './definitions'
+import { getRulesObject } from './helpers'
 
 export const FormField = ({
   // FlexItem
@@ -25,7 +26,11 @@ export const FormField = ({
   label,
   hint,
   options,
+  // own (validation)
   required,
+  minLength,
+  maxLength,
+  email,
 }: FormFieldProps) => {
   const formContext = useFormContext()
 
@@ -61,10 +66,7 @@ export const FormField = ({
               name={name}
               control={formContext.control}
               defaultValue={formFieldComponent.props.defaultValue ?? ''}
-              rules={{
-                required,
-                ...options,
-              }}
+              rules={getRulesObject({ options, required, minLength, maxLength, email })}
               render={({ field, fieldState }) => {
                 const labelErrPart = fieldState.error?.message ? ` - ${fieldState.error.message}` : ''
 
@@ -85,6 +87,11 @@ export const FormField = ({
                     {cloneElement(formFieldComponent, {
                       ...omit(formFieldComponent.props, ['value', 'defaultValue', 'onChange']),
                       ...field,
+                      onBlur: (e: any) => {
+                        const trimmed = e.target.value.trim()
+                        if (trimmed !== e.target.value) field.onChange(trimmed)
+                        field.onBlur()
+                      },
                       tagAttrs: {
                         ...formFieldComponent.props.tagAttrs,
                         'aria-labelledby': customFormLabelComponent || label ? labelId : undefined,

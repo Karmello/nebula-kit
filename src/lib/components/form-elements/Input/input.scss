@@ -4,3 +4,7 @@
   -webkit-background-clip: text;
   border-color: var(--neb-text) !important;
 }
+
+.neb-input::placeholder {
+  opacity: 0.4;
+}

@@ -17,11 +17,11 @@ export const LoginPage = () => {
             }}
           >
             <Form.Fields>
-              <Form.Field name="email" label="Email" required="is required">
-                <Input />
+              <Form.Field name="email" label="Email" required email minLength={5} maxLength={254}>
+                <Input tagAttrs={{ placeholder: 'name@example.com' }} />
               </Form.Field>
-              <Form.Field name="password" label="Password" required="is required">
-                <Input />
+              <Form.Field name="password" label="Password" required minLength={8} maxLength={128}>
+                <Input tagAttrs={{ type: 'password' }} />
               </Form.Field>
             </Form.Fields>
             <Form.Actions>

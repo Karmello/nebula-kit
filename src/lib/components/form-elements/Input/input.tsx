@@ -25,6 +25,7 @@ export const Input = ({
   defaultValue,
   value,
   onChange,
+  onBlur,
   size = DEFAULT_INPUT_SIZE,
 }: InputProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
@@ -53,6 +54,7 @@ export const Input = ({
         onChange: e => {
           handleChange((e.target as HTMLInputElement).value)
         },
+        onBlur,
       }}
       tagRef={tagRef}
       variant={variant}
