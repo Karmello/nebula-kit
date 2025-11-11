@@ -25,6 +25,7 @@ import {
   Leaf,
   ListChevronsDownUp,
   ListChevronsUpDown,
+  LogIn,
   Menu,
   Orbit,
   Package,
@@ -34,6 +35,7 @@ import {
   TreePine,
   TriangleAlert,
   Users,
+  UserPlus,
   X,
   Zap,
 } from 'lucide-react'
@@ -66,6 +68,7 @@ export const ICONS: Record<IconName, any> = {
   leaf: Leaf,
   'list-chevrons-down-up': ListChevronsDownUp,
   'list-chevrons-up-down': ListChevronsUpDown,
+  'log-in': LogIn,
   menu: Menu,
   orbit: Orbit,
   package: Package,
@@ -75,6 +78,7 @@ export const ICONS: Record<IconName, any> = {
   'tree-pine': TreePine,
   'triangle-alert': TriangleAlert,
   users: Users,
+  'user-plus': UserPlus,
   zap: Zap,
 }
 

@@ -1,4 +1,4 @@
-import { FieldValues, RegisterOptions } from 'react-hook-form'
+import { FieldValues, RegisterOptions, ValidationRule } from 'react-hook-form'
 
 import { FlexItemProps } from 'lib/components'
 
@@ -9,6 +9,7 @@ type FormFieldOwnProps = {
   label?: string
   hint?: string
   options?: RegisterOptions<FieldValues, string>
+  required?: string | ValidationRule<boolean>
 }
 
 type PropsFromFlexItem = Omit<FlexItemProps<'div'>, 'tag'>

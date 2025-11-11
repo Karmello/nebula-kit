@@ -41,9 +41,11 @@ export const Form = <
 
   const formId = useId()
 
+  const finalChildren = typeof children === 'function' ? children(form) : children
+
   return (
     <WithSlots<'Form.Fields' | 'Form.Actions'>
-      childrenToVerify={children}
+      childrenToVerify={finalChildren}
       componentName="Form"
       slotsConfig={[{ name: 'Form.Fields', required: true }, { name: 'Form.Actions' }]}
     >

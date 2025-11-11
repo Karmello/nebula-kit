@@ -50,7 +50,7 @@ const FORM_PROPS_META: ComponentMeta<FormProps>['props'] = {
   tagRef: HTML_TAG_PROPS_META.tagRef,
   useFormProps: {
     options: ['UseFormProps (RHF)'],
-    description: "Passes configuration options directly to React Hook Form's useForm.",
+    description: 'Passes configuration options directly to RHF useForm.',
   },
 }
 

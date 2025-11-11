@@ -25,6 +25,7 @@ export const FormField = ({
   label,
   hint,
   options,
+  required,
 }: FormFieldProps) => {
   const formContext = useFormContext()
 
@@ -56,34 +57,49 @@ export const FormField = ({
             alignSelf={alignSelf}
             order={order}
           >
-            {customFormLabelComponent ? (
-              cloneElement<FormLabelProps>(customFormLabelComponent, {
-                tagAttrs: {
-                  ...customFormLabelComponent.props.tagAttrs,
-                  id: labelId,
-                },
-              })
-            ) : label ? (
-              <Form.Label tagAttrs={{ id: labelId }}>{label}</Form.Label>
-            ) : null}
             <Controller
               name={name}
               control={formContext.control}
               defaultValue={formFieldComponent.props.defaultValue ?? ''}
-              rules={options}
-              render={({ field }) =>
-                cloneElement(formFieldComponent, {
-                  ...omit(formFieldComponent.props, ['value', 'defaultValue', 'onChange']),
-                  ...field,
-                  tagAttrs: {
-                    ...formFieldComponent.props.tagAttrs,
-                    'aria-labelledby': customFormLabelComponent || label ? labelId : undefined,
-                    name,
-                  },
-                })
-              }
+              rules={{
+                required,
+                ...options,
+              }}
+              render={({ field, fieldState }) => {
+                const labelErrPart = fieldState.error?.message ? ` - ${fieldState.error.message}` : ''
+
+                return (
+                  <>
+                    {customFormLabelComponent ? (
+                      cloneElement<FormLabelProps>(customFormLabelComponent, {
+                        tagAttrs: {
+                          ...customFormLabelComponent.props.tagAttrs,
+                          id: labelId,
+                        },
+                      })
+                    ) : label ? (
+                      <Form.Label tagAttrs={{ id: labelId }} intent={fieldState.error ? 'danger' : undefined}>
+                        {label + labelErrPart}
+                      </Form.Label>
+                    ) : null}
+                    {cloneElement(formFieldComponent, {
+                      ...omit(formFieldComponent.props, ['value', 'defaultValue', 'onChange']),
+                      ...field,
+                      tagAttrs: {
+                        ...formFieldComponent.props.tagAttrs,
+                        'aria-labelledby': customFormLabelComponent || label ? labelId : undefined,
+                        name,
+                      },
+                    })}
+                    {customFormHintComponent ? (
+                      customFormHintComponent
+                    ) : hint ? (
+                      <Form.Hint>{hint}</Form.Hint>
+                    ) : null}
+                  </>
+                )
+              }}
             />
-            {customFormHintComponent ? customFormHintComponent : hint ? <Form.Hint>{hint}</Form.Hint> : null}
           </Flex.Item>
         )
       }}

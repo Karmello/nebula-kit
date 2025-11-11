@@ -1,4 +1,5 @@
-import { FieldValues, SubmitErrorHandler, SubmitHandler, UseFormProps } from 'react-hook-form'
+import { JSX } from 'react'
+import { FieldValues, SubmitErrorHandler, SubmitHandler, UseFormProps, UseFormReturn } from 'react-hook-form'
 
 import { HtmlTagProps, FlexProps } from 'lib/components'
 
@@ -7,8 +8,14 @@ export const DEFAULT_FORM_ALIGN_ITEMS: FormProps['alignItems'] = 'stretch'
 export const DEFAULT_FORM_COLUMN_GAP: FormProps['columnGap'] = 10
 export const DEFAULT_FORM_ROW_GAP: FormProps['rowGap'] = 30
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'form'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'form'>['children']
+type PropsFromHtmlTag<
+  TFieldValues extends FieldValues = FieldValues,
+  TContext = any,
+  TTransformedValues = TFieldValues,
+> = Pick<HtmlTagProps<'form'>, 'tagAttrs' | 'tagRef'> & {
+  children:
+    | HtmlTagProps<'form'>['children']
+    | ((formContext: UseFormReturn<TFieldValues, TContext, TTransformedValues>) => JSX.Element)
 }
 
 type PropsFromFlex = Pick<
@@ -24,5 +31,5 @@ export type FormProps<
   useFormProps?: UseFormProps<TFieldValues, TContext, TTransformedValues>
   onValidSubmission: SubmitHandler<TTransformedValues>
   onInvalidSubmission?: SubmitErrorHandler<TFieldValues>
-} & PropsFromHtmlTag &
+} & PropsFromHtmlTag<TFieldValues, TContext, TTransformedValues> &
   PropsFromFlex

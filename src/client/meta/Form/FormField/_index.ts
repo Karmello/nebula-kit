@@ -9,6 +9,7 @@ const FORM_FIELD_META: ComponentMeta<FormFieldProps> = {
     title: 'Container for individual form controls.',
     description: [
       'uses RHF Controller under the hood to manage field registration and value control',
+      'offers shorthand props for applying quick validation rules',
       'automatically links the label and control for accessibility using the "name" prop',
       'exposes the Flex.Item interface for per-item layout control',
     ],

@@ -36,6 +36,11 @@ const FORM_FIELD_PROPS_META: ComponentMeta<FormFieldProps>['props'] = {
     description: 'Validation and configuration rules mapped to RHF Controller.',
   },
   order: FLEX_ITEM_PROPS_META.order,
+  required: {
+    options: ['string | ValidationRule<boolean>'],
+    description:
+      "Marks field as required. Maps to RHF's required rule, allowing a validation message just like in RHF.",
+  },
   tagAttrs: FLEX_ITEM_PROPS_META.tagAttrs,
   tagRef: FLEX_ITEM_PROPS_META.tagRef,
 }
