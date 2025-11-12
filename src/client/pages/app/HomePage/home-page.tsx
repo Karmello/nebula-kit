@@ -3,7 +3,7 @@ import { sentenceCase } from 'change-case'
 import { Box, ButtonGroup, Divider, Flex, Button, Link, Section, Select, Spacer, Text } from 'lib/components'
 
 import { useNebkitStore } from 'lib/state'
-import { Brand, BRANDS, THEME } from 'lib/definitions'
+import { Color, COLORS, THEMES } from 'lib/definitions'
 import { useNavigateTo } from 'client/services'
 
 import {
@@ -75,7 +75,7 @@ export const HomePage = () => {
             <Flex.Item>
               <Text bold>Theme</Text>
               <ButtonGroup key={theme} attached size="sm" intent="primary">
-                {THEME.map(key => (
+                {THEMES.map(key => (
                   <Button
                     key={key}
                     intent={key === theme ? 'primary' : 'tertiary'}
@@ -90,12 +90,12 @@ export const HomePage = () => {
               <Text bold>Brand</Text>
               <Select
                 value={brand}
-                onChange={value => setBrand(value as Brand)}
+                onChange={value => setBrand(value as Color)}
                 inlineSize="150px"
                 size="sm"
                 scrollAlign="center"
               >
-                {BRANDS.map(brand => (
+                {COLORS.map(brand => (
                   <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
                 ))}
               </Select>

@@ -1,14 +1,14 @@
 import { pascalCase } from 'change-case'
 
 import { Box, Flex, Section, Text } from 'lib/components'
-import { BRANDS } from 'lib/definitions'
+import { COLORS } from 'lib/definitions'
 
 export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Flex flexDirection="column" gap={60} alignItems="stretch">
         <Text typography="lead">All color palettes defined in the system.</Text>
-        {BRANDS.map(colorName => {
+        {COLORS.map(colorName => {
           return (
             <Section key={colorName} heading={pascalCase(colorName)}>
               <Box overflowX="auto">

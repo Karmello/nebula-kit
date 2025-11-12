@@ -1,9 +1,9 @@
 import { ReactElement } from 'react'
 
-import { Brand, ScaleValue, Sizes, Theme } from 'lib/definitions'
+import { Color, ScaleValue, Sizes, Theme } from 'lib/definitions'
 
 export const DEFAULT_NEBKIT_THEME: Theme = 'light'
-export const DEFAULT_NEBKIT_BRAND: Brand = 'purple'
+export const DEFAULT_NEBKIT_BRAND: Color = 'purple'
 export const DEFAULT_NEBKIT_BORDER_WIDTH_SIZE: NebkitProviderProps['borderWidthSize'] = 'md'
 export const DEFAULT_NEBKIT_BORDER_RADIUS_SIZE: NebkitProviderProps['borderRadiusSize'] = 'md'
 
@@ -45,7 +45,7 @@ export type NebkitBorderRadiusSize = (typeof NEBKIT_BORDER_RADIUS_SIZES)[number]
 export type NebkitProviderProps<T extends Theme = 'light'> = {
   children: ReactElement
   theme?: T
-  brand?: Brand
+  brand?: Color
   background?: T extends 'light' ? NebkitThemeBgLight : NebkitThemeBgDark
   borderWidthSize?: NebkitBorderWidthSize
   borderRadiusSize?: NebkitBorderRadiusSize

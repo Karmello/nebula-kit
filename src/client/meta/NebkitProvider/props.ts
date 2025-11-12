@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { NebkitProviderProps } from 'lib/components'
-import { BRANDS, Theme, THEME } from 'lib/definitions'
+import { COLORS, THEMES, Theme } from 'lib/definitions'
 
 import {
   NEBKIT_BORDER_RADIUS_SIZES,
@@ -17,12 +17,12 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps<Theme>>['pro
     description: 'Application component to be wrapped by the provider.',
   },
   theme: {
-    options: THEME as unknown as string[],
-    defaultValue: THEME[0],
+    options: THEMES as unknown as string[],
+    defaultValue: THEMES[0],
     description: 'Theme applied.',
   },
   brand: {
-    options: BRANDS as unknown as string[],
+    options: COLORS as unknown as string[],
     defaultValue: DEFAULT_NEBKIT_BRAND,
     description: 'Defines the main accent color family for primary, secondary and tertiary intents.',
   },
