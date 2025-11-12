@@ -12,7 +12,7 @@ expectError(<Callout content="Content">children</Callout>)
 // valid props
 expectType(<Callout content="Content" />)
 expectType(<Callout content="Content" heading="Custom heading" />)
-expectType(<Callout content="Content" intent="danger" />)
+expectType(<Callout content="Content" intent="secondary" />)
 expectType(<Callout content="Content" size="lg" />)
 
 // valid tags

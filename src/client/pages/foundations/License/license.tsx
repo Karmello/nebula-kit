@@ -22,7 +22,9 @@ export default () => {
             navigateTo('/pricing')
           }}
         >
-          <Text intent="info">Pricing page</Text>
+          <Text color="blue" intent="primary">
+            Pricing page
+          </Text>
         </Link>
         .
       </Text>

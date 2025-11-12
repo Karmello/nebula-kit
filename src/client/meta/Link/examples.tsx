@@ -5,7 +5,9 @@ const LINK_EXAMPLES_META: ComponentMeta<LinkProps>['examples'] = [
   {
     jsx: (
       <Link href="https://google.com">
-        <Button intent="info">Click me</Button>
+        <Button color="blue" intent="primary">
+          Click me
+        </Button>
       </Link>
     ),
     description: 'Using Link to make Button navigate to the provided URL.',
@@ -13,7 +15,7 @@ const LINK_EXAMPLES_META: ComponentMeta<LinkProps>['examples'] = [
   {
     jsx: (
       <Link href="https://google.com" target="_blank">
-        <Button iconName="external-link" intent="info" />
+        <Button iconName="external-link" color="blue" intent="primary" />
       </Link>
     ),
     description: 'Using Link to make Button open an external page in a new tab.',
@@ -26,7 +28,7 @@ const LINK_EXAMPLES_META: ComponentMeta<LinkProps>['examples'] = [
           // call to your custom navigation method
         }}
       >
-        <Button iconName="arrow-right" iconPosition="right" intent="info">
+        <Button iconName="arrow-right" iconPosition="right" color="blue" intent="primary">
           Go to page
         </Button>
       </Link>
@@ -47,7 +49,9 @@ const LINK_EXAMPLES_META: ComponentMeta<LinkProps>['examples'] = [
   {
     jsx: (
       <Link href="https://google.com" target="_blank">
-        <Text intent="info">Click me</Text>
+        <Text color="blue" intent="primary">
+          Click me
+        </Text>
       </Link>
     ),
     description: 'Using Link to make Text open an external page in a new tab.',

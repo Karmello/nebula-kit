@@ -1,6 +1,6 @@
-import { HtmlTagProps } from 'lib/components'
+import { BoxProps, HtmlTagProps } from 'lib/components'
 import { TextTypography } from 'lib/components/base/Text/definitions'
-import { IconName, ScaleValue, Sizes } from 'lib/definitions'
+import { Color, IconName, ScaleValue, Sizes } from 'lib/definitions'
 
 export const CALLOUT_SIZE_CONFIG: Record<
   CalloutSize,
@@ -13,35 +13,40 @@ export const CALLOUT_SIZE_CONFIG: Record<
   xxl: { typography: 'h2', spacing: 30 },
 }
 
-export const CALLOUT_CONFIG: Record<CalloutIntent, { heading: string; iconName: IconName }> = {
-  info: { heading: 'Info', iconName: 'info' },
-  success: { heading: 'Success', iconName: 'check-circle' },
-  warning: { heading: 'Warning', iconName: 'triangle-alert' },
-  danger: { heading: 'Attention', iconName: 'circle-alert' },
+export const CALLOUT_CONFIG: Record<CalloutStatus, { color: Color; heading: string; iconName: IconName }> = {
+  info: { color: 'blue', heading: 'Info', iconName: 'info' },
+  success: { color: 'green', heading: 'Success', iconName: 'check-circle' },
+  warning: { color: 'amber', heading: 'Warning', iconName: 'triangle-alert' },
+  danger: { color: 'red', heading: 'Attention', iconName: 'circle-alert' },
 }
 
-export const DEFAULT_CALLOUT_SIZE: CalloutSize = 'md'
-export const DEFAULT_CALLOUT_VARIANT: CalloutVariant = 'solid'
-export const DEFAULT_CALLOUT_INTENT: CalloutIntent = 'info'
+export const DEFAULT_CALLOUT_SIZE: CalloutProps['size'] = 'md'
+export const DEFAULT_CALLOUT_VARIANT: CalloutProps['variant'] = 'solid'
+export const DEFAULT_CALLOUT_INTENT: CalloutProps['intent'] = 'primary'
+export const DEFAULT_CALLOUT_STATUS: CalloutProps['status'] = 'info'
 
 export const CALLOUT_TAGS = ['div', 'section', 'article', 'aside'] as const
 export const CALLOUT_SIZES = ['sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies Sizes[]
 export const CALLOUT_VARIANTS = ['solid', 'outline'] as const
-export const CALLOUT_INTENTS = ['info', 'success', 'warning', 'danger'] as const
+export const CALLOUT_STATUSES = ['info', 'success', 'warning', 'danger'] as const
 
 export type CalloutTag = (typeof CALLOUT_TAGS)[number]
 export type CalloutSize = (typeof CALLOUT_SIZES)[number]
 export type CalloutVariant = (typeof CALLOUT_VARIANTS)[number]
-export type CalloutIntent = (typeof CALLOUT_INTENTS)[number]
+export type CalloutStatus = (typeof CALLOUT_STATUSES)[number]
 
 type CalloutOwnProps = {
   content: string
   heading?: string
   size?: CalloutSize
   variant?: CalloutVariant
-  intent?: CalloutIntent
+  status?: CalloutStatus
 }
 
 type PropsFromHtmlTag<T extends CalloutTag = 'div'> = Omit<HtmlTagProps<T>, 'children'>
 
-export type CalloutProps<T extends CalloutTag = 'div'> = PropsFromHtmlTag<T> & CalloutOwnProps
+type PropsFromBox<T extends CalloutTag = 'div'> = Pick<BoxProps<T>, 'intent'>
+
+export type CalloutProps<T extends CalloutTag = 'div'> = PropsFromHtmlTag<T> &
+  PropsFromBox<T> &
+  CalloutOwnProps

@@ -7,7 +7,7 @@ describe('<WithIcon />', () => {
   it('renders icon on the left by default', () => {
     render(<WithIcon name="search">hello</WithIcon>)
     const el = screen.getByText('hello')
-    expect(el.firstChild.nodeName.toLowerCase()).toBe('svg')
+    expect(el.firstChild.nodeName.toLowerCase()).toBe('span')
   })
 
   it('renders icon on the right when iconPosition="right"', () => {
@@ -17,6 +17,6 @@ describe('<WithIcon />', () => {
       </WithIcon>
     )
     const el = screen.getByText('hello')
-    expect(el.lastChild.nodeName.toLowerCase()).toBe('svg')
+    expect(el.lastChild.nodeName.toLowerCase()).toBe('span')
   })
 })

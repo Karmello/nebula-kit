@@ -20,6 +20,7 @@ export const Section = <T extends SectionTag = 'section'>({
   children,
   // Box
   variant = DEFAULT_SECTION_VARIANT,
+  color,
   intent = DEFAULT_SECTION_INTENT,
   borderIntent,
   interactive,
@@ -43,6 +44,7 @@ export const Section = <T extends SectionTag = 'section'>({
       }
       tagRef={tagRef}
       variant={variant}
+      color={color}
       intent={intent}
       borderIntent={borderIntent}
       borderRadius={variant === 'ghost' ? 0 : undefined}

@@ -26,6 +26,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   children,
   // Box
   variant = DEFAULT_BUTTON_VARIANT,
+  color,
   intent = DEFAULT_BUTTON_INTENT,
   hoveredByDefault,
   disabled,
@@ -72,6 +73,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       }
       tagRef={tagRef || ref}
       variant={variant}
+      color={color}
       intent={intent}
       hoveredByDefault={hoveredByDefault}
       disabled={disabled}

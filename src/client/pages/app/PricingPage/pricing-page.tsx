@@ -55,7 +55,7 @@ export const PricingPage = () => {
                   navigateTo('/foundations/overview/get-started/installation')
                 }}
               >
-                <Button size="sm" intent="highlight">
+                <Button size="sm" color="amber" intent="tertiary">
                   Get started
                 </Button>
               </Link>
@@ -104,7 +104,8 @@ export const PricingPage = () => {
           <Section
             heading="Business"
             variant="outline"
-            intent="info"
+            color="blue"
+            intent="primary"
             iconName="users"
             interactive
             disableActiveState
@@ -135,7 +136,7 @@ export const PricingPage = () => {
                   navigateTo('/foundations/overview/get-started/installation')
                 }}
               >
-                <Button size="sm" intent="info">
+                <Button size="sm" color="blue" intent="primary">
                   Choose
                 </Button>
               </Link>
@@ -144,7 +145,8 @@ export const PricingPage = () => {
           <Section
             heading="Enterprise"
             variant="outline"
-            intent="danger"
+            color="red"
+            intent="primary"
             iconName="globe"
             interactive
             disableActiveState
@@ -178,7 +180,7 @@ export const PricingPage = () => {
                   navigateTo('/foundations/overview/get-started/installation')
                 }}
               >
-                <Button size="sm" intent="danger">
+                <Button size="sm" color="red" intent="primary">
                   Contact us
                 </Button>
               </Link>

@@ -30,9 +30,9 @@ export const LoginPage = () => {
               </Form.ActionButton>
             </Form.Actions>
           </Form>
-          <Spacer blockSize={30} />
+          <Spacer blockSize={40} />
           <Divider />
-          <Spacer blockSize={10} />
+          <Spacer blockSize={7} />
           <Flex justifyContent="center">
             <Link
               href="/register"
@@ -40,7 +40,7 @@ export const LoginPage = () => {
                 navigateTo('/register')
               }}
             >
-              <Button variant="ghost" intent="info">
+              <Button variant="ghost" color="blue" intent="primary">
                 Don't have an account? Sign up
               </Button>
             </Link>

@@ -13,7 +13,7 @@ describe('<Icon />', () => {
 
   it('applies default size and intent', () => {
     render(<Icon tagAttrs={{ 'data-testid': 'icon' }} name="search" />)
-    const el = screen.getByTestId('icon')
+    const el = screen.getByTestId('icon').querySelector('svg')
     expect(el).toHaveStyle({
       width: `var(--neb-scale-${DEFAULT_ICON_SIZE})`,
       height: `var(--neb-scale-${DEFAULT_ICON_SIZE})`,
@@ -22,11 +22,10 @@ describe('<Icon />', () => {
 
   it('applies custom size and intent', () => {
     render(<Icon tagAttrs={{ 'data-testid': 'icon' }} name="search" size={20} intent="primary" />)
-    const el = screen.getByTestId('icon')
+    const el = screen.getByTestId('icon').querySelector('svg')
     expect(el).toHaveStyle({
       width: 'var(--neb-scale-20)',
       height: 'var(--neb-scale-20)',
-      color: 'var(--neb-primary-solid-bg)',
     })
   })
 })

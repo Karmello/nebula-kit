@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { CSS_DISPLAY, CSS_OVERFLOW, CSS_POSITION, CSS_TEXT_ALIGN } from 'lib/definitions'
+import { COLORS, CSS_DISPLAY, CSS_OVERFLOW, CSS_POSITION, CSS_TEXT_ALIGN } from 'lib/definitions'
 import { BoxProps, BOX_VARIANTS, DEFAULT_BOX_VARIANT, BOX_INTENTS } from 'lib/components/base/Box/definitions'
 
 import {
@@ -10,47 +10,40 @@ import {
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
-  variant: {
-    options: Object.values(BOX_VARIANTS),
-    defaultValue: DEFAULT_BOX_VARIANT,
-    isResponsive: true,
-    description: 'Visual style variant from the system design.',
+  ...HTML_TAG_PROPS_META,
+  activeOnFocus: {
+    options: ['boolean'],
+    defaultValue: 'false',
+    description:
+      'Activates the active visual state when the element gains focus. Works only with interactive on.',
   },
-  intent: {
-    options: Object.values(BOX_INTENTS),
-    isResponsive: true,
-    description: 'Semantic color intent applied.',
-  },
-  borderIntent: {
-    options: Object.values(BOX_INTENTS),
-    isResponsive: true,
-    description: 'Semantic color intent applied to the border.',
-  },
-  opacity: {
-    options: ['0 - 1'],
-    defaultValue: '1',
-    isResponsive: true,
-    description: 'Transparency level, from fully visible to fully transparent.',
-  },
-  borderWidth: {
+  blockSize: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
-    description: 'Sets border width overriding global value set by NebkitProvider.',
+    defaultValue: 'auto',
+    isResponsive: true,
+    description: 'Height.',
   },
-  borderTopWidth: {
+  borderBottomLeftRadius: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
-    description: 'Border width for the top side.',
+    defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
+    isResponsive: true,
+    description: 'Border radius for the bottom left corner.',
   },
-  borderRightWidth: {
+  borderBottomRightRadius: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
-    description: 'Border width for the right side.',
+    defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
+    isResponsive: true,
+    description: 'Border radius for the bottom right corner.',
   },
   borderBottomWidth: {
     options: ['ScaleValue', 'CSS'],
     defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
     description: 'Border width for the bottom side.',
+  },
+  borderIntent: {
+    options: Object.values(BOX_INTENTS),
+    isResponsive: true,
+    description: 'Semantic color intent applied to the border.',
   },
   borderLeftWidth: {
     options: ['ScaleValue', 'CSS'],
@@ -62,6 +55,11 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
     isResponsive: true,
     description: 'Sets border radius overriding global value set by NebkitProvider.',
+  },
+  borderRightWidth: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
+    description: 'Border width for the right side.',
   },
   borderTopLeftRadius: {
     options: ['ScaleValue', 'CSS'],
@@ -75,28 +73,30 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     isResponsive: true,
     description: 'Border radius for the top right corner.',
   },
-  borderBottomRightRadius: {
+  borderTopWidth: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
-    isResponsive: true,
-    description: 'Border radius for the bottom right corner.',
+    defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
+    description: 'Border width for the top side.',
   },
-  borderBottomLeftRadius: {
+  borderWidth: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
-    isResponsive: true,
-    description: 'Border radius for the bottom left corner.',
+    defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
+    description: 'Sets border width overriding global value set by NebkitProvider.',
   },
-  interactive: {
+  bottom: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'auto',
+    isResponsive: true,
+    description: 'Bottom offset.',
+  },
+  color: {
+    options: COLORS as never,
+    description: 'Defines the hue family used for the component. Overrides the global brand color when set.',
+  },
+  disabled: {
     options: ['boolean'],
     defaultValue: 'false',
-    description: 'Enables hover, active and focus states.',
-  },
-  hoveredByDefault: {
-    options: ['boolean'],
-    defaultValue: 'false',
-    description:
-      'Shows the element in its hovered visual state by default, without requiring user interaction. Works only with interactive on.',
+    description: 'Disables the component and its interactions.',
   },
   disableActiveState: {
     options: ['boolean'],
@@ -104,22 +104,111 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description:
       'Disables the active visual state, keeping the element unchanged when clicked or held. Works only with interactive on.',
   },
-  activeOnFocus: {
-    options: ['boolean'],
-    defaultValue: 'false',
-    description:
-      'Activates the active visual state when the element gains focus. Works only with interactive on.',
-  },
-  disabled: {
-    options: ['boolean'],
-    defaultValue: 'false',
-    description: 'Disables the component and its interactions.',
-  },
   display: {
     options: Object.values(CSS_DISPLAY),
     defaultValue: CSS_DISPLAY[0],
     isResponsive: true,
     description: 'Display type controlling how the component is laid out.',
+  },
+  hoveredByDefault: {
+    options: ['boolean'],
+    defaultValue: 'false',
+    description:
+      'Shows the element in its hovered visual state by default, without requiring user interaction. Works only with interactive on.',
+  },
+  inlineSize: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'auto',
+    isResponsive: true,
+    description: 'Width.',
+  },
+  intent: {
+    options: Object.values(BOX_INTENTS),
+    isResponsive: true,
+    description: 'Semantic color intent applied.',
+  },
+  interactive: {
+    options: ['boolean'],
+    defaultValue: 'false',
+    description: 'Enables hover, active and focus states.',
+  },
+  left: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'auto',
+    isResponsive: true,
+    description: 'Left offset.',
+  },
+  margin: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'initial',
+    isResponsive: true,
+    description: 'Margin for all sides.',
+  },
+  marginBlock: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'initial',
+    isResponsive: true,
+    description: 'Margin for the top and bottom sides.',
+  },
+  marginBottom: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'initial',
+    isResponsive: true,
+    description: 'Margin for the bottom side.',
+  },
+  marginInline: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'initial',
+    isResponsive: true,
+    description: 'Margin for the left and right sides.',
+  },
+  marginLeft: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'initial',
+    isResponsive: true,
+    description: 'Margin for the left side.',
+  },
+  marginRight: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'initial',
+    isResponsive: true,
+    description: 'Margin for the right side.',
+  },
+  marginTop: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'initial',
+    isResponsive: true,
+    description: 'Margin for the top side.',
+  },
+  maxBlockSize: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'none',
+    isResponsive: true,
+    description: 'Maximum height.',
+  },
+  maxInlineSize: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'none',
+    isResponsive: true,
+    description: 'Maximum width.',
+  },
+  minBlockSize: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'auto',
+    isResponsive: true,
+    description: 'Minimum height.',
+  },
+  minInlineSize: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'auto',
+    isResponsive: true,
+    description: 'Minimum width.',
+  },
+  opacity: {
+    options: ['0 - 1'],
+    defaultValue: '1',
+    isResponsive: true,
+    description: 'Transparency level, from fully visible to fully transparent.',
   },
   overflowX: {
     options: Object.values(CSS_OVERFLOW),
@@ -133,89 +222,11 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     isResponsive: true,
     description: 'Overflow behavior on the vertical axis.',
   },
-  position: {
-    options: Object.values(CSS_POSITION),
-    defaultValue: CSS_POSITION[0],
-    isResponsive: true,
-    description: 'Position in the layout flow.',
-  },
-  top: {
-    options: ['ScaleValue', 'CSS'],
-    defaultValue: 'auto',
-    isResponsive: true,
-    description: 'Top offset.',
-  },
-  right: {
-    options: ['ScaleValue', 'CSS'],
-    defaultValue: 'auto',
-    isResponsive: true,
-    description: 'Right offset.',
-  },
-  bottom: {
-    options: ['ScaleValue', 'CSS'],
-    defaultValue: 'auto',
-    isResponsive: true,
-    description: 'Bottom offset.',
-  },
-  left: {
-    options: ['ScaleValue', 'CSS'],
-    defaultValue: 'auto',
-    isResponsive: true,
-    description: 'Left offset.',
-  },
-  textAlign: {
-    options: Object.values(CSS_TEXT_ALIGN),
-    defaultValue: CSS_TEXT_ALIGN[0],
-    isResponsive: true,
-    description: 'Text alignment within the component.',
-  },
-  blockSize: {
-    options: ['ScaleValue', 'CSS'],
-    defaultValue: 'auto',
-    isResponsive: true,
-    description: 'Height.',
-  },
-  minBlockSize: {
-    options: ['ScaleValue', 'CSS'],
-    defaultValue: 'auto',
-    isResponsive: true,
-    description: 'Minimum height.',
-  },
-  maxBlockSize: {
-    options: ['ScaleValue', 'CSS'],
-    defaultValue: 'none',
-    isResponsive: true,
-    description: 'Maximum height.',
-  },
-  inlineSize: {
-    options: ['ScaleValue', 'CSS'],
-    defaultValue: 'auto',
-    isResponsive: true,
-    description: 'Width.',
-  },
-  minInlineSize: {
-    options: ['ScaleValue', 'CSS'],
-    defaultValue: 'auto',
-    isResponsive: true,
-    description: 'Minimum width.',
-  },
-  maxInlineSize: {
-    options: ['ScaleValue', 'CSS'],
-    defaultValue: 'none',
-    isResponsive: true,
-    description: 'Maximum width.',
-  },
   padding: {
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'initial',
     isResponsive: true,
     description: 'Padding for all sides.',
-  },
-  paddingInline: {
-    options: ['ScaleValue', 'CSS'],
-    defaultValue: 'initial',
-    isResponsive: true,
-    description: 'Padding for the left and right sides.',
   },
   paddingBlock: {
     options: ['ScaleValue', 'CSS'],
@@ -223,23 +234,17 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     isResponsive: true,
     description: 'Padding for the top and bottom sides.',
   },
-  paddingTop: {
-    options: ['ScaleValue', 'CSS'],
-    defaultValue: 'initial',
-    isResponsive: true,
-    description: 'Padding for the top side.',
-  },
-  paddingRight: {
-    options: ['ScaleValue', 'CSS'],
-    defaultValue: 'initial',
-    isResponsive: true,
-    description: 'Padding for the right side.',
-  },
   paddingBottom: {
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'initial',
     isResponsive: true,
     description: 'Padding for the bottom side.',
+  },
+  paddingInline: {
+    options: ['ScaleValue', 'CSS'],
+    defaultValue: 'initial',
+    isResponsive: true,
+    description: 'Padding for the left and right sides.',
   },
   paddingLeft: {
     options: ['ScaleValue', 'CSS'],
@@ -247,49 +252,48 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     isResponsive: true,
     description: 'Padding for the left side.',
   },
-  margin: {
+  paddingRight: {
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'initial',
     isResponsive: true,
-    description: 'Margin for all sides.',
+    description: 'Padding for the right side.',
   },
-  marginInline: {
+  paddingTop: {
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'initial',
     isResponsive: true,
-    description: 'Margin for the left and right sides.',
+    description: 'Padding for the top side.',
   },
-  marginBlock: {
-    options: ['ScaleValue', 'CSS'],
-    defaultValue: 'initial',
+  position: {
+    options: Object.values(CSS_POSITION),
+    defaultValue: CSS_POSITION[0],
     isResponsive: true,
-    description: 'Margin for the top and bottom sides.',
+    description: 'Position in the layout flow.',
   },
-  marginTop: {
+  right: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: 'initial',
+    defaultValue: 'auto',
     isResponsive: true,
-    description: 'Margin for the top side.',
+    description: 'Right offset.',
   },
-  marginRight: {
+  textAlign: {
+    options: Object.values(CSS_TEXT_ALIGN),
+    defaultValue: CSS_TEXT_ALIGN[0],
+    isResponsive: true,
+    description: 'Text alignment within the component.',
+  },
+  top: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: 'initial',
+    defaultValue: 'auto',
     isResponsive: true,
-    description: 'Margin for the right side.',
+    description: 'Top offset.',
   },
-  marginBottom: {
-    options: ['ScaleValue', 'CSS'],
-    defaultValue: 'initial',
+  variant: {
+    options: Object.values(BOX_VARIANTS),
+    defaultValue: DEFAULT_BOX_VARIANT,
     isResponsive: true,
-    description: 'Margin for the bottom side.',
+    description: 'Visual style variant from the system design.',
   },
-  marginLeft: {
-    options: ['ScaleValue', 'CSS'],
-    defaultValue: 'initial',
-    isResponsive: true,
-    description: 'Margin for the left side.',
-  },
-  ...HTML_TAG_PROPS_META,
   zIndex: {
     options: ['number'],
     description: 'Controls the stacking order.',

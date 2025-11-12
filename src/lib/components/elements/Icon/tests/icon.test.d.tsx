@@ -28,4 +28,4 @@ expectError(<Icon name="check" size={10} intent="xyz" />)
 expectType(<Icon name="check" size={10} intent="primary" />)
 
 // passing ref
-expectType(<Icon tagRef={createRef<SVGSVGElement>()} name="check" />)
+expectType(<Icon tagRef={createRef<HTMLSpanElement>()} name="check" />)

@@ -11,6 +11,7 @@ export const FormLabel = ({
   iconName,
   iconPosition,
   intent = DEFAULT_FORM_LABEL_INTENT,
+  color,
   noWrap,
   scale,
   textAlign,
@@ -26,6 +27,7 @@ export const FormLabel = ({
         iconName={iconName}
         iconPosition={iconPosition}
         intent={intent}
+        color={color}
         noWrap={noWrap}
         scale={scale}
         textAlign={textAlign}

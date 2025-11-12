@@ -24,7 +24,7 @@ export default () => {
                 <Text intent="primary">{iconName}</Text>
               </Table.Cell>
               <Table.Cell minInlineSize="30%" textAlign="center">
-                <Icon name={iconName as IconName} size={30} intent="success" />
+                <Icon name={iconName as IconName} size={30} color="green" intent="primary" />
               </Table.Cell>
             </Table.Row>
           ))}

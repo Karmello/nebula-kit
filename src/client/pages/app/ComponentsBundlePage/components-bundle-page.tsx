@@ -62,7 +62,7 @@ export const ComponentsBundlePage = ({ plan }: Props) => {
               navigateTo(plan === 'free' ? '/pricing/pro' : '/pricing/core')
             }}
           >
-            <Button size="sm" intent="highlight" iconName="package">
+            <Button size="sm" color="amber" iconName="package">
               {plan === 'free' ? 'Pro bundle' : 'Core bundle'}
             </Button>
           </Link>

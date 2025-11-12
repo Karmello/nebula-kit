@@ -7,10 +7,11 @@ import { withPrefix } from 'lib/helpers'
 import {
   CalloutProps,
   CalloutTag,
-  CALLOUT_CONFIG,
   DEFAULT_CALLOUT_VARIANT,
-  DEFAULT_CALLOUT_INTENT,
+  DEFAULT_CALLOUT_STATUS,
   DEFAULT_CALLOUT_SIZE,
+  DEFAULT_CALLOUT_INTENT,
+  CALLOUT_CONFIG,
   CALLOUT_SIZE_CONFIG,
 } from './definitions'
 
@@ -18,13 +19,14 @@ export const Callout = <T extends CalloutTag = 'div'>({
   tag,
   tagAttrs,
   tagRef,
-  // own
-  content,
-  heading,
   // Box
   size = DEFAULT_CALLOUT_SIZE,
   variant = DEFAULT_CALLOUT_VARIANT,
   intent = DEFAULT_CALLOUT_INTENT,
+  // own
+  content,
+  heading,
+  status = DEFAULT_CALLOUT_STATUS,
 }: CalloutProps<T>) => {
   return (
     <Box
@@ -37,13 +39,17 @@ export const Callout = <T extends CalloutTag = 'div'>({
       }
       tagRef={tagRef}
       variant={variant}
+      color={CALLOUT_CONFIG[status || 'info'].color}
       intent={intent}
-      padding={CALLOUT_SIZE_CONFIG[size].spacing}
+      padding={CALLOUT_SIZE_CONFIG[size || 'md'].spacing}
     >
-      <Text typography={CALLOUT_SIZE_CONFIG[size].typography} iconName={CALLOUT_CONFIG[intent].iconName}>
-        {heading || CALLOUT_CONFIG[intent].heading}
+      <Text
+        typography={CALLOUT_SIZE_CONFIG[size || 'md'].typography}
+        iconName={CALLOUT_CONFIG[status || 'info'].iconName}
+      >
+        {heading || CALLOUT_CONFIG[status || 'info'].heading}
       </Text>
-      <Spacer blockSize={CALLOUT_SIZE_CONFIG[size].spacing} />
+      <Spacer blockSize={CALLOUT_SIZE_CONFIG[size || 'md'].spacing} />
       <Text>{content}</Text>
     </Box>
   )

@@ -19,6 +19,7 @@ export const Box = <T extends ElementType = 'div'>({
   variant = DEFAULT_BOX_VARIANT,
   intent,
   borderIntent,
+  color,
   // state
   interactive,
   disabled,
@@ -183,6 +184,7 @@ export const Box = <T extends ElementType = 'div'>({
             zIndex,
           },
           ...applyStaticDataset('box', {
+            color,
             interactive,
             disabled,
             hoveredByDefault,

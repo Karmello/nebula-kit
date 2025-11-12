@@ -17,21 +17,21 @@ const COLOR_MAP = {
   // background
   bg: { light: 'var(--neb-gray-2)', dark: 'var(--neb-gray-14)' },
   // component name
-  '#F78C6C': { light: 'var(--neb-danger-ghost-text)', dark: 'var(--neb-danger-ghost-text)' },
+  '#F78C6C': { light: 'var(--neb-red-8)', dark: 'var(--neb-red-8)' },
   // native html tag name
-  '#CAECE6': { light: 'var(--neb-danger-ghost-text)', dark: 'var(--neb-danger-ghost-text)' },
+  '#CAECE6': { light: 'var(--neb-red-8)', dark: 'var(--neb-red-8)' },
   // prop name
-  '#C5E478': { light: 'var(--neb-info-ghost-text)', dark: 'var(--neb-info-ghost-text)' },
+  '#C5E478': { light: 'var(--neb-blue-8)', dark: 'var(--neb-blue-8)' },
   // object name, object key names
   '#D6DEEB': { light: 'var(--neb-gray-8)', dark: 'var(--neb-gray-7)' },
   // value
-  '#ECC48D': { light: 'var(--neb-warning-ghost-text)', dark: 'var(--neb-warning-ghost-text)' },
+  '#ECC48D': { light: 'var(--neb-amber-9)', dark: 'var(--neb-amber-9)' },
   // param name
-  '#D7DBE0': { light: 'var(--neb-warning-ghost-text)', dark: 'var(--neb-warning-ghost-text)' },
+  '#D7DBE0': { light: 'var(--neb-amber-9)', dark: 'var(--neb-amber-9)' },
   // argument name
-  '#FF5874': { light: 'var(--neb-warning-ghost-text)', dark: 'var(--neb-warning-ghost-text)' },
+  '#FF5874': { light: 'var(--neb-amber-9)', dark: 'var(--neb-amber-9)' },
   // called func name
-  '#82AAFF': { light: 'var(--neb-info-ghost-text)', dark: 'var(--neb-info-ghost-text)' },
+  '#82AAFF': { light: 'var(--neb-blue-8)', dark: 'var(--neb-blue-8)' },
   // TS type name
   '#FFCB8B': { light: 'var(--neb-text)', dark: 'var(--neb-text)' },
   // angle brackets, cb curly brackets
@@ -83,7 +83,8 @@ export const CodeSnippet = ({ code, lang = 'tsx', borderRadius }: CodeSnippetPro
           iconName={copied ? 'check' : 'copy'}
           size="xs"
           variant="ghost"
-          intent={copied ? 'success' : 'primary'}
+          intent="primary"
+          color="blue"
           tagAttrs={{ onClick: handleCopy, 'aria-label': copied ? 'Copied' : 'Copy code' }}
         />
       </Box>

@@ -6,6 +6,7 @@ type PropsFromText = Pick<
   TextProps<'label'>,
   | 'bold'
   | 'children'
+  | 'color'
   | 'iconName'
   | 'iconPosition'
   | 'intent'

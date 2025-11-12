@@ -4,7 +4,11 @@ import { Button, Flex } from 'lib/components'
 import { DEFAULT_BUTTON_INTENT } from 'lib/components/controls/Button/definitions'
 import { withPrefix } from 'lib/helpers'
 
-import { DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT, FormActionButtonProps } from './definitions'
+import {
+  DEFAULT_FORM_ACTION_SUBMIT_BUTTON_COLOR,
+  DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT,
+  FormActionButtonProps,
+} from './definitions'
 
 export const FormActionButton = ({
   // FlexItem
@@ -20,6 +24,7 @@ export const FormActionButton = ({
   children,
   variant,
   intent,
+  color,
   size,
   disabled,
   iconName,
@@ -32,6 +37,8 @@ export const FormActionButton = ({
 
   const finalDefaultIntent =
     type === 'submit' ? DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT : DEFAULT_BUTTON_INTENT
+
+  const finalDefaultColor = type === 'submit' ? DEFAULT_FORM_ACTION_SUBMIT_BUTTON_COLOR : undefined
 
   return (
     <Flex.Item
@@ -60,6 +67,7 @@ export const FormActionButton = ({
         fullWidth
         variant={variant}
         intent={intent ?? finalDefaultIntent}
+        color={color ?? finalDefaultColor}
         size={size}
         disabled={disabled}
         iconName={iconName}

@@ -14,19 +14,7 @@ import { BOX_PROPS_META } from '../Box/props'
 import { WITH_ICON_PROPS_META } from '../WithIcon/props'
 
 const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
-  typography: {
-    options: Object.values(TEXT_TYPOGRAPHY),
-    defaultValue: DEFAULT_TEXT_TYPOGRAPHY,
-    isRequired: false,
-    isResponsive: false,
-    description:
-      'Applies a predefined typography style from the design system, controlling tag, fontSize and lineHeight together.',
-  },
-  scale: {
-    options: Object.values(TEXT_SCALE),
-    defaultValue: DEFAULT_TEXT_SCALE,
-    description: 'Defines the size system used for text rendering.',
-  },
+  ...HTML_TAG_PROPS_META,
   bold: {
     options: ['boolean'],
     defaultValue: 'false',
@@ -34,19 +22,29 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     isResponsive: false,
     description: 'Toggles bold styling.',
   },
+  children: {
+    ...HTML_TAG_PROPS_META['children'],
+    isRequired: true,
+  },
+  clampLines: {
+    options: ['number'],
+    isRequired: false,
+    isResponsive: false,
+    description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
+  },
+  color: BOX_PROPS_META.color,
+  iconName: {
+    ...WITH_ICON_PROPS_META['name'],
+    isRequired: false,
+  },
+  iconPosition: WITH_ICON_PROPS_META['position'],
+  intent: BOX_PROPS_META['intent'],
   italic: {
     options: ['boolean'],
     defaultValue: 'false',
     isRequired: false,
     isResponsive: false,
     description: 'Toggles italic styling.',
-  },
-  underline: {
-    options: ['boolean'],
-    defaultValue: 'false',
-    isRequired: false,
-    isResponsive: false,
-    description: 'Toggles underlined styling.',
   },
   noWrap: {
     options: ['boolean'],
@@ -55,6 +53,21 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     isResponsive: false,
     description: 'Prevents the text from wrapping onto multiple lines.',
   },
+  scale: {
+    options: Object.values(TEXT_SCALE),
+    defaultValue: DEFAULT_TEXT_SCALE,
+    description: 'Defines the size system used for text rendering.',
+  },
+  space: {
+    options: TEXT_SPACE as unknown as string[],
+    description:
+      'Controls the insertion of non-breaking spaces before and/or after the text content. Useful when composing multiple inline Text elements.',
+  },
+  tag: {
+    ...HTML_TAG_PROPS_META['tag'],
+    defaultValue: 'p',
+  },
+  textAlign: BOX_PROPS_META['textAlign'],
   truncate: {
     options: ['boolean'],
     defaultValue: 'false',
@@ -62,32 +75,20 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     isResponsive: false,
     description: 'Shortens overflowing text to a single line with an ellipsis.',
   },
-  clampLines: {
-    options: ['number'],
+  typography: {
+    options: Object.values(TEXT_TYPOGRAPHY),
+    defaultValue: DEFAULT_TEXT_TYPOGRAPHY,
     isRequired: false,
     isResponsive: false,
-    description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
-  },
-  space: {
-    options: TEXT_SPACE as unknown as string[],
     description:
-      'Controls the insertion of non-breaking spaces before and/or after the text content. Useful when composing multiple inline Text elements.',
+      'Applies a predefined typography style from the design system, controlling tag, fontSize and lineHeight together.',
   },
-  intent: BOX_PROPS_META['intent'],
-  textAlign: BOX_PROPS_META['textAlign'],
-  iconName: {
-    ...WITH_ICON_PROPS_META['name'],
+  underline: {
+    options: ['boolean'],
+    defaultValue: 'false',
     isRequired: false,
-  },
-  iconPosition: WITH_ICON_PROPS_META['position'],
-  ...HTML_TAG_PROPS_META,
-  children: {
-    ...HTML_TAG_PROPS_META['children'],
-    isRequired: true,
-  },
-  tag: {
-    ...HTML_TAG_PROPS_META['tag'],
-    defaultValue: 'p',
+    isResponsive: false,
+    description: 'Toggles underlined styling.',
   },
 }
 

@@ -21,6 +21,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     ...HTML_TAG_PROPS_META.children,
     description: 'Label rendered.',
   },
+  color: BOX_PROPS_META.color,
   tag: {
     ...HTML_TAG_PROPS_META.tag,
     options: BUTTON_TAGS as unknown as string[],

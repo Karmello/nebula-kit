@@ -80,7 +80,11 @@ export const FormField = ({
                         },
                       })
                     ) : label ? (
-                      <Form.Label tagAttrs={{ id: labelId }} intent={fieldState.error ? 'danger' : undefined}>
+                      <Form.Label
+                        tagAttrs={{ id: labelId }}
+                        color={fieldState.error ? 'red' : undefined}
+                        intent={fieldState.error ? 'primary' : undefined}
+                      >
                         {label + labelErrPart}
                       </Form.Label>
                     ) : null}

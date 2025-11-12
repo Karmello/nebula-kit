@@ -15,41 +15,43 @@ import { TEXT_PROPS_META } from '../Text/props'
 
 const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
   ...HTML_TAG_PROPS_META,
-  tag: {
-    ...HTML_TAG_PROPS_META.tag,
-    defaultValue: 'section',
-  },
+  borderIntent: BOX_PROPS_META.borderIntent,
   children: {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
   },
-  variant: {
-    ...BOX_PROPS_META.variant,
-    options: SECTION_VARIANTS as unknown as string[],
-    defaultValue: DEFAULT_SECTION_VARIANT,
-  },
-  intent: {
-    ...BOX_PROPS_META.intent,
-    defaultValue: DEFAULT_SECTION_INTENT,
-  },
-  borderIntent: BOX_PROPS_META.borderIntent,
-  interactive: BOX_PROPS_META.interactive,
+  color: BOX_PROPS_META.color,
   disableActiveState: BOX_PROPS_META.disableActiveState,
+  heading: {
+    options: ['string'],
+    isRequired: true,
+    description: 'Heading text.',
+  },
   hoveredByDefault: BOX_PROPS_META.hoveredByDefault,
   iconName: TEXT_PROPS_META.iconName,
   iconPosition: {
     ...TEXT_PROPS_META.iconPosition,
     description: 'Icon position relative to heading.',
   },
-  heading: {
-    options: ['string'],
-    isRequired: true,
-    description: 'Heading text.',
+  intent: {
+    ...BOX_PROPS_META.intent,
+    defaultValue: DEFAULT_SECTION_INTENT,
   },
+
+  interactive: BOX_PROPS_META.interactive,
   size: {
     options: SECTION_SIZES as unknown as string[],
     defaultValue: DEFAULT_SECTION_SIZE,
     description: 'Controls overall proportions - adjusting heading size and spacings.',
+  },
+  tag: {
+    ...HTML_TAG_PROPS_META.tag,
+    defaultValue: 'section',
+  },
+  variant: {
+    ...BOX_PROPS_META.variant,
+    options: SECTION_VARIANTS as unknown as string[],
+    defaultValue: DEFAULT_SECTION_VARIANT,
   },
 }
 

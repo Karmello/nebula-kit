@@ -6,6 +6,7 @@ import { DEFAULT_FORM_LABEL_INTENT } from 'lib/components/form-elements/Form/slo
 const FORM_LABEL_PROPS_META: ComponentMeta<FormLabelProps>['props'] = {
   bold: TEXT_PROPS_META.bold,
   children: TEXT_PROPS_META.children,
+  color: TEXT_PROPS_META.color,
   iconName: TEXT_PROPS_META.iconName,
   iconPosition: TEXT_PROPS_META.iconPosition,
   intent: {

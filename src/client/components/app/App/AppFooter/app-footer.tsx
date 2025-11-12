@@ -24,7 +24,7 @@ export const AppFooter = () => {
         </Text>
         <Spacer blockSize={10} />
         <Link href="mailto:nebulakit@gmail.com">
-          <Text scale="compact" intent="info">
+          <Text scale="compact" color="blue" intent="primary">
             nebulakit@gmail.com
           </Text>
         </Link>
@@ -42,7 +42,7 @@ export const AppFooter = () => {
                 navigateTo('/foundations/other/legal/license')
               }}
             >
-              <Text scale="compact" intent="info">
+              <Text scale="compact" color="blue" intent="primary">
                 License
               </Text>
             </Link>
@@ -54,7 +54,7 @@ export const AppFooter = () => {
                 navigateTo('/foundations/other/legal/terms-of-use')
               }}
             >
-              <Text scale="compact" intent="info">
+              <Text scale="compact" color="blue" intent="primary">
                 Terms of Use
               </Text>
             </Link>
@@ -66,7 +66,7 @@ export const AppFooter = () => {
                 navigateTo('/foundations/other/legal/privacy-policy')
               }}
             >
-              <Text scale="compact" intent="info">
+              <Text scale="compact" color="blue" intent="primary">
                 Privacy Policy
               </Text>
             </Link>

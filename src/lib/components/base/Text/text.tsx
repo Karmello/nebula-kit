@@ -21,6 +21,7 @@ export const Text = <T extends TextTag = 'p'>({
   tagAttrs,
   tagRef,
   // Box
+  color,
   intent,
   textAlign,
   // WithIcon
@@ -62,6 +63,7 @@ export const Text = <T extends TextTag = 'p'>({
       }}
       variant="ghost"
       intent={intent}
+      color={color}
       textAlign={textAlign}
       interactive={tag === 'a'}
     >

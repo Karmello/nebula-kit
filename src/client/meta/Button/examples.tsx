@@ -1,5 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { Button, Flex } from 'lib/components'
+import { BOX_VARIANTS } from 'lib/components/base/Box/definitions'
 import { ButtonProps, BUTTON_SIZES } from 'lib/components/controls/Button/definitions'
 
 const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
@@ -24,27 +25,15 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     jsx: <Button fullWidth>Full width button</Button>,
   },
   {
-    description: 'Large button with primary intent.',
+    description: 'Examples of different button variants.',
     jsx: (
-      <Button size="lg" intent="primary">
-        Large button
-      </Button>
-    ),
-  },
-  {
-    description: 'Outline variant with secondary intent.',
-    jsx: (
-      <Button variant="outline" intent="secondary">
-        Outline button
-      </Button>
-    ),
-  },
-  {
-    description: 'Ghost variant with danger intent.',
-    jsx: (
-      <Button variant="ghost" intent="danger">
-        Ghost button
-      </Button>
+      <Flex alignItems="center" gap={10}>
+        {BOX_VARIANTS.map(variant => (
+          <Button key={variant} variant={variant} intent="primary">
+            {variant}
+          </Button>
+        ))}
+      </Flex>
     ),
   },
   {

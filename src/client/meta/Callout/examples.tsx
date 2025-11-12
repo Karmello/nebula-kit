@@ -18,9 +18,9 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
     description: 'Indicates a positive outcome or confirmation.',
     jsx: (
       <>
-        <Callout content="Callout text content" intent="success" />
+        <Callout content="Callout text content" status="success" />
         <Spacer blockSize={20} />
-        <Callout content="Callout text content" variant="outline" intent="success" />
+        <Callout content="Callout text content" variant="outline" status="success" />
       </>
     ),
   },
@@ -28,9 +28,9 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
     description: 'Draws attention to a caution or potential issue.',
     jsx: (
       <>
-        <Callout content="Callout text content" intent="warning" />
+        <Callout content="Callout text content" status="warning" />
         <Spacer blockSize={20} />
-        <Callout content="Callout text content" variant="outline" intent="warning" />
+        <Callout content="Callout text content" variant="outline" status="warning" />
       </>
     ),
   },
@@ -38,9 +38,9 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
     description: 'Signals an error or critical problem that requires attention.',
     jsx: (
       <>
-        <Callout content="Callout text content" intent="danger" />
+        <Callout content="Callout text content" status="danger" />
         <Spacer blockSize={20} />
-        <Callout content="Callout text content" variant="outline" intent="danger" />
+        <Callout content="Callout text content" variant="outline" status="danger" />
       </>
     ),
   },

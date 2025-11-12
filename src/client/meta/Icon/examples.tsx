@@ -14,6 +14,10 @@ const ICON_EXAMPLES_META: ComponentMeta<IconProps>['examples'] = [
     description: 'Icon with intent set to primary.',
     jsx: <Icon name="search" intent="primary" size={40} />,
   },
+  {
+    description: 'Icon with custom color.',
+    jsx: <Icon name="search" intent="primary" color="green" size={40} />,
+  },
 ]
 
 export { ICON_EXAMPLES_META }

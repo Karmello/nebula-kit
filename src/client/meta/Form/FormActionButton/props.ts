@@ -8,6 +8,7 @@ import { DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT } from 'lib/components/form-el
 const FORM_ACTION_BUTTON_PROPS_META: ComponentMeta<FormActionButtonProps>['props'] = {
   alignSelf: FLEX_ITEM_PROPS_META.alignSelf,
   children: BUTTON_PROPS_META.children,
+  color: BUTTON_PROPS_META.color,
   disabled: BUTTON_PROPS_META.disabled,
   flex: FLEX_ITEM_PROPS_META.flex,
   flexBasis: FLEX_ITEM_PROPS_META.flexBasis,

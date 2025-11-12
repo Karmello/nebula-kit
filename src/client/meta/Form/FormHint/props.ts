@@ -10,6 +10,7 @@ import {
 const FORM_HINT_PROPS_META: ComponentMeta<FormHintProps>['props'] = {
   bold: TEXT_PROPS_META.bold,
   children: TEXT_PROPS_META.children,
+  color: TEXT_PROPS_META.color,
   iconName: TEXT_PROPS_META.iconName,
   iconPosition: TEXT_PROPS_META.iconPosition,
   intent: {

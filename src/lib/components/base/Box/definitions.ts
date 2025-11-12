@@ -1,23 +1,19 @@
 import { ElementType } from 'react'
 
-import { CssDisplay, CssOverflow, CssPosition, CssTextAlign, RespValue, ScaleValue } from 'lib/definitions'
+import {
+  Color,
+  CssDisplay,
+  CssOverflow,
+  CssPosition,
+  CssTextAlign,
+  RespValue,
+  ScaleValue,
+} from 'lib/definitions'
+
 import { HtmlTagProps } from 'lib/components'
 
 export const BOX_VARIANTS = ['solid', 'outline', 'ghost'] as const
-
-export const BOX_INTENTS = [
-  'neutral',
-  'muted',
-  'tertiary',
-  'secondary',
-  'primary',
-  'inverse',
-  'highlight',
-  'success',
-  'info',
-  'warning',
-  'danger',
-] as const
+export const BOX_INTENTS = ['neutral', 'muted', 'tertiary', 'secondary', 'primary', 'inverse'] as const
 
 export const DEFAULT_BOX_VARIANT: BoxVariant = 'ghost'
 
@@ -28,6 +24,7 @@ type BoxOwnProps = {
   variant?: RespValue<BoxVariant>
   intent?: RespValue<BoxIntent>
   borderIntent?: RespValue<BoxIntent>
+  color?: Color
   // state
   interactive?: boolean
   disabled?: boolean

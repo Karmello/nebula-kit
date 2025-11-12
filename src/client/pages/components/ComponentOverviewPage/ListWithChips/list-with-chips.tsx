@@ -1,20 +1,28 @@
 import { Box, Flex, Text } from 'lib/components'
-import { BoxIntent } from 'lib/components/base/Box/definitions'
+import { Color } from 'lib/definitions'
 
 export const ListWithChips = ({
   heading,
   items,
-  intent = 'info',
+  color = 'blue',
 }: {
   heading: string
   items: string[]
-  intent?: BoxIntent
+  color?: Color
 }) => (
   <Flex flexDirection="column" gap={10}>
     <Text bold>{heading}</Text>
     <Flex flexDirection="row" flexWrap="wrap" gap={6}>
       {items.map((s, i) => (
-        <Box key={i} variant="outline" intent={intent} paddingInline={10} paddingBlock={6} borderRadius={10}>
+        <Box
+          key={i}
+          variant="outline"
+          color={color}
+          intent="primary"
+          paddingInline={10}
+          paddingBlock={6}
+          borderRadius={10}
+        >
           {s}
         </Box>
       ))}
