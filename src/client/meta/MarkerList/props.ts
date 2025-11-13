@@ -13,18 +13,17 @@ import { BOX_PROPS_META } from '../Box/props'
 
 const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListProps>['props'] = {
   ...HTML_TAG_PROPS_META,
-  tag: {
-    ...HTML_TAG_PROPS_META.tag,
-    options: MARKER_LIST_TAGS as unknown as string[],
-    defaultValue: 'ul',
-  },
   children: {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
   },
-  rowGap: {
-    ...FLEX_PROPS_META.rowGap,
-    defaultValue: String(DEFAULT_MARKER_LIST_ROW_GAP),
+  color: {
+    ...BOX_PROPS_META.color,
+    description: 'Color applied to all items at once.',
+  },
+  intent: {
+    ...BOX_PROPS_META.intent,
+    description: 'Tone level applied to all items at once.',
   },
   listStyle: {
     options: MARKER_LIST_STYLES as unknown as string[],
@@ -33,9 +32,14 @@ const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListProps>['props'] = {
     isResponsive: false,
     description: 'Defines the style of the markers used for list items.',
   },
-  intent: {
-    ...BOX_PROPS_META.intent,
-    description: 'Semantic color intent applied to all items at once.',
+  rowGap: {
+    ...FLEX_PROPS_META.rowGap,
+    defaultValue: String(DEFAULT_MARKER_LIST_ROW_GAP),
+  },
+  tag: {
+    ...HTML_TAG_PROPS_META.tag,
+    options: MARKER_LIST_TAGS as unknown as string[],
+    defaultValue: 'ul',
   },
 }
 

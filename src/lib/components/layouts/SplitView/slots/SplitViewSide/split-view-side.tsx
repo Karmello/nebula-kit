@@ -13,11 +13,12 @@ export const SplitViewSide = ({
   children,
   tagAttrs,
   tagRef,
+  color,
   intent,
   borderIntent,
   inlineSize = DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
 }: SplitViewSideProps) => {
-  const { borderWidth } = useNebkitStore()
+  const { brand, borderWidth } = useNebkitStore()
   const { sideOpen, setSideOpen, sidePosition, switchAt, mode } = useSplitViewContext()
 
   const ref = useRef(null)
@@ -39,6 +40,7 @@ export const SplitViewSide = ({
         }}
         tagRef={tagRef || ref}
         variant="solid"
+        color={color || brand}
         intent={intent || { base: 'tertiary', [String(switchAt)]: 'neutral' }}
         borderIntent={borderIntent || { base: 'muted', [String(switchAt)]: 'neutral' }}
         borderLeftWidth={sidePosition === 'right' && sideOpen ? borderWidth : 0}

@@ -22,7 +22,7 @@ type PropsFromHtmlTag<T extends ButtonGroupTag = 'div'> = Omit<HtmlTagProps<T>, 
 
 type PropsFromFlex<T extends ButtonGroupTag = 'div'> = Pick<FlexProps<T>, 'gap'>
 
-type PropsFromButton = Pick<ButtonProps<ButtonTag>, 'variant' | 'intent' | 'size'>
+type PropsFromButton = Pick<ButtonProps<ButtonTag>, 'variant' | 'color' | 'intent' | 'size'>
 
 export type ButtonGroupProps<T extends ButtonGroupTag = 'div'> = PropsFromHtmlTag<T> &
   PropsFromFlex<T> &

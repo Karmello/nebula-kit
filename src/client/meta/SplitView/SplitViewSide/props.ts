@@ -5,12 +5,15 @@ import { SplitViewSideProps } from 'lib/components'
 import { DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from 'lib/components/layouts/SplitView/slots/SplitViewSide/definitions'
 
 const SPLIT_VIEW_SIDE_PROPS_META: ComponentMeta<SplitViewSideProps>['props'] = {
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  borderIntent: {
+    ...BOX_PROPS_META.borderIntent,
+    defaultValue: "{ base: 'muted', [switchAt]: 'neutral' }",
+  },
   children: {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
   },
+  color: BOX_PROPS_META.color,
   inlineSize: {
     ...BOX_PROPS_META.inlineSize,
     defaultValue: DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
@@ -19,10 +22,8 @@ const SPLIT_VIEW_SIDE_PROPS_META: ComponentMeta<SplitViewSideProps>['props'] = {
     ...BOX_PROPS_META.intent,
     defaultValue: "{ base: 'tertiary', [switchAt]: 'neutral' }",
   },
-  borderIntent: {
-    ...BOX_PROPS_META.borderIntent,
-    defaultValue: "{ base: 'muted', [switchAt]: 'neutral' }",
-  },
+  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
+  tagRef: HTML_TAG_PROPS_META.tagRef,
 }
 
 export { SPLIT_VIEW_SIDE_PROPS_META }

@@ -10,28 +10,37 @@ const SECTION_EXAMPLES_META: ComponentMeta<SectionProps>['examples'] = [
   {
     description: 'Section with custom size and variant.',
     jsx: (
-      <Section size="lg" variant="outline" heading="Outline section">
+      <Section heading="Custom section" size="lg" variant="outline">
         Content
       </Section>
     ),
   },
   {
-    description: 'Section with custom size, intent and variant.',
+    description: 'Section with custom color configuration.',
     jsx: (
-      <Section size="lg" intent="primary" variant="outline" heading="Primary intent section">
+      <Section
+        heading="Custom section"
+        size="lg"
+        variant="outline"
+        color="purple"
+        intent="primary"
+        borderIntent="tertiary"
+      >
         Content
       </Section>
     ),
   },
   {
     description:
-      'Renders the section as a hover-responsive surface, useful for areas that should change appearance on hover but not react when clicked.',
+      'Section as a hover-responsive surface, useful for areas that should change appearance on hover but not react when clicked.',
     jsx: (
       <Section
+        heading="Interactive section"
         size="lg"
-        intent="primary"
         variant="outline"
-        heading="Primary intent section"
+        color="purple"
+        intent="primary"
+        borderIntent="tertiary"
         interactive
         disableActiveState
       >

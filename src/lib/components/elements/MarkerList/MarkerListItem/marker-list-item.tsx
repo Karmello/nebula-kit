@@ -6,8 +6,8 @@ import { withPrefix } from 'lib/helpers'
 import { useMarkerListContext } from '../MarkerListProvider'
 import { MarkerListItemProps } from './definitions'
 
-export const MarkerListItem = ({ children, tagAttrs, tagRef, intent }: MarkerListItemProps) => {
-  const { intent: rootIntent } = useMarkerListContext()
+export const MarkerListItem = ({ children, tagAttrs, tagRef, color, intent }: MarkerListItemProps) => {
+  const { color: rootColor, intent: rootIntent } = useMarkerListContext()
 
   return (
     <Box
@@ -18,6 +18,7 @@ export const MarkerListItem = ({ children, tagAttrs, tagRef, intent }: MarkerLis
         role: 'listitem',
       }}
       tagRef={tagRef}
+      color={color || rootColor}
       intent={intent || rootIntent}
     >
       {children}

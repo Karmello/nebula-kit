@@ -29,7 +29,7 @@ export const HomePage = () => {
     <Box padding={{ base: 20, lg: 50 }}>
       <Flex flexDirection={{ base: 'column', lg: 'row' }} rowGap={80} columnGap={160}>
         <Flex.Item flex={2}>
-          <Text typography="h1" intent="primary">
+          <Text typography="h1" color="purple" intent="primary">
             NebulaKit
           </Text>
           <Divider />
@@ -47,7 +47,7 @@ export const HomePage = () => {
                 navigateTo('/foundations')
               }}
             >
-              <Button intent="primary" iconName="arrow-right" iconPosition="right" size="sm">
+              <Button color="purple" intent="primary" iconName="arrow-right" iconPosition="right" size="sm">
                 Foundations
               </Button>
             </Link>
@@ -58,7 +58,8 @@ export const HomePage = () => {
               }}
             >
               <Button
-                variant="outline"
+                variant="ghost"
+                color="purple"
                 intent="primary"
                 iconName="arrow-right"
                 iconPosition="right"
@@ -74,11 +75,11 @@ export const HomePage = () => {
           <Flex flexWrap="wrap" gap={30}>
             <Flex.Item>
               <Text bold>Theme</Text>
-              <ButtonGroup key={theme} attached size="sm" intent="primary">
+              <ButtonGroup key={theme} attached size="sm">
                 {THEMES.map(key => (
                   <Button
                     key={key}
-                    intent={key === theme ? 'primary' : 'tertiary'}
+                    intent={key === theme ? 'inverse' : 'tertiary'}
                     tagAttrs={{ onClick: () => setTheme(key) }}
                   >
                     {sentenceCase(key)}
@@ -132,24 +133,24 @@ export const HomePage = () => {
         </Flex.Item>
         <Flex.Item flex={1}>
           <Flex flexDirection="column" gap={30}>
-            <Section heading="One foundation" intent="primary" iconName="box">
+            <Section heading="One foundation" color="red" intent="primary" iconName="box">
               <Text intent="neutral">
                 Every component shares the same core primitives. Consistency isn't enforced - it's designed
                 in.
               </Text>
             </Section>
-            <Section heading="Systemic growth" intent="primary" iconName="tree-pine">
+            <Section heading="Systemic growth" color="red" intent="primary" iconName="tree-pine">
               <Text intent="neutral">
                 Higher-order components extend existing logic instead of reinventing it. As the system
                 expands, elements remain clear and composed.
               </Text>
             </Section>
-            <Section heading="Predictable behavior" intent="primary" iconName="orbit">
+            <Section heading="Predictable behavior" color="red" intent="primary" iconName="orbit">
               <Text intent="neutral">
                 Shared patterns mean fewer surprises - changes flow cleanly through the system.
               </Text>
             </Section>
-            <Section heading="Visual coherence" intent="primary" iconName="blend">
+            <Section heading="Visual coherence" color="red" intent="primary" iconName="blend">
               <Text intent="neutral">
                 Common building blocks keep layout and rhythm consistent across the system.
               </Text>

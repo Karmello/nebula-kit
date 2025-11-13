@@ -24,6 +24,7 @@ export const DropdownList = ({
   tagAttrs,
   // Button
   variant,
+  color,
   intent = DEFAULT_DROPDOWN_LIST_INTENT,
   size = DEFAULT_BUTTON_SIZE,
   // Portal
@@ -66,6 +67,7 @@ export const DropdownList = ({
             keepOpen={keepOpen}
             size={size}
             variant={variant}
+            color={color}
             intent={intent}
             blockMouse={blockMouse}
             setBlockMouse={setBlockMouse}

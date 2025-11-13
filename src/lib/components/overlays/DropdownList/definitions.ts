@@ -40,6 +40,6 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagRef' | 'tagAttrs'> & {
   children: HtmlTagProps<'div'>['children'] | ((args: ChildrenAsFuncArgs) => JSX.Element)
 }
 
-type PropsFromButton = Pick<ButtonProps, 'variant' | 'intent' | 'size'>
+type PropsFromButton = Pick<ButtonProps, 'variant' | 'color' | 'intent' | 'size'>
 
 export type DropdownListProps = PropsFromHtmlTag & PropsFromButton & DropdownListOwnProps

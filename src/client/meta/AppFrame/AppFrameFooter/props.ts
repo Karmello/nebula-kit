@@ -14,23 +14,24 @@ const APP_FRAME_FOOTER_PROPS_META: ComponentMeta<AppFrameFooterProps>['props'] =
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
-  intent: {
-    ...BOX_PROPS_META.intent,
-    defaultValue: String(DEFAULT_APP_FRAME_FOOTER_INTENT),
-  },
+  color: BOX_PROPS_META.color,
   borderIntent: {
     ...BOX_PROPS_META.borderIntent,
     defaultValue: String(DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT),
   },
+  intent: {
+    ...BOX_PROPS_META.intent,
+    defaultValue: String(DEFAULT_APP_FRAME_FOOTER_INTENT),
+  },
   padding: BOX_PROPS_META.padding,
-  paddingInline: BOX_PROPS_META.paddingInline,
   paddingBlock: BOX_PROPS_META.paddingBlock,
-  paddingTop: BOX_PROPS_META.paddingTop,
-  paddingRight: BOX_PROPS_META.paddingRight,
   paddingBottom: BOX_PROPS_META.paddingBottom,
+  paddingInline: BOX_PROPS_META.paddingInline,
   paddingLeft: BOX_PROPS_META.paddingLeft,
+  paddingRight: BOX_PROPS_META.paddingRight,
+  paddingTop: BOX_PROPS_META.paddingTop,
+  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
+  tagRef: HTML_TAG_PROPS_META.tagRef,
 }
 
 export { APP_FRAME_FOOTER_PROPS_META }

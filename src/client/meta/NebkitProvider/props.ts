@@ -16,28 +16,25 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps<Theme>>['pro
     isRequired: true,
     description: 'Application component to be wrapped by the provider.',
   },
-  theme: {
-    options: THEMES as unknown as string[],
-    defaultValue: THEMES[0],
-    description: 'Theme applied.',
-  },
-  brand: {
-    options: COLORS as unknown as string[],
-    defaultValue: DEFAULT_NEBKIT_BRAND,
-    description: 'Defines the main accent color family for primary, secondary and tertiary intents.',
-  },
-  background: {
-    options: [],
+  borderRadiusSize: {
+    options: NEBKIT_BORDER_RADIUS_SIZES,
+    defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
+    description: 'Global border radius value.',
   },
   borderWidthSize: {
     options: NEBKIT_BORDER_WIDTH_SIZES,
     defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
     description: 'Global border width value.',
   },
-  borderRadiusSize: {
-    options: NEBKIT_BORDER_RADIUS_SIZES,
-    defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
-    description: 'Global border radius value.',
+  brand: {
+    options: COLORS as unknown as string[],
+    defaultValue: DEFAULT_NEBKIT_BRAND,
+    description: 'Defines the main accent color family for primary, secondary and tertiary intents.',
+  },
+  theme: {
+    options: THEMES as unknown as string[],
+    defaultValue: THEMES[0],
+    description: 'Theme applied.',
   },
 }
 

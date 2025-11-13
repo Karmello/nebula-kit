@@ -1,10 +1,10 @@
 import { pascalCase } from 'change-case'
 
+import meta from 'client/meta'
 import { CodeSnippet } from 'client/components'
 import { elemToStringService } from 'client/services'
 import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'client/definitions'
-import meta from 'client/meta'
 import { Box, Flex, Reveal, Spacer, Text } from 'lib/components'
 
 const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
@@ -20,7 +20,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
         <>
           <Box
             variant="outline"
-            color="blue"
+            color="gray"
             intent="secondary"
             padding={sandBoxWithNoPadding ? 0 : { base: 20, lg: 40 }}
             tagAttrs={{
@@ -35,7 +35,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
       {!noCode ? (
         <>
           {!noSandBox ? (
-            <Reveal label="Code" intent="muted">
+            <Reveal label="Code" color="gray" intent="muted">
               <Box padding={4}>
                 <CodeSnippet code={code || elemToString(jsx)} borderRadius={0} />
               </Box>

@@ -1,4 +1,5 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
+import { BoxVariant } from 'lib/components/base/Box/definitions'
 import { TextTypography } from 'lib/components/base/Text/definitions'
 import { Color, IconName, ScaleValue, Sizes } from 'lib/definitions'
 
@@ -27,7 +28,7 @@ export const DEFAULT_CALLOUT_STATUS: CalloutProps['status'] = 'info'
 
 export const CALLOUT_TAGS = ['div', 'section', 'article', 'aside'] as const
 export const CALLOUT_SIZES = ['sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies Sizes[]
-export const CALLOUT_VARIANTS = ['solid', 'outline'] as const
+export const CALLOUT_VARIANTS = ['solid', 'outline'] as const satisfies BoxVariant[]
 export const CALLOUT_STATUSES = ['info', 'success', 'warning', 'danger'] as const
 
 export type CalloutTag = (typeof CALLOUT_TAGS)[number]
@@ -45,7 +46,7 @@ type CalloutOwnProps = {
 
 type PropsFromHtmlTag<T extends CalloutTag = 'div'> = Omit<HtmlTagProps<T>, 'children'>
 
-type PropsFromBox<T extends CalloutTag = 'div'> = Pick<BoxProps<T>, 'intent'>
+type PropsFromBox<T extends CalloutTag = 'div'> = Pick<BoxProps<T>, 'intent' | 'borderIntent'>
 
 export type CalloutProps<T extends CalloutTag = 'div'> = PropsFromHtmlTag<T> &
   PropsFromBox<T> &

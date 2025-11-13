@@ -25,24 +25,3 @@ expectType(
     <div />
   </NebkitProvider>
 )
-
-// valid background for default theme
-expectType(
-  <NebkitProvider background="white">
-    <div />
-  </NebkitProvider>
-)
-
-// valid background for dark theme
-expectType(
-  <NebkitProvider theme="dark" background="black">
-    <div />
-  </NebkitProvider>
-)
-
-// can't set light's theme bg value
-expectError(
-  <NebkitProvider theme="dark" background="white">
-    <div />
-  </NebkitProvider>
-)

@@ -6,6 +6,7 @@ import { withPrefix } from 'lib/helpers'
 
 import { MarkerListProvider } from './MarkerListProvider'
 import { MarkerListTag, MarkerListProps, DEFAULT_MARKER_LIST_ROW_GAP } from './definitions'
+
 import './marker-list.scss'
 
 export const MarkerList = <T extends MarkerListTag = 'ul'>({
@@ -17,6 +18,7 @@ export const MarkerList = <T extends MarkerListTag = 'ul'>({
   // Flex
   rowGap = DEFAULT_MARKER_LIST_ROW_GAP,
   // Box
+  color,
   intent,
   // own
   listStyle,
@@ -29,7 +31,7 @@ export const MarkerList = <T extends MarkerListTag = 'ul'>({
     >
       {({ slotsByName }) => {
         return (
-          <MarkerListProvider intent={intent}>
+          <MarkerListProvider color={color} intent={intent}>
             <Flex
               tag={tag || 'ul'}
               tagAttrs={{

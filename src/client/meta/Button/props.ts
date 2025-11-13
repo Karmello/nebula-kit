@@ -42,7 +42,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   iconPosition: TEXT_PROPS_META.iconPosition,
   labelIntent: {
     ...TEXT_PROPS_META.intent,
-    description: "Semantic color intent applied to the button's inner content.",
+    description: "Tone level applied to the button's inner content.",
   },
   bold: TEXT_PROPS_META.bold,
   justifyContent: {

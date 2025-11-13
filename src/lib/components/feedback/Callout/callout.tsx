@@ -23,6 +23,7 @@ export const Callout = <T extends CalloutTag = 'div'>({
   size = DEFAULT_CALLOUT_SIZE,
   variant = DEFAULT_CALLOUT_VARIANT,
   intent = DEFAULT_CALLOUT_INTENT,
+  borderIntent,
   // own
   content,
   heading,
@@ -41,6 +42,7 @@ export const Callout = <T extends CalloutTag = 'div'>({
       variant={variant}
       color={CALLOUT_CONFIG[status || 'info'].color}
       intent={intent}
+      borderIntent={borderIntent}
       padding={CALLOUT_SIZE_CONFIG[size || 'md'].spacing}
     >
       <Text

@@ -20,7 +20,7 @@ type PropsFromHtmlTag<T extends MarkerListTag = 'ul'> = Pick<
 
 type PropsFromFlex<T extends MarkerListTag = 'ul'> = Pick<FlexProps<T>, 'rowGap'>
 
-type PropsFromBox<T extends MarkerListTag = 'ul'> = Pick<BoxProps<T>, 'intent'>
+type PropsFromBox<T extends MarkerListTag = 'ul'> = Pick<BoxProps<T>, 'color' | 'intent'>
 
 export type MarkerListProps<T extends MarkerListTag = 'ul'> = PropsFromHtmlTag<T> &
   PropsFromFlex<T> &

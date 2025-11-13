@@ -22,6 +22,7 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
     keepOpen,
     size,
     variant,
+    color,
     intent,
     hoveredIndex,
     setHoveredIndex,
@@ -59,6 +60,7 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
         } as PropsWithoutRef<ComponentProps<T>>
       }
       variant={variant}
+      color={color}
       intent={intent}
       size={size}
       hoveredByDefault={blockMouse ? index === hoveredIndex : undefined}

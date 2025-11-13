@@ -8,7 +8,7 @@ type Props = {
 
 export const PropsTable = ({ category, data }: Props) => {
   const table = (
-    <Table intent="secondary">
+    <Table color="blue" intent="tertiary">
       <Table.Header>
         <Table.HeaderRow>
           <Table.HeaderCell>Name</Table.HeaderCell>

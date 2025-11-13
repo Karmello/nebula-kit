@@ -8,12 +8,12 @@ const FLEX_ITEM_EXAMPLES_META: ComponentMeta<FlexItemProps>['examples'] = [
     jsx: (
       <Flex>
         <Flex.Item flex={1}>
-          <Box variant="outline" intent="primary">
+          <Box variant="outline" color="blue" intent="primary">
             Item 1
           </Box>
         </Flex.Item>
         <Flex.Item>
-          <Box variant="outline" intent="primary">
+          <Box variant="outline" color="blue" intent="primary">
             Item 2
           </Box>
         </Flex.Item>

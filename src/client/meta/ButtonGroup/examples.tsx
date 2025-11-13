@@ -24,9 +24,9 @@ const BUTTON_GROUP_EXAMPLES_META: ComponentMeta<ButtonGroupProps>['examples'] = 
     ),
   },
   {
-    description: 'Secondary-styled buttons stacked vertically.',
+    description: 'Buttons stacked vertically.',
     jsx: (
-      <ButtonGroup intent="secondary" direction="column">
+      <ButtonGroup direction="column">
         <Button>Button 1</Button>
         <Button>Button 2</Button>
         <Button>Button 3</Button>
@@ -34,9 +34,9 @@ const BUTTON_GROUP_EXAMPLES_META: ComponentMeta<ButtonGroupProps>['examples'] = 
     ),
   },
   {
-    description: 'Secondary-styled buttons that expand to fill the vertical space evenly.',
+    description: 'Buttons that expand to fill the vertical space evenly.',
     jsx: (
-      <ButtonGroup intent="secondary" direction="column" stretch>
+      <ButtonGroup direction="column" stretch>
         <Button>Button 1</Button>
         <Button>Button 2</Button>
         <Button>Button 3</Button>
@@ -44,9 +44,9 @@ const BUTTON_GROUP_EXAMPLES_META: ComponentMeta<ButtonGroupProps>['examples'] = 
     ),
   },
   {
-    description: 'Primary-styled buttons joined together in a single horizontal group.',
+    description: 'Buttons joined together in a single horizontal group.',
     jsx: (
-      <ButtonGroup intent="primary" direction="row" attached>
+      <ButtonGroup direction="row" attached>
         <Button>Button 1</Button>
         <Button>Button 2</Button>
         <Button>Button 3</Button>
@@ -54,9 +54,9 @@ const BUTTON_GROUP_EXAMPLES_META: ComponentMeta<ButtonGroupProps>['examples'] = 
     ),
   },
   {
-    description: 'Primary-styled buttons joined together in a vertical stack.',
+    description: 'Buttons joined together in a vertical stack.',
     jsx: (
-      <ButtonGroup intent="primary" direction="column" attached>
+      <ButtonGroup direction="column" attached>
         <Button>Button 1</Button>
         <Button>Button 2</Button>
         <Button>Button 3</Button>

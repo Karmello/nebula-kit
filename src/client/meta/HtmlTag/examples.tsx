@@ -11,7 +11,7 @@ const HTML_TAG_EXAMPLES_META: ComponentMeta<HtmlTagProps<ElementType>>['examples
   },
   {
     description: 'Choosing the <a> tag, makes its all attributes available on the tagAttrs property.',
-    jsx: <HtmlTag tag="a" tagAttrs={{ href: '...' }} />,
+    jsx: <HtmlTag tag="a" tagAttrs={{ href: 'https://google.com' }} />,
     noSandBox: true,
   },
 ]

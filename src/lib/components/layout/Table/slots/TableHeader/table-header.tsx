@@ -7,7 +7,7 @@ import { withPrefix } from 'lib/helpers'
 
 import { TableHeaderProps } from './definitions'
 
-export const TableHeader = ({ children, tagAttrs, tagRef, intent }: TableHeaderProps) => {
+export const TableHeader = ({ children, tagAttrs, tagRef, color, intent }: TableHeaderProps) => {
   return (
     <WithSlots<'Table.HeaderRow'>
       childrenToVerify={children}
@@ -25,7 +25,10 @@ export const TableHeader = ({ children, tagAttrs, tagRef, intent }: TableHeaderP
             tagRef={tagRef}
           >
             {slotsByName['Table.HeaderRow'].map((slot: any) =>
-              cloneElement<TableHeaderRowProps>(slot, { intent: slot.props.intent || intent })
+              cloneElement<TableHeaderRowProps>(slot, {
+                color: slot.props.color || color,
+                intent: slot.props.intent || intent,
+              })
             )}
           </Box>
         )

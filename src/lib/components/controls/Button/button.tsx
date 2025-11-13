@@ -5,6 +5,7 @@ import { Box, Text, WithIcon } from 'lib/components'
 import { applyRespValues } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
+import { useNebkitStore } from 'lib/state'
 
 import {
   BUTTON_SIZE_CONFIG,
@@ -46,6 +47,8 @@ export const Button = <T extends ButtonTag = 'button'>({
 
   const { bp } = useScreen()
 
+  const { brand } = useNebkitStore()
+
   useLayoutEffect(() => {
     applyRespValues('dataset', tagRef || ref, bp, { fullWidth }, 'Btn')
   }, [bp, fullWidth])
@@ -73,7 +76,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       }
       tagRef={tagRef || ref}
       variant={variant}
-      color={color}
+      color={color || brand}
       intent={intent}
       hoveredByDefault={hoveredByDefault}
       disabled={disabled}

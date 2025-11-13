@@ -14,6 +14,7 @@ export const AppFrameFooter = ({
   children,
   tagAttrs,
   tagRef,
+  color,
   intent = DEFAULT_APP_FRAME_FOOTER_INTENT,
   borderIntent = DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT,
   ...paddings
@@ -29,6 +30,7 @@ export const AppFrameFooter = ({
       }}
       tagRef={tagRef}
       variant="solid"
+      color={color}
       intent={intent}
       borderIntent={borderIntent}
       borderTopWidth={borderWidth}

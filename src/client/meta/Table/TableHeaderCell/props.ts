@@ -8,20 +8,21 @@ const TABLE_HEADER_CELL_PROPS_META: ComponentMeta<TableHeaderCellProps>['props']
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
-  intent: BOX_PROPS_META.intent,
-  minInlineSize: BOX_PROPS_META.minInlineSize,
-  maxInlineSize: BOX_PROPS_META.maxInlineSize,
-  textAlign: BOX_PROPS_META.textAlign,
+  color: BOX_PROPS_META.color,
   colSpan: {
     options: ['number'],
     description: 'Specifies how many columns the cell should span across within a table row.',
   },
+  intent: BOX_PROPS_META.intent,
+  maxInlineSize: BOX_PROPS_META.maxInlineSize,
+  minInlineSize: BOX_PROPS_META.minInlineSize,
   rowSpan: {
     options: ['number'],
     description: 'Specifies how many rows the cell should span vertically within the table.',
   },
+  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
+  tagRef: HTML_TAG_PROPS_META.tagRef,
+  textAlign: BOX_PROPS_META.textAlign,
 }
 
 export { TABLE_HEADER_CELL_PROPS_META }

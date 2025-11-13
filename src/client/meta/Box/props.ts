@@ -43,7 +43,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   borderIntent: {
     options: Object.values(BOX_INTENTS),
     isResponsive: true,
-    description: 'Semantic color intent applied to the border.',
+    description: "Tone level applied to the border's color.",
   },
   borderLeftWidth: {
     options: ['ScaleValue', 'CSS'],
@@ -91,7 +91,8 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   color: {
     options: COLORS as never,
-    description: 'Defines the hue family used for the component. Overrides the global brand color when set.',
+    isResponsive: true,
+    description: 'Color applied to the component.',
   },
   disabled: {
     options: ['boolean'],
@@ -125,7 +126,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   intent: {
     options: Object.values(BOX_INTENTS),
     isResponsive: true,
-    description: 'Semantic color intent applied.',
+    description: "Tone level applied to the component's main color.",
   },
   interactive: {
     options: ['boolean'],

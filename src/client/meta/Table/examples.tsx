@@ -15,7 +15,7 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
     skip: true,
   },
   {
-    description: 'Table displaying data rows only.',
+    description: 'Default Table displaying only data rows.',
     jsx: (
       <Table>
         <Table.Body>
@@ -42,9 +42,9 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
     ),
   },
   {
-    description: 'Table displaying data rows and a header.',
+    description: 'Table with custom color displaying header and data rows.',
     jsx: (
-      <Table>
+      <Table color="blue">
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeaderCell>First name</Table.HeaderCell>
@@ -79,7 +79,7 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
   {
     description: 'Table with caption and footer.',
     jsx: (
-      <Table>
+      <Table color="red">
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeaderCell>First name</Table.HeaderCell>
@@ -120,42 +120,7 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
   {
     description: 'Custom intent applied to the table.',
     jsx: (
-      <Table intent="secondary">
-        <Table.Header>
-          <Table.HeaderRow>
-            <Table.HeaderCell>First name</Table.HeaderCell>
-            <Table.HeaderCell>Last name</Table.HeaderCell>
-            <Table.HeaderCell>Club</Table.HeaderCell>
-            <Table.HeaderCell>Position</Table.HeaderCell>
-          </Table.HeaderRow>
-        </Table.Header>
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell>Robert</Table.Cell>
-            <Table.Cell>Lewandowski</Table.Cell>
-            <Table.Cell>FC Barcelona</Table.Cell>
-            <Table.Cell>ST</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>Piotr</Table.Cell>
-            <Table.Cell>Zieliński</Table.Cell>
-            <Table.Cell>Inter Milan</Table.Cell>
-            <Table.Cell>CDM</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>Sebastian</Table.Cell>
-            <Table.Cell>Szymański</Table.Cell>
-            <Table.Cell>Fenerbahçe SK</Table.Cell>
-            <Table.Cell>CAM</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-      </Table>
-    ),
-  },
-  {
-    description: 'Borderless table.',
-    jsx: (
-      <Table intent="neutral">
+      <Table color="purple" intent="primary">
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeaderCell>First name</Table.HeaderCell>
@@ -199,7 +164,42 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
             <Table.HeaderCell>Position</Table.HeaderCell>
           </Table.HeaderRow>
         </Table.Header>
-        <Table.Body intent="tertiary">
+        <Table.Body color="yellow" intent="muted">
+          <Table.Row>
+            <Table.Cell>Robert</Table.Cell>
+            <Table.Cell>Lewandowski</Table.Cell>
+            <Table.Cell>FC Barcelona</Table.Cell>
+            <Table.Cell>ST</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Piotr</Table.Cell>
+            <Table.Cell>Zieliński</Table.Cell>
+            <Table.Cell>Inter Milan</Table.Cell>
+            <Table.Cell>CDM</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Sebastian</Table.Cell>
+            <Table.Cell>Szymański</Table.Cell>
+            <Table.Cell>Fenerbahçe SK</Table.Cell>
+            <Table.Cell>CAM</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table>
+    ),
+  },
+  {
+    description: 'Borderless table.',
+    jsx: (
+      <Table intent="neutral">
+        <Table.Header>
+          <Table.HeaderRow>
+            <Table.HeaderCell>First name</Table.HeaderCell>
+            <Table.HeaderCell>Last name</Table.HeaderCell>
+            <Table.HeaderCell>Club</Table.HeaderCell>
+            <Table.HeaderCell>Position</Table.HeaderCell>
+          </Table.HeaderRow>
+        </Table.Header>
+        <Table.Body>
           <Table.Row>
             <Table.Cell>Robert</Table.Cell>
             <Table.Cell>Lewandowski</Table.Cell>

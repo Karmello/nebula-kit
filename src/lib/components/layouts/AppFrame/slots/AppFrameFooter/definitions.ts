@@ -9,6 +9,7 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'footer'>, 'tagAttrs' | 'tagRef'> & {
 
 type PropsFromBox = Pick<
   BoxProps<'footer'>,
+  | 'color'
   | 'intent'
   | 'borderIntent'
   | 'padding'

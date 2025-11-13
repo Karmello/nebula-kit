@@ -32,6 +32,7 @@ export const ButtonGroup = <T extends ButtonGroupTag = 'div'>({
   tagRef,
   // button
   variant,
+  color,
   intent,
   size,
   // flex
@@ -95,6 +96,7 @@ export const ButtonGroup = <T extends ButtonGroupTag = 'div'>({
                     },
                   },
                   variant: child.props.variant ?? variant,
+                  color: child.props.color ?? color,
                   intent: child.props.intent ?? intent,
                   size: child.props.size ?? size,
                 })}

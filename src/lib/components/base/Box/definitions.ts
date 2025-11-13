@@ -24,7 +24,7 @@ type BoxOwnProps = {
   variant?: RespValue<BoxVariant>
   intent?: RespValue<BoxIntent>
   borderIntent?: RespValue<BoxIntent>
-  color?: Color
+  color?: RespValue<Color>
   // state
   interactive?: boolean
   disabled?: boolean

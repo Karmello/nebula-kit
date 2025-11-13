@@ -1,18 +1,20 @@
 import { createContext, useContext, ReactNode } from 'react'
 
-import { BoxProps } from 'lib/components/base/Box/definitions'
+import { MarkerListProps } from '../definitions'
 
 type MarkerListContextValue = {
-  intent: BoxProps['intent']
+  color: MarkerListProps['color']
+  intent: MarkerListProps['intent']
 }
 
 const MarkerListContext = createContext<MarkerListContextValue | undefined>(undefined)
 
 export const MarkerListProvider = ({
   children,
+  color,
   intent,
 }: { children: ReactNode } & MarkerListContextValue) => {
-  return <MarkerListContext.Provider value={{ intent }}>{children}</MarkerListContext.Provider>
+  return <MarkerListContext.Provider value={{ color, intent }}>{children}</MarkerListContext.Provider>
 }
 
 export const useMarkerListContext = () => {

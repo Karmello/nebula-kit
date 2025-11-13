@@ -24,14 +24,15 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
     isRequired: true,
     description: 'Accepts slots directly or via a render function with access to the context argument.',
   },
+  color: BUTTON_PROPS_META.color,
   intent: {
     ...BUTTON_PROPS_META.intent,
-    description: 'Semantic color intent applied to the list items.',
+    description: 'Tone level applied to the list items.',
   },
   itemBorderIntent: {
     ...BOX_PROPS_META.borderIntent,
     defaultValue: String(DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT),
-    description: 'Semantic color intent applied to the dividers between list items.',
+    description: 'Tone level applied to the dividers between list items.',
   },
   keepOpen: {
     options: ['boolean'],

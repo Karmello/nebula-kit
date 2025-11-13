@@ -7,7 +7,7 @@ import { withPrefix } from 'lib/helpers'
 
 import { TableBodyProps } from './definitions'
 
-export const TableBody = ({ children, tagAttrs, tagRef, intent }: TableBodyProps) => {
+export const TableBody = ({ children, tagAttrs, tagRef, color, intent }: TableBodyProps) => {
   return (
     <WithSlots<'Table.Row'>
       childrenToVerify={children}
@@ -25,7 +25,10 @@ export const TableBody = ({ children, tagAttrs, tagRef, intent }: TableBodyProps
             tagRef={tagRef}
           >
             {slotsByName['Table.Row'].map((slot: any) =>
-              cloneElement<TableRowProps>(slot, { intent: slot.props.intent || intent })
+              cloneElement<TableRowProps>(slot, {
+                color: slot.props.color || color,
+                intent: slot.props.intent || intent,
+              })
             )}
           </Box>
         )

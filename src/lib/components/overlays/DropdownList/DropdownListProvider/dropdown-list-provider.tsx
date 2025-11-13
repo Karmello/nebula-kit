@@ -13,6 +13,7 @@ type Props = {
   keepOpen: DropdownListProps['keepOpen']
   size: DropdownListProps['size']
   variant: DropdownListProps['variant']
+  color: DropdownListProps['color']
   intent: DropdownListProps['intent']
   blockMouse: boolean
   setBlockMouse: (blockMouse: boolean) => void
@@ -36,6 +37,7 @@ export const DropdownListProvider = ({
   keepOpen,
   size,
   variant,
+  color,
   intent,
   blockMouse,
   setBlockMouse,
@@ -53,6 +55,7 @@ export const DropdownListProvider = ({
         keepOpen,
         size,
         variant,
+        color,
         intent,
         blockMouse,
         setBlockMouse,

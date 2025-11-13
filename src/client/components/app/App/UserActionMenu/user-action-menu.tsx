@@ -14,6 +14,7 @@ export const UserActionMenu = () => {
   return (
     <Select
       intent="muted"
+      itemBorderIntent="tertiary"
       dropdownPlacement="bottom-end"
       staticLabel="Account"
       value={currentPageKey}

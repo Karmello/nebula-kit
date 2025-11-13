@@ -10,12 +10,16 @@ const TABLE_ROW_PROPS_META: ComponentMeta<TableRowProps>['props'] = {
     isRequired: true,
     description: 'Cell slot.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  color: {
+    ...BOX_PROPS_META.color,
+    description: 'Color applied to every cell.',
+  },
   intent: {
     ...BOX_PROPS_META.intent,
-    description: 'Semantic color intent applied to every cell.',
+    description: 'Tone level applied to every cell.',
   },
+  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
+  tagRef: HTML_TAG_PROPS_META.tagRef,
 }
 
 export { TABLE_ROW_PROPS_META }

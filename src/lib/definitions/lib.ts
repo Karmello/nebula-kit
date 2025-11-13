@@ -7,6 +7,7 @@ export const BREAKPOINTS = ['base', 'sm', 'md', 'lg', 'xl'] as const
 export const SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
 
 export const COLORS = [
+  'gray',
   'purple',
   'blue',
   'magenta',
@@ -19,7 +20,6 @@ export const COLORS = [
   'green',
   'yellow',
   'amber',
-  'gray',
 ] as const
 
 export const SCALE = [

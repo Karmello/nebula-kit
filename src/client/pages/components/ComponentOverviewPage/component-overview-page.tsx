@@ -40,7 +40,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
               navigateTo(readMoreLink.href)
             }}
           >
-            <Button intent="primary" iconName="arrow-right" variant="ghost">
+            <Button variant="ghost" color="blue" intent="primary" iconName="arrow-right" iconPosition="right">
               {readMoreLink.label}
             </Button>
           </Link>
@@ -52,7 +52,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   return (
     <>
       {name ? (
-        <Section heading={name} variant="outline" intent="primary" borderIntent="secondary">
+        <Section heading={name} variant="outline" color="gray" borderIntent="tertiary">
           <Box intent="neutral">{content}</Box>
         </Section>
       ) : (

@@ -1,6 +1,10 @@
 @use 'styles/definitions/definitions.scss' as *;
 
 html[data-theme='dark'] {
+  --neb-background: var(--neb-gray-15);
+  --neb-text: var(--neb-gray-1);
+  --neb-focus-border: var(--neb-gray-1);
+
   @each $color in $neb-colors {
     &[data-brand='#{$color}'],
     .neb-box[data-neb-box-color='#{$color}'] {

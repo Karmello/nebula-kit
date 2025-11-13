@@ -15,6 +15,7 @@ export const Table = ({
   children,
   // Box
   inlineSize,
+  color,
   intent = DEFAULT_TABLE_INTENT,
   // own
   layout = DEFAULT_TABLE_LAYOUT,
@@ -32,7 +33,7 @@ export const Table = ({
     >
       {({ slotsByName }) => {
         return (
-          <TableContext value={{ intent, layout }}>
+          <TableContext value={{ color, intent, layout }}>
             <Box tagAttrs={{ className: withPrefix('table-container') }} inlineSize={inlineSize}>
               <Box
                 tag="table"
@@ -46,6 +47,7 @@ export const Table = ({
                 }}
                 tagRef={tagRef}
                 variant="solid"
+                color={color}
                 intent={intent}
               >
                 {slotsByName['Table.Caption']}

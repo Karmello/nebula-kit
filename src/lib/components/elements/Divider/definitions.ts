@@ -1,8 +1,9 @@
 import { HtmlTagProps } from 'lib/components'
-import { BoxIntent, BoxProps } from 'lib/components/base/Box/definitions'
+import { BoxProps } from 'lib/components/base/Box/definitions'
 import { NebkitBorderWidthSize } from 'lib/components/utility/NebkitProvider/definitions'
 
-export const DEFAULT_DIVIDER_INTENT: BoxIntent = 'tertiary'
+export const DEFAULT_DIVIDER_INTENT: DividerProps['intent'] = 'tertiary'
+export const DEFAULT_DIVIDER_MARGIN_BLOCK: DividerProps['marginBlock'] = 3
 
 type DividerOwnProps = {
   size?: NebkitBorderWidthSize
@@ -10,6 +11,6 @@ type DividerOwnProps = {
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'hr'>, 'tagAttrs' | 'tagRef'>
 
-type PropsFromBox = Pick<BoxProps<'hr'>, 'intent'>
+type PropsFromBox = Pick<BoxProps<'hr'>, 'color' | 'intent' | 'marginBlock' | 'marginTop' | 'marginBottom'>
 
 export type DividerProps = PropsFromHtmlTag & PropsFromBox & DividerOwnProps

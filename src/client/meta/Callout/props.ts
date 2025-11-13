@@ -9,12 +9,14 @@ import {
   CALLOUT_VARIANTS,
   CALLOUT_SIZES,
   CalloutProps,
+  DEFAULT_CALLOUT_INTENT,
 } from 'lib/components/feedback/Callout/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
+  borderIntent: BOX_PROPS_META.borderIntent,
   content: {
     description: 'A text string displayed as the main body of the Callout.',
     options: ['string'],
@@ -29,7 +31,10 @@ const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
     isRequired: false,
     isResponsive: false,
   },
-  intent: BOX_PROPS_META.intent,
+  intent: {
+    ...BOX_PROPS_META.intent,
+    defaultValue: String(DEFAULT_CALLOUT_INTENT),
+  },
   size: {
     options: CALLOUT_SIZES as unknown as string[],
     defaultValue: DEFAULT_CALLOUT_SIZE,

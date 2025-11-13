@@ -132,6 +132,7 @@ export const CatalogPageTemplate = ({
                         {pageKey === PageKey.components && planLabel ? (
                           <Box
                             variant="solid"
+                            color="blue"
                             intent={planLabel === 'free' ? 'tertiary' : 'primary'}
                             borderRadius={10}
                             paddingBlock={3}

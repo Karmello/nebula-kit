@@ -168,8 +168,8 @@ export const Box = <T extends ElementType = 'div'>({
   ])
 
   useLayoutEffect(() => {
-    applyRespValues('dataset', tagRef || ref, bp, { intent, borderIntent, variant }, 'Box')
-  }, [bp, intent, borderIntent, variant])
+    applyRespValues('dataset', tagRef || ref, bp, { color, intent, borderIntent, variant }, 'Box')
+  }, [bp, color, intent, borderIntent, variant])
 
   return (
     <HtmlTag
@@ -184,7 +184,6 @@ export const Box = <T extends ElementType = 'div'>({
             zIndex,
           },
           ...applyStaticDataset('box', {
-            color,
             interactive,
             disabled,
             hoveredByDefault,

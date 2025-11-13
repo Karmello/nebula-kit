@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { Box, Flex, Button, Animate, RevealProps } from 'lib/components'
+import { useNebkitStore } from 'lib/state'
 
 import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SIZE, RevealTag } from './definitions'
 
@@ -12,6 +13,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
   children,
   // Box
   intent = DEFAULT_REVEAL_INTENT,
+  color,
   // Button
   disabled,
   size = DEFAULT_REVEAL_SIZE,
@@ -21,12 +23,15 @@ export const Reveal = <T extends RevealTag = 'div'>({
 }: RevealProps<T>) => {
   const [open, setOpen] = useState<boolean>(false)
 
+  const { brand } = useNebkitStore()
+
   return (
     <Box
       tag={tag}
       tagAttrs={tagAttrs}
       tagRef={tagRef}
       variant="outline"
+      color={color || brand}
       intent={intent}
       overflowX="hidden"
       overflowY="hidden"
@@ -37,6 +42,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
           size={size}
           labelIntent={labelIntent}
           justifyContent="space-between"
+          color={color}
           intent={intent}
           iconName="chevron-down"
           iconPosition="right"

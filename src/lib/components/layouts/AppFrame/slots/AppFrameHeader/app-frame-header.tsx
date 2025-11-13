@@ -19,6 +19,7 @@ export const AppFrameHeader = ({
   children,
   tagAttrs,
   tagRef,
+  color,
   intent = DEFAULT_APP_FRAME_HEADER_INTENT,
   borderIntent = DEFAULT_APP_FRAME_HEADER_BORDER_INTENT,
   ...paddings
@@ -36,6 +37,7 @@ export const AppFrameHeader = ({
       }}
       tagRef={tagRef}
       variant="solid"
+      color={color}
       intent={intent}
       borderIntent={borderIntent}
       borderBottomWidth={borderWidth}
