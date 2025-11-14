@@ -29,7 +29,7 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps<Theme>>['pro
   brand: {
     options: COLORS as unknown as string[],
     defaultValue: DEFAULT_NEBKIT_BRAND,
-    description: 'Defines the main accent color family for primary, secondary and tertiary intents.',
+    description: 'Defines the main accent color family for the components.',
   },
   theme: {
     options: THEMES as unknown as string[],

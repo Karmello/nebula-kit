@@ -16,7 +16,7 @@ type PropsFromHtmlTag<T extends RevealTag = 'div'> = Omit<HtmlTagProps<T>, 'chil
 
 type PropsFromBox<T extends RevealTag = 'div'> = Pick<BoxProps<T>, 'color' | 'intent'>
 
-type PropsFromButton = Pick<ButtonProps<'button'>, 'size' | 'disabled' | 'labelIntent'>
+type PropsFromButton = Pick<ButtonProps<'button'>, 'size' | 'disabled'>
 
 export type RevealProps<T extends RevealTag = 'div'> = PropsFromHtmlTag<T> &
   PropsFromBox<T> &

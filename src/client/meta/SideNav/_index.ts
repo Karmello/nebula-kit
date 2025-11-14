@@ -12,9 +12,9 @@ const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
     plan: 'pro',
     title: 'Vertical navigation component for organizing page links.',
     description: [
-      'ideal for use inside SplitView.Side',
       'supports expandable categories and flat items',
       'supports an expand-all/collapse-all control',
+      'ideal for use inside SplitView.Side',
     ],
     composedOf: ['Flex'],
     rendersAs: ['nav'],

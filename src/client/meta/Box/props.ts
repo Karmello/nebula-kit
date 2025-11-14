@@ -293,7 +293,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: Object.values(BOX_VARIANTS),
     defaultValue: DEFAULT_BOX_VARIANT,
     isResponsive: true,
-    description: 'Visual style variant from the system design.',
+    description: 'Visual style variant.',
   },
   zIndex: {
     options: ['number'],

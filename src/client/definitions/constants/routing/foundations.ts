@@ -40,6 +40,7 @@ export const FOUNDATION_CATEGORIES = [
         sections: [
           { key: 'color-palettes', label: 'Color palettes' },
           { key: 'intents_and_variants', label: 'Intents + variants' },
+          { key: 'color-application', label: 'Color application' },
           { key: 'typography', label: 'Typography' },
           { key: 'sizing-scale', label: 'Sizing scale' },
           { key: 'breakpoints', label: 'Breakpoints' },

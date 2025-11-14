@@ -32,7 +32,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         }}
       >
         <Button
-          intent={currentPageKey === PageKey.foundations ? 'tertiary' : 'muted'}
+          intent={currentPageKey === PageKey.foundations ? 'secondary' : 'muted'}
           iconName="book-open-text"
         >
           Foundations
@@ -47,7 +47,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
           )
         }}
       >
-        <Button intent={currentPageKey === PageKey.components ? 'tertiary' : 'muted'} iconName="component">
+        <Button intent={currentPageKey === PageKey.components ? 'secondary' : 'muted'} iconName="component">
           Components
         </Button>
       </Link>
@@ -58,7 +58,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
           navigateTo(`/${PageKey.pricing}`)
         }}
       >
-        <Button intent={currentPageKey === PageKey.pricing ? 'tertiary' : 'muted'} iconName="credit-card">
+        <Button intent={currentPageKey === PageKey.pricing ? 'secondary' : 'muted'} iconName="credit-card">
           Pricing
         </Button>
       </Link>

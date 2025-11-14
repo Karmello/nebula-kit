@@ -12,7 +12,7 @@ import {
 
 import { HtmlTagProps } from 'lib/components'
 
-export const BOX_VARIANTS = ['solid', 'outline', 'ghost'] as const
+export const BOX_VARIANTS = ['solid', 'outline', 'soft-outline', 'ghost'] as const
 export const BOX_INTENTS = ['neutral', 'muted', 'tertiary', 'secondary', 'primary', 'inverse'] as const
 
 export const DEFAULT_BOX_VARIANT: BoxVariant = 'ghost'

@@ -22,7 +22,6 @@ const REVEAL_PROPS_META: ComponentMeta<RevealProps>['props'] = {
     isRequired: true,
     description: 'Text displayed on the reveal button.',
   },
-  labelIntent: BUTTON_PROPS_META.labelIntent,
   size: {
     ...BUTTON_PROPS_META.size,
     defaultValue: DEFAULT_REVEAL_SIZE,

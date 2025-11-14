@@ -18,8 +18,12 @@ export const SideNav = ({
   children,
   // Flex
   rowGap,
+  // Button
+  color,
+  intent,
   // own
   expandMode = DEFAULT_SIDE_NAV_EXPAND_MODE,
+  variant,
 }: SideNavProps) => {
   const { borderWidth } = useNebkitStore()
 
@@ -36,7 +40,13 @@ export const SideNav = ({
       childrenToVerify={children}
     >
       {({ slotsByName, allValidSlots }) => (
-        <SideNavProvider expandMode={expandMode} rowGap={finalRowGap}>
+        <SideNavProvider
+          expandMode={expandMode}
+          rowGap={finalRowGap}
+          variant={variant}
+          color={color}
+          intent={intent}
+        >
           <Flex
             tag="nav"
             tagAttrs={{

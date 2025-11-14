@@ -97,7 +97,7 @@
     $bgColor: var(--neb-background);
     background-color: $bgColor;
     border-color: $mainColor;
-    color: $mainColor;
+    color: var(--neb-text);
 
     // interactive
     &[data-neb-box-interactive='true'] {
@@ -110,7 +110,7 @@
         );
         $bgColor: var(--neb-#{$intent}-outline-bg-hover, var(--neb-background));
         border-color: $mainColor;
-        color: $mainColor;
+        color: var(--neb-text);
         background-color: $bgColor;
       }
 
@@ -126,6 +126,60 @@
         $bgColor: var(
           --neb-#{$intent}-outline-bg-active,
           var(--neb-#{$intent}-outline-bg-hover, var(--neb-background))
+        );
+        border-color: $mainColor;
+        color: var(--neb-text);
+        background-color: $bgColor;
+      }
+
+      // focus
+      &:focus-visible {
+        border-color: var(--neb-focus-border, $mainColor);
+      }
+    }
+  }
+}
+
+// soft-outline
+@each $intent in $neb-intents {
+  .neb-box[data-neb-box-intent='#{$intent}'][data-neb-box-variant='soft-outline'] {
+    // rest
+    $mainColor: var(--neb-#{$intent}-soft-outline-border, var(--neb-text));
+    $bgColor: var(--neb-background);
+    background-color: $bgColor;
+    border-color: $mainColor;
+    color: $mainColor;
+
+    // interactive
+    &[data-neb-box-interactive='true'] {
+      // hover
+      &:not([data-neb-box-hovered-by-default]):hover,
+      &[data-neb-box-hovered-by-default='true'] {
+        $mainColor: var(
+          --neb-#{$intent}-soft-outline-border-hover,
+          var(--neb-#{$intent}-soft-outline-border, var(--neb-text))
+        );
+        $bgColor: var(--neb-#{$intent}-soft-outline-bg-hover, var(--neb-background));
+        border-color: $mainColor;
+        color: $mainColor;
+        background-color: $bgColor;
+      }
+
+      // active
+      &:not([data-neb-box-disable-active-state]):active,
+      &:not([data-neb-box-disable-active-state]):not([data-neb-box-hovered-by-default]):hover:active,
+      &:not([data-neb-box-disable-active-state])[data-neb-box-hovered-by-default='true']:active,
+      &:not([data-neb-box-disable-active-state])[data-neb-box-active-on-focus='true']:focus-visible {
+        $mainColor: var(
+          --neb-#{$intent}-soft-outline-border-active,
+          var(
+            --neb-#{$intent}-soft-outline-border-hover,
+            var(--neb-#{$intent}-soft-outline-border, var(--neb-text))
+          )
+        );
+        $bgColor: var(
+          --neb-#{$intent}-soft-outline-bg-active,
+          var(--neb-#{$intent}-soft-outline-bg-hover, var(--neb-background))
         );
         border-color: $mainColor;
         color: $mainColor;
@@ -191,8 +245,8 @@
   }
 }
 
-// outline variant + neutral intent text
-.neb-box[data-neb-box-variant='outline'][data-neb-box-intent='neutral'] {
+// soft-outline variant + neutral intent text
+.neb-box[data-neb-box-variant='soft-outline'][data-neb-box-intent='neutral'] {
   color: var(--neb-text) !important;
 }
 

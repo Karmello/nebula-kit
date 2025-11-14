@@ -17,7 +17,6 @@ export const Reveal = <T extends RevealTag = 'div'>({
   // Button
   disabled,
   size = DEFAULT_REVEAL_SIZE,
-  labelIntent,
   // own
   label,
 }: RevealProps<T>) => {
@@ -40,7 +39,6 @@ export const Reveal = <T extends RevealTag = 'div'>({
         <Button
           disabled={disabled}
           size={size}
-          labelIntent={labelIntent}
           justifyContent="space-between"
           color={color}
           intent={intent}

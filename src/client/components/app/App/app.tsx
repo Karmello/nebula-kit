@@ -35,7 +35,7 @@ export const App = () => {
                     navigateTo(`/${PageKey.home}`)
                   }}
                 >
-                  <Button intent={currentPageKey === PageKey.home ? 'tertiary' : 'muted'}>NebulaKit</Button>
+                  <Button intent={currentPageKey === PageKey.home ? 'secondary' : 'muted'}>NebulaKit</Button>
                 </Link>
               </Toolbar.Start>
               <Toolbar.Main>

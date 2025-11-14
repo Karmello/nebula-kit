@@ -32,7 +32,6 @@ html[data-theme='dark'] {
       --neb-primary-solid-bg: var(--neb-#{$color}-8);
       --neb-primary-solid-bg-hover: var(--neb-#{$color}-7);
       --neb-primary-solid-bg-active: var(--neb-#{$color}-6);
-      --neb-primary-solid-text-hover: var(--neb-#{$color}-15);
 
       // inverse solid
       --neb-inverse-solid-bg: var(--neb-#{$color}-4);
@@ -44,43 +43,85 @@ html[data-theme='dark'] {
       --neb-neutral-outline-border: var(--neb-#{$color}-14);
       --neb-neutral-outline-border-hover: var(--neb-#{$color}-13);
       --neb-neutral-outline-border-active: var(--neb-#{$color}-12);
-      --neb-neutral-outline-bg-hover: var(--neb-#{$color}-14);
-      --neb-neutral-outline-bg-active: var(--neb-#{$color}-13);
+      --neb-neutral-outline-bg-hover: var(--neb-#{$color}-15);
+      --neb-neutral-outline-bg-active: var(--neb-#{$color}-15);
 
       // muted outline
       --neb-muted-outline-border: var(--neb-#{$color}-14);
       --neb-muted-outline-border-hover: var(--neb-#{$color}-13);
       --neb-muted-outline-border-active: var(--neb-#{$color}-12);
-      --neb-muted-outline-bg-hover: var(--neb-#{$color}-14);
-      --neb-muted-outline-bg-active: var(--neb-#{$color}-13);
+      --neb-muted-outline-bg-hover: var(--neb-#{$color}-15);
+      --neb-muted-outline-bg-active: var(--neb-#{$color}-14);
 
       // tertiary outline
       --neb-tertiary-outline-border: var(--neb-#{$color}-13);
       --neb-tertiary-outline-border-hover: var(--neb-#{$color}-12);
       --neb-tertiary-outline-border-active: var(--neb-#{$color}-11);
-      --neb-tertiary-outline-bg-hover: var(--neb-#{$color}-14);
-      --neb-tertiary-outline-bg-active: var(--neb-#{$color}-13);
+      --neb-tertiary-outline-bg-hover: var(--neb-#{$color}-15);
+      --neb-tertiary-outline-bg-active: var(--neb-#{$color}-14);
 
       // secondary outline
       --neb-secondary-outline-border: var(--neb-#{$color}-11);
       --neb-secondary-outline-border-hover: var(--neb-#{$color}-10);
       --neb-secondary-outline-border-active: var(--neb-#{$color}-9);
-      --neb-secondary-outline-bg-hover: var(--neb-#{$color}-14);
-      --neb-secondary-outline-bg-active: var(--neb-#{$color}-13);
+      --neb-secondary-outline-bg-hover: var(--neb-#{$color}-15);
+      --neb-secondary-outline-bg-active: var(--neb-#{$color}-14);
 
       // primary outline
       --neb-primary-outline-border: var(--neb-#{$color}-8);
       --neb-primary-outline-border-hover: var(--neb-#{$color}-7);
       --neb-primary-outline-border-active: var(--neb-#{$color}-6);
-      --neb-primary-outline-bg-hover: var(--neb-#{$color}-14);
+      --neb-primary-outline-bg-hover: var(--neb-#{$color}-15);
       --neb-primary-outline-bg-active: var(--neb-#{$color}-13);
 
       // inverse outline
       --neb-inverse-outline-border: var(--neb-#{$color}-4);
       --neb-inverse-outline-border-hover: var(--neb-#{$color}-3);
       --neb-inverse-outline-border-active: var(--neb-#{$color}-1);
-      --neb-inverse-outline-bg-hover: var(--neb-#{$color}-14);
+      --neb-inverse-outline-bg-hover: var(--neb-#{$color}-15);
       --neb-inverse-outline-bg-active: var(--neb-#{$color}-13);
+
+      // neutral soft outline
+      --neb-neutral-soft-outline-border: var(--neb-#{$color}-14);
+      --neb-neutral-soft-outline-border-hover: var(--neb-#{$color}-13);
+      --neb-neutral-soft-outline-border-active: var(--neb-#{$color}-12);
+      --neb-neutral-soft-outline-bg-hover: var(--neb-#{$color}-15);
+      --neb-neutral-soft-outline-bg-active: var(--neb-#{$color}-15);
+
+      // muted soft outline
+      --neb-muted-soft-outline-border: var(--neb-#{$color}-14);
+      --neb-muted-soft-outline-border-hover: var(--neb-#{$color}-13);
+      --neb-muted-soft-outline-border-active: var(--neb-#{$color}-12);
+      --neb-muted-soft-outline-bg-hover: var(--neb-#{$color}-15);
+      --neb-muted-soft-outline-bg-active: var(--neb-#{$color}-15);
+
+      // tertiary soft outline
+      --neb-tertiary-soft-outline-border: var(--neb-#{$color}-13);
+      --neb-tertiary-soft-outline-border-hover: var(--neb-#{$color}-12);
+      --neb-tertiary-soft-outline-border-active: var(--neb-#{$color}-11);
+      --neb-tertiary-soft-outline-bg-hover: var(--neb-#{$color}-15);
+      --neb-tertiary-soft-outline-bg-active: var(--neb-#{$color}-15);
+
+      // secondary soft outline
+      --neb-secondary-soft-outline-border: var(--neb-#{$color}-11);
+      --neb-secondary-soft-outline-border-hover: var(--neb-#{$color}-10);
+      --neb-secondary-soft-outline-border-active: var(--neb-#{$color}-9);
+      --neb-secondary-soft-outline-bg-hover: var(--neb-#{$color}-15);
+      --neb-secondary-soft-outline-bg-active: var(--neb-#{$color}-15);
+
+      // primary soft outline
+      --neb-primary-soft-outline-border: var(--neb-#{$color}-8);
+      --neb-primary-soft-outline-border-hover: var(--neb-#{$color}-7);
+      --neb-primary-soft-outline-border-active: var(--neb-#{$color}-6);
+      --neb-primary-soft-outline-bg-hover: var(--neb-#{$color}-15);
+      --neb-primary-soft-outline-bg-active: var(--neb-#{$color}-14);
+
+      // inverse soft outline
+      --neb-inverse-soft-outline-border: var(--neb-#{$color}-4);
+      --neb-inverse-soft-outline-border-hover: var(--neb-#{$color}-3);
+      --neb-inverse-soft-outline-border-active: var(--neb-#{$color}-1);
+      --neb-inverse-soft-outline-bg-hover: var(--neb-#{$color}-15);
+      --neb-inverse-soft-outline-bg-active: var(--neb-#{$color}-13);
 
       // neutral ghost
       --neb-neutral-ghost-text: var(--neb-#{$color}-1);
@@ -110,6 +151,12 @@ html[data-theme='dark'] {
     }
   }
 
+  &[data-brand='cyan'],
+  .neb-box[data-neb-box-color='cyan'] {
+    // primary solid
+    --neb-primary-solid-text: var(--neb-cyan-15);
+  }
+
   &[data-brand='green'],
   .neb-box[data-neb-box-color='green'] {
     // primary solid
@@ -126,11 +173,5 @@ html[data-theme='dark'] {
   .neb-box[data-neb-box-color='amber'] {
     // primary solid
     --neb-primary-solid-text: var(--neb-amber-15);
-  }
-
-  &[data-brand='cyan'],
-  .neb-box[data-neb-box-color='cyan'] {
-    // primary solid
-    --neb-primary-solid-text: var(--neb-cyan-15);
   }
 }

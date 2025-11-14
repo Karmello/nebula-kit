@@ -4,7 +4,12 @@ import { WithSlots } from 'lib/components/internal'
 import { Animate, Box, Button, Flex, Spacer } from 'lib/components'
 
 import { useSideNavContext } from '../../SideNavProvider'
-import { SideNavCategoryProps } from './definitions'
+
+import {
+  DEFAULT_SIDE_NAV_CATEGORY_INTENT,
+  DEFAULT_SIDE_NAV_CATEGORY_VARIANT,
+  SideNavCategoryProps,
+} from './definitions'
 
 export const SideNavCategory = ({
   // HtmlTag
@@ -12,15 +17,23 @@ export const SideNavCategory = ({
   tagRef,
   children,
   // Button
-  variant,
-  intent,
-  labelIntent,
+  variant = DEFAULT_SIDE_NAV_CATEGORY_VARIANT,
+  color,
+  intent = DEFAULT_SIDE_NAV_CATEGORY_INTENT,
   justifyContent,
   // own
   label,
   initiallyExpanded = false,
 }: SideNavCategoryProps) => {
-  const { expandedCategories, setExpandedCategories, expandMode, rowGap } = useSideNavContext()
+  const {
+    expandedCategories,
+    setExpandedCategories,
+    expandMode,
+    rowGap,
+    variant: rootVariant,
+    color: rootColor,
+    intent: rootIntent,
+  } = useSideNavContext()
 
   const id = useId()
 
@@ -61,9 +74,9 @@ export const SideNavCategory = ({
                 }}
                 iconName="chevron-right"
                 iconAngle={expandedCategories[id] ? 90 : 0}
-                variant={variant}
-                intent={intent}
-                labelIntent={labelIntent}
+                variant={variant || rootVariant}
+                color={color || rootColor}
+                intent={intent || rootIntent}
                 justifyContent={justifyContent}
                 size="sm"
                 fullWidth

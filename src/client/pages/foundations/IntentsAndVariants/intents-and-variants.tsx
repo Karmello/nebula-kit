@@ -21,7 +21,7 @@ export default () => {
         <Section heading="Solid variant">
           <Text>Filled surface, strong emphasis.</Text>
           <Spacer blockSize={30} />
-          <Flex flexWrap="wrap" gap={6}>
+          <Flex flexWrap="wrap" gap={7}>
             {BOX_INTENTS.map(intent => {
               return (
                 <Button key={intent} variant="solid" intent={intent}>
@@ -44,8 +44,21 @@ export default () => {
             })}
           </Flex>
         </Section>
+        <Section heading="Soft outline variant">
+          <Text>Border only, background matches the app's surface, text matches the border.</Text>
+          <Spacer blockSize={30} />
+          <Flex flexWrap="wrap" gap={6}>
+            {BOX_INTENTS.map(intent => {
+              return (
+                <Button key={intent} variant="soft-outline" intent={intent}>
+                  {intent}
+                </Button>
+              )
+            })}
+          </Flex>
+        </Section>
         <Section heading="Ghost variant">
-          <Text>Minimal, blends into background.</Text>
+          <Text>Text only, background and border match the app's surface.</Text>
           <Spacer blockSize={30} />
           <Flex flexWrap="wrap" gap={6}>
             {BOX_INTENTS.map(intent => {

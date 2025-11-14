@@ -17,11 +17,38 @@ import { FLEX_PROPS_META } from '../Flex/props'
 import { WITH_ICON_PROPS_META } from '../WithIcon/props'
 
 const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
+  bold: TEXT_PROPS_META.bold,
   children: {
     ...HTML_TAG_PROPS_META.children,
     description: 'Label rendered.',
   },
   color: BOX_PROPS_META.color,
+  disabled: BOX_PROPS_META.disabled,
+  fullWidth: {
+    options: ['boolean'],
+    defaultValue: 'false',
+    isResponsive: true,
+    description: 'Expands the button to match the full width of its container.',
+  },
+  hoveredByDefault: BOX_PROPS_META.hoveredByDefault,
+  iconAngle: WITH_ICON_PROPS_META.iconAngle,
+  iconName: TEXT_PROPS_META.iconName,
+  iconPosition: TEXT_PROPS_META.iconPosition,
+  intent: {
+    ...BOX_PROPS_META.intent,
+    defaultValue: DEFAULT_BUTTON_INTENT,
+  },
+  justifyContent: {
+    ...FLEX_PROPS_META.justifyContent,
+    defaultValue: String(DEFAULT_BUTTON_JUSTIFY_CONTENT),
+    description: 'Distributes text and icon along the main axis.',
+  },
+  size: {
+    options: Object.values(BUTTON_SIZES),
+    defaultValue: DEFAULT_BUTTON_SIZE,
+    description:
+      'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
+  },
   tag: {
     ...HTML_TAG_PROPS_META.tag,
     options: BUTTON_TAGS as unknown as string[],
@@ -33,37 +60,6 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     ...BOX_PROPS_META.variant,
     defaultValue: DEFAULT_BUTTON_VARIANT,
   },
-  intent: {
-    ...BOX_PROPS_META.intent,
-    defaultValue: DEFAULT_BUTTON_INTENT,
-  },
-  disabled: BOX_PROPS_META.disabled,
-  iconName: TEXT_PROPS_META.iconName,
-  iconPosition: TEXT_PROPS_META.iconPosition,
-  labelIntent: {
-    ...TEXT_PROPS_META.intent,
-    description: "Tone level applied to the button's inner content.",
-  },
-  bold: TEXT_PROPS_META.bold,
-  justifyContent: {
-    ...FLEX_PROPS_META.justifyContent,
-    defaultValue: String(DEFAULT_BUTTON_JUSTIFY_CONTENT),
-    description: 'Distributes text and icon along the main axis.',
-  },
-  iconAngle: WITH_ICON_PROPS_META.iconAngle,
-  size: {
-    options: Object.values(BUTTON_SIZES),
-    defaultValue: DEFAULT_BUTTON_SIZE,
-    description:
-      'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
-  },
-  fullWidth: {
-    options: ['boolean'],
-    defaultValue: 'false',
-    isResponsive: true,
-    description: 'Expands the button to match the full width of its container.',
-  },
-  hoveredByDefault: BOX_PROPS_META.hoveredByDefault,
 }
 
 export { BUTTON_PROPS_META }

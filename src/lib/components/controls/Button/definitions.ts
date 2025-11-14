@@ -44,9 +44,7 @@ type PropsFromBox<T extends ButtonTag = 'button'> = Pick<
 
 type PropsFromFlex = Pick<FlexProps<'span'>, 'justifyContent'>
 
-type PropsFromText = Pick<TextProps<'span'>, 'iconName' | 'iconPosition' | 'bold'> & {
-  labelIntent?: TextProps<'span'>['intent']
-}
+type PropsFromText = Pick<TextProps<'span'>, 'iconName' | 'iconPosition' | 'bold'>
 
 type PropsFromWithIcon = Pick<WithIconProps, 'iconAngle'>
 

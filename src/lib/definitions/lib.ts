@@ -8,11 +8,11 @@ export const SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
 
 export const COLORS = [
   'gray',
-  'purple',
   'blue',
-  'magenta',
   'teal',
   'cyan',
+  'purple',
+  'magenta',
   'pink',
   'red',
   'brown',

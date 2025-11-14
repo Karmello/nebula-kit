@@ -44,6 +44,7 @@ export const CatalogPageTemplate = ({
                     key={categoryKey}
                     label={label}
                     variant="ghost"
+                    color="blue"
                     intent={isCategorySelected ? 'primary' : 'neutral'}
                     initiallyExpanded={isCategorySelected}
                     justifyContent="flex-start"
@@ -63,9 +64,8 @@ export const CatalogPageTemplate = ({
                           }}
                           intent={{
                             base: isItemSelected ? 'secondary' : 'tertiary',
-                            lg: isItemSelected ? 'muted' : 'neutral',
+                            lg: isItemSelected ? 'tertiary' : 'neutral',
                           }}
-                          labelIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
                         >
                           {label}
                         </SideNav.Item>
@@ -113,9 +113,8 @@ export const CatalogPageTemplate = ({
                               }}
                               intent={{
                                 base: isItemSelected ? 'secondary' : 'tertiary',
-                                lg: isItemSelected ? 'muted' : 'neutral',
+                                lg: isItemSelected ? 'tertiary' : 'neutral',
                               }}
-                              labelIntent={{ lg: isItemSelected ? 'primary' : 'neutral' }}
                             >
                               {label}
                             </SideNav.Item>

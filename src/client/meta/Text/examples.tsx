@@ -32,12 +32,16 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
     description: 'Text can be underlined.',
   },
   {
-    jsx: <Text intent="primary">Primary text intent</Text>,
-    description: 'Text with primary intent color applied.',
+    jsx: (
+      <Text color="blue" intent="primary">
+        Custom color paragraph
+      </Text>
+    ),
+    description: 'Text with custom color applied.',
   },
   {
     jsx: (
-      <Text intent="primary" typography="h5">
+      <Text color="blue" intent="primary" typography="h5">
         Heading 5
       </Text>
     ),
@@ -45,7 +49,7 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
   },
   {
     jsx: (
-      <Text intent="primary" iconName="search">
+      <Text color="blue" intent="primary" iconName="search">
         Paragraph with an icon
       </Text>
     ),
