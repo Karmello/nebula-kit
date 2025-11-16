@@ -52,6 +52,8 @@ export const ICON_NAMES = [
   'copy-check',
   'credit-card',
   'external-link',
+  'eye',
+  'eye-off',
   'globe',
   'info',
   'layers',

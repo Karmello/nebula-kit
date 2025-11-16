@@ -8,7 +8,9 @@ describe('Segment', () => {
   it('renders as <div> by default', () => {
     render(
       <Segment tagAttrs={{ 'data-testid': 'elem' }}>
-        <Button>Button</Button>
+        <Segment.Item>
+          <Button>Button</Button>
+        </Segment.Item>
       </Segment>
     )
     const el = screen.getByTestId('elem')

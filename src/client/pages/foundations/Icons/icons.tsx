@@ -21,7 +21,9 @@ export default () => {
           {Object.keys(ICONS).map(iconName => (
             <Table.Row key={iconName}>
               <Table.Cell minInlineSize="70%">
-                <Text intent="primary">{iconName}</Text>
+                <Text color="blue" intent="primary">
+                  {iconName}
+                </Text>
               </Table.Cell>
               <Table.Cell minInlineSize="30%" textAlign="center">
                 <Icon name={iconName as IconName} size={30} color="green" intent="primary" />

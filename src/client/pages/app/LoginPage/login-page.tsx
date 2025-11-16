@@ -1,8 +1,11 @@
+import { useState } from 'react'
+
 import { useNavigateTo } from 'client/services'
 import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer } from 'lib/components'
 
 export const LoginPage = () => {
   const navigateTo = useNavigateTo()
+  const [hidePassword, setHidePassword] = useState<boolean>(true)
 
   return (
     <Box padding={{ base: 20, lg: 50 }}>
@@ -21,7 +24,17 @@ export const LoginPage = () => {
                 <Input tagAttrs={{ placeholder: 'name@example.com' }} />
               </Form.Field>
               <Form.Field name="password" label="Password" required minLength={8} maxLength={128}>
-                <Input tagAttrs={{ type: 'password' }} />
+                <Input
+                  tagAttrs={{ type: hidePassword ? 'password' : 'text' }}
+                  endSlot={
+                    <Button
+                      tagAttrs={{
+                        onClick: () => setHidePassword(!hidePassword),
+                      }}
+                      iconName={hidePassword ? 'eye-off' : 'eye'}
+                    />
+                  }
+                />
               </Form.Field>
             </Form.Fields>
             <Form.Actions>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
+import { Box, Segment } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import './input.scss'
@@ -42,43 +42,37 @@ export const Input = ({
   }
 
   return (
-    <Box position="relative">
-      {startSlot ? (
-        <Box tag="span" position="absolute">
-          {startSlot}
-        </Box>
-      ) : null}
-      <Box
-        tag="input"
-        tagAttrs={{
-          ...tagAttrs,
-          className: classNames(withPrefix('input'), tagAttrs?.className),
-          style: {
-            ...tagAttrs?.style,
-            fontSize: INPUT_SIZE_CONFIG[size || 'md'].fontSize + 'px',
-            color: 'var(--neb-text)',
-            caretColor: 'var(--neb-text)',
-          },
-          value: currentValue,
-          onChange: e => {
-            handleChange((e.target as HTMLInputElement).value)
-          },
-          onBlur,
-        }}
-        tagRef={tagRef}
-        variant={variant}
-        color={color}
-        intent={intent}
-        inlineSize="100%"
-        interactive
-        {...INPUT_SIZE_CONFIG[size || 'md']}
-      />
-      {endSlot ? (
-        <Box tag="span" position="absolute">
-          {endSlot}
-        </Box>
-      ) : null}
-    </Box>
+    <Segment>
+      {startSlot ? <Segment.Item>{startSlot}</Segment.Item> : null}
+      <Segment.Item flex={1}>
+        <Box
+          tag="input"
+          tagAttrs={{
+            ...tagAttrs,
+            className: classNames(withPrefix('input'), tagAttrs?.className),
+            style: {
+              ...tagAttrs?.style,
+              fontSize: INPUT_SIZE_CONFIG[size || 'md'].fontSize + 'px',
+              color: 'var(--neb-text)',
+              caretColor: 'var(--neb-text)',
+            },
+            value: currentValue,
+            onChange: e => {
+              handleChange((e.target as HTMLInputElement).value)
+            },
+            onBlur,
+          }}
+          tagRef={tagRef}
+          variant={variant}
+          color={color}
+          intent={intent}
+          inlineSize="100%"
+          interactive
+          {...INPUT_SIZE_CONFIG[size || 'md']}
+        />
+      </Segment.Item>
+      {endSlot ? <Segment.Item>{endSlot}</Segment.Item> : null}
+    </Segment>
   )
 }
 

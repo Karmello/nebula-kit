@@ -41,6 +41,10 @@ export const Flex = <T extends ElementType = 'div'>({
     })
   }, [bp, flexDirection, flexWrap, justifyContent, alignItems, gap, rowGap, columnGap])
 
+  useLayoutEffect(() => {
+    applyRespValues('dataset', tagRef || ref, bp, { flexDirection }, 'Flex')
+  }, [bp, flexDirection])
+
   return (
     <Box
       tag={tag}

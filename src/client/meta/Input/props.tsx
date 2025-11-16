@@ -18,7 +18,8 @@ const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
     description: 'Initial value displayed when the component is used in uncontrolled mode.',
   },
   endSlot: {
-    options: [],
+    options: ['ReactNode'],
+    description: 'Component rendered on the right side of the Input.',
   },
   intent: {
     ...BOX_PROPS_META.intent,
@@ -39,7 +40,8 @@ const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
       'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
   },
   startSlot: {
-    options: [],
+    options: ['ReactNode'],
+    description: 'Component rendered on the left side of the Input.',
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,

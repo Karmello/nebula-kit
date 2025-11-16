@@ -23,8 +23,8 @@ return (
 )`,
   },
   {
-    description: 'slots ...',
-    jsx: <Input startSlot={<Button iconName="search" />} endSlot={<Button iconName="close" />} />,
+    description: 'Input with interactive elements attached on the left and right.',
+    jsx: <Input startSlot={<Button iconName="search" />} endSlot={<Button iconName="eye" />} />,
   },
 ]
 

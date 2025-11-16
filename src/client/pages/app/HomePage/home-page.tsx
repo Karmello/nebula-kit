@@ -75,15 +75,18 @@ export const HomePage = () => {
           <Flex flexWrap="wrap" gap={30}>
             <Flex.Item>
               <Text bold>Theme</Text>
-              <Segment key={theme} size="sm">
+              <Segment key={theme}>
                 {THEMES.map(key => (
-                  <Button
-                    key={key}
-                    intent={key === theme ? 'inverse' : 'tertiary'}
-                    tagAttrs={{ onClick: () => setTheme(key) }}
-                  >
-                    {sentenceCase(key)}
-                  </Button>
+                  <Segment.Item>
+                    <Button
+                      key={key}
+                      intent={key === theme ? 'inverse' : 'tertiary'}
+                      size="sm"
+                      tagAttrs={{ onClick: () => setTheme(key) }}
+                    >
+                      {sentenceCase(key)}
+                    </Button>
+                  </Segment.Item>
                 ))}
               </Segment>
             </Flex.Item>

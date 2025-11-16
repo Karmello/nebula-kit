@@ -4,17 +4,19 @@ import { SegmentProps } from 'lib/components'
 import { SEGMENT_PROPS_META } from './props'
 import { SEGMENT_EXAMPLES_META } from './examples'
 
+import { SEGMENT_ITEM_META } from './SegmentItem/_index'
+
 const SEGMENT_META: ComponentMeta<SegmentProps> = {
   overview: {
     plan: 'free',
-    title: 'Composite component that unifies several controls into a single segmented element.',
+    title: 'Composite component that unifies multiple controls into a single segmented block.',
     description: [
-      'groups children into a single horizontal or vertical block',
-      'provides shorthand props ("variant", "color", "intent", "size"), that are forwarded to all children and used when supported',
-      'use only with components that render Box as their root element',
+      'groups controls into a single horizontal or vertical block',
+      'automatically manages border radiuses for seamless attachment',
     ],
 
-    composedOf: ['Flex', 'Flex.Item'],
+    composedOf: ['Flex'],
+    slots: ['Segment.Item'],
   },
   props: SEGMENT_PROPS_META,
   examples: SEGMENT_EXAMPLES_META,
@@ -22,4 +24,5 @@ const SEGMENT_META: ComponentMeta<SegmentProps> = {
 
 export default {
   Segment: SEGMENT_META,
+  SegmentItem: SEGMENT_ITEM_META,
 }

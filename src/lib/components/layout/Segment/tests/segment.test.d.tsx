@@ -9,23 +9,35 @@ expectError(<Segment />)
 // children passed
 expectType(
   <Segment>
-    <Button>Button 1</Button>
-    <Button>Button 2</Button>
+    <Segment.Item>
+      <Button>Button 1</Button>
+    </Segment.Item>
+    <Segment.Item>
+      <Button>Button 2</Button>
+    </Segment.Item>
   </Segment>
 )
 
 // custom tag
 expectType(
   <Segment tag="nav">
-    <Button>Button 1</Button>
-    <Button>Button 2</Button>
+    <Segment.Item>
+      <Button>Button 1</Button>
+    </Segment.Item>
+    <Segment.Item>
+      <Button>Button 2</Button>
+    </Segment.Item>
   </Segment>
 )
 
 // other valid props
 expectType(
-  <Segment direction="column" stretch>
-    <Button>Button 1</Button>
-    <Button>Button 2</Button>
+  <Segment flexDirection="column">
+    <Segment.Item>
+      <Button>Button 1</Button>
+    </Segment.Item>
+    <Segment.Item>
+      <Button>Button 2</Button>
+    </Segment.Item>
   </Segment>
 )

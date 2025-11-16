@@ -1,29 +1,12 @@
 import { ElementType } from 'react'
 
-import { BoxProps, ButtonProps, HtmlTagProps } from 'lib/components'
-import { RespValue } from 'lib/definitions'
+import { FlexProps } from 'lib/components'
 
-export const SEGMENT_DIRECTIONS = ['row', 'column'] as const
+export const DEFAULT_SEGMENT_FLEX_DIRECTION: SegmentProps['flexDirection'] = 'row'
 
-export type SegmentDirection = (typeof SEGMENT_DIRECTIONS)[number]
+type PropsFromFlex<T extends ElementType = 'div'> = Pick<
+  FlexProps<T>,
+  'children' | 'tag' | 'tagAttrs' | 'tagRef' | 'flexDirection'
+>
 
-type SegmentOwnProps = {
-  direction?: RespValue<SegmentDirection>
-  stretch?: RespValue<boolean>
-}
-
-type PropsFromHtmlTag<T extends ElementType = 'div'> = Pick<
-  HtmlTagProps<T>,
-  'tag' | 'tagAttrs' | 'tagRef'
-> & {
-  children: HtmlTagProps<T>['children']
-}
-
-type PropsFromBox = Pick<BoxProps, 'variant' | 'color' | 'intent'>
-
-type PropsFromButton = Pick<ButtonProps, 'size'>
-
-export type SegmentProps<T extends ElementType = 'div'> = PropsFromHtmlTag<T> &
-  PropsFromBox &
-  PropsFromButton &
-  SegmentOwnProps
+export type SegmentProps<T extends ElementType = 'div'> = PropsFromFlex<T>

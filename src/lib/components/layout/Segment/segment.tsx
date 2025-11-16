@@ -1,87 +1,48 @@
-import {
-  cloneElement,
-  ComponentProps,
-  ComponentRef,
-  ElementType,
-  PropsWithoutRef,
-  useLayoutEffect,
-  useRef,
-  Children,
-  ReactElement,
-} from 'react'
-
+import { ComponentProps, ElementType, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
 import { Flex } from 'lib/components'
-import { applyRespValues } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
-import { useScreen } from 'lib/hooks'
+import { WithSlots } from 'lib/components/internal'
 
-import { SegmentProps, SEGMENT_DIRECTIONS } from './definitions'
+import { DEFAULT_SEGMENT_FLEX_DIRECTION, SegmentProps } from './definitions'
 
 import './segment.scss'
 
 export const Segment = <T extends ElementType = 'div'>({
-  // HtmlTag
+  // Flex
   children,
   tag,
   tagAttrs,
   tagRef,
-  // Box
-  variant,
-  color,
-  intent,
-  // Button
-  size,
-  // own
-  direction = SEGMENT_DIRECTIONS[0],
-  stretch = false,
+  flexDirection = DEFAULT_SEGMENT_FLEX_DIRECTION,
 }: SegmentProps<T>) => {
-  const ref = useRef<ComponentRef<T>>(null)
-
-  const { bp } = useScreen()
-
-  useLayoutEffect(() => {
-    applyRespValues(
-      'dataset',
-      tagRef || ref,
-      bp,
-      {
-        direction,
-        stretch,
-      },
-      'Segment'
-    )
-  }, [bp, direction, stretch])
-
   return (
-    <Flex
-      tag={tag}
-      tagAttrs={
-        {
-          ...tagAttrs,
-          className: classNames(withPrefix('segment'), tagAttrs?.className),
-        } as PropsWithoutRef<ComponentProps<T>>
-      }
-      tagRef={tagRef || ref}
-      flexWrap="nowrap"
+    <WithSlots<'Segment.Item'>
+      childrenToVerify={children}
+      componentName="Segment"
+      slotsConfig={[{ name: 'Segment.Item', required: true, allowMultiple: true }]}
     >
-      {Children.toArray(children).map((child, index) => {
-        const finalChild = child as ReactElement<any>
-
+      {({ slotsByName }) => {
         return (
-          <Flex.Item key={index}>
-            {cloneElement(finalChild, {
-              ...finalChild.props,
-              variant: finalChild.props.variant ?? variant,
-              color: finalChild.props.color ?? color,
-              intent: finalChild.props.intent ?? intent,
-              size: finalChild.props.size ?? size,
-            })}
-          </Flex.Item>
+          <Flex
+            tag={tag}
+            tagAttrs={
+              {
+                ...tagAttrs,
+                className: classNames(withPrefix('segment'), tagAttrs?.className),
+              } as PropsWithoutRef<ComponentProps<T>>
+            }
+            tagRef={tagRef}
+            flexDirection={flexDirection}
+            flexWrap="nowrap"
+            alignItems="stretch"
+          >
+            {slotsByName['Segment.Item']}
+          </Flex>
         )
-      })}
-    </Flex>
+      }}
+    </WithSlots>
   )
 }
 

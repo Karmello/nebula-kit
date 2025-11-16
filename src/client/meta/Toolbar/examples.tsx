@@ -26,9 +26,13 @@ const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarProps>['examples'] = [
           </Box>
         </Toolbar.Start>
         <Toolbar.Main>
-          <Segment direction={{ base: 'column', md: 'row' }} stretch={{ base: true, md: false }}>
-            <Button>Page 1</Button>
-            <Button>Page 2</Button>
+          <Segment flexDirection={{ base: 'column', md: 'row' }}>
+            <Segment.Item>
+              <Button fullWidth>Page 1</Button>
+            </Segment.Item>
+            <Segment.Item>
+              <Button fullWidth>Page 2</Button>
+            </Segment.Item>
           </Segment>
         </Toolbar.Main>
         <Toolbar.End>
