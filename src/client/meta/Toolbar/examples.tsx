@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Box, Button, ButtonGroup, Toolbar } from 'lib/components'
+import { Box, Button, Segment, Toolbar } from 'lib/components'
 import { ToolbarProps } from 'lib/components/layouts/Toolbar/definitions'
 
 const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarProps>['examples'] = [
@@ -26,10 +26,10 @@ const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarProps>['examples'] = [
           </Box>
         </Toolbar.Start>
         <Toolbar.Main>
-          <ButtonGroup attached direction={{ base: 'column', md: 'row' }} stretch={{ base: true, md: false }}>
+          <Segment direction={{ base: 'column', md: 'row' }} stretch={{ base: true, md: false }}>
             <Button>Page 1</Button>
             <Button>Page 2</Button>
-          </ButtonGroup>
+          </Segment>
         </Toolbar.Main>
         <Toolbar.End>
           <Button iconName="chevron-down" />

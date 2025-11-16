@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 import { BoxProps, HtmlTagProps } from 'lib/components'
 import { ScaleValue, Sizes } from 'lib/definitions'
 import { TEXT_TYPOGRAPHY_CONFIG } from 'lib/components/base/Text/definitions'
@@ -50,6 +52,8 @@ type InputOwnProps = {
   onChange?: (value: string) => void
   onBlur?: React.FocusEventHandler<HTMLInputElement>
   size?: InputSize
+  startSlot?: ReactNode
+  endSlot?: ReactNode
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'input'>, 'tagAttrs' | 'tagRef'>

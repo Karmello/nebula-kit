@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { ComponentMeta } from 'client/definitions'
-import { Input, InputProps } from 'lib/components'
+import { Button, Input, InputProps } from 'lib/components'
 
 const InputControlled = () => {
   const [value, setValue] = useState<string>('value')
@@ -21,6 +21,10 @@ const INPUT_EXAMPLES_META: ComponentMeta<InputProps>['examples'] = [
 return (
   <Input value={value} onChange={onChange} />
 )`,
+  },
+  {
+    description: 'slots ...',
+    jsx: <Input startSlot={<Button iconName="search" />} endSlot={<Button iconName="close" />} />,
   },
 ]
 

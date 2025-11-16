@@ -32,7 +32,7 @@ If a required slot is missing, NebulaKit logs a warning in the console to help y
 Optional slots are ignored when absent, so you can extend layouts without noise."
       />
       <Spacer blockSize={60} />
-      <Text bold>Example 1</Text>
+      <Text bold>Example</Text>
       <CodeSnippet
         code={`<DropdownList>
   <DropdownList.Trigger>
@@ -42,15 +42,6 @@ Optional slots are ignored when absent, so you can extend layouts without noise.
   <DropdownList.Item>Item 2</DropdownList.Item>
   <DropdownList.Item>Item 3</DropdownList.Item>
 </DropdownList>`}
-      />
-      <Spacer blockSize={40} />
-      <Text bold>Example 2</Text>
-      <CodeSnippet
-        code={`<ButtonGroup>
-  <Button>Button 1</Button>
-  <Button>Button 2</Button>
-  <Button>Button 3</Button>
-</ButtonGroup>`}
       />
     </Box>
   )

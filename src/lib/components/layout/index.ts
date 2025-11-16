@@ -1,5 +1,6 @@
 export * from './Flex'
 export * from './Grid'
+export * from './Segment'
 export * from './Spacer'
 export * from './Table'
 export * from './WithIcon'

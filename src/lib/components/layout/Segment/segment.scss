@@ -1,0 +1,55 @@
+.neb-segment {
+  .neb-box {
+    border-radius: 0;
+  }
+}
+
+.neb-box[data-neb-segment-direction='row'] {
+  &[data-neb-segment-stretch='true'] {
+    .neb-flex-item {
+      flex: 1;
+    }
+  }
+
+  .neb-flex-item:first-child {
+    > .neb-box {
+      border-top-left-radius: var(--neb-border-radius);
+      border-bottom-left-radius: var(--neb-border-radius);
+    }
+  }
+  .neb-flex-item:last-child {
+    > .neb-box {
+      border-top-right-radius: var(--neb-border-radius);
+      border-bottom-right-radius: var(--neb-border-radius);
+    }
+  }
+}
+
+.neb-segment[data-neb-segment-direction='column'] {
+  flex-direction: column;
+
+  &[data-neb-segment-stretch='true'] {
+    align-items: stretch;
+  }
+
+  .neb-flex-item:first-child {
+    > .neb-box {
+      border-top-left-radius: var(--neb-border-radius);
+      border-top-right-radius: var(--neb-border-radius);
+    }
+  }
+  .neb-flex-item:last-child {
+    > .neb-box {
+      border-bottom-left-radius: var(--neb-border-radius);
+      border-bottom-right-radius: var(--neb-border-radius);
+    }
+  }
+}
+
+.neb-segment[data-neb-segment-stretch='true'] {
+  .neb-flex-item {
+    > .neb-box {
+      inline-size: 100%;
+    }
+  }
+}

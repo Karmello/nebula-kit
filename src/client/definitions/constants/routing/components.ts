@@ -21,6 +21,7 @@ export const COMPONENT_CATEGORIES = [
       { key: 'flex', label: 'Flex', sections: COMPONENT_SECTIONS },
       { key: 'grid', label: 'Grid', sections: COMPONENT_SECTIONS },
       { key: 'table', label: 'Table', sections: COMPONENT_SECTIONS },
+      { key: 'segment', label: 'Segment', sections: COMPONENT_SECTIONS },
       { key: 'spacer', label: 'Spacer', sections: COMPONENT_SECTIONS },
       { key: 'with-icon', label: 'WithIcon', sections: COMPONENT_SECTIONS },
     ],
@@ -38,7 +39,6 @@ export const COMPONENT_CATEGORIES = [
     label: 'Controls',
     items: [
       { key: 'button', label: 'Button', sections: COMPONENT_SECTIONS },
-      { key: 'button-group', label: 'ButtonGroup', sections: COMPONENT_SECTIONS },
       { key: 'link', label: 'Link', sections: COMPONENT_SECTIONS },
     ],
   },

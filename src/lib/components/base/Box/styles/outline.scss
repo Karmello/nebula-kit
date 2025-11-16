@@ -1,14 +1,15 @@
 @use 'styles/definitions/definitions.scss' as *;
 
 .neb-box[data-neb-box-variant='outline'] {
+  background-color: var(--neb-background);
+  color: var(--neb-text);
+  border-width: var(--neb-border-width);
+  --neb-ripple-bg: var(--neb-text);
+
   @each $intent in $neb-intents {
     &[data-neb-box-intent='#{$intent}'] {
-      --neb-ripple-bg: var(--neb-text);
-
       // rest
       border-color: var(--neb-#{$intent}-outline);
-      background-color: var(--neb-background);
-      color: var(--neb-text);
 
       // interactive
       &[data-neb-box-interactive='true'] {

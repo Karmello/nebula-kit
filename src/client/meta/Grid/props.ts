@@ -25,7 +25,7 @@ const GRID_PROPS_META: ComponentMeta<GridProps>['props'] = {
     description: "Sets how the grid's rows are laid out.",
   },
   gridAutoRows: {
-    options: ['string'],
+    options: ['CSS'],
     defaultValue: 'auto',
     isRequired: false,
     isResponsive: true,

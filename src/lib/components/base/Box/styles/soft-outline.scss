@@ -1,6 +1,9 @@
 @use 'styles/definitions/definitions.scss' as *;
 
 .neb-box[data-neb-box-variant='soft-outline'] {
+  border-width: var(--neb-border-width);
+  background-color: var(--neb-background);
+
   @each $intent in $neb-intents {
     &[data-neb-box-intent='#{$intent}'] {
       --neb-ripple-bg: var(--neb-#{$intent}-soft-outline-hover);
@@ -8,7 +11,6 @@
       // rest
       border-color: var(--neb-#{$intent}-soft-outline);
       color: var(--neb-#{$intent}-soft-outline);
-      background-color: var(--neb-background);
 
       // interactive
       &[data-neb-box-interactive='true'] {

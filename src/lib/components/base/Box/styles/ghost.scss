@@ -1,15 +1,14 @@
 @use 'styles/definitions/definitions.scss' as *;
 
 .neb-box[data-neb-box-variant='ghost'] {
+  background-color: transparent;
+
   @each $intent in $neb-intents {
     &[data-neb-box-intent='#{$intent}'] {
       --neb-ripple-bg: var(--neb-#{$intent}-ghost-hover);
 
       // rest
       color: var(--neb-#{$intent}-ghost);
-      background-color: transparent;
-      border-color: transparent;
-      border-width: 0;
 
       // interactive
       &[data-neb-box-interactive='true'] {

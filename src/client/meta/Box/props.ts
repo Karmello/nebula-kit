@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { COLORS, CSS_DISPLAY, CSS_OVERFLOW, CSS_POSITION, CSS_TEXT_ALIGN } from 'lib/definitions'
-import { BoxProps, BOX_VARIANTS, DEFAULT_BOX_VARIANT, BOX_INTENTS } from 'lib/components/base/Box/definitions'
+import { BoxProps, BOX_VARIANTS, BOX_INTENTS } from 'lib/components/base/Box/definitions'
 
 import {
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
@@ -119,7 +119,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   interactive: {
     options: ['boolean'],
     defaultValue: 'false',
-    description: 'Enables hover, active and focus states.',
+    description: 'Enables hover styling.',
   },
   left: {
     options: ['ScaleValue', 'CSS'],
@@ -279,7 +279,6 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   variant: {
     options: Object.values(BOX_VARIANTS),
-    defaultValue: DEFAULT_BOX_VARIANT,
     isResponsive: true,
     description: 'Visual style variant.',
   },

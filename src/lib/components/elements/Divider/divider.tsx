@@ -36,6 +36,7 @@ export const Divider = ({
       color={color}
       intent={intent}
       blockSize={size !== undefined ? NEBKIT_SIZES_MAP.borderWidthSize[size] : borderWidth}
+      borderWidth={0}
       marginBlock={marginBlock}
       marginTop={marginTop}
       marginBottom={marginBottom}

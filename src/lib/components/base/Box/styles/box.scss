@@ -50,12 +50,6 @@
   padding: initial;
 }
 
-.neb-box[data-neb-box-variant='outline'],
-.neb-box[data-neb-box-variant='soft-outline'],
-.neb-box[data-neb-box-interactive='true'] {
-  border-width: var(--neb-border-width);
-}
-
 .neb-box[data-neb-box-disabled='true'] {
   pointer-events: none;
 }

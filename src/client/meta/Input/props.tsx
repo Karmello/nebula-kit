@@ -17,6 +17,9 @@ const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
     options: ['string'],
     description: 'Initial value displayed when the component is used in uncontrolled mode.',
   },
+  endSlot: {
+    options: [],
+  },
   intent: {
     ...BOX_PROPS_META.intent,
     defaultValue: String(DEFAULT_INPUT_INTENT),
@@ -34,6 +37,9 @@ const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
     defaultValue: DEFAULT_INPUT_SIZE,
     description:
       'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
+  },
+  startSlot: {
+    options: [],
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,

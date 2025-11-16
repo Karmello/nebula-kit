@@ -6,7 +6,6 @@ import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { applyRespValues, applyStaticDataset } from 'lib/service'
 
-import { DEFAULT_BOX_VARIANT } from './definitions'
 import './styles/box.scss'
 
 export const Box = <T extends ElementType = 'div'>({
@@ -16,7 +15,7 @@ export const Box = <T extends ElementType = 'div'>({
   tagAttrs,
   tagRef,
   // own
-  variant = DEFAULT_BOX_VARIANT,
+  variant,
   intent,
   borderIntent,
   color,

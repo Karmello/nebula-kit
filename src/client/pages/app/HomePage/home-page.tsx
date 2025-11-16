@@ -1,6 +1,6 @@
 import { sentenceCase } from 'change-case'
 
-import { Box, ButtonGroup, Divider, Flex, Button, Link, Section, Select, Spacer, Text } from 'lib/components'
+import { Box, Divider, Flex, Button, Link, Section, Select, Spacer, Text, Segment } from 'lib/components'
 
 import { useNebkitStore } from 'lib/state'
 import { Color, COLORS, THEMES } from 'lib/definitions'
@@ -40,7 +40,7 @@ export const HomePage = () => {
             predictable, stable and effortless to scale.
           </Text>
           <Spacer blockSize={30} />
-          <ButtonGroup gap={10}>
+          <Flex gap={10} flexWrap="wrap">
             <Link
               href="/foundations"
               onClick={() => {
@@ -68,14 +68,14 @@ export const HomePage = () => {
                 Components
               </Button>
             </Link>
-          </ButtonGroup>
+          </Flex>
           <Spacer blockSize={50} />
           <Divider />
           <Spacer blockSize={30} />
           <Flex flexWrap="wrap" gap={30}>
             <Flex.Item>
               <Text bold>Theme</Text>
-              <ButtonGroup key={theme} attached size="sm">
+              <Segment key={theme} size="sm">
                 {THEMES.map(key => (
                   <Button
                     key={key}
@@ -85,7 +85,7 @@ export const HomePage = () => {
                     {sentenceCase(key)}
                   </Button>
                 ))}
-              </ButtonGroup>
+              </Segment>
             </Flex.Item>
             <Flex.Item>
               <Text bold>Brand</Text>

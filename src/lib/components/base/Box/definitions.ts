@@ -15,8 +15,6 @@ import { HtmlTagProps } from 'lib/components'
 export const BOX_VARIANTS = ['solid', 'outline', 'soft-outline', 'ghost'] as const
 export const BOX_INTENTS = ['neutral', 'muted', 'tertiary', 'secondary', 'primary', 'inverse'] as const
 
-export const DEFAULT_BOX_VARIANT: BoxVariant = 'ghost'
-
 export type BoxVariant = (typeof BOX_VARIANTS)[number]
 export type BoxIntent = (typeof BOX_INTENTS)[number]
 

@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router'
 
-import { ButtonGroup, Button, Link } from 'lib/components'
+import { Button, Link, Segment } from 'lib/components'
 import { useNavigateTo } from 'client/services'
 import { PageKey } from 'client/definitions'
 import { useComponentsPageStore, useFoundationsPageStore } from 'client/store'
@@ -21,7 +21,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
   const currentPageKey = pathname.split('/')[1]
 
   return (
-    <ButtonGroup direction={{ base: 'column', md: 'row' }} attached stretch={{ base: true, md: false }}>
+    <Segment direction={{ base: 'column', md: 'row' }} stretch={{ base: true, md: false }}>
       <Link
         href={`/${PageKey.foundations}`}
         onClick={async () => {
@@ -62,6 +62,6 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
           Pricing
         </Button>
       </Link>
-    </ButtonGroup>
+    </Segment>
   )
 }

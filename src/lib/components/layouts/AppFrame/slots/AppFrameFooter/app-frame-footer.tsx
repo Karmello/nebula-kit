@@ -33,6 +33,7 @@ export const AppFrameFooter = ({
       color={color}
       intent={intent}
       borderIntent={borderIntent}
+      borderWidth={0}
       borderTopWidth={borderWidth}
       borderRadius={0}
       {...paddings}

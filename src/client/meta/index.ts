@@ -5,7 +5,6 @@ import appFrameMeta from './AppFrame/_index'
 import boxMeta from './Box/_index'
 import breadcrumbMeta from './Breadcrumb/_index'
 import buttonMeta from './Button/_index'
-import buttonGroupMeta from './ButtonGroup/_index'
 import calloutMeta from './Callout/_index'
 import dividerMeta from './Divider/_index'
 import dropdownList from './DropdownList/_index'
@@ -24,6 +23,7 @@ import portalMeta from './Portal/_index'
 import revealMeta from './Reveal/_index'
 import rotateMeta from './Rotate/_index'
 import sectionMeta from './Section/_index'
+import segmentMeta from './Segment/_index'
 import selectMeta from './Select/_index'
 import sideNavMeta from './SideNav/_index'
 import spacerMeta from './Spacer/_index'
@@ -38,7 +38,6 @@ export default {
   AppFrame: appFrameMeta,
   Box: boxMeta,
   Breadcrumb: breadcrumbMeta,
-  ButtonGroup: buttonGroupMeta,
   Button: buttonMeta,
   Callout: calloutMeta,
   Divider: dividerMeta,
@@ -58,6 +57,7 @@ export default {
   Reveal: revealMeta,
   Rotate: rotateMeta,
   Section: sectionMeta,
+  Segment: segmentMeta,
   Select: selectMeta,
   SideNav: sideNavMeta,
   Spacer: spacerMeta,

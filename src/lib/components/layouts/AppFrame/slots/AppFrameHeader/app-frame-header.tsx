@@ -40,6 +40,7 @@ export const AppFrameHeader = ({
       color={color}
       intent={intent}
       borderIntent={borderIntent}
+      borderWidth={0}
       borderBottomWidth={borderWidth}
       borderRadius={0}
       {...paddings}
