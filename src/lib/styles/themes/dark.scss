@@ -73,17 +73,18 @@ html[data-theme='dark'] {
   }
 
   .neb-box[data-neb-box-variant='solid'] {
-    &[data-neb-box-intent='primary'],
     &[data-neb-box-intent='inverse'] {
       color: var(--neb-background);
       --neb-ripple-bg: var(--neb-background);
     }
 
     &[data-neb-box-intent='primary'] {
-      &[data-neb-box-color='purple'],
-      &[data-neb-box-color='brown'] {
-        color: var(--neb-text);
-        --neb-ripple-bg: var(--neb-text);
+      &[data-neb-box-color='cyan'],
+      &[data-neb-box-color='green'],
+      &[data-neb-box-color='yellow'],
+      &[data-neb-box-color='amber'] {
+        color: var(--neb-background);
+        --neb-ripple-bg: var(--neb-background);
       }
     }
   }

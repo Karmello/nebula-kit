@@ -12,6 +12,7 @@ import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
+  color: BOX_PROPS_META.color,
   defaultValue: {
     options: ['string'],
     description: 'Initial value displayed when the component is used in uncontrolled mode.',

@@ -20,6 +20,7 @@ export const Input = ({
   tagRef,
   // Box
   variant = DEFAULT_INPUT_VARIANT,
+  color,
   intent = DEFAULT_INPUT_INTENT,
   // own
   defaultValue,
@@ -58,6 +59,7 @@ export const Input = ({
       }}
       tagRef={tagRef}
       variant={variant}
+      color={color}
       intent={intent}
       inlineSize="100%"
       interactive
