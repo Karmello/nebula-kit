@@ -1,0 +1,36 @@
+@use 'styles/definitions/definitions.scss' as *;
+
+.neb-box[data-neb-box-variant='soft-outline'] {
+  @each $intent in $neb-intents {
+    &[data-neb-box-intent='#{$intent}'] {
+      --neb-ripple-bg: var(--neb-#{$intent}-soft-outline-hover);
+
+      // rest
+      border-color: var(--neb-#{$intent}-soft-outline);
+      color: var(--neb-#{$intent}-soft-outline);
+      background-color: var(--neb-background);
+
+      // interactive
+      &[data-neb-box-interactive='true'] {
+        // hover
+        &:not([data-neb-box-hovered-by-default]):hover,
+        &[data-neb-box-hovered-by-default='true'],
+        &:focus-visible {
+          border-color: var(--neb-#{$intent}-soft-outline-hover);
+          color: var(--neb-#{$intent}-soft-outline-hover);
+        }
+      }
+    }
+  }
+
+  &[data-neb-box-interactive='true']:focus-visible {
+    // border-color: var(--neb-focus-border) !important;
+    box-shadow: inset 0 0 0 1px var(--neb-text);
+  }
+
+  // neutral intent text
+  &[data-neb-box-intent='neutral'] {
+    color: var(--neb-text) !important;
+    --neb-ripple-bg: var(--neb-text);
+  }
+}

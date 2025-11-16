@@ -64,7 +64,7 @@ export const CatalogPageTemplate = ({
                           }}
                           intent={{
                             base: isItemSelected ? 'secondary' : 'tertiary',
-                            lg: isItemSelected ? 'tertiary' : 'neutral',
+                            lg: isItemSelected ? 'muted' : 'neutral',
                           }}
                         >
                           {label}
@@ -113,7 +113,7 @@ export const CatalogPageTemplate = ({
                               }}
                               intent={{
                                 base: isItemSelected ? 'secondary' : 'tertiary',
-                                lg: isItemSelected ? 'tertiary' : 'neutral',
+                                lg: isItemSelected ? 'muted' : 'neutral',
                               }}
                             >
                               {label}

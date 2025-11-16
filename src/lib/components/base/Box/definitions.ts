@@ -29,8 +29,6 @@ type BoxOwnProps = {
   interactive?: boolean
   disabled?: boolean
   hoveredByDefault?: boolean
-  disableActiveState?: boolean
-  activeOnFocus?: boolean
   // css
   opacity?: RespValue<number>
   textAlign?: RespValue<CssTextAlign>

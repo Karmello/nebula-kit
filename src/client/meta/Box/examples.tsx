@@ -62,14 +62,6 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="solid" color="gray" intent="primary" padding={20} interactive disableActiveState>
-        No active state
-      </Box>
-    ),
-    description: 'Interactive Box with active state disabled.',
-  },
-  {
-    jsx: (
       <Box variant="solid" color="gray" intent="primary" padding={20} interactive disabled>
         Disabled Box
       </Box>

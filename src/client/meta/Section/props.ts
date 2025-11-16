@@ -21,7 +21,6 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
     isRequired: true,
   },
   color: BOX_PROPS_META.color,
-  disableActiveState: BOX_PROPS_META.disableActiveState,
   heading: {
     options: ['string'],
     isRequired: true,

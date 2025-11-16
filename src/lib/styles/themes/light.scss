@@ -8,180 +8,67 @@ html[data-theme='light'] {
   @each $color in $neb-colors {
     &[data-brand='#{$color}'],
     .neb-box[data-neb-box-color='#{$color}'] {
-      // neutral solid
-      --neb-neutral-solid-bg: var(--neb-#{$color}-1);
-      --neb-neutral-solid-bg-hover: var(--neb-#{$color}-2);
-      --neb-neutral-solid-bg-active: var(--neb-#{$color}-3);
+      // solid
+      --neb-neutral-solid: var(--neb-#{$color}-1);
+      --neb-neutral-solid-hover: var(--neb-#{$color}-2);
+      --neb-muted-solid: var(--neb-#{$color}-2);
+      --neb-muted-solid-hover: var(--neb-#{$color}-3);
+      --neb-tertiary-solid: var(--neb-#{$color}-3);
+      --neb-tertiary-solid-hover: var(--neb-#{$color}-4);
+      --neb-secondary-solid: var(--neb-#{$color}-5);
+      --neb-secondary-solid-hover: var(--neb-#{$color}-6);
+      --neb-primary-solid: var(--neb-#{$color}-8);
+      --neb-primary-solid-hover: var(--neb-#{$color}-9);
+      --neb-inverse-solid: var(--neb-#{$color}-12);
+      --neb-inverse-solid-hover: var(--neb-#{$color}-15);
 
-      // muted solid
-      --neb-muted-solid-bg: var(--neb-#{$color}-2);
-      --neb-muted-solid-bg-hover: var(--neb-#{$color}-3);
-      --neb-muted-solid-bg-active: var(--neb-#{$color}-4);
-
-      // tertiary solid
-      --neb-tertiary-solid-bg: var(--neb-#{$color}-3);
-      --neb-tertiary-solid-bg-hover: var(--neb-#{$color}-4);
-      --neb-tertiary-solid-bg-active: var(--neb-#{$color}-5);
-
-      // secondary solid
-      --neb-secondary-solid-bg: var(--neb-#{$color}-5);
-      --neb-secondary-solid-bg-hover: var(--neb-#{$color}-6);
-      --neb-secondary-solid-bg-active: var(--neb-#{$color}-7);
-
-      // primary solid
-      --neb-primary-solid-bg: var(--neb-#{$color}-8);
-      --neb-primary-solid-bg-hover: var(--neb-#{$color}-9);
-      --neb-primary-solid-bg-active: var(--neb-#{$color}-10);
-      --neb-primary-solid-text: var(--neb-#{$color}-1);
-
-      // inverse solid
-      --neb-inverse-solid-bg: var(--neb-#{$color}-12);
-      --neb-inverse-solid-bg-hover: var(--neb-#{$color}-13);
-      --neb-inverse-solid-bg-active: var(--neb-#{$color}-15);
-      --neb-inverse-solid-text: var(--neb-#{$color}-1);
-
-      // neutral outline
-      --neb-neutral-outline-border: var(--neb-#{$color}-2);
-      --neb-neutral-outline-border-hover: var(--neb-#{$color}-3);
-      --neb-neutral-outline-border-active: var(--neb-#{$color}-4);
+      // outline
+      --neb-neutral-outline: var(--neb-#{$color}-2);
+      --neb-neutral-outline-hover: var(--neb-#{$color}-3);
       --neb-neutral-outline-bg-hover: var(--neb-#{$color}-1);
-      --neb-neutral-outline-bg-active: var(--neb-#{$color}-1);
+      --neb-muted-outline: var(--neb-#{$color}-2);
+      --neb-muted-outline-hover: var(--neb-#{$color}-3);
+      --neb-muted-outline-bg-hover: var(--neb-#{$color}-2);
+      --neb-tertiary-outline: var(--neb-#{$color}-3);
+      --neb-tertiary-outline-hover: var(--neb-#{$color}-4);
+      --neb-tertiary-outline-bg-hover: var(--neb-#{$color}-2);
+      --neb-secondary-outline: var(--neb-#{$color}-5);
+      --neb-secondary-outline-hover: var(--neb-#{$color}-6);
+      --neb-secondary-outline-bg-hover: var(--neb-#{$color}-2);
+      --neb-primary-outline: var(--neb-#{$color}-8);
+      --neb-primary-outline-hover: var(--neb-#{$color}-9);
+      --neb-primary-outline-bg-hover: var(--neb-#{$color}-2);
+      --neb-inverse-outline: var(--neb-#{$color}-12);
+      --neb-inverse-outline-hover: var(--neb-#{$color}-13);
+      --neb-inverse-outline-bg-hover: var(--neb-#{$color}-2);
 
-      // muted outline
-      --neb-muted-outline-border: var(--neb-#{$color}-2);
-      --neb-muted-outline-border-hover: var(--neb-#{$color}-3);
-      --neb-muted-outline-border-active: var(--neb-#{$color}-4);
-      --neb-muted-outline-bg-hover: var(--neb-#{$color}-1);
-      --neb-muted-outline-bg-active: var(--neb-#{$color}-2);
-
-      // tertiary outline
-      --neb-tertiary-outline-border: var(--neb-#{$color}-3);
-      --neb-tertiary-outline-border-hover: var(--neb-#{$color}-4);
-      --neb-tertiary-outline-border-active: var(--neb-#{$color}-5);
-      --neb-tertiary-outline-bg-hover: var(--neb-#{$color}-1);
-      --neb-tertiary-outline-bg-active: var(--neb-#{$color}-2);
-
-      // secondary outline
-      --neb-secondary-outline-border: var(--neb-#{$color}-5);
-      --neb-secondary-outline-border-hover: var(--neb-#{$color}-6);
-      --neb-secondary-outline-border-active: var(--neb-#{$color}-7);
-      --neb-secondary-outline-bg-hover: var(--neb-#{$color}-1);
-      --neb-secondary-outline-bg-active: var(--neb-#{$color}-2);
-
-      // primary outline
-      --neb-primary-outline-border: var(--neb-#{$color}-8);
-      --neb-primary-outline-border-hover: var(--neb-#{$color}-9);
-      --neb-primary-outline-border-active: var(--neb-#{$color}-10);
-      --neb-primary-outline-bg-hover: var(--neb-#{$color}-1);
-      --neb-primary-outline-bg-active: var(--neb-#{$color}-3);
-
-      // inverse outline
-      --neb-inverse-outline-border: var(--neb-#{$color}-12);
-      --neb-inverse-outline-border-hover: var(--neb-#{$color}-13);
-      --neb-inverse-outline-border-active: var(--neb-#{$color}-15);
-      --neb-inverse-outline-bg-hover: var(--neb-#{$color}-1);
-      --neb-inverse-outline-bg-active: var(--neb-#{$color}-3);
-
-      // neutral soft outline
-      --neb-neutral-soft-outline-border: var(--neb-#{$color}-2);
-      --neb-neutral-soft-outline-border-hover: var(--neb-#{$color}-3);
-      --neb-neutral-soft-outline-border-active: var(--neb-#{$color}-4);
-      --neb-neutral-soft-outline-bg-hover: var(--neb-#{$color}-1);
-      --neb-neutral-soft-outline-bg-active: var(--neb-#{$color}-1);
-
-      // muted soft outline
-      --neb-muted-soft-outline-border: var(--neb-#{$color}-2);
-      --neb-muted-soft-outline-border-hover: var(--neb-#{$color}-3);
-      --neb-muted-soft-outline-border-active: var(--neb-#{$color}-4);
-      --neb-muted-soft-outline-bg-hover: var(--neb-#{$color}-1);
-      --neb-muted-soft-outline-bg-active: var(--neb-#{$color}-1);
-
-      // tertiary soft outline
-      --neb-tertiary-soft-outline-border: var(--neb-#{$color}-3);
-      --neb-tertiary-soft-outline-border-hover: var(--neb-#{$color}-4);
-      --neb-tertiary-soft-outline-border-active: var(--neb-#{$color}-5);
-      --neb-tertiary-soft-outline-bg-hover: var(--neb-#{$color}-1);
-      --neb-tertiary-soft-outline-bg-active: var(--neb-#{$color}-1);
-
-      // secondary soft outline
-      --neb-secondary-soft-outline-border: var(--neb-#{$color}-5);
-      --neb-secondary-soft-outline-border-hover: var(--neb-#{$color}-6);
-      --neb-secondary-soft-outline-border-active: var(--neb-#{$color}-7);
-      --neb-secondary-soft-outline-bg-hover: var(--neb-#{$color}-1);
-      --neb-secondary-soft-outline-bg-active: var(--neb-#{$color}-1);
-
-      // primary soft outline
-      --neb-primary-soft-outline-border: var(--neb-#{$color}-8);
-      --neb-primary-soft-outline-border-hover: var(--neb-#{$color}-9);
-      --neb-primary-soft-outline-border-active: var(--neb-#{$color}-10);
-      --neb-primary-soft-outline-bg-hover: var(--neb-#{$color}-1);
-      --neb-primary-soft-outline-bg-active: var(--neb-#{$color}-2);
-
-      // inverse soft outline
-      --neb-inverse-soft-outline-border: var(--neb-#{$color}-12);
-      --neb-inverse-soft-outline-border-hover: var(--neb-#{$color}-13);
-      --neb-inverse-soft-outline-border-active: var(--neb-#{$color}-15);
-      --neb-inverse-soft-outline-bg-hover: var(--neb-#{$color}-1);
-      --neb-inverse-soft-outline-bg-active: var(--neb-#{$color}-3);
+      // soft outline
+      --neb-neutral-soft-outline: var(--neb-#{$color}-2);
+      --neb-neutral-soft-outline-hover: var(--neb-#{$color}-3);
+      --neb-muted-soft-outline: var(--neb-#{$color}-2);
+      --neb-muted-soft-outline-hover: var(--neb-#{$color}-3);
+      --neb-tertiary-soft-outline: var(--neb-#{$color}-3);
+      --neb-tertiary-soft-outline-hover: var(--neb-#{$color}-4);
+      --neb-secondary-soft-outline: var(--neb-#{$color}-5);
+      --neb-secondary-soft-outline-hover: var(--neb-#{$color}-6);
+      --neb-primary-soft-outline: var(--neb-#{$color}-8);
+      --neb-primary-soft-outline-hover: var(--neb-#{$color}-9);
+      --neb-inverse-soft-outline: var(--neb-#{$color}-12);
+      --neb-inverse-soft-outline-hover: var(--neb-#{$color}-13);
 
       // neutral ghost
-      --neb-neutral-ghost-text: var(--neb-#{$color}-15);
-
-      // muted ghost
-      --neb-muted-ghost-text: var(--neb-#{$color}-2);
-      --neb-muted-ghost-text-hover: var(--neb-#{$color}-3);
-      --neb-muted-ghost-text-active: var(--neb-#{$color}-4);
-
-      // tertiary ghost
-      --neb-tertiary-ghost-text: var(--neb-#{$color}-3);
-      --neb-tertiary-ghost-text-hover: var(--neb-#{$color}-4);
-      --neb-tertiary-ghost-text-active: var(--neb-#{$color}-5);
-
-      // secondary ghost
-      --neb-secondary-ghost-text: var(--neb-#{$color}-5);
-      --neb-secondary-ghost-text-hover: var(--neb-#{$color}-6);
-      --neb-secondary-ghost-text-active: var(--neb-#{$color}-7);
-
-      // primary ghost
-      --neb-primary-ghost-text: var(--neb-#{$color}-8);
-      --neb-primary-ghost-text-hover: var(--neb-#{$color}-9);
-      --neb-primary-ghost-text-active: var(--neb-#{$color}-10);
-
-      // inverse ghost
-      --neb-inverse-ghost-text: var(--neb-#{$color}-2);
+      --neb-neutral-ghost: var(--neb-#{$color}-15);
+      --neb-neutral-ghost-hover: var(--neb-#{$color}-15);
+      --neb-muted-ghost: var(--neb-#{$color}-2);
+      --neb-muted-ghost-hover: var(--neb-#{$color}-3);
+      --neb-tertiary-ghost: var(--neb-#{$color}-3);
+      --neb-tertiary-ghost-hover: var(--neb-#{$color}-4);
+      --neb-secondary-ghost: var(--neb-#{$color}-5);
+      --neb-secondary-ghost-hover: var(--neb-#{$color}-6);
+      --neb-primary-ghost: var(--neb-#{$color}-8);
+      --neb-primary-ghost-hover: var(--neb-#{$color}-9);
+      --neb-inverse-ghost: var(--neb-#{$color}-2);
+      --neb-inverse-ghost-hover: var(--neb-#{$color}-2);
     }
-  }
-
-  &[data-brand='teal'],
-  .neb-box[data-neb-box-color='teal'] {
-    // primary solid
-    --neb-primary-solid-text: var(--neb-teal-15);
-    --neb-primary-solid-text-hover: var(--neb-teal-1);
-  }
-
-  &[data-brand='cyan'],
-  .neb-box[data-neb-box-color='cyan'] {
-    // primary solid
-    --neb-primary-solid-text: var(--neb-cyan-15);
-    --neb-primary-solid-text-hover: var(--neb-cyan-1);
-  }
-
-  &[data-brand='green'],
-  .neb-box[data-neb-box-color='green'] {
-    // primary solid
-    --neb-primary-solid-text: var(--neb-green-15);
-    --neb-primary-solid-text-hover: var(--neb-green-1);
-  }
-
-  &[data-brand='yellow'],
-  .neb-box[data-neb-box-color='yellow'] {
-    // primary solid
-    --neb-primary-solid-text: var(--neb-yellow-15);
-  }
-
-  &[data-brand='amber'],
-  .neb-box[data-neb-box-color='amber'] {
-    // primary solid
-    --neb-primary-solid-text: var(--neb-amber-15);
   }
 }

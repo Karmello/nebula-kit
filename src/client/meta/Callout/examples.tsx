@@ -9,7 +9,7 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
       <>
         <Callout content="Callout text content" />
         <Spacer blockSize={20} />
-        <Callout content="Callout text content" variant="outline" />
+        <Callout content="Callout text content" variant="soft-outline" />
       </>
     ),
   },
@@ -20,7 +20,7 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
       <>
         <Callout content="Callout text content" status="success" />
         <Spacer blockSize={20} />
-        <Callout content="Callout text content" variant="outline" status="success" />
+        <Callout content="Callout text content" variant="soft-outline" status="success" />
       </>
     ),
   },
@@ -30,7 +30,7 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
       <>
         <Callout content="Callout text content" status="warning" />
         <Spacer blockSize={20} />
-        <Callout content="Callout text content" variant="outline" status="warning" />
+        <Callout content="Callout text content" variant="soft-outline" status="warning" />
       </>
     ),
   },
@@ -40,7 +40,7 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
       <>
         <Callout content="Callout text content" status="danger" />
         <Spacer blockSize={20} />
-        <Callout content="Callout text content" variant="outline" status="danger" />
+        <Callout content="Callout text content" variant="soft-outline" status="danger" />
       </>
     ),
   },

@@ -7,7 +7,7 @@ import { useScreen } from 'lib/hooks'
 import { applyRespValues, applyStaticDataset } from 'lib/service'
 
 import { DEFAULT_BOX_VARIANT } from './definitions'
-import './box.scss'
+import './styles/box.scss'
 
 export const Box = <T extends ElementType = 'div'>({
   // HtmlTag
@@ -24,8 +24,6 @@ export const Box = <T extends ElementType = 'div'>({
   interactive,
   disabled,
   hoveredByDefault,
-  disableActiveState,
-  activeOnFocus,
   // css
   opacity,
   textAlign,
@@ -187,8 +185,6 @@ export const Box = <T extends ElementType = 'div'>({
             interactive,
             disabled,
             hoveredByDefault,
-            disableActiveState,
-            activeOnFocus,
           }),
         } as PropsWithoutRef<ComponentProps<T>>
       }

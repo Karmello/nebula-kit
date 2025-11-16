@@ -16,7 +16,7 @@ export default () => {
       <Spacer />
       <Callout
         size="sm"
-        variant="outline"
+        variant="soft-outline"
         content="In rare cases, a component may not expose tagRef because it already uses a ref internally and overriding it would break existing functionality.
         However, in most situations you can rely on tagRef being available for direct access and control of the root element."
       />

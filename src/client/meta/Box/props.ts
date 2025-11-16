@@ -11,12 +11,6 @@ import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   ...HTML_TAG_PROPS_META,
-  activeOnFocus: {
-    options: ['boolean'],
-    defaultValue: 'false',
-    description:
-      'Activates the active visual state when the element gains focus. Works only with interactive on.',
-  },
   blockSize: {
     options: ['ScaleValue', 'CSS'],
     defaultValue: 'auto',
@@ -98,12 +92,6 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['boolean'],
     defaultValue: 'false',
     description: 'Disables the component and its interactions.',
-  },
-  disableActiveState: {
-    options: ['boolean'],
-    defaultValue: 'false',
-    description:
-      'Disables the active visual state, keeping the element unchanged when clicked or held. Works only with interactive on.',
   },
   display: {
     options: Object.values(CSS_DISPLAY),

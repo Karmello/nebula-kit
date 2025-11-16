@@ -2,6 +2,7 @@ import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef 
 import classNames from 'classnames'
 
 import { Box, Text, WithIcon } from 'lib/components'
+import { Ripple } from 'lib/components/internal'
 import { applyRespValues } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
@@ -45,7 +46,6 @@ export const Button = <T extends ButtonTag = 'button'>({
   const ref = useRef<ComponentRef<T>>(null)
 
   const { bp } = useScreen()
-
   const { brand } = useNebkitStore()
 
   useLayoutEffect(() => {
@@ -80,8 +80,10 @@ export const Button = <T extends ButtonTag = 'button'>({
       hoveredByDefault={hoveredByDefault}
       disabled={disabled}
       interactive
+      position="relative"
       {...BUTTON_SIZE_CONFIG[size]}
     >
+      <Ripple parentRef={tagRef || ref} />
       {iconName ? (
         <WithIcon
           tagAttrs={{ style: { inlineSize: children !== undefined ? '100%' : undefined } }}

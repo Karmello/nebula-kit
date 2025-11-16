@@ -30,11 +30,11 @@ export const Text = <T extends TextTag = 'p'>({
   // own
   typography = DEFAULT_TEXT_TYPOGRAPHY,
   scale = DEFAULT_TEXT_SCALE,
-  bold = false,
-  italic = false,
-  underline = false,
-  noWrap = false,
-  truncate = false,
+  bold,
+  italic,
+  underline,
+  noWrap,
+  truncate,
   clampLines,
   space,
 }: TextProps<T>) => {

@@ -42,7 +42,6 @@ const SECTION_EXAMPLES_META: ComponentMeta<SectionProps>['examples'] = [
         intent="primary"
         borderIntent="tertiary"
         interactive
-        disableActiveState
       >
         Content
       </Section>

@@ -61,7 +61,6 @@ export const Input = ({
       intent={intent}
       inlineSize="100%"
       interactive
-      activeOnFocus
       {...INPUT_SIZE_CONFIG[size || 'md']}
     />
   )

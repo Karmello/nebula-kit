@@ -1,0 +1,29 @@
+@use 'styles/definitions/definitions.scss' as *;
+
+.neb-box[data-neb-box-variant='ghost'] {
+  @each $intent in $neb-intents {
+    &[data-neb-box-intent='#{$intent}'] {
+      --neb-ripple-bg: var(--neb-#{$intent}-ghost-hover);
+
+      // rest
+      color: var(--neb-#{$intent}-ghost);
+      background-color: transparent;
+      border-color: transparent;
+      border-width: 0;
+
+      // interactive
+      &[data-neb-box-interactive='true'] {
+        // hover
+        &:not([data-neb-box-hovered-by-default]):hover,
+        &[data-neb-box-hovered-by-default='true'],
+        &:focus-visible {
+          color: var(--neb-#{$intent}-ghost-hover);
+        }
+      }
+    }
+  }
+
+  &[data-neb-box-interactive='true']:focus-visible {
+    box-shadow: inset 0 0 0 var(--neb-border-width) var(--neb-text);
+  }
+}

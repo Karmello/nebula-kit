@@ -32,7 +32,7 @@ export const PricingPage = () => {
         <Text>Choose the plan that fits your workflow.</Text>
         <Spacer blockSize={50} />
         <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }} gap={20}>
-          <Section heading="Free" variant="outline" iconName="leaf" interactive disableActiveState>
+          <Section heading="Free" variant="outline" intent="muted" iconName="leaf" interactive>
             <Text intent="neutral" bold>
               For newcomers.
             </Text>
@@ -61,14 +61,7 @@ export const PricingPage = () => {
               </Link>
             </Flex>
           </Section>
-          <Section
-            heading="Professional"
-            variant="outline"
-            intent="inverse"
-            iconName="zap"
-            interactive
-            disableActiveState
-          >
+          <Section heading="Professional" variant="outline" intent="inverse" iconName="zap" interactive>
             <Text intent="neutral" bold>
               For individual developers.
             </Text>
@@ -108,7 +101,6 @@ export const PricingPage = () => {
             intent="primary"
             iconName="users"
             interactive
-            disableActiveState
           >
             <Text intent="neutral" bold>
               For small teams up to 10 members.
@@ -149,7 +141,6 @@ export const PricingPage = () => {
             intent="primary"
             iconName="globe"
             interactive
-            disableActiveState
           >
             <Text intent="neutral" bold>
               For large organizations.
