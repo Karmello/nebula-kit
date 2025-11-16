@@ -80,6 +80,8 @@ html[data-theme='light'] {
     }
 
     &[data-neb-box-intent='primary'] {
+      &[data-neb-box-color='cyan'],
+      &[data-neb-box-color='green'],
       &[data-neb-box-color='yellow'],
       &[data-neb-box-color='amber'] {
         color: var(--neb-text);
