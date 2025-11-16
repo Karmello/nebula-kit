@@ -1,10 +1,3 @@
-.neb-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px var(--neb-gray-1) inset;
-  -webkit-text-fill-color: var(--neb-gray-15);
-  -webkit-background-clip: text;
-  border-color: var(--neb-text) !important;
-}
-
 .neb-input::placeholder {
   opacity: 0.4;
 }
