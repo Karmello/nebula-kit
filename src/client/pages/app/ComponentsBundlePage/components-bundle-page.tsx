@@ -25,7 +25,7 @@ export const ComponentsBundlePage = ({ plan }: Props) => {
 
   return (
     <Box paddingTop={15} paddingInline={{ base: 20, lg: 50 }}>
-      <Section heading={plan === 'free' ? 'Core bundle' : 'Pro bundle'} color="blue" iconName="package">
+      <Section heading={plan === 'free' ? 'Core bundle' : 'Pro bundle'} iconName="package">
         {plan === 'free' ? (
           <Text>All components available for free.</Text>
         ) : (
@@ -46,8 +46,9 @@ export const ComponentsBundlePage = ({ plan }: Props) => {
               key={item.name}
               heading={item.name}
               size="sm"
-              variant="outline"
+              variant="soft-outline"
               borderIntent="tertiary"
+              color="blue"
               intent="primary"
             >
               <Text intent="neutral">{item.title}</Text>
