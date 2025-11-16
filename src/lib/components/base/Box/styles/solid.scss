@@ -29,10 +29,4 @@
       inset 0 0 0 var(--neb-border-width) var(--neb-text),
       inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-background);
   }
-
-  &[data-neb-box-intent='primary'],
-  &[data-neb-box-intent='inverse'] {
-    color: var(--neb-background);
-    --neb-ripple-bg: var(--neb-background);
-  }
 }

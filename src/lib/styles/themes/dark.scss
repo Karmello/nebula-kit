@@ -71,4 +71,19 @@ html[data-theme='dark'] {
       --neb-inverse-ghost-hover: var(--neb-#{$color}-14);
     }
   }
+
+  .neb-box[data-neb-box-variant='solid'] {
+    &[data-neb-box-intent='inverse'] {
+      color: var(--neb-background);
+      --neb-ripple-bg: var(--neb-background);
+    }
+
+    &[data-neb-box-intent='primary'] {
+      &[data-neb-box-color='yellow'],
+      &[data-neb-box-color='amber'] {
+        color: var(--neb-background);
+        --neb-ripple-bg: var(--neb-background);
+      }
+    }
+  }
 }
