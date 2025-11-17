@@ -27,8 +27,8 @@ export const Loader = ({
         },
       }}
       tagRef={tagRef}
-      blockSize={LOADER_SIZE_CONFIG[size]}
-      inlineSize={LOADER_SIZE_CONFIG[size]}
+      blockSize={LOADER_SIZE_CONFIG[size || 'md']}
+      inlineSize={LOADER_SIZE_CONFIG[size || 'md']}
       color={color}
     />
   )
