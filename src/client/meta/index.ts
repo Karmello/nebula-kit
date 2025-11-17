@@ -17,6 +17,7 @@ import hydrationGateMeta from './HydrationGate/_index'
 import iconMeta from './Icon/_index'
 import inputMeta from './Input/_index'
 import linkMeta from './Link/_index'
+import loaderMeta from './Loader/_index'
 import markerListMeta from './MarkerList/_index'
 import nebkitProviderMeta from './NebkitProvider/_index'
 import portalMeta from './Portal/_index'
@@ -51,6 +52,7 @@ export default {
   Icon: iconMeta,
   Input: inputMeta,
   Link: linkMeta,
+  Loader: loaderMeta,
   MarkerList: markerListMeta,
   NebkitProvider: nebkitProviderMeta,
   Portal: portalMeta,
