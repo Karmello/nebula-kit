@@ -12,8 +12,8 @@ export const LoginPage = () => {
       <Box inlineSize="400px" maxInlineSize="100%" margin="0 auto">
         <Section heading="Log in" iconName="log-in">
           <Form
-            onValidSubmission={data => {
-              console.log(data)
+            onValidSubmission={async () => {
+              return await new Promise(resolve => setTimeout(resolve, 1000))
             }}
             onInvalidSubmission={errors => {
               console.log(errors)

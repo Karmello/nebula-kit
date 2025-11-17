@@ -22,6 +22,14 @@
           color: var(--neb-#{$intent}-soft-outline-hover);
         }
       }
+
+      // disabled
+      &[data-neb-box-disabled='true'] {
+        color: var(--neb-#{$intent}-soft-outline-disabled);
+      }
+      &[data-neb-box-disabled='true']:-webkit-autofill {
+        -webkit-text-fill-color: var(--neb-#{$intent}-soft-outline-disabled);
+      }
     }
   }
 
@@ -31,7 +39,7 @@
   }
 
   // neutral intent text
-  &[data-neb-box-intent='neutral'] {
+  &[data-neb-box-intent='neutral']:not([data-neb-box-disabled='true']) {
     color: var(--neb-text) !important;
     --neb-ripple-bg: var(--neb-text);
   }

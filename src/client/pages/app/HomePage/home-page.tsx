@@ -77,9 +77,8 @@ export const HomePage = () => {
               <Text bold>Theme</Text>
               <Segment key={theme}>
                 {THEMES.map(key => (
-                  <Segment.Item>
+                  <Segment.Item key={key}>
                     <Button
-                      key={key}
                       intent={key === theme ? 'inverse' : 'tertiary'}
                       size="sm"
                       tagAttrs={{ onClick: () => setTheme(key) }}

@@ -33,6 +33,7 @@ export type ButtonSize = (typeof BUTTON_SIZES)[number]
 type ButtonOwnProps = {
   size?: ButtonSize
   fullWidth?: RespValue<boolean>
+  loading?: boolean
 }
 
 type PropsFromHtmlTag<T extends ButtonTag = 'button'> = HtmlTagProps<T>

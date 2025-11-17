@@ -58,6 +58,6 @@ type InputOwnProps = {
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'input'>, 'tagAttrs' | 'tagRef'>
 
-type PropsFromBox = Pick<BoxProps<'input'>, 'variant' | 'color' | 'intent'>
+type PropsFromBox = Pick<BoxProps<'input'>, 'variant' | 'color' | 'intent' | 'disabled'>
 
 export type InputProps = PropsFromHtmlTag & PropsFromBox & InputOwnProps

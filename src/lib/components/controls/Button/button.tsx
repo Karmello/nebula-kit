@@ -1,7 +1,7 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Text, WithIcon } from 'lib/components'
+import { Box, Text, WithIcon, Loader } from 'lib/components'
 import { Ripple } from 'lib/components/internal'
 import { applyRespValues } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
@@ -42,6 +42,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   // own
   size = DEFAULT_BUTTON_SIZE,
   fullWidth,
+  loading,
 }: ButtonProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
 
@@ -70,7 +71,7 @@ export const Button = <T extends ButtonTag = 'button'>({
             tagAttrs?.className
           ),
           type: tagAttrs?.type || 'button',
-          style: { ...tagAttrs?.style, justifyContent },
+          style: { ...tagAttrs?.style, justifyContent, pointerEvents: loading ? 'none' : undefined },
         } as PropsWithoutRef<ComponentProps<T>>
       }
       tagRef={tagRef || ref}
@@ -78,7 +79,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       color={color || brand}
       intent={intent}
       hoveredByDefault={hoveredByDefault}
-      disabled={disabled}
+      disabled={disabled || loading}
       interactive
       position="relative"
       {...BUTTON_SIZE_CONFIG[size]}
@@ -99,6 +100,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       ) : (
         text
       )}
+      {loading && !disabled ? <Loader centered size={size} /> : null}
     </Box>
   )
 }

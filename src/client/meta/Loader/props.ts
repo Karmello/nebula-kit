@@ -6,6 +6,12 @@ import { BOX_PROPS_META } from '../Box/props'
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const LOADER_PROPS_META: ComponentMeta<LoaderProps>['props'] = {
+  centered: {
+    options: ['boolean'],
+    defaultValue: 'false',
+    description:
+      'Absolutely centers the loader in both axes. Requires a parent with position set to relative.',
+  },
   color: BOX_PROPS_META.color,
   intent: BOX_PROPS_META.intent,
   size: {

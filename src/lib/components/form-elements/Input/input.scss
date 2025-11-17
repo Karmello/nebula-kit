@@ -1,3 +1,7 @@
+.neb-input {
+  caret-color: var(--neb-text);
+}
+
 .neb-input::placeholder {
   opacity: 0.4;
 }

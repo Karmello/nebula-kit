@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Loader, LoaderProps } from 'lib/components'
+import { Box, Loader, LoaderProps } from 'lib/components'
 
 const LOADER_EXAMPLES_META: ComponentMeta<LoaderProps>['examples'] = [
   {
@@ -9,6 +9,15 @@ const LOADER_EXAMPLES_META: ComponentMeta<LoaderProps>['examples'] = [
   {
     description: 'Custom loader.',
     jsx: <Loader size="lg" intent="secondary" color="blue" />,
+  },
+  {
+    description:
+      'Absolutely centered Loader rendered inside a parent container with position set to relative.',
+    jsx: (
+      <Box position="relative">
+        <Loader centered />
+      </Box>
+    ),
   },
 ]
 

@@ -3,7 +3,15 @@ import { ButtonTag } from 'lib/components/controls/Button/definitions'
 
 export type DropdownListItemProps<T extends ButtonTag = 'button'> = Omit<
   ButtonProps<T>,
-  'children' | 'variant' | 'color' | 'intent' | 'size' | 'fullWidth' | 'hoveredByDefault' | 'iconAngle'
+  | 'children'
+  | 'variant'
+  | 'color'
+  | 'intent'
+  | 'size'
+  | 'fullWidth'
+  | 'hoveredByDefault'
+  | 'iconAngle'
+  | 'loading'
 > & {
   children: ButtonProps<T>['children']
 }

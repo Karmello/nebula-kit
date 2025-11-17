@@ -17,6 +17,7 @@ const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
     options: ['string'],
     description: 'Initial value displayed when the component is used in uncontrolled mode.',
   },
+  disabled: BOX_PROPS_META.disabled,
   endSlot: {
     options: ['ReactNode'],
     description: 'Component rendered on the right side of the Input.',

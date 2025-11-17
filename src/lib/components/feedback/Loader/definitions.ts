@@ -16,6 +16,7 @@ export type LoaderSize = (typeof LOADER_SIZES)[number]
 
 type LoaderOwnProps = {
   size?: LoaderSize
+  centered?: boolean
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps, 'tagAttrs' | 'tagRef'>

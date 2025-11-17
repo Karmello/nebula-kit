@@ -19,6 +19,14 @@
           color: var(--neb-#{$intent}-ghost-hover);
         }
       }
+
+      // disabled
+      &[data-neb-box-disabled='true'] {
+        color: var(--neb-#{$intent}-ghost-disabled);
+      }
+      &[data-neb-box-disabled='true']:-webkit-autofill {
+        -webkit-text-fill-color: var(--neb-#{$intent}-ghost-disabled);
+      }
     }
   }
 

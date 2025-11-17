@@ -21,6 +21,14 @@
           background-color: var(--neb-#{$intent}-outline-bg-hover);
         }
       }
+
+      // disabled
+      &[data-neb-box-disabled='true'] {
+        color: var(--neb-#{$intent}-outline-disabled);
+      }
+      &[data-neb-box-disabled='true']:-webkit-autofill {
+        -webkit-text-fill-color: var(--neb-#{$intent}-outline-disabled);
+      }
     }
   }
 

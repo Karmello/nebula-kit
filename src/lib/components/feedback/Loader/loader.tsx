@@ -16,6 +16,7 @@ export const Loader = ({
   color,
   // own
   size = DEFAULT_LOADER_SIZE,
+  centered,
 }: LoaderProps) => {
   return (
     <Box
@@ -23,13 +24,19 @@ export const Loader = ({
         ...tagAttrs,
         className: classNames(withPrefix('loader'), tagAttrs?.className || ''),
         style: {
-          borderTopColor: `var(--neb-${intent}-solid)`,
+          borderTopColor: `var(--neb-${intent}-solid, var(--neb-ripple-bg))`,
         },
       }}
       tagRef={tagRef}
       blockSize={LOADER_SIZE_CONFIG[size || 'md']}
       inlineSize={LOADER_SIZE_CONFIG[size || 'md']}
       color={color}
+      position={centered ? 'absolute' : undefined}
+      margin={centered ? 'auto' : undefined}
+      top={centered ? 0 : undefined}
+      right={centered ? 0 : undefined}
+      bottom={centered ? 0 : undefined}
+      left={centered ? 0 : undefined}
     />
   )
 }

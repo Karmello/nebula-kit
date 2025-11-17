@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { cloneElement, useState } from 'react'
 import classNames from 'classnames'
 
 import { Box, Segment } from 'lib/components'
@@ -22,6 +22,7 @@ export const Input = ({
   variant = DEFAULT_INPUT_VARIANT,
   color,
   intent = DEFAULT_INPUT_INTENT,
+  disabled,
   // own
   defaultValue,
   value,
@@ -43,7 +44,7 @@ export const Input = ({
 
   return (
     <Segment>
-      {startSlot ? <Segment.Item>{startSlot}</Segment.Item> : null}
+      {startSlot ? <Segment.Item>{cloneElement(startSlot as any, { disabled })}</Segment.Item> : null}
       <Segment.Item flex={1}>
         <Box
           tag="input"
@@ -53,8 +54,6 @@ export const Input = ({
             style: {
               ...tagAttrs?.style,
               fontSize: INPUT_SIZE_CONFIG[size || 'md'].fontSize + 'px',
-              color: 'var(--neb-text)',
-              caretColor: 'var(--neb-text)',
             },
             value: currentValue,
             onChange: e => {
@@ -66,12 +65,13 @@ export const Input = ({
           variant={variant}
           color={color}
           intent={intent}
+          disabled={disabled}
           inlineSize="100%"
           interactive
           {...INPUT_SIZE_CONFIG[size || 'md']}
         />
       </Segment.Item>
-      {endSlot ? <Segment.Item>{endSlot}</Segment.Item> : null}
+      {endSlot ? <Segment.Item>{cloneElement(endSlot as any, { disabled })}</Segment.Item> : null}
     </Segment>
   )
 }

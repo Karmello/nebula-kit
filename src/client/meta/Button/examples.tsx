@@ -47,6 +47,10 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     description: 'Disabled button.',
     jsx: <Button disabled>Disabled</Button>,
   },
+  {
+    description: 'Button in loading state.',
+    jsx: <Button loading>Loading</Button>,
+  },
 ]
 
 export { BUTTON_EXAMPLES_META }

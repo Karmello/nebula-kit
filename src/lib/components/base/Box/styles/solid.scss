@@ -1,13 +1,12 @@
 @use 'styles/definitions/definitions.scss' as *;
 
 .neb-box[data-neb-box-variant='solid'] {
-  color: var(--neb-text);
-  --neb-ripple-bg: var(--neb-text);
-
   @each $intent in $neb-intents {
     &[data-neb-box-intent='#{$intent}'] {
       // rest
       background-color: var(--neb-#{$intent}-solid);
+      color: var(--neb-#{$intent}-text, var(--neb-text));
+      --neb-ripple-bg: var(--neb-#{$intent}-text, var(--neb-text));
 
       // interactive
       &[data-neb-box-interactive='true'] {
@@ -17,6 +16,14 @@
         &:focus-visible {
           background-color: var(--neb-#{$intent}-solid-hover);
         }
+      }
+
+      // disabled
+      &[data-neb-box-disabled='true'] {
+        color: var(--neb-#{$intent}-solid-disabled);
+      }
+      &[data-neb-box-disabled='true']:-webkit-autofill {
+        -webkit-text-fill-color: var(--neb-#{$intent}-solid-disabled);
       }
     }
   }

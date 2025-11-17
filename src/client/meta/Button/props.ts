@@ -43,6 +43,11 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     defaultValue: String(DEFAULT_BUTTON_JUSTIFY_CONTENT),
     description: 'Distributes text and icon along the main axis.',
   },
+  loading: {
+    options: ['boolean'],
+    defaultValue: 'false',
+    description: 'Activates the loading state, shows a spinner and prevents interaction.',
+  },
   size: {
     options: Object.values(BUTTON_SIZES),
     defaultValue: DEFAULT_BUTTON_SIZE,

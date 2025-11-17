@@ -96,6 +96,7 @@ export const FormField = ({
                         if (trimmed !== e.target.value) field.onChange(trimmed)
                         field.onBlur()
                       },
+                      disabled: formContext.formState.isSubmitting,
                       tagAttrs: {
                         ...formFieldComponent.props.tagAttrs,
                         'aria-labelledby': customFormLabelComponent || label ? labelId : undefined,

@@ -33,7 +33,10 @@ export const FormActionButton = ({
   type,
   onClick,
 }: FormActionButtonProps) => {
-  const { reset } = useFormContext()
+  const {
+    reset,
+    formState: { isSubmitting },
+  } = useFormContext()
 
   const finalDefaultIntent =
     type === 'submit' ? DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT : DEFAULT_BUTTON_INTENT
@@ -72,6 +75,7 @@ export const FormActionButton = ({
         disabled={disabled}
         iconName={iconName}
         iconPosition={iconPosition}
+        loading={type === 'submit' && isSubmitting}
       >
         {children}
       </Button>
