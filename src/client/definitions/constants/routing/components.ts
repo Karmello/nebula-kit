@@ -32,6 +32,7 @@ export const COMPONENT_CATEGORIES = [
     items: [
       { key: 'resize', label: 'Resize', sections: COMPONENT_SECTIONS },
       { key: 'rotate', label: 'Rotate', sections: COMPONENT_SECTIONS },
+      { key: 'slide', label: 'Slide', sections: COMPONENT_SECTIONS },
     ],
   },
   {
