@@ -44,7 +44,7 @@ export const Input = ({
 
   return (
     <Segment>
-      {startSlot ? <Segment.Item>{cloneElement(startSlot as any, { disabled })}</Segment.Item> : null}
+      {startSlot ? <Segment.Item>{cloneElement(startSlot as any, { disabled, size })}</Segment.Item> : null}
       <Segment.Item flex={1}>
         <Box
           tag="input"
@@ -71,7 +71,7 @@ export const Input = ({
           {...INPUT_SIZE_CONFIG[size || 'md']}
         />
       </Segment.Item>
-      {endSlot ? <Segment.Item>{cloneElement(endSlot as any, { disabled })}</Segment.Item> : null}
+      {endSlot ? <Segment.Item>{cloneElement(endSlot as any, { disabled, size })}</Segment.Item> : null}
     </Segment>
   )
 }
