@@ -1,7 +1,7 @@
 import { Callout } from 'lib/components'
 
 import { SnackbarProps } from './definitions'
-import { SnackbarContext } from './SnackbarProvider'
+import { SnackbarProvider } from './SnackbarProvider'
 
 const SnackbarComponent = ({
   // own
@@ -19,9 +19,9 @@ const SnackbarComponent = ({
 
 export const Snackbar = (props: SnackbarProps) => {
   return (
-    <SnackbarContext value={null}>
+    <SnackbarProvider>
       <SnackbarComponent {...props} />
-    </SnackbarContext>
+    </SnackbarProvider>
   )
 }
 
