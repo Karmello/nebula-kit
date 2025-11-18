@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
 import { ComponentMeta } from 'client/definitions'
-import { Animate, AnimateProps, Text } from 'lib/components'
+import { Resize, ResizeProps, Text } from 'lib/components'
 
-const AnimateWrapper = ({ property }: { property: AnimateProps['property'] }) => {
+const ResizeWrapper = ({ property }: { property: ResizeProps['property'] }) => {
   const [visible, setVisible] = useState<boolean>(false)
   let interval: NodeJS.Timeout | null = null
 
@@ -23,29 +23,29 @@ const AnimateWrapper = ({ property }: { property: AnimateProps['property'] }) =>
   }, [visible])
 
   return (
-    <Animate visible={visible} property={property} duration={1000}>
+    <Resize visible={visible} property={property} duration={1000}>
       <Text intent="neutral" noWrap>
         Animated content.
       </Text>
-    </Animate>
+    </Resize>
   )
 }
 
-const ANIMATE_EXAMPLES_META: ComponentMeta<AnimateProps>['examples'] = [
+const RESIZE_EXAMPLES_META: ComponentMeta<ResizeProps>['examples'] = [
   {
     description: 'Animating the inlineSize property.',
-    jsx: <AnimateWrapper property="inlineSize" />,
-    code: `<Animate visible={visible} property="inlineSize" duration={1000}>
+    jsx: <ResizeWrapper property="inlineSize" />,
+    code: `<Resize visible={visible} property="inlineSize" duration={1000}>
   <Text noWrap>Animated content.</Text>
-</Animate>`,
+</Resize>`,
   },
   {
     description: 'Animating the blockSize property.',
-    jsx: <AnimateWrapper property="blockSize" />,
-    code: `<Animate visible={visible} property="blockSize" duration={1000}>
+    jsx: <ResizeWrapper property="blockSize" />,
+    code: `<Resize visible={visible} property="blockSize" duration={1000}>
   <Text noWrap>Animated content.</Text>
-</Animate>`,
+</Resize>`,
   },
 ]
 
-export { ANIMATE_EXAMPLES_META }
+export { RESIZE_EXAMPLES_META }

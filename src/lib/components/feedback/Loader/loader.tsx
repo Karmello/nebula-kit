@@ -40,3 +40,5 @@ export const Loader = ({
     />
   )
 }
+
+Loader.displayName = 'Loader'

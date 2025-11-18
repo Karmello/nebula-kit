@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react'
 
-import { DEFAULT_ANIMATE_DURATION } from 'lib/components/motion/Animate/definitions'
+import { DEFAULT_RESIZE_DURATION } from 'lib/components/motion/Resize/definitions'
 import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
 import { getLibMsg } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
@@ -47,7 +47,7 @@ export const SplitViewProvider = ({
     } else {
       setTimeout(() => {
         document.documentElement.classList.remove('neb-scrollbar-off')
-      }, DEFAULT_ANIMATE_DURATION)
+      }, DEFAULT_RESIZE_DURATION)
     }
   }, [sideOpen, mode])
 

@@ -1,7 +1,7 @@
 import { cloneElement, ReactElement, ReactNode, RefObject, useEffect, useLayoutEffect, useRef } from 'react'
 
-import { Flex, Box, Animate, Portal, DropdownListProps } from 'lib/components'
-import { DEFAULT_ANIMATE_DURATION } from 'lib/components/motion/Animate/definitions'
+import { Flex, Box, Resize, Portal, DropdownListProps } from 'lib/components'
+import { DEFAULT_RESIZE_DURATION } from 'lib/components/motion/Resize/definitions'
 import { useNebkitStore } from 'lib/state'
 import { useOutsideClick } from 'lib/hooks'
 
@@ -55,7 +55,7 @@ export const DropdownListComponent = ({
       setTimeout(() => {
         setOpen(false)
         setHoveredIndex(-1)
-      }, DEFAULT_ANIMATE_DURATION)
+      }, DEFAULT_RESIZE_DURATION)
     }
   }, [animateVisible])
 
@@ -118,7 +118,7 @@ export const DropdownListComponent = ({
       {slotsByName['DropdownList.Trigger']}
       {open ? (
         <Portal tagRef={portalRef} anchorRef={triggerRef} placement={placement}>
-          <Animate property="blockSize" visible={animateVisible}>
+          <Resize property="blockSize" visible={animateVisible}>
             <Box
               variant={variant === 'ghost' ? 'solid' : variant}
               intent={variant === 'ghost' ? 'neutral' : intent}
@@ -159,7 +159,7 @@ export const DropdownListComponent = ({
                 </Flex>
               </Box>
             </Box>
-          </Animate>
+          </Resize>
         </Portal>
       ) : null}
     </Box>

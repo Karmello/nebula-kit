@@ -1,6 +1,6 @@
 import { Box } from 'lib/components'
 
-import { DEFAULT_ANIMATE_DURATION } from '../Animate/definitions'
+import { DEFAULT_RESIZE_DURATION } from '../Resize/definitions'
 import { RotateProps } from './definitions'
 
 export const Rotate = ({
@@ -21,7 +21,7 @@ export const Rotate = ({
           ...tagAttrs?.style,
           transform: `rotate(${angle}deg)`,
           transformOrigin: 'center',
-          transition: `transform ${DEFAULT_ANIMATE_DURATION}ms ease-in-out`,
+          transition: `transform ${DEFAULT_RESIZE_DURATION}ms ease-in-out`,
           lineHeight: 0,
         },
       }}

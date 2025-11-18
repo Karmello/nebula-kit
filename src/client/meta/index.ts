@@ -1,6 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
 
-import animateMeta from './Animate/_index'
 import appFrameMeta from './AppFrame/_index'
 import boxMeta from './Box/_index'
 import breadcrumbMeta from './Breadcrumb/_index'
@@ -21,6 +20,7 @@ import loaderMeta from './Loader/_index'
 import markerListMeta from './MarkerList/_index'
 import nebkitProviderMeta from './NebkitProvider/_index'
 import portalMeta from './Portal/_index'
+import resizeMeta from './Resize/_index'
 import revealMeta from './Reveal/_index'
 import rotateMeta from './Rotate/_index'
 import sectionMeta from './Section/_index'
@@ -35,7 +35,6 @@ import toolbarMeta from './Toolbar/_index'
 import withIconMeta from './WithIcon/_index'
 
 export default {
-  Animate: animateMeta,
   AppFrame: appFrameMeta,
   Box: boxMeta,
   Breadcrumb: breadcrumbMeta,
@@ -56,6 +55,7 @@ export default {
   MarkerList: markerListMeta,
   NebkitProvider: nebkitProviderMeta,
   Portal: portalMeta,
+  Resize: resizeMeta,
   Reveal: revealMeta,
   Rotate: rotateMeta,
   Section: sectionMeta,

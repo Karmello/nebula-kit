@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { Box, Flex, Button, Animate, RevealProps } from 'lib/components'
+import { Box, Flex, Button, Resize, RevealProps } from 'lib/components'
 import { useNebkitStore } from 'lib/state'
 
 import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SIZE, RevealTag } from './definitions'
@@ -55,9 +55,9 @@ export const Reveal = <T extends RevealTag = 'div'>({
           {label}
         </Button>
         <Box tagAttrs={{ inert: !open }} intent="neutral">
-          <Animate property="blockSize" visible={open}>
+          <Resize property="blockSize" visible={open}>
             {children}
-          </Animate>
+          </Resize>
         </Box>
       </Flex>
     </Box>

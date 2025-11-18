@@ -4,14 +4,14 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { AnimateProps } from './definitions'
+import { ResizeProps } from './definitions'
 
-export const Animate = ({ tagAttrs, tagRef, children, property, visible, duration }: AnimateProps) => {
+export const Resize = ({ tagAttrs, tagRef, children, property, visible, duration }: ResizeProps) => {
   const ref = useRef<HTMLDivElement>(null)
 
   const finalRef = tagRef || ref
 
-  const resolvedSizes = useRef<Record<AnimateProps['property'], string>>({ blockSize: '', inlineSize: '' })
+  const resolvedSizes = useRef<Record<ResizeProps['property'], string>>({ blockSize: '', inlineSize: '' })
 
   useEffect(() => {
     if (finalRef.current) {
@@ -30,7 +30,7 @@ export const Animate = ({ tagAttrs, tagRef, children, property, visible, duratio
     <Box
       tagAttrs={{
         ...tagAttrs,
-        className: classNames(withPrefix('animate'), tagAttrs?.className || ''),
+        className: classNames(withPrefix('resize'), tagAttrs?.className || ''),
         style: {
           ...tagAttrs?.style,
           transitionDuration: duration ? `${duration}ms` : undefined,
@@ -45,3 +45,5 @@ export const Animate = ({ tagAttrs, tagRef, children, property, visible, duratio
     </Box>
   )
 }
+
+Resize.displayName = 'Resize'

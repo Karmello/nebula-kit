@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import classNames from 'classnames'
 
-import { Animate, Box, Flex, Button } from 'lib/components'
+import { Resize, Box, Flex, Button } from 'lib/components'
 import { FocusTrap } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 import { useNebkitStore } from 'lib/state'
@@ -51,7 +51,7 @@ export const SplitViewSide = ({
         maxInlineSize={inlineSize}
         overflowY={sideOpen ? 'auto' : 'hidden'}
       >
-        <Animate key={mode} property="inlineSize" visible={sideOpen}>
+        <Resize key={mode} property="inlineSize" visible={sideOpen}>
           <Box inlineSize={inlineSize}>
             {mode === 'overlay' ? (
               <Flex justifyContent="flex-end">
@@ -71,7 +71,7 @@ export const SplitViewSide = ({
             ) : null}
             {children}
           </Box>
-        </Animate>
+        </Resize>
       </Box>
     </FocusTrap>
   )

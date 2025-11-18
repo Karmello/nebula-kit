@@ -30,7 +30,7 @@ export const COMPONENT_CATEGORIES = [
     key: 'motion',
     label: 'Motion',
     items: [
-      { key: 'animate', label: 'Animate', sections: COMPONENT_SECTIONS },
+      { key: 'resize', label: 'Resize', sections: COMPONENT_SECTIONS },
       { key: 'rotate', label: 'Rotate', sections: COMPONENT_SECTIONS },
     ],
   },

@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 
 import { Grid } from 'lib/components'
-import { DEFAULT_ANIMATE_DURATION } from 'lib/components/motion/Animate/definitions'
+import { DEFAULT_RESIZE_DURATION } from 'lib/components/motion/Resize/definitions'
 import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 import { DEFAULT_SWITCH_AT } from 'lib/definitions'
@@ -24,7 +24,7 @@ const SplitViewComponent = ({
     async (sideOpen: boolean) =>
       new Promise<boolean>(resolve => {
         setSideOpen(sideOpen)
-        setTimeout(() => resolve(sideOpen), DEFAULT_ANIMATE_DURATION)
+        setTimeout(() => resolve(sideOpen), DEFAULT_RESIZE_DURATION)
       }),
     []
   )

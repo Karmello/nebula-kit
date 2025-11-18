@@ -1,7 +1,7 @@
 import { useEffect, useId, useLayoutEffect } from 'react'
 
 import { WithSlots } from 'lib/components/internal'
-import { Animate, Box, Button, Flex, Spacer } from 'lib/components'
+import { Resize, Box, Button, Flex, Spacer } from 'lib/components'
 
 import { useSideNavContext } from '../../SideNavProvider'
 
@@ -90,7 +90,7 @@ export const SideNavCategory = ({
                 inert: !expandedCategories[id],
               }}
             >
-              <Animate property="blockSize" visible={expandedCategories[id]}>
+              <Resize property="blockSize" visible={expandedCategories[id]}>
                 <Spacer blockSize={rowGap !== undefined ? rowGap : 0} />
                 <Flex tag="ul" flexDirection="column" rowGap={rowGap}>
                   {slotsByName['SideNav.Item'].map((slot, key) => (
@@ -99,7 +99,7 @@ export const SideNavCategory = ({
                     </Box>
                   ))}
                 </Flex>
-              </Animate>
+              </Resize>
             </Box>
           </Box>
         )

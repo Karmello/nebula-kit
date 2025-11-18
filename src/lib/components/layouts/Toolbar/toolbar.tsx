@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { WithSlots } from 'lib/components/internal'
 import { Grid } from 'lib/components'
-import { DEFAULT_ANIMATE_DURATION } from 'lib/components/motion/Animate/definitions'
+import { DEFAULT_RESIZE_DURATION } from 'lib/components/motion/Resize/definitions'
 import { withPrefix } from 'lib/helpers'
 import { DEFAULT_SWITCH_AT } from 'lib/definitions'
 
@@ -20,7 +20,7 @@ const ToolbarComponent = ({ children, tagAttrs, tagRef }: ToolbarProps) => {
     async (mainOpen: boolean) =>
       new Promise<boolean>(resolve => {
         setMainOpen(mainOpen)
-        setTimeout(() => resolve(mainOpen), DEFAULT_ANIMATE_DURATION)
+        setTimeout(() => resolve(mainOpen), DEFAULT_RESIZE_DURATION)
       }),
     []
   )

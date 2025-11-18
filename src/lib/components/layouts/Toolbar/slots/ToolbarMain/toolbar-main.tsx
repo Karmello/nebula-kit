@@ -1,7 +1,7 @@
 import { useLayoutEffect } from 'react'
 import classNames from 'classnames'
 
-import { Grid, Animate } from 'lib/components'
+import { Grid, Resize } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import { ToolbarMainProps } from './definitions'
@@ -31,9 +31,9 @@ export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) =>
       alignSelf="center"
     >
       {!isSwitchAtHit ? (
-        <Animate property="blockSize" visible={mainOpen}>
+        <Resize property="blockSize" visible={mainOpen}>
           {children}
-        </Animate>
+        </Resize>
       ) : (
         children
       )}

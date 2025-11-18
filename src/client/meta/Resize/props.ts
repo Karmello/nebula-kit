@@ -1,10 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
-import { AnimateProps } from 'lib/components'
-import { ANIMATE_PROPERTIES, DEFAULT_ANIMATE_DURATION } from 'lib/components/motion/Animate/definitions'
+import { ResizeProps } from 'lib/components'
+import { RESIZE_PROPERTIES, DEFAULT_RESIZE_DURATION } from 'lib/components/motion/Resize/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
-const ANIMATE_PROPS_META: ComponentMeta<AnimateProps>['props'] = {
+const RESIZE_PROPS_META: ComponentMeta<ResizeProps>['props'] = {
   children: {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
@@ -13,7 +13,7 @@ const ANIMATE_PROPS_META: ComponentMeta<AnimateProps>['props'] = {
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
   property: {
-    options: ANIMATE_PROPERTIES as unknown as string[],
+    options: RESIZE_PROPERTIES as unknown as string[],
     isRequired: true,
     description: 'Property to animate.',
   },
@@ -24,9 +24,9 @@ const ANIMATE_PROPS_META: ComponentMeta<AnimateProps>['props'] = {
   },
   duration: {
     options: ['number'],
-    defaultValue: String(DEFAULT_ANIMATE_DURATION),
+    defaultValue: String(DEFAULT_RESIZE_DURATION),
     description: 'Animation duration in milliseconds.',
   },
 }
 
-export { ANIMATE_PROPS_META }
+export { RESIZE_PROPS_META }
