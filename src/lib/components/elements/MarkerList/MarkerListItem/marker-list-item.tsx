@@ -18,6 +18,7 @@ export const MarkerListItem = ({ children, tagAttrs, tagRef, color, intent }: Ma
         role: 'listitem',
       }}
       tagRef={tagRef}
+      variant="ghost"
       color={color || rootColor}
       intent={intent || rootIntent}
     >

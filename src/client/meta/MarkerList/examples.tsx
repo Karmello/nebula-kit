@@ -6,7 +6,7 @@ const MARKER_LIST_EXAMPLES_META: ComponentMeta<MarkerListProps>['examples'] = [
   {
     description: 'Basic MarkerList with two list items.',
     jsx: (
-      <MarkerList intent="neutral">
+      <MarkerList>
         <MarkerList.Item>Item 1</MarkerList.Item>
         <MarkerList.Item>Item 2</MarkerList.Item>
       </MarkerList>

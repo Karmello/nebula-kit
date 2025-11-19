@@ -8,7 +8,7 @@ export default () => {
         system supports the same principle that guides its design - structure over sprawl.
       </Text>
       <Spacer blockSize={40} />
-      <Section heading="React 19" intent="primary" size="sm">
+      <Section heading="React 19" intent="primary" color="blue" size="sm">
         <Text intent="neutral">
           The foundation of every component. React's declarative model and compositional nature align
           perfectly with NebulaKit's architecture, where small parts form larger structures with predictable
@@ -16,7 +16,7 @@ export default () => {
         </Text>
       </Section>
       <Spacer blockSize={30} />
-      <Section heading="TypeScript" intent="primary" size="sm">
+      <Section heading="TypeScript" intent="primary" color="blue" size="sm">
         <Text intent="neutral">
           The library is written entirely in TypeScript to ensure strong typing, self-documenting code and
           early error detection. Props and internal utilities share consistent types, making the system safer
@@ -24,7 +24,7 @@ export default () => {
         </Text>
       </Section>
       <Spacer blockSize={30} />
-      <Section heading="CSS and Sass" intent="primary" size="sm">
+      <Section heading="CSS and Sass" intent="primary" color="blue" size="sm">
         <Text intent="neutral">
           Styling relies on native CSS with a layer of Sass for organization and variable management.
           Responsive props map directly to CSS properties, ensuring performance and simplicity. CSS variables
@@ -32,31 +32,31 @@ export default () => {
         </Text>
       </Section>
       <Spacer blockSize={30} />
-      <Section heading="Vite" intent="primary" size="sm">
+      <Section heading="Vite" intent="primary" color="blue" size="sm">
         <Text intent="neutral">
           Development and build are powered by Vite, chosen for its speed, modularity and smooth TypeScript
           integration. It keeps the feedback loop fast and the configuration lightweight.
         </Text>
       </Section>
       <Spacer blockSize={30} />
-      <Section heading="State management with Zustand" intent="primary" size="sm">
+      <Section heading="State management with Zustand" intent="primary" color="blue" size="sm">
         <Text intent="neutral">
           For global state and configuration, NebulaKit uses Zustand - small, predictable and React-first.
           It's the quiet backbone behind theme switching, global tokens and surface settings.
         </Text>
       </Section>
       <Spacer blockSize={30} />
-      <Section heading="Icons via lucide-react" intent="primary" size="sm">
+      <Section heading="Icons via lucide-react" intent="primary" color="blue" size="sm">
         <Text intent="neutral">
           Icons come from Lucide, a clean, consistent icon set built with React. They scale naturally with
           typography and follow the same theming system as other components.
         </Text>
       </Section>
       <Spacer blockSize={30} />
-      <Section heading="Testing and validation" intent="primary" size="sm">
+      <Section heading="Testing and validation" intent="primary" color="blue" size="sm">
         <Text intent="neutral">Quality is enforced on three levels:</Text>
         <Spacer blockSize={10} />
-        <MarkerList intent="neutral">
+        <MarkerList intent="neutral" color="gray">
           <MarkerList.Item>
             <Text>tsd validates type definitions at build time</Text>
           </MarkerList.Item>
@@ -73,7 +73,7 @@ export default () => {
         </Text>
       </Section>
       <Spacer blockSize={30} />
-      <Section heading="Code quality and formatting" intent="primary" size="sm">
+      <Section heading="Code quality and formatting" intent="primary" color="blue" size="sm">
         <Text intent="neutral">
           Linting and formatting are managed by ESLint and Prettier, keeping the codebase consistent and
           readable. Every component adheres to shared rules, minimizing noise and friction.
