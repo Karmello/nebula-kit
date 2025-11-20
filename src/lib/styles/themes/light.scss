@@ -97,4 +97,15 @@ html[data-theme='light'] {
       --neb-inverse-ghost-disabled: var(--neb-#{$color}-3);
     }
   }
+
+  &[data-brand='cyan'],
+  &[data-brand='yellow'],
+  &[data-brand='amber'],
+  .neb-box[data-neb-box-color='cyan'],
+  .neb-box[data-neb-box-color='green'],
+  .neb-box[data-neb-box-color='yellow'],
+  .neb-box[data-neb-box-color='amber'] {
+    --neb-primary-text: var(--neb-text);
+    --neb-primary-solid-disabled: var(--neb-gray-8);
+  }
 }

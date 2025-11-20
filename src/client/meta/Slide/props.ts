@@ -12,7 +12,7 @@ const SLIDE_PROPS_META: ComponentMeta<SlideProps>['props'] = {
   direction: {
     options: SLIDE_DIRECTIONS as never,
     isRequired: true,
-    description: 'Defines which way the element slides.',
+    description: 'Defines the side from which the element slides in and slides back out to.',
   },
   duration: {
     options: ['number'],
@@ -25,6 +25,7 @@ const SLIDE_PROPS_META: ComponentMeta<SlideProps>['props'] = {
   },
   offset: {
     options: ['CSS'],
+    isRequired: true,
     description: 'Distance the element starts from and returns to. Controls how strong the slide feels.',
   },
   onExitComplete: {

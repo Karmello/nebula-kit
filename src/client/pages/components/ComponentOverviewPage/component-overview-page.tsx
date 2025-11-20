@@ -16,7 +16,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const navigateTo = useNavigateTo()
 
   const {
-    overview: { name, title, description, composedOf, rendersAs, slots, readMoreLink },
+    overview: { name, title, description, composedOf, rendersAs, slots, hooks, readMoreLink },
     examples,
     props,
   } = meta
@@ -32,6 +32,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
         <ListWithChips heading="Props:" items={Object.keys(props).sort((a, b) => a.localeCompare(b))} />
       ) : null}
       {slots ? <ListWithChips heading="Slots:" items={slots} color="gray" /> : null}
+      {hooks ? <ListWithChips heading="Hooks:" items={hooks} color="green" /> : null}
       {readMoreLink ? (
         <Box>
           <Link

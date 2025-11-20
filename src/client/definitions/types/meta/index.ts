@@ -8,6 +8,7 @@ type Overview = {
   composedOf?: string[]
   rendersAs?: readonly string[]
   slots?: string[]
+  hooks?: string[]
   readMoreLink?: {
     label: string
     href: string

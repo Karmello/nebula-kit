@@ -21,7 +21,7 @@ const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
   </Form.Fields>
   <Form.Actions>
     <Form.ActionButton type="submit">Submit</Form.ActionButton>
-    <Form.ActionButton type='reset'>Reset</Form.ActionButton>
+    <Form.ActionButton type="reset">Reset</Form.ActionButton>
   </Form.Actions>
 </Form>`,
     skip: true,

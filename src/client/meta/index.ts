@@ -28,6 +28,7 @@ import segmentMeta from './Segment/_index'
 import selectMeta from './Select/_index'
 import sideNavMeta from './SideNav/_index'
 import slideMeta from './Slide/_index'
+import snackbarMeta from './Snackbar/_index'
 import spacerMeta from './Spacer/_index'
 import splitViewMeta from './SplitView/_index'
 import tableMeta from './Table/_index'
@@ -64,6 +65,7 @@ export default {
   Select: selectMeta,
   SideNav: sideNavMeta,
   Slide: slideMeta,
+  Snackbar: snackbarMeta,
   Spacer: spacerMeta,
   SplitView: splitViewMeta,
   Table: tableMeta,

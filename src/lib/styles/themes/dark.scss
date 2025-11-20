@@ -24,6 +24,7 @@ html[data-theme='dark'] {
       --neb-primary-solid: var(--neb-#{$color}-8);
       --neb-primary-solid-hover: var(--neb-#{$color}-7);
       --neb-primary-solid-disabled: var(--neb-#{$color}-6);
+      // --neb-primary-text: var(--neb-background);
       --neb-inverse-solid: var(--neb-#{$color}-4);
       --neb-inverse-solid-hover: var(--neb-#{$color}-1);
       --neb-inverse-solid-disabled: var(--neb-#{$color}-6);
@@ -95,5 +96,16 @@ html[data-theme='dark'] {
       --neb-inverse-ghost-hover: var(--neb-#{$color}-14);
       --neb-inverse-ghost-disabled: var(--neb-#{$color}-13);
     }
+  }
+
+  &[data-brand='cyan'],
+  &[data-brand='yellow'],
+  &[data-brand='amber'],
+  .neb-box[data-neb-box-color='cyan'],
+  .neb-box[data-neb-box-color='green'],
+  .neb-box[data-neb-box-color='yellow'],
+  .neb-box[data-neb-box-color='amber'] {
+    --neb-primary-text: var(--neb-background);
+    --neb-primary-solid-disabled: var(--neb-gray-8);
   }
 }

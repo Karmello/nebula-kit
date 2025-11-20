@@ -2,13 +2,15 @@ import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router'
 
 import { App } from 'client/components'
-import { NebkitProvider, HydrationGate } from 'lib/components'
+import { NebkitProvider, HydrationGate, Snackbar } from 'lib/components'
 
 const Node = () => (
   <BrowserRouter>
     <HydrationGate>
       <NebkitProvider>
-        <App />
+        <Snackbar>
+          <App />
+        </Snackbar>
       </NebkitProvider>
     </HydrationGate>
   </BrowserRouter>

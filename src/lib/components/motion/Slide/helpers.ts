@@ -1,6 +1,6 @@
 import { SlideDirection } from './definitions'
 
-export const getInitialTransform = (direction: SlideDirection, offset: string) => {
+export const getInitialTransform = (direction: SlideDirection, offset: string | undefined) => {
   switch (direction) {
     case 'top':
       return `translateY(-${offset})`

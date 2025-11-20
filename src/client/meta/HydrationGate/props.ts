@@ -6,7 +6,7 @@ const HYDRATION_GATE_PROPS_META: ComponentMeta<HydrationGateProps>['props'] = {
     options: ['ReactElement'],
     isRequired: true,
     isResponsive: false,
-    description: 'NebkitProvider element to be wrapped.',
+    description: 'NebkitProvider component to be wrapped.',
   },
   minDelay: {
     options: ['number'],

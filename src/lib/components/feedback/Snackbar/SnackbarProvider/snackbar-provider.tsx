@@ -1,9 +1,26 @@
 import { createContext, ReactNode, useContext } from 'react'
 
-const SnackbarContext = createContext<any>(null)
+import { SnackbarItemConfig } from '../definitions'
 
-export const useSnackbarContext = () => useContext(SnackbarContext)
+type SnackbarProviderProps = {
+  children: ReactNode
+  setVisible: (visible: boolean) => void
+  setSnackbar: (config: SnackbarItemConfig) => void
+}
 
-export const SnackbarProvider = ({ children }: { children: ReactNode }) => {
-  return <SnackbarContext.Provider value={null}>{children}</SnackbarContext.Provider>
+type SnackbarContextValue = {
+  show: (config: SnackbarItemConfig) => void
+}
+
+const SnackbarContext = createContext<SnackbarContextValue | null>(null)
+
+export const useSnackbar = () => useContext(SnackbarContext)
+
+export const SnackbarProvider = ({ children, setVisible, setSnackbar }: SnackbarProviderProps) => {
+  const show = (config: SnackbarItemConfig) => {
+    setSnackbar(config)
+    setVisible(true)
+  }
+
+  return <SnackbarContext.Provider value={{ show }}>{children}</SnackbarContext.Provider>
 }

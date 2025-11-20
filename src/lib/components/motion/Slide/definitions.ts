@@ -10,7 +10,7 @@ export type SlideDirection = (typeof SLIDE_DIRECTIONS)[number]
 type SlideOwnProps = {
   direction: SlideDirection
   visible: boolean
-  offset?: string
+  offset: string
   duration?: number
   easing?: string
   onExitComplete?: () => void

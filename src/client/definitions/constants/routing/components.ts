@@ -64,8 +64,9 @@ export const COMPONENT_CATEGORIES = [
     key: 'feedback',
     label: 'Feedback',
     items: [
-      { key: 'callout', label: 'Callout', sections: COMPONENT_SECTIONS },
       { key: 'loader', label: 'Loader', sections: COMPONENT_SECTIONS },
+      { key: 'callout', label: 'Callout', sections: COMPONENT_SECTIONS },
+      { key: 'snackbar', label: 'Snackbar', sections: COMPONENT_SECTIONS },
     ],
   },
   {

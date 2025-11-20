@@ -17,7 +17,6 @@ export const Slide = ({
   easing = DEFAULT_SLIDE_EASING,
   onExitComplete,
 }: SlideProps) => {
-  const [render, setRender] = useState(visible)
   const frameRef = useRef<number | null>(null)
   const exitTimerRef = useRef<number | null>(null)
 
@@ -25,15 +24,12 @@ export const Slide = ({
   const initialTransform = getInitialTransform(direction, offset)
   const finalTransform = 'translate(0,0)'
 
-  // Make sure component mounts immediately when visible becomes true
-  useEffect(() => {
-    if (visible) {
-      setRender(true)
-    }
-  }, [visible])
-
   // Track the animated style
   const [currentTransform, setCurrentTransform] = useState(visible ? finalTransform : initialTransform)
+
+  useEffect(() => {
+    setCurrentTransform(visible ? finalTransform : getInitialTransform(direction, offset))
+  }, [offset])
 
   // Handle enter/exit transitions
   useEffect(() => {
@@ -56,7 +52,6 @@ export const Slide = ({
         }
 
         exitTimerRef.current = window.setTimeout(() => {
-          setRender(false)
           onExitComplete?.()
         }, duration)
       }
@@ -67,8 +62,6 @@ export const Slide = ({
       if (exitTimerRef.current) clearTimeout(exitTimerRef.current)
     }
   }, [visible, duration, finalTransform, initialTransform, onExitComplete])
-
-  if (!render) return null
 
   return (
     <Box
