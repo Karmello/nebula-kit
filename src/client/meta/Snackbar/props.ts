@@ -11,7 +11,7 @@ const SNACKBAR_PROPS_META: ComponentMeta<SnackbarProps>['props'] = {
   placement: {
     options: SNACKBAR_PLACEMENTS as never,
     defaultValue: String(DEFAULT_SNACKBAR_PLACEMENT),
-    description: 'Defines where the Snackbar appears on the viewport by default.',
+    description: 'Defines where snackbars appear on the viewport by default.',
   },
 }
 

@@ -4,9 +4,17 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { ResizeProps } from './definitions'
+import { DEFAULT_RESIZE_DURATION, DEFAULT_RESIZE_EASING, ResizeProps } from './definitions'
 
-export const Resize = ({ tagAttrs, tagRef, children, property, visible, duration }: ResizeProps) => {
+export const Resize = ({
+  tagAttrs,
+  tagRef,
+  children,
+  property,
+  visible,
+  duration = DEFAULT_RESIZE_DURATION,
+  easing = DEFAULT_RESIZE_EASING,
+}: ResizeProps) => {
   const ref = useRef<HTMLDivElement>(null)
 
   const finalRef = tagRef || ref
@@ -34,6 +42,7 @@ export const Resize = ({ tagAttrs, tagRef, children, property, visible, duration
         style: {
           ...tagAttrs?.style,
           transitionDuration: duration ? `${duration}ms` : undefined,
+          transitionTimingFunction: easing,
         },
       }}
       tagRef={finalRef}

@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
+import classNames from 'classnames'
+
 import { Box } from 'lib/components'
+import { withPrefix } from 'lib/helpers'
 
 import { DEFAULT_SLIDE_DURATION, DEFAULT_SLIDE_EASING, SlideProps } from './definitions'
-import { getInitialTransform } from './helpers'
+import { updatePosition } from './helpers'
 
 export const Slide = ({
   // HtmlTag
@@ -10,71 +13,43 @@ export const Slide = ({
   tagAttrs,
   tagRef,
   // own
-  direction,
+  property,
   visible,
-  offset,
   duration = DEFAULT_SLIDE_DURATION,
   easing = DEFAULT_SLIDE_EASING,
-  onExitComplete,
 }: SlideProps) => {
-  const frameRef = useRef<number | null>(null)
-  const exitTimerRef = useRef<number | null>(null)
+  const [mounted, setMounted] = useState<boolean>(false)
+  const ref = useRef<HTMLDivElement | null>(null)
 
-  // Compute initial transform
-  const initialTransform = getInitialTransform(direction, offset)
-  const finalTransform = 'translate(0,0)'
-
-  // Track the animated style
-  const [currentTransform, setCurrentTransform] = useState(visible ? finalTransform : initialTransform)
+  const finalRef = tagRef || ref
 
   useEffect(() => {
-    setCurrentTransform(visible ? finalTransform : getInitialTransform(direction, offset))
-  }, [offset])
+    if (finalRef.current) {
+      updatePosition(finalRef, property, visible, false, duration, easing)
+      setMounted(true)
+    }
+  }, [])
 
-  // Handle enter/exit transitions
   useEffect(() => {
-    // Cancel previous frame if any
-    if (frameRef.current) {
-      cancelAnimationFrame(frameRef.current)
+    if (!mounted) return
+
+    if (finalRef.current) {
+      updatePosition(finalRef, property, !visible, false, duration, easing)
+
+      requestAnimationFrame(() => {
+        updatePosition(finalRef, property, visible, true, duration, easing)
+      })
     }
-
-    frameRef.current = requestAnimationFrame(() => {
-      if (visible) {
-        // ENTER → animate to final
-        setCurrentTransform(finalTransform)
-      } else {
-        // EXIT → animate to initial
-        setCurrentTransform(initialTransform)
-
-        // After the animation duration, unmount and fire callback
-        if (exitTimerRef.current) {
-          clearTimeout(exitTimerRef.current)
-        }
-
-        exitTimerRef.current = window.setTimeout(() => {
-          onExitComplete?.()
-        }, duration)
-      }
-    })
-
-    return () => {
-      if (frameRef.current) cancelAnimationFrame(frameRef.current)
-      if (exitTimerRef.current) clearTimeout(exitTimerRef.current)
-    }
-  }, [visible, duration, finalTransform, initialTransform, onExitComplete])
+  }, [visible])
 
   return (
     <Box
+      tagRef={finalRef}
       tagAttrs={{
         ...tagAttrs,
-        style: {
-          ...tagAttrs?.style,
-          transform: currentTransform,
-          transition: `transform ${duration}ms ${easing}`,
-          willChange: 'transform',
-        },
+        className: classNames(withPrefix('slide'), tagAttrs?.className || ''),
       }}
-      tagRef={tagRef}
+      display="inline-block"
     >
       {children}
     </Box>

@@ -4,6 +4,8 @@ import { ComponentMeta } from 'client/definitions'
 import { SNACKBAR_PROPS_META } from './props'
 import { SNACKBAR_EXAMPLES_META } from './examples'
 
+import { USE_SNACKBAR_META } from './useSnackbar/_index'
+
 const SNACKBAR_META: ComponentMeta<SnackbarProps> = {
   overview: {
     plan: 'pro',
@@ -15,7 +17,7 @@ const SNACKBAR_META: ComponentMeta<SnackbarProps> = {
       'managed through a provider and controlled with the "useSnackbar" hook',
     ],
     composedOf: ['Flex', 'Box', 'Callout', 'Button', 'Slide'],
-    hooks: ['useSnackBar'],
+    hooks: ['useSnackbar'],
   },
   props: SNACKBAR_PROPS_META,
   examples: SNACKBAR_EXAMPLES_META,
@@ -23,4 +25,5 @@ const SNACKBAR_META: ComponentMeta<SnackbarProps> = {
 
 export default {
   Snackbar: SNACKBAR_META,
+  useSnackbar: USE_SNACKBAR_META,
 }

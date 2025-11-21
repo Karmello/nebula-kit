@@ -14,7 +14,7 @@ const ResizeWrapper = ({ property }: { property: ResizeProps['property'] }) => {
   useEffect(() => {
     interval = setInterval(() => {
       setVisible(!visible)
-    }, 2000)
+    }, 1000)
 
     return () => {
       clearInterval(interval)
@@ -38,6 +38,7 @@ const RESIZE_EXAMPLES_META: ComponentMeta<ResizeProps>['examples'] = [
     code: `<Resize visible={visible} property="inlineSize" duration={1000}>
   <Text noWrap>Animated content.</Text>
 </Resize>`,
+    sandBoxWithNoPadding: true,
   },
   {
     description: 'Animating the blockSize property.',
@@ -45,6 +46,7 @@ const RESIZE_EXAMPLES_META: ComponentMeta<ResizeProps>['examples'] = [
     code: `<Resize visible={visible} property="blockSize" duration={1000}>
   <Text noWrap>Animated content.</Text>
 </Resize>`,
+    sandBoxWithNoPadding: true,
   },
 ]
 

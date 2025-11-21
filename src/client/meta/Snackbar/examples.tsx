@@ -33,18 +33,9 @@ const SnackbarWrapper = ({
 
 const SNACKBAR_EXAMPLES_META: ComponentMeta<SnackbarProps>['examples'] = [
   {
-    code: `// wrapping the entire app with Snackbar
-<Snackbar>
+    code: `<Snackbar>
   <App />
 </Snackbar>
-\t
-// inside components
-const { show } = useSnackbar()
-\t
-show({
-  status: 'info',
-  content: 'This is an informational message that highlights something worth your attention.',
-})
 `,
     skip: true,
   },

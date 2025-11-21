@@ -1,68 +1,58 @@
 import { useCallback, useState } from 'react'
 
-import { Box, Flex } from 'lib/components'
+import { Box, Button, Callout, Flex, Slide } from 'lib/components'
 
-import { DEFAULT_SNACKBAR_PLACEMENT, SnackbarItemConfig, SnackbarProps } from './definitions'
+import { DEFAULT_SNACKBAR_PLACEMENT, UseSnackbarShowArgs, SnackbarProps } from './definitions'
 import { SnackbarProvider } from './SnackbarProvider'
-import { SnackbarRegion } from './snackbar-region'
+import { CALLOUT_CONFIG } from '../Callout/definitions'
 
 export const Snackbar = ({
   // own
   children,
   placement = DEFAULT_SNACKBAR_PLACEMENT,
 }: SnackbarProps) => {
-  const [snackbar, setSnackbar] = useState<SnackbarItemConfig | null>(null)
+  const [snackbar, setSnackbar] = useState<UseSnackbarShowArgs | null>(null)
   const [visible, setVisible] = useState<boolean>(false)
-
-  const finalPlacement = snackbar?.placement || placement
 
   const handleClose = useCallback(() => {
     setVisible(false)
   }, [])
 
+  const finalPlacement = snackbar?.placement || placement || 'bottom-right'
+
   return (
     <SnackbarProvider setVisible={setVisible} setSnackbar={setSnackbar}>
       <Flex justifyContent="center">
-        <SnackbarRegion
-          direction="top"
-          left
-          visible={finalPlacement === 'top-left' && visible}
-          {...(finalPlacement === 'top-left' ? snackbar : {})}
-          handleClose={handleClose}
-        />
-        <SnackbarRegion
-          direction="top"
-          visible={finalPlacement === 'top-center' && visible}
-          {...(finalPlacement === 'top-center' ? snackbar : {})}
-          handleClose={handleClose}
-        />
-        <SnackbarRegion
-          direction="top"
-          right
-          visible={finalPlacement === 'top-right' && visible}
-          {...(finalPlacement === 'top-right' ? snackbar : {})}
-          handleClose={handleClose}
-        />
-        <SnackbarRegion
-          direction="bottom"
-          left
-          visible={finalPlacement === 'bottom-left' && visible}
-          {...(finalPlacement === 'bottom-left' ? snackbar : {})}
-          handleClose={handleClose}
-        />
-        <SnackbarRegion
-          direction="bottom"
-          visible={finalPlacement === 'bottom-center' && visible}
-          {...(finalPlacement === 'bottom-center' ? snackbar : {})}
-          handleClose={handleClose}
-        />
-        <SnackbarRegion
-          direction="bottom"
-          right
-          visible={finalPlacement === 'bottom-right' && visible}
-          {...(finalPlacement === 'bottom-right' ? snackbar : {})}
-          handleClose={handleClose}
-        />
+        <Box
+          tagAttrs={{ style: { pointerEvents: !visible ? 'none' : undefined } }}
+          position="fixed"
+          top={finalPlacement.includes('top') ? 0 : 'unset'}
+          bottom={finalPlacement.includes('bottom') ? 0 : 'unset'}
+          left={finalPlacement.includes('left') ? 0 : 'unset'}
+          right={finalPlacement.includes('right') ? 0 : 'unset'}
+          zIndex={30}
+        >
+          <Slide property={finalPlacement.split('-')[0] as never} visible={visible}>
+            <Box key={snackbar?.status} position="relative" padding={10} maxInlineSize={{ sm: '450px' }}>
+              <Box position="absolute" top={15} right={15}>
+                <Button
+                  tagAttrs={{ onClick: handleClose }}
+                  iconName="close"
+                  size="xs"
+                  variant="solid"
+                  intent="primary"
+                  color={CALLOUT_CONFIG[snackbar?.status || 'info'].color}
+                />
+              </Box>
+              <Callout
+                size="sm"
+                content={snackbar?.content || ''}
+                heading={snackbar?.heading}
+                status={snackbar?.status}
+              />
+            </Box>
+          </Slide>
+        </Box>
       </Flex>
       <Box tagAttrs={{ style: { pointerEvents: visible ? 'none' : undefined } }}>{children}</Box>
     </SnackbarProvider>

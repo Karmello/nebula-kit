@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { cloneElement, ReactElement, useEffect, useState } from 'react'
 
 import { ComponentMeta } from 'client/definitions'
-import { Slide, SlideProps, Text } from 'lib/components'
+import { Box, Flex, Slide, SlideProps, Text } from 'lib/components'
 
-const SlideWrapper = ({ direction, offset, duration }: Partial<SlideProps>) => {
+const SlideWrapper = ({ children }: { children: ReactElement }) => {
   const [visible, setVisible] = useState<boolean>(false)
   let interval: NodeJS.Timeout | null = null
 
@@ -14,7 +14,7 @@ const SlideWrapper = ({ direction, offset, duration }: Partial<SlideProps>) => {
   useEffect(() => {
     interval = setInterval(() => {
       setVisible(!visible)
-    }, 2000)
+    }, 1000)
 
     return () => {
       clearInterval(interval)
@@ -22,23 +22,67 @@ const SlideWrapper = ({ direction, offset, duration }: Partial<SlideProps>) => {
     }
   }, [visible])
 
-  return (
-    <Slide visible={visible} direction={direction} offset={offset} duration={duration}>
-      <Text intent="neutral" noWrap>
-        Animated content.
-      </Text>
-    </Slide>
-  )
+  return cloneElement(children as any, { visible })
 }
 
 const SLIDE_EXAMPLES_META: ComponentMeta<SlideProps>['examples'] = [
   {
-    jsx: <SlideWrapper direction="left" offset="200px" />,
-    code: `<Slide visible={visible} direction="left" offset="200px">
-  <Text intent="neutral" noWrap>
+    description: 'Sliding in from the left.',
+    jsx: (
+      <SlideWrapper>
+        <Slide visible={false} property="left" duration={1000}>
+          <Box variant="outline" intent="secondary" color="blue">
+            Animated content.
+          </Box>
+        </Slide>
+      </SlideWrapper>
+    ),
+    code: `<Slide visible={visible} property="left" duration={1000}>
+  <Box variant="outline" intent="secondary" color="blue">
     Animated content.
-  </Text>
+  </Box>
 </Slide>`,
+    sandBoxWithNoPadding: true,
+  },
+  {
+    description: 'Sliding in from the right.',
+    jsx: (
+      <Box overflowX="hidden">
+        <Flex justifyContent="flex-end">
+          <SlideWrapper>
+            <Slide visible={false} property="right" duration={1000}>
+              <Box variant="outline" intent="secondary" color="blue">
+                Animated content.
+              </Box>
+            </Slide>
+          </SlideWrapper>
+        </Flex>
+      </Box>
+    ),
+    code: `<Slide visible={visible} property="right" duration={1000}>
+  <Box variant="outline" intent="secondary" color="blue">
+    Animated content.
+  </Box>
+</Slide>`,
+    sandBoxWithNoPadding: true,
+  },
+  {
+    description: 'Sliding in from the top.',
+    jsx: (
+      <SlideWrapper>
+        <Slide visible={false} property="top" duration={1000}>
+          <Box variant="outline" intent="secondary" color="blue">
+            Animated content.
+          </Box>
+        </Slide>
+      </SlideWrapper>
+    ),
+    code: `<Slide visible={visible} property="top" duration={1000}>
+  <Box variant="outline" intent="secondary" color="blue">
+    Animated content.
+  </Box>
+</Slide>`,
+    sandBoxWithNoPadding: true,
   },
 ]
 

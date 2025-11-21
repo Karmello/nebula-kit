@@ -1,19 +1,17 @@
 import { HtmlTagProps } from 'lib/components'
 
-export const SLIDE_DIRECTIONS = ['top', 'right', 'bottom', 'left'] as const
+export const SLIDE_PROPERTIES = ['top', 'right', 'bottom', 'left'] as const
 
 export const DEFAULT_SLIDE_DURATION: SlideProps['duration'] = 200
-export const DEFAULT_SLIDE_EASING: SlideProps['easing'] = 'ease'
+export const DEFAULT_SLIDE_EASING: SlideProps['easing'] = 'linear'
 
-export type SlideDirection = (typeof SLIDE_DIRECTIONS)[number]
+export type SlideProperties = (typeof SLIDE_PROPERTIES)[number]
 
 type SlideOwnProps = {
-  direction: SlideDirection
+  property: SlideProperties
   visible: boolean
-  offset: string
   duration?: number
   easing?: string
-  onExitComplete?: () => void
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {

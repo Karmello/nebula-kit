@@ -1,7 +1,6 @@
 import { Box } from 'lib/components'
 
-import { DEFAULT_RESIZE_DURATION } from '../Resize/definitions'
-import { RotateProps } from './definitions'
+import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING, RotateProps } from './definitions'
 
 export const Rotate = ({
   // HtmlTag
@@ -10,6 +9,8 @@ export const Rotate = ({
   tagRef,
   // own
   angle,
+  duration = DEFAULT_ROTATE_DURATION,
+  easing = DEFAULT_ROTATE_EASING,
 }: RotateProps) => {
   return (
     <Box
@@ -21,7 +22,7 @@ export const Rotate = ({
           ...tagAttrs?.style,
           transform: `rotate(${angle}deg)`,
           transformOrigin: 'center',
-          transition: `transform ${DEFAULT_RESIZE_DURATION}ms ease-in-out`,
+          transition: `transform ${duration}ms ${easing}`,
           lineHeight: 0,
         },
       }}
