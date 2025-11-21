@@ -29,7 +29,7 @@ export const useRipple = (parentRef: RefObject<any>) => {
       rippleEl.style.top = `${y}px`
 
       const diag = Math.sqrt(rect.width * rect.width + rect.height * rect.height)
-      const duration = Math.max(1000, Math.min(diag * 8, 3000))
+      const duration = Math.max(1500, Math.min(diag * 9, 3000))
       parent.style.setProperty('--neb-ripple-duration', `${duration}ms`)
 
       // restart animation
