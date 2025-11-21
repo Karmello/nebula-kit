@@ -12,7 +12,7 @@
 }
 
 .neb-ripple.is-active {
-  animation: neb-ripple-animation 1500ms ease-out forwards;
+  animation: neb-ripple-animation var(--neb-ripple-duration) ease-out forwards;
 }
 
 @keyframes neb-ripple-animation {
