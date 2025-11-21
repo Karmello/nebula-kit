@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react'
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
@@ -12,7 +13,6 @@ export const Loader = ({
   tagAttrs,
   tagRef,
   // Box
-  intent,
   color,
   // own
   size = DEFAULT_LOADER_SIZE,
@@ -24,8 +24,8 @@ export const Loader = ({
         ...tagAttrs,
         className: classNames(withPrefix('loader'), tagAttrs?.className || ''),
         style: {
-          borderTopColor: `var(--neb-${intent}-solid, var(--neb-ripple-bg))`,
-        },
+          '--neb-loader-color': `var(--neb-${color}-8, var(--neb-ripple-bg))`,
+        } as CSSProperties,
       }}
       tagRef={tagRef}
       blockSize={LOADER_SIZE_CONFIG[size || 'md']}

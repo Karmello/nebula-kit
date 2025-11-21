@@ -8,7 +8,7 @@ const LOADER_EXAMPLES_META: ComponentMeta<LoaderProps>['examples'] = [
   },
   {
     description: 'Custom loader.',
-    jsx: <Loader size="lg" intent="secondary" color="blue" />,
+    jsx: <Loader size="lg" color="blue" />,
   },
   {
     description:

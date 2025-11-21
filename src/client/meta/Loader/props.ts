@@ -10,10 +10,9 @@ const LOADER_PROPS_META: ComponentMeta<LoaderProps>['props'] = {
     options: ['boolean'],
     defaultValue: 'false',
     description:
-      'Absolutely centers the loader in both axes. Requires a parent with position set to relative.',
+      'Absolutely centers the loader in both axes. Wrap it with an element with "position" set to "relative" to define the centering context.',
   },
   color: BOX_PROPS_META.color,
-  intent: BOX_PROPS_META.intent,
   size: {
     options: LOADER_SIZES,
     defaultValue: String(DEFAULT_LOADER_SIZE),

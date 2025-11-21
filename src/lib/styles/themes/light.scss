@@ -4,6 +4,7 @@ html[data-theme='light'] {
   --neb-background: var(--neb-gray-1);
   --neb-text: var(--neb-gray-15);
   --neb-focus-border: var(--neb-gray-15);
+  --neb-loader-opacity: 0.025;
 
   @each $color in $neb-colors {
     &[data-brand='#{$color}'],

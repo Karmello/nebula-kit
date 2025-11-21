@@ -21,6 +21,6 @@ type LoaderOwnProps = {
 
 type PropsFromHtmlTag = Pick<HtmlTagProps, 'tagAttrs' | 'tagRef'>
 
-type PropsFromBox = Pick<BoxProps, 'intent' | 'color'>
+type PropsFromBox = Pick<BoxProps, 'color'>
 
 export type LoaderProps = PropsFromHtmlTag & PropsFromBox & LoaderOwnProps
