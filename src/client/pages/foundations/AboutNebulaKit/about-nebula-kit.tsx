@@ -36,7 +36,8 @@ export default () => {
       <Spacer blockSize={15} />
       <Text>
         It's a framework with a point of view - one that favors clarity over infinite options and helps you
-        move forward without second-guessing every decision.
+        move forward without second-guessing every decision. That means embracing smart constraints that
+        simplify choices, prevent messy edge cases, and keep products consistent even as they scale.
       </Text>
       <Spacer blockSize={15} />
       <Text>

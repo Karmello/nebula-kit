@@ -53,7 +53,7 @@ export default () => {
       </MarkerList>
       <Spacer blockSize={30} />
       <Text>
-        Predictability isn't just about stability — it's about trust. You can modify, extend and animate
+        Predictability isn't just about stability - it's about trust. You can modify, extend and animate
         without fear of breaking the system because it behaves exactly the way it says it will.
       </Text>
     </Box>

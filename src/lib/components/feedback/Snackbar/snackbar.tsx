@@ -29,7 +29,7 @@ export const Snackbar = ({
   const finalPlacement = snackbar?.placement || placement || 'bottom-right'
 
   return (
-    <SnackbarProvider setVisible={setVisible} setSnackbar={setSnackbar}>
+    <SnackbarProvider visible={visible} setVisible={setVisible} setSnackbar={setSnackbar}>
       <Flex justifyContent="center">
         <Box
           tagAttrs={{ style: { pointerEvents: !visible ? 'none' : undefined } }}
@@ -40,7 +40,11 @@ export const Snackbar = ({
           right={finalPlacement.includes('right') ? 0 : 'unset'}
           zIndex={30}
         >
-          <Slide property={finalPlacement.split('-')[0] as never} visible={visible}>
+          <Slide
+            property={finalPlacement.split('-')[0] as never}
+            visible={visible}
+            easing={visible ? 'ease-out' : 'ease-in'}
+          >
             <Box key={snackbar?.status} position="relative" padding={10} maxInlineSize={maxInlineSize}>
               <Box position="absolute" top={15} right={15}>
                 <Button
@@ -62,7 +66,7 @@ export const Snackbar = ({
           </Slide>
         </Box>
       </Flex>
-      <Box tagAttrs={{ style: { pointerEvents: visible ? 'none' : undefined } }}>{children}</Box>
+      {children}
     </SnackbarProvider>
   )
 }
