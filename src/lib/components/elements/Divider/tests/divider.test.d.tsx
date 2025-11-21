@@ -12,9 +12,6 @@ expectError(<Divider>children</Divider>)
 // unknown prop not allowed
 expectError(<Divider unknown="xyz" />)
 
-// blockSize prop allowed
-expectType(<Divider size="lg" />)
-
 // intent prop allowed
 expectType(<Divider intent="primary" />)
 

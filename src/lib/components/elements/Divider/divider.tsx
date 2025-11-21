@@ -2,8 +2,7 @@ import classNames from 'classnames'
 
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { useNebkitStore } from 'lib/state'
-import { NEBKIT_SIZES_MAP } from 'lib/components/utility/NebkitProvider/definitions'
+import { BOX_BORDER_WIDTH } from 'lib/components/base/Box/definitions'
 
 import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_MARGIN_BLOCK, DividerProps } from './definitions'
 
@@ -19,11 +18,7 @@ export const Divider = ({
   marginBlock = DEFAULT_DIVIDER_MARGIN_BLOCK,
   marginTop,
   marginBottom,
-  // own
-  size,
 }: DividerProps) => {
-  const { borderWidth } = useNebkitStore()
-
   return (
     <Box
       tag="hr"
@@ -35,7 +30,7 @@ export const Divider = ({
       variant="solid"
       color={color}
       intent={intent}
-      blockSize={size !== undefined ? NEBKIT_SIZES_MAP.borderWidthSize[size] : borderWidth}
+      blockSize={BOX_BORDER_WIDTH}
       borderWidth={0}
       marginBlock={marginBlock}
       marginTop={marginTop}

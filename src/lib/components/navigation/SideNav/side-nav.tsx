@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { WithSlots } from 'lib/components/internal'
 import { Flex } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { useNebkitStore } from 'lib/state'
+import { BOX_BORDER_WIDTH } from 'lib/components/base/Box/definitions'
 
 import { SideNavProvider } from './SideNavProvider'
 import { SideNavToggle } from './components'
@@ -25,9 +25,7 @@ export const SideNav = ({
   expandMode = DEFAULT_SIDE_NAV_EXPAND_MODE,
   variant,
 }: SideNavProps) => {
-  const { borderWidth } = useNebkitStore()
-
-  const finalRowGap = rowGap !== undefined ? rowGap : borderWidth
+  const finalRowGap = rowGap !== undefined ? rowGap : BOX_BORDER_WIDTH
 
   return (
     <WithSlots<'SideNav.Category' | 'SideNav.Item'>

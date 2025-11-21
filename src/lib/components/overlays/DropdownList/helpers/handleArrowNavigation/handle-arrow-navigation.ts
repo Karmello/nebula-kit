@@ -1,3 +1,4 @@
+import { BOX_BORDER_WIDTH } from 'lib/components/base/Box/definitions'
 import { BUTTON_SIZE_CONFIG, ButtonSize } from 'lib/components/controls/Button/definitions'
 
 export const handleArrowNavigation = (
@@ -5,11 +6,10 @@ export const handleArrowNavigation = (
   itemsCount: number,
   visibleItemsCount: number,
   size: ButtonSize,
-  borderWidth: number,
   scrollTop: number,
   activeIndex: number
 ): { activeIndex: number; scrollTop: number } => {
-  const itemSize = BUTTON_SIZE_CONFIG[size].blockSize + borderWidth
+  const itemSize = BUTTON_SIZE_CONFIG[size].blockSize + BOX_BORDER_WIDTH
   const listHeight = visibleItemsCount * itemSize
 
   let newIndex = activeIndex

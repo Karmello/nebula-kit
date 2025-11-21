@@ -12,7 +12,6 @@ export const NebkitProvider = <T extends Theme = 'light'>({
   children,
   theme,
   brand,
-  borderWidthSize,
   borderRadiusSize,
 }: NebkitProviderProps<T>): ReactElement => {
   const nebkitStore = useNebkitStore()
@@ -29,17 +28,12 @@ export const NebkitProvider = <T extends Theme = 'light'>({
   useLayoutEffect(() => {
     if (theme) nebkitStore.setTheme(theme)
     if (brand) nebkitStore.setBrand(brand)
-    if (borderWidthSize) nebkitStore.setBorderWidthSize(borderWidthSize)
     if (borderRadiusSize) nebkitStore.setBorderRadiusSize(borderRadiusSize)
-  }, [theme, brand, borderWidthSize, borderRadiusSize])
+  }, [theme, brand, borderRadiusSize])
 
   useLayoutEffect(() => {
     document?.documentElement.setAttribute('data-theme', nebkitStore.theme)
     document.documentElement.setAttribute('data-brand', nebkitStore.brand)
-    document.documentElement.style.setProperty(
-      '--neb-border-width',
-      resolveScale(nebkitStore.borderWidth) || ''
-    )
     document.documentElement.style.setProperty(
       '--neb-border-radius',
       resolveScale(nebkitStore.borderRadius) || ''

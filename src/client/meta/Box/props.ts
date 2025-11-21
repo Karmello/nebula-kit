@@ -2,10 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { COLORS, CSS_DISPLAY, CSS_OVERFLOW, CSS_POSITION, CSS_TEXT_ALIGN } from 'lib/definitions'
 import { BoxProps, BOX_VARIANTS, BOX_INTENTS } from 'lib/components/base/Box/definitions'
 
-import {
-  DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
-  DEFAULT_NEBKIT_BORDER_WIDTH_SIZE,
-} from 'lib/components/utility/NebkitProvider/definitions'
+import { DEFAULT_NEBKIT_BORDER_RADIUS_SIZE } from 'lib/components/utility/NebkitProvider/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
@@ -31,7 +28,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   borderBottomWidth: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
+    defaultValue: '0',
     description: 'Border width for the bottom side.',
   },
   borderIntent: {
@@ -41,7 +38,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   borderLeftWidth: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
+    defaultValue: '0',
     description: 'Border width for the left side.',
   },
   borderRadius: {
@@ -52,7 +49,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   borderRightWidth: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
+    defaultValue: '0',
     description: 'Border width for the right side.',
   },
   borderTopLeftRadius: {
@@ -69,12 +66,12 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   borderTopWidth: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
+    defaultValue: '0',
     description: 'Border width for the top side.',
   },
   borderWidth: {
     options: ['ScaleValue', 'CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_BORDER_WIDTH_SIZE),
+    defaultValue: '0',
     description: 'Sets border width overriding global value set by NebkitProvider.',
   },
   bottom: {

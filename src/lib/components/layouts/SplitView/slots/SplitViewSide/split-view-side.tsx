@@ -5,6 +5,7 @@ import { Resize, Box, Flex, Button } from 'lib/components'
 import { FocusTrap } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 import { useNebkitStore } from 'lib/state'
+import { BOX_BORDER_WIDTH } from 'lib/components/base/Box/definitions'
 
 import { SplitViewSideProps, DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from './definitions'
 import { useSplitViewContext } from '../../SplitViewProvider'
@@ -18,7 +19,7 @@ export const SplitViewSide = ({
   borderIntent,
   inlineSize = DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
 }: SplitViewSideProps) => {
-  const { brand, borderWidth } = useNebkitStore()
+  const { brand } = useNebkitStore()
   const { sideOpen, setSideOpen, sidePosition, switchAt, mode } = useSplitViewContext()
 
   const ref = useRef(null)
@@ -43,8 +44,8 @@ export const SplitViewSide = ({
         color={color || brand}
         intent={intent || { base: 'tertiary', [String(switchAt)]: 'neutral' }}
         borderIntent={borderIntent || { base: 'muted', [String(switchAt)]: 'neutral' }}
-        borderLeftWidth={sidePosition === 'right' && sideOpen ? borderWidth : 0}
-        borderRightWidth={sidePosition === 'left' && sideOpen ? borderWidth : 0}
+        borderLeftWidth={sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : 0}
+        borderRightWidth={sidePosition === 'left' && sideOpen ? BOX_BORDER_WIDTH : 0}
         left={sidePosition === 'left' ? 0 : undefined}
         right={sidePosition === 'right' ? 0 : undefined}
         borderRadius={0}

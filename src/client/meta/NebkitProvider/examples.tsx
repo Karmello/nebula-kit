@@ -18,7 +18,7 @@ const NEBKIT_PROVIDER_EXAMPLES_META: ComponentMeta<NebkitProviderProps<Theme>>['
   {
     description: 'Changing global configuration.',
     jsx: (
-      <NebkitProvider theme="dark" brand="brown" borderWidthSize="lg" borderRadiusSize="xs">
+      <NebkitProvider theme="dark" brand="brown" borderRadiusSize="xs">
         <App />
       </NebkitProvider>
     ),

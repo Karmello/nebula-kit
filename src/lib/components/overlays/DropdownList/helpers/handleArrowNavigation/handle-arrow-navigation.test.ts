@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 
 import { handleArrowNavigation } from './handle-arrow-navigation'
 import { BUTTON_SIZE_CONFIG } from 'lib/components/controls/Button/definitions'
+import { BOX_BORDER_WIDTH } from 'lib/components/base/Box/definitions'
 
 describe('handleArrowNavigation', () => {
   it('moves down by one when all items are visible and no scroll adjustment needed', () => {
@@ -10,7 +11,6 @@ describe('handleArrowNavigation', () => {
       5, // itemsCount
       5, // visibleItemsCount (whole list visible)
       'md', // assuming BUTTON_SIZE_CONFIG['md'] exists
-      0, // borderWidth
       0, // scrollTop
       1 // activeIndex
     )
@@ -25,7 +25,6 @@ describe('handleArrowNavigation', () => {
       5,
       5,
       'md',
-      0,
       0, // scrollTop
       0 // activeIndex at top
     )
@@ -35,7 +34,7 @@ describe('handleArrowNavigation', () => {
   })
 
   it('aligns next item to top when moving down past the window, clamped to max scroll', () => {
-    const itemSize = BUTTON_SIZE_CONFIG['md'].blockSize
+    const itemSize = BUTTON_SIZE_CONFIG['md'].blockSize + BOX_BORDER_WIDTH
     const maxScrollTop = (10 - 5) * itemSize // itemsCount - visibleItemsCount
 
     const result = handleArrowNavigation(
@@ -43,7 +42,6 @@ describe('handleArrowNavigation', () => {
       10,
       5,
       'md',
-      0,
       itemSize * 2, // firstVisibleIndex = 2, lastVisibleIndex = 6
       6
     )
@@ -54,14 +52,13 @@ describe('handleArrowNavigation', () => {
   })
 
   it('scrolls the list so the next item becomes top-aligned when moving down past visible window (no clamp)', () => {
-    const itemSize = BUTTON_SIZE_CONFIG['md'].blockSize
+    const itemSize = BUTTON_SIZE_CONFIG['md'].blockSize + BOX_BORDER_WIDTH
 
     const result = handleArrowNavigation(
       'ArrowDown',
       20, // plenty of items so no clamping
       5,
       'md',
-      0,
       itemSize * 2, // firstVisibleIndex = 2, lastVisibleIndex = 6
       6 // activeIndex = last visible
     )
@@ -82,7 +79,6 @@ describe('handleArrowNavigation', () => {
       20, // many items, so no clamping
       5,
       'md',
-      0,
       scrollTop,
       5 // activeIndex = first visible item
     )
@@ -101,7 +97,6 @@ describe('handleArrowNavigation', () => {
       20,
       5,
       'md',
-      0,
       halfItemScroll, // scrollTop starts halfway into item 0
       -1 // no selection yet
     )
@@ -112,7 +107,7 @@ describe('handleArrowNavigation', () => {
   })
 
   it('adjusts scroll gently when first navigation up targets a half-visible bottom item', () => {
-    const itemSize = BUTTON_SIZE_CONFIG['md'].blockSize
+    const itemSize = BUTTON_SIZE_CONFIG['md'].blockSize + BOX_BORDER_WIDTH
     const visibleItemsCount = 5
     const itemsCount = 20
 
@@ -124,7 +119,6 @@ describe('handleArrowNavigation', () => {
       itemsCount,
       visibleItemsCount,
       'md',
-      0,
       halfCutScroll,
       -1 // no selection yet
     )
@@ -141,7 +135,6 @@ describe('handleArrowNavigation', () => {
       5, // itemsCount
       5, // all visible
       'md',
-      0,
       0, // scrollTop
       4 // activeIndex = last item
     )
@@ -156,7 +149,6 @@ describe('handleArrowNavigation', () => {
       3, // only 3 items
       5, // window can show 5
       'md',
-      0,
       0,
       1
     )

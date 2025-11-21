@@ -2,7 +2,6 @@ import { cloneElement, ReactElement, ReactNode, RefObject, useEffect, useLayoutE
 
 import { Flex, Box, Resize, Portal, DropdownListProps } from 'lib/components'
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/motion/Resize/definitions'
-import { useNebkitStore } from 'lib/state'
 import { useOutsideClick } from 'lib/hooks'
 
 import { useDropdownListContext } from './DropdownListProvider'
@@ -31,8 +30,6 @@ export const DropdownListComponent = ({
     setHoveredIndex,
     setBlockMouse,
   } = useDropdownListContext()
-
-  const { borderWidth } = useNebkitStore()
 
   const portalRef = useRef<HTMLDivElement>(null)
   const scrollWrapperRef = useRef<HTMLDivElement>(null)
@@ -64,7 +61,6 @@ export const DropdownListComponent = ({
       const scrollTop = getInitScrollTop(
         finalVisibleItemsCount,
         size ?? 'md',
-        borderWidth,
         scrollToIndex ?? 0,
         scrollAlign
       )
@@ -73,7 +69,7 @@ export const DropdownListComponent = ({
   }, [scrollWrapperRef.current])
 
   const triggerWidth = (triggerRef as RefObject<HTMLDivElement>).current?.offsetWidth
-  const itemsContainerBlockSize = getItemsWrapperBlockSize(finalVisibleItemsCount, size ?? 'md', borderWidth)
+  const itemsContainerBlockSize = getItemsWrapperBlockSize(finalVisibleItemsCount, size ?? 'md')
   const opensUpDownwards = (placement || 'bottom-start').startsWith('bottom')
 
   return (
@@ -102,7 +98,6 @@ export const DropdownListComponent = ({
               itemsCount,
               finalVisibleItemsCount,
               size ?? 'md',
-              borderWidth,
               scrollWrapperRef.current.scrollTop,
               hoveredIndex
             )

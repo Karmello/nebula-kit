@@ -1,11 +1,11 @@
 import { BUTTON_SIZE_CONFIG, ButtonSize } from 'lib/components/controls/Button/definitions'
+import { BOX_BORDER_WIDTH } from 'lib/components/base/Box/definitions'
 
 import { DropdownListProps } from '../../definitions'
 
 export const getInitScrollTop = (
   visibleItemsCount: number,
   size: ButtonSize,
-  borderWidth: number,
   scrollToIndex: number,
   scrollAlign: DropdownListProps['scrollAlign']
 ): number | undefined => {
@@ -18,6 +18,6 @@ export const getInitScrollTop = (
   }
 
   if (baseIndex >= 0) {
-    return baseIndex * (BUTTON_SIZE_CONFIG[size].blockSize + borderWidth)
+    return baseIndex * (BUTTON_SIZE_CONFIG[size].blockSize + BOX_BORDER_WIDTH)
   }
 }

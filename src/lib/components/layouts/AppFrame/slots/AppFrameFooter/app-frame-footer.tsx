@@ -2,7 +2,7 @@ import classNames from 'classnames'
 
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { useNebkitStore } from 'lib/state'
+import { BOX_BORDER_WIDTH } from 'lib/components/base/Box/definitions'
 
 import {
   AppFrameFooterProps,
@@ -19,8 +19,6 @@ export const AppFrameFooter = ({
   borderIntent = DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT,
   ...paddings
 }: AppFrameFooterProps) => {
-  const { borderWidth } = useNebkitStore()
-
   return (
     <Box
       tag="footer"
@@ -34,7 +32,7 @@ export const AppFrameFooter = ({
       intent={intent}
       borderIntent={borderIntent}
       borderWidth={0}
-      borderTopWidth={borderWidth}
+      borderTopWidth={BOX_BORDER_WIDTH}
       borderRadius={0}
       {...paddings}
     >

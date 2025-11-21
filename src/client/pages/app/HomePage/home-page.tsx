@@ -6,24 +6,12 @@ import { useNebkitStore } from 'lib/state'
 import { Color, COLORS, THEMES } from 'lib/definitions'
 import { useNavigateTo } from 'client/services'
 
-import {
-  NEBKIT_BORDER_RADIUS_SIZES,
-  NEBKIT_BORDER_WIDTH_SIZES,
-} from 'lib/components/utility/NebkitProvider/definitions'
+import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/utility/NebkitProvider/definitions'
 
 export const HomePage = () => {
   const navigateTo = useNavigateTo()
 
-  const {
-    theme,
-    setTheme,
-    brand,
-    setBrand,
-    borderWidthSize,
-    setBorderWidthSize,
-    borderRadiusSize,
-    setBorderRadiusSize,
-  } = useNebkitStore()
+  const { theme, setTheme, brand, setBrand, borderRadiusSize, setBorderRadiusSize } = useNebkitStore()
 
   return (
     <Box padding={{ base: 20, lg: 50 }}>
@@ -100,20 +88,6 @@ export const HomePage = () => {
               >
                 {COLORS.map(brand => (
                   <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
-                ))}
-              </Select>
-            </Flex.Item>
-            <Flex.Item>
-              <Text bold>Border width</Text>
-              <Select
-                value={borderWidthSize}
-                onChange={value => setBorderWidthSize(value as never)}
-                inlineSize="150px"
-                size="sm"
-                scrollAlign="center"
-              >
-                {NEBKIT_BORDER_WIDTH_SIZES.map(n => (
-                  <Select.Option value={n}>{n}</Select.Option>
                 ))}
               </Select>
             </Flex.Item>

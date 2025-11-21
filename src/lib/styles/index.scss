@@ -5,6 +5,7 @@
 html {
   background: var(--neb-background);
   color: var(--neb-text);
+  --neb-border-width: var(--neb-scale-2);
 
   font-family:
     system-ui,

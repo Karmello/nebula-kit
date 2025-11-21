@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { applyStaticDataset } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
 import { Box } from 'lib/components'
-import { useNebkitStore } from 'lib/state'
+import { BOX_BORDER_WIDTH } from 'lib/components/base/Box/definitions'
 
 import { useAppFrameContext } from '../../AppFrameProvider'
 
@@ -24,7 +24,6 @@ export const AppFrameHeader = ({
   borderIntent = DEFAULT_APP_FRAME_HEADER_BORDER_INTENT,
   ...paddings
 }: AppFrameHeaderProps) => {
-  const { borderWidth } = useNebkitStore()
   const { stickyHeader } = useAppFrameContext()
 
   return (
@@ -41,7 +40,7 @@ export const AppFrameHeader = ({
       intent={intent}
       borderIntent={borderIntent}
       borderWidth={0}
-      borderBottomWidth={borderWidth}
+      borderBottomWidth={BOX_BORDER_WIDTH}
       borderRadius={0}
       {...paddings}
     >
