@@ -2,11 +2,19 @@ import { useCallback, useState } from 'react'
 
 import { Box, Button, Callout, Flex, Slide } from 'lib/components'
 
-import { DEFAULT_SNACKBAR_PLACEMENT, UseSnackbarShowArgs, SnackbarProps } from './definitions'
+import {
+  DEFAULT_SNACKBAR_PLACEMENT,
+  DEFAULT_SNACKBAR_MAX_INLINE_SIZE,
+  UseSnackbarShowArgs,
+  SnackbarProps,
+} from './definitions'
+
 import { SnackbarProvider } from './SnackbarProvider'
 import { CALLOUT_CONFIG } from '../Callout/definitions'
 
 export const Snackbar = ({
+  // Box
+  maxInlineSize = DEFAULT_SNACKBAR_MAX_INLINE_SIZE,
   // own
   children,
   placement = DEFAULT_SNACKBAR_PLACEMENT,
@@ -33,7 +41,7 @@ export const Snackbar = ({
           zIndex={30}
         >
           <Slide property={finalPlacement.split('-')[0] as never} visible={visible}>
-            <Box key={snackbar?.status} position="relative" padding={10} maxInlineSize={{ sm: '450px' }}>
+            <Box key={snackbar?.status} position="relative" padding={10} maxInlineSize={maxInlineSize}>
               <Box position="absolute" top={15} right={15}>
                 <Button
                   tagAttrs={{ onClick: handleClose }}

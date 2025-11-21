@@ -1,7 +1,7 @@
 import { cloneElement, ReactElement, useEffect, useState } from 'react'
 
 import { ComponentMeta } from 'client/definitions'
-import { Box, Flex, Slide, SlideProps, Text } from 'lib/components'
+import { Box, Flex, Slide, SlideProps } from 'lib/components'
 
 const SlideWrapper = ({ children }: { children: ReactElement }) => {
   const [visible, setVisible] = useState<boolean>(false)
