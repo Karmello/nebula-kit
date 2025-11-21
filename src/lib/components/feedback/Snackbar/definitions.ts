@@ -12,7 +12,7 @@ export const SNACKBAR_PLACEMENTS = [
   'bottom-right',
 ] as const
 
-export const DEFAULT_SNACKBAR_PLACEMENT: SnackbarProps['placement'] = 'top-right'
+export const DEFAULT_SNACKBAR_PLACEMENT: SnackbarProps['placement'] = 'bottom-right'
 export const DEFAULT_SNACKBAR_MAX_INLINE_SIZE: SnackbarProps['maxInlineSize'] = { md: '450px' }
 
 export type SnackbarPlacement = (typeof SNACKBAR_PLACEMENTS)[number]
