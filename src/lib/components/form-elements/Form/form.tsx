@@ -6,6 +6,8 @@ import { Flex } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
+import { waitForTime } from './helpers'
+
 import {
   DEFAULT_FORM_ALIGN_ITEMS,
   DEFAULT_FORM_FLEX_DIRECTION,
@@ -35,9 +37,22 @@ export const Form = <
   gap,
   rowGap = DEFAULT_FORM_ROW_GAP,
   columnGap = DEFAULT_FORM_COLUMN_GAP,
+  // own
+  minLoadingTime,
+  onResponse,
 }: FormProps<TFieldValues, TContext, TTransformedValues>) => {
   const form = useForm<TFieldValues, TContext, TTransformedValues>(useFormProps)
-  const handleSubmit = form.handleSubmit(onValidSubmission, onInvalidSubmission)
+  const handleSubmit = form.handleSubmit(async (...args) => {
+    const start = Date.now()
+    try {
+      const res = await onValidSubmission(...args)
+      await waitForTime(minLoadingTime, start)
+      onResponse?.(res)
+    } catch (err) {
+      await waitForTime(minLoadingTime, start)
+      onResponse?.(err)
+    }
+  }, onInvalidSubmission)
 
   const formId = useId()
 

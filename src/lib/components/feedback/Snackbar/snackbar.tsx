@@ -1,12 +1,14 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 
 import { Box, Button, Callout, Flex, Slide } from 'lib/components'
 
 import {
-  DEFAULT_SNACKBAR_PLACEMENT,
-  DEFAULT_SNACKBAR_MAX_INLINE_SIZE,
   UseSnackbarShowArgs,
   SnackbarProps,
+  DEFAULT_SNACKBAR_PLACEMENT,
+  DEFAULT_SNACKBAR_MAX_INLINE_SIZE,
+  DEFAULT_SNACKBAR_AUTO_CLOSE_DELAY,
+  DEFAULT_SNACKBAR_CLOSE_ON_OUTSIDE_CLICK,
 } from './definitions'
 
 import { SnackbarProvider } from './SnackbarProvider'
@@ -18,9 +20,12 @@ export const Snackbar = ({
   // own
   children,
   placement = DEFAULT_SNACKBAR_PLACEMENT,
+  autoCloseDelay = DEFAULT_SNACKBAR_AUTO_CLOSE_DELAY,
+  closeOnOutsideClick = DEFAULT_SNACKBAR_CLOSE_ON_OUTSIDE_CLICK,
 }: SnackbarProps) => {
   const [snackbar, setSnackbar] = useState<UseSnackbarShowArgs | null>(null)
   const [visible, setVisible] = useState<boolean>(false)
+  const rootRef = useRef<HTMLDivElement>(null)
 
   const handleClose = useCallback(() => {
     setVisible(false)
@@ -29,10 +34,19 @@ export const Snackbar = ({
   const finalPlacement = snackbar?.placement || placement || 'bottom-right'
 
   return (
-    <SnackbarProvider visible={visible} setVisible={setVisible} setSnackbar={setSnackbar}>
-      <Flex justifyContent="center">
+    <SnackbarProvider
+      rootRef={rootRef}
+      visible={visible}
+      setVisible={setVisible}
+      setSnackbar={setSnackbar}
+      autoCloseDelay={autoCloseDelay}
+      closeOnOutsideClick={closeOnOutsideClick}
+    >
+      <Flex tagRef={rootRef} justifyContent="center">
         <Box
-          tagAttrs={{ style: { pointerEvents: !visible ? 'none' : undefined } }}
+          tagAttrs={{
+            style: { pointerEvents: !visible ? 'none' : undefined },
+          }}
           position="fixed"
           top={finalPlacement.includes('top') ? 0 : 'unset'}
           bottom={finalPlacement.includes('bottom') ? 0 : 'unset'}

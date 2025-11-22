@@ -8,6 +8,11 @@ export const DEFAULT_FORM_ALIGN_ITEMS: FormProps['alignItems'] = 'stretch'
 export const DEFAULT_FORM_COLUMN_GAP: FormProps['columnGap'] = 10
 export const DEFAULT_FORM_ROW_GAP: FormProps['rowGap'] = 30
 
+type FormOwnProps = {
+  minLoadingTime?: number
+  onResponse?: (res: unknown) => void
+}
+
 type PropsFromHtmlTag<
   TFieldValues extends FieldValues = FieldValues,
   TContext = any,
@@ -32,4 +37,5 @@ export type FormProps<
   onValidSubmission: SubmitHandler<TTransformedValues>
   onInvalidSubmission?: SubmitErrorHandler<TFieldValues>
 } & PropsFromHtmlTag<TFieldValues, TContext, TTransformedValues> &
-  PropsFromFlex
+  PropsFromFlex &
+  FormOwnProps

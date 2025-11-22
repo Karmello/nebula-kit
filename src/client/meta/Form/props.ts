@@ -33,14 +33,25 @@ const FORM_PROPS_META: ComponentMeta<FormProps>['props'] = {
   flexWrap: FLEX_PROPS_META.flexWrap,
   gap: FLEX_PROPS_META.gap,
   justifyContent: FLEX_PROPS_META.justifyContent,
+  minLoadingTime: {
+    options: ['number'],
+    description:
+      'Sets the minimum time (in milliseconds) that the form stays in a loading state. Useful to avoid flickering when requests resolve instantly. Around 500ms tends to provide the smoothest UX.',
+  },
   onInvalidSubmission: {
-    options: ['SubmitErrorHandler (RHF)'],
+    options: ['(errors, event) => void'],
     description: 'Callback fired when validation fails, receiving the field errors.',
   },
+  onResponse: {
+    options: ['(res: unknown) => void'],
+    description:
+      'Called once the submission cycle finishes. The "res" argument contains whatever "onValidSubmission" returned or threw and is typed as unknown so consumers may cast it as needed.',
+  },
   onValidSubmission: {
-    options: ['SubmitHandler (RHF)'],
+    options: ['(values, event) => void'],
     isRequired: true,
-    description: 'Callback fired when form data passes validation, receiving the validated values.',
+    description:
+      'Callback fired when form data passes validation, receiving the validated values. Return a Promise to run asynchronous actions like API calls. The form will wait for the Promise to resolve or reject before continuing and then call the "onResponse" callback.',
   },
   rowGap: {
     ...FLEX_PROPS_META.rowGap,

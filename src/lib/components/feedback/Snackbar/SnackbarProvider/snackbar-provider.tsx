@@ -1,12 +1,15 @@
-import { createContext, ReactNode, useContext, useRef } from 'react'
+import { createContext, ReactNode, RefObject, useContext, useEffect, useRef } from 'react'
 
 import { UseSnackbarShowArgs } from '../definitions'
 
 type SnackbarProviderProps = {
+  rootRef: RefObject<HTMLDivElement>
   children: ReactNode
   visible: boolean
   setVisible: (visible: boolean) => void
   setSnackbar: (config: UseSnackbarShowArgs) => void
+  autoCloseDelay: number
+  closeOnOutsideClick: boolean
 }
 
 type SnackbarContextValue = {
@@ -17,8 +20,43 @@ const SnackbarContext = createContext<SnackbarContextValue | null>(null)
 
 export const useSnackbar = () => useContext(SnackbarContext)
 
-export const SnackbarProvider = ({ children, visible, setVisible, setSnackbar }: SnackbarProviderProps) => {
+export const SnackbarProvider = ({
+  rootRef,
+  children,
+  visible,
+  setVisible,
+  setSnackbar,
+  autoCloseDelay,
+  closeOnOutsideClick,
+}: SnackbarProviderProps) => {
   const autoCloseRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    if (!visible) return
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setVisible(false)
+        clearTimeout(autoCloseRef.current)
+        autoCloseRef.current = null
+      }
+    }
+    window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
+  }, [visible])
+
+  useEffect(() => {
+    if (!visible || !closeOnOutsideClick) return
+    const handleClick = (e: MouseEvent) => {
+      if (!rootRef.current) return
+      if (!rootRef.current.contains(e.target as Node)) {
+        setVisible(false)
+        clearTimeout(autoCloseRef.current)
+        autoCloseRef.current = null
+      }
+    }
+    window.addEventListener('mousedown', handleClick)
+    return () => window.removeEventListener('mousedown', handleClick)
+  }, [visible])
 
   const show = (config: UseSnackbarShowArgs) => {
     if (visible) return
@@ -34,7 +72,7 @@ export const SnackbarProvider = ({ children, visible, setVisible, setSnackbar }:
     autoCloseRef.current = window.setTimeout(() => {
       setVisible(false)
       autoCloseRef.current = null
-    }, 2000)
+    }, autoCloseDelay)
   }
 
   return <SnackbarContext.Provider value={{ show }}>{children}</SnackbarContext.Provider>
