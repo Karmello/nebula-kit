@@ -4,6 +4,9 @@ WORKDIR /app
 ARG PAT
 ENV PAT=$PAT
 
+ARG API_URL
+ENV API_URL=$API_URL
+
 RUN corepack enable && corepack use yarn@4.10.3
 
 # copy package files first
