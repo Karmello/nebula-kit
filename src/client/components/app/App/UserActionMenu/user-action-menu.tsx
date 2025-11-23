@@ -2,10 +2,12 @@ import { useLocation } from 'react-router'
 
 import { useNavigateTo } from 'client/services'
 import { PageKey } from 'client/definitions'
+import { useAppStore } from 'client/store'
 import { Select } from 'lib/components'
 
 export const UserActionMenu = () => {
   const { pathname } = useLocation()
+  const { token, setToken } = useAppStore()
 
   const navigateTo = useNavigateTo()
 
@@ -19,11 +21,24 @@ export const UserActionMenu = () => {
       staticLabel="Account"
       value={currentPageKey}
       onChange={value => {
-        navigateTo(`/${value}`)
+        if (value === 'logout') {
+          setToken('')
+        } else {
+          navigateTo(`/${value}`)
+        }
       }}
     >
-      <Select.Option value={PageKey.login}>Log in</Select.Option>
-      <Select.Option value={PageKey.register}>Register</Select.Option>
+      {!token ? (
+        <>
+          <Select.Option value={PageKey.login}>Log in</Select.Option>
+          <Select.Option value={PageKey.register}>Register</Select.Option>
+        </>
+      ) : (
+        <>
+          <Select.Option value={PageKey.dashboard}>Dashboard</Select.Option>
+          <Select.Option value="logout">Log out</Select.Option>
+        </>
+      )}
     </Select>
   )
 }

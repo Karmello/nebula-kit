@@ -37,7 +37,7 @@ export const useNebkitStore = create<NebkitState>()(
         }),
     }),
     {
-      name: `${LIB_PREFIX}.store`,
+      name: `${LIB_PREFIX}.lib`,
     }
   )
 )

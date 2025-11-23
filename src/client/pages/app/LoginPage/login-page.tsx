@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
-import { sentenceCase } from 'change-case'
 
 import { useNavigateTo } from 'client/services'
+import { useAppStore } from 'client/store'
+import { PageKey } from 'client/definitions'
 import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnackbar } from 'lib/components'
 
 type LoginFormValues = {
@@ -16,6 +17,7 @@ export const LoginPage = () => {
   const { search } = useLocation()
   const navigateTo = useNavigateTo()
   const { show } = useSnackbar()
+  const { setToken } = useAppStore()
 
   useEffect(() => {
     const params = new URLSearchParams(search)
@@ -36,11 +38,10 @@ export const LoginPage = () => {
     if (res) {
       const body = await res.json()
       if (body?.message) {
-        show({
-          status: body.ok ? 'info' : 'warning',
-          content: body.message,
-          heading: body.ok ? sentenceCase(body.error) : undefined,
-        })
+        show({ status: 'warning', content: body.message })
+      }
+      if (body?.token) {
+        setToken(body.token)
       }
     }
   }, [])
@@ -56,6 +57,7 @@ export const LoginPage = () => {
             }}
             minLoadingTime={500}
             onResponse={onResponse}
+            resetOnSuccess
           >
             <Form.Fields>
               <Form.Field name="email" label="Email" required email minLength={5} maxLength={254}>
@@ -88,7 +90,7 @@ export const LoginPage = () => {
             <Link
               href="/register"
               onClick={() => {
-                navigateTo('/register')
+                navigateTo(`/${PageKey.register}`)
               }}
             >
               <Button variant="ghost" color="blue" intent="primary">

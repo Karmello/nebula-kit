@@ -5,4 +5,5 @@ export enum PageKey {
   pricing = 'pricing',
   login = 'login',
   register = 'register',
+  dashboard = 'dashboard',
 }

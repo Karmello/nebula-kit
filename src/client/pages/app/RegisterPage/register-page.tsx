@@ -1,7 +1,9 @@
 import { useCallback, useState } from 'react'
 import { sentenceCase } from 'change-case'
 
-import { Box, Button, Form, Input, Section, useSnackbar } from 'lib/components'
+import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnackbar } from 'lib/components'
+import { useNavigateTo } from 'client/services'
+import { PageKey } from 'client/definitions'
 
 type RegisterFormValues = {
   email: string
@@ -12,6 +14,7 @@ export const RegisterPage = () => {
   const [hidePassword, setHidePassword] = useState<boolean>(true)
 
   const { show } = useSnackbar()
+  const navigateTo = useNavigateTo()
 
   const onValidSubmission = useCallback((data: RegisterFormValues) => {
     return fetch(process.env.API_URL + '/auth/register', {
@@ -77,6 +80,21 @@ export const RegisterPage = () => {
               </Form.ActionButton>
             </Form.Actions>
           </Form>
+          <Spacer blockSize={40} />
+          <Divider />
+          <Spacer blockSize={7} />
+          <Flex justifyContent="center">
+            <Link
+              href="/login"
+              onClick={() => {
+                navigateTo(`/${PageKey.login}`)
+              }}
+            >
+              <Button variant="ghost" color="blue" intent="primary">
+                Already have an account? Log in
+              </Button>
+            </Link>
+          </Flex>
         </Section>
       </Box>
     </Box>
