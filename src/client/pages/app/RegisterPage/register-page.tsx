@@ -87,7 +87,7 @@ export const RegisterPage = () => {
             <Link
               href="/login"
               onClick={() => {
-                navigateTo(`/${PageKey.login}`)
+                navigateTo(`/${PageKey.authLogin}`)
               }}
             >
               <Button variant="ghost" color="blue" intent="primary">

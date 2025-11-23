@@ -69,6 +69,7 @@ export const ICON_NAMES = [
   'search',
   'tree-pine',
   'triangle-alert',
+  'user',
   'users',
   'user-plus',
   'zap',

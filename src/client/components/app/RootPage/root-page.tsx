@@ -9,7 +9,7 @@ import {
   ComponentsBundlePage,
   LoginPage,
   RegisterPage,
-  DashboardPage,
+  ProfileOverviewPage,
 } from 'client/pages'
 
 import { useAppStore } from 'client/store'
@@ -28,10 +28,9 @@ export const RootPage = () => {
     if (prevToken.current !== token) {
       prevToken.current = token
       if (token) {
-        navigateTo(`/${PageKey.dashboard}`)
+        navigateTo(`/${PageKey.profileOverview}`)
       } else {
-        console.log('!')
-        navigateTo(`/${PageKey.login}`)
+        navigateTo(`/${PageKey.authLogin}`)
       }
     }
   }, [token])
@@ -43,11 +42,11 @@ export const RootPage = () => {
         <Route path={`/${PageKey.foundations}/*`} Component={FoundationsPage} />
         <Route path={`/${PageKey.components}/*`} Component={ComponentsPage} />
         <Route path={`/${PageKey.pricing}`} Component={PricingPage} />
-        <Route path={`/${PageKey.pricing}/core`} element={<ComponentsBundlePage plan="free" />} />
-        <Route path={`/${PageKey.pricing}/pro`} element={<ComponentsBundlePage plan="pro" />} />
-        {!token ? <Route path={`/${PageKey.login}`} Component={LoginPage} /> : null}
-        {!token ? <Route path={`/${PageKey.register}`} Component={RegisterPage} /> : null}
-        {token ? <Route path={`/${PageKey.dashboard}`} Component={DashboardPage} /> : null}
+        <Route path={`/${PageKey.pricingCore}`} element={<ComponentsBundlePage plan="free" />} />
+        <Route path={`/${PageKey.pricingPro}`} element={<ComponentsBundlePage plan="pro" />} />
+        {!token ? <Route path={`/${PageKey.authLogin}`} Component={LoginPage} /> : null}
+        {!token ? <Route path={`/${PageKey.authRegister}`} Component={RegisterPage} /> : null}
+        {token ? <Route path={`/${PageKey.profileOverview}`} Component={ProfileOverviewPage} /> : null}
         <Route
           path="*"
           Component={() => {

@@ -11,14 +11,15 @@ export const UserActionMenu = () => {
 
   const navigateTo = useNavigateTo()
 
-  const currentPageKey = pathname.split('/')[1]
+  const splitted = pathname.split('/')
+  const currentPageKey = `${splitted[1]}/${splitted[2]}`
 
   return (
     <Select
       intent="muted"
       itemBorderIntent="tertiary"
       dropdownPlacement="bottom-end"
-      staticLabel="Account"
+      staticLabel="Profile"
       value={currentPageKey}
       onChange={value => {
         if (value === 'logout') {
@@ -30,12 +31,12 @@ export const UserActionMenu = () => {
     >
       {!token ? (
         <>
-          <Select.Option value={PageKey.login}>Log in</Select.Option>
-          <Select.Option value={PageKey.register}>Register</Select.Option>
+          <Select.Option value={PageKey.authLogin}>Log in</Select.Option>
+          <Select.Option value={PageKey.authRegister}>Register</Select.Option>
         </>
       ) : (
         <>
-          <Select.Option value={PageKey.dashboard}>Dashboard</Select.Option>
+          <Select.Option value={PageKey.profileOverview}>Overview</Select.Option>
           <Select.Option value="logout">Log out</Select.Option>
         </>
       )}

@@ -3,7 +3,9 @@ export enum PageKey {
   foundations = 'foundations',
   components = 'components',
   pricing = 'pricing',
-  login = 'login',
-  register = 'register',
-  dashboard = 'dashboard',
+  pricingCore = 'pricing/core',
+  pricingPro = 'pricing/pro',
+  authLogin = 'auth/login',
+  authRegister = 'auth/register',
+  profileOverview = 'profile/overview',
 }
