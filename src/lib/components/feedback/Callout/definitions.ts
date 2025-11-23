@@ -18,7 +18,7 @@ export const CALLOUT_CONFIG: Record<CalloutStatus, { color: Color; heading: stri
   info: { color: 'blue', heading: 'Info', iconName: 'info' },
   success: { color: 'green', heading: 'Success', iconName: 'check-circle' },
   warning: { color: 'amber', heading: 'Warning', iconName: 'triangle-alert' },
-  danger: { color: 'red', heading: 'Attention', iconName: 'circle-alert' },
+  error: { color: 'red', heading: 'Error', iconName: 'circle-alert' },
 }
 
 export const DEFAULT_CALLOUT_SIZE: CalloutProps['size'] = 'md'
@@ -29,7 +29,7 @@ export const DEFAULT_CALLOUT_STATUS: CalloutProps['status'] = 'info'
 export const CALLOUT_TAGS = ['div', 'section', 'article', 'aside'] as const
 export const CALLOUT_SIZES = ['sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies Sizes[]
 export const CALLOUT_VARIANTS = ['solid', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
-export const CALLOUT_STATUSES = ['info', 'success', 'warning', 'danger'] as const
+export const CALLOUT_STATUSES = ['info', 'success', 'warning', 'error'] as const
 
 export type CalloutTag = (typeof CALLOUT_TAGS)[number]
 export type CalloutSize = (typeof CALLOUT_SIZES)[number]

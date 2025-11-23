@@ -3,13 +3,13 @@ import { createContext, ReactNode, RefObject, useContext, useEffect, useRef } fr
 import { UseSnackbarShowArgs } from '../definitions'
 
 type SnackbarProviderProps = {
-  rootRef: RefObject<HTMLDivElement>
+  rootRef: RefObject<HTMLDivElement | null>
   children: ReactNode
   visible: boolean
   setVisible: (visible: boolean) => void
   setSnackbar: (config: UseSnackbarShowArgs) => void
-  autoCloseDelay: number
-  closeOnOutsideClick: boolean
+  autoCloseDelay?: number
+  closeOnOutsideClick?: boolean
 }
 
 type SnackbarContextValue = {
@@ -29,15 +29,17 @@ export const SnackbarProvider = ({
   autoCloseDelay,
   closeOnOutsideClick,
 }: SnackbarProviderProps) => {
-  const autoCloseRef = useRef<number | null>(null)
+  const autoCloseRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     if (!visible) return
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setVisible(false)
-        clearTimeout(autoCloseRef.current)
-        autoCloseRef.current = null
+        if (autoCloseRef.current !== null) {
+          clearTimeout(autoCloseRef.current)
+          autoCloseRef.current = null
+        }
       }
     }
     window.addEventListener('keydown', handleKey)
@@ -50,8 +52,10 @@ export const SnackbarProvider = ({
       if (!rootRef.current) return
       if (!rootRef.current.contains(e.target as Node)) {
         setVisible(false)
-        clearTimeout(autoCloseRef.current)
-        autoCloseRef.current = null
+        if (autoCloseRef.current !== null) {
+          clearTimeout(autoCloseRef.current)
+          autoCloseRef.current = null
+        }
       }
     }
     window.addEventListener('mousedown', handleClick)
@@ -69,7 +73,7 @@ export const SnackbarProvider = ({
       autoCloseRef.current = null
     }
 
-    autoCloseRef.current = window.setTimeout(() => {
+    autoCloseRef.current = setTimeout(() => {
       setVisible(false)
       autoCloseRef.current = null
     }, autoCloseDelay)

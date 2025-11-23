@@ -4,7 +4,7 @@ import { SnackbarProps } from 'lib/components'
 import {
   DEFAULT_SNACKBAR_AUTO_CLOSE_DELAY,
   DEFAULT_SNACKBAR_CLOSE_ON_OUTSIDE_CLICK,
-  DEFAULT_SNACKBAR_MAX_INLINE_SIZE,
+  DEFAULT_SNACKBAR_INLINE_SIZE,
   DEFAULT_SNACKBAR_PLACEMENT,
   SNACKBAR_PLACEMENTS,
 } from 'lib/components/feedback/Snackbar/definitions'
@@ -27,9 +27,9 @@ const SNACKBAR_PROPS_META: ComponentMeta<SnackbarProps>['props'] = {
     defaultValue: String(DEFAULT_SNACKBAR_CLOSE_ON_OUTSIDE_CLICK),
     description: 'Makes snackbar close when the user clicks anywhere outside of it.',
   },
-  maxInlineSize: {
-    ...BOX_PROPS_META.maxInlineSize,
-    defaultValue: JSON.stringify(DEFAULT_SNACKBAR_MAX_INLINE_SIZE),
+  inlineSize: {
+    ...BOX_PROPS_META.inlineSize,
+    defaultValue: String(DEFAULT_SNACKBAR_INLINE_SIZE),
   },
   placement: {
     options: SNACKBAR_PLACEMENTS as never,

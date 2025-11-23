@@ -6,9 +6,9 @@ import {
   UseSnackbarShowArgs,
   SnackbarProps,
   DEFAULT_SNACKBAR_PLACEMENT,
-  DEFAULT_SNACKBAR_MAX_INLINE_SIZE,
   DEFAULT_SNACKBAR_AUTO_CLOSE_DELAY,
   DEFAULT_SNACKBAR_CLOSE_ON_OUTSIDE_CLICK,
+  DEFAULT_SNACKBAR_INLINE_SIZE,
 } from './definitions'
 
 import { SnackbarProvider } from './SnackbarProvider'
@@ -16,7 +16,7 @@ import { CALLOUT_CONFIG } from '../Callout/definitions'
 
 export const Snackbar = ({
   // Box
-  maxInlineSize = DEFAULT_SNACKBAR_MAX_INLINE_SIZE,
+  inlineSize = DEFAULT_SNACKBAR_INLINE_SIZE,
   // own
   children,
   placement = DEFAULT_SNACKBAR_PLACEMENT,
@@ -25,7 +25,7 @@ export const Snackbar = ({
 }: SnackbarProps) => {
   const [snackbar, setSnackbar] = useState<UseSnackbarShowArgs | null>(null)
   const [visible, setVisible] = useState<boolean>(false)
-  const rootRef = useRef<HTMLDivElement>(null)
+  const rootRef = useRef<HTMLDivElement | null>(null)
 
   const handleClose = useCallback(() => {
     setVisible(false)
@@ -59,7 +59,13 @@ export const Snackbar = ({
             visible={visible}
             easing={visible ? 'ease-out' : 'ease-in'}
           >
-            <Box key={snackbar?.status} position="relative" padding={10} maxInlineSize={maxInlineSize}>
+            <Box
+              key={snackbar?.status}
+              position="relative"
+              padding={10}
+              inlineSize={inlineSize}
+              maxInlineSize="calc(100vw - 10px)"
+            >
               <Box position="absolute" top={15} right={15}>
                 <Button
                   tagAttrs={{ onClick: handleClose }}

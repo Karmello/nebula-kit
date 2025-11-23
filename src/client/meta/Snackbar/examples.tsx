@@ -115,7 +115,7 @@ show({
     description: 'Critical snackbar at the top center.',
     jsx: (
       <SnackbarWrapper
-        status="danger"
+        status="error"
         content="This is an alert message that indicates an issue that needs your immediate attention."
         placement="top-center"
       />
@@ -123,7 +123,7 @@ show({
     code: `const { show } = useSnackbar()
     \r
 show({
-  status: 'danger',
+  status: 'error',
   content: 'This is an alert message that indicates an issue that needs your immediate attention.',
   placement: 'top-center'
 })
@@ -133,7 +133,7 @@ show({
     description: 'Critical snackbar with custom heading at the top right.',
     jsx: (
       <SnackbarWrapper
-        status="danger"
+        status="error"
         content="This is an alert message that indicates an issue that needs your immediate attention."
         heading="Error !"
         placement="top-right"
@@ -142,7 +142,7 @@ show({
     code: `const { show } = useSnackbar()
     \r
 show({
-  status: 'danger',
+  status: 'error',
   content: 'This is an alert message that indicates an issue that needs your immediate attention.',
   heading: 'Error !',
   placement: 'top-right'

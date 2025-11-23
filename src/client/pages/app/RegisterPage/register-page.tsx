@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
+import { sentenceCase } from 'change-case'
 
 import { Box, Button, Form, Input, Section, useSnackbar } from 'lib/components'
 import { API_URL } from 'client/definitions'
@@ -13,20 +14,32 @@ export const RegisterPage = () => {
 
   const { show } = useSnackbar()
 
-  const onValidSubmission = async (data: RegisterFormValues) => {
-    return fetch(API_URL, {
+  const onValidSubmission = useCallback((data: RegisterFormValues) => {
+    return fetch(API_URL + '/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     })
-  }
+  }, [])
 
-  const onResponse = async (res: Response) => {
-    if (!res.ok) {
+  const onResponse = useCallback(async (res: Response, formContext: any) => {
+    if (res) {
       const body = await res.json()
-      show({ status: 'danger', content: JSON.stringify(body) })
+      if (body) {
+        if (body.errors) {
+          for (const [fieldName, message] of Object.entries(body.errors)) {
+            formContext.setError(fieldName, { message })
+          }
+        } else if (body.message) {
+          show({
+            status: body.ok ? 'info' : 'warning',
+            content: body.message,
+            heading: body.error ? sentenceCase(body.error) : undefined,
+          })
+        }
+      }
     }
-  }
+  }, [])
 
   return (
     <Box padding={{ base: 20, lg: 50 }}>
@@ -39,6 +52,7 @@ export const RegisterPage = () => {
             }}
             minLoadingTime={500}
             onResponse={onResponse}
+            resetOnSuccess
           >
             <Form.Fields>
               <Form.Field name="email" label="Email" required email minLength={5} maxLength={254}>

@@ -23,9 +23,9 @@ export const AppFooter = () => {
           Contact
         </Text>
         <Spacer blockSize={10} />
-        <Link href="mailto:nebulakit@gmail.com">
+        <Link href="mailto:app.nebula.kit@gmail.com">
           <Text scale="compact" color="blue" intent="primary">
-            nebulakit@gmail.com
+            app.nebula.kit@gmail.com
           </Text>
         </Link>
       </Footer.Section>

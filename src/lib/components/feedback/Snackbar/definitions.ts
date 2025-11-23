@@ -13,7 +13,7 @@ export const SNACKBAR_PLACEMENTS = [
 ] as const
 
 export const DEFAULT_SNACKBAR_PLACEMENT: SnackbarProps['placement'] = 'bottom-right'
-export const DEFAULT_SNACKBAR_MAX_INLINE_SIZE: SnackbarProps['maxInlineSize'] = { md: '450px' }
+export const DEFAULT_SNACKBAR_INLINE_SIZE: SnackbarProps['inlineSize'] = '350px'
 export const DEFAULT_SNACKBAR_AUTO_CLOSE_DELAY: SnackbarProps['autoCloseDelay'] = 5000
 export const DEFAULT_SNACKBAR_CLOSE_ON_OUTSIDE_CLICK: SnackbarProps['closeOnOutsideClick'] = false
 
@@ -26,7 +26,7 @@ export type UseSnackbarShowArgs = {
   heading?: string
 }
 
-type PropsFromBox = Pick<BoxProps, 'maxInlineSize'>
+type PropsFromBox = Pick<BoxProps, 'inlineSize'>
 
 type SnackbarOwnProps = {
   children: ReactElement

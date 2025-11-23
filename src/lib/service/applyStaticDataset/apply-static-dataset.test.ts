@@ -34,13 +34,13 @@ describe('applyStaticDataset', () => {
   it('skips undefined props', () => {
     const out = applyStaticDataset('box', {
       variant: undefined,
-      intent: 'danger',
+      intent: 'error',
       interactive: undefined,
       disabled: true,
     } as any)
 
     expect(out).toEqual({
-      'data-neb-box-intent': 'danger',
+      'data-neb-box-intent': 'error',
       'data-neb-box-disabled': true,
     })
   })

@@ -43,15 +43,20 @@ const FORM_PROPS_META: ComponentMeta<FormProps>['props'] = {
     description: 'Callback fired when validation fails, receiving the field errors.',
   },
   onResponse: {
-    options: ['(res: unknown) => void'],
+    options: ['(response, formContext) => void'],
     description:
-      'Called once the submission cycle finishes. The "res" argument contains whatever "onValidSubmission" returned or threw and is typed as unknown so consumers may cast it as needed.',
+      'Called once the submission cycle finishes. The "response" argument contains whatever "onValidSubmission" returned or threw and is typed as unknown so consumers may cast it as needed.',
   },
   onValidSubmission: {
     options: ['(values, event) => void'],
     isRequired: true,
     description:
       'Callback fired when form data passes validation, receiving the validated values. Return a Promise to run asynchronous actions like API calls. The form will wait for the Promise to resolve or reject before continuing and then call the "onResponse" callback.',
+  },
+  resetOnSuccess: {
+    options: ['boolean'],
+    defaultValue: 'false',
+    description: 'Resets the form back to its initial default values after a successful submission.',
   },
   rowGap: {
     ...FLEX_PROPS_META.rowGap,

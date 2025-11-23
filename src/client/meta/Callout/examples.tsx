@@ -44,11 +44,11 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
     description: 'Signals an error or critical problem that requires attention.',
     jsx: (
       <>
-        <Callout content="Callout text content" status="danger" />
+        <Callout content="Callout text content" status="error" />
         <Spacer blockSize={20} />
-        <Callout content="Callout text content" variant="outline" status="danger" />
+        <Callout content="Callout text content" variant="outline" status="error" />
         <Spacer blockSize={20} />
-        <Callout content="Callout text content" variant="soft-outline" status="danger" />
+        <Callout content="Callout text content" variant="soft-outline" status="error" />
       </>
     ),
   },

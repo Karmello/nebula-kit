@@ -40,17 +40,19 @@ export const Form = <
   // own
   minLoadingTime,
   onResponse,
+  resetOnSuccess,
 }: FormProps<TFieldValues, TContext, TTransformedValues>) => {
   const form = useForm<TFieldValues, TContext, TTransformedValues>(useFormProps)
   const handleSubmit = form.handleSubmit(async (...args) => {
     const start = Date.now()
     try {
-      const res = await onValidSubmission(...args)
-      await waitForTime(minLoadingTime, start)
-      onResponse?.(res)
+      const res = (await onValidSubmission(...args)) as Response
+      await waitForTime(start, minLoadingTime)
+      if (resetOnSuccess && res.ok) form.reset()
+      onResponse?.(res, form)
     } catch (err) {
-      await waitForTime(minLoadingTime, start)
-      onResponse?.(err)
+      await waitForTime(start, minLoadingTime)
+      onResponse?.(err, form)
     }
   }, onInvalidSubmission)
 

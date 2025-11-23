@@ -1,23 +1,62 @@
-import { useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import { useLocation } from 'react-router'
+import { sentenceCase } from 'change-case'
 
 import { useNavigateTo } from 'client/services'
-import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer } from 'lib/components'
+import { API_URL } from 'client/definitions'
+import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnackbar } from 'lib/components'
+
+type LoginFormValues = {
+  email: string
+  password: string
+}
 
 export const LoginPage = () => {
-  const navigateTo = useNavigateTo()
   const [hidePassword, setHidePassword] = useState<boolean>(true)
+
+  const { search } = useLocation()
+  const navigateTo = useNavigateTo()
+  const { show } = useSnackbar()
+
+  useEffect(() => {
+    const params = new URLSearchParams(search)
+    if (params.get('verified') === 'true') {
+      show({ status: 'success', content: 'Email verified ! You can log in now.' })
+    }
+  }, [search])
+
+  const onValidSubmission = useCallback((data: LoginFormValues) => {
+    return fetch(API_URL + '/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+  }, [])
+
+  const onResponse = useCallback(async (res: Response) => {
+    if (res) {
+      const body = await res.json()
+      if (body?.message) {
+        show({
+          status: body.ok ? 'info' : 'warning',
+          content: body.message,
+          heading: body.ok ? sentenceCase(body.error) : undefined,
+        })
+      }
+    }
+  }, [])
 
   return (
     <Box padding={{ base: 20, lg: 50 }}>
       <Box inlineSize="400px" maxInlineSize="100%" margin="0 auto">
         <Section heading="Log in" iconName="log-in">
           <Form
-            onValidSubmission={async () => {
-              return await new Promise(resolve => setTimeout(resolve, 1000))
-            }}
+            onValidSubmission={onValidSubmission}
             onInvalidSubmission={errors => {
               console.log(errors)
             }}
+            minLoadingTime={500}
+            onResponse={onResponse}
           >
             <Form.Fields>
               <Form.Field name="email" label="Email" required email minLength={5} maxLength={254}>
