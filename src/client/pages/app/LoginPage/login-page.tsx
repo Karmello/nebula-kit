@@ -3,7 +3,6 @@ import { useLocation } from 'react-router'
 import { sentenceCase } from 'change-case'
 
 import { useNavigateTo } from 'client/services'
-import { API_URL } from 'client/definitions'
 import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnackbar } from 'lib/components'
 
 type LoginFormValues = {
@@ -26,7 +25,7 @@ export const LoginPage = () => {
   }, [search])
 
   const onValidSubmission = useCallback((data: LoginFormValues) => {
-    return fetch(API_URL + '/auth/login', {
+    return fetch(process.env.API_URL + '/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),

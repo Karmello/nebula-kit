@@ -20,6 +20,7 @@ export default defineConfig({
   },
   define: {
     'process.env.NODE_ENV': JSON.stringify('production'),
+    'process.env.API_URL': JSON.stringify(process.env.API_URL),
   },
   base: '/',
   build: {

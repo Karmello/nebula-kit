@@ -2,7 +2,6 @@ import { useCallback, useState } from 'react'
 import { sentenceCase } from 'change-case'
 
 import { Box, Button, Form, Input, Section, useSnackbar } from 'lib/components'
-import { API_URL } from 'client/definitions'
 
 type RegisterFormValues = {
   email: string
@@ -15,7 +14,7 @@ export const RegisterPage = () => {
   const { show } = useSnackbar()
 
   const onValidSubmission = useCallback((data: RegisterFormValues) => {
-    return fetch(API_URL + '/auth/register', {
+    return fetch(process.env.API_URL + '/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),

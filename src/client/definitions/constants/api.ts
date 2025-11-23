@@ -1,1 +1,0 @@
-export const API_URL = typeof window !== 'undefined' ? import.meta.env.VITE_API_URL : process.env.API_URL
