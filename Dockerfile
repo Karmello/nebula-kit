@@ -6,7 +6,7 @@ RUN apk update && apk upgrade && apk add --no-cache bash git openssh curl \
 WORKDIR /usr/src
 
 ARG PAT
-ENV PAT=${PAT}
+ENV PAT=$PAT
 
 RUN corepack enable && corepack use yarn@4.10.3
 RUN git clone https://$PAT@github.com/Karmello/nebula-kit.git
