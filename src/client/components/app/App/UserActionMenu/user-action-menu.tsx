@@ -20,6 +20,7 @@ export const UserActionMenu = () => {
       itemBorderIntent="tertiary"
       dropdownPlacement="bottom-end"
       staticLabel="Profile"
+      inlineSize="125px"
       value={currentPageKey}
       onChange={value => {
         if (value === 'logout') {
@@ -36,7 +37,7 @@ export const UserActionMenu = () => {
         </>
       ) : (
         <>
-          <Select.Option value={PageKey.profileOverview}>Overview</Select.Option>
+          <Select.Option value={PageKey.profileDashboard}>Dashboard</Select.Option>
           <Select.Option value="logout">Log out</Select.Option>
         </>
       )}

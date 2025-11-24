@@ -1,6 +1,7 @@
-import { Box, Button, Flex, Grid, Link, Section, Spacer, Text } from 'lib/components'
 import { useNavigateTo } from 'client/services'
+import { PageKey } from 'client/definitions'
 import meta from 'client/meta'
+import { Box, Button, Flex, Grid, Link, Section, Spacer, Text } from 'lib/components'
 
 type Props = {
   plan: 'free' | 'pro'
@@ -26,11 +27,18 @@ export const ComponentsBundlePage = ({ plan }: Props) => {
   return (
     <Box paddingTop={15} paddingInline={{ base: 20, lg: 50 }}>
       <Section heading={plan === 'free' ? 'Core bundle' : 'Pro bundle'} iconName="package">
-        {plan === 'free' ? (
-          <Text>All components available for free.</Text>
-        ) : (
-          <Text>Comes with the paid plans.</Text>
-        )}
+        <Flex alignItems="center" columnGap={50} flexWrap="wrap" justifyContent="space-between">
+          {plan === 'free' ? (
+            <Text>All components available for free.</Text>
+          ) : (
+            <Text>Comes with the paid plans.</Text>
+          )}
+          <Link href={`/${PageKey.pricing}`} onClick={() => navigateTo(`/${PageKey.pricing}`)}>
+            <Button size="sm" variant="ghost" intent="primary" color="blue" iconName="arrow-left">
+              Back to Pricing page
+            </Button>
+          </Link>
+        </Flex>
         <Spacer blockSize={50} />
         <Grid
           gridTemplateColumns={{

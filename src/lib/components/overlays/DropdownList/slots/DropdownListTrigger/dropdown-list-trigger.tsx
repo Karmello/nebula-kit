@@ -10,7 +10,7 @@ export const DropdownListTrigger = ({
   // Box
   inlineSize,
 }: DropdownListTriggerProps) => {
-  const { open, setOpen, setAnimateVisible, triggerRef } = useDropdownListContext()
+  const { open, setOpen, setResizeVisible, triggerRef } = useDropdownListContext()
 
   return (
     <Box
@@ -19,7 +19,7 @@ export const DropdownListTrigger = ({
         className: withPrefix('dropdown-list-trigger'),
         'aria-haspopup': 'listbox',
         'aria-expanded': false,
-        onClick: () => (open ? setAnimateVisible(false) : setOpen(true)),
+        onClick: () => (open ? setResizeVisible(false) : setOpen(true)),
       }}
       display="inline-block"
       inlineSize={inlineSize}

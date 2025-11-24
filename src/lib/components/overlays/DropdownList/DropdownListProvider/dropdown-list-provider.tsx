@@ -5,8 +5,8 @@ import { DropdownListProps } from '../definitions'
 type Props = {
   open: boolean
   setOpen: (open: boolean) => void
-  animateVisible: boolean
-  setAnimateVisible: (animateVisible: boolean) => void
+  resizeVisible: boolean
+  setResizeVisible: (resizeVisible: boolean) => void
   triggerRef: RefObject<HTMLElement | null>
   hoveredIndex: number
   setHoveredIndex: (hoveredIndex: number) => void
@@ -29,8 +29,8 @@ export const DropdownListProvider = ({
   children,
   open,
   setOpen,
-  animateVisible,
-  setAnimateVisible,
+  resizeVisible,
+  setResizeVisible,
   triggerRef,
   hoveredIndex,
   setHoveredIndex,
@@ -47,8 +47,8 @@ export const DropdownListProvider = ({
       value={{
         open,
         setOpen,
-        animateVisible,
-        setAnimateVisible,
+        resizeVisible,
+        setResizeVisible,
         triggerRef,
         hoveredIndex,
         setHoveredIndex,

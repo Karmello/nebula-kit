@@ -37,13 +37,13 @@ export const DropdownList = ({
   itemBorderIntent = DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT,
 }: DropdownListProps) => {
   const [open, setOpen] = useState<boolean>(false)
-  const [animateVisible, setAnimateVisible] = useState<boolean>(false)
+  const [resizeVisible, setResizeVisible] = useState<boolean>(false)
   const [hoveredIndex, setHoveredIndex] = useState<number>(-1)
   const [blockMouse, setBlockMouse] = useState<boolean>(false)
 
   const triggerRef = useRef<HTMLElement>(null)
 
-  const finalChildren = typeof children === 'function' ? children({ open, animateVisible }) : children
+  const finalChildren = typeof children === 'function' ? children({ open, resizeVisible }) : children
 
   return (
     <WithSlots
@@ -59,8 +59,8 @@ export const DropdownList = ({
           <DropdownListProvider
             open={open}
             setOpen={setOpen}
-            animateVisible={animateVisible}
-            setAnimateVisible={setAnimateVisible}
+            resizeVisible={resizeVisible}
+            setResizeVisible={setResizeVisible}
             triggerRef={triggerRef}
             hoveredIndex={hoveredIndex}
             setHoveredIndex={setHoveredIndex}

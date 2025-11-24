@@ -18,7 +18,7 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
   ...buttonProps
 }: DropdownListItemProps<T>) => {
   const {
-    setAnimateVisible,
+    setResizeVisible,
     keepOpen,
     size,
     variant,
@@ -46,7 +46,7 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
               MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>
           ) => {
             if (!keepOpen) {
-              setAnimateVisible(false)
+              setResizeVisible(false)
             }
             tagAttrs?.onClick?.(e)
           },

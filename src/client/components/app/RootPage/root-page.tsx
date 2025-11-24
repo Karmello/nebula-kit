@@ -9,7 +9,7 @@ import {
   ComponentsBundlePage,
   LoginPage,
   RegisterPage,
-  ProfileOverviewPage,
+  ProfileDashboardPage,
 } from 'client/pages'
 
 import { useAppStore } from 'client/store'
@@ -28,7 +28,7 @@ export const RootPage = () => {
     if (prevToken.current !== token) {
       prevToken.current = token
       if (token) {
-        navigateTo(`/${PageKey.profileOverview}`)
+        navigateTo(`/${PageKey.profileDashboard}`)
       } else {
         navigateTo(`/${PageKey.authLogin}`)
       }
@@ -46,7 +46,7 @@ export const RootPage = () => {
         <Route path={`/${PageKey.pricingPro}`} element={<ComponentsBundlePage plan="pro" />} />
         {!token ? <Route path={`/${PageKey.authLogin}`} Component={LoginPage} /> : null}
         {!token ? <Route path={`/${PageKey.authRegister}`} Component={RegisterPage} /> : null}
-        {token ? <Route path={`/${PageKey.profileOverview}`} Component={ProfileOverviewPage} /> : null}
+        {token ? <Route path={`/${PageKey.profileDashboard}`} Component={ProfileDashboardPage} /> : null}
         <Route
           path="*"
           Component={() => {

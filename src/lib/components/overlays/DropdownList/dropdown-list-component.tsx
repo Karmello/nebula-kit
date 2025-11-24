@@ -20,8 +20,8 @@ export const DropdownListComponent = ({
   const {
     variant,
     intent,
-    animateVisible,
-    setAnimateVisible,
+    resizeVisible,
+    setResizeVisible,
     open,
     setOpen,
     size,
@@ -37,24 +37,24 @@ export const DropdownListComponent = ({
   const itemsCount = slotsByName['DropdownList.Item'].length
   const finalVisibleItemsCount = itemsCount < (visibleItemsCount ?? 0) ? itemsCount : (visibleItemsCount ?? 0)
 
-  useOutsideClick([triggerRef, portalRef], () => setAnimateVisible(false))
+  useOutsideClick([triggerRef, portalRef], () => setResizeVisible(false))
 
   useEffect(() => {
     if (open) {
       setTimeout(() => {
-        setAnimateVisible(true)
+        setResizeVisible(true)
       })
     }
   }, [open])
 
   useEffect(() => {
-    if (!animateVisible) {
+    if (!resizeVisible) {
       setTimeout(() => {
         setOpen(false)
         setHoveredIndex(-1)
       }, DEFAULT_RESIZE_DURATION)
     }
-  }, [animateVisible])
+  }, [resizeVisible])
 
   useLayoutEffect(() => {
     if (scrollWrapperRef.current) {
@@ -82,7 +82,7 @@ export const DropdownListComponent = ({
           if (!scrollWrapperRef.current) return
           if (e.key === 'Escape' || e.key === 'Tab') {
             e.stopPropagation()
-            setAnimateVisible(false)
+            setResizeVisible(false)
           } else if (e.key === 'Enter') {
             if (open) {
               scrollWrapperRef.current
@@ -113,7 +113,11 @@ export const DropdownListComponent = ({
       {slotsByName['DropdownList.Trigger']}
       {open ? (
         <Portal tagRef={portalRef} anchorRef={triggerRef} placement={placement}>
-          <Resize property="blockSize" visible={animateVisible}>
+          <Resize
+            property="blockSize"
+            visible={resizeVisible}
+            easing={resizeVisible ? 'ease-out' : 'ease-in'}
+          >
             <Box
               variant={variant === 'ghost' ? 'solid' : variant}
               intent={variant === 'ghost' ? 'neutral' : intent}
