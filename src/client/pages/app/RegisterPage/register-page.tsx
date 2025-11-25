@@ -3,6 +3,7 @@ import { sentenceCase } from 'change-case'
 
 import { useNavigateTo } from 'client/services'
 import { PageKey } from 'client/definitions'
+import { registerUser } from 'client/api'
 import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnackbar } from 'lib/components'
 
 type RegisterFormValues = {
@@ -16,27 +17,25 @@ export const RegisterPage = () => {
   const { show } = useSnackbar()
   const navigateTo = useNavigateTo()
 
+  const { sendRequest } = registerUser()
+
   const onValidSubmission = useCallback((data: RegisterFormValues) => {
-    return fetch(process.env.API_URL + '/auth/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    })
+    return sendRequest(data)
   }, [])
 
-  const onResponse = useCallback(async (res: Response, formContext: any) => {
+  const onResponse = useCallback(async (res: any, formContext: any) => {
     if (res) {
-      const body = await res.json()
-      if (body) {
-        if (body.errors) {
-          for (const [fieldName, message] of Object.entries(body.errors)) {
+      const data = res.data
+      if (data) {
+        if (data.errors) {
+          for (const [fieldName, message] of Object.entries(data.errors)) {
             formContext.setError(fieldName, { message })
           }
-        } else if (body.message) {
+        } else if (data.message) {
           show({
-            status: body.ok ? 'info' : 'warning',
-            content: body.message,
-            heading: body.error ? sentenceCase(body.error) : undefined,
+            status: data.ok ? 'info' : 'warning',
+            content: data.message,
+            heading: data.error ? sentenceCase(data.error) : undefined,
           })
         }
       }

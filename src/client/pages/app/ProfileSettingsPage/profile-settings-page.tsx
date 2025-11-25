@@ -1,22 +1,25 @@
+import { useState } from 'react'
+
 import { useAppStore } from 'client/store'
-import { fetchUser } from 'client/api'
-import { Box, Button, Loader, MarkerList, Section, Spacer, Text } from 'lib/components'
+import { getUser } from 'client/api'
+import { cancelPaidPlan } from 'client/api'
+import { Box, Button, Flex, Input, Loader, MarkerList, Resize, Section, Spacer, Text } from 'lib/components'
 
 export const ProfileSettingsPage = () => {
-  const { token } = useAppStore()
-  const { user, isFetching } = fetchUser({ doMakeRequest: !!token, minLoadingTime: 250 })
+  const [displayCancelForm, setDisplayCancelForm] = useState<boolean>(false)
+  const [emailInputValue, setEmailInputValue] = useState<string>('')
 
-  const makeUnsubscribeRequest = async () => {
-    await fetch(`${process.env.API_URL}/payment/cancel`, {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${token}` },
-    })
-  }
+  const { token } = useAppStore()
+
+  const { data: getUserData, isMakingRequest } = getUser()
+  const { sendRequest: sendCancelPaidPlanRequest } = cancelPaidPlan()
+
+  const enableCancelSection = getUserData?.data?.plan !== 'free'
 
   return (
     <Box padding={{ base: 20, lg: 50 }} maxInlineSize="85rem">
       <Section heading="Settings" iconName="settings">
-        {isFetching ? (
+        {!getUserData || isMakingRequest ? (
           <Box position="relative" blockSize={160}>
             <Loader centered size="lg" color="blue" />
           </Box>
@@ -28,15 +31,15 @@ export const ProfileSettingsPage = () => {
                 <Section
                   heading="Cancel paid subscription"
                   variant="soft-outline"
-                  intent="primary"
+                  intent={enableCancelSection ? 'primary' : 'secondary'}
                   color="red"
                   borderIntent="muted"
                 >
-                  <Text bold intent="neutral">
+                  <Text bold intent={enableCancelSection ? 'neutral' : 'secondary'}>
                     What happens when you cancel
                   </Text>
                   <Spacer blockSize={15} />
-                  <MarkerList intent="neutral">
+                  <MarkerList intent={enableCancelSection ? 'neutral' : 'secondary'}>
                     <MarkerList.Item>
                       <Text>your license key is immediately revoked</Text>
                     </MarkerList.Item>
@@ -51,25 +54,73 @@ export const ProfileSettingsPage = () => {
                     </MarkerList.Item>
                   </MarkerList>
                   <Spacer blockSize={15} />
-                  <Text intent="neutral">
+                  <Text intent={enableCancelSection ? 'neutral' : 'secondary'}>
                     If you change your mind later, you can start a new subscription at any time and a fresh
                     license key will be issued automatically.
                   </Text>
-                  <Spacer blockSize={40} />
-                  <Button
-                    tagAttrs={{
-                      onClick: () => {
-                        makeUnsubscribeRequest()
-                      },
-                    }}
-                    size="sm"
-                    intent={user.plan === 'free' ? 'tertiary' : 'primary'}
-                    color="red"
-                    disabled={user.plan === 'free'}
-                  >
-                    Cancel
-                  </Button>
-                  <Spacer blockSize={10} />
+                  <Spacer blockSize={30} />
+                  <Box position="relative" blockSize={45}>
+                    <Box position="absolute">
+                      <Button
+                        tagAttrs={{
+                          onClick: () => {
+                            setDisplayCancelForm(true)
+                          },
+                        }}
+                        size="sm"
+                        intent="tertiary"
+                        color="red"
+                        disabled={!enableCancelSection}
+                      >
+                        Cancel
+                      </Button>
+                    </Box>
+                    <Box position="absolute">
+                      <Resize property="inlineSize" visible={displayCancelForm}>
+                        <Box inlineSize="300px">
+                          <Input
+                            tagAttrs={{
+                              placeholder: 'Enter your email',
+                              autoComplete: 'off',
+                            }}
+                            value={emailInputValue}
+                            onChange={setEmailInputValue}
+                            size="sm"
+                            variant="outline"
+                            intent="tertiary"
+                            color="red"
+                            startSlot={
+                              <Button
+                                tagAttrs={{
+                                  onClick: () => {
+                                    setDisplayCancelForm(false)
+                                    setEmailInputValue('')
+                                  },
+                                }}
+                                iconName="close"
+                                intent="tertiary"
+                                color="red"
+                              />
+                            }
+                            endSlot={
+                              <Button
+                                tagAttrs={{
+                                  onClick: () => {
+                                    sendCancelPaidPlanRequest()
+                                  },
+                                }}
+                                intent="tertiary"
+                                color="red"
+                                disabled={emailInputValue !== getUserData.data.email}
+                              >
+                                Confirm
+                              </Button>
+                            }
+                          />
+                        </Box>
+                      </Resize>
+                    </Box>
+                  </Box>
                 </Section>
               </>
             ) : null}

@@ -1,15 +1,13 @@
 import { useNavigateTo } from 'client/services'
-import { useAppStore } from 'client/store'
-import { fetchUser } from 'client/api'
+import { getUser } from 'client/api'
 import { Box, Flex, Section, Spacer, Text, Link, Grid, MarkerList, Loader } from 'lib/components'
 
 import { PricingPlanButton } from './components/PricingPlanButton'
 
 export const PricingPage = () => {
   const navigateTo = useNavigateTo()
-  const { token } = useAppStore()
 
-  const { user, isFetching } = fetchUser({ doMakeRequest: !!token, minLoadingTime: 250 })
+  const { data: getUserData, isMakingRequest } = getUser()
 
   const coreBundleLink = (
     <Link
@@ -33,7 +31,7 @@ export const PricingPage = () => {
     </Link>
   )
 
-  if (isFetching) {
+  if (isMakingRequest) {
     return (
       <Box position="relative" blockSize={160}>
         <Loader centered size="lg" color="blue" />
@@ -64,11 +62,18 @@ export const PricingPage = () => {
             </MarkerList>
             <Spacer blockSize={40} />
             <Flex justifyContent="center">
-              <PricingPlanButton plan="free" activePlan={user?.plan} color="amber" />
+              <PricingPlanButton plan="free" activePlan={getUserData?.data.plan} />
             </Flex>
             <Spacer blockSize={12} />
           </Section>
-          <Section heading="Professional" variant="outline" intent="inverse" iconName="zap" interactive>
+          <Section
+            heading="Professional"
+            variant="outline"
+            intent="primary"
+            color="green"
+            iconName="zap"
+            interactive
+          >
             <Text intent="neutral" bold>
               For individual developers.
             </Text>
@@ -89,7 +94,7 @@ export const PricingPage = () => {
             </MarkerList>
             <Spacer blockSize={40} />
             <Flex justifyContent="center">
-              <PricingPlanButton plan="professional" activePlan={user?.plan} color="gray" />
+              <PricingPlanButton plan="professional" activePlan={getUserData?.data.plan} color="green" />
             </Flex>
             <Spacer blockSize={12} />
           </Section>
@@ -121,7 +126,7 @@ export const PricingPage = () => {
             </MarkerList>
             <Spacer blockSize={40} />
             <Flex justifyContent="center">
-              <PricingPlanButton plan="business" activePlan={user?.plan} color="blue" />
+              <PricingPlanButton plan="business" activePlan={getUserData?.data.plan} color="blue" />
             </Flex>
             <Spacer blockSize={12} />
           </Section>
@@ -156,7 +161,7 @@ export const PricingPage = () => {
             </MarkerList>
             <Spacer blockSize={40} />
             <Flex justifyContent="center">
-              <PricingPlanButton plan="enterprise" activePlan={user?.plan} color="red" />
+              <PricingPlanButton plan="enterprise" activePlan={getUserData?.data.plan} color="red" />
             </Flex>
             <Spacer blockSize={12} />
           </Section>

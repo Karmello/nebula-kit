@@ -4,6 +4,7 @@ import { useLocation } from 'react-router'
 import { useNavigateTo } from 'client/services'
 import { useAppStore } from 'client/store'
 import { PageKey } from 'client/definitions'
+import { loginUser } from 'client/api'
 import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnackbar } from 'lib/components'
 
 type LoginFormValues = {
@@ -19,6 +20,8 @@ export const LoginPage = () => {
   const { show } = useSnackbar()
   const { setToken, setPlan } = useAppStore()
 
+  const { sendRequest } = loginUser()
+
   useEffect(() => {
     const params = new URLSearchParams(search)
     if (params.get('verified') === 'true') {
@@ -27,23 +30,19 @@ export const LoginPage = () => {
   }, [search])
 
   const onValidSubmission = useCallback((data: LoginFormValues) => {
-    return fetch(process.env.API_URL + '/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    })
+    return sendRequest(data)
   }, [])
 
-  const onResponse = useCallback(async (res: Response) => {
+  const onResponse = useCallback(async (res: any) => {
     if (res) {
-      const body = await res.json()
-      if (body?.message) {
-        show({ status: 'warning', content: body.message })
+      const data = res.data
+      if (data?.message) {
+        show({ status: 'warning', content: data.message })
       }
-      if (body?.token) {
-        setToken(body.token)
-        setPlan(body.plan)
-        navigateTo(body.plan === 'free' ? `/${PageKey.pricing}` : `/${PageKey.profileAccount}`)
+      if (data?.token) {
+        setToken(data.token)
+        setPlan(data.plan)
+        navigateTo(data.plan === 'free' ? `/${PageKey.pricing}` : `/${PageKey.profileAccount}`)
       }
     }
   }, [])

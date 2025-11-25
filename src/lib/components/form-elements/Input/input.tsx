@@ -42,9 +42,13 @@ export const Input = ({
     onChange?.(value)
   }
 
+  const slotExtraProps: Record<string, unknown> = {}
+  if (disabled !== undefined) slotExtraProps.disabled = disabled
+  if (size !== undefined) slotExtraProps.size = size
+
   return (
     <Segment>
-      {startSlot ? <Segment.Item>{cloneElement(startSlot as any, { disabled, size })}</Segment.Item> : null}
+      {startSlot ? <Segment.Item>{cloneElement(startSlot as any, slotExtraProps)}</Segment.Item> : null}
       <Segment.Item flex={1}>
         <Box
           tag="input"
@@ -71,7 +75,7 @@ export const Input = ({
           {...INPUT_SIZE_CONFIG[size || 'md']}
         />
       </Segment.Item>
-      {endSlot ? <Segment.Item>{cloneElement(endSlot as any, { disabled, size })}</Segment.Item> : null}
+      {endSlot ? <Segment.Item>{cloneElement(endSlot as any, slotExtraProps)}</Segment.Item> : null}
     </Segment>
   )
 }

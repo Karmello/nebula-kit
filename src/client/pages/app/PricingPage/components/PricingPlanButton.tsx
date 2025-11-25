@@ -3,24 +3,9 @@ import { useState } from 'react'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/services'
 import { useAppStore } from 'client/store'
+import { checkoutPaidPlan } from 'client/api'
 import { Button, Link, Text } from 'lib/components'
 import { Color } from 'lib/definitions'
-
-const makeCheckoutRequest = (plan: string, token: string) => {
-  fetch(process.env.API_URL + '/payment/checkout', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-    body: JSON.stringify({ plan }),
-  })
-    .then(res => res.json())
-    .then(data => {
-      if (data.url) {
-        window.location.href = data.url
-      } else {
-        console.error('Failed to start payment:', data)
-      }
-    })
-}
 
 type PricingPlanButtonProps = {
   plan: string
@@ -33,6 +18,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
 
   const navigateTo = useNavigateTo()
   const { token } = useAppStore()
+  const { sendRequest: sendCheckoutPlanRequest } = checkoutPaidPlan()
 
   if (plan === 'free') {
     if (!activePlan || activePlan === 'free') {
@@ -72,7 +58,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
             tagAttrs={{
               onClick: () => {
                 setIsRedirecting(true)
-                makeCheckoutRequest(plan, token)
+                sendCheckoutPlanRequest({ plan })
               },
             }}
             size="sm"

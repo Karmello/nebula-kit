@@ -1,7 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-import { User } from 'client/definitions'
 import { LIB_PREFIX } from 'lib/definitions'
 
 export type AppStore = {
