@@ -37,7 +37,8 @@ export const UserActionMenu = () => {
         </>
       ) : (
         <>
-          <Select.Option value={PageKey.profileDashboard}>Dashboard</Select.Option>
+          <Select.Option value={PageKey.profileAccount}>Account</Select.Option>
+          <Select.Option value={PageKey.profileSettings}>Settings</Select.Option>
           <Select.Option value="logout">Log out</Select.Option>
         </>
       )}

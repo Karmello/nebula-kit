@@ -24,6 +24,7 @@ export const Text = <T extends TextTag = 'p'>({
   color,
   intent,
   textAlign,
+  disabled,
   // WithIcon
   iconName,
   iconPosition,
@@ -66,6 +67,7 @@ export const Text = <T extends TextTag = 'p'>({
       color={color}
       textAlign={textAlign}
       interactive={tag === 'a'}
+      disabled={disabled}
     >
       {space === 'start' || space === 'both' ? <> </> : null}
       {iconName ? (

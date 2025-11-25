@@ -1,9 +1,9 @@
 import { useLocation } from 'react-router'
 
-import { Button, Link, Segment } from 'lib/components'
 import { useNavigateTo } from 'client/services'
 import { PageKey } from 'client/definitions'
-import { useComponentsPageStore, useFoundationsPageStore } from 'client/store'
+import { useAppStore, useComponentsPageStore, useFoundationsPageStore } from 'client/store'
+import { Button, Link, Segment } from 'lib/components'
 
 type Props = {
   setMainOpen: (mainOpen: boolean) => Promise<boolean>
@@ -12,8 +12,8 @@ type Props = {
 
 export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
   const { pathname } = useLocation()
-
   const navigateTo = useNavigateTo()
+  const { plan } = useAppStore()
 
   const foundationsPageStore = useFoundationsPageStore()
   const componentsPageStore = useComponentsPageStore()
@@ -60,23 +60,25 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
           </Button>
         </Link>
       </Segment.Item>
-      <Segment.Item>
-        <Link
-          href={`/${PageKey.pricing}`}
-          onClick={async () => {
-            if (mainOpen) await setMainOpen(false)
-            navigateTo(`/${PageKey.pricing}`)
-          }}
-        >
-          <Button
-            intent={currentPageKey === PageKey.pricing ? 'secondary' : 'muted'}
-            iconName="credit-card"
-            fullWidth
+      {!plan || plan === 'free' ? (
+        <Segment.Item>
+          <Link
+            href={`/${PageKey.pricing}`}
+            onClick={async () => {
+              if (mainOpen) await setMainOpen(false)
+              navigateTo(`/${PageKey.pricing}`)
+            }}
           >
-            Pricing
-          </Button>
-        </Link>
-      </Segment.Item>
+            <Button
+              intent={currentPageKey === PageKey.pricing ? 'secondary' : 'muted'}
+              iconName="credit-card"
+              fullWidth
+            >
+              Pricing
+            </Button>
+          </Link>
+        </Segment.Item>
+      ) : null}
     </Segment>
   )
 }

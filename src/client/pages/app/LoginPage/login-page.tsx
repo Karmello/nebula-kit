@@ -17,7 +17,7 @@ export const LoginPage = () => {
   const { search } = useLocation()
   const navigateTo = useNavigateTo()
   const { show } = useSnackbar()
-  const { setToken } = useAppStore()
+  const { setToken, setPlan } = useAppStore()
 
   useEffect(() => {
     const params = new URLSearchParams(search)
@@ -42,6 +42,8 @@ export const LoginPage = () => {
       }
       if (body?.token) {
         setToken(body.token)
+        setPlan(body.plan)
+        navigateTo(body.plan === 'free' ? `/${PageKey.pricing}` : `/${PageKey.profileAccount}`)
       }
     }
   }, [])
@@ -88,13 +90,13 @@ export const LoginPage = () => {
           <Spacer blockSize={7} />
           <Flex justifyContent="center">
             <Link
-              href="/register"
+              href={`/${PageKey.authRegister}`}
               onClick={() => {
                 navigateTo(`/${PageKey.authRegister}`)
               }}
             >
               <Button variant="ghost" color="blue" intent="primary">
-                Don't have an account? Sign up
+                Don't have an account? Sign up.
               </Button>
             </Link>
           </Flex>

@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react'
-import { Routes, Route, Navigate } from 'react-router'
+import { useEffect, useLayoutEffect, useRef } from 'react'
+import { Routes, Route, Navigate, useLocation } from 'react-router'
 
 import {
   HomePage,
@@ -9,7 +9,8 @@ import {
   ComponentsBundlePage,
   LoginPage,
   RegisterPage,
-  ProfileDashboardPage,
+  ProfileAccountPage,
+  ProfileSettingsPage,
 } from 'client/pages'
 
 import { useAppStore } from 'client/store'
@@ -19,21 +20,36 @@ import { PageKey } from 'client/definitions'
 import styles from './root-page.module.scss'
 
 export const RootPage = () => {
-  const { token } = useAppStore()
+  const { token, setPlan } = useAppStore()
   const navigateTo = useNavigateTo()
+  const { pathname } = useLocation()
 
   const prevToken = useRef(token)
 
   useEffect(() => {
     if (prevToken.current !== token) {
       prevToken.current = token
-      if (token) {
-        navigateTo(`/${PageKey.profileDashboard}`)
-      } else {
+      if (!token) {
+        setPlan('')
         navigateTo(`/${PageKey.authLogin}`)
       }
     }
   }, [token])
+
+  useLayoutEffect(() => {
+    if (token) {
+      if (pathname.startsWith(`/${PageKey.authLogin}`) || pathname.startsWith(`/${PageKey.authRegister}`)) {
+        navigateTo(`/${PageKey.profileAccount}`, { replace: true })
+      }
+    } else {
+      if (
+        pathname.startsWith(`/${PageKey.profileAccount}`) ||
+        pathname.startsWith(`/${PageKey.profileSettings}`)
+      ) {
+        navigateTo(`/${PageKey.authLogin}`, { replace: true })
+      }
+    }
+  }, [pathname])
 
   return (
     <div className={styles.RootPage}>
@@ -44,9 +60,10 @@ export const RootPage = () => {
         <Route path={`/${PageKey.pricing}`} Component={PricingPage} />
         <Route path={`/${PageKey.pricingCore}`} element={<ComponentsBundlePage plan="free" />} />
         <Route path={`/${PageKey.pricingPro}`} element={<ComponentsBundlePage plan="pro" />} />
-        {!token ? <Route path={`/${PageKey.authLogin}`} Component={LoginPage} /> : null}
-        {!token ? <Route path={`/${PageKey.authRegister}`} Component={RegisterPage} /> : null}
-        {token ? <Route path={`/${PageKey.profileDashboard}`} Component={ProfileDashboardPage} /> : null}
+        <Route path={`/${PageKey.authLogin}`} Component={LoginPage} />
+        <Route path={`/${PageKey.authRegister}`} Component={RegisterPage} />
+        <Route path={`/${PageKey.profileAccount}`} Component={ProfileAccountPage} />
+        <Route path={`/${PageKey.profileSettings}`} Component={ProfileSettingsPage} />
         <Route
           path="*"
           Component={() => {

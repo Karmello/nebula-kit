@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react'
 import { sentenceCase } from 'change-case'
 
-import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnackbar } from 'lib/components'
 import { useNavigateTo } from 'client/services'
 import { PageKey } from 'client/definitions'
+import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnackbar } from 'lib/components'
 
 type RegisterFormValues = {
   email: string
@@ -85,13 +85,13 @@ export const RegisterPage = () => {
           <Spacer blockSize={7} />
           <Flex justifyContent="center">
             <Link
-              href="/login"
+              href={`/${PageKey.authLogin}`}
               onClick={() => {
                 navigateTo(`/${PageKey.authLogin}`)
               }}
             >
               <Button variant="ghost" color="blue" intent="primary">
-                Already have an account? Log in
+                Already have an account? Log in.
               </Button>
             </Link>
           </Flex>

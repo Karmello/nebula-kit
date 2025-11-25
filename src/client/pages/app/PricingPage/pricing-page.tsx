@@ -1,28 +1,15 @@
 import { useNavigateTo } from 'client/services'
 import { useAppStore } from 'client/store'
-import { PageKey } from 'client/definitions'
-import { Box, Button, Flex, Section, Spacer, Text, Link, Grid, MarkerList } from 'lib/components'
-import { Color } from 'lib/definitions'
+import { fetchUser } from 'client/api'
+import { Box, Flex, Section, Spacer, Text, Link, Grid, MarkerList, Loader } from 'lib/components'
 
-const makeCheckoutRequest = (plan: string, token: string) => {
-  fetch(process.env.API_URL + '/payment/checkout', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-    body: JSON.stringify({ plan }),
-  })
-    .then(res => res.json())
-    .then(data => {
-      if (data.url) {
-        window.location.href = data.url
-      } else {
-        console.error('Failed to start payment:', data)
-      }
-    })
-}
+import { PricingPlanButton } from './components/PricingPlanButton'
 
 export const PricingPage = () => {
-  const { token } = useAppStore()
   const navigateTo = useNavigateTo()
+  const { token } = useAppStore()
+
+  const { user, isFetching } = fetchUser({ doMakeRequest: !!token, minLoadingTime: 250 })
 
   const coreBundleLink = (
     <Link
@@ -46,52 +33,17 @@ export const PricingPage = () => {
     </Link>
   )
 
-  const PricingPlanButton = ({ plan, color }: { plan: string; color?: Color }) => {
-    if (plan === 'free') {
-      return (
-        <Link
-          href="/foundations/overview/get-started/installation"
-          onClick={() => {
-            navigateTo('/foundations/overview/get-started/installation')
-          }}
-        >
-          <Button size="sm" color="gray" intent="secondary">
-            Get started
-          </Button>
-        </Link>
-      )
-    }
-
-    return token ? (
-      <Button
-        tagAttrs={{
-          onClick: () => {
-            makeCheckoutRequest(plan, token)
-          },
-        }}
-        size="sm"
-        intent={plan === 'professional' ? 'inverse' : 'primary'}
-        color={color}
-      >
-        Upgrade
-      </Button>
-    ) : (
-      <Link
-        href={`/${PageKey.authLogin}`}
-        onClick={() => {
-          navigateTo(`/${PageKey.authLogin}`)
-        }}
-      >
-        <Button size="sm" intent={plan === 'professional' ? 'inverse' : 'primary'} color={color}>
-          Subscribe
-        </Button>
-      </Link>
+  if (isFetching) {
+    return (
+      <Box position="relative" blockSize={160}>
+        <Loader centered size="lg" color="blue" />
+      </Box>
     )
   }
 
   return (
     <Box paddingTop={15} paddingInline={{ base: 20, lg: 50 }}>
-      <Section heading="Plans & Pricing" intent="neutral" iconName="credit-card">
+      <Section heading="Pricing plans" intent="neutral" iconName="credit-card">
         <Text>Choose the plan that fits your workflow.</Text>
         <Spacer blockSize={50} />
         <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }} gap={20}>
@@ -112,8 +64,9 @@ export const PricingPage = () => {
             </MarkerList>
             <Spacer blockSize={40} />
             <Flex justifyContent="center">
-              <PricingPlanButton plan="free" />
+              <PricingPlanButton plan="free" activePlan={user?.plan} color="amber" />
             </Flex>
+            <Spacer blockSize={12} />
           </Section>
           <Section heading="Professional" variant="outline" intent="inverse" iconName="zap" interactive>
             <Text intent="neutral" bold>
@@ -136,8 +89,9 @@ export const PricingPage = () => {
             </MarkerList>
             <Spacer blockSize={40} />
             <Flex justifyContent="center">
-              <PricingPlanButton plan="professional" color="gray" />
+              <PricingPlanButton plan="professional" activePlan={user?.plan} color="gray" />
             </Flex>
+            <Spacer blockSize={12} />
           </Section>
           <Section
             heading="Business"
@@ -167,8 +121,9 @@ export const PricingPage = () => {
             </MarkerList>
             <Spacer blockSize={40} />
             <Flex justifyContent="center">
-              <PricingPlanButton plan="business" color="blue" />
+              <PricingPlanButton plan="business" activePlan={user?.plan} color="blue" />
             </Flex>
+            <Spacer blockSize={12} />
           </Section>
           <Section
             heading="Enterprise"
@@ -201,8 +156,9 @@ export const PricingPage = () => {
             </MarkerList>
             <Spacer blockSize={40} />
             <Flex justifyContent="center">
-              <PricingPlanButton plan="enterprise" color="red" />
+              <PricingPlanButton plan="enterprise" activePlan={user?.plan} color="red" />
             </Flex>
+            <Spacer blockSize={12} />
           </Section>
         </Grid>
         <Spacer />

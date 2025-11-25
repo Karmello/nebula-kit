@@ -33,6 +33,7 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
   },
   color: BOX_PROPS_META.color,
+  disabled: BOX_PROPS_META.disabled,
   iconName: {
     ...WITH_ICON_PROPS_META['name'],
     isRequired: false,
