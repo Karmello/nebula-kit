@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
+import { useDialogContext } from '../../DialogProvider'
 import { DialogContentProps } from './definitions'
 
 export const DialogContent = ({
@@ -11,6 +12,8 @@ export const DialogContent = ({
   tagAttrs,
   tagRef,
 }: DialogContentProps) => {
+  const { intent, padding } = useDialogContext()
+
   return (
     <Box
       tagAttrs={{
@@ -19,7 +22,11 @@ export const DialogContent = ({
       }}
       tagRef={tagRef}
       minBlockSize={100}
-      padding={10}
+      padding={padding}
+      variant="outline"
+      intent={intent}
+      borderRadius={0}
+      borderWidth={0}
     >
       {children}
     </Box>

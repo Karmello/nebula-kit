@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
+import { useDialogContext } from '../../DialogProvider'
 import { DialogFooterProps } from './definitions'
 
 export const DialogFooter = ({
@@ -11,6 +12,8 @@ export const DialogFooter = ({
   tagAttrs,
   tagRef,
 }: DialogFooterProps) => {
+  const { intent, padding } = useDialogContext()
+
   return (
     <Box
       tagAttrs={{
@@ -18,7 +21,13 @@ export const DialogFooter = ({
         className: classNames(withPrefix('dialog-footer'), tagAttrs?.className),
       }}
       tagRef={tagRef}
-      padding={10}
+      padding={padding}
+      variant="outline"
+      intent={intent}
+      borderRadius={0}
+      borderBottomWidth={0}
+      borderLeftWidth={0}
+      borderRightWidth={0}
     >
       {children}
     </Box>

@@ -41,7 +41,7 @@ export const Resize = ({
         className: classNames(withPrefix('resize'), tagAttrs?.className || ''),
         style: {
           ...tagAttrs?.style,
-          transitionDuration: duration ? `${duration}ms` : undefined,
+          transitionDuration: duration !== undefined ? `${duration}ms` : undefined,
           transitionTimingFunction: easing,
         },
       }}

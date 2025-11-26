@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
+import { useDialogContext } from '../../DialogProvider'
 import { DialogHeaderProps } from './definitions'
 
 export const DialogHeader = ({
@@ -11,6 +12,8 @@ export const DialogHeader = ({
   tagAttrs,
   tagRef,
 }: DialogHeaderProps) => {
+  const { intent, padding } = useDialogContext()
+
   return (
     <Box
       tagAttrs={{
@@ -18,7 +21,13 @@ export const DialogHeader = ({
         className: classNames(withPrefix('dialog-header'), tagAttrs?.className),
       }}
       tagRef={tagRef}
-      padding={10}
+      padding={padding}
+      variant="outline"
+      intent={intent}
+      borderRadius={0}
+      borderTopWidth={0}
+      borderLeftWidth={0}
+      borderRightWidth={0}
     >
       {children}
     </Box>

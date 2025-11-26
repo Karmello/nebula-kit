@@ -10,10 +10,7 @@ const DialogWrapper = () => {
     <>
       <Dialog open={open} onClose={() => setOpen(false)}>
         <Dialog.Header>Dialog header</Dialog.Header>
-        <Dialog.Content>
-          Dialog content
-          <Button>Button</Button>
-        </Dialog.Content>
+        <Dialog.Content>Dialog content</Dialog.Content>
         <Dialog.Footer>Dialog footer</Dialog.Footer>
       </Dialog>
       <Button

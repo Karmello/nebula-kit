@@ -1,4 +1,5 @@
 import { createContext, useContext, ReactNode } from 'react'
+
 import { FooterProps } from '../definitions'
 
 type FooterContextValue = {

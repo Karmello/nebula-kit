@@ -1,13 +1,19 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Button, Flex, Portal, FocusTrap } from 'lib/components'
+import { Box, Button, Flex, Portal, FocusTrap, Resize } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
+import { useNebkitStore } from 'lib/state'
 import { withPrefix } from 'lib/helpers'
+
+import { DialogProvider } from './DialogProvider'
 
 import {
   DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK,
   DEFAULT_DIALOG_SIZE,
+  DIALOG_INTENT,
+  DIALOG_PADDING,
+  DIALOG_RESIZE_DURATION,
   DIALOG_SIZE_MAP,
   DialogProps,
 } from './definitions'
@@ -25,9 +31,18 @@ export const Dialog = ({
 }: DialogProps) => {
   const ref = useRef(null)
 
-  if (!open) {
-    return null
-  }
+  const { theme } = useNebkitStore()
+
+  useEffect(() => {
+    if (!open) return
+    const { overflow } = document.body.style
+    document.body.style.overflow = 'hidden'
+    return () => {
+      setTimeout(() => {
+        document.body.style.overflow = overflow
+      }, DIALOG_RESIZE_DURATION)
+    }
+  }, [open])
 
   return (
     <WithSlots<'Dialog.Header' | 'Dialog.Content' | 'Dialog.Footer'>
@@ -41,62 +56,83 @@ export const Dialog = ({
     >
       {({ slotsByName }) => {
         return (
-          <Portal>
-            <Box
-              tagAttrs={{
-                onClick: () => {
-                  if (closeOnBackdropClick) onClose?.()
-                },
-              }}
-              position="fixed"
-              top={0}
-              right={0}
-              bottom={0}
-              left={0}
-              zIndex={1000}
-            >
-              <Flex
+          <DialogProvider intent={DIALOG_INTENT} padding={DIALOG_PADDING}>
+            <Portal>
+              <Box
                 tagAttrs={{
-                  style: { blockSize: '100%', inlineSize: '100%' },
+                  style: {
+                    pointerEvents: open ? 'auto' : 'none',
+                    opacity: open ? 1 : 0,
+                    backgroundColor: theme === 'light' ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)',
+                    transition: 'opacity 0.4s ease-out',
+                  },
+                  onClick: () => {
+                    if (closeOnBackdropClick) onClose?.()
+                  },
                 }}
-                justifyContent="center"
-                alignItems="center"
+                position="fixed"
+                top={0}
+                right={0}
+                bottom={0}
+                left={0}
+                borderRadius={0}
+                zIndex={1000}
               >
-                <FocusTrap
-                  tagRef={tagRef || ref}
-                  active={open}
-                  onFocusEscape={onClose}
-                  disableEscapeOnOutsideClick
+                <Flex
+                  tagAttrs={{
+                    style: { blockSize: '100%', inlineSize: '100%' },
+                  }}
+                  justifyContent="center"
+                  alignItems="center"
                 >
-                  <Box
-                    tag="dialog"
-                    tagAttrs={{
-                      ...tagAttrs,
-                      className: classNames(withPrefix('dialog'), tagAttrs?.className),
-                      role: 'dialog',
-                      'aria-modal': true,
-                    }}
+                  <FocusTrap
                     tagRef={tagRef || ref}
-                    position="relative"
-                    variant="outline"
-                    intent="primary"
-                    inlineSize={DIALOG_SIZE_MAP[size || 'md']}
-                    maxBlockSize="90dvh"
-                    overflowY="auto"
+                    active={open}
+                    onFocusEscape={onClose}
+                    disableEscapeOnOutsideClick
                   >
-                    {onClose ? (
-                      <Box position="absolute" top={0} right={0}>
-                        <Button tagAttrs={{ onClick: onClose }} size="xs" iconName="close" />
+                    <Resize
+                      property="inlineSize"
+                      visible={open}
+                      easing={open ? 'ease-out' : 'ease-in'}
+                      duration={DIALOG_RESIZE_DURATION}
+                    >
+                      <Box
+                        tag="dialog"
+                        tagAttrs={{
+                          ...tagAttrs,
+                          className: classNames(withPrefix('dialog'), tagAttrs?.className),
+                          role: 'dialog',
+                          'aria-modal': true,
+                        }}
+                        tagRef={tagRef || ref}
+                        position="relative"
+                        variant="outline"
+                        maxBlockSize="90dvh"
+                        overflowY="auto"
+                        intent="inverse"
+                        inlineSize={DIALOG_SIZE_MAP[size || 'md']}
+                      >
+                        {onClose ? (
+                          <Box position="absolute" top={5} right={5}>
+                            <Button
+                              tagAttrs={{ onClick: onClose }}
+                              size="xs"
+                              iconName="close"
+                              intent="neutral"
+                            />
+                          </Box>
+                        ) : null}
+                        {slotsByName['Dialog.Header']}
+                        {slotsByName['Dialog.Content']}
+                        {slotsByName['Dialog.Footer']}
                       </Box>
-                    ) : null}
-                    {slotsByName['Dialog.Header']}
-                    {slotsByName['Dialog.Content']}
-                    {slotsByName['Dialog.Footer']}
-                  </Box>
-                </FocusTrap>
-              </Flex>
-            </Box>
-          </Portal>
+                    </Resize>
+                  </FocusTrap>
+                </Flex>
+              </Box>
+            </Portal>
+          </DialogProvider>
         )
       }}
     </WithSlots>
