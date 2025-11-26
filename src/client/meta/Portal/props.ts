@@ -6,8 +6,8 @@ import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 const PORTAL_PROPS_META: ComponentMeta<PortalProps>['props'] = {
   anchorRef: {
     options: ['RefObject'],
-    isRequired: true,
-    description: 'Reference to the element the portal content is positioned relative to.',
+    description:
+      'Reference to the element the portal should position itself relative to. When omitted the portal renders at the root without applying any positioning.',
   },
   children: {
     ...HTML_TAG_PROPS_META.children,

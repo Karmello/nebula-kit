@@ -5,6 +5,7 @@ import boxMeta from './Box/_index'
 import breadcrumbMeta from './Breadcrumb/_index'
 import buttonMeta from './Button/_index'
 import calloutMeta from './Callout/_index'
+import dialogMeta from './Dialog/_index'
 import dividerMeta from './Divider/_index'
 import dropdownList from './DropdownList/_index'
 import flexMeta from './Flex/_index'
@@ -42,6 +43,7 @@ export default {
   Breadcrumb: breadcrumbMeta,
   Button: buttonMeta,
   Callout: calloutMeta,
+  Dialog: dialogMeta,
   Divider: dividerMeta,
   DropdownList: dropdownList,
   Flex: flexMeta,

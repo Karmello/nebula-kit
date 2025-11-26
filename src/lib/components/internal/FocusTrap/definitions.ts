@@ -4,7 +4,7 @@ import { HtmlTagProps } from 'lib/components'
 
 type FocusTrapOwnProps = {
   active: boolean
-  onClose: () => void
+  onClose?: () => void
 }
 
 type PropsFromHtmlTag<T extends ElementType> = Pick<HtmlTagProps<T>, 'tagRef'> & {

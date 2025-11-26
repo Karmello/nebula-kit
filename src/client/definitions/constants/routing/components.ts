@@ -72,7 +72,10 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'overlays',
     label: 'Overlays',
-    items: [{ key: 'dropdown-list', label: 'DropdownList', sections: COMPONENT_SECTIONS }],
+    items: [
+      { key: 'dropdown-list', label: 'DropdownList', sections: COMPONENT_SECTIONS },
+      { key: 'dialog', label: 'Dialog', sections: COMPONENT_SECTIONS },
+    ],
   },
   {
     key: 'layouts',

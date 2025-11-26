@@ -1,4 +1,4 @@
-import { ElementType, useCallback, useEffect, useRef } from 'react'
+import { ElementType, useEffect, useRef } from 'react'
 
 import { FocusTrapProps } from './definitions'
 
@@ -10,57 +10,68 @@ export const FocusTrap = <T extends ElementType>({
 }: FocusTrapProps<T>) => {
   const trigger = useRef<HTMLElement | null>(null)
 
-  const onTargetKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Tab') {
-      const target = tagRef?.current as HTMLElement
-
-      const interactiveBoxes = Array.from(
-        target.querySelectorAll<HTMLElement>("[data-neb-box-interactive='true']")
-      ).filter(el => !el.closest('[inert]'))
-
-      if (!e.shiftKey) {
-        if (document.activeElement === interactiveBoxes[interactiveBoxes.length - 1]) {
-          setTimeout(() => {
-            interactiveBoxes[0].focus()
-          })
-        }
-      } else {
-        if (document.activeElement === interactiveBoxes[0]) {
-          setTimeout(() => {
-            interactiveBoxes[interactiveBoxes.length - 1].focus()
-          })
-        }
-      }
-    } else if (e.key === 'Escape') {
-      onClose?.()
-    }
-  }, [])
-
-  const onDocumentPointerDown = useCallback((e: PointerEvent) => {
-    const target = tagRef?.current as HTMLElement
-
-    if (!target.contains(e.target as Node)) {
-      onClose?.()
-    }
-  }, [])
-
   useEffect(() => {
-    const target = tagRef?.current as HTMLElement
+    const target = tagRef?.current as HTMLElement | null
+    if (!active || !target) return
 
-    if (active) {
-      trigger.current = document.activeElement as HTMLElement
-      document.addEventListener('pointerdown', onDocumentPointerDown)
-      target.addEventListener('keydown', onTargetKeyDown)
-      target.setAttribute('tabindex', '-1')
-      target.focus()
-    } else {
-      document.removeEventListener('pointerdown', onDocumentPointerDown)
-      target.removeEventListener('keydown', onTargetKeyDown)
+    // remember element that had focus before trap
+    trigger.current = document.activeElement as HTMLElement | null
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Tab') {
+        const interactiveBoxes = Array.from(
+          target.querySelectorAll<HTMLElement>("[data-neb-box-interactive='true']")
+        ).filter(el => !el.closest('[inert]'))
+
+        if (interactiveBoxes.length === 0) return
+
+        const first = interactiveBoxes[0]
+        const last = interactiveBoxes[interactiveBoxes.length - 1]
+
+        if (!e.shiftKey) {
+          // forward tab
+          if (document.activeElement === last) {
+            e.preventDefault()
+            first.focus()
+          }
+        } else {
+          // shift+tab
+          if (document.activeElement === first) {
+            e.preventDefault()
+            last.focus()
+          }
+        }
+      } else if (e.key === 'Escape') {
+        onClose?.()
+      }
+    }
+
+    const handlePointerDown = (e: PointerEvent) => {
+      const currentTarget = tagRef?.current as HTMLElement | null
+      if (!currentTarget) return
+
+      if (!currentTarget.contains(e.target as Node)) {
+        onClose?.()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    document.addEventListener('pointerdown', handlePointerDown)
+
+    target.setAttribute('tabindex', '-1')
+    target.focus()
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      document.removeEventListener('pointerdown', handlePointerDown)
       target.removeAttribute('tabindex')
-      trigger.current?.focus()
+
+      if (trigger.current) {
+        trigger.current.focus()
+      }
       trigger.current = null
     }
-  }, [active])
+  }, [active, tagRef, onClose])
 
   return children
 }

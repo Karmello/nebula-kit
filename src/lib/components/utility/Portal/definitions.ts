@@ -18,7 +18,7 @@ export const PORTAL_PLACEMENTS = [
 export type PortalPlacement = (typeof PORTAL_PLACEMENTS)[number]
 
 type PortalOwnProps = {
-  anchorRef: RefObject<HTMLElement | null>
+  anchorRef?: RefObject<HTMLElement | null>
   placement?: PortalPlacement
 }
 

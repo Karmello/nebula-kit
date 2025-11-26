@@ -24,7 +24,7 @@ export const Portal = ({
   const rootRef = tagRef || ref
 
   const updatePosition = useCallback(() => {
-    if (!anchorRef.current) return
+    if (!anchorRef?.current) return
     const anchorRect = anchorRef.current.getBoundingClientRect()
 
     let top = anchorRect.top + window.scrollY
@@ -60,6 +60,7 @@ export const Portal = ({
   }, [])
 
   useLayoutEffect(() => {
+    if (!anchorRef?.current) return
     let frame: number
     const callback = () => {
       updatePosition()
@@ -71,21 +72,34 @@ export const Portal = ({
 
   if (!container) return null
 
-  // Compute transform purely by placement intent (handles all alignment offsets)
-  const [side, align] = (placement || 'bottom-start').split('-') as [string, string | undefined]
-  const transforms: string[] = []
+  let transform
 
-  // Pull back based on side
-  if (side === 'top') transforms.push('translateY(-100%)')
-  if (side === 'left') transforms.push('translateX(-100%)')
+  if (anchorRef?.current) {
+    // Compute transform purely by placement intent (handles all alignment offsets)
+    const [side, align] = (placement || 'bottom-start').split('-') as [string, string | undefined]
+    const transforms: string[] = []
 
-  // Alignments
-  if ((side === 'top' || side === 'bottom') && align === 'center') transforms.push('translateX(-50%)')
-  if ((side === 'top' || side === 'bottom') && align === 'end') transforms.push('translateX(-100%)')
-  if ((side === 'left' || side === 'right') && align === 'center') transforms.push('translateY(-50%)')
-  if ((side === 'left' || side === 'right') && align === 'end') transforms.push('translateY(-100%)')
+    // Pull back based on side
+    if (side === 'top') transforms.push('translateY(-100%)')
+    if (side === 'left') transforms.push('translateX(-100%)')
 
-  const finalTransform = transforms.join(' ')
+    // Alignments
+    if ((side === 'top' || side === 'bottom') && align === 'center') transforms.push('translateX(-50%)')
+    if ((side === 'top' || side === 'bottom') && align === 'end') transforms.push('translateX(-100%)')
+    if ((side === 'left' || side === 'right') && align === 'center') transforms.push('translateY(-50%)')
+    if ((side === 'left' || side === 'right') && align === 'end') transforms.push('translateY(-100%)')
+
+    transform = transforms.join(' ')
+  }
+
+  if (!anchorRef?.current) {
+    return createPortal(
+      <Box tagRef={rootRef} tagAttrs={tagAttrs}>
+        {children}
+      </Box>,
+      container
+    )
+  }
 
   return createPortal(
     <Box
@@ -95,7 +109,7 @@ export const Portal = ({
         style: {
           ...tagAttrs?.style,
           transition: 'none',
-          transform: finalTransform,
+          transform,
         },
       }}
       position="absolute"
