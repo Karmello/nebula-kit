@@ -4,6 +4,10 @@ import { ComponentMeta } from 'client/definitions'
 import { HtmlTagProps } from 'lib/components'
 
 const HTML_TAG_PROPS_META: ComponentMeta<HtmlTagProps<ElementType>>['props'] = {
+  children: {
+    options: ['ReactNode'],
+    description: 'Content rendered.',
+  },
   tag: {
     options: ['HTML tag'],
     defaultValue: 'div',
@@ -16,10 +20,6 @@ const HTML_TAG_PROPS_META: ComponentMeta<HtmlTagProps<ElementType>>['props'] = {
   tagRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
-  },
-  children: {
-    options: ['ReactNode'],
-    description: 'Content rendered.',
   },
 }
 

@@ -1,8 +1,7 @@
 import { useRef } from 'react'
 import classNames from 'classnames'
 
-import { Resize, Box, Flex, Button } from 'lib/components'
-import { FocusTrap } from 'lib/components/internal'
+import { Resize, Box, Flex, Button, FocusTrap } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { useNebkitStore } from 'lib/state'
 import { BOX_BORDER_WIDTH } from 'lib/components/base/Box/definitions'

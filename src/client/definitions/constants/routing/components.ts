@@ -111,6 +111,7 @@ export const COMPONENT_CATEGORIES = [
       { key: 'nebkit-provider', label: 'NebkitProvider', sections: COMPONENT_SECTIONS },
       { key: 'hydration-gate', label: 'HydrationGate', sections: COMPONENT_SECTIONS },
       { key: 'portal', label: 'Portal', sections: COMPONENT_SECTIONS },
+      { key: 'focus-trap', label: 'FocusTrap', sections: COMPONENT_SECTIONS },
     ],
   },
 ]

@@ -1,13 +1,8 @@
-import { ElementType, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 import { FocusTrapProps } from './definitions'
 
-export const FocusTrap = <T extends ElementType>({
-  tagRef,
-  children,
-  active,
-  onClose,
-}: FocusTrapProps<T>) => {
+export const FocusTrap = ({ tagRef, children, active, onClose }: FocusTrapProps) => {
   const trigger = useRef<HTMLElement | null>(null)
 
   useEffect(() => {

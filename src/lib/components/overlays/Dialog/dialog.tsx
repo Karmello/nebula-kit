@@ -1,8 +1,8 @@
 import { useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Button, Flex, Portal } from 'lib/components'
-import { WithSlots, FocusTrap } from 'lib/components/internal'
+import { Box, Button, Flex, Portal, FocusTrap } from 'lib/components'
+import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
 import {
