@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
 import { PageKey } from 'client/definitions'
-import { useNavigateTo } from 'client/services'
+import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { checkoutPaidPlan } from 'client/api'
+import { useCheckoutPaidPlan } from 'client/api'
 import { Button, Link, Text } from 'lib/components'
 import { Color } from 'lib/definitions'
 
@@ -18,7 +18,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
 
   const navigateTo = useNavigateTo()
   const { token } = useAppStore()
-  const { sendRequest: sendCheckoutPlanRequest } = checkoutPaidPlan()
+  const { sendRequest: sendCheckoutPlanRequest } = useCheckoutPaidPlan()
 
   if (plan === 'free') {
     if (!activePlan || activePlan === 'free') {

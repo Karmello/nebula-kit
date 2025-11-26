@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router'
 
-import { useNavigateTo } from 'client/services'
+import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
 import { useAppStore, useComponentsPageStore, useFoundationsPageStore } from 'client/store'
 import { Button, Link, Segment } from 'lib/components'

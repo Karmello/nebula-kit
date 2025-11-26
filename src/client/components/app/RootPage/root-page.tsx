@@ -14,7 +14,7 @@ import {
 } from 'client/pages'
 
 import { useAppStore } from 'client/store'
-import { useNavigateTo } from 'client/services'
+import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
 
 import styles from './root-page.module.scss'

@@ -1,10 +1,9 @@
 import { sentenceCase } from 'change-case'
 
 import { Box, Divider, Flex, Button, Link, Section, Select, Spacer, Text, Segment } from 'lib/components'
-
 import { useNebkitStore } from 'lib/state'
 import { Color, COLORS, THEMES } from 'lib/definitions'
-import { useNavigateTo } from 'client/services'
+import { useNavigateTo } from 'client/hooks'
 
 import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/utility/NebkitProvider/definitions'
 

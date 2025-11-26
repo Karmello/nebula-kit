@@ -1,4 +1,4 @@
-import { useNavigateTo } from 'client/services'
+import { useNavigateTo } from 'client/hooks'
 import { getCopyrightInfo } from 'client/helpers'
 import { Box, Text, Spacer, Link } from 'lib/components'
 

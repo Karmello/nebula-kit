@@ -1,10 +1,10 @@
-import { makeApiRequest } from 'client/services'
+import { useMakeApiRequest } from 'client/hooks'
 import { useAppStore } from 'client/store'
 
-export const getPaymentDetailsUrl = (enabled: boolean) => {
+export const useGetPaymentDetailsUrl = (enabled: boolean) => {
   const { token } = useAppStore()
 
-  const { data, isMakingRequest, isError } = makeApiRequest<{ url: string }>({
+  const { data, isMakingRequest, isError } = useMakeApiRequest<{ url: string }>({
     path: '/payment/details-url',
     method: 'POST',
     enabled: !!token && !!enabled,

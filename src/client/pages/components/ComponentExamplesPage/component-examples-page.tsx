@@ -2,14 +2,12 @@ import { pascalCase } from 'change-case'
 
 import meta from 'client/meta'
 import { CodeSnippet } from 'client/components'
-import { elemToStringService } from 'client/services'
+import { convertElemToString } from 'client/helpers'
 import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'client/definitions'
 import { Box, Flex, Reveal, Spacer, Text } from 'lib/components'
 
 const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
-  const elemToString = elemToStringService()
-
   const { description, jsx, code, noSandBox, noCode, sandBoxWithNoPadding } = props
 
   return (
@@ -37,11 +35,11 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           {!noSandBox ? (
             <Reveal label="Code" color="gray" intent="muted">
               <Box padding={4}>
-                <CodeSnippet code={code || elemToString(jsx)} borderRadius={0} />
+                <CodeSnippet code={code || convertElemToString(jsx)} borderRadius={0} />
               </Box>
             </Reveal>
           ) : (
-            <CodeSnippet code={code || elemToString(jsx)} />
+            <CodeSnippet code={code || convertElemToString(jsx)} />
           )}
         </>
       ) : null}

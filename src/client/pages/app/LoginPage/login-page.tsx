@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
 
-import { useNavigateTo } from 'client/services'
+import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
 import { PageKey } from 'client/definitions'
-import { loginUser } from 'client/api'
+import { useLoginUser } from 'client/api'
 import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnackbar } from 'lib/components'
 
 type LoginFormValues = {
@@ -20,7 +20,7 @@ export const LoginPage = () => {
   const { show } = useSnackbar()
   const { setToken, setPlan } = useAppStore()
 
-  const { sendRequest } = loginUser()
+  const { sendRequest } = useLoginUser()
 
   useEffect(() => {
     const params = new URLSearchParams(search)

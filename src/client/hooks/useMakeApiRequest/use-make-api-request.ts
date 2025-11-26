@@ -10,7 +10,7 @@ type Args = {
   minLoadingTime?: number
 }
 
-export const makeApiRequest = <TData>({
+export const useMakeApiRequest = <TData>({
   path,
   method = 'GET',
   headers = {},

@@ -2,6 +2,7 @@ import { BoxProps, HtmlTagProps } from 'lib/components'
 import { ScaleValue, Sizes } from 'lib/definitions'
 
 export const DEFAULT_LOADER_SIZE: LoaderProps['size'] = 'md'
+export const DEFAULT_LOADER_ACTIVE: LoaderProps['active'] = true
 
 export const LOADER_SIZE_CONFIG: Record<LoaderSize, ScaleValue> = {
   xs: 12,

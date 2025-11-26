@@ -4,15 +4,14 @@ import meta from 'client/meta'
 import { useComponentsPageStore } from 'client/store'
 import { ComponentMeta } from 'client/definitions'
 import { CodeSnippet } from 'client/components'
-import { elemToStringService, useNavigateTo } from 'client/services'
+import { convertElemToString } from 'client/helpers'
+import { useNavigateTo } from 'client/hooks'
 import { Text, Flex, Box, Spacer, Section, Button, Link } from 'lib/components'
 
 import { ListWithHeading } from './ListWithHeading'
 import { ListWithChips } from './ListWithChips'
 
 const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
-  const elemToString = elemToStringService()
-
   const navigateTo = useNavigateTo()
 
   const {
@@ -24,7 +23,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const content = (
     <Flex flexDirection="column" alignItems="stretch" gap={30}>
       <Text typography="lead">{title}</Text>
-      {examples?.[0] ? <CodeSnippet code={examples[0].code || elemToString(examples[0].jsx)} /> : null}
+      {examples?.[0] ? <CodeSnippet code={examples[0].code || convertElemToString(examples[0].jsx)} /> : null}
       {description ? <ListWithHeading heading="Description:" items={description} /> : null}
       {composedOf ? <ListWithChips heading="Composed of:" items={composedOf} color="red" /> : null}
       {rendersAs ? <ListWithChips heading="Renders as:" items={rendersAs as string[]} color="amber" /> : null}

@@ -1,5 +1,5 @@
 import { getCopyrightInfo } from 'client/helpers'
-import { useNavigateTo } from 'client/services'
+import { useNavigateTo } from 'client/hooks'
 import { Footer, Link, MarkerList, Spacer, Text } from 'lib/components'
 
 export const AppFooter = () => {

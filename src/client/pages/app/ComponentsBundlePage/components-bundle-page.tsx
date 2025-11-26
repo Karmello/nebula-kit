@@ -1,4 +1,4 @@
-import { useNavigateTo } from 'client/services'
+import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
 import meta from 'client/meta'
 import { Box, Button, Flex, Grid, Link, Section, Spacer, Text } from 'lib/components'

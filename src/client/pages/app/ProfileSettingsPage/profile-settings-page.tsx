@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
 import { useAppStore } from 'client/store'
-import { getUser } from 'client/api'
-import { cancelPaidPlan } from 'client/api'
-import { Box, Button, Flex, Input, Loader, MarkerList, Resize, Section, Spacer, Text } from 'lib/components'
+import { useGetUser } from 'client/api'
+import { useCancelPaidPlan } from 'client/api'
+import { Box, Button, Input, Loader, MarkerList, Resize, Section, Spacer, Text } from 'lib/components'
 
 export const ProfileSettingsPage = () => {
   const [displayCancelForm, setDisplayCancelForm] = useState<boolean>(false)
@@ -11,8 +11,8 @@ export const ProfileSettingsPage = () => {
 
   const { token } = useAppStore()
 
-  const { data: getUserData, isMakingRequest } = getUser()
-  const { sendRequest: sendCancelPaidPlanRequest } = cancelPaidPlan()
+  const { data: getUserData, isMakingRequest } = useGetUser()
+  const { sendRequest: sendCancelPaidPlanRequest } = useCancelPaidPlan()
 
   const enableCancelSection = getUserData?.data?.plan !== 'free'
 

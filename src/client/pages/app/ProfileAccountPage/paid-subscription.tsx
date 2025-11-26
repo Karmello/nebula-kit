@@ -1,13 +1,13 @@
 import { useState } from 'react'
 
-import { getPaymentDetailsUrl, getPaymentInfo } from 'client/api'
+import { useGetPaymentDetailsUrl, useGetPaymentInfo } from 'client/api'
 import { Button, Flex, Loader, Spacer, Table, Text } from 'lib/components'
 
 export default ({ enabled }: { enabled: boolean }) => {
   const [isRedirecting, setIsRedirecting] = useState<boolean>(false)
 
-  const paymentInfo = getPaymentInfo(enabled)
-  const paymentDetailsUrl = getPaymentDetailsUrl(enabled)
+  const paymentInfo = useGetPaymentInfo(enabled)
+  const paymentDetailsUrl = useGetPaymentDetailsUrl(enabled)
 
   if (!enabled) return null
 

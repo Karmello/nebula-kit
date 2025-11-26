@@ -3,7 +3,7 @@ import { useLayoutEffect, useState } from 'react'
 import { Flex, Button, Link } from 'lib/components'
 import { FOUNDATION_CATEGORIES, COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
 import { useComponentsPageStore, useFoundationsPageStore } from 'client/store'
-import { useNavigateTo } from 'client/services'
+import { useNavigateTo } from 'client/hooks'
 
 export type NextPageButtonProps = {
   pageKey: Extract<keyof typeof PageKey, 'foundations' | 'components'>

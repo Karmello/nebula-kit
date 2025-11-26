@@ -3,7 +3,7 @@ import { useLocation } from 'react-router'
 
 import { AppFrame, Button, Link, Toolbar } from 'lib/components'
 import { PageKey } from 'client/definitions'
-import { useNavigateTo } from 'client/services'
+import { useNavigateTo } from 'client/hooks'
 
 import { RootPage } from '../RootPage'
 import { PageNavigation } from './PageNavigation'

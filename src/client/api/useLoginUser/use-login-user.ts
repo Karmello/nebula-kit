@@ -1,7 +1,7 @@
-import { makeApiRequest } from 'client/services'
+import { useMakeApiRequest } from 'client/hooks'
 
-export const loginUser = () => {
-  const { data, isMakingRequest, isError, sendRequest } = makeApiRequest({
+export const useLoginUser = () => {
+  const { data, isMakingRequest, isError, sendRequest } = useMakeApiRequest({
     path: '/auth/login',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

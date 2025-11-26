@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 
-import { makeApiRequest } from 'client/services'
+import { useMakeApiRequest } from 'client/hooks'
 
-export const checkoutPaidPlan = () => {
-  const { data, isMakingRequest, isError, sendRequest } = makeApiRequest<{ url: string }>({
+export const useCheckoutPaidPlan = () => {
+  const { data, isMakingRequest, isError, sendRequest } = useMakeApiRequest<{ url: string }>({
     path: '/payment/checkout',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

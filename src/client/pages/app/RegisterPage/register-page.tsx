@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react'
 import { sentenceCase } from 'change-case'
 
-import { useNavigateTo } from 'client/services'
+import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
-import { registerUser } from 'client/api'
+import { useRegisterUser } from 'client/api'
 import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnackbar } from 'lib/components'
 
 type RegisterFormValues = {
@@ -17,7 +17,7 @@ export const RegisterPage = () => {
   const { show } = useSnackbar()
   const navigateTo = useNavigateTo()
 
-  const { sendRequest } = registerUser()
+  const { sendRequest } = useRegisterUser()
 
   const onValidSubmission = useCallback((data: RegisterFormValues) => {
     return sendRequest(data)

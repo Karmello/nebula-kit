@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { LoaderProps, LOADER_SIZE_CONFIG, DEFAULT_LOADER_SIZE } from './definitions'
+import { LoaderProps, LOADER_SIZE_CONFIG, DEFAULT_LOADER_SIZE, DEFAULT_LOADER_ACTIVE } from './definitions'
 
 import './loader.scss'
 
@@ -15,11 +15,13 @@ export const Loader = ({
   // Box
   color,
   // own
-  active,
+  active = DEFAULT_LOADER_ACTIVE,
   size = DEFAULT_LOADER_SIZE,
   centered,
 }: LoaderProps) => {
-  if (active === false) return
+  if (!active) {
+    return null
+  }
 
   return (
     <Box

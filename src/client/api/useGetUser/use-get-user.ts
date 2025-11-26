@@ -1,15 +1,15 @@
 import { useEffect } from 'react'
 
-import { makeApiRequest } from 'client/services'
+import { useMakeApiRequest } from 'client/hooks'
 import { ApiUser } from 'client/definitions'
 import { useAppStore } from 'client/store'
 import { useSnackbar } from 'lib/components'
 
-export const getUser = () => {
+export const useGetUser = () => {
   const { token, setToken, setPlan } = useAppStore()
   const { show } = useSnackbar()
 
-  const { data, isMakingRequest, isError } = makeApiRequest<{ data: ApiUser }>({
+  const { data, isMakingRequest, isError } = useMakeApiRequest<{ data: ApiUser }>({
     path: '/auth/me',
     enabled: !!token,
   })

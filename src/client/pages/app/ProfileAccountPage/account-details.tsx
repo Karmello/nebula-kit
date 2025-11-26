@@ -1,12 +1,12 @@
 import { sentenceCase } from 'change-case'
 
-import { useNavigateTo } from 'client/services'
+import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
-import { getUser } from 'client/api'
+import { useGetUser } from 'client/api'
 import { Loader, Table, Text, Flex, Link, Button, Box, Spacer } from 'lib/components'
 
 export default () => {
-  const user = getUser()
+  const user = useGetUser()
   const navigateTo = useNavigateTo()
 
   return (

@@ -1,5 +1,5 @@
-import { useNavigateTo } from 'client/services'
-import { getUser } from 'client/api'
+import { useNavigateTo } from 'client/hooks'
+import { useGetUser } from 'client/api'
 import { Box, Flex, Section, Spacer, Text, Link, Grid, MarkerList, Loader } from 'lib/components'
 
 import { PricingPlanButton } from './components/PricingPlanButton'
@@ -7,7 +7,7 @@ import { PricingPlanButton } from './components/PricingPlanButton'
 export const PricingPage = () => {
   const navigateTo = useNavigateTo()
 
-  const { data: getUserData, isMakingRequest } = getUser()
+  const { data: getUserData, isMakingRequest } = useGetUser()
 
   const coreBundleLink = (
     <Link

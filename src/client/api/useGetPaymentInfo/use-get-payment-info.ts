@@ -1,11 +1,11 @@
-import { makeApiRequest } from 'client/services'
+import { useMakeApiRequest } from 'client/hooks'
 import { ApiPaymentInfo } from 'client/definitions'
 import { useAppStore } from 'client/store'
 
-export const getPaymentInfo = (enabled: boolean) => {
+export const useGetPaymentInfo = (enabled: boolean) => {
   const { token } = useAppStore()
 
-  const { data, isMakingRequest, isError } = makeApiRequest<{ data: ApiPaymentInfo }>({
+  const { data, isMakingRequest, isError } = useMakeApiRequest<{ data: ApiPaymentInfo }>({
     path: '/payment/info',
     enabled: !!token && !!enabled,
   })

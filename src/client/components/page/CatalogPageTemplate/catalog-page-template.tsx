@@ -2,7 +2,7 @@ import { useLocation } from 'react-router'
 import { pascalCase } from 'change-case'
 
 import meta from 'client/meta'
-import { useNavigateTo } from 'client/services'
+import { useNavigateTo } from 'client/hooks'
 import { ComponentsPageRoutes, FoundationsPageRoutes } from 'client/pages'
 import { PageKey } from 'client/definitions'
 import { Box, Breadcrumb, SideNav, Spacer, SplitView, Text, Divider, Flex } from 'lib/components'
