@@ -75,7 +75,7 @@ export const Dialog = ({
                     position="relative"
                     variant="outline"
                     intent="primary"
-                    inlineSize={DIALOG_SIZE_MAP[size]}
+                    inlineSize={DIALOG_SIZE_MAP[size || 'md']}
                     maxBlockSize="90dvh"
                     overflowY="auto"
                   >
