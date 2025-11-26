@@ -62,7 +62,12 @@ export const Dialog = ({
                 justifyContent="center"
                 alignItems="center"
               >
-                <FocusTrap tagRef={tagRef || ref} active={open} onClose={onClose}>
+                <FocusTrap
+                  tagRef={tagRef || ref}
+                  active={open}
+                  onFocusEscape={onClose}
+                  disableEscapeOnOutsideClick
+                >
                   <Box
                     tag="dialog"
                     tagAttrs={{

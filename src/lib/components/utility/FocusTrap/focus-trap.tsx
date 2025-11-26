@@ -1,8 +1,14 @@
 import { useEffect, useRef } from 'react'
 
-import { FocusTrapProps } from './definitions'
+import { DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK, FocusTrapProps } from './definitions'
 
-export const FocusTrap = ({ tagRef, children, active, onClose }: FocusTrapProps) => {
+export const FocusTrap = ({
+  tagRef,
+  children,
+  active,
+  onFocusEscape,
+  disableEscapeOnOutsideClick = DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK,
+}: FocusTrapProps) => {
   const trigger = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
@@ -37,16 +43,17 @@ export const FocusTrap = ({ tagRef, children, active, onClose }: FocusTrapProps)
           }
         }
       } else if (e.key === 'Escape') {
-        onClose?.()
+        onFocusEscape?.()
       }
     }
 
     const handlePointerDown = (e: PointerEvent) => {
+      if (disableEscapeOnOutsideClick) return
       const currentTarget = tagRef?.current as HTMLElement | null
       if (!currentTarget) return
 
       if (!currentTarget.contains(e.target as Node)) {
-        onClose?.()
+        onFocusEscape?.()
       }
     }
 
@@ -66,7 +73,7 @@ export const FocusTrap = ({ tagRef, children, active, onClose }: FocusTrapProps)
       }
       trigger.current = null
     }
-  }, [active, tagRef, onClose])
+  }, [active, tagRef, onFocusEscape])
 
   return children
 }

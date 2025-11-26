@@ -27,7 +27,7 @@ export const SplitViewSide = ({
     <FocusTrap
       tagRef={tagRef || ref}
       active={mode == 'overlay' && sideOpen}
-      onClose={() => setSideOpen(false)}
+      onFocusEscape={() => setSideOpen(false)}
     >
       <Box
         tag="aside"

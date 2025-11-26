@@ -1,8 +1,11 @@
 import { HtmlTagProps } from 'lib/components'
 
+export const DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK: FocusTrapProps['disableEscapeOnOutsideClick'] = false
+
 type FocusTrapOwnProps = {
   active: boolean
-  onClose?: () => void
+  onFocusEscape?: () => void
+  disableEscapeOnOutsideClick?: boolean
 }
 
 type PropsFromHtmlTag = {
