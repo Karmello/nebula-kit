@@ -21,6 +21,7 @@ export const FOUNDATION_CATEGORIES = [
           { key: 'systemic-growth', label: 'Systemic growth' },
           { key: 'predictable-behavior', label: 'Predictable behavior' },
           { key: 'visual-coherence', label: 'Visual coherence' },
+          { key: 'creative-freedom', label: 'Creative freedom' },
         ],
       },
       {

@@ -17,7 +17,7 @@ export const ProfileSettingsPage = () => {
   const enableCancelSection = getUserData?.data?.plan !== 'free'
 
   return (
-    <Box padding={{ base: 20, lg: 50 }} maxInlineSize="85rem">
+    <Box padding={{ base: 20, lg: 50 }} maxInlineSize="75rem">
       <Section heading="Settings" iconName="settings">
         {!getUserData || isMakingRequest ? (
           <Box position="relative" blockSize={160}>
@@ -31,15 +31,15 @@ export const ProfileSettingsPage = () => {
                 <Section
                   heading="Cancel paid subscription"
                   variant="soft-outline"
-                  intent={enableCancelSection ? 'primary' : 'secondary'}
+                  intent={enableCancelSection ? 'primary' : 'tertiary'}
                   color="red"
                   borderIntent="muted"
                 >
-                  <Text bold intent={enableCancelSection ? 'neutral' : 'secondary'}>
+                  <Text bold intent={enableCancelSection ? 'neutral' : 'tertiary'} color="gray">
                     What happens when you cancel
                   </Text>
                   <Spacer blockSize={15} />
-                  <MarkerList intent={enableCancelSection ? 'neutral' : 'secondary'}>
+                  <MarkerList intent={enableCancelSection ? 'neutral' : 'tertiary'} color="gray">
                     <MarkerList.Item>
                       <Text>your license key is immediately revoked</Text>
                     </MarkerList.Item>
@@ -54,7 +54,7 @@ export const ProfileSettingsPage = () => {
                     </MarkerList.Item>
                   </MarkerList>
                   <Spacer blockSize={15} />
-                  <Text intent={enableCancelSection ? 'neutral' : 'secondary'}>
+                  <Text intent={enableCancelSection ? 'neutral' : 'tertiary'} color="gray">
                     If you change your mind later, you can start a new subscription at any time and a fresh
                     license key will be issued automatically.
                   </Text>
@@ -68,9 +68,9 @@ export const ProfileSettingsPage = () => {
                           },
                         }}
                         size="sm"
-                        intent="tertiary"
+                        intent={enableCancelSection ? 'tertiary' : 'muted'}
                         color="red"
-                        disabled={!enableCancelSection}
+                        disabled={!enableCancelSection || displayCancelForm}
                       >
                         Cancel
                       </Button>

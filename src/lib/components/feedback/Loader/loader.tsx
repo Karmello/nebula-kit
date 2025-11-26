@@ -15,9 +15,12 @@ export const Loader = ({
   // Box
   color,
   // own
+  active,
   size = DEFAULT_LOADER_SIZE,
   centered,
 }: LoaderProps) => {
+  if (active === false) return
+
   return (
     <Box
       tagAttrs={{

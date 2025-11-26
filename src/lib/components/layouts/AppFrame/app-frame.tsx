@@ -25,6 +25,7 @@ export const AppFrame = ({ children, tagAttrs, tagRef, stickyHeader = false }: A
           <Grid
             tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('app-frame'), tagAttrs?.className) }}
             tagRef={tagRef}
+            gridTemplateRows="auto 1fr auto"
           >
             {slotsByName['AppFrame.Header']}
             {slotsByName['AppFrame.Main']}

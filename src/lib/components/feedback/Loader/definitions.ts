@@ -15,6 +15,7 @@ export const LOADER_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies Sizes[]
 export type LoaderSize = (typeof LOADER_SIZES)[number]
 
 type LoaderOwnProps = {
+  active?: boolean
   size?: LoaderSize
   centered?: boolean
 }
