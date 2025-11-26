@@ -22,11 +22,24 @@ export const Resize = ({
   const resolvedSizes = useRef<Record<ResizeProps['property'], string>>({ blockSize: '', inlineSize: '' })
 
   useEffect(() => {
-    if (finalRef.current) {
-      resolvedSizes.current.inlineSize = `${finalRef.current.scrollWidth}px`
-      resolvedSizes.current.blockSize = `${finalRef.current.scrollHeight}px`
+    const el = finalRef.current
+    if (!el) return
+
+    const update = () => {
+      resolvedSizes.current.inlineSize = `${el.scrollWidth}px`
+      resolvedSizes.current.blockSize = `${el.scrollHeight}px`
+      if (visible) {
+        el.style[property] = resolvedSizes.current[property]
+      }
     }
-  }, [finalRef.current])
+
+    update()
+
+    const observer = new ResizeObserver(update)
+    observer.observe(el)
+
+    return () => observer.disconnect()
+  }, [finalRef, property, visible])
 
   useEffect(() => {
     if (finalRef.current) {

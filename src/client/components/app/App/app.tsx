@@ -1,9 +1,11 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 
-import { AppFrame, Button, Link, Toolbar } from 'lib/components'
+import { AppFrame, Box, Button, Link, Loader, Toolbar } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
+import { useAppStore } from 'client/store'
+import { useGetUser } from 'client/api'
 
 import { RootPage } from '../RootPage'
 import { PageNavigation } from './PageNavigation'
@@ -12,14 +14,30 @@ import { UserActionMenu } from './UserActionMenu'
 
 export const App = () => {
   const { pathname } = useLocation()
-
   const navigateTo = useNavigateTo()
+  const { token } = useAppStore()
+
+  const { sendRequest, isMakingRequest } = useGetUser(false, 1000)
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [pathname])
 
+  useEffect(() => {
+    if (token) {
+      sendRequest()
+    }
+  }, [])
+
   const currentPageKey = pathname.split('/')[1]
+
+  if (isMakingRequest) {
+    return (
+      <Box blockSize="100dvh">
+        <Loader centered size="lg" color="blue" />
+      </Box>
+    )
+  }
 
   return (
     <AppFrame stickyHeader>

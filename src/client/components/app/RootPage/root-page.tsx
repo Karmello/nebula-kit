@@ -5,6 +5,7 @@ import {
   HomePage,
   FoundationsPage,
   ComponentsPage,
+  FaqPage,
   PricingPage,
   ComponentsBundlePage,
   LoginPage,
@@ -57,6 +58,7 @@ export const RootPage = () => {
         <Route path={`/${PageKey.home}`} Component={HomePage} />
         <Route path={`/${PageKey.foundations}/*`} Component={FoundationsPage} />
         <Route path={`/${PageKey.components}/*`} Component={ComponentsPage} />
+        <Route path={`/${PageKey.faq}/*`} Component={FaqPage} />
         <Route path={`/${PageKey.pricing}`} Component={PricingPage} />
         <Route path={`/${PageKey.pricingCore}`} element={<ComponentsBundlePage plan="free" />} />
         <Route path={`/${PageKey.pricingPro}`} element={<ComponentsBundlePage plan="pro" />} />

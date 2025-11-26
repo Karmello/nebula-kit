@@ -65,6 +65,7 @@ export const ICON_NAMES = [
   'lock-keyhole',
   'log-in',
   'menu',
+  'message-circle-question-mark',
   'orbit',
   'package',
   'panel-left-open',

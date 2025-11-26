@@ -60,6 +60,23 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
           </Button>
         </Link>
       </Segment.Item>
+      <Segment.Item>
+        <Link
+          href={`/${PageKey.faq}`}
+          onClick={async () => {
+            if (mainOpen) await setMainOpen(false)
+            navigateTo(`/${PageKey.faq}`)
+          }}
+        >
+          <Button
+            intent={currentPageKey === PageKey.faq ? 'secondary' : 'muted'}
+            iconName="message-circle-question-mark"
+            fullWidth
+          >
+            FAQ
+          </Button>
+        </Link>
+      </Segment.Item>
       {!plan || plan === 'free' ? (
         <Segment.Item>
           <Link

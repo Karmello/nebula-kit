@@ -5,13 +5,14 @@ import { ApiUser } from 'client/definitions'
 import { useAppStore } from 'client/store'
 import { useSnackbar } from 'lib/components'
 
-export const useGetUser = () => {
+export const useGetUser = (enabled?: boolean, minLoadingTime?: number) => {
   const { token, setToken, setPlan } = useAppStore()
   const { show } = useSnackbar()
 
-  const { data, isMakingRequest, isError } = useMakeApiRequest<{ data: ApiUser }>({
+  const { data, isMakingRequest, isError, sendRequest } = useMakeApiRequest<{ data: ApiUser }>({
     path: '/auth/me',
-    enabled: !!token,
+    enabled: enabled !== undefined ? enabled : !!token,
+    minLoadingTime,
   })
 
   useEffect(() => {
@@ -31,5 +32,6 @@ export const useGetUser = () => {
   return {
     data,
     isMakingRequest,
+    sendRequest,
   }
 }

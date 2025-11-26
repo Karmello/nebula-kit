@@ -6,8 +6,7 @@ import { DIALOG_CONTENT_PROPS_META } from './props'
 const DIALOG_CONTENT_META: ComponentMeta<DialogContentProps> = {
   overview: {
     name: 'Dialog.Content',
-    title: '...',
-    description: ['...'],
+    title: 'Primary content area of the dialog.',
     composedOf: ['Box'],
     rendersAs: ['div'],
   },
