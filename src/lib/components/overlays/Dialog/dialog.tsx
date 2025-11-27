@@ -108,6 +108,7 @@ export const Dialog = ({
                         tagRef={tagRef || ref}
                         position="relative"
                         variant="outline"
+                        maxInlineSize="100dvw"
                         maxBlockSize="90dvh"
                         overflowY="auto"
                         intent="inverse"

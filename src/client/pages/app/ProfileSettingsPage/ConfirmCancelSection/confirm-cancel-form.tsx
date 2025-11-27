@@ -48,7 +48,7 @@ export const ConfirmCancelForm = ({
             color="red"
             disabled={!cancelSectionEnabled || enableInput}
           >
-            Cancel
+            Proceed to cancellation
           </Button>
         </Box>
         <Box position="absolute">
@@ -88,7 +88,7 @@ export const ConfirmCancelForm = ({
                     color="red"
                     disabled={inputValue !== userEmail}
                   >
-                    Confirm
+                    Continue
                   </Button>
                 }
               />
