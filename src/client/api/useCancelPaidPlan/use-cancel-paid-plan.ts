@@ -1,17 +1,13 @@
 import { useMakeApiRequest } from 'client/hooks'
 
+export type UseCancelPaidPlanSuccess = { message: string }
+export type UseCancelPaidPlanError = { message: string }
+
 export const useCancelPaidPlan = () => {
-  const { data, isMakingRequest, isError, sendRequest } = useMakeApiRequest({
+  return useMakeApiRequest<UseCancelPaidPlanSuccess, UseCancelPaidPlanError>({
     path: '/payment/cancel',
     method: 'POST',
     enabled: false,
     minLoadingTime: 5000,
   })
-
-  return {
-    data,
-    isMakingRequest,
-    isError,
-    sendRequest,
-  }
 }

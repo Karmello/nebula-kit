@@ -1,5 +1,4 @@
 import { useCallback, useState } from 'react'
-import { sentenceCase } from 'change-case'
 
 import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
@@ -17,30 +16,28 @@ export const RegisterPage = () => {
   const { show } = useSnackbar()
   const navigateTo = useNavigateTo()
 
-  const { sendRequest } = useRegisterUser()
+  const registerUser = useRegisterUser()
 
   const onValidSubmission = useCallback((data: RegisterFormValues) => {
-    return sendRequest(data)
+    return registerUser.sendRequest(data)
   }, [])
 
-  const onResponse = useCallback(async (res: any, formContext: any) => {
-    if (res) {
-      const data = res.data
-      if (data) {
-        if (data.errors) {
-          for (const [fieldName, message] of Object.entries(data.errors)) {
+  const onResponse = useCallback(
+    async (res: { data: typeof registerUser.data; error: typeof registerUser.error }, formContext: any) => {
+      if (res.data) {
+        show({ status: 'info', content: res.data.message })
+      } else if (res.error) {
+        if (res.error.errors) {
+          for (const [fieldName, message] of Object.entries(res.error.errors)) {
             formContext.setError(fieldName, { message })
           }
-        } else if (data.message) {
-          show({
-            status: data.ok ? 'info' : 'warning',
-            content: data.message,
-            heading: data.error ? sentenceCase(data.error) : undefined,
-          })
+        } else if (res.error.message) {
+          show({ status: 'warning', content: res.error.message })
         }
       }
-    }
-  }, [])
+    },
+    []
+  )
 
   return (
     <Box padding={{ base: 20, lg: 50 }}>

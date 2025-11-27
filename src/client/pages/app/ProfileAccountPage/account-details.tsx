@@ -6,7 +6,7 @@ import { useGetUser } from 'client/api'
 import { Loader, Table, Text, Flex, Link, Button, Box, Spacer } from 'lib/components'
 
 export default () => {
-  const user = useGetUser()
+  const getUser = useGetUser()
   const navigateTo = useNavigateTo()
 
   return (
@@ -18,7 +18,7 @@ export default () => {
               <Text typography="h6" iconName="arrow-right">
                 Details
               </Text>
-              <Loader active={user.isMakingRequest} color="blue" size="sm" />
+              <Loader active={getUser.isMakingRequest} color="blue" size="sm" />
             </Flex>
             <Spacer blockSize={8} />
           </Table.HeaderCell>
@@ -30,7 +30,7 @@ export default () => {
             <Text>Email</Text>
           </Table.Cell>
           <Table.Cell colSpan={2}>
-            <Text bold>{user.data?.data.email}</Text>
+            <Text bold>{getUser.data?.user.email}</Text>
           </Table.Cell>
         </Table.Row>
         <Table.Row>
@@ -38,7 +38,7 @@ export default () => {
             <Text>Registration date</Text>
           </Table.Cell>
           <Table.Cell colSpan={2}>
-            <Text bold>{user.data ? new Date(user.data.data.createdAt).toDateString() : ''}</Text>
+            <Text bold>{getUser.data ? new Date(getUser.data.user.createdAt).toDateString() : ''}</Text>
           </Table.Cell>
         </Table.Row>
         <Table.Row>
@@ -48,8 +48,8 @@ export default () => {
           <Table.Cell colSpan={2}>
             <Box blockSize={30}>
               <Flex gap={15} alignItems="flex-end">
-                <Text bold>{user.data ? sentenceCase(user.data.data.plan) : ''}</Text>
-                {!user.isMakingRequest ? (
+                <Text bold>{getUser.data ? sentenceCase(getUser.data.user.plan) : ''}</Text>
+                {!getUser.isMakingRequest ? (
                   <Link
                     href={`/${PageKey.pricing}`}
                     onClick={() => {
@@ -57,7 +57,7 @@ export default () => {
                     }}
                   >
                     <Button size="xs" variant="outline" intent="secondary" color="blue">
-                      {user.data?.data.plan === 'free' ? 'Upgrade' : 'Details'}
+                      {getUser.data?.user.plan === 'free' ? 'Upgrade' : 'Details'}
                     </Button>
                   </Link>
                 ) : null}
@@ -65,13 +65,13 @@ export default () => {
             </Box>
           </Table.Cell>
         </Table.Row>
-        {user.data?.data.licenseKey ? (
+        {getUser.data?.user.licenseKey ? (
           <Table.Row>
             <Table.Cell colSpan={1}>
               <Text>License key</Text>
             </Table.Cell>
             <Table.Cell colSpan={2}>
-              <Text bold>{user.data.data.licenseKey}</Text>
+              <Text bold>{getUser.data.user.licenseKey}</Text>
             </Table.Cell>
           </Table.Row>
         ) : null}

@@ -7,7 +7,7 @@ import { PricingPlanButton } from './components/PricingPlanButton'
 export const PricingPage = () => {
   const navigateTo = useNavigateTo()
 
-  const { data: getUserData, isMakingRequest } = useGetUser()
+  const getUser = useGetUser()
 
   const coreBundleLink = (
     <Link
@@ -37,7 +37,7 @@ export const PricingPage = () => {
         <Text>Choose the plan that fits your workflow.</Text>
         <Spacer blockSize={50} />
         <Box position="relative">
-          {isMakingRequest ? (
+          {getUser.isMakingRequest ? (
             <Loader centered size="lg" color="blue" />
           ) : (
             <>
@@ -62,7 +62,7 @@ export const PricingPage = () => {
                   </MarkerList>
                   <Spacer blockSize={40} />
                   <Flex justifyContent="center">
-                    <PricingPlanButton plan="free" activePlan={getUserData?.data.plan} />
+                    <PricingPlanButton plan="free" activePlan={getUser.data?.user.plan} />
                   </Flex>
                   <Spacer blockSize={12} />
                 </Section>
@@ -96,7 +96,7 @@ export const PricingPage = () => {
                   <Flex justifyContent="center">
                     <PricingPlanButton
                       plan="professional"
-                      activePlan={getUserData?.data.plan}
+                      activePlan={getUser.data?.user.plan}
                       color="green"
                     />
                   </Flex>
@@ -130,7 +130,7 @@ export const PricingPage = () => {
                   </MarkerList>
                   <Spacer blockSize={40} />
                   <Flex justifyContent="center">
-                    <PricingPlanButton plan="business" activePlan={getUserData?.data.plan} color="blue" />
+                    <PricingPlanButton plan="business" activePlan={getUser.data?.user.plan} color="blue" />
                   </Flex>
                   <Spacer blockSize={12} />
                 </Section>
@@ -165,7 +165,7 @@ export const PricingPage = () => {
                   </MarkerList>
                   <Spacer blockSize={40} />
                   <Flex justifyContent="center">
-                    <PricingPlanButton plan="enterprise" activePlan={getUserData?.data.plan} color="red" />
+                    <PricingPlanButton plan="enterprise" activePlan={getUser.data?.user.plan} color="red" />
                   </Flex>
                   <Spacer blockSize={12} />
                 </Section>

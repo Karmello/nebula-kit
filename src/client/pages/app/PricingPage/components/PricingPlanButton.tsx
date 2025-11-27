@@ -18,7 +18,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
 
   const navigateTo = useNavigateTo()
   const { token } = useAppStore()
-  const { sendRequest: sendCheckoutPlanRequest } = useCheckoutPaidPlan()
+  const checkoutPaidPlan = useCheckoutPaidPlan()
 
   if (plan === 'free') {
     if (!activePlan || activePlan === 'free') {
@@ -58,7 +58,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
             tagAttrs={{
               onClick: () => {
                 setIsRedirecting(true)
-                sendCheckoutPlanRequest({ plan })
+                checkoutPaidPlan.sendRequest({ plan })
               },
             }}
             size="sm"

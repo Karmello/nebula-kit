@@ -6,8 +6,8 @@ import { Button, Flex, Loader, Spacer, Table, Text } from 'lib/components'
 export default ({ enabled }: { enabled: boolean }) => {
   const [isRedirecting, setIsRedirecting] = useState<boolean>(false)
 
-  const paymentInfo = useGetPaymentInfo(enabled)
-  const paymentDetailsUrl = useGetPaymentDetailsUrl(enabled)
+  const getPaymentInfo = useGetPaymentInfo(enabled)
+  const getPaymentDetailsUrl = useGetPaymentDetailsUrl(enabled)
 
   if (!enabled) return null
 
@@ -20,7 +20,7 @@ export default ({ enabled }: { enabled: boolean }) => {
               <Text typography="h6" iconName="arrow-right">
                 Subscription
               </Text>
-              <Loader active={paymentInfo.isMakingRequest} color="blue" size="sm" />
+              <Loader active={getPaymentInfo.isMakingRequest} color="blue" size="sm" />
             </Flex>
             <Spacer blockSize={8} />
           </Table.HeaderCell>
@@ -32,7 +32,7 @@ export default ({ enabled }: { enabled: boolean }) => {
             <Text>Status</Text>
           </Table.Cell>
           <Table.Cell colSpan={2}>
-            <Text bold>{paymentInfo.data?.data.status}</Text>
+            <Text bold>{getPaymentInfo.data?.subscription.status}</Text>
           </Table.Cell>
         </Table.Row>
         <Table.Row>
@@ -41,8 +41,8 @@ export default ({ enabled }: { enabled: boolean }) => {
           </Table.Cell>
           <Table.Cell colSpan={2}>
             <Text bold>
-              {paymentInfo.data?.data.lastPayment
-                ? new Date(paymentInfo.data.data.lastPayment).toUTCString()
+              {getPaymentInfo.data?.subscription.lastPayment
+                ? new Date(getPaymentInfo.data.subscription.lastPayment).toUTCString()
                 : ''}
             </Text>
           </Table.Cell>
@@ -52,7 +52,7 @@ export default ({ enabled }: { enabled: boolean }) => {
             <Text>Amount</Text>
           </Table.Cell>
           <Table.Cell colSpan={2}>
-            <Text bold>{paymentInfo.data?.data.amount}</Text>
+            <Text bold>{getPaymentInfo.data?.subscription.amount}</Text>
           </Table.Cell>
         </Table.Row>
         <Table.Row>
@@ -60,7 +60,7 @@ export default ({ enabled }: { enabled: boolean }) => {
             <Text>Renews every</Text>
           </Table.Cell>
           <Table.Cell colSpan={2}>
-            <Text bold>{paymentInfo.data?.data.interval}</Text>
+            <Text bold>{getPaymentInfo.data?.subscription.interval}</Text>
           </Table.Cell>
         </Table.Row>
       </Table.Body>
@@ -71,15 +71,15 @@ export default ({ enabled }: { enabled: boolean }) => {
               tagAttrs={{
                 onClick: async () => {
                   setIsRedirecting(true)
-                  window.location.href = paymentDetailsUrl.data.url
+                  window.location.href = getPaymentDetailsUrl.data.url
                 },
               }}
               size="sm"
               intent="primary"
               variant="ghost"
               color="blue"
-              loading={isRedirecting || !paymentDetailsUrl.data || paymentDetailsUrl.isMakingRequest}
-              disabled={paymentDetailsUrl.isError}
+              loading={isRedirecting || !getPaymentDetailsUrl.data || getPaymentDetailsUrl.isMakingRequest}
+              disabled={!!getPaymentDetailsUrl.error}
             >
               View more details on Stripe
             </Button>

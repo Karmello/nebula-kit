@@ -10,22 +10,22 @@ type Args = {
   minLoadingTime?: number
 }
 
-export const useMakeApiRequest = <TData>({
+export const useMakeApiRequest = <TData, TError>({
   path,
   method = 'GET',
   headers = {},
   enabled = true,
-  minLoadingTime = 300,
+  minLoadingTime = 350,
 }: Args) => {
   const [data, setData] = useState<TData>(null)
+  const [error, setError] = useState<TError>(null)
   const [isMakingRequest, setIsMakingRequest] = useState<boolean>(false)
-  const [isError, setIsError] = useState<boolean>(false)
 
   const { token } = useAppStore()
 
-  const sendRequest = async (body?: object) => {
+  const sendRequest = async (body?: object): Promise<{ data: TData; error: TError }> => {
     setData(null)
-    setIsError(false)
+    setError(null)
     setIsMakingRequest(true)
 
     const start = Date.now()
@@ -51,15 +51,11 @@ export const useMakeApiRequest = <TData>({
     if (res.ok) {
       setData(json)
       setIsMakingRequest(false)
+      return { data: json, error: null }
     } else {
-      setIsError(true)
-      setData(null)
+      setError(json)
       setIsMakingRequest(false)
-    }
-
-    return {
-      ok: res.ok,
-      data: json,
+      return { data: null, error: json }
     }
   }
 
@@ -69,5 +65,5 @@ export const useMakeApiRequest = <TData>({
     }
   }, [enabled])
 
-  return { data, isMakingRequest, isError, sendRequest }
+  return { data, error, isMakingRequest, sendRequest }
 }

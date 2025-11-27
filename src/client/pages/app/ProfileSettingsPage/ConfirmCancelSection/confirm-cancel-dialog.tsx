@@ -37,10 +37,11 @@ export const ConfirmCancelDialog = ({
                 onClick: async () => {
                   const res = await cancelPaidPlan.sendRequest()
                   handleClose()
-                  if (!res.ok) {
-                    show({ status: 'warning', content: res.data.error })
-                  } else {
+                  if (res.data) {
+                    show({ status: 'success', content: res.data.message })
                     handleCancelSuccess()
+                  } else if (res.error) {
+                    show({ status: 'warning', content: res.error.message })
                   }
                 },
               }}

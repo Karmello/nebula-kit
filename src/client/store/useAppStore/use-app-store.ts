@@ -1,26 +1,27 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
+import { ApiUser } from 'client/definitions'
 import { LIB_PREFIX } from 'lib/definitions'
 
 export type AppStore = {
   token: string
-  plan: string
+  user: ApiUser | null
   setToken: (token: string) => void
-  setPlan: (plan: string) => void
+  setUser: (user: ApiUser | null) => void
 }
 
 export const useAppStore = create<AppStore>()(
-  persist(
+  persist<AppStore>(
     set => ({
       token: '',
-      plan: '',
-      setToken: token => set({ token }),
-      setPlan: plan => set({ plan }),
+      user: null,
+      setToken: (token: string) => set({ token }),
+      setUser: (user: ApiUser | null) => set({ user }),
     }),
     {
       name: `${LIB_PREFIX}.app`,
-      partialize: state => ({ token: state.token }),
+      partialize: state => ({ token: state.token }) as AppStore,
     }
   )
 )

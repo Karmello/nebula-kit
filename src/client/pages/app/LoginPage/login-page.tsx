@@ -18,34 +18,34 @@ export const LoginPage = () => {
   const { search } = useLocation()
   const navigateTo = useNavigateTo()
   const { show } = useSnackbar()
-  const { setToken, setPlan } = useAppStore()
+  const { setToken, setUser } = useAppStore()
 
-  const { sendRequest } = useLoginUser()
+  const loginUser = useLoginUser()
 
   useEffect(() => {
     const params = new URLSearchParams(search)
     if (params.get('verified') === 'true') {
       show({ status: 'success', content: 'Email verified ! You can log in now.' })
+      window.history.replaceState({}, '', `/${PageKey.authLogin}`)
     }
   }, [search])
 
   const onValidSubmission = useCallback((data: LoginFormValues) => {
-    return sendRequest(data)
+    return loginUser.sendRequest(data)
   }, [])
 
-  const onResponse = useCallback(async (res: any) => {
-    if (res) {
-      const data = res.data
-      if (data?.message) {
-        show({ status: 'warning', content: data.message })
+  const onResponse = useCallback(
+    async (res: { data: typeof loginUser.data; error: typeof loginUser.error }) => {
+      if (res.data) {
+        setToken(res.data.token)
+        setUser(res.data.user)
+        navigateTo(res.data.user.plan === 'free' ? `/${PageKey.pricing}` : `/${PageKey.profileAccount}`)
+      } else if (res.error) {
+        show({ status: 'warning', content: res.error.message })
       }
-      if (data?.token) {
-        setToken(data.token)
-        setPlan(data.plan)
-        navigateTo(data.plan === 'free' ? `/${PageKey.pricing}` : `/${PageKey.profileAccount}`)
-      }
-    }
-  }, [])
+    },
+    []
+  )
 
   return (
     <Box padding={{ base: 20, lg: 50 }}>

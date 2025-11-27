@@ -21,7 +21,7 @@ import { PageKey } from 'client/definitions'
 import styles from './root-page.module.scss'
 
 export const RootPage = () => {
-  const { token, setPlan } = useAppStore()
+  const { token, setUser } = useAppStore()
   const navigateTo = useNavigateTo()
   const { pathname } = useLocation()
 
@@ -31,7 +31,7 @@ export const RootPage = () => {
     if (prevToken.current !== token) {
       prevToken.current = token
       if (!token) {
-        setPlan('')
+        setUser(null)
         navigateTo(`/${PageKey.authLogin}`)
       }
     }

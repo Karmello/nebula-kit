@@ -11,7 +11,7 @@ import PaidSubscription from './paid-subscription'
 export const ProfileAccountPage = () => {
   const { search } = useLocation()
   const { show } = useSnackbar()
-  const { plan } = useAppStore()
+  const { user } = useAppStore()
 
   useEffect(() => {
     const params = new URLSearchParams(search)
@@ -27,7 +27,7 @@ export const ProfileAccountPage = () => {
         <Spacer blockSize={25} />
         <AccountDetails />
         <Spacer blockSize={50} />
-        <PaidSubscription enabled={plan && plan !== 'free'} />
+        <PaidSubscription enabled={user && user.plan !== 'free'} />
       </Section>
     </Box>
   )

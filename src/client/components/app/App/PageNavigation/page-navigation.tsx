@@ -13,7 +13,7 @@ type Props = {
 export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
   const { pathname } = useLocation()
   const navigateTo = useNavigateTo()
-  const { plan } = useAppStore()
+  const { user } = useAppStore()
 
   const foundationsPageStore = useFoundationsPageStore()
   const componentsPageStore = useComponentsPageStore()
@@ -77,7 +77,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
           </Button>
         </Link>
       </Segment.Item>
-      {!plan || plan === 'free' ? (
+      {!user?.plan || user.plan === 'free' ? (
         <Segment.Item>
           <Link
             href={`/${PageKey.pricing}`}

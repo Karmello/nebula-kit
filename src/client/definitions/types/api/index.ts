@@ -4,10 +4,9 @@ export type ApiUser = {
   createdAt: string
   plan: string
   licenseKey: string
-  verified: boolean
 }
 
-export type ApiPaymentInfo = {
+export type ApiSubscription = {
   plan: string
   status: string
   amount: string

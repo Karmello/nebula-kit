@@ -16,8 +16,8 @@ export const ProfileSettingsPage = () => {
           </Box>
         ) : (
           <ConfirmCancelSection
-            userEmail={getUser.data.data.email}
-            userPlan={getUser.data.data.plan}
+            userEmail={getUser.data.user.email}
+            userPlan={getUser.data.user.plan}
             handleCancelSuccess={() => {
               getUser.sendRequest()
             }}
