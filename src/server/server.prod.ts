@@ -6,7 +6,7 @@ import { createElement } from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router'
 
-import { HydrationGate, NebkitProvider } from 'src/lib/components'
+import { HydrationGate, NebkitProvider, Snackbar } from 'src/lib/components'
 import { App } from 'src/client/components'
 
 const buildDir = path.resolve(process.cwd(), 'build/client')
@@ -25,7 +25,11 @@ app.get(/.*/, (req, res) => {
         createElement(
           HydrationGate,
           null,
-          createElement(NebkitProvider, { borderRadius: 5 } as any, createElement(App))
+          createElement(
+            NebkitProvider,
+            null,
+            createElement(Snackbar, { closeOnOutsideClick: true } as any, createElement(App))
+          )
         )
       )
     )
