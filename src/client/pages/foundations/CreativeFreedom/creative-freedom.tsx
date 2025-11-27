@@ -4,7 +4,7 @@ export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Text>
-        Building a UI library isn't about handing people finished "pictures". It's about giving them the brush
+        Building a UI library isn't about handing people finished pictures. It's about giving them the brush
         and the paint. When you create components that are too high-level, too prescriptive or too
         opinionated, you're effectively locking developers inside your own idea of what a dashboard, a section
         or a layout should look like. It might look nice in your demo, but the moment someone tries to build

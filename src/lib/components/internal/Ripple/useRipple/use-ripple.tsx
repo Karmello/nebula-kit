@@ -2,13 +2,13 @@ import { RefObject, useEffect } from 'react'
 
 export const useRipple = (parentRef: RefObject<any>) => {
   useEffect(() => {
-    if (typeof window === 'undefined') return
+    if (typeof window === 'undefined' || !parentRef?.current) return
     const parent = parentRef.current
 
     const isInteractive = parent.getAttribute('data-neb-box-interactive') === 'true'
     const isDisabled = parent.getAttribute('data-neb-box-disabled') === 'true'
 
-    if (!parent || !isInteractive || isDisabled) return
+    if (!isInteractive || isDisabled) return
 
     parent.dataset.nebRipple = 'true'
 
@@ -44,5 +44,5 @@ export const useRipple = (parentRef: RefObject<any>) => {
     return () => {
       parent.removeEventListener('pointerdown', onPointerDown)
     }
-  }, [parentRef, parent])
+  }, [])
 }
