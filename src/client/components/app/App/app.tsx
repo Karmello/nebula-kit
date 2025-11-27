@@ -15,7 +15,9 @@ import { UserActionMenu } from './UserActionMenu'
 export const App = () => {
   const { pathname } = useLocation()
   const navigateTo = useNavigateTo()
-  const { token } = useAppStore()
+  const rawToken = useAppStore(state => state.token)
+
+  const token = typeof window !== 'undefined' ? rawToken : null
 
   const { sendRequest, isMakingRequest } = useGetUser(false, 1000)
 
@@ -31,7 +33,7 @@ export const App = () => {
 
   const currentPageKey = pathname.split('/')[1]
 
-  if (typeof window !== 'undefined' && isMakingRequest) {
+  if (isMakingRequest) {
     return (
       <Box blockSize="100dvh">
         <Loader centered size="lg" color="blue" />
