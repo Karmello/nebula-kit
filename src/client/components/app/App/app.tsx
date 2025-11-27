@@ -15,9 +15,7 @@ import { UserActionMenu } from './UserActionMenu'
 export const App = () => {
   const { pathname } = useLocation()
   const navigateTo = useNavigateTo()
-  const rawToken = useAppStore(state => state.token)
-
-  const token = typeof window !== 'undefined' ? rawToken : null
+  const { token } = useAppStore()
 
   const { sendRequest, isMakingRequest } = useGetUser(false, 1000)
 
