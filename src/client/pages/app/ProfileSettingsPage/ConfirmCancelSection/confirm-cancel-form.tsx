@@ -53,7 +53,7 @@ export const ConfirmCancelForm = ({
         </Box>
         <Box position="absolute">
           <Resize property="inlineSize" visible={enableInput}>
-            <Box inlineSize="300px">
+            <Box inlineSize="400px">
               <Input
                 tagAttrs={{
                   placeholder: 'Enter your email',

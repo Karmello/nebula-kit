@@ -39,7 +39,7 @@ app.get(/.*/, (req, res) => {
     res.status(200).type('html').end(html)
   } catch (err) {
     console.error('[ssr]', err)
-    res.status(500).send('SSR error')
+    res.status(500).send(JSON.stringify(err))
   }
 })
 
