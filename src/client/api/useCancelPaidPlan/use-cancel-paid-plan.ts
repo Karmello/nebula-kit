@@ -5,6 +5,7 @@ export const useCancelPaidPlan = () => {
     path: '/payment/cancel',
     method: 'POST',
     enabled: false,
+    minLoadingTime: 5000,
   })
 
   return {

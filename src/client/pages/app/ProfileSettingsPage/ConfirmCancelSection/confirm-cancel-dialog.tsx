@@ -1,0 +1,64 @@
+import { useCancelPaidPlan } from 'client/api'
+import { Button, Dialog, Segment, Text, useSnackbar } from 'lib/components'
+
+export const ConfirmCancelDialog = ({
+  open,
+  userEmail,
+  handleClose,
+  handleCancelSuccess,
+}: {
+  open: boolean
+  userEmail: string
+  handleClose: () => void
+  handleCancelSuccess: () => void
+}) => {
+  const cancelPaidPlan = useCancelPaidPlan()
+  const { show } = useSnackbar()
+
+  return (
+    <Dialog open={open}>
+      <Dialog.Header>
+        <Text typography="h6" iconName="triangle-alert" intent="primary" color="red">
+          Cancel subscription
+        </Text>
+      </Dialog.Header>
+      <Dialog.Content>
+        Are you sure you want to cancel the subscription for
+        <Text tag="span" bold space="both">
+          {userEmail}
+        </Text>
+        ? This action takes effect immediately.
+      </Dialog.Content>
+      <Dialog.Footer>
+        <Segment>
+          <Segment.Item>
+            <Button
+              tagAttrs={{
+                onClick: async () => {
+                  const res = await cancelPaidPlan.sendRequest()
+                  handleClose()
+                  if (!res.ok) {
+                    show({ status: 'warning', content: res.data.error })
+                  } else {
+                    handleCancelSuccess()
+                  }
+                },
+              }}
+              size="sm"
+              intent="primary"
+              color="red"
+              loading={cancelPaidPlan.isMakingRequest}
+            >
+              Cancel now
+            </Button>
+          </Segment.Item>
+          <Segment.Item>
+            <Button size="sm" tagAttrs={{ onClick: handleClose }} disabled={cancelPaidPlan.isMakingRequest}>
+              Keep plan
+            </Button>
+          </Segment.Item>
+        </Segment>
+      </Dialog.Footer>
+    </Dialog>
+  )
+}
