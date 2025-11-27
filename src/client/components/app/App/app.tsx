@@ -15,7 +15,10 @@ import { UserActionMenu } from './UserActionMenu'
 export const App = () => {
   const { pathname } = useLocation()
   const navigateTo = useNavigateTo()
-  const { token } = useAppStore()
+  const rawToken = useAppStore(state => state.token)
+
+  const isClient = typeof window !== 'undefined'
+  const token = isClient ? rawToken : null
 
   const { sendRequest, isMakingRequest } = useGetUser(false, 1000)
 
@@ -24,14 +27,13 @@ export const App = () => {
   }, [pathname])
 
   useEffect(() => {
-    if (token) {
-      sendRequest()
-    }
-  }, [])
+    if (!isClient) return
+    if (token) sendRequest()
+  }, [isClient])
 
   const currentPageKey = pathname.split('/')[1]
 
-  if (isMakingRequest) {
+  if (isClient && isMakingRequest) {
     return (
       <Box blockSize="100dvh">
         <Loader centered size="lg" color="blue" />
