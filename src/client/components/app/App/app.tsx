@@ -31,7 +31,7 @@ export const App = () => {
 
   const currentPageKey = pathname.split('/')[1]
 
-  if (isMakingRequest) {
+  if (typeof window !== 'undefined' && isMakingRequest) {
     return (
       <Box blockSize="100dvh">
         <Loader centered size="lg" color="blue" />
