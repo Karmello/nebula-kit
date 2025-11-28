@@ -6,6 +6,7 @@ import { Color, COLORS, THEMES } from 'lib/definitions'
 import { useNavigateTo } from 'client/hooks'
 
 import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/core/utility/NebkitProvider/definitions'
+import { PageKey } from 'client/definitions'
 
 export const HomePage = () => {
   const navigateTo = useNavigateTo()
@@ -29,9 +30,9 @@ export const HomePage = () => {
           <Spacer blockSize={30} />
           <Flex gap={10} flexWrap="wrap">
             <Link
-              href="/foundations"
+              href={`/${PageKey.foundations}`}
               onClick={() => {
-                navigateTo('/foundations')
+                navigateTo(`/${PageKey.foundations}`)
               }}
             >
               <Button color="purple" intent="primary" iconName="arrow-right" iconPosition="right" size="sm">
@@ -39,9 +40,9 @@ export const HomePage = () => {
               </Button>
             </Link>
             <Link
-              href="/components"
+              href={`/${PageKey.core}`}
               onClick={() => {
-                navigateTo('/components')
+                navigateTo(`/${PageKey.core}`)
               }}
             >
               <Button
