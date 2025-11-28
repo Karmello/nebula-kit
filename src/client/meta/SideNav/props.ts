@@ -5,7 +5,7 @@ import {
   DEFAULT_SIDE_NAV_EXPAND_MODE,
   SIDE_NAV_EXPAND_MODES,
   SIDE_NAV_VARIANTS,
-} from 'lib/components/navigation/SideNav/definitions'
+} from 'lib/components/pro/navigation/SideNav/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { FLEX_PROPS_META } from '../Flex/props'

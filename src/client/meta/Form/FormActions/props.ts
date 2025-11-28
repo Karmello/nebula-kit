@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { FLEX_PROPS_META } from 'client/meta/Flex/props'
 import { FormActionsProps } from 'lib/components'
-import { DEFAULT_FORM_ACTIONS_GAP } from 'lib/components/form-elements/Form/slots'
+import { DEFAULT_FORM_ACTIONS_GAP } from 'lib/components/pro/form-elements/Form/slots'
 
 const FORM_ACTIONS_PROPS_META: ComponentMeta<FormActionsProps>['props'] = {
   alignItems: FLEX_PROPS_META.alignItems,

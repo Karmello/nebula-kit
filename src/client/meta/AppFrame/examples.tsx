@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { AppFrame } from 'lib/components'
-import { AppFrameProps } from 'lib/components/layouts/AppFrame/definitions'
+import { AppFrameProps } from 'lib/components/core/layouts/AppFrame/definitions'
 
 const APP_FRAME_EXAMPLES_META: ComponentMeta<AppFrameProps>['examples'] = [
   {

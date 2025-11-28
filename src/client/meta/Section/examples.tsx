@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { Section } from 'lib/components'
-import { SectionProps } from 'lib/components/containers/Section/definitions'
+import { SectionProps } from 'lib/components/core/containers/Section/definitions'
 
 const SECTION_EXAMPLES_META: ComponentMeta<SectionProps>['examples'] = [
   {

@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { TEXT_TAGS, TextProps } from 'lib/components/base/Text/definitions'
+import { TEXT_TAGS, TextProps } from 'lib/components/core/base/Text/definitions'
 
 import { TEXT_PROPS_META } from './props'
 import { TEXT_EXAMPLES_META } from './examples'

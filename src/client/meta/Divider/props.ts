@@ -4,7 +4,7 @@ import {
   DEFAULT_DIVIDER_INTENT,
   DEFAULT_DIVIDER_MARGIN_BLOCK,
   DividerProps,
-} from 'lib/components/elements/Divider/definitions'
+} from 'lib/components/core/elements/Divider/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

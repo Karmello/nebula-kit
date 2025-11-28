@@ -1,11 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
-import { DialogProps } from 'lib/components/overlays/Dialog'
+import { DialogProps } from 'lib/components/pro/overlays/Dialog'
 
 import {
   DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK,
   DEFAULT_DIALOG_SIZE,
   DIALOG_SIZES,
-} from 'lib/components/overlays/Dialog/definitions'
+} from 'lib/components/pro/overlays/Dialog/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 

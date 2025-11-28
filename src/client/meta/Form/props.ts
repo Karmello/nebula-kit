@@ -6,7 +6,7 @@ import {
   DEFAULT_FORM_FLEX_DIRECTION,
   DEFAULT_FORM_COLUMN_GAP,
   DEFAULT_FORM_ROW_GAP,
-} from 'lib/components/form-elements/Form/definitions'
+} from 'lib/components/pro/form-elements/Form/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { FLEX_PROPS_META } from '../Flex/props'

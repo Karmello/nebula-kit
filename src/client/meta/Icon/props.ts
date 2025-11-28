@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { IconProps } from 'lib/components'
-import { BOX_INTENTS } from 'lib/components/base/Box/definitions'
-import { DEFAULT_ICON_SIZE } from 'lib/components/elements/Icon/definitions'
+import { BOX_INTENTS } from 'lib/components/core/base/Box/definitions'
+import { DEFAULT_ICON_SIZE } from 'lib/components/core/elements/Icon/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

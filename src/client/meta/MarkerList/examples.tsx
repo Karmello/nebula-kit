@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { MarkerList } from 'lib/components'
-import { MarkerListProps } from 'lib/components/elements/MarkerList/definitions'
+import { MarkerListProps } from 'lib/components/core/elements/MarkerList/definitions'
 
 const MARKER_LIST_EXAMPLES_META: ComponentMeta<MarkerListProps>['examples'] = [
   {

@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
-import { DialogHeaderProps } from 'lib/components/overlays/Dialog'
+import { DialogHeaderProps } from 'lib/components/pro/overlays/Dialog'
 
 const DIALOG_HEADER_PROPS_META: ComponentMeta<DialogHeaderProps>['props'] = {
   children: {

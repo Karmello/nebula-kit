@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { FlexItemProps } from 'lib/components/layout/Flex/FlexItem/definitions'
+import { FlexItemProps } from 'lib/components/core/layout/Flex/FlexItem/definitions'
 
 import { FLEX_ITEM_EXAMPLES_META } from './examples'
 import { FLEX_ITEM_PROPS_META } from './props'

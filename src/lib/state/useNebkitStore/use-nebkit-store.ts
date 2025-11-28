@@ -9,7 +9,7 @@ import {
   DEFAULT_NEBKIT_THEME,
   NEBKIT_SIZES_MAP,
   NebkitProviderProps,
-} from 'lib/components/utility/NebkitProvider/definitions'
+} from 'lib/components/core/utility/NebkitProvider/definitions'
 
 type NebkitState = {
   theme: Theme

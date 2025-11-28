@@ -1,6 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
-import { SplitViewProps, SPLIT_VIEW_SIDE_POSITIONS } from 'lib/components/layouts/SplitView/definitions'
+import { SplitViewProps, SPLIT_VIEW_SIDE_POSITIONS } from 'lib/components/pro/layouts/SplitView/definitions'
 import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/definitions'
+
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const SPLIT_VIEW_PROPS_META: ComponentMeta<SplitViewProps>['props'] = {

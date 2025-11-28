@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { SlideProps } from 'lib/components/motion/Slide'
+import { SlideProps } from 'lib/components/core/motion/Slide'
 
 import { SLIDE_PROPS_META } from './props'
 import { SLIDE_EXAMPLES_META } from './examples'

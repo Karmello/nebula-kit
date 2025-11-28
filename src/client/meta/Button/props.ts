@@ -8,7 +8,7 @@ import {
   DEFAULT_BUTTON_JUSTIFY_CONTENT,
   DEFAULT_BUTTON_SIZE,
   DEFAULT_BUTTON_VARIANT,
-} from 'lib/components/controls/Button/definitions'
+} from 'lib/components/core/controls/Button/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

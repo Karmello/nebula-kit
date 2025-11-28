@@ -1,0 +1,50 @@
+import { cloneElement } from 'react'
+import classNames from 'classnames'
+
+import { Box, TableRowProps } from 'lib/components'
+import { WithSlots } from 'lib/components/core/internal'
+import { withPrefix } from 'lib/helpers'
+
+import { TableBodyProps } from './definitions'
+
+export const TableBody = ({
+  children,
+  tagAttrs,
+  tagRef,
+  color,
+  intent,
+  paddingBlock,
+  paddingInline,
+}: TableBodyProps) => {
+  return (
+    <WithSlots<'Table.Row'>
+      childrenToVerify={children}
+      componentName="Table.Body"
+      slotsConfig={[{ name: 'Table.Row', required: true, allowMultiple: true }]}
+    >
+      {({ slotsByName }) => {
+        return (
+          <Box
+            tag="tbody"
+            tagAttrs={{
+              ...tagAttrs,
+              className: classNames(withPrefix('table-body'), tagAttrs?.className),
+            }}
+            tagRef={tagRef}
+          >
+            {slotsByName['Table.Row'].map((slot: any) =>
+              cloneElement<TableRowProps>(slot, {
+                color: slot.props.color || color,
+                intent: slot.props.intent || intent,
+                paddingBlock: slot.props.paddingBlock || paddingBlock,
+                paddingInline: slot.props.paddingInline || paddingInline,
+              })
+            )}
+          </Box>
+        )
+      }}
+    </WithSlots>
+  )
+}
+
+TableBody.displayName = 'Table.Body'

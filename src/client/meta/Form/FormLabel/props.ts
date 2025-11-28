@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { TEXT_PROPS_META } from 'client/meta/Text/props'
 import { FormLabelProps } from 'lib/components'
-import { DEFAULT_FORM_LABEL_INTENT } from 'lib/components/form-elements/Form/slots'
+import { DEFAULT_FORM_LABEL_INTENT } from 'lib/components/pro/form-elements/Form/slots'
 
 const FORM_LABEL_PROPS_META: ComponentMeta<FormLabelProps>['props'] = {
   bold: TEXT_PROPS_META.bold,

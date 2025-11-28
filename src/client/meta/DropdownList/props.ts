@@ -10,7 +10,7 @@ import {
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
   DROPDOWN_LIST_PLACEMENTS,
-} from 'lib/components/overlays/DropdownList/definitions'
+} from 'lib/components/core/overlays/DropdownList/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

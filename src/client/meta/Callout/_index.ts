@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { CALLOUT_TAGS, CalloutProps } from 'lib/components/feedback/Callout/definitions'
+import { CALLOUT_TAGS, CalloutProps } from 'lib/components/core/feedback/Callout/definitions'
 
 import { CALLOUT_PROPS_META } from './props'
 import { CALLOUT_EXAMPLES_META } from './examples'

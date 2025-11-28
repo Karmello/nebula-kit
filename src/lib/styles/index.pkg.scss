@@ -1,26 +1,25 @@
 @use './index.scss';
 
-@use '../components/base/Box/styles/box.scss';
-@use '../components/base/Box/styles/solid.scss';
-@use '../components/base/Box/styles/outline.scss';
-@use '../components/base/Box/styles/soft-outline.scss';
-@use '../components/base/Box/styles/ghost.scss';
-@use '../components/base/Text/text.scss';
+// core
+@use '../components/core/base/Box/styles/box.scss';
+@use '../components/core/base/Box/styles/solid.scss';
+@use '../components/core/base/Box/styles/outline.scss';
+@use '../components/core/base/Box/styles/soft-outline.scss';
+@use '../components/core/base/Box/styles/ghost.scss';
+@use '../components/core/base/Text/text.scss';
+@use '../components/core/controls/Button/button.scss';
+@use '../components/core/elements/Divider/divider.scss';
+@use '../components/core/elements/MarkerList/marker-list.scss';
+@use '../components/core/layout/Flex/flex.scss';
+@use '../components/core/layout/Flex/FlexItem/flex-item.scss';
+@use '../components/core/layout/Grid/grid.scss';
+@use '../components/core/layout/Grid/GridItem/grid-item.scss';
+@use '../components/core/layout/Segment/segment.scss';
+@use '../components/core/layout/Table/table.scss';
+@use '../components/core/layouts/AppFrame/app-frame.scss';
+@use '../components/core/layouts/AppFrame/slots/AppFrameHeader/app-frame-header.scss';
+@use '../components/core/layouts/AppFrame/slots/AppFrameMain/app-frame-main.scss';
 
-@use '../components/controls/Button/button.scss';
-@use '../components/controls/ButtonGroup/button-group.scss';
-
-@use '../components/elements/Divider/divider.scss';
-@use '../components/elements/MarkerList/marker-list.scss';
-
-@use '../components/layout/Flex/flex.scss';
-@use '../components/layout/Flex/FlexItem/flex-item.scss';
-@use '../components/layout/Grid/grid.scss';
-@use '../components/layout/Grid/GridItem/grid-item.scss';
-@use '../components/layout/Table/table.scss';
-
-@use '../components/layouts/AppFrame/app-frame.scss';
-@use '../components/layouts/AppFrame/slots/AppFrameHeader/app-frame-header.scss';
-@use '../components/layouts/AppFrame/slots/AppFrameMain/app-frame-main.scss';
-@use '../components/layouts/SplitView/split-view.scss';
-@use '../components/layouts/Toolbar/toolbar.scss';
+// pro
+@use '../components/pro/layouts/SplitView/split-view.scss';
+@use '../components/pro/layouts/Toolbar/toolbar.scss';

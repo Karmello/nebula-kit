@@ -8,8 +8,8 @@ import { renderToString } from 'react-dom/server'
 
 const renderApp = async (vite: ViteDevServer, url: string) => {
   const { StaticRouter } = await vite.ssrLoadModule('react-router')
-  const { HydrationGate } = await vite.ssrLoadModule('src/lib/components/index.ts')
-  const { NebkitProvider } = await vite.ssrLoadModule('src/lib/components/index.ts')
+  const { HydrationGate } = await vite.ssrLoadModule('src/lib/components/core/index.ts')
+  const { NebkitProvider } = await vite.ssrLoadModule('src/lib/components/core/index.ts')
   const { App } = await vite.ssrLoadModule('src/client/components/index.ts')
 
   return renderToString(

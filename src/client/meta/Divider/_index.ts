@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { DividerProps } from 'lib/components/elements/Divider/definitions'
+import { DividerProps } from 'lib/components/core/elements/Divider/definitions'
 
 import { DIVIDER_PROPS_META } from './props'
 import { DIVIDER_EXAMPLES_META } from './examples'

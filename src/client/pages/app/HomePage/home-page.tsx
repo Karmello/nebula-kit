@@ -5,7 +5,7 @@ import { useNebkitStore } from 'lib/state'
 import { Color, COLORS, THEMES } from 'lib/definitions'
 import { useNavigateTo } from 'client/hooks'
 
-import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/utility/NebkitProvider/definitions'
+import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/core/utility/NebkitProvider/definitions'
 
 export const HomePage = () => {
   const navigateTo = useNavigateTo()

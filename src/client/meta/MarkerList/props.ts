@@ -5,7 +5,7 @@ import {
   MarkerListProps,
   MARKER_LIST_STYLES,
   MARKER_LIST_TAGS,
-} from 'lib/components/elements/MarkerList/definitions'
+} from 'lib/components/core/elements/MarkerList/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { FLEX_PROPS_META } from '../Flex/props'

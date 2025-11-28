@@ -7,7 +7,7 @@ import {
   DEFAULT_SNACKBAR_INLINE_SIZE,
   DEFAULT_SNACKBAR_PLACEMENT,
   SNACKBAR_PLACEMENTS,
-} from 'lib/components/feedback/Snackbar/definitions'
+} from 'lib/components/core/feedback/Snackbar/definitions'
 
 import { BOX_PROPS_META } from '../Box/props'
 

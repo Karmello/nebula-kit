@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { Box } from 'lib/components'
-import { BoxProps } from 'lib/components/base/Box/definitions'
+import { BoxProps } from 'lib/components/core/base/Box/definitions'
 
 const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   {

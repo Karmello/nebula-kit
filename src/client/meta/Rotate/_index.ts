@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { RotateProps } from 'lib/components/motion/Rotate/definitions'
+import { RotateProps } from 'lib/components/core/motion/Rotate/definitions'
 
 import { ROTATE_PROPS_META } from './props'
 import { ROTATE_EXAMPLES_META } from './examples'

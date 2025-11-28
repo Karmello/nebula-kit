@@ -1,11 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
-import { CALLOUT_STATUSES, DEFAULT_CALLOUT_STATUS } from 'lib/components/feedback/Callout/definitions'
+import { CALLOUT_STATUSES, DEFAULT_CALLOUT_STATUS } from 'lib/components/core/feedback/Callout/definitions'
 
 import {
   DEFAULT_SNACKBAR_PLACEMENT,
   SNACKBAR_PLACEMENTS,
   UseSnackbarShowArgs,
-} from 'lib/components/feedback/Snackbar/definitions'
+} from 'lib/components/core/feedback/Snackbar/definitions'
 
 const USE_SNACKBAR_PROPS_META: ComponentMeta<UseSnackbarShowArgs>['props'] = {
   content: {

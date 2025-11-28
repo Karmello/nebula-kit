@@ -1,7 +1,7 @@
 import { sentenceCase } from 'change-case'
 
 import { Button, Flex, Grid, Section, Spacer, Text } from 'lib/components'
-import { BOX_VARIANTS, BOX_INTENTS } from 'lib/components/base/Box/definitions'
+import { BOX_VARIANTS, BOX_INTENTS } from 'lib/components/core/base/Box/definitions'
 import { COLORS } from 'lib/definitions'
 
 export default () => {

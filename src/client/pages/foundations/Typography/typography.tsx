@@ -1,5 +1,9 @@
 import { Flex, Table, Text } from 'lib/components'
-import { TEXT_TYPOGRAPHY, TEXT_TYPOGRAPHY_CONFIG, TextTypography } from 'lib/components/base/Text/definitions'
+import {
+  TEXT_TYPOGRAPHY,
+  TEXT_TYPOGRAPHY_CONFIG,
+  TextTypography,
+} from 'lib/components/core/base/Text/definitions'
 
 const MAP: Record<TextTypography, string> = {
   body: 'Default text for reading and general content. Balanced for legibility and rhythm across devices.',

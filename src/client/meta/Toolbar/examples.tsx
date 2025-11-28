@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { Box, Button, Segment, Toolbar } from 'lib/components'
-import { ToolbarProps } from 'lib/components/layouts/Toolbar/definitions'
+import { ToolbarProps } from 'lib/components/core/layouts/Toolbar/definitions'
 
 const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarProps>['examples'] = [
   {

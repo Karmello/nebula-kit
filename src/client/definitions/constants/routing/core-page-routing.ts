@@ -82,14 +82,6 @@ export const CORE_PAGE_CATEGORIES = [
     ],
   },
   {
-    key: 'navigation',
-    label: 'Navigation',
-    items: [
-      { key: 'side-nav', label: 'SideNav', sections: CORE_PAGE_SECTIONS },
-      { key: 'breadcrumb', label: 'Breadcrumb', sections: CORE_PAGE_SECTIONS },
-    ],
-  },
-  {
     key: 'form-elements',
     label: 'Form elements',
     items: [

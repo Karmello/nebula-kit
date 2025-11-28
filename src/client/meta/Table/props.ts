@@ -5,7 +5,7 @@ import {
   DEFAULT_TABLE_INTENT,
   DEFAULT_TABLE_LAYOUT,
   TABLE_LAYOUTS,
-} from 'lib/components/layout/Table/definitions'
+} from 'lib/components/core/layout/Table/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

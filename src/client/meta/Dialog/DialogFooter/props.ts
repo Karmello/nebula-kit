@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
-import { DialogFooterProps } from 'lib/components/overlays/Dialog'
+import { DialogFooterProps } from 'lib/components/pro/overlays/Dialog'
 
 const DIALOG_FOOTER_PROPS_META: ComponentMeta<DialogFooterProps>['props'] = {
   children: {

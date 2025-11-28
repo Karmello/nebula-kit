@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 import { COLORS, CSS_DISPLAY, CSS_OVERFLOW, CSS_POSITION, CSS_TEXT_ALIGN } from 'lib/definitions'
-import { BoxProps, BOX_VARIANTS, BOX_INTENTS } from 'lib/components/base/Box/definitions'
+import { BoxProps, BOX_VARIANTS, BOX_INTENTS } from 'lib/components/core/base/Box/definitions'
 
-import { DEFAULT_NEBKIT_BORDER_RADIUS_SIZE } from 'lib/components/utility/NebkitProvider/definitions'
+import { DEFAULT_NEBKIT_BORDER_RADIUS_SIZE } from 'lib/components/core/utility/NebkitProvider/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 

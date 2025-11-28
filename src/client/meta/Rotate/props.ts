@@ -3,7 +3,7 @@ import {
   DEFAULT_ROTATE_DURATION,
   DEFAULT_ROTATE_EASING,
   RotateProps,
-} from 'lib/components/motion/Rotate/definitions'
+} from 'lib/components/core/motion/Rotate/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 

@@ -7,7 +7,7 @@ import {
   DEFAULT_FORM_FIELDS_FLEX_DIRECTION,
   DEFAULT_FORM_FIELDS_ROW_GAP,
   DEFAULT_FORM_FIELDS_COLUMN_GAP,
-} from 'lib/components/form-elements/Form/slots'
+} from 'lib/components/pro/form-elements/Form/slots'
 
 const FORM_FIELDS_PROPS_META: ComponentMeta<FormFieldsProps>['props'] = {
   alignItems: {

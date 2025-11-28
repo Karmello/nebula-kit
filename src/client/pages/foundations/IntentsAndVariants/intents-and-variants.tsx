@@ -1,5 +1,5 @@
 import { Box, Button, Flex, MarkerList, MarkerListItem, Section, Spacer, Text } from 'lib/components'
-import { BOX_INTENTS, BoxIntent } from 'lib/components/base/Box/definitions'
+import { BOX_INTENTS, BoxIntent } from 'lib/components/core/base/Box/definitions'
 
 const INTENTS_INFO_MAP: Record<BoxIntent, string> = {
   neutral: 'surface without meaning, default tone',

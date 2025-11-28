@@ -3,7 +3,7 @@ import { BUTTON_PROPS_META } from 'client/meta/Button/props'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { LINK_PROPS_META } from 'client/meta/Link/props'
 import { SideNavItemProps } from 'lib/components'
-import { SIDE_NAV_VARIANTS } from 'lib/components/navigation/SideNav/definitions'
+import { SIDE_NAV_VARIANTS } from 'lib/components/pro/navigation/SideNav/definitions'
 
 const SIDE_NAV_ITEM_PROPS_META: ComponentMeta<SideNavItemProps>['props'] = {
   children: {
