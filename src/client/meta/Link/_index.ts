@@ -6,7 +6,7 @@ import { LINK_PROPS_META } from './props'
 
 const LINK_META: ComponentMeta<LinkProps> = {
   overview: {
-    plan: 'free',
+    bundle: 'core',
     title: 'Wrapper that turns any interactive element into a navigable link.',
     description: [
       'renders its child as <a> tag to enable navigation behavior',

@@ -67,7 +67,7 @@ export const PricingPage = () => {
                   <Spacer blockSize={12} />
                 </Section>
                 <Section
-                  heading="Professional"
+                  heading="Premium"
                   variant="outline"
                   intent="primary"
                   color="green"
@@ -94,11 +94,7 @@ export const PricingPage = () => {
                   </MarkerList>
                   <Spacer blockSize={40} />
                   <Flex justifyContent="center">
-                    <PricingPlanButton
-                      plan="professional"
-                      activePlan={getUser.data?.user.plan}
-                      color="green"
-                    />
+                    <PricingPlanButton plan="premium" activePlan={getUser.data?.user.plan} color="green" />
                   </Flex>
                   <Spacer blockSize={12} />
                 </Section>
@@ -118,7 +114,7 @@ export const PricingPage = () => {
                   <Spacer />
                   <Text intent="neutral">
                     Ideal for small teams building together under one license. Includes everything from the
-                    Professional plan.
+                    Premium plan.
                   </Text>
                   <Spacer />
                   <MarkerList rowGap={7} intent="neutral">

@@ -9,7 +9,7 @@ import { SIDE_NAV_CATEGORY_META } from './SideNavCategory/_index'
 
 const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
   overview: {
-    plan: 'pro',
+    bundle: 'pro',
     title: 'Vertical navigation component for organizing page links.',
     description: [
       'supports expandable categories and flat items',

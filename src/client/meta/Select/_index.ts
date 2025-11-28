@@ -8,7 +8,7 @@ import { SELECT_OPTION_META } from './SelectOption/_index'
 
 const SELECT_META: ComponentMeta<SelectProps> = {
   overview: {
-    plan: 'free',
+    bundle: 'core',
     title: 'Form control for choosing a single option from a list.',
     description: ['supports both controlled and uncontrolled modes'],
     composedOf: ['DropdownList', 'Button'],

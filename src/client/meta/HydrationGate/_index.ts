@@ -6,7 +6,7 @@ import { HYDRATION_GATE_EXAMPLES_META } from './examples'
 
 const HYDRATION_GATE_META: ComponentMeta<HydrationGateProps> = {
   overview: {
-    plan: 'free',
+    bundle: 'core',
     title:
       'Top-level utility component for SSR setups that prevents flashes of unstyled or mismatched content.',
     description: [

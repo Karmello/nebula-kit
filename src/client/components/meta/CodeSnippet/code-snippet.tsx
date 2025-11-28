@@ -1,15 +1,15 @@
 import { useLayoutEffect, useRef, useState } from 'react'
-import { BundledLanguage, TokensResult } from 'shiki'
+import { TokensResult } from 'shiki'
 
 import { Box, Flex, Button, Text } from 'lib/components'
-
-import { tokenizeCode } from './highlight-tokens'
 import { ScaleValue } from 'lib/definitions'
 import { useNebkitStore } from 'lib/state'
 
+import { tokenizeCode } from './highlight-tokens'
+
 export type CodeSnippetProps = {
   code: string
-  lang?: BundledLanguage
+  lang: 'log' | 'bash' | 'tsx'
   borderRadius?: ScaleValue
 }
 
@@ -46,7 +46,7 @@ const COLOR_MAP = {
   '#637777': { light: 'var(--neb-text)', dark: 'var(--neb-text)' },
 }
 
-export const CodeSnippet = ({ code, lang = 'tsx', borderRadius }: CodeSnippetProps) => {
+export const CodeSnippet = ({ code, lang = 'log', borderRadius }: CodeSnippetProps) => {
   const [data, setData] = useState<TokensResult>()
   const [copied, setCopied] = useState<boolean>(false)
 

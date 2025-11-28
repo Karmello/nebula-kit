@@ -35,11 +35,11 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           {!noSandBox ? (
             <Reveal label="Code" color="gray" intent="muted">
               <Box padding={4}>
-                <CodeSnippet code={code || convertElemToString(jsx)} borderRadius={0} />
+                <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} borderRadius={0} />
               </Box>
             </Reveal>
           ) : (
-            <CodeSnippet code={code || convertElemToString(jsx)} />
+            <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} />
           )}
         </>
       ) : null}

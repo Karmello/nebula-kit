@@ -7,7 +7,15 @@ import { withPrefix } from 'lib/helpers'
 
 import { TableBodyProps } from './definitions'
 
-export const TableBody = ({ children, tagAttrs, tagRef, color, intent }: TableBodyProps) => {
+export const TableBody = ({
+  children,
+  tagAttrs,
+  tagRef,
+  color,
+  intent,
+  paddingBlock,
+  paddingInline,
+}: TableBodyProps) => {
   return (
     <WithSlots<'Table.Row'>
       childrenToVerify={children}
@@ -28,6 +36,8 @@ export const TableBody = ({ children, tagAttrs, tagRef, color, intent }: TableBo
               cloneElement<TableRowProps>(slot, {
                 color: slot.props.color || color,
                 intent: slot.props.intent || intent,
+                paddingBlock: slot.props.paddingBlock || paddingBlock,
+                paddingInline: slot.props.paddingInline || paddingInline,
               })
             )}
           </Box>

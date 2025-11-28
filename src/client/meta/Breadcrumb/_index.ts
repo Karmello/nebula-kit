@@ -6,7 +6,7 @@ import { BREADCRUMB_EXAMPLES_META } from './examples'
 
 const BREADCRUMB_META: ComponentMeta<BreadcrumbProps> = {
   overview: {
-    plan: 'pro',
+    bundle: 'pro',
     title: "Horizontal navigation component for displaying the user's position within a page hierarchy.",
     description: [
       "provides a hierarchical trail of links that indicate the user's current position and enable navigation to parent pages",

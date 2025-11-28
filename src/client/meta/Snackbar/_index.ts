@@ -8,7 +8,7 @@ import { USE_SNACKBAR_META } from './useSnackbar/_index'
 
 const SNACKBAR_META: ComponentMeta<SnackbarProps> = {
   overview: {
-    plan: 'pro',
+    bundle: 'pro',
     title: 'Floating message element anchored to the viewport.',
     description: [
       'displays short status updates without affecting the page layout',

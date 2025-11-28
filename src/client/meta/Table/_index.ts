@@ -15,7 +15,7 @@ import { TABLE_HEADER_CELL_META } from './TableHeaderCell/_index'
 
 const TABLE_META: ComponentMeta<TableProps> = {
   overview: {
-    plan: 'free',
+    bundle: 'core',
     title:
       'Layout component built on the HTML table element, providing a semantic structure for displaying data in rows and columns.',
     description: [

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { useGetPaymentDetailsUrl, useGetPaymentInfo } from 'client/api'
-import { Button, Flex, Loader, Spacer, Table, Text } from 'lib/components'
+import { Button, Flex, Loader, Table, Text } from 'lib/components'
 
 export default ({ enabled }: { enabled: boolean }) => {
   const [isRedirecting, setIsRedirecting] = useState<boolean>(false)
@@ -15,23 +15,22 @@ export default ({ enabled }: { enabled: boolean }) => {
     <Table layout="fixed" intent="neutral" color="blue">
       <Table.Header>
         <Table.HeaderRow>
-          <Table.HeaderCell>
+          <Table.HeaderCell blockSize={60}>
             <Flex alignItems="center" columnGap={20}>
               <Text typography="h6" iconName="arrow-right">
                 Subscription
               </Text>
               <Loader active={getPaymentInfo.isMakingRequest} color="blue" size="sm" />
             </Flex>
-            <Spacer blockSize={8} />
           </Table.HeaderCell>
         </Table.HeaderRow>
       </Table.Header>
-      <Table.Body intent="tertiary">
+      <Table.Body intent="tertiary" paddingBlock={10} paddingInline={15}>
         <Table.Row>
           <Table.Cell colSpan={1}>
             <Text>Status</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2}>
+          <Table.Cell colSpan={2} blockSize={50}>
             <Text bold>{getPaymentInfo.data?.subscription.status}</Text>
           </Table.Cell>
         </Table.Row>
@@ -39,7 +38,7 @@ export default ({ enabled }: { enabled: boolean }) => {
           <Table.Cell colSpan={1}>
             <Text>Last payment</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2}>
+          <Table.Cell colSpan={2} blockSize={50}>
             <Text bold>
               {getPaymentInfo.data?.subscription.lastPayment
                 ? new Date(getPaymentInfo.data.subscription.lastPayment).toUTCString()
@@ -51,7 +50,7 @@ export default ({ enabled }: { enabled: boolean }) => {
           <Table.Cell colSpan={1}>
             <Text>Amount</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2}>
+          <Table.Cell colSpan={2} blockSize={50}>
             <Text bold>{getPaymentInfo.data?.subscription.amount}</Text>
           </Table.Cell>
         </Table.Row>
@@ -59,7 +58,7 @@ export default ({ enabled }: { enabled: boolean }) => {
           <Table.Cell colSpan={1}>
             <Text>Renews every</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2}>
+          <Table.Cell colSpan={2} blockSize={50}>
             <Text bold>{getPaymentInfo.data?.subscription.interval}</Text>
           </Table.Cell>
         </Table.Row>

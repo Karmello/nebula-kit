@@ -9,7 +9,7 @@ import { DROPDOWN_LIST_ITEM_META } from './DropdownListItem/_index'
 
 const DROPDOWN_LIST_META: ComponentMeta<DropdownListProps> = {
   overview: {
-    plan: 'free',
+    bundle: 'core',
     title: 'Floating list of interactive options for select-like components.',
     description: [
       'renders through a Portal for proper layering',

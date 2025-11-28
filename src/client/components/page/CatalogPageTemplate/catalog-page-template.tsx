@@ -29,7 +29,7 @@ export const CatalogPageTemplate = ({
   const { pathname } = useLocation()
   const navigateTo = useNavigateTo()
 
-  const planLabel = meta[activeItemObj?.label]?.[activeItemObj?.label]?.overview.plan
+  const bundleLabel = meta[activeItemObj?.label]?.[activeItemObj?.label]?.overview.bundle
 
   return (
     <SplitView>
@@ -128,16 +128,16 @@ export const CatalogPageTemplate = ({
                         <Text typography="h3">
                           {pageKey === PageKey.foundations ? activeSectionObj?.label : activeItemObj?.label}
                         </Text>
-                        {pageKey === PageKey.components && planLabel ? (
+                        {pageKey === PageKey.components && bundleLabel ? (
                           <Box
                             variant="solid"
                             color="blue"
-                            intent={planLabel === 'free' ? 'tertiary' : 'primary'}
+                            intent={bundleLabel === 'core' ? 'tertiary' : 'primary'}
                             borderRadius={10}
                             paddingBlock={3}
                             paddingInline={7}
                           >
-                            <Text scale="compact">{planLabel}</Text>
+                            <Text scale="compact">{bundleLabel}</Text>
                           </Box>
                         ) : null}
                       </Flex>

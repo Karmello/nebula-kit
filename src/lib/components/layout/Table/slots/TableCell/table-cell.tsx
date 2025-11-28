@@ -14,14 +14,22 @@ export const TableCell = ({
   // Box
   minInlineSize,
   maxInlineSize,
+  blockSize,
   textAlign,
   color,
   intent = 'neutral',
+  paddingBlock,
+  paddingInline,
   // own
   colSpan,
   rowSpan,
 }: TableCellProps) => {
-  const { color: rootColor, intent: rootIntent } = useTableContext()
+  const {
+    color: rootColor,
+    intent: rootIntent,
+    paddingBlock: rootPaddingBlock,
+    paddingInline: rootPaddingInline,
+  } = useTableContext()
 
   return (
     <Box
@@ -38,9 +46,10 @@ export const TableCell = ({
       intent={intent || rootIntent}
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
+      blockSize={blockSize}
       textAlign={textAlign}
-      paddingInline={20}
-      paddingBlock={10}
+      paddingBlock={paddingBlock || rootPaddingBlock}
+      paddingInline={paddingInline || rootPaddingInline}
       borderRadius={0}
     >
       {children}

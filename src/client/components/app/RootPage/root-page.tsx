@@ -60,8 +60,8 @@ export const RootPage = () => {
         <Route path={`/${PageKey.components}/*`} Component={ComponentsPage} />
         <Route path={`/${PageKey.faq}/*`} Component={FaqPage} />
         <Route path={`/${PageKey.pricing}`} Component={PricingPage} />
-        <Route path={`/${PageKey.pricingCore}`} element={<ComponentsBundlePage plan="free" />} />
-        <Route path={`/${PageKey.pricingPro}`} element={<ComponentsBundlePage plan="pro" />} />
+        <Route path={`/${PageKey.pricingCore}`} element={<ComponentsBundlePage bundle="core" />} />
+        <Route path={`/${PageKey.pricingPro}`} element={<ComponentsBundlePage bundle="pro" />} />
         <Route path={`/${PageKey.authLogin}`} Component={LoginPage} />
         <Route path={`/${PageKey.authRegister}`} Component={RegisterPage} />
         <Route path={`/${PageKey.profileAccount}`} Component={ProfileAccountPage} />

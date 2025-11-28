@@ -13,7 +13,7 @@ import { FORM_HINT_META } from './FormHint/_index'
 
 const FORM_META: ComponentMeta<FormProps> = {
   overview: {
-    plan: 'pro',
+    bundle: 'pro',
     title: 'Component for building and managing forms, powered by React Hook Form under the hood.',
     description: [
       'controls layout between its slots',

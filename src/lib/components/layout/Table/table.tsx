@@ -17,6 +17,8 @@ export const Table = ({
   inlineSize,
   color,
   intent = DEFAULT_TABLE_INTENT,
+  paddingBlock,
+  paddingInline,
   // own
   layout = DEFAULT_TABLE_LAYOUT,
 }: TableProps) => {
@@ -33,7 +35,7 @@ export const Table = ({
     >
       {({ slotsByName }) => {
         return (
-          <TableContext value={{ color, intent, layout }}>
+          <TableContext value={{ color, intent, layout, paddingBlock, paddingInline }}>
             <Box tagAttrs={{ className: withPrefix('table-container') }} inlineSize={inlineSize}>
               <Box
                 tag="table"

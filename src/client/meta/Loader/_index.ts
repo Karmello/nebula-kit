@@ -6,7 +6,7 @@ import { LOADER_EXAMPLES_META } from './examples'
 
 const LOADER_META: ComponentMeta<LoaderProps> = {
   overview: {
-    plan: 'free',
+    bundle: 'core',
     title: 'Circular indicator for loading states.',
     description: ['shows a minimal circular spinner to indicate that something is in progress'],
     composedOf: ['Box'],

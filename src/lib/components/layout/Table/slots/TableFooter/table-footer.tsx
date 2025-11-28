@@ -7,7 +7,15 @@ import { withPrefix } from 'lib/helpers'
 
 import { TableFooterProps } from './definitions'
 
-export const TableFooter = ({ children, tagAttrs, tagRef, color, intent }: TableFooterProps) => {
+export const TableFooter = ({
+  children,
+  tagAttrs,
+  tagRef,
+  color,
+  intent,
+  paddingBlock,
+  paddingInline,
+}: TableFooterProps) => {
   return (
     <WithSlots<'Table.Row'>
       childrenToVerify={children}
@@ -28,6 +36,8 @@ export const TableFooter = ({ children, tagAttrs, tagRef, color, intent }: Table
               cloneElement<TableRowProps>(slot, {
                 color: slot.props.color || color,
                 intent: slot.props.intent || intent,
+                paddingBlock: slot.props.paddingBlock || paddingBlock,
+                paddingInline: slot.props.paddingInline || paddingInline,
               })
             )}
           </Box>

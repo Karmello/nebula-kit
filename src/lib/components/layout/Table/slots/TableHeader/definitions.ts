@@ -4,6 +4,6 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'thead'>, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<'thead'>['children']
 }
 
-type PropsFromBox = Pick<BoxProps<'thead'>, 'color' | 'intent'>
+type PropsFromBox = Pick<BoxProps<'thead'>, 'color' | 'intent' | 'paddingBlock' | 'paddingInline'>
 
 export type TableHeaderProps = PropsFromHtmlTag & PropsFromBox

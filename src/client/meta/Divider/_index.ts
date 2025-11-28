@@ -6,7 +6,7 @@ import { DIVIDER_EXAMPLES_META } from './examples'
 
 const DIVIDER_META: ComponentMeta<DividerProps> = {
   overview: {
-    plan: 'free',
+    bundle: 'core',
     title: 'Boundary marker between content sections.',
     description: [
       'creates clear visual separation to reduce scanning effort',

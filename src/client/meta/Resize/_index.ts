@@ -6,7 +6,7 @@ import { RESIZE_EXAMPLES_META } from './examples'
 
 const RESIZE_META: ComponentMeta<ResizeProps> = {
   overview: {
-    plan: 'free',
+    bundle: 'core',
     title: 'Wrapper component that animates size.',
     description: [
       'wraps content in a Box and toggles its size by animating a specified property',

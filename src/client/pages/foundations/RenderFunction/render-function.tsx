@@ -20,6 +20,7 @@ export default () => {
       <Spacer blockSize={40} />
       <Text bold>Example</Text>
       <CodeSnippet
+        lang="tsx"
         code={`<SplitView>
   {({ setSideOpen, mode }) => (
     <>

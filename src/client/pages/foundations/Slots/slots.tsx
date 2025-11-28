@@ -34,6 +34,7 @@ Optional slots are ignored when absent, so you can extend layouts without noise.
       <Spacer blockSize={60} />
       <Text bold>Example</Text>
       <CodeSnippet
+        lang="tsx"
         code={`<DropdownList>
   <DropdownList.Trigger>
     <Button>Trigger</Button>

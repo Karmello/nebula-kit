@@ -10,7 +10,7 @@ import { DIALOG_FOOTER_META } from './DialogFooter/_index'
 
 const DIALOG_META: ComponentMeta<DialogProps> = {
   overview: {
-    plan: 'pro',
+    bundle: 'pro',
     title: 'Centered modal dialog for interrupting the current flow.',
     description: [
       'renders above the page using Portal',

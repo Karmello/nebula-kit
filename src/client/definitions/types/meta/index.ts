@@ -2,7 +2,7 @@ import { JSX } from 'react'
 
 type Overview = {
   name?: string
-  plan?: 'free' | 'pro'
+  bundle?: 'core' | 'pro'
   title: string
   description?: string[]
   composedOf?: string[]

@@ -10,7 +10,7 @@ import { TOOLBAR_END_META } from './ToolbarEnd/_index'
 
 const TOOLBAR_META: ComponentMeta<ToolbarProps> = {
   overview: {
-    plan: 'pro',
+    bundle: 'pro',
     title:
       'Horizontal bar with Start, Main and End slots, designed to present different types of action items.',
     description: [

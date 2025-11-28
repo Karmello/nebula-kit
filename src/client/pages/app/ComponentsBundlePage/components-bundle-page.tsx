@@ -4,31 +4,31 @@ import meta from 'client/meta'
 import { Box, Button, Flex, Grid, Link, Section, Spacer, Text } from 'lib/components'
 
 type Props = {
-  plan: 'free' | 'pro'
+  bundle: 'core' | 'pro'
 }
 
 const CORE_DATA = Object.keys(meta)
-  .filter(key => meta[key][key].overview.plan === 'free')
+  .filter(key => meta[key][key].overview.bundle === 'core')
   .map(key => ({
     name: key,
     title: meta[key][key].overview.title,
   }))
 
 const PRO_DATA = Object.keys(meta)
-  .filter(key => meta[key][key].overview.plan === 'pro')
+  .filter(key => meta[key][key].overview.bundle === 'pro')
   .map(key => ({
     name: key,
     title: meta[key][key].overview.title,
   }))
 
-export const ComponentsBundlePage = ({ plan }: Props) => {
+export const ComponentsBundlePage = ({ bundle }: Props) => {
   const navigateTo = useNavigateTo()
 
   return (
     <Box paddingTop={15} paddingInline={{ base: 20, lg: 50 }}>
-      <Section heading={plan === 'free' ? 'Core bundle' : 'Pro bundle'} iconName="package">
+      <Section heading={bundle === 'core' ? 'Core bundle' : 'Pro bundle'} iconName="package">
         <Flex alignItems="center" columnGap={50} flexWrap="wrap" justifyContent="space-between">
-          {plan === 'free' ? (
+          {bundle === 'core' ? (
             <Text>All components available for free.</Text>
           ) : (
             <Text>Comes with the paid plans.</Text>
@@ -49,7 +49,7 @@ export const ComponentsBundlePage = ({ plan }: Props) => {
           }}
           gap={20}
         >
-          {(plan === 'free' ? CORE_DATA : PRO_DATA).map(item => (
+          {(bundle === 'core' ? CORE_DATA : PRO_DATA).map(item => (
             <Section
               key={item.name}
               heading={item.name}
@@ -66,13 +66,13 @@ export const ComponentsBundlePage = ({ plan }: Props) => {
         <Spacer blockSize={50} />
         <Flex justifyContent="center">
           <Link
-            href={plan === 'free' ? '/pricing/pro' : '/pricing/core'}
+            href={bundle === 'core' ? '/pricing/pro' : '/pricing/core'}
             onClick={() => {
-              navigateTo(plan === 'free' ? '/pricing/pro' : '/pricing/core')
+              navigateTo(bundle === 'core' ? '/pricing/pro' : '/pricing/core')
             }}
           >
             <Button size="sm" color="amber" iconName="package">
-              {plan === 'free' ? 'Pro bundle' : 'Core bundle'}
+              {bundle === 'core' ? 'Pro bundle' : 'Core bundle'}
             </Button>
           </Link>
         </Flex>

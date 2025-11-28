@@ -23,6 +23,7 @@ export default () => {
       <Spacer blockSize={60} />
       <Text bold>Example</Text>
       <CodeSnippet
+        lang="tsx"
         code={`const [visible, setVisible] = useState<boolean>(false)
 const buttonRef = useRef<HTMLButtonElement>(null)
 

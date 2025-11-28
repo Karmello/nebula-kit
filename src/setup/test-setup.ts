@@ -21,7 +21,7 @@ Object.defineProperty(window, 'matchMedia', {
 })
 
 class ResizeObserver {
-  constructor(callback: ResizeObserverCallback) {}
+  constructor() {}
   observe() {}
   unobserve() {}
   disconnect() {}

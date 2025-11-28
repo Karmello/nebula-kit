@@ -6,7 +6,7 @@ import { ICON_EXAMPLES_META } from './examples'
 
 const ICON_META: ComponentMeta<IconProps> = {
   overview: {
-    plan: 'free',
+    bundle: 'core',
     title: 'SVG icon from the "Lucide React" set.',
     description: ['exposes a subset of icons provided by "Lucide React"'],
     rendersAs: ['span + svg'],

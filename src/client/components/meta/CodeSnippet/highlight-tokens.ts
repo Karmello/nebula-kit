@@ -1,11 +1,13 @@
 import { BundledLanguage, createHighlighterCore, createJavaScriptRegexEngine, TokensResult } from 'shiki'
 
+import log from '@shikijs/langs/log'
+import bash from '@shikijs/langs/bash'
 import tsx from '@shikijs/langs/tsx'
 import nightOwl from '@shikijs/themes/night-owl'
 
 const highlighter = await createHighlighterCore({
   engine: createJavaScriptRegexEngine(),
-  langs: [tsx],
+  langs: [log, bash, tsx],
   themes: [nightOwl],
 })
 

@@ -4,6 +4,7 @@ import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { TableHeaderCellProps } from 'lib/components'
 
 const TABLE_HEADER_CELL_PROPS_META: ComponentMeta<TableHeaderCellProps>['props'] = {
+  blockSize: BOX_PROPS_META.blockSize,
   children: {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
@@ -16,6 +17,8 @@ const TABLE_HEADER_CELL_PROPS_META: ComponentMeta<TableHeaderCellProps>['props']
   intent: BOX_PROPS_META.intent,
   maxInlineSize: BOX_PROPS_META.maxInlineSize,
   minInlineSize: BOX_PROPS_META.minInlineSize,
+  paddingBlock: BOX_PROPS_META.paddingBlock,
+  paddingInline: BOX_PROPS_META.paddingInline,
   rowSpan: {
     options: ['number'],
     description: 'Specifies how many rows the cell should span vertically within the table.',

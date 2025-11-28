@@ -9,6 +9,16 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'td'>, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<'td'>['children']
 }
 
-type PropsFromBox = Pick<BoxProps<'td'>, 'minInlineSize' | 'maxInlineSize' | 'textAlign' | 'color' | 'intent'>
+type PropsFromBox = Pick<
+  BoxProps<'td'>,
+  | 'minInlineSize'
+  | 'maxInlineSize'
+  | 'blockSize'
+  | 'textAlign'
+  | 'color'
+  | 'intent'
+  | 'paddingBlock'
+  | 'paddingInline'
+>
 
 export type TableCellProps = PropsFromHtmlTag & PropsFromBox & TableCellOwnProps

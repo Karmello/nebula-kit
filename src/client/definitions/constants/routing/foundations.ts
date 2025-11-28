@@ -25,8 +25,8 @@ export const FOUNDATION_CATEGORIES = [
         ],
       },
       {
-        key: 'get-started',
-        label: 'Get started',
+        key: 'getting-started',
+        label: 'Getting started',
         sections: [{ key: 'installation', label: 'Installation' }],
       },
     ],

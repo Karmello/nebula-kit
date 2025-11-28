@@ -6,7 +6,7 @@ import { WITH_ICON_EXAMPLES_META } from './examples'
 
 const WITH_ICON_META: ComponentMeta<WithIconProps> = {
   overview: {
-    plan: 'free',
+    bundle: 'core',
     title: 'Layout component that aligns an icon with accompanying content.',
     description: [
       'renders an icon next to the children passed, either on the left or right',

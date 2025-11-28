@@ -7,7 +7,7 @@ import { REVEAL_TAGS } from 'lib/components/containers/Reveal/definitions'
 
 const REVEAL_META: ComponentMeta<RevealProps> = {
   overview: {
-    plan: 'free',
+    bundle: 'core',
     title: 'Expandable container for showing and hiding content.',
     description: ['toggles visibility of its content with smooth expand and collapse behavior'],
     rendersAs: REVEAL_TAGS,
