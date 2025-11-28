@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
 import { useProPageStore } from 'client/store'
@@ -10,7 +10,7 @@ export const ProPage = () => {
 
   const proPageStore = useProPageStore()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const [, categoryKey, itemKey, sectionKey] = pathname.split('/').filter(s => s)
     proPageStore.setCategoryKey(categoryKey)
     proPageStore.setItemKey(itemKey)

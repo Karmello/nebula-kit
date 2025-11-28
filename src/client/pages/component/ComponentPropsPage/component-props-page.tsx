@@ -1,14 +1,20 @@
 import { pascalCase } from 'change-case'
 
-import { useCorePageStore } from 'client/store'
+import { useCorePageStore, useProPageStore } from 'client/store'
+import { PageKey } from 'client/definitions'
 import meta from 'client/meta'
 
 import { PropsTable } from './PropsTable'
 
-export const ComponentPropsPage = () => {
-  const { itemKey } = useCorePageStore()
+export const ComponentPropsPage = ({
+  pageKey,
+}: {
+  pageKey: Extract<keyof typeof PageKey, 'core' | 'pro'>
+}) => {
+  const corePageStore = useCorePageStore()
+  const proPageStore = useProPageStore()
 
-  const itemKeyPascal = pascalCase(itemKey || '')
+  const itemKeyPascal = pascalCase((pageKey === 'core' ? corePageStore.itemKey : proPageStore.itemKey) || '')
 
   if (!meta[itemKeyPascal]) return null
 

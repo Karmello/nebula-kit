@@ -3,8 +3,8 @@ import { pascalCase } from 'change-case'
 import meta from 'client/meta'
 import { CodeSnippet } from 'client/components'
 import { convertElemToString } from 'client/helpers'
-import { useCorePageStore } from 'client/store'
-import { ComponentMeta } from 'client/definitions'
+import { useCorePageStore, useProPageStore } from 'client/store'
+import { ComponentMeta, PageKey } from 'client/definitions'
 import { Box, Flex, Reveal, Spacer, Text } from 'lib/components'
 
 const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
@@ -48,10 +48,15 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   )
 }
 
-export const ComponentExamplesPage = () => {
-  const { itemKey } = useCorePageStore()
+export const ComponentExamplesPage = ({
+  pageKey,
+}: {
+  pageKey: Extract<keyof typeof PageKey, 'core' | 'pro'>
+}) => {
+  const corePageStore = useCorePageStore()
+  const proPageStore = useProPageStore()
 
-  const itemKeyPascal = pascalCase(itemKey || '')
+  const itemKeyPascal = pascalCase((pageKey === 'core' ? corePageStore.itemKey : proPageStore.itemKey) || '')
 
   if (!meta[itemKeyPascal]) return null
 

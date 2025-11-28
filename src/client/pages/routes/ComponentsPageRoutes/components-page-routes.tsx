@@ -1,19 +1,26 @@
 import { useMemo } from 'react'
 import { Navigate, Route, Routes } from 'react-router'
 
-import { Spacer } from 'lib/components'
 import { ComponentOverviewPage, ComponentPropsPage, ComponentExamplesPage } from 'client/pages'
 import { CORE_PAGE_CATEGORIES, PRO_PAGE_CATEGORIES, PageKey } from 'client/definitions'
 import { NextPageButton } from 'client/components'
+import { Spacer } from 'lib/components'
 
-const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
+const PageResolver = ({
+  pageKey,
+  sectionKey,
+}: {
+  pageKey: Extract<keyof typeof PageKey, 'core' | 'pro'>
+  sectionKey: string
+}) => {
   switch (sectionKey) {
     case 'overview':
-      return <ComponentOverviewPage />
+      return <ComponentOverviewPage pageKey={pageKey} />
     case 'props':
-      return <ComponentPropsPage />
+      return <ComponentPropsPage pageKey={pageKey} />
     case 'examples':
-      return <ComponentExamplesPage />
+      pageKey
+      return <ComponentExamplesPage pageKey={pageKey} />
     default:
       return null
   }
@@ -22,7 +29,7 @@ const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
 export const ComponentsPageRoutes = ({
   pageKey,
 }: {
-  pageKey: Extract<keyof typeof PageKey, 'foundations' | 'core' | 'pro'>
+  pageKey: Extract<keyof typeof PageKey, 'core' | 'pro'>
 }) => {
   const CATEGORIES = pageKey === 'core' ? CORE_PAGE_CATEGORIES : PRO_PAGE_CATEGORIES
 
@@ -36,7 +43,7 @@ export const ComponentsPageRoutes = ({
               path={`${categoryKey}/${itemKey}/${sectionKey}`}
               element={
                 <>
-                  <PageResolver sectionKey={sectionKey} />
+                  <PageResolver pageKey={pageKey} sectionKey={sectionKey} />
                   <NextPageButton pageKey={pageKey} />
                 </>
               }

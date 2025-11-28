@@ -1,5 +1,7 @@
 import { create } from 'zustand'
 
+import { CORE_PAGE_CATEGORIES } from 'client/definitions'
+
 export type CorePageStore = {
   categoryKey: string
   setCategoryKey: (categoryKey: string) => void
@@ -10,10 +12,10 @@ export type CorePageStore = {
 }
 
 export const useCorePageStore = create<CorePageStore>(set => ({
-  categoryKey: '',
+  categoryKey: CORE_PAGE_CATEGORIES[0].key,
   setCategoryKey: categoryKey => set(() => ({ categoryKey })),
-  itemKey: '',
+  itemKey: CORE_PAGE_CATEGORIES[0].items[0].key,
   setItemKey: itemKey => set(() => ({ itemKey })),
-  sectionKey: '',
+  sectionKey: CORE_PAGE_CATEGORIES[0].items[0].sections[0].key,
   setSectionKey: sectionKey => set(() => ({ sectionKey })),
 }))

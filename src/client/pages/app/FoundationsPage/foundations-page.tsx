@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
 import { useFoundationsPageStore } from 'client/store'
@@ -10,7 +10,7 @@ export const FoundationsPage = () => {
 
   const foundationsPageStore = useFoundationsPageStore()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const [, categoryKey, itemKey, sectionKey] = pathname.split('/').filter(s => s)
     foundationsPageStore.setCategoryKey(categoryKey)
     foundationsPageStore.setItemKey(itemKey)

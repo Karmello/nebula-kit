@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { ToolbarProps } from 'lib/components/core/layouts/Toolbar/definitions'
+import { ToolbarProps } from 'lib/components/pro/layouts/Toolbar/definitions'
 
 import { TOOLBAR_PROPS_META } from './props'
 import { TOOLBAR_EXAMPLES_META } from './examples'

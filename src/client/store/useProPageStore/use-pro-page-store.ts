@@ -1,5 +1,7 @@
 import { create } from 'zustand'
 
+import { PRO_PAGE_CATEGORIES } from 'client/definitions'
+
 export type ProPageStore = {
   categoryKey: string
   setCategoryKey: (categoryKey: string) => void
@@ -10,10 +12,10 @@ export type ProPageStore = {
 }
 
 export const useProPageStore = create<ProPageStore>(set => ({
-  categoryKey: '',
+  categoryKey: PRO_PAGE_CATEGORIES[0].key,
   setCategoryKey: categoryKey => set(() => ({ categoryKey })),
-  itemKey: '',
+  itemKey: PRO_PAGE_CATEGORIES[0].items[0].key,
   setItemKey: itemKey => set(() => ({ itemKey })),
-  sectionKey: '',
+  sectionKey: PRO_PAGE_CATEGORIES[0].items[0].sections[0].key,
   setSectionKey: sectionKey => set(() => ({ sectionKey })),
 }))
