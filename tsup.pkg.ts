@@ -3,30 +3,39 @@ import type { Plugin } from 'esbuild'
 import { readFile } from 'node:fs/promises'
 import { extname } from 'node:path'
 
+const BUNDLE_TYPE = process.env.TSUP_BUNDLE || 'core'
+
 const cssWiringPlugin = (): Plugin => ({
   name: 'nebula-css-wiring',
   setup(build) {
-    // keep CSS imports as external so tsup/esbuild don't try to load them
+    // mark CSS as external (unchanged)
     build.onResolve({ filter: /\.css$/ }, args => ({
       path: args.path,
       external: true,
     }))
 
-    // rewrite provider import and strip component-level scss imports
+    // rewrite imports + strip component-level scss
     build.onLoad({ filter: /\.[cm]?[tj]sx?$/ }, async args => {
       const src = await readFile(args.path, 'utf8')
 
-      // 1) NebkitProvider: lib/styles/index.scss -> lib/styles/index.css
-      // (build script will compile src/lib/styles/index.pkg.scss -> dist/lib/styles/index.css)
-      let out = src.replace(/(['"])lib\/styles\/index\.scss\1/g, '$1lib/styles/index.css$1')
+      let out = src
 
-      // 2) Remove any *.scss imports inside component source files
-      //    (shipping a single CSS bundle, so component SCSS shouldn't be referenced)
+      //
+      // 1) Rewrite the NebkitProvider CSS import:
+      // FROM: lib/styles/index.css
+      // TO:   index.css (top-level in dist/)
+      //
+      out = out.replace(/(['"])lib\/styles\/index\.css\1/g, `$1index.${BUNDLE_TYPE}.css$1`)
+
+      //
+      // 2) Strip component-level SCSS imports
+      //
       const isComponentFile = /[/\\]src[/\\]lib[/\\]components[/\\]/.test(args.path)
+
       if (isComponentFile) {
-        // side-effect imports: import './box.scss'
+        // side-effect SCSS:  import './x.scss'
         out = out.replace(/^\s*import\s+['"][^'"]+\.scss['"]\s*;?\s*$/gm, '')
-        // imported as a binding: import x from './box.scss'
+        // binding SCSS:      import x from './x.scss'
         out = out.replace(/^\s*import\s+[^'"]+\s+from\s+['"][^'"]+\.scss['"]\s*;?\s*$/gm, '')
       }
 
@@ -45,15 +54,16 @@ const cssWiringPlugin = (): Plugin => ({
 })
 
 export default defineConfig({
-  entry: ['src/lib/index.ts'],
+  entry: [BUNDLE_TYPE === 'core' ? 'src/lib/index.core.ts' : 'src/lib/index.pro.ts'],
   format: ['esm', 'cjs'],
   outExtension({ format }) {
     return { js: format === 'esm' ? '.mjs' : '.cjs' }
   },
   dts: true,
-  outDir: 'dist',
+  outDir: `dist/${BUNDLE_TYPE}`,
   target: 'es2020',
-  clean: true,
+  clean: false,
+  minify: true,
   treeshake: true,
   splitting: false,
   sourcemap: false,
@@ -61,5 +71,8 @@ export default defineConfig({
   esbuildPlugins: [cssWiringPlugin()],
   esbuildOptions(o) {
     o.logOverride = { 'ignored-bare-import': 'silent' }
+    o.minifyIdentifiers = true
+    o.minifySyntax = true
+    o.minifyWhitespace = true
   },
 })

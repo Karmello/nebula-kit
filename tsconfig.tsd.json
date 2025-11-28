@@ -7,6 +7,6 @@
     "outDir": "dist/types",
     "noEmit": false
   },
-  "include": ["src/lib"],
+  "include": ["src/lib/index.ts"],
   "exclude": ["src/lib/**/*.test.*"]
 }
