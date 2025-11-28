@@ -1,4 +1,4 @@
-export const FOUNDATION_CATEGORIES = [
+export const FOUNDATIONS_CATEGORIES = [
   {
     key: 'overview',
     label: 'Overview',

@@ -1,9 +1,9 @@
 import { useMemo } from 'react'
 import { Navigate, Route, Routes } from 'react-router'
 
-import { ComponentOverviewPage, ComponentPropsPage, ComponentExamplesPage } from 'client/pages'
-import { CORE_PAGE_CATEGORIES, PageKey } from 'client/definitions'
 import { Spacer } from 'lib/components'
+import { ComponentOverviewPage, ComponentPropsPage, ComponentExamplesPage } from 'client/pages'
+import { CORE_PAGE_CATEGORIES, PRO_PAGE_CATEGORIES, PageKey } from 'client/definitions'
 import { NextPageButton } from 'client/components'
 
 const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
@@ -19,9 +19,15 @@ const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
   }
 }
 
-export const ComponentsPageRoutes = () => {
+export const ComponentsPageRoutes = ({
+  pageKey,
+}: {
+  pageKey: Extract<keyof typeof PageKey, 'foundations' | 'core' | 'pro'>
+}) => {
+  const CATEGORIES = pageKey === 'core' ? CORE_PAGE_CATEGORIES : PRO_PAGE_CATEGORIES
+
   const ROUTES = useMemo(() => {
-    return CORE_PAGE_CATEGORIES.map(({ key: categoryKey, items }) =>
+    return CATEGORIES.map(({ key: categoryKey, items }) =>
       items.map(({ key: itemKey, sections }) =>
         sections.map(({ key: sectionKey }) => {
           return (
@@ -31,7 +37,7 @@ export const ComponentsPageRoutes = () => {
               element={
                 <>
                   <PageResolver sectionKey={sectionKey} />
-                  <NextPageButton pageKey="core" />
+                  <NextPageButton pageKey={pageKey} />
                 </>
               }
             />
@@ -53,7 +59,7 @@ export const ComponentsPageRoutes = () => {
             return (
               <Navigate
                 to={{
-                  pathname: `/${PageKey.core}/${CORE_PAGE_CATEGORIES[0].key}/${CORE_PAGE_CATEGORIES[0].items[0].key}/${CORE_PAGE_CATEGORIES[0].items[0].sections[0].key}`,
+                  pathname: `/${pageKey}/${CATEGORIES[0].key}/${CATEGORIES[0].items[0].key}/${CATEGORIES[0].items[0].sections[0].key}`,
                 }}
                 replace
               />

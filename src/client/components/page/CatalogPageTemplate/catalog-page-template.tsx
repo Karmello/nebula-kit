@@ -8,7 +8,7 @@ import { PageKey } from 'client/definitions'
 import { Box, Breadcrumb, SideNav, Spacer, SplitView, Text, Divider, Flex } from 'lib/components'
 
 type Props = {
-  pageKey: string
+  pageKey: Extract<keyof typeof PageKey, 'foundations' | 'core' | 'pro'>
   data: {
     key: string
     label: string
@@ -128,7 +128,7 @@ export const CatalogPageTemplate = ({
                         <Text typography="h3">
                           {pageKey === PageKey.foundations ? activeSectionObj?.label : activeItemObj?.label}
                         </Text>
-                        {pageKey === PageKey.core && bundleLabel ? (
+                        {pageKey !== PageKey.foundations && bundleLabel ? (
                           <Box
                             variant="solid"
                             color="blue"
@@ -143,8 +143,11 @@ export const CatalogPageTemplate = ({
                       </Flex>
                       <Divider />
                     </SplitView.MainBar>
-                    {pageKey === PageKey.foundations ? <FoundationsPageRoutes /> : null}
-                    {pageKey === PageKey.core ? <ComponentsPageRoutes /> : null}
+                    {pageKey === PageKey.foundations ? (
+                      <FoundationsPageRoutes />
+                    ) : (
+                      <ComponentsPageRoutes pageKey={pageKey} />
+                    )}
                   </SplitView.Main>
                 </>
               )}

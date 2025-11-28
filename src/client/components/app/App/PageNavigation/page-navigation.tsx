@@ -2,7 +2,7 @@ import { useLocation } from 'react-router'
 
 import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
-import { useAppStore, useCorePageStore, useFoundationsPageStore } from 'client/store'
+import { useAppStore, useCorePageStore, useProPageStore, useFoundationsPageStore } from 'client/store'
 import { Button, Link, Segment } from 'lib/components'
 
 type Props = {
@@ -17,6 +17,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
 
   const foundationsPageStore = useFoundationsPageStore()
   const corePageStore = useCorePageStore()
+  const proPageStore = useProPageStore()
 
   const currentPageKey = pathname.split('/')[1]
 
@@ -57,6 +58,21 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             fullWidth
           >
             Core
+          </Button>
+        </Link>
+      </Segment.Item>
+      <Segment.Item>
+        <Link
+          href={`/${PageKey.pro}`}
+          onClick={async () => {
+            if (mainOpen) await setMainOpen(false)
+            navigateTo(
+              `/${PageKey.pro}/${proPageStore.categoryKey}/${proPageStore.itemKey}/${proPageStore.sectionKey}`
+            )
+          }}
+        >
+          <Button intent={currentPageKey === PageKey.pro ? 'secondary' : 'muted'} iconName="star" fullWidth>
+            Pro
           </Button>
         </Link>
       </Segment.Item>

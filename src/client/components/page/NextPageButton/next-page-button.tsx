@@ -1,20 +1,21 @@
 import { useLayoutEffect, useState } from 'react'
 
-import { Flex, Button, Link } from 'lib/components'
-import { FOUNDATION_CATEGORIES, CORE_PAGE_CATEGORIES, PageKey } from 'client/definitions'
-import { useCorePageStore, useFoundationsPageStore } from 'client/store'
+import {
+  FOUNDATIONS_CATEGORIES,
+  CORE_PAGE_CATEGORIES,
+  PageKey,
+  PRO_PAGE_CATEGORIES,
+} from 'client/definitions'
+
+import { useCorePageStore, useFoundationsPageStore, useProPageStore } from 'client/store'
 import { useNavigateTo } from 'client/hooks'
+import { Flex, Button, Link } from 'lib/components'
 
 export type NextPageButtonProps = {
   pageKey: Extract<keyof typeof PageKey, 'foundations' | 'core' | 'pro'>
 }
 
 type Section = { categoryKey: string; itemKey: string; sectionKey: string }
-
-const MAP = {
-  [PageKey.foundations]: FOUNDATION_CATEGORIES,
-  [PageKey.core]: CORE_PAGE_CATEGORIES,
-}
 
 export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
   const [sections, setSections] = useState<Section[]>([])
@@ -23,9 +24,25 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
 
   const foundationsPageStore = useFoundationsPageStore()
   const corePageStore = useCorePageStore()
+  const proPageStore = useProPageStore()
+
+  const MAP = {
+    [PageKey.foundations]: {
+      CATEGORIES: FOUNDATIONS_CATEGORIES,
+      store: foundationsPageStore,
+    },
+    [PageKey.core]: {
+      CATEGORIES: CORE_PAGE_CATEGORIES,
+      store: corePageStore,
+    },
+    [PageKey.pro]: {
+      CATEGORIES: PRO_PAGE_CATEGORIES,
+      store: proPageStore,
+    },
+  }
 
   useLayoutEffect(() => {
-    const categories = MAP[pageKey]
+    const categories = MAP[pageKey].CATEGORIES
 
     const sections: Section[] = []
 
@@ -40,7 +57,7 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
     setSections(sections)
   }, [pageKey])
 
-  const pageStore = pageKey === 'foundations' ? foundationsPageStore : corePageStore
+  const pageStore = MAP[pageKey].store
   const currentSectionIndex = sections.findIndex(
     s =>
       s.categoryKey === pageStore.categoryKey &&

@@ -2,6 +2,7 @@ export enum PageKey {
   home = 'home',
   foundations = 'foundations',
   core = 'core',
+  pro = 'pro',
   faq = 'faq',
   pricing = 'pricing',
   pricingCore = 'pricing/core',

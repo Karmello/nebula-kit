@@ -66,16 +66,12 @@ export const CORE_PAGE_CATEGORIES = [
     items: [
       { key: 'loader', label: 'Loader', sections: CORE_PAGE_SECTIONS },
       { key: 'callout', label: 'Callout', sections: CORE_PAGE_SECTIONS },
-      { key: 'snackbar', label: 'Snackbar', sections: CORE_PAGE_SECTIONS },
     ],
   },
   {
     key: 'overlays',
     label: 'Overlays',
-    items: [
-      { key: 'dropdown-list', label: 'DropdownList', sections: CORE_PAGE_SECTIONS },
-      { key: 'dialog', label: 'Dialog', sections: CORE_PAGE_SECTIONS },
-    ],
+    items: [{ key: 'dropdown-list', label: 'DropdownList', sections: CORE_PAGE_SECTIONS }],
   },
   {
     key: 'layouts',
@@ -83,8 +79,6 @@ export const CORE_PAGE_CATEGORIES = [
     items: [
       { key: 'app-frame', label: 'AppFrame', sections: CORE_PAGE_SECTIONS },
       { key: 'footer', label: 'Footer', sections: CORE_PAGE_SECTIONS },
-      { key: 'split-view', label: 'SplitView', sections: CORE_PAGE_SECTIONS },
-      { key: 'toolbar', label: 'Toolbar', sections: CORE_PAGE_SECTIONS },
     ],
   },
   {
@@ -101,7 +95,6 @@ export const CORE_PAGE_CATEGORIES = [
     items: [
       { key: 'input', label: 'Input', sections: CORE_PAGE_SECTIONS },
       { key: 'select', label: 'Select', sections: CORE_PAGE_SECTIONS },
-      { key: 'form', label: 'Form', sections: CORE_PAGE_SECTIONS },
     ],
   },
   {
@@ -111,7 +104,6 @@ export const CORE_PAGE_CATEGORIES = [
       { key: 'nebkit-provider', label: 'NebkitProvider', sections: CORE_PAGE_SECTIONS },
       { key: 'hydration-gate', label: 'HydrationGate', sections: CORE_PAGE_SECTIONS },
       { key: 'portal', label: 'Portal', sections: CORE_PAGE_SECTIONS },
-      { key: 'focus-trap', label: 'FocusTrap', sections: CORE_PAGE_SECTIONS },
     ],
   },
 ]
