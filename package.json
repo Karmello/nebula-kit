@@ -52,7 +52,7 @@
     "publish:core:dry": "npm publish ./dist/core --dry-run",
     "publish:core": "npm publish ./dist/core --access public",
     "pack:pro": "npm pack ./dist/pro --pack-destination ./dist",
-    "upload:pro": "aws s3 cp dist/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz s3://nebula-kit-pro-dev/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz"
+    "upload:pro": "node ./scripts/update-local-versioning-json.js && aws s3 cp ./versioning.json s3://nebula-kit-pro-dev && aws s3 cp dist/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz s3://nebula-kit-pro-dev/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz"
   },
   "peerDependencies": {
     "react": ">=19",
