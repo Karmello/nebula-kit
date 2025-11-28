@@ -19,7 +19,6 @@ const PageResolver = ({
     case 'props':
       return <ComponentPropsPage pageKey={pageKey} />
     case 'examples':
-      pageKey
       return <ComponentExamplesPage pageKey={pageKey} />
     default:
       return null
