@@ -1,2 +1,2 @@
-export * from './ComponentsPageRoutes'
+export * from './CorePageRoutes'
 export * from './FoundationsPageRoutes'

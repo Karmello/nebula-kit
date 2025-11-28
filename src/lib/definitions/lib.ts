@@ -73,6 +73,7 @@ export const ICON_NAMES = [
   'receipt',
   'search',
   'settings',
+  'star',
   'tree-pine',
   'triangle-alert',
   'user',

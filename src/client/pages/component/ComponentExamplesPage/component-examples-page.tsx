@@ -3,7 +3,7 @@ import { pascalCase } from 'change-case'
 import meta from 'client/meta'
 import { CodeSnippet } from 'client/components'
 import { convertElemToString } from 'client/helpers'
-import { useComponentsPageStore } from 'client/store'
+import { useCorePageStore } from 'client/store'
 import { ComponentMeta } from 'client/definitions'
 import { Box, Flex, Reveal, Spacer, Text } from 'lib/components'
 
@@ -49,7 +49,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
 }
 
 export const ComponentExamplesPage = () => {
-  const { itemKey } = useComponentsPageStore()
+  const { itemKey } = useCorePageStore()
 
   const itemKeyPascal = pascalCase(itemKey || '')
 

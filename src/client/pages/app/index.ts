@@ -1,5 +1,5 @@
 export * from './ComponentsBundlePage'
-export * from './ComponentsPage'
+export * from './CorePage'
 export * from './FaqPage'
 export * from './FoundationsPage'
 export * from './HomePage'

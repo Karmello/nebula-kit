@@ -128,7 +128,7 @@ export const CatalogPageTemplate = ({
                         <Text typography="h3">
                           {pageKey === PageKey.foundations ? activeSectionObj?.label : activeItemObj?.label}
                         </Text>
-                        {pageKey === PageKey.components && bundleLabel ? (
+                        {pageKey === PageKey.core && bundleLabel ? (
                           <Box
                             variant="solid"
                             color="blue"
@@ -144,7 +144,7 @@ export const CatalogPageTemplate = ({
                       <Divider />
                     </SplitView.MainBar>
                     {pageKey === PageKey.foundations ? <FoundationsPageRoutes /> : null}
-                    {pageKey === PageKey.components ? <ComponentsPageRoutes /> : null}
+                    {pageKey === PageKey.core ? <ComponentsPageRoutes /> : null}
                   </SplitView.Main>
                 </>
               )}

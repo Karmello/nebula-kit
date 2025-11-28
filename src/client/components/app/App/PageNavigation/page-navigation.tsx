@@ -2,7 +2,7 @@ import { useLocation } from 'react-router'
 
 import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
-import { useAppStore, useComponentsPageStore, useFoundationsPageStore } from 'client/store'
+import { useAppStore, useCorePageStore, useFoundationsPageStore } from 'client/store'
 import { Button, Link, Segment } from 'lib/components'
 
 type Props = {
@@ -16,7 +16,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
   const { user } = useAppStore()
 
   const foundationsPageStore = useFoundationsPageStore()
-  const componentsPageStore = useComponentsPageStore()
+  const corePageStore = useCorePageStore()
 
   const currentPageKey = pathname.split('/')[1]
 
@@ -43,20 +43,20 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
       </Segment.Item>
       <Segment.Item>
         <Link
-          href={`/${PageKey.components}`}
+          href={`/${PageKey.core}`}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
             navigateTo(
-              `/${PageKey.components}/${componentsPageStore.categoryKey}/${componentsPageStore.itemKey}/${componentsPageStore.sectionKey}`
+              `/${PageKey.core}/${corePageStore.categoryKey}/${corePageStore.itemKey}/${corePageStore.sectionKey}`
             )
           }}
         >
           <Button
-            intent={currentPageKey === PageKey.components ? 'secondary' : 'muted'}
-            iconName="component"
+            intent={currentPageKey === PageKey.core ? 'secondary' : 'muted'}
+            iconName="package"
             fullWidth
           >
-            Components
+            Core
           </Button>
         </Link>
       </Segment.Item>

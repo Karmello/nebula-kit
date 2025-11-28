@@ -1,12 +1,12 @@
 import { pascalCase } from 'change-case'
 
-import { useComponentsPageStore } from 'client/store'
+import { useCorePageStore } from 'client/store'
 import meta from 'client/meta'
 
 import { PropsTable } from './PropsTable'
 
 export const ComponentPropsPage = () => {
-  const { itemKey } = useComponentsPageStore()
+  const { itemKey } = useCorePageStore()
 
   const itemKeyPascal = pascalCase(itemKey || '')
 

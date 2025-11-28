@@ -1,3 +1,4 @@
+import { PageKey } from 'client/definitions'
 import { getCopyrightInfo } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'
 import { Footer, Link, MarkerList, Spacer, Text } from 'lib/components'
@@ -37,9 +38,9 @@ export const AppFooter = () => {
         <MarkerList>
           <MarkerList.Item>
             <Link
-              href="/foundations/other/legal/license"
+              href={`${PageKey.foundations}/other/legal/license`}
               onClick={() => {
-                navigateTo('/foundations/other/legal/license')
+                navigateTo(`${PageKey.foundations}/other/legal/license`)
               }}
             >
               <Text scale="compact" color="blue" intent="primary">
@@ -49,9 +50,9 @@ export const AppFooter = () => {
           </MarkerList.Item>
           <MarkerList.Item>
             <Link
-              href="/foundations/other/legal/terms-of-use"
+              href={`${PageKey.foundations}/other/legal/terms-of-use`}
               onClick={() => {
-                navigateTo('/foundations/other/legal/terms-of-use')
+                navigateTo(`${PageKey.foundations}/other/legal/terms-of-use`)
               }}
             >
               <Text scale="compact" color="blue" intent="primary">
@@ -61,9 +62,9 @@ export const AppFooter = () => {
           </MarkerList.Item>
           <MarkerList.Item>
             <Link
-              href="/foundations/other/legal/privacy-policy"
+              href={`${PageKey.foundations}/other/legal/privacy-policy`}
               onClick={() => {
-                navigateTo('/foundations/other/legal/privacy-policy')
+                navigateTo(`${PageKey.foundations}/other/legal/privacy-policy`)
               }}
             >
               <Text scale="compact" color="blue" intent="primary">

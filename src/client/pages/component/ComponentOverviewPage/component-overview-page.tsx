@@ -1,7 +1,7 @@
 import { pascalCase } from 'change-case'
 
 import meta from 'client/meta'
-import { useComponentsPageStore } from 'client/store'
+import { useCorePageStore } from 'client/store'
 import { ComponentMeta } from 'client/definitions'
 import { CodeSnippet } from 'client/components'
 import { convertElemToString } from 'client/helpers'
@@ -66,7 +66,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
 }
 
 export const ComponentOverviewPage = () => {
-  const { itemKey } = useComponentsPageStore()
+  const { itemKey } = useCorePageStore()
 
   const itemKeyPascal = pascalCase(itemKey || '')
 

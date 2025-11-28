@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-export type ComponentsPageStore = {
+export type CorePageStore = {
   categoryKey: string
   setCategoryKey: (categoryKey: string) => void
   itemKey: string
@@ -9,7 +9,7 @@ export type ComponentsPageStore = {
   setSectionKey: (sectionKey: string) => void
 }
 
-export const useComponentsPageStore = create<ComponentsPageStore>(set => ({
+export const useCorePageStore = create<CorePageStore>(set => ({
   categoryKey: '',
   setCategoryKey: categoryKey => set(() => ({ categoryKey })),
   itemKey: '',

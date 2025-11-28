@@ -4,7 +4,7 @@ import { Routes, Route, Navigate, useLocation } from 'react-router'
 import {
   HomePage,
   FoundationsPage,
-  ComponentsPage,
+  CorePage,
   FaqPage,
   PricingPage,
   ComponentsBundlePage,
@@ -57,7 +57,7 @@ export const RootPage = () => {
       <Routes>
         <Route path={`/${PageKey.home}`} Component={HomePage} />
         <Route path={`/${PageKey.foundations}/*`} Component={FoundationsPage} />
-        <Route path={`/${PageKey.components}/*`} Component={ComponentsPage} />
+        <Route path={`/${PageKey.core}/*`} Component={CorePage} />
         <Route path={`/${PageKey.faq}/*`} Component={FaqPage} />
         <Route path={`/${PageKey.pricing}`} Component={PricingPage} />
         <Route path={`/${PageKey.pricingCore}`} element={<ComponentsBundlePage bundle="core" />} />
