@@ -55,8 +55,8 @@
     "release:pro": "yarn dist:pro && yarn pack:pro && yarn upload:pro"
   },
   "peerDependencies": {
-    "react": ">=19",
-    "react-dom": ">=19"
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "dependencies": {
     "@shikijs/core": "^3.12.0",
