@@ -11,6 +11,7 @@ services:
     environment:
       - NODE_ENV=$NODE_ENV
       - API_URL=$API_URL
+      - VITE_PLAUSIBLE_DOMAIN=$VITE_PLAUSIBLE_DOMAIN
     networks:
       - shared
 networks:

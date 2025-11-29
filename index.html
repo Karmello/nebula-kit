@@ -10,10 +10,22 @@
     <meta name="author" content="Kamil Noga" />
     <meta
       name="description"
-      content="NebulaKit is a UI library created with React, TypeScript, and CSS for building web applications."
+      content="React UI system built on composition - small, consistent parts combining into larger structures with clarity and control. Each component follows the same foundation, producing apps that stay predictable, stable and effortless to scale."
     />
     <link rel="icon" href="/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
+    <script type="module">
+      if (import.meta.env.PROD) {
+        const domain = import.meta.env.VITE_PLAUSIBLE_DOMAIN
+        if (domain) {
+          const s = document.createElement('script')
+          s.async = true
+          s.src = 'https://plausible.io/js/plausible.js'
+          s.dataset.domain = domain
+          document.head.appendChild(s)
+        }
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

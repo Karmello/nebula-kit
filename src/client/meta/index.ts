@@ -78,23 +78,4 @@ const META = {
   WithIcon: withIconMeta,
 } as Record<string, Record<string, ComponentMeta<object>>>
 
-// const removeExamples = (obj: object): any => {
-//   if (Array.isArray(obj)) {
-//     return obj.map(removeExamples)
-//   }
-
-//   if (obj && typeof obj === 'object') {
-//     const out = {} as any
-//     for (const [key, value] of Object.entries(obj)) {
-//       if (key === 'examples') continue
-//       out[key] = removeExamples(value)
-//     }
-//     return out
-//   }
-
-//   return obj
-// }
-
-// console.log(removeExamples(META))
-
 export default META
