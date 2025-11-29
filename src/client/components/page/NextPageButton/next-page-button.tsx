@@ -82,7 +82,7 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
           navigateTo(href)
         }}
       >
-        <Button iconName="arrow-right" iconPosition="right" color="amber" size="sm">
+        <Button iconName="arrow-right" iconPosition="right" intent="primary" color="amber" size="sm">
           Continue
         </Button>
       </Link>
