@@ -100,7 +100,7 @@ export default () => {
       <Table.Footer>
         <Table.Row>
           <Table.Cell colSpan={3} blockSize={40}>
-            <Text typography="secondary" color="gray">
+            <Text typography="caption" intent="secondary" color="gray">
               For actions not available here such as updating an email address or deleting an account please
               get in touch via email.
             </Text>
