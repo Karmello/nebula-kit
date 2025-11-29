@@ -1,4 +1,4 @@
-import { Box, Button, Flex, MarkerList, MarkerListItem, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, Flex, MarkerList, Section, Spacer, Text } from 'lib/components'
 import { BOX_INTENTS, BoxIntent } from 'lib/components/core/base/Box/definitions'
 
 const INTENTS_INFO_MAP: Record<BoxIntent, string> = {
@@ -73,10 +73,10 @@ export default () => {
         <Section heading="Intents">
           <MarkerList>
             {Object.keys(INTENTS_INFO_MAP).map(intent => (
-              <MarkerListItem key={intent}>
+              <MarkerList.Item key={intent}>
                 <Text bold>{intent}</Text>
                 <Text>&nbsp;- {INTENTS_INFO_MAP[intent as BoxIntent]}</Text>
-              </MarkerListItem>
+              </MarkerList.Item>
             ))}
           </MarkerList>
         </Section>
