@@ -27,7 +27,7 @@ export default () => {
           </Table.HeaderCell>
         </Table.HeaderRow>
       </Table.Header>
-      <Table.Body intent="tertiary" paddingBlock={10} paddingInline={15}>
+      <Table.Body intent="tertiary" paddingBlock={10} paddingInline={18}>
         <Table.Row>
           <Table.Cell colSpan={1}>
             <Text>Email</Text>
@@ -73,7 +73,7 @@ export default () => {
           <Table.Cell colSpan={2} blockSize={50}>
             {getUser.data ? (
               <Flex alignItems="center" gap={10}>
-                <Text tagAttrs={{ style: { wordBreak: 'break-all' } }} bold>
+                <Text tagAttrs={{ style: { wordBreak: 'break-all' } }} bold intent="primary" color="blue">
                   {getUser.data.user.licenseKey || '-'}
                 </Text>
                 {getUser.data.user.licenseKey ? (
@@ -94,6 +94,24 @@ export default () => {
             ) : (
               ''
             )}
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell colSpan={1}>
+            <Text>Discord connection status</Text>
+          </Table.Cell>
+          <Table.Cell colSpan={2} blockSize={50} paddingInline={15}>
+            {getUser.data ? (
+              <Text
+                iconName={!!getUser.data?.user.discordUserId ? 'check' : 'close'}
+                iconPosition="right"
+                color={!!getUser.data?.user.discordUserId ? 'green' : 'red'}
+                intent="primary"
+                bold
+              >
+                {!!getUser.data?.user.discordUserId ? 'Connected' : 'Not connected'}
+              </Text>
+            ) : null}
           </Table.Cell>
         </Table.Row>
       </Table.Body>

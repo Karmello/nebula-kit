@@ -11,21 +11,19 @@ export const ConfirmCancelSection = ({
   userPlan: string
   handleCancelSuccess: () => void
 }) => {
-  const enabled = userPlan !== 'free'
-
   return (
     <Section
       heading="Cancel paid subscription"
       variant="soft-outline"
-      intent={enabled ? 'primary' : 'tertiary'}
+      intent="primary"
       color="red"
       borderIntent="muted"
     >
-      <Text bold intent={enabled ? 'neutral' : 'tertiary'} color="gray">
+      <Text bold intent="neutral">
         What happens when you cancel
       </Text>
       <Spacer blockSize={15} />
-      <MarkerList intent={enabled ? 'neutral' : 'tertiary'} color="gray">
+      <MarkerList intent="neutral" color="gray">
         <MarkerList.Item>
           <Text>your license key is immediately revoked</Text>
         </MarkerList.Item>
@@ -40,7 +38,7 @@ export const ConfirmCancelSection = ({
         </MarkerList.Item>
       </MarkerList>
       <Spacer blockSize={15} />
-      <Text intent={enabled ? 'neutral' : 'tertiary'} color="gray">
+      <Text intent="neutral">
         If you change your mind later, you can start a new subscription at any time and a fresh license key
         will be issued automatically.
       </Text>

@@ -13,7 +13,7 @@ export const AppFooter = () => {
           Project
         </Text>
         <Spacer blockSize={10} />
-        <Text scale="compact">NebulaKit - v0.0.1</Text>
+        <Text scale="compact">NebulaKit v0.1.0</Text>
         <Spacer blockSize={10} />
         <Text scale="compact" italic>
           This website is built entirely with NebulaKit components.

@@ -1,6 +1,7 @@
 import { useGetUser } from 'client/api'
 import { Box, Loader, Section, Spacer } from 'lib/components'
 
+import { ConnectToDiscordSection } from './ConnectToDiscordSection/connect-to-discord-section'
 import { ConfirmCancelSection } from './ConfirmCancelSection/confirm-cancel-section'
 
 export const ProfileSettingsPage = () => {
@@ -15,13 +16,20 @@ export const ProfileSettingsPage = () => {
             <Loader centered size="lg" color="blue" />
           </Box>
         ) : (
-          <ConfirmCancelSection
-            userEmail={getUser.data.user.email}
-            userPlan={getUser.data.user.plan}
-            handleCancelSuccess={() => {
-              getUser.sendRequest()
-            }}
-          />
+          <>
+            <ConnectToDiscordSection
+              userPlan={getUser.data.user.plan}
+              discordUserId={getUser.data.user.discordUserId}
+            />
+            <Spacer blockSize={50} />
+            <ConfirmCancelSection
+              userEmail={getUser.data.user.email}
+              userPlan={getUser.data.user.plan}
+              handleCancelSuccess={() => {
+                getUser.sendRequest()
+              }}
+            />
+          </>
         )}
       </Section>
     </Box>

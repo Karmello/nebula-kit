@@ -1,5 +1,6 @@
 export * from './useCancelPaidPlan'
 export * from './useCheckoutPaidPlan'
+export * from './useConnectToDiscord'
 export * from './useGetPaymentDetailsUrl'
 export * from './useGetPaymentInfo'
 export * from './useGetUser'

@@ -1,9 +1,10 @@
 export type ApiUser = {
   _id: string
   email: string
-  createdAt: string
+  createdAt: number
   plan: string
   licenseKey: string
+  discordUserId: string
 }
 
 export type ApiSubscription = {
