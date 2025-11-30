@@ -26,7 +26,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
         <Link
           href="/foundations/overview/get-started/installation"
           onClick={() => {
-            navigateTo('/foundations/overview/get-started/installation')
+            navigateTo('/foundations/overview/getting-started/installation')
           }}
         >
           <Button size="sm" color={color} intent="primary">

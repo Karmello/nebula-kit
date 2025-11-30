@@ -1,7 +1,7 @@
 import { PageKey } from 'client/definitions'
 import { getCopyrightInfo } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'
-import { Footer, Link, MarkerList, Spacer, Text } from 'lib/components'
+import { Button, Footer, Link, MarkerList, Spacer, Text } from 'lib/components'
 
 export const AppFooter = () => {
   const navigateTo = useNavigateTo()
@@ -21,13 +21,19 @@ export const AppFooter = () => {
       </Footer.Section>
       <Footer.Section>
         <Text scale="compact" bold>
-          Contact
+          Support
         </Text>
         <Spacer blockSize={10} />
-        <Link href="mailto:app.nebula.kit@gmail.com">
+        <Link href="mailto:contact@nebulakit.dev" target="_blank">
           <Text scale="compact" color="blue" intent="primary">
-            app.nebula.kit@gmail.com
+            contact@nebulakit.dev
           </Text>
+        </Link>
+        <Spacer />
+        <Link href="https://discord.gg/HGE2gxYY" target="_blank">
+          <Button color="blue" intent="primary" size="sm" iconName="external-link" iconPosition="right">
+            Discord community
+          </Button>
         </Link>
       </Footer.Section>
       <Footer.Section>

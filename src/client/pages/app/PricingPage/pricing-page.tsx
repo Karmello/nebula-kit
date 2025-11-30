@@ -1,8 +1,21 @@
+import { ReactNode } from 'react'
 import { useNavigateTo } from 'client/hooks'
 import { useGetUser } from 'client/api'
-import { Box, Flex, Section, Spacer, Text, Link, Grid, MarkerList, Loader } from 'lib/components'
+import { Box, Flex, Section, Spacer, Text, Link, Grid, MarkerList, Loader, Icon } from 'lib/components'
 
 import { PricingPlanButton } from './components/PricingPlanButton'
+
+const OptionIncluded = ({ children }: { children: ReactNode }) => {
+  return (
+    <>
+      <Flex alignItems="center" columnGap={10}>
+        <Icon name="check" intent="primary" color="blue" />
+        {children}
+      </Flex>
+      <Spacer blockSize={5} />
+    </>
+  )
+}
 
 export const PricingPage = () => {
   const navigateTo = useNavigateTo()
@@ -16,7 +29,9 @@ export const PricingPage = () => {
         navigateTo('/pricing/core')
       }}
     >
-      <Text>Core bundle included</Text>
+      <Text color="blue" intent="primary">
+        CORE bundle
+      </Text>
     </Link>
   )
 
@@ -27,7 +42,9 @@ export const PricingPage = () => {
         navigateTo('/pricing/pro')
       }}
     >
-      <Text>Pro bundle included</Text>
+      <Text color="blue" intent="primary">
+        PRO bundle
+      </Text>
     </Link>
   )
 
@@ -57,9 +74,12 @@ export const PricingPage = () => {
                     projects, learning or exploring before committing.
                   </Text>
                   <Spacer />
-                  <MarkerList rowGap={7} intent="neutral">
-                    <MarkerList.Item>{coreBundleLink}</MarkerList.Item>
-                  </MarkerList>
+                  <Text bold>What you get</Text>
+                  <Spacer blockSize={10} />
+                  <OptionIncluded>{coreBundleLink}</OptionIncluded>
+                  <OptionIncluded>
+                    <Text>community access</Text>
+                  </OptionIncluded>
                   <Spacer blockSize={40} />
                   <Flex justifyContent="center">
                     <PricingPlanButton plan="free" activePlan={getUser.data?.user.plan} />
@@ -85,13 +105,16 @@ export const PricingPage = () => {
                     individual developers and freelancers who want complete access to every building block.
                   </Text>
                   <Spacer />
-                  <MarkerList rowGap={7} intent="neutral">
-                    <MarkerList.Item>{coreBundleLink}</MarkerList.Item>
-                    <MarkerList.Item>{proBundleLink}</MarkerList.Item>
-                    <MarkerList.Item>
-                      <Text>Direct support available</Text>
-                    </MarkerList.Item>
-                  </MarkerList>
+                  <Text bold>What you get</Text>
+                  <Spacer blockSize={10} />
+                  <OptionIncluded>{coreBundleLink}</OptionIncluded>
+                  <OptionIncluded>{proBundleLink}</OptionIncluded>
+                  <OptionIncluded>
+                    <Text>community access</Text>
+                  </OptionIncluded>
+                  <OptionIncluded>
+                    <Text>community support with priority responses</Text>
+                  </OptionIncluded>
                   <Spacer blockSize={40} />
                   <Flex justifyContent="center">
                     <PricingPlanButton plan="premium" activePlan={getUser.data?.user.plan} color="green" />
@@ -117,13 +140,16 @@ export const PricingPage = () => {
                     Premium plan.
                   </Text>
                   <Spacer />
-                  <MarkerList rowGap={7} intent="neutral">
-                    <MarkerList.Item>{coreBundleLink}</MarkerList.Item>
-                    <MarkerList.Item>{proBundleLink}</MarkerList.Item>
-                    <MarkerList.Item>
-                      <Text>Higher priority support available</Text>
-                    </MarkerList.Item>
-                  </MarkerList>
+                  <Text bold>What you get</Text>
+                  <Spacer blockSize={10} />
+                  <OptionIncluded>{coreBundleLink}</OptionIncluded>
+                  <OptionIncluded>{proBundleLink}</OptionIncluded>
+                  <OptionIncluded>
+                    <Text>community access</Text>
+                  </OptionIncluded>
+                  <OptionIncluded>
+                    <Text>community support with faster priority responses</Text>
+                  </OptionIncluded>
                   <Spacer blockSize={40} />
                   <Flex justifyContent="center">
                     <PricingPlanButton plan="business" activePlan={getUser.data?.user.plan} color="blue" />
@@ -149,16 +175,19 @@ export const PricingPage = () => {
                     Includes everything from the Business plan.
                   </Text>
                   <Spacer />
-                  <MarkerList rowGap={7} intent="neutral">
-                    <MarkerList.Item>{coreBundleLink}</MarkerList.Item>
-                    <MarkerList.Item>{proBundleLink}</MarkerList.Item>
-                    <MarkerList.Item>
-                      <Text>Top-priority support available</Text>
-                    </MarkerList.Item>
-                    <MarkerList.Item>
-                      <Text>Feature influence on the library's development</Text>
-                    </MarkerList.Item>
-                  </MarkerList>
+                  <Text bold>What you get</Text>
+                  <Spacer blockSize={10} />
+                  <OptionIncluded>{coreBundleLink}</OptionIncluded>
+                  <OptionIncluded>{proBundleLink}</OptionIncluded>
+                  <OptionIncluded>
+                    <Text>community access</Text>
+                  </OptionIncluded>
+                  <OptionIncluded>
+                    <Text>community support with highest priority responses</Text>
+                  </OptionIncluded>
+                  <OptionIncluded>
+                    <Text>roadmap input with elevated consideration</Text>
+                  </OptionIncluded>
                   <Spacer blockSize={40} />
                   <Flex justifyContent="center">
                     <PricingPlanButton plan="enterprise" activePlan={getUser.data?.user.plan} color="red" />
@@ -166,8 +195,16 @@ export const PricingPage = () => {
                   <Spacer blockSize={12} />
                 </Section>
               </Grid>
-              <Spacer />
-              <Text italic>* All prices in USD</Text>
+              <Spacer blockSize={50} />
+              <Flex flexDirection="column" rowGap={5}>
+                <Text italic>
+                  * NebulaKit uses a single-license model, one paid subscription = one shared license key for
+                  unlocking the PRO bundle
+                </Text>
+                <Text italic>* community access is open to everyone</Text>
+                <Text italic>* priority support applies to the paying account holder only</Text>
+                <Text italic>* all prices in USD</Text>
+              </Flex>
             </>
           )}
         </Box>
