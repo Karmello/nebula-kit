@@ -12,14 +12,12 @@ export const ConfirmCancelSection = ({
   handleCancelSuccess: () => void
 }) => {
   return (
-    <Section
-      heading="Cancel paid subscription"
-      variant="soft-outline"
-      intent="primary"
-      color="red"
-      borderIntent="muted"
-    >
+    <Section heading="Subscription" variant="soft-outline" intent="primary" color="red" borderIntent="muted">
+      <Text intent="neutral">
+        This section allows you to cancel your active subscription and return to the free plan.
+      </Text>
       <Text bold intent="neutral">
+        <Spacer blockSize={30} />
         What happens when you cancel
       </Text>
       <Spacer blockSize={15} />

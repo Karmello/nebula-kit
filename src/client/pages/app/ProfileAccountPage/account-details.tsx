@@ -100,16 +100,26 @@ export default () => {
           <Table.Cell colSpan={1}>
             <Text>Discord connection status</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize={50} paddingInline={15}>
+          <Table.Cell colSpan={2} blockSize={50} paddingInline={getUser.data?.user.plan !== 'free' ? 15 : 0}>
             {getUser.data ? (
               <Text
-                iconName={!!getUser.data?.user.discordUserId ? 'check' : 'close'}
+                iconName={
+                  getUser.data.user.plan !== 'free'
+                    ? !!getUser.data?.user.discordUserId
+                      ? 'check'
+                      : 'close'
+                    : undefined
+                }
                 iconPosition="right"
                 color={!!getUser.data?.user.discordUserId ? 'green' : 'red'}
                 intent="primary"
                 bold
               >
-                {!!getUser.data?.user.discordUserId ? 'Connected' : 'Not connected'}
+                {getUser.data.user.plan !== 'free'
+                  ? !!getUser.data?.user.discordUserId
+                    ? 'Connected'
+                    : 'Not connected'
+                  : '-'}
               </Text>
             ) : null}
           </Table.Cell>

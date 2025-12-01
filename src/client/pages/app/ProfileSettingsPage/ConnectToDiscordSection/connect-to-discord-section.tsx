@@ -12,7 +12,7 @@ export const ConnectToDiscordSection = ({
   const connectToDiscord = useConnectToDiscord()
 
   return (
-    <Section heading="Connect to Discord" variant="soft-outline" borderIntent="muted">
+    <Section heading="Discord" variant="soft-outline" borderIntent="muted">
       <Text>
         Connect your Discord account to receive your NebulaKit role and priority badge in the community. This
         helps other members identify your plan and ensures your messages get priority attention.

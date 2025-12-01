@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import { Routes, Route, Navigate, useLocation } from 'react-router'
 
 import {
@@ -11,6 +11,7 @@ import {
   ComponentsBundlePage,
   LoginPage,
   RegisterPage,
+  RecoveryPage,
   ProfileAccountPage,
   ProfileSettingsPage,
 } from 'client/pages'
@@ -28,7 +29,7 @@ export const RootPage = () => {
 
   const prevToken = useRef(token)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (prevToken.current !== token) {
       prevToken.current = token
       if (!token) {
@@ -63,6 +64,7 @@ export const RootPage = () => {
         <Route path={PageKey.pricingPro} element={<ComponentsBundlePage bundle="pro" />} />
         <Route path={PageKey.authLogin} Component={LoginPage} />
         <Route path={PageKey.authRegister} Component={RegisterPage} />
+        <Route path={PageKey.authRecovery} Component={RecoveryPage} />
         <Route path={PageKey.profileAccount} Component={ProfileAccountPage} />
         <Route path={PageKey.profileSettings} Component={ProfileSettingsPage} />
         <Route

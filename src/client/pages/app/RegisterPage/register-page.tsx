@@ -81,7 +81,7 @@ export const RegisterPage = () => {
           </Form>
           <Spacer blockSize={40} />
           <Divider />
-          <Spacer blockSize={7} />
+          <Spacer blockSize={15} />
           <Flex justifyContent="center">
             <Link
               href={PageKey.authLogin}
@@ -90,7 +90,7 @@ export const RegisterPage = () => {
               }}
             >
               <Button variant="ghost" color="blue" intent="primary">
-                Already have an account? Log in.
+                Already have an account ? Log in.
               </Button>
             </Link>
           </Flex>

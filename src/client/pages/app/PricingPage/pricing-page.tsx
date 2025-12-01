@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { useNavigateTo } from 'client/hooks'
 import { useGetUser } from 'client/api'
-import { Box, Flex, Section, Spacer, Text, Link, Grid, MarkerList, Loader, Icon } from 'lib/components'
+import { Box, Flex, Section, Spacer, Text, Link, Grid, Loader, Icon } from 'lib/components'
 
 import { PricingPlanButton } from './components/PricingPlanButton'
 

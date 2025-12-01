@@ -5,6 +5,7 @@ import { PageKey } from 'client/definitions'
 import { useGetUser } from 'client/api'
 import { Box, Loader, Section, Spacer, useSnackbar } from 'lib/components'
 
+import { UpdatePasswordSection } from './UpdatePasswordSection'
 import { UpdateEmailSection } from './UpdateEmailSection'
 import { ConnectToDiscordSection } from './ConnectToDiscordSection'
 import { ConfirmCancelSection } from './ConfirmCancelSection'
@@ -33,12 +34,14 @@ export const ProfileSettingsPage = () => {
           </Box>
         ) : (
           <>
+            <UpdatePasswordSection />
+            <Spacer blockSize={50} />
+            <UpdateEmailSection />
+            <Spacer blockSize={50} />
             <ConnectToDiscordSection
               userPlan={getUser.data.user.plan}
               discordUserId={getUser.data.user.discordUserId}
             />
-            <Spacer blockSize={50} />
-            <UpdateEmailSection />
             <Spacer blockSize={50} />
             <ConfirmCancelSection
               userEmail={getUser.data.user.email}

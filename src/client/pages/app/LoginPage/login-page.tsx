@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useLayoutEffect, useState } from 'react'
 import { useLocation } from 'react-router'
 
 import { UseMakeApiRequestRes, useNavigateTo } from 'client/hooks'
@@ -22,7 +22,7 @@ export const LoginPage = () => {
 
   const loginUser = useLoginUser()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const params = new URLSearchParams(search)
     if (params.get('email_verified') === 'true') {
       show({ status: 'success', content: 'Email verified ! You can log in now.' })
@@ -90,7 +90,7 @@ export const LoginPage = () => {
           </Form>
           <Spacer blockSize={40} />
           <Divider />
-          <Spacer blockSize={7} />
+          <Spacer blockSize={15} />
           <Flex justifyContent="center">
             <Link
               href={PageKey.authRegister}
@@ -99,7 +99,19 @@ export const LoginPage = () => {
               }}
             >
               <Button variant="ghost" color="blue" intent="primary">
-                Don't have an account? Sign up.
+                Don't have an account ? Sign up.
+              </Button>
+            </Link>
+          </Flex>
+          <Flex justifyContent="center">
+            <Link
+              href={PageKey.authRecovery}
+              onClick={() => {
+                navigateTo(PageKey.authRecovery)
+              }}
+            >
+              <Button variant="ghost" color="blue" intent="primary">
+                Forgot your password ? Click here.
               </Button>
             </Link>
           </Flex>
