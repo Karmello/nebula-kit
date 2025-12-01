@@ -1,11 +1,26 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router'
+
+import { PageKey } from 'client/definitions'
 import { useGetUser } from 'client/api'
-import { Box, Loader, Section, Spacer } from 'lib/components'
+import { Box, Loader, Section, Spacer, useSnackbar } from 'lib/components'
 
 import { ConnectToDiscordSection } from './ConnectToDiscordSection/connect-to-discord-section'
 import { ConfirmCancelSection } from './ConfirmCancelSection/confirm-cancel-section'
 
 export const ProfileSettingsPage = () => {
+  const { search } = useLocation()
+
+  const { show } = useSnackbar()
   const getUser = useGetUser()
+
+  useEffect(() => {
+    const params = new URLSearchParams(search)
+    if (params.get('discord') === 'connected') {
+      show({ status: 'success', content: 'You successfully connected your Discord account.' })
+      window.history.replaceState({}, '', `/${PageKey.profileSettings}`)
+    }
+  }, [search])
 
   return (
     <Box padding={{ base: 20, lg: 50 }} maxInlineSize="75rem">

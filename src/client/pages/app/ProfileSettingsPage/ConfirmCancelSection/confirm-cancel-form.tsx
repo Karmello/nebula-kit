@@ -50,7 +50,7 @@ export const ConfirmCancelForm = ({
                 },
               }}
               size="sm"
-              intent="primary"
+              intent="tertiary"
               color="red"
               disabled={!cancelSectionEnabled || enableInput}
             >
