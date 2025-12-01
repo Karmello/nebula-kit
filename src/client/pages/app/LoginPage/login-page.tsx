@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
 
-import { useNavigateTo } from 'client/hooks'
+import { UseMakeApiRequestRes, useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
 import { PageKey } from 'client/definitions'
 import { useLoginUser } from 'client/api'
@@ -24,8 +24,12 @@ export const LoginPage = () => {
 
   useEffect(() => {
     const params = new URLSearchParams(search)
-    if (params.get('verified') === 'true') {
+    if (params.get('email_verified') === 'true') {
       show({ status: 'success', content: 'Email verified ! You can log in now.' })
+      window.history.replaceState({}, '', `/${PageKey.authLogin}`)
+    } else if (params.get('new_email_verified') === 'true') {
+      setToken('')
+      show({ status: 'info', content: 'Log in using your new email to finalize the update.' })
       window.history.replaceState({}, '', `/${PageKey.authLogin}`)
     }
   }, [search])
@@ -35,13 +39,13 @@ export const LoginPage = () => {
   }, [])
 
   const onResponse = useCallback(
-    async (res: { data: typeof loginUser.data; error: typeof loginUser.error }) => {
+    async (res: UseMakeApiRequestRes<typeof loginUser.data, typeof loginUser.error>) => {
       if (res.data) {
         setToken(res.data.token)
         setUser(res.data.user)
         navigateTo(res.data.user.plan === 'free' ? `/${PageKey.pricing}` : `/${PageKey.profileAccount}`)
       } else if (res.error) {
-        show({ status: 'warning', content: res.error.message })
+        show({ status: res.code === 500 ? 'error' : 'warning', content: res.error.message })
       }
     },
     []

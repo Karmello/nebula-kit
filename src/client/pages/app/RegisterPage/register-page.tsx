@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 
-import { useNavigateTo } from 'client/hooks'
+import { UseMakeApiRequestRes, useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
 import { useRegisterUser } from 'client/api'
 import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnackbar } from 'lib/components'
@@ -23,7 +23,10 @@ export const RegisterPage = () => {
   }, [])
 
   const onResponse = useCallback(
-    async (res: { data: typeof registerUser.data; error: typeof registerUser.error }, formContext: any) => {
+    async (
+      res: UseMakeApiRequestRes<typeof registerUser.data, typeof registerUser.error>,
+      formContext: any
+    ) => {
       if (res.data) {
         show({ status: 'info', content: res.data.message })
       } else if (res.error) {
@@ -32,7 +35,7 @@ export const RegisterPage = () => {
             formContext.setError(fieldName, { message })
           }
         } else if (res.error.message) {
-          show({ status: 'warning', content: res.error.message })
+          show({ status: res.code === 500 ? 'error' : 'warning', content: res.error.message })
         }
       }
     },

@@ -8,7 +8,7 @@ const Node = () => (
   <BrowserRouter>
     <HydrationGate>
       <NebkitProvider>
-        <Snackbar closeOnOutsideClick>
+        <Snackbar closeOnOutsideClick autoCloseDelay={10000}>
           <App />
         </Snackbar>
       </NebkitProvider>

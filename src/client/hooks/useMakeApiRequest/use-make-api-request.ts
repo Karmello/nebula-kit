@@ -10,6 +10,13 @@ type Args = {
   minLoadingTime?: number
 }
 
+export type UseMakeApiRequestRes<TData, TError> = {
+  ok: boolean
+  data: TData
+  error: TError
+  code: number
+}
+
 export const useMakeApiRequest = <TData, TError>({
   path,
   method = 'GET',
@@ -19,13 +26,15 @@ export const useMakeApiRequest = <TData, TError>({
 }: Args) => {
   const [data, setData] = useState<TData>(null)
   const [error, setError] = useState<TError>(null)
+  const [code, setCode] = useState<number>(null)
   const [isMakingRequest, setIsMakingRequest] = useState<boolean>(false)
 
   const { token } = useAppStore()
 
-  const sendRequest = async (body?: object): Promise<{ data: TData; error: TError }> => {
+  const sendRequest = async (body?: object): Promise<UseMakeApiRequestRes<TData, TError>> => {
     setData(null)
     setError(null)
+    setCode(null)
     setIsMakingRequest(true)
 
     const start = Date.now()
@@ -47,15 +56,16 @@ export const useMakeApiRequest = <TData, TError>({
     }
 
     const json = await res.json()
+    setCode(res.status)
 
     if (res.ok) {
       setData(json)
       setIsMakingRequest(false)
-      return { data: json, error: null }
+      return { ok: res.ok, data: json, error: null, code: res.status }
     } else {
       setError(json)
       setIsMakingRequest(false)
-      return { data: null, error: json }
+      return { ok: res.ok, data: null, error: json, code: res.status }
     }
   }
 
@@ -65,5 +75,5 @@ export const useMakeApiRequest = <TData, TError>({
     }
   }, [enabled])
 
-  return { data, error, isMakingRequest, sendRequest }
+  return { data, error, code, isMakingRequest, sendRequest }
 }

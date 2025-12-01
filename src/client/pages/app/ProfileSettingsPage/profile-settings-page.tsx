@@ -5,8 +5,9 @@ import { PageKey } from 'client/definitions'
 import { useGetUser } from 'client/api'
 import { Box, Loader, Section, Spacer, useSnackbar } from 'lib/components'
 
-import { ConnectToDiscordSection } from './ConnectToDiscordSection/connect-to-discord-section'
-import { ConfirmCancelSection } from './ConfirmCancelSection/confirm-cancel-section'
+import { UpdateEmailSection } from './UpdateEmailSection'
+import { ConnectToDiscordSection } from './ConnectToDiscordSection'
+import { ConfirmCancelSection } from './ConfirmCancelSection'
 
 export const ProfileSettingsPage = () => {
   const { search } = useLocation()
@@ -36,6 +37,8 @@ export const ProfileSettingsPage = () => {
               userPlan={getUser.data.user.plan}
               discordUserId={getUser.data.user.discordUserId}
             />
+            <Spacer blockSize={50} />
+            <UpdateEmailSection />
             <Spacer blockSize={50} />
             <ConfirmCancelSection
               userEmail={getUser.data.user.email}
