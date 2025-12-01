@@ -12,7 +12,7 @@ export const UserActionMenu = () => {
   const navigateTo = useNavigateTo()
 
   const splitted = pathname.split('/')
-  const currentPageKey = `${splitted[1]}/${splitted[2]}`
+  const currentPageKey = `/${splitted[1]}/${splitted[2]}`
 
   return (
     <Select
@@ -26,7 +26,7 @@ export const UserActionMenu = () => {
         if (value === 'logout') {
           setToken('')
         } else {
-          navigateTo(`/${value}`)
+          navigateTo(value)
         }
       }}
     >

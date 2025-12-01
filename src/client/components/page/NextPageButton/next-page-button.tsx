@@ -12,7 +12,7 @@ import { useNavigateTo } from 'client/hooks'
 import { Flex, Button, Link } from 'lib/components'
 
 export type NextPageButtonProps = {
-  pageKey: Extract<keyof typeof PageKey, 'foundations' | 'core' | 'pro'>
+  pageKey: PageKey.foundations | PageKey.core | PageKey.pro
 }
 
 type Section = { categoryKey: string; itemKey: string; sectionKey: string }
@@ -72,7 +72,7 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
   }
 
   const { categoryKey, itemKey, sectionKey } = sections[nextSectionIndex]
-  const href = `/${pageKey}/${categoryKey}/${itemKey}/${sectionKey}`
+  const href = `${pageKey}/${categoryKey}/${itemKey}/${sectionKey}`
 
   return (
     <Flex justifyContent={{ base: 'center', lg: 'flex-start' }}>

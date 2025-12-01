@@ -33,22 +33,19 @@ export const RootPage = () => {
       prevToken.current = token
       if (!token) {
         setUser(null)
-        navigateTo(`/${PageKey.authLogin}`)
+        navigateTo(PageKey.authLogin)
       }
     }
   }, [token])
 
   useLayoutEffect(() => {
     if (token) {
-      if (pathname.startsWith(`/${PageKey.authLogin}`) || pathname.startsWith(`/${PageKey.authRegister}`)) {
-        navigateTo(`/${PageKey.profileAccount}`, { replace: true })
+      if (pathname.startsWith(PageKey.authLogin) || pathname.startsWith(PageKey.authRegister)) {
+        navigateTo(PageKey.profileAccount, { replace: true })
       }
     } else {
-      if (
-        pathname.startsWith(`/${PageKey.profileAccount}`) ||
-        pathname.startsWith(`/${PageKey.profileSettings}`)
-      ) {
-        navigateTo(`/${PageKey.authLogin}`, { replace: true })
+      if (pathname.startsWith(PageKey.profileAccount) || pathname.startsWith(PageKey.profileSettings)) {
+        navigateTo(PageKey.authLogin, { replace: true })
       }
     }
   }, [pathname])
@@ -56,23 +53,23 @@ export const RootPage = () => {
   return (
     <div className={styles.RootPage}>
       <Routes>
-        <Route path={`/${PageKey.home}`} Component={HomePage} />
-        <Route path={`/${PageKey.foundations}/*`} Component={FoundationsPage} />
-        <Route path={`/${PageKey.core}/*`} Component={CorePage} />
-        <Route path={`/${PageKey.pro}/*`} Component={ProPage} />
-        <Route path={`/${PageKey.faq}/*`} Component={FaqPage} />
-        <Route path={`/${PageKey.pricing}`} Component={PricingPage} />
-        <Route path={`/${PageKey.pricingCore}`} element={<ComponentsBundlePage bundle="core" />} />
-        <Route path={`/${PageKey.pricingPro}`} element={<ComponentsBundlePage bundle="pro" />} />
-        <Route path={`/${PageKey.authLogin}`} Component={LoginPage} />
-        <Route path={`/${PageKey.authRegister}`} Component={RegisterPage} />
-        <Route path={`/${PageKey.profileAccount}`} Component={ProfileAccountPage} />
-        <Route path={`/${PageKey.profileSettings}`} Component={ProfileSettingsPage} />
+        <Route path={PageKey.home} Component={HomePage} />
+        <Route path={`${PageKey.foundations}/*`} Component={FoundationsPage} />
+        <Route path={`${PageKey.core}/*`} Component={CorePage} />
+        <Route path={`${PageKey.pro}/*`} Component={ProPage} />
+        <Route path={`${PageKey.faq}/*`} Component={FaqPage} />
+        <Route path={PageKey.pricing} Component={PricingPage} />
+        <Route path={PageKey.pricingCore} element={<ComponentsBundlePage bundle="core" />} />
+        <Route path={PageKey.pricingPro} element={<ComponentsBundlePage bundle="pro" />} />
+        <Route path={PageKey.authLogin} Component={LoginPage} />
+        <Route path={PageKey.authRegister} Component={RegisterPage} />
+        <Route path={PageKey.profileAccount} Component={ProfileAccountPage} />
+        <Route path={PageKey.profileSettings} Component={ProfileSettingsPage} />
         <Route
           path="*"
           Component={() => {
             if (typeof window === 'undefined') return null
-            return <Navigate to={{ pathname: `/${PageKey.home}` }} replace />
+            return <Navigate to={{ pathname: PageKey.home }} replace />
           }}
         />
       </Routes>

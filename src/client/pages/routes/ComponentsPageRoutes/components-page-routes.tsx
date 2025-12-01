@@ -10,7 +10,7 @@ const PageResolver = ({
   pageKey,
   sectionKey,
 }: {
-  pageKey: Extract<keyof typeof PageKey, 'core' | 'pro'>
+  pageKey: PageKey.core | PageKey.pro
   sectionKey: string
 }) => {
   switch (sectionKey) {
@@ -25,12 +25,8 @@ const PageResolver = ({
   }
 }
 
-export const ComponentsPageRoutes = ({
-  pageKey,
-}: {
-  pageKey: Extract<keyof typeof PageKey, 'core' | 'pro'>
-}) => {
-  const CATEGORIES = pageKey === 'core' ? CORE_PAGE_CATEGORIES : PRO_PAGE_CATEGORIES
+export const ComponentsPageRoutes = ({ pageKey }: { pageKey: PageKey.core | PageKey.pro }) => {
+  const CATEGORIES = pageKey === PageKey.core ? CORE_PAGE_CATEGORIES : PRO_PAGE_CATEGORIES
 
   const ROUTES = useMemo(() => {
     return CATEGORIES.map(({ key: categoryKey, items }) =>
@@ -65,7 +61,7 @@ export const ComponentsPageRoutes = ({
             return (
               <Navigate
                 to={{
-                  pathname: `/${pageKey}/${CATEGORIES[0].key}/${CATEGORIES[0].items[0].key}/${CATEGORIES[0].items[0].sections[0].key}`,
+                  pathname: `${pageKey}/${CATEGORIES[0].key}/${CATEGORIES[0].items[0].key}/${CATEGORIES[0].items[0].sections[0].key}`,
                 }}
                 replace
               />

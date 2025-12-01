@@ -33,7 +33,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
           ) : (
             <Text>Comes with the paid plans.</Text>
           )}
-          <Link href={`/${PageKey.pricing}`} onClick={() => navigateTo(`/${PageKey.pricing}`)}>
+          <Link href={PageKey.pricing} onClick={() => navigateTo(PageKey.pricing)}>
             <Button size="sm" variant="ghost" intent="primary" color="blue" iconName="arrow-left">
               Back to Pricing page
             </Button>
@@ -66,9 +66,9 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
         <Spacer blockSize={50} />
         <Flex justifyContent="center">
           <Link
-            href={bundle === 'core' ? '/pricing/pro' : '/pricing/core'}
+            href={bundle === 'core' ? PageKey.pricingPro : PageKey.pricingCore}
             onClick={() => {
-              navigateTo(bundle === 'core' ? '/pricing/pro' : '/pricing/core')
+              navigateTo(bundle === 'core' ? PageKey.pricingPro : PageKey.pricingCore)
             }}
           >
             <Button size="sm" color="amber" iconName="package">

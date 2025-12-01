@@ -8,7 +8,7 @@ import { PageKey } from 'client/definitions'
 import { Box, Breadcrumb, SideNav, Spacer, SplitView, Text, Divider, Flex } from 'lib/components'
 
 type Props = {
-  pageKey: Extract<keyof typeof PageKey, 'foundations' | 'core' | 'pro'>
+  pageKey: PageKey.foundations | PageKey.core | PageKey.pro
   data: {
     key: string
     label: string
@@ -50,7 +50,7 @@ export const CatalogPageTemplate = ({
                     justifyContent="flex-start"
                   >
                     {items.map(({ key: itemKey, label, sections }) => {
-                      const href = `/${pageKey}/${categoryKey}/${itemKey}/${sections[0].key}`
+                      const href = `${pageKey}/${categoryKey}/${itemKey}/${sections[0].key}`
                       const isItemSelected = isCategorySelected && itemKey === activeItemObj?.key
                       return (
                         <SideNav.Item
@@ -99,7 +99,7 @@ export const CatalogPageTemplate = ({
                         .find(c => c.key === activeCategoryObj?.key)
                         ?.items.find(i => i.key === activeItemObj?.key)
                         ?.sections.map(({ key: sectionKey, label }) => {
-                          const href = `/${pageKey}/${activeCategoryObj?.key}/${activeItemObj?.key}/${sectionKey}`
+                          const href = `${pageKey}/${activeCategoryObj?.key}/${activeItemObj?.key}/${sectionKey}`
                           const isItemSelected = pathname === href
                           return (
                             <SideNav.Item
@@ -126,9 +126,11 @@ export const CatalogPageTemplate = ({
                     <SplitView.MainBar>
                       <Flex gap={15} alignItems="center">
                         <Text typography="h3">
-                          {pageKey === PageKey.foundations ? activeSectionObj?.label : activeItemObj?.label}
+                          {pageKey === PageKey.foundations.toString()
+                            ? activeSectionObj?.label
+                            : activeItemObj?.label}
                         </Text>
-                        {pageKey !== PageKey.foundations && bundleLabel ? (
+                        {pageKey !== PageKey.foundations.toString() && bundleLabel ? (
                           <Box
                             variant="solid"
                             color="blue"
@@ -143,10 +145,10 @@ export const CatalogPageTemplate = ({
                       </Flex>
                       <Divider />
                     </SplitView.MainBar>
-                    {pageKey === PageKey.foundations ? (
+                    {pageKey === PageKey.foundations.toString() ? (
                       <FoundationsPageRoutes />
                     ) : (
-                      <ComponentsPageRoutes pageKey={pageKey} />
+                      <ComponentsPageRoutes pageKey={pageKey as never} />
                     )}
                   </SplitView.Main>
                 </>

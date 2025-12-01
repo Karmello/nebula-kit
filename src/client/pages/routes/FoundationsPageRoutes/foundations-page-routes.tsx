@@ -27,7 +27,7 @@ export const FoundationsPageRoutes = () => {
               <>
                 <Component />
                 <Spacer blockSize={60} />
-                <NextPageButton pageKey="foundations" />
+                <NextPageButton pageKey={PageKey.foundations} />
               </>
             )
           }
@@ -56,7 +56,7 @@ export const FoundationsPageRoutes = () => {
             return (
               <Navigate
                 to={{
-                  pathname: `/${PageKey.foundations}/${FOUNDATIONS_CATEGORIES[0].key}/${FOUNDATIONS_CATEGORIES[0].items[0].key}/${FOUNDATIONS_CATEGORIES[0].items[0].sections[0].key}`,
+                  pathname: `${PageKey.foundations}/${FOUNDATIONS_CATEGORIES[0].key}/${FOUNDATIONS_CATEGORIES[0].items[0].key}/${FOUNDATIONS_CATEGORIES[0].items[0].sections[0].key}`,
                 }}
                 replace
               />

@@ -84,9 +84,9 @@ export const RegisterPage = () => {
           <Spacer blockSize={7} />
           <Flex justifyContent="center">
             <Link
-              href={`/${PageKey.authLogin}`}
+              href={PageKey.authLogin}
               onClick={() => {
-                navigateTo(`/${PageKey.authLogin}`)
+                navigateTo(PageKey.authLogin)
               }}
             >
               <Button variant="ghost" color="blue" intent="primary">

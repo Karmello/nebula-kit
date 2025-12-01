@@ -19,7 +19,7 @@ export const ProfileSettingsPage = () => {
     const params = new URLSearchParams(search)
     if (params.get('discord') === 'connected') {
       show({ status: 'success', content: 'You successfully connected your Discord account.' })
-      window.history.replaceState({}, '', `/${PageKey.profileSettings}`)
+      window.history.replaceState({}, '', PageKey.profileSettings)
     }
   }, [search])
 

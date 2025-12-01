@@ -17,7 +17,7 @@ export const ProfileAccountPage = () => {
     const params = new URLSearchParams(search)
     if (params.get('checkout') === 'success') {
       show({ status: 'success', content: 'All done ! You are on a new subscription plan.' })
-      window.history.replaceState({}, '', `/${PageKey.profileAccount}`)
+      window.history.replaceState({}, '', PageKey.profileAccount)
     }
   }, [search])
 

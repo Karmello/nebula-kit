@@ -65,15 +65,13 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   )
 }
 
-export const ComponentOverviewPage = ({
-  pageKey,
-}: {
-  pageKey: Extract<keyof typeof PageKey, 'core' | 'pro'>
-}) => {
+export const ComponentOverviewPage = ({ pageKey }: { pageKey: PageKey.core | PageKey.pro }) => {
   const corePageStore = useCorePageStore()
   const proPageStore = useProPageStore()
 
-  const itemKeyPascal = pascalCase((pageKey === 'core' ? corePageStore.itemKey : proPageStore.itemKey) || '')
+  const itemKeyPascal = pascalCase(
+    (pageKey === PageKey.core ? corePageStore.itemKey : proPageStore.itemKey) || ''
+  )
 
   if (!meta[itemKeyPascal]) return null
 

@@ -53,9 +53,9 @@ export default () => {
               <Text bold>{getUser.data ? sentenceCase(getUser.data.user.plan) : ''}</Text>
               {!getUser.isMakingRequest ? (
                 <Link
-                  href={`/${PageKey.pricing}`}
+                  href={PageKey.pricing}
                   onClick={() => {
-                    navigateTo(`/${PageKey.pricing}`)
+                    navigateTo(PageKey.pricing)
                   }}
                 >
                   <Button size="xs" variant="outline" intent="secondary" color="blue">

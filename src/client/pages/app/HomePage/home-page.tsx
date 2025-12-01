@@ -30,9 +30,9 @@ export const HomePage = () => {
           <Spacer blockSize={30} />
           <Flex gap={10} flexWrap="wrap">
             <Link
-              href={`/${PageKey.foundations}`}
+              href={PageKey.foundations}
               onClick={() => {
-                navigateTo(`/${PageKey.foundations}`)
+                navigateTo(PageKey.foundations)
               }}
             >
               <Button color="purple" intent="primary" iconName="arrow-right" iconPosition="right" size="sm">
@@ -40,9 +40,9 @@ export const HomePage = () => {
               </Button>
             </Link>
             <Link
-              href={`/${PageKey.core}`}
+              href={PageKey.core}
               onClick={() => {
-                navigateTo(`/${PageKey.core}`)
+                navigateTo(PageKey.core)
               }}
             >
               <Button

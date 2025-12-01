@@ -19,17 +19,17 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
   const corePageStore = useCorePageStore()
   const proPageStore = useProPageStore()
 
-  const currentPageKey = pathname.split('/')[1]
+  const currentPageKey = `/${pathname.split('/')[1]}`
 
   return (
     <Segment flexDirection={{ base: 'column', md: 'row' }}>
       <Segment.Item>
         <Link
-          href={`/${PageKey.foundations}`}
+          href={PageKey.foundations}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
             navigateTo(
-              `/${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${foundationsPageStore.sectionKey}`
+              `${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${foundationsPageStore.sectionKey}`
             )
           }}
         >
@@ -44,11 +44,11 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
       </Segment.Item>
       <Segment.Item>
         <Link
-          href={`/${PageKey.core}`}
+          href={PageKey.core}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
             navigateTo(
-              `/${PageKey.core}/${corePageStore.categoryKey}/${corePageStore.itemKey}/${corePageStore.sectionKey}`
+              `${PageKey.core}/${corePageStore.categoryKey}/${corePageStore.itemKey}/${corePageStore.sectionKey}`
             )
           }}
         >
@@ -63,11 +63,11 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
       </Segment.Item>
       <Segment.Item>
         <Link
-          href={`/${PageKey.pro}`}
+          href={PageKey.pro}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
             navigateTo(
-              `/${PageKey.pro}/${proPageStore.categoryKey}/${proPageStore.itemKey}/${proPageStore.sectionKey}`
+              `${PageKey.pro}/${proPageStore.categoryKey}/${proPageStore.itemKey}/${proPageStore.sectionKey}`
             )
           }}
         >
@@ -78,10 +78,10 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
       </Segment.Item>
       <Segment.Item>
         <Link
-          href={`/${PageKey.faq}`}
+          href={PageKey.faq}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
-            navigateTo(`/${PageKey.faq}`)
+            navigateTo(PageKey.faq)
           }}
         >
           <Button
@@ -96,10 +96,10 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
       {!user?.plan || user.plan === 'free' ? (
         <Segment.Item>
           <Link
-            href={`/${PageKey.pricing}`}
+            href={PageKey.pricing}
             onClick={async () => {
               if (mainOpen) await setMainOpen(false)
-              navigateTo(`/${PageKey.pricing}`)
+              navigateTo(PageKey.pricing)
             }}
           >
             <Button

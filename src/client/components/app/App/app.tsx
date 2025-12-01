@@ -29,7 +29,7 @@ export const App = () => {
     }
   }, [token])
 
-  const currentPageKey = pathname.split('/')[1]
+  const currentPageKey = `/${pathname.split('/')[1]}`
 
   if (getUser.isMakingRequest) {
     return (
@@ -47,10 +47,10 @@ export const App = () => {
             <>
               <Toolbar.Start>
                 <Link
-                  href={`/${PageKey.home}`}
+                  href={PageKey.home}
                   onClick={async () => {
                     if (mainOpen) await setMainOpen(false)
-                    navigateTo(`/${PageKey.home}`)
+                    navigateTo(PageKey.home)
                   }}
                 >
                   <Button intent={currentPageKey === PageKey.home ? 'secondary' : 'muted'}>NebulaKit</Button>

@@ -48,15 +48,13 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   )
 }
 
-export const ComponentExamplesPage = ({
-  pageKey,
-}: {
-  pageKey: Extract<keyof typeof PageKey, 'core' | 'pro'>
-}) => {
+export const ComponentExamplesPage = ({ pageKey }: { pageKey: PageKey.core | PageKey.pro }) => {
   const corePageStore = useCorePageStore()
   const proPageStore = useProPageStore()
 
-  const itemKeyPascal = pascalCase((pageKey === 'core' ? corePageStore.itemKey : proPageStore.itemKey) || '')
+  const itemKeyPascal = pascalCase(
+    (pageKey === PageKey.core ? corePageStore.itemKey : proPageStore.itemKey) || ''
+  )
 
   if (!meta[itemKeyPascal]) return null
 

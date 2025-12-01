@@ -26,11 +26,11 @@ export const LoginPage = () => {
     const params = new URLSearchParams(search)
     if (params.get('email_verified') === 'true') {
       show({ status: 'success', content: 'Email verified ! You can log in now.' })
-      window.history.replaceState({}, '', `/${PageKey.authLogin}`)
+      window.history.replaceState({}, '', PageKey.authLogin)
     } else if (params.get('new_email_verified') === 'true') {
       setToken('')
       show({ status: 'info', content: 'Log in using your new email to finalize the update.' })
-      window.history.replaceState({}, '', `/${PageKey.authLogin}`)
+      window.history.replaceState({}, '', PageKey.authLogin)
     }
   }, [search])
 
@@ -43,7 +43,7 @@ export const LoginPage = () => {
       if (res.data) {
         setToken(res.data.token)
         setUser(res.data.user)
-        navigateTo(res.data.user.plan === 'free' ? `/${PageKey.pricing}` : `/${PageKey.profileAccount}`)
+        navigateTo(res.data.user.plan === 'free' ? PageKey.pricing : PageKey.profileAccount)
       } else if (res.error) {
         show({ status: res.code === 500 ? 'error' : 'warning', content: res.error.message })
       }
@@ -93,9 +93,9 @@ export const LoginPage = () => {
           <Spacer blockSize={7} />
           <Flex justifyContent="center">
             <Link
-              href={`/${PageKey.authRegister}`}
+              href={PageKey.authRegister}
               onClick={() => {
-                navigateTo(`/${PageKey.authRegister}`)
+                navigateTo(PageKey.authRegister)
               }}
             >
               <Button variant="ghost" color="blue" intent="primary">

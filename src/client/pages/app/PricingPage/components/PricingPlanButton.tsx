@@ -24,9 +24,9 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
     if (!activePlan || activePlan === 'free') {
       return (
         <Link
-          href="/foundations/overview/get-started/installation"
+          href={`${PageKey.foundations}/overview/get-started/installation`}
           onClick={() => {
-            navigateTo('/foundations/overview/getting-started/installation')
+            navigateTo(`${PageKey.foundations}/overview/get-started/installation`)
           }}
         >
           <Button size="sm" color={color} intent="primary">
@@ -41,9 +41,9 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
     if (!token) {
       return (
         <Link
-          href={`/${PageKey.authRegister}`}
+          href={PageKey.authRegister}
           onClick={() => {
-            navigateTo(`/${PageKey.authRegister}`)
+            navigateTo(PageKey.authRegister)
           }}
         >
           <Button size="sm" intent="primary" color={color}>

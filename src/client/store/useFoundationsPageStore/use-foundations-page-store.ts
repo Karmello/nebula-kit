@@ -1,5 +1,7 @@
 import { create } from 'zustand'
 
+import { FOUNDATIONS_CATEGORIES } from 'client/definitions'
+
 export type FoundationsPageStore = {
   categoryKey: string
   setCategoryKey: (categoryKey: string) => void
@@ -10,10 +12,10 @@ export type FoundationsPageStore = {
 }
 
 export const useFoundationsPageStore = create<FoundationsPageStore>(set => ({
-  categoryKey: '',
+  categoryKey: FOUNDATIONS_CATEGORIES[0].key,
   setCategoryKey: categoryKey => set(() => ({ categoryKey })),
-  itemKey: '',
+  itemKey: FOUNDATIONS_CATEGORIES[0].items[0].key,
   setItemKey: itemKey => set(() => ({ itemKey })),
-  sectionKey: '',
+  sectionKey: FOUNDATIONS_CATEGORIES[0].items[0].sections[0].key,
   setSectionKey: sectionKey => set(() => ({ sectionKey })),
 }))
