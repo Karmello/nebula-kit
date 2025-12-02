@@ -105,9 +105,9 @@ export const LoginPage = () => {
           </Flex>
           <Flex justifyContent="center">
             <Link
-              href={PageKey.authRecovery}
+              href={PageKey.authRecover}
               onClick={() => {
-                navigateTo(PageKey.authRecovery)
+                navigateTo(PageKey.authRecover)
               }}
             >
               <Button variant="ghost" color="blue" intent="primary">

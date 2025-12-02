@@ -64,7 +64,7 @@ export const RootPage = () => {
         <Route path={PageKey.pricingPro} element={<ComponentsBundlePage bundle="pro" />} />
         <Route path={PageKey.authLogin} Component={LoginPage} />
         <Route path={PageKey.authRegister} Component={RegisterPage} />
-        <Route path={PageKey.authRecovery} Component={RecoveryPage} />
+        <Route path={PageKey.authRecover} Component={RecoveryPage} />
         <Route path={PageKey.profileAccount} Component={ProfileAccountPage} />
         <Route path={PageKey.profileSettings} Component={ProfileSettingsPage} />
         <Route
