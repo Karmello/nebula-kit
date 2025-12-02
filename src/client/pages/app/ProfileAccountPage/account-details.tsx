@@ -125,16 +125,6 @@ export default () => {
           </Table.Cell>
         </Table.Row>
       </Table.Body>
-      <Table.Footer>
-        <Table.Row>
-          <Table.Cell colSpan={3} paddingBlock={10}>
-            <Text typography="caption" intent="secondary" color="gray">
-              For actions not available here such as updating an email address or deleting an account please
-              get in touch via email.
-            </Text>
-          </Table.Cell>
-        </Table.Row>
-      </Table.Footer>
     </Table>
   )
 }
