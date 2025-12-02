@@ -16,7 +16,7 @@ export type UseRequestEmailUpdateRes = UseMakeApiRequestRes<
 
 export const useRequestEmailUpdate = () => {
   return useMakeApiRequest<UseRequestEmailUpdateSuccess, UseRequestEmailUpdateError>({
-    path: '/account/request-email-update',
+    path: '/account/email/request-update',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     enabled: false,

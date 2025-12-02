@@ -5,6 +5,7 @@ import { PageKey } from 'client/definitions'
 import { useGetUser } from 'client/api'
 import { Box, Loader, Section, Spacer, useSnackbar } from 'lib/components'
 
+import { AccountDeactivationSection } from './AccountDeactivationSection'
 import { UpdatePasswordSection } from './UpdatePasswordSection'
 import { UpdateEmailSection } from './UpdateEmailSection'
 import { ConnectToDiscordSection } from './ConnectToDiscordSection'
@@ -47,6 +48,14 @@ export const ProfileSettingsPage = () => {
               userEmail={getUser.data.user.email}
               userPlan={getUser.data.user.plan}
               handleCancelSuccess={() => {
+                getUser.sendRequest()
+              }}
+            />
+            <Spacer blockSize={50} />
+            <AccountDeactivationSection
+              userEmail={getUser.data.user.email}
+              userPlan={getUser.data.user.plan}
+              handleDeactivateSuccess={() => {
                 getUser.sendRequest()
               }}
             />

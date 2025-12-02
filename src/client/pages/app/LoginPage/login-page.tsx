@@ -48,7 +48,7 @@ export const LoginPage = () => {
         show({ status: res.code === 500 ? 'error' : 'warning', content: res.error.message })
       }
     },
-    []
+    [show]
   )
 
   return (

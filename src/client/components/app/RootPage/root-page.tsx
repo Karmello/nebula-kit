@@ -14,6 +14,7 @@ import {
   RecoveryPage,
   ProfileAccountPage,
   ProfileSettingsPage,
+  ConfirmActionPage,
 } from 'client/pages'
 
 import { useAppStore } from 'client/store'
@@ -67,6 +68,7 @@ export const RootPage = () => {
         <Route path={PageKey.authRecover} Component={RecoveryPage} />
         <Route path={PageKey.profileAccount} Component={ProfileAccountPage} />
         <Route path={PageKey.profileSettings} Component={ProfileSettingsPage} />
+        <Route path={PageKey.confirmAction} Component={ConfirmActionPage} />
         <Route
           path="*"
           Component={() => {

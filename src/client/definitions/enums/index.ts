@@ -12,4 +12,5 @@ export enum PageKey {
   authRecover = '/auth/recover',
   profileAccount = '/profile/account',
   profileSettings = '/profile/settings',
+  confirmAction = '/confirm-action',
 }

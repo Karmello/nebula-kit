@@ -1,4 +1,5 @@
 export * from './ComponentsBundlePage'
+export * from './ConfirmActionPage'
 export * from './CorePage'
 export * from './FaqPage'
 export * from './FoundationsPage'

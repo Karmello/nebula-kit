@@ -12,7 +12,7 @@ export type UseUpdatePasswordRes = UseMakeApiRequestRes<UseUpdatePasswordSuccess
 
 export const useUpdatePassword = () => {
   return useMakeApiRequest<UseUpdatePasswordSuccess, UseUpdatePasswordError>({
-    path: '/account/update-password',
+    path: '/account/update/password',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     enabled: false,
