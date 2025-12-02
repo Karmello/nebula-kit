@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { useAppStore } from 'client/store'
+import { useSnackbar } from 'lib/components'
 
 type Args = {
   path: string
@@ -29,7 +30,16 @@ export const useMakeApiRequest = <TData, TError>({
   const [code, setCode] = useState<number>(null)
   const [isMakingRequest, setIsMakingRequest] = useState<boolean>(false)
 
-  const { token } = useAppStore()
+  const { token, setToken, setUser } = useAppStore()
+  const { show } = useSnackbar()
+
+  useEffect(() => {
+    if (code === 401) {
+      setUser(null)
+      setToken('')
+      show({ status: 'info', content: "You've been logged out." })
+    }
+  }, [code])
 
   const sendRequest = async (body?: object): Promise<UseMakeApiRequestRes<TData, TError>> => {
     setData(null)

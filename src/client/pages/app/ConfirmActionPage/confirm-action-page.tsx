@@ -1,13 +1,26 @@
 import { useState } from 'react'
 import { useLocation } from 'react-router'
 
-import { Box, Button } from 'lib/components'
+import { Box, Button, Flex } from 'lib/components'
+import { Color } from 'lib/definitions'
 
-const BUTTON_LABEL_MAP = {
-  new_account_verification: 'Confirm your email address',
-  email_change_verification: 'Confirm your new email address',
-  password_recovery: 'Confirm password update',
-  deactivation: 'Confirm account deactivation',
+const BUTTON_LABEL_MAP: Record<string, { label: string; color: Color }> = {
+  new_account_verification: {
+    label: 'Confirm your email address',
+    color: 'blue',
+  },
+  email_change_verification: {
+    label: 'Confirm your new email address',
+    color: 'blue',
+  },
+  password_recovery: {
+    label: 'Confirm password update',
+    color: 'blue',
+  },
+  deactivation: {
+    label: 'Confirm account deactivation',
+    color: 'red',
+  },
 }
 
 export const ConfirmActionPage = () => {
@@ -19,24 +32,26 @@ export const ConfirmActionPage = () => {
   const action = params.get('action')
   const url = params.get('url')
 
-  console.log(url)
-
   return (
     <Box padding={{ base: 20, lg: 50 }}>
-      <Button
-        tagAttrs={{
-          onClick: () => {
-            setLoading(true)
-            if (url) window.location.href = url
-          },
-        }}
-        intent="primary"
-        color="blue"
-        loading={loading}
-        disabled={!url}
-      >
-        {action && BUTTON_LABEL_MAP[action as never] ? BUTTON_LABEL_MAP[action as never] : 'Confirm'}
-      </Button>
+      <Flex justifyContent="center">
+        <Button
+          tagAttrs={{
+            onClick: () => {
+              setLoading(true)
+              if (url) window.location.href = url
+            },
+          }}
+          intent="primary"
+          color={
+            action && BUTTON_LABEL_MAP[action as never] ? BUTTON_LABEL_MAP[action as never].color : 'blue'
+          }
+          loading={loading}
+          disabled={!url}
+        >
+          {action && BUTTON_LABEL_MAP[action as never] ? BUTTON_LABEL_MAP[action as never].label : 'Confirm'}
+        </Button>
+      </Flex>
     </Box>
   )
 }
