@@ -1,7 +1,7 @@
 import { PageKey } from 'client/definitions'
 import { getCopyrightInfo } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'
-import { Button, Footer, Link, MarkerList, Spacer, Text } from 'lib/components'
+import { Button, Flex, Footer, Link, MarkerList, Spacer, Text } from 'lib/components'
 
 export const AppFooter = () => {
   const navigateTo = useNavigateTo()
@@ -30,11 +30,18 @@ export const AppFooter = () => {
           </Text>
         </Link>
         <Spacer />
-        <Link href="https://discord.gg/HGE2gxYY" target="_blank">
-          <Button color="blue" intent="primary" size="sm" iconName="external-link" iconPosition="right">
-            Discord community
-          </Button>
-        </Link>
+        <Flex flexWrap="wrap" gap={10}>
+          <Link href="https://discord.gg/HGE2gxYY" target="_blank">
+            <Button color="purple" intent="primary" size="sm" iconName="external-link" iconPosition="right">
+              NebulaKit on Discord
+            </Button>
+          </Link>
+          <Link href="https://x.com/captainnebula" target="_blank">
+            <Button intent="inverse" size="sm" iconName="external-link" iconPosition="right">
+              NebulaKit on X
+            </Button>
+          </Link>
+        </Flex>
       </Footer.Section>
       <Footer.Section>
         <Text scale="compact" bold>
