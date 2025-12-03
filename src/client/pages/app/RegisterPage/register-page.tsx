@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react'
 
 import { UseMakeApiRequestRes, useNavigateTo } from 'client/hooks'
+import { useAppStore } from 'client/store'
 import { PageKey } from 'client/definitions'
 import { useRegisterUser } from 'client/api'
 
@@ -26,6 +27,7 @@ type RegisterFormValues = {
 export const RegisterPage = () => {
   const [hidePassword, setHidePassword] = useState<boolean>(true)
 
+  const { user } = useAppStore()
   const { show } = useSnackbar()
   const navigateTo = useNavigateTo()
 
@@ -40,9 +42,9 @@ export const RegisterPage = () => {
       res: UseMakeApiRequestRes<typeof registerUser.data, typeof registerUser.error>,
       formContext: any
     ) => {
-      if (res.data) {
+      if (res.ok) {
         show({ status: 'info', content: res.data.message })
-      } else if (res.error) {
+      } else {
         if (res.error.errors) {
           for (const [fieldName, message] of Object.entries(res.error.errors)) {
             formContext.setError(fieldName, { message })
@@ -54,6 +56,10 @@ export const RegisterPage = () => {
     },
     []
   )
+
+  if (user) {
+    return null
+  }
 
   return (
     <Box padding={{ base: 20, lg: 50 }}>

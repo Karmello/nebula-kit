@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 
 import { useGetPaymentDetailsUrl, useGetPaymentInfo } from 'client/api'
 import { Button, Flex, Loader, Table, Text } from 'lib/components'
@@ -6,8 +6,13 @@ import { Button, Flex, Loader, Table, Text } from 'lib/components'
 export default ({ enabled }: { enabled: boolean }) => {
   const [isRedirecting, setIsRedirecting] = useState<boolean>(false)
 
-  const getPaymentInfo = useGetPaymentInfo(enabled)
-  const getPaymentDetailsUrl = useGetPaymentDetailsUrl(enabled)
+  const getPaymentInfo = useGetPaymentInfo()
+  const getPaymentDetailsUrl = useGetPaymentDetailsUrl()
+
+  useLayoutEffect(() => {
+    getPaymentInfo.sendRequest()
+    getPaymentDetailsUrl.sendRequest()
+  }, [enabled])
 
   if (!enabled) return null
 

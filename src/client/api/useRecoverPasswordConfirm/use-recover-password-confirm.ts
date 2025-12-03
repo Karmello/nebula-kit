@@ -18,6 +18,5 @@ export const useRecoverPasswordConfirm = () => {
     path: '/auth/recover/confirm',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    enabled: false,
   })
 }

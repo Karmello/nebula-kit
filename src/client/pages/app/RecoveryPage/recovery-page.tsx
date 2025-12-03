@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useLocation } from 'react-router'
 
 import { useRecoverPassword, useRecoverPasswordConfirm, UseRecoverPasswordRes } from 'client/api'
+import { useAppStore } from 'client/store'
 import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
 import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnackbar } from 'lib/components'
@@ -9,6 +10,7 @@ import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnac
 export const RecoveryPage = () => {
   const [hidePassword, setHidePassword] = useState<boolean>(true)
 
+  const { user } = useAppStore()
   const { search } = useLocation()
   const navigateTo = useNavigateTo()
   const { show } = useSnackbar()
@@ -18,6 +20,10 @@ export const RecoveryPage = () => {
 
   const params = new URLSearchParams(search)
   const token = params.get('token')
+
+  if (user) {
+    return null
+  }
 
   return (
     <Box padding={{ base: 20, lg: 50 }}>
@@ -32,7 +38,7 @@ export const RecoveryPage = () => {
               }
             }}
             onResponse={(res: UseRecoverPasswordRes) => {
-              if (res.data?.message) {
+              if (res.ok && res.data.message) {
                 show({ status: 'info', content: res.data.message })
                 if (token) {
                   navigateTo(PageKey.authLogin)

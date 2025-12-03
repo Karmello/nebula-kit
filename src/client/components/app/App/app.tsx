@@ -1,10 +1,10 @@
-import { useEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
-import { AppFrame, Box, Button, Link, Loader, Toolbar } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
-import { useGetUser } from 'client/api'
+import { useGetUser, useLogoutUser } from 'client/api'
+import { AppFrame, Box, Button, Link, Loader, Toolbar } from 'lib/components'
 
 import { RootPage } from '../RootPage'
 import { PageNavigation } from './PageNavigation'
@@ -15,24 +15,46 @@ export const App = () => {
   const { pathname } = useLocation()
   const navigateTo = useNavigateTo()
 
-  const getUser = useGetUser(false, 1000)
+  const getUser = useGetUser()
+  const logoutUser = useLogoutUser()
 
-  useEffect(() => {
+  const runAsync = async () => {
+    if (pathname.startsWith(PageKey.confirmAction)) {
+      await logoutUser.sendRequest()
+    } else {
+      const getUserRes = await getUser.sendRequest()
+
+      if (!getUserRes.ok) {
+        await logoutUser.sendRequest()
+        if (pathname.startsWith('/profile')) {
+          navigateTo(PageKey.authLogin, { replace: true })
+        }
+      } else {
+        if (pathname.startsWith('/auth')) {
+          navigateTo(PageKey.profileAccount, { replace: true })
+        }
+      }
+    }
+  }
+
+  useLayoutEffect(() => {
+    runAsync()
+  }, [])
+
+  useLayoutEffect(() => {
     window.scrollTo(0, 0)
   }, [pathname])
 
-  useEffect(() => {
-    getUser.sendRequest()
-  }, [])
-
-  const currentPageKey = `/${pathname.split('/')[1]}`
-
-  if (getUser.isMakingRequest) {
+  if (getUser.isMakingRequest || logoutUser.isMakingRequest) {
     return (
       <Box blockSize="100dvh">
         <Loader centered size="lg" color="blue" />
       </Box>
     )
+  }
+
+  if (pathname.startsWith(PageKey.confirmAction)) {
+    return <RootPage />
   }
 
   return (
@@ -49,7 +71,9 @@ export const App = () => {
                     navigateTo(PageKey.home)
                   }}
                 >
-                  <Button intent={currentPageKey === PageKey.home ? 'secondary' : 'muted'}>NebulaKit</Button>
+                  <Button intent={pathname.startsWith(PageKey.home) ? 'secondary' : 'muted'}>
+                    NebulaKit
+                  </Button>
                 </Link>
               </Toolbar.Start>
               <Toolbar.Main>

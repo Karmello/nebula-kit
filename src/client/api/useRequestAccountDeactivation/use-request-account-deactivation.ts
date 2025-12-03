@@ -8,6 +8,5 @@ export const useRequestAccountDeactivation = () => {
     path: '/account/deactivate/request',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    enabled: false,
   })
 }

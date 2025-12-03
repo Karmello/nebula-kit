@@ -7,7 +7,6 @@ export const useCancelPaidPlan = () => {
   return useMakeApiRequest<UseCancelPaidPlanSuccess, UseCancelPaidPlanError>({
     path: '/payment/cancel',
     method: 'POST',
-    enabled: false,
     minLoadingTime: 5000,
   })
 }

@@ -16,6 +16,5 @@ export const useLoginUser = () => {
     path: '/auth/login',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    enabled: false,
   })
 }

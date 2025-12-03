@@ -15,6 +15,5 @@ export const useUpdatePassword = () => {
     path: '/account/update/password',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    enabled: false,
   })
 }

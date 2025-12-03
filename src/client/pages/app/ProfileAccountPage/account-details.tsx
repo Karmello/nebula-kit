@@ -1,3 +1,4 @@
+import { useLayoutEffect } from 'react'
 import { sentenceCase } from 'change-case'
 
 import { useNavigateTo } from 'client/hooks'
@@ -8,6 +9,10 @@ import { Loader, Table, Text, Flex, Link, Button } from 'lib/components'
 export default () => {
   const getUser = useGetUser()
   const navigateTo = useNavigateTo()
+
+  useLayoutEffect(() => {
+    getUser.sendRequest()
+  }, [])
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(getUser.data.user.licenseKey)

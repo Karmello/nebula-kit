@@ -23,7 +23,7 @@ export const ConnectToDiscordSection = ({
           tagAttrs={{
             onClick: async () => {
               const res = await connectToDiscord.sendRequest()
-              if (res.data) {
+              if (res.ok) {
                 window.location.href = res.data.url
               }
             },

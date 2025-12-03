@@ -13,7 +13,6 @@ export const useCheckoutPaidPlan = () => {
     path: '/payment/checkout',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    enabled: false,
   })
 
   useEffect(() => {

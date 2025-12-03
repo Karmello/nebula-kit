@@ -14,6 +14,5 @@ export const useRegisterUser = () => {
     path: '/auth/register',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    enabled: false,
   })
 }

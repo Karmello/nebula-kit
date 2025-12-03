@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, useLayoutEffect } from 'react'
 import { useNavigateTo } from 'client/hooks'
 import { useGetUser } from 'client/api'
 import { Box, Flex, Section, Spacer, Text, Link, Grid, Loader, Icon } from 'lib/components'
@@ -21,6 +21,10 @@ export const PricingPage = () => {
   const navigateTo = useNavigateTo()
 
   const getUser = useGetUser()
+
+  useLayoutEffect(() => {
+    getUser.sendRequest()
+  }, [])
 
   const coreBundleLink = (
     <Link

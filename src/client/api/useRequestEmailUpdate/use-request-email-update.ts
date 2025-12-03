@@ -19,6 +19,5 @@ export const useRequestEmailUpdate = () => {
     path: '/account/email/request-update',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    enabled: false,
   })
 }

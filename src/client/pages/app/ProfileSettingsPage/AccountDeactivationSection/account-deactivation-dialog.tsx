@@ -37,10 +37,10 @@ export const AccountDeactivationDialog = ({
                 onClick: async () => {
                   const res = await requestAccountDeactivation.sendRequest({ email: userEmail })
                   handleClose()
-                  if (res.data) {
+                  if (res.ok) {
                     show({ status: 'info', content: res.data.message })
                     handleDeactivateSuccess()
-                  } else if (res.error) {
+                  } else {
                     show({ status: 'warning', content: res.error.message })
                   }
                 },

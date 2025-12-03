@@ -1,5 +1,4 @@
-import { useLayoutEffect } from 'react'
-import { Routes, Route, Navigate, useLocation } from 'react-router'
+import { Routes, Route, Navigate } from 'react-router'
 
 import {
   HomePage,
@@ -17,29 +16,11 @@ import {
   ConfirmActionPage,
 } from 'client/pages'
 
-import { useAppStore } from 'client/store'
-import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
 
 import styles from './root-page.module.scss'
 
 export const RootPage = () => {
-  const { user } = useAppStore()
-  const navigateTo = useNavigateTo()
-  const { pathname } = useLocation()
-
-  useLayoutEffect(() => {
-    if (user) {
-      if (pathname.startsWith(PageKey.authLogin) || pathname.startsWith(PageKey.authRegister)) {
-        navigateTo(PageKey.profileAccount, { replace: true })
-      }
-    } else {
-      if (pathname.startsWith(PageKey.profileAccount) || pathname.startsWith(PageKey.profileSettings)) {
-        navigateTo(PageKey.authLogin, { replace: true })
-      }
-    }
-  }, [pathname])
-
   return (
     <div className={styles.RootPage}>
       <Routes>

@@ -1,11 +1,13 @@
-import { useRequestEmailUpdate, UseRequestEmailUpdateRes } from 'client/api'
-import { useAppStore } from 'client/store'
+import { useLogoutUser, useRequestEmailUpdate, UseRequestEmailUpdateRes } from 'client/api'
+import { useNavigateTo } from 'client/hooks'
+import { PageKey } from 'client/definitions'
 import { Box, Form, Input, Section, Spacer, Text, useSnackbar } from 'lib/components'
 
 export const UpdateEmailSection = () => {
-  const { setUser } = useAppStore()
+  const navigateTo = useNavigateTo()
   const { show } = useSnackbar()
   const requestEmailUpdate = useRequestEmailUpdate()
+  const logoutUser = useLogoutUser()
 
   return (
     <Section heading="Email address" variant="soft-outline" intent="neutral" borderIntent="muted">
@@ -24,11 +26,12 @@ export const UpdateEmailSection = () => {
           onValidSubmission={async ({ email }) => {
             return await requestEmailUpdate.sendRequest({ email })
           }}
-          onResponse={(res: UseRequestEmailUpdateRes, formContext: any) => {
-            if (res.data) {
+          onResponse={async (res: UseRequestEmailUpdateRes, formContext: any) => {
+            if (res.ok) {
+              await logoutUser.sendRequest()
+              navigateTo(PageKey.authLogin)
               show({ status: 'info', content: res.data.message })
-              setUser(null)
-            } else if (res.error) {
+            } else {
               if (res.error.errors) {
                 for (const [fieldName, message] of Object.entries(res.error.errors)) {
                   formContext.setError(fieldName, { message })

@@ -1,14 +1,18 @@
 import { useState } from 'react'
 
-import { useUpdatePassword, UseUpdatePasswordRes } from 'client/api'
+import { useUpdatePassword, UseUpdatePasswordRes, useLogoutUser } from 'client/api'
+import { useNavigateTo } from 'client/hooks'
+import { PageKey } from 'client/definitions'
 import { Box, Button, Form, Input, Section, Spacer, Text, useSnackbar } from 'lib/components'
 
 export const UpdatePasswordSection = () => {
   const [hideCurrentPassword, setHideCurrentPassword] = useState<boolean>(true)
   const [hideNewPassword, setHideNewPassword] = useState<boolean>(true)
 
+  const navigateTo = useNavigateTo()
   const { show } = useSnackbar()
   const updatePassword = useUpdatePassword()
+  const logoutUser = useLogoutUser()
 
   return (
     <Section heading="Password" variant="soft-outline" intent="neutral" borderIntent="muted">
@@ -25,11 +29,13 @@ export const UpdatePasswordSection = () => {
           onValidSubmission={async ({ currentPassword, newPassword }) => {
             return await updatePassword.sendRequest({ currentPassword, newPassword })
           }}
-          onResponse={(res: UseUpdatePasswordRes, formContext) => {
+          onResponse={async (res: UseUpdatePasswordRes, formContext) => {
             formContext.reset()
             if (!res.ok) {
               show({ status: res.code >= 500 ? 'error' : 'warning', content: res.error.message })
             } else {
+              await logoutUser.sendRequest()
+              navigateTo(PageKey.authLogin)
               show({ status: 'success', content: res.data.message })
             }
           }}

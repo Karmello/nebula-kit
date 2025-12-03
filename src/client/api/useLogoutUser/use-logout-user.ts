@@ -7,7 +7,6 @@ export const useLogoutUser = () => {
   const { code, data, error, isMakingRequest, sendRequest } = useMakeApiRequest({
     path: '/auth/logout',
     method: 'POST',
-    enabled: false,
   })
 
   const { setUser } = useAppStore()

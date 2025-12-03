@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 import { useAppStore } from 'client/store'
 
@@ -6,7 +6,6 @@ type Args = {
   path: string
   method?: string
   headers?: HeadersInit
-  enabled?: boolean
   minLoadingTime?: number
 }
 
@@ -21,7 +20,6 @@ export const useMakeApiRequest = <TData, TError>({
   path,
   method = 'GET',
   headers = {},
-  enabled = true,
   minLoadingTime = 350,
 }: Args) => {
   const [data, setData] = useState<TData>(null)
@@ -31,17 +29,9 @@ export const useMakeApiRequest = <TData, TError>({
 
   const { setUser } = useAppStore()
 
-  useEffect(() => {
-    if (code === 401) {
-      setUser(null)
-    }
-  }, [code])
-
-  const sendRequest = async (body?: object): Promise<UseMakeApiRequestRes<TData, TError>> => {
-    setData(null)
-    setError(null)
-    setCode(null)
+  const sendRequest = useCallback(async (body?: object): Promise<UseMakeApiRequestRes<TData, TError>> => {
     setIsMakingRequest(true)
+    setCode(null)
 
     const start = Date.now()
 
@@ -71,13 +61,13 @@ export const useMakeApiRequest = <TData, TError>({
       setIsMakingRequest(false)
       return { ok: res.ok, data: null, error: json, code: res.status }
     }
-  }
+  }, [])
 
   useEffect(() => {
-    if (enabled) {
-      sendRequest()
+    if (code === 401) {
+      setUser(null)
     }
-  }, [enabled])
+  }, [code])
 
   return { data, error, code, isMakingRequest, sendRequest }
 }

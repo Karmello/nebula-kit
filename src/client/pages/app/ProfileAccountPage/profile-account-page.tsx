@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
 import { PageKey } from 'client/definitions'
@@ -13,13 +13,17 @@ export const ProfileAccountPage = () => {
   const { show } = useSnackbar()
   const { user } = useAppStore()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const params = new URLSearchParams(search)
     if (params.get('checkout') === 'success') {
       show({ status: 'success', content: 'All done ! You are on a new subscription plan.' })
       window.history.replaceState({}, '', PageKey.profileAccount)
     }
   }, [search])
+
+  if (!user) {
+    return null
+  }
 
   return (
     <Box padding={{ base: 20, lg: 50 }} maxInlineSize="75rem">

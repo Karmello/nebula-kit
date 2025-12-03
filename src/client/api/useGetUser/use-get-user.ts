@@ -7,24 +7,24 @@ import { useAppStore } from 'client/store'
 export type UseGetUserSuccess = { user: ApiUser }
 export type UseGetUserError = { message: string }
 
-export const useGetUser = (enabled?: boolean, minLoadingTime?: number) => {
-  const { user, setUser } = useAppStore()
+export const useGetUser = () => {
+  const { setUser } = useAppStore()
 
-  const { data, error, isMakingRequest, sendRequest } = useMakeApiRequest<UseGetUserSuccess, UseGetUserError>(
-    {
-      path: '/auth/me',
-      enabled: enabled !== undefined ? enabled : !!user,
-      minLoadingTime,
-    }
-  )
+  const { code, data, error, isMakingRequest, sendRequest } = useMakeApiRequest<
+    UseGetUserSuccess,
+    UseGetUserError
+  >({
+    path: '/auth/me',
+  })
 
   useEffect(() => {
-    if (data) {
+    if (code === 200) {
       setUser(data.user)
     }
-  }, [data])
+  }, [code])
 
   return {
+    code,
     data,
     error,
     isMakingRequest,
