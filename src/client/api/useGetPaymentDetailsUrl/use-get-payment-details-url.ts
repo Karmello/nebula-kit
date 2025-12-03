@@ -5,11 +5,11 @@ export type UseGetPaymentDetailsUrlSuccess = { url: string }
 export type UseGetPaymentDetailsUrlError = { message: string }
 
 export const useGetPaymentDetailsUrl = (enabled: boolean) => {
-  const { token } = useAppStore()
+  const { user } = useAppStore()
 
   return useMakeApiRequest<UseGetPaymentDetailsUrlSuccess, UseGetPaymentDetailsUrlError>({
     path: '/payment/details-url',
     method: 'POST',
-    enabled: !!token && !!enabled,
+    enabled: !!user && !!enabled,
   })
 }

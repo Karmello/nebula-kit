@@ -8,12 +8,12 @@ export type UseGetUserSuccess = { user: ApiUser }
 export type UseGetUserError = { message: string }
 
 export const useGetUser = (enabled?: boolean, minLoadingTime?: number) => {
-  const { token, setUser } = useAppStore()
+  const { user, setUser } = useAppStore()
 
   const { data, error, isMakingRequest, sendRequest } = useMakeApiRequest<UseGetUserSuccess, UseGetUserError>(
     {
       path: '/auth/me',
-      enabled: enabled !== undefined ? enabled : !!token,
+      enabled: enabled !== undefined ? enabled : !!user,
       minLoadingTime,
     }
   )

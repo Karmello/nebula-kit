@@ -3,13 +3,14 @@ import { useLocation } from 'react-router'
 import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
 import { useAppStore } from 'client/store'
+import { useLogoutUser } from 'client/api'
 import { Select } from 'lib/components'
 
 export const UserActionMenu = () => {
   const { pathname } = useLocation()
-  const { token, setToken } = useAppStore()
-
+  const { user } = useAppStore()
   const navigateTo = useNavigateTo()
+  const logoutUser = useLogoutUser()
 
   const splitted = pathname.split('/')
   const currentPageKey = `/${splitted[1]}/${splitted[2]}`
@@ -22,15 +23,16 @@ export const UserActionMenu = () => {
       staticLabel="Profile"
       inlineSize="125px"
       value={currentPageKey}
-      onChange={value => {
+      onChange={async value => {
         if (value === 'logout') {
-          setToken('')
+          await logoutUser.sendRequest()
+          navigateTo(PageKey.authLogin)
         } else {
           navigateTo(value)
         }
       }}
     >
-      {!token ? (
+      {!user ? (
         <>
           <Select.Option value={PageKey.authLogin}>Log in</Select.Option>
           <Select.Option value={PageKey.authRegister}>Register</Select.Option>

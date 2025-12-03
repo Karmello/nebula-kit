@@ -6,10 +6,10 @@ export type UseGetPaymentInfoSuccess = { subscription: ApiSubscription }
 export type UseGetPaymentInfoError = { message: string }
 
 export const useGetPaymentInfo = (enabled: boolean) => {
-  const { token } = useAppStore()
+  const { user } = useAppStore()
 
   return useMakeApiRequest<UseGetPaymentInfoSuccess, UseGetPaymentInfoError>({
     path: '/payment/info',
-    enabled: !!token && !!enabled,
+    enabled: !!user && !!enabled,
   })
 }

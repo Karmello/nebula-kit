@@ -3,7 +3,7 @@ import { useAppStore } from 'client/store'
 import { Box, Form, Input, Section, Spacer, Text, useSnackbar } from 'lib/components'
 
 export const UpdateEmailSection = () => {
-  const { setToken } = useAppStore()
+  const { setUser } = useAppStore()
   const { show } = useSnackbar()
   const requestEmailUpdate = useRequestEmailUpdate()
 
@@ -27,7 +27,7 @@ export const UpdateEmailSection = () => {
           onResponse={(res: UseRequestEmailUpdateRes, formContext: any) => {
             if (res.data) {
               show({ status: 'info', content: res.data.message })
-              setToken(null)
+              setUser(null)
             } else if (res.error) {
               if (res.error.errors) {
                 for (const [fieldName, message] of Object.entries(res.error.errors)) {

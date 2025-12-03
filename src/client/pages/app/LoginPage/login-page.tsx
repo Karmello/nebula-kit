@@ -1,10 +1,10 @@
 import { useCallback, useLayoutEffect, useState } from 'react'
 import { useLocation } from 'react-router'
 
-import { UseMakeApiRequestRes, useNavigateTo } from 'client/hooks'
+import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
 import { PageKey } from 'client/definitions'
-import { useLoginUser } from 'client/api'
+import { useLoginUser, UseLoginUserRes } from 'client/api'
 import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnackbar } from 'lib/components'
 
 type LoginFormValues = {
@@ -18,7 +18,7 @@ export const LoginPage = () => {
   const { search } = useLocation()
   const navigateTo = useNavigateTo()
   const { show } = useSnackbar()
-  const { setToken, setUser } = useAppStore()
+  const { setUser } = useAppStore()
 
   const loginUser = useLoginUser()
 
@@ -28,7 +28,7 @@ export const LoginPage = () => {
       show({ status: 'success', content: 'Email verified ! You can log in now.' })
       window.history.replaceState({}, '', PageKey.authLogin)
     } else if (params.get('new_email_verified') === 'true') {
-      setToken('')
+      setUser(null)
       show({ status: 'info', content: 'Log in using your new email to finalize the update.' })
       window.history.replaceState({}, '', PageKey.authLogin)
     }
@@ -39,9 +39,8 @@ export const LoginPage = () => {
   }, [])
 
   const onResponse = useCallback(
-    async (res: UseMakeApiRequestRes<typeof loginUser.data, typeof loginUser.error>) => {
+    async (res: UseLoginUserRes) => {
       if (res.data) {
-        setToken(res.data.token)
         setUser(res.data.user)
         navigateTo(res.data.user.plan === 'free' ? PageKey.pricing : PageKey.profileAccount)
       } else if (res.error) {

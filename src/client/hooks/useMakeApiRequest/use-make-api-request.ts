@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
 
 import { useAppStore } from 'client/store'
-import { useSnackbar } from 'lib/components'
 
 type Args = {
   path: string
   method?: string
-  headers?: object
+  headers?: HeadersInit
   enabled?: boolean
   minLoadingTime?: number
 }
@@ -30,14 +29,11 @@ export const useMakeApiRequest = <TData, TError>({
   const [code, setCode] = useState<number>(null)
   const [isMakingRequest, setIsMakingRequest] = useState<boolean>(false)
 
-  const { token, setToken, setUser } = useAppStore()
-  const { show } = useSnackbar()
+  const { setUser } = useAppStore()
 
   useEffect(() => {
     if (code === 401) {
       setUser(null)
-      setToken('')
-      show({ status: 'info', content: "You've been logged out." })
     }
   }, [code])
 
@@ -51,11 +47,9 @@ export const useMakeApiRequest = <TData, TError>({
 
     const res = await fetch(process.env.API_URL + path, {
       method,
-      headers: {
-        Authorization: token ? `Bearer ${token}` : undefined,
-        ...headers,
-      },
+      headers,
       body: body ? JSON.stringify(body) : undefined,
+      credentials: 'include',
     })
 
     if (minLoadingTime) {

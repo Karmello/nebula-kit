@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect } from 'react'
 import { Routes, Route, Navigate, useLocation } from 'react-router'
 
 import {
@@ -24,24 +24,12 @@ import { PageKey } from 'client/definitions'
 import styles from './root-page.module.scss'
 
 export const RootPage = () => {
-  const { token, setUser } = useAppStore()
+  const { user } = useAppStore()
   const navigateTo = useNavigateTo()
   const { pathname } = useLocation()
 
-  const prevToken = useRef(token)
-
   useLayoutEffect(() => {
-    if (prevToken.current !== token) {
-      prevToken.current = token
-      if (!token) {
-        setUser(null)
-        navigateTo(PageKey.authLogin)
-      }
-    }
-  }, [token])
-
-  useLayoutEffect(() => {
-    if (token) {
+    if (user) {
       if (pathname.startsWith(PageKey.authLogin) || pathname.startsWith(PageKey.authRegister)) {
         navigateTo(PageKey.profileAccount, { replace: true })
       }

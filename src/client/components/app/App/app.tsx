@@ -4,7 +4,6 @@ import { useLocation } from 'react-router'
 import { AppFrame, Box, Button, Link, Loader, Toolbar } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
-import { useAppStore } from 'client/store'
 import { useGetUser } from 'client/api'
 
 import { RootPage } from '../RootPage'
@@ -15,7 +14,6 @@ import { UserActionMenu } from './UserActionMenu'
 export const App = () => {
   const { pathname } = useLocation()
   const navigateTo = useNavigateTo()
-  const { token, user } = useAppStore()
 
   const getUser = useGetUser(false, 1000)
 
@@ -24,10 +22,8 @@ export const App = () => {
   }, [pathname])
 
   useEffect(() => {
-    if (token && !user) {
-      getUser.sendRequest()
-    }
-  }, [token])
+    getUser.sendRequest()
+  }, [])
 
   const currentPageKey = `/${pathname.split('/')[1]}`
 

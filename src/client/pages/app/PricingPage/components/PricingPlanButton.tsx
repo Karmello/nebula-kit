@@ -17,7 +17,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
   const [isRedirecting, setIsRedirecting] = useState<boolean>(false)
 
   const navigateTo = useNavigateTo()
-  const { token } = useAppStore()
+  const { user } = useAppStore()
   const checkoutPaidPlan = useCheckoutPaidPlan()
 
   if (plan === 'free') {
@@ -38,7 +38,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
       return null
     }
   } else {
-    if (!token) {
+    if (!user) {
       return (
         <Link
           href={PageKey.authRegister}
