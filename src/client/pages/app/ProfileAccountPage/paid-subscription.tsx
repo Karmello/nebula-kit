@@ -1,17 +1,22 @@
 import { useLayoutEffect, useState } from 'react'
 
 import { useGetPaymentDetailsUrl, useGetPaymentInfo } from 'client/api'
+import { useAppStore } from 'client/store'
 import { Button, Flex, Loader, Table, Text } from 'lib/components'
 
 export default ({ enabled }: { enabled: boolean }) => {
   const [isRedirecting, setIsRedirecting] = useState<boolean>(false)
 
+  const { user } = useAppStore()
+
   const getPaymentInfo = useGetPaymentInfo()
   const getPaymentDetailsUrl = useGetPaymentDetailsUrl()
 
   useLayoutEffect(() => {
-    getPaymentInfo.sendRequest()
-    getPaymentDetailsUrl.sendRequest()
+    if (user && user.plan !== 'free') {
+      getPaymentInfo.sendRequest()
+      getPaymentDetailsUrl.sendRequest()
+    }
   }, [enabled])
 
   if (!enabled) return null

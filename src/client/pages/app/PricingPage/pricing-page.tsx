@@ -1,6 +1,7 @@
 import { ReactNode, useLayoutEffect } from 'react'
 import { useNavigateTo } from 'client/hooks'
 import { useGetUser } from 'client/api'
+import { useAppStore } from 'client/store'
 import { Box, Flex, Section, Spacer, Text, Link, Grid, Loader, Icon } from 'lib/components'
 
 import { PricingPlanButton } from './components/PricingPlanButton'
@@ -19,11 +20,14 @@ const OptionIncluded = ({ children }: { children: ReactNode }) => {
 
 export const PricingPage = () => {
   const navigateTo = useNavigateTo()
+  const { user } = useAppStore()
 
   const getUser = useGetUser()
 
   useLayoutEffect(() => {
-    getUser.sendRequest()
+    if (user) {
+      getUser.sendRequest()
+    }
   }, [])
 
   const coreBundleLink = (

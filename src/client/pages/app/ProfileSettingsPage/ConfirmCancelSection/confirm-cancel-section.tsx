@@ -23,13 +23,15 @@ export const ConfirmCancelSection = ({
       <Spacer blockSize={15} />
       <MarkerList intent="neutral" color="gray">
         <MarkerList.Item>
-          <Text>your license key is immediately revoked</Text>
-        </MarkerList.Item>
-        <MarkerList.Item>
-          <Text>you lose access to the Pro components bundle</Text>
-        </MarkerList.Item>
-        <MarkerList.Item>
           <Text>your account switches back to the free plan</Text>
+        </MarkerList.Item>
+        <MarkerList.Item>
+          <Text>
+            your license key is immediately revoked thus you lose access to the Pro components bundle
+          </Text>
+        </MarkerList.Item>
+        <MarkerList.Item>
+          <Text>you get disconnected from Discord thus you lose your badge</Text>
         </MarkerList.Item>
         <MarkerList.Item>
           <Text>unused time in your billing period is not refunded</Text>

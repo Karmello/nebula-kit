@@ -7,7 +7,7 @@ import { useAppStore } from 'client/store'
 export type UseGetUserSuccess = { user: ApiUser }
 export type UseGetUserError = { message: string }
 
-export const useGetUser = () => {
+export const useGetUser = (disableAutoLogout = false) => {
   const { setUser } = useAppStore()
 
   const { code, data, error, isMakingRequest, sendRequest } = useMakeApiRequest<
@@ -15,6 +15,7 @@ export const useGetUser = () => {
     UseGetUserError
   >({
     path: '/auth/me',
+    disableAutoLogout,
   })
 
   useEffect(() => {

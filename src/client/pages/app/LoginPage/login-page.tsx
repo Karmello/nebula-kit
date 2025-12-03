@@ -31,6 +31,12 @@ export const LoginPage = () => {
     } else if (params.get('new_email_verified') === 'true') {
       window.history.replaceState({}, '', PageKey.authLogin)
       show({ status: 'info', content: 'Log in using your new email to finalize the update.' })
+    } else if (params.get('account_deactivated') === 'true') {
+      window.history.replaceState({}, '', PageKey.authLogin)
+      show({ status: 'success', content: 'Your account has been fully deactivated.' })
+    } else if (params.get('unauthorized') === 'true') {
+      window.history.replaceState({}, '', PageKey.authLogin)
+      show({ status: 'info', content: 'Your session has ended. Please log in again.' })
     }
   }
 

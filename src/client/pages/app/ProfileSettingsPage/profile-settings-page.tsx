@@ -19,7 +19,9 @@ export const ProfileSettingsPage = () => {
   const getUser = useGetUser()
 
   useLayoutEffect(() => {
-    getUser.sendRequest()
+    if (user) {
+      getUser.sendRequest()
+    }
   }, [])
 
   useLayoutEffect(() => {
@@ -57,6 +59,7 @@ export const ProfileSettingsPage = () => {
               userEmail={getUser.data.user.email}
               userPlan={getUser.data.user.plan}
               handleCancelSuccess={() => {
+                window.scrollTo(0, 0)
                 getUser.sendRequest()
               }}
             />
@@ -65,6 +68,7 @@ export const ProfileSettingsPage = () => {
               userEmail={getUser.data.user.email}
               userPlan={getUser.data.user.plan}
               handleDeactivateSuccess={() => {
+                window.scrollTo(0, 0)
                 getUser.sendRequest()
               }}
             />

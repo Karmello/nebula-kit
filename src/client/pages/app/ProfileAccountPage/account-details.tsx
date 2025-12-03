@@ -4,14 +4,18 @@ import { sentenceCase } from 'change-case'
 import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
 import { useGetUser } from 'client/api'
+import { useAppStore } from 'client/store'
 import { Loader, Table, Text, Flex, Link, Button } from 'lib/components'
 
 export default () => {
   const getUser = useGetUser()
   const navigateTo = useNavigateTo()
+  const { user } = useAppStore()
 
   useLayoutEffect(() => {
-    getUser.sendRequest()
+    if (user) {
+      getUser.sendRequest()
+    }
   }, [])
 
   const handleCopy = async () => {

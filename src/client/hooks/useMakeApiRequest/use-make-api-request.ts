@@ -1,12 +1,14 @@
 import { useCallback, useEffect, useState } from 'react'
 
 import { useAppStore } from 'client/store'
+import { PageKey } from 'client/definitions'
 
 type Args = {
   path: string
   method?: string
   headers?: HeadersInit
   minLoadingTime?: number
+  disableAutoLogout?: boolean
 }
 
 export type UseMakeApiRequestRes<TData, TError> = {
@@ -21,6 +23,7 @@ export const useMakeApiRequest = <TData, TError>({
   method = 'GET',
   headers = {},
   minLoadingTime = 350,
+  disableAutoLogout = false,
 }: Args) => {
   const [data, setData] = useState<TData>(null)
   const [error, setError] = useState<TError>(null)
@@ -64,8 +67,8 @@ export const useMakeApiRequest = <TData, TError>({
   }, [])
 
   useEffect(() => {
-    if (code === 401) {
-      setUser(null)
+    if (code === 401 && !disableAutoLogout) {
+      window.location.href = `${PageKey.authLogin}?unauthorized=true`
     }
   }, [code])
 
