@@ -4,7 +4,7 @@ import { Loader } from 'lib/components'
 
 import { HydrationGateProps } from './definitions'
 
-export const HydrationGate = ({ children, minDelay, fallback }: HydrationGateProps) => {
+export const HydrationGate = ({ children, minDelay = 0, fallback = null }: HydrationGateProps) => {
   const [visible, setVisible] = useState(false)
 
   useLayoutEffect(() => {
