@@ -1,13 +1,13 @@
 import { sentenceCase } from 'change-case'
 
-import { useNavigateTo } from 'client/hooks'
-import logoImg from 'client/assets/logo.png'
 import { Box, Divider, Flex, Button, Link, Section, Select, Spacer, Text, Segment } from 'lib/components'
-import { useNebkitStore } from 'lib/state'
-import { Color, COLORS, THEMES } from 'lib/definitions'
-
 import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/core/utility/NebkitProvider/definitions'
+import { Color, COLORS, THEMES } from 'lib/definitions'
+import { useNebkitStore } from 'lib/state'
+import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
+
+import logoImg from '../../../../../public/captain-nebula.png'
 
 export const HomePage = () => {
   const navigateTo = useNavigateTo()
