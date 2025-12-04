@@ -19,7 +19,7 @@ const app = express()
 
 app.get('/captain-nebula.png', (req, res) => {
   res.setHeader('Cache-Control', 'public, max-age=2592000, immutable')
-  res.sendFile(path.join(__dirname, 'public/captain-nebula.png'))
+  res.sendFile(path.join(__dirname, '../client/captain-nebula.png'))
 })
 
 app.use(express.static(path.join(__dirname, 'public')))
