@@ -99,5 +99,3 @@ export const CORE_PAGE_CATEGORIES = [
     ],
   },
 ]
-
-export default CORE_PAGE_CATEGORIES

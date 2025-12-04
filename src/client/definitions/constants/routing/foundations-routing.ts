@@ -99,5 +99,3 @@ export const FOUNDATIONS_CATEGORIES = [
     ],
   },
 ]
-
-export default FOUNDATIONS_CATEGORIES

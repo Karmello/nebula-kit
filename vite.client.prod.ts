@@ -30,25 +30,8 @@ export default defineConfig({
     manifest: true,
     sourcemap: true,
     rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'index.html'),
-        coreRouting: path.resolve(__dirname, 'src/client/definitions/constants/routing/core-page-routing.ts'),
-        foundationsRouting: path.resolve(
-          __dirname,
-          'src/client/definitions/constants/routing/foundations-routing.ts'
-        ),
-        proRouting: path.resolve(__dirname, 'src/client/definitions/constants/routing/pro-page-routing.ts'),
-      },
+      input: path.resolve(__dirname, 'index.html'),
       output: {
-        // ⭐ ADD THIS BLOCK → static filenames for routing outputs
-        entryFileNames(chunk) {
-          if (chunk.name === 'coreRouting') return 'routing/core.js'
-          if (chunk.name === 'foundationsRouting') return 'routing/foundations.js'
-          if (chunk.name === 'proRouting') return 'routing/pro.js'
-          return 'assets/[name]-[hash].js'
-        },
-
-        // keep your existing manual chunking logic
         manualChunks(id) {
           if (id.includes('node_modules')) {
             if (id.includes('/react-dom')) return 'react-dom'
