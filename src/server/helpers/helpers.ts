@@ -1,4 +1,4 @@
-import { pascalCase } from 'change-case'
+import { capitalCase, pascalCase } from 'change-case'
 
 import META from 'client/meta'
 
@@ -22,12 +22,12 @@ const getMetaData = (path: string): { title: string; description: string } => {
       description = DEFAULT_DESCRIPTION
     }
 
-    params = params.map(p => pascalCase(p))
+    params = params.map(p => capitalCase(p))
     if (isComponentPage) {
       params[2] = params[2].replace(' ', '')
     }
 
-    title = params.join(' | ')
+    title = ['NebulaKit', ...params].join(' | ')
   } catch {
     return { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION }
   }
@@ -39,8 +39,12 @@ export const getFinalIndexHtml = (indexHtml: string, appHtml: string, url: strin
   const { title, description } = getMetaData(url)
 
   return indexHtml
-    .replace('<title>NebulaKit | React UI System</title>', `<title>${title}</title>`)
-    .replace('</head>', `<meta name="description" content="${description}"></head>`)
+    .replace('<!-- title -->', `<title>${title}</title>`)
+    .replace('<!-- description -->', `<meta name="description" content="${description}" />`)
+    .replace('<!-- og:title -->', `<meta property="og:title" content="${title}" />`)
+    .replace('<!-- og:description -->', `<meta name="og:description" content="${description}" />`)
+    .replace('<!-- twitter:title -->', `<meta property="twitter:title" content="${title}" />`)
+    .replace('<!-- twitter:description -->', `<meta name="twitter:description" content="${description}" />`)
     .replace(
       '</head>',
       `<script async src="https://plausible.io/js/script.js" data-domain="${process.env.PLAUSIBLE_DOMAIN}"></script></head>`
