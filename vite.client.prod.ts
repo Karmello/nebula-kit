@@ -40,6 +40,15 @@ export default defineConfig({
         proRouting: path.resolve(__dirname, 'src/client/definitions/constants/routing/pro-page-routing.ts'),
       },
       output: {
+        // ⭐ ADD THIS BLOCK → static filenames for routing outputs
+        entryFileNames(chunk) {
+          if (chunk.name === 'coreRouting') return 'routing/coreRouting.js'
+          if (chunk.name === 'foundationsRouting') return 'routing/foundationsRouting.js'
+          if (chunk.name === 'proRouting') return 'routing/proRouting.js'
+          return 'assets/[name]-[hash].js'
+        },
+
+        // keep your existing manual chunking logic
         manualChunks(id) {
           if (id.includes('node_modules')) {
             if (id.includes('/react-dom')) return 'react-dom'
