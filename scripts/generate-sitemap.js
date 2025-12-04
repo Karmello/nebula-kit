@@ -4,11 +4,11 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 // Adjust these imports to point to your actual config files
-import { FOUNDATIONS_CATEGORIES } from '../build/client/routing/foundations.js'
+import x from '../build/client/routing/foundations.js'
 import { CORE_PAGE_CATEGORIES } from '../build/client/routing/core.js'
 import { PRO_PAGE_CATEGORIES } from '../build/client/routing/pro.js'
 
-console.log('>>>', FOUNDATIONS_CATEGORIES)
+console.log('>>>', x)
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
