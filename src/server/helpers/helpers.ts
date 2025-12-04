@@ -2,16 +2,22 @@ import { capitalCase, pascalCase } from 'change-case'
 
 import META from 'client/meta'
 
-const DEFAULT_TITLE = 'NebulaKit | React UI System'
+export const DEFAULT_TITLE = 'NebulaKit | React UI System'
 
-const DEFAULT_DESCRIPTION =
+export const DEFAULT_DESCRIPTION =
   'React UI system built on composition - small, consistent parts combining into larger structures with clarity and control. Each component follows the same foundation, producing apps that stay predictable, stable and effortless to scale.'
 
-const getMetaData = (path: string): { title: string; description: string } => {
+export const getMetaData = (path: string): { title: string; description: string } => {
   let title, description
 
   try {
-    let params = path.split('?')[0].split('/')
+    let params = path
+      .split('?')[0]
+      .split('/')
+      .filter(p => p)
+
+    if (!params.length) throw new Error()
+
     const isComponentPage = ['core', 'pro'].includes(params[0])
 
     if (isComponentPage) {

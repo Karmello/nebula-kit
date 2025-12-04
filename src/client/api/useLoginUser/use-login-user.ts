@@ -13,7 +13,7 @@ export type UseLoginUserRes = UseMakeApiRequestRes<UseLoginUserSuccess, UseLogin
 
 export const useLoginUser = () => {
   return useMakeApiRequest<UseLoginUserSuccess, UseLoginUserError>({
-    path: '/auth/login',
+    path: '/auth/log-in',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
   })
