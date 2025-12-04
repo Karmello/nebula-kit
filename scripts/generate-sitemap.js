@@ -8,6 +8,8 @@ import { FOUNDATIONS_CATEGORIES } from '../build/client/routing/foundations.js'
 import { CORE_PAGE_CATEGORIES } from '../build/client/routing/core.js'
 import { PRO_PAGE_CATEGORIES } from '../build/client/routing/pro.js'
 
+console.log('>>>', FOUNDATIONS_CATEGORIES)
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const domain = 'https://nebulakit.dev'
