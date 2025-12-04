@@ -51,6 +51,7 @@
     "pack:pro": "npm pack ./dist/pro --pack-destination ./dist",
     "upload:pro:dev": "node ./scripts/update-local-versioning-json.js && aws s3 cp ./versioning.json s3://nebula-kit-pro-dev && aws s3 cp dist/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz s3://nebula-kit-pro-dev/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz",
     "upload:pro": "node ./scripts/update-local-versioning-json.js && aws s3 cp ./versioning.json s3://nebula-kit-pro && aws s3 cp dist/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz s3://nebula-kit-pro/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz",
+    "release:core:private": "yarn dist:core && npm publish ./dist/core --access restricted",
     "release:core": "yarn dist:core && npm publish ./dist/core --access public",
     "release:pro": "yarn dist:pro && yarn pack:pro && yarn upload:pro"
   },
