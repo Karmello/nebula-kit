@@ -3,9 +3,9 @@ import { writeFileSync } from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-import { FOUNDATIONS_CATEGORIES } from '../src/client/definitions/constants/routing/foundations-routing.ts'
-import { CORE_PAGE_CATEGORIES } from '../src/client/definitions/constants/routing/core-page-routing.ts'
-import { PRO_PAGE_CATEGORIES } from '../src/client/definitions/constants/routing/pro-page-routing.ts'
+import { FOUNDATIONS_CATEGORIES } from '../src/client/definitions/constants/routing/foundations-routing'
+import { CORE_PAGE_CATEGORIES } from '../src/client/definitions/constants/routing/core-page-routing'
+import { PRO_PAGE_CATEGORIES } from '../src/client/definitions/constants/routing/pro-page-routing'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
