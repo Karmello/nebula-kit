@@ -32,7 +32,7 @@
   "scripts": {
     "dev": "nodemon -L --exec \"vite --config vite.client.dev.ts\" --watch vite.client.dev.ts --verbose",
     "dev:ssr": "nodemon -L --exec \"tsx src/server/server.dev.ts\" --watch src/server/server.dev.ts --verbose",
-    "build:client": "NODE_ENV=production vite build --config vite.client.prod.ts",
+    "build:client": "NODE_ENV=production vite build --config vite.client.prod.ts && node ./scripts/generate-sitemap.js",
     "build:server": "NODE_ENV=production tsup --config tsup.server.ts",
     "build": "rimraf build && yarn build:client && yarn build:server",
     "start": "NODE_ENV=production node build/server/server.prod.js",
