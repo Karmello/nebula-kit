@@ -9,6 +9,7 @@ import { StaticRouter } from 'react-router'
 
 import { HydrationGate, NebkitProvider, Snackbar } from 'src/lib/components'
 import { App } from 'src/client/components'
+import { generateTitleFromPath, getComponentDescriptionByPath } from './seo-helpers'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -44,6 +45,14 @@ app.get(/.*/, (req, res) => {
     )
 
     const html = indexHtml
+      .replace(
+        '<title>NebulaKit | React UI System</title>',
+        `<title>${generateTitleFromPath(req.url)}</title>`
+      )
+      .replace(
+        '</head>',
+        `<meta name="description" content="${getComponentDescriptionByPath(req.url)}"></head>`
+      )
       .replace(
         '</head>',
         `<script async src="https://plausible.io/js/script.js" data-domain="${process.env.PLAUSIBLE_DOMAIN}"></script></head>`
