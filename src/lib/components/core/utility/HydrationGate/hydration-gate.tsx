@@ -1,8 +1,10 @@
 import { useLayoutEffect, useState } from 'react'
 
+import { Loader } from 'lib/components'
+
 import { HydrationGateProps } from './definitions'
 
-export const HydrationGate = ({ children, minDelay = 0, fallback = null }: HydrationGateProps) => {
+export const HydrationGate = ({ children, minDelay, fallback }: HydrationGateProps) => {
   const [visible, setVisible] = useState(false)
 
   useLayoutEffect(() => {
@@ -26,8 +28,8 @@ export const HydrationGate = ({ children, minDelay = 0, fallback = null }: Hydra
 
   return (
     <div style={{ position: 'relative' }}>
-      <div style={visible ? undefined : { visibility: 'hidden', pointerEvents: 'none' }}>{children}</div>
-      {fallback && !visible ? <div style={{ position: 'absolute', inset: 0 }}>{fallback}</div> : null}
+      <div style={visible ? undefined : { opacity: 0, pointerEvents: 'none' }}>{children}</div>
+      {fallback ? fallback : <Loader centered active={!visible} />}
     </div>
   )
 }

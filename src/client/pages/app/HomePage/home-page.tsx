@@ -73,7 +73,15 @@ export const HomePage = () => {
               </Flex>
             </Flex.Item>
             <Flex.Item>
-              <img src={logoImg} width="175px" height="175px" alt="Captain Nebula" fetchPriority="high" />
+              <img
+                src={logoImg}
+                width="175px"
+                height="175px"
+                alt="Captain Nebula"
+                loading="eager"
+                fetchPriority="high"
+                decoding="sync"
+              />
             </Flex.Item>
           </Flex>
           <Spacer blockSize={50} />
