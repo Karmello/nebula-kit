@@ -42,9 +42,9 @@ export default defineConfig({
       output: {
         // ⭐ ADD THIS BLOCK → static filenames for routing outputs
         entryFileNames(chunk) {
-          if (chunk.name === 'coreRouting') return 'routing/coreRouting.js'
-          if (chunk.name === 'foundationsRouting') return 'routing/foundationsRouting.js'
-          if (chunk.name === 'proRouting') return 'routing/proRouting.js'
+          if (chunk.name === 'coreRouting') return 'routing/core.js'
+          if (chunk.name === 'foundationsRouting') return 'routing/foundations.js'
+          if (chunk.name === 'proRouting') return 'routing/pro.js'
           return 'assets/[name]-[hash].js'
         },
 
