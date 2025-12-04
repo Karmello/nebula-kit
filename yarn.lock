@@ -954,7 +954,6 @@ __metadata:
     typescript: "npm:^5.9.2"
     typescript-eslint: "npm:^8.44.0"
     vite: "npm:^7.1.5"
-    vite-plugin-sitemap: "npm:^0.8.2"
     vite-tsconfig-paths: "npm:^5.1.4"
     vitest: "npm:^3.2.4"
     zod: "npm:^4.1.11"
@@ -8236,13 +8235,6 @@ __metadata:
   bin:
     vite-node: vite-node.mjs
   checksum: 10c0/6ceca67c002f8ef6397d58b9539f80f2b5d79e103a18367288b3f00a8ab55affa3d711d86d9112fce5a7fa658a212a087a005a045eb8f4758947dd99af2a6c6b
-  languageName: node
-  linkType: hard
-
-"vite-plugin-sitemap@npm:^0.8.2":
-  version: 0.8.2
-  resolution: "vite-plugin-sitemap@npm:0.8.2"
-  checksum: 10c0/d462fbf2f8099985f8768134481c6034e83d91fac2231a160581aca42922c743f7dbb7c8a7bfc11643401a59434ac874639c8c7ee7b3fc41a47cf23e815b555e
   languageName: node
   linkType: hard
 
