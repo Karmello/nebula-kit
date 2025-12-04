@@ -32,18 +32,12 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
-        coreRouting: path.resolve(
-          __dirname,
-          '../src/client/definitions/constants/routing/core-page-routing.ts'
-        ),
+        coreRouting: path.resolve(__dirname, 'src/client/definitions/constants/routing/core-page-routing.ts'),
         foundationsRouting: path.resolve(
           __dirname,
-          '../src/client/definitions/constants/routing/foundations-routing.ts'
+          'src/client/definitions/constants/routing/foundations-routing.ts'
         ),
-        proRouting: path.resolve(
-          __dirname,
-          '../src/client/definitions/constants/routing/pro-page-routing.ts'
-        ),
+        proRouting: path.resolve(__dirname, 'src/client/definitions/constants/routing/pro-page-routing.ts'),
       },
       output: {
         manualChunks(id) {
