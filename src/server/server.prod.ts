@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { fileURLToPath } from 'url'
 import express from 'express'
 import getPort from 'get-port'
 import { createElement } from 'react'
@@ -9,6 +10,8 @@ import { StaticRouter } from 'react-router'
 import { HydrationGate, NebkitProvider, Snackbar } from 'src/lib/components'
 import { App } from 'src/client/components'
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 const buildDir = path.resolve(process.cwd(), 'build/client')
 const indexHtml = fs.readFileSync(path.join(buildDir, 'index.html'), 'utf-8')
 
