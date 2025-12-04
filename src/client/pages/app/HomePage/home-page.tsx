@@ -73,7 +73,7 @@ export const HomePage = () => {
               </Flex>
             </Flex.Item>
             <Flex.Item>
-              <img src={logoImg} />
+              <img src={logoImg} height="175px" />
             </Flex.Item>
           </Flex>
           <Spacer blockSize={50} />
