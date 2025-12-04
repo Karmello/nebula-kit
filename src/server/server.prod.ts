@@ -22,7 +22,7 @@ app.get('/captain-nebula.png', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/captain-nebula.png'))
 })
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, '../client')))
 app.use(express.static(buildDir, { index: false }))
 
 app.get(/.*/, (req, res) => {
