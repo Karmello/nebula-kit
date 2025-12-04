@@ -1,9 +1,10 @@
 import { sentenceCase } from 'change-case'
 
+import { useNavigateTo } from 'client/hooks'
+import logoImg from 'client/assets/logo.png'
 import { Box, Divider, Flex, Button, Link, Section, Select, Spacer, Text, Segment } from 'lib/components'
 import { useNebkitStore } from 'lib/state'
 import { Color, COLORS, THEMES } from 'lib/definitions'
-import { useNavigateTo } from 'client/hooks'
 
 import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/core/utility/NebkitProvider/definitions'
 import { PageKey } from 'client/definitions'
@@ -22,40 +23,58 @@ export const HomePage = () => {
           </Text>
           <Divider />
           <Spacer blockSize={20} />
-          <Text typography="h6">
-            React UI system built on composition - small, consistent parts combining into larger structures
-            with clarity and control. Each component follows the same foundation, producing apps that stay
-            predictable, stable and effortless to scale.
-          </Text>
-          <Spacer blockSize={30} />
-          <Flex gap={10} flexWrap="wrap">
-            <Link
-              href={PageKey.foundations}
-              onClick={() => {
-                navigateTo(PageKey.foundations)
-              }}
-            >
-              <Button color="purple" intent="primary" iconName="arrow-right" iconPosition="right" size="sm">
-                Foundations
-              </Button>
-            </Link>
-            <Link
-              href={PageKey.core}
-              onClick={() => {
-                navigateTo(PageKey.core)
-              }}
-            >
-              <Button
-                variant="ghost"
-                color="purple"
-                intent="primary"
-                iconName="arrow-right"
-                iconPosition="right"
-                size="sm"
-              >
-                Components
-              </Button>
-            </Link>
+          <Flex
+            columnGap={25}
+            rowGap={50}
+            alignItems="center"
+            flexDirection={{ base: 'column', md: 'row', lg: 'column', xl: 'row' }}
+          >
+            <Flex.Item>
+              <Text typography="h6">
+                React UI system built on composition - small, consistent parts combining into larger
+                structures with clarity and control. Each component follows the same foundation, producing
+                apps that stay predictable, stable and effortless to scale.
+              </Text>
+              <Spacer blockSize={30} />
+              <Flex gap={10} flexWrap="wrap">
+                <Link
+                  href={PageKey.foundations}
+                  onClick={() => {
+                    navigateTo(PageKey.foundations)
+                  }}
+                >
+                  <Button
+                    color="purple"
+                    intent="primary"
+                    iconName="arrow-right"
+                    iconPosition="right"
+                    size="sm"
+                  >
+                    Foundations
+                  </Button>
+                </Link>
+                <Link
+                  href={PageKey.core}
+                  onClick={() => {
+                    navigateTo(PageKey.core)
+                  }}
+                >
+                  <Button
+                    variant="ghost"
+                    color="purple"
+                    intent="primary"
+                    iconName="arrow-right"
+                    iconPosition="right"
+                    size="sm"
+                  >
+                    Components
+                  </Button>
+                </Link>
+              </Flex>
+            </Flex.Item>
+            <Flex.Item>
+              <img src={logoImg} />
+            </Flex.Item>
           </Flex>
           <Spacer blockSize={50} />
           <Divider />
