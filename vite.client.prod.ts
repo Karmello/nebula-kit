@@ -30,7 +30,21 @@ export default defineConfig({
     manifest: true,
     sourcemap: true,
     rollupOptions: {
-      input: path.resolve(__dirname, 'index.html'),
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        coreRouting: path.resolve(
+          __dirname,
+          '../src/client/definitions/constants/routing/core-page-routing.ts'
+        ),
+        foundationsRouting: path.resolve(
+          __dirname,
+          '../src/client/definitions/constants/routing/foundations-routing.ts'
+        ),
+        proRouting: path.resolve(
+          __dirname,
+          '../src/client/definitions/constants/routing/pro-page-routing.ts'
+        ),
+      },
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {

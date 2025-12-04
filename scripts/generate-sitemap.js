@@ -4,9 +4,9 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 // Adjust these imports to point to your actual config files
-import { FOUNDATIONS_CATEGORIES } from '../src/client/definitions/constants/routing/foundations-routing.ts'
-import { CORE_PAGE_CATEGORIES } from '../src/client/definitions/constants/routing/core-page-routing.ts'
-import { PRO_PAGE_CATEGORIES } from '../src/client/definitions/constants/routing/pro-page-routing.ts'
+import { FOUNDATIONS_CATEGORIES } from '../build/client/assets/foundations-routing.js'
+import { CORE_PAGE_CATEGORIES } from '../build/client/assets/core-page-routing.js'
+import { PRO_PAGE_CATEGORIES } from '../build/client/assets/pro-page-routing.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
