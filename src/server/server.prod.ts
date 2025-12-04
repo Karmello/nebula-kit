@@ -17,14 +17,12 @@ const indexHtml = fs.readFileSync(path.join(buildDir, 'index.html'), 'utf-8')
 
 const app = express()
 
-app.use(express.static(buildDir, { index: false }))
+app.get('/captain-nebula.png', (req, res) => {
+  res.setHeader('Cache-Control', 'public, max-age=2592000, immutable')
+  res.sendFile(path.join(__dirname, 'public/captain-nebula.png'))
+})
 
-app.use(
-  express.static(path.join(__dirname, 'public'), {
-    maxAge: '365d',
-    immutable: true,
-  })
-)
+app.use(express.static(buildDir, { index: false }))
 
 app.get(/.*/, (req, res) => {
   try {

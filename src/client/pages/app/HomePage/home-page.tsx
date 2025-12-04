@@ -7,8 +7,6 @@ import { useNebkitStore } from 'lib/state'
 import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
 
-import logoImg from '../../../../../public/captain-nebula.png'
-
 export const HomePage = () => {
   const navigateTo = useNavigateTo()
 
@@ -73,7 +71,13 @@ export const HomePage = () => {
               </Flex>
             </Flex.Item>
             <Flex.Item>
-              <img src={logoImg} width="175px" height="175px" alt="Captain Nebula" fetchPriority="high" />
+              <img
+                src="/captain-nebula.png"
+                width="175px"
+                height="175px"
+                alt="Captain Nebula"
+                fetchPriority="high"
+              />
             </Flex.Item>
           </Flex>
           <Spacer blockSize={50} />
