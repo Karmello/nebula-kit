@@ -2,9 +2,17 @@ import path from 'path'
 import { defineConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import react from '@vitejs/plugin-react-swc'
+import sitemap from 'vite-plugin-sitemap'
 
 export default defineConfig({
-  plugins: [tsconfigPaths(), react()],
+  plugins: [
+    tsconfigPaths(),
+    react(),
+    sitemap({
+      hostname: 'https://nebulakit.dev',
+      readable: true,
+    }),
+  ],
   resolve: {
     alias: {
       client: path.resolve(__dirname, 'src/client'),
