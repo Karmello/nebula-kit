@@ -14,12 +14,6 @@ const HYDRATION_GATE_PROPS_META: ComponentMeta<HydrationGateProps>['props'] = {
     isResponsive: false,
     description: 'Minimum delay time the app is treated as hydrating.',
   },
-  fallback: {
-    options: ['ReactNode'],
-    isRequired: false,
-    isResponsive: false,
-    description: 'Component displayed during hydration - typically a Loader.',
-  },
 }
 
 export { HYDRATION_GATE_PROPS_META }

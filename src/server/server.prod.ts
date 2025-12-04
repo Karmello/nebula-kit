@@ -21,13 +21,8 @@ app.use(express.static(buildDir, { index: false }))
 
 app.use(
   express.static(path.join(__dirname, 'public'), {
-    maxAge: '30d',
+    maxAge: '365d',
     immutable: true,
-    setHeaders: (res, path) => {
-      if (path.endsWith('captain-nebula.png')) {
-        res.setHeader('Cache-Control', 'public, max-age=2592000, immutable')
-      }
-    },
   })
 )
 
