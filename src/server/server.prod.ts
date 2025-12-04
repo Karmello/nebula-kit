@@ -17,9 +17,9 @@ const indexHtml = fs.readFileSync(path.join(buildDir, 'index.html'), 'utf-8')
 
 const app = express()
 
-app.get('/captain-nebula.png', (req, res) => {
+app.get('/captain-nebula.webp', (req, res) => {
   res.setHeader('Cache-Control', 'public, max-age=2592000, immutable')
-  res.sendFile(path.join(__dirname, '../client/captain-nebula.png'))
+  res.sendFile(path.join(__dirname, '../client/captain-nebula.webp'))
 })
 
 app.use(express.static(path.join(__dirname, '../client')))

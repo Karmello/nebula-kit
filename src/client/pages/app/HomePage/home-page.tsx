@@ -72,7 +72,7 @@ export const HomePage = () => {
             </Flex.Item>
             <Flex.Item>
               <img
-                src="/captain-nebula.png"
+                src="/captain-nebula.webp"
                 width="175px"
                 height="175px"
                 alt="Captain Nebula"
