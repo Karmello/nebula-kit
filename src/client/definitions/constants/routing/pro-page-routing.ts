@@ -42,3 +42,5 @@ export const PRO_PAGE_CATEGORIES = [
     items: [{ key: 'focus-trap', label: 'FocusTrap', sections: PRO_PAGE_SECTIONS }],
   },
 ]
+
+export default PRO_PAGE_CATEGORIES
