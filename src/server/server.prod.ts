@@ -46,7 +46,7 @@ app.get(/.*/, (req, res) => {
     const html = indexHtml
       .replace(
         '</head>',
-        `<script async src="https://plausible.io/js/plausible.js" data-domain="${process.env.PLAUSIBLE_DOMAIN}"></script></head>`
+        `<script async src="https://plausible.io/js/script.js" data-domain="${process.env.PLAUSIBLE_DOMAIN}"></script></head>`
       )
       .replace('<!--ssr-outlet-->', appHtml)
 
