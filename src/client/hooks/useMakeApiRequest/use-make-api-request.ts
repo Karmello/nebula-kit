@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
 
-import { useAppStore } from 'client/store'
 import { PageKey } from 'client/definitions'
 
 type Args = {
@@ -29,8 +28,6 @@ export const useMakeApiRequest = <TData, TError>({
   const [error, setError] = useState<TError>(null)
   const [code, setCode] = useState<number>(null)
   const [isMakingRequest, setIsMakingRequest] = useState<boolean>(false)
-
-  const { setUser } = useAppStore()
 
   const sendRequest = useCallback(async (body?: object): Promise<UseMakeApiRequestRes<TData, TError>> => {
     setIsMakingRequest(true)
