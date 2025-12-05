@@ -64,6 +64,7 @@ export const UpdateEmailSection = () => {
           }}
         </Form>
       </Box>
+      <Spacer blockSize={7} />
     </Section>
   )
 }

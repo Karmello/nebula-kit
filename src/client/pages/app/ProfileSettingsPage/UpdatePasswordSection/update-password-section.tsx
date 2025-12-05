@@ -21,7 +21,7 @@ export const UpdatePasswordSection = () => {
         the change.
       </Text>
       <Spacer blockSize={30} />
-      <Box maxInlineSize={{ md: '500px' }}>
+      <Box maxInlineSize={{ md: '350px' }}>
         <Form<{ currentPassword: string; newPassword: string }>
           useFormProps={{
             defaultValues: { currentPassword: '', newPassword: '' },
@@ -96,6 +96,7 @@ export const UpdatePasswordSection = () => {
           }}
         </Form>
       </Box>
+      <Spacer blockSize={7} />
     </Section>
   )
 }

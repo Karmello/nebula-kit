@@ -9,10 +9,10 @@ export const AppFooter = () => {
   return (
     <Footer switchAt="md" paddingBlock={15} paddingInline={25} paddingBottom={{ base: 15, lg: 35 }}>
       <Footer.Section>
-        <Text scale="compact" bold>
-          Project
+        <Text bold typography="caption">
+          About the project
         </Text>
-        <Spacer blockSize={10} />
+        <Spacer blockSize={20} />
         <Text scale="compact">NebulaKit v0.1.0</Text>
         <Spacer blockSize={10} />
         <Text scale="compact" italic>
@@ -20,34 +20,33 @@ export const AppFooter = () => {
         </Text>
       </Footer.Section>
       <Footer.Section>
-        <Text scale="compact" bold>
-          Support
+        <Text bold typography="caption">
+          Community & Support
         </Text>
-        <Spacer blockSize={10} />
-        <Link href="mailto:contact@nebulakit.dev" target="_blank">
-          <Text scale="compact" color="blue" intent="primary">
-            contact@nebulakit.dev
-          </Text>
-        </Link>
-        <Spacer />
-        <Flex flexWrap="wrap" gap={10}>
-          <Link href="https://discord.gg/HGE2gxYY" target="_blank">
-            <Button color="purple" intent="primary" size="sm" iconName="external-link" iconPosition="right">
-              NebulaKit on Discord
-            </Button>
-          </Link>
+        <Spacer blockSize={20} />
+        <Flex flexDirection="column" gap={10}>
           <Link href="https://x.com/captainnebula" target="_blank">
             <Button intent="inverse" size="sm" iconName="external-link" iconPosition="right">
               NebulaKit on X
             </Button>
           </Link>
+          <Link href="https://discord.gg/HGE2gxYY" target="_blank">
+            <Button color="purple" intent="primary" size="sm" iconName="external-link" iconPosition="right">
+              NebulaKit on Discord
+            </Button>
+          </Link>
+          <Link href="mailto:contact@nebulakit.dev" target="_blank">
+            <Button color="blue" intent="primary" variant="soft-outline" size="sm" iconName="mail">
+              contact@nebulakit.dev
+            </Button>
+          </Link>
         </Flex>
       </Footer.Section>
       <Footer.Section>
-        <Text scale="compact" bold>
-          Legal
+        <Text bold typography="caption">
+          Legal information
         </Text>
-        <Spacer blockSize={10} />
+        <Spacer blockSize={20} />
         <MarkerList>
           <MarkerList.Item>
             <Link
