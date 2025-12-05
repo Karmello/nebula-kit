@@ -99,6 +99,8 @@ export const FormField = ({
                       disabled: formContext.formState.isSubmitting,
                       tagAttrs: {
                         ...formFieldComponent.props.tagAttrs,
+                        minLength: minLength !== undefined ? minLength : undefined,
+                        maxLength: maxLength !== undefined ? maxLength : undefined,
                         'aria-labelledby': customFormLabelComponent || label ? labelId : undefined,
                         name,
                       },

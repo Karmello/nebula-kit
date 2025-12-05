@@ -65,6 +65,7 @@ export const ICON_NAMES = [
   'list-chevrons-up-down',
   'lock-keyhole',
   'log-in',
+  'mail',
   'menu',
   'message-circle-question-mark',
   'orbit',

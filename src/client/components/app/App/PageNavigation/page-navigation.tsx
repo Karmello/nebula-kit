@@ -22,7 +22,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
   const currentPageKey = `/${pathname.split('/')[1]}`
 
   return (
-    <Segment flexDirection={{ base: 'column', md: 'row' }}>
+    <Segment flexDirection={{ base: 'column', lg: 'row' }}>
       <Segment.Item>
         <Link
           href={PageKey.foundations}
@@ -112,6 +112,23 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
           </Link>
         </Segment.Item>
       ) : null}
+      <Segment.Item>
+        <Link
+          href={PageKey.feedback}
+          onClick={async () => {
+            if (mainOpen) await setMainOpen(false)
+            navigateTo(PageKey.feedback)
+          }}
+        >
+          <Button
+            intent={currentPageKey === PageKey.feedback ? 'secondary' : 'muted'}
+            iconName="mail"
+            fullWidth
+          >
+            Feedback
+          </Button>
+        </Link>
+      </Segment.Item>
     </Segment>
   )
 }

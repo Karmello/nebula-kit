@@ -62,7 +62,7 @@ export const App = () => {
   return (
     <AppFrame stickyHeader>
       <AppFrame.Header>
-        <Toolbar switchAt="md">
+        <Toolbar switchAt="lg">
           {({ setMainOpen, mainOpen }) => (
             <>
               <Toolbar.Start>

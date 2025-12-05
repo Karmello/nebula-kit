@@ -7,6 +7,7 @@ export enum PageKey {
   pricing = '/pricing',
   pricingCore = '/pricing/core',
   pricingPro = '/pricing/pro',
+  feedback = '/feedback',
   authLogin = '/auth/log-in',
   authRegister = '/auth/register',
   authRecover = '/auth/recover',

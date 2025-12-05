@@ -48,6 +48,7 @@ export const Form = <
     try {
       const res = (await onValidSubmission(...args)) as Response
       await waitForTime(start, minLoadingTime)
+      console.log({ resetOnSuccess, res })
       if (resetOnSuccess && res.ok) form.reset()
       onResponse?.(res, form)
     } catch (err) {

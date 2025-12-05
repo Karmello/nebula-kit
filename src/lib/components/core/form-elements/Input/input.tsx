@@ -4,8 +4,6 @@ import classNames from 'classnames'
 import { Box, Segment } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import './input.scss'
-
 import {
   DEFAULT_INPUT_INTENT,
   DEFAULT_INPUT_SIZE,
@@ -13,6 +11,8 @@ import {
   INPUT_SIZE_CONFIG,
   InputProps,
 } from './definitions'
+
+import './input.scss'
 
 export const Input = ({
   // HtmlTag

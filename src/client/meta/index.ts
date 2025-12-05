@@ -35,6 +35,7 @@ import spacerMeta from './Spacer/_index'
 import splitViewMeta from './SplitView/_index'
 import tableMeta from './Table/_index'
 import textMeta from './Text/_index'
+import textareaMeta from './Textarea/_index'
 import toolbarMeta from './Toolbar/_index'
 import withIconMeta from './WithIcon/_index'
 
@@ -74,6 +75,7 @@ const META = {
   SplitView: splitViewMeta,
   Table: tableMeta,
   Text: textMeta,
+  Textarea: textareaMeta,
   Toolbar: toolbarMeta,
   WithIcon: withIconMeta,
 } as Record<string, Record<string, ComponentMeta<object>>>
