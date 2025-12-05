@@ -1,6 +1,13 @@
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_TEXTAREA_INTENT, DEFAULT_TEXTAREA_VARIANT, TextareaProps } from 'lib/components'
+import {
+  DEFAULT_TEXTAREA_INTENT,
+  DEFAULT_TEXTAREA_RESIZE,
+  DEFAULT_TEXTAREA_ROWS,
+  DEFAULT_TEXTAREA_VARIANT,
+  TEXTAREA_RESIZE,
+  TextareaProps,
+} from 'lib/components'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
@@ -12,10 +19,13 @@ const TEXTAREA_PROPS_META: ComponentMeta<TextareaProps>['props'] = {
     description: 'Initial value displayed when the component is used in uncontrolled mode.',
   },
   disabled: BOX_PROPS_META.disabled,
+  inlineSize: BOX_PROPS_META.inlineSize,
   intent: {
     ...BOX_PROPS_META.intent,
     defaultValue: String(DEFAULT_TEXTAREA_INTENT),
   },
+  maxInlineSize: BOX_PROPS_META.maxInlineSize,
+  minInlineSize: BOX_PROPS_META.minInlineSize,
   onBlur: {
     options: ['e => void'],
     description: 'Callback fired when the textarea loses focus.',
@@ -23,6 +33,16 @@ const TEXTAREA_PROPS_META: ComponentMeta<TextareaProps>['props'] = {
   onChange: {
     options: ['(value: string) => void'],
     description: 'Callback fired when the value changes.',
+  },
+  resize: {
+    options: TEXTAREA_RESIZE as never,
+    defaultValue: DEFAULT_TEXTAREA_RESIZE,
+    description: "Controls the textarea's resize behavior.",
+  },
+  rows: {
+    options: ['number'],
+    defaultValue: DEFAULT_TEXTAREA_ROWS as never,
+    description: 'Initial number of text rows to display.',
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
