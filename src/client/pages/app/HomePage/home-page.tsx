@@ -1,6 +1,19 @@
 import { sentenceCase } from 'change-case'
 
-import { Box, Divider, Flex, Button, Link, Section, Select, Spacer, Text, Segment } from 'lib/components'
+import {
+  Box,
+  Divider,
+  Flex,
+  Button,
+  Link,
+  Section,
+  Select,
+  Spacer,
+  Text,
+  Segment,
+  Callout,
+} from 'lib/components'
+
 import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/core/utility/NebkitProvider/definitions'
 import { Color, COLORS, THEMES } from 'lib/definitions'
 import { useNebkitStore } from 'lib/state'
@@ -13,7 +26,14 @@ export const HomePage = () => {
   const { theme, setTheme, brand, setBrand, borderRadiusSize, setBorderRadiusSize } = useNebkitStore()
 
   return (
-    <Box padding={{ base: 20, lg: 50 }}>
+    <Box padding={{ base: 20, lg: 50 }} paddingTop={0}>
+      <Callout
+        size="sm"
+        variant="outline"
+        content="NebulaKit Core and Pro are scheduled to be released soon. Meanwhile you can explore the website. Everything is fully functional except package downloads, which will become available once the release goes live."
+        heading="NebulaKit is scheduled for release in January 2026."
+      />
+      <Spacer blockSize={75} />
       <Flex flexDirection={{ base: 'column', lg: 'row' }} rowGap={80} columnGap={160}>
         <Flex.Item flex={2}>
           <Text typography="h1" color="purple" intent="primary">
