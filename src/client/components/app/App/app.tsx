@@ -1,6 +1,7 @@
 import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
+import { getHtmlMetaData } from 'src/server/helpers'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useGetUser, useLogoutUser } from 'client/api'
@@ -42,6 +43,7 @@ export const App = () => {
   }, [])
 
   useLayoutEffect(() => {
+    document.title = getHtmlMetaData(pathname).title
     window.scrollTo(0, 0)
   }, [pathname])
 

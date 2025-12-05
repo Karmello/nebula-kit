@@ -7,7 +7,7 @@ export const DEFAULT_TITLE = 'NebulaKit | React UI System'
 export const DEFAULT_DESCRIPTION =
   'React UI system built on composition - small, consistent parts combining into larger structures with clarity and control. Each component follows the same foundation, producing apps that stay predictable, stable and effortless to scale.'
 
-export const getMetaData = (path: string): { title: string; description: string } => {
+export const getHtmlMetaData = (path: string): { title: string; description: string } => {
   let title, description
 
   try {
@@ -42,7 +42,7 @@ export const getMetaData = (path: string): { title: string; description: string 
 }
 
 export const getFinalIndexHtml = (indexHtml: string, appHtml: string, url: string) => {
-  const { title, description } = getMetaData(url)
+  const { title, description } = getHtmlMetaData(url)
 
   return indexHtml
     .replace('<!-- title -->', `<title>${title}</title>`)

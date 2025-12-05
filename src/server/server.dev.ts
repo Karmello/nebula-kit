@@ -6,6 +6,8 @@ import { createServer as createViteServer, ViteDevServer } from 'vite'
 import { createElement } from 'react'
 import { renderToString } from 'react-dom/server'
 
+import { getFinalIndexHtml } from './helpers'
+
 const renderApp = async (vite: ViteDevServer, url: string) => {
   const { StaticRouter } = await vite.ssrLoadModule('react-router')
   const { HydrationGate } = await vite.ssrLoadModule('src/lib/components/core/index.ts')
@@ -42,14 +44,17 @@ const start = async () => {
     try {
       const url = req.originalUrl
 
-      let template = fs.readFileSync(path.resolve(__dirname, '../../index.html'), 'utf-8')
-      template = await vite.transformIndexHtml(url, template)
-      template = template.replace('</head>', `<style id='neb-ssr-dev-styles'>${css}</style></head>`)
+      let indexHtml = fs.readFileSync(path.resolve(__dirname, '../../index.html'), 'utf-8')
+      indexHtml = await vite.transformIndexHtml(url, indexHtml)
+      indexHtml = indexHtml.replace('</head>', `<style id='neb-ssr-dev-styles'>${css}</style></head>`)
 
       const appHtml = await renderApp(vite, url)
+      indexHtml = indexHtml.replace('<!--ssr-outlet-->', appHtml)
 
-      const html = template.replace('<!--ssr-outlet-->', appHtml)
-      res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
+      res
+        .status(200)
+        .set({ 'Content-Type': 'text/html' })
+        .end(getFinalIndexHtml(indexHtml, appHtml, url))
     } catch (ex) {
       vite.ssrFixStacktrace(ex as Error)
       next(ex)
