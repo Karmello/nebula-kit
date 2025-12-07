@@ -211,6 +211,10 @@ export const PricingPage = () => {
                 </Text>
                 <Text italic>* community access is open to everyone</Text>
                 <Text italic>* priority support applies to the paying account holder only</Text>
+                <Text italic>
+                  * as NebulaKit grows with more components and features, pricing may be adjusted slightly
+                  over time to reflect increased value, any updates will always be communicated in advance
+                </Text>
                 <Text italic>* all prices in USD</Text>
               </Flex>
             </>

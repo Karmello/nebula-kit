@@ -30,7 +30,7 @@ export const AppFooter = () => {
               NebulaKit on X
             </Button>
           </Link>
-          <Link href="https://discord.gg/HGE2gxYY" target="_blank">
+          <Link href="https://discord.gg/BgezCRDN8H" target="_blank">
             <Button color="purple" intent="primary" size="sm" iconName="external-link" iconPosition="right">
               NebulaKit on Discord
             </Button>
