@@ -31,9 +31,9 @@ export default () => {
         </Text>
         <CodeSnippet
           lang="log"
-          code={`@nebula-kit:registry=https://nebula-kit.com/registry
-//nebula-kit.com/registry/:_authToken=\${NEB_TOKEN}\
-always-auth=true
+          code={`@nebula-kit:registry=https://api.nebulakit.dev/download/pro
+//api.nebulakit.dev/download/pro/:_authToken=\${NEB_TOKEN}\
+\nalways-auth=true
 `}
         />
         <Spacer blockSize={5} />
