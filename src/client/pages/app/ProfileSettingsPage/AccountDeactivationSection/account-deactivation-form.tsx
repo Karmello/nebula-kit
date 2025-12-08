@@ -38,7 +38,7 @@ export const AccountDeactivationForm = ({
       <Flex flexDirection="column" rowGap={7}>
         {!deactivateSectionEnabled ? (
           <Text intent="secondary" italic>
-            * You need unsubscribe from your paid plan first
+            * You need to unsubscribe from your paid plan first
           </Text>
         ) : null}
         <Box position="relative" blockSize={45}>
