@@ -15,7 +15,7 @@ export const ConnectToDiscordSection = ({
     <Section heading="Discord" variant="soft-outline" borderIntent="muted">
       <Text>
         Connect your Discord account to receive your NebulaKit role and priority badge in the community. This
-        helps other members identify your plan and ensures your messages get priority attention.
+        helps us recognize your plan and provide the right level of support.
       </Text>
       <Spacer blockSize={30} />
       <Flex alignItems="center" columnGap={20}>
