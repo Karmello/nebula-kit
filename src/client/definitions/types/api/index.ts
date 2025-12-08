@@ -5,6 +5,7 @@ export type ApiUser = {
   plan: string
   licenseKey: string
   discordUserId: string
+  githubUsername: string
 }
 
 export type ApiSubscription = {

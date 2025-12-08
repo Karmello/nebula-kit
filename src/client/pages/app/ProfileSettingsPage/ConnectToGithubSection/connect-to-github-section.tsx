@@ -1,28 +1,27 @@
 import { Section, Button, Text, Spacer, Flex } from 'lib/components'
+import { useConnectToGithub } from 'client/api'
 
-import { useConnectToDiscord } from 'client/api'
-
-export const ConnectToDiscordSection = ({
+export const ConnectToGithubSection = ({
   userPlan,
-  discordUserId,
+  githubUsername,
 }: {
   userPlan: string
-  discordUserId: string
+  githubUsername: string
 }) => {
-  const connectToDiscord = useConnectToDiscord()
+  const connectToGithub = useConnectToGithub()
 
   return (
-    <Section heading="Discord" variant="soft-outline" borderIntent="muted">
+    <Section heading="Github" variant="soft-outline" borderIntent="muted">
       <Text>
-        Connect your Discord account to receive your NebulaKit role and priority badge in the community. This
-        helps other members identify your plan and ensures your messages get priority attention.
+        Connect your GitHub account to unlock access to the private NebulaKit roadmap. This lets you follow
+        upcoming features, track progress and stay aligned with what's being built next.
       </Text>
       <Spacer blockSize={30} />
       <Flex alignItems="center" columnGap={20}>
         <Button
           tagAttrs={{
             onClick: async () => {
-              const res = await connectToDiscord.sendRequest()
+              const res = await connectToGithub.sendRequest()
               if (res.ok) {
                 window.location.href = res.data.url
               }
@@ -32,8 +31,8 @@ export const ConnectToDiscordSection = ({
           intent="primary"
           color="blue"
           iconName="plug"
-          loading={connectToDiscord.isMakingRequest}
-          disabled={userPlan === 'free' || !!discordUserId || !!connectToDiscord.data}
+          loading={connectToGithub.isMakingRequest}
+          disabled={userPlan === 'free' || !!githubUsername || !!connectToGithub.data}
         >
           Connect
         </Button>
@@ -41,7 +40,7 @@ export const ConnectToDiscordSection = ({
           <Text intent="secondary" italic>
             * For paid users
           </Text>
-        ) : discordUserId ? (
+        ) : githubUsername ? (
           <Text intent="secondary" italic iconName="check" iconPosition="right">
             Done
           </Text>

@@ -1,7 +1,7 @@
 import { useCancelPaidPlan } from 'client/api'
 import { Button, Dialog, Segment, Text, useSnackbar } from 'lib/components'
 
-export const ConfirmCancelDialog = ({
+export const PaymentCancelDialog = ({
   open,
   userEmail,
   handleClose,

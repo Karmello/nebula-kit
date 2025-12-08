@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 
 import { Box, Button, Flex, Input, Resize, Text } from 'lib/components'
 
-import { ConfirmCancelDialog } from './confirm-cancel-dialog'
+import { PaymentCancelDialog } from './payment-cancel-dialog'
 
-export const ConfirmCancelForm = ({
+export const PaymentCancelForm = ({
   userEmail,
   userPlan,
   handleCancelSuccess,
@@ -26,7 +26,7 @@ export const ConfirmCancelForm = ({
 
   return (
     <>
-      <ConfirmCancelDialog
+      <PaymentCancelDialog
         open={openDialog}
         userEmail={userEmail}
         handleClose={() => {

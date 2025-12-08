@@ -7,10 +7,11 @@ import { useAppStore } from 'client/store'
 import { Box, Loader, Section, Spacer, useSnackbar } from 'lib/components'
 
 import { AccountDeactivationSection } from './AccountDeactivationSection'
-import { UpdatePasswordSection } from './UpdatePasswordSection'
-import { UpdateEmailSection } from './UpdateEmailSection'
 import { ConnectToDiscordSection } from './ConnectToDiscordSection'
-import { ConfirmCancelSection } from './ConfirmCancelSection'
+import { ConnectToGithubSection } from './ConnectToGithubSection'
+import { PaymentCancelSection } from './PaymentCancelSection'
+import { UpdateEmailSection } from './UpdateEmailSection'
+import { UpdatePasswordSection } from './UpdatePasswordSection'
 
 export const ProfileSettingsPage = () => {
   const { search } = useLocation()
@@ -28,6 +29,9 @@ export const ProfileSettingsPage = () => {
     const params = new URLSearchParams(search)
     if (params.get('discord') === 'connected') {
       show({ status: 'success', content: 'You successfully connected your Discord account.' })
+      window.history.replaceState({}, '', PageKey.profileSettings)
+    } else if (params.get('github') === 'connected') {
+      show({ status: 'success', content: 'You successfully connected your Github account.' })
       window.history.replaceState({}, '', PageKey.profileSettings)
     }
   }, [search])
@@ -55,7 +59,12 @@ export const ProfileSettingsPage = () => {
               discordUserId={getUser.data.user.discordUserId}
             />
             <Spacer blockSize={50} />
-            <ConfirmCancelSection
+            <ConnectToGithubSection
+              userPlan={getUser.data.user.plan}
+              githubUsername={getUser.data.user.githubUsername}
+            />
+            <Spacer blockSize={50} />
+            <PaymentCancelSection
               userEmail={getUser.data.user.email}
               userPlan={getUser.data.user.plan}
               handleCancelSuccess={() => {

@@ -58,7 +58,7 @@ export default () => {
             <Text>Pricing plan</Text>
           </Table.Cell>
           <Table.Cell colSpan={2} blockSize={50}>
-            <Flex gap={15} alignItems="flex-end">
+            <Flex alignItems="center" flexWrap="wrap" rowGap={10} columnGap={15}>
               <Text bold>{getUser.data ? sentenceCase(getUser.data.user.plan) : ''}</Text>
               {!getUser.isMakingRequest ? (
                 <Link
@@ -119,7 +119,6 @@ export default () => {
                       : 'close'
                     : undefined
                 }
-                iconPosition="right"
                 color={!!getUser.data?.user.discordUserId ? 'green' : 'red'}
                 intent="primary"
                 bold
@@ -130,6 +129,51 @@ export default () => {
                     : 'Not connected'
                   : '-'}
               </Text>
+            ) : null}
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell colSpan={1}>
+            <Text>Github connection status</Text>
+          </Table.Cell>
+          <Table.Cell colSpan={2} blockSize={50} paddingInline={getUser.data?.user.plan !== 'free' ? 15 : 0}>
+            {getUser.data ? (
+              <Flex alignItems="center" flexWrap="wrap" rowGap={10} columnGap={15}>
+                <Flex.Item alignSelf="auto">
+                  <Text
+                    iconName={
+                      getUser.data.user.plan !== 'free'
+                        ? !!getUser.data?.user.githubUsername
+                          ? 'check'
+                          : 'close'
+                        : undefined
+                    }
+                    color={!!getUser.data?.user.githubUsername ? 'green' : 'red'}
+                    intent="primary"
+                    bold
+                  >
+                    {getUser.data.user.plan !== 'free'
+                      ? !!getUser.data?.user.githubUsername
+                        ? `Connected as ${getUser.data.user.githubUsername}`
+                        : 'Not connected'
+                      : '-'}
+                  </Text>
+                </Flex.Item>
+                {getUser.data?.user.githubUsername ? (
+                  <Link href="https://github.com/orgs/nebula-kit/projects/1" target="_blank">
+                    <Button
+                      size="xs"
+                      variant="outline"
+                      intent="secondary"
+                      color="blue"
+                      iconName="external-link"
+                      iconPosition="right"
+                    >
+                      Roadmap
+                    </Button>
+                  </Link>
+                ) : null}
+              </Flex>
             ) : null}
           </Table.Cell>
         </Table.Row>

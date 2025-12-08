@@ -1,8 +1,8 @@
 import { Section, MarkerList, Spacer, Text } from 'lib/components'
 
-import { ConfirmCancelForm } from './confirm-cancel-form'
+import { PaymentCancelForm } from './payment-cancel-form'
 
-export const ConfirmCancelSection = ({
+export const PaymentCancelSection = ({
   userEmail,
   userPlan,
   handleCancelSuccess,
@@ -34,6 +34,9 @@ export const ConfirmCancelSection = ({
           <Text>you get disconnected from Discord thus you lose your badge</Text>
         </MarkerList.Item>
         <MarkerList.Item>
+          <Text>you get disconnected from Github thus you lose access to the private roadmap</Text>
+        </MarkerList.Item>
+        <MarkerList.Item>
           <Text>unused time in your billing period is not refunded</Text>
         </MarkerList.Item>
       </MarkerList>
@@ -43,7 +46,7 @@ export const ConfirmCancelSection = ({
         will be issued automatically.
       </Text>
       <Spacer blockSize={30} />
-      <ConfirmCancelForm
+      <PaymentCancelForm
         userEmail={userEmail}
         userPlan={userPlan}
         handleCancelSuccess={handleCancelSuccess}

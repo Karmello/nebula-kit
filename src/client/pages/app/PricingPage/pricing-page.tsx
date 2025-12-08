@@ -86,7 +86,7 @@ export const PricingPage = () => {
                   <Spacer blockSize={10} />
                   <OptionIncluded>{coreBundleLink}</OptionIncluded>
                   <OptionIncluded>
-                    <Text>community access</Text>
+                    <Text>Discord access</Text>
                   </OptionIncluded>
                   <Spacer blockSize={40} />
                   <Flex justifyContent="center">
@@ -118,10 +118,10 @@ export const PricingPage = () => {
                   <OptionIncluded>{coreBundleLink}</OptionIncluded>
                   <OptionIncluded>{proBundleLink}</OptionIncluded>
                   <OptionIncluded>
-                    <Text>community access</Text>
+                    <Text>Discord access with moderate chat support</Text>
                   </OptionIncluded>
                   <OptionIncluded>
-                    <Text>community support with priority responses</Text>
+                    <Text>Github roadmap access</Text>
                   </OptionIncluded>
                   <Spacer blockSize={40} />
                   <Flex justifyContent="center">
@@ -153,10 +153,10 @@ export const PricingPage = () => {
                   <OptionIncluded>{coreBundleLink}</OptionIncluded>
                   <OptionIncluded>{proBundleLink}</OptionIncluded>
                   <OptionIncluded>
-                    <Text>community access</Text>
+                    <Text>Discord access with chat support</Text>
                   </OptionIncluded>
                   <OptionIncluded>
-                    <Text>community support with faster priority responses</Text>
+                    <Text>Github roadmap access</Text>
                   </OptionIncluded>
                   <Spacer blockSize={40} />
                   <Flex justifyContent="center">
@@ -188,13 +188,10 @@ export const PricingPage = () => {
                   <OptionIncluded>{coreBundleLink}</OptionIncluded>
                   <OptionIncluded>{proBundleLink}</OptionIncluded>
                   <OptionIncluded>
-                    <Text>community access</Text>
+                    <Text>Discord access with high priority chat support</Text>
                   </OptionIncluded>
                   <OptionIncluded>
-                    <Text>community support with highest priority responses</Text>
-                  </OptionIncluded>
-                  <OptionIncluded>
-                    <Text>roadmap input with elevated consideration</Text>
+                    <Text>Github roadmap access + elevated input consideration</Text>
                   </OptionIncluded>
                   <Spacer blockSize={40} />
                   <Flex justifyContent="center">
@@ -209,8 +206,10 @@ export const PricingPage = () => {
                   * NebulaKit uses a single-license model, one paid subscription = one shared license key for
                   unlocking the PRO bundle
                 </Text>
-                <Text italic>* community access is open to everyone</Text>
-                <Text italic>* priority support applies to the paying account holder only</Text>
+                <Text italic>
+                  * Discord community access is open to everyone, chat support applies to the paying account
+                  holder only
+                </Text>
                 <Text italic>
                   * as NebulaKit grows with more components and features, pricing may be adjusted slightly
                   over time to reflect increased value, any updates will always be communicated in advance
