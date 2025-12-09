@@ -5,7 +5,7 @@ export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Text>
-        React refs are a common pattern in Nebula Kit. Every component exposes a
+        React refs are a common pattern in NebulaKit. Every component exposes a
         <Text tag="span" space="start" bold>
           tagRef
         </Text>

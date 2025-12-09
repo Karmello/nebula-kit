@@ -10,7 +10,7 @@ export default () => {
         use across components and interfaces.
       </Text>
       <Spacer blockSize={60} />
-      <Table inlineSize={{ base: '100%', lg: '500px' }}>
+      <Table inlineSize={{ base: '100%', lg: '500px' }} paddingBlock={10} paddingInline={15} color="blue">
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeaderCell>Name</Table.HeaderCell>

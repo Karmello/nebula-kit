@@ -5,7 +5,7 @@ export default () => {
     <Box maxInlineSize="55rem">
       <Text typography="lead">Size tokens defined in the system, forming a numeric scale from 0 to 160.</Text>
       <Spacer blockSize={40} />
-      <Table>
+      <Table paddingBlock={10} paddingInline={15} color="blue">
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeaderCell>Value</Table.HeaderCell>

@@ -26,7 +26,7 @@ export const AppFooter = () => {
         <Spacer blockSize={20} />
         <Flex flexDirection="column" gap={10}>
           <Link href="https://x.com/captainnebula" target="_blank">
-            <Button intent="inverse" size="sm" iconName="external-link" iconPosition="right">
+            <Button color="gray" intent="inverse" size="sm" iconName="external-link" iconPosition="right">
               NebulaKit on X
             </Button>
           </Link>
@@ -36,7 +36,7 @@ export const AppFooter = () => {
             </Button>
           </Link>
           <Link href="mailto:contact@nebulakit.dev" target="_blank">
-            <Button color="blue" intent="primary" variant="soft-outline" size="sm" iconName="mail">
+            <Button color="blue" intent="primary" variant="outline" size="sm" iconName="mail">
               contact@nebulakit.dev
             </Button>
           </Link>

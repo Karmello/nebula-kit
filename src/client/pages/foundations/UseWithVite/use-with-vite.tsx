@@ -29,10 +29,10 @@ npm install @nebula-kit/core`}
       </Text>
       <CodeSnippet
         lang="tsx"
-        code={`import { Box } from '@nebula-kit/core'
+        code={`import { NebkitProvider } from '@nebula-kit/core'
 \t
-export function App() {
-  return <Box padding={20}>Hello world</Box>
+export default () => {
+  return <NebkitProvider theme="dark"><App /></NebkitProvider>
 }`}
       />
       <Spacer />

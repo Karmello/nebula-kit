@@ -24,9 +24,9 @@ export default () => {
     <Flex flexDirection="column" gap={40}>
       <Text typography="lead">All typography styles defined in the system.</Text>
       {TEXT_TYPOGRAPHY.map(typography => (
-        <Table key={typography}>
+        <Table key={typography} paddingBlock={10} paddingInline={15} color="blue">
           <Table.Caption>
-            <Text intent="primary" bold underline iconName="arrow-right">
+            <Text intent="primary" color="blue" bold underline iconName="arrow-right">
               {typography}
             </Text>
           </Table.Caption>

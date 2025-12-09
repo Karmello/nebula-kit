@@ -12,7 +12,7 @@ export default () => {
       <Text>
         Theming isn't an afterthought or a free-for-all - it's a controlled environment. Two themes, light and
         dark, share the same intent structure, ensuring balance and contrast remain intact. Developers can
-        tune global tokens like radius or background intent, but the foundation stays solid.
+        tune global tokens like brand or radius, but the foundation stays solid.
       </Text>
       <Spacer blockSize={15} />
       <Text>
@@ -43,8 +43,8 @@ export default () => {
         <MarkerList.Item>
           <Text bold>Structured flexibility.</Text>
           <Text>
-            Developers can adjust aspects like radius or color intent, but only within defined boundaries that
-            keep the design intact.
+            Developers can adjust aspects like variant or color intent, but only within defined boundaries
+            that keep the design intact.
           </Text>
         </MarkerList.Item>
       </MarkerList>
