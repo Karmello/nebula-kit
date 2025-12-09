@@ -30,6 +30,7 @@ export const FOUNDATIONS_CATEGORIES = [
         sections: [
           { key: 'installation', label: 'Installation' },
           { key: 'requirements', label: 'Requirements' },
+          { key: 'use-with-vite', label: 'Use with Vite' },
         ],
       },
     ],
