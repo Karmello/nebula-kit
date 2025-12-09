@@ -1,2 +1,2 @@
-export { FlexItem } from './flex-item'
-export { type FlexItemProps } from './definitions'
+export * from './flex-item'
+export * from './definitions'

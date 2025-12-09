@@ -1,2 +1,2 @@
-export { ToolbarMain } from './toolbar-main'
-export { type ToolbarMainProps } from './definitions'
+export * from './toolbar-main'
+export * from './definitions'

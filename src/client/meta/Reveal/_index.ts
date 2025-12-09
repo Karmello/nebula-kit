@@ -1,9 +1,9 @@
 import { ComponentMeta } from 'client/definitions'
 import { RevealProps } from 'lib/components'
+import { REVEAL_TAGS } from 'lib/components/core/containers/Reveal'
 
 import { REVEAL_PROPS_META } from './props'
 import { REVEAL_EXAMPLES_META } from './examples'
-import { REVEAL_TAGS } from 'lib/components/core/containers/Reveal/definitions'
 
 const REVEAL_META: ComponentMeta<RevealProps> = {
   overview: {

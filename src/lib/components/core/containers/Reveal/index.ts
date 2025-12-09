@@ -1,2 +1,2 @@
-export { Reveal } from './reveal'
-export { type RevealProps } from './definitions'
+export * from './reveal'
+export * from './definitions'

@@ -1,6 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Box, WithIcon } from 'lib/components'
-import { WithIconProps } from 'lib/components/core/layout/WithIcon/definitions'
+import { Box, WithIcon, WithIconProps } from 'lib/components'
 
 const WITH_ICON_EXAMPLES_META: ComponentMeta<WithIconProps>['examples'] = [
   {

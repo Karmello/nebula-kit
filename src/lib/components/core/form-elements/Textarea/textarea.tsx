@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import classNames from 'classnames'
 
-import { Box, INPUT_SIZE_CONFIG } from 'lib/components'
+import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import {
@@ -14,8 +14,10 @@ import {
   TextareaProps,
 } from './definitions'
 
-import './textarea.scss'
 import { TEXT_TYPOGRAPHY_CONFIG } from '../../base/Text/definitions'
+import { INPUT_SIZE_CONFIG } from '../Input'
+
+import './textarea.scss'
 
 export const Textarea = ({
   // HtmlTag

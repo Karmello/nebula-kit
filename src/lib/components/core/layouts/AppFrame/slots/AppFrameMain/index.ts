@@ -1,2 +1,2 @@
-export { AppFrameMain } from './app-frame-main'
-export { type AppFrameMainProps } from './definitions'
+export * from './app-frame-main'
+export * from './definitions'

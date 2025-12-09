@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { MARKER_LIST_TAGS, MarkerListProps } from 'lib/components/core/elements/MarkerList/definitions'
+import { MARKER_LIST_TAGS, MarkerListProps } from 'lib/components/core/elements/MarkerList'
 
 import { MARKER_LIST_PROPS_META } from './props'
 import { MARKER_LIST_EXAMPLES_META } from './examples'

@@ -1,6 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Box, SplitView, Text } from 'lib/components'
-import { SplitViewProps } from 'lib/components/pro/layouts/SplitView/definitions'
+import { Box, SplitView, SplitViewProps, Text } from 'lib/components'
 
 const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewProps>['examples'] = [
   {

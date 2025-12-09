@@ -8,5 +8,5 @@ export const Dialog = Object.assign(DialogBase, {
   Footer: DialogFooter,
 })
 
-export { type DialogProps } from './definitions'
-export type { DialogHeaderProps, DialogContentProps, DialogFooterProps } from './slots'
+export * from './definitions'
+export * from './slots'

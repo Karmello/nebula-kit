@@ -6,5 +6,5 @@ export const Segment = Object.assign(SegmentBase, {
   Item: SegmentItem,
 })
 
-export { type SegmentProps } from './definitions'
+export * from './definitions'
 export * from './SegmentItem'

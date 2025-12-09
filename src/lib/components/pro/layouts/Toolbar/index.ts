@@ -8,5 +8,5 @@ export const Toolbar = Object.assign(ToolbarBase, {
   End: ToolbarEnd,
 })
 
-export { type ToolbarProps } from './definitions'
-export type { ToolbarStartProps, ToolbarMainProps, ToolbarEndProps } from './slots'
+export * from './definitions'
+export * from './slots'

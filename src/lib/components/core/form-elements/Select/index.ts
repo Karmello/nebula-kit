@@ -6,5 +6,5 @@ export const Select = Object.assign(SelectBase, {
   Option: SelectOption,
 })
 
-export { type SelectProps } from './definitions'
-export type { SelectOptionProps } from './slots'
+export * from './definitions'
+export * from './slots'

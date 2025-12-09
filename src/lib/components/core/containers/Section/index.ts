@@ -1,2 +1,2 @@
-export { Section } from './section'
-export { type SectionProps } from './definitions'
+export * from './section'
+export * from './definitions'

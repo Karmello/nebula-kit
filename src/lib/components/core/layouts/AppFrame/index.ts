@@ -8,5 +8,5 @@ export const AppFrame = Object.assign(AppFrameBase, {
   Footer: AppFrameFooter,
 })
 
-export { type AppFrameProps } from './definitions'
-export type { AppFrameHeaderProps, AppFrameMainProps, AppFrameFooterProps } from './slots'
+export * from './definitions'
+export * from './slots'

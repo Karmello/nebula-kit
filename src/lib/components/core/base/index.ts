@@ -1,3 +1,3 @@
-export * from './Box'
-export * from './HtmlTag'
-export * from './Text'
+export { Box, type BoxProps } from './Box'
+export { HtmlTag, type HtmlTagProps } from './HtmlTag'
+export { Text, type TextProps } from './Text'

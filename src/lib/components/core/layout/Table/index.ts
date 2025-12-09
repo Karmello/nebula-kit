@@ -22,15 +22,5 @@ export const Table = Object.assign(TableBase, {
   Row: TableRow,
 })
 
-export { type TableProps } from './definitions'
-
-export type {
-  TableBodyProps,
-  TableCaptionProps,
-  TableCellProps,
-  TableFooterProps,
-  TableHeaderProps,
-  TableHeaderCellProps,
-  TableHeaderRowProps,
-  TableRowProps,
-} from './slots'
+export * from './definitions'
+export * from './slots'

@@ -1,6 +1,8 @@
 import { JSX } from 'react'
 
-import { BoxProps, ButtonProps, HtmlTagProps, PortalPlacement } from 'lib/components'
+import { BoxProps, ButtonProps, HtmlTagProps } from 'lib/components'
+
+import { PortalPlacement } from '../../utility/Portal'
 
 export const DROPDOWN_LIST_PLACEMENTS = [
   'bottom-start',

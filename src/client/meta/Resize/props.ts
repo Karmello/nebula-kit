@@ -1,10 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
 import { ResizeProps } from 'lib/components'
+
 import {
   RESIZE_PROPERTIES,
   DEFAULT_RESIZE_DURATION,
   DEFAULT_RESIZE_EASING,
-} from 'lib/components/core/motion/Resize/definitions'
+} from 'lib/components/core/motion/Resize'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 

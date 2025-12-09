@@ -1,2 +1,2 @@
-export { SplitViewSide } from './split-view-side'
-export { type SplitViewSideProps } from './definitions'
+export * from './split-view-side'
+export * from './definitions'

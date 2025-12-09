@@ -1,2 +1,2 @@
-export { Link } from './link'
-export { type LinkProps } from './definitions'
+export * from './link'
+export * from './definitions'

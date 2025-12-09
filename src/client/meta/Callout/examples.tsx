@@ -1,6 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Callout, Spacer } from 'lib/components'
-import { CalloutProps } from 'lib/components/core/feedback/Callout/definitions'
+import { Callout, CalloutProps, Spacer } from 'lib/components'
 
 const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
   {

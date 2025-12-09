@@ -7,5 +7,5 @@ export const DropdownList = Object.assign(DropdownListBase, {
   Item: DropdownListItem,
 })
 
-export { type DropdownListProps } from './definitions'
-export type { DropdownListItemProps, DropdownListTriggerProps } from './slots'
+export * from './definitions'
+export * from './slots'

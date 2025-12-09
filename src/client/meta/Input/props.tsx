@@ -1,12 +1,12 @@
 import { ComponentMeta } from 'client/definitions'
+import { InputProps } from 'lib/components'
 
 import {
   DEFAULT_INPUT_INTENT,
   DEFAULT_INPUT_SIZE,
   DEFAULT_INPUT_VARIANT,
   INPUT_SIZES,
-  InputProps,
-} from 'lib/components'
+} from 'lib/components/core/form-elements/Input'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

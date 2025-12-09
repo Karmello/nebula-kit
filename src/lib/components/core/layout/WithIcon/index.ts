@@ -1,2 +1,2 @@
-export { WithIcon } from './with-icon'
-export { type WithIconProps } from './definitions'
+export * from './with-icon'
+export * from './definitions'

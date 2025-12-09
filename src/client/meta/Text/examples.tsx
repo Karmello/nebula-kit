@@ -1,6 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Text } from 'lib/components'
-import { TextProps } from 'lib/components/core/base/Text/definitions'
+import { Text, TextProps } from 'lib/components'
 
 const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
   {

@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { AppFrameProps } from 'lib/components/core/layouts/AppFrame/definitions'
+import { AppFrameProps } from 'lib/components'
 
 import { APP_FRAME_PROPS_META } from './props'
 import { APP_FRAME_EXAMPLES_META } from './examples'

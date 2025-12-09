@@ -1,3 +1,2 @@
-export * from './Callout'
-export * from './Loader'
-export * from './Snackbar'
+export { Callout, type CalloutProps } from './Callout'
+export { Loader, type LoaderProps } from './Loader'

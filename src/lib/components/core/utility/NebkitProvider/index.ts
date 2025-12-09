@@ -1,2 +1,2 @@
-export { NebkitProvider } from './nebkit-provider'
-export { type NebkitProviderProps } from './definitions'
+export * from './nebkit-provider'
+export * from './definitions'

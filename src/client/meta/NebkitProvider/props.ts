@@ -6,7 +6,7 @@ import {
   NEBKIT_BORDER_RADIUS_SIZES,
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
   DEFAULT_NEBKIT_BRAND,
-} from 'lib/components/core/utility/NebkitProvider/definitions'
+} from 'lib/components/core/utility/NebkitProvider'
 
 const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps<Theme>>['props'] = {
   children: {

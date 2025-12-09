@@ -1,2 +1,2 @@
-export { ToolbarEnd } from './toolbar-end'
-export { type ToolbarEndProps } from './definitions'
+export * from './toolbar-end'
+export * from './definitions'

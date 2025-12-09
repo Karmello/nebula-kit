@@ -6,5 +6,5 @@ export const Footer = Object.assign(FooterBase, {
   Section: FooterSection,
 })
 
-export { type FooterProps } from './definitions'
-export type { FooterSectionProps } from './slots'
+export * from './definitions'
+export * from './slots'

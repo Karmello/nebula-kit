@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
+import { UseSnackbarShowArgs } from 'lib/components/pro/feedback/Snackbar'
 
 import { USE_SNACKBAR_EXAMPLES_META } from './examples'
 import { USE_SNACKBAR_PROPS_META } from './props'
-import { UseSnackbarShowArgs } from 'lib/components/core/feedback/Snackbar/definitions'
 
 const USE_SNACKBAR_META: ComponentMeta<UseSnackbarShowArgs> = {
   overview: {

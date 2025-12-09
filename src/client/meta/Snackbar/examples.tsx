@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { Button, SnackbarProps, useSnackbar } from 'lib/components'
-import { CALLOUT_CONFIG, CalloutStatus } from 'lib/components/core/feedback/Callout/definitions'
-import { SnackbarPlacement } from 'lib/components/core/feedback/Snackbar/definitions'
+import { CALLOUT_CONFIG, CalloutStatus } from 'lib/components/core/feedback/Callout'
+import { SnackbarPlacement } from 'lib/components/pro/feedback/Snackbar'
 
 const SnackbarWrapper = ({
   status,

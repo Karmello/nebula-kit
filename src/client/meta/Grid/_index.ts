@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { GRID_TAGS, GridProps } from 'lib/components/core/layout/Grid/definitions'
+import { GRID_TAGS, GridProps } from 'lib/components/core/layout/Grid'
 
 import { GRID_PROPS_META } from './props'
 import { GRID_EXAMPLES_META } from './examples'

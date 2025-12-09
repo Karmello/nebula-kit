@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
-import { ToolbarEndProps } from 'lib/components'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
+import { ToolbarEndProps } from 'lib/components'
 
 const TOOLBAR_END_PROPS_META: ComponentMeta<ToolbarEndProps>['props'] = {
   children: {

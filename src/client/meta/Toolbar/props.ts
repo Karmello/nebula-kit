@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { ToolbarProps } from 'lib/components/pro/layouts/Toolbar/definitions'
+import { ToolbarProps } from 'lib/components'
 import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'

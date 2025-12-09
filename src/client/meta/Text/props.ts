@@ -7,7 +7,7 @@ import {
   TEXT_TYPOGRAPHY,
   TEXT_SCALE,
   TextProps,
-} from 'lib/components/core/base/Text/definitions'
+} from 'lib/components/core/base/Text'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

@@ -1,9 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
+
 import {
   DEFAULT_ROTATE_DURATION,
   DEFAULT_ROTATE_EASING,
   RotateProps,
-} from 'lib/components/core/motion/Rotate/definitions'
+} from 'lib/components/core/motion/Rotate'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 

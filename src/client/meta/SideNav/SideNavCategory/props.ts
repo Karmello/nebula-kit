@@ -2,12 +2,12 @@ import { ComponentMeta } from 'client/definitions'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { BUTTON_PROPS_META } from 'client/meta/Button/props'
 import { SideNavCategoryProps } from 'lib/components'
-import { SIDE_NAV_VARIANTS } from 'lib/components/pro/navigation/SideNav/definitions'
+import { SIDE_NAV_VARIANTS } from 'lib/components/pro/navigation/SideNav'
 
 import {
   DEFAULT_SIDE_NAV_CATEGORY_INTENT,
   DEFAULT_SIDE_NAV_CATEGORY_VARIANT,
-} from 'lib/components/pro/navigation/SideNav/slots'
+} from 'lib/components/pro/navigation/SideNav'
 
 const SIDE_NAV_CATEGORY_PROPS_META: ComponentMeta<SideNavCategoryProps>['props'] = {
   children: {

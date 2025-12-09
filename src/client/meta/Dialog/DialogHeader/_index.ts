@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { DialogHeaderProps } from 'lib/components/pro/overlays/Dialog'
+import { DialogHeaderProps } from 'lib/components'
 
 import { DIALOG_HEADER_PROPS_META } from './props'
 

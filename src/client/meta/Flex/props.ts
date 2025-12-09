@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { FlexProps } from 'lib/components/core/layout/Flex/definitions'
+import { FlexProps } from 'lib/components'
 
 import {
   CSS_FLEX_ALIGN_ITEMS,

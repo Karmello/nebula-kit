@@ -1,2 +1,2 @@
-export { HydrationGate } from './hydration-gate'
-export { type HydrationGateProps } from './definitions'
+export * from './hydration-gate'
+export * from './definitions'

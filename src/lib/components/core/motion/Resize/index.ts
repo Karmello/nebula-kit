@@ -1,2 +1,2 @@
-export { Resize } from './resize'
-export { type ResizeProps } from './definitions'
+export * from './resize'
+export * from './definitions'

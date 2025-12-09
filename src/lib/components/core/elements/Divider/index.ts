@@ -1,2 +1,2 @@
-export { Divider } from './divider'
-export { type DividerProps } from './definitions'
+export * from './divider'
+export * from './definitions'

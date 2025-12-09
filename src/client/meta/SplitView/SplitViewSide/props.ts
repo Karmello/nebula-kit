@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { BOX_PROPS_META } from 'client/meta/Box/props'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { SplitViewSideProps } from 'lib/components'
-import { DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from 'lib/components/pro/layouts/SplitView/slots/SplitViewSide/definitions'
+import { DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from 'lib/components/pro/layouts/SplitView/slots/SplitViewSide'
 
 const SPLIT_VIEW_SIDE_PROPS_META: ComponentMeta<SplitViewSideProps>['props'] = {
   borderIntent: {

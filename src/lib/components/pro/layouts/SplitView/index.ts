@@ -8,5 +8,5 @@ export const SplitView = Object.assign(SplitViewBase, {
   Side: SplitViewSide,
 })
 
-export { type SplitViewProps } from './definitions'
-export type { SplitViewMainProps, SplitViewMainBarProps, SplitViewSideProps } from './slots'
+export * from './definitions'
+export * from './slots'

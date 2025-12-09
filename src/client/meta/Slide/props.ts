@@ -1,11 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
-import { SlideProps } from 'lib/components/core/motion/Slide'
+import { SlideProps } from 'lib/components'
 
 import {
   DEFAULT_SLIDE_DURATION,
   DEFAULT_SLIDE_EASING,
   SLIDE_PROPERTIES,
-} from 'lib/components/core/motion/Slide/definitions'
+} from 'lib/components/core/motion/Slide'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 

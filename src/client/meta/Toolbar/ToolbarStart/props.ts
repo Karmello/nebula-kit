@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
-import { ToolbarStartProps } from 'lib/components'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
+import { ToolbarStartProps } from 'lib/components'
 
 const TOOLBAR_START_PROPS_META: ComponentMeta<ToolbarStartProps>['props'] = {
   children: {

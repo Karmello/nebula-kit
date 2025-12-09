@@ -1,7 +1,7 @@
-import { ComponentMeta } from 'client/definitions'
-import { Rotate, Text } from 'lib/components'
-import { RotateProps } from 'lib/components/core/motion/Rotate/definitions'
 import { useEffect, useState } from 'react'
+
+import { ComponentMeta } from 'client/definitions'
+import { Rotate, Text, RotateProps } from 'lib/components'
 
 const RotateWrapper = ({ children }: Partial<RotateProps>) => {
   const [angle, setAngle] = useState<number>(0)

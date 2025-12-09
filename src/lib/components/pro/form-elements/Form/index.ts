@@ -11,13 +11,5 @@ export const Form = Object.assign(FormBase, {
   Hint: FormHint,
 })
 
-export type { FormProps } from './definitions'
-
-export type {
-  FormFieldsProps,
-  FormFieldProps,
-  FormActionsProps,
-  FormActionButtonProps,
-  FormLabelProps,
-  FormHintProps,
-} from './slots'
+export * from './definitions'
+export * from './slots'

@@ -1,2 +1,2 @@
-export { AppFrameFooter } from './app-frame-footer'
-export { type AppFrameFooterProps } from './definitions'
+export * from './app-frame-footer'
+export * from './definitions'

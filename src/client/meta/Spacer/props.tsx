@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { SpacerProps } from 'lib/components'
-import { DEFAULT_SPACER_BLOCK_SIZE } from 'lib/components/core/layout/Spacer/definitions'
+import { DEFAULT_SPACER_BLOCK_SIZE } from 'lib/components/core/layout/Spacer'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

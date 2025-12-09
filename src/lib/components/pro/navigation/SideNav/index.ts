@@ -7,5 +7,5 @@ export const SideNav = Object.assign(SideNavBase, {
   Item: SideNavItem,
 })
 
-export { type SideNavProps } from './definitions'
-export type { SideNavCategoryProps, SideNavItemProps } from './slots'
+export * from './definitions'
+export * from './slots'

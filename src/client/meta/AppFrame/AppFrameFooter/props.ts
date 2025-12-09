@@ -4,7 +4,7 @@ import { AppFrameFooterProps } from 'lib/components'
 import {
   DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT,
   DEFAULT_APP_FRAME_FOOTER_INTENT,
-} from 'lib/components/core/layouts/AppFrame/slots/AppFrameFooter/definitions'
+} from 'lib/components/core/layouts/AppFrame'
 
 import { HTML_TAG_PROPS_META } from '../../HtmlTag/props'
 import { BOX_PROPS_META } from '../../Box/props'

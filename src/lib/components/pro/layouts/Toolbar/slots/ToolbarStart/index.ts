@@ -1,2 +1,2 @@
-export { ToolbarStart } from './toolbar-start'
-export { type ToolbarStartProps } from './definitions'
+export * from './toolbar-start'
+export * from './definitions'

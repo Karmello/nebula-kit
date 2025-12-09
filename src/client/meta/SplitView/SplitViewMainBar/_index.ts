@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { SplitViewMainBarProps } from 'lib/components/pro/layouts/SplitView/slots/SplitViewMainBar/definitions'
+import { SplitViewMainBarProps } from 'lib/components'
 
 import { SPLIT_VIEW_MAIN_BAR_PROPS_META } from './props'
 

@@ -1,2 +1,2 @@
-export { Icon } from './icon'
-export { type IconProps } from './definitions'
+export * from './icon'
+export * from './definitions'

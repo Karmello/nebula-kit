@@ -1,6 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
-import { GridProps } from 'lib/components/core/layout/Grid/definitions'
+import { GridProps } from 'lib/components'
 import { CSS_GRID_AUTO_FLOW, CSS_GRID_PLACE_CONTENT, CSS_GRID_PLACE_ITEMS } from 'lib/definitions'
+
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const GRID_PROPS_META: ComponentMeta<GridProps>['props'] = {

@@ -7,7 +7,7 @@ import {
   SECTION_SIZES,
   SECTION_VARIANTS,
   SectionProps,
-} from 'lib/components/core/containers/Section/definitions'
+} from 'lib/components/core/containers/Section'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

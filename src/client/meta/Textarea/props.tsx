@@ -1,4 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
+import { TextareaProps } from 'lib/components'
 
 import {
   DEFAULT_TEXTAREA_INTENT,
@@ -6,8 +7,7 @@ import {
   DEFAULT_TEXTAREA_ROWS,
   DEFAULT_TEXTAREA_VARIANT,
   TEXTAREA_RESIZE,
-  TextareaProps,
-} from 'lib/components'
+} from 'lib/components/core/form-elements/Textarea'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

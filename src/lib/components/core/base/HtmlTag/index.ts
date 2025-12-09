@@ -1,2 +1,2 @@
-export { HtmlTag } from './html-tag'
-export { type HtmlTagProps } from './definitions'
+export * from './html-tag'
+export * from './definitions'

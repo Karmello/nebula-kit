@@ -1,2 +1,2 @@
-export { WithSlots } from './with-slots'
-export { type WithSlotsProps } from './definitions'
+export * from './with-slots'
+export * from './definitions'

@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { RevealProps } from 'lib/components'
-import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SIZE } from 'lib/components/core/containers/Reveal/definitions'
+import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SIZE } from 'lib/components/core/containers/Reveal'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BUTTON_PROPS_META } from '../Button/props'

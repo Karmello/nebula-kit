@@ -1,10 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { LoaderProps } from 'lib/components'
-import {
-  DEFAULT_LOADER_ACTIVE,
-  DEFAULT_LOADER_SIZE,
-  LOADER_SIZES,
-} from 'lib/components/core/feedback/Loader/definitions'
+import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE, LOADER_SIZES } from 'lib/components/core/feedback/Loader'
 
 import { BOX_PROPS_META } from '../Box/props'
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'

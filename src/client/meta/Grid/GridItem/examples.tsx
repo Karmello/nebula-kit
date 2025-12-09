@@ -1,6 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Grid, Box } from 'lib/components'
-import { GridItemProps } from 'lib/components/core/layout/Grid/GridItem/definitions'
+import { Grid, GridItemProps, Box } from 'lib/components'
 
 const GRID_ITEM_EXAMPLES_META: ComponentMeta<GridItemProps>['examples'] = [
   {

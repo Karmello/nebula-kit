@@ -1,2 +1,2 @@
 export * from './slide'
-export { type SlideProps } from './definitions'
+export * from './definitions'
