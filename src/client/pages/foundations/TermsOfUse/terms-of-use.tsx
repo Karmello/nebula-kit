@@ -45,7 +45,7 @@ export default () => {
         </MarkerList.Item>
         <MarkerList.Item>
           <Text bold>Contact</Text>
-          <Text>For questions about these terms, reach out through the contact form or listed email.</Text>
+          <Text>For questions about these terms, reach out via email.</Text>
         </MarkerList.Item>
       </MarkerList>
     </Box>

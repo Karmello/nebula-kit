@@ -12,8 +12,8 @@ export default () => {
         <MarkerList.Item>
           <Text bold>Account registration</Text>
           <Text>
-            When you register, basic account information such as name, email and billing details is collected.
-            This data is used solely for authentication, license management and support.
+            When you register, basic account information such as email is collected. This data is used solely
+            for authentication, license management and support.
           </Text>
         </MarkerList.Item>
         <MarkerList.Item>
@@ -34,8 +34,8 @@ export default () => {
         <MarkerList.Item>
           <Text bold>Communication</Text>
           <Text>
-            In case of contact via email or contact form, the information you provide will be used only to
-            respond to your inquiry.
+            In case of contact via email, the information you provide will be used only to respond to your
+            inquiry.
           </Text>
         </MarkerList.Item>
         <MarkerList.Item>

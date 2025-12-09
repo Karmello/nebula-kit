@@ -1,6 +1,11 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
+const filterDeps = deps => {
+  const allowed = ['classnames', 'change-case', 'lodash-es', 'lucide-react', 'zustand']
+  return Object.fromEntries(Object.entries(deps || {}).filter(([name]) => allowed.includes(name)))
+}
+
 const ROOT = JSON.parse(fs.readFileSync('package.json', 'utf8'))
 
 const bundle = process.env.TSUP_BUNDLE
@@ -17,12 +22,10 @@ const pkg = {
   description: ROOT.description,
   license: ROOT.license,
   type: 'module',
-
   main: `index.${bundle}.cjs`,
   module: `index.${bundle}.mjs`,
   types: `index.${bundle}.d.ts`,
   style: `index.${bundle}.css`,
-
   exports: {
     '.': {
       types: `./index.${bundle}.d.ts`,
@@ -30,9 +33,8 @@ const pkg = {
       require: `./index.${bundle}.cjs`,
     },
   },
-
   sideEffects: ['**/*.css'],
-
+  dependencies: filterDeps(ROOT.dependencies),
   peerDependencies: ROOT.peerDependencies,
 }
 
