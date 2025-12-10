@@ -1,18 +1,20 @@
 {
   "name": "@nebula-kit/core",
-  "version": "0.1.4",
+  "version": "0.1.8",
   "description": "React UI system built on composition - small, consistent parts combining into larger structures with clarity and control. Each component follows the same foundation, producing apps that stay predictable, stable and effortless to scale.",
   "license": "UNLICENSED",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "./index.cjs",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "style": "./styles.css",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.cjs"
+    },
+    "./styles.css": "./styles.css"
   },
   "files": [
     "dist",
@@ -44,10 +46,11 @@
     "test": "vitest run",
     "pw": "playwright test -c playwright.config.cjs",
     "prepare": "husky install",
-    "dist:css": "sass --load-path src/lib src/lib/styles/index.pkg.scss dist/$TSUP_BUNDLE/index.$TSUP_BUNDLE.css --no-source-map",
+    "dist:css": "sass --load-path src/lib src/lib/styles/index.$TSUP_BUNDLE.scss dist/$TSUP_BUNDLE/styles.css --no-source-map",
     "dist:bundle": "tsup --config tsup.pkg.ts && yarn dist:css && node scripts/generate-package-json.js",
-    "dist:core": "TSUP_BUNDLE=core yarn dist:bundle && rimraf dist/core/index.core.d.cts dist/types",
-    "dist:pro": "TSUP_BUNDLE=pro yarn dist:bundle && rimraf dist/pro/index.pro.d.cts dist/types",
+    "dist:core": "TSUP_BUNDLE=core yarn dist:bundle && rimraf dist/core/index.d.cts",
+    "dist:pro": "TSUP_BUNDLE=pro yarn dist:bundle && rimraf dist/pro/index.d.cts",
+    "dist": "rimraf dist && yarn dist:core && yarn dist:pro",
     "pack:pro": "npm pack ./dist/pro --pack-destination ./dist",
     "upload:pro:dev": "node ./scripts/update-local-versioning-json.js && aws s3 cp ./versioning.json s3://nebula-kit-pro-dev && aws s3 cp dist/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz s3://nebula-kit-pro-dev/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz",
     "upload:pro": "node ./scripts/update-local-versioning-json.js && aws s3 cp ./versioning.json s3://nebula-kit-pro && aws s3 cp dist/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz s3://nebula-kit-pro/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz",

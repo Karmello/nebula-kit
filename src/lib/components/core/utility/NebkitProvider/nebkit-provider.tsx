@@ -6,8 +6,6 @@ import { resolveScale } from 'lib/helpers'
 
 import { NebkitProviderProps } from './definitions'
 
-import 'lib/styles/index.scss'
-
 export const NebkitProvider = <T extends Theme = 'light'>({
   children,
   theme,

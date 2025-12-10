@@ -4,6 +4,8 @@ import { BrowserRouter } from 'react-router'
 import { App } from 'client/components'
 import { NebkitProvider, HydrationGate, Snackbar } from 'lib/components'
 
+import 'lib/styles/index.scss'
+
 const Node = () => (
   <BrowserRouter>
     <HydrationGate>

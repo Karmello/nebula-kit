@@ -12,7 +12,6 @@ const NEBKIT_PROVIDER_META: ComponentMeta<NebkitProviderProps<Theme>> = {
     description: [
       'provides a consistent context for all NebulaKit components to operate within',
       'initializes global configuration and keeps theme tokens in sync with the environment',
-      'loads the icon set and global stylesheet so they are available throughout the app',
     ],
   },
   props: NEBKIT_PROVIDER_PROPS_META,
