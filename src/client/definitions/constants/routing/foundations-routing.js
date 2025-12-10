@@ -31,6 +31,7 @@ export const FOUNDATIONS_CATEGORIES = [
           { key: 'installation', label: 'Installation' },
           { key: 'requirements', label: 'Requirements' },
           { key: 'use-with-vite', label: 'Use with Vite' },
+          { key: 'use-with-webpack5', label: 'Use with Webpack 5' },
         ],
       },
     ],

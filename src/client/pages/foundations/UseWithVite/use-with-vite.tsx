@@ -25,11 +25,14 @@ npm install @nebula-kit/core`}
       />
       <Spacer />
       <Text intent="neutral" bold>
-        Then import any component:
+        Then wrap your entire App with NebkitProvider and import styles:
       </Text>
       <CodeSnippet
         lang="tsx"
         code={`import { NebkitProvider } from '@nebula-kit/core'
+\t
+import '@nebula-kit/core/styles.css'
+import '@nebula-kit/pro/styles.css'
 \t
 export default () => {
   return <NebkitProvider theme="dark"><App /></NebkitProvider>
@@ -37,8 +40,8 @@ export default () => {
       />
       <Spacer />
       <Text>
-        That's it - no setup friction, no config files, no bundler pitfalls. Vite is the smoothest environment
-        to develop with NebulaKit and serves as the reference setup for the rest of the ecosystem.
+        That's it - no setup friction, no config files, no bundler pitfalls. Vite gives you the smoothest
+        NebulaKit experience right out of the box.
       </Text>
     </Box>
   )
