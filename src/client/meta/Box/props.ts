@@ -1,7 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
-import { COLORS, CSS_DISPLAY, CSS_OVERFLOW, CSS_POSITION, CSS_TEXT_ALIGN } from 'lib/definitions'
+import { COLORS } from 'lib/definitions'
 import { BoxProps, BOX_VARIANTS, BOX_INTENTS } from 'lib/components/core/base/Box'
-import { DEFAULT_NEBKIT_BORDER_RADIUS_SIZE } from 'lib/components/core/utility/NebkitProvider'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
@@ -9,26 +8,22 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   ...HTML_TAG_PROPS_META,
   blockSize: {
     options: ['CSS'],
-    defaultValue: 'auto',
     isResponsive: true,
     description: 'Height.',
     propControl: 'input',
   },
   borderBottomLeftRadius: {
     options: ['CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
     isResponsive: true,
     description: 'Border radius for the bottom left corner.',
   },
   borderBottomRightRadius: {
     options: ['CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
     isResponsive: true,
     description: 'Border radius for the bottom right corner.',
   },
   borderBottomWidth: {
     options: ['CSS'],
-    defaultValue: '0',
     description: 'Border width for the bottom side.',
   },
   borderIntent: {
@@ -38,45 +33,37 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   borderLeftWidth: {
     options: ['CSS'],
-    defaultValue: '0',
     description: 'Border width for the left side.',
   },
   borderRadius: {
     options: ['CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
     isResponsive: true,
     description: 'Sets border radius overriding global value set by NebkitProvider.',
   },
   borderRightWidth: {
     options: ['CSS'],
-    defaultValue: '0',
     description: 'Border width for the right side.',
   },
   borderTopLeftRadius: {
     options: ['CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
     isResponsive: true,
     description: 'Border radius for the top left corner.',
   },
   borderTopRightRadius: {
     options: ['CSS'],
-    defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
     isResponsive: true,
     description: 'Border radius for the top right corner.',
   },
   borderTopWidth: {
     options: ['CSS'],
-    defaultValue: '0',
     description: 'Border width for the top side.',
   },
   borderWidth: {
     options: ['CSS'],
-    defaultValue: '0',
     description: 'Sets border width overriding global value set by NebkitProvider.',
   },
   bottom: {
     options: ['CSS'],
-    defaultValue: 'auto',
     isResponsive: true,
     description: 'Bottom offset.',
   },
@@ -88,24 +75,20 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   disabled: {
     options: ['boolean'],
-    defaultValue: 'false',
     description: 'Disables the component and its interactions.',
   },
   display: {
-    options: Object.values(CSS_DISPLAY),
-    defaultValue: CSS_DISPLAY[0],
+    options: ['CSS'],
     isResponsive: true,
     description: 'Display type controlling how the component is laid out.',
   },
   hoveredByDefault: {
     options: ['boolean'],
-    defaultValue: 'false',
     description:
       'Shows the element in its hovered visual state by default, without requiring user interaction. Works only with interactive on.',
   },
   inlineSize: {
     options: ['CSS'],
-    defaultValue: 'auto',
     isResponsive: true,
     description: 'Width.',
   },
@@ -117,162 +100,141 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   interactive: {
     options: ['boolean'],
-    defaultValue: 'false',
     description: 'Enables hover styling.',
   },
   left: {
     options: ['CSS'],
-    defaultValue: 'auto',
     isResponsive: true,
     description: 'Left offset.',
   },
   margin: {
     options: ['CSS'],
-    defaultValue: 'initial',
     isResponsive: true,
     description: 'Margin for all sides.',
   },
   marginBlock: {
     options: ['CSS'],
-    defaultValue: 'initial',
     isResponsive: true,
     description: 'Margin for the top and bottom sides.',
   },
   marginBottom: {
     options: ['CSS'],
-    defaultValue: 'initial',
     isResponsive: true,
     description: 'Margin for the bottom side.',
   },
   marginInline: {
     options: ['CSS'],
-    defaultValue: 'initial',
     isResponsive: true,
     description: 'Margin for the left and right sides.',
   },
   marginLeft: {
     options: ['CSS'],
-    defaultValue: 'initial',
     isResponsive: true,
     description: 'Margin for the left side.',
   },
   marginRight: {
     options: ['CSS'],
-    defaultValue: 'initial',
     isResponsive: true,
     description: 'Margin for the right side.',
   },
   marginTop: {
     options: ['CSS'],
-    defaultValue: 'initial',
     isResponsive: true,
     description: 'Margin for the top side.',
   },
   maxBlockSize: {
     options: ['CSS'],
-    defaultValue: 'none',
     isResponsive: true,
     description: 'Maximum height.',
   },
   maxInlineSize: {
     options: ['CSS'],
-    defaultValue: 'none',
     isResponsive: true,
     description: 'Maximum width.',
   },
   minBlockSize: {
     options: ['CSS'],
-    defaultValue: 'auto',
     isResponsive: true,
     description: 'Minimum height.',
   },
   minInlineSize: {
     options: ['CSS'],
-    defaultValue: 'auto',
     isResponsive: true,
     description: 'Minimum width.',
   },
   opacity: {
-    options: ['0 - 1'],
-    defaultValue: '1',
+    options: ['CSS'],
     isResponsive: true,
     description: 'Transparency level, from fully visible to fully transparent.',
   },
+  overflow: {
+    options: ['CSS'],
+    isResponsive: true,
+    description: 'Overflow behavior for both axes.',
+  },
   overflowX: {
-    options: Object.values(CSS_OVERFLOW),
-    defaultValue: CSS_OVERFLOW[0],
+    options: ['CSS'],
     isResponsive: true,
     description: 'Overflow behavior on the horizontal axis.',
   },
   overflowY: {
-    options: Object.values(CSS_OVERFLOW),
-    defaultValue: CSS_OVERFLOW[0],
+    options: ['CSS'],
     isResponsive: true,
     description: 'Overflow behavior on the vertical axis.',
   },
   padding: {
     options: ['CSS'],
-    defaultValue: 'initial',
     isResponsive: true,
     description: 'Padding for all sides.',
+    propControl: 'input',
   },
   paddingBlock: {
     options: ['CSS'],
-    defaultValue: 'initial',
     isResponsive: true,
     description: 'Padding for the top and bottom sides.',
   },
   paddingBottom: {
     options: ['CSS'],
-    defaultValue: 'initial',
     isResponsive: true,
     description: 'Padding for the bottom side.',
   },
   paddingInline: {
     options: ['CSS'],
-    defaultValue: 'initial',
     isResponsive: true,
     description: 'Padding for the left and right sides.',
   },
   paddingLeft: {
     options: ['CSS'],
-    defaultValue: 'initial',
     isResponsive: true,
     description: 'Padding for the left side.',
   },
   paddingRight: {
     options: ['CSS'],
-    defaultValue: 'initial',
     isResponsive: true,
     description: 'Padding for the right side.',
   },
   paddingTop: {
     options: ['CSS'],
-    defaultValue: 'initial',
     isResponsive: true,
     description: 'Padding for the top side.',
   },
   position: {
-    options: Object.values(CSS_POSITION),
-    defaultValue: CSS_POSITION[0],
+    options: ['CSS'],
     isResponsive: true,
     description: 'Position in the layout flow.',
   },
   right: {
     options: ['CSS'],
-    defaultValue: 'auto',
     isResponsive: true,
     description: 'Right offset.',
   },
   textAlign: {
-    options: Object.values(CSS_TEXT_ALIGN),
-    defaultValue: CSS_TEXT_ALIGN[0],
+    options: ['CSS'],
     isResponsive: true,
     description: 'Text alignment within the component.',
   },
   top: {
     options: ['CSS'],
-    defaultValue: 'auto',
     isResponsive: true,
     description: 'Top offset.',
   },

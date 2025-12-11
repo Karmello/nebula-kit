@@ -1,9 +1,5 @@
 // constants
 
-export const CSS_TEXT_ALIGN = ['start', 'center', 'end', 'justify'] as const
-export const CSS_DISPLAY = ['block', 'inline', 'inline-block', 'flow-root', 'contents', 'none'] as const
-export const CSS_OVERFLOW = ['visible', 'scroll', 'hidden', 'clip', 'auto'] as const
-export const CSS_POSITION = ['static', 'relative', 'absolute', 'fixed', 'sticky'] as const
 export const CSS_FLEX_DIRECTION = ['row', 'row-reverse', 'column', 'column-reverse'] as const
 export const CSS_FLEX_WRAP = ['nowrap', 'wrap', 'wrap-reverse'] as const
 
@@ -44,11 +40,6 @@ export const CSS_GRID_ITEM_JUSTIFY_SELF = ['auto', 'start', 'center', 'end', 'st
 export const CSS_GRID_ITEM_ALIGN_SELF = ['auto', 'start', 'center', 'end', 'stretch'] as const
 
 // types
-
-export type CssDisplay = (typeof CSS_DISPLAY)[number]
-export type CssOverflow = (typeof CSS_OVERFLOW)[number]
-export type CssPosition = (typeof CSS_POSITION)[number]
-export type CssTextAlign = (typeof CSS_TEXT_ALIGN)[number]
 
 export type CssFlexDirection = (typeof CSS_FLEX_DIRECTION)[number]
 export type CssFlexWrap = (typeof CSS_FLEX_WRAP)[number]

@@ -41,6 +41,7 @@ export const Box = <T extends ElementType = 'div'>({
   borderBottomLeftRadius,
   // display
   display,
+  overflow,
   overflowX,
   overflowY,
   // position
@@ -92,6 +93,7 @@ export const Box = <T extends ElementType = 'div'>({
       borderBottomLeftRadius,
       textAlign,
       display,
+      overflow,
       overflowX,
       overflowY,
       position,
@@ -135,6 +137,7 @@ export const Box = <T extends ElementType = 'div'>({
     borderBottomLeftRadius,
     textAlign,
     display,
+    overflow,
     overflowX,
     overflowY,
     position,

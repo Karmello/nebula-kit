@@ -12,14 +12,6 @@ export const RenderPanel = () => {
 
   const Component = components[componentName as never] as FC
 
-  const valuesProperlyTyped: Record<string, unknown> = {}
-
-  Object.keys(propsEditorValues).map(propName => {
-    const propValue = propsEditorValues[propName as never]
-    const valueAsNumber = Number(propValue)
-    valuesProperlyTyped[propName as never] = Number.isNaN(valueAsNumber) ? propValue : valueAsNumber
-  })
-
   return (
     <Box
       tagAttrs={{ style: { borderStyle: 'dashed' } }}
@@ -28,7 +20,7 @@ export const RenderPanel = () => {
       color="blue"
       padding="25px"
     >
-      {<Component {...valuesProperlyTyped} />}
+      {<Component {...propsEditorValues} />}
     </Box>
   )
 }

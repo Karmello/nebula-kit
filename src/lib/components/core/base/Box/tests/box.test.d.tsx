@@ -52,22 +52,18 @@ expectType(<Box disabled={false}>Box</Box>)
 expectType(<Box disabled>Box</Box>)
 
 // display
-expectError(<Box display="wrong">Box</Box>)
 expectType(<Box display="inline">Box</Box>)
 expectType(<Box display={{ lg: 'none' }}>Box</Box>)
 
 // overflowX
-expectError(<Box overflowX="wrong">Box</Box>)
 expectType(<Box overflowX="scroll">Box</Box>)
 expectType(<Box overflowX={{ lg: 'visible' }}>Box</Box>)
 
 // position
-expectError(<Box position="wrong">Box</Box>)
 expectType(<Box position="sticky">Box</Box>)
 expectType(<Box position={{ md: 'relative' }}>Box</Box>)
 
 // textAlign
-expectError(<Box textAlign="wrong">Box</Box>)
 expectType(<Box textAlign="center">Box</Box>)
 expectType(<Box textAlign={{ xl: 'end' }}>Box</Box>)
 

@@ -1,6 +1,6 @@
 import { ElementType } from 'react'
 
-import { Color, CssDisplay, CssOverflow, CssPosition, CssTextAlign, RespValue } from 'lib/definitions'
+import { Color, RespValue } from 'lib/definitions'
 
 import { HtmlTagProps } from 'lib/components'
 
@@ -22,7 +22,7 @@ type BoxOwnProps = {
   hoveredByDefault?: boolean
   // css
   opacity?: RespValue<number>
-  textAlign?: RespValue<CssTextAlign>
+  textAlign?: RespValue<string>
   zIndex?: number
   // border
   borderWidth?: string
@@ -37,11 +37,12 @@ type BoxOwnProps = {
   borderBottomRightRadius?: RespValue<string>
   borderBottomLeftRadius?: RespValue<string>
   // display
-  display?: RespValue<CssDisplay>
-  overflowX?: RespValue<CssOverflow>
-  overflowY?: RespValue<CssOverflow>
+  display?: RespValue<string>
+  overflow?: RespValue<string>
+  overflowX?: RespValue<string>
+  overflowY?: RespValue<string>
   // position
-  position?: RespValue<CssPosition>
+  position?: RespValue<string>
   top?: RespValue<string>
   right?: RespValue<string>
   bottom?: RespValue<string>

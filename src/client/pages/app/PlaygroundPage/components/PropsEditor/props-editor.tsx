@@ -7,74 +7,48 @@ import { Form, Input, Select, Text } from 'lib/components'
 import { usePlaygroundStore } from '../../use-playground-store'
 
 export const PropsEditor = () => {
+  const isResettingRef = useRef(false)
+  const resetRef = useRef<null | ((v: any) => void)>(null)
+  const subscribeRef = useRef<null | any>(null)
+
   const { componentName, propsEditorValues, setPropsEditorValues } = usePlaygroundStore()
+
+  useEffect(() => {
+    if (!resetRef.current) return
+
+    isResettingRef.current = true
+    resetRef.current(propsEditorValues)
+
+    requestAnimationFrame(() => {
+      isResettingRef.current = false
+    })
+  }, [propsEditorValues])
+
+  useEffect(() => {
+    if (!subscribeRef.current) return
+
+    let timeoutId: NodeJS.Timeout
+
+    const unsubscribe = subscribeRef.current({
+      formState: { values: true },
+      callback: ({ values }: any) => {
+        if (isResettingRef.current) return
+        clearTimeout(timeoutId)
+        timeoutId = setTimeout(() => {
+          setPropsEditorValues(values)
+        }, 500)
+      },
+    })
+
+    return () => {
+      clearTimeout(timeoutId)
+      unsubscribe()
+    }
+  }, [setPropsEditorValues])
 
   if (!componentName) return null
 
   const componentProps = META[componentName][componentName].props
-
-  const FormInner = ({ reset, subscribe }: any) => {
-    const isResettingRef = useRef(false)
-
-    useEffect(() => {
-      isResettingRef.current = true
-      reset(propsEditorValues)
-      requestAnimationFrame(() => {
-        isResettingRef.current = false
-      })
-    }, [propsEditorValues, reset])
-
-    useEffect(() => {
-      let timeoutId: NodeJS.Timeout
-      const callback = subscribe({
-        formState: { values: true },
-        callback: ({ values }: any) => {
-          if (isResettingRef.current) return
-          clearTimeout(timeoutId)
-          timeoutId = setTimeout(() => {
-            setPropsEditorValues(values)
-          }, 500)
-        },
-      })
-      return () => {
-        clearTimeout(timeoutId)
-        callback()
-      }
-    }, [subscribe, setPropsEditorValues])
-
-    return (
-      <>
-        <Form.Actions>
-          <Form.ActionButton type="reset" size="sm" color="blue" intent="primary">
-            Reset
-          </Form.ActionButton>
-        </Form.Actions>
-        <Form.Fields rowGap="15px">
-          {Object.keys(componentProps).map(propName => {
-            const { options, propControl } = componentProps[propName as never] as Prop
-            return (
-              <Form.Field key={propName} name={propName}>
-                <Form.Label>
-                  <Text scale="compact">{propName}</Text>
-                </Form.Label>
-                {propControl === 'input' ? (
-                  <Input size="sm" variant={{ base: 'outline', lg: 'solid' }} />
-                ) : null}
-                {propControl === 'select' ? (
-                  <Select variant="outline" size="sm">
-                    {options.map(option => (
-                      <Select.Option value={option}>{option}</Select.Option>
-                    ))}
-                  </Select>
-                ) : null}
-                {!propControl ? <div /> : null}
-              </Form.Field>
-            )
-          })}
-        </Form.Fields>
-      </>
-    )
-  }
 
   return (
     <Form
@@ -82,7 +56,50 @@ export const PropsEditor = () => {
       onValidSubmission={() => null}
       flexDirection="column-reverse"
     >
-      {({ reset, subscribe }) => <FormInner reset={reset} subscribe={subscribe} />}
+      {({ reset, subscribe }) => {
+        resetRef.current = reset
+        subscribeRef.current = subscribe
+
+        return (
+          <>
+            <Form.Actions>
+              <Form.ActionButton type="reset" size="sm" color="blue" intent="primary">
+                Reset
+              </Form.ActionButton>
+            </Form.Actions>
+
+            <Form.Fields rowGap="15px">
+              {Object.keys(componentProps).map(propName => {
+                const { options, propControl } = componentProps[propName as never] as Prop
+
+                return (
+                  <Form.Field key={propName} name={propName}>
+                    <Form.Label>
+                      <Text scale="compact">{propName}</Text>
+                    </Form.Label>
+
+                    {propControl === 'input' && (
+                      <Input size="sm" variant={{ base: 'outline', lg: 'solid' }} />
+                    )}
+
+                    {propControl === 'select' && (
+                      <Select variant="outline" size="sm">
+                        {options.map(option => (
+                          <Select.Option key={option} value={option}>
+                            {option}
+                          </Select.Option>
+                        ))}
+                      </Select>
+                    )}
+
+                    {!propControl && <div />}
+                  </Form.Field>
+                )
+              })}
+            </Form.Fields>
+          </>
+        )
+      }}
     </Form>
   )
 }
