@@ -7,15 +7,19 @@ import { Box, Section, Spacer, SplitView } from 'lib/components'
 import { ComponentSelect, PropsEditor, RenderPanel } from './components'
 import { usePlaygroundStore } from './use-playground-store'
 
+export const PROPS_TO_SKIP = ['tag', 'tagAttrs', 'tagRef', 'zIndex']
+
 export const PlaygroundPage = () => {
   const { componentName, setPropsEditorValues } = usePlaygroundStore()
 
   useEffect(() => {
     const componentProps = META[componentName][componentName].props
     const defaultValues: Record<string, unknown> = {}
-    Object.keys(componentProps).map(propName => {
-      defaultValues[propName] = (componentProps[propName as never] as Prop).defaultValue
-    })
+    Object.keys(componentProps)
+      .filter(propName => !PROPS_TO_SKIP.includes(propName))
+      .map(propName => {
+        defaultValues[propName] = (componentProps[propName as never] as Prop).defaultValue
+      })
     setPropsEditorValues(defaultValues)
   }, [componentName])
 

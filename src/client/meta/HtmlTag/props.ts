@@ -7,7 +7,6 @@ const HTML_TAG_PROPS_META: ComponentMeta<HtmlTagProps<ElementType>>['props'] = {
   children: {
     options: ['ReactNode'],
     description: 'Content rendered.',
-    propControl: 'input',
   },
   tag: {
     options: ['HTML tag'],

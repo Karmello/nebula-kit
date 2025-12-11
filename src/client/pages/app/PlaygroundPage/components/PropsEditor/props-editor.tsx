@@ -5,6 +5,7 @@ import { Prop } from 'client/definitions'
 import { Form, Input, Select, Text } from 'lib/components'
 
 import { usePlaygroundStore } from '../../use-playground-store'
+import { PROPS_TO_SKIP } from '../../playground-page'
 
 export const PropsEditor = () => {
   const isResettingRef = useRef(false)
@@ -69,33 +70,30 @@ export const PropsEditor = () => {
             </Form.Actions>
 
             <Form.Fields rowGap="15px">
-              {Object.keys(componentProps).map(propName => {
-                const { options, propControl } = componentProps[propName as never] as Prop
+              {Object.keys(componentProps)
+                .filter(propName => !PROPS_TO_SKIP.includes(propName))
+                .map(propName => {
+                  const { options, propControl } = componentProps[propName as never] as Prop
 
-                return (
-                  <Form.Field key={propName} name={propName}>
-                    <Form.Label>
-                      <Text scale="compact">{propName}</Text>
-                    </Form.Label>
-
-                    {propControl === 'input' && (
-                      <Input size="sm" variant={{ base: 'outline', lg: 'solid' }} />
-                    )}
-
-                    {propControl === 'select' && (
-                      <Select variant="outline" size="sm">
-                        {options.map(option => (
-                          <Select.Option key={option} value={option}>
-                            {option}
-                          </Select.Option>
-                        ))}
-                      </Select>
-                    )}
-
-                    {!propControl && <div />}
-                  </Form.Field>
-                )
-              })}
+                  return (
+                    <Form.Field key={propName} name={propName}>
+                      <Form.Label>
+                        <Text scale="compact">{propName}</Text>
+                      </Form.Label>
+                      {propControl === 'select' ? (
+                        <Select variant="outline" size="sm">
+                          {options.map(option => (
+                            <Select.Option key={option} value={option}>
+                              {option}
+                            </Select.Option>
+                          ))}
+                        </Select>
+                      ) : (
+                        <Input size="sm" variant={{ base: 'outline', lg: 'solid' }} />
+                      )}
+                    </Form.Field>
+                  )
+                })}
             </Form.Fields>
           </>
         )

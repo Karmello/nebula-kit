@@ -10,7 +10,6 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['CSS'],
     isResponsive: true,
     description: 'Height.',
-    propControl: 'input',
   },
   borderBottomLeftRadius: {
     options: ['CSS'],
@@ -186,7 +185,6 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['CSS'],
     isResponsive: true,
     description: 'Padding for all sides.',
-    propControl: 'input',
   },
   paddingBlock: {
     options: ['CSS'],
