@@ -12,6 +12,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     defaultValue: 'auto',
     isResponsive: true,
     description: 'Height.',
+    propControl: 'input',
   },
   borderBottomLeftRadius: {
     options: ['ScaleValue', 'CSS'],
@@ -83,6 +84,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: COLORS as never,
     isResponsive: true,
     description: 'Color applied to the component.',
+    propControl: 'select',
   },
   disabled: {
     options: ['boolean'],
@@ -111,6 +113,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: Object.values(BOX_INTENTS),
     isResponsive: true,
     description: "Tone level applied to the component's main color.",
+    propControl: 'select',
   },
   interactive: {
     options: ['boolean'],
@@ -277,6 +280,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: Object.values(BOX_VARIANTS),
     isResponsive: true,
     description: 'Visual style variant.',
+    propControl: 'select',
   },
   zIndex: {
     options: ['number'],

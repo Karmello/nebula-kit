@@ -15,6 +15,7 @@ import {
   ProfileSettingsPage,
   ConfirmActionPage,
   FeedbackPage,
+  PlaygroundPage,
 } from 'client/pages'
 
 import { PageKey } from 'client/definitions'
@@ -26,6 +27,7 @@ export const RootPage = () => {
     <div className={styles.RootPage}>
       <Routes>
         <Route path={PageKey.home} Component={HomePage} />
+        <Route path={PageKey.playground} Component={PlaygroundPage} />
         <Route path={`${PageKey.foundations}/*`} Component={FoundationsPage} />
         <Route path={`${PageKey.core}/*`} Component={CorePage} />
         <Route path={`${PageKey.pro}/*`} Component={ProPage} />

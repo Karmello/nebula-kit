@@ -25,6 +25,23 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
     <Segment flexDirection={{ base: 'column', lg: 'row' }}>
       <Segment.Item>
         <Link
+          href={PageKey.playground}
+          onClick={async () => {
+            if (mainOpen) await setMainOpen(false)
+            navigateTo(PageKey.playground)
+          }}
+        >
+          <Button
+            intent={currentPageKey === PageKey.playground ? 'secondary' : 'muted'}
+            iconName="shapes"
+            fullWidth
+          >
+            Playground
+          </Button>
+        </Link>
+      </Segment.Item>
+      <Segment.Item>
+        <Link
           href={PageKey.foundations}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)

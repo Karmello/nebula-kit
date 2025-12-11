@@ -6,7 +6,7 @@ export const FeedbackPage = () => {
   const sendFeedback = useSendFeedback()
 
   return (
-    <Box padding={{ base: 20, lg: 50 }} maxInlineSize="75rem">
+    <Box paddingTop={15} paddingInline={{ base: 20, lg: 50 }} maxInlineSize="75rem">
       <Section heading="Feedback" intent="neutral" iconName="mail">
         <Text>
           Your input helps shape where we go next. Let us know what's on your mind. Your feedback is

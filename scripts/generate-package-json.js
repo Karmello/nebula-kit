@@ -1,18 +1,20 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-const filterDeps = deps => {
-  const allowed = ['classnames', 'change-case', 'lodash-es', 'lucide-react', 'zustand']
-  return Object.fromEntries(Object.entries(deps || {}).filter(([name]) => allowed.includes(name)))
-}
-
-const ROOT = JSON.parse(fs.readFileSync('package.json', 'utf8'))
-
 const bundle = process.env.TSUP_BUNDLE
+
 if (!bundle) {
   console.error('TSUP_BUNDLE not set')
   process.exit(1)
 }
+
+const filterDeps = deps => {
+  let allowed = ['classnames', 'change-case', 'lodash-es', 'lucide-react', 'zustand']
+  if (bundle === 'pro') allowed.push('react-hook-form')
+  return Object.fromEntries(Object.entries(deps || {}).filter(([name]) => allowed.includes(name)))
+}
+
+const ROOT = JSON.parse(fs.readFileSync('package.json', 'utf8'))
 
 const outDir = `dist/${bundle}`
 

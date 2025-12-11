@@ -54,6 +54,7 @@ function generateSitemap() {
   const EXTRA_ROUTES = [
     '',
     '/home',
+    '/playground',
     '/foundations',
     '/core',
     '/pro',

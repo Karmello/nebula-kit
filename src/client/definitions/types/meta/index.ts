@@ -15,12 +15,13 @@ type Overview = {
   }
 }
 
-type Prop = {
+export type Prop = {
   options: string[]
   defaultValue?: string
   isRequired?: boolean
   isResponsive?: boolean
   description?: string
+  propControl?: 'input' | 'select'
 }
 
 type Example = {
