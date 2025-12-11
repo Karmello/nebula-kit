@@ -23,7 +23,7 @@ export default () => {
         Understanding how slots work will help you read component APIs faster, compose layouts more
         intuitively and recognize where NebulaKit handles structure for you.
       </Text>
-      <Spacer blockSize={40} />
+      <Spacer blockSize="40px" />
       <Callout
         variant="soft-outline"
         size="sm"
@@ -31,7 +31,7 @@ export default () => {
 If a required slot is missing, NebulaKit logs a warning in the console to help you catch structural issues early.
 Optional slots are ignored when absent, so you can extend layouts without noise."
       />
-      <Spacer blockSize={60} />
+      <Spacer blockSize="60px" />
       <Text bold>Example</Text>
       <CodeSnippet
         lang="tsx"

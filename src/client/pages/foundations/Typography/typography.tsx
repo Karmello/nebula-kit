@@ -21,10 +21,10 @@ const MAP: Record<TextTypography, string> = {
 
 export default () => {
   return (
-    <Flex flexDirection="column" gap={40}>
+    <Flex flexDirection="column" gap="40px">
       <Text typography="lead">All typography styles defined in the system.</Text>
       {TEXT_TYPOGRAPHY.map(typography => (
-        <Table key={typography} paddingBlock={10} paddingInline={15} color="blue">
+        <Table key={typography} paddingBlock="10px" paddingInline="15px" color="blue">
           <Table.Caption>
             <Text intent="primary" color="blue" bold underline iconName="arrow-right">
               {typography}

@@ -34,7 +34,9 @@ describe('handleArrowNavigation', () => {
   })
 
   it('aligns next item to top when moving down past the window, clamped to max scroll', () => {
-    const itemSize = BUTTON_SIZE_CONFIG['md'].blockSize + BOX_BORDER_WIDTH
+    const itemSize =
+      Number(BUTTON_SIZE_CONFIG['md'].blockSize.replace('px', '')) +
+      Number(BOX_BORDER_WIDTH.replace('px', ''))
     const maxScrollTop = (10 - 5) * itemSize // itemsCount - visibleItemsCount
 
     const result = handleArrowNavigation(
@@ -52,7 +54,9 @@ describe('handleArrowNavigation', () => {
   })
 
   it('scrolls the list so the next item becomes top-aligned when moving down past visible window (no clamp)', () => {
-    const itemSize = BUTTON_SIZE_CONFIG['md'].blockSize + BOX_BORDER_WIDTH
+    const itemSize =
+      Number(BUTTON_SIZE_CONFIG['md'].blockSize.replace('px', '')) +
+      Number(BOX_BORDER_WIDTH.replace('px', ''))
 
     const result = handleArrowNavigation(
       'ArrowDown',
@@ -69,7 +73,7 @@ describe('handleArrowNavigation', () => {
   })
 
   it('scrolls the list so the previous item becomes bottom-aligned when moving up past visible window', () => {
-    const itemSize = BUTTON_SIZE_CONFIG['md'].blockSize
+    const itemSize = Number(BUTTON_SIZE_CONFIG['md'].blockSize.replace('px', ''))
 
     // simulate being scrolled down a bit
     const scrollTop = itemSize * 5 // firstVisibleIndex = 5, lastVisibleIndex = 9
@@ -89,7 +93,7 @@ describe('handleArrowNavigation', () => {
   })
 
   it('adjusts scroll gently when first navigation down targets a half-visible top item', () => {
-    const itemSize = BUTTON_SIZE_CONFIG['md'].blockSize
+    const itemSize = Number(BUTTON_SIZE_CONFIG['md'].blockSize.replace('px', ''))
     const halfItemScroll = itemSize / 2 // top item is half cut off
 
     const result = handleArrowNavigation(
@@ -107,7 +111,9 @@ describe('handleArrowNavigation', () => {
   })
 
   it('adjusts scroll gently when first navigation up targets a half-visible bottom item', () => {
-    const itemSize = BUTTON_SIZE_CONFIG['md'].blockSize + BOX_BORDER_WIDTH
+    const itemSize =
+      Number(BUTTON_SIZE_CONFIG['md'].blockSize.replace('px', '')) +
+      Number(BOX_BORDER_WIDTH.replace('px', ''))
     const visibleItemsCount = 5
     const itemsCount = 20
 

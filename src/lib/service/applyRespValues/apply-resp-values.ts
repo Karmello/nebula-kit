@@ -4,7 +4,6 @@ import isNil from 'lodash-es/isNil.js'
 import isObject from 'lodash-es/isObject.js'
 
 import { Breakpoint, BREAKPOINTS, LIB_PREFIX, RespValue } from 'lib/definitions'
-import { resolveScale } from 'lib/helpers'
 
 type ValuesType = 'style' | 'dataset'
 type InputValues = Record<string, RespValue<string | number | boolean> | undefined>
@@ -21,7 +20,7 @@ const formatCssValue = (propName: string, propValue: string | number | boolean):
     } else if (propName === 'columns') {
       return `repeat(${propValue}, 1fr)`
     } else {
-      return resolveScale(propValue) || ''
+      return String(propValue) || ''
     }
   } else {
     return String(propValue)

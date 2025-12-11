@@ -1,7 +1,7 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
 import { BoxIntent, BoxVariant } from 'lib/components/core/base/Box/definitions'
 import { TextProps, TextTypography } from 'lib/components/core/base/Text/definitions'
-import { ScaleValue, Sizes } from 'lib/definitions'
+import { Sizes } from 'lib/definitions'
 
 export const SECTION_TAGS = ['section', 'article', 'aside', 'div'] as const
 export const SECTION_SIZES = ['sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies Sizes[]
@@ -13,13 +13,13 @@ export const DEFAULT_SECTION_SIZE: SectionSize = 'md'
 
 export const SECTION_SIZE_CONFIG: Record<
   SectionSize,
-  { typography: Extract<TextTypography, 'h6' | 'h5' | 'h4' | 'h3' | 'h2'>; spacing: ScaleValue }
+  { typography: Extract<TextTypography, 'h6' | 'h5' | 'h4' | 'h3' | 'h2'>; spacing: string }
 > = {
-  sm: { typography: 'h6', spacing: 16 },
-  md: { typography: 'h5', spacing: 20 },
-  lg: { typography: 'h4', spacing: 24 },
-  xl: { typography: 'h3', spacing: 26 },
-  xxl: { typography: 'h2', spacing: 30 },
+  sm: { typography: 'h6', spacing: '16px' },
+  md: { typography: 'h5', spacing: '20px' },
+  lg: { typography: 'h4', spacing: '24px' },
+  xl: { typography: 'h3', spacing: '26px' },
+  xxl: { typography: 'h2', spacing: '30px' },
 }
 
 export type SectionTag = (typeof SECTION_TAGS)[number]

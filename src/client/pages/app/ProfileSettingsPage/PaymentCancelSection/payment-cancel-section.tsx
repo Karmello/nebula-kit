@@ -17,10 +17,10 @@ export const PaymentCancelSection = ({
         This section allows you to cancel your active subscription and return to the free plan.
       </Text>
       <Text bold intent="neutral">
-        <Spacer blockSize={30} />
+        <Spacer blockSize="30px" />
         What happens when you cancel
       </Text>
-      <Spacer blockSize={15} />
+      <Spacer blockSize="15px" />
       <MarkerList intent="neutral" color="gray">
         <MarkerList.Item>
           <Text>your account switches back to the free plan</Text>
@@ -40,12 +40,12 @@ export const PaymentCancelSection = ({
           <Text>unused time in your billing period is not refunded</Text>
         </MarkerList.Item>
       </MarkerList>
-      <Spacer blockSize={15} />
+      <Spacer blockSize="15px" />
       <Text intent="neutral">
         If you change your mind later, you can start a new subscription at any time and a fresh license key
         will be issued automatically.
       </Text>
-      <Spacer blockSize={30} />
+      <Spacer blockSize="30px" />
       <PaymentCancelForm
         userEmail={userEmail}
         userPlan={userPlan}

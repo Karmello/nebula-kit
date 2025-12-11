@@ -25,8 +25,8 @@ export default ({ enabled }: { enabled: boolean }) => {
     <Table layout="fixed" intent="neutral" color="blue">
       <Table.Header>
         <Table.HeaderRow>
-          <Table.HeaderCell blockSize={60}>
-            <Flex alignItems="center" columnGap={20}>
+          <Table.HeaderCell blockSize="60px">
+            <Flex alignItems="center" columnGap="20px">
               <Text typography="h6" iconName="arrow-right">
                 Subscription
               </Text>
@@ -35,12 +35,12 @@ export default ({ enabled }: { enabled: boolean }) => {
           </Table.HeaderCell>
         </Table.HeaderRow>
       </Table.Header>
-      <Table.Body intent="tertiary" paddingBlock={10} paddingInline={15}>
+      <Table.Body intent="tertiary" paddingBlock="10px" paddingInline="15px">
         <Table.Row>
           <Table.Cell colSpan={1}>
             <Text>Status</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize={50}>
+          <Table.Cell colSpan={2} blockSize="50px">
             <Text bold>{getPaymentInfo.data?.subscription.status}</Text>
           </Table.Cell>
         </Table.Row>
@@ -48,7 +48,7 @@ export default ({ enabled }: { enabled: boolean }) => {
           <Table.Cell colSpan={1}>
             <Text>Last payment</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize={50}>
+          <Table.Cell colSpan={2} blockSize="50px">
             <Text bold>
               {getPaymentInfo.data?.subscription.lastPayment
                 ? new Date(getPaymentInfo.data.subscription.lastPayment).toUTCString()
@@ -60,7 +60,7 @@ export default ({ enabled }: { enabled: boolean }) => {
           <Table.Cell colSpan={1}>
             <Text>Amount</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize={50}>
+          <Table.Cell colSpan={2} blockSize="50px">
             <Text bold>{getPaymentInfo.data?.subscription.amount}</Text>
           </Table.Cell>
         </Table.Row>
@@ -68,7 +68,7 @@ export default ({ enabled }: { enabled: boolean }) => {
           <Table.Cell colSpan={1}>
             <Text>Renews every</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize={50}>
+          <Table.Cell colSpan={2} blockSize="50px">
             <Text bold>{getPaymentInfo.data?.subscription.interval}</Text>
           </Table.Cell>
         </Table.Row>

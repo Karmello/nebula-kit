@@ -76,9 +76,9 @@ export const CatalogPageTemplate = ({
               })}
             </SideNav>
           </SplitView.Side>
-          <SplitView.Main paddingLeft={20}>
+          <SplitView.Main paddingLeft="20px">
             <SplitView.MainBar>
-              <Box marginRight={20}>
+              <Box marginRight="20px">
                 <Breadcrumb
                   items={[
                     pascalCase(pageKey),
@@ -89,7 +89,7 @@ export const CatalogPageTemplate = ({
                 />
               </Box>
             </SplitView.MainBar>
-            <Spacer blockSize={30} />
+            <Spacer blockSize="30px" />
             <SplitView sidePosition="right">
               {({ mode, setSideOpen }) => (
                 <>
@@ -122,9 +122,9 @@ export const CatalogPageTemplate = ({
                         })}
                     </SideNav>
                   </SplitView.Side>
-                  <SplitView.Main paddingRight={20}>
+                  <SplitView.Main paddingRight="20px">
                     <SplitView.MainBar>
-                      <Flex gap={15} alignItems="center">
+                      <Flex gap="15px" alignItems="center">
                         <Text typography="h3">
                           {pageKey === PageKey.foundations.toString()
                             ? activeSectionObj?.label
@@ -135,9 +135,9 @@ export const CatalogPageTemplate = ({
                             variant="solid"
                             color="blue"
                             intent={bundleLabel === 'core' ? 'tertiary' : 'primary'}
-                            borderRadius={10}
-                            paddingBlock={3}
-                            paddingInline={7}
+                            borderRadius="10px"
+                            paddingBlock="3px"
+                            paddingInline="7px"
                           >
                             <Text scale="compact">{bundleLabel}</Text>
                           </Box>

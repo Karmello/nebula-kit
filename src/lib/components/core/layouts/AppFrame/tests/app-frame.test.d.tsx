@@ -28,7 +28,7 @@ expectType(
 
 expectType(
   <AppFrame>
-    <AppFrame.Main padding={10}>main</AppFrame.Main>
+    <AppFrame.Main padding="10px">main</AppFrame.Main>
   </AppFrame>
 )
 
@@ -41,6 +41,6 @@ expectError(
 
 expectError(
   <AppFrame>
-    <AppFrame.Main margin={10}>main</AppFrame.Main>
+    <AppFrame.Main margin="10px">main</AppFrame.Main>
   </AppFrame>
 )

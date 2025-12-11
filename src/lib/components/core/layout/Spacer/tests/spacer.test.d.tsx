@@ -10,7 +10,7 @@ expectType(<Spacer />)
 expectError(<Spacer>children</Spacer>)
 
 // custom blockSize
-expectType(<Spacer blockSize={10} />)
+expectType(<Spacer blockSize="10px" />)
 
 // can't change tag
 expectError(<Spacer tag="span" />)

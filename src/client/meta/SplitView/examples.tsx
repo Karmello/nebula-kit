@@ -23,11 +23,11 @@ const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewProps>['examples'] = [
       <Box blockSize="500px">
         <SplitView>
           <SplitView.Side intent="secondary" inlineSize={{ base: '300px', md: '500px', lg: '150px' }}>
-            <Box margin={10}>
+            <Box margin="10px">
               <Text noWrap>Side</Text>
             </Box>
           </SplitView.Side>
-          <SplitView.Main padding={10}>
+          <SplitView.Main padding="10px">
             <SplitView.MainBar>
               <Text>MainBar</Text>
             </SplitView.MainBar>

@@ -24,13 +24,13 @@ export default () => {
         </Text>
         breakpoints.
       </Text>
-      <Spacer blockSize={20} />
+      <Spacer blockSize="20px" />
       <CodeSnippet lang="tsx" code={`<Box padding={{ base: 10, md: 50 }} />`} />
-      <Spacer blockSize={40} />
+      <Spacer blockSize="40px" />
       <Text>When combining responsive and non-responsive props, the more specific one wins.</Text>
-      <Spacer blockSize={20} />
+      <Spacer blockSize="20px" />
       <CodeSnippet lang="tsx" code={`<Box padding={{ base: 10, md: 50 }} paddingBottom={25} />`} />
-      <Spacer blockSize={20} />
+      <Spacer blockSize="20px" />
       <Text>
         In the above example,
         <Text tag="span" bold space="both">

@@ -121,11 +121,11 @@ export const DropdownListComponent = ({
             <Box
               variant={variant === 'ghost' ? 'solid' : variant}
               intent={variant === 'ghost' ? 'neutral' : intent}
-              borderTopWidth={0}
-              borderTopLeftRadius={opensUpDownwards ? 0 : undefined}
-              borderTopRightRadius={opensUpDownwards ? 0 : undefined}
-              borderBottomLeftRadius={!opensUpDownwards ? 0 : undefined}
-              borderBottomRightRadius={!opensUpDownwards ? 0 : undefined}
+              borderTopWidth="0px"
+              borderTopLeftRadius={opensUpDownwards ? '0px' : undefined}
+              borderTopRightRadius={opensUpDownwards ? '0px' : undefined}
+              borderBottomLeftRadius={!opensUpDownwards ? '0px' : undefined}
+              borderBottomRightRadius={!opensUpDownwards ? '0px' : undefined}
               minInlineSize={`${triggerWidth}px`}
             >
               <Box
@@ -133,22 +133,22 @@ export const DropdownListComponent = ({
                 blockSize={itemsContainerBlockSize}
                 overflowY="auto"
                 overflowX="hidden"
-                borderTopLeftRadius={opensUpDownwards ? 0 : undefined}
-                borderTopRightRadius={opensUpDownwards ? 0 : undefined}
-                borderBottomLeftRadius={!opensUpDownwards ? 0 : undefined}
-                borderBottomRightRadius={!opensUpDownwards ? 0 : undefined}
+                borderTopLeftRadius={opensUpDownwards ? '0px' : undefined}
+                borderTopRightRadius={opensUpDownwards ? '0px' : undefined}
+                borderBottomLeftRadius={!opensUpDownwards ? '0px' : undefined}
+                borderBottomRightRadius={!opensUpDownwards ? '0px' : undefined}
               >
                 <Flex flexDirection="column" flexWrap="nowrap" alignItems="stretch">
                   {slotsByName['DropdownList.Item'].map((slot, index) => (
                     <Box
                       key={index}
                       variant="outline"
-                      borderRadius={0}
-                      borderLeftWidth={0}
-                      borderRightWidth={0}
-                      borderTopWidth={opensUpDownwards ? (index > 0 ? 0 : undefined) : 0}
+                      borderRadius="0px"
+                      borderLeftWidth="0px"
+                      borderRightWidth="0px"
+                      borderTopWidth={opensUpDownwards ? (index > 0 ? '0px' : undefined) : '0px'}
                       borderBottomWidth={
-                        opensUpDownwards ? (index === itemsCount - 1 ? 0 : undefined) : undefined
+                        opensUpDownwards ? (index === itemsCount - 1 ? '0px' : undefined) : undefined
                       }
                       borderIntent={itemBorderIntent}
                     >

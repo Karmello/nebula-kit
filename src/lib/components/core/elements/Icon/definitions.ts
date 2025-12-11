@@ -1,12 +1,12 @@
 import { HtmlTagProps } from 'lib/components'
 import { BoxIntent } from 'lib/components/core/base/Box/definitions'
-import { Color, IconName, ScaleValue } from 'lib/definitions'
+import { Color, IconName } from 'lib/definitions'
 
-export const DEFAULT_ICON_SIZE: ScaleValue = 16
+export const DEFAULT_ICON_SIZE: string = '16px'
 
 type IconOwnProps = {
   name: IconName
-  size?: ScaleValue
+  size?: string
   intent?: BoxIntent
   color?: Color
 }

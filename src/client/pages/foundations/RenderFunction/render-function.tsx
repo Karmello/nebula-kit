@@ -17,7 +17,7 @@ export default () => {
         wrapper components or prop drilling. It also keeps markup cleaner, since the logic for how and when
         elements appear lives alongside the data that drives them.
       </Text>
-      <Spacer blockSize={40} />
+      <Spacer blockSize="40px" />
       <Text bold>Example</Text>
       <CodeSnippet
         lang="tsx"

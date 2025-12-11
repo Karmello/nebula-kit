@@ -11,12 +11,12 @@ export default () => {
         Hues, intents and variants combined through Button components, illustrating the system's full color
         behavior in practice.
       </Text>
-      <Spacer blockSize={50} />
-      <Flex flexDirection="column" gap={50}>
+      <Spacer blockSize="50px" />
+      <Flex flexDirection="column" gap="50px">
         {BOX_VARIANTS.map(variant => {
           return (
             <Section key={variant} heading={`${sentenceCase(variant)} variant`}>
-              <Grid gridTemplateColumns="repeat(6, 1fr)" gap={7}>
+              <Grid gridTemplateColumns="repeat(6, 1fr)" gap="7px">
                 {COLORS.map(color => {
                   return BOX_INTENTS.map(intent => {
                     return (

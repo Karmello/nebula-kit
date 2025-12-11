@@ -48,10 +48,10 @@ export const Snackbar = ({
             style: { pointerEvents: !visible ? 'none' : undefined },
           }}
           position="fixed"
-          top={finalPlacement.includes('top') ? 0 : 'unset'}
-          bottom={finalPlacement.includes('bottom') ? 0 : 'unset'}
-          left={finalPlacement.includes('left') ? 0 : 'unset'}
-          right={finalPlacement.includes('right') ? 0 : 'unset'}
+          top={finalPlacement.includes('top') ? '0px' : 'unset'}
+          bottom={finalPlacement.includes('bottom') ? '0px' : 'unset'}
+          left={finalPlacement.includes('left') ? '0px' : 'unset'}
+          right={finalPlacement.includes('right') ? '0px' : 'unset'}
           zIndex={30}
         >
           <Slide
@@ -62,11 +62,11 @@ export const Snackbar = ({
             <Box
               key={snackbar?.status}
               position="relative"
-              padding={10}
+              padding="10px"
               inlineSize={inlineSize}
               maxInlineSize="calc(100vw - 10px)"
             >
-              <Box position="absolute" top={15} right={15}>
+              <Box position="absolute" top="15px" right="15px">
                 <Button
                   tagAttrs={{ onClick: handleClose }}
                   iconName="close"

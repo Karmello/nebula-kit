@@ -22,7 +22,7 @@ export default () => {
         </Text>
         <CodeSnippet lang="bash" code="yarn add @nebula-kit/core" />
       </Section>
-      <Spacer blockSize={40} />
+      <Spacer blockSize="40px" />
       <Section size="sm" heading="Pro bundle" iconName="arrow-right" intent="primary" color="blue">
         <Text intent="neutral">The Pro bundle is distributed through a private registry.</Text>
         <Spacer />
@@ -36,7 +36,7 @@ export default () => {
 \nalways-auth=true
 `}
         />
-        <Spacer blockSize={5} />
+        <Spacer blockSize="5px" />
         <Text typography="caption" intent="secondary" color="gray">
           NEB_TOKEN is your personal license key used to authenticate access to the Pro bundle. You'll find it
           in your NebulaKit account dashboard after subscribing.

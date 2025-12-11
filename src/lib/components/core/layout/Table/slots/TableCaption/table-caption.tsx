@@ -14,8 +14,8 @@ export const TableCaption = ({ children, tagAttrs, tagRef }: TableCaptionProps) 
         className: classNames(withPrefix('table-caption'), tagAttrs?.className),
       }}
       tagRef={tagRef}
-      paddingBlock={10}
-      borderRadius={0}
+      paddingBlock="10px"
+      borderRadius="0px"
     >
       {children}
     </Box>

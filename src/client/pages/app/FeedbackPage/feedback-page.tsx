@@ -6,13 +6,13 @@ export const FeedbackPage = () => {
   const sendFeedback = useSendFeedback()
 
   return (
-    <Box paddingTop={15} paddingInline={{ base: 20, lg: 50 }} maxInlineSize="75rem">
+    <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} maxInlineSize="75rem">
       <Section heading="Feedback" intent="neutral" iconName="mail">
         <Text>
           Your input helps shape where we go next. Let us know what's on your mind. Your feedback is
           completely anonymous.
         </Text>
-        <Spacer blockSize={50} />
+        <Spacer blockSize="50px" />
         <Form<{ message: string }>
           useFormProps={{ defaultValues: { message: '' } }}
           onValidSubmission={async ({ message }) => {

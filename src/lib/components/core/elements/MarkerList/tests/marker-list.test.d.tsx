@@ -33,7 +33,7 @@ expectType(
 )
 
 // rowGap prop
-expectType(<MarkerList rowGap={5}>children</MarkerList>)
+expectType(<MarkerList rowGap="5px">children</MarkerList>)
 
 // unknown prop
 expectError(<MarkerList unknown="xyz">children</MarkerList>)

@@ -4,7 +4,7 @@ import { BP } from 'lib/hooks'
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Table paddingBlock={10} paddingInline={15} color="blue">
+      <Table paddingBlock="10px" paddingInline="15px" color="blue">
         <Table.Caption>Responsive breakpoints with their pixel ranges defined in the system.</Table.Caption>
         <Table.Header>
           <Table.HeaderRow>

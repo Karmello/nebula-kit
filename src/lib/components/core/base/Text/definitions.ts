@@ -1,4 +1,3 @@
-import { ScaleValue } from 'lib/definitions'
 import { HtmlTagProps, WithIconProps } from 'lib/components'
 
 import { BoxProps } from '../Box'
@@ -9,37 +8,37 @@ export const TEXT_TYPOGRAPHY_CONFIG: Record<
     TextTypography,
     {
       tag: TextTag
-      fontSize: ScaleValue
+      fontSize: string
       lineHeight: number
-      iconSize: ScaleValue
+      iconSize: string
     }
   >
 > = {
   regular: {
-    body: { tag: 'p', fontSize: 16, lineHeight: 1.6, iconSize: 16 },
-    lead: { tag: 'p', fontSize: 18, lineHeight: 1.6, iconSize: 18 },
-    secondary: { tag: 'p', fontSize: 14, lineHeight: 1.5, iconSize: 14 },
-    tertiary: { tag: 'p', fontSize: 14, lineHeight: 1.5, iconSize: 14 },
-    caption: { tag: 'p', fontSize: 12, lineHeight: 1.4, iconSize: 14 },
-    h6: { tag: 'h6', fontSize: 20, lineHeight: 1.3, iconSize: 18 },
-    h5: { tag: 'h5', fontSize: 24, lineHeight: 1.3, iconSize: 22 },
-    h4: { tag: 'h4', fontSize: 30, lineHeight: 1.25, iconSize: 26 },
-    h3: { tag: 'h3', fontSize: 36, lineHeight: 1.25, iconSize: 30 },
-    h2: { tag: 'h2', fontSize: 48, lineHeight: 1.2, iconSize: 38 },
-    h1: { tag: 'h1', fontSize: 60, lineHeight: 1.1, iconSize: 46 },
+    body: { tag: 'p', fontSize: '16px', lineHeight: 1.6, iconSize: '16px' },
+    lead: { tag: 'p', fontSize: '18px', lineHeight: 1.6, iconSize: '18px' },
+    secondary: { tag: 'p', fontSize: '14px', lineHeight: 1.5, iconSize: '14px' },
+    tertiary: { tag: 'p', fontSize: '14px', lineHeight: 1.5, iconSize: '14px' },
+    caption: { tag: 'p', fontSize: '12px', lineHeight: 1.4, iconSize: '14px' },
+    h6: { tag: 'h6', fontSize: '20px', lineHeight: 1.3, iconSize: '18px' },
+    h5: { tag: 'h5', fontSize: '24px', lineHeight: 1.3, iconSize: '22px' },
+    h4: { tag: 'h4', fontSize: '30px', lineHeight: 1.25, iconSize: '26px' },
+    h3: { tag: 'h3', fontSize: '36px', lineHeight: 1.25, iconSize: '30px' },
+    h2: { tag: 'h2', fontSize: '48px', lineHeight: 1.2, iconSize: '38px' },
+    h1: { tag: 'h1', fontSize: '60px', lineHeight: 1.1, iconSize: '46px' },
   },
   compact: {
-    body: { tag: 'p', fontSize: 14, lineHeight: 1.5, iconSize: 14 },
-    lead: { tag: 'p', fontSize: 16, lineHeight: 1.5, iconSize: 16 },
-    secondary: { tag: 'p', fontSize: 13, lineHeight: 1.45, iconSize: 13 },
-    tertiary: { tag: 'p', fontSize: 13, lineHeight: 1.45, iconSize: 13 },
-    caption: { tag: 'p', fontSize: 11, lineHeight: 1.35, iconSize: 12 },
-    h6: { tag: 'h6', fontSize: 18, lineHeight: 1.25, iconSize: 16 },
-    h5: { tag: 'h5', fontSize: 21, lineHeight: 1.25, iconSize: 20 },
-    h4: { tag: 'h4', fontSize: 26, lineHeight: 1.2, iconSize: 23 },
-    h3: { tag: 'h3', fontSize: 32, lineHeight: 1.2, iconSize: 27 },
-    h2: { tag: 'h2', fontSize: 42, lineHeight: 1.15, iconSize: 34 },
-    h1: { tag: 'h1', fontSize: 52, lineHeight: 1.05, iconSize: 42 },
+    body: { tag: 'p', fontSize: '14px', lineHeight: 1.5, iconSize: '14px' },
+    lead: { tag: 'p', fontSize: '16px', lineHeight: 1.5, iconSize: '16px' },
+    secondary: { tag: 'p', fontSize: '13px', lineHeight: 1.45, iconSize: '13px' },
+    tertiary: { tag: 'p', fontSize: '13px', lineHeight: 1.45, iconSize: '13px' },
+    caption: { tag: 'p', fontSize: '11px', lineHeight: 1.35, iconSize: '12px' },
+    h6: { tag: 'h6', fontSize: '18px', lineHeight: 1.25, iconSize: '16px' },
+    h5: { tag: 'h5', fontSize: '21px', lineHeight: 1.25, iconSize: '20px' },
+    h4: { tag: 'h4', fontSize: '26px', lineHeight: 1.2, iconSize: '23px' },
+    h3: { tag: 'h3', fontSize: '32px', lineHeight: 1.2, iconSize: '27px' },
+    h2: { tag: 'h2', fontSize: '42px', lineHeight: 1.15, iconSize: '34px' },
+    h1: { tag: 'h1', fontSize: '52px', lineHeight: 1.05, iconSize: '42px' },
   },
 }
 

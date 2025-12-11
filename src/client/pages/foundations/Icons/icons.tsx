@@ -9,8 +9,8 @@ export default () => {
         All icons available in the NebulaKit system, presented as a curated subset of the Lucide icon set for
         use across components and interfaces.
       </Text>
-      <Spacer blockSize={60} />
-      <Table inlineSize={{ base: '100%', lg: '500px' }} paddingBlock={10} paddingInline={15} color="blue">
+      <Spacer blockSize="60px" />
+      <Table inlineSize={{ base: '100%', lg: '500px' }} paddingBlock="10px" paddingInline="15px" color="blue">
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeaderCell>Name</Table.HeaderCell>
@@ -26,7 +26,7 @@ export default () => {
                 </Text>
               </Table.Cell>
               <Table.Cell minInlineSize="30%" textAlign="center">
-                <Icon name={iconName as IconName} size={30} color="green" intent="primary" />
+                <Icon name={iconName as IconName} size="30px" color="green" intent="primary" />
               </Table.Cell>
             </Table.Row>
           ))}

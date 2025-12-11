@@ -2,7 +2,6 @@ import { useLayoutEffect, useRef, useState } from 'react'
 import { TokensResult } from 'shiki'
 
 import { Box, Flex, Button, Text } from 'lib/components'
-import { ScaleValue } from 'lib/definitions'
 import { useNebkitStore } from 'lib/state'
 
 import { tokenizeCode } from './highlight-tokens'
@@ -10,7 +9,7 @@ import { tokenizeCode } from './highlight-tokens'
 export type CodeSnippetProps = {
   code: string
   lang: 'log' | 'bash' | 'tsx'
-  borderRadius?: ScaleValue
+  borderRadius?: string
 }
 
 const COLOR_MAP = {
@@ -80,7 +79,7 @@ export const CodeSnippet = ({ code, lang = 'log', borderRadius }: CodeSnippetPro
       alignItems="stretch"
       tagAttrs={{ style: { backgroundColor: COLOR_MAP.bg[theme], borderRadius } }}
     >
-      <Box padding={2} textAlign="end">
+      <Box padding="2px" textAlign="end">
         <Button
           iconName={copied ? 'check' : 'copy'}
           size="xs"
@@ -92,7 +91,7 @@ export const CodeSnippet = ({ code, lang = 'log', borderRadius }: CodeSnippetPro
       </Box>
       <Box overflowY="auto" maxBlockSize="350px">
         <Flex tag="pre">
-          <Box tag="code" paddingInline={24} paddingBottom={24}>
+          <Box tag="code" paddingInline="24px" paddingBottom="24px">
             {data.tokens.map((token, i) => {
               return (
                 <Box key={i}>

@@ -31,9 +31,9 @@ export const AppFrameFooter = ({
       color={color}
       intent={intent}
       borderIntent={borderIntent}
-      borderWidth={0}
+      borderWidth="0px"
       borderTopWidth={BOX_BORDER_WIDTH}
-      borderRadius={0}
+      borderRadius="0px"
       {...paddings}
     >
       {children}

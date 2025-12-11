@@ -8,7 +8,7 @@ export default () => {
         services.
       </Text>
       <Spacer />
-      <MarkerList rowGap={10}>
+      <MarkerList rowGap="10px">
         <MarkerList.Item>
           <Text bold>Account registration</Text>
           <Text>

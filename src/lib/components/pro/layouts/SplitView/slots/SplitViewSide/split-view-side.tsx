@@ -43,11 +43,11 @@ export const SplitViewSide = ({
         color={color || brand}
         intent={intent || { base: 'tertiary', [String(switchAt)]: 'neutral' }}
         borderIntent={borderIntent || { base: 'muted', [String(switchAt)]: 'neutral' }}
-        borderLeftWidth={sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : 0}
-        borderRightWidth={sidePosition === 'left' && sideOpen ? BOX_BORDER_WIDTH : 0}
-        left={sidePosition === 'left' ? 0 : undefined}
-        right={sidePosition === 'right' ? 0 : undefined}
-        borderRadius={0}
+        borderLeftWidth={sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
+        borderRightWidth={sidePosition === 'left' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
+        left={sidePosition === 'left' ? '0px' : undefined}
+        right={sidePosition === 'right' ? '0px' : undefined}
+        borderRadius="0px"
         maxInlineSize={inlineSize}
         overflowY={sideOpen ? 'auto' : 'hidden'}
       >
@@ -55,7 +55,7 @@ export const SplitViewSide = ({
           <Box inlineSize={inlineSize}>
             {mode === 'overlay' ? (
               <Flex justifyContent="flex-end">
-                <Box padding={6} paddingBottom={20}>
+                <Box padding="6px" paddingBottom="20px">
                   <Button
                     tagAttrs={{
                       onClick: () => {

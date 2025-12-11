@@ -24,10 +24,10 @@ export const DialogHeader = ({
       padding={padding}
       variant="outline"
       intent={intent}
-      borderRadius={0}
-      borderTopWidth={0}
-      borderLeftWidth={0}
-      borderRightWidth={0}
+      borderRadius="0px"
+      borderTopWidth="0px"
+      borderLeftWidth="0px"
+      borderRightWidth="0px"
     >
       {children}
     </Box>

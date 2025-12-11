@@ -8,11 +8,11 @@ const ICON_EXAMPLES_META: ComponentMeta<IconProps>['examples'] = [
   },
   {
     description: 'Search icon at a larger size.',
-    jsx: <Icon name="search" intent="neutral" size={40} />,
+    jsx: <Icon name="search" intent="neutral" size="40px" />,
   },
   {
     description: 'Icon with custom color and intent.',
-    jsx: <Icon name="search" color="yellow" intent="primary" size={40} />,
+    jsx: <Icon name="search" color="yellow" intent="primary" size="40px" />,
   },
 ]
 

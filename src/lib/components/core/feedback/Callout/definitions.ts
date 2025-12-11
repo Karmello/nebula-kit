@@ -1,17 +1,17 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
 import { BoxVariant } from 'lib/components/core/base/Box/definitions'
 import { TextTypography } from 'lib/components/core/base/Text/definitions'
-import { Color, IconName, ScaleValue, Sizes } from 'lib/definitions'
+import { Color, IconName, Sizes } from 'lib/definitions'
 
 export const CALLOUT_SIZE_CONFIG: Record<
   CalloutSize,
-  { typography: Extract<TextTypography, 'h6' | 'h5' | 'h4' | 'h3' | 'h2'>; spacing: ScaleValue }
+  { typography: Extract<TextTypography, 'h6' | 'h5' | 'h4' | 'h3' | 'h2'>; spacing: string }
 > = {
-  sm: { typography: 'h6', spacing: 16 },
-  md: { typography: 'h5', spacing: 20 },
-  lg: { typography: 'h4', spacing: 24 },
-  xl: { typography: 'h3', spacing: 26 },
-  xxl: { typography: 'h2', spacing: 30 },
+  sm: { typography: 'h6', spacing: '16px' },
+  md: { typography: 'h5', spacing: '20px' },
+  lg: { typography: 'h4', spacing: '24px' },
+  xl: { typography: 'h3', spacing: '26px' },
+  xxl: { typography: 'h2', spacing: '30px' },
 }
 
 export const CALLOUT_CONFIG: Record<CalloutStatus, { color: Color; heading: string; iconName: IconName }> = {

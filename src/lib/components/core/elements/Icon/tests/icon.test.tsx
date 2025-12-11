@@ -15,17 +15,17 @@ describe('<Icon />', () => {
     render(<Icon tagAttrs={{ 'data-testid': 'icon' }} name="search" />)
     const el = screen.getByTestId('icon').querySelector('svg')
     expect(el).toHaveStyle({
-      width: `var(--neb-scale-${DEFAULT_ICON_SIZE})`,
-      height: `var(--neb-scale-${DEFAULT_ICON_SIZE})`,
+      width: DEFAULT_ICON_SIZE,
+      height: DEFAULT_ICON_SIZE,
     })
   })
 
   it('applies custom size and intent', () => {
-    render(<Icon tagAttrs={{ 'data-testid': 'icon' }} name="search" size={20} intent="primary" />)
+    render(<Icon tagAttrs={{ 'data-testid': 'icon' }} name="search" size="20px" intent="primary" />)
     const el = screen.getByTestId('icon').querySelector('svg')
     expect(el).toHaveStyle({
-      width: 'var(--neb-scale-20)',
-      height: 'var(--neb-scale-20)',
+      width: '20px',
+      height: '20px',
     })
   })
 })

@@ -38,7 +38,7 @@ export const FooterSection = ({
       <Box
         variant="outline"
         blockSize="100%"
-        borderRadius={0}
+        borderRadius="0px"
         intent={borderIntent}
         padding={padding}
         paddingBlock={paddingBlock}

@@ -10,18 +10,18 @@ export const ListWithChips = ({
   items: string[]
   color?: Color
 }) => (
-  <Flex flexDirection="column" gap={10}>
+  <Flex flexDirection="column" gap="10px">
     <Text bold>{heading}</Text>
-    <Flex flexDirection="row" flexWrap="wrap" gap={6}>
+    <Flex flexDirection="row" flexWrap="wrap" gap="6px">
       {items.map((s, i) => (
         <Box
           key={i}
           variant="outline"
           color={color}
           intent="primary"
-          paddingInline={10}
-          paddingBlock={6}
-          borderRadius={10}
+          paddingInline="10px"
+          paddingBlock="6px"
+          borderRadius="10px"
         >
           {s}
         </Box>

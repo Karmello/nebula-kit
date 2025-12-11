@@ -21,7 +21,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="outline" color="gray" intent="inverse" padding={20}>
+      <Box variant="outline" color="gray" intent="inverse" padding="20px">
         Padded box
       </Box>
     ),
@@ -29,7 +29,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="outline" color="gray" intent="inverse" padding={20} textAlign="center">
+      <Box variant="outline" color="gray" intent="inverse" padding="20px" textAlign="center">
         Centered content
       </Box>
     ),
@@ -37,7 +37,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="outline" color="gray" intent="inverse" padding={20} display="inline-block">
+      <Box variant="outline" color="gray" intent="inverse" padding="20px" display="inline-block">
         Box as inline block
       </Box>
     ),
@@ -45,7 +45,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="solid" color="gray" intent="primary" padding={20} interactive>
+      <Box variant="solid" color="gray" intent="primary" padding="20px" interactive>
         Interactive Box
       </Box>
     ),
@@ -53,7 +53,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="solid" color="gray" intent="primary" padding={20} interactive hoveredByDefault>
+      <Box variant="solid" color="gray" intent="primary" padding="20px" interactive hoveredByDefault>
         Hovered Box
       </Box>
     ),
@@ -61,7 +61,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="solid" color="gray" intent="primary" padding={20} interactive disabled>
+      <Box variant="solid" color="gray" intent="primary" padding="20px" interactive disabled>
         Disabled Box
       </Box>
     ),

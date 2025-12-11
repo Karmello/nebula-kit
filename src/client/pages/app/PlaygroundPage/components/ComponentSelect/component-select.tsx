@@ -11,7 +11,7 @@ export const ComponentSelect = () => {
   return (
     <>
       <Text>Component</Text>
-      <Spacer blockSize={3} />
+      <Spacer blockSize="3px" />
       <Select
         value={componentName}
         onChange={setComponentName}

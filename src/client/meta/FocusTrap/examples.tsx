@@ -8,7 +8,7 @@ const FocusTrapWrapper = () => {
 
   return (
     <FocusTrap tagRef={ref} active>
-      <Flex tagRef={ref} gap={10}>
+      <Flex tagRef={ref} gap="10px">
         <Button>Button 1</Button>
         <Button>Button 2</Button>
         <Button>Button 3</Button>
@@ -25,7 +25,7 @@ const FOCUS_TRAP_EXAMPLES_META: ComponentMeta<FocusTrapProps>['examples'] = [
 \t
 return (
   <FocusTrap tagRef={ref} active>
-    <Flex tagRef={ref} gap={10}>
+    <Flex tagRef={ref} gap="10px">
       <Button>Button 1</Button>
       <Button>Button 2</Button>
       <Button>Button 3</Button>

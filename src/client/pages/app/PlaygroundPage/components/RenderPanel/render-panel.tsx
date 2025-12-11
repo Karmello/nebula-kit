@@ -12,7 +12,7 @@ export const RenderPanel = () => {
 
   const Component = components[componentName as never] as FC
 
-  let valuesProperlyTyped: Record<string, unknown> = {}
+  const valuesProperlyTyped: Record<string, unknown> = {}
 
   Object.keys(propsEditorValues).map(propName => {
     const propValue = propsEditorValues[propName as never]
@@ -26,7 +26,7 @@ export const RenderPanel = () => {
       variant="outline"
       intent="secondary"
       color="blue"
-      padding={25}
+      padding="25px"
     >
       {<Component {...valuesProperlyTyped} />}
     </Box>

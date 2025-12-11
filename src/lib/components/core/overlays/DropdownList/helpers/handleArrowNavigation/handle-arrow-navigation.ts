@@ -9,7 +9,8 @@ export const handleArrowNavigation = (
   scrollTop: number,
   activeIndex: number
 ): { activeIndex: number; scrollTop: number } => {
-  const itemSize = BUTTON_SIZE_CONFIG[size].blockSize + BOX_BORDER_WIDTH
+  const itemSize =
+    Number(BUTTON_SIZE_CONFIG[size].blockSize.replace('px', '')) + Number(BOX_BORDER_WIDTH.replace('px', ''))
   const listHeight = visibleItemsCount * itemSize
 
   let newIndex = activeIndex

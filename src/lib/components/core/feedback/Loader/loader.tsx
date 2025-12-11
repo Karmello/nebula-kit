@@ -38,10 +38,10 @@ export const Loader = ({
       color={color}
       position={centered ? 'absolute' : undefined}
       margin={centered ? 'auto' : undefined}
-      top={centered ? 0 : undefined}
-      right={centered ? 0 : undefined}
-      bottom={centered ? 0 : undefined}
-      left={centered ? 0 : undefined}
+      top={centered ? '0px' : undefined}
+      right={centered ? '0px' : undefined}
+      bottom={centered ? '0px' : undefined}
+      left={centered ? '0px' : undefined}
     />
   )
 }

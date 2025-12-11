@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-import { Color, LIB_PREFIX, ScaleValue, Theme } from 'lib/definitions'
+import { Color, LIB_PREFIX, Theme } from 'lib/definitions'
 
 import {
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
@@ -15,7 +15,7 @@ type NebkitState = {
   theme: Theme
   brand: Color
   borderRadiusSize: NebkitProviderProps['borderRadiusSize']
-  borderRadius: ScaleValue
+  borderRadius: string
   setTheme: (theme: Theme) => void
   setBrand: (brand: Color) => void
   setBorderRadiusSize: (borderRadiusSize: NebkitProviderProps['borderRadiusSize']) => void

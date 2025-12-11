@@ -2,7 +2,7 @@ import classNames from 'classnames'
 
 import { Box, WithIcon } from 'lib/components'
 import { applyStaticDataset } from 'lib/service'
-import { withPrefix, resolveScale } from 'lib/helpers'
+import { withPrefix } from 'lib/helpers'
 
 import {
   TEXT_TYPOGRAPHY_CONFIG,
@@ -47,7 +47,7 @@ export const Text = <T extends TextTag = 'p'>({
         ...tagAttrs,
         className: classNames(withPrefix('text'), tagAttrs?.className),
         style: {
-          fontSize: resolveScale(TEXT_TYPOGRAPHY_CONFIG[scale][typography].fontSize),
+          fontSize: TEXT_TYPOGRAPHY_CONFIG[scale][typography].fontSize,
           lineHeight: TEXT_TYPOGRAPHY_CONFIG[scale][typography].lineHeight,
           ...(clampLines && clampLines > 0
             ? {

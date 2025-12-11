@@ -91,5 +91,4 @@ export const ICON_NAMES = [
 export type Breakpoint = (typeof BREAKPOINTS)[number]
 export type Sizes = (typeof SIZES)[number]
 export type Color = (typeof COLORS)[number]
-export type ScaleValue = (typeof SCALE)[number]
 export type IconName = (typeof ICON_NAMES)[number]

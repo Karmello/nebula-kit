@@ -27,13 +27,13 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
             }}
             tagRef={tagRef}
             intent="neutral"
-            borderRadius={0}
+            borderRadius="0px"
             {...paddings}
           >
             <Flex
               alignItems="center"
               flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'}
-              gap={15}
+              gap="15px"
             >
               <Button
                 tagAttrs={{
@@ -46,7 +46,7 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
               />
               {slotsByName['SplitView.MainBar']}
             </Flex>
-            <Spacer blockSize={10} />
+            <Spacer blockSize="10px" />
             {allNonSlots}
           </Box>
         )

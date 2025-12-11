@@ -26,24 +26,24 @@ export const HomePage = () => {
   const { theme, setTheme, brand, setBrand, borderRadiusSize, setBorderRadiusSize } = useNebkitStore()
 
   return (
-    <Box padding={{ base: 20, lg: 50 }} paddingTop={0}>
+    <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">
       <Callout
         size="sm"
         variant="outline"
         content="NebulaKit Core and Pro are scheduled to be released soon. Meanwhile you can explore the website. Everything is fully functional except package downloads, which will become available once the release goes live."
         heading="NebulaKit is scheduled for release in January 2026."
       />
-      <Spacer blockSize={75} />
-      <Flex flexDirection={{ base: 'column', lg: 'row' }} rowGap={80} columnGap={160}>
+      <Spacer blockSize="75px" />
+      <Flex flexDirection={{ base: 'column', lg: 'row' }} rowGap="80px" columnGap="160px">
         <Flex.Item flex={2}>
           <Text typography="h1" color="purple" intent="primary">
             NebulaKit
           </Text>
           <Divider />
-          <Spacer blockSize={20} />
+          <Spacer blockSize="20px" />
           <Flex
-            columnGap={25}
-            rowGap={50}
+            columnGap="25px"
+            rowGap="50px"
             alignItems="center"
             flexDirection={{ base: 'column', md: 'row', lg: 'column', xl: 'row' }}
           >
@@ -53,8 +53,8 @@ export const HomePage = () => {
                 structures with clarity and control. Each component follows the same foundation, producing
                 apps that stay predictable, stable and effortless to scale.
               </Text>
-              <Spacer blockSize={30} />
-              <Flex gap={10} flexWrap="wrap">
+              <Spacer blockSize="30px" />
+              <Flex gap="10px" flexWrap="wrap">
                 <Link
                   href={PageKey.playground}
                   onClick={() => {
@@ -83,10 +83,10 @@ export const HomePage = () => {
               />
             </Flex.Item>
           </Flex>
-          <Spacer blockSize={50} />
+          <Spacer blockSize="50px" />
           <Divider />
-          <Spacer blockSize={30} />
-          <Flex flexWrap="wrap" gap={30}>
+          <Spacer blockSize="30px" />
+          <Flex flexWrap="wrap" gap="30px">
             <Flex.Item>
               <Text bold>Theme</Text>
               <Segment key={theme}>
@@ -134,7 +134,7 @@ export const HomePage = () => {
           </Flex>
         </Flex.Item>
         <Flex.Item flex={1}>
-          <Flex flexDirection="column" gap={30}>
+          <Flex flexDirection="column" gap="30px">
             <Section heading="One foundation" color="red" intent="primary" iconName="box">
               <Text intent="neutral">
                 Every component shares the same core primitives. Consistency isn't enforced - it's designed

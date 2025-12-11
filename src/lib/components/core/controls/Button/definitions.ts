@@ -1,22 +1,40 @@
 import { BoxProps, FlexProps, HtmlTagProps, TextProps, WithIconProps } from 'lib/components'
-import { RespValue, ScaleValue, Sizes } from 'lib/definitions'
+import { RespValue, Sizes } from 'lib/definitions'
 import { BoxIntent, BoxVariant } from 'lib/components/core/base/Box/definitions'
 import { TextScale } from 'lib/components/core/base/Text/definitions'
 
 export const BUTTON_SIZE_CONFIG: Record<
   ButtonSize,
   {
-    blockSize: ScaleValue
-    paddingLeft: ScaleValue
-    paddingRight: ScaleValue
+    blockSize: string
+    paddingLeft: string
+    paddingRight: string
     textScale: TextScale
-    iconSize: ScaleValue
+    iconSize: string
   }
 > = {
-  xs: { blockSize: 28, paddingLeft: 8, paddingRight: 8, textScale: 'compact', iconSize: 13 },
-  sm: { blockSize: 38, paddingLeft: 12, paddingRight: 12, textScale: 'regular', iconSize: 15 },
-  md: { blockSize: 44, paddingLeft: 16, paddingRight: 16, textScale: 'regular', iconSize: 16 },
-  lg: { blockSize: 52, paddingLeft: 24, paddingRight: 24, textScale: 'regular', iconSize: 17 },
+  xs: { blockSize: '28px', paddingLeft: '8px', paddingRight: '8px', textScale: 'compact', iconSize: '13px' },
+  sm: {
+    blockSize: '38px',
+    paddingLeft: '12px',
+    paddingRight: '12px',
+    textScale: 'regular',
+    iconSize: '15px',
+  },
+  md: {
+    blockSize: '44px',
+    paddingLeft: '16px',
+    paddingRight: '16px',
+    textScale: 'regular',
+    iconSize: '16px',
+  },
+  lg: {
+    blockSize: '52px',
+    paddingLeft: '24px',
+    paddingRight: '24px',
+    textScale: 'regular',
+    iconSize: '17px',
+  },
 }
 
 export const DEFAULT_BUTTON_VARIANT: BoxVariant = 'solid'

@@ -71,11 +71,11 @@ export const Dialog = ({
                   },
                 }}
                 position="fixed"
-                top={0}
-                right={0}
-                bottom={0}
-                left={0}
-                borderRadius={0}
+                top="0px"
+                right="0px"
+                bottom="0px"
+                left="0px"
+                borderRadius="0px"
                 zIndex={1000}
               >
                 <Flex
@@ -115,7 +115,7 @@ export const Dialog = ({
                         inlineSize={DIALOG_SIZE_MAP[size || 'md']}
                       >
                         {onClose ? (
-                          <Box position="absolute" top={5} right={5}>
+                          <Box position="absolute" top="5px" right="5px">
                             <Button
                               tagAttrs={{ onClick: onClose }}
                               size="xs"

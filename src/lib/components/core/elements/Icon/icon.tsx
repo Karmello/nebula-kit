@@ -39,8 +39,8 @@ export const Icon = memo(
       >
         <Svg
           style={{
-            width: size !== undefined ? `var(--neb-scale-${size})` : undefined,
-            height: size !== undefined ? `var(--neb-scale-${size})` : undefined,
+            width: size !== undefined ? size : undefined,
+            height: size !== undefined ? size : undefined,
           }}
         />
       </Box>

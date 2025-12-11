@@ -26,7 +26,7 @@ export const RecoveryPage = () => {
   }
 
   return (
-    <Box padding={{ base: 20, lg: 50 }}>
+    <Box padding={{ base: '20px', lg: '50px' }}>
       <Box inlineSize="400px" maxInlineSize="100%" margin="0 auto">
         <Section heading="Password recovery" iconName="key-round">
           <Form<{ email?: string; newPassword?: string }>
@@ -84,9 +84,9 @@ export const RecoveryPage = () => {
               </Form.ActionButton>
             </Form.Actions>
           </Form>
-          <Spacer blockSize={40} />
+          <Spacer blockSize="40px" />
           <Divider />
-          <Spacer blockSize={15} />
+          <Spacer blockSize="15px" />
           <Flex justifyContent="center">
             <Link
               href={PageKey.authLogin}

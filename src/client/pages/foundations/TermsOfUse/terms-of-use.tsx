@@ -8,7 +8,7 @@ export default () => {
         library or related materials, you agree to these terms.
       </Text>
       <Spacer />
-      <MarkerList rowGap={10}>
+      <MarkerList rowGap="10px">
         <MarkerList.Item>
           <Text bold>Use of the library</Text>
           <Text>

@@ -30,5 +30,5 @@ expectType(<Text textAlign="center">text</Text>)
 
 // not allowed props
 expectError(<Text variant="solid">text</Text>)
-expectError(<Text margin={10}>text</Text>)
-expectError(<Text padding={10}>text</Text>)
+expectError(<Text margin="10px">text</Text>)
+expectError(<Text padding="10px">text</Text>)

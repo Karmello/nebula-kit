@@ -1,20 +1,12 @@
 import { ElementType } from 'react'
 
-import {
-  Color,
-  CssDisplay,
-  CssOverflow,
-  CssPosition,
-  CssTextAlign,
-  RespValue,
-  ScaleValue,
-} from 'lib/definitions'
+import { Color, CssDisplay, CssOverflow, CssPosition, CssTextAlign, RespValue } from 'lib/definitions'
 
 import { HtmlTagProps } from 'lib/components'
 
 export const BOX_VARIANTS = ['solid', 'outline', 'soft-outline', 'ghost'] as const
 export const BOX_INTENTS = ['neutral', 'muted', 'tertiary', 'secondary', 'primary', 'inverse'] as const
-export const BOX_BORDER_WIDTH: ScaleValue = 2
+export const BOX_BORDER_WIDTH = '2px'
 
 export type BoxVariant = (typeof BOX_VARIANTS)[number]
 export type BoxIntent = (typeof BOX_INTENTS)[number]
@@ -33,50 +25,50 @@ type BoxOwnProps = {
   textAlign?: RespValue<CssTextAlign>
   zIndex?: number
   // border
-  borderWidth?: ScaleValue | string
-  borderTopWidth?: ScaleValue | string
-  borderRightWidth?: ScaleValue | string
-  borderBottomWidth?: ScaleValue | string
-  borderLeftWidth?: ScaleValue | string
+  borderWidth?: string
+  borderTopWidth?: string
+  borderRightWidth?: string
+  borderBottomWidth?: string
+  borderLeftWidth?: string
   // border radius
-  borderRadius?: RespValue<ScaleValue | string>
-  borderTopLeftRadius?: RespValue<ScaleValue | string>
-  borderTopRightRadius?: RespValue<ScaleValue | string>
-  borderBottomRightRadius?: RespValue<ScaleValue | string>
-  borderBottomLeftRadius?: RespValue<ScaleValue | string>
+  borderRadius?: RespValue<string>
+  borderTopLeftRadius?: RespValue<string>
+  borderTopRightRadius?: RespValue<string>
+  borderBottomRightRadius?: RespValue<string>
+  borderBottomLeftRadius?: RespValue<string>
   // display
   display?: RespValue<CssDisplay>
   overflowX?: RespValue<CssOverflow>
   overflowY?: RespValue<CssOverflow>
   // position
   position?: RespValue<CssPosition>
-  top?: RespValue<ScaleValue | string>
-  right?: RespValue<ScaleValue | string>
-  bottom?: RespValue<ScaleValue | string>
-  left?: RespValue<ScaleValue | string>
+  top?: RespValue<string>
+  right?: RespValue<string>
+  bottom?: RespValue<string>
+  left?: RespValue<string>
   // size
-  blockSize?: RespValue<ScaleValue | string>
-  minBlockSize?: RespValue<ScaleValue | string>
-  maxBlockSize?: RespValue<ScaleValue | string>
-  inlineSize?: RespValue<ScaleValue | string>
-  minInlineSize?: RespValue<ScaleValue | string>
-  maxInlineSize?: RespValue<ScaleValue | string>
+  blockSize?: RespValue<string>
+  minBlockSize?: RespValue<string>
+  maxBlockSize?: RespValue<string>
+  inlineSize?: RespValue<string>
+  minInlineSize?: RespValue<string>
+  maxInlineSize?: RespValue<string>
   // padding
-  padding?: RespValue<ScaleValue | string>
-  paddingInline?: RespValue<ScaleValue | string>
-  paddingBlock?: RespValue<ScaleValue | string>
-  paddingTop?: RespValue<ScaleValue | string>
-  paddingRight?: RespValue<ScaleValue | string>
-  paddingBottom?: RespValue<ScaleValue | string>
-  paddingLeft?: RespValue<ScaleValue | string>
+  padding?: RespValue<string>
+  paddingInline?: RespValue<string>
+  paddingBlock?: RespValue<string>
+  paddingTop?: RespValue<string>
+  paddingRight?: RespValue<string>
+  paddingBottom?: RespValue<string>
+  paddingLeft?: RespValue<string>
   // margin
-  margin?: RespValue<ScaleValue | string>
-  marginInline?: RespValue<ScaleValue | string>
-  marginBlock?: RespValue<ScaleValue | string>
-  marginTop?: RespValue<ScaleValue | string>
-  marginRight?: RespValue<ScaleValue | string>
-  marginBottom?: RespValue<ScaleValue | string>
-  marginLeft?: RespValue<ScaleValue | string>
+  margin?: RespValue<string>
+  marginInline?: RespValue<string>
+  marginBlock?: RespValue<string>
+  marginTop?: RespValue<string>
+  marginRight?: RespValue<string>
+  marginBottom?: RespValue<string>
+  marginLeft?: RespValue<string>
 }
 
 export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & BoxOwnProps

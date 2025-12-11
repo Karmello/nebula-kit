@@ -90,7 +90,7 @@ export const Button = <T extends ButtonTag = 'button'>({
           tagAttrs={{ style: { inlineSize: children !== undefined ? '100%' : undefined } }}
           name={iconName}
           position={iconPosition}
-          columnGap={children === undefined ? 0 : undefined}
+          columnGap={children === undefined ? '0px' : undefined}
           justifyContent={justifyContent}
           size={BUTTON_SIZE_CONFIG[size].iconSize}
           iconAngle={iconAngle}

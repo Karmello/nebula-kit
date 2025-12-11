@@ -35,13 +35,13 @@ export const PaymentCancelForm = ({
         }}
         handleCancelSuccess={handleCancelSuccess}
       />
-      <Flex flexDirection="column" rowGap={7}>
+      <Flex flexDirection="column" rowGap="7px">
         {!cancelSectionEnabled ? (
           <Text intent="secondary" italic>
             * For paid users
           </Text>
         ) : null}
-        <Box position="relative" blockSize={45}>
+        <Box position="relative" blockSize="45px">
           <Box position="absolute">
             <Button
               tagAttrs={{

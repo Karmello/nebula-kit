@@ -38,8 +38,7 @@ expectType(<Box opacity={0.5}>Box</Box>)
 expectType(<Box opacity={{ md: 0.5 }}>Box</Box>)
 
 // borderRadius
-expectError(<Box borderRadius={-1}>Box</Box>)
-expectType(<Box borderRadius={5}>Box</Box>)
+expectType(<Box borderRadius="5px">Box</Box>)
 expectType(<Box borderRadius="10px">Box</Box>)
 
 // interactive
@@ -73,21 +72,17 @@ expectType(<Box textAlign="center">Box</Box>)
 expectType(<Box textAlign={{ xl: 'end' }}>Box</Box>)
 
 // blockSize
-expectError(<Box blockSize={161}>Box</Box>)
 expectType(<Box blockSize="20px">Box</Box>)
-expectType(<Box blockSize={{ md: 5 }}>Box</Box>)
+expectType(<Box blockSize={{ md: '5px' }}>Box</Box>)
 
 // inlineSize
-expectError(<Box inlineSize={161}>Box</Box>)
 expectType(<Box inlineSize="20px">Box</Box>)
-expectType(<Box inlineSize={{ md: 5 }}>Box</Box>)
+expectType(<Box inlineSize={{ md: '5px' }}>Box</Box>)
 
 // marginLeft
-expectError(<Box marginLeft={161}>Box</Box>)
 expectType(<Box marginLeft="20px">Box</Box>)
-expectType(<Box marginLeft={{ md: 5 }}>Box</Box>)
+expectType(<Box marginLeft={{ md: '5px' }}>Box</Box>)
 
 // paddingBottom
-expectError(<Box paddingBottom={161}>Box</Box>)
 expectType(<Box paddingBottom="20px">Box</Box>)
-expectType(<Box paddingBottom={{ md: 5 }}>Box</Box>)
+expectType(<Box paddingBottom={{ md: '5px' }}>Box</Box>)

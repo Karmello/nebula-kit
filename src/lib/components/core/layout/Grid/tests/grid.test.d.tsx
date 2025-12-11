@@ -50,7 +50,7 @@ expectType(
 
 // right props passed
 expectType(
-  <Grid gridTemplateColumns="1fr auto" gap={5}>
+  <Grid gridTemplateColumns="1fr auto" gap="5px">
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Grid>
@@ -58,19 +58,19 @@ expectType(
 
 // wrong props passed
 expectError(
-  <Grid blockSize={5}>
+  <Grid blockSize="5px">
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Grid>
 )
 expectError(
-  <Grid margin={5}>
+  <Grid margin="5px">
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Grid>
 )
 expectError(
-  <Grid padding={5}>
+  <Grid padding="5px">
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Grid>

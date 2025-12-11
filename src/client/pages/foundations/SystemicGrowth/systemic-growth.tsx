@@ -8,19 +8,19 @@ export default () => {
         existing logic instead of rewriting it. Each layer inherits the behavior and structure of the layer
         beneath it.
       </Text>
-      <Spacer blockSize={15} />
+      <Spacer blockSize="15px" />
       <Text>
         This approach creates a system that grows without fracturing. Buttons, layouts and forms all originate
         from the same principles that shape the primitives.
       </Text>
-      <Spacer blockSize={15} />
+      <Spacer blockSize="15px" />
       <Text>
         When you build a new component with NebulaKit, you're not creating a separate pattern - you're
         extending an existing one.
       </Text>
-      <Spacer blockSize={30} />
+      <Spacer blockSize="30px" />
       <Text>Systemic growth means:</Text>
-      <Spacer blockSize={15} />
+      <Spacer blockSize="15px" />
       <MarkerList>
         <MarkerList.Item>
           <Text bold>Consistency expands, not erodes.</Text>
@@ -40,7 +40,7 @@ export default () => {
           </Text>
         </MarkerList.Item>
       </MarkerList>
-      <Spacer blockSize={30} />
+      <Spacer blockSize="30px" />
       <Text>
         By treating scale as a continuation of structure, NebulaKit keeps expansion from becoming chaos. It's
         a system that can keep growing without losing itself.

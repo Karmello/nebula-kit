@@ -35,13 +35,13 @@ export const AccountDeactivationForm = ({
         }}
         handleDeactivateSuccess={handleDeactivateSuccess}
       />
-      <Flex flexDirection="column" rowGap={7}>
+      <Flex flexDirection="column" rowGap="7px">
         {!deactivateSectionEnabled ? (
           <Text intent="secondary" italic>
             * You need to unsubscribe from your paid plan first
           </Text>
         ) : null}
-        <Box position="relative" blockSize={45}>
+        <Box position="relative" blockSize="45px">
           <Box position="absolute">
             <Button
               tagAttrs={{

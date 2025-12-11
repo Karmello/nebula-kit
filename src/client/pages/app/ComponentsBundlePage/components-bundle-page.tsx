@@ -25,9 +25,9 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
   const navigateTo = useNavigateTo()
 
   return (
-    <Box paddingTop={15} paddingInline={{ base: 20, lg: 50 }}>
+    <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }}>
       <Section heading={bundle === 'core' ? 'Core bundle' : 'Pro bundle'} iconName="package">
-        <Flex alignItems="center" columnGap={50} flexWrap="wrap" justifyContent="space-between">
+        <Flex alignItems="center" columnGap="50px" flexWrap="wrap" justifyContent="space-between">
           {bundle === 'core' ? (
             <Text>All components available for free.</Text>
           ) : (
@@ -39,7 +39,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
             </Button>
           </Link>
         </Flex>
-        <Spacer blockSize={50} />
+        <Spacer blockSize="50px" />
         <Grid
           gridTemplateColumns={{
             base: '1fr',
@@ -47,7 +47,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
             lg: 'repeat(3, 1fr)',
             xl: 'repeat(4, 1fr)',
           }}
-          gap={20}
+          gap="20px"
         >
           {(bundle === 'core' ? CORE_DATA : PRO_DATA).map(item => (
             <Section
@@ -63,7 +63,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
             </Section>
           ))}
         </Grid>
-        <Spacer blockSize={50} />
+        <Spacer blockSize="50px" />
         <Flex justifyContent="center">
           <Link
             href={bundle === 'core' ? PageKey.pricingPro : PageKey.pricingCore}

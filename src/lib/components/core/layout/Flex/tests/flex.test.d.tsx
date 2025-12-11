@@ -50,7 +50,7 @@ expectType(
 
 // gaps possible to set as scale value
 expectType(
-  <Flex gap={5} rowGap={5} columnGap={5}>
+  <Flex gap="5px" rowGap="5px" columnGap="5px">
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Flex>
@@ -66,19 +66,19 @@ expectType(
 
 // wrong props passed
 expectError(
-  <Flex blockSize={5}>
+  <Flex blockSize="5px">
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Flex>
 )
 expectError(
-  <Flex margin={5}>
+  <Flex margin="5px">
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Flex>
 )
 expectError(
-  <Flex padding={5}>
+  <Flex padding="5px">
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Flex>
@@ -111,10 +111,10 @@ expectType(
 // Flex.Item with wrong props passed
 expectError(
   <Flex>
-    <Flex.Item margin={5}>
+    <Flex.Item margin="5px">
       <Box>Item 1</Box>
     </Flex.Item>
-    <Flex.Item padding={5}>
+    <Flex.Item padding="5px">
       <Box>Item 2</Box>
     </Flex.Item>
   </Flex>

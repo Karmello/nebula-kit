@@ -1,5 +1,4 @@
 @use './palette/palette.scss';
-@use './scale/scale.scss';
 @use './themes/themes.scss';
 
 html {
@@ -34,7 +33,7 @@ html.neb-scrollbar-off {
 body {
   background: var(--neb-background);
   color: var(--neb-text);
-  --neb-border-width: var(--neb-scale-2);
+  --neb-border-width: 2px;
 
   margin: 0;
   padding: 0;

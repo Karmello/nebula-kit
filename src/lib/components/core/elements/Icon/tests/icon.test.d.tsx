@@ -15,17 +15,14 @@ expectError(<Icon name="xyz" />)
 // right name value allowed
 expectType(<Icon name="check" />)
 
-// wrong size not allowed
-expectError(<Icon name="check" size={161} />)
-
 // right size allowed
-expectType(<Icon name="check" size={160} />)
+expectType(<Icon name="check" size="160px" />)
 
 // wrong intent not allowed
-expectError(<Icon name="check" size={10} intent="xyz" />)
+expectError(<Icon name="check" size="10px" intent="xyz" />)
 
 // right iconIntent allowed
-expectType(<Icon name="check" size={10} intent="primary" />)
+expectType(<Icon name="check" size="10px" intent="primary" />)
 
 // passing ref
 expectType(<Icon tagRef={createRef<HTMLSpanElement>()} name="check" />)

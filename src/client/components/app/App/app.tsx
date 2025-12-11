@@ -88,7 +88,7 @@ export const App = () => {
           )}
         </Toolbar>
       </AppFrame.Header>
-      <AppFrame.Main paddingTop={{ base: 20, lg: 40 }} paddingBottom={80}>
+      <AppFrame.Main paddingTop={{ base: '20px', lg: '40px' }} paddingBottom="80px">
         <RootPage />
       </AppFrame.Main>
       <AppFrame.Footer>

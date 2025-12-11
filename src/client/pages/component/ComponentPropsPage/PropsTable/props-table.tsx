@@ -8,7 +8,7 @@ type Props = {
 
 export const PropsTable = ({ category, data }: Props) => {
   const table = (
-    <Table color="blue" intent="tertiary" paddingBlock={5} paddingInline={10}>
+    <Table color="blue" intent="tertiary" paddingBlock="5px" paddingInline="10px">
       <Table.Header>
         <Table.HeaderRow>
           <Table.HeaderCell>Name</Table.HeaderCell>
@@ -36,10 +36,10 @@ export const PropsTable = ({ category, data }: Props) => {
                   {defaultValue !== undefined ? defaultValue : '-'}
                 </Table.Cell>
                 <Table.Cell tagAttrs={{ style: { textAlign: 'center' } }}>
-                  {isRequired ? <Icon name="check" intent="primary" size={20} /> : '-'}
+                  {isRequired ? <Icon name="check" intent="primary" size="20px" /> : '-'}
                 </Table.Cell>
                 <Table.Cell tagAttrs={{ style: { textAlign: 'center' } }}>
-                  {isResponsive ? <Icon name="check" intent="primary" size={20} /> : '-'}
+                  {isResponsive ? <Icon name="check" intent="primary" size="20px" /> : '-'}
                 </Table.Cell>
                 <Table.Cell>{description}</Table.Cell>
               </Table.Row>
@@ -53,14 +53,14 @@ export const PropsTable = ({ category, data }: Props) => {
     return (
       <>
         <Section heading={category}>{table}</Section>
-        <Spacer blockSize={60} />
+        <Spacer blockSize="60px" />
       </>
     )
   } else {
     return (
       <>
         {table}
-        <Spacer blockSize={60} />
+        <Spacer blockSize="60px" />
       </>
     )
   }

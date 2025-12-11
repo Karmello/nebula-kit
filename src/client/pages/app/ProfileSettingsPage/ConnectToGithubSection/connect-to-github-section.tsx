@@ -16,8 +16,8 @@ export const ConnectToGithubSection = ({
         Connect your GitHub account to unlock access to the private NebulaKit roadmap. This lets you follow
         upcoming features, track progress and stay aligned with what's being built next.
       </Text>
-      <Spacer blockSize={30} />
-      <Flex alignItems="center" columnGap={20}>
+      <Spacer blockSize="30px" />
+      <Flex alignItems="center" columnGap="20px">
         <Button
           tagAttrs={{
             onClick: async () => {
@@ -46,7 +46,7 @@ export const ConnectToGithubSection = ({
           </Text>
         ) : null}
       </Flex>
-      <Spacer blockSize={7} />
+      <Spacer blockSize="7px" />
     </Section>
   )
 }

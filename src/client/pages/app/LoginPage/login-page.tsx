@@ -67,7 +67,7 @@ export const LoginPage = () => {
   }
 
   return (
-    <Box padding={{ base: 20, lg: 50 }}>
+    <Box padding={{ base: '20px', lg: '50px' }}>
       <Box inlineSize="400px" maxInlineSize="100%" margin="0 auto">
         <Section heading="Log in" iconName="log-in">
           <Form
@@ -103,9 +103,9 @@ export const LoginPage = () => {
               </Form.ActionButton>
             </Form.Actions>
           </Form>
-          <Spacer blockSize={40} />
+          <Spacer blockSize="40px" />
           <Divider />
-          <Spacer blockSize={15} />
+          <Spacer blockSize="15px" />
           <Flex justifyContent="center">
             <Link
               href={PageKey.authRegister}

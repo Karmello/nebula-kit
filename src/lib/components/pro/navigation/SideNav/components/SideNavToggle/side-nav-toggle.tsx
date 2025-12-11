@@ -13,7 +13,7 @@ export const SideNavToggle = () => {
 
   return (
     <>
-      <Box padding={10}>
+      <Box padding="10px">
         <Button
           tagAttrs={{
             onClick: () => {
@@ -30,7 +30,7 @@ export const SideNavToggle = () => {
         />
       </Box>
       <Divider />
-      <Spacer blockSize={15} />
+      <Spacer blockSize="15px" />
     </>
   )
 }

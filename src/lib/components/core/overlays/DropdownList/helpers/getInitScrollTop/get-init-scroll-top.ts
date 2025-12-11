@@ -18,6 +18,10 @@ export const getInitScrollTop = (
   }
 
   if (baseIndex >= 0) {
-    return baseIndex * (BUTTON_SIZE_CONFIG[size].blockSize + BOX_BORDER_WIDTH)
+    return (
+      baseIndex *
+      (Number(BUTTON_SIZE_CONFIG[size].blockSize.replace('px', '')) +
+        Number(BOX_BORDER_WIDTH.replace('px', '')))
+    )
   }
 }

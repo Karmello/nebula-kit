@@ -7,7 +7,7 @@ const SPACER_EXAMPLES_META: ComponentMeta<SpacerProps>['examples'] = [
     jsx: (
       <>
         <Text intent="neutral">Text 1</Text>
-        <Spacer blockSize={50} />
+        <Spacer blockSize="50px" />
         <Text intent="neutral">Text 2</Text>
       </>
     ),

@@ -17,7 +17,7 @@ export const AppFrameMain = ({ children, tagAttrs, tagRef, ...paddings }: AppFra
       }}
       tagRef={tagRef}
       intent="neutral"
-      borderRadius={0}
+      borderRadius="0px"
       {...paddings}
     >
       {children}

@@ -18,7 +18,7 @@ const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
     description: 'Name of the icon to render.',
   },
   size: {
-    options: ['ScaleValue'],
+    options: ['CSS'],
     defaultValue: String(DEFAULT_ICON_SIZE),
     description: 'Size of the icon as a system scale value.',
   },

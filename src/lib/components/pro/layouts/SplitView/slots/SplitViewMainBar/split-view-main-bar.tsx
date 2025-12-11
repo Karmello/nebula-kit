@@ -23,7 +23,7 @@ export const SplitViewMainBar = <T extends ElementType = 'div'>({
       }
       tagRef={tagRef}
       intent="neutral"
-      borderRadius={0}
+      borderRadius="0px"
     >
       {children}
     </Box>

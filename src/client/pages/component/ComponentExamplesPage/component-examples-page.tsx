@@ -13,29 +13,29 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   return (
     <>
       {description ? <Text bold>{description}</Text> : null}
-      <Spacer blockSize={10} />
+      <Spacer blockSize="10px" />
       {!noSandBox ? (
         <>
           <Box
             variant="outline"
             color="gray"
             intent="secondary"
-            padding={sandBoxWithNoPadding ? 0 : { base: 20, lg: 40 }}
+            padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
             tagAttrs={{
               style: { borderStyle: 'dashed' },
             }}
           >
             {jsx}
           </Box>
-          <Spacer blockSize={10} />
+          <Spacer blockSize="10px" />
         </>
       ) : null}
       {!noCode ? (
         <>
           {!noSandBox ? (
             <Reveal label="Code" color="gray" intent="muted">
-              <Box padding={4}>
-                <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} borderRadius={0} />
+              <Box padding="4px">
+                <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} borderRadius="0px" />
               </Box>
             </Reveal>
           ) : (
@@ -43,7 +43,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           )}
         </>
       ) : null}
-      <Spacer blockSize={50} />
+      <Spacer blockSize="50px" />
     </>
   )
 }

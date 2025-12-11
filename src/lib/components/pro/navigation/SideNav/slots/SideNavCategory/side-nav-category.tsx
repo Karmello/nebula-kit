@@ -91,7 +91,7 @@ export const SideNavCategory = ({
               }}
             >
               <Resize property="blockSize" visible={expandedCategories[id]}>
-                <Spacer blockSize={rowGap !== undefined ? rowGap : 0} />
+                <Spacer blockSize={rowGap !== undefined ? rowGap : '0px'} />
                 <Flex tag="ul" flexDirection="column" rowGap={rowGap}>
                   {slotsByName['SideNav.Item'].map((slot, key) => (
                     <Box key={key} tag="li" inlineSize="100%">

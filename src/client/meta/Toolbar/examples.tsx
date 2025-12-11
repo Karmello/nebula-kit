@@ -20,7 +20,7 @@ const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarProps>['examples'] = [
     jsx: (
       <Toolbar switchAt="md">
         <Toolbar.Start>
-          <Box intent="neutral" paddingInline={20}>
+          <Box intent="neutral" paddingInline="20px">
             Brand
           </Box>
         </Toolbar.Start>

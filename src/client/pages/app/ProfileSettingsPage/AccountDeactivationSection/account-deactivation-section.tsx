@@ -25,7 +25,7 @@ export const AccountDeactivationSection = ({
         becomes free to register a new account in the future, but your previous data cannot be restored once
         deleted.
       </Text>
-      <Spacer blockSize={30} />
+      <Spacer blockSize="30px" />
       <AccountDeactivationForm
         userEmail={userEmail}
         userPlan={userPlan}

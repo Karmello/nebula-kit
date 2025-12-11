@@ -39,9 +39,9 @@ export const AppFrameHeader = ({
       color={color}
       intent={intent}
       borderIntent={borderIntent}
-      borderWidth={0}
+      borderWidth="0px"
       borderBottomWidth={BOX_BORDER_WIDTH}
-      borderRadius={0}
+      borderRadius="0px"
       {...paddings}
     >
       {children}

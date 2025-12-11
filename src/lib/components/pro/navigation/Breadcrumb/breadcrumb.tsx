@@ -8,7 +8,7 @@ export const Breadcrumb = ({ items }: BreadcrumbProps) => {
   }
 
   return (
-    <Flex gap={10} flexDirection="row" flexWrap="wrap">
+    <Flex gap="10px" flexDirection="row" flexWrap="wrap">
       {items
         .filter(item => item)
         .map((item, i) => (

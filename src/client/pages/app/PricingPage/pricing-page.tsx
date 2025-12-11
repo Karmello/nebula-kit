@@ -9,11 +9,11 @@ import { PricingPlanButton } from './components/PricingPlanButton'
 const OptionIncluded = ({ children }: { children: ReactNode }) => {
   return (
     <>
-      <Flex alignItems="center" columnGap={10}>
+      <Flex alignItems="center" columnGap="10px">
         <Icon name="check" intent="primary" color="blue" />
         {children}
       </Flex>
-      <Spacer blockSize={5} />
+      <Spacer blockSize="5px" />
     </>
   )
 }
@@ -57,10 +57,10 @@ export const PricingPage = () => {
   )
 
   return (
-    <Box paddingTop={15} paddingInline={{ base: 20, lg: 50 }}>
+    <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }}>
       <Section heading="Pricing plans" intent="neutral" iconName="credit-card">
         <Text>Choose the plan that fits your workflow.</Text>
-        <Spacer blockSize={50} />
+        <Spacer blockSize="50px" />
         <Box position="relative">
           {getUser.isMakingRequest ? (
             <Loader centered size="lg" color="blue" />
@@ -68,7 +68,7 @@ export const PricingPage = () => {
             <>
               <Grid
                 gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }}
-                gap={20}
+                gap="20px"
               >
                 <Section heading="Free" variant="outline" intent="muted" iconName="leaf" interactive>
                   <Text intent="neutral" bold>
@@ -83,16 +83,16 @@ export const PricingPage = () => {
                   </Text>
                   <Spacer />
                   <Text bold>What you get</Text>
-                  <Spacer blockSize={10} />
+                  <Spacer blockSize="10px" />
                   <OptionIncluded>{coreBundleLink}</OptionIncluded>
                   <OptionIncluded>
                     <Text>Discord access</Text>
                   </OptionIncluded>
-                  <Spacer blockSize={40} />
+                  <Spacer blockSize="40px" />
                   <Flex justifyContent="center">
                     <PricingPlanButton plan="free" activePlan={getUser.data?.user.plan} />
                   </Flex>
-                  <Spacer blockSize={12} />
+                  <Spacer blockSize="12px" />
                 </Section>
                 <Section
                   heading="Premium"
@@ -114,7 +114,7 @@ export const PricingPage = () => {
                   </Text>
                   <Spacer />
                   <Text bold>What you get</Text>
-                  <Spacer blockSize={10} />
+                  <Spacer blockSize="10px" />
                   <OptionIncluded>{coreBundleLink}</OptionIncluded>
                   <OptionIncluded>{proBundleLink}</OptionIncluded>
                   <OptionIncluded>
@@ -123,11 +123,11 @@ export const PricingPage = () => {
                   <OptionIncluded>
                     <Text>Github roadmap access</Text>
                   </OptionIncluded>
-                  <Spacer blockSize={40} />
+                  <Spacer blockSize="40px" />
                   <Flex justifyContent="center">
                     <PricingPlanButton plan="premium" activePlan={getUser.data?.user.plan} color="green" />
                   </Flex>
-                  <Spacer blockSize={12} />
+                  <Spacer blockSize="12px" />
                 </Section>
                 <Section
                   heading="Business"
@@ -149,7 +149,7 @@ export const PricingPage = () => {
                   </Text>
                   <Spacer />
                   <Text bold>What you get</Text>
-                  <Spacer blockSize={10} />
+                  <Spacer blockSize="10px" />
                   <OptionIncluded>{coreBundleLink}</OptionIncluded>
                   <OptionIncluded>{proBundleLink}</OptionIncluded>
                   <OptionIncluded>
@@ -158,11 +158,11 @@ export const PricingPage = () => {
                   <OptionIncluded>
                     <Text>Github roadmap access</Text>
                   </OptionIncluded>
-                  <Spacer blockSize={40} />
+                  <Spacer blockSize="40px" />
                   <Flex justifyContent="center">
                     <PricingPlanButton plan="business" activePlan={getUser.data?.user.plan} color="blue" />
                   </Flex>
-                  <Spacer blockSize={12} />
+                  <Spacer blockSize="12px" />
                 </Section>
                 <Section
                   heading="Enterprise"
@@ -184,7 +184,7 @@ export const PricingPage = () => {
                   </Text>
                   <Spacer />
                   <Text bold>What you get</Text>
-                  <Spacer blockSize={10} />
+                  <Spacer blockSize="10px" />
                   <OptionIncluded>{coreBundleLink}</OptionIncluded>
                   <OptionIncluded>{proBundleLink}</OptionIncluded>
                   <OptionIncluded>
@@ -193,15 +193,15 @@ export const PricingPage = () => {
                   <OptionIncluded>
                     <Text>Github roadmap access + elevated input consideration</Text>
                   </OptionIncluded>
-                  <Spacer blockSize={40} />
+                  <Spacer blockSize="40px" />
                   <Flex justifyContent="center">
                     <PricingPlanButton plan="enterprise" activePlan={getUser.data?.user.plan} color="red" />
                   </Flex>
-                  <Spacer blockSize={12} />
+                  <Spacer blockSize="12px" />
                 </Section>
               </Grid>
-              <Spacer blockSize={50} />
-              <Flex flexDirection="column" rowGap={5}>
+              <Spacer blockSize="50px" />
+              <Flex flexDirection="column" rowGap="5px">
                 <Text italic>
                   * NebulaKit uses a single-license model, one paid subscription = one shared license key for
                   unlocking the PRO bundle

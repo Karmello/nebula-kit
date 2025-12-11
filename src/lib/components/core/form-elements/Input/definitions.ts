@@ -1,40 +1,40 @@
 import { ReactNode } from 'react'
 
 import { BoxProps, HtmlTagProps } from 'lib/components'
-import { ScaleValue, Sizes } from 'lib/definitions'
+import { Sizes } from 'lib/definitions'
 import { TEXT_TYPOGRAPHY_CONFIG } from 'lib/components/core/base/Text/definitions'
 
 export const INPUT_SIZE_CONFIG: Record<
   InputSize,
   {
-    blockSize: ScaleValue
-    paddingLeft: ScaleValue
-    paddingRight: ScaleValue
-    fontSize: ScaleValue
+    blockSize: string
+    paddingLeft: string
+    paddingRight: string
+    fontSize: string
   }
 > = {
   xs: {
-    blockSize: 28,
-    paddingLeft: 8,
-    paddingRight: 8,
+    blockSize: '28px',
+    paddingLeft: '8px',
+    paddingRight: '8px',
     fontSize: TEXT_TYPOGRAPHY_CONFIG.compact.body.fontSize,
   },
   sm: {
-    blockSize: 38,
-    paddingLeft: 10,
-    paddingRight: 10,
+    blockSize: '38px',
+    paddingLeft: '10px',
+    paddingRight: '10px',
     fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
   },
   md: {
-    blockSize: 44,
-    paddingLeft: 13,
-    paddingRight: 13,
+    blockSize: '44px',
+    paddingLeft: '13px',
+    paddingRight: '13px',
     fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
   },
   lg: {
-    blockSize: 52,
-    paddingLeft: 16,
-    paddingRight: 16,
+    blockSize: '52px',
+    paddingLeft: '16px',
+    paddingRight: '16px',
     fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
   },
 }

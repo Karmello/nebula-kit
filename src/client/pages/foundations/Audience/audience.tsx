@@ -4,9 +4,9 @@ export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Text typography="h6">Who it's for ...</Text>
-      <Spacer blockSize={15} />
+      <Spacer blockSize="15px" />
       <Text>NebulaKit is built for the 95% of apps that share a common structure.</Text>
-      <Spacer blockSize={15} />
+      <Spacer blockSize="15px" />
       <Text>
         Most software isn't a wild experiment. It's dashboards, forms, onboarding flows, settings, lists,
         tables, filters, auth screens, navigation and content. Different products, same underlying patterns.
@@ -17,11 +17,11 @@ export default () => {
         coherence matter more than novelty. If your project fits into the vast landscape of normal,
         structured, product-driven apps - NebulaKit was made for you.
       </Text>
-      <Spacer blockSize={30} />
+      <Spacer blockSize="30px" />
       <Text typography="h6">Who it's not for ...</Text>
-      <Spacer blockSize={15} />
+      <Spacer blockSize="15px" />
       <Text>Not every app fits into that 95%.</Text>
-      <Spacer blockSize={15} />
+      <Spacer blockSize="15px" />
       <Text>
         Some products live in the other 5% - the unusual ones, the experimental ones, the ones where the UI is
         the product: drawing tools, creative canvases, note-taking apps with infinite planes, animation

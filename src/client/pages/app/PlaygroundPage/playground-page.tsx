@@ -12,7 +12,7 @@ export const PlaygroundPage = () => {
 
   useEffect(() => {
     const componentProps = META[componentName][componentName].props
-    let defaultValues: Record<string, unknown> = {}
+    const defaultValues: Record<string, unknown> = {}
     Object.keys(componentProps).map(propName => {
       defaultValues[propName] = (componentProps[propName as never] as Prop).defaultValue
     })
@@ -20,7 +20,7 @@ export const PlaygroundPage = () => {
   }, [componentName])
 
   return (
-    <Box paddingTop={15} paddingInline={{ base: 20, lg: 50 }} overflowY="hidden">
+    <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} overflowY="hidden">
       <Section heading="Playground" intent="neutral" iconName="shapes">
         <SplitView sidePosition="right">
           <SplitView.Main>
@@ -31,10 +31,10 @@ export const PlaygroundPage = () => {
             <RenderPanel />
           </SplitView.Main>
           <SplitView.Side inlineSize="300px" intent={{ base: 'tertiary', lg: 'neutral' }}>
-            <Box marginLeft={{ base: 10, lg: 20 }} marginRight={{ base: 10, lg: 0 }}>
+            <Box marginLeft={{ base: '10px', lg: '20px' }} marginRight={{ base: '10px', lg: '0px' }}>
               <Section heading="Properties" size="sm" iconName="settings">
                 <Box
-                  paddingRight={10}
+                  paddingRight="10px"
                   maxBlockSize={{ base: 'calc(100dvh - 130px)', lg: 'calc(100dvh - 230px)' }}
                   overflowY="auto"
                 >

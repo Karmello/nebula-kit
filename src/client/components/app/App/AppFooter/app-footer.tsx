@@ -7,14 +7,19 @@ export const AppFooter = () => {
   const navigateTo = useNavigateTo()
 
   return (
-    <Footer switchAt="md" paddingBlock={15} paddingInline={25} paddingBottom={{ base: 15, lg: 35 }}>
+    <Footer
+      switchAt="md"
+      paddingBlock="15px"
+      paddingInline="25px"
+      paddingBottom={{ base: '15px', lg: '35px' }}
+    >
       <Footer.Section>
         <Text bold typography="caption">
           About the project
         </Text>
-        <Spacer blockSize={20} />
+        <Spacer blockSize="20px" />
         <Text scale="compact">NebulaKit v0.1.0</Text>
-        <Spacer blockSize={10} />
+        <Spacer blockSize="10px" />
         <Text scale="compact" italic>
           This website is built entirely with NebulaKit components.
         </Text>
@@ -23,8 +28,8 @@ export const AppFooter = () => {
         <Text bold typography="caption">
           Community & Support
         </Text>
-        <Spacer blockSize={20} />
-        <Flex flexDirection="column" gap={10}>
+        <Spacer blockSize="20px" />
+        <Flex flexDirection="column" gap="10px">
           <Link href="https://x.com/captainnebula" target="_blank">
             <Button color="gray" intent="inverse" size="sm" iconName="external-link" iconPosition="right">
               NebulaKit on X
@@ -46,7 +51,7 @@ export const AppFooter = () => {
         <Text bold typography="caption">
           Legal information
         </Text>
-        <Spacer blockSize={20} />
+        <Spacer blockSize="20px" />
         <MarkerList>
           <MarkerList.Item>
             <Link

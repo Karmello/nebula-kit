@@ -6,7 +6,7 @@ import { COLORS } from 'lib/definitions'
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap={60} alignItems="stretch">
+      <Flex flexDirection="column" gap="60px" alignItems="stretch">
         <Text typography="lead">All color palettes defined in the system.</Text>
         {COLORS.map(colorName => {
           return (
@@ -19,7 +19,7 @@ export default () => {
                         <Box
                           variant="solid"
                           blockSize="100px"
-                          borderRadius={0}
+                          borderRadius="0px"
                           tagAttrs={{
                             style: {
                               backgroundColor: `var(--neb-${colorName}-${k + 1})`,

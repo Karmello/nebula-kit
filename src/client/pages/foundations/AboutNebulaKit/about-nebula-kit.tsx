@@ -12,7 +12,7 @@ export default () => {
         You build faster because everything fits.
       </Text>
 
-      <Spacer blockSize={15} />
+      <Spacer blockSize="15px" />
       <Text>
         NebulaKit isn't about endless customization. It's about clarity. When the core decisions are already
         sound you don't need to tweak them, you just compose and everything slots into place. This isn't a kit
@@ -20,7 +20,7 @@ export default () => {
         ship every day. Admin tools, dashboards, SaaS products, forms, settings, onboarding flows. The work
         where consistency and speed matter more than novelty.
       </Text>
-      <Spacer blockSize={15} />
+      <Spacer blockSize="15px" />
       <Text>
         NebulaKit gives you enough flexibility to build freely and enough structure to never wonder how things
         should behave. You get a cohesive system instead of a puzzle. You get primitives that work everywhere
@@ -29,7 +29,7 @@ export default () => {
         move forward without second-guessing every decision. That means embracing smart constraints that
         simplify choices, prevent messy edge cases, and keep products consistent even as they scale.
       </Text>
-      <Spacer blockSize={15} />
+      <Spacer blockSize="15px" />
       <Text>
         NebulaKit stays stable as your product grows and evolves only where real-world apps demand it.
       </Text>
