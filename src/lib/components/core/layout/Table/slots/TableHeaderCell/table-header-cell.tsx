@@ -50,7 +50,6 @@ export const TableHeaderCell = ({
       textAlign={textAlign}
       paddingBlock={paddingBlock || rootPaddingBlock}
       paddingInline={paddingInline || rootPaddingInline}
-      borderRadius="0px"
     >
       {children}
     </Box>

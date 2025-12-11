@@ -2,6 +2,7 @@
   font: inherit;
   max-inline-size: 100%;
   caret-color: inherit;
+  border-radius: var(--neb-border-radius);
 }
 
 .neb-textarea::placeholder {

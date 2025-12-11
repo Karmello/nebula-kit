@@ -47,7 +47,6 @@ export const SplitViewSide = ({
         borderRightWidth={sidePosition === 'left' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
         left={sidePosition === 'left' ? '0px' : undefined}
         right={sidePosition === 'right' ? '0px' : undefined}
-        borderRadius="0px"
         maxInlineSize={inlineSize}
         overflowY={sideOpen ? 'auto' : 'hidden'}
       >

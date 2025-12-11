@@ -46,7 +46,7 @@ export const Section = <T extends SectionTag = 'section'>({
       color={color}
       intent={intent}
       borderIntent={borderIntent}
-      borderRadius={variant === 'ghost' ? '0px' : undefined}
+      borderRadius={variant === 'ghost' ? '0px' : 'var(--neb-border-radius)'}
       padding={variant === 'ghost' ? '0px' : SECTION_SIZE_CONFIG[size].spacing}
       maxInlineSize="100%"
       overflowX="auto"

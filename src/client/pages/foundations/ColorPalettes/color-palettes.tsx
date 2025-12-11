@@ -19,7 +19,6 @@ export default () => {
                         <Box
                           variant="solid"
                           blockSize="100px"
-                          borderRadius="0px"
                           tagAttrs={{
                             style: {
                               backgroundColor: `var(--neb-${colorName}-${k + 1})`,

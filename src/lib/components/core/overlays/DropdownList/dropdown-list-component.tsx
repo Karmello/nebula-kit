@@ -122,10 +122,10 @@ export const DropdownListComponent = ({
               variant={variant === 'ghost' ? 'solid' : variant}
               intent={variant === 'ghost' ? 'neutral' : intent}
               borderTopWidth="0px"
-              borderTopLeftRadius={opensUpDownwards ? '0px' : undefined}
-              borderTopRightRadius={opensUpDownwards ? '0px' : undefined}
-              borderBottomLeftRadius={!opensUpDownwards ? '0px' : undefined}
-              borderBottomRightRadius={!opensUpDownwards ? '0px' : undefined}
+              borderTopLeftRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
+              borderTopRightRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
+              borderBottomLeftRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
+              borderBottomRightRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
               minInlineSize={`${triggerWidth}px`}
             >
               <Box
@@ -133,17 +133,16 @@ export const DropdownListComponent = ({
                 blockSize={itemsContainerBlockSize}
                 overflowY="auto"
                 overflowX="hidden"
-                borderTopLeftRadius={opensUpDownwards ? '0px' : undefined}
-                borderTopRightRadius={opensUpDownwards ? '0px' : undefined}
-                borderBottomLeftRadius={!opensUpDownwards ? '0px' : undefined}
-                borderBottomRightRadius={!opensUpDownwards ? '0px' : undefined}
+                borderTopLeftRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
+                borderTopRightRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
+                borderBottomLeftRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
+                borderBottomRightRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
               >
                 <Flex flexDirection="column" flexWrap="nowrap" alignItems="stretch">
                   {slotsByName['DropdownList.Item'].map((slot, index) => (
                     <Box
                       key={index}
                       variant="outline"
-                      borderRadius="0px"
                       borderLeftWidth="0px"
                       borderRightWidth="0px"
                       borderTopWidth={opensUpDownwards ? (index > 0 ? '0px' : undefined) : '0px'}

@@ -75,7 +75,6 @@ export const Dialog = ({
                 right="0px"
                 bottom="0px"
                 left="0px"
-                borderRadius="0px"
                 zIndex={1000}
               >
                 <Flex

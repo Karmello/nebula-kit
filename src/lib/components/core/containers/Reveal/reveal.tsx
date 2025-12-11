@@ -32,6 +32,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
       variant="outline"
       color={color || brand}
       intent={intent}
+      borderRadius="var(--neb-border-radius)"
       overflowX="hidden"
       overflowY="hidden"
     >

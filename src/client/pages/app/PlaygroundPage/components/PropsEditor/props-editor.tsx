@@ -36,7 +36,10 @@ export const PropsEditor = () => {
         if (isResettingRef.current) return
         clearTimeout(timeoutId)
         timeoutId = setTimeout(() => {
-          setPropsEditorValues(values)
+          const cleaned = Object.fromEntries(
+            Object.entries(values).filter(([, v]) => v !== '' && v !== undefined)
+          )
+          setPropsEditorValues(cleaned)
         }, 500)
       },
     })

@@ -25,7 +25,6 @@ export const DialogContent = ({
       padding={padding}
       variant="outline"
       intent={intent}
-      borderRadius="0px"
       borderWidth="0px"
     >
       {children}

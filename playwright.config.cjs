@@ -3,8 +3,8 @@ import path from 'node:path'
 import os from 'node:os'
 
 export default defineConfig({
-  testDir: 'src/lib/components',
-  testMatch: ['**/tests/**/*.test.ct.tsx'],
+  testDir: 'src/lib',
+  testMatch: ['**/*.test.ct.tsx'],
   outputDir: path.join(os.tmpdir(), 'pw-ct-output'),
   reporter: [['list']],
   use: {

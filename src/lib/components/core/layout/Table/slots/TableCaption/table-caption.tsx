@@ -15,7 +15,6 @@ export const TableCaption = ({ children, tagAttrs, tagRef }: TableCaptionProps) 
       }}
       tagRef={tagRef}
       paddingBlock="10px"
-      borderRadius="0px"
     >
       {children}
     </Box>

@@ -60,7 +60,6 @@ export const Resize = ({
         },
       }}
       tagRef={finalRef}
-      borderRadius="0px"
       overflowX="hidden"
       overflowY="hidden"
     >
