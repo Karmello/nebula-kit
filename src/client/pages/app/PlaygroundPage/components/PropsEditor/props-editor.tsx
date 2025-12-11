@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 
 import META from 'client/meta'
 import { Prop } from 'client/definitions'
-import { Form, Input, Select, Text } from 'lib/components'
+import { Button, Form, Input, Select, Text } from 'lib/components'
 
 import { usePlaygroundStore } from '../../use-playground-store'
 import { PROPS_TO_SKIP } from '../../playground-page'
@@ -60,7 +60,7 @@ export const PropsEditor = () => {
       onValidSubmission={() => null}
       flexDirection="column-reverse"
     >
-      {({ reset, subscribe }) => {
+      {({ reset, subscribe, setValue }) => {
         resetRef.current = reset
         subscribeRef.current = subscribe
 
@@ -92,7 +92,16 @@ export const PropsEditor = () => {
                           ))}
                         </Select>
                       ) : (
-                        <Input size="sm" variant={{ base: 'outline', lg: 'solid' }} />
+                        <Input
+                          size="sm"
+                          variant={{ base: 'outline', lg: 'solid' }}
+                          endSlot={
+                            <Button
+                              iconName="close"
+                              tagAttrs={{ onClick: () => setValue(propName as never, '' as never) }}
+                            />
+                          }
+                        />
                       )}
                     </Form.Field>
                   )

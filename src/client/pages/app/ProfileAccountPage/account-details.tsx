@@ -112,7 +112,7 @@ export default () => {
           <Table.Cell
             colSpan={2}
             blockSize="50px"
-            paddingInline={getUser.data?.user.plan !== 'free' ? '15px' : '0px'}
+            paddingInline={getUser.data?.user.plan !== 'free' ? '15px' : undefined}
           >
             {getUser.data ? (
               <Text
@@ -143,7 +143,7 @@ export default () => {
           <Table.Cell
             colSpan={2}
             blockSize="50px"
-            paddingInline={getUser.data?.user.plan !== 'free' ? '15px' : '0px'}
+            paddingInline={getUser.data?.user.plan !== 'free' ? '15px' : undefined}
           >
             {getUser.data ? (
               <Flex alignItems="center" flexWrap="wrap" rowGap="10px" columnGap="15px">

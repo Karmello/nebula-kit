@@ -29,6 +29,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: Object.values(BOX_INTENTS),
     isResponsive: true,
     description: "Tone level applied to the border's color.",
+    propControl: 'select',
   },
   borderLeftWidth: {
     options: ['CSS'],
