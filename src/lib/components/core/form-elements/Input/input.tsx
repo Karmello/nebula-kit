@@ -57,7 +57,7 @@ export const Input = ({
             className: classNames(withPrefix('input'), tagAttrs?.className),
             style: {
               ...tagAttrs?.style,
-              fontSize: INPUT_SIZE_CONFIG[size || 'md'].fontSize + 'px',
+              fontSize: INPUT_SIZE_CONFIG[size || 'md'].fontSize,
             },
             value: currentValue,
             onChange: e => {
