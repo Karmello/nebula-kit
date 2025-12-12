@@ -1,53 +1,48 @@
-import { useEffect } from 'react'
+import { Box, Flex, Section, Spacer } from 'lib/components'
 
-import META from 'client/meta'
-import { Prop } from 'client/definitions'
-import { Box, Section, Spacer, SplitView } from 'lib/components'
+import {
+  ComponentSelect,
+  PropSelect,
+  PropEditor,
+  RenderPanel,
+  ViewSwitch,
+  PropsViewer,
+  ResetPropsButton,
+  SwitchPropViewButton,
+} from './components'
 
-import { ComponentSelect, PropsEditor, RenderPanel } from './components'
-import { usePlaygroundStore } from './use-playground-store'
-
-export const PROPS_TO_SKIP = ['tag', 'tagAttrs', 'tagRef', 'zIndex']
+import { usePlaygroundStore } from './store'
 
 export const PlaygroundPage = () => {
-  const { componentName, setPropsEditorValues } = usePlaygroundStore()
-
-  useEffect(() => {
-    const componentProps = META[componentName][componentName].props
-    const defaultValues: Record<string, unknown> = {}
-    Object.keys(componentProps)
-      .filter(propName => !PROPS_TO_SKIP.includes(propName))
-      .map(propName => {
-        defaultValues[propName] = (componentProps[propName as never] as Prop).defaultValue
-      })
-    setPropsEditorValues(defaultValues)
-  }, [componentName])
+  const { view } = usePlaygroundStore()
 
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} overflowY="hidden">
       <Section heading="Playground" intent="neutral" iconName="shapes">
-        <SplitView sidePosition="right">
-          <SplitView.Main>
-            <SplitView.MainBar>
-              <ComponentSelect />
-            </SplitView.MainBar>
+        <Flex flexDirection={{ base: 'column', md: 'row-reverse' }} alignItems="stretch" gap="25px">
+          <Flex.Item>
+            <Flex flexDirection="column" alignItems="stretch" rowGap="25px">
+              <Flex.Item>
+                <ComponentSelect />
+                <Spacer blockSize="10px" />
+                <ResetPropsButton />
+              </Flex.Item>
+              <Flex.Item>
+                <PropSelect />
+                <Spacer blockSize="10px" />
+                <SwitchPropViewButton />
+              </Flex.Item>
+              <Flex.Item>
+                <PropEditor />
+              </Flex.Item>
+            </Flex>
+          </Flex.Item>
+          <Flex.Item flex={1}>
+            <ViewSwitch />
             <Spacer />
-            <RenderPanel />
-          </SplitView.Main>
-          <SplitView.Side inlineSize="300px" intent={{ base: 'tertiary', lg: 'neutral' }}>
-            <Box marginLeft={{ base: '10px', lg: '20px' }} marginRight={{ base: '10px', lg: '0px' }}>
-              <Section heading="Properties" size="sm" iconName="settings">
-                <Box
-                  paddingRight="10px"
-                  maxBlockSize={{ base: 'calc(100dvh - 130px)', lg: 'calc(100dvh - 230px)' }}
-                  overflowY="auto"
-                >
-                  <PropsEditor />
-                </Box>
-              </Section>
-            </Box>
-          </SplitView.Side>
-        </SplitView>
+            {view === 'canvas' ? <RenderPanel /> : <PropsViewer />}
+          </Flex.Item>
+        </Flex>
       </Section>
     </Box>
   )

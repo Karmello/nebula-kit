@@ -21,7 +21,6 @@ export type Prop = {
   isRequired?: boolean
   isResponsive?: boolean
   description?: string
-  propControl?: 'input' | 'select'
 }
 
 type Example = {

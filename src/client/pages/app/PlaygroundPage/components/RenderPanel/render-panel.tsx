@@ -1,26 +1,42 @@
-import { FC } from 'react'
+import * as LIB_COMPONENTS from 'lib/components'
+import { Box, Text, Spacer } from 'lib/components'
 
-import * as components from 'lib/components'
-import { Box } from 'lib/components'
-
-import { usePlaygroundStore } from '../../use-playground-store'
+import { PropValue, usePlaygroundStore } from '../../store'
+import { CHILDREN } from './children'
 
 export const RenderPanel = () => {
-  const { componentName, propsEditorValues } = usePlaygroundStore()
+  const { components, activeComponent } = usePlaygroundStore()
 
-  if (!componentName) return null
+  if (!activeComponent) return null
 
-  const Component = components[componentName as never] as FC
+  const Component = LIB_COMPONENTS[activeComponent as never] as any
+
+  const props: Record<string, PropValue> = {}
+
+  Object.keys(components[activeComponent].props).forEach(propName => {
+    const { value } = components[activeComponent].props[propName]
+    if (value !== undefined && value !== '') {
+      props[propName] = components[activeComponent].props[propName].value
+    }
+  })
 
   return (
-    <Box
-      tagAttrs={{ style: { borderStyle: 'dashed' } }}
-      variant="outline"
-      intent="secondary"
-      color="blue"
-      padding="25px"
-    >
-      {<Component {...propsEditorValues} />}
-    </Box>
+    <>
+      <Text bold>{activeComponent}</Text>
+      <Spacer blockSize="3px" />
+      <Box
+        tagAttrs={{ style: { borderStyle: 'dashed' } }}
+        variant="outline"
+        intent="secondary"
+        color="blue"
+        padding="25px"
+      >
+        {CHILDREN[activeComponent] ? (
+          <Component {...props}>{CHILDREN[activeComponent]}</Component>
+        ) : (
+          <Component {...props} />
+        )}
+      </Box>
+    </>
   )
 }

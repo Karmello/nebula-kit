@@ -2,23 +2,25 @@ import { Select, Spacer, Text } from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
 
-export const ComponentSelect = () => {
-  const { components, activeComponent, setActiveComponent } = usePlaygroundStore()
+export const PropSelect = () => {
+  const { components, activeComponent, setActiveProp } = usePlaygroundStore()
 
-  const componentNames = Object.keys(components)
+  if (!activeComponent) return null
+
+  const componentProps = Object.keys(components[activeComponent].props)
 
   return (
     <>
-      <Text bold>Component</Text>
+      <Text bold>Property</Text>
       <Spacer blockSize="3px" />
       <Select
-        value={activeComponent}
-        onChange={setActiveComponent}
+        value={components[activeComponent].activeProp}
+        onChange={setActiveProp}
         inlineSize={{ base: '100%', md: '300px' }}
         scrollAlign="center"
         visibleItemsCount={7}
       >
-        {componentNames.map(name => (
+        {componentProps.map(name => (
           <Select.Option value={name}>{name}</Select.Option>
         ))}
       </Select>
