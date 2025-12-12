@@ -6,6 +6,8 @@ export const SlotSelect = () => {
   const { getActiveSlot, setActiveSlot, getActiveComponentSlotNames } = usePlaygroundStore()
 
   const value = getActiveSlot()
+  if (value === undefined) return null
+
   const slotNames = getActiveComponentSlotNames()
 
   return (

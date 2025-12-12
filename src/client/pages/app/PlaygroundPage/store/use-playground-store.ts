@@ -13,7 +13,7 @@ type Store = State & {
   setActiveProp: (componentName: string, activeProp: string) => void
   setPropField: (component: string, prop: string, field: string, value: unknown) => void
   //
-  getActiveSlot: () => string | null
+  getActiveSlot: () => string | undefined
   getNoSlotComponentNames: () => string[]
   getActiveComponentSlotNames: () => string[]
 }
@@ -65,7 +65,7 @@ export const usePlaygroundStore = create<Store>()(
         })),
       getActiveSlot: () => {
         const state = get()
-        if (!state.activeComponent) return null
+        if (!state.activeComponent) return
         return state.components[state.activeComponent].activeSlot
       },
       getNoSlotComponentNames: () => {

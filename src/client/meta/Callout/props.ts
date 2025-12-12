@@ -18,17 +18,15 @@ import { BOX_PROPS_META } from '../Box/props'
 const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
   borderIntent: BOX_PROPS_META.borderIntent,
   content: {
-    description: 'A text string displayed as the main body of the Callout.',
     options: ['string'],
     isRequired: true,
-    isResponsive: false,
+    description: 'A text string displayed as the main body of the Callout.',
   },
   heading: {
     description:
       'Text displayed as the title of the Callout. Overrides the default heading provided for each intent.',
     options: ['string'],
     defaultValue: CALLOUT_CONFIG[DEFAULT_CALLOUT_STATUS].heading,
-    isRequired: false,
     isResponsive: false,
   },
   intent: {

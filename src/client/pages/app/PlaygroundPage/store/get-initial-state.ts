@@ -61,7 +61,7 @@ export const getInitialState = (): State => {
       activeSlot: !isSlot
         ? flatMetasKeys.some(k => k.includes(`${componentName}.`))
           ? 'root'
-          : ''
+          : undefined
         : undefined,
     }
   })

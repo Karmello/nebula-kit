@@ -50,7 +50,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
     <>
       <Text bold>{bp ? `${activeProp} (${bp})` : activeProp}</Text>
       <Spacer blockSize="3px" />
-      {['CSS', 'ReactNode'].includes(prop.options[0]) ? (
+      {['CSS', 'ReactNode', 'string'].includes(prop.options[0]) ? (
         <Input
           tagAttrs={{
             placeholder: prop.options[0] === 'ReactNode' ? 'string' : prop.options[0].toLowerCase(),
@@ -66,7 +66,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
           <Select.Option value="false">false</Select.Option>
         </Select>
       ) : null}
-      {!['CSS', 'ReactNode', 'boolean'].includes(prop.options[0]) ? (
+      {!['CSS', 'ReactNode', 'string', 'boolean'].includes(prop.options[0]) ? (
         <Select value={value} onChange={onChange}>
           {prop.options.map(option => (
             <Select.Option value={option}>{option}</Select.Option>
