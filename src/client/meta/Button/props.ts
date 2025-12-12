@@ -26,7 +26,6 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   disabled: BOX_PROPS_META.disabled,
   fullWidth: {
     options: ['boolean'],
-    defaultValue: 'false',
     isResponsive: true,
     description: 'Expands the button to match the full width of its container.',
   },
@@ -45,7 +44,6 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   },
   loading: {
     options: ['boolean'],
-    defaultValue: 'false',
     description: 'Activates the loading state, shows a spinner and prevents interaction.',
   },
   size: {

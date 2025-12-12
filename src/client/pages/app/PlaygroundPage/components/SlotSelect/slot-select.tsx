@@ -2,21 +2,25 @@ import { Select, Spacer, Text } from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
 
-export const ComponentSelect = () => {
-  const { getNoSlotComponentNames, activeComponent, setActiveComponent } = usePlaygroundStore()
+export const SlotSelect = () => {
+  const { getActiveSlot, setActiveSlot, getActiveComponentSlotNames } = usePlaygroundStore()
+
+  const value = getActiveSlot()
+  const slotNames = getActiveComponentSlotNames()
 
   return (
     <>
-      <Text bold>Component</Text>
+      <Text bold>Slot</Text>
       <Spacer blockSize="3px" />
       <Select
-        value={activeComponent}
-        onChange={setActiveComponent}
+        value={value}
+        onChange={setActiveSlot}
         inlineSize={{ base: '100%', md: '300px' }}
         scrollAlign="center"
         visibleItemsCount={7}
       >
-        {getNoSlotComponentNames().map(name => (
+        <Select.Option value="root">Root</Select.Option>
+        {slotNames.map(name => (
           <Select.Option value={name}>{name}</Select.Option>
         ))}
       </Select>

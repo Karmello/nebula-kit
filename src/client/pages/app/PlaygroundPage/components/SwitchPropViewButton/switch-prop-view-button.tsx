@@ -18,6 +18,7 @@ export const SwitchPropViewButton = () => {
       intent="primary"
       size="sm"
       fullWidth
+      iconName="screen-share"
       tagAttrs={{
         onClick: () => {
           if (typeof value !== 'object') {
@@ -28,7 +29,7 @@ export const SwitchPropViewButton = () => {
         },
       }}
     >
-      {typeof value === 'object' ? 'Switch to single value' : 'Switch to responsive values'}
+      {typeof value === 'object' ? 'Responsive values: ON' : 'Responsive values: OFF'}
     </Button>
   )
 }

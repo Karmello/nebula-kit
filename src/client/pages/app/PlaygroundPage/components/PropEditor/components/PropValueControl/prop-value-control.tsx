@@ -4,10 +4,17 @@ import { Breakpoint } from 'lib/definitions'
 import { usePlaygroundStore } from '../../../../store'
 
 export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
-  const { components, activeComponent, setPropField } = usePlaygroundStore()
+  const { components, activeComponent, setPropField, getActiveSlot } = usePlaygroundStore()
 
-  const { props, activeProp } = components[activeComponent]
-  const prop = props[activeProp]
+  const activeSlot = getActiveSlot()
+
+  const isSlot = activeSlot && activeSlot !== 'root'
+
+  const activeProp = isSlot ? components[activeSlot].activeProp : components[activeComponent].activeProp
+
+  const prop = isSlot
+    ? components[activeSlot].props[activeProp]
+    : components[activeComponent].props[activeProp]
 
   let value = ''
 
@@ -31,17 +38,23 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
       }
       setPropField(activeComponent, activeProp, 'value', newValue)
     } else {
-      setPropField(activeComponent, activeProp, 'value', value !== '' ? value : undefined)
+      let newValue
+      if (value === 'true') newValue = true
+      else if (value === 'false') newValue = false
+      else newValue = value
+      setPropField(activeComponent, activeProp, 'value', newValue !== '' ? newValue : undefined)
     }
   }
 
   return (
     <>
-      <Text bold>{bp ? `Value (${bp})` : 'Value'}</Text>
+      <Text bold>{bp ? `${activeProp} (${bp})` : activeProp}</Text>
       <Spacer blockSize="3px" />
       {['CSS', 'ReactNode'].includes(prop.options[0]) ? (
         <Input
-          tagAttrs={{ placeholder: prop.options[0] }}
+          tagAttrs={{
+            placeholder: prop.options[0] === 'ReactNode' ? 'string' : prop.options[0].toLowerCase(),
+          }}
           value={value}
           onChange={onChange}
           endSlot={<Button iconName="close" tagAttrs={{ onClick: () => onChange('') }} />}

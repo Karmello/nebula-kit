@@ -74,6 +74,7 @@ export const ICON_NAMES = [
   'panel-right-open',
   'plug',
   'receipt',
+  'screen-share',
   'search',
   'settings',
   'shapes',

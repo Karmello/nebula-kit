@@ -7,6 +7,8 @@ export const ResetPropsButton = () => {
 
   if (!activeComponent) return null
 
+  const { activeSlot } = components[activeComponent]
+
   return (
     <Button
       size="sm"
@@ -27,7 +29,7 @@ export const ResetPropsButton = () => {
         },
       }}
     >
-      Reset all {activeComponent} props
+      Reset props
     </Button>
   )
 }

@@ -24,5 +24,5 @@ const SEGMENT_META: ComponentMeta<SegmentProps> = {
 
 export default {
   Segment: SEGMENT_META,
-  SegmentItem: SEGMENT_ITEM_META,
+  'Segment.Item': SEGMENT_ITEM_META,
 }

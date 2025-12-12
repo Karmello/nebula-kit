@@ -33,12 +33,12 @@ const TABLE_META: ComponentMeta<TableProps> = {
 
 export default {
   Table: TABLE_META,
-  TableBody: TABLE_BODY_META,
-  TableHeader: TABLE_HEADER_META,
-  TableFooter: TABLE_FOOTER_META,
-  TableCaption: TABLE_CAPTION_META,
-  TableRow: TABLE_ROW_META,
-  TableHeaderRow: TABLE_HEADER_ROW_META,
-  TableCell: TABLE_CELL_META,
-  TableHeaderCell: TABLE_HEADER_CELL_META,
+  'Table.Body': TABLE_BODY_META,
+  'Table.Header': TABLE_HEADER_META,
+  'Table.Footer': TABLE_FOOTER_META,
+  'Table.Caption': TABLE_CAPTION_META,
+  'Table.Row': TABLE_ROW_META,
+  'Table.HeaderRow': TABLE_HEADER_ROW_META,
+  'Table.Cell': TABLE_CELL_META,
+  'Table.HeaderCell': TABLE_HEADER_CELL_META,
 }

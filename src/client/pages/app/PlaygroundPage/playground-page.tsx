@@ -2,6 +2,7 @@ import { Box, Flex, Section, Spacer } from 'lib/components'
 
 import {
   ComponentSelect,
+  SlotSelect,
   PropSelect,
   PropEditor,
   RenderPanel,
@@ -9,12 +10,15 @@ import {
   PropsViewer,
   ResetPropsButton,
   SwitchPropViewButton,
+  PropsViewSwitch,
 } from './components'
 
 import { usePlaygroundStore } from './store'
 
 export const PlaygroundPage = () => {
-  const { view } = usePlaygroundStore()
+  const { view, getActiveSlot } = usePlaygroundStore()
+
+  const activeSlot = getActiveSlot()
 
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} overflowY="hidden">
@@ -23,9 +27,19 @@ export const PlaygroundPage = () => {
           <Flex.Item>
             <Flex flexDirection="column" alignItems="stretch" rowGap="25px">
               <Flex.Item>
-                <ComponentSelect />
-                <Spacer blockSize="10px" />
-                <ResetPropsButton />
+                <Flex flexDirection="column" alignItems="stretch" rowGap="25px">
+                  <Flex.Item>
+                    <ComponentSelect />
+                  </Flex.Item>
+                  {activeSlot !== undefined ? (
+                    <Flex.Item>
+                      <SlotSelect />
+                    </Flex.Item>
+                  ) : null}
+                  <Flex.Item>
+                    <ResetPropsButton />
+                  </Flex.Item>
+                </Flex>
               </Flex.Item>
               <Flex.Item>
                 <PropSelect />
@@ -38,8 +52,11 @@ export const PlaygroundPage = () => {
             </Flex>
           </Flex.Item>
           <Flex.Item flex={1}>
-            <ViewSwitch />
-            <Spacer />
+            <Flex columnGap="15px">
+              <ViewSwitch />
+              <PropsViewSwitch />
+            </Flex>
+            <Spacer blockSize="40px" />
             {view === 'canvas' ? <RenderPanel /> : <PropsViewer />}
           </Flex.Item>
         </Flex>
