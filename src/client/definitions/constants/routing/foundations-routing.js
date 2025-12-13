@@ -22,6 +22,7 @@ export const FOUNDATIONS_CATEGORIES = [
           { key: 'predictable-behavior', label: 'Predictable behavior' },
           { key: 'visual-coherence', label: 'Visual coherence' },
           { key: 'creative-freedom', label: 'Creative freedom' },
+          { key: 'hidden-css', label: 'Hidden CSS' },
         ],
       },
       {
