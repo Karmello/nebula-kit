@@ -1,8 +1,9 @@
 import META from 'client/meta'
 import { ComponentMeta } from 'client/definitions'
 
-import { COMPONENTS_TO_SKIP, Props, PROPS_TO_SKIP, State } from './definitions'
-import { RENDER_TEMPLATES } from '../components/RenderPanel/render-templates'
+import { PLAYGROUND_MAP, Props, State } from './definitions'
+
+const WHITELISTED_COMPONENTS = Object.keys(PLAYGROUND_MAP)
 
 export const getInitialState = (): State => {
   const state: State = {
@@ -15,9 +16,7 @@ export const getInitialState = (): State => {
 
   Object.keys(META).forEach(topLevelComponentName => {
     const innerLevelComponentNames = Object.keys(META[topLevelComponentName])
-    const finalComponentNames = innerLevelComponentNames.filter(
-      name => !COMPONENTS_TO_SKIP.includes(name) && !name.startsWith('use')
-    )
+    const finalComponentNames = innerLevelComponentNames.filter(name => WHITELISTED_COMPONENTS.includes(name))
     finalComponentNames.forEach(name => {
       flatMetas[name] = META[topLevelComponentName][name]
     })
@@ -26,9 +25,14 @@ export const getInitialState = (): State => {
   const flatMetasKeys = Object.keys(flatMetas)
 
   flatMetasKeys.forEach(componentName => {
-    const componentPropNames = Object.keys(flatMetas[componentName].props).filter(
-      name => !PROPS_TO_SKIP.includes(name) && !(name === 'children' && RENDER_TEMPLATES[componentName])
+    const isSlot = componentName.includes('.')
+    const hasSlots = flatMetasKeys.some(k => k.includes(`${componentName}.`))
+
+    let componentPropNames = Object.keys(flatMetas[componentName].props).filter(
+      name => !PLAYGROUND_MAP[componentName].includes(name)
     )
+
+    if (!isSlot && hasSlots) componentPropNames = componentPropNames.filter(name => name !== 'children')
 
     const props: Props = {}
 
@@ -53,16 +57,10 @@ export const getInitialState = (): State => {
       }
     })
 
-    const isSlot = componentName.includes('.')
-
     state.components[componentName] = {
       props,
       activeProp: '',
-      activeSlot: !isSlot
-        ? flatMetasKeys.some(k => k.includes(`${componentName}.`))
-          ? 'root'
-          : undefined
-        : undefined,
+      activeSlot: !isSlot && hasSlots ? 'root' : undefined,
     }
   })
 

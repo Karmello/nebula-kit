@@ -16,7 +16,7 @@ export const ViewSwitch = () => {
             onClick: () => setView('canvas'),
           }}
         >
-          Canvas
+          Canvas view
         </Button>
       </Segment.Item>
       <Segment.Item>
@@ -28,7 +28,7 @@ export const ViewSwitch = () => {
             onClick: () => setView('props'),
           }}
         >
-          Props
+          Props view
         </Button>
       </Segment.Item>
     </Segment>

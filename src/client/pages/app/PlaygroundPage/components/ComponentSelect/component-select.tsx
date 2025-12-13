@@ -3,11 +3,14 @@ import { Select, Spacer, Text } from 'lib/components'
 import { usePlaygroundStore } from '../../store'
 
 export const ComponentSelect = () => {
-  const { components, getNoSlotComponentNames, activeComponent, setActiveComponent } = usePlaygroundStore()
+  const { components, getNoSlotComponentNames, activeComponent, setActiveComponent, getActiveSlot } =
+    usePlaygroundStore()
+
+  const activeSlot = getActiveSlot()
 
   return (
     <>
-      <Text bold>Component / Slot</Text>
+      <Text bold>Component{activeSlot ? ' / Slot' : ''}</Text>
       <Spacer blockSize="5px" />
       <Select
         value={activeComponent}

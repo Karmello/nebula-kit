@@ -2,16 +2,29 @@ import * as LIB_COMPONENTS from 'lib/components'
 import { Box, Text, Spacer } from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
-import { RENDER_TEMPLATES } from './render-templates'
 
 export const RenderPanel = () => {
-  const { activeComponent, getPropValues } = usePlaygroundStore()
-
+  const { activeComponent, getPropValues, getActiveSlot, getActiveComponentSlotNames } = usePlaygroundStore()
   if (!activeComponent) return null
 
-  const Component = RENDER_TEMPLATES[activeComponent]
-    ? RENDER_TEMPLATES[activeComponent]
-    : (LIB_COMPONENTS[activeComponent as never] as any)
+  const activeSlot = getActiveSlot()
+
+  let Component
+  const Root = LIB_COMPONENTS[activeComponent as never] as any
+
+  if (!activeSlot) {
+    Component = <Root {...getPropValues(activeComponent)} />
+  } else {
+    Component = (
+      <Root {...getPropValues(activeComponent)}>
+        {getActiveComponentSlotNames().map(slotName => {
+          const Slot = Root[slotName.split('.')[1]]
+          const slotProps = getPropValues(slotName)
+          return <Slot {...slotProps} />
+        })}
+      </Root>
+    )
+  }
 
   return (
     <>
@@ -24,11 +37,7 @@ export const RenderPanel = () => {
         color="blue"
         padding="25px"
       >
-        {RENDER_TEMPLATES[activeComponent] ? (
-          <Component />
-        ) : (
-          <Component {...getPropValues(activeComponent)} />
-        )}
+        {Component}
       </Box>
     </>
   )

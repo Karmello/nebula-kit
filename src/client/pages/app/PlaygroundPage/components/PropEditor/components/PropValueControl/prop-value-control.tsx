@@ -1,5 +1,6 @@
 import { Input, Button, Text, Spacer, Select } from 'lib/components'
 import { Breakpoint } from 'lib/definitions'
+import { ICONS } from 'lib/icons/lucide'
 
 import { usePlaygroundStore } from '../../../../store'
 
@@ -41,6 +42,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
       let newValue
       if (value === 'true') newValue = true
       else if (value === 'false') newValue = false
+      else if (value !== '' && !Number.isNaN(Number(value))) newValue = Number(value)
       else newValue = value
       setPropField(
         isSlot ? activeSlot : activeComponent,
@@ -55,10 +57,10 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
     <>
       <Text>{bp ? `${activeProp} (${bp})` : activeProp}</Text>
       <Spacer blockSize="5px" />
-      {['CSS', 'ReactNode', 'string'].includes(prop.options[0]) ? (
+      {['CSS', 'ReactNode', 'string', 'number'].includes(prop.options[0]) ? (
         <Input
           tagAttrs={{
-            placeholder: prop.options[0] === 'ReactNode' ? 'string' : prop.options[0].toLowerCase(),
+            placeholder: prop.options[0] === 'ReactNode' ? 'value' : prop.options[0].toLowerCase(),
           }}
           value={value}
           onChange={onChange}
@@ -71,10 +73,21 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
           <Select.Option value="false">false</Select.Option>
         </Select>
       ) : null}
-      {!['CSS', 'ReactNode', 'string', 'boolean'].includes(prop.options[0]) ? (
+      {prop.options[0] === 'IconName' ? (
+        <Select value={value} onChange={onChange}>
+          {Object.keys(ICONS).map(iconName => (
+            <Select.Option key={iconName} value={iconName}>
+              {iconName}
+            </Select.Option>
+          ))}
+        </Select>
+      ) : null}
+      {!['CSS', 'ReactNode', 'string', 'number', 'boolean', 'IconName'].includes(prop.options[0]) ? (
         <Select value={value} onChange={onChange}>
           {prop.options.map(option => (
-            <Select.Option value={option}>{option}</Select.Option>
+            <Select.Option key={option} value={option}>
+              {option}
+            </Select.Option>
           ))}
         </Select>
       ) : null}

@@ -1,13 +1,6 @@
 import { Spacer, Table, Text } from 'lib/components'
-import { Color } from 'lib/definitions'
 
 import { usePlaygroundStore } from '../../store'
-
-const VALUE_TYPE_COLOR_MAP: Record<string, Color> = {
-  string: 'red',
-  boolean: 'blue',
-  object: 'gray',
-}
 
 export const PropsViewer = () => {
   const { components, activeComponent, getActiveSlot } = usePlaygroundStore()
@@ -31,10 +24,8 @@ export const PropsViewer = () => {
             if (props[propName].value !== undefined && JSON.stringify(props[propName].value) != '{}') {
               propValue =
                 valueType === 'object'
-                  ? JSON.stringify(props[propName].value)
-                  : valueType === 'string'
-                    ? `"${props[propName].value}"`
-                    : String(props[propName].value)
+                  ? JSON.stringify(props[propName].value).replaceAll('"', '')
+                  : String(props[propName].value)
             }
 
             return (
@@ -50,11 +41,7 @@ export const PropsViewer = () => {
                   </Text>
                 </Table.Cell>
                 <Table.Cell>
-                  <Text
-                    tagAttrs={{ style: { wordBreak: 'break-all' } }}
-                    intent="primary"
-                    color={VALUE_TYPE_COLOR_MAP[valueType]}
-                  >
+                  <Text tagAttrs={{ style: { wordBreak: 'break-all' } }} intent="primary" color="blue">
                     {propValue}
                   </Text>
                 </Table.Cell>

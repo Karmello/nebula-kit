@@ -1,7 +1,24 @@
 import { RespValue } from 'lib/definitions'
 
-export const COMPONENTS_TO_SKIP = ['HtmlTag', 'NebkitProvider', 'HydrationGate']
-export const PROPS_TO_SKIP = ['tag', 'tagAttrs', 'tagRef', 'zIndex']
+const COMMON_BLACKLISTED_PROPS = ['tag', 'tagAttrs', 'tagRef']
+
+export const PLAYGROUND_MAP: Record<string, string[]> = {
+  Box: [
+    ...COMMON_BLACKLISTED_PROPS,
+    'borderBottomLeftRadius',
+    'borderBottomRightRadius',
+    'borderBottomWidth',
+    'borderLeftWidth',
+    'borderRightWidth',
+    'borderTopLeftRadius',
+    'borderTopRightRadius',
+    'borderTopWidth',
+    'zIndex',
+  ],
+  Text: [...COMMON_BLACKLISTED_PROPS, 'space'],
+  Button: [...COMMON_BLACKLISTED_PROPS],
+  Callout: [...COMMON_BLACKLISTED_PROPS],
+}
 
 export type PlaygroundView = 'canvas' | 'props'
 export type PropValue = RespValue<string | number | boolean>

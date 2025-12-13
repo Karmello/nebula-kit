@@ -61,6 +61,7 @@ export const Input = ({
             },
             value: currentValue,
             onChange: e => {
+              console.log((e.target as HTMLInputElement).value)
               handleChange((e.target as HTMLInputElement).value)
             },
             onBlur,
