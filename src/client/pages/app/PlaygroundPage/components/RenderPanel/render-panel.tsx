@@ -16,7 +16,7 @@ export const RenderPanel = () => {
   return (
     <>
       <Text bold>{activeComponent}</Text>
-      <Spacer blockSize="3px" />
+      <Spacer blockSize="5px" />
       <Box
         tagAttrs={{ style: { borderStyle: 'dashed' } }}
         variant="outline"

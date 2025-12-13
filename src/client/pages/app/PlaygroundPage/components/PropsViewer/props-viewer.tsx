@@ -21,7 +21,7 @@ export const PropsViewer = () => {
   return (
     <>
       <Text bold>{isSlot ? activeSlot : activeComponent}</Text>
-      <Spacer blockSize="3px" />
+      <Spacer blockSize="5px" />
       <Table layout="fixed" paddingBlock="5px" paddingInline="10px">
         <Table.Body>
           {Object.keys(props).map(propName => {
@@ -41,6 +41,7 @@ export const PropsViewer = () => {
               <Table.Row>
                 <Table.Cell>
                   <Text
+                    tagAttrs={{ style: { wordBreak: 'break-all' } }}
                     bold
                     iconName={props[propName].isResponsive ? 'screen-share' : undefined}
                     iconPosition="right"
@@ -49,7 +50,11 @@ export const PropsViewer = () => {
                   </Text>
                 </Table.Cell>
                 <Table.Cell>
-                  <Text intent="primary" color={VALUE_TYPE_COLOR_MAP[valueType]}>
+                  <Text
+                    tagAttrs={{ style: { wordBreak: 'break-all' } }}
+                    intent="primary"
+                    color={VALUE_TYPE_COLOR_MAP[valueType]}
+                  >
                     {propValue}
                   </Text>
                 </Table.Cell>

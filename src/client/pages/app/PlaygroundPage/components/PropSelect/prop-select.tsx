@@ -15,11 +15,10 @@ export const PropSelect = () => {
   return (
     <>
       <Text bold>Property</Text>
-      <Spacer blockSize="3px" />
+      <Spacer blockSize="5px" />
       <Select
         value={value}
         onChange={value => setActiveProp(isSlot ? activeSlot : activeComponent, value)}
-        inlineSize={{ base: '100%', md: '300px' }}
         scrollAlign="center"
         visibleItemsCount={7}
       >

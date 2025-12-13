@@ -53,8 +53,8 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
 
   return (
     <>
-      <Text bold>{bp ? `${activeProp} (${bp})` : activeProp}</Text>
-      <Spacer blockSize="3px" />
+      <Text>{bp ? `${activeProp} (${bp})` : activeProp}</Text>
+      <Spacer blockSize="5px" />
       {['CSS', 'ReactNode', 'string'].includes(prop.options[0]) ? (
         <Input
           tagAttrs={{

@@ -7,12 +7,11 @@ export const ComponentSelect = () => {
 
   return (
     <>
-      <Text bold>Component</Text>
-      <Spacer blockSize="3px" />
+      <Text bold>Component / Slot</Text>
+      <Spacer blockSize="5px" />
       <Select
         value={activeComponent}
         onChange={setActiveComponent}
-        inlineSize={{ base: '100%', md: '300px' }}
         scrollAlign="center"
         visibleItemsCount={7}
       >

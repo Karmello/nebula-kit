@@ -43,15 +43,17 @@ export const SplitViewSide = ({
         color={color || brand}
         intent={intent || { base: 'tertiary', [String(switchAt)]: 'neutral' }}
         borderIntent={borderIntent || { base: 'muted', [String(switchAt)]: 'neutral' }}
-        borderLeftWidth={sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
-        borderRightWidth={sidePosition === 'left' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
         left={sidePosition === 'left' ? '0px' : undefined}
         right={sidePosition === 'right' ? '0px' : undefined}
         maxInlineSize={inlineSize}
         overflowY={sideOpen ? 'auto' : 'hidden'}
       >
         <Resize key={mode} property="inlineSize" visible={sideOpen}>
-          <Box inlineSize={inlineSize}>
+          <Box
+            inlineSize={inlineSize}
+            borderLeftWidth={sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
+            borderRightWidth={sidePosition === 'left' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
+          >
             {mode === 'overlay' ? (
               <Flex justifyContent="flex-end">
                 <Box padding="6px" paddingBottom="20px">
@@ -63,7 +65,7 @@ export const SplitViewSide = ({
                     }}
                     iconName="close"
                     intent={intent || 'tertiary'}
-                    size="sm"
+                    size="xs"
                   />
                 </Box>
               </Flex>

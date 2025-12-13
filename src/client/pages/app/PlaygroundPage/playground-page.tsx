@@ -1,4 +1,4 @@
-import { Box, Flex, Section, Spacer } from 'lib/components'
+import { Box, Flex, Section, Spacer, SplitView } from 'lib/components'
 
 import {
   ComponentSelect,
@@ -22,41 +22,41 @@ export const PlaygroundPage = () => {
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} overflowY="hidden">
       <Section heading="Playground" intent="neutral" iconName="shapes">
-        <Flex flexDirection={{ base: 'column', md: 'row-reverse' }} alignItems="stretch" gap="25px">
-          <Flex.Item>
-            <Flex flexDirection="column" alignItems="stretch" rowGap="25px">
-              <Flex.Item>
-                <Flex flexDirection="column" alignItems="stretch" rowGap="25px">
-                  <Flex.Item>
-                    <ComponentSelect />
-                  </Flex.Item>
-                  {activeSlot !== undefined ? (
-                    <Flex.Item>
-                      <SlotSelect />
-                    </Flex.Item>
-                  ) : null}
-                </Flex>
-              </Flex.Item>
-              <Flex.Item>
-                <PropSelect />
-                <Spacer blockSize="8px" />
-                <ResetPropsButton />
-                <Spacer blockSize="8px" />
-                <SwitchPropViewButton />
-              </Flex.Item>
-              <Flex.Item>
-                <PropEditor />
-              </Flex.Item>
-            </Flex>
-          </Flex.Item>
-          <Flex.Item flex={1}>
-            <Flex columnGap="15px">
+        <SplitView sidePosition="right">
+          <SplitView.Main>
+            <SplitView.MainBar>
               <ViewSwitch />
-            </Flex>
-            <Spacer blockSize="40px" />
+            </SplitView.MainBar>
+            <Spacer blockSize="25px" />
             {view === 'canvas' ? <RenderPanel /> : <PropsViewer />}
-          </Flex.Item>
-        </Flex>
+          </SplitView.Main>
+          <SplitView.Side inlineSize="320px" intent={{ base: 'inverse', lg: 'neutral' }}>
+            <Box padding={{ base: '10px', lg: '0px' }} paddingLeft={{ lg: '30px' }}>
+              <Flex flexDirection="column" alignItems="stretch" rowGap="25px">
+                <Flex.Item>
+                  <Flex flexDirection="column" alignItems="stretch" rowGap="10px">
+                    <Flex.Item>
+                      <ComponentSelect />
+                    </Flex.Item>
+                    {activeSlot !== undefined ? <SlotSelect /> : null}
+                  </Flex>
+                </Flex.Item>
+                <Flex.Item>
+                  <Flex flexDirection="column" alignItems="stretch" rowGap="10px">
+                    <Flex.Item>
+                      <PropSelect />
+                    </Flex.Item>
+                    <ResetPropsButton />
+                    <SwitchPropViewButton />
+                  </Flex>
+                </Flex.Item>
+                <Flex.Item>
+                  <PropEditor />
+                </Flex.Item>
+              </Flex>
+            </Box>
+          </SplitView.Side>
+        </SplitView>
       </Section>
     </Box>
   )
