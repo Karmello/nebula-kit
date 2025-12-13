@@ -10,7 +10,6 @@ import {
   PropsViewer,
   ResetPropsButton,
   SwitchPropViewButton,
-  PropsViewSwitch,
 } from './components'
 
 import { usePlaygroundStore } from './store'
@@ -36,14 +35,13 @@ export const PlaygroundPage = () => {
                       <SlotSelect />
                     </Flex.Item>
                   ) : null}
-                  <Flex.Item>
-                    <ResetPropsButton />
-                  </Flex.Item>
                 </Flex>
               </Flex.Item>
               <Flex.Item>
                 <PropSelect />
-                <Spacer blockSize="10px" />
+                <Spacer blockSize="8px" />
+                <ResetPropsButton />
+                <Spacer blockSize="8px" />
                 <SwitchPropViewButton />
               </Flex.Item>
               <Flex.Item>
@@ -54,7 +52,6 @@ export const PlaygroundPage = () => {
           <Flex.Item flex={1}>
             <Flex columnGap="15px">
               <ViewSwitch />
-              <PropsViewSwitch />
             </Flex>
             <Spacer blockSize="40px" />
             {view === 'canvas' ? <RenderPanel /> : <PropsViewer />}

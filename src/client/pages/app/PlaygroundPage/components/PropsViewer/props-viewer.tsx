@@ -20,7 +20,7 @@ export const PropsViewer = () => {
 
   return (
     <>
-      <Text bold>{isSlot ? activeSlot : activeComponent} props</Text>
+      <Text bold>{isSlot ? activeSlot : activeComponent}</Text>
       <Spacer blockSize="3px" />
       <Table layout="fixed" paddingBlock="5px" paddingInline="10px">
         <Table.Body>

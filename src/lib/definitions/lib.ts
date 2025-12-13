@@ -39,6 +39,7 @@ export const ICON_NAMES = [
   'blocks',
   'book-open-text',
   'box',
+  'boxes',
   'check',
   'check-circle',
   'chevron-down',

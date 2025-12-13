@@ -4,7 +4,7 @@ import { persist } from 'zustand/middleware'
 import { LIB_PREFIX } from 'lib/definitions'
 
 import { getInitialState } from './get-initial-state'
-import { PlaygroundView, State } from './definitions'
+import { PlaygroundView, PropValue, State } from './definitions'
 
 type Store = State & {
   setView: (view: PlaygroundView) => void
@@ -16,6 +16,7 @@ type Store = State & {
   getActiveSlot: () => string | undefined
   getNoSlotComponentNames: () => string[]
   getActiveComponentSlotNames: () => string[]
+  getPropValues: (componentName: string) => Record<string, PropValue>
 }
 
 export const usePlaygroundStore = create<Store>()(
@@ -77,6 +78,21 @@ export const usePlaygroundStore = create<Store>()(
         return state.activeComponent
           ? Object.keys(state.components).filter(name => name.includes(`${state.activeComponent}.`))
           : []
+      },
+      getPropValues: (componentName: string) => {
+        const state = get()
+        const { props } = state.components[componentName]
+
+        const parsedValues: Record<string, PropValue> = {}
+
+        Object.keys(props).forEach(propName => {
+          const { value } = props[propName]
+          if (value !== undefined && value !== '') {
+            parsedValues[propName] = props[propName].value
+          }
+        })
+
+        return parsedValues
       },
     }),
     {

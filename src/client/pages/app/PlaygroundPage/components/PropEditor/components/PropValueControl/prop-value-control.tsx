@@ -36,13 +36,18 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
       } else {
         delete newValue[bp]
       }
-      setPropField(activeComponent, activeProp, 'value', newValue)
+      setPropField(isSlot ? activeSlot : activeComponent, activeProp, 'value', newValue)
     } else {
       let newValue
       if (value === 'true') newValue = true
       else if (value === 'false') newValue = false
       else newValue = value
-      setPropField(activeComponent, activeProp, 'value', newValue !== '' ? newValue : undefined)
+      setPropField(
+        isSlot ? activeSlot : activeComponent,
+        activeProp,
+        'value',
+        newValue !== '' ? newValue : undefined
+      )
     }
   }
 

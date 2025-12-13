@@ -1,24 +1,17 @@
 import * as LIB_COMPONENTS from 'lib/components'
 import { Box, Text, Spacer } from 'lib/components'
 
-import { PropValue, usePlaygroundStore } from '../../store'
-import { CHILDREN } from './children'
+import { usePlaygroundStore } from '../../store'
+import { RENDER_TEMPLATES } from './render-templates'
 
 export const RenderPanel = () => {
-  const { components, activeComponent } = usePlaygroundStore()
+  const { activeComponent, getPropValues } = usePlaygroundStore()
 
   if (!activeComponent) return null
 
-  const Component = LIB_COMPONENTS[activeComponent as never] as any
-
-  const props: Record<string, PropValue> = {}
-
-  Object.keys(components[activeComponent].props).forEach(propName => {
-    const { value } = components[activeComponent].props[propName]
-    if (value !== undefined && value !== '') {
-      props[propName] = components[activeComponent].props[propName].value
-    }
-  })
+  const Component = RENDER_TEMPLATES[activeComponent]
+    ? RENDER_TEMPLATES[activeComponent]
+    : (LIB_COMPONENTS[activeComponent as never] as any)
 
   return (
     <>
@@ -31,10 +24,10 @@ export const RenderPanel = () => {
         color="blue"
         padding="25px"
       >
-        {CHILDREN[activeComponent] ? (
-          <Component {...props}>{CHILDREN[activeComponent]}</Component>
+        {RENDER_TEMPLATES[activeComponent] ? (
+          <Component />
         ) : (
-          <Component {...props} />
+          <Component {...getPropValues(activeComponent)} />
         )}
       </Box>
     </>

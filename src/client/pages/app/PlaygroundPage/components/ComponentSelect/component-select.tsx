@@ -3,7 +3,7 @@ import { Select, Spacer, Text } from 'lib/components'
 import { usePlaygroundStore } from '../../store'
 
 export const ComponentSelect = () => {
-  const { getNoSlotComponentNames, activeComponent, setActiveComponent } = usePlaygroundStore()
+  const { components, getNoSlotComponentNames, activeComponent, setActiveComponent } = usePlaygroundStore()
 
   return (
     <>
@@ -17,7 +17,14 @@ export const ComponentSelect = () => {
         visibleItemsCount={7}
       >
         {getNoSlotComponentNames().map(name => (
-          <Select.Option value={name}>{name}</Select.Option>
+          <Select.Option
+            value={name}
+            iconName={components[name].activeSlot !== undefined ? 'boxes' : undefined}
+            iconPosition="right"
+            justifyContent="space-between"
+          >
+            {name}
+          </Select.Option>
         ))}
       </Select>
     </>

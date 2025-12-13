@@ -2,7 +2,7 @@ import META from 'client/meta'
 import { ComponentMeta } from 'client/definitions'
 
 import { COMPONENTS_TO_SKIP, Props, PROPS_TO_SKIP, State } from './definitions'
-import { CHILDREN } from '../components/RenderPanel/children'
+import { RENDER_TEMPLATES } from '../components/RenderPanel/render-templates'
 
 export const getInitialState = (): State => {
   const state: State = {
@@ -27,7 +27,7 @@ export const getInitialState = (): State => {
 
   flatMetasKeys.forEach(componentName => {
     const componentPropNames = Object.keys(flatMetas[componentName].props).filter(
-      name => !PROPS_TO_SKIP.includes(name) && !(name === 'children' && CHILDREN[componentName])
+      name => !PROPS_TO_SKIP.includes(name) && !(name === 'children' && RENDER_TEMPLATES[componentName])
     )
 
     const props: Props = {}
