@@ -21,10 +21,11 @@ export const DialogContent = ({
         className: classNames(withPrefix('dialog-content'), tagAttrs?.className),
       }}
       tagRef={tagRef}
-      minBlockSize="100px"
-      padding={padding}
+      drawable
       variant="outline"
       intent={intent}
+      minBlockSize="100px"
+      padding={padding}
       borderWidth="0px"
     >
       {children}

@@ -29,6 +29,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
       tag={tag}
       tagAttrs={tagAttrs}
       tagRef={tagRef}
+      drawable
       variant="outline"
       color={color || brand}
       intent={intent}

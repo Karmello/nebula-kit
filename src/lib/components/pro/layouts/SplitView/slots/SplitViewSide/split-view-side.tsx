@@ -10,9 +10,12 @@ import { SplitViewSideProps, DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from './definitions
 import { useSplitViewContext } from '../../SplitViewProvider'
 
 export const SplitViewSide = ({
+  // HtmlTag
   children,
   tagAttrs,
   tagRef,
+  // Box
+  theme,
   color,
   intent,
   borderIntent,
@@ -40,21 +43,21 @@ export const SplitViewSide = ({
           'aria-modal': mode === 'overlay' ? true : undefined,
         }}
         tagRef={tagRef || ref}
+        drawable
+        theme={theme}
         variant="solid"
         color={color || brand}
         intent={intent || { base: 'tertiary', [String(switchAt)]: 'neutral' }}
         borderIntent={borderIntent || { base: 'muted', [String(switchAt)]: 'neutral' }}
+        borderLeftWidth={sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
+        borderRightWidth={sidePosition === 'left' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
         left={sidePosition === 'left' ? '0px' : undefined}
         right={sidePosition === 'right' ? '0px' : undefined}
         maxInlineSize={inlineSize}
         overflowY={sideOpen ? 'auto' : 'hidden'}
       >
         <Resize key={mode} property="inlineSize" visible={sideOpen}>
-          <Box
-            inlineSize={inlineSize}
-            borderLeftWidth={sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
-            borderRightWidth={sidePosition === 'left' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
-          >
+          <Box inlineSize={inlineSize} paddingRight={BOX_BORDER_WIDTH}>
             {mode === 'overlay' ? (
               <Flex justifyContent="flex-end">
                 <Box padding="6px" paddingBottom="20px">

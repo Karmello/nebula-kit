@@ -27,6 +27,7 @@ export const Divider = ({
         className: classNames(withPrefix('divider'), tagAttrs?.className),
       }}
       tagRef={tagRef}
+      drawable
       variant="solid"
       color={color}
       intent={intent}

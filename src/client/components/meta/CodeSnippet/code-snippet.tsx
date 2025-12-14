@@ -9,7 +9,6 @@ import { tokenizeCode } from './highlight-tokens'
 export type CodeSnippetProps = {
   code: string
   lang: 'log' | 'bash' | 'tsx'
-  borderRadius?: string
 }
 
 const COLOR_MAP = {
@@ -47,7 +46,7 @@ const COLOR_MAP = {
   '#5CA7E4': { light: 'var(--neb-blue-8)', dark: 'var(--neb-blue-8)' },
 }
 
-export const CodeSnippet = ({ code, lang = 'log', borderRadius }: CodeSnippetProps) => {
+export const CodeSnippet = ({ code, lang = 'log' }: CodeSnippetProps) => {
   const [data, setData] = useState<TokensResult>()
   const [copied, setCopied] = useState<boolean>(false)
 
@@ -77,7 +76,7 @@ export const CodeSnippet = ({ code, lang = 'log', borderRadius }: CodeSnippetPro
     <Flex
       flexDirection="column"
       alignItems="stretch"
-      tagAttrs={{ style: { backgroundColor: COLOR_MAP.bg[theme], borderRadius } }}
+      tagAttrs={{ style: { backgroundColor: COLOR_MAP.bg[theme], borderRadius: 'var(--neb-border-radius)' } }}
     >
       <Box padding="2px" textAlign="end">
         <Button

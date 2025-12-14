@@ -15,7 +15,6 @@ export const Spacer = ({ tagAttrs, tagRef, blockSize = DEFAULT_SPACER_BLOCK_SIZE
         'aria-hidden': 'true',
       }}
       tagRef={tagRef}
-      variant="ghost"
       blockSize={blockSize}
     />
   )

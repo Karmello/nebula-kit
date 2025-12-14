@@ -18,7 +18,7 @@ type PropsFromBox = Pick<BoxProps<'div'>, 'inlineSize'>
 
 type PropsFromDropdownList = Pick<
   DropdownListProps,
-  'variant' | 'intent' | 'size' | 'itemBorderIntent' | 'scrollAlign' | 'visibleItemsCount'
+  'variant' | 'intent' | 'color' | 'size' | 'itemBorderIntent' | 'scrollAlign' | 'visibleItemsCount'
 >
 
 export type SelectProps = PropsFromHtmlTag & PropsFromBox & PropsFromDropdownList & SelectOwnProps

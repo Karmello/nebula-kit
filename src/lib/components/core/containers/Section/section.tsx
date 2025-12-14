@@ -42,6 +42,7 @@ export const Section = <T extends SectionTag = 'section'>({
         } as PropsWithoutRef<ComponentProps<T>>
       }
       tagRef={tagRef}
+      drawable
       variant={variant}
       color={color}
       intent={intent}

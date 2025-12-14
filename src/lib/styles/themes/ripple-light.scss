@@ -1,4 +1,5 @@
-html[data-theme='light'] {
+[data-theme='light'],
+[data-neb-box-theme='light'] {
   .neb-box[data-neb-ripple='true'] {
     &[data-neb-box-variant='solid'] {
       &[data-neb-box-intent='neutral'] {

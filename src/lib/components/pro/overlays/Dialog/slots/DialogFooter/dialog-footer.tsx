@@ -21,9 +21,10 @@ export const DialogFooter = ({
         className: classNames(withPrefix('dialog-footer'), tagAttrs?.className),
       }}
       tagRef={tagRef}
-      padding={padding}
+      drawable
       variant="outline"
       intent={intent}
+      padding={padding}
       borderBottomWidth="0px"
       borderLeftWidth="0px"
       borderRightWidth="0px"

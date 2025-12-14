@@ -12,6 +12,7 @@ const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
     options: ['Select.Option'],
     description: 'Option slots rendered.',
   },
+  color: DROPDOWN_LIST_PROPS_META.color,
   defaultValue: {
     options: ['string'],
     description: 'Initial selected item value when the component is used in uncontrolled mode.',

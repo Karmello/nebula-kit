@@ -75,6 +75,7 @@ export const Button = <T extends ButtonTag = 'button'>({
         } as PropsWithoutRef<ComponentProps<T>>
       }
       tagRef={tagRef || ref}
+      drawable
       variant={variant}
       color={color || brand}
       intent={intent}

@@ -1,4 +1,5 @@
 import { Box, Flex, Section, Spacer, SplitView } from 'lib/components'
+import { useNebkitStore } from 'lib/state'
 
 import {
   ComponentSelect,
@@ -15,6 +16,7 @@ import {
 import { usePlaygroundStore } from './store'
 
 export const PlaygroundPage = () => {
+  const { theme } = useNebkitStore()
   const { view, getActiveSlot } = usePlaygroundStore()
 
   const activeSlot = getActiveSlot()
@@ -30,7 +32,10 @@ export const PlaygroundPage = () => {
             <Spacer blockSize="25px" />
             {view === 'canvas' ? <RenderPanel /> : <PropsViewer />}
           </SplitView.Main>
-          <SplitView.Side inlineSize="320px" intent={{ base: 'inverse', lg: 'neutral' }}>
+          <SplitView.Side
+            theme={{ base: theme === 'light' ? 'dark' : 'light', lg: theme }}
+            inlineSize="320px"
+          >
             <Box padding={{ base: '10px', lg: '0px' }} paddingLeft={{ lg: '30px' }}>
               <Flex flexDirection="column" alignItems="stretch" rowGap="25px">
                 <Flex.Item>

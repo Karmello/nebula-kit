@@ -93,7 +93,7 @@ describe('applyRespValues', () => {
     expect(ref.current.dataset.nebBoxIntent).toBe('primary')
 
     applyRespValues('dataset', ref, 'base', {}, 'Box')
-    expect(ref.current.dataset.nebBoxIntent).toBe('')
+    expect(ref.current.dataset.nebBoxIntent).toBeUndefined()
   })
 
   it('does not reset unrelated keys', () => {

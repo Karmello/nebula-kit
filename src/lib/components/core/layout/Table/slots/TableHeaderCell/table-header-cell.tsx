@@ -41,6 +41,7 @@ export const TableHeaderCell = ({
         rowSpan,
       }}
       tagRef={tagRef}
+      drawable
       variant="solid"
       color={color || rootColor}
       intent={intent || rootIntent}

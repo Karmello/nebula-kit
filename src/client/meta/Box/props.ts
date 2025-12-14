@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { COLORS } from 'lib/definitions'
+import { COLORS, THEMES } from 'lib/definitions'
 import { BoxProps, BOX_VARIANTS, BOX_INTENTS } from 'lib/components/core/base/Box'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -79,6 +79,11 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['CSS'],
     isResponsive: true,
     description: 'Display type controlling how the component is laid out.',
+  },
+  drawable: {
+    options: ['boolean'],
+    description:
+      'Enables visual rendering for the Box surface. When enabled, the Box participates in theming, colors, variants and intents. When disabled, it behaves as a neutral structural container with no visual styling applied.',
   },
   hoveredByDefault: {
     options: ['boolean'],
@@ -228,6 +233,12 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['CSS'],
     isResponsive: true,
     description: 'Text alignment within the component.',
+  },
+  theme: {
+    options: THEMES as never,
+    isResponsive: true,
+    description:
+      'Sets a local theme boundary for the component and its drawable descendants. Overrides the global application theme for this subtree without affecting the rest of the app.',
   },
   top: {
     options: ['CSS'],

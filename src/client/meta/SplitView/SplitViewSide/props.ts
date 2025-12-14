@@ -24,6 +24,7 @@ const SPLIT_VIEW_SIDE_PROPS_META: ComponentMeta<SplitViewSideProps>['props'] = {
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
+  theme: BOX_PROPS_META.theme,
 }
 
 export { SPLIT_VIEW_SIDE_PROPS_META }

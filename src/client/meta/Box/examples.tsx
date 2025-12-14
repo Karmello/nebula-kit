@@ -5,15 +5,24 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   {
     jsx: <Box>Default box</Box>,
     description:
-      'By default Box renders with ghost variant and no intent applied. It inherits its text color from the nearest parent that defines a CSS color property.',
+      'By default Box is non-drawable. It does not paint any colors and serves only as a structural container for layout and composition.',
   },
   {
-    jsx: <Box intent="neutral">Neutral box</Box>,
+    jsx: <Box drawable>Drawable box</Box>,
+    description:
+      'Drawable Box renders with ghost variant and no intent applied by default. It inherits its text color from the nearest parent that defines a CSS color property.',
+  },
+  {
+    jsx: (
+      <Box drawable intent="neutral">
+        Neutral box
+      </Box>
+    ),
     description: 'Neutral Box uses the global text color for its content.',
   },
   {
     jsx: (
-      <Box variant="outline" color="gray" intent="inverse">
+      <Box drawable variant="outline" color="gray" intent="inverse">
         Box is a block
       </Box>
     ),
@@ -21,7 +30,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="outline" color="gray" intent="inverse" padding="20px">
+      <Box drawable variant="outline" color="gray" intent="inverse" padding="20px">
         Padded box
       </Box>
     ),
@@ -29,7 +38,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="outline" color="gray" intent="inverse" padding="20px" textAlign="center">
+      <Box drawable variant="outline" color="gray" intent="inverse" padding="20px" textAlign="center">
         Centered content
       </Box>
     ),
@@ -37,7 +46,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="outline" color="gray" intent="inverse" padding="20px" display="inline-block">
+      <Box drawable variant="outline" color="gray" intent="inverse" padding="20px" display="inline-block">
         Box as inline block
       </Box>
     ),
@@ -45,7 +54,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="solid" color="gray" intent="primary" padding="20px" interactive>
+      <Box drawable interactive variant="solid" color="gray" intent="primary" padding="20px">
         Interactive Box
       </Box>
     ),
@@ -53,7 +62,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="solid" color="gray" intent="primary" padding="20px" interactive hoveredByDefault>
+      <Box drawable interactive hoveredByDefault variant="solid" color="gray" intent="primary" padding="20px">
         Hovered Box
       </Box>
     ),
@@ -61,7 +70,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box variant="solid" color="gray" intent="primary" padding="20px" interactive disabled>
+      <Box drawable interactive disabled variant="solid" color="gray" intent="primary" padding="20px">
         Disabled Box
       </Box>
     ),

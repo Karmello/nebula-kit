@@ -33,6 +33,8 @@ export const Loader = ({
         } as CSSProperties,
       }}
       tagRef={tagRef}
+      drawable
+      variant="ghost"
       blockSize={LOADER_SIZE_CONFIG[size || 'md']}
       inlineSize={LOADER_SIZE_CONFIG[size || 'md']}
       color={color}

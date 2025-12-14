@@ -84,7 +84,7 @@ export const applyRespValues = (
   // -------------------------------------
   // 2. Track which keys were passed before
   // -------------------------------------
-  const appliedKeyStoreName = '__nkPrevUserKeys_' + type
+  const appliedKeyStoreName = '__nkPrevUserKeys_' + type + '_' + (prefix ?? 'root')
   const prevUserKeys: Set<string> = ref.current[appliedKeyStoreName] || new Set()
   const currentUserKeys = new Set(Object.keys(filteredValues))
 
@@ -106,7 +106,11 @@ export const applyRespValues = (
   for (const key of prevUserKeys) {
     const domKey = type === 'dataset' ? getDataAttrName(prefix, key) : key
     if (!currentUserKeys.has(key) && !(domKey in mergedBucket)) {
-      ref.current[type][domKey] = ''
+      if (type === 'dataset') {
+        delete ref.current[type][domKey]
+      } else {
+        ref.current[type][domKey] = ''
+      }
     }
   }
 
@@ -118,7 +122,11 @@ export const applyRespValues = (
     const val = filteredValues[name]
     if (!isNil(val) && !isBlank(val)) {
       const domKey = type === 'dataset' ? getDataAttrName(prefix, name) : name
-      ref.current[type][domKey] = ''
+      if (type === 'dataset') {
+        delete ref.current[type][domKey]
+      } else {
+        ref.current[type][domKey] = ''
+      }
     }
   }
 

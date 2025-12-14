@@ -39,6 +39,7 @@ export const Callout = <T extends CalloutTag = 'div'>({
         } as PropsWithoutRef<ComponentProps<T>>
       }
       tagRef={tagRef}
+      drawable
       variant={variant}
       color={CALLOUT_CONFIG[status || 'info'].color}
       intent={intent}

@@ -62,6 +62,7 @@ export const Text = <T extends TextTag = 'p'>({
         },
         ...applyStaticDataset('text', { typography, bold, italic, underline, noWrap, truncate }),
       }}
+      drawable
       variant="ghost"
       intent={intent}
       color={color}

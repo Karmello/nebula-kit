@@ -16,6 +16,7 @@ export const ListWithChips = ({
       {items.map((s, i) => (
         <Box
           key={i}
+          drawable
           variant="outline"
           color={color}
           intent="primary"

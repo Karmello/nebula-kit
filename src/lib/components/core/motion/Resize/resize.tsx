@@ -60,8 +60,7 @@ export const Resize = ({
         },
       }}
       tagRef={finalRef}
-      overflowX="hidden"
-      overflowY="hidden"
+      overflow="hidden"
     >
       {children}
     </Box>

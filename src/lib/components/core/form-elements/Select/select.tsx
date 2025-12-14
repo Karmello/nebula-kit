@@ -17,6 +17,7 @@ export const Select = ({
   // DropdownList
   variant,
   intent,
+  color,
   size,
   itemBorderIntent,
   scrollAlign,
@@ -62,6 +63,7 @@ export const Select = ({
               tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('select'), tagAttrs?.className) }}
               variant={variant}
               intent={intent}
+              color={color}
               size={size}
               itemBorderIntent={itemBorderIntent}
               scrollToIndex={currentSlotIndex}
@@ -91,6 +93,7 @@ export const Select = ({
                       justifyContent="space-between"
                       size={size}
                       intent={intent}
+                      color={color}
                       fullWidth
                     >
                       {staticLabel || currentSlot?.props.children || '...'}

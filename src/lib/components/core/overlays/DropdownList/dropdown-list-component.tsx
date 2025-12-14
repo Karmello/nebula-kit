@@ -1,8 +1,9 @@
 import { cloneElement, ReactElement, ReactNode, RefObject, useEffect, useLayoutEffect, useRef } from 'react'
 
-import { Flex, Box, Resize, Portal, DropdownListProps } from 'lib/components'
+import { Flex, Box, Resize, Portal, DropdownListProps, useBoxContext } from 'lib/components'
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize/definitions'
 import { useOutsideClick } from 'lib/hooks'
+import { useNebkitStore } from 'lib/state'
 
 import { useDropdownListContext } from './DropdownListProvider'
 import { getItemsWrapperBlockSize, getInitScrollTop, handleArrowNavigation } from './helpers'
@@ -20,6 +21,7 @@ export const DropdownListComponent = ({
   const {
     variant,
     intent,
+    color,
     resizeVisible,
     setResizeVisible,
     open,
@@ -38,6 +40,9 @@ export const DropdownListComponent = ({
   const finalVisibleItemsCount = itemsCount < (visibleItemsCount ?? 0) ? itemsCount : (visibleItemsCount ?? 0)
 
   useOutsideClick([triggerRef, portalRef], () => setResizeVisible(false))
+
+  const { brand } = useNebkitStore()
+  const boxContext = useBoxContext()
 
   useEffect(() => {
     if (open) {
@@ -108,7 +113,6 @@ export const DropdownListComponent = ({
           }
         },
       }}
-      intent="neutral"
     >
       {slotsByName['DropdownList.Trigger']}
       {open ? (
@@ -119,6 +123,8 @@ export const DropdownListComponent = ({
             easing={resizeVisible ? 'ease-out' : 'ease-in'}
           >
             <Box
+              drawable
+              theme={boxContext?.theme}
               variant={variant === 'ghost' ? 'solid' : variant}
               intent={variant === 'ghost' ? 'neutral' : intent}
               borderTopWidth="0px"
@@ -142,6 +148,8 @@ export const DropdownListComponent = ({
                   {slotsByName['DropdownList.Item'].map((slot, index) => (
                     <Box
                       key={index}
+                      drawable
+                      theme={boxContext?.theme}
                       variant="outline"
                       borderLeftWidth="0px"
                       borderRightWidth="0px"
@@ -149,6 +157,7 @@ export const DropdownListComponent = ({
                       borderBottomWidth={
                         opensUpDownwards ? (index === itemsCount - 1 ? '0px' : undefined) : undefined
                       }
+                      color={color || brand}
                       borderIntent={itemBorderIntent}
                     >
                       {cloneElement(slot as ReactElement<any>, { index })}

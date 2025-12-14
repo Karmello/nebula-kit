@@ -32,10 +32,11 @@ export const Icon = memo(
             ...tagAttrs?.style,
           },
         }}
-        display="inline-block"
+        drawable
         variant="ghost"
         color={color}
         intent={intent}
+        display="inline-block"
       >
         <Svg
           style={{

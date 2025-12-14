@@ -14,7 +14,7 @@ const PortalWrapper = ({ placement }: Partial<PortalProps>) => {
       </Button>
       {visible ? (
         <Portal anchorRef={buttonRef} placement={placement}>
-          <Box variant="outline" color="blue" intent="primary">
+          <Box drawable variant="outline" color="blue" intent="primary">
             Portal content
           </Box>
         </Portal>

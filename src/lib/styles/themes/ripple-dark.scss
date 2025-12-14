@@ -1,4 +1,5 @@
-html[data-theme='dark'] {
+[data-theme='dark'],
+[data-neb-box-theme='dark'] {
   .neb-box[data-neb-ripple='true'] {
     &[data-neb-box-variant='solid'] {
       &[data-neb-box-intent='neutral'] {

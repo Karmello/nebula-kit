@@ -1,36 +1,38 @@
 @use 'styles/definitions/definitions.scss' as *;
 
-.neb-box[data-neb-box-variant='ghost'] {
-  background-color: transparent;
+.neb-box[data-neb-box-drawable='true'] {
+  &[data-neb-box-variant='ghost'] {
+    background-color: transparent;
 
-  @each $intent in $neb-intents {
-    &[data-neb-box-intent='#{$intent}'] {
-      --neb-ripple-bg: var(--neb-#{$intent}-ghost-hover);
+    @each $intent in $neb-intents {
+      &[data-neb-box-intent='#{$intent}'] {
+        --neb-ripple-bg: var(--neb-#{$intent}-ghost-hover);
 
-      // rest
-      color: var(--neb-#{$intent}-ghost);
+        // rest
+        color: var(--neb-#{$intent}-ghost);
 
-      // interactive
-      &[data-neb-box-interactive='true'] {
-        // hover
-        &:not([data-neb-box-hovered-by-default]):hover,
-        &[data-neb-box-hovered-by-default='true'],
-        &:focus-visible {
-          color: var(--neb-#{$intent}-ghost-hover);
+        // interactive
+        &[data-neb-box-interactive='true'] {
+          // hover
+          &:not([data-neb-box-hovered-by-default]):hover,
+          &[data-neb-box-hovered-by-default='true'],
+          &:focus-visible {
+            color: var(--neb-#{$intent}-ghost-hover);
+          }
+        }
+
+        // disabled
+        &[data-neb-box-disabled='true'] {
+          color: var(--neb-#{$intent}-ghost-disabled);
+        }
+        &[data-neb-box-disabled='true']:-webkit-autofill {
+          -webkit-text-fill-color: var(--neb-#{$intent}-ghost-disabled);
         }
       }
-
-      // disabled
-      &[data-neb-box-disabled='true'] {
-        color: var(--neb-#{$intent}-ghost-disabled);
-      }
-      &[data-neb-box-disabled='true']:-webkit-autofill {
-        -webkit-text-fill-color: var(--neb-#{$intent}-ghost-disabled);
-      }
     }
-  }
 
-  &[data-neb-box-interactive='true']:focus-visible {
-    box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
+    &[data-neb-box-interactive='true']:focus-visible {
+      box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
+    }
   }
 }

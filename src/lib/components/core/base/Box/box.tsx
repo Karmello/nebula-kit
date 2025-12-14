@@ -6,6 +6,8 @@ import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { applyRespValues, applyStaticDataset } from 'lib/service'
 
+import { BoxProvider } from './box-provider'
+
 import './styles/box.scss'
 
 export const Box = <T extends ElementType = 'div'>({
@@ -15,6 +17,8 @@ export const Box = <T extends ElementType = 'div'>({
   tagAttrs,
   tagRef,
   // own
+  drawable,
+  theme,
   variant,
   intent,
   borderIntent,
@@ -168,10 +172,10 @@ export const Box = <T extends ElementType = 'div'>({
   ])
 
   useLayoutEffect(() => {
-    applyRespValues('dataset', tagRef || ref, bp, { color, intent, borderIntent, variant }, 'Box')
-  }, [bp, color, intent, borderIntent, variant])
+    applyRespValues('dataset', tagRef || ref, bp, { theme, color, intent, borderIntent, variant }, 'Box')
+  }, [bp, theme, color, intent, borderIntent, variant])
 
-  return (
+  const box = (
     <HtmlTag
       tag={tag}
       tagAttrs={
@@ -184,6 +188,7 @@ export const Box = <T extends ElementType = 'div'>({
             zIndex,
           },
           ...applyStaticDataset('box', {
+            drawable,
             interactive,
             disabled,
             hoveredByDefault,
@@ -195,6 +200,8 @@ export const Box = <T extends ElementType = 'div'>({
       {children}
     </HtmlTag>
   )
+
+  return theme ? <BoxProvider theme={theme}>{box}</BoxProvider> : box
 }
 
 Box.displayName = 'Box'

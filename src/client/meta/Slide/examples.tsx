@@ -31,7 +31,7 @@ const SLIDE_EXAMPLES_META: ComponentMeta<SlideProps>['examples'] = [
     jsx: (
       <SlideWrapper>
         <Slide visible={false} property="left" duration={1000}>
-          <Box variant="outline" intent="secondary" color="blue">
+          <Box drawable variant="outline" intent="secondary" color="blue">
             Animated content.
           </Box>
         </Slide>
@@ -51,7 +51,7 @@ const SLIDE_EXAMPLES_META: ComponentMeta<SlideProps>['examples'] = [
         <Flex justifyContent="flex-end">
           <SlideWrapper>
             <Slide visible={false} property="right" duration={1000}>
-              <Box variant="outline" intent="secondary" color="blue">
+              <Box drawable variant="outline" intent="secondary" color="blue">
                 Animated content.
               </Box>
             </Slide>
@@ -71,7 +71,7 @@ const SLIDE_EXAMPLES_META: ComponentMeta<SlideProps>['examples'] = [
     jsx: (
       <SlideWrapper>
         <Slide visible={false} property="top" duration={1000}>
-          <Box variant="outline" intent="secondary" color="blue">
+          <Box drawable variant="outline" intent="secondary" color="blue">
             Animated content.
           </Box>
         </Slide>

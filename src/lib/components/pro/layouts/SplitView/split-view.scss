@@ -13,7 +13,7 @@
   .neb-split-view-side {
     block-size: 100%;
     max-inline-size: 100%;
-    overflow: clip;
+    overflow-x: hidden;
   }
 }
 

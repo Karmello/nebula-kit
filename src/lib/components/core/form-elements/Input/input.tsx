@@ -67,6 +67,7 @@ export const Input = ({
             onBlur,
           }}
           tagRef={tagRef}
+          drawable
           variant={variant}
           color={color}
           intent={intent}

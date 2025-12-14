@@ -36,6 +36,7 @@ export const FooterSection = ({
       alignSelf={alignSelf}
     >
       <Box
+        drawable
         variant="outline"
         blockSize="100%"
         intent={borderIntent}

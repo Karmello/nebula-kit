@@ -21,9 +21,10 @@ export const DialogHeader = ({
         className: classNames(withPrefix('dialog-header'), tagAttrs?.className),
       }}
       tagRef={tagRef}
-      padding={padding}
+      drawable
       variant="outline"
       intent={intent}
+      padding={padding}
       borderTopWidth="0px"
       borderLeftWidth="0px"
       borderRightWidth="0px"

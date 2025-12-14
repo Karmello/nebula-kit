@@ -8,17 +8,17 @@ const GRID_ITEM_EXAMPLES_META: ComponentMeta<GridItemProps>['examples'] = [
     jsx: (
       <Grid gridTemplateColumns="auto 1fr auto" gridAutoFlow="row">
         <Grid.Item gridRow="1 / 2" gridColumn="1 / 2">
-          <Box variant="outline" color="blue" intent="primary">
+          <Box drawable variant="outline" color="blue" intent="primary">
             Start
           </Box>
         </Grid.Item>
         <Grid.Item gridRow={{ base: '2 / 3', md: '1 / 2' }} gridColumn={{ base: '1 / -1', md: '2 / 3' }}>
-          <Box variant="outline" color="blue" intent="primary">
+          <Box drawable variant="outline" color="blue" intent="primary">
             Middle
           </Box>
         </Grid.Item>
         <Grid.Item gridRow="1 / 2" gridColumn="3 / 4">
-          <Box variant="outline" color="blue" intent="primary">
+          <Box drawable variant="outline" color="blue" intent="primary">
             End
           </Box>
         </Grid.Item>

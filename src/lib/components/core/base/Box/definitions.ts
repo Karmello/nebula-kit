@@ -1,6 +1,6 @@
 import { ElementType } from 'react'
 
-import { Color, RespValue } from 'lib/definitions'
+import { Color, RespValue, Theme } from 'lib/definitions'
 
 import { HtmlTagProps } from 'lib/components'
 
@@ -12,6 +12,8 @@ export type BoxVariant = (typeof BOX_VARIANTS)[number]
 export type BoxIntent = (typeof BOX_INTENTS)[number]
 
 type BoxOwnProps = {
+  drawable?: boolean
+  theme?: RespValue<Theme>
   variant?: RespValue<BoxVariant>
   intent?: RespValue<BoxIntent>
   borderIntent?: RespValue<BoxIntent>

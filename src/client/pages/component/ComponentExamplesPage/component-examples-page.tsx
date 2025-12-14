@@ -17,6 +17,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
       {!noSandBox ? (
         <>
           <Box
+            drawable
             variant="outline"
             color="gray"
             intent="secondary"
@@ -35,7 +36,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           {!noSandBox ? (
             <Reveal label="Code" color="gray" intent="muted">
               <Box padding="4px">
-                <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} borderRadius="0px" />
+                <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} />
               </Box>
             </Reveal>
           ) : (

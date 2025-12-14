@@ -27,6 +27,7 @@ export const AppFrameFooter = ({
         className: classNames(withPrefix('app-frame-footer'), tagAttrs?.className),
       }}
       tagRef={tagRef}
+      drawable
       variant="solid"
       color={color}
       intent={intent}

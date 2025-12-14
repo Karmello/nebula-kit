@@ -6,7 +6,10 @@
 @use './ghost.scss';
 
 .neb-box {
+  background-color: transparent;
   color: inherit;
+  border-color: transparent;
+
   width: auto;
   max-width: 100%;
   letter-spacing: 0.5px;
@@ -14,7 +17,6 @@
   border-style: solid;
   border-width: 0;
   border-radius: 0;
-  border-color: transparent;
   box-sizing: border-box;
 
   display: block;
@@ -52,9 +54,7 @@
   pointer-events: none;
 }
 
-// border intent
-@each $intent in $neb-intents {
-  .neb-box[data-neb-box-variant][data-neb-box-border-intent='#{$intent}'] {
-    border-color: var(--neb-#{$intent}-solid);
-  }
+.neb-box[data-neb-box-drawable='true']:not([data-neb-box-variant]):not([data-neb-box-intent]) {
+  background-color: var(--neb-background);
+  color: var(--neb-text);
 }

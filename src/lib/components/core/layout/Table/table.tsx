@@ -48,6 +48,7 @@ export const Table = ({
                   },
                 }}
                 tagRef={tagRef}
+                drawable
                 variant="solid"
                 color={color}
                 intent={intent}

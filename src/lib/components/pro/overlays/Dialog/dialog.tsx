@@ -105,10 +105,11 @@ export const Dialog = ({
                           'aria-modal': true,
                         }}
                         tagRef={tagRef || ref}
-                        position="relative"
+                        drawable
                         variant="outline"
                         maxInlineSize="100dvw"
                         maxBlockSize="90dvh"
+                        position="relative"
                         overflowY="auto"
                         intent="inverse"
                         inlineSize={DIALOG_SIZE_MAP[size || 'md']}

@@ -35,6 +35,7 @@ export const AppFrameHeader = ({
         ...applyStaticDataset('app-frame-header', { stickyHeader }),
       }}
       tagRef={tagRef}
+      drawable
       variant="solid"
       color={color}
       intent={intent}
