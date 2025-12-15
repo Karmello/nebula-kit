@@ -1,5 +1,8 @@
+@use './ripple-dark.scss';
 @use 'styles/definitions/definitions.scss' as *;
-@use 'styles/mixins/mixins.scss' as *;
+@use '../themes-mixins.scss' as *;
+@use '../light/mixins-light.scss' as *;
+@use './mixins-dark.scss' as *;
 
 /* Base dark theme primitives, applied globally and to local theme islands */
 html[data-theme='dark'],
@@ -15,11 +18,11 @@ html[data-theme='dark'] {
   @each $color in $neb-colors {
     &[data-brand='#{$color}'] {
       /* Brand interpreted through dark theme */
-      @include neb-apply-dark-theme-color-vars($color);
+      @include neb-set-dark-theme-vars($color, 'ctx-');
 
       /* Rebind inherited brand when entering a light theme island */
       .neb-box[data-neb-box-theme='light']:not([data-neb-box-brand]) {
-        @include neb-apply-dark-theme-color-vars($color);
+        @include neb-set-light-theme-vars($color, 'ctx-');
       }
     }
   }
@@ -33,13 +36,14 @@ html[data-theme='dark'] {
   }
 }
 
-/* Local dark theme islands with explicit local brand */
+/* Local brand anywhere inside dark theme context */
+html[data-theme='dark'] .neb-box,
 .neb-box[data-neb-box-theme='dark'],
 .neb-box[data-neb-box-theme='dark'] .neb-box {
   @each $color in $neb-colors {
     &[data-neb-box-brand='#{$color}'] {
       /* Local brand overrides inherited brand */
-      @include neb-apply-dark-theme-color-vars($color);
+      @include neb-set-dark-theme-vars($color, 'ctx-');
     }
   }
 
@@ -54,13 +58,15 @@ html[data-theme='dark'] {
 
 /* Explicit color overrides, only applied to drawable surfaces */
 html[data-theme='dark'] .neb-box,
-.neb-box[data-neb-box-theme='dark'] .neb-box,
-.neb-box[data-neb-box-theme='dark'] {
+.neb-box[data-neb-box-theme='dark'],
+.neb-box[data-neb-box-theme='dark'] .neb-box {
   &[data-neb-box-drawable='true'] {
+    @include neb-paint-vars-from-ctx();
+
     @each $color in $neb-colors {
       &[data-neb-box-color='#{$color}'] {
         /* Color always overrides brand */
-        @include neb-apply-dark-theme-color-vars($color);
+        @include neb-set-dark-theme-vars($color, '');
       }
     }
 

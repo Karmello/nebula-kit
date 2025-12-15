@@ -1,5 +1,8 @@
+@use './ripple-light.scss';
 @use 'styles/definitions/definitions.scss' as *;
-@use 'styles/mixins/mixins.scss' as *;
+@use '../themes-mixins.scss' as *;
+@use '../dark/mixins-dark.scss' as *;
+@use './mixins-light.scss' as *;
 
 /* Base light theme primitives, applied globally and to local theme islands */
 html[data-theme='light'],
@@ -15,11 +18,11 @@ html[data-theme='light'] {
   @each $color in $neb-colors {
     &[data-brand='#{$color}'] {
       /* Brand interpreted through light theme */
-      @include neb-apply-light-theme-color-vars($color);
+      @include neb-set-light-theme-vars($color, 'ctx-');
 
       /* Rebind inherited brand when entering a dark theme island */
       .neb-box[data-neb-box-theme='dark']:not([data-neb-box-brand]) {
-        @include neb-apply-dark-theme-color-vars($color);
+        @include neb-set-dark-theme-vars($color, 'ctx-');
       }
     }
   }
@@ -33,13 +36,14 @@ html[data-theme='light'] {
   }
 }
 
-/* Local light theme islands with explicit local brand */
+/* Local brand anywhere inside light theme context */
+html[data-theme='light'] .neb-box,
 .neb-box[data-neb-box-theme='light'],
 .neb-box[data-neb-box-theme='light'] .neb-box {
   @each $color in $neb-colors {
     &[data-neb-box-brand='#{$color}'] {
       /* Local brand overrides inherited brand */
-      @include neb-apply-light-theme-color-vars($color);
+      @include neb-set-light-theme-vars($color, 'ctx-');
     }
   }
 
@@ -54,13 +58,15 @@ html[data-theme='light'] {
 
 /* Explicit color overrides, only applied to drawable surfaces */
 html[data-theme='light'] .neb-box,
-.neb-box[data-neb-box-theme='light'] .neb-box,
-.neb-box[data-neb-box-theme='light'] {
+.neb-box[data-neb-box-theme='light'],
+.neb-box[data-neb-box-theme='light'] .neb-box {
   &[data-neb-box-drawable='true'] {
+    @include neb-paint-vars-from-ctx();
+
     @each $color in $neb-colors {
       &[data-neb-box-color='#{$color}'] {
         /* Color always overrides brand */
-        @include neb-apply-light-theme-color-vars($color);
+        @include neb-set-light-theme-vars($color, '');
       }
     }
 

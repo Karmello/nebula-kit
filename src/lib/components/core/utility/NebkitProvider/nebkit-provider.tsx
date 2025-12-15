@@ -28,9 +28,13 @@ export const NebkitProvider = ({
   }, [theme, brand, borderRadiusSize])
 
   useLayoutEffect(() => {
+    document.documentElement.classList.remove('neb-transitions')
     document?.documentElement.setAttribute('data-theme', nebkitStore.theme)
     document.documentElement.setAttribute('data-brand', nebkitStore.brand)
     document.documentElement.style.setProperty('--neb-border-radius', nebkitStore.borderRadius || '')
+    requestAnimationFrame(() => {
+      document.documentElement.classList.add('neb-transitions')
+    })
   }, [nebkitStore])
 
   return children
