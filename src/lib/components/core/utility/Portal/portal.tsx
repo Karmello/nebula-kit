@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom'
 import { Box } from 'lib/components'
 
 import { DEFAULT_PORTAL_PLACEMENT, PortalProps } from './definitions'
+import { useIslandContext } from '../../internal'
 
 export const Portal = ({
   // HtmlTag
@@ -70,6 +71,8 @@ export const Portal = ({
     return () => cancelAnimationFrame(frame)
   }, [updatePosition])
 
+  const islandContext = useIslandContext()
+
   if (!container) return null
 
   let transform
@@ -94,7 +97,7 @@ export const Portal = ({
 
   if (!anchorRef?.current) {
     return createPortal(
-      <Box tagRef={rootRef} tagAttrs={tagAttrs}>
+      <Box tagRef={rootRef} tagAttrs={tagAttrs} theme={islandContext?.theme} brand={islandContext?.brand}>
         {children}
       </Box>,
       container
@@ -112,6 +115,8 @@ export const Portal = ({
           transform,
         },
       }}
+      theme={islandContext?.theme}
+      brand={islandContext?.brand}
       position="absolute"
       zIndex={1000}
       top={position.top !== undefined ? `${position.top}px` : undefined}

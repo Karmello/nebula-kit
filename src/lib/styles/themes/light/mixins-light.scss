@@ -15,11 +15,11 @@
   --neb-#{$prefix}primary-solid: var(--neb-#{$color}-8);
   --neb-#{$prefix}primary-solid-hover: var(--neb-#{$color}-9);
   --neb-#{$prefix}primary-solid-disabled: var(--neb-#{$color}-6);
-  --neb-#{$prefix}primary-text: var(--neb-background);
+  --neb-#{$prefix}primary-text: var(--neb-#{$color}-1);
   --neb-#{$prefix}inverse-solid: var(--neb-#{$color}-12);
   --neb-#{$prefix}inverse-solid-hover: var(--neb-#{$color}-15);
   --neb-#{$prefix}inverse-solid-disabled: var(--neb-#{$color}-10);
-  --neb-#{$prefix}inverse-text: var(--neb-background);
+  --neb-#{$prefix}inverse-text: var(--neb-#{$color}-1);
 
   // outline
   --neb-#{$prefix}neutral-outline: var(--neb-#{$color}-2);

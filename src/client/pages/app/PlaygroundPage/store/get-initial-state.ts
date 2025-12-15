@@ -28,8 +28,8 @@ export const getInitialState = (): State => {
     const isSlot = componentName.includes('.')
     const hasSlots = flatMetasKeys.some(k => k.includes(`${componentName}.`))
 
-    let componentPropNames = Object.keys(flatMetas[componentName].props).filter(
-      name => !PLAYGROUND_MAP[componentName].includes(name)
+    let componentPropNames = Object.keys(flatMetas[componentName].props).filter(name =>
+      PLAYGROUND_MAP[componentName].includes(name)
     )
 
     if (!isSlot && hasSlots) componentPropNames = componentPropNames.filter(name => name !== 'children')

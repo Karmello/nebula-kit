@@ -2,8 +2,9 @@ import { useRef } from 'react'
 import classNames from 'classnames'
 
 import { Resize, Box, Flex, Button, FocusTrap } from 'lib/components'
-import { withPrefix } from 'lib/helpers'
+import { IslandProvider } from 'lib/components/core/internal'
 import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box/definitions'
+import { withPrefix } from 'lib/helpers'
 
 import { SplitViewSideProps, DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from './definitions'
 import { useSplitViewContext } from '../../SplitViewProvider'
@@ -74,7 +75,9 @@ export const SplitViewSide = ({
                 </Box>
               </Flex>
             ) : null}
-            {children}
+            <IslandProvider theme={theme} brand={brand}>
+              {children}
+            </IslandProvider>
           </Box>
         </Resize>
       </Box>

@@ -132,6 +132,7 @@ export const CatalogPageTemplate = ({
                         </Text>
                         {pageKey !== PageKey.foundations.toString() && bundleLabel ? (
                           <Box
+                            drawable
                             variant="solid"
                             color="blue"
                             intent={bundleLabel === 'core' ? 'tertiary' : 'primary'}

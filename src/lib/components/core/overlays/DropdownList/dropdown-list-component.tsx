@@ -1,6 +1,6 @@
 import { cloneElement, ReactElement, ReactNode, RefObject, useEffect, useLayoutEffect, useRef } from 'react'
 
-import { Flex, Box, Resize, Portal, DropdownListProps, useBoxContext } from 'lib/components'
+import { Flex, Box, Resize, Portal, DropdownListProps } from 'lib/components'
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize/definitions'
 import { useOutsideClick } from 'lib/hooks'
 
@@ -39,8 +39,6 @@ export const DropdownListComponent = ({
   const finalVisibleItemsCount = itemsCount < (visibleItemsCount ?? 0) ? itemsCount : (visibleItemsCount ?? 0)
 
   useOutsideClick([triggerRef, portalRef], () => setResizeVisible(false))
-
-  const boxContext = useBoxContext()
 
   useEffect(() => {
     if (open) {
@@ -122,8 +120,6 @@ export const DropdownListComponent = ({
           >
             <Box
               drawable
-              theme={boxContext?.theme}
-              brand={boxContext?.brand}
               variant={variant === 'ghost' ? 'solid' : variant}
               intent={variant === 'ghost' ? 'neutral' : intent}
               borderTopWidth="0px"
@@ -148,8 +144,6 @@ export const DropdownListComponent = ({
                     <Box
                       key={index}
                       drawable
-                      theme={boxContext?.theme}
-                      brand={boxContext?.brand}
                       color={color}
                       borderIntent={itemBorderIntent}
                       variant="outline"

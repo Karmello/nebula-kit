@@ -1,23 +1,26 @@
+import { BoxProps } from 'lib/components'
 import { RespValue } from 'lib/definitions'
 
-const COMMON_BLACKLISTED_PROPS = ['tag', 'tagAttrs', 'tagRef']
-
-export const PLAYGROUND_MAP: Record<string, string[]> = {
+export const PLAYGROUND_MAP: Record<string, unknown[]> = {
   Box: [
-    ...COMMON_BLACKLISTED_PROPS,
-    'borderBottomLeftRadius',
-    'borderBottomRightRadius',
-    'borderBottomWidth',
-    'borderLeftWidth',
-    'borderRightWidth',
-    'borderTopLeftRadius',
-    'borderTopRightRadius',
-    'borderTopWidth',
-    'zIndex',
-  ],
-  Text: [...COMMON_BLACKLISTED_PROPS, 'space'],
-  Button: [...COMMON_BLACKLISTED_PROPS],
-  Callout: [...COMMON_BLACKLISTED_PROPS],
+    'blockSize',
+    'borderIntent',
+    'borderRadius',
+    'borderWidth',
+    'brand',
+    'children',
+    'color',
+    'disabled',
+    'drawable',
+    'hoveredByDefault',
+    'inlineSize',
+    'intent',
+    'interactive',
+    'margin',
+    'padding',
+    'theme',
+    'variant',
+  ] as (keyof BoxProps)[],
 }
 
 export type PlaygroundView = 'canvas' | 'props'

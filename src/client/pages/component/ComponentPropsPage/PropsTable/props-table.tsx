@@ -27,7 +27,7 @@ export const PropsTable = ({ category, data }: Props) => {
             return (
               <Table.Row key={name}>
                 <Table.Cell>
-                  <Text intent="primary" bold>
+                  <Text intent="primary" color="blue" bold>
                     {name}
                   </Text>
                 </Table.Cell>

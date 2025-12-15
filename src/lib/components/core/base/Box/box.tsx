@@ -6,8 +6,6 @@ import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { applyRespValues, applyStaticDataset } from 'lib/service'
 
-import { BoxProvider } from './box-provider'
-
 import './styles/box.scss'
 
 export const Box = <T extends ElementType = 'div'>({
@@ -182,7 +180,7 @@ export const Box = <T extends ElementType = 'div'>({
     )
   }, [bp, theme, brand, color, variant, intent, borderIntent])
 
-  const box = (
+  return (
     <HtmlTag
       tag={tag}
       tagAttrs={
@@ -206,14 +204,6 @@ export const Box = <T extends ElementType = 'div'>({
     >
       {children}
     </HtmlTag>
-  )
-
-  return theme ? (
-    <BoxProvider theme={theme} brand={brand}>
-      {box}
-    </BoxProvider>
-  ) : (
-    box
   )
 }
 

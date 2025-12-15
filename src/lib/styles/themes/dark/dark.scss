@@ -37,7 +37,7 @@ html[data-theme='dark'] {
 }
 
 /* Local brand anywhere inside dark theme context */
-html[data-theme='dark'] .neb-box,
+html[data-theme='dark'] .neb-box:not([data-neb-box-theme='light']),
 .neb-box[data-neb-box-theme='dark'],
 .neb-box[data-neb-box-theme='dark'] .neb-box {
   @each $color in $neb-colors {
@@ -57,7 +57,7 @@ html[data-theme='dark'] .neb-box,
 }
 
 /* Explicit color overrides, only applied to drawable surfaces */
-html[data-theme='dark'] .neb-box,
+html[data-theme='dark'] .neb-box:not([data-neb-box-theme='light']),
 .neb-box[data-neb-box-theme='dark'],
 .neb-box[data-neb-box-theme='dark'] .neb-box {
   &[data-neb-box-drawable='true'] {
