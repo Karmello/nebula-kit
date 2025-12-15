@@ -6,6 +6,11 @@ import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   ...HTML_TAG_PROPS_META,
+  brand: {
+    options: COLORS as never,
+    isResponsive: true,
+    description: 'Default surface color context for the component and its descendants.',
+  },
   blockSize: {
     options: ['CSS'],
     isResponsive: true,

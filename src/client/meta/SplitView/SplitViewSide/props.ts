@@ -5,6 +5,7 @@ import { SplitViewSideProps } from 'lib/components'
 import { DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from 'lib/components/pro/layouts/SplitView/slots/SplitViewSide'
 
 const SPLIT_VIEW_SIDE_PROPS_META: ComponentMeta<SplitViewSideProps>['props'] = {
+  brand: BOX_PROPS_META.brand,
   borderIntent: {
     ...BOX_PROPS_META.borderIntent,
     defaultValue: "{ base: 'muted', [switchAt]: 'neutral' }",

@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { NebkitProviderProps } from 'lib/components'
-import { COLORS, THEMES, Theme } from 'lib/definitions'
+import { COLORS, THEMES } from 'lib/definitions'
 
 import {
   NEBKIT_BORDER_RADIUS_SIZES,
@@ -8,7 +8,7 @@ import {
   DEFAULT_NEBKIT_BRAND,
 } from 'lib/components/core/utility/NebkitProvider'
 
-const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps<Theme>>['props'] = {
+const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = {
   children: {
     options: ['ReactElement'],
     isRequired: true,
