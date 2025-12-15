@@ -3,8 +3,8 @@ import { createContext, useContext, useMemo } from 'react'
 import { Color, RespValue, Theme } from 'lib/definitions'
 
 type IslandContextValue = {
-  theme: RespValue<Theme>
-  brand: RespValue<Color>
+  theme?: RespValue<Theme>
+  brand?: RespValue<Color>
 }
 
 type IslandProviderProps = IslandContextValue & {
