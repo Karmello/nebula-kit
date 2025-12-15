@@ -4,15 +4,15 @@ import { BoxProps } from 'lib/components'
 
 type BoxProviderProps = {
   children: ReactNode
-  theme: BoxProps['theme']
-}
+} & BoxContextValue
 
 type BoxContextValue = {
   theme: BoxProps['theme']
+  brand: BoxProps['brand']
 }
 
-export const BoxProvider = ({ theme, children }: BoxProviderProps) => {
-  const value = useMemo(() => ({ theme }), [theme])
+export const BoxProvider = ({ theme, brand, children }: BoxProviderProps) => {
+  const value = useMemo(() => ({ theme, brand }), [theme, brand])
 
   return <BoxContext.Provider value={value}>{children}</BoxContext.Provider>
 }

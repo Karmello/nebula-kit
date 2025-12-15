@@ -19,10 +19,11 @@ export const Box = <T extends ElementType = 'div'>({
   // own
   drawable,
   theme,
+  brand,
+  color,
   variant,
   intent,
   borderIntent,
-  color,
   // state
   interactive,
   disabled,
@@ -172,8 +173,14 @@ export const Box = <T extends ElementType = 'div'>({
   ])
 
   useLayoutEffect(() => {
-    applyRespValues('dataset', tagRef || ref, bp, { theme, color, intent, borderIntent, variant }, 'Box')
-  }, [bp, theme, color, intent, borderIntent, variant])
+    applyRespValues(
+      'dataset',
+      tagRef || ref,
+      bp,
+      { theme, brand, color, variant, intent, borderIntent },
+      'Box'
+    )
+  }, [bp, theme, brand, color, variant, intent, borderIntent])
 
   const box = (
     <HtmlTag
@@ -201,7 +208,13 @@ export const Box = <T extends ElementType = 'div'>({
     </HtmlTag>
   )
 
-  return theme ? <BoxProvider theme={theme}>{box}</BoxProvider> : box
+  return theme ? (
+    <BoxProvider theme={theme} brand={brand}>
+      {box}
+    </BoxProvider>
+  ) : (
+    box
+  )
 }
 
 Box.displayName = 'Box'

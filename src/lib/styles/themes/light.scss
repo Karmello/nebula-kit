@@ -1,12 +1,15 @@
 @use 'styles/definitions/definitions.scss' as *;
 @use 'styles/mixins/mixins.scss' as *;
 
-html[data-theme='light'] {
+html[data-theme='light'],
+.neb-box[data-neb-box-theme='light'] {
   --neb-background: var(--neb-gray-1);
   --neb-text: var(--neb-gray-15);
   --neb-focus-border: var(--neb-gray-15);
   --neb-loader-opacity: 0.025;
+}
 
+html[data-theme='light'] {
   @each $color in $neb-colors {
     &[data-brand='#{$color}'] {
       @include neb-apply-light-theme-color-vars($color);
@@ -19,8 +22,28 @@ html[data-theme='light'] {
     --neb-primary-text: var(--neb-text);
     --neb-primary-solid-disabled: var(--neb-gray-8);
   }
+}
 
-  .neb-box[data-neb-box-drawable='true'] {
+.neb-box[data-neb-box-theme='light'],
+.neb-box[data-neb-box-theme='light'] .neb-box {
+  @each $color in $neb-colors {
+    &[data-neb-box-brand='#{$color}'] {
+      @include neb-apply-light-theme-color-vars($color);
+    }
+  }
+
+  &[data-neb-box-brand='cyan'],
+  &[data-neb-box-brand='yellow'],
+  &[data-neb-box-brand='amber'] {
+    --neb-primary-text: var(--neb-text);
+    --neb-primary-solid-disabled: var(--neb-gray-8);
+  }
+}
+
+html[data-theme='light'] .neb-box,
+.neb-box[data-neb-box-theme='light'] .neb-box,
+.neb-box[data-neb-box-theme='light'] {
+  &[data-neb-box-drawable='true'] {
     @each $color in $neb-colors {
       &[data-neb-box-color='#{$color}'] {
         @include neb-apply-light-theme-color-vars($color);
@@ -33,28 +56,6 @@ html[data-theme='light'] {
     &[data-neb-box-color='amber'] {
       --neb-primary-text: var(--neb-text);
       --neb-primary-solid-disabled: var(--neb-gray-8);
-    }
-
-    &[data-neb-box-theme='dark'],
-    &[data-neb-box-theme='dark'] .neb-box[data-neb-box-drawable='true'] {
-      --neb-background: var(--neb-gray-15);
-      --neb-text: var(--neb-gray-1);
-      --neb-focus-border: var(--neb-gray-1);
-      --neb-loader-opacity: 0.06;
-
-      @each $color in $neb-colors {
-        &[data-neb-box-color='#{$color}'] {
-          @include neb-apply-dark-theme-color-vars($color);
-        }
-      }
-
-      &[data-neb-box-color='cyan'],
-      &[data-neb-box-color='green'],
-      &[data-neb-box-color='yellow'],
-      &[data-neb-box-color='amber'] {
-        --neb-primary-text: var(--neb-background);
-        --neb-primary-solid-disabled: var(--neb-gray-8);
-      }
     }
   }
 }

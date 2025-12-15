@@ -14,10 +14,11 @@ export type BoxIntent = (typeof BOX_INTENTS)[number]
 type BoxOwnProps = {
   drawable?: boolean
   theme?: RespValue<Theme>
+  brand?: RespValue<Color>
+  color?: RespValue<Color>
   variant?: RespValue<BoxVariant>
   intent?: RespValue<BoxIntent>
   borderIntent?: RespValue<BoxIntent>
-  color?: RespValue<Color>
   // state
   interactive?: boolean
   disabled?: boolean

@@ -16,9 +16,9 @@ export const NEBKIT_BORDER_RADIUS_SIZES = ['xs', 'sm', 'md', 'lg', 'xl'] as cons
 
 export type NebkitBorderRadiusSize = (typeof NEBKIT_BORDER_RADIUS_SIZES)[number]
 
-export type NebkitProviderProps<T extends Theme = 'light'> = {
+export type NebkitProviderProps = {
   children: ReactElement
-  theme?: T
+  theme?: Theme
   brand?: Color
   borderRadiusSize?: NebkitBorderRadiusSize
 }

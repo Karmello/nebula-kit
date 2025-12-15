@@ -3,7 +3,6 @@ import { cloneElement, ReactElement, ReactNode, RefObject, useEffect, useLayoutE
 import { Flex, Box, Resize, Portal, DropdownListProps, useBoxContext } from 'lib/components'
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize/definitions'
 import { useOutsideClick } from 'lib/hooks'
-import { useNebkitStore } from 'lib/state'
 
 import { useDropdownListContext } from './DropdownListProvider'
 import { getItemsWrapperBlockSize, getInitScrollTop, handleArrowNavigation } from './helpers'
@@ -41,7 +40,6 @@ export const DropdownListComponent = ({
 
   useOutsideClick([triggerRef, portalRef], () => setResizeVisible(false))
 
-  const { brand } = useNebkitStore()
   const boxContext = useBoxContext()
 
   useEffect(() => {
@@ -125,6 +123,7 @@ export const DropdownListComponent = ({
             <Box
               drawable
               theme={boxContext?.theme}
+              brand={boxContext?.brand}
               variant={variant === 'ghost' ? 'solid' : variant}
               intent={variant === 'ghost' ? 'neutral' : intent}
               borderTopWidth="0px"
@@ -150,6 +149,7 @@ export const DropdownListComponent = ({
                       key={index}
                       drawable
                       theme={boxContext?.theme}
+                      brand={boxContext?.brand}
                       variant="outline"
                       borderLeftWidth="0px"
                       borderRightWidth="0px"
@@ -157,7 +157,7 @@ export const DropdownListComponent = ({
                       borderBottomWidth={
                         opensUpDownwards ? (index === itemsCount - 1 ? '0px' : undefined) : undefined
                       }
-                      color={color || brand}
+                      color={color}
                       borderIntent={itemBorderIntent}
                     >
                       {cloneElement(slot as ReactElement<any>, { index })}

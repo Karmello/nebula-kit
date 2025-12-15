@@ -3,7 +3,6 @@ import classNames from 'classnames'
 
 import { Resize, Box, Flex, Button, FocusTrap } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { useNebkitStore } from 'lib/state'
 import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box/definitions'
 
 import { SplitViewSideProps, DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from './definitions'
@@ -16,12 +15,12 @@ export const SplitViewSide = ({
   tagRef,
   // Box
   theme,
+  brand,
   color,
   intent,
   borderIntent,
   inlineSize = DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
 }: SplitViewSideProps) => {
-  const { brand } = useNebkitStore()
   const { sideOpen, setSideOpen, sidePosition, switchAt, mode } = useSplitViewContext()
 
   const ref = useRef(null)
@@ -45,8 +44,9 @@ export const SplitViewSide = ({
         tagRef={tagRef || ref}
         drawable
         theme={theme}
+        brand={brand}
         variant="solid"
-        color={color || brand}
+        color={color}
         intent={intent || { base: 'tertiary', [String(switchAt)]: 'neutral' }}
         borderIntent={borderIntent || { base: 'muted', [String(switchAt)]: 'neutral' }}
         borderLeftWidth={sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : '0px'}

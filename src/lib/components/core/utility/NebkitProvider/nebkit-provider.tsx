@@ -1,16 +1,15 @@
 import { ReactElement, useLayoutEffect } from 'react'
 
 import { useNebkitStore } from 'lib/state'
-import { Theme } from 'lib/definitions'
 
 import { NebkitProviderProps } from './definitions'
 
-export const NebkitProvider = <T extends Theme = 'light'>({
+export const NebkitProvider = ({
   children,
   theme,
   brand,
   borderRadiusSize,
-}: NebkitProviderProps<T>): ReactElement => {
+}: NebkitProviderProps): ReactElement => {
   const nebkitStore = useNebkitStore()
 
   useLayoutEffect(() => {

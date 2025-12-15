@@ -6,7 +6,6 @@ import { Ripple } from 'lib/components/core/internal'
 import { applyRespValues } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
-import { useNebkitStore } from 'lib/state'
 
 import {
   BUTTON_SIZE_CONFIG,
@@ -47,7 +46,6 @@ export const Button = <T extends ButtonTag = 'button'>({
   const ref = useRef<ComponentRef<T>>(null)
 
   const { bp } = useScreen()
-  const { brand } = useNebkitStore()
 
   useLayoutEffect(() => {
     applyRespValues('dataset', tagRef || ref, bp, { fullWidth }, 'Btn')
@@ -77,7 +75,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       tagRef={tagRef || ref}
       drawable
       variant={variant}
-      color={color || brand}
+      color={color}
       intent={intent}
       hoveredByDefault={hoveredByDefault}
       disabled={disabled || loading}

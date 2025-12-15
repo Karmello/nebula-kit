@@ -32,6 +32,7 @@ export const RenderPanel = () => {
       <Spacer blockSize="5px" />
       <Box
         tagAttrs={{ style: { borderStyle: 'dashed' } }}
+        drawable
         variant="outline"
         intent="secondary"
         color="blue"
