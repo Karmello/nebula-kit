@@ -1,6 +1,7 @@
 @use 'styles/definitions/definitions.scss' as *;
 @use 'styles/mixins/mixins.scss' as *;
 
+/* Base light theme primitives, applied globally and to local theme islands */
 html[data-theme='light'],
 .neb-box[data-neb-box-theme='light'] {
   --neb-background: var(--neb-gray-1);
@@ -9,13 +10,21 @@ html[data-theme='light'],
   --neb-loader-opacity: 0.025;
 }
 
+/* Global light theme + global brand */
 html[data-theme='light'] {
   @each $color in $neb-colors {
     &[data-brand='#{$color}'] {
+      /* Brand interpreted through light theme */
       @include neb-apply-light-theme-color-vars($color);
+
+      /* Rebind inherited brand when entering a dark theme island */
+      .neb-box[data-neb-box-theme='dark']:not([data-neb-box-brand]) {
+        @include neb-apply-dark-theme-color-vars($color);
+      }
     }
   }
 
+  /* Contrast tweaks for bright brands */
   &[data-brand='cyan'],
   &[data-brand='yellow'],
   &[data-brand='amber'] {
@@ -24,14 +33,17 @@ html[data-theme='light'] {
   }
 }
 
+/* Local light theme islands with explicit local brand */
 .neb-box[data-neb-box-theme='light'],
 .neb-box[data-neb-box-theme='light'] .neb-box {
   @each $color in $neb-colors {
     &[data-neb-box-brand='#{$color}'] {
+      /* Local brand overrides inherited brand */
       @include neb-apply-light-theme-color-vars($color);
     }
   }
 
+  /* Local contrast tweaks */
   &[data-neb-box-brand='cyan'],
   &[data-neb-box-brand='yellow'],
   &[data-neb-box-brand='amber'] {
@@ -40,16 +52,19 @@ html[data-theme='light'] {
   }
 }
 
+/* Explicit color overrides, only applied to drawable surfaces */
 html[data-theme='light'] .neb-box,
 .neb-box[data-neb-box-theme='light'] .neb-box,
 .neb-box[data-neb-box-theme='light'] {
   &[data-neb-box-drawable='true'] {
     @each $color in $neb-colors {
       &[data-neb-box-color='#{$color}'] {
+        /* Color always overrides brand */
         @include neb-apply-light-theme-color-vars($color);
       }
     }
 
+    /* Color-specific contrast tweaks */
     &[data-neb-box-color='cyan'],
     &[data-neb-box-color='green'],
     &[data-neb-box-color='yellow'],

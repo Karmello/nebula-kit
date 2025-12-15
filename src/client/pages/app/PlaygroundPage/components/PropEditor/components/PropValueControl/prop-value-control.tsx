@@ -69,12 +69,14 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
       ) : null}
       {prop.options[0] === 'boolean' ? (
         <Select value={value} onChange={onChange}>
+          <Select.Option value="">...</Select.Option>
           <Select.Option value="true">true</Select.Option>
           <Select.Option value="false">false</Select.Option>
         </Select>
       ) : null}
       {prop.options[0] === 'IconName' ? (
         <Select value={value} onChange={onChange}>
+          <Select.Option value="">...</Select.Option>
           {Object.keys(ICONS).map(iconName => (
             <Select.Option key={iconName} value={iconName}>
               {iconName}
@@ -83,7 +85,8 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
         </Select>
       ) : null}
       {!['CSS', 'ReactNode', 'string', 'number', 'boolean', 'IconName'].includes(prop.options[0]) ? (
-        <Select value={value} onChange={onChange}>
+        <Select value={value} onChange={onChange} scrollAlign="center">
+          <Select.Option value="">...</Select.Option>
           {prop.options.map(option => (
             <Select.Option key={option} value={option}>
               {option}

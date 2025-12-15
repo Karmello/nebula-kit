@@ -77,7 +77,7 @@ export default () => {
         <Text>Use color when a component must be styled explicitly.</Text>
       </Section>
       <Spacer blockSize="40px" />
-      <Section heading="Drawable surfaces" size="sm">
+      <Section heading="Drawable surface" size="sm">
         <Text>Only drawable Boxes participate in visual styling.</Text>
         <Spacer />
         <MarkerList>
@@ -95,15 +95,15 @@ export default () => {
         <Text>This separation keeps layouts clean and reduces unnecessary styling work.</Text>
       </Section>
       <Spacer blockSize="40px" />
-      <Section heading="Variants and intents" size="sm">
-        <Text>Variants and intents define how a drawable surface is rendered.</Text>
+      <Section heading="Variant and intent" size="sm">
+        <Text>Variant and intent define how a drawable surface is rendered.</Text>
         <Spacer />
         <MarkerList>
           <MarkerList.Item>
-            <Text>Variants control structure (solid, outline, soft-outline, ghost)</Text>
+            <Text>Variant controls structure (solid, outline, soft-outline, ghost)</Text>
           </MarkerList.Item>
           <MarkerList.Item>
-            <Text>Intents control semantic meaning (neutral, muted, primary, etc.)</Text>
+            <Text>Intent controls semantic meaning (neutral, muted, primary, etc.)</Text>
           </MarkerList.Item>
           <MarkerList.Item>
             <Text>Both are always local to the component</Text>
@@ -113,7 +113,7 @@ export default () => {
           </MarkerList.Item>
         </MarkerList>
         <Spacer />
-        <Text>Variants and intents never propagate.</Text>
+        <Text>Variant and intent never propagate.</Text>
       </Section>
       <Spacer blockSize="40px" />
       <Section heading="Local styling islands" size="sm">
@@ -127,52 +127,14 @@ export default () => {
             <Text>All drawable descendants follow automatically</Text>
           </MarkerList.Item>
           <MarkerList.Item>
-            <Text>Islands can be nested</Text>
-          </MarkerList.Item>
-          <MarkerList.Item>
             <Text>Global settings remain unchanged</Text>
           </MarkerList.Item>
         </MarkerList>
         <Spacer />
-        <Text>This enables complex layouts with mixed visual contexts.</Text>
-      </Section>
-      <Spacer blockSize="40px" />
-      <Section heading="Portals" size="sm">
-        <Text>Portals render outside the DOM hierarchy and do not inherit CSS variables automatically.</Text>
-        <Spacer />
-        <MarkerList>
-          <MarkerList.Item>
-            <Text>Theme and brand are passed through context</Text>
-          </MarkerList.Item>
-          <MarkerList.Item>
-            <Text>BoxProvider bridges styling context for portals</Text>
-          </MarkerList.Item>
-          <MarkerList.Item>
-            <Text>This ensures portals match the visual environment they originate from</Text>
-          </MarkerList.Item>
-        </MarkerList>
-        <Spacer />
-        <Text>Portals behave consistently with non-portal components.</Text>
-      </Section>
-      <Spacer blockSize="40px" />
-      <Section heading="Resolution rules" size="sm">
-        <MarkerList>
-          <MarkerList.Item>
-            <Text>Nearest theme wins</Text>
-          </MarkerList.Item>
-          <MarkerList.Item>
-            <Text>Nearest brand wins</Text>
-          </MarkerList.Item>
-          <MarkerList.Item>
-            <Text>Color overrides brand</Text>
-          </MarkerList.Item>
-          <MarkerList.Item>
-            <Text>Theme affects how colors are interpreted</Text>
-          </MarkerList.Item>
-          <MarkerList.Item>
-            <Text>Only drawable Boxes apply visual styling</Text>
-          </MarkerList.Item>
-        </MarkerList>
+        <Text>
+          This enables layouts with mixed visual contexts. Nested theme inversions are not a supported pattern
+          and result in undefined behavior.
+        </Text>
       </Section>
     </Box>
   )

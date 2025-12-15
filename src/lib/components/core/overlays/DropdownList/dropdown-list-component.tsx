@@ -150,6 +150,8 @@ export const DropdownListComponent = ({
                       drawable
                       theme={boxContext?.theme}
                       brand={boxContext?.brand}
+                      color={color}
+                      borderIntent={itemBorderIntent}
                       variant="outline"
                       borderLeftWidth="0px"
                       borderRightWidth="0px"
@@ -157,8 +159,6 @@ export const DropdownListComponent = ({
                       borderBottomWidth={
                         opensUpDownwards ? (index === itemsCount - 1 ? '0px' : undefined) : undefined
                       }
-                      color={color}
-                      borderIntent={itemBorderIntent}
                     >
                       {cloneElement(slot as ReactElement<any>, { index })}
                     </Box>

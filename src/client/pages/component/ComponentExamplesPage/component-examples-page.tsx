@@ -20,7 +20,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
             drawable
             variant="outline"
             color="gray"
-            intent="secondary"
+            intent="tertiary"
             padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
             tagAttrs={{
               style: { borderStyle: 'dashed' },
