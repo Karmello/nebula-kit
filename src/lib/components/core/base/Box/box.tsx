@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { BoxProps, HtmlTag } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
-import { applyRespValues, applyStaticDataset } from 'lib/service'
+import { updateDomRespStyle, updateDomRespDataset, updateDomStaticDataset } from 'lib/service'
 
 import './styles/box.scss'
 
@@ -81,7 +81,7 @@ export const Box = <T extends ElementType = 'div'>({
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    applyRespValues('style', tagRef || ref, bp, {
+    updateDomRespStyle('Box', tagRef || ref, bp, {
       opacity,
       borderWidth,
       borderTopWidth,
@@ -170,7 +170,7 @@ export const Box = <T extends ElementType = 'div'>({
   ])
 
   useLayoutEffect(() => {
-    applyRespValues('dataset', tagRef || ref, bp, { theme, brand, color, variant, intent }, 'Box')
+    updateDomRespDataset('Box', tagRef || ref, bp, { theme, brand, color, variant, intent })
   }, [bp, theme, brand, color, variant, intent])
 
   return (
@@ -185,7 +185,7 @@ export const Box = <T extends ElementType = 'div'>({
             ...tagAttrs?.style,
             zIndex,
           },
-          ...applyStaticDataset('box', {
+          ...updateDomStaticDataset('Box', {
             drawable,
             interactive,
             disabled,

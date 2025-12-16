@@ -2,7 +2,7 @@ import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, useLayoutEf
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { applyRespValues } from 'lib/service'
+import { updateDomRespStyle } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 
@@ -29,7 +29,7 @@ export const FlexItem = <T extends ElementType = 'div'>({
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    applyRespValues('style', tagRef || ref, bp, {
+    updateDomRespStyle('Flex.Item', tagRef || ref, bp, {
       flex,
       flexGrow,
       flexShrink,

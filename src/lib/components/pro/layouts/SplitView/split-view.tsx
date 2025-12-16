@@ -5,7 +5,7 @@ import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize/defin
 import { WithSlots } from 'lib/components/core/internal'
 import { withPrefix } from 'lib/helpers'
 import { DEFAULT_SWITCH_AT } from 'lib/definitions'
-import { applyStaticDataset } from 'lib/service'
+import { updateDomStaticDataset } from 'lib/service'
 
 import { SplitViewProvider, useSplitViewContext } from './SplitViewProvider'
 import { SPLIT_VIEW_SIDE_POSITIONS, SplitViewProps } from './definitions'
@@ -47,7 +47,7 @@ const SplitViewComponent = ({
             tagAttrs={{
               ...tagAttrs,
               className: withPrefix('split-view'),
-              ...applyStaticDataset('split-view', { mode }),
+              ...updateDomStaticDataset('SplitView', { mode }),
             }}
             tagRef={tagRef}
             gridTemplateColumns={sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto'}

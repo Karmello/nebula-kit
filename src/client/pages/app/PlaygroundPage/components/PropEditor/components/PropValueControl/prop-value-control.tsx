@@ -75,14 +75,24 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
         />
       ) : null}
       {prop.options[0] === 'boolean' ? (
-        <Select value={value} onChange={onChange} intent={{ base: 'secondary', lg: 'tertiary' }}>
+        <Select
+          value={value}
+          onChange={onChange}
+          intent={{ base: 'secondary', lg: 'tertiary' }}
+          itemBorderIntent={{ base: 'tertiary', lg: 'muted' }}
+        >
           <Select.Option value="">...</Select.Option>
           <Select.Option value="true">true</Select.Option>
           <Select.Option value="false">false</Select.Option>
         </Select>
       ) : null}
       {prop.options[0] === 'IconName' ? (
-        <Select value={value} onChange={onChange} intent={{ base: 'secondary', lg: 'tertiary' }}>
+        <Select
+          value={value}
+          onChange={onChange}
+          intent={{ base: 'secondary', lg: 'tertiary' }}
+          itemBorderIntent={{ base: 'tertiary', lg: 'muted' }}
+        >
           <Select.Option value="">...</Select.Option>
           {Object.keys(ICONS).map(iconName => (
             <Select.Option key={iconName} value={iconName}>
@@ -97,6 +107,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
           onChange={onChange}
           scrollAlign="center"
           intent={{ base: 'secondary', lg: 'tertiary' }}
+          itemBorderIntent={{ base: 'tertiary', lg: 'muted' }}
         >
           <Select.Option value="">...</Select.Option>
           {prop.options.map(option => (

@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
-import { applyRespValues } from 'lib/service'
+import { updateDomRespStyle, updateDomRespDataset } from 'lib/service'
 
 import { FlexProps } from './definitions'
 
@@ -30,7 +30,7 @@ export const Flex = <T extends ElementType = 'div'>({
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    applyRespValues('style', tagRef || ref, bp, {
+    updateDomRespStyle('Flex', tagRef || ref, bp, {
       flexDirection,
       flexWrap,
       justifyContent,
@@ -42,7 +42,7 @@ export const Flex = <T extends ElementType = 'div'>({
   }, [bp, flexDirection, flexWrap, justifyContent, alignItems, gap, rowGap, columnGap])
 
   useLayoutEffect(() => {
-    applyRespValues('dataset', tagRef || ref, bp, { flexDirection }, 'Flex')
+    updateDomRespDataset('Flex', tagRef || ref, bp, { flexDirection })
   }, [bp, flexDirection])
 
   return (

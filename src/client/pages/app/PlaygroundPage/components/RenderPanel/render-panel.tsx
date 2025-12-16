@@ -1,5 +1,5 @@
 import * as LIB_COMPONENTS from 'lib/components'
-import { Text, Spacer } from 'lib/components'
+import { Text, Spacer, Box } from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
 
@@ -31,6 +31,12 @@ export const RenderPanel = () => {
       <Text bold>{activeComponent}</Text>
       <Spacer blockSize="5px" />
       {Component}
+      {/* <Box drawable theme="dark" blockSize="200px" variant="solid" intent="muted" color="blue">
+        Box 1
+        <Box drawable theme="light" blockSize="200px" variant="solid" intent="muted" color="blue">
+          Box 2
+        </Box>
+      </Box> */}
     </>
   )
 }

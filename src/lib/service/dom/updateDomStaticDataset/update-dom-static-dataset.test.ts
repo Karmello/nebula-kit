@@ -1,16 +1,16 @@
-import { applyStaticDataset } from '../applyStaticDataset'
+import { updateDomStaticDataset } from '../updateDomStaticDataset'
 
-describe('applyStaticDataset', () => {
+describe('updateDomStaticDataset', () => {
   it('returns empty object when props is undefined', () => {
-    expect(applyStaticDataset('box', undefined)).toEqual({})
+    expect(updateDomStaticDataset('Box', undefined)).toEqual({})
   })
 
   it('returns empty object when props is empty', () => {
-    expect(applyStaticDataset('text', {} as any)).toEqual({})
+    expect(updateDomStaticDataset('Text', {} as any)).toEqual({})
   })
 
   it('builds data attributes for defined props only', () => {
-    const out = applyStaticDataset('box', {
+    const out = updateDomStaticDataset('Box', {
       variant: 'primary',
       intent: 'success',
       interactive: true,
@@ -32,7 +32,7 @@ describe('applyStaticDataset', () => {
   })
 
   it('skips undefined props', () => {
-    const out = applyStaticDataset('box', {
+    const out = updateDomStaticDataset('Box', {
       variant: undefined,
       intent: 'error',
       interactive: undefined,
@@ -46,19 +46,19 @@ describe('applyStaticDataset', () => {
   })
 
   it('supports the dashed prefix "nav-layout"', () => {
-    const out = applyStaticDataset('nav-layout', {
+    const out = updateDomStaticDataset('AppFrameHeader', {
       side: 'start',
       open: false,
     } as any)
 
     expect(out).toEqual({
-      'data-neb-nav-layout-side': 'start',
-      'data-neb-nav-layout-open': false,
+      'data-neb-app-frame-header-side': 'start',
+      'data-neb-app-frame-header-open': false,
     })
   })
 
   it('booleans are preserved as booleans', () => {
-    const out = applyStaticDataset('text', {
+    const out = updateDomStaticDataset('Text', {
       disabled: true,
       interactive: false,
     } as any)
@@ -70,7 +70,7 @@ describe('applyStaticDataset', () => {
   })
 
   it('current behavior: unknown keys are forwarded if present on the object', () => {
-    const out = applyStaticDataset('box', {
+    const out = updateDomStaticDataset('Box', {
       // valid keys
       variant: 'ghost',
       // extra key not part of DataAttrProps at type level

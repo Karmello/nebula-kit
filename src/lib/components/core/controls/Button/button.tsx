@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { Box, Text, WithIcon, Loader } from 'lib/components'
 import { Ripple } from 'lib/components/core/internal'
-import { applyRespValues } from 'lib/service'
+import { updateDomRespDataset } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 
@@ -48,7 +48,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    applyRespValues('dataset', tagRef || ref, bp, { fullWidth }, 'Btn')
+    updateDomRespDataset('Button', tagRef || ref, bp, { fullWidth })
   }, [bp, fullWidth])
 
   const text = (
@@ -64,8 +64,8 @@ export const Button = <T extends ButtonTag = 'button'>({
         {
           ...tagAttrs,
           className: classNames(
-            withPrefix('btn'),
-            children === undefined ? withPrefix('btn-square') : undefined,
+            withPrefix('button'),
+            children === undefined ? withPrefix('button-square') : undefined,
             tagAttrs?.className
           ),
           type: tagAttrs?.type || 'button',

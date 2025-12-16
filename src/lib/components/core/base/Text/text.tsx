@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 import { Box, WithIcon } from 'lib/components'
-import { applyStaticDataset } from 'lib/service'
+import { updateDomStaticDataset } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
 
 import {
@@ -60,7 +60,7 @@ export const Text = <T extends TextTag = 'p'>({
             : {}),
           ...(tagAttrs?.style || {}),
         },
-        ...applyStaticDataset('text', { typography, bold, italic, underline, noWrap, truncate }),
+        ...updateDomStaticDataset('Text', { typography, bold, italic, underline, noWrap, truncate }),
       }}
       drawable
       variant="ghost"

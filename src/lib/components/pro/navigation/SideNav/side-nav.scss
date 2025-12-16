@@ -1,12 +1,12 @@
 .neb-side-nav {
   .neb-side-nav-category,
   .neb-side-nav-item {
-    .neb-btn {
+    .neb-button {
       --neb-border-radius: 0;
     }
   }
 
-  .neb-btn.neb-side-nav-item {
+  .neb-button.neb-side-nav-item {
     --neb-border-radius: 0;
   }
 }

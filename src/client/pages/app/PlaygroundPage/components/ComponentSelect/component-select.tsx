@@ -17,8 +17,8 @@ export const ComponentSelect = () => {
         onChange={setActiveComponent}
         scrollAlign="center"
         visibleItemsCount={7}
-        // intent="secondary"
-        intent={{ md: 'secondary' }}
+        intent={{ base: 'secondary', lg: 'tertiary' }}
+        itemBorderIntent={{ base: 'tertiary', lg: 'muted' }}
       >
         {getNoSlotComponentNames().map(name => (
           <Select.Option

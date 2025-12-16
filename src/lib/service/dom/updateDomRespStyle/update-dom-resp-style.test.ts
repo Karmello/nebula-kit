@@ -1,4 +1,4 @@
-import { applyRespValues } from '../applyRespValues'
+import { updateDomRespStyle } from '../updateDomRespStyle'
 
 const makeRef = () => ({
   current: {
@@ -7,11 +7,11 @@ const makeRef = () => ({
   },
 })
 
-describe('applyRespValues', () => {
+describe('updateDomRespStyle', () => {
   it('applies a simple style value', () => {
     const ref = makeRef()
 
-    applyRespValues('style', ref, 'base', { padding: '20px' })
+    updateDomRespStyle('Box', ref, 'base', { padding: '20px' })
 
     expect(ref.current.style.padding).toBe('20px')
   })
@@ -19,7 +19,7 @@ describe('applyRespValues', () => {
   it('does not apply undefined values', () => {
     const ref = makeRef()
 
-    applyRespValues('style', ref, 'base', { padding: undefined })
+    updateDomRespStyle('Box', ref, 'base', { padding: undefined })
 
     expect(ref.current.style.padding).toBeUndefined()
   })
@@ -27,7 +27,7 @@ describe('applyRespValues', () => {
   it('does not apply blank string values', () => {
     const ref = makeRef()
 
-    applyRespValues('style', ref, 'base', { padding: '' })
+    updateDomRespStyle('Box', ref, 'base', { padding: '' })
 
     expect(ref.current.style.padding).toBeUndefined()
   })
@@ -36,11 +36,11 @@ describe('applyRespValues', () => {
     const ref = makeRef()
 
     // first apply
-    applyRespValues('style', ref, 'base', { padding: '20px' })
+    updateDomRespStyle('Flex', ref, 'base', { padding: '20px' })
     expect(ref.current.style.padding).toBe('20px')
 
     // then remove padding entirely
-    applyRespValues('style', ref, 'base', {})
+    updateDomRespStyle('Flex', ref, 'base', {})
     expect(ref.current.style.padding).toBe('')
   })
 
@@ -48,12 +48,12 @@ describe('applyRespValues', () => {
     const ref = makeRef()
 
     // base: padding = 20px
-    applyRespValues('style', ref, 'base', {
+    updateDomRespStyle('Box', ref, 'base', {
       padding: { base: '20px', md: undefined },
     })
 
     // md inherits base value (20px)
-    applyRespValues('style', ref, 'md', {
+    updateDomRespStyle('Box', ref, 'md', {
       padding: { base: '20px', md: undefined },
     })
 
@@ -63,37 +63,11 @@ describe('applyRespValues', () => {
   it('merges responsive buckets correctly across breakpoints', () => {
     const ref = makeRef()
 
-    applyRespValues('style', ref, 'md', {
+    updateDomRespStyle('Box', ref, 'md', {
       padding: { base: '10px', sm: '15px', md: '20px' },
     })
 
     expect(ref.current.style.padding).toBe('20px')
-  })
-
-  it('applies dataset values with prefixed names', () => {
-    const ref = makeRef()
-
-    applyRespValues(
-      'dataset',
-      ref,
-      'base',
-      {
-        intent: 'primary',
-      },
-      'Box'
-    )
-
-    expect(ref.current.dataset.nebBoxIntent).toBe('primary')
-  })
-
-  it('resets dataset values when removed', () => {
-    const ref = makeRef()
-
-    applyRespValues('dataset', ref, 'base', { intent: 'primary' }, 'Box')
-    expect(ref.current.dataset.nebBoxIntent).toBe('primary')
-
-    applyRespValues('dataset', ref, 'base', {}, 'Box')
-    expect(ref.current.dataset.nebBoxIntent).toBeUndefined()
   })
 
   it('does not reset unrelated keys', () => {
@@ -101,7 +75,7 @@ describe('applyRespValues', () => {
 
     ref.current.style.opacity = '0.5' // manually set
 
-    applyRespValues('style', ref, 'base', { padding: '10px' })
+    updateDomRespStyle('Box', ref, 'base', { padding: '10px' })
 
     expect(ref.current.style.opacity).toBe('0.5') // untouched
     expect(ref.current.style.padding).toBe('10px')
@@ -110,7 +84,7 @@ describe('applyRespValues', () => {
   it('only resets keys that existed before and were removed', () => {
     const ref = makeRef()
 
-    applyRespValues('style', ref, 'base', {
+    updateDomRespStyle('Box', ref, 'base', {
       padding: '20px',
       margin: '30px',
     })
@@ -119,7 +93,7 @@ describe('applyRespValues', () => {
     expect(ref.current.style.margin).toBe('30px')
 
     // Now only remove padding, margin should remain
-    applyRespValues('style', ref, 'base', {
+    updateDomRespStyle('Box', ref, 'base', {
       margin: '30px',
     })
 

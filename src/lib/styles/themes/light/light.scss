@@ -38,8 +38,8 @@ html[data-theme='light'] {
 
 /* Local brand anywhere inside light theme context */
 html[data-theme='light'] .neb-box,
-.neb-box[data-neb-box-theme='light'],
-.neb-box[data-neb-box-theme='light'] .neb-box {
+.neb-box[data-neb-box-theme='light']:not([data-theme='dark']),
+.neb-box[data-neb-box-theme='light']:not([data-theme='dark']) .neb-box {
   @each $color in $neb-colors {
     &[data-neb-box-brand='#{$color}'] {
       /* Local brand overrides inherited brand */
@@ -58,8 +58,8 @@ html[data-theme='light'] .neb-box,
 
 /* Explicit color overrides, only applied to drawable surfaces */
 html[data-theme='light'] .neb-box,
-.neb-box[data-neb-box-theme='light'],
-.neb-box[data-neb-box-theme='light'] .neb-box {
+.neb-box[data-neb-box-theme='light']:not([data-theme='dark']),
+.neb-box[data-neb-box-theme='light']:not([data-theme='dark']) .neb-box {
   &[data-neb-box-drawable='true'] {
     @include neb-paint-vars-from-ctx();
 

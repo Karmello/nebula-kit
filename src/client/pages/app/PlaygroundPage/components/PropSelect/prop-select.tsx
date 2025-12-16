@@ -22,6 +22,7 @@ export const PropSelect = () => {
         scrollAlign="center"
         visibleItemsCount={7}
         intent={{ base: 'secondary', lg: 'tertiary' }}
+        itemBorderIntent={{ base: 'tertiary', lg: 'muted' }}
       >
         {Object.keys(props).map(propName => (
           <Select.Option

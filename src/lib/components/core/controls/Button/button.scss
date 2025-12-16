@@ -1,6 +1,6 @@
 @use 'styles/definitions/definitions.scss' as *;
 
-.neb-btn {
+.neb-button {
   background-color: transparent;
   font-family: inherit;
   line-height: 1;
@@ -15,14 +15,14 @@
   border-radius: var(--neb-border-radius);
 }
 
-.neb-btn-square {
+.neb-button-square {
   aspect-ratio: 1 / 1;
 }
 
-a.neb-btn {
+a.neb-button {
   text-decoration: none;
 }
 
-.neb-btn[data-neb-btn-full-width='true'] {
+.neb-button[data-neb-button-full-width='true'] {
   inline-size: 100%;
 }

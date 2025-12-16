@@ -1,7 +1,7 @@
 import { Flex } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
 import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
-import { applyStaticDataset } from 'lib/service'
+import { updateDomStaticDataset } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 
@@ -55,7 +55,7 @@ export const Footer = ({
               tagAttrs={{
                 ...tagAttrs,
                 className: withPrefix('footer'),
-                ...applyStaticDataset('footer', { direction }),
+                ...updateDomStaticDataset('Footer', { direction }),
               }}
               tagRef={tagRef}
               alignItems="stretch"
