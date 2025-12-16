@@ -21,6 +21,7 @@ export const PropSelect = () => {
         onChange={value => setActiveProp(isSlot ? activeSlot : activeComponent, value)}
         scrollAlign="center"
         visibleItemsCount={7}
+        intent={{ base: 'secondary', lg: 'tertiary' }}
       >
         {Object.keys(props).map(propName => (
           <Select.Option
