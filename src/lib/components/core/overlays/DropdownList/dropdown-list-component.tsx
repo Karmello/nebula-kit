@@ -145,7 +145,7 @@ export const DropdownListComponent = ({
                       key={index}
                       drawable
                       color={color}
-                      borderIntent={itemBorderIntent}
+                      intent={itemBorderIntent}
                       variant="outline"
                       borderLeftWidth="0px"
                       borderRightWidth="0px"

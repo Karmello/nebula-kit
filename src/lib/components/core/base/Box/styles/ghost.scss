@@ -11,13 +11,18 @@
         // rest
         color: var(--neb-#{$intent}-ghost);
 
-        // interactive
-        &[data-neb-box-interactive='true'] {
-          // hover
-          &:not([data-neb-box-hovered-by-default]):hover,
-          &[data-neb-box-hovered-by-default='true'],
+        // not disabled, interactive
+        &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
+          // hovered, highlighted, focused
+          &:not([data-neb-box-highlighted]):hover,
+          &[data-neb-box-highlighted='true'],
           &:focus-visible {
             color: var(--neb-#{$intent}-ghost-hover);
+          }
+
+          // focus ring
+          &:focus-visible {
+            box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
           }
         }
 
@@ -29,10 +34,6 @@
           -webkit-text-fill-color: var(--neb-#{$intent}-ghost-disabled);
         }
       }
-    }
-
-    &[data-neb-box-interactive='true']:focus-visible {
-      box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
     }
   }
 }

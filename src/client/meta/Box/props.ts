@@ -30,11 +30,6 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['CSS'],
     description: 'Border width for the bottom side.',
   },
-  borderIntent: {
-    options: Object.values(BOX_INTENTS),
-    isResponsive: true,
-    description: "Tone level applied to the border's color.",
-  },
   borderLeftWidth: {
     options: ['CSS'],
     description: 'Border width for the left side.',
@@ -90,10 +85,10 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description:
       'Enables visual rendering for the Box surface. When enabled, the Box participates in theming, colors, variants and intents. When disabled, it behaves as a neutral structural container with no visual styling applied.',
   },
-  hoveredByDefault: {
+  highlighted: {
     options: ['boolean'],
     description:
-      'Shows the element in its hovered visual state by default, without requiring user interaction. Works only with interactive on.',
+      'Shows the element in its hovered visual state by default, without requiring pointer interaction. Applies only when interactive is enabled and has no effect when disabled.',
   },
   inlineSize: {
     options: ['CSS'],

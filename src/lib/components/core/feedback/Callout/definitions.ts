@@ -46,7 +46,7 @@ type CalloutOwnProps = {
 
 type PropsFromHtmlTag<T extends CalloutTag = 'div'> = Omit<HtmlTagProps<T>, 'children'>
 
-type PropsFromBox<T extends CalloutTag = 'div'> = Pick<BoxProps<T>, 'intent' | 'borderIntent'>
+type PropsFromBox<T extends CalloutTag = 'div'> = Pick<BoxProps<T>, 'intent'>
 
 export type CalloutProps<T extends CalloutTag = 'div'> = PropsFromHtmlTag<T> &
   PropsFromBox<T> &

@@ -58,7 +58,7 @@ export const PricingPage = () => {
 
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }}>
-      <Section heading="Pricing plans" intent="neutral" iconName="credit-card">
+      <Section heading="Pricing plans" iconName="credit-card">
         <Text>Choose the plan that fits your workflow.</Text>
         <Spacer blockSize="50px" />
         <Box position="relative">
@@ -75,7 +75,9 @@ export const PricingPage = () => {
                     For newcomers.
                   </Text>
                   <Spacer />
-                  <Text typography="h6">$0</Text>
+                  <Text typography="h6" bold>
+                    $0
+                  </Text>
                   <Spacer />
                   <Text intent="neutral">
                     Access the essential NebulaKit components to start building right away. Perfect for hobby
@@ -106,7 +108,9 @@ export const PricingPage = () => {
                     For individual developers.
                   </Text>
                   <Spacer />
-                  <Text typography="h6">$19 / month</Text>
+                  <Text typography="h6" color="green" intent="primary" bold>
+                    $19 / month
+                  </Text>
                   <Spacer />
                   <Text intent="neutral">
                     Unlock NebulaKit's full component library built on the core primitives. Perfect for
@@ -141,7 +145,9 @@ export const PricingPage = () => {
                     For small teams up to 10 members.
                   </Text>
                   <Spacer />
-                  <Text typography="h6">$49 / month</Text>
+                  <Text typography="h6" color="blue" intent="primary" bold>
+                    $49 / month
+                  </Text>
                   <Spacer />
                   <Text intent="neutral">
                     Ideal for small teams building together under one license. Includes everything from the
@@ -176,7 +182,9 @@ export const PricingPage = () => {
                     For large organizations.
                   </Text>
                   <Spacer />
-                  <Text typography="h6">From $199 / month</Text>
+                  <Text color="red" intent="primary" typography="h6" bold>
+                    From $199 / month
+                  </Text>
                   <Spacer />
                   <Text intent="neutral">
                     Tailored for large organizations and specialized use cases that need flexible agreements.

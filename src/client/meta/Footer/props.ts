@@ -2,6 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { FooterProps } from 'lib/components'
 import { DEFAULT_FOOTER_BORDER_INTENT, FOOTER_TAGS } from 'lib/components/core/layouts/Footer'
 import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/definitions'
+import { BOX_INTENTS } from 'lib/components/core/base/Box'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
@@ -20,8 +21,10 @@ const FOOTER_PROPS_META: ComponentMeta<FooterProps>['props'] = {
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
   borderIntent: {
-    ...BOX_PROPS_META.borderIntent,
+    options: BOX_INTENTS as never,
     defaultValue: String(DEFAULT_FOOTER_BORDER_INTENT),
+    isResponsive: true,
+    description: 'Sets the visual intent of the dividers between sections.',
   },
   padding: BOX_PROPS_META.padding,
   paddingBlock: BOX_PROPS_META.paddingBlock,

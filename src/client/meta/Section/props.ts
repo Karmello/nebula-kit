@@ -15,7 +15,6 @@ import { TEXT_PROPS_META } from '../Text/props'
 
 const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
   ...HTML_TAG_PROPS_META,
-  borderIntent: BOX_PROPS_META.borderIntent,
   children: {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
@@ -26,7 +25,7 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
     isRequired: true,
     description: 'Heading text.',
   },
-  hoveredByDefault: BOX_PROPS_META.hoveredByDefault,
+  highlighted: BOX_PROPS_META.highlighted,
   iconName: TEXT_PROPS_META.iconName,
   iconPosition: {
     ...TEXT_PROPS_META.iconPosition,

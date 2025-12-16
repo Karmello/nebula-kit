@@ -11,7 +11,7 @@ export const ConnectToGithubSection = ({
   const connectToGithub = useConnectToGithub()
 
   return (
-    <Section heading="Github" variant="soft-outline" borderIntent="muted">
+    <Section heading="Github" variant="outline" intent="tertiary">
       <Text>
         Connect your GitHub account to unlock access to the private NebulaKit roadmap. This lets you follow
         upcoming features, track progress and stay aligned with what's being built next.

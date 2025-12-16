@@ -17,7 +17,6 @@ export const AppFrameMain = ({ children, tagAttrs, tagRef, ...paddings }: AppFra
       }}
       tagRef={tagRef}
       drawable
-      intent="neutral"
       {...paddings}
     >
       {children}

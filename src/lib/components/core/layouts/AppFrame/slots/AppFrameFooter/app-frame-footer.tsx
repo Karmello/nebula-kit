@@ -11,12 +11,16 @@ import {
 } from './definitions'
 
 export const AppFrameFooter = ({
+  // HtmlTag
   children,
   tagAttrs,
   tagRef,
+  // Box
   color,
   intent = DEFAULT_APP_FRAME_FOOTER_INTENT,
+  // own
   borderIntent = DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT,
+  // Box
   ...paddings
 }: AppFrameFooterProps) => {
   return (
@@ -28,15 +32,15 @@ export const AppFrameFooter = ({
       }}
       tagRef={tagRef}
       drawable
-      variant="solid"
+      variant="outline"
       color={color}
-      intent={intent}
-      borderIntent={borderIntent}
+      intent={borderIntent}
       borderWidth="0px"
       borderTopWidth={BOX_BORDER_WIDTH}
-      {...paddings}
     >
-      {children}
+      <Box drawable variant="solid" color={color} intent={intent} {...paddings}>
+        {children}
+      </Box>
     </Box>
   )
 }

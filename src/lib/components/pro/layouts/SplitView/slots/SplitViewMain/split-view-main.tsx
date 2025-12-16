@@ -27,7 +27,6 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
             }}
             tagRef={tagRef}
             drawable
-            intent="neutral"
             {...paddings}
           >
             <Flex
@@ -41,7 +40,7 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
                   'aria-expanded': sideOpen,
                 }}
                 iconName={getToggleIconName(sidePosition, sideOpen)}
-                intent="neutral"
+                intent="muted"
                 size="sm"
               />
               {slotsByName['SplitView.MainBar']}

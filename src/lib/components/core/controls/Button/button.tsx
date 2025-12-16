@@ -29,7 +29,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   variant = DEFAULT_BUTTON_VARIANT,
   color,
   intent = DEFAULT_BUTTON_INTENT,
-  hoveredByDefault,
+  highlighted,
   disabled,
   // Text
   iconName,
@@ -77,7 +77,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       variant={variant}
       color={color}
       intent={intent}
-      hoveredByDefault={hoveredByDefault}
+      highlighted={highlighted}
       disabled={disabled || loading}
       interactive
       position="relative"

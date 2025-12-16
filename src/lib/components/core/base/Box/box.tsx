@@ -21,11 +21,10 @@ export const Box = <T extends ElementType = 'div'>({
   color,
   variant,
   intent,
-  borderIntent,
   // state
   interactive,
   disabled,
-  hoveredByDefault,
+  highlighted,
   // css
   opacity,
   textAlign,
@@ -171,14 +170,8 @@ export const Box = <T extends ElementType = 'div'>({
   ])
 
   useLayoutEffect(() => {
-    applyRespValues(
-      'dataset',
-      tagRef || ref,
-      bp,
-      { theme, brand, color, variant, intent, borderIntent },
-      'Box'
-    )
-  }, [bp, theme, brand, color, variant, intent, borderIntent])
+    applyRespValues('dataset', tagRef || ref, bp, { theme, brand, color, variant, intent }, 'Box')
+  }, [bp, theme, brand, color, variant, intent])
 
   return (
     <HtmlTag
@@ -196,7 +189,7 @@ export const Box = <T extends ElementType = 'div'>({
             drawable,
             interactive,
             disabled,
-            hoveredByDefault,
+            highlighted,
           }),
         } as PropsWithoutRef<ComponentProps<T>>
       }

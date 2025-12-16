@@ -55,7 +55,6 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
               heading={item.name}
               size="sm"
               variant="soft-outline"
-              borderIntent="tertiary"
               color="blue"
               intent="primary"
             >

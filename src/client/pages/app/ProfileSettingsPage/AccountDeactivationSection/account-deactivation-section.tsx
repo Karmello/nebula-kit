@@ -12,13 +12,7 @@ export const AccountDeactivationSection = ({
   handleDeactivateSuccess: () => void
 }) => {
   return (
-    <Section
-      heading="Account deactivation"
-      variant="soft-outline"
-      intent="primary"
-      color="red"
-      borderIntent="muted"
-    >
+    <Section heading="Account deactivation" variant="soft-outline" intent="primary" color="red">
       <Text>
         You can deactivate your account here if you no longer wish to use NebulaKit. Deactivation permanently
         removes your user data, disconnects any linked services and signs you out immediately. Your email

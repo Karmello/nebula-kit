@@ -58,7 +58,7 @@ type PropsFromHtmlTag<T extends ButtonTag = 'button'> = HtmlTagProps<T>
 
 type PropsFromBox<T extends ButtonTag = 'button'> = Pick<
   BoxProps<T>,
-  'variant' | 'color' | 'intent' | 'hoveredByDefault' | 'disabled'
+  'variant' | 'color' | 'intent' | 'highlighted' | 'disabled'
 >
 
 type PropsFromFlex = Pick<FlexProps<'span'>, 'justifyContent'>

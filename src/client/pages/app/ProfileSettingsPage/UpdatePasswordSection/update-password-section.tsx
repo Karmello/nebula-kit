@@ -15,7 +15,7 @@ export const UpdatePasswordSection = () => {
   const logoutUser = useLogoutUser()
 
   return (
-    <Section heading="Password" variant="soft-outline" intent="neutral" borderIntent="muted">
+    <Section heading="Password" variant="outline" intent="tertiary">
       <Text>
         You can update your account password here. For security, your current password is required to complete
         the change.

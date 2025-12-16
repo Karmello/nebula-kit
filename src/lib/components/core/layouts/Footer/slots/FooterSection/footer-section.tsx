@@ -36,6 +36,11 @@ export const FooterSection = ({
       alignSelf={alignSelf}
     >
       <Box
+        tagAttrs={{
+          style: {
+            transition: 'none',
+          },
+        }}
         drawable
         variant="outline"
         blockSize="100%"
@@ -48,7 +53,7 @@ export const FooterSection = ({
         paddingBottom={paddingBottom}
         paddingLeft={paddingLeft}
       >
-        <Box intent="neutral">{children}</Box>
+        {children}
       </Box>
     </Flex.Item>
   )

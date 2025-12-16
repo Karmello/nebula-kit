@@ -6,9 +6,9 @@ const SPACER_EXAMPLES_META: ComponentMeta<SpacerProps>['examples'] = [
     description: 'Vertical spacing between two text blocks.',
     jsx: (
       <>
-        <Text intent="neutral">Text 1</Text>
+        <Text>Text 1</Text>
         <Spacer blockSize="50px" />
-        <Text intent="neutral">Text 2</Text>
+        <Text>Text 2</Text>
       </>
     ),
   },

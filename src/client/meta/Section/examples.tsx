@@ -17,14 +17,7 @@ const SECTION_EXAMPLES_META: ComponentMeta<SectionProps>['examples'] = [
   {
     description: 'Section with custom color configuration.',
     jsx: (
-      <Section
-        heading="Custom section"
-        size="lg"
-        variant="outline"
-        color="purple"
-        intent="primary"
-        borderIntent="tertiary"
-      >
+      <Section heading="Custom section" size="lg" variant="outline" color="purple" intent="primary">
         Content
       </Section>
     ),
@@ -39,7 +32,6 @@ const SECTION_EXAMPLES_META: ComponentMeta<SectionProps>['examples'] = [
         variant="outline"
         color="purple"
         intent="primary"
-        borderIntent="tertiary"
         interactive
       >
         Content

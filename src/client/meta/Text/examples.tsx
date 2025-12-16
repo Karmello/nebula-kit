@@ -3,31 +3,19 @@ import { Text, TextProps } from 'lib/components'
 
 const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
   {
-    jsx: <Text intent="neutral">Paragraph</Text>,
+    jsx: <Text>Paragraph</Text>,
     description: 'Text renders as <p> tag by default.',
   },
   {
-    jsx: (
-      <Text intent="neutral" bold>
-        Bold paragraph
-      </Text>
-    ),
+    jsx: <Text bold>Bold paragraph</Text>,
     description: 'Text can be bold.',
   },
   {
-    jsx: (
-      <Text intent="neutral" italic>
-        Italic paragraph
-      </Text>
-    ),
+    jsx: <Text italic>Italic paragraph</Text>,
     description: 'Text can be italic.',
   },
   {
-    jsx: (
-      <Text intent="neutral" underline>
-        Underlined paragraph
-      </Text>
-    ),
+    jsx: <Text underline>Underlined paragraph</Text>,
     description: 'Text can be underlined.',
   },
   {
@@ -56,7 +44,7 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
   },
   {
     jsx: (
-      <Text intent="neutral" textAlign="center">
+      <Text textAlign="center">
         This is an intentionally long line of text that stretches across the container so you can clearly see
         how the textAlign prop changes the alignment inside the element.
       </Text>
@@ -65,7 +53,7 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
   },
   {
     jsx: (
-      <Text intent="neutral" truncate>
+      <Text truncate>
         This is a long piece of text that will not fit into a single line, so it will be truncated with an
         ellipsis at the end.
       </Text>
@@ -74,7 +62,7 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
   },
   {
     jsx: (
-      <Text intent="neutral" clampLines={2}>
+      <Text clampLines={2}>
         This text demonstrates the clampLines prop in action. It keeps flowing with extra words so that it can
         wrap naturally and once it reaches the set limit of three lines, the remaining content will be
         truncated with an ellipsis.
@@ -84,7 +72,7 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
   },
   {
     jsx: (
-      <Text intent="neutral" noWrap>
+      <Text noWrap>
         This is a very long line of text that will not wrap onto the next line when the noWrap prop is
         enabled.
       </Text>
@@ -93,7 +81,7 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
   },
   {
     jsx: (
-      <Text intent="neutral">
+      <Text>
         This paragraph combines different text styles like
         <Text tag="span" bold space="both">
           bold emphasis

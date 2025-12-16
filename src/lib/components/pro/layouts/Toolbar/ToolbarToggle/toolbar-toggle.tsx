@@ -9,7 +9,8 @@ export const ToolbarToggle = () => {
     <Box>
       <Box display={{ [String(switchAt)]: 'none' }}>
         <Button
-          intent="neutral"
+          variant="ghost"
+          intent="primary"
           iconName={mainOpen ? 'close' : 'menu'}
           tagAttrs={{
             onClick: () => setMainOpen(!mainOpen),

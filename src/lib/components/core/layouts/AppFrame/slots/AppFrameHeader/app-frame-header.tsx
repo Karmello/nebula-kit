@@ -16,12 +16,16 @@ import {
 import './app-frame-header.scss'
 
 export const AppFrameHeader = ({
+  // HtmlTag
   children,
   tagAttrs,
   tagRef,
+  // Box
   color,
   intent = DEFAULT_APP_FRAME_HEADER_INTENT,
+  // own
   borderIntent = DEFAULT_APP_FRAME_HEADER_BORDER_INTENT,
+  // Box
   ...paddings
 }: AppFrameHeaderProps) => {
   const { stickyHeader } = useAppFrameContext()
@@ -36,15 +40,15 @@ export const AppFrameHeader = ({
       }}
       tagRef={tagRef}
       drawable
-      variant="solid"
+      variant="outline"
       color={color}
-      intent={intent}
-      borderIntent={borderIntent}
+      intent={borderIntent}
       borderWidth="0px"
       borderBottomWidth={BOX_BORDER_WIDTH}
-      {...paddings}
     >
-      {children}
+      <Box drawable variant="solid" color={color} intent={intent} {...paddings}>
+        {children}
+      </Box>
     </Box>
   )
 }

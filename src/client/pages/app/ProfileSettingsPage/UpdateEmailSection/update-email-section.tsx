@@ -10,7 +10,7 @@ export const UpdateEmailSection = () => {
   const logoutUser = useLogoutUser()
 
   return (
-    <Section heading="Email address" variant="soft-outline" intent="neutral" borderIntent="muted">
+    <Section heading="Email address" variant="outline" intent="tertiary">
       <Text>
         In case you need to update your email address, you can request a change by providing a new one. A
         verification link will be sent to that address. After confirming it, you'll be able to sign in with

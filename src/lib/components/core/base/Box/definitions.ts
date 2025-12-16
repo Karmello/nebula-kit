@@ -18,11 +18,10 @@ type BoxOwnProps = {
   color?: RespValue<Color>
   variant?: RespValue<BoxVariant>
   intent?: RespValue<BoxIntent>
-  borderIntent?: RespValue<BoxIntent>
   // state
   interactive?: boolean
   disabled?: boolean
-  hoveredByDefault?: boolean
+  highlighted?: boolean
   // css
   opacity?: RespValue<number>
   textAlign?: RespValue<string>

@@ -23,7 +23,6 @@ export const SplitViewMainBar = <T extends ElementType = 'div'>({
       }
       tagRef={tagRef}
       drawable
-      intent="neutral"
     >
       {children}
     </Box>

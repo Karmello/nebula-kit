@@ -4,7 +4,6 @@ import { RespValue } from 'lib/definitions'
 export const PLAYGROUND_MAP: Record<string, unknown[]> = {
   Box: [
     'blockSize',
-    'borderIntent',
     'borderRadius',
     'borderWidth',
     'brand',
@@ -12,7 +11,7 @@ export const PLAYGROUND_MAP: Record<string, unknown[]> = {
     'color',
     'disabled',
     'drawable',
-    'hoveredByDefault',
+    'highlighted',
     'inlineSize',
     'intent',
     'interactive',

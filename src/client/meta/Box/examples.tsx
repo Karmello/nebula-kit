@@ -8,25 +8,12 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
       'By default Box is non-drawable. It does not paint any colors and serves only as a structural container for layout and composition.',
   },
   {
-    jsx: <Box drawable>Drawable box</Box>,
-    description:
-      'Drawable Box renders with ghost variant and no intent applied by default. It inherits its text color from the nearest parent that defines a CSS color property.',
-  },
-  {
-    jsx: (
-      <Box drawable intent="neutral">
-        Neutral box
-      </Box>
-    ),
-    description: 'Neutral Box uses the global text color for its content.',
-  },
-  {
     jsx: (
       <Box drawable variant="outline" color="gray" intent="inverse">
         Box is a block
       </Box>
     ),
-    description: 'Box renders as a block element that stretches to full width by default.',
+    description: 'Drawable Box renders as a block element that stretches to full width by default.',
   },
   {
     jsx: (
@@ -62,11 +49,11 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box drawable interactive hoveredByDefault variant="solid" color="gray" intent="primary" padding="20px">
-        Hovered Box
+      <Box drawable interactive highlighted variant="solid" color="gray" intent="primary" padding="20px">
+        Highlighted Box
       </Box>
     ),
-    description: 'Interactive Box in a hovered visual state by default.',
+    description: 'Interactive Box in a highlighted visual state by default.',
   },
   {
     jsx: (

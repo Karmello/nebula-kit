@@ -12,14 +12,20 @@
         // rest
         border-color: var(--neb-#{$intent}-outline);
 
-        // interactive
-        &[data-neb-box-interactive='true'] {
-          // hover
-          &:not([data-neb-box-hovered-by-default]):hover,
-          &[data-neb-box-hovered-by-default='true'],
+        // not disabled, interactive
+        &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
+          // hovered, highlighted, focused
+          &:not([data-neb-box-highlighted]):hover,
+          &[data-neb-box-highlighted='true'],
           &:focus-visible {
             border-color: var(--neb-#{$intent}-outline-hover);
             background-color: var(--neb-#{$intent}-outline-bg-hover);
+          }
+
+          // focus ring
+          &:focus-visible {
+            border-color: var(--neb-focus-border);
+            box-shadow: inset 0 0 0 1px var(--neb-focus-border);
           }
         }
 
@@ -31,24 +37,15 @@
           -webkit-text-fill-color: var(--neb-#{$intent}-outline-disabled);
         }
       }
-
-      // border intent
-      &[data-neb-box-border-intent='#{$intent}'] {
-        border-color: var(--neb-#{$intent}-solid);
-      }
     }
 
-    // focus
-    &[data-neb-box-interactive='true']:focus-visible {
-      border-color: var(--neb-focus-border) !important;
-      box-shadow: inset 0 0 0 1px var(--neb-focus-border);
-    }
-
+    // neutral intent override
     &[data-neb-box-intent='neutral'] {
-      &[data-neb-box-interactive='true'] {
-        // hover
-        &:not([data-neb-box-hovered-by-default]):hover,
-        &[data-neb-box-hovered-by-default='true'] {
+      // not disabled, interactive
+      &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
+        // hovered, highlighted
+        &:not([data-neb-box-highlighted]):hover,
+        &[data-neb-box-highlighted='true'] {
           background-color: var(--neb-background);
         }
       }

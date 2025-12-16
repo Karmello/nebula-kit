@@ -15,7 +15,7 @@ const MARKER_LIST_EXAMPLES_META: ComponentMeta<MarkerListProps>['examples'] = [
   {
     description: 'MarkerList with circular markers and custom spacing between items.',
     jsx: (
-      <MarkerList intent="neutral" listStyle="circle" rowGap="20px">
+      <MarkerList listStyle="circle" rowGap="20px">
         <MarkerList.Item>Item 1</MarkerList.Item>
         <MarkerList.Item>Item 2</MarkerList.Item>
       </MarkerList>

@@ -24,9 +24,9 @@ export const Footer = ({
   paddingRight,
   paddingBottom,
   paddingLeft,
-  borderIntent = DEFAULT_FOOTER_BORDER_INTENT,
   // own
   switchAt = DEFAULT_SWITCH_AT,
+  borderIntent = DEFAULT_FOOTER_BORDER_INTENT,
 }: FooterProps) => {
   const { bp } = useScreen()
 

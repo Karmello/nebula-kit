@@ -23,7 +23,7 @@ export const PlaygroundPage = () => {
 
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} overflowY="hidden">
-      <Section heading="Playground" intent="neutral" iconName="shapes">
+      <Section heading="Playground" iconName="shapes">
         <SplitView sidePosition="right">
           <SplitView.Main>
             <SplitView.MainBar>

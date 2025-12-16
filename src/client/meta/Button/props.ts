@@ -29,7 +29,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     isResponsive: true,
     description: 'Expands the button to match the full width of its container.',
   },
-  hoveredByDefault: BOX_PROPS_META.hoveredByDefault,
+  highlighted: BOX_PROPS_META.highlighted,
   iconAngle: WITH_ICON_PROPS_META.iconAngle,
   iconName: TEXT_PROPS_META.iconName,
   iconPosition: TEXT_PROPS_META.iconPosition,

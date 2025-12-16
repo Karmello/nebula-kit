@@ -26,11 +26,11 @@ const ROTATE_EXAMPLES_META: ComponentMeta<RotateProps>['examples'] = [
     description: 'Rotation is triggered by changing the value of the angle prop.',
     jsx: (
       <RotateWrapper>
-        <Text intent="neutral">Text</Text>
+        <Text>Text</Text>
       </RotateWrapper>
     ),
     code: `<Rotate angle={angle}>
-  <Text intent="neutral">Text</Text>
+  <Text>Text</Text>
 </Rotate>`,
   },
 ]

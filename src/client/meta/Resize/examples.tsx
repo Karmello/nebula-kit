@@ -24,9 +24,7 @@ const ResizeWrapper = ({ property }: { property: ResizeProps['property'] }) => {
 
   return (
     <Resize visible={visible} property={property} duration={1000}>
-      <Text intent="neutral" noWrap>
-        Animated content.
-      </Text>
+      <Text noWrap>Animated content.</Text>
     </Resize>
   )
 }

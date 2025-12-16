@@ -8,6 +8,7 @@ export type FooterTag = (typeof FOOTER_TAGS)[number]
 
 type FooterOwnProps = {
   switchAt?: SwitchAt
+  borderIntent?: BoxProps['intent']
 }
 
 type PropsFromHtmlTag<T extends FooterTag = 'div'> = Omit<HtmlTagProps<T>, 'children'> & {
@@ -16,7 +17,6 @@ type PropsFromHtmlTag<T extends FooterTag = 'div'> = Omit<HtmlTagProps<T>, 'chil
 
 type PropsFromBox<T extends FooterTag = 'div'> = Pick<
   BoxProps<T>,
-  | 'borderIntent'
   | 'padding'
   | 'paddingBlock'
   | 'paddingInline'

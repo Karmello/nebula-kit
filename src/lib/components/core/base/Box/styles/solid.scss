@@ -9,13 +9,24 @@
         color: var(--neb-#{$intent}-text, var(--neb-text));
         --neb-ripple-bg: var(--neb-#{$intent}-text, var(--neb-text));
 
-        // interactive
-        &[data-neb-box-interactive='true'] {
-          // hover
-          &:not([data-neb-box-hovered-by-default]):hover,
-          &[data-neb-box-hovered-by-default='true'],
+        // not disabled, interactive
+        &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
+          // hovered, highlighted, focused
+          &:not([data-neb-box-highlighted]):hover,
+          &[data-neb-box-highlighted='true'],
           &:focus-visible {
             background-color: var(--neb-#{$intent}-solid-hover);
+          }
+
+          // focus ring
+          &:focus-visible {
+            box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
+
+            &[data-neb-box-intent='inverse'] {
+              box-shadow:
+                inset 0 0 0 1px var(--neb-focus-border),
+                inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-background);
+            }
           }
         }
 
@@ -26,17 +37,6 @@
         &[data-neb-box-disabled='true']:-webkit-autofill {
           -webkit-text-fill-color: var(--neb-#{$intent}-solid-disabled);
         }
-      }
-    }
-
-    // focus
-    &[data-neb-box-interactive='true']:focus-visible {
-      box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
-
-      &[data-neb-box-intent='inverse'] {
-        box-shadow:
-          inset 0 0 0 1px var(--neb-focus-border),
-          inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-background);
       }
     }
   }

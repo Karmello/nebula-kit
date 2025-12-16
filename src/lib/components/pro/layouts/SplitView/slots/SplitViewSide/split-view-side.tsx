@@ -19,8 +19,9 @@ export const SplitViewSide = ({
   brand,
   color,
   intent,
-  borderIntent,
   inlineSize = DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
+  // own
+  borderIntent,
 }: SplitViewSideProps) => {
   const { sideOpen, setSideOpen, sidePosition, switchAt, mode } = useSplitViewContext()
 
@@ -46,40 +47,52 @@ export const SplitViewSide = ({
         drawable
         theme={theme}
         brand={brand}
-        variant="solid"
+        variant="outline"
         color={color}
-        intent={intent || { base: 'tertiary', [String(switchAt)]: 'neutral' }}
-        borderIntent={borderIntent || { base: 'muted', [String(switchAt)]: 'neutral' }}
-        borderLeftWidth={sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
-        borderRightWidth={sidePosition === 'left' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
+        intent={borderIntent || { base: 'muted', [String(switchAt)]: 'neutral' }}
+        borderWidth="0px"
+        borderLeftWidth={
+          mode === 'overlay' && sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : '0px'
+        }
+        borderRightWidth={
+          mode === 'overlay' && sidePosition === 'left' && sideOpen ? BOX_BORDER_WIDTH : '0px'
+        }
         left={sidePosition === 'left' ? '0px' : undefined}
         right={sidePosition === 'right' ? '0px' : undefined}
         maxInlineSize={inlineSize}
         overflowY={sideOpen ? 'auto' : 'hidden'}
       >
-        <Resize key={mode} property="inlineSize" visible={sideOpen}>
-          <Box inlineSize={inlineSize} paddingRight={BOX_BORDER_WIDTH}>
-            {mode === 'overlay' ? (
-              <Flex justifyContent="flex-end">
-                <Box padding="6px" paddingBottom="20px">
-                  <Button
-                    tagAttrs={{
-                      onClick: () => {
-                        setSideOpen(false)
-                      },
-                    }}
-                    iconName="close"
-                    intent={intent || 'tertiary'}
-                    size="xs"
-                  />
-                </Box>
-              </Flex>
-            ) : null}
-            <IslandProvider theme={theme} brand={brand}>
-              {children}
-            </IslandProvider>
-          </Box>
-        </Resize>
+        <Box
+          drawable
+          variant="solid"
+          color={color}
+          intent={intent || { base: 'tertiary', [String(switchAt)]: 'neutral' }}
+          blockSize="100%"
+        >
+          <Resize key={mode} property="inlineSize" visible={sideOpen}>
+            <Box inlineSize={inlineSize} paddingRight={BOX_BORDER_WIDTH}>
+              {mode === 'overlay' ? (
+                <Flex justifyContent="flex-end">
+                  <Box padding="6px" paddingBottom="20px">
+                    <Button
+                      tagAttrs={{
+                        onClick: () => {
+                          setSideOpen(false)
+                        },
+                      }}
+                      iconName="close"
+                      intent={intent || 'tertiary'}
+                      size="xs"
+                    />
+                  </Box>
+                </Flex>
+              ) : null}
+              <IslandProvider theme={theme} brand={brand}>
+                {children}
+              </IslandProvider>
+            </Box>
+          </Resize>
+        </Box>
       </Box>
     </FocusTrap>
   )

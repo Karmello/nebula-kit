@@ -1,7 +1,9 @@
 import { useEffect, useId, useLayoutEffect } from 'react'
+import classNames from 'classnames'
 
 import { WithSlots } from 'lib/components/core/internal'
 import { Resize, Box, Button, Flex, Spacer } from 'lib/components'
+import { withPrefix } from 'lib/helpers'
 
 import { useSideNavContext } from '../../SideNavProvider'
 
@@ -55,7 +57,15 @@ export const SideNavCategory = ({
     >
       {({ slotsByName }) => {
         return (
-          <Box tag="ul" tagAttrs={tagAttrs} tagRef={tagRef} inlineSize="100%">
+          <Box
+            tag="ul"
+            tagAttrs={{
+              ...tagAttrs,
+              className: classNames(withPrefix('side-nav-category'), tagAttrs?.className || ''),
+            }}
+            tagRef={tagRef}
+            inlineSize="100%"
+          >
             <Box tag="li">
               <Button
                 tagAttrs={{

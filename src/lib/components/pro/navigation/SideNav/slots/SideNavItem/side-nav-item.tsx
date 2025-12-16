@@ -1,4 +1,7 @@
+import classNames from 'classnames'
+
 import { Button, Link } from 'lib/components'
+import { withPrefix } from 'lib/helpers'
 
 import { SideNavItemProps } from './definitions'
 import { useSideNavContext } from '../../SideNavProvider'
@@ -23,7 +26,10 @@ export const SideNavItem = ({
       <Button
         tag="a"
         tagRef={tagRef}
-        tagAttrs={tagAttrs}
+        tagAttrs={{
+          ...tagAttrs,
+          className: classNames(withPrefix('side-nav-item'), tagAttrs?.className || ''),
+        }}
         variant={variant || rootVariant}
         color={color || rootColor}
         intent={intent || rootIntent}

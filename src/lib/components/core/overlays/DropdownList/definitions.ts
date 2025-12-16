@@ -34,7 +34,7 @@ type DropdownListOwnProps = {
   keepOpen?: boolean
   scrollToIndex?: number
   scrollAlign?: DropdownListScrollAlign
-  itemBorderIntent?: BoxProps['borderIntent']
+  itemBorderIntent?: BoxProps['intent']
   placement?: DropdownListPlacement
 }
 

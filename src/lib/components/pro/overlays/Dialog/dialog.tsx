@@ -120,7 +120,7 @@ export const Dialog = ({
                               tagAttrs={{ onClick: onClose }}
                               size="xs"
                               iconName="close"
-                              intent="neutral"
+                              intent="muted"
                             />
                           </Box>
                         ) : null}

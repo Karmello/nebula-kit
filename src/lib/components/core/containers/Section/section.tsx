@@ -22,9 +22,8 @@ export const Section = <T extends SectionTag = 'section'>({
   variant = DEFAULT_SECTION_VARIANT,
   color,
   intent = DEFAULT_SECTION_INTENT,
-  borderIntent,
   interactive,
-  hoveredByDefault,
+  highlighted,
   // text
   iconName,
   iconPosition,
@@ -46,14 +45,13 @@ export const Section = <T extends SectionTag = 'section'>({
       variant={variant}
       color={color}
       intent={intent}
-      borderIntent={borderIntent}
       borderRadius={variant === 'ghost' ? '0px' : 'var(--neb-border-radius)'}
       padding={variant === 'ghost' ? '0px' : SECTION_SIZE_CONFIG[size].spacing}
       maxInlineSize="100%"
       overflowX="auto"
       overflowY="hidden"
       interactive={interactive}
-      hoveredByDefault={hoveredByDefault}
+      highlighted={highlighted}
     >
       <Text typography={SECTION_SIZE_CONFIG[size].typography} iconName={iconName} iconPosition={iconPosition}>
         {heading}

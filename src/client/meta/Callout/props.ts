@@ -16,7 +16,6 @@ import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
-  borderIntent: BOX_PROPS_META.borderIntent,
   content: {
     options: ['string'],
     isRequired: true,
