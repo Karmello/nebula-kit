@@ -28,9 +28,9 @@ const FOOTER_EXAMPLES_META: ComponentMeta<FooterProps>['examples'] = [
     description: 'Displays three sections where the first one takes less space than the other two.',
     jsx: (
       <Footer switchAt="md" padding="15px">
-        <Footer.Section flex={1}>Section 1</Footer.Section>
-        <Footer.Section flex={3}>Section 2</Footer.Section>
-        <Footer.Section flex={3}>Section 3</Footer.Section>
+        <Footer.Section flex="1">Section 1</Footer.Section>
+        <Footer.Section flex="3">Section 2</Footer.Section>
+        <Footer.Section flex="3">Section 3</Footer.Section>
       </Footer>
     ),
     sandBoxWithNoPadding: true,

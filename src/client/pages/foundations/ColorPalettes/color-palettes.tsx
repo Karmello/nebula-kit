@@ -15,7 +15,7 @@ export default () => {
                 <Flex flexDirection="row">
                   {Array.from({ length: 15 }, (v, k) => {
                     return (
-                      <Flex.Item key={k} flex={1}>
+                      <Flex.Item key={k} flex="1">
                         <Box
                           variant="solid"
                           blockSize="100px"

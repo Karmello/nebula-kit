@@ -70,7 +70,7 @@ const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
               <Select.Option value="yahoo">Yahoo</Select.Option>
             </Select>
           </Form.Field>
-          <Form.Field name="search" flex={4}>
+          <Form.Field name="search" flex="4">
             <Input variant="outline" />
           </Form.Field>
         </Form.Fields>

@@ -87,7 +87,7 @@ export const UpdatePasswordSection = () => {
                   </Form.Field>
                 </Form.Fields>
                 <Form.Actions>
-                  <Form.ActionButton type="submit" flex={{ base: 1, md: 0 }} disabled={!isDirty}>
+                  <Form.ActionButton type="submit" flex={{ base: '1', md: '0' }} disabled={!isDirty}>
                     Update
                   </Form.ActionButton>
                 </Form.Actions>

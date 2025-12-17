@@ -55,7 +55,7 @@ export const UpdateEmailSection = () => {
                   </Form.Field>
                 </Form.Fields>
                 <Form.Actions>
-                  <Form.ActionButton flex={{ base: 1, md: 0 }} type="submit" disabled={!isDirty}>
+                  <Form.ActionButton flex={{ base: '1', md: '0' }} type="submit" disabled={!isDirty}>
                     Request update
                   </Form.ActionButton>
                 </Form.Actions>

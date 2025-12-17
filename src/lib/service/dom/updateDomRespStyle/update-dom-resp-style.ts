@@ -1,8 +1,6 @@
 import { RefObject } from 'react'
-import isNil from 'lodash-es/isNil.js'
 
 import { Breakpoint, BREAKPOINTS } from 'lib/definitions'
-
 import { Bucket, PropValues, isBlank } from '../definitions'
 import { getBucketPerBp } from './get-bucket-per-bp'
 
@@ -12,32 +10,22 @@ export const updateDomRespStyle = (
   breakpoint: Breakpoint,
   propValues: PropValues
 ): void => {
-  // Bail early if the DOM node is not available
   if (!elemRef.current) return
 
   // -------------------------------------
-  // 1. Collect only props that participate
-  //    in responsive resolution.
-  //    (undefined means "not controlled")
+  // 1. Collect controlled props
+  //    (undefined = uncontrolled)
   // -------------------------------------
   const activePropValues: PropValues = {}
   for (const propName in propValues) {
-    const propValue = propValues[propName]
-    if (propValue !== undefined) activePropValues[propName] = propValue
+    if (propValues[propName] !== undefined) {
+      activePropValues[propName] = propValues[propName]
+    }
   }
 
   // -------------------------------------
-  // 2. Track previously applied style keys
-  //    per component type to support cleanup
-  // -------------------------------------
-  const storeKey = 'neb_resp_style_' + componentName.toLowerCase()
-  const prevPropNames: Set<string> = elemRef.current[storeKey] || new Set()
-  const currentPropNames = new Set(Object.keys(activePropValues))
-
-  // -------------------------------------
-  // 3. Resolve responsive values up to the
-  //    current breakpoint using progressive
-  //    inheritance (base → current)
+  // 2. Resolve merged bucket
+  //    (base → current breakpoint)
   // -------------------------------------
   let mergedBucket: Bucket = {}
 
@@ -48,39 +36,30 @@ export const updateDomRespStyle = (
   }
 
   // -------------------------------------
-  // 4. Clean up style properties that were
-  //    previously controlled but are no
-  //    longer present and not inherited
+  // 3. Cleanup previously applied styles
   // -------------------------------------
-  for (const propName of prevPropNames) {
-    if (!currentPropNames.has(propName) && !(propName in mergedBucket)) {
+  const storeKey = 'neb_resp_style_' + componentName.toLowerCase()
+  const prevApplied: Set<string> = elemRef.current[storeKey] || new Set()
+  const nextApplied = new Set(Object.keys(mergedBucket))
+
+  for (const propName of prevApplied) {
+    if (!nextApplied.has(propName)) {
       elemRef.current.style[propName] = ''
     }
   }
 
   // -------------------------------------
-  // 5. Reset controlled style properties
-  //    before applying new resolved values
-  //    to avoid stale leftovers
-  // -------------------------------------
-  for (const propName in activePropValues) {
-    const propValue = activePropValues[propName]
-    if (!isNil(propValue) && !isBlank(propValue)) {
-      elemRef.current.style[propName] = ''
-    }
-  }
-
-  // -------------------------------------
-  // 6. Apply final resolved style values
-  //    for the current breakpoint
+  // 4. Apply resolved styles
   // -------------------------------------
   for (const propName in mergedBucket) {
-    elemRef.current.style[propName] = mergedBucket[propName]
+    const value = mergedBucket[propName]
+    if (!isBlank(value)) {
+      elemRef.current.style[propName] = value
+    }
   }
 
   // -------------------------------------
-  // 7. Persist current controlled keys
-  //    for the next update cycle
+  // 5. Persist applied keys
   // -------------------------------------
-  elemRef.current[storeKey] = currentPropNames
+  elemRef.current[storeKey] = nextApplied
 }

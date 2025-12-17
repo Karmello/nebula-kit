@@ -4,12 +4,12 @@ import { HtmlTagProps } from 'lib/components'
 import { RespValue, CssFlexItemAlignSelf } from 'lib/definitions'
 
 type FlexItemOwnProps = {
-  flex?: RespValue<string | number>
-  flexGrow?: RespValue<number>
-  flexShrink?: RespValue<number>
-  flexBasis?: RespValue<string | number>
+  flex?: RespValue<string>
+  flexGrow?: RespValue<string>
+  flexShrink?: RespValue<string>
+  flexBasis?: RespValue<string>
   alignSelf?: RespValue<CssFlexItemAlignSelf>
-  order?: RespValue<number>
+  order?: RespValue<string>
 }
 
 type PropsFromHtmlTag<T extends ElementType = 'div'> = Omit<HtmlTagProps<T>, 'children'> & {

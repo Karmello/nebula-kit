@@ -49,7 +49,7 @@ export const Input = ({
   return (
     <Segment>
       {startSlot ? <Segment.Item>{cloneElement(startSlot as any, slotExtraProps)}</Segment.Item> : null}
-      <Segment.Item flex={1}>
+      <Segment.Item flex="1">
         <Box
           tag="input"
           tagAttrs={{

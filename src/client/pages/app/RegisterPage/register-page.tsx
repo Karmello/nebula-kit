@@ -98,7 +98,7 @@ export const RegisterPage = () => {
               </Form.Field>
             </Form.Fields>
             <Form.Actions>
-              <Form.ActionButton type="submit" flex={{ base: 1, lg: 0 }}>
+              <Form.ActionButton type="submit" flex={{ base: '1', lg: '0' }}>
                 Sign up
               </Form.ActionButton>
             </Form.Actions>

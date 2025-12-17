@@ -36,10 +36,10 @@ export const PropsTable = ({ category, data }: Props) => {
                   {defaultValue !== undefined ? defaultValue : '-'}
                 </Table.Cell>
                 <Table.Cell tagAttrs={{ style: { textAlign: 'center' } }}>
-                  {isRequired ? <Icon name="check" intent="primary" size="20px" /> : '-'}
+                  {isRequired ? <Icon name="check" intent="primary" color="blue" size="20px" /> : '-'}
                 </Table.Cell>
                 <Table.Cell tagAttrs={{ style: { textAlign: 'center' } }}>
-                  {isResponsive ? <Icon name="check" intent="primary" size="20px" /> : '-'}
+                  {isResponsive ? <Icon name="check" intent="primary" color="blue" size="20px" /> : '-'}
                 </Table.Cell>
                 <Table.Cell>{description}</Table.Cell>
               </Table.Row>

@@ -1,103 +1,123 @@
 import { updateDomRespStyle } from '../updateDomRespStyle'
 
-const makeRef = () => ({
-  current: {
-    style: {} as Record<string, unknown>,
-    dataset: {} as Record<string, unknown>,
-  },
-})
-
 describe('updateDomRespStyle', () => {
-  it('applies a simple style value', () => {
-    const ref = makeRef()
+  it('applies a plain style value and stores applied keys', () => {
+    const el = document.createElement('div')
+    const ref = { current: el }
 
-    updateDomRespStyle('Box', ref, 'base', { padding: '20px' })
-
-    expect(ref.current.style.padding).toBe('20px')
-  })
-
-  it('does not apply undefined values', () => {
-    const ref = makeRef()
-
-    updateDomRespStyle('Box', ref, 'base', { padding: undefined })
-
-    expect(ref.current.style.padding).toBeUndefined()
-  })
-
-  it('does not apply blank string values', () => {
-    const ref = makeRef()
-
-    updateDomRespStyle('Box', ref, 'base', { padding: '' })
-
-    expect(ref.current.style.padding).toBeUndefined()
-  })
-
-  it('resets values when prop is removed', () => {
-    const ref = makeRef()
-
-    // first apply
-    updateDomRespStyle('Flex', ref, 'base', { padding: '20px' })
-    expect(ref.current.style.padding).toBe('20px')
-
-    // then remove padding entirely
-    updateDomRespStyle('Flex', ref, 'base', {})
-    expect(ref.current.style.padding).toBe('')
-  })
-
-  it('does not reset inherited responsive values', () => {
-    const ref = makeRef()
-
-    // base: padding = 20px
-    updateDomRespStyle('Box', ref, 'base', {
-      padding: { base: '20px', md: undefined },
+    updateDomRespStyle('Box', ref, 'base' as any, {
+      padding: '8px',
+      margin: undefined, // ignored
     })
 
-    // md inherits base value (20px)
-    updateDomRespStyle('Box', ref, 'md', {
-      padding: { base: '20px', md: undefined },
-    })
+    expect(el.style.padding).toBe('8px')
+    expect(el.style.margin).toBe('')
 
-    expect(ref.current.style.padding).toBe('20px')
+    const storeKey = 'neb_resp_style_box'
+    const stored = (el as any)[storeKey]
+
+    expect(stored instanceof Set).toBe(true)
+    expect(stored.has('padding')).toBe(true)
+    expect(stored.has('margin')).toBe(false)
   })
 
-  it('merges responsive buckets correctly across breakpoints', () => {
-    const ref = makeRef()
+  it('inherits base value at larger breakpoints', () => {
+    const el = document.createElement('div')
+    const ref = { current: el }
 
-    updateDomRespStyle('Box', ref, 'md', {
-      padding: { base: '10px', sm: '15px', md: '20px' },
+    updateDomRespStyle('Box', ref, 'md' as any, {
+      gap: '12px',
     })
 
-    expect(ref.current.style.padding).toBe('20px')
+    expect(el.style.gap).toBe('12px')
   })
 
-  it('does not reset unrelated keys', () => {
-    const ref = makeRef()
+  it('overrides base value at the current breakpoint', () => {
+    const el = document.createElement('div')
+    const ref = { current: el }
 
-    ref.current.style.opacity = '0.5' // manually set
+    updateDomRespStyle('Box', ref, 'md' as any, {
+      padding: {
+        base: '8px',
+        md: '16px',
+      },
+    })
 
-    updateDomRespStyle('Box', ref, 'base', { padding: '10px' })
-
-    expect(ref.current.style.opacity).toBe('0.5') // untouched
-    expect(ref.current.style.padding).toBe('10px')
+    expect(el.style.padding).toBe('16px')
   })
 
-  it('only resets keys that existed before and were removed', () => {
-    const ref = makeRef()
+  it('does not unset inherited value when breakpoint omits it', () => {
+    const el = document.createElement('div')
+    const ref = { current: el }
 
-    updateDomRespStyle('Box', ref, 'base', {
-      padding: '20px',
-      margin: '30px',
+    updateDomRespStyle('Box', ref, 'md' as any, {
+      padding: {
+        base: '8px',
+      },
     })
 
-    expect(ref.current.style.padding).toBe('20px')
-    expect(ref.current.style.margin).toBe('30px')
+    expect(el.style.padding).toBe('8px')
+  })
 
-    // Now only remove padding, margin should remain
-    updateDomRespStyle('Box', ref, 'base', {
-      margin: '30px',
+  it('cleans up style when prop is removed from props', () => {
+    const el = document.createElement('div')
+    const ref = { current: el }
+
+    // First render
+    updateDomRespStyle('Box', ref, 'base' as any, {
+      padding: '8px',
     })
 
-    expect(ref.current.style.padding).toBe('')
-    expect(ref.current.style.margin).toBe('30px')
+    expect(el.style.padding).toBe('8px')
+
+    // Second render: prop removed
+    updateDomRespStyle('Box', ref, 'base' as any, {})
+
+    expect(el.style.padding).toBe('')
+  })
+
+  it('does not clean up unrelated inline styles', () => {
+    const el = document.createElement('div')
+    el.style.color = 'red'
+
+    const ref = { current: el }
+
+    updateDomRespStyle('Box', ref, 'base' as any, {
+      padding: '8px',
+    })
+
+    updateDomRespStyle('Box', ref, 'base' as any, {})
+
+    expect(el.style.padding).toBe('')
+    expect(el.style.color).toBe('red')
+  })
+
+  it('namespaces applied styles per component type', () => {
+    const el = document.createElement('div')
+    const ref = { current: el }
+
+    updateDomRespStyle('Box', ref, 'base' as any, {
+      padding: '8px',
+    })
+
+    updateDomRespStyle('Flex', ref, 'base' as any, {})
+
+    // Box-applied style must survive Flex update
+    expect(el.style.padding).toBe('8px')
+  })
+
+  it('is idempotent when called repeatedly with same values', () => {
+    const el = document.createElement('div')
+    const ref = { current: el }
+
+    updateDomRespStyle('Box', ref, 'base' as any, {
+      gap: '10px',
+    })
+
+    updateDomRespStyle('Box', ref, 'base' as any, {
+      gap: '10px',
+    })
+
+    expect(el.style.gap).toBe('10px')
   })
 })

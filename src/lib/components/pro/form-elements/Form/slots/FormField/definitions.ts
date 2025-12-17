@@ -2,7 +2,7 @@ import { FieldValues, RegisterOptions } from 'react-hook-form'
 
 import { FlexItemProps } from 'lib/components'
 
-export const DEFAULT_FORM_FIELD_FLEX: FormFieldProps['flex'] = 1
+export const DEFAULT_FORM_FIELD_FLEX: FormFieldProps['flex'] = '1'
 
 export const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 

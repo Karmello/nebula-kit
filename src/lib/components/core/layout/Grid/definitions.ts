@@ -7,8 +7,8 @@ export const GRID_TAGS = ['div', 'section', 'main', 'article', 'aside', 'nav', '
 export type GridTag = (typeof GRID_TAGS)[number]
 
 type GridOwnProps = {
-  gridTemplateColumns?: RespValue<string | number>
-  gridTemplateRows?: RespValue<string | number>
+  gridTemplateColumns?: RespValue<string>
+  gridTemplateRows?: RespValue<string>
   gridAutoRows?: RespValue<string>
   gridAutoColumns?: RespValue<string>
   gridAutoFlow?: RespValue<CssGridAutoFlow>

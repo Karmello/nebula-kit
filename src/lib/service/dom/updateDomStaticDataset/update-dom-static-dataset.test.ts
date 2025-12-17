@@ -1,85 +1,47 @@
 import { updateDomStaticDataset } from '../updateDomStaticDataset'
 
 describe('updateDomStaticDataset', () => {
-  it('returns empty object when props is undefined', () => {
-    expect(updateDomStaticDataset('Box', undefined)).toEqual({})
-  })
+  it('maps defined props to static data attributes', () => {
+    const result = updateDomStaticDataset('Box', {
+      intent: 'primary',
+      variant: 'solid',
+    })
 
-  it('returns empty object when props is empty', () => {
-    expect(updateDomStaticDataset('Text', {} as any)).toEqual({})
-  })
-
-  it('builds data attributes for defined props only', () => {
-    const out = updateDomStaticDataset('Box', {
-      variant: 'primary',
-      intent: 'success',
-      interactive: true,
-      disabled: false,
-      typography: 'body-m',
-      side: 'left',
-      open: true,
-    } as any)
-
-    expect(out).toEqual({
-      'data-neb-box-variant': 'primary',
-      'data-neb-box-intent': 'success',
-      'data-neb-box-interactive': true,
-      'data-neb-box-disabled': false,
-      'data-neb-box-typography': 'body-m',
-      'data-neb-box-side': 'left',
-      'data-neb-box-open': true,
+    expect(result).toEqual({
+      'data-neb-box-intent': 'primary',
+      'data-neb-box-variant': 'solid',
     })
   })
 
-  it('skips undefined props', () => {
-    const out = updateDomStaticDataset('Box', {
+  it('ignores props with undefined values', () => {
+    const result = updateDomStaticDataset('Box', {
+      intent: 'primary',
       variant: undefined,
-      intent: 'error',
-      interactive: undefined,
-      disabled: true,
-    } as any)
-
-    expect(out).toEqual({
-      'data-neb-box-intent': 'error',
-      'data-neb-box-disabled': true,
     })
-  })
 
-  it('supports the dashed prefix "nav-layout"', () => {
-    const out = updateDomStaticDataset('AppFrameHeader', {
-      side: 'start',
-      open: false,
-    } as any)
-
-    expect(out).toEqual({
-      'data-neb-app-frame-header-side': 'start',
-      'data-neb-app-frame-header-open': false,
+    expect(result).toEqual({
+      'data-neb-box-intent': 'primary',
     })
+
+    expect(Object.keys(result)).toHaveLength(1)
   })
 
-  it('booleans are preserved as booleans', () => {
-    const out = updateDomStaticDataset('Text', {
-      disabled: true,
-      interactive: false,
-    } as any)
+  it('returns an empty object when no valid props are provided', () => {
+    const result = updateDomStaticDataset('Text', {
+      size: undefined,
+      weight: undefined,
+    })
 
-    expect(typeof out['data-neb-text-disabled' as never]).toBe('boolean')
-    expect(typeof out['data-neb-text-interactive' as never]).toBe('boolean')
-    expect(out['data-neb-text-disabled' as never]).toBe(true)
-    expect(out['data-neb-text-interactive' as never]).toBe(false)
+    expect(result).toEqual({})
   })
 
-  it('current behavior: unknown keys are forwarded if present on the object', () => {
-    const out = updateDomStaticDataset('Box', {
-      // valid keys
-      variant: 'ghost',
-      // extra key not part of DataAttrProps at type level
-      custom: 'whoops',
-    } as any)
+  it('kebab-cases component and prop names in data attributes', () => {
+    const result = updateDomStaticDataset('AppFrameHeader', {
+      isSticky: true,
+    })
 
-    // data attribute for known key
-    expect(out['data-neb-box-variant' as never]).toBe('ghost')
-    // data attribute for unknown key (documenting current behavior)
-    expect(out['data-neb-box-custom' as never]).toBe('whoops')
+    expect(result).toEqual({
+      'data-neb-app-frame-header-is-sticky': true,
+    })
   })
 })

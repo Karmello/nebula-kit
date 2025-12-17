@@ -99,7 +99,7 @@ expectType(
 // Flex.Item with right props passed
 expectType(
   <Flex>
-    <Flex.Item flex={1}>
+    <Flex.Item flex="1">
       <Box>Item 1</Box>
     </Flex.Item>
     <Flex.Item>

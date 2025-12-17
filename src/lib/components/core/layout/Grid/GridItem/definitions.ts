@@ -4,8 +4,8 @@ import { RespValue, CssGridItemJustifySelf, CssGridItemAlignSelf } from 'lib/def
 import { HtmlTagProps } from 'lib/components'
 
 type GridItemOwnProps = {
-  gridColumn?: RespValue<string | number>
-  gridRow?: RespValue<string | number>
+  gridColumn?: RespValue<string>
+  gridRow?: RespValue<string>
   justifySelf?: RespValue<CssGridItemJustifySelf>
   alignSelf?: RespValue<CssGridItemAlignSelf>
 }

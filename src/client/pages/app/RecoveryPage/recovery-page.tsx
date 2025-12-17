@@ -79,7 +79,7 @@ export const RecoveryPage = () => {
               )}
             </Form.Fields>
             <Form.Actions>
-              <Form.ActionButton type="submit" flex={{ base: 1, lg: 0 }}>
+              <Form.ActionButton type="submit" flex={{ base: '1', lg: '0' }}>
                 {!token ? 'Recover' : 'Update'}
               </Form.ActionButton>
             </Form.Actions>

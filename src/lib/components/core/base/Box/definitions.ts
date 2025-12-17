@@ -23,7 +23,7 @@ type BoxOwnProps = {
   disabled?: boolean
   highlighted?: boolean
   // css
-  opacity?: RespValue<number>
+  opacity?: RespValue<string>
   textAlign?: RespValue<string>
   zIndex?: number
   // border

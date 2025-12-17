@@ -35,7 +35,7 @@ export const HomePage = () => {
       />
       <Spacer blockSize="75px" />
       <Flex flexDirection={{ base: 'column', lg: 'row' }} rowGap="80px" columnGap="160px">
-        <Flex.Item flex={2}>
+        <Flex.Item flex="2">
           <Text typography="h1" color="purple" intent="primary">
             NebulaKit
           </Text>
@@ -133,7 +133,7 @@ export const HomePage = () => {
             </Flex.Item>
           </Flex>
         </Flex.Item>
-        <Flex.Item flex={1}>
+        <Flex.Item flex="1">
           <Flex flexDirection="column" gap="30px">
             <Section heading="One foundation" color="red" intent="primary" iconName="box">
               <Text intent="neutral">

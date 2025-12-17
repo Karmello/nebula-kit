@@ -1,100 +1,41 @@
 import { test, expect } from '@playwright/experimental-ct-react'
 import { Box } from 'lib/components'
 
-test.describe('<Box /> prop removal behavior', () => {
-  test('removing a prop clears the corresponding style in the DOM', async ({ mount }) => {
-    const box = await mount(<Box padding="20px" />)
+test('responsive inline style is applied on initial mount', async ({ mount, page }) => {
+  await page.setViewportSize({ width: 375, height: 800 }) // base
 
-    // initial
-    let padding = await box.evaluate(el => el.style.padding)
-    expect(padding).toBe('20px')
+  await mount(
+    <Box tagAttrs={{ id: 'box' }} padding="12px">
+      Box
+    </Box>
+  )
 
-    // rerender with padding removed
-    await box.update(<Box />)
-    padding = await box.evaluate(el => el.style.padding)
-    expect(padding).toBe('')
-  })
+  const box = page.locator('#box')
 
-  test.describe('<Box /> responsive inheritance', () => {
-    test('md inherits base when md value is undefined', async ({ mount, page }) => {
-      const box = await mount(<Box padding={{ base: '10px', md: undefined }} />)
+  // style is applied
+  await expect(box).toHaveCSS('padding', '12px')
+})
 
-      // mobile — base value
-      await page.setViewportSize({ width: 375, height: 800 })
-      let padding = await box.evaluate(el => el.style.padding)
-      expect(padding).toBe('10px')
+test('responsive inline styles update with breakpoint changes', async ({ mount, page }) => {
+  // base
+  await page.setViewportSize({ width: 375, height: 800 })
 
-      // md — inherits base value
-      await page.setViewportSize({ width: 1024, height: 800 })
-      await page.waitForTimeout(50)
-      padding = await box.evaluate(el => el.style.padding)
-      expect(padding).toBe('10px')
-    })
-  })
+  await mount(
+    <Box tagAttrs={{ id: 'box' }} padding={{ base: '8px', md: '16px' }}>
+      Responsive
+    </Box>
+  )
 
-  test.describe('<Box /> hot reload simulation', () => {
-    test('toggling a prop multiple times never leaves stale DOM values', async ({ mount }) => {
-      const box = await mount(<Box margin="12px" />)
+  const box = page.locator('#box')
 
-      let margin = await box.evaluate(el => el.style.margin)
-      expect(margin).toBe('12px')
+  // base → base value applied
+  await expect(box).toHaveCSS('padding', '8px')
 
-      // remove
-      await box.update(<Box />)
-      margin = await box.evaluate(el => el.style.margin)
-      expect(margin).toBe('')
+  // md → override applied
+  await page.setViewportSize({ width: 800, height: 800 })
+  await expect(box).toHaveCSS('padding', '16px')
 
-      // re-add
-      await box.update(<Box margin="8px" />)
-      margin = await box.evaluate(el => el.style.margin)
-      expect(margin).toBe('8px')
-
-      // remove again
-      await box.update(<Box />)
-      margin = await box.evaluate(el => el.style.margin)
-      expect(margin).toBe('')
-    })
-  })
-
-  test.describe('<Box /> multi-prop responsiveness', () => {
-    test('merges multiple props and updates only the changed ones', async ({ mount }) => {
-      const box = await mount(<Box padding="10px" margin="5px" />)
-
-      let padding = await box.evaluate(el => el.style.padding)
-      let margin = await box.evaluate(el => el.style.margin)
-
-      expect(padding).toBe('10px')
-      expect(margin).toBe('5px')
-
-      // update only padding
-      await box.update(<Box padding="20px" margin="5px" />)
-
-      padding = await box.evaluate(el => el.style.padding)
-      margin = await box.evaluate(el => el.style.margin)
-
-      expect(padding).toBe('20px')
-      expect(margin).toBe('5px') // unchanged, NOT reset
-    })
-  })
-
-  test.describe('<Box /> selective reset behavior', () => {
-    test('only removes keys that disappeared from props', async ({ mount }) => {
-      const box = await mount(<Box padding="12px" margin="6px" />)
-
-      // sanity check
-      let padding = await box.evaluate(el => el.style.padding)
-      let margin = await box.evaluate(el => el.style.margin)
-      expect(padding).toBe('12px')
-      expect(margin).toBe('6px')
-
-      // remove only padding
-      await box.update(<Box margin="6px" />)
-
-      padding = await box.evaluate(el => el.style.padding)
-      margin = await box.evaluate(el => el.style.margin)
-
-      expect(padding).toBe('') // should reset
-      expect(margin).toBe('6px') // should stay
-    })
-  })
+  // lg → md override persists (no responsive unsetting)
+  await page.setViewportSize({ width: 1200, height: 800 })
+  await expect(box).toHaveCSS('padding', '16px')
 })

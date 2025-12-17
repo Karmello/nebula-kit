@@ -87,7 +87,7 @@ export const Form = <
               rowGap={rowGap}
               columnGap={columnGap}
             >
-              <Flex.Item flex={1}>{slotsByName['Form.Fields']}</Flex.Item>
+              <Flex.Item flex="1">{slotsByName['Form.Fields']}</Flex.Item>
               <Flex.Item>{slotsByName['Form.Actions']}</Flex.Item>
             </Flex>
           </FormProvider>
