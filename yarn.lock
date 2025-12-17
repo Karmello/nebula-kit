@@ -910,7 +910,7 @@ __metadata:
     "@shikijs/core": "npm:^3.12.0"
     "@shikijs/engine-javascript": "npm:^3.12.0"
     "@shikijs/langs": "npm:^3.12.0"
-    "@shikijs/themes": "npm:^3.12.0"
+    "@shikijs/themes": "npm:^3.14.0"
     "@testing-library/dom": "npm:^10.4.1"
     "@testing-library/jest-dom": "npm:^6.8.0"
     "@testing-library/react": "npm:^16.3.0"
@@ -1689,12 +1689,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shikijs/themes@npm:3.12.0, @shikijs/themes@npm:^3.12.0":
+"@shikijs/themes@npm:3.12.0":
   version: 3.12.0
   resolution: "@shikijs/themes@npm:3.12.0"
   dependencies:
     "@shikijs/types": "npm:3.12.0"
   checksum: 10c0/0e24e9effede6ea25be0c1d5c74ce4e24953a46884a2718bb5326716b0919191a3e39c37c8456309a3d50a8e8611cf1caf9d48649a311e48ee5298afb00b4663
+  languageName: node
+  linkType: hard
+
+"@shikijs/themes@npm:^3.14.0":
+  version: 3.14.0
+  resolution: "@shikijs/themes@npm:3.14.0"
+  dependencies:
+    "@shikijs/types": "npm:3.14.0"
+  checksum: 10c0/3326482f081e313957c3e74ae86721d18efb32c022b31936f7da1b4782f4c970dea71989934baf9ab8adbeafea07235834b2e6ab83b67e71dc87fb328a1caa58
   languageName: node
   linkType: hard
 
@@ -1705,6 +1714,16 @@ __metadata:
     "@shikijs/vscode-textmate": "npm:^10.0.2"
     "@types/hast": "npm:^3.0.4"
   checksum: 10c0/b946ce2995cca3e714170a5fb4386de18f9d8aa9a3bc5de47daaa9d63116f5075930cfb137d69c03fd5d62147ab9ecbf44d0c06a1b8bf5c214da0273ad920b16
+  languageName: node
+  linkType: hard
+
+"@shikijs/types@npm:3.14.0":
+  version: 3.14.0
+  resolution: "@shikijs/types@npm:3.14.0"
+  dependencies:
+    "@shikijs/vscode-textmate": "npm:^10.0.2"
+    "@types/hast": "npm:^3.0.4"
+  checksum: 10c0/154ec7a79e3c155ed47a14d14ccf91ea09909779993f999cf3d7e424c2f732cd7d7faf8074441a543445f64af1ef9456dcf9ddd4edad96615b68ca60eca2b7bc
   languageName: node
   linkType: hard
 
