@@ -33,9 +33,9 @@ expectError(<Box intent="wrong">Box</Box>)
 expectType(<Box intent="primary">Box</Box>)
 
 // opacity
-expectError(<Box opacity="wrong">Box</Box>)
-expectType(<Box opacity={0.5}>Box</Box>)
-expectType(<Box opacity={{ md: 0.5 }}>Box</Box>)
+expectType(<Box opacity="1">Box</Box>)
+expectError(<Box opacity={0.5}>Box</Box>)
+expectType(<Box opacity={{ md: '0.5' }}>Box</Box>)
 
 // borderRadius
 expectType(<Box borderRadius="5px">Box</Box>)
