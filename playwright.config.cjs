@@ -7,6 +7,7 @@ export default defineConfig({
   testMatch: ['**/*.test.ct.tsx'],
   outputDir: path.join(os.tmpdir(), 'pw-ct-output'),
   reporter: [['list']],
+  workers: 1,
   use: {
     browserName: 'chromium',
     viewport: { width: 400, height: 800 },

@@ -7,9 +7,6 @@ import 'lib/styles/index.scss'
 beforeMount(async ({ App, hooksConfig }) => {
   const { theme, brand } = hooksConfig ?? ({} as any)
 
-  document.documentElement.setAttribute('data-theme', theme)
-  document.documentElement.setAttribute('data-brand', brand)
-
   return (
     <NebkitProvider theme={theme} brand={brand}>
       <App />
