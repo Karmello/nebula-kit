@@ -7,7 +7,7 @@ const WHITELISTED_COMPONENTS = Object.keys(PLAYGROUND_MAP)
 
 export const getInitialState = (): State => {
   const state: State = {
-    view: 'canvas',
+    displayProps: false,
     activeComponent: '',
     components: {},
   }

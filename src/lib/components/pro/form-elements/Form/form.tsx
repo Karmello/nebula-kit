@@ -30,6 +30,7 @@ export const Form = <
   tagAttrs,
   tagRef,
   // Flex
+  display,
   flexDirection = DEFAULT_FORM_FLEX_DIRECTION,
   flexWrap,
   justifyContent,
@@ -77,6 +78,7 @@ export const Form = <
                 onSubmit: handleSubmit,
               }}
               tagRef={tagRef}
+              display={display}
               flexDirection={flexDirection}
               flexWrap={flexWrap}
               justifyContent={justifyContent}

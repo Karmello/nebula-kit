@@ -1,5 +1,6 @@
 // constants
 
+export const CSS_FLEX_DISPLAY = ['flex', 'inline-flex'] as const
 export const CSS_FLEX_DIRECTION = ['row', 'row-reverse', 'column', 'column-reverse'] as const
 export const CSS_FLEX_WRAP = ['nowrap', 'wrap', 'wrap-reverse'] as const
 
@@ -41,6 +42,7 @@ export const CSS_GRID_ITEM_ALIGN_SELF = ['auto', 'start', 'center', 'end', 'stre
 
 // types
 
+export type CssFlexDisplay = (typeof CSS_FLEX_DISPLAY)[number]
 export type CssFlexDirection = (typeof CSS_FLEX_DIRECTION)[number]
 export type CssFlexWrap = (typeof CSS_FLEX_WRAP)[number]
 export type CssFlexJustifyContent = (typeof CSS_FLEX_JUSTIFY_CONTENT)[number]

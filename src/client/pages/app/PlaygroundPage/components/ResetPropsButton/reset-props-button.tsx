@@ -14,10 +14,9 @@ export const ResetPropsButton = () => {
 
   return (
     <Button
-      size="sm"
-      color="blue"
-      intent="primary"
-      fullWidth
+      size="xs"
+      color="red"
+      intent="tertiary"
       tagAttrs={{
         onClick: () => {
           const propNames = Object.keys(props)

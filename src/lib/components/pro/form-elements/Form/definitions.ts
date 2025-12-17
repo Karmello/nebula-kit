@@ -30,7 +30,7 @@ type PropsFromHtmlTag<
 
 type PropsFromFlex = Pick<
   FlexProps<'form'>,
-  'flexDirection' | 'flexWrap' | 'justifyContent' | 'alignItems' | 'gap' | 'columnGap' | 'rowGap'
+  'display' | 'flexDirection' | 'flexWrap' | 'justifyContent' | 'alignItems' | 'gap' | 'columnGap' | 'rowGap'
 >
 
 export type FormProps<

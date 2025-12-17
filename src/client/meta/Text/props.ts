@@ -17,9 +17,6 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
   ...HTML_TAG_PROPS_META,
   bold: {
     options: ['boolean'],
-    defaultValue: 'false',
-    isRequired: false,
-    isResponsive: false,
     description: 'Toggles bold styling.',
   },
   children: {
@@ -28,30 +25,21 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
   },
   clampLines: {
     options: ['number'],
-    isRequired: false,
-    isResponsive: false,
     description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
   },
   color: BOX_PROPS_META.color,
   disabled: BOX_PROPS_META.disabled,
   iconName: {
     ...WITH_ICON_PROPS_META['name'],
-    isRequired: false,
   },
   iconPosition: WITH_ICON_PROPS_META['position'],
   intent: BOX_PROPS_META['intent'],
   italic: {
     options: ['boolean'],
-    defaultValue: 'false',
-    isRequired: false,
-    isResponsive: false,
     description: 'Toggles italic styling.',
   },
   noWrap: {
     options: ['boolean'],
-    defaultValue: 'false',
-    isRequired: false,
-    isResponsive: false,
     description: 'Prevents the text from wrapping onto multiple lines.',
   },
   scale: {
@@ -71,24 +59,16 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
   textAlign: BOX_PROPS_META['textAlign'],
   truncate: {
     options: ['boolean'],
-    defaultValue: 'false',
-    isRequired: false,
-    isResponsive: false,
     description: 'Shortens overflowing text to a single line with an ellipsis.',
   },
   typography: {
     options: Object.values(TEXT_TYPOGRAPHY),
     defaultValue: DEFAULT_TEXT_TYPOGRAPHY,
-    isRequired: false,
-    isResponsive: false,
     description:
       'Applies a predefined typography style from the design system, controlling tag, fontSize and lineHeight together.',
   },
   underline: {
     options: ['boolean'],
-    defaultValue: 'false',
-    isRequired: false,
-    isResponsive: false,
     description: 'Toggles underlined styling.',
   },
 }

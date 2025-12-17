@@ -3,6 +3,7 @@ import { ElementType } from 'react'
 import {
   CssFlexAlignItems,
   CssFlexDirection,
+  CssFlexDisplay,
   CssFlexJustifyContent,
   CssFlexWrap,
   RespValue,
@@ -11,6 +12,7 @@ import {
 import { HtmlTagProps } from 'lib/components'
 
 type FlexOwnProps = {
+  display?: RespValue<CssFlexDisplay>
   flexDirection?: RespValue<CssFlexDirection>
   flexWrap?: RespValue<CssFlexWrap>
   justifyContent?: RespValue<CssFlexJustifyContent>

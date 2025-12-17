@@ -4,10 +4,10 @@ import { persist } from 'zustand/middleware'
 import { LIB_PREFIX } from 'lib/definitions'
 
 import { getInitialState } from './get-initial-state'
-import { PlaygroundView, PropValue, State } from './definitions'
+import { PropValue, State } from './definitions'
 
 type Store = State & {
-  setView: (view: PlaygroundView) => void
+  setDisplayProps: (displayProps: boolean) => void
   setActiveComponent: (activeComponent: string) => void
   setActiveSlot: (activeSlot: string) => void
   setActiveProp: (componentName: string, activeProp: string) => void
@@ -23,7 +23,7 @@ export const usePlaygroundStore = create<Store>()(
   persist(
     (set, get) => ({
       ...getInitialState(),
-      setView: (view: PlaygroundView) => set(state => ({ ...state, view })),
+      setDisplayProps: (displayProps: boolean) => set(state => ({ ...state, displayProps })),
       setActiveComponent: (activeComponent: string) => set(state => ({ ...state, activeComponent })),
       setActiveSlot: (activeSlot: string) =>
         set(state => ({

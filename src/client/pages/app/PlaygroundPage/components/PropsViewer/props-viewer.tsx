@@ -1,10 +1,11 @@
 import { Spacer, Table, Text } from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
+import { ResetPropsButton } from '../ResetPropsButton'
 
 export const PropsViewer = () => {
-  const { components, activeComponent, getActiveSlot } = usePlaygroundStore()
-  if (!activeComponent) return null
+  const { components, activeComponent, getActiveSlot, setActiveProp, displayProps } = usePlaygroundStore()
+  if (!displayProps || !activeComponent) return null
 
   const activeSlot = getActiveSlot()
 
@@ -13,7 +14,7 @@ export const PropsViewer = () => {
 
   return (
     <>
-      <Text bold>{isSlot ? activeSlot : activeComponent}</Text>
+      <Text bold>Props table</Text>
       <Spacer blockSize="5px" />
       <Table layout="fixed" paddingBlock="5px" paddingInline="10px">
         <Table.Body>
@@ -32,8 +33,17 @@ export const PropsViewer = () => {
               <Table.Row>
                 <Table.Cell>
                   <Text
-                    tagAttrs={{ style: { wordBreak: 'break-all' } }}
-                    bold
+                    tag="span"
+                    tagAttrs={{
+                      style: { wordBreak: 'break-all', cursor: 'pointer' },
+                      onClick: () => {
+                        setActiveProp(isSlot ? activeSlot : activeComponent, propName)
+                      },
+                    }}
+                    bold={components[isSlot ? activeSlot : activeComponent].activeProp === propName}
+                    underline
+                    intent="primary"
+                    color="blue"
                     iconName={props[propName].isResponsive ? 'screen-share' : undefined}
                     iconPosition="right"
                   >
@@ -41,7 +51,10 @@ export const PropsViewer = () => {
                   </Text>
                 </Table.Cell>
                 <Table.Cell>
-                  <Text tagAttrs={{ style: { wordBreak: 'break-all' } }} intent="primary" color="blue">
+                  <Text
+                    tagAttrs={{ style: { wordBreak: 'break-all' } }}
+                    bold={components[isSlot ? activeSlot : activeComponent].activeProp === propName}
+                  >
                     {propValue}
                   </Text>
                 </Table.Cell>
@@ -50,6 +63,8 @@ export const PropsViewer = () => {
           })}
         </Table.Body>
       </Table>
+      <Spacer />
+      <ResetPropsButton />
     </>
   )
 }

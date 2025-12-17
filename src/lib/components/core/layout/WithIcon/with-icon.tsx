@@ -30,8 +30,13 @@ export const WithIcon = ({
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('with-icon'), tagAttrs?.className || ''),
+        style: {
+          ...tagAttrs?.style,
+          textDecoration: 'inherit',
+        },
       }}
       tagRef={tagRef}
+      display="inline-flex"
       alignItems="center"
       flexDirection="row"
       flexWrap="nowrap"

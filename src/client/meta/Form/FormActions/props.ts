@@ -11,6 +11,7 @@ const FORM_ACTIONS_PROPS_META: ComponentMeta<FormActionsProps>['props'] = {
     description: 'Action button slots.',
   },
   columnGap: FLEX_PROPS_META.columnGap,
+  display: FLEX_PROPS_META.display,
   flexDirection: FLEX_PROPS_META.flexDirection,
   flexWrap: FLEX_PROPS_META.flexWrap,
   gap: {

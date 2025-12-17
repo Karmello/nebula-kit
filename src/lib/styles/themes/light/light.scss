@@ -24,6 +24,11 @@ html[data-theme='light'] {
       .neb-box[data-neb-box-theme='dark']:not([data-neb-box-brand]) {
         @include neb-set-dark-theme-vars($color, 'ctx-');
       }
+
+      .neb-box[data-neb-box-theme='dark']:not([data-neb-box-brand])
+        .neb-box[data-neb-box-theme='light']:not([data-neb-box-brand]) {
+        @include neb-set-light-theme-vars($color, 'ctx-');
+      }
     }
   }
 
@@ -37,9 +42,9 @@ html[data-theme='light'] {
 }
 
 /* Local brand anywhere inside light theme context */
-html[data-theme='light'] .neb-box,
+html[data-theme='light'] .neb-box:not([data-neb-box-theme]),
 .neb-box[data-neb-box-theme='light']:not([data-theme='dark']),
-.neb-box[data-neb-box-theme='light']:not([data-theme='dark']) .neb-box {
+.neb-box[data-neb-box-theme='light']:not([data-theme='dark']) .neb-box:not([data-neb-box-theme]) {
   @each $color in $neb-colors {
     &[data-neb-box-brand='#{$color}'] {
       /* Local brand overrides inherited brand */
@@ -57,9 +62,9 @@ html[data-theme='light'] .neb-box,
 }
 
 /* Explicit color overrides, only applied to drawable surfaces */
-html[data-theme='light'] .neb-box,
+html[data-theme='light'] .neb-box:not([data-neb-box-theme]),
 .neb-box[data-neb-box-theme='light']:not([data-theme='dark']),
-.neb-box[data-neb-box-theme='light']:not([data-theme='dark']) .neb-box {
+.neb-box[data-neb-box-theme='light']:not([data-theme='dark']) .neb-box:not([data-neb-box-theme]) {
   &[data-neb-box-drawable='true'] {
     @include neb-paint-vars-from-ctx();
 

@@ -1,4 +1,4 @@
-import { Box, Flex, Section, Spacer, SplitView } from 'lib/components'
+import { Box, Flex, Section, Spacer, SplitView, Text } from 'lib/components'
 import { useNebkitStore } from 'lib/state'
 
 import {
@@ -7,9 +7,8 @@ import {
   PropSelect,
   PropEditor,
   RenderPanel,
-  ViewSwitch,
+  TogglePropsButton,
   PropsViewer,
-  ResetPropsButton,
   SwitchPropViewButton,
 } from './components'
 
@@ -17,9 +16,10 @@ import { usePlaygroundStore } from './store'
 
 export const PlaygroundPage = () => {
   const { theme } = useNebkitStore()
-  const { view, getActiveSlot } = usePlaygroundStore()
+  const { activeComponent, getActiveSlot } = usePlaygroundStore()
 
   const activeSlot = getActiveSlot()
+  const isSlot = activeSlot && activeSlot !== 'root'
 
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} overflowY="hidden">
@@ -27,10 +27,19 @@ export const PlaygroundPage = () => {
         <SplitView sidePosition="right">
           <SplitView.Main>
             <SplitView.MainBar>
-              <ViewSwitch />
+              <Flex alignItems="center" columnGap="20px">
+                <Text
+                  typography="h6"
+                  intent="primary"
+                  color="blue"
+                >{`<${isSlot ? activeSlot : activeComponent}>`}</Text>
+                <TogglePropsButton />
+              </Flex>
             </SplitView.MainBar>
-            <Spacer blockSize="25px" />
-            {view === 'canvas' ? <RenderPanel /> : <PropsViewer />}
+            <Spacer blockSize="40px" />
+            <RenderPanel />
+            <Spacer blockSize="75px" />
+            <PropsViewer />
           </SplitView.Main>
           <SplitView.Side
             theme={{ base: theme === 'light' ? 'dark' : 'light', lg: theme }}
@@ -51,7 +60,6 @@ export const PlaygroundPage = () => {
                     <Flex.Item>
                       <PropSelect />
                     </Flex.Item>
-                    <ResetPropsButton />
                     <SwitchPropViewButton />
                   </Flex>
                 </Flex.Item>

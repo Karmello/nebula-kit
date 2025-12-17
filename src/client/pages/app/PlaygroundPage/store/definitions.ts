@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/components'
+import { BoxProps, ButtonProps } from 'lib/components'
 import { RespValue } from 'lib/definitions'
 
 export const PLAYGROUND_MAP: Record<string, unknown[]> = {
@@ -20,9 +20,24 @@ export const PLAYGROUND_MAP: Record<string, unknown[]> = {
     'theme',
     'variant',
   ] as (keyof BoxProps)[],
+  Button: [
+    'bold',
+    'children',
+    'color',
+    'disabled',
+    'fullWidth',
+    'highlighted',
+    'iconAngle',
+    'iconName',
+    'iconPosition',
+    'intent',
+    'justifyContent',
+    'loading',
+    'size',
+    'variant',
+  ] as (keyof ButtonProps)[],
 }
 
-export type PlaygroundView = 'canvas' | 'props'
 export type PropValue = RespValue<string | number | boolean>
 
 export type Prop = {
@@ -35,7 +50,7 @@ export type Prop = {
 export type Props = Record<string, Prop>
 
 export type State = {
-  view: PlaygroundView
+  displayProps: boolean
   activeComponent: string
   components: Record<
     string,

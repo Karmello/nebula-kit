@@ -23,6 +23,7 @@ const FORM_FIELDS_PROPS_META: ComponentMeta<FormFieldsProps>['props'] = {
     ...FLEX_PROPS_META.columnGap,
     defaultValue: String(DEFAULT_FORM_FIELDS_COLUMN_GAP),
   },
+  display: FLEX_PROPS_META.display,
   flexDirection: {
     ...FLEX_PROPS_META.flexDirection,
     defaultValue: String(DEFAULT_FORM_FIELDS_FLEX_DIRECTION),

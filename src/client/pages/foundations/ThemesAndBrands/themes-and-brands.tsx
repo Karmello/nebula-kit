@@ -132,8 +132,8 @@ export default () => {
         </MarkerList>
         <Spacer />
         <Text>
-          This enables layouts with mixed visual contexts. Nested theme inversions are not a supported pattern
-          and result in undefined behavior.
+          Different combinations of theme and brand can be nested. Each Box and its contents use the nearest
+          theme and brand settings defined around them, without affecting the rest of the layout.
         </Text>
       </Section>
     </Box>

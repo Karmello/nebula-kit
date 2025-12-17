@@ -12,6 +12,7 @@ import './flex.scss'
 
 export const Flex = <T extends ElementType = 'div'>({
   // own
+  display,
   flexDirection,
   flexWrap,
   justifyContent,
@@ -31,6 +32,7 @@ export const Flex = <T extends ElementType = 'div'>({
 
   useLayoutEffect(() => {
     updateDomRespStyle('Flex', tagRef || ref, bp, {
+      display,
       flexDirection,
       flexWrap,
       justifyContent,
@@ -39,7 +41,7 @@ export const Flex = <T extends ElementType = 'div'>({
       rowGap,
       columnGap,
     })
-  }, [bp, flexDirection, flexWrap, justifyContent, alignItems, gap, rowGap, columnGap])
+  }, [bp, display, flexDirection, flexWrap, justifyContent, alignItems, gap, rowGap, columnGap])
 
   useLayoutEffect(() => {
     updateDomRespDataset('Flex', tagRef || ref, bp, { flexDirection })
