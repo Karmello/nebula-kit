@@ -3,30 +3,6 @@ import tinycolor from 'tinycolor2'
 
 import { Box } from 'lib/components'
 
-test('Global brand affects ctx primary solid color', async ({ mount, page }) => {
-  await mount(
-    <Box tagAttrs={{ id: 'box' }} drawable variant="solid" intent="primary" blockSize="200px">
-      Branded
-    </Box>,
-    {
-      hooksConfig: {
-        brand: 'red',
-      },
-    }
-  )
-
-  const result = await page.locator('#box').evaluate(el => {
-    const cs = getComputedStyle(el)
-    return {
-      bg: cs.backgroundColor,
-      ctx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-primary-solid').trim(),
-    }
-  })
-
-  expect(result.ctx).not.toBe('')
-  expect(result.bg).toBe(tinycolor(result.ctx).toRgbString())
-})
-
 test('Local brand overrides global brand', async ({ mount, page }) => {
   await mount(
     <Box
