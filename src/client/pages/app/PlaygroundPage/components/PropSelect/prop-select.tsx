@@ -3,14 +3,11 @@ import { Select, Spacer, Text } from 'lib/components'
 import { usePlaygroundStore } from '../../store'
 
 export const PropSelect = () => {
-  const { components, activeComponent, getActiveSlot, setActiveProp } = usePlaygroundStore()
+  const { components, activeComponent, setActiveProp } = usePlaygroundStore()
   if (!activeComponent) return null
 
-  const activeSlot = getActiveSlot()
-
-  const isSlot = activeSlot && activeSlot !== 'root'
-  const props = isSlot ? components[activeSlot].props : components[activeComponent].props
-  const value = isSlot ? components[activeSlot].activeProp : components[activeComponent].activeProp
+  const props = components[activeComponent].props
+  const value = components[activeComponent].activeProp
 
   return (
     <>
@@ -18,7 +15,7 @@ export const PropSelect = () => {
       <Spacer blockSize="5px" />
       <Select
         value={value}
-        onChange={value => setActiveProp(isSlot ? activeSlot : activeComponent, value)}
+        onChange={value => setActiveProp(activeComponent, value)}
         scrollAlign="center"
         visibleItemsCount={7}
         intent={{ base: 'secondary', lg: 'tertiary' }}

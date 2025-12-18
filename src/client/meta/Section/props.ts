@@ -25,7 +25,6 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
     isRequired: true,
     description: 'Heading text.',
   },
-  highlighted: BOX_PROPS_META.highlighted,
   iconName: TEXT_PROPS_META.iconName,
   iconPosition: {
     ...TEXT_PROPS_META.iconPosition,
@@ -36,7 +35,6 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
     defaultValue: DEFAULT_SECTION_INTENT,
   },
 
-  interactive: BOX_PROPS_META.interactive,
   size: {
     options: SECTION_SIZES as unknown as string[],
     defaultValue: DEFAULT_SECTION_SIZE,

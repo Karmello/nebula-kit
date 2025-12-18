@@ -3,14 +3,11 @@ import { Select, Spacer, Text } from 'lib/components'
 import { usePlaygroundStore } from '../../store'
 
 export const ComponentSelect = () => {
-  const { components, getNoSlotComponentNames, activeComponent, setActiveComponent, getActiveSlot } =
-    usePlaygroundStore()
-
-  const activeSlot = getActiveSlot()
+  const { components, activeComponent, setActiveComponent } = usePlaygroundStore()
 
   return (
     <>
-      <Text bold>Component{activeSlot ? ' / Slot' : ''}</Text>
+      <Text bold>Component</Text>
       <Spacer blockSize="5px" />
       <Select
         value={activeComponent}
@@ -20,15 +17,8 @@ export const ComponentSelect = () => {
         intent={{ base: 'secondary', lg: 'tertiary' }}
         itemBorderIntent={{ base: 'tertiary', lg: 'muted' }}
       >
-        {getNoSlotComponentNames().map(name => (
-          <Select.Option
-            value={name}
-            iconName={components[name].activeSlot !== undefined ? 'boxes' : undefined}
-            iconPosition="right"
-            justifyContent="space-between"
-          >
-            {name}
-          </Select.Option>
+        {Object.keys(components).map(name => (
+          <Select.Option value={name}>{name}</Select.Option>
         ))}
       </Select>
     </>

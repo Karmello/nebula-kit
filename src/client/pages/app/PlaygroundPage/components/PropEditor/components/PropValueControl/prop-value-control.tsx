@@ -5,17 +5,10 @@ import { ICONS } from 'lib/icons/lucide'
 import { usePlaygroundStore } from '../../../../store'
 
 export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
-  const { components, activeComponent, setPropField, getActiveSlot } = usePlaygroundStore()
+  const { components, activeComponent, setPropField } = usePlaygroundStore()
 
-  const activeSlot = getActiveSlot()
-
-  const isSlot = activeSlot && activeSlot !== 'root'
-
-  const activeProp = isSlot ? components[activeSlot].activeProp : components[activeComponent].activeProp
-
-  const prop = isSlot
-    ? components[activeSlot].props[activeProp]
-    : components[activeComponent].props[activeProp]
+  const activeProp = components[activeComponent].activeProp
+  const prop = components[activeComponent].props[activeProp]
 
   let value = ''
 
@@ -37,19 +30,14 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
       } else {
         delete newValue[bp]
       }
-      setPropField(isSlot ? activeSlot : activeComponent, activeProp, 'value', newValue)
+      setPropField(activeComponent, activeProp, 'value', newValue)
     } else {
       let newValue
       if (value === 'true') newValue = true
       else if (value === 'false') newValue = false
       else if (value !== '' && !Number.isNaN(Number(value))) newValue = Number(value)
       else newValue = value
-      setPropField(
-        isSlot ? activeSlot : activeComponent,
-        activeProp,
-        'value',
-        newValue !== '' ? newValue : undefined
-      )
+      setPropField(activeComponent, activeProp, 'value', newValue !== '' ? newValue : undefined)
     }
   }
 

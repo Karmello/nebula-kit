@@ -5,19 +5,12 @@ import { usePlaygroundStore } from '../../store'
 import { PropValueControl } from './components'
 
 export const PropEditor = () => {
-  const { components, activeComponent, getActiveSlot } = usePlaygroundStore()
+  const { components, activeComponent } = usePlaygroundStore()
   if (!activeComponent) return null
 
-  const activeSlot = getActiveSlot()
+  const prop = components[activeComponent].props[components[activeComponent].activeProp]
 
-  const isSlot = activeSlot && activeSlot !== 'root'
-
-  if (isSlot && !components[activeSlot].activeProp) return null
-  if (!isSlot && !components[activeComponent].activeProp) return null
-
-  const prop = isSlot
-    ? components[activeSlot].props[components[activeSlot].activeProp]
-    : components[activeComponent].props[components[activeComponent].activeProp]
+  if (!prop) return null
 
   return (
     <>

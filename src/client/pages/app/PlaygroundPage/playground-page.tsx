@@ -3,7 +3,6 @@ import { useNebkitStore } from 'lib/state'
 
 import {
   ComponentSelect,
-  SlotSelect,
   PropSelect,
   PropEditor,
   RenderPanel,
@@ -16,10 +15,7 @@ import { usePlaygroundStore } from './store'
 
 export const PlaygroundPage = () => {
   const { theme } = useNebkitStore()
-  const { activeComponent, getActiveSlot } = usePlaygroundStore()
-
-  const activeSlot = getActiveSlot()
-  const isSlot = activeSlot && activeSlot !== 'root'
+  const { activeComponent } = usePlaygroundStore()
 
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} overflowY="hidden">
@@ -28,11 +24,7 @@ export const PlaygroundPage = () => {
           <SplitView.Main>
             <SplitView.MainBar>
               <Flex alignItems="center" columnGap="20px">
-                <Text
-                  typography="h6"
-                  intent="primary"
-                  color="blue"
-                >{`<${isSlot ? activeSlot : activeComponent}>`}</Text>
+                <Text typography="h6" intent="primary" color="blue">{`<${activeComponent}>`}</Text>
                 <TogglePropsButton />
               </Flex>
             </SplitView.MainBar>
@@ -48,12 +40,7 @@ export const PlaygroundPage = () => {
             <Box padding={{ base: '10px', lg: '0px' }} paddingLeft={{ lg: '30px' }}>
               <Flex flexDirection="column" alignItems="stretch" rowGap="25px">
                 <Flex.Item>
-                  <Flex flexDirection="column" alignItems="stretch" rowGap="10px">
-                    <Flex.Item>
-                      <ComponentSelect />
-                    </Flex.Item>
-                    {activeSlot !== undefined ? <SlotSelect /> : null}
-                  </Flex>
+                  <ComponentSelect />
                 </Flex.Item>
                 <Flex.Item>
                   <Flex flexDirection="column" alignItems="stretch" rowGap="10px">

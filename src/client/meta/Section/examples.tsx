@@ -22,22 +22,6 @@ const SECTION_EXAMPLES_META: ComponentMeta<SectionProps>['examples'] = [
       </Section>
     ),
   },
-  {
-    description:
-      'Section as a hover-responsive surface, useful for areas that should change appearance on hover but not react when clicked.',
-    jsx: (
-      <Section
-        heading="Interactive section"
-        size="lg"
-        variant="outline"
-        color="purple"
-        intent="primary"
-        interactive
-      >
-        Content
-      </Section>
-    ),
-  },
 ]
 
 export { SECTION_EXAMPLES_META }

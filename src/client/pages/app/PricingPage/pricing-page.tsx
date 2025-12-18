@@ -70,7 +70,7 @@ export const PricingPage = () => {
                 gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }}
                 gap="20px"
               >
-                <Section heading="Free" variant="outline" intent="muted" iconName="leaf" interactive>
+                <Section heading="Free" variant="outline" intent="muted" iconName="leaf">
                   <Text intent="neutral" bold>
                     For newcomers.
                   </Text>
@@ -98,11 +98,10 @@ export const PricingPage = () => {
                 </Section>
                 <Section
                   heading="Premium"
-                  variant="outline"
+                  variant="soft-outline"
                   intent="primary"
                   color="green"
                   iconName="zap"
-                  interactive
                 >
                   <Text intent="neutral" bold>
                     For individual developers.
@@ -117,15 +116,17 @@ export const PricingPage = () => {
                     individual developers and freelancers who want complete access to every building block.
                   </Text>
                   <Spacer />
-                  <Text bold>What you get</Text>
+                  <Text bold intent="neutral">
+                    What you get
+                  </Text>
                   <Spacer blockSize="10px" />
                   <OptionIncluded>{coreBundleLink}</OptionIncluded>
                   <OptionIncluded>{proBundleLink}</OptionIncluded>
                   <OptionIncluded>
-                    <Text>Discord access with moderate chat support</Text>
+                    <Text intent="neutral">Discord access with moderate chat support</Text>
                   </OptionIncluded>
                   <OptionIncluded>
-                    <Text>Github roadmap access</Text>
+                    <Text intent="neutral">Github roadmap access</Text>
                   </OptionIncluded>
                   <Spacer blockSize="40px" />
                   <Flex justifyContent="center">
@@ -135,11 +136,10 @@ export const PricingPage = () => {
                 </Section>
                 <Section
                   heading="Business"
-                  variant="outline"
+                  variant="soft-outline"
                   color="blue"
                   intent="primary"
                   iconName="users"
-                  interactive
                 >
                   <Text intent="neutral" bold>
                     For small teams up to 10 members.
@@ -154,15 +154,17 @@ export const PricingPage = () => {
                     Premium plan.
                   </Text>
                   <Spacer />
-                  <Text bold>What you get</Text>
+                  <Text bold intent="neutral">
+                    What you get
+                  </Text>
                   <Spacer blockSize="10px" />
                   <OptionIncluded>{coreBundleLink}</OptionIncluded>
                   <OptionIncluded>{proBundleLink}</OptionIncluded>
                   <OptionIncluded>
-                    <Text>Discord access with chat support</Text>
+                    <Text intent="neutral">Discord access with chat support</Text>
                   </OptionIncluded>
                   <OptionIncluded>
-                    <Text>Github roadmap access</Text>
+                    <Text intent="neutral">Github roadmap access</Text>
                   </OptionIncluded>
                   <Spacer blockSize="40px" />
                   <Flex justifyContent="center">
@@ -172,11 +174,10 @@ export const PricingPage = () => {
                 </Section>
                 <Section
                   heading="Enterprise"
-                  variant="outline"
+                  variant="soft-outline"
                   color="red"
                   intent="primary"
                   iconName="globe"
-                  interactive
                 >
                   <Text intent="neutral" bold>
                     For large organizations.
@@ -191,15 +192,17 @@ export const PricingPage = () => {
                     Includes everything from the Business plan.
                   </Text>
                   <Spacer />
-                  <Text bold>What you get</Text>
+                  <Text bold intent="neutral">
+                    What you get
+                  </Text>
                   <Spacer blockSize="10px" />
                   <OptionIncluded>{coreBundleLink}</OptionIncluded>
                   <OptionIncluded>{proBundleLink}</OptionIncluded>
                   <OptionIncluded>
-                    <Text>Discord access with high priority chat support</Text>
+                    <Text intent="neutral">Discord access with high priority chat support</Text>
                   </OptionIncluded>
                   <OptionIncluded>
-                    <Text>Github roadmap access + elevated input consideration</Text>
+                    <Text intent="neutral">Github roadmap access + elevated input consideration</Text>
                   </OptionIncluded>
                   <Spacer blockSize="40px" />
                   <Flex justifyContent="center">

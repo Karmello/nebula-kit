@@ -1,3 +1,4 @@
+import { ComponentMeta } from 'client/definitions'
 import { BoxProps, ButtonProps } from 'lib/components'
 import { RespValue } from 'lib/definitions'
 
@@ -55,9 +56,9 @@ export type State = {
   components: Record<
     string,
     {
+      bundle: ComponentMeta<unknown>['overview']['bundle']
       props: Props
       activeProp: string
-      activeSlot?: string
     }
   >
 }

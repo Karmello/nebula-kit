@@ -4,13 +4,10 @@ import { usePlaygroundStore } from '../../store'
 import { ResetPropsButton } from '../ResetPropsButton'
 
 export const PropsViewer = () => {
-  const { components, activeComponent, getActiveSlot, setActiveProp, displayProps } = usePlaygroundStore()
+  const { components, activeComponent, setActiveProp, displayProps } = usePlaygroundStore()
   if (!displayProps || !activeComponent) return null
 
-  const activeSlot = getActiveSlot()
-
-  const isSlot = activeSlot && activeSlot !== 'root'
-  const props = isSlot ? components[activeSlot].props : components[activeComponent].props
+  const props = components[activeComponent].props
 
   return (
     <>
@@ -37,10 +34,10 @@ export const PropsViewer = () => {
                     tagAttrs={{
                       style: { wordBreak: 'break-all', cursor: 'pointer' },
                       onClick: () => {
-                        setActiveProp(isSlot ? activeSlot : activeComponent, propName)
+                        setActiveProp(activeComponent, propName)
                       },
                     }}
-                    bold={components[isSlot ? activeSlot : activeComponent].activeProp === propName}
+                    bold={components[activeComponent].activeProp === propName}
                     underline
                     intent="primary"
                     color="blue"
@@ -53,7 +50,7 @@ export const PropsViewer = () => {
                 <Table.Cell>
                   <Text
                     tagAttrs={{ style: { wordBreak: 'break-all' } }}
-                    bold={components[isSlot ? activeSlot : activeComponent].activeProp === propName}
+                    bold={components[activeComponent].activeProp === propName}
                   >
                     {propValue}
                   </Text>

@@ -9,13 +9,8 @@ import { PropValue, State } from './definitions'
 type Store = State & {
   setDisplayProps: (displayProps: boolean) => void
   setActiveComponent: (activeComponent: string) => void
-  setActiveSlot: (activeSlot: string) => void
   setActiveProp: (componentName: string, activeProp: string) => void
-  setPropField: (component: string, prop: string, field: string, value: unknown) => void
-  //
-  getActiveSlot: () => string | undefined
-  getNoSlotComponentNames: () => string[]
-  getActiveComponentSlotNames: () => string[]
+  setPropField: (componentName: string, prop: string, field: string, value: unknown) => void
   getPropValues: (componentName: string) => Record<string, PropValue>
 }
 
@@ -25,17 +20,6 @@ export const usePlaygroundStore = create<Store>()(
       ...getInitialState(),
       setDisplayProps: (displayProps: boolean) => set(state => ({ ...state, displayProps })),
       setActiveComponent: (activeComponent: string) => set(state => ({ ...state, activeComponent })),
-      setActiveSlot: (activeSlot: string) =>
-        set(state => ({
-          ...state,
-          components: {
-            ...state.components,
-            [state.activeComponent]: {
-              ...state.components[state.activeComponent],
-              activeSlot,
-            },
-          },
-        })),
       setActiveProp: (componentName: string, activeProp: string) =>
         set(state => ({
           ...state,
@@ -47,38 +31,23 @@ export const usePlaygroundStore = create<Store>()(
             },
           },
         })),
-      setPropField: (component: string, prop: string, field: string, value: unknown) =>
+      setPropField: (componentName: string, prop: string, field: string, value: unknown) =>
         set(state => ({
           ...state,
           components: {
             ...state.components,
-            [component]: {
-              ...state.components[component],
+            [componentName]: {
+              ...state.components[componentName],
               props: {
-                ...state.components[component].props,
+                ...state.components[componentName].props,
                 [prop]: {
-                  ...state.components[component].props[prop],
+                  ...state.components[componentName].props[prop],
                   [field]: value,
                 },
               },
             },
           },
         })),
-      getActiveSlot: () => {
-        const state = get()
-        if (!state.activeComponent) return
-        return state.components[state.activeComponent].activeSlot
-      },
-      getNoSlotComponentNames: () => {
-        const state = get()
-        return Object.keys(state.components).filter(name => !name.includes('.'))
-      },
-      getActiveComponentSlotNames: () => {
-        const state = get()
-        return state.activeComponent
-          ? Object.keys(state.components).filter(name => name.includes(`${state.activeComponent}.`))
-          : []
-      },
       getPropValues: (componentName: string) => {
         const state = get()
         const { props } = state.components[componentName]

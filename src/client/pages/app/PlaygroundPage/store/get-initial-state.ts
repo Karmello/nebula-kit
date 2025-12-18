@@ -1,68 +1,53 @@
 import META from 'client/meta'
-import { ComponentMeta } from 'client/definitions'
 
 import { PLAYGROUND_MAP, Props, State } from './definitions'
 
-const WHITELISTED_COMPONENTS = Object.keys(PLAYGROUND_MAP)
-
 export const getInitialState = (): State => {
   const state: State = {
-    displayProps: false,
-    activeComponent: '',
+    displayProps: true,
+    activeComponent: 'Box',
     components: {},
   }
 
-  const flatMetas: Record<string, ComponentMeta<any>> = {}
+  Object.keys(META)
+    .filter(componentName => Object.keys(PLAYGROUND_MAP).includes(componentName))
+    .forEach(componentName => {
+      const componentPropNames = Object.keys(META[componentName][componentName].props).filter(name =>
+        PLAYGROUND_MAP[componentName].includes(name)
+      )
 
-  Object.keys(META).forEach(topLevelComponentName => {
-    const innerLevelComponentNames = Object.keys(META[topLevelComponentName])
-    const finalComponentNames = innerLevelComponentNames.filter(name => WHITELISTED_COMPONENTS.includes(name))
-    finalComponentNames.forEach(name => {
-      flatMetas[name] = META[topLevelComponentName][name]
-    })
-  })
+      const props: Props = {}
 
-  const flatMetasKeys = Object.keys(flatMetas)
+      componentPropNames.forEach(propName => {
+        const { options, defaultValue, isResponsive } =
+          META[componentName][componentName].props[propName as never]
 
-  flatMetasKeys.forEach(componentName => {
-    const isSlot = componentName.includes('.')
-    const hasSlots = flatMetasKeys.some(k => k.includes(`${componentName}.`))
+        let parsedDefaultValue
 
-    let componentPropNames = Object.keys(flatMetas[componentName].props).filter(name =>
-      PLAYGROUND_MAP[componentName].includes(name)
-    )
+        if (['true', 'false'].includes(defaultValue)) {
+          parsedDefaultValue = defaultValue === 'true' ? true : false
+        } else if (!Number.isNaN(Number(defaultValue))) {
+          parsedDefaultValue = Number(defaultValue)
+        } else {
+          parsedDefaultValue = defaultValue
+        }
 
-    if (!isSlot && hasSlots) componentPropNames = componentPropNames.filter(name => name !== 'children')
+        props[propName] = {
+          options,
+          defaultValue: parsedDefaultValue,
+          isResponsive,
+          value: parsedDefaultValue,
+        }
+      })
 
-    const props: Props = {}
+      const { bundle } = META[componentName][componentName].overview
 
-    componentPropNames.forEach(propName => {
-      const { options, defaultValue, isResponsive } = flatMetas[componentName].props[propName]
-
-      let parsedDefaultValue
-
-      if (['true', 'false'].includes(defaultValue)) {
-        parsedDefaultValue = defaultValue === 'true' ? true : false
-      } else if (!Number.isNaN(Number(defaultValue))) {
-        parsedDefaultValue = Number(defaultValue)
-      } else {
-        parsedDefaultValue = defaultValue
-      }
-
-      props[propName] = {
-        options,
-        defaultValue: parsedDefaultValue,
-        isResponsive,
-        value: parsedDefaultValue,
+      state.components[componentName] = {
+        bundle,
+        props,
+        activeProp: componentName === 'Box' ? 'children' : '',
       }
     })
-
-    state.components[componentName] = {
-      props,
-      activeProp: '',
-      activeSlot: !isSlot && hasSlots ? 'root' : undefined,
-    }
-  })
 
   return state
 }
