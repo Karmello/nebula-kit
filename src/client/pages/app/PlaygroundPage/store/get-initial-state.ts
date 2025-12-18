@@ -45,7 +45,7 @@ export const getInitialState = (): State => {
       state.components[componentName] = {
         bundle,
         props,
-        activeProp: componentName === 'Box' ? 'children' : '',
+        activeProp: 'children',
       }
     })
 

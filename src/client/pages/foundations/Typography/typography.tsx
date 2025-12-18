@@ -8,9 +8,10 @@ import {
 const MAP: Record<TextTypography, string> = {
   body: 'Default text for reading and general content. Balanced for legibility and rhythm across devices.',
   lead: 'Introductory paragraph style - larger and more open than body text, used to draw focus at the start of a section.',
-  secondary: 'Supporting text such as captions under headings, helper descriptions or muted details.',
-  tertiary: 'Low-contrast text for metadata or subtle status indicators; visually lighter than secondary.',
-  caption: 'Smallest text size for labels, figure notes or compact UI elements.',
+  small:
+    'Reduced body text for secondary content. Used for descriptions, helper text or supporting copy that remains part of the reading flow.',
+  caption:
+    'Smallest text size for annotations and metadata. Used for labels, figure captions, timestamps or compact UI notes outside the main content flow.',
   h6: 'Upper-body style bridging headings and text. Works for lead-ins, callouts or compact hero banners.',
   h5: 'Small heading for titles within dense layouts - sidebars, tables or summary lines.',
   h4: 'Mid-level heading often used in cards, panels or feature blocks. Balances presence and compactness.',

@@ -12,7 +12,6 @@ const SELECT_OPTION_PROPS_META: ComponentMeta<SelectOptionProps>['props'] = {
     ...DROPDOWN_LIST_ITEM_PROPS_META.justifyContent,
     defaultValue: String(DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT),
   },
-  tag: DROPDOWN_LIST_ITEM_PROPS_META.tag,
   tagAttrs: DROPDOWN_LIST_ITEM_PROPS_META.tagAttrs,
   tagRef: DROPDOWN_LIST_ITEM_PROPS_META.tagRef,
   value: {

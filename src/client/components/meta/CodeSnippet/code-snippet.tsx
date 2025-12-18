@@ -103,7 +103,7 @@ export const CodeSnippet = ({ code, lang = 'log' }: CodeSnippetProps) => {
                         key={j}
                         tag="span"
                         tagAttrs={{ style: { display: 'inline', color: COLOR_MAP[color as never][theme] } }}
-                        typography="secondary"
+                        typography="small"
                       >
                         {content}
                       </Text>

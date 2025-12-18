@@ -33,6 +33,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   iconAngle: WITH_ICON_PROPS_META.iconAngle,
   iconName: TEXT_PROPS_META.iconName,
   iconPosition: TEXT_PROPS_META.iconPosition,
+  inlineSize: BOX_PROPS_META.inlineSize,
   intent: {
     ...BOX_PROPS_META.intent,
     defaultValue: DEFAULT_BUTTON_INTENT,
@@ -46,6 +47,8 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     options: ['boolean'],
     description: 'Activates the loading state, shows a spinner and prevents interaction.',
   },
+  maxInlineSize: BOX_PROPS_META.maxInlineSize,
+  minInlineSize: BOX_PROPS_META.minInlineSize,
   size: {
     options: Object.values(BUTTON_SIZES),
     defaultValue: DEFAULT_BUTTON_SIZE,

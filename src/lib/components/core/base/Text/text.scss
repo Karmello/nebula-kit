@@ -38,14 +38,6 @@ a.neb-text {
   font-weight: 500;
 }
 
-.neb-text[data-neb-text-typography='secondary'] {
-  color: var(--neb-secondary-ghost);
-}
-
-.neb-text[data-neb-text-typography='tertiary'] {
-  color: var(--neb-tertiary-ghost);
-}
-
 .neb-text[data-neb-text-typography='caption'] {
   font-weight: 500;
   letter-spacing: 0.05em;

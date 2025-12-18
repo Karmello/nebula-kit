@@ -22,8 +22,9 @@ expectType(
   </Button>
 )
 
+expectType(<Button inlineSize="5px">Button</Button>)
+
 // props not allowed
 expectError(<Button margin="5px">Button</Button>)
 expectError(<Button padding="5px">Button</Button>)
-expectError(<Button inlineSize="5px">Button</Button>)
 expectError(<Button blockSize="5px">Button</Button>)

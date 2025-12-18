@@ -17,8 +17,7 @@ export const TEXT_TYPOGRAPHY_CONFIG: Record<
   regular: {
     body: { tag: 'p', fontSize: '16px', lineHeight: 1.6, iconSize: '16px' },
     lead: { tag: 'p', fontSize: '18px', lineHeight: 1.6, iconSize: '18px' },
-    secondary: { tag: 'p', fontSize: '14px', lineHeight: 1.5, iconSize: '14px' },
-    tertiary: { tag: 'p', fontSize: '14px', lineHeight: 1.5, iconSize: '14px' },
+    small: { tag: 'p', fontSize: '14px', lineHeight: 1.5, iconSize: '14px' },
     caption: { tag: 'p', fontSize: '12px', lineHeight: 1.4, iconSize: '14px' },
     h6: { tag: 'h6', fontSize: '20px', lineHeight: 1.3, iconSize: '18px' },
     h5: { tag: 'h5', fontSize: '24px', lineHeight: 1.3, iconSize: '22px' },
@@ -30,8 +29,7 @@ export const TEXT_TYPOGRAPHY_CONFIG: Record<
   compact: {
     body: { tag: 'p', fontSize: '14px', lineHeight: 1.5, iconSize: '14px' },
     lead: { tag: 'p', fontSize: '16px', lineHeight: 1.5, iconSize: '16px' },
-    secondary: { tag: 'p', fontSize: '13px', lineHeight: 1.45, iconSize: '13px' },
-    tertiary: { tag: 'p', fontSize: '13px', lineHeight: 1.45, iconSize: '13px' },
+    small: { tag: 'p', fontSize: '13px', lineHeight: 1.45, iconSize: '13px' },
     caption: { tag: 'p', fontSize: '11px', lineHeight: 1.35, iconSize: '12px' },
     h6: { tag: 'h6', fontSize: '18px', lineHeight: 1.25, iconSize: '16px' },
     h5: { tag: 'h5', fontSize: '21px', lineHeight: 1.25, iconSize: '20px' },
@@ -50,8 +48,7 @@ export const DEFAULT_TEXT_SCALE: TextScale = 'regular'
 export const TEXT_TYPOGRAPHY = [
   'body',
   'lead',
-  'secondary',
-  'tertiary',
+  'small',
   'caption',
   'h6',
   'h5',

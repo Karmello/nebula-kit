@@ -1,6 +1,30 @@
 import { ComponentMeta } from 'client/definitions'
-import { BoxProps, ButtonProps } from 'lib/components'
+import { BoxProps, ButtonProps, TextProps } from 'lib/components'
 import { RespValue } from 'lib/definitions'
+
+export type PropValue = RespValue<string | number | boolean>
+
+export type Prop = {
+  options: string[]
+  defaultValue: PropValue
+  isResponsive: boolean
+  value: PropValue
+}
+
+export type Props = Record<string, Prop>
+
+export type State = {
+  displayProps: boolean
+  activeComponent: string
+  components: Record<
+    string,
+    {
+      bundle: ComponentMeta<unknown>['overview']['bundle']
+      props: Props
+      activeProp: string
+    }
+  >
+}
 
 export const PLAYGROUND_MAP: Record<string, unknown[]> = {
   Box: [
@@ -31,34 +55,30 @@ export const PLAYGROUND_MAP: Record<string, unknown[]> = {
     'iconAngle',
     'iconName',
     'iconPosition',
+    'inlineSize',
     'intent',
     'justifyContent',
     'loading',
+    'minInlineSize',
+    'maxInlineSize',
     'size',
     'variant',
   ] as (keyof ButtonProps)[],
-}
-
-export type PropValue = RespValue<string | number | boolean>
-
-export type Prop = {
-  options: string[]
-  defaultValue: PropValue
-  isResponsive: boolean
-  value: PropValue
-}
-
-export type Props = Record<string, Prop>
-
-export type State = {
-  displayProps: boolean
-  activeComponent: string
-  components: Record<
-    string,
-    {
-      bundle: ComponentMeta<unknown>['overview']['bundle']
-      props: Props
-      activeProp: string
-    }
-  >
+  Text: [
+    'bold',
+    'children',
+    'clampLines',
+    'color',
+    'disabled',
+    'iconName',
+    'iconPosition',
+    'intent',
+    'italic',
+    'noWrap',
+    'scale',
+    'textAlign',
+    'truncate',
+    'typography',
+    'underline',
+  ] as (keyof TextProps)[],
 }

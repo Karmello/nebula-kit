@@ -12,12 +12,7 @@ export const Breadcrumb = ({ items }: BreadcrumbProps) => {
       {items
         .filter(item => item)
         .map((item, i) => (
-          <Text
-            key={i}
-            typography="secondary"
-            intent="primary"
-            iconName={i > 0 ? 'chevron-right' : undefined}
-          >
+          <Text key={i} typography="small" intent="primary" iconName={i > 0 ? 'chevron-right' : undefined}>
             {item}
           </Text>
         ))}

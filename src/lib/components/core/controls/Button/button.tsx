@@ -31,6 +31,9 @@ export const Button = <T extends ButtonTag = 'button'>({
   intent = DEFAULT_BUTTON_INTENT,
   highlighted,
   disabled,
+  inlineSize,
+  minInlineSize,
+  maxInlineSize,
   // Text
   iconName,
   iconPosition,
@@ -79,6 +82,9 @@ export const Button = <T extends ButtonTag = 'button'>({
       intent={intent}
       highlighted={highlighted}
       disabled={disabled || loading}
+      inlineSize={inlineSize}
+      minInlineSize={minInlineSize}
+      maxInlineSize={maxInlineSize}
       interactive
       position="relative"
       {...BUTTON_SIZE_CONFIG[size]}

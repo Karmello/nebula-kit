@@ -12,7 +12,6 @@ import './dropdown-list-item.scss'
 
 export const DropdownListItem = <T extends ButtonTag = 'button'>({
   children,
-  tag,
   tagRef,
   tagAttrs,
   ...buttonProps
@@ -34,7 +33,6 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
 
   return (
     <Button
-      tag={tag}
       tagRef={tagRef}
       tagAttrs={
         {

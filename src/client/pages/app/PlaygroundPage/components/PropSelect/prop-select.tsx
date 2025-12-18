@@ -20,16 +20,18 @@ export const PropSelect = () => {
         intent={{ base: 'secondary', lg: 'tertiary' }}
         itemBorderIntent={{ base: 'tertiary', lg: 'muted' }}
       >
-        {Object.keys(props).map(propName => (
-          <Select.Option
-            value={propName}
-            iconName={props[propName].isResponsive ? 'screen-share' : undefined}
-            iconPosition="right"
-            justifyContent="space-between"
-          >
-            {propName}
-          </Select.Option>
-        ))}
+        {Object.keys(props)
+          .sort()
+          .map(propName => (
+            <Select.Option
+              value={propName}
+              iconName={props[propName].isResponsive ? 'screen-share' : undefined}
+              iconPosition="right"
+              justifyContent="space-between"
+            >
+              {propName}
+            </Select.Option>
+          ))}
       </Select>
     </>
   )
