@@ -4,7 +4,6 @@ import { usePlaygroundStore } from '../../store'
 
 export const PropSelect = () => {
   const { components, activeComponent, setActiveProp } = usePlaygroundStore()
-  if (!activeComponent) return null
 
   const props = components[activeComponent].props
   const value = components[activeComponent].activeProp

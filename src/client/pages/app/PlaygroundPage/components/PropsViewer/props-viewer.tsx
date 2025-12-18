@@ -5,7 +5,8 @@ import { ResetPropsButton } from '../ResetPropsButton'
 
 export const PropsViewer = () => {
   const { components, activeComponent, setActiveProp, displayProps } = usePlaygroundStore()
-  if (!displayProps || !activeComponent) return null
+
+  if (!displayProps) return null
 
   const props = components[activeComponent].props
 
@@ -22,7 +23,12 @@ export const PropsViewer = () => {
             if (props[propName].value !== undefined && JSON.stringify(props[propName].value) != '{}') {
               propValue =
                 valueType === 'object'
-                  ? JSON.stringify(props[propName].value).replaceAll('"', '')
+                  ? JSON.stringify(props[propName].value)
+                      .replaceAll('"', '')
+                      .replaceAll(':', ': ')
+                      .replaceAll(',', ', ')
+                      .replaceAll('{', '{ ')
+                      .replaceAll('}', ' }')
                   : String(props[propName].value)
             }
 

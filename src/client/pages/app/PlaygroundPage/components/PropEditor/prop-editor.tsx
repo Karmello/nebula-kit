@@ -6,7 +6,6 @@ import { PropValueControl } from './components'
 
 export const PropEditor = () => {
   const { components, activeComponent } = usePlaygroundStore()
-  if (!activeComponent) return null
 
   const prop = components[activeComponent].props[components[activeComponent].activeProp]
 

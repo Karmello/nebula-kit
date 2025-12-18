@@ -5,8 +5,6 @@ import { usePlaygroundStore } from '../../store'
 export const ResetPropsButton = () => {
   const { components, activeComponent, setPropField } = usePlaygroundStore()
 
-  if (!activeComponent) return null
-
   const props = components[activeComponent].props
 
   return (

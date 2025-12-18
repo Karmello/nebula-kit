@@ -4,7 +4,6 @@ import { usePlaygroundStore } from '../../store'
 
 export const SwitchPropViewButton = () => {
   const { components, activeComponent, setPropField } = usePlaygroundStore()
-  if (!activeComponent) return null
 
   const { activeProp } = components[activeComponent]
   if (!activeProp) return null
