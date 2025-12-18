@@ -12,7 +12,7 @@ const Question = ({ question, answer }: { question: string; answer: string }) =>
 
 export const FaqPage = () => {
   return (
-    <Box padding={{ base: '20px', lg: '50px' }} maxInlineSize="75rem">
+    <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} maxInlineSize="75rem">
       <Section heading="Frequently asked questions" iconName="message-circle-question-mark">
         <Flex flexDirection="column" rowGap="15px">
           <Question
