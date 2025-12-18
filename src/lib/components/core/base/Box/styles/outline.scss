@@ -2,8 +2,6 @@
 
 .neb-box[data-neb-box-drawable='true'] {
   &[data-neb-box-variant='outline'] {
-    background-color: var(--neb-background);
-    color: var(--neb-text);
     border-width: var(--neb-border-width);
     --neb-ripple-bg: var(--neb-text);
 
@@ -19,7 +17,6 @@
           &[data-neb-box-highlighted='true'],
           &:focus-visible {
             border-color: var(--neb-#{$intent}-outline-hover);
-            background-color: var(--neb-#{$intent}-outline-bg-hover);
           }
 
           // focus ring
@@ -35,18 +32,6 @@
         }
         &[data-neb-box-disabled='true']:-webkit-autofill {
           -webkit-text-fill-color: var(--neb-#{$intent}-outline-disabled);
-        }
-      }
-    }
-
-    // neutral intent override
-    &[data-neb-box-intent='neutral'] {
-      // not disabled, interactive
-      &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
-        // hovered, highlighted
-        &:not([data-neb-box-highlighted='true']):hover,
-        &[data-neb-box-highlighted='true'] {
-          background-color: var(--neb-background);
         }
       }
     }
