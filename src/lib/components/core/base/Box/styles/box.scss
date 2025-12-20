@@ -53,8 +53,3 @@
 .neb-box[data-neb-box-disabled='true'] {
   pointer-events: none;
 }
-
-.neb-box[data-neb-box-drawable='true']:not([data-neb-box-variant]):not([data-neb-box-intent]) {
-  background-color: var(--neb-background);
-  color: var(--neb-text);
-}

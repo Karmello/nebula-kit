@@ -1,5 +1,6 @@
 export * from './ComponentSelect'
 export * from './DocsButton'
+export * from './PredefinedExamples'
 export * from './PropEditor'
 export * from './PropSelect'
 export * from './PropsViewer'

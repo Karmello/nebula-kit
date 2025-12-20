@@ -10,6 +10,8 @@ import {
   PropsViewer,
   SwitchPropViewButton,
   DocsButton,
+  PredefinedExamples,
+  ResetPropsButton,
 } from './components'
 
 import { usePlaygroundStore } from './store'
@@ -24,17 +26,20 @@ export const PlaygroundPage = () => {
         <SplitView sidePosition="right">
           <SplitView.Main>
             <SplitView.MainBar>
-              <Flex alignItems="center" columnGap="20px">
+              <Flex flexWrap="wrap" gap="12px">
                 <Text typography="h6" intent="primary" color="blue">{`<${activeComponent}>`}</Text>
-                <Flex columnGap="7px">
-                  <DocsButton />
-                  <TogglePropsButton />
-                </Flex>
+                <DocsButton />
+                <TogglePropsButton />
+                <ResetPropsButton />
+              </Flex>
+              <Spacer blockSize="20px" />
+              <Flex flexWrap="wrap" columnGap="7px">
+                <PredefinedExamples />
               </Flex>
             </SplitView.MainBar>
-            <Spacer blockSize="40px" />
+            <Spacer blockSize="30px" />
             <RenderPanel />
-            <Spacer blockSize="75px" />
+            <Spacer blockSize="50px" />
             <PropsViewer />
           </SplitView.Main>
           <SplitView.Side

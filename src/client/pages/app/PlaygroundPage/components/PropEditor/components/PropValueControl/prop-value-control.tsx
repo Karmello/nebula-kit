@@ -43,7 +43,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
 
   return (
     <>
-      <Text>{bp ? `${activeProp} (${bp})` : activeProp}</Text>
+      <Text>{bp ? `${activeProp} [${bp}]` : activeProp}</Text>
       <Spacer blockSize="5px" />
       {['CSS', 'ReactNode', 'string', 'number'].includes(prop.options[0]) ? (
         <Input

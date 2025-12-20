@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { BoxProps, ButtonProps, TextProps } from 'lib/components'
+import { BoxProps, ButtonProps, CalloutProps, SectionProps, TextProps } from 'lib/components'
 import { RespValue } from 'lib/definitions'
 
 export type PropValue = RespValue<string | number | boolean>
@@ -81,4 +81,15 @@ export const PLAYGROUND_MAP: Record<string, unknown[]> = {
     'typography',
     'underline',
   ] as (keyof TextProps)[],
+  Section: [
+    'children',
+    'color',
+    'heading',
+    'iconName',
+    'iconPosition',
+    'intent',
+    'size',
+    'variant',
+  ] as (keyof SectionProps)[],
+  Callout: ['content', 'heading', 'intent', 'size', 'status', 'variant'] as (keyof CalloutProps)[],
 }

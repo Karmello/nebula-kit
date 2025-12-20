@@ -1,7 +1,6 @@
 import { Spacer, Table, Text } from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
-import { ResetPropsButton } from '../ResetPropsButton'
 
 export const PropsViewer = () => {
   const { components, activeComponent, setActiveProp, displayProps } = usePlaygroundStore()
@@ -13,8 +12,8 @@ export const PropsViewer = () => {
   return (
     <>
       <Text bold>Props table</Text>
-      <Spacer blockSize="5px" />
-      <Table layout="fixed" paddingBlock="5px" paddingInline="10px">
+      <Spacer blockSize="8px" />
+      <Table layout="fixed" paddingBlock="5px" paddingInline="10px" color="gray">
         <Table.Body>
           {Object.keys(props)
             .sort()
@@ -69,7 +68,9 @@ export const PropsViewer = () => {
         </Table.Body>
       </Table>
       <Spacer />
-      <ResetPropsButton />
+      <Text iconName="screen-share" italic>
+        = responsive prop
+      </Text>
     </>
   )
 }

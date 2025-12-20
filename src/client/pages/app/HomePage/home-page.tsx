@@ -20,6 +20,8 @@ import { useNebkitStore } from 'lib/state'
 import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
 
+import { Ortho } from './Ortho'
+
 export const HomePage = () => {
   const navigateTo = useNavigateTo()
 
@@ -83,55 +85,68 @@ export const HomePage = () => {
               />
             </Flex.Item>
           </Flex>
-          <Spacer blockSize="50px" />
-          <Divider />
-          <Spacer blockSize="30px" />
-          <Flex flexWrap="wrap" gap="30px">
-            <Flex.Item>
-              <Text bold>Theme</Text>
-              <Segment key={theme}>
-                {THEMES.map(key => (
-                  <Segment.Item key={key}>
-                    <Button
-                      intent={key === theme ? 'inverse' : 'tertiary'}
+          <Divider marginBlock="50px" />
+          <Box marginInline="50px">
+            <Flex
+              flexWrap="wrap"
+              alignItems="center"
+              gap="60px"
+              justifyContent="center"
+              flexDirection={{ base: 'column-reverse', md: 'row' }}
+            >
+              <Flex.Item>
+                <Ortho />
+              </Flex.Item>
+              <Flex.Item flex="1">
+                <Flex flexWrap="wrap" gap="30px" justifyContent="center">
+                  <Flex.Item>
+                    <Text bold>Theme</Text>
+                    <Segment key={theme}>
+                      {THEMES.map(key => (
+                        <Segment.Item key={key}>
+                          <Button
+                            intent={key === theme ? 'inverse' : 'tertiary'}
+                            size="sm"
+                            tagAttrs={{ onClick: () => setTheme(key) }}
+                          >
+                            {sentenceCase(key)}
+                          </Button>
+                        </Segment.Item>
+                      ))}
+                    </Segment>
+                  </Flex.Item>
+                  <Flex.Item>
+                    <Text bold>Brand</Text>
+                    <Select
+                      value={brand}
+                      onChange={value => setBrand(value as Color)}
+                      inlineSize="150px"
                       size="sm"
-                      tagAttrs={{ onClick: () => setTheme(key) }}
+                      scrollAlign="center"
                     >
-                      {sentenceCase(key)}
-                    </Button>
-                  </Segment.Item>
-                ))}
-              </Segment>
-            </Flex.Item>
-            <Flex.Item>
-              <Text bold>Brand</Text>
-              <Select
-                value={brand}
-                onChange={value => setBrand(value as Color)}
-                inlineSize="150px"
-                size="sm"
-                scrollAlign="center"
-              >
-                {COLORS.map(brand => (
-                  <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
-                ))}
-              </Select>
-            </Flex.Item>
-            <Flex.Item>
-              <Text bold>Border radius</Text>
-              <Select
-                value={borderRadiusSize}
-                onChange={value => setBorderRadiusSize(value as never)}
-                inlineSize="150px"
-                size="sm"
-                scrollAlign="center"
-              >
-                {NEBKIT_BORDER_RADIUS_SIZES.map(n => (
-                  <Select.Option value={n}>{n}</Select.Option>
-                ))}
-              </Select>
-            </Flex.Item>
-          </Flex>
+                      {COLORS.map(brand => (
+                        <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
+                      ))}
+                    </Select>
+                  </Flex.Item>
+                  <Flex.Item>
+                    <Text bold>Border radius</Text>
+                    <Select
+                      value={borderRadiusSize}
+                      onChange={value => setBorderRadiusSize(value as never)}
+                      inlineSize="150px"
+                      size="sm"
+                      scrollAlign="center"
+                    >
+                      {NEBKIT_BORDER_RADIUS_SIZES.map(n => (
+                        <Select.Option value={n}>{n}</Select.Option>
+                      ))}
+                    </Select>
+                  </Flex.Item>
+                </Flex>
+              </Flex.Item>
+            </Flex>
+          </Box>
         </Flex.Item>
         <Flex.Item flex="1">
           <Flex flexDirection="column" gap="30px">

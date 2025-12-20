@@ -45,7 +45,7 @@ export const getInitialState = (): State => {
       state.components[componentName] = {
         bundle,
         props,
-        activeProp: 'children',
+        activeProp: componentPropNames.sort()[0],
       }
     })
 

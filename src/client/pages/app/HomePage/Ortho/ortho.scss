@@ -1,0 +1,150 @@
+$size: 175px;
+$dotSize: $size / 4.5;
+$arrowSize: $dotSize / 4;
+$lineSize: 2px;
+$borderSize: 5px;
+
+$dotColor: var(--neb-secondary-solid);
+$arrowColor: var(--neb-secondary-solid);
+$borderColor: var(--neb-tertiary-solid);
+$borderGlowColor: var(--neb-tertiary-solid);
+
+.neb-ortho {
+  position: relative;
+  block-size: $size;
+  inline-size: $size;
+  border-radius: 50%;
+  border-width: $borderSize;
+  border-color: $borderColor;
+  transform: rotate(22.5deg);
+
+  .neb-ortho-inner {
+    position: absolute;
+    inset: 0;
+    block-size: $size - 10px;
+    inline-size: $size - 10px;
+    padding: 20px;
+    overflow: hidden;
+    border-width: $borderSize * 4;
+
+    .neb-dot {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      block-size: $dotSize;
+      inline-size: $dotSize;
+      border-radius: 45%;
+      transform: translate(-50%, -50%);
+      background-color: $dotColor;
+    }
+
+    .neb-arrow-triangle {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      border-left: $arrowSize / 2 solid transparent;
+      border-right: $arrowSize / 2 solid transparent;
+      border-bottom: $arrowSize solid;
+      border-bottom-color: $arrowColor;
+      animation: neb-ortho-pulse 2s ease-in-out infinite;
+    }
+
+    .neb-arrow-triangle.top {
+      transform: translate(-50%, -$arrowSize - $dotSize / 2) rotate(180deg);
+    }
+
+    .neb-arrow-triangle.right {
+      transform: translate($dotSize / 2, calc(-50% + $lineSize / 2)) rotate(-90deg);
+    }
+
+    .neb-arrow-triangle.bottom {
+      transform: translate(-50%, $dotSize / 2);
+    }
+
+    .neb-arrow-triangle.left {
+      transform: translate(-$arrowSize -$dotSize / 2, calc(-50% + $lineSize / 2)) rotate(90deg);
+    }
+
+    .neb-arrow-line {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      block-size: $lineSize;
+      inline-size: $size / 2 - $dotSize / 2 - $arrowSize;
+      background: repeating-linear-gradient(
+        to right,
+        $arrowColor 0 $lineSize * 2,
+        transparent $lineSize * 2 $lineSize * 4
+      );
+      animation:
+        neb-ortho-pulse 2s ease-in-out infinite,
+        neb-ortho-flow 0.25s linear infinite;
+      --flow-dir: -1;
+    }
+
+    .neb-arrow-line.top {
+      transform: translate(0, -$dotSize / 2 - $arrowSize) rotate(-90deg);
+      transform-origin: left;
+    }
+
+    .neb-arrow-line.right {
+      transform: translate($dotSize / 2 + $arrowSize, 0);
+    }
+
+    .neb-arrow-line.bottom {
+      transform: translate(0, $dotSize / 2 + $arrowSize) rotate(90deg);
+      transform-origin: left;
+    }
+
+    .neb-arrow-line.left {
+      --flow-dir: 1;
+      transform: translate(calc(-100% - $dotSize / 2 - $arrowSize), 0);
+    }
+  }
+}
+
+.neb-ortho::after {
+  content: '';
+  position: absolute;
+  inset: -$borderSize;
+  border-style: solid;
+  border-radius: 46%;
+  border-width: $borderSize;
+  border-color: $borderColor;
+  border-top-color: $borderGlowColor;
+  animation: neb-ortho-spin 5s linear infinite;
+}
+
+@keyframes neb-ortho-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes neb-ortho-pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes neb-ortho-flow {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: calc(var(--flow-dir) * $lineSize * 4) 0;
+  }
+}

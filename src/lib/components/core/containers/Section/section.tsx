@@ -49,10 +49,15 @@ export const Section = <T extends SectionTag = 'section'>({
       overflowX="auto"
       overflowY="hidden"
     >
-      <Text typography={SECTION_SIZE_CONFIG[size].typography} iconName={iconName} iconPosition={iconPosition}>
+      <Text
+        typography={SECTION_SIZE_CONFIG[size].typography}
+        iconName={iconName}
+        iconPosition={iconPosition}
+        color={color}
+      >
         {heading}
       </Text>
-      <Divider />
+      <Divider color={color} />
       {children ? (
         <>
           <Spacer blockSize={SECTION_SIZE_CONFIG[size].spacing} />
