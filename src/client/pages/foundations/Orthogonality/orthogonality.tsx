@@ -4,8 +4,12 @@ export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Text>
-        NebulaKit resolves visual styles using two independent axes: theme and brand. Both can be applied
-        globally or locally and are resolved through the nearest drawable Box.
+        NebulaKit resolves visual styles using five orthogonal axes: theme, brand, color, variant and intent.
+        Theme and brand define the visual environment. They can be applied globally or locally and are
+        inherited through the nearest drawable Box. Color, variant and intent are always local. They describe
+        how a specific component presents itself within that environment. Each axis operates independently.
+        Changing one never alters the meaning or behavior of the others. This separation keeps the system
+        predictable, composable and easy to reason about as it grows.
       </Text>
       <Spacer blockSize="40px" />
       <Section heading="Theme" size="sm">
@@ -77,24 +81,6 @@ export default () => {
         <Text>Use color when a component must be styled explicitly.</Text>
       </Section>
       <Spacer blockSize="40px" />
-      <Section heading="Drawable surface" size="sm">
-        <Text>Only drawable Boxes participate in visual styling.</Text>
-        <Spacer />
-        <MarkerList>
-          <MarkerList.Item>
-            <Text>The drawable prop enables backgrounds, text color, variants and intents</Text>
-          </MarkerList.Item>
-          <MarkerList.Item>
-            <Text>Non-drawable Boxes are structural and visually neutral</Text>
-          </MarkerList.Item>
-          <MarkerList.Item>
-            <Text>Theme, brand, color, variant and intent apply only to drawable Boxes</Text>
-          </MarkerList.Item>
-        </MarkerList>
-        <Spacer />
-        <Text>This separation keeps layouts clean and reduces unnecessary styling work.</Text>
-      </Section>
-      <Spacer blockSize="40px" />
       <Section heading="Variant and intent" size="sm">
         <Text>Variant and intent define how a drawable surface is rendered.</Text>
         <Spacer />
@@ -114,6 +100,24 @@ export default () => {
         </MarkerList>
         <Spacer />
         <Text>Variant and intent never propagate.</Text>
+      </Section>
+      <Spacer blockSize="40px" />
+      <Section heading="Drawable surface" size="sm">
+        <Text>Only drawable Boxes participate in visual styling.</Text>
+        <Spacer />
+        <MarkerList>
+          <MarkerList.Item>
+            <Text>The drawable prop enables backgrounds, text color, variants and intents</Text>
+          </MarkerList.Item>
+          <MarkerList.Item>
+            <Text>Non-drawable Boxes are structural and visually neutral</Text>
+          </MarkerList.Item>
+          <MarkerList.Item>
+            <Text>Theme, brand, color, variant and intent apply only to drawable Boxes</Text>
+          </MarkerList.Item>
+        </MarkerList>
+        <Spacer />
+        <Text>This separation keeps layouts clean and reduces unnecessary styling work.</Text>
       </Section>
       <Spacer blockSize="40px" />
       <Section heading="Local styling islands" size="sm">
