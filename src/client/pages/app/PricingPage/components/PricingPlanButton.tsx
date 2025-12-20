@@ -24,9 +24,9 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
     if (!activePlan || activePlan === 'free') {
       return (
         <Link
-          href={`${PageKey.foundations}/overview/get-started/installation`}
+          href={`${PageKey.foundations}/overview/getting-started/installation`}
           onClick={() => {
-            navigateTo(`${PageKey.foundations}/overview/get-started/installation`)
+            navigateTo(`${PageKey.foundations}/overview/getting-started/installation`)
           }}
         >
           <Button size="sm" color={color} intent="primary">
