@@ -2,7 +2,7 @@ import { Spacer, Table, Text } from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
 
-export const PropsViewer = () => {
+export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: () => void }) => {
   const { components, activeComponent, setActiveProp, displayProps } = usePlaygroundStore()
 
   if (!displayProps) return null
@@ -42,6 +42,7 @@ export const PropsViewer = () => {
                         style: { wordBreak: 'break-all', cursor: 'pointer' },
                         onClick: () => {
                           setActiveProp(activeComponent, propName)
+                          handleSideVisibility()
                         },
                       }}
                       bold={components[activeComponent].activeProp === propName}
