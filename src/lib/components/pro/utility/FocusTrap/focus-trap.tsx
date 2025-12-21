@@ -9,50 +9,71 @@ export const FocusTrap = ({
   onFocusEscape,
   disableEscapeOnOutsideClick = DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK,
 }: FocusTrapProps) => {
-  const trigger = useRef<HTMLElement | null>(null)
+  const triggerRef = useRef<HTMLElement | null>(null)
+  const prevActiveRef = useRef(false)
+  const hadTabIndexRef = useRef(false)
 
+  // Restore focus on close (active true -> false)
+  useEffect(() => {
+    const prevActive = prevActiveRef.current
+
+    if (prevActive && !active) {
+      const trigger = triggerRef.current
+      triggerRef.current = null
+
+      // Only focus if it's still in the document and focusable-ish
+      if (trigger && document.contains(trigger)) {
+        trigger.focus()
+      }
+    }
+
+    prevActiveRef.current = active
+  }, [active])
+
+  // Trap behavior while active
   useEffect(() => {
     const target = tagRef?.current as HTMLElement | null
     if (!active || !target) return
 
-    // remember element that had focus before trap
-    trigger.current = document.activeElement as HTMLElement | null
+    // Capture trigger once per open
+    if (!triggerRef.current) {
+      triggerRef.current = document.activeElement as HTMLElement | null
+    }
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Tab') {
-        const interactiveBoxes = Array.from(
-          target.querySelectorAll<HTMLElement>("[data-neb-box-interactive='true']")
-        ).filter(el => !el.closest('[inert]'))
+      if (e.key !== 'Tab' && e.key !== 'Escape') return
 
-        if (interactiveBoxes.length === 0) return
-
-        const first = interactiveBoxes[0]
-        const last = interactiveBoxes[interactiveBoxes.length - 1]
-
-        if (!e.shiftKey) {
-          // forward tab
-          if (document.activeElement === last) {
-            e.preventDefault()
-            first.focus()
-          }
-        } else {
-          // shift+tab
-          if (document.activeElement === first) {
-            e.preventDefault()
-            last.focus()
-          }
-        }
-      } else if (e.key === 'Escape') {
+      if (e.key === 'Escape') {
         onFocusEscape?.()
+        return
+      }
+
+      const interactiveBoxes = Array.from(
+        target.querySelectorAll<HTMLElement>("[data-neb-box-interactive='true']")
+      ).filter(el => !el.closest('[inert]'))
+
+      if (interactiveBoxes.length === 0) return
+
+      const first = interactiveBoxes[0]
+      const last = interactiveBoxes[interactiveBoxes.length - 1]
+      const activeEl = document.activeElement as HTMLElement | null
+
+      if (!e.shiftKey) {
+        if (activeEl === last) {
+          e.preventDefault()
+          first.focus()
+        }
+      } else {
+        if (activeEl === first) {
+          e.preventDefault()
+          last.focus()
+        }
       }
     }
 
     const handlePointerDown = (e: PointerEvent) => {
       if (disableEscapeOnOutsideClick) return
-      const currentTarget = tagRef?.current as HTMLElement | null
-      if (!currentTarget) return
-
-      if (!currentTarget.contains(e.target as Node)) {
+      if (!target.contains(e.target as Node)) {
         onFocusEscape?.()
       }
     }
@@ -60,20 +81,27 @@ export const FocusTrap = ({
     document.addEventListener('keydown', handleKeyDown)
     document.addEventListener('pointerdown', handlePointerDown)
 
-    target.setAttribute('tabindex', '-1')
-    target.focus()
+    // Ensure target can receive focus but avoid breaking an existing tabindex
+    hadTabIndexRef.current = target.hasAttribute('tabindex')
+    if (!hadTabIndexRef.current) {
+      target.setAttribute('tabindex', '-1')
+    }
+
+    // Idempotent focus: never steal focus if already inside trap
+    if (!target.contains(document.activeElement)) {
+      target.focus()
+    }
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown)
       document.removeEventListener('pointerdown', handlePointerDown)
-      target.removeAttribute('tabindex')
 
-      if (trigger.current) {
-        trigger.current.focus()
+      // Restore original tabindex state
+      if (!hadTabIndexRef.current) {
+        target.removeAttribute('tabindex')
       }
-      trigger.current = null
     }
-  }, [active, tagRef, onFocusEscape])
+  }, [active, tagRef, onFocusEscape, disableEscapeOnOutsideClick])
 
   return children
 }
