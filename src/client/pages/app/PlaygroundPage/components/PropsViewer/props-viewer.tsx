@@ -1,4 +1,4 @@
-import { Spacer, Table, Text } from 'lib/components'
+import { Button, Spacer, Table, Text } from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
 
@@ -36,24 +36,22 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
               return (
                 <Table.Row>
                   <Table.Cell>
-                    <Text
-                      tag="span"
+                    <Button
                       tagAttrs={{
-                        style: { wordBreak: 'break-all', cursor: 'pointer' },
                         onClick: () => {
                           setActiveProp(activeComponent, propName)
                           handleSideVisibility()
                         },
                       }}
-                      bold={components[activeComponent].activeProp === propName}
-                      underline
-                      intent="primary"
+                      variant={components[activeComponent].activeProp === propName ? 'solid' : 'ghost'}
+                      intent={components[activeComponent].activeProp === propName ? 'tertiary' : 'primary'}
                       color="blue"
+                      size="sm"
                       iconName={props[propName].isResponsive ? 'screen-share' : undefined}
                       iconPosition="right"
                     >
                       {propName}
-                    </Text>
+                    </Button>
                   </Table.Cell>
                   <Table.Cell>
                     <Text
