@@ -12,6 +12,7 @@ import {
   Text,
   Segment,
   Callout,
+  Grid,
 } from 'lib/components'
 
 import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/core/utility/NebkitProvider/definitions'
@@ -56,7 +57,7 @@ export const HomePage = () => {
                 apps that stay predictable, stable and effortless to scale.
               </Text>
               <Spacer blockSize="30px" />
-              <Flex gap="10px" flexWrap="wrap">
+              <Flex gap="10px" flexWrap="wrap" justifyContent={{ base: 'center', md: 'flex-start' }}>
                 <Link
                   href={PageKey.playground}
                   onClick={() => {
@@ -149,7 +150,7 @@ export const HomePage = () => {
           </Box>
         </Flex.Item>
         <Flex.Item flex="1">
-          <Flex flexDirection="column" gap="30px">
+          <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="30px">
             <Section heading="One foundation" color="red" intent="primary" iconName="box">
               <Text intent="neutral">
                 Every component shares the same core primitives. Consistency isn't enforced - it's designed
@@ -172,7 +173,7 @@ export const HomePage = () => {
                 Common building blocks keep layout and rhythm consistent across the system.
               </Text>
             </Section>
-          </Flex>
+          </Grid>
         </Flex.Item>
       </Flex>
     </Box>

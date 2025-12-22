@@ -1,11 +1,11 @@
 import { memo } from 'react'
+import classNames from 'classnames'
 
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { getSvgIconComponent } from 'lib/icons/lucide'
 
 import { DEFAULT_ICON_SIZE, IconProps } from './definitions'
-import classNames from 'classnames'
 
 export const Icon = memo(
   ({
@@ -18,6 +18,8 @@ export const Icon = memo(
     intent,
     color,
   }: IconProps) => {
+    if (!name) return null
+
     const Svg = getSvgIconComponent(name)
 
     return (
