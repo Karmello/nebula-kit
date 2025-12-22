@@ -18,8 +18,16 @@ export const SideNavItem = ({
   // Link
   href,
   onClick,
+  ...props
 }: SideNavItemProps) => {
-  const { variant: rootVariant, color: rootColor, intent: rootIntent } = useSideNavContext()
+  const {
+    variant: rootVariant,
+    color: rootColor,
+    intent: rootIntent,
+    expandedCategories,
+  } = useSideNavContext()
+
+  const { categoryId } = props || ({} as any)
 
   return (
     <Link href={href} onClick={onClick}>
@@ -29,6 +37,8 @@ export const SideNavItem = ({
         tagAttrs={{
           ...tagAttrs,
           className: classNames(withPrefix('side-nav-item'), tagAttrs?.className || ''),
+          tabIndex: expandedCategories[categoryId] === false ? -1 : undefined,
+          'aria-expanded': expandedCategories[categoryId],
         }}
         variant={variant || rootVariant}
         color={color || rootColor}

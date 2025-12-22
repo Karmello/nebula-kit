@@ -59,8 +59,7 @@ export const SplitViewSide = ({
         }
         left={sidePosition === 'left' ? '0px' : undefined}
         right={sidePosition === 'right' ? '0px' : undefined}
-        maxInlineSize={inlineSize}
-        overflowY={sideOpen ? 'auto' : 'hidden'}
+        maxInlineSize={mode === 'inline' ? inlineSize : undefined}
       >
         <Box
           drawable
@@ -68,28 +67,32 @@ export const SplitViewSide = ({
           color={color}
           intent={intent || { base: 'tertiary', [String(switchAt)]: 'neutral' }}
           blockSize="100%"
+          overflowY={sideOpen ? 'auto' : 'hidden'}
+          overflowX="hidden"
         >
           <Resize key={mode} property="inlineSize" visible={sideOpen}>
             <Box inlineSize={inlineSize} paddingRight={BOX_BORDER_WIDTH}>
-              {mode === 'overlay' ? (
-                <Flex justifyContent="flex-end">
-                  <Box padding="6px" paddingBottom="20px">
-                    <Button
-                      tagAttrs={{
-                        onClick: () => {
-                          setSideOpen(false)
-                        },
-                      }}
-                      iconName="close"
-                      intent={intent || 'tertiary'}
-                      size="xs"
-                    />
-                  </Box>
-                </Flex>
-              ) : null}
-              <IslandProvider theme={theme} brand={brand}>
-                {children}
-              </IslandProvider>
+              <Box>
+                {mode === 'overlay' ? (
+                  <Flex justifyContent="flex-end">
+                    <Box padding="6px" paddingBottom="20px">
+                      <Button
+                        tagAttrs={{
+                          onClick: () => {
+                            setSideOpen(false)
+                          },
+                        }}
+                        iconName="close"
+                        intent={intent || 'tertiary'}
+                        size="xs"
+                      />
+                    </Box>
+                  </Flex>
+                ) : null}
+                <IslandProvider theme={theme} brand={brand}>
+                  {children}
+                </IslandProvider>
+              </Box>
             </Box>
           </Resize>
         </Box>

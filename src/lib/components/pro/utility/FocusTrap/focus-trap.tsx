@@ -13,7 +13,7 @@ export const FocusTrap = ({
   const prevActiveRef = useRef(false)
   const hadTabIndexRef = useRef(false)
 
-  // Restore focus on close (active true -> false)
+  // Restore focus on close
   useEffect(() => {
     const prevActive = prevActiveRef.current
 
@@ -21,7 +21,6 @@ export const FocusTrap = ({
       const trigger = triggerRef.current
       triggerRef.current = null
 
-      // Only focus if it's still in the document and focusable-ish
       if (trigger && document.contains(trigger)) {
         trigger.focus()
       }
@@ -30,14 +29,17 @@ export const FocusTrap = ({
     prevActiveRef.current = active
   }, [active])
 
-  // Trap behavior while active
   useEffect(() => {
     const target = tagRef?.current as HTMLElement | null
     if (!active || !target) return
 
-    // Capture trigger once per open
     if (!triggerRef.current) {
       triggerRef.current = document.activeElement as HTMLElement | null
+    }
+
+    const getTabbables = () => {
+      const all = Array.from(target.querySelectorAll<HTMLElement>('*'))
+      return all.filter(el => el.tabIndex >= 0)
     }
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -48,15 +50,14 @@ export const FocusTrap = ({
         return
       }
 
-      const interactiveBoxes = Array.from(
-        target.querySelectorAll<HTMLElement>("[data-neb-box-interactive='true']")
-      ).filter(el => !el.closest('[inert]'))
+      const tabbables = getTabbables()
+      if (tabbables.length === 0) return
 
-      if (interactiveBoxes.length === 0) return
-
-      const first = interactiveBoxes[0]
-      const last = interactiveBoxes[interactiveBoxes.length - 1]
+      const first = tabbables[0]
+      const last = tabbables[tabbables.length - 1]
       const activeEl = document.activeElement as HTMLElement | null
+
+      if (!activeEl || !target.contains(activeEl)) return
 
       if (!e.shiftKey) {
         if (activeEl === last) {
@@ -81,13 +82,12 @@ export const FocusTrap = ({
     document.addEventListener('keydown', handleKeyDown)
     document.addEventListener('pointerdown', handlePointerDown)
 
-    // Ensure target can receive focus but avoid breaking an existing tabindex
+    // Ensure root itself can receive focus
     hadTabIndexRef.current = target.hasAttribute('tabindex')
     if (!hadTabIndexRef.current) {
       target.setAttribute('tabindex', '-1')
     }
 
-    // Idempotent focus: never steal focus if already inside trap
     if (!target.contains(document.activeElement)) {
       target.focus()
     }
@@ -96,7 +96,6 @@ export const FocusTrap = ({
       document.removeEventListener('keydown', handleKeyDown)
       document.removeEventListener('pointerdown', handlePointerDown)
 
-      // Restore original tabindex state
       if (!hadTabIndexRef.current) {
         target.removeAttribute('tabindex')
       }

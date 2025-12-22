@@ -1,4 +1,4 @@
-import { useEffect, useId, useLayoutEffect } from 'react'
+import { cloneElement, useEffect, useId, useLayoutEffect } from 'react'
 import classNames from 'classnames'
 
 import { WithSlots } from 'lib/components/core/internal'
@@ -94,18 +94,13 @@ export const SideNavCategory = ({
                 {label}
               </Button>
             </Box>
-            <Box
-              tag="li"
-              tagAttrs={{
-                inert: !expandedCategories[id],
-              }}
-            >
+            <Box tag="li">
               <Resize property="blockSize" visible={expandedCategories[id]}>
                 <Spacer blockSize={rowGap !== undefined ? rowGap : '0px'} />
                 <Flex tag="ul" flexDirection="column" rowGap={rowGap}>
                   {slotsByName['SideNav.Item'].map((slot, key) => (
                     <Box key={key} tag="li" inlineSize="100%">
-                      {slot}
+                      {cloneElement(slot as any, { categoryId: id })}
                     </Box>
                   ))}
                 </Flex>

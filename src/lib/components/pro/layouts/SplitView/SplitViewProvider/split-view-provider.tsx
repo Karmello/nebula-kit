@@ -44,9 +44,11 @@ export const SplitViewProvider = ({
   useEffect(() => {
     if (mode === 'overlay' && sideOpen) {
       document.documentElement.classList.add('neb-scrollbar-off')
+      document.body.style.pointerEvents = 'none'
     } else {
       setTimeout(() => {
         document.documentElement.classList.remove('neb-scrollbar-off')
+        document.body.style.pointerEvents = ''
       }, DEFAULT_RESIZE_DURATION)
     }
   }, [sideOpen, mode])
