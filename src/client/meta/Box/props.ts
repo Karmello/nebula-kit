@@ -28,10 +28,12 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   borderBottomWidth: {
     options: ['CSS'],
+    isResponsive: true,
     description: 'Border width for the bottom side.',
   },
   borderLeftWidth: {
     options: ['CSS'],
+    isResponsive: true,
     description: 'Border width for the left side.',
   },
   borderRadius: {
@@ -41,6 +43,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   borderRightWidth: {
     options: ['CSS'],
+    isResponsive: true,
     description: 'Border width for the right side.',
   },
   borderTopLeftRadius: {
@@ -55,10 +58,12 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   borderTopWidth: {
     options: ['CSS'],
+    isResponsive: true,
     description: 'Border width for the top side.',
   },
   borderWidth: {
     options: ['CSS'],
+    isResponsive: true,
     description: 'Sets border width overriding global value set by NebkitProvider.',
   },
   bottom: {
@@ -94,6 +99,11 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['CSS'],
     isResponsive: true,
     description: 'Width.',
+  },
+  inset: {
+    options: ['CSS'],
+    isResponsive: true,
+    description: 'Shorthand for setting top, right, bottom, and left offsets. Directional props override it.',
   },
   intent: {
     options: Object.values(BOX_INTENTS),
@@ -220,6 +230,10 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     isResponsive: true,
     description: 'Padding for the top side.',
   },
+  pointerEvents: {
+    options: ['CSS'],
+    description: 'Controls whether the element can receive pointer interactions.',
+  },
   position: {
     options: ['CSS'],
     isResponsive: true,
@@ -253,6 +267,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   zIndex: {
     options: ['number'],
+    isResponsive: true,
     description: 'Controls the stacking order.',
   },
 }

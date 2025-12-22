@@ -29,6 +29,7 @@ export const Box = <T extends ElementType = 'div'>({
   opacity,
   textAlign,
   zIndex,
+  pointerEvents,
   // border
   borderWidth,
   borderTopWidth,
@@ -48,6 +49,7 @@ export const Box = <T extends ElementType = 'div'>({
   overflowY,
   // position
   position,
+  inset,
   top,
   right,
   bottom,
@@ -83,6 +85,8 @@ export const Box = <T extends ElementType = 'div'>({
   useLayoutEffect(() => {
     updateDomRespStyle('Box', tagRef || ref, bp, {
       opacity,
+      textAlign,
+      zIndex,
       borderWidth,
       borderTopWidth,
       borderRightWidth,
@@ -93,12 +97,12 @@ export const Box = <T extends ElementType = 'div'>({
       borderTopRightRadius,
       borderBottomRightRadius,
       borderBottomLeftRadius,
-      textAlign,
       display,
       overflow,
       overflowX,
       overflowY,
       position,
+      inset,
       top,
       right,
       bottom,
@@ -127,6 +131,8 @@ export const Box = <T extends ElementType = 'div'>({
   }, [
     bp,
     opacity,
+    zIndex,
+    textAlign,
     borderWidth,
     borderTopWidth,
     borderRightWidth,
@@ -137,12 +143,12 @@ export const Box = <T extends ElementType = 'div'>({
     borderTopRightRadius,
     borderBottomRightRadius,
     borderBottomLeftRadius,
-    textAlign,
     display,
     overflow,
     overflowX,
     overflowY,
     position,
+    inset,
     top,
     right,
     bottom,
@@ -180,11 +186,8 @@ export const Box = <T extends ElementType = 'div'>({
         {
           ...tagAttrs,
           className: classNames(withPrefix('box'), tagAttrs?.className || ''),
+          style: { ...tagAttrs?.style, pointerEvents },
           disabled,
-          style: {
-            ...tagAttrs?.style,
-            zIndex,
-          },
           ...updateDomStaticDataset('Box', {
             drawable,
             interactive,

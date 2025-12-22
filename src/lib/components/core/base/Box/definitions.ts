@@ -25,13 +25,14 @@ type BoxOwnProps = {
   // css
   opacity?: RespValue<string>
   textAlign?: RespValue<string>
-  zIndex?: number
+  zIndex?: RespValue<string>
+  pointerEvents?: string
   // border
-  borderWidth?: string
-  borderTopWidth?: string
-  borderRightWidth?: string
-  borderBottomWidth?: string
-  borderLeftWidth?: string
+  borderWidth?: RespValue<string>
+  borderTopWidth?: RespValue<string>
+  borderRightWidth?: RespValue<string>
+  borderBottomWidth?: RespValue<string>
+  borderLeftWidth?: RespValue<string>
   // border radius
   borderRadius?: RespValue<string>
   borderTopLeftRadius?: RespValue<string>
@@ -45,6 +46,7 @@ type BoxOwnProps = {
   overflowY?: RespValue<string>
   // position
   position?: RespValue<string>
+  inset?: RespValue<string>
   top?: RespValue<string>
   right?: RespValue<string>
   bottom?: RespValue<string>
