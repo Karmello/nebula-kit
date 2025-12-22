@@ -61,8 +61,6 @@ export const Dialog = ({
               <Box
                 tagAttrs={{
                   style: {
-                    pointerEvents: open ? 'auto' : 'none',
-                    opacity: open ? 1 : 0,
                     backgroundColor: theme === 'light' ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)',
                     transition: 'opacity 0.4s ease-out',
                   },
@@ -71,11 +69,10 @@ export const Dialog = ({
                   },
                 }}
                 position="fixed"
-                top="0px"
-                right="0px"
-                bottom="0px"
-                left="0px"
-                zIndex="1000"
+                inset="0px"
+                opacity={open ? '1' : '0'}
+                pointerEvents={open ? 'auto' : 'none'}
+                zIndex={1000}
               >
                 <Flex
                   tagAttrs={{

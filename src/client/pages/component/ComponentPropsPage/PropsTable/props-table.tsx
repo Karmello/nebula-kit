@@ -19,7 +19,7 @@ export const PropsTable = ({ category, data }: Props) => {
           <Table.HeaderCell minInlineSize="30ch">Description</Table.HeaderCell>
         </Table.HeaderRow>
       </Table.Header>
-      <Table.Body>
+      <Table.Body intent="neutral">
         {Object.keys(data)
           .sort((a, b) => a.localeCompare(b))
           .map(name => {

@@ -1,21 +1,26 @@
-import { cloneElement } from 'react'
 import classNames from 'classnames'
 
-import { Box, TableRowProps } from 'lib/components'
+import { Box } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
 import { withPrefix } from 'lib/helpers'
 
-import { TableFooterProps } from './definitions'
+import { DEFAULT_TABLE_FOOTER_INTENT, TableFooterProps } from './definitions'
+import { TableContext, useTableContext } from '../../TableContext'
 
 export const TableFooter = ({
+  // HtmlTag
   children,
   tagAttrs,
   tagRef,
+  // Box
   color,
-  intent,
+  intent = DEFAULT_TABLE_FOOTER_INTENT,
   paddingBlock,
   paddingInline,
+  textAlign,
 }: TableFooterProps) => {
+  const context = useTableContext()
+
   return (
     <WithSlots<'Table.Row'>
       childrenToVerify={children}
@@ -24,23 +29,26 @@ export const TableFooter = ({
     >
       {({ slotsByName }) => {
         return (
-          <Box
-            tag="tfoot"
-            tagAttrs={{
-              ...tagAttrs,
-              className: classNames(withPrefix('table-footer'), tagAttrs?.className),
+          <TableContext
+            value={{
+              color: color || context.color,
+              intent: intent || context.intent,
+              paddingBlock: paddingBlock || context.paddingBlock,
+              paddingInline: paddingInline || context.paddingInline,
+              textAlign: textAlign || context.textAlign,
             }}
-            tagRef={tagRef}
           >
-            {slotsByName['Table.Row'].map((slot: any) =>
-              cloneElement<TableRowProps>(slot, {
-                color: slot.props.color || color,
-                intent: slot.props.intent || intent,
-                paddingBlock: slot.props.paddingBlock || paddingBlock,
-                paddingInline: slot.props.paddingInline || paddingInline,
-              })
-            )}
-          </Box>
+            <Box
+              tag="tfoot"
+              tagAttrs={{
+                ...tagAttrs,
+                className: classNames(withPrefix('table-footer'), tagAttrs?.className),
+              }}
+              tagRef={tagRef}
+            >
+              {slotsByName['Table.Row']}
+            </Box>
+          </TableContext>
         )
       }}
     </WithSlots>

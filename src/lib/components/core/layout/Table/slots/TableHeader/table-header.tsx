@@ -1,21 +1,26 @@
-import { cloneElement } from 'react'
 import classNames from 'classnames'
 
-import { Box, TableHeaderRowProps } from 'lib/components'
+import { Box } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
 import { withPrefix } from 'lib/helpers'
 
 import { TableHeaderProps } from './definitions'
+import { TableContext, useTableContext } from '../../TableContext'
 
 export const TableHeader = ({
+  // HtmlTag
   children,
   tagAttrs,
   tagRef,
+  // Box
   color,
   intent,
   paddingBlock,
   paddingInline,
+  textAlign,
 }: TableHeaderProps) => {
+  const context = useTableContext()
+
   return (
     <WithSlots<'Table.HeaderRow'>
       childrenToVerify={children}
@@ -24,23 +29,26 @@ export const TableHeader = ({
     >
       {({ slotsByName }) => {
         return (
-          <Box
-            tag="thead"
-            tagAttrs={{
-              ...tagAttrs,
-              className: classNames(withPrefix('table-header'), tagAttrs?.className),
+          <TableContext
+            value={{
+              color: color || context.color,
+              intent: intent || context.intent,
+              paddingBlock: paddingBlock || context.paddingBlock,
+              paddingInline: paddingInline || context.paddingInline,
+              textAlign: textAlign || context.textAlign,
             }}
-            tagRef={tagRef}
           >
-            {slotsByName['Table.HeaderRow'].map((slot: any) =>
-              cloneElement<TableHeaderRowProps>(slot, {
-                color: slot.props.color || color,
-                intent: slot.props.intent || intent,
-                paddingBlock: slot.props.paddingBlock || paddingBlock,
-                paddingInline: slot.props.paddingInline || paddingInline,
-              })
-            )}
-          </Box>
+            <Box
+              tag="thead"
+              tagAttrs={{
+                ...tagAttrs,
+                className: classNames(withPrefix('table-header'), tagAttrs?.className),
+              }}
+              tagRef={tagRef}
+            >
+              {slotsByName['Table.HeaderRow']}
+            </Box>
+          </TableContext>
         )
       }}
     </WithSlots>

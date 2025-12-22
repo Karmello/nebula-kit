@@ -1,21 +1,25 @@
 import { cloneElement } from 'react'
 import classNames from 'classnames'
 
-import { Box, TableCellProps, TableHeaderCellProps } from 'lib/components'
+import { Box, TableHeaderCellProps } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
 import { withPrefix } from 'lib/helpers'
 
 import { TableRowProps } from './definitions'
+import { useTableContext, TableContext } from '../../TableContext'
 
 export const TableRow = ({
+  // HtmlTag
   children,
   tagAttrs,
   tagRef,
+  // Box
   color,
   intent,
-  paddingBlock,
-  paddingInline,
+  textAlign,
 }: TableRowProps) => {
+  const context = useTableContext()
+
   return (
     <WithSlots<'Table.HeaderCell' | 'Table.Cell'>
       childrenToVerify={children}
@@ -28,33 +32,34 @@ export const TableRow = ({
     >
       {({ allValidSlots }) => {
         return (
-          <Box
-            tag="tr"
-            tagAttrs={{
-              ...tagAttrs,
-              className: classNames(withPrefix('table-row'), tagAttrs?.className),
+          <TableContext
+            value={{
+              color: color || context.color,
+              intent: intent || context.intent,
+              paddingBlock: context.paddingBlock,
+              paddingInline: context.paddingInline,
+              textAlign: textAlign || context.textAlign,
             }}
-            tagRef={tagRef}
           >
-            {allValidSlots.map((slot: any) => {
-              if (slot.type.displayName === 'Table.HeaderCell') {
-                return cloneElement<TableHeaderCellProps>(slot, {
-                  tagAttrs: { scope: 'row' },
-                  color: slot.props.color || color,
-                  intent: slot.props.intent || intent,
-                  paddingBlock: slot.props.paddingBlock || paddingBlock,
-                  paddingInline: slot.props.paddingInline || paddingInline,
-                })
-              } else {
-                return cloneElement<TableCellProps>(slot, {
-                  color: slot.props.color || color,
-                  intent: slot.props.intent || intent,
-                  paddingBlock: slot.props.paddingBlock || paddingBlock,
-                  paddingInline: slot.props.paddingInline || paddingInline,
-                })
-              }
-            })}
-          </Box>
+            <Box
+              tag="tr"
+              tagAttrs={{
+                ...tagAttrs,
+                className: classNames(withPrefix('table-row'), tagAttrs?.className),
+              }}
+              tagRef={tagRef}
+            >
+              {allValidSlots.map((slot: any) => {
+                if (slot.type.displayName === 'Table.HeaderCell') {
+                  return cloneElement<TableHeaderCellProps>(slot, {
+                    tagAttrs: { ...slot.props.tagAttrs, scope: 'row' },
+                  })
+                } else {
+                  return slot
+                }
+              })}
+            </Box>
+          </TableContext>
         )
       }}
     </WithSlots>

@@ -3,9 +3,23 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { TableCaptionProps } from './definitions'
+import { DEFAULT_TABLE_CAPTION_INTENT, TableCaptionProps } from './definitions'
+import { useTableContext } from '../../TableContext'
 
-export const TableCaption = ({ children, tagAttrs, tagRef }: TableCaptionProps) => {
+export const TableCaption = ({
+  // HtmlTag
+  children,
+  tagAttrs,
+  tagRef,
+  // Box
+  color,
+  intent = DEFAULT_TABLE_CAPTION_INTENT,
+  paddingBlock,
+  paddingInline,
+  textAlign,
+}: TableCaptionProps) => {
+  const context = useTableContext()
+
   return (
     <Box
       tag="caption"
@@ -14,7 +28,13 @@ export const TableCaption = ({ children, tagAttrs, tagRef }: TableCaptionProps) 
         className: classNames(withPrefix('table-caption'), tagAttrs?.className),
       }}
       tagRef={tagRef}
-      paddingBlock="10px"
+      drawable
+      variant="ghost"
+      color={color}
+      intent={intent}
+      paddingBlock={paddingBlock || context.paddingBlock}
+      paddingInline={paddingInline}
+      textAlign={textAlign}
     >
       {children}
     </Box>

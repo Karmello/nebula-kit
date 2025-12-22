@@ -17,19 +17,12 @@ export const TableCell = ({
   blockSize,
   textAlign,
   color,
-  intent = 'neutral',
-  paddingBlock,
-  paddingInline,
+  intent,
   // own
   colSpan,
   rowSpan,
 }: TableCellProps) => {
-  const {
-    color: rootColor,
-    intent: rootIntent,
-    paddingBlock: rootPaddingBlock,
-    paddingInline: rootPaddingInline,
-  } = useTableContext()
+  const context = useTableContext()
 
   return (
     <Box
@@ -43,14 +36,14 @@ export const TableCell = ({
       tagRef={tagRef}
       drawable
       variant="solid"
-      color={color || rootColor}
-      intent={intent || rootIntent}
+      color={color || context.color}
+      intent={intent || context.intent}
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
       blockSize={blockSize}
-      textAlign={textAlign}
-      paddingBlock={paddingBlock || rootPaddingBlock}
-      paddingInline={paddingInline || rootPaddingInline}
+      textAlign={textAlign || context.textAlign}
+      paddingBlock={context.paddingBlock}
+      paddingInline={context.paddingInline}
     >
       {children}
     </Box>

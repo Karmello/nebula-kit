@@ -2,6 +2,9 @@ import { ComponentMeta } from 'client/definitions'
 import { BOX_PROPS_META } from 'client/meta/Box/props'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { TableBodyProps } from 'lib/components'
+import { DEFAULT_TABLE_BODY_INTENT } from 'lib/components/core/layout/Table/slots/TableBody/definitions'
+
+import { TABLE_PROPS_META } from '../props'
 
 const TABLE_BODY_PROPS_META: ComponentMeta<TableBodyProps>['props'] = {
   children: {
@@ -16,6 +19,7 @@ const TABLE_BODY_PROPS_META: ComponentMeta<TableBodyProps>['props'] = {
   },
   intent: {
     ...BOX_PROPS_META.intent,
+    defaultValue: DEFAULT_TABLE_BODY_INTENT as never,
     description: 'Tone level applied to every cell.',
   },
   paddingBlock: {
@@ -28,6 +32,7 @@ const TABLE_BODY_PROPS_META: ComponentMeta<TableBodyProps>['props'] = {
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
+  textAlign: TABLE_PROPS_META.textAlign,
 }
 
 export { TABLE_BODY_PROPS_META }

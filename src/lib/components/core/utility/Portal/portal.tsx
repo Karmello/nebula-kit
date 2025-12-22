@@ -118,7 +118,7 @@ export const Portal = ({
       theme={islandContext?.theme}
       brand={islandContext?.brand}
       position="absolute"
-      zIndex="1000"
+      zIndex={1000}
       top={position.top !== undefined ? `${position.top}px` : undefined}
       left={position.left !== undefined ? `${position.left}px` : undefined}
     >

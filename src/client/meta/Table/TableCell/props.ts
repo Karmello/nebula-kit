@@ -17,8 +17,6 @@ const TABLE_CELL_PROPS_META: ComponentMeta<TableCellProps>['props'] = {
   intent: BOX_PROPS_META.intent,
   maxInlineSize: BOX_PROPS_META.maxInlineSize,
   minInlineSize: BOX_PROPS_META.minInlineSize,
-  paddingBlock: BOX_PROPS_META.paddingBlock,
-  paddingInline: BOX_PROPS_META.paddingInline,
   rowSpan: {
     options: ['number'],
     description: 'Specifies how many rows the cell should span vertically within the table.',

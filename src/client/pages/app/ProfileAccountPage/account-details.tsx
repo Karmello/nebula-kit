@@ -109,11 +109,7 @@ export default () => {
           <Table.Cell colSpan={1}>
             <Text>Discord connection status</Text>
           </Table.Cell>
-          <Table.Cell
-            colSpan={2}
-            blockSize="50px"
-            paddingInline={getUser.data?.user.plan !== 'free' ? '15px' : undefined}
-          >
+          <Table.Cell colSpan={2} blockSize="50px">
             {getUser.data ? (
               <Text
                 iconName={
@@ -140,11 +136,7 @@ export default () => {
           <Table.Cell colSpan={1}>
             <Text>Github connection status</Text>
           </Table.Cell>
-          <Table.Cell
-            colSpan={2}
-            blockSize="50px"
-            paddingInline={getUser.data?.user.plan !== 'free' ? '15px' : undefined}
-          >
+          <Table.Cell colSpan={2} blockSize="50px">
             {getUser.data ? (
               <Flex alignItems="center" flexWrap="wrap" rowGap="10px" columnGap="15px">
                 <Flex.Item alignSelf="auto">

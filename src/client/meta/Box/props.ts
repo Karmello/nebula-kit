@@ -1,5 +1,15 @@
 import { ComponentMeta } from 'client/definitions'
-import { COLORS, THEMES } from 'lib/definitions'
+
+import {
+  COLORS,
+  CSS_DISPLAY,
+  CSS_OVERFLOW,
+  CSS_POINTER_EVENTS,
+  CSS_POSITION,
+  CSS_TEXT_ALIGN,
+  THEMES,
+} from 'lib/definitions'
+
 import { BoxProps, BOX_VARIANTS, BOX_INTENTS } from 'lib/components/core/base/Box'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -81,7 +91,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Disables the component and its interactions.',
   },
   display: {
-    options: ['CSS'],
+    options: CSS_DISPLAY as never,
     isResponsive: true,
     description: 'Display type controlling how the component is laid out.',
   },
@@ -181,17 +191,17 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Transparency level, from fully visible to fully transparent.',
   },
   overflow: {
-    options: ['CSS'],
+    options: CSS_OVERFLOW as never,
     isResponsive: true,
     description: 'Overflow behavior for both axes.',
   },
   overflowX: {
-    options: ['CSS'],
+    options: CSS_OVERFLOW as never,
     isResponsive: true,
     description: 'Overflow behavior on the horizontal axis.',
   },
   overflowY: {
-    options: ['CSS'],
+    options: CSS_OVERFLOW as never,
     isResponsive: true,
     description: 'Overflow behavior on the vertical axis.',
   },
@@ -231,11 +241,11 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Padding for the top side.',
   },
   pointerEvents: {
-    options: ['CSS'],
+    options: CSS_POINTER_EVENTS as never,
     description: 'Controls whether the element can receive pointer interactions.',
   },
   position: {
-    options: ['CSS'],
+    options: CSS_POSITION as never,
     isResponsive: true,
     description: 'Position in the layout flow.',
   },
@@ -245,7 +255,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Right offset.',
   },
   textAlign: {
-    options: ['CSS'],
+    options: CSS_TEXT_ALIGN as never,
     isResponsive: true,
     description: 'Text alignment within the component.',
   },

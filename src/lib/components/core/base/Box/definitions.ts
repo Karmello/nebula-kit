@@ -1,6 +1,15 @@
 import { ElementType } from 'react'
 
-import { Color, RespValue, Theme } from 'lib/definitions'
+import {
+  Color,
+  CssDisplay,
+  CssOverflow,
+  CssPointerEvents,
+  CssPosition,
+  CssTextAlign,
+  RespValue,
+  Theme,
+} from 'lib/definitions'
 
 import { HtmlTagProps } from 'lib/components'
 
@@ -24,9 +33,9 @@ type BoxOwnProps = {
   highlighted?: boolean
   // css
   opacity?: RespValue<string>
-  textAlign?: RespValue<string>
-  zIndex?: RespValue<string>
-  pointerEvents?: string
+  textAlign?: RespValue<CssTextAlign>
+  zIndex?: RespValue<number>
+  pointerEvents?: CssPointerEvents
   // border
   borderWidth?: RespValue<string>
   borderTopWidth?: RespValue<string>
@@ -40,12 +49,12 @@ type BoxOwnProps = {
   borderBottomRightRadius?: RespValue<string>
   borderBottomLeftRadius?: RespValue<string>
   // display
-  display?: RespValue<string>
-  overflow?: RespValue<string>
-  overflowX?: RespValue<string>
-  overflowY?: RespValue<string>
+  display?: RespValue<CssDisplay>
+  overflow?: RespValue<CssOverflow>
+  overflowX?: RespValue<CssOverflow>
+  overflowY?: RespValue<CssOverflow>
   // position
-  position?: RespValue<string>
+  position?: RespValue<CssPosition>
   inset?: RespValue<string>
   top?: RespValue<string>
   right?: RespValue<string>

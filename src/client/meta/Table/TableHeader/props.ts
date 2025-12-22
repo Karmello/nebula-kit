@@ -3,6 +3,8 @@ import { BOX_PROPS_META } from 'client/meta/Box/props'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { TableHeaderProps } from 'lib/components'
 
+import { TABLE_PROPS_META } from '../props'
+
 const TABLE_HEADER_PROPS_META: ComponentMeta<TableHeaderProps>['props'] = {
   children: {
     ...HTML_TAG_PROPS_META.children,
@@ -28,6 +30,7 @@ const TABLE_HEADER_PROPS_META: ComponentMeta<TableHeaderProps>['props'] = {
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
+  textAlign: TABLE_PROPS_META.textAlign,
 }
 
 export { TABLE_HEADER_PROPS_META }
