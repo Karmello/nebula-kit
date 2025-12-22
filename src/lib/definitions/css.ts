@@ -15,6 +15,16 @@ export const CSS_FLEX_JUSTIFY_CONTENT = [
 
 export const CSS_FLEX_ALIGN_ITEMS = ['flex-start', 'center', 'flex-end', 'stretch', 'baseline'] as const
 
+export const CSS_FLEX_ALIGN_CONTENT = [
+  'flex-start',
+  'center',
+  'flex-end',
+  'stretch',
+  'space-between',
+  'space-around',
+  'space-evenly',
+] as const
+
 export const CSS_FLEX_ITEM_ALIGN_SELF = [
   'auto',
   'flex-start',
@@ -24,7 +34,7 @@ export const CSS_FLEX_ITEM_ALIGN_SELF = [
   'baseline',
 ] as const
 
-export const CSS_GRID_AUTO_FLOW = ['row', 'column', 'dense', 'row dense', 'column dense'] as const
+export const CSS_GRID_AUTO_FLOW = ['row', 'column', 'row dense', 'column dense'] as const
 export const CSS_GRID_PLACE_ITEMS = ['stretch', 'start', 'center', 'end'] as const
 
 export const CSS_GRID_PLACE_CONTENT = [
@@ -47,6 +57,7 @@ export type CssFlexDirection = (typeof CSS_FLEX_DIRECTION)[number]
 export type CssFlexWrap = (typeof CSS_FLEX_WRAP)[number]
 export type CssFlexJustifyContent = (typeof CSS_FLEX_JUSTIFY_CONTENT)[number]
 export type CssFlexAlignItems = (typeof CSS_FLEX_ALIGN_ITEMS)[number]
+export type CssFlexAlignContent = (typeof CSS_FLEX_ALIGN_CONTENT)[number]
 export type CssFlexItemAlignSelf = (typeof CSS_FLEX_ITEM_ALIGN_SELF)[number]
 
 export type CssGridAutoFlow = (typeof CSS_GRID_AUTO_FLOW)[number]

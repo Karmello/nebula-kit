@@ -28,9 +28,13 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
   },
   color: BOX_PROPS_META.color,
-  disabled: BOX_PROPS_META.disabled,
+  disabled: {
+    ...BOX_PROPS_META.disabled,
+    description: 'Applies the disabled visual state and disables interaction when rendered as an <a> tag.',
+  },
   iconName: {
     ...WITH_ICON_PROPS_META['name'],
+    isRequired: false,
   },
   iconPosition: WITH_ICON_PROPS_META['position'],
   intent: BOX_PROPS_META['intent'],
@@ -45,7 +49,7 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
   scale: {
     options: Object.values(TEXT_SCALE),
     defaultValue: DEFAULT_TEXT_SCALE,
-    description: 'Defines the size system used for text rendering.',
+    description: 'Selects the size scale used for text rendering.',
   },
   space: {
     options: TEXT_SPACE as unknown as string[],

@@ -10,6 +10,7 @@ import {
 } from 'lib/components/pro/form-elements/Form'
 
 const FORM_FIELDS_PROPS_META: ComponentMeta<FormFieldsProps>['props'] = {
+  alignContent: FLEX_PROPS_META.alignContent,
   alignItems: {
     ...FLEX_PROPS_META.alignItems,
     defaultValue: String(DEFAULT_FORM_FIELDS_ALIGN_ITEMS),

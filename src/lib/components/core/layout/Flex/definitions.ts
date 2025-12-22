@@ -1,6 +1,7 @@
 import { ElementType } from 'react'
 
 import {
+  CssFlexAlignContent,
   CssFlexAlignItems,
   CssFlexDirection,
   CssFlexDisplay,
@@ -17,6 +18,7 @@ type FlexOwnProps = {
   flexWrap?: RespValue<CssFlexWrap>
   justifyContent?: RespValue<CssFlexJustifyContent>
   alignItems?: RespValue<CssFlexAlignItems>
+  alignContent?: RespValue<CssFlexAlignContent>
   gap?: RespValue<string>
   rowGap?: RespValue<string>
   columnGap?: RespValue<string>

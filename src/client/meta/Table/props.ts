@@ -28,6 +28,8 @@ const TABLE_PROPS_META: ComponentMeta<TableProps>['props'] = {
     description:
       'Defines the layout algorithm: "auto" sizes columns by content, "fixed" by table width and column widths.',
   },
+  maxInlineSize: BOX_PROPS_META.maxInlineSize,
+  minInlineSize: BOX_PROPS_META.minInlineSize,
   paddingBlock: {
     ...BOX_PROPS_META.paddingBlock,
     description: 'Padding for the top and bottom sides applied to every cell.',

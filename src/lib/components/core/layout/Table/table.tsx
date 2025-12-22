@@ -6,6 +6,7 @@ import { withPrefix } from 'lib/helpers'
 
 import { TableContext } from './TableContext'
 import { DEFAULT_TABLE_LAYOUT, DEFAULT_TABLE_INTENT, TableProps } from './definitions'
+
 import './table.scss'
 
 export const Table = ({
@@ -15,6 +16,8 @@ export const Table = ({
   children,
   // Box
   inlineSize,
+  minInlineSize,
+  maxInlineSize,
   color,
   intent = DEFAULT_TABLE_INTENT,
   paddingBlock,
@@ -36,7 +39,12 @@ export const Table = ({
       {({ slotsByName }) => {
         return (
           <TableContext value={{ color, intent, layout, paddingBlock, paddingInline }}>
-            <Box tagAttrs={{ className: withPrefix('table-container') }} inlineSize={inlineSize}>
+            <Box
+              tagAttrs={{ className: withPrefix('table-container') }}
+              inlineSize={inlineSize}
+              minInlineSize={minInlineSize}
+              maxInlineSize={maxInlineSize}
+            >
               <Box
                 tag="table"
                 tagAttrs={{

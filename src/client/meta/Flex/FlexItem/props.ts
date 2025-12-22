@@ -12,7 +12,7 @@ const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemProps>['props'] = {
   flex: {
     options: ['CSS'],
     isResponsive: true,
-    description: 'Defines how the item grows, shrinks and sets its base size within the parent container.',
+    description: 'Shorthand for flex-grow, flex-shrink and flex-basis',
   },
   flexGrow: {
     options: ['CSS'],

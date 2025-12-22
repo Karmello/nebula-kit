@@ -75,7 +75,7 @@ export const Dialog = ({
                 right="0px"
                 bottom="0px"
                 left="0px"
-                zIndex={1000}
+                zIndex="1000"
               >
                 <Flex
                   tagAttrs={{

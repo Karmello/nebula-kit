@@ -4,6 +4,7 @@ import { FormActionsProps } from 'lib/components'
 import { DEFAULT_FORM_ACTIONS_GAP } from 'lib/components/pro/form-elements/Form'
 
 const FORM_ACTIONS_PROPS_META: ComponentMeta<FormActionsProps>['props'] = {
+  alignContent: FLEX_PROPS_META.alignContent,
   alignItems: FLEX_PROPS_META.alignItems,
   children: {
     ...FLEX_PROPS_META.children,

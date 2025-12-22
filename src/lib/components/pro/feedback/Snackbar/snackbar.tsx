@@ -52,7 +52,7 @@ export const Snackbar = ({
           bottom={finalPlacement.includes('bottom') ? '0px' : 'unset'}
           left={finalPlacement.includes('left') ? '0px' : 'unset'}
           right={finalPlacement.includes('right') ? '0px' : 'unset'}
-          zIndex={30}
+          zIndex="30"
         >
           <Slide
             property={finalPlacement.split('-')[0] as never}
