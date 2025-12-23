@@ -42,7 +42,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
           color={color}
           intent={intent}
           iconName="chevron-down"
-          iconPosition="right"
+          iconPlacement="right"
           tagAttrs={{
             style: { borderRadius: 0 },
             onClick: () => {

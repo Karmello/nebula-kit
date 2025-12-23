@@ -12,7 +12,7 @@ const SELECT_META: ComponentMeta<SelectProps> = {
     title: 'Form control for choosing a single option from a list.',
     description: ['supports both controlled and uncontrolled modes'],
     composedOf: ['DropdownList', 'Button'],
-    rendersAs: ['div'],
+    topLevelTags: ['div'],
     slots: ['Select.Option'],
   },
   props: SELECT_PROPS_META,

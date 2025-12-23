@@ -17,7 +17,7 @@ expectType(<Button tagRef={createRef<HTMLButtonElement>()}>Button</Button>)
 
 // allowed props
 expectType(
-  <Button variant="solid" intent="primary" disabled iconName="check" iconPosition="right" size="lg">
+  <Button variant="solid" intent="primary" disabled iconName="check" iconPlacement="right" size="lg">
     Button
   </Button>
 )

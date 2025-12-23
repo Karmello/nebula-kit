@@ -13,7 +13,7 @@ const SPACER_META: ComponentMeta<SpacerProps> = {
       'improves readability by preventing content from feeling crowded',
     ],
     composedOf: ['Box'],
-    rendersAs: ['div'],
+    topLevelTags: ['div'],
   },
   props: SPACER_PROPS_META,
   examples: SPACER_EXAMPLES_META,

@@ -16,7 +16,7 @@ type PropsFromButton = Pick<
   ButtonProps,
   | 'disabled'
   | 'iconName'
-  | 'iconPosition'
+  | 'iconPlacement'
   | 'intent'
   | 'color'
   | 'size'

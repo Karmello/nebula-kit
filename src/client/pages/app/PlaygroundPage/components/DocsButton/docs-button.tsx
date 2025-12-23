@@ -26,7 +26,7 @@ export const DocsButton = () => {
       }}
       size="xs"
       iconName="external-link"
-      iconPosition="right"
+      iconPlacement="right"
       variant="outline"
       intent="secondary"
       color="blue"

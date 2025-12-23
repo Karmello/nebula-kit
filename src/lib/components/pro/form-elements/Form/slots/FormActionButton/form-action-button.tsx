@@ -28,7 +28,7 @@ export const FormActionButton = ({
   size,
   disabled,
   iconName,
-  iconPosition,
+  iconPlacement,
   // own
   type,
   onClick,
@@ -74,7 +74,7 @@ export const FormActionButton = ({
         size={size}
         disabled={disabled}
         iconName={iconName}
-        iconPosition={iconPosition}
+        iconPlacement={iconPlacement}
         loading={type === 'submit' && isSubmitting}
       >
         {children}

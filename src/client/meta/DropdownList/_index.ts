@@ -21,7 +21,7 @@ const DROPDOWN_LIST_META: ComponentMeta<DropdownListProps> = {
       'supports variant and intent styling of the list',
     ],
     composedOf: ['Flex', 'Box', 'Animate', 'Portal'],
-    rendersAs: ['div'],
+    topLevelTags: ['div'],
     slots: ['DropdownList.Trigger', 'DropdownList.Item'],
   },
   props: DROPDOWN_LIST_PROPS_META,

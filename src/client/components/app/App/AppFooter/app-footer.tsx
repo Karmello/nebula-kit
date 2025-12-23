@@ -31,12 +31,12 @@ export const AppFooter = () => {
         <Spacer blockSize="20px" />
         <Flex flexDirection="column" gap="10px">
           <Link href="https://x.com/captainnebula" target="_blank">
-            <Button color="gray" intent="inverse" size="sm" iconName="external-link" iconPosition="right">
+            <Button color="gray" intent="inverse" size="sm" iconName="external-link" iconPlacement="right">
               NebulaKit on X
             </Button>
           </Link>
           <Link href="https://discord.gg/BgezCRDN8H" target="_blank">
-            <Button color="purple" intent="primary" size="sm" iconName="external-link" iconPosition="right">
+            <Button color="purple" intent="primary" size="sm" iconName="external-link" iconPlacement="right">
               NebulaKit on Discord
             </Button>
           </Link>

@@ -10,7 +10,7 @@ const LOADER_META: ComponentMeta<LoaderProps> = {
     title: 'Circular indicator for loading states.',
     description: ['shows a minimal circular spinner to indicate that something is in progress'],
     composedOf: ['Box'],
-    rendersAs: ['div'],
+    topLevelTags: ['div'],
   },
   props: LOADER_PROPS_META,
   examples: LOADER_EXAMPLES_META,

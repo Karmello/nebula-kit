@@ -9,7 +9,7 @@ const TABLE_FOOTER_META: ComponentMeta<TableFooterProps> = {
     title: 'Summary or footer rows of the table.',
     description: ['expects Table.Row as children'],
     composedOf: ['Box'],
-    rendersAs: ['tfoot'],
+    topLevelTags: ['tfoot'],
     slots: ['Table.Row'],
   },
   props: TABLE_FOOTER_PROPS_META,

@@ -16,7 +16,7 @@ const TEXT_META: ComponentMeta<TextProps> = {
       'adapts to different layout contexts through adjustable text scale',
     ],
     composedOf: ['Box', 'WithIcon'],
-    rendersAs: TEXT_TAGS,
+    topLevelTags: TEXT_TAGS,
   },
   props: TEXT_PROPS_META,
   examples: TEXT_EXAMPLES_META,

@@ -72,7 +72,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
       } else {
         if (plan === activePlan) {
           return (
-            <Text iconName="check" iconPosition="right" intent="primary" color="purple">
+            <Text iconName="check" iconPlacement="right" intent="primary" color="purple">
               This is the plan you are on
             </Text>
           )

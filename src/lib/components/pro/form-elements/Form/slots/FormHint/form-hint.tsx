@@ -14,7 +14,7 @@ export const FormHint = ({
   tagRef,
   bold,
   iconName,
-  iconPosition,
+  iconPlacement,
   intent = DEFAULT_FORM_HINT_INTENT,
   color = DEFAULT_FORM_HINT_COLOR,
   noWrap,
@@ -32,7 +32,7 @@ export const FormHint = ({
         scale={scale}
         bold={bold}
         iconName={iconName}
-        iconPosition={iconPosition}
+        iconPlacement={iconPlacement}
         intent={intent}
         color={color}
         noWrap={noWrap}

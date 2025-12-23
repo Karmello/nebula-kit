@@ -48,7 +48,7 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
                       color="blue"
                       size="sm"
                       iconName={props[propName].isResponsive ? 'screen-share' : undefined}
-                      iconPosition="right"
+                      iconPlacement="right"
                     >
                       {propName}
                     </Button>

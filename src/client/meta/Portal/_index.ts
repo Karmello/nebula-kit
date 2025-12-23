@@ -15,7 +15,7 @@ const PORTAL_META: ComponentMeta<PortalProps> = {
       'commonly used for dropdowns, modals and tooltips',
     ],
     composedOf: ['Box'],
-    rendersAs: ['div'],
+    topLevelTags: ['div'],
   },
   props: PORTAL_PROPS_META,
   examples: PORTAL_EXAMPLES_META,

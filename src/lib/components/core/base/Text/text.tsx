@@ -27,7 +27,7 @@ export const Text = <T extends TextTag = 'p'>({
   disabled,
   // WithIcon
   iconName,
-  iconPosition,
+  iconPlacement,
   // own
   typography = DEFAULT_TEXT_TYPOGRAPHY,
   scale = DEFAULT_TEXT_SCALE,
@@ -73,9 +73,9 @@ export const Text = <T extends TextTag = 'p'>({
       {space === 'start' || space === 'both' ? <> </> : null}
       {iconName ? (
         <WithIcon
-          name={iconName}
-          position={iconPosition}
-          size={TEXT_TYPOGRAPHY_CONFIG[scale][typography].iconSize}
+          iconName={iconName}
+          iconPlacement={iconPlacement}
+          iconSize={TEXT_TYPOGRAPHY_CONFIG[scale][typography].iconSize}
         >
           {children}
         </WithIcon>

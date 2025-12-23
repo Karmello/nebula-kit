@@ -8,7 +8,7 @@ const DIALOG_HEADER_META: ComponentMeta<DialogHeaderProps> = {
     name: 'Dialog.Header?',
     title: 'Heading area of the dialog.',
     composedOf: ['Box'],
-    rendersAs: ['div'],
+    topLevelTags: ['div'],
   },
   props: DIALOG_HEADER_PROPS_META,
 }

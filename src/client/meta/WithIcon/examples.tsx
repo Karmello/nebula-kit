@@ -5,7 +5,7 @@ const WITH_ICON_EXAMPLES_META: ComponentMeta<WithIconProps>['examples'] = [
   {
     description: 'Search icon aligned with the provided text content.',
     jsx: (
-      <WithIcon name="search">
+      <WithIcon iconName="search">
         <Box tag="span">Text content</Box>
       </WithIcon>
     ),
@@ -13,7 +13,7 @@ const WITH_ICON_EXAMPLES_META: ComponentMeta<WithIconProps>['examples'] = [
   {
     description: 'Icon on the right.',
     jsx: (
-      <WithIcon name="search" position="right">
+      <WithIcon iconName="search" iconPlacement="right">
         <Box tag="span">Text content</Box>
       </WithIcon>
     ),
@@ -21,7 +21,7 @@ const WITH_ICON_EXAMPLES_META: ComponentMeta<WithIconProps>['examples'] = [
   {
     description: 'Icon aligned to the right edge of the container.',
     jsx: (
-      <WithIcon name="search" position="right" justifyContent="space-between">
+      <WithIcon iconName="search" iconPlacement="right" justifyContent="space-between">
         <Box tag="span">Text content</Box>
       </WithIcon>
     ),

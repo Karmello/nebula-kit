@@ -9,9 +9,10 @@ import { SEGMENT_ITEM_META } from './SegmentItem/_index'
 const SEGMENT_META: ComponentMeta<SegmentProps> = {
   overview: {
     bundle: 'core',
-    title: 'Composite component that unifies multiple controls into a single segmented block.',
+    title:
+      'Composite component that visually merges multiple Box-based surfaces into a single segmented group.',
     description: [
-      'groups controls into a single horizontal or vertical block',
+      'groups Box-based surfaces into a horizontal or vertical block',
       'automatically manages border radiuses for seamless attachment',
     ],
 

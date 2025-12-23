@@ -9,7 +9,7 @@ const SPLIT_VIEW_SIDE_META: ComponentMeta<SplitViewSideProps> = {
     title: 'Defines the side panel region of SplitView.',
     description: ['typically used for navigation, menus or supplementary content'],
     composedOf: ['Box', 'Flex', 'Button', 'Animate'],
-    rendersAs: ['aside'],
+    topLevelTags: ['aside'],
   },
   props: SPLIT_VIEW_SIDE_PROPS_META,
 }

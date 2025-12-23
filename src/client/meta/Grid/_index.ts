@@ -17,7 +17,7 @@ const GRID_META: ComponentMeta<GridProps> = {
       'manages spacing between items with gap properties',
     ],
     composedOf: ['Box'],
-    rendersAs: GRID_TAGS,
+    topLevelTags: GRID_TAGS,
     slots: ['Grid.Item'],
   },
   props: GRID_PROPS_META,

@@ -15,7 +15,7 @@ const BUTTON_META: ComponentMeta<ButtonProps> = {
       'supports full-width layout to span the entire container',
     ],
     composedOf: ['Box', 'Text', 'WithIcon', 'Loader'],
-    rendersAs: BUTTON_TAGS,
+    topLevelTags: BUTTON_TAGS,
   },
   props: BUTTON_PROPS_META,
   examples: BUTTON_EXAMPLES_META,

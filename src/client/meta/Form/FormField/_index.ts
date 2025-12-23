@@ -14,7 +14,7 @@ const FORM_FIELD_META: ComponentMeta<FormFieldProps> = {
       'exposes the Flex.Item interface for per-item layout control',
     ],
     composedOf: ['Flex.Item'],
-    rendersAs: ['div'],
+    topLevelTags: ['div'],
     slots: ['Form.Label', 'Form.Hint'],
   },
   props: FORM_FIELD_PROPS_META,

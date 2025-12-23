@@ -11,7 +11,7 @@ const FOOTER_SECTION_META: ComponentMeta<FooterSectionProps> = {
       'lets you control how sections stretch along the horizontal axis and align their content along the vertical axis',
     ],
     composedOf: ['Flex.Item', 'Box'],
-    rendersAs: ['section'],
+    topLevelTags: ['section'],
   },
   props: FOOTER_SECTION_PROPS_META,
 }

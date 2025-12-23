@@ -5,14 +5,14 @@ import { WithIcon } from '..'
 
 describe('<WithIcon />', () => {
   it('renders icon on the left by default', () => {
-    render(<WithIcon name="search">hello</WithIcon>)
+    render(<WithIcon iconName="search">hello</WithIcon>)
     const el = screen.getByText('hello')
     expect(el.firstChild.nodeName.toLowerCase()).toBe('span')
   })
 
-  it('renders icon on the right when iconPosition="right"', () => {
+  it('renders icon on the right when iconPlacement="right"', () => {
     render(
-      <WithIcon name="search" position="right">
+      <WithIcon iconName="search" iconPlacement="right">
         hello
       </WithIcon>
     )

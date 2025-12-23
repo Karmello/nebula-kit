@@ -9,7 +9,7 @@ export const FormLabel = ({
   tagRef,
   bold,
   iconName,
-  iconPosition,
+  iconPlacement,
   intent = DEFAULT_FORM_LABEL_INTENT,
   color,
   noWrap,
@@ -25,7 +25,7 @@ export const FormLabel = ({
         tagRef={tagRef}
         bold={bold}
         iconName={iconName}
-        iconPosition={iconPosition}
+        iconPlacement={iconPlacement}
         intent={intent}
         color={color}
         noWrap={noWrap}

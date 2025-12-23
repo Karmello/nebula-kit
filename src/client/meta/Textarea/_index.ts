@@ -10,7 +10,7 @@ const TEXTAREA_META: ComponentMeta<TextareaProps> = {
     title: '...',
     description: ['supports both controlled and uncontrolled modes'],
     composedOf: ['Box'],
-    rendersAs: ['textarea'],
+    topLevelTags: ['textarea'],
   },
   props: TEXTAREA_PROPS_META,
   examples: TEXTAREA_EXAMPLES_META,

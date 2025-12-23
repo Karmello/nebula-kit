@@ -17,7 +17,7 @@ const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
       'ideal for use inside SplitView.Side',
     ],
     composedOf: ['Flex'],
-    rendersAs: ['nav'],
+    topLevelTags: ['nav'],
     slots: ['SideNav.Item', 'SideNav.Category'],
   },
   examples: SIDE_NAV_EXAMPLES_META,

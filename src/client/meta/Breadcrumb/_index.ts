@@ -12,7 +12,7 @@ const BREADCRUMB_META: ComponentMeta<BreadcrumbProps> = {
       "provides a hierarchical trail of links that indicate the user's current position and enable navigation to parent pages",
     ],
     composedOf: ['Flex', 'Text'],
-    rendersAs: ['div'],
+    topLevelTags: ['div'],
   },
   props: BREADCRUMB_PROPS_META,
   examples: BREADCRUMB_EXAMPLES_META,

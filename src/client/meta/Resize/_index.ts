@@ -13,7 +13,7 @@ const RESIZE_META: ComponentMeta<ResizeProps> = {
       "measures content's maximum available size before animating, ensuring smooth transitions without abrupt layout shifts",
     ],
     composedOf: ['Box'],
-    rendersAs: ['div'],
+    topLevelTags: ['div'],
   },
   props: RESIZE_PROPS_META,
   examples: RESIZE_EXAMPLES_META,

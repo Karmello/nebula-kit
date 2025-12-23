@@ -9,7 +9,7 @@ const FORM_HINT_META: ComponentMeta<FormHintProps> = {
     title: 'Slot for providing additional helper text or guidance for the field.',
     description: ['overrides the "hint" prop on Form.Field when provided'],
     composedOf: ['Text', 'Spacer'],
-    rendersAs: ['span'],
+    topLevelTags: ['span'],
   },
   props: FORM_HINT_PROPS_META,
 }

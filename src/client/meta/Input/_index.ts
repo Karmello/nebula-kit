@@ -10,7 +10,7 @@ const INPUT_META: ComponentMeta<InputProps> = {
     title: 'Form control for entering or editing text.',
     description: ['supports both controlled and uncontrolled modes'],
     composedOf: ['Box', 'Segment'],
-    rendersAs: ['input'],
+    topLevelTags: ['input'],
   },
   props: INPUT_PROPS_META,
   examples: INPUT_EXAMPLES_META,

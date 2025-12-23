@@ -15,7 +15,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const navigateTo = useNavigateTo()
 
   const {
-    overview: { name, title, description, composedOf, rendersAs, slots, hooks, readMoreLink },
+    overview: { name, title, description, composedOf, topLevelTags, slots, hooks, readMoreLink },
     examples,
     props,
   } = meta
@@ -28,7 +28,13 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       ) : null}
       {description ? <ListWithHeading heading="Description:" items={description} /> : null}
       {composedOf ? <ListWithChips heading="Composed of:" items={composedOf} color="red" /> : null}
-      {rendersAs ? <ListWithChips heading="Renders as:" items={rendersAs as string[]} color="amber" /> : null}
+      {topLevelTags ? (
+        <ListWithChips
+          heading={topLevelTags.length > 1 ? 'Top level tags:' : 'Top level tag:'}
+          items={topLevelTags as string[]}
+          color="amber"
+        />
+      ) : null}
       {props ? (
         <ListWithChips heading="Props:" items={Object.keys(props).sort((a, b) => a.localeCompare(b))} />
       ) : null}
@@ -42,7 +48,13 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
               navigateTo(readMoreLink.href)
             }}
           >
-            <Button variant="ghost" color="blue" intent="primary" iconName="arrow-right" iconPosition="right">
+            <Button
+              variant="ghost"
+              color="blue"
+              intent="primary"
+              iconName="arrow-right"
+              iconPlacement="right"
+            >
               {readMoreLink.label}
             </Button>
           </Link>

@@ -20,7 +20,7 @@ const TOOLBAR_META: ComponentMeta<ToolbarProps> = {
       'any Box inside the Toolbar is overridden to be square',
     ],
     composedOf: ['Grid'],
-    rendersAs: ['nav'],
+    topLevelTags: ['nav'],
     slots: ['Toolbar.Main', 'Toolbar.Start', 'Toolbar.End'],
   },
   props: TOOLBAR_PROPS_META,

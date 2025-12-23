@@ -9,7 +9,7 @@ const FORM_ACTIONS_META: ComponentMeta<FormActionsProps> = {
     title: 'Container for form action elements like submit button.',
     description: ['controls layout between its slots'],
     composedOf: ['Flex'],
-    rendersAs: ['div'],
+    topLevelTags: ['div'],
     slots: ['Form.ActionButton'],
   },
   props: FORM_ACTIONS_PROPS_META,

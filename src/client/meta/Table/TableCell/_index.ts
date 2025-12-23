@@ -9,7 +9,7 @@ const TABLE_CELL_META: ComponentMeta<TableCellProps> = {
     title: 'Represents a single cell within a table row.',
     description: ['should be used inside Table.Row'],
     composedOf: ['Box'],
-    rendersAs: ['td'],
+    topLevelTags: ['td'],
   },
   props: TABLE_CELL_PROPS_META,
 }

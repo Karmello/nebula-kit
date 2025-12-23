@@ -7,7 +7,7 @@ const SELECT_OPTION_PROPS_META: ComponentMeta<SelectOptionProps>['props'] = {
   children: DROPDOWN_LIST_ITEM_PROPS_META.children,
   disabled: DROPDOWN_LIST_ITEM_PROPS_META.disabled,
   iconName: DROPDOWN_LIST_ITEM_PROPS_META.iconName,
-  iconPosition: DROPDOWN_LIST_ITEM_PROPS_META.iconPosition,
+  iconPlacement: DROPDOWN_LIST_ITEM_PROPS_META.iconPlacement,
   justifyContent: {
     ...DROPDOWN_LIST_ITEM_PROPS_META.justifyContent,
     defaultValue: String(DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT),

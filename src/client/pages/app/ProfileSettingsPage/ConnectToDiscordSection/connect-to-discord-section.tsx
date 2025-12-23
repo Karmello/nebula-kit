@@ -42,7 +42,7 @@ export const ConnectToDiscordSection = ({
             * For paid users
           </Text>
         ) : discordUserId ? (
-          <Text intent="secondary" italic iconName="check" iconPosition="right">
+          <Text intent="secondary" italic iconName="check" iconPlacement="right">
             Done
           </Text>
         ) : null}

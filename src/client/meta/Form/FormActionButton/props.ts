@@ -15,7 +15,7 @@ const FORM_ACTION_BUTTON_PROPS_META: ComponentMeta<FormActionButtonProps>['props
   flexGrow: FLEX_ITEM_PROPS_META.flexGrow,
   flexShrink: FLEX_ITEM_PROPS_META.flexShrink,
   iconName: BUTTON_PROPS_META.iconName,
-  iconPosition: BUTTON_PROPS_META.iconPosition,
+  iconPlacement: BUTTON_PROPS_META.iconPlacement,
   intent: {
     ...BUTTON_PROPS_META.intent,
     defaultValue: `${DEFAULT_BUTTON_INTENT}, ${DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT} for submit`,

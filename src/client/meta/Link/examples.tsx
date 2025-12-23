@@ -28,7 +28,7 @@ const LINK_EXAMPLES_META: ComponentMeta<LinkProps>['examples'] = [
           // call to your custom navigation method
         }}
       >
-        <Button iconName="arrow-right" iconPosition="right" color="blue" intent="primary">
+        <Button iconName="arrow-right" iconPlacement="right" color="blue" intent="primary">
           Go to page
         </Button>
       </Link>
@@ -39,7 +39,7 @@ const LINK_EXAMPLES_META: ComponentMeta<LinkProps>['examples'] = [
     // call to your custom navigation method
   }}
 >
-  <Button iconName="arrow-right" iconPosition="right" intent="info">
+  <Button iconName="arrow-right" iconPlacement="right" intent="info">
     Go to page
   </Button>
 </Link>`,

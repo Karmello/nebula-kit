@@ -7,10 +7,13 @@ import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
-  color: BOX_PROPS_META.color,
+  color: {
+    ...BOX_PROPS_META.color,
+    description: 'Color applied to the icon.',
+  },
   intent: {
     options: BOX_INTENTS as unknown as string[],
-    description: 'System semantic color style for the icon.',
+    description: 'Semantic intent applied to the icon.',
   },
   name: {
     options: ['IconName'],
@@ -20,7 +23,7 @@ const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
   size: {
     options: ['CSS'],
     defaultValue: String(DEFAULT_ICON_SIZE),
-    description: 'Size of the icon as a system scale value.',
+    description: 'Size of the icon.',
   },
   tagAttrs: HTML_TAG_PROPS_META['tagAttrs'],
   tagRef: HTML_TAG_PROPS_META['tagRef'],

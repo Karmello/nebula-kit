@@ -6,7 +6,7 @@ type Overview = {
   title: string
   description?: string[]
   composedOf?: string[]
-  rendersAs?: readonly string[]
+  topLevelTags?: readonly string[]
   slots?: string[]
   hooks?: string[]
   readMoreLink?: {
@@ -21,6 +21,7 @@ export type Prop = {
   isRequired?: boolean
   isResponsive?: boolean
   description?: string
+  link?: boolean
 }
 
 type Example = {

@@ -9,7 +9,7 @@ const TABLE_HEADER_CELL_META: ComponentMeta<TableHeaderCellProps> = {
     title: 'Represents a single header cell.',
     description: ['can be used inside Table.Row or Table.HeaderRow'],
     composedOf: ['Box'],
-    rendersAs: ['th'],
+    topLevelTags: ['th'],
   },
   props: TABLE_HEADER_CELL_PROPS_META,
 }

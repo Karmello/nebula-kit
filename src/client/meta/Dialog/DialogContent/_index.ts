@@ -8,7 +8,7 @@ const DIALOG_CONTENT_META: ComponentMeta<DialogContentProps> = {
     name: 'Dialog.Content',
     title: 'Primary content area of the dialog.',
     composedOf: ['Box'],
-    rendersAs: ['div'],
+    topLevelTags: ['div'],
   },
   props: DIALOG_CONTENT_PROPS_META,
 }

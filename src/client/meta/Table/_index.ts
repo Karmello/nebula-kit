@@ -24,7 +24,7 @@ const TABLE_META: ComponentMeta<TableProps> = {
       'supports alignment and sizing of cells for structured data presentation',
     ],
     composedOf: ['Box'],
-    rendersAs: ['table'],
+    topLevelTags: ['table'],
     slots: ['Table.Body', 'Table.Header', 'Table.Footer', 'Table.Caption'],
   },
   props: TABLE_PROPS_META,

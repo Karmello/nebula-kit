@@ -14,7 +14,7 @@ const APP_FRAME_META: ComponentMeta<AppFrameProps> = {
     title: 'Structural component that defines the overall layout of an application view.',
     description: ['provides header, main area and footer regions for the application'],
     composedOf: ['Grid'],
-    rendersAs: ['div'],
+    topLevelTags: ['div'],
     slots: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer'],
   },
   props: APP_FRAME_PROPS_META,

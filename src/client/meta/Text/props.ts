@@ -33,10 +33,10 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     description: 'Applies the disabled visual state and disables interaction when rendered as an <a> tag.',
   },
   iconName: {
-    ...WITH_ICON_PROPS_META['name'],
+    ...WITH_ICON_PROPS_META['iconName'],
     isRequired: false,
   },
-  iconPosition: WITH_ICON_PROPS_META['position'],
+  iconPlacement: WITH_ICON_PROPS_META['iconPlacement'],
   intent: BOX_PROPS_META['intent'],
   italic: {
     options: ['boolean'],

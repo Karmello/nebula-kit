@@ -1,64 +1,66 @@
 import classNames from 'classnames'
 
-import { Flex, Icon, Rotate } from 'lib/components'
+import { Box, Flex, Icon, Rotate } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { DEFAULT_WITH_ICON_COLUMN_GAP, DEFAULT_WITH_ICON_ICON_POSITION, WithIconProps } from './definitions'
+import { DEFAULT_WITH_ICON_GAP, DEFAULT_WITH_ICON_ICON_PLACEMENT, WithIconProps } from './definitions'
 
 export const WithIcon = ({
   // HtmlTag
   children,
   tagAttrs,
   tagRef,
+  // Box
+  inlineSize,
   // Flex
   justifyContent,
-  columnGap = DEFAULT_WITH_ICON_COLUMN_GAP,
+  gap = DEFAULT_WITH_ICON_GAP,
   // Icon
-  name,
-  size,
-  intent,
+  iconName,
+  iconSize,
+  iconIntent,
+  iconColor,
   // Rotate
   iconAngle,
   // own
-  position = DEFAULT_WITH_ICON_ICON_POSITION,
+  iconPlacement = DEFAULT_WITH_ICON_ICON_PLACEMENT,
 }: WithIconProps) => {
-  const icon = <Icon name={name} size={size} intent={intent} />
+  const icon = <Icon name={iconName} size={iconSize} intent={iconIntent} color={iconColor} />
 
   return (
-    <Flex
+    <Box
       tag="span"
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('with-icon'), tagAttrs?.className || ''),
-        style: {
-          ...tagAttrs?.style,
-          textDecoration: 'inherit',
-        },
       }}
       tagRef={tagRef}
-      display="inline-flex"
-      alignItems="center"
-      flexDirection="row"
-      flexWrap="nowrap"
-      justifyContent={justifyContent}
-      columnGap={columnGap}
+      inlineSize={inlineSize}
     >
-      {position === 'left' ? (
-        iconAngle !== undefined ? (
-          <Rotate angle={iconAngle}>{icon}</Rotate>
-        ) : (
-          icon
-        )
-      ) : null}
-      {children}
-      {position === 'right' ? (
-        iconAngle !== undefined ? (
-          <Rotate angle={iconAngle}>{icon}</Rotate>
-        ) : (
-          icon
-        )
-      ) : null}
-    </Flex>
+      <Flex
+        alignItems="center"
+        flexDirection="row"
+        flexWrap="nowrap"
+        justifyContent={justifyContent}
+        gap={gap}
+      >
+        {iconPlacement === 'left' ? (
+          iconAngle !== undefined ? (
+            <Rotate angle={iconAngle}>{icon}</Rotate>
+          ) : (
+            icon
+          )
+        ) : null}
+        {children}
+        {iconPlacement === 'right' ? (
+          iconAngle !== undefined ? (
+            <Rotate angle={iconAngle}>{icon}</Rotate>
+          ) : (
+            icon
+          )
+        ) : null}
+      </Flex>
+    </Box>
   )
 }
 

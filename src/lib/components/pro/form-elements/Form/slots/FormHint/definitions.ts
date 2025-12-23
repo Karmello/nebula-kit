@@ -10,7 +10,7 @@ type PropsFromText = Pick<
   | 'children'
   | 'color'
   | 'iconName'
-  | 'iconPosition'
+  | 'iconPlacement'
   | 'intent'
   | 'noWrap'
   | 'scale'

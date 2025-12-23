@@ -20,7 +20,7 @@ const SPLIT_VIEW_META: ComponentMeta<SplitViewProps> = {
       'stretches to fill the full height of its parent container',
       'in overlay mode, temporarily blocks pointer interaction outside the active panel',
     ],
-    rendersAs: ['div'],
+    topLevelTags: ['div'],
     slots: ['SplitView.Side', 'SplitView.Main'],
   },
   props: SPLIT_VIEW_PROPS_META,

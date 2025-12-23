@@ -21,7 +21,7 @@ const FORM_META: ComponentMeta<FormProps> = {
       'passes "onValidSubmission" and "onInvalidSubmission" to RHF "handleSubmit" internally',
     ],
     composedOf: ['Flex', 'Flex.Item'],
-    rendersAs: ['form'],
+    topLevelTags: ['form'],
     slots: ['Form.Fields', 'Form.Actions'],
   },
   props: FORM_PROPS_META,

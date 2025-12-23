@@ -15,7 +15,7 @@ const LINK_META: ComponentMeta<LinkProps> = {
       'accepts "href" and "target" for standard link attributes',
       'commonly used with Button or Text components for consistent navigation handling',
     ],
-    rendersAs: ['a'],
+    topLevelTags: ['a'],
   },
   examples: LINK_EXAMPLES_META,
   props: LINK_PROPS_META,

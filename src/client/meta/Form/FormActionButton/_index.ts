@@ -12,7 +12,7 @@ const FORM_ACTION_BUTTON_META: ComponentMeta<FormActionButtonProps> = {
       'use the "type" prop to enable built-in behaviors like submit, reset or clear',
     ],
     composedOf: ['Flex.Item', 'Button'],
-    rendersAs: ['button'],
+    topLevelTags: ['button'],
   },
   props: FORM_ACTION_BUTTON_PROPS_META,
 }

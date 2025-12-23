@@ -8,7 +8,7 @@ const MARKER_LIST_ITEM_META: ComponentMeta<MarkerListItemProps> = {
     name: 'MarkerList.Item',
     title: 'Single item inside MarkerList.',
     composedOf: ['Box'],
-    rendersAs: ['li'],
+    topLevelTags: ['li'],
   },
   props: MARKER_LIST_PROPS_META,
 }

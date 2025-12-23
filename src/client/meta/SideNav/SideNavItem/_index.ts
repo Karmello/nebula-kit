@@ -12,7 +12,7 @@ const SIDE_NAV_ITEM_META: ComponentMeta<SideNavItemProps> = {
       'can be also used directly inside SideNav for flat navigation',
     ],
     composedOf: ['Link', 'Button'],
-    rendersAs: ['a'],
+    topLevelTags: ['a'],
   },
   props: SIDE_NAV_ITEM_PROPS_META,
 }

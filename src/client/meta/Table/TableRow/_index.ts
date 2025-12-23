@@ -9,7 +9,7 @@ const TABLE_ROW_META: ComponentMeta<TableRowProps> = {
     title: 'Represents a single row within the table structure.',
     description: ['should be placed inside Table.Body or Table.Footer to define individual data rows'],
     composedOf: ['Box'],
-    rendersAs: ['tr'],
+    topLevelTags: ['tr'],
     slots: ['Table.Cell', 'Table.HeaderCell'],
   },
   props: TABLE_ROW_PROPS_META,

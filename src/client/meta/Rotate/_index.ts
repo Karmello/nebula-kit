@@ -13,7 +13,7 @@ const ROTATE_META: ComponentMeta<RotateProps> = {
       'performs animation when the "angle" prop value changes',
     ],
     composedOf: ['Box'],
-    rendersAs: ['span'],
+    topLevelTags: ['span'],
   },
   props: ROTATE_PROPS_META,
   examples: ROTATE_EXAMPLES_META,

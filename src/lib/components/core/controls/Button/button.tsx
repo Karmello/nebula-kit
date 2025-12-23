@@ -36,7 +36,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   maxInlineSize,
   // Text
   iconName,
-  iconPosition,
+  iconPlacement,
   justifyContent = DEFAULT_BUTTON_JUSTIFY_CONTENT,
   bold,
   // WithIcon
@@ -92,13 +92,13 @@ export const Button = <T extends ButtonTag = 'button'>({
       <Ripple parentRef={tagRef || ref} />
       {iconName ? (
         <WithIcon
-          tagAttrs={{ style: { inlineSize: children !== undefined ? '100%' : undefined } }}
-          name={iconName}
-          position={iconPosition}
-          columnGap={children === undefined ? '0px' : undefined}
-          justifyContent={justifyContent}
-          size={BUTTON_SIZE_CONFIG[size].iconSize}
+          inlineSize={children !== undefined ? '100%' : undefined}
+          iconName={iconName}
+          iconPlacement={iconPlacement}
+          iconSize={BUTTON_SIZE_CONFIG[size].iconSize}
           iconAngle={iconAngle}
+          justifyContent={justifyContent}
+          gap={children === undefined ? '0px' : undefined}
         >
           {text}
         </WithIcon>

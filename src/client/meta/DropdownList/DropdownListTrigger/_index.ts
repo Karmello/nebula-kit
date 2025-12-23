@@ -9,7 +9,7 @@ const DROPDOWN_LIST_TRIGGER_META: ComponentMeta<DropdownListTriggerProps> = {
     title:
       'Represents a wrapper around the interactive element used to control visibility of the dropdown list.',
     composedOf: ['Box'],
-    rendersAs: ['div'],
+    topLevelTags: ['div'],
   },
   props: DROPDOWN_LIST_TRIGGER_PROPS_META,
 }

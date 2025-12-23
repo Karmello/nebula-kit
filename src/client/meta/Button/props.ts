@@ -32,7 +32,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   highlighted: BOX_PROPS_META.highlighted,
   iconAngle: WITH_ICON_PROPS_META.iconAngle,
   iconName: TEXT_PROPS_META.iconName,
-  iconPosition: TEXT_PROPS_META.iconPosition,
+  iconPlacement: TEXT_PROPS_META.iconPlacement,
   inlineSize: BOX_PROPS_META.inlineSize,
   intent: {
     ...BOX_PROPS_META.intent,

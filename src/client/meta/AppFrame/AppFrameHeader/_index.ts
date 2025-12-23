@@ -9,7 +9,7 @@ const APP_FRAME_HEADER_META: ComponentMeta<AppFrameHeaderProps> = {
     title: 'Defines the top region of AppFrame.',
     description: ['typically used for navigation, branding or other global actions'],
     composedOf: ['Box'],
-    rendersAs: ['header'],
+    topLevelTags: ['header'],
   },
   props: APP_FRAME_HEADER_PROPS_META,
 }

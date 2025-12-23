@@ -21,7 +21,7 @@ export const UserActionMenu = () => {
       itemBorderIntent="tertiary"
       dropdownPlacement="bottom-end"
       staticLabel="Profile"
-      inlineSize="125px"
+      inlineSize="110px"
       value={currentPageKey}
       onChange={async value => {
         if (value === 'logout') {

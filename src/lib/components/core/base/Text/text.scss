@@ -20,6 +20,10 @@ a.neb-text {
   display: inline;
 }
 
+a.neb-text {
+  text-decoration: none;
+}
+
 .neb-text[data-neb-text-typography='h1'],
 .neb-text[data-neb-text-typography='h2'],
 .neb-text[data-neb-text-typography='h3'],

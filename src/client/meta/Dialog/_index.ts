@@ -20,7 +20,7 @@ const DIALOG_META: ComponentMeta<DialogProps> = {
       'automatically disables page scrolling while open',
     ],
     composedOf: ['Portal', 'FocusTrap', 'Flex', 'Box', 'Button', 'Resize'],
-    rendersAs: ['dialog'],
+    topLevelTags: ['dialog'],
     slots: ['Dialog.Header', 'Dialog.Content', 'Dialog.Footer'],
   },
   props: DIALOG_PROPS_META,

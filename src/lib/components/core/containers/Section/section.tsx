@@ -24,7 +24,7 @@ export const Section = <T extends SectionTag = 'section'>({
   intent = DEFAULT_SECTION_INTENT,
   // text
   iconName,
-  iconPosition,
+  iconPlacement,
   // own
   heading,
   size = DEFAULT_SECTION_SIZE,
@@ -52,7 +52,7 @@ export const Section = <T extends SectionTag = 'section'>({
       <Text
         typography={SECTION_SIZE_CONFIG[size].typography}
         iconName={iconName}
-        iconPosition={iconPosition}
+        iconPlacement={iconPlacement}
         color={color}
       >
         {heading}

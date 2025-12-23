@@ -167,7 +167,7 @@ export default () => {
                       intent="secondary"
                       color="blue"
                       iconName="external-link"
-                      iconPosition="right"
+                      iconPlacement="right"
                     >
                       Roadmap
                     </Button>

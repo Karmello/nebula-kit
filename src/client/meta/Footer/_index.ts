@@ -17,7 +17,7 @@ const FOOTER_META: ComponentMeta<FooterProps> = {
       'manages spacing for all its sections',
     ],
     composedOf: ['Flex'],
-    rendersAs: ['div', 'footer'],
+    topLevelTags: ['div', 'footer'],
     slots: ['Footer.Section'],
   },
   props: FOOTER_PROPS_META,

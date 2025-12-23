@@ -11,7 +11,7 @@ const TABLE_HEADER_ROW_META: ComponentMeta<TableHeaderRowProps> = {
       "should be use within Table.Head to group header cells and define the table's column labels.",
     ],
     composedOf: ['Box'],
-    rendersAs: ['tr'],
+    topLevelTags: ['tr'],
     slots: ['Table.HeaderCell'],
   },
   props: TABLE_HEADER_ROW_PROPS_META,

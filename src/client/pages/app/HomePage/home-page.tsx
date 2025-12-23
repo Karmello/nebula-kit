@@ -68,7 +68,7 @@ export const HomePage = () => {
                     color="purple"
                     intent="primary"
                     iconName="arrow-right"
-                    iconPosition="right"
+                    iconPlacement="right"
                     size="sm"
                   >
                     Playground

@@ -13,7 +13,7 @@ const DIVIDER_META: ComponentMeta<DividerProps> = {
       'marks a thematic break between related blocks of content',
     ],
     composedOf: ['Box'],
-    rendersAs: ['hr'],
+    topLevelTags: ['hr'],
   },
   props: DIVIDER_PROPS_META,
   examples: DIVIDER_EXAMPLES_META,

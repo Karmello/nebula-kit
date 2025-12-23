@@ -1,9 +1,9 @@
 import { ComponentMeta } from 'client/definitions'
 
 import {
-  DEFAULT_WITH_ICON_COLUMN_GAP,
-  DEFAULT_WITH_ICON_ICON_POSITION,
-  ICON_POSITIONS,
+  DEFAULT_WITH_ICON_GAP,
+  DEFAULT_WITH_ICON_ICON_PLACEMENT,
+  ICON_PLACEMENT,
   WithIconProps,
 } from 'lib/components/core/layout/WithIcon'
 
@@ -11,32 +11,41 @@ import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { ICON_PROPS_META } from '../Icon/props'
 import { FLEX_PROPS_META } from '../Flex/props'
 import { ROTATE_PROPS_META } from '../Rotate/props'
+import { BOX_PROPS_META } from '../Box/props'
 
 const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
   children: {
     ...HTML_TAG_PROPS_META['children'],
     isRequired: true,
   },
-  tagAttrs: HTML_TAG_PROPS_META['tagAttrs'],
-  tagRef: HTML_TAG_PROPS_META['tagRef'],
-  justifyContent: FLEX_PROPS_META.justifyContent,
-  columnGap: {
-    ...FLEX_PROPS_META.columnGap,
-    defaultValue: String(DEFAULT_WITH_ICON_COLUMN_GAP),
+  gap: {
+    ...FLEX_PROPS_META.gap,
+    defaultValue: String(DEFAULT_WITH_ICON_GAP),
+    description: 'Spacing between icon and content.',
   },
   iconAngle: {
     ...ROTATE_PROPS_META.angle,
     isRequired: false,
     description: 'Defines the rotation angle of the icon, animating when the value changes.',
   },
-  ...ICON_PROPS_META,
-  position: {
-    options: ICON_POSITIONS as unknown as string[],
-    defaultValue: DEFAULT_WITH_ICON_ICON_POSITION,
+  iconColor: ICON_PROPS_META.color,
+  iconIntent: ICON_PROPS_META.intent,
+  iconName: ICON_PROPS_META.name,
+  iconPlacement: {
+    options: ICON_PLACEMENT as unknown as string[],
+    defaultValue: DEFAULT_WITH_ICON_ICON_PLACEMENT,
     isRequired: false,
     isResponsive: false,
-    description: 'Icon position relative to children.',
+    description: 'Icon placement relative to children.',
   },
+  iconSize: ICON_PROPS_META.size,
+  inlineSize: BOX_PROPS_META.inlineSize,
+  justifyContent: {
+    ...FLEX_PROPS_META.justifyContent,
+    description: 'Distributes an icon and children along the main axis.',
+  },
+  tagAttrs: HTML_TAG_PROPS_META['tagAttrs'],
+  tagRef: HTML_TAG_PROPS_META['tagRef'],
 }
 
 export { WITH_ICON_PROPS_META }

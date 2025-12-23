@@ -88,7 +88,7 @@ export const Select = ({
                             },
                       }}
                       iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
-                      iconPosition="right"
+                      iconPlacement="right"
                       iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
                       justifyContent="space-between"
                       size={size}

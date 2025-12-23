@@ -9,7 +9,7 @@ const APP_FRAME_FOOTER_META: ComponentMeta<AppFrameFooterProps> = {
     title: 'Defines the bottom region of AppFrame.',
     description: ['commonly used for legal notices, links or supplementary information'],
     composedOf: ['Box'],
-    rendersAs: ['footer'],
+    topLevelTags: ['footer'],
   },
   props: APP_FRAME_FOOTER_PROPS_META,
 }

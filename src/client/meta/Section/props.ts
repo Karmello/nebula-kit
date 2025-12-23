@@ -26,9 +26,9 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
     description: 'Heading text.',
   },
   iconName: TEXT_PROPS_META.iconName,
-  iconPosition: {
-    ...TEXT_PROPS_META.iconPosition,
-    description: 'Icon position relative to heading.',
+  iconPlacement: {
+    ...TEXT_PROPS_META.iconPlacement,
+    description: 'Icon placement relative to heading.',
   },
   intent: {
     ...BOX_PROPS_META.intent,

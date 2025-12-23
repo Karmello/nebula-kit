@@ -1,4 +1,6 @@
-import { Icon, Section, Spacer, Table, Text } from 'lib/components'
+import { kebabCase } from 'change-case'
+
+import { Icon, Section, Spacer, Table, Text, Link } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 
 type Props = {
@@ -23,13 +25,31 @@ export const PropsTable = ({ category, data }: Props) => {
         {Object.keys(data)
           .sort((a, b) => a.localeCompare(b))
           .map(name => {
-            const { options, isRequired, isResponsive, defaultValue, description } = data[name]
+            const { options, isRequired, isResponsive, defaultValue, description, link } = data[name]
             return (
               <Table.Row key={name}>
                 <Table.Cell>
-                  <Text intent="primary" color="blue" bold>
-                    {name}
-                  </Text>
+                  {!link ? (
+                    <Text intent="primary" color="blue" bold>
+                      {name}
+                    </Text>
+                  ) : (
+                    <Link
+                      href={`https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/${kebabCase(name)}`}
+                      target="_blank"
+                    >
+                      <Text
+                        intent="primary"
+                        color="blue"
+                        bold
+                        iconName="external-link"
+                        iconPlacement="right"
+                        underline={false}
+                      >
+                        {name}
+                      </Text>
+                    </Link>
+                  )}
                 </Table.Cell>
                 <Table.Cell>{typeof options === 'string' ? options : options.join(', ')}</Table.Cell>
                 <Table.Cell tagAttrs={{ style: { textAlign: 'center', whiteSpace: 'nowrap' } }}>
