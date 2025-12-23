@@ -3,11 +3,11 @@ import { expectType, expectError } from 'tsd'
 
 import { Icon } from '../'
 
-// some props required
-expectError(<Icon />)
+// children not required
+expectType(<Icon />)
 
-// children not allowed
-expectError(<Icon>children</Icon>)
+// children allowed
+expectType(<Icon>children</Icon>)
 
 // wrong name value not allowed
 expectError(<Icon name="xyz" />)
