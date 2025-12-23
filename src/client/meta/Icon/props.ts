@@ -7,13 +7,17 @@ import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
+  children: {
+    ...HTML_TAG_PROPS_META.children,
+    description: 'Custom SVG icon.',
+  },
   color: {
     ...BOX_PROPS_META.color,
     description: 'Color applied to the icon.',
   },
   intent: {
     options: BOX_INTENTS as unknown as string[],
-    description: 'Semantic intent applied to the icon.',
+    description: 'Tone level applied to the icon.',
   },
   name: {
     options: ['IconName'],

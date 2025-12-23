@@ -20,12 +20,17 @@ export const WithIcon = ({
   iconSize,
   iconIntent,
   iconColor,
+  customSvgIcon,
   // Rotate
   iconAngle,
   // own
   iconPlacement = DEFAULT_WITH_ICON_ICON_PLACEMENT,
 }: WithIconProps) => {
-  const icon = <Icon name={iconName} size={iconSize} intent={iconIntent} color={iconColor} />
+  const icon = (
+    <Icon name={iconName} size={iconSize} intent={iconIntent} color={iconColor}>
+      {customSvgIcon}
+    </Icon>
+  )
 
   return (
     <Box

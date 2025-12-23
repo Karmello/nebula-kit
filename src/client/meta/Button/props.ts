@@ -23,6 +23,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     description: 'Label rendered.',
   },
   color: BOX_PROPS_META.color,
+  customSvgIcon: WITH_ICON_PROPS_META.customSvgIcon,
   disabled: BOX_PROPS_META.disabled,
   fullWidth: {
     options: ['boolean'],

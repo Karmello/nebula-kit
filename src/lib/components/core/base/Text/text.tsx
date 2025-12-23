@@ -28,6 +28,7 @@ export const Text = <T extends TextTag = 'p'>({
   // WithIcon
   iconName,
   iconPlacement,
+  customSvgIcon,
   // own
   typography = DEFAULT_TEXT_TYPOGRAPHY,
   scale = DEFAULT_TEXT_SCALE,
@@ -76,6 +77,7 @@ export const Text = <T extends TextTag = 'p'>({
           iconName={iconName}
           iconPlacement={iconPlacement}
           iconSize={TEXT_TYPOGRAPHY_CONFIG[scale][typography].iconSize}
+          customSvgIcon={customSvgIcon}
         >
           {children}
         </WithIcon>

@@ -5,10 +5,10 @@ import { Color, IconName } from 'lib/definitions'
 export const DEFAULT_ICON_SIZE: string = '16px'
 
 type IconOwnProps = {
-  name: IconName
+  name?: IconName
   size?: string
   intent?: BoxIntent
   color?: Color
 }
 
-export type IconProps = Pick<HtmlTagProps<'span'>, 'tagAttrs' | 'tagRef'> & IconOwnProps
+export type IconProps = Pick<HtmlTagProps<'span'>, 'children' | 'tagAttrs' | 'tagRef'> & IconOwnProps

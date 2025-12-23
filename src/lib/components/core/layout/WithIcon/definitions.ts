@@ -20,10 +20,11 @@ type PropsFromBox = Pick<BoxProps<'span'>, 'inlineSize'>
 type PropsFromFlex = Pick<FlexProps, 'justifyContent' | 'gap'>
 
 type PropsFromIcon = {
-  iconName: IconProps['name']
+  iconName?: IconProps['name']
   iconSize?: IconProps['size']
   iconIntent?: IconProps['intent']
   iconColor?: IconProps['color']
+  customSvgIcon?: IconProps['children']
 }
 
 type PropsFromRotate = {

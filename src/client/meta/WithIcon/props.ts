@@ -18,6 +18,7 @@ const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
     ...HTML_TAG_PROPS_META['children'],
     isRequired: true,
   },
+  customSvgIcon: ICON_PROPS_META.children,
   gap: {
     ...FLEX_PROPS_META.gap,
     defaultValue: String(DEFAULT_WITH_ICON_GAP),

@@ -10,6 +10,7 @@ import { DEFAULT_ICON_SIZE, IconProps } from './definitions'
 export const Icon = memo(
   ({
     // HtmlTag
+    children,
     tagAttrs,
     tagRef,
     // own
@@ -18,9 +19,9 @@ export const Icon = memo(
     intent,
     color,
   }: IconProps) => {
-    if (!name) return null
+    if (!name && !children) return null
 
-    const Svg = getSvgIconComponent(name)
+    const Svg = name ? getSvgIconComponent(name) : null
 
     return (
       <Box
@@ -40,12 +41,14 @@ export const Icon = memo(
         intent={intent}
         display="inline-block"
       >
-        <Svg
-          style={{
-            width: size !== undefined ? size : undefined,
-            height: size !== undefined ? size : undefined,
-          }}
-        />
+        {children || (
+          <Svg
+            style={{
+              width: size !== undefined ? size : undefined,
+              height: size !== undefined ? size : undefined,
+            }}
+          />
+        )}
       </Box>
     )
   }

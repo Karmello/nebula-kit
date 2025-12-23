@@ -51,9 +51,11 @@ export const PropsTable = ({ category, data }: Props) => {
                     </Link>
                   )}
                 </Table.Cell>
-                <Table.Cell>{typeof options === 'string' ? options : options.join(', ')}</Table.Cell>
+                <Table.Cell>
+                  <Text>{typeof options === 'string' ? options : options.join(', ')}</Text>
+                </Table.Cell>
                 <Table.Cell tagAttrs={{ style: { textAlign: 'center', whiteSpace: 'nowrap' } }}>
-                  {defaultValue !== undefined ? defaultValue : '-'}
+                  <Text>{defaultValue !== undefined ? defaultValue : '-'}</Text>
                 </Table.Cell>
                 <Table.Cell tagAttrs={{ style: { textAlign: 'center' } }}>
                   {isRequired ? <Icon name="check" intent="primary" color="blue" size="20px" /> : '-'}
@@ -61,7 +63,9 @@ export const PropsTable = ({ category, data }: Props) => {
                 <Table.Cell tagAttrs={{ style: { textAlign: 'center' } }}>
                   {isResponsive ? <Icon name="check" intent="primary" color="blue" size="20px" /> : '-'}
                 </Table.Cell>
-                <Table.Cell>{description}</Table.Cell>
+                <Table.Cell>
+                  <Text>{description}</Text>
+                </Table.Cell>
               </Table.Row>
             )
           })}

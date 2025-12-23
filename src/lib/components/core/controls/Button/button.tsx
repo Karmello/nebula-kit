@@ -41,6 +41,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   bold,
   // WithIcon
   iconAngle,
+  customSvgIcon,
   // own
   size = DEFAULT_BUTTON_SIZE,
   fullWidth,
@@ -99,6 +100,7 @@ export const Button = <T extends ButtonTag = 'button'>({
           iconAngle={iconAngle}
           justifyContent={justifyContent}
           gap={children === undefined ? '0px' : undefined}
+          customSvgIcon={customSvgIcon}
         >
           {text}
         </WithIcon>

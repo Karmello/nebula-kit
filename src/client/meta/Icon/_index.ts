@@ -7,9 +7,12 @@ import { ICON_EXAMPLES_META } from './examples'
 const ICON_META: ComponentMeta<IconProps> = {
   overview: {
     bundle: 'core',
-    title: 'SVG icon from the "Lucide React" set.',
-    description: ['exposes a subset of icons provided by "Lucide React"'],
-    topLevelTags: ['span + svg'],
+    title: 'SVG icon wrapped in a styled inline container.',
+    description: [
+      'exposes a curated subset of icons from "Lucide React"',
+      'allows rendering a custom SVG icon via children while preserving semantic styling',
+    ],
+    topLevelTags: ['span'],
     readMoreLink: {
       label: 'See all icons',
       href: '/foundations/resources/assets/icons',

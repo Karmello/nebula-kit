@@ -86,6 +86,7 @@ type PropsFromBox<T extends TextTag = 'p'> = Pick<BoxProps<T>, 'color' | 'intent
 type PropsFromWithIcon = {
   iconName?: WithIconProps['iconName']
   iconPlacement?: WithIconProps['iconPlacement']
+  customSvgIcon?: WithIconProps['customSvgIcon']
 }
 
 export type TextProps<T extends TextTag = 'p'> = PropsFromHtmlTag<T> &
