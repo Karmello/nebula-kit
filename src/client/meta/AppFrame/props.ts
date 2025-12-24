@@ -8,6 +8,7 @@ const APP_FRAME_PROPS_META: ComponentMeta<AppFrameProps>['props'] = {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
     options: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer'],
+    description: 'AppFrame.Footer is optional, the rest is required.',
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
@@ -16,7 +17,7 @@ const APP_FRAME_PROPS_META: ComponentMeta<AppFrameProps>['props'] = {
     defaultValue: 'false',
     isRequired: false,
     isResponsive: false,
-    description: 'keeps the header fixed at the top of the viewport',
+    description: 'Keeps the header fixed at the top of the viewport.',
   },
 }
 

@@ -9,12 +9,12 @@ import { FOOTER_SECTION_META } from './FooterSection/_index'
 const FOOTER_META: ComponentMeta<FooterProps> = {
   overview: {
     bundle: 'core',
-    title:
-      'Layout component that arranges content into adaptive sections, wrapping automatically to fit available space.',
+    title: 'Layout component for organizing footer content into responsive sections.',
     description: [
       'commonly used inside AppFrame.Footer at the bottom of the page',
-      'renders as a <div> by default (AppFrame.Footer already renders as <footer>), but can be switched to a <footer> element if needed',
-      'manages spacing for all its sections',
+      'manages spacing and layout for all its sections',
+      'renders as a <div> by default since AppFrame.Footer already renders as <footer>',
+      'can be switched to a <footer> element when used standalone',
     ],
     composedOf: ['Flex'],
     topLevelTags: ['div', 'footer'],

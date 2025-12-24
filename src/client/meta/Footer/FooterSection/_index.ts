@@ -8,7 +8,7 @@ const FOOTER_SECTION_META: ComponentMeta<FooterSectionProps> = {
     name: 'Footer.Section',
     title: 'Flexible subcomponent that represents an individual area within the footer.',
     description: [
-      'lets you control how sections stretch along the horizontal axis and align their content along the vertical axis',
+      'controls how a section stretches along the horizontal axis and aligns its content along the vertical axis',
     ],
     composedOf: ['Flex.Item', 'Box'],
     topLevelTags: ['section'],

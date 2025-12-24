@@ -11,8 +11,11 @@ import { APP_FRAME_FOOTER_META } from './AppFrameFooter/_index'
 const APP_FRAME_META: ComponentMeta<AppFrameProps> = {
   overview: {
     bundle: 'core',
-    title: 'Structural component that defines the overall layout of an application view.',
-    description: ['provides header, main area and footer regions for the application'],
+    title: 'Structural component that defines the global layout of an application view.',
+    description: [
+      'provides header, main area and footer regions for the application',
+      'establishes a consistent page structure for application-level layouts',
+    ],
     composedOf: ['Grid'],
     topLevelTags: ['div'],
     slots: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer'],
