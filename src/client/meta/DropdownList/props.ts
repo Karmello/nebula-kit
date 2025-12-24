@@ -11,6 +11,7 @@ import {
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
   DROPDOWN_LIST_PLACEMENTS,
+  DROPDOWN_LIST_VARIANT,
 } from 'lib/components/core/overlays/DropdownList'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -24,16 +25,19 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
     isRequired: true,
     description: 'Accepts slots directly or via a render function with access to the context argument.',
   },
-  color: BUTTON_PROPS_META.color,
+  color: {
+    ...BUTTON_PROPS_META.color,
+    description: 'Color applied to the list.',
+  },
   intent: {
     ...BUTTON_PROPS_META.intent,
-    description: 'Tone level applied to the list items.',
+    description: 'Tone level applied to the list.',
   },
   itemBorderIntent: {
     options: BOX_INTENTS as never,
     defaultValue: String(DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT),
     isResponsive: true,
-    description: 'Sets the visual intent of the dividers between list items.',
+    description: 'Tone level applied to the dividers between list items.',
   },
   keepOpen: {
     options: ['boolean'],
@@ -65,7 +69,8 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
   tagRef: HTML_TAG_PROPS_META.tagRef,
   variant: {
     ...BUTTON_PROPS_META.variant,
-    description: 'Visual style variant from the system design applied to the list items.',
+    options: DROPDOWN_LIST_VARIANT as never,
+    description: 'Visual style variant applied to the list.',
   },
   visibleItemsCount: {
     options: ['number'],

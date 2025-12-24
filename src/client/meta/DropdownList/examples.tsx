@@ -32,24 +32,9 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     ),
   },
   {
-    description: 'DropdownList with outline variant and primary intent.',
+    description: 'DropdownList with outline variant, primary intent and primary itemBorderIntent set.',
     jsx: (
-      <DropdownList variant="outline" intent="primary">
-        <DropdownList.Trigger>
-          <Button variant="ghost" intent="primary">
-            Toggle list
-          </Button>
-        </DropdownList.Trigger>
-        {Array.from({ length: 10 }, (v, k) => (
-          <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
-        ))}
-      </DropdownList>
-    ),
-  },
-  {
-    description: 'DropdownList with ghost variant and primary intent.',
-    jsx: (
-      <DropdownList variant="ghost" intent="primary">
+      <DropdownList variant="outline" intent="primary" itemBorderIntent="primary">
         <DropdownList.Trigger>
           <Button variant="ghost" intent="primary">
             Toggle list

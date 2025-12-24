@@ -120,9 +120,9 @@ export const DropdownListComponent = ({
           >
             <Box
               drawable
-              variant={variant === 'ghost' ? 'solid' : variant}
-              intent={variant === 'ghost' ? 'neutral' : intent}
-              borderTopWidth="0px"
+              variant="solid"
+              intent={variant === 'outline' ? 'neutral' : intent}
+              color={color}
               borderTopLeftRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
               borderTopRightRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
               borderBottomLeftRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
@@ -131,13 +131,15 @@ export const DropdownListComponent = ({
             >
               <Box
                 tagRef={scrollWrapperRef}
+                tagAttrs={{ style: { borderRadius: 'inherit' } }}
+                drawable
+                variant={variant}
+                intent={intent}
+                color={color}
                 blockSize={itemsContainerBlockSize}
                 overflowY="auto"
                 overflowX="hidden"
-                borderTopLeftRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
-                borderTopRightRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
-                borderBottomLeftRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
-                borderBottomRightRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
+                borderTopWidth="0px"
               >
                 <Flex flexDirection="column" flexWrap="nowrap" alignItems="stretch">
                   {slotsByName['DropdownList.Item'].map((slot, index) => (

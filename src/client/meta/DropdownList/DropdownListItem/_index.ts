@@ -6,8 +6,11 @@ import { DROPDOWN_LIST_ITEM_PROPS_META } from './props'
 const DROPDOWN_LIST_ITEM_META: ComponentMeta<DropdownListItemProps> = {
   overview: {
     name: 'DropdownList.Item',
-    title: 'Represents a single option within a dropdown list.',
-    description: ['inherits core behavior from Button'],
+    title: 'Interactive list item used within a DropdownList.',
+    description: [
+      'represents a selectable option within a DropdownList',
+      'behaves like a Button with consistent dropdown styling',
+    ],
     composedOf: ['Button'],
     topLevelTags: ['button', 'a'],
   },

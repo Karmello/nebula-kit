@@ -10,15 +10,12 @@ import { DROPDOWN_LIST_ITEM_META } from './DropdownListItem/_index'
 const DROPDOWN_LIST_META: ComponentMeta<DropdownListProps> = {
   overview: {
     bundle: 'core',
-    title: 'Floating list of interactive options for select-like components.',
+    title: 'Low-level, unopinionated primitive for rendering floating lists of interactive options.',
     description: [
-      'renders through a Portal for proper layering',
-      'controls the open and closed state of the list',
-      'handles entry and exit animations',
-      'adjusts scrolling based on the "visibleItemsCount" prop',
-      'scrolls to a specific item index based on "scrollToIndex" and "scrollAlign" props',
-      'handles keyboard navigation with proper arrow key support for moving between items',
-      'supports variant and intent styling of the list',
+      'handles positioning, visibility, keyboard navigation and scrolling behavior',
+      'renders through a Portal to ensure correct layering and positioning',
+      'applies consistent styling to list items',
+      'intended to be composed into higher-level selection components',
     ],
     composedOf: ['Flex', 'Box', 'Resize', 'Portal'],
     topLevelTags: ['div'],
