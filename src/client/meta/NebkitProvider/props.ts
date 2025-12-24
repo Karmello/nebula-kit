@@ -6,6 +6,7 @@ import {
   NEBKIT_BORDER_RADIUS_SIZES,
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
   DEFAULT_NEBKIT_BRAND,
+  DEFAULT_NEBKIT_THEME,
 } from 'lib/components/core/utility/NebkitProvider'
 
 const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = {
@@ -17,17 +18,17 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = 
   borderRadiusSize: {
     options: NEBKIT_BORDER_RADIUS_SIZES,
     defaultValue: String(DEFAULT_NEBKIT_BORDER_RADIUS_SIZE),
-    description: 'Global border radius value.',
+    description: 'Global border radius size applied across all components.',
   },
   brand: {
     options: COLORS as unknown as string[],
     defaultValue: DEFAULT_NEBKIT_BRAND,
-    description: 'Defines the main accent color family for the components.',
+    description: 'Global brand color used as the primary accent across components.',
   },
   theme: {
     options: THEMES as unknown as string[],
-    defaultValue: THEMES[0],
-    description: 'Theme applied.',
+    defaultValue: DEFAULT_NEBKIT_THEME,
+    description: 'Global theme.',
   },
 }
 

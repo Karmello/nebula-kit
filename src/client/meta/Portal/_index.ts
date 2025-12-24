@@ -7,12 +7,12 @@ import { PORTAL_EXAMPLES_META } from './examples'
 const PORTAL_META: ComponentMeta<PortalProps> = {
   overview: {
     bundle: 'core',
-    title:
-      'Container that renders its children into a separate DOM node, allowing content to appear above the main document flow.',
+    title: 'Low-level utility component for rendering content outside the normal document flow.',
     description: [
-      'mounts content in a dedicated layer outside the parent hierarchy',
-      'supports dynamic positioning relative to an anchor element',
-      'commonly used for dropdowns, modals and tooltips',
+      'renders children into a separate DOM node detached from the parent hierarchy',
+      'enables floating UI patterns that must escape layout and stacking constraints',
+      'supports positioning relative to an anchor element when needed',
+      'serves as the foundation for dropdowns modals tooltips and other overlay components',
     ],
     composedOf: ['Box'],
     topLevelTags: ['div'],

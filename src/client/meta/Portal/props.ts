@@ -8,12 +8,12 @@ const PORTAL_PROPS_META: ComponentMeta<PortalProps>['props'] = {
   anchorRef: {
     options: ['RefObject'],
     description:
-      'Reference to the element the portal should position itself relative to. When omitted the portal renders at the root without applying any positioning.',
+      'Reference to an element the portal positions itself relative to. When omitted the portal renders at the root without applying positioning.',
   },
   children: {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
-    description: 'Content rendered inside Portal.',
+    description: 'Content rendered inside the portal.',
   },
   placement: {
     options: PORTAL_PLACEMENTS as unknown as string[],

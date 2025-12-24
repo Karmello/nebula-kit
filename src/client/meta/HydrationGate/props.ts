@@ -6,13 +6,13 @@ const HYDRATION_GATE_PROPS_META: ComponentMeta<HydrationGateProps>['props'] = {
     options: ['ReactElement'],
     isRequired: true,
     isResponsive: false,
-    description: 'NebkitProvider component to be wrapped.',
+    description: 'Application tree to be wrapped - typically NebkitProvider.',
   },
   minDelay: {
     options: ['number'],
     isRequired: false,
     isResponsive: false,
-    description: 'Minimum delay time the app is treated as hydrating.',
+    description: 'Minimum time in milliseconds the app remains hidden after hydration begins.',
   },
 }
 

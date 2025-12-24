@@ -7,10 +7,11 @@ import { NEBKIT_PROVIDER_EXAMPLES_META } from './examples'
 const NEBKIT_PROVIDER_META: ComponentMeta<NebkitProviderProps> = {
   overview: {
     bundle: 'core',
-    title: 'The root setup component for NebulaKit.',
+    title: 'Root configuration and context provider for NebulaKit.',
     description: [
-      'provides a consistent context for all NebulaKit components to operate within',
-      'initializes global configuration and keeps theme tokens in sync with the environment',
+      'provides the global context required by all NebulaKit components',
+      'initializes theme, brand, design tokens and keeps them in sync with the runtime environment',
+      'must wrap the application root and should be rendered once at the top level',
     ],
   },
   props: NEBKIT_PROVIDER_PROPS_META,

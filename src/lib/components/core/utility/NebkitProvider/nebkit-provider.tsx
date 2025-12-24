@@ -2,13 +2,18 @@ import { ReactElement, useLayoutEffect } from 'react'
 
 import { useNebkitStore } from 'lib/state'
 
-import { NebkitProviderProps } from './definitions'
+import {
+  DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
+  DEFAULT_NEBKIT_BRAND,
+  DEFAULT_NEBKIT_THEME,
+  NebkitProviderProps,
+} from './definitions'
 
 export const NebkitProvider = ({
   children,
-  theme,
-  brand,
-  borderRadiusSize,
+  theme = DEFAULT_NEBKIT_THEME,
+  brand = DEFAULT_NEBKIT_BRAND,
+  borderRadiusSize = DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
 }: NebkitProviderProps): ReactElement => {
   const nebkitStore = useNebkitStore()
 
