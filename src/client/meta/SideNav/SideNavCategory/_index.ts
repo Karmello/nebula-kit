@@ -8,7 +8,7 @@ const SIDE_NAV_CATEGORY_META: ComponentMeta<SideNavCategoryProps> = {
     name: 'SideNav.Category?',
     title: 'Defines a parent section in SideNav that can expand to show nested items.',
     description: ['expects SideNav.Item elements as children'],
-    composedOf: ['Box', 'Flex', 'Button', 'Animate', 'Spacer'],
+    composedOf: ['Box', 'Flex', 'Button', 'Resize', 'Spacer'],
     topLevelTags: ['ul'],
     slots: ['SideNav.Item'],
   },

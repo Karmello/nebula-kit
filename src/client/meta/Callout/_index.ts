@@ -7,11 +7,11 @@ import { CALLOUT_EXAMPLES_META } from './examples'
 const CALLOUT_META: ComponentMeta<CalloutProps> = {
   overview: {
     bundle: 'core',
-    title: 'Highlighted content block with a heading, icon and supporting text.',
+    title: 'Semantic message block for emphasizing important information.',
     description: [
       'used to draw attention to important information, confirmations, warnings or errors within a page',
     ],
-    composedOf: ['Box', 'Text'],
+    composedOf: ['Box', 'Text', 'Spacer'],
     topLevelTags: CALLOUT_TAGS,
   },
   props: CALLOUT_PROPS_META,

@@ -20,7 +20,7 @@ const DROPDOWN_LIST_META: ComponentMeta<DropdownListProps> = {
       'handles keyboard navigation with proper arrow key support for moving between items',
       'supports variant and intent styling of the list',
     ],
-    composedOf: ['Flex', 'Box', 'Animate', 'Portal'],
+    composedOf: ['Flex', 'Box', 'Resize', 'Portal'],
     topLevelTags: ['div'],
     slots: ['DropdownList.Trigger', 'DropdownList.Item'],
   },

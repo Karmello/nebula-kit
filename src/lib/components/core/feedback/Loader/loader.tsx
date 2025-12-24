@@ -40,10 +40,7 @@ export const Loader = ({
       color={color}
       position={centered ? 'absolute' : undefined}
       margin={centered ? 'auto' : undefined}
-      top={centered ? '0px' : undefined}
-      right={centered ? '0px' : undefined}
-      bottom={centered ? '0px' : undefined}
-      left={centered ? '0px' : undefined}
+      inset={centered ? '0px' : undefined}
     />
   )
 }

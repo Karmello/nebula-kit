@@ -23,7 +23,7 @@ const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
   },
   heading: {
     description:
-      'Text displayed as the title of the Callout. Overrides the default heading provided for each intent.',
+      'Text displayed as the title of the Callout. Overrides the default heading associated with the selected status.',
     options: ['string'],
     defaultValue: CALLOUT_CONFIG[DEFAULT_CALLOUT_STATUS].heading,
     isResponsive: false,
@@ -40,7 +40,7 @@ const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
   status: {
     options: Object.values(CALLOUT_STATUSES),
     defaultValue: DEFAULT_CALLOUT_STATUS,
-    description: 'Defines the semantic meaning and color of the Callout.',
+    description: 'Defines the type of message being communicated.',
   },
   tag: HTML_TAG_PROPS_META.tag,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,

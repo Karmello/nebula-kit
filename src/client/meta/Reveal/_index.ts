@@ -8,10 +8,13 @@ import { REVEAL_EXAMPLES_META } from './examples'
 const REVEAL_META: ComponentMeta<RevealProps> = {
   overview: {
     bundle: 'core',
-    title: 'Expandable container for showing and hiding content.',
-    description: ['toggles visibility of its content with smooth expand and collapse behavior'],
+    title: 'Disclosure component for toggling expandable content.',
+    description: [
+      'provides a labeled control for toggling content visibility',
+      'animates expand and collapse using measured height for smooth transitions',
+    ],
     topLevelTags: REVEAL_TAGS,
-    composedOf: ['Box', 'Flex', 'Button', 'Animate'],
+    composedOf: ['Box', 'Flex', 'Button', 'Resize'],
   },
   props: REVEAL_PROPS_META,
   examples: REVEAL_EXAMPLES_META,

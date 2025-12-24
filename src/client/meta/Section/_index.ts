@@ -7,8 +7,12 @@ import { SECTION_EXAMPLES_META } from './examples'
 const SECTION_META: ComponentMeta<SectionProps> = {
   overview: {
     bundle: 'core',
-    title: 'Semantic container with a heading and body area.',
-    description: ['organizes content into a section with a heading, divider and body'],
+    title: 'Semantic container for grouping content under a titled section.',
+    description: [
+      'groups related content under a semantic section with a heading',
+      'provides consistent spacing and visual separation between heading and body',
+      'supports optional icon and styling variants for section headers',
+    ],
     composedOf: ['Box', 'Text', 'Divider', 'Spacer'],
     topLevelTags: SECTION_TAGS,
   },
