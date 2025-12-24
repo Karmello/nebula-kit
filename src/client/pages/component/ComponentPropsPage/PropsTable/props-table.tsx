@@ -54,13 +54,13 @@ export const PropsTable = ({ category, data }: Props) => {
                 <Table.Cell>
                   <Text>{typeof options === 'string' ? options : options.join(', ')}</Text>
                 </Table.Cell>
-                <Table.Cell tagAttrs={{ style: { textAlign: 'center', whiteSpace: 'nowrap' } }}>
-                  <Text>{defaultValue !== undefined ? defaultValue : '-'}</Text>
+                <Table.Cell tagAttrs={{ style: { whiteSpace: 'nowrap' } }}>
+                  <Text textAlign="center">{defaultValue !== undefined ? defaultValue : '-'}</Text>
                 </Table.Cell>
-                <Table.Cell tagAttrs={{ style: { textAlign: 'center' } }}>
+                <Table.Cell textAlign="center">
                   {isRequired ? <Icon name="check" intent="primary" color="blue" size="20px" /> : '-'}
                 </Table.Cell>
-                <Table.Cell tagAttrs={{ style: { textAlign: 'center' } }}>
+                <Table.Cell textAlign="center">
                   {isResponsive ? <Icon name="check" intent="primary" color="blue" size="20px" /> : '-'}
                 </Table.Cell>
                 <Table.Cell>

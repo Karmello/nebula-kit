@@ -7,10 +7,11 @@ import { RESIZE_EXAMPLES_META } from './examples'
 const RESIZE_META: ComponentMeta<ResizeProps> = {
   overview: {
     bundle: 'core',
-    title: 'Wrapper component that animates size.',
+    title: 'Wrapper that animates element size using measured layout.',
     description: [
-      'wraps content in a Box and toggles its size by animating a specified property',
-      "measures content's maximum available size before animating, ensuring smooth transitions without abrupt layout shifts",
+      'wraps content in a Box and animates its block or inline size',
+      "measures the content's natural size before animating, preventing layout jumps and reflow glitches",
+      'enables smooth expand/collapse transitions without hard-coding sizes',
     ],
     composedOf: ['Box'],
     topLevelTags: ['div'],

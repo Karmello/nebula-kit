@@ -4,7 +4,7 @@ import { SlideProps } from './definitions'
 
 export const updatePosition = (
   ref: RefObject<HTMLDivElement | null>,
-  property: SlideProps['property'],
+  from: SlideProps['from'],
   visible: boolean,
   transition: boolean,
   duration: number | undefined,
@@ -20,7 +20,7 @@ export const updatePosition = (
       ref.current.style.transition = 'none'
     }
 
-    switch (property) {
+    switch (from) {
       case 'top':
         ref.current.style.transform = visible ? 'translateY(0)' : `translateY(-${blockSize})`
         break

@@ -55,7 +55,7 @@ export const Snackbar = ({
           zIndex={30}
         >
           <Slide
-            property={finalPlacement.split('-')[0] as never}
+            from={finalPlacement.split('-')[0] as never}
             visible={visible}
             easing={visible ? 'ease-out' : 'ease-in'}
           >

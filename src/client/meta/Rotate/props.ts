@@ -12,7 +12,8 @@ const ROTATE_PROPS_META: ComponentMeta<RotateProps>['props'] = {
   angle: {
     options: ['number'],
     isRequired: true,
-    description: 'Defines the rotation angle of the content, animating when the value changes.',
+    description:
+      'Rotation angle of the content in degrees. Changing the value triggers a rotation animation.',
   },
   children: {
     ...HTML_TAG_PROPS_META.children,

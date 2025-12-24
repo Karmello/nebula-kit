@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 
 import {
-  DEFAULT_MARKER_LIST_ROW_GAP,
+  DEFAULT_MARKER_LIST_GAP,
   MarkerListProps,
   MARKER_LIST_STYLES,
   MARKER_LIST_TAGS,
@@ -16,6 +16,7 @@ const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListProps>['props'] = {
   children: {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
+    description: 'Any number of MarkerList.Item slots.',
   },
   color: {
     ...BOX_PROPS_META.color,
@@ -30,11 +31,11 @@ const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListProps>['props'] = {
     defaultValue: MARKER_LIST_STYLES[0],
     isRequired: false,
     isResponsive: false,
-    description: 'Defines the style of the markers used for list items.',
+    description: 'Defines the marker style used for list items.',
   },
-  rowGap: {
+  gap: {
     ...FLEX_PROPS_META.rowGap,
-    defaultValue: String(DEFAULT_MARKER_LIST_ROW_GAP),
+    defaultValue: String(DEFAULT_MARKER_LIST_GAP),
   },
   tag: {
     ...HTML_TAG_PROPS_META.tag,

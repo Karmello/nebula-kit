@@ -54,9 +54,9 @@ export const Resize = ({
         className: classNames(withPrefix('resize'), tagAttrs?.className || ''),
         style: {
           ...tagAttrs?.style,
-          transition: 'block-size 0.2s ease-in-out, inline-size 0.2s ease-in-out',
-          transitionDuration: duration !== undefined ? `${duration}ms` : undefined,
-          transitionTimingFunction: easing,
+          transitionProperty: 'block-size, inline-size',
+          transitionDuration: duration !== undefined ? `${duration}ms` : `${DEFAULT_RESIZE_DURATION}ms`,
+          transitionTimingFunction: easing ?? DEFAULT_RESIZE_EASING,
         },
       }}
       tagRef={finalRef}

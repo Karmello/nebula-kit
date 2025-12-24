@@ -7,7 +7,7 @@ import { ROTATE_EXAMPLES_META } from './examples'
 const ROTATE_META: ComponentMeta<RotateProps> = {
   overview: {
     bundle: 'core',
-    title: 'Wrapper component that animates its children by rotating them.',
+    title: 'Wrapper component that animates rotation based on angle changes.',
     description: [
       'rotates its children based on the "angle" prop',
       'performs animation when the "angle" prop value changes',

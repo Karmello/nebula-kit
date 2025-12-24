@@ -10,7 +10,10 @@ const MARKER_LIST_META: ComponentMeta<MarkerListProps> = {
   overview: {
     bundle: 'core',
     title: 'List component that displays items with native markers.',
-    description: ['presents short text collections with bullets or numbers'],
+    description: [
+      'presents short text collections with bullets or numbers',
+      'use ol tag with numeric marker styles and ul with bullet marker styles for correct semantics',
+    ],
     composedOf: ['Flex'],
     topLevelTags: MARKER_LIST_TAGS,
     slots: ['MarkerList.Item'],

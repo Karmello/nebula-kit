@@ -1,14 +1,14 @@
 import { HtmlTagProps } from 'lib/components'
 
-export const SLIDE_PROPERTIES = ['top', 'right', 'bottom', 'left'] as const
+export const SLIDE_FROM = ['top', 'right', 'bottom', 'left'] as const
 
 export const DEFAULT_SLIDE_DURATION: SlideProps['duration'] = 200
 export const DEFAULT_SLIDE_EASING: SlideProps['easing'] = 'linear'
 
-export type SlideProperties = (typeof SLIDE_PROPERTIES)[number]
+export type SlideFrom = (typeof SLIDE_FROM)[number]
 
 type SlideOwnProps = {
-  property: SlideProperties
+  from: SlideFrom
   visible: boolean
   duration?: number
   easing?: string

@@ -28,7 +28,7 @@ const RESIZE_PROPS_META: ComponentMeta<ResizeProps>['props'] = {
   property: {
     options: RESIZE_PROPERTIES as unknown as string[],
     isRequired: true,
-    description: 'Property to animate.',
+    description: 'Property to animate (logical size only).',
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,

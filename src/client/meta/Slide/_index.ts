@@ -7,10 +7,10 @@ import { SLIDE_EXAMPLES_META } from './examples'
 const SLIDE_META: ComponentMeta<SlideProps> = {
   overview: {
     bundle: 'core',
-    title: 'Wrapper component that animates its children by sliding them.',
+    title: 'Wrapper component that animates content by sliding it into and out of view.',
     description: [
-      'wraps content in a Box and toggles its position according to the "property" prop',
-      'animates position when the "visible" prop changes',
+      'wraps content in a Box and positions it on and off view based on the "from" prop',
+      'slides content into and out of view when "visible" prop changes',
     ],
   },
   props: SLIDE_PROPS_META,

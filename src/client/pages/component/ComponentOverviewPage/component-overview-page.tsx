@@ -30,7 +30,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       {composedOf ? <ListWithChips heading="Composed of:" items={composedOf} color="red" /> : null}
       {topLevelTags ? (
         <ListWithChips
-          heading={topLevelTags.length > 1 ? 'Top level tags:' : 'Top level tag:'}
+          heading={topLevelTags.length > 1 ? 'Root tags:' : 'Root tag:'}
           items={topLevelTags as string[]}
           color="amber"
         />

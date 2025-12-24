@@ -23,6 +23,7 @@ export const CORE_PAGE_CATEGORIES = [
       { key: 'table', label: 'Table', sections: CORE_PAGE_SECTIONS },
       { key: 'segment', label: 'Segment', sections: CORE_PAGE_SECTIONS },
       { key: 'spacer', label: 'Spacer', sections: CORE_PAGE_SECTIONS },
+      { key: 'divider', label: 'Divider', sections: CORE_PAGE_SECTIONS },
       { key: 'with-icon', label: 'WithIcon', sections: CORE_PAGE_SECTIONS },
     ],
   },
@@ -48,7 +49,6 @@ export const CORE_PAGE_CATEGORIES = [
     label: 'Elements',
     items: [
       { key: 'icon', label: 'Icon', sections: CORE_PAGE_SECTIONS },
-      { key: 'divider', label: 'Divider', sections: CORE_PAGE_SECTIONS },
       { key: 'marker-list', label: 'MarkerList', sections: CORE_PAGE_SECTIONS },
     ],
   },

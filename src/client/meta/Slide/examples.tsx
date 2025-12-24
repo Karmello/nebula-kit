@@ -30,14 +30,14 @@ const SLIDE_EXAMPLES_META: ComponentMeta<SlideProps>['examples'] = [
     description: 'Sliding in from the left.',
     jsx: (
       <SlideWrapper>
-        <Slide visible={false} property="left" duration={1000}>
+        <Slide visible={false} from="left" duration={1000}>
           <Box drawable variant="outline" intent="secondary" color="blue">
             Animated content.
           </Box>
         </Slide>
       </SlideWrapper>
     ),
-    code: `<Slide visible={visible} property="left" duration={1000}>
+    code: `<Slide visible={visible} from="left" duration={1000}>
   <Box variant="outline" intent="secondary" color="blue">
     Animated content.
   </Box>
@@ -50,7 +50,7 @@ const SLIDE_EXAMPLES_META: ComponentMeta<SlideProps>['examples'] = [
       <Box overflowX="hidden">
         <Flex justifyContent="flex-end">
           <SlideWrapper>
-            <Slide visible={false} property="right" duration={1000}>
+            <Slide visible={false} from="right" duration={1000}>
               <Box drawable variant="outline" intent="secondary" color="blue">
                 Animated content.
               </Box>
@@ -59,7 +59,7 @@ const SLIDE_EXAMPLES_META: ComponentMeta<SlideProps>['examples'] = [
         </Flex>
       </Box>
     ),
-    code: `<Slide visible={visible} property="right" duration={1000}>
+    code: `<Slide visible={visible} from="right" duration={1000}>
   <Box variant="outline" intent="secondary" color="blue">
     Animated content.
   </Box>
@@ -70,14 +70,14 @@ const SLIDE_EXAMPLES_META: ComponentMeta<SlideProps>['examples'] = [
     description: 'Sliding in from the top.',
     jsx: (
       <SlideWrapper>
-        <Slide visible={false} property="top" duration={1000}>
+        <Slide visible={false} from="top" duration={1000}>
           <Box drawable variant="outline" intent="secondary" color="blue">
             Animated content.
           </Box>
         </Slide>
       </SlideWrapper>
     ),
-    code: `<Slide visible={visible} property="top" duration={1000}>
+    code: `<Slide visible={visible} from="top" duration={1000}>
   <Box variant="outline" intent="secondary" color="blue">
     Animated content.
   </Box>

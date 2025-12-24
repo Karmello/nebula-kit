@@ -13,7 +13,7 @@ export const Slide = ({
   tagAttrs,
   tagRef,
   // own
-  property,
+  from,
   visible,
   duration = DEFAULT_SLIDE_DURATION,
   easing = DEFAULT_SLIDE_EASING,
@@ -25,7 +25,7 @@ export const Slide = ({
 
   useEffect(() => {
     if (finalRef.current) {
-      updatePosition(finalRef, property, visible, false, duration, easing)
+      updatePosition(finalRef, from, visible, false, duration, easing)
       setMounted(true)
     }
   }, [])
@@ -34,10 +34,10 @@ export const Slide = ({
     if (!mounted) return
 
     if (finalRef.current) {
-      updatePosition(finalRef, property, !visible, false, duration, easing)
+      updatePosition(finalRef, from, !visible, false, duration, easing)
 
       requestAnimationFrame(() => {
-        updatePosition(finalRef, property, visible, true, duration, easing)
+        updatePosition(finalRef, from, visible, true, duration, easing)
       })
     }
   }, [visible])
