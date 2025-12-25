@@ -30,7 +30,7 @@ export const NebkitProvider = ({
     document.documentElement.setAttribute('data-brand', brand)
     document.documentElement.style.setProperty(
       '--neb-border-radius',
-      NEBKIT_SIZES_MAP.borderRadiusSize[borderRadiusSize] || ''
+      NEBKIT_SIZES_MAP.borderRadiusSize[borderRadiusSize || 'md'] || ''
     )
 
     requestAnimationFrame(() => {
