@@ -1,8 +1,8 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 import { TokensResult } from 'shiki'
 
+import { useAppStore } from 'client/store'
 import { Box, Flex, Button, Text } from 'lib/components'
-import { useNebkitStore } from 'lib/state'
 
 import { tokenizeCode } from './highlight-tokens'
 
@@ -50,7 +50,7 @@ export const CodeSnippet = ({ code, lang = 'log' }: CodeSnippetProps) => {
   const [data, setData] = useState<TokensResult>()
   const [copied, setCopied] = useState<boolean>(false)
 
-  const { theme } = useNebkitStore()
+  const { theme } = useAppStore()
 
   const timeoutRef = useRef<NodeJS.Timeout>(null)
 

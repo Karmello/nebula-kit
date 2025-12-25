@@ -17,8 +17,8 @@ import {
 
 import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/core/utility/NebkitProvider/definitions'
 import { Color, COLORS, THEMES } from 'lib/definitions'
-import { useNebkitStore } from 'lib/state'
 import { useNavigateTo } from 'client/hooks'
+import { useAppStore } from 'client/store'
 import { PageKey } from 'client/definitions'
 
 import { Ortho } from './Ortho'
@@ -26,7 +26,7 @@ import { Ortho } from './Ortho'
 export const HomePage = () => {
   const navigateTo = useNavigateTo()
 
-  const { theme, setTheme, brand, setBrand, borderRadiusSize, setBorderRadiusSize } = useNebkitStore()
+  const { theme, setTheme, brand, setBrand, borderRadiusSize, setBorderRadiusSize } = useAppStore()
 
   return (
     <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">

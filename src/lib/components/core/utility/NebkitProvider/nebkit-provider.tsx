@@ -1,11 +1,10 @@
 import { ReactElement, useLayoutEffect } from 'react'
 
-import { useNebkitStore } from 'lib/state'
-
 import {
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
   DEFAULT_NEBKIT_BRAND,
   DEFAULT_NEBKIT_THEME,
+  NEBKIT_SIZES_MAP,
   NebkitProviderProps,
 } from './definitions'
 
@@ -15,8 +14,6 @@ export const NebkitProvider = ({
   brand = DEFAULT_NEBKIT_BRAND,
   borderRadiusSize = DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
 }: NebkitProviderProps): ReactElement => {
-  const nebkitStore = useNebkitStore()
-
   useLayoutEffect(() => {
     requestAnimationFrame(() => {
       window.dispatchEvent(new CustomEvent('neb:hydrated'))
@@ -27,20 +24,19 @@ export const NebkitProvider = ({
   }, [])
 
   useLayoutEffect(() => {
-    if (theme) nebkitStore.setTheme(theme)
-    if (brand) nebkitStore.setBrand(brand)
-    if (borderRadiusSize) nebkitStore.setBorderRadiusSize(borderRadiusSize)
-  }, [theme, brand, borderRadiusSize])
-
-  useLayoutEffect(() => {
     document.documentElement.classList.remove('neb-transitions')
-    document?.documentElement.setAttribute('data-theme', nebkitStore.theme)
-    document.documentElement.setAttribute('data-brand', nebkitStore.brand)
-    document.documentElement.style.setProperty('--neb-border-radius', nebkitStore.borderRadius || '')
+
+    document?.documentElement.setAttribute('data-theme', theme)
+    document.documentElement.setAttribute('data-brand', brand)
+    document.documentElement.style.setProperty(
+      '--neb-border-radius',
+      NEBKIT_SIZES_MAP.borderRadiusSize[borderRadiusSize] || ''
+    )
+
     requestAnimationFrame(() => {
       document.documentElement.classList.add('neb-transitions')
     })
-  }, [nebkitStore])
+  }, [theme, brand, borderRadiusSize])
 
   return children
 }

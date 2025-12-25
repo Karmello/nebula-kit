@@ -2,21 +2,26 @@ import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router'
 
 import { App } from 'client/components'
+import { useAppStore } from 'client/store'
 import { NebkitProvider, HydrationGate, Snackbar } from 'lib/components'
 
 import 'lib/styles/index.scss'
 
-const Node = () => (
-  <BrowserRouter>
-    <HydrationGate>
-      <NebkitProvider>
-        <Snackbar closeOnOutsideClick autoCloseDelay={10000}>
-          <App />
-        </Snackbar>
-      </NebkitProvider>
-    </HydrationGate>
-  </BrowserRouter>
-)
+const Node = () => {
+  const { theme, brand, borderRadiusSize } = useAppStore()
+
+  return (
+    <BrowserRouter>
+      <HydrationGate>
+        <NebkitProvider theme={theme} brand={brand} borderRadiusSize={borderRadiusSize}>
+          <Snackbar closeOnOutsideClick autoCloseDelay={10000}>
+            <App />
+          </Snackbar>
+        </NebkitProvider>
+      </HydrationGate>
+    </BrowserRouter>
+  )
+}
 
 const container = document.getElementById('root')
 

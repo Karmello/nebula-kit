@@ -1,5 +1,5 @@
+import { useAppStore } from 'client/store'
 import { Box, Flex, Section, Spacer, SplitView, Text } from 'lib/components'
-import { useNebkitStore } from 'lib/state'
 
 import {
   ComponentSelect,
@@ -17,7 +17,7 @@ import {
 import { usePlaygroundStore } from './store'
 
 export const PlaygroundPage = () => {
-  const { theme } = useNebkitStore()
+  const { theme } = useAppStore()
   const { activeComponent } = usePlaygroundStore()
 
   return (

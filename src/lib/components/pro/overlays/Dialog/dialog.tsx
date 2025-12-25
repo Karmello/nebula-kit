@@ -3,7 +3,6 @@ import classNames from 'classnames'
 
 import { Box, Button, Flex, Portal, FocusTrap, Resize } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
-import { useNebkitStore } from 'lib/state'
 import { withPrefix } from 'lib/helpers'
 
 import { DialogProvider } from './DialogProvider'
@@ -31,8 +30,6 @@ export const Dialog = ({
 }: DialogProps) => {
   const ref = useRef(null)
 
-  const { theme } = useNebkitStore()
-
   useEffect(() => {
     if (!open) return
     const { overflow } = document.body.style
@@ -43,6 +40,8 @@ export const Dialog = ({
       }, DIALOG_RESIZE_DURATION)
     }
   }, [open])
+
+  const theme = document.documentElement.getAttribute('data-theme')
 
   return (
     <WithSlots<'Dialog.Header' | 'Dialog.Content' | 'Dialog.Footer'>
