@@ -14,7 +14,7 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<'div'>['children']
 }
 
-type PropsFromBox = Pick<BoxProps<'div'>, 'inlineSize'>
+type PropsFromBox = Pick<BoxProps<'div'>, 'inlineSize' | 'disabled'>
 
 type PropsFromDropdownList = Pick<
   DropdownListProps,

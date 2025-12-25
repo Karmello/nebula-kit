@@ -35,6 +35,21 @@ return (
   endAffix={props => <Button {...props} iconName="eye" />}
 />`,
   },
+  {
+    description: 'Disabled Input.',
+    jsx: (
+      <Input
+        startAffix={props => <Button {...props} iconName="search" />}
+        endAffix={props => <Button {...props} iconName="eye" />}
+        disabled
+      />
+    ),
+    code: `<Input
+  startAffix={props => <Button {...props} iconName="search" />}
+  endAffix={props => <Button {...props} iconName="eye" />}
+  disabled
+/>`,
+  },
 ]
 
 export { INPUT_EXAMPLES_META }

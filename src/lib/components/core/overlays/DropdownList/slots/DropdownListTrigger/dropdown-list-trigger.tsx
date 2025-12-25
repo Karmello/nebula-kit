@@ -9,6 +9,7 @@ export const DropdownListTrigger = ({
   children,
   // Box
   inlineSize,
+  disabled,
 }: DropdownListTriggerProps) => {
   const { open, setOpen, setResizeVisible, triggerRef } = useDropdownListContext()
 
@@ -23,6 +24,7 @@ export const DropdownListTrigger = ({
       }}
       display="inline-block"
       inlineSize={inlineSize}
+      disabled={disabled}
     >
       {children}
     </Box>

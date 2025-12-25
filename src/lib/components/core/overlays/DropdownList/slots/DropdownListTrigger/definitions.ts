@@ -4,6 +4,6 @@ type PropsFromHtmlTag = {
   children: HtmlTagProps<'div'>['children']
 }
 
-type PropsFromBox = Pick<BoxProps, 'inlineSize'>
+type PropsFromBox = Pick<BoxProps, 'inlineSize' | 'disabled'>
 
 export type DropdownListTriggerProps = PropsFromHtmlTag & PropsFromBox

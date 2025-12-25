@@ -17,6 +17,7 @@ const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
     options: ['string'],
     description: 'Initial selected item value when the component is used in uncontrolled mode.',
   },
+  disabled: BOX_PROPS_META.disabled,
   dropdownPlacement: DROPDOWN_LIST_PROPS_META.placement,
   inlineSize: {
     ...BOX_PROPS_META.inlineSize,

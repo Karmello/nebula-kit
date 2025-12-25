@@ -69,6 +69,21 @@ return (
   </Select>
 )`,
   },
+  {
+    description: 'Disabled Select.',
+    jsx: (
+      <Select defaultValue="option-1" disabled>
+        <Select.Option value="option-1">Option 1</Select.Option>
+        <Select.Option value="option-2">Option 2</Select.Option>
+        <Select.Option value="option-3">Option 3</Select.Option>
+      </Select>
+    ),
+    code: `<Select defaultValue="option-1" disabled>
+  <Select.Option value="option-1">Option 1</Select.Option>
+  <Select.Option value="option-2">Option 2</Select.Option>
+  <Select.Option value="option-3">Option 3</Select.Option>
+</Select>`,
+  },
 ]
 
 export { SELECT_EXAMPLES_META }

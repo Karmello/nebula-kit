@@ -22,6 +22,10 @@ return (
   <Textarea value={value} onChange={onChange} />
 )`,
   },
+  {
+    description: 'Disabled Textarea.',
+    jsx: <Textarea defaultValue="default value" disabled />,
+  },
 ]
 
 export { TEXTAREA_EXAMPLES_META }

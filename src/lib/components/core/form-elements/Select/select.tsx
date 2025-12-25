@@ -24,6 +24,7 @@ export const Select = ({
   visibleItemsCount,
   // Box
   inlineSize = DEFAULT_SELECT_INLINE_SIZE,
+  disabled,
   // own
   defaultValue,
   value,
@@ -73,7 +74,7 @@ export const Select = ({
             >
               {({ open }) => (
                 <>
-                  <DropdownList.Trigger inlineSize={inlineSize}>
+                  <DropdownList.Trigger inlineSize={inlineSize} disabled={disabled}>
                     <Button
                       tagAttrs={{
                         'aria-labelledby': tagAttrs?.['aria-labelledby'],
@@ -94,6 +95,7 @@ export const Select = ({
                       size={size}
                       intent={intent}
                       color={color}
+                      disabled={disabled}
                       fullWidth
                     >
                       {staticLabel || currentSlot?.props.children || '...'}

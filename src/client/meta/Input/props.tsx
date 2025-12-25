@@ -35,6 +35,18 @@ const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
     options: ['(value: string) => void'],
     description: 'Callback fired when the value changes.',
   },
+  onFocus: {
+    options: ['e => void'],
+    description: 'Callback fired when the input receives focus.',
+  },
+  placeholder: {
+    options: ['string'],
+    description: 'Hint text displayed when the input has no value.',
+  },
+  readOnly: {
+    options: ['boolean'],
+    description: 'Prevents editing the value while keeping the field focusable.',
+  },
   size: {
     options: Object.values(INPUT_SIZES),
     defaultValue: DEFAULT_INPUT_SIZE,

@@ -10,6 +10,7 @@ const DROPDOWN_LIST_TRIGGER_PROPS_META: ComponentMeta<DropdownListTriggerProps>[
     isRequired: true,
     description: 'Component that toggles the visibility of the list.',
   },
+  disabled: BOX_PROPS_META.disabled,
   inlineSize: BOX_PROPS_META.inlineSize,
 }
 

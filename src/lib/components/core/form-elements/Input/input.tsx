@@ -28,10 +28,13 @@ export const Input = ({
   defaultValue,
   value,
   onChange,
+  onFocus,
   onBlur,
   size = DEFAULT_INPUT_SIZE,
   startAffix,
   endAffix,
+  placeholder,
+  readOnly,
 }: InputProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
@@ -68,7 +71,10 @@ export const Input = ({
             onChange: e => {
               handleChange((e.target as HTMLInputElement).value)
             },
+            onFocus,
             onBlur,
+            placeholder,
+            readOnly,
           }}
           tagRef={tagRef}
           drawable

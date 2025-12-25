@@ -52,10 +52,13 @@ type InputOwnProps = {
   defaultValue?: string
   value?: string
   onChange?: (value: string) => void
+  onFocus?: React.FocusEventHandler<HTMLInputElement>
   onBlur?: React.FocusEventHandler<HTMLInputElement>
   size?: InputSize
   startAffix?: (props: InputAffixProps) => ReactNode
   endAffix?: (props: InputAffixProps) => ReactNode
+  placeholder?: string
+  readOnly?: boolean
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'input'>, 'tagAttrs' | 'tagRef'>

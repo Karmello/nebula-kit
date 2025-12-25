@@ -34,6 +34,18 @@ const TEXTAREA_PROPS_META: ComponentMeta<TextareaProps>['props'] = {
     options: ['(value: string) => void'],
     description: 'Callback fired when the value changes.',
   },
+  onFocus: {
+    options: ['e => void'],
+    description: 'Callback fired when the textarea receives focus.',
+  },
+  placeholder: {
+    options: ['string'],
+    description: 'Hint text displayed when the textarea has no value.',
+  },
+  readOnly: {
+    options: ['boolean'],
+    description: 'Prevents editing the value while keeping the field focusable.',
+  },
   resize: {
     options: TEXTAREA_RESIZE as never,
     defaultValue: DEFAULT_TEXTAREA_RESIZE,

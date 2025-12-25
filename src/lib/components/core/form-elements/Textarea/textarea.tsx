@@ -35,9 +35,12 @@ export const Textarea = ({
   defaultValue,
   value,
   onChange,
+  onFocus,
   onBlur,
   rows = DEFAULT_TEXTAREA_ROWS,
   resize = DEFAULT_TEXTAREA_RESIZE,
+  placeholder,
+  readOnly,
 }: TextareaProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
@@ -66,8 +69,11 @@ export const Textarea = ({
         onChange: e => {
           handleChange((e.target as HTMLTextAreaElement).value)
         },
+        onFocus,
         onBlur,
         rows,
+        placeholder,
+        readOnly,
       }}
       tagRef={tagRef}
       drawable

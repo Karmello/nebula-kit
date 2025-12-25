@@ -15,9 +15,12 @@ type TextareaOwnProps = {
   defaultValue?: string
   value?: string
   onChange?: (value: string) => void
+  onFocus?: React.FocusEventHandler<HTMLTextAreaElement>
   onBlur?: React.FocusEventHandler<HTMLTextAreaElement>
   rows?: number
   resize?: TextareaResize
+  placeholder?: string
+  readOnly?: boolean
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'textarea'>, 'tagAttrs' | 'tagRef'>
