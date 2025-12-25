@@ -119,6 +119,7 @@ export const Portal = ({
       brand={islandContext?.brand}
       position="absolute"
       zIndex={1000}
+      pointerEvents="auto"
       top={position.top !== undefined ? `${position.top}px` : undefined}
       left={position.left !== undefined ? `${position.left}px` : undefined}
     >

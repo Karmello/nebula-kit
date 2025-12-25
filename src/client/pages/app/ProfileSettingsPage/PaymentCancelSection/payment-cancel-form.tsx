@@ -71,32 +71,30 @@ export const PaymentCancelForm = ({
                   variant="solid"
                   intent="tertiary"
                   color="red"
-                  startSlot={
+                  startAffix={props => (
                     <Button
+                      {...props}
                       tagAttrs={{
                         onClick: () => {
                           setEnableInput(false)
                         },
                       }}
                       iconName="close"
-                      intent="tertiary"
-                      color="red"
                     />
-                  }
-                  endSlot={
+                  )}
+                  endAffix={props => (
                     <Button
+                      {...props}
                       tagAttrs={{
                         onClick: () => {
                           setOpenDialog(true)
                         },
                       }}
-                      intent="tertiary"
-                      color="red"
                       disabled={inputValue !== userEmail}
                     >
                       Continue
                     </Button>
-                  }
+                  )}
                 />
               </Box>
             </Resize>

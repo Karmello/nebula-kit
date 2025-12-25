@@ -18,9 +18,10 @@ const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
     description: 'Initial value displayed when the component is used in uncontrolled mode.',
   },
   disabled: BOX_PROPS_META.disabled,
-  endSlot: {
-    options: ['ReactNode'],
-    description: 'Component rendered on the right side of the Input.',
+  endAffix: {
+    options: ['(props) => ReactNode'],
+    description:
+      'Render function that receives Input props and returns the end affix. Only defined props are passed to the render function.',
   },
   intent: {
     ...BOX_PROPS_META.intent,
@@ -40,9 +41,10 @@ const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
     description:
       'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
   },
-  startSlot: {
-    options: ['ReactNode'],
-    description: 'Component rendered on the left side of the Input.',
+  startAffix: {
+    options: ['(props) => ReactNode'],
+    description:
+      'Render function that receives Input props and returns the start affix. Only defined props are passed to the render function.',
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,

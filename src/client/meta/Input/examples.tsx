@@ -24,7 +24,16 @@ return (
   },
   {
     description: 'Input with interactive elements attached on the left and right.',
-    jsx: <Input startSlot={<Button iconName="search" />} endSlot={<Button iconName="eye" />} />,
+    jsx: (
+      <Input
+        startAffix={props => <Button {...props} iconName="search" />}
+        endAffix={props => <Button {...props} iconName="eye" />}
+      />
+    ),
+    code: `<Input
+  startAffix={props => <Button {...props} iconName="search" />}
+  endAffix={props => <Button {...props} iconName="eye" />}
+/>`,
   },
 ]
 

@@ -1,4 +1,4 @@
-import { cloneElement, useState } from 'react'
+import { useState } from 'react'
 import classNames from 'classnames'
 
 import { Box, Segment } from 'lib/components'
@@ -9,6 +9,7 @@ import {
   DEFAULT_INPUT_SIZE,
   DEFAULT_INPUT_VARIANT,
   INPUT_SIZE_CONFIG,
+  InputAffixProps,
   InputProps,
 } from './definitions'
 
@@ -29,8 +30,8 @@ export const Input = ({
   onChange,
   onBlur,
   size = DEFAULT_INPUT_SIZE,
-  startSlot,
-  endSlot,
+  startAffix,
+  endAffix,
 }: InputProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
@@ -42,13 +43,17 @@ export const Input = ({
     onChange?.(value)
   }
 
-  const slotExtraProps: Record<string, unknown> = {}
-  if (disabled !== undefined) slotExtraProps.disabled = disabled
-  if (size !== undefined) slotExtraProps.size = size
+  const affixProps: InputAffixProps = {
+    ...(variant !== undefined && { variant }),
+    ...(color !== undefined && { color }),
+    ...(intent !== undefined && { intent }),
+    ...(disabled !== undefined && { disabled }),
+    ...(size !== undefined && { size }),
+  }
 
   return (
     <Segment>
-      {startSlot ? <Segment.Item>{cloneElement(startSlot as any, slotExtraProps)}</Segment.Item> : null}
+      {startAffix ? <Segment.Item>{startAffix(affixProps)}</Segment.Item> : null}
       <Segment.Item flex="1">
         <Box
           tag="input"
@@ -76,7 +81,7 @@ export const Input = ({
           {...INPUT_SIZE_CONFIG[size || 'md']}
         />
       </Segment.Item>
-      {endSlot ? <Segment.Item>{cloneElement(endSlot as any, slotExtraProps)}</Segment.Item> : null}
+      {endAffix ? <Segment.Item>{endAffix(affixProps)}</Segment.Item> : null}
     </Segment>
   )
 }

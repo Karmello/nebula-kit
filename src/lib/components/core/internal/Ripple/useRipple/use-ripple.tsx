@@ -2,13 +2,17 @@ import { RefObject, useEffect } from 'react'
 
 export const useRipple = (parentRef: RefObject<any>) => {
   useEffect(() => {
-    if (typeof window === 'undefined' || !parentRef?.current) return
+    if (typeof window === 'undefined') return
     const parent = parentRef.current
+    if (!parent) return
 
     const isInteractive = parent.getAttribute('data-neb-box-interactive') === 'true'
     const isDisabled = parent.getAttribute('data-neb-box-disabled') === 'true'
 
-    if (!isInteractive || isDisabled) return
+    if (!isInteractive || isDisabled) {
+      delete parent.dataset.nebRipple
+      return
+    }
 
     parent.dataset.nebRipple = 'true'
 
@@ -16,7 +20,6 @@ export const useRipple = (parentRef: RefObject<any>) => {
     if (!rippleEl) return
 
     const onPointerDown = (e: PointerEvent) => {
-      // prevent ripple on disabled elements
       if (parent.closest('[disabled]')) return
 
       const rect = parent.getBoundingClientRect()
@@ -33,7 +36,6 @@ export const useRipple = (parentRef: RefObject<any>) => {
       const duration = Math.max(1500, Math.min(diag * 9, 3000))
       parent.style.setProperty('--neb-ripple-duration', `${duration}ms`)
 
-      // restart animation
       rippleEl.classList.remove('is-active')
       void rippleEl.offsetWidth
       rippleEl.classList.add('is-active')
@@ -44,5 +46,9 @@ export const useRipple = (parentRef: RefObject<any>) => {
     return () => {
       parent.removeEventListener('pointerdown', onPointerDown)
     }
-  }, [])
+  }, [
+    parentRef,
+    parentRef.current?.getAttribute('data-neb-box-interactive'),
+    parentRef.current?.getAttribute('data-neb-box-disabled'),
+  ])
 }

@@ -46,14 +46,16 @@ export const INPUT_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies Sizes[]
 
 export type InputSize = (typeof INPUT_SIZES)[number]
 
+export type InputAffixProps = Pick<InputProps, 'color' | 'disabled' | 'intent' | 'size' | 'variant'>
+
 type InputOwnProps = {
   defaultValue?: string
   value?: string
   onChange?: (value: string) => void
   onBlur?: React.FocusEventHandler<HTMLInputElement>
   size?: InputSize
-  startSlot?: ReactNode
-  endSlot?: ReactNode
+  startAffix?: (props: InputAffixProps) => ReactNode
+  endAffix?: (props: InputAffixProps) => ReactNode
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'input'>, 'tagAttrs' | 'tagRef'>

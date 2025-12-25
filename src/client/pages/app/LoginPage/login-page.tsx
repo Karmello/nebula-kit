@@ -86,14 +86,15 @@ export const LoginPage = () => {
               <Form.Field name="password" label="Password" required minLength={8} maxLength={128}>
                 <Input
                   tagAttrs={{ type: hidePassword ? 'password' : 'text' }}
-                  endSlot={
+                  endAffix={props => (
                     <Button
+                      {...props}
                       tagAttrs={{
                         onClick: () => setHidePassword(!hidePassword),
                       }}
                       iconName={hidePassword ? 'eye-off' : 'eye'}
                     />
-                  }
+                  )}
                 />
               </Form.Field>
             </Form.Fields>

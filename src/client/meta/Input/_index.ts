@@ -8,7 +8,7 @@ const INPUT_META: ComponentMeta<InputProps> = {
   overview: {
     bundle: 'core',
     title: 'Form control for entering or editing text.',
-    description: ['supports both controlled and uncontrolled modes'],
+    description: ['supports both controlled and uncontrolled modes', 'supports start and end affixes'],
     composedOf: ['Box', 'Segment'],
     topLevelTags: ['input'],
   },

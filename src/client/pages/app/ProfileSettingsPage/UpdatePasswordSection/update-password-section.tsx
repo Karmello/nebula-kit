@@ -58,14 +58,15 @@ export const UpdatePasswordSection = () => {
                         placeholder: 'Enter password',
                         autoComplete: 'current-password',
                       }}
-                      endSlot={
+                      endAffix={props => (
                         <Button
+                          {...props}
                           tagAttrs={{
                             onClick: () => setHideCurrentPassword(!hideCurrentPassword),
                           }}
                           iconName={hideCurrentPassword ? 'eye-off' : 'eye'}
                         />
-                      }
+                      )}
                     />
                   </Form.Field>
                   <Form.Field name="newPassword" label="New password" required minLength={8} maxLength={128}>
@@ -75,14 +76,15 @@ export const UpdatePasswordSection = () => {
                         placeholder: 'Enter password',
                         autoComplete: 'new-password',
                       }}
-                      endSlot={
+                      endAffix={props => (
                         <Button
+                          {...props}
                           tagAttrs={{
                             onClick: () => setHideNewPassword(!hideNewPassword),
                           }}
                           iconName={hideNewPassword ? 'eye-off' : 'eye'}
                         />
-                      }
+                      )}
                     />
                   </Form.Field>
                 </Form.Fields>

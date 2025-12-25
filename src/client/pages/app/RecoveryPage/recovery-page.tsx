@@ -66,14 +66,15 @@ export const RecoveryPage = () => {
                       placeholder: 'Enter password',
                       autoComplete: 'off',
                     }}
-                    endSlot={
+                    endAffix={props => (
                       <Button
+                        {...props}
                         tagAttrs={{
                           onClick: () => setHidePassword(!hidePassword),
                         }}
                         iconName={hidePassword ? 'eye-off' : 'eye'}
                       />
-                    }
+                    )}
                   />
                 </Form.Field>
               )}

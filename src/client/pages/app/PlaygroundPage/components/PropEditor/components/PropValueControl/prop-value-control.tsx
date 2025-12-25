@@ -52,13 +52,9 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
           }}
           value={value}
           onChange={onChange}
-          endSlot={
-            <Button
-              iconName="close"
-              tagAttrs={{ onClick: () => onChange('') }}
-              intent={{ base: 'secondary', lg: 'tertiary' }}
-            />
-          }
+          endAffix={props => (
+            <Button {...props} iconName="close" tagAttrs={{ onClick: () => onChange('') }} />
+          )}
           intent={{ base: 'secondary', lg: 'tertiary' }}
         />
       ) : null}
