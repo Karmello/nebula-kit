@@ -8,7 +8,7 @@ const SELECT_OPTION_META: ComponentMeta<SelectOptionProps> = {
     name: 'Select.Option',
     title: 'Represents a single option within Select component.',
     composedOf: ['DropdownList.Item'],
-    topLevelTags: ['button', 'a'],
+    topLevelTags: ['button'],
   },
   props: SELECT_OPTION_PROPS_META,
 }
