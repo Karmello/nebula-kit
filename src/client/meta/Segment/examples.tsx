@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Button, Segment, SegmentProps } from 'lib/components'
+import { Box, Button, Segment, SegmentProps } from 'lib/components'
 
 const SEGMENT_EXAMPLES_META: ComponentMeta<SegmentProps>['examples'] = [
   {
@@ -145,20 +145,22 @@ const SEGMENT_EXAMPLES_META: ComponentMeta<SegmentProps>['examples'] = [
   {
     description: 'Buttons with different variants attached together.',
     jsx: (
-      <Segment>
-        <Segment.Item>
-          <Button variant="solid">Button 1</Button>
-        </Segment.Item>
-        <Segment.Item>
-          <Button variant="outline">Button 2</Button>
-        </Segment.Item>
-        <Segment.Item>
-          <Button variant="soft-outline">Button 3</Button>
-        </Segment.Item>
-        <Segment.Item>
-          <Button variant="ghost">Button 4</Button>
-        </Segment.Item>
-      </Segment>
+      <Box overflowX="auto">
+        <Segment>
+          <Segment.Item>
+            <Button variant="solid">Button 1</Button>
+          </Segment.Item>
+          <Segment.Item>
+            <Button variant="outline">Button 2</Button>
+          </Segment.Item>
+          <Segment.Item>
+            <Button variant="soft-outline">Button 3</Button>
+          </Segment.Item>
+          <Segment.Item>
+            <Button variant="ghost">Button 4</Button>
+          </Segment.Item>
+        </Segment>
+      </Box>
     ),
   },
 ]

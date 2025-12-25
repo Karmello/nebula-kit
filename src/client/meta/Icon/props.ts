@@ -1,6 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
 import { IconProps } from 'lib/components'
-import { BOX_INTENTS } from 'lib/components/core/base/Box'
 import { DEFAULT_ICON_SIZE } from 'lib/components/core/elements/Icon'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -16,7 +15,7 @@ const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
     description: 'Color applied to the icon.',
   },
   intent: {
-    options: BOX_INTENTS as unknown as string[],
+    ...BOX_PROPS_META.intent,
     description: 'Tone level applied to the icon.',
   },
   name: {

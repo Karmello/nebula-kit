@@ -1,7 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 
 import {
-  COLORS,
   CSS_DISPLAY,
   CSS_OVERFLOW,
   CSS_POINTER_EVENTS,
@@ -10,14 +9,14 @@ import {
   THEMES,
 } from 'lib/definitions'
 
-import { BoxProps, BOX_VARIANTS, BOX_INTENTS } from 'lib/components/core/base/Box'
+import { BoxProps, BOX_VARIANTS } from 'lib/components/core/base/Box'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   ...HTML_TAG_PROPS_META,
   brand: {
-    options: COLORS as never,
+    options: ['BoxColor'],
     isResponsive: true,
     description: 'Default surface color context for the component and its descendants.',
   },
@@ -94,7 +93,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     link: true,
   },
   color: {
-    options: COLORS as never,
+    options: ['BoxColor'],
     isResponsive: true,
     description: 'Color applied to the component.',
   },
@@ -131,7 +130,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     link: true,
   },
   intent: {
-    options: Object.values(BOX_INTENTS),
+    options: ['BoxIntent'],
     isResponsive: true,
     description: "Tone level applied to the component's main color.",
   },

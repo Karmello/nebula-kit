@@ -14,7 +14,7 @@ const ICON_META: ComponentMeta<IconProps> = {
     ],
     topLevelTags: ['span'],
     readMoreLink: {
-      label: 'See all icons',
+      label: 'See all available icons',
       href: '/foundations/resources/assets/icons',
     },
   },

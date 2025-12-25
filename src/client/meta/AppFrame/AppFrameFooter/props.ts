@@ -1,6 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
 import { AppFrameFooterProps } from 'lib/components'
-import { BOX_INTENTS } from 'lib/components/core/base/Box'
 
 import {
   DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT,
@@ -17,9 +16,8 @@ const APP_FRAME_FOOTER_PROPS_META: ComponentMeta<AppFrameFooterProps>['props'] =
   },
   color: BOX_PROPS_META.color,
   borderIntent: {
-    options: BOX_INTENTS as never,
+    ...BOX_PROPS_META.intent,
     defaultValue: String(DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT),
-    isResponsive: true,
     description: "Sets the visual intent of the component's border.",
   },
   intent: {

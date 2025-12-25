@@ -3,6 +3,10 @@ import { Callout, CalloutProps, Spacer } from 'lib/components'
 
 const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
   {
+    jsx: <Callout status="info" content="Callout text content" />,
+    skip: true,
+  },
+  {
     description: 'Highlights neutral or contextual information for the user.',
     jsx: (
       <>
@@ -14,7 +18,6 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
       </>
     ),
   },
-
   {
     description: 'Indicates a positive outcome or confirmation.',
     jsx: (

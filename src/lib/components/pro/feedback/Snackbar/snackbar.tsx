@@ -44,14 +44,12 @@ export const Snackbar = ({
     >
       <Flex tagRef={rootRef} justifyContent="center">
         <Box
-          tagAttrs={{
-            style: { pointerEvents: !visible ? 'none' : undefined },
-          }}
           position="fixed"
           top={finalPlacement.includes('top') ? '0px' : 'unset'}
           bottom={finalPlacement.includes('bottom') ? '0px' : 'unset'}
           left={finalPlacement.includes('left') ? '0px' : 'unset'}
           right={finalPlacement.includes('right') ? '0px' : 'unset'}
+          pointerEvents={!visible ? 'none' : undefined}
           zIndex={30}
         >
           <Slide

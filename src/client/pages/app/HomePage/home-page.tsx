@@ -15,8 +15,9 @@ import {
   Grid,
 } from 'lib/components'
 
-import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/core/utility/NebkitProvider/definitions'
-import { Color, COLORS, THEMES } from 'lib/definitions'
+import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/core/utility/NebkitProvider'
+import { BoxColor } from 'lib/components/core/base/Box'
+import { COLORS, THEMES } from 'lib/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
 import { PageKey } from 'client/definitions'
@@ -120,7 +121,7 @@ export const HomePage = () => {
                     <Text bold>Brand</Text>
                     <Select
                       value={brand}
-                      onChange={value => setBrand(value as Color)}
+                      onChange={value => setBrand(value as BoxColor)}
                       inlineSize="150px"
                       size="sm"
                       scrollAlign="center"

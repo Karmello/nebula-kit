@@ -1,7 +1,7 @@
 import { ElementType } from 'react'
 
 import {
-  Color,
+  COLORS,
   CssDisplay,
   CssOverflow,
   CssPointerEvents,
@@ -19,12 +19,13 @@ export const BOX_BORDER_WIDTH = '2px'
 
 export type BoxVariant = (typeof BOX_VARIANTS)[number]
 export type BoxIntent = (typeof BOX_INTENTS)[number]
+export type BoxColor = (typeof COLORS)[number]
 
 type BoxOwnProps = {
   drawable?: boolean
   theme?: RespValue<Theme>
-  brand?: RespValue<Color>
-  color?: RespValue<Color>
+  brand?: RespValue<BoxColor>
+  color?: RespValue<BoxColor>
   variant?: RespValue<BoxVariant>
   intent?: RespValue<BoxIntent>
   // state

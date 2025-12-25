@@ -1,8 +1,18 @@
 import { Input, Button, Text, Spacer, Select } from 'lib/components'
-import { Breakpoint } from 'lib/definitions'
-import { ICONS } from 'lib/icons/lucide'
+import { BOX_INTENTS } from 'lib/components/core/base/Box'
+import { Breakpoint, COLORS, ICON_NAMES } from 'lib/definitions'
 
 import { usePlaygroundStore } from '../../../../store'
+
+const PROPS_OPTIONS_FOR_INPUT = ['CSS', 'ReactNode', 'string', 'number']
+const PROPS_OPTIONS_FOR_BOOLEAN = ['boolean']
+const PROPS_OPTIONS_FOR_SELECT = ['IconName', 'BoxColor', 'BoxIntent'] as const
+
+const SELECT_DATA_MAP: Record<(typeof PROPS_OPTIONS_FOR_SELECT)[number], readonly string[]> = {
+  IconName: ICON_NAMES,
+  BoxColor: COLORS,
+  BoxIntent: BOX_INTENTS,
+}
 
 export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
   const { components, activeComponent, setPropField } = usePlaygroundStore()
@@ -45,7 +55,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
     <>
       <Text>{bp ? `${activeProp} [${bp}]` : activeProp}</Text>
       <Spacer blockSize="5px" />
-      {['CSS', 'ReactNode', 'string', 'number'].includes(prop.options[0]) ? (
+      {PROPS_OPTIONS_FOR_INPUT.includes(prop.options[0]) ? (
         <Input
           tagAttrs={{
             placeholder: prop.options[0] === 'ReactNode' ? 'value' : prop.options[0].toLowerCase(),
@@ -58,7 +68,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
           intent={{ base: 'secondary', lg: 'tertiary' }}
         />
       ) : null}
-      {prop.options[0] === 'boolean' ? (
+      {PROPS_OPTIONS_FOR_BOOLEAN.includes(prop.options[0]) ? (
         <Select
           value={value}
           onChange={onChange}
@@ -70,7 +80,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
           <Select.Option value="false">false</Select.Option>
         </Select>
       ) : null}
-      {prop.options[0] === 'IconName' ? (
+      {PROPS_OPTIONS_FOR_SELECT.includes(prop.options[0] as (typeof PROPS_OPTIONS_FOR_SELECT)[number]) ? (
         <Select
           value={value}
           onChange={onChange}
@@ -78,14 +88,16 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
           itemBorderIntent={{ base: 'tertiary', lg: 'muted' }}
         >
           <Select.Option value="">...</Select.Option>
-          {Object.keys(ICONS).map(iconName => (
-            <Select.Option key={iconName} value={iconName}>
-              {iconName}
+          {SELECT_DATA_MAP[prop.options[0] as (typeof PROPS_OPTIONS_FOR_SELECT)[number]].map(value => (
+            <Select.Option key={value} value={value}>
+              {value}
             </Select.Option>
           ))}
         </Select>
       ) : null}
-      {!['CSS', 'ReactNode', 'string', 'number', 'boolean', 'IconName'].includes(prop.options[0]) ? (
+      {![...PROPS_OPTIONS_FOR_INPUT, ...PROPS_OPTIONS_FOR_BOOLEAN, ...PROPS_OPTIONS_FOR_SELECT].includes(
+        prop.options[0]
+      ) ? (
         <Select
           value={value}
           onChange={onChange}

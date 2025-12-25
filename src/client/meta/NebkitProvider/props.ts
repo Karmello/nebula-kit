@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { NebkitProviderProps } from 'lib/components'
-import { COLORS, THEMES } from 'lib/definitions'
+import { THEMES } from 'lib/definitions'
 
 import {
   NEBKIT_BORDER_RADIUS_SIZES,
@@ -21,7 +21,7 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = 
     description: 'Global border radius size applied across all components.',
   },
   brand: {
-    options: COLORS as unknown as string[],
+    options: ['BoxColor'],
     defaultValue: DEFAULT_NEBKIT_BRAND,
     description: 'Global brand color used as the primary accent across components.',
   },

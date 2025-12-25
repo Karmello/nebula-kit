@@ -5,12 +5,12 @@ import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
 import { useCheckoutPaidPlan } from 'client/api'
 import { Button, Link, Text } from 'lib/components'
-import { Color } from 'lib/definitions'
+import { BoxColor } from 'lib/components/core/base/Box'
 
 type PricingPlanButtonProps = {
   plan: string
   activePlan?: string
-  color?: Color
+  color?: BoxColor
 }
 
 export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButtonProps) => {

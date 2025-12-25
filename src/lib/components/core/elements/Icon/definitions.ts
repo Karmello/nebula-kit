@@ -1,14 +1,14 @@
 import { HtmlTagProps } from 'lib/components'
-import { BoxIntent } from 'lib/components/core/base/Box/definitions'
-import { Color, IconName } from 'lib/definitions'
+import { IconName } from 'lib/definitions'
+import { BoxProps } from 'lib/components/core/base/Box'
 
 export const DEFAULT_ICON_SIZE: string = '16px'
 
 type IconOwnProps = {
   name?: IconName
   size?: string
-  intent?: BoxIntent
-  color?: Color
+  intent?: BoxProps['intent']
+  color?: BoxProps['color']
 }
 
 export type IconProps = Pick<HtmlTagProps<'span'>, 'children' | 'tagAttrs' | 'tagRef'> & IconOwnProps

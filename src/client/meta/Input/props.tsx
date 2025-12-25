@@ -19,7 +19,7 @@ const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
   },
   disabled: BOX_PROPS_META.disabled,
   endAffix: {
-    options: ['(props) => ReactNode'],
+    options: ['props => ReactNode'],
     description:
       'Render function that receives Input props and returns the end affix. Only defined props are passed to the render function.',
   },
@@ -54,7 +54,7 @@ const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
       'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
   },
   startAffix: {
-    options: ['(props) => ReactNode'],
+    options: ['props => ReactNode'],
     description:
       'Render function that receives Input props and returns the start affix. Only defined props are passed to the render function.',
   },

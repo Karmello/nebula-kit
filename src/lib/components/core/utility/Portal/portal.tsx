@@ -5,6 +5,8 @@ import { Box } from 'lib/components'
 
 import { DEFAULT_PORTAL_PLACEMENT, PortalProps } from './definitions'
 import { useIslandContext } from '../../internal'
+import classNames from 'classnames'
+import { withPrefix } from 'lib/helpers'
 
 export const Portal = ({
   // HtmlTag
@@ -97,7 +99,15 @@ export const Portal = ({
 
   if (!anchorRef?.current) {
     return createPortal(
-      <Box tagRef={rootRef} tagAttrs={tagAttrs} theme={islandContext?.theme} brand={islandContext?.brand}>
+      <Box
+        tagRef={rootRef}
+        tagAttrs={{
+          ...tagAttrs,
+          className: classNames(withPrefix('portal'), tagAttrs?.className),
+        }}
+        theme={islandContext?.theme}
+        brand={islandContext?.brand}
+      >
         {children}
       </Box>,
       container
@@ -109,6 +119,7 @@ export const Portal = ({
       tagRef={rootRef}
       tagAttrs={{
         ...tagAttrs,
+        className: classNames(withPrefix('portal'), tagAttrs?.className),
         style: {
           ...tagAttrs?.style,
           transition: 'none',

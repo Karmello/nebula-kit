@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from 'lib/components'
-import { Color } from 'lib/definitions'
+import { BoxColor } from 'lib/components/core/base/Box'
 
 export const ListWithChips = ({
   heading,
@@ -8,7 +8,7 @@ export const ListWithChips = ({
 }: {
   heading: string
   items: string[]
-  color?: Color
+  color?: BoxColor
 }) => (
   <Flex flexDirection="column" gap="10px">
     <Text bold>{heading}</Text>

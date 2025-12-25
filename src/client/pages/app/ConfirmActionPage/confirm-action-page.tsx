@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { useLocation } from 'react-router'
 
 import { Box, Button, Flex } from 'lib/components'
-import { Color } from 'lib/definitions'
+import { BoxColor } from 'lib/components/core/base/Box'
 
-const BUTTON_LABEL_MAP: Record<string, { label: string; color: Color }> = {
+const BUTTON_LABEL_MAP: Record<string, { label: string; color: BoxColor }> = {
   new_account_verification: {
     label: 'Confirm your email address',
     color: 'blue',

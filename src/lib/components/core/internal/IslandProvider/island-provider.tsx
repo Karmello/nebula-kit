@@ -1,10 +1,11 @@
 import { createContext, useContext, useMemo } from 'react'
 
-import { Color, RespValue, Theme } from 'lib/definitions'
+import { RespValue, Theme } from 'lib/definitions'
+import { BoxColor } from 'lib/components/core/base/Box'
 
 type IslandContextValue = {
   theme?: RespValue<Theme>
-  brand?: RespValue<Color>
+  brand?: RespValue<BoxColor>
 }
 
 type IslandProviderProps = IslandContextValue & {

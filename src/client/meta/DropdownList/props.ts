@@ -1,6 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
 import { DropdownListProps } from 'lib/components'
-import { BOX_INTENTS } from 'lib/components/core/base/Box'
 
 import {
   DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
@@ -17,6 +16,7 @@ import {
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BUTTON_PROPS_META } from '../Button/props'
 import { PORTAL_PROPS_META } from '../Portal/props'
+import { BOX_PROPS_META } from '../Box/props'
 
 const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
   children: {
@@ -34,9 +34,8 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
     description: 'Tone level applied to the list.',
   },
   itemBorderIntent: {
-    options: BOX_INTENTS as never,
+    ...BOX_PROPS_META.intent,
     defaultValue: String(DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT),
-    isResponsive: true,
     description: 'Tone level applied to the dividers between list items.',
   },
   keepOpen: {

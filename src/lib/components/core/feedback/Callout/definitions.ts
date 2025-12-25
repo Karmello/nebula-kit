@@ -1,7 +1,7 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
-import { BoxVariant } from 'lib/components/core/base/Box/definitions'
-import { TextTypography } from 'lib/components/core/base/Text/definitions'
-import { Color, IconName, Sizes } from 'lib/definitions'
+import { IconName, Sizes } from 'lib/definitions'
+import { BoxVariant, BoxColor } from 'lib/components/core/base/Box'
+import { TextTypography } from 'lib/components/core/base/Text'
 
 export const CALLOUT_SIZE_CONFIG: Record<
   CalloutSize,
@@ -14,12 +14,13 @@ export const CALLOUT_SIZE_CONFIG: Record<
   xxl: { typography: 'h2', spacing: '30px' },
 }
 
-export const CALLOUT_CONFIG: Record<CalloutStatus, { color: Color; heading: string; iconName: IconName }> = {
-  info: { color: 'blue', heading: 'Info', iconName: 'info' },
-  success: { color: 'green', heading: 'Success', iconName: 'check-circle' },
-  warning: { color: 'amber', heading: 'Warning', iconName: 'triangle-alert' },
-  error: { color: 'red', heading: 'Error', iconName: 'circle-alert' },
-}
+export const CALLOUT_CONFIG: Record<CalloutStatus, { color: BoxColor; heading: string; iconName: IconName }> =
+  {
+    info: { color: 'blue', heading: 'Info', iconName: 'info' },
+    success: { color: 'green', heading: 'Success', iconName: 'check-circle' },
+    warning: { color: 'amber', heading: 'Warning', iconName: 'triangle-alert' },
+    error: { color: 'red', heading: 'Error', iconName: 'circle-alert' },
+  }
 
 export const DEFAULT_CALLOUT_SIZE: CalloutProps['size'] = 'md'
 export const DEFAULT_CALLOUT_VARIANT: CalloutProps['variant'] = 'solid'
