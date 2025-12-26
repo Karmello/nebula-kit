@@ -2,7 +2,6 @@ import { ComponentMeta } from 'client/definitions'
 import { BOX_PROPS_META } from 'client/meta/Box/props'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { SplitViewSideProps } from 'lib/components'
-import { BOX_INTENTS } from 'lib/components/core/base/Box'
 import { DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from 'lib/components/pro/layouts/SplitView'
 
 const SPLIT_VIEW_SIDE_PROPS_META: ComponentMeta<SplitViewSideProps>['props'] = {

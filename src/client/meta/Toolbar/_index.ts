@@ -11,13 +11,12 @@ import { TOOLBAR_END_META } from './ToolbarEnd/_index'
 const TOOLBAR_META: ComponentMeta<ToolbarProps> = {
   overview: {
     bundle: 'pro',
-    title:
-      'Horizontal bar with Start, Main and End slots, designed to present different types of action items.',
+    title: 'Horizontal bar with Start, Main and End slots for organizing actions and controls.',
     description: [
       'often used inside AppFrame.Header to control navigation and provide additional tools',
       'often paired with ButtonGroup rendered inside the main section',
       'the main section is toggleable in collapsed mode and always visible in inline mode',
-      'any Box inside the Toolbar is overridden to be square',
+      'all drawable Box components inside Toolbar are forced to use square corners',
     ],
     composedOf: ['Grid'],
     topLevelTags: ['nav'],

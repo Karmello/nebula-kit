@@ -8,9 +8,9 @@ const TOOLBAR_START_META: ComponentMeta<ToolbarStartProps> = {
     name: 'Toolbar.Start?',
     title: 'Defines the start slot of Toolbar.',
     description: [
-      'provides a fixed region at the start of the Toolbar layout',
-      'remains visible even if the main section is collapsed',
-      'commonly used to display a brand label, logo or home button',
+      'fixed region at the start of the toolbar',
+      'remains visible when the main section is collapsed',
+      'commonly used for brand, logo or home button',
     ],
     composedOf: ['Grid.Item'],
   },

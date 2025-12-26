@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Box, Button, Segment, Toolbar, ToolbarProps } from 'lib/components'
+import { Box, Button, Segment, Select, Toolbar, ToolbarProps } from 'lib/components'
 
 const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarProps>['examples'] = [
   {
@@ -16,7 +16,7 @@ const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarProps>['examples'] = [
   },
   {
     description:
-      'Application header with a brand label on the left, navigation links in the main section that adapt responsively from column to row and an action button on the right.',
+      'Application header with a brand label on the left, navigation links in the main section that adapt responsively from column to row and an action menu on the right.',
     jsx: (
       <Toolbar switchAt="md">
         <Toolbar.Start>
@@ -33,7 +33,10 @@ const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarProps>['examples'] = [
           </Segment>
         </Toolbar.Main>
         <Toolbar.End>
-          <Button iconName="chevron-down" />
+          <Select staticLabel="Menu">
+            <Select.Option value="option-1">Option 1</Select.Option>
+            <Select.Option value="option-2">Option 2</Select.Option>
+          </Select>
         </Toolbar.End>
       </Toolbar>
     ),
