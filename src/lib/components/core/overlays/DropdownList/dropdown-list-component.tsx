@@ -155,6 +155,7 @@ export const DropdownListComponent = ({
                       borderBottomWidth={
                         opensUpDownwards ? (index === itemsCount - 1 ? '0px' : undefined) : undefined
                       }
+                      borderRadius="0px"
                     >
                       {cloneElement(slot as ReactElement<any>, { index })}
                     </Box>

@@ -11,12 +11,12 @@ import { DIALOG_FOOTER_META } from './DialogFooter/_index'
 const DIALOG_META: ComponentMeta<DialogProps> = {
   overview: {
     bundle: 'pro',
-    title: 'Centered modal dialog for interrupting the current flow.',
+    title: 'Centered modal dialog for interrupting the current user flow.',
     description: [
       'renders above the page using Portal',
-      'traps keyboard focus while open for full accessibility',
+      'traps keyboard focus while open for accessibility',
       'supports header, content and footer slots for structured layout',
-      'includes optional close button and customizable dismissal behavior',
+      'includes an optional close button and configurable dismissal behavior',
       'automatically disables page scrolling while open',
     ],
     composedOf: ['Portal', 'FocusTrap', 'Flex', 'Box', 'Button', 'Resize'],

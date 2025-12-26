@@ -6,7 +6,8 @@ import { DIALOG_FOOTER_PROPS_META } from './props'
 const DIALOG_FOOTER_META: ComponentMeta<DialogFooterProps> = {
   overview: {
     name: 'Dialog.Footer?',
-    title: 'Bottom area of the dialog for actions.',
+    title: 'Footer area of the dialog.',
+    description: ['for actions'],
     composedOf: ['Box'],
     topLevelTags: ['div'],
   },

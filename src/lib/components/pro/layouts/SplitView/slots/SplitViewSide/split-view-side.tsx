@@ -51,6 +51,7 @@ export const SplitViewSide = ({
         color={color}
         intent={borderIntent || { base: 'muted', [String(switchAt)]: 'neutral' }}
         borderWidth="0px"
+        borderRadius="0px"
         borderLeftWidth={
           mode === 'overlay' && sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : '0px'
         }
@@ -63,6 +64,7 @@ export const SplitViewSide = ({
       >
         <Box
           drawable
+          borderRadius="0px"
           variant="solid"
           color={color}
           intent={intent || { base: 'tertiary', [String(switchAt)]: 'neutral' }}

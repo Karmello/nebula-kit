@@ -27,6 +27,7 @@ export const DialogContent = ({
       minBlockSize="100px"
       padding={padding}
       borderWidth="0px"
+      borderRadius="0px"
     >
       {children}
     </Box>

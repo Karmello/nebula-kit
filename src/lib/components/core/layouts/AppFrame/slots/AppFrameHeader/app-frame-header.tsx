@@ -44,6 +44,7 @@ export const AppFrameHeader = ({
       color={color}
       intent={borderIntent}
       borderWidth="0px"
+      borderRadius="0px"
       borderBottomWidth={BOX_BORDER_WIDTH}
     >
       <Box drawable variant="solid" color={color} intent={intent} {...paddings}>

@@ -28,6 +28,7 @@ export const DialogFooter = ({
       borderBottomWidth="0px"
       borderLeftWidth="0px"
       borderRightWidth="0px"
+      borderRadius="0px"
     >
       {children}
     </Box>

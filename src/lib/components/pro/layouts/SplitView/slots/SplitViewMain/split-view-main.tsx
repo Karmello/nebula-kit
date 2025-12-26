@@ -27,6 +27,7 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
             }}
             tagRef={tagRef}
             drawable
+            borderRadius="0px"
             {...paddings}
           >
             <Flex

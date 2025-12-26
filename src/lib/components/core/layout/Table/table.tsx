@@ -67,6 +67,7 @@ export const Table = ({
               variant="solid"
               color={color}
               intent={intent}
+              borderRadius="0px"
             >
               <TableContext value={{ color, intent, paddingBlock, paddingInline, textAlign }}>
                 {slotsByName['Table.Caption']}

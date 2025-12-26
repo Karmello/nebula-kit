@@ -11,7 +11,7 @@ const USE_SNACKBAR_PROPS_META: ComponentMeta<UseSnackbarShowArgs>['props'] = {
   content: {
     options: ['string'],
     isRequired: true,
-    description: 'Snackbar message text content to be displayed.',
+    description: 'Message text content displayed in the snackbar.',
   },
   heading: {
     options: ['string'],
@@ -20,13 +20,13 @@ const USE_SNACKBAR_PROPS_META: ComponentMeta<UseSnackbarShowArgs>['props'] = {
   placement: {
     options: SNACKBAR_PLACEMENTS as never,
     defaultValue: DEFAULT_SNACKBAR_PLACEMENT,
-    description: 'Defines placement for the snackbar being opened.',
+    description: 'Overrides the default placement for the opened snackbar.',
   },
   status: {
     options: CALLOUT_STATUSES as never,
     defaultValue: DEFAULT_CALLOUT_STATUS,
     isRequired: true,
-    description: 'Defines the semantic meaning for the snackbar being opened.',
+    description: 'Defines the message type of the snackbar.',
   },
 }
 

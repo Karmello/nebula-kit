@@ -57,6 +57,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
               variant="soft-outline"
               color="blue"
               intent="primary"
+              iconName="box"
             >
               <Text intent="neutral">{item.title}</Text>
             </Section>

@@ -44,6 +44,7 @@ export const TableCell = ({
       textAlign={textAlign || context.textAlign}
       paddingBlock={context.paddingBlock}
       paddingInline={context.paddingInline}
+      borderRadius="0px"
     >
       {children}
     </Box>

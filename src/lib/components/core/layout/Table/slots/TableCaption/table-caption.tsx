@@ -35,6 +35,7 @@ export const TableCaption = ({
       paddingBlock={paddingBlock || context.paddingBlock}
       paddingInline={paddingInline}
       textAlign={textAlign}
+      borderRadius="0px"
     >
       {children}
     </Box>

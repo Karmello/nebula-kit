@@ -9,12 +9,13 @@ import { USE_SNACKBAR_META } from './useSnackbar/_index'
 const SNACKBAR_META: ComponentMeta<SnackbarProps> = {
   overview: {
     bundle: 'pro',
-    title: 'Floating message element anchored to the viewport.',
+    title: 'Floating message container for transient status notifications, anchored to the viewport.',
     description: [
-      'displays short status updates without affecting the page layout',
-      'appears above the UI and automatically hides after a short duration',
-      'provides six placement regions for displaying messages',
-      'managed through a provider and controlled with the "useSnackbar" hook',
+      'displays short, non-intrusive status messages without affecting page layout',
+      'appears above the UI and automatically hides after a configurable duration',
+      'supports six viewport placement regions',
+      'managed by a provider and controlled via the "useSnackbar" hook',
+      'Snackbar must wrap the application root and should be rendered once at the top level',
     ],
     composedOf: ['Flex', 'Box', 'Callout', 'Button', 'Slide'],
     hooks: ['useSnackbar'],

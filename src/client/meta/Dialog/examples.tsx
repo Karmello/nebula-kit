@@ -35,6 +35,12 @@ const DIALOG_EXAMPLES_META: ComponentMeta<DialogProps>['examples'] = [
   },
   {
     jsx: <DialogWrapper />,
+    code: `<Dialog open={open} onClose={() => setOpen(false)}>
+  <Dialog.Header>Dialog header</Dialog.Header>
+  <Dialog.Content>Dialog content</Dialog.Content>
+  <Dialog.Footer>Dialog footer</Dialog.Footer>
+</Dialog>`,
+    description: 'Dialog with all three available slots present.',
   },
 ]
 

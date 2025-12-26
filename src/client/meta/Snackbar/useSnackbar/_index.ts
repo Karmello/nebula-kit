@@ -7,10 +7,10 @@ import { USE_SNACKBAR_PROPS_META } from './props'
 const USE_SNACKBAR_META: ComponentMeta<UseSnackbarShowArgs> = {
   overview: {
     name: 'useSnackbar.show()',
-    title: 'Hook method for programmatically displaying snackbars.',
+    title: 'Programmatic API for triggering snackbar messages.',
     description: [
-      'meant to be used inside Snackbar context',
-      "new Snackbar shows up only if there's none open at a time, otherwise it gets ignored",
+      'must be used within a Snackbar provider context',
+      'if a Snackbar is already visible, additional calls are ignored',
     ],
   },
   examples: USE_SNACKBAR_EXAMPLES_META,

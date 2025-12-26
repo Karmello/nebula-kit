@@ -15,26 +15,27 @@ const SNACKBAR_PROPS_META: ComponentMeta<SnackbarProps>['props'] = {
   autoCloseDelay: {
     options: ['number'],
     defaultValue: String(DEFAULT_SNACKBAR_AUTO_CLOSE_DELAY),
-    description: 'Time in milliseconds before the snackbar closes automatically.',
+    description: 'Time in milliseconds after which the snackbar closes automatically.',
   },
   children: {
     options: ['ReactElement'],
     isRequired: true,
-    description: 'Application component to be wrapped.',
+    description: 'Root application content wrapped by the Snackbar provider instance.',
   },
   closeOnOutsideClick: {
     options: ['boolean'],
     defaultValue: String(DEFAULT_SNACKBAR_CLOSE_ON_OUTSIDE_CLICK),
-    description: 'Makes snackbar close when the user clicks anywhere outside of it.',
+    description: 'Closes the snackbar when the user clicks outside of its surface.',
   },
   inlineSize: {
     ...BOX_PROPS_META.inlineSize,
     defaultValue: String(DEFAULT_SNACKBAR_INLINE_SIZE),
+    description: 'Logical inline size of the snackbar container.',
   },
   placement: {
     options: SNACKBAR_PLACEMENTS as never,
     defaultValue: String(DEFAULT_SNACKBAR_PLACEMENT),
-    description: 'Defines where snackbars appear on the viewport by default.',
+    description: 'Defines the default viewport placement for snackbars.',
   },
 }
 

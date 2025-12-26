@@ -12,7 +12,7 @@ export default () => {
         predictable, composable and easy to reason about as it grows.
       </Text>
       <Spacer blockSize="40px" />
-      <Section heading="Theme" size="sm">
+      <Section heading="Theme" size="sm" variant="outline" intent="primary" color="blue">
         <Text>Theme defines the overall color scheme used to interpret surfaces and colors.</Text>
         <Spacer />
         <MarkerList>
@@ -39,7 +39,7 @@ export default () => {
         </Text>
       </Section>
       <Spacer blockSize="40px" />
-      <Section heading="Brand" size="sm">
+      <Section heading="Brand" size="sm" variant="outline" intent="primary" color="blue">
         <Text>Brand defines the default surface color used when no explicit color is set.</Text>
         <Spacer />
         <MarkerList>
@@ -60,7 +60,7 @@ export default () => {
         <Text>Brand is typically used to define the visual identity of a section or feature.</Text>
       </Section>
       <Spacer blockSize="40px" />
-      <Section heading="Color" size="sm">
+      <Section heading="Color" size="sm" variant="outline" intent="primary" color="blue">
         <Text>Color is a component-level override.</Text>
         <Spacer />
         <MarkerList>
@@ -81,7 +81,7 @@ export default () => {
         <Text>Use color when a component must be styled explicitly.</Text>
       </Section>
       <Spacer blockSize="40px" />
-      <Section heading="Variant and intent" size="sm">
+      <Section heading="Variant and intent" size="sm" variant="outline" intent="primary" color="blue">
         <Text>Variant and intent define how a drawable surface is rendered.</Text>
         <Spacer />
         <MarkerList>
@@ -102,7 +102,7 @@ export default () => {
         <Text>Variant and intent never propagate.</Text>
       </Section>
       <Spacer blockSize="40px" />
-      <Section heading="Drawable surface" size="sm">
+      <Section heading="Drawable surface" size="sm" variant="outline" intent="primary" color="blue">
         <Text>Only drawable Boxes participate in visual styling.</Text>
         <Spacer />
         <MarkerList>
@@ -120,7 +120,7 @@ export default () => {
         <Text>This separation keeps layouts clean and reduces unnecessary styling work.</Text>
       </Section>
       <Spacer blockSize="40px" />
-      <Section heading="Local styling islands" size="sm">
+      <Section heading="Local styling islands" size="sm" variant="outline" intent="primary" color="blue">
         <Text>A Box can act as a local styling boundary.</Text>
         <Spacer />
         <MarkerList>

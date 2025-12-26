@@ -107,22 +107,25 @@ export const Dialog = ({
                         maxBlockSize="90dvh"
                         position="relative"
                         overflowY="auto"
-                        intent="inverse"
+                        intent="primary"
                         inlineSize={DIALOG_SIZE_MAP[size || 'md']}
+                        borderRadius="var(--neb-border-radius)"
                       >
-                        {onClose ? (
-                          <Box position="absolute" top="5px" right="5px">
-                            <Button
-                              tagAttrs={{ onClick: onClose }}
-                              size="xs"
-                              iconName="close"
-                              intent="muted"
-                            />
-                          </Box>
-                        ) : null}
-                        {slotsByName['Dialog.Header']}
-                        {slotsByName['Dialog.Content']}
-                        {slotsByName['Dialog.Footer']}
+                        <Box drawable variant="solid" intent="neutral" borderRadius="0px">
+                          {onClose ? (
+                            <Box position="absolute" top="5px" right="5px">
+                              <Button
+                                tagAttrs={{ onClick: onClose }}
+                                size="xs"
+                                iconName="close"
+                                intent="muted"
+                              />
+                            </Box>
+                          ) : null}
+                          {slotsByName['Dialog.Header']}
+                          {slotsByName['Dialog.Content']}
+                          {slotsByName['Dialog.Footer']}
+                        </Box>
                       </Box>
                     </Resize>
                   </FocusTrap>
