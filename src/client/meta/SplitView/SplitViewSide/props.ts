@@ -8,9 +8,8 @@ import { DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from 'lib/components/pro/layouts/SplitV
 const SPLIT_VIEW_SIDE_PROPS_META: ComponentMeta<SplitViewSideProps>['props'] = {
   brand: BOX_PROPS_META.brand,
   borderIntent: {
-    options: BOX_INTENTS as never,
+    ...BOX_PROPS_META.intent,
     defaultValue: "{ base: 'muted', [switchAt]: 'neutral' }",
-    isResponsive: true,
     description: "Sets the visual intent of the component's border.",
   },
   children: {

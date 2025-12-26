@@ -11,14 +11,14 @@ import { SPLIT_VIEW_MAIN_BAR_META } from './SplitViewMainBar/_index'
 const SPLIT_VIEW_META: ComponentMeta<SplitViewProps> = {
   overview: {
     bundle: 'pro',
-    title: 'Two-panel layout designed for building side navigation alongside main content.',
+    title: 'Two-panel layout for displaying side navigation alongside main content.',
     composedOf: ['Grid'],
     description: [
-      'provides a two-panel horizontal layout with a main content area and side panel',
-      'changes the side panel from an overlay to an inline layout at a breakpoint ("switchAt" prop)',
-      'manages side panel visibility, shows the side panel in inline mode and hides it in overlay mode',
+      'provides a two-panel horizontal layout with a main content and side panel areas',
+      'switches the side panel between overlay and inline modes at the specified breakpoint (switchAt)',
+      'manages side panel visibility based on the active layout mode',
       'stretches to fill the full height of its parent container',
-      'in overlay mode, temporarily blocks pointer interaction outside the active panel',
+      'in overlay mode, blocks pointer interaction outside the active panel',
     ],
     topLevelTags: ['div'],
     slots: ['SplitView.Side', 'SplitView.Main'],

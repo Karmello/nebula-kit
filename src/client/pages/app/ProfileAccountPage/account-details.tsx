@@ -24,7 +24,7 @@ export default () => {
 
   return (
     <Table layout="fixed" intent="neutral" color="blue">
-      <Table.Header>
+      <Table.Header paddingInline="0px">
         <Table.HeaderRow>
           <Table.HeaderCell blockSize="60px">
             <Flex alignItems="center" columnGap="20px">
