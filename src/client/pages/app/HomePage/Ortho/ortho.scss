@@ -1,6 +1,6 @@
 $size: 175px;
-$dotSize: $size / 4.5;
-$arrowSize: $dotSize / 4;
+$dotSize: calc($size / 4.5);
+$arrowSize: calc($dotSize / 4);
 $lineSize: 2px;
 $borderSize: 5px;
 
@@ -21,11 +21,11 @@ $borderGlowColor: var(--neb-tertiary-solid);
   .neb-ortho-inner {
     position: absolute;
     inset: 0;
-    block-size: $size - 10px;
-    inline-size: $size - 10px;
+    block-size: calc($size - 10px);
+    inline-size: calc($size - 10px);
     padding: 20px;
     overflow: hidden;
-    border-width: $borderSize * 4;
+    border-width: calc($borderSize * 4);
 
     .neb-dot {
       position: absolute;
@@ -44,27 +44,27 @@ $borderGlowColor: var(--neb-tertiary-solid);
       left: 50%;
       top: 50%;
       z-index: 1;
-      border-left: $arrowSize / 2 solid transparent;
-      border-right: $arrowSize / 2 solid transparent;
+      border-left: calc($arrowSize / 2) solid transparent;
+      border-right: calc($arrowSize / 2) solid transparent;
       border-bottom: $arrowSize solid;
       border-bottom-color: $arrowColor;
       animation: neb-ortho-pulse 2s ease-in-out infinite;
     }
 
     .neb-arrow-triangle.top {
-      transform: translate(-50%, -$arrowSize - $dotSize / 2) rotate(180deg);
+      transform: translate(-50%, -$arrowSize - ($dotSize / 2)) rotate(180deg);
     }
 
     .neb-arrow-triangle.right {
-      transform: translate($dotSize / 2, calc(-50% + $lineSize / 2)) rotate(-90deg);
+      transform: translate(calc($dotSize / 2), calc(-50% + $lineSize / 2)) rotate(-90deg);
     }
 
     .neb-arrow-triangle.bottom {
-      transform: translate(-50%, $dotSize / 2);
+      transform: translate(-50%, calc($dotSize / 2));
     }
 
     .neb-arrow-triangle.left {
-      transform: translate(-$arrowSize -$dotSize / 2, calc(-50% + $lineSize / 2)) rotate(90deg);
+      transform: translate(-$arrowSize - ($dotSize / 2), calc(-50% + $lineSize / 2)) rotate(90deg);
     }
 
     .neb-arrow-line {
@@ -72,11 +72,11 @@ $borderGlowColor: var(--neb-tertiary-solid);
       left: 50%;
       top: 50%;
       block-size: $lineSize;
-      inline-size: $size / 2 - $dotSize / 2 - $arrowSize;
+      inline-size: calc($size / 2 - $dotSize / 2 - $arrowSize);
       background: repeating-linear-gradient(
         to right,
-        $arrowColor 0 $lineSize * 2,
-        transparent $lineSize * 2 $lineSize * 4
+        $arrowColor 0 calc($lineSize * 2),
+        transparent calc($lineSize * 2) calc($lineSize * 4)
       );
       animation:
         neb-ortho-pulse 2s ease-in-out infinite,
@@ -85,16 +85,16 @@ $borderGlowColor: var(--neb-tertiary-solid);
     }
 
     .neb-arrow-line.top {
-      transform: translate(0, -$dotSize / 2 - $arrowSize) rotate(-90deg);
+      transform: translate(0, (-$dotSize / 2) - $arrowSize) rotate(-90deg);
       transform-origin: left;
     }
 
     .neb-arrow-line.right {
-      transform: translate($dotSize / 2 + $arrowSize, 0);
+      transform: translate(calc($dotSize / 2 + $arrowSize), 0);
     }
 
     .neb-arrow-line.bottom {
-      transform: translate(0, $dotSize / 2 + $arrowSize) rotate(90deg);
+      transform: translate(0, calc($dotSize / 2 + $arrowSize)) rotate(90deg);
       transform-origin: left;
     }
 
