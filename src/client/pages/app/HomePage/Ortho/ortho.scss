@@ -52,7 +52,7 @@ $borderGlowColor: var(--neb-tertiary-solid);
     }
 
     .neb-arrow-triangle.top {
-      transform: translate(-50%, -$arrowSize - ($dotSize / 2)) rotate(180deg);
+      transform: translate(-50%, -$arrowSize - (calc($dotSize / 2))) rotate(180deg);
     }
 
     .neb-arrow-triangle.right {
@@ -64,7 +64,7 @@ $borderGlowColor: var(--neb-tertiary-solid);
     }
 
     .neb-arrow-triangle.left {
-      transform: translate(-$arrowSize - ($dotSize / 2), calc(-50% + $lineSize / 2)) rotate(90deg);
+      transform: translate(-$arrowSize - (calc($dotSize / 2)), calc(-50% + $lineSize / 2)) rotate(90deg);
     }
 
     .neb-arrow-line {
@@ -85,7 +85,7 @@ $borderGlowColor: var(--neb-tertiary-solid);
     }
 
     .neb-arrow-line.top {
-      transform: translate(0, (-$dotSize / 2) - $arrowSize) rotate(-90deg);
+      transform: translate(0, (- calc($dotSize / 2)) - $arrowSize) rotate(-90deg);
       transform-origin: left;
     }
 
