@@ -26,6 +26,9 @@ const FORM_META: ComponentMeta<FormProps> = {
   },
   props: FORM_PROPS_META,
   examples: FORM_EXAMPLES_META,
+  changelog: {
+    '0.1.0': ['Released'],
+  },
 }
 
 export default {

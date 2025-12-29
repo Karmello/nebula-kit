@@ -25,6 +25,9 @@ const DIALOG_META: ComponentMeta<DialogProps> = {
   },
   props: DIALOG_PROPS_META,
   examples: DIALOG_EXAMPLES_META,
+  changelog: {
+    '0.1.0': ['Released'],
+  },
 }
 
 export default {

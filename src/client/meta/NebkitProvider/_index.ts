@@ -16,6 +16,9 @@ const NEBKIT_PROVIDER_META: ComponentMeta<NebkitProviderProps> = {
   },
   props: NEBKIT_PROVIDER_PROPS_META,
   examples: NEBKIT_PROVIDER_EXAMPLES_META,
+  changelog: {
+    '0.1.0': ['Released'],
+  },
 }
 
 export default {

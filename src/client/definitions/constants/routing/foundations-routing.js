@@ -69,16 +69,14 @@ export const FOUNDATIONS_CATEGORIES = [
     key: 'resources',
     label: 'Resources',
     items: [
-      // {
-      //   key: 'changelog',
-      //   label: 'Changelog',
-      //   sections: [{ key: 'v0.1.0', label: 'v0.1.0' }],
-      // },
-      // {
-      //   key: 'roadmap',
-      //   label: 'Roadmap',
-      //   sections: [{ key: 'jan-26', label: 'Jan 26' }],
-      // },
+      {
+        key: 'changelog',
+        label: 'Changelog',
+        sections: [
+          { key: 'core-releases', label: 'Core releases' },
+          { key: 'pro-releases', label: 'Pro releases' },
+        ],
+      },
       {
         key: 'assets',
         label: 'Assets',

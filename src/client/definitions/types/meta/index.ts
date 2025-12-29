@@ -1,5 +1,7 @@
 import { JSX } from 'react'
 
+import { ReleaseVersion } from 'lib/definitions'
+
 type Overview = {
   name?: string
   bundle?: 'core' | 'pro'
@@ -34,8 +36,11 @@ type Example = {
   skip?: boolean
 }
 
+type Changelog = Record<ReleaseVersion, string[]>
+
 export type ComponentMeta<PropsType> = {
   overview: Overview
   props?: Record<keyof PropsType, Prop>
   examples?: Example[]
+  changelog?: Changelog
 }

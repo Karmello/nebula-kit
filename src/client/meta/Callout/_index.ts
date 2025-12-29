@@ -16,6 +16,9 @@ const CALLOUT_META: ComponentMeta<CalloutProps> = {
   },
   props: CALLOUT_PROPS_META,
   examples: CALLOUT_EXAMPLES_META,
+  changelog: {
+    '0.1.0': ['Released'],
+  },
 }
 
 export default {

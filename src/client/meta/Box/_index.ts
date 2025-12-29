@@ -21,6 +21,9 @@ const BOX_META: ComponentMeta<BoxProps> = {
   },
   props: BOX_PROPS_META,
   examples: BOX_EXAMPLES_META,
+  changelog: {
+    '0.1.0': ['Released'],
+  },
 }
 
 export default {

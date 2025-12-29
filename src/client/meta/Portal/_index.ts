@@ -19,6 +19,9 @@ const PORTAL_META: ComponentMeta<PortalProps> = {
   },
   props: PORTAL_PROPS_META,
   examples: PORTAL_EXAMPLES_META,
+  changelog: {
+    '0.1.0': ['Released'],
+  },
 }
 
 export default {

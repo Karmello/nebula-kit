@@ -43,6 +43,7 @@ export const WithIcon = ({
       inlineSize={inlineSize}
     >
       <Flex
+        tag="span"
         alignItems="center"
         flexDirection="row"
         flexWrap="nowrap"

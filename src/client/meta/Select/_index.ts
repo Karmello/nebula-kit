@@ -17,6 +17,9 @@ const SELECT_META: ComponentMeta<SelectProps> = {
   },
   props: SELECT_PROPS_META,
   examples: SELECT_EXAMPLES_META,
+  changelog: {
+    '0.1.0': ['Released'],
+  },
 }
 
 export default {

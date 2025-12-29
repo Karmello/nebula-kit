@@ -19,6 +19,9 @@ const BUTTON_META: ComponentMeta<ButtonProps> = {
   },
   props: BUTTON_PROPS_META,
   examples: BUTTON_EXAMPLES_META,
+  changelog: {
+    '0.1.0': ['Released'],
+  },
 }
 
 export default {

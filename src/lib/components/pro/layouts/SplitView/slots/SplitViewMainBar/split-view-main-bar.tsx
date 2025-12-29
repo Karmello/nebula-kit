@@ -1,4 +1,3 @@
-import { ComponentProps, ElementType, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
@@ -6,21 +5,13 @@ import { withPrefix } from 'lib/helpers'
 
 import { SplitViewMainBarProps } from './definitions'
 
-export const SplitViewMainBar = <T extends ElementType = 'div'>({
-  children,
-  tag,
-  tagAttrs,
-  tagRef,
-}: SplitViewMainBarProps<T>) => {
+export const SplitViewMainBar = ({ children, tagAttrs, tagRef }: SplitViewMainBarProps) => {
   return (
     <Box
-      tag={tag}
-      tagAttrs={
-        {
-          ...tagAttrs,
-          className: classNames(withPrefix('split-view-main-bar'), tagAttrs?.className),
-        } as PropsWithoutRef<ComponentProps<T>>
-      }
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('split-view-main-bar'), tagAttrs?.className),
+      }}
       tagRef={tagRef}
     >
       {children}

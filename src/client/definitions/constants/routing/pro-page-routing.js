@@ -2,6 +2,7 @@ const PRO_PAGE_SECTIONS = [
   { key: 'overview', label: 'Overview' },
   { key: 'examples', label: 'Examples' },
   { key: 'props', label: 'Props' },
+  { key: 'changelog', label: 'Changelog' },
 ]
 
 export const PRO_PAGE_CATEGORIES = [

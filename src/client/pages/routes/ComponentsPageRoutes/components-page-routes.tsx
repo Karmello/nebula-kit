@@ -1,7 +1,13 @@
 import { useMemo } from 'react'
 import { Navigate, Route, Routes } from 'react-router'
 
-import { ComponentOverviewPage, ComponentPropsPage, ComponentExamplesPage } from 'client/pages'
+import {
+  ComponentOverviewPage,
+  ComponentPropsPage,
+  ComponentExamplesPage,
+  ComponentChangelogPage,
+} from 'client/pages'
+
 import { CORE_PAGE_CATEGORIES, PRO_PAGE_CATEGORIES, PageKey } from 'client/definitions'
 import { NextPageButton } from 'client/components'
 import { Spacer } from 'lib/components'
@@ -20,6 +26,8 @@ const PageResolver = ({
       return <ComponentPropsPage pageKey={pageKey} />
     case 'examples':
       return <ComponentExamplesPage pageKey={pageKey} />
+    case 'changelog':
+      return <ComponentChangelogPage pageKey={pageKey} />
     default:
       return null
   }

@@ -1,12 +1,7 @@
-import { ElementType } from 'react'
-
 import { HtmlTagProps } from 'lib/components'
 
-type PropsFromHtmlTag<T extends ElementType = 'div'> = Pick<
-  HtmlTagProps<T>,
-  'tag' | 'tagAttrs' | 'tagRef'
-> & {
-  children: HtmlTagProps<T>['children']
+type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
+  children: HtmlTagProps['children']
 }
 
-export type SplitViewMainBarProps<T extends ElementType = 'div'> = PropsFromHtmlTag<T>
+export type SplitViewMainBarProps = PropsFromHtmlTag

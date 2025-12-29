@@ -14,6 +14,9 @@ const INPUT_META: ComponentMeta<InputProps> = {
   },
   props: INPUT_PROPS_META,
   examples: INPUT_EXAMPLES_META,
+  changelog: {
+    '0.1.0': ['Released'],
+  },
 }
 
 export default {

@@ -12,6 +12,7 @@ const SPLIT_VIEW_MAIN_BAR_META: ComponentMeta<SplitViewMainBarProps> = {
       'should be placed inside SplitView.Main slot',
     ],
     composedOf: ['Box'],
+    topLevelTags: ['div'],
   },
   props: SPLIT_VIEW_MAIN_BAR_PROPS_META,
 }

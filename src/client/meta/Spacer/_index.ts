@@ -17,6 +17,9 @@ const SPACER_META: ComponentMeta<SpacerProps> = {
   },
   props: SPACER_PROPS_META,
   examples: SPACER_EXAMPLES_META,
+  changelog: {
+    '0.1.0': ['Released'],
+  },
 }
 
 export default {

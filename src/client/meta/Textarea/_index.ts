@@ -14,6 +14,9 @@ const TEXTAREA_META: ComponentMeta<TextareaProps> = {
   },
   props: TEXTAREA_PROPS_META,
   examples: TEXTAREA_EXAMPLES_META,
+  changelog: {
+    '0.1.0': ['Released'],
+  },
 }
 
 export default {

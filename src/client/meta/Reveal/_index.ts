@@ -18,6 +18,9 @@ const REVEAL_META: ComponentMeta<RevealProps> = {
   },
   props: REVEAL_PROPS_META,
   examples: REVEAL_EXAMPLES_META,
+  changelog: {
+    '0.1.0': ['Released'],
+  },
 }
 
 export default {

@@ -20,6 +20,9 @@ const ICON_META: ComponentMeta<IconProps> = {
   },
   props: ICON_PROPS_META,
   examples: ICON_EXAMPLES_META,
+  changelog: {
+    '0.1.0': ['Released'],
+  },
 }
 
 export default {
