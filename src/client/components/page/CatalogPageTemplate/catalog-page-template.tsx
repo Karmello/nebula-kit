@@ -46,7 +46,7 @@ export const CatalogPageTemplate = ({
                     variant="ghost"
                     color="blue"
                     intent={isCategorySelected ? 'primary' : 'neutral'}
-                    initiallyExpanded={isCategorySelected}
+                    expanded={isCategorySelected}
                     justifyContent="flex-start"
                   >
                     {items.map(({ key: itemKey, label, sections }) => {
@@ -66,6 +66,7 @@ export const CatalogPageTemplate = ({
                             base: isItemSelected ? 'secondary' : 'tertiary',
                             lg: isItemSelected ? 'muted' : 'neutral',
                           }}
+                          bold={isItemSelected}
                         >
                           {label}
                         </SideNav.Item>
@@ -115,6 +116,7 @@ export const CatalogPageTemplate = ({
                                 base: isItemSelected ? 'secondary' : 'tertiary',
                                 lg: isItemSelected ? 'muted' : 'neutral',
                               }}
+                              bold={isItemSelected}
                             >
                               {label}
                             </SideNav.Item>

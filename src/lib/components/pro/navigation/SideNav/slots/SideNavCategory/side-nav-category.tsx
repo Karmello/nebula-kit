@@ -3,6 +3,7 @@ import classNames from 'classnames'
 
 import { WithSlots } from 'lib/components/core/internal'
 import { Resize, Box, Button, Flex, Spacer } from 'lib/components'
+import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box'
 import { withPrefix } from 'lib/helpers'
 
 import { useSideNavContext } from '../../SideNavProvider'
@@ -10,6 +11,7 @@ import { useSideNavContext } from '../../SideNavProvider'
 import {
   DEFAULT_SIDE_NAV_CATEGORY_INTENT,
   DEFAULT_SIDE_NAV_CATEGORY_VARIANT,
+  DEFAULT_SIDE_NAV_CATEGORY_EXPANDED,
   SideNavCategoryProps,
 } from './definitions'
 
@@ -25,13 +27,12 @@ export const SideNavCategory = ({
   justifyContent,
   // own
   label,
-  initiallyExpanded = false,
+  expanded = DEFAULT_SIDE_NAV_CATEGORY_EXPANDED,
 }: SideNavCategoryProps) => {
   const {
     expandedCategories,
     setExpandedCategories,
     expandMode,
-    rowGap,
     variant: rootVariant,
     color: rootColor,
     intent: rootIntent,
@@ -44,10 +45,10 @@ export const SideNavCategory = ({
   }, [id])
 
   useEffect(() => {
-    if (initiallyExpanded) {
+    if (expanded) {
       setExpandedCategories(state => ({ ...state, [id]: true }))
     }
-  }, [initiallyExpanded])
+  }, [expanded])
 
   return (
     <WithSlots<'SideNav.Item'>
@@ -96,8 +97,8 @@ export const SideNavCategory = ({
             </Box>
             <Box tag="li">
               <Resize property="blockSize" visible={expandedCategories[id]}>
-                <Spacer blockSize={rowGap !== undefined ? rowGap : '0px'} />
-                <Flex tag="ul" flexDirection="column" rowGap={rowGap}>
+                <Spacer blockSize={BOX_BORDER_WIDTH} />
+                <Flex tag="ul" flexDirection="column" gap={BOX_BORDER_WIDTH}>
                   {slotsByName['SideNav.Item'].map((slot, key) => (
                     <Box key={key} tag="li" inlineSize="100%">
                       {cloneElement(slot as any, { categoryId: id })}

@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 
 import { WithSlots } from 'lib/components/core/internal'
+import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box'
 import { Flex } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box/definitions'
 
 import { SideNavProvider } from './SideNavProvider'
 import { SideNavToggle } from './components'
@@ -16,8 +16,6 @@ export const SideNav = ({
   tagAttrs,
   tagRef,
   children,
-  // Flex
-  rowGap,
   // Button
   color,
   intent,
@@ -25,8 +23,6 @@ export const SideNav = ({
   expandMode = DEFAULT_SIDE_NAV_EXPAND_MODE,
   variant,
 }: SideNavProps) => {
-  const finalRowGap = rowGap !== undefined ? rowGap : BOX_BORDER_WIDTH
-
   return (
     <WithSlots<'SideNav.Category' | 'SideNav.Item'>
       componentName="SideNav"
@@ -38,13 +34,7 @@ export const SideNav = ({
       childrenToVerify={children}
     >
       {({ slotsByName, allValidSlots }) => (
-        <SideNavProvider
-          expandMode={expandMode}
-          rowGap={finalRowGap}
-          variant={variant}
-          color={color}
-          intent={intent}
-        >
+        <SideNavProvider expandMode={expandMode} variant={variant} color={color} intent={intent}>
           <Flex
             tag="nav"
             tagAttrs={{
@@ -53,7 +43,7 @@ export const SideNav = ({
             }}
             tagRef={tagRef}
             flexDirection="column"
-            rowGap={finalRowGap}
+            gap={BOX_BORDER_WIDTH}
           >
             {slotsByName['SideNav.Category'].length ? <SideNavToggle /> : null}
             {allValidSlots}

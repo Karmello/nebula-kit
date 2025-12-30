@@ -2,7 +2,8 @@ import { ComponentMeta } from 'client/definitions'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { BUTTON_PROPS_META } from 'client/meta/Button/props'
 import { SideNavCategoryProps } from 'lib/components'
-import { SIDE_NAV_VARIANTS } from 'lib/components/pro/navigation/SideNav'
+
+import { DEFAULT_SIDE_NAV_CATEGORY_EXPANDED, SIDE_NAV_VARIANTS } from 'lib/components/pro/navigation/SideNav'
 
 import {
   DEFAULT_SIDE_NAV_CATEGORY_INTENT,
@@ -17,10 +18,11 @@ const SIDE_NAV_CATEGORY_PROPS_META: ComponentMeta<SideNavCategoryProps>['props']
     description: 'SideNav.Category items rendered.',
   },
   color: BUTTON_PROPS_META.color,
-  initiallyExpanded: {
+  expanded: {
     options: ['boolean'],
-    defaultValue: 'false',
-    description: 'Use when you want to expand the active category at the initial render.',
+    defaultValue: String(DEFAULT_SIDE_NAV_CATEGORY_EXPANDED),
+    description:
+      'Controls whether the category is expanded. When provided, the expansion state is controlled externally.',
   },
   intent: {
     ...BUTTON_PROPS_META.intent,

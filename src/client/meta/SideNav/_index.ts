@@ -10,11 +10,13 @@ import { SIDE_NAV_CATEGORY_META } from './SideNavCategory/_index'
 const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
   overview: {
     bundle: 'pro',
-    title: 'Vertical navigation component for organizing page links.',
+    title:
+      'Sidebar navigation component designed specifically for flat and nested navigation with expandable categories.',
     description: [
-      'supports expandable categories and flat items',
-      'supports an expand-all/collapse-all control',
-      'ideal for use inside SplitView.Side',
+      'supports flat items and expandable categories for hierarchical navigation',
+      'allows single or multiple categories to be expanded at once',
+      'designed for use in sidebar layouts such as SplitView.Side',
+      'intentionally opinionated and optimized for sidebar navigation, it is not intended as a general-purpose menu component',
     ],
     composedOf: ['Flex'],
     topLevelTags: ['nav'],

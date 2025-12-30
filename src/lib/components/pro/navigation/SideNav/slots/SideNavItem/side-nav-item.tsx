@@ -15,6 +15,11 @@ export const SideNavItem = ({
   variant,
   color,
   intent,
+  bold,
+  customSvgIcon,
+  iconName,
+  iconPlacement,
+  justifyContent,
   // Link
   href,
   onClick,
@@ -45,6 +50,11 @@ export const SideNavItem = ({
         intent={intent || rootIntent}
         size="sm"
         fullWidth
+        bold={bold}
+        customSvgIcon={customSvgIcon}
+        iconName={iconName}
+        iconPlacement={iconPlacement}
+        justifyContent={justifyContent}
       >
         {children}
       </Button>

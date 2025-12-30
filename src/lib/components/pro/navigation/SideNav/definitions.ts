@@ -1,9 +1,10 @@
-import { ButtonProps, FlexProps, HtmlTagProps } from 'lib/components'
-import { BoxVariant } from 'lib/components/core/base/Box/definitions'
+import { ButtonProps, HtmlTagProps } from 'lib/components'
+import { BoxVariant } from 'lib/components/core/base/Box'
 
 export const SIDE_NAV_EXPAND_MODES = ['single', 'multiple'] as const
 export const SIDE_NAV_VARIANTS = ['solid', 'ghost'] as const satisfies BoxVariant[]
-export const DEFAULT_SIDE_NAV_EXPAND_MODE: SideNavExpandMode = 'multiple'
+
+export const DEFAULT_SIDE_NAV_EXPAND_MODE: SideNavProps['expandMode'] = 'multiple'
 
 export type SideNavExpandMode = (typeof SIDE_NAV_EXPAND_MODES)[number]
 export type SideNavVariant = (typeof SIDE_NAV_VARIANTS)[number]
@@ -17,8 +18,6 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'nav'>, 'tagAttrs' | 'tagRef'> & {
   variant?: SideNavVariant
 }
 
-type PropsFromFlex = Pick<FlexProps, 'rowGap'>
-
 type PropsFromButton = Pick<ButtonProps<'a'>, 'color' | 'intent'>
 
-export type SideNavProps = PropsFromHtmlTag & PropsFromFlex & PropsFromButton & SideNavOwnProps
+export type SideNavProps = PropsFromHtmlTag & PropsFromButton & SideNavOwnProps

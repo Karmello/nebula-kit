@@ -6,14 +6,18 @@ import { SideNavItemProps } from 'lib/components'
 import { SIDE_NAV_VARIANTS } from 'lib/components/pro/navigation/SideNav/'
 
 const SIDE_NAV_ITEM_PROPS_META: ComponentMeta<SideNavItemProps>['props'] = {
+  bold: BUTTON_PROPS_META.bold,
   children: {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
-    description: 'Content rendered inside Link.',
   },
   color: BUTTON_PROPS_META.color,
+  customSvgIcon: BUTTON_PROPS_META.customSvgIcon,
   href: LINK_PROPS_META.href,
+  iconName: BUTTON_PROPS_META.iconName,
+  iconPlacement: BUTTON_PROPS_META.iconPlacement,
   intent: BUTTON_PROPS_META.intent,
+  justifyContent: BUTTON_PROPS_META.justifyContent,
   onClick: LINK_PROPS_META.onClick,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,

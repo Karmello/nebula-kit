@@ -8,8 +8,9 @@ const SIDE_NAV_ITEM_META: ComponentMeta<SideNavItemProps> = {
     name: 'SideNav.Item',
     title: 'Defines a single navigational entry within SideNav.',
     description: [
-      'meant to be used as a child of SideNav.Category for nested navigation',
-      'can be also used directly inside SideNav for flat navigation',
+      'represents a leaf item that navigates to a destination or triggers navigation logic',
+      'can be used directly inside SideNav for flat navigation',
+      'can be nested inside SideNav.Category to participate in hierarchical navigation',
     ],
     composedOf: ['Link', 'Button'],
     topLevelTags: ['a'],

@@ -4,10 +4,11 @@ import { SideNavVariant } from '../../definitions'
 
 export const DEFAULT_SIDE_NAV_CATEGORY_VARIANT: SideNavCategoryProps['variant'] = 'ghost'
 export const DEFAULT_SIDE_NAV_CATEGORY_INTENT: SideNavCategoryProps['intent'] = 'neutral'
+export const DEFAULT_SIDE_NAV_CATEGORY_EXPANDED: SideNavCategoryProps['expanded'] = false
 
 type SideNavCategoryOwnProps = {
   label: string
-  initiallyExpanded?: boolean
+  expanded?: boolean
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'ul'>, 'tagAttrs' | 'tagRef'> & {

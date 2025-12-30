@@ -7,7 +7,10 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'a'>, 'tagRef' | 'tagAttrs'> & {
   variant?: SideNavVariant
 }
 
-type PropsFromButton = Pick<ButtonProps, 'color' | 'intent'>
+type PropsFromButton = Pick<
+  ButtonProps,
+  'color' | 'intent' | 'bold' | 'customSvgIcon' | 'iconName' | 'iconPlacement' | 'justifyContent'
+>
 
 type PropsFromLink = Pick<LinkProps, 'href' | 'onClick'>
 
