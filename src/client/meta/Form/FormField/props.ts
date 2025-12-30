@@ -17,6 +17,8 @@ const FORM_FIELD_PROPS_META: ComponentMeta<FormFieldProps>['props'] = {
   flex: {
     ...FLEX_ITEM_PROPS_META.flex,
     defaultValue: String(DEFAULT_FORM_FIELD_FLEX),
+    description:
+      'Shorthand for flex-grow, flex-shrink and flex-basis. Defaults to 1 to allow fields to expand and fill available space.',
   },
   flexBasis: FLEX_ITEM_PROPS_META.flexBasis,
   flexGrow: FLEX_ITEM_PROPS_META.flexGrow,

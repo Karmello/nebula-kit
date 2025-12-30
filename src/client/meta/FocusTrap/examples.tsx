@@ -21,7 +21,8 @@ const FOCUS_TRAP_EXAMPLES_META: ComponentMeta<FocusTrapProps>['examples'] = [
   {
     description: 'Focus stays locked between the three buttons while the trap is active.',
     jsx: <FocusTrapWrapper />,
-    code: `const ref = useRef(null)
+    code: `// The tagRef must point to the same DOM element that visually contains the focusable content
+const ref = useRef(null)
 \t
 return (
   <FocusTrap tagRef={ref} active>

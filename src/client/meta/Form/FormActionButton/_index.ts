@@ -6,10 +6,10 @@ import { FORM_ACTION_BUTTON_PROPS_META } from './props'
 const FORM_ACTION_BUTTON_META: ComponentMeta<FormActionButtonProps> = {
   overview: {
     name: 'Form.ActionButton',
-    title: 'Button slot for form-related or custom actions.',
+    title: 'Action button for form submission and related actions.',
     description: [
-      'exposes the Flex.Item interface for per-item layout control',
-      'use the "type" prop to enable built-in behaviors like submit, reset or clear',
+      'exposes Flex.Item props for per-button layout control',
+      'use the "type" prop to enable built-in behaviors such as submit, reset or clear',
     ],
     composedOf: ['Flex.Item', 'Button'],
     topLevelTags: ['button'],

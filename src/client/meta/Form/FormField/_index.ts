@@ -6,12 +6,12 @@ import { FORM_FIELD_PROPS_META } from './props'
 const FORM_FIELD_META: ComponentMeta<FormFieldProps> = {
   overview: {
     name: 'Form.Field',
-    title: 'Container for individual form controls.',
+    title: 'Container for a single form field and its associated metadata.',
     description: [
-      'uses RHF Controller under the hood to manage field registration and value control',
-      'offers shorthand props for applying quick validation rules',
-      'automatically links the label and control for accessibility using the "name" prop',
-      'exposes the Flex.Item interface for per-item layout control',
+      'manages field registration and value control using React Hook Form',
+      'provides shorthand props for common validation rules',
+      'automatically associates labels and controls for accessibility based on the "name" prop',
+      'exposes Flex.Item props for per-field layout control',
     ],
     composedOf: ['Flex.Item'],
     topLevelTags: ['div'],

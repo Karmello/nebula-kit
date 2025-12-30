@@ -6,8 +6,8 @@ import { FORM_LABEL_PROPS_META } from './props'
 const FORM_LABEL_META: ComponentMeta<FormLabelProps> = {
   overview: {
     name: 'Form.Label',
-    title: 'Slot for providing a custom label element for the field.',
-    description: ['overrides the "label" prop on Form.Field when provided'],
+    title: "Custom label slot for a form field's control.",
+    description: ['replaces the "label" prop on Form.Field when provided'],
     composedOf: ['Text', 'Spacer'],
     topLevelTags: ['label'],
   },

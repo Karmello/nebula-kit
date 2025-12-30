@@ -14,11 +14,11 @@ import { FORM_HINT_META } from './FormHint/_index'
 const FORM_META: ComponentMeta<FormProps> = {
   overview: {
     bundle: 'pro',
-    title: 'Component for building and managing forms, powered by React Hook Form under the hood.',
+    title: 'Composable form container with layout and submission orchestration, built on React Hook Form.',
     description: [
-      'controls layout between its slots',
-      'receives RHF configuration props and passes them to "useForm" hook internally',
-      'passes "onValidSubmission" and "onInvalidSubmission" to RHF "handleSubmit" internally',
+      'coordinates layout between form sections and actions',
+      'manages form state and validation using React Hook Form internally',
+      'orchestrates the submission lifecycle via valid and invalid submission handlers',
     ],
     composedOf: ['Flex', 'Flex.Item'],
     topLevelTags: ['form'],
