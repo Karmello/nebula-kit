@@ -1,11 +1,12 @@
 import { useLocation } from 'react-router'
-import { pascalCase } from 'change-case'
 
 import meta from 'client/meta'
 import { useNavigateTo } from 'client/hooks'
 import { ComponentsPageRoutes, FoundationsPageRoutes } from 'client/pages'
 import { PageKey } from 'client/definitions'
-import { Box, Breadcrumb, SideNav, Spacer, SplitView, Text, Divider, Flex } from 'lib/components'
+import { Box, SideNav, Spacer, SplitView, Text, Divider, Flex } from 'lib/components'
+
+import { CatalogPageBreadcrumb } from './CatalogPageBreadcrumb'
 
 type Props = {
   pageKey: PageKey.foundations | PageKey.core | PageKey.pro
@@ -80,13 +81,11 @@ export const CatalogPageTemplate = ({
           <SplitView.Main paddingLeft="20px">
             <SplitView.MainBar>
               <Box marginRight="20px">
-                <Breadcrumb
-                  items={[
-                    pascalCase(pageKey),
-                    activeCategoryObj?.label,
-                    activeItemObj?.label,
-                    activeSectionObj?.label,
-                  ]}
+                <CatalogPageBreadcrumb
+                  pageKey={pageKey.replace('/', '')}
+                  categoryKey={activeCategoryObj?.key}
+                  itemKey={activeItemObj?.key}
+                  sectionKey={activeSectionObj?.key}
                 />
               </Box>
             </SplitView.MainBar>

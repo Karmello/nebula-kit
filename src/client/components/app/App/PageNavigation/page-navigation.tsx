@@ -42,7 +42,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
       </Segment.Item>
       <Segment.Item>
         <Link
-          href={PageKey.foundations}
+          href={`${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${foundationsPageStore.sectionKey}`}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
             navigateTo(
@@ -61,7 +61,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
       </Segment.Item>
       <Segment.Item>
         <Link
-          href={PageKey.core}
+          href={`${PageKey.core}/${corePageStore.categoryKey}/${corePageStore.itemKey}/${corePageStore.sectionKey}`}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
             navigateTo(
@@ -80,7 +80,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
       </Segment.Item>
       <Segment.Item>
         <Link
-          href={PageKey.pro}
+          href={`${PageKey.pro}/${proPageStore.categoryKey}/${proPageStore.itemKey}/${proPageStore.sectionKey}`}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
             navigateTo(
