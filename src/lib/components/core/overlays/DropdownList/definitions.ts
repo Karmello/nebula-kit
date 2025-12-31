@@ -3,7 +3,6 @@ import { JSX } from 'react'
 import { BoxProps, ButtonProps, HtmlTagProps } from 'lib/components'
 
 import { PortalPlacement } from '../../utility/Portal'
-import { BoxVariant } from '../../base/Box'
 
 export const DROPDOWN_LIST_PLACEMENTS = [
   'bottom-start',
@@ -13,7 +12,6 @@ export const DROPDOWN_LIST_PLACEMENTS = [
 ] as const satisfies PortalPlacement[]
 
 export const DROPDOWN_LIST_SCROLL_ALIGN = ['start', 'center', 'end'] as const
-export const DROPDOWN_LIST_VARIANT = ['solid', 'outline'] as const satisfies BoxVariant[]
 
 export const DEFAULT_DROPDOWN_LIST_KEEP_OPEN: DropdownListProps['keepOpen'] = false
 export const DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT: DropdownListProps['visibleItemsCount'] = 5
@@ -23,7 +21,6 @@ export const DEFAULT_DROPDOWN_LIST_INTENT: DropdownListProps['intent'] = 'tertia
 export const DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT: DropdownListProps['itemBorderIntent'] = 'muted'
 export const DEFAULT_DROPDOWN_LIST_PLACEMENT: DropdownListProps['placement'] = 'bottom-start'
 
-export type DropdownListVariant = (typeof DROPDOWN_LIST_VARIANT)[number]
 export type DropdownListScrollAlign = (typeof DROPDOWN_LIST_SCROLL_ALIGN)[number]
 export type DropdownListPlacement = (typeof DROPDOWN_LIST_PLACEMENTS)[number]
 
@@ -45,8 +42,6 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagRef' | 'tagAttrs'> & {
   children: HtmlTagProps<'div'>['children'] | ((args: ChildrenAsFuncArgs) => JSX.Element)
 }
 
-type PropsFromButton = Pick<ButtonProps, 'color' | 'intent' | 'size'> & {
-  variant?: DropdownListVariant
-}
+type PropsFromButton = Pick<ButtonProps, 'color' | 'intent' | 'size'>
 
 export type DropdownListProps = PropsFromHtmlTag & PropsFromButton & DropdownListOwnProps

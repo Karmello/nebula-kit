@@ -23,7 +23,6 @@ export const DropdownList = ({
   tagRef,
   tagAttrs,
   // Button
-  variant,
   color,
   intent = DEFAULT_DROPDOWN_LIST_INTENT,
   size = DEFAULT_BUTTON_SIZE,
@@ -66,7 +65,6 @@ export const DropdownList = ({
             setHoveredIndex={setHoveredIndex}
             keepOpen={keepOpen}
             size={size}
-            variant={variant}
             color={color}
             intent={intent}
             blockMouse={blockMouse}

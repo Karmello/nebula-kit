@@ -21,7 +21,6 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
     setResizeVisible,
     keepOpen,
     size,
-    variant,
     color,
     intent,
     hoveredIndex,
@@ -59,7 +58,7 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
           },
         } as PropsWithoutRef<ComponentProps<T>>
       }
-      variant={variant}
+      variant="solid"
       color={color}
       intent={intent}
       size={size}

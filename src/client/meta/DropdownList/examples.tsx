@@ -16,25 +16,9 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     skip: true,
   },
   {
-    description:
-      'Default DropdownList renders with solid variant, tertiary intent and muted divider between items.',
+    description: 'Default DropdownList renders with tertiary intent and muted divider between items.',
     jsx: (
       <DropdownList>
-        <DropdownList.Trigger>
-          <Button variant="ghost" intent="primary">
-            Toggle list
-          </Button>
-        </DropdownList.Trigger>
-        {Array.from({ length: 10 }, (v, k) => (
-          <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
-        ))}
-      </DropdownList>
-    ),
-  },
-  {
-    description: 'DropdownList with outline variant, primary intent and primary itemBorderIntent set.',
-    jsx: (
-      <DropdownList variant="outline" intent="primary" itemBorderIntent="primary">
         <DropdownList.Trigger>
           <Button variant="ghost" intent="primary">
             Toggle list

@@ -10,7 +10,6 @@ import {
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
   DROPDOWN_LIST_PLACEMENTS,
-  DROPDOWN_LIST_VARIANT,
 } from 'lib/components/core/overlays/DropdownList'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -66,11 +65,6 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
-  variant: {
-    ...BUTTON_PROPS_META.variant,
-    options: DROPDOWN_LIST_VARIANT as never,
-    description: 'Visual style variant applied to the list.',
-  },
   visibleItemsCount: {
     options: ['number'],
     defaultValue: String(DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT),

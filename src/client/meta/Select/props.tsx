@@ -45,7 +45,6 @@ const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
     options: ['string'],
     description: 'Current selected item value when the component is used in controlled mode.',
   },
-  variant: DROPDOWN_LIST_PROPS_META.variant,
   visibleItemsCount: DROPDOWN_LIST_PROPS_META.visibleItemsCount,
 }
 

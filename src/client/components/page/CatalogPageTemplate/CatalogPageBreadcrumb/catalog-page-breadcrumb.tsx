@@ -72,6 +72,7 @@ export const CatalogPageBreadcrumb = ({
 
         navigateTo(`/${pageKey}/${categoryKey}/${itemKey}/${sectionKey}`)
       }}
+      color="blue"
     />
   )
 }

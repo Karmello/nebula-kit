@@ -15,7 +15,6 @@ export const Select = ({
   tagAttrs,
   tagRef,
   // DropdownList
-  variant,
   intent,
   color,
   size,
@@ -62,7 +61,6 @@ export const Select = ({
             <DropdownList
               tagRef={tagRef}
               tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('select'), tagAttrs?.className) }}
-              variant={variant}
               intent={intent}
               color={color}
               size={size}
@@ -93,6 +91,7 @@ export const Select = ({
                       iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
                       justifyContent="space-between"
                       size={size}
+                      variant="solid"
                       intent={intent}
                       color={color}
                       disabled={disabled}
