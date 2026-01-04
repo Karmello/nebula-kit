@@ -45,3 +45,8 @@ button,
 [role='button'] {
   -webkit-tap-highlight-color: transparent;
 }
+
+::selection {
+  background: var(--neb-text);
+  color: var(--neb-background);
+}

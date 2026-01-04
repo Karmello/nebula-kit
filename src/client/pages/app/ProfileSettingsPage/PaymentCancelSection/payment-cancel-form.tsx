@@ -37,7 +37,7 @@ export const PaymentCancelForm = ({
       />
       <Flex flexDirection="column" rowGap="7px">
         {!cancelSectionEnabled ? (
-          <Text intent="secondary" italic>
+          <Text intent="secondary" color="gray" italic>
             * For paid users
           </Text>
         ) : null}
@@ -59,7 +59,7 @@ export const PaymentCancelForm = ({
           </Box>
           <Box position="absolute">
             <Resize property="inlineSize" visible={enableInput}>
-              <Box inlineSize="400px">
+              <Box inlineSize="400px" paddingRight="20px">
                 <Input
                   tagAttrs={{
                     placeholder: 'Enter your email',

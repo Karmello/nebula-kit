@@ -56,7 +56,7 @@ export default () => {
       <Section heading="Testing and validation" intent="primary" color="blue" size="sm">
         <Text intent="neutral">Quality is enforced on three levels:</Text>
         <Spacer blockSize="10px" />
-        <MarkerList intent="neutral" color="gray">
+        <MarkerList intent="neutral">
           <MarkerList.Item>
             <Text>tsd validates type definitions at build time</Text>
           </MarkerList.Item>

@@ -16,8 +16,8 @@ export const RenderPanel = () => {
         tagAttrs={{ style: { borderStyle: 'dashed' } }}
         drawable
         variant="outline"
-        intent="secondary"
-        color="blue"
+        intent="tertiary"
+        color="gray"
         padding="25px"
       >
         <Component {...getPropValues(activeComponent)} />

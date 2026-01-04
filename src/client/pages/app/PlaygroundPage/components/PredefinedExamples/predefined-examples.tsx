@@ -1,4 +1,13 @@
-import { Button, Flex, BoxProps, ButtonProps, CalloutProps, SectionProps, TextProps } from 'lib/components'
+import {
+  Button,
+  Flex,
+  BoxProps,
+  ButtonProps,
+  CalloutProps,
+  SectionProps,
+  TextProps,
+  IconProps,
+} from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
 
@@ -79,6 +88,20 @@ const CONFIG: Record<string, object[]> = {
       typography: 'h4',
     },
   ] as TextProps[],
+  Icon: [
+    {
+      color: 'blue',
+      intent: 'primary',
+      name: 'mail',
+      size: '30px',
+    },
+    {
+      color: 'red',
+      intent: 'secondary',
+      name: 'globe',
+      size: '40px',
+    },
+  ] as IconProps[],
 }
 
 export const PredefinedExamples = () => {

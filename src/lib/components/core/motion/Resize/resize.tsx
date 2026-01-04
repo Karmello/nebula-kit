@@ -15,37 +15,87 @@ export const Resize = ({
   duration = DEFAULT_RESIZE_DURATION,
   easing = DEFAULT_RESIZE_EASING,
 }: ResizeProps) => {
-  const ref = useRef<HTMLDivElement>(null)
+  /**
+   * Animated container.
+   * This element owns the animated inlineSize / blockSize
+   * and is intentionally constrained (overflow: hidden).
+   */
+  const containerRef = useRef<HTMLDivElement>(null)
 
-  const finalRef = tagRef || ref
+  /**
+   * Content wrapper.
+   * IMPORTANT:
+   * - This element is NOT animated
+   * - This element is NOT size-constrained
+   * - We measure THIS element, not the container
+   *
+   * Measuring the container breaks shrink + responsive reflow
+   * because the container is explicitly sized during animation.
+   */
+  const contentRef = useRef<HTMLDivElement>(null)
 
-  const resolvedSizes = useRef<Record<ResizeProps['property'], string>>({ blockSize: '', inlineSize: '' })
+  const finalRef = tagRef || containerRef
+
+  /**
+   * Last resolved pixel sizes.
+   * Resize animates ONLY between concrete pixel values.
+   * No responsive logic, no viewport awareness.
+   */
+  const resolvedSizes = useRef<Record<ResizeProps['property'], string>>({
+    blockSize: '',
+    inlineSize: '',
+  })
 
   useEffect(() => {
-    const el = finalRef.current
-    if (!el) return
+    const container = finalRef.current
+    const content = contentRef.current
+    if (!container || !content) return
 
+    /**
+     * Measure intrinsic content size and animate container to match.
+     *
+     * NOTE:
+     * - scrollWidth / scrollHeight are intentional here
+     * - Resize is content-driven, not layout-driven
+     * - Responsive motion is explicitly out of scope for v1
+     */
     const update = () => {
-      resolvedSizes.current.inlineSize = `${el.scrollWidth}px`
-      resolvedSizes.current.blockSize = `${el.scrollHeight}px`
+      resolvedSizes.current.inlineSize = `${content.scrollWidth}px`
+      resolvedSizes.current.blockSize = `${content.scrollHeight}px`
+
       if (visible) {
-        el.style[property] = resolvedSizes.current[property]
+        container.style[property] = resolvedSizes.current[property]
       }
     }
 
+    // Initial measurement on mount / visibility change
     update()
 
+    /**
+     * Observe CONTENT changes, not container changes.
+     * This reacts to:
+     * - dynamic children
+     * - text reflow
+     * - slot changes
+     * - expand / collapse use cases
+     */
     const observer = new ResizeObserver(update)
-    observer.observe(el)
+    observer.observe(content)
 
     return () => observer.disconnect()
   }, [finalRef, property, visible])
 
+  /**
+   * Visibility toggle.
+   * Resize only animates between 0px and the last measured size.
+   * It does NOT attempt to retarget or interpolate during layout changes.
+   */
   useEffect(() => {
-    if (finalRef.current) {
-      finalRef.current.style[property] = visible ? resolvedSizes.current[property] : '0px'
-    }
-  }, [visible])
+    const el = finalRef.current
+    if (!el) return
+
+    el.style[property] = visible ? resolvedSizes.current[property] : '0px'
+  }, [visible, property])
 
   return (
     <Box
@@ -55,14 +105,18 @@ export const Resize = ({
         style: {
           ...tagAttrs?.style,
           transitionProperty: 'block-size, inline-size',
-          transitionDuration: duration !== undefined ? `${duration}ms` : `${DEFAULT_RESIZE_DURATION}ms`,
+          transitionDuration: `${duration}ms`,
           transitionTimingFunction: easing ?? DEFAULT_RESIZE_EASING,
         },
       }}
       tagRef={finalRef}
       overflow="hidden"
     >
-      {children}
+      {/*
+        Internal content wrapper.
+        Do not remove unless Resize is redesigned.
+      */}
+      <Box tagRef={contentRef}>{children}</Box>
     </Box>
   )
 }

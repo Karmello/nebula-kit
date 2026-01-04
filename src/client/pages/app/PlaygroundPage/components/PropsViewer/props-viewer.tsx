@@ -14,7 +14,7 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
       <Text bold>Props table</Text>
       <Spacer blockSize="8px" />
       <Table layout="fixed" paddingBlock="5px" paddingInline="10px" color="gray">
-        <Table.Body>
+        <Table.Body paddingBlock="8px" paddingInline="8px">
           {Object.keys(props)
             .sort()
             .map(propName => {
@@ -34,7 +34,7 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
               }
 
               return (
-                <Table.Row>
+                <Table.Row key={propName}>
                   <Table.Cell>
                     <Button
                       tagAttrs={{

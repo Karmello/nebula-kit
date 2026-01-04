@@ -43,7 +43,7 @@ export const UpdateEmailSection = () => {
           }}
           resetOnSuccess
           flexDirection={{ base: 'column', md: 'row' }}
-          flexWrap="wrap"
+          flexWrap={{ md: 'wrap' }}
           alignItems={{ base: 'stretch', md: 'flex-end' }}
         >
           {({ formState: { isDirty } }) => {
