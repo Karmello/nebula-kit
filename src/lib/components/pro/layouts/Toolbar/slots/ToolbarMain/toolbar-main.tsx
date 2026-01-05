@@ -1,4 +1,3 @@
-import { useLayoutEffect } from 'react'
 import classNames from 'classnames'
 
 import { Grid, Resize } from 'lib/components'
@@ -8,11 +7,7 @@ import { ToolbarMainProps } from './definitions'
 import { useToolbarContext } from '../../ToolbarProvider'
 
 export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) => {
-  const { switchAt, mainOpen, setMainOpen, isSwitchAtHit } = useToolbarContext()
-
-  useLayoutEffect(() => {
-    setMainOpen(isSwitchAtHit)
-  }, [isSwitchAtHit])
+  const { switchAt, mainOpen, isSwitchAtHit } = useToolbarContext()
 
   return (
     <Grid.Item

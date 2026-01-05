@@ -304,7 +304,7 @@ describe('updateDomRespDataset', () => {
     expect(buttonStored.has('intent')).toBe(true)
   })
 
-  it('handles breakpoint changes, overrides, and prop removal without leaving stale dataset', () => {
+  it('handles breakpoint changes, overrides and prop removal without leaving stale dataset', () => {
     const el = document.createElement('div')
     const ref = { current: el }
 

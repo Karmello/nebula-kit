@@ -75,6 +75,23 @@ export const HomePage = () => {
                     Playground
                   </Button>
                 </Link>
+                <Link
+                  href={PageKey.foundations}
+                  onClick={() => {
+                    navigateTo(PageKey.foundations)
+                  }}
+                >
+                  <Button
+                    variant="ghost"
+                    color="purple"
+                    intent="primary"
+                    iconName="arrow-right"
+                    iconPlacement="right"
+                    size="sm"
+                  >
+                    Foundations
+                  </Button>
+                </Link>
               </Flex>
             </Flex.Item>
             <Flex.Item>

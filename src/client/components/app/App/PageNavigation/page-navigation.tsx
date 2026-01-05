@@ -3,7 +3,7 @@ import { useLocation } from 'react-router'
 import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
 import { useAppStore, useCorePageStore, useProPageStore, useFoundationsPageStore } from 'client/store'
-import { Button, Link, Segment } from 'lib/components'
+import { Button, Grid, Link } from 'lib/components'
 
 type Props = {
   setMainOpen: (mainOpen: boolean) => Promise<boolean>
@@ -22,8 +22,15 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
   const currentPageKey = `/${pathname.split('/')[1]}`
 
   return (
-    <Segment flexDirection={{ base: 'column', lg: 'row' }}>
-      <Segment.Item>
+    <Grid
+      gridTemplateColumns={{
+        base: 'repeat(2, 1fr)',
+        sm: 'repeat(3, 1fr)',
+        md: 'repeat(4, 1fr)',
+        lg: 'repeat(7, auto)',
+      }}
+    >
+      <Grid.Item>
         <Link
           href={PageKey.playground}
           onClick={async () => {
@@ -39,8 +46,8 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             Playground
           </Button>
         </Link>
-      </Segment.Item>
-      <Segment.Item>
+      </Grid.Item>
+      <Grid.Item>
         <Link
           href={`${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${foundationsPageStore.sectionKey}`}
           onClick={async () => {
@@ -58,8 +65,8 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             Foundations
           </Button>
         </Link>
-      </Segment.Item>
-      <Segment.Item>
+      </Grid.Item>
+      <Grid.Item>
         <Link
           href={`${PageKey.core}/${corePageStore.categoryKey}/${corePageStore.itemKey}/${corePageStore.sectionKey}`}
           onClick={async () => {
@@ -77,8 +84,8 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             Core
           </Button>
         </Link>
-      </Segment.Item>
-      <Segment.Item>
+      </Grid.Item>
+      <Grid.Item>
         <Link
           href={`${PageKey.pro}/${proPageStore.categoryKey}/${proPageStore.itemKey}/${proPageStore.sectionKey}`}
           onClick={async () => {
@@ -92,8 +99,8 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             Pro
           </Button>
         </Link>
-      </Segment.Item>
-      <Segment.Item>
+      </Grid.Item>
+      <Grid.Item>
         <Link
           href={PageKey.faq}
           onClick={async () => {
@@ -109,9 +116,9 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             FAQ
           </Button>
         </Link>
-      </Segment.Item>
+      </Grid.Item>
       {!user?.plan || user.plan === 'free' ? (
-        <Segment.Item>
+        <Grid.Item>
           <Link
             href={PageKey.pricing}
             onClick={async () => {
@@ -127,9 +134,9 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
               Pricing
             </Button>
           </Link>
-        </Segment.Item>
+        </Grid.Item>
       ) : null}
-      <Segment.Item>
+      <Grid.Item>
         <Link
           href={PageKey.feedback}
           onClick={async () => {
@@ -145,7 +152,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             Feedback
           </Button>
         </Link>
-      </Segment.Item>
-    </Segment>
+      </Grid.Item>
+    </Grid>
   )
 }

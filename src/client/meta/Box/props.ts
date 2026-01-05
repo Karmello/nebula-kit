@@ -126,7 +126,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   inset: {
     options: ['CSS'],
     isResponsive: true,
-    description: 'Shorthand for setting top, right, bottom, and left offsets. Directional props override it.',
+    description: 'Shorthand for setting top, right, bottom and left offsets. Directional props override it.',
     link: true,
   },
   intent: {

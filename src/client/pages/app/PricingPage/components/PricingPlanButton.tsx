@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
@@ -15,6 +15,10 @@ type PricingPlanButtonProps = {
 
 export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButtonProps) => {
   const [isRedirecting, setIsRedirecting] = useState<boolean>(false)
+
+  useLayoutEffect(() => {
+    setIsRedirecting(false)
+  }, [])
 
   const navigateTo = useNavigateTo()
   const { user } = useAppStore()

@@ -27,7 +27,7 @@ export default () => {
           <Text bold>Analytics</Text>
           <Text>
             This website collects basic analytics to understand visit patterns - such as where visitors come
-            from, how often they return, and which pages are viewed. This information is used solely for
+            from, how often they return and which pages are viewed. This information is used solely for
             statistical purposes and does not include any personally identifiable data.
           </Text>
         </MarkerList.Item>
