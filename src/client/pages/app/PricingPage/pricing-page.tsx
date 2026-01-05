@@ -70,7 +70,7 @@ export const PricingPage = () => {
                 gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }}
                 gap="20px"
               >
-                <Section heading="Free" variant="outline" intent="muted" iconName="leaf">
+                <Section heading="Free" variant="outline" intent="tertiary" iconName="leaf">
                   <Text intent="neutral" bold>
                     For newcomers.
                   </Text>
