@@ -31,8 +31,8 @@ export default () => {
         </Text>
         <CodeSnippet
           lang="log"
-          code={`@nebula-kit:registry=https://api.nebulakit.dev/download/pro
-//api.nebulakit.dev/download/pro/:_authToken=\${NEB_TOKEN}\
+          code={`@nebula-kit-private:registry=https://api.nebulakit.dev/registry
+//api.nebulakit.dev/registry/:_authToken=\${NEB_TOKEN}\
 \nalways-auth=true
 `}
         />
@@ -45,12 +45,12 @@ export default () => {
         <Text bold intent="neutral">
           Install with NPM
         </Text>
-        <CodeSnippet lang="bash" code="npm install @nebula-kit/pro" />
+        <CodeSnippet lang="bash" code="npm install @nebula-kit-private/pro" />
         <Spacer />
         <Text bold intent="neutral">
           Install with Yarn
         </Text>
-        <CodeSnippet lang="bash" code="yarn add @nebula-kit/pro" />
+        <CodeSnippet lang="bash" code="yarn add @nebula-kit-private/pro" />
       </Section>
     </Box>
   )
