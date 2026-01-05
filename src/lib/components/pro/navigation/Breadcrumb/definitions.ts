@@ -1,4 +1,4 @@
-import { ButtonProps, DropdownListProps, HtmlTagProps } from 'lib/components'
+import { ButtonProps, HtmlTagProps } from 'lib/components'
 
 export const BREADCRUMB_TAGS = ['div', 'nav', 'section'] as const
 
