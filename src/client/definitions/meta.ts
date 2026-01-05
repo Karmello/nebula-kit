@@ -1,6 +1,6 @@
 import { JSX } from 'react'
 
-import { ReleaseVersion } from 'lib/definitions'
+import { ReleaseVersion } from 'client/definitions'
 
 type Overview = {
   name?: string

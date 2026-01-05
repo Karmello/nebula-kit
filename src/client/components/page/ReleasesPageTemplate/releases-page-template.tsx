@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 import meta from 'client/meta'
-import { Box, Flex, Section, Select, Spacer } from 'lib/components'
-import { RELEASE_VERSIONS } from 'lib/definitions'
+import { RELEASE_VERSIONS, RELEASE_INFO, ReleaseVersion } from 'client/definitions'
+import { Box, Flex, Section, Select, Spacer, Text } from 'lib/components'
 
 export const ReleasePageTemplate = ({ bundle }: { bundle: 'core' | 'pro' }) => {
   const [releaseVersion, setReleaseVersion] = useState<string>(RELEASE_VERSIONS[RELEASE_VERSIONS.length - 1])
@@ -22,13 +22,16 @@ export const ReleasePageTemplate = ({ bundle }: { bundle: 'core' | 'pro' }) => {
 
   return (
     <Box maxInlineSize="55rem">
-      <Select inlineSize="150px" size="sm" value={releaseVersion} onChange={setReleaseVersion}>
-        {RELEASE_VERSIONS.map(v => (
-          <Select.Option key={v} value={v}>
-            {`v${v}`}
-          </Select.Option>
-        ))}
-      </Select>
+      <Flex flexWrap="wrap" alignItems="center" gap="20px">
+        <Select inlineSize="150px" size="sm" value={releaseVersion} onChange={setReleaseVersion}>
+          {RELEASE_VERSIONS.map(v => (
+            <Select.Option key={v} value={v}>
+              {`v${v}`}
+            </Select.Option>
+          ))}
+        </Select>
+        <Text>{new Date(RELEASE_INFO[releaseVersion as ReleaseVersion].timestamp).toDateString()}</Text>
+      </Flex>
       <Spacer blockSize="50px" />
       <Section heading="New components" size="sm">
         <Flex flexWrap="wrap" gap="5px">

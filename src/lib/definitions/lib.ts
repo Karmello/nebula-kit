@@ -6,8 +6,6 @@ export const LIB_PREFIX = 'neb'
 export const BREAKPOINTS = ['base', 'sm', 'md', 'lg', 'xl'] as const
 export const SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
 
-export const RELEASE_VERSIONS = ['0.1.0'] as const
-
 export const COLORS = [
   'gray',
   'blue',
@@ -82,7 +80,6 @@ export const ICON_NAMES = [
 
 // types
 
-export type ReleaseVersion = (typeof RELEASE_VERSIONS)[number]
 export type Breakpoint = (typeof BREAKPOINTS)[number]
 export type Sizes = (typeof SIZES)[number]
 export type IconName = (typeof ICON_NAMES)[number]

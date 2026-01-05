@@ -1,8 +1,7 @@
-import { PageKey } from 'client/definitions'
+import { PageKey, RELEASE_VERSIONS } from 'client/definitions'
 import { getCopyrightInfo } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'
 import { Button, Flex, Footer, Link, MarkerList, Spacer, Text } from 'lib/components'
-import { RELEASE_VERSIONS } from 'lib/definitions'
 
 export const AppFooter = () => {
   const navigateTo = useNavigateTo()
