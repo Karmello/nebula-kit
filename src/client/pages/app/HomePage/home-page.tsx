@@ -35,7 +35,7 @@ export const HomePage = () => {
         size="sm"
         variant="outline"
         content="This is the first public release of NebulaKit Core and Pro. From here on, all improvements, fixes and new features will be delivered through versioned releases. This is the foundation - it will evolve, but it is ready to use today."
-        heading="NebulaKit v0.1.2 is live"
+        heading="NebulaKit v0.2.0 is live"
       />
       <Spacer blockSize="75px" />
       <Flex flexDirection={{ base: 'column', lg: 'row' }} rowGap="80px" columnGap="160px">

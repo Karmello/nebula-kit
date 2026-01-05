@@ -25,7 +25,7 @@ const TOOLBAR_META: ComponentMeta<ToolbarProps> = {
   props: TOOLBAR_PROPS_META,
   examples: TOOLBAR_EXAMPLES_META,
   changelog: {
-    '0.1.2': ['Released'],
+    '0.2.0': ['Released'],
   },
 }
 

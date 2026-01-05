@@ -19,7 +19,7 @@ const WITH_ICON_META: ComponentMeta<WithIconProps> = {
   props: WITH_ICON_PROPS_META,
   examples: WITH_ICON_EXAMPLES_META,
   changelog: {
-    '0.1.2': ['Released'],
+    '0.2.0': ['Released'],
   },
 }
 

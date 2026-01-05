@@ -20,7 +20,7 @@ const LINK_META: ComponentMeta<LinkProps> = {
   examples: LINK_EXAMPLES_META,
   props: LINK_PROPS_META,
   changelog: {
-    '0.1.2': ['Released'],
+    '0.2.0': ['Released'],
   },
 }
 
