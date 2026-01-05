@@ -22,7 +22,7 @@ const HTML_TAG_META: ComponentMeta<HtmlTagProps<ElementType>> = {
   props: HTML_TAG_PROPS_META,
   examples: HTML_TAG_EXAMPLES_META,
   changelog: {
-    '0.1.0': ['Released'],
+    '0.1.2': ['Released'],
   },
 }
 

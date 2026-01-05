@@ -19,7 +19,7 @@ const SECTION_META: ComponentMeta<SectionProps> = {
   props: SECTION_PROPS_META,
   examples: SECTION_EXAMPLES_META,
   changelog: {
-    '0.1.0': ['Released'],
+    '0.1.2': ['Released'],
   },
 }
 

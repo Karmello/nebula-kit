@@ -21,7 +21,7 @@ const TEXT_META: ComponentMeta<TextProps> = {
   props: TEXT_PROPS_META,
   examples: TEXT_EXAMPLES_META,
   changelog: {
-    '0.1.0': ['Released'],
+    '0.1.2': ['Released'],
   },
 }
 

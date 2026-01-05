@@ -23,7 +23,7 @@ const BREADCRUMB_META: ComponentMeta<BreadcrumbProps> = {
   props: BREADCRUMB_PROPS_META,
   examples: BREADCRUMB_EXAMPLES_META,
   changelog: {
-    '0.1.0': ['Released'],
+    '0.1.2': ['Released'],
   },
 }
 

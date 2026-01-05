@@ -23,7 +23,7 @@ const GRID_META: ComponentMeta<GridProps> = {
   props: GRID_PROPS_META,
   examples: GRID_EXAMPLES_META,
   changelog: {
-    '0.1.0': ['Released'],
+    '0.1.2': ['Released'],
   },
 }
 

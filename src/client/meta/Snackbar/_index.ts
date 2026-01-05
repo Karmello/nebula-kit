@@ -23,7 +23,7 @@ const SNACKBAR_META: ComponentMeta<SnackbarProps> = {
   props: SNACKBAR_PROPS_META,
   examples: SNACKBAR_EXAMPLES_META,
   changelog: {
-    '0.1.0': ['Released'],
+    '0.1.2': ['Released'],
   },
 }
 
