@@ -38,11 +38,11 @@ export const ConnectToDiscordSection = ({
           Connect
         </Button>
         {userPlan === 'free' ? (
-          <Text intent="secondary" italic>
+          <Text intent="secondary" color="gray" italic>
             * For paid users
           </Text>
         ) : discordUserId ? (
-          <Text intent="secondary" italic iconName="check" iconPlacement="right">
+          <Text intent="secondary" color="gray" italic iconName="check" iconPlacement="right">
             Done
           </Text>
         ) : null}
