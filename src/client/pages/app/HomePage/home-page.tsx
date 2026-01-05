@@ -20,7 +20,7 @@ import { BoxColor } from 'lib/components/core/base/Box'
 import { COLORS, THEMES } from 'lib/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { PageKey } from 'client/definitions'
+import { PageKey, RELEASE_VERSIONS } from 'client/definitions'
 
 import { Ortho } from './Ortho'
 
@@ -35,7 +35,7 @@ export const HomePage = () => {
         size="sm"
         variant="outline"
         content="This is the first public release of NebulaKit Core and Pro. From here on, all improvements, fixes and new features will be delivered through versioned releases. This is the foundation - it will evolve, but it is ready to use today."
-        heading="NebulaKit v0.2.0 is live"
+        heading={`NebulaKit v${RELEASE_VERSIONS[RELEASE_VERSIONS.length - 1]} is live !`}
       />
       <Spacer blockSize="75px" />
       <Flex flexDirection={{ base: 'column', lg: 'row' }} rowGap="80px" columnGap="160px">
