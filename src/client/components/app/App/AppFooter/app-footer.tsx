@@ -16,7 +16,7 @@ export const AppFooter = () => {
     >
       <Footer.Section>
         <Text bold typography="caption">
-          About the project
+          About the library
         </Text>
         <Spacer blockSize="20px" />
         <Link

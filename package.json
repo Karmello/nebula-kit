@@ -1,6 +1,6 @@
 {
   "name": "@nebula-kit/core",
-  "version": "0.1.11",
+  "version": "0.1.0",
   "description": "React UI system built on composition - small, consistent parts combining into larger structures with clarity and control. Each component follows the same foundation, producing apps that stay predictable, stable and effortless to scale.",
   "license": "UNLICENSED",
   "type": "module",
