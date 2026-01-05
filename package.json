@@ -68,7 +68,7 @@
     "dist:core": "TSUP_BUNDLE=core yarn dist:bundle && rimraf dist/core/index.d.cts",
     "dist:pro": "TSUP_BUNDLE=pro yarn dist:bundle && rimraf dist/pro/index.d.cts",
     "dist": "rimraf dist && yarn dist:core && yarn dist:pro",
-    "pack:pro": "npm pack ./dist/pro --pack-destination ./dist",
+    "pack:pro": "npm pack ./dist/pro --pack-destination ./dist && mv dist/*private-pro-*.tgz dist/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz",
     "upload:pro:dev": "node ./scripts/update-local-versioning-json.js && aws s3 cp ./versioning.json s3://nebula-kit-pro-dev && aws s3 cp dist/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz s3://nebula-kit-pro-dev/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz",
     "upload:pro": "node ./scripts/update-local-versioning-json.js && aws s3 cp ./versioning.json s3://nebula-kit-pro && aws s3 cp dist/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz s3://nebula-kit-pro/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz",
     "publish:core": "rimraf dist/core && yarn dist:core && npm publish ./dist/core --access public",
