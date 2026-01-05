@@ -39,13 +39,6 @@ export default () => {
         </Text>
       </Section>
       <Spacer blockSize="30px" />
-      <Section heading="State management with Zustand" intent="primary" color="blue" size="sm">
-        <Text intent="neutral">
-          For global state and configuration, NebulaKit uses Zustand - small, predictable and React-first.
-          It's the quiet backbone behind theme switching, global tokens and surface settings.
-        </Text>
-      </Section>
-      <Spacer blockSize="30px" />
       <Section heading="Icons via lucide-react" intent="primary" color="blue" size="sm">
         <Text intent="neutral">
           Icons come from Lucide, a clean, consistent icon set built with React. They scale naturally with
