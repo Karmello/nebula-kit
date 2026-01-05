@@ -21,7 +21,8 @@ export default () => {
         lang="bash"
         code={`npm create vite@latest my-app --template react-ts
 cd my-app
-npm install @nebula-kit/core`}
+npm install @nebula-kit/core
+npm install @nebula-kit-private/pro`}
       />
       <Spacer />
       <Text intent="neutral" bold>
@@ -32,7 +33,7 @@ npm install @nebula-kit/core`}
         code={`import { NebkitProvider } from '@nebula-kit/core'
 \t
 import '@nebula-kit/core/styles.css'
-import '@nebula-kit/pro/styles.css'
+import '@nebula-kit-private/pro/styles.css'
 \t
 export default () => {
   return <NebkitProvider theme="dark"><App /></NebkitProvider>
