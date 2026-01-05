@@ -2,6 +2,7 @@ import { PageKey } from 'client/definitions'
 import { getCopyrightInfo } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'
 import { Button, Flex, Footer, Link, MarkerList, Spacer, Text } from 'lib/components'
+import { RELEASE_VERSIONS } from 'lib/definitions'
 
 export const AppFooter = () => {
   const navigateTo = useNavigateTo()
@@ -18,9 +19,18 @@ export const AppFooter = () => {
           About the project
         </Text>
         <Spacer blockSize="20px" />
-        <Text scale="compact">NebulaKit v0.1.0</Text>
+        <Link
+          href="/foundations/resources/changelog/core-releases"
+          onClick={() => {
+            navigateTo('/foundations/resources/changelog/core-releases')
+          }}
+        >
+          <Text scale="compact" color="blue" intent="primary">
+            NebulaKit v{RELEASE_VERSIONS[RELEASE_VERSIONS.length - 1]}
+          </Text>
+        </Link>
         <Spacer blockSize="10px" />
-        <Text scale="compact" italic>
+        <Text scale="compact" italic color="gray" intent="primary">
           This website is built entirely with NebulaKit components.
         </Text>
       </Footer.Section>
