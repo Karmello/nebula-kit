@@ -19,9 +19,10 @@ const ROOT = JSON.parse(fs.readFileSync('package.json', 'utf8'))
 const outDir = `dist/${bundle}`
 
 const pkg = {
-  name: `@nebula-kit/${bundle}`,
+  name: bundle === 'core' ? '@nebula-kit/core' : '@nebula-kit-private/pro',
   version: ROOT.version,
   description: ROOT.description,
+  keywords: ROOT.keywords,
   license: ROOT.license,
   type: 'module',
   main: ROOT.main,

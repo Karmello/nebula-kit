@@ -18,7 +18,7 @@ const ROTATE_META: ComponentMeta<RotateProps> = {
   props: ROTATE_PROPS_META,
   examples: ROTATE_EXAMPLES_META,
   changelog: {
-    '0.2.0': ['Released'],
+    '0.2.1': ['Released'],
   },
 }
 

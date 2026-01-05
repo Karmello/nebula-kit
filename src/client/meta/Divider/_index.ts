@@ -18,7 +18,7 @@ const DIVIDER_META: ComponentMeta<DividerProps> = {
   props: DIVIDER_PROPS_META,
   examples: DIVIDER_EXAMPLES_META,
   changelog: {
-    '0.2.0': ['Released'],
+    '0.2.1': ['Released'],
   },
 }
 
