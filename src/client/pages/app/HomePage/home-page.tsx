@@ -34,8 +34,8 @@ export const HomePage = () => {
       <Callout
         size="sm"
         variant="outline"
-        content="NebulaKit Core and Pro are scheduled to be released soon. Meanwhile you can explore the website. Everything is fully functional except package downloads, which will become available once the release goes live."
-        heading="NebulaKit is scheduled for release in January 2026."
+        content="This is the first public release of NebulaKit Core and Pro. From here on, all improvements, fixes and new features will be delivered through versioned releases. This is the foundation - it will evolve, but it is ready to use today."
+        heading="NebulaKit v0.1.0 is live"
       />
       <Spacer blockSize="75px" />
       <Flex flexDirection={{ base: 'column', lg: 'row' }} rowGap="80px" columnGap="160px">
