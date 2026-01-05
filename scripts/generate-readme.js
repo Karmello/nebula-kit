@@ -27,4 +27,4 @@ https://nebulakit.dev/foundations/overview/getting-started/installation
 
 fs.writeFileSync(path.join(outDir, 'README.md'), content, 'utf8')
 
-console.log(\`Generated README.md for \${bundle}\`)
+console.log(`Generated README.md for \${bundle}\`)
