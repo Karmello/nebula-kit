@@ -64,18 +64,6 @@ export const AppFooter = () => {
         <MarkerList>
           <MarkerList.Item>
             <Link
-              href={`${PageKey.foundations}/other/legal/license`}
-              onClick={() => {
-                navigateTo(`${PageKey.foundations}/other/legal/license`)
-              }}
-            >
-              <Text scale="compact" color="blue" intent="primary">
-                License
-              </Text>
-            </Link>
-          </MarkerList.Item>
-          <MarkerList.Item>
-            <Link
               href={`${PageKey.foundations}/other/legal/terms-of-use`}
               onClick={() => {
                 navigateTo(`${PageKey.foundations}/other/legal/terms-of-use`)
@@ -83,6 +71,18 @@ export const AppFooter = () => {
             >
               <Text scale="compact" color="blue" intent="primary">
                 Terms of Use
+              </Text>
+            </Link>
+          </MarkerList.Item>
+          <MarkerList.Item>
+            <Link
+              href={`${PageKey.foundations}/other/legal/license`}
+              onClick={() => {
+                navigateTo(`${PageKey.foundations}/other/legal/license`)
+              }}
+            >
+              <Text scale="compact" color="blue" intent="primary">
+                License
               </Text>
             </Link>
           </MarkerList.Item>

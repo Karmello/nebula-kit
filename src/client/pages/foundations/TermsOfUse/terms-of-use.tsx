@@ -1,53 +1,65 @@
-import { Box, MarkerList, Spacer, Text } from 'lib/components'
+import { PageKey } from 'client/definitions'
+import { useNavigateTo } from 'client/hooks'
+import { Box, Link, MarkerList, Spacer, Text } from 'lib/components'
 
 export default () => {
+  const navigateTo = useNavigateTo()
+
   return (
     <Box maxInlineSize="55rem">
       <Text>
-        NebulaKit is provided for developers building user interfaces and digital products. By using the
-        library or related materials, you agree to these terms.
+        NebulaKit is provided for developers building user interfaces and digital products. By installing,
+        accessing or using NebulaKit or any related materials, you agree to be bound by the NebulaKit License.
       </Text>
       <Spacer />
-      <MarkerList gap="10px">
+      <Text>The license defines:</Text>
+      <Spacer blockSize="10px" />
+      <MarkerList>
         <MarkerList.Item>
-          <Text bold>Use of the library</Text>
-          <Text>
-            You may use NebulaKit in your own projects under the terms described in the License page.
-            Redistribution, resale or public hosting of the package itself is not allowed.
-          </Text>
+          <Text>permitted and prohibited uses of the library</Text>
         </MarkerList.Item>
         <MarkerList.Item>
-          <Text bold>Ownership</Text>
-          <Text>
-            All components, documentation and related assets remain the intellectual property of the author.
-          </Text>
+          <Text>Core and Pro bundle terms</Text>
         </MarkerList.Item>
         <MarkerList.Item>
-          <Text bold>Liability</Text>
-          <Text>
-            The library is provided "as is." The author makes no guarantees about its performance, reliability
-            or suitability for any specific purpose. You assume all responsibility for its use in your
-            projects.
-          </Text>
+          <Text>subscription and license key requirements</Text>
         </MarkerList.Item>
         <MarkerList.Item>
-          <Text bold>Modifications and updates</Text>
-          <Text>
-            NebulaKit evolves over time. Features may be added, adjusted or removed as the library develops.
-            All notable changes are documented in the version changelog.
-          </Text>
+          <Text>redistribution restrictions</Text>
         </MarkerList.Item>
         <MarkerList.Item>
-          <Text bold>Third-party dependencies</Text>
-          <Text>
-            NebulaKit relies on third-party tools and packages that are each governed by their own licenses.
-          </Text>
+          <Text>ownership and intellectual property rights</Text>
         </MarkerList.Item>
         <MarkerList.Item>
-          <Text bold>Contact</Text>
-          <Text>For questions about these terms, reach out via email.</Text>
+          <Text>liability and warranty disclaimers</Text>
         </MarkerList.Item>
       </MarkerList>
+      <Spacer blockSize="10px" />
+      <Text>If you do not agree to the license, you may not use NebulaKit.</Text>
+      <Spacer blockSize="30px" />
+      <Text>
+        NebulaKit may evolve over time. Features, APIs and bundles may be added, modified or removed. Notable
+        changes are documented in the changelog.
+      </Text>
+      <Spacer blockSize="10px" />
+      <Text>
+        <Text tag="span" space="end">
+          For full legal terms, see the
+        </Text>
+        <Link
+          href={`${PageKey.foundations}/other/legal/license`}
+          onClick={() => {
+            navigateTo(`${PageKey.foundations}/other/legal/license`)
+          }}
+        >
+          <Text color="blue" intent="primary">
+            License page
+          </Text>
+        </Link>
+        .
+      </Text>
+      <Spacer blockSize="10px" />
+      <Text>For questions regarding these terms, contact via email.</Text>
     </Box>
   )
 }

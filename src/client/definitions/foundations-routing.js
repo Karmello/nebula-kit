@@ -92,8 +92,8 @@ export const FOUNDATIONS_CATEGORIES = [
         key: 'legal',
         label: 'Legal',
         sections: [
-          { key: 'license', label: 'License' },
           { key: 'terms-of-use', label: 'Terms of Use' },
+          { key: 'license', label: 'License' },
           { key: 'privacy-policy', label: 'Privacy Policy' },
         ],
       },
