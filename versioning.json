@@ -1,4 +1,9 @@
 {
-  "latest": "",
-  "all": []
+  "latest": "0.2.3",
+  "all": [
+    {
+      "version": "0.2.3",
+      "shasum": "60cc061fb7bdde7f0802610e2a39f496e6b82185"
+    }
+  ]
 }
