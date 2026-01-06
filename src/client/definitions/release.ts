@@ -9,6 +9,6 @@ export const RELEASE_INFO: Record<
   }
 > = {
   '0.2.3': {
-    timestamp: 1767624989071,
+    timestamp: 1767722681237,
   },
 }
