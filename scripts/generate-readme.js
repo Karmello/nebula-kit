@@ -24,7 +24,7 @@ React UI system built on composition - small, consistent parts combining into la
 Get started:
 https://nebulakit.dev/foundations/overview/getting-started/installation
 
-<img src="https://nebulakit.dev/captain-nebula.webp" alt="Captain Nebula" width="400px" />
+<img src="https://nebulakit.dev/captain-nebula.webp" alt="Captain Nebula" width="250px" />
 `
 
 fs.writeFileSync(path.join(outDir, 'README.md'), content, 'utf8')

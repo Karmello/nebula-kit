@@ -16,7 +16,7 @@ const SLIDE_META: ComponentMeta<SlideProps> = {
   props: SLIDE_PROPS_META,
   examples: SLIDE_EXAMPLES_META,
   changelog: {
-    '0.2.1': ['Released'],
+    '0.2.2': ['Released'],
   },
 }
 

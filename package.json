@@ -1,7 +1,15 @@
 {
   "name": "@nebula-kit/core",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "React UI system built on composition - small, consistent parts combining into larger structures with clarity and control. Each component follows the same foundation, producing apps that stay predictable, stable and effortless to scale.",
+  "homepage": "https://nebulakit.dev",
+  "funding": {
+    "type": "url",
+    "url": "https://nebulakit.dev/pricing"
+  },
+  "bugs": {
+    "url": "https://discord.com/invite/BgezCRDN8H"
+  },
   "keywords": [
     "react",
     "react-ui",
@@ -19,7 +27,7 @@
     "css-variables",
     "responsive"
   ],
-  "license": "UNLICENSED",
+  "license": "SEE LICENSE IN https://nebulakit.dev/foundations/other/legal/license",
   "type": "module",
   "main": "./index.cjs",
   "module": "./index.mjs",

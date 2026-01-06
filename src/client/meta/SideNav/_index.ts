@@ -25,7 +25,7 @@ const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
   examples: SIDE_NAV_EXAMPLES_META,
   props: SIDE_NAV_PROPS_META,
   changelog: {
-    '0.2.1': ['Released'],
+    '0.2.2': ['Released'],
   },
 }
 

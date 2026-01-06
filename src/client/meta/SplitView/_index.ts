@@ -26,7 +26,7 @@ const SPLIT_VIEW_META: ComponentMeta<SplitViewProps> = {
   props: SPLIT_VIEW_PROPS_META,
   examples: SPLIT_VIEW_EXAMPLES_META,
   changelog: {
-    '0.2.1': ['Released'],
+    '0.2.2': ['Released'],
   },
 }
 

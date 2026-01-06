@@ -19,7 +19,7 @@ const REVEAL_META: ComponentMeta<RevealProps> = {
   props: REVEAL_PROPS_META,
   examples: REVEAL_EXAMPLES_META,
   changelog: {
-    '0.2.1': ['Released'],
+    '0.2.2': ['Released'],
   },
 }
 

@@ -21,7 +21,7 @@ const MARKER_LIST_META: ComponentMeta<MarkerListProps> = {
   props: MARKER_LIST_PROPS_META,
   examples: MARKER_LIST_EXAMPLES_META,
   changelog: {
-    '0.2.1': ['Released'],
+    '0.2.2': ['Released'],
   },
 }
 

@@ -22,7 +22,7 @@ const FLEX_META: ComponentMeta<FlexProps> = {
   props: FLEX_PROPS_META,
   examples: FLEX_EXAMPLES_META,
   changelog: {
-    '0.2.1': ['Released'],
+    '0.2.2': ['Released'],
   },
 }
 
