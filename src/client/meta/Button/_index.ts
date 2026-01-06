@@ -20,7 +20,7 @@ const BUTTON_META: ComponentMeta<ButtonProps> = {
   props: BUTTON_PROPS_META,
   examples: BUTTON_EXAMPLES_META,
   changelog: {
-    '0.2.2': ['Released'],
+    '0.2.3': ['Released'],
   },
 }
 

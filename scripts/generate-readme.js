@@ -24,6 +24,10 @@ React UI system built on composition - small, consistent parts combining into la
 Get started:
 https://nebulakit.dev/foundations/overview/getting-started/installation
 
+License:
+https://nebulakit.dev/foundations/other/legal/license
+
+<br />
 <img src="https://nebulakit.dev/captain-nebula.webp" alt="Captain Nebula" width="250px" />
 `
 

@@ -18,7 +18,7 @@ const HYDRATION_GATE_META: ComponentMeta<HydrationGateProps> = {
   props: HYDRATION_GATE_PROPS_META,
   examples: HYDRATION_GATE_EXAMPLES_META,
   changelog: {
-    '0.2.2': ['Released'],
+    '0.2.3': ['Released'],
   },
 }
 
