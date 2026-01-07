@@ -7,7 +7,10 @@ import { Form, FormFieldProps, FormLabelProps, FormHintProps } from 'lib/compone
 import { getRulesObject } from './helpers'
 
 type FormFieldControllerProps = {
-  formFieldProps: Partial<FormFieldProps>
+  formFieldProps: Pick<
+    FormFieldProps,
+    'name' | 'label' | 'hint' | 'options' | 'required' | 'minLength' | 'maxLength' | 'email'
+  >
   formFieldComponent: ReactElement<any>
   customFormLabelComponent?: ReactElement<FormLabelProps>
   customFormHintComponent?: ReactElement<FormHintProps>
