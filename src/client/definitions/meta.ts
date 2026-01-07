@@ -36,7 +36,7 @@ type Example = {
   skip?: boolean
 }
 
-type Changelog = Record<ReleaseVersion, string[]>
+type Changelog = Partial<Record<ReleaseVersion, string[]>>
 
 export type ComponentMeta<PropsType> = {
   overview: Overview

@@ -5,6 +5,7 @@ import boxMeta from './Box/_index'
 import breadcrumbMeta from './Breadcrumb/_index'
 import buttonMeta from './Button/_index'
 import calloutMeta from './Callout/_index'
+import checkboxMeta from './Checkbox/_index'
 import dialogMeta from './Dialog/_index'
 import dividerMeta from './Divider/_index'
 import dropdownList from './DropdownList/_index'
@@ -45,6 +46,7 @@ const META = {
   Breadcrumb: breadcrumbMeta,
   Button: buttonMeta,
   Callout: calloutMeta,
+  Checkbox: checkboxMeta,
   Dialog: dialogMeta,
   Divider: dividerMeta,
   DropdownList: dropdownList,

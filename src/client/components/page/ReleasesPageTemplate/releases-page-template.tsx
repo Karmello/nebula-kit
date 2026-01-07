@@ -5,7 +5,7 @@ import { RELEASE_VERSIONS, RELEASE_INFO, ReleaseVersion } from 'client/definitio
 import { Box, Flex, Section, Select, Spacer, Text } from 'lib/components'
 
 export const ReleasePageTemplate = ({ bundle }: { bundle: 'core' | 'pro' }) => {
-  const [releaseVersion, setReleaseVersion] = useState<string>(RELEASE_VERSIONS[RELEASE_VERSIONS.length - 1])
+  const [releaseVersion, setReleaseVersion] = useState<string>(RELEASE_VERSIONS[0])
 
   const newComponents: string[] = []
 
@@ -14,7 +14,7 @@ export const ReleasePageTemplate = ({ bundle }: { bundle: 'core' | 'pro' }) => {
     if (
       changelog &&
       meta[key][key].overview.bundle === bundle &&
-      Object.keys(changelog)[0] === releaseVersion
+      Object.keys(changelog).reverse()[0] === releaseVersion
     ) {
       newComponents.push(key)
     }

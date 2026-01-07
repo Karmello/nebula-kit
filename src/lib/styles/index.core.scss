@@ -19,6 +19,7 @@
 @use '../components/core/feedback/Loader/loader.scss';
 
 // Form elements
+@use '../components/core/form-elements/Checkbox/checkbox.scss';
 @use '../components/core/form-elements/Input/input.scss';
 @use '../components/core/form-elements/Textarea/textarea.scss';
 

@@ -89,6 +89,7 @@ export const CORE_PAGE_CATEGORIES = [
       { key: 'input', label: 'Input', sections: CORE_PAGE_SECTIONS },
       { key: 'textarea', label: 'Textarea', sections: CORE_PAGE_SECTIONS },
       { key: 'select', label: 'Select', sections: CORE_PAGE_SECTIONS },
+      { key: 'checkbox', label: 'Checkbox', sections: CORE_PAGE_SECTIONS },
     ],
   },
   {
