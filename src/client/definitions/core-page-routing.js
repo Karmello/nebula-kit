@@ -43,6 +43,7 @@ export const CORE_PAGE_CATEGORIES = [
     items: [
       { key: 'button', label: 'Button', sections: CORE_PAGE_SECTIONS },
       { key: 'link', label: 'Link', sections: CORE_PAGE_SECTIONS },
+      { key: 'tabs', label: 'Tabs', sections: CORE_PAGE_SECTIONS },
     ],
   },
   {

@@ -35,6 +35,7 @@ import snackbarMeta from './Snackbar/_index'
 import spacerMeta from './Spacer/_index'
 import splitViewMeta from './SplitView/_index'
 import tableMeta from './Table/_index'
+import tabsMeta from './Tabs/_index'
 import textMeta from './Text/_index'
 import textareaMeta from './Textarea/_index'
 import toolbarMeta from './Toolbar/_index'
@@ -76,6 +77,7 @@ const META = {
   Spacer: spacerMeta,
   SplitView: splitViewMeta,
   Table: tableMeta,
+  Tabs: tabsMeta,
   Text: textMeta,
   Textarea: textareaMeta,
   Toolbar: toolbarMeta,
