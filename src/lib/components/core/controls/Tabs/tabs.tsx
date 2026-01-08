@@ -1,10 +1,16 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
-import { Box, Segment } from 'lib/components'
+import { Box, Flex, Segment } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
 
-import { TabsProps, DEFAULT_TABS_VARIANT, DEFAULT_TABS_INTENT } from './definitions'
-import { TabsContext } from './TabsContext'
+import {
+  TabsProps,
+  DEFAULT_TABS_VARIANT,
+  DEFAULT_TABS_INTENT,
+  DEFAULT_TABS_FLEX_DIRECTION,
+} from './definitions'
+
+import { TabsContext, TabsContextValue } from './TabsContext'
 
 export const Tabs = ({
   // HtmlTag
@@ -16,19 +22,22 @@ export const Tabs = ({
   intent = DEFAULT_TABS_INTENT,
   variant = DEFAULT_TABS_VARIANT,
   inlineSize,
-  maxInlineSize,
-  minInlineSize,
+  // Flex
+  flexDirection = DEFAULT_TABS_FLEX_DIRECTION,
+  // Button
+  size,
   // own
   value,
   defaultValue,
   onChange,
 }: TabsProps) => {
   const [internalValue, setInternalValue] = useState<TabsProps['value'] | undefined>(defaultValue || 1)
+  const ref = useRef<HTMLDivElement>(null)
 
   const isControlled = value !== undefined
   const currentValue = isControlled ? value : internalValue
 
-  const handleChange = (value: string | number) => {
+  const handleChange = (value: TabsProps['value']) => {
     if (!isControlled) setInternalValue(value)
     onChange?.(value)
   }
@@ -43,42 +52,62 @@ export const Tabs = ({
       ]}
     >
       {({ slotsByName }) => {
+        const tabs = [] as TabsContextValue['tabs']
+        slotsByName['Tabs.Tab'].forEach(tab => {
+          const { value, disabled } = (tab as any).props
+          tabs.push({ value, disabled } as TabsContextValue['tabs'][number])
+        })
+
         return (
-          <TabsContext value={{ currentValue, color, intent }}>
+          <TabsContext
+            value={{
+              rootRef: tagRef || ref,
+              tabs,
+              currentValue,
+              handleChange,
+              color,
+              intent,
+              size,
+              flexDirection,
+            }}
+          >
             <Box
               tagAttrs={tagAttrs}
-              tagRef={tagRef}
+              tagRef={tagRef || ref}
               drawable
               color={color}
               intent={intent}
               variant={variant}
               inlineSize={inlineSize}
-              maxInlineSize={maxInlineSize}
-              minInlineSize={minInlineSize}
+              maxInlineSize="100%"
               overflow="hidden"
               display="inline-block"
             >
-              <Box drawable variant="solid" intent={intent} color={color} borderRadius="0px">
-                <Segment>
-                  {slotsByName['Tabs.Tab'].map((tab, index) => {
-                    const { value, disabled } = (tab as any).props
-
-                    return (
-                      <Segment.Item
-                        key={index}
-                        tagAttrs={{
-                          onClick: () => {
-                            if (!disabled) handleChange(value)
-                          },
-                        }}
-                      >
-                        {tab}
-                      </Segment.Item>
-                    )
-                  })}
-                </Segment>
-              </Box>
-              {slotsByName['Tabs.Panel']}
+              <Flex flexDirection={flexDirection === 'column' ? 'row' : 'column'} alignItems="stretch">
+                <Box
+                  drawable
+                  variant="solid"
+                  intent={intent}
+                  color={color}
+                  borderRadius="0px"
+                  inlineSize={flexDirection === 'row' ? '100%' : undefined}
+                  maxInlineSize="100%"
+                  overflowX={flexDirection === 'row' ? 'auto' : undefined}
+                >
+                  <Segment
+                    flexDirection={flexDirection}
+                    tagAttrs={{
+                      role: 'tablist',
+                      'aria-orientation': flexDirection === 'column' ? 'vertical' : 'horizontal',
+                    }}
+                  >
+                    {slotsByName['Tabs.Tab'].map((tab, index) => {
+                      return <Segment.Item key={index}>{tab}</Segment.Item>
+                    })}
+                  </Segment>
+                </Box>
+                {slotsByName['Tabs.Panel']}
+              </Flex>
             </Box>
           </TabsContext>
         )

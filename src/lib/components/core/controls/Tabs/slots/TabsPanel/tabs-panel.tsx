@@ -16,8 +16,21 @@ export const TabsPanel = ({
 
   if (currentValue !== value) return null
 
+  const isSelected = currentValue === value
+
   return (
-    <Box tagAttrs={tagAttrs} tagRef={tagRef} padding={BUTTON_SIZE_CONFIG.md.paddingLeft}>
+    <Box
+      tagAttrs={{
+        ...tagAttrs,
+        role: 'tabpanel',
+        id: `panel-${value}`,
+        'aria-labelledby': `tab-${value}`,
+        hidden: !isSelected,
+      }}
+      tagRef={tagRef}
+      overflowX="auto"
+      margin={BUTTON_SIZE_CONFIG.md.paddingLeft}
+    >
       {children}
     </Box>
   )

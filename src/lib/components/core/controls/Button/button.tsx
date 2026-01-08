@@ -73,6 +73,7 @@ export const Button = <T extends ButtonTag = 'button'>({
             tagAttrs?.className
           ),
           type: tagAttrs?.type || 'button',
+          'aria-disabled': disabled || undefined,
           style: { ...tagAttrs?.style, justifyContent, pointerEvents: loading ? 'none' : undefined },
         } as PropsWithoutRef<ComponentProps<T>>
       }
