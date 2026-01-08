@@ -23,6 +23,7 @@ export const FOUNDATIONS_CATEGORIES = [
           { key: 'visual-coherence', label: 'Visual coherence' },
           { key: 'creative-freedom', label: 'Creative freedom' },
           { key: 'hidden-css', label: 'Hidden CSS' },
+          { key: 'visible-composition', label: 'Visible composition' },
         ],
       },
       {
