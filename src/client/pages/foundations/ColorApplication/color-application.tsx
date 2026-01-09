@@ -8,8 +8,8 @@ export default () => {
   return (
     <>
       <Text typography="lead">
-        Hues, intents and variants combined through Button components, illustrating the system's full color
-        behavior in practice.
+        Intents and variants combined through Button components, illustrating the system's full color spectrum
+        in practice.
       </Text>
       <Spacer blockSize="50px" />
       <Flex flexDirection="column" gap="50px">

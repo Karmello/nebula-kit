@@ -41,15 +41,7 @@ export const Icon = memo(
         intent={intent}
         display="inline-block"
       >
-        {children ||
-          (Svg ? (
-            <Svg
-              style={{
-                width: size !== undefined ? size : undefined,
-                height: size !== undefined ? size : undefined,
-              }}
-            />
-          ) : null)}
+        {children || (Svg ? <Svg style={{ width: size, height: size }} /> : null)}
       </Box>
     )
   }

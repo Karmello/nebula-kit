@@ -1,4 +1,13 @@
-import { cloneElement, ReactElement, ReactNode, RefObject, useEffect, useLayoutEffect, useRef } from 'react'
+import {
+  cloneElement,
+  ReactElement,
+  ReactNode,
+  RefObject,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react'
 
 import { Flex, Box, Resize, Portal, DropdownListProps } from 'lib/components'
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize/definitions'
@@ -31,6 +40,7 @@ export const DropdownListComponent = ({
     setBlockMouse,
   } = useDropdownListContext()
 
+  const [triggerWidth, setTriggerWidth] = useState<number | undefined>(undefined)
   const portalRef = useRef<HTMLDivElement>(null)
   const scrollWrapperRef = useRef<HTMLDivElement>(null)
 
@@ -68,7 +78,17 @@ export const DropdownListComponent = ({
     }
   }, [scrollWrapperRef.current])
 
-  const triggerWidth = (triggerRef as RefObject<HTMLDivElement>).current?.offsetWidth
+  useLayoutEffect(() => {
+    if (!open) return
+    const el = (triggerRef as RefObject<HTMLElement>).current
+    if (!el) return
+    const update = () => setTriggerWidth(el.offsetWidth)
+    update()
+    const observer = new ResizeObserver(update)
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [open])
+
   const itemsContainerBlockSize = getItemsWrapperBlockSize(finalVisibleItemsCount, size ?? 'md')
   const opensUpDownwards = (placement || 'bottom-start').startsWith('bottom')
 
@@ -85,6 +105,7 @@ export const DropdownListComponent = ({
             setResizeVisible(false)
           } else if (e.key === 'Enter') {
             if (open) {
+              e.preventDefault()
               scrollWrapperRef.current
                 .querySelectorAll<HTMLElement>('.neb-dropdown-list-item')
                 [hoveredIndex]?.click()
