@@ -31,13 +31,13 @@ export const Tabs = ({
   defaultValue,
   onChange,
 }: TabsProps) => {
-  const [internalValue, setInternalValue] = useState<TabsProps['value'] | undefined>(defaultValue || 1)
-  const ref = useRef<HTMLDivElement>(null)
+  const [internalValue, setInternalValue] = useState<string | number>(defaultValue || 1)
+  const ref = useRef<HTMLDivElement | null>(null)
 
   const isControlled = value !== undefined
   const currentValue = isControlled ? value : internalValue
 
-  const handleChange = (value: TabsProps['value']) => {
+  const handleChange = (value: string | number) => {
     if (!isControlled) setInternalValue(value)
     onChange?.(value)
   }

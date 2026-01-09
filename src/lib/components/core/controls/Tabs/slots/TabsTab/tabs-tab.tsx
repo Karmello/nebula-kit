@@ -82,7 +82,7 @@ export const TabsTab = ({
               if (next === null) return
               e.preventDefault()
               handleChange(tabs[next].value)
-              rootRef.current.querySelector<HTMLElement>(`#tab-${tabs[next].value}`)?.focus()
+              rootRef.current?.querySelector<HTMLElement>(`#tab-${tabs[next].value}`)?.focus()
               break
             }
 
@@ -92,7 +92,7 @@ export const TabsTab = ({
               if (prev === null) return
               e.preventDefault()
               handleChange(tabs[prev].value)
-              rootRef.current.querySelector<HTMLElement>(`#tab-${tabs[prev].value}`)?.focus()
+              rootRef.current?.querySelector<HTMLElement>(`#tab-${tabs[prev].value}`)?.focus()
               break
             }
           }
