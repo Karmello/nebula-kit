@@ -7,6 +7,11 @@ const PRO_PAGE_SECTIONS = [
 
 export const PRO_PAGE_CATEGORIES = [
   {
+    key: 'controls',
+    label: 'Controls',
+    items: [{ key: 'tabs', label: 'Tabs', sections: PRO_PAGE_SECTIONS }],
+  },
+  {
     key: 'feedback',
     label: 'Feedback',
     items: [{ key: 'snackbar', label: 'Snackbar', sections: PRO_PAGE_SECTIONS }],
@@ -35,7 +40,10 @@ export const PRO_PAGE_CATEGORIES = [
   {
     key: 'form-elements',
     label: 'Form elements',
-    items: [{ key: 'form', label: 'Form', sections: PRO_PAGE_SECTIONS }],
+    items: [
+      { key: 'form', label: 'Form', sections: PRO_PAGE_SECTIONS },
+      { key: 'multi-select', label: 'MultiSelect', sections: PRO_PAGE_SECTIONS },
+    ],
   },
   {
     key: 'utility',

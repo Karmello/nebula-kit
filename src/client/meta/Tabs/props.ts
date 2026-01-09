@@ -6,7 +6,7 @@ import {
   DEFAULT_TABS_VARIANT,
   TABS_FLEX_DIRECTION,
   TABS_VARIANTS,
-} from 'lib/components/core/controls/Tabs'
+} from 'lib/components/pro/controls/Tabs'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

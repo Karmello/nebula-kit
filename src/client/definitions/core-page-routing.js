@@ -43,7 +43,6 @@ export const CORE_PAGE_CATEGORIES = [
     items: [
       { key: 'button', label: 'Button', sections: CORE_PAGE_SECTIONS },
       { key: 'link', label: 'Link', sections: CORE_PAGE_SECTIONS },
-      { key: 'tabs', label: 'Tabs', sections: CORE_PAGE_SECTIONS },
     ],
   },
   {
@@ -90,7 +89,6 @@ export const CORE_PAGE_CATEGORIES = [
       { key: 'input', label: 'Input', sections: CORE_PAGE_SECTIONS },
       { key: 'textarea', label: 'Textarea', sections: CORE_PAGE_SECTIONS },
       { key: 'select', label: 'Select', sections: CORE_PAGE_SECTIONS },
-      { key: 'multi-select', label: 'MultiSelect', sections: CORE_PAGE_SECTIONS },
       { key: 'checkbox', label: 'Checkbox', sections: CORE_PAGE_SECTIONS },
     ],
   },

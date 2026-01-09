@@ -8,3 +8,5 @@ export {
   type FormHintProps,
   type FormLabelProps,
 } from './Form'
+
+export { MultiSelect, type MultiSelectProps, type MultiSelectOptionProps } from './MultiSelect'

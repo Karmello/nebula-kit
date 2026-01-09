@@ -9,7 +9,7 @@ import { TABS_PANEL_META } from './TabsPanel/_index'
 
 const TABS_META: ComponentMeta<TabsProps> = {
   overview: {
-    bundle: 'core',
+    bundle: 'pro',
     title: 'Control for switching between related content sections.',
     description: [
       'switches between mutually exclusive content panels',

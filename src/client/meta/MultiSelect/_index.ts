@@ -8,7 +8,7 @@ import { MULTI_SELECT_OPTION_META } from './MultiSelectOption/_index'
 
 const MULTI_SELECT_META: ComponentMeta<MultiSelectProps> = {
   overview: {
-    bundle: 'core',
+    bundle: 'pro',
     title: 'Form control for choosing multiple options from a list.',
     description: ['supports both controlled and uncontrolled modes'],
     composedOf: ['DropdownList', 'Button'],
