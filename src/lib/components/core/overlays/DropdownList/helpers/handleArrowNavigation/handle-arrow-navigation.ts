@@ -4,11 +4,13 @@ import { BUTTON_SIZE_CONFIG, ButtonSize } from 'lib/components/core/controls/But
 export const handleArrowNavigation = (
   key: 'ArrowDown' | 'ArrowUp',
   itemsCount: number,
-  visibleItemsCount: number,
+  visibleItemsCount: number | undefined,
   size: ButtonSize,
   scrollTop: number,
   activeIndex: number
 ): { activeIndex: number; scrollTop: number } => {
+  if (visibleItemsCount === undefined) return { activeIndex: -1, scrollTop: 0 }
+
   const itemSize =
     Number(BUTTON_SIZE_CONFIG[size].blockSize.replace('px', '')) + Number(BOX_BORDER_WIDTH.replace('px', ''))
   const listHeight = visibleItemsCount * itemSize

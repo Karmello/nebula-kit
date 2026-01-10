@@ -4,11 +4,13 @@ import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box/definitions'
 import { DropdownListProps } from '../../definitions'
 
 export const getInitScrollTop = (
-  visibleItemsCount: number,
+  visibleItemsCount: number | undefined,
   size: ButtonSize,
   scrollToIndex: number,
   scrollAlign: DropdownListProps['scrollAlign']
 ): number | undefined => {
+  if (visibleItemsCount === undefined) return
+
   let baseIndex = scrollToIndex
 
   if (scrollAlign === 'center') {

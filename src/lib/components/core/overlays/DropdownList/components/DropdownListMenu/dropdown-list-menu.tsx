@@ -14,9 +14,9 @@ export const DropdownListMenu = () => {
     scrollWrapperRef,
     slotsByName,
     resizeVisible,
-    finalVisibleItemsCount,
-    finalPlacement,
-    setFinalPlacement,
+    resolvedVisibleItemsCount,
+    resolvedPlacement,
+    setResolvedPlacement,
     intent,
     color,
     itemBorderIntent,
@@ -25,7 +25,6 @@ export const DropdownListMenu = () => {
   } = useDropdownListContext()
 
   useLayoutEffect(() => {
-    if (!open) return
     const el = (triggerRef as RefObject<HTMLElement>).current
     if (!el) return
     const update = () => setTriggerWidth(el.offsetWidth)
@@ -33,12 +32,10 @@ export const DropdownListMenu = () => {
     const observer = new ResizeObserver(update)
     observer.observe(el)
     return () => observer.disconnect()
-  }, [open])
+  }, [])
 
-  if (!open) return null
-
-  const itemsContainerBlockSize = getItemsWrapperBlockSize(finalVisibleItemsCount, size ?? 'md')
-  const opensUpDownwards = (finalPlacement || 'bottom-start').startsWith('bottom')
+  const itemsContainerBlockSize = getItemsWrapperBlockSize(resolvedVisibleItemsCount, size ?? 'md')
+  const opensUpDownwards = (resolvedPlacement || 'bottom-start').startsWith('bottom')
 
   const itemsCount = slotsByName['DropdownList.Item'].length
 
@@ -47,25 +44,25 @@ export const DropdownListMenu = () => {
       anchorRef={triggerRef}
       portalBlockSize={itemsContainerBlockSize}
       placement={placement}
-      onResolve={floating => {
+      onResolve={resolved => {
         // console.log(floating)
 
-        if (floating.placement !== finalPlacement) {
-          setFinalPlacement(floating.placement as never)
+        if (resolved.placement !== resolvedPlacement) {
+          setResolvedPlacement(resolved.placement as never)
         }
 
         // const maxAllowedVisibleItemsCount = getMaxAllowedVisibleItemsCount(
         //   size,
         //   floating.style.maxHeight
         // )
-        // if (maxAllowedVisibleItemsCount !== finalVisibleItemsCount) {
-        //   setFinalVisibleItemsCount(
-        //     Math.min(defaultFinalVisibleItemsCount, maxAllowedVisibleItemsCount)
+        // if (maxAllowedVisibleItemsCount !== resolvedVisibleItemsCount) {
+        //   setResolvedVisibleItemsCount(
+        //     Math.min(defaultResolvedVisibleItemsCount, maxAllowedVisibleItemsCount)
         //   )
         // }
       }}
     >
-      <Portal tagRef={portalRef} anchorRef={triggerRef} placement={finalPlacement}>
+      <Portal tagRef={portalRef} anchorRef={triggerRef} placement={resolvedPlacement}>
         <Resize property="blockSize" visible={resizeVisible} easing={resizeVisible ? 'ease-out' : 'ease-in'}>
           <Box
             tagRef={scrollWrapperRef}

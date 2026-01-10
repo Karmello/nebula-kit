@@ -1,7 +1,7 @@
 import { useLayoutEffect, useEffect, useState } from 'react'
 
 import { resolve } from './helpers'
-import { FloatingProps, FloatingResult } from './definitions'
+import { FloatingProps, FloatingResolved } from './definitions'
 
 export const Floating = ({
   children,
@@ -12,23 +12,23 @@ export const Floating = ({
   offset,
   viewportPadding,
 }: FloatingProps) => {
-  const [result, setResult] = useState<FloatingResult | null>(null)
+  const [resolved, setResolved] = useState<FloatingResolved | null>(null)
 
   const props = { children, anchorRef, portalBlockSize, onResolve, placement, offset, viewportPadding }
 
   useLayoutEffect(() => {
-    resolve(props, setResult)
+    resolve(props, setResolved)
   }, [resolve])
 
   useLayoutEffect(() => {
-    if (result) {
-      onResolve?.(result)
+    if (resolved) {
+      onResolve?.(resolved)
     }
-  }, [result])
+  }, [resolved])
 
   useEffect(() => {
-    const onResize = () => resolve(props, setResult)
-    const onScroll = () => resolve(props, setResult)
+    const onResize = () => resolve(props, setResolved)
+    const onScroll = () => resolve(props, setResolved)
 
     window.addEventListener('resize', onResize)
     window.addEventListener('scroll', onScroll, true)

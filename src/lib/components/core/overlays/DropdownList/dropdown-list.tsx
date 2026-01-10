@@ -15,7 +15,6 @@ import {
 } from './definitions'
 
 import { DropdownListProvider, DropdownListMain } from './components'
-import { PortalPlacement } from '../../utility/Portal'
 
 export const DropdownList = ({
   // HtmlTag
@@ -39,21 +38,15 @@ export const DropdownList = ({
   const [resizeVisible, setResizeVisible] = useState<boolean>(false)
   const [hoveredIndex, setHoveredIndex] = useState<number>(-1)
   const [blockMouse, setBlockMouse] = useState<boolean>(false)
-
-  const [finalVisibleItemsCount, setFinalVisibleItemsCount] = useState<
-    DropdownListProps['visibleItemsCount']
-  >(visibleItemsCount || DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT)
-
-  const [finalPlacement, setFinalPlacement] = useState<DropdownListProps['placement']>(
-    placement || DEFAULT_DROPDOWN_LIST_PLACEMENT
-  )
+  const [resolvedVisibleItemsCount, setResolvedVisibleItemsCount] =
+    useState<DropdownListProps['visibleItemsCount']>(visibleItemsCount)
+  const [resolvedPlacement, setResolvedPlacement] = useState<DropdownListProps['placement']>(placement)
 
   const triggerRef = useRef<HTMLElement>(null)
   const portalRef = useRef<HTMLDivElement>(null)
   const scrollWrapperRef = useRef<HTMLDivElement>(null)
 
-  const finalChildren =
-    typeof children === 'function' ? children({ open, resizeVisible, finalPlacement }) : children
+  const finalChildren = typeof children === 'function' ? children({ open, resolvedPlacement }) : children
 
   return (
     <WithSlots
@@ -84,13 +77,13 @@ export const DropdownList = ({
             setHoveredIndex={setHoveredIndex}
             blockMouse={blockMouse}
             setBlockMouse={setBlockMouse}
-            defaultFinalVisibleItemsCount={
+            defaultResolvedVisibleItemsCount={
               itemsCount < (visibleItemsCount ?? 0) ? itemsCount : (visibleItemsCount ?? 0)
             }
-            finalVisibleItemsCount={finalVisibleItemsCount}
-            setFinalVisibleItemsCount={setFinalVisibleItemsCount}
-            finalPlacement={finalPlacement}
-            setFinalPlacement={setFinalPlacement}
+            resolvedVisibleItemsCount={resolvedVisibleItemsCount}
+            setResolvedVisibleItemsCount={setResolvedVisibleItemsCount}
+            resolvedPlacement={resolvedPlacement}
+            setResolvedPlacement={setResolvedPlacement}
             // props
             color={color}
             intent={intent}

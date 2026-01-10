@@ -21,7 +21,7 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
     hoveredIndex,
     setHoveredIndex,
     setBlockMouse,
-    finalVisibleItemsCount,
+    resolvedVisibleItemsCount,
     scrollAlign,
     scrollToIndex,
   } = useDropdownListContext()
@@ -48,7 +48,7 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
   useLayoutEffect(() => {
     if (scrollWrapperRef.current) {
       const scrollTop = getInitScrollTop(
-        finalVisibleItemsCount,
+        resolvedVisibleItemsCount,
         size ?? 'md',
         scrollToIndex ?? 0,
         scrollAlign
@@ -84,7 +84,7 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
             const { activeIndex, scrollTop } = handleArrowNavigation(
               e.key,
               itemsCount,
-              finalVisibleItemsCount,
+              resolvedVisibleItemsCount,
               size ?? 'md',
               scrollWrapperRef.current.scrollTop,
               hoveredIndex

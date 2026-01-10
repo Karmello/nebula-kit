@@ -1,6 +1,6 @@
-import { FloatingProps, FloatingResult } from './definitions'
+import { FloatingProps, FloatingResolved } from './definitions'
 
-export const resolve = (props: FloatingProps, setResult: (result: FloatingResult) => void) => {
+export const resolve = (props: FloatingProps, setResolved: (resolved: FloatingResolved) => void) => {
   const { anchorRef, portalBlockSize, offset, placement, viewportPadding } = props
 
   const anchorEl = anchorRef.current
@@ -21,11 +21,10 @@ export const resolve = (props: FloatingProps, setResult: (result: FloatingResult
   const fitsBelow = spaceBelow >= portalSizePx
   const fitsAbove = spaceAbove >= portalSizePx
 
-  let resolvedPlacement: FloatingResult['placement']
+  let resolvedPlacement: FloatingResolved['placement']
   let maxHeight: number | undefined
 
   const wantTop = placement?.startsWith('top')
-  const wantBottom = placement?.startsWith('bottom')
 
   if (!placement) {
     if (fitsBelow || spaceBelow >= spaceAbove) {
@@ -41,21 +40,21 @@ export const resolve = (props: FloatingProps, setResult: (result: FloatingResult
     }
   } else if (wantTop) {
     if (fitsAbove) {
-      resolvedPlacement = placement as FloatingResult['placement']
+      resolvedPlacement = placement as FloatingResolved['placement']
     } else {
       resolvedPlacement = 'bottom-start'
       maxHeight = Math.max(0, spaceBelow)
     }
   } else {
     if (fitsBelow) {
-      resolvedPlacement = placement as FloatingResult['placement']
+      resolvedPlacement = placement as FloatingResolved['placement']
     } else {
       resolvedPlacement = 'top-start'
       maxHeight = Math.max(0, spaceAbove)
     }
   }
 
-  setResult({
+  setResolved({
     placement: resolvedPlacement,
     style: maxHeight != null ? { maxHeight } : undefined,
   })

@@ -19,9 +19,15 @@ const FLOATING_PROPS_META: ComponentMeta<FloatingProps>['props'] = {
     description:
       'Defines the distance between the anchor element and the floating content along the placement axis.',
   },
+  onResolve: {
+    options: [],
+  },
   placement: {
     options: PORTAL_PLACEMENTS as never,
     description: 'Specifies the preferred placement of the floating content relative to the anchor.',
+  },
+  portalBlockSize: {
+    options: [],
   },
   viewportPadding: {
     options: ['CSS'],

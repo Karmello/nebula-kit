@@ -18,11 +18,11 @@ type ContextValue = {
   setHoveredIndex: (hoveredIndex: number) => void
   blockMouse: boolean
   setBlockMouse: (blockMouse: boolean) => void
-  defaultFinalVisibleItemsCount: number
-  finalVisibleItemsCount: number
-  setFinalVisibleItemsCount: (finalVisibleItemsCount: number) => void
-  finalPlacement: DropdownListProps['placement']
-  setFinalPlacement: (finalPlacement: DropdownListProps['placement']) => void
+  defaultResolvedVisibleItemsCount: DropdownListProps['visibleItemsCount']
+  resolvedVisibleItemsCount: DropdownListProps['visibleItemsCount']
+  setResolvedVisibleItemsCount: (resolvedVisibleItemsCount: DropdownListProps['visibleItemsCount']) => void
+  resolvedPlacement: DropdownListProps['placement']
+  setResolvedPlacement: (resolvedPlacement: DropdownListProps['placement']) => void
 } & Omit<DropdownListProps, 'children' | 'tagAttrs' | 'tagRef'>
 
 type ProviderProps = {
@@ -33,8 +33,8 @@ const DropdownListContext = createContext<ContextValue>({} as ContextValue)
 
 export const DropdownListProvider = ({ children, ...rest }: ProviderProps) => {
   useLayoutEffect(() => {
-    rest.setFinalVisibleItemsCount(rest.defaultFinalVisibleItemsCount)
-  }, [rest.defaultFinalVisibleItemsCount])
+    rest.setResolvedVisibleItemsCount(rest.defaultResolvedVisibleItemsCount)
+  }, [rest.defaultResolvedVisibleItemsCount])
 
   return <DropdownListContext.Provider value={rest}>{children}</DropdownListContext.Provider>
 }

@@ -68,8 +68,8 @@ export const Select = ({
               visibleItemsCount={visibleItemsCount}
               placement={dropdownPlacement}
             >
-              {({ open, finalPlacement }) => {
-                const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(finalPlacement)
+              {({ open, resolvedPlacement }) => {
+                const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(resolvedPlacement)
 
                 return (
                   <>
