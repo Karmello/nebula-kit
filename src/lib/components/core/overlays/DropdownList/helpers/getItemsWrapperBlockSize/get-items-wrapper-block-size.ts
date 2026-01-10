@@ -8,3 +8,9 @@ export const getItemsWrapperBlockSize = (visibleItemsCount: number, size: Button
 
   return `${allItemsBlockSize + allItemsBorderWidth}px`
 }
+
+export const getMaxAllowedVisibleItemsCount = (size: ButtonSize, maxHeight: number): number => {
+  const itemBlockSize = Number(BUTTON_SIZE_CONFIG[size].blockSize.replace('px', ''))
+
+  return Math.floor(maxHeight / itemBlockSize)
+}

@@ -6,7 +6,7 @@ import { withPrefix } from 'lib/helpers'
 import { ButtonTag } from 'lib/components/core/controls/Button/definitions'
 
 import { DropdownListItemProps } from './definitions'
-import { useDropdownListContext } from '../../DropdownListProvider'
+import { useDropdownListContext } from '../../components'
 
 import './dropdown-list-item.scss'
 

@@ -14,8 +14,8 @@ import {
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
 } from './definitions'
 
-import { DropdownListProvider } from './DropdownListProvider'
-import { DropdownListComponent } from './dropdown-list-component'
+import { DropdownListProvider, DropdownListMain } from './components'
+import { PortalPlacement } from '../../utility/Portal'
 
 export const DropdownList = ({
   // HtmlTag
@@ -40,9 +40,20 @@ export const DropdownList = ({
   const [hoveredIndex, setHoveredIndex] = useState<number>(-1)
   const [blockMouse, setBlockMouse] = useState<boolean>(false)
 
-  const triggerRef = useRef<HTMLElement>(null)
+  const [finalVisibleItemsCount, setFinalVisibleItemsCount] = useState<
+    DropdownListProps['visibleItemsCount']
+  >(visibleItemsCount || DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT)
 
-  const finalChildren = typeof children === 'function' ? children({ open, resizeVisible }) : children
+  const [finalPlacement, setFinalPlacement] = useState<DropdownListProps['placement']>(
+    placement || DEFAULT_DROPDOWN_LIST_PLACEMENT
+  )
+
+  const triggerRef = useRef<HTMLElement>(null)
+  const portalRef = useRef<HTMLDivElement>(null)
+  const scrollWrapperRef = useRef<HTMLDivElement>(null)
+
+  const finalChildren =
+    typeof children === 'function' ? children({ open, resizeVisible, finalPlacement }) : children
 
   return (
     <WithSlots
@@ -54,32 +65,44 @@ export const DropdownList = ({
       ]}
     >
       {({ slotsByName }) => {
+        const itemsCount = slotsByName['DropdownList.Item'].length
+
         return (
           <DropdownListProvider
+            // refs
+            triggerRef={triggerRef}
+            portalRef={portalRef}
+            scrollWrapperRef={scrollWrapperRef}
+            // slots
+            slotsByName={slotsByName}
+            // state
             open={open}
             setOpen={setOpen}
             resizeVisible={resizeVisible}
             setResizeVisible={setResizeVisible}
-            triggerRef={triggerRef}
             hoveredIndex={hoveredIndex}
             setHoveredIndex={setHoveredIndex}
-            keepOpen={keepOpen}
-            size={size}
-            color={color}
-            intent={intent}
             blockMouse={blockMouse}
             setBlockMouse={setBlockMouse}
+            defaultFinalVisibleItemsCount={
+              itemsCount < (visibleItemsCount ?? 0) ? itemsCount : (visibleItemsCount ?? 0)
+            }
+            finalVisibleItemsCount={finalVisibleItemsCount}
+            setFinalVisibleItemsCount={setFinalVisibleItemsCount}
+            finalPlacement={finalPlacement}
+            setFinalPlacement={setFinalPlacement}
+            // props
+            color={color}
+            intent={intent}
+            size={size}
+            placement={placement}
+            visibleItemsCount={visibleItemsCount}
+            keepOpen={keepOpen}
+            scrollToIndex={scrollToIndex}
+            scrollAlign={scrollAlign}
+            itemBorderIntent={itemBorderIntent}
           >
-            <DropdownListComponent
-              slotsByName={slotsByName}
-              tagRef={tagRef}
-              tagAttrs={tagAttrs}
-              placement={placement}
-              visibleItemsCount={visibleItemsCount}
-              scrollToIndex={scrollToIndex}
-              scrollAlign={scrollAlign}
-              itemBorderIntent={itemBorderIntent}
-            />
+            <DropdownListMain tagRef={tagRef} tagAttrs={tagAttrs} />
           </DropdownListProvider>
         )
       }}

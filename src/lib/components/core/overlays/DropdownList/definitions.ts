@@ -27,6 +27,7 @@ export type DropdownListPlacement = (typeof DROPDOWN_LIST_PLACEMENTS)[number]
 type ChildrenAsFuncArgs = {
   open: boolean
   resizeVisible: boolean
+  finalPlacement?: DropdownListPlacement
 }
 
 type DropdownListOwnProps = {

@@ -2,7 +2,7 @@ import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import { DropdownListTriggerProps } from './definitions'
-import { useDropdownListContext } from '../../DropdownListProvider'
+import { useDropdownListContext } from '../../components'
 
 export const DropdownListTrigger = ({
   // HtmlTag
