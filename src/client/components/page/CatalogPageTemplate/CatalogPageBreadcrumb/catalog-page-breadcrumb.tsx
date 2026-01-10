@@ -70,7 +70,9 @@ export const CatalogPageBreadcrumb = ({
             .find(node => node.value === categoryKey)
             .children.find(node => node.value === itemKey).children[0].value
 
-        navigateTo(`/${pageKey}/${categoryKey}/${itemKey}/${sectionKey}`)
+        setTimeout(() => {
+          navigateTo(`/${pageKey}/${categoryKey}/${itemKey}/${sectionKey}`)
+        }, 200)
       }}
       color="blue"
     />

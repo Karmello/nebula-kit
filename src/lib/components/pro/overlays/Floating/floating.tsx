@@ -1,4 +1,4 @@
-import { useLayoutEffect, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { resolve } from './helpers'
 import { FloatingProps, FloatingResolved } from './definitions'
@@ -26,11 +26,11 @@ export const Floating = ({
     viewportPadding,
   }
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     resolve(props, setResolved)
   }, [resolve])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (resolved) {
       onResolve?.(resolved)
     }

@@ -24,9 +24,11 @@ export const DropdownListMenu = () => {
     itemBorderIntent,
     placement,
     size,
+    open,
   } = useDropdownListContext()
 
   useLayoutEffect(() => {
+    if (!open) return
     const el = (triggerRef as RefObject<HTMLElement>).current
     if (!el) return
     const update = () => setTriggerWidth(el.offsetWidth)
@@ -34,7 +36,7 @@ export const DropdownListMenu = () => {
     const observer = new ResizeObserver(update)
     observer.observe(el)
     return () => observer.disconnect()
-  }, [])
+  }, [open])
 
   const itemsContainerBlockSize = getItemsWrapperBlockSize(resolvedVisibleItemsCount, size ?? 'md')
   const opensUpDownwards = (resolvedPlacement || 'bottom-start').startsWith('bottom')
