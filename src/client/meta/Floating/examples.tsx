@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Floating, FloatingProps } from 'lib/components'
+import { FloatingProps } from 'lib/components'
 
 const FLOATING_EXAMPLES_META: ComponentMeta<FloatingProps>['examples'] = [
   // {

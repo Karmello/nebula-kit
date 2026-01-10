@@ -4,15 +4,14 @@ import { PortalPlacement } from 'lib/components/core/utility/Portal'
 
 export type FloatingResolved = {
   placement: PortalPlacement
-  style?: {
-    maxHeight?: number
-  }
+  blockSize?: number
 }
 
 export type FloatingProps = {
   children: ReactNode
   anchorRef: RefObject<HTMLElement | null>
-  portalBlockSize: string
+  floatingBlockSize?: string
+  floatingInlineSize?: string
   onResolve?: (floating: FloatingResolved) => void
   placement?: PortalPlacement
   offset?: string

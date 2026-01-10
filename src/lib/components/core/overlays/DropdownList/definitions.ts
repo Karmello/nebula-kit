@@ -6,8 +6,10 @@ import { PortalPlacement } from '../../utility/Portal'
 
 export const DROPDOWN_LIST_PLACEMENTS = [
   'bottom-start',
+  'bottom-center',
   'bottom-end',
   'top-start',
+  'top-center',
   'top-end',
 ] as const satisfies PortalPlacement[]
 

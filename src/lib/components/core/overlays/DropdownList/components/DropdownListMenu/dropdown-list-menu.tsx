@@ -3,7 +3,7 @@ import { cloneElement, ReactElement, RefObject, useLayoutEffect, useState } from
 import { Floating, Portal, Resize, Box, Flex } from 'lib/components'
 
 import { useDropdownListContext } from '..'
-import { getItemsWrapperBlockSize } from '../../helpers'
+import { getItemsWrapperBlockSize, getMaxAllowedVisibleItemsCount } from '../../helpers'
 
 export const DropdownListMenu = () => {
   const [triggerWidth, setTriggerWidth] = useState<number | undefined>(undefined)
@@ -14,7 +14,9 @@ export const DropdownListMenu = () => {
     scrollWrapperRef,
     slotsByName,
     resizeVisible,
+    defaultResolvedVisibleItemsCount,
     resolvedVisibleItemsCount,
+    setResolvedVisibleItemsCount,
     resolvedPlacement,
     setResolvedPlacement,
     intent,
@@ -42,24 +44,27 @@ export const DropdownListMenu = () => {
   return (
     <Floating
       anchorRef={triggerRef}
-      portalBlockSize={itemsContainerBlockSize}
+      floatingBlockSize={itemsContainerBlockSize}
       placement={placement}
       onResolve={resolved => {
-        // console.log(floating)
-
         if (resolved.placement !== resolvedPlacement) {
           setResolvedPlacement(resolved.placement as never)
         }
 
-        // const maxAllowedVisibleItemsCount = getMaxAllowedVisibleItemsCount(
-        //   size,
-        //   floating.style.maxHeight
-        // )
-        // if (maxAllowedVisibleItemsCount !== resolvedVisibleItemsCount) {
-        //   setResolvedVisibleItemsCount(
-        //     Math.min(defaultResolvedVisibleItemsCount, maxAllowedVisibleItemsCount)
-        //   )
-        // }
+        if (resolved.blockSize !== undefined) {
+          const maxAllowedVisibleItemsCount = getMaxAllowedVisibleItemsCount(size, resolved.blockSize)
+
+          if (
+            defaultResolvedVisibleItemsCount !== undefined &&
+            maxAllowedVisibleItemsCount !== undefined &&
+            maxAllowedVisibleItemsCount !== resolvedVisibleItemsCount
+          ) {
+            const min = Math.min(defaultResolvedVisibleItemsCount, maxAllowedVisibleItemsCount)
+            if (min != null) setResolvedVisibleItemsCount(min)
+          }
+        } else {
+          setResolvedVisibleItemsCount(defaultResolvedVisibleItemsCount)
+        }
       }}
     >
       <Portal tagRef={portalRef} anchorRef={triggerRef} placement={resolvedPlacement}>

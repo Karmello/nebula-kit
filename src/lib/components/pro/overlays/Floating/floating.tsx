@@ -6,7 +6,8 @@ import { FloatingProps, FloatingResolved } from './definitions'
 export const Floating = ({
   children,
   anchorRef,
-  portalBlockSize,
+  floatingBlockSize,
+  floatingInlineSize,
   onResolve,
   placement,
   offset,
@@ -14,7 +15,16 @@ export const Floating = ({
 }: FloatingProps) => {
   const [resolved, setResolved] = useState<FloatingResolved | null>(null)
 
-  const props = { children, anchorRef, portalBlockSize, onResolve, placement, offset, viewportPadding }
+  const props = {
+    children,
+    anchorRef,
+    floatingBlockSize,
+    floatingInlineSize,
+    onResolve,
+    placement,
+    offset,
+    viewportPadding,
+  }
 
   useLayoutEffect(() => {
     resolve(props, setResolved)

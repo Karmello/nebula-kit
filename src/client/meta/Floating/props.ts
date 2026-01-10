@@ -26,7 +26,10 @@ const FLOATING_PROPS_META: ComponentMeta<FloatingProps>['props'] = {
     options: PORTAL_PLACEMENTS as never,
     description: 'Specifies the preferred placement of the floating content relative to the anchor.',
   },
-  portalBlockSize: {
+  floatingBlockSize: {
+    options: [],
+  },
+  floatingInlineSize: {
     options: [],
   },
   viewportPadding: {
