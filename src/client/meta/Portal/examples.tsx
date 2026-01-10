@@ -48,6 +48,11 @@ return (
     noCode: true,
   },
   {
+    description: 'Positioned above the anchor element, aligned to its center.',
+    jsx: <PortalWrapper placement="top-center" />,
+    noCode: true,
+  },
+  {
     description: 'Positioned above the anchor element, aligned to its right edge.',
     jsx: <PortalWrapper placement="top-end" />,
     noCode: true,
@@ -55,6 +60,11 @@ return (
   {
     description: 'Positioned to the right of the anchor element, aligned to its top edge.',
     jsx: <PortalWrapper placement="right-start" />,
+    noCode: true,
+  },
+  {
+    description: 'Positioned to the right of the anchor element, aligned to its center.',
+    jsx: <PortalWrapper placement="right-center" />,
     noCode: true,
   },
   {
@@ -68,6 +78,11 @@ return (
     noCode: true,
   },
   {
+    description: 'Positioned below the anchor element, aligned to its center.',
+    jsx: <PortalWrapper placement="bottom-center" />,
+    noCode: true,
+  },
+  {
     description: 'Positioned below the anchor element, aligned to its right edge.',
     jsx: <PortalWrapper placement="bottom-end" />,
     noCode: true,
@@ -75,6 +90,11 @@ return (
   {
     description: 'Positioned to the left of the anchor element, aligned to its top edge.',
     jsx: <PortalWrapper placement="left-start" />,
+    noCode: true,
+  },
+  {
+    description: 'Positioned to the left of the anchor element, aligned to its center.',
+    jsx: <PortalWrapper placement="left-center" />,
     noCode: true,
   },
   {

@@ -19,7 +19,10 @@ export const PRO_PAGE_CATEGORIES = [
   {
     key: 'overlays',
     label: 'Overlays',
-    items: [{ key: 'dialog', label: 'Dialog', sections: PRO_PAGE_SECTIONS }],
+    items: [
+      { key: 'dialog', label: 'Dialog', sections: PRO_PAGE_SECTIONS },
+      { key: 'floating', label: 'Floating', sections: PRO_PAGE_SECTIONS },
+    ],
   },
   {
     key: 'layouts',

@@ -5,3 +5,5 @@ export {
   type DialogContentProps,
   type DialogFooterProps,
 } from './Dialog'
+
+export { Floating, type FloatingProps } from './Floating'

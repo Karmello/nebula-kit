@@ -10,6 +10,7 @@ import dialogMeta from './Dialog/_index'
 import dividerMeta from './Divider/_index'
 import dropdownList from './DropdownList/_index'
 import flexMeta from './Flex/_index'
+import floatingMeta from './Floating/_index'
 import focusTrapMeta from './FocusTrap/_index'
 import footerMeta from './Footer/_index'
 import formMeta from './Form/_index'
@@ -53,6 +54,7 @@ const META = {
   Divider: dividerMeta,
   DropdownList: dropdownList,
   Flex: flexMeta,
+  Floating: floatingMeta,
   FocusTrap: focusTrapMeta,
   Footer: footerMeta,
   Form: formMeta,

@@ -1,12 +1,12 @@
 import { useLayoutEffect, useRef, useState, useCallback } from 'react'
 import { createPortal } from 'react-dom'
+import classNames from 'classnames'
 
 import { Box } from 'lib/components'
+import { withPrefix } from 'lib/helpers'
 
 import { DEFAULT_PORTAL_PLACEMENT, PortalProps } from './definitions'
 import { useIslandContext } from '../../internal'
-import classNames from 'classnames'
-import { withPrefix } from 'lib/helpers'
 
 export const Portal = ({
   // HtmlTag
