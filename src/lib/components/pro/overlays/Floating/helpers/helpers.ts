@@ -201,9 +201,9 @@ export const resolve = (props: FloatingProps, setResolved: (resolved: FloatingRe
     anchorRef,
     floatingBlockSize,
     floatingInlineSize,
-    offset = '0px',
+    offset = 0,
     placement,
-    viewportPadding = '0px',
+    viewportPadding = 0,
   } = props
 
   const anchorEl = anchorRef.current
@@ -211,8 +211,8 @@ export const resolve = (props: FloatingProps, setResolved: (resolved: FloatingRe
 
   const rect = anchorEl.getBoundingClientRect()
 
-  const pad = resolveCssValue(viewportPadding)
-  const offsetPx = resolveCssValue(offset)
+  const pad = viewportPadding
+  const offsetPx = offset
 
   // Viewport bounds with padding applied
   const viewportTop = pad
@@ -221,8 +221,8 @@ export const resolve = (props: FloatingProps, setResolved: (resolved: FloatingRe
   const viewportRight = window.innerWidth - pad
 
   // Optional known sizes
-  const blockPx = floatingBlockSize != null ? resolveCssValue(floatingBlockSize) : undefined
-  const inlinePx = floatingInlineSize != null ? resolveCssValue(floatingInlineSize) : undefined
+  const blockPx = floatingBlockSize != null ? floatingBlockSize : undefined
+  const inlinePx = floatingInlineSize != null ? floatingInlineSize : undefined
 
   const { side: requestedSide, align: requestedAlign } = parsePlacement(placement)
 
@@ -309,29 +309,4 @@ export const resolve = (props: FloatingProps, setResolved: (resolved: FloatingRe
     placement: `${resolvedSide}-${resolvedAlign}` as PortalPlacement,
     blockSize: resolvedBlockSize,
   })
-}
-
-/**
- * Resolves CSS size values (px, rem, %, etc.) to pixels.
- *
- * This intentionally uses a detached DOM node so it:
- *  - works for any valid CSS length
- *  - does not depend on component DOM structure
- *
- * Used sparingly and only in resolver boundaries.
- */
-const resolveCssValue = (value?: string): number => {
-  if (!value) return 0
-
-  const el = document.createElement('div')
-  el.style.position = 'absolute'
-  el.style.visibility = 'hidden'
-  el.style.pointerEvents = 'none'
-  el.style.width = value
-
-  document.body.appendChild(el)
-  const px = parseFloat(getComputedStyle(el).width)
-  document.body.removeChild(el)
-
-  return Number.isFinite(px) ? px : 0
 }

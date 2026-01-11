@@ -46,7 +46,7 @@ export const DropdownListMenu = () => {
   return (
     <Floating
       anchorRef={triggerRef}
-      floatingBlockSize={itemsContainerBlockSize}
+      floatingBlockSize={Number(itemsContainerBlockSize.replace('px', ''))}
       placement={placement}
       onResolve={resolved => {
         if (resolved.placement !== resolvedPlacement) {

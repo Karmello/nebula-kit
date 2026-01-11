@@ -22,6 +22,7 @@ export const PRO_PAGE_CATEGORIES = [
     items: [
       { key: 'dialog', label: 'Dialog', sections: PRO_PAGE_SECTIONS },
       { key: 'floating', label: 'Floating', sections: PRO_PAGE_SECTIONS },
+      { key: 'tooltip', label: 'Tooltip', sections: PRO_PAGE_SECTIONS },
     ],
   },
   {

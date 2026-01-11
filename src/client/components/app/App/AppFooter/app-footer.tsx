@@ -100,7 +100,7 @@ export const AppFooter = () => {
           </MarkerList.Item>
         </MarkerList>
         <Spacer />
-        <Text scale="compact" typography="caption" intent="primary">
+        <Text scale="compact" typography="caption" intent="primary" color="gray">
           {getCopyrightInfo()}
         </Text>
       </Footer.Section>

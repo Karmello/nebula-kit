@@ -20,7 +20,7 @@ const PORTAL_META: ComponentMeta<PortalProps> = {
   props: PORTAL_PROPS_META,
   examples: PORTAL_EXAMPLES_META,
   changelog: {
-    '0.3.0': ['extended "placement" prop values'],
+    '0.3.0': ['extended "placement" prop values', 'added "offset" prop'],
     '0.2.3': ['Released'],
   },
 }

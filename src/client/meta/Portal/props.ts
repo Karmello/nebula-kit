@@ -15,6 +15,11 @@ const PORTAL_PROPS_META: ComponentMeta<PortalProps>['props'] = {
     isRequired: true,
     description: 'Content rendered inside the portal.',
   },
+  offset: {
+    options: ['number'],
+    description:
+      'Defines the distance (px) between the anchor element and the portal content along the placement axis.',
+  },
   placement: {
     options: PORTAL_PLACEMENTS as unknown as string[],
     defaultValue: DEFAULT_PORTAL_PLACEMENT,

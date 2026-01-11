@@ -6,10 +6,10 @@ import { FloatingProps, FloatingResolved } from './definitions'
 export const Floating = ({
   children,
   anchorRef,
-  floatingBlockSize,
-  floatingInlineSize,
   onResolve,
   placement,
+  floatingBlockSize,
+  floatingInlineSize,
   offset,
   viewportPadding,
 }: FloatingProps) => {
@@ -18,10 +18,10 @@ export const Floating = ({
   const props = {
     children,
     anchorRef,
-    floatingBlockSize,
-    floatingInlineSize,
     onResolve,
     placement,
+    floatingBlockSize,
+    floatingInlineSize,
     offset,
     viewportPadding,
   }

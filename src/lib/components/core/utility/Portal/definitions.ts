@@ -24,6 +24,7 @@ export type PortalPlacement = (typeof PORTAL_PLACEMENTS)[number]
 type PortalOwnProps = {
   anchorRef?: RefObject<HTMLElement | null>
   placement?: PortalPlacement
+  offset?: number
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {

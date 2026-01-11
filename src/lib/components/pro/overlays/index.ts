@@ -7,3 +7,5 @@ export {
 } from './Dialog'
 
 export { Floating, type FloatingProps } from './Floating'
+
+export { Tooltip, type TooltipProps } from './Tooltip'

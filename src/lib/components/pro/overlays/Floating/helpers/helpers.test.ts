@@ -37,10 +37,10 @@ describe('Floating resolve - basic behavior', () => {
       children: null,
       anchorRef,
       placement: 'bottom-start',
-      floatingBlockSize: '200px',
-      floatingInlineSize: '200px',
-      offset: '0px',
-      viewportPadding: '0px',
+      floatingBlockSize: 200,
+      floatingInlineSize: 200,
+      offset: 0,
+      viewportPadding: 0,
     }
 
     let resolved: FloatingResolved | null = null
@@ -72,9 +72,9 @@ describe('Floating resolve - basic behavior', () => {
       children: null,
       anchorRef,
       placement: 'bottom-start',
-      floatingBlockSize: '600px',
-      offset: '0px',
-      viewportPadding: '0px',
+      floatingBlockSize: 600,
+      offset: 0,
+      viewportPadding: 0,
     }
 
     let resolved: FloatingResolved | null = null
@@ -106,9 +106,9 @@ describe('Floating resolve - basic behavior', () => {
       children: null,
       anchorRef,
       placement: 'bottom-start',
-      floatingBlockSize: '600px',
-      offset: '0px',
-      viewportPadding: '0px',
+      floatingBlockSize: 600,
+      offset: 0,
+      viewportPadding: 0,
     }
 
     let resolved: FloatingResolved | null = null
@@ -140,9 +140,9 @@ describe('Floating resolve - basic behavior', () => {
       children: null,
       anchorRef,
       placement: 'bottom-start',
-      floatingInlineSize: '300px',
-      offset: '0px',
-      viewportPadding: '0px',
+      floatingInlineSize: 300,
+      offset: 0,
+      viewportPadding: 0,
     }
 
     let resolved: FloatingResolved | null = null
@@ -173,9 +173,9 @@ describe('Floating resolve - basic behavior', () => {
       children: null,
       anchorRef,
       placement: 'bottom-end',
-      floatingInlineSize: '300px',
-      offset: '0px',
-      viewportPadding: '0px',
+      floatingInlineSize: 300,
+      offset: 0,
+      viewportPadding: 0,
     }
 
     let resolved: FloatingResolved | null = null
@@ -206,9 +206,9 @@ describe('Floating resolve - basic behavior', () => {
       children: null,
       anchorRef,
       placement: 'top-start',
-      floatingBlockSize: '600px',
-      offset: '0px',
-      viewportPadding: '0px',
+      floatingBlockSize: 600,
+      offset: 0,
+      viewportPadding: 0,
     }
 
     let resolved: FloatingResolved | null = null
@@ -240,9 +240,9 @@ describe('Floating resolve - basic behavior', () => {
       children: null,
       anchorRef,
       placement: 'bottom-start',
-      floatingBlockSize: '1000px',
-      offset: '0px',
-      viewportPadding: '0px',
+      floatingBlockSize: 1000,
+      offset: 0,
+      viewportPadding: 0,
     }
 
     let resolved: FloatingResolved | null = null

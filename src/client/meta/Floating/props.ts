@@ -15,9 +15,9 @@ const FLOATING_PROPS_META: ComponentMeta<FloatingProps>['props'] = {
       'Rendered floating content. Floating does not render any DOM of its own and only provides placement resolution for its children.',
   },
   offset: {
-    options: ['CSS'],
+    options: ['number'],
     description:
-      'Defines the distance between the anchor element and the floating content along the placement axis.',
+      'Defines the distance (px) between the anchor and floating content along the placement axis. Informational only - used for placement resolution, not rendering.',
   },
   onResolve: {
     options: ['({ placement, blockSize? }) => void'],
@@ -29,19 +29,19 @@ const FLOATING_PROPS_META: ComponentMeta<FloatingProps>['props'] = {
     description: 'Specifies the preferred placement of the floating content relative to the anchor.',
   },
   floatingBlockSize: {
-    options: ['CSS'],
+    options: ['number'],
     description:
-      'Expected block size of the floating content. Used to compute available vertical space and expose layout limits (such as blockSize) without enforcing the actual rendered size.',
+      'Expected block size (px) of the floating content. Used for placement resolution only, does not affect rendering.',
   },
   floatingInlineSize: {
-    options: ['CSS'],
+    options: ['number'],
     description:
-      'Expected inline size of the floating content. Used to evaluate horizontal overflow and adjust alignment when resolving placement.',
+      'Expected inline size (px) of the floating content. Used for placement resolution only, does not affect rendering.',
   },
   viewportPadding: {
-    options: ['CSS'],
+    options: ['number'],
     description:
-      'Defines the minimum distance the floating content must keep from the viewport edges when resolving available space.',
+      'Defines the minimum distance (px) from viewport edges used during placement resolution. Informational only - does not affect rendering.',
   },
 }
 

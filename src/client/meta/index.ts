@@ -41,6 +41,7 @@ import tabsMeta from './Tabs/_index'
 import textMeta from './Text/_index'
 import textareaMeta from './Textarea/_index'
 import toolbarMeta from './Toolbar/_index'
+import tooltipMeta from './Tooltip/_index'
 import withIconMeta from './WithIcon/_index'
 
 const META = {
@@ -85,6 +86,7 @@ const META = {
   Text: textMeta,
   Textarea: textareaMeta,
   Toolbar: toolbarMeta,
+  Tooltip: tooltipMeta,
   WithIcon: withIconMeta,
 } as Record<string, Record<string, ComponentMeta<object>>>
 
