@@ -4,10 +4,13 @@ import { BoxVariant } from 'lib/components/core/base/Box'
 export const TOOLTIP_VARIANTS = ['solid', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
 
 export const DEFAULT_TOOLTIP_PLACEMENT: TooltipProps['placement'] = 'top-center'
-export const DEFAULT_TOOLTIP_OFFSET: TooltipProps['offset'] = 5
-export const DEFAULT_TOOLTIP_VARIANT: TooltipProps['variant'] = 'outline'
-export const DEFAULT_TOOLTIP_INTENT: TooltipProps['intent'] = 'tertiary'
+export const DEFAULT_TOOLTIP_OFFSET: TooltipProps['offset'] = 10
+export const DEFAULT_TOOLTIP_VARIANT: TooltipProps['variant'] = 'solid'
+export const DEFAULT_TOOLTIP_INTENT: TooltipProps['intent'] = 'inverse'
 export const DEFAULT_TOOLTIP_PADDING: TooltipProps['padding'] = '10px'
+
+export type TooltipOpenReason = 'keyboard' | 'mouse'
+export type TooltipInputModality = TooltipOpenReason | null
 
 export type TooltipVariant = (typeof TOOLTIP_VARIANTS)[number]
 

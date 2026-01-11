@@ -1,4 +1,4 @@
-import { cloneElement, isValidElement, useRef, useState } from 'react'
+import { cloneElement, isValidElement, useId, useRef, useState } from 'react'
 
 import { HtmlTagProps, Box, Floating, Portal, Measure } from 'lib/components'
 
@@ -8,8 +8,24 @@ import {
   DEFAULT_TOOLTIP_PADDING,
   DEFAULT_TOOLTIP_PLACEMENT,
   DEFAULT_TOOLTIP_VARIANT,
+  TooltipInputModality,
+  TooltipOpenReason,
   TooltipProps,
 } from './definitions'
+
+let lastInputModality: TooltipInputModality = null
+const getLastInputModality = () => lastInputModality
+
+const onKeyDown = (e: KeyboardEvent) => {
+  if (e.key === 'Tab') lastInputModality = 'keyboard'
+}
+const onMouseDown = () => {
+  lastInputModality = 'mouse'
+}
+if (typeof document !== 'undefined') {
+  document.addEventListener('keydown', onKeyDown)
+  document.addEventListener('mousedown', onMouseDown)
+}
 
 export const Tooltip = ({
   // HtmlTag
@@ -32,35 +48,55 @@ export const Tooltip = ({
   variant = DEFAULT_TOOLTIP_VARIANT,
 }: TooltipProps) => {
   const [open, setOpen] = useState(false)
+  const [openReason, setOpenReason] = useState<TooltipOpenReason | null>(null)
+
   const [resolvedPlacement, setResolvedPlacement] = useState<TooltipProps['placement']>(placement)
   const [resolvedSize, setResolvedSize] = useState<{ blockSize: number; inlineSize: number }>({
     blockSize: 0,
     inlineSize: 0,
   })
 
-  const ref = useRef(null)
-  const finalRef = tagRef || ref
+  const dismissedByEsc = useRef(false)
+  const localTagRef = useRef(null)
+  const triggerRef = tagRef || localTagRef
 
-  const closeTimeout = useRef<number | null>(null)
+  const tooltipId = useId()
 
-  const onMouseEnter = () => {
-    if (closeTimeout.current) {
-      clearTimeout(closeTimeout.current)
-      closeTimeout.current = null
-    }
-    setOpen(true)
-  }
-
-  const onMouseLeave = () => {
-    closeTimeout.current = window.setTimeout(() => {
+  const eventHandlers = {
+    onMouseEnter: () => {
+      if (!open) {
+        setOpen(true)
+        setOpenReason('mouse')
+      }
+    },
+    onMouseLeave: () => {
       setOpen(false)
-    }, 100)
+      setOpenReason(null)
+    },
+    onFocus: () => {
+      if (getLastInputModality() === 'keyboard' && !dismissedByEsc.current) {
+        setOpen(true)
+        setOpenReason('keyboard')
+      }
+    },
+    onBlur: () => {
+      dismissedByEsc.current = false
+      setOpen(false)
+      setOpenReason(null)
+    },
+    onKeyDown: (e: { key: string }) => {
+      if (e.key === 'Escape' && open && openReason === 'keyboard') {
+        dismissedByEsc.current = true
+        setOpen(false)
+        setOpenReason(null)
+      }
+    },
   }
 
   const ContentWrapper = () => {
     const Content = (
       <Box
-        tagAttrs={{ role: 'tooltip' }}
+        tagAttrs={{ role: 'tooltip', id: tooltipId, 'aria-hidden': !open }}
         drawable
         pointerEvents="none"
         blockSize={blockSize}
@@ -85,6 +121,7 @@ export const Tooltip = ({
         </Box>
       </Box>
     )
+
     return (
       <>
         <Measure
@@ -99,7 +136,7 @@ export const Tooltip = ({
         </Measure>
         {open ? (
           <Floating
-            anchorRef={finalRef}
+            anchorRef={triggerRef}
             placement={placement}
             offset={offset}
             floatingBlockSize={resolvedSize.blockSize}
@@ -108,7 +145,7 @@ export const Tooltip = ({
               setResolvedPlacement(placement)
             }}
           >
-            <Portal anchorRef={finalRef} placement={resolvedPlacement} offset={offset}>
+            <Portal anchorRef={triggerRef} placement={resolvedPlacement} offset={offset}>
               {Content}
             </Portal>
           </Floating>
@@ -120,7 +157,12 @@ export const Tooltip = ({
   if (!isValidElement(children)) {
     return (
       <>
-        <Box tag="span" tagAttrs={{ ...tagAttrs, onMouseEnter, onMouseLeave }} tagRef={finalRef}>
+        <Box
+          tag="span"
+          tagAttrs={{ ...tagAttrs, ...eventHandlers, 'aria-describedby': open ? tooltipId : undefined }}
+          tagRef={triggerRef}
+          display="inline-block"
+        >
           {children}
         </Box>
         <ContentWrapper />
@@ -131,7 +173,12 @@ export const Tooltip = ({
   if (typeof children.type === 'string') {
     return (
       <>
-        {cloneElement(children, { ...tagAttrs, ref: finalRef, onMouseEnter, onMouseLeave } as any)}
+        {cloneElement(children, {
+          ...tagAttrs,
+          ref: triggerRef,
+          ...eventHandlers,
+          'aria-describedby': open ? tooltipId : undefined,
+        } as any)}
         <ContentWrapper />
       </>
     )
@@ -140,8 +187,8 @@ export const Tooltip = ({
   return (
     <>
       {cloneElement(children, {
-        tagAttrs: { ...tagAttrs, onMouseEnter, onMouseLeave },
-        tagRef: finalRef,
+        tagAttrs: { ...tagAttrs, ...eventHandlers, 'aria-describedby': open ? tooltipId : undefined },
+        tagRef: triggerRef,
       } as HtmlTagProps)}
       <ContentWrapper />
     </>
