@@ -9,10 +9,10 @@ const FLOATING_PROPS_META: ComponentMeta<FloatingProps>['props'] = {
     description: 'Reference to an element the floating logic resolves placement relative to.',
   },
   children: {
-    options: ['floating => ReactNode'],
+    options: ['ReactNode'],
     isRequired: true,
     description:
-      'Render function that receives the resolved floating positioning data and returns the content.',
+      'Rendered floating content. Floating does not render any DOM of its own and only provides placement resolution for its children.',
   },
   offset: {
     options: ['CSS'],
@@ -20,17 +20,23 @@ const FLOATING_PROPS_META: ComponentMeta<FloatingProps>['props'] = {
       'Defines the distance between the anchor element and the floating content along the placement axis.',
   },
   onResolve: {
-    options: [],
+    options: ['({ placement, blockSize? }) => void'],
+    description:
+      'Callback invoked when Floating resolves placement or layout constraints. Receives the resolved placement and optional block size limits derived from available space.',
   },
   placement: {
     options: PORTAL_PLACEMENTS as never,
     description: 'Specifies the preferred placement of the floating content relative to the anchor.',
   },
   floatingBlockSize: {
-    options: [],
+    options: ['CSS'],
+    description:
+      'Expected block size of the floating content. Used to compute available vertical space and expose layout limits (such as blockSize) without enforcing the actual rendered size.',
   },
   floatingInlineSize: {
-    options: [],
+    options: ['CSS'],
+    description:
+      'Expected inline size of the floating content. Used to evaluate horizontal overflow and adjust alignment when resolving placement.',
   },
   viewportPadding: {
     options: ['CSS'],

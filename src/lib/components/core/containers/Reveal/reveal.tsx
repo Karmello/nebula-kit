@@ -31,8 +31,8 @@ export const Reveal = <T extends RevealTag = 'div'>({
       color={color}
       intent={intent}
       borderRadius="var(--neb-border-radius)"
-      overflowX="hidden"
-      overflowY="hidden"
+      overflow="hidden"
+      maxInlineSize="100%"
     >
       <Flex flexDirection="column" alignItems="stretch">
         <Button
