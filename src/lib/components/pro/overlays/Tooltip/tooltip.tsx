@@ -1,9 +1,10 @@
 import { cloneElement, isValidElement, useRef, useState } from 'react'
 
-import { HtmlTagProps, Box, Floating, Portal } from 'lib/components'
+import { HtmlTagProps, Box, Floating, Portal, Measure } from 'lib/components'
 
 import {
   DEFAULT_TOOLTIP_INTENT,
+  DEFAULT_TOOLTIP_OFFSET,
   DEFAULT_TOOLTIP_PADDING,
   DEFAULT_TOOLTIP_PLACEMENT,
   DEFAULT_TOOLTIP_VARIANT,
@@ -27,10 +28,15 @@ export const Tooltip = ({
   // own
   content,
   placement = DEFAULT_TOOLTIP_PLACEMENT,
+  offset = DEFAULT_TOOLTIP_OFFSET,
   variant = DEFAULT_TOOLTIP_VARIANT,
 }: TooltipProps) => {
   const [open, setOpen] = useState(false)
   const [resolvedPlacement, setResolvedPlacement] = useState<TooltipProps['placement']>(placement)
+  const [resolvedSize, setResolvedSize] = useState<{ blockSize: number; inlineSize: number }>({
+    blockSize: 0,
+    inlineSize: 0,
+  })
 
   const ref = useRef(null)
   const finalRef = tagRef || ref
@@ -51,40 +57,63 @@ export const Tooltip = ({
     }, 100)
   }
 
-  const Content = () => {
-    if (!open) return null
-    return (
-      <Floating
-        anchorRef={finalRef}
-        placement={placement}
-        offset={25}
-        // floatingBlockSize={100}
-        // floatingInlineSize={250}
-        onResolve={({ placement }) => {
-          setResolvedPlacement(placement)
-        }}
+  const ContentWrapper = () => {
+    const Content = (
+      <Box
+        tagAttrs={{ role: 'tooltip' }}
+        drawable
+        pointerEvents="none"
+        blockSize={blockSize}
+        color={color}
+        inlineSize={inlineSize}
+        intent="neutral"
+        variant="solid"
       >
-        <Portal anchorRef={finalRef} placement={resolvedPlacement} offset={25}>
-          <Box
-            tagAttrs={{
-              role: 'tooltip',
+        <Box
+          drawable
+          variant={variant}
+          intent={intent}
+          color={color}
+          padding={padding}
+          paddingBlock={paddingBlock}
+          paddingInline={paddingInline}
+          textAlign={textAlign}
+          blockSize="100%"
+          inlineSize="100%"
+        >
+          {content}
+        </Box>
+      </Box>
+    )
+    return (
+      <>
+        <Measure
+          onMeasure={({ blockSize, inlineSize }) => {
+            setResolvedSize(prev => {
+              if (prev && prev.blockSize === blockSize && prev.inlineSize === inlineSize) return prev
+              return { blockSize, inlineSize }
+            })
+          }}
+        >
+          {Content}
+        </Measure>
+        {open ? (
+          <Floating
+            anchorRef={finalRef}
+            placement={placement}
+            offset={offset}
+            floatingBlockSize={resolvedSize.blockSize}
+            floatingInlineSize={resolvedSize.inlineSize}
+            onResolve={({ placement }) => {
+              setResolvedPlacement(placement)
             }}
-            drawable
-            pointerEvents="none"
-            blockSize={blockSize}
-            color={color}
-            inlineSize={inlineSize}
-            intent={intent}
-            padding={padding}
-            paddingBlock={paddingBlock}
-            paddingInline={paddingInline}
-            textAlign={textAlign}
-            variant={variant}
           >
-            {content}
-          </Box>
-        </Portal>
-      </Floating>
+            <Portal anchorRef={finalRef} placement={resolvedPlacement} offset={offset}>
+              {Content}
+            </Portal>
+          </Floating>
+        ) : null}
+      </>
     )
   }
 
@@ -94,7 +123,7 @@ export const Tooltip = ({
         <Box tag="span" tagAttrs={{ ...tagAttrs, onMouseEnter, onMouseLeave }} tagRef={finalRef}>
           {children}
         </Box>
-        <Content />
+        <ContentWrapper />
       </>
     )
   }
@@ -103,7 +132,7 @@ export const Tooltip = ({
     return (
       <>
         {cloneElement(children, { ...tagAttrs, ref: finalRef, onMouseEnter, onMouseLeave } as any)}
-        <Content />
+        <ContentWrapper />
       </>
     )
   }
@@ -114,7 +143,7 @@ export const Tooltip = ({
         tagAttrs: { ...tagAttrs, onMouseEnter, onMouseLeave },
         tagRef: finalRef,
       } as HtmlTagProps)}
-      <Content />
+      <ContentWrapper />
     </>
   )
 }

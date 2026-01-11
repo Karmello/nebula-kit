@@ -180,6 +180,45 @@ const computeVisibleBlockSize = (available: number, blockSize?: number): number 
   return Math.max(0, Math.min(blockSize, available))
 }
 
+const computeBlockBounds = (
+  rect: DOMRect,
+  blockSize: number,
+  align: Align
+): { top: number; bottom: number } => {
+  if (align === 'start') {
+    return {
+      top: rect.top,
+      bottom: rect.top + blockSize,
+    }
+  }
+
+  if (align === 'end') {
+    return {
+      top: rect.bottom - blockSize,
+      bottom: rect.bottom,
+    }
+  }
+
+  const center = rect.top + rect.height / 2
+  const half = blockSize / 2
+
+  return {
+    top: center - half,
+    bottom: center + half,
+  }
+}
+
+const computeBlockOverflow = (
+  bounds: { top: number; bottom: number },
+  viewportTop: number,
+  viewportBottom: number
+): number => {
+  const overflowTop = Math.max(0, viewportTop - bounds.top)
+  const overflowBottom = Math.max(0, bounds.bottom - viewportBottom)
+
+  return overflowTop + overflowBottom
+}
+
 /**
  * Core resolver.
  *
@@ -232,13 +271,22 @@ export const resolve = (props: FloatingProps, setResolved: (resolved: FloatingRe
 
   let resolvedAlign = requestedAlign
 
-  // Alignment resolution only runs when inline size is known.
-  // Otherwise we must not guess.
-  if (inlinePx != null) {
-    const initialBounds = computeInlineBounds(rect, inlinePx, requestedAlign)
-    const initialOverflow = computeInlineOverflow(initialBounds, viewportLeft, viewportRight)
+  if (inlinePx != null || blockPx != null) {
+    const isVerticalSide = requestedSide === 'top' || requestedSide === 'bottom'
+    const isHorizontalSide = requestedSide === 'left' || requestedSide === 'right'
 
-    // Only attempt nudging if the requested alignment actually overflows
+    let initialOverflow = 0
+
+    if (isVerticalSide && inlinePx != null) {
+      const bounds = computeInlineBounds(rect, inlinePx, requestedAlign)
+      initialOverflow = computeInlineOverflow(bounds, viewportLeft, viewportRight)
+    }
+
+    if (isHorizontalSide && blockPx != null) {
+      const bounds = computeBlockBounds(rect, blockPx, requestedAlign)
+      initialOverflow = computeBlockOverflow(bounds, viewportTop, viewportBottom)
+    }
+
     if (initialOverflow > 0) {
       const alignCandidates = getAlignCandidates(requestedAlign)
 
@@ -246,17 +294,23 @@ export const resolve = (props: FloatingProps, setResolved: (resolved: FloatingRe
       let bestOverflow = initialOverflow
 
       for (const align of alignCandidates) {
-        const bounds = computeInlineBounds(rect, inlinePx, align)
-        const overflow = computeInlineOverflow(bounds, viewportLeft, viewportRight)
+        let overflow = bestOverflow
 
-        // Strictly better overflow wins.
-        // Distance-based ordering handles tie-breaking implicitly.
+        if (isVerticalSide && inlinePx != null) {
+          const bounds = computeInlineBounds(rect, inlinePx, align)
+          overflow = computeInlineOverflow(bounds, viewportLeft, viewportRight)
+        }
+
+        if (isHorizontalSide && blockPx != null) {
+          const bounds = computeBlockBounds(rect, blockPx, align)
+          overflow = computeBlockOverflow(bounds, viewportTop, viewportBottom)
+        }
+
         if (overflow < bestOverflow) {
           bestOverflow = overflow
           bestAlign = align
         }
 
-        // Early exit: perfect fit found
         if (overflow === 0) break
       }
 
@@ -283,9 +337,10 @@ export const resolve = (props: FloatingProps, setResolved: (resolved: FloatingRe
       available = viewportBottom - (rect.bottom + offsetPx)
     } else if (side === 'top') {
       available = rect.top - offsetPx - viewportTop
-    } else {
-      // left/right vertical logic not implemented yet
-      available = viewportBottom - viewportTop
+    } else if (side === 'right') {
+      available = viewportRight - (rect.right + offsetPx)
+    } else if (side === 'left') {
+      available = rect.left - offsetPx - viewportLeft
     }
 
     const visible = computeVisibleBlockSize(available, blockPx)

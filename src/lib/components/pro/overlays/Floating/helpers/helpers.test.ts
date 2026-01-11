@@ -255,4 +255,137 @@ describe('Floating resolve - basic behavior', () => {
     expect(resolved!.placement).toBe('bottom-start')
     expect(resolved!.blockSize).toBe(460)
   })
+
+  it('keeps center alignment for left placement when fully visible vertically', () => {
+    const anchorEl = {
+      getBoundingClientRect: vi.fn(() => ({
+        top: 300,
+        bottom: 340,
+        left: 400,
+        right: 440,
+        width: 40,
+        height: 40,
+      })),
+    } as unknown as HTMLElement
+
+    const anchorRef = { current: anchorEl }
+
+    const props: FloatingProps = {
+      children: null,
+      anchorRef,
+      placement: 'left-center',
+      floatingBlockSize: 200,
+      offset: 0,
+      viewportPadding: 0,
+    }
+
+    let resolved: FloatingResolved | null = null
+
+    resolve(props, r => {
+      resolved = r
+    })
+
+    expect(resolved).not.toBeNull()
+    expect(resolved!.placement).toBe('left-center')
+    expect(resolved!.blockSize).toBeUndefined()
+  })
+
+  it('nudges center to end for left placement when clipped at the bottom', () => {
+    const anchorEl = {
+      getBoundingClientRect: vi.fn(() => ({
+        top: 650,
+        bottom: 690,
+        left: 400,
+        right: 440,
+        width: 40,
+        height: 40,
+      })),
+    } as unknown as HTMLElement
+
+    const anchorRef = { current: anchorEl }
+
+    const props: FloatingProps = {
+      children: null,
+      anchorRef,
+      placement: 'left-center',
+      floatingBlockSize: 300,
+      offset: 0,
+      viewportPadding: 0,
+    }
+
+    let resolved: FloatingResolved | null = null
+
+    resolve(props, r => {
+      resolved = r
+    })
+
+    expect(resolved).not.toBeNull()
+    expect(resolved!.placement).toBe('left-end')
+  })
+
+  it('nudges center to end for right placement when clipped at the bottom', () => {
+    const anchorEl = {
+      getBoundingClientRect: vi.fn(() => ({
+        top: 650,
+        bottom: 690,
+        left: 400,
+        right: 440,
+        width: 40,
+        height: 40,
+      })),
+    } as unknown as HTMLElement
+
+    const anchorRef = { current: anchorEl }
+
+    const props: FloatingProps = {
+      children: null,
+      anchorRef,
+      placement: 'right-center',
+      floatingBlockSize: 300,
+      offset: 0,
+      viewportPadding: 0,
+    }
+
+    let resolved: FloatingResolved | null = null
+
+    resolve(props, r => {
+      resolved = r
+    })
+
+    expect(resolved).not.toBeNull()
+    expect(resolved!.placement).toBe('right-end')
+  })
+
+  it('preserves center alignment when left flips to right and center still fits', () => {
+    const anchorEl = {
+      getBoundingClientRect: vi.fn(() => ({
+        top: 300,
+        bottom: 340,
+        left: 20,
+        right: 60,
+        width: 40,
+        height: 40,
+      })),
+    } as unknown as HTMLElement
+
+    const anchorRef = { current: anchorEl }
+
+    const props: FloatingProps = {
+      children: null,
+      anchorRef,
+      placement: 'left-center',
+      floatingBlockSize: 200,
+      offset: 0,
+      viewportPadding: 0,
+    }
+
+    let resolved: FloatingResolved | null = null
+
+    resolve(props, r => {
+      resolved = r
+    })
+
+    expect(resolved).not.toBeNull()
+    expect(resolved!.placement).toBe('right-center')
+  })
 })
