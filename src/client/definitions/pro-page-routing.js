@@ -52,6 +52,9 @@ export const PRO_PAGE_CATEGORIES = [
   {
     key: 'utility',
     label: 'Utility',
-    items: [{ key: 'focus-trap', label: 'FocusTrap', sections: PRO_PAGE_SECTIONS }],
+    items: [
+      { key: 'focus-trap', label: 'FocusTrap', sections: PRO_PAGE_SECTIONS },
+      { key: 'measure', label: 'Measure', sections: PRO_PAGE_SECTIONS },
+    ],
   },
 ]

@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Button, Text, Tooltip, TooltipProps } from 'lib/components'
+import { Button, Tooltip, TooltipProps } from 'lib/components'
 
 const TOOLTIP_EXAMPLES_META: ComponentMeta<TooltipProps>['examples'] = [
   {
