@@ -35,8 +35,6 @@ export const MultiSelect = ({
   const isControlled = value !== undefined
   const currentValue = isControlled ? value : internalValue
 
-  const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(dropdownPlacement)
-
   const handleChange = (value: string) => {
     const nextValue = currentValue?.includes(value)
       ? currentValue.filter(v => v !== value)
@@ -84,57 +82,61 @@ export const MultiSelect = ({
               placement={dropdownPlacement}
               keepOpen
             >
-              {({ open }) => (
-                <>
-                  <DropdownList.Trigger inlineSize={inlineSize} disabled={disabled}>
-                    <Button
-                      tagAttrs={{
-                        'aria-labelledby': tagAttrs?.['aria-labelledby'],
-                        style: opensUpDownwards
-                          ? {
-                              borderBottomLeftRadius: open ? 0 : undefined,
-                              borderBottomRightRadius: open ? 0 : undefined,
-                            }
-                          : {
-                              borderTopLeftRadius: open ? 0 : undefined,
-                              borderTopRightRadius: open ? 0 : undefined,
-                            },
-                      }}
-                      iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
-                      iconPlacement="right"
-                      iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
-                      justifyContent="space-between"
-                      size={size}
-                      variant="solid"
-                      intent={intent}
-                      color={color}
-                      disabled={disabled}
-                      fullWidth
-                    >
-                      {currentLabel || 'Select ...'}
-                    </Button>
-                  </DropdownList.Trigger>
-                  {slotsByName['MultiSelect.Option'].map((slot, index) => {
-                    const slotProps = (slot as ReactElement<any>).props
-                    return (
-                      <DropdownList.Item
-                        key={index}
-                        {...slotProps}
+              {({ open, resolvedPlacement }) => {
+                const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(resolvedPlacement)
+
+                return (
+                  <>
+                    <DropdownList.Trigger inlineSize={inlineSize} disabled={disabled}>
+                      <Button
                         tagAttrs={{
-                          ...slotProps.tagAttrs,
-                          onClick: () => handleChange(slotProps.value),
+                          'aria-labelledby': tagAttrs?.['aria-labelledby'],
+                          style: opensUpDownwards
+                            ? {
+                                borderBottomLeftRadius: open ? 0 : undefined,
+                                borderBottomRightRadius: open ? 0 : undefined,
+                              }
+                            : {
+                                borderTopLeftRadius: open ? 0 : undefined,
+                                borderTopRightRadius: open ? 0 : undefined,
+                              },
                         }}
-                        bold={currentValue.includes(slotProps.value)}
-                        justifyContent={
-                          slotProps.justifyContent || DEFAULT_MULTI_SELECT_OPTION_JUSTIFY_CONTENT
-                        }
+                        iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
+                        iconPlacement="right"
+                        iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
+                        justifyContent="space-between"
+                        size={size}
+                        variant="solid"
+                        intent={intent}
+                        color={color}
+                        disabled={disabled}
+                        fullWidth
                       >
-                        {slot}
-                      </DropdownList.Item>
-                    )
-                  })}
-                </>
-              )}
+                        {currentLabel || 'Select ...'}
+                      </Button>
+                    </DropdownList.Trigger>
+                    {slotsByName['MultiSelect.Option'].map((slot, index) => {
+                      const slotProps = (slot as ReactElement<any>).props
+                      return (
+                        <DropdownList.Item
+                          key={index}
+                          {...slotProps}
+                          tagAttrs={{
+                            ...slotProps.tagAttrs,
+                            onClick: () => handleChange(slotProps.value),
+                          }}
+                          bold={currentValue.includes(slotProps.value)}
+                          justifyContent={
+                            slotProps.justifyContent || DEFAULT_MULTI_SELECT_OPTION_JUSTIFY_CONTENT
+                          }
+                        >
+                          {slot}
+                        </DropdownList.Item>
+                      )
+                    })}
+                  </>
+                )
+              }}
             </DropdownList>
           </MultiSelectProvider>
         )

@@ -44,7 +44,8 @@ const TOOLTIP_PROPS_META: ComponentMeta<TooltipProps>['props'] = {
   placement: {
     options: PORTAL_PLACEMENTS as never,
     defaultValue: DEFAULT_TOOLTIP_PLACEMENT,
-    description: 'Preferred position of the tooltip relative to its trigger element.',
+    description:
+      'Preferred position of the tooltip relative to its trigger element. The position gets auto-adjusted so the tooltip stays visible.',
   },
   tagAttrs: BOX_PROPS_META.tagAttrs,
   tagRef: BOX_PROPS_META.tagRef,

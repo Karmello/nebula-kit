@@ -44,6 +44,8 @@ const COLOR_MAP = {
   '#637777': { light: 'var(--neb-text)', dark: 'var(--neb-text)' },
   // extension
   '#5CA7E4': { light: 'var(--neb-blue-8)', dark: 'var(--neb-blue-8)' },
+  //
+  '#BAEBE2': { light: 'var(--neb-blue-8)', dark: 'var(--neb-blue-8)' },
 }
 
 export const CodeSnippet = ({ code, lang = 'log' }: CodeSnippetProps) => {

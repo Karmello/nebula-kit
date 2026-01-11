@@ -14,6 +14,7 @@ const DROPDOWN_LIST_META: ComponentMeta<DropdownListProps> = {
     description: [
       'handles positioning, visibility, keyboard navigation and scrolling behavior',
       'renders through a Portal to ensure correct layering and positioning',
+      'resolves placement dynamically using the shared Floating positioning logic to avoid viewport clipping',
       'applies consistent styling to list items',
       'intended to be composed into higher-level selection components',
     ],

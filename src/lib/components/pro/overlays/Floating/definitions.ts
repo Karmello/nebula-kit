@@ -10,7 +10,7 @@ export type FloatingResolved = {
 export type FloatingProps = {
   children: ReactNode
   anchorRef: RefObject<HTMLElement | null>
-  onResolve?: (floating: FloatingResolved) => void
+  onResolve: (floating: FloatingResolved) => void
   placement?: PortalPlacement
   floatingBlockSize?: number
   floatingInlineSize?: number

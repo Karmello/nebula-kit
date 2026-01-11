@@ -21,6 +21,7 @@ const FLOATING_PROPS_META: ComponentMeta<FloatingProps>['props'] = {
   },
   onResolve: {
     options: ['({ placement, blockSize? }) => void'],
+    isRequired: true,
     description:
       'Callback invoked when Floating resolves placement or layout constraints. Receives the resolved placement and optional block size limits derived from available space.',
   },
