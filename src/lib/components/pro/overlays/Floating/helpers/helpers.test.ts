@@ -41,6 +41,7 @@ describe('Floating resolve - basic behavior', () => {
       floatingInlineSize: 200,
       offset: 0,
       viewportPadding: 0,
+      onResolve: null,
     }
 
     let resolved: FloatingResolved | null = null
@@ -75,6 +76,7 @@ describe('Floating resolve - basic behavior', () => {
       floatingBlockSize: 600,
       offset: 0,
       viewportPadding: 0,
+      onResolve: null,
     }
 
     let resolved: FloatingResolved | null = null
@@ -109,6 +111,7 @@ describe('Floating resolve - basic behavior', () => {
       floatingBlockSize: 600,
       offset: 0,
       viewportPadding: 0,
+      onResolve: null,
     }
 
     let resolved: FloatingResolved | null = null
@@ -143,6 +146,7 @@ describe('Floating resolve - basic behavior', () => {
       floatingInlineSize: 300,
       offset: 0,
       viewportPadding: 0,
+      onResolve: null,
     }
 
     let resolved: FloatingResolved | null = null
@@ -176,6 +180,7 @@ describe('Floating resolve - basic behavior', () => {
       floatingInlineSize: 300,
       offset: 0,
       viewportPadding: 0,
+      onResolve: null,
     }
 
     let resolved: FloatingResolved | null = null
@@ -209,6 +214,7 @@ describe('Floating resolve - basic behavior', () => {
       floatingBlockSize: 600,
       offset: 0,
       viewportPadding: 0,
+      onResolve: null,
     }
 
     let resolved: FloatingResolved | null = null
@@ -243,6 +249,7 @@ describe('Floating resolve - basic behavior', () => {
       floatingBlockSize: 1000,
       offset: 0,
       viewportPadding: 0,
+      onResolve: null,
     }
 
     let resolved: FloatingResolved | null = null
@@ -277,6 +284,7 @@ describe('Floating resolve - basic behavior', () => {
       floatingBlockSize: 200,
       offset: 0,
       viewportPadding: 0,
+      onResolve: null,
     }
 
     let resolved: FloatingResolved | null = null
@@ -311,6 +319,7 @@ describe('Floating resolve - basic behavior', () => {
       floatingBlockSize: 300,
       offset: 0,
       viewportPadding: 0,
+      onResolve: null,
     }
 
     let resolved: FloatingResolved | null = null
@@ -344,6 +353,7 @@ describe('Floating resolve - basic behavior', () => {
       floatingBlockSize: 300,
       offset: 0,
       viewportPadding: 0,
+      onResolve: null,
     }
 
     let resolved: FloatingResolved | null = null
@@ -377,6 +387,7 @@ describe('Floating resolve - basic behavior', () => {
       floatingBlockSize: 200,
       offset: 0,
       viewportPadding: 0,
+      onResolve: null,
     }
 
     let resolved: FloatingResolved | null = null
