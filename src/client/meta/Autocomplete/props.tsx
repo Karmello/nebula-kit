@@ -1,0 +1,46 @@
+import { ComponentMeta } from 'client/definitions'
+import { AutocompleteProps } from 'lib/components'
+import { DEFAULT_AUTOCOMPLETE_INLINE_SIZE } from 'lib/components/pro/form-elements/Autocomplete'
+
+import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
+import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'
+import { BOX_PROPS_META } from '../Box/props'
+
+const AUTOCOMPLETE_PROPS_META: ComponentMeta<AutocompleteProps>['props'] = {
+  children: {
+    ...DROPDOWN_LIST_PROPS_META.children,
+    options: ['Autocomplete.Option'],
+    description: 'Option slots rendered.',
+  },
+  color: DROPDOWN_LIST_PROPS_META.color,
+  defaultValue: {
+    options: ['string'],
+    description: 'Initial selected item value when the component is used in uncontrolled mode.',
+  },
+  disabled: BOX_PROPS_META.disabled,
+  dropdownPlacement: DROPDOWN_LIST_PROPS_META.placement,
+  inlineSize: {
+    ...BOX_PROPS_META.inlineSize,
+    defaultValue: String(DEFAULT_AUTOCOMPLETE_INLINE_SIZE),
+  },
+  intent: DROPDOWN_LIST_PROPS_META.intent,
+  itemBorderIntent: DROPDOWN_LIST_PROPS_META.itemBorderIntent,
+  onChange: {
+    options: ['(value: string) => void'],
+    description: 'Callback fired when the selected value changes.',
+  },
+  scrollAlign: {
+    ...DROPDOWN_LIST_PROPS_META.scrollAlign,
+    description: 'Defines how the selected option is positioned within the scroll area.',
+  },
+  size: DROPDOWN_LIST_PROPS_META.size,
+  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
+  tagRef: HTML_TAG_PROPS_META.tagRef,
+  value: {
+    options: ['string'],
+    description: 'Current selected item value when the component is used in controlled mode.',
+  },
+  visibleItemsCount: DROPDOWN_LIST_PROPS_META.visibleItemsCount,
+}
+
+export { AUTOCOMPLETE_PROPS_META }

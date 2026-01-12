@@ -1,0 +1,137 @@
+import { ReactElement, useState } from 'react'
+import classNames from 'classnames'
+
+import { DropdownList, Button } from 'lib/components'
+import { WithSlots } from 'lib/components/core/internal'
+import { withPrefix } from 'lib/helpers'
+
+import { AutocompleteProvider } from './AutocompleteProvider'
+import { DEFAULT_AUTOCOMPLETE_OPTION_JUSTIFY_CONTENT } from './slots'
+import { DEFAULT_AUTOCOMPLETE_INLINE_SIZE, AutocompleteProps } from './definitions'
+
+export const Autocomplete = ({
+  // HtmlTag
+  children,
+  tagAttrs,
+  tagRef,
+  // DropdownList
+  intent,
+  color,
+  size,
+  itemBorderIntent,
+  scrollAlign,
+  visibleItemsCount,
+  // Box
+  inlineSize = DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
+  disabled,
+  // own
+  defaultValue,
+  value,
+  onChange,
+  dropdownPlacement,
+  staticLabel,
+}: AutocompleteProps) => {
+  const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
+
+  const isControlled = value !== undefined
+  const currentValue = isControlled ? value : internalValue
+
+  const handleChange = (value: string) => {
+    if (!isControlled) setInternalValue(value)
+    onChange?.(value)
+  }
+
+  return (
+    <WithSlots<'Autocomplete.Option'>
+      childrenToVerify={children}
+      componentName="Autocomplete"
+      slotsConfig={[{ name: 'Autocomplete.Option', required: true, allowMultiple: true }]}
+    >
+      {({ slotsByName }) => {
+        const currentSlotIndex = slotsByName['Autocomplete.Option'].findIndex(
+          slot => (slot as any).props.value === currentValue
+        )
+
+        const currentSlot = slotsByName['Autocomplete.Option'][currentSlotIndex] as ReactElement<any>
+
+        return (
+          <AutocompleteProvider currentValue={currentValue} handleChange={handleChange}>
+            <DropdownList
+              tagRef={tagRef}
+              tagAttrs={{
+                ...tagAttrs,
+                className: classNames(withPrefix('autocomplete'), tagAttrs?.className),
+              }}
+              intent={intent}
+              color={color}
+              size={size}
+              itemBorderIntent={itemBorderIntent}
+              scrollToIndex={currentSlotIndex}
+              scrollAlign={scrollAlign}
+              visibleItemsCount={visibleItemsCount}
+              placement={dropdownPlacement}
+            >
+              {({ open, resolvedPlacement }) => {
+                const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(resolvedPlacement)
+
+                return (
+                  <>
+                    <DropdownList.Trigger inlineSize={inlineSize} disabled={disabled}>
+                      <Button
+                        tagAttrs={{
+                          'aria-labelledby': tagAttrs?.['aria-labelledby'],
+                          style: opensUpDownwards
+                            ? {
+                                borderBottomLeftRadius: open ? 0 : undefined,
+                                borderBottomRightRadius: open ? 0 : undefined,
+                              }
+                            : {
+                                borderTopLeftRadius: open ? 0 : undefined,
+                                borderTopRightRadius: open ? 0 : undefined,
+                              },
+                        }}
+                        iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
+                        iconPlacement="right"
+                        iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
+                        justifyContent="space-between"
+                        size={size}
+                        variant="solid"
+                        intent={intent}
+                        color={color}
+                        disabled={disabled}
+                        fullWidth
+                      >
+                        {staticLabel || currentSlot?.props.children || '...'}
+                      </Button>
+                    </DropdownList.Trigger>
+                    {slotsByName['Autocomplete.Option'].map((slot, index) => {
+                      const slotProps = (slot as ReactElement<any>).props
+                      return (
+                        <DropdownList.Item
+                          key={index}
+                          {...slotProps}
+                          tagAttrs={{
+                            ...slotProps.tagAttrs,
+                            onClick: () => handleChange(slotProps.value),
+                          }}
+                          bold={slotProps.value === currentValue}
+                          justifyContent={
+                            slotProps.justifyContent || DEFAULT_AUTOCOMPLETE_OPTION_JUSTIFY_CONTENT
+                          }
+                        >
+                          {slot}
+                        </DropdownList.Item>
+                      )
+                    })}
+                  </>
+                )
+              }}
+            </DropdownList>
+          </AutocompleteProvider>
+        )
+      }}
+    </WithSlots>
+  )
+}
+
+Autocomplete.displayName = 'Autocomplete'

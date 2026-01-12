@@ -1,3 +1,5 @@
+export { Autocomplete, type AutocompleteProps, type AutocompleteOptionProps } from './Autocomplete'
+
 export {
   Form,
   type FormProps,

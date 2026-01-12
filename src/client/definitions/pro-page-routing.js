@@ -47,6 +47,7 @@ export const PRO_PAGE_CATEGORIES = [
     items: [
       { key: 'form', label: 'Form', sections: PRO_PAGE_SECTIONS },
       { key: 'multi-select', label: 'MultiSelect', sections: PRO_PAGE_SECTIONS },
+      { key: 'autocomplete', label: 'Autocomplete', sections: PRO_PAGE_SECTIONS },
     ],
   },
   {
