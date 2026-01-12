@@ -9,7 +9,7 @@ const REVEAL_META: ComponentMeta<RevealProps> = {
   overview: {
     bundle: 'core',
     title: 'Disclosure component for toggling expandable content.',
-    description: [
+    features: [
       'provides a labeled control for toggling content visibility',
       'animates expand and collapse using measured height for smooth transitions',
     ],

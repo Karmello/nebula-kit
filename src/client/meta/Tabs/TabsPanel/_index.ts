@@ -7,7 +7,7 @@ const TABS_PANEL_META: ComponentMeta<TabsPanelProps> = {
   overview: {
     name: 'Tabs.Panel',
     title: 'Content panel associated with a tab.',
-    description: ['displayed when its corresponding tab is active'],
+    features: ['displayed when its corresponding tab is active'],
     composedOf: ['Box'],
     topLevelTags: ['div'],
   },

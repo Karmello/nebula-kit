@@ -20,8 +20,10 @@ type PropsFromHtmlTag = Pick<HtmlTagProps, 'tagAttrs' | 'tagRef'> & {
 
 type PropsFromBox = Pick<
   BoxProps,
-  'blockSize' | 'color' | 'inlineSize' | 'intent' | 'padding' | 'paddingBlock' | 'paddingInline' | 'textAlign'
->
+  'color' | 'intent' | 'padding' | 'paddingBlock' | 'paddingInline' | 'textAlign'
+> & {
+  maxInlineSize?: string
+}
 
 type TooltipOwnProps = {
   content: string

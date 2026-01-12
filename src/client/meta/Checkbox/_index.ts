@@ -8,7 +8,7 @@ const CHECKBOX_META: ComponentMeta<CheckboxProps> = {
   overview: {
     bundle: 'core',
     title: 'Form control for toggling a binary on/off state.',
-    description: ['supports both controlled and uncontrolled modes'],
+    features: ['supports both controlled and uncontrolled modes'],
     composedOf: ['Box', 'Icon'],
     topLevelTags: ['div'],
   },

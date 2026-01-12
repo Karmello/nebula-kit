@@ -7,7 +7,7 @@ const TOOLBAR_START_META: ComponentMeta<ToolbarStartProps> = {
   overview: {
     name: 'Toolbar.Start?',
     title: 'Defines the start slot of Toolbar.',
-    description: [
+    features: [
       'fixed region at the start of the toolbar',
       'remains visible when the main section is collapsed',
       'commonly used for brand, logo or home button',

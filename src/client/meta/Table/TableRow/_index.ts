@@ -7,7 +7,7 @@ const TABLE_ROW_META: ComponentMeta<TableRowProps> = {
   overview: {
     name: 'Table.Row',
     title: 'Represents a single row within the table structure.',
-    description: ['should be placed inside Table.Body or Table.Footer to define individual data rows'],
+    features: ['should be placed inside Table.Body or Table.Footer to define individual data rows'],
     composedOf: ['Box'],
     topLevelTags: ['tr'],
     slots: ['Table.Cell', 'Table.HeaderCell'],

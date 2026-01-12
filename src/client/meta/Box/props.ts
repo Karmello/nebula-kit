@@ -1,6 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 
 import {
+  COLORS,
   CSS_DISPLAY,
   CSS_OVERFLOW,
   CSS_POINTER_EVENTS,
@@ -9,7 +10,7 @@ import {
   THEMES,
 } from 'lib/definitions'
 
-import { BoxProps, BOX_VARIANTS } from 'lib/components/core/base/Box'
+import { BoxProps, BOX_VARIANTS, BOX_INTENTS } from 'lib/components/core/base/Box'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
@@ -96,6 +97,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['BoxColor'],
     isResponsive: true,
     description: 'Color applied to the component.',
+    tooltip: COLORS.join(', '),
   },
   disabled: {
     options: ['boolean'],
@@ -133,6 +135,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['BoxIntent'],
     isResponsive: true,
     description: "Tone level applied to the component's main color.",
+    tooltip: BOX_INTENTS.join(', '),
   },
   interactive: {
     options: ['boolean'],
@@ -190,25 +193,25 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   maxBlockSize: {
     options: ['CSS'],
     isResponsive: true,
-    description: 'Maximum height.',
+    description: 'Maximum logical height.',
     link: true,
   },
   maxInlineSize: {
     options: ['CSS'],
     isResponsive: true,
-    description: 'Maximum width.',
+    description: 'Maximum logical width.',
     link: true,
   },
   minBlockSize: {
     options: ['CSS'],
     isResponsive: true,
-    description: 'Minimum height.',
+    description: 'Minimum logical height.',
     link: true,
   },
   minInlineSize: {
     options: ['CSS'],
     isResponsive: true,
-    description: 'Minimum width.',
+    description: 'Minimum logical width.',
     link: true,
   },
   opacity: {

@@ -29,6 +29,8 @@ export const Measure = ({
         inlineSize: rect.width,
       }
 
+      console.log({ width: rect.width, height: rect.height })
+
       // Prevent infinite loops / redundant reports
       if (
         !last.current ||
@@ -61,9 +63,9 @@ export const Measure = ({
         },
         'aria-hidden': true,
       }}
-      position="absolute"
-      top="0px"
-      left="0px"
+      position="fixed"
+      top="-10000px"
+      left="-10000px"
       pointerEvents="none"
     >
       {children}

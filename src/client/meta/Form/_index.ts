@@ -15,7 +15,7 @@ const FORM_META: ComponentMeta<FormProps> = {
   overview: {
     bundle: 'pro',
     title: 'Composable form container with layout and submission orchestration, built on React Hook Form.',
-    description: [
+    features: [
       'coordinates layout between form sections and actions',
       'manages form state and validation using React Hook Form internally',
       'orchestrates the submission lifecycle via valid and invalid submission handlers',

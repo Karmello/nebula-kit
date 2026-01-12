@@ -14,7 +14,6 @@ import {
 import { BOX_PROPS_META } from '../Box/props'
 
 const TOOLTIP_PROPS_META: ComponentMeta<TooltipProps>['props'] = {
-  blockSize: BOX_PROPS_META.blockSize,
   children: {
     ...BOX_PROPS_META.children,
     isRequired: true,
@@ -25,10 +24,13 @@ const TOOLTIP_PROPS_META: ComponentMeta<TooltipProps>['props'] = {
     isRequired: true,
     description: 'The text content displayed inside the tooltip.',
   },
-  inlineSize: BOX_PROPS_META.inlineSize,
   intent: {
     ...BOX_PROPS_META.intent,
     defaultValue: String(DEFAULT_TOOLTIP_INTENT),
+  },
+  maxInlineSize: {
+    ...BOX_PROPS_META.maxInlineSize,
+    isResponsive: false,
   },
   offset: {
     options: ['number'],

@@ -7,7 +7,7 @@ const SEGMENT_ITEM_META: ComponentMeta<SegmentItemProps> = {
   overview: {
     name: 'Segment.Item',
     title: 'Wrapper for individual Segment children.',
-    description: [
+    features: [
       'provides per-child layout control inside a Segment',
       'targets the ".neb-box" class to adjust border radiuses, so children must be Boxes or render a Box as the root element under the hood',
     ],

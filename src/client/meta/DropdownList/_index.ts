@@ -11,7 +11,7 @@ const DROPDOWN_LIST_META: ComponentMeta<DropdownListProps> = {
   overview: {
     bundle: 'core',
     title: 'Low-level, unopinionated primitive for rendering floating lists of interactive options.',
-    description: [
+    features: [
       'handles positioning, visibility, keyboard navigation and scrolling behavior',
       'renders through a Portal to ensure correct layering and positioning',
       'resolves placement dynamically using the shared Floating positioning logic to avoid viewport clipping',

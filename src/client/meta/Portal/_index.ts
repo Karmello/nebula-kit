@@ -8,7 +8,7 @@ const PORTAL_META: ComponentMeta<PortalProps> = {
   overview: {
     bundle: 'core',
     title: 'Low-level utility component for rendering content outside the normal document flow.',
-    description: [
+    features: [
       'renders children into a separate DOM node detached from the parent hierarchy',
       'enables floating UI patterns that must escape layout and stacking constraints',
       'supports positioning relative to an anchor element when needed',

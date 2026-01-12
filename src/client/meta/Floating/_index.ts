@@ -8,15 +8,12 @@ const FLOATING_META: ComponentMeta<FloatingProps> = {
   overview: {
     bundle: 'pro',
     title: 'Headless positioning utility for overlays.',
-    description: [
-      'applies viewport constraints to prevent overlays from overflowing the screen',
-      'resolves the final placement of floating content relative to an anchor element',
-      'resolves placement in response to environment changes such as mounting, scrolling or resizing',
-      'operates headlessly and renders no DOM elements of its own',
-      'computes available space and exposes layout limits without enforcing size',
-      'does not apply visual positioning or movement to rendered content',
-      'does not change, enforce or modify the rendered size of floating content',
-      'commonly used with Portal-based rendering',
+    description:
+      'Floating is a headless positioning utility for overlay content. It does not render or style anything on its own. Instead, it observes an anchor element and the surrounding viewport, then resolves a placement and the available space around that anchor. These resolved values are exposed through a callback, so you stay fully in control of how the overlay is rendered and styled.',
+    features: [
+      "When the overlay's block size is provided, Floating can reason about fit and visibility. This allows it to make more precise decisions, such as flipping sides only when it increases the visible content and clamping the overlay size when space is limited. This mode is ideal for dropdowns, menus and other scrollable overlays.",
+      'When the overlay size is unknown, Floating resolves placement based purely on available space and configurable bias. Instead of trying to fit content, it favors stability and predictability, flipping only when the opposite side offers significantly more room. This mode is well suited for tooltips and lightweight contextual overlays.',
+      'In both modes, Floating remains purely declarative - it reports placement and available space and leaves all rendering, sizing and styling decisions to you.',
     ],
   },
   props: FLOATING_PROPS_META,

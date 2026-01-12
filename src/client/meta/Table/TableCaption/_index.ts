@@ -7,7 +7,7 @@ const TABLE_CAPTION_META: ComponentMeta<TableCaptionProps> = {
   overview: {
     name: 'Table.Caption?',
     title: 'Provides a descriptive title for the table.',
-    description: ['gets rendered at the top of the table as a descriptive title'],
+    features: ['gets rendered at the top of the table as a descriptive title'],
     composedOf: ['Box'],
     topLevelTags: ['caption'],
   },

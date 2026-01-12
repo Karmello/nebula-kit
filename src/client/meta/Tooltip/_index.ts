@@ -8,7 +8,7 @@ const TOOLTIP_META: ComponentMeta<TooltipProps> = {
   overview: {
     bundle: 'pro',
     title: 'Non-interactive, overlaid hint for displaying short, contextual text.',
-    description: [
+    features: [
       'displays short, non-interactive text in an overlaid surface',
       'appears on hover or keyboard focus, dismisses automatically on pointer leave or focus loss',
       'supports keyboard dismissal via Escape',

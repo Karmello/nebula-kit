@@ -8,7 +8,7 @@ const DIVIDER_META: ComponentMeta<DividerProps> = {
   overview: {
     bundle: 'core',
     title: 'Boundary marker between content sections.',
-    description: [
+    features: [
       'creates clear visual separation to reduce scanning effort',
       'marks a thematic break between related blocks of content',
     ],

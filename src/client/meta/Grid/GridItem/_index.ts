@@ -8,7 +8,7 @@ const GRID_ITEM_META: ComponentMeta<GridItemProps> = {
   overview: {
     name: 'Grid.Item?',
     title: 'Wrapper for a single child positioned within the grid.',
-    description: [
+    features: [
       'positions a child in a specific row and/or column',
       "overrides the item's alignment relative to its cell",
     ],

@@ -7,7 +7,7 @@ const DROPDOWN_LIST_ITEM_META: ComponentMeta<DropdownListItemProps> = {
   overview: {
     name: 'DropdownList.Item',
     title: 'Interactive list item used within a DropdownList.',
-    description: [
+    features: [
       'represents a selectable option within a DropdownList',
       'behaves like a Button with consistent dropdown styling',
     ],

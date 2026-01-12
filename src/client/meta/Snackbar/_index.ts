@@ -10,7 +10,7 @@ const SNACKBAR_META: ComponentMeta<SnackbarProps> = {
   overview: {
     bundle: 'pro',
     title: 'Floating message container for transient status notifications, anchored to the viewport.',
-    description: [
+    features: [
       'displays short, non-intrusive status messages without affecting page layout',
       'appears above the UI and automatically hides after a configurable duration',
       'supports six viewport placement regions',

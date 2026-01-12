@@ -7,7 +7,7 @@ const FORM_ACTION_BUTTON_META: ComponentMeta<FormActionButtonProps> = {
   overview: {
     name: 'Form.ActionButton',
     title: 'Action button for form submission and related actions.',
-    description: [
+    features: [
       'exposes Flex.Item props for per-button layout control',
       'use the "type" prop to enable built-in behaviors such as submit, reset or clear',
     ],

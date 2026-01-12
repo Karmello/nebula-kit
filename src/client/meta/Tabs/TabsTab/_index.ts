@@ -7,7 +7,7 @@ const TABS_TAB_META: ComponentMeta<TabsTabProps> = {
   overview: {
     name: 'Tabs.Tab',
     title: 'Selectable tab item within a Tabs component.',
-    description: ['activates the panel with the matching value', 'inherits visual styling from Button'],
+    features: ['activates the panel with the matching value', 'inherits visual styling from Button'],
     composedOf: ['Button'],
     topLevelTags: ['button'],
   },

@@ -1,6 +1,6 @@
 import { cloneElement, isValidElement, useId, useRef, useState } from 'react'
 
-import { HtmlTagProps, Box, Floating, Portal, Measure } from 'lib/components'
+import { HtmlTagProps, Box, Floating, FloatingResolved, Portal, Text } from 'lib/components'
 
 import {
   DEFAULT_TOOLTIP_INTENT,
@@ -33,14 +33,13 @@ export const Tooltip = ({
   tagAttrs,
   tagRef,
   // Box
-  blockSize,
   color,
-  inlineSize,
   intent = DEFAULT_TOOLTIP_INTENT,
   padding = DEFAULT_TOOLTIP_PADDING,
   paddingBlock,
   paddingInline,
   textAlign,
+  maxInlineSize,
   // own
   content,
   placement = DEFAULT_TOOLTIP_PLACEMENT,
@@ -50,11 +49,7 @@ export const Tooltip = ({
   const [open, setOpen] = useState(false)
   const [openReason, setOpenReason] = useState<TooltipOpenReason | null>(null)
 
-  const [resolvedPlacement, setResolvedPlacement] = useState<TooltipProps['placement']>(placement)
-  const [resolvedSize, setResolvedSize] = useState<{ blockSize: number; inlineSize: number }>({
-    blockSize: 0,
-    inlineSize: 0,
-  })
+  const [floatingResolved, setFloatingResolved] = useState<FloatingResolved>()
 
   const dismissedByEsc = useRef(false)
   const localTagRef = useRef(null)
@@ -94,16 +89,21 @@ export const Tooltip = ({
   }
 
   const ContentWrapper = () => {
-    const Content = (
+    const Content = () => (
       <Box
         tagAttrs={{ role: 'tooltip', id: tooltipId, 'aria-hidden': !open }}
         drawable
-        pointerEvents="none"
-        blockSize={blockSize}
         color={color}
-        inlineSize={inlineSize}
         intent="neutral"
         variant="solid"
+        pointerEvents="none"
+        maxInlineSize={
+          floatingResolved
+            ? maxInlineSize
+              ? `min(${floatingResolved.availableInlineSize}px, ${maxInlineSize})`
+              : `${floatingResolved.availableInlineSize}px`
+            : maxInlineSize
+        }
       >
         <Box
           drawable
@@ -117,36 +117,41 @@ export const Tooltip = ({
           blockSize="100%"
           inlineSize="100%"
         >
-          {content}
+          <Text>{content}</Text>
         </Box>
       </Box>
     )
 
     return (
       <>
-        <Measure
-          onMeasure={({ blockSize, inlineSize }) => {
-            setResolvedSize(prev => {
-              if (prev && prev.blockSize === blockSize && prev.inlineSize === inlineSize) return prev
-              return { blockSize, inlineSize }
-            })
-          }}
-        >
-          {Content}
-        </Measure>
         {open ? (
           <Floating
             anchorRef={triggerRef}
             placement={placement}
+            flipThresholdRatio={0.5}
             offset={offset}
-            floatingBlockSize={resolvedSize.blockSize}
-            floatingInlineSize={resolvedSize.inlineSize}
-            onResolve={({ placement }) => {
-              setResolvedPlacement(placement)
+            onResolve={(resolved: FloatingResolved) => {
+              setFloatingResolved(prev => {
+                if (
+                  prev &&
+                  prev.placement === resolved.placement &&
+                  prev.blockSize === resolved.blockSize &&
+                  prev.availableBlockSize === resolved.availableBlockSize &&
+                  prev.availableInlineSize === resolved.availableInlineSize
+                ) {
+                  return prev
+                }
+
+                return resolved
+              })
             }}
           >
-            <Portal anchorRef={triggerRef} placement={resolvedPlacement} offset={offset}>
-              {Content}
+            <Portal
+              anchorRef={triggerRef}
+              placement={floatingResolved?.placement || placement}
+              offset={offset}
+            >
+              <Content />
             </Portal>
           </Floating>
         ) : null}

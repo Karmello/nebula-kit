@@ -8,7 +8,7 @@ const ROTATE_META: ComponentMeta<RotateProps> = {
   overview: {
     bundle: 'core',
     title: 'Wrapper component that animates rotation based on angle changes.',
-    description: [
+    features: [
       'rotates its children based on the "angle" prop',
       'performs animation when the "angle" prop value changes',
     ],

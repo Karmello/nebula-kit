@@ -8,7 +8,7 @@ const MEASURE_META: ComponentMeta<MeasureProps> = {
   overview: {
     bundle: 'pro',
     title: 'Utility component that renders content invisibly to determine its rendered size.',
-    description: [
+    features: [
       'measures the rendered block and inline size of its content',
       'renders its children invisibly while still participating in layout',
       'performs measurement after layout using "useLayoutEffect", ensuring size values are accurate before visual updates occur',
@@ -17,6 +17,7 @@ const MEASURE_META: ComponentMeta<MeasureProps> = {
       'reacts to dynamic size changes using ResizeObserver',
       'does not affect visibility, interaction or document flow',
     ],
+    composedOf: ['Box'],
   },
   props: MEASURE_PROPS_META,
   examples: MEASURE_EXAMPLES_META,

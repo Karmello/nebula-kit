@@ -11,7 +11,7 @@ const GRID_META: ComponentMeta<GridProps> = {
     bundle: 'core',
     title:
       'Layout component built on CSS Grid, providing a flexible two-dimensional system for arranging content into rows and columns with consistent spacing and alignment.',
-    description: [
+    features: [
       'provides a CSS Grid-based layout wrapper',
       'establishes rows and columns to align and distribute children',
       'manages spacing between items with gap properties',

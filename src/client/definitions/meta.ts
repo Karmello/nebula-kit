@@ -6,7 +6,8 @@ type Overview = {
   name?: string
   bundle?: 'core' | 'pro'
   title: string
-  description?: string[]
+  description?: string
+  features?: string[]
   composedOf?: string[]
   topLevelTags?: readonly string[]
   slots?: string[]
@@ -24,6 +25,7 @@ export type Prop = {
   isResponsive?: boolean
   description?: string
   link?: boolean
+  tooltip?: string
 }
 
 type Example = {

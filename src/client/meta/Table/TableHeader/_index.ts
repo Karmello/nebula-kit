@@ -7,7 +7,7 @@ const TABLE_HEADER_META: ComponentMeta<TableHeaderProps> = {
   overview: {
     name: 'Table.Header?',
     title: 'Column headers of the table.',
-    description: ['expects Table.HeaderRow as children'],
+    features: ['expects Table.HeaderRow as children'],
     composedOf: ['Box'],
     topLevelTags: ['thead'],
     slots: ['Table.HeaderRow'],

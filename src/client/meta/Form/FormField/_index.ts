@@ -7,7 +7,7 @@ const FORM_FIELD_META: ComponentMeta<FormFieldProps> = {
   overview: {
     name: 'Form.Field',
     title: 'Container for a single form field and its associated metadata.',
-    description: [
+    features: [
       'manages field registration and value control using React Hook Form',
       'provides shorthand props for common validation rules',
       'automatically associates labels and controls for accessibility based on the "name" prop',

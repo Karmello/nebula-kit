@@ -7,7 +7,7 @@ const APP_FRAME_MAIN_META: ComponentMeta<AppFrameMainProps> = {
   overview: {
     name: 'AppFrame.Main',
     title: 'Defines the central content region of AppFrame.',
-    description: ['holds the primary application content or view'],
+    features: ['holds the primary application content or view'],
     composedOf: ['Box'],
     topLevelTags: ['main'],
   },

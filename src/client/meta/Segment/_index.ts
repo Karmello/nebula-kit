@@ -11,7 +11,7 @@ const SEGMENT_META: ComponentMeta<SegmentProps> = {
     bundle: 'core',
     title:
       'Composite component that visually merges multiple Box-based surfaces into a single segmented group.',
-    description: [
+    features: [
       'groups Box-based surfaces into a horizontal or vertical block',
       'automatically manages border radiuses for seamless attachment',
     ],

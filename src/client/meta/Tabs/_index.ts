@@ -11,7 +11,7 @@ const TABS_META: ComponentMeta<TabsProps> = {
   overview: {
     bundle: 'pro',
     title: 'Control for switching between related content sections.',
-    description: [
+    features: [
       'switches between mutually exclusive content panels',
       'supports horizontal and vertical layouts',
       'fully keyboard-operable with predictable focus behavior',

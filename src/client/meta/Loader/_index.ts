@@ -8,7 +8,7 @@ const LOADER_META: ComponentMeta<LoaderProps> = {
   overview: {
     bundle: 'core',
     title: 'Circular indicator for loading states.',
-    description: ['displays a minimal circular spinner to indicate an ongoing operation'],
+    features: ['displays a minimal circular spinner to indicate an ongoing operation'],
     composedOf: ['Box'],
     topLevelTags: ['div'],
   },

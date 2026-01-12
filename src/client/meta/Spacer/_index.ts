@@ -8,7 +8,7 @@ const SPACER_META: ComponentMeta<SpacerProps> = {
   overview: {
     bundle: 'core',
     title: 'Layout component that introduces controlled empty space between elements.',
-    description: [
+    features: [
       'provides consistent vertical spacing between elements',
       'improves readability by preventing content from feeling crowded',
     ],

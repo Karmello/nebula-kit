@@ -8,7 +8,7 @@ const CALLOUT_META: ComponentMeta<CalloutProps> = {
   overview: {
     bundle: 'core',
     title: 'Semantic message block for emphasizing important information.',
-    description: [
+    features: [
       'used to draw attention to important information, confirmations, warnings or errors within a page',
     ],
     composedOf: ['Box', 'Text', 'Spacer'],

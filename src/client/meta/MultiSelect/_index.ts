@@ -10,7 +10,7 @@ const MULTI_SELECT_META: ComponentMeta<MultiSelectProps> = {
   overview: {
     bundle: 'pro',
     title: 'Form control for choosing multiple options from a list.',
-    description: ['supports both controlled and uncontrolled modes'],
+    features: ['supports both controlled and uncontrolled modes'],
     composedOf: ['DropdownList', 'Button'],
     topLevelTags: ['div'],
     slots: ['MultiSelect.Option'],
