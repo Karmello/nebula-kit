@@ -1,7 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { IconProps } from 'lib/components'
 import { DEFAULT_ICON_SIZE } from 'lib/components/core/elements/Icon'
-import { ICON_NAMES } from 'lib/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
@@ -23,7 +22,6 @@ const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
     options: ['IconName'],
     isRequired: true,
     description: 'Name of the icon to render.',
-    tooltip: ICON_NAMES.join(', '),
   },
   size: {
     options: ['CSS'],
