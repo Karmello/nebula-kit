@@ -20,6 +20,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['BoxColor'],
     isResponsive: true,
     description: 'Default surface color context for the component and its descendants.',
+    tooltip: COLORS.join(', '),
   },
   blockSize: {
     options: ['CSS'],
