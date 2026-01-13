@@ -5,7 +5,7 @@ import { getHtmlMetaData } from 'src/server/helpers'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useGetUser, useLogoutUser } from 'client/api'
-import { AppFrame, Box, Button, Link, Loader, Toolbar } from 'lib/components'
+import { AppFrame, Box, Button, Link, Loader, Spacer, Toolbar } from 'lib/components'
 
 import { RootPage } from '../RootPage'
 import { PageNavigation } from './PageNavigation'
@@ -60,12 +60,10 @@ export const App = () => {
     return <RootPage />
   }
 
-  console.log('App rendered !')
-
   return (
     <AppFrame stickyHeader>
       <AppFrame.Header>
-        <Toolbar switchAt="lg">
+        <Toolbar switchAt="xl">
           {({ setMainOpen, mainOpen }) => (
             <>
               <Toolbar.Start>
@@ -90,9 +88,10 @@ export const App = () => {
             </>
           )}
         </Toolbar>
-        <AppJump />
       </AppFrame.Header>
-      <AppFrame.Main paddingTop={{ base: '20px', lg: '40px' }} paddingBottom="80px">
+      <AppFrame.Main paddingBottom="80px">
+        <AppJump />
+        <Spacer blockSize={{ base: '20px', lg: '40px' }} />
         <RootPage />
       </AppFrame.Main>
       <AppFrame.Footer>

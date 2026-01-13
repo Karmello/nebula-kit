@@ -29,8 +29,6 @@ export const Measure = ({
         inlineSize: rect.width,
       }
 
-      console.log({ width: rect.width, height: rect.height })
-
       // Prevent infinite loops / redundant reports
       if (
         !last.current ||

@@ -1,8 +1,8 @@
-import { useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { CSSProperties, useLayoutEffect, useMemo, useRef, useState } from 'react'
 
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { Autocomplete, Resize } from 'lib/components'
+import { Autocomplete, Box, Resize, Text } from 'lib/components'
 
 import { OPTIONS } from './definitions'
 
@@ -35,6 +35,7 @@ export const AppJump = () => {
       <Autocomplete
         tagRef={autocompleteRef}
         intent="muted"
+        itemBorderIntent="tertiary"
         value={value}
         onChange={value => {
           setValue('')
@@ -44,8 +45,7 @@ export const AppJump = () => {
         }}
         onInputChange={setQuery}
         disableFiltering
-        scrollAlign="center"
-        placeholder="Search ..."
+        placeholder="Search website ..."
         visibleItemsCount={10}
       >
         {filtered.map(({ label, href, iconName }) => {
@@ -58,7 +58,9 @@ export const AppJump = () => {
               iconPlacement="right"
               justifyContent="space-between"
             >
-              {label}
+              <Text truncate tagAttrs={{ style: { whiteSpace: 'wrap', lineHeight: 1.15 } }}>
+                {label}
+              </Text>
             </Autocomplete.Option>
           )
         })}
@@ -68,7 +70,24 @@ export const AppJump = () => {
 
   return (
     <Resize property="blockSize" visible={showAppJump}>
-      {autocomplete}
+      <Box
+        tagAttrs={{
+          style: {
+            '--neb-border-radius': '0px',
+          } as CSSProperties,
+        }}
+        drawable
+        variant="outline"
+        intent="tertiary"
+        borderLeftWidth="0px"
+        borderRightWidth="0px"
+        borderTopWidth="0px"
+        borderRadius="0px"
+      >
+        <Box drawable variant="solid" intent="muted" padding="0px" borderRadius="0px">
+          {autocomplete}
+        </Box>
+      </Box>
     </Resize>
   )
 }

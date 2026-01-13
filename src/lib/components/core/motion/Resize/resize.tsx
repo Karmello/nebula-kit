@@ -102,6 +102,7 @@ export const Resize = ({
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('resize'), tagAttrs?.className || ''),
+        inert: !visible,
         style: {
           ...tagAttrs?.style,
           transitionProperty: 'block-size, inline-size',
