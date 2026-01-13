@@ -1,6 +1,9 @@
 import { ComponentMeta } from 'client/definitions'
 import { AutocompleteProps } from 'lib/components'
-import { DEFAULT_AUTOCOMPLETE_INLINE_SIZE } from 'lib/components/pro/form-elements/Autocomplete'
+import {
+  DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
+  DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
+} from 'lib/components/pro/form-elements/Autocomplete'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'
@@ -18,6 +21,11 @@ const AUTOCOMPLETE_PROPS_META: ComponentMeta<AutocompleteProps>['props'] = {
     description: 'Initial selected item value when the component is used in uncontrolled mode.',
   },
   disabled: BOX_PROPS_META.disabled,
+  disableFiltering: {
+    options: ['boolean'],
+    defaultValue: String(DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING),
+    description: 'Disables internal label-based filtering. Use when options are filtered externally.',
+  },
   dropdownPlacement: DROPDOWN_LIST_PROPS_META.placement,
   inlineSize: {
     ...BOX_PROPS_META.inlineSize,
@@ -28,6 +36,14 @@ const AUTOCOMPLETE_PROPS_META: ComponentMeta<AutocompleteProps>['props'] = {
   onChange: {
     options: ['(value: string) => void'],
     description: 'Callback fired when the selected value changes.',
+  },
+  onInputChange: {
+    options: ['(value: string) => void'],
+    description: 'Callback fired when the text input value changes.',
+  },
+  placeholder: {
+    options: ['string'],
+    description: 'Placeholder text displayed in the input when no value is selected and the input is empty.',
   },
   scrollAlign: {
     ...DROPDOWN_LIST_PROPS_META.scrollAlign,
