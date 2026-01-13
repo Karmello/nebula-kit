@@ -3,7 +3,9 @@ import { Select, Spacer, Text } from 'lib/components'
 import { usePlaygroundStore } from '../../store'
 
 export const PropSelect = () => {
-  const { components, activeComponent, setActiveProp } = usePlaygroundStore()
+  const components = usePlaygroundStore(state => state.components)
+  const activeComponent = usePlaygroundStore(state => state.activeComponent)
+  const setActiveProp = usePlaygroundStore(state => state.setActiveProp)
 
   const props = components[activeComponent].props
   const value = components[activeComponent].activeProp

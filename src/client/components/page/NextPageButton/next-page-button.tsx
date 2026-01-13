@@ -22,22 +22,40 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
 
   const navigateTo = useNavigateTo()
 
-  const foundationsPageStore = useFoundationsPageStore()
-  const corePageStore = useCorePageStore()
-  const proPageStore = useProPageStore()
+  const foundationsPageCategoryKey = useFoundationsPageStore(state => state.categoryKey)
+  const foundationsPageItemKey = useFoundationsPageStore(state => state.itemKey)
+  const foundationsPageSectionKey = useFoundationsPageStore(state => state.sectionKey)
+  const corePageCategoryKey = useCorePageStore(state => state.categoryKey)
+  const corePageItemKey = useCorePageStore(state => state.itemKey)
+  const corePageSectionKey = useCorePageStore(state => state.sectionKey)
+  const proPageCategoryKey = useProPageStore(state => state.categoryKey)
+  const proPageItemKey = useProPageStore(state => state.itemKey)
+  const proPageSectionKey = useProPageStore(state => state.sectionKey)
 
   const MAP = {
     [PageKey.foundations]: {
       CATEGORIES: FOUNDATIONS_CATEGORIES,
-      store: foundationsPageStore,
+      keys: {
+        categoryKey: foundationsPageCategoryKey,
+        itemKey: foundationsPageItemKey,
+        sectionKey: foundationsPageSectionKey,
+      },
     },
     [PageKey.core]: {
       CATEGORIES: CORE_PAGE_CATEGORIES,
-      store: corePageStore,
+      keys: {
+        categoryKey: corePageCategoryKey,
+        itemKey: corePageItemKey,
+        sectionKey: corePageSectionKey,
+      },
     },
     [PageKey.pro]: {
       CATEGORIES: PRO_PAGE_CATEGORIES,
-      store: proPageStore,
+      keys: {
+        categoryKey: proPageCategoryKey,
+        itemKey: proPageItemKey,
+        sectionKey: proPageSectionKey,
+      },
     },
   }
 
@@ -57,12 +75,9 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
     setSections(sections)
   }, [pageKey])
 
-  const pageStore = MAP[pageKey].store
+  const keys = MAP[pageKey].keys
   const currentSectionIndex = sections.findIndex(
-    s =>
-      s.categoryKey === pageStore.categoryKey &&
-      s.itemKey === pageStore.itemKey &&
-      s.sectionKey === pageStore.sectionKey
+    s => s.categoryKey === keys.categoryKey && s.itemKey === keys.itemKey && s.sectionKey === keys.sectionKey
   )
 
   const nextSectionIndex = currentSectionIndex + 1

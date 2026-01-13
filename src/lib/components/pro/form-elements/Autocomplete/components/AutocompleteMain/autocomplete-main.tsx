@@ -28,7 +28,10 @@ export const AutocompleteMain = ({
   inlineSize,
   disabled,
   // own
+  onInputChange,
   dropdownPlacement,
+  disableFiltering,
+  placeholder,
   // extra
   items,
   currentValue,
@@ -44,7 +47,13 @@ export const AutocompleteMain = ({
   const currentItem = items[currentItemIndex] as ReactElement<AutocompleteOptionProps>
 
   useLayoutEffect(() => {
-    if (inputValue) {
+    setTimeout(() => {
+      setInputValue(currentItem ? currentItem.props.label : '')
+    }, DEFAULT_RESIZE_DURATION)
+  }, [currentItem])
+
+  useLayoutEffect(() => {
+    if (inputValue && !disableFiltering) {
       setFilteredItems(
         items.filter(item => {
           const { label } = (item as ReactElement<AutocompleteOptionProps>).props
@@ -54,7 +63,7 @@ export const AutocompleteMain = ({
     } else {
       setFilteredItems(items)
     }
-  }, [inputValue])
+  }, [inputValue, disableFiltering, items])
 
   return (
     <DropdownList
@@ -76,10 +85,6 @@ export const AutocompleteMain = ({
       {({ open, setOpen, resolvedPlacement }) => {
         const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(resolvedPlacement)
 
-        if (currentItem && !open) {
-          setInputValue(currentItem.props.label)
-        }
-
         return (
           <>
             <DropdownList.Trigger inlineSize={inlineSize} disabled={disabled}>
@@ -97,7 +102,11 @@ export const AutocompleteMain = ({
                       },
                 }}
                 value={inputValue}
-                onChange={setInputValue}
+                onChange={value => {
+                  setInputValue(value)
+                  onInputChange?.(value)
+                }}
+                placeholder={placeholder}
                 size={size}
                 variant="solid"
                 intent={intent}

@@ -8,7 +8,7 @@ export type UseGetUserSuccess = { user: ApiUser }
 export type UseGetUserError = { message: string }
 
 export const useGetUser = (disableAutoLogout = false, minLoadingTime?: number) => {
-  const { setUser } = useAppStore()
+  const setUser = useAppStore(state => state.setUser)
 
   const { code, data, error, isMakingRequest, sendRequest } = useMakeApiRequest<
     UseGetUserSuccess,

@@ -3,7 +3,10 @@ import { Button, Spacer, Table, Text } from 'lib/components'
 import { usePlaygroundStore } from '../../store'
 
 export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: () => void }) => {
-  const { components, activeComponent, setActiveProp, displayProps } = usePlaygroundStore()
+  const components = usePlaygroundStore(state => state.components)
+  const activeComponent = usePlaygroundStore(state => state.activeComponent)
+  const setActiveProp = usePlaygroundStore(state => state.setActiveProp)
+  const displayProps = usePlaygroundStore(state => state.displayProps)
 
   if (!displayProps) return null
 

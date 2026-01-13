@@ -2,7 +2,12 @@ import { useState } from 'react'
 
 import { WithSlots } from 'lib/components/core/internal'
 
-import { DEFAULT_AUTOCOMPLETE_INLINE_SIZE, AutocompleteProps } from './definitions'
+import {
+  DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
+  AutocompleteProps,
+  DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
+} from './definitions'
+
 import { AutocompleteMain } from './components'
 
 export const Autocomplete = ({
@@ -24,7 +29,10 @@ export const Autocomplete = ({
   defaultValue,
   value,
   onChange,
+  onInputChange,
   dropdownPlacement,
+  disableFiltering = DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
+  placeholder,
 }: AutocompleteProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
@@ -55,7 +63,10 @@ export const Autocomplete = ({
             visibleItemsCount={visibleItemsCount}
             inlineSize={inlineSize}
             disabled={disabled}
+            onInputChange={onInputChange}
             dropdownPlacement={dropdownPlacement}
+            disableFiltering={disableFiltering}
+            placeholder={placeholder}
             // extra
             items={slotsByName['Autocomplete.Option']}
             currentValue={currentValue}

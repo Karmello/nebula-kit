@@ -5,7 +5,8 @@ import { usePlaygroundStore } from '../../store'
 import { PropValueControl } from './components'
 
 export const PropEditor = () => {
-  const { components, activeComponent } = usePlaygroundStore()
+  const components = usePlaygroundStore(state => state.components)
+  const activeComponent = usePlaygroundStore(state => state.activeComponent)
 
   const prop = components[activeComponent].props[components[activeComponent].activeProp]
 

@@ -105,7 +105,9 @@ const CONFIG: Record<string, object[]> = {
 }
 
 export const PredefinedExamples = () => {
-  const { components, activeComponent, setPropField } = usePlaygroundStore()
+  const components = usePlaygroundStore(state => state.components)
+  const activeComponent = usePlaygroundStore(state => state.activeComponent)
+  const setPropField = usePlaygroundStore(state => state.setPropField)
 
   if (!CONFIG[activeComponent]) return null
 

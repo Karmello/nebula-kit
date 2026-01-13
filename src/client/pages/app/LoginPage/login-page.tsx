@@ -18,7 +18,8 @@ export const LoginPage = () => {
   const { search } = useLocation()
   const navigateTo = useNavigateTo()
   const { show } = useSnackbar()
-  const { user, setUser } = useAppStore()
+  const user = useAppStore(state => state.user)
+  const setUser = useAppStore(state => state.setUser)
 
   const loginUser = useLoginUser()
 

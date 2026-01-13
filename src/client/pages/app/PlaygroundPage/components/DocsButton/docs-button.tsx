@@ -6,7 +6,8 @@ import { Button } from 'lib/components'
 import { usePlaygroundStore } from '../../store'
 
 export const DocsButton = () => {
-  const { components, activeComponent } = usePlaygroundStore()
+  const components = usePlaygroundStore(state => state.components)
+  const activeComponent = usePlaygroundStore(state => state.activeComponent)
 
   const { bundle } = components[activeComponent]
 

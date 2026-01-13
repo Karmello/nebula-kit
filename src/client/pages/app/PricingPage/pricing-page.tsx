@@ -20,7 +20,7 @@ const OptionIncluded = ({ children }: { children: ReactNode }) => {
 
 export const PricingPage = () => {
   const navigateTo = useNavigateTo()
-  const { user } = useAppStore()
+  const user = useAppStore(state => state.user)
 
   const getUser = useGetUser()
 

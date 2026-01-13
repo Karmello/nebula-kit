@@ -14,6 +14,8 @@ export type AppStore = {
   setBorderRadiusSize: (borderRadiusSize: NebkitProviderProps['borderRadiusSize']) => void
   user: ApiUser | null
   setUser: (user: ApiUser | null) => void
+  showAppJump: boolean
+  setShowAppJump: (showAppJump: boolean) => void
 }
 
 export const useAppStore = create<AppStore>()(
@@ -29,6 +31,8 @@ export const useAppStore = create<AppStore>()(
           set({ borderRadiusSize }),
         user: null,
         setUser: (user: ApiUser | null) => set({ user }),
+        showAppJump: false,
+        setShowAppJump: (showAppJump: boolean) => set({ showAppJump }),
       }) as AppStore,
     {
       name: `${LIB_PREFIX}.app`,

@@ -27,7 +27,7 @@ type RegisterFormValues = {
 export const RegisterPage = () => {
   const [hidePassword, setHidePassword] = useState<boolean>(true)
 
-  const { user } = useAppStore()
+  const user = useAppStore(state => state.user)
   const { show } = useSnackbar()
   const navigateTo = useNavigateTo()
 

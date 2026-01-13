@@ -11,6 +11,7 @@ import { RootPage } from '../RootPage'
 import { PageNavigation } from './PageNavigation'
 import { AppFooter } from './AppFooter'
 import { UserActionMenu } from './UserActionMenu'
+import { AppJump } from './AppJump'
 
 export const App = () => {
   const { pathname } = useLocation()
@@ -59,6 +60,8 @@ export const App = () => {
     return <RootPage />
   }
 
+  console.log('App rendered !')
+
   return (
     <AppFrame stickyHeader>
       <AppFrame.Header>
@@ -87,6 +90,7 @@ export const App = () => {
             </>
           )}
         </Toolbar>
+        <AppJump />
       </AppFrame.Header>
       <AppFrame.Main paddingTop={{ base: '20px', lg: '40px' }} paddingBottom="80px">
         <RootPage />

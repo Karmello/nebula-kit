@@ -7,7 +7,7 @@ import { Button, Flex, Loader, Table, Text } from 'lib/components'
 export default ({ enabled }: { enabled: boolean }) => {
   const [isRedirecting, setIsRedirecting] = useState<boolean>(false)
 
-  const { user } = useAppStore()
+  const user = useAppStore(state => state.user)
 
   const getPaymentInfo = useGetPaymentInfo()
   const getPaymentDetailsUrl = useGetPaymentDetailsUrl()

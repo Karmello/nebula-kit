@@ -27,7 +27,12 @@ import { Ortho } from './Ortho'
 export const HomePage = () => {
   const navigateTo = useNavigateTo()
 
-  const { theme, setTheme, brand, setBrand, borderRadiusSize, setBorderRadiusSize } = useAppStore()
+  const theme = useAppStore(state => state.theme)
+  const setTheme = useAppStore(state => state.setTheme)
+  const brand = useAppStore(state => state.brand)
+  const setBrand = useAppStore(state => state.setBrand)
+  const borderRadiusSize = useAppStore(state => state.borderRadiusSize)
+  const setBorderRadiusSize = useAppStore(state => state.setBorderRadiusSize)
 
   return (
     <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">

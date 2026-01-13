@@ -6,12 +6,10 @@ import meta from 'client/meta'
 import { Box, MarkerList, Section, Spacer, Text } from 'lib/components'
 
 export const ComponentChangelogPage = ({ pageKey }: { pageKey: PageKey.core | PageKey.pro }) => {
-  const corePageStore = useCorePageStore()
-  const proPageStore = useProPageStore()
+  const corePageItemKey = useCorePageStore(state => state.itemKey)
+  const proPageItemKey = useProPageStore(state => state.itemKey)
 
-  const itemKeyPascal = pascalCase(
-    (pageKey === PageKey.core ? corePageStore.itemKey : proPageStore.itemKey) || ''
-  )
+  const itemKeyPascal = pascalCase((pageKey === PageKey.core ? corePageItemKey : proPageItemKey) || '')
 
   if (!meta[itemKeyPascal]) return null
 

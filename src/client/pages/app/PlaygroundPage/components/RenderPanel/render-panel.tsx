@@ -4,7 +4,8 @@ import { Text, Spacer, Box } from 'lib/components'
 import { usePlaygroundStore } from '../../store'
 
 export const RenderPanel = () => {
-  const { activeComponent, getPropValues } = usePlaygroundStore()
+  const activeComponent = usePlaygroundStore(state => state.activeComponent)
+  const getPropValues = usePlaygroundStore(state => state.getPropValues)
 
   const Component = LIB_COMPONENTS[activeComponent as never] as any
 

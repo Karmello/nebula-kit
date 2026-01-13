@@ -8,7 +8,9 @@ import { NebkitProvider, HydrationGate, Snackbar } from 'lib/components'
 import 'lib/styles/index.scss'
 
 const Node = () => {
-  const { theme, brand, borderRadiusSize } = useAppStore()
+  const theme = useAppStore(state => state.theme)
+  const brand = useAppStore(state => state.brand)
+  const borderRadiusSize = useAppStore(state => state.borderRadiusSize)
 
   return (
     <BrowserRouter>

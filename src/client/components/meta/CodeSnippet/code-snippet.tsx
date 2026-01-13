@@ -52,7 +52,7 @@ export const CodeSnippet = ({ code, lang = 'log' }: CodeSnippetProps) => {
   const [data, setData] = useState<TokensResult>()
   const [copied, setCopied] = useState<boolean>(false)
 
-  const { theme } = useAppStore()
+  const theme = useAppStore(state => state.theme)
 
   const timeoutRef = useRef<NodeJS.Timeout>(null)
 
