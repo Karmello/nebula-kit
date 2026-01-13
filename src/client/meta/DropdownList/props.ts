@@ -10,6 +10,7 @@ import {
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
   DROPDOWN_LIST_PLACEMENTS,
+  DEFAULT_DROPDOWN_OPEN_ON_FOCUS,
 } from 'lib/components/core/overlays/DropdownList'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -41,6 +42,12 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
     options: ['boolean'],
     defaultValue: String(DEFAULT_DROPDOWN_LIST_KEEP_OPEN),
     description: "When true, the list won't be auto-closed on item click.",
+  },
+  openOnFocus: {
+    options: ['boolean'],
+    defaultValue: String(DEFAULT_DROPDOWN_OPEN_ON_FOCUS),
+    description:
+      'Opens the dropdown when the trigger receives focus. When enabled, the trigger does not toggle the dropdown closed on click.',
   },
   placement: {
     ...PORTAL_PROPS_META.placement,

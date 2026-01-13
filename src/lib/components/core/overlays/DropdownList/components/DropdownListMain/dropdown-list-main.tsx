@@ -33,6 +33,10 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
       setTimeout(() => {
         setResizeVisible(true)
       })
+    } else {
+      setTimeout(() => {
+        setResizeVisible(false)
+      })
     }
   }, [open])
 

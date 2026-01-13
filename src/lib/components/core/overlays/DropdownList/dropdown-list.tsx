@@ -12,6 +12,7 @@ import {
   DEFAULT_DROPDOWN_LIST_INTENT,
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
+  DEFAULT_DROPDOWN_OPEN_ON_FOCUS,
 } from './definitions'
 
 import { DropdownListProvider, DropdownListMain } from './components'
@@ -29,6 +30,7 @@ export const DropdownList = ({
   placement = DEFAULT_DROPDOWN_LIST_PLACEMENT,
   // own
   visibleItemsCount = DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
+  openOnFocus = DEFAULT_DROPDOWN_OPEN_ON_FOCUS,
   keepOpen = DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
   scrollToIndex = DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
   scrollAlign = DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
@@ -46,7 +48,8 @@ export const DropdownList = ({
   const portalRef = useRef<HTMLDivElement>(null)
   const scrollWrapperRef = useRef<HTMLDivElement>(null)
 
-  const finalChildren = typeof children === 'function' ? children({ open, resolvedPlacement }) : children
+  const finalChildren =
+    typeof children === 'function' ? children({ open, setOpen, resolvedPlacement }) : children
 
   return (
     <WithSlots
@@ -90,6 +93,7 @@ export const DropdownList = ({
             size={size}
             placement={placement}
             visibleItemsCount={visibleItemsCount}
+            openOnFocus={openOnFocus}
             keepOpen={keepOpen}
             scrollToIndex={scrollToIndex}
             scrollAlign={scrollAlign}

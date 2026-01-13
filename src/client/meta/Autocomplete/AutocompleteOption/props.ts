@@ -12,6 +12,12 @@ const AUTOCOMPLETE_OPTION_PROPS_META: ComponentMeta<AutocompleteOptionProps>['pr
     ...DROPDOWN_LIST_ITEM_PROPS_META.justifyContent,
     defaultValue: String(DEFAULT_AUTOCOMPLETE_OPTION_JUSTIFY_CONTENT),
   },
+  label: {
+    options: ['string'],
+    isRequired: true,
+    description:
+      'Text label used to display the option and to match against user input when filtering. This value is shown in the input when the option is selected.',
+  },
   tagAttrs: DROPDOWN_LIST_ITEM_PROPS_META.tagAttrs,
   tagRef: DROPDOWN_LIST_ITEM_PROPS_META.tagRef,
   value: {

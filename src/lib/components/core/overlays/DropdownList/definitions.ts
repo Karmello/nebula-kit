@@ -15,6 +15,7 @@ export const DROPDOWN_LIST_PLACEMENTS = [
 
 export const DROPDOWN_LIST_SCROLL_ALIGN = ['start', 'center', 'end'] as const
 
+export const DEFAULT_DROPDOWN_OPEN_ON_FOCUS: DropdownListProps['openOnFocus'] = false
 export const DEFAULT_DROPDOWN_LIST_KEEP_OPEN: DropdownListProps['keepOpen'] = false
 export const DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT: DropdownListProps['visibleItemsCount'] = 5
 export const DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX: DropdownListProps['scrollToIndex'] = 0
@@ -28,11 +29,13 @@ export type DropdownListPlacement = (typeof DROPDOWN_LIST_PLACEMENTS)[number]
 
 type ChildrenAsFuncArgs = {
   open: boolean
+  setOpen: (open: boolean) => void
   resolvedPlacement?: DropdownListPlacement
 }
 
 type DropdownListOwnProps = {
   visibleItemsCount?: number
+  openOnFocus?: boolean
   keepOpen?: boolean
   scrollToIndex?: number
   scrollAlign?: DropdownListScrollAlign

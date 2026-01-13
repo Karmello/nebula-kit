@@ -98,7 +98,7 @@ export const Select = ({
                         disabled={disabled}
                         fullWidth
                       >
-                        {staticLabel || currentSlot?.props.children || '...'}
+                        {staticLabel || currentSlot?.props.children || 'Select ...'}
                       </Button>
                     </DropdownList.Trigger>
                     {slotsByName['Select.Option'].map((slot, index) => {

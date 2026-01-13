@@ -41,12 +41,10 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
           className: classNames(withPrefix('dropdown-list-item'), tagAttrs?.className),
           role: 'option',
           onClick: (
-            e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> &
-              MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>
+            e: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent> &
+              MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
           ) => {
-            if (!keepOpen) {
-              setResizeVisible(false)
-            }
+            if (!keepOpen) setResizeVisible(false)
             tagAttrs?.onClick?.(e)
           },
           onMouseMove: () => {

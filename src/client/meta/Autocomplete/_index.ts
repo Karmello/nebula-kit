@@ -11,7 +11,7 @@ const AUTOCOMPLETE_META: ComponentMeta<AutocompleteProps> = {
     bundle: 'pro',
     title: '...',
     features: ['...'],
-    composedOf: ['DropdownList', 'Input'],
+    composedOf: ['DropdownList', 'Input', 'Button'],
     topLevelTags: ['div'],
     slots: ['Autocomplete.Option'],
   },
