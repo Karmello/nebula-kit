@@ -24,6 +24,7 @@ export const AutocompleteMain = ({
   itemBorderIntent,
   scrollAlign,
   visibleItemsCount,
+  noOptionsLabel,
   // Box
   inlineSize,
   disabled,
@@ -79,6 +80,7 @@ export const AutocompleteMain = ({
       scrollToIndex={currentItemIndex}
       scrollAlign={scrollAlign}
       visibleItemsCount={visibleItemsCount}
+      noOptionsLabel={noOptionsLabel}
       placement={dropdownPlacement}
       openOnFocus
     >
@@ -132,32 +134,28 @@ export const AutocompleteMain = ({
                 )}
               />
             </DropdownList.Trigger>
-            {filteredItems.length ? (
-              filteredItems.map((slot, index) => {
-                const slotProps = (slot as ReactElement<AutocompleteOptionProps>).props
-                return (
-                  <DropdownList.Item
-                    key={index}
-                    {...slotProps}
-                    tagAttrs={{
-                      ...slotProps.tagAttrs,
-                      onClick: () => {
-                        handleChange(slotProps.value)
-                        setTimeout(() => {
-                          setInputValue(slotProps.label)
-                        }, DEFAULT_RESIZE_DURATION)
-                      },
-                    }}
-                    bold={slotProps.value === currentValue}
-                    justifyContent={slotProps.justifyContent || DEFAULT_AUTOCOMPLETE_OPTION_JUSTIFY_CONTENT}
-                  >
-                    {slot}
-                  </DropdownList.Item>
-                )
-              })
-            ) : (
-              <DropdownList.Item>No options</DropdownList.Item>
-            )}
+            {filteredItems.map((slot, index) => {
+              const slotProps = (slot as ReactElement<AutocompleteOptionProps>).props
+              return (
+                <DropdownList.Item
+                  key={index}
+                  {...slotProps}
+                  tagAttrs={{
+                    ...slotProps.tagAttrs,
+                    onClick: () => {
+                      handleChange(slotProps.value)
+                      setTimeout(() => {
+                        setInputValue(slotProps.label)
+                      }, DEFAULT_RESIZE_DURATION)
+                    },
+                  }}
+                  bold={slotProps.value === currentValue}
+                  justifyContent={slotProps.justifyContent || DEFAULT_AUTOCOMPLETE_OPTION_JUSTIFY_CONTENT}
+                >
+                  {slot}
+                </DropdownList.Item>
+              )
+            })}
           </>
         )
       }}

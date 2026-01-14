@@ -26,7 +26,8 @@ export const AppJump = () => {
   }, [query])
 
   const filtered = useMemo(() => {
-    if (!queryTokens.length) return OPTIONS
+    if (!queryTokens.length) return []
+
     return OPTIONS.filter(option => queryTokens.every(q => option.tokens.some(t => t.includes(q))))
   }, [queryTokens])
 
@@ -34,8 +35,8 @@ export const AppJump = () => {
     return (
       <Autocomplete
         tagRef={autocompleteRef}
-        intent="muted"
-        itemBorderIntent="tertiary"
+        intent="secondary"
+        itemBorderIntent="primary"
         value={value}
         onChange={value => {
           setValue('')
@@ -47,6 +48,7 @@ export const AppJump = () => {
         disableFiltering
         placeholder="Search website ..."
         visibleItemsCount={10}
+        noOptionsLabel="No results"
       >
         {filtered.map(({ label, href, iconName }) => {
           return (

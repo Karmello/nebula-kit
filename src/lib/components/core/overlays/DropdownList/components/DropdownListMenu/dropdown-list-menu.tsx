@@ -1,9 +1,10 @@
 import { cloneElement, ReactElement, RefObject, useLayoutEffect, useState } from 'react'
 
-import { Floating, Portal, Resize, Box, Flex } from 'lib/components'
+import { Floating, Portal, Resize, Box, Flex, DropdownListItemProps } from 'lib/components'
 
 import { useDropdownListContext } from '..'
 import { getItemsWrapperBlockSize, getMaxAllowedVisibleItemsCount } from '../../helpers'
+import { DropdownListItem } from '../../slots'
 
 export const DropdownListMenu = () => {
   const [triggerWidth, setTriggerWidth] = useState<number | undefined>(undefined)
@@ -22,6 +23,7 @@ export const DropdownListMenu = () => {
     intent,
     color,
     itemBorderIntent,
+    noOptionsLabel,
     placement,
     size,
     open,
@@ -88,24 +90,40 @@ export const DropdownListMenu = () => {
             borderBottomRightRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
           >
             <Flex flexDirection="column" flexWrap="nowrap" alignItems="stretch">
-              {slotsByName['DropdownList.Item'].map((slot, index) => (
+              {itemsCount > 0 ? (
+                slotsByName['DropdownList.Item'].map((slot, index) => (
+                  <Box
+                    key={index}
+                    drawable
+                    color={color}
+                    intent={itemBorderIntent}
+                    variant="outline"
+                    borderLeftWidth="0px"
+                    borderRightWidth="0px"
+                    borderTopWidth={opensUpDownwards ? (index > 0 ? '0px' : undefined) : '0px'}
+                    borderBottomWidth={
+                      opensUpDownwards ? (index === itemsCount - 1 ? '0px' : undefined) : undefined
+                    }
+                    borderRadius="0px"
+                  >
+                    {cloneElement(slot as ReactElement<DropdownListItemProps & { index: number }>, { index })}
+                  </Box>
+                ))
+              ) : (
                 <Box
-                  key={index}
                   drawable
                   color={color}
                   intent={itemBorderIntent}
                   variant="outline"
                   borderLeftWidth="0px"
                   borderRightWidth="0px"
-                  borderTopWidth={opensUpDownwards ? (index > 0 ? '0px' : undefined) : '0px'}
-                  borderBottomWidth={
-                    opensUpDownwards ? (index === itemsCount - 1 ? '0px' : undefined) : undefined
-                  }
+                  borderTopWidth={!opensUpDownwards ? '0px' : undefined}
+                  borderBottomWidth={opensUpDownwards ? '0px' : undefined}
                   borderRadius="0px"
                 >
-                  {cloneElement(slot as ReactElement<any>, { index })}
+                  <DropdownListItem>{noOptionsLabel}</DropdownListItem>
                 </Box>
-              ))}
+              )}
             </Flex>
           </Box>
         </Resize>

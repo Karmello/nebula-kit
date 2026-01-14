@@ -13,6 +13,7 @@ import {
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
   DEFAULT_DROPDOWN_OPEN_ON_FOCUS,
+  DEFAULT_DROPDOWN_LIST_NO_OPTIONS_LABEL,
 } from './definitions'
 
 import { DropdownListProvider, DropdownListMain } from './components'
@@ -35,6 +36,7 @@ export const DropdownList = ({
   scrollToIndex = DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
   scrollAlign = DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
   itemBorderIntent = DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT,
+  noOptionsLabel = DEFAULT_DROPDOWN_LIST_NO_OPTIONS_LABEL,
 }: DropdownListProps) => {
   const [open, setOpen] = useState<boolean>(false)
   const [resizeVisible, setResizeVisible] = useState<boolean>(false)
@@ -63,6 +65,10 @@ export const DropdownList = ({
       {({ slotsByName }) => {
         const itemsCount = slotsByName['DropdownList.Item'].length
 
+        let defaultResolvedVisibleItemsCount =
+          itemsCount < (visibleItemsCount ?? 0) ? itemsCount : (visibleItemsCount ?? 0)
+        if (defaultResolvedVisibleItemsCount <= 0) defaultResolvedVisibleItemsCount = 1
+
         return (
           <DropdownListProvider
             // refs
@@ -80,9 +86,7 @@ export const DropdownList = ({
             setHoveredIndex={setHoveredIndex}
             blockMouse={blockMouse}
             setBlockMouse={setBlockMouse}
-            defaultResolvedVisibleItemsCount={
-              itemsCount < (visibleItemsCount ?? 0) ? itemsCount : (visibleItemsCount ?? 0)
-            }
+            defaultResolvedVisibleItemsCount={defaultResolvedVisibleItemsCount}
             resolvedVisibleItemsCount={resolvedVisibleItemsCount}
             setResolvedVisibleItemsCount={setResolvedVisibleItemsCount}
             resolvedPlacement={resolvedPlacement}
@@ -98,6 +102,7 @@ export const DropdownList = ({
             scrollToIndex={scrollToIndex}
             scrollAlign={scrollAlign}
             itemBorderIntent={itemBorderIntent}
+            noOptionsLabel={noOptionsLabel}
           >
             <DropdownListMain tagRef={tagRef} tagAttrs={tagAttrs} />
           </DropdownListProvider>

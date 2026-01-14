@@ -22,6 +22,7 @@ export const Autocomplete = ({
   itemBorderIntent,
   scrollAlign,
   visibleItemsCount,
+  noOptionsLabel,
   // Box
   inlineSize = DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   disabled,
@@ -61,6 +62,7 @@ export const Autocomplete = ({
             itemBorderIntent={itemBorderIntent}
             scrollAlign={scrollAlign}
             visibleItemsCount={visibleItemsCount}
+            noOptionsLabel={noOptionsLabel}
             inlineSize={inlineSize}
             disabled={disabled}
             onInputChange={onInputChange}

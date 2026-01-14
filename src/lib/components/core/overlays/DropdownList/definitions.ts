@@ -23,6 +23,7 @@ export const DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN: DropdownListProps['scrollAlign'
 export const DEFAULT_DROPDOWN_LIST_INTENT: DropdownListProps['intent'] = 'tertiary'
 export const DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT: DropdownListProps['itemBorderIntent'] = 'muted'
 export const DEFAULT_DROPDOWN_LIST_PLACEMENT: DropdownListProps['placement'] = 'bottom-start'
+export const DEFAULT_DROPDOWN_LIST_NO_OPTIONS_LABEL: DropdownListProps['noOptionsLabel'] = 'No options'
 
 export type DropdownListScrollAlign = (typeof DROPDOWN_LIST_SCROLL_ALIGN)[number]
 export type DropdownListPlacement = (typeof DROPDOWN_LIST_PLACEMENTS)[number]
@@ -41,6 +42,7 @@ type DropdownListOwnProps = {
   scrollAlign?: DropdownListScrollAlign
   itemBorderIntent?: BoxProps['intent']
   placement?: DropdownListPlacement
+  noOptionsLabel?: string
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagRef' | 'tagAttrs'> & {

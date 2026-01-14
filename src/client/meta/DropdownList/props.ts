@@ -11,6 +11,7 @@ import {
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
   DROPDOWN_LIST_PLACEMENTS,
   DEFAULT_DROPDOWN_OPEN_ON_FOCUS,
+  DEFAULT_DROPDOWN_LIST_NO_OPTIONS_LABEL,
 } from 'lib/components/core/overlays/DropdownList'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -42,6 +43,11 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
     options: ['boolean'],
     defaultValue: String(DEFAULT_DROPDOWN_LIST_KEEP_OPEN),
     description: "When true, the list won't be auto-closed on item click.",
+  },
+  noOptionsLabel: {
+    options: ['string'],
+    defaultValue: String(DEFAULT_DROPDOWN_LIST_NO_OPTIONS_LABEL),
+    description: 'Text displayed when the current search query yields no matching options.',
   },
   openOnFocus: {
     options: ['boolean'],

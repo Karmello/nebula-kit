@@ -10,7 +10,7 @@ type Props = {
 
 export const PropsTable = ({ category, data }: Props) => {
   const table = (
-    <Table color="blue" intent="tertiary" paddingBlock="5px" paddingInline="10px">
+    <Table color="blue" intent="neutral" paddingBlock="5px" paddingInline="10px">
       <Table.Header>
         <Table.HeaderRow>
           <Table.HeaderCell>Name</Table.HeaderCell>
@@ -21,7 +21,7 @@ export const PropsTable = ({ category, data }: Props) => {
           <Table.HeaderCell minInlineSize="30ch">Description</Table.HeaderCell>
         </Table.HeaderRow>
       </Table.Header>
-      <Table.Body intent="neutral">
+      <Table.Body intent="muted">
         {Object.keys(data)
           .sort((a, b) => a.localeCompare(b))
           .map(name => {

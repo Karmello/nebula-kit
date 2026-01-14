@@ -21,7 +21,7 @@ export const OPTIONS: Option[] = []
 FOUNDATIONS_CATEGORIES.forEach(c =>
   c.items.forEach(i =>
     i.sections.forEach(s => {
-      const label = `[${PageKey.foundations.replace('/', '')}] / [${noCase(c.key)}] / [${noCase(i.key)}] / [${noCase(s.key)}]`
+      const label = `${PageKey.foundations.replace('/', '')} / ${noCase(c.key)} / ${noCase(i.key)} / ${noCase(s.key)}`
       OPTIONS.push({
         label,
         tokens: label.toLowerCase().split(/\s+/),
@@ -35,7 +35,7 @@ FOUNDATIONS_CATEGORIES.forEach(c =>
 CORE_PAGE_CATEGORIES.forEach(c =>
   c.items.forEach(i =>
     i.sections.forEach(s => {
-      const label = `[${PageKey.core.replace('/', '')}] / [${noCase(c.key)}] / [${pascalCase(i.key)}] / [${noCase(s.key)}]`
+      const label = `${PageKey.core.replace('/', '')} / ${noCase(c.key)} / ${pascalCase(i.key)} / ${noCase(s.key)}`
       OPTIONS.push({
         label,
         tokens: label.toLowerCase().split(/\s+/),
@@ -49,7 +49,7 @@ CORE_PAGE_CATEGORIES.forEach(c =>
 PRO_PAGE_CATEGORIES.forEach(c =>
   c.items.forEach(i =>
     i.sections.forEach(s => {
-      const label = `[${PageKey.pro.replace('/', '')}] / [${noCase(c.key)}] / [${pascalCase(i.key)}] / [${noCase(s.key)}]`
+      const label = `${PageKey.pro.replace('/', '')} / ${noCase(c.key)} / ${pascalCase(i.key)} / ${noCase(s.key)}`
       OPTIONS.push({
         label,
         tokens: label.toLowerCase().split(/\s+/),
