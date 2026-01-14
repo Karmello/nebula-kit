@@ -9,7 +9,6 @@ import { AutocompleteProps } from '../../definitions'
 import { DEFAULT_AUTOCOMPLETE_OPTION_JUSTIFY_CONTENT } from '../../slots'
 
 type AutocompleteMainProps = Omit<AutocompleteProps, 'children' | 'defaultValue' | 'value' | 'onChange'> & {
-  isControlled: boolean
   items: ReactNode[]
   currentValue?: string
   handleChange: (value: string) => void
@@ -36,7 +35,6 @@ export const AutocompleteMain = ({
   disableFiltering,
   placeholder,
   // extra
-  isControlled,
   items,
   currentValue,
   handleChange,

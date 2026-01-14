@@ -1,5 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { AutocompleteProps } from 'lib/components'
+
 import {
   DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
   DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
@@ -33,10 +34,12 @@ const AUTOCOMPLETE_PROPS_META: ComponentMeta<AutocompleteProps>['props'] = {
   },
   intent: DROPDOWN_LIST_PROPS_META.intent,
   itemBorderIntent: DROPDOWN_LIST_PROPS_META.itemBorderIntent,
+  noOptionsLabel: DROPDOWN_LIST_PROPS_META.noOptionsLabel,
   onChange: {
     options: ['(value: string) => void'],
     description: 'Callback fired when the selected value changes.',
   },
+  onClosed: DROPDOWN_LIST_PROPS_META.onClosed,
   onInputChange: {
     options: ['(value: string) => void'],
     description: 'Callback fired when the text input value changes.',

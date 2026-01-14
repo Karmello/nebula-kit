@@ -72,7 +72,6 @@ export const Autocomplete = ({
             disableFiltering={disableFiltering}
             placeholder={placeholder}
             // extra
-            isControlled={isControlled}
             items={slotsByName['Autocomplete.Option']}
             currentValue={currentValue}
             handleChange={handleChange}

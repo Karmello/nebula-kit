@@ -49,6 +49,10 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
     defaultValue: String(DEFAULT_DROPDOWN_LIST_NO_OPTIONS_LABEL),
     description: 'Text displayed when the current search query yields no matching options.',
   },
+  onClosed: {
+    options: ['() => void'],
+    description: 'Callback invoked after the list has fully closed.',
+  },
   openOnFocus: {
     options: ['boolean'],
     defaultValue: String(DEFAULT_DROPDOWN_OPEN_ON_FOCUS),
