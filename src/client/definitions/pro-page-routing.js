@@ -7,6 +7,11 @@ const PRO_PAGE_SECTIONS = [
 
 export const PRO_PAGE_CATEGORIES = [
   {
+    key: 'layout',
+    label: 'Layout',
+    items: [{ key: 'virtual-list', label: 'VirtualList', sections: PRO_PAGE_SECTIONS }],
+  },
+  {
     key: 'controls',
     label: 'Controls',
     items: [{ key: 'tabs', label: 'Tabs', sections: PRO_PAGE_SECTIONS }],

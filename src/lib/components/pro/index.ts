@@ -1,6 +1,7 @@
 export * from './controls'
 export * from './feedback'
 export * from './form-elements'
+export * from './layout'
 export * from './layouts'
 export * from './navigation'
 export * from './overlays'
