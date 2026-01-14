@@ -21,7 +21,14 @@ type PropsFromBox = Pick<BoxProps<'div'>, 'inlineSize' | 'disabled'>
 
 type PropsFromDropdownList = Pick<
   DropdownListProps,
-  'intent' | 'color' | 'size' | 'itemBorderIntent' | 'scrollAlign' | 'visibleItemsCount' | 'noOptionsLabel'
+  | 'intent'
+  | 'color'
+  | 'size'
+  | 'itemBorderIntent'
+  | 'scrollAlign'
+  | 'visibleItemsCount'
+  | 'noOptionsLabel'
+  | 'onClosed'
 >
 
 export type AutocompleteProps = PropsFromHtmlTag & PropsFromBox & PropsFromDropdownList & AutocompleteOwnProps

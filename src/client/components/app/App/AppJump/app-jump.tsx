@@ -1,25 +1,19 @@
-import { CSSProperties, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { CSSProperties, useMemo, useRef, useState } from 'react'
 
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { Autocomplete, Box, Resize, Text } from 'lib/components'
+import { Autocomplete, Box, Resize } from 'lib/components'
 
 import { OPTIONS } from './definitions'
 
 export const AppJump = () => {
-  const autocompleteRef = useRef<HTMLDivElement>(null)
   const [value, setValue] = useState<string>('')
   const [query, setQuery] = useState<string>('')
+  const autocompleteRef = useRef<HTMLDivElement>(null)
 
   const navigateTo = useNavigateTo()
   const showAppJump = useAppStore(state => state.showAppJump)
   const setShowAppJump = useAppStore(state => state.setShowAppJump)
-
-  // useLayoutEffect(() => {
-  //   if (showAppJump) {
-  //     autocompleteRef.current?.querySelector<HTMLElement>('.neb-input')?.focus()
-  //   }
-  // }, [showAppJump])
 
   const queryTokens = useMemo(() => {
     return query.trim().toLowerCase().split(/\s+/).filter(Boolean)
@@ -27,7 +21,6 @@ export const AppJump = () => {
 
   const filtered = useMemo(() => {
     if (!queryTokens.length) return []
-
     return OPTIONS.filter(option => queryTokens.every(q => option.tokens.some(t => t.includes(q))))
   }, [queryTokens])
 
@@ -39,15 +32,18 @@ export const AppJump = () => {
         itemBorderIntent="primary"
         value={value}
         onChange={value => {
-          setValue('')
-          setQuery('')
-          navigateTo(value)
+          setValue(value)
           setShowAppJump(false)
         }}
         onInputChange={setQuery}
+        onClosed={() => {
+          if (value) navigateTo(value)
+          setValue('')
+          setQuery('')
+        }}
         disableFiltering
-        placeholder="Search website ..."
         visibleItemsCount={10}
+        placeholder="Search website ..."
         noOptionsLabel="No results"
       >
         {filtered.map(({ label, href, iconName }) => {
@@ -60,15 +56,13 @@ export const AppJump = () => {
               iconPlacement="right"
               justifyContent="space-between"
             >
-              <Text truncate tagAttrs={{ style: { whiteSpace: 'wrap', lineHeight: 1.15 } }}>
-                {label}
-              </Text>
+              {label}
             </Autocomplete.Option>
           )
         })}
       </Autocomplete>
     )
-  }, [filtered])
+  }, [filtered, value])
 
   return (
     <Resize property="blockSize" visible={showAppJump}>

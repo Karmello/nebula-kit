@@ -23,6 +23,7 @@ export const Autocomplete = ({
   scrollAlign,
   visibleItemsCount,
   noOptionsLabel,
+  onClosed,
   // Box
   inlineSize = DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   disabled,
@@ -49,7 +50,7 @@ export const Autocomplete = ({
     <WithSlots<'Autocomplete.Option'>
       childrenToVerify={children}
       componentName="Autocomplete"
-      slotsConfig={[{ name: 'Autocomplete.Option', required: true, allowMultiple: true }]}
+      slotsConfig={[{ name: 'Autocomplete.Option', allowMultiple: true }]}
     >
       {({ slotsByName }) => {
         return (
@@ -63,6 +64,7 @@ export const Autocomplete = ({
             scrollAlign={scrollAlign}
             visibleItemsCount={visibleItemsCount}
             noOptionsLabel={noOptionsLabel}
+            onClosed={onClosed}
             inlineSize={inlineSize}
             disabled={disabled}
             onInputChange={onInputChange}
@@ -70,6 +72,7 @@ export const Autocomplete = ({
             disableFiltering={disableFiltering}
             placeholder={placeholder}
             // extra
+            isControlled={isControlled}
             items={slotsByName['Autocomplete.Option']}
             currentValue={currentValue}
             handleChange={handleChange}

@@ -34,6 +34,14 @@ export const DropdownListTrigger = ({
             setOpen(true)
           }
         },
+        onKeyDown: e => {
+          if (e.key === 'Enter') {
+            if (!open) {
+              e.preventDefault()
+              setOpen(true)
+            }
+          }
+        },
       }}
       display="inline-block"
       inlineSize={inlineSize}

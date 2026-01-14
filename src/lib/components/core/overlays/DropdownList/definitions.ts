@@ -43,6 +43,7 @@ type DropdownListOwnProps = {
   itemBorderIntent?: BoxProps['intent']
   placement?: DropdownListPlacement
   noOptionsLabel?: string
+  onClosed?: () => void
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagRef' | 'tagAttrs'> & {

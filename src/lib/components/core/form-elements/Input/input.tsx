@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
 import { Box, Segment } from 'lib/components'

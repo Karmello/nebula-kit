@@ -37,6 +37,7 @@ export const DropdownList = ({
   scrollAlign = DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
   itemBorderIntent = DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT,
   noOptionsLabel = DEFAULT_DROPDOWN_LIST_NO_OPTIONS_LABEL,
+  onClosed,
 }: DropdownListProps) => {
   const [open, setOpen] = useState<boolean>(false)
   const [resizeVisible, setResizeVisible] = useState<boolean>(false)
@@ -59,7 +60,7 @@ export const DropdownList = ({
       componentName="DropdownList"
       slotsConfig={[
         { name: 'DropdownList.Trigger', required: true },
-        { name: 'DropdownList.Item', allowMultiple: true, required: true },
+        { name: 'DropdownList.Item', allowMultiple: true },
       ]}
     >
       {({ slotsByName }) => {
@@ -103,6 +104,7 @@ export const DropdownList = ({
             scrollAlign={scrollAlign}
             itemBorderIntent={itemBorderIntent}
             noOptionsLabel={noOptionsLabel}
+            onClosed={onClosed}
           >
             <DropdownListMain tagRef={tagRef} tagAttrs={tagAttrs} />
           </DropdownListProvider>

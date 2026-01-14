@@ -1,10 +1,10 @@
-import { cloneElement, ReactElement, RefObject, useLayoutEffect, useState } from 'react'
+import { cloneElement, ReactElement, RefObject, useLayoutEffect, useRef, useState } from 'react'
 
-import { Floating, Portal, Resize, Box, Flex, DropdownListItemProps } from 'lib/components'
+import { Floating, Portal, Resize, Box, Flex, DropdownList, DropdownListItemProps } from 'lib/components'
 
 import { useDropdownListContext } from '..'
 import { getItemsWrapperBlockSize, getMaxAllowedVisibleItemsCount } from '../../helpers'
-import { DropdownListItem } from '../../slots'
+import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize'
 
 export const DropdownListMenu = () => {
   const [triggerWidth, setTriggerWidth] = useState<number | undefined>(undefined)
@@ -27,10 +27,21 @@ export const DropdownListMenu = () => {
     placement,
     size,
     open,
+    onClosed,
   } = useDropdownListContext()
 
+  const prevOpenRef = useRef<boolean>(open)
+
   useLayoutEffect(() => {
+    const wasOpen = prevOpenRef.current
+    prevOpenRef.current = open
+    if (wasOpen && !open) {
+      setTimeout(() => {
+        onClosed?.()
+      }, DEFAULT_RESIZE_DURATION)
+    }
     if (!open) return
+
     const el = (triggerRef as RefObject<HTMLElement>).current
     if (!el) return
     const update = () => setTriggerWidth(el.offsetWidth)
@@ -121,7 +132,7 @@ export const DropdownListMenu = () => {
                   borderBottomWidth={opensUpDownwards ? '0px' : undefined}
                   borderRadius="0px"
                 >
-                  <DropdownListItem>{noOptionsLabel}</DropdownListItem>
+                  <DropdownList.Item>{noOptionsLabel}</DropdownList.Item>
                 </Box>
               )}
             </Flex>

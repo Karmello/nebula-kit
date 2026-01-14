@@ -9,6 +9,7 @@ import { AutocompleteProps } from '../../definitions'
 import { DEFAULT_AUTOCOMPLETE_OPTION_JUSTIFY_CONTENT } from '../../slots'
 
 type AutocompleteMainProps = Omit<AutocompleteProps, 'children' | 'defaultValue' | 'value' | 'onChange'> & {
+  isControlled: boolean
   items: ReactNode[]
   currentValue?: string
   handleChange: (value: string) => void
@@ -25,6 +26,7 @@ export const AutocompleteMain = ({
   scrollAlign,
   visibleItemsCount,
   noOptionsLabel,
+  onClosed,
   // Box
   inlineSize,
   disabled,
@@ -34,24 +36,13 @@ export const AutocompleteMain = ({
   disableFiltering,
   placeholder,
   // extra
+  isControlled,
   items,
   currentValue,
   handleChange,
 }: AutocompleteMainProps) => {
   const [inputValue, setInputValue] = useState<string>('')
   const [filteredItems, setFilteredItems] = useState<AutocompleteMainProps['items']>([])
-
-  const currentItemIndex = items.findIndex(
-    item => (item as ReactElement<AutocompleteOptionProps>).props.value === currentValue
-  )
-
-  const currentItem = items[currentItemIndex] as ReactElement<AutocompleteOptionProps>
-
-  useLayoutEffect(() => {
-    setTimeout(() => {
-      setInputValue(currentItem ? currentItem.props.label : '')
-    }, DEFAULT_RESIZE_DURATION)
-  }, [currentItem])
 
   useLayoutEffect(() => {
     if (inputValue && !disableFiltering) {
@@ -65,6 +56,16 @@ export const AutocompleteMain = ({
       setFilteredItems(items)
     }
   }, [inputValue, disableFiltering, items])
+
+  const currentItemIndex = items.findIndex(
+    item => (item as ReactElement<AutocompleteOptionProps>).props.value === currentValue
+  )
+
+  const currentItem = items[currentItemIndex] as ReactElement<AutocompleteOptionProps>
+
+  useLayoutEffect(() => {
+    setInputValue(currentItem ? currentItem.props.label : (currentValue ?? ''))
+  }, [currentItem, currentValue])
 
   return (
     <DropdownList
@@ -83,6 +84,7 @@ export const AutocompleteMain = ({
       noOptionsLabel={noOptionsLabel}
       placement={dropdownPlacement}
       openOnFocus
+      onClosed={onClosed}
     >
       {({ open, setOpen, resolvedPlacement }) => {
         const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(resolvedPlacement)
@@ -143,9 +145,9 @@ export const AutocompleteMain = ({
                   tagAttrs={{
                     ...slotProps.tagAttrs,
                     onClick: () => {
-                      handleChange(slotProps.value)
                       setTimeout(() => {
                         setInputValue(slotProps.label)
+                        handleChange(slotProps.value)
                       }, DEFAULT_RESIZE_DURATION)
                     },
                   }}
