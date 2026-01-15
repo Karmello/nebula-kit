@@ -1,4 +1,4 @@
-import { useState, Fragment } from 'react'
+import { useState, Fragment, useCallback, useMemo } from 'react'
 
 import { Box, Flex, Button, DropdownList, Icon } from 'lib/components'
 
@@ -25,25 +25,28 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
   const isControlled = path !== undefined
   const currentPath = isControlled ? path : internalPath
 
-  const handleChange = (index: number, value: string) => {
-    if (!isControlled) {
-      setInternalPath(prev => {
-        const next = prev.slice(0, index)
-        next[index] = value
-        return next
-      })
-    }
+  const handleChange = useCallback(
+    (index: number, value: string) => {
+      if (!isControlled) {
+        setInternalPath(prev => {
+          const next = prev.slice(0, index)
+          next[index] = value
+          return next
+        })
+      }
 
-    onChange?.(
-      (() => {
-        const next = currentPath.slice(0, index)
-        next[index] = value
-        return next
-      })()
-    )
-  }
+      onChange?.(
+        (() => {
+          const next = currentPath.slice(0, index)
+          next[index] = value
+          return next
+        })()
+      )
+    },
+    [isControlled, setInternalPath, onChange, currentPath]
+  )
 
-  const levels = convertTreeToLevels(tree, currentPath)
+  const levels = useMemo(() => convertTreeToLevels(tree, currentPath), [tree])
 
   return (
     <Box tag={tag} tagAttrs={tagAttrs} tagRef={tagRef} overflowX="auto">

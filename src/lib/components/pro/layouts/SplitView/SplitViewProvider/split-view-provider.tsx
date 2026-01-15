@@ -1,8 +1,7 @@
-import { createContext, useContext, useState, ReactNode, useEffect } from 'react'
+import { createContext, useContext, useState, ReactNode, useLayoutEffect } from 'react'
 
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize/definitions'
 import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
-import { getLibMsg } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 
 import { SplitViewOwnProps } from '../definitions'
@@ -19,7 +18,7 @@ export type SplitViewContextProps = Omit<ProviderProps, 'children'> & {
   mode: SplitViewMode
 }
 
-const SplitViewContext = createContext<SplitViewContextProps | undefined>(undefined)
+const SplitViewContext = createContext<SplitViewContextProps>({} as SplitViewContextProps)
 
 export const SplitViewProvider = ({
   children,
@@ -33,15 +32,15 @@ export const SplitViewProvider = ({
   )
   const [sideOpen, setSideOpen] = useState<boolean>(mode === 'inline')
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setMode(BREAKPOINTS.slice(0, BREAKPOINTS.indexOf(switchAt)).includes(bp) ? 'overlay' : 'inline')
   }, [bp])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setSideOpen(mode === 'inline')
   }, [mode])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (mode === 'overlay' && sideOpen) {
       document.documentElement.classList.add('neb-scrollbar-off')
       document.body.style.pointerEvents = 'none'
@@ -61,7 +60,5 @@ export const SplitViewProvider = ({
 }
 
 export const useSplitViewContext = () => {
-  const ctx = useContext(SplitViewContext)
-  if (!ctx) throw new Error(getLibMsg('useSplitViewContext must be used inside <SplitView>'))
-  return ctx
+  return useContext(SplitViewContext)
 }

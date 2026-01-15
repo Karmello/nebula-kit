@@ -19,9 +19,7 @@ const ReleaseSection = ({ heading, componentNames = [] }: { heading: string; com
       <Section heading={heading} size="sm">
         <Flex flexWrap="wrap" gap="5px">
           {componentNames.map(c => {
-            const { pageKey, categoryKey, itemKey, sectionKey } = PAGE_SECTIONS.find(
-              s => s.itemKey === kebabCase(c)
-            )
+            const { pageKey, categoryKey, itemKey } = PAGE_SECTIONS.find(s => s.itemKey === kebabCase(c))
 
             const href = `/${pageKey}/${categoryKey}/${itemKey}/changelog`
 

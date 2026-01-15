@@ -1,5 +1,3 @@
-import { useLocation } from 'react-router'
-
 import meta from 'client/meta'
 import { useNavigateTo } from 'client/hooks'
 import { ComponentsPageRoutes, FoundationsPageRoutes } from 'client/pages'
@@ -9,6 +7,7 @@ import { Box, SideNav, Spacer, SplitView, Text, Divider, Flex } from 'lib/compon
 import { CatalogPageBreadcrumb } from './CatalogPageBreadcrumb'
 
 type Props = {
+  pathname: string
   pageKey: PageKey.foundations | PageKey.core | PageKey.pro
   data: {
     key: string
@@ -21,13 +20,13 @@ type Props = {
 }
 
 export const CatalogPageTemplate = ({
+  pathname,
   pageKey,
   data,
   activeCategoryObj,
   activeItemObj,
   activeSectionObj,
 }: Props) => {
-  const { pathname } = useLocation()
   const navigateTo = useNavigateTo()
 
   const bundleLabel = meta[activeItemObj?.label]?.[activeItemObj?.label]?.overview.bundle
