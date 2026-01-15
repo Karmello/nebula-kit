@@ -1,13 +1,13 @@
 import { cloneElement, ReactElement, RefObject, useLayoutEffect, useRef, useState } from 'react'
 
 import {
+  Box,
   Floating,
   Portal,
   Resize,
-  Box,
+  VirtualList,
   DropdownList,
   DropdownListItemProps,
-  VirtualList,
 } from 'lib/components'
 
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize'
