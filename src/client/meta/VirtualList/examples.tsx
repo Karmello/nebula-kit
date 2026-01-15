@@ -14,6 +14,7 @@ const VIRTUAL_LIST_EXAMPLES_META: ComponentMeta<VirtualListProps>['examples'] = 
           <Box
             key={index}
             drawable
+            interactive
             variant="solid"
             intent="primary"
             borderRadius="0px"
@@ -35,6 +36,7 @@ const VIRTUAL_LIST_EXAMPLES_META: ComponentMeta<VirtualListProps>['examples'] = 
     <Box
       key={index}
       drawable
+      interactive
       variant="solid"
       intent="primary"
       borderRadius="0px"

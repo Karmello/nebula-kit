@@ -25,7 +25,7 @@ export const AppFooter = () => {
           }}
         >
           <Text scale="compact" color="blue" intent="primary">
-            NebulaKit v{RELEASE_VERSIONS[RELEASE_VERSIONS.length - 1]}
+            NebulaKit v{RELEASE_VERSIONS[0]}
           </Text>
         </Link>
         <Spacer blockSize="10px" />

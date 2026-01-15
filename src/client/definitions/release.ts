@@ -9,7 +9,7 @@ export const RELEASE_INFO: Record<
   }
 > = {
   '0.3.0': {
-    timestamp: 1767789976063,
+    timestamp: 1768414504758,
   },
   '0.2.3': {
     timestamp: 1767722681237,

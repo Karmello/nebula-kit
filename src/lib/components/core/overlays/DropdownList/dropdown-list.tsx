@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 
 import { WithSlots } from 'lib/components/core/internal'
-import { DEFAULT_BUTTON_SIZE } from 'lib/components/core/controls/Button/definitions'
+import { BUTTON_SIZE_CONFIG, DEFAULT_BUTTON_SIZE } from 'lib/components/core/controls/Button/definitions'
 
 import {
   DropdownListProps,
@@ -17,6 +17,7 @@ import {
 } from './definitions'
 
 import { DropdownListProvider, DropdownListMain } from './components'
+import { BOX_BORDER_WIDTH } from '../../base/Box'
 
 export const DropdownList = ({
   // HtmlTag
@@ -42,6 +43,7 @@ export const DropdownList = ({
   const [open, setOpen] = useState<boolean>(false)
   const [resizeVisible, setResizeVisible] = useState<boolean>(false)
   const [hoveredIndex, setHoveredIndex] = useState<number>(-1)
+  const [ensureVisibleIndex, setEnsureVisibleIndex] = useState<number | undefined>(undefined)
   const [blockMouse, setBlockMouse] = useState<boolean>(false)
   const [resolvedVisibleItemsCount, setResolvedVisibleItemsCount] =
     useState<DropdownListProps['visibleItemsCount']>(visibleItemsCount)
@@ -70,6 +72,10 @@ export const DropdownList = ({
           itemsCount < (visibleItemsCount ?? 0) ? itemsCount : (visibleItemsCount ?? 0)
         if (defaultResolvedVisibleItemsCount <= 0) defaultResolvedVisibleItemsCount = 1
 
+        const itemHeight =
+          Number(BUTTON_SIZE_CONFIG[size].blockSize.replace('px', '')) +
+          Number(BOX_BORDER_WIDTH.replace('px', ''))
+
         return (
           <DropdownListProvider
             // refs
@@ -85,6 +91,8 @@ export const DropdownList = ({
             setResizeVisible={setResizeVisible}
             hoveredIndex={hoveredIndex}
             setHoveredIndex={setHoveredIndex}
+            ensureVisibleIndex={ensureVisibleIndex}
+            setEnsureVisibleIndex={setEnsureVisibleIndex}
             blockMouse={blockMouse}
             setBlockMouse={setBlockMouse}
             defaultResolvedVisibleItemsCount={defaultResolvedVisibleItemsCount}
@@ -105,6 +113,8 @@ export const DropdownList = ({
             itemBorderIntent={itemBorderIntent}
             noOptionsLabel={noOptionsLabel}
             onClosed={onClosed}
+            // extra
+            itemHeight={itemHeight}
           >
             <DropdownListMain tagRef={tagRef} tagAttrs={tagAttrs} />
           </DropdownListProvider>

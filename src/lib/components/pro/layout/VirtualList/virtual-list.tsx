@@ -22,6 +22,7 @@ export const VirtualList = <T,>({
   scrollToIndex = DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX,
   scrollAlign = DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN,
   overscan,
+  ensureVisibleIndex,
 }: VirtualListProps<T>) => {
   const internalRef = useRef<HTMLDivElement | null>(null)
   const resolvedRef = tagRef || internalRef
@@ -51,6 +52,37 @@ export const VirtualList = <T,>({
     el.scrollTop = nextScrollTop
     setScrollTop(nextScrollTop)
   }, [scrollToIndex, scrollAlign, visibleItemsCount, itemHeight, items.length])
+
+  useLayoutEffect(() => {
+    if (ensureVisibleIndex === undefined) return
+
+    const el = resolvedRef.current
+    if (!el) return
+
+    const listHeight = visibleItemsCount * itemHeight
+
+    const itemTop = ensureVisibleIndex * itemHeight
+    const itemBottom = itemTop + itemHeight
+
+    const viewportTop = el.scrollTop
+    const viewportBottom = viewportTop + listHeight
+
+    let nextScrollTop = viewportTop
+
+    if (itemBottom > viewportBottom) {
+      nextScrollTop = itemTop // new item becomes first visible
+    } else if (itemTop < viewportTop) {
+      nextScrollTop = itemBottom - listHeight // new item becomes last visible
+    }
+
+    const maxScrollTop = Math.max(0, (items.length - visibleItemsCount) * itemHeight)
+    nextScrollTop = Math.max(0, Math.min(nextScrollTop, maxScrollTop))
+
+    if (nextScrollTop !== viewportTop) {
+      el.scrollTop = nextScrollTop
+      setScrollTop(nextScrollTop)
+    }
+  }, [ensureVisibleIndex, visibleItemsCount, itemHeight, items.length])
 
   const { startIndex, endIndex, offsetY } = useMemo(() => {
     let start = Math.floor(scrollTop / itemHeight) - resolvedOverscan
@@ -98,7 +130,9 @@ export const VirtualList = <T,>({
           left="0px"
           right="0px"
         >
-          {visibleItems.map((item, i) => renderItem(item, startIndex + i))}
+          {visibleItems.map((item, i) => (
+            <Box key={i}>{renderItem(item, startIndex + i)}</Box>
+          ))}
         </Box>
       </Box>
     </Box>

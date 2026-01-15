@@ -143,7 +143,9 @@ export const HomePage = () => {
                     <Text bold>Brand</Text>
                     <Select
                       value={brand}
-                      onChange={value => setBrand(value as BoxColor)}
+                      onClosed={value => {
+                        if (value !== undefined) setBrand(value as BoxColor)
+                      }}
                       inlineSize="150px"
                       size="sm"
                       scrollAlign="center"
@@ -157,7 +159,9 @@ export const HomePage = () => {
                     <Text bold>Border radius</Text>
                     <Select
                       value={borderRadiusSize}
-                      onChange={value => setBorderRadiusSize(value as never)}
+                      onClosed={value => {
+                        if (value !== undefined) setBorderRadiusSize(value as never)
+                      }}
                       inlineSize="150px"
                       size="sm"
                       scrollAlign="center"

@@ -1,11 +1,11 @@
-import { useEffect, useLayoutEffect } from 'react'
+import { useEffect } from 'react'
 
 import { Box, DropdownListProps } from 'lib/components'
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize/definitions'
 import { useOutsideClick } from 'lib/hooks'
 
 import { useDropdownListContext, DropdownListMenu } from '../'
-import { getInitScrollTop, handleArrowNavigation } from '../../helpers'
+import { getNextActiveIndex } from '../../helpers'
 
 export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, 'tagRef' | 'tagAttrs'>) => {
   const {
@@ -17,13 +17,12 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
     setResizeVisible,
     open,
     setOpen,
-    size,
     hoveredIndex,
     setHoveredIndex,
+    setEnsureVisibleIndex,
     setBlockMouse,
     resolvedVisibleItemsCount,
-    scrollAlign,
-    scrollToIndex,
+    itemHeight,
   } = useDropdownListContext()
 
   useOutsideClick([triggerRef, portalRef], () => setResizeVisible(false))
@@ -49,18 +48,6 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
     }
   }, [resizeVisible])
 
-  useLayoutEffect(() => {
-    if (scrollWrapperRef.current) {
-      const scrollTop = getInitScrollTop(
-        resolvedVisibleItemsCount,
-        size ?? 'md',
-        scrollToIndex ?? 0,
-        scrollAlign
-      )
-      if (scrollTop !== undefined) scrollWrapperRef.current.scrollTop = scrollTop
-    }
-  }, [open])
-
   const itemsCount = slotsByName['DropdownList.Item'].length
 
   return (
@@ -84,19 +71,20 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
           } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
             if (e.repeat) return
             e.preventDefault()
-            setBlockMouse(true)
-            const { activeIndex, scrollTop } = handleArrowNavigation(
-              e.key,
+            if (!scrollWrapperRef.current) return
+
+            const nextIndex = getNextActiveIndex({
+              key: e.key,
               itemsCount,
-              resolvedVisibleItemsCount,
-              size ?? 'md',
-              scrollWrapperRef.current.scrollTop,
-              hoveredIndex
-            )
-            setHoveredIndex(activeIndex)
-            setTimeout(() => {
-              if (scrollWrapperRef.current) scrollWrapperRef.current.scrollTop = scrollTop
-            }, 125)
+              activeIndex: hoveredIndex,
+              scrollTop: scrollWrapperRef.current.scrollTop,
+              visibleItemsCount: resolvedVisibleItemsCount ?? 1,
+              itemHeight,
+            })
+
+            setBlockMouse(true)
+            setHoveredIndex(nextIndex)
+            setEnsureVisibleIndex(nextIndex)
           }
         },
       }}

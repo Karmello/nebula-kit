@@ -1,10 +1,18 @@
 import { cloneElement, ReactElement, RefObject, useLayoutEffect, useRef, useState } from 'react'
 
-import { Floating, Portal, Resize, Box, Flex, DropdownList, DropdownListItemProps } from 'lib/components'
+import {
+  Floating,
+  Portal,
+  Resize,
+  Box,
+  DropdownList,
+  DropdownListItemProps,
+  VirtualList,
+} from 'lib/components'
+
+import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize'
 
 import { useDropdownListContext } from '..'
-import { getItemsWrapperBlockSize, getMaxAllowedVisibleItemsCount } from '../../helpers'
-import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize'
 
 export const DropdownListMenu = () => {
   const [triggerWidth, setTriggerWidth] = useState<number | undefined>(undefined)
@@ -25,9 +33,12 @@ export const DropdownListMenu = () => {
     itemBorderIntent,
     noOptionsLabel,
     placement,
-    size,
     open,
     onClosed,
+    scrollToIndex,
+    scrollAlign,
+    ensureVisibleIndex,
+    itemHeight,
   } = useDropdownListContext()
 
   const prevOpenRef = useRef<boolean>(open)
@@ -51,15 +62,14 @@ export const DropdownListMenu = () => {
     return () => observer.disconnect()
   }, [open])
 
-  const itemsContainerBlockSize = getItemsWrapperBlockSize(resolvedVisibleItemsCount, size ?? 'md')
   const opensUpDownwards = (resolvedPlacement || 'bottom-start').startsWith('bottom')
 
-  const itemsCount = slotsByName['DropdownList.Item'].length
+  const itemsContainerBlockSize = resolvedVisibleItemsCount * itemHeight
 
   return (
     <Floating
       anchorRef={triggerRef}
-      floatingBlockSize={Number(itemsContainerBlockSize.replace('px', ''))}
+      floatingBlockSize={itemsContainerBlockSize}
       placement={placement}
       onResolve={resolved => {
         if (resolved.placement !== resolvedPlacement) {
@@ -67,7 +77,7 @@ export const DropdownListMenu = () => {
         }
 
         if (resolved.blockSize !== undefined) {
-          const maxAllowedVisibleItemsCount = getMaxAllowedVisibleItemsCount(size, resolved.blockSize)
+          const maxAllowedVisibleItemsCount = Math.floor(resolved.blockSize / itemHeight)
 
           if (
             defaultResolvedVisibleItemsCount !== undefined &&
@@ -85,57 +95,66 @@ export const DropdownListMenu = () => {
       <Portal tagRef={portalRef} anchorRef={triggerRef} placement={resolvedPlacement}>
         <Resize property="blockSize" visible={resizeVisible} easing={resizeVisible ? 'ease-out' : 'ease-in'}>
           <Box
-            tagRef={scrollWrapperRef}
             drawable
             variant="solid"
             intent={intent}
             color={color}
-            blockSize={itemsContainerBlockSize}
+            blockSize={`${itemsContainerBlockSize}px`}
             minInlineSize={`${triggerWidth}px`}
-            overflowY="auto"
-            overflowX="hidden"
+            overflow="hidden"
             borderTopWidth="0px"
             borderTopLeftRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
             borderTopRightRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
             borderBottomLeftRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
             borderBottomRightRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
           >
-            <Flex flexDirection="column" flexWrap="nowrap" alignItems="stretch">
-              {itemsCount > 0 ? (
-                slotsByName['DropdownList.Item'].map((slot, index) => (
-                  <Box
-                    key={index}
-                    drawable
-                    color={color}
-                    intent={itemBorderIntent}
-                    variant="outline"
-                    borderLeftWidth="0px"
-                    borderRightWidth="0px"
-                    borderTopWidth={opensUpDownwards ? (index > 0 ? '0px' : undefined) : '0px'}
-                    borderBottomWidth={
-                      opensUpDownwards ? (index === itemsCount - 1 ? '0px' : undefined) : undefined
-                    }
-                    borderRadius="0px"
-                  >
-                    {cloneElement(slot as ReactElement<DropdownListItemProps & { index: number }>, { index })}
-                  </Box>
-                ))
-              ) : (
-                <Box
-                  drawable
-                  color={color}
-                  intent={itemBorderIntent}
-                  variant="outline"
-                  borderLeftWidth="0px"
-                  borderRightWidth="0px"
-                  borderTopWidth={!opensUpDownwards ? '0px' : undefined}
-                  borderBottomWidth={opensUpDownwards ? '0px' : undefined}
-                  borderRadius="0px"
-                >
-                  <DropdownList.Item>{noOptionsLabel}</DropdownList.Item>
-                </Box>
-              )}
-            </Flex>
+            {slotsByName['DropdownList.Item'].length ? (
+              <VirtualList
+                key={String(open)}
+                tagRef={scrollWrapperRef}
+                items={slotsByName['DropdownList.Item']}
+                itemHeight={itemHeight}
+                visibleItemsCount={resolvedVisibleItemsCount}
+                scrollToIndex={scrollToIndex}
+                scrollAlign={scrollAlign}
+                color={color}
+                intent={intent}
+                renderItem={(slot, index) => {
+                  return (
+                    <Box
+                      drawable
+                      color={color}
+                      intent={itemBorderIntent}
+                      variant="outline"
+                      borderLeftWidth="0px"
+                      borderRightWidth="0px"
+                      borderTopWidth={!opensUpDownwards ? '0px' : undefined}
+                      borderBottomWidth={opensUpDownwards ? '0px' : undefined}
+                      borderRadius="0px"
+                    >
+                      {cloneElement(slot as ReactElement<DropdownListItemProps & { index: number }>, {
+                        index,
+                      })}
+                    </Box>
+                  )
+                }}
+                ensureVisibleIndex={ensureVisibleIndex}
+              />
+            ) : (
+              <Box
+                drawable
+                color={color}
+                intent={itemBorderIntent}
+                variant="outline"
+                borderLeftWidth="0px"
+                borderRightWidth="0px"
+                borderTopWidth={!opensUpDownwards ? '0px' : undefined}
+                borderBottomWidth={opensUpDownwards ? '0px' : undefined}
+                borderRadius="0px"
+              >
+                <DropdownList.Item disabled>{noOptionsLabel}</DropdownList.Item>
+              </Box>
+            )}
           </Box>
         </Resize>
       </Portal>

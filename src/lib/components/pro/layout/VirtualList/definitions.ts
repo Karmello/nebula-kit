@@ -16,6 +16,7 @@ type VirtualListOwnProps<T = any> = {
   scrollToIndex?: number
   scrollAlign?: VirtualListScrollAlign
   overscan?: number
+  ensureVisibleIndex?: number
 }
 
 type PropsFromBox = Pick<BoxProps, 'tagAttrs' | 'tagRef' | 'intent' | 'color'>

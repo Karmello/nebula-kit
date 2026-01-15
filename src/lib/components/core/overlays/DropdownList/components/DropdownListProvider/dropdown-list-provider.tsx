@@ -16,6 +16,8 @@ type ContextValue = {
   setResizeVisible: (resizeVisible: boolean) => void
   hoveredIndex: number
   setHoveredIndex: (hoveredIndex: number) => void
+  ensureVisibleIndex: number
+  setEnsureVisibleIndex: (ensureVisibleIndex: number) => void
   blockMouse: boolean
   setBlockMouse: (blockMouse: boolean) => void
   defaultResolvedVisibleItemsCount: DropdownListProps['visibleItemsCount']
@@ -23,6 +25,8 @@ type ContextValue = {
   setResolvedVisibleItemsCount: (resolvedVisibleItemsCount: DropdownListProps['visibleItemsCount']) => void
   resolvedPlacement: DropdownListProps['placement']
   setResolvedPlacement: (resolvedPlacement: DropdownListProps['placement']) => void
+  // extra
+  itemHeight: number
 } & Omit<DropdownListProps, 'children' | 'tagAttrs' | 'tagRef'>
 
 type ProviderProps = {
