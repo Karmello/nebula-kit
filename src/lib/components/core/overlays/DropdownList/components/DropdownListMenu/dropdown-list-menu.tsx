@@ -10,8 +10,6 @@ import {
   DropdownListItemProps,
 } from 'lib/components'
 
-import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize'
-
 import { useDropdownListContext } from '..'
 import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'
 
@@ -35,11 +33,13 @@ export const DropdownListMenu = () => {
     noOptionsLabel,
     placement,
     open,
+    onOpened,
     onClosed,
     scrollToIndex,
     scrollAlign,
     ensureVisibleIndex,
     itemHeight,
+    animationDuration,
   } = useDropdownListContext()
 
   const prevOpenRef = useRef<boolean>(open)
@@ -50,7 +50,11 @@ export const DropdownListMenu = () => {
     if (wasOpen && !open) {
       setTimeout(() => {
         onClosed?.()
-      }, DEFAULT_RESIZE_DURATION)
+      }, animationDuration)
+    } else if (!wasOpen && open) {
+      setTimeout(() => {
+        onOpened?.()
+      }, animationDuration)
     }
     if (!open) return
 
@@ -61,7 +65,7 @@ export const DropdownListMenu = () => {
     const observer = new ResizeObserver(update)
     observer.observe(el)
     return () => observer.disconnect()
-  }, [open])
+  }, [open, animationDuration])
 
   const opensUpDownwards = (resolvedPlacement || 'bottom-start').startsWith('bottom')
 
@@ -94,7 +98,12 @@ export const DropdownListMenu = () => {
       }}
     >
       <Portal tagRef={portalRef} anchorRef={triggerRef} placement={resolvedPlacement}>
-        <Resize property="blockSize" visible={resizeVisible} easing={resizeVisible ? 'ease-out' : 'ease-in'}>
+        <Resize
+          property="blockSize"
+          visible={resizeVisible}
+          duration={animationDuration}
+          easing={resizeVisible ? 'ease-out' : 'ease-in'}
+        >
           <Box
             drawable
             variant="solid"

@@ -101,3 +101,13 @@ export const FOUNDATIONS_CATEGORIES = [
     ],
   },
 ]
+
+export const FOUNDATIONS_SECTIONS = []
+
+FOUNDATIONS_CATEGORIES.forEach(c =>
+  c.items.forEach(i =>
+    i.sections.forEach(s => {
+      FOUNDATIONS_SECTIONS.push({ categoryKey: c.key, itemKey: i.key, sectionKey: s.key })
+    })
+  )
+)

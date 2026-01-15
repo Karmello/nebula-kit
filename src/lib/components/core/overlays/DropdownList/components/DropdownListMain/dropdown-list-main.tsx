@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 
 import { Box, DropdownListProps } from 'lib/components'
-import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize/definitions'
 import { useOutsideClick } from 'lib/hooks'
 
 import { useDropdownListContext, DropdownListMenu } from '../'
@@ -23,6 +22,7 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
     setBlockMouse,
     resolvedVisibleItemsCount,
     itemHeight,
+    animationDuration,
   } = useDropdownListContext()
 
   useOutsideClick([triggerRef, portalRef], () => setResizeVisible(false))
@@ -44,7 +44,7 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
       setTimeout(() => {
         setOpen(false)
         setHoveredIndex(-1)
-      }, DEFAULT_RESIZE_DURATION)
+      }, animationDuration)
     }
   }, [resizeVisible])
 
@@ -57,11 +57,15 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
         ...tagAttrs,
         role: 'listbox',
         onKeyDown: e => {
-          if (!scrollWrapperRef.current) return
           if (e.key === 'Escape' || e.key === 'Tab') {
             e.stopPropagation()
             setResizeVisible(false)
-          } else if (e.key === 'Enter') {
+            return
+          }
+
+          if (!scrollWrapperRef.current) return
+
+          if (e.key === 'Enter') {
             if (open) {
               e.preventDefault()
               scrollWrapperRef.current

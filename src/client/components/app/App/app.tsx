@@ -88,10 +88,9 @@ export const App = () => {
             </>
           )}
         </Toolbar>
-      </AppFrame.Header>
-      <AppFrame.Main paddingBottom="80px">
         <AppJump />
-        <Spacer blockSize={{ base: '20px', lg: '40px' }} />
+      </AppFrame.Header>
+      <AppFrame.Main paddingTop={{ base: '20px', lg: '40px' }} paddingBottom="80px">
         <RootPage />
       </AppFrame.Main>
       <AppFrame.Footer>

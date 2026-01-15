@@ -2,7 +2,6 @@ import { ReactElement, ReactNode, useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
 import { AutocompleteOptionProps, Button, DropdownList, Input } from 'lib/components'
-import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize'
 import { withPrefix } from 'lib/helpers'
 
 import { AutocompleteProps } from '../../definitions'
@@ -35,11 +34,13 @@ export const AutocompleteMain = ({
   disableFiltering,
   debounceDelay,
   placeholder,
+  showToggle,
   // extra
   items,
   currentValue,
   handleChange,
 }: AutocompleteMainProps) => {
+  const [isOpen, setIsOpen] = useState(false)
   const [inputValue, setInputValue] = useState<string>('')
   const [queryValue, setQueryValue] = useState<string>('')
   const [filteredItems, setFilteredItems] = useState<AutocompleteMainProps['items']>([])
@@ -70,6 +71,27 @@ export const AutocompleteMain = ({
     setQueryValue(value)
   }, [currentValue])
 
+  useLayoutEffect(() => {
+    if (!isOpen) return
+
+    if (!debounceDelay) {
+      setQueryValue(inputValue)
+      return
+    }
+
+    const id = setTimeout(() => {
+      setQueryValue(inputValue)
+    }, debounceDelay)
+
+    return () => clearTimeout(id)
+  }, [inputValue, debounceDelay, isOpen])
+
+  useLayoutEffect(() => {
+    if (!isOpen) {
+      setQueryValue(inputValue)
+    }
+  }, [isOpen])
+
   return (
     <DropdownList
       tagRef={tagRef}
@@ -85,35 +107,19 @@ export const AutocompleteMain = ({
       scrollAlign={scrollAlign}
       visibleItemsCount={visibleItemsCount}
       noOptionsLabel={noOptionsLabel}
+      animationDuration={0}
       placement={dropdownPlacement}
       openOnFocus
-      onClosed={onClosed}
+      onOpened={() => {
+        setIsOpen(true)
+      }}
+      onClosed={() => {
+        setIsOpen(false)
+        onClosed?.()
+      }}
     >
       {({ open, setOpen, resolvedPlacement }) => {
         const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(resolvedPlacement)
-
-        useLayoutEffect(() => {
-          if (!open) return
-
-          if (!debounceDelay) {
-            setQueryValue(inputValue)
-            return
-          }
-
-          const id = setTimeout(() => {
-            setQueryValue(inputValue)
-          }, debounceDelay)
-
-          return () => {
-            clearTimeout(id)
-          }
-        }, [inputValue, debounceDelay, open])
-
-        useLayoutEffect(() => {
-          if (!open) {
-            setQueryValue(inputValue)
-          }
-        }, [open])
 
         return (
           <>
@@ -134,6 +140,7 @@ export const AutocompleteMain = ({
                 value={inputValue}
                 onChange={value => {
                   setInputValue(value)
+                  if (!open) setOpen(true)
                   onInputChange?.(value)
                 }}
                 placeholder={placeholder}
@@ -142,24 +149,28 @@ export const AutocompleteMain = ({
                 intent={intent}
                 color={color}
                 disabled={disabled}
-                endAffix={props => (
-                  <Button
-                    {...props}
-                    tagAttrs={{
-                      onClick: () => {
-                        setOpen(!open)
-                      },
-                      onFocus: e => {
-                        e.stopPropagation()
-                      },
-                      style: opensUpDownwards
-                        ? { borderBottomRightRadius: open ? 0 : undefined }
-                        : { borderTopRightRadius: open ? 0 : undefined },
-                    }}
-                    iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
-                    iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
-                  />
-                )}
+                endAffix={
+                  showToggle
+                    ? props => (
+                        <Button
+                          {...props}
+                          tagAttrs={{
+                            onClick: () => {
+                              setOpen(!open)
+                            },
+                            onFocus: e => {
+                              e.stopPropagation()
+                            },
+                            style: opensUpDownwards
+                              ? { borderBottomRightRadius: open ? 0 : undefined }
+                              : { borderTopRightRadius: open ? 0 : undefined },
+                          }}
+                          iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
+                          iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
+                        />
+                      )
+                    : null
+                }
               />
             </DropdownList.Trigger>
             {filteredItems.map((slot, index) => {
@@ -171,11 +182,9 @@ export const AutocompleteMain = ({
                   tagAttrs={{
                     ...slotProps.tagAttrs,
                     onClick: () => {
-                      setTimeout(() => {
-                        setInputValue(slotProps.label)
-                        setQueryValue(slotProps.label)
-                        handleChange(slotProps.value)
-                      }, DEFAULT_RESIZE_DURATION)
+                      setInputValue(slotProps.label)
+                      setQueryValue(slotProps.label)
+                      handleChange(slotProps.value)
                     },
                   }}
                   bold={slotProps.value === currentValue}

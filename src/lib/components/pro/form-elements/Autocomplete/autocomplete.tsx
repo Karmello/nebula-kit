@@ -6,6 +6,7 @@ import {
   DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   AutocompleteProps,
   DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
+  DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
 } from './definitions'
 
 import { AutocompleteMain } from './components'
@@ -36,6 +37,7 @@ export const Autocomplete = ({
   disableFiltering = DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
   debounceDelay,
   placeholder,
+  showToggle = DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
 }: AutocompleteProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
@@ -73,6 +75,7 @@ export const Autocomplete = ({
             disableFiltering={disableFiltering}
             debounceDelay={debounceDelay}
             placeholder={placeholder}
+            showToggle={showToggle}
             // extra
             items={slotsByName['Autocomplete.Option']}
             currentValue={currentValue}

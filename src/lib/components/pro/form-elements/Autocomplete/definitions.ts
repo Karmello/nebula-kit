@@ -2,6 +2,7 @@ import { BoxProps, DropdownListProps, HtmlTagProps } from 'lib/components'
 
 export const DEFAULT_AUTOCOMPLETE_INLINE_SIZE: AutocompleteProps['inlineSize'] = '100%'
 export const DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING: AutocompleteProps['disableFiltering'] = false
+export const DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE: AutocompleteProps['showToggle'] = true
 
 type AutocompleteOwnProps = {
   defaultValue?: string
@@ -12,6 +13,7 @@ type AutocompleteOwnProps = {
   disableFiltering?: boolean
   debounceDelay?: number
   placeholder?: string
+  showToggle?: boolean
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {

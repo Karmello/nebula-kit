@@ -4,6 +4,7 @@ import { AutocompleteProps } from 'lib/components'
 import {
   DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
   DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
+  DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
 } from 'lib/components/pro/form-elements/Autocomplete'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -56,6 +57,11 @@ const AUTOCOMPLETE_PROPS_META: ComponentMeta<AutocompleteProps>['props'] = {
   scrollAlign: {
     ...DROPDOWN_LIST_PROPS_META.scrollAlign,
     description: 'Defines how the selected option is positioned within the scroll area.',
+  },
+  showToggle: {
+    options: ['boolean'],
+    defaultValue: String(DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE),
+    description: 'Controls whether the dropdown toggle is rendered next to the input.',
   },
   size: DROPDOWN_LIST_PROPS_META.size,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,

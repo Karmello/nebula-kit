@@ -1,5 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { DropdownListProps } from 'lib/components'
+import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize'
 
 import {
   DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
@@ -20,6 +21,11 @@ import { PORTAL_PROPS_META } from '../Portal/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
+  animationDuration: {
+    options: ['number'],
+    defaultValue: String(DEFAULT_RESIZE_DURATION),
+    description: 'Time in milliseconds used when the list opens and closes. Set to 0 to disable motion.',
+  },
   children: {
     ...HTML_TAG_PROPS_META.children,
     options: ['DropdownList.Trigger', 'DropdownList.Item'],
@@ -52,6 +58,10 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
   onClosed: {
     options: ['() => void'],
     description: 'Callback invoked after the list has fully closed.',
+  },
+  onOpened: {
+    options: ['() => void'],
+    description: 'Callback invoked after the list has fully opened.',
   },
   openOnFocus: {
     options: ['boolean'],

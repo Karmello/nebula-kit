@@ -16,6 +16,7 @@ const AUTOCOMPLETE_META: ComponentMeta<AutocompleteProps> = {
       'supports controlled and uncontrolled usage patterns',
       'works with large option sets through virtualized rendering',
       'allows debounced result updates while typing',
+      'renders its dropdown without animation for maximum responsiveness',
     ],
     composedOf: ['DropdownList', 'Input', 'Button'],
     topLevelTags: ['div'],

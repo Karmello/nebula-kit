@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 
 import { WithSlots } from 'lib/components/core/internal'
 import { BUTTON_SIZE_CONFIG, DEFAULT_BUTTON_SIZE } from 'lib/components/core/controls/Button/definitions'
+import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize'
 
 import {
   DropdownListProps,
@@ -38,6 +39,8 @@ export const DropdownList = ({
   scrollAlign = DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
   itemBorderIntent = DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT,
   noOptionsLabel = DEFAULT_DROPDOWN_LIST_NO_OPTIONS_LABEL,
+  animationDuration = DEFAULT_RESIZE_DURATION,
+  onOpened,
   onClosed,
 }: DropdownListProps) => {
   const [open, setOpen] = useState<boolean>(false)
@@ -112,6 +115,8 @@ export const DropdownList = ({
             scrollAlign={scrollAlign}
             itemBorderIntent={itemBorderIntent}
             noOptionsLabel={noOptionsLabel}
+            animationDuration={animationDuration}
+            onOpened={onOpened}
             onClosed={onClosed}
             // extra
             itemHeight={itemHeight}

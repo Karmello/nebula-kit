@@ -43,6 +43,8 @@ type DropdownListOwnProps = {
   itemBorderIntent?: BoxProps['intent']
   placement?: DropdownListPlacement
   noOptionsLabel?: string
+  animationDuration?: number
+  onOpened?: () => void
   onClosed?: () => void
 }
 
