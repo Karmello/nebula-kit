@@ -33,6 +33,7 @@ export const AutocompleteMain = ({
   onInputChange,
   dropdownPlacement,
   disableFiltering,
+  debounceDelay,
   placeholder,
   // extra
   items,
@@ -40,20 +41,21 @@ export const AutocompleteMain = ({
   handleChange,
 }: AutocompleteMainProps) => {
   const [inputValue, setInputValue] = useState<string>('')
+  const [queryValue, setQueryValue] = useState<string>('')
   const [filteredItems, setFilteredItems] = useState<AutocompleteMainProps['items']>([])
 
   useLayoutEffect(() => {
-    if (inputValue && !disableFiltering) {
+    if (queryValue && !disableFiltering) {
       setFilteredItems(
         items.filter(item => {
           const { label } = (item as ReactElement<AutocompleteOptionProps>).props
-          return label.trim().toLowerCase().includes(inputValue.trim().toLowerCase())
+          return label.trim().toLowerCase().includes(queryValue.trim().toLowerCase())
         })
       )
     } else {
       setFilteredItems(items)
     }
-  }, [inputValue, disableFiltering, items])
+  }, [queryValue, disableFiltering, items])
 
   const currentItemIndex = items.findIndex(
     item => (item as ReactElement<AutocompleteOptionProps>).props.value === currentValue
@@ -62,8 +64,11 @@ export const AutocompleteMain = ({
   const currentItem = items[currentItemIndex] as ReactElement<AutocompleteOptionProps>
 
   useLayoutEffect(() => {
-    setInputValue(currentItem ? currentItem.props.label : (currentValue ?? ''))
-  }, [currentItem, currentValue])
+    if (currentValue === undefined) return
+    const value = currentItem ? currentItem.props.label : (currentValue ?? '')
+    setInputValue(value)
+    setQueryValue(value)
+  }, [currentValue])
 
   return (
     <DropdownList
@@ -86,6 +91,29 @@ export const AutocompleteMain = ({
     >
       {({ open, setOpen, resolvedPlacement }) => {
         const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(resolvedPlacement)
+
+        useLayoutEffect(() => {
+          if (!open) return
+
+          if (!debounceDelay) {
+            setQueryValue(inputValue)
+            return
+          }
+
+          const id = setTimeout(() => {
+            setQueryValue(inputValue)
+          }, debounceDelay)
+
+          return () => {
+            clearTimeout(id)
+          }
+        }, [inputValue, debounceDelay, open])
+
+        useLayoutEffect(() => {
+          if (!open) {
+            setQueryValue(inputValue)
+          }
+        }, [open])
 
         return (
           <>
@@ -145,6 +173,7 @@ export const AutocompleteMain = ({
                     onClick: () => {
                       setTimeout(() => {
                         setInputValue(slotProps.label)
+                        setQueryValue(slotProps.label)
                         handleChange(slotProps.value)
                       }, DEFAULT_RESIZE_DURATION)
                     },

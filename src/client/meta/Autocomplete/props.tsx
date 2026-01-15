@@ -17,6 +17,11 @@ const AUTOCOMPLETE_PROPS_META: ComponentMeta<AutocompleteProps>['props'] = {
     description: 'Option slots rendered.',
   },
   color: DROPDOWN_LIST_PROPS_META.color,
+  debounceDelay: {
+    options: ['number'],
+    description:
+      'Time in milliseconds to wait after typing before updating the results. The debounce applies only while the list is open and is flushed when it closes.',
+  },
   defaultValue: {
     options: ['string'],
     description: 'Initial selected item value when the component is used in uncontrolled mode.',

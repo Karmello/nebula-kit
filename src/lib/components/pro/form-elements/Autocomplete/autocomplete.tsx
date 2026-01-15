@@ -34,6 +34,7 @@ export const Autocomplete = ({
   onInputChange,
   dropdownPlacement,
   disableFiltering = DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
+  debounceDelay,
   placeholder,
 }: AutocompleteProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
@@ -70,6 +71,7 @@ export const Autocomplete = ({
             onInputChange={onInputChange}
             dropdownPlacement={dropdownPlacement}
             disableFiltering={disableFiltering}
+            debounceDelay={debounceDelay}
             placeholder={placeholder}
             // extra
             items={slotsByName['Autocomplete.Option']}

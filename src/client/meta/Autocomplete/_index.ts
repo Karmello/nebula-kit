@@ -9,8 +9,14 @@ import { AUTOCOMPLETE_OPTION_META } from './AutocompleteOption/_index'
 const AUTOCOMPLETE_META: ComponentMeta<AutocompleteProps> = {
   overview: {
     bundle: 'pro',
-    title: '...',
-    features: ['...'],
+    title: 'Text input with a searchable, selectable dropdown list.',
+    description:
+      'Autocomplete combines an input field with a dropdown list to help users quickly find and select options. It reacts to typing in real time and keeps the displayed results synchronized with the current input across open and close interactions.',
+    features: [
+      'supports controlled and uncontrolled usage patterns',
+      'works with large option sets through virtualized rendering',
+      'allows debounced result updates while typing',
+    ],
     composedOf: ['DropdownList', 'Input', 'Button'],
     topLevelTags: ['div'],
     slots: ['Autocomplete.Option'],
