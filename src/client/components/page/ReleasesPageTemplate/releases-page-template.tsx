@@ -33,7 +33,7 @@ const ReleaseSection = ({ heading, componentNames = [] }: { heading: string; com
                   navigateTo(href)
                 }}
               >
-                <Button intent="primary" color="red" size="sm">
+                <Button intent="primary" color="red" size="sm" iconName="box">
                   {c}
                 </Button>
               </Link>
