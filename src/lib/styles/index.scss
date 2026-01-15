@@ -16,7 +16,9 @@ html {
 }
 
 html.neb-transitions {
-  .neb-box[data-neb-box-drawable='true'] {
+  .neb-box[data-neb-box-drawable='true']:hover,
+  .neb-box[data-neb-box-drawable='true']:focus-visible,
+  .neb-box[data-neb-box-drawable='true']:active {
     transition:
       background-color 0.2s ease-in-out,
       border-color 0.2s ease-in-out,

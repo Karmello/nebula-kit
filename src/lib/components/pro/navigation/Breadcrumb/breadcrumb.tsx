@@ -1,4 +1,4 @@
-import { useState, Fragment, useCallback, useMemo } from 'react'
+import { useState, Fragment, useCallback } from 'react'
 
 import { Box, Flex, Button, DropdownList, Icon } from 'lib/components'
 
@@ -46,7 +46,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
     [isControlled, setInternalPath, onChange, currentPath]
   )
 
-  const levels = useMemo(() => convertTreeToLevels(tree, currentPath), [tree])
+  const levels = convertTreeToLevels(tree, currentPath)
 
   return (
     <Box tag={tag} tagAttrs={tagAttrs} tagRef={tagRef} overflowX="auto">
