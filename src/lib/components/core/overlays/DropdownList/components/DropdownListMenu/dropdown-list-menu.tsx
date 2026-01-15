@@ -13,6 +13,7 @@ import {
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize'
 
 import { useDropdownListContext } from '..'
+import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'
 
 export const DropdownListMenu = () => {
   const [triggerWidth, setTriggerWidth] = useState<number | undefined>(undefined)
@@ -114,7 +115,7 @@ export const DropdownListMenu = () => {
                 tagRef={scrollWrapperRef}
                 items={slotsByName['DropdownList.Item']}
                 itemHeight={itemHeight}
-                visibleItemsCount={resolvedVisibleItemsCount}
+                visibleItemsCount={resolvedVisibleItemsCount ?? DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT}
                 scrollToIndex={scrollToIndex}
                 scrollAlign={scrollAlign}
                 color={color}

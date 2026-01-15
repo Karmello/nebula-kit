@@ -14,6 +14,11 @@ const VIRTUAL_LIST_PROPS_META: ComponentMeta<VirtualListProps>['props'] = {
     ...BOX_PROPS_META.color,
     description: 'Color applied to the surface behind list items.',
   },
+  ensureVisibleIndex: {
+    options: ['number'],
+    description:
+      'Index of the item that should be kept fully visible within the list viewport. When provided, the list scrolls only if needed to ensure this item remains in view.',
+  },
   intent: {
     ...BOX_PROPS_META.intent,
     description: 'Tone level applied to the surface behind list items.',

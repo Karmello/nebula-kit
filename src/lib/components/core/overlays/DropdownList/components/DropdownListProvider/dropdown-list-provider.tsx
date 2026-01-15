@@ -16,13 +16,13 @@ type ContextValue = {
   setResizeVisible: (resizeVisible: boolean) => void
   hoveredIndex: number
   setHoveredIndex: (hoveredIndex: number) => void
-  ensureVisibleIndex: number
+  ensureVisibleIndex: number | undefined
   setEnsureVisibleIndex: (ensureVisibleIndex: number) => void
   blockMouse: boolean
   setBlockMouse: (blockMouse: boolean) => void
-  defaultResolvedVisibleItemsCount: DropdownListProps['visibleItemsCount']
-  resolvedVisibleItemsCount: DropdownListProps['visibleItemsCount']
-  setResolvedVisibleItemsCount: (resolvedVisibleItemsCount: DropdownListProps['visibleItemsCount']) => void
+  defaultResolvedVisibleItemsCount: number
+  resolvedVisibleItemsCount: number
+  setResolvedVisibleItemsCount: (resolvedVisibleItemsCount: number) => void
   resolvedPlacement: DropdownListProps['placement']
   setResolvedPlacement: (resolvedPlacement: DropdownListProps['placement']) => void
   // extra
