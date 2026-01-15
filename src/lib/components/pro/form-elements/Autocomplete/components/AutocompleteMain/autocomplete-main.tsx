@@ -169,7 +169,7 @@ export const AutocompleteMain = ({
                           iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
                         />
                       )
-                    : null
+                    : undefined
                 }
               />
             </DropdownList.Trigger>
