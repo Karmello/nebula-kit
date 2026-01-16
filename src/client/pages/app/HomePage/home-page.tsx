@@ -36,7 +36,7 @@ export const HomePage = () => {
 
   return (
     <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">
-      <Box drawable interactive variant="solid" intent="muted">
+      <Box drawable interactive variant="solid" intent="neutral">
         <Link
           href={`${PageKey.foundations}/resources/changelog/core-releases`}
           onClick={() => {
