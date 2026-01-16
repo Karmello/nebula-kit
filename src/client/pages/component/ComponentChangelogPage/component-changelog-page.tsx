@@ -1,9 +1,9 @@
 import { pascalCase } from 'change-case'
 
+import meta from 'client/meta'
 import { PageKey } from 'client/definitions'
 import { useCorePageStore, useProPageStore } from 'client/store'
-import meta from 'client/meta'
-import { Box, MarkerList, Section, Spacer, Text } from 'lib/components'
+import { Box, Flex, MarkerList, Section, Spacer, Text } from 'lib/components'
 
 export const ComponentChangelogPage = ({ pageKey }: { pageKey: PageKey.core | PageKey.pro }) => {
   const corePageItemKey = useCorePageStore(state => state.itemKey)
@@ -19,17 +19,19 @@ export const ComponentChangelogPage = ({ pageKey }: { pageKey: PageKey.core | Pa
   return (
     <>
       <Box maxInlineSize="55rem">
-        {versionKeys.map(vKey => (
-          <Section key={vKey} heading={`v${vKey}`} size="sm" intent="primary" color="blue">
-            <MarkerList>
-              {(changelog[vKey as never] as string[]).map((s, i) => (
-                <MarkerList.Item key={i}>
-                  <Text intent="neutral">{s}</Text>
-                </MarkerList.Item>
-              ))}
-            </MarkerList>
-          </Section>
-        ))}
+        <Flex flexDirection="column" alignItems="stretch" gap="25px">
+          {versionKeys.map(vKey => (
+            <Section key={vKey} heading={`v${vKey}`} size="sm" intent="primary" color="blue">
+              <MarkerList>
+                {(changelog[vKey as never] as string[]).map((s, i) => (
+                  <MarkerList.Item key={i}>
+                    <Text intent="neutral">{s}</Text>
+                  </MarkerList.Item>
+                ))}
+              </MarkerList>
+            </Section>
+          ))}
+        </Flex>
       </Box>
       <Spacer blockSize="60px" />
     </>

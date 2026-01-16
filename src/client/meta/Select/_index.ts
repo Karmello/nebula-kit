@@ -18,6 +18,7 @@ const SELECT_META: ComponentMeta<SelectProps> = {
   props: SELECT_PROPS_META,
   examples: SELECT_EXAMPLES_META,
   changelog: {
+    '0.3.0': ['Public API updated'],
     '0.2.3': ['Released'],
   },
 }

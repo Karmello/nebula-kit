@@ -74,6 +74,8 @@ export const ReleasePageTemplate = ({ bundle }: { bundle: 'core' | 'pro' }) => {
         </Select>
         <Text>{new Date(RELEASE_INFO[releaseVersion as ReleaseVersion].timestamp).toDateString()}</Text>
       </Flex>
+      <Spacer />
+      <Text>{RELEASE_INFO[releaseVersion as ReleaseVersion].description}</Text>
       <ReleaseSection heading="New" componentNames={componentNames.created} />
       <ReleaseSection heading="Updated" componentNames={componentNames.updated} />
     </Box>

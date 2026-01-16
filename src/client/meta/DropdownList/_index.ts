@@ -26,6 +26,7 @@ const DROPDOWN_LIST_META: ComponentMeta<DropdownListProps> = {
   props: DROPDOWN_LIST_PROPS_META,
   examples: DROPDOWN_LIST_EXAMPLES_META,
   changelog: {
+    '0.3.0': ['Public API updated'],
     '0.2.3': ['Released'],
   },
 }
