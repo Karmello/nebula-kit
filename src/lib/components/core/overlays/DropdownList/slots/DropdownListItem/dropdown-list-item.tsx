@@ -39,6 +39,7 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
         {
           ...tagAttrs,
           className: classNames(withPrefix('dropdown-list-item'), tagAttrs?.className),
+          'data-neb-dropdown-list-item-index': index,
           role: 'option',
           onClick: (
             e: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent> &

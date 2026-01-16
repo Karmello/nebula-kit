@@ -68,9 +68,10 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
           if (e.key === 'Enter') {
             if (open) {
               e.preventDefault()
-              scrollWrapperRef.current
-                .querySelectorAll<HTMLElement>('.neb-dropdown-list-item')
-                [hoveredIndex]?.click()
+              const el = scrollWrapperRef.current.querySelector<HTMLElement>(
+                `[data-neb-dropdown-list-item-index="${hoveredIndex}"]`
+              )
+              el?.click()
             }
           } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
             if (e.repeat) return
