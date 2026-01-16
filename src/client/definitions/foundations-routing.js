@@ -47,7 +47,7 @@ export const FOUNDATIONS_CATEGORIES = [
         label: 'Styling system',
         sections: [
           { key: 'orthogonality', label: 'Orthogonality' },
-          { key: 'intents_and_variants', label: 'Intents + variants' },
+          { key: 'intents-and-variants', label: 'Intents + variants' },
           { key: 'color-application', label: 'Color application' },
           { key: 'typography', label: 'Typography' },
           { key: 'breakpoints', label: 'Breakpoints' },

@@ -57,7 +57,6 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
           return (
             <Fragment key={index}>
               <DropdownList
-                key={currentPath.slice(0, index).join('|') || 'root'}
                 size={size}
                 color={color}
                 intent={intent}

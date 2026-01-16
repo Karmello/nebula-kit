@@ -94,13 +94,19 @@ export const Box = <T extends ElementType = 'div'>({
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    const el = finalRef?.current as any
-    el?.setAttribute('data-neb-box-transitions', 'false')
+    const el = finalRef?.current as Element
+    if (!el) return
+    el.setAttribute('data-neb-box-transitions', 'false')
   }, [])
 
   useEffect(() => {
-    const el = finalRef?.current as any
-    el?.setAttribute('data-neb-box-transitions', 'true')
+    const el = finalRef?.current as Element
+    if (!el) return
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        el.setAttribute('data-neb-box-transitions', 'true')
+      })
+    })
   }, [])
 
   useLayoutEffect(() => {
