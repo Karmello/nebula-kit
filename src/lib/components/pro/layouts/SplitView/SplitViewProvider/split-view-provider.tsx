@@ -37,16 +37,16 @@ export const SplitViewProvider = ({
   }, [bp])
 
   useLayoutEffect(() => {
-    setSideOpen(mode === 'inline')
+    setTimeout(() => {
+      setSideOpen(mode === 'inline')
+    }, 200)
   }, [mode])
 
   useLayoutEffect(() => {
     if (mode === 'overlay' && sideOpen) {
-      document.documentElement.classList.add('neb-scrollbar-off')
       document.body.style.pointerEvents = 'none'
     } else {
       setTimeout(() => {
-        document.documentElement.classList.remove('neb-scrollbar-off')
         document.body.style.pointerEvents = ''
       }, DEFAULT_RESIZE_DURATION)
     }

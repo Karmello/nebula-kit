@@ -5,7 +5,7 @@ const AUTOCOMPLETE_EXAMPLES_META: ComponentMeta<AutocompleteProps>['examples'] =
   {
     description: 'Autocomplete used in uncontrolled mode.',
     jsx: (
-      <Autocomplete>
+      <Autocomplete noOptionsLabel="Nothing found">
         <Autocomplete.Option value="PL" label="Poland">
           Poland
         </Autocomplete.Option>

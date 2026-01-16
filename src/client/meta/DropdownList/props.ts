@@ -12,7 +12,6 @@ import {
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
   DROPDOWN_LIST_PLACEMENTS,
   DEFAULT_DROPDOWN_OPEN_ON_FOCUS,
-  DEFAULT_DROPDOWN_LIST_NO_OPTIONS_LABEL,
 } from 'lib/components/core/overlays/DropdownList'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -52,8 +51,8 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
   },
   noOptionsLabel: {
     options: ['string'],
-    defaultValue: String(DEFAULT_DROPDOWN_LIST_NO_OPTIONS_LABEL),
-    description: 'Text displayed when the current search query yields no matching options.',
+    description:
+      'When provided, displays a disabled item with the given label if the current search query yields no matching options.',
   },
   onClosed: {
     options: ['() => void'],

@@ -24,12 +24,12 @@ export const AutocompleteMain = ({
   scrollAlign,
   visibleItemsCount,
   noOptionsLabel,
-  onClosed,
   // Box
   inlineSize,
   disabled,
   // own
   onInputChange,
+  onClosed,
   dropdownPlacement,
   disableFiltering,
   debounceDelay,

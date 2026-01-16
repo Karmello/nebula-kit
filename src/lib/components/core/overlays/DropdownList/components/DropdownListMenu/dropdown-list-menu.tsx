@@ -150,7 +150,7 @@ export const DropdownListMenu = () => {
                 }}
                 ensureVisibleIndex={ensureVisibleIndex}
               />
-            ) : (
+            ) : noOptionsLabel ? (
               <Box
                 drawable
                 color={color}
@@ -164,7 +164,7 @@ export const DropdownListMenu = () => {
               >
                 <DropdownList.Item disabled>{noOptionsLabel}</DropdownList.Item>
               </Box>
-            )}
+            ) : null}
           </Box>
         </Resize>
       </Portal>

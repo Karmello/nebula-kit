@@ -72,7 +72,7 @@ export const SplitViewSide = ({
           overflowY={sideOpen ? 'auto' : 'hidden'}
           overflowX="hidden"
         >
-          <Resize property="inlineSize" visible={sideOpen} duration={500}>
+          <Resize property="inlineSize" visible={sideOpen}>
             <Box inlineSize={inlineSize} paddingRight={BOX_BORDER_WIDTH}>
               <Box>
                 {mode === 'overlay' ? (

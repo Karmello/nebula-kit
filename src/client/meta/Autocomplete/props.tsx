@@ -45,7 +45,11 @@ const AUTOCOMPLETE_PROPS_META: ComponentMeta<AutocompleteProps>['props'] = {
     options: ['(value: string) => void'],
     description: 'Callback fired when the selected value changes.',
   },
-  onClosed: DROPDOWN_LIST_PROPS_META.onClosed,
+  onClosed: {
+    options: ['(value?: string) => void'],
+    description:
+      'Callback invoked when the list is fully closed. Receives the selected value if the list was closed due to a value change or undefined if it was dismissed without selection.',
+  },
   onInputChange: {
     options: ['(value: string) => void'],
     description: 'Callback fired when the text input value changes.',

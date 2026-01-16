@@ -123,9 +123,9 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     ),
   },
   {
-    description: 'DropdownList with no options.',
+    description: 'DropdownList with no options label set.',
     jsx: (
-      <DropdownList>
+      <DropdownList noOptionsLabel="No options">
         <DropdownList.Trigger>
           <Button variant="ghost" intent="primary">
             Toggle list

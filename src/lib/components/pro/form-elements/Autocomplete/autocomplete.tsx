@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 import { WithSlots } from 'lib/components/core/internal'
 
 import {
-  DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   AutocompleteProps,
+  DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
   DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
 } from './definitions'
@@ -24,7 +24,6 @@ export const Autocomplete = ({
   scrollAlign,
   visibleItemsCount,
   noOptionsLabel,
-  onClosed,
   // Box
   inlineSize = DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   disabled,
@@ -33,6 +32,7 @@ export const Autocomplete = ({
   value,
   onChange,
   onInputChange,
+  onClosed,
   dropdownPlacement,
   disableFiltering = DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
   debounceDelay,
@@ -40,11 +40,13 @@ export const Autocomplete = ({
   showToggle = DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
 }: AutocompleteProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
+  const changedValueRef = useRef<string | undefined>(undefined)
 
   const isControlled = value !== undefined
   const currentValue = isControlled ? value : internalValue
 
   const handleChange = (value: string) => {
+    changedValueRef.current = value
     if (!isControlled) setInternalValue(value)
     onChange?.(value)
   }
@@ -67,10 +69,13 @@ export const Autocomplete = ({
             scrollAlign={scrollAlign}
             visibleItemsCount={visibleItemsCount}
             noOptionsLabel={noOptionsLabel}
-            onClosed={onClosed}
             inlineSize={inlineSize}
             disabled={disabled}
             onInputChange={onInputChange}
+            onClosed={() => {
+              onClosed?.(changedValueRef.current)
+              changedValueRef.current = undefined
+            }}
             dropdownPlacement={dropdownPlacement}
             disableFiltering={disableFiltering}
             debounceDelay={debounceDelay}

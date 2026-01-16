@@ -14,7 +14,6 @@ import {
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
   DEFAULT_DROPDOWN_OPEN_ON_FOCUS,
-  DEFAULT_DROPDOWN_LIST_NO_OPTIONS_LABEL,
 } from './definitions'
 
 import { DropdownListProvider, DropdownListMain } from './components'
@@ -38,7 +37,7 @@ export const DropdownList = ({
   scrollToIndex = DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
   scrollAlign = DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
   itemBorderIntent = DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT,
-  noOptionsLabel = DEFAULT_DROPDOWN_LIST_NO_OPTIONS_LABEL,
+  noOptionsLabel,
   animationDuration = DEFAULT_RESIZE_DURATION,
   onOpened,
   onClosed,
@@ -73,7 +72,7 @@ export const DropdownList = ({
 
         let defaultResolvedVisibleItemsCount =
           itemsCount < (visibleItemsCount ?? 0) ? itemsCount : (visibleItemsCount ?? 0)
-        if (defaultResolvedVisibleItemsCount <= 0) defaultResolvedVisibleItemsCount = 1
+        if (defaultResolvedVisibleItemsCount <= 0 && noOptionsLabel) defaultResolvedVisibleItemsCount = 1
 
         const itemHeight =
           Number(BUTTON_SIZE_CONFIG[size].blockSize.replace('px', '')) +

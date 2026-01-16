@@ -16,6 +16,8 @@ type Option = {
   iconName: IconName
 }
 
+export const RESIZE_DURATION = 125
+
 export const OPTIONS: Option[] = []
 
 FOUNDATIONS_CATEGORIES.forEach(c =>

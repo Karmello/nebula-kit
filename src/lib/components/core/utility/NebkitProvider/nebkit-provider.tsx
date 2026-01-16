@@ -14,28 +14,60 @@ export const NebkitProvider = ({
   brand = DEFAULT_NEBKIT_BRAND,
   borderRadiusSize = DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
 }: NebkitProviderProps): ReactElement => {
+  // shared transition re-enable gate
+  let enableRaf: number | null = null
+
+  const scheduleEnableTransitions = () => {
+    if (enableRaf !== null) {
+      cancelAnimationFrame(enableRaf)
+    }
+
+    enableRaf = requestAnimationFrame(() => {
+      document.documentElement.classList.add('neb-transitions')
+      enableRaf = null
+    })
+  }
+
+  // hydration + initial enable
   useLayoutEffect(() => {
     requestAnimationFrame(() => {
       window.dispatchEvent(new CustomEvent('neb:hydrated'))
-      requestAnimationFrame(() => {
-        document.documentElement.classList.add('neb-transitions')
-      })
+      scheduleEnableTransitions()
     })
+
+    return () => {
+      if (enableRaf !== null) {
+        cancelAnimationFrame(enableRaf)
+      }
+    }
   }, [])
 
+  // resize handling
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      document.documentElement.classList.remove('neb-transitions')
+      scheduleEnableTransitions()
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  // theme / brand / radius changes
   useLayoutEffect(() => {
     document.documentElement.classList.remove('neb-transitions')
 
-    document?.documentElement.setAttribute('data-theme', theme)
+    document.documentElement.setAttribute('data-theme', theme)
     document.documentElement.setAttribute('data-brand', brand)
     document.documentElement.style.setProperty(
       '--neb-border-radius',
       NEBKIT_SIZES_MAP.borderRadiusSize[borderRadiusSize || 'md'] || ''
     )
 
-    requestAnimationFrame(() => {
-      document.documentElement.classList.add('neb-transitions')
-    })
+    scheduleEnableTransitions()
   }, [theme, brand, borderRadiusSize])
 
   return children

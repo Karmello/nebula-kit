@@ -9,6 +9,7 @@ type AutocompleteOwnProps = {
   value?: string
   onChange?: (value: string) => void
   onInputChange?: (value: string) => void
+  onClosed?: (value?: string) => void
   dropdownPlacement?: DropdownListProps['placement']
   disableFiltering?: boolean
   debounceDelay?: number
@@ -24,14 +25,7 @@ type PropsFromBox = Pick<BoxProps<'div'>, 'inlineSize' | 'disabled'>
 
 type PropsFromDropdownList = Pick<
   DropdownListProps,
-  | 'intent'
-  | 'color'
-  | 'size'
-  | 'itemBorderIntent'
-  | 'scrollAlign'
-  | 'visibleItemsCount'
-  | 'noOptionsLabel'
-  | 'onClosed'
+  'intent' | 'color' | 'size' | 'itemBorderIntent' | 'scrollAlign' | 'visibleItemsCount' | 'noOptionsLabel'
 >
 
 export type AutocompleteProps = PropsFromHtmlTag & PropsFromBox & PropsFromDropdownList & AutocompleteOwnProps

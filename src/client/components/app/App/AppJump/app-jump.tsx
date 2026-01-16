@@ -4,16 +4,16 @@ import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
 import { Autocomplete, Box, Resize } from 'lib/components'
 
-import { OPTIONS } from './definitions'
+import { RESIZE_DURATION, OPTIONS } from './definitions'
 
 export const AppJump = () => {
-  const [value, setValue] = useState<string>('')
   const [query, setQuery] = useState<string>('')
   const [debouncedQuery, setDebouncedQuery] = useState<string>(query)
   const autocompleteRef = useRef<HTMLDivElement>(null)
 
   const navigateTo = useNavigateTo()
   const showAppJump = useAppStore(state => state.showAppJump)
+  const setShowAppJump = useAppStore(state => state.setShowAppJump)
 
   const queryTokens = useMemo(() => {
     return debouncedQuery.trim().toLowerCase().split(/\s+/).filter(Boolean)
@@ -32,30 +32,57 @@ export const AppJump = () => {
     return () => clearTimeout(id)
   }, [query])
 
+  useLayoutEffect(() => {
+    if (showAppJump) {
+      setTimeout(() => {
+        autocompleteRef.current?.querySelector('input')?.focus()
+      }, RESIZE_DURATION)
+    }
+  }, [showAppJump])
+
+  useLayoutEffect(() => {
+    const input = autocompleteRef.current?.querySelector('input')
+    if (input) {
+      input.onkeydown = e => {
+        if (e.key === 'Escape') setShowAppJump(false)
+      }
+    }
+  }, [autocompleteRef.current, showAppJump])
+
+  useLayoutEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === '/') setShowAppJump(!showAppJump)
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [showAppJump])
+
+  useLayoutEffect(() => {
+    if (!showAppJump) {
+      setQuery('')
+      setDebouncedQuery('')
+    }
+  }, [showAppJump])
+
   const autocomplete = useMemo(() => {
     return (
       <Autocomplete
+        key={String(showAppJump)}
         tagRef={autocompleteRef}
         intent="secondary"
         itemBorderIntent="secondary"
-        value={value}
         onChange={value => {
-          setValue(value)
+          setShowAppJump(false)
+          setTimeout(() => {
+            navigateTo(value)
+          }, RESIZE_DURATION)
         }}
         onInputChange={setQuery}
-        onClosed={() => {
-          if (value) {
-            setTimeout(() => {
-              navigateTo(value)
-            }, 125)
-          }
-          setValue('')
-          setQuery('')
-        }}
         disableFiltering
         visibleItemsCount={10}
-        placeholder="Search website ..."
-        noOptionsLabel="No results"
+        placeholder='Search website (toggle with "/")'
         showToggle={false}
       >
         {filtered.map(({ label, href, iconName }) => {
@@ -74,10 +101,10 @@ export const AppJump = () => {
         })}
       </Autocomplete>
     )
-  }, [filtered, value])
+  }, [showAppJump, filtered])
 
   return (
-    <Resize property="blockSize" visible={showAppJump} duration={125}>
+    <Resize property="blockSize" visible={showAppJump} duration={RESIZE_DURATION}>
       <Box
         tagAttrs={{
           style: {
