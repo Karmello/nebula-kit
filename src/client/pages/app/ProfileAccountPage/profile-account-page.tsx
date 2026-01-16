@@ -11,7 +11,7 @@ import PaidSubscription from './paid-subscription'
 export const ProfileAccountPage = () => {
   const { search } = useLocation()
   const { show } = useSnackbar()
-  const { user } = useAppStore()
+  const user = useAppStore(state => state.user)
 
   useLayoutEffect(() => {
     const params = new URLSearchParams(search)

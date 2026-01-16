@@ -8,7 +8,7 @@ const SECTION_META: ComponentMeta<SectionProps> = {
   overview: {
     bundle: 'core',
     title: 'Semantic container for grouping content under a titled section.',
-    description: [
+    features: [
       'groups related content under a semantic section with a heading',
       'provides consistent spacing and visual separation between heading and body',
       'supports optional icon and styling variants for section headers',

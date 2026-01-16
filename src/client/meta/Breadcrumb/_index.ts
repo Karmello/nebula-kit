@@ -9,7 +9,7 @@ const BREADCRUMB_META: ComponentMeta<BreadcrumbProps> = {
     bundle: 'pro',
     title:
       'Interactive hierarchical navigation control for selecting and modifying a position within a structured path.',
-    description: [
+    features: [
       'displays a hierarchical path using interactive DropdownList components',
       'reveals navigation levels progressively based on user selection',
       'emits explicit user intent without guessing defaults or completing paths',

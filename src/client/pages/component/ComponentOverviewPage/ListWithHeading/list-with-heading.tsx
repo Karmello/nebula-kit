@@ -1,8 +1,7 @@
-import { Flex, MarkerList, Text } from 'lib/components'
+import { MarkerList, Section, Text } from 'lib/components'
 
 export const ListWithHeading = ({ heading, items }: { heading: string; items: string[] }) => (
-  <Flex flexDirection="column" gap="10px">
-    <Text bold>{heading}</Text>
+  <Section heading={heading} size="sm">
     <MarkerList>
       {items.map((s, i) => (
         <MarkerList.Item key={i}>
@@ -10,5 +9,5 @@ export const ListWithHeading = ({ heading, items }: { heading: string; items: st
         </MarkerList.Item>
       ))}
     </MarkerList>
-  </Flex>
+  </Section>
 )

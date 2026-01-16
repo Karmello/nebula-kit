@@ -8,7 +8,7 @@ const NEBKIT_PROVIDER_META: ComponentMeta<NebkitProviderProps> = {
   overview: {
     bundle: 'core',
     title: 'Root configuration and context provider for NebulaKit.',
-    description: [
+    features: [
       'provides the global context required by all NebulaKit components',
       'initializes theme, brand, design tokens and keeps them in sync with the runtime environment',
       'must wrap the application root and should be rendered once at the top level',
@@ -17,6 +17,7 @@ const NEBKIT_PROVIDER_META: ComponentMeta<NebkitProviderProps> = {
   props: NEBKIT_PROVIDER_PROPS_META,
   examples: NEBKIT_PROVIDER_EXAMPLES_META,
   changelog: {
+    '0.3.0': ['Public API updated'],
     '0.2.3': ['Released'],
   },
 }

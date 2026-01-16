@@ -7,7 +7,7 @@ const TABLE_BODY_META: ComponentMeta<TableBodyProps> = {
   overview: {
     name: 'Table.Body',
     title: 'Main data rows of the table.',
-    description: ['this slot can be used multiple times', 'expects Table.Row as children'],
+    features: ['this slot can be used multiple times', 'expects Table.Row as children'],
     composedOf: ['Box'],
     topLevelTags: ['tbody'],
     slots: ['Table.Row'],

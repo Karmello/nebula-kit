@@ -7,7 +7,7 @@ const TOOLBAR_MAIN_META: ComponentMeta<ToolbarMainProps> = {
   overview: {
     name: 'Toolbar.Main',
     title: 'Defines the main slot of Toolbar.',
-    description: ['holds the primary, collapsible content of the toolbar'],
+    features: ['holds the primary, collapsible content of the toolbar'],
     composedOf: ['Grid.Item'],
   },
   props: TOOLBAR_MAIN_PROPS_META,

@@ -8,7 +8,7 @@ const ICON_META: ComponentMeta<IconProps> = {
   overview: {
     bundle: 'core',
     title: 'SVG icon wrapped in a styled inline container.',
-    description: [
+    features: [
       'exposes a curated subset of icons from "Lucide React"',
       'allows rendering a custom SVG icon via children while preserving semantic styling',
     ],

@@ -1,3 +1,5 @@
+export { Autocomplete, type AutocompleteProps, type AutocompleteOptionProps } from './Autocomplete'
+
 export {
   Form,
   type FormProps,
@@ -8,3 +10,5 @@ export {
   type FormHintProps,
   type FormLabelProps,
 } from './Form'
+
+export { MultiSelect, type MultiSelectProps, type MultiSelectOptionProps } from './MultiSelect'

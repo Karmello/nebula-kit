@@ -10,7 +10,7 @@ const SELECT_META: ComponentMeta<SelectProps> = {
   overview: {
     bundle: 'core',
     title: 'Form control for choosing a single option from a list.',
-    description: ['supports both controlled and uncontrolled modes'],
+    features: ['supports both controlled and uncontrolled modes'],
     composedOf: ['DropdownList', 'Button'],
     topLevelTags: ['div'],
     slots: ['Select.Option'],
@@ -18,6 +18,7 @@ const SELECT_META: ComponentMeta<SelectProps> = {
   props: SELECT_PROPS_META,
   examples: SELECT_EXAMPLES_META,
   changelog: {
+    '0.3.0': ['Public API updated'],
     '0.2.3': ['Released'],
   },
 }

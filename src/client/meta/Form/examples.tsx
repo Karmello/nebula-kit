@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Form, FormProps, Input, Select } from 'lib/components'
+import { Form, FormProps, Input, Select, Checkbox } from 'lib/components'
 
 const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
   {
@@ -28,11 +28,7 @@ const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
   },
   {
     jsx: (
-      <Form
-        onValidSubmission={data => {
-          console.log(data)
-        }}
-      >
+      <Form onValidSubmission={null}>
         <Form.Fields>
           <Form.Field name="firstName" label="First name" hint="This will appear on your public profile.">
             <Input />
@@ -43,6 +39,9 @@ const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
               <Select.Option value="female">Female</Select.Option>
             </Select>
           </Form.Field>
+          <Form.Field name="verified" label="Are you human ?">
+            <Checkbox />
+          </Form.Field>
         </Form.Fields>
         <Form.Actions flexDirection={{ base: 'column', md: 'row' }} alignItems="stretch">
           <Form.ActionButton type="submit">Submit</Form.ActionButton>
@@ -51,37 +50,13 @@ const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
         </Form.Actions>
       </Form>
     ),
-    code: `<Form
-  onValidSubmission={data => {
-    console.log(data)
-  }}
->
-  <Form.Fields>
-    <Form.Field name="firstName" label="First name" hint="This will appear on your public profile.">
-      <Input />
-    </Form.Field>
-    <Form.Field name="gender" label="Gender" hint="Used for profile personalization.">
-      <Select>
-        <Select.Option value="male">Male</Select.Option>
-        <Select.Option value="female">Female</Select.Option>
-      </Select>
-    </Form.Field>
-  </Form.Fields>
-  <Form.Actions flexDirection={{ base: 'column', md: 'row' }} alignItems="stretch">
-    <Form.ActionButton type="submit">Submit</Form.ActionButton>
-    <Form.ActionButton type="reset">Reset</Form.ActionButton>
-    <Form.ActionButton type="clear">Clear</Form.ActionButton>
-  </Form.Actions>
-</Form>`,
     description:
       'Mobile-first form with vertically stacked fields and responsive action buttons that align horizontally on wider screens.',
   },
   {
     jsx: (
       <Form
-        onValidSubmission={data => {
-          console.log(data)
-        }}
+        onValidSubmission={null}
         useFormProps={{ defaultValues: { engine: 'google' } }}
         flexDirection={{ base: 'column', md: 'row' }}
       >
@@ -104,31 +79,6 @@ const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
         </Form.Actions>
       </Form>
     ),
-    code: `<Form
-  onValidSubmission={data => {
-    console.log(data)
-  }}
-  useFormProps={{ defaultValues: { engine: 'google' } }}
-  flexDirection={{ base: 'column', md: 'row' }}
->
-  <Form.Fields flexDirection={{ base: 'column', md: 'row' }}>
-    <Form.Field name="engine">
-      <Select>
-        <Select.Option value="google">Google</Select.Option>
-        <Select.Option value="bing">Bing</Select.Option>
-        <Select.Option value="yahoo">Yahoo</Select.Option>
-      </Select>
-    </Form.Field>
-    <Form.Field name="search" flex="4">
-      <Input variant="outline" />
-    </Form.Field>
-  </Form.Fields>
-  <Form.Actions flexDirection={{ base: 'column', md: 'row' }} alignItems="stretch">
-    <Form.ActionButton type="submit">Submit</Form.ActionButton>
-    <Form.ActionButton type="reset">Reset</Form.ActionButton>
-    <Form.ActionButton type="clear">Clear</Form.ActionButton>
-  </Form.Actions>
-</Form>`,
     description:
       'Mobile-first form with vertically stacked fields that transition to a horizontal layout on wider screens.',
   },

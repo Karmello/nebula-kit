@@ -7,7 +7,7 @@ const FORM_FIELDS_META: ComponentMeta<FormFieldsProps> = {
   overview: {
     name: 'Form.Fields',
     title: 'Container for grouping and laying out form fields within a Form.',
-    description: ['expects Form.Field slots as children', 'controls layout and spacing between form fields'],
+    features: ['expects Form.Field slots as children', 'controls layout and spacing between form fields'],
     composedOf: ['Flex'],
     topLevelTags: ['div'],
     slots: ['Form.Field'],

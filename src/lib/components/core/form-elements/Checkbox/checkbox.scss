@@ -1,0 +1,22 @@
+.neb-checkbox {
+  position: relative;
+
+  input.neb-box {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  .neb-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+
+    svg {
+      stroke-width: 3;
+    }
+  }
+}

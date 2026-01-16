@@ -1,12 +1,6 @@
 import { useLayoutEffect, useState } from 'react'
 
-import {
-  FOUNDATIONS_CATEGORIES,
-  CORE_PAGE_CATEGORIES,
-  PageKey,
-  PRO_PAGE_CATEGORIES,
-} from 'client/definitions'
-
+import { PageKey, FOUNDATIONS_SECTIONS, CORE_PAGE_SECTIONS, PRO_PAGE_SECTIONS } from 'client/definitions'
 import { useCorePageStore, useFoundationsPageStore, useProPageStore } from 'client/store'
 import { useNavigateTo } from 'client/hooks'
 import { Flex, Button, Link } from 'lib/components'
@@ -22,47 +16,50 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
 
   const navigateTo = useNavigateTo()
 
-  const foundationsPageStore = useFoundationsPageStore()
-  const corePageStore = useCorePageStore()
-  const proPageStore = useProPageStore()
+  const foundationsPageCategoryKey = useFoundationsPageStore(state => state.categoryKey)
+  const foundationsPageItemKey = useFoundationsPageStore(state => state.itemKey)
+  const foundationsPageSectionKey = useFoundationsPageStore(state => state.sectionKey)
+  const corePageCategoryKey = useCorePageStore(state => state.categoryKey)
+  const corePageItemKey = useCorePageStore(state => state.itemKey)
+  const corePageSectionKey = useCorePageStore(state => state.sectionKey)
+  const proPageCategoryKey = useProPageStore(state => state.categoryKey)
+  const proPageItemKey = useProPageStore(state => state.itemKey)
+  const proPageSectionKey = useProPageStore(state => state.sectionKey)
 
   const MAP = {
     [PageKey.foundations]: {
-      CATEGORIES: FOUNDATIONS_CATEGORIES,
-      store: foundationsPageStore,
+      sections: FOUNDATIONS_SECTIONS,
+      keys: {
+        categoryKey: foundationsPageCategoryKey,
+        itemKey: foundationsPageItemKey,
+        sectionKey: foundationsPageSectionKey,
+      },
     },
     [PageKey.core]: {
-      CATEGORIES: CORE_PAGE_CATEGORIES,
-      store: corePageStore,
+      sections: CORE_PAGE_SECTIONS,
+      keys: {
+        categoryKey: corePageCategoryKey,
+        itemKey: corePageItemKey,
+        sectionKey: corePageSectionKey,
+      },
     },
     [PageKey.pro]: {
-      CATEGORIES: PRO_PAGE_CATEGORIES,
-      store: proPageStore,
+      sections: PRO_PAGE_SECTIONS,
+      keys: {
+        categoryKey: proPageCategoryKey,
+        itemKey: proPageItemKey,
+        sectionKey: proPageSectionKey,
+      },
     },
   }
 
   useLayoutEffect(() => {
-    const categories = MAP[pageKey].CATEGORIES
-
-    const sections: Section[] = []
-
-    categories.forEach(c =>
-      c.items.forEach(i =>
-        i.sections.forEach(s => {
-          sections.push({ categoryKey: c.key, itemKey: i.key, sectionKey: s.key })
-        })
-      )
-    )
-
-    setSections(sections)
+    setSections(MAP[pageKey].sections)
   }, [pageKey])
 
-  const pageStore = MAP[pageKey].store
+  const keys = MAP[pageKey].keys
   const currentSectionIndex = sections.findIndex(
-    s =>
-      s.categoryKey === pageStore.categoryKey &&
-      s.itemKey === pageStore.itemKey &&
-      s.sectionKey === pageStore.sectionKey
+    s => s.categoryKey === keys.categoryKey && s.itemKey === keys.itemKey && s.sectionKey === keys.sectionKey
   )
 
   const nextSectionIndex = currentSectionIndex + 1

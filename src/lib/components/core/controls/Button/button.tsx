@@ -56,7 +56,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   }, [bp, fullWidth])
 
   const text = (
-    <Text tag="span" scale={BUTTON_SIZE_CONFIG[size].textScale} bold={bold}>
+    <Text tag="span" scale={BUTTON_SIZE_CONFIG[size].textScale} bold={bold} truncate>
       {children}
     </Text>
   )
@@ -73,6 +73,7 @@ export const Button = <T extends ButtonTag = 'button'>({
             tagAttrs?.className
           ),
           type: tagAttrs?.type || 'button',
+          'aria-disabled': disabled || undefined,
           style: { ...tagAttrs?.style, justifyContent, pointerEvents: loading ? 'none' : undefined },
         } as PropsWithoutRef<ComponentProps<T>>
       }

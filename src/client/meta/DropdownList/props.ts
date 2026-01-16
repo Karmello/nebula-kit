@@ -1,5 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { DropdownListProps } from 'lib/components'
+import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize'
 
 import {
   DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
@@ -10,6 +11,7 @@ import {
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
   DROPDOWN_LIST_PLACEMENTS,
+  DEFAULT_DROPDOWN_OPEN_ON_FOCUS,
 } from 'lib/components/core/overlays/DropdownList'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -18,6 +20,11 @@ import { PORTAL_PROPS_META } from '../Portal/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
+  animationDuration: {
+    options: ['number'],
+    defaultValue: String(DEFAULT_RESIZE_DURATION),
+    description: 'Time in milliseconds used when the list opens and closes. Set to 0 to disable motion.',
+  },
   children: {
     ...HTML_TAG_PROPS_META.children,
     options: ['DropdownList.Trigger', 'DropdownList.Item'],
@@ -42,11 +49,31 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
     defaultValue: String(DEFAULT_DROPDOWN_LIST_KEEP_OPEN),
     description: "When true, the list won't be auto-closed on item click.",
   },
+  noOptionsLabel: {
+    options: ['string'],
+    description:
+      'When provided, displays a disabled item with the given label if the current search query yields no matching options.',
+  },
+  onClosed: {
+    options: ['() => void'],
+    description: 'Callback invoked after the list has fully closed.',
+  },
+  onOpened: {
+    options: ['() => void'],
+    description: 'Callback invoked after the list has fully opened.',
+  },
+  openOnFocus: {
+    options: ['boolean'],
+    defaultValue: String(DEFAULT_DROPDOWN_OPEN_ON_FOCUS),
+    description:
+      'Opens the dropdown when the trigger receives focus. When enabled, the trigger does not toggle the dropdown closed on click.',
+  },
   placement: {
     ...PORTAL_PROPS_META.placement,
     options: DROPDOWN_LIST_PLACEMENTS,
     defaultValue: String(DEFAULT_DROPDOWN_LIST_PLACEMENT),
-    description: 'Defines the position of the dropdown list relative to the trigger element.',
+    description:
+      'Defines the preferred position of the dropdown list relative to the trigger element. The position gets auto-adjusted so the list stays visible.',
   },
   scrollAlign: {
     options: Object.values(DROPDOWN_LIST_SCROLL_ALIGN),

@@ -13,7 +13,7 @@ const SPLIT_VIEW_META: ComponentMeta<SplitViewProps> = {
     bundle: 'pro',
     title: 'Two-panel layout for displaying side navigation alongside main content.',
     composedOf: ['Grid'],
-    description: [
+    features: [
       'provides a two-panel horizontal layout with a main content and side panel areas',
       'switches the side panel between overlay and inline modes at the specified breakpoint (switchAt)',
       'manages side panel visibility based on the active layout mode',

@@ -12,7 +12,7 @@ const DIALOG_META: ComponentMeta<DialogProps> = {
   overview: {
     bundle: 'pro',
     title: 'Centered modal dialog for interrupting the current user flow.',
-    description: [
+    features: [
       'renders above the page using Portal',
       'traps keyboard focus while open for accessibility',
       'supports header, content and footer slots for structured layout',

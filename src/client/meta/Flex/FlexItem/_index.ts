@@ -8,7 +8,7 @@ const FLEX_ITEM_META: ComponentMeta<FlexItemProps> = {
   overview: {
     name: 'Flex.Item?',
     title: 'Flex child wrapper used to control layout of a single item.',
-    description: [
+    features: [
       'controls per-item growth, shrink and basis in the flex layout',
       'allows item-level alignment overrides relative to the parent',
     ],

@@ -6,7 +6,7 @@ import { withPrefix } from 'lib/helpers'
 import { ButtonTag } from 'lib/components/core/controls/Button/definitions'
 
 import { DropdownListItemProps } from './definitions'
-import { useDropdownListContext } from '../../DropdownListProvider'
+import { useDropdownListContext } from '../../components'
 
 import './dropdown-list-item.scss'
 
@@ -39,14 +39,13 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
         {
           ...tagAttrs,
           className: classNames(withPrefix('dropdown-list-item'), tagAttrs?.className),
+          'data-neb-dropdown-list-item-index': index,
           role: 'option',
           onClick: (
-            e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> &
-              MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>
+            e: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent> &
+              MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
           ) => {
-            if (!keepOpen) {
-              setResizeVisible(false)
-            }
+            if (!keepOpen) setResizeVisible(false)
             tagAttrs?.onClick?.(e)
           },
           onMouseMove: () => {

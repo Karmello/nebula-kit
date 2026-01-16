@@ -21,7 +21,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
   }, [])
 
   const navigateTo = useNavigateTo()
-  const { user } = useAppStore()
+  const user = useAppStore(state => state.user)
   const checkoutPaidPlan = useCheckoutPaidPlan()
 
   if (plan === 'free') {

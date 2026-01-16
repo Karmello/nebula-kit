@@ -9,7 +9,7 @@ const TEXT_META: ComponentMeta<TextProps> = {
     bundle: 'core',
     title:
       'Foundational component for displaying and styling textual content that ensures consistent typography across the system.',
-    description: [
+    features: [
       'renders semantic text elements with consistent typography',
       'provides common text styling and formatting options',
       'supports inline icons alongside text',

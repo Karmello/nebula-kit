@@ -1,32 +1,21 @@
 import { Box, Flex, Text } from 'lib/components'
 import { BoxColor } from 'lib/components/core/base/Box'
 
-export const ListWithChips = ({
-  heading,
-  items,
-  color = 'blue',
-}: {
-  heading: string
-  items: string[]
-  color?: BoxColor
-}) => (
-  <Flex flexDirection="column" gap="10px">
-    <Text bold>{heading}</Text>
-    <Flex flexDirection="row" flexWrap="wrap" gap="6px">
-      {items.map((s, i) => (
-        <Box
-          key={i}
-          drawable
-          variant="outline"
-          color={color}
-          intent="primary"
-          paddingInline="10px"
-          paddingBlock="6px"
-          borderRadius="10px"
-        >
-          {s}
-        </Box>
-      ))}
-    </Flex>
+export const ListWithChips = ({ items, color = 'blue' }: { items: string[]; color?: BoxColor }) => (
+  <Flex flexDirection="row" flexWrap="wrap" gap="7px">
+    {items.map((s, i) => (
+      <Box
+        key={i}
+        drawable
+        variant="solid"
+        color={color}
+        intent="secondary"
+        paddingInline="10px"
+        paddingBlock="4px"
+        borderRadius="10px"
+      >
+        <Text>{s}</Text>
+      </Box>
+    ))}
   </Flex>
 )

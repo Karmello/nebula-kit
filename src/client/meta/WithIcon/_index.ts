@@ -8,7 +8,7 @@ const WITH_ICON_META: ComponentMeta<WithIconProps> = {
   overview: {
     bundle: 'core',
     title: 'Layout component that aligns an icon with accompanying content.',
-    description: [
+    features: [
       'renders an icon next to the children passed',
       'controls layout of an icon and children',
       'handles icon rotation if required',

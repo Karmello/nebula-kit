@@ -1,8 +1,14 @@
-import { Children, Fragment, isValidElement, ReactNode, useLayoutEffect, useState } from 'react'
+import { Children, Fragment, isValidElement, ReactNode, useEffect, useMemo } from 'react'
 
 import { getLibMsg } from 'lib/helpers'
 
 import { WithSlotsProps } from './definitions'
+
+type ResolvedSlots<SlotName extends string> = {
+  slotsByName: Record<SlotName, ReactNode[]>
+  allValidSlots: ReactNode[]
+  allNonSlots: ReactNode[]
+}
 
 export const WithSlots = <SlotName extends string>({
   componentName,
@@ -11,30 +17,30 @@ export const WithSlots = <SlotName extends string>({
   someRequired,
   children,
 }: WithSlotsProps<SlotName>) => {
-  const [slotsByName, setSlotsByName] = useState<Record<SlotName, ReactNode[]> | null>(null)
-  const [allValidSlots, setAllValidSlots] = useState<ReactNode[] | null>(null)
-  const [allNonSlots, setAllNonSlots] = useState<ReactNode[] | null>(null)
-
-  useLayoutEffect(() => {
-    if (!childrenToVerify) return
+  const resolved = useMemo<ResolvedSlots<SlotName> | null>(() => {
+    if (!childrenToVerify) return null
 
     const finalChildrenToVerify =
-      (childrenToVerify as any).type === Fragment
-        ? (childrenToVerify as any).props.children
+      (childrenToVerify as any)?.type === Fragment
+        ? (childrenToVerify as any)?.props?.children
         : childrenToVerify
 
     const slotsByName = {} as Record<SlotName, ReactNode[]>
-    const allValidSlots = [] as ReactNode[]
-    const allNonSlots = [] as ReactNode[]
+    const allValidSlots: ReactNode[] = []
+    const allNonSlots: ReactNode[] = []
 
-    slotsConfig.forEach(({ name }) => {
+    for (const { name } of slotsConfig) {
       slotsByName[name] = []
-    })
+    }
 
-    Children.toArray(finalChildrenToVerify).forEach(child => {
+    // IMPORTANT:
+    // - do not use Children.toArray here (it normalizes keys and can change identity semantics)
+    // - do not clone elements
+    // - preserve child element references as-is
+    Children.forEach(finalChildrenToVerify as any, child => {
       if (!isValidElement(child)) return
 
-      const displayName: string = (child.type as any).displayName
+      const displayName: string | undefined = (child.type as any)?.displayName
       if (!displayName) {
         allNonSlots.push(child)
         return
@@ -55,28 +61,29 @@ export const WithSlots = <SlotName extends string>({
       allValidSlots.push(child)
     })
 
-    setSlotsByName(slotsByName)
-    setAllValidSlots(allValidSlots)
-    setAllNonSlots(allNonSlots)
-  }, [childrenToVerify])
+    return { slotsByName, allValidSlots, allNonSlots }
+  }, [childrenToVerify, slotsConfig])
 
-  useLayoutEffect(() => {
-    if (slotsByName && allValidSlots) {
-      if (someRequired && !allValidSlots.length) {
-        console.warn(
-          getLibMsg(`${componentName} expects ${Object.keys(slotsByName).join(' or ')} to be its child`)
-        )
-      } else {
-        slotsConfig.forEach(({ name, required }) => {
-          if (required && !slotsByName[name].length) {
-            console.warn(getLibMsg(`${componentName} expects ${name} to be its child`))
-          }
-        })
+  useEffect(() => {
+    if (!resolved) return
+
+    const { slotsByName, allValidSlots } = resolved
+
+    if (someRequired && !allValidSlots.length) {
+      console.warn(
+        getLibMsg(`${componentName} expects ${Object.keys(slotsByName).join(' or ')} to be its child`)
+      )
+      return
+    }
+
+    for (const { name, required } of slotsConfig) {
+      if (required && !slotsByName[name].length) {
+        console.warn(getLibMsg(`${componentName} expects ${name} to be its child`))
       }
     }
-  }, [slotsByName, allValidSlots])
+  }, [resolved, someRequired, componentName, slotsConfig])
 
-  if (!childrenToVerify || !slotsByName || !allValidSlots) return null
+  if (!resolved) return null
 
-  return children({ slotsByName, allValidSlots, allNonSlots })
+  return children(resolved)
 }

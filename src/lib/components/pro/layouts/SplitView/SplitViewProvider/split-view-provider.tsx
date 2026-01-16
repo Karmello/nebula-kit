@@ -1,9 +1,8 @@
-import { createContext, useContext, useState, ReactNode, useEffect } from 'react'
+import { createContext, useContext, useState, ReactNode, useLayoutEffect } from 'react'
 
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize/definitions'
 import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
-import { getLibMsg } from 'lib/helpers'
-import { useScreen } from 'lib/hooks'
+import { useScreen, useGlobalScrollLock } from 'lib/hooks'
 
 import { SplitViewOwnProps } from '../definitions'
 
@@ -19,7 +18,7 @@ export type SplitViewContextProps = Omit<ProviderProps, 'children'> & {
   mode: SplitViewMode
 }
 
-const SplitViewContext = createContext<SplitViewContextProps | undefined>(undefined)
+const SplitViewContext = createContext<SplitViewContextProps>({} as SplitViewContextProps)
 
 export const SplitViewProvider = ({
   children,
@@ -27,27 +26,30 @@ export const SplitViewProvider = ({
   switchAt = DEFAULT_SWITCH_AT,
 }: ProviderProps) => {
   const { bp } = useScreen()
+  const { lock, unlock } = useGlobalScrollLock()
 
   const [mode, setMode] = useState<SplitViewMode>(
     BREAKPOINTS.slice(0, BREAKPOINTS.indexOf(switchAt)).includes(bp) ? 'overlay' : 'inline'
   )
   const [sideOpen, setSideOpen] = useState<boolean>(mode === 'inline')
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setMode(BREAKPOINTS.slice(0, BREAKPOINTS.indexOf(switchAt)).includes(bp) ? 'overlay' : 'inline')
   }, [bp])
 
-  useEffect(() => {
-    setSideOpen(mode === 'inline')
+  useLayoutEffect(() => {
+    setTimeout(() => {
+      setSideOpen(mode === 'inline')
+    }, 200)
   }, [mode])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (mode === 'overlay' && sideOpen) {
-      document.documentElement.classList.add('neb-scrollbar-off')
+      lock()
       document.body.style.pointerEvents = 'none'
     } else {
       setTimeout(() => {
-        document.documentElement.classList.remove('neb-scrollbar-off')
+        unlock()
         document.body.style.pointerEvents = ''
       }, DEFAULT_RESIZE_DURATION)
     }
@@ -61,7 +63,5 @@ export const SplitViewProvider = ({
 }
 
 export const useSplitViewContext = () => {
-  const ctx = useContext(SplitViewContext)
-  if (!ctx) throw new Error(getLibMsg('useSplitViewContext must be used inside <SplitView>'))
-  return ctx
+  return useContext(SplitViewContext)
 }

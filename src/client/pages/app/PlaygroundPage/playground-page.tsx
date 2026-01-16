@@ -17,8 +17,8 @@ import {
 import { usePlaygroundStore } from './store'
 
 export const PlaygroundPage = () => {
-  const { theme } = useAppStore()
-  const { activeComponent } = usePlaygroundStore()
+  const theme = useAppStore(state => state.theme)
+  const activeComponent = usePlaygroundStore(state => state.activeComponent)
 
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} overflowY="hidden">

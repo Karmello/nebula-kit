@@ -8,21 +8,28 @@ import { PRO_PAGE_CATEGORIES, PageKey } from 'client/definitions'
 export const ProPage = () => {
   const { pathname } = useLocation()
 
-  const proPageStore = useProPageStore()
+  const categoryKey = useProPageStore(state => state.categoryKey)
+  const itemKey = useProPageStore(state => state.itemKey)
+  const sectionKey = useProPageStore(state => state.sectionKey)
+
+  const setCategoryKey = useProPageStore(state => state.setCategoryKey)
+  const setItemKey = useProPageStore(state => state.setItemKey)
+  const setSectionKey = useProPageStore(state => state.setSectionKey)
 
   useLayoutEffect(() => {
     const [, categoryKey, itemKey, sectionKey] = pathname.split('/').filter(s => s)
-    proPageStore.setCategoryKey(categoryKey)
-    proPageStore.setItemKey(itemKey)
-    proPageStore.setSectionKey(sectionKey)
+    setCategoryKey(categoryKey)
+    setItemKey(itemKey)
+    setSectionKey(sectionKey)
   }, [pathname])
 
-  const activeCategoryObj = PRO_PAGE_CATEGORIES?.find(c => c.key === proPageStore.categoryKey)
-  const activeItemObj = activeCategoryObj?.items.find(i => i.key === proPageStore.itemKey)
-  const activeSectionObj = activeItemObj?.sections.find(s => s.key === proPageStore.sectionKey)
+  const activeCategoryObj = PRO_PAGE_CATEGORIES?.find(c => c.key === categoryKey)
+  const activeItemObj = activeCategoryObj?.items.find(i => i.key === itemKey)
+  const activeSectionObj = activeItemObj?.sections.find(s => s.key === sectionKey)
 
   return (
     <CatalogPageTemplate
+      pathname={pathname}
       pageKey={PageKey.pro}
       data={PRO_PAGE_CATEGORIES}
       activeCategoryObj={activeCategoryObj}

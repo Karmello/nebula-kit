@@ -1,6 +1,6 @@
 import { kebabCase } from 'change-case'
 
-import { Icon, Section, Spacer, Table, Text, Link } from 'lib/components'
+import { Icon, Section, Spacer, Table, Text, Link, Tooltip, Box } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 
 export const PropsTable = ({ category, data }: Props) => {
   const table = (
-    <Table color="blue" intent="tertiary" paddingBlock="5px" paddingInline="10px">
+    <Table color="blue" intent="neutral" paddingBlock="5px" paddingInline="10px">
       <Table.Header>
         <Table.HeaderRow>
           <Table.HeaderCell>Name</Table.HeaderCell>
@@ -21,11 +21,11 @@ export const PropsTable = ({ category, data }: Props) => {
           <Table.HeaderCell minInlineSize="30ch">Description</Table.HeaderCell>
         </Table.HeaderRow>
       </Table.Header>
-      <Table.Body intent="neutral">
+      <Table.Body intent="muted">
         {Object.keys(data)
           .sort((a, b) => a.localeCompare(b))
           .map(name => {
-            const { options, isRequired, isResponsive, defaultValue, description, link } = data[name]
+            const { options, isRequired, isResponsive, defaultValue, description, link, tooltip } = data[name]
             return (
               <Table.Row key={name}>
                 <Table.Cell>
@@ -52,7 +52,17 @@ export const PropsTable = ({ category, data }: Props) => {
                   )}
                 </Table.Cell>
                 <Table.Cell>
-                  <Text>{typeof options === 'string' ? options : options.join(', ')}</Text>
+                  {tooltip ? (
+                    <Tooltip content={tooltip} placement="top-center" maxInlineSize="300px">
+                      <Box display="inline-block">
+                        <Text iconName="info" iconPlacement="right">
+                          {typeof options === 'string' ? options : options.join(', ')}
+                        </Text>
+                      </Box>
+                    </Tooltip>
+                  ) : (
+                    <Text>{typeof options === 'string' ? options : options.join(', ')}</Text>
+                  )}
                 </Table.Cell>
                 <Table.Cell tagAttrs={{ style: { whiteSpace: 'nowrap' } }}>
                   <Text textAlign="center">{defaultValue !== undefined ? defaultValue : '-'}</Text>

@@ -8,7 +8,7 @@ const TEXTAREA_META: ComponentMeta<TextareaProps> = {
   overview: {
     bundle: 'core',
     title: 'Multiline text input for entering and editing longer text.',
-    description: ['supports both controlled and uncontrolled modes'],
+    features: ['supports both controlled and uncontrolled modes'],
     composedOf: ['Box'],
     topLevelTags: ['textarea'],
   },

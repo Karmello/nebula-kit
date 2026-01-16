@@ -10,7 +10,7 @@ import { Loader, Table, Text, Flex, Link, Button } from 'lib/components'
 export default () => {
   const getUser = useGetUser()
   const navigateTo = useNavigateTo()
-  const { user } = useAppStore()
+  const user = useAppStore(state => state.user)
 
   useLayoutEffect(() => {
     if (user) {

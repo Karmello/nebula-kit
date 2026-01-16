@@ -1,4 +1,13 @@
-import { ElementType, ComponentRef, useRef, useLayoutEffect, PropsWithoutRef, ComponentProps } from 'react'
+import {
+  ElementType,
+  ComponentRef,
+  ComponentProps,
+  PropsWithoutRef,
+  useLayoutEffect,
+  useEffect,
+  useRef,
+} from 'react'
+
 import classNames from 'classnames'
 
 import { BoxProps, HtmlTag } from 'lib/components'
@@ -80,10 +89,28 @@ export const Box = <T extends ElementType = 'div'>({
 }: BoxProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
 
+  const finalRef = tagRef || ref
+
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    updateDomRespStyle('Box', tagRef || ref, bp, {
+    const el = finalRef?.current as Element
+    if (!el) return
+    el.setAttribute('data-neb-box-transitions', 'false')
+  }, [])
+
+  useEffect(() => {
+    const el = finalRef?.current as Element
+    if (!el) return
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        el.setAttribute('data-neb-box-transitions', 'true')
+      })
+    })
+  }, [])
+
+  useLayoutEffect(() => {
+    updateDomRespStyle('Box', finalRef, bp, {
       opacity,
       textAlign,
       zIndex,
@@ -176,7 +203,7 @@ export const Box = <T extends ElementType = 'div'>({
   ])
 
   useLayoutEffect(() => {
-    updateDomRespDataset('Box', tagRef || ref, bp, { theme, brand, color, variant, intent })
+    updateDomRespDataset('Box', finalRef, bp, { theme, brand, color, variant, intent })
   }, [bp, theme, brand, color, variant, intent])
 
   return (
@@ -196,7 +223,7 @@ export const Box = <T extends ElementType = 'div'>({
           }),
         } as PropsWithoutRef<ComponentProps<T>>
       }
-      tagRef={tagRef || ref}
+      tagRef={finalRef}
     >
       {children}
     </HtmlTag>

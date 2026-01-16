@@ -1,4 +1,4 @@
-import { ReactElement, useState } from 'react'
+import { ReactElement, useRef, useState } from 'react'
 import classNames from 'classnames'
 
 import { DropdownList, Button } from 'lib/components'
@@ -28,17 +28,18 @@ export const Select = ({
   defaultValue,
   value,
   onChange,
+  onClosed,
   dropdownPlacement,
   staticLabel,
 }: SelectProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
+  const changedValueRef = useRef<string | undefined>(undefined)
 
   const isControlled = value !== undefined
   const currentValue = isControlled ? value : internalValue
 
-  const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(dropdownPlacement)
-
   const handleChange = (value: string) => {
+    changedValueRef.current = value
     if (!isControlled) setInternalValue(value)
     onChange?.(value)
   }
@@ -69,56 +70,64 @@ export const Select = ({
               scrollAlign={scrollAlign}
               visibleItemsCount={visibleItemsCount}
               placement={dropdownPlacement}
+              onClosed={() => {
+                onClosed?.(changedValueRef.current)
+                changedValueRef.current = undefined
+              }}
             >
-              {({ open }) => (
-                <>
-                  <DropdownList.Trigger inlineSize={inlineSize} disabled={disabled}>
-                    <Button
-                      tagAttrs={{
-                        'aria-labelledby': tagAttrs?.['aria-labelledby'],
-                        style: opensUpDownwards
-                          ? {
-                              borderBottomLeftRadius: open ? 0 : undefined,
-                              borderBottomRightRadius: open ? 0 : undefined,
-                            }
-                          : {
-                              borderTopLeftRadius: open ? 0 : undefined,
-                              borderTopRightRadius: open ? 0 : undefined,
-                            },
-                      }}
-                      iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
-                      iconPlacement="right"
-                      iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
-                      justifyContent="space-between"
-                      size={size}
-                      variant="solid"
-                      intent={intent}
-                      color={color}
-                      disabled={disabled}
-                      fullWidth
-                    >
-                      {staticLabel || currentSlot?.props.children || '...'}
-                    </Button>
-                  </DropdownList.Trigger>
-                  {slotsByName['Select.Option'].map((slot, index) => {
-                    const slotProps = (slot as ReactElement<any>).props
-                    return (
-                      <DropdownList.Item
-                        key={index}
-                        {...slotProps}
+              {({ open, resolvedPlacement }) => {
+                const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(resolvedPlacement)
+
+                return (
+                  <>
+                    <DropdownList.Trigger inlineSize={inlineSize} disabled={disabled}>
+                      <Button
                         tagAttrs={{
-                          ...slotProps.tagAttrs,
-                          onClick: () => handleChange(slotProps.value),
+                          'aria-labelledby': tagAttrs?.['aria-labelledby'],
+                          style: opensUpDownwards
+                            ? {
+                                borderBottomLeftRadius: open ? 0 : undefined,
+                                borderBottomRightRadius: open ? 0 : undefined,
+                              }
+                            : {
+                                borderTopLeftRadius: open ? 0 : undefined,
+                                borderTopRightRadius: open ? 0 : undefined,
+                              },
                         }}
-                        bold={slotProps.value === currentValue}
-                        justifyContent={slotProps.justifyContent || DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT}
+                        iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
+                        iconPlacement="right"
+                        iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
+                        justifyContent="space-between"
+                        size={size}
+                        variant="solid"
+                        intent={intent}
+                        color={color}
+                        disabled={disabled}
+                        fullWidth
                       >
-                        {slot}
-                      </DropdownList.Item>
-                    )
-                  })}
-                </>
-              )}
+                        {staticLabel || currentSlot?.props.children || 'Select ...'}
+                      </Button>
+                    </DropdownList.Trigger>
+                    {slotsByName['Select.Option'].map((slot, index) => {
+                      const slotProps = (slot as ReactElement<any>).props
+                      return (
+                        <DropdownList.Item
+                          key={index}
+                          {...slotProps}
+                          tagAttrs={{
+                            ...slotProps.tagAttrs,
+                            onClick: () => handleChange(slotProps.value),
+                          }}
+                          bold={slotProps.value === currentValue}
+                          justifyContent={slotProps.justifyContent || DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT}
+                        >
+                          {slot}
+                        </DropdownList.Item>
+                      )
+                    })}
+                  </>
+                )
+              }}
             </DropdownList>
           </SelectProvider>
         )

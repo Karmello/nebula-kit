@@ -10,7 +10,7 @@ const HTML_TAG_META: ComponentMeta<HtmlTagProps<ElementType>> = {
   overview: {
     bundle: 'core',
     title: 'Low-level component that renders an HTML tag.',
-    description: [
+    features: [
       'renders the specified HTML tag',
       'forwards the relevant attributes for the tag',
       'passes through the ref',

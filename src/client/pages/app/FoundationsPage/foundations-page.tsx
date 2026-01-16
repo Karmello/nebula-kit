@@ -8,21 +8,28 @@ import { FOUNDATIONS_CATEGORIES, PageKey } from 'client/definitions'
 export const FoundationsPage = () => {
   const { pathname } = useLocation()
 
-  const foundationsPageStore = useFoundationsPageStore()
+  const categoryKey = useFoundationsPageStore(state => state.categoryKey)
+  const itemKey = useFoundationsPageStore(state => state.itemKey)
+  const sectionKey = useFoundationsPageStore(state => state.sectionKey)
+
+  const setCategoryKey = useFoundationsPageStore(state => state.setCategoryKey)
+  const setItemKey = useFoundationsPageStore(state => state.setItemKey)
+  const setSectionKey = useFoundationsPageStore(state => state.setSectionKey)
 
   useLayoutEffect(() => {
     const [, categoryKey, itemKey, sectionKey] = pathname.split('/').filter(s => s)
-    foundationsPageStore.setCategoryKey(categoryKey)
-    foundationsPageStore.setItemKey(itemKey)
-    foundationsPageStore.setSectionKey(sectionKey)
+    setCategoryKey(categoryKey)
+    setItemKey(itemKey)
+    setSectionKey(sectionKey)
   }, [pathname])
 
-  const activeCategoryObj = FOUNDATIONS_CATEGORIES?.find(c => c.key === foundationsPageStore.categoryKey)
-  const activeItemObj = activeCategoryObj?.items.find(i => i.key === foundationsPageStore.itemKey)
-  const activeSectionObj = activeItemObj?.sections.find(s => s.key === foundationsPageStore.sectionKey)
+  const activeCategoryObj = FOUNDATIONS_CATEGORIES?.find(c => c.key === categoryKey)
+  const activeItemObj = activeCategoryObj?.items.find(i => i.key === itemKey)
+  const activeSectionObj = activeItemObj?.sections.find(s => s.key === sectionKey)
 
   return (
     <CatalogPageTemplate
+      pathname={pathname}
       pageKey={PageKey.foundations}
       data={FOUNDATIONS_CATEGORIES}
       activeCategoryObj={activeCategoryObj}

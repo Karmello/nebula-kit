@@ -7,7 +7,7 @@ const SPLIT_VIEW_SIDE_META: ComponentMeta<SplitViewSideProps> = {
   overview: {
     name: 'SplitView.Side',
     title: 'Defines the side panel region of the SplitView layout.',
-    description: [
+    features: [
       'typically used for navigation, menus or supplementary content',
       'traps keyboard focus when the side panel is rendered in overlay mode',
     ],

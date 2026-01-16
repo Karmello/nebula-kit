@@ -12,7 +12,7 @@ const TOOLBAR_META: ComponentMeta<ToolbarProps> = {
   overview: {
     bundle: 'pro',
     title: 'Horizontal bar with Start, Main and End slots for organizing actions and controls.',
-    description: [
+    features: [
       'often used inside AppFrame.Header to control navigation and provide additional tools',
       'often paired with ButtonGroup rendered inside the main section',
       'the main section is toggleable in collapsed mode and always visible in inline mode',

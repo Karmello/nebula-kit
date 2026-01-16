@@ -15,7 +15,9 @@ const SELECT_DATA_MAP: Record<(typeof PROPS_OPTIONS_FOR_SELECT)[number], readonl
 }
 
 export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
-  const { components, activeComponent, setPropField } = usePlaygroundStore()
+  const components = usePlaygroundStore(state => state.components)
+  const activeComponent = usePlaygroundStore(state => state.activeComponent)
+  const setPropField = usePlaygroundStore(state => state.setPropField)
 
   const activeProp = components[activeComponent].activeProp
   const prop = components[activeComponent].props[activeProp]

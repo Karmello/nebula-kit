@@ -9,7 +9,7 @@ export const useLogoutUser = () => {
     method: 'POST',
   })
 
-  const { setUser } = useAppStore()
+  const setUser = useAppStore(state => state.setUser)
 
   useEffect(() => {
     if (code === 200) {

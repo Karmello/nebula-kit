@@ -1,49 +1,29 @@
-import { useLayoutEffect, useMemo, useState } from 'react'
 import { Navigate, Route, Routes } from 'react-router'
-import { pascalCase, kebabCase } from 'change-case'
 
-import { FOUNDATIONS_CATEGORIES, PageKey } from 'client/definitions'
+import { FOUNDATIONS_CATEGORIES, FOUNDATIONS_SECTIONS, PageKey } from 'client/definitions'
 import { NextPageButton } from 'client/components'
 import { Spacer } from 'lib/components'
 
-export const FoundationsPageRoutes = () => {
-  const ROUTES = useMemo(() => {
-    return FOUNDATIONS_CATEGORIES.map(({ key: categoryKey, items }) =>
-      items.map(({ key: itemKey, sections }) =>
-        sections.map(({ key: sectionKey }) => {
-          const Component = () => {
-            const [Component, setComponent] = useState(null)
-            useLayoutEffect(() => {
-              import(`../../foundations/${pascalCase(sectionKey)}/${kebabCase(sectionKey)}.tsx`)
-                .then(mod => {
-                  setComponent(() => mod.default)
-                })
-                .catch(ex => {
-                  console.warn(ex)
-                })
-            }, [])
-            if (!Component) return null
-            return (
-              <>
-                <Component />
-                <Spacer blockSize="60px" />
-                <NextPageButton pageKey={PageKey.foundations} />
-              </>
-            )
-          }
+import { FOUNDATION_COMPONENTS } from './definitions'
 
-          return (
-            <Route
-              key={`${categoryKey}/${itemKey}/${sectionKey}`}
-              path={`${categoryKey}/${itemKey}/${sectionKey}`}
-              Component={Component}
-            />
-          )
-        })
+const ROUTES = FOUNDATIONS_SECTIONS.map(({ categoryKey, itemKey, sectionKey }) => (
+  <Route
+    key={`${categoryKey}/${itemKey}/${sectionKey}`}
+    path={`${categoryKey}/${itemKey}/${sectionKey}`}
+    Component={() => {
+      const Component = FOUNDATION_COMPONENTS[sectionKey]
+      return (
+        <>
+          <Component />
+          <Spacer blockSize="60px" />
+          <NextPageButton pageKey={PageKey.foundations} />
+        </>
       )
-    )
-  }, [])
+    }}
+  />
+))
 
+export const FoundationsPageRoutes = () => {
   return (
     <>
       <Spacer blockSize="20px" />

@@ -8,7 +8,7 @@ const HYDRATION_GATE_META: ComponentMeta<HydrationGateProps> = {
   overview: {
     bundle: 'core',
     title: 'Top-level SSR utility that prevents flashes of unstyled or mismatched content during hydration.',
-    description: [
+    features: [
       'provides an escape hatch for SSR setups where first-paint flicker is unacceptable',
       'renders children immediately so effects can run but keeps them visually hidden until hydration completes',
       'delays application visibility until the client is fully hydrated',

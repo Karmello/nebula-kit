@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { NebkitProviderProps } from 'lib/components'
-import { THEMES } from 'lib/definitions'
+import { COLORS, THEMES } from 'lib/definitions'
 
 import {
   NEBKIT_BORDER_RADIUS_SIZES,
@@ -24,6 +24,12 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = 
     options: ['BoxColor'],
     defaultValue: DEFAULT_NEBKIT_BRAND,
     description: 'Global brand color used as the primary accent across components.',
+    tooltip: COLORS.join(', '),
+  },
+  lockGlobalScroll: {
+    options: ['boolean'],
+    description:
+      'Locks global document scrolling while preserving layout by compensating for scrollbar width.',
   },
   theme: {
     options: THEMES as unknown as string[],

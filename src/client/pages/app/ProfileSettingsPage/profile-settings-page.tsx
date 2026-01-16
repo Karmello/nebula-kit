@@ -16,7 +16,7 @@ import { UpdatePasswordSection } from './UpdatePasswordSection'
 export const ProfileSettingsPage = () => {
   const { search } = useLocation()
   const { show } = useSnackbar()
-  const { user } = useAppStore()
+  const user = useAppStore(state => state.user)
   const getUser = useGetUser()
 
   useLayoutEffect(() => {

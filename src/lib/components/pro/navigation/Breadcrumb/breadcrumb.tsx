@@ -1,4 +1,4 @@
-import { useState, Fragment } from 'react'
+import { useState, Fragment, useCallback } from 'react'
 
 import { Box, Flex, Button, DropdownList, Icon } from 'lib/components'
 
@@ -25,23 +25,26 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
   const isControlled = path !== undefined
   const currentPath = isControlled ? path : internalPath
 
-  const handleChange = (index: number, value: string) => {
-    if (!isControlled) {
-      setInternalPath(prev => {
-        const next = prev.slice(0, index)
-        next[index] = value
-        return next
-      })
-    }
+  const handleChange = useCallback(
+    (index: number, value: string) => {
+      if (!isControlled) {
+        setInternalPath(prev => {
+          const next = prev.slice(0, index)
+          next[index] = value
+          return next
+        })
+      }
 
-    onChange?.(
-      (() => {
-        const next = currentPath.slice(0, index)
-        next[index] = value
-        return next
-      })()
-    )
-  }
+      onChange?.(
+        (() => {
+          const next = currentPath.slice(0, index)
+          next[index] = value
+          return next
+        })()
+      )
+    },
+    [isControlled, setInternalPath, onChange, currentPath]
+  )
 
   const levels = convertTreeToLevels(tree, currentPath)
 
@@ -54,12 +57,12 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
           return (
             <Fragment key={index}>
               <DropdownList
-                key={currentPath.slice(0, index).join('|') || 'root'}
                 size={size}
                 color={color}
                 intent={intent}
                 scrollToIndex={scrollToIndex > -1 ? scrollToIndex : undefined}
                 scrollAlign="center"
+                placement={index < levels.length - 1 ? 'bottom-start' : 'bottom-end'}
               >
                 <DropdownList.Trigger>
                   <Button size={size} variant="ghost" color={color} intent="primary">

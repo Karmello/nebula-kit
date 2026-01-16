@@ -13,11 +13,17 @@ type Props = {
 export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
   const { pathname } = useLocation()
   const navigateTo = useNavigateTo()
-  const { user } = useAppStore()
+  const user = useAppStore(state => state.user)
 
-  const foundationsPageStore = useFoundationsPageStore()
-  const corePageStore = useCorePageStore()
-  const proPageStore = useProPageStore()
+  const foundationsPageCategoryKey = useFoundationsPageStore(state => state.categoryKey)
+  const foundationsPageItemKey = useFoundationsPageStore(state => state.itemKey)
+  const foundationsPageSectionKey = useFoundationsPageStore(state => state.sectionKey)
+  const corePageCategoryKey = useCorePageStore(state => state.categoryKey)
+  const corePageItemKey = useCorePageStore(state => state.itemKey)
+  const corePageSectionKey = useCorePageStore(state => state.sectionKey)
+  const proPageCategoryKey = useProPageStore(state => state.categoryKey)
+  const proPageItemKey = useProPageStore(state => state.itemKey)
+  const proPageSectionKey = useProPageStore(state => state.sectionKey)
 
   const currentPageKey = `/${pathname.split('/')[1]}`
 
@@ -49,11 +55,11 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
       </Grid.Item>
       <Grid.Item>
         <Link
-          href={`${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${foundationsPageStore.sectionKey}`}
+          href={`${PageKey.foundations}/${foundationsPageCategoryKey}/${foundationsPageItemKey}/${foundationsPageSectionKey}`}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
             navigateTo(
-              `${PageKey.foundations}/${foundationsPageStore.categoryKey}/${foundationsPageStore.itemKey}/${foundationsPageStore.sectionKey}`
+              `${PageKey.foundations}/${foundationsPageCategoryKey}/${foundationsPageItemKey}/${foundationsPageSectionKey}`
             )
           }}
         >
@@ -68,12 +74,10 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
       </Grid.Item>
       <Grid.Item>
         <Link
-          href={`${PageKey.core}/${corePageStore.categoryKey}/${corePageStore.itemKey}/${corePageStore.sectionKey}`}
+          href={`${PageKey.core}/${corePageCategoryKey}/${corePageItemKey}/${corePageSectionKey}`}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
-            navigateTo(
-              `${PageKey.core}/${corePageStore.categoryKey}/${corePageStore.itemKey}/${corePageStore.sectionKey}`
-            )
+            navigateTo(`${PageKey.core}/${corePageCategoryKey}/${corePageItemKey}/${corePageSectionKey}`)
           }}
         >
           <Button
@@ -87,12 +91,10 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
       </Grid.Item>
       <Grid.Item>
         <Link
-          href={`${PageKey.pro}/${proPageStore.categoryKey}/${proPageStore.itemKey}/${proPageStore.sectionKey}`}
+          href={`${PageKey.pro}/${proPageCategoryKey}/${proPageItemKey}/${proPageSectionKey}`}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
-            navigateTo(
-              `${PageKey.pro}/${proPageStore.categoryKey}/${proPageStore.itemKey}/${proPageStore.sectionKey}`
-            )
+            navigateTo(`${PageKey.pro}/${proPageCategoryKey}/${proPageItemKey}/${proPageSectionKey}`)
           }}
         >
           <Button intent={currentPageKey === PageKey.pro ? 'secondary' : 'muted'} iconName="star" fullWidth>

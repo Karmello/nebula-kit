@@ -1,8 +1,12 @@
 import { Children, cloneElement, MouseEvent } from 'react'
+import classNames from 'classnames'
 
 import { HtmlTagProps } from 'lib/components'
+import { withPrefix } from 'lib/helpers'
 
 import { DEFAULT_LINK_TARGET, LinkProps } from './definitions'
+
+import './link.scss'
 
 export const Link = ({
   // HtmlTag
@@ -26,6 +30,7 @@ export const Link = ({
     tag: 'a',
     tagAttrs: {
       ...finalChildren.props.tagAttrs,
+      className: classNames(withPrefix('link'), finalChildren.props.tagAttrs?.className),
       href,
       target,
       onClick: finalOnClick,

@@ -22,4 +22,5 @@ export type NebkitProviderProps = {
   theme?: Theme
   brand?: BoxColor
   borderRadiusSize?: NebkitBorderRadiusSize
+  lockGlobalScroll?: boolean
 }

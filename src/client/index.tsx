@@ -3,17 +3,28 @@ import { BrowserRouter } from 'react-router'
 
 import { App } from 'client/components'
 import { useAppStore } from 'client/store'
+import { loadFoundationPageModules } from 'client/pages/routes/FoundationsPageRoutes/definitions'
 import { NebkitProvider, HydrationGate, Snackbar } from 'lib/components'
 
 import 'lib/styles/index.scss'
 
+loadFoundationPageModules()
+
 const Node = () => {
-  const { theme, brand, borderRadiusSize } = useAppStore()
+  const theme = useAppStore(state => state.theme)
+  const brand = useAppStore(state => state.brand)
+  const borderRadiusSize = useAppStore(state => state.borderRadiusSize)
+  const showAppJump = useAppStore(state => state.showAppJump)
 
   return (
     <BrowserRouter>
       <HydrationGate>
-        <NebkitProvider theme={theme} brand={brand} borderRadiusSize={borderRadiusSize}>
+        <NebkitProvider
+          theme={theme}
+          brand={brand}
+          borderRadiusSize={borderRadiusSize}
+          lockGlobalScroll={showAppJump}
+        >
           <Snackbar closeOnOutsideClick autoCloseDelay={10000}>
             <App />
           </Snackbar>

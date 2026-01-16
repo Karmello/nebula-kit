@@ -7,12 +7,10 @@ import meta from 'client/meta'
 import { PropsTable } from './PropsTable'
 
 export const ComponentPropsPage = ({ pageKey }: { pageKey: PageKey.core | PageKey.pro }) => {
-  const corePageStore = useCorePageStore()
-  const proPageStore = useProPageStore()
+  const corePageItemKey = useCorePageStore(state => state.itemKey)
+  const proPageItemKey = useProPageStore(state => state.itemKey)
 
-  const itemKeyPascal = pascalCase(
-    (pageKey === PageKey.core ? corePageStore.itemKey : proPageStore.itemKey) || ''
-  )
+  const itemKeyPascal = pascalCase((pageKey === PageKey.core ? corePageItemKey : proPageItemKey) || '')
 
   if (!meta[itemKeyPascal]) return null
 

@@ -1,12 +1,12 @@
 import { useLayoutEffect, useRef, useState, useCallback } from 'react'
 import { createPortal } from 'react-dom'
+import classNames from 'classnames'
 
 import { Box } from 'lib/components'
+import { withPrefix } from 'lib/helpers'
 
 import { DEFAULT_PORTAL_PLACEMENT, PortalProps } from './definitions'
 import { useIslandContext } from '../../internal'
-import classNames from 'classnames'
-import { withPrefix } from 'lib/helpers'
 
 export const Portal = ({
   // HtmlTag
@@ -16,6 +16,7 @@ export const Portal = ({
   // own
   anchorRef,
   placement = DEFAULT_PORTAL_PLACEMENT,
+  offset,
 }: PortalProps) => {
   const [container, setContainer] = useState<HTMLElement | null>(null)
   const [position, setPosition] = useState<{ top?: number; left?: number }>({
@@ -28,17 +29,25 @@ export const Portal = ({
 
   const updatePosition = useCallback(() => {
     if (!anchorRef?.current) return
+
     const anchorRect = anchorRef.current.getBoundingClientRect()
 
     let top = anchorRect.top + window.scrollY
     let left = anchorRect.left + window.scrollX
 
-    // Split placement into main side and alignment part
     const [side, align] = (placement || 'bottom-start').split('-') as [string, string | undefined]
 
     // Base position derived purely from anchor geometry
     if (side === 'bottom') top += anchorRect.height
     if (side === 'right') left += anchorRect.width
+
+    // Apply offset along the placement axis (px)
+    if (offset) {
+      if (side === 'bottom') top += offset
+      if (side === 'top') top -= offset
+      if (side === 'right') left += offset
+      if (side === 'left') left -= offset
+    }
 
     // Alignment adjustments (still only based on anchor)
     if (side === 'top' || side === 'bottom') {
@@ -50,7 +59,7 @@ export const Portal = ({
     }
 
     setPosition({ top, left })
-  }, [placement, anchorRef])
+  }, [placement, anchorRef, offset])
 
   useLayoutEffect(() => {
     const div = document.createElement('div')

@@ -1,0 +1,24 @@
+import { ComponentMeta } from 'client/definitions'
+import { DROPDOWN_LIST_ITEM_PROPS_META } from 'client/meta/DropdownList/DropdownListItem/props'
+import { MultiSelectOptionProps } from 'lib/components'
+import { DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT } from 'lib/components/core/form-elements/Select'
+
+const MULTI_SELECT_OPTION_PROPS_META: ComponentMeta<MultiSelectOptionProps>['props'] = {
+  children: DROPDOWN_LIST_ITEM_PROPS_META.children,
+  disabled: DROPDOWN_LIST_ITEM_PROPS_META.disabled,
+  iconName: DROPDOWN_LIST_ITEM_PROPS_META.iconName,
+  iconPlacement: DROPDOWN_LIST_ITEM_PROPS_META.iconPlacement,
+  justifyContent: {
+    ...DROPDOWN_LIST_ITEM_PROPS_META.justifyContent,
+    defaultValue: String(DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT),
+  },
+  tagAttrs: DROPDOWN_LIST_ITEM_PROPS_META.tagAttrs,
+  tagRef: DROPDOWN_LIST_ITEM_PROPS_META.tagRef,
+  value: {
+    options: ['string'],
+    isRequired: true,
+    description: 'Defines value for the option.',
+  },
+}
+
+export { MULTI_SELECT_OPTION_PROPS_META }

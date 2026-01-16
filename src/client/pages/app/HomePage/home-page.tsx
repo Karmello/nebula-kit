@@ -20,23 +20,37 @@ import { BoxColor } from 'lib/components/core/base/Box'
 import { COLORS, THEMES } from 'lib/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { PageKey, RELEASE_VERSIONS } from 'client/definitions'
+import { PageKey, RELEASE_VERSIONS, RELEASE_INFO } from 'client/definitions'
 
 import { Ortho } from './Ortho'
 
 export const HomePage = () => {
   const navigateTo = useNavigateTo()
 
-  const { theme, setTheme, brand, setBrand, borderRadiusSize, setBorderRadiusSize } = useAppStore()
+  const theme = useAppStore(state => state.theme)
+  const setTheme = useAppStore(state => state.setTheme)
+  const brand = useAppStore(state => state.brand)
+  const setBrand = useAppStore(state => state.setBrand)
+  const borderRadiusSize = useAppStore(state => state.borderRadiusSize)
+  const setBorderRadiusSize = useAppStore(state => state.setBorderRadiusSize)
 
   return (
     <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">
-      <Callout
-        size="sm"
-        variant="outline"
-        content="This is the first public release of NebulaKit Core and Pro. The foundation is in place and production-ready. From here on, the system will continue to evolve through versioned updates."
-        heading={`NebulaKit v${RELEASE_VERSIONS[RELEASE_VERSIONS.length - 1]} is live`}
-      />
+      <Box drawable interactive variant="solid" intent="neutral">
+        <Link
+          href={`${PageKey.foundations}/resources/changelog/core-releases`}
+          onClick={() => {
+            navigateTo(`${PageKey.foundations}/resources/changelog/core-releases`)
+          }}
+        >
+          <Callout
+            size="sm"
+            variant="outline"
+            content={RELEASE_INFO[RELEASE_VERSIONS[0]].description}
+            heading={`NebulaKit v${RELEASE_VERSIONS[0]} is live`}
+          />
+        </Link>
+      </Box>
       <Spacer blockSize="75px" />
       <Flex flexDirection={{ base: 'column', lg: 'row' }} rowGap="80px" columnGap="160px">
         <Flex.Item flex="2">
@@ -138,7 +152,9 @@ export const HomePage = () => {
                     <Text bold>Brand</Text>
                     <Select
                       value={brand}
-                      onChange={value => setBrand(value as BoxColor)}
+                      onClosed={value => {
+                        if (value !== undefined) setBrand(value as BoxColor)
+                      }}
                       inlineSize="150px"
                       size="sm"
                       scrollAlign="center"
@@ -152,7 +168,9 @@ export const HomePage = () => {
                     <Text bold>Border radius</Text>
                     <Select
                       value={borderRadiusSize}
-                      onChange={value => setBorderRadiusSize(value as never)}
+                      onClosed={value => {
+                        if (value !== undefined) setBorderRadiusSize(value as never)
+                      }}
                       inlineSize="150px"
                       size="sm"
                       scrollAlign="center"

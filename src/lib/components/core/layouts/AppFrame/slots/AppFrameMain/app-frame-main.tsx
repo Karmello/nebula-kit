@@ -17,6 +17,7 @@ export const AppFrameMain = ({ children, tagAttrs, tagRef, ...paddings }: AppFra
       }}
       tagRef={tagRef}
       drawable
+      borderRadius="0px"
       {...paddings}
     >
       {children}

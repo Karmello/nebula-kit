@@ -8,7 +8,7 @@ const SLIDE_META: ComponentMeta<SlideProps> = {
   overview: {
     bundle: 'core',
     title: 'Wrapper component that animates content by sliding it into and out of view.',
-    description: [
+    features: [
       'wraps content in a Box and positions it on and off view based on the "from" prop',
       'slides content into and out of view when "visible" prop changes',
     ],

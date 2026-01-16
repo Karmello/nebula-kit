@@ -10,6 +10,7 @@
 
 // Controls
 @use '../components/core/controls/Button/button.scss';
+@use '../components/core/controls/Link/link.scss';
 
 // Elements
 @use '../components/core/elements/Divider/divider.scss';
@@ -19,6 +20,7 @@
 @use '../components/core/feedback/Loader/loader.scss';
 
 // Form elements
+@use '../components/core/form-elements/Checkbox/checkbox.scss';
 @use '../components/core/form-elements/Input/input.scss';
 @use '../components/core/form-elements/Textarea/textarea.scss';
 

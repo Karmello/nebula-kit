@@ -122,6 +122,21 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
       </DropdownList>
     ),
   },
+  {
+    description: 'DropdownList with no options label set.',
+    jsx: (
+      <DropdownList noOptionsLabel="No options">
+        <DropdownList.Trigger>
+          <Button variant="ghost" intent="primary">
+            Toggle list
+          </Button>
+        </DropdownList.Trigger>
+        {Array.from({ length: 0 }, (v, k) => (
+          <DropdownList.Item key={k}>Item {k + 1}</DropdownList.Item>
+        ))}
+      </DropdownList>
+    ),
+  },
 ]
 
 export { DROPDOWN_LIST_EXAMPLES_META }

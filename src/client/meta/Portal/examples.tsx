@@ -13,8 +13,8 @@ const PortalWrapper = ({ placement }: Partial<PortalProps>) => {
         Toggle portal
       </Button>
       {visible ? (
-        <Portal anchorRef={buttonRef} placement={placement}>
-          <Box drawable variant="outline" color="blue" intent="primary">
+        <Portal anchorRef={buttonRef} placement={placement} offset={15}>
+          <Box drawable variant="solid" color="blue" intent="primary" padding="25px">
             Portal content
           </Box>
         </Portal>
@@ -34,8 +34,10 @@ return (
       Toggle portal
     </Button>
     {visible ? (
-      <Portal anchorRef={buttonRef} placement="bottom-start">
-        Portal content
+      <Portal anchorRef={buttonRef} placement="bottom-start" offset={15}>
+        <Box drawable variant="solid" color="blue" intent="primary" padding="25px">
+          Portal content
+        </Box>
       </Portal>
     ) : null}
   </>
@@ -45,6 +47,11 @@ return (
   {
     description: 'Positioned above the anchor element, aligned to its left edge.',
     jsx: <PortalWrapper placement="top-start" />,
+    noCode: true,
+  },
+  {
+    description: 'Positioned above the anchor element, aligned to its center.',
+    jsx: <PortalWrapper placement="top-center" />,
     noCode: true,
   },
   {
@@ -58,6 +65,11 @@ return (
     noCode: true,
   },
   {
+    description: 'Positioned to the right of the anchor element, aligned to its center.',
+    jsx: <PortalWrapper placement="right-center" />,
+    noCode: true,
+  },
+  {
     description: 'Positioned to the right of the anchor element, aligned to its bottom edge.',
     jsx: <PortalWrapper placement="right-end" />,
     noCode: true,
@@ -68,6 +80,11 @@ return (
     noCode: true,
   },
   {
+    description: 'Positioned below the anchor element, aligned to its center.',
+    jsx: <PortalWrapper placement="bottom-center" />,
+    noCode: true,
+  },
+  {
     description: 'Positioned below the anchor element, aligned to its right edge.',
     jsx: <PortalWrapper placement="bottom-end" />,
     noCode: true,
@@ -75,6 +92,11 @@ return (
   {
     description: 'Positioned to the left of the anchor element, aligned to its top edge.',
     jsx: <PortalWrapper placement="left-start" />,
+    noCode: true,
+  },
+  {
+    description: 'Positioned to the left of the anchor element, aligned to its center.',
+    jsx: <PortalWrapper placement="left-center" />,
     noCode: true,
   },
   {

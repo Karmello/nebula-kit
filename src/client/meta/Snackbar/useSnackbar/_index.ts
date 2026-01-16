@@ -8,7 +8,7 @@ const USE_SNACKBAR_META: ComponentMeta<UseSnackbarShowArgs> = {
   overview: {
     name: 'useSnackbar.show()',
     title: 'Programmatic API for triggering snackbar messages.',
-    description: [
+    features: [
       'must be used within a Snackbar provider context',
       'if a Snackbar is already visible, additional calls are ignored',
     ],

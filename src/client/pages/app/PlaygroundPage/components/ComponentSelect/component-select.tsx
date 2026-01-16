@@ -3,7 +3,9 @@ import { Select, Spacer, Text } from 'lib/components'
 import { usePlaygroundStore } from '../../store'
 
 export const ComponentSelect = () => {
-  const { components, activeComponent, setActiveComponent } = usePlaygroundStore()
+  const components = usePlaygroundStore(state => state.components)
+  const activeComponent = usePlaygroundStore(state => state.activeComponent)
+  const setActiveComponent = usePlaygroundStore(state => state.setActiveComponent)
 
   return (
     <>

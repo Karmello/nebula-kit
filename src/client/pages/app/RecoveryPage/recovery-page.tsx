@@ -10,7 +10,7 @@ import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnac
 export const RecoveryPage = () => {
   const [hidePassword, setHidePassword] = useState<boolean>(true)
 
-  const { user } = useAppStore()
+  const user = useAppStore(state => state.user)
   const { search } = useLocation()
   const navigateTo = useNavigateTo()
   const { show } = useSnackbar()

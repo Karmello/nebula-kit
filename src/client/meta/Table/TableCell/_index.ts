@@ -7,7 +7,7 @@ const TABLE_CELL_META: ComponentMeta<TableCellProps> = {
   overview: {
     name: 'Table.Cell',
     title: 'Represents a single cell within a table row.',
-    description: ['should be used inside Table.Row'],
+    features: ['should be used inside Table.Row'],
     composedOf: ['Box'],
     topLevelTags: ['td'],
   },

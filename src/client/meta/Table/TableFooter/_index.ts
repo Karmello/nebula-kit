@@ -7,7 +7,7 @@ const TABLE_FOOTER_META: ComponentMeta<TableFooterProps> = {
   overview: {
     name: 'Table.Footer?',
     title: 'Summary or footer rows of the table.',
-    description: ['expects Table.Row as children'],
+    features: ['expects Table.Row as children'],
     composedOf: ['Box'],
     topLevelTags: ['tfoot'],
     slots: ['Table.Row'],

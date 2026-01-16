@@ -8,7 +8,7 @@ const FOCUS_TRAP_META: ComponentMeta<FocusTrapProps> = {
   overview: {
     bundle: 'pro',
     title: 'Utility for trapping keyboard focus within a specific region.',
-    description: [
+    features: [
       'traps keyboard focus within a specific DOM element while active',
       'restores focus to the previously focused element when deactivated',
       'detects ESC key presses and optional outside clicks to request dismissal',

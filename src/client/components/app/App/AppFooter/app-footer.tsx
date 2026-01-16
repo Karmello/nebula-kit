@@ -15,23 +15,24 @@ export const AppFooter = () => {
     >
       <Footer.Section>
         <Text bold typography="caption">
-          About the library
+          About the website
         </Text>
         <Spacer blockSize="20px" />
+        <Text scale="compact" italic color="gray" intent="primary">
+          This website is built entirely with NebulaKit components. It serves as both documentation and a live
+          showcase of the system in real use.
+        </Text>
+        <Spacer blockSize="10px" />
         <Link
-          href="/foundations/resources/changelog/core-releases"
+          href={`${PageKey.foundations}/resources/changelog/core-releases`}
           onClick={() => {
-            navigateTo('/foundations/resources/changelog/core-releases')
+            navigateTo(`${PageKey.foundations}/resources/changelog/core-releases`)
           }}
         >
           <Text scale="compact" color="blue" intent="primary">
-            NebulaKit v{RELEASE_VERSIONS[RELEASE_VERSIONS.length - 1]}
+            NebulaKit v{RELEASE_VERSIONS[0]}
           </Text>
         </Link>
-        <Spacer blockSize="10px" />
-        <Text scale="compact" italic color="gray" intent="primary">
-          This website is built entirely with NebulaKit components.
-        </Text>
       </Footer.Section>
       <Footer.Section>
         <Text bold typography="caption">
@@ -100,7 +101,7 @@ export const AppFooter = () => {
           </MarkerList.Item>
         </MarkerList>
         <Spacer />
-        <Text scale="compact" typography="caption" intent="primary">
+        <Text scale="compact" typography="caption" intent="primary" color="gray">
           {getCopyrightInfo()}
         </Text>
       </Footer.Section>

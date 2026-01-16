@@ -7,7 +7,7 @@ const FORM_ACTIONS_META: ComponentMeta<FormActionsProps> = {
   overview: {
     name: 'Form.Actions',
     title: 'Container for form action elements such as submit and secondary buttons.',
-    description: ['controls layout and alignment of form action elements independently from form fields'],
+    features: ['controls layout and alignment of form action elements independently from form fields'],
     composedOf: ['Flex'],
     topLevelTags: ['div'],
     slots: ['Form.ActionButton'],

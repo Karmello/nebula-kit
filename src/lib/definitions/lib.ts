@@ -67,6 +67,7 @@ export const ICON_NAMES = [
   'receipt',
   'screen-share',
   'search',
+  'search-x',
   'settings',
   'shapes',
   'star',

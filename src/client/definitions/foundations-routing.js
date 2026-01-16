@@ -23,6 +23,7 @@ export const FOUNDATIONS_CATEGORIES = [
           { key: 'visual-coherence', label: 'Visual coherence' },
           { key: 'creative-freedom', label: 'Creative freedom' },
           { key: 'hidden-css', label: 'Hidden CSS' },
+          { key: 'visible-composition', label: 'Visible composition' },
         ],
       },
       {
@@ -46,7 +47,7 @@ export const FOUNDATIONS_CATEGORIES = [
         label: 'Styling system',
         sections: [
           { key: 'orthogonality', label: 'Orthogonality' },
-          { key: 'intents_and_variants', label: 'Intents + variants' },
+          { key: 'intents-and-variants', label: 'Intents + variants' },
           { key: 'color-application', label: 'Color application' },
           { key: 'typography', label: 'Typography' },
           { key: 'breakpoints', label: 'Breakpoints' },
@@ -100,3 +101,13 @@ export const FOUNDATIONS_CATEGORIES = [
     ],
   },
 ]
+
+export const FOUNDATIONS_SECTIONS = []
+
+FOUNDATIONS_CATEGORIES.forEach(c =>
+  c.items.forEach(i =>
+    i.sections.forEach(s => {
+      FOUNDATIONS_SECTIONS.push({ categoryKey: c.key, itemKey: i.key, sectionKey: s.key })
+    })
+  )
+)

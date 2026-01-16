@@ -1,6 +1,15 @@
 import { ComponentMeta } from 'client/definitions'
-import { BoxProps, ButtonProps, CalloutProps, SectionProps, TextProps, IconProps } from 'lib/components'
 import { RespValue } from 'lib/definitions'
+
+import {
+  BoxProps,
+  ButtonProps,
+  CalloutProps,
+  SectionProps,
+  TextProps,
+  IconProps,
+  CheckboxProps,
+} from 'lib/components'
 
 export type PropValue = RespValue<string | number | boolean>
 
@@ -93,4 +102,5 @@ export const PLAYGROUND_MAP: Record<string, unknown[]> = {
   ] as (keyof SectionProps)[],
   Callout: ['content', 'heading', 'intent', 'size', 'status', 'variant'] as (keyof CalloutProps)[],
   Icon: ['color', 'intent', 'name', 'size'] as (keyof IconProps)[],
+  Checkbox: ['checked', 'color', 'disabled', 'intent', 'size', 'variant'] as (keyof CheckboxProps)[],
 }

@@ -10,7 +10,7 @@ const FOOTER_META: ComponentMeta<FooterProps> = {
   overview: {
     bundle: 'core',
     title: 'Layout component for organizing footer content into responsive sections.',
-    description: [
+    features: [
       'commonly used inside AppFrame.Footer at the bottom of the page',
       'manages spacing and layout for all its sections',
       'renders as a <div> by default since AppFrame.Footer already renders as <footer>',

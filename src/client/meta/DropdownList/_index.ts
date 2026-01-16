@@ -11,19 +11,22 @@ const DROPDOWN_LIST_META: ComponentMeta<DropdownListProps> = {
   overview: {
     bundle: 'core',
     title: 'Low-level, unopinionated primitive for rendering floating lists of interactive options.',
-    description: [
+    features: [
       'handles positioning, visibility, keyboard navigation and scrolling behavior',
       'renders through a Portal to ensure correct layering and positioning',
+      'resolves placement dynamically using the shared Floating positioning logic to avoid viewport clipping',
+      'built on top of VirtualList for efficient rendering and scrolling of list items',
       'applies consistent styling to list items',
       'intended to be composed into higher-level selection components',
     ],
-    composedOf: ['Flex', 'Box', 'Resize', 'Portal'],
+    composedOf: ['Box', 'Floating', 'Portal', 'Resize', 'VirtualList'],
     topLevelTags: ['div'],
     slots: ['DropdownList.Trigger', 'DropdownList.Item'],
   },
   props: DROPDOWN_LIST_PROPS_META,
   examples: DROPDOWN_LIST_EXAMPLES_META,
   changelog: {
+    '0.3.0': ['Public API updated'],
     '0.2.3': ['Released'],
   },
 }

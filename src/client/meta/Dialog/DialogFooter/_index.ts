@@ -7,7 +7,7 @@ const DIALOG_FOOTER_META: ComponentMeta<DialogFooterProps> = {
   overview: {
     name: 'Dialog.Footer?',
     title: 'Footer area of the dialog.',
-    description: ['for actions'],
+    features: ['for actions'],
     composedOf: ['Box'],
     topLevelTags: ['div'],
   },
