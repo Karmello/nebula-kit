@@ -1,9 +1,13 @@
 {
-  "latest": "0.2.3",
+  "latest": "0.3.0",
   "all": [
     {
       "version": "0.2.3",
       "shasum": "60cc061fb7bdde7f0802610e2a39f496e6b82185"
+    },
+    {
+      "version": "0.3.0",
+      "shasum": "f9ac869e98c148e7689369f677bfe704969ce134"
     }
   ]
 }
