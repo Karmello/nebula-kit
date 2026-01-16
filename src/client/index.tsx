@@ -14,11 +14,17 @@ const Node = () => {
   const theme = useAppStore(state => state.theme)
   const brand = useAppStore(state => state.brand)
   const borderRadiusSize = useAppStore(state => state.borderRadiusSize)
+  const showAppJump = useAppStore(state => state.showAppJump)
 
   return (
     <BrowserRouter>
       <HydrationGate>
-        <NebkitProvider theme={theme} brand={brand} borderRadiusSize={borderRadiusSize}>
+        <NebkitProvider
+          theme={theme}
+          brand={brand}
+          borderRadiusSize={borderRadiusSize}
+          lockGlobalScroll={showAppJump}
+        >
           <Snackbar closeOnOutsideClick autoCloseDelay={10000}>
             <App />
           </Snackbar>

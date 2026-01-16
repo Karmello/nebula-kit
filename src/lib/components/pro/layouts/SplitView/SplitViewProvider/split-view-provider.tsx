@@ -2,7 +2,7 @@ import { createContext, useContext, useState, ReactNode, useLayoutEffect } from 
 
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize/definitions'
 import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
-import { useScreen } from 'lib/hooks'
+import { useScreen, useGlobalScrollLock } from 'lib/hooks'
 
 import { SplitViewOwnProps } from '../definitions'
 
@@ -26,6 +26,7 @@ export const SplitViewProvider = ({
   switchAt = DEFAULT_SWITCH_AT,
 }: ProviderProps) => {
   const { bp } = useScreen()
+  const { lock, unlock } = useGlobalScrollLock()
 
   const [mode, setMode] = useState<SplitViewMode>(
     BREAKPOINTS.slice(0, BREAKPOINTS.indexOf(switchAt)).includes(bp) ? 'overlay' : 'inline'
@@ -44,9 +45,11 @@ export const SplitViewProvider = ({
 
   useLayoutEffect(() => {
     if (mode === 'overlay' && sideOpen) {
+      lock()
       document.body.style.pointerEvents = 'none'
     } else {
       setTimeout(() => {
+        unlock()
         document.body.style.pointerEvents = ''
       }, DEFAULT_RESIZE_DURATION)
     }

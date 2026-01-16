@@ -1,5 +1,7 @@
 import { ReactElement, useLayoutEffect } from 'react'
 
+import { useGlobalScrollLock } from 'lib/hooks'
+
 import {
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
   DEFAULT_NEBKIT_BRAND,
@@ -13,7 +15,18 @@ export const NebkitProvider = ({
   theme = DEFAULT_NEBKIT_THEME,
   brand = DEFAULT_NEBKIT_BRAND,
   borderRadiusSize = DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
+  lockGlobalScroll,
 }: NebkitProviderProps): ReactElement => {
+  const { lock, unlock } = useGlobalScrollLock()
+
+  useLayoutEffect(() => {
+    if (lockGlobalScroll) {
+      lock()
+    } else {
+      unlock()
+    }
+  }, [lockGlobalScroll, lock, unlock])
+
   // shared transition re-enable gate
   let enableRaf: number | null = null
 

@@ -2,7 +2,7 @@ import { CSSProperties, useLayoutEffect, useMemo, useRef, useState } from 'react
 
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { Autocomplete, Box, Resize } from 'lib/components'
+import { Autocomplete, Box, Resize, Text } from 'lib/components'
 
 import { RESIZE_DURATION, OPTIONS } from './definitions'
 
@@ -95,7 +95,7 @@ export const AppJump = () => {
               iconPlacement="right"
               justifyContent="space-between"
             >
-              {label}
+              <Text tagAttrs={{ style: { whiteSpace: 'wrap', lineHeight: 1.1 } }}>{label}</Text>
             </Autocomplete.Option>
           )
         })}
