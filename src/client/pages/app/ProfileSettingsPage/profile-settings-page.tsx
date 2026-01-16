@@ -16,14 +16,15 @@ import { UpdatePasswordSection } from './UpdatePasswordSection'
 export const ProfileSettingsPage = () => {
   const { search } = useLocation()
   const { show } = useSnackbar()
+
   const user = useAppStore(state => state.user)
   const getUser = useGetUser()
 
   useLayoutEffect(() => {
-    if (user) {
+    if (user && !getUser.data) {
       getUser.sendRequest()
     }
-  }, [])
+  }, [user])
 
   useLayoutEffect(() => {
     const params = new URLSearchParams(search)
@@ -35,10 +36,6 @@ export const ProfileSettingsPage = () => {
       window.history.replaceState({}, '', PageKey.profileSettings)
     }
   }, [search])
-
-  if (!user) {
-    return null
-  }
 
   return (
     <Box padding={{ base: '20px', lg: '50px' }} maxInlineSize="75rem">

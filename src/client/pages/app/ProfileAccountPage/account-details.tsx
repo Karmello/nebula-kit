@@ -13,10 +13,10 @@ export default () => {
   const user = useAppStore(state => state.user)
 
   useLayoutEffect(() => {
-    if (user) {
+    if (user && !getUser.data) {
       getUser.sendRequest()
     }
-  }, [])
+  }, [user])
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(getUser.data.user.licenseKey)

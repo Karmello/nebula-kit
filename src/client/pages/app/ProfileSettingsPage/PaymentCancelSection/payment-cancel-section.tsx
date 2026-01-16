@@ -16,8 +16,8 @@ export const PaymentCancelSection = ({
       <Text intent="neutral">
         This section allows you to cancel your active subscription and return to the free plan.
       </Text>
+      <Spacer blockSize="30px" />
       <Text bold intent="neutral">
-        <Spacer blockSize="30px" />
         What happens when you cancel
       </Text>
       <Spacer blockSize="15px" />

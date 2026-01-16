@@ -30,6 +30,8 @@ export const useMakeApiRequest = <TData, TError>({
   const [isMakingRequest, setIsMakingRequest] = useState<boolean>(false)
 
   const sendRequest = useCallback(async (body?: object): Promise<UseMakeApiRequestRes<TData, TError>> => {
+    if (isMakingRequest) return
+
     setIsMakingRequest(true)
     setCode(null)
 

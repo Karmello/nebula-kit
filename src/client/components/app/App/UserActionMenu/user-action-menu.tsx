@@ -21,9 +21,10 @@ export const UserActionMenu = () => {
   return (
     <Flex>
       <Button
+        key={String(showAppJump)}
         tagAttrs={{
           onClick: () => {
-            setShowAppJump(!showAppJump)
+            if (!showAppJump) setShowAppJump(true)
           },
         }}
         iconName={showAppJump ? 'search-x' : 'search'}

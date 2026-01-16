@@ -16,7 +16,7 @@ type Option = {
   iconName: IconName
 }
 
-export const RESIZE_DURATION = 125
+export const RESIZE_DURATION = 200
 
 export const OPTIONS: Option[] = []
 

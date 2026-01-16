@@ -36,15 +36,21 @@ export const AppJump = () => {
     if (showAppJump) {
       setTimeout(() => {
         autocompleteRef.current?.querySelector('input')?.focus()
-      }, RESIZE_DURATION)
+      })
     }
   }, [showAppJump])
 
   useLayoutEffect(() => {
+    if (!showAppJump) return
     const input = autocompleteRef.current?.querySelector('input')
     if (input) {
       input.onkeydown = e => {
         if (e.key === 'Escape') setShowAppJump(false)
+      }
+      input.onblur = () => {
+        setTimeout(() => {
+          setShowAppJump(false)
+        }, RESIZE_DURATION)
       }
     }
   }, [autocompleteRef.current, showAppJump])
