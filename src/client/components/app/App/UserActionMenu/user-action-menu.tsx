@@ -21,7 +21,6 @@ export const UserActionMenu = () => {
   return (
     <Flex>
       <Button
-        key={String(showAppJump)}
         tagAttrs={{
           onClick: () => {
             if (!showAppJump) setShowAppJump(true)

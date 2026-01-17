@@ -1,5 +1,9 @@
 import { sentenceCase } from 'change-case'
 
+import { useNavigateTo } from 'client/hooks'
+import { useAppStore } from 'client/store'
+import { PageKey, RELEASE_VERSIONS, RELEASE_INFO } from 'client/definitions'
+
 import {
   Box,
   Divider,
@@ -18,9 +22,6 @@ import {
 import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/core/utility/NebkitProvider'
 import { BoxColor } from 'lib/components/core/base/Box'
 import { COLORS, THEMES } from 'lib/definitions'
-import { useNavigateTo } from 'client/hooks'
-import { useAppStore } from 'client/store'
-import { PageKey, RELEASE_VERSIONS, RELEASE_INFO } from 'client/definitions'
 
 import { Ortho } from './Ortho'
 
@@ -36,21 +37,12 @@ export const HomePage = () => {
 
   return (
     <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">
-      <Box drawable interactive variant="solid" intent="neutral">
-        <Link
-          href={`${PageKey.foundations}/resources/changelog/core-releases`}
-          onClick={() => {
-            navigateTo(`${PageKey.foundations}/resources/changelog/core-releases`)
-          }}
-        >
-          <Callout
-            size="sm"
-            variant="outline"
-            content={RELEASE_INFO[RELEASE_VERSIONS[0]].description}
-            heading={`NebulaKit v${RELEASE_VERSIONS[0]} is live`}
-          />
-        </Link>
-      </Box>
+      <Callout
+        size="sm"
+        variant="outline"
+        content={RELEASE_INFO[RELEASE_VERSIONS[0]].description}
+        heading={`NebulaKit v${RELEASE_VERSIONS[0]} is live`}
+      />
       <Spacer blockSize="75px" />
       <Flex flexDirection={{ base: 'column', lg: 'row' }} rowGap="80px" columnGap="160px">
         <Flex.Item flex="2">

@@ -36,7 +36,7 @@ export const AppJump = () => {
     if (showAppJump) {
       setTimeout(() => {
         autocompleteRef.current?.querySelector('input')?.focus()
-      })
+      }, RESIZE_DURATION)
     }
   }, [showAppJump])
 
