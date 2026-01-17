@@ -74,6 +74,7 @@ export const DropdownListMenu = () => {
   return (
     <Floating
       anchorRef={triggerRef}
+      mode="fit-y"
       floatingBlockSize={itemsContainerBlockSize}
       placement={placement}
       onResolve={resolved => {

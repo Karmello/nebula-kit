@@ -22,7 +22,8 @@ type PropsFromBox = Pick<
   BoxProps,
   'color' | 'intent' | 'padding' | 'paddingBlock' | 'paddingInline' | 'textAlign'
 > & {
-  maxInlineSize?: string
+  minInlineSize: number
+  maxInlineSize: number
 }
 
 type TooltipOwnProps = {

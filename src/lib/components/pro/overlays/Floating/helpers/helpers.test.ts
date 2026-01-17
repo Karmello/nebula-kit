@@ -1,402 +1,254 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { describe, it, expect } from 'vitest'
 
-import { resolve } from './helpers'
-import type { FloatingResolved, FloatingProps } from '../definitions'
+import {
+  applyViewportPadding,
+  expandAxes,
+  formatPlacement,
+  getInlineSpace,
+  normalizeInlineEnvelope,
+  parsePlacement,
+  Rect,
+  resolveAutoAlign,
+  resolveAutoSide,
+} from './helpers'
 
-describe('Floating resolve - basic behavior', () => {
-  beforeEach(() => {
-    // Mock viewport
-    Object.defineProperty(window, 'innerWidth', {
-      writable: true,
-      configurable: true,
-      value: 1000,
+describe('parsePlacement', () => {
+  it('parses side and align from placement string', () => {
+    const result = parsePlacement('top-start')
+
+    expect(result).toEqual({
+      side: 'top',
+      align: 'start',
     })
+  })
+})
 
-    Object.defineProperty(window, 'innerHeight', {
-      writable: true,
-      configurable: true,
-      value: 800,
+describe('formatPlacement', () => {
+  it('formats side and align into placement string', () => {
+    const result = formatPlacement('bottom', 'end')
+
+    expect(result).toBe('bottom-end')
+  })
+})
+
+describe('expandAxes', () => {
+  it('expands both axes by default', () => {
+    const result = expandAxes()
+
+    expect(result).toEqual(['top', 'right', 'bottom', 'left'])
+  })
+
+  it('expands x axis to left and right', () => {
+    const result = expandAxes('x')
+
+    expect(result).toEqual(['left', 'right'])
+  })
+
+  it('expands y axis to top and bottom', () => {
+    const result = expandAxes('y')
+
+    expect(result).toEqual(['top', 'bottom'])
+  })
+})
+
+describe('applyViewportPadding', () => {
+  const viewport: Rect = {
+    top: 0,
+    left: 0,
+    right: 100,
+    bottom: 200,
+    width: 100,
+    height: 200,
+  }
+
+  it('applies padding to all sides and dimensions', () => {
+    const result = applyViewportPadding(viewport, 10)
+
+    expect(result).toEqual({
+      top: 10,
+      left: 10,
+      right: 90,
+      bottom: 190,
+      width: 80,
+      height: 180,
     })
   })
 
-  it('keeps placement when there is enough space', () => {
-    const anchorEl = {
-      getBoundingClientRect: vi.fn(() => ({
-        top: 300,
-        bottom: 340,
-        left: 400,
-        right: 440,
-        width: 40,
-        height: 40,
-      })),
-    } as unknown as HTMLElement
+  it('returns identical rect when padding is zero', () => {
+    const result = applyViewportPadding(viewport, 0)
 
-    const anchorRef = { current: anchorEl }
+    expect(result).toEqual(viewport)
+  })
+})
 
-    const props: FloatingProps = {
-      children: null,
-      anchorRef,
-      placement: 'bottom-start',
-      floatingBlockSize: 200,
-      floatingInlineSize: 200,
-      offset: 0,
-      viewportPadding: 0,
-      onResolve: null,
-    }
+describe('normalizeInlineEnvelope', () => {
+  it('clamps maxInlineSize to viewport width', () => {
+    const result = normalizeInlineEnvelope(200, 500, 300)
 
-    let resolved: FloatingResolved | null = null
-
-    resolve(props, r => {
-      resolved = r
+    expect(result).toEqual({
+      min: 200,
+      max: 300,
     })
-
-    expect(resolved).not.toBeNull()
-    expect(resolved!.placement).toBe('bottom-start')
-    expect(resolved!.blockSize).toBeUndefined()
   })
 
-  it('does not flip if staying shows more content than flipping', () => {
-    const anchorEl = {
-      getBoundingClientRect: vi.fn(() => ({
-        top: 300,
-        bottom: 340,
-        left: 400,
-        right: 440,
-        width: 40,
-        height: 40,
-      })),
-    } as unknown as HTMLElement
+  it('clamps minInlineSize to maxInlineSize', () => {
+    const result = normalizeInlineEnvelope(400, 300, 800)
 
-    const anchorRef = { current: anchorEl }
-
-    const props: FloatingProps = {
-      children: null,
-      anchorRef,
-      placement: 'bottom-start',
-      floatingBlockSize: 600,
-      offset: 0,
-      viewportPadding: 0,
-      onResolve: null,
-    }
-
-    let resolved: FloatingResolved | null = null
-
-    resolve(props, r => {
-      resolved = r
+    expect(result).toEqual({
+      min: 300,
+      max: 300,
     })
-
-    expect(resolved).not.toBeNull()
-    expect(resolved!.placement).toBe('bottom-start')
-    expect(resolved!.blockSize).toBe(460)
   })
 
-  it('flips when the opposite side shows more content', () => {
-    const anchorEl = {
-      getBoundingClientRect: vi.fn(() => ({
-        top: 500,
-        bottom: 540,
-        left: 400,
-        right: 440,
-        width: 40,
-        height: 40,
-      })),
-    } as unknown as HTMLElement
+  it('returns values unchanged when within viewport', () => {
+    const result = normalizeInlineEnvelope(100, 300, 500)
 
-    const anchorRef = { current: anchorEl }
-
-    const props: FloatingProps = {
-      children: null,
-      anchorRef,
-      placement: 'bottom-start',
-      floatingBlockSize: 600,
-      offset: 0,
-      viewportPadding: 0,
-      onResolve: null,
-    }
-
-    let resolved: FloatingResolved | null = null
-
-    resolve(props, r => {
-      resolved = r
+    expect(result).toEqual({
+      min: 100,
+      max: 300,
     })
+  })
+})
 
-    expect(resolved).not.toBeNull()
-    expect(resolved!.placement).toBe('top-start')
-    expect(resolved!.blockSize).toBe(500)
+describe('getInlineSpace', () => {
+  const viewport: Rect = {
+    top: 0,
+    left: 0,
+    right: 300,
+    bottom: 200,
+    width: 300,
+    height: 200,
+  }
+
+  const anchor: Rect = {
+    top: 50,
+    left: 100,
+    right: 160,
+    bottom: 90,
+    width: 60,
+    height: 40,
+  }
+
+  it('returns inline space on the left side', () => {
+    const space = getInlineSpace('left', anchor, viewport)
+
+    expect(space).toBe(100)
   })
 
-  it('nudges alignment from start to center when clipped on the right', () => {
-    const anchorEl = {
-      getBoundingClientRect: vi.fn(() => ({
-        top: 300,
-        bottom: 340,
-        left: 800,
-        right: 840,
-        width: 40,
-        height: 40,
-      })),
-    } as unknown as HTMLElement
+  it('returns inline space on the right side', () => {
+    const space = getInlineSpace('right', anchor, viewport)
 
-    const anchorRef = { current: anchorEl }
-
-    const props: FloatingProps = {
-      children: null,
-      anchorRef,
-      placement: 'bottom-start',
-      floatingInlineSize: 300,
-      offset: 0,
-      viewportPadding: 0,
-      onResolve: null,
-    }
-
-    let resolved: FloatingResolved | null = null
-
-    resolve(props, r => {
-      resolved = r
-    })
-
-    expect(resolved).not.toBeNull()
-    expect(resolved!.placement).toBe('bottom-center')
+    expect(space).toBe(140)
   })
 
-  it('nudges alignment from end to center when clipped on the left', () => {
-    const anchorEl = {
-      getBoundingClientRect: vi.fn(() => ({
-        top: 300,
-        bottom: 340,
-        left: 200,
-        right: 240,
-        width: 40,
-        height: 40,
-      })),
-    } as unknown as HTMLElement
+  it('subtracts offset from inline space', () => {
+    const space = getInlineSpace('left', anchor, viewport, 10)
 
-    const anchorRef = { current: anchorEl }
-
-    const props: FloatingProps = {
-      children: null,
-      anchorRef,
-      placement: 'bottom-end',
-      floatingInlineSize: 300,
-      offset: 0,
-      viewportPadding: 0,
-      onResolve: null,
-    }
-
-    let resolved: FloatingResolved | null = null
-
-    resolve(props, r => {
-      resolved = r
-    })
-
-    expect(resolved).not.toBeNull()
-    expect(resolved!.placement).toBe('bottom-center')
+    expect(space).toBe(90)
   })
 
-  it('flips from top to bottom when bottom shows more content', () => {
-    const anchorEl = {
-      getBoundingClientRect: vi.fn(() => ({
-        top: 100,
-        bottom: 140,
-        left: 400,
-        right: 440,
-        width: 40,
-        height: 40,
-      })),
-    } as unknown as HTMLElement
+  it('returns viewport width for top and bottom sides', () => {
+    expect(getInlineSpace('top', anchor, viewport)).toBe(300)
+    expect(getInlineSpace('bottom', anchor, viewport)).toBe(300)
+  })
+})
 
-    const anchorRef = { current: anchorEl }
+describe('resolveAutoAlign', () => {
+  const viewport: Rect = {
+    top: 0,
+    left: 0,
+    right: 300,
+    bottom: 300,
+    width: 300,
+    height: 300,
+  }
 
-    const props: FloatingProps = {
-      children: null,
-      anchorRef,
-      placement: 'top-start',
-      floatingBlockSize: 600,
-      offset: 0,
-      viewportPadding: 0,
-      onResolve: null,
+  it('returns start when anchor center is in first third', () => {
+    const anchor: Rect = {
+      top: 0,
+      left: 10,
+      right: 30,
+      bottom: 20,
+      width: 20,
+      height: 20,
     }
 
-    let resolved: FloatingResolved | null = null
-
-    resolve(props, r => {
-      resolved = r
-    })
-
-    expect(resolved).not.toBeNull()
-    expect(resolved!.placement).toBe('bottom-start')
-    expect(resolved!.blockSize).toBeUndefined()
+    expect(resolveAutoAlign('bottom', anchor, viewport)).toBe('start')
   })
 
-  it('when neither side fits, picks the side with more space and clamps', () => {
-    const anchorEl = {
-      getBoundingClientRect: vi.fn(() => ({
-        top: 300,
-        bottom: 340,
-        left: 400,
-        right: 440,
-        width: 40,
-        height: 40,
-      })),
-    } as unknown as HTMLElement
-
-    const anchorRef = { current: anchorEl }
-
-    const props: FloatingProps = {
-      children: null,
-      anchorRef,
-      placement: 'bottom-start',
-      floatingBlockSize: 1000,
-      offset: 0,
-      viewportPadding: 0,
-      onResolve: null,
+  it('returns center when anchor center is in middle third', () => {
+    const anchor: Rect = {
+      top: 0,
+      left: 130,
+      right: 170,
+      bottom: 20,
+      width: 40,
+      height: 20,
     }
 
-    let resolved: FloatingResolved | null = null
-
-    resolve(props, r => {
-      resolved = r
-    })
-
-    expect(resolved).not.toBeNull()
-    expect(resolved!.placement).toBe('bottom-start')
-    expect(resolved!.blockSize).toBe(460)
+    expect(resolveAutoAlign('bottom', anchor, viewport)).toBe('center')
   })
 
-  it('keeps center alignment for left placement when fully visible vertically', () => {
-    const anchorEl = {
-      getBoundingClientRect: vi.fn(() => ({
-        top: 300,
-        bottom: 340,
-        left: 400,
-        right: 440,
-        width: 40,
-        height: 40,
-      })),
-    } as unknown as HTMLElement
-
-    const anchorRef = { current: anchorEl }
-
-    const props: FloatingProps = {
-      children: null,
-      anchorRef,
-      placement: 'left-center',
-      floatingBlockSize: 200,
-      offset: 0,
-      viewportPadding: 0,
-      onResolve: null,
+  it('returns end when anchor center is in last third', () => {
+    const anchor: Rect = {
+      top: 0,
+      left: 250,
+      right: 290,
+      bottom: 20,
+      width: 40,
+      height: 20,
     }
 
-    let resolved: FloatingResolved | null = null
+    expect(resolveAutoAlign('bottom', anchor, viewport)).toBe('end')
+  })
+})
 
-    resolve(props, r => {
-      resolved = r
-    })
+describe('resolveAutoSide', () => {
+  const viewport: Rect = {
+    top: 0,
+    left: 0,
+    right: 300,
+    bottom: 300,
+    width: 300,
+    height: 300,
+  }
 
-    expect(resolved).not.toBeNull()
-    expect(resolved!.placement).toBe('left-center')
-    expect(resolved!.blockSize).toBeUndefined()
+  it('returns bottom when anchor is in top third (y axis)', () => {
+    const anchor: Rect = {
+      top: 10,
+      left: 0,
+      right: 20,
+      bottom: 30,
+      width: 20,
+      height: 20,
+    }
+
+    expect(resolveAutoSide('y', anchor, viewport)).toBe('bottom')
   })
 
-  it('nudges center to end for left placement when clipped at the bottom', () => {
-    const anchorEl = {
-      getBoundingClientRect: vi.fn(() => ({
-        top: 650,
-        bottom: 690,
-        left: 400,
-        right: 440,
-        width: 40,
-        height: 40,
-      })),
-    } as unknown as HTMLElement
-
-    const anchorRef = { current: anchorEl }
-
-    const props: FloatingProps = {
-      children: null,
-      anchorRef,
-      placement: 'left-center',
-      floatingBlockSize: 300,
-      offset: 0,
-      viewportPadding: 0,
-      onResolve: null,
+  it('returns null when anchor is in middle third (y axis)', () => {
+    const anchor: Rect = {
+      top: 140,
+      left: 0,
+      right: 20,
+      bottom: 160,
+      width: 20,
+      height: 20,
     }
 
-    let resolved: FloatingResolved | null = null
-
-    resolve(props, r => {
-      resolved = r
-    })
-
-    expect(resolved).not.toBeNull()
-    expect(resolved!.placement).toBe('left-end')
+    expect(resolveAutoSide('y', anchor, viewport)).toBe(null)
   })
 
-  it('nudges center to end for right placement when clipped at the bottom', () => {
-    const anchorEl = {
-      getBoundingClientRect: vi.fn(() => ({
-        top: 650,
-        bottom: 690,
-        left: 400,
-        right: 440,
-        width: 40,
-        height: 40,
-      })),
-    } as unknown as HTMLElement
-
-    const anchorRef = { current: anchorEl }
-
-    const props: FloatingProps = {
-      children: null,
-      anchorRef,
-      placement: 'right-center',
-      floatingBlockSize: 300,
-      offset: 0,
-      viewportPadding: 0,
-      onResolve: null,
+  it('returns top when anchor is in bottom third (y axis)', () => {
+    const anchor: Rect = {
+      top: 260,
+      left: 0,
+      right: 20,
+      bottom: 280,
+      width: 20,
+      height: 20,
     }
 
-    let resolved: FloatingResolved | null = null
-
-    resolve(props, r => {
-      resolved = r
-    })
-
-    expect(resolved).not.toBeNull()
-    expect(resolved!.placement).toBe('right-end')
-  })
-
-  it('preserves center alignment when left flips to right and center still fits', () => {
-    const anchorEl = {
-      getBoundingClientRect: vi.fn(() => ({
-        top: 300,
-        bottom: 340,
-        left: 20,
-        right: 60,
-        width: 40,
-        height: 40,
-      })),
-    } as unknown as HTMLElement
-
-    const anchorRef = { current: anchorEl }
-
-    const props: FloatingProps = {
-      children: null,
-      anchorRef,
-      placement: 'left-center',
-      floatingBlockSize: 200,
-      offset: 0,
-      viewportPadding: 0,
-      onResolve: null,
-    }
-
-    let resolved: FloatingResolved | null = null
-
-    resolve(props, r => {
-      resolved = r
-    })
-
-    expect(resolved).not.toBeNull()
-    expect(resolved!.placement).toBe('right-center')
+    expect(resolveAutoSide('y', anchor, viewport)).toBe('top')
   })
 })

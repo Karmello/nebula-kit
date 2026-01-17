@@ -49,8 +49,10 @@ export const VirtualList = <T,>({
     const maxScrollTop = Math.max(0, (items.length - visibleItemsCount) * itemHeight)
     const nextScrollTop = Math.max(0, Math.min(baseIndex * itemHeight, maxScrollTop))
 
-    el.scrollTop = nextScrollTop
-    setScrollTop(nextScrollTop)
+    if (el.scrollTop !== nextScrollTop) {
+      el.scrollTop = nextScrollTop
+      setScrollTop(nextScrollTop)
+    }
   }, [scrollToIndex, scrollAlign, visibleItemsCount, itemHeight, items.length])
 
   useLayoutEffect(() => {

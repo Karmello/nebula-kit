@@ -1,55 +1,72 @@
 import { useEffect, useState } from 'react'
 
-import { resolve } from './helpers'
-import { FloatingProps, FloatingResolved } from './definitions'
+import { resolveFitStrategy, resolveProjectStrategy } from './strategies'
+import { DEFAULT_FLOATING_PLACEMENT, FloatingProps, FloatingResolved } from './definitions'
 
-export const Floating = ({
+export function Floating({
   children,
   anchorRef,
-  onResolve,
-  placement,
-  flipThresholdRatio,
+  mode,
+  placement = DEFAULT_FLOATING_PLACEMENT,
   floatingBlockSize,
-  floatingInlineSize,
+  maxInlineSize,
+  minInlineSize,
   offset,
   viewportPadding,
-}: FloatingProps) => {
+  onResolve,
+}: FloatingProps) {
   const [resolved, setResolved] = useState<FloatingResolved | null>(null)
 
-  const props = {
-    children,
-    anchorRef,
-    onResolve,
-    placement,
-    flipThresholdRatio,
-    floatingBlockSize,
-    floatingInlineSize,
-    offset,
-    viewportPadding,
-  }
-
+  // re-resolve on viewport changes
   useEffect(() => {
-    resolve(props, setResolved)
-  }, [resolve])
+    const resolve = () => {
+      const next =
+        mode === 'fit-x' || mode === 'fit-y'
+          ? resolveFitStrategy({
+              anchorRef,
+              mode,
+              placement,
+              offset,
+              viewportPadding,
+              floatingBlockSize,
+            })
+          : resolveProjectStrategy({
+              anchorRef,
+              mode,
+              placement,
+              offset,
+              viewportPadding,
+              minInlineSize: minInlineSize as never,
+              maxInlineSize: maxInlineSize as never,
+            })
 
+      setResolved(prev => {
+        if (prev && prev.placement === next.placement && prev.blockSize === next.blockSize) {
+          return prev
+        }
+        return next
+      })
+    }
+
+    window.addEventListener('resize', resolve)
+    window.addEventListener('scroll', resolve, true)
+
+    if (!resolved) {
+      resolve()
+    }
+
+    return () => {
+      window.removeEventListener('resize', resolve)
+      window.removeEventListener('scroll', resolve, true)
+    }
+  }, [mode, placement, floatingBlockSize, maxInlineSize, minInlineSize, offset, viewportPadding])
+
+  // notify consumer
   useEffect(() => {
     if (resolved) {
       onResolve?.(resolved)
     }
   }, [resolved])
-
-  useEffect(() => {
-    const onResize = () => resolve(props, setResolved)
-    const onScroll = () => resolve(props, setResolved)
-
-    window.addEventListener('resize', onResize)
-    window.addEventListener('scroll', onScroll, true)
-
-    return () => {
-      window.removeEventListener('resize', onResize)
-      window.removeEventListener('scroll', onScroll, true)
-    }
-  }, [resolve])
 
   return children
 }

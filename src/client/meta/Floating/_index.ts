@@ -7,18 +7,20 @@ import { FLOATING_EXAMPLES_META } from './examples'
 const FLOATING_META: ComponentMeta<FloatingProps> = {
   overview: {
     bundle: 'pro',
-    title: 'Headless positioning utility for overlays.',
+    title: 'Headless positioning engine for overlay components.',
     description:
-      'Floating is a headless positioning utility for overlay content. It does not render or style anything on its own. Instead, it observes an anchor element and the surrounding viewport, then resolves a placement and the available space around that anchor. These resolved values are exposed through a callback, so you stay fully in control of how the overlay is rendered and styled.',
+      'Floating is a headless positioning utility for overlay content. It does not render or style anything on its own. Instead, it observes an anchor element and the surrounding viewport, then resolves a placement for your overlay. The resolved placement (and for fit modes the resolved visible block size) is reported through onResolve, so you stay fully in control of rendering and styling. Positioning behavior is configured through mode, which combines the strategy (project or fit) with an axis constraint (x, y, or both).',
     features: [
-      "When the overlay's block size is provided, Floating can reason about fit and visibility. This allows it to make more precise decisions, such as flipping sides only when it increases the visible content and clamping the overlay size when space is limited. This mode is ideal for dropdowns, menus and other scrollable overlays.",
-      'When the overlay size is unknown, Floating resolves placement based purely on available space and configurable bias. Instead of trying to fit content, it favors stability and predictability, flipping only when the opposite side offers significantly more room. This mode is well suited for tooltips and lightweight contextual overlays.',
-      'In both modes, Floating remains purely declarative - it reports placement and available space and leaves all rendering, sizing and styling decisions to you.',
+      "Mode selects both the positioning strategy and which sides are eligible for resolution: project-x, project-y, project-both, fit-x, fit-y. This removes ambiguity and makes the resolver's behavior predictable.",
+      'Fit-* modes require floatingBlockSize and resolve both placement and a final blockSize. They flip only when the opposite side is strictly better and clamp the resolved blockSize to the visible space when nothing fully fits - ideal for menus, dropdowns and scrollable overlays.',
+      'Project-* modes require minInlineSize and maxInlineSize and resolve placement using an inline-size envelope rather than a known overlay height. The resolver chooses the first acceptable side (with smart fallbacks) and uses a stable auto-alignment, making it a strong default for tooltips and lightweight contextual overlays.',
+      'Floating only performs placement calculations (including offset and viewportPadding) and reports the result. It never creates DOM and never applies styles - you decide how the overlay is rendered, sized and themed.',
     ],
   },
   props: FLOATING_PROPS_META,
   examples: FLOATING_EXAMPLES_META,
   changelog: {
+    '0.4.0': ['Public API updated'],
     '0.3.0': ['Released'],
   },
 }

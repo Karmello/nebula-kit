@@ -1,4 +1,4 @@
-export const RELEASE_VERSIONS = ['0.3.0', '0.2.3'] as const
+export const RELEASE_VERSIONS = ['0.4.0', '0.3.0', '0.2.3'] as const
 
 export type ReleaseVersion = (typeof RELEASE_VERSIONS)[number]
 
@@ -9,6 +9,10 @@ export const RELEASE_INFO: Record<
     description: string
   }
 > = {
+  '0.4.0': {
+    timestamp: 1768645423427,
+    description: '...',
+  },
   '0.3.0': {
     timestamp: 1768567158078,
     description:

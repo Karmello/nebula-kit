@@ -4,12 +4,21 @@ import { Button, Icon, Tooltip, TooltipProps } from 'lib/components'
 const TOOLTIP_EXAMPLES_META: ComponentMeta<TooltipProps>['examples'] = [
   {
     description: 'Non-element children are wrapped in a span to serve as the trigger.',
-    jsx: <Tooltip content="This is Tooltip's content.">Invalid react element</Tooltip>,
+    jsx: (
+      <Tooltip content="This is Tooltip's content." minInlineSize={200} maxInlineSize={300}>
+        Invalid react element
+      </Tooltip>
+    ),
   },
   {
     description: 'React element used as the tooltip trigger.',
     jsx: (
-      <Tooltip content="This is Tooltip's content." placement="right-center">
+      <Tooltip
+        content="This is Tooltip's content."
+        placement="right-center"
+        minInlineSize={200}
+        maxInlineSize={300}
+      >
         <Icon name="message-circle-question-mark" size="40px" />
       </Tooltip>
     ),
@@ -17,7 +26,12 @@ const TOOLTIP_EXAMPLES_META: ComponentMeta<TooltipProps>['examples'] = [
   {
     description: 'Focusable component used as the tooltip trigger.',
     jsx: (
-      <Tooltip content="This is Tooltip's content." placement="bottom-center">
+      <Tooltip
+        content="This is Tooltip's content."
+        placement="bottom-center"
+        minInlineSize={200}
+        maxInlineSize={300}
+      >
         <Button>Focusable button</Button>
       </Tooltip>
     ),
