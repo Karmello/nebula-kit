@@ -48,7 +48,7 @@ export const DropdownList = ({
   const [hoveredIndex, setHoveredIndex] = useState<number>(-1)
   const [ensureVisibleIndex, setEnsureVisibleIndex] = useState<number | undefined>(undefined)
   const [blockMouse, setBlockMouse] = useState<boolean>(false)
-  const [floatingResolved, setFloatingResolved] = useState<FloatingResolved>(undefined)
+  const [floatingResolved, setFloatingResolved] = useState<FloatingResolved | undefined>(undefined)
 
   const triggerRef = useRef<HTMLElement>(null)
   const portalRef = useRef<HTMLDivElement>(null)

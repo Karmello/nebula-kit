@@ -11,7 +11,7 @@ import {
 } from 'lib/components'
 
 import { useDropdownListContext } from '..'
-import { DEFAULT_DROPDOWN_LIST_PLACEMENT, DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'
+import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'
 
 export const DropdownListMenu = () => {
   const [triggerWidth, setTriggerWidth] = useState<number | undefined>(undefined)
@@ -65,11 +65,9 @@ export const DropdownListMenu = () => {
     return () => observer.disconnect()
   }, [open, animationDuration])
 
-  const opensUpDownwards = (floatingResolved?.placement ?? DEFAULT_DROPDOWN_LIST_PLACEMENT).startsWith(
-    'bottom'
-  )
+  const opensUpDownwards = (floatingResolved?.placement ?? 'bottom-start').startsWith('bottom')
 
-  const finalVisibleItemsCount = floatingResolved
+  const finalVisibleItemsCount = floatingResolved?.blockSize
     ? Math.floor(floatingResolved.blockSize / itemHeight)
     : correctedVisibleItemsCount
 

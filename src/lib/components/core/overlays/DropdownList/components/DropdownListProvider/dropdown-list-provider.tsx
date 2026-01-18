@@ -22,7 +22,7 @@ type ContextValue = {
   blockMouse: boolean
   setBlockMouse: (blockMouse: boolean) => void
   correctedVisibleItemsCount: number
-  floatingResolved: FloatingResolved
+  floatingResolved: FloatingResolved | undefined
   setFloatingResolved: (floatingResolved: FloatingResolved) => void
   // extra
   itemHeight: number
