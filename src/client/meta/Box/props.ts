@@ -7,6 +7,7 @@ import {
   CSS_POINTER_EVENTS,
   CSS_POSITION,
   CSS_TEXT_ALIGN,
+  CSS_VISIBILITY,
   THEMES,
 } from 'lib/definitions'
 
@@ -16,6 +17,11 @@ import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   ...HTML_TAG_PROPS_META,
+  aspectRatio: {
+    options: ['CSS'],
+    isResponsive: true,
+    description: 'Defines the preferred width-to-height ratio of the component.',
+  },
   brand: {
     options: ['BoxColor'],
     isResponsive: true,
@@ -320,6 +326,12 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: Object.values(BOX_VARIANTS),
     isResponsive: true,
     description: 'Visual style variant.',
+  },
+  visibility: {
+    options: Object.values(CSS_VISIBILITY),
+    isResponsive: true,
+    description: 'Controls whether the element is visible without affecting layout.',
+    link: true,
   },
   zIndex: {
     options: ['number'],
