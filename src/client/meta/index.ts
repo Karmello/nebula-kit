@@ -19,6 +19,7 @@ import gridMeta from './Grid/_index'
 import htmlTagMeta from './HtmlTag/_index'
 import hydrationGateMeta from './HydrationGate/_index'
 import iconMeta from './Icon/_index'
+import imageMeta from './Image/_index'
 import inputMeta from './Input/_index'
 import linkMeta from './Link/_index'
 import loaderMeta from './Loader/_index'
@@ -67,6 +68,7 @@ const META = {
   HtmlTag: htmlTagMeta,
   HydrationGate: hydrationGateMeta,
   Icon: iconMeta,
+  Image: imageMeta,
   Input: inputMeta,
   Link: linkMeta,
   Loader: loaderMeta,

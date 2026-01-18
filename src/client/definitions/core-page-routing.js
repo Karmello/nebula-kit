@@ -13,6 +13,7 @@ export const CORE_PAGE_CATEGORIES = [
       { key: 'html-tag', label: 'HtmlTag', sections },
       { key: 'box', label: 'Box', sections },
       { key: 'text', label: 'Text', sections },
+      { key: 'image', label: 'Image', sections },
     ],
   },
   {
