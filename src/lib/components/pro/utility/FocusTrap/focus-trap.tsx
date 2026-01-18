@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 import { DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK, FocusTrapProps } from './definitions'
+import { isInsideLogicalTree } from './helpers'
 
 export const FocusTrap = ({
   tagRef,
@@ -74,7 +75,7 @@ export const FocusTrap = ({
 
     const handlePointerDown = (e: PointerEvent) => {
       if (disableEscapeOnOutsideClick) return
-      if (!target.contains(e.target as Node)) {
+      if (!isInsideLogicalTree(e.target as Node, target)) {
         onFocusEscape?.()
       }
     }
