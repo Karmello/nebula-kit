@@ -34,6 +34,7 @@ export const AppJump = () => {
 
   useLayoutEffect(() => {
     if (showAppJump) {
+      document.documentElement.scrollTo(0, 0)
       setTimeout(() => {
         autocompleteRef.current?.querySelector('input')?.focus()
       }, RESIZE_DURATION)

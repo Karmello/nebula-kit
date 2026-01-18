@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect } from 'react'
 
 import { resolveFitStrategy, resolveProjectStrategy } from './strategies'
-import { DEFAULT_FLOATING_PLACEMENT, FloatingProps, FloatingResolved } from './definitions'
+import { DEFAULT_FLOATING_PLACEMENT, FloatingProps } from './definitions'
 
-export function Floating({
+export const Floating = ({
   children,
   anchorRef,
   mode,
@@ -14,59 +14,55 @@ export function Floating({
   offset,
   viewportPadding,
   onResolve,
-}: FloatingProps) {
-  const [resolved, setResolved] = useState<FloatingResolved | null>(null)
+}: FloatingProps) => {
+  const resolve = useCallback(() => {
+    const next =
+      mode === 'fit-x' || mode === 'fit-y'
+        ? resolveFitStrategy({
+            anchorRef,
+            mode,
+            placement,
+            offset,
+            viewportPadding,
+            floatingBlockSize,
+          })
+        : resolveProjectStrategy({
+            anchorRef,
+            mode,
+            placement,
+            offset,
+            viewportPadding,
+            minInlineSize: minInlineSize as never,
+            maxInlineSize: maxInlineSize as never,
+          })
 
-  // re-resolve on viewport changes
+    onResolve?.(next)
+  }, [
+    anchorRef.current,
+    mode,
+    placement,
+    offset,
+    viewportPadding,
+    floatingBlockSize,
+    minInlineSize,
+    maxInlineSize,
+    onResolve,
+  ])
+
   useEffect(() => {
-    const resolve = () => {
-      const next =
-        mode === 'fit-x' || mode === 'fit-y'
-          ? resolveFitStrategy({
-              anchorRef,
-              mode,
-              placement,
-              offset,
-              viewportPadding,
-              floatingBlockSize,
-            })
-          : resolveProjectStrategy({
-              anchorRef,
-              mode,
-              placement,
-              offset,
-              viewportPadding,
-              minInlineSize: minInlineSize as never,
-              maxInlineSize: maxInlineSize as never,
-            })
+    resolve()
 
-      setResolved(prev => {
-        if (prev && prev.placement === next.placement && prev.blockSize === next.blockSize) {
-          return prev
-        }
-        return next
-      })
-    }
+    const onResize = () => resolve()
+    const onScroll = () => resolve()
 
-    window.addEventListener('resize', resolve)
-    window.addEventListener('scroll', resolve, true)
-
-    if (!resolved) {
-      resolve()
-    }
+    window.addEventListener('resize', onResize)
+    window.addEventListener('scroll', onScroll, true)
 
     return () => {
-      window.removeEventListener('resize', resolve)
-      window.removeEventListener('scroll', resolve, true)
+      window.removeEventListener('resize', onResize)
+      window.removeEventListener('scroll', onScroll, true)
     }
-  }, [mode, placement, floatingBlockSize, maxInlineSize, minInlineSize, offset, viewportPadding])
-
-  // notify consumer
-  useEffect(() => {
-    if (resolved) {
-      onResolve?.(resolved)
-    }
-  }, [resolved])
+  }, [resolve])
 
   return children
 }

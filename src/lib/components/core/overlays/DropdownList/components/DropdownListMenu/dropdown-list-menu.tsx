@@ -11,7 +11,7 @@ import {
 } from 'lib/components'
 
 import { useDropdownListContext } from '..'
-import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'
+import { DEFAULT_DROPDOWN_LIST_PLACEMENT, DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'
 
 export const DropdownListMenu = () => {
   const [triggerWidth, setTriggerWidth] = useState<number | undefined>(undefined)
@@ -22,11 +22,7 @@ export const DropdownListMenu = () => {
     scrollWrapperRef,
     slotsByName,
     resizeVisible,
-    defaultResolvedVisibleItemsCount,
-    resolvedVisibleItemsCount,
-    setResolvedVisibleItemsCount,
-    resolvedPlacement,
-    setResolvedPlacement,
+    correctedVisibleItemsCount,
     intent,
     color,
     itemBorderIntent,
@@ -40,6 +36,8 @@ export const DropdownListMenu = () => {
     ensureVisibleIndex,
     itemHeight,
     animationDuration,
+    floatingResolved,
+    setFloatingResolved,
   } = useDropdownListContext()
 
   const prevOpenRef = useRef<boolean>(open)
@@ -67,38 +65,30 @@ export const DropdownListMenu = () => {
     return () => observer.disconnect()
   }, [open, animationDuration])
 
-  const opensUpDownwards = (resolvedPlacement || 'bottom-start').startsWith('bottom')
+  const opensUpDownwards = (floatingResolved?.placement ?? DEFAULT_DROPDOWN_LIST_PLACEMENT).startsWith(
+    'bottom'
+  )
 
-  const itemsContainerBlockSize = resolvedVisibleItemsCount * itemHeight
+  const finalVisibleItemsCount = floatingResolved
+    ? Math.floor(floatingResolved.blockSize / itemHeight)
+    : correctedVisibleItemsCount
 
   return (
     <Floating
       anchorRef={triggerRef}
       mode="fit-y"
-      floatingBlockSize={itemsContainerBlockSize}
+      floatingBlockSize={correctedVisibleItemsCount * itemHeight}
       placement={placement}
       onResolve={resolved => {
-        if (resolved.placement !== resolvedPlacement) {
-          setResolvedPlacement(resolved.placement as never)
-        }
-
-        if (resolved.blockSize !== undefined) {
-          const maxAllowedVisibleItemsCount = Math.floor(resolved.blockSize / itemHeight)
-
-          if (
-            defaultResolvedVisibleItemsCount !== undefined &&
-            maxAllowedVisibleItemsCount !== undefined &&
-            maxAllowedVisibleItemsCount !== resolvedVisibleItemsCount
-          ) {
-            const min = Math.min(defaultResolvedVisibleItemsCount, maxAllowedVisibleItemsCount)
-            if (min != null) setResolvedVisibleItemsCount(min)
-          }
-        } else {
-          setResolvedVisibleItemsCount(defaultResolvedVisibleItemsCount)
+        if (
+          resolved.placement !== floatingResolved?.placement ||
+          resolved.blockSize !== floatingResolved?.blockSize
+        ) {
+          setFloatingResolved(resolved)
         }
       }}
     >
-      <Portal tagRef={portalRef} anchorRef={triggerRef} placement={resolvedPlacement}>
+      <Portal tagRef={portalRef} anchorRef={triggerRef} placement={floatingResolved?.placement || placement}>
         <Resize
           property="blockSize"
           visible={resizeVisible}
@@ -110,7 +100,7 @@ export const DropdownListMenu = () => {
             variant="solid"
             intent={intent}
             color={color}
-            blockSize={`${itemsContainerBlockSize}px`}
+            blockSize={`${finalVisibleItemsCount * itemHeight}px`}
             minInlineSize={`${triggerWidth}px`}
             overflow="hidden"
             borderTopWidth="0px"
@@ -125,7 +115,7 @@ export const DropdownListMenu = () => {
                 tagRef={scrollWrapperRef}
                 items={slotsByName['DropdownList.Item']}
                 itemHeight={itemHeight}
-                visibleItemsCount={resolvedVisibleItemsCount ?? DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT}
+                visibleItemsCount={finalVisibleItemsCount ?? DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT}
                 scrollToIndex={scrollToIndex}
                 scrollAlign={scrollAlign}
                 color={color}

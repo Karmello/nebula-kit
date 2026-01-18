@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 
+import { FloatingResolved } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
 import { BUTTON_SIZE_CONFIG, DEFAULT_BUTTON_SIZE } from 'lib/components/core/controls/Button/definitions'
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize'
@@ -47,16 +48,20 @@ export const DropdownList = ({
   const [hoveredIndex, setHoveredIndex] = useState<number>(-1)
   const [ensureVisibleIndex, setEnsureVisibleIndex] = useState<number | undefined>(undefined)
   const [blockMouse, setBlockMouse] = useState<boolean>(false)
-  const [resolvedVisibleItemsCount, setResolvedVisibleItemsCount] =
-    useState<DropdownListProps['visibleItemsCount']>(visibleItemsCount)
-  const [resolvedPlacement, setResolvedPlacement] = useState<DropdownListProps['placement']>(placement)
+  const [floatingResolved, setFloatingResolved] = useState<FloatingResolved>(undefined)
 
   const triggerRef = useRef<HTMLElement>(null)
   const portalRef = useRef<HTMLDivElement>(null)
   const scrollWrapperRef = useRef<HTMLDivElement>(null)
 
   const finalChildren =
-    typeof children === 'function' ? children({ open, setOpen, resolvedPlacement }) : children
+    typeof children === 'function'
+      ? children({
+          open,
+          setOpen,
+          resolvedPlacement: floatingResolved?.placement as DropdownListProps['placement'],
+        })
+      : children
 
   return (
     <WithSlots
@@ -70,9 +75,9 @@ export const DropdownList = ({
       {({ slotsByName }) => {
         const itemsCount = slotsByName['DropdownList.Item'].length
 
-        let defaultResolvedVisibleItemsCount =
+        let correctedVisibleItemsCount =
           itemsCount < (visibleItemsCount ?? 0) ? itemsCount : (visibleItemsCount ?? 0)
-        if (defaultResolvedVisibleItemsCount <= 0 && noOptionsLabel) defaultResolvedVisibleItemsCount = 1
+        if (correctedVisibleItemsCount <= 0 && noOptionsLabel) correctedVisibleItemsCount = 1
 
         const itemHeight =
           Number(BUTTON_SIZE_CONFIG[size].blockSize.replace('px', '')) +
@@ -97,11 +102,9 @@ export const DropdownList = ({
             setEnsureVisibleIndex={setEnsureVisibleIndex}
             blockMouse={blockMouse}
             setBlockMouse={setBlockMouse}
-            defaultResolvedVisibleItemsCount={defaultResolvedVisibleItemsCount}
-            resolvedVisibleItemsCount={resolvedVisibleItemsCount ?? 5}
-            setResolvedVisibleItemsCount={setResolvedVisibleItemsCount}
-            resolvedPlacement={resolvedPlacement}
-            setResolvedPlacement={setResolvedPlacement}
+            correctedVisibleItemsCount={correctedVisibleItemsCount}
+            floatingResolved={floatingResolved}
+            setFloatingResolved={setFloatingResolved}
             // props
             color={color}
             intent={intent}

@@ -16,7 +16,14 @@ return (
       mode="project-both"
       minInlineSize={120}
       maxInlineSize={240}
-      onResolve={setResolved}
+      onResolve={resolved => {
+        if (
+          resolved.placement !== floatingResolved?.placement ||
+          resolved.blockSize !== floatingResolved?.blockSize
+        ) {
+          setFloatingResolved(resolved)
+        }
+      }}
     >
       {resolved && (
         <Portal

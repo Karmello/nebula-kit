@@ -32,6 +32,7 @@ export const SplitViewSide = ({
       tagRef={tagRef || ref}
       active={mode == 'overlay' && sideOpen}
       onFocusEscape={() => setSideOpen(false)}
+      disableEscapeOnOutsideClick
     >
       <Box
         tag="aside"
