@@ -1,7 +1,7 @@
 import { PageKey, RELEASE_VERSIONS } from 'client/definitions'
 import { getCopyrightInfo } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'
-import { Button, Flex, Footer, Link, MarkerList, Spacer, Text } from 'lib/components'
+import { Button, Divider, Flex, Footer, Link, MarkerList, Spacer, Text } from 'lib/components'
 
 export const AppFooter = () => {
   const navigateTo = useNavigateTo()
@@ -14,10 +14,10 @@ export const AppFooter = () => {
       paddingBottom={{ base: '15px', lg: '35px' }}
     >
       <Footer.Section>
-        <Text bold typography="caption">
+        <Text scale="compact" typography="lead" bold>
           About the website
         </Text>
-        <Spacer blockSize="20px" />
+        <Divider marginBottom="10px" />
         <Text scale="compact" italic color="gray" intent="primary">
           This website is built entirely with NebulaKit components. It serves as both documentation and a live
           showcase of the system in real use.
@@ -35,10 +35,10 @@ export const AppFooter = () => {
         </Link>
       </Footer.Section>
       <Footer.Section>
-        <Text bold typography="caption">
+        <Text scale="compact" typography="lead" bold>
           Community & Support
         </Text>
-        <Spacer blockSize="20px" />
+        <Divider marginBottom="15px" />
         <Flex flexDirection="column" gap="10px">
           <Link href="https://x.com/captainnebula" target="_blank">
             <Button color="gray" intent="inverse" size="sm" iconName="external-link" iconPlacement="right">
@@ -58,10 +58,10 @@ export const AppFooter = () => {
         </Flex>
       </Footer.Section>
       <Footer.Section>
-        <Text bold typography="caption">
+        <Text scale="compact" typography="lead" bold>
           Legal information
         </Text>
-        <Spacer blockSize="20px" />
+        <Divider marginBottom="10px" />
         <MarkerList>
           <MarkerList.Item>
             <Link
