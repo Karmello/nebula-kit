@@ -27,6 +27,7 @@ import markerListMeta from './MarkerList/_index'
 import measureMeta from './Measure/_index'
 import multiSelectMeta from './MultiSelect/_index'
 import nebkitProviderMeta from './NebkitProvider/_index'
+import paginationMeta from './Pagination/_index'
 import portalMeta from './Portal/_index'
 import resizeMeta from './Resize/_index'
 import revealMeta from './Reveal/_index'
@@ -76,6 +77,7 @@ const META = {
   Measure: measureMeta,
   MultiSelect: multiSelectMeta,
   NebkitProvider: nebkitProviderMeta,
+  Pagination: paginationMeta,
   Portal: portalMeta,
   Resize: resizeMeta,
   Reveal: revealMeta,

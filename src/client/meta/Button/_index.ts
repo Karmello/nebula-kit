@@ -20,6 +20,7 @@ const BUTTON_META: ComponentMeta<ButtonProps> = {
   props: BUTTON_PROPS_META,
   examples: BUTTON_EXAMPLES_META,
   changelog: {
+    '0.4.0': ['added onClick prop'],
     '0.2.3': ['released'],
   },
 }

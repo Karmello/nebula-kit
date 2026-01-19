@@ -44,6 +44,7 @@ export const PRO_PAGE_CATEGORIES = [
     items: [
       { key: 'side-nav', label: 'SideNav', sections },
       { key: 'breadcrumb', label: 'Breadcrumb', sections },
+      { key: 'pagination', label: 'Pagination', sections },
     ],
   },
   {
