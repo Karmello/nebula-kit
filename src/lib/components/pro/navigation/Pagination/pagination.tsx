@@ -72,7 +72,13 @@ export const Pagination = ({
   if (totalPages <= 1) return null
 
   return (
-    <Box tag="nav" tagAttrs={{ 'aria-label': 'Pagination', ...tagAttrs }} tagRef={tagRef}>
+    <Box
+      tag="nav"
+      tagAttrs={{ 'aria-label': 'Pagination', ...tagAttrs }}
+      tagRef={tagRef}
+      overflowX="auto"
+      overflowY="hidden"
+    >
       <Segment>
         {paginationItems.map((item, index) => {
           const renderControl = ({
