@@ -39,15 +39,20 @@ export const AppFooter = () => {
           Community & Support
         </Text>
         <Divider marginBottom="15px" />
-        <Flex flexDirection="column" gap="10px">
+        <Flex flexDirection="column" flexWrap="nowrap" gap="7px">
           <Link href="https://x.com/captainnebula" target="_blank">
             <Button color="gray" intent="inverse" size="sm" iconName="external-link" iconPlacement="right">
-              NebulaKit on X
+              X profile
             </Button>
           </Link>
           <Link href="https://discord.gg/BgezCRDN8H" target="_blank">
             <Button color="purple" intent="primary" size="sm" iconName="external-link" iconPlacement="right">
-              NebulaKit on Discord
+              Discord server
+            </Button>
+          </Link>
+          <Link href="https://www.npmjs.com/package/@nebula-kit/core" target="_blank">
+            <Button color="red" intent="primary" size="sm" iconName="external-link" iconPlacement="right">
+              @nebula-kit/core
             </Button>
           </Link>
           <Link href="mailto:contact@nebulakit.dev" target="_blank">
