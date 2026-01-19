@@ -18,7 +18,7 @@ const MULTI_SELECT_META: ComponentMeta<MultiSelectProps> = {
   props: MULTI_SELECT_PROPS_META,
   examples: MULTI_SELECT_EXAMPLES_META,
   changelog: {
-    '0.3.0': ['Released'],
+    '0.3.0': ['released'],
   },
 }
 

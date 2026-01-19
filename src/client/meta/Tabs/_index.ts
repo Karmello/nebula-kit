@@ -24,7 +24,7 @@ const TABS_META: ComponentMeta<TabsProps> = {
   props: TABS_PROPS_META,
   examples: TABS_EXAMPLES_META,
   changelog: {
-    '0.3.0': ['Released'],
+    '0.3.0': ['released'],
   },
 }
 

@@ -20,7 +20,7 @@ const FOCUS_TRAP_META: ComponentMeta<FocusTrapProps> = {
   props: FOCUS_TRAP_PROPS_META,
   examples: FOCUS_TRAP_EXAMPLES_META,
   changelog: {
-    '0.2.3': ['Released'],
+    '0.2.3': ['released'],
   },
 }
 

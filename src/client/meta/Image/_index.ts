@@ -20,7 +20,7 @@ const IMAGE_META: ComponentMeta<ImageProps> = {
   props: IMAGE_PROPS_META,
   examples: IMAGE_EXAMPLES_META,
   changelog: {
-    '0.4.0': ['Released'],
+    '0.4.0': ['released'],
   },
 }
 

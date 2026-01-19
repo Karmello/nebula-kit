@@ -19,7 +19,7 @@ const RESIZE_META: ComponentMeta<ResizeProps> = {
   props: RESIZE_PROPS_META,
   examples: RESIZE_EXAMPLES_META,
   changelog: {
-    '0.2.3': ['Released'],
+    '0.2.3': ['released'],
   },
 }
 

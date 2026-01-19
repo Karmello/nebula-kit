@@ -20,8 +20,11 @@ const FLOATING_META: ComponentMeta<FloatingProps> = {
   props: FLOATING_PROPS_META,
   examples: FLOATING_EXAMPLES_META,
   changelog: {
-    '0.4.0': ['Public API updated'],
-    '0.3.0': ['Released'],
+    '0.4.0': [
+      'refactored into two separate modes and rewrote the underlying algorithms',
+      'public API updated',
+    ],
+    '0.3.0': ['released'],
   },
 }
 

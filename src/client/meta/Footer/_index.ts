@@ -23,7 +23,7 @@ const FOOTER_META: ComponentMeta<FooterProps> = {
   props: FOOTER_PROPS_META,
   examples: FOOTER_EXAMPLES_META,
   changelog: {
-    '0.2.3': ['Released'],
+    '0.2.3': ['released'],
   },
 }
 

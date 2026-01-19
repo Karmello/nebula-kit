@@ -17,8 +17,8 @@ const NEBKIT_PROVIDER_META: ComponentMeta<NebkitProviderProps> = {
   props: NEBKIT_PROVIDER_PROPS_META,
   examples: NEBKIT_PROVIDER_EXAMPLES_META,
   changelog: {
-    '0.3.0': ['Public API updated'],
-    '0.2.3': ['Released'],
+    '0.3.0': ['public API updated'],
+    '0.2.3': ['released'],
   },
 }
 

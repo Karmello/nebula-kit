@@ -22,7 +22,7 @@ const MEASURE_META: ComponentMeta<MeasureProps> = {
   props: MEASURE_PROPS_META,
   examples: MEASURE_EXAMPLES_META,
   changelog: {
-    '0.3.0': ['Released'],
+    '0.3.0': ['released'],
   },
 }
 
