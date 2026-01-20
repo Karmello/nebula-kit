@@ -82,7 +82,7 @@ export const ReleasePageTemplate = ({ bundle }: { bundle: 'core' | 'pro' }) => {
           <Text>{description}</Text>
         </>
       ) : null}
-      {changes[bundle] ? (
+      {changes?.[bundle] ? (
         <>
           <Spacer blockSize="35px" />
           <MarkerList>
