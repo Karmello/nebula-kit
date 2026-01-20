@@ -43,25 +43,24 @@ export const HomePage = () => {
       >
         <Flex.Item flex="2">
           <Section
+            size="lg"
             intent="secondary"
             color="purple"
             variant="outline"
             heading={`NebulaKit v${RELEASE_VERSIONS[0]} is live`}
           >
+            <Text>
+              NebulaKit is actively developed and released in incremental updates. Each release introduces new
+              components, improvements and refinements across the system.
+            </Text>
+            <Spacer />
             <Link
               href={`${PageKey.foundations}/resources/changelog/core-releases`}
               onClick={() => {
                 navigateTo(`${PageKey.foundations}/resources/changelog/core-releases`)
               }}
             >
-              <Button
-                variant="ghost"
-                size="sm"
-                color="blue"
-                intent="primary"
-                iconName="arrow-right"
-                iconPlacement="right"
-              >
+              <Button size="sm" color="blue" intent="secondary" iconName="arrow-right" iconPlacement="right">
                 Release notes
               </Button>
             </Link>
