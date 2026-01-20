@@ -4,7 +4,7 @@ import { kebabCase } from 'change-case'
 import meta from 'client/meta'
 import { useNavigateTo } from 'client/hooks'
 import { RELEASE_VERSIONS, RELEASE_INFO, ReleaseVersion, PAGE_SECTIONS } from 'client/definitions'
-import { Box, Button, Flex, Link, Section, Select, Spacer, Text } from 'lib/components'
+import { Box, Button, Flex, Link, MarkerList, Section, Select, Spacer, Text } from 'lib/components'
 
 type ComponentNames = { created: string[]; updated: string[] }
 
@@ -15,7 +15,7 @@ const ReleaseSection = ({ heading, componentNames = [] }: { heading: string; com
 
   return (
     <>
-      <Spacer blockSize="50px" />
+      <Spacer blockSize="40px" />
       <Section heading={heading} size="sm">
         <Flex flexWrap="wrap" gap="5px">
           {componentNames.map(c => {
@@ -62,6 +62,8 @@ export const ReleasePageTemplate = ({ bundle }: { bundle: 'core' | 'pro' }) => {
     return result
   }, [releaseVersion])
 
+  const { description, changes } = RELEASE_INFO[releaseVersion as ReleaseVersion]
+
   return (
     <Box maxInlineSize="55rem">
       <Flex flexWrap="wrap" alignItems="center" gap="20px">
@@ -74,8 +76,24 @@ export const ReleasePageTemplate = ({ bundle }: { bundle: 'core' | 'pro' }) => {
         </Select>
         <Text>{new Date(RELEASE_INFO[releaseVersion as ReleaseVersion].timestamp).toDateString()}</Text>
       </Flex>
-      <Spacer />
-      <Text>{RELEASE_INFO[releaseVersion as ReleaseVersion].description}</Text>
+      {description ? (
+        <>
+          <Spacer blockSize="35px" />
+          <Text>{description}</Text>
+        </>
+      ) : null}
+      {changes[bundle] ? (
+        <>
+          <Spacer blockSize="35px" />
+          <MarkerList>
+            {changes[bundle].map((c, i) => (
+              <MarkerList.Item key={i}>
+                <Text>{c}</Text>
+              </MarkerList.Item>
+            ))}
+          </MarkerList>
+        </>
+      ) : null}
       <ReleaseSection heading="New" componentNames={componentNames.created} />
       <ReleaseSection heading="Updated" componentNames={componentNames.updated} />
     </Box>

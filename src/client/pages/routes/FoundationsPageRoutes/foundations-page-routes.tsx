@@ -6,25 +6,25 @@ import { Spacer } from 'lib/components'
 
 import { FOUNDATION_COMPONENTS } from './definitions'
 
-const ROUTES = FOUNDATIONS_SECTIONS.map(({ categoryKey, itemKey, sectionKey }) => (
-  <Route
-    key={`${categoryKey}/${itemKey}/${sectionKey}`}
-    path={`${categoryKey}/${itemKey}/${sectionKey}`}
-    Component={() => {
-      const Component = FOUNDATION_COMPONENTS[sectionKey]
-      // if (!Component) return null
-      return (
-        <>
-          <Component />
-          <Spacer blockSize="60px" />
-          <NextPageButton pageKey={PageKey.foundations} />
-        </>
-      )
-    }}
-  />
-))
-
 export const FoundationsPageRoutes = () => {
+  const ROUTES = FOUNDATIONS_SECTIONS.map(({ categoryKey, itemKey, sectionKey }) => (
+    <Route
+      key={`${categoryKey}/${itemKey}/${sectionKey}`}
+      path={`${categoryKey}/${itemKey}/${sectionKey}`}
+      Component={() => {
+        const Component = FOUNDATION_COMPONENTS[sectionKey]
+        // if (!Component) return null
+        return (
+          <>
+            <Component />
+            <Spacer blockSize="60px" />
+            <NextPageButton pageKey={PageKey.foundations} />
+          </>
+        )
+      }}
+    />
+  ))
+
   return (
     <>
       <Spacer blockSize="20px" />

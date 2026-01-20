@@ -6,12 +6,28 @@ export const RELEASE_INFO: Record<
   ReleaseVersion,
   {
     timestamp: number
-    description: string
+    description?: string
+    changes?: {
+      core?: string[]
+      pro?: string[]
+    }
   }
 > = {
   '0.4.0': {
-    timestamp: 1768645423427,
-    description: '...',
+    timestamp: 1768922518043,
+    changes: {
+      core: [
+        'Box: added visibility and aspectRatio prop',
+        'Image component added',
+        'Link: added wrapping support',
+        'Checkbox: fixed focus handling',
+      ],
+      pro: [
+        'Floating positioning algorithms rewritten',
+        'Pagination component added',
+        'Switch component added',
+      ],
+    },
   },
   '0.3.0': {
     timestamp: 1768567158078,

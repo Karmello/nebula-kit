@@ -2,7 +2,7 @@ import { sentenceCase } from 'change-case'
 
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { PageKey, RELEASE_VERSIONS, RELEASE_INFO } from 'client/definitions'
+import { PageKey, RELEASE_VERSIONS } from 'client/definitions'
 
 import {
   Box,
@@ -15,7 +15,6 @@ import {
   Spacer,
   Text,
   Segment,
-  Callout,
   Grid,
 } from 'lib/components'
 
@@ -37,15 +36,37 @@ export const HomePage = () => {
 
   return (
     <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">
-      <Callout
-        size="sm"
-        variant="outline"
-        content={RELEASE_INFO[RELEASE_VERSIONS[0]].description}
-        heading={`NebulaKit v${RELEASE_VERSIONS[0]} is live`}
-      />
-      <Spacer blockSize="75px" />
-      <Flex flexDirection={{ base: 'column', lg: 'row' }} rowGap="80px" columnGap="160px">
+      <Flex
+        flexDirection={{ base: 'column', lg: 'row' }}
+        rowGap="80px"
+        columnGap={{ base: '50px', xl: '100px' }}
+      >
         <Flex.Item flex="2">
+          <Section
+            intent="secondary"
+            color="purple"
+            variant="outline"
+            heading={`NebulaKit v${RELEASE_VERSIONS[0]} is live`}
+          >
+            <Link
+              href={`${PageKey.foundations}/resources/changelog/core-releases`}
+              onClick={() => {
+                navigateTo(`${PageKey.foundations}/resources/changelog/core-releases`)
+              }}
+            >
+              <Button
+                variant="ghost"
+                size="sm"
+                color="blue"
+                intent="primary"
+                iconName="arrow-right"
+                iconPlacement="right"
+              >
+                Release notes
+              </Button>
+            </Link>
+          </Section>
+          <Spacer blockSize="75px" />
           <Text typography="h1" color="purple" intent="primary">
             NebulaKit
           </Text>
@@ -178,7 +199,7 @@ export const HomePage = () => {
           </Box>
         </Flex.Item>
         <Flex.Item flex="1">
-          <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="30px">
+          <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="50px">
             <Section heading="One foundation" color="red" intent="primary" iconName="box">
               <Text intent="neutral">
                 Every component shares the same core primitives. Consistency isn't enforced - it's designed
