@@ -36,36 +36,37 @@ export const HomePage = () => {
 
   return (
     <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">
+      <Section
+        size="md"
+        intent="secondary"
+        color="purple"
+        variant="outline"
+        heading={`NebulaKit v${RELEASE_VERSIONS[0]} is live`}
+      >
+        <Flex flexWrap="wrap" alignItems="center" gap="20px">
+          <Text>
+            NebulaKit is actively developed and released in incremental updates. Each release introduces new
+            components, improvements and refinements across the system.
+          </Text>
+          <Link
+            href={`${PageKey.foundations}/resources/changelog/core-releases`}
+            onClick={() => {
+              navigateTo(`${PageKey.foundations}/resources/changelog/core-releases`)
+            }}
+          >
+            <Button size="xs" color="blue" intent="secondary" iconName="arrow-right" iconPlacement="right">
+              Release notes
+            </Button>
+          </Link>
+        </Flex>
+      </Section>
+      <Spacer blockSize="75px" />
       <Flex
         flexDirection={{ base: 'column', lg: 'row' }}
         rowGap="80px"
         columnGap={{ base: '50px', xl: '100px' }}
       >
         <Flex.Item flex="2">
-          <Section
-            size="lg"
-            intent="secondary"
-            color="purple"
-            variant="outline"
-            heading={`NebulaKit v${RELEASE_VERSIONS[0]} is live`}
-          >
-            <Text>
-              NebulaKit is actively developed and released in incremental updates. Each release introduces new
-              components, improvements and refinements across the system.
-            </Text>
-            <Spacer />
-            <Link
-              href={`${PageKey.foundations}/resources/changelog/core-releases`}
-              onClick={() => {
-                navigateTo(`${PageKey.foundations}/resources/changelog/core-releases`)
-              }}
-            >
-              <Button size="sm" color="blue" intent="secondary" iconName="arrow-right" iconPlacement="right">
-                Release notes
-              </Button>
-            </Link>
-          </Section>
-          <Spacer blockSize="75px" />
           <Text typography="h1" color="purple" intent="primary">
             NebulaKit
           </Text>
