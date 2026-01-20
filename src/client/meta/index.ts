@@ -40,6 +40,7 @@ import slideMeta from './Slide/_index'
 import snackbarMeta from './Snackbar/_index'
 import spacerMeta from './Spacer/_index'
 import splitViewMeta from './SplitView/_index'
+import switchMeta from './Switch/_index'
 import tableMeta from './Table/_index'
 import tabsMeta from './Tabs/_index'
 import textMeta from './Text/_index'
@@ -90,6 +91,7 @@ const META = {
   Snackbar: snackbarMeta,
   Spacer: spacerMeta,
   SplitView: splitViewMeta,
+  Switch: switchMeta,
   Table: tableMeta,
   Tabs: tabsMeta,
   Text: textMeta,
