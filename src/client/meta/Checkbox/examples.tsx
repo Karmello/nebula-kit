@@ -39,6 +39,17 @@ const CHECKBOX_EXAMPLES_META: ComponentMeta<CheckboxProps>['examples'] = [
       </Flex>
     ),
   },
+  {
+    description: 'Disabled selected checkboxes.',
+    jsx: (
+      <Flex gap="10px" alignItems="center">
+        <Checkbox size="xs" variant="solid" disabled defaultChecked />
+        <Checkbox size="sm" variant="solid" disabled defaultChecked />
+        <Checkbox size="md" variant="solid" disabled defaultChecked />
+        <Checkbox size="lg" variant="solid" disabled defaultChecked />
+      </Flex>
+    ),
+  },
 ]
 
 export { CHECKBOX_EXAMPLES_META }

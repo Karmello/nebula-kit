@@ -7,9 +7,10 @@ import { SWITCH_EXAMPLES_META } from './examples'
 const SWITCH_META: ComponentMeta<SwitchProps> = {
   overview: {
     bundle: 'pro',
-    title: '...',
-    description: '...',
-    features: ['...'],
+    title: 'Form control for toggling a binary on/off state.',
+    features: ['supports both controlled and uncontrolled modes'],
+    composedOf: ['Box', 'Slide'],
+    topLevelTags: ['div'],
   },
   props: SWITCH_PROPS_META,
   examples: SWITCH_EXAMPLES_META,

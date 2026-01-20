@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
@@ -16,7 +16,8 @@ export const Slide = ({
   duration = DEFAULT_SLIDE_DURATION,
   easing = DEFAULT_SLIDE_EASING,
 }: SlideProps) => {
-  const [mounted, setMounted] = useState(false)
+  const hasMountedRef = useRef(false)
+  const prevVisibleRef = useRef<boolean | null>(null)
   const ref = useRef<HTMLDivElement | null>(null)
   const rafRef = useRef<number | null>(null)
 
@@ -27,7 +28,7 @@ export const Slide = ({
 
     // Initialize without animation to the correct state
     updatePosition(finalRef, from, visible, false, duration, easing)
-    setMounted(true)
+    hasMountedRef.current = true
 
     return () => {
       if (rafRef.current !== null) {
@@ -38,16 +39,24 @@ export const Slide = ({
   }, [])
 
   useEffect(() => {
-    if (!mounted) return
+    if (!hasMountedRef.current) return
     if (!finalRef.current) return
+
+    const wasVisible = prevVisibleRef.current
+    prevVisibleRef.current = visible
 
     if (rafRef.current !== null) {
       cancelAnimationFrame(rafRef.current)
       rafRef.current = null
     }
 
-    if (visible) {
-      // Show: jump to hidden (no transition) then animate in
+    // INITIAL MOUNT: visible was null → true
+    if (wasVisible === null) {
+      return
+    }
+
+    // SHOW: false → true
+    if (!wasVisible && visible) {
       updatePosition(finalRef, from, false, false, duration, easing)
 
       rafRef.current = requestAnimationFrame(() => {
@@ -57,9 +66,11 @@ export const Slide = ({
       return
     }
 
-    // Hide: animate out directly (no pre-step that causes a flash)
-    updatePosition(finalRef, from, false, true, duration, easing)
-  }, [visible, mounted])
+    // HIDE: true → false
+    if (wasVisible && !visible) {
+      updatePosition(finalRef, from, false, true, duration, easing)
+    }
+  }, [visible])
 
   return (
     <Box
