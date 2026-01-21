@@ -49,9 +49,9 @@ export const HomePage = () => {
             components, improvements and refinements across the system.
           </Text>
           <Link
-            href={`${PageKey.foundations}/resources/changelog/core-releases`}
+            href={`${PageKey.foundations}/resources/changelog/${RELEASE_VERSIONS[0]}`}
             onClick={() => {
-              navigateTo(`${PageKey.foundations}/resources/changelog/core-releases`)
+              navigateTo(`${PageKey.foundations}/resources/changelog/${RELEASE_VERSIONS[0]}`)
             }}
           >
             <Button size="xs" color="blue" intent="secondary" iconName="arrow-right" iconPlacement="right">

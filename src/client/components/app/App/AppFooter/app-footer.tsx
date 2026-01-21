@@ -24,9 +24,9 @@ export const AppFooter = () => {
         </Text>
         <Spacer blockSize="10px" />
         <Link
-          href={`${PageKey.foundations}/resources/changelog/core-releases`}
+          href={`${PageKey.foundations}/resources/changelog/${RELEASE_VERSIONS[0]}`}
           onClick={() => {
-            navigateTo(`${PageKey.foundations}/resources/changelog/core-releases`)
+            navigateTo(`${PageKey.foundations}/resources/changelog/${RELEASE_VERSIONS[0]}`)
           }}
         >
           <Text scale="compact" color="blue" intent="primary">

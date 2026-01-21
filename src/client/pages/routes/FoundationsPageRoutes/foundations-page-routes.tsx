@@ -12,8 +12,12 @@ export const FoundationsPageRoutes = () => {
       key={`${categoryKey}/${itemKey}/${sectionKey}`}
       path={`${categoryKey}/${itemKey}/${sectionKey}`}
       Component={() => {
-        const Component = FOUNDATION_COMPONENTS[sectionKey]
-        // if (!Component) return null
+        let Component
+        if (itemKey === 'changelog') {
+          Component = FOUNDATION_COMPONENTS[itemKey]
+        } else {
+          Component = FOUNDATION_COMPONENTS[sectionKey]
+        }
         return (
           <>
             <Component />
