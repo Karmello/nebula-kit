@@ -21,7 +21,7 @@ const FLOATING_META: ComponentMeta<FloatingProps> = {
   examples: FLOATING_EXAMPLES_META,
   changelog: {
     '0.4.0': [
-      'refactored into two separate modes and rewrote the underlying algorithms',
+      'refactored into two distinct modes with a complete rewrite of the underlying algorithms',
       'public API updated',
     ],
     '0.3.0': ['released'],

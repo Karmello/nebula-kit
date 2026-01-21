@@ -15,7 +15,7 @@ const CHECKBOX_META: ComponentMeta<CheckboxProps> = {
   props: CHECKBOX_PROPS_META,
   examples: CHECKBOX_EXAMPLES_META,
   changelog: {
-    '0.4.0': ['focus handling fixed'],
+    '0.4.0': ['fixed focus handling'],
     '0.3.0': ['released'],
   },
 }

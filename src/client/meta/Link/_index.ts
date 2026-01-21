@@ -20,7 +20,9 @@ const LINK_META: ComponentMeta<LinkProps> = {
   examples: LINK_EXAMPLES_META,
   props: LINK_PROPS_META,
   changelog: {
-    '0.4.0': ['wraps content by default and only clones when required to ensure valid HTML'],
+    '0.4.0': [
+      'changed behavior to wrap content by default and only clone when required to ensure valid HTML',
+    ],
     '0.2.3': ['released'],
   },
 }
