@@ -23,10 +23,13 @@ export const OPTIONS: Option[] = []
 FOUNDATIONS_CATEGORIES.forEach(c =>
   c.items.forEach(i =>
     i.sections.forEach(s => {
-      const label = `${PageKey.foundations.replace('/', '')} / ${noCase(c.key)} / ${noCase(i.key)} / ${noCase(s.key)}`
+      const isVersion = /^v\d+\.\d+\.\d+$/.test(s.key)
+      if (isVersion) console.log(s.key)
+      const sectionLabel = isVersion ? s.key : noCase(s.key)
+      const label = `${PageKey.foundations.replace('/', '')} / ${noCase(c.key)} / ${noCase(i.key)} / ${sectionLabel}`
       OPTIONS.push({
         label,
-        tokens: label.toLowerCase().split(/\s+/),
+        tokens: label.toLowerCase().match(/v\d+\.\d+\.\d+|[a-z0-9]+/g) ?? [],
         href: `${PageKey.foundations.replace('/', '')}/${c.key}/${i.key}/${s.key}`,
         iconName: 'book-open-text',
       })

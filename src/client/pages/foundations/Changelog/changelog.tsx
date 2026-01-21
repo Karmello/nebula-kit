@@ -31,10 +31,10 @@ const PanelContent = ({ notes }: { notes: Record<string, string[]> }) => {
   return (
     <Box paddingInline="15px" paddingBlock="25px">
       {componentNames.map((name, i) => (
-        <>
-          <ComponentNotes key={name} componentName={name} notes={notes[name]} />
+        <Box key={name}>
+          <ComponentNotes componentName={name} notes={notes[name]} />
           {i < componentNames.length - 1 ? <Spacer blockSize="40px" /> : null}
-        </>
+        </Box>
       ))}
     </Box>
   )
@@ -43,7 +43,9 @@ const PanelContent = ({ notes }: { notes: Record<string, string[]> }) => {
 export default () => {
   const { pathname } = useLocation()
 
-  const [, , , releaseVersion] = pathname.split('/').filter(s => s)
+  const [, , , sectionKey] = pathname.split('/').filter(s => s)
+
+  const releaseVersion = sectionKey.replace('v', '')
 
   const notes: Notes = useMemo(() => {
     const notes = { core: {}, pro: {} } as Notes

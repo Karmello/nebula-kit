@@ -74,9 +74,9 @@ export const FOUNDATIONS_CATEGORIES = [
         key: 'changelog',
         label: 'Changelog',
         sections: [
-          { key: '0.4.0', label: 'v0.4.0' },
-          { key: '0.3.0', label: 'v0.3.0' },
-          { key: '0.2.3', label: 'v0.2.3' },
+          { key: 'v0.4.0', label: 'v0.4.0' },
+          { key: 'v0.3.0', label: 'v0.3.0' },
+          { key: 'v0.2.3', label: 'v0.2.3' },
         ],
       },
       {
