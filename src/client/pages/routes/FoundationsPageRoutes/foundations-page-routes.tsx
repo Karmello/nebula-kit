@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Navigate, Route, Routes } from 'react-router'
 
 import { FOUNDATIONS_CATEGORIES, FOUNDATIONS_SECTIONS, PageKey } from 'client/definitions'
@@ -7,27 +8,29 @@ import { Spacer } from 'lib/components'
 import { FOUNDATION_COMPONENTS } from './definitions'
 
 export const FoundationsPageRoutes = () => {
-  const ROUTES = FOUNDATIONS_SECTIONS.map(({ categoryKey, itemKey, sectionKey }) => (
-    <Route
-      key={`${categoryKey}/${itemKey}/${sectionKey}`}
-      path={`${categoryKey}/${itemKey}/${sectionKey}`}
-      Component={() => {
-        let Component
-        if (itemKey === 'changelog') {
-          Component = FOUNDATION_COMPONENTS[itemKey]
-        } else {
-          Component = FOUNDATION_COMPONENTS[sectionKey]
-        }
-        return (
-          <>
-            <Component />
-            <Spacer blockSize="60px" />
-            <NextPageButton pageKey={PageKey.foundations} />
-          </>
-        )
-      }}
-    />
-  ))
+  const ROUTES = useMemo(() => {
+    return FOUNDATIONS_SECTIONS.map(({ categoryKey, itemKey, sectionKey }) => (
+      <Route
+        key={`${categoryKey}/${itemKey}/${sectionKey}`}
+        path={`${categoryKey}/${itemKey}/${sectionKey}`}
+        Component={() => {
+          let Component
+          if (itemKey === 'changelog') {
+            Component = FOUNDATION_COMPONENTS[itemKey]
+          } else {
+            Component = FOUNDATION_COMPONENTS[sectionKey]
+          }
+          return (
+            <>
+              <Component />
+              <Spacer blockSize="60px" />
+              <NextPageButton pageKey={PageKey.foundations} />
+            </>
+          )
+        }}
+      />
+    ))
+  }, [])
 
   return (
     <>

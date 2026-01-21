@@ -2,6 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 
 import appFrameMeta from './AppFrame/_index'
 import autocompleteMeta from './Autocomplete/_index'
+import avatarMeta from './Avatar/_index'
 import boxMeta from './Box/_index'
 import breadcrumbMeta from './Breadcrumb/_index'
 import buttonMeta from './Button/_index'
@@ -53,6 +54,7 @@ import withIconMeta from './WithIcon/_index'
 const META = {
   AppFrame: appFrameMeta,
   Autocomplete: autocompleteMeta,
+  Avatar: avatarMeta,
   Box: boxMeta,
   Breadcrumb: breadcrumbMeta,
   Button: buttonMeta,

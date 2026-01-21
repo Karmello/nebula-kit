@@ -17,6 +17,11 @@ export const PRO_PAGE_CATEGORIES = [
     items: [{ key: 'tabs', label: 'Tabs', sections }],
   },
   {
+    key: 'elements',
+    label: 'Elements',
+    items: [{ key: 'avatar', label: 'Avatar', sections }],
+  },
+  {
     key: 'feedback',
     label: 'Feedback',
     items: [{ key: 'snackbar', label: 'Snackbar', sections }],
