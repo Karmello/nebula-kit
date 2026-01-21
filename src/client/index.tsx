@@ -3,12 +3,9 @@ import { BrowserRouter } from 'react-router'
 
 import { App } from 'client/components'
 import { useAppStore } from 'client/store'
-import { loadFoundationPageModules } from 'client/pages/routes/FoundationsPageRoutes/definitions'
 import { NebkitProvider, HydrationGate, Snackbar } from 'lib/components'
 
 import 'lib/styles/index.scss'
-
-loadFoundationPageModules()
 
 const Node = () => {
   const theme = useAppStore(state => state.theme)
