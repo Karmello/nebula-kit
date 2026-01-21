@@ -24,7 +24,6 @@ FOUNDATIONS_CATEGORIES.forEach(c =>
   c.items.forEach(i =>
     i.sections.forEach(s => {
       const isVersion = /^v\d+\.\d+\.\d+$/.test(s.key)
-      if (isVersion) console.log(s.key)
       const sectionLabel = isVersion ? s.key : noCase(s.key)
       const label = `${PageKey.foundations.replace('/', '')} / ${noCase(c.key)} / ${noCase(i.key)} / ${sectionLabel}`
       OPTIONS.push({

@@ -39,6 +39,8 @@ export const Image = ({
   fetchPriority,
   objectFit,
   objectPosition,
+  onLoad,
+  onError,
 }: ImageProps) => {
   const ref = useRef<HTMLImageElement>(null)
 
@@ -64,6 +66,8 @@ export const Image = ({
         crossOrigin,
         referrerPolicy,
         fetchPriority,
+        onLoad,
+        onError,
       }}
       tagRef={finalRef}
       blockSize={blockSize}

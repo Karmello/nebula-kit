@@ -1,3 +1,5 @@
+import { SyntheticEvent } from 'react'
+
 import { BoxProps } from 'lib/components'
 import { RespValue } from 'lib/definitions'
 
@@ -56,6 +58,8 @@ type ImageOwnProps = {
   fetchPriority?: ImageFetchPriority
   objectFit?: RespValue<ImageObjectFit>
   objectPosition?: RespValue<string>
+  onLoad?: (e: SyntheticEvent<HTMLImageElement>) => void
+  onError?: (e: SyntheticEvent<HTMLImageElement>) => void
 }
 
 export type ImageProps = PropsFromBox & ImageOwnProps

@@ -52,6 +52,14 @@ const IMAGE_PROPS_META: ComponentMeta<ImageProps>['props'] = {
     isResponsive: true,
     description: 'Sets the alignment of the image within its container.',
   },
+  onError: {
+    options: ['event => void'],
+    description: 'Called when the underlying img element fires an error event.',
+  },
+  onLoad: {
+    options: ['event => void'],
+    description: 'Called when the underlying img element fires a load event.',
+  },
   opacity: BOX_PROPS_META.opacity,
   overflow: BOX_PROPS_META.overflow,
   overflowX: BOX_PROPS_META.overflowX,

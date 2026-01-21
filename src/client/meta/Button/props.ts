@@ -51,7 +51,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   maxInlineSize: BOX_PROPS_META.maxInlineSize,
   minInlineSize: BOX_PROPS_META.minInlineSize,
   onClick: {
-    options: ['e => void'],
+    options: ['event => void'],
     description: 'Click event handler for the button element.',
   },
   size: {
