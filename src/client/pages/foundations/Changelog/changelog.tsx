@@ -1,5 +1,4 @@
 import { useMemo } from 'react'
-import { useLocation } from 'react-router-dom'
 
 import meta from 'client/meta'
 import { RELEASE_INFO, ReleaseVersion } from 'client/definitions'
@@ -40,9 +39,7 @@ const PanelContent = ({ notes }: { notes: Record<string, string[]> }) => {
   )
 }
 
-export default () => {
-  const { pathname } = useLocation()
-
+export default ({ pathname }: { pathname: string }) => {
   const [, , , sectionKey] = pathname.split('/').filter(s => s)
 
   const releaseVersion = sectionKey.replace('v', '')

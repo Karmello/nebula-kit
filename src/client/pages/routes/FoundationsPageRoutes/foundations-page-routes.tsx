@@ -1,5 +1,4 @@
-import { useMemo } from 'react'
-import { Route, Routes } from 'react-router'
+import { Route, Routes, useLocation } from 'react-router'
 import { pascalCase } from 'change-case'
 
 import * as FOUNDATION_COMPONENTS from 'client/pages/foundations'
@@ -8,30 +7,30 @@ import { NextPageButton } from 'client/components'
 import { Spacer } from 'lib/components'
 
 export const FoundationsPageRoutes = () => {
-  const ROUTES = useMemo(() => {
-    return FOUNDATIONS_SECTIONS.map(({ categoryKey, itemKey, sectionKey }) => {
-      const componentKey = itemKey === 'changelog' ? itemKey : sectionKey
-      const Component = FOUNDATION_COMPONENTS[pascalCase(componentKey) as never] as any
+  const { pathname } = useLocation()
 
-      if (!Component) {
-        return null
-      }
+  const ROUTES = FOUNDATIONS_SECTIONS.map(({ categoryKey, itemKey, sectionKey }) => {
+    const componentKey = itemKey === 'changelog' ? itemKey : sectionKey
+    const Component = FOUNDATION_COMPONENTS[pascalCase(componentKey) as never] as any
 
-      return (
-        <Route
-          key={`${categoryKey}/${itemKey}/${sectionKey}`}
-          path={`${categoryKey}/${itemKey}/${sectionKey}`}
-          Component={() => (
-            <>
-              <Component />
-              <Spacer blockSize="60px" />
-              <NextPageButton pageKey={PageKey.foundations} />
-            </>
-          )}
-        />
-      )
-    })
-  }, [])
+    if (!Component) {
+      return null
+    }
+
+    return (
+      <Route
+        key={`${categoryKey}/${itemKey}/${sectionKey}`}
+        path={`${categoryKey}/${itemKey}/${sectionKey}`}
+        Component={() => (
+          <>
+            <Component pathname={pathname} />
+            <Spacer blockSize="60px" />
+            <NextPageButton pageKey={PageKey.foundations} />
+          </>
+        )}
+      />
+    )
+  })
 
   return (
     <>
