@@ -1,8 +1,8 @@
-import { Route, Routes, useLocation } from 'react-router'
+import { Navigate, Route, Routes, useLocation } from 'react-router'
 import { pascalCase } from 'change-case'
 
 import * as FOUNDATION_COMPONENTS from 'client/pages/foundations'
-import { FOUNDATIONS_SECTIONS, PageKey } from 'client/definitions'
+import { FOUNDATIONS_CATEGORIES, FOUNDATIONS_SECTIONS, PageKey } from 'client/definitions'
 import { NextPageButton } from 'client/components'
 import { Spacer } from 'lib/components'
 
@@ -35,7 +35,23 @@ export const FoundationsPageRoutes = () => {
   return (
     <>
       <Spacer blockSize="20px" />
-      <Routes>{ROUTES}</Routes>
+      <Routes>
+        {ROUTES}
+        <Route
+          path="*"
+          Component={() => {
+            if (typeof window === 'undefined') return null
+            return (
+              <Navigate
+                to={{
+                  pathname: `${PageKey.foundations}/${FOUNDATIONS_CATEGORIES[0].key}/${FOUNDATIONS_CATEGORIES[0].items[0].key}/${FOUNDATIONS_CATEGORIES[0].items[0].sections[0].key}`,
+                }}
+                replace
+              />
+            )
+          }}
+        />
+      </Routes>
     </>
   )
 }

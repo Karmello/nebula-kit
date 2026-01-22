@@ -103,9 +103,9 @@ export const HomePage = () => {
                   </Button>
                 </Link>
                 <Link
-                  href={PageKey.foundations}
+                  href={`${PageKey.foundations}/overview/introduction/why-nebula`}
                   onClick={() => {
-                    navigateTo(PageKey.foundations)
+                    navigateTo(`${PageKey.foundations}/overview/introduction/why-nebula`)
                   }}
                 >
                   <Button
