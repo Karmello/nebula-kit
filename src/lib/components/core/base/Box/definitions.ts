@@ -40,6 +40,7 @@ type BoxOwnProps = {
   zIndex?: RespValue<number>
   pointerEvents?: CssPointerEvents
   aspectRatio?: RespValue<string>
+  transform?: RespValue<string>
   // border
   borderWidth?: RespValue<string>
   borderTopWidth?: RespValue<string>

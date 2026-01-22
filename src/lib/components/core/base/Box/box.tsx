@@ -41,6 +41,7 @@ export const Box = <T extends ElementType = 'div'>({
   zIndex,
   pointerEvents,
   aspectRatio,
+  transform,
   // border
   borderWidth,
   borderTopWidth,
@@ -118,6 +119,7 @@ export const Box = <T extends ElementType = 'div'>({
       textAlign,
       zIndex,
       aspectRatio,
+      transform,
       borderWidth,
       borderTopWidth,
       borderRightWidth,
@@ -165,6 +167,7 @@ export const Box = <T extends ElementType = 'div'>({
     visibility,
     zIndex,
     aspectRatio,
+    transform,
     textAlign,
     borderWidth,
     borderTopWidth,

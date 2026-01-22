@@ -20,7 +20,7 @@ const PORTAL_META: ComponentMeta<PortalProps> = {
   props: PORTAL_PROPS_META,
   examples: PORTAL_EXAMPLES_META,
   changelog: {
-    '0.3.0': ['public API updated'],
+    '0.3.0': ['updated public API'],
     '0.2.3': ['released'],
   },
 }

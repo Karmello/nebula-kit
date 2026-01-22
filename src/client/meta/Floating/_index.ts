@@ -22,7 +22,7 @@ const FLOATING_META: ComponentMeta<FloatingProps> = {
   changelog: {
     '0.4.0': [
       'refactored into two distinct modes with a complete rewrite of the underlying algorithms',
-      'public API updated',
+      'updated public API',
     ],
     '0.3.0': ['released'],
   },
