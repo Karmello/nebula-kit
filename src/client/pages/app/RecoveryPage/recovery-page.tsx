@@ -51,21 +51,16 @@ export const RecoveryPage = () => {
             <Form.Fields>
               {!token ? (
                 <Form.Field name="email" label="Email" required email minLength={5} maxLength={254}>
-                  <Input
-                    tagAttrs={{
-                      placeholder: 'Enter email address',
-                      autoComplete: 'off',
-                    }}
-                  />
+                  <Input tagAttrs={{ autoComplete: 'off' }} placeholder="Enter email address" />
                 </Form.Field>
               ) : (
                 <Form.Field name="newPassword" label="New password" required minLength={8} maxLength={128}>
                   <Input
                     tagAttrs={{
                       type: hidePassword ? 'password' : 'text',
-                      placeholder: 'Enter password',
                       autoComplete: 'off',
                     }}
+                    placeholder="Enter password"
                     endAffix={props => (
                       <Button
                         {...props}
