@@ -72,7 +72,7 @@ export const SplitViewSide = ({
           overflowX="hidden"
         >
           <Resize property="inlineSize" visible={sideOpen}>
-            <Box inlineSize={inlineSize} paddingRight={BOX_BORDER_WIDTH}>
+            <Box inlineSize={inlineSize} maxInlineSize="100dvw" paddingRight={BOX_BORDER_WIDTH}>
               <Box>
                 {mode === 'overlay' ? (
                   <Flex justifyContent="flex-end">
