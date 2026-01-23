@@ -6,6 +6,8 @@ import { Form, FormFieldProps, FormLabelProps, FormHintProps } from 'lib/compone
 
 import { getRulesObject } from './helpers'
 
+const CHECKABLE_COMPONENTS = ['Checkbox', 'Switch']
+
 type FormFieldControllerProps = {
   formFieldProps: Pick<
     FormFieldProps,
@@ -29,14 +31,14 @@ export const FormFieldController = ({
   const formId = (formContext as any).formId
   const labelId = `${formId}-${name}-label`
 
-  const isCheckbox = (formFieldComponent.type as any).displayName === 'Checkbox'
+  const isCheckable = CHECKABLE_COMPONENTS.includes((formFieldComponent.type as any).displayName)
 
   return (
     <Controller
       name={name}
       control={formContext.control}
       defaultValue={
-        isCheckbox
+        isCheckable
           ? (formFieldComponent.props['defaultChecked'] ?? false)
           : (formFieldComponent.props['defaultValue'] ?? '')
       }
@@ -64,12 +66,12 @@ export const FormFieldController = ({
             ) : null}
             {cloneElement(formFieldComponent, {
               ...omit(formFieldComponent.props, [
-                isCheckbox ? 'checked' : 'value',
-                isCheckbox ? 'defaultChecked' : 'defaultValue',
+                isCheckable ? 'checked' : 'value',
+                isCheckable ? 'defaultChecked' : 'defaultValue',
                 'onChange',
               ]),
-              value: !isCheckbox ? field.value : undefined,
-              checked: isCheckbox ? field.value : undefined,
+              value: !isCheckable ? field.value : undefined,
+              checked: isCheckable ? field.value : undefined,
               onChange: field.onChange,
               onBlur: (e: any) => {
                 const trimmed = e.target.value.trim()
