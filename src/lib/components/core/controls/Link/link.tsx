@@ -1,7 +1,7 @@
 import { Children, cloneElement, MouseEvent } from 'react'
 import classNames from 'classnames'
 
-import { HtmlTagProps } from 'lib/components'
+import { HtmlTag, HtmlTagProps } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import { DEFAULT_LINK_TARGET, LinkProps } from './definitions'
@@ -25,17 +25,35 @@ export const Link = ({
 
   const finalChildren = Children.toArray(children)[0] as any
 
-  return cloneElement<HtmlTagProps<'a'>>(finalChildren, {
-    ...finalChildren.props,
-    tag: 'a',
-    tagAttrs: {
-      ...finalChildren.props.tagAttrs,
-      className: classNames(withPrefix('link'), finalChildren.props.tagAttrs?.className),
-      href,
-      target,
-      onClick: finalOnClick,
-    },
-  })
+  const displayName = finalChildren?.type?.displayName
+
+  if (['Button', 'Text'].includes(displayName)) {
+    return cloneElement<HtmlTagProps<'a'>>(finalChildren, {
+      ...finalChildren.props,
+      tag: 'a',
+      tagAttrs: {
+        ...finalChildren.props.tagAttrs,
+        className: classNames(withPrefix('link'), finalChildren.props.tagAttrs?.className),
+        href,
+        target,
+        onClick: finalOnClick,
+      },
+    })
+  } else {
+    return (
+      <HtmlTag
+        tag="a"
+        tagAttrs={{
+          className: withPrefix('link'),
+          href,
+          target,
+          onClick: finalOnClick,
+        }}
+      >
+        {children}
+      </HtmlTag>
+    )
+  }
 }
 
 Link.displayName = 'Link'

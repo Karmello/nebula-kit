@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Form, FormProps, Input, Select, Checkbox } from 'lib/components'
+import { Form, FormProps, Input, Select, Checkbox, Autocomplete, MultiSelect, Switch } from 'lib/components'
 
 const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
   {
@@ -39,7 +39,38 @@ const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
               <Select.Option value="female">Female</Select.Option>
             </Select>
           </Form.Field>
-          <Form.Field name="verified" label="Are you human ?">
+          <Form.Field name="country" label="Country">
+            <Autocomplete>
+              <Autocomplete.Option value="PL" label="Poland">
+                Poland
+              </Autocomplete.Option>
+              <Autocomplete.Option value="UK" label="United Kingdom">
+                United Kingdom
+              </Autocomplete.Option>
+              <Autocomplete.Option value="DE" label="Germany">
+                Germany
+              </Autocomplete.Option>
+              <Autocomplete.Option value="US" label="United States">
+                United States
+              </Autocomplete.Option>
+              <Autocomplete.Option value="FR" label="France">
+                France
+              </Autocomplete.Option>
+            </Autocomplete>
+          </Form.Field>
+          <Form.Field name="interests" label="Interests">
+            <MultiSelect>
+              <MultiSelect.Option value="music">Music</MultiSelect.Option>
+              <MultiSelect.Option value="film">Film</MultiSelect.Option>
+              <MultiSelect.Option value="politics">Politics</MultiSelect.Option>
+              <MultiSelect.Option value="sport">Sport</MultiSelect.Option>
+              <MultiSelect.Option value="technology">Technology</MultiSelect.Option>
+            </MultiSelect>
+          </Form.Field>
+          <Form.Field name="newsletter" label="Subscribe to a newsletter">
+            <Switch size="xs" />
+          </Form.Field>
+          <Form.Field name="verified" label="I am not a robot">
             <Checkbox />
           </Form.Field>
         </Form.Fields>

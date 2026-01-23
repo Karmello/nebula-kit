@@ -5,16 +5,25 @@ const FLOATING_EXAMPLES_META: ComponentMeta<FloatingProps>['examples'] = [
   {
     description: 'Basic usage.',
     noSandBox: true,
-    code: `const anchorRef = useRef(null)
+    code: `const anchorRef = useRef<HTMLElement | null>(null)
 const [resolved, setResolved] = useState<FloatingResolved>()
 \t
 return (
   <>
     <Box tagRef={anchorRef}>Anchor</Box>
-
     <Floating
       anchorRef={anchorRef}
-      onResolve={setResolved}
+      mode="project-both"
+      minInlineSize={120}
+      maxInlineSize={240}
+      onResolve={resolved => {
+        if (
+          resolved.placement !== floatingResolved?.placement ||
+          resolved.blockSize !== floatingResolved?.blockSize
+        ) {
+          setFloatingResolved(resolved)
+        }
+      }}
     >
       {resolved && (
         <Portal
@@ -26,7 +35,8 @@ return (
       )}
     </Floating>
   </>
-)`,
+)
+`,
   },
 ]
 

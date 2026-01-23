@@ -39,6 +39,7 @@ export const Tooltip = ({
   paddingBlock,
   paddingInline,
   textAlign,
+  minInlineSize,
   maxInlineSize,
   // own
   content,
@@ -97,13 +98,8 @@ export const Tooltip = ({
         intent="neutral"
         variant="solid"
         pointerEvents="none"
-        maxInlineSize={
-          floatingResolved
-            ? maxInlineSize
-              ? `min(${floatingResolved.availableInlineSize}px, ${maxInlineSize})`
-              : `${floatingResolved.availableInlineSize}px`
-            : maxInlineSize
-        }
+        minInlineSize={`${minInlineSize}px`}
+        maxInlineSize={`${maxInlineSize}px`}
       >
         <Box
           drawable
@@ -128,20 +124,15 @@ export const Tooltip = ({
           <Floating
             anchorRef={triggerRef}
             placement={placement}
-            flipThresholdRatio={0.5}
+            mode="project-both"
+            minInlineSize={minInlineSize}
+            maxInlineSize={maxInlineSize}
             offset={offset}
             onResolve={(resolved: FloatingResolved) => {
               setFloatingResolved(prev => {
-                if (
-                  prev &&
-                  prev.placement === resolved.placement &&
-                  prev.blockSize === resolved.blockSize &&
-                  prev.availableBlockSize === resolved.availableBlockSize &&
-                  prev.availableInlineSize === resolved.availableInlineSize
-                ) {
+                if (prev && prev.placement === resolved.placement && prev.blockSize === resolved.blockSize) {
                   return prev
                 }
-
                 return resolved
               })
             }}

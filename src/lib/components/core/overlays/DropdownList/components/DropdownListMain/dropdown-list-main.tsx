@@ -20,9 +20,9 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
     setHoveredIndex,
     setEnsureVisibleIndex,
     setBlockMouse,
-    resolvedVisibleItemsCount,
     itemHeight,
     animationDuration,
+    floatingResolved,
   } = useDropdownListContext()
 
   useOutsideClick([triggerRef, portalRef], () => setResizeVisible(false))
@@ -83,7 +83,9 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
               itemsCount,
               activeIndex: hoveredIndex,
               scrollTop: scrollWrapperRef.current.scrollTop,
-              visibleItemsCount: resolvedVisibleItemsCount ?? 1,
+              visibleItemsCount: floatingResolved?.blockSize
+                ? Math.floor(floatingResolved.blockSize / itemHeight)
+                : 1,
               itemHeight,
             })
 

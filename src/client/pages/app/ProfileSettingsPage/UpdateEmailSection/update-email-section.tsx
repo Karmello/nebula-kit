@@ -51,7 +51,7 @@ export const UpdateEmailSection = () => {
               <>
                 <Form.Fields>
                   <Form.Field name="email" label="New email" required email minLength={5} maxLength={254}>
-                    <Input tagAttrs={{ placeholder: 'Enter email address', autoComplete: 'off' }} />
+                    <Input placeholder="Enter email address" tagAttrs={{ autoComplete: 'off' }} />
                   </Form.Field>
                 </Form.Fields>
                 <Form.Actions>

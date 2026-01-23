@@ -1,3 +1,5 @@
+import { MouseEventHandler } from 'react'
+
 import { BoxProps, FlexProps, HtmlTagProps, TextProps, WithIconProps } from 'lib/components'
 import { RespValue, Sizes } from 'lib/definitions'
 import { BoxIntent, BoxVariant } from 'lib/components/core/base/Box/definitions'
@@ -52,6 +54,7 @@ type ButtonOwnProps = {
   size?: ButtonSize
   fullWidth?: RespValue<boolean>
   loading?: boolean
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | MouseEventHandler<HTMLAnchorElement>
 }
 
 type PropsFromHtmlTag<T extends ButtonTag = 'button'> = HtmlTagProps<T>

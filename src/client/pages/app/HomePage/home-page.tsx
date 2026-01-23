@@ -2,7 +2,7 @@ import { sentenceCase } from 'change-case'
 
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { PageKey, RELEASE_VERSIONS, RELEASE_INFO } from 'client/definitions'
+import { PageKey, RELEASE_VERSIONS } from 'client/definitions'
 
 import {
   Box,
@@ -15,7 +15,6 @@ import {
   Spacer,
   Text,
   Segment,
-  Callout,
   Grid,
 } from 'lib/components'
 
@@ -37,14 +36,36 @@ export const HomePage = () => {
 
   return (
     <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">
-      <Callout
-        size="sm"
+      <Section
+        size="md"
+        intent="secondary"
+        color="purple"
         variant="outline"
-        content={RELEASE_INFO[RELEASE_VERSIONS[0]].description}
         heading={`NebulaKit v${RELEASE_VERSIONS[0]} is live`}
-      />
+      >
+        <Flex flexWrap="wrap" alignItems="center" gap="20px">
+          <Text>
+            NebulaKit is actively developed and released in incremental updates. Each release introduces new
+            components, improvements and refinements across the system.
+          </Text>
+          <Link
+            href={`${PageKey.foundations}/resources/changelog/v${RELEASE_VERSIONS[0]}`}
+            onClick={() => {
+              navigateTo(`${PageKey.foundations}/resources/changelog/v${RELEASE_VERSIONS[0]}`)
+            }}
+          >
+            <Button size="xs" color="blue" intent="secondary" iconName="arrow-right" iconPlacement="right">
+              Release notes
+            </Button>
+          </Link>
+        </Flex>
+      </Section>
       <Spacer blockSize="75px" />
-      <Flex flexDirection={{ base: 'column', lg: 'row' }} rowGap="80px" columnGap="160px">
+      <Flex
+        flexDirection={{ base: 'column', lg: 'row' }}
+        rowGap="80px"
+        columnGap={{ base: '50px', xl: '100px' }}
+      >
         <Flex.Item flex="2">
           <Text typography="h1" color="purple" intent="primary">
             NebulaKit
@@ -82,9 +103,9 @@ export const HomePage = () => {
                   </Button>
                 </Link>
                 <Link
-                  href={PageKey.foundations}
+                  href={`${PageKey.foundations}/overview/introduction/why-nebula`}
                   onClick={() => {
-                    navigateTo(PageKey.foundations)
+                    navigateTo(`${PageKey.foundations}/overview/introduction/why-nebula`)
                   }}
                 >
                   <Button
@@ -178,7 +199,7 @@ export const HomePage = () => {
           </Box>
         </Flex.Item>
         <Flex.Item flex="1">
-          <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="30px">
+          <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="50px">
             <Section heading="One foundation" color="red" intent="primary" iconName="box">
               <Text intent="neutral">
                 Every component shares the same core primitives. Consistency isn't enforced - it's designed

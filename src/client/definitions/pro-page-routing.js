@@ -17,6 +17,11 @@ export const PRO_PAGE_CATEGORIES = [
     items: [{ key: 'tabs', label: 'Tabs', sections }],
   },
   {
+    key: 'elements',
+    label: 'Elements',
+    items: [{ key: 'avatar', label: 'Avatar', sections }],
+  },
+  {
     key: 'feedback',
     label: 'Feedback',
     items: [{ key: 'snackbar', label: 'Snackbar', sections }],
@@ -44,6 +49,7 @@ export const PRO_PAGE_CATEGORIES = [
     items: [
       { key: 'side-nav', label: 'SideNav', sections },
       { key: 'breadcrumb', label: 'Breadcrumb', sections },
+      { key: 'pagination', label: 'Pagination', sections },
     ],
   },
   {
@@ -53,6 +59,7 @@ export const PRO_PAGE_CATEGORIES = [
       { key: 'form', label: 'Form', sections },
       { key: 'multi-select', label: 'MultiSelect', sections },
       { key: 'autocomplete', label: 'Autocomplete', sections },
+      { key: 'switch', label: 'Switch', sections },
     ],
   },
   {

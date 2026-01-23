@@ -5,6 +5,7 @@ export const CSS_POINTER_EVENTS = ['auto', 'none'] as const
 export const CSS_DISPLAY = ['block', 'inline', 'inline-block', 'none', 'contents'] as const
 export const CSS_OVERFLOW = ['visible', 'hidden', 'clip', 'scroll', 'auto'] as const
 export const CSS_POSITION = ['static', 'relative', 'absolute', 'fixed', 'sticky'] as const
+export const CSS_VISIBILITY = ['visible', 'hidden'] as const
 
 export const CSS_FLEX_DISPLAY = ['flex', 'inline-flex'] as const
 export const CSS_FLEX_DIRECTION = ['row', 'row-reverse', 'column', 'column-reverse'] as const
@@ -63,6 +64,7 @@ export type CssPointerEvents = (typeof CSS_POINTER_EVENTS)[number]
 export type CssDisplay = (typeof CSS_DISPLAY)[number]
 export type CssOverflow = (typeof CSS_OVERFLOW)[number]
 export type CssPosition = (typeof CSS_POSITION)[number]
+export type CssVisibility = (typeof CSS_VISIBILITY)[number]
 
 export type CssFlexDisplay = (typeof CSS_FLEX_DISPLAY)[number]
 export type CssFlexDirection = (typeof CSS_FLEX_DIRECTION)[number]

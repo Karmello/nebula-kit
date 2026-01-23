@@ -22,7 +22,8 @@ const BOX_META: ComponentMeta<BoxProps> = {
   props: BOX_PROPS_META,
   examples: BOX_EXAMPLES_META,
   changelog: {
-    '0.2.3': ['Released'],
+    '0.4.0': ['added visibility prop', 'added aspectRatio prop', 'added transform prop'],
+    '0.2.3': ['released'],
   },
 }
 

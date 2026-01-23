@@ -28,7 +28,7 @@ const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
     defaultValue: String(DEFAULT_INPUT_INTENT),
   },
   onBlur: {
-    options: ['e => void'],
+    options: ['event => void'],
     description: 'Callback fired when the input loses focus.',
   },
   onChange: {
@@ -36,7 +36,7 @@ const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
     description: 'Callback fired when the value changes.',
   },
   onFocus: {
-    options: ['e => void'],
+    options: ['event => void'],
     description: 'Callback fired when the input receives focus.',
   },
   placeholder: {

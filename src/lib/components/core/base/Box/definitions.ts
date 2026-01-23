@@ -7,6 +7,7 @@ import {
   CssPointerEvents,
   CssPosition,
   CssTextAlign,
+  CssVisibility,
   RespValue,
   Theme,
 } from 'lib/definitions'
@@ -34,9 +35,12 @@ type BoxOwnProps = {
   highlighted?: boolean
   // css
   opacity?: RespValue<string>
+  visibility?: RespValue<CssVisibility>
   textAlign?: RespValue<CssTextAlign>
   zIndex?: RespValue<number>
   pointerEvents?: CssPointerEvents
+  aspectRatio?: RespValue<string>
+  transform?: RespValue<string>
   // border
   borderWidth?: RespValue<string>
   borderTopWidth?: RespValue<string>

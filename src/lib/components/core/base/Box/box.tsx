@@ -36,9 +36,12 @@ export const Box = <T extends ElementType = 'div'>({
   highlighted,
   // css
   opacity,
+  visibility,
   textAlign,
   zIndex,
   pointerEvents,
+  aspectRatio,
+  transform,
   // border
   borderWidth,
   borderTopWidth,
@@ -112,8 +115,11 @@ export const Box = <T extends ElementType = 'div'>({
   useLayoutEffect(() => {
     updateDomRespStyle('Box', finalRef, bp, {
       opacity,
+      visibility,
       textAlign,
       zIndex,
+      aspectRatio,
+      transform,
       borderWidth,
       borderTopWidth,
       borderRightWidth,
@@ -158,7 +164,10 @@ export const Box = <T extends ElementType = 'div'>({
   }, [
     bp,
     opacity,
+    visibility,
     zIndex,
+    aspectRatio,
+    transform,
     textAlign,
     borderWidth,
     borderTopWidth,

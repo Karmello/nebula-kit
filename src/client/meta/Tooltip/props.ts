@@ -30,6 +30,14 @@ const TOOLTIP_PROPS_META: ComponentMeta<TooltipProps>['props'] = {
   },
   maxInlineSize: {
     ...BOX_PROPS_META.maxInlineSize,
+    options: ['number'],
+    isRequired: true,
+    isResponsive: false,
+  },
+  minInlineSize: {
+    ...BOX_PROPS_META.minInlineSize,
+    options: ['number'],
+    isRequired: true,
     isResponsive: false,
   },
   offset: {

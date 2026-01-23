@@ -31,7 +31,7 @@ const TABLE_META: ComponentMeta<TableProps> = {
   props: TABLE_PROPS_META,
   examples: TABLE_EXAMPLES_META,
   changelog: {
-    '0.2.3': ['Released'],
+    '0.2.3': ['released'],
   },
 }
 

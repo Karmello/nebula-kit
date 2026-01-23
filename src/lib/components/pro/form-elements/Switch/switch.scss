@@ -1,0 +1,16 @@
+.neb-switch {
+  position: relative;
+
+  input.neb-box {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .neb-switch-thumb {
+    position: absolute;
+    pointer-events: none;
+  }
+}

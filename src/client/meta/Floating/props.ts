@@ -1,6 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { FloatingProps } from 'lib/components'
 import { PORTAL_PLACEMENTS } from 'lib/components/core/utility/Portal'
+import { FLOATING_MODE } from 'lib/components/pro/overlays/Floating'
 
 const FLOATING_PROPS_META: ComponentMeta<FloatingProps>['props'] = {
   anchorRef: {
@@ -14,41 +15,46 @@ const FLOATING_PROPS_META: ComponentMeta<FloatingProps>['props'] = {
     description:
       'Rendered floating content. Floating does not render any DOM of its own and only provides placement resolution for its children.',
   },
+  maxInlineSize: {
+    options: ['number'],
+    description:
+      'Maximum inline size in pixels. Required when using the project strategy to resolve placement.',
+  },
+  minInlineSize: {
+    options: ['number'],
+    description:
+      'Minimum inline size in pixels. Required when using the project strategy to resolve placement.',
+  },
+  mode: {
+    options: FLOATING_MODE as never,
+    isRequired: true,
+    description:
+      'Defines the floating behavior and allowed axis. Combines positioning strategy (project or fit) with the axis constraint (x, y, or both) into a single required setting that determines how placement is resolved.',
+  },
   offset: {
     options: ['number'],
     description:
-      'Defines the distance (px) between the anchor and floating content along the placement axis. Informational only - used for placement resolution, not rendering.',
+      'Offset in pixels applied during placement calculations to add space between the floating element and its anchor.',
   },
   onResolve: {
-    options: ['({ placement, availableBlockSize, availableInlineSize, blockSize? }) => void'],
-    isRequired: true,
+    options: ['({ placement, blockSize? }) => void'],
     description:
-      'Callback invoked when Floating resolves placement or layout constraints. Receives resolved placement and layout constraints.',
+      "Callback invoked when the floating element's placement is resolved. Receives the resolved placement and when applicable, the resolved block size.",
   },
   placement: {
     options: PORTAL_PLACEMENTS as never,
-    description: 'Specifies the preferred placement of the floating content relative to the anchor.',
-  },
-  flipThresholdRatio: {
-    options: ['0 - 1'],
-    defaultValue: '0',
     description:
-      'Controls how strongly Floating prefers the requested placement before flipping to the opposite side when the floating size is unknown. Higher values delay flipping and keep the overlay on the preferred side longer. Only applies in size-agnostic mode.',
+      'Preferred initial placement of the floating element. Acts as a hint and may be overridden during resolution depending on mode and available space.',
   },
   floatingBlockSize: {
     options: ['number'],
     description:
-      'Expected block size (px) of the floating content. When provided, Floating operates in size-aware mode and uses this value to improve placement, flipping and clamping decisions. Does not affect rendering.',
-  },
-  floatingInlineSize: {
-    options: ['number'],
-    description:
-      'Expected inline size (px) of the floating content. When provided, Floating operates in size-aware mode and uses this value to improve alignment and overflow resolution. Does not affect rendering.',
+      'Block size of the floating element in pixels. Required when using the fit strategy to resolve placement.',
   },
   viewportPadding: {
     options: ['number'],
     description:
-      'Defines the minimum distance (px) from viewport edges used during placement resolution. Informational only - does not affect rendering.',
+      'Padding in pixels applied to viewport bounds during placement calculations, used to keep the resolved position away from the viewport edges.',
   },
 }
 

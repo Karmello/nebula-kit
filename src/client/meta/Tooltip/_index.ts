@@ -19,7 +19,7 @@ const TOOLTIP_META: ComponentMeta<TooltipProps> = {
   props: TOOLTIP_PROPS_META,
   examples: TOOLTIP_EXAMPLES_META,
   changelog: {
-    '0.3.0': ['Released'],
+    '0.3.0': ['released'],
   },
 }
 

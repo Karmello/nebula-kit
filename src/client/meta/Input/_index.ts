@@ -15,7 +15,7 @@ const INPUT_META: ComponentMeta<InputProps> = {
   props: INPUT_PROPS_META,
   examples: INPUT_EXAMPLES_META,
   changelog: {
-    '0.2.3': ['Released'],
+    '0.2.3': ['released'],
   },
 }
 

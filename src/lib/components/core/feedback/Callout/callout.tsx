@@ -51,8 +51,12 @@ export const Callout = <T extends CalloutTag = 'div'>({
       >
         {heading || CALLOUT_CONFIG[status || 'info'].heading}
       </Text>
-      <Spacer blockSize={CALLOUT_SIZE_CONFIG[size || 'md'].spacing} />
-      <Text>{content}</Text>
+      {content ? (
+        <>
+          <Spacer blockSize={CALLOUT_SIZE_CONFIG[size || 'md'].spacing} />
+          <Text>{content}</Text>
+        </>
+      ) : null}
     </Box>
   )
 }

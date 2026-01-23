@@ -46,6 +46,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   size = DEFAULT_BUTTON_SIZE,
   fullWidth,
   loading,
+  onClick,
 }: ButtonProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
 
@@ -66,6 +67,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       tag={tag}
       tagAttrs={
         {
+          onClick,
           ...tagAttrs,
           className: classNames(
             withPrefix('button'),

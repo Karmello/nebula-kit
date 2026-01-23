@@ -28,7 +28,7 @@ export const FeedbackPage = () => {
         >
           <Form.Fields>
             <Form.Field name="message" label="Message" required minLength={5} maxLength={2000}>
-              <Textarea tagAttrs={{ placeholder: 'Write your feedback ...' }} rows={10} resize="none" />
+              <Textarea placeholder="Write your feedback ..." rows={10} resize="none" />
             </Form.Field>
           </Form.Fields>
           <Form.Actions>

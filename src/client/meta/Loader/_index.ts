@@ -15,7 +15,7 @@ const LOADER_META: ComponentMeta<LoaderProps> = {
   props: LOADER_PROPS_META,
   examples: LOADER_EXAMPLES_META,
   changelog: {
-    '0.2.3': ['Released'],
+    '0.2.3': ['released'],
   },
 }
 

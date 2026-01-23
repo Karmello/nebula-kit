@@ -62,9 +62,9 @@ export const AccountDeactivationForm = ({
               <Box inlineSize="400px" paddingRight="20px">
                 <Input
                   tagAttrs={{
-                    placeholder: 'Enter your email',
                     autoComplete: 'off',
                   }}
+                  placeholder="Enter your email"
                   value={inputValue}
                   onChange={setInputValue}
                   size="sm"

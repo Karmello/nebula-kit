@@ -1,46 +1,59 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect } from 'react'
 
-import { resolve } from './helpers'
-import { FloatingProps, FloatingResolved } from './definitions'
+import { resolveFitStrategy, resolveProjectStrategy } from './strategies'
+import { DEFAULT_FLOATING_PLACEMENT, FloatingProps } from './definitions'
 
 export const Floating = ({
   children,
   anchorRef,
-  onResolve,
-  placement,
-  flipThresholdRatio,
+  mode,
+  placement = DEFAULT_FLOATING_PLACEMENT,
   floatingBlockSize,
-  floatingInlineSize,
+  maxInlineSize,
+  minInlineSize,
   offset,
   viewportPadding,
+  onResolve,
 }: FloatingProps) => {
-  const [resolved, setResolved] = useState<FloatingResolved | null>(null)
+  const resolve = useCallback(() => {
+    const next =
+      mode === 'fit-x' || mode === 'fit-y'
+        ? resolveFitStrategy({
+            anchorRef,
+            mode,
+            placement,
+            offset,
+            viewportPadding,
+            floatingBlockSize,
+          })
+        : resolveProjectStrategy({
+            anchorRef,
+            mode,
+            placement,
+            offset,
+            viewportPadding,
+            minInlineSize: minInlineSize as never,
+            maxInlineSize: maxInlineSize as never,
+          })
 
-  const props = {
-    children,
-    anchorRef,
-    onResolve,
+    onResolve?.(next)
+  }, [
+    anchorRef.current,
+    mode,
     placement,
-    flipThresholdRatio,
-    floatingBlockSize,
-    floatingInlineSize,
     offset,
     viewportPadding,
-  }
+    floatingBlockSize,
+    minInlineSize,
+    maxInlineSize,
+    onResolve,
+  ])
 
   useEffect(() => {
-    resolve(props, setResolved)
-  }, [resolve])
+    resolve()
 
-  useEffect(() => {
-    if (resolved) {
-      onResolve?.(resolved)
-    }
-  }, [resolved])
-
-  useEffect(() => {
-    const onResize = () => resolve(props, setResolved)
-    const onScroll = () => resolve(props, setResolved)
+    const onResize = () => resolve()
+    const onScroll = () => resolve()
 
     window.addEventListener('resize', onResize)
     window.addEventListener('scroll', onScroll, true)

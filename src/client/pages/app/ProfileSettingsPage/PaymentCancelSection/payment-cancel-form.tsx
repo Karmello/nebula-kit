@@ -61,10 +61,8 @@ export const PaymentCancelForm = ({
             <Resize property="inlineSize" visible={enableInput}>
               <Box inlineSize="400px" paddingRight="20px">
                 <Input
-                  tagAttrs={{
-                    placeholder: 'Enter your email',
-                    autoComplete: 'off',
-                  }}
+                  placeholder="Enter your email"
+                  tagAttrs={{ autoComplete: 'off' }}
                   value={inputValue}
                   onChange={setInputValue}
                   size="sm"

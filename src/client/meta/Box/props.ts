@@ -7,6 +7,7 @@ import {
   CSS_POINTER_EVENTS,
   CSS_POSITION,
   CSS_TEXT_ALIGN,
+  CSS_VISIBILITY,
   THEMES,
 } from 'lib/definitions'
 
@@ -15,7 +16,11 @@ import { BoxProps, BOX_VARIANTS, BOX_INTENTS } from 'lib/components/core/base/Bo
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
-  ...HTML_TAG_PROPS_META,
+  aspectRatio: {
+    options: ['CSS'],
+    isResponsive: true,
+    description: 'Defines the preferred width-to-height ratio of the component.',
+  },
   brand: {
     options: ['BoxColor'],
     isResponsive: true,
@@ -94,6 +99,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Bottom offset.',
     link: true,
   },
+  children: HTML_TAG_PROPS_META.children,
   color: {
     options: ['BoxColor'],
     isResponsive: true,
@@ -298,6 +304,9 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Right offset.',
     link: true,
   },
+  tag: HTML_TAG_PROPS_META.tag,
+  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
+  tagRef: HTML_TAG_PROPS_META.tagRef,
   textAlign: {
     options: CSS_TEXT_ALIGN as never,
     isResponsive: true,
@@ -316,10 +325,21 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Top offset.',
     link: true,
   },
+  transform: {
+    options: ['CSS'],
+    isResponsive: true,
+    description: 'Applies a CSS transform for positional adjustment.',
+  },
   variant: {
     options: Object.values(BOX_VARIANTS),
     isResponsive: true,
     description: 'Visual style variant.',
+  },
+  visibility: {
+    options: Object.values(CSS_VISIBILITY),
+    isResponsive: true,
+    description: 'Controls whether the element is visible without affecting layout.',
+    link: true,
   },
   zIndex: {
     options: ['number'],

@@ -5,7 +5,7 @@ import { Bucket, PropValues, isBlank } from '../definitions'
 import { getBucketPerBp } from './get-bucket-per-bp'
 
 export const updateDomRespStyle = (
-  componentName: 'Box' | 'Flex' | 'Flex.Item' | 'Grid' | 'Grid.Item',
+  componentName: 'Box' | 'Flex' | 'Flex.Item' | 'Grid' | 'Grid.Item' | 'Image',
   elemRef: RefObject<any>,
   breakpoint: Breakpoint,
   propValues: PropValues

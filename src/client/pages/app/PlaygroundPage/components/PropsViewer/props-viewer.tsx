@@ -40,18 +40,16 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
                 <Table.Row key={propName}>
                   <Table.Cell>
                     <Button
-                      tagAttrs={{
-                        onClick: () => {
-                          setActiveProp(activeComponent, propName)
-                          handleSideVisibility()
-                        },
-                      }}
                       variant={components[activeComponent].activeProp === propName ? 'solid' : 'ghost'}
                       intent={components[activeComponent].activeProp === propName ? 'tertiary' : 'primary'}
                       color="blue"
                       size="sm"
                       iconName={props[propName].isResponsive ? 'screen-share' : undefined}
                       iconPlacement="right"
+                      onClick={() => {
+                        setActiveProp(activeComponent, propName)
+                        handleSideVisibility()
+                      }}
                     >
                       {propName}
                     </Button>

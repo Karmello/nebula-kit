@@ -59,9 +59,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
       <Spacer blockSize="5px" />
       {PROPS_OPTIONS_FOR_INPUT.includes(prop.options[0]) ? (
         <Input
-          tagAttrs={{
-            placeholder: prop.options[0] === 'ReactNode' ? 'value' : prop.options[0].toLowerCase(),
-          }}
+          placeholder={prop.options[0] === 'ReactNode' ? 'value' : prop.options[0].toLowerCase()}
           value={value}
           onChange={onChange}
           endAffix={props => (

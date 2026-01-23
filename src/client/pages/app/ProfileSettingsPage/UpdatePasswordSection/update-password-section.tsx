@@ -55,9 +55,9 @@ export const UpdatePasswordSection = () => {
                     <Input
                       tagAttrs={{
                         type: hideCurrentPassword ? 'password' : 'text',
-                        placeholder: 'Enter password',
                         autoComplete: 'current-password',
                       }}
+                      placeholder="Enter password"
                       endAffix={props => (
                         <Button
                           {...props}
@@ -73,9 +73,9 @@ export const UpdatePasswordSection = () => {
                     <Input
                       tagAttrs={{
                         type: hideNewPassword ? 'password' : 'text',
-                        placeholder: 'Enter password',
                         autoComplete: 'new-password',
                       }}
+                      placeholder="Enter password"
                       endAffix={props => (
                         <Button
                           {...props}

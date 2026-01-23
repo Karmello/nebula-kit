@@ -2,6 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 
 import appFrameMeta from './AppFrame/_index'
 import autocompleteMeta from './Autocomplete/_index'
+import avatarMeta from './Avatar/_index'
 import boxMeta from './Box/_index'
 import breadcrumbMeta from './Breadcrumb/_index'
 import buttonMeta from './Button/_index'
@@ -19,6 +20,7 @@ import gridMeta from './Grid/_index'
 import htmlTagMeta from './HtmlTag/_index'
 import hydrationGateMeta from './HydrationGate/_index'
 import iconMeta from './Icon/_index'
+import imageMeta from './Image/_index'
 import inputMeta from './Input/_index'
 import linkMeta from './Link/_index'
 import loaderMeta from './Loader/_index'
@@ -26,6 +28,7 @@ import markerListMeta from './MarkerList/_index'
 import measureMeta from './Measure/_index'
 import multiSelectMeta from './MultiSelect/_index'
 import nebkitProviderMeta from './NebkitProvider/_index'
+import paginationMeta from './Pagination/_index'
 import portalMeta from './Portal/_index'
 import resizeMeta from './Resize/_index'
 import revealMeta from './Reveal/_index'
@@ -38,6 +41,7 @@ import slideMeta from './Slide/_index'
 import snackbarMeta from './Snackbar/_index'
 import spacerMeta from './Spacer/_index'
 import splitViewMeta from './SplitView/_index'
+import switchMeta from './Switch/_index'
 import tableMeta from './Table/_index'
 import tabsMeta from './Tabs/_index'
 import textMeta from './Text/_index'
@@ -50,6 +54,7 @@ import withIconMeta from './WithIcon/_index'
 const META = {
   AppFrame: appFrameMeta,
   Autocomplete: autocompleteMeta,
+  Avatar: avatarMeta,
   Box: boxMeta,
   Breadcrumb: breadcrumbMeta,
   Button: buttonMeta,
@@ -67,6 +72,7 @@ const META = {
   HtmlTag: htmlTagMeta,
   HydrationGate: hydrationGateMeta,
   Icon: iconMeta,
+  Image: imageMeta,
   Input: inputMeta,
   Link: linkMeta,
   Loader: loaderMeta,
@@ -74,6 +80,7 @@ const META = {
   Measure: measureMeta,
   MultiSelect: multiSelectMeta,
   NebkitProvider: nebkitProviderMeta,
+  Pagination: paginationMeta,
   Portal: portalMeta,
   Resize: resizeMeta,
   Reveal: revealMeta,
@@ -86,6 +93,7 @@ const META = {
   Snackbar: snackbarMeta,
   Spacer: spacerMeta,
   SplitView: splitViewMeta,
+  Switch: switchMeta,
   Table: tableMeta,
   Tabs: tabsMeta,
   Text: textMeta,

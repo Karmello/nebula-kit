@@ -29,7 +29,7 @@ export const Checkbox = ({
   defaultChecked,
   onChange,
 }: CheckboxProps) => {
-  const [internalChecked, setInternalChecked] = useState<boolean | undefined>(defaultChecked)
+  const [internalChecked, setInternalChecked] = useState<boolean>(defaultChecked ?? false)
 
   const isControlled = checked !== undefined
   const currentChecked = isControlled ? checked : internalChecked
@@ -47,21 +47,25 @@ export const Checkbox = ({
       }}
       tagRef={tagRef}
       drawable
-      interactive
-      color={color}
-      intent={intent}
       variant={variant}
+      intent={intent}
+      color={color}
       disabled={disabled}
-      blockSize={CHECKBOX_SIZE_CONFIG[size || 'xs'].blockSize}
-      inlineSize={CHECKBOX_SIZE_CONFIG[size || 'xs'].blockSize}
+      display="inline-block"
+      borderWidth="0px"
     >
       <Box
         tag="input"
         tagAttrs={{
           type: 'checkbox',
-          checked: currentChecked,
+          ...(isControlled ? { checked: currentChecked } : { defaultChecked: currentChecked }),
           onChange: e => handleChange((e.target as HTMLInputElement).checked),
         }}
+        drawable
+        interactive
+        disabled={disabled}
+        variant={variant}
+        intent={intent}
         blockSize={CHECKBOX_SIZE_CONFIG[size || 'xs'].blockSize}
         inlineSize={CHECKBOX_SIZE_CONFIG[size || 'xs'].blockSize}
       />

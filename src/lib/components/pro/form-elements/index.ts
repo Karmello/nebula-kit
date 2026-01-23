@@ -12,3 +12,5 @@ export {
 } from './Form'
 
 export { MultiSelect, type MultiSelectProps, type MultiSelectOptionProps } from './MultiSelect'
+
+export { Switch, type SwitchProps } from './Switch'
