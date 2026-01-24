@@ -103,9 +103,9 @@ export const HomePage = () => {
                   </Button>
                 </Link>
                 <Link
-                  href={`${PageKey.foundations}/overview/introduction/why-nebula`}
+                  href={`${PageKey.foundations}/overview/getting-started/installation`}
                   onClick={() => {
-                    navigateTo(`${PageKey.foundations}/overview/introduction/why-nebula`)
+                    navigateTo(`${PageKey.foundations}/overview/getting-started/installation`)
                   }}
                 >
                   <Button
@@ -116,7 +116,7 @@ export const HomePage = () => {
                     iconPlacement="right"
                     size="sm"
                   >
-                    Foundations
+                    Getting started
                   </Button>
                 </Link>
               </Flex>
