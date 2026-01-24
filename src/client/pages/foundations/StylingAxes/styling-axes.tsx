@@ -3,15 +3,6 @@ import { Box, MarkerList, Section, Spacer, Text } from 'lib/components'
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Text>
-        NebulaKit resolves visual styles using five orthogonal axes: theme, brand, color, variant and intent.
-        Theme and brand define the visual environment. They can be applied globally or locally and are
-        inherited through the nearest drawable Box. Color, variant and intent are always local. They describe
-        how a specific component presents itself within that environment. Each axis operates independently.
-        Changing one never alters the meaning or behavior of the others. This separation keeps the system
-        predictable, composable and easy to reason about as it grows.
-      </Text>
-      <Spacer blockSize="40px" />
       <Section heading="Theme" size="sm" variant="outline" intent="secondary" color="blue">
         <Text>Theme defines the overall color scheme used to interpret surfaces and colors.</Text>
         <Spacer />

@@ -2,7 +2,7 @@ import { sentenceCase } from 'change-case'
 
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { PageKey, RELEASE_VERSIONS } from 'client/definitions'
+import { PageKey } from 'client/definitions'
 
 import {
   Box,
@@ -36,29 +36,13 @@ export const HomePage = () => {
 
   return (
     <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">
-      <Section
-        size="md"
-        intent="secondary"
-        color="purple"
-        variant="outline"
-        heading={`NebulaKit v${RELEASE_VERSIONS[0]} is live`}
-      >
-        <Flex flexWrap="wrap" alignItems="center" gap="20px">
-          <Text>
-            NebulaKit is actively developed and released in incremental updates. Each release introduces new
-            components, improvements and refinements across the system.
-          </Text>
-          <Link
-            href={`${PageKey.foundations}/resources/changelog/v${RELEASE_VERSIONS[0]}`}
-            onClick={() => {
-              navigateTo(`${PageKey.foundations}/resources/changelog/v${RELEASE_VERSIONS[0]}`)
-            }}
-          >
-            <Button size="xs" color="blue" intent="secondary" iconName="arrow-right" iconPlacement="right">
-              Release notes
-            </Button>
-          </Link>
-        </Flex>
+      <Section size="md" intent="secondary" color="purple" variant="outline" heading="About the website">
+        <Text>
+          This website is built entirely with NebulaKit components. It serves as both documentation and a live
+          showcase of the system in real use. Every layout, interaction and styling decision you see here is
+          produced by the same system APIs available to users. You can explore the components, patterns and
+          constraints of the system by simply using the site.
+        </Text>
       </Section>
       <Spacer blockSize="75px" />
       <Flex
@@ -80,9 +64,9 @@ export const HomePage = () => {
           >
             <Flex.Item>
               <Text typography="h6">
-                React UI system built on composition - small, consistent parts combining into larger
-                structures with clarity and control. Each component follows the same foundation, producing
-                apps that stay predictable, stable and effortless to scale.
+                React UI system built on composition and prop inheritance, with strict rules governing
+                component appearance and behavior. Designed to reduce UI entropy and keep interfaces
+                consistent and maintainable as products grow over time.
               </Text>
               <Spacer blockSize="30px" />
               <Flex gap="10px" flexWrap="wrap" justifyContent={{ base: 'center', md: 'flex-start' }}>
@@ -199,30 +183,45 @@ export const HomePage = () => {
           </Box>
         </Flex.Item>
         <Flex.Item flex="1">
-          <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="50px">
-            <Section heading="One foundation" color="red" intent="primary" iconName="box">
+          <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="40px">
+            <Section heading="JSX first" color="red" intent="primary" iconName="code">
               <Text intent="neutral">
-                Every component shares the same core primitives. Consistency isn't enforced - it's designed
-                in.
+                JSX is the primary development flow. CSS exists only as an internal implementation detail.
               </Text>
             </Section>
-            <Section heading="Systemic growth" color="red" intent="primary" iconName="tree-pine">
+            <Section heading="Built on composition" color="red" intent="primary" iconName="rectangleCircle">
               <Text intent="neutral">
-                Higher-order components extend existing logic instead of reinventing it. As the system
-                expands, elements remain clear and composed.
+                Pure composition drives all component behavior. Functionality is never duplicated.
               </Text>
             </Section>
-            <Section heading="Predictable behavior" color="red" intent="primary" iconName="orbit">
+            <Section heading="Inheriting props" color="red" intent="primary" iconName="share-2">
               <Text intent="neutral">
-                Shared patterns mean fewer surprises - changes flow cleanly through the system.
+                Composed functionality flows through prop inheritance, not redefinition.
               </Text>
             </Section>
-            <Section heading="Visual coherence" color="red" intent="primary" iconName="blend">
+            <Section heading="Enforcing semantics" color="red" intent="primary" iconName="file-code">
+              <Text intent="neutral">Semantic HTML is part of the component contract.</Text>
+            </Section>
+            <Section heading="Orthogonal styling axes" color="red" intent="primary" iconName="atom">
+              <Text intent="neutral">Styling concerns are separated and scoped to prevent interference.</Text>
+            </Section>
+            <Section heading="Resistant to entropy" color="red" intent="primary" iconName="shield-check">
               <Text intent="neutral">
-                Common building blocks keep layout and rhythm consistent across the system.
+                System constraints minimize UI entropy and optimize for long-term consistency.
               </Text>
             </Section>
           </Grid>
+          <Spacer />
+          <Box textAlign="center">
+            <Link
+              href={`${PageKey.foundations}/overview/philosophy/jsx-first`}
+              onClick={() => {
+                navigateTo(`${PageKey.foundations}/overview/philosophy/jsx-first`)
+              }}
+            >
+              <Button size="sm">Read more</Button>
+            </Link>
+          </Box>
         </Flex.Item>
       </Flex>
     </Box>

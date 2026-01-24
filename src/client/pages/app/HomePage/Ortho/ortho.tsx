@@ -1,8 +1,6 @@
 import classNames from 'classnames'
 
-import { PageKey } from 'client/definitions'
-import { useNavigateTo } from 'client/hooks'
-import { Box, Link } from 'lib/components'
+import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import './ortho.scss'
@@ -22,28 +20,19 @@ const ArrowLine = ({ placement }: { placement: Placement }) => {
 }
 
 export const Ortho = () => {
-  const navigateTo = useNavigateTo()
-
   return (
-    <Link
-      href={`${PageKey.foundations}/concepts/styling-system/orthogonality`}
-      onClick={() => {
-        navigateTo(`${PageKey.foundations}/concepts/styling-system/orthogonality`)
-      }}
-    >
-      <Box tagAttrs={{ className: withPrefix('ortho') }}>
-        <Box tagAttrs={{ className: withPrefix('ortho-inner') }}>
-          <Dot />
-          <ArrowTriangle placement="top" />
-          <ArrowTriangle placement="right" />
-          <ArrowTriangle placement="bottom" />
-          <ArrowTriangle placement="left" />
-          <ArrowLine placement="top" />
-          <ArrowLine placement="right" />
-          <ArrowLine placement="bottom" />
-          <ArrowLine placement="left" />
-        </Box>
+    <Box tagAttrs={{ className: withPrefix('ortho') }}>
+      <Box tagAttrs={{ className: withPrefix('ortho-inner') }}>
+        <Dot />
+        <ArrowTriangle placement="top" />
+        <ArrowTriangle placement="right" />
+        <ArrowTriangle placement="bottom" />
+        <ArrowTriangle placement="left" />
+        <ArrowLine placement="top" />
+        <ArrowLine placement="right" />
+        <ArrowLine placement="bottom" />
+        <ArrowLine placement="left" />
       </Box>
-    </Link>
+    </Box>
   )
 }

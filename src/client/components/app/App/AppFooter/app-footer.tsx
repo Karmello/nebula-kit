@@ -15,12 +15,12 @@ export const AppFooter = () => {
     >
       <Footer.Section>
         <Text scale="compact" typography="lead" bold>
-          About the website
+          Current release
         </Text>
         <Divider marginBottom="10px" />
         <Text scale="compact" italic color="gray" intent="primary">
-          This website is built entirely with NebulaKit components. It serves as both documentation and a live
-          showcase of the system in real use.
+          NebulaKit is actively developed and released in incremental updates. Each release introduces new
+          components, improvements and refinements across the system.
         </Text>
         <Spacer blockSize="10px" />
         <Link

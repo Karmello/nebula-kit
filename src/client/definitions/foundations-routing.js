@@ -17,13 +17,12 @@ export const FOUNDATIONS_CATEGORIES = [
         key: 'philosophy',
         label: 'Philosophy',
         sections: [
-          { key: 'one-foundation', label: 'One foundation' },
-          { key: 'systemic-growth', label: 'Systemic growth' },
-          { key: 'predictable-behavior', label: 'Predictable behavior' },
-          { key: 'visual-coherence', label: 'Visual coherence' },
-          { key: 'creative-freedom', label: 'Creative freedom' },
-          { key: 'hidden-css', label: 'Hidden CSS' },
-          { key: 'visible-composition', label: 'Visible composition' },
+          { key: 'jsx-first', label: 'JSX first' },
+          { key: 'built-on-composition', label: 'Built on composition' },
+          { key: 'inheriting-props', label: 'Inheriting props' },
+          { key: 'enforcing-semantics', label: 'Enforcing semantics' },
+          { key: 'orthogonal-styling-axes', label: 'Orthogonal styling axes' },
+          { key: 'resistant-to-entropy', label: 'Resistant to entropy' },
         ],
       },
       {
@@ -46,7 +45,7 @@ export const FOUNDATIONS_CATEGORIES = [
         key: 'styling-system',
         label: 'Styling system',
         sections: [
-          { key: 'orthogonality', label: 'Orthogonality' },
+          { key: 'styling-axes', label: 'Styling axes' },
           { key: 'intents-and-variants', label: 'Intents + variants' },
           { key: 'color-application', label: 'Color application' },
           { key: 'typography', label: 'Typography' },
