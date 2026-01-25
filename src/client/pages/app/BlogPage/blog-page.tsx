@@ -4,7 +4,7 @@ type ArticleProps = { title: string; date: string; platform: string }
 
 const Article = ({ title, date, platform }: ArticleProps) => {
   return (
-    <Section heading={title} variant="outline" intent="secondary">
+    <Section heading={title} variant="outline" intent="secondary" size="sm">
       <Flex gap="7px">
         <Text tag="span">{new Date(date).toDateString()}</Text>
         <Text tag="span" space="both">
