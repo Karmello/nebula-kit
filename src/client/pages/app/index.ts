@@ -1,3 +1,4 @@
+export * from './BlogPage'
 export * from './ComponentsBundlePage'
 export * from './ConfirmActionPage'
 export * from './CorePage'

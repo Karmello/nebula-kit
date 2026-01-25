@@ -33,7 +33,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         base: 'repeat(2, 1fr)',
         sm: 'repeat(3, 1fr)',
         md: 'repeat(4, 1fr)',
-        lg: 'repeat(7, auto)',
+        lg: 'repeat(8, auto)',
       }}
     >
       <Grid.Item>
@@ -116,6 +116,23 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             fullWidth
           >
             FAQ
+          </Button>
+        </Link>
+      </Grid.Item>
+      <Grid.Item>
+        <Link
+          href={PageKey.blog}
+          onClick={async () => {
+            if (mainOpen) await setMainOpen(false)
+            navigateTo(PageKey.blog)
+          }}
+        >
+          <Button
+            intent={currentPageKey === PageKey.blog ? 'secondary' : 'muted'}
+            iconName="newspaper"
+            fullWidth
+          >
+            Blog
           </Button>
         </Link>
       </Grid.Item>

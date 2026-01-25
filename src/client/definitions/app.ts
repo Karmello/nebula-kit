@@ -9,6 +9,7 @@ export enum PageKey {
   confirmAction = '/confirm-action',
   core = '/core',
   faq = '/faq',
+  blog = '/blog',
   feedback = '/feedback',
   foundations = '/foundations',
   home = '/home',

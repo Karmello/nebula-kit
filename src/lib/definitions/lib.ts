@@ -67,6 +67,7 @@ export const ICON_NAMES = [
   'mail',
   'menu',
   'message-circle-question-mark',
+  'newspaper',
   'orbit',
   'package',
   'paintbrush',
