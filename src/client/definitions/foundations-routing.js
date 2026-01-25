@@ -22,6 +22,8 @@ export const FOUNDATIONS_CATEGORIES = [
           { key: 'inheriting-props', label: 'Inheriting props' },
           { key: 'enforcing-semantics', label: 'Enforcing semantics' },
           { key: 'orthogonal-styling-axes', label: 'Orthogonal styling axes' },
+          { key: 'unified-drawing-model', label: 'Unified drawing model' },
+          { key: 'unified-responsiveness', label: 'Unified responsiveness' },
           { key: 'resistant-to-entropy', label: 'Resistant to entropy' },
         ],
       },

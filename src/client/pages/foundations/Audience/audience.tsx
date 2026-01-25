@@ -1,36 +1,40 @@
-import { Box, Spacer, Text } from 'lib/components'
+import { Box, Text, Flex } from 'lib/components'
 
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Text typography="h6">Who it's for ...</Text>
-      <Spacer blockSize="15px" />
-      <Text>NebulaKit is built for the 95% of apps that share a common structure.</Text>
-      <Spacer blockSize="15px" />
-      <Text>
-        Most software isn't a wild experiment. It's dashboards, forms, onboarding flows, settings, lists,
-        tables, filters, auth screens, navigation and content. Different products, same underlying patterns.
-        Those apps don't need a new UI invention every day, they need a system that keeps everything
-        consistent and helps them move fast. NebulaKit is for the teams building those apps. Teams who benefit
-        from having a reliable foundation that handles spacing, layout, color, motion and interaction the same
-        way everywhere. Teams who want to focus on features, not styling. Teams who know that clarity and
-        coherence matter more than novelty. If your project fits into the vast landscape of normal,
-        structured, product-driven apps - NebulaKit was made for you.
-      </Text>
-      <Spacer blockSize="30px" />
-      <Text typography="h6">Who it's not for ...</Text>
-      <Spacer blockSize="15px" />
-      <Text>Not every app fits into that 95%.</Text>
-      <Spacer blockSize="15px" />
-      <Text>
-        Some products live in the other 5% - the unusual ones, the experimental ones, the ones where the UI is
-        the product: drawing tools, creative canvases, note-taking apps with infinite planes, animation
-        editors, timeline-based interfaces, custom physics interactions, bespoke experiments. Those apps don't
-        need a UI system, they need a custom internal design language built specifically for their unique
-        mechanics. A kit like NebulaKit would only slow them down. NebulaKit is not for teams who want to
-        reinvent every pattern, restyle every atom or break every convention. It's not for products, where
-        novelty outweighs consistency or where the UI demands break completely from common structures.
-      </Text>
+      <Flex flexDirection="column" gap="20px">
+        <Text>
+          NebulaKit is specific. It is not meant to cover every possible approach to building user interfaces.
+          That means it will not be a good fit for every developer or every company. It is not designed to
+          satisfy everyone, instead it deliberately narrows its audience to people with specific needs and
+          focuses on making that audience as happy as possible.
+        </Text>
+        <Text>
+          It is definitely not for someone who wants to style every single detail of their product. Going down
+          that path usually leads to creating a custom styling system, theming engine and design tokens from
+          scratch. In such a case, using NebulaKit would mean fighting against the system rather than taking
+          advantage of it.
+        </Text>
+        <Text>
+          You can think of NebulaKit as a strongly opinionated framework, similar in spirit to Android or iOS
+          user interface systems, rather than a "build your own theming engine" tool. It intentionally hides
+          certain concerns, quietly takes hard decisions for you, and allows you to focus on building your
+          application.
+        </Text>
+        <Text>
+          So who is it for? If your goal is to customize the look of your application without reinventing the
+          wheel, move fast while staying stable, and avoid worrying about the correctness of underlying
+          mechanisms, NebulaKit may be a good fit. It is designed for developers who want production-ready
+          components but also value the freedom to construct their own components using the same building
+          blocks the system itself uses.
+        </Text>
+        <Text>
+          NebulaKit works well for most common user interfaces, because many patterns on the web repeat over
+          and over again. Identifying and supporting these well-known patterns is exactly what the system is
+          designed to do.
+        </Text>
+      </Flex>
     </Box>
   )
 }

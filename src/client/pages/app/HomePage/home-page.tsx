@@ -183,7 +183,7 @@ export const HomePage = () => {
           </Box>
         </Flex.Item>
         <Flex.Item flex="1">
-          <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="40px">
+          <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="30px">
             <Section heading="JSX first" color="red" intent="primary" iconName="code">
               <Text intent="neutral">
                 JSX is the primary development flow. CSS exists only as an internal implementation detail.
@@ -204,6 +204,17 @@ export const HomePage = () => {
             </Section>
             <Section heading="Orthogonal styling axes" color="red" intent="primary" iconName="atom">
               <Text intent="neutral">Styling concerns are separated and scoped to prevent interference.</Text>
+            </Section>
+            <Section heading="Unified drawing model" color="red" intent="primary" iconName="paintbrush">
+              <Text intent="neutral">All visual output is produced through a single drawing model.</Text>
+            </Section>
+            <Section
+              heading="Unified responsiveness"
+              color="red"
+              intent="primary"
+              iconName="tablet-smartphone"
+            >
+              <Text intent="neutral">Responsive behavior follows a single explicit model.</Text>
             </Section>
             <Section heading="Resistant to entropy" color="red" intent="primary" iconName="shield-check">
               <Text intent="neutral">
