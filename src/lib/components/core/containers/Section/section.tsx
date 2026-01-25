@@ -60,7 +60,7 @@ export const Section = <T extends SectionTag = 'section'>({
       <Divider color={color} />
       {children ? (
         <>
-          <Spacer blockSize={SECTION_SIZE_CONFIG[size].spacing} />
+          <Spacer blockSize={`calc(${SECTION_SIZE_CONFIG[size].spacing} / 2)`} />
           {children}
         </>
       ) : null}

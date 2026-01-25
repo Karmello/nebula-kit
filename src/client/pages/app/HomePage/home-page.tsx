@@ -36,7 +36,7 @@ export const HomePage = () => {
 
   return (
     <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">
-      <Section size="md" intent="secondary" color="purple" variant="outline" heading="About the website">
+      <Section size="sm" intent="secondary" color="purple" variant="outline" heading="About the website">
         <Text>
           This website is built entirely with NebulaKit components. It serves as both documentation and a live
           showcase of the system in real use. Every layout, interaction and styling decision you see here is
@@ -183,7 +183,7 @@ export const HomePage = () => {
           </Box>
         </Flex.Item>
         <Flex.Item flex="1">
-          <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="30px">
+          <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="35px">
             <Section heading="JSX first" color="red" intent="primary" iconName="code">
               <Text intent="neutral">
                 JSX is the primary development flow. CSS exists only as an internal implementation detail.
@@ -222,7 +222,7 @@ export const HomePage = () => {
               </Text>
             </Section>
           </Grid>
-          <Spacer />
+          <Spacer blockSize="40px" />
           <Box textAlign="center">
             <Link
               href={`${PageKey.foundations}/overview/philosophy/jsx-first`}
