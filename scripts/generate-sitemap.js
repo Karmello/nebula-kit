@@ -59,6 +59,7 @@ function generateSitemap() {
     '/core',
     '/pro',
     '/faq',
+    '/blog',
     '/pricing',
     '/pricing/core',
     '/pricing/pro',

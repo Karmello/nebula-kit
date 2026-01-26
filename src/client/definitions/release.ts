@@ -1,4 +1,4 @@
-export const RELEASE_VERSIONS = ['0.4.0', '0.3.0', '0.2.3'] as const
+export const RELEASE_VERSIONS = ['0.4.1', '0.4.0', '0.3.0', '0.2.3'] as const
 
 export type ReleaseVersion = (typeof RELEASE_VERSIONS)[number]
 
@@ -6,8 +6,16 @@ export const RELEASE_INFO: Record<
   ReleaseVersion,
   {
     timestamp: number
+    changelog?: { core?: string[]; pro?: string[] }
   }
 > = {
+  '0.4.1': {
+    timestamp: 1769434481859,
+    changelog: {
+      core: ['enhanced editor IntelliSense with richer prop tooltips'],
+      pro: ['enhanced editor IntelliSense with richer prop tooltips'],
+    },
+  },
   '0.4.0': {
     timestamp: 1769178791000,
   },

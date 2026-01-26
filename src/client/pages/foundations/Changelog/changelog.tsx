@@ -6,32 +6,47 @@ import { Box, MarkerList, Section, Spacer, Text, Tabs } from 'lib/components'
 
 type Notes = { core: Record<string, string[]>; pro: Record<string, string[]> }
 
-const ComponentNotes = ({ componentName, notes = [] }: { componentName: string; notes: string[] }) => {
+const Notes = ({ componentName, notes = [] }: { componentName?: string; notes: string[] }) => {
   if (!notes.length) return null
+
+  const list = (
+    <MarkerList intent="neutral">
+      {notes.map((n, i) => {
+        return (
+          <MarkerList.Item key={i}>
+            <Text>{n}</Text>
+          </MarkerList.Item>
+        )
+      })}
+    </MarkerList>
+  )
+
+  if (!componentName) {
+    return list
+  }
 
   return (
     <Section heading={componentName} color="blue" intent="primary" size="sm">
-      <MarkerList intent="neutral">
-        {notes.map((n, i) => {
-          return (
-            <MarkerList.Item key={i}>
-              <Text>{n}</Text>
-            </MarkerList.Item>
-          )
-        })}
-      </MarkerList>
+      {list}
     </Section>
   )
 }
 
-const PanelContent = ({ notes }: { notes: Record<string, string[]> }) => {
-  const componentNames = Object.keys(notes)
+const PanelContent = ({
+  bundleNotes,
+  componentNotes,
+}: {
+  bundleNotes?: string[]
+  componentNotes: Record<string, string[]>
+}) => {
+  const componentNames = Object.keys(componentNotes)
 
   return (
     <Box paddingInline="15px" paddingBlock="25px">
+      <Notes notes={bundleNotes} />
       {componentNames.map((name, i) => (
         <Box key={name}>
-          <ComponentNotes componentName={name} notes={notes[name]} />
+          <Notes componentName={name} notes={componentNotes[name]} />
           {i < componentNames.length - 1 ? <Spacer blockSize="40px" /> : null}
         </Box>
       ))}
@@ -72,10 +87,16 @@ export default ({ pathname }: { pathname: string }) => {
           Pro
         </Tabs.Tab>
         <Tabs.Panel value="core">
-          <PanelContent notes={notes.core} />
+          <PanelContent
+            bundleNotes={RELEASE_INFO[releaseVersion as ReleaseVersion].changelog?.core}
+            componentNotes={notes.core}
+          />
         </Tabs.Panel>
         <Tabs.Panel value="pro">
-          <PanelContent notes={notes.pro} />
+          <PanelContent
+            bundleNotes={RELEASE_INFO[releaseVersion as ReleaseVersion].changelog?.pro}
+            componentNotes={notes.pro}
+          />
         </Tabs.Panel>
       </Tabs>
     </Box>
