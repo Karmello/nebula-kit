@@ -1,82 +1,85 @@
-import { Project, Node } from 'ts-morph'
 import path from 'path'
 import fs from 'fs'
 
 import META from '../src/client/meta/index.ts'
 
 const bundle = process.env.TSUP_BUNDLE
-
 if (!bundle) {
   console.error('TSUP_BUNDLE not set')
   process.exit(1)
 }
 
-// adjust if needed
-const DTS_PATH = path.resolve('dist/index.d.ts')
+const DTS_PATH = path.resolve(`dist/${bundle}/index.d.ts`)
 
 if (!fs.existsSync(DTS_PATH)) {
   console.error(`index.d.ts not found at ${DTS_PATH}`)
   process.exit(1)
 }
 
-const project = new Project({
-  skipAddingFilesFromTsConfig: true,
-})
+let dts = fs.readFileSync(DTS_PATH, 'utf8')
 
-const sourceFile = project.addSourceFileAtPath(DTS_PATH)
-const checker = project.getTypeChecker()
-
-// --- helpers -------------------------------------------------
-
-function addJsDocOnce(node: any, comment: string) {
-  const existing = node.getJsDoc?.()
-  if (existing && existing.length > 0) return
-
-  if ('addJsDoc' in node && typeof node.addJsDoc === 'function') {
-    node.addJsDoc({ comment })
-  }
+function escapeJsDoc(text: string) {
+  return text.replace(/\*\//g, '*\\/')
 }
 
-// --- main logic ----------------------------------------------
+function formatDefaultValue(value: unknown) {
+  if (typeof value === 'string') return `"${value}"`
+  return String(value)
+}
 
-Object.keys(META).forEach(componentName => {
+function injectPropsJsDoc(
+  source: string,
+  typeName: string,
+  props: Record<string, { description?: string; defaultValue?: unknown }>
+) {
+  const propEntries = Object.entries(props)
+    .filter(([, meta]) => meta?.description)
+    .map(([prop, meta]) => {
+      const lines: string[] = []
+
+      lines.push(`    /**`)
+      lines.push(`     * ${escapeJsDoc(meta.description!)}`)
+
+      if (meta.defaultValue !== undefined) {
+        lines.push(`     * @default ${formatDefaultValue(meta.defaultValue)}`)
+      }
+
+      lines.push(`     */`)
+      // IMPORTANT: unknown preserves existing prop types via intersection
+      lines.push(`    ${prop}?: unknown;`)
+
+      return lines.join('\n')
+    })
+
+  if (propEntries.length === 0) return source
+
+  const injection = ` & {\n${propEntries.join('\n\n')}\n  }`
+
+  const typeRegex = new RegExp(`(type\\s+${typeName}\\b[\\s\\S]*?=)([\\s\\S]*?);`, 'm')
+
+  const match = source.match(typeRegex)
+  if (!match) return source
+
+  // Avoid double-injection
+  if (match[0].includes('/**')) return source
+
+  const full = match[0]
+  const updated = full.replace(/;$/, `${injection};`)
+
+  return source.replace(full, updated)
+}
+
+for (const componentName of Object.keys(META)) {
   const metaComponent = META[componentName]?.[componentName]
-  if (!metaComponent) return
+  if (!metaComponent) continue
 
   const { overview, props } = metaComponent
-
-  if (overview.bundle !== bundle) return
+  if (overview.bundle !== bundle) continue
 
   const propsTypeName = `${componentName}Props`
-  const propsDecl = sourceFile.getTypeAlias(propsTypeName)
+  dts = injectPropsJsDoc(dts, propsTypeName, props)
+}
 
-  if (!propsDecl) {
-    // optional warning, but never crash dist
-    return
-  }
+fs.writeFileSync(DTS_PATH, dts)
 
-  const propsType = propsDecl.getType()
-  const apparentProps = propsType.getApparentProperties()
-
-  const propSymbolMap = new Map(apparentProps.map(symbol => [symbol.getName(), symbol]))
-
-  Object.keys(props).forEach(propName => {
-    const metaProp = props[propName]
-    if (!metaProp?.description) return
-
-    const symbol = propSymbolMap.get(propName)
-    if (!symbol) return
-
-    const declarations = symbol.getDeclarations()
-
-    declarations.forEach(decl => {
-      // property signatures in type literals / helper types
-      if (Node.isPropertySignature(decl) || Node.isPropertyDeclaration(decl)) {
-        addJsDocOnce(decl, metaProp.description)
-      }
-    })
-  })
-})
-
-// write back
-sourceFile.saveSync()
+console.log(`Added type annotations for ${bundle}`)
