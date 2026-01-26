@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { CALLOUT_TAGS, CalloutProps } from 'lib/components/core/feedback/Callout'
 
 import { CALLOUT_PROPS_META } from './props'
-import { CALLOUT_EXAMPLES_META } from './examples'
+// import { CALLOUT_EXAMPLES_META } from './examples'
 
 const CALLOUT_META: ComponentMeta<CalloutProps> = {
   overview: {
@@ -15,7 +15,7 @@ const CALLOUT_META: ComponentMeta<CalloutProps> = {
     topLevelTags: CALLOUT_TAGS,
   },
   props: CALLOUT_PROPS_META,
-  examples: CALLOUT_EXAMPLES_META,
+  examples: typeof window !== 'undefined' ? (await import('./examples')).CALLOUT_EXAMPLES_META : undefined,
   changelog: {
     '0.2.3': ['released'],
   },
