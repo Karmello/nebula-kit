@@ -36,37 +36,53 @@ function injectPropsJsDoc(
     .filter(([, meta]) => meta?.description)
     .map(([prop, meta]) => {
       const lines: string[] = []
-
       lines.push(`    /**`)
       lines.push(`     * ${escapeJsDoc(meta.description!)}`)
-
       if (meta.defaultValue !== undefined) {
         lines.push(`     * @default ${formatDefaultValue(meta.defaultValue)}`)
       }
-
       lines.push(`     */`)
-      // IMPORTANT: unknown preserves existing prop types via intersection
       lines.push(`    ${prop}?: unknown;`)
-
       return lines.join('\n')
     })
 
   if (propEntries.length === 0) return source
 
+  const start = source.indexOf(`type ${typeName}`)
+  if (start === -1) return source
+
+  const eq = source.indexOf('=', start)
+  if (eq === -1) return source
+
+  let i = eq + 1
+  let depth = 0
+  let end = -1
+
+  while (i < source.length) {
+    const ch = source[i]
+
+    if (ch === '{') depth++
+    if (ch === '}') depth--
+
+    if (depth === 0 && ch === ';') {
+      end = i
+      break
+    }
+
+    i++
+  }
+
+  if (end === -1) return source
+
+  const full = source.slice(start, end + 1)
+
+  // avoid double injection
+  if (full.includes('/**')) return source
+
   const injection = ` & {\n${propEntries.join('\n\n')}\n  }`
-
-  const typeRegex = new RegExp(`(type\\s+${typeName}\\b[\\s\\S]*?=)([\\s\\S]*?);`, 'm')
-
-  const match = source.match(typeRegex)
-  if (!match) return source
-
-  // Avoid double-injection
-  if (match[0].includes('/**')) return source
-
-  const full = match[0]
   const updated = full.replace(/;$/, `${injection};`)
 
-  return source.replace(full, updated)
+  return source.slice(0, start) + updated + source.slice(end + 1)
 }
 
 for (const componentName of Object.keys(META)) {
