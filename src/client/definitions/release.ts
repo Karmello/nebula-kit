@@ -10,7 +10,7 @@ export const RELEASE_INFO: Record<
   }
 > = {
   '0.4.2': {
-    timestamp: 1769488264433,
+    timestamp: 1769515247187,
     changelog: {
       core: ['enhanced editor IntelliSense with richer component tooltips'],
       pro: ['enhanced editor IntelliSense with richer component tooltips'],
