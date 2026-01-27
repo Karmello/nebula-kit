@@ -47,6 +47,7 @@ export const HomePage = () => {
       <Spacer blockSize="75px" />
       <Flex
         flexDirection={{ base: 'column', lg: 'row' }}
+        justifyContent="center"
         rowGap="80px"
         columnGap={{ base: '50px', xl: '100px' }}
       >
@@ -116,71 +117,82 @@ export const HomePage = () => {
             </Flex.Item>
           </Flex>
           <Divider marginBlock="50px" />
-          <Box marginInline="50px">
-            <Flex
-              flexWrap="wrap"
-              alignItems="center"
-              gap="60px"
-              justifyContent="center"
-              flexDirection={{ base: 'column-reverse', md: 'row' }}
-            >
-              <Flex.Item>
-                <Ortho />
-              </Flex.Item>
-              <Flex.Item flex="1">
-                <Flex flexWrap="wrap" gap="30px" justifyContent="center">
-                  <Flex.Item>
-                    <Text bold>Theme</Text>
-                    <Segment key={theme}>
-                      {THEMES.map(key => (
-                        <Segment.Item key={key}>
-                          <Button
-                            intent={key === theme ? 'inverse' : 'tertiary'}
-                            size="sm"
-                            tagAttrs={{ onClick: () => setTheme(key) }}
-                          >
-                            {sentenceCase(key)}
-                          </Button>
-                        </Segment.Item>
-                      ))}
-                    </Segment>
-                  </Flex.Item>
-                  <Flex.Item>
-                    <Text bold>Brand</Text>
-                    <Select
-                      value={brand}
-                      onClosed={value => {
-                        if (value !== undefined) setBrand(value as BoxColor)
-                      }}
-                      inlineSize="150px"
-                      size="sm"
-                      scrollAlign="center"
-                    >
-                      {COLORS.map(brand => (
-                        <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
-                      ))}
-                    </Select>
-                  </Flex.Item>
-                  <Flex.Item>
-                    <Text bold>Border radius</Text>
-                    <Select
-                      value={borderRadiusSize}
-                      onClosed={value => {
-                        if (value !== undefined) setBorderRadiusSize(value as never)
-                      }}
-                      inlineSize="150px"
-                      size="sm"
-                      scrollAlign="center"
-                    >
-                      {NEBKIT_BORDER_RADIUS_SIZES.map(n => (
-                        <Select.Option value={n}>{n}</Select.Option>
-                      ))}
-                    </Select>
-                  </Flex.Item>
-                </Flex>
-              </Flex.Item>
-            </Flex>
-          </Box>
+          <Flex
+            alignItems="center"
+            alignContent="center"
+            gap="50px"
+            justifyContent="center"
+            flexDirection={{ base: 'column-reverse', md: 'row' }}
+          >
+            <Flex.Item>
+              <Ortho />
+            </Flex.Item>
+            <Flex.Item>
+              <Flex flexWrap="wrap" gap="30px" justifyContent="center">
+                <Flex.Item>
+                  <Text bold>Theme</Text>
+                  <Segment key={theme}>
+                    {THEMES.map(key => (
+                      <Segment.Item key={key}>
+                        <Button
+                          intent={key === theme ? 'inverse' : 'tertiary'}
+                          size="sm"
+                          tagAttrs={{ onClick: () => setTheme(key) }}
+                        >
+                          {sentenceCase(key)}
+                        </Button>
+                      </Segment.Item>
+                    ))}
+                  </Segment>
+                </Flex.Item>
+                <Flex.Item>
+                  <Text bold>Brand</Text>
+                  <Select
+                    value={brand}
+                    onClosed={value => {
+                      if (value !== undefined) setBrand(value as BoxColor)
+                    }}
+                    inlineSize="150px"
+                    size="sm"
+                    scrollAlign="center"
+                  >
+                    {COLORS.map(brand => (
+                      <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
+                    ))}
+                  </Select>
+                </Flex.Item>
+                <Flex.Item>
+                  <Text bold>Border radius</Text>
+                  <Select
+                    value={borderRadiusSize}
+                    onClosed={value => {
+                      if (value !== undefined) setBorderRadiusSize(value as never)
+                    }}
+                    inlineSize="150px"
+                    size="sm"
+                    scrollAlign="center"
+                  >
+                    {NEBKIT_BORDER_RADIUS_SIZES.map(n => (
+                      <Select.Option value={n}>{n}</Select.Option>
+                    ))}
+                  </Select>
+                </Flex.Item>
+              </Flex>
+            </Flex.Item>
+          </Flex>
+          <Spacer blockSize="80px" />
+          <Box
+            tag="iframe"
+            tagAttrs={{
+              src: 'https://www.youtube-nocookie.com/embed/ZUQqXP5hBFs',
+              title: 'Responsive UI, driven by props',
+              allow:
+                'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+              allowFullScreen: true,
+            }}
+            maxInlineSize="100%"
+            aspectRatio="16 / 9"
+          />
         </Flex.Item>
         <Flex.Item flex="1">
           <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="35px">

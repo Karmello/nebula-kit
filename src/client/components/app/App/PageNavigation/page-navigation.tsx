@@ -127,11 +127,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             navigateTo(PageKey.blog)
           }}
         >
-          <Button
-            intent={currentPageKey === PageKey.blog ? 'secondary' : 'muted'}
-            iconName="newspaper"
-            fullWidth
-          >
+          <Button intent={currentPageKey === PageKey.blog ? 'secondary' : 'muted'} iconName="rss" fullWidth>
             Blog
           </Button>
         </Link>

@@ -1,10 +1,17 @@
 import { Box, Flex, Link, Section, Text } from 'lib/components'
+import { IconName } from 'lib/definitions'
 
-type ArticleProps = { title: string; date: string; platform: string }
+type ArticleProps = {
+  title: string
+  date: string
+  platform: string
+  href: string
+  iconName: Extract<IconName, 'newspaper' | 'film'>
+}
 
-const Article = ({ title, date, platform }: ArticleProps) => {
+const Article = ({ title, date, platform, href, iconName }: ArticleProps) => {
   return (
-    <Section heading={title} variant="outline" intent="secondary" size="sm">
+    <Section heading={title} variant="outline" intent="secondary" size="sm" iconName={iconName}>
       <Flex gap="7px">
         <Text tag="span">{new Date(date).toDateString()}</Text>
         <Text tag="span" space="both">
@@ -14,7 +21,7 @@ const Article = ({ title, date, platform }: ArticleProps) => {
         <Text tag="span" space="both">
           |
         </Text>
-        <Link href="https://dev.to/karmello/design-systems-and-the-problem-of-ui-entropy-e3c" target="_blank">
+        <Link href={href} target="_blank">
           <Text tag="span" intent="primary" color="blue" iconName="external-link" iconPlacement="right">
             Open
           </Text>
@@ -27,9 +34,22 @@ const Article = ({ title, date, platform }: ArticleProps) => {
 export const BlogPage = () => {
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} maxInlineSize="75rem">
-      <Section heading="Blog" iconName="newspaper">
+      <Section heading="Blog" iconName="rss">
         <Flex flexDirection="column" rowGap="15px" alignItems="stretch">
-          <Article title="Design Systems and the Problem of UI Entropy" date="01-23-2026" platform="dev.to" />
+          <Article
+            title="Design Systems and the Problem of UI Entropy"
+            date="01-23-2026"
+            platform="dev.to"
+            href="https://dev.to/karmello/design-systems-and-the-problem-of-ui-entropy-e3c"
+            iconName="newspaper"
+          />
+          <Article
+            title="Responsive UI driven by props"
+            date="01-27-2026"
+            platform="youtube.com"
+            href="https://www.youtube.com/watch?v=ZUQqXP5hBFs"
+            iconName="film"
+          />
         </Flex>
       </Section>
     </Box>
