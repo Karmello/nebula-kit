@@ -120,7 +120,8 @@ export const HomePage = () => {
           <Flex
             alignItems="center"
             alignContent="center"
-            gap="50px"
+            columnGap="70px"
+            rowGap="55px"
             justifyContent={{ base: 'center', lg: 'flex-start' }}
             flexDirection={{ base: 'column-reverse', md: 'row' }}
           >
@@ -128,7 +129,7 @@ export const HomePage = () => {
               <Ortho />
             </Flex.Item>
             <Flex.Item>
-              <Flex flexWrap="wrap" gap="30px" justifyContent="center">
+              <Flex flexWrap="wrap" rowGap="30px" columnGap="20px" justifyContent="center">
                 <Flex.Item>
                   <Text bold>Theme</Text>
                   <Segment key={theme}>
@@ -180,7 +181,7 @@ export const HomePage = () => {
               </Flex>
             </Flex.Item>
           </Flex>
-          <Spacer blockSize="80px" />
+          <Spacer blockSize="90px" />
           <Box
             tag="iframe"
             tagAttrs={{
