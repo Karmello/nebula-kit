@@ -2,16 +2,17 @@ import path from 'path'
 import fs from 'fs'
 import { pathToFileURL } from 'node:url'
 
-const metaPath = path.resolve('./dist/meta.js')
+const bundle = process.env.TSUP_BUNDLE
+
+if (!bundle) {
+  console.error('[annotate-props-jsdoc.js]: TSUP_BUNDLE not set')
+  process.exit(1)
+}
+
+const metaPath = path.resolve(`./dist/${bundle}/meta.js`)
 
 const mod = await import(pathToFileURL(metaPath).href)
 const META = mod.default
-
-const bundle = process.env.TSUP_BUNDLE
-if (!bundle) {
-  console.error('TSUP_BUNDLE not set')
-  process.exit(1)
-}
 
 const DTS_PATH = path.resolve(`dist/${bundle}/index.d.ts`)
 

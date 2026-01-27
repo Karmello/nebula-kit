@@ -14,7 +14,7 @@ const SECTIONS = {
 const bundle = process.env.TSUP_BUNDLE
 
 if (!bundle) {
-  console.error('TSUP_BUNDLE not set')
+  console.error('[annotate-components-jsdoc.js]: TSUP_BUNDLE not set')
   process.exit(1)
 }
 
@@ -25,7 +25,7 @@ if (!fs.existsSync(DTS_PATH)) {
   process.exit(1)
 }
 
-const META = (await import(pathToFileURL(path.resolve('./dist/meta.js')).href)).default
+const META = (await import(pathToFileURL(path.resolve(`./dist/${bundle}/meta.js`)).href)).default
 
 let dts = fs.readFileSync(DTS_PATH, 'utf8')
 

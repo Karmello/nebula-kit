@@ -4,7 +4,7 @@ import path from 'node:path'
 const bundle = process.env.TSUP_BUNDLE
 
 if (!bundle) {
-  console.error('TSUP_BUNDLE not set')
+  console.error('[generate-readme.js]: TSUP_BUNDLE not set')
   process.exit(1)
 }
 
