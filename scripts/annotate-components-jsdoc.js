@@ -33,8 +33,8 @@ function escapeJsDoc(text) {
   return text.replace(/\*\//g, '*\\/')
 }
 
-function injectComponentJsDoc(source, componentName, heading, description, link) {
-  if (!heading && !description && !link) return source
+function injectComponentJsDoc(source, componentName, heading, link) {
+  if (!heading && !link) return source
 
   const decl = `declare const ${componentName}`
   const start = source.indexOf(decl)
@@ -51,13 +51,6 @@ function injectComponentJsDoc(source, componentName, heading, description, link)
 
   if (heading) {
     lines.push(` * ${escapeJsDoc(heading)}`)
-  }
-
-  if (description) {
-    if (heading) lines.push(' *')
-    for (const line of description.split('\n')) {
-      lines.push(` * ${escapeJsDoc(line)}`)
-    }
   }
 
   if (link) {
@@ -81,7 +74,7 @@ for (const componentName of Object.keys(META)) {
   if (!overview) continue
   if (overview.bundle !== bundle) continue
 
-  const { title, description } = overview
+  const { title } = overview
 
   const section = SECTIONS[bundle].find(o => o.itemKey === kebabCase(componentName))
 
@@ -90,7 +83,7 @@ for (const componentName of Object.keys(META)) {
   const { categoryKey, itemKey } = section
   const link = `https://nebulakit.dev/${bundle}/${categoryKey}/${itemKey}/overview`
 
-  dts = injectComponentJsDoc(dts, componentName, title, description, link)
+  dts = injectComponentJsDoc(dts, componentName, title, link)
 }
 
 fs.writeFileSync(DTS_PATH, dts)
