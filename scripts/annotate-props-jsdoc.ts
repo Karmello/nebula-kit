@@ -1,7 +1,11 @@
 import path from 'path'
 import fs from 'fs'
+import { pathToFileURL } from 'node:url'
 
-import META from '../src/client/meta/index.ts'
+const metaPath = path.resolve('./dist/meta.js')
+
+const mod = await import(pathToFileURL(metaPath).href)
+const META = mod.default
 
 const bundle = process.env.TSUP_BUNDLE
 if (!bundle) {
