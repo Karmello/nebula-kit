@@ -121,7 +121,7 @@ export const HomePage = () => {
             alignItems="center"
             alignContent="center"
             gap="50px"
-            justifyContent="center"
+            justifyContent={{ base: 'center', lg: 'flex-start' }}
             flexDirection={{ base: 'column-reverse', md: 'row' }}
           >
             <Flex.Item>
@@ -190,7 +190,8 @@ export const HomePage = () => {
                 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
               allowFullScreen: true,
             }}
-            maxInlineSize="100%"
+            maxInlineSize="700px"
+            margin={{ base: '0 auto', lg: '0px' }}
             aspectRatio="16 / 9"
           />
         </Flex.Item>
