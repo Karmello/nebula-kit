@@ -1,13 +1,18 @@
 import path from 'path'
 import fs from 'fs'
 import { pathToFileURL } from 'node:url'
+import { kebabCase } from 'change-case'
 
-const metaPath = path.resolve('./dist/meta.js')
+import { CORE_PAGE_SECTIONS } from '../src/client/definitions/core-page-routing.js'
+import { PRO_PAGE_SECTIONS } from '../src/client/definitions/pro-page-routing.js'
 
-const mod = await import(pathToFileURL(metaPath).href)
-const META = mod.default
+const SECTIONS = {
+  core: CORE_PAGE_SECTIONS,
+  pro: PRO_PAGE_SECTIONS,
+}
 
 const bundle = process.env.TSUP_BUNDLE
+
 if (!bundle) {
   console.error('TSUP_BUNDLE not set')
   process.exit(1)
@@ -20,14 +25,16 @@ if (!fs.existsSync(DTS_PATH)) {
   process.exit(1)
 }
 
+const META = (await import(pathToFileURL(path.resolve('./dist/meta.js')).href)).default
+
 let dts = fs.readFileSync(DTS_PATH, 'utf8')
 
-function escapeJsDoc(text: string) {
+function escapeJsDoc(text) {
   return text.replace(/\*\//g, '*\\/')
 }
 
-function injectComponentJsDoc(source: string, componentName: string, heading?: string, description?: string) {
-  if (!heading && !description) return source
+function injectComponentJsDoc(source, componentName, heading, description, link) {
+  if (!heading && !description && !link) return source
 
   const decl = `declare const ${componentName}`
   const start = source.indexOf(decl)
@@ -39,7 +46,7 @@ function injectComponentJsDoc(source: string, componentName: string, heading?: s
   // only skip if doc is directly attached
   if (trimmed.endsWith('*/')) return source
 
-  const lines: string[] = []
+  const lines = []
   lines.push('/**')
 
   if (heading) {
@@ -51,6 +58,11 @@ function injectComponentJsDoc(source: string, componentName: string, heading?: s
     for (const line of description.split('\n')) {
       lines.push(` * ${escapeJsDoc(line)}`)
     }
+  }
+
+  if (link) {
+    lines.push(' *')
+    lines.push(` * @see ${link}`)
   }
 
   lines.push(' */')
@@ -71,7 +83,14 @@ for (const componentName of Object.keys(META)) {
 
   const { title, description } = overview
 
-  dts = injectComponentJsDoc(dts, componentName, title, description)
+  const section = SECTIONS[bundle].find(o => o.itemKey === kebabCase(componentName))
+
+  if (!section) continue
+
+  const { categoryKey, itemKey } = section
+  const link = `https://nebulakit.dev/${bundle}/${categoryKey}/${itemKey}/overview`
+
+  dts = injectComponentJsDoc(dts, componentName, title, description, link)
 }
 
 fs.writeFileSync(DTS_PATH, dts)

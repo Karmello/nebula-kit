@@ -22,26 +22,22 @@ if (!fs.existsSync(DTS_PATH)) {
 
 let dts = fs.readFileSync(DTS_PATH, 'utf8')
 
-function escapeJsDoc(text: string) {
+function escapeJsDoc(text) {
   return text.replace(/\*\//g, '*\\/')
 }
 
-function formatDefaultValue(value: unknown) {
+function formatDefaultValue(value) {
   if (typeof value === 'string') return `"${value}"`
   return String(value)
 }
 
-function injectPropsJsDoc(
-  source: string,
-  typeName: string,
-  props: Record<string, { description?: string; defaultValue?: unknown }>
-) {
+function injectPropsJsDoc(source, typeName, props) {
   const propEntries = Object.entries(props)
     .filter(([, meta]) => meta?.description)
     .map(([prop, meta]) => {
-      const lines: string[] = []
+      const lines = []
       lines.push(`    /**`)
-      lines.push(`     * ${escapeJsDoc(meta.description!)}`)
+      lines.push(`     * ${escapeJsDoc(meta.description)}`)
       if (meta.defaultValue !== undefined) {
         lines.push(`     * @default ${formatDefaultValue(meta.defaultValue)}`)
       }
