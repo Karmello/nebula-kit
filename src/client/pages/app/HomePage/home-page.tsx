@@ -185,7 +185,7 @@ export const HomePage = () => {
           <Box
             tag="iframe"
             tagAttrs={{
-              src: 'https://www.youtube-nocookie.com/embed/ZUQqXP5hBFs',
+              src: 'https://www.youtube-nocookie.com/embed/ZUQqXP5hBFs?list=PLucbUGAh96p7hH87OY-C50iiCA7LAv_Ci',
               title: 'Responsive UI, driven by props',
               allow:
                 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
