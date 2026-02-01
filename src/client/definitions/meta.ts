@@ -19,13 +19,13 @@ type Overview = {
 }
 
 export type Prop = {
-  options: string[]
+  options: readonly string[]
   defaultValue?: string
   isRequired?: boolean
   isResponsive?: boolean
   description?: string
   link?: boolean
-  tooltip?: string
+  tooltip?: readonly string[]
 }
 
 type Example = {

@@ -16,10 +16,11 @@ const LINK_PROPS_META: ComponentMeta<LinkProps>['props'] = {
     description: 'Destination URL.',
   },
   target: {
-    options: LINK_TARGETS as unknown as string[],
+    options: LINK_TARGETS,
     defaultValue: DEFAULT_LINK_TARGET,
     description:
       'Specifies where to open the linked document, following the standard HTML target attribute behavior.',
+    tooltip: LINK_TARGETS,
   },
   onClick: {
     options: ['event => void'],

@@ -24,7 +24,7 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = 
     options: ['BoxColor'],
     defaultValue: DEFAULT_NEBKIT_BRAND,
     description: 'Global brand color used as the primary accent across components.',
-    tooltip: COLORS.join(', '),
+    tooltip: COLORS,
   },
   lockGlobalScroll: {
     options: ['boolean'],

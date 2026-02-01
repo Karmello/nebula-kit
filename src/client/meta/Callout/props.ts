@@ -33,14 +33,15 @@ const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
     defaultValue: String(DEFAULT_CALLOUT_INTENT),
   },
   size: {
-    options: CALLOUT_SIZES as unknown as string[],
+    options: CALLOUT_SIZES,
     defaultValue: DEFAULT_CALLOUT_SIZE,
     description: 'Controls overall proportions - adjusting heading size and spacings.',
   },
   status: {
-    options: Object.values(CALLOUT_STATUSES),
+    options: CALLOUT_STATUSES,
     defaultValue: DEFAULT_CALLOUT_STATUS,
     description: 'Defines the type of message being communicated.',
+    tooltip: CALLOUT_STATUSES,
   },
   tag: HTML_TAG_PROPS_META.tag,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,

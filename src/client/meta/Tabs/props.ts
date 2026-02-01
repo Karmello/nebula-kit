@@ -36,6 +36,7 @@ const TABS_PROPS_META: ComponentMeta<TabsProps>['props'] = {
   onChange: {
     options: ['(value: string | number) => void'],
     description: 'Called when the active tab value changes.',
+    tooltip: ['(value: string | number) => void'],
   },
   size: {
     ...BUTTON_PROPS_META.size,

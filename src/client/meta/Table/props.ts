@@ -18,6 +18,7 @@ const TABLE_PROPS_META: ComponentMeta<TableProps>['props'] = {
     options: ['Table.Body', 'Table.Header', 'Table.Footer', 'Table.Caption'],
     isRequired: true,
     description: 'Table.Body is required, the rest optional.',
+    tooltip: ['Table.Body', 'Table.Header', 'Table.Footer', 'Table.Caption'],
   },
   color: {
     ...BOX_PROPS_META.color,
@@ -30,7 +31,7 @@ const TABLE_PROPS_META: ComponentMeta<TableProps>['props'] = {
     description: "Tone level applied to the table's background surface.",
   },
   layout: {
-    options: TABLE_LAYOUTS as unknown as string[],
+    options: TABLE_LAYOUTS,
     defaultValue: DEFAULT_TABLE_LAYOUT,
     description:
       'Defines the layout algorithm: "auto" sizes columns by content, "fixed" by table width and column widths.',

@@ -21,21 +21,22 @@ const IMAGE_PROPS_META: ComponentMeta<ImageProps>['props'] = {
   blockSize: BOX_PROPS_META.blockSize,
   borderRadius: BOX_PROPS_META.borderRadius,
   crossOrigin: {
-    options: IMAGE_CROSS_ORIGIN as never,
+    options: IMAGE_CROSS_ORIGIN,
     description: 'Controls the CORS mode used when fetching the image.',
+    tooltip: IMAGE_CROSS_ORIGIN,
   },
   decoding: {
-    options: IMAGE_DECODING as never,
+    options: IMAGE_DECODING,
     description: 'Hints how the browser should decode the image.',
   },
   display: BOX_PROPS_META.display,
   fetchPriority: {
-    options: IMAGE_FETCH_PRIORITY as never,
+    options: IMAGE_FETCH_PRIORITY,
     description: 'Hints the browser about the relative priority of fetching the image.',
   },
   inlineSize: BOX_PROPS_META.inlineSize,
   loading: {
-    options: IMAGE_LOADING as never,
+    options: IMAGE_LOADING,
     description: 'Controls whether the image is loaded eagerly or lazily by the browser.',
   },
   maxBlockSize: BOX_PROPS_META.maxBlockSize,
@@ -43,14 +44,17 @@ const IMAGE_PROPS_META: ComponentMeta<ImageProps>['props'] = {
   minBlockSize: BOX_PROPS_META.minBlockSize,
   minInlineSize: BOX_PROPS_META.minInlineSize,
   objectFit: {
-    options: IMAGE_OBJECT_FIT as never,
+    options: IMAGE_OBJECT_FIT,
     isResponsive: true,
     description: 'Defines how the image is resized to fit its container.',
+    tooltip: IMAGE_OBJECT_FIT,
+    link: true,
   },
   objectPosition: {
     options: ['CSS'],
     isResponsive: true,
     description: 'Sets the alignment of the image within its container.',
+    link: true,
   },
   onError: {
     options: ['event => void'],
@@ -66,8 +70,9 @@ const IMAGE_PROPS_META: ComponentMeta<ImageProps>['props'] = {
   overflowY: BOX_PROPS_META.overflowY,
   pointerEvents: BOX_PROPS_META.pointerEvents,
   referrerPolicy: {
-    options: IMAGE_REFERRER_POLICY as never,
+    options: IMAGE_REFERRER_POLICY,
     description: 'Controls which referrer information is sent when fetching the image.',
+    tooltip: IMAGE_REFERRER_POLICY,
   },
   src: {
     options: ['string'],

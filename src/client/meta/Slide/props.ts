@@ -22,9 +22,10 @@ const SLIDE_PROPS_META: ComponentMeta<SlideProps>['props'] = {
     description: 'Timing function for the animation.',
   },
   from: {
-    options: SLIDE_FROM as never,
+    options: SLIDE_FROM,
     isRequired: true,
     description: 'Edge from which the content slides when becoming visible.',
+    tooltip: SLIDE_FROM,
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,

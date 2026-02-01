@@ -47,9 +47,10 @@ const TEXTAREA_PROPS_META: ComponentMeta<TextareaProps>['props'] = {
     description: 'Prevents editing the value while keeping the field focusable.',
   },
   resize: {
-    options: TEXTAREA_RESIZE as never,
+    options: TEXTAREA_RESIZE,
     defaultValue: DEFAULT_TEXTAREA_RESIZE,
     description: "Controls the textarea's resize behavior.",
+    tooltip: TEXTAREA_RESIZE,
   },
   rows: {
     options: ['number'],

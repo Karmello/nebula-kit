@@ -18,15 +18,17 @@ const USE_SNACKBAR_PROPS_META: ComponentMeta<UseSnackbarShowArgs>['props'] = {
     description: 'Overrides default heading of the snackbar message.',
   },
   placement: {
-    options: SNACKBAR_PLACEMENTS as never,
+    options: SNACKBAR_PLACEMENTS,
     defaultValue: DEFAULT_SNACKBAR_PLACEMENT,
     description: 'Overrides the default placement for the opened snackbar.',
+    tooltip: SNACKBAR_PLACEMENTS,
   },
   status: {
-    options: CALLOUT_STATUSES as never,
+    options: CALLOUT_STATUSES,
     defaultValue: DEFAULT_CALLOUT_STATUS,
     isRequired: true,
     description: 'Defines the message type of the snackbar.',
+    tooltip: CALLOUT_STATUSES,
   },
 }
 

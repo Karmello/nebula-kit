@@ -27,11 +27,12 @@ const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListProps>['props'] = {
     description: 'Tone level applied to all items at once.',
   },
   listStyle: {
-    options: MARKER_LIST_STYLES as unknown as string[],
+    options: MARKER_LIST_STYLES,
     defaultValue: MARKER_LIST_STYLES[0],
     isRequired: false,
     isResponsive: false,
     description: 'Defines the marker style used for list items.',
+    tooltip: MARKER_LIST_STYLES,
   },
   gap: {
     ...FLEX_PROPS_META.rowGap,
@@ -39,7 +40,7 @@ const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListProps>['props'] = {
   },
   tag: {
     ...HTML_TAG_PROPS_META.tag,
-    options: MARKER_LIST_TAGS as unknown as string[],
+    options: MARKER_LIST_TAGS,
     defaultValue: 'ul',
   },
 }

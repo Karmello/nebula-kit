@@ -33,9 +33,10 @@ const SNACKBAR_PROPS_META: ComponentMeta<SnackbarProps>['props'] = {
     description: 'Logical inline size of the snackbar container.',
   },
   placement: {
-    options: SNACKBAR_PLACEMENTS as never,
+    options: SNACKBAR_PLACEMENTS,
     defaultValue: String(DEFAULT_SNACKBAR_PLACEMENT),
     description: 'Defines the default viewport placement for snackbars.',
+    tooltip: SNACKBAR_PLACEMENTS,
   },
 }
 

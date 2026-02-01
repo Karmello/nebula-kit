@@ -35,10 +35,11 @@ const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemProps>['props'] = {
     link: true,
   },
   alignSelf: {
-    options: CSS_FLEX_ITEM_ALIGN_SELF as unknown as string[],
+    options: CSS_FLEX_ITEM_ALIGN_SELF,
     isResponsive: true,
     description: "Overrides the parent container's alignItems value for this specific item.",
     link: true,
+    tooltip: CSS_FLEX_ITEM_ALIGN_SELF,
   },
   order: {
     options: ['CSS'],

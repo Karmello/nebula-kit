@@ -42,9 +42,10 @@ const VIRTUAL_LIST_PROPS_META: ComponentMeta<VirtualListProps>['props'] = {
     options: ['(item: T, index: number) => ReactNode'],
     isRequired: true,
     description: 'Render function called for each visible list item.',
+    tooltip: ['(item: T, index: number) => ReactNode'],
   },
   scrollAlign: {
-    options: Object.values(VIRTUAL_LIST_SCROLL_ALIGN),
+    options: VIRTUAL_LIST_SCROLL_ALIGN,
     defaultValue: String(DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN),
     description:
       'Defines how the item targeted by the "scrollToIndex" prop is positioned within the scroll area.',

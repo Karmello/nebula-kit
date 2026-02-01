@@ -67,10 +67,11 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     description: 'Shortens overflowing text to a single line with an ellipsis.',
   },
   typography: {
-    options: Object.values(TEXT_TYPOGRAPHY),
+    options: TEXT_TYPOGRAPHY,
     defaultValue: DEFAULT_TEXT_TYPOGRAPHY,
     description:
       'Applies a predefined typography style from the design system, controlling tag, fontSize and lineHeight together.',
+    tooltip: TEXT_TYPOGRAPHY,
   },
   underline: {
     options: ['boolean'],

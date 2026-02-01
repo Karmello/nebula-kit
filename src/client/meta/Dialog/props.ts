@@ -15,6 +15,7 @@ const DIALOG_PROPS_META: ComponentMeta<DialogProps>['props'] = {
     options: ['Dialog.Header', 'Dialog.Content', 'Dialog.Footer'],
     isRequired: true,
     description: 'Dialog.Content slot is required. Dialog.Header and Dialog.Footer are optional.',
+    tooltip: ['Dialog.Header', 'Dialog.Content', 'Dialog.Footer'],
   },
   closeOnBackdropClick: {
     options: ['boolean'],

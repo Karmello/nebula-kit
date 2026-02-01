@@ -6,10 +6,11 @@ import { CSS_GRID_ITEM_ALIGN_SELF, CSS_GRID_ITEM_JUSTIFY_SELF } from 'lib/defini
 const GRID_ITEM_PROPS_META: ComponentMeta<GridItemProps>['props'] = {
   ...HTML_TAG_PROPS_META,
   alignSelf: {
-    options: Object.values(CSS_GRID_ITEM_ALIGN_SELF),
+    options: CSS_GRID_ITEM_ALIGN_SELF,
     isResponsive: true,
     description: 'Controls vertical alignment of the item within its grid cell.',
     link: true,
+    tooltip: CSS_GRID_ITEM_ALIGN_SELF,
   },
   children: {
     ...HTML_TAG_PROPS_META.children,
@@ -28,10 +29,11 @@ const GRID_ITEM_PROPS_META: ComponentMeta<GridItemProps>['props'] = {
     link: true,
   },
   justifySelf: {
-    options: Object.values(CSS_GRID_ITEM_JUSTIFY_SELF),
+    options: CSS_GRID_ITEM_JUSTIFY_SELF,
     isResponsive: true,
     description: 'Controls horizontal alignment of the item within its grid cell.',
     link: true,
+    tooltip: CSS_GRID_ITEM_JUSTIFY_SELF,
   },
 }
 

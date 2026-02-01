@@ -20,12 +20,13 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['CSS'],
     isResponsive: true,
     description: 'Defines the preferred width-to-height ratio of the component.',
+    link: true,
   },
   brand: {
     options: ['BoxColor'],
     isResponsive: true,
     description: 'Default surface color context for the component and its descendants.',
-    tooltip: COLORS.join(', '),
+    tooltip: COLORS,
   },
   blockSize: {
     options: ['CSS'],
@@ -104,17 +105,18 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['BoxColor'],
     isResponsive: true,
     description: 'Color applied to the component.',
-    tooltip: COLORS.join(', '),
+    tooltip: COLORS,
   },
   disabled: {
     options: ['boolean'],
     description: 'Disables the component and its interactions.',
   },
   display: {
-    options: CSS_DISPLAY as never,
+    options: CSS_DISPLAY,
     isResponsive: true,
     description: 'Display type controlling how the component is laid out.',
     link: true,
+    tooltip: CSS_DISPLAY,
   },
   drawable: {
     options: ['boolean'],
@@ -142,7 +144,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['BoxIntent'],
     isResponsive: true,
     description: "Tone level applied to the component's main color.",
-    tooltip: BOX_INTENTS.join(', '),
+    tooltip: BOX_INTENTS,
   },
   interactive: {
     options: ['boolean'],
@@ -228,22 +230,25 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     link: true,
   },
   overflow: {
-    options: CSS_OVERFLOW as never,
+    options: CSS_OVERFLOW,
     isResponsive: true,
     description: 'Overflow behavior for both axes.',
     link: true,
+    tooltip: CSS_OVERFLOW,
   },
   overflowX: {
-    options: CSS_OVERFLOW as never,
+    options: CSS_OVERFLOW,
     isResponsive: true,
     description: 'Overflow behavior on the horizontal axis.',
     link: true,
+    tooltip: CSS_OVERFLOW,
   },
   overflowY: {
-    options: CSS_OVERFLOW as never,
+    options: CSS_OVERFLOW,
     isResponsive: true,
     description: 'Overflow behavior on the vertical axis.',
     link: true,
+    tooltip: CSS_OVERFLOW,
   },
   padding: {
     options: ['CSS'],
@@ -288,15 +293,16 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     link: true,
   },
   pointerEvents: {
-    options: CSS_POINTER_EVENTS as never,
+    options: CSS_POINTER_EVENTS,
     description: 'Controls whether the element can receive pointer interactions.',
     link: true,
   },
   position: {
-    options: CSS_POSITION as never,
+    options: CSS_POSITION,
     isResponsive: true,
     description: 'Position in the layout flow.',
     link: true,
+    tooltip: CSS_POSITION,
   },
   right: {
     options: ['CSS'],
@@ -308,13 +314,14 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
   textAlign: {
-    options: CSS_TEXT_ALIGN as never,
+    options: CSS_TEXT_ALIGN,
     isResponsive: true,
     description: 'Text alignment within the component.',
     link: true,
+    tooltip: CSS_TEXT_ALIGN,
   },
   theme: {
-    options: THEMES as never,
+    options: THEMES,
     isResponsive: true,
     description:
       'Sets a local theme boundary for the component and its drawable descendants. Overrides the global application theme for this subtree without affecting the rest of the app.',
@@ -329,11 +336,13 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['CSS'],
     isResponsive: true,
     description: 'Applies a CSS transform for positional adjustment.',
+    link: true,
   },
   variant: {
-    options: Object.values(BOX_VARIANTS),
+    options: BOX_VARIANTS,
     isResponsive: true,
     description: 'Visual style variant.',
+    tooltip: BOX_VARIANTS,
   },
   visibility: {
     options: Object.values(CSS_VISIBILITY),

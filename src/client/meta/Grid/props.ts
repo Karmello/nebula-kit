@@ -30,10 +30,11 @@ const GRID_PROPS_META: ComponentMeta<GridProps>['props'] = {
     link: true,
   },
   gridAutoFlow: {
-    options: Object.values(CSS_GRID_AUTO_FLOW),
+    options: CSS_GRID_AUTO_FLOW,
     isResponsive: true,
     description: 'Controls how items are automatically placed into the grid.',
     link: true,
+    tooltip: CSS_GRID_AUTO_FLOW,
   },
   gridAutoRows: {
     options: ['CSS'],
@@ -54,16 +55,18 @@ const GRID_PROPS_META: ComponentMeta<GridProps>['props'] = {
     link: true,
   },
   placeContent: {
-    options: Object.values(CSS_GRID_PLACE_CONTENT),
+    options: CSS_GRID_PLACE_CONTENT,
     isResponsive: true,
     description: 'Controls how the grid as a whole is aligned within the container.',
     link: true,
+    tooltip: CSS_GRID_PLACE_CONTENT,
   },
   placeItems: {
-    options: Object.values(CSS_GRID_PLACE_ITEMS),
+    options: CSS_GRID_PLACE_ITEMS,
     isResponsive: true,
     description: 'Controls how grid items are aligned within their cells.',
     link: true,
+    tooltip: CSS_GRID_PLACE_ITEMS,
   },
   rowGap: {
     options: ['CSS'],

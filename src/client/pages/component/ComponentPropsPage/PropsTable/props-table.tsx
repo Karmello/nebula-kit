@@ -53,11 +53,14 @@ export const PropsTable = ({ category, data }: Props) => {
                 </Table.Cell>
                 <Table.Cell>
                   {tooltip ? (
-                    <Tooltip content={tooltip} placement="top-center" minInlineSize={250} maxInlineSize={350}>
+                    <Tooltip
+                      content={tooltip.join(', ')}
+                      placement="top-center"
+                      minInlineSize={250}
+                      maxInlineSize={350}
+                    >
                       <Box display="inline-block">
-                        <Text iconName="info" iconPlacement="right">
-                          {typeof options === 'string' ? options : options.join(', ')}
-                        </Text>
+                        <Icon name="info" />
                       </Box>
                     </Tooltip>
                   ) : (

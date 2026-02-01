@@ -52,10 +52,11 @@ const TOOLTIP_PROPS_META: ComponentMeta<TooltipProps>['props'] = {
   paddingBlock: BOX_PROPS_META.paddingBlock,
   paddingInline: BOX_PROPS_META.paddingInline,
   placement: {
-    options: PORTAL_PLACEMENTS as never,
+    options: PORTAL_PLACEMENTS,
     defaultValue: DEFAULT_TOOLTIP_PLACEMENT,
     description:
       'Preferred position of the tooltip relative to its trigger element. The position gets auto-adjusted so the tooltip stays visible.',
+    tooltip: PORTAL_PLACEMENTS,
   },
   tagAttrs: BOX_PROPS_META.tagAttrs,
   tagRef: BOX_PROPS_META.tagRef,
