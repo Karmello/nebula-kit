@@ -37,11 +37,11 @@ export const BlogPage = () => {
       <Section heading="Blog" iconName="rss">
         <Flex flexDirection="column" rowGap="15px" alignItems="stretch">
           <Article
-            title="Design Systems and the Problem of UI Entropy"
-            date="01-23-2026"
-            platform="dev.to"
-            href="https://dev.to/karmello/design-systems-and-the-problem-of-ui-entropy-e3c"
-            iconName="newspaper"
+            title="Flex layout driven by props"
+            date="02-01-2026"
+            platform="youtube.com"
+            href="https://www.youtube.com/watch?v=6Wx_t3Ohm_I"
+            iconName="film"
           />
           <Article
             title="Responsive UI driven by props"
@@ -49,6 +49,13 @@ export const BlogPage = () => {
             platform="youtube.com"
             href="https://www.youtube.com/watch?v=ZUQqXP5hBFs"
             iconName="film"
+          />
+          <Article
+            title="Design Systems and the Problem of UI Entropy"
+            date="01-23-2026"
+            platform="dev.to"
+            href="https://dev.to/karmello/design-systems-and-the-problem-of-ui-entropy-e3c"
+            iconName="newspaper"
           />
         </Flex>
       </Section>
