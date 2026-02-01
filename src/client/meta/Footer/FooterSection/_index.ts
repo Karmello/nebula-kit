@@ -5,6 +5,7 @@ import { FOOTER_SECTION_PROPS_META } from './props'
 
 const FOOTER_SECTION_META: ComponentMeta<FooterSectionProps> = {
   overview: {
+    bundle: 'core',
     name: 'Footer.Section',
     title: 'Flexible subcomponent that represents an individual area within the footer.',
     features: [

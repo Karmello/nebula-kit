@@ -32,7 +32,7 @@ const SPLIT_VIEW_META: ComponentMeta<SplitViewProps> = {
 
 export default {
   SplitView: SPLIT_VIEW_META,
-  'SplitView.Side': SPLIT_VIEW_SIDE_META,
-  'SplitView.Main': SPLIT_VIEW_MAIN_META,
-  'SplitView.MainBar': SPLIT_VIEW_MAIN_BAR_META,
+  SplitViewSide: SPLIT_VIEW_SIDE_META,
+  SplitViewMain: SPLIT_VIEW_MAIN_META,
+  SplitViewMainBar: SPLIT_VIEW_MAIN_BAR_META,
 }

@@ -10,7 +10,6 @@ if (!bundle) {
 }
 
 const metaPath = path.resolve(`./dist/${bundle}/meta.js`)
-
 const mod = await import(pathToFileURL(metaPath).href)
 const META = mod.default
 
@@ -24,26 +23,20 @@ if (!fs.existsSync(DTS_PATH)) {
 let dts = fs.readFileSync(DTS_PATH, 'utf8')
 
 function escapeJsDoc(text) {
-  return text.replace(/\*\//g, '*\\/')
-}
-
-function formatDefaultValue(value) {
-  if (typeof value === 'string') return `"${value}"`
-  return String(value)
+  return String(text).replace(/\*\//g, '*\\/')
 }
 
 function injectPropsJsDoc(source, typeName, props) {
-  const propEntries = Object.entries(props)
+  const propEntries = Object.entries(props || {})
     .filter(([, meta]) => meta?.description)
     .map(([prop, meta]) => {
       const lines = []
+
       lines.push(`    /**`)
       lines.push(`     * ${escapeJsDoc(meta.description)}`)
-      if (meta.defaultValue !== undefined) {
-        lines.push(`     * @default ${formatDefaultValue(meta.defaultValue)}`)
-      }
       lines.push(`     */`)
       lines.push(`    ${prop}?: unknown;`)
+
       return lines.join('\n')
     })
 
@@ -61,15 +54,12 @@ function injectPropsJsDoc(source, typeName, props) {
 
   while (i < source.length) {
     const ch = source[i]
-
     if (ch === '{') depth++
     if (ch === '}') depth--
-
     if (depth === 0 && ch === ';') {
       end = i
       break
     }
-
     i++
   }
 
@@ -86,17 +76,23 @@ function injectPropsJsDoc(source, typeName, props) {
   return source.slice(0, start) + updated + source.slice(end + 1)
 }
 
-for (const componentName of Object.keys(META)) {
-  const metaComponent = META[componentName]?.[componentName]
-  if (!metaComponent) continue
+//
+// components + slots
+//
 
-  const { overview, props } = metaComponent
-  if (overview.bundle !== bundle) continue
+for (const group of Object.values(META)) {
+  for (const entryName of Object.keys(group)) {
+    const metaEntry = group[entryName]
+    if (!metaEntry) continue
 
-  const propsTypeName = `${componentName}Props`
-  dts = injectPropsJsDoc(dts, propsTypeName, props)
+    const { overview, props } = metaEntry
+    if (!overview || overview.bundle !== bundle) continue
+    if (!props) continue
+
+    const propsTypeName = `${entryName}Props`
+    dts = injectPropsJsDoc(dts, propsTypeName, props)
+  }
 }
 
 fs.writeFileSync(DTS_PATH, dts)
-
-console.log(`Added type annotations for ${bundle}`)
+console.log(`Added prop descriptions (no JSDoc tags) for ${bundle}`)

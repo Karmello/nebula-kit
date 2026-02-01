@@ -5,6 +5,7 @@ import { TOOLBAR_END_PROPS_META } from './props'
 
 const TOOLBAR_END_META: ComponentMeta<ToolbarEndProps> = {
   overview: {
+    bundle: 'pro',
     name: 'Toolbar.End?',
     title: 'Defines the end slot of Toolbar.',
     features: [

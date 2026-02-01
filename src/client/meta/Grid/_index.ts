@@ -29,5 +29,5 @@ const GRID_META: ComponentMeta<GridProps> = {
 
 export default {
   Grid: GRID_META,
-  'Grid.Item': GRID_ITEM_META,
+  GridItem: GRID_ITEM_META,
 }

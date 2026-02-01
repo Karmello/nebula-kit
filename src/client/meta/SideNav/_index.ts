@@ -31,6 +31,6 @@ const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
 
 export default {
   SideNav: SIDE_NAV_META,
-  'SideNav.Item': SIDE_NAV_ITEM_META,
-  'SideNav.Category': SIDE_NAV_CATEGORY_META,
+  SideNavItem: SIDE_NAV_ITEM_META,
+  SideNavCategory: SIDE_NAV_CATEGORY_META,
 }

@@ -5,6 +5,7 @@ import { TABLE_FOOTER_PROPS_META } from './props'
 
 const TABLE_FOOTER_META: ComponentMeta<TableFooterProps> = {
   overview: {
+    bundle: 'core',
     name: 'Table.Footer?',
     title: 'Summary or footer rows of the table.',
     features: ['expects Table.Row as children'],

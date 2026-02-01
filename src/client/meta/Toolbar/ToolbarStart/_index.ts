@@ -5,6 +5,7 @@ import { TOOLBAR_START_PROPS_META } from './props'
 
 const TOOLBAR_START_META: ComponentMeta<ToolbarStartProps> = {
   overview: {
+    bundle: 'pro',
     name: 'Toolbar.Start?',
     title: 'Defines the start slot of Toolbar.',
     features: [

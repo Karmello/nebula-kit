@@ -32,7 +32,7 @@ const DIALOG_META: ComponentMeta<DialogProps> = {
 
 export default {
   Dialog: DIALOG_META,
-  'Dialog.Header': DIALOG_HEADER_META,
-  'Dialog.Content': DIALOG_CONTENT_META,
-  'Dialog.Footer': DIALOG_FOOTER_META,
+  DialogHeader: DIALOG_HEADER_META,
+  DialogContent: DIALOG_CONTENT_META,
+  DialogFooter: DIALOG_FOOTER_META,
 }

@@ -5,6 +5,7 @@ import { TABLE_BODY_PROPS_META } from './props'
 
 const TABLE_BODY_META: ComponentMeta<TableBodyProps> = {
   overview: {
+    bundle: 'core',
     name: 'Table.Body',
     title: 'Main data rows of the table.',
     features: ['this slot can be used multiple times', 'expects Table.Row as children'],

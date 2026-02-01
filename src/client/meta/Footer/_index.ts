@@ -29,5 +29,5 @@ const FOOTER_META: ComponentMeta<FooterProps> = {
 
 export default {
   Footer: FOOTER_META,
-  'Footer.Section': FOOTER_SECTION_META,
+  FooterSection: FOOTER_SECTION_META,
 }

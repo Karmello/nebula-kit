@@ -5,6 +5,7 @@ import { TABLE_HEADER_PROPS_META } from './props'
 
 const TABLE_HEADER_META: ComponentMeta<TableHeaderProps> = {
   overview: {
+    bundle: 'core',
     name: 'Table.Header?',
     title: 'Column headers of the table.',
     features: ['expects Table.HeaderRow as children'],

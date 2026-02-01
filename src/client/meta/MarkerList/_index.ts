@@ -27,5 +27,5 @@ const MARKER_LIST_META: ComponentMeta<MarkerListProps> = {
 
 export default {
   MarkerList: MARKER_LIST_META,
-  'MarkerList.Item': MARKER_LIST_ITEM_META,
+  MarkerListItem: MARKER_LIST_ITEM_META,
 }

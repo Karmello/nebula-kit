@@ -6,6 +6,7 @@ import { USE_SNACKBAR_PROPS_META } from './props'
 
 const USE_SNACKBAR_META: ComponentMeta<UseSnackbarShowArgs> = {
   overview: {
+    bundle: 'pro',
     name: 'useSnackbar.show()',
     title: 'Programmatic API for triggering snackbar messages.',
     features: [

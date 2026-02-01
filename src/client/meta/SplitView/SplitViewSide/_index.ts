@@ -5,6 +5,7 @@ import { SPLIT_VIEW_SIDE_PROPS_META } from './props'
 
 const SPLIT_VIEW_SIDE_META: ComponentMeta<SplitViewSideProps> = {
   overview: {
+    bundle: 'pro',
     name: 'SplitView.Side',
     title: 'Defines the side panel region of the SplitView layout.',
     features: [

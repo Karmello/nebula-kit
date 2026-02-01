@@ -5,6 +5,7 @@ import { FORM_HINT_PROPS_META } from './props'
 
 const FORM_HINT_META: ComponentMeta<FormHintProps> = {
   overview: {
+    bundle: 'pro',
     name: 'Form.Hint',
     title: "Helper text slot for a form field's control.",
     features: ['replaces the "hint" prop on Form.Field when provided'],

@@ -6,6 +6,7 @@ import { FLEX_ITEM_PROPS_META } from './props'
 
 const FLEX_ITEM_META: ComponentMeta<FlexItemProps> = {
   overview: {
+    bundle: 'core',
     name: 'Flex.Item?',
     title: 'Flex child wrapper used to control layout of a single item.',
     features: [

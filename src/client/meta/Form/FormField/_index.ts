@@ -5,6 +5,7 @@ import { FORM_FIELD_PROPS_META } from './props'
 
 const FORM_FIELD_META: ComponentMeta<FormFieldProps> = {
   overview: {
+    bundle: 'pro',
     name: 'Form.Field',
     title: 'Container for a single form field and its associated metadata.',
     features: [

@@ -24,5 +24,5 @@ const MULTI_SELECT_META: ComponentMeta<MultiSelectProps> = {
 
 export default {
   MultiSelect: MULTI_SELECT_META,
-  'MultiSelect.Option': MULTI_SELECT_OPTION_META,
+  MultiSelectOption: MULTI_SELECT_OPTION_META,
 }

@@ -29,7 +29,7 @@ const APP_FRAME_META: ComponentMeta<AppFrameProps> = {
 
 export default {
   AppFrame: APP_FRAME_META,
-  'AppFrame.Header': APP_FRAME_HEADER_META,
-  'AppFrame.Main': APP_FRAME_MAIN_META,
-  'AppFrame.Footer': APP_FRAME_FOOTER_META,
+  AppFrameHeader: APP_FRAME_HEADER_META,
+  AppFrameMain: APP_FRAME_MAIN_META,
+  AppFrameFooter: APP_FRAME_FOOTER_META,
 }

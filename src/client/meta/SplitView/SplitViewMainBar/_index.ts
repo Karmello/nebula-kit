@@ -5,6 +5,7 @@ import { SPLIT_VIEW_MAIN_BAR_PROPS_META } from './props'
 
 const SPLIT_VIEW_MAIN_BAR_META: ComponentMeta<SplitViewMainBarProps> = {
   overview: {
+    bundle: 'pro',
     name: 'SplitView.MainBar?',
     title: 'Defines the horizontal slot above the main content.',
     features: [

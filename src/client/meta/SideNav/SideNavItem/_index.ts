@@ -5,6 +5,7 @@ import { SIDE_NAV_ITEM_PROPS_META } from './props'
 
 const SIDE_NAV_ITEM_META: ComponentMeta<SideNavItemProps> = {
   overview: {
+    bundle: 'pro',
     name: 'SideNav.Item',
     title: 'Defines a single navigational entry within SideNav.',
     features: [

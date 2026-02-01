@@ -5,6 +5,7 @@ import { APP_FRAME_MAIN_PROPS_META } from './props'
 
 const APP_FRAME_MAIN_META: ComponentMeta<AppFrameMainProps> = {
   overview: {
+    bundle: 'core',
     name: 'AppFrame.Main',
     title: 'Defines the central content region of AppFrame.',
     features: ['holds the primary application content or view'],

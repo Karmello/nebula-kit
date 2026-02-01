@@ -33,10 +33,10 @@ const FORM_META: ComponentMeta<FormProps> = {
 
 export default {
   Form: FORM_META,
-  'Form.Fields': FORM_FIELDS_META,
-  'Form.Actions': FORM_ACTIONS_META,
-  'Form.Field': FORM_FIELD_META,
-  'Form.ActionButton': FORM_ACTION_BUTTON_META,
-  'Form.Label': FORM_LABEL_META,
-  'Form.Hint': FORM_HINT_META,
+  FormFields: FORM_FIELDS_META,
+  FormActions: FORM_ACTIONS_META,
+  FormField: FORM_FIELD_META,
+  FormActionButton: FORM_ACTION_BUTTON_META,
+  FormLabel: FORM_LABEL_META,
+  FormHint: FORM_HINT_META,
 }

@@ -28,5 +28,5 @@ const FLEX_META: ComponentMeta<FlexProps> = {
 
 export default {
   Flex: FLEX_META,
-  'Flex.Item': FLEX_ITEM_META,
+  FlexItem: FLEX_ITEM_META,
 }

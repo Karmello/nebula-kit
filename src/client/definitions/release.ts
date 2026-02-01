@@ -1,4 +1,4 @@
-export const RELEASE_VERSIONS = ['0.4.2', '0.4.1', '0.4.0', '0.3.0', '0.2.3'] as const
+export const RELEASE_VERSIONS = ['0.4.3', '0.4.2', '0.4.1', '0.4.0', '0.3.0', '0.2.3'] as const
 
 export type ReleaseVersion = (typeof RELEASE_VERSIONS)[number]
 
@@ -9,18 +9,25 @@ export const RELEASE_INFO: Record<
     changelog?: { core?: string[]; pro?: string[] }
   }
 > = {
+  '0.4.3': {
+    timestamp: 1769904739419,
+    changelog: {
+      core: ['enhanced editor IntelliSense with richer tooltips for slots and slot props'],
+      pro: ['enhanced editor IntelliSense with richer tooltips for slots and slot props'],
+    },
+  },
   '0.4.2': {
     timestamp: 1769515247187,
     changelog: {
-      core: ['enhanced editor IntelliSense with richer component tooltips'],
-      pro: ['enhanced editor IntelliSense with richer component tooltips'],
+      core: ['enhanced editor IntelliSense with richer tooltips for components'],
+      pro: ['enhanced editor IntelliSense with richer tooltips for components'],
     },
   },
   '0.4.1': {
     timestamp: 1769434481859,
     changelog: {
-      core: ['enhanced editor IntelliSense with richer prop tooltips'],
-      pro: ['enhanced editor IntelliSense with richer prop tooltips'],
+      core: ['enhanced editor IntelliSense with richer tooltips for component props'],
+      pro: ['enhanced editor IntelliSense with richer tooltips for component props'],
     },
   },
   '0.4.0': {

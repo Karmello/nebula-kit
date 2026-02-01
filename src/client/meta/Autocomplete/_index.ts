@@ -31,5 +31,5 @@ const AUTOCOMPLETE_META: ComponentMeta<AutocompleteProps> = {
 
 export default {
   Autocomplete: AUTOCOMPLETE_META,
-  'Autocomplete.Option': AUTOCOMPLETE_OPTION_META,
+  AutocompleteOption: AUTOCOMPLETE_OPTION_META,
 }

@@ -5,6 +5,7 @@ import { FORM_LABEL_PROPS_META } from './props'
 
 const FORM_LABEL_META: ComponentMeta<FormLabelProps> = {
   overview: {
+    bundle: 'pro',
     name: 'Form.Label',
     title: "Custom label slot for a form field's control.",
     features: ['replaces the "label" prop on Form.Field when provided'],

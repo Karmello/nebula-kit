@@ -25,5 +25,5 @@ const SELECT_META: ComponentMeta<SelectProps> = {
 
 export default {
   Select: SELECT_META,
-  'Select.Option': SELECT_OPTION_META,
+  SelectOption: SELECT_OPTION_META,
 }

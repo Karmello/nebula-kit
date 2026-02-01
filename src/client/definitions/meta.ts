@@ -4,7 +4,7 @@ import { ReleaseVersion } from 'client/definitions'
 
 type Overview = {
   name?: string
-  bundle?: 'core' | 'pro'
+  bundle: 'core' | 'pro'
   title: string
   description?: string
   features?: string[]

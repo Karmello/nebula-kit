@@ -5,6 +5,7 @@ import { APP_FRAME_HEADER_PROPS_META } from './props'
 
 const APP_FRAME_HEADER_META: ComponentMeta<AppFrameHeaderProps> = {
   overview: {
+    bundle: 'core',
     name: 'AppFrame.Header',
     title: 'Defines the top region of AppFrame.',
     features: ['typically used for navigation, branding or other global actions'],

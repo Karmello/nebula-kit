@@ -31,7 +31,7 @@ const TOOLBAR_META: ComponentMeta<ToolbarProps> = {
 
 export default {
   Toolbar: TOOLBAR_META,
-  'Toolbar.Main': TOOLBAR_MAIN_META,
-  'Toolbar.Start': TOOLBAR_START_META,
-  'Toolbar.End': TOOLBAR_END_META,
+  ToolbarMain: TOOLBAR_MAIN_META,
+  ToolbarStart: TOOLBAR_START_META,
+  ToolbarEnd: TOOLBAR_END_META,
 }

@@ -5,6 +5,7 @@ import { DROPDOWN_LIST_ITEM_PROPS_META } from './props'
 
 const DROPDOWN_LIST_ITEM_META: ComponentMeta<DropdownListItemProps> = {
   overview: {
+    bundle: 'core',
     name: 'DropdownList.Item',
     title: 'Interactive list item used within a DropdownList.',
     features: [

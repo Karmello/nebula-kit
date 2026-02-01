@@ -5,6 +5,7 @@ import { FORM_FIELDS_PROPS_META } from './props'
 
 const FORM_FIELDS_META: ComponentMeta<FormFieldsProps> = {
   overview: {
+    bundle: 'pro',
     name: 'Form.Fields',
     title: 'Container for grouping and laying out form fields within a Form.',
     features: ['expects Form.Field slots as children', 'controls layout and spacing between form fields'],

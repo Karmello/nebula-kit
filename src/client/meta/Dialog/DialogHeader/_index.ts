@@ -5,6 +5,7 @@ import { DIALOG_HEADER_PROPS_META } from './props'
 
 const DIALOG_HEADER_META: ComponentMeta<DialogHeaderProps> = {
   overview: {
+    bundle: 'pro',
     name: 'Dialog.Header?',
     title: 'Header area of the dialog.',
     features: ['for the dialog title or heading content'],

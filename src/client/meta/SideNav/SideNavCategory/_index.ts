@@ -5,6 +5,7 @@ import { SIDE_NAV_CATEGORY_PROPS_META } from './props'
 
 const SIDE_NAV_CATEGORY_META: ComponentMeta<SideNavCategoryProps> = {
   overview: {
+    bundle: 'pro',
     name: 'SideNav.Category?',
     title: 'Defines an expandable parent section that groups related navigation items.',
     features: [

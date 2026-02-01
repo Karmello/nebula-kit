@@ -5,6 +5,7 @@ import { MULTI_SELECT_OPTION_PROPS_META } from './props'
 
 const MULTI_SELECT_OPTION_META: ComponentMeta<MultiSelectOptionProps> = {
   overview: {
+    bundle: 'pro',
     name: 'MultiSelect.Option',
     title: 'Represents a single option within MultiSelect component.',
     composedOf: ['DropdownList.Item'],

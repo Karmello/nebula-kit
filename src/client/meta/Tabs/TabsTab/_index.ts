@@ -5,6 +5,7 @@ import { TABS_TAB_PROPS_META } from './props'
 
 const TABS_TAB_META: ComponentMeta<TabsTabProps> = {
   overview: {
+    bundle: 'pro',
     name: 'Tabs.Tab',
     title: 'Selectable tab item within a Tabs component.',
     features: ['activates the panel with the matching value', 'inherits visual styling from Button'],

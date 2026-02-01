@@ -5,6 +5,7 @@ import { SEGMENT_ITEM_PROPS_META } from './props'
 
 const SEGMENT_ITEM_META: ComponentMeta<SegmentItemProps> = {
   overview: {
+    bundle: 'core',
     name: 'Segment.Item',
     title: 'Wrapper for individual Segment children.',
     features: [

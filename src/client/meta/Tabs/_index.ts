@@ -30,6 +30,6 @@ const TABS_META: ComponentMeta<TabsProps> = {
 
 export default {
   Tabs: TABS_META,
-  'Tabs.Tab': TABS_TAB_META,
-  'Tabs.Panel': TABS_PANEL_META,
+  TabsTab: TABS_TAB_META,
+  TabsPanel: TABS_PANEL_META,
 }

@@ -2,7 +2,7 @@ import { BoxProps, FlexProps, HtmlTagProps, IconProps } from 'lib/components'
 import { RotateProps } from 'lib/components/core/motion/Rotate/definitions'
 
 export const DEFAULT_WITH_ICON_ICON_PLACEMENT: WithIconProps['iconPlacement'] = 'left'
-export const DEFAULT_WITH_ICON_GAP: WithIconProps['gap'] = '7px'
+export const DEFAULT_WITH_ICON_GAP: WithIconProps['gap'] = '12px'
 export const ICON_PLACEMENT = ['left', 'right'] as const
 
 export type IconPlacement = (typeof ICON_PLACEMENT)[number]

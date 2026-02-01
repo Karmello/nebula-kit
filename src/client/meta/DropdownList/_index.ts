@@ -33,6 +33,6 @@ const DROPDOWN_LIST_META: ComponentMeta<DropdownListProps> = {
 
 export default {
   DropdownList: DROPDOWN_LIST_META,
-  'DropdownList.Trigger': DROPDOWN_LIST_TRIGGER_META,
-  'DropdownList.Item': DROPDOWN_LIST_ITEM_META,
+  DropdownListTrigger: DROPDOWN_LIST_TRIGGER_META,
+  DropdownListItem: DROPDOWN_LIST_ITEM_META,
 }
