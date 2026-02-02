@@ -1,34 +1,47 @@
-import { pascalCase } from 'change-case'
+import { sentenceCase } from 'change-case'
 
-import { Box, Flex, Section, Text } from 'lib/components'
+import { useAppStore } from 'client/store'
+import { Box, Flex, Select, Spacer, Text, Tooltip } from 'lib/components'
+import { BoxColor } from 'lib/components/core/base/Box'
 import { COLORS } from 'lib/definitions'
 
 export default () => {
+  const brand = useAppStore(state => state.brand)
+  const setBrand = useAppStore(state => state.setBrand)
+
   return (
-    <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap="60px" alignItems="stretch">
-        <Text typography="lead">All color palettes defined in the system.</Text>
-        {COLORS.map(colorName => {
+    <>
+      <Text typography="lead">All color palettes defined in the system.</Text>
+      <Spacer />
+      <Text bold>Brand</Text>
+      <Select
+        value={brand}
+        onClosed={value => {
+          if (value !== undefined) setBrand(value as BoxColor)
+        }}
+        inlineSize="150px"
+        size="sm"
+        scrollAlign="center"
+      >
+        {COLORS.map(brand => (
+          <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
+        ))}
+      </Select>
+      <Spacer blockSize="80px" />
+      <Flex flexDirection="row">
+        {Array.from({ length: 15 }, (v, k) => {
           return (
-            <Section key={colorName} heading={pascalCase(colorName)}>
-              <Box overflowX="auto">
-                <Flex flexDirection="row">
-                  {Array.from({ length: 15 }, (v, k) => {
-                    return (
-                      <Flex.Item key={k} flex="1">
-                        <Box
-                          tagAttrs={{ style: { backgroundColor: `var(--neb-${colorName}-${k + 1})` } }}
-                          blockSize="100px"
-                        />
-                      </Flex.Item>
-                    )
-                  })}
-                </Flex>
-              </Box>
-            </Section>
+            <Flex.Item key={k} flex="1">
+              <Tooltip content={`var(--neb-${brand}-${k + 1})`} minInlineSize={150} maxInlineSize={200}>
+                <Box
+                  tagAttrs={{ style: { backgroundColor: `var(--neb-${brand}-${k + 1})` } }}
+                  blockSize="200px"
+                />
+              </Tooltip>
+            </Flex.Item>
           )
         })}
       </Flex>
-    </Box>
+    </>
   )
 }

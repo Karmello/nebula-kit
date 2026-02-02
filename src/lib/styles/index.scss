@@ -32,9 +32,6 @@ html.neb-transitions {
       transition: none !important;
     }
   }
-  .neb-box[data-neb-box-drawable='true'][data-neb-box-transitions='true']:active {
-    transition: none;
-  }
 }
 
 body {

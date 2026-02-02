@@ -1,6 +1,6 @@
 import { cloneElement, isValidElement, useId, useRef, useState } from 'react'
 
-import { HtmlTagProps, Box, Floating, FloatingResolved, Portal, Text } from 'lib/components'
+import { Box, Floating, FloatingResolved, Portal, Text } from 'lib/components'
 
 import {
   DEFAULT_TOOLTIP_INTENT,
@@ -53,8 +53,8 @@ export const Tooltip = ({
   const [floatingResolved, setFloatingResolved] = useState<FloatingResolved>()
 
   const dismissedByEsc = useRef(false)
-  const localTagRef = useRef(null)
-  const triggerRef = tagRef || localTagRef
+  const localRef = useRef(null)
+  const triggerRef = tagRef || localRef
 
   const tooltipId = useId()
 
@@ -89,104 +89,77 @@ export const Tooltip = ({
     },
   }
 
-  const ContentWrapper = () => {
-    const Content = () => (
-      <Box
-        tagAttrs={{ role: 'tooltip', id: tooltipId, 'aria-hidden': !open }}
-        drawable
-        color={color}
-        intent="neutral"
-        variant="solid"
-        pointerEvents="none"
-        minInlineSize={`${minInlineSize}px`}
-        maxInlineSize={`${maxInlineSize}px`}
-      >
-        <Box
-          drawable
-          variant={variant}
-          intent={intent}
-          color={color}
-          padding={padding}
-          paddingBlock={paddingBlock}
-          paddingInline={paddingInline}
-          textAlign={textAlign}
-          blockSize="100%"
-          inlineSize="100%"
-        >
-          <Text>{content}</Text>
-        </Box>
-      </Box>
-    )
-
-    return (
-      <>
-        {open ? (
-          <Floating
-            anchorRef={triggerRef}
-            placement={placement}
-            mode="project-both"
-            minInlineSize={minInlineSize}
-            maxInlineSize={maxInlineSize}
-            offset={offset}
-            onResolve={(resolved: FloatingResolved) => {
-              setFloatingResolved(prev => {
-                if (prev && prev.placement === resolved.placement && prev.blockSize === resolved.blockSize) {
-                  return prev
-                }
-                return resolved
-              })
-            }}
-          >
-            <Portal
-              anchorRef={triggerRef}
-              placement={floatingResolved?.placement || placement}
-              offset={offset}
-            >
-              <Content />
-            </Portal>
-          </Floating>
-        ) : null}
-      </>
-    )
-  }
-
-  if (!isValidElement(children)) {
-    return (
-      <>
+  return (
+    <>
+      {isValidElement(children) ? (
+        cloneElement(children as any, {
+          tagRef: triggerRef,
+          tagAttrs: {
+            ...(children as any).props.tagAttrs,
+            ...eventHandlers,
+            'aria-describedby': open ? tooltipId : undefined,
+          },
+        })
+      ) : (
         <Box
           tag="span"
-          tagAttrs={{ ...tagAttrs, ...eventHandlers, 'aria-describedby': open ? tooltipId : undefined }}
           tagRef={triggerRef}
+          tagAttrs={{
+            ...tagAttrs,
+            ...eventHandlers,
+            'aria-describedby': open ? tooltipId : undefined,
+          }}
           display="inline-block"
         >
           {children}
         </Box>
-        <ContentWrapper />
-      </>
-    )
-  }
-
-  if (typeof children.type === 'string') {
-    return (
-      <>
-        {cloneElement(children, {
-          ...tagAttrs,
-          ref: triggerRef,
-          ...eventHandlers,
-          'aria-describedby': open ? tooltipId : undefined,
-        } as any)}
-        <ContentWrapper />
-      </>
-    )
-  }
-
-  return (
-    <>
-      {cloneElement(children, {
-        tagAttrs: { ...tagAttrs, ...eventHandlers, 'aria-describedby': open ? tooltipId : undefined },
-        tagRef: triggerRef,
-      } as HtmlTagProps)}
-      <ContentWrapper />
+      )}
+      {open ? (
+        <Floating
+          anchorRef={triggerRef}
+          placement={placement}
+          mode="project-both"
+          minInlineSize={minInlineSize}
+          maxInlineSize={maxInlineSize}
+          offset={offset}
+          onResolve={(resolved: FloatingResolved) => {
+            setFloatingResolved(prev => {
+              if (prev && prev.placement === resolved.placement && prev.blockSize === resolved.blockSize) {
+                return prev
+              }
+              return resolved
+            })
+          }}
+        >
+          <Portal anchorRef={triggerRef} placement={floatingResolved?.placement || placement} offset={offset}>
+            <Box
+              tagAttrs={{ role: 'tooltip', id: tooltipId, 'aria-hidden': !open }}
+              drawable
+              color={color}
+              intent="neutral"
+              variant="solid"
+              pointerEvents="none"
+              minInlineSize={`${minInlineSize}px`}
+              maxInlineSize={`${maxInlineSize}px`}
+            >
+              <Box
+                drawable
+                variant={variant}
+                intent={intent}
+                color={color}
+                padding={padding}
+                paddingBlock={paddingBlock}
+                paddingInline={paddingInline}
+                textAlign={textAlign}
+                blockSize="100%"
+                inlineSize="100%"
+              >
+                <Text>{content}</Text>
+              </Box>
+            </Box>
+          </Portal>
+        </Floating>
+      ) : null}
     </>
   )
 }
