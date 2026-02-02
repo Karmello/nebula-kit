@@ -31,6 +31,12 @@ html.neb-transitions {
   .neb-box[data-neb-box-drawable='true'][data-neb-box-transitions='true']:active {
     transition: none;
   }
+
+  @media (hover: none), (pointer: coarse) {
+    .neb-box {
+      transition: none;
+    }
+  }
 }
 
 body {
