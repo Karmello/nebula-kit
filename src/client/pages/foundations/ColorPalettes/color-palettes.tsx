@@ -28,16 +28,14 @@ export default () => {
         ))}
       </Select>
       <Spacer blockSize="80px" />
-      <Flex flexDirection="row">
+      <Flex flexDirection={{ base: 'column', md: 'row' }} alignContent="stretch" alignItems="stretch">
         {Array.from({ length: 15 }, (v, k) => {
           return (
-            <Flex.Item key={k} flex="1">
-              <Tooltip content={`var(--neb-${brand}-${k + 1})`} minInlineSize={150} maxInlineSize={200}>
-                <Box
-                  tagAttrs={{ style: { backgroundColor: `var(--neb-${brand}-${k + 1})` } }}
-                  blockSize="200px"
-                />
-              </Tooltip>
+            <Flex.Item key={k} flexGrow="1">
+              <Box
+                tagAttrs={{ style: { backgroundColor: `var(--neb-${brand}-${k + 1})` } }}
+                blockSize={{ base: '75px', md: '225px' }}
+              />
             </Flex.Item>
           )
         })}
