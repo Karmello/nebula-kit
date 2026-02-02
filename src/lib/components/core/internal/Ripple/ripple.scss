@@ -6,7 +6,8 @@
   left: 0;
   border-radius: 50%;
   background-color: var(--neb-ripple-bg);
-  opacity: var(--neb-ripple-opacity);
+  // opacity: var(--neb-ripple-opacity);
+  opacity: 0.1;
   transform: scale(0);
   pointer-events: none;
 }
