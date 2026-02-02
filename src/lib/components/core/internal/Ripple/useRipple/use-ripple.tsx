@@ -29,19 +29,10 @@ export const useRipple = (parentRef: RefObject<any>) => {
       rippleEl.style.left = `${x}px`
       rippleEl.style.top = `${y}px`
 
-      const diag = Math.sqrt(rect.width * rect.width + rect.height * rect.height)
-      const duration = Math.max(1500, Math.min(diag * 9, 3000))
-      parent.style.setProperty('--neb-ripple-duration', `${duration}ms`)
-
-      if (!e.isPrimary) return
-
       // restart animation
       rippleEl.classList.remove('is-active')
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          rippleEl.classList.add('is-active')
-        })
-      })
+      void rippleEl.offsetWidth
+      rippleEl.classList.add('is-active')
     }
 
     parent.addEventListener('pointerdown', onPointerDown)
