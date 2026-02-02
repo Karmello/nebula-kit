@@ -1,7 +1,7 @@
 import { sentenceCase } from 'change-case'
 
 import { useAppStore } from 'client/store'
-import { Box, Flex, Select, Spacer, Text, Tooltip } from 'lib/components'
+import { Box, Flex, Select, Spacer, Text } from 'lib/components'
 import { BoxColor } from 'lib/components/core/base/Box'
 import { COLORS } from 'lib/definitions'
 
@@ -27,7 +27,7 @@ export default () => {
           <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
         ))}
       </Select>
-      <Spacer blockSize="80px" />
+      <Spacer blockSize="70px" />
       <Flex flexDirection={{ base: 'column', md: 'row' }} alignContent="stretch" alignItems="stretch">
         {Array.from({ length: 13 }, (v, k) => {
           return (
