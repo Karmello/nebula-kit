@@ -6,16 +6,14 @@
   left: 0;
   border-radius: 50%;
   background-color: var(--neb-ripple-bg);
-  // opacity: var(--neb-ripple-opacity);
-  opacity: 0.1;
+  opacity: var(--neb-ripple-opacity);
   transform: scale(0);
   pointer-events: none;
 }
 
 .neb-ripple.is-active {
   animation-name: neb-ripple-animation;
-  animation-duration: 750ms;
-  animation-timing-function: ease-in;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   animation-fill-mode: forwards;
 }
 

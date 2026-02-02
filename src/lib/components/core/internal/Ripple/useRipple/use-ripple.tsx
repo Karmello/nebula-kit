@@ -29,6 +29,10 @@ export const useRipple = (parentRef: RefObject<any>) => {
       rippleEl.style.left = `${x}px`
       rippleEl.style.top = `${y}px`
 
+      const diag = Math.sqrt(rect.width * rect.width + rect.height * rect.height)
+      const duration = Math.max(600, Math.min(diag, 1200))
+      rippleEl.style.animationDuration = `${duration}ms`
+
       // restart animation
       rippleEl.classList.remove('is-active')
       void rippleEl.offsetWidth
