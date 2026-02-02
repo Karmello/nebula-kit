@@ -29,11 +29,11 @@ export default () => {
       </Select>
       <Spacer blockSize="80px" />
       <Flex flexDirection={{ base: 'column', md: 'row' }} alignContent="stretch" alignItems="stretch">
-        {Array.from({ length: 15 }, (v, k) => {
+        {Array.from({ length: 13 }, (v, k) => {
           return (
             <Flex.Item key={k} flexGrow="1">
               <Box
-                tagAttrs={{ style: { backgroundColor: `var(--neb-${brand}-${k + 1})` } }}
+                tagAttrs={{ style: { backgroundColor: `var(--neb-${brand}-${k + 2})` } }}
                 blockSize={{ base: '75px', md: '225px' }}
               />
             </Flex.Item>
