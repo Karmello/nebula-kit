@@ -93,7 +93,6 @@ export const Button = <T extends ButtonTag = 'button'>({
       position="relative"
       {...BUTTON_SIZE_CONFIG[size]}
     >
-      <Ripple parentRef={tagRef || ref} />
       {iconName ? (
         <WithIcon
           inlineSize={children !== undefined ? '100%' : undefined}
@@ -111,6 +110,7 @@ export const Button = <T extends ButtonTag = 'button'>({
         text
       )}
       {loading && !disabled ? <Loader centered size={size} /> : null}
+      <Ripple parentRef={tagRef || ref} />
     </Box>
   )
 }

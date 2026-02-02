@@ -36,7 +36,11 @@ export const useRipple = (parentRef: RefObject<any>) => {
       // restart animation
       rippleEl.classList.remove('is-active')
       void rippleEl.offsetWidth
-      rippleEl.classList.add('is-active')
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          rippleEl.classList.add('is-active')
+        })
+      })
     }
 
     parent.addEventListener('pointerdown', onPointerDown)
