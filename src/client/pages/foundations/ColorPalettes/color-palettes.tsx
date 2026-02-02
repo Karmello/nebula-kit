@@ -1,6 +1,6 @@
 import { pascalCase } from 'change-case'
 
-import { Box, Flex, Section, Text } from 'lib/components'
+import { Box, Flex, Section, Text, Tooltip } from 'lib/components'
 import { COLORS } from 'lib/definitions'
 
 export default () => {
@@ -17,13 +17,8 @@ export default () => {
                     return (
                       <Flex.Item key={k} flex="1">
                         <Box
-                          variant="solid"
+                          tagAttrs={{ style: { backgroundColor: `var(--neb-${colorName}-${k + 1})` } }}
                           blockSize="100px"
-                          tagAttrs={{
-                            style: {
-                              backgroundColor: `var(--neb-${colorName}-${k + 1})`,
-                            },
-                          }}
                         />
                       </Flex.Item>
                     )

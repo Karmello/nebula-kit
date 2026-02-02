@@ -7,7 +7,8 @@
   border-radius: 50%;
   background-color: var(--neb-ripple-bg);
   opacity: var(--neb-ripple-opacity);
-  transform: scale(0);
+  will-change: transform, opacity;
+  transform: translateZ(0) scale(0);
   pointer-events: none;
 }
 
@@ -16,6 +17,10 @@
 }
 
 @keyframes neb-ripple-animation {
+  from {
+    opacity: var(--neb-ripple-opacity);
+    transform: scale(0);
+  }
   to {
     opacity: 0;
     transform: scale(3);
