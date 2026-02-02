@@ -107,7 +107,7 @@ export const AutocompleteMain = ({
       scrollAlign={scrollAlign}
       visibleItemsCount={visibleItemsCount}
       noOptionsLabel={noOptionsLabel}
-      animationDuration={0}
+      disableListAnimation
       placement={dropdownPlacement}
       openOnFocus
       onOpened={() => {

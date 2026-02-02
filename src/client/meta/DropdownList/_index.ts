@@ -26,6 +26,7 @@ const DROPDOWN_LIST_META: ComponentMeta<DropdownListProps> = {
   props: DROPDOWN_LIST_PROPS_META,
   examples: DROPDOWN_LIST_EXAMPLES_META,
   changelog: {
+    '0.5.0': ['removed animationDuration prop', 'added disableListAnimation prop'],
     '0.3.0': ['public API updated'],
     '0.2.3': ['released'],
   },

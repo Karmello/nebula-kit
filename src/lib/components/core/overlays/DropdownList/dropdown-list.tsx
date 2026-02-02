@@ -3,7 +3,6 @@ import { useRef, useState } from 'react'
 import { FloatingResolved } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
 import { BUTTON_SIZE_CONFIG, DEFAULT_BUTTON_SIZE } from 'lib/components/core/controls/Button/definitions'
-import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize'
 
 import {
   DropdownListProps,
@@ -39,7 +38,7 @@ export const DropdownList = ({
   scrollAlign = DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
   itemBorderIntent = DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT,
   noOptionsLabel,
-  animationDuration = DEFAULT_RESIZE_DURATION,
+  disableListAnimation,
   onOpened,
   onClosed,
 }: DropdownListProps) => {
@@ -117,7 +116,7 @@ export const DropdownList = ({
             scrollAlign={scrollAlign}
             itemBorderIntent={itemBorderIntent}
             noOptionsLabel={noOptionsLabel}
-            animationDuration={animationDuration}
+            disableListAnimation={disableListAnimation}
             onOpened={onOpened}
             onClosed={onClosed}
             // extra

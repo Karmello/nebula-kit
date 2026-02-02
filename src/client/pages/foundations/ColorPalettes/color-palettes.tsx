@@ -1,6 +1,6 @@
 import { pascalCase } from 'change-case'
 
-import { Box, Flex, Section, Text, Tooltip } from 'lib/components'
+import { Box, Flex, Section, Text } from 'lib/components'
 import { COLORS } from 'lib/definitions'
 
 export default () => {

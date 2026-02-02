@@ -35,24 +35,28 @@ export const DropdownListMenu = () => {
     scrollAlign,
     ensureVisibleIndex,
     itemHeight,
-    animationDuration,
     floatingResolved,
     setFloatingResolved,
+    disableListAnimation,
   } = useDropdownListContext()
 
   const prevOpenRef = useRef<boolean>(open)
+
+  const finalVisibleItemsCount = floatingResolved?.blockSize
+    ? Math.floor(floatingResolved.blockSize / itemHeight)
+    : correctedVisibleItemsCount
+
+  const finalAnimationDuration = !disableListAnimation ? finalVisibleItemsCount * 40 : 0
 
   useLayoutEffect(() => {
     const wasOpen = prevOpenRef.current
     prevOpenRef.current = open
     if (wasOpen && !open) {
-      setTimeout(() => {
-        onClosed?.()
-      }, animationDuration)
+      onClosed?.()
     } else if (!wasOpen && open) {
       setTimeout(() => {
         onOpened?.()
-      }, animationDuration)
+      }, finalAnimationDuration)
     }
     if (!open) return
 
@@ -63,13 +67,9 @@ export const DropdownListMenu = () => {
     const observer = new ResizeObserver(update)
     observer.observe(el)
     return () => observer.disconnect()
-  }, [open, animationDuration])
+  }, [open, finalAnimationDuration])
 
   const opensUpDownwards = (floatingResolved?.placement ?? 'bottom-start').startsWith('bottom')
-
-  const finalVisibleItemsCount = floatingResolved?.blockSize
-    ? Math.floor(floatingResolved.blockSize / itemHeight)
-    : correctedVisibleItemsCount
 
   return (
     <Floating
@@ -90,8 +90,8 @@ export const DropdownListMenu = () => {
         <Resize
           property="blockSize"
           visible={resizeVisible}
-          duration={animationDuration}
-          easing={resizeVisible ? 'ease-out' : 'ease-in'}
+          duration={resizeVisible ? finalAnimationDuration : 0}
+          easing={resizeVisible ? 'ease-out' : undefined}
         >
           <Box
             drawable
