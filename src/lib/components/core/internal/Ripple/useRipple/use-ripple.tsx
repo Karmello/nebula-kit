@@ -2,7 +2,10 @@ import { RefObject, useEffect } from 'react'
 
 export const useRipple = (parentRef: RefObject<any>, active?: boolean) => {
   useEffect(() => {
-    if (typeof window === 'undefined' || !parentRef?.current || !active) return
+    if (typeof window === 'undefined' || !parentRef?.current || !active) {
+      return
+    }
+
     const parent = parentRef.current
 
     const isInteractive = parent.getAttribute('data-neb-box-interactive') === 'true'

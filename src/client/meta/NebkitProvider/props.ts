@@ -7,6 +7,7 @@ import {
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
   DEFAULT_NEBKIT_BRAND,
   DEFAULT_NEBKIT_THEME,
+  DEFAULT_NEBKIT_RIPPLE,
 } from 'lib/components/core/utility/NebkitProvider'
 
 const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = {
@@ -30,6 +31,11 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = 
     options: ['boolean'],
     description:
       'Locks global document scrolling while preserving layout by compensating for scrollbar width.',
+  },
+  ripple: {
+    options: ['boolean'],
+    defaultValue: String(DEFAULT_NEBKIT_RIPPLE),
+    description: 'Toggles the ripple interaction effect globally.',
   },
   theme: {
     options: THEMES as unknown as string[],

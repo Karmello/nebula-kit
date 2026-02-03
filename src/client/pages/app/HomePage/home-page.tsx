@@ -20,7 +20,6 @@ import {
 } from 'lib/components'
 
 import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/core/utility/NebkitProvider'
-import { BoxColor } from 'lib/components/core/base/Box'
 import { COLORS, THEMES } from 'lib/definitions'
 
 import { Ortho } from './Ortho'
@@ -151,15 +150,7 @@ export const HomePage = () => {
                 </Flex.Item>
                 <Flex.Item>
                   <Text bold>Brand</Text>
-                  <Select
-                    value={brand}
-                    onClosed={value => {
-                      if (value !== undefined) setBrand(value as BoxColor)
-                    }}
-                    inlineSize="150px"
-                    size="sm"
-                    scrollAlign="center"
-                  >
+                  <Select value={brand} onChange={setBrand} inlineSize="150px" size="sm" scrollAlign="center">
                     {COLORS.map(brand => (
                       <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
                     ))}
@@ -169,9 +160,7 @@ export const HomePage = () => {
                   <Text bold>Border radius</Text>
                   <Select
                     value={borderRadiusSize}
-                    onClosed={value => {
-                      if (value !== undefined) setBorderRadiusSize(value as never)
-                    }}
+                    onChange={setBorderRadiusSize}
                     inlineSize="150px"
                     size="sm"
                     scrollAlign="center"
@@ -183,12 +172,7 @@ export const HomePage = () => {
                 </Flex.Item>
                 <Flex.Item>
                   <Text bold>Ripple</Text>
-                  <Switch
-                    checked={ripple}
-                    onChange={value => {
-                      if (value !== undefined) setRipple(value)
-                    }}
-                  />
+                  <Switch checked={ripple} onChange={setRipple} />
                 </Flex.Item>
               </Flex>
             </Flex.Item>

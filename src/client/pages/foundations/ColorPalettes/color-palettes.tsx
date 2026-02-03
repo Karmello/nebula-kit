@@ -2,7 +2,6 @@ import { sentenceCase } from 'change-case'
 
 import { useAppStore } from 'client/store'
 import { Box, Flex, Select, Spacer, Text } from 'lib/components'
-import { BoxColor } from 'lib/components/core/base/Box'
 import { COLORS } from 'lib/definitions'
 
 export default () => {
@@ -14,15 +13,7 @@ export default () => {
       <Text typography="lead">All color palettes defined in the system.</Text>
       <Spacer />
       <Text bold>Brand</Text>
-      <Select
-        value={brand}
-        onClosed={value => {
-          if (value !== undefined) setBrand(value as BoxColor)
-        }}
-        inlineSize="150px"
-        size="sm"
-        scrollAlign="center"
-      >
+      <Select value={brand} onChange={setBrand} inlineSize="150px" size="sm" scrollAlign="center">
         {COLORS.map(brand => (
           <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
         ))}

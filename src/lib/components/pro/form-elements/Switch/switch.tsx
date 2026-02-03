@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import classNames from 'classnames'
 
 import { Box, Slide } from 'lib/components'
@@ -25,6 +25,16 @@ export const Switch = ({
 
   const isControlled = checked !== undefined
   const currentChecked = isControlled ? checked : internalChecked
+
+  const [animatedChecked, setAnimatedChecked] = useState(currentChecked)
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() => {
+      setAnimatedChecked(currentChecked)
+    })
+
+    return () => cancelAnimationFrame(id)
+  }, [currentChecked])
 
   const handleChange = (checked: boolean) => {
     if (!isControlled) setInternalChecked(checked)
@@ -55,7 +65,7 @@ export const Switch = ({
         interactive
         disabled={disabled}
         variant="solid"
-        intent={currentChecked && !disabled ? 'primary' : 'tertiary'}
+        intent={animatedChecked && !disabled ? 'primary' : 'tertiary'}
         color={color}
         blockSize={BUTTON_SIZE_CONFIG[size || 'md'].blockSize}
         inlineSize={`calc(${BUTTON_SIZE_CONFIG[size || 'md'].blockSize} * 2 - var(--neb-border-width) * ${SWITCH_SIZE_MAP[size || 'md'].borderMultiplier * 2})`}
@@ -69,7 +79,7 @@ export const Switch = ({
           },
         }}
         from="left"
-        visible={currentChecked}
+        visible={animatedChecked}
       >
         <Box
           drawable
