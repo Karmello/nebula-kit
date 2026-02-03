@@ -1,6 +1,6 @@
 import { RefObject, useEffect } from 'react'
 
-export const useRipple = (parentRef: RefObject<any>, active: boolean) => {
+export const useRipple = (parentRef: RefObject<any>, active?: boolean) => {
   useEffect(() => {
     if (typeof window === 'undefined' || !parentRef?.current || !active) return
     const parent = parentRef.current

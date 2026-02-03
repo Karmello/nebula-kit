@@ -8,7 +8,7 @@ import './ripple.scss'
 
 export type RippleProps = {
   parentRef: RefObject<any>
-  active: boolean
+  active?: boolean
 }
 
 export const Ripple = ({ parentRef, active }: RippleProps) => {

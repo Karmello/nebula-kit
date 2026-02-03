@@ -79,7 +79,7 @@ export const DropdownList = ({
         if (correctedVisibleItemsCount <= 0 && noOptionsLabel) correctedVisibleItemsCount = 1
 
         const itemHeight =
-          Number(BUTTON_SIZE_CONFIG[size].blockSize.replace('px', '')) +
+          Number(BUTTON_SIZE_CONFIG[size || 'md'].blockSize.replace('px', '')) +
           Number(BOX_BORDER_WIDTH.replace('px', ''))
 
         return (
