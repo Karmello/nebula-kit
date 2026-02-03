@@ -27,10 +27,6 @@ html.neb-transitions {
       color 0.3s ease-in-out,
       box-shadow 0.3s ease-in-out,
       -webkit-box-shadow 0.3s ease-in-out;
-
-    @media (hover: none), (pointer: coarse) {
-      transition: none !important;
-    }
   }
 }
 

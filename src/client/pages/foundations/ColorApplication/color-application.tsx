@@ -19,7 +19,7 @@ export default () => {
       <Select
         value={variant}
         onChange={value => setVariant(value as BoxVariant)}
-        inlineSize="140px"
+        inlineSize="150px"
         size="sm"
         scrollAlign="center"
       >

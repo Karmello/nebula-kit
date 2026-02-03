@@ -90,8 +90,6 @@ export default ({ pathname }: { pathname: string }) => {
       {displayCoreNotes || displayProNotes ? (
         <>
           <Spacer blockSize="40px" />
-          <Text typography="h6">Release notes</Text>
-          <Spacer blockSize="10px" />
           <Tabs defaultValue={displayCoreNotes ? 'core' : 'pro'} inlineSize="100%">
             {displayCoreNotes ? (
               <Tabs.Tab value="core" iconName="package">

@@ -19,8 +19,10 @@
           &:not([data-neb-box-highlighted='true']):hover,
           &[data-neb-box-highlighted='true'],
           &:focus-visible {
-            border-color: var(--neb-#{$intent}-soft-outline-hover);
-            color: var(--neb-#{$intent}-soft-outline-hover);
+            @media (hover: hover) and (pointer: fine) {
+              border-color: var(--neb-#{$intent}-soft-outline-hover);
+              color: var(--neb-#{$intent}-soft-outline-hover);
+            }
           }
 
           // focus ring
