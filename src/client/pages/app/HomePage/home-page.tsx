@@ -191,6 +191,10 @@ export const HomePage = () => {
             margin={{ base: '0 auto', lg: '0px' }}
             aspectRatio="16 / 9"
           />
+          <Spacer blockSize="7px" />
+          <Text intent="secondary" color="gray" italic scale="compact">
+            Video hosted on YouTube. Playback may set cookies.
+          </Text>
         </Flex.Item>
         <Flex.Item flex="1">
           <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="35px">

@@ -10,7 +10,7 @@ import { BoxColor } from 'lib/components/core/base/Box'
 type PricingPlanButtonProps = {
   plan: string
   activePlan?: string
-  color?: BoxColor
+  color: BoxColor
 }
 
 export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButtonProps) => {
@@ -80,11 +80,11 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
               drawable
               variant="outline"
               intent="tertiary"
-              color="purple"
+              color={color}
               paddingBlock="5px"
               paddingInline="10px"
             >
-              <Text iconName="check" iconPlacement="right" intent="primary" color="purple">
+              <Text iconName="check" iconPlacement="right" intent="primary" color={color}>
                 This is the plan you are on
               </Text>
             </Box>
