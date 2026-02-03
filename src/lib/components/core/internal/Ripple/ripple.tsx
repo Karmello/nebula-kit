@@ -12,13 +12,18 @@ export type RippleProps = {
 }
 
 export const Ripple = ({ parentRef, active }: RippleProps) => {
-  const [globallyEnabled, setGloballyEnabled] = useState(
-    document.documentElement.getAttribute('data-ripple') === 'true'
-  )
+  const [globallyEnabled, setGloballyEnabled] = useState(false)
 
   useEffect(() => {
+    if (typeof document === 'undefined') return
+
+    const read = () => document.documentElement.getAttribute('data-ripple') === 'true'
+
+    // read once on mount
+    setGloballyEnabled(read())
+
     const observer = new MutationObserver(() => {
-      setGloballyEnabled(document.documentElement.getAttribute('data-ripple') === 'true')
+      setGloballyEnabled(read())
     })
 
     observer.observe(document.documentElement, {
