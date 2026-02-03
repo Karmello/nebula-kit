@@ -15,6 +15,7 @@ import {
   DEFAULT_BUTTON_SIZE,
   DEFAULT_BUTTON_VARIANT,
   DEFAULT_BUTTON_JUSTIFY_CONTENT,
+  DEFAULT_BUTTON_RIPPLE,
 } from './definitions'
 
 import './button.scss'
@@ -46,6 +47,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   size = DEFAULT_BUTTON_SIZE,
   fullWidth,
   loading,
+  ripple = DEFAULT_BUTTON_RIPPLE,
   onClick,
 }: ButtonProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
@@ -110,7 +112,7 @@ export const Button = <T extends ButtonTag = 'button'>({
         text
       )}
       {loading && !disabled ? <Loader centered size={size} /> : null}
-      <Ripple parentRef={tagRef || ref} />
+      <Ripple parentRef={tagRef || ref} active={ripple} />
     </Box>
   )
 }

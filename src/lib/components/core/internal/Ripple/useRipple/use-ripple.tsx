@@ -1,8 +1,8 @@
 import { RefObject, useEffect } from 'react'
 
-export const useRipple = (parentRef: RefObject<any>) => {
+export const useRipple = (parentRef: RefObject<any>, active: boolean) => {
   useEffect(() => {
-    if (typeof window === 'undefined' || !parentRef?.current) return
+    if (typeof window === 'undefined' || !parentRef?.current || !active) return
     const parent = parentRef.current
 
     const isInteractive = parent.getAttribute('data-neb-box-interactive') === 'true'
@@ -47,5 +47,6 @@ export const useRipple = (parentRef: RefObject<any>) => {
   }, [
     parentRef.current?.getAttribute('data-neb-box-disabled'),
     parentRef.current?.getAttribute('data-neb-box-interactive'),
+    active,
   ])
 }

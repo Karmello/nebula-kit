@@ -2,7 +2,6 @@ import { MouseEventHandler } from 'react'
 
 import { BoxProps, FlexProps, HtmlTagProps, TextProps, WithIconProps } from 'lib/components'
 import { RespValue, Sizes } from 'lib/definitions'
-import { BoxIntent, BoxVariant } from 'lib/components/core/base/Box/definitions'
 import { TextScale } from 'lib/components/core/base/Text/definitions'
 
 export const BUTTON_SIZE_CONFIG: Record<
@@ -39,9 +38,10 @@ export const BUTTON_SIZE_CONFIG: Record<
   },
 }
 
-export const DEFAULT_BUTTON_VARIANT: BoxVariant = 'solid'
-export const DEFAULT_BUTTON_INTENT: BoxIntent = 'tertiary'
-export const DEFAULT_BUTTON_SIZE: ButtonSize = 'md'
+export const DEFAULT_BUTTON_VARIANT: ButtonProps['variant'] = 'solid'
+export const DEFAULT_BUTTON_INTENT: ButtonProps['intent'] = 'tertiary'
+export const DEFAULT_BUTTON_SIZE: ButtonProps['size'] = 'md'
+export const DEFAULT_BUTTON_RIPPLE: ButtonProps['ripple'] = true
 export const DEFAULT_BUTTON_JUSTIFY_CONTENT: FlexProps['justifyContent'] = 'center'
 
 export const BUTTON_TAGS = ['button', 'a'] as const
@@ -54,6 +54,7 @@ type ButtonOwnProps = {
   size?: ButtonSize
   fullWidth?: RespValue<boolean>
   loading?: boolean
+  ripple?: boolean
   onClick?: React.MouseEventHandler<HTMLButtonElement> | MouseEventHandler<HTMLAnchorElement>
 }
 

@@ -8,6 +8,7 @@ import {
   DEFAULT_BUTTON_JUSTIFY_CONTENT,
   DEFAULT_BUTTON_SIZE,
   DEFAULT_BUTTON_VARIANT,
+  DEFAULT_BUTTON_RIPPLE,
 } from 'lib/components/core/controls/Button'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -37,7 +38,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   inlineSize: BOX_PROPS_META.inlineSize,
   intent: {
     ...BOX_PROPS_META.intent,
-    defaultValue: DEFAULT_BUTTON_INTENT,
+    defaultValue: String(DEFAULT_BUTTON_INTENT),
   },
   justifyContent: {
     ...FLEX_PROPS_META.justifyContent,
@@ -54,6 +55,11 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     options: ['event => void'],
     description: 'Click event handler for the button element.',
   },
+  ripple: {
+    options: ['boolean'],
+    defaultValue: String(DEFAULT_BUTTON_RIPPLE),
+    description: 'Toggles the ripple effect on pointer interaction.',
+  },
   size: {
     options: Object.values(BUTTON_SIZES),
     defaultValue: DEFAULT_BUTTON_SIZE,
@@ -69,7 +75,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   tagRef: HTML_TAG_PROPS_META.tagRef,
   variant: {
     ...BOX_PROPS_META.variant,
-    defaultValue: DEFAULT_BUTTON_VARIANT,
+    defaultValue: String(DEFAULT_BUTTON_VARIANT),
   },
 }
 

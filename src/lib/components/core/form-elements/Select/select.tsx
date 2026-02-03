@@ -104,6 +104,8 @@ export const Select = ({
                         color={color}
                         disabled={disabled}
                         fullWidth
+                        ripple={!open}
+                        highlighted={open}
                       >
                         {staticLabel || currentSlot?.props.children || 'Select ...'}
                       </Button>

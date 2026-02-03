@@ -46,7 +46,9 @@ export const DropdownListMenu = () => {
     ? Math.floor(floatingResolved.blockSize / itemHeight)
     : correctedVisibleItemsCount
 
-  const finalAnimationDuration = !disableListAnimation ? finalVisibleItemsCount * 40 : 0
+  const finalAnimationDuration = !disableListAnimation
+    ? Math.min(400, Math.max(200, finalVisibleItemsCount * 40))
+    : 0
 
   useLayoutEffect(() => {
     const wasOpen = prevOpenRef.current

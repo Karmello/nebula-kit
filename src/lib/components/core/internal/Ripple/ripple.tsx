@@ -8,10 +8,11 @@ import './ripple.scss'
 
 export type RippleProps = {
   parentRef: RefObject<any>
+  active: boolean
 }
 
-export const Ripple = ({ parentRef }: RippleProps) => {
-  useRipple(parentRef)
+export const Ripple = ({ parentRef, active }: RippleProps) => {
+  useRipple(parentRef, active)
 
   return <span className={withPrefix('ripple')} />
 }

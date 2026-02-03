@@ -111,6 +111,8 @@ export const MultiSelect = ({
                         color={color}
                         disabled={disabled}
                         fullWidth
+                        ripple={!open}
+                        highlighted={open}
                       >
                         {currentLabel || 'Select ...'}
                       </Button>
