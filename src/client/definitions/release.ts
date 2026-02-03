@@ -12,7 +12,7 @@ export const RELEASE_INFO: Record<
   '0.5.0': {
     timestamp: 1770003246752,
     changelog: {
-      main: ['improved ripple animation', 'improved styling system doc pages'],
+      main: ['improved ripple animation', 'added global ripple toggle', 'improved styling system doc pages'],
     },
   },
   '0.4.3': {

@@ -54,7 +54,7 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
   },
   onClosed: {
     options: ['() => void'],
-    description: 'Callback invoked after the list has fully closed.',
+    description: 'Callback invoked after the list has closed.',
   },
   onOpened: {
     options: ['() => void'],
