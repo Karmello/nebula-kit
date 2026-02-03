@@ -80,6 +80,7 @@ export const Switch = ({
         }}
         from="left"
         visible={animatedChecked}
+        easing="cubic-bezier(0.25, 0, 0.4, 1)"
       >
         <Box
           drawable

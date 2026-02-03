@@ -78,13 +78,13 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
           return (
             <Box
               drawable
-              variant="outline"
-              intent="tertiary"
+              variant="solid"
+              intent="secondary"
               color={color}
-              paddingBlock="5px"
-              paddingInline="10px"
+              paddingBlock="10px"
+              paddingInline="14px"
             >
-              <Text iconName="check" iconPlacement="right" intent="primary" color={color}>
+              <Text iconName="check" iconPlacement="right" bold>
                 This is the plan you are on
               </Text>
             </Box>
