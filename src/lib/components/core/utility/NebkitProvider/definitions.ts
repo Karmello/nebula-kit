@@ -6,6 +6,7 @@ import { BoxColor } from 'lib/components/core/base/Box'
 export const DEFAULT_NEBKIT_THEME: Theme = 'light'
 export const DEFAULT_NEBKIT_BRAND: BoxColor = 'gray'
 export const DEFAULT_NEBKIT_BORDER_RADIUS_SIZE: NebkitProviderProps['borderRadiusSize'] = 'md'
+export const DEFAULT_NEBKIT_RIPPLE: NebkitProviderProps['ripple'] = true
 
 export const NEBKIT_SIZES_MAP: {
   borderRadiusSize: Record<NebkitBorderRadiusSize, string>
@@ -22,5 +23,6 @@ export type NebkitProviderProps = {
   theme?: Theme
   brand?: BoxColor
   borderRadiusSize?: NebkitBorderRadiusSize
+  ripple?: boolean
   lockGlobalScroll?: boolean
 }

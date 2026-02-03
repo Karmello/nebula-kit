@@ -11,6 +11,7 @@ const Node = () => {
   const theme = useAppStore(state => state.theme)
   const brand = useAppStore(state => state.brand)
   const borderRadiusSize = useAppStore(state => state.borderRadiusSize)
+  const ripple = useAppStore(state => state.ripple)
   const showAppJump = useAppStore(state => state.showAppJump)
 
   return (
@@ -20,6 +21,7 @@ const Node = () => {
           theme={theme}
           brand={brand}
           borderRadiusSize={borderRadiusSize}
+          ripple={ripple}
           lockGlobalScroll={showAppJump}
         >
           <Snackbar closeOnOutsideClick autoCloseDelay={10000}>

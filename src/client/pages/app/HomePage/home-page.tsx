@@ -16,6 +16,7 @@ import {
   Text,
   Segment,
   Grid,
+  Switch,
 } from 'lib/components'
 
 import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/core/utility/NebkitProvider'
@@ -33,6 +34,8 @@ export const HomePage = () => {
   const setBrand = useAppStore(state => state.setBrand)
   const borderRadiusSize = useAppStore(state => state.borderRadiusSize)
   const setBorderRadiusSize = useAppStore(state => state.setBorderRadiusSize)
+  const ripple = useAppStore(state => state.ripple)
+  const setRipple = useAppStore(state => state.setRipple)
 
   return (
     <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">
@@ -177,6 +180,15 @@ export const HomePage = () => {
                       <Select.Option value={n}>{n}</Select.Option>
                     ))}
                   </Select>
+                </Flex.Item>
+                <Flex.Item>
+                  <Text bold>Ripple</Text>
+                  <Switch
+                    checked={ripple}
+                    onChange={value => {
+                      if (value !== undefined) setRipple(value)
+                    }}
+                  />
                 </Flex.Item>
               </Flex>
             </Flex.Item>
