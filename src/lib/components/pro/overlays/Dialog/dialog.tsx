@@ -29,6 +29,14 @@ export const Dialog = ({
   size = DEFAULT_DIALOG_SIZE,
 }: DialogProps) => {
   const ref = useRef(null)
+  const canAnimateRef = useRef(false)
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() => {
+      canAnimateRef.current = true
+    })
+    return () => cancelAnimationFrame(id)
+  }, [])
 
   useEffect(() => {
     if (!open) return
@@ -61,7 +69,7 @@ export const Dialog = ({
                 tagAttrs={{
                   style: {
                     backgroundColor: theme === 'light' ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)',
-                    transition: 'opacity 0.4s ease-out',
+                    transition: canAnimateRef.current ? 'opacity 0.4s ease-out' : 'none',
                   },
                   onClick: () => {
                     if (closeOnBackdropClick) onClose?.()

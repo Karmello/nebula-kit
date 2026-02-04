@@ -13,11 +13,22 @@
 
         // not disabled, interactive
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
-          // hovered, highlighted, focused
-          &:not([data-neb-box-highlighted='true']):hover,
+          // highlight or focus
           &[data-neb-box-highlighted='true'],
           &:focus-visible {
-            @media (hover: hover) and (pointer: fine) {
+            border-color: var(--neb-#{$intent}-outline-hover);
+          }
+
+          // hover devices
+          @media (hover: hover) and (pointer: fine) {
+            &:not([data-neb-box-highlighted='true']):hover {
+              border-color: var(--neb-#{$intent}-outline-hover);
+            }
+          }
+
+          // non-hover devices
+          @media (hover: none) and (pointer: coarse) {
+            &:active {
               border-color: var(--neb-#{$intent}-outline-hover);
             }
           }

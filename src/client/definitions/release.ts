@@ -10,11 +10,12 @@ export const RELEASE_INFO: Record<
   }
 > = {
   '0.5.0': {
-    timestamp: 1770132581283,
+    timestamp: 1770165761792,
     changelog: {
       main: [
         'improved ripple animation',
         'added global ripple toggle',
+        'improved focus rings',
         'improved styling system doc pages',
         'fixed blank Pricing page issue',
       ],

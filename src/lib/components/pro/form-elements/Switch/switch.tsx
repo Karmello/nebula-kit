@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
 import { Box, Slide } from 'lib/components'
 import { BUTTON_SIZE_CONFIG } from 'lib/components/core/controls/Button'
 import { withPrefix } from 'lib/helpers'
 
-import { DEFAULT_SWITCH_SIZE, SWITCH_SIZE_MAP, SwitchProps } from './definitions'
+import { DEFAULT_SWITCH_SIZE, SWITCH_BORDER_MULTIPLIER, SwitchProps } from './definitions'
 
 import './switch.scss'
 
@@ -28,7 +28,7 @@ export const Switch = ({
 
   const [animatedChecked, setAnimatedChecked] = useState(currentChecked)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const id = requestAnimationFrame(() => {
       setAnimatedChecked(currentChecked)
     })
@@ -41,7 +41,7 @@ export const Switch = ({
     onChange?.(checked)
   }
 
-  const thumbBlockSize = `calc(${BUTTON_SIZE_CONFIG[size || 'md'].blockSize} - var(--neb-border-width) * ${SWITCH_SIZE_MAP[size || 'md'].borderMultiplier * 2})`
+  const thumbBlockSize = `calc(${BUTTON_SIZE_CONFIG[size || 'md'].blockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})`
 
   return (
     <Box
@@ -63,19 +63,20 @@ export const Switch = ({
         }}
         drawable
         interactive
+        highlighted
         disabled={disabled}
         variant="solid"
         intent={animatedChecked && !disabled ? 'primary' : 'tertiary'}
         color={color}
         blockSize={BUTTON_SIZE_CONFIG[size || 'md'].blockSize}
-        inlineSize={`calc(${BUTTON_SIZE_CONFIG[size || 'md'].blockSize} * 2 - var(--neb-border-width) * ${SWITCH_SIZE_MAP[size || 'md'].borderMultiplier * 2})`}
+        inlineSize={`calc(${BUTTON_SIZE_CONFIG[size || 'md'].blockSize} * 2 - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})`}
       />
       <Slide
         tagAttrs={{
           className: withPrefix('switch-thumb'),
           style: {
-            top: `calc(var(--neb-border-width) * ${SWITCH_SIZE_MAP[size || 'md'].borderMultiplier})`,
-            left: `calc(${BUTTON_SIZE_CONFIG[size || 'md'].blockSize} - var(--neb-border-width) * ${SWITCH_SIZE_MAP[size || 'md'].borderMultiplier})`,
+            top: `calc(var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`,
+            left: `calc(${BUTTON_SIZE_CONFIG[size || 'md'].blockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`,
           },
         }}
         from="left"
