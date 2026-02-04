@@ -15,27 +15,12 @@
 
         // not disabled, interactive
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
-          // highlight or focus
+          // highlight, hover, focus
           &[data-neb-box-highlighted='true'],
+          &:not([data-neb-box-highlighted='true']):hover,
           &:focus-visible {
             border-color: var(--neb-#{$intent}-soft-outline-hover);
             color: var(--neb-#{$intent}-soft-outline-hover);
-          }
-
-          // hover devices
-          @media (hover: hover) and (pointer: fine) {
-            &:not([data-neb-box-highlighted='true']):hover {
-              border-color: var(--neb-#{$intent}-soft-outline-hover);
-              color: var(--neb-#{$intent}-soft-outline-hover);
-            }
-          }
-
-          // non-hover devices
-          @media (hover: none) and (pointer: coarse) {
-            &:active {
-              border-color: var(--neb-#{$intent}-soft-outline-hover);
-              color: var(--neb-#{$intent}-soft-outline-hover);
-            }
           }
 
           // focus ring
