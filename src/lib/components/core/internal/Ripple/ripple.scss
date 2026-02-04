@@ -6,13 +6,13 @@
   left: 0;
   border-radius: 50%;
   background-color: var(--neb-ripple-bg);
-  opacity: var(--neb-ripple-opacity);
   transform: scale(0);
   will-change: transform, opacity;
   pointer-events: none;
 }
 
 .neb-ripple.is-active {
+  opacity: var(--neb-ripple-opacity);
   animation-name: neb-ripple-animation;
   animation-timing-function: cubic-bezier(0.2, 0, 0.4, 1);
   animation-fill-mode: forwards;

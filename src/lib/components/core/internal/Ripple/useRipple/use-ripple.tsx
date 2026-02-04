@@ -18,24 +18,27 @@ export const useRipple = (parentRef: RefObject<HTMLElement>, active?: boolean) =
     if (!rippleEl) return
 
     const triggerRipple = (x?: number, y?: number) => {
-      const rect = parent.getBoundingClientRect()
-      const size = Math.max(rect.width, rect.height)
-
-      const left = x ?? rect.width / 2 - size / 2
-      const top = y ?? rect.height / 2 - size / 2
-
-      rippleEl.style.width = `${size}px`
-      rippleEl.style.height = `${size}px`
-      rippleEl.style.left = `${left}px`
-      rippleEl.style.top = `${top}px`
-
-      const diag = Math.sqrt(rect.width ** 2 + rect.height ** 2)
-      const duration = Math.max(1250, Math.min(diag * 4, 2500))
-      rippleEl.style.animationDuration = `${duration}ms`
-
       rippleEl.classList.remove('is-active')
-      void rippleEl.offsetWidth
-      rippleEl.classList.add('is-active')
+
+      requestAnimationFrame(() => {
+        const rect = parent.getBoundingClientRect()
+        const size = Math.max(rect.width, rect.height)
+
+        const left = x ?? rect.width / 2 - size / 2
+        const top = y ?? rect.height / 2 - size / 2
+
+        rippleEl.style.width = `${size}px`
+        rippleEl.style.height = `${size}px`
+        rippleEl.style.left = `${left}px`
+        rippleEl.style.top = `${top}px`
+
+        const diag = Math.sqrt(rect.width ** 2 + rect.height ** 2)
+        const duration = Math.max(1250, Math.min(diag * 4, 2500))
+        rippleEl.style.animationDuration = `${duration}ms`
+
+        void rippleEl.offsetWidth
+        rippleEl.classList.add('is-active')
+      })
     }
 
     const onPointerDown = (e: PointerEvent) => {
