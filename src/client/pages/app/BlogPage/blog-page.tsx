@@ -37,6 +37,13 @@ export const BlogPage = () => {
       <Section heading="Blog" iconName="rss">
         <Flex flexDirection="column" rowGap="15px" alignItems="stretch">
           <Article
+            title="Local theme island in action"
+            date="02-04-2026"
+            platform="youtube.com"
+            href="https://www.youtube.com/watch?v=WBTCswhSz6g"
+            iconName="film"
+          />
+          <Article
             title="Flex layout driven by props"
             date="02-01-2026"
             platform="youtube.com"
