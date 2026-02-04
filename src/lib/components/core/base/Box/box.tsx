@@ -100,13 +100,17 @@ export const Box = <T extends ElementType = 'div'>({
     const el = finalRef?.current as Element
     if (!el) return
     el.setAttribute('data-neb-box-transitions', 'false')
-  }, [finalRef?.current])
+  }, [])
 
   useEffect(() => {
     const el = finalRef?.current as Element
     if (!el) return
-    el.setAttribute('data-neb-box-transitions', 'true')
-  }, [finalRef?.current])
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        el.setAttribute('data-neb-box-transitions', 'true')
+      })
+    })
+  }, [])
 
   useLayoutEffect(() => {
     updateDomRespStyle('Box', finalRef, bp, {

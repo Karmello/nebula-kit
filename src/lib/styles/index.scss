@@ -19,14 +19,14 @@ html {
   }
 }
 
-html.neb-transitions {
-  .neb-box[data-neb-box-drawable='true'][data-neb-box-transitions='true'] {
-    transition:
-      background-color 0.25s linear,
-      border-color 0.25s linear,
-      color 0.25s linear;
-  }
-}
+// html.neb-transitions {
+//   .neb-box[data-neb-box-drawable='true'][data-neb-box-transitions='true'] {
+//     transition:
+//       background-color 0.25s linear,
+//       border-color 0.25s linear,
+//       color 0.25s linear;
+//   }
+// }
 
 body {
   background: var(--neb-background);
