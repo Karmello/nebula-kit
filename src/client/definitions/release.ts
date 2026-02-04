@@ -10,7 +10,7 @@ export const RELEASE_INFO: Record<
   }
 > = {
   '0.5.0': {
-    timestamp: 1770165761792,
+    timestamp: 1770177660907,
     changelog: {
       main: [
         'improved ripple animation',
