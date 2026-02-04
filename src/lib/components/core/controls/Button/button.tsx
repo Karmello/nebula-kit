@@ -15,6 +15,7 @@ import {
   DEFAULT_BUTTON_SIZE,
   DEFAULT_BUTTON_VARIANT,
   DEFAULT_BUTTON_JUSTIFY_CONTENT,
+  DEFAULT_BUTTON_RIPPLE,
 } from './definitions'
 
 import './button.scss'
@@ -46,6 +47,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   size = DEFAULT_BUTTON_SIZE,
   fullWidth,
   loading,
+  ripple = DEFAULT_BUTTON_RIPPLE,
   onClick,
 }: ButtonProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
@@ -57,7 +59,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   }, [bp, fullWidth])
 
   const text = (
-    <Text tag="span" scale={BUTTON_SIZE_CONFIG[size].textScale} bold={bold} truncate>
+    <Text tag="span" scale={BUTTON_SIZE_CONFIG[size || 'md'].textScale} bold={bold} truncate>
       {children}
     </Text>
   )
@@ -91,15 +93,14 @@ export const Button = <T extends ButtonTag = 'button'>({
       maxInlineSize={maxInlineSize}
       interactive
       position="relative"
-      {...BUTTON_SIZE_CONFIG[size]}
+      {...BUTTON_SIZE_CONFIG[size || 'md']}
     >
-      <Ripple parentRef={tagRef || ref} />
       {iconName ? (
         <WithIcon
           inlineSize={children !== undefined ? '100%' : undefined}
           iconName={iconName}
           iconPlacement={iconPlacement}
-          iconSize={BUTTON_SIZE_CONFIG[size].iconSize}
+          iconSize={BUTTON_SIZE_CONFIG[size || 'md'].iconSize}
           iconAngle={iconAngle}
           justifyContent={justifyContent}
           gap={children === undefined ? '0px' : undefined}
@@ -111,6 +112,7 @@ export const Button = <T extends ButtonTag = 'button'>({
         text
       )}
       {loading && !disabled ? <Loader centered size={size} /> : null}
+      <Ripple parentRef={tagRef || ref} active={ripple} />
     </Box>
   )
 }

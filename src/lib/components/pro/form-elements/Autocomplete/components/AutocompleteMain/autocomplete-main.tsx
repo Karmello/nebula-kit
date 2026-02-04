@@ -29,7 +29,6 @@ export const AutocompleteMain = ({
   disabled,
   // own
   onInputChange,
-  onClosed,
   dropdownPlacement,
   disableFiltering,
   debounceDelay,
@@ -107,15 +106,11 @@ export const AutocompleteMain = ({
       scrollAlign={scrollAlign}
       visibleItemsCount={visibleItemsCount}
       noOptionsLabel={noOptionsLabel}
-      animationDuration={0}
+      disableListAnimation
       placement={dropdownPlacement}
       openOnFocus
       onOpened={() => {
         setIsOpen(true)
-      }}
-      onClosed={() => {
-        setIsOpen(false)
-        onClosed?.()
       }}
     >
       {({ open, setOpen, resolvedPlacement }) => {

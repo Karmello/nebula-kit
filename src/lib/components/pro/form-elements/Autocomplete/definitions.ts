@@ -9,7 +9,6 @@ type AutocompleteOwnProps = {
   value?: string
   onChange?: (value: string) => void
   onInputChange?: (value: string) => void
-  onClosed?: (value?: string) => void
   dropdownPlacement?: DropdownListProps['placement']
   disableFiltering?: boolean
   debounceDelay?: number

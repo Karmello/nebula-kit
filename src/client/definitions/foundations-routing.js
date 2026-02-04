@@ -47,12 +47,12 @@ export const FOUNDATIONS_CATEGORIES = [
         key: 'styling-system',
         label: 'Styling system',
         sections: [
-          { key: 'styling-axes', label: 'Styling axes' },
-          { key: 'intents-and-variants', label: 'Intents + variants' },
-          { key: 'color-application', label: 'Color application' },
+          { key: 'color-palettes', label: 'Color palettes' },
           { key: 'typography', label: 'Typography' },
           { key: 'breakpoints', label: 'Breakpoints' },
-          { key: 'color-palettes', label: 'Color palettes' },
+          { key: 'intents-and-variants', label: 'Intents + variants' },
+          { key: 'color-application', label: 'Color application' },
+          { key: 'styling-axes', label: 'Styling axes' },
         ],
       },
       {
@@ -75,6 +75,7 @@ export const FOUNDATIONS_CATEGORIES = [
         key: 'changelog',
         label: 'Changelog',
         sections: [
+          { key: 'v0.5.0', label: 'v0.5.0' },
           { key: 'v0.4.3', label: 'v0.4.3' },
           { key: 'v0.4.2', label: 'v0.4.2' },
           { key: 'v0.4.1', label: 'v0.4.1' },

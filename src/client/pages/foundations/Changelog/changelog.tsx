@@ -73,32 +73,45 @@ export default ({ pathname }: { pathname: string }) => {
     return notes
   }, [releaseVersion])
 
+  const releaseInfo = RELEASE_INFO[releaseVersion as ReleaseVersion]
+
+  const displayCoreNotes = Object.keys(notes.core).length
+  const displayProNotes = Object.keys(notes.pro).length
+
   return (
     <Box maxInlineSize="55rem">
-      <Text>{new Date(RELEASE_INFO[releaseVersion as ReleaseVersion].timestamp).toDateString()}</Text>
-      <Spacer blockSize="30px" />
-      <Text typography="h6">Release notes</Text>
-      <Spacer blockSize="10px" />
-      <Tabs defaultValue="core" inlineSize="100%">
-        <Tabs.Tab value="core" iconName="package">
-          Core
-        </Tabs.Tab>
-        <Tabs.Tab value="pro" iconName="star">
-          Pro
-        </Tabs.Tab>
-        <Tabs.Panel value="core">
-          <PanelContent
-            bundleNotes={RELEASE_INFO[releaseVersion as ReleaseVersion].changelog?.core}
-            componentNotes={notes.core}
-          />
-        </Tabs.Panel>
-        <Tabs.Panel value="pro">
-          <PanelContent
-            bundleNotes={RELEASE_INFO[releaseVersion as ReleaseVersion].changelog?.pro}
-            componentNotes={notes.pro}
-          />
-        </Tabs.Panel>
-      </Tabs>
+      <Text italic>{new Date(releaseInfo.timestamp).toDateString()}</Text>
+      {releaseInfo.changelog?.main ? (
+        <>
+          <Spacer blockSize="10px" />
+          <Notes notes={releaseInfo.changelog.main} />
+        </>
+      ) : null}
+      {displayCoreNotes || displayProNotes ? (
+        <>
+          <Spacer blockSize="40px" />
+          <Tabs defaultValue={displayCoreNotes ? 'core' : 'pro'} inlineSize="100%">
+            {displayCoreNotes ? (
+              <Tabs.Tab value="core" iconName="package">
+                Core
+              </Tabs.Tab>
+            ) : null}
+            {displayProNotes ? (
+              <Tabs.Tab value="pro" iconName="star">
+                Pro
+              </Tabs.Tab>
+            ) : null}
+            {displayCoreNotes ? (
+              <Tabs.Panel value="core">
+                <PanelContent bundleNotes={releaseInfo.changelog?.core} componentNotes={notes.core} />
+              </Tabs.Panel>
+            ) : null}
+            <Tabs.Panel value="pro">
+              <PanelContent bundleNotes={releaseInfo.changelog?.pro} componentNotes={notes.pro} />
+            </Tabs.Panel>
+          </Tabs>
+        </>
+      ) : null}
     </Box>
   )
 }

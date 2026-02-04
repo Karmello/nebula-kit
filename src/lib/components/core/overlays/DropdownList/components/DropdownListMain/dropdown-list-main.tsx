@@ -21,7 +21,6 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
     setEnsureVisibleIndex,
     setBlockMouse,
     itemHeight,
-    animationDuration,
     floatingResolved,
   } = useDropdownListContext()
 
@@ -41,10 +40,8 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
 
   useEffect(() => {
     if (!resizeVisible) {
-      setTimeout(() => {
-        setOpen(false)
-        setHoveredIndex(-1)
-      }, animationDuration)
+      setOpen(false)
+      setHoveredIndex(-1)
     }
   }, [resizeVisible])
 

@@ -29,11 +29,6 @@ const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
     options: ['(value: string) => void'],
     description: 'Callback fired when the selected value changes.',
   },
-  onClosed: {
-    options: ['(value?: string) => void'],
-    description:
-      'Callback invoked when the list is fully closed. Receives the selected value if the list was closed due to a value change or undefined if it was dismissed without selection.',
-  },
   scrollAlign: {
     ...DROPDOWN_LIST_PROPS_META.scrollAlign,
     description: 'Defines how the selected option is positioned within the scroll area.',

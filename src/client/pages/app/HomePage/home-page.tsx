@@ -16,10 +16,10 @@ import {
   Text,
   Segment,
   Grid,
+  Switch,
 } from 'lib/components'
 
 import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/core/utility/NebkitProvider'
-import { BoxColor } from 'lib/components/core/base/Box'
 import { COLORS, THEMES } from 'lib/definitions'
 
 import { Ortho } from './Ortho'
@@ -33,6 +33,8 @@ export const HomePage = () => {
   const setBrand = useAppStore(state => state.setBrand)
   const borderRadiusSize = useAppStore(state => state.borderRadiusSize)
   const setBorderRadiusSize = useAppStore(state => state.setBorderRadiusSize)
+  const ripple = useAppStore(state => state.ripple)
+  const setRipple = useAppStore(state => state.setRipple)
 
   return (
     <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">
@@ -148,15 +150,7 @@ export const HomePage = () => {
                 </Flex.Item>
                 <Flex.Item>
                   <Text bold>Brand</Text>
-                  <Select
-                    value={brand}
-                    onClosed={value => {
-                      if (value !== undefined) setBrand(value as BoxColor)
-                    }}
-                    inlineSize="150px"
-                    size="sm"
-                    scrollAlign="center"
-                  >
+                  <Select value={brand} onChange={setBrand} inlineSize="150px" size="sm" scrollAlign="center">
                     {COLORS.map(brand => (
                       <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
                     ))}
@@ -166,9 +160,7 @@ export const HomePage = () => {
                   <Text bold>Border radius</Text>
                   <Select
                     value={borderRadiusSize}
-                    onClosed={value => {
-                      if (value !== undefined) setBorderRadiusSize(value as never)
-                    }}
+                    onChange={setBorderRadiusSize}
                     inlineSize="150px"
                     size="sm"
                     scrollAlign="center"
@@ -177,6 +169,10 @@ export const HomePage = () => {
                       <Select.Option value={n}>{n}</Select.Option>
                     ))}
                   </Select>
+                </Flex.Item>
+                <Flex.Item>
+                  <Text bold>Ripple</Text>
+                  <Switch checked={ripple} onChange={setRipple} />
                 </Flex.Item>
               </Flex>
             </Flex.Item>
@@ -195,6 +191,10 @@ export const HomePage = () => {
             margin={{ base: '0 auto', lg: '0px' }}
             aspectRatio="16 / 9"
           />
+          <Spacer blockSize="7px" />
+          <Text intent="secondary" color="gray" italic scale="compact">
+            Video hosted on YouTube. Playback may set cookies.
+          </Text>
         </Flex.Item>
         <Flex.Item flex="1">
           <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="35px">

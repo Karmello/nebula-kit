@@ -1,4 +1,4 @@
-import { ReactElement, useRef, useState } from 'react'
+import { ReactElement, useState } from 'react'
 import classNames from 'classnames'
 
 import { DropdownList, Button } from 'lib/components'
@@ -28,18 +28,15 @@ export const Select = ({
   defaultValue,
   value,
   onChange,
-  onClosed,
   dropdownPlacement,
   staticLabel,
 }: SelectProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
-  const changedValueRef = useRef<string | undefined>(undefined)
 
   const isControlled = value !== undefined
   const currentValue = isControlled ? value : internalValue
 
   const handleChange = (value: string) => {
-    changedValueRef.current = value
     if (!isControlled) setInternalValue(value)
     onChange?.(value)
   }
@@ -70,10 +67,6 @@ export const Select = ({
               scrollAlign={scrollAlign}
               visibleItemsCount={visibleItemsCount}
               placement={dropdownPlacement}
-              onClosed={() => {
-                onClosed?.(changedValueRef.current)
-                changedValueRef.current = undefined
-              }}
             >
               {({ open, resolvedPlacement }) => {
                 const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(resolvedPlacement)
@@ -104,6 +97,8 @@ export const Select = ({
                         color={color}
                         disabled={disabled}
                         fullWidth
+                        ripple={!open}
+                        highlighted={open}
                       >
                         {staticLabel || currentSlot?.props.children || 'Select ...'}
                       </Button>

@@ -22,11 +22,9 @@ html {
 html.neb-transitions {
   .neb-box[data-neb-box-drawable='true'][data-neb-box-transitions='true'] {
     transition:
-      background-color 0.2s ease-in-out,
-      border-color 0.2s ease-in-out,
-      color 0.2s ease-in-out,
-      box-shadow 0.2s ease-in-out,
-      -webkit-box-shadow 0.2s ease-in-out;
+      background-color 0.1s linear,
+      border-color 0.1s linear,
+      color 0.1s linear;
   }
 }
 

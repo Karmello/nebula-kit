@@ -91,6 +91,7 @@ export const SideNavCategory = ({
                 justifyContent={justifyContent}
                 size="sm"
                 fullWidth
+                ripple={!expandedCategories[id]}
               >
                 {label}
               </Button>

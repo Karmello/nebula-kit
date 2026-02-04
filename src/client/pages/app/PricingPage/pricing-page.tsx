@@ -1,26 +1,12 @@
-import { ReactNode, useLayoutEffect } from 'react'
+import { useLayoutEffect } from 'react'
 
-import { useNavigateTo } from 'client/hooks'
 import { useGetUser } from 'client/api'
 import { useAppStore } from 'client/store'
-import { Box, Flex, Section, Spacer, Text, Link, Grid, Loader, Icon } from 'lib/components'
+import { Box, Flex, Section, Spacer, Text, Grid, Loader } from 'lib/components'
 
-import { PricingPlanButton } from './components/PricingPlanButton'
-
-const OptionIncluded = ({ children }: { children: ReactNode }) => {
-  return (
-    <>
-      <Flex alignItems="center" columnGap="10px">
-        <Icon name="check" intent="primary" color="blue" />
-        {children}
-      </Flex>
-      <Spacer blockSize="5px" />
-    </>
-  )
-}
+import { PricingPlanCard } from './components/PricingPlanCard'
 
 export const PricingPage = () => {
-  const navigateTo = useNavigateTo()
   const user = useAppStore(state => state.user)
 
   const getUser = useGetUser()
@@ -31,38 +17,12 @@ export const PricingPage = () => {
     }
   }, [user])
 
-  const coreBundleLink = (
-    <Link
-      href="/pricing/core"
-      onClick={() => {
-        navigateTo('/pricing/core')
-      }}
-    >
-      <Text color="blue" intent="primary">
-        CORE bundle
-      </Text>
-    </Link>
-  )
-
-  const proBundleLink = (
-    <Link
-      href="/pricing/pro"
-      onClick={() => {
-        navigateTo('/pricing/pro')
-      }}
-    >
-      <Text color="blue" intent="primary">
-        PRO bundle
-      </Text>
-    </Link>
-  )
-
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }}>
       <Section heading="Pricing plans" iconName="credit-card">
         <Text>Choose the plan that fits your workflow.</Text>
         <Spacer blockSize="50px" />
-        {!getUser.data || getUser.isMakingRequest ? (
+        {getUser.isMakingRequest ? (
           <Loader centered size="lg" color="blue" />
         ) : (
           <>
@@ -70,140 +30,57 @@ export const PricingPage = () => {
               gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }}
               gap="20px"
             >
-              <Section heading="Free" variant="outline" intent="tertiary" iconName="leaf">
-                <Text intent="neutral" bold>
-                  For newcomers.
-                </Text>
-                <Spacer />
-                <Text typography="h6" bold>
-                  $0
-                </Text>
-                <Spacer />
-                <Text intent="neutral">
-                  Access the essential NebulaKit components to start building right away. Perfect for hobby
-                  projects, learning or exploring before committing.
-                </Text>
-                <Spacer />
-                <Text bold>What you get</Text>
-                <Spacer blockSize="10px" />
-                <OptionIncluded>{coreBundleLink}</OptionIncluded>
-                <OptionIncluded>
-                  <Text>Discord access</Text>
-                </OptionIncluded>
-                <Spacer blockSize="40px" />
-                <Flex justifyContent="center">
-                  <PricingPlanButton plan="free" activePlan={getUser.data?.user.plan} />
-                </Flex>
-                <Spacer blockSize="12px" />
-              </Section>
-              <Section heading="Premium" variant="soft-outline" intent="primary" color="green" iconName="zap">
-                <Text intent="neutral" bold>
-                  For individual developers.
-                </Text>
-                <Spacer />
-                <Text typography="h6" color="green" intent="primary" bold>
-                  $19 / month
-                </Text>
-                <Spacer />
-                <Text intent="neutral">
-                  Unlock NebulaKit's full component library built on the core primitives. Perfect for
-                  individual developers and freelancers who want complete access to every building block.
-                </Text>
-                <Spacer />
-                <Text bold intent="neutral">
-                  What you get
-                </Text>
-                <Spacer blockSize="10px" />
-                <OptionIncluded>{coreBundleLink}</OptionIncluded>
-                <OptionIncluded>{proBundleLink}</OptionIncluded>
-                <OptionIncluded>
-                  <Text intent="neutral">Discord access with moderate chat support</Text>
-                </OptionIncluded>
-                <OptionIncluded>
-                  <Text intent="neutral">Github roadmap access</Text>
-                </OptionIncluded>
-                <Spacer blockSize="40px" />
-                <Flex justifyContent="center">
-                  <PricingPlanButton plan="premium" activePlan={getUser.data?.user.plan} color="green" />
-                </Flex>
-                <Spacer blockSize="12px" />
-              </Section>
-              <Section
-                heading="Business"
-                variant="soft-outline"
+              <PricingPlanCard
+                plan="free"
+                activePlan={getUser.data?.user.plan}
+                color="gray"
+                iconName="leaf"
+                title="Free"
+                headline="For newcomers."
+                priceInfo="$0"
+                description="Access the essential NebulaKit components to start building right away. Perfect for hobby
+                  projects, learning or exploring before committing."
+                options={['Discord access']}
+              />
+              <PricingPlanCard
+                plan="premium"
+                activePlan={getUser.data?.user.plan}
+                color="green"
+                iconName="zap"
+                title="Premium"
+                headline="For individual developers."
+                priceInfo="$19 / month"
+                description="Unlock NebulaKit's full component library built on the core primitives. Perfect for
+    individual developers and freelancers who want complete access to every building block."
+                options={['Discord access with moderate chat support', 'Github roadmap access']}
+              />
+              <PricingPlanCard
+                plan="business"
+                activePlan={getUser.data?.user.plan}
                 color="blue"
-                intent="primary"
                 iconName="users"
-              >
-                <Text intent="neutral" bold>
-                  For small teams up to 10 members.
-                </Text>
-                <Spacer />
-                <Text typography="h6" color="blue" intent="primary" bold>
-                  $49 / month
-                </Text>
-                <Spacer />
-                <Text intent="neutral">
-                  Ideal for small teams building together under one license. Includes everything from the
-                  Premium plan.
-                </Text>
-                <Spacer />
-                <Text bold intent="neutral">
-                  What you get
-                </Text>
-                <Spacer blockSize="10px" />
-                <OptionIncluded>{coreBundleLink}</OptionIncluded>
-                <OptionIncluded>{proBundleLink}</OptionIncluded>
-                <OptionIncluded>
-                  <Text intent="neutral">Discord access with chat support</Text>
-                </OptionIncluded>
-                <OptionIncluded>
-                  <Text intent="neutral">Github roadmap access</Text>
-                </OptionIncluded>
-                <Spacer blockSize="40px" />
-                <Flex justifyContent="center">
-                  <PricingPlanButton plan="business" activePlan={getUser.data?.user.plan} color="blue" />
-                </Flex>
-                <Spacer blockSize="12px" />
-              </Section>
-              <Section
-                heading="Enterprise"
-                variant="soft-outline"
+                title="Business"
+                headline="For small teams up to 10 members."
+                priceInfo="$49 / month"
+                description="Ideal for small teams building together under one license. Includes everything from the
+    Premium plan."
+                options={['Discord access with chat support', 'Github roadmap access']}
+              />
+              <PricingPlanCard
+                plan="enterprise"
+                activePlan={getUser.data?.user.plan}
                 color="red"
-                intent="primary"
                 iconName="globe"
-              >
-                <Text intent="neutral" bold>
-                  For large organizations.
-                </Text>
-                <Spacer />
-                <Text color="red" intent="primary" typography="h6" bold>
-                  From $199 / month
-                </Text>
-                <Spacer />
-                <Text intent="neutral">
-                  Tailored for large organizations and specialized use cases that need flexible agreements.
-                  Includes everything from the Business plan.
-                </Text>
-                <Spacer />
-                <Text bold intent="neutral">
-                  What you get
-                </Text>
-                <Spacer blockSize="10px" />
-                <OptionIncluded>{coreBundleLink}</OptionIncluded>
-                <OptionIncluded>{proBundleLink}</OptionIncluded>
-                <OptionIncluded>
-                  <Text intent="neutral">Discord access with high priority chat support</Text>
-                </OptionIncluded>
-                <OptionIncluded>
-                  <Text intent="neutral">Github roadmap access + elevated input consideration</Text>
-                </OptionIncluded>
-                <Spacer blockSize="40px" />
-                <Flex justifyContent="center">
-                  <PricingPlanButton plan="enterprise" activePlan={getUser.data?.user.plan} color="red" />
-                </Flex>
-                <Spacer blockSize="12px" />
-              </Section>
+                title="Enterprise"
+                headline="For large organizations."
+                priceInfo="From $199 / month"
+                description="Tailored for large organizations and specialized use cases that need flexible agreements.
+    Includes everything from the Business plan."
+                options={[
+                  'Discord access with high priority chat support',
+                  'Github roadmap access + elevated input consideration',
+                ]}
+              />
             </Grid>
             <Spacer blockSize="50px" />
             <Flex flexDirection="column" rowGap="5px">

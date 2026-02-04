@@ -57,3 +57,7 @@
 .neb-box::placeholder {
   color: inherit;
 }
+
+.neb-box:focus-visible {
+  border-radius: 0px !important;
+}

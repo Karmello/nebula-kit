@@ -17,6 +17,7 @@ const NEBKIT_PROVIDER_META: ComponentMeta<NebkitProviderProps> = {
   props: NEBKIT_PROVIDER_PROPS_META,
   examples: NEBKIT_PROVIDER_EXAMPLES_META,
   changelog: {
+    '0.5.0': ['added ripple prop'],
     '0.3.0': ['updated public API'],
     '0.2.3': ['released'],
   },

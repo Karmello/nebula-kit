@@ -25,6 +25,7 @@ const AUTOCOMPLETE_META: ComponentMeta<AutocompleteProps> = {
   props: AUTOCOMPLETE_PROPS_META,
   examples: AUTOCOMPLETE_EXAMPLES_META,
   changelog: {
+    '0.5.0': ['removed onClosed prop'],
     '0.3.0': ['released'],
   },
 }

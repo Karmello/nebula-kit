@@ -6,7 +6,6 @@ type SelectOwnProps = {
   defaultValue?: string
   value?: string
   onChange?: (value: string) => void
-  onClosed?: (value?: string) => void
   dropdownPlacement?: DropdownListProps['placement']
   staticLabel?: string
 }

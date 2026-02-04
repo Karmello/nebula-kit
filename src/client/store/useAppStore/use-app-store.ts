@@ -12,6 +12,8 @@ export type AppStore = {
   setBrand: (brand: NebkitProviderProps['brand']) => void
   borderRadiusSize: NebkitProviderProps['borderRadiusSize']
   setBorderRadiusSize: (borderRadiusSize: NebkitProviderProps['borderRadiusSize']) => void
+  ripple: NebkitProviderProps['ripple']
+  setRipple: (ripple: NebkitProviderProps['ripple']) => void
   user: ApiUser | null
   setUser: (user: ApiUser | null) => void
   showAppJump: boolean
@@ -29,6 +31,8 @@ export const useAppStore = create<AppStore>()(
         borderRadiusSize: 'md',
         setBorderRadiusSize: (borderRadiusSize: NebkitProviderProps['borderRadiusSize']) =>
           set({ borderRadiusSize }),
+        ripple: true,
+        setRipple: (ripple: NebkitProviderProps['ripple']) => set({ ripple }),
         user: null,
         setUser: (user: ApiUser | null) => set({ user }),
         showAppJump: false,
@@ -40,6 +44,7 @@ export const useAppStore = create<AppStore>()(
         theme: state.theme,
         brand: state.brand,
         borderRadiusSize: state.borderRadiusSize,
+        ripple: state.ripple,
       }),
     }
   )

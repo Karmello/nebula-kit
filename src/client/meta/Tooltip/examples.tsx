@@ -3,14 +3,6 @@ import { Button, Icon, Tooltip, TooltipProps } from 'lib/components'
 
 const TOOLTIP_EXAMPLES_META: ComponentMeta<TooltipProps>['examples'] = [
   {
-    description: 'Non-element children are wrapped in a span to serve as the trigger.',
-    jsx: (
-      <Tooltip content="This is Tooltip's content." minInlineSize={200} maxInlineSize={300}>
-        Invalid react element
-      </Tooltip>
-    ),
-  },
-  {
     description: 'React element used as the tooltip trigger.',
     jsx: (
       <Tooltip
@@ -33,6 +25,14 @@ const TOOLTIP_EXAMPLES_META: ComponentMeta<TooltipProps>['examples'] = [
         maxInlineSize={300}
       >
         <Button>Focusable button</Button>
+      </Tooltip>
+    ),
+  },
+  {
+    description: 'Non-element children are wrapped in a span to serve as the trigger.',
+    jsx: (
+      <Tooltip content="This is Tooltip's content." minInlineSize={200} maxInlineSize={300}>
+        Invalid react element
       </Tooltip>
     ),
   },

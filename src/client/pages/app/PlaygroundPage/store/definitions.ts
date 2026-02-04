@@ -70,6 +70,7 @@ export const PLAYGROUND_MAP: Record<string, unknown[]> = {
     'loading',
     'minInlineSize',
     'maxInlineSize',
+    'ripple',
     'size',
     'variant',
   ] as (keyof ButtonProps)[],

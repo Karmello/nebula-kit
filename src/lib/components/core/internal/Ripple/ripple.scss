@@ -8,16 +8,19 @@
   background-color: var(--neb-ripple-bg);
   opacity: var(--neb-ripple-opacity);
   transform: scale(0);
+  will-change: transform, opacity;
   pointer-events: none;
 }
 
 .neb-ripple.is-active {
-  animation: neb-ripple-animation var(--neb-ripple-duration) cubic-bezier(0.15, 0, 0.25, 1) forwards;
+  animation-name: neb-ripple-animation;
+  animation-timing-function: cubic-bezier(0.2, 0, 0.4, 1);
+  animation-fill-mode: forwards;
 }
 
 @keyframes neb-ripple-animation {
   to {
     opacity: 0;
-    transform: scale(3);
+    transform: scale(1.5);
   }
 }

@@ -13,9 +13,9 @@
 
         // not disabled, interactive
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
-          // hovered, highlighted, focused
-          &:not([data-neb-box-highlighted='true']):hover,
+          // highlight, hover, focus
           &[data-neb-box-highlighted='true'],
+          &:not([data-neb-box-highlighted='true']):hover,
           &:focus-visible {
             color: var(--neb-#{$intent}-ghost-hover);
           }

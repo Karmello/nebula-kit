@@ -32,6 +32,16 @@ export default () => {
           </Text>
         </MarkerList.Item>
         <MarkerList.Item>
+          <Text bold>Embedded media</Text>
+          <Text>
+            This website may include embedded content hosted by third-party providers such as YouTube. Videos
+            are loaded using YouTube's privacy-enhanced mode (youtube-nocookie.com). No cookies or tracking
+            data are set by YouTube unless you actively interact with the embedded player, such as by clicking
+            play. Playback of embedded media may result in data being processed by the respective provider in
+            accordance with their privacy policy.
+          </Text>
+        </MarkerList.Item>
+        <MarkerList.Item>
           <Text bold>Communication</Text>
           <Text>
             In case of contact via email, the information you provide will be used only to respond to your
