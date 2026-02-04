@@ -15,7 +15,7 @@ if (!fs.existsSync(outDir)) {
   process.exit(1)
 }
 
-const pkgName = `@nebula-kit/${bundle}`
+const ROOT = JSON.parse(fs.readFileSync('package.json', 'utf8'))
 
 const content = `# NebulaKit
 
@@ -54,6 +54,9 @@ https://nebulakit.dev/foundations/overview/getting-started/installation
 
 License:
 https://nebulakit.dev/foundations/other/legal/license
+
+Release notes:
+https://nebulakit.dev/foundations/resources/changelog/${ROOT.version}
 
 <br /><br />
 <img src="https://nebulakit.dev/captain-nebula.webp" alt="Captain Nebula" width="225px" />
