@@ -17,6 +17,7 @@ import {
   Segment,
   Grid,
   Switch,
+  Reveal,
 } from 'lib/components'
 
 import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/core/utility/NebkitProvider'
@@ -38,15 +39,6 @@ export const HomePage = () => {
 
   return (
     <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">
-      <Section size="sm" intent="secondary" color="purple" variant="outline" heading="About the website">
-        <Text>
-          This website is built entirely with NebulaKit components. It serves as both documentation and a live
-          showcase of the system in real use. Every layout, interaction and styling decision you see here is
-          produced by the same system APIs available to users. You can explore the components, patterns and
-          constraints of the system by simply using the site.
-        </Text>
-      </Section>
-      <Spacer blockSize="75px" />
       <Flex
         flexDirection={{ base: 'column', lg: 'row' }}
         justifyContent="center"
@@ -54,6 +46,17 @@ export const HomePage = () => {
         columnGap={{ base: '50px', xl: '100px' }}
       >
         <Flex.Item flex="2">
+          <Reveal size="sm" intent="tertiary" label="About the website">
+            <Box padding="15px">
+              <Text>
+                This website is built entirely with NebulaKit components. It serves as both documentation and
+                a live showcase of the system in real use. Every layout, interaction and styling decision you
+                see here is produced by the same system APIs available to users. You can explore the
+                components, patterns and constraints of the system by simply using the site.
+              </Text>
+            </Box>
+          </Reveal>
+          <Spacer blockSize="60px" />
           <Text typography="h1" color="purple" intent="primary">
             NebulaKit
           </Text>

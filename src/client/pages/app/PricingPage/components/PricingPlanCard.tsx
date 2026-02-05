@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 import { useNavigateTo } from 'client/hooks'
 import { Plan } from 'client/definitions'
-import { Flex, Icon, Link, Section, Spacer, Text } from 'lib/components'
+import { Flex, Icon, Link, Section, Spacer, Text, Box } from 'lib/components'
 import { BoxColor } from 'lib/components/core/base/Box'
 import { IconName } from 'lib/definitions'
 
@@ -46,61 +46,64 @@ export const PricingPlanCard = ({
   }
 
   return (
-    <Section
-      heading={title}
-      variant={plan === 'free' ? 'outline' : 'soft-outline'}
-      intent={plan === 'free' ? 'tertiary' : 'primary'}
-      color={color}
-      iconName={iconName}
-    >
-      <Text intent="neutral" bold>
-        {headline}
-      </Text>
-      <Spacer />
-      <Text typography="h6">{priceInfo}</Text>
-      <Spacer />
-      <Text intent="neutral">{description}</Text>
-      <Spacer />
-      <Text intent="neutral" bold>
-        What you get:
-      </Text>
-      <Spacer blockSize="10px" />
-      <OptionIncluded>
-        <Link
-          href="/pricing/core"
-          onClick={() => {
-            navigateTo('/pricing/core')
-          }}
-        >
-          <Text intent="primary" color={color}>
-            CORE bundle
-          </Text>
-        </Link>
-      </OptionIncluded>
-      {plan !== 'free' ? (
+    <Box drawable interactive variant="solid" intent="neutral" color={color}>
+      <Section
+        tagAttrs={{ style: { blockSize: '100%' } }}
+        heading={title}
+        variant={plan === 'free' ? 'outline' : 'soft-outline'}
+        intent={plan === 'free' ? 'tertiary' : 'primary'}
+        color={color}
+        iconName={iconName}
+      >
+        <Text intent="neutral" bold>
+          {headline}
+        </Text>
+        <Spacer />
+        <Text typography="h6">{priceInfo}</Text>
+        <Spacer />
+        <Text intent="neutral">{description}</Text>
+        <Spacer />
+        <Text intent="neutral" bold>
+          What you get:
+        </Text>
+        <Spacer blockSize="10px" />
         <OptionIncluded>
           <Link
-            href="/pricing/pro"
+            href="/pricing/core"
             onClick={() => {
-              navigateTo('/pricing/pro')
+              navigateTo('/pricing/core')
             }}
           >
             <Text intent="primary" color={color}>
-              PRO bundle
+              CORE bundle
             </Text>
           </Link>
         </OptionIncluded>
-      ) : null}
-      {options.map((s, i) => (
-        <OptionIncluded key={i}>
-          <Text intent="neutral">{s}</Text>
-        </OptionIncluded>
-      ))}
-      <Spacer blockSize="40px" />
-      <Flex justifyContent="center">
-        <PricingPlanButton plan={plan} activePlan={activePlan} color={color} />
-      </Flex>
-      <Spacer blockSize="12px" />
-    </Section>
+        {plan !== 'free' ? (
+          <OptionIncluded>
+            <Link
+              href="/pricing/pro"
+              onClick={() => {
+                navigateTo('/pricing/pro')
+              }}
+            >
+              <Text intent="primary" color={color}>
+                PRO bundle
+              </Text>
+            </Link>
+          </OptionIncluded>
+        ) : null}
+        {options.map((s, i) => (
+          <OptionIncluded key={i}>
+            <Text intent="neutral">{s}</Text>
+          </OptionIncluded>
+        ))}
+        <Spacer blockSize="40px" />
+        <Flex justifyContent="center">
+          <PricingPlanButton plan={plan} activePlan={activePlan} color={color} />
+        </Flex>
+        <Spacer blockSize="12px" />
+      </Section>
+    </Box>
   )
 }
