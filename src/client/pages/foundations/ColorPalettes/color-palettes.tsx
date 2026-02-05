@@ -18,14 +18,18 @@ export default () => {
           <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
         ))}
       </Select>
-      <Spacer blockSize="70px" />
-      <Flex flexDirection={{ base: 'column', md: 'row' }} alignContent="stretch" alignItems="stretch">
-        {Array.from({ length: 13 }, (v, k) => {
+      <Spacer blockSize="50px" />
+      <Flex flexDirection="column" alignItems="stretch" rowGap="20px">
+        {Array.from({ length: 15 }, (v, k) => {
           return (
             <Flex.Item key={k} flexGrow="1">
+              <Text scale="compact">{`--neb-${brand}-${k + 1}`}</Text>
               <Box
-                tagAttrs={{ style: { backgroundColor: `var(--neb-${brand}-${k + 2})` } }}
-                blockSize={{ base: '75px', md: '225px' }}
+                drawable
+                variant="outline"
+                intent="muted"
+                tagAttrs={{ style: { backgroundColor: `var(--neb-${brand}-${k + 1})` } }}
+                blockSize="50px"
               />
             </Flex.Item>
           )
