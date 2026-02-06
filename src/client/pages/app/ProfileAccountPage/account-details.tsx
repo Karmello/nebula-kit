@@ -26,7 +26,7 @@ export default () => {
     <Table layout="fixed" intent="neutral" color="blue">
       <Table.Header paddingInline="0px">
         <Table.HeaderRow>
-          <Table.HeaderCell blockSize="60px">
+          <Table.HeaderCell blockSize="50px">
             <Flex alignItems="center" columnGap="20px">
               <Text typography="h6" iconName="arrow-right">
                 Details
@@ -36,12 +36,16 @@ export default () => {
           </Table.HeaderCell>
         </Table.HeaderRow>
       </Table.Header>
-      <Table.Body intent="tertiary" paddingBlock="10px" paddingInline="18px">
+      <Table.Body
+        intent={getUser.isMakingRequest ? 'muted' : 'tertiary'}
+        paddingBlock="10px"
+        paddingInline="18px"
+      >
         <Table.Row>
           <Table.Cell colSpan={1}>
             <Text>Email</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="50px">
+          <Table.Cell colSpan={2} blockSize="60px">
             <Text bold>{getUser.data?.user.email}</Text>
           </Table.Cell>
         </Table.Row>
@@ -49,7 +53,7 @@ export default () => {
           <Table.Cell colSpan={1}>
             <Text>Registration date</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="50px">
+          <Table.Cell colSpan={2} blockSize="60px">
             <Text bold>{getUser.data ? new Date(getUser.data.user.createdAt).toDateString() : ''}</Text>
           </Table.Cell>
         </Table.Row>
@@ -57,7 +61,7 @@ export default () => {
           <Table.Cell colSpan={1}>
             <Text>Pricing plan</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="50px">
+          <Table.Cell colSpan={2} blockSize="60px">
             <Flex alignItems="center" flexWrap="wrap" rowGap="10px" columnGap="15px">
               <Text bold>{getUser.data ? sentenceCase(getUser.data.user.plan) : ''}</Text>
               {!getUser.isMakingRequest ? (
@@ -79,10 +83,15 @@ export default () => {
           <Table.Cell colSpan={1}>
             <Text>License key</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="50px">
+          <Table.Cell colSpan={2} blockSize="60px">
             {getUser.data ? (
               <Flex alignItems="center" gap="10px">
-                <Text tagAttrs={{ style: { wordBreak: 'break-all' } }} bold intent="primary" color="blue">
+                <Text
+                  tagAttrs={{ style: { wordBreak: 'break-all' } }}
+                  bold
+                  intent={getUser.data.user.licenseKey ? 'primary' : undefined}
+                  color={getUser.data.user.licenseKey ? 'blue' : undefined}
+                >
                   {getUser.data.user.licenseKey || '-'}
                 </Text>
                 {getUser.data.user.licenseKey ? (
@@ -109,7 +118,7 @@ export default () => {
           <Table.Cell colSpan={1}>
             <Text>Discord connection status</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="50px">
+          <Table.Cell colSpan={2} blockSize="60px">
             {getUser.data ? (
               <Text
                 iconName={
@@ -119,8 +128,14 @@ export default () => {
                       : 'close'
                     : undefined
                 }
-                color={!!getUser.data?.user.discordUserId ? 'green' : 'red'}
-                intent="primary"
+                color={
+                  getUser.data.user.plan !== 'free'
+                    ? !!getUser.data?.user.discordUserId
+                      ? 'green'
+                      : 'red'
+                    : undefined
+                }
+                intent={getUser.data.user.plan !== 'free' ? 'primary' : undefined}
                 bold
               >
                 {getUser.data.user.plan !== 'free'
@@ -136,7 +151,7 @@ export default () => {
           <Table.Cell colSpan={1}>
             <Text>Github connection status</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="50px">
+          <Table.Cell colSpan={2} blockSize="60px">
             {getUser.data ? (
               <Flex alignItems="center" flexWrap="wrap" rowGap="10px" columnGap="15px">
                 <Flex.Item alignSelf="auto">
@@ -148,8 +163,14 @@ export default () => {
                           : 'close'
                         : undefined
                     }
-                    color={!!getUser.data?.user.githubUsername ? 'green' : 'red'}
-                    intent="primary"
+                    color={
+                      getUser.data.user.plan !== 'free'
+                        ? !!getUser.data?.user.githubUsername
+                          ? 'green'
+                          : 'red'
+                        : undefined
+                    }
+                    intent={getUser.data.user.plan !== 'free' ? 'primary' : undefined}
                     bold
                   >
                     {getUser.data.user.plan !== 'free'
