@@ -76,7 +76,7 @@ export const NebkitProvider = ({
 
     document.documentElement.setAttribute('data-theme', theme)
     document.documentElement.setAttribute('data-brand', brand)
-    document.documentElement.setAttribute('data-ripple-mode', rippleMode)
+    document.documentElement.setAttribute('data-ripple-mode', rippleMode || 'off')
 
     document.documentElement.style.setProperty(
       '--neb-border-radius',
