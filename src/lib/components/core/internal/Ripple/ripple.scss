@@ -14,13 +14,13 @@
 
 .neb-ripple.is-active {
   animation-name: neb-ripple-animation;
-  animation-timing-function: cubic-bezier(0.2, 0, 0.4, 1);
+  animation-timing-function: cubic-bezier(0.4, 0, 0.75, 1);
   animation-fill-mode: forwards;
 }
 
 @keyframes neb-ripple-animation {
   to {
     opacity: 0;
-    transform: scale(1.5);
+    transform: scale(3);
   }
 }

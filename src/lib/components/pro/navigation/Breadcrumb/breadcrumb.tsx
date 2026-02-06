@@ -64,22 +64,26 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                 scrollAlign="center"
                 placement={index < levels.length - 1 ? 'bottom-start' : 'bottom-end'}
               >
-                <DropdownList.Trigger>
-                  <Button size={size} variant="ghost" color={color} intent="primary">
-                    {levels[index].find(node => node.value === currentPath[index])?.label || 'Select ...'}
-                  </Button>
-                </DropdownList.Trigger>
-                {level.map(node => (
-                  <DropdownList.Item
-                    key={node.value}
-                    tagAttrs={{
-                      onClick: () => handleChange(index, node.value),
-                    }}
-                    bold={node.value === currentPath[index]}
-                  >
-                    {node.label}
-                  </DropdownList.Item>
-                ))}
+                {({ open }) => (
+                  <>
+                    <DropdownList.Trigger>
+                      <Button size={size} variant="ghost" color={color} intent="primary" ripple={!open}>
+                        {levels[index].find(node => node.value === currentPath[index])?.label || 'Select ...'}
+                      </Button>
+                    </DropdownList.Trigger>
+                    {level.map(node => (
+                      <DropdownList.Item
+                        key={node.value}
+                        tagAttrs={{
+                          onClick: () => handleChange(index, node.value),
+                        }}
+                        bold={node.value === currentPath[index]}
+                      >
+                        {node.label}
+                      </DropdownList.Item>
+                    ))}
+                  </>
+                )}
               </DropdownList>
               {index < levels.length - 1 ? (
                 <Icon name="chevron-right" color={color} intent="primary" />

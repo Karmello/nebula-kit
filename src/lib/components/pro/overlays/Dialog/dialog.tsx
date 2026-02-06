@@ -1,9 +1,11 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import classNames from 'classnames'
 
 import { Box, Button, Flex, Portal, FocusTrap, Resize } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
+import { useGlobalScrollLock } from 'lib/hooks'
 import { withPrefix } from 'lib/helpers'
+import { Theme } from 'lib/definitions'
 
 import { DialogProvider } from './DialogProvider'
 
@@ -28,8 +30,11 @@ export const Dialog = ({
   closeOnBackdropClick = DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK,
   size = DEFAULT_DIALOG_SIZE,
 }: DialogProps) => {
+  const [theme, setTheme] = useState<Theme>(document.documentElement.getAttribute('data-theme') as Theme)
   const ref = useRef(null)
   const canAnimateRef = useRef(false)
+
+  const { lock, unlock } = useGlobalScrollLock()
 
   useEffect(() => {
     const id = requestAnimationFrame(() => {
@@ -40,16 +45,26 @@ export const Dialog = ({
 
   useEffect(() => {
     if (!open) return
-    const { overflow } = document.body.style
-    document.body.style.overflow = 'hidden'
+    lock()
     return () => {
       setTimeout(() => {
-        document.body.style.overflow = overflow
+        unlock()
       }, DIALOG_RESIZE_DURATION)
     }
   }, [open])
 
-  const theme = document.documentElement.getAttribute('data-theme')
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    setTheme(document.documentElement.getAttribute('data-theme') as Theme)
+    const observer = new MutationObserver(() => {
+      setTheme(document.documentElement.getAttribute('data-theme') as Theme)
+    })
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme'],
+    })
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <WithSlots<'Dialog.Header' | 'Dialog.Content' | 'Dialog.Footer'>

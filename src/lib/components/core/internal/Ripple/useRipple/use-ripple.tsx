@@ -38,7 +38,7 @@ export const useRipple = (parentRef: RefObject<HTMLElement>, active?: boolean) =
       rippleEl.classList.add('is-active')
     }
 
-    const onPointerDown = (e: PointerEvent) => {
+    const onPointerUp = (e: PointerEvent) => {
       if (parent.closest('[disabled]')) return
 
       const rect = parent.getBoundingClientRect()
@@ -47,19 +47,19 @@ export const useRipple = (parentRef: RefObject<HTMLElement>, active?: boolean) =
       triggerRipple(e.clientX - rect.left - size / 2, e.clientY - rect.top - size / 2)
     }
 
-    const onKeyDown = (e: KeyboardEvent) => {
+    const onKeyUp = (e: KeyboardEvent) => {
       if (e.repeat) return
       if (e.key !== 'Enter' && e.key !== ' ') return
 
       triggerRipple()
     }
 
-    parent.addEventListener('pointerdown', onPointerDown)
-    parent.addEventListener('keydown', onKeyDown)
+    parent.addEventListener('pointerup', onPointerUp)
+    parent.addEventListener('keyup', onKeyUp)
 
     return () => {
-      parent.removeEventListener('pointerdown', onPointerDown)
-      parent.removeEventListener('keydown', onKeyDown)
+      parent.removeEventListener('pointerup', onPointerUp)
+      parent.removeEventListener('keyup', onKeyUp)
     }
   }, [
     parentRef,

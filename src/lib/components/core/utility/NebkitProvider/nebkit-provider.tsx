@@ -5,7 +5,7 @@ import { useGlobalScrollLock } from 'lib/hooks'
 import {
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
   DEFAULT_NEBKIT_BRAND,
-  DEFAULT_NEBKIT_RIPPLE,
+  DEFAULT_NEBKIT_RIPPLE_MODE,
   DEFAULT_NEBKIT_THEME,
   NEBKIT_SIZES_MAP,
   NebkitProviderProps,
@@ -16,7 +16,7 @@ export const NebkitProvider = ({
   theme = DEFAULT_NEBKIT_THEME,
   brand = DEFAULT_NEBKIT_BRAND,
   borderRadiusSize = DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
-  ripple = DEFAULT_NEBKIT_RIPPLE,
+  rippleMode = DEFAULT_NEBKIT_RIPPLE_MODE,
   lockGlobalScroll,
 }: NebkitProviderProps): ReactElement => {
   const { lock, unlock } = useGlobalScrollLock()
@@ -76,7 +76,7 @@ export const NebkitProvider = ({
 
     document.documentElement.setAttribute('data-theme', theme)
     document.documentElement.setAttribute('data-brand', brand)
-    document.documentElement.setAttribute('data-ripple', String(ripple))
+    document.documentElement.setAttribute('data-ripple-mode', rippleMode)
 
     document.documentElement.style.setProperty(
       '--neb-border-radius',
@@ -84,7 +84,7 @@ export const NebkitProvider = ({
     )
 
     scheduleEnableTransitions()
-  }, [theme, brand, borderRadiusSize, ripple])
+  }, [theme, brand, borderRadiusSize, rippleMode])
 
   return children
 }

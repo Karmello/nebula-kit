@@ -14,7 +14,13 @@ export const BUTTON_SIZE_CONFIG: Record<
     iconSize: string
   }
 > = {
-  xs: { blockSize: '28px', paddingLeft: '8px', paddingRight: '8px', textScale: 'compact', iconSize: '13px' },
+  xs: {
+    blockSize: '34px',
+    paddingLeft: '10px',
+    paddingRight: '10px',
+    textScale: 'compact',
+    iconSize: '13px',
+  },
   sm: {
     blockSize: '38px',
     paddingLeft: '12px',

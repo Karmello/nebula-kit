@@ -1,7 +1,18 @@
-@use './palette-dark.scss';
-@use './ripple-dark.scss';
 @use 'styles/definitions/definitions.scss' as *;
+@use './palette-dark.scss';
 @use '../themes-mixins.scss' as *;
+
+html[data-theme='dark'] {
+  &[data-ripple-mode='off'] {
+    --neb-ripple-opacity-base: 0;
+  }
+  &[data-ripple-mode='default'] {
+    --neb-ripple-opacity-base: 0.15;
+  }
+  &[data-ripple-mode='emphasized'] {
+    --neb-ripple-opacity-base: 0.3;
+  }
+}
 
 /* Base dark theme primitives, applied globally and to local theme islands */
 html[data-theme='dark'],

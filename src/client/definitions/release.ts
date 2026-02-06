@@ -1,4 +1,13 @@
-export const RELEASE_VERSIONS = ['0.5.0', '0.4.3', '0.4.2', '0.4.1', '0.4.0', '0.3.0', '0.2.3'] as const
+export const RELEASE_VERSIONS = [
+  '0.6.0',
+  '0.5.0',
+  '0.4.3',
+  '0.4.2',
+  '0.4.1',
+  '0.4.0',
+  '0.3.0',
+  '0.2.3',
+] as const
 
 export type ReleaseVersion = (typeof RELEASE_VERSIONS)[number]
 
@@ -9,6 +18,12 @@ export const RELEASE_INFO: Record<
     changelog?: { main?: string[]; core?: string[]; pro?: string[] }
   }
 > = {
+  '0.6.0': {
+    timestamp: 1770354669798,
+    changelog: {
+      main: ['added Preferences dialog', 'refined Button sizing'],
+    },
+  },
   '0.5.0': {
     timestamp: 1770177660907,
     changelog: {
