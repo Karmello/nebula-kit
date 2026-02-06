@@ -2,11 +2,16 @@ import { sentenceCase } from 'change-case'
 
 import { useAppStore } from 'client/store'
 import { Box, Flex, Select, Spacer, Text } from 'lib/components'
-import { COLORS } from 'lib/definitions'
+import { COLORS, Theme } from 'lib/definitions'
 
 export default () => {
   const brand = useAppStore(state => state.brand)
   const setBrand = useAppStore(state => state.setBrand)
+
+  const theme = document.documentElement.getAttribute('data-theme') as Theme
+
+  const arr = Array.from({ length: 15 }, (v, k) => k)
+  if (theme === 'dark') arr.reverse()
 
   return (
     <>
@@ -20,15 +25,15 @@ export default () => {
       </Select>
       <Spacer blockSize="50px" />
       <Flex flexDirection="column" alignItems="stretch" rowGap="20px">
-        {Array.from({ length: 15 }, (v, k) => {
+        {arr.map(n => {
           return (
-            <Flex.Item key={k} flexGrow="1">
-              <Text scale="compact">{`--neb-${brand}-${k + 1}`}</Text>
+            <Flex.Item key={n} flexGrow="1">
+              <Text scale="compact">{`--neb-${brand}-${n + 1}`}</Text>
               <Box
                 drawable
                 variant="outline"
                 intent="muted"
-                tagAttrs={{ style: { backgroundColor: `var(--neb-${brand}-${k + 1})` } }}
+                tagAttrs={{ style: { backgroundColor: `var(--neb-${brand}-${n + 1})` } }}
                 blockSize="50px"
               />
             </Flex.Item>
