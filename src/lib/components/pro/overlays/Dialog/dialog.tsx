@@ -122,6 +122,9 @@ export const Dialog = ({
                           className: classNames(withPrefix('dialog'), tagAttrs?.className),
                           role: 'dialog',
                           'aria-modal': true,
+                          onClick: e => {
+                            e.stopPropagation()
+                          },
                         }}
                         tagRef={tagRef || ref}
                         drawable

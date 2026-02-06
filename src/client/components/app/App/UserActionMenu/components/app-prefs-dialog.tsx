@@ -24,6 +24,7 @@ export const AppPrefsDialog = () => {
       onClose={() => {
         setShowAppSettings(false)
       }}
+      closeOnBackdropClick
     >
       <Dialog.Header>
         <Text bold iconName="settings">
