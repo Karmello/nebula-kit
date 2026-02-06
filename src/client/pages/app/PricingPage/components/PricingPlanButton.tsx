@@ -1,5 +1,3 @@
-import { useLayoutEffect, useState } from 'react'
-
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
@@ -14,12 +12,6 @@ type PricingPlanButtonProps = {
 }
 
 export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButtonProps) => {
-  const [isRedirecting, setIsRedirecting] = useState<boolean>(false)
-
-  useLayoutEffect(() => {
-    setIsRedirecting(false)
-  }, [])
-
   const navigateTo = useNavigateTo()
   const user = useAppStore(state => state.user)
   const checkoutPaidPlan = useCheckoutPaidPlan()
@@ -61,14 +53,12 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
           <Button
             tagAttrs={{
               onClick: () => {
-                setIsRedirecting(true)
                 checkoutPaidPlan.sendRequest({ plan })
               },
             }}
             size="sm"
             intent="primary"
             color={color}
-            loading={isRedirecting}
           >
             Subscribe
           </Button>

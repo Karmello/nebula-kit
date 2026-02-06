@@ -1,20 +1,14 @@
-import { useLayoutEffect, useState } from 'react'
+import { useLayoutEffect } from 'react'
 
 import { useGetPaymentDetailsUrl, useGetPaymentInfo } from 'client/api'
 import { useAppStore } from 'client/store'
 import { Button, Callout, Flex, Loader, Spacer, Table, Text } from 'lib/components'
 
 export default ({ enabled }: { enabled: boolean }) => {
-  const [isRedirecting, setIsRedirecting] = useState<boolean>(false)
-
   const user = useAppStore(state => state.user)
 
   const getPaymentInfo = useGetPaymentInfo()
   const getPaymentDetailsUrl = useGetPaymentDetailsUrl()
-
-  useLayoutEffect(() => {
-    setIsRedirecting(false)
-  }, [])
 
   useLayoutEffect(() => {
     if (user && user.plan !== 'free') {
@@ -94,7 +88,6 @@ export default ({ enabled }: { enabled: boolean }) => {
               <Button
                 tagAttrs={{
                   onClick: async () => {
-                    setIsRedirecting(true)
                     window.location.href = getPaymentDetailsUrl.data.url
                   },
                 }}
@@ -102,7 +95,6 @@ export default ({ enabled }: { enabled: boolean }) => {
                 intent="primary"
                 variant="ghost"
                 color="blue"
-                loading={isRedirecting || !getPaymentDetailsUrl.data || getPaymentDetailsUrl.isMakingRequest}
                 disabled={!!getPaymentDetailsUrl.error}
               >
                 View more details on Stripe
@@ -118,7 +110,7 @@ export default ({ enabled }: { enabled: boolean }) => {
             size="sm"
             status="error"
             heading="Payment issue"
-            content="We couldn't renew your NebulaKit subscription because the payment failed. Please update your
+            content="Your subscription renewal failed. Please update your
               payment method to avoid any interruption."
           />
         </>
