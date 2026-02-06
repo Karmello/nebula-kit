@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 import { TokensResult } from 'shiki'
 
+import { useAppStore } from 'client/store'
 import { Box, Flex, Button, Text } from 'lib/components'
 
 import { tokenizeCode } from './highlight-tokens'
@@ -12,44 +13,46 @@ export type CodeSnippetProps = {
 
 const COLOR_MAP = {
   // background
-  bg: 'var(--neb-gray-2)',
+  bg: { light: 'var(--neb-gray-2)', dark: 'var(--neb-gray-14)' },
   // component name
-  '#F78C6C': 'var(--neb-red-8)',
+  '#F78C6C': { light: 'var(--neb-red-8)', dark: 'var(--neb-red-8)' },
   // native html tag name
-  '#CAECE6': 'var(--neb-red-8)',
+  '#CAECE6': { light: 'var(--neb-red-8)', dark: 'var(--neb-red-8)' },
   // prop name
-  '#C5E478': 'var(--neb-blue-8)',
+  '#C5E478': { light: 'var(--neb-blue-8)', dark: 'var(--neb-blue-8)' },
   // object name, object key names
-  '#D6DEEB': 'var(--neb-gray-8)',
+  '#D6DEEB': { light: 'var(--neb-gray-8)', dark: 'var(--neb-gray-7)' },
   // value
-  '#ECC48D': 'var(--neb-amber-9)',
+  '#ECC48D': { light: 'var(--neb-amber-9)', dark: 'var(--neb-amber-9)' },
   // param name
-  '#D7DBE0': 'var(--neb-amber-9)',
+  '#D7DBE0': { light: 'var(--neb-amber-9)', dark: 'var(--neb-amber-9)' },
   // argument name
-  '#FF5874': 'var(--neb-amber-9)',
+  '#FF5874': { light: 'var(--neb-amber-9)', dark: 'var(--neb-amber-9)' },
   // called func name
-  '#82AAFF': 'var(--neb-blue-8)',
+  '#82AAFF': { light: 'var(--neb-blue-8)', dark: 'var(--neb-blue-8)' },
   // TS type name
-  '#FFCB8B': 'var(--neb-text)',
+  '#FFCB8B': { light: 'var(--neb-text)', dark: 'var(--neb-text)' },
   // angle brackets, cb curly brackets
-  '#7FDBCA': 'var(--neb-gray-15)',
+  '#7FDBCA': { light: 'var(--neb-gray-15)', dark: 'var(--neb-gray-1)' },
   // prop curly brackets
-  '#D3423E': 'var(--neb-gray-15)',
+  '#D3423E': { light: 'var(--neb-gray-15)', dark: 'var(--neb-gray-1)' },
   // equal sign, arrow func sign, dot
-  '#C792EA': 'var(--neb-gray-15)',
+  '#C792EA': { light: 'var(--neb-gray-15)', dark: 'var(--neb-gray-1)' },
   // quotes
-  '#D9F5DD': 'var(--neb-gray-15)',
+  '#D9F5DD': { light: 'var(--neb-gray-15)', dark: 'var(--neb-gray-1)' },
   // comments
-  '#637777': 'var(--neb-text)',
+  '#637777': { light: 'var(--neb-text)', dark: 'var(--neb-text)' },
   // extension
-  '#5CA7E4': 'var(--neb-blue-8)',
+  '#5CA7E4': { light: 'var(--neb-blue-8)', dark: 'var(--neb-blue-8)' },
   //
-  '#BAEBE2': 'var(--neb-blue-8)',
+  '#BAEBE2': { light: 'var(--neb-blue-8)', dark: 'var(--neb-blue-8)' },
 }
 
 export const CodeSnippet = ({ code, lang = 'log' }: CodeSnippetProps) => {
   const [data, setData] = useState<TokensResult>()
   const [copied, setCopied] = useState<boolean>(false)
+
+  const theme = useAppStore(state => state.theme)
 
   const timeoutRef = useRef<NodeJS.Timeout>(null)
 
@@ -75,7 +78,7 @@ export const CodeSnippet = ({ code, lang = 'log' }: CodeSnippetProps) => {
     <Flex
       flexDirection="column"
       alignItems="stretch"
-      tagAttrs={{ style: { backgroundColor: COLOR_MAP.bg, borderRadius: 'var(--neb-border-radius)' } }}
+      tagAttrs={{ style: { backgroundColor: COLOR_MAP.bg[theme], borderRadius: 'var(--neb-border-radius)' } }}
     >
       <Box padding="2px" textAlign="end">
         <Button
@@ -101,7 +104,7 @@ export const CodeSnippet = ({ code, lang = 'log' }: CodeSnippetProps) => {
                       <Text
                         key={j}
                         tag="span"
-                        tagAttrs={{ style: { display: 'inline', color: COLOR_MAP[color as never] } }}
+                        tagAttrs={{ style: { display: 'inline', color: COLOR_MAP[color as never][theme] } }}
                         typography="small"
                       >
                         {content}
