@@ -1,7 +1,7 @@
 import { sentenceCase } from 'change-case'
 
 import { useAppStore } from 'client/store'
-import { Button, Flex, Select, Dialog, Text, Segment } from 'lib/components'
+import { Button, Flex, Select, Dialog, Text, Segment, Box, Spacer } from 'lib/components'
 import { NEBKIT_BORDER_RADIUS_SIZES, NEBKIT_RIPPLE_MODES } from 'lib/components/core/utility/NebkitProvider'
 import { COLORS, THEMES } from 'lib/definitions'
 
@@ -24,6 +24,7 @@ export const AppPrefsDialog = () => {
       onClose={() => {
         setShowAppSettings(false)
       }}
+      size="lg"
       closeOnBackdropClick
     >
       <Dialog.Header>
@@ -32,68 +33,74 @@ export const AppPrefsDialog = () => {
         </Text>
       </Dialog.Header>
       <Dialog.Content>
-        <Flex flexWrap="wrap" gap="15px">
-          <Flex.Item>
-            <Text bold typography="small">
-              Theme
-            </Text>
-            <Segment key={theme}>
-              {THEMES.map(key => (
-                <Segment.Item key={key}>
-                  <Button
-                    intent={key === theme ? 'inverse' : 'tertiary'}
-                    size="xs"
-                    tagAttrs={{ onClick: () => setTheme(key) }}
-                  >
-                    {sentenceCase(key)}
-                  </Button>
-                </Segment.Item>
-              ))}
-            </Segment>
-          </Flex.Item>
-          <Flex.Item>
-            <Text bold typography="small">
-              Brand
-            </Text>
-            <Select value={brand} onChange={setBrand} inlineSize="150px" size="xs" scrollAlign="center">
-              {COLORS.map(brand => (
-                <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
-              ))}
-            </Select>
-          </Flex.Item>
-          <Flex.Item>
-            <Text bold typography="small">
-              Border radius
-            </Text>
-            <Select
-              value={borderRadiusSize}
-              onChange={setBorderRadiusSize}
-              inlineSize="150px"
-              size="xs"
-              scrollAlign="center"
-            >
-              {NEBKIT_BORDER_RADIUS_SIZES.map(n => (
-                <Select.Option value={n}>{n}</Select.Option>
-              ))}
-            </Select>
-          </Flex.Item>
-          <Flex.Item>
-            <Text bold typography="small">
-              Ripple mode
-            </Text>
-            <Select
-              value={rippleMode}
-              onChange={setRippleMode}
-              inlineSize="150px"
-              size="xs"
-              scrollAlign="center"
-            >
-              {NEBKIT_RIPPLE_MODES.map(n => (
-                <Select.Option value={n}>{sentenceCase(n)}</Select.Option>
-              ))}
-            </Select>
-          </Flex.Item>
-        </Flex>
+        <Box padding="20px" paddingBottom="40px">
+          <Flex flexWrap="wrap" columnGap="15px" rowGap="25px">
+            <Flex.Item>
+              <Text bold typography="small">
+                Theme
+              </Text>
+              <Spacer blockSize="2px" />
+              <Segment key={theme}>
+                {THEMES.map(key => (
+                  <Segment.Item key={key}>
+                    <Button
+                      intent={key === theme ? 'inverse' : 'tertiary'}
+                      size="xs"
+                      tagAttrs={{ onClick: () => setTheme(key) }}
+                    >
+                      {sentenceCase(key)}
+                    </Button>
+                  </Segment.Item>
+                ))}
+              </Segment>
+            </Flex.Item>
+            <Flex.Item>
+              <Text bold typography="small">
+                Brand
+              </Text>
+              <Spacer blockSize="2px" />
+              <Select value={brand} onChange={setBrand} inlineSize="150px" size="xs" scrollAlign="center">
+                {COLORS.map(brand => (
+                  <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
+                ))}
+              </Select>
+            </Flex.Item>
+            <Flex.Item>
+              <Text bold typography="small">
+                Border radius
+              </Text>
+              <Spacer blockSize="2px" />
+              <Select
+                value={borderRadiusSize}
+                onChange={setBorderRadiusSize}
+                inlineSize="150px"
+                size="xs"
+                scrollAlign="center"
+              >
+                {NEBKIT_BORDER_RADIUS_SIZES.map(n => (
+                  <Select.Option value={n}>{n}</Select.Option>
+                ))}
+              </Select>
+            </Flex.Item>
+            <Flex.Item>
+              <Text bold typography="small">
+                Ripple mode
+              </Text>
+              <Spacer blockSize="2px" />
+              <Select
+                value={rippleMode}
+                onChange={setRippleMode}
+                inlineSize="150px"
+                size="xs"
+                scrollAlign="center"
+              >
+                {NEBKIT_RIPPLE_MODES.map(n => (
+                  <Select.Option value={n}>{sentenceCase(n)}</Select.Option>
+                ))}
+              </Select>
+            </Flex.Item>
+          </Flex>
+        </Box>
       </Dialog.Content>
       <Dialog.Footer>
         <Text scale="compact" color="gray" intent="primary">

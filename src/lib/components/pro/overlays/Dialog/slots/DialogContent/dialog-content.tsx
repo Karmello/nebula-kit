@@ -24,8 +24,8 @@ export const DialogContent = ({
       drawable
       variant="outline"
       intent={intent}
-      minBlockSize="100px"
-      padding={padding}
+      paddingInline={padding}
+      paddingBlock={`calc(${padding} / 1.25)`}
       borderWidth="0px"
       borderRadius="0px"
     >

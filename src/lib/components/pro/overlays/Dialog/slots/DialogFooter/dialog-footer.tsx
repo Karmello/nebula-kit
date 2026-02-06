@@ -24,7 +24,8 @@ export const DialogFooter = ({
       drawable
       variant="outline"
       intent={intent}
-      padding={padding}
+      paddingInline={padding}
+      paddingBlock={`calc(${padding} / 1.25)`}
       borderBottomWidth="0px"
       borderLeftWidth="0px"
       borderRightWidth="0px"
