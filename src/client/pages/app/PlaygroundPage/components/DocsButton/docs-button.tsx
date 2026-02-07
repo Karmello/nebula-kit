@@ -32,7 +32,7 @@ export const DocsButton = () => {
       intent="secondary"
       color="blue"
     >
-      Docs
+      {activeComponent}
     </Button>
   )
 }
