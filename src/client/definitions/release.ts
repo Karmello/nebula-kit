@@ -21,19 +21,13 @@ export const RELEASE_INFO: Record<
   '0.6.0': {
     timestamp: 1770354669798,
     changelog: {
-      main: ['added Preferences dialog', 'refined Button sizing'],
+      main: ['refined Button sizing'],
     },
   },
   '0.5.0': {
     timestamp: 1770177660907,
     changelog: {
-      main: [
-        'improved ripple animation',
-        'added global ripple toggle',
-        'improved focus rings',
-        'improved styling system doc pages',
-        'fixed blank Pricing page issue',
-      ],
+      main: ['improved ripple animation', 'improved focus rings'],
     },
   },
   '0.4.3': {
