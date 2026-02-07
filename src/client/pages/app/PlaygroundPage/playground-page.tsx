@@ -27,9 +27,9 @@ export const PlaygroundPage = () => {
                 <SplitView.Main>
                   <SplitView.MainBar>
                     <Flex flexWrap="wrap" gap="12px" alignItems="center">
-                      <DocsButton />
-                      <TogglePropsButton />
                       <PredefinedExamples />
+                      <TogglePropsButton />
+                      <DocsButton />
                     </Flex>
                   </SplitView.MainBar>
                   <Spacer blockSize="30px" />
