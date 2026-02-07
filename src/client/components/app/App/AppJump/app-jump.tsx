@@ -111,7 +111,12 @@ export const AppJump = () => {
   }, [showAppJump, filtered])
 
   return (
-    <Resize property="blockSize" visible={showAppJump} duration={RESIZE_DURATION}>
+    <Resize
+      property="blockSize"
+      visible={showAppJump}
+      duration={RESIZE_DURATION}
+      easing="cubic-bezier(0.4, 0, 0.2, 1)"
+    >
       <Box
         tagAttrs={{
           style: {

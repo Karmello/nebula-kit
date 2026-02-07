@@ -32,7 +32,7 @@ export const DocsButton = () => {
       intent="secondary"
       color="blue"
     >
-      {activeComponent}
+      {activeComponent} props
     </Button>
   )
 }
