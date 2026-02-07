@@ -92,6 +92,7 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
           }
         },
       }}
+      minInlineSize="0px"
     >
       {slotsByName['DropdownList.Trigger']}
       <DropdownListMenu />

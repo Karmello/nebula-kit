@@ -26,6 +26,7 @@ const DROPDOWN_LIST_META: ComponentMeta<DropdownListProps> = {
   props: DROPDOWN_LIST_PROPS_META,
   examples: DROPDOWN_LIST_EXAMPLES_META,
   changelog: {
+    '0.6.0': ['enabled shrinking of the trigger in constrained layouts'],
     '0.5.0': [
       'improved list open animation by scaling its duration with item count',
       'removed animationDuration prop',
