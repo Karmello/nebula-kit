@@ -52,6 +52,7 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
       tagRef={tagRef}
       tagAttrs={{
         ...tagAttrs,
+        style: { minInlineSize: '0px', ...tagAttrs?.style },
         role: 'listbox',
         onKeyDown: e => {
           if (e.key === 'Escape' || e.key === 'Tab') {
@@ -92,7 +93,6 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
           }
         },
       }}
-      minInlineSize="0px"
     >
       {slotsByName['DropdownList.Trigger']}
       <DropdownListMenu />

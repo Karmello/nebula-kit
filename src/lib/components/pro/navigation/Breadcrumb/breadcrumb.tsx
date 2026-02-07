@@ -57,6 +57,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
           return (
             <Fragment key={index}>
               <DropdownList
+                tagAttrs={{ style: { minInlineSize: 'auto' } }}
                 size={size}
                 color={color}
                 intent={intent}
