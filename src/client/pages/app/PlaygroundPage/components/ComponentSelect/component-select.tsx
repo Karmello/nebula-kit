@@ -16,8 +16,6 @@ export const ComponentSelect = () => {
         onChange={setActiveComponent}
         scrollAlign="center"
         visibleItemsCount={7}
-        intent={{ base: 'secondary', lg: 'tertiary' }}
-        itemBorderIntent={{ base: 'tertiary', lg: 'muted' }}
       >
         {Object.keys(components).map(name => (
           <Select.Option value={name}>{name}</Select.Option>

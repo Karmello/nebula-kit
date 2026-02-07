@@ -43,6 +43,7 @@ export const PlaygroundPage = () => {
                 </SplitView.Main>
                 <SplitView.Side
                   theme={{ base: theme === 'light' ? 'dark' : 'light', lg: theme }}
+                  intent={{ base: 'muted', lg: 'neutral' }}
                   inlineSize="320px"
                 >
                   <Box padding={{ base: '10px', lg: '0px' }} paddingLeft={{ lg: '30px' }}>

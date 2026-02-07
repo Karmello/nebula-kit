@@ -19,8 +19,6 @@ export const PropSelect = () => {
         onChange={value => setActiveProp(activeComponent, value)}
         scrollAlign="center"
         visibleItemsCount={7}
-        intent={{ base: 'secondary', lg: 'tertiary' }}
-        itemBorderIntent={{ base: 'tertiary', lg: 'muted' }}
       >
         {Object.keys(props)
           .sort()
