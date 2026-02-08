@@ -56,7 +56,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
           {label}
         </Button>
         <Box tagAttrs={{ inert: !open }}>
-          <Resize property="blockSize" visible={open} easing="cubic-bezier(0.25, 0.1, 0.25, 1)">
+          <Resize property="blockSize" visible={open}>
             {children}
           </Resize>
         </Box>

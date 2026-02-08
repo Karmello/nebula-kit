@@ -21,7 +21,7 @@ const VIRTUAL_LIST_PROPS_META: ComponentMeta<VirtualListProps>['props'] = {
   },
   intent: {
     ...BOX_PROPS_META.intent,
-    description: 'Tone level applied to the surface behind list items.',
+    description: 'Color tone applied to the surface behind list items.',
   },
   itemHeight: {
     options: ['number'],

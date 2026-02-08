@@ -42,7 +42,7 @@ const MULTI_SELECT_PROPS_META: ComponentMeta<MultiSelectProps>['props'] = {
   tagRef: HTML_TAG_PROPS_META.tagRef,
   triggerIntent: {
     ...BUTTON_PROPS_META.intent,
-    description: 'Tone level applied to the trigger.',
+    description: 'Color tone applied to the trigger.',
   },
   value: {
     options: ['string[]'],

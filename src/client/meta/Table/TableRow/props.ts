@@ -18,7 +18,7 @@ const TABLE_ROW_PROPS_META: ComponentMeta<TableRowProps>['props'] = {
   },
   intent: {
     ...BOX_PROPS_META.intent,
-    description: 'Tone level applied to every cell.',
+    description: 'Color tone applied to every cell.',
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,

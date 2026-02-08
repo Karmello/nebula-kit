@@ -20,7 +20,7 @@ const TABLE_BODY_PROPS_META: ComponentMeta<TableBodyProps>['props'] = {
   intent: {
     ...BOX_PROPS_META.intent,
     defaultValue: DEFAULT_TABLE_BODY_INTENT as never,
-    description: 'Tone level applied to every cell.',
+    description: 'Color tone applied to every cell.',
   },
   paddingBlock: {
     ...BOX_PROPS_META.paddingBlock,

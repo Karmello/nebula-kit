@@ -20,7 +20,7 @@ const TABLE_FOOTER_PROPS_META: ComponentMeta<TableFooterProps>['props'] = {
   intent: {
     ...BOX_PROPS_META.intent,
     defaultValue: String(DEFAULT_TABLE_FOOTER_INTENT),
-    description: 'Tone level applied to every cell.',
+    description: 'Color tone applied to every cell.',
   },
   paddingBlock: {
     ...BOX_PROPS_META.paddingBlock,

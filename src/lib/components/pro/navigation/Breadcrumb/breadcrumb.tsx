@@ -2,7 +2,14 @@ import { useState, Fragment, useCallback } from 'react'
 
 import { Box, Flex, Button, DropdownList, Icon } from 'lib/components'
 
-import { BreadcrumbProps, BreadcrumbTag, DEFAULT_BREADCRUMB_SIZE } from './definitions'
+import {
+  BreadcrumbProps,
+  BreadcrumbTag,
+  DEFAULT_BREADCRUMB_SIZE,
+  DEFAULT_BREADCRUMB_INTENT,
+  DEFAULT_BREADCRUMB_ITEM_BORDER_INTENT,
+} from './definitions'
+
 import { convertTreeToLevels } from './helpers'
 
 export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
@@ -10,9 +17,10 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
   tag,
   tagAttrs,
   tagRef,
-  // Button
+  // DropdownList
   color,
-  intent,
+  intent = DEFAULT_BREADCRUMB_INTENT,
+  itemBorderIntent = DEFAULT_BREADCRUMB_ITEM_BORDER_INTENT,
   size = DEFAULT_BREADCRUMB_SIZE,
   // own
   tree,
@@ -61,6 +69,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                 size={size}
                 color={color}
                 intent={intent}
+                itemBorderIntent={itemBorderIntent}
                 scrollToIndex={scrollToIndex > -1 ? scrollToIndex : undefined}
                 scrollAlign="center"
                 placement={index < levels.length - 1 ? 'bottom-start' : 'bottom-end'}

@@ -71,7 +71,7 @@ const AUTOCOMPLETE_PROPS_META: ComponentMeta<AutocompleteProps>['props'] = {
   tagRef: HTML_TAG_PROPS_META.tagRef,
   triggerIntent: {
     ...INPUT_PROPS_META.intent,
-    description: 'Tone level applied to the trigger.',
+    description: 'Color tone applied to the trigger.',
   },
   value: {
     options: ['string'],

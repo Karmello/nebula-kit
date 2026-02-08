@@ -1,8 +1,10 @@
-import { ButtonProps, HtmlTagProps } from 'lib/components'
+import { DropdownListProps, HtmlTagProps } from 'lib/components'
 
 export const BREADCRUMB_TAGS = ['div', 'nav', 'section'] as const
 
 export const DEFAULT_BREADCRUMB_SIZE: BreadcrumbProps['size'] = 'xs'
+export const DEFAULT_BREADCRUMB_INTENT: BreadcrumbProps['intent'] = 'tertiary'
+export const DEFAULT_BREADCRUMB_ITEM_BORDER_INTENT: BreadcrumbProps['itemBorderIntent'] = 'muted'
 
 export type BreadcrumbTag = (typeof BREADCRUMB_TAGS)[number]
 
@@ -21,8 +23,8 @@ type BreadcrumbOwnProps = {
 
 type PropsFromHtmlTag<T extends BreadcrumbTag = 'div'> = Pick<HtmlTagProps<T>, 'tag' | 'tagAttrs' | 'tagRef'>
 
-type PropsFromButton = Pick<ButtonProps, 'color' | 'intent' | 'size'>
+type PropsFromDropdownList = Pick<DropdownListProps, 'color' | 'intent' | 'itemBorderIntent' | 'size'>
 
 export type BreadcrumbProps<T extends BreadcrumbTag = 'div'> = PropsFromHtmlTag<T> &
-  PropsFromButton &
+  PropsFromDropdownList &
   BreadcrumbOwnProps

@@ -143,7 +143,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   intent: {
     options: ['BoxIntent'],
     isResponsive: true,
-    description: "Tone level applied to the component's main color.",
+    description: "Color tone applied to the component's main color.",
     tooltip: BOX_INTENTS,
   },
   interactive: {
