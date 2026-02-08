@@ -56,7 +56,7 @@ License:
 https://nebulakit.dev/foundations/other/legal/license
 
 Release notes:
-https://nebulakit.dev/foundations/resources/changelog/${ROOT.version}
+https://nebulakit.dev/foundations/resources/changelog/v${ROOT.version}
 
 <br /><br />
 <img src="https://nebulakit.dev/captain-nebula.webp" alt="Captain Nebula" width="225px" />
