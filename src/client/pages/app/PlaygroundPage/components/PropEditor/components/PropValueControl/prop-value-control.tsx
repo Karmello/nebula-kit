@@ -65,28 +65,17 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
           endAffix={props => (
             <Button {...props} iconName="close" tagAttrs={{ onClick: () => onChange('') }} />
           )}
-          intent={{ base: 'secondary', lg: 'tertiary' }}
         />
       ) : null}
       {PROPS_OPTIONS_FOR_BOOLEAN.includes(prop.options[0]) ? (
-        <Select
-          value={value}
-          onChange={onChange}
-          intent={{ base: 'secondary', lg: 'tertiary' }}
-          itemBorderIntent={{ base: 'tertiary', lg: 'muted' }}
-        >
+        <Select value={value} onChange={onChange}>
           <Select.Option value="">...</Select.Option>
           <Select.Option value="true">true</Select.Option>
           <Select.Option value="false">false</Select.Option>
         </Select>
       ) : null}
       {PROPS_OPTIONS_FOR_SELECT.includes(prop.options[0] as (typeof PROPS_OPTIONS_FOR_SELECT)[number]) ? (
-        <Select
-          value={value}
-          onChange={onChange}
-          intent={{ base: 'secondary', lg: 'tertiary' }}
-          itemBorderIntent={{ base: 'tertiary', lg: 'muted' }}
-        >
+        <Select value={value} onChange={onChange}>
           <Select.Option value="">...</Select.Option>
           {SELECT_DATA_MAP[prop.options[0] as (typeof PROPS_OPTIONS_FOR_SELECT)[number]].map(value => (
             <Select.Option key={value} value={value}>
@@ -98,13 +87,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
       {![...PROPS_OPTIONS_FOR_INPUT, ...PROPS_OPTIONS_FOR_BOOLEAN, ...PROPS_OPTIONS_FOR_SELECT].includes(
         prop.options[0]
       ) ? (
-        <Select
-          value={value}
-          onChange={onChange}
-          scrollAlign="center"
-          intent={{ base: 'secondary', lg: 'tertiary' }}
-          itemBorderIntent={{ base: 'tertiary', lg: 'muted' }}
-        >
+        <Select value={value} onChange={onChange} scrollAlign="center">
           <Select.Option value="">...</Select.Option>
           {prop.options.map(option => (
             <Select.Option key={option} value={option}>

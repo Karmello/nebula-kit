@@ -9,7 +9,6 @@ export const TogglePropsButton = () => {
   return (
     <Button
       size="xs"
-      color="blue"
       tagAttrs={{
         onClick: () => setDisplayProps(!displayProps),
       }}

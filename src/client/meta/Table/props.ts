@@ -28,7 +28,7 @@ const TABLE_PROPS_META: ComponentMeta<TableProps>['props'] = {
   intent: {
     ...BOX_PROPS_META.intent,
     defaultValue: String(DEFAULT_TABLE_INTENT),
-    description: "Tone level applied to the table's background surface.",
+    description: "Color tone applied to the table's background surface.",
   },
   layout: {
     options: TABLE_LAYOUTS,

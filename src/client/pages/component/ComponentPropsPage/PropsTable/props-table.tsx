@@ -1,6 +1,6 @@
 import { kebabCase } from 'change-case'
 
-import { Icon, Section, Spacer, Table, Text, Link, Tooltip, Box } from 'lib/components'
+import { Icon, Section, Spacer, Table, Text, Link, Tooltip, Box, Flex } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 
 type Props = {
@@ -59,9 +59,9 @@ export const PropsTable = ({ category, data }: Props) => {
                       minInlineSize={250}
                       maxInlineSize={350}
                     >
-                      <Box display="inline-block">
-                        <Icon name="info" />
-                      </Box>
+                      <Flex tagAttrs={{ style: { verticalAlign: 'middle' } }} display="inline-flex">
+                        <Icon name="info" size="25px" intent="primary" color="blue" />
+                      </Flex>
                     </Tooltip>
                   ) : (
                     <Text>{typeof options === 'string' ? options : options.join(', ')}</Text>
@@ -70,11 +70,15 @@ export const PropsTable = ({ category, data }: Props) => {
                 <Table.Cell tagAttrs={{ style: { whiteSpace: 'nowrap' } }}>
                   <Text textAlign="center">{defaultValue !== undefined ? defaultValue : '-'}</Text>
                 </Table.Cell>
-                <Table.Cell textAlign="center">
-                  {isRequired ? <Icon name="check" intent="primary" color="blue" size="20px" /> : '-'}
+                <Table.Cell>
+                  <Flex justifyContent="center">
+                    {isRequired ? <Icon name="check" intent="primary" color="blue" size="20px" /> : '-'}
+                  </Flex>
                 </Table.Cell>
-                <Table.Cell textAlign="center">
-                  {isResponsive ? <Icon name="check" intent="primary" color="blue" size="20px" /> : '-'}
+                <Table.Cell>
+                  <Flex justifyContent="center">
+                    {isResponsive ? <Icon name="check" intent="primary" color="blue" size="20px" /> : '-'}
+                  </Flex>
                 </Table.Cell>
                 <Table.Cell>
                   <Text>{description}</Text>

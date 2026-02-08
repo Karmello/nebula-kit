@@ -24,7 +24,7 @@ const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListProps>['props'] = {
   },
   intent: {
     ...BOX_PROPS_META.intent,
-    description: 'Tone level applied to all items at once.',
+    description: 'Color tone applied to all items at once.',
   },
   listStyle: {
     options: MARKER_LIST_STYLES,

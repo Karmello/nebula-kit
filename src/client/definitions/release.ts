@@ -1,4 +1,13 @@
-export const RELEASE_VERSIONS = ['0.5.0', '0.4.3', '0.4.2', '0.4.1', '0.4.0', '0.3.0', '0.2.3'] as const
+export const RELEASE_VERSIONS = [
+  '0.6.0',
+  '0.5.0',
+  '0.4.3',
+  '0.4.2',
+  '0.4.1',
+  '0.4.0',
+  '0.3.0',
+  '0.2.3',
+] as const
 
 export type ReleaseVersion = (typeof RELEASE_VERSIONS)[number]
 
@@ -9,16 +18,16 @@ export const RELEASE_INFO: Record<
     changelog?: { main?: string[]; core?: string[]; pro?: string[] }
   }
 > = {
+  '0.6.0': {
+    timestamp: 1770590689376,
+    changelog: {
+      main: ['refined Button sizing'],
+    },
+  },
   '0.5.0': {
     timestamp: 1770177660907,
     changelog: {
-      main: [
-        'improved ripple animation',
-        'added global ripple toggle',
-        'improved focus rings',
-        'improved styling system doc pages',
-        'fixed blank Pricing page issue',
-      ],
+      main: ['improved ripple animation', 'improved focus rings'],
     },
   },
   '0.4.3': {

@@ -15,7 +15,7 @@ const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListItemProps>['props'] = {
   },
   intent: {
     ...BOX_PROPS_META.intent,
-    description: 'Tone level applied to each item individually.',
+    description: 'Color tone applied to each item individually.',
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,

@@ -16,7 +16,7 @@ const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
   },
   intent: {
     ...BOX_PROPS_META.intent,
-    description: 'Tone level applied to the icon.',
+    description: 'Color tone applied to the icon.',
   },
   name: {
     options: ['IconName'],

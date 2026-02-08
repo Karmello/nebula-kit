@@ -14,14 +14,7 @@ export const PropSelect = () => {
     <>
       <Text bold>Property</Text>
       <Spacer blockSize="5px" />
-      <Select
-        value={value}
-        onChange={value => setActiveProp(activeComponent, value)}
-        scrollAlign="center"
-        visibleItemsCount={7}
-        intent={{ base: 'secondary', lg: 'tertiary' }}
-        itemBorderIntent={{ base: 'tertiary', lg: 'muted' }}
-      >
+      <Select value={value} onChange={value => setActiveProp(activeComponent, value)} scrollAlign="center">
         {Object.keys(props)
           .sort()
           .map(propName => (

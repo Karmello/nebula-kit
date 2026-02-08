@@ -28,7 +28,7 @@ const SIDE_NAV_PROPS_META: ComponentMeta<SideNavProps>['props'] = {
   },
   intent: {
     ...BUTTON_PROPS_META.intent,
-    description: 'Tone level applied to all categories and items.',
+    description: 'Color tone applied to all categories and items.',
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,

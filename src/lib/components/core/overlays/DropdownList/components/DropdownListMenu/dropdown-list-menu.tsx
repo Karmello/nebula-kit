@@ -8,6 +8,7 @@ import {
   VirtualList,
   DropdownList,
   DropdownListItemProps,
+  Divider,
 } from 'lib/components'
 
 import { useDropdownListContext } from '..'
@@ -122,21 +123,17 @@ export const DropdownListMenu = () => {
                 intent={intent}
                 renderItem={(slot, index) => {
                   return (
-                    <Box
-                      drawable
-                      color={color}
-                      intent={itemBorderIntent}
-                      variant="outline"
-                      borderLeftWidth="0px"
-                      borderRightWidth="0px"
-                      borderTopWidth={!opensUpDownwards ? '0px' : undefined}
-                      borderBottomWidth={opensUpDownwards ? '0px' : undefined}
-                      borderRadius="0px"
-                    >
+                    <>
+                      {opensUpDownwards ? (
+                        <Divider marginBlock="0px" color={color} intent={itemBorderIntent} opacity="0.35" />
+                      ) : null}
                       {cloneElement(slot as ReactElement<DropdownListItemProps & { index: number }>, {
                         index,
                       })}
-                    </Box>
+                      {!opensUpDownwards ? (
+                        <Divider marginBlock="0px" color={color} intent={itemBorderIntent} opacity="0.35" />
+                      ) : null}
+                    </>
                   )
                 }}
                 ensureVisibleIndex={ensureVisibleIndex}

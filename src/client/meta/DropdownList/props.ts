@@ -11,6 +11,7 @@ import {
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
   DROPDOWN_LIST_PLACEMENTS,
   DEFAULT_DROPDOWN_OPEN_ON_FOCUS,
+  DEFAULT_DROPDOWN_LIST_INTENT,
 } from 'lib/components/core/overlays/DropdownList'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -35,12 +36,13 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
   },
   intent: {
     ...BUTTON_PROPS_META.intent,
-    description: 'Tone level applied to the list.',
+    defaultValue: String(DEFAULT_DROPDOWN_LIST_INTENT),
+    description: 'Color tone applied to the list.',
   },
   itemBorderIntent: {
     ...BOX_PROPS_META.intent,
     defaultValue: String(DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT),
-    description: 'Tone level applied to the dividers between list items.',
+    description: 'Color tone applied to the dividers between list items.',
   },
   keepOpen: {
     options: ['boolean'],

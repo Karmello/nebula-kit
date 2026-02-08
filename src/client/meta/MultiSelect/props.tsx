@@ -5,6 +5,7 @@ import { DEFAULT_SELECT_INLINE_SIZE } from 'lib/components/core/form-elements/Se
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'
 import { BOX_PROPS_META } from '../Box/props'
+import { BUTTON_PROPS_META } from '../Button/props'
 
 const MULTI_SELECT_PROPS_META: ComponentMeta<MultiSelectProps>['props'] = {
   children: {
@@ -12,7 +13,10 @@ const MULTI_SELECT_PROPS_META: ComponentMeta<MultiSelectProps>['props'] = {
     options: ['MultiSelect.Option'],
     description: 'Option slots rendered.',
   },
-  color: DROPDOWN_LIST_PROPS_META.color,
+  color: {
+    ...DROPDOWN_LIST_PROPS_META.color,
+    description: 'Color applied to the component.',
+  },
   defaultValue: {
     options: ['string[]'],
     description: 'Initial set of selected values when the component is used in uncontrolled mode.',
@@ -23,8 +27,8 @@ const MULTI_SELECT_PROPS_META: ComponentMeta<MultiSelectProps>['props'] = {
     ...BOX_PROPS_META.inlineSize,
     defaultValue: String(DEFAULT_SELECT_INLINE_SIZE),
   },
-  intent: DROPDOWN_LIST_PROPS_META.intent,
   itemBorderIntent: DROPDOWN_LIST_PROPS_META.itemBorderIntent,
+  listIntent: DROPDOWN_LIST_PROPS_META.intent,
   onChange: {
     options: ['(value: string[]) => void'],
     description: 'Callback fired when the set of selected values changes.',
@@ -36,6 +40,10 @@ const MULTI_SELECT_PROPS_META: ComponentMeta<MultiSelectProps>['props'] = {
   size: DROPDOWN_LIST_PROPS_META.size,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
+  triggerIntent: {
+    ...BUTTON_PROPS_META.intent,
+    description: 'Color tone applied to the trigger.',
+  },
   value: {
     options: ['string[]'],
     description: 'Current set of selected values when the component is used in controlled mode.',

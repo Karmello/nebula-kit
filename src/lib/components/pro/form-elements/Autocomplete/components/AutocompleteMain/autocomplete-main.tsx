@@ -17,7 +17,6 @@ export const AutocompleteMain = ({
   tagAttrs,
   tagRef,
   // DropdownList
-  intent,
   color,
   size,
   itemBorderIntent,
@@ -34,6 +33,8 @@ export const AutocompleteMain = ({
   debounceDelay,
   placeholder,
   showToggle,
+  triggerIntent,
+  listIntent,
   // extra
   items,
   currentValue,
@@ -98,7 +99,7 @@ export const AutocompleteMain = ({
         ...tagAttrs,
         className: classNames(withPrefix('autocomplete'), tagAttrs?.className),
       }}
-      intent={intent}
+      intent={listIntent}
       color={color}
       size={size}
       itemBorderIntent={itemBorderIntent}
@@ -141,7 +142,7 @@ export const AutocompleteMain = ({
                 placeholder={placeholder}
                 size={size}
                 variant="solid"
-                intent={intent}
+                intent={triggerIntent}
                 color={color}
                 disabled={disabled}
                 endAffix={

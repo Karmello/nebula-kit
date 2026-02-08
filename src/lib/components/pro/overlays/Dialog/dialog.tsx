@@ -3,6 +3,7 @@ import classNames from 'classnames'
 
 import { Box, Button, Flex, Portal, FocusTrap, Resize } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
+import { useGlobalScrollLock, useCurrentTheme } from 'lib/hooks'
 import { withPrefix } from 'lib/helpers'
 
 import { DialogProvider } from './DialogProvider'
@@ -31,6 +32,9 @@ export const Dialog = ({
   const ref = useRef(null)
   const canAnimateRef = useRef(false)
 
+  const { lock, unlock } = useGlobalScrollLock()
+  const theme = useCurrentTheme()
+
   useEffect(() => {
     const id = requestAnimationFrame(() => {
       canAnimateRef.current = true
@@ -40,16 +44,13 @@ export const Dialog = ({
 
   useEffect(() => {
     if (!open) return
-    const { overflow } = document.body.style
-    document.body.style.overflow = 'hidden'
+    lock()
     return () => {
       setTimeout(() => {
-        document.body.style.overflow = overflow
+        unlock()
       }, DIALOG_RESIZE_DURATION)
     }
   }, [open])
-
-  const theme = document.documentElement.getAttribute('data-theme')
 
   return (
     <WithSlots<'Dialog.Header' | 'Dialog.Content' | 'Dialog.Footer'>
@@ -107,6 +108,9 @@ export const Dialog = ({
                           className: classNames(withPrefix('dialog'), tagAttrs?.className),
                           role: 'dialog',
                           'aria-modal': true,
+                          onClick: e => {
+                            e.stopPropagation()
+                          },
                         }}
                         tagRef={tagRef || ref}
                         drawable
@@ -115,7 +119,7 @@ export const Dialog = ({
                         maxBlockSize="90dvh"
                         position="relative"
                         overflowY="auto"
-                        intent="primary"
+                        intent="secondary"
                         inlineSize={DIALOG_SIZE_MAP[size || 'md']}
                         borderRadius="var(--neb-border-radius)"
                       >

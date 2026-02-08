@@ -21,6 +21,7 @@ const DIVIDER_PROPS_META: ComponentMeta<DividerProps>['props'] = {
   },
   marginBottom: BOX_PROPS_META.marginBottom,
   marginTop: BOX_PROPS_META.marginTop,
+  opacity: BOX_PROPS_META.opacity,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
 }

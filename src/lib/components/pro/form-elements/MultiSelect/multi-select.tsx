@@ -15,7 +15,6 @@ export const MultiSelect = ({
   tagAttrs,
   tagRef,
   // DropdownList
-  intent,
   color,
   size,
   itemBorderIntent,
@@ -29,6 +28,8 @@ export const MultiSelect = ({
   value,
   onChange,
   dropdownPlacement,
+  triggerIntent,
+  listIntent,
 }: MultiSelectProps) => {
   const [internalValue, setInternalValue] = useState<string[]>(defaultValue || [])
 
@@ -72,7 +73,7 @@ export const MultiSelect = ({
                 ...tagAttrs,
                 className: classNames(withPrefix('multi-select'), tagAttrs?.className),
               }}
-              intent={intent}
+              intent={listIntent}
               color={color}
               size={size}
               itemBorderIntent={itemBorderIntent}
@@ -107,7 +108,7 @@ export const MultiSelect = ({
                         justifyContent="space-between"
                         size={size}
                         variant="solid"
-                        intent={intent}
+                        intent={triggerIntent}
                         color={color}
                         disabled={disabled}
                         fullWidth

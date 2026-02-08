@@ -15,7 +15,6 @@ export const Select = ({
   tagAttrs,
   tagRef,
   // DropdownList
-  intent,
   color,
   size,
   itemBorderIntent,
@@ -30,6 +29,8 @@ export const Select = ({
   onChange,
   dropdownPlacement,
   staticLabel,
+  triggerIntent,
+  listIntent,
 }: SelectProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
@@ -59,9 +60,9 @@ export const Select = ({
             <DropdownList
               tagRef={tagRef}
               tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('select'), tagAttrs?.className) }}
-              intent={intent}
               color={color}
               size={size}
+              intent={listIntent}
               itemBorderIntent={itemBorderIntent}
               scrollToIndex={currentSlotIndex}
               scrollAlign={scrollAlign}
@@ -93,7 +94,7 @@ export const Select = ({
                         justifyContent="space-between"
                         size={size}
                         variant="solid"
-                        intent={intent}
+                        intent={triggerIntent}
                         color={color}
                         disabled={disabled}
                         fullWidth

@@ -1,12 +1,11 @@
 import {
-  Button,
-  Flex,
   BoxProps,
   ButtonProps,
   CalloutProps,
   SectionProps,
   TextProps,
   IconProps,
+  Select,
 } from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
@@ -114,29 +113,33 @@ export const PredefinedExamples = () => {
   const allProps = components[activeComponent].props
 
   return (
-    <Flex columnGap="7px">
-      {CONFIG[activeComponent].map((predefinedProps, index) => {
+    <Select
+      size="xs"
+      staticLabel="Preset"
+      inlineSize="100px"
+      value=""
+      onChange={value => {
+        Object.keys(allProps).forEach(propName => {
+          setPropField(activeComponent, propName, 'value', allProps[propName].defaultValue)
+        })
+
+        if (value === 'reset') return
+
+        const props = CONFIG[activeComponent][Number(value)]
+
+        Object.keys(props).forEach(propName => {
+          setPropField(activeComponent, propName, 'value', props[propName as never])
+        })
+      }}
+    >
+      {CONFIG[activeComponent].map((_, index) => {
         return (
-          <Button
-            key={index}
-            tagAttrs={{
-              onClick: () => {
-                Object.keys(allProps).forEach(propName => {
-                  setPropField(activeComponent, propName, 'value', allProps[propName].defaultValue)
-                })
-                Object.keys(predefinedProps).forEach(propName => {
-                  setPropField(activeComponent, propName, 'value', predefinedProps[propName as never])
-                })
-              },
-            }}
-            size="xs"
-            intent="primary"
-            color="blue"
-          >
+          <Select.Option key={index} value={String(index)}>
             Example {index + 1}
-          </Button>
+          </Select.Option>
         )
       })}
-    </Flex>
+      <Select.Option value="reset">Reset</Select.Option>
+    </Select>
   )
 }

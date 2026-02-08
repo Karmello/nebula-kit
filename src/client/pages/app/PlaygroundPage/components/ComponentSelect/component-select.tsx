@@ -11,14 +11,7 @@ export const ComponentSelect = () => {
     <>
       <Text bold>Component</Text>
       <Spacer blockSize="5px" />
-      <Select
-        value={activeComponent}
-        onChange={setActiveComponent}
-        scrollAlign="center"
-        visibleItemsCount={7}
-        intent={{ base: 'secondary', lg: 'tertiary' }}
-        itemBorderIntent={{ base: 'tertiary', lg: 'muted' }}
-      >
+      <Select value={activeComponent} onChange={setActiveComponent} scrollAlign="center">
         {Object.keys(components).map(name => (
           <Select.Option value={name}>{name}</Select.Option>
         ))}

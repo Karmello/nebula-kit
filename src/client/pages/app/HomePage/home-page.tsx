@@ -16,11 +16,9 @@ import {
   Text,
   Segment,
   Grid,
-  Switch,
   Reveal,
 } from 'lib/components'
 
-import { NEBKIT_BORDER_RADIUS_SIZES } from 'lib/components/core/utility/NebkitProvider'
 import { COLORS, THEMES } from 'lib/definitions'
 
 import { Ortho } from './Ortho'
@@ -32,10 +30,6 @@ export const HomePage = () => {
   const setTheme = useAppStore(state => state.setTheme)
   const brand = useAppStore(state => state.brand)
   const setBrand = useAppStore(state => state.setBrand)
-  const borderRadiusSize = useAppStore(state => state.borderRadiusSize)
-  const setBorderRadiusSize = useAppStore(state => state.setBorderRadiusSize)
-  const ripple = useAppStore(state => state.ripple)
-  const setRipple = useAppStore(state => state.setRipple)
 
   return (
     <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">
@@ -158,24 +152,6 @@ export const HomePage = () => {
                       <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
                     ))}
                   </Select>
-                </Flex.Item>
-                <Flex.Item>
-                  <Text bold>Border radius</Text>
-                  <Select
-                    value={borderRadiusSize}
-                    onChange={setBorderRadiusSize}
-                    inlineSize="150px"
-                    size="sm"
-                    scrollAlign="center"
-                  >
-                    {NEBKIT_BORDER_RADIUS_SIZES.map(n => (
-                      <Select.Option value={n}>{n}</Select.Option>
-                    ))}
-                  </Select>
-                </Flex.Item>
-                <Flex.Item>
-                  <Text bold>Ripple</Text>
-                  <Switch checked={ripple} onChange={setRipple} />
                 </Flex.Item>
               </Flex>
             </Flex.Item>

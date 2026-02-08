@@ -6,6 +6,9 @@ export const DEFAULT_DIVIDER_MARGIN_BLOCK: DividerProps['marginBlock'] = '3px'
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'hr'>, 'tagAttrs' | 'tagRef'>
 
-type PropsFromBox = Pick<BoxProps<'hr'>, 'color' | 'intent' | 'marginBlock' | 'marginTop' | 'marginBottom'>
+type PropsFromBox = Pick<
+  BoxProps<'hr'>,
+  'color' | 'intent' | 'marginBlock' | 'marginTop' | 'marginBottom' | 'opacity'
+>
 
 export type DividerProps = PropsFromHtmlTag & PropsFromBox

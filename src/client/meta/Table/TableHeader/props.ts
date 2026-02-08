@@ -18,7 +18,7 @@ const TABLE_HEADER_PROPS_META: ComponentMeta<TableHeaderProps>['props'] = {
   },
   intent: {
     ...BOX_PROPS_META.intent,
-    description: 'Tone level applied to every cell.',
+    description: 'Color tone applied to every cell.',
   },
   paddingBlock: {
     ...BOX_PROPS_META.paddingBlock,

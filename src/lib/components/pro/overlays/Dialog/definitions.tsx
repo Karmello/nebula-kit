@@ -13,7 +13,7 @@ export const DEFAULT_DIALOG_SIZE: DialogProps['size'] = 'md'
 export const DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK: DialogProps['closeOnBackdropClick'] = false
 
 export const DIALOG_INTENT: BoxIntent = 'tertiary'
-export const DIALOG_PADDING: string = '15px'
+export const DIALOG_PADDING: string = '12px'
 export const DIALOG_RESIZE_DURATION = 200
 
 export type DialogSize = (typeof DIALOG_SIZES)[number]

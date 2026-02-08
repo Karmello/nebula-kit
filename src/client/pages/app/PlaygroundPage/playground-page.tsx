@@ -1,5 +1,5 @@
 import { useAppStore } from 'client/store'
-import { Box, Flex, Section, Spacer, SplitView, Text } from 'lib/components'
+import { Box, Flex, Section, Spacer, SplitView } from 'lib/components'
 
 import {
   ComponentSelect,
@@ -11,33 +11,27 @@ import {
   SwitchPropViewButton,
   DocsButton,
   PredefinedExamples,
-  ResetPropsButton,
 } from './components'
-
-import { usePlaygroundStore } from './store'
 
 export const PlaygroundPage = () => {
   const theme = useAppStore(state => state.theme)
-  const activeComponent = usePlaygroundStore(state => state.activeComponent)
 
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} overflowY="hidden">
       <Section heading="Playground" iconName="shapes">
+        <Spacer blockSize="10px" />
         <SplitView sidePosition="right">
           {({ mode, setSideOpen }) => {
             return (
               <>
                 <SplitView.Main>
                   <SplitView.MainBar>
-                    <Flex flexWrap="wrap" gap="12px">
-                      <Text typography="h6" intent="primary" color="blue">{`<${activeComponent}>`}</Text>
+                    <Flex flexWrap="wrap" gap="8px">
+                      <Flex flexWrap="wrap" gap="8px">
+                        <TogglePropsButton />
+                        <PredefinedExamples />
+                      </Flex>
                       <DocsButton />
-                      <TogglePropsButton />
-                      <ResetPropsButton />
-                    </Flex>
-                    <Spacer blockSize="20px" />
-                    <Flex flexWrap="wrap" columnGap="7px">
-                      <PredefinedExamples />
                     </Flex>
                   </SplitView.MainBar>
                   <Spacer blockSize="30px" />
@@ -51,6 +45,7 @@ export const PlaygroundPage = () => {
                 </SplitView.Main>
                 <SplitView.Side
                   theme={{ base: theme === 'light' ? 'dark' : 'light', lg: theme }}
+                  intent={{ base: 'muted', lg: 'neutral' }}
                   inlineSize="320px"
                 >
                   <Box padding={{ base: '10px', lg: '0px' }} paddingLeft={{ lg: '30px' }}>
