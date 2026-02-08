@@ -19,7 +19,7 @@ export const RELEASE_INFO: Record<
   }
 > = {
   '0.6.0': {
-    timestamp: 1770354669798,
+    timestamp: 1770532931161,
     changelog: {
       main: ['refined Button sizing'],
     },

@@ -17,7 +17,6 @@ export const Autocomplete = ({
   tagAttrs,
   tagRef,
   // DropdownList
-  intent,
   color,
   size,
   itemBorderIntent,
@@ -37,6 +36,8 @@ export const Autocomplete = ({
   debounceDelay,
   placeholder,
   showToggle = DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
+  triggerIntent,
+  listIntent,
 }: AutocompleteProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
@@ -59,7 +60,8 @@ export const Autocomplete = ({
           <AutocompleteMain
             tagAttrs={tagAttrs}
             tagRef={tagRef}
-            intent={intent}
+            triggerIntent={triggerIntent}
+            listIntent={listIntent}
             color={color}
             size={size}
             itemBorderIntent={itemBorderIntent}

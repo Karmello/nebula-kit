@@ -5,6 +5,7 @@ import { DEFAULT_SELECT_INLINE_SIZE } from 'lib/components/core/form-elements/Se
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'
 import { BOX_PROPS_META } from '../Box/props'
+import { BUTTON_PROPS_META } from '../Button/props'
 
 const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
   children: {
@@ -12,7 +13,10 @@ const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
     options: ['Select.Option'],
     description: 'Option slots rendered.',
   },
-  color: DROPDOWN_LIST_PROPS_META.color,
+  color: {
+    ...DROPDOWN_LIST_PROPS_META.color,
+    description: 'Color applied to the component.',
+  },
   defaultValue: {
     options: ['string'],
     description: 'Initial selected item value when the component is used in uncontrolled mode.',
@@ -23,8 +27,8 @@ const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
     ...BOX_PROPS_META.inlineSize,
     defaultValue: String(DEFAULT_SELECT_INLINE_SIZE),
   },
-  intent: DROPDOWN_LIST_PROPS_META.intent,
   itemBorderIntent: DROPDOWN_LIST_PROPS_META.itemBorderIntent,
+  listIntent: DROPDOWN_LIST_PROPS_META.intent,
   onChange: {
     options: ['(value: string) => void'],
     description: 'Callback fired when the selected value changes.',
@@ -33,7 +37,10 @@ const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
     ...DROPDOWN_LIST_PROPS_META.scrollAlign,
     description: 'Defines how the selected option is positioned within the scroll area.',
   },
-  size: DROPDOWN_LIST_PROPS_META.size,
+  size: {
+    ...DROPDOWN_LIST_PROPS_META.size,
+    description: 'Applies the selected size to the trigger and list items.',
+  },
   staticLabel: {
     options: ['string'],
     description:
@@ -41,6 +48,10 @@ const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
+  triggerIntent: {
+    ...BUTTON_PROPS_META.intent,
+    description: 'Tone level applied to the trigger.',
+  },
   value: {
     options: ['string'],
     description: 'Current selected item value when the component is used in controlled mode.',

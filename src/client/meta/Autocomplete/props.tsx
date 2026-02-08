@@ -10,6 +10,7 @@ import {
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'
 import { BOX_PROPS_META } from '../Box/props'
+import { INPUT_PROPS_META } from '../Input/props'
 
 const AUTOCOMPLETE_PROPS_META: ComponentMeta<AutocompleteProps>['props'] = {
   children: {
@@ -17,7 +18,10 @@ const AUTOCOMPLETE_PROPS_META: ComponentMeta<AutocompleteProps>['props'] = {
     options: ['Autocomplete.Option'],
     description: 'Option slots rendered.',
   },
-  color: DROPDOWN_LIST_PROPS_META.color,
+  color: {
+    ...DROPDOWN_LIST_PROPS_META.color,
+    description: 'Color applied to the component.',
+  },
   debounceDelay: {
     options: ['number'],
     description:
@@ -38,8 +42,8 @@ const AUTOCOMPLETE_PROPS_META: ComponentMeta<AutocompleteProps>['props'] = {
     ...BOX_PROPS_META.inlineSize,
     defaultValue: String(DEFAULT_AUTOCOMPLETE_INLINE_SIZE),
   },
-  intent: DROPDOWN_LIST_PROPS_META.intent,
   itemBorderIntent: DROPDOWN_LIST_PROPS_META.itemBorderIntent,
+  listIntent: DROPDOWN_LIST_PROPS_META.intent,
   noOptionsLabel: DROPDOWN_LIST_PROPS_META.noOptionsLabel,
   onChange: {
     options: ['(value: string) => void'],
@@ -65,6 +69,10 @@ const AUTOCOMPLETE_PROPS_META: ComponentMeta<AutocompleteProps>['props'] = {
   size: DROPDOWN_LIST_PROPS_META.size,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
+  triggerIntent: {
+    ...INPUT_PROPS_META.intent,
+    description: 'Tone level applied to the trigger.',
+  },
   value: {
     options: ['string'],
     description: 'Current selected item value when the component is used in controlled mode.',

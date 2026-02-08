@@ -26,7 +26,7 @@ export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) =>
       alignSelf="center"
     >
       {!isSwitchAtHit ? (
-        <Resize property="blockSize" visible={mainOpen}>
+        <Resize property="blockSize" visible={mainOpen} easing="cubic-bezier(0.4, 0, 0.2, 1)">
           {children}
         </Resize>
       ) : (
