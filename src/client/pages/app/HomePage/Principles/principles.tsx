@@ -13,7 +13,7 @@ export const Principles = () => {
             JSX is the primary development flow. CSS exists only as an internal implementation detail.
           </Text>
         </Section>
-        <Section heading="Built on composition" color="red" intent="primary" iconName="rectangleCircle">
+        <Section heading="Built on composition" color="red" intent="primary" iconName="rectangle-circle">
           <Text intent="neutral">
             Pure composition drives all component behavior. Functionality is never duplicated.
           </Text>
