@@ -26,25 +26,26 @@ export const HomePage = () => {
           <Divider />
           <Spacer blockSize="20px" />
           <Hero />
-          <Divider marginBlock="50px" />
+          <Divider marginBlock="30px" />
+          <Video />
+        </Flex.Item>
+        <Flex.Item flex="1">
           <Flex
             alignItems="center"
             alignContent="center"
             columnGap="70px"
             rowGap="55px"
             justifyContent={{ base: 'center', lg: 'flex-start' }}
-            flexDirection={{ base: 'column-reverse', md: 'row' }}
+            flexDirection={{ base: 'column', md: 'row-reverse' }}
           >
-            <Flex.Item>
-              <Ortho />
-            </Flex.Item>
             <Flex.Item>
               <Preferences />
             </Flex.Item>
+            <Flex.Item>
+              <Ortho />
+            </Flex.Item>
           </Flex>
-          <Video />
-        </Flex.Item>
-        <Flex.Item flex="1">
+          <Spacer blockSize="70px" />
           <Principles />
         </Flex.Item>
       </Flex>
