@@ -15,7 +15,6 @@ export const SwitchPropViewButton = () => {
 
   return (
     <Button
-      color="blue"
       intent="primary"
       size="sm"
       fullWidth

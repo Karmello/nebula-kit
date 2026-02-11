@@ -40,7 +40,6 @@ export const CatalogPageTemplate = memo(
                       key={categoryKey}
                       label={label}
                       variant="ghost"
-                      color="blue"
                       intent={isCategorySelected ? 'primary' : 'neutral'}
                       expanded={isCategorySelected}
                       justifyContent="flex-start"
@@ -130,8 +129,8 @@ export const CatalogPageTemplate = memo(
                             <Box
                               drawable
                               variant="solid"
+                              intent="primary"
                               color="blue"
-                              intent={bundleLabel === 'core' ? 'tertiary' : 'primary'}
                               borderRadius="10px"
                               paddingBlock="3px"
                               paddingInline="7px"
