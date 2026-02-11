@@ -3,9 +3,9 @@ import { Box, MarkerList, Section, Spacer, Text } from 'lib/components'
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Section heading="Theme" size="sm" variant="outline" intent="secondary" color="blue">
+      <Section heading="Theme axis" size="sm">
         <Text>Theme defines the overall color scheme used to interpret surfaces and colors.</Text>
-        <Spacer />
+        <Spacer blockSize="10px" />
         <MarkerList>
           <MarkerList.Item>
             <Text>Supported themes: light and dark</Text>
@@ -23,16 +23,16 @@ export default () => {
             <Text>The nearest theme boundary always wins</Text>
           </MarkerList.Item>
         </MarkerList>
-        <Spacer />
+        <Spacer blockSize="10px" />
         <Text>
           Local themes allow creating isolated areas (for example a dark panel inside a light app) without
           affecting the rest of the UI.
         </Text>
       </Section>
       <Spacer blockSize="40px" />
-      <Section heading="Brand" size="sm" variant="outline" intent="secondary" color="blue">
+      <Section heading="Brand axis" size="sm">
         <Text>Brand defines the default surface color used when no explicit color is set.</Text>
-        <Spacer />
+        <Spacer blockSize="10px" />
         <MarkerList>
           <MarkerList.Item>
             <Text>Global brand is set via NebkitProvider</Text>
@@ -47,13 +47,13 @@ export default () => {
             <Text>Brands are scoped and inherited by descendants</Text>
           </MarkerList.Item>
         </MarkerList>
-        <Spacer />
+        <Spacer blockSize="10px" />
         <Text>Brand is typically used to define the visual identity of a section or feature.</Text>
       </Section>
       <Spacer blockSize="40px" />
-      <Section heading="Color" size="sm" variant="outline" intent="secondary" color="blue">
+      <Section heading="Color axis" size="sm">
         <Text>Color is a component-level override.</Text>
-        <Spacer />
+        <Spacer blockSize="10px" />
         <MarkerList>
           <MarkerList.Item>
             <Text>Color always overrides brand</Text>
@@ -68,13 +68,13 @@ export default () => {
             <Text>If color is set, brand is ignored for that component</Text>
           </MarkerList.Item>
         </MarkerList>
-        <Spacer />
+        <Spacer blockSize="10px" />
         <Text>Use color when a component must be styled explicitly.</Text>
       </Section>
       <Spacer blockSize="40px" />
-      <Section heading="Variant and intent" size="sm" variant="outline" intent="secondary" color="blue">
+      <Section heading="Variant and intent axes" size="sm">
         <Text>Variant and intent define how a drawable surface is rendered.</Text>
-        <Spacer />
+        <Spacer blockSize="10px" />
         <MarkerList>
           <MarkerList.Item>
             <Text>Variant controls structure (solid, outline, soft-outline, ghost)</Text>
@@ -89,13 +89,13 @@ export default () => {
             <Text>They rely on resolved theme and color/brand values</Text>
           </MarkerList.Item>
         </MarkerList>
-        <Spacer />
+        <Spacer blockSize="10px" />
         <Text>Variant and intent never propagate.</Text>
       </Section>
       <Spacer blockSize="40px" />
-      <Section heading="Drawable surface" size="sm" variant="outline" intent="secondary" color="blue">
+      <Section heading="About drawable surface" size="sm">
         <Text>Only drawable Boxes participate in visual styling.</Text>
-        <Spacer />
+        <Spacer blockSize="10px" />
         <MarkerList>
           <MarkerList.Item>
             <Text>The drawable prop enables backgrounds, text color, variants and intents</Text>
@@ -107,13 +107,13 @@ export default () => {
             <Text>Theme, brand, color, variant and intent apply only to drawable Boxes</Text>
           </MarkerList.Item>
         </MarkerList>
-        <Spacer />
+        <Spacer blockSize="10px" />
         <Text>This separation keeps layouts clean and reduces unnecessary styling work.</Text>
       </Section>
       <Spacer blockSize="40px" />
-      <Section heading="Local styling islands" size="sm" variant="outline" intent="secondary" color="blue">
+      <Section heading="About local styling islands" size="sm">
         <Text>A Box can act as a local styling boundary.</Text>
-        <Spacer />
+        <Spacer blockSize="10px" />
         <MarkerList>
           <MarkerList.Item>
             <Text>Theme and brand can be flipped locally</Text>
@@ -125,7 +125,7 @@ export default () => {
             <Text>Global settings remain unchanged</Text>
           </MarkerList.Item>
         </MarkerList>
-        <Spacer />
+        <Spacer blockSize="10px" />
         <Text>
           Different combinations of theme and brand can be nested. Each Box and its contents use the nearest
           theme and brand settings defined around them, without affecting the rest of the layout.
