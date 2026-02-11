@@ -130,7 +130,6 @@ export const CatalogPageTemplate = memo(
                               drawable
                               variant="solid"
                               intent="primary"
-                              color="blue"
                               borderRadius="10px"
                               paddingBlock="3px"
                               paddingInline="7px"

@@ -1,6 +1,6 @@
 {
   "name": "@nebula-kit/core",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "React UI system built on composition and prop inheritance, with strict rules governing component appearance and behavior. Designed to reduce UI entropy and keep interfaces consistent and maintainable as products grow over time.",
   "homepage": "https://nebulakit.dev",
   "funding": {

@@ -1,4 +1,6 @@
 @mixin neb-set-dark-theme-vars($color, $prefix) {
+  $neb-bright-colors: ('cyan', 'yellow', 'amber');
+
   // solid
   --neb-#{$prefix}neutral-solid: var(--neb-#{$color}-15);
   --neb-#{$prefix}neutral-solid-hover: var(--neb-#{$color}-14);
@@ -14,8 +16,17 @@
   --neb-#{$prefix}secondary-solid-disabled: var(--neb-#{$color}-9);
   --neb-#{$prefix}primary-solid: var(--neb-#{$color}-8);
   --neb-#{$prefix}primary-solid-hover: var(--neb-#{$color}-7);
+
+  // default (works for most colors)
   --neb-#{$prefix}primary-solid-disabled: var(--neb-#{$color}-6);
   --neb-#{$prefix}primary-text: var(--neb-#{$color}-1);
+
+  // 🔥 Bright color contrast override (moved here from theme files)
+  @if index($neb-bright-colors, $color) {
+    --neb-#{$prefix}primary-text: var(--neb-background);
+    --neb-#{$prefix}primary-solid-disabled: var(--neb-gray-8);
+  }
+
   --neb-#{$prefix}inverse-solid: var(--neb-#{$color}-4);
   --neb-#{$prefix}inverse-solid-hover: var(--neb-#{$color}-1);
   --neb-#{$prefix}inverse-solid-disabled: var(--neb-#{$color}-6);

@@ -1,4 +1,5 @@
 export const RELEASE_VERSIONS = [
+  '0.6.1',
   '0.6.0',
   '0.5.0',
   '0.4.3',
@@ -18,6 +19,15 @@ export const RELEASE_INFO: Record<
     changelog?: { main?: string[]; core?: string[]; pro?: string[] }
   }
 > = {
+  '0.6.1': {
+    timestamp: 1770829250673,
+    changelog: {
+      main: [
+        'improved contrast handling for bright brand colors in light and dark themes',
+        'contrast logic moved into color resolution layer for consistency',
+      ],
+    },
+  },
   '0.6.0': {
     timestamp: 1770590689376,
     changelog: {
