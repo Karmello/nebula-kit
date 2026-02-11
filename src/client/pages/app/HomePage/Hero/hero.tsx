@@ -1,6 +1,6 @@
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
-import { Button, Flex, Link, Spacer, Text } from 'lib/components'
+import { Button, Flex, Image, Link, Spacer, Text } from 'lib/components'
 
 export const Hero = () => {
   const navigateTo = useNavigateTo()
@@ -49,15 +49,13 @@ export const Hero = () => {
           </Link>
         </Flex>
       </Flex.Item>
-      <Flex.Item>
-        <img
-          src="/captain-nebula.webp"
-          width="175px"
-          height="175px"
-          alt="Captain Nebula"
-          fetchPriority="high"
-        />
-      </Flex.Item>
+      <Image
+        src="/captain-nebula.webp"
+        inlineSize="225px"
+        blockSize="225px"
+        alt="Captain Nebula"
+        fetchPriority="high"
+      />
     </Flex>
   )
 }
