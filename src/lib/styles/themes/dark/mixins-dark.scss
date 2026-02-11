@@ -1,3 +1,5 @@
+@use 'sass:list';
+
 @mixin neb-set-dark-theme-vars($color, $prefix) {
   $neb-bright-colors: ('cyan', 'yellow', 'amber');
 
@@ -22,7 +24,7 @@
   --neb-#{$prefix}primary-text: var(--neb-#{$color}-1);
 
   // 🔥 Bright color contrast override (moved here from theme files)
-  @if index($neb-bright-colors, $color) {
+  @if list.index($neb-bright-colors, $color) {
     --neb-#{$prefix}primary-text: var(--neb-background);
     --neb-#{$prefix}primary-solid-disabled: var(--neb-gray-8);
   }
