@@ -17,6 +17,7 @@ $borderGlowColor: var(--neb-tertiary-solid);
   border-width: $borderSize;
   border-color: $borderColor;
   transform: rotate(22.5deg);
+  margin: 0 auto;
 
   .neb-ortho-inner {
     position: absolute;

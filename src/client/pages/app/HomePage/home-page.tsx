@@ -33,9 +33,9 @@ export const HomePage = () => {
           <Flex
             alignItems="center"
             alignContent="center"
-            columnGap="70px"
-            rowGap="55px"
-            justifyContent={{ base: 'center', lg: 'flex-start' }}
+            columnGap="50px"
+            rowGap="50px"
+            justifyContent="center"
             flexDirection={{ base: 'column', md: 'row-reverse' }}
           >
             <Flex.Item>
