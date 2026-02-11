@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
+import { useNavigateTo } from 'client/hooks'
+import { Box, Link } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import './ortho.scss'
@@ -20,19 +21,28 @@ const ArrowLine = ({ placement }: { placement: Placement }) => {
 }
 
 export const Ortho = () => {
+  const navigateTo = useNavigateTo()
+
   return (
-    <Box tagAttrs={{ className: withPrefix('ortho') }}>
-      <Box tagAttrs={{ className: withPrefix('ortho-inner') }}>
-        <Dot />
-        <ArrowTriangle placement="top" />
-        <ArrowTriangle placement="right" />
-        <ArrowTriangle placement="bottom" />
-        <ArrowTriangle placement="left" />
-        <ArrowLine placement="top" />
-        <ArrowLine placement="right" />
-        <ArrowLine placement="bottom" />
-        <ArrowLine placement="left" />
+    <Link
+      href="/foundations/concepts/styling-system/styling-axes"
+      onClick={() => {
+        navigateTo('/foundations/concepts/styling-system/styling-axes')
+      }}
+    >
+      <Box tagAttrs={{ className: withPrefix('ortho') }}>
+        <Box tagAttrs={{ className: withPrefix('ortho-inner') }}>
+          <Dot />
+          <ArrowTriangle placement="top" />
+          <ArrowTriangle placement="right" />
+          <ArrowTriangle placement="bottom" />
+          <ArrowTriangle placement="left" />
+          <ArrowLine placement="top" />
+          <ArrowLine placement="right" />
+          <ArrowLine placement="bottom" />
+          <ArrowLine placement="left" />
+        </Box>
       </Box>
-    </Box>
+    </Link>
   )
 }
