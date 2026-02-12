@@ -74,7 +74,10 @@ export const App = () => {
                     navigateTo(PageKey.home)
                   }}
                 >
-                  <Button intent={pathname.startsWith(PageKey.home) ? 'secondary' : 'muted'}>
+                  <Button
+                    intent={pathname.startsWith(PageKey.home) ? 'secondary' : 'muted'}
+                    bold={pathname.startsWith(PageKey.home)}
+                  >
                     NebulaKit
                   </Button>
                 </Link>

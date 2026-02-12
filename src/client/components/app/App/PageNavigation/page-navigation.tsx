@@ -46,6 +46,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         >
           <Button
             intent={currentPageKey === PageKey.playground ? 'secondary' : 'muted'}
+            bold={currentPageKey === PageKey.playground}
             iconName="shapes"
             fullWidth
           >
@@ -65,6 +66,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         >
           <Button
             intent={currentPageKey === PageKey.foundations ? 'secondary' : 'muted'}
+            bold={currentPageKey === PageKey.foundations}
             iconName="book-open-text"
             fullWidth
           >
@@ -82,6 +84,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         >
           <Button
             intent={currentPageKey === PageKey.core ? 'secondary' : 'muted'}
+            bold={currentPageKey === PageKey.core}
             iconName="package"
             fullWidth
           >
@@ -97,7 +100,12 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             navigateTo(`${PageKey.pro}/${proPageCategoryKey}/${proPageItemKey}/${proPageSectionKey}`)
           }}
         >
-          <Button intent={currentPageKey === PageKey.pro ? 'secondary' : 'muted'} iconName="star" fullWidth>
+          <Button
+            intent={currentPageKey === PageKey.pro ? 'secondary' : 'muted'}
+            bold={currentPageKey === PageKey.pro}
+            iconName="star"
+            fullWidth
+          >
             Pro
           </Button>
         </Link>
@@ -112,6 +120,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         >
           <Button
             intent={currentPageKey === PageKey.faq ? 'secondary' : 'muted'}
+            bold={currentPageKey === PageKey.faq}
             iconName="message-circle-question-mark"
             fullWidth
           >
@@ -127,7 +136,12 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             navigateTo(PageKey.blog)
           }}
         >
-          <Button intent={currentPageKey === PageKey.blog ? 'secondary' : 'muted'} iconName="rss" fullWidth>
+          <Button
+            intent={currentPageKey === PageKey.blog ? 'secondary' : 'muted'}
+            bold={currentPageKey === PageKey.blog}
+            iconName="rss"
+            fullWidth
+          >
             Blog
           </Button>
         </Link>
@@ -143,6 +157,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
           >
             <Button
               intent={currentPageKey === PageKey.pricing ? 'secondary' : 'muted'}
+              bold={currentPageKey === PageKey.pricing}
               iconName="credit-card"
               fullWidth
             >
@@ -161,6 +176,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         >
           <Button
             intent={currentPageKey === PageKey.feedback ? 'secondary' : 'muted'}
+            bold={currentPageKey === PageKey.feedback}
             iconName="mail"
             fullWidth
           >

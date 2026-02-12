@@ -25,6 +25,7 @@ export const SideNavCategory = ({
   color,
   intent = DEFAULT_SIDE_NAV_CATEGORY_INTENT,
   justifyContent,
+  bold,
   // own
   label,
   expanded = DEFAULT_SIDE_NAV_CATEGORY_EXPANDED,
@@ -91,6 +92,7 @@ export const SideNavCategory = ({
                 justifyContent={justifyContent}
                 size="sm"
                 fullWidth
+                bold={bold}
                 ripple={!expandedCategories[id]}
               >
                 {label}

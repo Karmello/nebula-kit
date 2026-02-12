@@ -6,7 +6,7 @@ import { ComponentMeta, PageKey } from 'client/definitions'
 import { CodeSnippet } from 'client/components'
 import { convertElemToString } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'
-import { Text, Box, Spacer, Section, Button, Link, Table } from 'lib/components'
+import { Text, Box, Spacer, Section, Button, Link, Flex } from 'lib/components'
 
 import { ListWithHeading } from './ListWithHeading'
 import { ListWithChips } from './ListWithChips'
@@ -21,93 +21,50 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   } = meta
 
   const content = (
-    <>
-      <Text typography="lead">{title}</Text>
-      <Spacer />
-      {examples?.[0] ? (
-        <>
-          <CodeSnippet lang="tsx" code={examples[0].code || convertElemToString(examples[0].jsx)} />
-          <Spacer blockSize="40px" />
-        </>
-      ) : null}
+    <Flex flexDirection="column" alignItems="stretch" gap="30px">
+      <Box>
+        <Text typography="lead">{title}</Text>
+        {examples?.[0] ? (
+          <Box marginBlock="15px">
+            <CodeSnippet lang="tsx" code={examples[0].code || convertElemToString(examples[0].jsx)} />
+          </Box>
+        ) : null}
+      </Box>
       {description ? (
-        <>
-          <Section heading="Description" size="sm">
-            <Text>{description}</Text>
-          </Section>
-          <Spacer blockSize="40px" />
-        </>
+        <Section heading="Description" size="sm">
+          <Text>{description}</Text>
+        </Section>
       ) : null}
-      {features ? (
-        <>
-          <ListWithHeading heading="Features" items={features} />
-          <Spacer blockSize="40px" />
-        </>
+      {features ? <ListWithHeading heading="Features" items={features} /> : null}
+      {composedOf ? (
+        <Section size="xs" heading="Composed of" iconName="arrow-right">
+          <ListWithChips items={composedOf} color="red" />
+        </Section>
       ) : null}
-      <Table intent="neutral">
-        <Table.Body intent="muted" color="gray">
-          {composedOf ? (
-            <Table.Row>
-              <Table.Cell>
-                <Text bold noWrap>
-                  Composed of
-                </Text>
-              </Table.Cell>
-              <Table.Cell>
-                <ListWithChips items={composedOf} color="red" />
-              </Table.Cell>
-            </Table.Row>
-          ) : null}
-          {topLevelTags ? (
-            <Table.Row>
-              <Table.Cell>
-                <Text bold noWrap>
-                  {topLevelTags.length > 1 ? 'Root tags' : 'Root tag'}
-                </Text>
-              </Table.Cell>
-              <Table.Cell>
-                <ListWithChips items={topLevelTags as string[]} color="amber" />
-              </Table.Cell>
-            </Table.Row>
-          ) : null}
-          {props ? (
-            <Table.Row>
-              <Table.Cell>
-                <Text bold noWrap>
-                  Props
-                </Text>
-              </Table.Cell>
-              <Table.Cell>
-                <ListWithChips items={Object.keys(props).sort((a, b) => a.localeCompare(b))} />
-              </Table.Cell>
-            </Table.Row>
-          ) : null}
-          {slots ? (
-            <Table.Row>
-              <Table.Cell>
-                <Text bold noWrap>
-                  Slots
-                </Text>
-              </Table.Cell>
-              <Table.Cell>
-                <ListWithChips items={slots} color="gray" />
-              </Table.Cell>
-            </Table.Row>
-          ) : null}
-          {hooks ? (
-            <Table.Row>
-              <Table.Cell>
-                <Text bold noWrap>
-                  Hooks
-                </Text>
-              </Table.Cell>
-              <Table.Cell>
-                <ListWithChips items={hooks} color="green" />
-              </Table.Cell>
-            </Table.Row>
-          ) : null}
-        </Table.Body>
-      </Table>
+      {topLevelTags ? (
+        <Section
+          size="xs"
+          heading={topLevelTags.length > 1 ? 'Root tags' : 'Root tag'}
+          iconName="arrow-right"
+        >
+          <ListWithChips items={topLevelTags as string[]} color="amber" />
+        </Section>
+      ) : null}
+      {props ? (
+        <Section size="xs" heading="Props" iconName="arrow-right">
+          <ListWithChips items={Object.keys(props).sort((a, b) => a.localeCompare(b))} />
+        </Section>
+      ) : null}
+      {slots ? (
+        <Section size="xs" heading="Slots" iconName="arrow-right">
+          <ListWithChips items={slots} color="gray" />
+        </Section>
+      ) : null}
+      {hooks ? (
+        <Section size="xs" heading="Hooks" iconName="arrow-right">
+          <ListWithChips items={hooks} color="green" />
+        </Section>
+      ) : null}
       {readMoreLink ? (
         <Box marginTop="20px">
           <Link
@@ -128,7 +85,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
           </Link>
         </Box>
       ) : null}
-    </>
+    </Flex>
   )
 
   return (

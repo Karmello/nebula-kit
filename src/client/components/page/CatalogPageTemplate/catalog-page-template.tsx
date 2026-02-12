@@ -40,9 +40,9 @@ export const CatalogPageTemplate = memo(
                       key={categoryKey}
                       label={label}
                       variant="ghost"
-                      intent={isCategorySelected ? 'primary' : 'neutral'}
                       expanded={isCategorySelected}
                       justifyContent="flex-start"
+                      bold={isCategorySelected}
                     >
                       {items.map(({ key: itemKey, label, sections }) => {
                         const href = `${pageKey}/${categoryKey}/${itemKey}/${sections[0].key}`

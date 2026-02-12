@@ -50,10 +50,12 @@ export const Section = <T extends SectionTag = 'section'>({
       overflowY="hidden"
     >
       <Text
+        tag={SECTION_SIZE_CONFIG[size].tag}
         typography={SECTION_SIZE_CONFIG[size].typography}
         iconName={iconName}
         iconPlacement={iconPlacement}
         color={color}
+        bold
       >
         {heading}
       </Text>

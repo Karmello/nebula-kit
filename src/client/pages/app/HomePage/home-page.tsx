@@ -20,7 +20,7 @@ export const HomePage = () => {
         <Flex.Item flex="2">
           <About />
           <Spacer blockSize="60px" />
-          <Text typography="h1" color="purple" intent="primary">
+          <Text typography="h1" color="purple" intent="primary" bold>
             NebulaKit
           </Text>
           <Divider />
