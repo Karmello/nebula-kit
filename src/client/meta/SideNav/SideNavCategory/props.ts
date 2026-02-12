@@ -11,6 +11,7 @@ import {
 } from 'lib/components/pro/navigation/SideNav'
 
 const SIDE_NAV_CATEGORY_PROPS_META: ComponentMeta<SideNavCategoryProps>['props'] = {
+  bold: BUTTON_PROPS_META.bold,
   children: {
     ...HTML_TAG_PROPS_META.children,
     options: ['SideNav.Item'],
