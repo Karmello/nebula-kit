@@ -49,6 +49,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             bold={currentPageKey === PageKey.playground}
             iconName="shapes"
             fullWidth
+            minInlineSize="155px"
           >
             Playground
           </Button>
@@ -69,6 +70,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             bold={currentPageKey === PageKey.foundations}
             iconName="book-open-text"
             fullWidth
+            minInlineSize="160px"
           >
             Foundations
           </Button>
@@ -87,6 +89,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             bold={currentPageKey === PageKey.core}
             iconName="package"
             fullWidth
+            minInlineSize="100px"
           >
             Core
           </Button>
@@ -105,6 +108,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             bold={currentPageKey === PageKey.pro}
             iconName="star"
             fullWidth
+            minInlineSize="90px"
           >
             Pro
           </Button>
@@ -123,6 +127,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             bold={currentPageKey === PageKey.faq}
             iconName="message-circle-question-mark"
             fullWidth
+            minInlineSize="95px"
           >
             FAQ
           </Button>
@@ -141,6 +146,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             bold={currentPageKey === PageKey.blog}
             iconName="rss"
             fullWidth
+            minInlineSize="100px"
           >
             Blog
           </Button>
@@ -160,6 +166,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
               bold={currentPageKey === PageKey.pricing}
               iconName="credit-card"
               fullWidth
+              minInlineSize="120px"
             >
               Pricing
             </Button>
@@ -179,6 +186,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             bold={currentPageKey === PageKey.feedback}
             iconName="mail"
             fullWidth
+            minInlineSize="140px"
           >
             Feedback
           </Button>

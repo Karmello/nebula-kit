@@ -77,6 +77,7 @@ export const App = () => {
                   <Button
                     intent={pathname.startsWith(PageKey.home) ? 'secondary' : 'muted'}
                     bold={pathname.startsWith(PageKey.home)}
+                    inlineSize="115px"
                   >
                     NebulaKit
                   </Button>
