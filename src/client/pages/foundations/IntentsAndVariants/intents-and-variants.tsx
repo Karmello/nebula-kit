@@ -13,12 +13,12 @@ const INTENTS_INFO_MAP: Record<BoxIntent, string> = {
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" alignItems="stretch" gap="50px">
-        <Text typography="lead">
+      <Flex flexDirection="column" alignItems="stretch" gap="60px">
+        <Text>
           Intents and variants available in the system, showing how semantic roles combine with visual styles
           across components.
         </Text>
-        <Section heading="Solid variant">
+        <Section heading="Solid variant" size="sm">
           <Text>Filled surface, strong emphasis.</Text>
           <Spacer blockSize="30px" />
           <Flex flexWrap="wrap" gap="7px">
@@ -31,7 +31,7 @@ export default () => {
             })}
           </Flex>
         </Section>
-        <Section heading="Outline variant">
+        <Section heading="Outline variant" size="sm">
           <Text>Border only, background matches the app's surface.</Text>
           <Spacer blockSize="30px" />
           <Flex flexWrap="wrap" gap="6px">
@@ -44,7 +44,7 @@ export default () => {
             })}
           </Flex>
         </Section>
-        <Section heading="Soft outline variant">
+        <Section heading="Soft outline variant" size="sm">
           <Text>Border only, background matches the app's surface, text matches the border.</Text>
           <Spacer blockSize="30px" />
           <Flex flexWrap="wrap" gap="6px">
@@ -57,7 +57,7 @@ export default () => {
             })}
           </Flex>
         </Section>
-        <Section heading="Ghost variant">
+        <Section heading="Ghost variant" size="sm">
           <Text>Text only, background and border match the app's surface.</Text>
           <Spacer blockSize="30px" />
           <Flex flexWrap="wrap" gap="6px">
@@ -70,7 +70,7 @@ export default () => {
             })}
           </Flex>
         </Section>
-        <Section heading="Intents">
+        <Section heading="Intents" size="sm">
           <MarkerList>
             {Object.keys(INTENTS_INFO_MAP).map(intent => (
               <MarkerList.Item key={intent}>

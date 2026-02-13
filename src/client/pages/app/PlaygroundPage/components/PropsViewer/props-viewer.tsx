@@ -40,9 +40,10 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
                 <Table.Row key={propName}>
                   <Table.Cell>
                     <Button
-                      variant={components[activeComponent].activeProp === propName ? 'solid' : 'ghost'}
-                      intent={components[activeComponent].activeProp === propName ? 'tertiary' : 'primary'}
+                      variant="ghost"
+                      intent="primary"
                       color="blue"
+                      bold={components[activeComponent].activeProp === propName}
                       size="sm"
                       iconName={props[propName].isResponsive ? 'screen-share' : undefined}
                       iconPlacement="right"

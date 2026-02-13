@@ -1,9 +1,5 @@
-import { Flex, Table, Text } from 'lib/components'
-import {
-  TEXT_TYPOGRAPHY,
-  TEXT_TYPOGRAPHY_CONFIG,
-  TextTypography,
-} from 'lib/components/core/base/Text/definitions'
+import { Box, Flex, Section, Text } from 'lib/components'
+import { TEXT_TYPOGRAPHY, TextTypography } from 'lib/components/core/base/Text/definitions'
 
 const MAP: Record<TextTypography, string> = {
   body: 'Default text for reading and general content. Balanced for legibility and rhythm across devices.',
@@ -22,40 +18,17 @@ const MAP: Record<TextTypography, string> = {
 
 export default () => {
   return (
-    <Flex flexDirection="column" gap="40px">
-      <Text typography="lead">All typography styles defined in the system.</Text>
-      {TEXT_TYPOGRAPHY.map(typography => (
-        <Table key={typography} paddingBlock="10px" paddingInline="15px">
-          <Table.Caption>
-            <Text intent="primary" bold underline iconName="arrow-right">
-              {typography}
+    <Box maxInlineSize="55rem">
+      <Flex flexDirection="column" gap="50px" alignItems="stretch">
+        <Text>All typography styles defined in the system.</Text>
+        {TEXT_TYPOGRAPHY.map(typography => (
+          <Section key={typography} heading={typography} size="xs" intent="primary">
+            <Text intent="neutral" typography={typography}>
+              {MAP[typography]}
             </Text>
-          </Table.Caption>
-          <Table.Header>
-            <Table.HeaderRow>
-              <Table.HeaderCell minInlineSize="25%">
-                Tag: {TEXT_TYPOGRAPHY_CONFIG['regular'][typography].tag}
-              </Table.HeaderCell>
-              <Table.HeaderCell minInlineSize="25%">
-                Font size: {TEXT_TYPOGRAPHY_CONFIG['regular'][typography].fontSize}
-              </Table.HeaderCell>
-              <Table.HeaderCell minInlineSize="25%">
-                Line height: {TEXT_TYPOGRAPHY_CONFIG['regular'][typography].lineHeight}
-              </Table.HeaderCell>
-              <Table.HeaderCell minInlineSize="25%">
-                Icon size: {TEXT_TYPOGRAPHY_CONFIG['regular'][typography].iconSize}
-              </Table.HeaderCell>
-            </Table.HeaderRow>
-          </Table.Header>
-          <Table.Body>
-            <Table.Row>
-              <Table.Cell colSpan={4}>
-                <Text typography={typography}>{MAP[typography]}</Text>
-              </Table.Cell>
-            </Table.Row>
-          </Table.Body>
-        </Table>
-      ))}
-    </Flex>
+          </Section>
+        ))}
+      </Flex>
+    </Box>
   )
 }

@@ -3,7 +3,7 @@ import { Box, Text, Flex } from 'lib/components'
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap="20px">
+      <Flex flexDirection="column" gap="15px">
         <Text>
           Just like Box's drawing capabilities, responsiveness is also centralized, implemented once and
           reused by multiple components. The model enforces very predictable behavior. When a prop is

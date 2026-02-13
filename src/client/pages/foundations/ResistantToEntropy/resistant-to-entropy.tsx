@@ -3,7 +3,7 @@ import { Box, Text, Flex, Link } from 'lib/components'
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap="20px">
+      <Flex flexDirection="column" gap="15px">
         <Text>
           Frontend projects don't fail suddenly, they decay gradually. Well-defined conventions inside a
           project are usually not enough to stop it. Copy-paste, exceptions, overrides and "just this once"

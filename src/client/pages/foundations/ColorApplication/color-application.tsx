@@ -10,7 +10,7 @@ export default () => {
 
   return (
     <>
-      <Text typography="lead">
+      <Text>
         Intents and variants combined through Button components, illustrating the system's full color spectrum
         in practice.
       </Text>

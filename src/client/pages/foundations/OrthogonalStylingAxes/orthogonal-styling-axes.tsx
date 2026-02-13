@@ -6,7 +6,7 @@ export default () => {
 
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap="20px">
+      <Flex flexDirection="column" gap="15px">
         <Text>
           NebulaKit resolves visual styles using five orthogonal axes: theme, brand, color, variant and
           intent. Theme and brand define the visual environment. They can be applied globally or locally and

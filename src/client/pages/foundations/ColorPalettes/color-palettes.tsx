@@ -15,8 +15,8 @@ export default () => {
   if (theme === 'dark') arr.reverse()
 
   return (
-    <>
-      <Text typography="lead">All color palettes defined in the system.</Text>
+    <Box maxInlineSize={{ lg: '55rem' }}>
+      <Text>All color palettes defined in the system.</Text>
       <Spacer />
       <Text bold>Brand</Text>
       <Select value={brand} onChange={setBrand} inlineSize="150px" size="sm" scrollAlign="center">
@@ -41,6 +41,7 @@ export default () => {
           )
         })}
       </Flex>
-    </>
+      <Spacer blockSize="15px" />
+    </Box>
   )
 }

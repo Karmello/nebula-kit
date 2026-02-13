@@ -3,7 +3,7 @@ import { Box, Text, Flex } from 'lib/components'
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap="20px">
+      <Flex flexDirection="column" gap="15px">
         <Text>
           NebulaKit is JSX first, meaning most of the time you are going to spend inside your JSX files,
           writing tags and customizing them via React props. This does not mean it is CSS-free or that you

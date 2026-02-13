@@ -3,7 +3,7 @@ import { Box, Text, Flex } from 'lib/components'
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap="20px">
+      <Flex flexDirection="column" gap="15px">
         <Text>
           NebulaKit ensures that proper semantic HTML tags are applied to each component automatically,
           without the developer needing to think about it at all. If a component is tied to a single HTML tag,
