@@ -1,5 +1,19 @@
 @use 'styles/definitions/definitions.scss' as *;
 
+html {
+  &[data-ripple-mode='off'] {
+    --neb-ripple-opacity: 0;
+  }
+
+  &[data-ripple-mode='default'] {
+    --neb-ripple-opacity: 0.15;
+  }
+
+  &[data-ripple-mode='emphasized'] {
+    --neb-ripple-opacity: 0.25;
+  }
+}
+
 .neb-ripple {
   position: absolute;
   top: 0;

@@ -6,10 +6,11 @@
 
     @each $intent in $neb-intents {
       &[data-neb-box-intent='#{$intent}'] {
+        --neb-ripple-bg: var(--neb-#{$intent}-solid-ripple);
+
         // rest
         background-color: var(--neb-#{$intent}-solid);
         color: var(--neb-#{$intent}-text, var(--neb-text));
-        --neb-ripple-bg: var(--neb-#{$intent}-text, var(--neb-text));
 
         // not disabled, interactive
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {

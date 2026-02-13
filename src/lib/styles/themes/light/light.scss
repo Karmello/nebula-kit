@@ -3,20 +3,6 @@
 @use '../dark/mixins-dark.scss' as *;
 @use './mixins-light.scss' as *;
 
-html[data-theme='light'] {
-  &[data-ripple-mode='off'] {
-    --neb-ripple-opacity-base: 0;
-  }
-
-  &[data-ripple-mode='default'] {
-    --neb-ripple-opacity-base: 0.1;
-  }
-
-  &[data-ripple-mode='emphasized'] {
-    --neb-ripple-opacity-base: 0.2;
-  }
-}
-
 /* Base light theme primitives, applied globally and to local theme islands */
 html[data-theme='light'],
 .neb-box[data-neb-box-theme='light'] {
