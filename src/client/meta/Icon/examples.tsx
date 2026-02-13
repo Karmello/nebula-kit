@@ -14,7 +14,7 @@ const ICON_EXAMPLES_META: ComponentMeta<IconProps>['examples'] = [
   },
   {
     description: 'Icon with custom color and intent.',
-    jsx: <Icon name="search" color="yellow" intent="primary" size="40px" />,
+    jsx: <Icon name="search" color="amber" intent="primary" size="40px" />,
   },
   {
     description: 'Custom SVG icon passed as children, semantic styling stays preserved.',

@@ -1,0 +1,13 @@
+@use 'sass:map';
+@use 'styles/definitions/definitions.scss' as defs;
+
+@mixin neb-load-palette($mode) {
+  $is-dark: $mode == 'dark';
+
+  @each $name, $scale in defs.$neb-palette {
+    @for $i from 1 through 15 {
+      $index: if($is-dark, 16 - $i, $i);
+      --neb-#{$name}-#{$i}: #{map.get($scale, $index)};
+    }
+  }
+}

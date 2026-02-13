@@ -164,7 +164,7 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
             <Table.HeaderCell>Position</Table.HeaderCell>
           </Table.HeaderRow>
         </Table.Header>
-        <Table.Body color="yellow" intent="muted">
+        <Table.Body color="amber" intent="muted">
           <Table.Row>
             <Table.Cell>Robert</Table.Cell>
             <Table.Cell>Lewandowski</Table.Cell>

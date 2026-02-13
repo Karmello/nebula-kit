@@ -1,7 +1,11 @@
 @use 'sass:list';
 
+$neb-bright-colors: ('cyan', 'yellow', 'amber');
+
 @mixin neb-set-theme-vars($color, $prefix) {
-  $neb-bright-colors: ('cyan', 'yellow', 'amber');
+  --neb-background: var(--neb-#{$color}-1);
+  --neb-text: var(--neb-#{$color}-15);
+  --neb-focus-border: var(--neb-#{$color}-15);
 
   // solid
   --neb-#{$prefix}neutral-solid: var(--neb-#{$color}-1);
