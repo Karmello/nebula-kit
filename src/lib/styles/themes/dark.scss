@@ -7,6 +7,7 @@
 /* Base dark theme primitives, applied globally and to local theme islands */
 html[data-theme='dark'],
 .neb-box[data-neb-box-theme='dark'] {
+  @include neb-load-dark-palette();
   --neb-background: var(--neb-gray-1);
   --neb-text: var(--neb-gray-15);
   --neb-focus-border: var(--neb-gray-15);

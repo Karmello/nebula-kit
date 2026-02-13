@@ -7,6 +7,7 @@
 /* Base light theme primitives, applied globally and to local theme islands */
 html[data-theme='light'],
 .neb-box[data-neb-box-theme='light'] {
+  @include neb-load-light-palette();
   --neb-background: var(--neb-gray-1);
   --neb-text: var(--neb-gray-15);
   --neb-focus-border: var(--neb-gray-15);
