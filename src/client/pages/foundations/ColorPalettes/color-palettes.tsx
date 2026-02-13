@@ -3,16 +3,12 @@ import { sentenceCase } from 'change-case'
 import { useAppStore } from 'client/store'
 import { Box, Flex, Select, Spacer, Text } from 'lib/components'
 import { COLORS } from 'lib/definitions'
-import { useCurrentTheme } from 'lib/hooks'
 
 export default () => {
   const brand = useAppStore(state => state.brand)
   const setBrand = useAppStore(state => state.setBrand)
 
-  const theme = useCurrentTheme()
-
   const arr = Array.from({ length: 15 }, (v, k) => k)
-  if (theme === 'dark') arr.reverse()
 
   return (
     <Box maxInlineSize={{ lg: '55rem' }}>

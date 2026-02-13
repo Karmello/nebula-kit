@@ -1,14 +1,15 @@
 @use 'styles/definitions/definitions.scss' as *;
-@use '../themes-mixins.scss' as *;
-@use '../light/mixins-light.scss' as *;
-@use './mixins-dark.scss' as *;
+@use 'styles/mixins/neb-load-light-palette.scss' as *;
+@use 'styles/mixins/neb-load-dark-palette.scss' as *;
+@use 'styles/mixins/neb-set-theme-vars.scss' as *;
+@use 'styles/mixins/neb-paint-vars-from-ctx.scss' as *;
 
 /* Base dark theme primitives, applied globally and to local theme islands */
 html[data-theme='dark'],
 .neb-box[data-neb-box-theme='dark'] {
-  --neb-background: var(--neb-gray-15);
-  --neb-text: var(--neb-gray-1);
-  --neb-focus-border: var(--neb-gray-1);
+  --neb-background: var(--neb-gray-1);
+  --neb-text: var(--neb-gray-15);
+  --neb-focus-border: var(--neb-gray-15);
   --neb-loader-opacity: 0.06;
 }
 
@@ -17,16 +18,19 @@ html[data-theme='dark'] {
   @each $color in $neb-colors {
     &[data-brand='#{$color}'] {
       /* Brand interpreted through dark theme */
-      @include neb-set-dark-theme-vars($color, 'ctx-');
+      @include neb-load-dark-palette();
+      @include neb-set-theme-vars($color, 'ctx-');
 
       /* Rebind inherited brand when entering a light theme island */
       .neb-box[data-neb-box-theme='light']:not([data-neb-box-brand]) {
-        @include neb-set-light-theme-vars($color, 'ctx-');
+        @include neb-load-light-palette();
+        @include neb-set-theme-vars($color, 'ctx-');
       }
 
       .neb-box[data-neb-box-theme='light']:not([data-neb-box-brand])
         .neb-box[data-neb-box-theme='dark']:not([data-neb-box-brand]) {
-        @include neb-set-dark-theme-vars($color, 'ctx-');
+        @include neb-load-dark-palette();
+        @include neb-set-theme-vars($color, 'ctx-');
       }
     }
   }
@@ -39,7 +43,8 @@ html[data-theme='dark'] .neb-box:not([data-neb-box-theme]),
   /* Local brand inside dark theme context */
   @each $color in $neb-colors {
     &[data-neb-box-brand='#{$color}'] {
-      @include neb-set-dark-theme-vars($color, 'ctx-');
+      @include neb-load-dark-palette();
+      @include neb-set-theme-vars($color, 'ctx-');
     }
   }
 
@@ -50,7 +55,8 @@ html[data-theme='dark'] .neb-box:not([data-neb-box-theme]),
     @each $color in $neb-colors {
       &[data-neb-box-color='#{$color}'] {
         /* Color always overrides brand */
-        @include neb-set-dark-theme-vars($color, '');
+        @include neb-load-dark-palette();
+        @include neb-set-theme-vars($color, '');
       }
     }
   }

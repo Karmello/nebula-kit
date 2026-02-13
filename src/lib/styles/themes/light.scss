@@ -1,7 +1,8 @@
 @use 'styles/definitions/definitions.scss' as *;
-@use '../themes-mixins.scss' as *;
-@use '../dark/mixins-dark.scss' as *;
-@use './mixins-light.scss' as *;
+@use 'styles/mixins/neb-load-light-palette.scss' as *;
+@use 'styles/mixins/neb-load-dark-palette.scss' as *;
+@use 'styles/mixins/neb-set-theme-vars.scss' as *;
+@use 'styles/mixins/neb-paint-vars-from-ctx.scss' as *;
 
 /* Base light theme primitives, applied globally and to local theme islands */
 html[data-theme='light'],
@@ -17,16 +18,19 @@ html[data-theme='light'] {
   @each $color in $neb-colors {
     &[data-brand='#{$color}'] {
       /* Brand interpreted through light theme */
-      @include neb-set-light-theme-vars($color, 'ctx-');
+      @include neb-load-light-palette();
+      @include neb-set-theme-vars($color, 'ctx-');
 
       /* Rebind inherited brand when entering a dark theme island */
       .neb-box[data-neb-box-theme='dark']:not([data-neb-box-brand]) {
-        @include neb-set-dark-theme-vars($color, 'ctx-');
+        @include neb-load-dark-palette();
+        @include neb-set-theme-vars($color, 'ctx-');
       }
 
       .neb-box[data-neb-box-theme='dark']:not([data-neb-box-brand])
         .neb-box[data-neb-box-theme='light']:not([data-neb-box-brand]) {
-        @include neb-set-light-theme-vars($color, 'ctx-');
+        @include neb-load-light-palette();
+        @include neb-set-theme-vars($color, 'ctx-');
       }
     }
   }
@@ -39,7 +43,8 @@ html[data-theme='light'] .neb-box:not([data-neb-box-theme]),
   /* Local brand inside light theme context */
   @each $color in $neb-colors {
     &[data-neb-box-brand='#{$color}'] {
-      @include neb-set-light-theme-vars($color, 'ctx-');
+      @include neb-load-light-palette();
+      @include neb-set-theme-vars($color, 'ctx-');
     }
   }
 
@@ -50,7 +55,8 @@ html[data-theme='light'] .neb-box:not([data-neb-box-theme]),
     @each $color in $neb-colors {
       &[data-neb-box-color='#{$color}'] {
         /* Color always overrides brand */
-        @include neb-set-light-theme-vars($color, '');
+        @include neb-load-light-palette();
+        @include neb-set-theme-vars($color, '');
       }
     }
   }

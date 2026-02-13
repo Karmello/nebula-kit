@@ -1,4 +1,4 @@
-html {
+@mixin neb-load-light-palette() {
   --neb-gray-1: hsl(0 0% 100%);
   --neb-gray-2: hsl(0 0% 97%);
   --neb-gray-3: hsl(0 0% 92%);
