@@ -22,6 +22,11 @@ export const RELEASE_INFO: Record<
 > = {
   '0.7.0': {
     timestamp: 1771059078321,
+    changelog: {
+      main: [
+        'consolidated theme color token mapping into a single source and simplified dark theme to use palette inversion',
+      ],
+    },
   },
   '0.6.1': {
     timestamp: 1770829250673,
