@@ -25,6 +25,7 @@ export const RELEASE_INFO: Record<
     changelog: {
       main: [
         'consolidated theme color token mapping into a single source and simplified dark theme to use palette inversion',
+        'standardized lightness scale across all brand palettes',
       ],
     },
   },

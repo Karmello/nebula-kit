@@ -6,21 +6,7 @@ export const LIB_PREFIX = 'neb'
 export const BREAKPOINTS = ['base', 'sm', 'md', 'lg', 'xl'] as const
 export const SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
 
-export const COLORS = [
-  'gray',
-  'blue',
-  'teal',
-  'cyan',
-  'purple',
-  'magenta',
-  'pink',
-  'red',
-  'brown',
-  'olive',
-  'green',
-  'yellow',
-  'amber',
-] as const
+export const COLORS = ['gray', 'blue', 'teal', 'green', 'amber', 'red', 'purple', 'pink', 'yellow'] as const
 
 export const ICON_NAMES = [
   'arrow-left',

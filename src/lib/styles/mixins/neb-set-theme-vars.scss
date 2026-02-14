@@ -7,138 +7,141 @@ $neb-bright-colors: ('cyan', 'yellow', 'amber');
   --neb-text: var(--neb-#{$color}-15);
   --neb-focus-border: var(--neb-#{$color}-15);
 
-  // solid
-
+  // solid rest
   --neb-#{$prefix}neutral-solid: var(--neb-#{$color}-1);
-  --neb-#{$prefix}neutral-solid-hover: var(--neb-#{$color}-2);
-  --neb-#{$prefix}neutral-solid-disabled: var(--neb-#{$color}-3);
-  --neb-#{$prefix}neutral-solid-ripple: var(--neb-#{$color}-5);
-
-  --neb-#{$prefix}muted-solid: var(--neb-#{$color}-2);
-  --neb-#{$prefix}muted-solid-hover: var(--neb-#{$color}-3);
-  --neb-#{$prefix}muted-solid-disabled: var(--neb-#{$color}-4);
-  --neb-#{$prefix}muted-solid-ripple: var(--neb-#{$color}-6);
-
-  --neb-#{$prefix}tertiary-solid: var(--neb-#{$color}-3);
-  --neb-#{$prefix}tertiary-solid-hover: var(--neb-#{$color}-4);
-  --neb-#{$prefix}tertiary-solid-disabled: var(--neb-#{$color}-5);
-  --neb-#{$prefix}tertiary-solid-ripple: var(--neb-#{$color}-7);
-
+  --neb-#{$prefix}muted-solid: var(--neb-#{$color}-3);
+  --neb-#{$prefix}tertiary-solid: var(--neb-#{$color}-4);
   --neb-#{$prefix}secondary-solid: var(--neb-#{$color}-5);
-  --neb-#{$prefix}secondary-solid-hover: var(--neb-#{$color}-6);
-  --neb-#{$prefix}secondary-solid-disabled: var(--neb-#{$color}-7);
-  --neb-#{$prefix}secondary-solid-ripple: var(--neb-#{$color}-9);
-
   --neb-#{$prefix}primary-solid: var(--neb-#{$color}-8);
-  --neb-#{$prefix}primary-solid-hover: var(--neb-#{$color}-9);
-  --neb-#{$prefix}primary-solid-ripple: var(--neb-#{$color}-13);
-  --neb-#{$prefix}primary-solid-disabled: var(--neb-#{$color}-6);
-  --neb-#{$prefix}primary-text: white;
-
-  @if list.index($neb-bright-colors, $color) {
-    --neb-#{$prefix}primary-solid-disabled: var(--neb-gray-8);
-    --neb-#{$prefix}primary-text: black;
-  }
-
   --neb-#{$prefix}inverse-solid: var(--neb-#{$color}-12);
+
+  // solid hover
+  --neb-#{$prefix}neutral-solid-hover: var(--neb-#{$color}-3);
+  --neb-#{$prefix}muted-solid-hover: var(--neb-#{$color}-4);
+  --neb-#{$prefix}tertiary-solid-hover: var(--neb-#{$color}-5);
+  --neb-#{$prefix}secondary-solid-hover: var(--neb-#{$color}-6);
+  --neb-#{$prefix}primary-solid-hover: var(--neb-#{$color}-9);
   --neb-#{$prefix}inverse-solid-hover: var(--neb-#{$color}-15);
-  --neb-#{$prefix}inverse-solid-ripple: var(--neb-#{$color}-1);
+
+  // solid disabled
+  --neb-#{$prefix}neutral-solid-disabled: var(--neb-#{$color}-3);
+  --neb-#{$prefix}muted-solid-disabled: var(--neb-#{$color}-4);
+  --neb-#{$prefix}tertiary-solid-disabled: var(--neb-#{$color}-5);
+  --neb-#{$prefix}secondary-solid-disabled: var(--neb-#{$color}-7);
+  --neb-#{$prefix}primary-solid-disabled: var(--neb-#{$color}-6);
   --neb-#{$prefix}inverse-solid-disabled: var(--neb-#{$color}-10);
+
+  // solid ripple
+  --neb-#{$prefix}neutral-solid-ripple: var(--neb-#{$color}-5);
+  --neb-#{$prefix}muted-solid-ripple: var(--neb-#{$color}-6);
+  --neb-#{$prefix}tertiary-solid-ripple: var(--neb-#{$color}-7);
+  --neb-#{$prefix}secondary-solid-ripple: var(--neb-#{$color}-9);
+  --neb-#{$prefix}primary-solid-ripple: var(--neb-#{$color}-13);
+  --neb-#{$prefix}inverse-solid-ripple: var(--neb-#{$color}-1);
+
+  // solid text
+  --neb-#{$prefix}primary-text: white;
   --neb-#{$prefix}inverse-text: var(--neb-#{$color}-1);
 
-  // outline
+  // solid overrides
+  // @if list.index($neb-bright-colors, $color) {
+  //   --neb-#{$prefix}primary-solid-disabled: var(--neb-gray-8);
+  //   --neb-#{$prefix}primary-text: black;
+  // }
 
+  // outline rest
   --neb-#{$prefix}neutral-outline: var(--neb-#{$color}-2);
-  --neb-#{$prefix}neutral-outline-hover: var(--neb-#{$color}-3);
-  --neb-#{$prefix}neutral-outline-disabled: var(--neb-#{$color}-3);
-  --neb-#{$prefix}neutral-outline-ripple: var(--neb-#{$color}-8);
-
   --neb-#{$prefix}muted-outline: var(--neb-#{$color}-2);
-  --neb-#{$prefix}muted-outline-hover: var(--neb-#{$color}-3);
-  --neb-#{$prefix}muted-outline-disabled: var(--neb-#{$color}-2);
-  --neb-#{$prefix}muted-outline-ripple: var(--neb-#{$color}-8);
-
   --neb-#{$prefix}tertiary-outline: var(--neb-#{$color}-3);
-  --neb-#{$prefix}tertiary-outline-hover: var(--neb-#{$color}-4);
-  --neb-#{$prefix}tertiary-outline-disabled: var(--neb-#{$color}-3);
-  --neb-#{$prefix}tertiary-outline-ripple: var(--neb-#{$color}-8);
-
   --neb-#{$prefix}secondary-outline: var(--neb-#{$color}-5);
-  --neb-#{$prefix}secondary-outline-hover: var(--neb-#{$color}-6);
-  --neb-#{$prefix}secondary-outline-disabled: var(--neb-#{$color}-3);
-  --neb-#{$prefix}secondary-outline-ripple: var(--neb-#{$color}-8);
-
   --neb-#{$prefix}primary-outline: var(--neb-#{$color}-8);
-  --neb-#{$prefix}primary-outline-hover: var(--neb-#{$color}-9);
-  --neb-#{$prefix}primary-outline-disabled: var(--neb-#{$color}-3);
-  --neb-#{$prefix}primary-outline-ripple: var(--neb-#{$color}-8);
-
   --neb-#{$prefix}inverse-outline: var(--neb-#{$color}-12);
+
+  // outline hover
+  --neb-#{$prefix}neutral-outline-hover: var(--neb-#{$color}-3);
+  --neb-#{$prefix}muted-outline-hover: var(--neb-#{$color}-3);
+  --neb-#{$prefix}tertiary-outline-hover: var(--neb-#{$color}-4);
+  --neb-#{$prefix}secondary-outline-hover: var(--neb-#{$color}-6);
+  --neb-#{$prefix}primary-outline-hover: var(--neb-#{$color}-9);
   --neb-#{$prefix}inverse-outline-hover: var(--neb-#{$color}-13);
+
+  // outline disabled
+  --neb-#{$prefix}neutral-outline-disabled: var(--neb-#{$color}-3);
+  --neb-#{$prefix}muted-outline-disabled: var(--neb-#{$color}-2);
+  --neb-#{$prefix}tertiary-outline-disabled: var(--neb-#{$color}-3);
+  --neb-#{$prefix}secondary-outline-disabled: var(--neb-#{$color}-3);
+  --neb-#{$prefix}primary-outline-disabled: var(--neb-#{$color}-3);
   --neb-#{$prefix}inverse-outline-disabled: var(--neb-#{$color}-3);
+
+  // outline ripple
+  --neb-#{$prefix}neutral-outline-ripple: var(--neb-#{$color}-8);
+  --neb-#{$prefix}muted-outline-ripple: var(--neb-#{$color}-8);
+  --neb-#{$prefix}tertiary-outline-ripple: var(--neb-#{$color}-8);
+  --neb-#{$prefix}secondary-outline-ripple: var(--neb-#{$color}-8);
+  --neb-#{$prefix}primary-outline-ripple: var(--neb-#{$color}-8);
   --neb-#{$prefix}inverse-outline-ripple: var(--neb-#{$color}-8);
 
-  // soft outline
-
+  // soft-outline rest
   --neb-#{$prefix}neutral-soft-outline: var(--neb-#{$color}-2);
-  --neb-#{$prefix}neutral-soft-outline-hover: var(--neb-#{$color}-3);
-  --neb-#{$prefix}neutral-soft-outline-disabled: var(--neb-#{$color}-3);
-  --neb-#{$prefix}neutral-soft-outline-ripple: var(--neb-#{$color}-8);
-
   --neb-#{$prefix}muted-soft-outline: var(--neb-#{$color}-2);
-  --neb-#{$prefix}muted-soft-outline-hover: var(--neb-#{$color}-3);
-  --neb-#{$prefix}muted-soft-outline-disabled: var(--neb-#{$color}-2);
-  --neb-#{$prefix}muted-soft-outline-ripple: var(--neb-#{$color}-3);
-
   --neb-#{$prefix}tertiary-soft-outline: var(--neb-#{$color}-3);
-  --neb-#{$prefix}tertiary-soft-outline-hover: var(--neb-#{$color}-4);
-  --neb-#{$prefix}tertiary-soft-outline-disabled: var(--neb-#{$color}-3);
-  --neb-#{$prefix}tertiary-soft-outline-ripple: var(--neb-#{$color}-4);
-
   --neb-#{$prefix}secondary-soft-outline: var(--neb-#{$color}-5);
-  --neb-#{$prefix}secondary-soft-outline-hover: var(--neb-#{$color}-6);
-  --neb-#{$prefix}secondary-soft-outline-disabled: var(--neb-#{$color}-3);
-  --neb-#{$prefix}secondary-soft-outline-ripple: var(--neb-#{$color}-6);
-
   --neb-#{$prefix}primary-soft-outline: var(--neb-#{$color}-8);
-  --neb-#{$prefix}primary-soft-outline-hover: var(--neb-#{$color}-9);
-  --neb-#{$prefix}primary-soft-outline-disabled: var(--neb-#{$color}-3);
-  --neb-#{$prefix}primary-soft-outline-ripple: var(--neb-#{$color}-9);
-
   --neb-#{$prefix}inverse-soft-outline: var(--neb-#{$color}-12);
+
+  // soft-outline hover
+  --neb-#{$prefix}neutral-soft-outline-hover: var(--neb-#{$color}-3);
+  --neb-#{$prefix}muted-soft-outline-hover: var(--neb-#{$color}-3);
+  --neb-#{$prefix}tertiary-soft-outline-hover: var(--neb-#{$color}-4);
+  --neb-#{$prefix}secondary-soft-outline-hover: var(--neb-#{$color}-6);
+  --neb-#{$prefix}primary-soft-outline-hover: var(--neb-#{$color}-9);
   --neb-#{$prefix}inverse-soft-outline-hover: var(--neb-#{$color}-13);
+
+  // soft-outline disabled
+  --neb-#{$prefix}neutral-soft-outline-disabled: var(--neb-#{$color}-3);
+  --neb-#{$prefix}muted-soft-outline-disabled: var(--neb-#{$color}-2);
+  --neb-#{$prefix}tertiary-soft-outline-disabled: var(--neb-#{$color}-3);
+  --neb-#{$prefix}secondary-soft-outline-disabled: var(--neb-#{$color}-3);
+  --neb-#{$prefix}primary-soft-outline-disabled: var(--neb-#{$color}-3);
   --neb-#{$prefix}inverse-soft-outline-disabled: var(--neb-#{$color}-3);
+
+  // soft-outline ripple
+  --neb-#{$prefix}neutral-soft-outline-ripple: var(--neb-#{$color}-8);
+  --neb-#{$prefix}muted-soft-outline-ripple: var(--neb-#{$color}-3);
+  --neb-#{$prefix}tertiary-soft-outline-ripple: var(--neb-#{$color}-4);
+  --neb-#{$prefix}secondary-soft-outline-ripple: var(--neb-#{$color}-6);
+  --neb-#{$prefix}primary-soft-outline-ripple: var(--neb-#{$color}-9);
   --neb-#{$prefix}inverse-soft-outline-ripple: var(--neb-#{$color}-8);
 
-  // ghost
-
+  // ghost rest
   --neb-#{$prefix}neutral-ghost: var(--neb-#{$color}-15);
-  --neb-#{$prefix}neutral-ghost-hover: var(--neb-#{$color}-15);
-  --neb-#{$prefix}neutral-ghost-disabled: var(--neb-#{$color}-3);
-  --neb-#{$prefix}neutral-ghost-ripple: var(--neb-#{$color}-8);
-
   --neb-#{$prefix}muted-ghost: var(--neb-#{$color}-2);
-  --neb-#{$prefix}muted-ghost-hover: var(--neb-#{$color}-3);
-  --neb-#{$prefix}muted-ghost-disabled: var(--neb-#{$color}-3);
-  --neb-#{$prefix}muted-ghost-ripple: var(--neb-#{$color}-3);
-
   --neb-#{$prefix}tertiary-ghost: var(--neb-#{$color}-3);
-  --neb-#{$prefix}tertiary-ghost-hover: var(--neb-#{$color}-4);
-  --neb-#{$prefix}tertiary-ghost-disabled: var(--neb-#{$color}-3);
-  --neb-#{$prefix}tertiary-ghost-ripple: var(--neb-#{$color}-4);
-
   --neb-#{$prefix}secondary-ghost: var(--neb-#{$color}-5);
-  --neb-#{$prefix}secondary-ghost-hover: var(--neb-#{$color}-6);
-  --neb-#{$prefix}secondary-ghost-disabled: var(--neb-#{$color}-3);
-  --neb-#{$prefix}secondary-ghost-ripple: var(--neb-#{$color}-6);
-
   --neb-#{$prefix}primary-ghost: var(--neb-#{$color}-8);
-  --neb-#{$prefix}primary-ghost-hover: var(--neb-#{$color}-9);
-  --neb-#{$prefix}primary-ghost-disabled: var(--neb-#{$color}-3);
-  --neb-#{$prefix}primary-ghost-ripple: var(--neb-#{$color}-9);
-
   --neb-#{$prefix}inverse-ghost: var(--neb-#{$color}-2);
+
+  // ghost hover
+  --neb-#{$prefix}neutral-ghost-hover: var(--neb-#{$color}-15);
+  --neb-#{$prefix}muted-ghost-hover: var(--neb-#{$color}-3);
+  --neb-#{$prefix}tertiary-ghost-hover: var(--neb-#{$color}-4);
+  --neb-#{$prefix}secondary-ghost-hover: var(--neb-#{$color}-6);
+  --neb-#{$prefix}primary-ghost-hover: var(--neb-#{$color}-9);
   --neb-#{$prefix}inverse-ghost-hover: var(--neb-#{$color}-2);
+
+  // ghost disabled
+  --neb-#{$prefix}neutral-ghost-disabled: var(--neb-#{$color}-3);
+  --neb-#{$prefix}muted-ghost-disabled: var(--neb-#{$color}-3);
+  --neb-#{$prefix}tertiary-ghost-disabled: var(--neb-#{$color}-3);
+  --neb-#{$prefix}secondary-ghost-disabled: var(--neb-#{$color}-3);
+  --neb-#{$prefix}primary-ghost-disabled: var(--neb-#{$color}-3);
   --neb-#{$prefix}inverse-ghost-disabled: var(--neb-#{$color}-3);
+
+  // ghost ripple
+  --neb-#{$prefix}neutral-ghost-ripple: var(--neb-#{$color}-8);
+  --neb-#{$prefix}muted-ghost-ripple: var(--neb-#{$color}-3);
+  --neb-#{$prefix}tertiary-ghost-ripple: var(--neb-#{$color}-4);
+  --neb-#{$prefix}secondary-ghost-ripple: var(--neb-#{$color}-6);
+  --neb-#{$prefix}primary-ghost-ripple: var(--neb-#{$color}-9);
   --neb-#{$prefix}inverse-ghost-ripple: var(--neb-#{$color}-8);
 }
