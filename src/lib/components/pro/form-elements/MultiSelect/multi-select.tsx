@@ -7,7 +7,12 @@ import { withPrefix } from 'lib/helpers'
 
 import { MultiSelectProvider } from './MultiSelectProvider'
 import { DEFAULT_MULTI_SELECT_OPTION_JUSTIFY_CONTENT } from './slots'
-import { DEFAULT_MULTI_SELECT_INLINE_SIZE, MultiSelectProps } from './definitions'
+
+import {
+  DEFAULT_MULTI_SELECT_INLINE_SIZE,
+  DEFAULT_MULTI_SELECT_LIST_INTENT,
+  MultiSelectProps,
+} from './definitions'
 
 export const MultiSelect = ({
   // HtmlTag
@@ -29,7 +34,7 @@ export const MultiSelect = ({
   onChange,
   dropdownPlacement,
   triggerIntent,
-  listIntent,
+  listIntent = DEFAULT_MULTI_SELECT_LIST_INTENT,
 }: MultiSelectProps) => {
   const [internalValue, setInternalValue] = useState<string[]>(defaultValue || [])
 
@@ -108,12 +113,12 @@ export const MultiSelect = ({
                         justifyContent="space-between"
                         size={size}
                         variant="solid"
-                        intent={triggerIntent}
+                        intent={!open ? triggerIntent : listIntent}
                         color={color}
                         disabled={disabled}
                         fullWidth
                         ripple={!open}
-                        highlighted={open}
+                        highlighted={!open ? undefined : false}
                       >
                         {currentLabel || 'Select ...'}
                       </Button>

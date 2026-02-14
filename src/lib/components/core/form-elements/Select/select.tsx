@@ -7,7 +7,7 @@ import { withPrefix } from 'lib/helpers'
 
 import { SelectProvider } from './SelectProvider'
 import { DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT } from './slots'
-import { DEFAULT_SELECT_INLINE_SIZE, SelectProps } from './definitions'
+import { DEFAULT_SELECT_LIST_INTENT, DEFAULT_SELECT_INLINE_SIZE, SelectProps } from './definitions'
 
 export const Select = ({
   // HtmlTag
@@ -30,7 +30,7 @@ export const Select = ({
   dropdownPlacement,
   staticLabel,
   triggerIntent,
-  listIntent,
+  listIntent = DEFAULT_SELECT_LIST_INTENT,
 }: SelectProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
@@ -94,12 +94,12 @@ export const Select = ({
                         justifyContent="space-between"
                         size={size}
                         variant="solid"
-                        intent={triggerIntent}
+                        intent={!open ? triggerIntent : listIntent}
                         color={color}
                         disabled={disabled}
                         fullWidth
                         ripple={!open}
-                        highlighted={open}
+                        highlighted={!open ? undefined : false}
                       >
                         {staticLabel || currentSlot?.props.children || 'Select ...'}
                       </Button>

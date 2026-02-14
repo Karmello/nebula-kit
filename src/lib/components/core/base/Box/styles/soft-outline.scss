@@ -17,8 +17,8 @@
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
           // highlight, hover, focus
           &[data-neb-box-highlighted='true'],
-          &:not([data-neb-box-highlighted='true']):hover,
-          &:focus-visible {
+          &:not([data-neb-box-highlighted]):hover,
+          &:not([data-neb-box-highlighted]):focus-visible {
             border-color: var(--neb-#{$intent}-soft-outline-hover);
             color: var(--neb-#{$intent}-soft-outline-hover);
           }

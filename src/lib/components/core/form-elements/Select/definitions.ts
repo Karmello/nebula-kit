@@ -1,6 +1,7 @@
 import { BoxProps, ButtonProps, DropdownListProps, HtmlTagProps } from 'lib/components'
 
 export const DEFAULT_SELECT_INLINE_SIZE: SelectProps['inlineSize'] = '100%'
+export const DEFAULT_SELECT_LIST_INTENT: SelectProps['listIntent'] = 'secondary'
 
 type SelectOwnProps = {
   defaultValue?: string

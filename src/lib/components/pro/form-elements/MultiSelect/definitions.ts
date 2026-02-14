@@ -1,6 +1,7 @@
 import { BoxProps, ButtonProps, DropdownListProps, HtmlTagProps } from 'lib/components'
 
 export const DEFAULT_MULTI_SELECT_INLINE_SIZE: MultiSelectProps['inlineSize'] = '100%'
+export const DEFAULT_MULTI_SELECT_LIST_INTENT: MultiSelectProps['listIntent'] = 'secondary'
 
 type MultiSelectOwnProps = {
   defaultValue?: string[]

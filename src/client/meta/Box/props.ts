@@ -126,7 +126,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   highlighted: {
     options: ['boolean'],
     description:
-      'Shows the element in its hovered visual state by default, without requiring pointer interaction. Applies only when interactive is enabled and has no effect when disabled.',
+      'Controls interactive highlight behavior when interactive is enabled. Undefined allows normal hover and focus behavior. True forces the highlighted state. False disables interactive highlighting entirely.',
   },
   inlineSize: {
     options: ['CSS'],

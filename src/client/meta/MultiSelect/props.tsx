@@ -1,6 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { MultiSelectProps } from 'lib/components'
 import { DEFAULT_SELECT_INLINE_SIZE } from 'lib/components/core/form-elements/Select'
+import { DEFAULT_MULTI_SELECT_LIST_INTENT } from 'lib/components/pro/form-elements/MultiSelect'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'
@@ -28,7 +29,11 @@ const MULTI_SELECT_PROPS_META: ComponentMeta<MultiSelectProps>['props'] = {
     defaultValue: String(DEFAULT_SELECT_INLINE_SIZE),
   },
   itemBorderIntent: DROPDOWN_LIST_PROPS_META.itemBorderIntent,
-  listIntent: DROPDOWN_LIST_PROPS_META.intent,
+  listIntent: {
+    ...DROPDOWN_LIST_PROPS_META.intent,
+    defaultValue: String(DEFAULT_MULTI_SELECT_LIST_INTENT),
+    description: 'Color tone applied to the list and the trigger when opened.',
+  },
   onChange: {
     options: ['(value: string[]) => void'],
     description: 'Callback fired when the set of selected values changes.',
@@ -42,7 +47,7 @@ const MULTI_SELECT_PROPS_META: ComponentMeta<MultiSelectProps>['props'] = {
   tagRef: HTML_TAG_PROPS_META.tagRef,
   triggerIntent: {
     ...BUTTON_PROPS_META.intent,
-    description: 'Color tone applied to the trigger.',
+    description: 'Color tone applied to the trigger while closed. When opened, it follows the listIntent.',
   },
   value: {
     options: ['string[]'],

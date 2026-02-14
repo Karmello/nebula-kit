@@ -1,4 +1,5 @@
 export const RELEASE_VERSIONS = [
+  '0.7.0',
   '0.6.1',
   '0.6.0',
   '0.5.0',
@@ -19,6 +20,9 @@ export const RELEASE_INFO: Record<
     changelog?: { main?: string[]; core?: string[]; pro?: string[] }
   }
 > = {
+  '0.7.0': {
+    timestamp: 1771059078321,
+  },
   '0.6.1': {
     timestamp: 1770829250673,
     changelog: {
