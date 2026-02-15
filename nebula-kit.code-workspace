@@ -29,12 +29,12 @@
       "path": "src/lib",
     },
     {
-      "name": "components",
-      "path": "src/lib/components",
-    },
-    {
       "name": "definitions",
       "path": "src/lib/definitions",
+    },
+    {
+      "name": "components",
+      "path": "src/lib/components",
     },
   ],
   "settings": {
