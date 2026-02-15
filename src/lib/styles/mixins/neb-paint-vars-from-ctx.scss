@@ -3,30 +3,35 @@
 
   --neb-neutral-solid: var(--neb-ctx-neutral-solid);
   --neb-neutral-solid-hover: var(--neb-ctx-neutral-solid-hover);
+  --neb-neutral-solid-active: var(--neb-ctx-neutral-solid-active);
   --neb-neutral-solid-disabled: var(--neb-ctx-neutral-solid-disabled);
   --neb-neutral-solid-loader: var(--neb-ctx-neutral-solid-loader);
   --neb-neutral-solid-ripple: var(--neb-ctx-neutral-solid-ripple);
 
   --neb-muted-solid: var(--neb-ctx-muted-solid);
   --neb-muted-solid-hover: var(--neb-ctx-muted-solid-hover);
+  --neb-muted-solid-active: var(--neb-ctx-muted-solid-active);
   --neb-muted-solid-disabled: var(--neb-ctx-muted-solid-disabled);
   --neb-muted-solid-loader: var(--neb-ctx-muted-solid-loader);
   --neb-muted-solid-ripple: var(--neb-ctx-muted-solid-ripple);
 
   --neb-tertiary-solid: var(--neb-ctx-tertiary-solid);
   --neb-tertiary-solid-hover: var(--neb-ctx-tertiary-solid-hover);
+  --neb-tertiary-solid-active: var(--neb-ctx-tertiary-solid-active);
   --neb-tertiary-solid-disabled: var(--neb-ctx-tertiary-solid-disabled);
   --neb-tertiary-solid-loader: var(--neb-ctx-tertiary-solid-loader);
   --neb-tertiary-solid-ripple: var(--neb-ctx-tertiary-solid-ripple);
 
   --neb-secondary-solid: var(--neb-ctx-secondary-solid);
   --neb-secondary-solid-hover: var(--neb-ctx-secondary-solid-hover);
+  --neb-secondary-solid-active: var(--neb-ctx-secondary-solid-active);
   --neb-secondary-solid-disabled: var(--neb-ctx-secondary-solid-disabled);
   --neb-secondary-solid-loader: var(--neb-ctx-secondary-solid-loader);
   --neb-secondary-solid-ripple: var(--neb-ctx-secondary-solid-ripple);
 
   --neb-primary-solid: var(--neb-ctx-primary-solid);
   --neb-primary-solid-hover: var(--neb-ctx-primary-solid-hover);
+  --neb-primary-solid-active: var(--neb-ctx-primary-solid-active);
   --neb-primary-solid-disabled: var(--neb-ctx-primary-solid-disabled);
   --neb-primary-solid-loader: var(--neb-ctx-primary-solid-loader);
   --neb-primary-solid-ripple: var(--neb-ctx-primary-solid-ripple);
@@ -34,6 +39,7 @@
 
   --neb-inverse-solid: var(--neb-ctx-inverse-solid);
   --neb-inverse-solid-hover: var(--neb-ctx-inverse-solid-hover);
+  --neb-inverse-solid-active: var(--neb-ctx-inverse-solid-active);
   --neb-inverse-solid-disabled: var(--neb-ctx-inverse-solid-disabled);
   --neb-inverse-solid-loader: var(--neb-ctx-inverse-solid-loader);
   --neb-inverse-solid-ripple: var(--neb-ctx-inverse-solid-ripple);
@@ -43,42 +49,54 @@
 
   --neb-neutral-outline: var(--neb-ctx-neutral-outline);
   --neb-neutral-outline-hover: var(--neb-ctx-neutral-outline-hover);
+  --neb-neutral-outline-active: var(--neb-ctx-neutral-outline-active);
   --neb-neutral-outline-bg-hover: var(--neb-ctx-neutral-outline-bg-hover);
+  --neb-neutral-outline-bg-active: var(--neb-ctx-neutral-outline-bg-active);
   --neb-neutral-outline-disabled: var(--neb-ctx-neutral-outline-disabled);
   --neb-neutral-outline-loader: var(--neb-ctx-neutral-outline-loader);
   --neb-neutral-outline-ripple: var(--neb-ctx-neutral-outline-ripple);
 
   --neb-muted-outline: var(--neb-ctx-muted-outline);
   --neb-muted-outline-hover: var(--neb-ctx-muted-outline-hover);
+  --neb-muted-outline-active: var(--neb-ctx-muted-outline-active);
   --neb-muted-outline-bg-hover: var(--neb-ctx-muted-outline-bg-hover);
+  --neb-muted-outline-bg-active: var(--neb-ctx-muted-outline-bg-active);
   --neb-muted-outline-disabled: var(--neb-ctx-muted-outline-disabled);
   --neb-muted-outline-loader: var(--neb-ctx-muted-outline-loader);
   --neb-muted-outline-ripple: var(--neb-ctx-muted-outline-ripple);
 
   --neb-tertiary-outline: var(--neb-ctx-tertiary-outline);
   --neb-tertiary-outline-hover: var(--neb-ctx-tertiary-outline-hover);
+  --neb-tertiary-outline-active: var(--neb-ctx-tertiary-outline-active);
   --neb-tertiary-outline-bg-hover: var(--neb-ctx-tertiary-outline-bg-hover);
+  --neb-tertiary-outline-bg-active: var(--neb-ctx-tertiary-outline-bg-active);
   --neb-tertiary-outline-disabled: var(--neb-ctx-tertiary-outline-disabled);
   --neb-tertiary-outline-loader: var(--neb-ctx-tertiary-outline-loader);
   --neb-tertiary-outline-ripple: var(--neb-ctx-tertiary-outline-ripple);
 
   --neb-secondary-outline: var(--neb-ctx-secondary-outline);
   --neb-secondary-outline-hover: var(--neb-ctx-secondary-outline-hover);
+  --neb-secondary-outline-active: var(--neb-ctx-secondary-outline-active);
   --neb-secondary-outline-bg-hover: var(--neb-ctx-secondary-outline-bg-hover);
+  --neb-secondary-outline-bg-active: var(--neb-ctx-secondary-outline-bg-active);
   --neb-secondary-outline-disabled: var(--neb-ctx-secondary-outline-disabled);
   --neb-secondary-outline-loader: var(--neb-ctx-secondary-outline-loader);
   --neb-secondary-outline-ripple: var(--neb-ctx-secondary-outline-ripple);
 
   --neb-primary-outline: var(--neb-ctx-primary-outline);
   --neb-primary-outline-hover: var(--neb-ctx-primary-outline-hover);
+  --neb-primary-outline-active: var(--neb-ctx-primary-outline-active);
   --neb-primary-outline-bg-hover: var(--neb-ctx-primary-outline-bg-hover);
+  --neb-primary-outline-bg-active: var(--neb-ctx-primary-outline-bg-active);
   --neb-primary-outline-disabled: var(--neb-ctx-primary-outline-disabled);
   --neb-primary-outline-loader: var(--neb-ctx-primary-outline-loader);
   --neb-primary-outline-ripple: var(--neb-ctx-primary-outline-ripple);
 
   --neb-inverse-outline: var(--neb-ctx-inverse-outline);
   --neb-inverse-outline-hover: var(--neb-ctx-inverse-outline-hover);
+  --neb-inverse-outline-active: var(--neb-ctx-inverse-outline-active);
   --neb-inverse-outline-bg-hover: var(--neb-ctx-inverse-outline-bg-hover);
+  --neb-inverse-outline-bg-active: var(--neb-ctx-inverse-outline-bg-active);
   --neb-inverse-outline-disabled: var(--neb-ctx-inverse-outline-disabled);
   --neb-inverse-outline-loader: var(--neb-ctx-inverse-outline-loader);
   --neb-inverse-outline-ripple: var(--neb-ctx-inverse-outline-ripple);
@@ -87,42 +105,54 @@
 
   --neb-neutral-soft-outline: var(--neb-ctx-neutral-soft-outline);
   --neb-neutral-soft-outline-hover: var(--neb-ctx-neutral-soft-outline-hover);
+  --neb-neutral-soft-outline-active: var(--neb-ctx-neutral-soft-outline-active);
   --neb-neutral-soft-outline-bg-hover: var(--neb-ctx-neutral-soft-outline-bg-hover);
+  --neb-neutral-soft-outline-bg-active: var(--neb-ctx-neutral-soft-outline-bg-active);
   --neb-neutral-soft-outline-disabled: var(--neb-ctx-neutral-soft-outline-disabled);
   --neb-neutral-soft-outline-loader: var(--neb-ctx-neutral-soft-outline-loader);
   --neb-neutral-soft-outline-ripple: var(--neb-ctx-neutral-soft-outline-ripple);
 
   --neb-muted-soft-outline: var(--neb-ctx-muted-soft-outline);
   --neb-muted-soft-outline-hover: var(--neb-ctx-muted-soft-outline-hover);
+  --neb-muted-soft-outline-active: var(--neb-ctx-muted-soft-outline-active);
   --neb-muted-soft-outline-bg-hover: var(--neb-ctx-muted-soft-outline-bg-hover);
+  --neb-muted-soft-outline-bg-active: var(--neb-ctx-muted-soft-outline-bg-active);
   --neb-muted-soft-outline-disabled: var(--neb-ctx-muted-soft-outline-disabled);
   --neb-muted-soft-outline-loader: var(--neb-ctx-muted-soft-outline-loader);
   --neb-muted-soft-outline-ripple: var(--neb-ctx-muted-soft-outline-ripple);
 
   --neb-tertiary-soft-outline: var(--neb-ctx-tertiary-soft-outline);
   --neb-tertiary-soft-outline-hover: var(--neb-ctx-tertiary-soft-outline-hover);
+  --neb-tertiary-soft-outline-active: var(--neb-ctx-tertiary-soft-outline-active);
   --neb-tertiary-soft-outline-bg-hover: var(--neb-ctx-tertiary-soft-outline-bg-hover);
+  --neb-tertiary-soft-outline-bg-active: var(--neb-ctx-tertiary-soft-outline-bg-active);
   --neb-tertiary-soft-outline-disabled: var(--neb-ctx-tertiary-soft-outline-disabled);
   --neb-tertiary-soft-outline-loader: var(--neb-ctx-tertiary-soft-outline-loader);
   --neb-tertiary-soft-outline-ripple: var(--neb-ctx-tertiary-soft-outline-ripple);
 
   --neb-secondary-soft-outline: var(--neb-ctx-secondary-soft-outline);
   --neb-secondary-soft-outline-hover: var(--neb-ctx-secondary-soft-outline-hover);
+  --neb-secondary-soft-outline-active: var(--neb-ctx-secondary-soft-outline-active);
   --neb-secondary-soft-outline-bg-hover: var(--neb-ctx-secondary-soft-outline-bg-hover);
+  --neb-secondary-soft-outline-bg-active: var(--neb-ctx-secondary-soft-outline-bg-active);
   --neb-secondary-soft-outline-disabled: var(--neb-ctx-secondary-soft-outline-disabled);
   --neb-secondary-soft-outline-loader: var(--neb-ctx-secondary-soft-outline-loader);
   --neb-secondary-soft-outline-ripple: var(--neb-ctx-secondary-soft-outline-ripple);
 
   --neb-primary-soft-outline: var(--neb-ctx-primary-soft-outline);
   --neb-primary-soft-outline-hover: var(--neb-ctx-primary-soft-outline-hover);
+  --neb-primary-soft-outline-active: var(--neb-ctx-primary-soft-outline-active);
   --neb-primary-soft-outline-bg-hover: var(--neb-ctx-primary-soft-outline-bg-hover);
+  --neb-primary-soft-outline-bg-active: var(--neb-ctx-primary-soft-outline-bg-active);
   --neb-primary-soft-outline-disabled: var(--neb-ctx-primary-soft-outline-disabled);
   --neb-primary-soft-outline-loader: var(--neb-ctx-primary-soft-outline-loader);
   --neb-primary-soft-outline-ripple: var(--neb-ctx-primary-soft-outline-ripple);
 
   --neb-inverse-soft-outline: var(--neb-ctx-inverse-soft-outline);
   --neb-inverse-soft-outline-hover: var(--neb-ctx-inverse-soft-outline-hover);
+  --neb-inverse-soft-outline-active: var(--neb-ctx-inverse-soft-outline-active);
   --neb-inverse-soft-outline-bg-hover: var(--neb-ctx-inverse-soft-outline-bg-hover);
+  --neb-inverse-soft-outline-bg-active: var(--neb-ctx-inverse-soft-outline-bg-active);
   --neb-inverse-soft-outline-disabled: var(--neb-ctx-inverse-soft-outline-disabled);
   --neb-inverse-soft-outline-loader: var(--neb-ctx-inverse-soft-outline-loader);
   --neb-inverse-soft-outline-ripple: var(--neb-ctx-inverse-soft-outline-ripple);
@@ -131,36 +161,42 @@
 
   --neb-neutral-ghost: var(--neb-ctx-neutral-ghost);
   --neb-neutral-ghost-hover: var(--neb-ctx-neutral-ghost-hover);
+  --neb-neutral-ghost-active: var(--neb-ctx-neutral-ghost-active);
   --neb-neutral-ghost-disabled: var(--neb-ctx-neutral-ghost-disabled);
   --neb-neutral-ghost-loader: var(--neb-ctx-neutral-ghost-loader);
   --neb-neutral-ghost-ripple: var(--neb-ctx-neutral-ghost-ripple);
 
   --neb-muted-ghost: var(--neb-ctx-muted-ghost);
   --neb-muted-ghost-hover: var(--neb-ctx-muted-ghost-hover);
+  --neb-muted-ghost-active: var(--neb-ctx-muted-ghost-active);
   --neb-muted-ghost-disabled: var(--neb-ctx-muted-ghost-disabled);
   --neb-muted-ghost-loader: var(--neb-ctx-muted-ghost-loader);
   --neb-muted-ghost-ripple: var(--neb-ctx-muted-ghost-ripple);
 
   --neb-tertiary-ghost: var(--neb-ctx-tertiary-ghost);
   --neb-tertiary-ghost-hover: var(--neb-ctx-tertiary-ghost-hover);
+  --neb-tertiary-ghost-active: var(--neb-ctx-tertiary-ghost-active);
   --neb-tertiary-ghost-disabled: var(--neb-ctx-tertiary-ghost-disabled);
   --neb-tertiary-ghost-loader: var(--neb-ctx-tertiary-ghost-loader);
   --neb-tertiary-ghost-ripple: var(--neb-ctx-tertiary-ghost-ripple);
 
   --neb-secondary-ghost: var(--neb-ctx-secondary-ghost);
   --neb-secondary-ghost-hover: var(--neb-ctx-secondary-ghost-hover);
+  --neb-secondary-ghost-active: var(--neb-ctx-secondary-ghost-active);
   --neb-secondary-ghost-disabled: var(--neb-ctx-secondary-ghost-disabled);
   --neb-secondary-ghost-loader: var(--neb-ctx-secondary-ghost-loader);
   --neb-secondary-ghost-ripple: var(--neb-ctx-secondary-ghost-ripple);
 
   --neb-primary-ghost: var(--neb-ctx-primary-ghost);
   --neb-primary-ghost-hover: var(--neb-ctx-primary-ghost-hover);
+  --neb-primary-ghost-active: var(--neb-ctx-primary-ghost-active);
   --neb-primary-ghost-disabled: var(--neb-ctx-primary-ghost-disabled);
   --neb-primary-ghost-loader: var(--neb-ctx-primary-ghost-loader);
   --neb-primary-ghost-ripple: var(--neb-ctx-primary-ghost-ripple);
 
   --neb-inverse-ghost: var(--neb-ctx-inverse-ghost);
   --neb-inverse-ghost-hover: var(--neb-ctx-inverse-ghost-hover);
+  --neb-inverse-ghost-active: var(--neb-ctx-inverse-ghost-active);
   --neb-inverse-ghost-disabled: var(--neb-ctx-inverse-ghost-disabled);
   --neb-inverse-ghost-loader: var(--neb-ctx-inverse-ghost-loader);
   --neb-inverse-ghost-ripple: var(--neb-ctx-inverse-ghost-ripple);

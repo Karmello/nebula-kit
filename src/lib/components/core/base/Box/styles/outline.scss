@@ -23,6 +23,11 @@
             background-color: var(--neb-#{$intent}-outline-bg-hover);
           }
 
+          &:not([data-neb-box-highlighted='false']):active {
+            border-color: var(--neb-#{$intent}-outline-active);
+            background-color: var(--neb-#{$intent}-outline-bg-active);
+          }
+
           // focus ring
           &:focus-visible {
             border-color: var(--neb-focus-border) !important;

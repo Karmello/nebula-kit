@@ -21,6 +21,10 @@
             color: var(--neb-#{$intent}-ghost-hover);
           }
 
+          &:not([data-neb-box-highlighted='false']):active {
+            color: var(--neb-#{$intent}-ghost-active);
+          }
+
           // focus ring
           &:focus-visible {
             box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
