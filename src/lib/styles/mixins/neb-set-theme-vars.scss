@@ -166,8 +166,8 @@
   --neb-#{$prefix}inverse-ghost-ripple: var(--neb-#{$color}-8);
 
   // text solid
-  --neb-#{$prefix}primary-text: white;
-  --neb-#{$prefix}inverse-text: var(--neb-#{$color}-1);
+  --neb-#{$prefix}primary-solid-text: white;
+  --neb-#{$prefix}inverse-solid-text: var(--neb-#{$color}-1);
 
   // bg outline
   --neb-#{$prefix}neutral-outline-bg-hover: var(--neb-#{$color}-2);
