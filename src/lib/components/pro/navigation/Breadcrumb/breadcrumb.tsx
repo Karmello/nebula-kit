@@ -77,7 +77,15 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                 {({ open }) => (
                   <>
                     <DropdownList.Trigger>
-                      <Button size={size} variant="ghost" color={color} intent="primary" ripple={!open} bold>
+                      <Button
+                        size={size}
+                        variant="ghost"
+                        color={color}
+                        intent="primary"
+                        ripple={!open}
+                        highlighted={open ? true : undefined}
+                        bold
+                      >
                         {levels[index].find(node => node.value === currentPath[index])?.label || 'Select ...'}
                       </Button>
                     </DropdownList.Trigger>

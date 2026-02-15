@@ -12,7 +12,7 @@ export type CodeSnippetProps = {
 
 const COLOR_MAP = {
   // background
-  bg: 'var(--neb-gray-2)',
+  bg: 'var(--neb-gray-3)',
   // component name
   '#F78C6C': 'var(--neb-red-8)',
   // native html tag name
