@@ -18,7 +18,6 @@ const SELECT_META: ComponentMeta<SelectProps> = {
   props: SELECT_PROPS_META,
   examples: SELECT_EXAMPLES_META,
   changelog: {
-    '0.7.0': ['changed trigger behavior to use listIntent prop instead of triggerIntent while opened'],
     '0.6.0': ['replaced intent with separate triggerIntent and listIntent props'],
     '0.5.0': ['removed onClosed prop'],
     '0.3.0': ['updated public API'],

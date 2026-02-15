@@ -32,7 +32,7 @@ const MULTI_SELECT_PROPS_META: ComponentMeta<MultiSelectProps>['props'] = {
   listIntent: {
     ...DROPDOWN_LIST_PROPS_META.intent,
     defaultValue: String(DEFAULT_MULTI_SELECT_LIST_INTENT),
-    description: 'Color tone applied to the list and the trigger when opened.',
+    description: 'Color tone applied to the list.',
   },
   onChange: {
     options: ['(value: string[]) => void'],
@@ -47,7 +47,7 @@ const MULTI_SELECT_PROPS_META: ComponentMeta<MultiSelectProps>['props'] = {
   tagRef: HTML_TAG_PROPS_META.tagRef,
   triggerIntent: {
     ...BUTTON_PROPS_META.intent,
-    description: 'Color tone applied to the trigger while closed. When opened, it follows the listIntent.',
+    description: 'Color tone applied to the trigger.',
   },
   value: {
     options: ['string[]'],

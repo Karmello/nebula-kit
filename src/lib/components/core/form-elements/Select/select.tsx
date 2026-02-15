@@ -94,12 +94,12 @@ export const Select = ({
                         justifyContent="space-between"
                         size={size}
                         variant="solid"
-                        intent={!open ? triggerIntent : listIntent}
+                        intent={triggerIntent}
                         color={color}
                         disabled={disabled}
                         fullWidth
                         ripple={!open}
-                        highlighted={!open ? undefined : false}
+                        highlighted={open ? true : undefined}
                       >
                         {staticLabel || currentSlot?.props.children || 'Select ...'}
                       </Button>
