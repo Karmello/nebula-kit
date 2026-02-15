@@ -34,6 +34,7 @@ export const Box = <T extends ElementType = 'div'>({
   interactive,
   disabled,
   highlighted,
+  pressedOnFocus,
   // css
   opacity,
   visibility,
@@ -229,6 +230,7 @@ export const Box = <T extends ElementType = 'div'>({
             interactive,
             disabled,
             highlighted,
+            pressedOnFocus,
           }),
         } as PropsWithoutRef<ComponentProps<T>>
       }

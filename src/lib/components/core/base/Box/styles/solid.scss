@@ -15,15 +15,17 @@
 
         // not disabled, interactive
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
-          // highlight, hover, focus
+          // hover, focus, highlighted
           &[data-neb-box-highlighted='true'],
-          &:not([data-neb-box-highlighted]):hover,
-          &:not([data-neb-box-highlighted]):focus-visible {
+          &:not([data-neb-box-highlighted='true']):hover,
+          &:not([data-neb-box-highlighted='true']):focus-visible {
             background-color: var(--neb-#{$intent}-solid-hover);
           }
 
-          &:not([data-neb-box-highlighted='false']):active {
-            background-color: var(--neb-#{$intent}-solid-active);
+          // active, pressed on focus
+          &:active,
+          &[data-neb-box-pressed-on-focus='true']:focus-visible {
+            background-color: var(--neb-#{$intent}-solid-active) !important;
           }
 
           // focus ring

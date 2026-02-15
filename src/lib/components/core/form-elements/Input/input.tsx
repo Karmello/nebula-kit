@@ -84,6 +84,7 @@ export const Input = ({
           disabled={disabled}
           inlineSize="100%"
           interactive
+          pressedOnFocus
           {...INPUT_SIZE_CONFIG[size || 'md']}
         />
       </Segment.Item>

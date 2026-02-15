@@ -126,7 +126,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   highlighted: {
     options: ['boolean'],
     description:
-      'Controls interactive highlight behavior when interactive is enabled. Undefined allows normal hover and focus behavior. True forces the highlighted state. False disables interactive highlighting entirely.',
+      'When true, persists the hovered state to create a highlight effect. Works only for interactive Boxes.',
   },
   inlineSize: {
     options: ['CSS'],
@@ -303,6 +303,10 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Position in the layout flow.',
     link: true,
     tooltip: CSS_POSITION,
+  },
+  pressedOnFocus: {
+    options: ['boolean'],
+    description: 'When true, keeps the pressed state active while focused. Works only for interactive Boxes.',
   },
   right: {
     options: ['CSS'],
