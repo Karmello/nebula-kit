@@ -149,7 +149,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   interactive: {
     options: ['boolean'],
     description:
-      'Enables visual interaction affordances such as hover styling and focus ring. Does not affect tabIndex, focusability or activation behavior.',
+      'Enables visual interaction affordances such as hover, active styling and focus ring. Does not affect tab order, focusability or click/keyboard activation. Only applies when drawable is set to true.',
   },
   left: {
     options: ['CSS'],
