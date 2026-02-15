@@ -8,6 +8,7 @@
     @each $intent in $neb-intents {
       &[data-neb-box-intent='#{$intent}'] {
         --neb-ripple-bg: var(--neb-#{$intent}-outline-ripple);
+        --neb-loader: var(--neb-#{$intent}-outline-loader);
 
         // rest
         border-color: var(--neb-#{$intent}-outline);
@@ -19,11 +20,13 @@
           &:not([data-neb-box-highlighted]):hover,
           &:not([data-neb-box-highlighted]):focus-visible {
             border-color: var(--neb-#{$intent}-outline-hover);
+            background-color: var(--neb-#{$intent}-outline-bg-hover);
           }
 
           // focus ring
           &:focus-visible {
             border-color: var(--neb-focus-border) !important;
+            background-color: var(--neb-#{$intent}-outline-bg-hover) !important;
             box-shadow: inset 0 0 0 1px var(--neb-focus-border);
           }
         }
