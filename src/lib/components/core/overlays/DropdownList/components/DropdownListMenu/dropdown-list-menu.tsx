@@ -125,7 +125,7 @@ export const DropdownListMenu = () => {
                   return (
                     <>
                       {opensUpDownwards ? (
-                        <Divider marginBlock="0px" color={color} intent={itemBorderIntent} opacity="0.35" />
+                        <Divider marginBlock="0px" color={color} intent={itemBorderIntent} opacity="0.1" />
                       ) : null}
                       {cloneElement(slot as ReactElement<DropdownListItemProps & { index: number }>, {
                         index,

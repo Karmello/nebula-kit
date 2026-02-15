@@ -55,8 +55,8 @@
 
   // hover soft-outline
   --neb-#{$prefix}neutral-soft-outline-hover: var(--neb-#{$color}-4);
-  --neb-#{$prefix}muted-soft-outline-hover: var(--neb-#{$color}-4);
-  --neb-#{$prefix}tertiary-soft-outline-hover: var(--neb-#{$color}-5);
+  --neb-#{$prefix}muted-soft-outline-hover: var(--neb-#{$color}-3);
+  --neb-#{$prefix}tertiary-soft-outline-hover: var(--neb-#{$color}-4);
   --neb-#{$prefix}secondary-soft-outline-hover: var(--neb-#{$color}-6);
   --neb-#{$prefix}primary-soft-outline-hover: var(--neb-#{$color}-9);
   --neb-#{$prefix}inverse-soft-outline-hover: var(--neb-#{$color}-15);
@@ -65,8 +65,8 @@
   --neb-#{$prefix}neutral-ghost-hover: var(--neb-#{$color}-15);
   --neb-#{$prefix}muted-ghost-hover: var(--neb-#{$color}-4);
   --neb-#{$prefix}tertiary-ghost-hover: var(--neb-#{$color}-5);
-  --neb-#{$prefix}secondary-ghost-hover: var(--neb-#{$color}-7);
-  --neb-#{$prefix}primary-ghost-hover: var(--neb-#{$color}-11);
+  --neb-#{$prefix}secondary-ghost-hover: var(--neb-#{$color}-6);
+  --neb-#{$prefix}primary-ghost-hover: var(--neb-#{$color}-9);
   --neb-#{$prefix}inverse-ghost-hover: var(--neb-#{$color}-1);
 
   // disabled solid
