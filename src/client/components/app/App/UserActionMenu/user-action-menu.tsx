@@ -46,6 +46,7 @@ export const UserActionMenu = () => {
         <Select
           triggerIntent="muted"
           listIntent="tertiary"
+          itemBorderIntent="secondary"
           dropdownPlacement="bottom-end"
           staticLabel="Profile"
           value={currentPageKey}
