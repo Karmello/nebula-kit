@@ -21,14 +21,13 @@
           &:not([data-neb-box-highlighted]):hover,
           &:not([data-neb-box-highlighted]):focus-visible {
             border-color: var(--neb-#{$intent}-soft-outline-hover);
-            background-color: var(--neb-#{$intent}-soft-outline-bg-hover);
             color: var(--neb-#{$intent}-soft-outline-hover);
+            background-color: var(--neb-#{$intent}-soft-outline-bg-hover);
           }
 
           // focus ring
           &:focus-visible {
             border-color: var(--neb-focus-border) !important;
-            background-color: var(--neb-#{$intent}-soft-outline-bg-hover);
             box-shadow: inset 0 0 0 1px var(--neb-focus-border);
           }
         }
