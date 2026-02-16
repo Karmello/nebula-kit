@@ -112,7 +112,7 @@ export const Button = <T extends ButtonTag = 'button'>({
         text
       )}
       {loading && !disabled ? <Loader centered size={size} /> : null}
-      <Ripple parentRef={tagRef || ref} active={ripple} />
+      <Ripple parentRef={tagRef || ref} active={ripple && !loading && !disabled} />
     </Box>
   )
 }

@@ -28,6 +28,10 @@ html.neb-transitions {
   }
 }
 
+html[data-ripple-mode='off'] {
+  --neb-ripple-opacity: 0;
+}
+
 body {
   background: var(--neb-background);
   color: var(--neb-text);

@@ -3,6 +3,21 @@
 @use 'styles/mixins/neb-set-theme-vars.scss' as *;
 @use 'styles/mixins/neb-paint-vars-from-ctx.scss' as *;
 
+html[data-theme='light'] {
+  &[data-ripple-mode='default'] {
+    --neb-ripple-opacity: 0.1;
+    [data-neb-box-variant='solid'] {
+      --neb-ripple-opacity: 0.15;
+    }
+  }
+  &[data-ripple-mode='emphasized'] {
+    --neb-ripple-opacity: 0.2;
+    [data-neb-box-variant='solid'] {
+      --neb-ripple-opacity: 0.3;
+    }
+  }
+}
+
 /* Base light theme primitives, applied globally and to local theme islands */
 html[data-theme='light'],
 .neb-box[data-neb-box-theme='light'] {
