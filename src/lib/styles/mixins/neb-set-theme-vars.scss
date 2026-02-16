@@ -56,7 +56,11 @@
   --neb-#{$prefix}inverse-ghost: var(--neb-#{$color}-1);
 
   // text solid
-  --neb-#{$prefix}primary-solid-text: white;
+  --neb-#{$prefix}primary-solid-text: #{if(
+      $theme == 'light',
+      var(--neb-#{$color}-1),
+      var(--neb-#{$color}-15)
+    )};
   --neb-#{$prefix}inverse-solid-text: var(--neb-#{$color}-1);
 
   // hover solid
@@ -157,11 +161,15 @@
 
   // disabled solid
   --neb-#{$prefix}neutral-solid-disabled: var(--neb-#{$color}-4);
-  --neb-#{$prefix}muted-solid-disabled: var(--neb-#{$color}-4);
-  --neb-#{$prefix}tertiary-solid-disabled: var(--neb-#{$color}-5);
-  --neb-#{$prefix}secondary-solid-disabled: var(--neb-#{$color}-6);
-  --neb-#{$prefix}primary-solid-disabled: var(--neb-#{$color}-7);
-  --neb-#{$prefix}inverse-solid-disabled: var(--neb-#{$color}-11);
+  --neb-#{$prefix}muted-solid-disabled: var(--neb-#{$color}-5);
+  --neb-#{$prefix}tertiary-solid-disabled: var(--neb-#{$color}-6);
+  --neb-#{$prefix}secondary-solid-disabled: var(--neb-#{$color}-7);
+  --neb-#{$prefix}primary-solid-disabled: #{if(
+      $theme == 'light',
+      var(--neb-#{$color}-7),
+      var(--neb-#{$color}-9)
+    )};
+  --neb-#{$prefix}inverse-solid-disabled: var(--neb-#{$color}-10);
 
   // disabled outline
   --neb-#{$prefix}neutral-outline-disabled: var(--neb-#{$color}-4);
@@ -185,14 +193,18 @@
   --neb-#{$prefix}tertiary-ghost-disabled: var(--neb-#{$color}-4);
   --neb-#{$prefix}secondary-ghost-disabled: var(--neb-#{$color}-4);
   --neb-#{$prefix}primary-ghost-disabled: var(--neb-#{$color}-4);
-  --neb-#{$prefix}inverse-ghost-disabled: var(--neb-#{$color}-12);
+  --neb-#{$prefix}inverse-ghost-disabled: var(--neb-#{$color}-11);
 
   // loader solid
   --neb-#{$prefix}neutral-solid-loader: var(--neb-#{$color}-9);
   --neb-#{$prefix}muted-solid-loader: var(--neb-#{$color}-10);
   --neb-#{$prefix}tertiary-solid-loader: var(--neb-#{$color}-11);
   --neb-#{$prefix}secondary-solid-loader: var(--neb-#{$color}-12);
-  --neb-#{$prefix}primary-solid-loader: var(--neb-#{$color}-2);
+  --neb-#{$prefix}primary-solid-loader: #{if(
+      $theme == 'light',
+      var(--neb-#{$color}-4),
+      var(--neb-#{$color}-12)
+    )};
   --neb-#{$prefix}inverse-solid-loader: var(--neb-#{$color}-7);
 
   // loader outline
@@ -217,7 +229,7 @@
   --neb-#{$prefix}tertiary-ghost-loader: var(--neb-#{$color}-10);
   --neb-#{$prefix}secondary-ghost-loader: var(--neb-#{$color}-10);
   --neb-#{$prefix}primary-ghost-loader: var(--neb-#{$color}-10);
-  --neb-#{$prefix}inverse-ghost-loader: var(--neb-#{$color}-10);
+  --neb-#{$prefix}inverse-ghost-loader: var(--neb-#{$color}-8);
 
   // ripple solid
   --neb-#{$prefix}neutral-solid-ripple: var(--neb-#{$color}-5);
