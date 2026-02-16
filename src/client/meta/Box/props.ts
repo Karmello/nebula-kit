@@ -304,6 +304,11 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     link: true,
     tooltip: CSS_POSITION,
   },
+  pressed: {
+    options: ['boolean'],
+    description:
+      'When true, persists the active state to create a pressed effect. Works only for interactive Boxes.',
+  },
   pressedOnFocus: {
     options: ['boolean'],
     description: 'When true, keeps the pressed state active while focused. Works only for interactive Boxes.',

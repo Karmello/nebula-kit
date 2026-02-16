@@ -5,7 +5,12 @@ import { Box, Slide } from 'lib/components'
 import { BUTTON_SIZE_CONFIG } from 'lib/components/core/controls/Button'
 import { withPrefix } from 'lib/helpers'
 
-import { DEFAULT_SWITCH_SIZE, SWITCH_BORDER_MULTIPLIER, SwitchProps } from './definitions'
+import {
+  DEFAULT_SWITCH_INTENT,
+  DEFAULT_SWITCH_SIZE,
+  SWITCH_BORDER_MULTIPLIER,
+  SwitchProps,
+} from './definitions'
 
 import './switch.scss'
 
@@ -15,6 +20,7 @@ export const Switch = ({
   tagRef,
   disabled,
   color,
+  intent = DEFAULT_SWITCH_INTENT,
   // own
   checked,
   defaultChecked,
@@ -63,10 +69,10 @@ export const Switch = ({
         }}
         drawable
         interactive
-        highlighted
+        pressed={animatedChecked && !disabled}
         disabled={disabled}
         variant="solid"
-        intent={animatedChecked && !disabled ? 'primary' : 'tertiary'}
+        intent={intent}
         color={color}
         blockSize={BUTTON_SIZE_CONFIG[size || 'md'].blockSize}
         inlineSize={`calc(${BUTTON_SIZE_CONFIG[size || 'md'].blockSize} * 2 - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})`}

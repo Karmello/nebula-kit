@@ -25,6 +25,7 @@ const BOX_META: ComponentMeta<BoxProps> = {
     '0.7.0': [
       'added visual active state styling alongside hover for interactive Box',
       'added pressedOnFocus prop',
+      'added pressed prop',
     ],
     '0.4.0': ['added visibility prop', 'added aspectRatio prop', 'added transform prop'],
     '0.2.3': ['released'],
