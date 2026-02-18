@@ -1,0 +1,54 @@
+html[data-theme='light'] {
+  &[data-ripple-mode='off'] {
+    --neb-ripple-opacity-base: 0;
+  }
+
+  &[data-ripple-mode='default'] {
+    [data-neb-box-variant='solid'],
+    [data-neb-box-variant='outline'],
+    [data-neb-box-variant='soft-outline'] {
+      --neb-ripple-opacity-base: 0.1;
+    }
+    [data-neb-box-variant='ghost'] {
+      --neb-ripple-opacity-base: 0.12;
+    }
+  }
+
+  &[data-ripple-mode='emphasized'] {
+    [data-neb-box-variant='solid'],
+    [data-neb-box-variant='outline'],
+    [data-neb-box-variant='soft-outline'] {
+      --neb-ripple-opacity-base: 0.2;
+    }
+    [data-neb-box-variant='ghost'] {
+      --neb-ripple-opacity-base: 0.24;
+    }
+  }
+
+  [data-neb-box-intent='neutral'],
+  [data-neb-box-intent='primary'],
+  [data-neb-box-intent='inverse'] {
+    --neb-ripple-opacity: var(--neb-ripple-opacity-base);
+  }
+
+  [data-neb-box-intent='secondary'] {
+    --neb-ripple-opacity: calc(var(--neb-ripple-opacity-base) / 1.5);
+  }
+
+  [data-neb-box-intent='tertiary'] {
+    --neb-ripple-opacity: calc(var(--neb-ripple-opacity-base) / 1.75);
+  }
+
+  [data-neb-box-intent='muted'] {
+    --neb-ripple-opacity: calc(var(--neb-ripple-opacity-base) / 2);
+  }
+
+  [data-neb-box-variant='solid'] {
+    &[data-neb-box-intent='primary'] {
+      --neb-ripple-opacity: calc(var(--neb-ripple-opacity-base) * 1.5);
+    }
+    &[data-neb-box-intent='inverse'] {
+      --neb-ripple-opacity: calc(var(--neb-ripple-opacity-base) * 2.5);
+    }
+  }
+}

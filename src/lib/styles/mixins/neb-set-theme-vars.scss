@@ -1,22 +1,22 @@
 @use 'sass:list';
 
 @mixin neb-set-theme-vars($theme, $color, $prefix) {
-  $hover-alpha: if($theme == 'light', 12%, 16%);
-  $active-alpha: if($theme == 'light', 24%, 32%);
+  $hover-alpha: if($theme == 'light', 25%, 35%);
+  $active-alpha: if($theme == 'light', 50%, 50%);
 
   $neutral-outline-bg-hover: color-mix(in hsl, var(--neb-#{$color}-4) #{$hover-alpha}, transparent);
   $muted-outline-bg-hover: color-mix(in hsl, var(--neb-#{$color}-4) #{$hover-alpha}, transparent);
   $tertiary-outline-bg-hover: color-mix(in hsl, var(--neb-#{$color}-5) #{$hover-alpha}, transparent);
   $secondary-outline-bg-hover: color-mix(in hsl, var(--neb-#{$color}-6) #{$hover-alpha}, transparent);
-  $primary-outline-bg-hover: color-mix(in hsl, var(--neb-#{$color}-9) #{$hover-alpha}, transparent);
-  $inverse-outline-bg-hover: color-mix(in hsl, var(--neb-#{$color}-15) #{$hover-alpha}, transparent);
+  $primary-outline-bg-hover: color-mix(in hsl, var(--neb-#{$color}-7) #{$hover-alpha}, transparent);
+  $inverse-outline-bg-hover: color-mix(in hsl, var(--neb-#{$color}-7) #{$hover-alpha}, transparent);
 
   $neutral-outline-bg-active: color-mix(in hsl, var(--neb-#{$color}-4) #{$active-alpha}, transparent);
   $muted-outline-bg-active: color-mix(in hsl, var(--neb-#{$color}-4) #{$active-alpha}, transparent);
   $tertiary-outline-bg-active: color-mix(in hsl, var(--neb-#{$color}-5) #{$active-alpha}, transparent);
   $secondary-outline-bg-active: color-mix(in hsl, var(--neb-#{$color}-6) #{$active-alpha}, transparent);
-  $primary-outline-bg-active: color-mix(in hsl, var(--neb-#{$color}-9) #{$active-alpha}, transparent);
-  $inverse-outline-bg-active: color-mix(in hsl, var(--neb-#{$color}-15) #{$active-alpha}, transparent);
+  $primary-outline-bg-active: color-mix(in hsl, var(--neb-#{$color}-7) #{$active-alpha}, transparent);
+  $inverse-outline-bg-active: color-mix(in hsl, var(--neb-#{$color}-7) #{$active-alpha}, transparent);
 
   // global
   --neb-background: var(--neb-#{$color}-1);
@@ -232,34 +232,38 @@
   --neb-#{$prefix}inverse-ghost-loader: var(--neb-#{$color}-8);
 
   // ripple solid
-  --neb-#{$prefix}neutral-solid-ripple: var(--neb-#{$color}-6);
-  --neb-#{$prefix}muted-solid-ripple: var(--neb-#{$color}-6);
-  --neb-#{$prefix}tertiary-solid-ripple: var(--neb-#{$color}-7);
-  --neb-#{$prefix}secondary-solid-ripple: var(--neb-#{$color}-8);
-  --neb-#{$prefix}primary-solid-ripple: var(--neb-#{$color}-12);
-  --neb-#{$prefix}inverse-solid-ripple: var(--neb-#{$color}-1);
+  --neb-#{$prefix}neutral-solid-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}muted-solid-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}tertiary-solid-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}secondary-solid-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}primary-solid-ripple: #{if(
+      $theme == 'light',
+      var(--neb-#{$color}-5),
+      var(--neb-#{$color}-11)
+    )};
+  --neb-#{$prefix}inverse-solid-ripple: var(--neb-#{$color}-5);
 
   // ripple outline
-  --neb-#{$prefix}neutral-outline-ripple: var(--neb-#{$color}-6);
-  --neb-#{$prefix}muted-outline-ripple: var(--neb-#{$color}-6);
-  --neb-#{$prefix}tertiary-outline-ripple: var(--neb-#{$color}-7);
-  --neb-#{$prefix}secondary-outline-ripple: var(--neb-#{$color}-8);
-  --neb-#{$prefix}primary-outline-ripple: var(--neb-#{$color}-12);
-  --neb-#{$prefix}inverse-outline-ripple: var(--neb-#{$color}-15);
+  --neb-#{$prefix}neutral-outline-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}muted-outline-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}tertiary-outline-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}secondary-outline-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}primary-outline-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}inverse-outline-ripple: var(--neb-#{$color}-11);
 
   // ripple soft-outline
-  --neb-#{$prefix}neutral-soft-outline-ripple: var(--neb-#{$color}-6);
-  --neb-#{$prefix}muted-soft-outline-ripple: var(--neb-#{$color}-6);
-  --neb-#{$prefix}tertiary-soft-outline-ripple: var(--neb-#{$color}-7);
-  --neb-#{$prefix}secondary-soft-outline-ripple: var(--neb-#{$color}-8);
-  --neb-#{$prefix}primary-soft-outline-ripple: var(--neb-#{$color}-12);
-  --neb-#{$prefix}inverse-soft-outline-ripple: var(--neb-#{$color}-15);
+  --neb-#{$prefix}neutral-soft-outline-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}muted-soft-outline-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}tertiary-soft-outline-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}secondary-soft-outline-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}primary-soft-outline-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}inverse-soft-outline-ripple: var(--neb-#{$color}-11);
 
   // ripple ghost
-  --neb-#{$prefix}neutral-ghost-ripple: var(--neb-#{$color}-6);
-  --neb-#{$prefix}muted-ghost-ripple: var(--neb-#{$color}-6);
-  --neb-#{$prefix}tertiary-ghost-ripple: var(--neb-#{$color}-7);
-  --neb-#{$prefix}secondary-ghost-ripple: var(--neb-#{$color}-8);
-  --neb-#{$prefix}primary-ghost-ripple: var(--neb-#{$color}-12);
-  --neb-#{$prefix}inverse-ghost-ripple: var(--neb-#{$color}-1);
+  --neb-#{$prefix}neutral-ghost-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}muted-ghost-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}tertiary-ghost-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}secondary-ghost-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}primary-ghost-ripple: var(--neb-#{$color}-11);
+  --neb-#{$prefix}inverse-ghost-ripple: var(--neb-#{$color}-5);
 }
