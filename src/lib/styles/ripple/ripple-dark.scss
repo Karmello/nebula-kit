@@ -1,54 +1,113 @@
 html[data-theme='dark'] {
+  /* ---------------------------------------------
+     Ripple mode factors (on html)
+  --------------------------------------------- */
+
   &[data-ripple-mode='off'] {
-    --neb-ripple-opacity-base: 0;
+    --neb-ripple-factor: 0;
   }
 
   &[data-ripple-mode='default'] {
-    [data-neb-box-variant='solid'],
-    [data-neb-box-variant='outline'],
-    [data-neb-box-variant='soft-outline'] {
-      --neb-ripple-opacity-base: 0.1;
-    }
-    [data-neb-box-variant='ghost'] {
-      --neb-ripple-opacity-base: 0.17;
-    }
+    --neb-ripple-factor: 1;
   }
 
   &[data-ripple-mode='emphasized'] {
-    [data-neb-box-variant='solid'],
-    [data-neb-box-variant='outline'],
-    [data-neb-box-variant='soft-outline'] {
-      --neb-ripple-opacity-base: 0.2;
-    }
-    [data-neb-box-variant='ghost'] {
-      --neb-ripple-opacity-base: 0.34;
-    }
+    --neb-ripple-factor: 2;
   }
 
-  [data-neb-box-intent='neutral'],
-  [data-neb-box-intent='primary'],
-  [data-neb-box-intent='inverse'] {
-    --neb-ripple-opacity: var(--neb-ripple-opacity-base);
-  }
-
-  [data-neb-box-intent='secondary'] {
-    --neb-ripple-opacity: calc(var(--neb-ripple-opacity-base) / 1.5);
-  }
-
-  [data-neb-box-intent='tertiary'] {
-    --neb-ripple-opacity: calc(var(--neb-ripple-opacity-base) / 1.75);
-  }
-
-  [data-neb-box-intent='muted'] {
-    --neb-ripple-opacity: calc(var(--neb-ripple-opacity-base) / 2);
-  }
+  /* ---------------------------------------------
+     Base opacity matrix (on descendants)
+  --------------------------------------------- */
 
   [data-neb-box-variant='solid'] {
+    &[data-neb-box-intent='neutral'] {
+      --neb-ripple-base-opacity: 0.05;
+    }
+    &[data-neb-box-intent='muted'] {
+      --neb-ripple-base-opacity: 0.03;
+    }
+    &[data-neb-box-intent='tertiary'] {
+      --neb-ripple-base-opacity: 0.04;
+    }
+    &[data-neb-box-intent='secondary'] {
+      --neb-ripple-base-opacity: 0.05;
+    }
     &[data-neb-box-intent='primary'] {
-      --neb-ripple-opacity: calc(var(--neb-ripple-opacity-base) * 2.25);
+      --neb-ripple-base-opacity: 0.15;
     }
     &[data-neb-box-intent='inverse'] {
-      --neb-ripple-opacity: calc(var(--neb-ripple-opacity-base) * 1.5);
+      --neb-ripple-base-opacity: 0.13;
     }
+  }
+
+  [data-neb-box-variant='outline'] {
+    &[data-neb-box-intent='neutral'] {
+      --neb-ripple-base-opacity: 0.07;
+    }
+    &[data-neb-box-intent='muted'] {
+      --neb-ripple-base-opacity: 0.05;
+    }
+    &[data-neb-box-intent='tertiary'] {
+      --neb-ripple-base-opacity: 0.04;
+    }
+    &[data-neb-box-intent='secondary'] {
+      --neb-ripple-base-opacity: 0.05;
+    }
+    &[data-neb-box-intent='primary'] {
+      --neb-ripple-base-opacity: 0.06;
+    }
+    &[data-neb-box-intent='inverse'] {
+      --neb-ripple-base-opacity: 0.06;
+    }
+  }
+
+  [data-neb-box-variant='soft-outline'] {
+    &[data-neb-box-intent='neutral'] {
+      --neb-ripple-base-opacity: 0.07;
+    }
+    &[data-neb-box-intent='muted'] {
+      --neb-ripple-base-opacity: 0.27;
+    }
+    &[data-neb-box-intent='tertiary'] {
+      --neb-ripple-base-opacity: 0.14;
+    }
+    &[data-neb-box-intent='secondary'] {
+      --neb-ripple-base-opacity: 0.15;
+    }
+    &[data-neb-box-intent='primary'] {
+      --neb-ripple-base-opacity: 0.08;
+    }
+    &[data-neb-box-intent='inverse'] {
+      --neb-ripple-base-opacity: 0.07;
+    }
+  }
+
+  [data-neb-box-variant='ghost'] {
+    &[data-neb-box-intent='neutral'] {
+      --neb-ripple-base-opacity: 0.12;
+    }
+    &[data-neb-box-intent='muted'] {
+      --neb-ripple-base-opacity: 0.42;
+    }
+    &[data-neb-box-intent='tertiary'] {
+      --neb-ripple-base-opacity: 0.33;
+    }
+    &[data-neb-box-intent='secondary'] {
+      --neb-ripple-base-opacity: 0.28;
+    }
+    &[data-neb-box-intent='primary'] {
+      --neb-ripple-base-opacity: 0.18;
+    }
+    &[data-neb-box-intent='inverse'] {
+      --neb-ripple-base-opacity: 0.14;
+    }
+  }
+
+  /* ---------------------------------------------
+     Final computed ripple opacity (descendants)
+  --------------------------------------------- */
+
+  [data-neb-box-variant][data-neb-box-intent] {
+    --neb-ripple-opacity: calc(var(--neb-ripple-base-opacity) * var(--neb-ripple-factor));
   }
 }

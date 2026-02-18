@@ -6,7 +6,6 @@
 
     @each $intent in $neb-intents {
       &[data-neb-box-intent='#{$intent}'] {
-        --neb-ripple-bg: var(--neb-#{$intent}-ghost-ripple);
         --neb-loader: var(--neb-#{$intent}-ghost-loader);
 
         // rest
