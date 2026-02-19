@@ -51,8 +51,10 @@ export const PLAYGROUND_MAP: Record<string, unknown[]> = {
     'interactive',
     'margin',
     'padding',
+    'pressed',
     'theme',
     'variant',
+    'visibility',
   ] as (keyof BoxProps)[],
   Button: [
     'bold',
