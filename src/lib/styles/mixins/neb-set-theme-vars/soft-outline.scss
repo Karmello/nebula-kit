@@ -47,11 +47,11 @@ $neb-soft-outline-bg-active: (
 // ------------------------------------------------------------
 
 @function neb-soft-outline-mix($var-name, $percent) {
-  @return color-mix(in oklch, var(#{$var-name}) #{$percent}, black);
+  @return color-mix(in hsl, var(#{$var-name}) #{$percent}, black);
 }
 
 @function neb-soft-outline-overlay($var-name, $percent) {
-  @return color-mix(in oklch, var(#{$var-name}) #{$percent}, transparent);
+  @return color-mix(in hsl, var(#{$var-name}) #{$percent}, transparent);
 }
 
 // ------------------------------------------------------------

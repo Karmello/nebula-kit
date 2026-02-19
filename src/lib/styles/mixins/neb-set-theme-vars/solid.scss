@@ -4,7 +4,7 @@
 // Solid state configuration (percentages centralized)
 // ------------------------------------------------------------
 
-$neb-solid-hover: (
+$neb-solid-hover-light: (
   neutral: 95%,
   muted: 95%,
   tertiary: 92%,
@@ -12,7 +12,7 @@ $neb-solid-hover: (
   primary: 85%,
 );
 
-$neb-solid-active: (
+$neb-solid-active-light: (
   neutral: 87%,
   muted: 87%,
   tertiary: 82%,
@@ -20,12 +20,29 @@ $neb-solid-active: (
   primary: 65%,
 );
 
+$neb-solid-hover-dark: (
+  neutral: 90%,
+  muted: 95%,
+  tertiary: 92%,
+  secondary: 89%,
+  primary: 90%,
+);
+
+$neb-solid-active-dark: (
+  neutral: 87%,
+  muted: 87%,
+  tertiary: 82%,
+  secondary: 75%,
+  primary: 80%,
+);
+
 // ------------------------------------------------------------
 // Helper
 // ------------------------------------------------------------
 
-@function neb-solid-mix($var-name, $percent) {
-  @return color-mix(in oklch, var(#{$var-name}) #{$percent}, black);
+@function neb-solid-mix($var-name, $percent, $theme) {
+  $mix-target: if($theme == 'light', black, white);
+  @return color-mix(in hsl, var(#{$var-name}) #{$percent}, #{$mix-target});
 }
 
 // ------------------------------------------------------------
@@ -33,6 +50,9 @@ $neb-solid-active: (
 // ------------------------------------------------------------
 
 @mixin neb-set-theme-vars-solid($theme, $color, $prefix) {
+  $hover-map: if($theme == 'light', $neb-solid-hover-light, $neb-solid-hover-dark);
+  $active-map: if($theme == 'light', $neb-solid-active-light, $neb-solid-active-dark);
+
   // ----------------------------------------------------------
   // REST
   // ----------------------------------------------------------
@@ -55,58 +75,68 @@ $neb-solid-active: (
 
   --neb-#{$prefix}solid-neutral-hover: #{neb-solid-mix(
       '--neb-#{$prefix}solid-neutral',
-      map.get($neb-solid-hover, neutral)
+      map.get($hover-map, neutral),
+      $theme
     )};
 
   --neb-#{$prefix}solid-muted-hover: #{neb-solid-mix(
       '--neb-#{$prefix}solid-muted',
-      map.get($neb-solid-hover, muted)
+      map.get($hover-map, muted),
+      $theme
     )};
 
   --neb-#{$prefix}solid-tertiary-hover: #{neb-solid-mix(
       '--neb-#{$prefix}solid-tertiary',
-      map.get($neb-solid-hover, tertiary)
+      map.get($hover-map, tertiary),
+      $theme
     )};
 
   --neb-#{$prefix}solid-secondary-hover: #{neb-solid-mix(
       '--neb-#{$prefix}solid-secondary',
-      map.get($neb-solid-hover, secondary)
+      map.get($hover-map, secondary),
+      $theme
     )};
 
   --neb-#{$prefix}solid-primary-hover: #{neb-solid-mix(
       '--neb-#{$prefix}solid-primary',
-      map.get($neb-solid-hover, primary)
+      map.get($hover-map, primary),
+      $theme
     )};
 
   --neb-#{$prefix}solid-inverse-hover: var(--neb-#{$prefix}solid-inverse);
 
   // ----------------------------------------------------------
   // ACTIVE
-  // ----------------------------------------------------------
+  // ------------------------------------------------------------
 
   --neb-#{$prefix}solid-neutral-active: #{neb-solid-mix(
       '--neb-#{$prefix}solid-neutral',
-      map.get($neb-solid-active, neutral)
+      map.get($active-map, neutral),
+      $theme
     )};
 
   --neb-#{$prefix}solid-muted-active: #{neb-solid-mix(
       '--neb-#{$prefix}solid-muted',
-      map.get($neb-solid-active, muted)
+      map.get($active-map, muted),
+      $theme
     )};
 
   --neb-#{$prefix}solid-tertiary-active: #{neb-solid-mix(
       '--neb-#{$prefix}solid-tertiary',
-      map.get($neb-solid-active, tertiary)
+      map.get($active-map, tertiary),
+      $theme
     )};
 
   --neb-#{$prefix}solid-secondary-active: #{neb-solid-mix(
       '--neb-#{$prefix}solid-secondary',
-      map.get($neb-solid-active, secondary)
+      map.get($active-map, secondary),
+      $theme
     )};
 
   --neb-#{$prefix}solid-primary-active: #{neb-solid-mix(
       '--neb-#{$prefix}solid-primary',
-      map.get($neb-solid-active, primary)
+      map.get($active-map, primary),
+      $theme
     )};
 
   --neb-#{$prefix}solid-inverse-active: var(--neb-#{$prefix}solid-inverse);

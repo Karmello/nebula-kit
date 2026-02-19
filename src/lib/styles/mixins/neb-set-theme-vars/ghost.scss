@@ -25,7 +25,7 @@ $neb-ghost-active: (
 // ------------------------------------------------------------
 
 @function neb-ghost-mix($var-name, $percent) {
-  @return color-mix(in oklch, var(#{$var-name}) #{$percent}, black);
+  @return color-mix(in hsl, var(#{$var-name}) #{$percent}, black);
 }
 
 // ------------------------------------------------------------

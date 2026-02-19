@@ -10,7 +10,7 @@
 
         // rest
         background-color: var(--neb-solid-#{$intent});
-        color: var(--neb-solid-#{$intent}-text);
+        color: var(--neb-solid-#{$intent}-text, var(--neb-text));
 
         // not disabled, interactive
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
