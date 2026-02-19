@@ -33,6 +33,10 @@
       "path": "src/lib/definitions",
     },
     {
+      "name": "styles",
+      "path": "src/lib/styles",
+    },
+    {
       "name": "components",
       "path": "src/lib/components",
     },

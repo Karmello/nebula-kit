@@ -1,0 +1,202 @@
+@use 'sass:map';
+
+// ------------------------------------------------------------
+// Edge state configuration (darkening curve)
+// ------------------------------------------------------------
+
+$neb-soft-outline-hover: (
+  neutral: 97%,
+  muted: 96%,
+  tertiary: 94%,
+  secondary: 91%,
+  primary: 87%,
+);
+
+$neb-soft-outline-active: (
+  neutral: 94%,
+  muted: 92%,
+  tertiary: 88%,
+  secondary: 82%,
+  primary: 74%,
+);
+
+// ------------------------------------------------------------
+// Overlay state configuration (bg transparency curve)
+// ------------------------------------------------------------
+
+$neb-soft-outline-bg-hover: (
+  neutral: 75%,
+  muted: 40%,
+  tertiary: 30%,
+  secondary: 25%,
+  primary: 20%,
+  inverse: 15%,
+);
+
+$neb-soft-outline-bg-active: (
+  neutral: 75%,
+  muted: 40%,
+  tertiary: 30%,
+  secondary: 25%,
+  primary: 20%,
+  inverse: 15%,
+);
+
+// ------------------------------------------------------------
+// Helpers
+// ------------------------------------------------------------
+
+@function neb-soft-outline-mix($var-name, $percent) {
+  @return color-mix(in oklch, var(#{$var-name}) #{$percent}, black);
+}
+
+@function neb-soft-outline-overlay($var-name, $percent) {
+  @return color-mix(in oklch, var(#{$var-name}) #{$percent}, transparent);
+}
+
+// ------------------------------------------------------------
+// Soft-outline variant
+// ------------------------------------------------------------
+
+@mixin neb-set-theme-vars-soft-outline($theme, $color, $prefix) {
+  // ----------------------------------------------------------
+  // REST
+  // ----------------------------------------------------------
+
+  --neb-#{$prefix}soft-outline-neutral: var(--neb-#{$color}-1);
+  --neb-#{$prefix}soft-outline-muted: var(--neb-#{$color}-2);
+  --neb-#{$prefix}soft-outline-tertiary: var(--neb-#{$color}-3);
+  --neb-#{$prefix}soft-outline-secondary: var(--neb-#{$color}-4);
+  --neb-#{$prefix}soft-outline-primary: var(--neb-#{$color}-5);
+  --neb-#{$prefix}soft-outline-inverse: var(--neb-#{$color}-9);
+
+  // ----------------------------------------------------------
+  // HOVER (edge)
+  // ----------------------------------------------------------
+
+  --neb-#{$prefix}soft-outline-neutral-hover: #{neb-soft-outline-mix(
+      '--neb-#{$prefix}soft-outline-neutral',
+      map.get($neb-soft-outline-hover, neutral)
+    )};
+
+  --neb-#{$prefix}soft-outline-muted-hover: #{neb-soft-outline-mix(
+      '--neb-#{$prefix}soft-outline-muted',
+      map.get($neb-soft-outline-hover, muted)
+    )};
+
+  --neb-#{$prefix}soft-outline-tertiary-hover: #{neb-soft-outline-mix(
+      '--neb-#{$prefix}soft-outline-tertiary',
+      map.get($neb-soft-outline-hover, tertiary)
+    )};
+
+  --neb-#{$prefix}soft-outline-secondary-hover: #{neb-soft-outline-mix(
+      '--neb-#{$prefix}soft-outline-secondary',
+      map.get($neb-soft-outline-hover, secondary)
+    )};
+
+  --neb-#{$prefix}soft-outline-primary-hover: #{neb-soft-outline-mix(
+      '--neb-#{$prefix}soft-outline-primary',
+      map.get($neb-soft-outline-hover, primary)
+    )};
+
+  --neb-#{$prefix}soft-outline-inverse-hover: var(--neb-#{$prefix}soft-outline-inverse);
+
+  // ----------------------------------------------------------
+  // HOVER (overlay)
+  // ----------------------------------------------------------
+
+  --neb-#{$prefix}soft-outline-neutral-bg-hover: #{neb-soft-outline-overlay(
+      '--neb-#{$prefix}soft-outline-neutral-hover',
+      map.get($neb-soft-outline-bg-hover, neutral)
+    )};
+
+  --neb-#{$prefix}soft-outline-muted-bg-hover: #{neb-soft-outline-overlay(
+      '--neb-#{$prefix}soft-outline-muted-hover',
+      map.get($neb-soft-outline-bg-hover, muted)
+    )};
+
+  --neb-#{$prefix}soft-outline-tertiary-bg-hover: #{neb-soft-outline-overlay(
+      '--neb-#{$prefix}soft-outline-tertiary-hover',
+      map.get($neb-soft-outline-bg-hover, tertiary)
+    )};
+
+  --neb-#{$prefix}soft-outline-secondary-bg-hover: #{neb-soft-outline-overlay(
+      '--neb-#{$prefix}soft-outline-secondary-hover',
+      map.get($neb-soft-outline-bg-hover, secondary)
+    )};
+
+  --neb-#{$prefix}soft-outline-primary-bg-hover: #{neb-soft-outline-overlay(
+      '--neb-#{$prefix}soft-outline-primary-hover',
+      map.get($neb-soft-outline-bg-hover, primary)
+    )};
+
+  --neb-#{$prefix}soft-outline-inverse-bg-hover: #{neb-soft-outline-overlay(
+      '--neb-#{$prefix}soft-outline-inverse-hover',
+      map.get($neb-soft-outline-bg-hover, inverse)
+    )};
+
+  // ----------------------------------------------------------
+  // ACTIVE (edge)
+  // ----------------------------------------------------------
+
+  --neb-#{$prefix}soft-outline-neutral-active: #{neb-soft-outline-mix(
+      '--neb-#{$prefix}soft-outline-neutral',
+      map.get($neb-soft-outline-active, neutral)
+    )};
+
+  --neb-#{$prefix}soft-outline-muted-active: #{neb-soft-outline-mix(
+      '--neb-#{$prefix}soft-outline-muted',
+      map.get($neb-soft-outline-active, muted)
+    )};
+
+  --neb-#{$prefix}soft-outline-tertiary-active: #{neb-soft-outline-mix(
+      '--neb-#{$prefix}soft-outline-tertiary',
+      map.get($neb-soft-outline-active, tertiary)
+    )};
+
+  --neb-#{$prefix}soft-outline-secondary-active: #{neb-soft-outline-mix(
+      '--neb-#{$prefix}soft-outline-secondary',
+      map.get($neb-soft-outline-active, secondary)
+    )};
+
+  --neb-#{$prefix}soft-outline-primary-active: #{neb-soft-outline-mix(
+      '--neb-#{$prefix}soft-outline-primary',
+      map.get($neb-soft-outline-active, primary)
+    )};
+
+  --neb-#{$prefix}soft-outline-inverse-active: var(--neb-#{$prefix}soft-outline-inverse);
+
+  // ----------------------------------------------------------
+  // ACTIVE (overlay)
+  // ----------------------------------------------------------
+
+  --neb-#{$prefix}soft-outline-neutral-bg-active: #{neb-soft-outline-overlay(
+      '--neb-#{$prefix}soft-outline-neutral-active',
+      map.get($neb-soft-outline-bg-active, neutral)
+    )};
+
+  --neb-#{$prefix}soft-outline-muted-bg-active: #{neb-soft-outline-overlay(
+      '--neb-#{$prefix}soft-outline-muted-active',
+      map.get($neb-soft-outline-bg-active, muted)
+    )};
+
+  --neb-#{$prefix}soft-outline-tertiary-bg-active: #{neb-soft-outline-overlay(
+      '--neb-#{$prefix}soft-outline-tertiary-active',
+      map.get($neb-soft-outline-bg-active, tertiary)
+    )};
+
+  --neb-#{$prefix}soft-outline-secondary-bg-active: #{neb-soft-outline-overlay(
+      '--neb-#{$prefix}soft-outline-secondary-active',
+      map.get($neb-soft-outline-bg-active, secondary)
+    )};
+
+  --neb-#{$prefix}soft-outline-primary-bg-active: #{neb-soft-outline-overlay(
+      '--neb-#{$prefix}soft-outline-primary-active',
+      map.get($neb-soft-outline-bg-active, primary)
+    )};
+
+  --neb-#{$prefix}soft-outline-inverse-bg-active: #{neb-soft-outline-overlay(
+      '--neb-#{$prefix}soft-outline-inverse-active',
+      map.get($neb-soft-outline-bg-active, inverse)
+    )};
+}

@@ -14,8 +14,8 @@ test('Box color prop overrides ctx primary solid color', async ({ mount, page })
     const cs = getComputedStyle(el)
     return {
       bg: cs.backgroundColor,
-      palette: getComputedStyle(document.documentElement).getPropertyValue('--neb-red-8').trim(),
-      ctx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-primary-solid').trim(),
+      palette: getComputedStyle(document.documentElement).getPropertyValue('--neb-red-5').trim(),
+      ctx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-solid-primary').trim(),
     }
   })
 
@@ -48,7 +48,7 @@ test('Child Box color overrides parent color', async ({ mount, page }) => {
     const cs = getComputedStyle(el)
     return {
       bg: cs.backgroundColor,
-      red: getComputedStyle(document.documentElement).getPropertyValue('--neb-red-8').trim(),
+      red: getComputedStyle(document.documentElement).getPropertyValue('--neb-red-5').trim(),
     }
   })
 
@@ -80,7 +80,7 @@ test('Parent color does not leak into child Box without color', async ({ mount, 
     const childBg = getComputedStyle(child).backgroundColor
 
     const ctxPrimary = getComputedStyle(document.documentElement)
-      .getPropertyValue('--neb-ctx-primary-solid')
+      .getPropertyValue('--neb-ctx-solid-primary')
       .trim()
 
     return { parentBg, childBg, ctxPrimary }
@@ -88,7 +88,7 @@ test('Parent color does not leak into child Box without color', async ({ mount, 
 
   // parent is explicitly red
   const red8 = await page.evaluate(() =>
-    getComputedStyle(document.documentElement).getPropertyValue('--neb-red-8').trim()
+    getComputedStyle(document.documentElement).getPropertyValue('--neb-red-5').trim()
   )
   expect(result.parentBg).toBe(tinycolor(red8).toRgbString())
 
@@ -133,10 +133,10 @@ test('Color does not inherit to child Box', async ({ mount, page }) => {
       parentBg: parentCs.backgroundColor,
       childBg: childCs.backgroundColor,
 
-      parentSemantic: parentCs.getPropertyValue('--neb-primary-solid').trim(),
-      childSemantic: childCs.getPropertyValue('--neb-primary-solid').trim(),
+      parentSemantic: parentCs.getPropertyValue('--neb-solid-primary').trim(),
+      childSemantic: childCs.getPropertyValue('--neb-solid-primary').trim(),
 
-      brandCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-primary-solid').trim(),
+      brandCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-solid-primary').trim(),
     }
   })
 
@@ -172,10 +172,10 @@ test('Explicit color overrides brand', async ({ mount, page }) => {
       bg: cs.backgroundColor,
 
       // color override path
-      colorSemantic: cs.getPropertyValue('--neb-primary-solid').trim(),
+      colorSemantic: cs.getPropertyValue('--neb-solid-primary').trim(),
 
       // brand ctx (should be ignored)
-      brandCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-primary-solid').trim(),
+      brandCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-solid-primary').trim(),
     }
   })
 

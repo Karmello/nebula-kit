@@ -14,7 +14,7 @@ test('Box paints ctx primary solid color by default', async ({ mount, page }) =>
     const cs = getComputedStyle(el)
     return {
       bg: cs.backgroundColor,
-      ctx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-primary-solid').trim(),
+      ctx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-solid-primary').trim(),
     }
   })
 
@@ -42,7 +42,7 @@ test('Nested Box inherits ctx primary solid color', async ({ mount, page }) => {
     const cs = getComputedStyle(el)
     return {
       bg: cs.backgroundColor,
-      ctx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-primary-solid').trim(),
+      ctx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-solid-primary').trim(),
     }
   })
 
@@ -61,7 +61,7 @@ test('Box with dark theme uses dark ctx colors inside light app', async ({ mount
     const cs = getComputedStyle(el)
     return {
       bg: cs.backgroundColor,
-      ctx: cs.getPropertyValue('--neb-primary-solid').trim(),
+      ctx: cs.getPropertyValue('--neb-solid-primary').trim(),
     }
   })
 
@@ -100,7 +100,7 @@ test('Nested theme islands reset correctly (light → dark → light)', async ({
     return {
       darkBg: getComputedStyle(dark).backgroundColor,
       lightBg: getComputedStyle(light).backgroundColor,
-      lightCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-inverse-solid').trim(),
+      lightCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-solid-inverse').trim(),
     }
   })
 
@@ -156,7 +156,7 @@ test('Nested theme islands reset correctly (light → dark → light → dark)',
       light1Bg: getComputedStyle(light1).backgroundColor,
       dark2Bg: getComputedStyle(dark2).backgroundColor,
 
-      lightCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-inverse-solid').trim(),
+      lightCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-solid-inverse').trim(),
     }
   })
 
@@ -188,7 +188,7 @@ test('Global dark theme paints primary solid correctly', async ({ mount, page })
     const cs = getComputedStyle(el)
     return {
       bg: cs.backgroundColor,
-      semantic: cs.getPropertyValue('--neb-primary-solid').trim(),
+      semantic: cs.getPropertyValue('--neb-solid-primary').trim(),
     }
   })
 

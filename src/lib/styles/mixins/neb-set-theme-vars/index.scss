@@ -1,0 +1,16 @@
+@use 'styles/mixins/neb-set-theme-vars/solid.scss' as solid;
+@use 'styles/mixins/neb-set-theme-vars/outline.scss' as outline;
+@use 'styles/mixins/neb-set-theme-vars/soft-outline.scss' as soft-outline;
+@use 'styles/mixins/neb-set-theme-vars/ghost.scss' as ghost;
+
+@mixin neb-set-theme-vars($theme, $color, $prefix) {
+  // global
+  --neb-background: var(--neb-#{$color}-1);
+  --neb-text: var(--neb-#{$color}-6);
+  --neb-focus-border: var(--neb-#{$color}-6);
+
+  @include solid.neb-set-theme-vars-solid($theme, $color, $prefix);
+  @include outline.neb-set-theme-vars-outline($theme, $color, $prefix);
+  @include soft-outline.neb-set-theme-vars-soft-outline($theme, $color, $prefix);
+  @include ghost.neb-set-theme-vars-ghost($theme, $color, $prefix);
+}

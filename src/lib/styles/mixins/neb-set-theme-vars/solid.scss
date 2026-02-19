@@ -1,0 +1,113 @@
+@use 'sass:map';
+
+// ------------------------------------------------------------
+// Solid state configuration (percentages centralized)
+// ------------------------------------------------------------
+
+$neb-solid-hover: (
+  neutral: 97%,
+  muted: 96%,
+  tertiary: 94%,
+  secondary: 91%,
+  primary: 87%,
+);
+
+$neb-solid-active: (
+  neutral: 94%,
+  muted: 92%,
+  tertiary: 88%,
+  secondary: 82%,
+  primary: 74%,
+);
+
+// ------------------------------------------------------------
+// Helper
+// ------------------------------------------------------------
+
+@function neb-solid-mix($var-name, $percent) {
+  @return color-mix(in oklch, var(#{$var-name}) #{$percent}, black);
+}
+
+// ------------------------------------------------------------
+// Solid variant
+// ------------------------------------------------------------
+
+@mixin neb-set-theme-vars-solid($theme, $color, $prefix) {
+  // ----------------------------------------------------------
+  // REST
+  // ----------------------------------------------------------
+
+  --neb-#{$prefix}solid-neutral: var(--neb-#{$color}-1);
+  --neb-#{$prefix}solid-muted: var(--neb-#{$color}-2);
+  --neb-#{$prefix}solid-tertiary: var(--neb-#{$color}-3);
+  --neb-#{$prefix}solid-secondary: var(--neb-#{$color}-4);
+  --neb-#{$prefix}solid-primary: var(--neb-#{$color}-5);
+  --neb-#{$prefix}solid-inverse: var(--neb-#{$color}-9);
+
+  // solid text (contrast logic only where needed)
+  --neb-#{$prefix}solid-primary-text: #{if($theme == 'light', var(--neb-#{$color}-1), var(--neb-#{$color}-9))};
+
+  --neb-#{$prefix}solid-inverse-text: var(--neb-#{$color}-1);
+
+  // ----------------------------------------------------------
+  // HOVER
+  // ----------------------------------------------------------
+
+  --neb-#{$prefix}solid-neutral-hover: #{neb-solid-mix(
+      '--neb-#{$prefix}solid-neutral',
+      map.get($neb-solid-hover, neutral)
+    )};
+
+  --neb-#{$prefix}solid-muted-hover: #{neb-solid-mix(
+      '--neb-#{$prefix}solid-muted',
+      map.get($neb-solid-hover, muted)
+    )};
+
+  --neb-#{$prefix}solid-tertiary-hover: #{neb-solid-mix(
+      '--neb-#{$prefix}solid-tertiary',
+      map.get($neb-solid-hover, tertiary)
+    )};
+
+  --neb-#{$prefix}solid-secondary-hover: #{neb-solid-mix(
+      '--neb-#{$prefix}solid-secondary',
+      map.get($neb-solid-hover, secondary)
+    )};
+
+  --neb-#{$prefix}solid-primary-hover: #{neb-solid-mix(
+      '--neb-#{$prefix}solid-primary',
+      map.get($neb-solid-hover, primary)
+    )};
+
+  --neb-#{$prefix}solid-inverse-hover: var(--neb-#{$prefix}solid-inverse);
+
+  // ----------------------------------------------------------
+  // ACTIVE
+  // ----------------------------------------------------------
+
+  --neb-#{$prefix}solid-neutral-active: #{neb-solid-mix(
+      '--neb-#{$prefix}solid-neutral',
+      map.get($neb-solid-active, neutral)
+    )};
+
+  --neb-#{$prefix}solid-muted-active: #{neb-solid-mix(
+      '--neb-#{$prefix}solid-muted',
+      map.get($neb-solid-active, muted)
+    )};
+
+  --neb-#{$prefix}solid-tertiary-active: #{neb-solid-mix(
+      '--neb-#{$prefix}solid-tertiary',
+      map.get($neb-solid-active, tertiary)
+    )};
+
+  --neb-#{$prefix}solid-secondary-active: #{neb-solid-mix(
+      '--neb-#{$prefix}solid-secondary',
+      map.get($neb-solid-active, secondary)
+    )};
+
+  --neb-#{$prefix}solid-primary-active: #{neb-solid-mix(
+      '--neb-#{$prefix}solid-primary',
+      map.get($neb-solid-active, primary)
+    )};
+
+  --neb-#{$prefix}solid-inverse-active: var(--neb-#{$prefix}solid-inverse);
+}
