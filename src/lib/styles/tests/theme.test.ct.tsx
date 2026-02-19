@@ -10,16 +10,26 @@ test('Box paints ctx primary solid color by default', async ({ mount, page }) =>
     </Box>
   )
 
-  const result = await page.locator('#box').evaluate(el => {
-    const cs = getComputedStyle(el)
-    return {
-      bg: cs.backgroundColor,
-      ctx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-solid-primary').trim(),
-    }
+  const result = await page.evaluate(() => {
+    const el = document.getElementById('box')!
+    const bg = getComputedStyle(el).backgroundColor
+    return { bg }
   })
 
-  expect(result.ctx).not.toBe('')
-  expect(result.bg).toBe(tinycolor(result.ctx).toRgbString())
+  // must resolve to a real color
+  expect(result.bg).toMatch(/^rgb\(/)
+
+  // resolve ctx primary via browser
+  const ctxResolved = await page.evaluate(() => {
+    const el = document.createElement('div')
+    el.style.backgroundColor = 'var(--neb-ctx-solid-primary)'
+    document.body.appendChild(el)
+    const value = getComputedStyle(el).backgroundColor
+    document.body.removeChild(el)
+    return value
+  })
+
+  expect(result.bg).toBe(ctxResolved)
 })
 
 test('Nested Box inherits ctx primary solid color', async ({ mount, page }) => {
@@ -38,16 +48,26 @@ test('Nested Box inherits ctx primary solid color', async ({ mount, page }) => {
     </Box>
   )
 
-  const result = await page.locator('#child').evaluate(el => {
-    const cs = getComputedStyle(el)
-    return {
-      bg: cs.backgroundColor,
-      ctx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-solid-primary').trim(),
-    }
+  const result = await page.evaluate(() => {
+    const child = document.getElementById('child')!
+    const bg = getComputedStyle(child).backgroundColor
+    return { bg }
   })
 
-  expect(result.ctx).not.toBe('')
-  expect(result.bg).toBe(tinycolor(result.ctx).toRgbString())
+  // must resolve to a real color
+  expect(result.bg).toMatch(/^rgb\(/)
+
+  // resolve ctx primary via browser
+  const ctxResolved = await page.evaluate(() => {
+    const el = document.createElement('div')
+    el.style.backgroundColor = 'var(--neb-ctx-solid-primary)'
+    document.body.appendChild(el)
+    const value = getComputedStyle(el).backgroundColor
+    document.body.removeChild(el)
+    return value
+  })
+
+  expect(result.bg).toBe(ctxResolved)
 })
 
 test('Box with dark theme uses dark ctx colors inside light app', async ({ mount, page }) => {
@@ -57,16 +77,27 @@ test('Box with dark theme uses dark ctx colors inside light app', async ({ mount
     </Box>
   )
 
-  const result = await page.locator('#box').evaluate(el => {
-    const cs = getComputedStyle(el)
-    return {
-      bg: cs.backgroundColor,
-      ctx: cs.getPropertyValue('--neb-solid-primary').trim(),
-    }
+  const result = await page.evaluate(() => {
+    const el = document.getElementById('box')!
+    const bg = getComputedStyle(el).backgroundColor
+    return { bg }
   })
 
-  expect(result.ctx).not.toBe('')
-  expect(result.bg).toBe(tinycolor(result.ctx).toRgbString())
+  // must resolve to a real color
+  expect(result.bg).toMatch(/^rgb\(/)
+
+  // resolve ctx primary *within dark theme scope*
+  const darkResolved = await page.evaluate(() => {
+    const el = document.createElement('div')
+    el.setAttribute('data-theme', 'dark')
+    el.style.backgroundColor = 'var(--neb-ctx-solid-primary)'
+    document.body.appendChild(el)
+    const value = getComputedStyle(el).backgroundColor
+    document.body.removeChild(el)
+    return value
+  })
+
+  expect(result.bg).toBe(darkResolved)
 })
 
 test('Nested theme islands reset correctly (light → dark → light)', async ({ mount, page }) => {
@@ -184,14 +215,25 @@ test('Global dark theme paints primary solid correctly', async ({ mount, page })
     }
   )
 
-  const result = await page.locator('#box').evaluate(el => {
-    const cs = getComputedStyle(el)
-    return {
-      bg: cs.backgroundColor,
-      semantic: cs.getPropertyValue('--neb-solid-primary').trim(),
-    }
+  const result = await page.evaluate(() => {
+    const el = document.getElementById('box')!
+    const bg = getComputedStyle(el).backgroundColor
+    return { bg }
   })
 
-  expect(result.semantic).not.toBe('')
-  expect(result.bg).toBe(tinycolor(result.semantic).toRgbString())
+  // must resolve to a real color
+  expect(result.bg).toMatch(/^rgb\(/)
+
+  // resolve dark ctx primary via browser
+  const darkResolved = await page.evaluate(() => {
+    const el = document.createElement('div')
+    el.setAttribute('data-theme', 'dark')
+    el.style.backgroundColor = 'var(--neb-ctx-solid-primary)'
+    document.body.appendChild(el)
+    const value = getComputedStyle(el).backgroundColor
+    document.body.removeChild(el)
+    return value
+  })
+
+  expect(result.bg).toBe(darkResolved)
 })

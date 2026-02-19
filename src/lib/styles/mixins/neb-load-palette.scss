@@ -1,5 +1,8 @@
 @use 'sass:map';
+@use 'sass:color';
 @use 'styles/definitions/definitions.scss' as defs;
+
+$neb-dark-sat-factor: 0.65;
 
 @mixin neb-load-palette($mode) {
   $is-dark: $mode == 'dark';
@@ -7,7 +10,16 @@
   @each $name, $scale in defs.$neb-palette {
     @for $i from 1 through 9 {
       $index: if($is-dark, 10 - $i, $i);
-      --neb-#{$name}-#{$i}: #{map.get($scale, $index)};
+
+      $base-color: map.get($scale, $index);
+
+      $hue: color.channel($base-color, 'hue', $space: hsl);
+      $sat: color.channel($base-color, 'saturation', $space: hsl);
+      $light: color.channel($base-color, 'lightness', $space: hsl);
+
+      $final-sat: if($is-dark and $sat != 0%, $sat * $neb-dark-sat-factor, $sat);
+
+      --neb-#{$name}-#{$i}: hsl(#{$hue} #{$final-sat} #{$light});
     }
   }
 }

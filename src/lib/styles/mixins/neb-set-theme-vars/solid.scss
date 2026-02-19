@@ -41,8 +41,12 @@ $neb-solid-active-dark: (
 // ------------------------------------------------------------
 
 @function neb-solid-mix($var-name, $percent, $theme) {
-  $mix-target: if($theme == 'light', black, white);
-  @return color-mix(in hsl, var(#{$var-name}) #{$percent}, #{$mix-target});
+  $factor: $percent / 100%;
+  @if $theme == 'light' {
+    @return hsl(from var(#{$var-name}) h s calc(l * #{$factor}));
+  } @else {
+    @return hsl(from var(#{$var-name}) h s calc(l / #{$factor}));
+  }
 }
 
 // ------------------------------------------------------------
