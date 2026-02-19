@@ -24,12 +24,12 @@ export const RELEASE_INFO: Record<
     timestamp: 1771059078321,
     changelog: {
       main: [
-        'consolidated theme color token mapping into a single source and simplified dark theme to use palette inversion',
-        'standardized lightness scale across all brand palettes',
-        'rebalanced ripple opacity values across all theme, variant and intent combinations',
         'simplified the color system by reducing the palette to nine core colors',
-        'reworked state styling to rely on color-mix() rather than static color tokens',
         'reduced the number of brand colors',
+        'standardized lightness scale across all brand palettes',
+        'consolidated theme color token mapping into a single source and simplified dark theme to use palette inversion',
+        'replaced color-mix() state blending with relative lightness scaling',
+        'rebalanced ripple opacity values across all theme, variant and intent combinations',
       ],
     },
   },
