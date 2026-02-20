@@ -46,7 +46,7 @@ export const AppFooter = () => {
             </Button>
           </Link>
           <Link href="https://discord.gg/BgezCRDN8H" target="_blank">
-            <Button color="purple" intent="primary" size="sm" iconName="external-link" iconPlacement="right">
+            <Button color="blue" intent="primary" size="sm" iconName="external-link" iconPlacement="right">
               Discord server
             </Button>
           </Link>
