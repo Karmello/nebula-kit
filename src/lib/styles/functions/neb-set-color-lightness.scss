@@ -1,5 +1,7 @@
+@use 'sass:math';
+
 @function neb-set-color-lightness($var-name, $percent, $theme) {
-  $factor: $percent / 100%;
+  $factor: math.div($percent, 100%);
 
   @if $theme == 'light' {
     @return hsl(from var(#{$var-name}) h s calc(l * #{$factor}));

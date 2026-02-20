@@ -1,4 +1,4 @@
-import { Box, Reveal, Spacer, Text } from 'lib/components'
+import { Box, Reveal, Text } from 'lib/components'
 
 export const About = () => {
   return (
