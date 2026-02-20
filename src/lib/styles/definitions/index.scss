@@ -1,0 +1,70 @@
+$neb-colors: 'gray', 'blue', 'teal', 'green', 'amber', 'red', 'purple', 'pink', 'yellow';
+$neb-variant: solid, outline, soft-outline, ghost;
+$neb-intents: neutral, muted, tertiary, secondary, primary, inverse;
+
+$neb-hover-light: (
+  neutral: 96%,
+  muted: 95%,
+  tertiary: 92%,
+  secondary: 89%,
+  primary: 85%,
+);
+
+$neb-active-light: (
+  neutral: 93%,
+  muted: 91%,
+  tertiary: 87%,
+  secondary: 82%,
+  primary: 75%,
+);
+
+$neb-overlay-hover-light: (
+  neutral: 60%,
+  muted: 26%,
+  tertiary: 21%,
+  secondary: 14%,
+  primary: 10%,
+  inverse: 8%,
+);
+
+$neb-overlay-active-light: (
+  neutral: 70%,
+  muted: 38%,
+  tertiary: 31%,
+  secondary: 25%,
+  primary: 20%,
+  inverse: 16%,
+);
+
+$neb-hover-dark: (
+  neutral: 92%,
+  muted: 70%,
+  tertiary: 82%,
+  secondary: 84%,
+  primary: 85%,
+);
+
+$neb-active-dark: (
+  neutral: 67%,
+  muted: 73%,
+  tertiary: 80%,
+  secondary: 83%,
+  primary: 85%,
+);
+
+$neb-overlay-hover-dark: (
+  neutral: 18%,
+  muted: 18%,
+  tertiary: 18%,
+  secondary: 16%,
+  primary: 13%,
+  inverse: 11%,
+);
+
+$neb-overlay-active-dark: (
+  neutral: 67%,
+  muted: 73%,
+  tertiary: 80%,
+  secondary: 83%,
+  primary: 85%,
+);

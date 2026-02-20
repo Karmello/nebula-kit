@@ -1,4 +1,4 @@
-@use 'styles/definitions/definitions.scss' as defs;
+@use 'styles/definitions/index.scss' as defs;
 
 $neb-solid-states: (), hover, active, disabled, loader, ripple;
 $neb-outline-states: (), hover, bg-hover, active, bg-active, disabled, loader, ripple;

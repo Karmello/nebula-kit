@@ -1,13 +1,13 @@
 @use 'sass:map';
 @use 'sass:color';
-@use 'styles/definitions/definitions.scss' as defs;
+@use 'styles/definitions/palette.scss' as palette;
 
 $neb-dark-sat-factor: 0.75;
 
 @mixin neb-load-palette($mode) {
   $is-dark: $mode == 'dark';
 
-  @each $name, $scale in defs.$neb-palette {
+  @each $name, $scale in palette.$neb-palette {
     @for $i from 1 through 9 {
       $index: if($is-dark, 10 - $i, $i);
 
