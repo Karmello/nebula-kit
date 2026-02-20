@@ -1,38 +1,15 @@
+@use 'styles/definitions/definitions.scss' as defs;
+@use 'styles/functions/neb-set-color-lightness.scss' as *;
 @use 'sass:map';
-
-// ------------------------------------------------------------
-// Ghost state configuration
-// ------------------------------------------------------------
-
-$neb-ghost-hover: (
-  neutral: 95%,
-  muted: 95%,
-  tertiary: 92%,
-  secondary: 89%,
-  primary: 85%,
-);
-
-$neb-ghost-active: (
-  neutral: 87%,
-  muted: 87%,
-  tertiary: 82%,
-  secondary: 75%,
-  primary: 65%,
-);
-
-// ------------------------------------------------------------
-// Helper
-// ------------------------------------------------------------
-
-@function neb-ghost-mix($var-name, $percent) {
-  @return color-mix(in hsl, var(#{$var-name}) #{$percent}, black);
-}
 
 // ------------------------------------------------------------
 // Ghost variant
 // ------------------------------------------------------------
 
 @mixin neb-set-theme-vars-ghost($theme, $color, $prefix) {
+  $hover-map: if($theme == 'light', defs.$neb-hover-light, defs.$neb-hover-dark);
+  $active-map: if($theme == 'light', defs.$neb-active-light, defs.$neb-active-dark);
+
   // ----------------------------------------------------------
   // REST
   // ----------------------------------------------------------
@@ -48,29 +25,30 @@ $neb-ghost-active: (
   // HOVER
   // ----------------------------------------------------------
 
-  --neb-#{$prefix}ghost-neutral-hover: #{neb-ghost-mix(
-      '--neb-#{$prefix}ghost-neutral',
-      map.get($neb-ghost-hover, neutral)
-    )};
+  --neb-#{$prefix}ghost-neutral-hover: var(--neb-#{$prefix}ghost-neutral);
 
-  --neb-#{$prefix}ghost-muted-hover: #{neb-ghost-mix(
+  --neb-#{$prefix}ghost-muted-hover: #{neb-set-color-lightness(
       '--neb-#{$prefix}ghost-muted',
-      map.get($neb-ghost-hover, muted)
+      map.get($hover-map, muted),
+      $theme
     )};
 
-  --neb-#{$prefix}ghost-tertiary-hover: #{neb-ghost-mix(
+  --neb-#{$prefix}ghost-tertiary-hover: #{neb-set-color-lightness(
       '--neb-#{$prefix}ghost-tertiary',
-      map.get($neb-ghost-hover, tertiary)
+      map.get($hover-map, tertiary),
+      $theme
     )};
 
-  --neb-#{$prefix}ghost-secondary-hover: #{neb-ghost-mix(
+  --neb-#{$prefix}ghost-secondary-hover: #{neb-set-color-lightness(
       '--neb-#{$prefix}ghost-secondary',
-      map.get($neb-ghost-hover, secondary)
+      map.get($hover-map, secondary),
+      $theme
     )};
 
-  --neb-#{$prefix}ghost-primary-hover: #{neb-ghost-mix(
+  --neb-#{$prefix}ghost-primary-hover: #{neb-set-color-lightness(
       '--neb-#{$prefix}ghost-primary',
-      map.get($neb-ghost-hover, primary)
+      map.get($hover-map, primary),
+      $theme
     )};
 
   --neb-#{$prefix}ghost-inverse-hover: var(--neb-#{$prefix}ghost-inverse);
@@ -79,29 +57,30 @@ $neb-ghost-active: (
   // ACTIVE
   // ----------------------------------------------------------
 
-  --neb-#{$prefix}ghost-neutral-active: #{neb-ghost-mix(
-      '--neb-#{$prefix}ghost-neutral',
-      map.get($neb-ghost-active, neutral)
+  --neb-#{$prefix}ghost-neutral-active: var(--neb-#{$prefix}ghost-neutral-hover);
+
+  --neb-#{$prefix}ghost-muted-active: #{neb-set-color-lightness(
+      '--neb-#{$prefix}ghost-muted-hover',
+      map.get($active-map, muted),
+      $theme
     )};
 
-  --neb-#{$prefix}ghost-muted-active: #{neb-ghost-mix(
-      '--neb-#{$prefix}ghost-muted',
-      map.get($neb-ghost-active, muted)
+  --neb-#{$prefix}ghost-tertiary-active: #{neb-set-color-lightness(
+      '--neb-#{$prefix}ghost-tertiary-hover',
+      map.get($active-map, tertiary),
+      $theme
     )};
 
-  --neb-#{$prefix}ghost-tertiary-active: #{neb-ghost-mix(
-      '--neb-#{$prefix}ghost-tertiary',
-      map.get($neb-ghost-active, tertiary)
+  --neb-#{$prefix}ghost-secondary-active: #{neb-set-color-lightness(
+      '--neb-#{$prefix}ghost-secondary-hover',
+      map.get($active-map, secondary),
+      $theme
     )};
 
-  --neb-#{$prefix}ghost-secondary-active: #{neb-ghost-mix(
-      '--neb-#{$prefix}ghost-secondary',
-      map.get($neb-ghost-active, secondary)
-    )};
-
-  --neb-#{$prefix}ghost-primary-active: #{neb-ghost-mix(
-      '--neb-#{$prefix}ghost-primary',
-      map.get($neb-ghost-active, primary)
+  --neb-#{$prefix}ghost-primary-active: #{neb-set-color-lightness(
+      '--neb-#{$prefix}ghost-primary-hover',
+      map.get($active-map, primary),
+      $theme
     )};
 
   --neb-#{$prefix}ghost-inverse-active: var(--neb-#{$prefix}ghost-inverse);

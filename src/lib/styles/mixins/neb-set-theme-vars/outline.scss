@@ -1,64 +1,19 @@
+@use 'styles/definitions/definitions.scss' as defs;
+@use 'styles/functions/neb-set-color-lightness.scss' as *;
+@use 'styles/functions/neb-set-bg-overlay.scss' as *;
 @use 'sass:map';
-
-// ------------------------------------------------------------
-// Edge state configuration (darkening curve)
-// ------------------------------------------------------------
-
-$neb-outline-hover: (
-  neutral: 95%,
-  muted: 95%,
-  tertiary: 92%,
-  secondary: 89%,
-  primary: 85%,
-);
-
-$neb-outline-active: (
-  neutral: 87%,
-  muted: 87%,
-  tertiary: 82%,
-  secondary: 75%,
-  primary: 65%,
-);
-
-// ------------------------------------------------------------
-// Overlay state configuration (bg transparency curve)
-// ------------------------------------------------------------
-
-$neb-outline-bg-hover: (
-  neutral: 18%,
-  muted: 18%,
-  tertiary: 18%,
-  secondary: 16%,
-  primary: 13%,
-  inverse: 11%,
-);
-
-$neb-outline-bg-active: (
-  neutral: 36%,
-  muted: 36%,
-  tertiary: 36%,
-  secondary: 32%,
-  primary: 26%,
-  inverse: 22%,
-);
-
-// ------------------------------------------------------------
-// Helpers
-// ------------------------------------------------------------
-
-@function neb-outline-mix($var-name, $percent) {
-  @return color-mix(in hsl, var(#{$var-name}) #{$percent}, black);
-}
-
-@function neb-outline-overlay($var-name, $percent) {
-  @return color-mix(in hsl, var(#{$var-name}) #{$percent}, transparent);
-}
 
 // ------------------------------------------------------------
 // Outline variant
 // ------------------------------------------------------------
 
 @mixin neb-set-theme-vars-outline($theme, $color, $prefix) {
+  $hover-map: if($theme == 'light', defs.$neb-hover-light, defs.$neb-hover-dark);
+  $active-map: if($theme == 'light', defs.$neb-active-light, defs.$neb-active-dark);
+
+  $overlay-hover-map: if($theme == 'light', defs.$neb-overlay-hover-light, defs.$neb-overlay-hover-dark);
+  $overlay-active-map: if($theme == 'light', defs.$neb-overlay-active-light, defs.$neb-overlay-active-dark);
+
   // ----------------------------------------------------------
   // REST
   // ----------------------------------------------------------
@@ -74,29 +29,30 @@ $neb-outline-bg-active: (
   // HOVER (edge)
   // ----------------------------------------------------------
 
-  --neb-#{$prefix}outline-neutral-hover: #{neb-outline-mix(
-      '--neb-#{$prefix}outline-neutral',
-      map.get($neb-outline-hover, neutral)
-    )};
+  --neb-#{$prefix}outline-neutral-hover: var(--neb-#{$prefix}outline-muted);
 
-  --neb-#{$prefix}outline-muted-hover: #{neb-outline-mix(
+  --neb-#{$prefix}outline-muted-hover: #{neb-set-color-lightness(
       '--neb-#{$prefix}outline-muted',
-      map.get($neb-outline-hover, muted)
+      map.get($hover-map, muted),
+      $theme
     )};
 
-  --neb-#{$prefix}outline-tertiary-hover: #{neb-outline-mix(
+  --neb-#{$prefix}outline-tertiary-hover: #{neb-set-color-lightness(
       '--neb-#{$prefix}outline-tertiary',
-      map.get($neb-outline-hover, tertiary)
+      map.get($hover-map, tertiary),
+      $theme
     )};
 
-  --neb-#{$prefix}outline-secondary-hover: #{neb-outline-mix(
+  --neb-#{$prefix}outline-secondary-hover: #{neb-set-color-lightness(
       '--neb-#{$prefix}outline-secondary',
-      map.get($neb-outline-hover, secondary)
+      map.get($hover-map, secondary),
+      $theme
     )};
 
-  --neb-#{$prefix}outline-primary-hover: #{neb-outline-mix(
+  --neb-#{$prefix}outline-primary-hover: #{neb-set-color-lightness(
       '--neb-#{$prefix}outline-primary',
-      map.get($neb-outline-hover, primary)
+      map.get($hover-map, primary),
+      $theme
     )};
 
   --neb-#{$prefix}outline-inverse-hover: var(--neb-#{$prefix}outline-inverse);
@@ -105,63 +61,68 @@ $neb-outline-bg-active: (
   // HOVER (overlay)
   // ----------------------------------------------------------
 
-  --neb-#{$prefix}outline-neutral-bg-hover: #{neb-outline-overlay(
+  --neb-#{$prefix}outline-neutral-bg-hover: #{neb-set-bg-overlay(
       '--neb-#{$prefix}outline-neutral-hover',
-      map.get($neb-outline-bg-hover, neutral)
+      map.get($overlay-hover-map, neutral)
     )};
 
-  --neb-#{$prefix}outline-muted-bg-hover: #{neb-outline-overlay(
+  --neb-#{$prefix}outline-muted-bg-hover: #{neb-set-bg-overlay(
       '--neb-#{$prefix}outline-muted-hover',
-      map.get($neb-outline-bg-hover, muted)
+      map.get($overlay-hover-map, muted)
     )};
 
-  --neb-#{$prefix}outline-tertiary-bg-hover: #{neb-outline-overlay(
+  --neb-#{$prefix}outline-tertiary-bg-hover: #{neb-set-bg-overlay(
       '--neb-#{$prefix}outline-tertiary-hover',
-      map.get($neb-outline-bg-hover, tertiary)
+      map.get($overlay-hover-map, tertiary)
     )};
 
-  --neb-#{$prefix}outline-secondary-bg-hover: #{neb-outline-overlay(
+  --neb-#{$prefix}outline-secondary-bg-hover: #{neb-set-bg-overlay(
       '--neb-#{$prefix}outline-secondary-hover',
-      map.get($neb-outline-bg-hover, secondary)
+      map.get($overlay-hover-map, secondary)
     )};
 
-  --neb-#{$prefix}outline-primary-bg-hover: #{neb-outline-overlay(
+  --neb-#{$prefix}outline-primary-bg-hover: #{neb-set-bg-overlay(
       '--neb-#{$prefix}outline-primary-hover',
-      map.get($neb-outline-bg-hover, primary)
+      map.get($overlay-hover-map, primary)
     )};
 
-  --neb-#{$prefix}outline-inverse-bg-hover: #{neb-outline-overlay(
+  --neb-#{$prefix}outline-inverse-bg-hover: #{neb-set-bg-overlay(
       '--neb-#{$prefix}outline-inverse-hover',
-      map.get($neb-outline-bg-hover, inverse)
+      map.get($overlay-hover-map, inverse)
     )};
 
   // ----------------------------------------------------------
   // ACTIVE (edge)
   // ----------------------------------------------------------
 
-  --neb-#{$prefix}outline-neutral-active: #{neb-outline-mix(
-      '--neb-#{$prefix}outline-neutral',
-      map.get($neb-outline-active, neutral)
+  --neb-#{$prefix}outline-neutral-active: #{neb-set-color-lightness(
+      '--neb-#{$prefix}outline-neutral-hover',
+      map.get($active-map, neutral),
+      $theme
     )};
 
-  --neb-#{$prefix}outline-muted-active: #{neb-outline-mix(
-      '--neb-#{$prefix}outline-muted',
-      map.get($neb-outline-active, muted)
+  --neb-#{$prefix}outline-muted-active: #{neb-set-color-lightness(
+      '--neb-#{$prefix}outline-muted-hover',
+      map.get($active-map, muted),
+      $theme
     )};
 
-  --neb-#{$prefix}outline-tertiary-active: #{neb-outline-mix(
-      '--neb-#{$prefix}outline-tertiary',
-      map.get($neb-outline-active, tertiary)
+  --neb-#{$prefix}outline-tertiary-active: #{neb-set-color-lightness(
+      '--neb-#{$prefix}outline-tertiary-hover',
+      map.get($active-map, tertiary),
+      $theme
     )};
 
-  --neb-#{$prefix}outline-secondary-active: #{neb-outline-mix(
-      '--neb-#{$prefix}outline-secondary',
-      map.get($neb-outline-active, secondary)
+  --neb-#{$prefix}outline-secondary-active: #{neb-set-color-lightness(
+      '--neb-#{$prefix}outline-secondary-hover',
+      map.get($active-map, secondary),
+      $theme
     )};
 
-  --neb-#{$prefix}outline-primary-active: #{neb-outline-mix(
-      '--neb-#{$prefix}outline-primary',
-      map.get($neb-outline-active, primary)
+  --neb-#{$prefix}outline-primary-active: #{neb-set-color-lightness(
+      '--neb-#{$prefix}outline-primary-hover',
+      map.get($active-map, primary),
+      $theme
     )};
 
   --neb-#{$prefix}outline-inverse-active: var(--neb-#{$prefix}outline-inverse);
@@ -170,33 +131,33 @@ $neb-outline-bg-active: (
   // ACTIVE (overlay)
   // ----------------------------------------------------------
 
-  --neb-#{$prefix}outline-neutral-bg-active: #{neb-outline-overlay(
+  --neb-#{$prefix}outline-neutral-bg-active: #{neb-set-bg-overlay(
       '--neb-#{$prefix}outline-neutral-active',
-      map.get($neb-outline-bg-active, neutral)
+      map.get($overlay-active-map, neutral)
     )};
 
-  --neb-#{$prefix}outline-muted-bg-active: #{neb-outline-overlay(
+  --neb-#{$prefix}outline-muted-bg-active: #{neb-set-bg-overlay(
       '--neb-#{$prefix}outline-muted-active',
-      map.get($neb-outline-bg-active, muted)
+      map.get($overlay-active-map, muted)
     )};
 
-  --neb-#{$prefix}outline-tertiary-bg-active: #{neb-outline-overlay(
+  --neb-#{$prefix}outline-tertiary-bg-active: #{neb-set-bg-overlay(
       '--neb-#{$prefix}outline-tertiary-active',
-      map.get($neb-outline-bg-active, tertiary)
+      map.get($overlay-active-map, tertiary)
     )};
 
-  --neb-#{$prefix}outline-secondary-bg-active: #{neb-outline-overlay(
+  --neb-#{$prefix}outline-secondary-bg-active: #{neb-set-bg-overlay(
       '--neb-#{$prefix}outline-secondary-active',
-      map.get($neb-outline-bg-active, secondary)
+      map.get($overlay-active-map, secondary)
     )};
 
-  --neb-#{$prefix}outline-primary-bg-active: #{neb-outline-overlay(
+  --neb-#{$prefix}outline-primary-bg-active: #{neb-set-bg-overlay(
       '--neb-#{$prefix}outline-primary-active',
-      map.get($neb-outline-bg-active, primary)
+      map.get($overlay-active-map, primary)
     )};
 
-  --neb-#{$prefix}outline-inverse-bg-active: #{neb-outline-overlay(
+  --neb-#{$prefix}outline-inverse-bg-active: #{neb-set-bg-overlay(
       '--neb-#{$prefix}outline-inverse-active',
-      map.get($neb-outline-bg-active, inverse)
+      map.get($overlay-active-map, inverse)
     )};
 }

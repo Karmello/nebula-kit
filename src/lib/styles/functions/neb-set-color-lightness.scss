@@ -1,0 +1,9 @@
+@function neb-set-color-lightness($var-name, $percent, $theme) {
+  $factor: $percent / 100%;
+
+  @if $theme == 'light' {
+    @return hsl(from var(#{$var-name}) h s calc(l * #{$factor}));
+  } @else {
+    @return hsl(from var(#{$var-name}) h s calc(l / #{$factor}));
+  }
+}

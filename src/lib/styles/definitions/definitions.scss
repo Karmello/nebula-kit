@@ -3,6 +3,72 @@ $neb-colors: 'gray', 'blue', 'teal', 'green', 'amber', 'red', 'purple', 'pink', 
 $neb-variant: solid, outline, soft-outline, ghost;
 $neb-intents: neutral, muted, tertiary, secondary, primary, inverse;
 
+$neb-hover-light: (
+  neutral: 96%,
+  muted: 95%,
+  tertiary: 92%,
+  secondary: 89%,
+  primary: 85%,
+);
+
+$neb-active-light: (
+  neutral: 93%,
+  muted: 91%,
+  tertiary: 87%,
+  secondary: 82%,
+  primary: 75%,
+);
+
+$neb-overlay-hover-light: (
+  neutral: 18%,
+  muted: 18%,
+  tertiary: 18%,
+  secondary: 16%,
+  primary: 13%,
+  inverse: 11%,
+);
+
+$neb-overlay-active-light: (
+  neutral: 67%,
+  muted: 73%,
+  tertiary: 80%,
+  secondary: 83%,
+  primary: 85%,
+);
+
+$neb-hover-dark: (
+  neutral: 92%,
+  muted: 70%,
+  tertiary: 82%,
+  secondary: 84%,
+  primary: 85%,
+);
+
+$neb-active-dark: (
+  neutral: 67%,
+  muted: 73%,
+  tertiary: 80%,
+  secondary: 83%,
+  primary: 85%,
+);
+
+$neb-overlay-hover-dark: (
+  neutral: 18%,
+  muted: 18%,
+  tertiary: 18%,
+  secondary: 16%,
+  primary: 13%,
+  inverse: 11%,
+);
+
+$neb-overlay-active-dark: (
+  neutral: 67%,
+  muted: 73%,
+  tertiary: 80%,
+  secondary: 83%,
+  primary: 85%,
+);
+
 $lightness-1: 100%;
 $lightness-2: 96%;
 $lightness-3: 88%;
@@ -12,6 +78,17 @@ $lightness-6: 28%;
 $lightness-7: 16%;
 $lightness-8: 8%;
 $lightness-9: 0%;
+
+$saturation: 68%;
+
+$blue: 222;
+$teal: 170;
+$green: 140;
+$amber: 47;
+$red: 8;
+$purple: 278;
+$pink: 324;
+$yellow: 60;
 
 $neb-palette: (
   'gray': (
@@ -25,99 +102,92 @@ $neb-palette: (
     8: hsl(0 0% $lightness-8),
     9: hsl(0 0% $lightness-9),
   ),
-
   'blue': (
-    1: hsl(210 75% $lightness-1),
-    2: hsl(210 75% $lightness-2),
-    3: hsl(210 75% $lightness-3),
-    4: hsl(210 75% $lightness-4),
-    5: hsl(210 75% $lightness-5),
-    6: hsl(210 75% $lightness-6),
-    7: hsl(210 75% $lightness-7),
-    8: hsl(210 75% $lightness-8),
-    9: hsl(210 75% $lightness-9),
+    1: hsl($blue $saturation $lightness-1),
+    2: hsl($blue $saturation $lightness-2),
+    3: hsl($blue $saturation $lightness-3),
+    4: hsl($blue $saturation $lightness-4),
+    5: hsl($blue $saturation $lightness-5),
+    6: hsl($blue $saturation $lightness-6),
+    7: hsl($blue $saturation $lightness-7),
+    8: hsl($blue $saturation $lightness-8),
+    9: hsl($blue $saturation $lightness-9),
   ),
   'teal': (
-    1: hsl(178 75% $lightness-1),
-    2: hsl(178 75% $lightness-2),
-    3: hsl(178 75% $lightness-3),
-    4: hsl(178 75% $lightness-4),
-    5: hsl(178 75% $lightness-5),
-    6: hsl(178 75% $lightness-6),
-    7: hsl(178 75% $lightness-7),
-    8: hsl(178 75% $lightness-8),
-    9: hsl(178 75% $lightness-9),
+    1: hsl($teal $saturation $lightness-1),
+    2: hsl($teal $saturation $lightness-2),
+    3: hsl($teal $saturation $lightness-3),
+    4: hsl($teal $saturation $lightness-4),
+    5: hsl($teal $saturation $lightness-5),
+    6: hsl($teal $saturation $lightness-6),
+    7: hsl($teal $saturation $lightness-7),
+    8: hsl($teal $saturation $lightness-8),
+    9: hsl($teal $saturation $lightness-9),
   ),
-
   'green': (
-    1: hsl(145 75% $lightness-1),
-    2: hsl(145 75% $lightness-2),
-    3: hsl(145 75% $lightness-3),
-    4: hsl(145 75% $lightness-4),
-    5: hsl(145 75% $lightness-5),
-    6: hsl(145 75% $lightness-6),
-    7: hsl(145 75% $lightness-7),
-    8: hsl(145 75% $lightness-8),
-    9: hsl(145 75% $lightness-9),
+    1: hsl($green $saturation $lightness-1),
+    2: hsl($green $saturation $lightness-2),
+    3: hsl($green $saturation $lightness-3),
+    4: hsl($green $saturation $lightness-4),
+    5: hsl($green $saturation $lightness-5),
+    6: hsl($green $saturation $lightness-6),
+    7: hsl($green $saturation $lightness-7),
+    8: hsl($green $saturation $lightness-8),
+    9: hsl($green $saturation $lightness-9),
   ),
-
   'amber': (
-    1: hsl(44 75% $lightness-1),
-    2: hsl(44 75% $lightness-2),
-    3: hsl(44 75% $lightness-3),
-    4: hsl(44 75% $lightness-4),
-    5: hsl(44 75% $lightness-5),
-    6: hsl(44 75% $lightness-6),
-    7: hsl(44 75% $lightness-7),
-    8: hsl(44 75% $lightness-8),
-    9: hsl(44 75% $lightness-9),
+    1: hsl($amber $saturation $lightness-1),
+    2: hsl($amber $saturation $lightness-2),
+    3: hsl($amber $saturation $lightness-3),
+    4: hsl($amber $saturation $lightness-4),
+    5: hsl($amber $saturation $lightness-5),
+    6: hsl($amber $saturation $lightness-6),
+    7: hsl($amber $saturation $lightness-7),
+    8: hsl($amber $saturation $lightness-8),
+    9: hsl($amber $saturation $lightness-9),
   ),
-
   'red': (
-    1: hsl(4 75% $lightness-1),
-    2: hsl(4 75% $lightness-2),
-    3: hsl(4 75% $lightness-3),
-    4: hsl(4 75% $lightness-4),
-    5: hsl(4 75% $lightness-5),
-    6: hsl(4 75% $lightness-6),
-    7: hsl(4 75% $lightness-7),
-    8: hsl(4 75% $lightness-8),
-    9: hsl(4 75% $lightness-9),
+    1: hsl($red $saturation $lightness-1),
+    2: hsl($red $saturation $lightness-2),
+    3: hsl($red $saturation $lightness-3),
+    4: hsl($red $saturation $lightness-4),
+    5: hsl($red $saturation $lightness-5),
+    6: hsl($red $saturation $lightness-6),
+    7: hsl($red $saturation $lightness-7),
+    8: hsl($red $saturation $lightness-8),
+    9: hsl($red $saturation $lightness-9),
   ),
-
   'purple': (
-    1: hsl(268 75% $lightness-1),
-    2: hsl(268 75% $lightness-2),
-    3: hsl(268 75% $lightness-3),
-    4: hsl(268 75% $lightness-4),
-    5: hsl(268 75% $lightness-5),
-    6: hsl(268 75% $lightness-6),
-    7: hsl(268 75% $lightness-7),
-    8: hsl(268 75% $lightness-8),
-    9: hsl(268 75% $lightness-9),
+    1: hsl($purple $saturation $lightness-1),
+    2: hsl($purple $saturation $lightness-2),
+    3: hsl($purple $saturation $lightness-3),
+    4: hsl($purple $saturation $lightness-4),
+    5: hsl($purple $saturation $lightness-5),
+    6: hsl($purple $saturation $lightness-6),
+    7: hsl($purple $saturation $lightness-7),
+    8: hsl($purple $saturation $lightness-8),
+    9: hsl($purple $saturation $lightness-9),
   ),
-
   'pink': (
-    1: hsl(334 75% $lightness-1),
-    2: hsl(334 75% $lightness-2),
-    3: hsl(334 75% $lightness-3),
-    4: hsl(334 75% $lightness-4),
-    5: hsl(334 75% $lightness-5),
-    6: hsl(334 75% $lightness-6),
-    7: hsl(334 75% $lightness-7),
-    8: hsl(334 75% $lightness-8),
-    9: hsl(334 75% $lightness-9),
+    1: hsl($pink $saturation $lightness-1),
+    2: hsl($pink $saturation $lightness-2),
+    3: hsl($pink $saturation $lightness-3),
+    4: hsl($pink $saturation $lightness-4),
+    5: hsl($pink $saturation $lightness-5),
+    6: hsl($pink $saturation $lightness-6),
+    7: hsl($pink $saturation $lightness-7),
+    8: hsl($pink $saturation $lightness-8),
+    9: hsl($pink $saturation $lightness-9),
   ),
-
   'yellow': (
-    1: hsl(55 75% $lightness-1),
-    2: hsl(55 75% $lightness-2),
-    3: hsl(55 75% $lightness-3),
-    4: hsl(55 75% $lightness-4),
-    5: hsl(55 75% $lightness-5),
-    6: hsl(55 75% $lightness-6),
-    7: hsl(55 75% $lightness-7),
-    8: hsl(55 75% $lightness-8),
-    9: hsl(55 75% $lightness-9),
+    1: hsl($yellow $saturation $lightness-1),
+    2: hsl($yellow $saturation $lightness-2),
+    3: hsl($yellow $saturation $lightness-3),
+    4: hsl($yellow $saturation $lightness-4),
+    5: hsl($yellow $saturation $lightness-5),
+    6: hsl($yellow $saturation $lightness-6),
+    7: hsl($yellow $saturation $lightness-7),
+    8: hsl($yellow $saturation $lightness-8),
+    9: hsl($yellow $saturation $lightness-9),
   ),
 );

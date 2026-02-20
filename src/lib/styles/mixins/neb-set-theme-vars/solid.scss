@@ -1,61 +1,14 @@
+@use 'styles/definitions/definitions.scss' as defs;
+@use 'styles/functions/neb-set-color-lightness.scss' as *;
 @use 'sass:map';
-
-// ------------------------------------------------------------
-// Solid state configuration (percentages centralized)
-// ------------------------------------------------------------
-
-$neb-solid-hover-light: (
-  neutral: 95%,
-  muted: 95%,
-  tertiary: 92%,
-  secondary: 89%,
-  primary: 85%,
-);
-
-$neb-solid-active-light: (
-  neutral: 87%,
-  muted: 87%,
-  tertiary: 82%,
-  secondary: 75%,
-  primary: 65%,
-);
-
-$neb-solid-hover-dark: (
-  neutral: 90%,
-  muted: 95%,
-  tertiary: 92%,
-  secondary: 89%,
-  primary: 90%,
-);
-
-$neb-solid-active-dark: (
-  neutral: 87%,
-  muted: 87%,
-  tertiary: 82%,
-  secondary: 75%,
-  primary: 80%,
-);
-
-// ------------------------------------------------------------
-// Helper
-// ------------------------------------------------------------
-
-@function neb-solid-mix($var-name, $percent, $theme) {
-  $factor: $percent / 100%;
-  @if $theme == 'light' {
-    @return hsl(from var(#{$var-name}) h s calc(l * #{$factor}));
-  } @else {
-    @return hsl(from var(#{$var-name}) h s calc(l / #{$factor}));
-  }
-}
 
 // ------------------------------------------------------------
 // Solid variant
 // ------------------------------------------------------------
 
 @mixin neb-set-theme-vars-solid($theme, $color, $prefix) {
-  $hover-map: if($theme == 'light', $neb-solid-hover-light, $neb-solid-hover-dark);
-  $active-map: if($theme == 'light', $neb-solid-active-light, $neb-solid-active-dark);
+  $hover-map: if($theme == 'light', defs.$neb-hover-light, defs.$neb-hover-dark);
+  $active-map: if($theme == 'light', defs.$neb-active-light, defs.$neb-active-dark);
 
   // ----------------------------------------------------------
   // REST
@@ -77,31 +30,27 @@ $neb-solid-active-dark: (
   // HOVER
   // ----------------------------------------------------------
 
-  --neb-#{$prefix}solid-neutral-hover: #{neb-solid-mix(
-      '--neb-#{$prefix}solid-neutral',
-      map.get($hover-map, neutral),
-      $theme
-    )};
+  --neb-#{$prefix}solid-neutral-hover: var(--neb-#{$prefix}solid-muted);
 
-  --neb-#{$prefix}solid-muted-hover: #{neb-solid-mix(
+  --neb-#{$prefix}solid-muted-hover: #{neb-set-color-lightness(
       '--neb-#{$prefix}solid-muted',
       map.get($hover-map, muted),
       $theme
     )};
 
-  --neb-#{$prefix}solid-tertiary-hover: #{neb-solid-mix(
+  --neb-#{$prefix}solid-tertiary-hover: #{neb-set-color-lightness(
       '--neb-#{$prefix}solid-tertiary',
       map.get($hover-map, tertiary),
       $theme
     )};
 
-  --neb-#{$prefix}solid-secondary-hover: #{neb-solid-mix(
+  --neb-#{$prefix}solid-secondary-hover: #{neb-set-color-lightness(
       '--neb-#{$prefix}solid-secondary',
       map.get($hover-map, secondary),
       $theme
     )};
 
-  --neb-#{$prefix}solid-primary-hover: #{neb-solid-mix(
+  --neb-#{$prefix}solid-primary-hover: #{neb-set-color-lightness(
       '--neb-#{$prefix}solid-primary',
       map.get($hover-map, primary),
       $theme
@@ -113,32 +62,32 @@ $neb-solid-active-dark: (
   // ACTIVE
   // ------------------------------------------------------------
 
-  --neb-#{$prefix}solid-neutral-active: #{neb-solid-mix(
-      '--neb-#{$prefix}solid-neutral',
+  --neb-#{$prefix}solid-neutral-active: #{neb-set-color-lightness(
+      '--neb-#{$prefix}solid-neutral-hover',
       map.get($active-map, neutral),
       $theme
     )};
 
-  --neb-#{$prefix}solid-muted-active: #{neb-solid-mix(
-      '--neb-#{$prefix}solid-muted',
+  --neb-#{$prefix}solid-muted-active: #{neb-set-color-lightness(
+      '--neb-#{$prefix}solid-muted-hover',
       map.get($active-map, muted),
       $theme
     )};
 
-  --neb-#{$prefix}solid-tertiary-active: #{neb-solid-mix(
-      '--neb-#{$prefix}solid-tertiary',
+  --neb-#{$prefix}solid-tertiary-active: #{neb-set-color-lightness(
+      '--neb-#{$prefix}solid-tertiary-hover',
       map.get($active-map, tertiary),
       $theme
     )};
 
-  --neb-#{$prefix}solid-secondary-active: #{neb-solid-mix(
-      '--neb-#{$prefix}solid-secondary',
+  --neb-#{$prefix}solid-secondary-active: #{neb-set-color-lightness(
+      '--neb-#{$prefix}solid-secondary-hover',
       map.get($active-map, secondary),
       $theme
     )};
 
-  --neb-#{$prefix}solid-primary-active: #{neb-solid-mix(
-      '--neb-#{$prefix}solid-primary',
+  --neb-#{$prefix}solid-primary-active: #{neb-set-color-lightness(
+      '--neb-#{$prefix}solid-primary-hover',
       map.get($active-map, primary),
       $theme
     )};

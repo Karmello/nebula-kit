@@ -2,7 +2,7 @@
 @use 'sass:color';
 @use 'styles/definitions/definitions.scss' as defs;
 
-$neb-dark-sat-factor: 0.65;
+$neb-dark-sat-factor: 0.75;
 
 @mixin neb-load-palette($mode) {
   $is-dark: $mode == 'dark';
