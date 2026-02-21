@@ -18,7 +18,6 @@ export const MultiSelect = ({
   color,
   size,
   intent,
-  itemBorderIntent,
   scrollAlign,
   visibleItemsCount,
   // Box
@@ -75,7 +74,6 @@ export const MultiSelect = ({
               intent={intent}
               color={color}
               size={size}
-              itemBorderIntent={itemBorderIntent}
               scrollToIndex={currentSlotIndex}
               scrollAlign={scrollAlign}
               visibleItemsCount={visibleItemsCount}

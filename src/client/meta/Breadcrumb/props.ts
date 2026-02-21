@@ -4,7 +4,6 @@ import { BreadcrumbProps } from 'lib/components'
 import {
   BREADCRUMB_TAGS,
   DEFAULT_BREADCRUMB_INTENT,
-  DEFAULT_BREADCRUMB_ITEM_BORDER_INTENT,
   DEFAULT_BREADCRUMB_SIZE,
 } from 'lib/components/pro/navigation/Breadcrumb'
 
@@ -22,11 +21,6 @@ const BREADCRUMB_PROPS_META: ComponentMeta<BreadcrumbProps>['props'] = {
     ...DROPDOWN_LIST_PROPS_META.intent,
     defaultValue: String(DEFAULT_BREADCRUMB_INTENT),
     description: 'Color tone applied to the list.',
-  },
-  itemBorderIntent: {
-    ...DROPDOWN_LIST_PROPS_META.itemBorderIntent,
-    defaultValue: String(DEFAULT_BREADCRUMB_ITEM_BORDER_INTENT),
-    description: 'Color tone applied to the dividers between list items.',
   },
   onChange: {
     options: ['(path: string[]) => void'],

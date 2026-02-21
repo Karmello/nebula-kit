@@ -30,7 +30,6 @@ const MULTI_SELECT_PROPS_META: ComponentMeta<MultiSelectProps>['props'] = {
     ...DROPDOWN_LIST_PROPS_META.intent,
     description: 'Color tone applied to the component.',
   },
-  itemBorderIntent: DROPDOWN_LIST_PROPS_META.itemBorderIntent,
   onChange: {
     options: ['(value: string[]) => void'],
     description: 'Callback fired when the set of selected values changes.',

@@ -26,7 +26,6 @@ export const DropdownListMenu = () => {
     correctedVisibleItemsCount,
     intent,
     color,
-    itemBorderIntent,
     noOptionsLabel,
     placement,
     open,
@@ -124,15 +123,11 @@ export const DropdownListMenu = () => {
                 renderItem={(slot, index) => {
                   return (
                     <>
-                      {opensUpDownwards ? (
-                        <Divider marginBlock="0px" color={color} intent={itemBorderIntent} opacity="0.5" />
-                      ) : null}
+                      {opensUpDownwards ? <Divider marginBlock="0px" color={color} intent={intent} /> : null}
                       {cloneElement(slot as ReactElement<DropdownListItemProps & { index: number }>, {
                         index,
                       })}
-                      {!opensUpDownwards ? (
-                        <Divider marginBlock="0px" color={color} intent={itemBorderIntent} opacity="0.5" />
-                      ) : null}
+                      {!opensUpDownwards ? <Divider marginBlock="0px" color={color} intent={intent} /> : null}
                     </>
                   )
                 }}
@@ -142,7 +137,7 @@ export const DropdownListMenu = () => {
               <Box
                 drawable
                 color={color}
-                intent={itemBorderIntent}
+                intent={intent}
                 variant="outline"
                 borderLeftWidth="0px"
                 borderRightWidth="0px"

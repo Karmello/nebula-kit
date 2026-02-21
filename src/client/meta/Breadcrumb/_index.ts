@@ -23,6 +23,7 @@ const BREADCRUMB_META: ComponentMeta<BreadcrumbProps> = {
   props: BREADCRUMB_PROPS_META,
   examples: BREADCRUMB_EXAMPLES_META,
   changelog: {
+    '0.7.0': ['removed itemBorderIntent prop following the introduction of a separate surface state axis'],
     '0.6.0': ['added itemBorderIntent prop'],
     '0.2.3': ['released'],
   },

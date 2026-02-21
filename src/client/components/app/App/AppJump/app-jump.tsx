@@ -79,7 +79,6 @@ export const AppJump = () => {
         key={String(showAppJump)}
         tagRef={autocompleteRef}
         intent="secondary"
-        itemBorderIntent="tertiary"
         onChange={value => {
           setShowAppJump(false)
           setTimeout(() => {

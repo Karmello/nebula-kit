@@ -7,7 +7,6 @@ import { BUTTON_SIZE_CONFIG, DEFAULT_BUTTON_SIZE } from 'lib/components/core/con
 import {
   DropdownListProps,
   DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
-  DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT,
   DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
   DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
   DEFAULT_DROPDOWN_LIST_INTENT,
@@ -36,7 +35,6 @@ export const DropdownList = ({
   keepOpen = DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
   scrollToIndex = DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
   scrollAlign = DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
-  itemBorderIntent = DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT,
   noOptionsLabel,
   disableListAnimation,
   onOpened,
@@ -114,7 +112,6 @@ export const DropdownList = ({
             keepOpen={keepOpen}
             scrollToIndex={scrollToIndex}
             scrollAlign={scrollAlign}
-            itemBorderIntent={itemBorderIntent}
             noOptionsLabel={noOptionsLabel}
             disableListAnimation={disableListAnimation}
             onOpened={onOpened}

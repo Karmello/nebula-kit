@@ -3,7 +3,6 @@ import { DropdownListProps } from 'lib/components'
 
 import {
   DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
-  DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT,
   DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
   DROPDOWN_LIST_SCROLL_ALIGN,
   DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
@@ -17,7 +16,6 @@ import {
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BUTTON_PROPS_META } from '../Button/props'
 import { PORTAL_PROPS_META } from '../Portal/props'
-import { BOX_PROPS_META } from '../Box/props'
 
 const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
   children: {
@@ -38,11 +36,6 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
     ...BUTTON_PROPS_META.intent,
     defaultValue: String(DEFAULT_DROPDOWN_LIST_INTENT),
     description: 'Color tone applied to the list.',
-  },
-  itemBorderIntent: {
-    ...BOX_PROPS_META.intent,
-    defaultValue: String(DEFAULT_DROPDOWN_LIST_ITEM_BORDER_INTENT),
-    description: 'Color tone applied to the dividers between list items.',
   },
   keepOpen: {
     options: ['boolean'],

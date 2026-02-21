@@ -18,7 +18,6 @@ export const Select = ({
   color,
   size,
   intent,
-  itemBorderIntent,
   scrollAlign,
   visibleItemsCount,
   // Box
@@ -62,7 +61,6 @@ export const Select = ({
               color={color}
               size={size}
               intent={intent}
-              itemBorderIntent={itemBorderIntent}
               scrollToIndex={currentSlotIndex}
               scrollAlign={scrollAlign}
               visibleItemsCount={visibleItemsCount}

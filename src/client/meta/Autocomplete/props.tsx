@@ -45,7 +45,6 @@ const AUTOCOMPLETE_PROPS_META: ComponentMeta<AutocompleteProps>['props'] = {
     ...DROPDOWN_LIST_PROPS_META.intent,
     description: 'Color tone applied to the component.',
   },
-  itemBorderIntent: DROPDOWN_LIST_PROPS_META.itemBorderIntent,
   noOptionsLabel: DROPDOWN_LIST_PROPS_META.noOptionsLabel,
   onChange: {
     options: ['(value: string) => void'],

@@ -20,7 +20,6 @@ export const Autocomplete = ({
   color,
   size,
   intent,
-  itemBorderIntent,
   scrollAlign,
   visibleItemsCount,
   noOptionsLabel,
@@ -62,7 +61,6 @@ export const Autocomplete = ({
             intent={intent}
             color={color}
             size={size}
-            itemBorderIntent={itemBorderIntent}
             scrollAlign={scrollAlign}
             visibleItemsCount={visibleItemsCount}
             noOptionsLabel={noOptionsLabel}
