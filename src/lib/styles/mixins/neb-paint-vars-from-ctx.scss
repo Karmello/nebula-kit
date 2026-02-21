@@ -13,11 +13,22 @@ $neb-soft-outline-states: (), hover, bg-hover, active, bg-active, disabled, load
       @each $state in $states {
         $state-suffix: if($state == (), '', '-' + $state);
 
+        // base ladder
         --neb-#{$variant}-#{$intent}#{$state-suffix}: var(--neb-ctx-#{$variant}-#{$intent}#{$state-suffix});
+
+        // elevated ladder
+        --neb-#{$variant}-#{$intent}-elevated#{$state-suffix}: var(
+          --neb-ctx-#{$variant}-#{$intent}-elevated#{$state-suffix}
+        );
       }
     }
   }
 
+  // solid text (base)
   --neb-solid-primary-text: var(--neb-ctx-solid-primary-text);
   --neb-solid-inverse-text: var(--neb-ctx-solid-inverse-text);
+
+  // solid text (elevated)
+  --neb-solid-primary-text-elevated: var(--neb-ctx-solid-primary-text-elevated);
+  --neb-solid-inverse-text-elevated: var(--neb-ctx-solid-inverse-text-elevated);
 }

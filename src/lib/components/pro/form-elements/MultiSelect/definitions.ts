@@ -1,15 +1,12 @@
-import { BoxProps, ButtonProps, DropdownListProps, HtmlTagProps } from 'lib/components'
+import { BoxProps, DropdownListProps, HtmlTagProps } from 'lib/components'
 
 export const DEFAULT_MULTI_SELECT_INLINE_SIZE: MultiSelectProps['inlineSize'] = '100%'
-export const DEFAULT_MULTI_SELECT_LIST_INTENT: MultiSelectProps['listIntent'] = 'secondary'
 
 type MultiSelectOwnProps = {
   defaultValue?: string[]
   value?: string[]
   onChange?: (value: string[]) => void
   dropdownPlacement?: DropdownListProps['placement']
-  triggerIntent?: ButtonProps['intent']
-  listIntent?: DropdownListProps['intent']
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
@@ -20,7 +17,7 @@ type PropsFromBox = Pick<BoxProps<'div'>, 'inlineSize' | 'disabled'>
 
 type PropsFromDropdownList = Pick<
   DropdownListProps,
-  'color' | 'size' | 'itemBorderIntent' | 'scrollAlign' | 'visibleItemsCount'
+  'color' | 'size' | 'intent' | 'itemBorderIntent' | 'scrollAlign' | 'visibleItemsCount'
 >
 
 export type MultiSelectProps = PropsFromHtmlTag & PropsFromBox & PropsFromDropdownList & MultiSelectOwnProps

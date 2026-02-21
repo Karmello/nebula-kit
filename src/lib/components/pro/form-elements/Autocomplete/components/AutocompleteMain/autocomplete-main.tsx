@@ -19,6 +19,7 @@ export const AutocompleteMain = ({
   // DropdownList
   color,
   size,
+  intent,
   itemBorderIntent,
   scrollAlign,
   visibleItemsCount,
@@ -33,8 +34,6 @@ export const AutocompleteMain = ({
   debounceDelay,
   placeholder,
   showToggle,
-  triggerIntent,
-  listIntent,
   // extra
   items,
   currentValue,
@@ -99,7 +98,7 @@ export const AutocompleteMain = ({
         ...tagAttrs,
         className: classNames(withPrefix('autocomplete'), tagAttrs?.className),
       }}
-      intent={listIntent}
+      intent={intent}
       color={color}
       size={size}
       itemBorderIntent={itemBorderIntent}
@@ -142,7 +141,7 @@ export const AutocompleteMain = ({
                 placeholder={placeholder}
                 size={size}
                 variant="solid"
-                intent={triggerIntent}
+                intent={intent}
                 color={color}
                 disabled={disabled}
                 endAffix={

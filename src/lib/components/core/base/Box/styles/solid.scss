@@ -6,32 +6,49 @@
 
     @each $intent in $neb-intents {
       &[data-neb-box-intent='#{$intent}'] {
+        // --------------------------------------------
+        // TOKEN SELECTION (base by default)
+        // --------------------------------------------
+
+        --neb-solid-bg: var(--neb-solid-#{$intent});
+        --neb-solid-bg-hover: var(--neb-solid-#{$intent}-hover);
+        --neb-solid-bg-active: var(--neb-solid-#{$intent}-active);
+        --neb-solid-text: var(--neb-solid-#{$intent}-text, var(--neb-text));
+        --neb-solid-text-disabled: var(--neb-solid-#{$intent}-disabled);
         --neb-loader: var(--neb-solid-#{$intent}-loader);
 
-        // --------------------------------------------------
-        // REST (base)
-        // --------------------------------------------------
+        // elevated override
+        &[data-neb-box-elevated='true'] {
+          --neb-solid-bg: var(--neb-solid-#{$intent}-elevated);
+          --neb-solid-bg-hover: var(--neb-solid-#{$intent}-elevated-hover);
+          --neb-solid-bg-active: var(--neb-solid-#{$intent}-elevated-active);
+          --neb-solid-text: var(--neb-solid-#{$intent}-text-elevated, var(--neb-text));
+          --neb-solid-text-disabled: var(--neb-solid-#{$intent}-elevated-disabled);
+          --neb-loader: var(--neb-solid-#{$intent}-elevated-loader);
+        }
 
-        background-color: var(--neb-solid-#{$intent});
-        color: var(--neb-solid-#{$intent}-text, var(--neb-text));
+        // --------------------------------------------
+        // REST (uses selected vars)
+        // --------------------------------------------
 
-        // --------------------------------------------------
-        // POINTER INTERACTION (hover + active + activeOnFocus)
-        // --------------------------------------------------
+        background-color: var(--neb-solid-bg);
+        color: var(--neb-solid-text);
+
+        // --------------------------------------------
+        // INTERACTION (uses selected vars)
+        // --------------------------------------------
 
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
-          // hover (natural + defaultState="hover")
           &:hover:not(:active),
           &:focus-visible,
           &[data-neb-box-default-state='hover'] {
-            background-color: var(--neb-solid-#{$intent}-hover);
+            background-color: var(--neb-solid-bg-hover);
           }
 
-          // active (natural + defaultState="active")
           &:active,
           &[data-neb-box-default-state='active'],
           &[data-neb-box-active-on-focus='true']:focus-visible {
-            background-color: var(--neb-solid-#{$intent}-active) !important;
+            background-color: var(--neb-solid-bg-active) !important;
           }
         }
 
@@ -51,16 +68,16 @@
           }
         }
 
-        // --------------------------------------------------
-        // DISABLED
-        // --------------------------------------------------
+        // --------------------------------------------
+        // DISABLED (uses selected vars)
+        // --------------------------------------------
 
         &[data-neb-box-disabled='true'] {
-          color: var(--neb-solid-#{$intent}-disabled);
+          color: var(--neb-solid-text-disabled);
         }
 
         &[data-neb-box-disabled='true']:-webkit-autofill {
-          -webkit-text-fill-color: var(--neb-solid-#{$intent}-disabled);
+          -webkit-text-fill-color: var(--neb-solid-text-disabled);
         }
       }
     }

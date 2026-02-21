@@ -7,6 +7,7 @@ import { COLORS } from 'lib/definitions'
 
 export default () => {
   const [variant, setVariant] = useState<BoxVariant>('solid')
+  const [elevated, setElevated] = useState<boolean>(false)
   const [disabled, setDisabled] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(false)
 
@@ -33,6 +34,10 @@ export default () => {
           </Select>
         </Flex.Item>
         <Flex.Item>
+          <Text bold>Elevated</Text>
+          <Switch checked={elevated} onChange={setElevated} />
+        </Flex.Item>
+        <Flex.Item>
           <Text bold>Disabled</Text>
           <Switch checked={disabled} onChange={setDisabled} />
         </Flex.Item>
@@ -55,6 +60,7 @@ export default () => {
                     fullWidth
                     disabled={disabled}
                     loading={loading}
+                    elevated={elevated}
                   >
                     {intent} {color}
                   </Button>

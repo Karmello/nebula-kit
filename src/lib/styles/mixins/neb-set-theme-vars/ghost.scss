@@ -1,4 +1,5 @@
-@use 'styles/definitions/index.scss' as defs;
+@use 'styles/definitions/light.scss' as light;
+@use 'styles/definitions/dark.scss' as dark;
 @use 'styles/functions/neb-set-color-lightness.scss' as *;
 @use 'sass:map';
 
@@ -10,8 +11,8 @@
   $prefix: if($ctx, 'ctx-', '');
   $suffix: if($elevated, '-elevated', '');
 
-  $hover-map: if($theme == 'light', defs.$neb-hover-light, defs.$neb-hover-dark);
-  $active-map: if($theme == 'light', defs.$neb-active-light, defs.$neb-active-dark);
+  $hover-map: if($theme == 'light', light.$neb-hover-light, dark.$neb-hover-dark);
+  $active-map: if($theme == 'light', light.$neb-active-light, dark.$neb-active-dark);
 
   // ----------------------------------------------------------
   // REST
