@@ -65,7 +65,7 @@ export const Families = () => {
         />
         <Family
           heading="Layout"
-          description="Powerful layout components make arranging UI straightforward by using well-known techniques like flexbox or grid."
+          description="Powerful layout components make arranging UI straightforward by using well-known techniques like Flexbox or CSS Grid."
           iconName="panel-top-bottom-dashed"
           components={['Flex', 'Grid']}
         />

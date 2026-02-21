@@ -31,6 +31,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   color,
   intent = DEFAULT_BUTTON_INTENT,
   highlighted,
+  pressed,
   disabled,
   inlineSize,
   minInlineSize,
@@ -87,6 +88,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       color={color}
       intent={intent}
       highlighted={highlighted}
+      pressed={pressed}
       disabled={disabled || loading}
       inlineSize={inlineSize}
       minInlineSize={minInlineSize}

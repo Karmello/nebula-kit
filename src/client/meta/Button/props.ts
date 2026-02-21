@@ -55,6 +55,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     options: ['event => void'],
     description: 'Click event handler for the button element.',
   },
+  pressed: BOX_PROPS_META.pressed,
   ripple: {
     options: ['boolean'],
     defaultValue: String(DEFAULT_BUTTON_RIPPLE),

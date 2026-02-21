@@ -72,6 +72,7 @@ export const PLAYGROUND_MAP: Record<string, unknown[]> = {
     'loading',
     'minInlineSize',
     'maxInlineSize',
+    'pressed',
     'ripple',
     'size',
     'variant',

@@ -99,7 +99,7 @@ export const Select = ({
                         disabled={disabled}
                         fullWidth
                         ripple={!open}
-                        highlighted={open ? true : undefined}
+                        // pressed={open ? true : undefined}
                       >
                         {staticLabel || currentSlot?.props.children || 'Select ...'}
                       </Button>

@@ -125,8 +125,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   highlighted: {
     options: ['boolean'],
-    description:
-      'When true, persists the hovered state to create a highlight effect. Works only for interactive Boxes.',
+    description: 'When true, persists the hovered state to create a highlight effect.',
   },
   inlineSize: {
     options: ['CSS'],
@@ -306,12 +305,11 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   pressed: {
     options: ['boolean'],
-    description:
-      'When true, persists the active state to create a pressed effect. Works only for interactive Boxes.',
+    description: 'When true, persists the active state to create a pressed effect.',
   },
   pressedOnFocus: {
     options: ['boolean'],
-    description: 'When true, keeps the pressed state active while focused. Works only for interactive Boxes.',
+    description: 'When true, keeps the pressed state active while focused.',
   },
   right: {
     options: ['CSS'],
