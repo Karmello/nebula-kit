@@ -9,6 +9,7 @@ import {
   DEFAULT_BUTTON_SIZE,
   DEFAULT_BUTTON_VARIANT,
   DEFAULT_BUTTON_RIPPLE,
+  DEFAULT_BUTTON_INTERACTIVE,
 } from 'lib/components/core/controls/Button'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -40,6 +41,10 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   intent: {
     ...BOX_PROPS_META.intent,
     defaultValue: String(DEFAULT_BUTTON_INTENT),
+  },
+  interactive: {
+    ...BOX_PROPS_META.interactive,
+    defaultValue: String(DEFAULT_BUTTON_INTERACTIVE),
   },
   justifyContent: {
     ...FLEX_PROPS_META.justifyContent,

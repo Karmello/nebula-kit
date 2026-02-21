@@ -111,6 +111,7 @@ export const MultiSelect = ({
                         fullWidth
                         ripple={!open}
                         elevated={open}
+                        interactive={!open}
                       >
                         {currentLabel || 'Select ...'}
                       </Button>

@@ -69,6 +69,7 @@ export const PLAYGROUND_MAP: Record<string, unknown[]> = {
     'iconPlacement',
     'inlineSize',
     'intent',
+    'interactive',
     'justifyContent',
     'loading',
     'minInlineSize',

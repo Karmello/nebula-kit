@@ -97,6 +97,7 @@ export const Select = ({
                         fullWidth
                         ripple={!open}
                         elevated={open}
+                        interactive={!open}
                       >
                         {staticLabel || currentSlot?.props.children || 'Select ...'}
                       </Button>
