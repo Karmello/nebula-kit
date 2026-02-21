@@ -8,27 +8,38 @@
       &[data-neb-box-intent='#{$intent}'] {
         --neb-loader: var(--neb-solid-#{$intent}-loader);
 
-        // rest
+        // --------------------------------------------------
+        // REST (base)
+        // --------------------------------------------------
+
         background-color: var(--neb-solid-#{$intent});
         color: var(--neb-solid-#{$intent}-text, var(--neb-text));
 
-        // not disabled, interactive
+        // --------------------------------------------------
+        // POINTER INTERACTION (hover + active + activeOnFocus)
+        // --------------------------------------------------
+
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
-          // hover, focus, highlighted
+          // hover (natural + defaultState="hover")
           &:hover:not(:active),
           &:focus-visible,
-          &[data-neb-box-highlighted='true'] {
+          &[data-neb-box-default-state='hover'] {
             background-color: var(--neb-solid-#{$intent}-hover);
           }
 
-          // active, pressed-on-focus, pressed
+          // active (natural + defaultState="active")
           &:active,
-          &[data-neb-box-pressed-on-focus='true']:focus-visible,
-          &[data-neb-box-pressed='true'] {
+          &[data-neb-box-default-state='active'],
+          &[data-neb-box-active-on-focus='true']:focus-visible {
             background-color: var(--neb-solid-#{$intent}-active) !important;
           }
+        }
 
-          // focus ring
+        // --------------------------------------------------
+        // FOCUS RING (independent of interactive)
+        // --------------------------------------------------
+
+        &:not([data-neb-box-disabled='true']) {
           &:focus-visible {
             box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
 
@@ -40,10 +51,14 @@
           }
         }
 
-        // disabled
+        // --------------------------------------------------
+        // DISABLED
+        // --------------------------------------------------
+
         &[data-neb-box-disabled='true'] {
           color: var(--neb-solid-#{$intent}-disabled);
         }
+
         &[data-neb-box-disabled='true']:-webkit-autofill {
           -webkit-text-fill-color: var(--neb-solid-#{$intent}-disabled);
         }

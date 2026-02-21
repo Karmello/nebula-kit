@@ -23,19 +23,19 @@ export const Box = <T extends ElementType = 'div'>({
   tag,
   tagAttrs,
   tagRef,
-  // own
+  // surface
   drawable,
+  elevated,
   theme,
   brand,
   color,
   variant,
   intent,
-  // state
+  // interaction
   interactive,
+  defaultState,
+  activeOnFocus,
   disabled,
-  highlighted,
-  pressed,
-  pressedOnFocus,
   // css
   opacity,
   visibility,
@@ -228,11 +228,11 @@ export const Box = <T extends ElementType = 'div'>({
           disabled,
           ...updateDomStaticDataset('Box', {
             drawable,
+            elevated,
             interactive,
+            defaultState,
+            activeOnFocus,
             disabled,
-            highlighted,
-            pressed,
-            pressedOnFocus,
           }),
         } as PropsWithoutRef<ComponentProps<T>>
       }

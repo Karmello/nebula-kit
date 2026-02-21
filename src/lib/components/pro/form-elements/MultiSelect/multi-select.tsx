@@ -118,7 +118,7 @@ export const MultiSelect = ({
                         disabled={disabled}
                         fullWidth
                         ripple={!open}
-                        highlighted={open ? true : undefined}
+                        // highlighted={open ? true : undefined}
                       >
                         {currentLabel || 'Select ...'}
                       </Button>

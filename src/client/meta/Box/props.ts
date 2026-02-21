@@ -11,11 +11,15 @@ import {
   THEMES,
 } from 'lib/definitions'
 
-import { BoxProps, BOX_VARIANTS, BOX_INTENTS } from 'lib/components/core/base/Box'
+import { BoxProps, BOX_VARIANTS, BOX_INTENTS, BOX_DEFAULT_STATE } from 'lib/components/core/base/Box'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
+  activeOnFocus: {
+    options: ['boolean'],
+    description: 'When true, applies the active visual state while the component is focus-visible.',
+  },
   aspectRatio: {
     options: ['CSS'],
     isResponsive: true,
@@ -107,6 +111,10 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Color applied to the component.',
     tooltip: COLORS,
   },
+  defaultState: {
+    options: BOX_DEFAULT_STATE,
+    description: 'Overrides the base interaction state while preserving natural interaction behavior.',
+  },
   disabled: {
     options: ['boolean'],
     description: 'Disables the component and its interactions.',
@@ -123,9 +131,9 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description:
       'Enables visual rendering for the Box surface. When enabled, the Box participates in theming, colors, variants and intents. When disabled, it behaves as a neutral structural container with no visual styling applied.',
   },
-  highlighted: {
+  elevated: {
     options: ['boolean'],
-    description: 'When true, persists the hovered state to create a highlight effect.',
+    description: 'Emphasizes the component by increasing its surface color intensity.',
   },
   inlineSize: {
     options: ['CSS'],
@@ -302,14 +310,6 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Position in the layout flow.',
     link: true,
     tooltip: CSS_POSITION,
-  },
-  pressed: {
-    options: ['boolean'],
-    description: 'When true, persists the active state to create a pressed effect.',
-  },
-  pressedOnFocus: {
-    options: ['boolean'],
-    description: 'When true, keeps the pressed state active while focused.',
   },
   right: {
     options: ['CSS'],

@@ -31,7 +31,6 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     isResponsive: true,
     description: 'Expands the button to match the full width of its container.',
   },
-  highlighted: BOX_PROPS_META.highlighted,
   iconAngle: WITH_ICON_PROPS_META.iconAngle,
   iconName: TEXT_PROPS_META.iconName,
   iconPlacement: TEXT_PROPS_META.iconPlacement,
@@ -55,7 +54,6 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     options: ['event => void'],
     description: 'Click event handler for the button element.',
   },
-  pressed: BOX_PROPS_META.pressed,
   ripple: {
     options: ['boolean'],
     defaultValue: String(DEFAULT_BUTTON_RIPPLE),

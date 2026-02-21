@@ -83,7 +83,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                         color={color}
                         intent="primary"
                         ripple={!open}
-                        highlighted={open ? true : undefined}
+                        // highlighted={open ? true : undefined}
                         bold
                       >
                         {levels[index].find(node => node.value === currentPath[index])?.label || 'Select ...'}

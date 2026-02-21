@@ -16,25 +16,28 @@ import { HtmlTagProps } from 'lib/components'
 
 export const BOX_VARIANTS = ['solid', 'outline', 'soft-outline', 'ghost'] as const
 export const BOX_INTENTS = ['neutral', 'muted', 'tertiary', 'secondary', 'primary', 'inverse'] as const
+export const BOX_DEFAULT_STATE = ['hover', 'active'] as const
 export const BOX_BORDER_WIDTH = '2px'
 
 export type BoxVariant = (typeof BOX_VARIANTS)[number]
 export type BoxIntent = (typeof BOX_INTENTS)[number]
+export type BoxDefaultState = (typeof BOX_DEFAULT_STATE)[number]
 export type BoxColor = (typeof COLORS)[number]
 
 type BoxOwnProps = {
+  // surface
   drawable?: boolean
+  elevated?: boolean
   theme?: RespValue<Theme>
   brand?: RespValue<BoxColor>
   color?: RespValue<BoxColor>
   variant?: RespValue<BoxVariant>
   intent?: RespValue<BoxIntent>
-  // state
+  // interaction
   interactive?: boolean
+  defaultState?: BoxDefaultState
+  activeOnFocus?: boolean
   disabled?: boolean
-  highlighted?: boolean
-  pressed?: boolean
-  pressedOnFocus?: boolean
   // css
   opacity?: RespValue<string>
   visibility?: RespValue<CssVisibility>

@@ -101,7 +101,7 @@ export const Pagination = ({
                 iconName={iconName}
                 disabled={disabled}
                 bold={active}
-                highlighted={active}
+                // highlighted={active}
               >
                 {!iconName ? item.page : undefined}
               </Button>
