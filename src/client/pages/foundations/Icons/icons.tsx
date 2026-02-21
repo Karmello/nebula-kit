@@ -6,7 +6,7 @@ export default () => {
   return (
     <>
       <Box maxInlineSize="55rem">
-        <Text typography="lead">
+        <Text>
           All icons available in the NebulaKit system, presented as a curated subset of the Lucide icon set
           for use across components and interfaces.
         </Text>
