@@ -6,7 +6,10 @@
 // Ghost variant
 // ------------------------------------------------------------
 
-@mixin neb-set-theme-vars-ghost($theme, $color, $prefix) {
+@mixin neb-set-theme-vars-ghost($theme, $color, $ctx: false, $elevated: false) {
+  $prefix: if($ctx, 'ctx-', '');
+  $suffix: if($elevated, '-elevated', '');
+
   $hover-map: if($theme == 'light', defs.$neb-hover-light, defs.$neb-hover-dark);
   $active-map: if($theme == 'light', defs.$neb-active-light, defs.$neb-active-dark);
 
@@ -14,74 +17,74 @@
   // REST
   // ----------------------------------------------------------
 
-  --neb-#{$prefix}ghost-neutral: var(--neb-#{$color}-9);
-  --neb-#{$prefix}ghost-muted: var(--neb-#{$color}-2);
-  --neb-#{$prefix}ghost-tertiary: var(--neb-#{$color}-3);
-  --neb-#{$prefix}ghost-secondary: var(--neb-#{$color}-4);
-  --neb-#{$prefix}ghost-primary: var(--neb-#{$color}-5);
-  --neb-#{$prefix}ghost-inverse: var(--neb-#{$color}-1);
+  --neb-#{$prefix}ghost-neutral#{$suffix}: var(--neb-#{$color}-9);
+  --neb-#{$prefix}ghost-muted#{$suffix}: var(--neb-#{$color}-2);
+  --neb-#{$prefix}ghost-tertiary#{$suffix}: var(--neb-#{$color}-3);
+  --neb-#{$prefix}ghost-secondary#{$suffix}: var(--neb-#{$color}-4);
+  --neb-#{$prefix}ghost-primary#{$suffix}: var(--neb-#{$color}-5);
+  --neb-#{$prefix}ghost-inverse#{$suffix}: var(--neb-#{$color}-1);
 
   // ----------------------------------------------------------
   // HOVER
   // ----------------------------------------------------------
 
-  --neb-#{$prefix}ghost-neutral-hover: var(--neb-#{$prefix}ghost-neutral);
+  --neb-#{$prefix}ghost-neutral-hover#{$suffix}: var(--neb-#{$prefix}ghost-neutral#{$suffix});
 
-  --neb-#{$prefix}ghost-muted-hover: #{neb-set-color-lightness(
-      '--neb-#{$prefix}ghost-muted',
+  --neb-#{$prefix}ghost-muted-hover#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}ghost-muted#{$suffix}',
       map.get($hover-map, muted),
       $theme
     )};
 
-  --neb-#{$prefix}ghost-tertiary-hover: #{neb-set-color-lightness(
-      '--neb-#{$prefix}ghost-tertiary',
+  --neb-#{$prefix}ghost-tertiary-hover#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}ghost-tertiary#{$suffix}',
       map.get($hover-map, tertiary),
       $theme
     )};
 
-  --neb-#{$prefix}ghost-secondary-hover: #{neb-set-color-lightness(
-      '--neb-#{$prefix}ghost-secondary',
+  --neb-#{$prefix}ghost-secondary-hover#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}ghost-secondary#{$suffix}',
       map.get($hover-map, secondary),
       $theme
     )};
 
-  --neb-#{$prefix}ghost-primary-hover: #{neb-set-color-lightness(
-      '--neb-#{$prefix}ghost-primary',
+  --neb-#{$prefix}ghost-primary-hover#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}ghost-primary#{$suffix}',
       map.get($hover-map, primary),
       $theme
     )};
 
-  --neb-#{$prefix}ghost-inverse-hover: var(--neb-#{$prefix}ghost-inverse);
+  --neb-#{$prefix}ghost-inverse-hover#{$suffix}: var(--neb-#{$prefix}ghost-inverse#{$suffix});
 
   // ----------------------------------------------------------
   // ACTIVE
   // ----------------------------------------------------------
 
-  --neb-#{$prefix}ghost-neutral-active: var(--neb-#{$prefix}ghost-neutral-hover);
+  --neb-#{$prefix}ghost-neutral-active#{$suffix}: var(--neb-#{$prefix}ghost-neutral-hover#{$suffix});
 
-  --neb-#{$prefix}ghost-muted-active: #{neb-set-color-lightness(
-      '--neb-#{$prefix}ghost-muted-hover',
+  --neb-#{$prefix}ghost-muted-active#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}ghost-muted-hover#{$suffix}',
       map.get($active-map, muted),
       $theme
     )};
 
-  --neb-#{$prefix}ghost-tertiary-active: #{neb-set-color-lightness(
-      '--neb-#{$prefix}ghost-tertiary-hover',
+  --neb-#{$prefix}ghost-tertiary-active#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}ghost-tertiary-hover#{$suffix}',
       map.get($active-map, tertiary),
       $theme
     )};
 
-  --neb-#{$prefix}ghost-secondary-active: #{neb-set-color-lightness(
-      '--neb-#{$prefix}ghost-secondary-hover',
+  --neb-#{$prefix}ghost-secondary-active#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}ghost-secondary-hover#{$suffix}',
       map.get($active-map, secondary),
       $theme
     )};
 
-  --neb-#{$prefix}ghost-primary-active: #{neb-set-color-lightness(
-      '--neb-#{$prefix}ghost-primary-hover',
+  --neb-#{$prefix}ghost-primary-active#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}ghost-primary-hover#{$suffix}',
       map.get($active-map, primary),
       $theme
     )};
 
-  --neb-#{$prefix}ghost-inverse-active: var(--neb-#{$prefix}ghost-inverse);
+  --neb-#{$prefix}ghost-inverse-active#{$suffix}: var(--neb-#{$prefix}ghost-inverse#{$suffix});
 }

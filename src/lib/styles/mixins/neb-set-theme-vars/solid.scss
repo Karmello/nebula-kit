@@ -6,7 +6,10 @@
 // Solid variant
 // ------------------------------------------------------------
 
-@mixin neb-set-theme-vars-solid($theme, $color, $prefix) {
+@mixin neb-set-theme-vars-solid($theme, $color, $ctx: false, $elevated: false) {
+  $prefix: if($ctx, 'ctx-', '');
+  $suffix: if($elevated, '-elevated', '');
+
   $hover-map: if($theme == 'light', defs.$neb-hover-light, defs.$neb-hover-dark);
   $active-map: if($theme == 'light', defs.$neb-active-light, defs.$neb-active-dark);
 
@@ -14,83 +17,86 @@
   // REST
   // ----------------------------------------------------------
 
-  --neb-#{$prefix}solid-neutral: var(--neb-#{$color}-1);
-  --neb-#{$prefix}solid-muted: var(--neb-#{$color}-2);
-  --neb-#{$prefix}solid-tertiary: var(--neb-#{$color}-3);
-  --neb-#{$prefix}solid-secondary: var(--neb-#{$color}-4);
-  --neb-#{$prefix}solid-primary: var(--neb-#{$color}-5);
-  --neb-#{$prefix}solid-inverse: var(--neb-#{$color}-9);
+  --neb-#{$prefix}solid-neutral#{$suffix}: var(--neb-#{$color}-1);
+  --neb-#{$prefix}solid-muted#{$suffix}: var(--neb-#{$color}-2);
+  --neb-#{$prefix}solid-tertiary#{$suffix}: var(--neb-#{$color}-3);
+  --neb-#{$prefix}solid-secondary#{$suffix}: var(--neb-#{$color}-4);
+  --neb-#{$prefix}solid-primary#{$suffix}: var(--neb-#{$color}-5);
+  --neb-#{$prefix}solid-inverse#{$suffix}: var(--neb-#{$color}-9);
 
   // solid text (contrast logic only where needed)
-  --neb-#{$prefix}solid-primary-text: #{if($theme == 'light', var(--neb-#{$color}-1), var(--neb-#{$color}-9))};
-
-  --neb-#{$prefix}solid-inverse-text: var(--neb-#{$color}-1);
+  --neb-#{$prefix}solid-primary-text#{$suffix}: #{if(
+      $theme == 'light',
+      var(--neb-#{$color}-1),
+      var(--neb-#{$color}-9)
+    )};
+  --neb-#{$prefix}solid-inverse-text#{$suffix}: var(--neb-#{$color}-1);
 
   // ----------------------------------------------------------
   // HOVER
   // ----------------------------------------------------------
 
-  --neb-#{$prefix}solid-neutral-hover: var(--neb-#{$prefix}solid-muted);
+  --neb-#{$prefix}solid-neutral-hover#{$suffix}: var(--neb-#{$prefix}solid-muted#{$suffix});
 
-  --neb-#{$prefix}solid-muted-hover: #{neb-set-color-lightness(
-      '--neb-#{$prefix}solid-muted',
+  --neb-#{$prefix}solid-muted-hover#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}solid-muted#{$suffix}',
       map.get($hover-map, muted),
       $theme
     )};
 
-  --neb-#{$prefix}solid-tertiary-hover: #{neb-set-color-lightness(
-      '--neb-#{$prefix}solid-tertiary',
+  --neb-#{$prefix}solid-tertiary-hover#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}solid-tertiary#{$suffix}',
       map.get($hover-map, tertiary),
       $theme
     )};
 
-  --neb-#{$prefix}solid-secondary-hover: #{neb-set-color-lightness(
-      '--neb-#{$prefix}solid-secondary',
+  --neb-#{$prefix}solid-secondary-hover#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}solid-secondary#{$suffix}',
       map.get($hover-map, secondary),
       $theme
     )};
 
-  --neb-#{$prefix}solid-primary-hover: #{neb-set-color-lightness(
-      '--neb-#{$prefix}solid-primary',
+  --neb-#{$prefix}solid-primary-hover#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}solid-primary#{$suffix}',
       map.get($hover-map, primary),
       $theme
     )};
 
-  --neb-#{$prefix}solid-inverse-hover: var(--neb-#{$prefix}solid-inverse);
+  --neb-#{$prefix}solid-inverse-hover#{$suffix}: var(--neb-#{$prefix}solid-inverse#{$suffix});
 
   // ----------------------------------------------------------
   // ACTIVE
-  // ------------------------------------------------------------
+  // ----------------------------------------------------------
 
-  --neb-#{$prefix}solid-neutral-active: #{neb-set-color-lightness(
-      '--neb-#{$prefix}solid-neutral-hover',
+  --neb-#{$prefix}solid-neutral-active#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}solid-neutral-hover#{$suffix}',
       map.get($active-map, neutral),
       $theme
     )};
 
-  --neb-#{$prefix}solid-muted-active: #{neb-set-color-lightness(
-      '--neb-#{$prefix}solid-muted-hover',
+  --neb-#{$prefix}solid-muted-active#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}solid-muted-hover#{$suffix}',
       map.get($active-map, muted),
       $theme
     )};
 
-  --neb-#{$prefix}solid-tertiary-active: #{neb-set-color-lightness(
-      '--neb-#{$prefix}solid-tertiary-hover',
+  --neb-#{$prefix}solid-tertiary-active#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}solid-tertiary-hover#{$suffix}',
       map.get($active-map, tertiary),
       $theme
     )};
 
-  --neb-#{$prefix}solid-secondary-active: #{neb-set-color-lightness(
-      '--neb-#{$prefix}solid-secondary-hover',
+  --neb-#{$prefix}solid-secondary-active#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}solid-secondary-hover#{$suffix}',
       map.get($active-map, secondary),
       $theme
     )};
 
-  --neb-#{$prefix}solid-primary-active: #{neb-set-color-lightness(
-      '--neb-#{$prefix}solid-primary-hover',
+  --neb-#{$prefix}solid-primary-active#{$suffix}: #{neb-set-color-lightness(
+      '--neb-#{$prefix}solid-primary-hover#{$suffix}',
       map.get($active-map, primary),
       $theme
     )};
 
-  --neb-#{$prefix}solid-inverse-active: var(--neb-#{$prefix}solid-inverse);
+  --neb-#{$prefix}solid-inverse-active#{$suffix}: var(--neb-#{$prefix}solid-inverse#{$suffix});
 }

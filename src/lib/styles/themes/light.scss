@@ -15,17 +15,17 @@ html[data-theme='light'] {
   @each $color in $neb-colors {
     &[data-brand='#{$color}'] {
       /* Brand interpreted through light theme */
-      @include neb-set-theme-vars('light', $color, 'ctx-');
+      @include neb-set-theme-vars('light', $color, true);
 
       /* Rebind inherited brand when entering a dark theme island */
       .neb-box[data-neb-box-theme='dark']:not([data-neb-box-brand]) {
         @include neb-load-palette('dark');
-        @include neb-set-theme-vars('dark', $color, 'ctx-');
+        @include neb-set-theme-vars('dark', $color, true);
       }
 
       .neb-box[data-neb-box-theme='dark']:not([data-neb-box-brand])
         .neb-box[data-neb-box-theme='light']:not([data-neb-box-brand]) {
-        @include neb-set-theme-vars('light', $color, 'ctx-');
+        @include neb-set-theme-vars('light', $color, true);
       }
     }
   }
@@ -38,7 +38,7 @@ html[data-theme='light'] .neb-box:not([data-neb-box-theme]),
   /* Local brand inside light theme context */
   @each $color in $neb-colors {
     &[data-neb-box-brand='#{$color}'] {
-      @include neb-set-theme-vars('light', $color, 'ctx-');
+      @include neb-set-theme-vars('light', $color, true);
     }
   }
 
@@ -49,7 +49,7 @@ html[data-theme='light'] .neb-box:not([data-neb-box-theme]),
     @each $color in $neb-colors {
       &[data-neb-box-color='#{$color}'] {
         /* Color always overrides brand */
-        @include neb-set-theme-vars('light', $color, '');
+        @include neb-set-theme-vars('light', $color, false);
       }
     }
   }
