@@ -1,31 +1,31 @@
 @use 'styles/ripple/ripple-light.scss';
-@use 'styles/definitions/index.scss' as *;
-@use 'styles/mixins/neb-load-palette.scss' as *;
-@use 'styles/mixins/neb-set-theme-vars/index.scss' as *;
-@use 'styles/mixins/neb-paint-vars-from-ctx.scss' as *;
+@use 'styles/definitions/common.scss' as *;
+@use 'styles/mixins/load-palette.scss' as *;
+@use 'styles/mixins/set-theme-vars/index.scss' as *;
+@use 'styles/mixins/paint-vars-from-ctx.scss' as *;
 
 /* Base light theme primitives, applied globally and to local theme islands */
 html[data-theme='light'],
 .neb-box[data-neb-box-theme='light'] {
-  @include neb-load-palette('light');
+  @include load-palette('light');
 }
 
 /* Global light theme + global brand */
 html[data-theme='light'] {
-  @each $color in $neb-colors {
+  @each $color in $colors {
     &[data-brand='#{$color}'] {
       /* Brand interpreted through light theme */
-      @include neb-set-theme-vars('light', $color, true);
+      @include set-theme-vars('light', $color, true);
 
       /* Rebind inherited brand when entering a dark theme island */
       .neb-box[data-neb-box-theme='dark']:not([data-neb-box-brand]) {
-        @include neb-load-palette('dark');
-        @include neb-set-theme-vars('dark', $color, true);
+        @include load-palette('dark');
+        @include set-theme-vars('dark', $color, true);
       }
 
       .neb-box[data-neb-box-theme='dark']:not([data-neb-box-brand])
         .neb-box[data-neb-box-theme='light']:not([data-neb-box-brand]) {
-        @include neb-set-theme-vars('light', $color, true);
+        @include set-theme-vars('light', $color, true);
       }
     }
   }
@@ -36,20 +36,20 @@ html[data-theme='light'] .neb-box:not([data-neb-box-theme]),
 .neb-box[data-neb-box-theme='light']:not([data-theme='dark']),
 .neb-box[data-neb-box-theme='light']:not([data-theme='dark']) .neb-box:not([data-neb-box-theme]) {
   /* Local brand inside light theme context */
-  @each $color in $neb-colors {
+  @each $color in $colors {
     &[data-neb-box-brand='#{$color}'] {
-      @include neb-set-theme-vars('light', $color, true);
+      @include set-theme-vars('light', $color, true);
     }
   }
 
   /* Explicit color overrides (drawable surfaces only) */
   &[data-neb-box-drawable='true'] {
-    @include neb-paint-vars-from-ctx();
+    @include paint-vars-from-ctx();
 
-    @each $color in $neb-colors {
+    @each $color in $colors {
       &[data-neb-box-color='#{$color}'] {
         /* Color always overrides brand */
-        @include neb-set-theme-vars('light', $color, false);
+        @include set-theme-vars('light', $color, false);
       }
     }
   }

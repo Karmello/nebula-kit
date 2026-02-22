@@ -2,13 +2,14 @@ $lightness-1: 100%;
 $lightness-2: 96%;
 $lightness-3: 92%;
 $lightness-4: 77%;
-$lightness-5: 54%;
+$lightness-5: 48%;
 $lightness-6: 28%;
 $lightness-7: 13%;
 $lightness-8: 8%;
 $lightness-9: 0%;
 
 $saturation: 68%;
+$dark-saturation-factor: 0.75;
 
 $blue: 222;
 $teal: 170;
@@ -19,7 +20,7 @@ $purple: 278;
 $pink: 324;
 $yellow: 60;
 
-$neb-palette: (
+$color-palette: (
   'gray': (
     1: hsl(0 0% $lightness-1),
     2: hsl(0 0% $lightness-2),

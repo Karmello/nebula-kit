@@ -1,0 +1,23 @@
+@use 'styles/mixins/set-theme-vars/solid.scss' as solid;
+@use 'styles/mixins/set-theme-vars/outline.scss' as outline;
+@use 'styles/mixins/set-theme-vars/soft-outline.scss' as soft-outline;
+@use 'styles/mixins/set-theme-vars/ghost.scss' as ghost;
+
+@mixin set-theme-vars($theme, $color, $ctx: false) {
+  // global
+  --neb-background: var(--neb-#{$color}-1);
+  --neb-text: var(--neb-#{$color}-9);
+  --neb-focus-border: var(--neb-#{$color}-9);
+
+  // base ladder
+  @include solid.set-theme-vars-solid($theme, $color, $ctx, false);
+  @include outline.set-theme-vars-outline($theme, $color, $ctx, false);
+  @include soft-outline.set-theme-vars-soft-outline($theme, $color, $ctx, false);
+  @include ghost.set-theme-vars-ghost($theme, $color, $ctx, false);
+
+  // elevated ladder
+  @include solid.set-theme-vars-solid($theme, $color, $ctx, true);
+  @include outline.set-theme-vars-outline($theme, $color, $ctx, true);
+  @include soft-outline.set-theme-vars-soft-outline($theme, $color, $ctx, true);
+  @include ghost.set-theme-vars-ghost($theme, $color, $ctx, true);
+}

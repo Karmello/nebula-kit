@@ -1,6 +1,6 @@
 @use 'sass:math';
 
-@function neb-set-color-lightness($var-name, $percent, $theme) {
+@function set-color-lightness($var-name, $percent, $theme) {
   $factor: math.div($percent, 100%);
 
   @if $theme == 'light' {
@@ -8,4 +8,8 @@
   } @else {
     @return hsl(from var(#{$var-name}) h s calc(l / #{$factor}));
   }
+}
+
+@function set-bg-overlay($var-name, $percent) {
+  @return color-mix(in hsl, var(#{$var-name}) #{$percent}, transparent);
 }

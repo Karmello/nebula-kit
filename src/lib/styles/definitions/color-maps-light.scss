@@ -1,13 +1,4 @@
-$neb-elevated-rest-light: (
-  neutral: 97%,
-  muted: 96%,
-  tertiary: 94%,
-  secondary: 92%,
-  primary: 88%,
-  inverse: 88%,
-);
-
-$neb-hover-light: (
+$hover: (
   neutral: 97%,
   muted: 96%,
   tertiary: 94%,
@@ -15,7 +6,7 @@ $neb-hover-light: (
   primary: 88%,
 );
 
-$neb-active-light: (
+$active: (
   neutral: 94%,
   muted: 93%,
   tertiary: 91%,
@@ -23,7 +14,7 @@ $neb-active-light: (
   primary: 85%,
 );
 
-$neb-overlay-hover-light: (
+$overlay-hover: (
   neutral: 60%,
   muted: 26%,
   tertiary: 21%,
@@ -32,11 +23,20 @@ $neb-overlay-hover-light: (
   inverse: 8%,
 );
 
-$neb-overlay-active-light: (
+$overlay-active: (
   neutral: 70%,
   muted: 38%,
   tertiary: 31%,
   secondary: 25%,
   primary: 20%,
   inverse: 16%,
+);
+
+$elevated: (
+  neutral: 95%,
+  muted: 94%,
+  tertiary: 92%,
+  secondary: 90%,
+  primary: 86%,
+  inverse: 86%,
 );

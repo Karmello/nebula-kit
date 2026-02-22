@@ -1,13 +1,13 @@
-@use 'styles/definitions/index.scss' as defs;
+@use 'styles/definitions/common.scss' as *;
 
 $neb-solid-states: (), hover, active, disabled, loader, ripple;
 $neb-outline-states: (), hover, bg-hover, active, bg-active, disabled, loader, ripple;
 $neb-ghost-states: (), hover, active, disabled, loader, ripple;
 $neb-soft-outline-states: (), hover, bg-hover, active, bg-active, disabled, loader, ripple;
 
-@mixin neb-paint-vars-from-ctx() {
-  @each $variant in defs.$neb-variant {
-    @each $intent in defs.$neb-intents {
+@mixin paint-vars-from-ctx() {
+  @each $variant in $variants {
+    @each $intent in $intents {
       $states: if($variant == outline or $variant == soft-outline, $neb-outline-states, $neb-solid-states);
 
       @each $state in $states {
