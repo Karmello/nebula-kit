@@ -10,14 +10,14 @@
   --neb-focus-border: var(--neb-#{$color}-9);
 
   // base ladder
-  @include solid.set-theme-vars-solid($theme, $color, $ctx, false);
-  @include outline.set-theme-vars-outline($theme, $color, $ctx, false);
-  @include soft-outline.set-theme-vars-soft-outline($theme, $color, $ctx, false);
-  @include ghost.set-theme-vars-ghost($theme, $color, $ctx, false);
+  @include solid.set-css-vars($theme, $color, $ctx, false);
+  @include outline.set-css-vars($theme, $color, $ctx, false);
+  @include soft-outline.set-css-vars($theme, $color, $ctx, false);
+  @include ghost.set-css-vars($theme, $color, $ctx, false);
 
   // elevated ladder
-  @include solid.set-theme-vars-solid($theme, $color, $ctx, true);
-  @include outline.set-theme-vars-outline($theme, $color, $ctx, true);
-  @include soft-outline.set-theme-vars-soft-outline($theme, $color, $ctx, true);
-  @include ghost.set-theme-vars-ghost($theme, $color, $ctx, true);
+  @include solid.set-css-vars($theme, $color, $ctx, true);
+  @include outline.set-css-vars($theme, $color, $ctx, true);
+  @include soft-outline.set-css-vars($theme, $color, $ctx, true);
+  @include ghost.set-css-vars($theme, $color, $ctx, true);
 }
