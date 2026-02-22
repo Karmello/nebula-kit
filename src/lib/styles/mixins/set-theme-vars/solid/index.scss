@@ -9,9 +9,9 @@
   $suffix: if($elevated, '-elevated', '');
 
   @if $elevated == false {
-    @include base.tokens($theme, $color, $prefix);
+    @include base.tokens($theme, $color, $ctx);
   } @else {
-    @include elevated.tokens($theme, $color, $prefix);
+    @include elevated.tokens($theme, $color, $ctx);
   }
 
   @include text.tokens($theme, $color, $prefix, $suffix);

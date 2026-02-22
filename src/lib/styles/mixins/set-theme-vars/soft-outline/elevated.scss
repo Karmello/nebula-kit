@@ -3,38 +3,72 @@
 @use 'styles/functions/index.scss' as *;
 @use 'sass:map';
 
-@mixin tokens($theme, $color, $prefix) {
+@mixin tokens($theme, $color, $ctx: false) {
   $elevated-map: if($theme == 'light', color-maps-light.$elevated, color-maps-dark.$elevated);
 
-  --neb-#{$prefix}soft-outline-neutral-elevated: #{set-color-lightness(
-      '--neb-#{$prefix}soft-outline-neutral',
-      map.get($elevated-map, neutral),
-      $theme
-    )};
+  @if $ctx {
+    --neb-ctx-soft-outline-neutral-elevated: #{set-color-lightness(
+        '--neb-ctx-soft-outline-neutral',
+        map.get($elevated-map, neutral),
+        $theme
+      )};
 
-  --neb-#{$prefix}soft-outline-muted-elevated: #{set-color-lightness(
-      '--neb-#{$prefix}soft-outline-muted',
-      map.get($elevated-map, muted),
-      $theme
-    )};
+    --neb-ctx-soft-outline-muted-elevated: #{set-color-lightness(
+        '--neb-ctx-soft-outline-muted',
+        map.get($elevated-map, muted),
+        $theme
+      )};
 
-  --neb-#{$prefix}soft-outline-tertiary-elevated: #{set-color-lightness(
-      '--neb-#{$prefix}soft-outline-tertiary',
-      map.get($elevated-map, tertiary),
-      $theme
-    )};
+    --neb-ctx-soft-outline-tertiary-elevated: #{set-color-lightness(
+        '--neb-ctx-soft-outline-tertiary',
+        map.get($elevated-map, tertiary),
+        $theme
+      )};
 
-  --neb-#{$prefix}soft-outline-secondary-elevated: #{set-color-lightness(
-      '--neb-#{$prefix}soft-outline-secondary',
-      map.get($elevated-map, secondary),
-      $theme
-    )};
+    --neb-ctx-soft-outline-secondary-elevated: #{set-color-lightness(
+        '--neb-ctx-soft-outline-secondary',
+        map.get($elevated-map, secondary),
+        $theme
+      )};
 
-  --neb-#{$prefix}soft-outline-primary-elevated: #{set-color-lightness(
-      '--neb-#{$prefix}soft-outline-primary',
-      map.get($elevated-map, primary),
-      $theme
-    )};
+    --neb-ctx-soft-outline-primary-elevated: #{set-color-lightness(
+        '--neb-ctx-soft-outline-primary',
+        map.get($elevated-map, primary),
+        $theme
+      )};
 
-  --neb-#{$prefix}soft-outline-inverse-elevated: var(--neb-#{$prefix}soft-outline-inverse);
+    --neb-ctx-soft-outline-inverse-elevated: var(--neb-ctx-soft-outline-inverse);
+  } @else {
+    --neb-soft-outline-neutral-elevated: #{set-color-lightness(
+        '--neb-soft-outline-neutral',
+        map.get($elevated-map, neutral),
+        $theme
+      )};
+
+    --neb-soft-outline-muted-elevated: #{set-color-lightness(
+        '--neb-soft-outline-muted',
+        map.get($elevated-map, muted),
+        $theme
+      )};
+
+    --neb-soft-outline-tertiary-elevated: #{set-color-lightness(
+        '--neb-soft-outline-tertiary',
+        map.get($elevated-map, tertiary),
+        $theme
+      )};
+
+    --neb-soft-outline-secondary-elevated: #{set-color-lightness(
+        '--neb-soft-outline-secondary',
+        map.get($elevated-map, secondary),
+        $theme
+      )};
+
+    --neb-soft-outline-primary-elevated: #{set-color-lightness(
+        '--neb-soft-outline-primary',
+        map.get($elevated-map, primary),
+        $theme
+      )};
+
+    --neb-soft-outline-inverse-elevated: var(--neb-soft-outline-inverse);
+  }
 }

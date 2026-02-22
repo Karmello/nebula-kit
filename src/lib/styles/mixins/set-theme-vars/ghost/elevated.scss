@@ -3,34 +3,64 @@
 @use 'styles/functions/index.scss' as *;
 @use 'sass:map';
 
-@mixin tokens($theme, $color, $prefix) {
+@mixin tokens($theme, $color, $ctx: false) {
   $elevated-map: if($theme == 'light', color-maps-light.$elevated, color-maps-dark.$elevated);
 
-  --neb-#{$prefix}ghost-neutral-elevated: var(--neb-#{$prefix}ghost-neutral);
+  @if $ctx {
+    --neb-ctx-ghost-neutral-elevated: var(--neb-ctx-ghost-neutral);
 
-  --neb-#{$prefix}ghost-muted-elevated: #{set-color-lightness(
-      '--neb-#{$prefix}ghost-muted',
-      map.get($elevated-map, muted),
-      $theme
-    )};
+    --neb-ctx-ghost-muted-elevated: #{set-color-lightness(
+        '--neb-ctx-ghost-muted',
+        map.get($elevated-map, muted),
+        $theme
+      )};
 
-  --neb-#{$prefix}ghost-tertiary-elevated: #{set-color-lightness(
-      '--neb-#{$prefix}ghost-tertiary',
-      map.get($elevated-map, tertiary),
-      $theme
-    )};
+    --neb-ctx-ghost-tertiary-elevated: #{set-color-lightness(
+        '--neb-ctx-ghost-tertiary',
+        map.get($elevated-map, tertiary),
+        $theme
+      )};
 
-  --neb-#{$prefix}ghost-secondary-elevated: #{set-color-lightness(
-      '--neb-#{$prefix}ghost-secondary',
-      map.get($elevated-map, secondary),
-      $theme
-    )};
+    --neb-ctx-ghost-secondary-elevated: #{set-color-lightness(
+        '--neb-ctx-ghost-secondary',
+        map.get($elevated-map, secondary),
+        $theme
+      )};
 
-  --neb-#{$prefix}ghost-primary-elevated: #{set-color-lightness(
-      '--neb-#{$prefix}ghost-primary',
-      map.get($elevated-map, primary),
-      $theme
-    )};
+    --neb-ctx-ghost-primary-elevated: #{set-color-lightness(
+        '--neb-ctx-ghost-primary',
+        map.get($elevated-map, primary),
+        $theme
+      )};
 
-  --neb-#{$prefix}ghost-inverse-elevated: var(--neb-#{$prefix}ghost-inverse);
+    --neb-ctx-ghost-inverse-elevated: var(--neb-ctx-ghost-inverse);
+  } @else {
+    --neb-ghost-neutral-elevated: var(--neb-ghost-neutral);
+
+    --neb-ghost-muted-elevated: #{set-color-lightness(
+        '--neb-ghost-muted',
+        map.get($elevated-map, muted),
+        $theme
+      )};
+
+    --neb-ghost-tertiary-elevated: #{set-color-lightness(
+        '--neb-ghost-tertiary',
+        map.get($elevated-map, tertiary),
+        $theme
+      )};
+
+    --neb-ghost-secondary-elevated: #{set-color-lightness(
+        '--neb-ghost-secondary',
+        map.get($elevated-map, secondary),
+        $theme
+      )};
+
+    --neb-ghost-primary-elevated: #{set-color-lightness(
+        '--neb-ghost-primary',
+        map.get($elevated-map, primary),
+        $theme
+      )};
+
+    --neb-ghost-inverse-elevated: var(--neb-ghost-inverse);
+  }
 }

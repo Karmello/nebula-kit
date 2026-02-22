@@ -1,8 +1,17 @@
-@mixin tokens($theme, $color, $prefix) {
-  --neb-#{$prefix}soft-outline-neutral: var(--neb-#{$color}-2);
-  --neb-#{$prefix}soft-outline-muted: var(--neb-#{$color}-2);
-  --neb-#{$prefix}soft-outline-tertiary: var(--neb-#{$color}-3);
-  --neb-#{$prefix}soft-outline-secondary: var(--neb-#{$color}-4);
-  --neb-#{$prefix}soft-outline-primary: var(--neb-#{$color}-5);
-  --neb-#{$prefix}soft-outline-inverse: var(--neb-#{$color}-9);
+@mixin tokens($theme, $color, $ctx: false) {
+  @if $ctx {
+    --neb-ctx-soft-outline-neutral: var(--neb-#{$color}-2);
+    --neb-ctx-soft-outline-muted: var(--neb-#{$color}-2);
+    --neb-ctx-soft-outline-tertiary: var(--neb-#{$color}-3);
+    --neb-ctx-soft-outline-secondary: var(--neb-#{$color}-4);
+    --neb-ctx-soft-outline-primary: var(--neb-#{$color}-5);
+    --neb-ctx-soft-outline-inverse: var(--neb-#{$color}-9);
+  } @else {
+    --neb-soft-outline-neutral: var(--neb-#{$color}-2);
+    --neb-soft-outline-muted: var(--neb-#{$color}-2);
+    --neb-soft-outline-tertiary: var(--neb-#{$color}-3);
+    --neb-soft-outline-secondary: var(--neb-#{$color}-4);
+    --neb-soft-outline-primary: var(--neb-#{$color}-5);
+    --neb-soft-outline-inverse: var(--neb-#{$color}-9);
+  }
 }

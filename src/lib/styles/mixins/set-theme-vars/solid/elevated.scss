@@ -3,34 +3,64 @@
 @use 'styles/functions/index.scss' as *;
 @use 'sass:map';
 
-@mixin tokens($theme, $color, $prefix) {
+@mixin tokens($theme, $color, $ctx: false) {
   $elevated-map: if($theme == 'light', color-maps-light.$elevated, color-maps-dark.$elevated);
 
-  --neb-#{$prefix}solid-neutral-elevated: var(--neb-#{$prefix}solid-neutral);
+  @if $ctx {
+    --neb-ctx-solid-neutral-elevated: var(--neb-ctx-solid-neutral);
 
-  --neb-#{$prefix}solid-muted-elevated: #{set-color-lightness(
-      '--neb-#{$prefix}solid-muted',
-      map.get($elevated-map, muted),
-      $theme
-    )};
+    --neb-ctx-solid-muted-elevated: #{set-color-lightness(
+        '--neb-ctx-solid-muted',
+        map.get($elevated-map, muted),
+        $theme
+      )};
 
-  --neb-#{$prefix}solid-tertiary-elevated: #{set-color-lightness(
-      '--neb-#{$prefix}solid-tertiary',
-      map.get($elevated-map, tertiary),
-      $theme
-    )};
+    --neb-ctx-solid-tertiary-elevated: #{set-color-lightness(
+        '--neb-ctx-solid-tertiary',
+        map.get($elevated-map, tertiary),
+        $theme
+      )};
 
-  --neb-#{$prefix}solid-secondary-elevated: #{set-color-lightness(
-      '--neb-#{$prefix}solid-secondary',
-      map.get($elevated-map, secondary),
-      $theme
-    )};
+    --neb-ctx-solid-secondary-elevated: #{set-color-lightness(
+        '--neb-ctx-solid-secondary',
+        map.get($elevated-map, secondary),
+        $theme
+      )};
 
-  --neb-#{$prefix}solid-primary-elevated: #{set-color-lightness(
-      '--neb-#{$prefix}solid-primary',
-      map.get($elevated-map, primary),
-      $theme
-    )};
+    --neb-ctx-solid-primary-elevated: #{set-color-lightness(
+        '--neb-ctx-solid-primary',
+        map.get($elevated-map, primary),
+        $theme
+      )};
 
-  --neb-#{$prefix}solid-inverse-elevated: var(--neb-#{$prefix}solid-inverse);
+    --neb-ctx-solid-inverse-elevated: var(--neb-ctx-solid-inverse);
+  } @else {
+    --neb-solid-neutral-elevated: var(--neb-solid-neutral);
+
+    --neb-solid-muted-elevated: #{set-color-lightness(
+        '--neb-solid-muted',
+        map.get($elevated-map, muted),
+        $theme
+      )};
+
+    --neb-solid-tertiary-elevated: #{set-color-lightness(
+        '--neb-solid-tertiary',
+        map.get($elevated-map, tertiary),
+        $theme
+      )};
+
+    --neb-solid-secondary-elevated: #{set-color-lightness(
+        '--neb-solid-secondary',
+        map.get($elevated-map, secondary),
+        $theme
+      )};
+
+    --neb-solid-primary-elevated: #{set-color-lightness(
+        '--neb-solid-primary',
+        map.get($elevated-map, primary),
+        $theme
+      )};
+
+    --neb-solid-inverse-elevated: var(--neb-solid-inverse);
+  }
 }
