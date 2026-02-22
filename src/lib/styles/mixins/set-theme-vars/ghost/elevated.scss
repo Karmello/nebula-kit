@@ -1,0 +1,36 @@
+@use 'styles/definitions/color-maps-light.scss' as color-maps-light;
+@use 'styles/definitions/color-maps-dark.scss' as color-maps-dark;
+@use 'styles/functions/index.scss' as *;
+@use 'sass:map';
+
+@mixin tokens($theme, $color, $prefix) {
+  $elevated-map: if($theme == 'light', color-maps-light.$elevated, color-maps-dark.$elevated);
+
+  --neb-#{$prefix}ghost-neutral-elevated: var(--neb-#{$prefix}ghost-neutral);
+
+  --neb-#{$prefix}ghost-muted-elevated: #{set-color-lightness(
+      '--neb-#{$prefix}ghost-muted',
+      map.get($elevated-map, muted),
+      $theme
+    )};
+
+  --neb-#{$prefix}ghost-tertiary-elevated: #{set-color-lightness(
+      '--neb-#{$prefix}ghost-tertiary',
+      map.get($elevated-map, tertiary),
+      $theme
+    )};
+
+  --neb-#{$prefix}ghost-secondary-elevated: #{set-color-lightness(
+      '--neb-#{$prefix}ghost-secondary',
+      map.get($elevated-map, secondary),
+      $theme
+    )};
+
+  --neb-#{$prefix}ghost-primary-elevated: #{set-color-lightness(
+      '--neb-#{$prefix}ghost-primary',
+      map.get($elevated-map, primary),
+      $theme
+    )};
+
+  --neb-#{$prefix}ghost-inverse-elevated: var(--neb-#{$prefix}ghost-inverse);
+}

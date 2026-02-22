@@ -1,0 +1,69 @@
+@use 'styles/definitions/color-maps-light.scss' as color-maps-light;
+@use 'styles/definitions/color-maps-dark.scss' as color-maps-dark;
+@use 'styles/functions/index.scss' as *;
+@use 'sass:map';
+
+@mixin tokens($theme, $color, $prefix, $suffix) {
+  $hover-map: if($theme == 'light', color-maps-light.$hover, color-maps-dark.$hover);
+  $overlay-hover-map: if($theme == 'light', color-maps-light.$overlay-hover, color-maps-dark.$overlay-hover);
+
+  // edge hover
+  --neb-#{$prefix}outline-neutral#{$suffix}-hover: var(--neb-#{$prefix}outline-muted#{$suffix});
+
+  --neb-#{$prefix}outline-muted#{$suffix}-hover: #{set-color-lightness(
+      '--neb-#{$prefix}outline-muted#{$suffix}',
+      map.get($hover-map, muted),
+      $theme
+    )};
+
+  --neb-#{$prefix}outline-tertiary#{$suffix}-hover: #{set-color-lightness(
+      '--neb-#{$prefix}outline-tertiary#{$suffix}',
+      map.get($hover-map, tertiary),
+      $theme
+    )};
+
+  --neb-#{$prefix}outline-secondary#{$suffix}-hover: #{set-color-lightness(
+      '--neb-#{$prefix}outline-secondary#{$suffix}',
+      map.get($hover-map, secondary),
+      $theme
+    )};
+
+  --neb-#{$prefix}outline-primary#{$suffix}-hover: #{set-color-lightness(
+      '--neb-#{$prefix}outline-primary#{$suffix}',
+      map.get($hover-map, primary),
+      $theme
+    )};
+
+  --neb-#{$prefix}outline-inverse#{$suffix}-hover: var(--neb-#{$prefix}outline-inverse#{$suffix});
+
+  // overlay hover
+  --neb-#{$prefix}outline-neutral#{$suffix}-bg-hover: #{set-bg-overlay(
+      '--neb-#{$prefix}outline-neutral#{$suffix}-hover',
+      map.get($overlay-hover-map, neutral)
+    )};
+
+  --neb-#{$prefix}outline-muted#{$suffix}-bg-hover: #{set-bg-overlay(
+      '--neb-#{$prefix}outline-muted#{$suffix}-hover',
+      map.get($overlay-hover-map, muted)
+    )};
+
+  --neb-#{$prefix}outline-tertiary#{$suffix}-bg-hover: #{set-bg-overlay(
+      '--neb-#{$prefix}outline-tertiary#{$suffix}-hover',
+      map.get($overlay-hover-map, tertiary)
+    )};
+
+  --neb-#{$prefix}outline-secondary#{$suffix}-bg-hover: #{set-bg-overlay(
+      '--neb-#{$prefix}outline-secondary#{$suffix}-hover',
+      map.get($overlay-hover-map, secondary)
+    )};
+
+  --neb-#{$prefix}outline-primary#{$suffix}-bg-hover: #{set-bg-overlay(
+      '--neb-#{$prefix}outline-primary#{$suffix}-hover',
+      map.get($overlay-hover-map, primary)
+    )};
+
+  --neb-#{$prefix}outline-inverse#{$suffix}-bg-hover: #{set-bg-overlay(
+      '--neb-#{$prefix}outline-inverse#{$suffix}-hover',
+      map.get($overlay-hover-map, inverse)
+    )};
+}

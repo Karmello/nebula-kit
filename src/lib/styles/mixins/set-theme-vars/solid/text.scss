@@ -1,0 +1,9 @@
+@mixin tokens($theme, $color, $prefix, $suffix) {
+  --neb-#{$prefix}solid-primary-text#{$suffix}: #{if(
+      $theme == 'light',
+      var(--neb-#{$color}-1),
+      var(--neb-#{$color}-9)
+    )};
+
+  --neb-#{$prefix}solid-inverse-text#{$suffix}: var(--neb-#{$color}-1);
+}

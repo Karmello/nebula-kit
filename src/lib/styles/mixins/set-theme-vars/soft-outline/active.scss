@@ -1,0 +1,77 @@
+@use 'styles/definitions/color-maps-light.scss' as color-maps-light;
+@use 'styles/definitions/color-maps-dark.scss' as color-maps-dark;
+@use 'styles/functions/index.scss' as *;
+@use 'sass:map';
+
+@mixin tokens($theme, $color, $prefix, $suffix) {
+  $active-map: if($theme == 'light', color-maps-light.$active, color-maps-dark.$active);
+  $overlay-active-map: if(
+    $theme == 'light',
+    color-maps-light.$overlay-active,
+    color-maps-dark.$overlay-active
+  );
+
+  // edge active
+  --neb-#{$prefix}soft-outline-neutral#{$suffix}-active: #{set-color-lightness(
+      '--neb-#{$prefix}soft-outline-neutral#{$suffix}-hover',
+      map.get($active-map, neutral),
+      $theme
+    )};
+
+  --neb-#{$prefix}soft-outline-muted#{$suffix}-active: #{set-color-lightness(
+      '--neb-#{$prefix}soft-outline-muted#{$suffix}-hover',
+      map.get($active-map, muted),
+      $theme
+    )};
+
+  --neb-#{$prefix}soft-outline-tertiary#{$suffix}-active: #{set-color-lightness(
+      '--neb-#{$prefix}soft-outline-tertiary#{$suffix}-hover',
+      map.get($active-map, tertiary),
+      $theme
+    )};
+
+  --neb-#{$prefix}soft-outline-secondary#{$suffix}-active: #{set-color-lightness(
+      '--neb-#{$prefix}soft-outline-secondary#{$suffix}-hover',
+      map.get($active-map, secondary),
+      $theme
+    )};
+
+  --neb-#{$prefix}soft-outline-primary#{$suffix}-active: #{set-color-lightness(
+      '--neb-#{$prefix}soft-outline-primary#{$suffix}-hover',
+      map.get($active-map, primary),
+      $theme
+    )};
+
+  --neb-#{$prefix}soft-outline-inverse#{$suffix}-active: var(--neb-#{$prefix}soft-outline-inverse#{$suffix});
+
+  // overlay active
+  --neb-#{$prefix}soft-outline-neutral#{$suffix}-bg-active: #{set-bg-overlay(
+      '--neb-#{$prefix}soft-outline-neutral#{$suffix}-active',
+      map.get($overlay-active-map, neutral)
+    )};
+
+  --neb-#{$prefix}soft-outline-muted#{$suffix}-bg-active: #{set-bg-overlay(
+      '--neb-#{$prefix}soft-outline-muted#{$suffix}-active',
+      map.get($overlay-active-map, muted)
+    )};
+
+  --neb-#{$prefix}soft-outline-tertiary#{$suffix}-bg-active: #{set-bg-overlay(
+      '--neb-#{$prefix}soft-outline-tertiary#{$suffix}-active',
+      map.get($overlay-active-map, tertiary)
+    )};
+
+  --neb-#{$prefix}soft-outline-secondary#{$suffix}-bg-active: #{set-bg-overlay(
+      '--neb-#{$prefix}soft-outline-secondary#{$suffix}-active',
+      map.get($overlay-active-map, secondary)
+    )};
+
+  --neb-#{$prefix}soft-outline-primary#{$suffix}-bg-active: #{set-bg-overlay(
+      '--neb-#{$prefix}soft-outline-primary#{$suffix}-active',
+      map.get($overlay-active-map, primary)
+    )};
+
+  --neb-#{$prefix}soft-outline-inverse#{$suffix}-bg-active: #{set-bg-overlay(
+      '--neb-#{$prefix}soft-outline-inverse#{$suffix}-active',
+      map.get($overlay-active-map, inverse)
+    )};
+}

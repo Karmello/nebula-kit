@@ -1,7 +1,7 @@
-@use 'styles/mixins/set-theme-vars/solid.scss' as solid;
-@use 'styles/mixins/set-theme-vars/outline.scss' as outline;
-@use 'styles/mixins/set-theme-vars/soft-outline.scss' as soft-outline;
-@use 'styles/mixins/set-theme-vars/ghost.scss' as ghost;
+@use 'styles/mixins/set-theme-vars/solid/index.scss' as solid;
+@use 'styles/mixins/set-theme-vars/outline/index.scss' as outline;
+@use 'styles/mixins/set-theme-vars/soft-outline/index.scss' as soft-outline;
+@use 'styles/mixins/set-theme-vars/ghost/index.scss' as ghost;
 
 @mixin set-theme-vars($theme, $color, $ctx: false) {
   // global

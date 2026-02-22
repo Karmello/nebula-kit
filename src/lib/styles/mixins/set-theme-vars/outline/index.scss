@@ -1,0 +1,18 @@
+@use './base.scss' as base;
+@use './elevated.scss' as elevated;
+@use './hover.scss' as hover;
+@use './active.scss' as active;
+
+@mixin set-theme-vars-outline($theme, $color, $ctx: false, $elevated: false) {
+  $prefix: if($ctx, 'ctx-', '');
+  $suffix: if($elevated, '-elevated', '');
+
+  @if $elevated == false {
+    @include base.tokens($theme, $color, $prefix);
+  } @else {
+    @include elevated.tokens($theme, $color, $prefix);
+  }
+
+  @include hover.tokens($theme, $color, $prefix, $suffix);
+  @include active.tokens($theme, $color, $prefix, $suffix);
+}

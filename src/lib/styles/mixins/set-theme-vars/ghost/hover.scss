@@ -1,0 +1,36 @@
+@use 'styles/definitions/color-maps-light.scss' as color-maps-light;
+@use 'styles/definitions/color-maps-dark.scss' as color-maps-dark;
+@use 'styles/functions/index.scss' as *;
+@use 'sass:map';
+
+@mixin tokens($theme, $color, $prefix, $suffix) {
+  $hover-map: if($theme == 'light', color-maps-light.$hover, color-maps-dark.$hover);
+
+  --neb-#{$prefix}ghost-neutral#{$suffix}-hover: var(--neb-#{$prefix}ghost-neutral#{$suffix});
+
+  --neb-#{$prefix}ghost-muted#{$suffix}-hover: #{set-color-lightness(
+      '--neb-#{$prefix}ghost-muted#{$suffix}',
+      map.get($hover-map, muted),
+      $theme
+    )};
+
+  --neb-#{$prefix}ghost-tertiary#{$suffix}-hover: #{set-color-lightness(
+      '--neb-#{$prefix}ghost-tertiary#{$suffix}',
+      map.get($hover-map, tertiary),
+      $theme
+    )};
+
+  --neb-#{$prefix}ghost-secondary#{$suffix}-hover: #{set-color-lightness(
+      '--neb-#{$prefix}ghost-secondary#{$suffix}',
+      map.get($hover-map, secondary),
+      $theme
+    )};
+
+  --neb-#{$prefix}ghost-primary#{$suffix}-hover: #{set-color-lightness(
+      '--neb-#{$prefix}ghost-primary#{$suffix}',
+      map.get($hover-map, primary),
+      $theme
+    )};
+
+  --neb-#{$prefix}ghost-inverse#{$suffix}-hover: var(--neb-#{$prefix}ghost-inverse#{$suffix});
+}

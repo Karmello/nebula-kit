@@ -1,0 +1,8 @@
+@mixin tokens($theme, $color, $prefix) {
+  --neb-#{$prefix}ghost-neutral: var(--neb-#{$color}-9);
+  --neb-#{$prefix}ghost-muted: var(--neb-#{$color}-2);
+  --neb-#{$prefix}ghost-tertiary: var(--neb-#{$color}-3);
+  --neb-#{$prefix}ghost-secondary: var(--neb-#{$color}-4);
+  --neb-#{$prefix}ghost-primary: var(--neb-#{$color}-5);
+  --neb-#{$prefix}ghost-inverse: var(--neb-#{$color}-1);
+}

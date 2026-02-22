@@ -1,0 +1,8 @@
+@mixin tokens($theme, $color, $prefix) {
+  --neb-#{$prefix}soft-outline-neutral: var(--neb-#{$color}-2);
+  --neb-#{$prefix}soft-outline-muted: var(--neb-#{$color}-2);
+  --neb-#{$prefix}soft-outline-tertiary: var(--neb-#{$color}-3);
+  --neb-#{$prefix}soft-outline-secondary: var(--neb-#{$color}-4);
+  --neb-#{$prefix}soft-outline-primary: var(--neb-#{$color}-5);
+  --neb-#{$prefix}soft-outline-inverse: var(--neb-#{$color}-9);
+}

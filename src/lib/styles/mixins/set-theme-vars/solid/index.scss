@@ -1,0 +1,20 @@
+@use './base.scss' as base;
+@use './elevated.scss' as elevated;
+@use './text.scss' as text;
+@use './hover.scss' as hover;
+@use './active.scss' as active;
+
+@mixin set-theme-vars-solid($theme, $color, $ctx: false, $elevated: false) {
+  $prefix: if($ctx, 'ctx-', '');
+  $suffix: if($elevated, '-elevated', '');
+
+  @if $elevated == false {
+    @include base.tokens($theme, $color, $prefix);
+  } @else {
+    @include elevated.tokens($theme, $color, $prefix);
+  }
+
+  @include text.tokens($theme, $color, $prefix, $suffix);
+  @include hover.tokens($theme, $color, $prefix, $suffix);
+  @include active.tokens($theme, $color, $prefix, $suffix);
+}

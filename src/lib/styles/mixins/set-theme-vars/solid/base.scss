@@ -1,0 +1,8 @@
+@mixin tokens($theme, $color, $prefix) {
+  --neb-#{$prefix}solid-neutral: var(--neb-#{$color}-1);
+  --neb-#{$prefix}solid-muted: var(--neb-#{$color}-2);
+  --neb-#{$prefix}solid-tertiary: var(--neb-#{$color}-3);
+  --neb-#{$prefix}solid-secondary: var(--neb-#{$color}-4);
+  --neb-#{$prefix}solid-primary: var(--neb-#{$color}-5);
+  --neb-#{$prefix}solid-inverse: var(--neb-#{$color}-9);
+}

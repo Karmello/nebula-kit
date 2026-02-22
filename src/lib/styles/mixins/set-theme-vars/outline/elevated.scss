@@ -1,0 +1,40 @@
+@use 'styles/definitions/color-maps-light.scss' as color-maps-light;
+@use 'styles/definitions/color-maps-dark.scss' as color-maps-dark;
+@use 'styles/functions/index.scss' as *;
+@use 'sass:map';
+
+@mixin tokens($theme, $color, $prefix) {
+  $elevated-map: if($theme == 'light', color-maps-light.$elevated, color-maps-dark.$elevated);
+
+  --neb-#{$prefix}outline-neutral-elevated: #{set-color-lightness(
+      '--neb-#{$prefix}outline-neutral',
+      map.get($elevated-map, neutral),
+      $theme
+    )};
+
+  --neb-#{$prefix}outline-muted-elevated: #{set-color-lightness(
+      '--neb-#{$prefix}outline-muted',
+      map.get($elevated-map, muted),
+      $theme
+    )};
+
+  --neb-#{$prefix}outline-tertiary-elevated: #{set-color-lightness(
+      '--neb-#{$prefix}outline-tertiary',
+      map.get($elevated-map, tertiary),
+      $theme
+    )};
+
+  --neb-#{$prefix}outline-secondary-elevated: #{set-color-lightness(
+      '--neb-#{$prefix}outline-secondary',
+      map.get($elevated-map, secondary),
+      $theme
+    )};
+
+  --neb-#{$prefix}outline-primary-elevated: #{set-color-lightness(
+      '--neb-#{$prefix}outline-primary',
+      map.get($elevated-map, primary),
+      $theme
+    )};
+
+  --neb-#{$prefix}outline-inverse-elevated: var(--neb-#{$prefix}outline-inverse);
+}
