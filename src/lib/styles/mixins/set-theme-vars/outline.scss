@@ -8,7 +8,7 @@
   $prefix: if($ctx, 'ctx-', '');
   $suffix: if($elevated, '-elevated', '');
 
-  $elevated-rest-map: if($theme == 'light', color-maps-light.$elevated, color-maps-dark.$elevated);
+  $elevated-map: if($theme == 'light', color-maps-light.$elevated, color-maps-dark.$elevated);
 
   $hover-map: if($theme == 'light', color-maps-light.$hover, color-maps-dark.$hover);
   $active-map: if($theme == 'light', color-maps-light.$active, color-maps-dark.$active);
@@ -23,7 +23,7 @@
   // rest
 
   @if $elevated == false {
-    --neb-#{$prefix}outline-neutral: var(--neb-#{$color}-1);
+    --neb-#{$prefix}outline-neutral: var(--neb-#{$color}-2);
     --neb-#{$prefix}outline-muted: var(--neb-#{$color}-2);
     --neb-#{$prefix}outline-tertiary: var(--neb-#{$color}-3);
     --neb-#{$prefix}outline-secondary: var(--neb-#{$color}-4);
@@ -32,39 +32,35 @@
   } @else {
     --neb-#{$prefix}outline-neutral-elevated: #{set-color-lightness(
         '--neb-#{$prefix}outline-neutral',
-        map.get($elevated-rest-map, neutral),
+        map.get($elevated-map, neutral),
         $theme
       )};
 
     --neb-#{$prefix}outline-muted-elevated: #{set-color-lightness(
         '--neb-#{$prefix}outline-muted',
-        map.get($elevated-rest-map, muted),
+        map.get($elevated-map, muted),
         $theme
       )};
 
     --neb-#{$prefix}outline-tertiary-elevated: #{set-color-lightness(
         '--neb-#{$prefix}outline-tertiary',
-        map.get($elevated-rest-map, tertiary),
+        map.get($elevated-map, tertiary),
         $theme
       )};
 
     --neb-#{$prefix}outline-secondary-elevated: #{set-color-lightness(
         '--neb-#{$prefix}outline-secondary',
-        map.get($elevated-rest-map, secondary),
+        map.get($elevated-map, secondary),
         $theme
       )};
 
     --neb-#{$prefix}outline-primary-elevated: #{set-color-lightness(
         '--neb-#{$prefix}outline-primary',
-        map.get($elevated-rest-map, primary),
+        map.get($elevated-map, primary),
         $theme
       )};
 
-    --neb-#{$prefix}outline-inverse-elevated: #{set-color-lightness(
-        '--neb-#{$prefix}outline-inverse',
-        map.get($elevated-rest-map, inverse),
-        $theme
-      )};
+    --neb-#{$prefix}outline-inverse-elevated: var(--neb-#{$prefix}outline-inverse);
   }
 
   // hover edge
