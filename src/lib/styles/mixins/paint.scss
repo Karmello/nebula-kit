@@ -1,0 +1,29 @@
+@use './paint/base.scss' as base;
+
+@use './paint/hover/hover-light.scss' as hover-light;
+@use './paint/hover/hover-dark.scss' as hover-dark;
+
+@use './paint/hover-bg/hover-bg-light.scss' as hover-bg-light;
+@use './paint/hover-bg/hover-bg-dark.scss' as hover-bg-dark;
+
+@use './paint/active/active-light.scss' as active-light;
+@use './paint/active/active-dark.scss' as active-dark;
+
+@use './paint/active-bg/active-bg-light.scss' as active-bg-light;
+@use './paint/active-bg/active-bg-dark.scss' as active-bg-dark;
+
+@mixin paint($theme) {
+  @include base.paint($theme);
+
+  @if $theme == 'light' {
+    @include hover-light.paint();
+    @include hover-bg-light.paint();
+    @include active-light.paint();
+    @include active-bg-light.paint();
+  } @else {
+    @include hover-dark.paint();
+    @include hover-bg-dark.paint();
+    @include active-dark.paint();
+    @include active-bg-dark.paint();
+  }
+}

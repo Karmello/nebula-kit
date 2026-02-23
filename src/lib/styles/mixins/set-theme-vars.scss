@@ -1,0 +1,9 @@
+@mixin set-theme-vars($theme, $color) {
+  --neb-background: var(--neb-#{$color}-1);
+  --neb-text: var(--neb-#{$color}-9);
+  --neb-focus-border: var(--neb-#{$color}-9);
+
+  @for $i from 1 through 9 {
+    --neb-ctx-color-#{$i}: var(--neb-#{$color}-#{$i});
+  }
+}

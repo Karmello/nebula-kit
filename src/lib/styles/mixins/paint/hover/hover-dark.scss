@@ -1,0 +1,37 @@
+@use 'styles/functions/index.scss' as *;
+
+@use 'sass:map';
+
+@mixin paint() {
+  // solid
+  --neb-solid-neutral-hover: hsl(from var(--neb-solid-neutral) h s calc(l + 7));
+  --neb-solid-muted-hover: hsl(from var(--neb-solid-muted) h s calc(l + 2));
+  --neb-solid-tertiary-hover: hsl(from var(--neb-solid-tertiary) h s calc(l + 3));
+  --neb-solid-secondary-hover: hsl(from var(--neb-solid-secondary) h s calc(l + 5));
+  --neb-solid-primary-hover: hsl(from var(--neb-solid-primary) h s calc(l + 6));
+  --neb-solid-inverse-hover: hsl(from var(--neb-solid-inverse) h s l);
+
+  // outline
+  --neb-outline-neutral-hover: hsl(from var(--neb-outline-neutral) h s calc(l + 7));
+  --neb-outline-muted-hover: hsl(from var(--neb-outline-muted) h s calc(l + 2));
+  --neb-outline-tertiary-hover: hsl(from var(--neb-outline-tertiary) h s calc(l + 3));
+  --neb-outline-secondary-hover: hsl(from var(--neb-outline-secondary) h s calc(l + 5));
+  --neb-outline-primary-hover: hsl(from var(--neb-outline-primary) h s calc(l + 6));
+  --neb-outline-inverse-hover: hsl(from var(--neb-outline-inverse) h s l);
+
+  // soft-outline
+  --neb-soft-outline-neutral-hover: hsl(from var(--neb-soft-outline-neutral) h s calc(l + 7));
+  --neb-soft-outline-muted-hover: hsl(from var(--neb-soft-outline-muted) h s calc(l + 2));
+  --neb-soft-outline-tertiary-hover: hsl(from var(--neb-soft-outline-tertiary) h s calc(l + 3));
+  --neb-soft-outline-secondary-hover: hsl(from var(--neb-soft-outline-secondary) h s calc(l + 5));
+  --neb-soft-outline-primary-hover: hsl(from var(--neb-soft-outline-primary) h s calc(l + 6));
+  --neb-soft-outline-inverse-hover: hsl(from var(--neb-soft-outline-inverse) h s l);
+
+  // ghost
+  --neb-ghost-neutral-hover: hsl(from var(--neb-ghost-neutral) h s l);
+  --neb-ghost-muted-hover: hsl(from var(--neb-ghost-muted) h s calc(l + 2));
+  --neb-ghost-tertiary-hover: hsl(from var(--neb-ghost-tertiary) h s calc(l + 3));
+  --neb-ghost-secondary-hover: hsl(from var(--neb-ghost-secondary) h s calc(l + 5));
+  --neb-ghost-primary-hover: hsl(from var(--neb-ghost-primary) h s calc(l + 6));
+  --neb-ghost-inverse-hover: hsl(from var(--neb-ghost-inverse) h s l);
+}

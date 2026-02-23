@@ -1,0 +1,25 @@
+@use 'styles/functions/index.scss' as *;
+
+@use 'sass:map';
+
+@mixin paint() {
+  // outline
+  --neb-outline-neutral-bg-hover: color-mix(in hsl, var(--neb-outline-neutral) 70%, transparent);
+  --neb-outline-muted-bg-hover: color-mix(in hsl, var(--neb-outline-muted) 70%, transparent);
+  --neb-outline-tertiary-bg-hover: color-mix(in hsl, var(--neb-outline-tertiary) 40%, transparent);
+  --neb-outline-secondary-bg-hover: color-mix(in hsl, var(--neb-outline-secondary) 20%, transparent);
+  --neb-outline-primary-bg-hover: color-mix(in hsl, var(--neb-outline-primary) 15%, transparent);
+  --neb-outline-inverse-bg-hover: color-mix(in hsl, var(--neb-outline-inverse) 10%, transparent);
+
+  // soft-outline
+  --neb-soft-outline-neutral-bg-hover: color-mix(in hsl, var(--neb-soft-outline-neutral) 70%, transparent);
+  --neb-soft-outline-muted-bg-hover: color-mix(in hsl, var(--neb-soft-outline-muted) 70%, transparent);
+  --neb-soft-outline-tertiary-bg-hover: color-mix(in hsl, var(--neb-soft-outline-tertiary) 40%, transparent);
+  --neb-soft-outline-secondary-bg-hover: color-mix(
+    in hsl,
+    var(--neb-soft-outline-secondary) 20%,
+    transparent
+  );
+  --neb-soft-outline-primary-bg-hover: color-mix(in hsl, var(--neb-soft-outline-primary) 15%, transparent);
+  --neb-soft-outline-inverse-bg-hover: color-mix(in hsl, var(--neb-soft-outline-inverse) 10%, transparent);
+}

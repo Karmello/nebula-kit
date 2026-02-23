@@ -1,0 +1,36 @@
+@mixin paint($theme) {
+  // solid
+  --neb-solid-neutral: var(--neb-ctx-color-1);
+  --neb-solid-muted: var(--neb-ctx-color-2);
+  --neb-solid-tertiary: var(--neb-ctx-color-3);
+  --neb-solid-secondary: var(--neb-ctx-color-4);
+  --neb-solid-primary: var(--neb-ctx-color-5);
+  --neb-solid-inverse: var(--neb-ctx-color-9);
+
+  --neb-solid-primary-text: var(--neb-ctx-color-#{if($theme == 'light', 1, 9)});
+  --neb-solid-inverse-text: var(--neb-ctx-color-1);
+
+  // outline
+  --neb-outline-neutral: var(--neb-ctx-color-2);
+  --neb-outline-muted: var(--neb-ctx-color-2);
+  --neb-outline-tertiary: var(--neb-ctx-color-3);
+  --neb-outline-secondary: var(--neb-ctx-color-4);
+  --neb-outline-primary: var(--neb-ctx-color-5);
+  --neb-outline-inverse: var(--neb-ctx-color-9);
+
+  // soft-outline
+  --neb-soft-outline-neutral: var(--neb-ctx-color-2);
+  --neb-soft-outline-muted: var(--neb-ctx-color-2);
+  --neb-soft-outline-tertiary: var(--neb-ctx-color-3);
+  --neb-soft-outline-secondary: var(--neb-ctx-color-4);
+  --neb-soft-outline-primary: var(--neb-ctx-color-5);
+  --neb-soft-outline-inverse: var(--neb-ctx-color-9);
+
+  // ghost
+  --neb-ghost-neutral: var(--neb-ctx-color-9);
+  --neb-ghost-muted: var(--neb-ctx-color-2);
+  --neb-ghost-tertiary: var(--neb-ctx-color-3);
+  --neb-ghost-secondary: var(--neb-ctx-color-4);
+  --neb-ghost-primary: var(--neb-ctx-color-5);
+  --neb-ghost-inverse: var(--neb-ctx-color-1);
+}
