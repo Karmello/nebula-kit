@@ -1,0 +1,93 @@
+@use 'styles/definitions/common.scss' as *;
+@use 'styles/mixins/load-palette.scss' as *;
+@use 'styles/mixins/set-theme-colors.scss' as *;
+@use 'styles/mixins/paint.scss' as *;
+
+/* ============================================================
+   1. Palette boundaries
+   ============================================================ */
+
+:where(html[data-theme='light']) {
+  @include load-palette('light');
+}
+
+:where(html[data-theme='dark']) {
+  @include load-palette('dark');
+}
+
+.neb-box[data-neb-box-theme='light'] {
+  @include load-palette('light');
+}
+
+.neb-box[data-neb-box-theme='dark'] {
+  @include load-palette('dark');
+}
+
+/* ============================================================
+   2. Global brand → ctx
+   ============================================================ */
+
+@each $color in $colors {
+  html[data-theme='light'][data-brand='#{$color}'] {
+    @include set-theme-colors($color);
+  }
+
+  html[data-theme='dark'][data-brand='#{$color}'] {
+    @include set-theme-colors($color);
+  }
+}
+
+/* ============================================================
+   3. Rebind ctx inside theme islands (inherit brand)
+   ============================================================ */
+
+@each $color in $colors {
+  /* Light island */
+  html[data-brand='#{$color}'] .neb-box[data-neb-box-theme='light']:not([data-neb-box-brand]) {
+    @include set-theme-colors($color);
+  }
+
+  /* Dark island */
+  html[data-brand='#{$color}'] .neb-box[data-neb-box-theme='dark']:not([data-neb-box-brand]) {
+    @include set-theme-colors($color);
+  }
+}
+
+/* ============================================================
+   3b. Local color override → ctx
+   ------------------------------------------------------------
+   data-neb-box-color always overrides inherited ctx.
+   Must be AFTER global brand and island ctx rebinding.
+   ============================================================ */
+
+@each $color in $colors {
+  /* Global theme context */
+  html[data-theme='light'] .neb-box[data-neb-box-color='#{$color}'],
+  html[data-theme='dark'] .neb-box[data-neb-box-color='#{$color}'] {
+    @include set-theme-colors($color);
+  }
+
+  /* Theme island context (including when the island root itself has data-neb-box-color) */
+  .neb-box[data-neb-box-theme='light'][data-neb-box-color='#{$color}'],
+  .neb-box[data-neb-box-theme='light'] .neb-box[data-neb-box-color='#{$color}'],
+  .neb-box[data-neb-box-theme='dark'][data-neb-box-color='#{$color}'],
+  .neb-box[data-neb-box-theme='dark'] .neb-box[data-neb-box-color='#{$color}'] {
+    @include set-theme-colors($color);
+  }
+}
+
+/* ============================================================
+   4. Paint
+   ============================================================ */
+
+html[data-theme='light'] .neb-box[data-neb-box-drawable='true'],
+.neb-box[data-neb-box-theme='light'][data-neb-box-drawable='true'],
+.neb-box[data-neb-box-theme='light'] .neb-box[data-neb-box-drawable='true'] {
+  @include paint('light');
+}
+
+html[data-theme='dark'] .neb-box[data-neb-box-drawable='true'],
+.neb-box[data-neb-box-theme='dark'][data-neb-box-drawable='true'],
+.neb-box[data-neb-box-theme='dark'] .neb-box[data-neb-box-drawable='true'] {
+  @include paint('dark');
+}

@@ -14,7 +14,7 @@ test('Box color prop overrides ctx primary solid color', async ({ mount, page })
     return {
       bg: cs.backgroundColor,
       palette: getComputedStyle(document.documentElement).getPropertyValue('--neb-red-5').trim(),
-      ctx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-solid-primary').trim(),
+      ctx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-color-5').trim(),
     }
   })
 
@@ -28,7 +28,7 @@ test('Box color prop overrides ctx primary solid color', async ({ mount, page })
   // must NOT equal ctx primary color
   const ctxResolved = await page.evaluate(() => {
     const el = document.createElement('div')
-    el.style.backgroundColor = 'var(--neb-ctx-solid-primary)'
+    el.style.backgroundColor = 'var(--neb-ctx-color-5)'
     document.body.appendChild(el)
     const value = getComputedStyle(el).backgroundColor
     document.body.removeChild(el)
@@ -40,15 +40,7 @@ test('Box color prop overrides ctx primary solid color', async ({ mount, page })
 
 test('Child Box color overrides parent color', async ({ mount, page }) => {
   await mount(
-    <Box
-      tagAttrs={{ id: 'parent' }}
-      drawable
-      variant="solid"
-      intent="primary"
-      color="blue"
-      blockSize="200px"
-      padding="16px"
-    >
+    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" color="blue" blockSize="200px" padding="16px">
       <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" color="red" blockSize="100px">
         Child
       </Box>
@@ -75,15 +67,7 @@ test('Child Box color overrides parent color', async ({ mount, page }) => {
 
 test('Parent color does not leak into child Box without color', async ({ mount, page }) => {
   await mount(
-    <Box
-      tagAttrs={{ id: 'parent' }}
-      drawable
-      variant="solid"
-      intent="primary"
-      color="red"
-      blockSize="200px"
-      padding="16px"
-    >
+    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" color="red" blockSize="200px" padding="16px">
       <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" blockSize="100px">
         Child
       </Box>
@@ -97,9 +81,7 @@ test('Parent color does not leak into child Box without color', async ({ mount, 
     const parentBg = getComputedStyle(parent).backgroundColor
     const childBg = getComputedStyle(child).backgroundColor
 
-    const ctxPrimary = getComputedStyle(document.documentElement)
-      .getPropertyValue('--neb-ctx-solid-primary')
-      .trim()
+    const ctxPrimary = getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-solid-primary').trim()
 
     return { parentBg, childBg, ctxPrimary }
   })
@@ -117,15 +99,7 @@ test('Parent color does not leak into child Box without color', async ({ mount, 
 
 test('Color does not inherit to child Box', async ({ mount, page }) => {
   await mount(
-    <Box
-      tagAttrs={{ id: 'parent' }}
-      drawable
-      variant="solid"
-      intent="primary"
-      color="red"
-      blockSize="200px"
-      padding="16px"
-    >
+    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" color="red" blockSize="200px" padding="16px">
       <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" blockSize="100px">
         Child
       </Box>
