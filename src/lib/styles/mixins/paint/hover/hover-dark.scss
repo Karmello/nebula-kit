@@ -1,7 +1,3 @@
-@use 'styles/functions/index.scss' as *;
-
-@use 'sass:map';
-
 @mixin paint() {
   // solid
   --neb-solid-neutral-hover: hsl(from var(--neb-solid-neutral) h s calc(l + 7));

@@ -1,7 +1,6 @@
-@use 'styles/ripple/ripple-dark.scss';
 @use 'styles/definitions/common.scss' as *;
 @use 'styles/mixins/load-palette.scss' as *;
-@use 'styles/mixins/set-theme-vars.scss' as *;
+@use 'styles/mixins/set-theme-colors.scss' as *;
 @use 'styles/mixins/paint.scss' as *;
 
 /* Base dark theme primitives, applied globally and to local theme islands */
@@ -15,17 +14,17 @@ html[data-theme='dark'] {
   @each $color in $colors {
     &[data-brand='#{$color}'] {
       /* Brand interpreted through dark theme */
-      @include set-theme-vars('dark', $color);
+      @include set-theme-colors('dark', $color);
 
       /* Rebind inherited brand when entering a light theme island */
       .neb-box[data-neb-box-theme='light']:not([data-neb-box-brand]) {
         @include load-palette('light');
-        @include set-theme-vars('light', $color);
+        @include set-theme-colors('light', $color);
       }
 
       .neb-box[data-neb-box-theme='light']:not([data-neb-box-brand])
         .neb-box[data-neb-box-theme='dark']:not([data-neb-box-brand]) {
-        @include set-theme-vars('dark', $color);
+        @include set-theme-colors('dark', $color);
       }
     }
   }
@@ -38,7 +37,7 @@ html[data-theme='dark'] .neb-box:not([data-neb-box-theme]),
   /* Local brand inside dark theme context */
   @each $color in $colors {
     &[data-neb-box-brand='#{$color}'] {
-      @include set-theme-vars('dark', $color);
+      @include set-theme-colors('dark', $color);
     }
   }
 
@@ -49,7 +48,7 @@ html[data-theme='dark'] .neb-box:not([data-neb-box-theme]),
     @each $color in $colors {
       &[data-neb-box-color='#{$color}'] {
         /* Color always overrides brand */
-        @include set-theme-vars('dark', $color);
+        @include set-theme-colors('dark', $color);
       }
     }
   }

@@ -1,7 +1,3 @@
-@use 'styles/functions/index.scss' as *;
-
-@use 'sass:map';
-
 @mixin paint() {
   // outline
   --neb-outline-neutral-bg-hover: color-mix(in hsl, var(--neb-outline-neutral) 70%, transparent);
