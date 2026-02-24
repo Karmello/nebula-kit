@@ -4,8 +4,22 @@ import { Box } from 'lib/components'
 
 test('Local brand overrides global brand', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" blockSize="200px" padding="16px">
-      <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" brand="green" blockSize="100px">
+    <Box
+      tagAttrs={{ id: 'parent' }}
+      drawable
+      variant="solid"
+      intent="primary"
+      blockSize="200px"
+      padding="16px"
+    >
+      <Box
+        tagAttrs={{ id: 'child' }}
+        drawable
+        variant="solid"
+        intent="primary"
+        brand="green"
+        blockSize="100px"
+      >
         Child
       </Box>
     </Box>,
@@ -24,28 +38,38 @@ test('Local brand overrides global brand', async ({ mount, page }) => {
       parentBg: getComputedStyle(parent).backgroundColor,
       childBg: getComputedStyle(child).backgroundColor,
 
-      parentCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-solid-primary').trim(),
+      parentCtx: getComputedStyle(parent).getPropertyValue('--neb-ctx-color-5').trim(),
 
-      childCtx: getComputedStyle(child).getPropertyValue('--neb-solid-primary').trim(),
+      childCtx: getComputedStyle(child).getPropertyValue('--neb-ctx-color-5').trim(),
     }
   })
 
-  // parent uses global brand ctx
-  expect(result.parentCtx).not.toBe('')
-
-  // child must use its own brand-derived semantic value
-  expect(result.childCtx).not.toBe('')
-
-  // child must resolve to a real color
+  // both must resolve to real colors
+  expect(result.parentBg).toMatch(/^rgb\(/)
   expect(result.childBg).toMatch(/^rgb\(/)
 
-  // and must differ from parent (brand isolation)
+  // ctx must be set on both
+  expect(result.parentCtx).not.toBe('')
+  expect(result.childCtx).not.toBe('')
+
+  // child must use different ctx (brand isolation)
+  expect(result.childCtx).not.toBe(result.parentCtx)
+
+  // visual output must differ
   expect(result.childBg).not.toBe(result.parentBg)
 })
 
 test('Child Box inherits brand when no local brand is set', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" brand="green" blockSize="200px" padding="16px">
+    <Box
+      tagAttrs={{ id: 'parent' }}
+      drawable
+      variant="solid"
+      intent="primary"
+      brand="green"
+      blockSize="200px"
+      padding="16px"
+    >
       <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" blockSize="100px">
         Child
       </Box>
@@ -82,8 +106,23 @@ test('Child Box inherits brand when no local brand is set', async ({ mount, page
 
 test('Brand survives theme islands (light → dark → light)', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'dark-parent' }} drawable variant="solid" intent="primary" theme="dark" blockSize="200px" padding="16px">
-      <Box tagAttrs={{ id: 'light-child' }} drawable variant="solid" intent="primary" theme="light" blockSize="100px">
+    <Box
+      tagAttrs={{ id: 'dark-parent' }}
+      drawable
+      variant="solid"
+      intent="primary"
+      theme="dark"
+      blockSize="200px"
+      padding="16px"
+    >
+      <Box
+        tagAttrs={{ id: 'light-child' }}
+        drawable
+        variant="solid"
+        intent="primary"
+        theme="light"
+        blockSize="100px"
+      >
         Child
       </Box>
     </Box>,

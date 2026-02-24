@@ -4,7 +4,10 @@
 @use 'styles/mixins/paint.scss' as *;
 
 /* ============================================================
-   1. Palette boundaries
+   1. Theme palette boundaries
+   ------------------------------------------------------------
+   Loads raw palette tokens for the active theme.
+   These define the base color scales only.
    ============================================================ */
 
 :where(html[data-theme='light']) {
@@ -24,60 +27,64 @@
 }
 
 /* ============================================================
-   2. Global brand → ctx
-   ============================================================ */
-
-@each $color in $colors {
-  html[data-theme='light'][data-brand='#{$color}'] {
-    @include set-theme-colors($color);
-  }
-
-  html[data-theme='dark'][data-brand='#{$color}'] {
-    @include set-theme-colors($color);
-  }
-}
-
-/* ============================================================
-   3. Rebind ctx inside theme islands (inherit brand)
-   ============================================================ */
-
-@each $color in $colors {
-  /* Light island */
-  html[data-brand='#{$color}'] .neb-box[data-neb-box-theme='light']:not([data-neb-box-brand]) {
-    @include set-theme-colors($color);
-  }
-
-  /* Dark island */
-  html[data-brand='#{$color}'] .neb-box[data-neb-box-theme='dark']:not([data-neb-box-brand]) {
-    @include set-theme-colors($color);
-  }
-}
-
-/* ============================================================
-   3b. Local color override → ctx
+   2. Brand root binding (ctx roots)
    ------------------------------------------------------------
-   data-neb-box-color always overrides inherited ctx.
-   Must be AFTER global brand and island ctx rebinding.
+   Establishes ctx color variables at brand boundaries.
+   A brand boundary can be:
+   - global (html[data-brand])
+   - local (.neb-box[data-neb-box-brand])
    ============================================================ */
 
+/* 2.1 Global brand root */
 @each $color in $colors {
-  /* Global theme context */
-  html[data-theme='light'] .neb-box[data-neb-box-color='#{$color}'],
-  html[data-theme='dark'] .neb-box[data-neb-box-color='#{$color}'] {
+  html[data-brand='#{$color}'] {
     @include set-theme-colors($color);
   }
+}
 
-  /* Theme island context (including when the island root itself has data-neb-box-color) */
-  .neb-box[data-neb-box-theme='light'][data-neb-box-color='#{$color}'],
-  .neb-box[data-neb-box-theme='light'] .neb-box[data-neb-box-color='#{$color}'],
-  .neb-box[data-neb-box-theme='dark'][data-neb-box-color='#{$color}'],
-  .neb-box[data-neb-box-theme='dark'] .neb-box[data-neb-box-color='#{$color}'] {
+/* 2.2 Local Box brand root */
+@each $color in $colors {
+  .neb-box[data-neb-box-brand='#{$color}'] {
     @include set-theme-colors($color);
   }
 }
 
 /* ============================================================
-   4. Paint
+   3. Brand propagation (ctx inheritance)
+   ------------------------------------------------------------
+   Any Box without explicit brand or color inherits ctx
+   from the nearest brand boundary (html or Box).
+   ============================================================ */
+
+@each $color in $colors {
+  /* 3.1 Inherit from global brand */
+  html[data-brand='#{$color}'] .neb-box:not([data-neb-box-brand]):not([data-neb-box-color]) {
+    @include set-theme-colors($color);
+  }
+
+  /* 3.2 Inherit from local Box brand */
+  .neb-box[data-neb-box-brand='#{$color}'] .neb-box:not([data-neb-box-brand]):not([data-neb-box-color]) {
+    @include set-theme-colors($color);
+  }
+}
+
+/* ============================================================
+   4. Local color override (strongest ctx binding)
+   ------------------------------------------------------------
+   Explicit color always overrides inherited brand.
+   ============================================================ */
+
+@each $color in $colors {
+  .neb-box[data-neb-box-color='#{$color}'] {
+    @include set-theme-colors($color);
+  }
+}
+
+/* ============================================================
+   5. Paint phase
+   ------------------------------------------------------------
+   Consumes resolved ctx variables and applies semantic styles.
+   Theme determines how semantic tokens are rendered.
    ============================================================ */
 
 html[data-theme='light'] .neb-box[data-neb-box-drawable='true'],
