@@ -1,0 +1,38 @@
+@mixin paint($theme) {
+  $l: if($theme == 'light', 8, -8);
+
+  // solid
+  --neb-solid-neutral-elevated: hsl(from var(--neb-solid-neutral) h s l);
+  --neb-solid-muted-elevated: hsl(from var(--neb-solid-muted) h s calc(l - #{$l}));
+  --neb-solid-tertiary-elevated: hsl(from var(--neb-solid-tertiary) h s calc(l - #{$l}));
+  --neb-solid-secondary-elevated: hsl(from var(--neb-solid-secondary) h s calc(l - #{$l}));
+  --neb-solid-primary-elevated: hsl(from var(--neb-solid-primary) h s calc(l - #{$l}));
+  --neb-solid-inverse-elevated: hsl(from var(--neb-solid-inverse) h s calc(l - #{$l}));
+
+  --neb-solid-primary-text-elevated: var(--neb-solid-primary-text);
+  --neb-solid-inverse-text-elevated: var(--neb-solid-inverse-text);
+
+  // outline
+  --neb-outline-neutral-elevated: hsl(from var(--neb-outline-neutral) h s l);
+  --neb-outline-muted-elevated: hsl(from var(--neb-outline-muted) h s calc(l - #{$l}));
+  --neb-outline-tertiary-elevated: hsl(from var(--neb-outline-tertiary) h s calc(l - #{$l}));
+  --neb-outline-secondary-elevated: hsl(from var(--neb-outline-secondary) h s calc(l - #{$l}));
+  --neb-outline-primary-elevated: hsl(from var(--neb-outline-primary) h s calc(l - #{$l}));
+  --neb-outline-inverse-elevated: hsl(from var(--neb-outline-inverse) h s calc(l - #{$l}));
+
+  // soft-outline
+  --neb-soft-outline-neutral-elevated: hsl(from var(--neb-soft-outline-neutral) h s l);
+  --neb-soft-outline-muted-elevated: hsl(from var(--neb-soft-outline-muted) h s calc(l - #{$l}));
+  --neb-soft-outline-tertiary-elevated: hsl(from var(--neb-soft-outline-tertiary) h s calc(l - #{$l}));
+  --neb-soft-outline-secondary-elevated: hsl(from var(--neb-soft-outline-secondary) h s calc(l - #{$l}));
+  --neb-soft-outline-primary-elevated: hsl(from var(--neb-soft-outline-primary) h s calc(l - #{$l}));
+  --neb-soft-outline-inverse-elevated: hsl(from var(--neb-soft-outline-inverse) h s calc(l - #{$l}));
+
+  // ghost
+  --neb-ghost-neutral-elevated: hsl(from var(--neb-ghost-neutral) h s l);
+  --neb-ghost-muted-elevated: hsl(from var(--neb-ghost-muted) h s calc(l - #{$l}));
+  --neb-ghost-tertiary-elevated: hsl(from var(--neb-ghost-tertiary) h s calc(l - #{$l}));
+  --neb-ghost-secondary-elevated: hsl(from var(--neb-ghost-secondary) h s calc(l - #{$l}));
+  --neb-ghost-primary-elevated: hsl(from var(--neb-ghost-primary) h s calc(l - #{$l}));
+  --neb-ghost-inverse-elevated: hsl(from var(--neb-ghost-inverse) h s l);
+}
