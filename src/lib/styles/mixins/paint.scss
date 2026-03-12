@@ -6,6 +6,7 @@
 @use './paint/hover-bg/hover-bg-light.scss' as hover-bg-light;
 @use './paint/active/active-light.scss' as active-light;
 @use './paint/active-bg/active-bg-light.scss' as active-bg-light;
+@use './paint/disabled/disabled-light.scss' as disabled-light;
 
 // dark
 @use './paint/hover/hover-dark.scss' as hover-dark;
@@ -23,6 +24,7 @@
     @include hover-bg-light.paint();
     @include active-light.paint();
     @include active-bg-light.paint();
+    @include disabled-light.paint();
   } @else {
     @include hover-dark.paint();
     @include hover-bg-dark.paint();
@@ -36,6 +38,7 @@
     @include hover-bg-light.paint(true);
     @include active-light.paint(true);
     @include active-bg-light.paint(true);
+    @include disabled-light.paint(true);
   } @else {
     @include hover-dark.paint(true);
     @include hover-bg-dark.paint(true);
