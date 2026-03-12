@@ -21,7 +21,7 @@ export const RELEASE_INFO: Record<
   }
 > = {
   '0.7.0': {
-    timestamp: 1771059078321,
+    timestamp: 1773334270048,
     changelog: {
       main: [
         'simplified the color system by reducing the palette to nine core colors',
