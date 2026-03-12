@@ -72,13 +72,11 @@ export const DropdownList = ({
       {({ slotsByName }) => {
         const itemsCount = slotsByName['DropdownList.Item'].length
 
-        let correctedVisibleItemsCount =
-          itemsCount < (visibleItemsCount ?? 0) ? itemsCount : (visibleItemsCount ?? 0)
+        let correctedVisibleItemsCount = itemsCount < (visibleItemsCount ?? 0) ? itemsCount : (visibleItemsCount ?? 0)
         if (correctedVisibleItemsCount <= 0 && noOptionsLabel) correctedVisibleItemsCount = 1
 
         const itemHeight =
-          Number(BUTTON_SIZE_CONFIG[size || 'md'].blockSize.replace('px', '')) +
-          Number(BOX_BORDER_WIDTH.replace('px', ''))
+          Number(BUTTON_SIZE_CONFIG[size || 'md'].blockSize.replace('px', '')) + Number(BOX_BORDER_WIDTH.replace('px', ''))
 
         return (
           <DropdownListProvider

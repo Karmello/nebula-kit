@@ -13,8 +13,7 @@ const FOOTER_EXAMPLES_META: ComponentMeta<FooterProps>['examples'] = [
     skip: true,
   },
   {
-    description:
-      'Displays three sections that stack on small screens and align horizontally from the medium breakpoint.',
+    description: 'Displays three sections that stack on small screens and align horizontally from the medium breakpoint.',
     jsx: (
       <Footer switchAt="md" padding="15px">
         <Footer.Section>Section 1</Footer.Section>

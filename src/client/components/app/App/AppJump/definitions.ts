@@ -1,11 +1,6 @@
 import { noCase, pascalCase } from 'change-case'
 
-import {
-  CORE_PAGE_CATEGORIES,
-  FOUNDATIONS_CATEGORIES,
-  PageKey,
-  PRO_PAGE_CATEGORIES,
-} from 'client/definitions'
+import { CORE_PAGE_CATEGORIES, FOUNDATIONS_CATEGORIES, PageKey, PRO_PAGE_CATEGORIES } from 'client/definitions'
 
 import { IconName } from 'lib/definitions'
 

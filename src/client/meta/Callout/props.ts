@@ -22,8 +22,7 @@ const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
     description: 'A text string displayed as the main body of the Callout.',
   },
   heading: {
-    description:
-      'Text displayed as the title of the Callout. Overrides the default heading associated with the selected status.',
+    description: 'Text displayed as the title of the Callout. Overrides the default heading associated with the selected status.',
     options: ['string'],
     defaultValue: CALLOUT_CONFIG[DEFAULT_CALLOUT_STATUS].heading,
     isResponsive: false,

@@ -47,8 +47,7 @@ const VIRTUAL_LIST_PROPS_META: ComponentMeta<VirtualListProps>['props'] = {
   scrollAlign: {
     options: VIRTUAL_LIST_SCROLL_ALIGN,
     defaultValue: String(DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN),
-    description:
-      'Defines how the item targeted by the "scrollToIndex" prop is positioned within the scroll area.',
+    description: 'Defines how the item targeted by the "scrollToIndex" prop is positioned within the scroll area.',
   },
   scrollToIndex: {
     options: ['number'],

@@ -28,11 +28,7 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
             tagRef={tagRef}
             {...paddings}
           >
-            <Flex
-              alignItems="center"
-              flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'}
-              gap="15px"
-            >
+            <Flex alignItems="center" flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'} gap="15px">
               <Flex.Item>
                 <Button
                   tagAttrs={{

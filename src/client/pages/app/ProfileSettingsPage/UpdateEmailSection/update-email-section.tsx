@@ -12,10 +12,10 @@ export const UpdateEmailSection = () => {
   return (
     <Section heading="Email address" variant="outline" intent="tertiary">
       <Text>
-        In case you need to update your email address, you can request a change by providing a new one. A
-        verification link will be sent to that address. After confirming it, you'll be able to sign in with
-        the new email using your existing password. Your current email remains active until you complete the
-        first login with the new one, so you always retain access throughout the process.
+        In case you need to update your email address, you can request a change by providing a new one. A verification link will
+        be sent to that address. After confirming it, you'll be able to sign in with the new email using your existing password.
+        Your current email remains active until you complete the first login with the new one, so you always retain access
+        throughout the process.
       </Text>
       <Spacer blockSize="30px" />
       <Box maxInlineSize={{ md: '500px' }}>

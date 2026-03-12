@@ -5,12 +5,11 @@ export const About = () => {
     <Reveal size="sm" intent="tertiary" label="About the website">
       <Box padding="15px">
         <Text>
-          This website is built entirely with NebulaKit components. It serves as both documentation and a live
-          showcase of the system in real use. Every layout, interaction and styling decision you see here is
-          produced by the same system APIs available to users. You can explore the components, patterns and
-          constraints of the system. The website is meant to reflect how NebulaKit is intended to be used in
-          practice. Some surfaces inherit the active brand, while others define their color locally for
-          semantic or contextual reasons.
+          This website is built entirely with NebulaKit components. It serves as both documentation and a live showcase of the
+          system in real use. Every layout, interaction and styling decision you see here is produced by the same system APIs
+          available to users. You can explore the components, patterns and constraints of the system. The website is meant to
+          reflect how NebulaKit is intended to be used in practice. Some surfaces inherit the active brand, while others define
+          their color locally for semantic or contextual reasons.
         </Text>
       </Box>
     </Reveal>

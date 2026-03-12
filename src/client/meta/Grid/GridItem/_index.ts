@@ -9,10 +9,7 @@ const GRID_ITEM_META: ComponentMeta<GridItemProps> = {
     bundle: 'core',
     name: 'Grid.Item?',
     title: 'Wrapper for a single child positioned within the grid.',
-    features: [
-      'positions a child in a specific row and/or column',
-      "overrides the item's alignment relative to its cell",
-    ],
+    features: ['positions a child in a specific row and/or column', "overrides the item's alignment relative to its cell"],
     composedOf: ['Box'],
   },
   props: GRID_ITEM_PROPS_META,

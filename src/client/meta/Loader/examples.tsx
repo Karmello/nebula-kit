@@ -11,8 +11,7 @@ const LOADER_EXAMPLES_META: ComponentMeta<LoaderProps>['examples'] = [
     jsx: <Loader size="lg" color="blue" />,
   },
   {
-    description:
-      'Absolutely centered Loader rendered inside a parent container with position set to relative.',
+    description: 'Absolutely centered Loader rendered inside a parent container with position set to relative.',
     jsx: (
       <Box position="relative">
         <Loader centered />

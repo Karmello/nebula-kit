@@ -17,17 +17,8 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
   tagAttrs,
   ...buttonProps
 }: DropdownListItemProps<T>) => {
-  const {
-    setResizeVisible,
-    keepOpen,
-    size,
-    color,
-    intent,
-    hoveredIndex,
-    setHoveredIndex,
-    blockMouse,
-    setBlockMouse,
-  } = useDropdownListContext()
+  const { setResizeVisible, keepOpen, size, color, intent, hoveredIndex, setHoveredIndex, blockMouse, setBlockMouse } =
+    useDropdownListContext()
 
   const index = (buttonProps as any).index
 
@@ -42,8 +33,7 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
           'data-neb-dropdown-list-item-index': index,
           role: 'option',
           onClick: (
-            e: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent> &
-              MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
+            e: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent> & MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
           ) => {
             if (!keepOpen) setResizeVisible(false)
             tagAttrs?.onClick?.(e)

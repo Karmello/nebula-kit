@@ -24,6 +24,4 @@ type PropsFromHtmlTag<T extends BreadcrumbTag = 'div'> = Pick<HtmlTagProps<T>, '
 
 type PropsFromDropdownList = Pick<DropdownListProps, 'color' | 'intent' | 'size'>
 
-export type BreadcrumbProps<T extends BreadcrumbTag = 'div'> = PropsFromHtmlTag<T> &
-  PropsFromDropdownList &
-  BreadcrumbOwnProps
+export type BreadcrumbProps<T extends BreadcrumbTag = 'div'> = PropsFromHtmlTag<T> & PropsFromDropdownList & BreadcrumbOwnProps

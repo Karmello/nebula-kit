@@ -25,12 +25,7 @@ export const SideNavItem = ({
   onClick,
   ...props
 }: SideNavItemProps) => {
-  const {
-    variant: rootVariant,
-    color: rootColor,
-    intent: rootIntent,
-    expandedCategories,
-  } = useSideNavContext()
+  const { variant: rootVariant, color: rootColor, intent: rootIntent, expandedCategories } = useSideNavContext()
 
   const { categoryId } = props || ({} as any)
 

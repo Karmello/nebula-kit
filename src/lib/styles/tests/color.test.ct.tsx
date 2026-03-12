@@ -40,15 +40,7 @@ test('Box color prop overrides ctx primary solid color', async ({ mount, page })
 
 test('Child Box color overrides parent color', async ({ mount, page }) => {
   await mount(
-    <Box
-      tagAttrs={{ id: 'parent' }}
-      drawable
-      variant="solid"
-      intent="primary"
-      color="blue"
-      blockSize="200px"
-      padding="16px"
-    >
+    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" color="blue" blockSize="200px" padding="16px">
       <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" color="red" blockSize="100px">
         Child
       </Box>
@@ -75,15 +67,7 @@ test('Child Box color overrides parent color', async ({ mount, page }) => {
 
 test('Parent color does not leak into child Box without color', async ({ mount, page }) => {
   await mount(
-    <Box
-      tagAttrs={{ id: 'parent' }}
-      drawable
-      variant="solid"
-      intent="primary"
-      color="red"
-      blockSize="200px"
-      padding="16px"
-    >
+    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" color="red" blockSize="200px" padding="16px">
       <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" blockSize="100px">
         Child
       </Box>
@@ -109,15 +93,7 @@ test('Parent color does not leak into child Box without color', async ({ mount, 
 
 test('Color does not inherit to child Box', async ({ mount, page }) => {
   await mount(
-    <Box
-      tagAttrs={{ id: 'parent' }}
-      drawable
-      variant="solid"
-      intent="primary"
-      color="red"
-      blockSize="200px"
-      padding="16px"
-    >
+    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" color="red" blockSize="200px" padding="16px">
       <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" blockSize="100px">
         Child
       </Box>

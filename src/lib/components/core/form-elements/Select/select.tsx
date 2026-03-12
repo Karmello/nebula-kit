@@ -47,9 +47,7 @@ export const Select = ({
       slotsConfig={[{ name: 'Select.Option', required: true, allowMultiple: true }]}
     >
       {({ slotsByName }) => {
-        const currentSlotIndex = slotsByName['Select.Option'].findIndex(
-          slot => (slot as any).props.value === currentValue
-        )
+        const currentSlotIndex = slotsByName['Select.Option'].findIndex(slot => (slot as any).props.value === currentValue)
 
         const currentSlot = slotsByName['Select.Option'][currentSlotIndex] as ReactElement<any>
 

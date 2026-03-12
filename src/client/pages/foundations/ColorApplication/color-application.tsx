@@ -14,8 +14,7 @@ export default () => {
   return (
     <>
       <Text>
-        Intents and variants combined through Button components, illustrating the system's full color spectrum
-        in practice.
+        Intents and variants combined through Button components, illustrating the system's full color spectrum in practice.
       </Text>
       <Spacer />
       <Flex flexWrap="wrap" columnGap="15px" rowGap="10px">

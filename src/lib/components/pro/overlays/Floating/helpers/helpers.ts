@@ -49,11 +49,7 @@ export const applyViewportPadding = (viewport: Rect, padding = 0): Rect => ({
  * Normalizes inline-size envelope against viewport width.
  * Safe for all strategies.
  */
-export const normalizeInlineEnvelope = (
-  minInlineSize: number,
-  maxInlineSize: number,
-  viewportWidth: number
-) => {
+export const normalizeInlineEnvelope = (minInlineSize: number, maxInlineSize: number, viewportWidth: number) => {
   const max = Math.min(maxInlineSize, viewportWidth)
   const min = Math.min(minInlineSize, max)
 

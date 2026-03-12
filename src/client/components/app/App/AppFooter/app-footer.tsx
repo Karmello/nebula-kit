@@ -7,20 +7,15 @@ export const AppFooter = () => {
   const navigateTo = useNavigateTo()
 
   return (
-    <Footer
-      switchAt="md"
-      paddingBlock="15px"
-      paddingInline="25px"
-      paddingBottom={{ base: '15px', lg: '35px' }}
-    >
+    <Footer switchAt="md" paddingBlock="15px" paddingInline="25px" paddingBottom={{ base: '15px', lg: '35px' }}>
       <Footer.Section>
         <Text scale="compact" typography="lead" bold>
           Current release
         </Text>
         <Divider marginBottom="10px" />
         <Text scale="compact" italic color="gray" intent="primary">
-          NebulaKit is actively developed and released in incremental updates. Each release introduces new
-          components, improvements and refinements across the system.
+          NebulaKit is actively developed and released in incremental updates. Each release introduces new components,
+          improvements and refinements across the system.
         </Text>
         <Spacer blockSize="10px" />
         <Link

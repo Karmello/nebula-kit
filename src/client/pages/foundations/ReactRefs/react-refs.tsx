@@ -9,9 +9,8 @@ export default () => {
         <Text tag="span" space="start" bold>
           tagRef
         </Text>
-        , which gives access to the underlying root DOM element rendered by the component. This allows direct
-        interaction with the element for tasks like measuring size, managing focus or integrating with
-        external systems.
+        , which gives access to the underlying root DOM element rendered by the component. This allows direct interaction with the
+        element for tasks like measuring size, managing focus or integrating with external systems.
       </Text>
       <Spacer />
       <Callout

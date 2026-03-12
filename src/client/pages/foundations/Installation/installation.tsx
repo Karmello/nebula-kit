@@ -38,8 +38,8 @@ export default () => {
         />
         <Spacer blockSize="5px" />
         <Text typography="caption" intent="secondary" color="gray">
-          NEB_TOKEN is your personal license key used to authenticate access to the Pro bundle. You'll find it
-          in your NebulaKit account dashboard after subscribing.
+          NEB_TOKEN is your personal license key used to authenticate access to the Pro bundle. You'll find it in your NebulaKit
+          account dashboard after subscribing.
         </Text>
         <Spacer />
         <Text bold intent="neutral">

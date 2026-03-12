@@ -29,8 +29,7 @@ const SplitViewComponent = ({
     []
   )
 
-  const finalChildren =
-    typeof children === 'function' ? children({ setSideOpen: setSideOpenASync, mode }) : children
+  const finalChildren = typeof children === 'function' ? children({ setSideOpen: setSideOpenASync, mode }) : children
 
   return (
     <WithSlots<'SplitView.Main' | 'SplitView.Side'>

@@ -1,12 +1,4 @@
-import {
-  ElementType,
-  ComponentRef,
-  ComponentProps,
-  PropsWithoutRef,
-  useLayoutEffect,
-  useEffect,
-  useRef,
-} from 'react'
+import { ElementType, ComponentRef, ComponentProps, PropsWithoutRef, useLayoutEffect, useEffect, useRef } from 'react'
 
 import classNames from 'classnames'
 

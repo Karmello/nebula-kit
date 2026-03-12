@@ -5,12 +5,7 @@ const TOOLTIP_EXAMPLES_META: ComponentMeta<TooltipProps>['examples'] = [
   {
     description: 'React element used as the tooltip trigger.',
     jsx: (
-      <Tooltip
-        content="This is Tooltip's content."
-        placement="right-center"
-        minInlineSize={200}
-        maxInlineSize={300}
-      >
+      <Tooltip content="This is Tooltip's content." placement="right-center" minInlineSize={200} maxInlineSize={300}>
         <Icon name="message-circle-question-mark" size="40px" />
       </Tooltip>
     ),
@@ -18,12 +13,7 @@ const TOOLTIP_EXAMPLES_META: ComponentMeta<TooltipProps>['examples'] = [
   {
     description: 'Focusable component used as the tooltip trigger.',
     jsx: (
-      <Tooltip
-        content="This is Tooltip's content."
-        placement="bottom-center"
-        minInlineSize={200}
-        maxInlineSize={300}
-      >
+      <Tooltip content="This is Tooltip's content." placement="bottom-center" minInlineSize={200} maxInlineSize={300}>
         <Button>Focusable button</Button>
       </Tooltip>
     ),

@@ -20,11 +20,7 @@ export type SplitViewContextProps = Omit<ProviderProps, 'children'> & {
 
 const SplitViewContext = createContext<SplitViewContextProps>({} as SplitViewContextProps)
 
-export const SplitViewProvider = ({
-  children,
-  sidePosition,
-  switchAt = DEFAULT_SWITCH_AT,
-}: ProviderProps) => {
+export const SplitViewProvider = ({ children, sidePosition, switchAt = DEFAULT_SWITCH_AT }: ProviderProps) => {
   const { bp } = useScreen()
   const { lock, unlock } = useGlobalScrollLock()
 

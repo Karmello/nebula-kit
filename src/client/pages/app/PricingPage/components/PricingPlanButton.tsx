@@ -66,14 +66,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
       } else {
         if (plan === activePlan) {
           return (
-            <Box
-              drawable
-              variant="solid"
-              intent="secondary"
-              color={color}
-              paddingBlock="10px"
-              paddingInline="14px"
-            >
+            <Box drawable variant="solid" intent="secondary" color={color} paddingBlock="10px" paddingInline="14px">
               <Text iconName="check" iconPlacement="right" bold>
                 This is the plan you are on
               </Text>

@@ -25,8 +25,8 @@ export default () => {
         </MarkerList>
         <Spacer blockSize="10px" />
         <Text>
-          Local themes allow creating isolated areas (for example a dark panel inside a light app) without
-          affecting the rest of the UI.
+          Local themes allow creating isolated areas (for example a dark panel inside a light app) without affecting the rest of
+          the UI.
         </Text>
       </Section>
       <Spacer blockSize="40px" />
@@ -127,8 +127,8 @@ export default () => {
         </MarkerList>
         <Spacer blockSize="10px" />
         <Text>
-          Different combinations of theme and brand can be nested. Each Box and its contents use the nearest
-          theme and brand settings defined around them, without affecting the rest of the layout.
+          Different combinations of theme and brand can be nested. Each Box and its contents use the nearest theme and brand
+          settings defined around them, without affecting the rest of the layout.
         </Text>
       </Section>
     </Box>

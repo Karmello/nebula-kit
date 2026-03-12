@@ -32,13 +32,7 @@ const Notes = ({ componentName, notes = [] }: { componentName?: string; notes: s
   )
 }
 
-const PanelContent = ({
-  bundleNotes,
-  componentNotes,
-}: {
-  bundleNotes?: string[]
-  componentNotes: Record<string, string[]>
-}) => {
+const PanelContent = ({ bundleNotes, componentNotes }: { bundleNotes?: string[]; componentNotes: Record<string, string[]> }) => {
   const componentNames = Object.keys(componentNotes)
 
   return (

@@ -1,11 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { SideNavProps } from 'lib/components'
 
-import {
-  DEFAULT_SIDE_NAV_EXPAND_MODE,
-  SIDE_NAV_EXPAND_MODES,
-  SIDE_NAV_VARIANTS,
-} from 'lib/components/pro/navigation/SideNav'
+import { DEFAULT_SIDE_NAV_EXPAND_MODE, SIDE_NAV_EXPAND_MODES, SIDE_NAV_VARIANTS } from 'lib/components/pro/navigation/SideNav'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BUTTON_PROPS_META } from '../Button/props'

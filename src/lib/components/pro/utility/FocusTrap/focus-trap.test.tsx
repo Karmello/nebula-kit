@@ -51,23 +51,12 @@ describe('FocusTrap', () => {
     expect(onEscape).toHaveBeenCalled()
   })
 
-  const Harness = ({
-    disableEscapeOnOutsideClick,
-    onEscape,
-  }: {
-    disableEscapeOnOutsideClick: boolean
-    onEscape: () => void
-  }) => {
+  const Harness = ({ disableEscapeOnOutsideClick, onEscape }: { disableEscapeOnOutsideClick: boolean; onEscape: () => void }) => {
     const ref = useRef<HTMLDivElement | null>(null)
 
     return (
       <div>
-        <FocusTrap
-          tagRef={ref}
-          active={true}
-          onFocusEscape={onEscape}
-          disableEscapeOnOutsideClick={disableEscapeOnOutsideClick}
-        >
+        <FocusTrap tagRef={ref} active={true} onFocusEscape={onEscape} disableEscapeOnOutsideClick={disableEscapeOnOutsideClick}>
           <div ref={ref}>inside</div>
         </FocusTrap>
 

@@ -38,14 +38,7 @@ export const PropsTable = ({ category, data }: Props) => {
                       href={`https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/${kebabCase(name)}`}
                       target="_blank"
                     >
-                      <Text
-                        intent="primary"
-                        color="blue"
-                        bold
-                        iconName="external-link"
-                        iconPlacement="right"
-                        underline={false}
-                      >
+                      <Text intent="primary" color="blue" bold iconName="external-link" iconPlacement="right" underline={false}>
                         {name}
                       </Text>
                     </Link>
@@ -53,12 +46,7 @@ export const PropsTable = ({ category, data }: Props) => {
                 </Table.Cell>
                 <Table.Cell>
                   {tooltip ? (
-                    <Tooltip
-                      content={tooltip.join(', ')}
-                      placement="top-center"
-                      minInlineSize={250}
-                      maxInlineSize={350}
-                    >
+                    <Tooltip content={tooltip.join(', ')} placement="top-center" minInlineSize={250} maxInlineSize={350}>
                       <Flex tagAttrs={{ style: { verticalAlign: 'middle' } }} display="inline-flex">
                         <Icon name="info" size="25px" intent="primary" color="blue" />
                       </Flex>

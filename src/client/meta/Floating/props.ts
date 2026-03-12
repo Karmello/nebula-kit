@@ -17,13 +17,11 @@ const FLOATING_PROPS_META: ComponentMeta<FloatingProps>['props'] = {
   },
   maxInlineSize: {
     options: ['number'],
-    description:
-      'Maximum inline size in pixels. Required when using the project strategy to resolve placement.',
+    description: 'Maximum inline size in pixels. Required when using the project strategy to resolve placement.',
   },
   minInlineSize: {
     options: ['number'],
-    description:
-      'Minimum inline size in pixels. Required when using the project strategy to resolve placement.',
+    description: 'Minimum inline size in pixels. Required when using the project strategy to resolve placement.',
   },
   mode: {
     options: FLOATING_MODE,
@@ -51,8 +49,7 @@ const FLOATING_PROPS_META: ComponentMeta<FloatingProps>['props'] = {
   },
   floatingBlockSize: {
     options: ['number'],
-    description:
-      'Block size of the floating element in pixels. Required when using the fit strategy to resolve placement.',
+    description: 'Block size of the floating element in pixels. Required when using the fit strategy to resolve placement.',
   },
   viewportPadding: {
     options: ['number'],

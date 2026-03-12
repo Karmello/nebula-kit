@@ -35,11 +35,7 @@ app.get(/.*/, (req, res) => {
         createElement(
           HydrationGate,
           null,
-          createElement(
-            NebkitProvider,
-            null,
-            createElement(Snackbar, { closeOnOutsideClick: true } as any, createElement(App))
-          )
+          createElement(NebkitProvider, null, createElement(Snackbar, { closeOnOutsideClick: true } as any, createElement(App)))
         )
       )
     )

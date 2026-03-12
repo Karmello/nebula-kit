@@ -37,17 +37,7 @@ export const Floating = ({
           })
 
     onResolve?.(next)
-  }, [
-    anchorRef.current,
-    mode,
-    placement,
-    offset,
-    viewportPadding,
-    floatingBlockSize,
-    minInlineSize,
-    maxInlineSize,
-    onResolve,
-  ])
+  }, [anchorRef.current, mode, placement, offset, viewportPadding, floatingBlockSize, minInlineSize, maxInlineSize, onResolve])
 
   useEffect(() => {
     resolve()

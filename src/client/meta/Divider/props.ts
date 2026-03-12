@@ -1,16 +1,13 @@
 import { ComponentMeta } from 'client/definitions'
 
-import {
-  DEFAULT_DIVIDER_INTENT,
-  DEFAULT_DIVIDER_MARGIN_BLOCK,
-  DividerProps,
-} from 'lib/components/core/elements/Divider'
+import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_MARGIN_BLOCK, DividerProps } from 'lib/components/core/elements/Divider'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const DIVIDER_PROPS_META: ComponentMeta<DividerProps>['props'] = {
   color: BOX_PROPS_META.color,
+  elevated: BOX_PROPS_META.elevated,
   intent: {
     ...BOX_PROPS_META.intent,
     defaultValue: String(DEFAULT_DIVIDER_INTENT),

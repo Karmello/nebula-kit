@@ -1,12 +1,4 @@
-import {
-  BoxProps,
-  ButtonProps,
-  CalloutProps,
-  SectionProps,
-  TextProps,
-  IconProps,
-  Select,
-} from 'lib/components'
+import { BoxProps, ButtonProps, CalloutProps, SectionProps, TextProps, IconProps, Select } from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
 

@@ -34,14 +34,7 @@ test('Box paints ctx primary solid color by default', async ({ mount, page }) =>
 
 test('Nested Box inherits ctx primary solid color', async ({ mount, page }) => {
   await mount(
-    <Box
-      tagAttrs={{ id: 'parent' }}
-      drawable
-      variant="solid"
-      intent="primary"
-      blockSize="200px"
-      padding="16px"
-    >
+    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" blockSize="200px" padding="16px">
       <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" blockSize="100px">
         Child
       </Box>
@@ -102,23 +95,8 @@ test('Box with dark theme uses dark ctx colors inside light app', async ({ mount
 
 test('Nested theme islands reset correctly (light → dark → light)', async ({ mount, page }) => {
   await mount(
-    <Box
-      tagAttrs={{ id: 'dark-parent' }}
-      drawable
-      variant="solid"
-      intent="inverse"
-      theme="dark"
-      blockSize="200px"
-      padding="16px"
-    >
-      <Box
-        tagAttrs={{ id: 'light-child' }}
-        drawable
-        variant="solid"
-        intent="inverse"
-        theme="light"
-        blockSize="100px"
-      >
+    <Box tagAttrs={{ id: 'dark-parent' }} drawable variant="solid" intent="inverse" theme="dark" blockSize="200px" padding="16px">
+      <Box tagAttrs={{ id: 'light-child' }} drawable variant="solid" intent="inverse" theme="light" blockSize="100px">
         Light Child
       </Box>
     </Box>
@@ -145,32 +123,9 @@ test('Nested theme islands reset correctly (light → dark → light)', async ({
 
 test('Nested theme islands reset correctly (light → dark → light → dark)', async ({ mount, page }) => {
   await mount(
-    <Box
-      tagAttrs={{ id: 'dark-1' }}
-      drawable
-      variant="solid"
-      intent="inverse"
-      theme="dark"
-      blockSize="300px"
-      padding="16px"
-    >
-      <Box
-        tagAttrs={{ id: 'light-1' }}
-        drawable
-        variant="solid"
-        intent="inverse"
-        theme="light"
-        blockSize="220px"
-        padding="16px"
-      >
-        <Box
-          tagAttrs={{ id: 'dark-2' }}
-          drawable
-          variant="solid"
-          intent="inverse"
-          theme="dark"
-          blockSize="140px"
-        >
+    <Box tagAttrs={{ id: 'dark-1' }} drawable variant="solid" intent="inverse" theme="dark" blockSize="300px" padding="16px">
+      <Box tagAttrs={{ id: 'light-1' }} drawable variant="solid" intent="inverse" theme="light" blockSize="220px" padding="16px">
+        <Box tagAttrs={{ id: 'dark-2' }} drawable variant="solid" intent="inverse" theme="dark" blockSize="140px">
           Dark Again
         </Box>
       </Box>

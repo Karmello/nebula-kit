@@ -21,8 +21,7 @@ const SPLIT_VIEW_PROPS_META: ComponentMeta<SplitViewProps>['props'] = {
   switchAt: {
     options: SWITCH_AT as unknown as string[],
     defaultValue: DEFAULT_SWITCH_AT,
-    description:
-      'Defines the breakpoint at which the side panel switches from overlay to inline layout mode.',
+    description: 'Defines the breakpoint at which the side panel switches from overlay to inline layout mode.',
   },
 }
 

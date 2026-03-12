@@ -18,10 +18,7 @@ type PropsFromHtmlTag = Pick<HtmlTagProps, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps['children']
 }
 
-type PropsFromBox = Pick<
-  BoxProps,
-  'color' | 'intent' | 'padding' | 'paddingBlock' | 'paddingInline' | 'textAlign'
-> & {
+type PropsFromBox = Pick<BoxProps, 'color' | 'intent' | 'padding' | 'paddingBlock' | 'paddingInline' | 'textAlign'> & {
   minInlineSize: number
   maxInlineSize: number
 }

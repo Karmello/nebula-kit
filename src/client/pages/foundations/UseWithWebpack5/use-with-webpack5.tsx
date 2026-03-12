@@ -9,9 +9,8 @@ export default () => {
       </Text>
       <Spacer />
       <Text intent="neutral">
-        The only requirement is to ensure Webpack can process CSS files, since NebulaKit ships styles as plain
-        CSS. If you already have a React + Webpack setup, you only need a small addition to your
-        configuration.
+        The only requirement is to ensure Webpack can process CSS files, since NebulaKit ships styles as plain CSS. If you already
+        have a React + Webpack setup, you only need a small addition to your configuration.
       </Text>
       <Spacer />
       <Text intent="neutral" bold>
@@ -36,9 +35,7 @@ export default () => {
 }`}
       />
       <Spacer />
-      <Text>
-        Then import styles and wrap your entire App with NebkitProvider the same as in the Vite example.
-      </Text>
+      <Text>Then import styles and wrap your entire App with NebkitProvider the same as in the Vite example.</Text>
     </Box>
   )
 }

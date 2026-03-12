@@ -25,9 +25,7 @@ const Family = ({
             <Spacer blockSize="25px" />
             <Flex gap="7px">
               {components.map(c => {
-                const { pageKey, categoryKey, itemKey } = PAGE_SECTIONS.find(
-                  s => s.itemKey === c.toLowerCase()
-                )
+                const { pageKey, categoryKey, itemKey } = PAGE_SECTIONS.find(s => s.itemKey === c.toLowerCase())
                 const href = `/${pageKey}/${categoryKey}/${itemKey}/overview`
                 return (
                   <Link key={c} href={href} onClick={() => navigateTo(href)}>

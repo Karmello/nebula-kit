@@ -30,8 +30,7 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = 
   },
   lockGlobalScroll: {
     options: ['boolean'],
-    description:
-      'Locks global document scrolling while preserving layout by compensating for scrollbar width.',
+    description: 'Locks global document scrolling while preserving layout by compensating for scrollbar width.',
   },
   rippleMode: {
     options: NEBKIT_RIPPLE_MODES,

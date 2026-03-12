@@ -56,11 +56,7 @@ export const Dialog = ({
     <WithSlots<'Dialog.Header' | 'Dialog.Content' | 'Dialog.Footer'>
       componentName="Dialog"
       childrenToVerify={children}
-      slotsConfig={[
-        { name: 'Dialog.Header' },
-        { name: 'Dialog.Content', required: true },
-        { name: 'Dialog.Footer' },
-      ]}
+      slotsConfig={[{ name: 'Dialog.Header' }, { name: 'Dialog.Content', required: true }, { name: 'Dialog.Footer' }]}
     >
       {({ slotsByName }) => {
         return (
@@ -89,12 +85,7 @@ export const Dialog = ({
                   justifyContent="center"
                   alignItems="center"
                 >
-                  <FocusTrap
-                    tagRef={tagRef || ref}
-                    active={open}
-                    onFocusEscape={onClose}
-                    disableEscapeOnOutsideClick
-                  >
+                  <FocusTrap tagRef={tagRef || ref} active={open} onFocusEscape={onClose} disableEscapeOnOutsideClick>
                     <Resize
                       property="inlineSize"
                       visible={open}
@@ -126,12 +117,7 @@ export const Dialog = ({
                         <Box drawable variant="solid" intent="neutral" borderRadius="0px">
                           {onClose ? (
                             <Box position="absolute" top="5px" right="5px">
-                              <Button
-                                tagAttrs={{ onClick: onClose }}
-                                size="xs"
-                                iconName="close"
-                                intent="muted"
-                              />
+                              <Button tagAttrs={{ onClick: onClose }} size="xs" iconName="close" intent="muted" />
                             </Box>
                           ) : null}
                           {slotsByName['Dialog.Header']}

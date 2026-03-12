@@ -56,9 +56,7 @@ export const AutocompleteMain = ({
     }
   }, [queryValue, disableFiltering, items])
 
-  const currentItemIndex = items.findIndex(
-    item => (item as ReactElement<AutocompleteOptionProps>).props.value === currentValue
-  )
+  const currentItemIndex = items.findIndex(item => (item as ReactElement<AutocompleteOptionProps>).props.value === currentValue)
 
   const currentItem = items[currentItemIndex] as ReactElement<AutocompleteOptionProps>
 

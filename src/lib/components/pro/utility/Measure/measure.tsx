@@ -30,11 +30,7 @@ export const Measure = ({
       }
 
       // Prevent infinite loops / redundant reports
-      if (
-        !last.current ||
-        last.current.blockSize !== next.blockSize ||
-        last.current.inlineSize !== next.inlineSize
-      ) {
+      if (!last.current || last.current.blockSize !== next.blockSize || last.current.inlineSize !== next.inlineSize) {
         last.current = next
         onMeasure(next)
       }

@@ -7,21 +7,15 @@ export default () => {
     <>
       <Box maxInlineSize="55rem">
         <Text>
-          All icons available in the NebulaKit system, presented as a curated subset of the Lucide icon set
-          for use across components and interfaces.
+          All icons available in the NebulaKit system, presented as a curated subset of the Lucide icon set for use across
+          components and interfaces.
         </Text>
       </Box>
       <Spacer blockSize="50px" />
       <Flex flexWrap="wrap" justifyContent={{ base: 'center', xl: 'flex-start' }} gap="10px">
         {Object.keys(ICONS).map(iconName => (
           <Tooltip key={iconName} content={iconName} minInlineSize={0} maxInlineSize={300}>
-            <Box
-              tagAttrs={{ style: { lineHeight: 0 } }}
-              drawable
-              variant="outline"
-              intent="tertiary"
-              padding="20px"
-            >
+            <Box tagAttrs={{ style: { lineHeight: 0 } }} drawable variant="outline" intent="tertiary" padding="20px">
               <Icon name={iconName as IconName} size="30px" color="green" intent="primary" />
             </Box>
           </Tooltip>

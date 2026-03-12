@@ -17,9 +17,7 @@ export const SideNavToggle = () => {
         <Button
           tagAttrs={{
             onClick: () => {
-              setExpandedCategories(state =>
-                Object.fromEntries(Object.keys(state).map(id => [id, !isAnyCategoryExpanded]))
-              )
+              setExpandedCategories(state => Object.fromEntries(Object.keys(state).map(id => [id, !isAnyCategoryExpanded])))
             },
             'aria-expanded': isAnyCategoryExpanded,
           }}

@@ -38,8 +38,7 @@ export const useAppStore = create<AppStore>()(
         brand: DEFAULT_NEBKIT_BRAND,
         setBrand: (brand: NebkitProviderProps['brand']) => set({ brand }),
         borderRadiusSize: DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
-        setBorderRadiusSize: (borderRadiusSize: NebkitProviderProps['borderRadiusSize']) =>
-          set({ borderRadiusSize }),
+        setBorderRadiusSize: (borderRadiusSize: NebkitProviderProps['borderRadiusSize']) => set({ borderRadiusSize }),
         rippleMode: DEFAULT_NEBKIT_RIPPLE_MODE,
         setRippleMode: (rippleMode: NebkitProviderProps['rippleMode']) => set({ rippleMode }),
         user: null,

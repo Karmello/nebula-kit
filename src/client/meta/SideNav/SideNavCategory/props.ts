@@ -5,10 +5,7 @@ import { SideNavCategoryProps } from 'lib/components'
 
 import { DEFAULT_SIDE_NAV_CATEGORY_EXPANDED, SIDE_NAV_VARIANTS } from 'lib/components/pro/navigation/SideNav'
 
-import {
-  DEFAULT_SIDE_NAV_CATEGORY_INTENT,
-  DEFAULT_SIDE_NAV_CATEGORY_VARIANT,
-} from 'lib/components/pro/navigation/SideNav'
+import { DEFAULT_SIDE_NAV_CATEGORY_INTENT, DEFAULT_SIDE_NAV_CATEGORY_VARIANT } from 'lib/components/pro/navigation/SideNav'
 
 const SIDE_NAV_CATEGORY_PROPS_META: ComponentMeta<SideNavCategoryProps>['props'] = {
   bold: BUTTON_PROPS_META.bold,
@@ -22,8 +19,7 @@ const SIDE_NAV_CATEGORY_PROPS_META: ComponentMeta<SideNavCategoryProps>['props']
   expanded: {
     options: ['boolean'],
     defaultValue: String(DEFAULT_SIDE_NAV_CATEGORY_EXPANDED),
-    description:
-      'Controls whether the category is expanded. When provided, the expansion state is controlled externally.',
+    description: 'Controls whether the category is expanded. When provided, the expansion state is controlled externally.',
   },
   intent: {
     ...BUTTON_PROPS_META.intent,

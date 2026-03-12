@@ -7,8 +7,7 @@ import { BREADCRUMB_EXAMPLES_META } from './examples'
 const BREADCRUMB_META: ComponentMeta<BreadcrumbProps> = {
   overview: {
     bundle: 'pro',
-    title:
-      'Interactive hierarchical navigation control for selecting and modifying a position within a structured path.',
+    title: 'Interactive hierarchical navigation control for selecting and modifying a position within a structured path.',
     features: [
       'displays a hierarchical path using interactive DropdownList components',
       'reveals navigation levels progressively based on user selection',

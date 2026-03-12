@@ -110,8 +110,7 @@ const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
         </Form.Actions>
       </Form>
     ),
-    description:
-      'Mobile-first form with vertically stacked fields that transition to a horizontal layout on wider screens.',
+    description: 'Mobile-first form with vertically stacked fields that transition to a horizontal layout on wider screens.',
   },
 ]
 

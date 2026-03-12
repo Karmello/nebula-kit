@@ -11,10 +11,7 @@ type MarkerListOwnProps = {
   listStyle?: MarkerListStyle
 }
 
-type PropsFromHtmlTag<T extends MarkerListTag = 'ul'> = Pick<
-  HtmlTagProps<T>,
-  'tag' | 'tagAttrs' | 'tagRef'
-> & {
+type PropsFromHtmlTag<T extends MarkerListTag = 'ul'> = Pick<HtmlTagProps<T>, 'tag' | 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<T>['children']
 }
 

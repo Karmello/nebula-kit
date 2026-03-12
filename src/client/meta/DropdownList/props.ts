@@ -72,8 +72,7 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
   scrollAlign: {
     options: DROPDOWN_LIST_SCROLL_ALIGN,
     defaultValue: String(DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN),
-    description:
-      'Defines how the item targeted by the "scrollToIndex" prop is positioned within the scroll area.',
+    description: 'Defines how the item targeted by the "scrollToIndex" prop is positioned within the scroll area.',
   },
   scrollToIndex: {
     options: ['number'],

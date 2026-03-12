@@ -14,13 +14,12 @@ export const CALLOUT_SIZE_CONFIG: Record<
   xxl: { typography: 'h2', spacing: '30px' },
 }
 
-export const CALLOUT_CONFIG: Record<CalloutStatus, { color: BoxColor; heading: string; iconName: IconName }> =
-  {
-    info: { color: 'blue', heading: 'Info', iconName: 'info' },
-    success: { color: 'green', heading: 'Success', iconName: 'check-circle' },
-    warning: { color: 'amber', heading: 'Warning', iconName: 'triangle-alert' },
-    error: { color: 'red', heading: 'Error', iconName: 'circle-alert' },
-  }
+export const CALLOUT_CONFIG: Record<CalloutStatus, { color: BoxColor; heading: string; iconName: IconName }> = {
+  info: { color: 'blue', heading: 'Info', iconName: 'info' },
+  success: { color: 'green', heading: 'Success', iconName: 'check-circle' },
+  warning: { color: 'amber', heading: 'Warning', iconName: 'triangle-alert' },
+  error: { color: 'red', heading: 'Error', iconName: 'circle-alert' },
+}
 
 export const DEFAULT_CALLOUT_SIZE: CalloutProps['size'] = 'md'
 export const DEFAULT_CALLOUT_VARIANT: CalloutProps['variant'] = 'solid'
@@ -49,6 +48,4 @@ type PropsFromHtmlTag<T extends CalloutTag = 'div'> = Omit<HtmlTagProps<T>, 'chi
 
 type PropsFromBox<T extends CalloutTag = 'div'> = Pick<BoxProps<T>, 'intent'>
 
-export type CalloutProps<T extends CalloutTag = 'div'> = PropsFromHtmlTag<T> &
-  PropsFromBox<T> &
-  CalloutOwnProps
+export type CalloutProps<T extends CalloutTag = 'div'> = PropsFromHtmlTag<T> & PropsFromBox<T> & CalloutOwnProps

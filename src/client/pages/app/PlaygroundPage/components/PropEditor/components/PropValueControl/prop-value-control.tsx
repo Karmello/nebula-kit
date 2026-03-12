@@ -62,9 +62,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
           placeholder={prop.options[0] === 'ReactNode' ? 'value' : prop.options[0].toLowerCase()}
           value={value}
           onChange={onChange}
-          endAffix={props => (
-            <Button {...props} iconName="close" tagAttrs={{ onClick: () => onChange('') }} />
-          )}
+          endAffix={props => <Button {...props} iconName="close" tagAttrs={{ onClick: () => onChange('') }} />}
         />
       ) : null}
       {PROPS_OPTIONS_FOR_BOOLEAN.includes(prop.options[0]) ? (
@@ -84,9 +82,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
           ))}
         </Select>
       ) : null}
-      {![...PROPS_OPTIONS_FOR_INPUT, ...PROPS_OPTIONS_FOR_BOOLEAN, ...PROPS_OPTIONS_FOR_SELECT].includes(
-        prop.options[0]
-      ) ? (
+      {![...PROPS_OPTIONS_FOR_INPUT, ...PROPS_OPTIONS_FOR_BOOLEAN, ...PROPS_OPTIONS_FOR_SELECT].includes(prop.options[0]) ? (
         <Select value={value} onChange={onChange} scrollAlign="center">
           <Select.Option value="">...</Select.Option>
           {prop.options.map(option => (

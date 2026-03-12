@@ -1,15 +1,6 @@
 import { cloneElement, ReactElement, RefObject, useLayoutEffect, useRef, useState } from 'react'
 
-import {
-  Box,
-  Floating,
-  Portal,
-  Resize,
-  VirtualList,
-  DropdownList,
-  DropdownListItemProps,
-  Divider,
-} from 'lib/components'
+import { Box, Floating, Portal, Resize, VirtualList, DropdownList, DropdownListItemProps, Divider } from 'lib/components'
 
 import { useDropdownListContext } from '..'
 import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'
@@ -46,9 +37,7 @@ export const DropdownListMenu = () => {
     ? Math.floor(floatingResolved.blockSize / itemHeight)
     : correctedVisibleItemsCount
 
-  const finalAnimationDuration = !disableListAnimation
-    ? Math.min(400, Math.max(200, finalVisibleItemsCount * 40))
-    : 0
+  const finalAnimationDuration = !disableListAnimation ? Math.min(400, Math.max(200, finalVisibleItemsCount * 40)) : 0
 
   useLayoutEffect(() => {
     const wasOpen = prevOpenRef.current
@@ -73,6 +62,8 @@ export const DropdownListMenu = () => {
 
   const opensUpDownwards = (floatingResolved?.placement ?? 'bottom-start').startsWith('bottom')
 
+  const ListItemDivider = () => <Divider marginBlock="0px" color={color} intent={intent} opacity="0.5" elevated />
+
   return (
     <Floating
       anchorRef={triggerRef}
@@ -80,10 +71,7 @@ export const DropdownListMenu = () => {
       floatingBlockSize={correctedVisibleItemsCount * itemHeight}
       placement={placement}
       onResolve={resolved => {
-        if (
-          resolved.placement !== floatingResolved?.placement ||
-          resolved.blockSize !== floatingResolved?.blockSize
-        ) {
+        if (resolved.placement !== floatingResolved?.placement || resolved.blockSize !== floatingResolved?.blockSize) {
           setFloatingResolved(resolved)
         }
       }}
@@ -123,30 +111,22 @@ export const DropdownListMenu = () => {
                 renderItem={(slot, index) => {
                   return (
                     <>
-                      {opensUpDownwards ? <Divider marginBlock="0px" color={color} intent={intent} /> : null}
+                      {opensUpDownwards ? <ListItemDivider /> : null}
                       {cloneElement(slot as ReactElement<DropdownListItemProps & { index: number }>, {
                         index,
                       })}
-                      {!opensUpDownwards ? <Divider marginBlock="0px" color={color} intent={intent} /> : null}
+                      {!opensUpDownwards ? <ListItemDivider /> : null}
                     </>
                   )
                 }}
                 ensureVisibleIndex={ensureVisibleIndex}
               />
             ) : noOptionsLabel ? (
-              <Box
-                drawable
-                color={color}
-                intent={intent}
-                variant="outline"
-                borderLeftWidth="0px"
-                borderRightWidth="0px"
-                borderTopWidth={!opensUpDownwards ? '0px' : undefined}
-                borderBottomWidth={opensUpDownwards ? '0px' : undefined}
-                borderRadius="0px"
-              >
+              <>
+                {opensUpDownwards ? <ListItemDivider /> : null}
                 <DropdownList.Item disabled>{noOptionsLabel}</DropdownList.Item>
-              </Box>
+                {!opensUpDownwards ? <ListItemDivider /> : null}
+              </>
             ) : null}
           </Box>
         </Resize>

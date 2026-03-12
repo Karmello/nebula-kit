@@ -42,11 +42,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
         </Section>
       ) : null}
       {topLevelTags ? (
-        <Section
-          size="xs"
-          heading={topLevelTags.length > 1 ? 'Root tags' : 'Root tag'}
-          iconName="arrow-right"
-        >
+        <Section size="xs" heading={topLevelTags.length > 1 ? 'Root tags' : 'Root tag'} iconName="arrow-right">
           <ListWithChips items={topLevelTags as string[]} color="amber" />
         </Section>
       ) : null}
@@ -73,13 +69,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
               navigateTo(readMoreLink.href)
             }}
           >
-            <Button
-              variant="ghost"
-              color="blue"
-              intent="primary"
-              iconName="arrow-right"
-              iconPlacement="right"
-            >
+            <Button variant="ghost" color="blue" intent="primary" iconName="arrow-right" iconPlacement="right">
               {readMoreLink.label}
             </Button>
           </Link>

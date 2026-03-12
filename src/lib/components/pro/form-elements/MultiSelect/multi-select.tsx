@@ -35,9 +35,7 @@ export const MultiSelect = ({
   const currentValue = isControlled ? value : internalValue
 
   const handleChange = (value: string) => {
-    const nextValue = currentValue?.includes(value)
-      ? currentValue.filter(v => v !== value)
-      : [...(currentValue || []), value]
+    const nextValue = currentValue?.includes(value) ? currentValue.filter(v => v !== value) : [...(currentValue || []), value]
 
     if (!isControlled) setInternalValue(nextValue)
     onChange?.(nextValue)
@@ -50,9 +48,7 @@ export const MultiSelect = ({
       slotsConfig={[{ name: 'MultiSelect.Option', required: true, allowMultiple: true }]}
     >
       {({ slotsByName }) => {
-        const currentSlotIndex = slotsByName['MultiSelect.Option'].findIndex(
-          slot => (slot as any).props.value === currentValue
-        )
+        const currentSlotIndex = slotsByName['MultiSelect.Option'].findIndex(slot => (slot as any).props.value === currentValue)
 
         const currentLabel = slotsByName['MultiSelect.Option']
           .map(slot => {
@@ -127,9 +123,7 @@ export const MultiSelect = ({
                             onClick: () => handleChange(slotProps.value),
                           }}
                           bold={currentValue.includes(slotProps.value)}
-                          justifyContent={
-                            slotProps.justifyContent || DEFAULT_MULTI_SELECT_OPTION_JUSTIFY_CONTENT
-                          }
+                          justifyContent={slotProps.justifyContent || DEFAULT_MULTI_SELECT_OPTION_JUSTIFY_CONTENT}
                         >
                           {slot}
                         </DropdownList.Item>

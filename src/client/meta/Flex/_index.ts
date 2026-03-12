@@ -9,8 +9,7 @@ import { FLEX_ITEM_META } from './FlexItem/_index'
 const FLEX_META: ComponentMeta<FlexProps> = {
   overview: {
     bundle: 'core',
-    title:
-      'Layout component built on CSS Flexbox, providing a one-dimensional system for arranging children in a row or column.',
+    title: 'Layout component built on CSS Flexbox, providing a one-dimensional system for arranging children in a row or column.',
     features: [
       'provides a flexbox-based layout wrapper',
       'controls flow, alignment and wrapping of children',

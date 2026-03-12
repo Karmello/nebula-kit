@@ -43,11 +43,7 @@ export const AppPrefsDialog = () => {
               <Segment key={theme}>
                 {THEMES.map(key => (
                   <Segment.Item key={key}>
-                    <Button
-                      intent={key === theme ? 'inverse' : 'tertiary'}
-                      size="xs"
-                      tagAttrs={{ onClick: () => setTheme(key) }}
-                    >
+                    <Button intent={key === theme ? 'inverse' : 'tertiary'} size="xs" tagAttrs={{ onClick: () => setTheme(key) }}>
                       {sentenceCase(key)}
                     </Button>
                   </Segment.Item>
@@ -70,13 +66,7 @@ export const AppPrefsDialog = () => {
                 Border radius
               </Text>
               <Spacer blockSize="2px" />
-              <Select
-                value={borderRadiusSize}
-                onChange={setBorderRadiusSize}
-                inlineSize="150px"
-                size="xs"
-                scrollAlign="center"
-              >
+              <Select value={borderRadiusSize} onChange={setBorderRadiusSize} inlineSize="150px" size="xs" scrollAlign="center">
                 {NEBKIT_BORDER_RADIUS_SIZES.map(n => (
                   <Select.Option value={n}>{n}</Select.Option>
                 ))}
@@ -87,13 +77,7 @@ export const AppPrefsDialog = () => {
                 Ripple mode
               </Text>
               <Spacer blockSize="2px" />
-              <Select
-                value={rippleMode}
-                onChange={setRippleMode}
-                inlineSize="150px"
-                size="xs"
-                scrollAlign="center"
-              >
+              <Select value={rippleMode} onChange={setRippleMode} inlineSize="150px" size="xs" scrollAlign="center">
                 {NEBKIT_RIPPLE_MODES.map(n => (
                   <Select.Option value={n}>{sentenceCase(n)}</Select.Option>
                 ))}

@@ -1,10 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 
-import {
-  DEFAULT_ROTATE_DURATION,
-  DEFAULT_ROTATE_EASING,
-  RotateProps,
-} from 'lib/components/core/motion/Rotate'
+import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING, RotateProps } from 'lib/components/core/motion/Rotate'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
@@ -12,8 +8,7 @@ const ROTATE_PROPS_META: ComponentMeta<RotateProps>['props'] = {
   angle: {
     options: ['number'],
     isRequired: true,
-    description:
-      'Rotation angle of the content in degrees. Changing the value triggers a rotation animation.',
+    description: 'Rotation angle of the content in degrees. Changing the value triggers a rotation animation.',
   },
   children: {
     ...HTML_TAG_PROPS_META.children,

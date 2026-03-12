@@ -25,17 +25,12 @@ const ToolbarComponent = ({ children, tagAttrs, tagRef }: ToolbarProps) => {
     []
   )
 
-  const finalChildren =
-    typeof children === 'function' ? children({ setMainOpen: setMainOpenAsync, mainOpen }) : children
+  const finalChildren = typeof children === 'function' ? children({ setMainOpen: setMainOpenAsync, mainOpen }) : children
 
   return (
     <WithSlots<'Toolbar.Start' | 'Toolbar.Main' | 'Toolbar.End'>
       componentName="Toolbar"
-      slotsConfig={[
-        { name: 'Toolbar.Start' },
-        { name: 'Toolbar.Main', required: true },
-        { name: 'Toolbar.End' },
-      ]}
+      slotsConfig={[{ name: 'Toolbar.Start' }, { name: 'Toolbar.Main', required: true }, { name: 'Toolbar.End' }]}
       childrenToVerify={finalChildren}
     >
       {({ slotsByName }) => (

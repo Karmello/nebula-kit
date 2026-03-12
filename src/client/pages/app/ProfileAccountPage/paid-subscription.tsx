@@ -34,11 +34,7 @@ export default ({ enabled }: { enabled: boolean }) => {
             </Table.HeaderCell>
           </Table.HeaderRow>
         </Table.Header>
-        <Table.Body
-          intent={getPaymentInfo.isMakingRequest ? 'muted' : 'tertiary'}
-          paddingBlock="10px"
-          paddingInline="15px"
-        >
+        <Table.Body intent={getPaymentInfo.isMakingRequest ? 'muted' : 'tertiary'} paddingBlock="10px" paddingInline="15px">
           <Table.Row>
             <Table.Cell colSpan={1}>
               <Text>Renews every</Text>
@@ -47,8 +43,7 @@ export default ({ enabled }: { enabled: boolean }) => {
               <Text bold>{getPaymentInfo.data?.subscription.interval}</Text>
             </Table.Cell>
           </Table.Row>
-          {getPaymentInfo.data?.subscription.status &&
-          getPaymentInfo.data?.subscription.status !== 'PAST_DUE' ? (
+          {getPaymentInfo.data?.subscription.status && getPaymentInfo.data?.subscription.status !== 'PAST_DUE' ? (
             <Table.Row>
               <Table.Cell colSpan={1}>
                 <Text>Amount</Text>
@@ -58,8 +53,7 @@ export default ({ enabled }: { enabled: boolean }) => {
               </Table.Cell>
             </Table.Row>
           ) : null}
-          {getPaymentInfo.data?.subscription.status &&
-          getPaymentInfo.data?.subscription.status !== 'PAST_DUE' ? (
+          {getPaymentInfo.data?.subscription.status && getPaymentInfo.data?.subscription.status !== 'PAST_DUE' ? (
             <Table.Row>
               <Table.Cell colSpan={1}>
                 <Text>Last payment</Text>

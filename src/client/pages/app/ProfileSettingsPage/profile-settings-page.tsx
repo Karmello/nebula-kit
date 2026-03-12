@@ -51,15 +51,9 @@ export const ProfileSettingsPage = () => {
             <Spacer blockSize="50px" />
             <UpdateEmailSection />
             <Spacer blockSize="50px" />
-            <ConnectToDiscordSection
-              userPlan={getUser.data.user.plan}
-              discordUserId={getUser.data.user.discordUserId}
-            />
+            <ConnectToDiscordSection userPlan={getUser.data.user.plan} discordUserId={getUser.data.user.discordUserId} />
             <Spacer blockSize="50px" />
-            <ConnectToGithubSection
-              userPlan={getUser.data.user.plan}
-              githubUsername={getUser.data.user.githubUsername}
-            />
+            <ConnectToGithubSection userPlan={getUser.data.user.plan} githubUsername={getUser.data.user.githubUsername} />
             <Spacer blockSize="50px" />
             <PaymentCancelSection
               userEmail={getUser.data.user.email}

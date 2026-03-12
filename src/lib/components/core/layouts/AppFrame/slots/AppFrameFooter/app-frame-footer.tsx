@@ -4,11 +4,7 @@ import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box/definitions'
 
-import {
-  AppFrameFooterProps,
-  DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT,
-  DEFAULT_APP_FRAME_FOOTER_INTENT,
-} from './definitions'
+import { AppFrameFooterProps, DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT, DEFAULT_APP_FRAME_FOOTER_INTENT } from './definitions'
 
 export const AppFrameFooter = ({
   // HtmlTag
