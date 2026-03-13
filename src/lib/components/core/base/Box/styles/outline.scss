@@ -24,7 +24,6 @@
           --bg-hover: var(--neb-outline-#{$intent}-elevated-bg-hover);
           --bg-active: var(--neb-outline-#{$intent}-elevated-bg-active);
           --text-disabled: var(--neb-outline-#{$intent}-elevated-disabled);
-          --loader: var(--neb-outline-#{$intent}-elevated-loader);
         }
 
         // rest
@@ -57,7 +56,6 @@
 
         // disabled
         &[data-neb-box-disabled='true'] {
-          opacity: 0.4;
           color: var(--text-disabled);
         }
         &[data-neb-box-disabled='true']:-webkit-autofill {

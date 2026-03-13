@@ -49,6 +49,7 @@
 }
 
 .neb-box[data-neb-box-disabled='true'] {
+  opacity: 0.6;
   pointer-events: none;
 }
 

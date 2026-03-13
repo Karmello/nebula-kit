@@ -19,7 +19,6 @@
           --text-hover: var(--neb-ghost-#{$intent}-elevated-hover);
           --text-active: var(--neb-ghost-#{$intent}-elevated-active);
           --text-disabled: var(--neb-ghost-#{$intent}-elevated-disabled);
-          --loader: var(--neb-ghost-#{$intent}-elevated-loader);
         }
 
         // rest
@@ -49,7 +48,6 @@
 
         // disabled
         &[data-neb-box-disabled='true'] {
-          opacity: 0.4;
           color: var(--text-disabled);
         }
 

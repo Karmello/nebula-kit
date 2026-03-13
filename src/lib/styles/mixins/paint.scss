@@ -1,5 +1,6 @@
 @use './paint/base.scss' as base;
 @use './paint/elevated.scss' as elevated;
+@use './paint/loader.scss' as loader;
 
 // light
 @use './paint/hover/hover-light.scss' as hover-light;
@@ -18,6 +19,7 @@
 @mixin paint($theme) {
   @include base.paint($theme);
   @include elevated.paint($theme);
+  @include loader.paint($theme);
 
   // base
   @if $theme == 'light' {
