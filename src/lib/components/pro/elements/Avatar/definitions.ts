@@ -2,10 +2,7 @@ import { ImageProps } from 'lib/components'
 import { TextScale, TextTypography } from 'lib/components/core/base/Text'
 import { Sizes } from 'lib/definitions'
 
-export const AVATAR_SIZES_MAP: Record<
-  AvatarSize,
-  { side: string; typography: TextTypography; scale: TextScale }
-> = {
+export const AVATAR_SIZES_MAP: Record<AvatarSize, { side: string; typography: TextTypography; scale: TextScale }> = {
   xs: {
     side: '50px',
     typography: 'lead',

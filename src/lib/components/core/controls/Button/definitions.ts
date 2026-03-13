@@ -44,6 +44,7 @@ export const BUTTON_SIZE_CONFIG: Record<
   },
 }
 
+export const DEFAULT_BUTTON_INTERACTIVE: ButtonProps['interactive'] = true
 export const DEFAULT_BUTTON_VARIANT: ButtonProps['variant'] = 'solid'
 export const DEFAULT_BUTTON_INTENT: ButtonProps['intent'] = 'tertiary'
 export const DEFAULT_BUTTON_SIZE: ButtonProps['size'] = 'md'
@@ -71,8 +72,10 @@ type PropsFromBox<T extends ButtonTag = 'button'> = Pick<
   | 'variant'
   | 'color'
   | 'intent'
-  | 'highlighted'
+  | 'interactive'
+  | 'defaultState'
   | 'disabled'
+  | 'elevated'
   | 'inlineSize'
   | 'minInlineSize'
   | 'maxInlineSize'

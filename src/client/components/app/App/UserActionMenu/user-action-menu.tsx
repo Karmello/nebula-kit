@@ -44,9 +44,7 @@ export const UserActionMenu = () => {
           intent="muted"
         />
         <Select
-          triggerIntent="muted"
-          listIntent="tertiary"
-          itemBorderIntent="secondary"
+          intent="muted"
           dropdownPlacement="bottom-end"
           staticLabel="Profile"
           value={currentPageKey}

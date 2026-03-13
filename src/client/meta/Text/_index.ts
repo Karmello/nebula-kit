@@ -21,6 +21,7 @@ const TEXT_META: ComponentMeta<TextProps> = {
   props: TEXT_PROPS_META,
   examples: TEXT_EXAMPLES_META,
   changelog: {
+    '0.7.0': ['fixed text link display behavior inside table cells'],
     '0.2.3': ['released'],
   },
 }

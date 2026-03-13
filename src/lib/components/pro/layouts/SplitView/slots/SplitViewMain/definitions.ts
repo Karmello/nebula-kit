@@ -6,13 +6,7 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'section'>, 'tagAttrs' | 'tagRef'> & {
 
 type PropsFromBox = Pick<
   BoxProps<'section'>,
-  | 'padding'
-  | 'paddingInline'
-  | 'paddingBlock'
-  | 'paddingTop'
-  | 'paddingRight'
-  | 'paddingBottom'
-  | 'paddingLeft'
+  'padding' | 'paddingInline' | 'paddingBlock' | 'paddingTop' | 'paddingRight' | 'paddingBottom' | 'paddingLeft'
 >
 
 export type SplitViewMainProps = PropsFromHtmlTag & PropsFromBox

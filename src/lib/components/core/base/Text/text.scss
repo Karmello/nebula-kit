@@ -15,7 +15,10 @@ h6.neb-text {
   display: block;
 }
 
-span.neb-text,
+span.neb-text {
+  display: inline;
+}
+
 a.neb-text {
   display: inline-block;
 }

@@ -14,16 +14,7 @@ type PropsFromFlexItem = Omit<FlexItemProps<'div'>, 'children' | 'tag'>
 
 type PropsFromButton = Pick<
   ButtonProps,
-  | 'disabled'
-  | 'iconName'
-  | 'iconPlacement'
-  | 'intent'
-  | 'color'
-  | 'size'
-  | 'children'
-  | 'tagAttrs'
-  | 'tagRef'
-  | 'variant'
+  'disabled' | 'iconName' | 'iconPlacement' | 'intent' | 'color' | 'size' | 'children' | 'tagAttrs' | 'tagRef' | 'variant'
 >
 
 export type FormActionButtonProps = PropsFromFlexItem & PropsFromButton & FormActionButtonOwnProps

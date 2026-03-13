@@ -8,10 +8,7 @@ const DROPDOWN_LIST_ITEM_META: ComponentMeta<DropdownListItemProps> = {
     bundle: 'core',
     name: 'DropdownList.Item',
     title: 'Interactive list item used within a DropdownList.',
-    features: [
-      'represents a selectable option within a DropdownList',
-      'behaves like a Button with consistent dropdown styling',
-    ],
+    features: ['represents a selectable option within a DropdownList', 'behaves like a Button with consistent dropdown styling'],
     composedOf: ['Button'],
     topLevelTags: ['button', 'a'],
   },

@@ -38,8 +38,7 @@ export const FormActionButton = ({
     formState: { isSubmitting },
   } = useFormContext()
 
-  const finalDefaultIntent =
-    type === 'submit' ? DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT : DEFAULT_BUTTON_INTENT
+  const finalDefaultIntent = type === 'submit' ? DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT : DEFAULT_BUTTON_INTENT
 
   const finalDefaultColor = type === 'submit' ? DEFAULT_FORM_ACTION_SUBMIT_BUTTON_COLOR : undefined
 

@@ -19,8 +19,7 @@ export const getInitialState = (): State => {
       const props: Props = {}
 
       componentPropNames.forEach(propName => {
-        const { options, defaultValue, isResponsive } =
-          META[componentName][componentName].props[propName as never]
+        const { options, defaultValue, isResponsive } = META[componentName][componentName].props[propName as never]
 
         let parsedDefaultValue
 

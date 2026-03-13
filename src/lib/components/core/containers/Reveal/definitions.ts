@@ -18,7 +18,4 @@ type PropsFromBox<T extends RevealTag = 'div'> = Pick<BoxProps<T>, 'color' | 'in
 
 type PropsFromButton = Pick<ButtonProps<'button'>, 'size' | 'disabled'>
 
-export type RevealProps<T extends RevealTag = 'div'> = PropsFromHtmlTag<T> &
-  PropsFromBox<T> &
-  PropsFromButton &
-  RevealOwnProps
+export type RevealProps<T extends RevealTag = 'div'> = PropsFromHtmlTag<T> & PropsFromBox<T> & PropsFromButton & RevealOwnProps

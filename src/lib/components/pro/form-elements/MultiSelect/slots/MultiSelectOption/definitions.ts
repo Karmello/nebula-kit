@@ -1,7 +1,6 @@
 import { DropdownListItemProps } from 'lib/components'
 
-export const DEFAULT_MULTI_SELECT_OPTION_JUSTIFY_CONTENT: MultiSelectOptionProps['justifyContent'] =
-  'flex-start'
+export const DEFAULT_MULTI_SELECT_OPTION_JUSTIFY_CONTENT: MultiSelectOptionProps['justifyContent'] = 'flex-start'
 
 type MultiSelectOptionOwnProps = {
   value: string

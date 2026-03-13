@@ -6,13 +6,7 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'main'>, 'tagAttrs' | 'tagRef'> & {
 
 type PropsFromBox = Pick<
   BoxProps<'main'>,
-  | 'padding'
-  | 'paddingInline'
-  | 'paddingBlock'
-  | 'paddingTop'
-  | 'paddingRight'
-  | 'paddingBottom'
-  | 'paddingLeft'
+  'padding' | 'paddingInline' | 'paddingBlock' | 'paddingTop' | 'paddingRight' | 'paddingBottom' | 'paddingLeft'
 >
 
 export type AppFrameMainProps = PropsFromHtmlTag & PropsFromBox

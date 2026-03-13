@@ -51,7 +51,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
           }}
           iconAngle={open ? 180 : 0}
           ripple={!open}
-          highlighted={open}
+          defaultState={open ? 'hover' : undefined}
           bold
         >
           {label}

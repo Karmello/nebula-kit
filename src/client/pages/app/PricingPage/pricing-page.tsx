@@ -26,10 +26,7 @@ export const PricingPage = () => {
           <Loader centered size="lg" color="blue" />
         ) : (
           <>
-            <Grid
-              gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }}
-              gap="20px"
-            >
+            <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }} gap="20px">
               <PricingPlanCard
                 plan="free"
                 activePlan={getUser.data?.user.plan}
@@ -85,16 +82,15 @@ export const PricingPage = () => {
             <Spacer blockSize="50px" />
             <Flex flexDirection="column" rowGap="5px">
               <Text italic>
-                * NebulaKit uses a single-license model, one paid subscription = one shared license key for
-                unlocking the PRO bundle
+                * NebulaKit uses a single-license model, one paid subscription = one shared license key for unlocking the PRO
+                bundle
               </Text>
               <Text italic>
-                * Discord community access is open to everyone, chat support applies to the paying account
-                holder only
+                * Discord community access is open to everyone, chat support applies to the paying account holder only
               </Text>
               <Text italic>
-                * as NebulaKit grows with more components and features, pricing may be adjusted slightly over
-                time to reflect increased value, any updates will always be communicated in advance
+                * as NebulaKit grows with more components and features, pricing may be adjusted slightly over time to reflect
+                increased value, any updates will always be communicated in advance
               </Text>
               <Text italic>* all prices in USD</Text>
             </Flex>

@@ -10,8 +10,7 @@ import { SIDE_NAV_CATEGORY_META } from './SideNavCategory/_index'
 const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
   overview: {
     bundle: 'pro',
-    title:
-      'Sidebar navigation component designed specifically for flat and nested navigation with expandable categories.',
+    title: 'Sidebar navigation component designed specifically for flat and nested navigation with expandable categories.',
     features: [
       'supports flat items and expandable categories for hierarchical navigation',
       'allows single or multiple categories to be expanded at once',

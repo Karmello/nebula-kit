@@ -49,11 +49,19 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box drawable interactive highlighted variant="solid" color="gray" intent="primary" padding="20px">
-        Highlighted Box
+      <Box drawable interactive defaultState="hover" variant="solid" color="gray" intent="primary" padding="20px">
+        Hovered Box
       </Box>
     ),
-    description: 'Interactive Box in a highlighted visual state by default.',
+    description: 'Interactive Box in a hovered visual state by default.',
+  },
+  {
+    jsx: (
+      <Box drawable interactive defaultState="active" variant="solid" color="gray" intent="primary" padding="20px">
+        Active Box
+      </Box>
+    ),
+    description: 'Interactive Box in an active visual state by default.',
   },
   {
     jsx: (

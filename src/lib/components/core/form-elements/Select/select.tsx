@@ -17,7 +17,7 @@ export const Select = ({
   // DropdownList
   color,
   size,
-  itemBorderIntent,
+  intent,
   scrollAlign,
   visibleItemsCount,
   // Box
@@ -29,8 +29,6 @@ export const Select = ({
   onChange,
   dropdownPlacement,
   staticLabel,
-  triggerIntent,
-  listIntent,
 }: SelectProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
@@ -49,9 +47,7 @@ export const Select = ({
       slotsConfig={[{ name: 'Select.Option', required: true, allowMultiple: true }]}
     >
       {({ slotsByName }) => {
-        const currentSlotIndex = slotsByName['Select.Option'].findIndex(
-          slot => (slot as any).props.value === currentValue
-        )
+        const currentSlotIndex = slotsByName['Select.Option'].findIndex(slot => (slot as any).props.value === currentValue)
 
         const currentSlot = slotsByName['Select.Option'][currentSlotIndex] as ReactElement<any>
 
@@ -62,8 +58,7 @@ export const Select = ({
               tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('select'), tagAttrs?.className) }}
               color={color}
               size={size}
-              intent={listIntent}
-              itemBorderIntent={itemBorderIntent}
+              intent={intent}
               scrollToIndex={currentSlotIndex}
               scrollAlign={scrollAlign}
               visibleItemsCount={visibleItemsCount}
@@ -94,12 +89,13 @@ export const Select = ({
                         justifyContent="space-between"
                         size={size}
                         variant="solid"
-                        intent={triggerIntent}
+                        intent={intent}
                         color={color}
                         disabled={disabled}
                         fullWidth
                         ripple={!open}
-                        highlighted={open}
+                        elevated={open}
+                        interactive={!open}
                       >
                         {staticLabel || currentSlot?.props.children || 'Select ...'}
                       </Button>

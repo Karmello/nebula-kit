@@ -17,13 +17,7 @@ type PropsFromHtmlTag<T extends FooterTag = 'div'> = Omit<HtmlTagProps<T>, 'chil
 
 type PropsFromBox<T extends FooterTag = 'div'> = Pick<
   BoxProps<T>,
-  | 'padding'
-  | 'paddingBlock'
-  | 'paddingInline'
-  | 'paddingTop'
-  | 'paddingRight'
-  | 'paddingBottom'
-  | 'paddingLeft'
+  'padding' | 'paddingBlock' | 'paddingInline' | 'paddingTop' | 'paddingRight' | 'paddingBottom' | 'paddingLeft'
 >
 
 export type FooterProps<T extends FooterTag = 'div'> = PropsFromHtmlTag<T> & PropsFromBox<T> & FooterOwnProps

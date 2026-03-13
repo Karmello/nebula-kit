@@ -9,7 +9,7 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'a'>, 'tagRef' | 'tagAttrs'> & {
 
 type PropsFromButton = Pick<
   ButtonProps,
-  'color' | 'intent' | 'bold' | 'customSvgIcon' | 'iconName' | 'iconPlacement' | 'justifyContent'
+  'color' | 'intent' | 'bold' | 'customSvgIcon' | 'iconName' | 'iconPlacement' | 'justifyContent' | 'elevated'
 >
 
 type PropsFromLink = Pick<LinkProps, 'href' | 'onClick'>

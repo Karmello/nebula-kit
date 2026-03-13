@@ -32,7 +32,7 @@ export const CatalogPageTemplate = memo(
         {({ mode, setSideOpen }) => (
           <>
             <SplitView.Side inlineSize={{ base: '275px', lg: '225px' }}>
-              <SideNav>
+              <SideNav expandMode="single">
                 {data.map(({ key: categoryKey, label, items }) => {
                   const isCategorySelected = activeCategoryObj?.key === categoryKey
                   return (
@@ -57,10 +57,8 @@ export const CatalogPageTemplate = memo(
                               }
                               navigateTo(href)
                             }}
-                            intent={{
-                              base: isItemSelected ? 'secondary' : 'tertiary',
-                              lg: isItemSelected ? 'muted' : 'neutral',
-                            }}
+                            intent={{ base: 'tertiary', lg: 'neutral' }}
+                            elevated={isItemSelected}
                             bold={isItemSelected}
                           >
                             {label}
@@ -105,10 +103,8 @@ export const CatalogPageTemplate = memo(
                                   }
                                   navigateTo(href)
                                 }}
-                                intent={{
-                                  base: isItemSelected ? 'secondary' : 'tertiary',
-                                  lg: isItemSelected ? 'muted' : 'neutral',
-                                }}
+                                intent={{ base: 'tertiary', lg: 'neutral' }}
+                                elevated={isItemSelected}
                                 bold={isItemSelected}
                               >
                                 {label}
@@ -121,9 +117,7 @@ export const CatalogPageTemplate = memo(
                       <SplitView.MainBar>
                         <Flex gap="15px" alignItems="center">
                           <Text typography="h3">
-                            {pageKey === PageKey.foundations.toString()
-                              ? activeSectionObj?.label
-                              : activeItemObj?.label}
+                            {pageKey === PageKey.foundations.toString() ? activeSectionObj?.label : activeItemObj?.label}
                           </Text>
                           {pageKey !== PageKey.foundations.toString() && bundleLabel ? (
                             <Box

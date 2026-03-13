@@ -25,8 +25,8 @@ export default () => {
         </MarkerList>
         <Spacer blockSize="10px" />
         <Text>
-          Local themes allow creating isolated areas (for example a dark panel inside a light app) without
-          affecting the rest of the UI.
+          Local themes allow creating isolated areas (for example a dark panel inside a light app) without affecting the rest of
+          the UI.
         </Text>
       </Section>
       <Spacer blockSize="40px" />
@@ -91,45 +91,6 @@ export default () => {
         </MarkerList>
         <Spacer blockSize="10px" />
         <Text>Variant and intent never propagate.</Text>
-      </Section>
-      <Spacer blockSize="40px" />
-      <Section heading="About drawable surface" size="sm">
-        <Text>Only drawable Boxes participate in visual styling.</Text>
-        <Spacer blockSize="10px" />
-        <MarkerList>
-          <MarkerList.Item>
-            <Text>The drawable prop enables backgrounds, text color, variants and intents</Text>
-          </MarkerList.Item>
-          <MarkerList.Item>
-            <Text>Non-drawable Boxes are structural and visually neutral</Text>
-          </MarkerList.Item>
-          <MarkerList.Item>
-            <Text>Theme, brand, color, variant and intent apply only to drawable Boxes</Text>
-          </MarkerList.Item>
-        </MarkerList>
-        <Spacer blockSize="10px" />
-        <Text>This separation keeps layouts clean and reduces unnecessary styling work.</Text>
-      </Section>
-      <Spacer blockSize="40px" />
-      <Section heading="About local styling islands" size="sm">
-        <Text>A Box can act as a local styling boundary.</Text>
-        <Spacer blockSize="10px" />
-        <MarkerList>
-          <MarkerList.Item>
-            <Text>Theme and brand can be flipped locally</Text>
-          </MarkerList.Item>
-          <MarkerList.Item>
-            <Text>All drawable descendants follow automatically</Text>
-          </MarkerList.Item>
-          <MarkerList.Item>
-            <Text>Global settings remain unchanged</Text>
-          </MarkerList.Item>
-        </MarkerList>
-        <Spacer blockSize="10px" />
-        <Text>
-          Different combinations of theme and brand can be nested. Each Box and its contents use the nearest
-          theme and brand settings defined around them, without affecting the rest of the layout.
-        </Text>
       </Section>
     </Box>
   )

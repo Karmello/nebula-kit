@@ -75,7 +75,8 @@ export const App = () => {
                   }}
                 >
                   <Button
-                    intent={pathname.startsWith(PageKey.home) ? 'secondary' : 'muted'}
+                    intent="muted"
+                    elevated={pathname.startsWith(PageKey.home)}
                     bold={pathname.startsWith(PageKey.home)}
                     inlineSize="115px"
                   >

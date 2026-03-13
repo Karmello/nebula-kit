@@ -8,9 +8,7 @@ type ProviderProps = SideNavProps & {
 
 type ContextProps = Omit<ProviderProps, 'children'> & {
   expandedCategories: Record<string, boolean>
-  setExpandedCategories: (
-    cb: (expandedCategories: Record<string, boolean>) => Record<string, boolean>
-  ) => void
+  setExpandedCategories: (cb: (expandedCategories: Record<string, boolean>) => Record<string, boolean>) => void
 }
 
 const SideNavContext = createContext<ContextProps>({} as ContextProps)

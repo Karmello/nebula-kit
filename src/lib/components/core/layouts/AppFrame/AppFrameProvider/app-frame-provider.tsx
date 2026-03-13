@@ -6,10 +6,7 @@ type AppFrameContextValue = {
 
 const AppFrameContext = createContext<AppFrameContextValue | undefined>(undefined)
 
-export const AppFrameProvider = ({
-  children,
-  stickyHeader,
-}: { children: ReactNode } & AppFrameContextValue) => {
+export const AppFrameProvider = ({ children, stickyHeader }: { children: ReactNode } & AppFrameContextValue) => {
   return <AppFrameContext.Provider value={{ stickyHeader }}>{children}</AppFrameContext.Provider>
 }
 

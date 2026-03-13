@@ -31,9 +31,4 @@ type PropsFromRotate = {
   iconAngle?: RotateProps['angle']
 }
 
-export type WithIconProps = PropsFromHtmlTag &
-  PropsFromBox &
-  PropsFromFlex &
-  PropsFromIcon &
-  PropsFromRotate &
-  WithIconOwnProps
+export type WithIconProps = PropsFromHtmlTag & PropsFromBox & PropsFromFlex & PropsFromIcon & PropsFromRotate & WithIconOwnProps

@@ -29,7 +29,7 @@ export const Loader = ({
         ...tagAttrs,
         className: classNames(withPrefix('loader'), tagAttrs?.className || ''),
         style: {
-          '--neb-loader-color': `var(--neb-${color}-8, var(--neb-ripple-bg))`,
+          '--neb-loader-color': color ? `var(--neb-${color}-8` : 'var(--loader)',
         } as CSSProperties,
       }}
       tagRef={tagRef}

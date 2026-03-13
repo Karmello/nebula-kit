@@ -19,7 +19,7 @@ export const AutocompleteMain = ({
   // DropdownList
   color,
   size,
-  itemBorderIntent,
+  intent,
   scrollAlign,
   visibleItemsCount,
   noOptionsLabel,
@@ -33,8 +33,6 @@ export const AutocompleteMain = ({
   debounceDelay,
   placeholder,
   showToggle,
-  triggerIntent,
-  listIntent,
   // extra
   items,
   currentValue,
@@ -58,9 +56,7 @@ export const AutocompleteMain = ({
     }
   }, [queryValue, disableFiltering, items])
 
-  const currentItemIndex = items.findIndex(
-    item => (item as ReactElement<AutocompleteOptionProps>).props.value === currentValue
-  )
+  const currentItemIndex = items.findIndex(item => (item as ReactElement<AutocompleteOptionProps>).props.value === currentValue)
 
   const currentItem = items[currentItemIndex] as ReactElement<AutocompleteOptionProps>
 
@@ -99,10 +95,9 @@ export const AutocompleteMain = ({
         ...tagAttrs,
         className: classNames(withPrefix('autocomplete'), tagAttrs?.className),
       }}
-      intent={listIntent}
+      intent={intent}
       color={color}
       size={size}
-      itemBorderIntent={itemBorderIntent}
       scrollToIndex={currentItemIndex}
       scrollAlign={scrollAlign}
       visibleItemsCount={visibleItemsCount}
@@ -142,7 +137,7 @@ export const AutocompleteMain = ({
                 placeholder={placeholder}
                 size={size}
                 variant="solid"
-                intent={triggerIntent}
+                intent={intent}
                 color={color}
                 disabled={disabled}
                 endAffix={
@@ -163,6 +158,8 @@ export const AutocompleteMain = ({
                           }}
                           iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
                           iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
+                          elevated={open}
+                          interactive={!open}
                         />
                       )
                     : undefined

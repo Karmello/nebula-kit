@@ -25,13 +25,11 @@ const FORM_FIELD_PROPS_META: ComponentMeta<FormFieldProps>['props'] = {
   flexShrink: FLEX_ITEM_PROPS_META.flexShrink,
   hint: {
     options: ['string'],
-    description:
-      'Text used to render hint when no custom Form.Hint slot is defined. Acts as a shorthand for simple hints.',
+    description: 'Text used to render hint when no custom Form.Hint slot is defined. Acts as a shorthand for simple hints.',
   },
   label: {
     options: ['string'],
-    description:
-      'Text used to render label when no custom Form.Label slot is defined. Acts as a shorthand for simple labels.',
+    description: 'Text used to render label when no custom Form.Label slot is defined. Acts as a shorthand for simple labels.',
   },
   maxLength: {
     options: ['number', '{ value: number; message: string }'],

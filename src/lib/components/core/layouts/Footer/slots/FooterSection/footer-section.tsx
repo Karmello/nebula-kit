@@ -13,16 +13,8 @@ export const FooterSection = ({
   flex = DEFAULT_FOOTER_SECTION_FLEX,
   alignSelf,
 }: FooterSectionProps) => {
-  const {
-    borderIntent,
-    padding,
-    paddingBlock,
-    paddingInline,
-    paddingTop,
-    paddingRight,
-    paddingBottom,
-    paddingLeft,
-  } = useFooterContext()
+  const { borderIntent, padding, paddingBlock, paddingInline, paddingTop, paddingRight, paddingBottom, paddingLeft } =
+    useFooterContext()
 
   return (
     <Flex.Item

@@ -8,7 +8,7 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'hr'>, 'tagAttrs' | 'tagRef'>
 
 type PropsFromBox = Pick<
   BoxProps<'hr'>,
-  'color' | 'intent' | 'marginBlock' | 'marginTop' | 'marginBottom' | 'opacity'
+  'color' | 'intent' | 'marginBlock' | 'marginTop' | 'marginBottom' | 'opacity' | 'elevated'
 >
 
 export type DividerProps = PropsFromHtmlTag & PropsFromBox

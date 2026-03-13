@@ -23,8 +23,8 @@ export default () => {
         <Text tag="span" bold space="both">
           RespValue
         </Text>
-        and marked as responsive in the props table can accept either a single value or an object of
-        breakpoint-specific values, like in this example where
+        and marked as responsive in the props table can accept either a single value or an object of breakpoint-specific values,
+        like in this example where
         <Text tag="span" bold space="both">
           padding
         </Text>
@@ -60,8 +60,7 @@ export default () => {
         <Text tag="span" bold space="both">
           paddingBottom
         </Text>
-        isn't a breakpoint object, so it applies to all breakpoints by default. Because it's more specific
-        than
+        isn't a breakpoint object, so it applies to all breakpoints by default. Because it's more specific than
         <Text tag="span" bold space="start">
           padding
         </Text>
@@ -83,15 +82,15 @@ export default () => {
       </MarkerList>
       <Spacer blockSize="40px" />
       <Text>
-        Responsive values can override forward, but they never cancel earlier values. If you need a different
-        value at a later breakpoint, provide it explicitly:
+        Responsive values can override forward, but they never cancel earlier values. If you need a different value at a later
+        breakpoint, provide it explicitly:
       </Text>
       <Spacer blockSize="10px" />
       <CodeSnippet lang="tsx" code={`<Box padding={{ base: "10px", lg: "0px" }} />`} />
       <Spacer blockSize="40px" />
       <Text>
-        This model keeps responsive behavior predictable, avoids hidden defaults and ensures styles never
-        change implicitly when breakpoints shift.
+        This model keeps responsive behavior predictable, avoids hidden defaults and ensures styles never change implicitly when
+        breakpoints shift.
       </Text>
     </Box>
   )

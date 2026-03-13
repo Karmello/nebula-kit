@@ -10,44 +10,57 @@ test('Box paints ctx primary solid color by default', async ({ mount, page }) =>
     </Box>
   )
 
-  const result = await page.locator('#box').evaluate(el => {
-    const cs = getComputedStyle(el)
-    return {
-      bg: cs.backgroundColor,
-      ctx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-primary-solid').trim(),
-    }
+  const result = await page.evaluate(() => {
+    const el = document.getElementById('box')!
+    const bg = getComputedStyle(el).backgroundColor
+    return { bg }
   })
 
-  expect(result.ctx).not.toBe('')
-  expect(result.bg).toBe(tinycolor(result.ctx).toRgbString())
+  // must resolve to a real color
+  expect(result.bg).toMatch(/^rgb\(/)
+
+  // resolve ctx primary via browser
+  const ctxResolved = await page.evaluate(() => {
+    const el = document.createElement('div')
+    el.style.backgroundColor = 'var(--neb-ctx-color-5)'
+    document.body.appendChild(el)
+    const value = getComputedStyle(el).backgroundColor
+    document.body.removeChild(el)
+    return value
+  })
+
+  expect(result.bg).toBe(ctxResolved)
 })
 
 test('Nested Box inherits ctx primary solid color', async ({ mount, page }) => {
   await mount(
-    <Box
-      tagAttrs={{ id: 'parent' }}
-      drawable
-      variant="solid"
-      intent="primary"
-      blockSize="200px"
-      padding="16px"
-    >
+    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" blockSize="200px" padding="16px">
       <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" blockSize="100px">
         Child
       </Box>
     </Box>
   )
 
-  const result = await page.locator('#child').evaluate(el => {
-    const cs = getComputedStyle(el)
-    return {
-      bg: cs.backgroundColor,
-      ctx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-primary-solid').trim(),
-    }
+  const result = await page.evaluate(() => {
+    const child = document.getElementById('child')!
+    const bg = getComputedStyle(child).backgroundColor
+    return { bg }
   })
 
-  expect(result.ctx).not.toBe('')
-  expect(result.bg).toBe(tinycolor(result.ctx).toRgbString())
+  // must resolve to a real color
+  expect(result.bg).toMatch(/^rgb\(/)
+
+  // resolve ctx primary via browser
+  const ctxResolved = await page.evaluate(() => {
+    const el = document.createElement('div')
+    el.style.backgroundColor = 'var(--neb-ctx-color-5)'
+    document.body.appendChild(el)
+    const value = getComputedStyle(el).backgroundColor
+    document.body.removeChild(el)
+    return value
+  })
+
+  expect(result.bg).toBe(ctxResolved)
 })
 
 test('Box with dark theme uses dark ctx colors inside light app', async ({ mount, page }) => {
@@ -57,37 +70,33 @@ test('Box with dark theme uses dark ctx colors inside light app', async ({ mount
     </Box>
   )
 
-  const result = await page.locator('#box').evaluate(el => {
-    const cs = getComputedStyle(el)
-    return {
-      bg: cs.backgroundColor,
-      ctx: cs.getPropertyValue('--neb-primary-solid').trim(),
-    }
+  const result = await page.evaluate(() => {
+    const el = document.getElementById('box')!
+    const bg = getComputedStyle(el).backgroundColor
+    return { bg }
   })
 
-  expect(result.ctx).not.toBe('')
-  expect(result.bg).toBe(tinycolor(result.ctx).toRgbString())
+  // must resolve to a real color
+  expect(result.bg).toMatch(/^rgb\(/)
+
+  // resolve ctx primary *within dark theme scope*
+  const darkResolved = await page.evaluate(() => {
+    const el = document.createElement('div')
+    el.setAttribute('data-theme', 'dark')
+    el.style.backgroundColor = 'var(--neb-ctx-color-5)'
+    document.body.appendChild(el)
+    const value = getComputedStyle(el).backgroundColor
+    document.body.removeChild(el)
+    return value
+  })
+
+  expect(result.bg).toBe(darkResolved)
 })
 
 test('Nested theme islands reset correctly (light → dark → light)', async ({ mount, page }) => {
   await mount(
-    <Box
-      tagAttrs={{ id: 'dark-parent' }}
-      drawable
-      variant="solid"
-      intent="inverse"
-      theme="dark"
-      blockSize="200px"
-      padding="16px"
-    >
-      <Box
-        tagAttrs={{ id: 'light-child' }}
-        drawable
-        variant="solid"
-        intent="inverse"
-        theme="light"
-        blockSize="100px"
-      >
+    <Box tagAttrs={{ id: 'dark-parent' }} drawable variant="solid" intent="inverse" theme="dark" blockSize="200px" padding="16px">
+      <Box tagAttrs={{ id: 'light-child' }} drawable variant="solid" intent="inverse" theme="light" blockSize="100px">
         Light Child
       </Box>
     </Box>
@@ -100,7 +109,7 @@ test('Nested theme islands reset correctly (light → dark → light)', async ({
     return {
       darkBg: getComputedStyle(dark).backgroundColor,
       lightBg: getComputedStyle(light).backgroundColor,
-      lightCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-inverse-solid').trim(),
+      lightCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-color-9').trim(),
     }
   })
 
@@ -114,32 +123,9 @@ test('Nested theme islands reset correctly (light → dark → light)', async ({
 
 test('Nested theme islands reset correctly (light → dark → light → dark)', async ({ mount, page }) => {
   await mount(
-    <Box
-      tagAttrs={{ id: 'dark-1' }}
-      drawable
-      variant="solid"
-      intent="inverse"
-      theme="dark"
-      blockSize="300px"
-      padding="16px"
-    >
-      <Box
-        tagAttrs={{ id: 'light-1' }}
-        drawable
-        variant="solid"
-        intent="inverse"
-        theme="light"
-        blockSize="220px"
-        padding="16px"
-      >
-        <Box
-          tagAttrs={{ id: 'dark-2' }}
-          drawable
-          variant="solid"
-          intent="inverse"
-          theme="dark"
-          blockSize="140px"
-        >
+    <Box tagAttrs={{ id: 'dark-1' }} drawable variant="solid" intent="inverse" theme="dark" blockSize="300px" padding="16px">
+      <Box tagAttrs={{ id: 'light-1' }} drawable variant="solid" intent="inverse" theme="light" blockSize="220px" padding="16px">
+        <Box tagAttrs={{ id: 'dark-2' }} drawable variant="solid" intent="inverse" theme="dark" blockSize="140px">
           Dark Again
         </Box>
       </Box>
@@ -156,7 +142,7 @@ test('Nested theme islands reset correctly (light → dark → light → dark)',
       light1Bg: getComputedStyle(light1).backgroundColor,
       dark2Bg: getComputedStyle(dark2).backgroundColor,
 
-      lightCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-inverse-solid').trim(),
+      lightCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-color-9').trim(),
     }
   })
 
@@ -184,14 +170,25 @@ test('Global dark theme paints primary solid correctly', async ({ mount, page })
     }
   )
 
-  const result = await page.locator('#box').evaluate(el => {
-    const cs = getComputedStyle(el)
-    return {
-      bg: cs.backgroundColor,
-      semantic: cs.getPropertyValue('--neb-primary-solid').trim(),
-    }
+  const result = await page.evaluate(() => {
+    const el = document.getElementById('box')!
+    const bg = getComputedStyle(el).backgroundColor
+    return { bg }
   })
 
-  expect(result.semantic).not.toBe('')
-  expect(result.bg).toBe(tinycolor(result.semantic).toRgbString())
+  // must resolve to a real color
+  expect(result.bg).toMatch(/^rgb\(/)
+
+  // resolve dark ctx primary via browser
+  const darkResolved = await page.evaluate(() => {
+    const el = document.createElement('div')
+    el.setAttribute('data-theme', 'dark')
+    el.style.backgroundColor = 'var(--neb-ctx-color-5)'
+    document.body.appendChild(el)
+    const value = getComputedStyle(el).backgroundColor
+    document.body.removeChild(el)
+    return value
+  })
+
+  expect(result.bg).toBe(darkResolved)
 })

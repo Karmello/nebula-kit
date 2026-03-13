@@ -19,6 +19,7 @@ export const Divider = ({
   marginTop,
   marginBottom,
   opacity,
+  elevated,
 }: DividerProps) => {
   return (
     <Box
@@ -38,6 +39,7 @@ export const Divider = ({
       marginTop={marginTop}
       marginBottom={marginBottom}
       opacity={opacity}
+      elevated={elevated}
     />
   )
 }

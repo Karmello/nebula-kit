@@ -4,13 +4,7 @@ import { Box, WithIcon } from 'lib/components'
 import { updateDomStaticDataset } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
 
-import {
-  TEXT_TYPOGRAPHY_CONFIG,
-  DEFAULT_TEXT_TYPOGRAPHY,
-  DEFAULT_TEXT_SCALE,
-  TextTag,
-  TextProps,
-} from './definitions'
+import { TEXT_TYPOGRAPHY_CONFIG, DEFAULT_TEXT_TYPOGRAPHY, DEFAULT_TEXT_SCALE, TextTag, TextProps } from './definitions'
 
 import './text.scss'
 

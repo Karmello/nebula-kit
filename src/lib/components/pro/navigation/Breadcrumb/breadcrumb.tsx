@@ -2,13 +2,7 @@ import { useState, Fragment, useCallback } from 'react'
 
 import { Box, Flex, Button, DropdownList, Icon } from 'lib/components'
 
-import {
-  BreadcrumbProps,
-  BreadcrumbTag,
-  DEFAULT_BREADCRUMB_SIZE,
-  DEFAULT_BREADCRUMB_INTENT,
-  DEFAULT_BREADCRUMB_ITEM_BORDER_INTENT,
-} from './definitions'
+import { BreadcrumbProps, BreadcrumbTag, DEFAULT_BREADCRUMB_SIZE, DEFAULT_BREADCRUMB_INTENT } from './definitions'
 
 import { convertTreeToLevels } from './helpers'
 
@@ -20,7 +14,6 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
   // DropdownList
   color,
   intent = DEFAULT_BREADCRUMB_INTENT,
-  itemBorderIntent = DEFAULT_BREADCRUMB_ITEM_BORDER_INTENT,
   size = DEFAULT_BREADCRUMB_SIZE,
   // own
   tree,
@@ -69,15 +62,22 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                 size={size}
                 color={color}
                 intent={intent}
-                itemBorderIntent={itemBorderIntent}
                 scrollToIndex={scrollToIndex > -1 ? scrollToIndex : undefined}
                 scrollAlign="center"
-                placement={index < levels.length - 1 ? 'bottom-start' : 'bottom-end'}
+                placement={index === 0 || index < levels.length - 1 ? 'bottom-start' : 'bottom-end'}
               >
                 {({ open }) => (
                   <>
                     <DropdownList.Trigger>
-                      <Button size={size} variant="ghost" color={color} intent="primary" ripple={!open} bold>
+                      <Button
+                        size={size}
+                        variant="ghost"
+                        color={color}
+                        intent="primary"
+                        ripple={!open}
+                        defaultState={open ? 'active' : undefined}
+                        bold
+                      >
                         {levels[index].find(node => node.value === currentPath[index])?.label || 'Select ...'}
                       </Button>
                     </DropdownList.Trigger>
@@ -95,9 +95,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                   </>
                 )}
               </DropdownList>
-              {index < levels.length - 1 ? (
-                <Icon name="chevron-right" color={color} intent="primary" />
-              ) : null}
+              {index < levels.length - 1 ? <Icon name="chevron-right" color={color} intent="primary" /> : null}
             </Fragment>
           )
         })}

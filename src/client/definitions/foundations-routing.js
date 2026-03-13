@@ -53,6 +53,8 @@ export const FOUNDATIONS_CATEGORIES = [
           { key: 'intents-and-variants', label: 'Intents + variants' },
           { key: 'color-application', label: 'Color application' },
           { key: 'styling-axes', label: 'Styling axes' },
+          { key: 'drawable-surface', label: 'Drawable surface' },
+          { key: 'theme-island', label: 'Theme island' },
         ],
       },
       {
@@ -75,6 +77,7 @@ export const FOUNDATIONS_CATEGORIES = [
         key: 'changelog',
         label: 'Changelog',
         sections: [
+          { key: 'v0.7.0', label: 'v0.7.0' },
           { key: 'v0.6.1', label: 'v0.6.1' },
           { key: 'v0.6.0', label: 'v0.6.0' },
           { key: 'v0.5.0', label: 'v0.5.0' },

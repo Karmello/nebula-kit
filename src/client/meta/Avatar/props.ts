@@ -1,12 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { AvatarProps } from 'lib/components'
 
-import {
-  AVATAR_SHAPES,
-  AVATAR_SIZES,
-  DEFAULT_AVATAR_SHAPE,
-  DEFAULT_AVATAR_SIZE,
-} from 'lib/components/pro/elements/Avatar'
+import { AVATAR_SHAPES, AVATAR_SIZES, DEFAULT_AVATAR_SHAPE, DEFAULT_AVATAR_SIZE } from 'lib/components/pro/elements/Avatar'
 
 import { IMAGE_PROPS_META } from '../Image/props'
 
@@ -26,8 +21,7 @@ const AVATAR_PROPS_META: ComponentMeta<AvatarProps>['props'] = {
   shape: {
     options: AVATAR_SHAPES as never,
     defaultValue: DEFAULT_AVATAR_SHAPE,
-    description:
-      "Controls the avatar's outer shape. Use round for a circular avatar or square for a rectangular one.",
+    description: "Controls the avatar's outer shape. Use round for a circular avatar or square for a rectangular one.",
   },
   size: {
     options: AVATAR_SIZES,

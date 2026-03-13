@@ -11,11 +11,15 @@ import {
   THEMES,
 } from 'lib/definitions'
 
-import { BoxProps, BOX_VARIANTS, BOX_INTENTS } from 'lib/components/core/base/Box'
+import { BoxProps, BOX_VARIANTS, BOX_INTENTS, BOX_DEFAULT_STATE } from 'lib/components/core/base/Box'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
+  activeOnFocus: {
+    options: ['boolean'],
+    description: 'When true, applies the active visual state while the component is focus-visible.',
+  },
   aspectRatio: {
     options: ['CSS'],
     isResponsive: true,
@@ -107,6 +111,10 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Color applied to the component.',
     tooltip: COLORS,
   },
+  defaultState: {
+    options: BOX_DEFAULT_STATE,
+    description: 'Overrides the base interaction state while preserving natural interaction behavior.',
+  },
   disabled: {
     options: ['boolean'],
     description: 'Disables the component and its interactions.',
@@ -123,10 +131,9 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description:
       'Enables visual rendering for the Box surface. When enabled, the Box participates in theming, colors, variants and intents. When disabled, it behaves as a neutral structural container with no visual styling applied.',
   },
-  highlighted: {
+  elevated: {
     options: ['boolean'],
-    description:
-      'Shows the element in its hovered visual state by default, without requiring pointer interaction. Applies only when interactive is enabled and has no effect when disabled.',
+    description: 'Emphasizes the component by increasing its surface color intensity.',
   },
   inlineSize: {
     options: ['CSS'],
@@ -148,8 +155,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   interactive: {
     options: ['boolean'],
-    description:
-      'Enables visual interaction affordances such as hover styling and focus ring. Does not affect tabIndex, focusability or activation behavior.',
+    description: 'Enables visual interaction affordances such as hover or active styling.',
   },
   left: {
     options: ['CSS'],

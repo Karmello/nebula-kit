@@ -36,11 +36,7 @@ export default () => {
           </Table.HeaderCell>
         </Table.HeaderRow>
       </Table.Header>
-      <Table.Body
-        intent={getUser.isMakingRequest ? 'muted' : 'tertiary'}
-        paddingBlock="10px"
-        paddingInline="18px"
-      >
+      <Table.Body intent={getUser.isMakingRequest ? 'muted' : 'tertiary'} paddingBlock="10px" paddingInline="18px">
         <Table.Row>
           <Table.Cell colSpan={1}>
             <Text>Email</Text>
@@ -122,27 +118,13 @@ export default () => {
             {getUser.data ? (
               <Text
                 iconName={
-                  getUser.data.user.plan !== 'free'
-                    ? !!getUser.data?.user.discordUserId
-                      ? 'check'
-                      : 'close'
-                    : undefined
+                  getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.discordUserId ? 'check' : 'close') : undefined
                 }
-                color={
-                  getUser.data.user.plan !== 'free'
-                    ? !!getUser.data?.user.discordUserId
-                      ? 'green'
-                      : 'red'
-                    : undefined
-                }
+                color={getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.discordUserId ? 'green' : 'red') : undefined}
                 intent={getUser.data.user.plan !== 'free' ? 'primary' : undefined}
                 bold
               >
-                {getUser.data.user.plan !== 'free'
-                  ? !!getUser.data?.user.discordUserId
-                    ? 'Connected'
-                    : 'Not connected'
-                  : '-'}
+                {getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.discordUserId ? 'Connected' : 'Not connected') : '-'}
               </Text>
             ) : null}
           </Table.Cell>
@@ -157,18 +139,10 @@ export default () => {
                 <Flex.Item alignSelf="auto">
                   <Text
                     iconName={
-                      getUser.data.user.plan !== 'free'
-                        ? !!getUser.data?.user.githubUsername
-                          ? 'check'
-                          : 'close'
-                        : undefined
+                      getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.githubUsername ? 'check' : 'close') : undefined
                     }
                     color={
-                      getUser.data.user.plan !== 'free'
-                        ? !!getUser.data?.user.githubUsername
-                          ? 'green'
-                          : 'red'
-                        : undefined
+                      getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.githubUsername ? 'green' : 'red') : undefined
                     }
                     intent={getUser.data.user.plan !== 'free' ? 'primary' : undefined}
                     bold

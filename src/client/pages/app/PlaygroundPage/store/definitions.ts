@@ -1,15 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { RespValue } from 'lib/definitions'
 
-import {
-  BoxProps,
-  ButtonProps,
-  CalloutProps,
-  SectionProps,
-  TextProps,
-  IconProps,
-  CheckboxProps,
-} from 'lib/components'
+import { BoxProps, ButtonProps, CalloutProps, SectionProps, TextProps, IconProps, CheckboxProps } from 'lib/components'
 
 export type PropValue = RespValue<string | number | boolean>
 
@@ -43,9 +35,10 @@ export const PLAYGROUND_MAP: Record<string, unknown[]> = {
     'brand',
     'children',
     'color',
+    'defaultState',
     'disabled',
     'drawable',
-    'highlighted',
+    'elevated',
     'inlineSize',
     'intent',
     'interactive',
@@ -53,19 +46,22 @@ export const PLAYGROUND_MAP: Record<string, unknown[]> = {
     'padding',
     'theme',
     'variant',
+    'visibility',
   ] as (keyof BoxProps)[],
   Button: [
     'bold',
     'children',
     'color',
+    'defaultState',
     'disabled',
+    'elevated',
     'fullWidth',
-    'highlighted',
     'iconAngle',
     'iconName',
     'iconPlacement',
     'inlineSize',
     'intent',
+    'interactive',
     'justifyContent',
     'loading',
     'minInlineSize',
@@ -91,16 +87,7 @@ export const PLAYGROUND_MAP: Record<string, unknown[]> = {
     'typography',
     'underline',
   ] as (keyof TextProps)[],
-  Section: [
-    'children',
-    'color',
-    'heading',
-    'iconName',
-    'iconPlacement',
-    'intent',
-    'size',
-    'variant',
-  ] as (keyof SectionProps)[],
+  Section: ['children', 'color', 'heading', 'iconName', 'iconPlacement', 'intent', 'size', 'variant'] as (keyof SectionProps)[],
   Callout: ['content', 'heading', 'intent', 'size', 'status', 'variant'] as (keyof CalloutProps)[],
   Icon: ['color', 'intent', 'name', 'size'] as (keyof IconProps)[],
   Checkbox: ['checked', 'color', 'disabled', 'intent', 'size', 'variant'] as (keyof CheckboxProps)[],

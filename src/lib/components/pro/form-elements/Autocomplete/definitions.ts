@@ -1,4 +1,4 @@
-import { BoxProps, DropdownListProps, HtmlTagProps, InputProps } from 'lib/components'
+import { BoxProps, DropdownListProps, HtmlTagProps } from 'lib/components'
 
 export const DEFAULT_AUTOCOMPLETE_INLINE_SIZE: AutocompleteProps['inlineSize'] = '100%'
 export const DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING: AutocompleteProps['disableFiltering'] = false
@@ -14,8 +14,6 @@ type AutocompleteOwnProps = {
   debounceDelay?: number
   placeholder?: string
   showToggle?: boolean
-  triggerIntent?: InputProps['intent']
-  listIntent?: DropdownListProps['intent']
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
@@ -26,7 +24,7 @@ type PropsFromBox = Pick<BoxProps<'div'>, 'inlineSize' | 'disabled'>
 
 type PropsFromDropdownList = Pick<
   DropdownListProps,
-  'color' | 'size' | 'itemBorderIntent' | 'scrollAlign' | 'visibleItemsCount' | 'noOptionsLabel'
+  'color' | 'size' | 'intent' | 'scrollAlign' | 'visibleItemsCount' | 'noOptionsLabel'
 >
 
 export type AutocompleteProps = PropsFromHtmlTag & PropsFromBox & PropsFromDropdownList & AutocompleteOwnProps

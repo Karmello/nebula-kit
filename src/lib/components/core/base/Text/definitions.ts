@@ -45,18 +45,7 @@ export const TEXT_SPACE = ['start', 'end', 'both'] as const
 export const DEFAULT_TEXT_TYPOGRAPHY: TextTypography = 'body'
 export const DEFAULT_TEXT_SCALE: TextScale = 'regular'
 
-export const TEXT_TYPOGRAPHY = [
-  'body',
-  'lead',
-  'small',
-  'caption',
-  'h6',
-  'h5',
-  'h4',
-  'h3',
-  'h2',
-  'h1',
-] as const
+export const TEXT_TYPOGRAPHY = ['body', 'lead', 'small', 'caption', 'h6', 'h5', 'h4', 'h3', 'h2', 'h1'] as const
 
 export const TEXT_SCALE = ['regular', 'compact'] as const
 
@@ -89,7 +78,4 @@ type PropsFromWithIcon = {
   customSvgIcon?: WithIconProps['customSvgIcon']
 }
 
-export type TextProps<T extends TextTag = 'p'> = PropsFromHtmlTag<T> &
-  PropsFromBox<T> &
-  PropsFromWithIcon &
-  TextOwnProps
+export type TextProps<T extends TextTag = 'p'> = PropsFromHtmlTag<T> & PropsFromBox<T> & PropsFromWithIcon & TextOwnProps

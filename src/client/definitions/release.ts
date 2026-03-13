@@ -1,4 +1,5 @@
 export const RELEASE_VERSIONS = [
+  '0.7.0',
   '0.6.1',
   '0.6.0',
   '0.5.0',
@@ -19,6 +20,20 @@ export const RELEASE_INFO: Record<
     changelog?: { main?: string[]; core?: string[]; pro?: string[] }
   }
 > = {
+  '0.7.0': {
+    timestamp: 1773443646502,
+    changelog: {
+      main: [
+        'simplified the color system by reducing the palette to nine core colors',
+        'reduced the number of brand colors',
+        'standardized lightness scale across all brand palettes',
+        'consolidated theme color token mapping into a single source and simplified dark theme to use palette inversion',
+        'introduced an elevated surface state axis to separate semantic intent from stateful surface appearance and simplify component APIs',
+        'replaced color-mix() state blending with relative lightness scaling',
+        'rebalanced ripple opacity values across all theme, variant and intent combinations',
+      ],
+    },
+  },
   '0.6.1': {
     timestamp: 1770829250673,
     changelog: {

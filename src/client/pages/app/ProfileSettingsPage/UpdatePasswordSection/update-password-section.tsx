@@ -17,8 +17,7 @@ export const UpdatePasswordSection = () => {
   return (
     <Section heading="Password" variant="outline" intent="tertiary">
       <Text>
-        You can update your account password here. For security, your current password is required to complete
-        the change.
+        You can update your account password here. For security, your current password is required to complete the change.
       </Text>
       <Spacer blockSize="30px" />
       <Box maxInlineSize={{ md: '350px' }}>
@@ -45,13 +44,7 @@ export const UpdatePasswordSection = () => {
             return (
               <>
                 <Form.Fields>
-                  <Form.Field
-                    name="currentPassword"
-                    label="Current password"
-                    required
-                    minLength={8}
-                    maxLength={128}
-                  >
+                  <Form.Field name="currentPassword" label="Current password" required minLength={8} maxLength={128}>
                     <Input
                       tagAttrs={{
                         type: hideCurrentPassword ? 'password' : 'text',

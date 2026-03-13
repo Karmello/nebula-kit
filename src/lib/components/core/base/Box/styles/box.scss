@@ -1,10 +1,7 @@
-@use 'styles/definitions/definitions.scss' as *;
-
 @use './solid.scss';
 @use './outline.scss';
 @use './soft-outline.scss';
 @use './ghost.scss';
-@use './box-ripple.scss';
 
 .neb-box {
   background-color: transparent;
@@ -52,6 +49,7 @@
 }
 
 .neb-box[data-neb-box-disabled='true'] {
+  opacity: 0.6;
   pointer-events: none;
 }
 

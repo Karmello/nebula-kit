@@ -1,12 +1,4 @@
-import {
-  ElementType,
-  ComponentRef,
-  ComponentProps,
-  PropsWithoutRef,
-  useLayoutEffect,
-  useEffect,
-  useRef,
-} from 'react'
+import { ElementType, ComponentRef, ComponentProps, PropsWithoutRef, useLayoutEffect, useEffect, useRef } from 'react'
 
 import classNames from 'classnames'
 
@@ -23,17 +15,19 @@ export const Box = <T extends ElementType = 'div'>({
   tag,
   tagAttrs,
   tagRef,
-  // own
+  // surface
   drawable,
+  elevated,
   theme,
   brand,
   color,
   variant,
   intent,
-  // state
+  // interaction
   interactive,
+  defaultState,
+  activeOnFocus,
   disabled,
-  highlighted,
   // css
   opacity,
   visibility,
@@ -226,9 +220,11 @@ export const Box = <T extends ElementType = 'div'>({
           disabled,
           ...updateDomStaticDataset('Box', {
             drawable,
+            elevated,
             interactive,
+            defaultState,
+            activeOnFocus,
             disabled,
-            highlighted,
           }),
         } as PropsWithoutRef<ComponentProps<T>>
       }

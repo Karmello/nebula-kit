@@ -28,14 +28,7 @@ const IMAGE_EXAMPLES_META: ComponentMeta<ImageProps>['examples'] = [
     description: 'Image constrained by a fixed aspect ratio.',
     jsx: (
       <Box textAlign="center">
-        <Image
-          src={img1}
-          display="inline-block"
-          inlineSize="300px"
-          aspectRatio="16 / 9"
-          objectFit="cover"
-          overflow="hidden"
-        />
+        <Image src={img1} display="inline-block" inlineSize="300px" aspectRatio="16 / 9" objectFit="cover" overflow="hidden" />
       </Box>
     ),
   },

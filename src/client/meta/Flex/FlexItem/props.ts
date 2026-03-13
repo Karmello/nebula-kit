@@ -18,8 +18,7 @@ const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemProps>['props'] = {
   flexGrow: {
     options: ['CSS'],
     isResponsive: true,
-    description:
-      'Controls how much the item can grow relative to the other items when extra space is available.',
+    description: 'Controls how much the item can grow relative to the other items when extra space is available.',
     link: true,
   },
   flexShrink: {

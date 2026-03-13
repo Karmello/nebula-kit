@@ -5,19 +5,7 @@ import { useAppStore } from 'client/store'
 import { PageKey } from 'client/definitions'
 import { useRegisterUser } from 'client/api'
 
-import {
-  Box,
-  Button,
-  Divider,
-  Flex,
-  Form,
-  Input,
-  Link,
-  Section,
-  Spacer,
-  Text,
-  useSnackbar,
-} from 'lib/components'
+import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, Text, useSnackbar } from 'lib/components'
 
 type RegisterFormValues = {
   email: string
@@ -38,10 +26,7 @@ export const RegisterPage = () => {
   }, [])
 
   const onResponse = useCallback(
-    async (
-      res: UseMakeApiRequestRes<typeof registerUser.data, typeof registerUser.error>,
-      formContext: any
-    ) => {
+    async (res: UseMakeApiRequestRes<typeof registerUser.data, typeof registerUser.error>, formContext: any) => {
       if (res.ok) {
         show({ status: 'info', content: res.data.message })
       } else {
@@ -66,8 +51,8 @@ export const RegisterPage = () => {
       <Box inlineSize="400px" maxInlineSize="100%" margin="0 auto">
         <Section heading="Registration" iconName="user-plus">
           <Text typography="caption" intent="secondary">
-            We only use your email for account access and essential security steps. If you ever change your
-            mind, you can permanently remove your account in the settings.
+            We only use your email for account access and essential security steps. If you ever change your mind, you can
+            permanently remove your account in the settings.
           </Text>
           <Spacer blockSize="35px" />
           <Form<RegisterFormValues>

@@ -17,7 +17,7 @@ export const MultiSelect = ({
   // DropdownList
   color,
   size,
-  itemBorderIntent,
+  intent,
   scrollAlign,
   visibleItemsCount,
   // Box
@@ -28,8 +28,6 @@ export const MultiSelect = ({
   value,
   onChange,
   dropdownPlacement,
-  triggerIntent,
-  listIntent,
 }: MultiSelectProps) => {
   const [internalValue, setInternalValue] = useState<string[]>(defaultValue || [])
 
@@ -37,9 +35,7 @@ export const MultiSelect = ({
   const currentValue = isControlled ? value : internalValue
 
   const handleChange = (value: string) => {
-    const nextValue = currentValue?.includes(value)
-      ? currentValue.filter(v => v !== value)
-      : [...(currentValue || []), value]
+    const nextValue = currentValue?.includes(value) ? currentValue.filter(v => v !== value) : [...(currentValue || []), value]
 
     if (!isControlled) setInternalValue(nextValue)
     onChange?.(nextValue)
@@ -52,9 +48,7 @@ export const MultiSelect = ({
       slotsConfig={[{ name: 'MultiSelect.Option', required: true, allowMultiple: true }]}
     >
       {({ slotsByName }) => {
-        const currentSlotIndex = slotsByName['MultiSelect.Option'].findIndex(
-          slot => (slot as any).props.value === currentValue
-        )
+        const currentSlotIndex = slotsByName['MultiSelect.Option'].findIndex(slot => (slot as any).props.value === currentValue)
 
         const currentLabel = slotsByName['MultiSelect.Option']
           .map(slot => {
@@ -73,10 +67,9 @@ export const MultiSelect = ({
                 ...tagAttrs,
                 className: classNames(withPrefix('multi-select'), tagAttrs?.className),
               }}
-              intent={listIntent}
+              intent={intent}
               color={color}
               size={size}
-              itemBorderIntent={itemBorderIntent}
               scrollToIndex={currentSlotIndex}
               scrollAlign={scrollAlign}
               visibleItemsCount={visibleItemsCount}
@@ -108,12 +101,13 @@ export const MultiSelect = ({
                         justifyContent="space-between"
                         size={size}
                         variant="solid"
-                        intent={triggerIntent}
+                        intent={intent}
                         color={color}
                         disabled={disabled}
                         fullWidth
                         ripple={!open}
-                        highlighted={open}
+                        elevated={open}
+                        interactive={!open}
                       >
                         {currentLabel || 'Select ...'}
                       </Button>
@@ -129,9 +123,7 @@ export const MultiSelect = ({
                             onClick: () => handleChange(slotProps.value),
                           }}
                           bold={currentValue.includes(slotProps.value)}
-                          justifyContent={
-                            slotProps.justifyContent || DEFAULT_MULTI_SELECT_OPTION_JUSTIFY_CONTENT
-                          }
+                          justifyContent={slotProps.justifyContent || DEFAULT_MULTI_SELECT_OPTION_JUSTIFY_CONTENT}
                         >
                           {slot}
                         </DropdownList.Item>

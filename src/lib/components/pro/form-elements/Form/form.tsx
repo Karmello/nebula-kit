@@ -16,11 +16,7 @@ import {
   FormProps,
 } from './definitions'
 
-export const Form = <
-  TFieldValues extends FieldValues = FieldValues,
-  TContext = any,
-  TTransformedValues = TFieldValues,
->({
+export const Form = <TFieldValues extends FieldValues = FieldValues, TContext = any, TTransformedValues = TFieldValues>({
   // RHF
   useFormProps,
   onValidSubmission,

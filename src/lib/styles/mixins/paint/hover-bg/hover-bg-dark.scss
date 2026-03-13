@@ -1,0 +1,19 @@
+@mixin paint($elevated: false) {
+  $el: if($elevated, '-elevated', '');
+
+  // outline
+  --neb-outline-neutral#{$el}-bg-hover: color-mix(in hsl, var(--neb-outline-neutral#{$el}) 70%, transparent);
+  --neb-outline-muted#{$el}-bg-hover: color-mix(in hsl, var(--neb-outline-muted#{$el}) 70%, transparent);
+  --neb-outline-tertiary#{$el}-bg-hover: color-mix(in hsl, var(--neb-outline-tertiary#{$el}) 40%, transparent);
+  --neb-outline-secondary#{$el}-bg-hover: color-mix(in hsl, var(--neb-outline-secondary#{$el}) 20%, transparent);
+  --neb-outline-primary#{$el}-bg-hover: color-mix(in hsl, var(--neb-outline-primary#{$el}) 15%, transparent);
+  --neb-outline-inverse#{$el}-bg-hover: color-mix(in hsl, var(--neb-outline-inverse#{$el}) 10%, transparent);
+
+  // soft-outline
+  --neb-soft-outline-neutral#{$el}-bg-hover: color-mix(in hsl, var(--neb-soft-outline-neutral#{$el}) 70%, transparent);
+  --neb-soft-outline-muted#{$el}-bg-hover: color-mix(in hsl, var(--neb-soft-outline-muted#{$el}) 70%, transparent);
+  --neb-soft-outline-tertiary#{$el}-bg-hover: color-mix(in hsl, var(--neb-soft-outline-tertiary#{$el}) 40%, transparent);
+  --neb-soft-outline-secondary#{$el}-bg-hover: color-mix(in hsl, var(--neb-soft-outline-secondary#{$el}) 20%, transparent);
+  --neb-soft-outline-primary#{$el}-bg-hover: color-mix(in hsl, var(--neb-soft-outline-primary#{$el}) 15%, transparent);
+  --neb-soft-outline-inverse#{$el}-bg-hover: color-mix(in hsl, var(--neb-soft-outline-inverse#{$el}) 10%, transparent);
+}

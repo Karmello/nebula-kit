@@ -33,8 +33,7 @@ const TABLE_PROPS_META: ComponentMeta<TableProps>['props'] = {
   layout: {
     options: TABLE_LAYOUTS,
     defaultValue: DEFAULT_TABLE_LAYOUT,
-    description:
-      'Defines the layout algorithm: "auto" sizes columns by content, "fixed" by table width and column widths.',
+    description: 'Defines the layout algorithm: "auto" sizes columns by content, "fixed" by table width and column widths.',
   },
   maxInlineSize: BOX_PROPS_META.maxInlineSize,
   minInlineSize: BOX_PROPS_META.minInlineSize,

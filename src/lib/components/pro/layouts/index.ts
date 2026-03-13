@@ -6,10 +6,4 @@ export {
   type SplitViewSideProps,
 } from './SplitView'
 
-export {
-  Toolbar,
-  type ToolbarProps,
-  type ToolbarStartProps,
-  type ToolbarMainProps,
-  type ToolbarEndProps,
-} from './Toolbar'
+export { Toolbar, type ToolbarProps, type ToolbarStartProps, type ToolbarMainProps, type ToolbarEndProps } from './Toolbar'

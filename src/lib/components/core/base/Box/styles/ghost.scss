@@ -1,26 +1,46 @@
-@use 'styles/definitions/definitions.scss' as *;
+@use 'styles/definitions/common.scss' as *;
 
 .neb-box[data-neb-box-drawable='true'] {
   &[data-neb-box-variant='ghost'] {
     border-radius: var(--neb-border-radius);
 
-    @each $intent in $neb-intents {
+    @each $intent in $intents {
       &[data-neb-box-intent='#{$intent}'] {
-        --neb-ripple-bg: var(--neb-#{$intent}-ghost-hover);
+        // base
+        --text: var(--neb-ghost-#{$intent});
+        --text-hover: var(--neb-ghost-#{$intent}-hover);
+        --text-active: var(--neb-ghost-#{$intent}-active);
+        --text-disabled: var(--neb-ghost-#{$intent}-disabled);
+        --loader: var(--neb-ghost-#{$intent}-loader);
+
+        // elevated base
+        &[data-neb-box-elevated='true'] {
+          --text: var(--neb-ghost-#{$intent}-elevated);
+          --text-hover: var(--neb-ghost-#{$intent}-elevated-hover);
+          --text-active: var(--neb-ghost-#{$intent}-elevated-active);
+          --text-disabled: var(--neb-ghost-#{$intent}-elevated-disabled);
+        }
 
         // rest
-        color: var(--neb-#{$intent}-ghost);
+        color: var(--text);
 
-        // not disabled, interactive
+        // interaction
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
-          // highlight, hover, focus
-          &[data-neb-box-highlighted='true'],
-          &:not([data-neb-box-highlighted='true']):hover,
-          &:focus-visible {
-            color: var(--neb-#{$intent}-ghost-hover);
+          &:hover:not(:active),
+          &:focus-visible,
+          &[data-neb-box-default-state='hover'] {
+            color: var(--text-hover);
           }
 
-          // focus ring
+          &:active,
+          &[data-neb-box-default-state='active'],
+          &[data-neb-box-active-on-focus='true']:focus-visible {
+            color: var(--text-active) !important;
+          }
+        }
+
+        // focus ring
+        &:not([data-neb-box-disabled='true']) {
           &:focus-visible {
             box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
           }
@@ -28,10 +48,11 @@
 
         // disabled
         &[data-neb-box-disabled='true'] {
-          color: var(--neb-#{$intent}-ghost-disabled);
+          color: var(--text-disabled);
         }
+
         &[data-neb-box-disabled='true']:-webkit-autofill {
-          -webkit-text-fill-color: var(--neb-#{$intent}-ghost-disabled);
+          -webkit-text-fill-color: var(--text-disabled);
         }
       }
     }

@@ -11,7 +11,7 @@ const BOX_META: ComponentMeta<BoxProps> = {
       'Foundational surface component that exposes a curated set of core CSS properties - appearance, spacing, sizing and positioning - so you can style a plain block-level element directly in JSX.',
     features: [
       'acts as the surface foundation that higher-level components (e.g. Flex, Grid, Button, Text) render under the hood',
-      'provides optional interactivity - hover and focus states',
+      'provides optional interactivity - hover, active, focus and disabled states',
       "can be used as a simple wrapper, similar to how you'd normally reach for <div>",
       'use "drawable" prop to turn Box into a surface that paints colors',
       'use "theme" prop to establish a new theme context for wrapping Box and its children',
@@ -22,6 +22,11 @@ const BOX_META: ComponentMeta<BoxProps> = {
   props: BOX_PROPS_META,
   examples: BOX_EXAMPLES_META,
   changelog: {
+    '0.7.0': [
+      'added visual active state styling alongside hover for interactive Box',
+      'added defaultState prop',
+      'added activeOnFocus prop',
+    ],
     '0.4.0': ['added visibility prop', 'added aspectRatio prop', 'added transform prop'],
     '0.2.3': ['released'],
   },

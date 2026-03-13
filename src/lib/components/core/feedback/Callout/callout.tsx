@@ -45,10 +45,7 @@ export const Callout = <T extends CalloutTag = 'div'>({
       borderRadius="var(--neb-border-radius)"
       padding={CALLOUT_SIZE_CONFIG[size || 'md'].spacing}
     >
-      <Text
-        typography={CALLOUT_SIZE_CONFIG[size || 'md'].typography}
-        iconName={CALLOUT_CONFIG[status || 'info'].iconName}
-      >
+      <Text typography={CALLOUT_SIZE_CONFIG[size || 'md'].typography} iconName={CALLOUT_CONFIG[status || 'info'].iconName}>
         {heading || CALLOUT_CONFIG[status || 'info'].heading}
       </Text>
       {content ? (

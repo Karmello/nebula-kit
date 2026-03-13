@@ -9,10 +9,7 @@ export type UseRequestEmailUpdateError = {
   message?: string
 }
 
-export type UseRequestEmailUpdateRes = UseMakeApiRequestRes<
-  UseRequestEmailUpdateSuccess,
-  UseRequestEmailUpdateError
->
+export type UseRequestEmailUpdateRes = UseMakeApiRequestRes<UseRequestEmailUpdateSuccess, UseRequestEmailUpdateError>
 
 export const useRequestEmailUpdate = () => {
   return useMakeApiRequest<UseRequestEmailUpdateSuccess, UseRequestEmailUpdateError>({

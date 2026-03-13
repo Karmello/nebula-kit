@@ -18,8 +18,7 @@ const TOOLBAR_PROPS_META: ComponentMeta<ToolbarProps>['props'] = {
     defaultValue: DEFAULT_SWITCH_AT,
     isRequired: false,
     isResponsive: false,
-    description:
-      'Defines the breakpoint at which the main section switches between collapsed and inline layout.',
+    description: 'Defines the breakpoint at which the main section switches between collapsed and inline layout.',
   },
 }
 

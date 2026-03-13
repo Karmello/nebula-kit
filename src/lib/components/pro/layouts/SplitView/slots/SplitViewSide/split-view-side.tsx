@@ -28,11 +28,7 @@ export const SplitViewSide = ({
   const ref = useRef(null)
 
   return (
-    <FocusTrap
-      tagRef={tagRef || ref}
-      active={mode == 'overlay' && sideOpen}
-      onFocusEscape={() => setSideOpen(false)}
-    >
+    <FocusTrap tagRef={tagRef || ref} active={mode == 'overlay' && sideOpen} onFocusEscape={() => setSideOpen(false)}>
       <Box
         tag="aside"
         tagAttrs={{
@@ -51,12 +47,8 @@ export const SplitViewSide = ({
         intent={borderIntent || { base: 'muted', [String(switchAt)]: 'neutral' }}
         borderWidth="0px"
         borderRadius="0px"
-        borderLeftWidth={
-          mode === 'overlay' && sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : '0px'
-        }
-        borderRightWidth={
-          mode === 'overlay' && sidePosition === 'left' && sideOpen ? BOX_BORDER_WIDTH : '0px'
-        }
+        borderLeftWidth={mode === 'overlay' && sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
+        borderRightWidth={mode === 'overlay' && sidePosition === 'left' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
         left={sidePosition === 'left' ? '0px' : undefined}
         right={sidePosition === 'right' ? '0px' : undefined}
         maxInlineSize={mode === 'inline' ? inlineSize : undefined}

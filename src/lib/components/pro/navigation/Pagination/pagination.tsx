@@ -52,10 +52,7 @@ export const Pagination = ({
     const startPage = Math.max(safeCurrentPage - safeSiblingCount, safeBoundaryCount + 1)
     const endPage = Math.min(safeCurrentPage + safeSiblingCount, totalPages - safeBoundaryCount)
     const startBoundary = Array.from({ length: safeBoundaryCount }, (_, i) => i + 1)
-    const endBoundary = Array.from(
-      { length: safeBoundaryCount },
-      (_, i) => totalPages - safeBoundaryCount + 1 + i
-    )
+    const endBoundary = Array.from({ length: safeBoundaryCount }, (_, i) => totalPages - safeBoundaryCount + 1 + i)
 
     return getPaginationItems(
       totalPages,
@@ -72,13 +69,7 @@ export const Pagination = ({
   if (totalPages <= 1) return null
 
   return (
-    <Box
-      tag="nav"
-      tagAttrs={{ 'aria-label': 'Pagination', ...tagAttrs }}
-      tagRef={tagRef}
-      overflowX="auto"
-      overflowY="hidden"
-    >
+    <Box tag="nav" tagAttrs={{ 'aria-label': 'Pagination', ...tagAttrs }} tagRef={tagRef} overflowX="auto" overflowY="hidden">
       <Segment>
         {paginationItems.map((item, index) => {
           const renderControl = ({
@@ -101,7 +92,7 @@ export const Pagination = ({
                 iconName={iconName}
                 disabled={disabled}
                 bold={active}
-                highlighted={active}
+                elevated={active}
               >
                 {!iconName ? item.page : undefined}
               </Button>

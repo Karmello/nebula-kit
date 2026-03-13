@@ -5,7 +5,7 @@ import { Box, Slide } from 'lib/components'
 import { BUTTON_SIZE_CONFIG } from 'lib/components/core/controls/Button'
 import { withPrefix } from 'lib/helpers'
 
-import { DEFAULT_SWITCH_SIZE, SWITCH_BORDER_MULTIPLIER, SwitchProps } from './definitions'
+import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SIZE, SWITCH_BORDER_MULTIPLIER, SwitchProps } from './definitions'
 
 import './switch.scss'
 
@@ -15,6 +15,7 @@ export const Switch = ({
   tagRef,
   disabled,
   color,
+  intent = DEFAULT_SWITCH_INTENT,
   // own
   checked,
   defaultChecked,
@@ -63,10 +64,11 @@ export const Switch = ({
         }}
         drawable
         interactive
-        highlighted
+        defaultState={animatedChecked && !disabled ? 'active' : undefined}
+        elevated={animatedChecked && !disabled}
         disabled={disabled}
         variant="solid"
-        intent={animatedChecked && !disabled ? 'primary' : 'tertiary'}
+        intent={intent}
         color={color}
         blockSize={BUTTON_SIZE_CONFIG[size || 'md'].blockSize}
         inlineSize={`calc(${BUTTON_SIZE_CONFIG[size || 'md'].blockSize} * 2 - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})`}
@@ -83,13 +85,7 @@ export const Switch = ({
         visible={animatedChecked}
         easing="cubic-bezier(0.25, 0, 0.4, 1)"
       >
-        <Box
-          drawable
-          variant="solid"
-          intent="neutral"
-          blockSize={thumbBlockSize}
-          inlineSize={thumbBlockSize}
-        />
+        <Box drawable variant="solid" intent="neutral" blockSize={thumbBlockSize} inlineSize={thumbBlockSize} />
       </Slide>
     </Box>
   )

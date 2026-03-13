@@ -43,9 +43,7 @@ export const ConfirmActionPage = () => {
             },
           }}
           intent="primary"
-          color={
-            action && BUTTON_LABEL_MAP[action as never] ? BUTTON_LABEL_MAP[action as never].color : 'blue'
-          }
+          color={action && BUTTON_LABEL_MAP[action as never] ? BUTTON_LABEL_MAP[action as never].color : 'blue'}
           loading={loading}
           disabled={!url}
         >

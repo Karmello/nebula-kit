@@ -1,5 +1,6 @@
-@use './palette/palette.scss';
-@use './themes/themes.scss';
+@use './theme/theme.scss';
+@use './ripple/ripple-light.scss';
+@use './ripple/ripple-dark.scss';
 
 html {
   font-family:
@@ -22,9 +23,10 @@ html {
 html.neb-transitions {
   .neb-box[data-neb-box-drawable='true'][data-neb-box-transitions='true'] {
     transition:
-      background-color 0.1s linear,
-      border-color 0.1s linear,
-      color 0.1s linear;
+      background-color 0.15s linear,
+      border-color 0.15s linear,
+      color 0.15s linear,
+      opacity 0.15s linear;
   }
 }
 
@@ -32,6 +34,7 @@ body {
   background: var(--neb-background);
   color: var(--neb-text);
   --neb-border-width: 2px;
+  --neb-loader-opacity: 0.1;
 
   margin: 0;
   padding: 0;

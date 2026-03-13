@@ -16,6 +16,7 @@ import {
   DEFAULT_BUTTON_VARIANT,
   DEFAULT_BUTTON_JUSTIFY_CONTENT,
   DEFAULT_BUTTON_RIPPLE,
+  DEFAULT_BUTTON_INTERACTIVE,
 } from './definitions'
 
 import './button.scss'
@@ -30,8 +31,10 @@ export const Button = <T extends ButtonTag = 'button'>({
   variant = DEFAULT_BUTTON_VARIANT,
   color,
   intent = DEFAULT_BUTTON_INTENT,
-  highlighted,
+  interactive = DEFAULT_BUTTON_INTERACTIVE,
+  defaultState,
   disabled,
+  elevated,
   inlineSize,
   minInlineSize,
   maxInlineSize,
@@ -86,12 +89,13 @@ export const Button = <T extends ButtonTag = 'button'>({
       variant={variant}
       color={color}
       intent={intent}
-      highlighted={highlighted}
+      defaultState={defaultState}
       disabled={disabled || loading}
       inlineSize={inlineSize}
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
-      interactive
+      interactive={interactive}
+      elevated={elevated}
       position="relative"
       {...BUTTON_SIZE_CONFIG[size || 'md']}
     >
@@ -112,7 +116,7 @@ export const Button = <T extends ButtonTag = 'button'>({
         text
       )}
       {loading && !disabled ? <Loader centered size={size} /> : null}
-      <Ripple parentRef={tagRef || ref} active={ripple} />
+      <Ripple parentRef={tagRef || ref} active={ripple && !loading && !disabled} />
     </Box>
   )
 }
