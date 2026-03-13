@@ -9,7 +9,9 @@ export const Principles = () => {
     <>
       <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="30px">
         <Section heading="JSX first" color="green" intent="primary" iconName="code">
-          <Text intent="neutral">JSX is the primary development flow. CSS exists only as an internal implementation detail.</Text>
+          <Text intent="neutral">
+            JSX is the primary development flow. CSS exists mainly as an internal implementation detail.
+          </Text>
         </Section>
         <Section heading="Built on composition" color="green" intent="primary" iconName="rectangle-circle">
           <Text intent="neutral">Pure composition drives all component behavior. Functionality is never duplicated.</Text>

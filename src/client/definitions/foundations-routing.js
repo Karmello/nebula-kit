@@ -53,6 +53,8 @@ export const FOUNDATIONS_CATEGORIES = [
           { key: 'intents-and-variants', label: 'Intents + variants' },
           { key: 'color-application', label: 'Color application' },
           { key: 'styling-axes', label: 'Styling axes' },
+          { key: 'drawable-surface', label: 'Drawable surface' },
+          { key: 'theme-island', label: 'Theme island' },
         ],
       },
       {
