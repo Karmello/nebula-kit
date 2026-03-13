@@ -13,6 +13,7 @@ const SIDE_NAV_ITEM_PROPS_META: ComponentMeta<SideNavItemProps>['props'] = {
   },
   color: BUTTON_PROPS_META.color,
   customSvgIcon: BUTTON_PROPS_META.customSvgIcon,
+  elevated: BUTTON_PROPS_META.elevated,
   href: LINK_PROPS_META.href,
   iconName: BUTTON_PROPS_META.iconName,
   iconPlacement: BUTTON_PROPS_META.iconPlacement,
