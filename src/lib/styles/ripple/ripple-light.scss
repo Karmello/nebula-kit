@@ -8,11 +8,11 @@ html[data-theme='light'] {
   }
 
   &[data-ripple-mode='default'] {
-    --neb-ripple-factor: 1;
+    --neb-ripple-factor: 0.5;
   }
 
   &[data-ripple-mode='emphasized'] {
-    --neb-ripple-factor: 2;
+    --neb-ripple-factor: 1;
   }
 
   /* ---------------------------------------------

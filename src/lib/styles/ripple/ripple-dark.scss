@@ -33,10 +33,10 @@ html[data-theme='dark'] {
       --neb-ripple-base-opacity: 0.05;
     }
     &[data-neb-box-intent='primary'] {
-      --neb-ripple-base-opacity: 0.15;
+      --neb-ripple-base-opacity: 0.08;
     }
     &[data-neb-box-intent='inverse'] {
-      --neb-ripple-base-opacity: 0.13;
+      --neb-ripple-base-opacity: 0.07;
     }
   }
 
