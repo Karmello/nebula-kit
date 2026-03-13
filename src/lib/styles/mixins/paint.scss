@@ -13,6 +13,7 @@
 @use './paint/hover-bg/hover-bg-dark.scss' as hover-bg-dark;
 @use './paint/active/active-dark.scss' as active-dark;
 @use './paint/active-bg/active-bg-dark.scss' as active-bg-dark;
+@use './paint/disabled/disabled-dark.scss' as disabled-dark;
 
 @mixin paint($theme) {
   @include base.paint($theme);
@@ -30,6 +31,7 @@
     @include hover-bg-dark.paint();
     @include active-dark.paint();
     @include active-bg-dark.paint();
+    @include disabled-dark.paint();
   }
 
   // elevated
@@ -44,5 +46,6 @@
     @include hover-bg-dark.paint(true);
     @include active-dark.paint(true);
     @include active-bg-dark.paint(true);
+    @include disabled-dark.paint(true);
   }
 }
