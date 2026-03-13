@@ -49,6 +49,7 @@
 
         // disabled
         &[data-neb-box-disabled='true'] {
+          opacity: 0.4;
           color: var(--text-disabled);
         }
 
