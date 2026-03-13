@@ -64,7 +64,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                 intent={intent}
                 scrollToIndex={scrollToIndex > -1 ? scrollToIndex : undefined}
                 scrollAlign="center"
-                placement={index < levels.length - 1 ? 'bottom-start' : 'bottom-end'}
+                placement={index === 0 || index < levels.length - 1 ? 'bottom-start' : 'bottom-end'}
               >
                 {({ open }) => (
                   <>

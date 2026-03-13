@@ -41,7 +41,7 @@ export const TabsTab = ({
   return (
     <Button
       bold={isSelected}
-      defaultState={isSelected ? 'active' : undefined}
+      elevated={isSelected}
       color={color}
       customSvgIcon={customSvgIcon}
       disabled={disabled}

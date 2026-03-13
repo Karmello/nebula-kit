@@ -32,7 +32,7 @@ export const CatalogPageTemplate = memo(
         {({ mode, setSideOpen }) => (
           <>
             <SplitView.Side inlineSize={{ base: '275px', lg: '225px' }}>
-              <SideNav>
+              <SideNav expandMode="single">
                 {data.map(({ key: categoryKey, label, items }) => {
                   const isCategorySelected = activeCategoryObj?.key === categoryKey
                   return (
