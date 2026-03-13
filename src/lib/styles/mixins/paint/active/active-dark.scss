@@ -2,7 +2,7 @@
   $el: if($elevated, '-elevated', '');
 
   // solid
-  --neb-solid-neutral#{$el}-active: hsl(from var(--neb-solid-neutral#{$el}) h s calc(l + 9));
+  --neb-solid-neutral#{$el}-active: hsl(from var(--neb-solid-neutral#{$el}) h s calc(l + 7));
   --neb-solid-muted#{$el}-active: hsl(from var(--neb-solid-muted#{$el}) h s calc(l + 4));
   --neb-solid-tertiary#{$el}-active: hsl(from var(--neb-solid-tertiary#{$el}) h s calc(l + 6));
   --neb-solid-secondary#{$el}-active: hsl(from var(--neb-solid-secondary#{$el}) h s calc(l + 10));

@@ -57,10 +57,8 @@ export const CatalogPageTemplate = memo(
                               }
                               navigateTo(href)
                             }}
-                            intent={{
-                              base: isItemSelected ? 'secondary' : 'tertiary',
-                              lg: isItemSelected ? 'muted' : 'neutral',
-                            }}
+                            intent={{ base: 'tertiary', lg: 'neutral' }}
+                            elevated={isItemSelected}
                             bold={isItemSelected}
                           >
                             {label}
@@ -105,10 +103,8 @@ export const CatalogPageTemplate = memo(
                                   }
                                   navigateTo(href)
                                 }}
-                                intent={{
-                                  base: isItemSelected ? 'secondary' : 'tertiary',
-                                  lg: isItemSelected ? 'muted' : 'neutral',
-                                }}
+                                intent={{ base: 'tertiary', lg: 'neutral' }}
+                                elevated={isItemSelected}
                                 bold={isItemSelected}
                               >
                                 {label}
