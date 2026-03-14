@@ -6,27 +6,33 @@ import { convertElemToString } from 'client/helpers'
 import { useCorePageStore, useProPageStore } from 'client/store'
 import { ComponentMeta, PageKey } from 'client/definitions'
 import { Box, Flex, Reveal, Spacer, Text } from 'lib/components'
+import { useCurrentTheme } from 'lib/hooks'
 
 const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   const { description, jsx, code, noSandBox, noCode, sandBoxWithNoPadding } = props
 
+  const theme = useCurrentTheme()
+
   return (
     <>
-      {description ? <Text bold>{description}</Text> : null}
+      {description ? (
+        <Text bold iconName="arrow-down">
+          {description}
+        </Text>
+      ) : null}
       <Spacer blockSize="10px" />
       {!noSandBox ? (
         <>
-          <Box
-            tagAttrs={{
-              style: { borderStyle: 'dashed' },
-            }}
-            drawable
-            variant="outline"
-            color="gray"
-            intent="tertiary"
-            padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
-          >
-            {jsx}
+          <Box tagAttrs={{ style: { borderStyle: 'dashed' } }} drawable variant="outline" intent="inverse" color="gray">
+            <Box
+              drawable
+              theme={theme === 'light' ? 'dark' : 'light'}
+              variant="solid"
+              intent="neutral"
+              padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
+            >
+              {jsx}
+            </Box>
           </Box>
           <Spacer blockSize="10px" />
         </>
@@ -34,7 +40,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
       {!noCode ? (
         <>
           {!noSandBox ? (
-            <Reveal label="Code" color="gray" intent="muted">
+            <Reveal label="Code" color="gray" intent="tertiary">
               <Box padding="4px">
                 <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} />
               </Box>

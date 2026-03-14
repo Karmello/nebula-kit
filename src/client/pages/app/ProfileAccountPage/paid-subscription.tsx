@@ -26,7 +26,7 @@ export default ({ enabled }: { enabled: boolean }) => {
           <Table.HeaderRow>
             <Table.HeaderCell colSpan={3} blockSize="50px">
               <Flex alignItems="center" columnGap="20px">
-                <Text typography="h6" iconName="arrow-right">
+                <Text typography="h6" iconName="arrow-down">
                   Subscription
                 </Text>
                 <Loader active={getPaymentInfo.isMakingRequest} color="blue" size="sm" />

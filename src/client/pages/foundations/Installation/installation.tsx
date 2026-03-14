@@ -4,7 +4,7 @@ import { Box, Link, Section, Spacer, Text } from 'lib/components'
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Section size="sm" heading="Core bundle" iconName="arrow-right" intent="primary">
+      <Section size="sm" heading="Core bundle" iconName="arrow-down" intent="primary">
         <Text intent="neutral">The Core bundle is published on the public npm registry.</Text>
         <Link href="https://www.npmjs.com/package/@nebula-kit/core" target="_blank">
           <Text intent="primary" color="blue" iconName="external-link" iconPlacement="right">
@@ -23,7 +23,7 @@ export default () => {
         <CodeSnippet lang="bash" code="yarn add @nebula-kit/core" />
       </Section>
       <Spacer blockSize="40px" />
-      <Section size="sm" heading="Pro bundle" iconName="arrow-right" intent="primary">
+      <Section size="sm" heading="Pro bundle" iconName="arrow-down" intent="primary">
         <Text intent="neutral">The Pro bundle is distributed through a private registry.</Text>
         <Spacer />
         <Text bold intent="neutral">

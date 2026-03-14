@@ -28,7 +28,7 @@ export default () => {
         <Table.HeaderRow>
           <Table.HeaderCell blockSize="50px">
             <Flex alignItems="center" columnGap="20px">
-              <Text typography="h6" iconName="arrow-right">
+              <Text typography="h6" iconName="arrow-down">
                 Details
               </Text>
               <Loader active={getUser.isMakingRequest} color="blue" size="sm" />

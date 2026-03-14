@@ -21,7 +21,7 @@ export const DropdownListTrigger = ({
         'aria-haspopup': 'listbox',
         'aria-expanded': false,
         onClick: () => {
-          if (!openOnFocus) {
+          if (!disabled && !openOnFocus) {
             if (open) {
               setResizeVisible(false)
             } else {
@@ -45,7 +45,6 @@ export const DropdownListTrigger = ({
       }}
       display="inline-block"
       inlineSize={inlineSize}
-      disabled={disabled}
     >
       {children}
     </Box>

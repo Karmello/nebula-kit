@@ -14,7 +14,7 @@ export default () => {
           behavior required for building and bundling NebulaKit reliably.
         </Text>
       </Section>
-      <Spacer blockSize="15px" />
+      <Spacer blockSize="30px" />
       <Section size="sm" heading="React compatibility" intent="primary">
         <Text intent="neutral" bold>
           NebulaKit requires React 18 or newer.
@@ -37,7 +37,7 @@ export default () => {
           bundlers handle ESM, TypeScript and CSS modules in a way that aligns with NebulaKit's architecture and build outputs.
         </Text>
         <Spacer blockSize="25px" />
-        <Text intent="neutral" bold iconName="arrow-right">
+        <Text intent="neutral" bold iconName="arrow-down">
           Vite (recommended)
         </Text>
         <Spacer blockSize="5px" />
@@ -46,7 +46,7 @@ export default () => {
           with styles and components resolving automatically in both dev and production builds.
         </Text>
         <Spacer blockSize="25px" />
-        <Text intent="neutral" bold iconName="arrow-right">
+        <Text intent="neutral" bold iconName="arrow-down">
           Webpack 5 (supported)
         </Text>
         <Spacer blockSize="5px" />
@@ -55,7 +55,7 @@ export default () => {
           css-loader. Once configured, usage is identical to Vite.
         </Text>
         <Spacer blockSize="25px" />
-        <Text intent="neutral" bold iconName="arrow-right">
+        <Text intent="neutral" bold iconName="arrow-down">
           Webpack 4 (not recommended)
         </Text>
         <Spacer blockSize="5px" />
@@ -64,7 +64,7 @@ export default () => {
           extraction, manual Babel configuration and lacks modern module-resolution guarantees.
         </Text>
         <Spacer blockSize="25px" />
-        <Text intent="neutral" bold iconName="arrow-right">
+        <Text intent="neutral" bold iconName="arrow-down">
           Create React App (not recommended)
         </Text>
         <Spacer blockSize="5px" />

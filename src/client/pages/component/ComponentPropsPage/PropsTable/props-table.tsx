@@ -47,9 +47,7 @@ export const PropsTable = ({ category, data }: Props) => {
                 <Table.Cell>
                   {tooltip ? (
                     <Tooltip content={tooltip.join(', ')} placement="top-center" minInlineSize={250} maxInlineSize={350}>
-                      <Flex tagAttrs={{ style: { verticalAlign: 'middle' } }} display="inline-flex">
-                        <Icon name="info" size="25px" intent="primary" color="blue" />
-                      </Flex>
+                      <Text>. . .</Text>
                     </Tooltip>
                   ) : (
                     <Text>{typeof options === 'string' ? options : options.join(', ')}</Text>

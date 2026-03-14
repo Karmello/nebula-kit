@@ -29,16 +29,16 @@
 
         // interaction
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
-          &:hover:not(:active),
-          &:focus-visible,
-          &[data-neb-box-default-state='hover'] {
+          &[data-neb-box-default-state='hover'],
+          &:hover:not(:active):not([data-neb-box-default-state='active']):not(:focus-visible[data-neb-box-active-on-focus='true']),
+          &:focus-visible:not([data-neb-box-default-state='active']):not([data-neb-box-active-on-focus='true']) {
             background-color: var(--bg-hover);
           }
 
-          &:active,
           &[data-neb-box-default-state='active'],
-          &[data-neb-box-active-on-focus='true']:focus-visible {
-            background-color: var(--bg-active) !important;
+          &:active,
+          &:focus-visible[data-neb-box-active-on-focus='true'] {
+            background-color: var(--bg-active);
           }
         }
 

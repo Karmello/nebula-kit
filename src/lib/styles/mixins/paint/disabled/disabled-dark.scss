@@ -2,12 +2,12 @@
   $el: if($elevated, '-elevated', '');
 
   // solid
-  --neb-solid-neutral#{$el}-disabled: hsl(from white h s calc(l - 82));
-  --neb-solid-muted#{$el}-disabled: hsl(from var(--neb-solid-muted#{$el}) h s calc(l + 5));
-  --neb-solid-tertiary#{$el}-disabled: hsl(from var(--neb-solid-tertiary#{$el}) h s calc(l + 6));
-  --neb-solid-secondary#{$el}-disabled: hsl(from var(--neb-solid-secondary#{$el}) h s calc(l + 10));
-  --neb-solid-primary#{$el}-disabled: hsl(from var(--neb-solid-primary#{$el}) h s calc(l + 16));
-  --neb-solid-inverse#{$el}-disabled: hsl(from black h s calc(l + 88));
+  --neb-solid-neutral#{$el}-disabled: hsl(from white h s calc(l - 78));
+  --neb-solid-muted#{$el}-disabled: hsl(from var(--neb-solid-muted#{$el}) h s calc(l + 13));
+  --neb-solid-tertiary#{$el}-disabled: hsl(from var(--neb-solid-tertiary#{$el}) h s calc(l + 13));
+  --neb-solid-secondary#{$el}-disabled: hsl(from var(--neb-solid-secondary#{$el}) h s calc(l + 14));
+  --neb-solid-primary#{$el}-disabled: hsl(from var(--neb-solid-primary#{$el}) h s calc(l + 19));
+  --neb-solid-inverse#{$el}-disabled: hsl(from black h s calc(l + 80));
 
   // outline
   --neb-outline-neutral#{$el}-disabled: hsl(from white h s calc(l - 60));

@@ -1,8 +1,10 @@
 import { JSX, SVGProps } from 'react'
 
 import {
+  ArrowDown,
   ArrowLeft,
   ArrowRight,
+  ArrowUp,
   Atom,
   Blend,
   Blocks,
@@ -80,8 +82,10 @@ import {
 import { IconName } from 'lib/definitions'
 
 export const ICONS: Record<IconName, any> = {
+  'arrow-down': ArrowDown,
   'arrow-left': ArrowLeft,
   'arrow-right': ArrowRight,
+  'arrow-up': ArrowUp,
   atom: Atom,
   blend: Blend,
   blocks: Blocks,
