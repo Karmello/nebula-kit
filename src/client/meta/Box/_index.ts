@@ -22,6 +22,9 @@ const BOX_META: ComponentMeta<BoxProps> = {
   props: BOX_PROPS_META,
   examples: BOX_EXAMPLES_META,
   changelog: {
+    '0.8.0': [
+      'updated Box to render internal ThemeProvider and BrandProvider automatically when theme or brand props are set, ensuring styling islands propagate correctly through portals',
+    ],
     '0.7.0': [
       'added visual active state styling alongside hover for interactive Box',
       'added defaultState prop',

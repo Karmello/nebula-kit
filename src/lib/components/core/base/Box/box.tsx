@@ -3,6 +3,7 @@ import { ElementType, ComponentRef, ComponentProps, PropsWithoutRef, useLayoutEf
 import classNames from 'classnames'
 
 import { BoxProps, HtmlTag } from 'lib/components'
+import { ThemeProvider, BrandProvider } from 'lib/components/core/internal'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { updateDomRespStyle, updateDomRespDataset, updateDomStaticDataset } from 'lib/service'
@@ -209,7 +210,7 @@ export const Box = <T extends ElementType = 'div'>({
     updateDomRespDataset('Box', finalRef, bp, { theme, brand, color, variant, intent })
   }, [bp, theme, brand, color, variant, intent])
 
-  return (
+  let renderContent = (
     <HtmlTag
       tag={tag}
       tagAttrs={
@@ -233,6 +234,16 @@ export const Box = <T extends ElementType = 'div'>({
       {children}
     </HtmlTag>
   )
+
+  if (brand) {
+    renderContent = <BrandProvider brand={brand}>{renderContent}</BrandProvider>
+  }
+
+  if (theme) {
+    renderContent = <ThemeProvider theme={theme}>{renderContent}</ThemeProvider>
+  }
+
+  return renderContent
 }
 
 Box.displayName = 'Box'

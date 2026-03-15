@@ -2,7 +2,6 @@ import { useRef } from 'react'
 import classNames from 'classnames'
 
 import { Resize, Box, Flex, Button, FocusTrap } from 'lib/components'
-import { IslandProvider } from 'lib/components/core/internal'
 import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box/definitions'
 import { withPrefix } from 'lib/helpers'
 
@@ -82,9 +81,9 @@ export const SplitViewSide = ({
                     </Box>
                   </Flex>
                 ) : null}
-                <IslandProvider theme={theme} brand={brand}>
+                <Box theme={theme} brand={brand}>
                   {children}
-                </IslandProvider>
+                </Box>
               </Box>
             </Box>
           </Resize>

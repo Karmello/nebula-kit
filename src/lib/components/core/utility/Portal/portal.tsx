@@ -6,7 +6,7 @@ import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import { DEFAULT_PORTAL_PLACEMENT, PortalProps } from './definitions'
-import { useIslandContext } from '../../internal'
+import { useThemeContext, useBrandContext } from '../../internal'
 
 export const Portal = ({
   // HtmlTag
@@ -82,7 +82,8 @@ export const Portal = ({
     return () => cancelAnimationFrame(frame)
   }, [updatePosition])
 
-  const islandContext = useIslandContext()
+  const themeContext = useThemeContext()
+  const brandContext = useBrandContext()
 
   if (!container) return null
 
@@ -114,8 +115,8 @@ export const Portal = ({
           ...tagAttrs,
           className: classNames(withPrefix('portal'), tagAttrs?.className),
         }}
-        theme={islandContext?.theme}
-        brand={islandContext?.brand}
+        theme={themeContext?.theme}
+        brand={brandContext?.brand}
       >
         {children}
       </Box>,
@@ -135,8 +136,8 @@ export const Portal = ({
           transform,
         },
       }}
-      theme={islandContext?.theme}
-      brand={islandContext?.brand}
+      theme={themeContext?.theme}
+      brand={brandContext?.brand}
       position="absolute"
       zIndex={1000}
       pointerEvents="auto"
