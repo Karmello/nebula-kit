@@ -8,6 +8,9 @@ import { tokenizeCode } from './highlight-tokens'
 export type CodeSnippetProps = {
   code: string
   lang: 'log' | 'bash' | 'tsx'
+  borderRadius?: boolean
+  description?: string
+  fullBg?: boolean
 }
 
 const COLOR_MAP = {
@@ -47,7 +50,7 @@ const COLOR_MAP = {
   '#BAEBE2': 'var(--neb-blue-5)',
 }
 
-export const CodeSnippet = ({ code, lang = 'log' }: CodeSnippetProps) => {
+export const CodeSnippet = ({ code, lang = 'log', borderRadius = true, description, fullBg }: CodeSnippetProps) => {
   const [data, setData] = useState<TokensResult>()
   const [copied, setCopied] = useState<boolean>(false)
 
@@ -75,9 +78,20 @@ export const CodeSnippet = ({ code, lang = 'log' }: CodeSnippetProps) => {
     <Flex
       flexDirection="column"
       alignItems="stretch"
-      tagAttrs={{ style: { backgroundColor: COLOR_MAP.bg, borderRadius: 'var(--neb-border-radius)' } }}
+      tagAttrs={{
+        style: { backgroundColor: fullBg ? COLOR_MAP.bg : undefined, borderRadius: 'var(--neb-border-radius)' },
+      }}
     >
-      <Box padding="2px" textAlign="end">
+      <Flex alignItems="flex-end" columnGap="10px">
+        <Flex.Item flex="1">
+          {description ? (
+            <Box paddingBlock="10px">
+              <Text bold iconName="arrow-down" tagAttrs={{ style: { lineHeight: 1.25 } }}>
+                {description}
+              </Text>
+            </Box>
+          ) : null}
+        </Flex.Item>
         <Button
           iconName={copied ? 'check' : 'copy'}
           size="xs"
@@ -86,10 +100,16 @@ export const CodeSnippet = ({ code, lang = 'log' }: CodeSnippetProps) => {
           color="blue"
           tagAttrs={{ onClick: handleCopy, 'aria-label': copied ? 'Copied' : 'Copy code' }}
         />
-      </Box>
-      <Box overflowY="auto" maxBlockSize="350px">
+      </Flex>
+      <Box
+        tagAttrs={{
+          style: { backgroundColor: COLOR_MAP.bg, borderRadius: borderRadius ? 'var(--neb-border-radius)' : undefined },
+        }}
+        overflowY="auto"
+        maxBlockSize="350px"
+      >
         <Flex tag="pre">
-          <Box tag="code" paddingInline="24px" paddingBottom="24px">
+          <Box tag="code" paddingInline="20px" paddingBlock={fullBg ? '0px' : '14px'} paddingBottom="12px">
             {data.tokens.map((token, i) => {
               return (
                 <Box key={i}>

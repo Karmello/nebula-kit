@@ -15,7 +15,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
 
   return (
     <>
-      {description ? (
+      {description && !noSandBox ? (
         <Text bold iconName="arrow-down">
           {description}
         </Text>
@@ -40,13 +40,11 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
       {!noCode ? (
         <>
           {!noSandBox ? (
-            <Reveal label="Code" color="gray" intent="tertiary">
-              <Box padding="4px">
-                <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} />
-              </Box>
+            <Reveal label="Code" intent="tertiary">
+              <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} borderRadius={false} fullBg />
             </Reveal>
           ) : (
-            <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} />
+            <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} description={description} />
           )}
         </>
       ) : null}

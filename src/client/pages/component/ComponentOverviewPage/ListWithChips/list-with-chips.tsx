@@ -9,7 +9,7 @@ export const ListWithChips = ({ items, color = 'blue' }: { items: string[]; colo
         drawable
         variant="solid"
         color={color}
-        intent="secondary"
+        intent="tertiary"
         paddingInline="10px"
         paddingBlock="4px"
         borderRadius="10px"
