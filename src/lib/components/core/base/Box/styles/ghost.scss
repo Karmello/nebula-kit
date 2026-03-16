@@ -7,35 +7,35 @@
     @each $intent in $intents {
       &[data-neb-box-intent='#{$intent}'] {
         // base
-        --text: var(--neb-ghost-#{$intent});
-        --text-hover: var(--neb-ghost-#{$intent}-hover);
-        --text-active: var(--neb-ghost-#{$intent}-active);
-        --text-disabled: var(--neb-ghost-#{$intent}-disabled);
+        --base: var(--neb-ghost-#{$intent}-base);
+        --base-hover: var(--neb-ghost-#{$intent}-base-hover);
+        --base-active: var(--neb-ghost-#{$intent}-base-active);
+        --text-disabled: var(--neb-ghost-#{$intent}-text-disabled);
         --loader: var(--neb-ghost-#{$intent}-loader);
 
         // elevated base
         &[data-neb-box-elevated='true'] {
-          --text: var(--neb-ghost-#{$intent}-elevated);
-          --text-hover: var(--neb-ghost-#{$intent}-elevated-hover);
-          --text-active: var(--neb-ghost-#{$intent}-elevated-active);
-          --text-disabled: var(--neb-ghost-#{$intent}-elevated-disabled);
+          --base: var(--neb-ghost-#{$intent}-elevated-base);
+          --base-hover: var(--neb-ghost-#{$intent}-elevated-base-hover);
+          --base-active: var(--neb-ghost-#{$intent}-elevated-base-active);
+          --text-disabled: var(--neb-ghost-#{$intent}-elevated-text-disabled);
         }
 
         // rest
-        color: var(--text);
+        color: var(--base);
 
         // interaction
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
           &[data-neb-box-default-state='hover'],
           &:hover:not(:active):not([data-neb-box-default-state='active']):not(:focus-visible[data-neb-box-active-on-focus='true']),
           &:focus-visible:not([data-neb-box-default-state='active']):not([data-neb-box-active-on-focus='true']) {
-            color: var(--text-hover);
+            color: var(--base-hover);
           }
 
           &[data-neb-box-default-state='active'],
           &:active,
           &:focus-visible[data-neb-box-active-on-focus='true'] {
-            color: var(--text-active);
+            color: var(--base-active);
           }
         }
 

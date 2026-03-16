@@ -8,49 +8,43 @@
     @each $intent in $intents {
       &[data-neb-box-intent='#{$intent}'] {
         // base
-        --border: var(--neb-soft-outline-#{$intent});
-        --border-hover: var(--neb-soft-outline-#{$intent}-hover);
-        --border-active: var(--neb-soft-outline-#{$intent}-active);
-        --text: var(--neb-soft-outline-#{$intent});
-        --text-hover: var(--neb-soft-outline-#{$intent}-hover);
-        --text-active: var(--neb-soft-outline-#{$intent}-active);
-        --text-disabled: var(--neb-soft-outline-#{$intent}-disabled);
+        --base: var(--neb-soft-outline-#{$intent}-base);
+        --base-hover: var(--neb-soft-outline-#{$intent}-base-hover);
+        --base-active: var(--neb-soft-outline-#{$intent}-base-active);
         --bg-hover: var(--neb-soft-outline-#{$intent}-bg-hover);
         --bg-active: var(--neb-soft-outline-#{$intent}-bg-active);
+        --text-disabled: var(--neb-soft-outline-#{$intent}-text-disabled);
         --loader: var(--neb-soft-outline-#{$intent}-loader);
 
         // elevated base
         &[data-neb-box-elevated='true'] {
-          --border: var(--neb-soft-outline-#{$intent}-elevated);
-          --border-hover: var(--neb-soft-outline-#{$intent}-elevated-hover);
-          --border-active: var(--neb-soft-outline-#{$intent}-elevated-active);
-          --text: var(--neb-soft-outline-#{$intent}-elevated);
-          --text-hover: var(--neb-soft-outline-#{$intent}-elevated-hover);
-          --text-active: var(--neb-soft-outline-#{$intent}-elevated-active);
-          --text-disabled: var(--neb-soft-outline-#{$intent}-elevated-disabled);
+          --base: var(--neb-soft-outline-#{$intent}-elevated-base);
+          --base-hover: var(--neb-soft-outline-#{$intent}-elevated-base-hover);
+          --base-active: var(--neb-soft-outline-#{$intent}-elevated-base-active);
           --bg-hover: var(--neb-soft-outline-#{$intent}-elevated-bg-hover);
           --bg-active: var(--neb-soft-outline-#{$intent}-elevated-bg-active);
+          --text-disabled: var(--neb-soft-outline-#{$intent}-elevated-text-disabled);
         }
 
         // rest
-        border-color: var(--border);
-        color: var(--text);
+        border-color: var(--base);
+        color: var(--base);
 
         // interaction
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
           &[data-neb-box-default-state='hover'],
           &:hover:not(:active):not([data-neb-box-default-state='active']):not(:focus-visible[data-neb-box-active-on-focus='true']),
           &:focus-visible:not([data-neb-box-default-state='active']):not([data-neb-box-active-on-focus='true']) {
-            border-color: var(--border-hover);
-            color: var(--text-hover);
+            border-color: var(--base-hover);
+            color: var(--base-hover);
             background-color: var(--bg-hover);
           }
 
           &[data-neb-box-default-state='active'],
           &:active,
           &:focus-visible[data-neb-box-active-on-focus='true'] {
-            border-color: var(--border-active);
-            color: var(--text-active);
+            border-color: var(--base-active);
+            color: var(--base-active);
             background-color: var(--bg-active);
           }
         }

@@ -3,6 +3,7 @@
 @use './paint/loader.scss' as loader;
 
 // light
+@use './paint/rest/rest-light.scss' as rest-light;
 @use './paint/hover/hover-light.scss' as hover-light;
 @use './paint/hover-bg/hover-bg-light.scss' as hover-bg-light;
 @use './paint/active/active-light.scss' as active-light;
@@ -10,6 +11,7 @@
 @use './paint/disabled/disabled-light.scss' as disabled-light;
 
 // dark
+@use './paint/rest/rest-dark.scss' as rest-dark;
 @use './paint/hover/hover-dark.scss' as hover-dark;
 @use './paint/hover-bg/hover-bg-dark.scss' as hover-bg-dark;
 @use './paint/active/active-dark.scss' as active-dark;
@@ -23,12 +25,14 @@
 
   // base
   @if $theme == 'light' {
+    @include rest-light.paint();
     @include hover-light.paint();
     @include hover-bg-light.paint();
     @include active-light.paint();
     @include active-bg-light.paint();
     @include disabled-light.paint();
   } @else {
+    @include rest-dark.paint();
     @include hover-dark.paint();
     @include hover-bg-dark.paint();
     @include active-dark.paint();

@@ -7,24 +7,24 @@
     @each $intent in $intents {
       &[data-neb-box-intent='#{$intent}'] {
         // base
-        --bg: var(--neb-solid-#{$intent});
-        --bg-hover: var(--neb-solid-#{$intent}-hover);
-        --bg-active: var(--neb-solid-#{$intent}-active);
+        --base: var(--neb-solid-#{$intent}-base);
+        --base-hover: var(--neb-solid-#{$intent}-base-hover);
+        --base-active: var(--neb-solid-#{$intent}-base-active);
         --text: var(--neb-solid-#{$intent}-text, var(--neb-text));
-        --text-disabled: var(--neb-solid-#{$intent}-disabled);
+        --text-active: var(--neb-solid-#{$intent}-text-active, var(--neb-text));
+        --text-disabled: var(--neb-solid-#{$intent}-text-disabled);
         --loader: var(--neb-solid-#{$intent}-loader);
 
         // elevated base
         &[data-neb-box-elevated='true'] {
-          --bg: var(--neb-solid-#{$intent}-elevated);
-          --bg-hover: var(--neb-solid-#{$intent}-elevated-hover);
-          --bg-active: var(--neb-solid-#{$intent}-elevated-active);
-          --text: var(--neb-solid-#{$intent}-text-elevated, var(--neb-text));
-          --text-disabled: var(--neb-solid-#{$intent}-elevated-disabled);
+          --base: var(--neb-solid-#{$intent}-elevated-base);
+          --base-hover: var(--neb-solid-#{$intent}-elevated-base-hover);
+          --base-active: var(--neb-solid-#{$intent}-elevated-base-active);
+          --text-disabled: var(--neb-solid-#{$intent}-elevated-text-disabled);
         }
 
         // rest
-        background-color: var(--bg);
+        background-color: var(--base);
         color: var(--text);
 
         // interaction
@@ -32,13 +32,14 @@
           &[data-neb-box-default-state='hover'],
           &:hover:not(:active):not([data-neb-box-default-state='active']):not(:focus-visible[data-neb-box-active-on-focus='true']),
           &:focus-visible:not([data-neb-box-default-state='active']):not([data-neb-box-active-on-focus='true']) {
-            background-color: var(--bg-hover);
+            background-color: var(--base-hover);
           }
 
           &[data-neb-box-default-state='active'],
           &:active,
           &:focus-visible[data-neb-box-active-on-focus='true'] {
-            background-color: var(--bg-active);
+            background-color: var(--base-active);
+            color: var(--text-active);
           }
         }
 

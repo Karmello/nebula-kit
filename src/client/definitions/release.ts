@@ -23,6 +23,9 @@ export const RELEASE_INFO: Record<
 > = {
   '0.8.0': {
     timestamp: 1773529204871,
+    changelog: {
+      main: ['improved color tokens'],
+    },
   },
   '0.7.0': {
     timestamp: 1773443646502,
