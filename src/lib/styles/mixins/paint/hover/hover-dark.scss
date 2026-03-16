@@ -6,7 +6,7 @@
   --neb-solid-muted#{$el}-hover: hsl(from var(--neb-solid-muted#{$el}) h s calc(l + 2));
   --neb-solid-tertiary#{$el}-hover: hsl(from var(--neb-solid-tertiary#{$el}) h s calc(l + 3));
   --neb-solid-secondary#{$el}-hover: hsl(from var(--neb-solid-secondary#{$el}) h s calc(l + 5));
-  --neb-solid-primary#{$el}-hover: hsl(from var(--neb-solid-primary#{$el}) h s calc(l + 6));
+  --neb-solid-primary#{$el}-hover: hsl(from var(--neb-solid-primary#{$el}) h s calc(l + 4));
   --neb-solid-inverse#{$el}-hover: hsl(from var(--neb-solid-inverse#{$el}) h s l);
 
   // outline

@@ -79,7 +79,10 @@ export const CodeSnippet = ({ code, lang = 'log', borderRadius = true, descripti
       flexDirection="column"
       alignItems="stretch"
       tagAttrs={{
-        style: { backgroundColor: fullBg ? COLOR_MAP.bg : undefined, borderRadius: 'var(--neb-border-radius)' },
+        style: {
+          backgroundColor: fullBg ? COLOR_MAP.bg : undefined,
+          borderRadius: borderRadius ? 'var(--neb-border-radius)' : undefined,
+        },
       }}
     >
       <Flex alignItems="flex-end" columnGap="10px">

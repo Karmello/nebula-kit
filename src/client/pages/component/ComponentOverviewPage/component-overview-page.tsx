@@ -23,7 +23,9 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const content = (
     <Flex flexDirection="column" alignItems="stretch" gap="30px">
       <Box>
-        <Text typography="lead">{title}</Text>
+        <Text typography="lead" bold>
+          {title}
+        </Text>
         {examples?.[0] ? (
           <Box marginBlock="15px">
             <CodeSnippet lang="tsx" code={examples[0].code || convertElemToString(examples[0].jsx)} />

@@ -6,7 +6,7 @@
   --neb-solid-muted#{$el}-active: hsl(from var(--neb-solid-muted#{$el}) h s calc(l + 4));
   --neb-solid-tertiary#{$el}-active: hsl(from var(--neb-solid-tertiary#{$el}) h s calc(l + 6));
   --neb-solid-secondary#{$el}-active: hsl(from var(--neb-solid-secondary#{$el}) h s calc(l + 10));
-  --neb-solid-primary#{$el}-active: hsl(from var(--neb-solid-primary#{$el}) h s calc(l + 11));
+  --neb-solid-primary#{$el}-active: hsl(from var(--neb-solid-primary#{$el}) h s calc(l + 8));
   --neb-solid-inverse#{$el}-active: hsl(from var(--neb-solid-inverse#{$el}) h s l);
 
   // outline
