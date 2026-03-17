@@ -1,4 +1,4 @@
-@mixin paint($theme) {
+@mixin paint() {
   // solid
   --neb-solid-neutral-base: var(--neb-ctx-color-1);
   --neb-solid-muted-base: var(--neb-ctx-color-2);

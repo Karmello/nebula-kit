@@ -1,0 +1,33 @@
+@mixin paint() {
+  // solid
+  --neb-solid-neutral-ripple: 3;
+  --neb-solid-muted-ripple: 3;
+  --neb-solid-tertiary-ripple: 3;
+  --neb-solid-secondary-ripple: 5;
+  --neb-solid-primary-ripple: 8;
+  --neb-solid-inverse-ripple: 10;
+
+  // outline
+  --neb-outline-neutral-ripple: 5;
+  --neb-outline-muted-ripple: 4;
+  --neb-outline-tertiary-ripple: 4;
+  --neb-outline-secondary-ripple: 5;
+  --neb-outline-primary-ripple: 6;
+  --neb-outline-inverse-ripple: 6;
+
+  // soft-outline
+  --neb-soft-outline-neutral-ripple: 5;
+  --neb-soft-outline-muted-ripple: 22;
+  --neb-soft-outline-tertiary-ripple: 16;
+  --neb-soft-outline-secondary-ripple: 12;
+  --neb-soft-outline-primary-ripple: 8;
+  --neb-soft-outline-inverse-ripple: 6;
+
+  // ghost
+  --neb-ghost-neutral-ripple: 7;
+  --neb-ghost-muted-ripple: 32;
+  --neb-ghost-tertiary-ripple: 22;
+  --neb-ghost-secondary-ripple: 16;
+  --neb-ghost-primary-ripple: 14;
+  --neb-ghost-inverse-ripple: 6;
+}

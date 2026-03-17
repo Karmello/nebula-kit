@@ -65,8 +65,8 @@ test('Child Box inherits brand when no local brand is set', async ({ mount, page
       parentBg: parentCs.backgroundColor,
       childBg: childCs.backgroundColor,
 
-      parentSemantic: parentCs.getPropertyValue('--neb-solid-primary').trim(),
-      childSemantic: childCs.getPropertyValue('--neb-solid-primary').trim(),
+      parentSemantic: parentCs.getPropertyValue('--neb-solid-primary-base').trim(),
+      childSemantic: childCs.getPropertyValue('--neb-solid-primary-base').trim(),
     }
   })
 
@@ -107,8 +107,8 @@ test('Brand survives theme islands (light → dark → light)', async ({ mount, 
       darkBg: darkCs.backgroundColor,
       lightBg: lightCs.backgroundColor,
 
-      darkSemantic: darkCs.getPropertyValue('--neb-solid-primary').trim(),
-      lightSemantic: lightCs.getPropertyValue('--neb-solid-primary').trim(),
+      darkSemantic: darkCs.getPropertyValue('--neb-solid-primary-base').trim(),
+      lightSemantic: lightCs.getPropertyValue('--neb-solid-primary-base').trim(),
     }
   })
 

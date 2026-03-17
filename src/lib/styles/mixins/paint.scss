@@ -9,6 +9,7 @@
 @use './paint/active/active-light.scss' as active-light;
 @use './paint/active-bg/active-bg-light.scss' as active-bg-light;
 @use './paint/disabled/disabled-light.scss' as disabled-light;
+@use './paint/ripple/ripple-light.scss' as ripple-light;
 
 // dark
 @use './paint/rest/rest-dark.scss' as rest-dark;
@@ -17,9 +18,10 @@
 @use './paint/active/active-dark.scss' as active-dark;
 @use './paint/active-bg/active-bg-dark.scss' as active-bg-dark;
 @use './paint/disabled/disabled-dark.scss' as disabled-dark;
+@use './paint/ripple/ripple-dark.scss' as ripple-dark;
 
 @mixin paint($theme) {
-  @include base.paint($theme);
+  @include base.paint();
   @include elevated.paint($theme);
   @include loader.paint($theme);
 
@@ -31,6 +33,7 @@
     @include active-light.paint();
     @include active-bg-light.paint();
     @include disabled-light.paint();
+    @include ripple-light.paint();
   } @else {
     @include rest-dark.paint();
     @include hover-dark.paint();
@@ -38,6 +41,7 @@
     @include active-dark.paint();
     @include active-bg-dark.paint();
     @include disabled-dark.paint();
+    @include ripple-dark.paint();
   }
 
   // elevated

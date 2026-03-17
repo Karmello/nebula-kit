@@ -18,6 +18,18 @@ html {
   }
 }
 
+html[data-ripple-mode='off'] {
+  --neb-ripple-factor: 0;
+}
+
+html[data-ripple-mode='default'] {
+  --neb-ripple-factor: 0.01;
+}
+
+html[data-ripple-mode='emphasized'] {
+  --neb-ripple-factor: 0.02;
+}
+
 html.neb-transitions {
   .neb-box[data-neb-box-drawable='true'][data-neb-box-transitions='true'] {
     transition:

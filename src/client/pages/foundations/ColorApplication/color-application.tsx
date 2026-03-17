@@ -12,7 +12,7 @@ export default () => {
   const [loading, setLoading] = useState<boolean>(false)
 
   return (
-    <Box drawable theme="light" variant="solid" intent="neutral">
+    <>
       <Text>
         Intents and variants combined through Button components, illustrating the system's full color spectrum in practice.
       </Text>
@@ -69,6 +69,6 @@ export default () => {
           })}
         </Grid>
       </Box>
-    </Box>
+    </>
   )
 }

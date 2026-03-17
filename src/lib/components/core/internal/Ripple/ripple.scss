@@ -4,7 +4,7 @@
   left: 0;
   border-radius: 50%;
   background-color: currentColor;
-  opacity: var(--neb-ripple-opacity);
+  opacity: calc(var(--ripple) * var(--neb-ripple-factor));
   transform: scale(0);
   will-change: transform, opacity;
   pointer-events: none;

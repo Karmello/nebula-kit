@@ -1,6 +1,6 @@
 @use 'styles/definitions/common.scss' as *;
 @use 'styles/mixins/load-palette.scss' as *;
-@use 'styles/mixins/set-theme-colors.scss' as *;
+@use 'styles/mixins/set-ctx-colors.scss' as *;
 @use 'styles/mixins/paint.scss' as *;
 
 /* ============================================================
@@ -38,14 +38,14 @@
 /* 2.1 Global brand root */
 @each $color in $colors {
   html[data-brand='#{$color}'] {
-    @include set-theme-colors($color);
+    @include set-ctx-colors($color);
   }
 }
 
 /* 2.2 Local Box brand root */
 @each $color in $colors {
   .neb-box[data-neb-box-brand='#{$color}'] {
-    @include set-theme-colors($color);
+    @include set-ctx-colors($color);
   }
 }
 
@@ -59,12 +59,12 @@
 @each $color in $colors {
   /* 3.1 Inherit from global brand */
   html[data-brand='#{$color}'] .neb-box:not([data-neb-box-brand]):not([data-neb-box-color]) {
-    @include set-theme-colors($color);
+    @include set-ctx-colors($color);
   }
 
   /* 3.2 Inherit from local Box brand */
   .neb-box[data-neb-box-brand='#{$color}'] .neb-box:not([data-neb-box-brand]):not([data-neb-box-color]) {
-    @include set-theme-colors($color);
+    @include set-ctx-colors($color);
   }
 }
 
@@ -76,7 +76,7 @@
 
 @each $color in $colors {
   .neb-box[data-neb-box-color='#{$color}'] {
-    @include set-theme-colors($color);
+    @include set-ctx-colors($color);
   }
 }
 

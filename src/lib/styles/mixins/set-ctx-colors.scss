@@ -1,4 +1,4 @@
-@mixin set-theme-colors($color) {
+@mixin set-ctx-colors($color) {
   --neb-background: var(--neb-#{$color}-1);
   --neb-text: var(--neb-#{$color}-9);
   --neb-focus-border: var(--neb-#{$color}-9);
