@@ -15,7 +15,8 @@
         --bg-active: var(--neb-outline-#{$intent}-bg-active);
         --text-disabled: var(--neb-outline-#{$intent}-text-disabled);
         --loader: var(--neb-outline-#{$intent}-loader);
-        --ripple: var(--neb-outline-#{$intent}-ripple);
+        --ripple-bg: currentColor;
+        --ripple-opacity: var(--neb-outline-#{$intent}-ripple-opacity);
 
         // elevated base
         &[data-neb-box-elevated='true'] {

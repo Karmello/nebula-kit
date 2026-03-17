@@ -3,8 +3,8 @@
   top: 0;
   left: 0;
   border-radius: 50%;
-  background-color: currentColor;
-  opacity: calc(var(--ripple) * var(--neb-ripple-factor));
+  background-color: var(--ripple-bg);
+  opacity: calc(var(--ripple-opacity) * var(--neb-ripple-factor));
   transform: scale(0);
   will-change: transform, opacity;
   pointer-events: none;

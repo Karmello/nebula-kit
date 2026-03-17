@@ -1,33 +1,33 @@
 @mixin paint() {
   // solid
-  --neb-solid-neutral-ripple: 3;
-  --neb-solid-muted-ripple: 3;
-  --neb-solid-tertiary-ripple: 3;
-  --neb-solid-secondary-ripple: 5;
-  --neb-solid-primary-ripple: 8;
-  --neb-solid-inverse-ripple: 10;
+  --neb-solid-neutral-ripple-opacity: 3;
+  --neb-solid-muted-ripple-opacity: 3;
+  --neb-solid-tertiary-ripple-opacity: 3;
+  --neb-solid-secondary-ripple-opacity: 5;
+  --neb-solid-primary-ripple-opacity: 8;
+  --neb-solid-inverse-ripple-opacity: 10;
 
   // outline
-  --neb-outline-neutral-ripple: 5;
-  --neb-outline-muted-ripple: 4;
-  --neb-outline-tertiary-ripple: 4;
-  --neb-outline-secondary-ripple: 5;
-  --neb-outline-primary-ripple: 6;
-  --neb-outline-inverse-ripple: 6;
+  --neb-outline-neutral-ripple-opacity: 5;
+  --neb-outline-muted-ripple-opacity: 4;
+  --neb-outline-tertiary-ripple-opacity: 4;
+  --neb-outline-secondary-ripple-opacity: 5;
+  --neb-outline-primary-ripple-opacity: 6;
+  --neb-outline-inverse-ripple-opacity: 6;
 
   // soft-outline
-  --neb-soft-outline-neutral-ripple: 5;
-  --neb-soft-outline-muted-ripple: 22;
-  --neb-soft-outline-tertiary-ripple: 16;
-  --neb-soft-outline-secondary-ripple: 12;
-  --neb-soft-outline-primary-ripple: 8;
-  --neb-soft-outline-inverse-ripple: 6;
+  --neb-soft-outline-neutral-ripple-opacity: 5;
+  --neb-soft-outline-muted-ripple-opacity: 22;
+  --neb-soft-outline-tertiary-ripple-opacity: 16;
+  --neb-soft-outline-secondary-ripple-opacity: 12;
+  --neb-soft-outline-primary-ripple-opacity: 8;
+  --neb-soft-outline-inverse-ripple-opacity: 6;
 
   // ghost
-  --neb-ghost-neutral-ripple: 7;
-  --neb-ghost-muted-ripple: 32;
-  --neb-ghost-tertiary-ripple: 22;
-  --neb-ghost-secondary-ripple: 16;
-  --neb-ghost-primary-ripple: 14;
-  --neb-ghost-inverse-ripple: 6;
+  --neb-ghost-neutral-ripple-opacity: 15;
+  --neb-ghost-muted-ripple-opacity: 32;
+  --neb-ghost-tertiary-ripple-opacity: 22;
+  --neb-ghost-secondary-ripple-opacity: 16;
+  --neb-ghost-primary-ripple-opacity: 14;
+  --neb-ghost-inverse-ripple-opacity: 6;
 }

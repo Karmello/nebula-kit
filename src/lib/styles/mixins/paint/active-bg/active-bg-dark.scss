@@ -7,7 +7,7 @@
   --neb-outline-tertiary#{$el}-bg-active: color-mix(in hsl, var(--neb-outline-tertiary#{$el}-base) 80%, transparent);
   --neb-outline-secondary#{$el}-bg-active: color-mix(in hsl, var(--neb-outline-secondary#{$el}-base) 40%, transparent);
   --neb-outline-primary#{$el}-bg-active: color-mix(in hsl, var(--neb-outline-primary#{$el}-base) 30%, transparent);
-  --neb-outline-inverse#{$el}-bg-active: color-mix(in hsl, var(--neb-outline-inverse#{$el}-base) 20%, transparent);
+  --neb-outline-inverse#{$el}-bg-active: color-mix(in hsl, var(--neb-outline-primary#{$el}-base) 30%, transparent);
 
   // soft-outline
   --neb-soft-outline-neutral#{$el}-bg-active: color-mix(in hsl, var(--neb-soft-outline-neutral#{$el}-base) 100%, transparent);
@@ -15,5 +15,5 @@
   --neb-soft-outline-tertiary#{$el}-bg-active: color-mix(in hsl, var(--neb-soft-outline-tertiary#{$el}-base) 80%, transparent);
   --neb-soft-outline-secondary#{$el}-bg-active: color-mix(in hsl, var(--neb-soft-outline-secondary#{$el}-base) 40%, transparent);
   --neb-soft-outline-primary#{$el}-bg-active: color-mix(in hsl, var(--neb-soft-outline-primary#{$el}-base) 30%, transparent);
-  --neb-soft-outline-inverse#{$el}-bg-active: color-mix(in hsl, var(--neb-soft-outline-inverse#{$el}-base) 20%, transparent);
+  --neb-soft-outline-inverse#{$el}-bg-active: color-mix(in hsl, var(--neb-soft-outline-primary#{$el}-base) 30%, transparent);
 }

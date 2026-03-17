@@ -14,7 +14,8 @@
         --text-active: var(--neb-solid-#{$intent}-text-active, var(--neb-text));
         --text-disabled: var(--neb-solid-#{$intent}-text-disabled);
         --loader: var(--neb-solid-#{$intent}-loader);
-        --ripple: var(--neb-solid-#{$intent}-ripple);
+        --ripple-bg: currentColor;
+        --ripple-opacity: var(--neb-solid-#{$intent}-ripple-opacity);
 
         // elevated base
         &[data-neb-box-elevated='true'] {
