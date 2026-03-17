@@ -19,8 +19,7 @@ export default () => {
         content="In rare cases, a component may not expose tagRef because it already uses a ref internally and overriding it would break existing functionality.
         However, in most situations you can rely on tagRef being available for direct access and control of the root element."
       />
-      <Spacer blockSize="60px" />
-      <Text bold>Example</Text>
+      <Spacer blockSize="30px" />
       <CodeSnippet
         lang="tsx"
         code={`const [visible, setVisible] = useState<boolean>(false)
@@ -30,6 +29,7 @@ return <>
   <Button tagRef={buttonRef} tagAttrs={{ onClick: () => setVisible(!visible) }}>Toggle portal</Button>
   <Portal anchorRef={buttonRef} placement="top">This is Portal content</Portal>
 </>`}
+        description="Example"
       />
     </Box>
   )

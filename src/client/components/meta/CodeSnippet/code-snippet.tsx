@@ -4,54 +4,27 @@ import { TokensResult } from 'shiki'
 import { Box, Flex, Button, Text } from 'lib/components'
 
 import { tokenizeCode } from './highlight-tokens'
+import { COLOR_MAP } from './definitions'
 
 export type CodeSnippetProps = {
   code: string
   lang: 'log' | 'bash' | 'tsx'
   borderRadius?: boolean
   description?: string
+  boldDescription?: boolean
+  descriptionIcon?: boolean
   fullBg?: boolean
-  copyBtn?: boolean
 }
 
-const COLOR_MAP = {
-  // background
-  bg: 'var(--neb-gray-2)',
-  // component name
-  '#F78C6C': 'var(--neb-red-5)',
-  // native html tag name
-  '#CAECE6': 'var(--neb-red-5)',
-  // prop name
-  '#C5E478': 'var(--neb-blue-5)',
-  // object name, object key names
-  '#D6DEEB': 'var(--neb-gray-5)',
-  // value
-  '#ECC48D': 'var(--neb-amber-5)',
-  // param name
-  '#D7DBE0': 'var(--neb-amber-5)',
-  // argument name
-  '#FF5874': 'var(--neb-amber-5)',
-  // called func name
-  '#82AAFF': 'var(--neb-blue-5)',
-  // TS type name
-  '#FFCB8B': 'var(--neb-text)',
-  // angle brackets, cb curly brackets
-  '#7FDBCA': 'var(--neb-gray-9)',
-  // prop curly brackets
-  '#D3423E': 'var(--neb-gray-9)',
-  // equal sign, arrow func sign, dot
-  '#C792EA': 'var(--neb-gray-9)',
-  // quotes
-  '#D9F5DD': 'var(--neb-gray-9)',
-  // comments
-  '#637777': 'var(--neb-text)',
-  // extension
-  '#5CA7E4': 'var(--neb-blue-5)',
-  //
-  '#BAEBE2': 'var(--neb-blue-5)',
-}
-
-export const CodeSnippet = ({ code, lang = 'log', borderRadius = true, description, fullBg }: CodeSnippetProps) => {
+export const CodeSnippet = ({
+  code,
+  lang = 'log',
+  borderRadius = true,
+  description,
+  boldDescription = true,
+  descriptionIcon = false,
+  fullBg,
+}: CodeSnippetProps) => {
   const [data, setData] = useState<TokensResult>()
   const [copied, setCopied] = useState<boolean>(false)
 
@@ -90,7 +63,12 @@ export const CodeSnippet = ({ code, lang = 'log', borderRadius = true, descripti
         <Flex.Item flex="1">
           {description ? (
             <Box paddingBlock="10px">
-              <Text iconName="arrow-down" tagAttrs={{ style: { lineHeight: 1.25 } }}>
+              <Text
+                bold={boldDescription}
+                iconName={descriptionIcon ? 'arrow-right' : undefined}
+                intent="neutral"
+                tagAttrs={{ style: { lineHeight: 1.25 } }}
+              >
                 {description}
               </Text>
             </Box>

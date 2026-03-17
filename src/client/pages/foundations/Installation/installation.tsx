@@ -11,46 +11,32 @@ export default () => {
             https://www.npmjs.com/package/@nebula-kit/core
           </Text>
         </Link>
-        <Spacer />
-        <Text bold intent="neutral">
-          Install with NPM
-        </Text>
-        <CodeSnippet lang="bash" code="npm install @nebula-kit/core" />
-        <Spacer />
-        <Text bold intent="neutral">
-          Install with Yarn
-        </Text>
-        <CodeSnippet lang="bash" code="yarn add @nebula-kit/core" />
+        <Spacer blockSize="10px" />
+        <CodeSnippet lang="bash" code="npm install @nebula-kit/core" description="Install with NPM" />
+        <Spacer blockSize="10px" />
+        <CodeSnippet lang="bash" code="yarn add @nebula-kit/core" description="Install with Yarn" />
       </Section>
       <Spacer blockSize="40px" />
       <Section size="sm" heading="Pro bundle" iconName="arrow-down" intent="primary">
         <Text intent="neutral">The Pro bundle is distributed through a private registry.</Text>
-        <Spacer />
-        <Text bold intent="neutral">
-          To access it, add the following to your project's .npmrc file
-        </Text>
+        <Spacer blockSize="10px" />
         <CodeSnippet
           lang="log"
           code={`@nebula-kit-private:registry=https://api.nebulakit.dev/registry
 //api.nebulakit.dev/registry/:_authToken=\${NEB_TOKEN}\
 \nalways-auth=true
 `}
+          description="To access it, add the following to your project's .npmrc file"
         />
         <Spacer blockSize="5px" />
         <Text typography="caption" intent="secondary" color="gray">
           NEB_TOKEN is your personal license key used to authenticate access to the Pro bundle. You'll find it in your NebulaKit
           account dashboard after subscribing.
         </Text>
-        <Spacer />
-        <Text bold intent="neutral">
-          Install with NPM
-        </Text>
-        <CodeSnippet lang="bash" code="npm install @nebula-kit-private/pro" />
-        <Spacer />
-        <Text bold intent="neutral">
-          Install with Yarn
-        </Text>
-        <CodeSnippet lang="bash" code="yarn add @nebula-kit-private/pro" />
+        <Spacer blockSize="10px" />
+        <CodeSnippet lang="bash" code="npm install @nebula-kit-private/pro" description="Install with NPM" />
+        <Spacer blockSize="10px" />
+        <CodeSnippet lang="bash" code="yarn add @nebula-kit-private/pro" description="Install with Yarn" />
       </Section>
     </Box>
   )

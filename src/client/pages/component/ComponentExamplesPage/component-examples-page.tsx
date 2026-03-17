@@ -40,7 +40,13 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
               <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} borderRadius={false} fullBg />
             </Reveal>
           ) : (
-            <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} description={description} />
+            <CodeSnippet
+              lang="tsx"
+              code={code || convertElemToString(jsx)}
+              description={description}
+              boldDescription={false}
+              descriptionIcon
+            />
           )}
         </>
       ) : null}
