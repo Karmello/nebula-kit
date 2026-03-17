@@ -42,6 +42,7 @@ return (
         startAffix={props => <Button {...props} iconName="search" />}
         endAffix={props => <Button {...props} iconName="eye" />}
         disabled
+        value="value"
       />
     ),
     code: `<Input

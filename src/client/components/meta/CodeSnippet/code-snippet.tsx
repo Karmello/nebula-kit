@@ -11,6 +11,7 @@ export type CodeSnippetProps = {
   borderRadius?: boolean
   description?: string
   fullBg?: boolean
+  copyBtn?: boolean
 }
 
 const COLOR_MAP = {
@@ -89,7 +90,7 @@ export const CodeSnippet = ({ code, lang = 'log', borderRadius = true, descripti
         <Flex.Item flex="1">
           {description ? (
             <Box paddingBlock="10px">
-              <Text bold iconName="arrow-down" tagAttrs={{ style: { lineHeight: 1.25 } }}>
+              <Text iconName="arrow-down" tagAttrs={{ style: { lineHeight: 1.25 } }}>
                 {description}
               </Text>
             </Box>

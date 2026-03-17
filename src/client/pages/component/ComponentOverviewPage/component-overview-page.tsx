@@ -33,7 +33,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
         ) : null}
       </Box>
       {description ? (
-        <Section heading="Description" size="sm">
+        <Section size="xs" heading="Description" iconName="arrow-down">
           <Text>{description}</Text>
         </Section>
       ) : null}

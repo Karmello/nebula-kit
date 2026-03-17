@@ -123,7 +123,7 @@ export const CatalogPageTemplate = memo(
                             <Box
                               drawable
                               variant="solid"
-                              intent="primary"
+                              intent="tertiary"
                               borderRadius="10px"
                               paddingBlock="3px"
                               paddingInline="7px"
