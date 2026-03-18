@@ -26,12 +26,14 @@
 
         // interaction
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
+          // hover
           &[data-neb-box-default-state='hover'],
           &:hover:not(:active):not([data-neb-box-default-state='active']):not(:focus-visible[data-neb-box-active-on-focus='true']),
           &:focus-visible:not([data-neb-box-default-state='active']):not([data-neb-box-active-on-focus='true']) {
             color: var(--base-hover);
           }
 
+          // active
           &[data-neb-box-default-state='active'],
           &:active,
           &:focus-visible[data-neb-box-active-on-focus='true'] {
