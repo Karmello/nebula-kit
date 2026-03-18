@@ -1,7 +1,7 @@
 @use 'styles/definitions/common.scss' as *;
-@use 'styles/mixins/load-palette.scss' as *;
-@use 'styles/mixins/set-ctx-colors.scss' as *;
-@use 'styles/mixins/paint/paint.scss' as *;
+@use 'styles/palette/load-palette.scss' as *;
+@use 'styles/paint/set-ctx-colors.scss' as *;
+@use 'styles/paint/paint.scss' as *;
 
 /* ============================================================
    1. Theme palette boundaries
