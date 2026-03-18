@@ -11,11 +11,11 @@
         --base: var(--neb-outline-#{$intent}-base);
         --base-hover: var(--neb-outline-#{$intent}-base-hover);
         --base-active: var(--neb-outline-#{$intent}-base-active);
-        --bg-hover: var(--neb-outline-#{$intent}-bg-hover);
-        --bg-active: var(--neb-outline-#{$intent}-bg-active);
+        --fill-hover: var(--neb-outline-#{$intent}-fill-hover);
+        --fill-active: var(--neb-outline-#{$intent}-fill-active);
         --text-disabled: var(--neb-outline-#{$intent}-text-disabled);
         --loader: var(--neb-outline-#{$intent}-loader);
-        --ripple-bg: currentColor;
+        --ripple: currentColor;
         --ripple-opacity: var(--neb-outline-#{$intent}-ripple-opacity);
 
         // elevated base
@@ -23,8 +23,8 @@
           --base: var(--neb-outline-#{$intent}-elevated-base);
           --base-hover: var(--neb-outline-#{$intent}-elevated-base-hover);
           --base-active: var(--neb-outline-#{$intent}-elevated-base-active);
-          --bg-hover: var(--neb-outline-#{$intent}-elevated-bg-hover);
-          --bg-active: var(--neb-outline-#{$intent}-elevated-bg-active);
+          --fill-hover: var(--neb-outline-#{$intent}-elevated-fill-hover);
+          --fill-active: var(--neb-outline-#{$intent}-elevated-fill-active);
           --text-disabled: var(--neb-outline-#{$intent}-elevated-text-disabled);
         }
 
@@ -37,14 +37,15 @@
           &:hover:not(:active):not([data-neb-box-default-state='active']):not(:focus-visible[data-neb-box-active-on-focus='true']),
           &:focus-visible:not([data-neb-box-default-state='active']):not([data-neb-box-active-on-focus='true']) {
             border-color: var(--base-hover);
-            background-color: var(--bg-hover);
+            background-color: var(--fill-hover);
           }
 
           &[data-neb-box-default-state='active'],
           &:active,
           &:focus-visible[data-neb-box-active-on-focus='true'] {
             border-color: var(--base-active);
-            background-color: var(--bg-active);
+            background-color: var(--fill-active);
+            text-shadow: 0px 0px 1px var(--neb-text);
           }
         }
 

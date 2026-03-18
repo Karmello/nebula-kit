@@ -9,17 +9,15 @@
         // base
         --base: var(--neb-ghost-#{$intent}-base);
         --base-hover: var(--neb-ghost-#{$intent}-base-hover);
-        --base-active: var(--neb-ghost-#{$intent}-base-active);
         --text-disabled: var(--neb-ghost-#{$intent}-text-disabled);
         --loader: var(--neb-ghost-#{$intent}-loader);
-        --ripple-bg: var(--neb-ghost-#{$intent}-ripple-bg, currentColor);
+        --ripple: var(--neb-ghost-#{$intent}-ripple, currentColor);
         --ripple-opacity: var(--neb-ghost-#{$intent}-ripple-opacity);
 
         // elevated base
         &[data-neb-box-elevated='true'] {
           --base: var(--neb-ghost-#{$intent}-elevated-base);
           --base-hover: var(--neb-ghost-#{$intent}-elevated-base-hover);
-          --base-active: var(--neb-ghost-#{$intent}-elevated-base-active);
           --text-disabled: var(--neb-ghost-#{$intent}-elevated-text-disabled);
         }
 
@@ -37,7 +35,8 @@
           &[data-neb-box-default-state='active'],
           &:active,
           &:focus-visible[data-neb-box-active-on-focus='true'] {
-            color: var(--base-active);
+            color: var(--base-hover);
+            text-shadow: 0px 0px 1px var(--base-hover);
           }
         }
 

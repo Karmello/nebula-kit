@@ -1,8 +1,0 @@
-@mixin paint() {
-  // solid text
-  --neb-solid-muted-text: hsl(from var(--neb-solid-muted-base) h s calc(l + 75));
-  --neb-solid-tertiary-text: hsl(from var(--neb-solid-tertiary-base) h s calc(l + 70));
-  --neb-solid-secondary-text: hsl(from var(--neb-solid-secondary-base) h s calc(l + 55));
-  --neb-solid-primary-text: hsl(from var(--neb-solid-primary-base) h s calc(l + 40));
-  --neb-solid-inverse-text: hsl(from var(--neb-solid-inverse-base) h s calc(l - 65));
-}

@@ -2,12 +2,12 @@
   $el: if($elevated, '-elevated', '');
 
   // solid
-  --neb-solid-neutral#{$el}-base-hover: hsl(from var(--neb-solid-neutral#{$el}-base) h s calc(l - 3));
-  --neb-solid-muted#{$el}-base-hover: hsl(from var(--neb-solid-muted#{$el}-base) h s calc(l - 5));
-  --neb-solid-tertiary#{$el}-base-hover: hsl(from var(--neb-solid-tertiary#{$el}-base) h s calc(l - 5));
-  --neb-solid-secondary#{$el}-base-hover: hsl(from var(--neb-solid-secondary#{$el}-base) h s calc(l - 5));
-  --neb-solid-primary#{$el}-base-hover: hsl(from var(--neb-solid-primary#{$el}-base) h s calc(l - 5));
-  --neb-solid-inverse#{$el}-base-hover: hsl(from var(--neb-solid-inverse#{$el}-base) h s l);
+  --neb-solid-neutral#{$el}-base-hover: hsl(from var(--neb-solid-neutral#{$el}-base) h s calc(l - 7));
+  --neb-solid-muted#{$el}-base-hover: hsl(from var(--neb-solid-muted#{$el}-base) h s calc(l - 7));
+  --neb-solid-tertiary#{$el}-base-hover: hsl(from var(--neb-solid-tertiary#{$el}-base) h s calc(l - 7));
+  --neb-solid-secondary#{$el}-base-hover: hsl(from var(--neb-solid-secondary#{$el}-base) h s calc(l - 7));
+  --neb-solid-primary#{$el}-base-hover: hsl(from var(--neb-solid-primary#{$el}-base) h s calc(l - 7));
+  --neb-solid-inverse#{$el}-base-hover: hsl(from var(--neb-solid-inverse#{$el}-base) h s calc(l - 7));
 
   // outline
   --neb-outline-neutral#{$el}-base-hover: hsl(from var(--neb-outline-neutral#{$el}-base) h s calc(l - 4));
@@ -27,9 +27,9 @@
 
   // ghost
   --neb-ghost-neutral#{$el}-base-hover: hsl(from var(--neb-ghost-neutral#{$el}-base) h s l);
-  --neb-ghost-muted#{$el}-base-hover: hsl(from var(--neb-ghost-muted#{$el}-base) h s calc(l - 4));
-  --neb-ghost-tertiary#{$el}-base-hover: hsl(from var(--neb-ghost-tertiary#{$el}-base) h s calc(l - 5));
-  --neb-ghost-secondary#{$el}-base-hover: hsl(from var(--neb-ghost-secondary#{$el}-base) h s calc(l - 7));
-  --neb-ghost-primary#{$el}-base-hover: hsl(from var(--neb-ghost-primary#{$el}-base) h s calc(l - 8));
+  --neb-ghost-muted#{$el}-base-hover: hsl(from var(--neb-ghost-muted#{$el}-base) h s calc(l - 8));
+  --neb-ghost-tertiary#{$el}-base-hover: hsl(from var(--neb-ghost-tertiary#{$el}-base) h s calc(l - 10));
+  --neb-ghost-secondary#{$el}-base-hover: hsl(from var(--neb-ghost-secondary#{$el}-base) h s calc(l - 15));
+  --neb-ghost-primary#{$el}-base-hover: hsl(from var(--neb-ghost-primary#{$el}-base) h s calc(l - 18));
   --neb-ghost-inverse#{$el}-base-hover: hsl(from var(--neb-ghost-inverse#{$el}-base) h s l);
 }

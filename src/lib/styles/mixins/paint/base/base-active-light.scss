@@ -2,12 +2,12 @@
   $el: if($elevated, '-elevated', '');
 
   // solid
-  --neb-solid-neutral#{$el}-base-active: hsl(from var(--neb-solid-neutral#{$el}-base) h s calc(l - 6));
-  --neb-solid-muted#{$el}-base-active: hsl(from var(--neb-solid-muted#{$el}-base) h s calc(l - 10));
-  --neb-solid-tertiary#{$el}-base-active: hsl(from var(--neb-solid-tertiary#{$el}-base) h s calc(l - 10));
-  --neb-solid-secondary#{$el}-base-active: hsl(from var(--neb-solid-secondary#{$el}-base) h s calc(l - 10));
-  --neb-solid-primary#{$el}-base-active: hsl(from var(--neb-solid-primary#{$el}-base) h s calc(l - 10));
-  --neb-solid-inverse#{$el}-base-active: hsl(from var(--neb-solid-inverse#{$el}-base) h s l);
+  --neb-solid-neutral#{$el}-base-active: hsl(from var(--neb-solid-neutral#{$el}-base) h s calc(l - 14));
+  --neb-solid-muted#{$el}-base-active: hsl(from var(--neb-solid-muted#{$el}-base) h s calc(l - 14));
+  --neb-solid-tertiary#{$el}-base-active: hsl(from var(--neb-solid-tertiary#{$el}-base) h s calc(l - 14));
+  --neb-solid-secondary#{$el}-base-active: hsl(from var(--neb-solid-secondary#{$el}-base) h s calc(l - 14));
+  --neb-solid-primary#{$el}-base-active: hsl(from var(--neb-solid-primary#{$el}-base) h s calc(l - 14));
+  --neb-solid-inverse#{$el}-base-active: hsl(from var(--neb-solid-inverse#{$el}-base) h s calc(l - 14));
 
   // solid text
   --neb-solid-primary-text-active: hsl(from var(--neb-solid-primary-base) h s calc(l + 55));
@@ -28,12 +28,4 @@
   --neb-soft-outline-secondary#{$el}-base-active: hsl(from var(--neb-soft-outline-secondary#{$el}-base) h s calc(l - 13));
   --neb-soft-outline-primary#{$el}-base-active: hsl(from var(--neb-soft-outline-primary#{$el}-base) h s calc(l - 14));
   --neb-soft-outline-inverse#{$el}-base-active: hsl(from var(--neb-soft-outline-inverse#{$el}-base) h s l);
-
-  // ghost
-  --neb-ghost-neutral#{$el}-base-active: hsl(from var(--neb-ghost-neutral#{$el}-base) h s l);
-  --neb-ghost-muted#{$el}-base-active: hsl(from var(--neb-ghost-muted#{$el}-base) h s calc(l - 9));
-  --neb-ghost-tertiary#{$el}-base-active: hsl(from var(--neb-ghost-tertiary#{$el}-base) h s calc(l - 11));
-  --neb-ghost-secondary#{$el}-base-active: hsl(from var(--neb-ghost-secondary#{$el}-base) h s calc(l - 13));
-  --neb-ghost-primary#{$el}-base-active: hsl(from var(--neb-ghost-primary#{$el}-base) h s calc(l - 14));
-  --neb-ghost-inverse#{$el}-base-active: hsl(from var(--neb-ghost-inverse#{$el}-base) h s l);
 }
