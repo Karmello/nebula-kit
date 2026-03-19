@@ -7,6 +7,7 @@
 // text
 @use './text/text-rest-light.scss' as text-rest-light;
 @use './text/text-rest-dark.scss' as text-rest-dark;
+@use './text/text-hover-light.scss' as text-hover-light;
 @use './text/text-disabled-light.scss' as text-disabled-light;
 @use './text/text-disabled-dark.scss' as text-disabled-dark;
 
@@ -39,6 +40,7 @@
   // base
   @if $theme == 'light' {
     @include text-rest-light.paint();
+    @include text-hover-light.paint();
     @include text-disabled-light.paint();
     @include fill-hover-light.paint();
     @include fill-active-light.paint();

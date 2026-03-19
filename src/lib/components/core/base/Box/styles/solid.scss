@@ -11,7 +11,8 @@
         --base-hover: var(--neb-solid-#{$intent}-base-hover);
         --base-active: var(--neb-solid-#{$intent}-base-active);
         --text: var(--neb-solid-#{$intent}-text, var(--neb-text));
-        --text-active: var(--neb-solid-#{$intent}-text-active, var(--neb-text));
+        --text-hover: var(--neb-solid-#{$intent}-text-hover, var(--text));
+        --text-active: var(--neb-solid-#{$intent}-text-active, var(--text-hover));
         --text-disabled: var(--neb-solid-#{$intent}-text-disabled);
         --loader: var(--neb-solid-#{$intent}-loader);
         --ripple: currentColor;
@@ -36,6 +37,7 @@
           &:hover:not(:active):not([data-neb-box-default-state='active']):not(:focus-visible[data-neb-box-active-on-focus='true']),
           &:focus-visible:not([data-neb-box-default-state='active']):not([data-neb-box-active-on-focus='true']) {
             background-color: var(--base-hover);
+            color: var(--text-hover);
           }
 
           // active
