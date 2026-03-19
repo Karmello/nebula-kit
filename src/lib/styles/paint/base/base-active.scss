@@ -1,0 +1,39 @@
+@mixin paint($elevated: false) {
+  $el: if($elevated, '-elevated', '');
+
+  // solid
+  --neb-solid-neutral#{$el}-base-active: var(--neb-ctx-color-strong-1);
+  --neb-solid-muted#{$el}-base-active: var(--neb-ctx-color-strong-2);
+  --neb-solid-tertiary#{$el}-base-active: var(--neb-ctx-color-strong-3);
+  --neb-solid-secondary#{$el}-base-active: var(--neb-ctx-color-strong-4);
+  --neb-solid-primary#{$el}-base-active: var(--neb-ctx-color-strong-5);
+  --neb-solid-inverse#{$el}-base-active: var(--neb-ctx-color-strong-9);
+
+  // solid text
+  --neb-solid-primary-text-active: var(--neb-ctx-color-strong-1);
+  --neb-solid-inverse-text-active: var(--neb-ctx-color-strong-1);
+
+  // outline
+  --neb-outline-neutral#{$el}-base-active: var(--neb-ctx-color-strong-2);
+  --neb-outline-muted#{$el}-base-active: var(--neb-ctx-color-strong-2);
+  --neb-outline-tertiary#{$el}-base-active: var(--neb-ctx-color-strong-3);
+  --neb-outline-secondary#{$el}-base-active: var(--neb-ctx-color-strong-4);
+  --neb-outline-primary#{$el}-base-active: var(--neb-ctx-color-strong-5);
+  --neb-outline-inverse#{$el}-base-active: var(--neb-ctx-color-strong-9);
+
+  // soft-outline
+  --neb-soft-outline-neutral#{$el}-base-active: var(--neb-ctx-color-strong-2);
+  --neb-soft-outline-muted#{$el}-base-active: var(--neb-ctx-color-strong-2);
+  --neb-soft-outline-tertiary#{$el}-base-active: var(--neb-ctx-color-strong-3);
+  --neb-soft-outline-secondary#{$el}-base-active: var(--neb-ctx-color-strong-4);
+  --neb-soft-outline-primary#{$el}-base-active: var(--neb-ctx-color-strong-5);
+  --neb-soft-outline-inverse#{$el}-base-active: var(--neb-ctx-color-strong-9);
+
+  // ghost
+  --neb-ghost-neutral#{$el}-base-active: var(--neb-ctx-color-strong-9);
+  --neb-ghost-muted#{$el}-base-active: var(--neb-ctx-color-strong-2);
+  --neb-ghost-tertiary#{$el}-base-active: var(--neb-ctx-color-strong-3);
+  --neb-ghost-secondary#{$el}-base-active: var(--neb-ctx-color-strong-4);
+  --neb-ghost-primary#{$el}-base-active: var(--neb-ctx-color-strong-5);
+  --neb-ghost-inverse#{$el}-base-active: var(--neb-ctx-color-strong-1);
+}

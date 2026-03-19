@@ -5,5 +5,7 @@
 
   @for $i from 1 through 9 {
     --neb-ctx-color-#{$i}: var(--neb-#{$color}-#{$i});
+    --neb-ctx-color-accent-#{$i}: var(--neb-#{$color}-accent-#{$i});
+    --neb-ctx-color-strong-#{$i}: var(--neb-#{$color}-strong-#{$i});
   }
 }
