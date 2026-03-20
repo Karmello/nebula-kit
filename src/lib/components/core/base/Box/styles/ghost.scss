@@ -39,7 +39,6 @@
           &:active,
           &:focus-visible[data-neb-box-active-on-focus='true'] {
             color: var(--base-active);
-            text-shadow: 0px 0px 1px var(--base-active);
           }
         }
 

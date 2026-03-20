@@ -8,7 +8,7 @@ export default () => {
   const brand = useAppStore(state => state.brand)
   const setBrand = useAppStore(state => state.setBrand)
 
-  const arr = Array.from({ length: 9 }, (v, k) => k)
+  const arr = Array.from({ length: 15 }, (v, k) => k)
 
   return (
     <Box maxInlineSize={{ lg: '55rem' }}>

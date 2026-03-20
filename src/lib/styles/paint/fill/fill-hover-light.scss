@@ -2,18 +2,18 @@
   $el: if($elevated, '-elevated', '');
 
   // outline
-  --neb-outline-neutral#{$el}-fill-hover: var(--neb-ctx-color-accent-1);
-  --neb-outline-muted#{$el}-fill-hover: var(--neb-ctx-color-accent-1);
-  --neb-outline-tertiary#{$el}-fill-hover: var(--neb-ctx-color-accent-1);
-  --neb-outline-secondary#{$el}-fill-hover: var(--neb-ctx-color-accent-2);
-  --neb-outline-primary#{$el}-fill-hover: var(--neb-ctx-color-accent-2);
-  --neb-outline-inverse#{$el}-fill-hover: var(--neb-ctx-color-accent-2);
+  --neb-outline-neutral#{$el}-fill-hover: var(--neb-ctx-color-2);
+  --neb-outline-muted#{$el}-fill-hover: var(--neb-ctx-color-2);
+  --neb-outline-tertiary#{$el}-fill-hover: var(--neb-ctx-color-3);
+  --neb-outline-secondary#{$el}-fill-hover: var(--neb-ctx-color-3);
+  --neb-outline-primary#{$el}-fill-hover: var(--neb-ctx-color-4);
+  --neb-outline-inverse#{$el}-fill-hover: var(--neb-ctx-color-4);
 
   // soft-outline
-  --neb-soft-outline-neutral#{$el}-fill-hover: var(--neb-ctx-color-accent-1);
-  --neb-soft-outline-muted#{$el}-fill-hover: var(--neb-ctx-color-accent-1);
-  --neb-soft-outline-tertiary#{$el}-fill-hover: var(--neb-ctx-color-accent-1);
-  --neb-soft-outline-secondary#{$el}-fill-hover: var(--neb-ctx-color-accent-2);
-  --neb-soft-outline-primary#{$el}-fill-hover: var(--neb-ctx-color-accent-2);
-  --neb-soft-outline-inverse#{$el}-fill-hover: var(--neb-ctx-color-accent-2);
+  --neb-soft-outline-neutral#{$el}-fill-hover: var(--neb-ctx-color-2);
+  --neb-soft-outline-muted#{$el}-fill-hover: var(--neb-ctx-color-2);
+  --neb-soft-outline-tertiary#{$el}-fill-hover: var(--neb-ctx-color-3);
+  --neb-soft-outline-secondary#{$el}-fill-hover: var(--neb-ctx-color-3);
+  --neb-soft-outline-primary#{$el}-fill-hover: var(--neb-ctx-color-4);
+  --neb-soft-outline-inverse#{$el}-fill-hover: var(--neb-ctx-color-4);
 }

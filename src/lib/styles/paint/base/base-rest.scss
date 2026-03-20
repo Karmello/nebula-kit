@@ -1,33 +1,33 @@
 @mixin paint() {
   // solid
   --neb-solid-neutral-base: var(--neb-ctx-color-1);
-  --neb-solid-muted-base: var(--neb-ctx-color-2);
-  --neb-solid-tertiary-base: var(--neb-ctx-color-3);
-  --neb-solid-secondary-base: var(--neb-ctx-color-4);
-  --neb-solid-primary-base: var(--neb-ctx-color-5);
-  --neb-solid-inverse-base: var(--neb-ctx-color-9);
+  --neb-solid-muted-base: var(--neb-ctx-color-3);
+  --neb-solid-tertiary-base: var(--neb-ctx-color-4);
+  --neb-solid-secondary-base: var(--neb-ctx-color-6);
+  --neb-solid-primary-base: var(--neb-ctx-color-8);
+  --neb-solid-inverse-base: var(--neb-ctx-color-15);
 
   // outline
-  --neb-outline-neutral-base: var(--neb-ctx-color-2);
-  --neb-outline-muted-base: var(--neb-ctx-color-2);
-  --neb-outline-tertiary-base: var(--neb-ctx-color-3);
-  --neb-outline-secondary-base: var(--neb-ctx-color-4);
-  --neb-outline-primary-base: var(--neb-ctx-color-5);
-  --neb-outline-inverse-base: var(--neb-ctx-color-9);
+  --neb-outline-neutral-base: var(--neb-ctx-color-3);
+  --neb-outline-muted-base: var(--neb-ctx-color-3);
+  --neb-outline-tertiary-base: var(--neb-ctx-color-4);
+  --neb-outline-secondary-base: var(--neb-ctx-color-6);
+  --neb-outline-primary-base: var(--neb-ctx-color-8);
+  --neb-outline-inverse-base: var(--neb-ctx-color-15);
 
   // soft-outline
-  --neb-soft-outline-neutral-base: var(--neb-ctx-color-2);
-  --neb-soft-outline-muted-base: var(--neb-ctx-color-2);
-  --neb-soft-outline-tertiary-base: var(--neb-ctx-color-3);
-  --neb-soft-outline-secondary-base: var(--neb-ctx-color-4);
-  --neb-soft-outline-primary-base: var(--neb-ctx-color-5);
-  --neb-soft-outline-inverse-base: var(--neb-ctx-color-9);
+  --neb-soft-outline-neutral-base: var(--neb-ctx-color-3);
+  --neb-soft-outline-muted-base: var(--neb-ctx-color-3);
+  --neb-soft-outline-tertiary-base: var(--neb-ctx-color-4);
+  --neb-soft-outline-secondary-base: var(--neb-ctx-color-6);
+  --neb-soft-outline-primary-base: var(--neb-ctx-color-8);
+  --neb-soft-outline-inverse-base: var(--neb-ctx-color-15);
 
   // ghost
-  --neb-ghost-neutral-base: var(--neb-ctx-color-9);
-  --neb-ghost-muted-base: var(--neb-ctx-color-2);
-  --neb-ghost-tertiary-base: var(--neb-ctx-color-3);
-  --neb-ghost-secondary-base: var(--neb-ctx-color-4);
-  --neb-ghost-primary-base: var(--neb-ctx-color-5);
+  --neb-ghost-neutral-base: var(--neb-ctx-color-15);
+  --neb-ghost-muted-base: var(--neb-ctx-color-3);
+  --neb-ghost-tertiary-base: var(--neb-ctx-color-4);
+  --neb-ghost-secondary-base: var(--neb-ctx-color-6);
+  --neb-ghost-primary-base: var(--neb-ctx-color-8);
   --neb-ghost-inverse-base: var(--neb-ctx-color-1);
 }

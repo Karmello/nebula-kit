@@ -1,34 +1,17 @@
 @mixin load() {
-  // gray
   --neb-gray-1: hsl(0 0% 100%);
-  --neb-gray-2: hsl(0 0% 96%);
-  --neb-gray-3: hsl(0 0% 92%);
-  --neb-gray-4: hsl(0 0% 77%);
-  --neb-gray-5: hsl(0 0% 48%);
-  --neb-gray-6: hsl(0 0% 28%);
-  --neb-gray-7: hsl(0 0% 13%);
-  --neb-gray-8: hsl(0 0% 8%);
-  --neb-gray-9: hsl(0 0% 0%);
-
-  // gray accent
-  --neb-gray-accent-1: hsl(0 0% 97%);
-  --neb-gray-accent-2: hsl(0 0% 92%);
-  --neb-gray-accent-3: hsl(0 0% 86%);
-  --neb-gray-accent-4: hsl(0 0% 69%);
-  --neb-gray-accent-5: hsl(0 0% 40%);
-  --neb-gray-accent-6: hsl(0 0% 28%);
-  --neb-gray-accent-7: hsl(0 0% 13%);
-  --neb-gray-accent-8: hsl(0 0% 8%);
-  --neb-gray-accent-9: hsl(0 0% 0%);
-
-  // gray highlight
-  --neb-gray-highlight-1: hsl(0 0% 99%);
-  --neb-gray-highlight-2: hsl(0 0% 96%);
-  --neb-gray-highlight-3: hsl(0 0% 92%);
-  --neb-gray-highlight-4: hsl(0 0% 79%);
-  --neb-gray-highlight-5: hsl(0 0% 50%);
-  --neb-gray-highlight-6: hsl(0 0% 28%);
-  --neb-gray-highlight-7: hsl(0 0% 22%);
-  --neb-gray-highlight-8: hsl(0 0% 8%);
-  --neb-gray-highlight-9: hsl(0 0% 0%);
+  --neb-gray-2: hsl(0 0% 98%);
+  --neb-gray-3: hsl(0 0% 96%);
+  --neb-gray-4: hsl(0 0% 91%);
+  --neb-gray-5: hsl(0 0% 84%);
+  --neb-gray-6: hsl(0 0% 77%);
+  --neb-gray-7: hsl(0 0% 69%);
+  --neb-gray-8: hsl(0 0% 48%);
+  --neb-gray-9: hsl(0 0% 38%);
+  --neb-gray-10: hsl(0 0% 28%);
+  --neb-gray-11: hsl(0 0% 20%);
+  --neb-gray-12: hsl(0 0% 16%);
+  --neb-gray-13: hsl(0 0% 8%);
+  --neb-gray-14: hsl(0 0% 4%);
+  --neb-gray-15: hsl(0 0% 0%);
 }
