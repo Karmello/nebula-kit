@@ -47,6 +47,7 @@
           &:focus-visible[data-neb-box-active-on-focus='true'] {
             border-color: var(--base-active);
             background-color: var(--fill-active);
+            text-shadow: 0px 0px 1px currentColor;
           }
         }
 

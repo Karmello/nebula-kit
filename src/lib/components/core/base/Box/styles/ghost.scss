@@ -9,6 +9,7 @@
         // base
         --base: var(--neb-ghost-#{$intent}-base);
         --base-hover: var(--neb-ghost-#{$intent}-base-hover);
+        --base-active: var(--neb-ghost-#{$intent}-base-active);
         --text-disabled: var(--neb-ghost-#{$intent}-text-disabled);
         --loader: var(--neb-ghost-#{$intent}-loader);
         --ripple: var(--neb-ghost-#{$intent}-ripple, currentColor);
@@ -37,7 +38,8 @@
           &[data-neb-box-default-state='active'],
           &:active,
           &:focus-visible[data-neb-box-active-on-focus='true'] {
-            color: var(--base-hover);
+            color: var(--base-active);
+            text-shadow: 0px 0px 1px var(--base-active);
           }
         }
 
