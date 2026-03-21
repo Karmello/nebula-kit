@@ -7,6 +7,22 @@
   --neb-ctx-light-solid-primary-bg: var(--neb-blue-47);
   --neb-ctx-light-solid-inverse-bg: var(--neb-blue-100);
 
+  // solid bg hover
+  --neb-ctx-light-solid-neutral-bg-hover: var(--neb-blue-3);
+  --neb-ctx-light-solid-muted-bg-hover: var(--neb-blue-10);
+  --neb-ctx-light-solid-tertiary-bg-hover: var(--neb-blue-16);
+  --neb-ctx-light-solid-secondary-bg-hover: var(--neb-blue-29);
+  --neb-ctx-light-solid-primary-bg-hover: var(--neb-blue-41);
+  --neb-ctx-light-solid-inverse-bg-hover: var(--neb-blue-80);
+
+  // solid bg active
+  --neb-ctx-light-solid-neutral-bg-active: var(--neb-blue-3);
+  --neb-ctx-light-solid-muted-bg-active: var(--neb-blue-10);
+  --neb-ctx-light-solid-tertiary-bg-active: var(--neb-blue-16);
+  --neb-ctx-light-solid-secondary-bg-active: var(--neb-blue-29);
+  --neb-ctx-light-solid-primary-bg-active: var(--neb-blue-35);
+  --neb-ctx-light-solid-inverse-bg-active: var(--neb-blue-69);
+
   // solid text
   --neb-ctx-light-solid-neutral-text: var(--neb-blue-100);
   --neb-ctx-light-solid-muted-text: var(--neb-blue-100);
@@ -14,4 +30,12 @@
   --neb-ctx-light-solid-secondary-text: var(--neb-blue-100);
   --neb-ctx-light-solid-primary-text: var(--neb-blue-5);
   --neb-ctx-light-solid-inverse-text: var(--neb-blue-18);
+
+  // solid text active
+  --neb-ctx-light-solid-neutral-text-active: var(--neb-blue-100);
+  --neb-ctx-light-solid-muted-text-active: var(--neb-blue-100);
+  --neb-ctx-light-solid-tertiary-text-active: var(--neb-blue-100);
+  --neb-ctx-light-solid-secondary-text-active: var(--neb-blue-100);
+  --neb-ctx-light-solid-primary-text-active: var(--neb-blue-0);
+  --neb-ctx-light-solid-inverse-text-active: var(--neb-blue-0);
 }
