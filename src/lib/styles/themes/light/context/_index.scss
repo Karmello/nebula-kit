@@ -1,0 +1,8 @@
+@mixin set-context-light() {
+  --neb-ctx-solid-neutral-base: var(--neb-ctx-light-solid-neutral-base);
+  --neb-ctx-solid-muted-base: var(--neb-ctx-light-solid-muted-base);
+  --neb-ctx-solid-tertiary-base: var(--neb-ctx-light-solid-tertiary-base);
+  --neb-ctx-solid-secondary-base: var(--neb-ctx-light-solid-secondary-base);
+  --neb-ctx-solid-primary-base: var(--neb-ctx-light-solid-primary-base);
+  --neb-ctx-solid-inverse-base: var(--neb-ctx-light-solid-inverse-base);
+}

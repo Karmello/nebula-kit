@@ -1,0 +1,14 @@
+@mixin set-variables-light($color) {
+  --neb-background: var(--neb-#{$color}-0);
+  --neb-text: var(--neb-#{$color}-100);
+  --neb-focus-border: var(--neb-#{$color}-100);
+
+  @if $color == 'gray' {
+    --neb-ctx-light-solid-neutral-base: var(--neb-#{$color}-0);
+    --neb-ctx-light-solid-muted-base: var(--neb-#{$color}-2);
+    --neb-ctx-light-solid-tertiary-base: var(--neb-#{$color}-8);
+    --neb-ctx-light-solid-secondary-base: var(--neb-#{$color}-23);
+    --neb-ctx-light-solid-primary-base: var(--neb-#{$color}-48);
+    --neb-ctx-light-solid-inverse-base: var(--neb-#{$color}-100);
+  }
+}

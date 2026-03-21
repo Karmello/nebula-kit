@@ -1,0 +1,67 @@
+@use '../definitions/index' as *;
+@use '../paint/_index' as *;
+
+@use '../themes/light/palette/_index' as *;
+@use '../themes/light/context/_index' as *;
+@use '../themes/light/variables/_index' as *;
+
+@use '../themes/dark/palette/_index' as *;
+@use '../themes/dark/context/_index' as *;
+@use '../themes/dark/variables/_index' as *;
+
+:where(html[data-theme='light']) {
+  @include set-palette-light();
+  @include set-context-light();
+}
+
+:where(html[data-theme='dark']) {
+  @include set-palette-dark();
+  @include set-context-dark();
+}
+
+.neb-box[data-neb-box-theme='light'] {
+  @include set-palette-light();
+  @include set-context-light();
+}
+
+.neb-box[data-neb-box-theme='dark'] {
+  @include set-palette-dark();
+  @include set-context-dark();
+}
+
+@each $color in $colors {
+  html[data-brand='#{$color}'] {
+    @include set-variables-light($color);
+    @include set-variables-dark($color);
+  }
+}
+
+@each $color in $colors {
+  .neb-box[data-neb-box-brand='#{$color}'] {
+    @include set-variables-light($color);
+    @include set-variables-dark($color);
+  }
+}
+
+@each $color in $colors {
+  html[data-brand='#{$color}'] .neb-box:not([data-neb-box-brand]):not([data-neb-box-color]) {
+    @include set-variables-light($color);
+    @include set-variables-dark($color);
+  }
+
+  .neb-box[data-neb-box-brand='#{$color}'] .neb-box:not([data-neb-box-brand]):not([data-neb-box-color]) {
+    @include set-variables-light($color);
+    @include set-variables-dark($color);
+  }
+}
+
+@each $color in $colors {
+  .neb-box[data-neb-box-color='#{$color}'] {
+    @include set-variables-light($color);
+    @include set-variables-dark($color);
+  }
+}
+
+.neb-box[data-neb-box-drawable='true'] {
+  @include paint();
+}
