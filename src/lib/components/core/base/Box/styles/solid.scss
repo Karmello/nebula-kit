@@ -7,9 +7,9 @@
     @each $intent in $intents {
       &[data-neb-box-intent='#{$intent}'] {
         // base
-        --base: var(--neb-solid-#{$intent}-base);
-        --base-hover: var(--neb-solid-#{$intent}-base-hover);
-        --base-active: var(--neb-solid-#{$intent}-base-active);
+        --bg: var(--neb-solid-#{$intent}-bg);
+        --bg-hover: var(--neb-solid-#{$intent}-bg-hover);
+        --bg-active: var(--neb-solid-#{$intent}-bg-active);
         --text: var(--neb-solid-#{$intent}-text, var(--neb-text));
         --text-hover: var(--neb-solid-#{$intent}-text-hover, var(--text));
         --text-active: var(--neb-solid-#{$intent}-text-active, var(--text-hover));
@@ -20,14 +20,14 @@
 
         // elevated base
         &[data-neb-box-elevated='true'] {
-          --base: var(--neb-solid-#{$intent}-elevated-base);
-          --base-hover: var(--neb-solid-#{$intent}-elevated-base-hover);
-          --base-active: var(--neb-solid-#{$intent}-elevated-base-active);
+          --bg: var(--neb-solid-#{$intent}-elevated-bg);
+          --bg-hover: var(--neb-solid-#{$intent}-elevated-bg-hover);
+          --bg-active: var(--neb-solid-#{$intent}-elevated-bg-active);
           --text-disabled: var(--neb-solid-#{$intent}-elevated-text-disabled);
         }
 
         // rest
-        background-color: var(--base);
+        background-color: var(--bg);
         color: var(--text);
 
         // interaction
@@ -36,7 +36,7 @@
           &[data-neb-box-default-state='hover'],
           &:hover:not(:active):not([data-neb-box-default-state='active']):not(:focus-visible[data-neb-box-active-on-focus='true']),
           &:focus-visible:not([data-neb-box-default-state='active']):not([data-neb-box-active-on-focus='true']) {
-            background-color: var(--base-hover);
+            background-color: var(--bg-hover);
             color: var(--text-hover);
           }
 
@@ -44,7 +44,7 @@
           &[data-neb-box-default-state='active'],
           &:active,
           &:focus-visible[data-neb-box-active-on-focus='true'] {
-            background-color: var(--base-active);
+            background-color: var(--bg-active);
             color: var(--text-active);
           }
         }

@@ -1,3 +1,17 @@
 @mixin paint() {
-  --neb-solid-primary-base: var(--neb-ctx-solid-primary-base);
+  // solid bg
+  --neb-solid-neutral-bg: var(--neb-ctx-solid-neutral-bg);
+  --neb-solid-muted-bg: var(--neb-ctx-solid-muted-bg);
+  --neb-solid-tertiary-bg: var(--neb-ctx-solid-tertiary-bg);
+  --neb-solid-secondary-bg: var(--neb-ctx-solid-secondary-bg);
+  --neb-solid-primary-bg: var(--neb-ctx-solid-primary-bg);
+  --neb-solid-inverse-bg: var(--neb-ctx-solid-inverse-bg);
+
+  // solid text
+  --neb-solid-neutral-text: var(--neb-ctx-solid-neutral-text);
+  --neb-solid-muted-text: var(--neb-ctx-solid-muted-text);
+  --neb-solid-tertiary-text: var(--neb-ctx-solid-tertiary-text);
+  --neb-solid-secondary-text: var(--neb-ctx-solid-secondary-text);
+  --neb-solid-primary-text: var(--neb-ctx-solid-primary-text);
+  --neb-solid-inverse-text: var(--neb-ctx-solid-inverse-text);
 }

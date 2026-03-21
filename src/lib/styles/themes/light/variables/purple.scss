@@ -1,0 +1,17 @@
+@mixin set() {
+  // solid bg
+  --neb-ctx-light-solid-neutral-bg: var(--neb-purple-0);
+  --neb-ctx-light-solid-muted-bg: var(--neb-purple-3);
+  --neb-ctx-light-solid-tertiary-bg: var(--neb-purple-8);
+  --neb-ctx-light-solid-secondary-bg: var(--neb-purple-23);
+  --neb-ctx-light-solid-primary-bg: var(--neb-purple-46);
+  --neb-ctx-light-solid-inverse-bg: var(--neb-purple-100);
+
+  // solid text
+  --neb-ctx-light-solid-neutral-text: var(--neb-purple-100);
+  --neb-ctx-light-solid-muted-text: var(--neb-purple-100);
+  --neb-ctx-light-solid-tertiary-text: var(--neb-purple-100);
+  --neb-ctx-light-solid-secondary-text: var(--neb-purple-100);
+  --neb-ctx-light-solid-primary-text: var(--neb-purple-0);
+  --neb-ctx-light-solid-inverse-text: var(--neb-purple-0);
+}

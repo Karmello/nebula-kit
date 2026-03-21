@@ -1,14 +1,35 @@
+@use './amber' as amber;
+@use './blue' as blue;
+@use './gray' as gray;
+@use './green' as green;
+@use './pink' as pink;
+@use './purple' as purple;
+@use './red' as red;
+@use './teal' as teal;
+@use './yellow' as yellow;
+
 @mixin set-variables-light($color) {
   --neb-background: var(--neb-#{$color}-0);
   --neb-text: var(--neb-#{$color}-100);
   --neb-focus-border: var(--neb-#{$color}-100);
 
-  @if $color == 'gray' {
-    --neb-ctx-light-solid-neutral-base: var(--neb-#{$color}-0);
-    --neb-ctx-light-solid-muted-base: var(--neb-#{$color}-2);
-    --neb-ctx-light-solid-tertiary-base: var(--neb-#{$color}-8);
-    --neb-ctx-light-solid-secondary-base: var(--neb-#{$color}-23);
-    --neb-ctx-light-solid-primary-base: var(--neb-#{$color}-48);
-    --neb-ctx-light-solid-inverse-base: var(--neb-#{$color}-100);
+  @if $color == 'amber' {
+    @include amber.set();
+  } @else if $color == 'blue' {
+    @include blue.set();
+  } @else if $color == 'gray' {
+    @include gray.set();
+  } @else if $color == 'green' {
+    @include green.set();
+  } @else if $color == 'pink' {
+    @include pink.set();
+  } @else if $color == 'purple' {
+    @include purple.set();
+  } @else if $color == 'red' {
+    @include red.set();
+  } @else if $color == 'teal' {
+    @include teal.set();
+  } @else if $color == 'yellow' {
+    @include yellow.set();
   }
 }
