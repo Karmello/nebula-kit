@@ -1,0 +1,9 @@
+@mixin paint() {
+  // border
+  --neb-soft-outline-neutral-border: var(--neb-ctx-soft-outline-neutral-border);
+  --neb-soft-outline-muted-border: var(--neb-ctx-soft-outline-muted-border);
+  --neb-soft-outline-tertiary-border: var(--neb-ctx-soft-outline-tertiary-border);
+  --neb-soft-outline-secondary-border: var(--neb-ctx-soft-outline-secondary-border);
+  --neb-soft-outline-primary-border: var(--neb-ctx-soft-outline-primary-border);
+  --neb-soft-outline-inverse-border: var(--neb-ctx-soft-outline-inverse-border);
+}

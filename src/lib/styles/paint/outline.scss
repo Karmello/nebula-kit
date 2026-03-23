@@ -1,0 +1,17 @@
+@mixin paint() {
+  // border
+  --neb-outline-neutral-border: var(--neb-ctx-outline-neutral-border);
+  --neb-outline-muted-border: var(--neb-ctx-outline-muted-border);
+  --neb-outline-tertiary-border: var(--neb-ctx-outline-tertiary-border);
+  --neb-outline-secondary-border: var(--neb-ctx-outline-secondary-border);
+  --neb-outline-primary-border: var(--neb-ctx-outline-primary-border);
+  --neb-outline-inverse-border: var(--neb-ctx-outline-inverse-border);
+
+  // bg hover
+  --neb-outline-neutral-bg-hover: var(--neb-ctx-outline-neutral-bg-hover);
+  --neb-outline-muted-bg-hover: var(--neb-ctx-outline-muted-bg-hover);
+  --neb-outline-tertiary-bg-hover: var(--neb-ctx-outline-tertiary-bg-hover);
+  --neb-outline-secondary-bg-hover: var(--neb-ctx-outline-secondary-bg-hover);
+  --neb-outline-primary-bg-hover: var(--neb-ctx-outline-primary-bg-hover);
+  --neb-outline-inverse-bg-hover: var(--neb-ctx-outline-inverse-bg-hover);
+}

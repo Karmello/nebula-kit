@@ -1,0 +1,9 @@
+@mixin set() {
+  // border
+  --neb-ctx-light-soft-outline-neutral-border: var(--neb-yellow-6);
+  --neb-ctx-light-soft-outline-muted-border: var(--neb-yellow-6);
+  --neb-ctx-light-soft-outline-tertiary-border: var(--neb-yellow-11);
+  --neb-ctx-light-soft-outline-secondary-border: var(--neb-yellow-20);
+  --neb-ctx-light-soft-outline-primary-border: var(--neb-yellow-40);
+  --neb-ctx-light-soft-outline-inverse-border: var(--neb-yellow-100);
+}

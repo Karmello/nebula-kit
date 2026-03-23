@@ -1,0 +1,9 @@
+@mixin set-context-light() {
+  // border
+  --neb-ctx-soft-outline-neutral-border: var(--neb-ctx-light-soft-outline-neutral-border);
+  --neb-ctx-soft-outline-muted-border: var(--neb-ctx-light-soft-outline-muted-border);
+  --neb-ctx-soft-outline-tertiary-border: var(--neb-ctx-light-soft-outline-tertiary-border);
+  --neb-ctx-soft-outline-secondary-border: var(--neb-ctx-light-soft-outline-secondary-border);
+  --neb-ctx-soft-outline-primary-border: var(--neb-ctx-light-soft-outline-primary-border);
+  --neb-ctx-soft-outline-inverse-border: var(--neb-ctx-light-soft-outline-inverse-border);
+}

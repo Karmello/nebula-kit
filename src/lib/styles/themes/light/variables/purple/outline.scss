@@ -1,0 +1,17 @@
+@mixin set() {
+  // border
+  --neb-ctx-light-outline-neutral-border: var(--neb-purple-4);
+  --neb-ctx-light-outline-muted-border: var(--neb-purple-4);
+  --neb-ctx-light-outline-tertiary-border: var(--neb-purple-8);
+  --neb-ctx-light-outline-secondary-border: var(--neb-purple-18);
+  --neb-ctx-light-outline-primary-border: var(--neb-purple-35);
+  --neb-ctx-light-outline-inverse-border: var(--neb-purple-100);
+
+  // bg hover
+  --neb-ctx-light-outline-neutral-bg-hover: color-mix(in srgb, var(--neb-purple-50) 6%, transparent);
+  --neb-ctx-light-outline-muted-bg-hover: color-mix(in srgb, var(--neb-purple-50) 6%, transparent);
+  --neb-ctx-light-outline-tertiary-bg-hover: color-mix(in srgb, var(--neb-purple-50) 7%, transparent);
+  --neb-ctx-light-outline-secondary-bg-hover: color-mix(in srgb, var(--neb-purple-50) 8%, transparent);
+  --neb-ctx-light-outline-primary-bg-hover: color-mix(in srgb, var(--neb-purple-50) 10%, transparent);
+  --neb-ctx-light-outline-inverse-bg-hover: color-mix(in srgb, var(--neb-purple-50) 14%, transparent);
+}

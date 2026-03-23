@@ -1,25 +1,25 @@
 @mixin set() {
   // text
   --neb-ctx-light-ghost-neutral-text: var(--neb-yellow-100);
-  --neb-ctx-light-ghost-muted-text: var(--neb-yellow-10);
-  --neb-ctx-light-ghost-tertiary-text: var(--neb-yellow-15);
+  --neb-ctx-light-ghost-muted-text: var(--neb-yellow-12);
+  --neb-ctx-light-ghost-tertiary-text: var(--neb-yellow-16);
   --neb-ctx-light-ghost-secondary-text: var(--neb-yellow-30);
   --neb-ctx-light-ghost-primary-text: var(--neb-yellow-50);
   --neb-ctx-light-ghost-inverse-text: var(--neb-yellow-0);
 
   // text hover
-  --neb-ctx-light-ghost-neutral-text-hover: var(--neb-yellow-100);
-  --neb-ctx-light-ghost-muted-text-hover: var(--neb-yellow-100);
-  --neb-ctx-light-ghost-tertiary-text-hover: var(--neb-yellow-100);
-  --neb-ctx-light-ghost-secondary-text-hover: var(--neb-yellow-100);
-  --neb-ctx-light-ghost-primary-text-hover: var(--neb-yellow-0);
-  --neb-ctx-light-ghost-inverse-text-hover: var(--neb-yellow-0);
+  --neb-ctx-light-ghost-neutral-text-hover: var(--neb-yellow-70);
+  --neb-ctx-light-ghost-muted-text-hover: var(--neb-yellow-23);
+  --neb-ctx-light-ghost-tertiary-text-hover: var(--neb-yellow-29);
+  --neb-ctx-light-ghost-secondary-text-hover: var(--neb-yellow-52);
+  --neb-ctx-light-ghost-primary-text-hover: var(--neb-yellow-58);
+  --neb-ctx-light-ghost-inverse-text-hover: var(--neb-yellow-20);
 
   // text active
   --neb-ctx-light-ghost-neutral-text-active: var(--neb-yellow-100);
-  --neb-ctx-light-ghost-muted-text-active: var(--neb-yellow-100);
-  --neb-ctx-light-ghost-tertiary-text-active: var(--neb-yellow-100);
-  --neb-ctx-light-ghost-secondary-text-active: var(--neb-yellow-100);
-  --neb-ctx-light-ghost-primary-text-active: var(--neb-yellow-0);
+  --neb-ctx-light-ghost-muted-text-active: var(--neb-yellow-12);
+  --neb-ctx-light-ghost-tertiary-text-active: var(--neb-yellow-16);
+  --neb-ctx-light-ghost-secondary-text-active: var(--neb-yellow-30);
+  --neb-ctx-light-ghost-primary-text-active: var(--neb-yellow-50);
   --neb-ctx-light-ghost-inverse-text-active: var(--neb-yellow-0);
 }

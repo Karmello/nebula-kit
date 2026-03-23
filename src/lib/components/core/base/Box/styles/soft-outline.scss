@@ -8,9 +8,9 @@
     @each $intent in $intents {
       &[data-neb-box-intent='#{$intent}'] {
         // base
-        --base: var(--neb-soft-outline-#{$intent}-base);
-        --base-hover: var(--neb-soft-outline-#{$intent}-base-hover);
-        --base-active: var(--neb-soft-outline-#{$intent}-base-active);
+        --border: var(--neb-soft-outline-#{$intent}-border);
+        --border-hover: var(--neb-soft-outline-#{$intent}-border-hover);
+        --border-active: var(--neb-soft-outline-#{$intent}-border-active);
         --fill-hover: var(--neb-soft-outline-#{$intent}-fill-hover);
         --fill-active: var(--neb-soft-outline-#{$intent}-fill-active);
         --text-disabled: var(--neb-soft-outline-#{$intent}-text-disabled);
@@ -20,17 +20,17 @@
 
         // elevated base
         &[data-neb-box-elevated='true'] {
-          --base: var(--neb-soft-outline-#{$intent}-elevated-base);
-          --base-hover: var(--neb-soft-outline-#{$intent}-elevated-base-hover);
-          --base-active: var(--neb-soft-outline-#{$intent}-elevated-base-active);
+          --border: var(--neb-soft-outline-#{$intent}-elevated-border);
+          --border-hover: var(--neb-soft-outline-#{$intent}-elevated-border-hover);
+          --border-active: var(--neb-soft-outline-#{$intent}-elevated-border-active);
           --fill-hover: var(--neb-soft-outline-#{$intent}-elevated-fill-hover);
           --fill-active: var(--neb-soft-outline-#{$intent}-elevated-fill-active);
           --text-disabled: var(--neb-soft-outline-#{$intent}-elevated-text-disabled);
         }
 
         // rest
-        border-color: var(--base);
-        color: var(--base);
+        border-color: var(--border);
+        color: var(--border);
 
         // interaction
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
@@ -38,8 +38,8 @@
           &[data-neb-box-default-state='hover'],
           &:hover:not(:active):not([data-neb-box-default-state='active']):not(:focus-visible[data-neb-box-active-on-focus='true']),
           &:focus-visible:not([data-neb-box-default-state='active']):not([data-neb-box-active-on-focus='true']) {
-            border-color: var(--base-hover);
-            color: var(--base-hover);
+            border-color: var(--border-hover);
+            color: var(--border-hover);
             background-color: var(--fill-hover);
           }
 
@@ -47,8 +47,8 @@
           &[data-neb-box-default-state='active'],
           &:active,
           &:focus-visible[data-neb-box-active-on-focus='true'] {
-            border-color: var(--base-active);
-            color: var(--base-active);
+            border-color: var(--border-active);
+            color: var(--border-active);
             background-color: var(--fill-active);
           }
         }

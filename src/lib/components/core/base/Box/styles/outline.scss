@@ -8,11 +8,14 @@
     @each $intent in $intents {
       &[data-neb-box-intent='#{$intent}'] {
         // base
-        --base: var(--neb-outline-#{$intent}-base);
-        --base-hover: var(--neb-outline-#{$intent}-base-hover);
-        --base-active: var(--neb-outline-#{$intent}-base-active);
-        --fill-hover: var(--neb-outline-#{$intent}-fill-hover);
-        --fill-active: var(--neb-outline-#{$intent}-fill-active);
+        --border: var(--neb-outline-#{$intent}-border);
+        --border-hover: var(--neb-outline-#{$intent}-border-hover, var(--neb-outline-#{$intent}-border));
+        --border-active: var(
+          --neb-outline-#{$intent}-border-active,
+          var(--neb-outline-#{$intent}-border-hover, var(--neb-outline-#{$intent}-border))
+        );
+        --bg-hover: var(--neb-outline-#{$intent}-bg-hover);
+        --bg-active: var(--neb-outline-#{$intent}-bg-active);
         --text-disabled: var(--neb-outline-#{$intent}-text-disabled);
         --loader: var(--neb-outline-#{$intent}-loader);
         --ripple: currentColor;
@@ -20,16 +23,16 @@
 
         // elevated base
         &[data-neb-box-elevated='true'] {
-          --base: var(--neb-outline-#{$intent}-elevated-base);
-          --base-hover: var(--neb-outline-#{$intent}-elevated-base-hover);
-          --base-active: var(--neb-outline-#{$intent}-elevated-base-active);
-          --fill-hover: var(--neb-outline-#{$intent}-elevated-fill-hover);
-          --fill-active: var(--neb-outline-#{$intent}-elevated-fill-active);
+          --border: var(--neb-outline-#{$intent}-elevated-border);
+          --border-hover: var(--neb-outline-#{$intent}-elevated-border-hover);
+          --border-active: var(--neb-outline-#{$intent}-elevated-border-active);
+          --bg-hover: var(--neb-outline-#{$intent}-elevated-bg-hover);
+          --bg-active: var(--neb-outline-#{$intent}-elevated-bg-active);
           --text-disabled: var(--neb-outline-#{$intent}-elevated-text-disabled);
         }
 
         // rest
-        border-color: var(--base);
+        border-color: var(--border);
 
         // interaction
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
@@ -37,16 +40,16 @@
           &[data-neb-box-default-state='hover'],
           &:hover:not(:active):not([data-neb-box-default-state='active']):not(:focus-visible[data-neb-box-active-on-focus='true']),
           &:focus-visible:not([data-neb-box-default-state='active']):not([data-neb-box-active-on-focus='true']) {
-            border-color: var(--base-hover);
-            background-color: var(--fill-hover);
+            border-color: var(--border-hover);
+            background-color: var(--bg-hover);
           }
 
           // active
           &[data-neb-box-default-state='active'],
           &:active,
           &:focus-visible[data-neb-box-active-on-focus='true'] {
-            border-color: var(--base-active);
-            background-color: var(--fill-active);
+            border-color: var(--border-active);
+            background-color: var(--bg-active);
           }
         }
 
