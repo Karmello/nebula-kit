@@ -1,0 +1,25 @@
+@mixin set() {
+  // text
+  --neb-ctx-light-ghost-neutral-text: var(--neb-blue-100);
+  --neb-ctx-light-ghost-muted-text: var(--neb-blue-10);
+  --neb-ctx-light-ghost-tertiary-text: var(--neb-blue-15);
+  --neb-ctx-light-ghost-secondary-text: var(--neb-blue-30);
+  --neb-ctx-light-ghost-primary-text: var(--neb-blue-50);
+  --neb-ctx-light-ghost-inverse-text: var(--neb-blue-0);
+
+  // text hover
+  --neb-ctx-light-ghost-neutral-text-hover: var(--neb-blue-100);
+  --neb-ctx-light-ghost-muted-text-hover: var(--neb-blue-100);
+  --neb-ctx-light-ghost-tertiary-text-hover: var(--neb-blue-100);
+  --neb-ctx-light-ghost-secondary-text-hover: var(--neb-blue-100);
+  --neb-ctx-light-ghost-primary-text-hover: var(--neb-blue-0);
+  --neb-ctx-light-ghost-inverse-text-hover: var(--neb-blue-0);
+
+  // text active
+  --neb-ctx-light-ghost-neutral-text-active: var(--neb-blue-100);
+  --neb-ctx-light-ghost-muted-text-active: var(--neb-blue-100);
+  --neb-ctx-light-ghost-tertiary-text-active: var(--neb-blue-100);
+  --neb-ctx-light-ghost-secondary-text-active: var(--neb-blue-100);
+  --neb-ctx-light-ghost-primary-text-active: var(--neb-blue-0);
+  --neb-ctx-light-ghost-inverse-text-active: var(--neb-blue-0);
+}

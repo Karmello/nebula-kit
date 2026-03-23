@@ -7,9 +7,9 @@
     @each $intent in $intents {
       &[data-neb-box-intent='#{$intent}'] {
         // base
-        --base: var(--neb-ghost-#{$intent}-base);
-        --base-hover: var(--neb-ghost-#{$intent}-base-hover);
-        --base-active: var(--neb-ghost-#{$intent}-base-active);
+        --text: var(--neb-ghost-#{$intent}-text);
+        --text-hover: var(--neb-ghost-#{$intent}-text-hover);
+        --text-active: var(--neb-ghost-#{$intent}-text-active);
         --text-disabled: var(--neb-ghost-#{$intent}-text-disabled);
         --loader: var(--neb-ghost-#{$intent}-loader);
         --ripple: var(--neb-ghost-#{$intent}-ripple, currentColor);
@@ -17,13 +17,13 @@
 
         // elevated base
         &[data-neb-box-elevated='true'] {
-          --base: var(--neb-ghost-#{$intent}-elevated-base);
-          --base-hover: var(--neb-ghost-#{$intent}-elevated-base-hover);
+          --text: var(--neb-ghost-#{$intent}-elevated-text);
+          --text-hover: var(--neb-ghost-#{$intent}-elevated-text-hover);
           --text-disabled: var(--neb-ghost-#{$intent}-elevated-text-disabled);
         }
 
         // rest
-        color: var(--base);
+        color: var(--text);
 
         // interaction
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
@@ -31,14 +31,14 @@
           &[data-neb-box-default-state='hover'],
           &:hover:not(:active):not([data-neb-box-default-state='active']):not(:focus-visible[data-neb-box-active-on-focus='true']),
           &:focus-visible:not([data-neb-box-default-state='active']):not([data-neb-box-active-on-focus='true']) {
-            color: var(--base-hover);
+            color: var(--text-hover);
           }
 
           // active
           &[data-neb-box-default-state='active'],
           &:active,
           &:focus-visible[data-neb-box-active-on-focus='true'] {
-            color: var(--base-active);
+            color: var(--text-active);
           }
         }
 

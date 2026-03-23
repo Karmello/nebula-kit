@@ -1,5 +1,7 @@
+@use './ghost.scss' as ghost;
 @use './solid.scss' as solid;
 
 @mixin set() {
+  @include ghost.set();
   @include solid.set();
 }

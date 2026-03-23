@@ -1,0 +1,25 @@
+@mixin set-context-light() {
+  // text
+  --neb-ctx-ghost-neutral-text: var(--neb-ctx-light-ghost-neutral-text);
+  --neb-ctx-ghost-muted-text: var(--neb-ctx-light-ghost-muted-text);
+  --neb-ctx-ghost-tertiary-text: var(--neb-ctx-light-ghost-tertiary-text);
+  --neb-ctx-ghost-secondary-text: var(--neb-ctx-light-ghost-secondary-text);
+  --neb-ctx-ghost-primary-text: var(--neb-ctx-light-ghost-primary-text);
+  --neb-ctx-ghost-inverse-text: var(--neb-ctx-light-ghost-inverse-text);
+
+  // text hover
+  --neb-ctx-ghost-neutral-text-hover: var(--neb-ctx-light-ghost-neutral-text-hover);
+  --neb-ctx-ghost-muted-text-hover: var(--neb-ctx-light-ghost-muted-text-hover);
+  --neb-ctx-ghost-tertiary-text-hover: var(--neb-ctx-light-ghost-tertiary-text-hover);
+  --neb-ctx-ghost-secondary-text-hover: var(--neb-ctx-light-ghost-secondary-text-hover);
+  --neb-ctx-ghost-primary-text-hover: var(--neb-ctx-light-ghost-primary-text-hover);
+  --neb-ctx-ghost-inverse-text-hover: var(--neb-ctx-light-ghost-inverse-text-hover);
+
+  // text active
+  --neb-ctx-ghost-neutral-text-active: var(--neb-ctx-light-ghost-neutral-text-active);
+  --neb-ctx-ghost-muted-text-active: var(--neb-ctx-light-ghost-muted-text-active);
+  --neb-ctx-ghost-tertiary-text-active: var(--neb-ctx-light-ghost-tertiary-text-active);
+  --neb-ctx-ghost-secondary-text-active: var(--neb-ctx-light-ghost-secondary-text-active);
+  --neb-ctx-ghost-primary-text-active: var(--neb-ctx-light-ghost-primary-text-active);
+  --neb-ctx-ghost-inverse-text-active: var(--neb-ctx-light-ghost-inverse-text-active);
+}

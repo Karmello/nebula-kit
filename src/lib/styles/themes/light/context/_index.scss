@@ -1,5 +1,7 @@
+@use './ghost.scss' as ghost;
 @use './solid.scss' as solid;
 
 @mixin set-context-light() {
+  @include ghost.set-context-light();
   @include solid.set-context-light();
 }

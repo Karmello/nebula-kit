@@ -1,5 +1,7 @@
+@use './ghost.scss' as ghost;
 @use './solid.scss' as solid;
 
 @mixin paint() {
+  @include ghost.paint();
   @include solid.paint();
 }
