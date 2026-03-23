@@ -1,0 +1,5 @@
+@use './solid.scss' as solid;
+
+@mixin set() {
+  @include solid.set();
+}

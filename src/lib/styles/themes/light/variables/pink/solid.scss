@@ -1,37 +1,37 @@
 @mixin set() {
-  // solid bg
+  // bg
   --neb-ctx-light-solid-neutral-bg: var(--neb-pink-0);
-  --neb-ctx-light-solid-muted-bg: var(--neb-pink-3);
-  --neb-ctx-light-solid-tertiary-bg: var(--neb-pink-7);
+  --neb-ctx-light-solid-muted-bg: var(--neb-pink-4);
+  --neb-ctx-light-solid-tertiary-bg: var(--neb-pink-9);
   --neb-ctx-light-solid-secondary-bg: var(--neb-pink-20);
   --neb-ctx-light-solid-primary-bg: var(--neb-pink-42);
   --neb-ctx-light-solid-inverse-bg: var(--neb-pink-100);
 
-  // solid bg hover
-  --neb-ctx-light-solid-neutral-bg-hover: var(--neb-pink-3);
-  --neb-ctx-light-solid-muted-bg-hover: var(--neb-pink-10);
-  --neb-ctx-light-solid-tertiary-bg-hover: var(--neb-pink-16);
-  --neb-ctx-light-solid-secondary-bg-hover: var(--neb-pink-29);
+  // bg hover
+  --neb-ctx-light-solid-neutral-bg-hover: var(--neb-pink-2);
+  --neb-ctx-light-solid-muted-bg-hover: var(--neb-pink-7);
+  --neb-ctx-light-solid-tertiary-bg-hover: var(--neb-pink-13);
+  --neb-ctx-light-solid-secondary-bg-hover: var(--neb-pink-26);
   --neb-ctx-light-solid-primary-bg-hover: var(--neb-pink-35);
   --neb-ctx-light-solid-inverse-bg-hover: var(--neb-pink-82);
 
-  // solid bg active
-  --neb-ctx-light-solid-neutral-bg-active: var(--neb-pink-3);
+  // bg active
+  --neb-ctx-light-solid-neutral-bg-active: var(--neb-pink-5);
   --neb-ctx-light-solid-muted-bg-active: var(--neb-pink-10);
-  --neb-ctx-light-solid-tertiary-bg-active: var(--neb-pink-16);
-  --neb-ctx-light-solid-secondary-bg-active: var(--neb-pink-29);
+  --neb-ctx-light-solid-tertiary-bg-active: var(--neb-pink-18);
+  --neb-ctx-light-solid-secondary-bg-active: var(--neb-pink-34);
   --neb-ctx-light-solid-primary-bg-active: var(--neb-pink-27);
   --neb-ctx-light-solid-inverse-bg-active: var(--neb-pink-73);
 
-  // solid text
+  // text
   --neb-ctx-light-solid-neutral-text: var(--neb-pink-100);
-  --neb-ctx-light-solid-muted-text: var(--neb-pink-100);
-  --neb-ctx-light-solid-tertiary-text: var(--neb-pink-100);
-  --neb-ctx-light-solid-secondary-text: var(--neb-pink-100);
+  --neb-ctx-light-solid-muted-text: var(--neb-pink-77);
+  --neb-ctx-light-solid-tertiary-text: var(--neb-pink-77);
+  --neb-ctx-light-solid-secondary-text: var(--neb-pink-77);
   --neb-ctx-light-solid-primary-text: var(--neb-pink-5);
   --neb-ctx-light-solid-inverse-text: var(--neb-pink-18);
 
-  // solid text active
+  // text active
   --neb-ctx-light-solid-neutral-text-active: var(--neb-pink-100);
   --neb-ctx-light-solid-muted-text-active: var(--neb-pink-100);
   --neb-ctx-light-solid-tertiary-text-active: var(--neb-pink-100);

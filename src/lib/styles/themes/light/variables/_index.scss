@@ -1,12 +1,12 @@
-@use './amber' as amber;
-@use './blue' as blue;
-@use './gray' as gray;
-@use './green' as green;
-@use './pink' as pink;
-@use './purple' as purple;
-@use './red' as red;
-@use './teal' as teal;
-@use './yellow' as yellow;
+@use './amber/_index' as amber;
+@use './blue/_index' as blue;
+@use './gray/_index' as gray;
+@use './green/_index' as green;
+@use './pink/_index' as pink;
+@use './purple/_index' as purple;
+@use './red/_index' as red;
+@use './teal/_index' as teal;
+@use './yellow/_index' as yellow;
 
 @mixin set-variables-light($color) {
   --neb-background: var(--neb-#{$color}-0);

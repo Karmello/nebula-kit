@@ -1,41 +1,5 @@
+@use './solid.scss' as solid;
+
 @mixin paint() {
-  // solid bg
-  --neb-solid-neutral-bg: var(--neb-ctx-solid-neutral-bg);
-  --neb-solid-muted-bg: var(--neb-ctx-solid-muted-bg);
-  --neb-solid-tertiary-bg: var(--neb-ctx-solid-tertiary-bg);
-  --neb-solid-secondary-bg: var(--neb-ctx-solid-secondary-bg);
-  --neb-solid-primary-bg: var(--neb-ctx-solid-primary-bg);
-  --neb-solid-inverse-bg: var(--neb-ctx-solid-inverse-bg);
-
-  // solid bg hover
-  --neb-solid-neutral-bg-hover: var(--neb-ctx-solid-neutral-bg-hover);
-  --neb-solid-muted-bg-hover: var(--neb-ctx-solid-muted-bg-hover);
-  --neb-solid-tertiary-bg-hover: var(--neb-ctx-solid-tertiary-bg-hover);
-  --neb-solid-secondary-bg-hover: var(--neb-ctx-solid-secondary-bg-hover);
-  --neb-solid-primary-bg-hover: var(--neb-ctx-solid-primary-bg-hover);
-  --neb-solid-inverse-bg-hover: var(--neb-ctx-solid-inverse-bg-hover);
-
-  // solid bg active
-  --neb-solid-neutral-bg-active: var(--neb-ctx-solid-neutral-bg-active);
-  --neb-solid-muted-bg-active: var(--neb-ctx-solid-muted-bg-active);
-  --neb-solid-tertiary-bg-active: var(--neb-ctx-solid-tertiary-bg-active);
-  --neb-solid-secondary-bg-active: var(--neb-ctx-solid-secondary-bg-active);
-  --neb-solid-primary-bg-active: var(--neb-ctx-solid-primary-bg-active);
-  --neb-solid-inverse-bg-active: var(--neb-ctx-solid-inverse-bg-active);
-
-  // solid text
-  --neb-solid-neutral-text: var(--neb-ctx-solid-neutral-text);
-  --neb-solid-muted-text: var(--neb-ctx-solid-muted-text);
-  --neb-solid-tertiary-text: var(--neb-ctx-solid-tertiary-text);
-  --neb-solid-secondary-text: var(--neb-ctx-solid-secondary-text);
-  --neb-solid-primary-text: var(--neb-ctx-solid-primary-text);
-  --neb-solid-inverse-text: var(--neb-ctx-solid-inverse-text);
-
-  // solid text active
-  --neb-solid-neutral-text-active: var(--neb-ctx-solid-neutral-text-active);
-  --neb-solid-muted-text-active: var(--neb-ctx-solid-muted-text-active);
-  --neb-solid-tertiary-text-active: var(--neb-ctx-solid-tertiary-text-active);
-  --neb-solid-secondary-text-active: var(--neb-ctx-solid-secondary-text-active);
-  --neb-solid-primary-text-active: var(--neb-ctx-solid-primary-text-active);
-  --neb-solid-inverse-text-active: var(--neb-ctx-solid-inverse-text-active);
+  @include solid.paint();
 }
