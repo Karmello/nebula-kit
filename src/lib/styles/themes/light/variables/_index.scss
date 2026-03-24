@@ -32,4 +32,20 @@
   } @else if $color == 'yellow' {
     @include yellow.set();
   }
+
+  // ghost text hover
+  --neb-ctx-light-ghost-neutral-text-hover: var(--neb-ctx-light-ghost-primary-text);
+  --neb-ctx-light-ghost-muted-text-hover: var(--neb-ctx-light-ghost-tertiary-text);
+  --neb-ctx-light-ghost-tertiary-text-hover: var(--neb-ctx-light-ghost-secondary-text);
+  --neb-ctx-light-ghost-secondary-text-hover: var(--neb-ctx-light-ghost-tertiary-text);
+  --neb-ctx-light-ghost-primary-text-hover: var(--neb-ctx-light-ghost-secondary-text);
+  --neb-ctx-light-ghost-inverse-text-hover: var(--neb-ctx-light-ghost-tertiary-text);
+
+  // ghost text active
+  --neb-ctx-light-ghost-neutral-text-active: var(--neb-ctx-light-ghost-secondary-text);
+  --neb-ctx-light-ghost-muted-text-active: var(--neb-ctx-light-ghost-secondary-text);
+  --neb-ctx-light-ghost-tertiary-text-active: var(--neb-ctx-light-ghost-primary-text);
+  --neb-ctx-light-ghost-secondary-text-active: var(--neb-ctx-light-ghost-muted-text);
+  --neb-ctx-light-ghost-primary-text-active: var(--neb-ctx-light-ghost-tertiary-text);
+  --neb-ctx-light-ghost-inverse-text-active: var(--neb-ctx-light-ghost-secondary-text);
 }

@@ -11,6 +11,7 @@
         --border: var(--neb-outline-#{$intent}-border);
         --border-active: var(--neb-outline-#{$intent}-border-active, var(--neb-outline-#{$intent}-border));
         --bg-hover: var(--neb-outline-#{$intent}-bg-hover);
+        --bg-active: var(--neb-outline-#{$intent}-bg-active);
         --text-active: var(--neb-outline-#{$intent}-text-active);
         --text-disabled: var(--neb-outline-#{$intent}-text-disabled);
         --loader: var(--neb-outline-#{$intent}-loader);
@@ -42,6 +43,7 @@
           &:active,
           &:focus-visible[data-neb-box-active-on-focus='true'] {
             border-color: var(--border-active);
+            background-color: var(--bg-active);
             color: var(--text-active);
           }
         }

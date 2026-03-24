@@ -23,6 +23,14 @@
   --neb-ctx-outline-primary-bg-hover: var(--neb-ctx-light-outline-primary-bg-hover);
   --neb-ctx-outline-inverse-bg-hover: var(--neb-ctx-light-outline-inverse-bg-hover);
 
+  // bg active
+  --neb-ctx-outline-neutral-bg-active: var(--neb-ctx-light-outline-neutral-bg-active);
+  --neb-ctx-outline-muted-bg-active: var(--neb-ctx-light-outline-muted-bg-active);
+  --neb-ctx-outline-tertiary-bg-active: var(--neb-ctx-light-outline-tertiary-bg-active);
+  --neb-ctx-outline-secondary-bg-active: var(--neb-ctx-light-outline-secondary-bg-active);
+  --neb-ctx-outline-primary-bg-active: var(--neb-ctx-light-outline-primary-bg-active);
+  --neb-ctx-outline-inverse-bg-active: var(--neb-ctx-light-outline-inverse-bg-active);
+
   // text active
   --neb-ctx-outline-neutral-text-active: var(--neb-ctx-light-outline-neutral-text-active);
   --neb-ctx-outline-muted-text-active: var(--neb-ctx-light-outline-muted-text-active);
