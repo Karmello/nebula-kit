@@ -9,13 +9,9 @@
       &[data-neb-box-intent='#{$intent}'] {
         // base
         --border: var(--neb-outline-#{$intent}-border);
-        --border-hover: var(--neb-outline-#{$intent}-border-hover, var(--neb-outline-#{$intent}-border));
-        --border-active: var(
-          --neb-outline-#{$intent}-border-active,
-          var(--neb-outline-#{$intent}-border-hover, var(--neb-outline-#{$intent}-border))
-        );
+        --border-active: var(--neb-outline-#{$intent}-border-active, var(--neb-outline-#{$intent}-border));
         --bg-hover: var(--neb-outline-#{$intent}-bg-hover);
-        --bg-active: var(--neb-outline-#{$intent}-bg-active);
+        --text-active: var(--neb-outline-#{$intent}-text-active);
         --text-disabled: var(--neb-outline-#{$intent}-text-disabled);
         --loader: var(--neb-outline-#{$intent}-loader);
         --ripple: currentColor;
@@ -24,10 +20,8 @@
         // elevated base
         &[data-neb-box-elevated='true'] {
           --border: var(--neb-outline-#{$intent}-elevated-border);
-          --border-hover: var(--neb-outline-#{$intent}-elevated-border-hover);
           --border-active: var(--neb-outline-#{$intent}-elevated-border-active);
           --bg-hover: var(--neb-outline-#{$intent}-elevated-bg-hover);
-          --bg-active: var(--neb-outline-#{$intent}-elevated-bg-active);
           --text-disabled: var(--neb-outline-#{$intent}-elevated-text-disabled);
         }
 
@@ -40,7 +34,6 @@
           &[data-neb-box-default-state='hover'],
           &:hover:not(:active):not([data-neb-box-default-state='active']):not(:focus-visible[data-neb-box-active-on-focus='true']),
           &:focus-visible:not([data-neb-box-default-state='active']):not([data-neb-box-active-on-focus='true']) {
-            border-color: var(--border-hover);
             background-color: var(--bg-hover);
           }
 
@@ -49,7 +42,7 @@
           &:active,
           &:focus-visible[data-neb-box-active-on-focus='true'] {
             border-color: var(--border-active);
-            background-color: var(--bg-active);
+            color: var(--text-active);
           }
         }
 
