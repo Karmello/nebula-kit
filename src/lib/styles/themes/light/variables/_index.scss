@@ -1,51 +1,9 @@
-@use './amber/_index' as amber;
-@use './blue/_index' as blue;
-@use './gray/_index' as gray;
-@use './green/_index' as green;
-@use './pink/_index' as pink;
-@use './purple/_index' as purple;
-@use './red/_index' as red;
-@use './teal/_index' as teal;
-@use './yellow/_index' as yellow;
+@use './solid.scss' as solid;
 
 @mixin set-variables-light($color) {
   --neb-background: var(--neb-#{$color}-0);
-  --neb-text: var(--neb-#{$color}-100);
-  --neb-focus-border: var(--neb-#{$color}-100);
+  --neb-text: var(--neb-#{$color}-25);
+  --neb-focus-border: var(--neb-#{$color}-25);
 
-  @if $color == 'amber' {
-    @include amber.set();
-  } @else if $color == 'blue' {
-    @include blue.set();
-  } @else if $color == 'gray' {
-    @include gray.set();
-  } @else if $color == 'green' {
-    @include green.set();
-  } @else if $color == 'pink' {
-    @include pink.set();
-  } @else if $color == 'purple' {
-    @include purple.set();
-  } @else if $color == 'red' {
-    @include red.set();
-  } @else if $color == 'teal' {
-    @include teal.set();
-  } @else if $color == 'yellow' {
-    @include yellow.set();
-  }
-
-  // ghost text hover
-  --neb-ctx-light-ghost-neutral-text-hover: var(--neb-ctx-light-ghost-primary-text);
-  --neb-ctx-light-ghost-muted-text-hover: var(--neb-ctx-light-ghost-tertiary-text);
-  --neb-ctx-light-ghost-tertiary-text-hover: var(--neb-ctx-light-ghost-secondary-text);
-  --neb-ctx-light-ghost-secondary-text-hover: var(--neb-ctx-light-ghost-tertiary-text);
-  --neb-ctx-light-ghost-primary-text-hover: var(--neb-ctx-light-ghost-secondary-text);
-  --neb-ctx-light-ghost-inverse-text-hover: var(--neb-ctx-light-ghost-tertiary-text);
-
-  // ghost text active
-  --neb-ctx-light-ghost-neutral-text-active: var(--neb-ctx-light-ghost-secondary-text);
-  --neb-ctx-light-ghost-muted-text-active: var(--neb-ctx-light-ghost-secondary-text);
-  --neb-ctx-light-ghost-tertiary-text-active: var(--neb-ctx-light-ghost-primary-text);
-  --neb-ctx-light-ghost-secondary-text-active: var(--neb-ctx-light-ghost-muted-text);
-  --neb-ctx-light-ghost-primary-text-active: var(--neb-ctx-light-ghost-tertiary-text);
-  --neb-ctx-light-ghost-inverse-text-active: var(--neb-ctx-light-ghost-secondary-text);
+  @include solid.set($color);
 }

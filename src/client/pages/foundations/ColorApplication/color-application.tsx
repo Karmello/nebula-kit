@@ -47,7 +47,7 @@ export default () => {
       </Flex>
       <Spacer blockSize="50px" />
       <Box overflowX="auto">
-        <Grid gridTemplateColumns="repeat(6, 1fr)" gap="7px">
+        <Grid gridTemplateColumns={`repeat(${BOX_INTENTS.length}, 1fr)`} gap="7px">
           {COLORS.map(color => {
             return BOX_INTENTS.map(intent => {
               return (

@@ -29,6 +29,7 @@
         // rest
         background-color: var(--bg);
         color: var(--text);
+        // color: transparent !important;
 
         // interaction
         &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {

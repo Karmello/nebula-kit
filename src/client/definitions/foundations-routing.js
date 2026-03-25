@@ -48,6 +48,7 @@ export const FOUNDATIONS_CATEGORIES = [
         label: 'Styling system',
         sections: [
           { key: 'color-palettes', label: 'Color palettes' },
+          { key: 'color-calibration', label: 'Color calibration' },
           { key: 'typography', label: 'Typography' },
           { key: 'breakpoints', label: 'Breakpoints' },
           { key: 'intents-and-variants', label: 'Intents + variants' },
