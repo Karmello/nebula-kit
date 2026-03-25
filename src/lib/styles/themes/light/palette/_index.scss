@@ -8,14 +8,16 @@
 @use './teal.scss' as teal;
 @use './yellow.scss' as yellow;
 
+$saturation: 75%;
+
 @mixin set-palette-light() {
-  @include amber.set();
-  @include blue.set();
-  @include gray.set();
-  @include green.set();
-  @include pink.set();
-  @include purple.set();
-  @include red.set();
-  @include teal.set();
-  @include yellow.set();
+  @include amber.set($saturation);
+  @include blue.set($saturation);
+  @include gray.set(0%);
+  @include green.set($saturation);
+  @include pink.set($saturation);
+  @include purple.set($saturation);
+  @include red.set($saturation);
+  @include teal.set($saturation);
+  @include yellow.set($saturation);
 }

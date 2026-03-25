@@ -1,3 +1,4 @@
+@use './ghost.scss' as ghost;
 @use './solid.scss' as solid;
 
 @mixin set-variables-light($color) {
@@ -5,5 +6,6 @@
   --neb-text: var(--neb-#{$color}-25);
   --neb-focus-border: var(--neb-#{$color}-25);
 
+  @include ghost.set($color);
   @include solid.set($color);
 }
