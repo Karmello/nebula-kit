@@ -3,10 +3,7 @@
 @use './gray.scss' as gray;
 @use './green.scss' as green;
 @use './pink.scss' as pink;
-@use './purple.scss' as purple;
 @use './red.scss' as red;
-@use './teal.scss' as teal;
-@use './yellow.scss' as yellow;
 
 @mixin set-palette-dark() {
   @include amber.set();
@@ -14,8 +11,5 @@
   @include gray.set();
   @include green.set();
   @include pink.set();
-  @include purple.set();
   @include red.set();
-  @include teal.set();
-  @include yellow.set();
 }

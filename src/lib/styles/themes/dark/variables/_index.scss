@@ -2,13 +2,4 @@
   // --neb-background: var(--neb-#{$color}-0);
   // --neb-text: var(--neb-#{$color}-25);
   // --neb-focus-border: var(--neb-#{$color}-25);
-
-  @if $color == 'gray' {
-    --neb-ctx-dark-solid-neutral-base: var(--neb-#{$color}-0);
-    --neb-ctx-dark-solid-muted-base: var(--neb-#{$color}-2);
-    --neb-ctx-dark-solid-tertiary-base: var(--neb-#{$color}-8);
-    --neb-ctx-dark-solid-secondary-base: var(--neb-#{$color}-23);
-    --neb-ctx-dark-solid-primary-base: var(--neb-#{$color}-48);
-    --neb-ctx-dark-solid-inverse-base: var(--neb-#{$color}-100);
-  }
 }

@@ -3,12 +3,9 @@
 @use './gray.scss' as gray;
 @use './green.scss' as green;
 @use './pink.scss' as pink;
-@use './purple.scss' as purple;
 @use './red.scss' as red;
-@use './teal.scss' as teal;
-@use './yellow.scss' as yellow;
 
-$saturation: 75%;
+$saturation: 72%;
 
 @mixin set-palette-light() {
   @include amber.set($saturation);
@@ -16,8 +13,5 @@ $saturation: 75%;
   @include gray.set(0%);
   @include green.set($saturation);
   @include pink.set($saturation);
-  @include purple.set($saturation);
   @include red.set($saturation);
-  @include teal.set($saturation);
-  @include yellow.set($saturation);
 }

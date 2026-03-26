@@ -17,7 +17,7 @@ const Family = ({
   const navigateTo = useNavigateTo()
 
   return (
-    <Box drawable variant="ghost" intent="primary" brand="teal">
+    <Box drawable variant="ghost" intent="primary" brand="blue">
       <Section size="sm" variant="outline" intent="secondary" heading={heading} iconName={iconName}>
         <Text intent="neutral">{description}</Text>
         {components ? (
@@ -45,7 +45,7 @@ const Family = ({
 
 export const Families = () => {
   return (
-    <Section heading="Key areas of the system" size="sm" intent="primary" color="teal">
+    <Section heading="Key areas of the system" size="sm" intent="primary" color="blue">
       <Spacer blockSize="15px" />
       <Grid
         gridTemplateColumns={{

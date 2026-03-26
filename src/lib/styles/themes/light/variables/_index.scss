@@ -7,8 +7,8 @@
 
 @mixin set-variables-light($color) {
   --neb-background: var(--neb-#{$color}-0);
-  --neb-text: var(--neb-#{$color}-25);
-  --neb-focus-border: var(--neb-#{$color}-25);
+  --neb-text: var(--neb-#{$color}-19);
+  --neb-focus-border: var(--neb-#{$color}-19);
 
   @include ghost.set($color);
   @include outline.set($color);

@@ -25,7 +25,7 @@ export const Hero = () => {
               navigateTo(PageKey.playground)
             }}
           >
-            <Button color="purple" intent="primary" iconName="arrow-right" iconPlacement="right" size="sm">
+            <Button color="blue" intent="primary" iconName="arrow-right" iconPlacement="right" size="sm">
               Playground
             </Button>
           </Link>
@@ -35,7 +35,7 @@ export const Hero = () => {
               navigateTo(`${PageKey.foundations}/overview/getting-started/installation`)
             }}
           >
-            <Button variant="ghost" color="purple" intent="primary" iconName="arrow-right" iconPlacement="right" size="sm">
+            <Button variant="ghost" color="blue" intent="primary" iconName="arrow-right" iconPlacement="right" size="sm">
               Getting started
             </Button>
           </Link>

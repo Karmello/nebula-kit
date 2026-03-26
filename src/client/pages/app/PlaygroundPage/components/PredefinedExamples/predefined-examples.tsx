@@ -59,7 +59,7 @@ const CONFIG: Record<string, object[]> = {
     },
     {
       children: 'This is section content.',
-      color: 'purple',
+      color: 'blue',
       heading: 'Custom section',
       iconName: 'settings',
       intent: 'secondary',
