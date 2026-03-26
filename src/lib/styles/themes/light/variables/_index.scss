@@ -3,6 +3,8 @@
 @use './soft-outline.scss' as soft-outline;
 @use './solid.scss' as solid;
 
+@use './solid-elevated.scss' as solid-elevated;
+
 @mixin set-variables-light($color) {
   --neb-background: var(--neb-#{$color}-0);
   --neb-text: var(--neb-#{$color}-25);
@@ -12,4 +14,6 @@
   @include outline.set($color);
   @include soft-outline.set($color);
   @include solid.set($color);
+
+  @include solid-elevated.set($color);
 }

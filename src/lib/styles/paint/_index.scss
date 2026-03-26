@@ -3,9 +3,13 @@
 @use './soft-outline.scss' as soft-outline;
 @use './solid.scss' as solid;
 
+@use './solid-elevated.scss' as solid-elevated;
+
 @mixin paint() {
   @include ghost.paint();
   @include outline.paint();
   @include soft-outline.paint();
   @include solid.paint();
+
+  @include solid-elevated.paint();
 }
