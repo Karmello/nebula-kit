@@ -11,8 +11,8 @@
         --border: var(--neb-soft-outline-#{$intent}-border);
         --border-hover: var(--neb-soft-outline-#{$intent}-border-hover);
         --border-active: var(--neb-soft-outline-#{$intent}-border-active);
-        --fill-hover: var(--neb-soft-outline-#{$intent}-fill-hover);
-        --fill-active: var(--neb-soft-outline-#{$intent}-fill-active);
+        --bg-hover: var(--neb-soft-outline-#{$intent}-bg-hover);
+        --bg-active: var(--neb-soft-outline-#{$intent}-bg-active);
         --text-disabled: var(--neb-soft-outline-#{$intent}-text-disabled);
         --loader: var(--neb-soft-outline-#{$intent}-loader);
         --ripple: currentColor;
@@ -23,8 +23,8 @@
           --border: var(--neb-soft-outline-#{$intent}-elevated-border);
           --border-hover: var(--neb-soft-outline-#{$intent}-elevated-border-hover);
           --border-active: var(--neb-soft-outline-#{$intent}-elevated-border-active);
-          --fill-hover: var(--neb-soft-outline-#{$intent}-elevated-fill-hover);
-          --fill-active: var(--neb-soft-outline-#{$intent}-elevated-fill-active);
+          --bg-hover: var(--neb-soft-outline-#{$intent}-elevated-bg-hover);
+          --bg-active: var(--neb-soft-outline-#{$intent}-elevated-bg-active);
           --text-disabled: var(--neb-soft-outline-#{$intent}-elevated-text-disabled);
         }
 
@@ -40,7 +40,7 @@
           &:focus-visible:not([data-neb-box-default-state='active']):not([data-neb-box-active-on-focus='true']) {
             border-color: var(--border-hover);
             color: var(--border-hover);
-            background-color: var(--fill-hover);
+            background-color: var(--bg-hover);
           }
 
           // active
@@ -49,7 +49,7 @@
           &:focus-visible[data-neb-box-active-on-focus='true'] {
             border-color: var(--border-active);
             color: var(--border-active);
-            background-color: var(--fill-active);
+            background-color: var(--bg-active);
           }
         }
 

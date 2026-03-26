@@ -1,4 +1,6 @@
 @use './ghost.scss' as ghost;
+@use './outline.scss' as outline;
+@use './soft-outline.scss' as soft-outline;
 @use './solid.scss' as solid;
 
 @mixin set-variables-light($color) {
@@ -7,5 +9,7 @@
   --neb-focus-border: var(--neb-#{$color}-25);
 
   @include ghost.set($color);
+  @include outline.set($color);
+  @include soft-outline.set($color);
   @include solid.set($color);
 }

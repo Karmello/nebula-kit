@@ -1,7 +1,7 @@
 @mixin set-variables-dark($color) {
-  --neb-background: var(--neb-#{$color}-0);
-  --neb-text: var(--neb-#{$color}-100);
-  --neb-focus-border: var(--neb-#{$color}-100);
+  // --neb-background: var(--neb-#{$color}-0);
+  // --neb-text: var(--neb-#{$color}-25);
+  // --neb-focus-border: var(--neb-#{$color}-25);
 
   @if $color == 'gray' {
     --neb-ctx-dark-solid-neutral-base: var(--neb-#{$color}-0);

@@ -1,9 +1,61 @@
 @mixin set-context-light() {
   // border
   --neb-ctx-soft-outline-neutral-border: var(--neb-ctx-light-soft-outline-neutral-border);
+  --neb-ctx-soft-outline-dim-border: var(--neb-ctx-light-soft-outline-dim-border);
   --neb-ctx-soft-outline-muted-border: var(--neb-ctx-light-soft-outline-muted-border);
   --neb-ctx-soft-outline-tertiary-border: var(--neb-ctx-light-soft-outline-tertiary-border);
   --neb-ctx-soft-outline-secondary-border: var(--neb-ctx-light-soft-outline-secondary-border);
   --neb-ctx-soft-outline-primary-border: var(--neb-ctx-light-soft-outline-primary-border);
+  --neb-ctx-soft-outline-strong-border: var(--neb-ctx-light-soft-outline-strong-border);
   --neb-ctx-soft-outline-inverse-border: var(--neb-ctx-light-soft-outline-inverse-border);
+
+  // border hover
+  --neb-ctx-soft-outline-neutral-border-hover: var(--neb-ctx-light-soft-outline-neutral-border-hover);
+  --neb-ctx-soft-outline-dim-border-hover: var(--neb-ctx-light-soft-outline-dim-border-hover);
+  --neb-ctx-soft-outline-muted-border-hover: var(--neb-ctx-light-soft-outline-muted-border-hover);
+  --neb-ctx-soft-outline-tertiary-border-hover: var(--neb-ctx-light-soft-outline-tertiary-border-hover);
+  --neb-ctx-soft-outline-secondary-border-hover: var(--neb-ctx-light-soft-outline-secondary-border-hover);
+  --neb-ctx-soft-outline-primary-border-hover: var(--neb-ctx-light-soft-outline-primary-border-hover);
+  --neb-ctx-soft-outline-strong-border-hover: var(--neb-ctx-light-soft-outline-strong-border-hover);
+  --neb-ctx-soft-outline-inverse-border-hover: var(--neb-ctx-light-soft-outline-inverse-border-hover);
+
+  // border active
+  --neb-ctx-soft-outline-neutral-border-active: var(--neb-ctx-light-soft-outline-neutral-border-active);
+  --neb-ctx-soft-outline-dim-border-active: var(--neb-ctx-light-soft-outline-dim-border-active);
+  --neb-ctx-soft-outline-muted-border-active: var(--neb-ctx-light-soft-outline-muted-border-active);
+  --neb-ctx-soft-outline-tertiary-border-active: var(--neb-ctx-light-soft-outline-tertiary-border-active);
+  --neb-ctx-soft-outline-secondary-border-active: var(--neb-ctx-light-soft-outline-secondary-border-active);
+  --neb-ctx-soft-outline-primary-border-active: var(--neb-ctx-light-soft-outline-primary-border-active);
+  --neb-ctx-soft-outline-strong-border-active: var(--neb-ctx-light-soft-outline-strong-border-active);
+  --neb-ctx-soft-outline-inverse-border-active: var(--neb-ctx-light-soft-outline-inverse-border-active);
+
+  // bg hover
+  --neb-ctx-soft-outline-neutral-bg-hover: var(--neb-ctx-light-soft-outline-neutral-bg-hover);
+  --neb-ctx-soft-outline-dim-bg-hover: var(--neb-ctx-light-soft-outline-dim-bg-hover);
+  --neb-ctx-soft-outline-muted-bg-hover: var(--neb-ctx-light-soft-outline-muted-bg-hover);
+  --neb-ctx-soft-outline-tertiary-bg-hover: var(--neb-ctx-light-soft-outline-tertiary-bg-hover);
+  --neb-ctx-soft-outline-secondary-bg-hover: var(--neb-ctx-light-soft-outline-secondary-bg-hover);
+  --neb-ctx-soft-outline-primary-bg-hover: var(--neb-ctx-light-soft-outline-primary-bg-hover);
+  --neb-ctx-soft-outline-strong-bg-hover: var(--neb-ctx-light-soft-outline-strong-bg-hover);
+  --neb-ctx-soft-outline-inverse-bg-hover: var(--neb-ctx-light-soft-outline-inverse-bg-hover);
+
+  // bg active
+  --neb-ctx-soft-outline-neutral-bg-active: var(--neb-ctx-light-soft-outline-neutral-bg-active);
+  --neb-ctx-soft-outline-dim-bg-active: var(--neb-ctx-light-soft-outline-dim-bg-active);
+  --neb-ctx-soft-outline-muted-bg-active: var(--neb-ctx-light-soft-outline-muted-bg-active);
+  --neb-ctx-soft-outline-tertiary-bg-active: var(--neb-ctx-light-soft-outline-tertiary-bg-active);
+  --neb-ctx-soft-outline-secondary-bg-active: var(--neb-ctx-light-soft-outline-secondary-bg-active);
+  --neb-ctx-soft-outline-primary-bg-active: var(--neb-ctx-light-soft-outline-primary-bg-active);
+  --neb-ctx-soft-outline-strong-bg-active: var(--neb-ctx-light-soft-outline-strong-bg-active);
+  --neb-ctx-soft-outline-inverse-bg-active: var(--neb-ctx-light-soft-outline-inverse-bg-active);
+
+  // text active
+  --neb-ctx-soft-outline-neutral-text-active: var(--neb-ctx-light-soft-outline-neutral-text-active);
+  --neb-ctx-soft-outline-dim-text-active: var(--neb-ctx-light-soft-outline-dim-text-active);
+  --neb-ctx-soft-outline-muted-text-active: var(--neb-ctx-light-soft-outline-muted-text-active);
+  --neb-ctx-soft-outline-tertiary-text-active: var(--neb-ctx-light-soft-outline-tertiary-text-active);
+  --neb-ctx-soft-outline-secondary-text-active: var(--neb-ctx-light-soft-outline-secondary-text-active);
+  --neb-ctx-soft-outline-primary-text-active: var(--neb-ctx-light-soft-outline-primary-text-active);
+  --neb-ctx-soft-outline-strong-text-active: var(--neb-ctx-light-soft-outline-strong-text-active);
+  --neb-ctx-soft-outline-inverse-text-active: var(--neb-ctx-light-soft-outline-inverse-text-active);
 }

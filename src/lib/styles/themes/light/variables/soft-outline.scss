@@ -1,0 +1,61 @@
+@mixin set($color) {
+  // border
+  --neb-ctx-light-soft-outline-neutral-border: var(--neb-#{$color}-1);
+  --neb-ctx-light-soft-outline-dim-border: var(--neb-#{$color}-1);
+  --neb-ctx-light-soft-outline-muted-border: var(--neb-#{$color}-2);
+  --neb-ctx-light-soft-outline-tertiary-border: var(--neb-#{$color}-3);
+  --neb-ctx-light-soft-outline-secondary-border: var(--neb-#{$color}-6);
+  --neb-ctx-light-soft-outline-primary-border: var(--neb-#{$color}-11);
+  --neb-ctx-light-soft-outline-strong-border: var(--neb-#{$color}-18);
+  --neb-ctx-light-soft-outline-inverse-border: var(--neb-#{$color}-25);
+
+  // border hover
+  --neb-ctx-light-soft-outline-neutral-border-hover: var(--neb-#{$color}-2);
+  --neb-ctx-light-soft-outline-dim-border-hover: var(--neb-#{$color}-2);
+  --neb-ctx-light-soft-outline-muted-border-hover: var(--neb-#{$color}-3);
+  --neb-ctx-light-soft-outline-tertiary-border-hover: var(--neb-#{$color}-4);
+  --neb-ctx-light-soft-outline-secondary-border-hover: var(--neb-#{$color}-7);
+  --neb-ctx-light-soft-outline-primary-border-hover: var(--neb-#{$color}-9);
+  --neb-ctx-light-soft-outline-strong-border-hover: var(--neb-#{$color}-14);
+  --neb-ctx-light-soft-outline-inverse-border-hover: var(--neb-#{$color}-17);
+
+  // border active
+  --neb-ctx-light-soft-outline-neutral-border-active: var(--neb-#{$color}-3);
+  --neb-ctx-light-soft-outline-dim-border-active: var(--neb-#{$color}-3);
+  --neb-ctx-light-soft-outline-muted-border-active: var(--neb-#{$color}-4);
+  --neb-ctx-light-soft-outline-tertiary-border-active: var(--neb-#{$color}-5);
+  --neb-ctx-light-soft-outline-secondary-border-active: var(--neb-#{$color}-9);
+  --neb-ctx-light-soft-outline-primary-border-active: var(--neb-#{$color}-6);
+  --neb-ctx-light-soft-outline-strong-border-active: var(--neb-#{$color}-10);
+  --neb-ctx-light-soft-outline-inverse-border-active: var(--neb-#{$color}-14);
+
+  // bg hover
+  --neb-ctx-light-soft-outline-neutral-bg-hover: color-mix(in srgb, var(--neb-#{$color}-11) 3%, transparent);
+  --neb-ctx-light-soft-outline-dim-bg-hover: color-mix(in srgb, var(--neb-#{$color}-11) 3%, transparent);
+  --neb-ctx-light-soft-outline-muted-bg-hover: color-mix(in srgb, var(--neb-#{$color}-11) 5%, transparent);
+  --neb-ctx-light-soft-outline-tertiary-bg-hover: color-mix(in srgb, var(--neb-#{$color}-11) 10%, transparent);
+  --neb-ctx-light-soft-outline-secondary-bg-hover: color-mix(in srgb, var(--neb-#{$color}-11) 15%, transparent);
+  --neb-ctx-light-soft-outline-primary-bg-hover: color-mix(in srgb, var(--neb-#{$color}-11) 20%, transparent);
+  --neb-ctx-light-soft-outline-strong-bg-hover: color-mix(in srgb, var(--neb-#{$color}-11) 25%, transparent);
+  --neb-ctx-light-soft-outline-inverse-bg-hover: color-mix(in srgb, var(--neb-#{$color}-11) 25%, transparent);
+
+  // bg active
+  --neb-ctx-light-soft-outline-neutral-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
+  --neb-ctx-light-soft-outline-dim-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
+  --neb-ctx-light-soft-outline-muted-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
+  --neb-ctx-light-soft-outline-tertiary-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
+  --neb-ctx-light-soft-outline-secondary-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
+  --neb-ctx-light-soft-outline-primary-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
+  --neb-ctx-light-soft-outline-strong-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
+  --neb-ctx-light-soft-outline-inverse-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
+
+  // text active
+  --neb-ctx-light-soft-outline-neutral-text-active: var(--neb-#{$color}-15);
+  --neb-ctx-light-soft-outline-dim-text-active: var(--neb-#{$color}-15);
+  --neb-ctx-light-soft-outline-muted-text-active: var(--neb-#{$color}-15);
+  --neb-ctx-light-soft-outline-tertiary-text-active: var(--neb-#{$color}-15);
+  --neb-ctx-light-soft-outline-secondary-text-active: var(--neb-#{$color}-15);
+  --neb-ctx-light-soft-outline-primary-text-active: var(--neb-#{$color}-15);
+  --neb-ctx-light-soft-outline-strong-text-active: var(--neb-#{$color}-15);
+  --neb-ctx-light-soft-outline-inverse-text-active: var(--neb-#{$color}-15);
+}
