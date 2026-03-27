@@ -4,6 +4,7 @@
 @use './solid.scss' as solid;
 
 @use './ghost-elevated.scss' as ghost-elevated;
+@use './outline-elevated.scss' as outline-elevated;
 @use './solid-elevated.scss' as solid-elevated;
 
 @mixin paint() {
@@ -13,5 +14,6 @@
   @include solid.paint();
 
   @include ghost-elevated.paint();
+  @include outline-elevated.paint();
   @include solid-elevated.paint();
 }

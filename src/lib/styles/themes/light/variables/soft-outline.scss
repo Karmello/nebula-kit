@@ -35,15 +35,6 @@
   --neb-ctx-light-soft-outline-strong-bg-hover: color-mix(in srgb, var(--neb-#{$color}-11) 25%, transparent);
   --neb-ctx-light-soft-outline-inverse-bg-hover: color-mix(in srgb, var(--neb-#{$color}-11) 25%, transparent);
 
-  // bg active
-  --neb-ctx-light-soft-outline-neutral-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
-  --neb-ctx-light-soft-outline-muted-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
-  --neb-ctx-light-soft-outline-tertiary-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
-  --neb-ctx-light-soft-outline-secondary-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
-  --neb-ctx-light-soft-outline-primary-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
-  --neb-ctx-light-soft-outline-strong-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
-  --neb-ctx-light-soft-outline-inverse-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
-
   // text active
   --neb-ctx-light-soft-outline-neutral-text-active: var(--neb-#{$color}-15);
   --neb-ctx-light-soft-outline-muted-text-active: var(--neb-#{$color}-15);
