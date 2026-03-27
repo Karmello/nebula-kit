@@ -1,7 +1,6 @@
 @mixin set-context-light() {
   // text
   --neb-ctx-ghost-neutral-text: var(--neb-ctx-light-ghost-neutral-text);
-  --neb-ctx-ghost-dim-text: var(--neb-ctx-light-ghost-dim-text);
   --neb-ctx-ghost-muted-text: var(--neb-ctx-light-ghost-muted-text);
   --neb-ctx-ghost-tertiary-text: var(--neb-ctx-light-ghost-tertiary-text);
   --neb-ctx-ghost-secondary-text: var(--neb-ctx-light-ghost-secondary-text);
@@ -11,7 +10,6 @@
 
   // text hover
   --neb-ctx-ghost-neutral-text-hover: var(--neb-ctx-light-ghost-neutral-text-hover);
-  --neb-ctx-ghost-dim-text-hover: var(--neb-ctx-light-ghost-dim-text-hover);
   --neb-ctx-ghost-muted-text-hover: var(--neb-ctx-light-ghost-muted-text-hover);
   --neb-ctx-ghost-tertiary-text-hover: var(--neb-ctx-light-ghost-tertiary-text-hover);
   --neb-ctx-ghost-secondary-text-hover: var(--neb-ctx-light-ghost-secondary-text-hover);
@@ -21,7 +19,6 @@
 
   // text active
   --neb-ctx-ghost-neutral-text-active: var(--neb-ctx-light-ghost-neutral-text-active);
-  --neb-ctx-ghost-dim-text-active: var(--neb-ctx-light-ghost-dim-text-active);
   --neb-ctx-ghost-muted-text-active: var(--neb-ctx-light-ghost-muted-text-active);
   --neb-ctx-ghost-tertiary-text-active: var(--neb-ctx-light-ghost-tertiary-text-active);
   --neb-ctx-ghost-secondary-text-active: var(--neb-ctx-light-ghost-secondary-text-active);

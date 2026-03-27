@@ -1,7 +1,6 @@
 @mixin set-context-light() {
   // elevated bg
   --neb-ctx-solid-neutral-elevated-bg: var(--neb-ctx-light-solid-neutral-elevated-bg);
-  --neb-ctx-solid-dim-elevated-bg: var(--neb-ctx-light-solid-dim-elevated-bg);
   --neb-ctx-solid-muted-elevated-bg: var(--neb-ctx-light-solid-muted-elevated-bg);
   --neb-ctx-solid-tertiary-elevated-bg: var(--neb-ctx-light-solid-tertiary-elevated-bg);
   --neb-ctx-solid-secondary-elevated-bg: var(--neb-ctx-light-solid-secondary-elevated-bg);
@@ -11,7 +10,6 @@
 
   // elevated bg hover
   --neb-ctx-solid-neutral-elevated-bg-hover: var(--neb-ctx-light-solid-neutral-elevated-bg-hover);
-  --neb-ctx-solid-dim-elevated-bg-hover: var(--neb-ctx-light-solid-dim-elevated-bg-hover);
   --neb-ctx-solid-muted-elevated-bg-hover: var(--neb-ctx-light-solid-muted-elevated-bg-hover);
   --neb-ctx-solid-tertiary-elevated-bg-hover: var(--neb-ctx-light-solid-tertiary-elevated-bg-hover);
   --neb-ctx-solid-secondary-elevated-bg-hover: var(--neb-ctx-light-solid-secondary-elevated-bg-hover);
@@ -21,7 +19,6 @@
 
   // elevated bg active
   --neb-ctx-solid-neutral-elevated-bg-active: var(--neb-ctx-light-solid-neutral-elevated-bg-active);
-  --neb-ctx-solid-dim-elevated-bg-active: var(--neb-ctx-light-solid-dim-elevated-bg-active);
   --neb-ctx-solid-muted-elevated-bg-active: var(--neb-ctx-light-solid-muted-elevated-bg-active);
   --neb-ctx-solid-tertiary-elevated-bg-active: var(--neb-ctx-light-solid-tertiary-elevated-bg-active);
   --neb-ctx-solid-secondary-elevated-bg-active: var(--neb-ctx-light-solid-secondary-elevated-bg-active);

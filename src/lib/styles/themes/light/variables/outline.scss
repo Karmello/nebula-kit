@@ -1,7 +1,6 @@
 @mixin set($color) {
   // border
   --neb-ctx-light-outline-neutral-border: var(--neb-#{$color}-1);
-  --neb-ctx-light-outline-dim-border: var(--neb-#{$color}-1);
   --neb-ctx-light-outline-muted-border: var(--neb-#{$color}-2);
   --neb-ctx-light-outline-tertiary-border: var(--neb-#{$color}-3);
   --neb-ctx-light-outline-secondary-border: var(--neb-#{$color}-6);
@@ -11,7 +10,6 @@
 
   // border hover
   --neb-ctx-light-outline-neutral-border-hover: var(--neb-#{$color}-2);
-  --neb-ctx-light-outline-dim-border-hover: var(--neb-#{$color}-2);
   --neb-ctx-light-outline-muted-border-hover: var(--neb-#{$color}-3);
   --neb-ctx-light-outline-tertiary-border-hover: var(--neb-#{$color}-4);
   --neb-ctx-light-outline-secondary-border-hover: var(--neb-#{$color}-7);
@@ -21,7 +19,6 @@
 
   // border active
   --neb-ctx-light-outline-neutral-border-active: var(--neb-#{$color}-3);
-  --neb-ctx-light-outline-dim-border-active: var(--neb-#{$color}-3);
   --neb-ctx-light-outline-muted-border-active: var(--neb-#{$color}-4);
   --neb-ctx-light-outline-tertiary-border-active: var(--neb-#{$color}-5);
   --neb-ctx-light-outline-secondary-border-active: var(--neb-#{$color}-9);
@@ -31,7 +28,6 @@
 
   // bg hover
   --neb-ctx-light-outline-neutral-bg-hover: color-mix(in srgb, var(--neb-#{$color}-11) 3%, transparent);
-  --neb-ctx-light-outline-dim-bg-hover: color-mix(in srgb, var(--neb-#{$color}-11) 3%, transparent);
   --neb-ctx-light-outline-muted-bg-hover: color-mix(in srgb, var(--neb-#{$color}-11) 5%, transparent);
   --neb-ctx-light-outline-tertiary-bg-hover: color-mix(in srgb, var(--neb-#{$color}-11) 10%, transparent);
   --neb-ctx-light-outline-secondary-bg-hover: color-mix(in srgb, var(--neb-#{$color}-11) 15%, transparent);
@@ -41,7 +37,6 @@
 
   // bg active
   --neb-ctx-light-outline-neutral-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
-  --neb-ctx-light-outline-dim-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
   --neb-ctx-light-outline-muted-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
   --neb-ctx-light-outline-tertiary-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
   --neb-ctx-light-outline-secondary-bg-active: color-mix(in srgb, var(--neb-#{$color}-11) 0%, transparent);
@@ -51,7 +46,6 @@
 
   // text active
   --neb-ctx-light-outline-neutral-text-active: var(--neb-#{$color}-15);
-  --neb-ctx-light-outline-dim-text-active: var(--neb-#{$color}-15);
   --neb-ctx-light-outline-muted-text-active: var(--neb-#{$color}-15);
   --neb-ctx-light-outline-tertiary-text-active: var(--neb-#{$color}-15);
   --neb-ctx-light-outline-secondary-text-active: var(--neb-#{$color}-15);

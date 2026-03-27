@@ -5,7 +5,7 @@
 @use './pink.scss' as pink;
 @use './red.scss' as red;
 
-$saturation: 72%;
+$saturation: 80%;
 
 @mixin set-palette-light() {
   @include amber.set($saturation);

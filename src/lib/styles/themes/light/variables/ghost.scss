@@ -1,31 +1,28 @@
 @mixin set($color) {
   // text
-  --neb-ctx-light-ghost-neutral-text: var(--neb-#{$color}-25);
-  --neb-ctx-light-ghost-dim-text: var(--neb-#{$color}-1);
-  --neb-ctx-light-ghost-muted-text: var(--neb-#{$color}-2);
+  --neb-ctx-light-ghost-neutral-text: var(--neb-#{$color}-20);
+  --neb-ctx-light-ghost-muted-text: var(--neb-#{$color}-1);
   --neb-ctx-light-ghost-tertiary-text: var(--neb-#{$color}-3);
-  --neb-ctx-light-ghost-secondary-text: var(--neb-#{$color}-6);
+  --neb-ctx-light-ghost-secondary-text: var(--neb-#{$color}-7);
   --neb-ctx-light-ghost-primary-text: var(--neb-#{$color}-11);
-  --neb-ctx-light-ghost-strong-text: var(--neb-#{$color}-18);
+  --neb-ctx-light-ghost-strong-text: var(--neb-#{$color}-15);
   --neb-ctx-light-ghost-inverse-text: var(--neb-#{$color}-0);
 
   // text hover
-  --neb-ctx-light-ghost-neutral-text-hover: var(--neb-#{$color}-16);
-  --neb-ctx-light-ghost-dim-text-hover: var(--neb-#{$color}-2);
-  --neb-ctx-light-ghost-muted-text-hover: var(--neb-#{$color}-3);
+  --neb-ctx-light-ghost-neutral-text-hover: var(--neb-#{$color}-12);
+  --neb-ctx-light-ghost-muted-text-hover: var(--neb-#{$color}-2);
   --neb-ctx-light-ghost-tertiary-text-hover: var(--neb-#{$color}-5);
-  --neb-ctx-light-ghost-secondary-text-hover: var(--neb-#{$color}-9);
+  --neb-ctx-light-ghost-secondary-text-hover: var(--neb-#{$color}-5);
   --neb-ctx-light-ghost-primary-text-hover: var(--neb-#{$color}-8);
-  --neb-ctx-light-ghost-strong-text-hover: var(--neb-#{$color}-12);
-  --neb-ctx-light-ghost-inverse-text-hover: var(--neb-#{$color}-6);
+  --neb-ctx-light-ghost-strong-text-hover: var(--neb-#{$color}-10);
+  --neb-ctx-light-ghost-inverse-text-hover: var(--neb-#{$color}-5);
 
   // text active
-  --neb-ctx-light-ghost-neutral-text-active: var(--neb-#{$color}-10);
-  --neb-ctx-light-ghost-dim-text-active: var(--neb-#{$color}-3);
-  --neb-ctx-light-ghost-muted-text-active: var(--neb-#{$color}-5);
+  --neb-ctx-light-ghost-neutral-text-active: var(--neb-#{$color}-7);
+  --neb-ctx-light-ghost-muted-text-active: var(--neb-#{$color}-4);
   --neb-ctx-light-ghost-tertiary-text-active: var(--neb-#{$color}-8);
-  --neb-ctx-light-ghost-secondary-text-active: var(--neb-#{$color}-14);
+  --neb-ctx-light-ghost-secondary-text-active: var(--neb-#{$color}-3);
   --neb-ctx-light-ghost-primary-text-active: var(--neb-#{$color}-5);
-  --neb-ctx-light-ghost-strong-text-active: var(--neb-#{$color}-7);
-  --neb-ctx-light-ghost-inverse-text-active: var(--neb-#{$color}-11);
+  --neb-ctx-light-ghost-strong-text-active: var(--neb-#{$color}-6);
+  --neb-ctx-light-ghost-inverse-text-active: var(--neb-#{$color}-9);
 }
