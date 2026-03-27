@@ -5,6 +5,7 @@
 
 @use './ghost-elevated.scss' as ghost-elevated;
 @use './outline-elevated.scss' as outline-elevated;
+@use './soft-outline-elevated.scss' as soft-outline-elevated;
 @use './solid-elevated.scss' as solid-elevated;
 
 @mixin set-variables-light($color) {
@@ -19,5 +20,6 @@
 
   @include ghost-elevated.set($color);
   @include outline-elevated.set($color);
+  @include soft-outline-elevated.set($color);
   @include solid-elevated.set($color);
 }
