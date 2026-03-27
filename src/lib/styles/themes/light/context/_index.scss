@@ -3,6 +3,7 @@
 @use './soft-outline.scss' as soft-outline;
 @use './solid.scss' as solid;
 
+@use './ghost-elevated.scss' as ghost-elevated;
 @use './solid-elevated.scss' as solid-elevated;
 
 @mixin set-context-light() {
@@ -11,5 +12,6 @@
   @include soft-outline.set-context-light();
   @include solid.set-context-light();
 
+  @include ghost-elevated.set-context-light();
   @include solid-elevated.set-context-light();
 }

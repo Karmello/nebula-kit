@@ -1,0 +1,28 @@
+@mixin set($color) {
+  // elevated text
+  --neb-ctx-light-ghost-neutral-elevated-text: var(--neb-#{$color}-20);
+  --neb-ctx-light-ghost-muted-elevated-text: var(--neb-#{$color}-2);
+  --neb-ctx-light-ghost-tertiary-elevated-text: var(--neb-#{$color}-4);
+  --neb-ctx-light-ghost-secondary-elevated-text: var(--neb-#{$color}-8);
+  --neb-ctx-light-ghost-primary-elevated-text: var(--neb-#{$color}-12);
+  --neb-ctx-light-ghost-strong-elevated-text: var(--neb-#{$color}-16);
+  --neb-ctx-light-ghost-inverse-elevated-text: var(--neb-#{$color}-0);
+
+  // elevated text hover
+  --neb-ctx-light-ghost-neutral-elevated-text-hover: var(--neb-#{$color}-12);
+  --neb-ctx-light-ghost-muted-elevated-text-hover: var(--neb-#{$color}-3);
+  --neb-ctx-light-ghost-tertiary-elevated-text-hover: var(--neb-#{$color}-6);
+  --neb-ctx-light-ghost-secondary-elevated-text-hover: var(--neb-#{$color}-6);
+  --neb-ctx-light-ghost-primary-elevated-text-hover: var(--neb-#{$color}-9);
+  --neb-ctx-light-ghost-strong-elevated-text-hover: var(--neb-#{$color}-11);
+  --neb-ctx-light-ghost-inverse-elevated-text-hover: var(--neb-#{$color}-5);
+
+  // elevated text active
+  --neb-ctx-light-ghost-neutral-elevated-text-active: var(--neb-#{$color}-7);
+  --neb-ctx-light-ghost-muted-elevated-text-active: var(--neb-#{$color}-5);
+  --neb-ctx-light-ghost-tertiary-elevated-text-active: var(--neb-#{$color}-9);
+  --neb-ctx-light-ghost-secondary-elevated-text-active: var(--neb-#{$color}-4);
+  --neb-ctx-light-ghost-primary-elevated-text-active: var(--neb-#{$color}-6);
+  --neb-ctx-light-ghost-strong-elevated-text-active: var(--neb-#{$color}-7);
+  --neb-ctx-light-ghost-inverse-elevated-text-active: var(--neb-#{$color}-9);
+}

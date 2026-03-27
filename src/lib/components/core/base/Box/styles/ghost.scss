@@ -19,6 +19,7 @@
         &[data-neb-box-elevated='true'] {
           --text: var(--neb-ghost-#{$intent}-elevated-text);
           --text-hover: var(--neb-ghost-#{$intent}-elevated-text-hover);
+          --text-active: var(--neb-ghost-#{$intent}-elevated-text-active);
           --text-disabled: var(--neb-ghost-#{$intent}-elevated-text-disabled);
         }
 
