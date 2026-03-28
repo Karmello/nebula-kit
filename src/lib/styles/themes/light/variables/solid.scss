@@ -52,4 +52,13 @@
   --neb-ctx-light-solid-primary-text-disabled: hsl(var(--neb-#{$color}-0) / 0.75);
   --neb-ctx-light-solid-strong-text-disabled: hsl(var(--neb-#{$color}-0) / 0.75);
   --neb-ctx-light-solid-inverse-text-disabled: hsl(var(--neb-#{$color}-0) / 0.75);
+
+  // loader
+  --neb-ctx-light-solid-neutral-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-solid-muted-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-solid-tertiary-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-solid-secondary-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-solid-primary-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-solid-strong-loader: hsl(var(--neb-#{$color}-0));
+  --neb-ctx-light-solid-inverse-loader: hsl(var(--neb-#{$color}-0));
 }

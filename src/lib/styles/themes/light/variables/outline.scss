@@ -61,4 +61,13 @@
   --neb-ctx-light-outline-primary-text-disabled: hsl(var(--neb-#{$color}-20) / 0.25);
   --neb-ctx-light-outline-strong-text-disabled: hsl(var(--neb-#{$color}-20) / 0.25);
   --neb-ctx-light-outline-inverse-text-disabled: hsl(var(--neb-#{$color}-20) / 0.25);
+
+  // loader
+  --neb-ctx-light-outline-neutral-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-outline-muted-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-outline-tertiary-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-outline-secondary-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-outline-primary-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-outline-strong-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-outline-inverse-loader: hsl(var(--neb-#{$color}-20));
 }

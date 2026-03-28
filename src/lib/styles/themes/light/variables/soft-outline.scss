@@ -45,13 +45,13 @@
   --neb-ctx-light-soft-outline-inverse-text: hsl(var(--neb-#{$color}-20));
 
   // text disabled
-  --neb-ctx-light-soft-outline-neutral-text-disabled: hsl(var(--neb-#{$color}-20) / 0.5);
-  --neb-ctx-light-soft-outline-muted-text-disabled: hsl(var(--neb-#{$color}-1) / 0.5);
-  --neb-ctx-light-soft-outline-tertiary-text-disabled: hsl(var(--neb-#{$color}-3) / 0.5);
-  --neb-ctx-light-soft-outline-secondary-text-disabled: hsl(var(--neb-#{$color}-7) / 0.5);
-  --neb-ctx-light-soft-outline-primary-text-disabled: hsl(var(--neb-#{$color}-11) / 0.5);
-  --neb-ctx-light-soft-outline-strong-text-disabled: hsl(var(--neb-#{$color}-15) / 0.5);
-  --neb-ctx-light-soft-outline-inverse-text-disabled: hsl(var(--neb-#{$color}-20) / 0.5);
+  --neb-ctx-light-soft-outline-neutral-text-disabled: hsl(var(--neb-#{$color}-20) / 0.25);
+  --neb-ctx-light-soft-outline-muted-text-disabled: hsl(var(--neb-#{$color}-1) / 0.25);
+  --neb-ctx-light-soft-outline-tertiary-text-disabled: hsl(var(--neb-#{$color}-3) / 0.25);
+  --neb-ctx-light-soft-outline-secondary-text-disabled: hsl(var(--neb-#{$color}-7) / 0.25);
+  --neb-ctx-light-soft-outline-primary-text-disabled: hsl(var(--neb-#{$color}-11) / 0.25);
+  --neb-ctx-light-soft-outline-strong-text-disabled: hsl(var(--neb-#{$color}-15) / 0.25);
+  --neb-ctx-light-soft-outline-inverse-text-disabled: hsl(var(--neb-#{$color}-20) / 0.25);
 
   // bg hover
   --neb-ctx-light-soft-outline-neutral-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 3%, transparent);
@@ -61,4 +61,13 @@
   --neb-ctx-light-soft-outline-primary-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 9%, transparent);
   --neb-ctx-light-soft-outline-strong-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 10%, transparent);
   --neb-ctx-light-soft-outline-inverse-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 11%, transparent);
+
+  // loader
+  --neb-ctx-light-soft-outline-neutral-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-soft-outline-muted-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-soft-outline-tertiary-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-soft-outline-secondary-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-soft-outline-primary-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-soft-outline-strong-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-light-soft-outline-inverse-loader: hsl(var(--neb-#{$color}-20));
 }
