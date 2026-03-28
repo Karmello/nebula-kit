@@ -22,9 +22,14 @@ export const RELEASE_INFO: Record<
   }
 > = {
   '0.8.0': {
-    timestamp: 1773529204871,
+    timestamp: 1774729367750,
     changelog: {
-      main: ['improved color tokens'],
+      main: [
+        'refined the color token system to better align with the internal styling model and improve consistency across themes, brands and surfaces',
+        'expanded the palette to support a wider and more expressive range of color values after validating the system constraints',
+        'simplified component APIs by removing experimental props that are no longer needed due to improved token structure',
+        'improved internal styling performance and development velocity through token refactoring and clearer axis separation',
+      ],
     },
   },
   '0.7.0': {
