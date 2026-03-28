@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { sentenceCase } from 'change-case'
 
 import { Box, Button, Grid, Select, Spacer, Text, Switch, Flex } from 'lib/components'
@@ -10,6 +10,12 @@ export default () => {
   const [elevated, setElevated] = useState<boolean>(false)
   const [disabled, setDisabled] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (disabled && elevated) {
+      setElevated(false)
+    }
+  }, [disabled])
 
   return (
     <>
@@ -34,7 +40,7 @@ export default () => {
         </Flex.Item>
         <Flex.Item>
           <Text bold>Elevated</Text>
-          <Switch checked={elevated} onChange={setElevated} />
+          <Switch checked={elevated} onChange={setElevated} disabled={disabled} />
         </Flex.Item>
         <Flex.Item>
           <Text bold>Disabled</Text>

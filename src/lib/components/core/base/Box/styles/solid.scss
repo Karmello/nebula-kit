@@ -11,17 +11,15 @@
         --bg-hover: var(--neb-solid-#{$intent}-bg-hover);
         --bg-active: var(--neb-solid-#{$intent}-bg-active);
         --text: var(--neb-solid-#{$intent}-text);
-        --text-disabled: var(--neb-solid-#{$intent}-text-disabled);
         --loader: var(--neb-solid-#{$intent}-loader);
         --ripple: currentColor;
         --ripple-opacity: var(--neb-solid-#{$intent}-ripple-opacity);
 
         // elevated base
-        &[data-neb-box-elevated='true'] {
+        &:not([data-neb-box-disabled='true'])[data-neb-box-elevated='true'] {
           --bg: var(--neb-solid-#{$intent}-elevated-bg);
           --bg-hover: var(--neb-solid-#{$intent}-elevated-bg-hover);
           --bg-active: var(--neb-solid-#{$intent}-elevated-bg-active);
-          --text-disabled: var(--neb-solid-#{$intent}-elevated-text-disabled);
         }
 
         // rest
@@ -56,14 +54,6 @@
                 inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-background);
             }
           }
-        }
-
-        // disabled
-        &[data-neb-box-disabled='true'] {
-          color: var(--text-disabled);
-        }
-        &[data-neb-box-disabled='true']:-webkit-autofill {
-          -webkit-text-fill-color: var(--text-disabled);
         }
       }
     }

@@ -10,17 +10,15 @@
         --text: var(--neb-ghost-#{$intent}-text);
         --text-hover: var(--neb-ghost-#{$intent}-text-hover);
         --text-active: var(--neb-ghost-#{$intent}-text-active);
-        --text-disabled: var(--neb-ghost-#{$intent}-text-disabled);
         --loader: var(--neb-ghost-#{$intent}-loader);
         --ripple: var(--neb-ghost-#{$intent}-ripple, currentColor);
         --ripple-opacity: var(--neb-ghost-#{$intent}-ripple-opacity);
 
         // elevated base
-        &[data-neb-box-elevated='true'] {
+        &:not([data-neb-box-disabled='true'])[data-neb-box-elevated='true'] {
           --text: var(--neb-ghost-#{$intent}-elevated-text);
           --text-hover: var(--neb-ghost-#{$intent}-elevated-text-hover);
           --text-active: var(--neb-ghost-#{$intent}-elevated-text-active);
-          --text-disabled: var(--neb-ghost-#{$intent}-elevated-text-disabled);
         }
 
         // rest
@@ -48,15 +46,6 @@
           &:focus-visible {
             box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
           }
-        }
-
-        // disabled
-        &[data-neb-box-disabled='true'] {
-          color: var(--text-disabled);
-        }
-
-        &[data-neb-box-disabled='true']:-webkit-autofill {
-          -webkit-text-fill-color: var(--text-disabled);
         }
       }
     }
