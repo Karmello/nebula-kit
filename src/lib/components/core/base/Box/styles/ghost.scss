@@ -6,7 +6,6 @@
 
     @each $intent in $intents {
       &[data-neb-box-intent='#{$intent}'] {
-        // base
         --text: var(--neb-ghost-#{$intent}-text);
         --text-hover: var(--neb-ghost-#{$intent}-text-hover);
         --text-active: var(--neb-ghost-#{$intent}-text-active);
@@ -15,35 +14,33 @@
         --ripple: var(--neb-ghost-#{$intent}-ripple, currentColor);
         --ripple-opacity: var(--neb-ghost-#{$intent}-ripple-opacity);
 
-        // elevated base
-        &:not([data-neb-box-disabled='true'])[data-neb-box-elevated='true'] {
-          --text: var(--neb-ghost-#{$intent}-elevated-text);
-          --text-hover: var(--neb-ghost-#{$intent}-elevated-text-hover);
-          --text-active: var(--neb-ghost-#{$intent}-elevated-text-active);
-        }
-
         // rest
         color: var(--text);
 
-        // interaction
-        &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
-          // hover
-          &[data-neb-box-default-state='hover'],
-          &:hover:not(:active):not([data-neb-box-default-state='active']):not(:focus-visible[data-neb-box-active-on-focus='true']),
-          &:focus-visible:not([data-neb-box-default-state='active']):not([data-neb-box-active-on-focus='true']) {
-            color: var(--text-hover);
-          }
-
-          // active
-          &[data-neb-box-default-state='active'],
-          &:active,
-          &:focus-visible[data-neb-box-active-on-focus='true'] {
-            color: var(--text-active);
-          }
-        }
-
-        // focus ring
+        // enabled
         &:not([data-neb-box-disabled='true']) {
+          // elevated
+          &[data-neb-box-elevated='true'] {
+            --text: var(--neb-ghost-#{$intent}-elevated-text);
+            --text-hover: var(--neb-ghost-#{$intent}-elevated-text-hover);
+            --text-active: var(--neb-ghost-#{$intent}-elevated-text-active);
+          }
+
+          // interactive
+          &[data-neb-box-interactive='true'] {
+            // hover
+            &:hover:not(:active) {
+              color: var(--text-hover);
+            }
+
+            // active, focus
+            &:active,
+            &:focus-visible {
+              color: var(--text-active) !important;
+            }
+          }
+
+          // focus ring
           &:focus-visible {
             box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
           }

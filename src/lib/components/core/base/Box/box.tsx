@@ -26,8 +26,6 @@ export const Box = <T extends ElementType = 'div'>({
   intent,
   // interaction
   interactive,
-  defaultState,
-  activeOnFocus,
   disabled,
   // css
   opacity,
@@ -223,8 +221,6 @@ export const Box = <T extends ElementType = 'div'>({
             drawable,
             elevated,
             interactive,
-            defaultState,
-            activeOnFocus,
             disabled,
           }),
         } as PropsWithoutRef<ComponentProps<T>>

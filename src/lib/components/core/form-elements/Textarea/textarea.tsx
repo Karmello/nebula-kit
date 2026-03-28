@@ -85,7 +85,6 @@ export const Textarea = ({
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
       interactive
-      activeOnFocus
     />
   )
 }

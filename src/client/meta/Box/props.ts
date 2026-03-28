@@ -11,15 +11,11 @@ import {
   THEMES,
 } from 'lib/definitions'
 
-import { BoxProps, BOX_VARIANTS, BOX_INTENTS, BOX_DEFAULT_STATE } from 'lib/components/core/base/Box'
+import { BoxProps, BOX_VARIANTS, BOX_INTENTS } from 'lib/components/core/base/Box'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
-  activeOnFocus: {
-    options: ['boolean'],
-    description: 'When true, applies the active visual state while the component is focus-visible.',
-  },
   aspectRatio: {
     options: ['CSS'],
     isResponsive: true,
@@ -110,10 +106,6 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     isResponsive: true,
     description: 'Color applied to the component.',
     tooltip: COLORS,
-  },
-  defaultState: {
-    options: BOX_DEFAULT_STATE,
-    description: 'Overrides the base interaction state while preserving natural interaction behavior.',
   },
   disabled: {
     options: ['boolean'],

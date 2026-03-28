@@ -32,7 +32,6 @@ export const Button = <T extends ButtonTag = 'button'>({
   color,
   intent = DEFAULT_BUTTON_INTENT,
   interactive = DEFAULT_BUTTON_INTERACTIVE,
-  defaultState,
   disabled,
   elevated,
   inlineSize,
@@ -89,7 +88,6 @@ export const Button = <T extends ButtonTag = 'button'>({
       variant={variant}
       color={color}
       intent={intent}
-      defaultState={defaultState}
       disabled={disabled || loading}
       inlineSize={inlineSize}
       minInlineSize={minInlineSize}

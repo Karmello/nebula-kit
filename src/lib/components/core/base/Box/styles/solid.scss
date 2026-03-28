@@ -17,36 +17,34 @@
         --ripple: currentColor;
         --ripple-opacity: var(--neb-solid-#{$intent}-ripple-opacity);
 
-        // elevated base
-        &:not([data-neb-box-disabled='true'])[data-neb-box-elevated='true'] {
-          --bg: var(--neb-solid-#{$intent}-elevated-bg);
-          --bg-hover: var(--neb-solid-#{$intent}-elevated-bg-hover);
-          --bg-active: var(--neb-solid-#{$intent}-elevated-bg-active);
-        }
-
         // rest
         background-color: var(--bg);
         color: var(--text);
 
-        // interaction
-        &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
-          // hover
-          &[data-neb-box-default-state='hover'],
-          &:hover:not(:active):not([data-neb-box-default-state='active']):not(:focus-visible[data-neb-box-active-on-focus='true']),
-          &:focus-visible:not([data-neb-box-default-state='active']):not([data-neb-box-active-on-focus='true']) {
-            background-color: var(--bg-hover);
-          }
-
-          // active
-          &[data-neb-box-default-state='active'],
-          &:active,
-          &:focus-visible[data-neb-box-active-on-focus='true'] {
-            background-color: var(--bg-active);
-          }
-        }
-
-        // focus ring
+        // enabled
         &:not([data-neb-box-disabled='true']) {
+          // elevated
+          &[data-neb-box-elevated='true'] {
+            --bg: var(--neb-solid-#{$intent}-elevated-bg);
+            --bg-hover: var(--neb-solid-#{$intent}-elevated-bg-hover);
+            --bg-active: var(--neb-solid-#{$intent}-elevated-bg-active);
+          }
+
+          // interactive
+          &[data-neb-box-interactive='true'] {
+            // hover
+            &:hover:not(:active) {
+              background-color: var(--bg-hover);
+            }
+
+            // active, focus
+            &:active,
+            &:focus-visible {
+              background-color: var(--bg-active) !important;
+            }
+          }
+
+          // focus ring
           &:focus-visible {
             box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
 

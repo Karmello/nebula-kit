@@ -24,6 +24,8 @@ const BOX_META: ComponentMeta<BoxProps> = {
   changelog: {
     '0.8.0': [
       'updated Box to render internal ThemeProvider and BrandProvider automatically when theme or brand props are set, ensuring styling islands propagate correctly through portals',
+      'removed activeOnFocus prop',
+      'removed defaultState prop',
     ],
     '0.7.0': [
       'added visual active state styling alongside hover for interactive Box',

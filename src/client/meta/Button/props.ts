@@ -26,7 +26,6 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   },
   color: BOX_PROPS_META.color,
   customSvgIcon: WITH_ICON_PROPS_META.customSvgIcon,
-  defaultState: BOX_PROPS_META.defaultState,
   disabled: BOX_PROPS_META.disabled,
   elevated: BOX_PROPS_META.elevated,
   fullWidth: {
