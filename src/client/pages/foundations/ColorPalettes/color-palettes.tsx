@@ -30,7 +30,7 @@ export default () => {
                 drawable
                 variant="outline"
                 intent="muted"
-                tagAttrs={{ style: { backgroundColor: `var(--neb-${brand}-${n})` } }}
+                tagAttrs={{ style: { backgroundColor: `hsl(var(--neb-${brand}-${n}))` } }}
                 blockSize="50px"
               />
             </Flex.Item>

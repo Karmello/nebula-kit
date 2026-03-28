@@ -13,7 +13,11 @@ export default () => {
           {arr.map(n => {
             return (
               <Flex.Item key={n} flexGrow="1">
-                <Box tagAttrs={{ style: { backgroundColor: `var(--neb-${color}-${n})` } }} blockSize="50px" borderRadius="0px" />
+                <Box
+                  tagAttrs={{ style: { backgroundColor: `hsl(var(--neb-${color}-${n}))` } }}
+                  blockSize="50px"
+                  borderRadius="0px"
+                />
               </Flex.Item>
             )
           })}

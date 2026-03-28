@@ -11,8 +11,10 @@
         --border: var(--neb-outline-#{$intent}-border);
         --border-hover: var(--neb-outline-#{$intent}-border-hover);
         --border-active: var(--neb-outline-#{$intent}-border-active);
+        --border-disabled: var(--neb-outline-#{$intent}-border-disabled);
         --bg-hover: var(--neb-outline-#{$intent}-bg-hover);
         --text-active: var(--neb-outline-#{$intent}-text-active);
+        --text-disabled: var(--neb-outline-#{$intent}-text-disabled);
         --loader: var(--neb-outline-#{$intent}-loader);
         --ripple: currentColor;
         --ripple-opacity: var(--neb-outline-#{$intent}-ripple-opacity);
@@ -53,6 +55,12 @@
             border-color: var(--neb-focus-border) !important;
             box-shadow: inset 0 0 0 1px var(--neb-focus-border);
           }
+        }
+
+        // disabled
+        &[data-neb-box-disabled='true'] {
+          border-color: var(--border-disabled);
+          color: var(--text-disabled);
         }
       }
     }

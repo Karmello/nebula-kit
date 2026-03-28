@@ -9,9 +9,9 @@
 @use './solid-elevated.scss' as solid-elevated;
 
 @mixin set-variables-light($color) {
-  --neb-background: var(--neb-#{$color}-0);
-  --neb-text: var(--neb-#{$color}-20);
-  --neb-focus-border: var(--neb-#{$color}-20);
+  --neb-background: hsl(var(--neb-#{$color}-0));
+  --neb-text: hsl(var(--neb-#{$color}-20));
+  --neb-focus-border: hsl(var(--neb-#{$color}-20));
 
   @include ghost.set($color);
   @include outline.set($color);

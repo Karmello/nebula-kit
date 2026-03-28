@@ -10,6 +10,7 @@
         --text: var(--neb-ghost-#{$intent}-text);
         --text-hover: var(--neb-ghost-#{$intent}-text-hover);
         --text-active: var(--neb-ghost-#{$intent}-text-active);
+        --text-disabled: var(--neb-ghost-#{$intent}-text-disabled);
         --loader: var(--neb-ghost-#{$intent}-loader);
         --ripple: var(--neb-ghost-#{$intent}-ripple, currentColor);
         --ripple-opacity: var(--neb-ghost-#{$intent}-ripple-opacity);
@@ -46,6 +47,11 @@
           &:focus-visible {
             box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
           }
+        }
+
+        // disabled
+        &[data-neb-box-disabled='true'] {
+          color: var(--text-disabled);
         }
       }
     }

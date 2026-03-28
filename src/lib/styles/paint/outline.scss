@@ -26,6 +26,15 @@
   --neb-outline-strong-border-active: var(--neb-ctx-outline-strong-border-active);
   --neb-outline-inverse-border-active: var(--neb-ctx-outline-inverse-border-active);
 
+  // border disabled
+  --neb-outline-neutral-border-disabled: var(--neb-ctx-outline-neutral-border-disabled);
+  --neb-outline-muted-border-disabled: var(--neb-ctx-outline-muted-border-disabled);
+  --neb-outline-tertiary-border-disabled: var(--neb-ctx-outline-tertiary-border-disabled);
+  --neb-outline-secondary-border-disabled: var(--neb-ctx-outline-secondary-border-disabled);
+  --neb-outline-primary-border-disabled: var(--neb-ctx-outline-primary-border-disabled);
+  --neb-outline-strong-border-disabled: var(--neb-ctx-outline-strong-border-disabled);
+  --neb-outline-inverse-border-disabled: var(--neb-ctx-outline-inverse-border-disabled);
+
   // bg hover
   --neb-outline-neutral-bg-hover: var(--neb-ctx-outline-neutral-bg-hover);
   --neb-outline-muted-bg-hover: var(--neb-ctx-outline-muted-bg-hover);
@@ -43,4 +52,13 @@
   --neb-outline-primary-text-active: var(--neb-ctx-outline-primary-text-active);
   --neb-outline-strong-text-active: var(--neb-ctx-outline-strong-text-active);
   --neb-outline-inverse-text-active: var(--neb-ctx-outline-inverse-text-active);
+
+  // text disabled
+  --neb-outline-neutral-text-disabled: var(--neb-ctx-outline-neutral-text-disabled);
+  --neb-outline-muted-text-disabled: var(--neb-ctx-outline-muted-text-disabled);
+  --neb-outline-tertiary-text-disabled: var(--neb-ctx-outline-tertiary-text-disabled);
+  --neb-outline-secondary-text-disabled: var(--neb-ctx-outline-secondary-text-disabled);
+  --neb-outline-primary-text-disabled: var(--neb-ctx-outline-primary-text-disabled);
+  --neb-outline-strong-text-disabled: var(--neb-ctx-outline-strong-text-disabled);
+  --neb-outline-inverse-text-disabled: var(--neb-ctx-outline-inverse-text-disabled);
 }

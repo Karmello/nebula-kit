@@ -25,4 +25,13 @@
   --neb-ctx-ghost-primary-text-active: var(--neb-ctx-light-ghost-primary-text-active);
   --neb-ctx-ghost-strong-text-active: var(--neb-ctx-light-ghost-strong-text-active);
   --neb-ctx-ghost-inverse-text-active: var(--neb-ctx-light-ghost-inverse-text-active);
+
+  // text disabled
+  --neb-ctx-ghost-neutral-text-disabled: var(--neb-ctx-light-ghost-neutral-text-disabled);
+  --neb-ctx-ghost-muted-text-disabled: var(--neb-ctx-light-ghost-muted-text-disabled);
+  --neb-ctx-ghost-tertiary-text-disabled: var(--neb-ctx-light-ghost-tertiary-text-disabled);
+  --neb-ctx-ghost-secondary-text-disabled: var(--neb-ctx-light-ghost-secondary-text-disabled);
+  --neb-ctx-ghost-primary-text-disabled: var(--neb-ctx-light-ghost-primary-text-disabled);
+  --neb-ctx-ghost-strong-text-disabled: var(--neb-ctx-light-ghost-strong-text-disabled);
+  --neb-ctx-ghost-inverse-text-disabled: var(--neb-ctx-light-ghost-inverse-text-disabled);
 }
