@@ -15,7 +15,7 @@
         --bg-hover: var(--neb-outline-#{$intent}-bg-hover);
         --text-active: var(--neb-outline-#{$intent}-text-active);
         --text-disabled: var(--neb-outline-#{$intent}-text-disabled);
-        --loader: var(--neb-outline-#{$intent}-loader);
+        --loader: var(--neb-outline-#{$intent}-text-active);
         --ripple: currentColor;
         --ripple-opacity: var(--neb-outline-#{$intent}-ripple-opacity);
 

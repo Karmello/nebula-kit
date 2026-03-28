@@ -12,10 +12,25 @@ export default () => {
   const [loading, setLoading] = useState<boolean>(false)
 
   useEffect(() => {
-    if (disabled && elevated) {
+    if (elevated) {
+      setDisabled(false)
+      setLoading(false)
+    }
+  }, [elevated])
+
+  useEffect(() => {
+    if (disabled) {
       setElevated(false)
+      setLoading(false)
     }
   }, [disabled])
+
+  useEffect(() => {
+    if (loading) {
+      setElevated(false)
+      setDisabled(false)
+    }
+  }, [loading])
 
   return (
     <>
@@ -40,7 +55,7 @@ export default () => {
         </Flex.Item>
         <Flex.Item>
           <Text bold>Elevated</Text>
-          <Switch checked={elevated} onChange={setElevated} disabled={disabled} />
+          <Switch checked={elevated} onChange={setElevated} />
         </Flex.Item>
         <Flex.Item>
           <Text bold>Disabled</Text>
