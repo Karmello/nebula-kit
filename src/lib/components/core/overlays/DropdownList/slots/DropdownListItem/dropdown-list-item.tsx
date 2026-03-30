@@ -31,6 +31,7 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
           ...tagAttrs,
           className: classNames(withPrefix('dropdown-list-item'), tagAttrs?.className),
           'data-neb-dropdown-list-item-index': index,
+          'data-neb-box-hovered': blockMouse && index === hoveredIndex,
           role: 'option',
           onClick: (
             e: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent> & MouseEvent<HTMLButtonElement, globalThis.MouseEvent>

@@ -45,6 +45,7 @@ export const FooterSection = ({
         paddingRight={paddingRight}
         paddingBottom={paddingBottom}
         paddingLeft={paddingLeft}
+        elevated
       >
         {children}
       </Box>

@@ -34,6 +34,7 @@ export const AppFrameFooter = ({
       borderWidth="0px"
       borderRadius="0px"
       borderTopWidth={BOX_BORDER_WIDTH}
+      elevated
     >
       <Box drawable borderRadius="0px" variant="solid" color={color} intent={intent} {...paddings}>
         {children}

@@ -33,7 +33,8 @@
           // interactive
           &[data-neb-box-interactive='true'] {
             // hover
-            &:hover:not(:active) {
+            &:hover:not(:active),
+            &[data-neb-box-hovered='true'] {
               background-color: var(--bg-hover);
             }
 
