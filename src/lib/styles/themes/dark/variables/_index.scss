@@ -1,5 +1,25 @@
+@use './ghost.scss' as ghost;
+@use './outline.scss' as outline;
+@use './soft-outline.scss' as soft-outline;
+@use './solid.scss' as solid;
+
+@use './ghost-elevated.scss' as ghost-elevated;
+@use './outline-elevated.scss' as outline-elevated;
+@use './soft-outline-elevated.scss' as soft-outline-elevated;
+@use './solid-elevated.scss' as solid-elevated;
+
 @mixin set-variables-dark($color) {
-  // --neb-background: var(--neb-#{$color}-0);
-  // --neb-text: var(--neb-#{$color}-25);
-  // --neb-focus-border: var(--neb-#{$color}-25);
+  --neb-background: hsl(var(--neb-#{$color}-0));
+  --neb-text: hsl(var(--neb-#{$color}-20));
+  --neb-focus-border: hsl(var(--neb-#{$color}-20));
+
+  @include ghost.set($color);
+  @include outline.set($color);
+  @include soft-outline.set($color);
+  @include solid.set($color);
+
+  @include ghost-elevated.set($color);
+  @include outline-elevated.set($color);
+  @include soft-outline-elevated.set($color);
+  @include solid-elevated.set($color);
 }

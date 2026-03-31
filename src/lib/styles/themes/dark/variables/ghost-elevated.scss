@@ -1,0 +1,28 @@
+@mixin set($color) {
+  // elevated text
+  --neb-ctx-dark-ghost-neutral-elevated-text: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-dark-ghost-muted-elevated-text: hsl(var(--neb-#{$color}-2));
+  --neb-ctx-dark-ghost-tertiary-elevated-text: hsl(var(--neb-#{$color}-4));
+  --neb-ctx-dark-ghost-secondary-elevated-text: hsl(var(--neb-#{$color}-8));
+  --neb-ctx-dark-ghost-primary-elevated-text: hsl(var(--neb-#{$color}-12));
+  --neb-ctx-dark-ghost-strong-elevated-text: hsl(var(--neb-#{$color}-16));
+  --neb-ctx-dark-ghost-inverse-elevated-text: hsl(var(--neb-#{$color}-0));
+
+  // elevated text hover
+  --neb-ctx-dark-ghost-neutral-elevated-text-hover: hsl(var(--neb-#{$color}-12));
+  --neb-ctx-dark-ghost-muted-elevated-text-hover: hsl(var(--neb-#{$color}-3));
+  --neb-ctx-dark-ghost-tertiary-elevated-text-hover: hsl(var(--neb-#{$color}-6));
+  --neb-ctx-dark-ghost-secondary-elevated-text-hover: hsl(var(--neb-#{$color}-6));
+  --neb-ctx-dark-ghost-primary-elevated-text-hover: hsl(var(--neb-#{$color}-9));
+  --neb-ctx-dark-ghost-strong-elevated-text-hover: hsl(var(--neb-#{$color}-11));
+  --neb-ctx-dark-ghost-inverse-elevated-text-hover: hsl(var(--neb-#{$color}-5));
+
+  // elevated text active
+  --neb-ctx-dark-ghost-neutral-elevated-text-active: hsl(var(--neb-#{$color}-7));
+  --neb-ctx-dark-ghost-muted-elevated-text-active: hsl(var(--neb-#{$color}-5));
+  --neb-ctx-dark-ghost-tertiary-elevated-text-active: hsl(var(--neb-#{$color}-9));
+  --neb-ctx-dark-ghost-secondary-elevated-text-active: hsl(var(--neb-#{$color}-4));
+  --neb-ctx-dark-ghost-primary-elevated-text-active: hsl(var(--neb-#{$color}-6));
+  --neb-ctx-dark-ghost-strong-elevated-text-active: hsl(var(--neb-#{$color}-7));
+  --neb-ctx-dark-ghost-inverse-elevated-text-active: hsl(var(--neb-#{$color}-9));
+}

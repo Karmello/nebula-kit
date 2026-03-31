@@ -5,11 +5,13 @@
 @use './pink.scss' as pink;
 @use './red.scss' as red;
 
+$saturation: 80%;
+
 @mixin set-palette-dark() {
-  @include amber.set();
-  @include blue.set();
-  @include gray.set();
-  @include green.set();
-  @include pink.set();
-  @include red.set();
+  @include amber.set($saturation);
+  @include blue.set($saturation);
+  @include gray.set(0%);
+  @include green.set($saturation);
+  @include pink.set($saturation);
+  @include red.set($saturation);
 }
