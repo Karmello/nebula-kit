@@ -1,0 +1,73 @@
+@mixin set-context($theme) {
+  // border
+  --neb-ctx-outline-neutral-border: var(--neb-ctx-#{$theme}-outline-neutral-border);
+  --neb-ctx-outline-muted-border: var(--neb-ctx-#{$theme}-outline-muted-border);
+  --neb-ctx-outline-tertiary-border: var(--neb-ctx-#{$theme}-outline-tertiary-border);
+  --neb-ctx-outline-secondary-border: var(--neb-ctx-#{$theme}-outline-secondary-border);
+  --neb-ctx-outline-primary-border: var(--neb-ctx-#{$theme}-outline-primary-border);
+  --neb-ctx-outline-strong-border: var(--neb-ctx-#{$theme}-outline-strong-border);
+  --neb-ctx-outline-inverse-border: var(--neb-ctx-#{$theme}-outline-inverse-border);
+
+  // border hover
+  --neb-ctx-outline-neutral-border-hover: var(--neb-ctx-#{$theme}-outline-neutral-border-hover);
+  --neb-ctx-outline-muted-border-hover: var(--neb-ctx-#{$theme}-outline-muted-border-hover);
+  --neb-ctx-outline-tertiary-border-hover: var(--neb-ctx-#{$theme}-outline-tertiary-border-hover);
+  --neb-ctx-outline-secondary-border-hover: var(--neb-ctx-#{$theme}-outline-secondary-border-hover);
+  --neb-ctx-outline-primary-border-hover: var(--neb-ctx-#{$theme}-outline-primary-border-hover);
+  --neb-ctx-outline-strong-border-hover: var(--neb-ctx-#{$theme}-outline-strong-border-hover);
+  --neb-ctx-outline-inverse-border-hover: var(--neb-ctx-#{$theme}-outline-inverse-border-hover);
+
+  // border active
+  --neb-ctx-outline-neutral-border-active: var(--neb-ctx-#{$theme}-outline-neutral-border-active);
+  --neb-ctx-outline-muted-border-active: var(--neb-ctx-#{$theme}-outline-muted-border-active);
+  --neb-ctx-outline-tertiary-border-active: var(--neb-ctx-#{$theme}-outline-tertiary-border-active);
+  --neb-ctx-outline-secondary-border-active: var(--neb-ctx-#{$theme}-outline-secondary-border-active);
+  --neb-ctx-outline-primary-border-active: var(--neb-ctx-#{$theme}-outline-primary-border-active);
+  --neb-ctx-outline-strong-border-active: var(--neb-ctx-#{$theme}-outline-strong-border-active);
+  --neb-ctx-outline-inverse-border-active: var(--neb-ctx-#{$theme}-outline-inverse-border-active);
+
+  // border disabled
+  --neb-ctx-outline-neutral-border-disabled: var(--neb-ctx-#{$theme}-outline-neutral-border-disabled);
+  --neb-ctx-outline-muted-border-disabled: var(--neb-ctx-#{$theme}-outline-muted-border-disabled);
+  --neb-ctx-outline-tertiary-border-disabled: var(--neb-ctx-#{$theme}-outline-tertiary-border-disabled);
+  --neb-ctx-outline-secondary-border-disabled: var(--neb-ctx-#{$theme}-outline-secondary-border-disabled);
+  --neb-ctx-outline-primary-border-disabled: var(--neb-ctx-#{$theme}-outline-primary-border-disabled);
+  --neb-ctx-outline-strong-border-disabled: var(--neb-ctx-#{$theme}-outline-strong-border-disabled);
+  --neb-ctx-outline-inverse-border-disabled: var(--neb-ctx-#{$theme}-outline-inverse-border-disabled);
+
+  // bg hover
+  --neb-ctx-outline-neutral-bg-hover: var(--neb-ctx-#{$theme}-outline-neutral-bg-hover);
+  --neb-ctx-outline-muted-bg-hover: var(--neb-ctx-#{$theme}-outline-muted-bg-hover);
+  --neb-ctx-outline-tertiary-bg-hover: var(--neb-ctx-#{$theme}-outline-tertiary-bg-hover);
+  --neb-ctx-outline-secondary-bg-hover: var(--neb-ctx-#{$theme}-outline-secondary-bg-hover);
+  --neb-ctx-outline-primary-bg-hover: var(--neb-ctx-#{$theme}-outline-primary-bg-hover);
+  --neb-ctx-outline-strong-bg-hover: var(--neb-ctx-#{$theme}-outline-strong-bg-hover);
+  --neb-ctx-outline-inverse-bg-hover: var(--neb-ctx-#{$theme}-outline-inverse-bg-hover);
+
+  // text active
+  --neb-ctx-outline-neutral-text-active: var(--neb-ctx-#{$theme}-outline-neutral-text-active);
+  --neb-ctx-outline-muted-text-active: var(--neb-ctx-#{$theme}-outline-muted-text-active);
+  --neb-ctx-outline-tertiary-text-active: var(--neb-ctx-#{$theme}-outline-tertiary-text-active);
+  --neb-ctx-outline-secondary-text-active: var(--neb-ctx-#{$theme}-outline-secondary-text-active);
+  --neb-ctx-outline-primary-text-active: var(--neb-ctx-#{$theme}-outline-primary-text-active);
+  --neb-ctx-outline-strong-text-active: var(--neb-ctx-#{$theme}-outline-strong-text-active);
+  --neb-ctx-outline-inverse-text-active: var(--neb-ctx-#{$theme}-outline-inverse-text-active);
+
+  // text disabled
+  --neb-ctx-outline-neutral-text-disabled: var(--neb-ctx-#{$theme}-outline-neutral-text-disabled);
+  --neb-ctx-outline-muted-text-disabled: var(--neb-ctx-#{$theme}-outline-muted-text-disabled);
+  --neb-ctx-outline-tertiary-text-disabled: var(--neb-ctx-#{$theme}-outline-tertiary-text-disabled);
+  --neb-ctx-outline-secondary-text-disabled: var(--neb-ctx-#{$theme}-outline-secondary-text-disabled);
+  --neb-ctx-outline-primary-text-disabled: var(--neb-ctx-#{$theme}-outline-primary-text-disabled);
+  --neb-ctx-outline-strong-text-disabled: var(--neb-ctx-#{$theme}-outline-strong-text-disabled);
+  --neb-ctx-outline-inverse-text-disabled: var(--neb-ctx-#{$theme}-outline-inverse-text-disabled);
+
+  // loader
+  --neb-ctx-outline-neutral-loader: var(--neb-ctx-#{$theme}-outline-neutral-loader);
+  --neb-ctx-outline-muted-loader: var(--neb-ctx-#{$theme}-outline-muted-loader);
+  --neb-ctx-outline-tertiary-loader: var(--neb-ctx-#{$theme}-outline-tertiary-loader);
+  --neb-ctx-outline-secondary-loader: var(--neb-ctx-#{$theme}-outline-secondary-loader);
+  --neb-ctx-outline-primary-loader: var(--neb-ctx-#{$theme}-outline-primary-loader);
+  --neb-ctx-outline-strong-loader: var(--neb-ctx-#{$theme}-outline-strong-loader);
+  --neb-ctx-outline-inverse-loader: var(--neb-ctx-#{$theme}-outline-inverse-loader);
+}

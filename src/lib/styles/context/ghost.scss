@@ -1,0 +1,46 @@
+@mixin set-context($theme) {
+  // text
+  --neb-ctx-ghost-neutral-text: var(--neb-ctx-#{$theme}-ghost-neutral-text);
+  --neb-ctx-ghost-muted-text: var(--neb-ctx-#{$theme}-ghost-muted-text);
+  --neb-ctx-ghost-tertiary-text: var(--neb-ctx-#{$theme}-ghost-tertiary-text);
+  --neb-ctx-ghost-secondary-text: var(--neb-ctx-#{$theme}-ghost-secondary-text);
+  --neb-ctx-ghost-primary-text: var(--neb-ctx-#{$theme}-ghost-primary-text);
+  --neb-ctx-ghost-strong-text: var(--neb-ctx-#{$theme}-ghost-strong-text);
+  --neb-ctx-ghost-inverse-text: var(--neb-ctx-#{$theme}-ghost-inverse-text);
+
+  // text hover
+  --neb-ctx-ghost-neutral-text-hover: var(--neb-ctx-#{$theme}-ghost-neutral-text-hover);
+  --neb-ctx-ghost-muted-text-hover: var(--neb-ctx-#{$theme}-ghost-muted-text-hover);
+  --neb-ctx-ghost-tertiary-text-hover: var(--neb-ctx-#{$theme}-ghost-tertiary-text-hover);
+  --neb-ctx-ghost-secondary-text-hover: var(--neb-ctx-#{$theme}-ghost-secondary-text-hover);
+  --neb-ctx-ghost-primary-text-hover: var(--neb-ctx-#{$theme}-ghost-primary-text-hover);
+  --neb-ctx-ghost-strong-text-hover: var(--neb-ctx-#{$theme}-ghost-strong-text-hover);
+  --neb-ctx-ghost-inverse-text-hover: var(--neb-ctx-#{$theme}-ghost-inverse-text-hover);
+
+  // text active
+  --neb-ctx-ghost-neutral-text-active: var(--neb-ctx-#{$theme}-ghost-neutral-text-active);
+  --neb-ctx-ghost-muted-text-active: var(--neb-ctx-#{$theme}-ghost-muted-text-active);
+  --neb-ctx-ghost-tertiary-text-active: var(--neb-ctx-#{$theme}-ghost-tertiary-text-active);
+  --neb-ctx-ghost-secondary-text-active: var(--neb-ctx-#{$theme}-ghost-secondary-text-active);
+  --neb-ctx-ghost-primary-text-active: var(--neb-ctx-#{$theme}-ghost-primary-text-active);
+  --neb-ctx-ghost-strong-text-active: var(--neb-ctx-#{$theme}-ghost-strong-text-active);
+  --neb-ctx-ghost-inverse-text-active: var(--neb-ctx-#{$theme}-ghost-inverse-text-active);
+
+  // text disabled
+  --neb-ctx-ghost-neutral-text-disabled: var(--neb-ctx-#{$theme}-ghost-neutral-text-disabled);
+  --neb-ctx-ghost-muted-text-disabled: var(--neb-ctx-#{$theme}-ghost-muted-text-disabled);
+  --neb-ctx-ghost-tertiary-text-disabled: var(--neb-ctx-#{$theme}-ghost-tertiary-text-disabled);
+  --neb-ctx-ghost-secondary-text-disabled: var(--neb-ctx-#{$theme}-ghost-secondary-text-disabled);
+  --neb-ctx-ghost-primary-text-disabled: var(--neb-ctx-#{$theme}-ghost-primary-text-disabled);
+  --neb-ctx-ghost-strong-text-disabled: var(--neb-ctx-#{$theme}-ghost-strong-text-disabled);
+  --neb-ctx-ghost-inverse-text-disabled: var(--neb-ctx-#{$theme}-ghost-inverse-text-disabled);
+
+  // loader
+  --neb-ctx-ghost-neutral-loader: var(--neb-ctx-#{$theme}-ghost-neutral-loader);
+  --neb-ctx-ghost-muted-loader: var(--neb-ctx-#{$theme}-ghost-muted-loader);
+  --neb-ctx-ghost-tertiary-loader: var(--neb-ctx-#{$theme}-ghost-tertiary-loader);
+  --neb-ctx-ghost-secondary-loader: var(--neb-ctx-#{$theme}-ghost-secondary-loader);
+  --neb-ctx-ghost-primary-loader: var(--neb-ctx-#{$theme}-ghost-primary-loader);
+  --neb-ctx-ghost-strong-loader: var(--neb-ctx-#{$theme}-ghost-strong-loader);
+  --neb-ctx-ghost-inverse-loader: var(--neb-ctx-#{$theme}-ghost-inverse-loader);
+}

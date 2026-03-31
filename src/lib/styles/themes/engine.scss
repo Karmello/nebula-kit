@@ -1,14 +1,13 @@
 @use '../definitions/index' as *;
 @use '../paint/_index' as *;
+@use '../context/_index' as *;
 
 // light
 @use '../themes/light/palette/_index' as *;
-@use '../themes/light/context/_index' as *;
 @use '../themes/light/variables/_index' as *;
 
 // dark
 @use '../themes/dark/palette/_index' as *;
-@use '../themes/dark/context/_index' as *;
 @use '../themes/dark/variables/_index' as *;
 
 :where(html[data-theme='light']) {
@@ -63,13 +62,13 @@
 html[data-theme='light'] .neb-box[data-neb-box-drawable='true'],
 .neb-box[data-neb-box-theme='light'][data-neb-box-drawable='true'],
 .neb-box[data-neb-box-theme='light'] .neb-box[data-neb-box-drawable='true'] {
-  @include set-context-light();
+  @include set-context('light');
   @include paint();
 }
 
 html[data-theme='dark'] .neb-box[data-neb-box-drawable='true'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-drawable='true'],
 .neb-box[data-neb-box-theme='dark'] .neb-box[data-neb-box-drawable='true'] {
-  @include set-context-dark();
+  @include set-context('dark');
   @include paint();
 }

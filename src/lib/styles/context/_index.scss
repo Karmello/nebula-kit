@@ -1,0 +1,21 @@
+@use './ghost.scss' as ghost;
+@use './outline.scss' as outline;
+@use './soft-outline.scss' as soft-outline;
+@use './solid.scss' as solid;
+
+@use './ghost-elevated.scss' as ghost-elevated;
+@use './outline-elevated.scss' as outline-elevated;
+@use './soft-outline-elevated.scss' as soft-outline-elevated;
+@use './solid-elevated.scss' as solid-elevated;
+
+@mixin set-context($theme) {
+  @include ghost.set-context($theme);
+  @include outline.set-context($theme);
+  @include soft-outline.set-context($theme);
+  @include solid.set-context($theme);
+
+  @include ghost-elevated.set-context($theme);
+  @include outline-elevated.set-context($theme);
+  @include soft-outline-elevated.set-context($theme);
+  @include solid-elevated.set-context($theme);
+}
