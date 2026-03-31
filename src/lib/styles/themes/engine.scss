@@ -40,17 +40,17 @@
   }
 }
 
-// @each $color in $colors {
-//   html[data-brand='#{$color}'] .neb-box:not([data-neb-box-brand]):not([data-neb-box-color]) {
-//     @include set-variables-light($color);
-//     @include set-variables-dark($color);
-//   }
+@each $color in $colors {
+  html[data-brand='#{$color}'] .neb-box:not([data-neb-box-brand]):not([data-neb-box-color]) {
+    @include set-variables-light($color);
+    @include set-variables-dark($color);
+  }
 
-//   .neb-box[data-neb-box-brand='#{$color}'] .neb-box:not([data-neb-box-brand]):not([data-neb-box-color]) {
-//     @include set-variables-light($color);
-//     @include set-variables-dark($color);
-//   }
-// }
+  .neb-box[data-neb-box-brand='#{$color}'] .neb-box:not([data-neb-box-brand]):not([data-neb-box-color]) {
+    @include set-variables-light($color);
+    @include set-variables-dark($color);
+  }
+}
 
 @each $color in $colors {
   .neb-box[data-neb-box-color='#{$color}'] {
