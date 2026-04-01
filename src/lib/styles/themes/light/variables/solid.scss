@@ -10,8 +10,8 @@
 
   // bg hover
   --neb-ctx-light-solid-neutral-bg-hover: hsl(var(--neb-#{$color}-1));
-  --neb-ctx-light-solid-muted-bg-hover: hsl(var(--neb-#{$color}-2));
-  --neb-ctx-light-solid-tertiary-bg-hover: hsl(var(--neb-#{$color}-4));
+  --neb-ctx-light-solid-muted-bg-hover: hsl(var(--neb-#{$color}-3));
+  --neb-ctx-light-solid-tertiary-bg-hover: hsl(var(--neb-#{$color}-5));
   --neb-ctx-light-solid-secondary-bg-hover: hsl(var(--neb-#{$color}-9));
   --neb-ctx-light-solid-primary-bg-hover: hsl(var(--neb-#{$color}-9));
   --neb-ctx-light-solid-strong-bg-hover: hsl(var(--neb-#{$color}-13));
@@ -19,8 +19,8 @@
 
   // bg active
   --neb-ctx-light-solid-neutral-bg-active: hsl(var(--neb-#{$color}-3));
-  --neb-ctx-light-solid-muted-bg-active: hsl(var(--neb-#{$color}-4));
-  --neb-ctx-light-solid-tertiary-bg-active: hsl(var(--neb-#{$color}-6));
+  --neb-ctx-light-solid-muted-bg-active: hsl(var(--neb-#{$color}-5));
+  --neb-ctx-light-solid-tertiary-bg-active: hsl(var(--neb-#{$color}-7));
   --neb-ctx-light-solid-secondary-bg-active: hsl(var(--neb-#{$color}-11));
   --neb-ctx-light-solid-primary-bg-active: hsl(var(--neb-#{$color}-7));
   --neb-ctx-light-solid-strong-bg-active: hsl(var(--neb-#{$color}-11));

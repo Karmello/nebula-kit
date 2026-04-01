@@ -43,7 +43,7 @@ export const Principles = () => {
             navigateTo(`${PageKey.foundations}/overview/philosophy/jsx-first`)
           }}
         >
-          <Button size="sm" color="green" intent="secondary">
+          <Button size="sm" color="green" intent="primary">
             Read more
           </Button>
         </Link>

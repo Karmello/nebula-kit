@@ -1,23 +1,25 @@
+@use 'styles/definitions/index' as *;
+
 @mixin set($saturation) {
-  --neb-gray-0: 0 #{$saturation} 100%;
-  --neb-gray-1: 0 #{$saturation} 95%;
-  --neb-gray-2: 0 #{$saturation} 90%;
-  --neb-gray-3: 0 #{$saturation} 85%;
-  --neb-gray-4: 0 #{$saturation} 80%;
-  --neb-gray-5: 0 #{$saturation} 75%;
-  --neb-gray-6: 0 #{$saturation} 70%;
-  --neb-gray-7: 0 #{$saturation} 65%;
-  --neb-gray-8: 0 #{$saturation} 60%;
-  --neb-gray-9: 0 #{$saturation} 55%;
-  --neb-gray-10: 0 #{$saturation} 50%;
-  --neb-gray-11: 0 #{$saturation} 45%;
-  --neb-gray-12: 0 #{$saturation} 40%;
-  --neb-gray-13: 0 #{$saturation} 35%;
-  --neb-gray-14: 0 #{$saturation} 30%;
-  --neb-gray-15: 0 #{$saturation} 25%;
-  --neb-gray-16: 0 #{$saturation} 20%;
-  --neb-gray-17: 0 #{$saturation} 15%;
-  --neb-gray-18: 0 #{$saturation} 10%;
-  --neb-gray-19: 0 #{$saturation} 5%;
-  --neb-gray-20: 0 #{$saturation} 0%;
+  --neb-gray-0: 0 #{$saturation} #{$gray-lightness-0};
+  --neb-gray-1: 0 #{$saturation} #{$gray-lightness-1};
+  --neb-gray-2: 0 #{$saturation} #{$gray-lightness-2};
+  --neb-gray-3: 0 #{$saturation} #{$gray-lightness-3};
+  --neb-gray-4: 0 #{$saturation} #{$gray-lightness-4};
+  --neb-gray-5: 0 #{$saturation} #{$gray-lightness-5};
+  --neb-gray-6: 0 #{$saturation} #{$gray-lightness-6};
+  --neb-gray-7: 0 #{$saturation} #{$gray-lightness-7};
+  --neb-gray-8: 0 #{$saturation} #{$gray-lightness-8};
+  --neb-gray-9: 0 #{$saturation} #{$gray-lightness-9};
+  --neb-gray-10: 0 #{$saturation} #{$gray-lightness-10};
+  --neb-gray-11: 0 #{$saturation} #{$gray-lightness-11};
+  --neb-gray-12: 0 #{$saturation} #{$gray-lightness-12};
+  --neb-gray-13: 0 #{$saturation} #{$gray-lightness-13};
+  --neb-gray-14: 0 #{$saturation} #{$gray-lightness-14};
+  --neb-gray-15: 0 #{$saturation} #{$gray-lightness-15};
+  --neb-gray-16: 0 #{$saturation} #{$gray-lightness-16};
+  --neb-gray-17: 0 #{$saturation} #{$gray-lightness-17};
+  --neb-gray-18: 0 #{$saturation} #{$gray-lightness-18};
+  --neb-gray-19: 0 #{$saturation} #{$gray-lightness-19};
+  --neb-gray-20: 0 #{$saturation} #{$gray-lightness-20};
 }
