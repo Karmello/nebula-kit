@@ -1,25 +1,27 @@
+@use 'styles/definitions/index' as *;
+
 $hue: 0;
 
 @mixin set($saturation) {
-  --neb-red-0: #{$hue} #{$saturation} 100%;
-  --neb-red-1: #{$hue} #{$saturation} 95%;
-  --neb-red-2: #{$hue} #{$saturation} 91%;
-  --neb-red-3: #{$hue} #{$saturation} 87%;
-  --neb-red-4: #{$hue} #{$saturation} 83%;
-  --neb-red-5: #{$hue} #{$saturation} 79%;
-  --neb-red-6: #{$hue} #{$saturation} 75%;
-  --neb-red-7: #{$hue} #{$saturation} 71%;
-  --neb-red-8: #{$hue} #{$saturation} 67%;
-  --neb-red-9: #{$hue} #{$saturation} 62%;
-  --neb-red-10: #{$hue} #{$saturation} 57%;
-  --neb-red-11: #{$hue} #{$saturation} 50%;
-  --neb-red-12: #{$hue} #{$saturation} 45%;
-  --neb-red-13: #{$hue} #{$saturation} 39%;
-  --neb-red-14: #{$hue} #{$saturation} 34%;
-  --neb-red-15: #{$hue} #{$saturation} 28%;
-  --neb-red-16: #{$hue} #{$saturation} 23%;
-  --neb-red-17: #{$hue} #{$saturation} 16%;
-  --neb-red-18: #{$hue} #{$saturation} 11%;
-  --neb-red-19: #{$hue} #{$saturation} 7%;
-  --neb-red-20: #{$hue} #{$saturation} 0%;
+  --neb-red-0: #{$hue} #{$saturation} #{$red-lightness-0};
+  --neb-red-1: #{$hue} #{$saturation} #{$red-lightness-1};
+  --neb-red-2: #{$hue} #{$saturation} #{$red-lightness-2};
+  --neb-red-3: #{$hue} #{$saturation} #{$red-lightness-3};
+  --neb-red-4: #{$hue} #{$saturation} #{$red-lightness-4};
+  --neb-red-5: #{$hue} #{$saturation} #{$red-lightness-5};
+  --neb-red-6: #{$hue} #{$saturation} #{$red-lightness-6};
+  --neb-red-7: #{$hue} #{$saturation} #{$red-lightness-7};
+  --neb-red-8: #{$hue} #{$saturation} #{$red-lightness-8};
+  --neb-red-9: #{$hue} #{$saturation} #{$red-lightness-9};
+  --neb-red-10: #{$hue} #{$saturation} #{$red-lightness-10};
+  --neb-red-11: #{$hue} #{$saturation} #{$red-lightness-11};
+  --neb-red-12: #{$hue} #{$saturation} #{$red-lightness-12};
+  --neb-red-13: #{$hue} #{$saturation} #{$red-lightness-13};
+  --neb-red-14: #{$hue} #{$saturation} #{$red-lightness-14};
+  --neb-red-15: #{$hue} #{$saturation} #{$red-lightness-15};
+  --neb-red-16: #{$hue} #{$saturation} #{$red-lightness-16};
+  --neb-red-17: #{$hue} #{$saturation} #{$red-lightness-17};
+  --neb-red-18: #{$hue} #{$saturation} #{$red-lightness-18};
+  --neb-red-19: #{$hue} #{$saturation} #{$red-lightness-19};
+  --neb-red-20: #{$hue} #{$saturation} #{$red-lightness-20};
 }
