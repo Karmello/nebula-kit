@@ -1,46 +1,70 @@
+$solid-neutral-bg: 0;
+$solid-muted-bg: 1;
+$solid-tertiary-bg: 3;
+$solid-secondary-bg: 7;
+$solid-primary-bg: 11;
+$solid-strong-bg: 15;
+$solid-inverse-bg: 20;
+
+$solid-neutral-bg-hover: $solid-neutral-bg + 1;
+$solid-muted-bg-hover: $solid-muted-bg + 1;
+$solid-tertiary-bg-hover: $solid-tertiary-bg + 1;
+$solid-secondary-bg-hover: $solid-secondary-bg + 1;
+$solid-primary-bg-hover: $solid-primary-bg - 1;
+$solid-strong-bg-hover: $solid-strong-bg - 1;
+$solid-inverse-bg-hover: $solid-inverse-bg - 3;
+
+$solid-neutral-bg-active: $solid-neutral-bg + 2;
+$solid-muted-bg-active: $solid-muted-bg + 2;
+$solid-tertiary-bg-active: $solid-tertiary-bg + 2;
+$solid-secondary-bg-active: $solid-secondary-bg + 2;
+$solid-primary-bg-active: $solid-primary-bg - 2;
+$solid-strong-bg-active: $solid-strong-bg - 2;
+$solid-inverse-bg-active: $solid-inverse-bg - 5;
+
 @mixin set($color) {
   // bg
-  --neb-ctx-dark-solid-neutral-bg: hsl(var(--neb-#{$color}-0));
-  --neb-ctx-dark-solid-muted-bg: hsl(var(--neb-#{$color}-1));
-  --neb-ctx-dark-solid-tertiary-bg: hsl(var(--neb-#{$color}-3));
-  --neb-ctx-dark-solid-secondary-bg: hsl(var(--neb-#{$color}-7));
-  --neb-ctx-dark-solid-primary-bg: hsl(var(--neb-#{$color}-11));
-  --neb-ctx-dark-solid-strong-bg: hsl(var(--neb-#{$color}-15));
-  --neb-ctx-dark-solid-inverse-bg: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-dark-solid-neutral-bg: hsl(var(--neb-#{$color}-#{$solid-neutral-bg}));
+  --neb-ctx-dark-solid-muted-bg: hsl(var(--neb-#{$color}-#{$solid-muted-bg}));
+  --neb-ctx-dark-solid-tertiary-bg: hsl(var(--neb-#{$color}-#{$solid-tertiary-bg}));
+  --neb-ctx-dark-solid-secondary-bg: hsl(var(--neb-#{$color}-#{$solid-secondary-bg}));
+  --neb-ctx-dark-solid-primary-bg: hsl(var(--neb-#{$color}-#{$solid-primary-bg}));
+  --neb-ctx-dark-solid-strong-bg: hsl(var(--neb-#{$color}-#{$solid-strong-bg}));
+  --neb-ctx-dark-solid-inverse-bg: hsl(var(--neb-#{$color}-#{$solid-inverse-bg}));
 
   // bg hover
-  --neb-ctx-dark-solid-neutral-bg-hover: hsl(var(--neb-#{$color}-1));
-  --neb-ctx-dark-solid-muted-bg-hover: hsl(var(--neb-#{$color}-2));
-  --neb-ctx-dark-solid-tertiary-bg-hover: hsl(var(--neb-#{$color}-4));
-  --neb-ctx-dark-solid-secondary-bg-hover: hsl(var(--neb-#{$color}-9));
-  --neb-ctx-dark-solid-primary-bg-hover: hsl(var(--neb-#{$color}-9));
-  --neb-ctx-dark-solid-strong-bg-hover: hsl(var(--neb-#{$color}-13));
-  --neb-ctx-dark-solid-inverse-bg-hover: hsl(var(--neb-#{$color}-16));
+  --neb-ctx-dark-solid-neutral-bg-hover: hsl(var(--neb-#{$color}-#{$solid-neutral-bg-hover}));
+  --neb-ctx-dark-solid-muted-bg-hover: hsl(var(--neb-#{$color}-#{$solid-muted-bg-hover}));
+  --neb-ctx-dark-solid-tertiary-bg-hover: hsl(var(--neb-#{$color}-#{$solid-tertiary-bg-hover}));
+  --neb-ctx-dark-solid-secondary-bg-hover: hsl(var(--neb-#{$color}-#{$solid-secondary-bg-hover}));
+  --neb-ctx-dark-solid-primary-bg-hover: hsl(var(--neb-#{$color}-#{$solid-primary-bg-hover}));
+  --neb-ctx-dark-solid-strong-bg-hover: hsl(var(--neb-#{$color}-#{$solid-strong-bg-hover}));
+  --neb-ctx-dark-solid-inverse-bg-hover: hsl(var(--neb-#{$color}-#{$solid-inverse-bg-hover}));
 
   // bg active
-  --neb-ctx-dark-solid-neutral-bg-active: hsl(var(--neb-#{$color}-3));
-  --neb-ctx-dark-solid-muted-bg-active: hsl(var(--neb-#{$color}-4));
-  --neb-ctx-dark-solid-tertiary-bg-active: hsl(var(--neb-#{$color}-6));
-  --neb-ctx-dark-solid-secondary-bg-active: hsl(var(--neb-#{$color}-11));
-  --neb-ctx-dark-solid-primary-bg-active: hsl(var(--neb-#{$color}-7));
-  --neb-ctx-dark-solid-strong-bg-active: hsl(var(--neb-#{$color}-11));
-  --neb-ctx-dark-solid-inverse-bg-active: hsl(var(--neb-#{$color}-13));
+  --neb-ctx-dark-solid-neutral-bg-active: hsl(var(--neb-#{$color}-#{$solid-neutral-bg-active}));
+  --neb-ctx-dark-solid-muted-bg-active: hsl(var(--neb-#{$color}-#{$solid-muted-bg-active}));
+  --neb-ctx-dark-solid-tertiary-bg-active: hsl(var(--neb-#{$color}-#{$solid-tertiary-bg-active}));
+  --neb-ctx-dark-solid-secondary-bg-active: hsl(var(--neb-#{$color}-#{$solid-secondary-bg-active}));
+  --neb-ctx-dark-solid-primary-bg-active: hsl(var(--neb-#{$color}-#{$solid-primary-bg-active}));
+  --neb-ctx-dark-solid-strong-bg-active: hsl(var(--neb-#{$color}-#{$solid-strong-bg-active}));
+  --neb-ctx-dark-solid-inverse-bg-active: hsl(var(--neb-#{$color}-#{$solid-inverse-bg-active}));
 
   // bg disabled
-  --neb-ctx-dark-solid-neutral-bg-disabled: hsl(var(--neb-#{$color}-0) / 0.5);
-  --neb-ctx-dark-solid-muted-bg-disabled: hsl(var(--neb-#{$color}-1) / 0.5);
-  --neb-ctx-dark-solid-tertiary-bg-disabled: hsl(var(--neb-#{$color}-3) / 0.5);
-  --neb-ctx-dark-solid-secondary-bg-disabled: hsl(var(--neb-#{$color}-7) / 0.5);
-  --neb-ctx-dark-solid-primary-bg-disabled: hsl(var(--neb-#{$color}-11) / 0.5);
-  --neb-ctx-dark-solid-strong-bg-disabled: hsl(var(--neb-#{$color}-15) / 0.5);
-  --neb-ctx-dark-solid-inverse-bg-disabled: hsl(var(--neb-#{$color}-20) / 0.5);
+  --neb-ctx-dark-solid-neutral-bg-disabled: hsl(var(--neb-#{$color}-#{$solid-neutral-bg}) / 0.5);
+  --neb-ctx-dark-solid-muted-bg-disabled: hsl(var(--neb-#{$color}-#{$solid-muted-bg}) / 0.5);
+  --neb-ctx-dark-solid-tertiary-bg-disabled: hsl(var(--neb-#{$color}-#{$solid-tertiary-bg}) / 0.5);
+  --neb-ctx-dark-solid-secondary-bg-disabled: hsl(var(--neb-#{$color}-#{$solid-secondary-bg}) / 0.5);
+  --neb-ctx-dark-solid-primary-bg-disabled: hsl(var(--neb-#{$color}-#{$solid-primary-bg}) / 0.5);
+  --neb-ctx-dark-solid-strong-bg-disabled: hsl(var(--neb-#{$color}-#{$solid-strong-bg}) / 0.5);
+  --neb-ctx-dark-solid-inverse-bg-disabled: hsl(var(--neb-#{$color}-#{$solid-inverse-bg}) / 0.5);
 
   // text
   --neb-ctx-dark-solid-neutral-text: hsl(var(--neb-#{$color}-20));
   --neb-ctx-dark-solid-muted-text: hsl(var(--neb-#{$color}-20));
   --neb-ctx-dark-solid-tertiary-text: hsl(var(--neb-#{$color}-20));
-  --neb-ctx-dark-solid-secondary-text: hsl(var(--neb-#{$color}-20));
-  --neb-ctx-dark-solid-primary-text: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-dark-solid-secondary-text: hsl(var(--neb-#{$color}-0));
+  --neb-ctx-dark-solid-primary-text: hsl(var(--neb-#{$color}-0));
   --neb-ctx-dark-solid-strong-text: hsl(var(--neb-#{$color}-0));
   --neb-ctx-dark-solid-inverse-text: hsl(var(--neb-#{$color}-0));
 
