@@ -8,6 +8,8 @@
     @each $intent in $intents {
       &[data-neb-box-intent='#{$intent}'] {
         --border: var(--neb-outline-#{$intent}-border);
+        --border-hover: var(--neb-outline-#{$intent}-border-hover);
+        --border-active: var(--neb-outline-#{$intent}-border-active);
         --border-disabled: var(--neb-outline-#{$intent}-border-disabled);
         --bg-hover: var(--neb-outline-#{$intent}-bg-hover);
         --bg-active: var(--neb-outline-#{$intent}-bg-active);
@@ -24,6 +26,8 @@
           // elevated
           &[data-neb-box-elevated='true'] {
             --border: var(--neb-outline-#{$intent}-elevated-border);
+            --border-hover: var(--neb-outline-#{$intent}-elevated-border-hover);
+            --border-active: var(--neb-outline-#{$intent}-elevated-border-active);
             --bg-hover: var(--neb-outline-#{$intent}-elevated-bg-hover);
             --bg-active: var(--neb-outline-#{$intent}-elevated-bg-active);
           }
@@ -33,12 +37,14 @@
             // hover
             &:hover:not(:active),
             &[data-neb-box-hovered='true'] {
+              border-color: var(--border-hover);
               background-color: var(--bg-hover);
             }
 
             // active, focus
             &:active,
             &:focus-visible {
+              border-color: var(--border-active);
               background-color: var(--bg-active);
             }
           }
