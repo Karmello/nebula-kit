@@ -1,30 +1,54 @@
+$ghost-neutral-text: 20;
+$ghost-muted-text: 1;
+$ghost-tertiary-text: 3;
+$ghost-secondary-text: 7;
+$ghost-primary-text: 11;
+$ghost-strong-text: 15;
+$ghost-inverse-text: 0;
+
+$ghost-neutral-text-hover: $ghost-neutral-text - 6;
+$ghost-muted-text-hover: $ghost-muted-text + 1;
+$ghost-tertiary-text-hover: $ghost-tertiary-text + 2;
+$ghost-secondary-text-hover: $ghost-secondary-text - 3;
+$ghost-primary-text-hover: $ghost-primary-text - 5;
+$ghost-strong-text-hover: $ghost-strong-text - 5;
+$ghost-inverse-text-hover: $ghost-inverse-text + 4;
+
+$ghost-neutral-text-active: $ghost-neutral-text-hover - 4;
+$ghost-muted-text-active: $ghost-muted-text-hover + 2;
+$ghost-tertiary-text-active: $ghost-tertiary-text-hover + 3;
+$ghost-secondary-text-active: $ghost-secondary-text-hover - 2;
+$ghost-primary-text-active: $ghost-primary-text-hover - 3;
+$ghost-strong-text-active: $ghost-strong-text-hover - 5;
+$ghost-inverse-text-active: $ghost-inverse-text-hover + 4;
+
 @mixin set($color) {
   // text
-  --neb-ctx-light-ghost-neutral-text: hsl(var(--neb-#{$color}-20));
-  --neb-ctx-light-ghost-muted-text: hsl(var(--neb-#{$color}-1));
-  --neb-ctx-light-ghost-tertiary-text: hsl(var(--neb-#{$color}-3));
-  --neb-ctx-light-ghost-secondary-text: hsl(var(--neb-#{$color}-7));
-  --neb-ctx-light-ghost-primary-text: hsl(var(--neb-#{$color}-11));
-  --neb-ctx-light-ghost-strong-text: hsl(var(--neb-#{$color}-15));
-  --neb-ctx-light-ghost-inverse-text: hsl(var(--neb-#{$color}-0));
+  --neb-ctx-light-ghost-neutral-text: hsl(var(--neb-#{$color}-#{$ghost-neutral-text}));
+  --neb-ctx-light-ghost-muted-text: hsl(var(--neb-#{$color}-#{$ghost-muted-text}));
+  --neb-ctx-light-ghost-tertiary-text: hsl(var(--neb-#{$color}-#{$ghost-tertiary-text}));
+  --neb-ctx-light-ghost-secondary-text: hsl(var(--neb-#{$color}-#{$ghost-secondary-text}));
+  --neb-ctx-light-ghost-primary-text: hsl(var(--neb-#{$color}-#{$ghost-primary-text}));
+  --neb-ctx-light-ghost-strong-text: hsl(var(--neb-#{$color}-#{$ghost-strong-text}));
+  --neb-ctx-light-ghost-inverse-text: hsl(var(--neb-#{$color}-#{$ghost-inverse-text}));
 
   // text hover
-  --neb-ctx-light-ghost-neutral-text-hover: hsl(var(--neb-#{$color}-12));
-  --neb-ctx-light-ghost-muted-text-hover: hsl(var(--neb-#{$color}-2));
-  --neb-ctx-light-ghost-tertiary-text-hover: hsl(var(--neb-#{$color}-5));
-  --neb-ctx-light-ghost-secondary-text-hover: hsl(var(--neb-#{$color}-5));
-  --neb-ctx-light-ghost-primary-text-hover: hsl(var(--neb-#{$color}-8));
-  --neb-ctx-light-ghost-strong-text-hover: hsl(var(--neb-#{$color}-10));
-  --neb-ctx-light-ghost-inverse-text-hover: hsl(var(--neb-#{$color}-5));
+  --neb-ctx-light-ghost-neutral-text-hover: hsl(var(--neb-#{$color}-#{$ghost-neutral-text-hover}));
+  --neb-ctx-light-ghost-muted-text-hover: hsl(var(--neb-#{$color}-#{$ghost-muted-text-hover}));
+  --neb-ctx-light-ghost-tertiary-text-hover: hsl(var(--neb-#{$color}-#{$ghost-tertiary-text-hover}));
+  --neb-ctx-light-ghost-secondary-text-hover: hsl(var(--neb-#{$color}-#{$ghost-secondary-text-hover}));
+  --neb-ctx-light-ghost-primary-text-hover: hsl(var(--neb-#{$color}-#{$ghost-primary-text-hover}));
+  --neb-ctx-light-ghost-strong-text-hover: hsl(var(--neb-#{$color}-#{$ghost-strong-text-hover}));
+  --neb-ctx-light-ghost-inverse-text-hover: hsl(var(--neb-#{$color}-#{$ghost-inverse-text-hover}));
 
   // text active
-  --neb-ctx-light-ghost-neutral-text-active: hsl(var(--neb-#{$color}-7));
-  --neb-ctx-light-ghost-muted-text-active: hsl(var(--neb-#{$color}-4));
-  --neb-ctx-light-ghost-tertiary-text-active: hsl(var(--neb-#{$color}-8));
-  --neb-ctx-light-ghost-secondary-text-active: hsl(var(--neb-#{$color}-3));
-  --neb-ctx-light-ghost-primary-text-active: hsl(var(--neb-#{$color}-5));
-  --neb-ctx-light-ghost-strong-text-active: hsl(var(--neb-#{$color}-6));
-  --neb-ctx-light-ghost-inverse-text-active: hsl(var(--neb-#{$color}-9));
+  --neb-ctx-light-ghost-neutral-text-active: hsl(var(--neb-#{$color}-#{$ghost-neutral-text-active}));
+  --neb-ctx-light-ghost-muted-text-active: hsl(var(--neb-#{$color}-#{$ghost-muted-text-active}));
+  --neb-ctx-light-ghost-tertiary-text-active: hsl(var(--neb-#{$color}-#{$ghost-tertiary-text-active}));
+  --neb-ctx-light-ghost-secondary-text-active: hsl(var(--neb-#{$color}-#{$ghost-secondary-text-active}));
+  --neb-ctx-light-ghost-primary-text-active: hsl(var(--neb-#{$color}-#{$ghost-primary-text-active}));
+  --neb-ctx-light-ghost-strong-text-active: hsl(var(--neb-#{$color}-#{$ghost-strong-text-active}));
+  --neb-ctx-light-ghost-inverse-text-active: hsl(var(--neb-#{$color}-#{$ghost-inverse-text-active}));
 
   // text disabled
   --neb-ctx-light-ghost-neutral-text-disabled: hsl(var(--neb-#{$color}-20) / 0.25);
