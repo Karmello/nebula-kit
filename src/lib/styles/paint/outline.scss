@@ -8,24 +8,6 @@
   --neb-outline-strong-border: var(--neb-ctx-outline-strong-border);
   --neb-outline-inverse-border: var(--neb-ctx-outline-inverse-border);
 
-  // border hover
-  --neb-outline-neutral-border-hover: var(--neb-ctx-outline-neutral-border-hover);
-  --neb-outline-muted-border-hover: var(--neb-ctx-outline-muted-border-hover);
-  --neb-outline-tertiary-border-hover: var(--neb-ctx-outline-tertiary-border-hover);
-  --neb-outline-secondary-border-hover: var(--neb-ctx-outline-secondary-border-hover);
-  --neb-outline-primary-border-hover: var(--neb-ctx-outline-primary-border-hover);
-  --neb-outline-strong-border-hover: var(--neb-ctx-outline-strong-border-hover);
-  --neb-outline-inverse-border-hover: var(--neb-ctx-outline-inverse-border-hover);
-
-  // border active
-  --neb-outline-neutral-border-active: var(--neb-ctx-outline-neutral-border-active);
-  --neb-outline-muted-border-active: var(--neb-ctx-outline-muted-border-active);
-  --neb-outline-tertiary-border-active: var(--neb-ctx-outline-tertiary-border-active);
-  --neb-outline-secondary-border-active: var(--neb-ctx-outline-secondary-border-active);
-  --neb-outline-primary-border-active: var(--neb-ctx-outline-primary-border-active);
-  --neb-outline-strong-border-active: var(--neb-ctx-outline-strong-border-active);
-  --neb-outline-inverse-border-active: var(--neb-ctx-outline-inverse-border-active);
-
   // border disabled
   --neb-outline-neutral-border-disabled: var(--neb-ctx-outline-neutral-border-disabled);
   --neb-outline-muted-border-disabled: var(--neb-ctx-outline-muted-border-disabled);
@@ -44,14 +26,14 @@
   --neb-outline-strong-bg-hover: var(--neb-ctx-outline-strong-bg-hover);
   --neb-outline-inverse-bg-hover: var(--neb-ctx-outline-inverse-bg-hover);
 
-  // text active
-  --neb-outline-neutral-text-active: var(--neb-ctx-outline-neutral-text-active);
-  --neb-outline-muted-text-active: var(--neb-ctx-outline-muted-text-active);
-  --neb-outline-tertiary-text-active: var(--neb-ctx-outline-tertiary-text-active);
-  --neb-outline-secondary-text-active: var(--neb-ctx-outline-secondary-text-active);
-  --neb-outline-primary-text-active: var(--neb-ctx-outline-primary-text-active);
-  --neb-outline-strong-text-active: var(--neb-ctx-outline-strong-text-active);
-  --neb-outline-inverse-text-active: var(--neb-ctx-outline-inverse-text-active);
+  // bg active
+  --neb-outline-neutral-bg-active: var(--neb-ctx-outline-neutral-bg-active);
+  --neb-outline-muted-bg-active: var(--neb-ctx-outline-muted-bg-active);
+  --neb-outline-tertiary-bg-active: var(--neb-ctx-outline-tertiary-bg-active);
+  --neb-outline-secondary-bg-active: var(--neb-ctx-outline-secondary-bg-active);
+  --neb-outline-primary-bg-active: var(--neb-ctx-outline-primary-bg-active);
+  --neb-outline-strong-bg-active: var(--neb-ctx-outline-strong-bg-active);
+  --neb-outline-inverse-bg-active: var(--neb-ctx-outline-inverse-bg-active);
 
   // text disabled
   --neb-outline-neutral-text-disabled: var(--neb-ctx-outline-neutral-text-disabled);
@@ -62,7 +44,7 @@
   --neb-outline-strong-text-disabled: var(--neb-ctx-outline-strong-text-disabled);
   --neb-outline-inverse-text-disabled: var(--neb-ctx-outline-inverse-text-disabled);
 
-  // text disabled
+  // loader
   --neb-outline-neutral-loader: var(--neb-ctx-outline-neutral-loader);
   --neb-outline-muted-loader: var(--neb-ctx-outline-muted-loader);
   --neb-outline-tertiary-loader: var(--neb-ctx-outline-tertiary-loader);

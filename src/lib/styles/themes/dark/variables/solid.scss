@@ -1,9 +1,9 @@
 $solid-neutral-bg: 0;
-$solid-muted-bg: 1;
-$solid-tertiary-bg: 3;
-$solid-secondary-bg: 7;
-$solid-primary-bg: 11;
-$solid-strong-bg: 15;
+$solid-muted-bg: 1 + 1;
+$solid-tertiary-bg: 3 + 1;
+$solid-secondary-bg: 7 + 1;
+$solid-primary-bg: 11 + 1;
+$solid-strong-bg: 15 + 1;
 $solid-inverse-bg: 20;
 
 $solid-neutral-bg-hover: $solid-neutral-bg + 1;
@@ -63,8 +63,8 @@ $solid-inverse-bg-active: $solid-inverse-bg-hover - 2;
   --neb-ctx-dark-solid-neutral-text: hsl(var(--neb-#{$color}-20));
   --neb-ctx-dark-solid-muted-text: hsl(var(--neb-#{$color}-20));
   --neb-ctx-dark-solid-tertiary-text: hsl(var(--neb-#{$color}-20));
-  --neb-ctx-dark-solid-secondary-text: hsl(var(--neb-#{$color}-0));
-  --neb-ctx-dark-solid-primary-text: hsl(var(--neb-#{$color}-0));
+  --neb-ctx-dark-solid-secondary-text: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-dark-solid-primary-text: hsl(var(--neb-#{$color}-20));
   --neb-ctx-dark-solid-strong-text: hsl(var(--neb-#{$color}-0));
   --neb-ctx-dark-solid-inverse-text: hsl(var(--neb-#{$color}-0));
 

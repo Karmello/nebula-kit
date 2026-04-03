@@ -8,11 +8,9 @@
     @each $intent in $intents {
       &[data-neb-box-intent='#{$intent}'] {
         --border: var(--neb-outline-#{$intent}-border);
-        --border-hover: var(--neb-outline-#{$intent}-border-hover);
-        --border-active: var(--neb-outline-#{$intent}-border-active);
         --border-disabled: var(--neb-outline-#{$intent}-border-disabled);
         --bg-hover: var(--neb-outline-#{$intent}-bg-hover);
-        --text-active: var(--neb-outline-#{$intent}-text-active);
+        --bg-active: var(--neb-outline-#{$intent}-bg-active);
         --text-disabled: var(--neb-outline-#{$intent}-text-disabled);
         --loader: var(--neb-outline-#{$intent}-loader);
         --ripple: currentColor;
@@ -26,9 +24,8 @@
           // elevated
           &[data-neb-box-elevated='true'] {
             --border: var(--neb-outline-#{$intent}-elevated-border);
-            --border-hover: var(--neb-outline-#{$intent}-elevated-border-hover);
-            --border-active: var(--neb-outline-#{$intent}-elevated-border-active);
             --bg-hover: var(--neb-outline-#{$intent}-elevated-bg-hover);
+            --bg-active: var(--neb-outline-#{$intent}-elevated-bg-active);
           }
 
           // interactive
@@ -36,15 +33,13 @@
             // hover
             &:hover:not(:active),
             &[data-neb-box-hovered='true'] {
-              border-color: var(--border-hover);
               background-color: var(--bg-hover);
             }
 
             // active, focus
             &:active,
             &:focus-visible {
-              border-color: var(--border-active);
-              color: var(--text-active) !important;
+              background-color: var(--bg-active);
             }
           }
 

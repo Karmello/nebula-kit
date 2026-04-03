@@ -8,18 +8,18 @@ $ghost-inverse-text: 0;
 
 $ghost-neutral-text-hover: $ghost-neutral-text - 6;
 $ghost-muted-text-hover: $ghost-muted-text + 1;
-$ghost-tertiary-text-hover: $ghost-tertiary-text + 2;
-$ghost-secondary-text-hover: $ghost-secondary-text - 3;
-$ghost-primary-text-hover: $ghost-primary-text - 5;
+$ghost-tertiary-text-hover: $ghost-tertiary-text + 1;
+$ghost-secondary-text-hover: $ghost-secondary-text - 2;
+$ghost-primary-text-hover: $ghost-primary-text - 4;
 $ghost-strong-text-hover: $ghost-strong-text - 5;
-$ghost-inverse-text-hover: $ghost-inverse-text + 4;
+$ghost-inverse-text-hover: $ghost-inverse-text + 3;
 
-$ghost-neutral-text-active: $ghost-neutral-text-hover - 4;
+$ghost-neutral-text-active: $ghost-neutral-text-hover - 5;
 $ghost-muted-text-active: $ghost-muted-text-hover + 2;
-$ghost-tertiary-text-active: $ghost-tertiary-text-hover + 3;
+$ghost-tertiary-text-active: $ghost-tertiary-text-hover + 2;
 $ghost-secondary-text-active: $ghost-secondary-text-hover - 2;
 $ghost-primary-text-active: $ghost-primary-text-hover - 3;
-$ghost-strong-text-active: $ghost-strong-text-hover - 5;
+$ghost-strong-text-active: $ghost-strong-text-hover - 4;
 $ghost-inverse-text-active: $ghost-inverse-text-hover + 4;
 
 @mixin set($color) {

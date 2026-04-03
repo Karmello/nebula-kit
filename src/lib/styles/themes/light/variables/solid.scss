@@ -6,21 +6,24 @@ $solid-primary-bg: 11;
 $solid-strong-bg: 15;
 $solid-inverse-bg: 20;
 
-$solid-neutral-bg-hover: $solid-neutral-bg + 1;
-$solid-muted-bg-hover: $solid-muted-bg + 2;
-$solid-tertiary-bg-hover: $solid-tertiary-bg + 2;
-$solid-secondary-bg-hover: $solid-secondary-bg + 2;
-$solid-primary-bg-hover: $solid-primary-bg - 2;
-$solid-strong-bg-hover: $solid-strong-bg - 2;
-$solid-inverse-bg-hover: $solid-inverse-bg - 4;
+$solid-hover-delta: 1;
+$solid-active-delta: 2;
 
-$solid-neutral-bg-active: $solid-neutral-bg-hover + 2;
-$solid-muted-bg-active: $solid-muted-bg-hover + 2;
-$solid-tertiary-bg-active: $solid-tertiary-bg-hover + 2;
-$solid-secondary-bg-active: $solid-secondary-bg-hover + 2;
-$solid-primary-bg-active: $solid-primary-bg-hover - 2;
-$solid-strong-bg-active: $solid-strong-bg-hover - 2;
-$solid-inverse-bg-active: $solid-inverse-bg-hover - 2;
+$solid-neutral-bg-hover: $solid-neutral-bg + $solid-hover-delta;
+$solid-muted-bg-hover: $solid-muted-bg + $solid-hover-delta;
+$solid-tertiary-bg-hover: $solid-tertiary-bg + $solid-hover-delta;
+$solid-secondary-bg-hover: $solid-secondary-bg + $solid-hover-delta;
+$solid-primary-bg-hover: $solid-primary-bg + $solid-hover-delta;
+$solid-strong-bg-hover: $solid-strong-bg + $solid-hover-delta;
+$solid-inverse-bg-hover: $solid-inverse-bg - $solid-hover-delta * 3;
+
+$solid-neutral-bg-active: $solid-neutral-bg-hover + $solid-active-delta;
+$solid-muted-bg-active: $solid-muted-bg-hover + $solid-active-delta;
+$solid-tertiary-bg-active: $solid-tertiary-bg-hover + $solid-active-delta;
+$solid-secondary-bg-active: $solid-secondary-bg-hover + $solid-active-delta;
+$solid-primary-bg-active: $solid-primary-bg-hover + $solid-active-delta;
+$solid-strong-bg-active: $solid-strong-bg-hover + $solid-active-delta;
+$solid-inverse-bg-active: $solid-inverse-bg-hover - $solid-active-delta;
 
 @mixin set($color) {
   // bg

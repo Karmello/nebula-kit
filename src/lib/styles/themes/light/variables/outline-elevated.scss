@@ -1,5 +1,5 @@
 @mixin set($color) {
-  // border
+  // elevated border
   --neb-ctx-light-outline-neutral-elevated-border: hsl(var(--neb-#{$color}-2));
   --neb-ctx-light-outline-muted-elevated-border: hsl(var(--neb-#{$color}-2));
   --neb-ctx-light-outline-tertiary-elevated-border: hsl(var(--neb-#{$color}-4));
@@ -8,7 +8,7 @@
   --neb-ctx-light-outline-strong-elevated-border: hsl(var(--neb-#{$color}-16));
   --neb-ctx-light-outline-inverse-elevated-border: hsl(var(--neb-#{$color}-20));
 
-  // border hover
+  // elevated border hover
   --neb-ctx-light-outline-neutral-elevated-border-hover: hsl(var(--neb-#{$color}-2));
   --neb-ctx-light-outline-muted-elevated-border-hover: hsl(var(--neb-#{$color}-2));
   --neb-ctx-light-outline-tertiary-elevated-border-hover: hsl(var(--neb-#{$color}-3));
@@ -17,7 +17,7 @@
   --neb-ctx-light-outline-strong-elevated-border-hover: hsl(var(--neb-#{$color}-8));
   --neb-ctx-light-outline-inverse-elevated-border-hover: hsl(var(--neb-#{$color}-9));
 
-  // border active
+  // elevated border active
   --neb-ctx-light-outline-neutral-elevated-border-active: hsl(var(--neb-#{$color}-3));
   --neb-ctx-light-outline-muted-elevated-border-active: hsl(var(--neb-#{$color}-3));
   --neb-ctx-light-outline-tertiary-elevated-border-active: hsl(var(--neb-#{$color}-4));
@@ -26,21 +26,21 @@
   --neb-ctx-light-outline-strong-elevated-border-active: hsl(var(--neb-#{$color}-16));
   --neb-ctx-light-outline-inverse-elevated-border-active: hsl(var(--neb-#{$color}-20));
 
-  // bg hover
-  --neb-ctx-light-outline-neutral-elevated-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 6%, transparent);
-  --neb-ctx-light-outline-muted-elevated-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 6%, transparent);
-  --neb-ctx-light-outline-tertiary-elevated-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 8%, transparent);
-  --neb-ctx-light-outline-secondary-elevated-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 11%, transparent);
-  --neb-ctx-light-outline-primary-elevated-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 12%, transparent);
-  --neb-ctx-light-outline-strong-elevated-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 13%, transparent);
-  --neb-ctx-light-outline-inverse-elevated-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 14%, transparent);
+  // elevated bg hover
+  --neb-ctx-light-outline-neutral-elevated-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 3%, transparent);
+  --neb-ctx-light-outline-muted-elevated-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 3%, transparent);
+  --neb-ctx-light-outline-tertiary-elevated-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 5%, transparent);
+  --neb-ctx-light-outline-secondary-elevated-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 9%, transparent);
+  --neb-ctx-light-outline-primary-elevated-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 11%, transparent);
+  --neb-ctx-light-outline-strong-elevated-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 15%, transparent);
+  --neb-ctx-light-outline-inverse-elevated-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 20%, transparent);
 
-  // text active
-  --neb-ctx-light-outline-neutral-elevated-text-active: hsl(var(--neb-#{$color}-16));
-  --neb-ctx-light-outline-muted-elevated-text-active: hsl(var(--neb-#{$color}-16));
-  --neb-ctx-light-outline-tertiary-elevated-text-active: hsl(var(--neb-#{$color}-16));
-  --neb-ctx-light-outline-secondary-elevated-text-active: hsl(var(--neb-#{$color}-16));
-  --neb-ctx-light-outline-primary-elevated-text-active: hsl(var(--neb-#{$color}-16));
-  --neb-ctx-light-outline-strong-elevated-text-active: hsl(var(--neb-#{$color}-16));
-  --neb-ctx-light-outline-inverse-elevated-text-active: hsl(var(--neb-#{$color}-16));
+  // elevated bg active
+  --neb-ctx-light-outline-neutral-elevated-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 7%, transparent);
+  --neb-ctx-light-outline-muted-elevated-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 7%, transparent);
+  --neb-ctx-light-outline-tertiary-elevated-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 13%, transparent);
+  --neb-ctx-light-outline-secondary-elevated-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 21%, transparent);
+  --neb-ctx-light-outline-primary-elevated-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 27%, transparent);
+  --neb-ctx-light-outline-strong-elevated-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 30%, transparent);
+  --neb-ctx-light-outline-inverse-elevated-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 40%, transparent);
 }

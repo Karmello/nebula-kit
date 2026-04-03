@@ -1,27 +1,29 @@
 @use './solid.scss' as *;
 
-$solid-neutral-elevated-bg: $solid-neutral-bg + 1;
-$solid-muted-elevated-bg: $solid-muted-bg + 1;
-$solid-tertiary-elevated-bg: $solid-tertiary-bg + 1;
-$solid-secondary-elevated-bg: $solid-secondary-bg + 1;
-$solid-primary-elevated-bg: $solid-primary-bg + 1;
-$solid-strong-elevated-bg: $solid-strong-bg + 1;
+$solid-elevated-delta: 2;
+
+$solid-neutral-elevated-bg: $solid-neutral-bg + $solid-elevated-delta;
+$solid-muted-elevated-bg: $solid-muted-bg + $solid-elevated-delta;
+$solid-tertiary-elevated-bg: $solid-tertiary-bg + $solid-elevated-delta;
+$solid-secondary-elevated-bg: $solid-secondary-bg + $solid-elevated-delta;
+$solid-primary-elevated-bg: $solid-primary-bg + $solid-elevated-delta;
+$solid-strong-elevated-bg: $solid-strong-bg + $solid-elevated-delta;
 $solid-inverse-elevated-bg: $solid-inverse-bg;
 
-$solid-neutral-elevated-bg-hover: $solid-neutral-bg-hover + 1;
-$solid-muted-elevated-bg-hover: $solid-muted-bg-hover + 1;
-$solid-tertiary-elevated-bg-hover: $solid-tertiary-bg-hover + 1;
-$solid-secondary-elevated-bg-hover: $solid-secondary-bg-hover + 1;
-$solid-primary-elevated-bg-hover: $solid-primary-bg-hover + 1;
-$solid-strong-elevated-bg-hover: $solid-strong-bg-hover + 1;
+$solid-neutral-elevated-bg-hover: $solid-neutral-bg-hover + $solid-elevated-delta;
+$solid-muted-elevated-bg-hover: $solid-muted-bg-hover + $solid-elevated-delta;
+$solid-tertiary-elevated-bg-hover: $solid-tertiary-bg-hover + $solid-elevated-delta;
+$solid-secondary-elevated-bg-hover: $solid-secondary-bg-hover + $solid-elevated-delta;
+$solid-primary-elevated-bg-hover: $solid-primary-bg-hover + $solid-elevated-delta;
+$solid-strong-elevated-bg-hover: $solid-strong-bg-hover + $solid-elevated-delta;
 $solid-inverse-elevated-bg-hover: $solid-inverse-bg-hover;
 
-$solid-neutral-elevated-bg-active: $solid-neutral-bg-active + 1;
-$solid-muted-elevated-bg-active: $solid-muted-bg-active + 1;
-$solid-tertiary-elevated-bg-active: $solid-tertiary-bg-active + 1;
-$solid-secondary-elevated-bg-active: $solid-secondary-bg-active + 1;
-$solid-primary-elevated-bg-active: $solid-primary-bg-active + 1;
-$solid-strong-elevated-bg-active: $solid-strong-bg-active + 1;
+$solid-neutral-elevated-bg-active: $solid-neutral-bg-active + $solid-elevated-delta;
+$solid-muted-elevated-bg-active: $solid-muted-bg-active + $solid-elevated-delta;
+$solid-tertiary-elevated-bg-active: $solid-tertiary-bg-active + $solid-elevated-delta;
+$solid-secondary-elevated-bg-active: $solid-secondary-bg-active + $solid-elevated-delta;
+$solid-primary-elevated-bg-active: $solid-primary-bg-active + $solid-elevated-delta;
+$solid-strong-elevated-bg-active: $solid-strong-bg-active + $solid-elevated-delta;
 $solid-inverse-elevated-bg-active: $solid-inverse-bg-active;
 
 @mixin set($color) {
