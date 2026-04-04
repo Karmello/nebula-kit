@@ -35,6 +35,24 @@
   --neb-ctx-soft-outline-strong-border-disabled: var(--neb-ctx-#{$theme}-soft-outline-strong-border-disabled);
   --neb-ctx-soft-outline-inverse-border-disabled: var(--neb-ctx-#{$theme}-soft-outline-inverse-border-disabled);
 
+  // bg hover
+  --neb-ctx-soft-outline-neutral-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-neutral-bg-hover);
+  --neb-ctx-soft-outline-muted-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-muted-bg-hover);
+  --neb-ctx-soft-outline-tertiary-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-tertiary-bg-hover);
+  --neb-ctx-soft-outline-secondary-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-secondary-bg-hover);
+  --neb-ctx-soft-outline-primary-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-primary-bg-hover);
+  --neb-ctx-soft-outline-strong-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-strong-bg-hover);
+  --neb-ctx-soft-outline-inverse-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-inverse-bg-hover);
+
+  // bg active
+  --neb-ctx-soft-outline-neutral-bg-active: var(--neb-ctx-#{$theme}-soft-outline-neutral-bg-active);
+  --neb-ctx-soft-outline-muted-bg-active: var(--neb-ctx-#{$theme}-soft-outline-muted-bg-active);
+  --neb-ctx-soft-outline-tertiary-bg-active: var(--neb-ctx-#{$theme}-soft-outline-tertiary-bg-active);
+  --neb-ctx-soft-outline-secondary-bg-active: var(--neb-ctx-#{$theme}-soft-outline-secondary-bg-active);
+  --neb-ctx-soft-outline-primary-bg-active: var(--neb-ctx-#{$theme}-soft-outline-primary-bg-active);
+  --neb-ctx-soft-outline-strong-bg-active: var(--neb-ctx-#{$theme}-soft-outline-strong-bg-active);
+  --neb-ctx-soft-outline-inverse-bg-active: var(--neb-ctx-#{$theme}-soft-outline-inverse-bg-active);
+
   // text
   --neb-ctx-soft-outline-neutral-text: var(--neb-ctx-#{$theme}-soft-outline-neutral-text);
   --neb-ctx-soft-outline-muted-text: var(--neb-ctx-#{$theme}-soft-outline-muted-text);
@@ -44,6 +62,24 @@
   --neb-ctx-soft-outline-strong-text: var(--neb-ctx-#{$theme}-soft-outline-strong-text);
   --neb-ctx-soft-outline-inverse-text: var(--neb-ctx-#{$theme}-soft-outline-inverse-text);
 
+  // text hover
+  --neb-ctx-soft-outline-neutral-text-hover: var(--neb-ctx-#{$theme}-soft-outline-neutral-text-hover);
+  --neb-ctx-soft-outline-muted-text-hover: var(--neb-ctx-#{$theme}-soft-outline-muted-text-hover);
+  --neb-ctx-soft-outline-tertiary-text-hover: var(--neb-ctx-#{$theme}-soft-outline-tertiary-text-hover);
+  --neb-ctx-soft-outline-secondary-text-hover: var(--neb-ctx-#{$theme}-soft-outline-secondary-text-hover);
+  --neb-ctx-soft-outline-primary-text-hover: var(--neb-ctx-#{$theme}-soft-outline-primary-text-hover);
+  --neb-ctx-soft-outline-strong-text-hover: var(--neb-ctx-#{$theme}-soft-outline-strong-text-hover);
+  --neb-ctx-soft-outline-inverse-text-hover: var(--neb-ctx-#{$theme}-soft-outline-inverse-text-hover);
+
+  // text active
+  --neb-ctx-soft-outline-neutral-text-active: var(--neb-ctx-#{$theme}-soft-outline-neutral-text-active);
+  --neb-ctx-soft-outline-muted-text-active: var(--neb-ctx-#{$theme}-soft-outline-muted-text-active);
+  --neb-ctx-soft-outline-tertiary-text-active: var(--neb-ctx-#{$theme}-soft-outline-tertiary-text-active);
+  --neb-ctx-soft-outline-secondary-text-active: var(--neb-ctx-#{$theme}-soft-outline-secondary-text-active);
+  --neb-ctx-soft-outline-primary-text-active: var(--neb-ctx-#{$theme}-soft-outline-primary-text-active);
+  --neb-ctx-soft-outline-strong-text-active: var(--neb-ctx-#{$theme}-soft-outline-strong-text-active);
+  --neb-ctx-soft-outline-inverse-text-active: var(--neb-ctx-#{$theme}-soft-outline-inverse-text-active);
+
   // text disabled
   --neb-ctx-soft-outline-neutral-text-disabled: var(--neb-ctx-#{$theme}-soft-outline-neutral-text-disabled);
   --neb-ctx-soft-outline-muted-text-disabled: var(--neb-ctx-#{$theme}-soft-outline-muted-text-disabled);
@@ -52,15 +88,6 @@
   --neb-ctx-soft-outline-primary-text-disabled: var(--neb-ctx-#{$theme}-soft-outline-primary-text-disabled);
   --neb-ctx-soft-outline-strong-text-disabled: var(--neb-ctx-#{$theme}-soft-outline-strong-text-disabled);
   --neb-ctx-soft-outline-inverse-text-disabled: var(--neb-ctx-#{$theme}-soft-outline-inverse-text-disabled);
-
-  // bg hover
-  --neb-ctx-soft-outline-neutral-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-neutral-bg-hover);
-  --neb-ctx-soft-outline-muted-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-muted-bg-hover);
-  --neb-ctx-soft-outline-tertiary-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-tertiary-bg-hover);
-  --neb-ctx-soft-outline-secondary-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-secondary-bg-hover);
-  --neb-ctx-soft-outline-primary-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-primary-bg-hover);
-  --neb-ctx-soft-outline-strong-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-strong-bg-hover);
-  --neb-ctx-soft-outline-inverse-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-inverse-bg-hover);
 
   // loader
   --neb-ctx-soft-outline-neutral-loader: var(--neb-ctx-#{$theme}-soft-outline-neutral-loader);
