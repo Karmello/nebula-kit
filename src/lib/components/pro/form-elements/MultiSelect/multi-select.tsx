@@ -123,6 +123,7 @@ export const MultiSelect = ({
                             onClick: () => handleChange(slotProps.value),
                           }}
                           bold={currentValue.includes(slotProps.value)}
+                          selected={currentValue.includes(slotProps.value)}
                           justifyContent={slotProps.justifyContent || DEFAULT_MULTI_SELECT_OPTION_JUSTIFY_CONTENT}
                         >
                           {slot}

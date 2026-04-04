@@ -52,6 +52,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
           iconAngle={open ? 180 : 0}
           ripple={!open}
           bold
+          elevated={open}
         >
           {label}
         </Button>

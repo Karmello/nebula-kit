@@ -181,6 +181,7 @@ export const AutocompleteMain = ({
                     },
                   }}
                   bold={slotProps.value === currentValue}
+                  selected={slotProps.value === currentValue}
                   justifyContent={slotProps.justifyContent || DEFAULT_AUTOCOMPLETE_OPTION_JUSTIFY_CONTENT}
                 >
                   {slot}

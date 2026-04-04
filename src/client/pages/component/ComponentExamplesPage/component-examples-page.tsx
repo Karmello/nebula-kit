@@ -22,7 +22,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           <Box tagAttrs={{ style: { borderStyle: 'dashed' } }} drawable variant="outline" intent="inverse" color="gray">
             <Box
               drawable
-              theme={theme === 'light' ? 'dark' : 'light'}
+              // theme={theme === 'light' ? 'dark' : 'light'}
               variant="solid"
               intent="neutral"
               padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}

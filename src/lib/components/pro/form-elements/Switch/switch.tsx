@@ -65,6 +65,7 @@ export const Switch = ({
         drawable
         interactive
         elevated={animatedChecked && !disabled}
+        selected={animatedChecked && !disabled}
         disabled={disabled}
         variant="solid"
         intent={intent}

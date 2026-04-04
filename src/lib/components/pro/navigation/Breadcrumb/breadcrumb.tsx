@@ -88,6 +88,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                         tagAttrs={{
                           onClick: () => handleChange(index, node.value),
                         }}
+                        selected={node.value === currentPath[index]}
                         bold={node.value === currentPath[index]}
                       >
                         {node.label}
