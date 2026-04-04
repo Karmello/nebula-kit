@@ -33,6 +33,7 @@ type BoxOwnProps = {
   intent?: RespValue<BoxIntent>
   // interaction
   interactive?: boolean
+  selected?: boolean
   disabled?: boolean
   // css
   opacity?: RespValue<string>

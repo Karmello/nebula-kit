@@ -308,6 +308,11 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Right offset.',
     link: true,
   },
+  selected: {
+    options: ['boolean'],
+    description:
+      'Applies a persistent selected state, taking precedence over transient interaction states like hover and active.',
+  },
   tag: HTML_TAG_PROPS_META.tag,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,

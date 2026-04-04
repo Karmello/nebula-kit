@@ -65,6 +65,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     defaultValue: String(DEFAULT_BUTTON_RIPPLE),
     description: 'Toggles the ripple effect on pointer interaction.',
   },
+  selected: BOX_PROPS_META.selected,
   size: {
     options: Object.values(BUTTON_SIZES),
     defaultValue: DEFAULT_BUTTON_SIZE,

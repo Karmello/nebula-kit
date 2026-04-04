@@ -26,6 +26,15 @@
   --neb-ctx-solid-strong-bg-active: var(--neb-ctx-#{$theme}-solid-strong-bg-active);
   --neb-ctx-solid-inverse-bg-active: var(--neb-ctx-#{$theme}-solid-inverse-bg-active);
 
+  // bg selected
+  --neb-ctx-solid-neutral-bg-selected: var(--neb-ctx-#{$theme}-solid-neutral-bg-selected);
+  --neb-ctx-solid-muted-bg-selected: var(--neb-ctx-#{$theme}-solid-muted-bg-selected);
+  --neb-ctx-solid-tertiary-bg-selected: var(--neb-ctx-#{$theme}-solid-tertiary-bg-selected);
+  --neb-ctx-solid-secondary-bg-selected: var(--neb-ctx-#{$theme}-solid-secondary-bg-selected);
+  --neb-ctx-solid-primary-bg-selected: var(--neb-ctx-#{$theme}-solid-primary-bg-selected);
+  --neb-ctx-solid-strong-bg-selected: var(--neb-ctx-#{$theme}-solid-strong-bg-selected);
+  --neb-ctx-solid-inverse-bg-selected: var(--neb-ctx-#{$theme}-solid-inverse-bg-selected);
+
   // bg disabled
   --neb-ctx-solid-neutral-bg-disabled: var(--neb-ctx-#{$theme}-solid-neutral-bg-disabled);
   --neb-ctx-solid-muted-bg-disabled: var(--neb-ctx-#{$theme}-solid-muted-bg-disabled);

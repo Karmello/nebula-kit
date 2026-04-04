@@ -8,6 +8,7 @@ $solid-inverse-bg: 20;
 
 $solid-hover-delta: 1;
 $solid-active-delta: 2;
+$solid-selected-delta: -1;
 
 $solid-neutral-bg-hover: $solid-neutral-bg + $solid-hover-delta;
 $solid-muted-bg-hover: $solid-muted-bg + $solid-hover-delta;
@@ -24,6 +25,14 @@ $solid-secondary-bg-active: $solid-secondary-bg-hover + $solid-active-delta;
 $solid-primary-bg-active: $solid-primary-bg-hover + $solid-active-delta;
 $solid-strong-bg-active: $solid-strong-bg-hover + $solid-active-delta;
 $solid-inverse-bg-active: $solid-inverse-bg-hover - $solid-active-delta;
+
+$solid-neutral-bg-selected: $solid-neutral-bg-active + $solid-selected-delta;
+$solid-muted-bg-selected: $solid-muted-bg-active + $solid-selected-delta;
+$solid-tertiary-bg-selected: $solid-tertiary-bg-active + $solid-selected-delta;
+$solid-secondary-bg-selected: $solid-secondary-bg-active + $solid-selected-delta;
+$solid-primary-bg-selected: $solid-primary-bg-active + $solid-selected-delta;
+$solid-strong-bg-selected: $solid-strong-bg-active + $solid-selected-delta;
+$solid-inverse-bg-selected: $solid-inverse-bg-active - $solid-selected-delta;
 
 @mixin set($color) {
   // bg
@@ -52,6 +61,15 @@ $solid-inverse-bg-active: $solid-inverse-bg-hover - $solid-active-delta;
   --neb-ctx-light-solid-primary-bg-active: hsl(var(--neb-#{$color}-#{$solid-primary-bg-active}));
   --neb-ctx-light-solid-strong-bg-active: hsl(var(--neb-#{$color}-#{$solid-strong-bg-active}));
   --neb-ctx-light-solid-inverse-bg-active: hsl(var(--neb-#{$color}-#{$solid-inverse-bg-active}));
+
+  // bg selected
+  --neb-ctx-light-solid-neutral-bg-selected: hsl(var(--neb-#{$color}-#{$solid-neutral-bg-selected}));
+  --neb-ctx-light-solid-muted-bg-selected: hsl(var(--neb-#{$color}-#{$solid-muted-bg-selected}));
+  --neb-ctx-light-solid-tertiary-bg-selected: hsl(var(--neb-#{$color}-#{$solid-tertiary-bg-selected}));
+  --neb-ctx-light-solid-secondary-bg-selected: hsl(var(--neb-#{$color}-#{$solid-secondary-bg-selected}));
+  --neb-ctx-light-solid-primary-bg-selected: hsl(var(--neb-#{$color}-#{$solid-primary-bg-selected}));
+  --neb-ctx-light-solid-strong-bg-selected: hsl(var(--neb-#{$color}-#{$solid-strong-bg-selected}));
+  --neb-ctx-light-solid-inverse-bg-selected: hsl(var(--neb-#{$color}-#{$solid-inverse-bg-selected}));
 
   // bg disabled
   --neb-ctx-light-solid-neutral-bg-disabled: hsl(var(--neb-#{$color}-#{$solid-neutral-bg}) / 0.5);

@@ -43,6 +43,7 @@ export const PLAYGROUND_MAP: Record<string, unknown[]> = {
     'interactive',
     'margin',
     'padding',
+    'selected',
     'theme',
     'variant',
     'visibility',

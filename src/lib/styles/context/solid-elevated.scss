@@ -25,4 +25,13 @@
   --neb-ctx-solid-primary-elevated-bg-active: var(--neb-ctx-#{$theme}-solid-primary-elevated-bg-active);
   --neb-ctx-solid-strong-elevated-bg-active: var(--neb-ctx-#{$theme}-solid-strong-elevated-bg-active);
   --neb-ctx-solid-inverse-elevated-bg-active: var(--neb-ctx-#{$theme}-solid-inverse-elevated-bg-active);
+
+  // elevated bg selected
+  --neb-ctx-solid-neutral-elevated-bg-selected: var(--neb-ctx-#{$theme}-solid-neutral-elevated-bg-selected);
+  --neb-ctx-solid-muted-elevated-bg-selected: var(--neb-ctx-#{$theme}-solid-muted-elevated-bg-selected);
+  --neb-ctx-solid-tertiary-elevated-bg-selected: var(--neb-ctx-#{$theme}-solid-tertiary-elevated-bg-selected);
+  --neb-ctx-solid-secondary-elevated-bg-selected: var(--neb-ctx-#{$theme}-solid-secondary-elevated-bg-selected);
+  --neb-ctx-solid-primary-elevated-bg-selected: var(--neb-ctx-#{$theme}-solid-primary-elevated-bg-selected);
+  --neb-ctx-solid-strong-elevated-bg-selected: var(--neb-ctx-#{$theme}-solid-strong-elevated-bg-selected);
+  --neb-ctx-solid-inverse-elevated-bg-selected: var(--neb-ctx-#{$theme}-solid-inverse-elevated-bg-selected);
 }

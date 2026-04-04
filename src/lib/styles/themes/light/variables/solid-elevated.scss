@@ -26,6 +26,14 @@ $solid-primary-elevated-bg-active: $solid-primary-bg-active + $solid-elevated-de
 $solid-strong-elevated-bg-active: $solid-strong-bg-active + $solid-elevated-delta;
 $solid-inverse-elevated-bg-active: $solid-inverse-bg-active;
 
+$solid-neutral-elevated-bg-selected: $solid-neutral-bg-selected + $solid-elevated-delta;
+$solid-muted-elevated-bg-selected: $solid-muted-bg-selected + $solid-elevated-delta;
+$solid-tertiary-elevated-bg-selected: $solid-tertiary-bg-selected + $solid-elevated-delta;
+$solid-secondary-elevated-bg-selected: $solid-secondary-bg-selected + $solid-elevated-delta;
+$solid-primary-elevated-bg-selected: $solid-primary-bg-selected + $solid-elevated-delta;
+$solid-strong-elevated-bg-selected: $solid-strong-bg-selected + $solid-elevated-delta;
+$solid-inverse-elevated-bg-selected: $solid-inverse-bg-selected;
+
 @mixin set($color) {
   // elevated bg
   --neb-ctx-light-solid-neutral-elevated-bg: hsl(var(--neb-#{$color}-#{$solid-neutral-elevated-bg}));
@@ -53,4 +61,13 @@ $solid-inverse-elevated-bg-active: $solid-inverse-bg-active;
   --neb-ctx-light-solid-primary-elevated-bg-active: hsl(var(--neb-#{$color}-#{$solid-primary-elevated-bg-active}));
   --neb-ctx-light-solid-strong-elevated-bg-active: hsl(var(--neb-#{$color}-#{$solid-strong-elevated-bg-active}));
   --neb-ctx-light-solid-inverse-elevated-bg-active: hsl(var(--neb-#{$color}-#{$solid-inverse-elevated-bg-active}));
+
+  // elevated bg selected
+  --neb-ctx-light-solid-neutral-elevated-bg-selected: hsl(var(--neb-#{$color}-#{$solid-neutral-elevated-bg-selected}));
+  --neb-ctx-light-solid-muted-elevated-bg-selected: hsl(var(--neb-#{$color}-#{$solid-muted-elevated-bg-selected}));
+  --neb-ctx-light-solid-tertiary-elevated-bg-selected: hsl(var(--neb-#{$color}-#{$solid-tertiary-elevated-bg-selected}));
+  --neb-ctx-light-solid-secondary-elevated-bg-selected: hsl(var(--neb-#{$color}-#{$solid-secondary-elevated-bg-selected}));
+  --neb-ctx-light-solid-primary-elevated-bg-selected: hsl(var(--neb-#{$color}-#{$solid-primary-elevated-bg-selected}));
+  --neb-ctx-light-solid-strong-elevated-bg-selected: hsl(var(--neb-#{$color}-#{$solid-strong-elevated-bg-selected}));
+  --neb-ctx-light-solid-inverse-elevated-bg-selected: hsl(var(--neb-#{$color}-#{$solid-inverse-elevated-bg-selected}));
 }

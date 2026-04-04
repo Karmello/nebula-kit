@@ -8,6 +8,7 @@ import { COLORS } from 'lib/definitions'
 export default () => {
   const [variant, setVariant] = useState<BoxVariant>('solid')
   const [elevated, setElevated] = useState<boolean>(false)
+  const [selected, setSelected] = useState<boolean>(false)
   const [disabled, setDisabled] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(false)
 
@@ -19,8 +20,16 @@ export default () => {
   }, [elevated])
 
   useEffect(() => {
+    if (selected) {
+      setDisabled(false)
+      setLoading(false)
+    }
+  }, [selected])
+
+  useEffect(() => {
     if (disabled) {
       setElevated(false)
+      setSelected(false)
       setLoading(false)
     }
   }, [disabled])
@@ -28,6 +37,7 @@ export default () => {
   useEffect(() => {
     if (loading) {
       setElevated(false)
+      setSelected(false)
       setDisabled(false)
     }
   }, [loading])
@@ -58,6 +68,10 @@ export default () => {
           <Switch checked={elevated} onChange={setElevated} />
         </Flex.Item>
         <Flex.Item>
+          <Text bold>Selected</Text>
+          <Switch checked={selected} onChange={setSelected} />
+        </Flex.Item>
+        <Flex.Item>
           <Text bold>Disabled</Text>
           <Switch checked={disabled} onChange={setDisabled} />
         </Flex.Item>
@@ -81,6 +95,7 @@ export default () => {
                     disabled={disabled}
                     loading={loading}
                     elevated={elevated}
+                    selected={selected}
                   >
                     {intent} {color}
                   </Button>

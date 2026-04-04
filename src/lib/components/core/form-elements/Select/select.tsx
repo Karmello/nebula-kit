@@ -111,6 +111,7 @@ export const Select = ({
                             onClick: () => handleChange(slotProps.value),
                           }}
                           bold={slotProps.value === currentValue}
+                          selected={slotProps.value === currentValue}
                           justifyContent={slotProps.justifyContent || DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT}
                         >
                           {slot}

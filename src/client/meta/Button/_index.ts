@@ -20,6 +20,7 @@ const BUTTON_META: ComponentMeta<ButtonProps> = {
   props: BUTTON_PROPS_META,
   examples: BUTTON_EXAMPLES_META,
   changelog: {
+    '0.8.0': ['exposed selected prop'],
     '0.7.0': ['exposed interactive prop'],
     '0.4.0': ['added onClick prop'],
     '0.2.3': ['released'],
