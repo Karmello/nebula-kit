@@ -7,7 +7,7 @@ $soft-outline-strong-border: 15;
 $soft-outline-inverse-border: 20;
 
 $soft-outline-hover-delta: 1;
-$soft-outline-active-delta: 2;
+$soft-outline-active-delta: 3;
 
 $soft-outline-neutral-border-hover: $soft-outline-neutral-border + $soft-outline-hover-delta;
 $soft-outline-muted-border-hover: $soft-outline-muted-border + $soft-outline-hover-delta;
@@ -17,13 +17,13 @@ $soft-outline-primary-border-hover: $soft-outline-primary-border + $soft-outline
 $soft-outline-strong-border-hover: $soft-outline-strong-border + $soft-outline-hover-delta;
 $soft-outline-inverse-border-hover: $soft-outline-inverse-border - $soft-outline-hover-delta * 3;
 
-$soft-outline-neutral-border-active: $soft-outline-neutral-border-hover + $soft-outline-active-delta;
-$soft-outline-muted-border-active: $soft-outline-muted-border-hover + $soft-outline-active-delta;
-$soft-outline-tertiary-border-active: $soft-outline-tertiary-border-hover + $soft-outline-active-delta;
-$soft-outline-secondary-border-active: $soft-outline-secondary-border-hover + $soft-outline-active-delta;
-$soft-outline-primary-border-active: $soft-outline-primary-border-hover + $soft-outline-active-delta;
-$soft-outline-strong-border-active: $soft-outline-strong-border-hover + $soft-outline-active-delta;
-$soft-outline-inverse-border-active: $soft-outline-inverse-border-hover - $soft-outline-active-delta;
+$soft-outline-neutral-border-active: $soft-outline-neutral-border + $soft-outline-active-delta;
+$soft-outline-muted-border-active: $soft-outline-muted-border + $soft-outline-active-delta;
+$soft-outline-tertiary-border-active: $soft-outline-tertiary-border + $soft-outline-active-delta;
+$soft-outline-secondary-border-active: $soft-outline-secondary-border + $soft-outline-active-delta;
+$soft-outline-primary-border-active: $soft-outline-primary-border + $soft-outline-active-delta;
+$soft-outline-strong-border-active: $soft-outline-strong-border + $soft-outline-active-delta;
+$soft-outline-inverse-border-active: $soft-outline-inverse-border - $soft-outline-active-delta;
 
 @mixin set($color) {
   // border

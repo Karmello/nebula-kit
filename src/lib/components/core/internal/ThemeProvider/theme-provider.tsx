@@ -11,7 +11,12 @@ type ThemeProviderProps = ThemeContextValue & {
 }
 
 export const ThemeProvider = ({ children, theme }: ThemeProviderProps) => {
-  const value = useMemo(() => ({ theme }), [theme])
+  const parent = useThemeContext()
+
+  const value = useMemo(() => {
+    if (theme === undefined) return parent
+    return { theme }
+  }, [theme, parent])
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }

@@ -7,7 +7,7 @@ $outline-strong-border: 15;
 $outline-inverse-border: 20;
 
 $outline-hover-delta: 1;
-$outline-active-delta: 2;
+$outline-active-delta: 3;
 
 $outline-neutral-border-hover: $outline-neutral-border + $outline-hover-delta;
 $outline-muted-border-hover: $outline-muted-border + $outline-hover-delta;
@@ -17,13 +17,13 @@ $outline-primary-border-hover: $outline-primary-border + $outline-hover-delta;
 $outline-strong-border-hover: $outline-strong-border + $outline-hover-delta;
 $outline-inverse-border-hover: $outline-inverse-border - $outline-hover-delta * 3;
 
-$outline-neutral-border-active: $outline-neutral-border-hover + $outline-active-delta;
-$outline-muted-border-active: $outline-muted-border-hover + $outline-active-delta;
-$outline-tertiary-border-active: $outline-tertiary-border-hover + $outline-active-delta;
-$outline-secondary-border-active: $outline-secondary-border-hover + $outline-active-delta;
-$outline-primary-border-active: $outline-primary-border-hover + $outline-active-delta;
-$outline-strong-border-active: $outline-strong-border-hover + $outline-active-delta;
-$outline-inverse-border-active: $outline-inverse-border-hover - $outline-active-delta;
+$outline-neutral-border-active: $outline-neutral-border + $outline-active-delta;
+$outline-muted-border-active: $outline-muted-border + $outline-active-delta;
+$outline-tertiary-border-active: $outline-tertiary-border + $outline-active-delta;
+$outline-secondary-border-active: $outline-secondary-border + $outline-active-delta;
+$outline-primary-border-active: $outline-primary-border + $outline-active-delta;
+$outline-strong-border-active: $outline-strong-border + $outline-active-delta;
+$outline-inverse-border-active: $outline-inverse-border - $outline-active-delta;
 
 @mixin set($color) {
   // border

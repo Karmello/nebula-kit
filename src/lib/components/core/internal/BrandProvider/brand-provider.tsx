@@ -12,7 +12,12 @@ type BrandProviderProps = BrandContextValue & {
 }
 
 export const BrandProvider = ({ children, brand }: BrandProviderProps) => {
-  const value = useMemo(() => ({ brand }), [brand])
+  const parent = useBrandContext()
+
+  const value = useMemo(() => {
+    if (brand === undefined) return parent
+    return { brand }
+  }, [brand, parent])
 
   return <BrandContext.Provider value={value}>{children}</BrandContext.Provider>
 }

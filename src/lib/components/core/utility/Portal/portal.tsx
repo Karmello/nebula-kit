@@ -28,7 +28,7 @@ export const Portal = ({
   const rootRef = tagRef || ref
 
   const updatePosition = useCallback(() => {
-    if (!anchorRef?.current) return
+    if (!anchorRef?.current) return false
 
     const anchorRect = anchorRef.current.getBoundingClientRect()
 
@@ -37,11 +37,9 @@ export const Portal = ({
 
     const [side, align] = (placement || 'bottom-start').split('-') as [string, string | undefined]
 
-    // Base position derived purely from anchor geometry
     if (side === 'bottom') top += anchorRect.height
     if (side === 'right') left += anchorRect.width
 
-    // Apply offset along the placement axis (px)
     if (offset) {
       if (side === 'bottom') top += offset
       if (side === 'top') top -= offset
@@ -49,16 +47,23 @@ export const Portal = ({
       if (side === 'left') left -= offset
     }
 
-    // Alignment adjustments (still only based on anchor)
     if (side === 'top' || side === 'bottom') {
       if (align === 'center') left += anchorRect.width / 2
       if (align === 'end') left += anchorRect.width
-    } else if (side === 'left' || side === 'right') {
+    } else {
       if (align === 'center') top += anchorRect.height / 2
       if (align === 'end') top += anchorRect.height
     }
 
-    setPosition({ top, left })
+    let changed = false
+
+    setPosition(prev => {
+      if (prev.top === top && prev.left === left) return prev
+      changed = true
+      return { top, left }
+    })
+
+    return changed
   }, [placement, anchorRef, offset])
 
   useLayoutEffect(() => {

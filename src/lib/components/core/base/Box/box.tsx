@@ -209,39 +209,33 @@ export const Box = <T extends ElementType = 'div'>({
     updateDomRespDataset('Box', finalRef, bp, { theme, brand, color, variant, intent })
   }, [bp, theme, brand, color, variant, intent])
 
-  let renderContent = (
-    <HtmlTag
-      tag={tag}
-      tagAttrs={
-        {
-          ...tagAttrs,
-          className: classNames(withPrefix('box'), tagAttrs?.className || ''),
-          style: { ...tagAttrs?.style, pointerEvents },
-          disabled,
-          ...updateDomStaticDataset('Box', {
-            drawable,
-            elevated,
-            interactive,
-            selected,
-            disabled,
-          }),
-        } as PropsWithoutRef<ComponentProps<T>>
-      }
-      tagRef={finalRef}
-    >
-      {children}
-    </HtmlTag>
+  return (
+    <ThemeProvider theme={theme}>
+      <BrandProvider brand={brand}>
+        <HtmlTag
+          tag={tag}
+          tagAttrs={
+            {
+              ...tagAttrs,
+              className: classNames(withPrefix('box'), tagAttrs?.className || ''),
+              style: { ...tagAttrs?.style, pointerEvents },
+              disabled,
+              ...updateDomStaticDataset('Box', {
+                drawable,
+                elevated,
+                interactive,
+                selected,
+                disabled,
+              }),
+            } as PropsWithoutRef<ComponentProps<T>>
+          }
+          tagRef={finalRef}
+        >
+          {children}
+        </HtmlTag>
+      </BrandProvider>
+    </ThemeProvider>
   )
-
-  if (brand) {
-    renderContent = <BrandProvider brand={brand}>{renderContent}</BrandProvider>
-  }
-
-  if (theme) {
-    renderContent = <ThemeProvider theme={theme}>{renderContent}</ThemeProvider>
-  }
-
-  return renderContent
 }
 
 Box.displayName = 'Box'
