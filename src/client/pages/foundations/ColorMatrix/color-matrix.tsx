@@ -2,7 +2,7 @@ import { Box, Flex, Spacer, Text } from 'lib/components'
 import { COLORS } from 'lib/definitions'
 
 export default () => {
-  const arr = Array.from({ length: 21 }, (v, k) => k)
+  const arr = Array.from({ length: 13 }, (v, k) => k)
 
   return (
     <Box>

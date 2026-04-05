@@ -3,25 +3,17 @@
 $pink: 336;
 
 @mixin set($saturation) {
-  --neb-pink-0: #{$pink} #{$saturation} #{$pink-lightness-20};
-  --neb-pink-1: #{$pink} #{$saturation} #{$pink-lightness-19};
-  --neb-pink-2: #{$pink} #{$saturation} #{$pink-lightness-18};
-  --neb-pink-3: #{$pink} #{$saturation} #{$pink-lightness-17};
-  --neb-pink-4: #{$pink} #{$saturation} #{$pink-lightness-16};
-  --neb-pink-5: #{$pink} #{$saturation} #{$pink-lightness-15};
-  --neb-pink-6: #{$pink} #{$saturation} #{$pink-lightness-14};
-  --neb-pink-7: #{$pink} #{$saturation} #{$pink-lightness-13};
-  --neb-pink-8: #{$pink} #{$saturation} #{$pink-lightness-12};
-  --neb-pink-9: #{$pink} #{$saturation} #{$pink-lightness-11};
-  --neb-pink-10: #{$pink} #{$saturation} #{$pink-lightness-10};
-  --neb-pink-11: #{$pink} #{$saturation} #{$pink-lightness-9};
-  --neb-pink-12: #{$pink} #{$saturation} #{$pink-lightness-8};
-  --neb-pink-13: #{$pink} #{$saturation} #{$pink-lightness-7};
-  --neb-pink-14: #{$pink} #{$saturation} #{$pink-lightness-6};
-  --neb-pink-15: #{$pink} #{$saturation} #{$pink-lightness-5};
-  --neb-pink-16: #{$pink} #{$saturation} #{$pink-lightness-4};
-  --neb-pink-17: #{$pink} #{$saturation} #{$pink-lightness-3};
-  --neb-pink-18: #{$pink} #{$saturation} #{$pink-lightness-2};
-  --neb-pink-19: #{$pink} #{$saturation} #{$pink-lightness-1};
-  --neb-pink-20: #{$pink} #{$saturation} #{$pink-lightness-0};
+  --neb-pink-0: #{$pink} #{$saturation} #{$pink-lightness-12};
+  --neb-pink-1: #{$pink} #{$saturation} #{$pink-lightness-11};
+  --neb-pink-2: #{$pink} #{$saturation} #{$pink-lightness-10};
+  --neb-pink-3: #{$pink} #{$saturation} #{$pink-lightness-9};
+  --neb-pink-4: #{$pink} #{$saturation} #{$pink-lightness-8};
+  --neb-pink-5: #{$pink} #{$saturation} #{$pink-lightness-7};
+  --neb-pink-6: #{$pink} #{$saturation} #{$pink-lightness-6};
+  --neb-pink-7: #{$pink} #{$saturation} #{$pink-lightness-5};
+  --neb-pink-8: #{$pink} #{$saturation} #{$pink-lightness-4};
+  --neb-pink-9: #{$pink} #{$saturation} #{$pink-lightness-3};
+  --neb-pink-10: #{$pink} #{$saturation} #{$pink-lightness-2};
+  --neb-pink-11: #{$pink} #{$saturation} #{$pink-lightness-1};
+  --neb-pink-12: #{$pink} #{$saturation} #{$pink-lightness-0};
 }

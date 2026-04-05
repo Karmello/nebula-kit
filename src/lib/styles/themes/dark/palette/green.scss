@@ -3,25 +3,17 @@
 $hue: 145;
 
 @mixin set($saturation) {
-  --neb-green-0: #{$hue} #{$saturation} #{$green-lightness-20};
-  --neb-green-1: #{$hue} #{$saturation} #{$green-lightness-19};
-  --neb-green-2: #{$hue} #{$saturation} #{$green-lightness-18};
-  --neb-green-3: #{$hue} #{$saturation} #{$green-lightness-17};
-  --neb-green-4: #{$hue} #{$saturation} #{$green-lightness-16};
-  --neb-green-5: #{$hue} #{$saturation} #{$green-lightness-15};
-  --neb-green-6: #{$hue} #{$saturation} #{$green-lightness-14};
-  --neb-green-7: #{$hue} #{$saturation} #{$green-lightness-13};
-  --neb-green-8: #{$hue} #{$saturation} #{$green-lightness-12};
-  --neb-green-9: #{$hue} #{$saturation} #{$green-lightness-11};
-  --neb-green-10: #{$hue} #{$saturation} #{$green-lightness-10};
-  --neb-green-11: #{$hue} #{$saturation} #{$green-lightness-9};
-  --neb-green-12: #{$hue} #{$saturation} #{$green-lightness-8};
-  --neb-green-13: #{$hue} #{$saturation} #{$green-lightness-7};
-  --neb-green-14: #{$hue} #{$saturation} #{$green-lightness-6};
-  --neb-green-15: #{$hue} #{$saturation} #{$green-lightness-5};
-  --neb-green-16: #{$hue} #{$saturation} #{$green-lightness-4};
-  --neb-green-17: #{$hue} #{$saturation} #{$green-lightness-3};
-  --neb-green-18: #{$hue} #{$saturation} #{$green-lightness-2};
-  --neb-green-19: #{$hue} #{$saturation} #{$green-lightness-1};
-  --neb-green-20: #{$hue} #{$saturation} #{$green-lightness-0};
+  --neb-green-0: #{$hue} #{$saturation} #{$green-lightness-12};
+  --neb-green-1: #{$hue} #{$saturation} #{$green-lightness-11};
+  --neb-green-2: #{$hue} #{$saturation} #{$green-lightness-10};
+  --neb-green-3: #{$hue} #{$saturation} #{$green-lightness-9};
+  --neb-green-4: #{$hue} #{$saturation} #{$green-lightness-8};
+  --neb-green-5: #{$hue} #{$saturation} #{$green-lightness-7};
+  --neb-green-6: #{$hue} #{$saturation} #{$green-lightness-6};
+  --neb-green-7: #{$hue} #{$saturation} #{$green-lightness-5};
+  --neb-green-8: #{$hue} #{$saturation} #{$green-lightness-4};
+  --neb-green-9: #{$hue} #{$saturation} #{$green-lightness-3};
+  --neb-green-10: #{$hue} #{$saturation} #{$green-lightness-2};
+  --neb-green-11: #{$hue} #{$saturation} #{$green-lightness-1};
+  --neb-green-12: #{$hue} #{$saturation} #{$green-lightness-0};
 }
