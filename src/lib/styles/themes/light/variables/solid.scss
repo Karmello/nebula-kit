@@ -1,10 +1,10 @@
 $solid-neutral-bg: 0;
 $solid-muted-bg: 1;
 $solid-tertiary-bg: 3;
-$solid-secondary-bg: 7;
-$solid-primary-bg: 12;
-$solid-strong-bg: 16;
-$solid-inverse-bg: 20;
+$solid-secondary-bg: 6;
+$solid-primary-bg: 10;
+$solid-strong-bg: 15;
+$solid-inverse-bg: 17;
 
 $solid-neutral-bg-hover: $solid-neutral-bg + 1;
 $solid-muted-bg-hover: $solid-muted-bg + 1;
@@ -12,23 +12,23 @@ $solid-tertiary-bg-hover: $solid-tertiary-bg + 1;
 $solid-secondary-bg-hover: $solid-secondary-bg + 1;
 $solid-primary-bg-hover: $solid-primary-bg + 1;
 $solid-strong-bg-hover: $solid-strong-bg - 1;
-$solid-inverse-bg-hover: $solid-inverse-bg - 1;
+$solid-inverse-bg-hover: $solid-inverse-bg + 1;
 
-$solid-neutral-bg-active: $solid-neutral-bg + 3;
-$solid-muted-bg-active: $solid-muted-bg + 3;
-$solid-tertiary-bg-active: $solid-tertiary-bg + 3;
-$solid-secondary-bg-active: $solid-secondary-bg + 3;
-$solid-primary-bg-active: $solid-primary-bg + 3;
-$solid-strong-bg-active: $solid-strong-bg - 3;
-$solid-inverse-bg-active: $solid-inverse-bg - 3;
+$solid-neutral-bg-active: $solid-neutral-bg + 2;
+$solid-muted-bg-active: $solid-muted-bg + 2;
+$solid-tertiary-bg-active: $solid-tertiary-bg + 2;
+$solid-secondary-bg-active: $solid-secondary-bg + 2;
+$solid-primary-bg-active: $solid-primary-bg + 2;
+$solid-strong-bg-active: $solid-strong-bg + 2;
+$solid-inverse-bg-active: $solid-inverse-bg + 2;
 
-$solid-neutral-bg-selected: $solid-neutral-bg + 2;
-$solid-muted-bg-selected: $solid-muted-bg + 2;
-$solid-tertiary-bg-selected: $solid-tertiary-bg + 2;
-$solid-secondary-bg-selected: $solid-secondary-bg + 2;
-$solid-primary-bg-selected: $solid-primary-bg + 2;
-$solid-strong-bg-selected: $solid-strong-bg - 2;
-$solid-inverse-bg-selected: $solid-inverse-bg - 2;
+$solid-neutral-bg-selected: $solid-neutral-bg + 1;
+$solid-muted-bg-selected: $solid-muted-bg + 1;
+$solid-tertiary-bg-selected: $solid-tertiary-bg + 1;
+$solid-secondary-bg-selected: $solid-secondary-bg + 1;
+$solid-primary-bg-selected: $solid-primary-bg + 1;
+$solid-strong-bg-selected: $solid-strong-bg + 1;
+$solid-inverse-bg-selected: $solid-inverse-bg + 1;
 
 @mixin set($color) {
   // bg
