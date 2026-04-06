@@ -20,6 +20,13 @@
   --neb-ctx-ghost-primary-text-active: var(--neb-ctx-#{$theme}-ghost-primary-text-active);
   --neb-ctx-ghost-inverse-text-active: var(--neb-ctx-#{$theme}-ghost-inverse-text-active);
 
+  // text selected
+  --neb-ctx-ghost-neutral-text-selected: var(--neb-ctx-#{$theme}-ghost-neutral-text-selected);
+  --neb-ctx-ghost-tertiary-text-selected: var(--neb-ctx-#{$theme}-ghost-tertiary-text-selected);
+  --neb-ctx-ghost-secondary-text-selected: var(--neb-ctx-#{$theme}-ghost-secondary-text-selected);
+  --neb-ctx-ghost-primary-text-selected: var(--neb-ctx-#{$theme}-ghost-primary-text-selected);
+  --neb-ctx-ghost-inverse-text-selected: var(--neb-ctx-#{$theme}-ghost-inverse-text-selected);
+
   // text disabled
   --neb-ctx-ghost-neutral-text-disabled: var(--neb-ctx-#{$theme}-ghost-neutral-text-disabled);
   --neb-ctx-ghost-tertiary-text-disabled: var(--neb-ctx-#{$theme}-ghost-tertiary-text-disabled);

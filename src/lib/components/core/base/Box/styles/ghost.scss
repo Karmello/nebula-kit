@@ -9,6 +9,7 @@
         --text: var(--neb-ghost-#{$intent}-text);
         --text-hover: var(--neb-ghost-#{$intent}-text-hover);
         --text-active: var(--neb-ghost-#{$intent}-text-active);
+        --text-selected: var(--neb-ghost-#{$intent}-text-selected);
         --text-disabled: var(--neb-ghost-#{$intent}-text-disabled);
         --loader: var(--neb-ghost-#{$intent}-loader);
         --ripple: var(--neb-ghost-#{$intent}-ripple, currentColor);
@@ -24,6 +25,7 @@
             --text: var(--neb-ghost-#{$intent}-elevated-text);
             --text-hover: var(--neb-ghost-#{$intent}-elevated-text-hover);
             --text-active: var(--neb-ghost-#{$intent}-elevated-text-active);
+            --text-selected: var(--neb-ghost-#{$intent}-elevated-text-selected);
           }
 
           // interactive
@@ -34,10 +36,15 @@
               color: var(--text-hover);
             }
 
-            // active, focus
-            &:active,
-            &:focus-visible {
-              color: var(--text-active) !important;
+            // active
+            &:active {
+              color: var(--text-active);
+            }
+
+            // focus, selected
+            &:focus-visible,
+            &[data-neb-box-selected='true'] {
+              color: var(--text-selected) !important;
             }
           }
 

@@ -19,4 +19,11 @@
   --neb-ctx-ghost-secondary-elevated-text-active: var(--neb-ctx-#{$theme}-ghost-secondary-elevated-text-active);
   --neb-ctx-ghost-primary-elevated-text-active: var(--neb-ctx-#{$theme}-ghost-primary-elevated-text-active);
   --neb-ctx-ghost-inverse-elevated-text-active: var(--neb-ctx-#{$theme}-ghost-inverse-elevated-text-active);
+
+  // elevated text selected
+  --neb-ctx-ghost-neutral-elevated-text-selected: var(--neb-ctx-#{$theme}-ghost-neutral-elevated-text-selected);
+  --neb-ctx-ghost-tertiary-elevated-text-selected: var(--neb-ctx-#{$theme}-ghost-tertiary-elevated-text-selected);
+  --neb-ctx-ghost-secondary-elevated-text-selected: var(--neb-ctx-#{$theme}-ghost-secondary-elevated-text-selected);
+  --neb-ctx-ghost-primary-elevated-text-selected: var(--neb-ctx-#{$theme}-ghost-primary-elevated-text-selected);
+  --neb-ctx-ghost-inverse-elevated-text-selected: var(--neb-ctx-#{$theme}-ghost-inverse-elevated-text-selected);
 }
