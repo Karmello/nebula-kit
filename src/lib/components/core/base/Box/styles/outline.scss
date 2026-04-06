@@ -10,9 +10,11 @@
         --border: var(--neb-outline-#{$intent}-border);
         --border-hover: var(--neb-outline-#{$intent}-border-hover);
         --border-active: var(--neb-outline-#{$intent}-border-active);
+        --border-selected: var(--neb-outline-#{$intent}-border-selected);
         --border-disabled: var(--neb-outline-#{$intent}-border-disabled);
         --bg-hover: var(--neb-outline-#{$intent}-bg-hover);
         --bg-active: var(--neb-outline-#{$intent}-bg-active);
+        --bg-selected: var(--neb-outline-#{$intent}-bg-selected);
         --text-disabled: var(--neb-outline-#{$intent}-text-disabled);
         --loader: var(--neb-outline-#{$intent}-loader);
         --ripple: currentColor;
@@ -28,8 +30,10 @@
             --border: var(--neb-outline-#{$intent}-elevated-border);
             --border-hover: var(--neb-outline-#{$intent}-elevated-border-hover);
             --border-active: var(--neb-outline-#{$intent}-elevated-border-active);
+            --border-selected: var(--neb-outline-#{$intent}-elevated-border-selected);
             --bg-hover: var(--neb-outline-#{$intent}-elevated-bg-hover);
             --bg-active: var(--neb-outline-#{$intent}-elevated-bg-active);
+            --bg-selected: var(--neb-outline-#{$intent}-elevated-bg-selected);
           }
 
           // interactive
@@ -41,11 +45,17 @@
               background-color: var(--bg-hover);
             }
 
-            // active, focus
-            &:active,
-            &:focus-visible {
+            // active
+            &:active {
               border-color: var(--border-active);
               background-color: var(--bg-active);
+            }
+
+            // focus, selected
+            &:focus-visible,
+            &[data-neb-box-selected='true'] {
+              border-color: var(--border-selected);
+              background-color: var(--bg-selected) !important;
             }
           }
 

@@ -20,6 +20,13 @@
   --neb-ctx-outline-primary-elevated-border-active: var(--neb-ctx-#{$theme}-outline-primary-elevated-border-active);
   --neb-ctx-outline-inverse-elevated-border-active: var(--neb-ctx-#{$theme}-outline-inverse-elevated-border-active);
 
+  // elevated border selected
+  --neb-ctx-outline-neutral-elevated-border-selected: var(--neb-ctx-#{$theme}-outline-neutral-elevated-border-selected);
+  --neb-ctx-outline-tertiary-elevated-border-selected: var(--neb-ctx-#{$theme}-outline-tertiary-elevated-border-selected);
+  --neb-ctx-outline-secondary-elevated-border-selected: var(--neb-ctx-#{$theme}-outline-secondary-elevated-border-selected);
+  --neb-ctx-outline-primary-elevated-border-selected: var(--neb-ctx-#{$theme}-outline-primary-elevated-border-selected);
+  --neb-ctx-outline-inverse-elevated-border-selected: var(--neb-ctx-#{$theme}-outline-inverse-elevated-border-selected);
+
   // elevated bg hover
   --neb-ctx-outline-neutral-elevated-bg-hover: var(--neb-ctx-#{$theme}-outline-neutral-elevated-bg-hover);
   --neb-ctx-outline-tertiary-elevated-bg-hover: var(--neb-ctx-#{$theme}-outline-tertiary-elevated-bg-hover);
@@ -33,4 +40,11 @@
   --neb-ctx-outline-secondary-elevated-bg-active: var(--neb-ctx-#{$theme}-outline-secondary-elevated-bg-active);
   --neb-ctx-outline-primary-elevated-bg-active: var(--neb-ctx-#{$theme}-outline-primary-elevated-bg-active);
   --neb-ctx-outline-inverse-elevated-bg-active: var(--neb-ctx-#{$theme}-outline-inverse-elevated-bg-active);
+
+  // elevated bg selected
+  --neb-ctx-outline-neutral-elevated-bg-selected: var(--neb-ctx-#{$theme}-outline-neutral-elevated-bg-selected);
+  --neb-ctx-outline-tertiary-elevated-bg-selected: var(--neb-ctx-#{$theme}-outline-tertiary-elevated-bg-selected);
+  --neb-ctx-outline-secondary-elevated-bg-selected: var(--neb-ctx-#{$theme}-outline-secondary-elevated-bg-selected);
+  --neb-ctx-outline-primary-elevated-bg-selected: var(--neb-ctx-#{$theme}-outline-primary-elevated-bg-selected);
+  --neb-ctx-outline-inverse-elevated-bg-selected: var(--neb-ctx-#{$theme}-outline-inverse-elevated-bg-selected);
 }

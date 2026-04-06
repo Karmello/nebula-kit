@@ -20,6 +20,13 @@
   --neb-outline-primary-border-active: var(--neb-ctx-outline-primary-border-active);
   --neb-outline-inverse-border-active: var(--neb-ctx-outline-inverse-border-active);
 
+  // border selected
+  --neb-outline-neutral-border-selected: var(--neb-ctx-outline-neutral-border-selected);
+  --neb-outline-tertiary-border-selected: var(--neb-ctx-outline-tertiary-border-selected);
+  --neb-outline-secondary-border-selected: var(--neb-ctx-outline-secondary-border-selected);
+  --neb-outline-primary-border-selected: var(--neb-ctx-outline-primary-border-selected);
+  --neb-outline-inverse-border-selected: var(--neb-ctx-outline-inverse-border-selected);
+
   // border disabled
   --neb-outline-neutral-border-disabled: var(--neb-ctx-outline-neutral-border-disabled);
   --neb-outline-tertiary-border-disabled: var(--neb-ctx-outline-tertiary-border-disabled);
@@ -40,6 +47,13 @@
   --neb-outline-secondary-bg-active: var(--neb-ctx-outline-secondary-bg-active);
   --neb-outline-primary-bg-active: var(--neb-ctx-outline-primary-bg-active);
   --neb-outline-inverse-bg-active: var(--neb-ctx-outline-inverse-bg-active);
+
+  // bg selected
+  --neb-outline-neutral-bg-selected: var(--neb-ctx-outline-neutral-bg-selected);
+  --neb-outline-tertiary-bg-selected: var(--neb-ctx-outline-tertiary-bg-selected);
+  --neb-outline-secondary-bg-selected: var(--neb-ctx-outline-secondary-bg-selected);
+  --neb-outline-primary-bg-selected: var(--neb-ctx-outline-primary-bg-selected);
+  --neb-outline-inverse-bg-selected: var(--neb-ctx-outline-inverse-bg-selected);
 
   // text disabled
   --neb-outline-neutral-text-disabled: var(--neb-ctx-outline-neutral-text-disabled);
