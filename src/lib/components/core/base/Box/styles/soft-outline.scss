@@ -10,12 +10,15 @@
         --border: var(--neb-soft-outline-#{$intent}-border);
         --border-hover: var(--neb-soft-outline-#{$intent}-border-hover);
         --border-active: var(--neb-soft-outline-#{$intent}-border-active);
+        --border-selected: var(--neb-soft-outline-#{$intent}-border-selected);
         --border-disabled: var(--neb-soft-outline-#{$intent}-border-disabled);
         --bg-hover: var(--neb-soft-outline-#{$intent}-bg-hover);
         --bg-active: var(--neb-soft-outline-#{$intent}-bg-active);
+        --bg-selected: var(--neb-soft-outline-#{$intent}-bg-selected);
         --text: var(--neb-soft-outline-#{$intent}-text);
         --text-hover: var(--neb-soft-outline-#{$intent}-text-hover);
         --text-active: var(--neb-soft-outline-#{$intent}-text-active);
+        --text-selected: var(--neb-soft-outline-#{$intent}-text-selected);
         --text-disabled: var(--neb-soft-outline-#{$intent}-text-disabled);
         --loader: var(--neb-soft-outline-#{$intent}-loader);
         --ripple: currentColor;
@@ -32,11 +35,14 @@
             --border: var(--neb-soft-outline-#{$intent}-elevated-border);
             --border-hover: var(--neb-soft-outline-#{$intent}-elevated-border-hover);
             --border-active: var(--neb-soft-outline-#{$intent}-elevated-border-active);
+            --border-selected: var(--neb-soft-outline-#{$intent}-elevated-border-selected);
             --bg-hover: var(--neb-soft-outline-#{$intent}-elevated-bg-hover);
             --bg-active: var(--neb-soft-outline-#{$intent}-elevated-bg-active);
+            --bg-selected: var(--neb-soft-outline-#{$intent}-elevated-bg-selected);
             --text: var(--neb-soft-outline-#{$intent}-elevated-text);
             --text-hover: var(--neb-soft-outline-#{$intent}-elevated-text-hover);
             --text-active: var(--neb-soft-outline-#{$intent}-elevated-text-active);
+            --text-selected: var(--neb-soft-outline-#{$intent}-elevated-text-selected);
           }
 
           // interactive
@@ -49,12 +55,19 @@
               background-color: var(--bg-hover);
             }
 
-            // active, focus
-            &:active,
-            &:focus-visible {
+            // active
+            &:active {
               border-color: var(--border-active);
               color: var(--text-active);
               background-color: var(--bg-active);
+            }
+
+            // focus, selected
+            &:focus-visible,
+            &[data-neb-box-selected='true'] {
+              border-color: var(--border-selected);
+              color: var(--text-selected) !important;
+              background-color: var(--bg-selected) !important;
             }
           }
 

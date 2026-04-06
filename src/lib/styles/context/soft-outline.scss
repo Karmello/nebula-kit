@@ -20,6 +20,13 @@
   --neb-ctx-soft-outline-primary-border-active: var(--neb-ctx-#{$theme}-soft-outline-primary-border-active);
   --neb-ctx-soft-outline-inverse-border-active: var(--neb-ctx-#{$theme}-soft-outline-inverse-border-active);
 
+  // border selected
+  --neb-ctx-soft-outline-neutral-border-selected: var(--neb-ctx-#{$theme}-soft-outline-neutral-border-selected);
+  --neb-ctx-soft-outline-tertiary-border-selected: var(--neb-ctx-#{$theme}-soft-outline-tertiary-border-selected);
+  --neb-ctx-soft-outline-secondary-border-selected: var(--neb-ctx-#{$theme}-soft-outline-secondary-border-selected);
+  --neb-ctx-soft-outline-primary-border-selected: var(--neb-ctx-#{$theme}-soft-outline-primary-border-selected);
+  --neb-ctx-soft-outline-inverse-border-selected: var(--neb-ctx-#{$theme}-soft-outline-inverse-border-selected);
+
   // border disabled
   --neb-ctx-soft-outline-neutral-border-disabled: var(--neb-ctx-#{$theme}-soft-outline-neutral-border-disabled);
   --neb-ctx-soft-outline-tertiary-border-disabled: var(--neb-ctx-#{$theme}-soft-outline-tertiary-border-disabled);
@@ -41,6 +48,13 @@
   --neb-ctx-soft-outline-primary-bg-active: var(--neb-ctx-#{$theme}-soft-outline-primary-bg-active);
   --neb-ctx-soft-outline-inverse-bg-active: var(--neb-ctx-#{$theme}-soft-outline-inverse-bg-active);
 
+  // bg selected
+  --neb-ctx-soft-outline-neutral-bg-selected: var(--neb-ctx-#{$theme}-soft-outline-neutral-bg-selected);
+  --neb-ctx-soft-outline-tertiary-bg-selected: var(--neb-ctx-#{$theme}-soft-outline-tertiary-bg-selected);
+  --neb-ctx-soft-outline-secondary-bg-selected: var(--neb-ctx-#{$theme}-soft-outline-secondary-bg-selected);
+  --neb-ctx-soft-outline-primary-bg-selected: var(--neb-ctx-#{$theme}-soft-outline-primary-bg-selected);
+  --neb-ctx-soft-outline-inverse-bg-selected: var(--neb-ctx-#{$theme}-soft-outline-inverse-bg-selected);
+
   // text
   --neb-ctx-soft-outline-neutral-text: var(--neb-ctx-#{$theme}-soft-outline-neutral-text);
   --neb-ctx-soft-outline-tertiary-text: var(--neb-ctx-#{$theme}-soft-outline-tertiary-text);
@@ -61,6 +75,13 @@
   --neb-ctx-soft-outline-secondary-text-active: var(--neb-ctx-#{$theme}-soft-outline-secondary-text-active);
   --neb-ctx-soft-outline-primary-text-active: var(--neb-ctx-#{$theme}-soft-outline-primary-text-active);
   --neb-ctx-soft-outline-inverse-text-active: var(--neb-ctx-#{$theme}-soft-outline-inverse-text-active);
+
+  // text selected
+  --neb-ctx-soft-outline-neutral-text-selected: var(--neb-ctx-#{$theme}-soft-outline-neutral-text-selected);
+  --neb-ctx-soft-outline-tertiary-text-selected: var(--neb-ctx-#{$theme}-soft-outline-tertiary-text-selected);
+  --neb-ctx-soft-outline-secondary-text-selected: var(--neb-ctx-#{$theme}-soft-outline-secondary-text-selected);
+  --neb-ctx-soft-outline-primary-text-selected: var(--neb-ctx-#{$theme}-soft-outline-primary-text-selected);
+  --neb-ctx-soft-outline-inverse-text-selected: var(--neb-ctx-#{$theme}-soft-outline-inverse-text-selected);
 
   // text disabled
   --neb-ctx-soft-outline-neutral-text-disabled: var(--neb-ctx-#{$theme}-soft-outline-neutral-text-disabled);

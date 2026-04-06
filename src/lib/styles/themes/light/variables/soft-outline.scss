@@ -16,6 +16,12 @@ $soft-outline-secondary-border-active: $soft-outline-secondary-border + 2;
 $soft-outline-primary-border-active: $soft-outline-primary-border + 2;
 $soft-outline-inverse-border-active: $soft-outline-inverse-border + 2;
 
+$soft-outline-neutral-border-selected: $soft-outline-neutral-border + 1;
+$soft-outline-tertiary-border-selected: $soft-outline-tertiary-border + 1;
+$soft-outline-secondary-border-selected: $soft-outline-secondary-border + 1;
+$soft-outline-primary-border-selected: $soft-outline-primary-border + 1;
+$soft-outline-inverse-border-selected: $soft-outline-inverse-border + 1;
+
 @mixin set($color) {
   // border
   --neb-ctx-light-soft-outline-neutral-border: hsl(var(--neb-#{$color}-#{$soft-outline-neutral-border}));
@@ -38,6 +44,13 @@ $soft-outline-inverse-border-active: $soft-outline-inverse-border + 2;
   --neb-ctx-light-soft-outline-primary-border-active: hsl(var(--neb-#{$color}-#{$soft-outline-primary-border-active}));
   --neb-ctx-light-soft-outline-inverse-border-active: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border-active}));
 
+  // border selected
+  --neb-ctx-light-soft-outline-neutral-border-selected: hsl(var(--neb-#{$color}-#{$soft-outline-neutral-border-selected}));
+  --neb-ctx-light-soft-outline-tertiary-border-selected: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border-selected}));
+  --neb-ctx-light-soft-outline-secondary-border-selected: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border-selected}));
+  --neb-ctx-light-soft-outline-primary-border-selected: hsl(var(--neb-#{$color}-#{$soft-outline-primary-border-selected}));
+  --neb-ctx-light-soft-outline-inverse-border-selected: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border-selected}));
+
   // border disabled
   --neb-ctx-light-soft-outline-neutral-border-disabled: hsl(var(--neb-#{$color}-#{$soft-outline-neutral-border}) / 0.5);
   --neb-ctx-light-soft-outline-tertiary-border-disabled: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border}) / 0.5);
@@ -59,6 +72,13 @@ $soft-outline-inverse-border-active: $soft-outline-inverse-border + 2;
   --neb-ctx-light-soft-outline-primary-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border-active})) 20%, transparent);
   --neb-ctx-light-soft-outline-inverse-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border-active})) 20%, transparent);
 
+  // bg selected
+  --neb-ctx-light-soft-outline-neutral-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-neutral-border-selected})) 10%, transparent);
+  --neb-ctx-light-soft-outline-tertiary-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border-selected})) 10%, transparent);
+  --neb-ctx-light-soft-outline-secondary-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border-selected})) 10%, transparent);
+  --neb-ctx-light-soft-outline-primary-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border-selected})) 10%, transparent);
+  --neb-ctx-light-soft-outline-inverse-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border-selected})) 10%, transparent);
+
   // text
   --neb-ctx-light-soft-outline-neutral-text: hsl(var(--neb-#{$color}-12));
   --neb-ctx-light-soft-outline-tertiary-text: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border}));
@@ -79,6 +99,13 @@ $soft-outline-inverse-border-active: $soft-outline-inverse-border + 2;
   --neb-ctx-light-soft-outline-secondary-text-active: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border-active}));
   --neb-ctx-light-soft-outline-primary-text-active: hsl(var(--neb-#{$color}-#{$soft-outline-primary-border-active}));
   --neb-ctx-light-soft-outline-inverse-text-active: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border-active}));
+
+  // text selected
+  --neb-ctx-light-soft-outline-neutral-text-selected: hsl(var(--neb-#{$color}-12));
+  --neb-ctx-light-soft-outline-tertiary-text-selected: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border-selected}));
+  --neb-ctx-light-soft-outline-secondary-text-selected: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border-selected}));
+  --neb-ctx-light-soft-outline-primary-text-selected: hsl(var(--neb-#{$color}-#{$soft-outline-primary-border-selected}));
+  --neb-ctx-light-soft-outline-inverse-text-selected: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border-selected}));
 
   // text disabled
   --neb-ctx-light-soft-outline-neutral-text-disabled: hsl(var(--neb-#{$color}-12) / 0.25);
