@@ -16,7 +16,7 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
     skip: true,
   },
   {
-    description: 'Default DropdownList renders with tertiary intent and muted divider between items.',
+    description: 'Default DropdownList renders with tertiary intent.',
     jsx: (
       <DropdownList>
         <DropdownList.Trigger>

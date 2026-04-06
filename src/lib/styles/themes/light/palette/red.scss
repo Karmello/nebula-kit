@@ -1,6 +1,6 @@
 @use 'styles/definitions/index' as *;
 
-$hue: 0;
+$hue: 8;
 
 @mixin set($saturation) {
   --neb-red-0: #{$hue} #{$saturation} #{$red-lightness-0};

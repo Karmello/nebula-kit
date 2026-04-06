@@ -8,7 +8,7 @@ const SPLIT_VIEW_SIDE_PROPS_META: ComponentMeta<SplitViewSideProps>['props'] = {
   brand: BOX_PROPS_META.brand,
   borderIntent: {
     ...BOX_PROPS_META.intent,
-    defaultValue: "{ base: 'muted', [switchAt]: 'neutral' }",
+    defaultValue: "{ base: 'tertiary', [switchAt]: 'neutral' }",
     description: "Sets the visual intent of the component's border.",
   },
   children: {

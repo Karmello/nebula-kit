@@ -1,56 +1,42 @@
 @use './ghost.scss' as *;
 
-$ghost-elevated-delta: 1;
-
 $ghost-neutral-elevated-text: $ghost-neutral-text;
-$ghost-muted-elevated-text: $ghost-muted-text + $ghost-elevated-delta;
-$ghost-tertiary-elevated-text: $ghost-tertiary-text + $ghost-elevated-delta;
-$ghost-secondary-elevated-text: $ghost-secondary-text + $ghost-elevated-delta;
-$ghost-primary-elevated-text: $ghost-primary-text + $ghost-elevated-delta;
-$ghost-strong-elevated-text: $ghost-strong-text + $ghost-elevated-delta;
+$ghost-tertiary-elevated-text: $ghost-tertiary-text + 1;
+$ghost-secondary-elevated-text: $ghost-secondary-text + 1;
+$ghost-primary-elevated-text: $ghost-primary-text + 1;
 $ghost-inverse-elevated-text: $ghost-inverse-text;
 
 $ghost-neutral-elevated-text-hover: $ghost-neutral-text-hover;
-$ghost-muted-elevated-text-hover: $ghost-muted-text-hover + $ghost-elevated-delta;
-$ghost-tertiary-elevated-text-hover: $ghost-tertiary-text-hover + $ghost-elevated-delta;
-$ghost-secondary-elevated-text-hover: $ghost-secondary-text-hover + $ghost-elevated-delta;
-$ghost-primary-elevated-text-hover: $ghost-primary-text-hover + $ghost-elevated-delta;
-$ghost-strong-elevated-text-hover: $ghost-strong-text-hover + $ghost-elevated-delta;
+$ghost-tertiary-elevated-text-hover: $ghost-tertiary-text-hover + 1;
+$ghost-secondary-elevated-text-hover: $ghost-secondary-text-hover + 1;
+$ghost-primary-elevated-text-hover: $ghost-primary-text-hover + 1;
 $ghost-inverse-elevated-text-hover: $ghost-inverse-text-hover;
 
 $ghost-neutral-elevated-text-active: $ghost-neutral-text-active;
-$ghost-muted-elevated-text-active: $ghost-muted-text-active + $ghost-elevated-delta;
-$ghost-tertiary-elevated-text-active: $ghost-tertiary-text-active + $ghost-elevated-delta;
-$ghost-secondary-elevated-text-active: $ghost-secondary-text-active + $ghost-elevated-delta;
-$ghost-primary-elevated-text-active: $ghost-primary-text-active + $ghost-elevated-delta;
-$ghost-strong-elevated-text-active: $ghost-strong-text-active + $ghost-elevated-delta;
+$ghost-tertiary-elevated-text-active: $ghost-tertiary-text-active + 1;
+$ghost-secondary-elevated-text-active: $ghost-secondary-text-active + 1;
+$ghost-primary-elevated-text-active: $ghost-primary-text-active + 1;
 $ghost-inverse-elevated-text-active: $ghost-inverse-text-active;
 
 @mixin set($color) {
   // elevated text
   --neb-ctx-light-ghost-neutral-elevated-text: hsl(var(--neb-#{$color}-#{$ghost-neutral-elevated-text}));
-  --neb-ctx-light-ghost-muted-elevated-text: hsl(var(--neb-#{$color}-#{$ghost-muted-elevated-text}));
   --neb-ctx-light-ghost-tertiary-elevated-text: hsl(var(--neb-#{$color}-#{$ghost-tertiary-elevated-text}));
   --neb-ctx-light-ghost-secondary-elevated-text: hsl(var(--neb-#{$color}-#{$ghost-secondary-elevated-text}));
   --neb-ctx-light-ghost-primary-elevated-text: hsl(var(--neb-#{$color}-#{$ghost-primary-elevated-text}));
-  --neb-ctx-light-ghost-strong-elevated-text: hsl(var(--neb-#{$color}-#{$ghost-strong-elevated-text}));
   --neb-ctx-light-ghost-inverse-elevated-text: hsl(var(--neb-#{$color}-#{$ghost-inverse-elevated-text}));
 
   // elevated text hover
   --neb-ctx-light-ghost-neutral-elevated-text-hover: hsl(var(--neb-#{$color}-#{$ghost-neutral-elevated-text-hover}));
-  --neb-ctx-light-ghost-muted-elevated-text-hover: hsl(var(--neb-#{$color}-#{$ghost-muted-elevated-text-hover}));
   --neb-ctx-light-ghost-tertiary-elevated-text-hover: hsl(var(--neb-#{$color}-#{$ghost-tertiary-elevated-text-hover}));
   --neb-ctx-light-ghost-secondary-elevated-text-hover: hsl(var(--neb-#{$color}-#{$ghost-secondary-elevated-text-hover}));
   --neb-ctx-light-ghost-primary-elevated-text-hover: hsl(var(--neb-#{$color}-#{$ghost-primary-elevated-text-hover}));
-  --neb-ctx-light-ghost-strong-elevated-text-hover: hsl(var(--neb-#{$color}-#{$ghost-strong-elevated-text-hover}));
   --neb-ctx-light-ghost-inverse-elevated-text-hover: hsl(var(--neb-#{$color}-#{$ghost-inverse-elevated-text-hover}));
 
   // elevated text active
   --neb-ctx-light-ghost-neutral-elevated-text-active: hsl(var(--neb-#{$color}-#{$ghost-neutral-elevated-text-active}));
-  --neb-ctx-light-ghost-muted-elevated-text-active: hsl(var(--neb-#{$color}-#{$ghost-muted-elevated-text-active}));
   --neb-ctx-light-ghost-tertiary-elevated-text-active: hsl(var(--neb-#{$color}-#{$ghost-tertiary-elevated-text-active}));
   --neb-ctx-light-ghost-secondary-elevated-text-active: hsl(var(--neb-#{$color}-#{$ghost-secondary-elevated-text-active}));
   --neb-ctx-light-ghost-primary-elevated-text-active: hsl(var(--neb-#{$color}-#{$ghost-primary-elevated-text-active}));
-  --neb-ctx-light-ghost-strong-elevated-text-active: hsl(var(--neb-#{$color}-#{$ghost-strong-elevated-text-active}));
   --neb-ctx-light-ghost-inverse-elevated-text-active: hsl(var(--neb-#{$color}-#{$ghost-inverse-elevated-text-active}));
 }

@@ -43,7 +43,7 @@ export const SplitViewSide = ({
         brand={brand}
         variant="outline"
         color={color}
-        intent={borderIntent || { base: 'muted', [String(switchAt)]: 'neutral' }}
+        intent={borderIntent || { base: 'tertiary', [String(switchAt)]: 'neutral' }}
         borderWidth="0px"
         borderRadius="0px"
         borderLeftWidth={mode === 'overlay' && sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : '0px'}

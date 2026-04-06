@@ -1,7 +1,7 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
 
-export const DEFAULT_APP_FRAME_FOOTER_INTENT: AppFrameFooterProps['intent'] = 'muted'
-export const DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT: AppFrameFooterProps['borderIntent'] = 'muted'
+export const DEFAULT_APP_FRAME_FOOTER_INTENT: AppFrameFooterProps['intent'] = 'tertiary'
+export const DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT: AppFrameFooterProps['borderIntent'] = 'tertiary'
 
 type OwnProps = {
   borderIntent?: BoxProps['intent']

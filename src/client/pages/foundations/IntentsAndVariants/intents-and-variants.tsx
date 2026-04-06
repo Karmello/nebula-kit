@@ -3,11 +3,9 @@ import { BOX_INTENTS, BoxIntent } from 'lib/components/core/base/Box/definitions
 
 const INTENTS_INFO_MAP: Record<BoxIntent, string> = {
   neutral: 'surface without meaning, default tone',
-  muted: 'calm, low-contrast tone used for understated surfaces or background accents',
   tertiary: 'subtle, lowest emphasis action',
   secondary: 'supporting action, less emphasis than primary',
   primary: 'main call-to-action or highlight',
-  strong: 'higher emphasis than primary, used for critical actions or dominant visual focus',
   inverse: 'flips contrast relative to context',
 }
 

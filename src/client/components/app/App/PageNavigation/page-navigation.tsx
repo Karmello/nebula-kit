@@ -45,7 +45,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
           }}
         >
           <Button
-            intent="muted"
+            intent="tertiary"
             selected={currentPageKey === PageKey.playground}
             bold={currentPageKey === PageKey.playground}
             iconName="shapes"
@@ -67,7 +67,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
           }}
         >
           <Button
-            intent="muted"
+            intent="tertiary"
             selected={currentPageKey === PageKey.foundations}
             bold={currentPageKey === PageKey.foundations}
             iconName="book-open-text"
@@ -87,7 +87,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
           }}
         >
           <Button
-            intent="muted"
+            intent="tertiary"
             selected={currentPageKey === PageKey.core}
             bold={currentPageKey === PageKey.core}
             iconName="package"
@@ -107,7 +107,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
           }}
         >
           <Button
-            intent="muted"
+            intent="tertiary"
             selected={currentPageKey === PageKey.pro}
             bold={currentPageKey === PageKey.pro}
             iconName="star"
@@ -127,7 +127,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
           }}
         >
           <Button
-            intent="muted"
+            intent="tertiary"
             selected={currentPageKey === PageKey.faq}
             bold={currentPageKey === PageKey.faq}
             iconName="message-circle-question-mark"
@@ -147,7 +147,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
           }}
         >
           <Button
-            intent="muted"
+            intent="tertiary"
             selected={currentPageKey === PageKey.blog}
             bold={currentPageKey === PageKey.blog}
             iconName="rss"
@@ -168,7 +168,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
             }}
           >
             <Button
-              intent="muted"
+              intent="tertiary"
               selected={currentPageKey === PageKey.pricing}
               bold={currentPageKey === PageKey.pricing}
               iconName="credit-card"
@@ -189,7 +189,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
           }}
         >
           <Button
-            intent="muted"
+            intent="tertiary"
             selected={currentPageKey === PageKey.feedback}
             bold={currentPageKey === PageKey.feedback}
             iconName="mail"

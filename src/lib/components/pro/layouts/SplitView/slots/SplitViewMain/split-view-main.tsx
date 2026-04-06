@@ -36,7 +36,7 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
                     'aria-expanded': sideOpen,
                   }}
                   iconName={getToggleIconName(sidePosition, sideOpen)}
-                  intent="muted"
+                  intent="tertiary"
                   size="sm"
                 />
               </Flex.Item>

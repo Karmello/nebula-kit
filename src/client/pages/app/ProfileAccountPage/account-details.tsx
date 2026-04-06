@@ -36,7 +36,7 @@ export default () => {
           </Table.HeaderCell>
         </Table.HeaderRow>
       </Table.Header>
-      <Table.Body intent={getUser.isMakingRequest ? 'muted' : 'tertiary'} paddingBlock="10px" paddingInline="18px">
+      <Table.Body intent={getUser.isMakingRequest ? 'tertiary' : 'secondary'} paddingBlock="10px" paddingInline="18px">
         <Table.Row>
           <Table.Cell colSpan={1}>
             <Text>Email</Text>

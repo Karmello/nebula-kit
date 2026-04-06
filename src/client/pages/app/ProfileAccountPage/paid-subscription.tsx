@@ -34,7 +34,7 @@ export default ({ enabled }: { enabled: boolean }) => {
             </Table.HeaderCell>
           </Table.HeaderRow>
         </Table.Header>
-        <Table.Body intent={getPaymentInfo.isMakingRequest ? 'muted' : 'tertiary'} paddingBlock="10px" paddingInline="15px">
+        <Table.Body intent={getPaymentInfo.isMakingRequest ? 'tertiary' : 'secondary'} paddingBlock="10px" paddingInline="15px">
           <Table.Row>
             <Table.Cell colSpan={1}>
               <Text>Renews every</Text>

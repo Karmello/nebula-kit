@@ -1,28 +1,22 @@
 @mixin paint() {
   // elevated text
   --neb-ghost-neutral-elevated-text: var(--neb-ctx-ghost-neutral-elevated-text);
-  --neb-ghost-muted-elevated-text: var(--neb-ctx-ghost-muted-elevated-text);
   --neb-ghost-tertiary-elevated-text: var(--neb-ctx-ghost-tertiary-elevated-text);
   --neb-ghost-secondary-elevated-text: var(--neb-ctx-ghost-secondary-elevated-text);
   --neb-ghost-primary-elevated-text: var(--neb-ctx-ghost-primary-elevated-text);
-  --neb-ghost-strong-elevated-text: var(--neb-ctx-ghost-strong-elevated-text);
   --neb-ghost-inverse-elevated-text: var(--neb-ctx-ghost-inverse-elevated-text);
 
   // elevated text hover
   --neb-ghost-neutral-elevated-text-hover: var(--neb-ctx-ghost-neutral-elevated-text-hover);
-  --neb-ghost-muted-elevated-text-hover: var(--neb-ctx-ghost-muted-elevated-text-hover);
   --neb-ghost-tertiary-elevated-text-hover: var(--neb-ctx-ghost-tertiary-elevated-text-hover);
   --neb-ghost-secondary-elevated-text-hover: var(--neb-ctx-ghost-secondary-elevated-text-hover);
   --neb-ghost-primary-elevated-text-hover: var(--neb-ctx-ghost-primary-elevated-text-hover);
-  --neb-ghost-strong-elevated-text-hover: var(--neb-ctx-ghost-strong-elevated-text-hover);
   --neb-ghost-inverse-elevated-text-hover: var(--neb-ctx-ghost-inverse-elevated-text-hover);
 
   // elevated text active
   --neb-ghost-neutral-elevated-text-active: var(--neb-ctx-ghost-neutral-elevated-text-active);
-  --neb-ghost-muted-elevated-text-active: var(--neb-ctx-ghost-muted-elevated-text-active);
   --neb-ghost-tertiary-elevated-text-active: var(--neb-ctx-ghost-tertiary-elevated-text-active);
   --neb-ghost-secondary-elevated-text-active: var(--neb-ctx-ghost-secondary-elevated-text-active);
   --neb-ghost-primary-elevated-text-active: var(--neb-ctx-ghost-primary-elevated-text-active);
-  --neb-ghost-strong-elevated-text-active: var(--neb-ctx-ghost-strong-elevated-text-active);
   --neb-ghost-inverse-elevated-text-active: var(--neb-ctx-ghost-inverse-elevated-text-active);
 }

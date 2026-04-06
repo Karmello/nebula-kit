@@ -29,7 +29,7 @@ export default () => {
               <Box
                 drawable
                 variant="outline"
-                intent="muted"
+                intent="tertiary"
                 tagAttrs={{ style: { backgroundColor: `hsl(var(--neb-${brand}-${n}))` } }}
                 blockSize="50px"
               />
