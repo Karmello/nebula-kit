@@ -4,7 +4,7 @@ import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box/definitions'
 
-import { AppFrameFooterProps, DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT, DEFAULT_APP_FRAME_FOOTER_INTENT } from './definitions'
+import { AppFrameFooterProps, DEFAULT_APP_FRAME_FOOTER_INTENT } from './definitions'
 
 export const AppFrameFooter = ({
   // HtmlTag
@@ -14,8 +14,6 @@ export const AppFrameFooter = ({
   // Box
   color,
   intent = DEFAULT_APP_FRAME_FOOTER_INTENT,
-  // own
-  borderIntent = DEFAULT_APP_FRAME_FOOTER_BORDER_INTENT,
   // Box
   ...paddings
 }: AppFrameFooterProps) => {
@@ -30,7 +28,7 @@ export const AppFrameFooter = ({
       drawable
       variant="outline"
       color={color}
-      intent={borderIntent}
+      intent={intent}
       borderWidth="0px"
       borderRadius="0px"
       borderTopWidth={BOX_BORDER_WIDTH}

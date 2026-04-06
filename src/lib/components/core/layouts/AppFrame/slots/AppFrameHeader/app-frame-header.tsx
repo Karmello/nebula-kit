@@ -6,8 +6,7 @@ import { Box } from 'lib/components'
 import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box/definitions'
 
 import { useAppFrameContext } from '../../AppFrameProvider'
-
-import { AppFrameHeaderProps, DEFAULT_APP_FRAME_HEADER_BORDER_INTENT, DEFAULT_APP_FRAME_HEADER_INTENT } from './definitions'
+import { AppFrameHeaderProps, DEFAULT_APP_FRAME_HEADER_INTENT } from './definitions'
 
 import './app-frame-header.scss'
 
@@ -19,8 +18,6 @@ export const AppFrameHeader = ({
   // Box
   color,
   intent = DEFAULT_APP_FRAME_HEADER_INTENT,
-  // own
-  borderIntent = DEFAULT_APP_FRAME_HEADER_BORDER_INTENT,
   // Box
   ...paddings
 }: AppFrameHeaderProps) => {
@@ -38,7 +35,7 @@ export const AppFrameHeader = ({
       drawable
       variant="outline"
       color={color}
-      intent={borderIntent}
+      intent={intent}
       borderWidth="0px"
       borderRadius="0px"
       borderBottomWidth={BOX_BORDER_WIDTH}

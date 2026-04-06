@@ -5,7 +5,7 @@ import { Resize, Box, Flex, Button, FocusTrap } from 'lib/components'
 import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box/definitions'
 import { withPrefix } from 'lib/helpers'
 
-import { SplitViewSideProps, DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from './definitions'
+import { SplitViewSideProps, DEFAULT_SPLIT_VIEW_SIDE_WIDTH, DEFAULT_SPLIT_VIEW_SIDE_INTENT } from './definitions'
 import { useSplitViewContext } from '../../SplitViewProvider'
 
 export const SplitViewSide = ({
@@ -17,10 +17,8 @@ export const SplitViewSide = ({
   theme,
   brand,
   color,
-  intent,
+  intent = DEFAULT_SPLIT_VIEW_SIDE_INTENT,
   inlineSize = DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
-  // own
-  borderIntent,
 }: SplitViewSideProps) => {
   const { sideOpen, setSideOpen, sidePosition, switchAt, mode } = useSplitViewContext()
 
@@ -43,7 +41,8 @@ export const SplitViewSide = ({
         brand={brand}
         variant="outline"
         color={color}
-        intent={borderIntent || { base: 'tertiary', [String(switchAt)]: 'neutral' }}
+        intent={intent}
+        elevated
         borderWidth="0px"
         borderRadius="0px"
         borderLeftWidth={mode === 'overlay' && sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
