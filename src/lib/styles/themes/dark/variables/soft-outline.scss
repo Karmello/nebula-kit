@@ -1,57 +1,123 @@
+$soft-outline-neutral-border: 1;
+$soft-outline-tertiary-border: 1;
+$soft-outline-secondary-border: 3;
+$soft-outline-primary-border: 6;
+$soft-outline-inverse-border: 9;
+
+$soft-outline-neutral-border-hover: $soft-outline-neutral-border + 1;
+$soft-outline-tertiary-border-hover: $soft-outline-tertiary-border + 1;
+$soft-outline-secondary-border-hover: $soft-outline-secondary-border + 1;
+$soft-outline-primary-border-hover: $soft-outline-primary-border + 1;
+$soft-outline-inverse-border-hover: $soft-outline-inverse-border + 1;
+
+$soft-outline-neutral-border-active: $soft-outline-neutral-border + 2;
+$soft-outline-tertiary-border-active: $soft-outline-tertiary-border + 2;
+$soft-outline-secondary-border-active: $soft-outline-secondary-border + 2;
+$soft-outline-primary-border-active: $soft-outline-primary-border + 2;
+$soft-outline-inverse-border-active: $soft-outline-inverse-border + 2;
+
+$soft-outline-neutral-border-selected: $soft-outline-neutral-border + 1;
+$soft-outline-tertiary-border-selected: $soft-outline-tertiary-border + 1;
+$soft-outline-secondary-border-selected: $soft-outline-secondary-border + 1;
+$soft-outline-primary-border-selected: $soft-outline-primary-border + 1;
+$soft-outline-inverse-border-selected: $soft-outline-inverse-border + 1;
+
 @mixin set($color) {
   // border
-  --neb-ctx-dark-soft-outline-neutral-border: hsl(var(--neb-#{$color}-1));
-  --neb-ctx-dark-soft-outline-tertiary-border: hsl(var(--neb-#{$color}-3));
-  --neb-ctx-dark-soft-outline-secondary-border: hsl(var(--neb-#{$color}-7));
-  --neb-ctx-dark-soft-outline-primary-border: hsl(var(--neb-#{$color}-11));
-  --neb-ctx-dark-soft-outline-inverse-border: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-dark-soft-outline-neutral-border: hsl(var(--neb-#{$color}-#{$soft-outline-neutral-border}));
+  --neb-ctx-dark-soft-outline-tertiary-border: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border}));
+  --neb-ctx-dark-soft-outline-secondary-border: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border}));
+  --neb-ctx-dark-soft-outline-primary-border: hsl(var(--neb-#{$color}-#{$soft-outline-primary-border}));
+  --neb-ctx-dark-soft-outline-inverse-border: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border}));
 
   // border hover
-  --neb-ctx-dark-soft-outline-neutral-border-hover: hsl(var(--neb-#{$color}-1));
-  --neb-ctx-dark-soft-outline-tertiary-border-hover: hsl(var(--neb-#{$color}-2));
-  --neb-ctx-dark-soft-outline-secondary-border-hover: hsl(var(--neb-#{$color}-4));
-  --neb-ctx-dark-soft-outline-primary-border-hover: hsl(var(--neb-#{$color}-6));
-  --neb-ctx-dark-soft-outline-inverse-border-hover: hsl(var(--neb-#{$color}-8));
+  --neb-ctx-dark-soft-outline-neutral-border-hover: hsl(var(--neb-#{$color}-#{$soft-outline-neutral-border-hover}));
+  --neb-ctx-dark-soft-outline-tertiary-border-hover: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border-hover}));
+  --neb-ctx-dark-soft-outline-secondary-border-hover: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border-hover}));
+  --neb-ctx-dark-soft-outline-primary-border-hover: hsl(var(--neb-#{$color}-#{$soft-outline-primary-border-hover}));
+  --neb-ctx-dark-soft-outline-inverse-border-hover: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border-hover}));
 
   // border active
-  --neb-ctx-dark-soft-outline-neutral-border-active: hsl(var(--neb-#{$color}-2));
-  --neb-ctx-dark-soft-outline-tertiary-border-active: hsl(var(--neb-#{$color}-3));
-  --neb-ctx-dark-soft-outline-secondary-border-active: hsl(var(--neb-#{$color}-7));
-  --neb-ctx-dark-soft-outline-primary-border-active: hsl(var(--neb-#{$color}-11));
-  --neb-ctx-dark-soft-outline-inverse-border-active: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-dark-soft-outline-neutral-border-active: hsl(var(--neb-#{$color}-#{$soft-outline-neutral-border-active}));
+  --neb-ctx-dark-soft-outline-tertiary-border-active: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border-active}));
+  --neb-ctx-dark-soft-outline-secondary-border-active: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border-active}));
+  --neb-ctx-dark-soft-outline-primary-border-active: hsl(var(--neb-#{$color}-#{$soft-outline-primary-border-active}));
+  --neb-ctx-dark-soft-outline-inverse-border-active: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border-active}));
+
+  // border selected
+  --neb-ctx-dark-soft-outline-neutral-border-selected: hsl(var(--neb-#{$color}-#{$soft-outline-neutral-border-selected}));
+  --neb-ctx-dark-soft-outline-tertiary-border-selected: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border-selected}));
+  --neb-ctx-dark-soft-outline-secondary-border-selected: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border-selected}));
+  --neb-ctx-dark-soft-outline-primary-border-selected: hsl(var(--neb-#{$color}-#{$soft-outline-primary-border-selected}));
+  --neb-ctx-dark-soft-outline-inverse-border-selected: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border-selected}));
 
   // border disabled
-  --neb-ctx-dark-soft-outline-neutral-border-disabled: hsl(var(--neb-#{$color}-1) / 0.5);
-  --neb-ctx-dark-soft-outline-tertiary-border-disabled: hsl(var(--neb-#{$color}-3) / 0.5);
-  --neb-ctx-dark-soft-outline-secondary-border-disabled: hsl(var(--neb-#{$color}-7) / 0.5);
-  --neb-ctx-dark-soft-outline-primary-border-disabled: hsl(var(--neb-#{$color}-11) / 0.5);
-  --neb-ctx-dark-soft-outline-inverse-border-disabled: hsl(var(--neb-#{$color}-20) / 0.5);
-
-  // text
-  --neb-ctx-dark-soft-outline-neutral-text: hsl(var(--neb-#{$color}-20));
-  --neb-ctx-dark-soft-outline-tertiary-text: hsl(var(--neb-#{$color}-3));
-  --neb-ctx-dark-soft-outline-secondary-text: hsl(var(--neb-#{$color}-7));
-  --neb-ctx-dark-soft-outline-primary-text: hsl(var(--neb-#{$color}-11));
-  --neb-ctx-dark-soft-outline-inverse-text: hsl(var(--neb-#{$color}-20));
-
-  // text disabled
-  --neb-ctx-dark-soft-outline-neutral-text-disabled: hsl(var(--neb-#{$color}-20) / 0.25);
-  --neb-ctx-dark-soft-outline-tertiary-text-disabled: hsl(var(--neb-#{$color}-3) / 0.25);
-  --neb-ctx-dark-soft-outline-secondary-text-disabled: hsl(var(--neb-#{$color}-7) / 0.25);
-  --neb-ctx-dark-soft-outline-primary-text-disabled: hsl(var(--neb-#{$color}-11) / 0.25);
-  --neb-ctx-dark-soft-outline-inverse-text-disabled: hsl(var(--neb-#{$color}-20) / 0.25);
+  --neb-ctx-dark-soft-outline-neutral-border-disabled: hsl(var(--neb-#{$color}-#{$soft-outline-neutral-border}) / 0.5);
+  --neb-ctx-dark-soft-outline-tertiary-border-disabled: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border}) / 0.5);
+  --neb-ctx-dark-soft-outline-secondary-border-disabled: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border}) / 0.5);
+  --neb-ctx-dark-soft-outline-primary-border-disabled: hsl(var(--neb-#{$color}-#{$soft-outline-primary-border}) / 0.5);
+  --neb-ctx-dark-soft-outline-inverse-border-disabled: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border}) / 0.5);
 
   // bg hover
-  --neb-ctx-dark-soft-outline-neutral-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 3%, transparent);
-  --neb-ctx-dark-soft-outline-tertiary-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 5%, transparent);
-  --neb-ctx-dark-soft-outline-secondary-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 8%, transparent);
-  --neb-ctx-dark-soft-outline-primary-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 9%, transparent);
-  --neb-ctx-dark-soft-outline-inverse-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-11)) 11%, transparent);
+  --neb-ctx-dark-soft-outline-neutral-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-neutral-border-hover})) 10%, transparent);
+  --neb-ctx-dark-soft-outline-tertiary-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border-hover})) 10%, transparent);
+  --neb-ctx-dark-soft-outline-secondary-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border-hover})) 10%, transparent);
+  --neb-ctx-dark-soft-outline-primary-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border-hover})) 10%, transparent);
+  --neb-ctx-dark-soft-outline-inverse-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border-hover})) 10%, transparent);
+
+  // bg active
+  --neb-ctx-dark-soft-outline-neutral-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-neutral-border-active})) 20%, transparent);
+  --neb-ctx-dark-soft-outline-tertiary-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border-active})) 20%, transparent);
+  --neb-ctx-dark-soft-outline-secondary-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border-active})) 20%, transparent);
+  --neb-ctx-dark-soft-outline-primary-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border-active})) 20%, transparent);
+  --neb-ctx-dark-soft-outline-inverse-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border-active})) 20%, transparent);
+
+  // bg selected
+  --neb-ctx-dark-soft-outline-neutral-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-neutral-border-selected})) 10%, transparent);
+  --neb-ctx-dark-soft-outline-tertiary-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border-selected})) 10%, transparent);
+  --neb-ctx-dark-soft-outline-secondary-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border-selected})) 10%, transparent);
+  --neb-ctx-dark-soft-outline-primary-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border-selected})) 10%, transparent);
+  --neb-ctx-dark-soft-outline-inverse-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border-selected})) 10%, transparent);
+
+  // text
+  --neb-ctx-dark-soft-outline-neutral-text: hsl(var(--neb-#{$color}-12));
+  --neb-ctx-dark-soft-outline-tertiary-text: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border}));
+  --neb-ctx-dark-soft-outline-secondary-text: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border}));
+  --neb-ctx-dark-soft-outline-primary-text: hsl(var(--neb-#{$color}-#{$soft-outline-primary-border}));
+  --neb-ctx-dark-soft-outline-inverse-text: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border}));
+
+  // text hover
+  --neb-ctx-dark-soft-outline-neutral-text-hover: hsl(var(--neb-#{$color}-12));
+  --neb-ctx-dark-soft-outline-tertiary-text-hover: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border-hover}));
+  --neb-ctx-dark-soft-outline-secondary-text-hover: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border-hover}));
+  --neb-ctx-dark-soft-outline-primary-text-hover: hsl(var(--neb-#{$color}-#{$soft-outline-primary-border-hover}));
+  --neb-ctx-dark-soft-outline-inverse-text-hover: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border-hover}));
+
+  // text active
+  --neb-ctx-dark-soft-outline-neutral-text-active: hsl(var(--neb-#{$color}-12));
+  --neb-ctx-dark-soft-outline-tertiary-text-active: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border-active}));
+  --neb-ctx-dark-soft-outline-secondary-text-active: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border-active}));
+  --neb-ctx-dark-soft-outline-primary-text-active: hsl(var(--neb-#{$color}-#{$soft-outline-primary-border-active}));
+  --neb-ctx-dark-soft-outline-inverse-text-active: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border-active}));
+
+  // text selected
+  --neb-ctx-dark-soft-outline-neutral-text-selected: hsl(var(--neb-#{$color}-12));
+  --neb-ctx-dark-soft-outline-tertiary-text-selected: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border-selected}));
+  --neb-ctx-dark-soft-outline-secondary-text-selected: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border-selected}));
+  --neb-ctx-dark-soft-outline-primary-text-selected: hsl(var(--neb-#{$color}-#{$soft-outline-primary-border-selected}));
+  --neb-ctx-dark-soft-outline-inverse-text-selected: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border-selected}));
+
+  // text disabled
+  --neb-ctx-dark-soft-outline-neutral-text-disabled: hsl(var(--neb-#{$color}-12) / 0.25);
+  --neb-ctx-dark-soft-outline-tertiary-text-disabled: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-border}) / 0.25);
+  --neb-ctx-dark-soft-outline-secondary-text-disabled: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-border}) / 0.25);
+  --neb-ctx-dark-soft-outline-primary-text-disabled: hsl(var(--neb-#{$color}-#{$soft-outline-primary-border}) / 0.25);
+  --neb-ctx-dark-soft-outline-inverse-text-disabled: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-border}) / 0.25);
 
   // loader
-  --neb-ctx-dark-soft-outline-neutral-loader: hsl(var(--neb-#{$color}-20));
-  --neb-ctx-dark-soft-outline-tertiary-loader: hsl(var(--neb-#{$color}-20));
-  --neb-ctx-dark-soft-outline-secondary-loader: hsl(var(--neb-#{$color}-20));
-  --neb-ctx-dark-soft-outline-primary-loader: hsl(var(--neb-#{$color}-20));
-  --neb-ctx-dark-soft-outline-inverse-loader: hsl(var(--neb-#{$color}-20));
+  --neb-ctx-dark-soft-outline-neutral-loader: hsl(var(--neb-#{$color}-6));
+  --neb-ctx-dark-soft-outline-tertiary-loader: hsl(var(--neb-#{$color}-6));
+  --neb-ctx-dark-soft-outline-secondary-loader: hsl(var(--neb-#{$color}-6));
+  --neb-ctx-dark-soft-outline-primary-loader: hsl(var(--neb-#{$color}-6));
+  --neb-ctx-dark-soft-outline-inverse-loader: hsl(var(--neb-#{$color}-6));
 }
