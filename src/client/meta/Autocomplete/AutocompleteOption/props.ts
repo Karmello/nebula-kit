@@ -18,6 +18,7 @@ const AUTOCOMPLETE_OPTION_PROPS_META: ComponentMeta<AutocompleteOptionProps>['pr
     description:
       'Text label used to display the option and to match against user input when filtering. This value is shown in the input when the option is selected.',
   },
+  selected: DROPDOWN_LIST_ITEM_PROPS_META?.selected,
   tagAttrs: DROPDOWN_LIST_ITEM_PROPS_META.tagAttrs,
   tagRef: DROPDOWN_LIST_ITEM_PROPS_META.tagRef,
   value: {

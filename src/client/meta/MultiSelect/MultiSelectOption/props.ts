@@ -12,6 +12,7 @@ const MULTI_SELECT_OPTION_PROPS_META: ComponentMeta<MultiSelectOptionProps>['pro
     ...DROPDOWN_LIST_ITEM_PROPS_META.justifyContent,
     defaultValue: String(DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT),
   },
+  selected: DROPDOWN_LIST_ITEM_PROPS_META?.selected,
   tagAttrs: DROPDOWN_LIST_ITEM_PROPS_META.tagAttrs,
   tagRef: DROPDOWN_LIST_ITEM_PROPS_META.tagRef,
   value: {
