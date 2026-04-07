@@ -50,7 +50,9 @@ export default () => {
       <Spacer />
       <Flex flexWrap="wrap" columnGap="15px" rowGap="10px">
         <Flex.Item>
-          <Text bold>Variant</Text>
+          <Text bold intent="primary">
+            Variant
+          </Text>
           <Select
             value={variant}
             onChange={value => setVariant(value as BoxVariant)}
@@ -64,19 +66,27 @@ export default () => {
           </Select>
         </Flex.Item>
         <Flex.Item>
-          <Text bold>Elevated</Text>
+          <Text bold intent="primary">
+            Elevated
+          </Text>
           <Switch checked={elevated} onChange={setElevated} />
         </Flex.Item>
         <Flex.Item>
-          <Text bold>Selected</Text>
+          <Text bold intent="primary">
+            Selected
+          </Text>
           <Switch checked={selected} onChange={setSelected} />
         </Flex.Item>
         <Flex.Item>
-          <Text bold>Disabled</Text>
+          <Text bold intent="primary">
+            Disabled
+          </Text>
           <Switch checked={disabled} onChange={setDisabled} />
         </Flex.Item>
         <Flex.Item>
-          <Text bold>Loading</Text>
+          <Text bold intent="primary">
+            Loading
+          </Text>
           <Switch checked={loading} onChange={setLoading} />
         </Flex.Item>
       </Flex>

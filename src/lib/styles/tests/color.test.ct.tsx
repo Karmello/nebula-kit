@@ -13,8 +13,8 @@ test('Box color prop overrides ctx primary solid color', async ({ mount, page })
     const cs = getComputedStyle(el)
     return {
       bg: cs.backgroundColor,
-      palette: getComputedStyle(document.documentElement).getPropertyValue('--neb-red-5').trim(),
-      ctx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-color-5').trim(),
+      palette: getComputedStyle(document.documentElement).getPropertyValue('--neb-red-6').trim(),
+      ctx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-light-solid-primary-bg').trim(),
     }
   })
 
@@ -28,7 +28,7 @@ test('Box color prop overrides ctx primary solid color', async ({ mount, page })
   // must NOT equal ctx primary color
   const ctxResolved = await page.evaluate(() => {
     const el = document.createElement('div')
-    el.style.backgroundColor = 'var(--neb-ctx-color-5)'
+    el.style.backgroundColor = 'var(--neb-ctx-light-solid-primary-bg)'
     document.body.appendChild(el)
     const value = getComputedStyle(el).backgroundColor
     document.body.removeChild(el)

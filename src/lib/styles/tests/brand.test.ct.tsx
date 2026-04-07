@@ -24,9 +24,9 @@ test('Local brand overrides global brand', async ({ mount, page }) => {
       parentBg: getComputedStyle(parent).backgroundColor,
       childBg: getComputedStyle(child).backgroundColor,
 
-      parentCtx: getComputedStyle(parent).getPropertyValue('--neb-ctx-color-5').trim(),
+      parentCtx: getComputedStyle(parent).getPropertyValue('--neb-solid-primary-bg').trim(),
 
-      childCtx: getComputedStyle(child).getPropertyValue('--neb-ctx-color-5').trim(),
+      childCtx: getComputedStyle(child).getPropertyValue('--neb-solid-primary-bg').trim(),
     }
   })
 
@@ -65,8 +65,8 @@ test('Child Box inherits brand when no local brand is set', async ({ mount, page
       parentBg: parentCs.backgroundColor,
       childBg: childCs.backgroundColor,
 
-      parentSemantic: parentCs.getPropertyValue('--neb-solid-primary-base').trim(),
-      childSemantic: childCs.getPropertyValue('--neb-solid-primary-base').trim(),
+      parentSemantic: parentCs.getPropertyValue('--neb-solid-primary-bg').trim(),
+      childSemantic: childCs.getPropertyValue('--neb-solid-primary-bg').trim(),
     }
   })
 
@@ -107,8 +107,8 @@ test('Brand survives theme islands (light → dark → light)', async ({ mount, 
       darkBg: darkCs.backgroundColor,
       lightBg: lightCs.backgroundColor,
 
-      darkSemantic: darkCs.getPropertyValue('--neb-solid-primary-base').trim(),
-      lightSemantic: lightCs.getPropertyValue('--neb-solid-primary-base').trim(),
+      darkSemantic: darkCs.getPropertyValue('--neb-solid-primary-bg').trim(),
+      lightSemantic: lightCs.getPropertyValue('--neb-solid-primary-bg').trim(),
     }
   })
 

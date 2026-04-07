@@ -22,7 +22,7 @@ test('Box paints ctx primary solid color by default', async ({ mount, page }) =>
   // resolve ctx primary via browser
   const ctxResolved = await page.evaluate(() => {
     const el = document.createElement('div')
-    el.style.backgroundColor = 'var(--neb-ctx-color-5)'
+    el.style.backgroundColor = 'var(--neb-ctx-light-solid-primary-bg)'
     document.body.appendChild(el)
     const value = getComputedStyle(el).backgroundColor
     document.body.removeChild(el)
@@ -53,7 +53,7 @@ test('Nested Box inherits ctx primary solid color', async ({ mount, page }) => {
   // resolve ctx primary via browser
   const ctxResolved = await page.evaluate(() => {
     const el = document.createElement('div')
-    el.style.backgroundColor = 'var(--neb-ctx-color-5)'
+    el.style.backgroundColor = 'var(--neb-ctx-light-solid-primary-bg)'
     document.body.appendChild(el)
     const value = getComputedStyle(el).backgroundColor
     document.body.removeChild(el)
@@ -83,7 +83,7 @@ test('Box with dark theme uses dark ctx colors inside light app', async ({ mount
   const darkResolved = await page.evaluate(() => {
     const el = document.createElement('div')
     el.setAttribute('data-theme', 'dark')
-    el.style.backgroundColor = 'var(--neb-ctx-color-5)'
+    el.style.backgroundColor = 'var(--neb-ctx-light-solid-primary-bg)'
     document.body.appendChild(el)
     const value = getComputedStyle(el).backgroundColor
     document.body.removeChild(el)
@@ -109,7 +109,7 @@ test('Nested theme islands reset correctly (light → dark → light)', async ({
     return {
       darkBg: getComputedStyle(dark).backgroundColor,
       lightBg: getComputedStyle(light).backgroundColor,
-      lightCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-color-9').trim(),
+      lightCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-light-solid-inverse-bg').trim(),
     }
   })
 
@@ -142,7 +142,7 @@ test('Nested theme islands reset correctly (light → dark → light → dark)',
       light1Bg: getComputedStyle(light1).backgroundColor,
       dark2Bg: getComputedStyle(dark2).backgroundColor,
 
-      lightCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-color-9').trim(),
+      lightCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-light-solid-inverse-bg').trim(),
     }
   })
 
@@ -183,7 +183,7 @@ test('Global dark theme paints primary solid correctly', async ({ mount, page })
   const darkResolved = await page.evaluate(() => {
     const el = document.createElement('div')
     el.setAttribute('data-theme', 'dark')
-    el.style.backgroundColor = 'var(--neb-ctx-color-5)'
+    el.style.backgroundColor = 'var(--neb-ctx-light-solid-primary-bg)'
     document.body.appendChild(el)
     const value = getComputedStyle(el).backgroundColor
     document.body.removeChild(el)
