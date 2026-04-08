@@ -1,32 +1,32 @@
 @use './solid.scss' as *;
 
-$solid-neutral-elevated-bg: $solid-neutral-bg + 1;
-$solid-muted-elevated-bg: $solid-muted-bg + 1;
-$solid-tertiary-elevated-bg: $solid-tertiary-bg + 1;
-$solid-secondary-elevated-bg: $solid-secondary-bg + 1;
-$solid-primary-elevated-bg: $solid-primary-bg + 1;
-$solid-inverse-elevated-bg: $solid-inverse-bg + 1;
+$solid-neutral-elevated-bg: $solid-neutral-bg + 2;
+$solid-muted-elevated-bg: $solid-muted-bg + 2;
+$solid-tertiary-elevated-bg: $solid-tertiary-bg + 2;
+$solid-secondary-elevated-bg: $solid-secondary-bg + 2;
+$solid-primary-elevated-bg: $solid-primary-bg + 2;
+$solid-inverse-elevated-bg: $solid-inverse-bg - 3;
 
-$solid-neutral-elevated-bg-hover: $solid-neutral-bg-hover + 1;
-$solid-muted-elevated-bg-hover: $solid-muted-bg-hover + 1;
-$solid-tertiary-elevated-bg-hover: $solid-tertiary-bg-hover + 1;
-$solid-secondary-elevated-bg-hover: $solid-secondary-bg-hover + 1;
-$solid-primary-elevated-bg-hover: $solid-primary-bg-hover + 1;
-$solid-inverse-elevated-bg-hover: $solid-inverse-bg-hover + 1;
+$solid-neutral-elevated-bg-hover: $solid-neutral-bg-hover + 2;
+$solid-muted-elevated-bg-hover: $solid-muted-bg-hover + 2;
+$solid-tertiary-elevated-bg-hover: $solid-tertiary-bg-hover + 2;
+$solid-secondary-elevated-bg-hover: $solid-secondary-bg-hover + 2;
+$solid-primary-elevated-bg-hover: $solid-primary-bg-hover + 2;
+$solid-inverse-elevated-bg-hover: $solid-inverse-bg-hover - 1;
 
-$solid-neutral-elevated-bg-active: $solid-neutral-bg-active + 1;
-$solid-muted-elevated-bg-active: $solid-muted-bg-active + 1;
-$solid-tertiary-elevated-bg-active: $solid-tertiary-bg-active + 1;
-$solid-secondary-elevated-bg-active: $solid-secondary-bg-active + 1;
-$solid-primary-elevated-bg-active: $solid-primary-bg-active + 1;
-$solid-inverse-elevated-bg-active: $solid-inverse-bg-active + 1;
+$solid-neutral-elevated-bg-active: $solid-neutral-bg-active + 2;
+$solid-muted-elevated-bg-active: $solid-muted-bg-active + 2;
+$solid-tertiary-elevated-bg-active: $solid-tertiary-bg-active + 2;
+$solid-secondary-elevated-bg-active: $solid-secondary-bg-active + 2;
+$solid-primary-elevated-bg-active: $solid-primary-bg-active + 2;
+$solid-inverse-elevated-bg-active: $solid-inverse-bg-active - 1;
 
-$solid-neutral-elevated-bg-selected: $solid-neutral-bg-selected + 1;
-$solid-muted-elevated-bg-selected: $solid-muted-bg-selected + 1;
-$solid-tertiary-elevated-bg-selected: $solid-tertiary-bg-selected + 1;
-$solid-secondary-elevated-bg-selected: $solid-secondary-bg-selected + 1;
-$solid-primary-elevated-bg-selected: $solid-primary-bg-selected + 1;
-$solid-inverse-elevated-bg-selected: $solid-inverse-bg-selected + 1;
+$solid-neutral-elevated-bg-selected: $solid-neutral-bg-selected + 2;
+$solid-muted-elevated-bg-selected: $solid-muted-bg-selected + 2;
+$solid-tertiary-elevated-bg-selected: $solid-tertiary-bg-selected + 2;
+$solid-secondary-elevated-bg-selected: $solid-secondary-bg-selected + 2;
+$solid-primary-elevated-bg-selected: $solid-primary-bg-selected + 2;
+$solid-inverse-elevated-bg-selected: $solid-inverse-bg-selected - 1;
 
 @mixin set($color) {
   // elevated bg

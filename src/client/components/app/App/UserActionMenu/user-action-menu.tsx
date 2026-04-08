@@ -32,7 +32,7 @@ export const UserActionMenu = () => {
             },
           }}
           iconName={showAppJump ? 'search-x' : 'search'}
-          intent="tertiary"
+          intent="muted"
         />
         <Button
           tagAttrs={{
@@ -41,10 +41,10 @@ export const UserActionMenu = () => {
             },
           }}
           iconName="settings"
-          intent="tertiary"
+          intent="muted"
         />
         <Select
-          intent="tertiary"
+          intent="muted"
           dropdownPlacement="bottom-end"
           staticLabel="Profile"
           value={currentPageKey}
