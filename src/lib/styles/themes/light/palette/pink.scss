@@ -1,19 +1,32 @@
 @use 'styles/definitions/index' as *;
 
-$pink: 330;
+$hue: 330;
 
 @mixin set($saturation) {
-  --neb-pink-0: #{$pink} #{$saturation} #{$pink-lightness-0};
-  --neb-pink-1: #{$pink} #{$saturation} #{$pink-lightness-1};
-  --neb-pink-2: #{$pink} #{$saturation} #{$pink-lightness-2};
-  --neb-pink-3: #{$pink} #{$saturation} #{$pink-lightness-3};
-  --neb-pink-4: #{$pink} #{$saturation} #{$pink-lightness-4};
-  --neb-pink-5: #{$pink} #{$saturation} #{$pink-lightness-5};
-  --neb-pink-6: #{$pink} #{$saturation} #{$pink-lightness-6};
-  --neb-pink-7: #{$pink} #{$saturation} #{$pink-lightness-7};
-  --neb-pink-8: #{$pink} #{$saturation} #{$pink-lightness-8};
-  --neb-pink-9: #{$pink} #{$saturation} #{$pink-lightness-9};
-  --neb-pink-10: #{$pink} #{$saturation} #{$pink-lightness-10};
-  --neb-pink-11: #{$pink} #{$saturation} #{$pink-lightness-11};
-  --neb-pink-12: #{$pink} #{$saturation} #{$pink-lightness-12};
+  --neb-pink-0: #{$hue} #{$saturation} #{$pink-lightness-0};
+  --neb-pink-1: #{$hue} #{$saturation} #{$pink-lightness-1};
+  --neb-pink-2: #{$hue} #{$saturation} #{$pink-lightness-2};
+  --neb-pink-3: #{$hue} #{$saturation} #{$pink-lightness-3};
+  --neb-pink-4: #{$hue} #{$saturation} #{$pink-lightness-4};
+  --neb-pink-5: #{$hue} #{$saturation} #{$pink-lightness-5};
+  --neb-pink-6: #{$hue} #{$saturation} #{$pink-lightness-6};
+  --neb-pink-7: #{$hue} #{$saturation} #{$pink-lightness-7};
+  --neb-pink-8: #{$hue} #{$saturation} #{$pink-lightness-8};
+  --neb-pink-9: #{$hue} #{$saturation} #{$pink-lightness-9};
+  --neb-pink-10: #{$hue} #{$saturation} #{$pink-lightness-10};
+  --neb-pink-11: #{$hue} #{$saturation} #{$pink-lightness-11};
+  --neb-pink-12: #{$hue} #{$saturation} #{$pink-lightness-12};
+  --neb-pink-13: #{$hue} #{$saturation} #{$pink-lightness-13};
+  --neb-pink-14: #{$hue} #{$saturation} #{$pink-lightness-14};
+  --neb-pink-15: #{$hue} #{$saturation} #{$pink-lightness-15};
+  --neb-pink-16: #{$hue} #{$saturation} #{$pink-lightness-16};
+  --neb-pink-17: #{$hue} #{$saturation} #{$pink-lightness-17};
+  --neb-pink-18: #{$hue} #{$saturation} #{$pink-lightness-18};
+  --neb-pink-19: #{$hue} #{$saturation} #{$pink-lightness-19};
+  --neb-pink-20: #{$hue} #{$saturation} #{$pink-lightness-20};
+  --neb-pink-21: #{$hue} #{$saturation} #{$pink-lightness-21};
+  --neb-pink-22: #{$hue} #{$saturation} #{$pink-lightness-22};
+  --neb-pink-23: #{$hue} #{$saturation} #{$pink-lightness-23};
+  --neb-pink-24: #{$hue} #{$saturation} #{$pink-lightness-24};
+  --neb-pink-25: #{$hue} #{$saturation} #{$pink-lightness-25};
 }

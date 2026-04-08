@@ -15,7 +15,7 @@ import {
 import { HtmlTagProps } from 'lib/components'
 
 export const BOX_VARIANTS = ['solid', 'outline', 'soft-outline', 'ghost'] as const
-export const BOX_INTENTS = ['neutral', 'tertiary', 'secondary', 'primary', 'inverse'] as const
+export const BOX_INTENTS = ['neutral', 'muted', 'tertiary', 'secondary', 'primary', 'inverse'] as const
 export const BOX_BORDER_WIDTH = '2px'
 
 export type BoxVariant = (typeof BOX_VARIANTS)[number]

@@ -10,8 +10,8 @@
 
 @mixin set-variables-light($color) {
   --neb-background: hsl(var(--neb-#{$color}-0));
-  --neb-text: hsl(var(--neb-#{$color}-12));
-  --neb-focus-border: hsl(var(--neb-#{$color}-12));
+  --neb-text: hsl(var(--neb-#{$color}-25));
+  --neb-focus-border: hsl(var(--neb-#{$color}-25));
 
   @include ghost.set($color);
   @include outline.set($color);

@@ -3,17 +3,30 @@
 $hue: 50;
 
 @mixin set($saturation) {
-  --neb-amber-0: #{$hue} #{$saturation} #{$amber-lightness-12};
-  --neb-amber-1: #{$hue} #{$saturation} #{$amber-lightness-11};
-  --neb-amber-2: #{$hue} #{$saturation} #{$amber-lightness-10};
-  --neb-amber-3: #{$hue} #{$saturation} #{$amber-lightness-9};
-  --neb-amber-4: #{$hue} #{$saturation} #{$amber-lightness-8};
-  --neb-amber-5: #{$hue} #{$saturation} #{$amber-lightness-7};
-  --neb-amber-6: #{$hue} #{$saturation} #{$amber-lightness-6};
-  --neb-amber-7: #{$hue} #{$saturation} #{$amber-lightness-5};
-  --neb-amber-8: #{$hue} #{$saturation} #{$amber-lightness-4};
-  --neb-amber-9: #{$hue} #{$saturation} #{$amber-lightness-3};
-  --neb-amber-10: #{$hue} #{$saturation} #{$amber-lightness-2};
-  --neb-amber-11: #{$hue} #{$saturation} #{$amber-lightness-1};
-  --neb-amber-12: #{$hue} #{$saturation} #{$amber-lightness-0};
+  --neb-amber-0: #{$hue} #{$saturation} #{$amber-lightness-25};
+  --neb-amber-1: #{$hue} #{$saturation} #{$amber-lightness-24};
+  --neb-amber-2: #{$hue} #{$saturation} #{$amber-lightness-23};
+  --neb-amber-3: #{$hue} #{$saturation} #{$amber-lightness-22};
+  --neb-amber-4: #{$hue} #{$saturation} #{$amber-lightness-21};
+  --neb-amber-5: #{$hue} #{$saturation} #{$amber-lightness-20};
+  --neb-amber-6: #{$hue} #{$saturation} #{$amber-lightness-19};
+  --neb-amber-7: #{$hue} #{$saturation} #{$amber-lightness-18};
+  --neb-amber-8: #{$hue} #{$saturation} #{$amber-lightness-17};
+  --neb-amber-9: #{$hue} #{$saturation} #{$amber-lightness-16};
+  --neb-amber-10: #{$hue} #{$saturation} #{$amber-lightness-15};
+  --neb-amber-11: #{$hue} #{$saturation} #{$amber-lightness-14};
+  --neb-amber-12: #{$hue} #{$saturation} #{$amber-lightness-13};
+  --neb-amber-13: #{$hue} #{$saturation} #{$amber-lightness-12};
+  --neb-amber-14: #{$hue} #{$saturation} #{$amber-lightness-11};
+  --neb-amber-15: #{$hue} #{$saturation} #{$amber-lightness-10};
+  --neb-amber-16: #{$hue} #{$saturation} #{$amber-lightness-9};
+  --neb-amber-17: #{$hue} #{$saturation} #{$amber-lightness-8};
+  --neb-amber-18: #{$hue} #{$saturation} #{$amber-lightness-7};
+  --neb-amber-19: #{$hue} #{$saturation} #{$amber-lightness-6};
+  --neb-amber-20: #{$hue} #{$saturation} #{$amber-lightness-5};
+  --neb-amber-21: #{$hue} #{$saturation} #{$amber-lightness-4};
+  --neb-amber-22: #{$hue} #{$saturation} #{$amber-lightness-3};
+  --neb-amber-23: #{$hue} #{$saturation} #{$amber-lightness-2};
+  --neb-amber-24: #{$hue} #{$saturation} #{$amber-lightness-1};
+  --neb-amber-25: #{$hue} #{$saturation} #{$amber-lightness-0};
 }

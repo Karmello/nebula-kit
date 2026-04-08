@@ -1,6 +1,7 @@
 @mixin paint() {
   // elevated border
   --neb-outline-neutral-elevated-border: var(--neb-ctx-outline-neutral-elevated-border);
+  --neb-outline-muted-elevated-border: var(--neb-ctx-outline-muted-elevated-border);
   --neb-outline-tertiary-elevated-border: var(--neb-ctx-outline-tertiary-elevated-border);
   --neb-outline-secondary-elevated-border: var(--neb-ctx-outline-secondary-elevated-border);
   --neb-outline-primary-elevated-border: var(--neb-ctx-outline-primary-elevated-border);
@@ -8,6 +9,7 @@
 
   // elevated border hover
   --neb-outline-neutral-elevated-border-hover: var(--neb-ctx-outline-neutral-elevated-border-hover);
+  --neb-outline-muted-elevated-border-hover: var(--neb-ctx-outline-muted-elevated-border-hover);
   --neb-outline-tertiary-elevated-border-hover: var(--neb-ctx-outline-tertiary-elevated-border-hover);
   --neb-outline-secondary-elevated-border-hover: var(--neb-ctx-outline-secondary-elevated-border-hover);
   --neb-outline-primary-elevated-border-hover: var(--neb-ctx-outline-primary-elevated-border-hover);
@@ -15,6 +17,7 @@
 
   // elevated border active
   --neb-outline-neutral-elevated-border-active: var(--neb-ctx-outline-neutral-elevated-border-active);
+  --neb-outline-muted-elevated-border-active: var(--neb-ctx-outline-muted-elevated-border-active);
   --neb-outline-tertiary-elevated-border-active: var(--neb-ctx-outline-tertiary-elevated-border-active);
   --neb-outline-secondary-elevated-border-active: var(--neb-ctx-outline-secondary-elevated-border-active);
   --neb-outline-primary-elevated-border-active: var(--neb-ctx-outline-primary-elevated-border-active);
@@ -22,6 +25,7 @@
 
   // elevated border selected
   --neb-outline-neutral-elevated-border-selected: var(--neb-ctx-outline-neutral-elevated-border-selected);
+  --neb-outline-muted-elevated-border-selected: var(--neb-ctx-outline-muted-elevated-border-selected);
   --neb-outline-tertiary-elevated-border-selected: var(--neb-ctx-outline-tertiary-elevated-border-selected);
   --neb-outline-secondary-elevated-border-selected: var(--neb-ctx-outline-secondary-elevated-border-selected);
   --neb-outline-primary-elevated-border-selected: var(--neb-ctx-outline-primary-elevated-border-selected);
@@ -29,6 +33,7 @@
 
   // elevated bg hover
   --neb-outline-neutral-elevated-bg-hover: var(--neb-ctx-outline-neutral-elevated-bg-hover);
+  --neb-outline-muted-elevated-bg-hover: var(--neb-ctx-outline-muted-elevated-bg-hover);
   --neb-outline-tertiary-elevated-bg-hover: var(--neb-ctx-outline-tertiary-elevated-bg-hover);
   --neb-outline-secondary-elevated-bg-hover: var(--neb-ctx-outline-secondary-elevated-bg-hover);
   --neb-outline-primary-elevated-bg-hover: var(--neb-ctx-outline-primary-elevated-bg-hover);
@@ -36,6 +41,7 @@
 
   // elevated bg active
   --neb-outline-neutral-elevated-bg-active: var(--neb-ctx-outline-neutral-elevated-bg-active);
+  --neb-outline-muted-elevated-bg-active: var(--neb-ctx-outline-muted-elevated-bg-active);
   --neb-outline-tertiary-elevated-bg-active: var(--neb-ctx-outline-tertiary-elevated-bg-active);
   --neb-outline-secondary-elevated-bg-active: var(--neb-ctx-outline-secondary-elevated-bg-active);
   --neb-outline-primary-elevated-bg-active: var(--neb-ctx-outline-primary-elevated-bg-active);
@@ -43,6 +49,7 @@
 
   // elevated bg selected
   --neb-outline-neutral-elevated-bg-selected: var(--neb-ctx-outline-neutral-elevated-bg-selected);
+  --neb-outline-muted-elevated-bg-selected: var(--neb-ctx-outline-muted-elevated-bg-selected);
   --neb-outline-tertiary-elevated-bg-selected: var(--neb-ctx-outline-tertiary-elevated-bg-selected);
   --neb-outline-secondary-elevated-bg-selected: var(--neb-ctx-outline-secondary-elevated-bg-selected);
   --neb-outline-primary-elevated-bg-selected: var(--neb-ctx-outline-primary-elevated-bg-selected);

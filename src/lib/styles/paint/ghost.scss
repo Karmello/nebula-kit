@@ -1,6 +1,7 @@
 @mixin paint() {
   // text
   --neb-ghost-neutral-text: var(--neb-ctx-ghost-neutral-text);
+  --neb-ghost-muted-text: var(--neb-ctx-ghost-muted-text);
   --neb-ghost-tertiary-text: var(--neb-ctx-ghost-tertiary-text);
   --neb-ghost-secondary-text: var(--neb-ctx-ghost-secondary-text);
   --neb-ghost-primary-text: var(--neb-ctx-ghost-primary-text);
@@ -8,6 +9,7 @@
 
   // text hover
   --neb-ghost-neutral-text-hover: var(--neb-ctx-ghost-neutral-text-hover);
+  --neb-ghost-muted-text-hover: var(--neb-ctx-ghost-muted-text-hover);
   --neb-ghost-tertiary-text-hover: var(--neb-ctx-ghost-tertiary-text-hover);
   --neb-ghost-secondary-text-hover: var(--neb-ctx-ghost-secondary-text-hover);
   --neb-ghost-primary-text-hover: var(--neb-ctx-ghost-primary-text-hover);
@@ -15,6 +17,7 @@
 
   // text active
   --neb-ghost-neutral-text-active: var(--neb-ctx-ghost-neutral-text-active);
+  --neb-ghost-muted-text-active: var(--neb-ctx-ghost-muted-text-active);
   --neb-ghost-tertiary-text-active: var(--neb-ctx-ghost-tertiary-text-active);
   --neb-ghost-secondary-text-active: var(--neb-ctx-ghost-secondary-text-active);
   --neb-ghost-primary-text-active: var(--neb-ctx-ghost-primary-text-active);
@@ -22,6 +25,7 @@
 
   // text selected
   --neb-ghost-neutral-text-selected: var(--neb-ctx-ghost-neutral-text-selected);
+  --neb-ghost-muted-text-selected: var(--neb-ctx-ghost-muted-text-selected);
   --neb-ghost-tertiary-text-selected: var(--neb-ctx-ghost-tertiary-text-selected);
   --neb-ghost-secondary-text-selected: var(--neb-ctx-ghost-secondary-text-selected);
   --neb-ghost-primary-text-selected: var(--neb-ctx-ghost-primary-text-selected);
@@ -29,6 +33,7 @@
 
   // text disabled
   --neb-ghost-neutral-text-disabled: var(--neb-ctx-ghost-neutral-text-disabled);
+  --neb-ghost-muted-text-disabled: var(--neb-ctx-ghost-muted-text-disabled);
   --neb-ghost-tertiary-text-disabled: var(--neb-ctx-ghost-tertiary-text-disabled);
   --neb-ghost-secondary-text-disabled: var(--neb-ctx-ghost-secondary-text-disabled);
   --neb-ghost-primary-text-disabled: var(--neb-ctx-ghost-primary-text-disabled);
@@ -36,6 +41,7 @@
 
   // loader
   --neb-ghost-neutral-loader: var(--neb-ctx-ghost-neutral-loader);
+  --neb-ghost-muted-loader: var(--neb-ctx-ghost-muted-loader);
   --neb-ghost-tertiary-loader: var(--neb-ctx-ghost-tertiary-loader);
   --neb-ghost-secondary-loader: var(--neb-ctx-ghost-secondary-loader);
   --neb-ghost-primary-loader: var(--neb-ctx-ghost-primary-loader);

@@ -1,6 +1,7 @@
 @mixin set-context($theme) {
   // elevated border
   --neb-ctx-soft-outline-neutral-elevated-border: var(--neb-ctx-#{$theme}-soft-outline-neutral-elevated-border);
+  --neb-ctx-soft-outline-muted-elevated-border: var(--neb-ctx-#{$theme}-soft-outline-muted-elevated-border);
   --neb-ctx-soft-outline-tertiary-elevated-border: var(--neb-ctx-#{$theme}-soft-outline-tertiary-elevated-border);
   --neb-ctx-soft-outline-secondary-elevated-border: var(--neb-ctx-#{$theme}-soft-outline-secondary-elevated-border);
   --neb-ctx-soft-outline-primary-elevated-border: var(--neb-ctx-#{$theme}-soft-outline-primary-elevated-border);
@@ -8,6 +9,7 @@
 
   // elevated border hover
   --neb-ctx-soft-outline-neutral-elevated-border-hover: var(--neb-ctx-#{$theme}-soft-outline-neutral-elevated-border-hover);
+  --neb-ctx-soft-outline-muted-elevated-border-hover: var(--neb-ctx-#{$theme}-soft-outline-muted-elevated-border-hover);
   --neb-ctx-soft-outline-tertiary-elevated-border-hover: var(--neb-ctx-#{$theme}-soft-outline-tertiary-elevated-border-hover);
   --neb-ctx-soft-outline-secondary-elevated-border-hover: var(--neb-ctx-#{$theme}-soft-outline-secondary-elevated-border-hover);
   --neb-ctx-soft-outline-primary-elevated-border-hover: var(--neb-ctx-#{$theme}-soft-outline-primary-elevated-border-hover);
@@ -15,6 +17,7 @@
 
   // elevated border active
   --neb-ctx-soft-outline-neutral-elevated-border-active: var(--neb-ctx-#{$theme}-soft-outline-neutral-elevated-border-active);
+  --neb-ctx-soft-outline-muted-elevated-border-active: var(--neb-ctx-#{$theme}-soft-outline-muted-elevated-border-active);
   --neb-ctx-soft-outline-tertiary-elevated-border-active: var(--neb-ctx-#{$theme}-soft-outline-tertiary-elevated-border-active);
   --neb-ctx-soft-outline-secondary-elevated-border-active: var(--neb-ctx-#{$theme}-soft-outline-secondary-elevated-border-active);
   --neb-ctx-soft-outline-primary-elevated-border-active: var(--neb-ctx-#{$theme}-soft-outline-primary-elevated-border-active);
@@ -22,6 +25,7 @@
 
   // elevated border selected
   --neb-ctx-soft-outline-neutral-elevated-border-selected: var(--neb-ctx-#{$theme}-soft-outline-neutral-elevated-border-selected);
+  --neb-ctx-soft-outline-muted-elevated-border-selected: var(--neb-ctx-#{$theme}-soft-outline-muted-elevated-border-selected);
   --neb-ctx-soft-outline-tertiary-elevated-border-selected: var(--neb-ctx-#{$theme}-soft-outline-tertiary-elevated-border-selected);
   --neb-ctx-soft-outline-secondary-elevated-border-selected: var(--neb-ctx-#{$theme}-soft-outline-secondary-elevated-border-selected);
   --neb-ctx-soft-outline-primary-elevated-border-selected: var(--neb-ctx-#{$theme}-soft-outline-primary-elevated-border-selected);
@@ -29,6 +33,7 @@
 
   // elevated bg hover
   --neb-ctx-soft-outline-neutral-elevated-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-neutral-elevated-bg-hover);
+  --neb-ctx-soft-outline-muted-elevated-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-muted-elevated-bg-hover);
   --neb-ctx-soft-outline-tertiary-elevated-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-tertiary-elevated-bg-hover);
   --neb-ctx-soft-outline-secondary-elevated-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-secondary-elevated-bg-hover);
   --neb-ctx-soft-outline-primary-elevated-bg-hover: var(--neb-ctx-#{$theme}-soft-outline-primary-elevated-bg-hover);
@@ -36,6 +41,7 @@
 
   // elevated bg active
   --neb-ctx-soft-outline-neutral-elevated-bg-active: var(--neb-ctx-#{$theme}-soft-outline-neutral-elevated-bg-active);
+  --neb-ctx-soft-outline-muted-elevated-bg-active: var(--neb-ctx-#{$theme}-soft-outline-muted-elevated-bg-active);
   --neb-ctx-soft-outline-tertiary-elevated-bg-active: var(--neb-ctx-#{$theme}-soft-outline-tertiary-elevated-bg-active);
   --neb-ctx-soft-outline-secondary-elevated-bg-active: var(--neb-ctx-#{$theme}-soft-outline-secondary-elevated-bg-active);
   --neb-ctx-soft-outline-primary-elevated-bg-active: var(--neb-ctx-#{$theme}-soft-outline-primary-elevated-bg-active);
@@ -43,6 +49,7 @@
 
   // elevated bg selected
   --neb-ctx-soft-outline-neutral-elevated-bg-selected: var(--neb-ctx-#{$theme}-soft-outline-neutral-elevated-bg-selected);
+  --neb-ctx-soft-outline-muted-elevated-bg-selected: var(--neb-ctx-#{$theme}-soft-outline-muted-elevated-bg-selected);
   --neb-ctx-soft-outline-tertiary-elevated-bg-selected: var(--neb-ctx-#{$theme}-soft-outline-tertiary-elevated-bg-selected);
   --neb-ctx-soft-outline-secondary-elevated-bg-selected: var(--neb-ctx-#{$theme}-soft-outline-secondary-elevated-bg-selected);
   --neb-ctx-soft-outline-primary-elevated-bg-selected: var(--neb-ctx-#{$theme}-soft-outline-primary-elevated-bg-selected);
@@ -50,6 +57,7 @@
 
   // elevated text
   --neb-ctx-soft-outline-neutral-elevated-text: var(--neb-ctx-#{$theme}-soft-outline-neutral-elevated-text);
+  --neb-ctx-soft-outline-muted-elevated-text: var(--neb-ctx-#{$theme}-soft-outline-muted-elevated-text);
   --neb-ctx-soft-outline-tertiary-elevated-text: var(--neb-ctx-#{$theme}-soft-outline-tertiary-elevated-text);
   --neb-ctx-soft-outline-secondary-elevated-text: var(--neb-ctx-#{$theme}-soft-outline-secondary-elevated-text);
   --neb-ctx-soft-outline-primary-elevated-text: var(--neb-ctx-#{$theme}-soft-outline-primary-elevated-text);
@@ -57,6 +65,7 @@
 
   // elevated text hover
   --neb-ctx-soft-outline-neutral-elevated-text-hover: var(--neb-ctx-#{$theme}-soft-outline-neutral-elevated-text-hover);
+  --neb-ctx-soft-outline-muted-elevated-text-hover: var(--neb-ctx-#{$theme}-soft-outline-muted-elevated-text-hover);
   --neb-ctx-soft-outline-tertiary-elevated-text-hover: var(--neb-ctx-#{$theme}-soft-outline-tertiary-elevated-text-hover);
   --neb-ctx-soft-outline-secondary-elevated-text-hover: var(--neb-ctx-#{$theme}-soft-outline-secondary-elevated-text-hover);
   --neb-ctx-soft-outline-primary-elevated-text-hover: var(--neb-ctx-#{$theme}-soft-outline-primary-elevated-text-hover);
@@ -64,6 +73,7 @@
 
   // elevated text active
   --neb-ctx-soft-outline-neutral-elevated-text-active: var(--neb-ctx-#{$theme}-soft-outline-neutral-elevated-text-active);
+  --neb-ctx-soft-outline-muted-elevated-text-active: var(--neb-ctx-#{$theme}-soft-outline-muted-elevated-text-active);
   --neb-ctx-soft-outline-tertiary-elevated-text-active: var(--neb-ctx-#{$theme}-soft-outline-tertiary-elevated-text-active);
   --neb-ctx-soft-outline-secondary-elevated-text-active: var(--neb-ctx-#{$theme}-soft-outline-secondary-elevated-text-active);
   --neb-ctx-soft-outline-primary-elevated-text-active: var(--neb-ctx-#{$theme}-soft-outline-primary-elevated-text-active);
@@ -71,6 +81,7 @@
 
   // elevated text selected
   --neb-ctx-soft-outline-neutral-elevated-text-selected: var(--neb-ctx-#{$theme}-soft-outline-neutral-elevated-text-selected);
+  --neb-ctx-soft-outline-muted-elevated-text-selected: var(--neb-ctx-#{$theme}-soft-outline-muted-elevated-text-selected);
   --neb-ctx-soft-outline-tertiary-elevated-text-selected: var(--neb-ctx-#{$theme}-soft-outline-tertiary-elevated-text-selected);
   --neb-ctx-soft-outline-secondary-elevated-text-selected: var(--neb-ctx-#{$theme}-soft-outline-secondary-elevated-text-selected);
   --neb-ctx-soft-outline-primary-elevated-text-selected: var(--neb-ctx-#{$theme}-soft-outline-primary-elevated-text-selected);

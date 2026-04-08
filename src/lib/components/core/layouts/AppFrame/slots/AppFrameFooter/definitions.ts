@@ -1,6 +1,6 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
 
-export const DEFAULT_APP_FRAME_FOOTER_INTENT: AppFrameFooterProps['intent'] = 'tertiary'
+export const DEFAULT_APP_FRAME_FOOTER_INTENT: AppFrameFooterProps['intent'] = 'muted'
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'footer'>, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<'footer'>['children']

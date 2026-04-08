@@ -1,6 +1,7 @@
 @mixin set-context($theme) {
   // elevated bg
   --neb-ctx-solid-neutral-elevated-bg: var(--neb-ctx-#{$theme}-solid-neutral-elevated-bg);
+  --neb-ctx-solid-muted-elevated-bg: var(--neb-ctx-#{$theme}-solid-muted-elevated-bg);
   --neb-ctx-solid-tertiary-elevated-bg: var(--neb-ctx-#{$theme}-solid-tertiary-elevated-bg);
   --neb-ctx-solid-secondary-elevated-bg: var(--neb-ctx-#{$theme}-solid-secondary-elevated-bg);
   --neb-ctx-solid-primary-elevated-bg: var(--neb-ctx-#{$theme}-solid-primary-elevated-bg);
@@ -8,6 +9,7 @@
 
   // elevated bg hover
   --neb-ctx-solid-neutral-elevated-bg-hover: var(--neb-ctx-#{$theme}-solid-neutral-elevated-bg-hover);
+  --neb-ctx-solid-muted-elevated-bg-hover: var(--neb-ctx-#{$theme}-solid-muted-elevated-bg-hover);
   --neb-ctx-solid-tertiary-elevated-bg-hover: var(--neb-ctx-#{$theme}-solid-tertiary-elevated-bg-hover);
   --neb-ctx-solid-secondary-elevated-bg-hover: var(--neb-ctx-#{$theme}-solid-secondary-elevated-bg-hover);
   --neb-ctx-solid-primary-elevated-bg-hover: var(--neb-ctx-#{$theme}-solid-primary-elevated-bg-hover);
@@ -15,6 +17,7 @@
 
   // elevated bg active
   --neb-ctx-solid-neutral-elevated-bg-active: var(--neb-ctx-#{$theme}-solid-neutral-elevated-bg-active);
+  --neb-ctx-solid-muted-elevated-bg-active: var(--neb-ctx-#{$theme}-solid-muted-elevated-bg-active);
   --neb-ctx-solid-tertiary-elevated-bg-active: var(--neb-ctx-#{$theme}-solid-tertiary-elevated-bg-active);
   --neb-ctx-solid-secondary-elevated-bg-active: var(--neb-ctx-#{$theme}-solid-secondary-elevated-bg-active);
   --neb-ctx-solid-primary-elevated-bg-active: var(--neb-ctx-#{$theme}-solid-primary-elevated-bg-active);
@@ -22,6 +25,7 @@
 
   // elevated bg selected
   --neb-ctx-solid-neutral-elevated-bg-selected: var(--neb-ctx-#{$theme}-solid-neutral-elevated-bg-selected);
+  --neb-ctx-solid-muted-elevated-bg-selected: var(--neb-ctx-#{$theme}-solid-muted-elevated-bg-selected);
   --neb-ctx-solid-tertiary-elevated-bg-selected: var(--neb-ctx-#{$theme}-solid-tertiary-elevated-bg-selected);
   --neb-ctx-solid-secondary-elevated-bg-selected: var(--neb-ctx-#{$theme}-solid-secondary-elevated-bg-selected);
   --neb-ctx-solid-primary-elevated-bg-selected: var(--neb-ctx-#{$theme}-solid-primary-elevated-bg-selected);

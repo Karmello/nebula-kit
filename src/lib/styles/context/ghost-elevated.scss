@@ -1,6 +1,7 @@
 @mixin set-context($theme) {
   // elevated text
   --neb-ctx-ghost-neutral-elevated-text: var(--neb-ctx-#{$theme}-ghost-neutral-elevated-text);
+  --neb-ctx-ghost-muted-elevated-text: var(--neb-ctx-#{$theme}-ghost-muted-elevated-text);
   --neb-ctx-ghost-tertiary-elevated-text: var(--neb-ctx-#{$theme}-ghost-tertiary-elevated-text);
   --neb-ctx-ghost-secondary-elevated-text: var(--neb-ctx-#{$theme}-ghost-secondary-elevated-text);
   --neb-ctx-ghost-primary-elevated-text: var(--neb-ctx-#{$theme}-ghost-primary-elevated-text);
@@ -8,6 +9,7 @@
 
   // elevated text hover
   --neb-ctx-ghost-neutral-elevated-text-hover: var(--neb-ctx-#{$theme}-ghost-neutral-elevated-text-hover);
+  --neb-ctx-ghost-muted-elevated-text-hover: var(--neb-ctx-#{$theme}-ghost-muted-elevated-text-hover);
   --neb-ctx-ghost-tertiary-elevated-text-hover: var(--neb-ctx-#{$theme}-ghost-tertiary-elevated-text-hover);
   --neb-ctx-ghost-secondary-elevated-text-hover: var(--neb-ctx-#{$theme}-ghost-secondary-elevated-text-hover);
   --neb-ctx-ghost-primary-elevated-text-hover: var(--neb-ctx-#{$theme}-ghost-primary-elevated-text-hover);
@@ -15,6 +17,7 @@
 
   // elevated text active
   --neb-ctx-ghost-neutral-elevated-text-active: var(--neb-ctx-#{$theme}-ghost-neutral-elevated-text-active);
+  --neb-ctx-ghost-muted-elevated-text-active: var(--neb-ctx-#{$theme}-ghost-muted-elevated-text-active);
   --neb-ctx-ghost-tertiary-elevated-text-active: var(--neb-ctx-#{$theme}-ghost-tertiary-elevated-text-active);
   --neb-ctx-ghost-secondary-elevated-text-active: var(--neb-ctx-#{$theme}-ghost-secondary-elevated-text-active);
   --neb-ctx-ghost-primary-elevated-text-active: var(--neb-ctx-#{$theme}-ghost-primary-elevated-text-active);
@@ -22,6 +25,7 @@
 
   // elevated text selected
   --neb-ctx-ghost-neutral-elevated-text-selected: var(--neb-ctx-#{$theme}-ghost-neutral-elevated-text-selected);
+  --neb-ctx-ghost-muted-elevated-text-selected: var(--neb-ctx-#{$theme}-ghost-muted-elevated-text-selected);
   --neb-ctx-ghost-tertiary-elevated-text-selected: var(--neb-ctx-#{$theme}-ghost-tertiary-elevated-text-selected);
   --neb-ctx-ghost-secondary-elevated-text-selected: var(--neb-ctx-#{$theme}-ghost-secondary-elevated-text-selected);
   --neb-ctx-ghost-primary-elevated-text-selected: var(--neb-ctx-#{$theme}-ghost-primary-elevated-text-selected);

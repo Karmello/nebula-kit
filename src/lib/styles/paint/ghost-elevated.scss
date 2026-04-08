@@ -1,6 +1,7 @@
 @mixin paint() {
   // elevated text
   --neb-ghost-neutral-elevated-text: var(--neb-ctx-ghost-neutral-elevated-text);
+  --neb-ghost-muted-elevated-text: var(--neb-ctx-ghost-muted-elevated-text);
   --neb-ghost-tertiary-elevated-text: var(--neb-ctx-ghost-tertiary-elevated-text);
   --neb-ghost-secondary-elevated-text: var(--neb-ctx-ghost-secondary-elevated-text);
   --neb-ghost-primary-elevated-text: var(--neb-ctx-ghost-primary-elevated-text);
@@ -8,6 +9,7 @@
 
   // elevated text hover
   --neb-ghost-neutral-elevated-text-hover: var(--neb-ctx-ghost-neutral-elevated-text-hover);
+  --neb-ghost-muted-elevated-text-hover: var(--neb-ctx-ghost-muted-elevated-text-hover);
   --neb-ghost-tertiary-elevated-text-hover: var(--neb-ctx-ghost-tertiary-elevated-text-hover);
   --neb-ghost-secondary-elevated-text-hover: var(--neb-ctx-ghost-secondary-elevated-text-hover);
   --neb-ghost-primary-elevated-text-hover: var(--neb-ctx-ghost-primary-elevated-text-hover);
@@ -15,6 +17,7 @@
 
   // elevated text active
   --neb-ghost-neutral-elevated-text-active: var(--neb-ctx-ghost-neutral-elevated-text-active);
+  --neb-ghost-muted-elevated-text-active: var(--neb-ctx-ghost-muted-elevated-text-active);
   --neb-ghost-tertiary-elevated-text-active: var(--neb-ctx-ghost-tertiary-elevated-text-active);
   --neb-ghost-secondary-elevated-text-active: var(--neb-ctx-ghost-secondary-elevated-text-active);
   --neb-ghost-primary-elevated-text-active: var(--neb-ctx-ghost-primary-elevated-text-active);
@@ -22,6 +25,7 @@
 
   // elevated text selected
   --neb-ghost-neutral-elevated-text-selected: var(--neb-ctx-ghost-neutral-elevated-text-selected);
+  --neb-ghost-muted-elevated-text-selected: var(--neb-ctx-ghost-muted-elevated-text-selected);
   --neb-ghost-tertiary-elevated-text-selected: var(--neb-ctx-ghost-tertiary-elevated-text-selected);
   --neb-ghost-secondary-elevated-text-selected: var(--neb-ctx-ghost-secondary-elevated-text-selected);
   --neb-ghost-primary-elevated-text-selected: var(--neb-ctx-ghost-primary-elevated-text-selected);
