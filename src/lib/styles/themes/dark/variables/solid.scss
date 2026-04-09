@@ -1,8 +1,8 @@
 $solid-neutral-bg: 0;
 $solid-muted-bg: 2;
-$solid-tertiary-bg: 4;
-$solid-secondary-bg: 7;
-$solid-primary-bg: 12;
+$solid-tertiary-bg: 3;
+$solid-secondary-bg: 6;
+$solid-primary-bg: 11;
 $solid-inverse-bg: 25;
 
 $solid-neutral-bg-hover: $solid-neutral-bg + 2;
@@ -17,7 +17,7 @@ $solid-muted-bg-active: $solid-muted-bg + 2;
 $solid-tertiary-bg-active: $solid-tertiary-bg + 2;
 $solid-secondary-bg-active: $solid-secondary-bg + 4;
 $solid-primary-bg-active: $solid-primary-bg + 6;
-$solid-inverse-bg-active: $solid-inverse-bg - 6;
+$solid-inverse-bg-active: $solid-inverse-bg - 7;
 
 $solid-neutral-bg-selected: $solid-neutral-bg + 1;
 $solid-muted-bg-selected: $solid-muted-bg + 1;

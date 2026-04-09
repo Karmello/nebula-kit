@@ -1,22 +1,22 @@
 $ghost-neutral-text: 25;
 $ghost-muted-text: 2;
-$ghost-tertiary-text: 4;
-$ghost-secondary-text: 7;
-$ghost-primary-text: 12;
+$ghost-tertiary-text: 3;
+$ghost-secondary-text: 6;
+$ghost-primary-text: 11;
 $ghost-inverse-text: 0;
 
-$ghost-neutral-text-hover: $ghost-neutral-text - 3;
-$ghost-muted-text-hover: $ghost-muted-text - 3;
+$ghost-neutral-text-hover: $ghost-neutral-text - 4;
+$ghost-muted-text-hover: $ghost-muted-text + 1;
 $ghost-tertiary-text-hover: $ghost-tertiary-text + 1;
 $ghost-secondary-text-hover: $ghost-secondary-text + 2;
-$ghost-primary-text-hover: $ghost-primary-text - 2;
+$ghost-primary-text-hover: $ghost-primary-text + 3;
 $ghost-inverse-text-hover: $ghost-inverse-text + 3;
 
-$ghost-neutral-text-active: $ghost-neutral-text - 7;
-$ghost-muted-text-active: $ghost-muted-text - 7;
-$ghost-tertiary-text-active: $ghost-tertiary-text + 3;
+$ghost-neutral-text-active: $ghost-neutral-text - 8;
+$ghost-muted-text-active: $ghost-muted-text + 2;
+$ghost-tertiary-text-active: $ghost-tertiary-text + 2;
 $ghost-secondary-text-active: $ghost-secondary-text + 4;
-$ghost-primary-text-active: $ghost-primary-text - 4;
+$ghost-primary-text-active: $ghost-primary-text + 7;
 $ghost-inverse-text-active: $ghost-inverse-text + 5;
 
 $ghost-neutral-text-selected: $ghost-neutral-text - 3;
