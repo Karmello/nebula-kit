@@ -22,9 +22,9 @@ $solid-inverse-bg-active: $solid-inverse-bg - 7;
 $solid-neutral-bg-selected: $solid-neutral-bg + 2;
 $solid-muted-bg-selected: $solid-muted-bg + 2;
 $solid-tertiary-bg-selected: $solid-tertiary-bg + 2;
-$solid-secondary-bg-selected: $solid-secondary-bg + 2;
-$solid-primary-bg-selected: $solid-primary-bg + 2;
-$solid-inverse-bg-selected: $solid-inverse-bg - 4;
+$solid-secondary-bg-selected: $solid-secondary-bg + 3;
+$solid-primary-bg-selected: $solid-primary-bg + 3;
+$solid-inverse-bg-selected: $solid-inverse-bg - 5;
 
 @mixin set($color) {
   // bg
