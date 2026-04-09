@@ -5,14 +5,14 @@ $soft-outline-secondary-border: 6;
 $soft-outline-primary-border: 11;
 $soft-outline-inverse-border: 25;
 
-$soft-outline-neutral-border-hover: $soft-outline-neutral-border + 2;
+$soft-outline-neutral-border-hover: $soft-outline-neutral-border + 1;
 $soft-outline-muted-border-hover: $soft-outline-muted-border + 1;
 $soft-outline-tertiary-border-hover: $soft-outline-tertiary-border + 1;
 $soft-outline-secondary-border-hover: $soft-outline-secondary-border + 2;
 $soft-outline-primary-border-hover: $soft-outline-primary-border + 3;
 $soft-outline-inverse-border-hover: $soft-outline-inverse-border - 3;
 
-$soft-outline-neutral-border-active: $soft-outline-neutral-border + 3;
+$soft-outline-neutral-border-active: $soft-outline-neutral-border + 2;
 $soft-outline-muted-border-active: $soft-outline-muted-border + 2;
 $soft-outline-tertiary-border-active: $soft-outline-tertiary-border + 2;
 $soft-outline-secondary-border-active: $soft-outline-secondary-border + 4;
@@ -70,14 +70,14 @@ $soft-outline-inverse-border-selected: $soft-outline-inverse-border + 1;
   // bg hover
   --neb-ctx-dark-soft-outline-neutral-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 10%, transparent);
   --neb-ctx-dark-soft-outline-muted-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 10%, transparent);
-  --neb-ctx-dark-soft-outline-tertiary-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 16%, transparent);
-  --neb-ctx-dark-soft-outline-secondary-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 20%, transparent);
-  --neb-ctx-dark-soft-outline-primary-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 24%, transparent);
-  --neb-ctx-dark-soft-outline-inverse-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 24%, transparent);
+  --neb-ctx-dark-soft-outline-tertiary-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 12%, transparent);
+  --neb-ctx-dark-soft-outline-secondary-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 15%, transparent);
+  --neb-ctx-dark-soft-outline-primary-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 18%, transparent);
+  --neb-ctx-dark-soft-outline-inverse-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 18%, transparent);
 
   // bg active
-  --neb-ctx-dark-soft-outline-neutral-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 15%, transparent);
-  --neb-ctx-dark-soft-outline-muted-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 15%, transparent);
+  --neb-ctx-dark-soft-outline-neutral-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 20%, transparent);
+  --neb-ctx-dark-soft-outline-muted-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 20%, transparent);
   --neb-ctx-dark-soft-outline-tertiary-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 24%, transparent);
   --neb-ctx-dark-soft-outline-secondary-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 30%, transparent);
   --neb-ctx-dark-soft-outline-primary-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-border})) 36%, transparent);
