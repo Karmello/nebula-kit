@@ -18,7 +18,7 @@ const Family = ({
 
   return (
     <Box drawable variant="ghost" intent="primary" brand="blue">
-      <Section size="sm" variant="outline" intent="secondary" heading={heading} iconName={iconName}>
+      <Section size="sm" variant="outline" intent="tertiary" heading={heading} iconName={iconName}>
         <Text intent="neutral">{description}</Text>
         {components ? (
           <>
@@ -29,7 +29,7 @@ const Family = ({
                 const href = `/${pageKey}/${categoryKey}/${itemKey}/overview`
                 return (
                   <Link key={c} href={href} onClick={() => navigateTo(href)}>
-                    <Button size="sm" variant="solid" intent="secondary" iconName="box" iconPlacement="right">
+                    <Button size="sm" variant="solid" intent="tertiary" iconName="box" iconPlacement="right">
                       {c}
                     </Button>
                   </Link>
