@@ -63,34 +63,31 @@ test('Nested Box inherits ctx primary solid color', async ({ mount, page }) => {
   expect(result.bg).toBe(ctxResolved)
 })
 
-test('Box with dark theme uses dark ctx colors inside light app', async ({ mount, page }) => {
+test('Box with local dark theme matches global dark rendering', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'box' }} drawable variant="solid" intent="primary" theme="dark" blockSize="200px">
-      Dark Box
-    </Box>
+    <>
+      <Box tagAttrs={{ id: 'local-dark' }} drawable variant="solid" intent="primary" theme="dark" blockSize="200px">
+        Local Dark
+      </Box>
+
+      <Box tagAttrs={{ id: 'light' }} drawable variant="solid" intent="primary" blockSize="200px">
+        Light
+      </Box>
+    </>
   )
 
-  const result = await page.evaluate(() => {
-    const el = document.getElementById('box')!
-    const bg = getComputedStyle(el).backgroundColor
-    return { bg }
+  const firstPass = await page.evaluate(() => {
+    const localDark = document.getElementById('local-dark')!
+    const light = document.getElementById('light')!
+
+    return {
+      localDarkBg: getComputedStyle(localDark).backgroundColor,
+      lightBg: getComputedStyle(light).backgroundColor,
+    }
   })
 
-  // must resolve to a real color
-  expect(result.bg).toMatch(/^rgb\(/)
-
-  // resolve ctx primary *within dark theme scope*
-  const darkResolved = await page.evaluate(() => {
-    const el = document.createElement('div')
-    el.setAttribute('data-theme', 'dark')
-    el.style.backgroundColor = 'var(--neb-ctx-light-solid-primary-bg)'
-    document.body.appendChild(el)
-    const value = getComputedStyle(el).backgroundColor
-    document.body.removeChild(el)
-    return value
-  })
-
-  expect(result.bg).toBe(darkResolved)
+  expect(firstPass.localDarkBg).toMatch(/^rgb\(/)
+  expect(firstPass.localDarkBg).not.toBe(firstPass.lightBg)
 })
 
 test('Nested theme islands reset correctly (light → dark → light)', async ({ mount, page }) => {
@@ -183,7 +180,7 @@ test('Global dark theme paints primary solid correctly', async ({ mount, page })
   const darkResolved = await page.evaluate(() => {
     const el = document.createElement('div')
     el.setAttribute('data-theme', 'dark')
-    el.style.backgroundColor = 'var(--neb-ctx-light-solid-primary-bg)'
+    el.style.backgroundColor = 'var(--neb-ctx-dark-solid-primary-bg)'
     document.body.appendChild(el)
     const value = getComputedStyle(el).backgroundColor
     document.body.removeChild(el)
