@@ -1,6 +1,6 @@
 @use 'styles/definitions/index' as *;
 
-@mixin set($saturation) {
+@mixin set() {
   --neb-pink-0: #{$pink-hue} #{$saturation} #{$pink-lightness-0};
   --neb-pink-1: #{$pink-hue} #{$saturation} #{$pink-lightness-1};
   --neb-pink-2: #{$pink-hue} #{$saturation} #{$pink-lightness-2};

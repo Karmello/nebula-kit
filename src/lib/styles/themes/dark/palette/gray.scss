@@ -1,30 +1,30 @@
 @use 'styles/definitions/index' as *;
 
-@mixin set($saturation) {
-  --neb-gray-0: 0 #{$saturation} #{$gray-lightness-25};
-  --neb-gray-1: 0 #{$saturation} #{$gray-lightness-24};
-  --neb-gray-2: 0 #{$saturation} #{$gray-lightness-23};
-  --neb-gray-3: 0 #{$saturation} #{$gray-lightness-22};
-  --neb-gray-4: 0 #{$saturation} #{$gray-lightness-21};
-  --neb-gray-5: 0 #{$saturation} #{$gray-lightness-20};
-  --neb-gray-6: 0 #{$saturation} #{$gray-lightness-19};
-  --neb-gray-7: 0 #{$saturation} #{$gray-lightness-18};
-  --neb-gray-8: 0 #{$saturation} #{$gray-lightness-17};
-  --neb-gray-9: 0 #{$saturation} #{$gray-lightness-16};
-  --neb-gray-10: 0 #{$saturation} #{$gray-lightness-15};
-  --neb-gray-11: 0 #{$saturation} #{$gray-lightness-14};
-  --neb-gray-12: 0 #{$saturation} #{$gray-lightness-13};
-  --neb-gray-13: 0 #{$saturation} #{$gray-lightness-12};
-  --neb-gray-14: 0 #{$saturation} #{$gray-lightness-11};
-  --neb-gray-15: 0 #{$saturation} #{$gray-lightness-10};
-  --neb-gray-16: 0 #{$saturation} #{$gray-lightness-9};
-  --neb-gray-17: 0 #{$saturation} #{$gray-lightness-8};
-  --neb-gray-18: 0 #{$saturation} #{$gray-lightness-7};
-  --neb-gray-19: 0 #{$saturation} #{$gray-lightness-6};
-  --neb-gray-20: 0 #{$saturation} #{$gray-lightness-5};
-  --neb-gray-21: 0 #{$saturation} #{$gray-lightness-4};
-  --neb-gray-22: 0 #{$saturation} #{$gray-lightness-3};
-  --neb-gray-23: 0 #{$saturation} #{$gray-lightness-2};
-  --neb-gray-24: 0 #{$saturation} #{$gray-lightness-1};
-  --neb-gray-25: 0 #{$saturation} #{$gray-lightness-0};
+@mixin set() {
+  --neb-gray-0: 0 0% #{$gray-lightness-25};
+  --neb-gray-1: 0 0% #{$gray-lightness-24};
+  --neb-gray-2: 0 0% #{$gray-lightness-23};
+  --neb-gray-3: 0 0% #{$gray-lightness-22};
+  --neb-gray-4: 0 0% #{$gray-lightness-21};
+  --neb-gray-5: 0 0% #{$gray-lightness-20};
+  --neb-gray-6: 0 0% #{$gray-lightness-19};
+  --neb-gray-7: 0 0% #{$gray-lightness-18};
+  --neb-gray-8: 0 0% #{$gray-lightness-17};
+  --neb-gray-9: 0 0% #{$gray-lightness-16};
+  --neb-gray-10: 0 0% #{$gray-lightness-15};
+  --neb-gray-11: 0 0% #{$gray-lightness-14};
+  --neb-gray-12: 0 0% #{$gray-lightness-13};
+  --neb-gray-13: 0 0% #{$gray-lightness-12};
+  --neb-gray-14: 0 0% #{$gray-lightness-11};
+  --neb-gray-15: 0 0% #{$gray-lightness-10};
+  --neb-gray-16: 0 0% #{$gray-lightness-9};
+  --neb-gray-17: 0 0% #{$gray-lightness-8};
+  --neb-gray-18: 0 0% #{$gray-lightness-7};
+  --neb-gray-19: 0 0% #{$gray-lightness-6};
+  --neb-gray-20: 0 0% #{$gray-lightness-5};
+  --neb-gray-21: 0 0% #{$gray-lightness-4};
+  --neb-gray-22: 0 0% #{$gray-lightness-3};
+  --neb-gray-23: 0 0% #{$gray-lightness-2};
+  --neb-gray-24: 0 0% #{$gray-lightness-1};
+  --neb-gray-25: 0 0% #{$gray-lightness-0};
 }

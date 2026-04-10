@@ -1,6 +1,6 @@
 @use 'styles/definitions/index' as *;
 
-@mixin set($saturation) {
+@mixin set() {
   --neb-amber-0: #{$amber-hue} #{$saturation} #{$amber-lightness-0};
   --neb-amber-1: #{$amber-hue} #{$saturation} #{$amber-lightness-1};
   --neb-amber-2: #{$amber-hue} #{$saturation} #{$amber-lightness-2};
