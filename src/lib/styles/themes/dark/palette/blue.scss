@@ -1,32 +1,30 @@
 @use 'styles/definitions/index' as *;
 
-$hue: 215;
-
 @mixin set($saturation) {
-  --neb-blue-0: #{$hue} #{$saturation} #{$blue-lightness-25};
-  --neb-blue-1: #{$hue} #{$saturation} #{$blue-lightness-24};
-  --neb-blue-2: #{$hue} #{$saturation} #{$blue-lightness-23};
-  --neb-blue-3: #{$hue} #{$saturation} #{$blue-lightness-22};
-  --neb-blue-4: #{$hue} #{$saturation} #{$blue-lightness-21};
-  --neb-blue-5: #{$hue} #{$saturation} #{$blue-lightness-20};
-  --neb-blue-6: #{$hue} #{$saturation} #{$blue-lightness-19};
-  --neb-blue-7: #{$hue} #{$saturation} #{$blue-lightness-18};
-  --neb-blue-8: #{$hue} #{$saturation} #{$blue-lightness-17};
-  --neb-blue-9: #{$hue} #{$saturation} #{$blue-lightness-16};
-  --neb-blue-10: #{$hue} #{$saturation} #{$blue-lightness-15};
-  --neb-blue-11: #{$hue} #{$saturation} #{$blue-lightness-14};
-  --neb-blue-12: #{$hue} #{$saturation} #{$blue-lightness-13};
-  --neb-blue-13: #{$hue} #{$saturation} #{$blue-lightness-12};
-  --neb-blue-14: #{$hue} #{$saturation} #{$blue-lightness-11};
-  --neb-blue-15: #{$hue} #{$saturation} #{$blue-lightness-10};
-  --neb-blue-16: #{$hue} #{$saturation} #{$blue-lightness-9};
-  --neb-blue-17: #{$hue} #{$saturation} #{$blue-lightness-8};
-  --neb-blue-18: #{$hue} #{$saturation} #{$blue-lightness-7};
-  --neb-blue-19: #{$hue} #{$saturation} #{$blue-lightness-6};
-  --neb-blue-20: #{$hue} #{$saturation} #{$blue-lightness-5};
-  --neb-blue-21: #{$hue} #{$saturation} #{$blue-lightness-4};
-  --neb-blue-22: #{$hue} #{$saturation} #{$blue-lightness-3};
-  --neb-blue-23: #{$hue} #{$saturation} #{$blue-lightness-2};
-  --neb-blue-24: #{$hue} #{$saturation} #{$blue-lightness-1};
-  --neb-blue-25: #{$hue} #{$saturation} #{$blue-lightness-0};
+  --neb-blue-0: #{$blue-hue} #{$saturation} #{$blue-lightness-25};
+  --neb-blue-1: #{$blue-hue} #{$saturation} #{$blue-lightness-24};
+  --neb-blue-2: #{$blue-hue} #{$saturation} #{$blue-lightness-23};
+  --neb-blue-3: #{$blue-hue} #{$saturation} #{$blue-lightness-22};
+  --neb-blue-4: #{$blue-hue} #{$saturation} #{$blue-lightness-21};
+  --neb-blue-5: #{$blue-hue} #{$saturation} #{$blue-lightness-20};
+  --neb-blue-6: #{$blue-hue} #{$saturation} #{$blue-lightness-19};
+  --neb-blue-7: #{$blue-hue} #{$saturation} #{$blue-lightness-18};
+  --neb-blue-8: #{$blue-hue} #{$saturation} #{$blue-lightness-17};
+  --neb-blue-9: #{$blue-hue} #{$saturation} #{$blue-lightness-16};
+  --neb-blue-10: #{$blue-hue} #{$saturation} #{$blue-lightness-15};
+  --neb-blue-11: #{$blue-hue} #{$saturation} #{$blue-lightness-14};
+  --neb-blue-12: #{$blue-hue} #{$saturation} #{$blue-lightness-13};
+  --neb-blue-13: #{$blue-hue} #{$saturation} #{$blue-lightness-12};
+  --neb-blue-14: #{$blue-hue} #{$saturation} #{$blue-lightness-11};
+  --neb-blue-15: #{$blue-hue} #{$saturation} #{$blue-lightness-10};
+  --neb-blue-16: #{$blue-hue} #{$saturation} #{$blue-lightness-9};
+  --neb-blue-17: #{$blue-hue} #{$saturation} #{$blue-lightness-8};
+  --neb-blue-18: #{$blue-hue} #{$saturation} #{$blue-lightness-7};
+  --neb-blue-19: #{$blue-hue} #{$saturation} #{$blue-lightness-6};
+  --neb-blue-20: #{$blue-hue} #{$saturation} #{$blue-lightness-5};
+  --neb-blue-21: #{$blue-hue} #{$saturation} #{$blue-lightness-4};
+  --neb-blue-22: #{$blue-hue} #{$saturation} #{$blue-lightness-3};
+  --neb-blue-23: #{$blue-hue} #{$saturation} #{$blue-lightness-2};
+  --neb-blue-24: #{$blue-hue} #{$saturation} #{$blue-lightness-1};
+  --neb-blue-25: #{$blue-hue} #{$saturation} #{$blue-lightness-0};
 }
