@@ -1,4 +1,4 @@
-@use 'styles/definitions/index' as *;
+@use 'styles/definitions/_index' as *;
 
 @mixin set() {
   --neb-gray-0: 0 0% #{$gray-lightness-0};

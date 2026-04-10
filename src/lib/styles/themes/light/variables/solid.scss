@@ -1,4 +1,5 @@
-@use 'styles/definitions/index' as *;
+@use 'styles/definitions/_index' as *;
+@use 'styles/definitions/light.scss' as *;
 
 $solid-neutral-bg: 0;
 $solid-muted-bg: $muted-base-light;

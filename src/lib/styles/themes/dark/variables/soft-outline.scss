@@ -1,4 +1,5 @@
-@use 'styles/definitions/index' as *;
+@use 'styles/definitions/_index' as *;
+@use 'styles/definitions/dark.scss' as *;
 
 $soft-outline-neutral-border: 2;
 $soft-outline-muted-border: $muted-base-dark;
