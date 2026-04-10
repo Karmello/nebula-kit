@@ -1,8 +1,10 @@
+@use 'styles/definitions/index' as *;
+
 $ghost-neutral-text: 25;
-$ghost-muted-text: 1;
-$ghost-tertiary-text: 3;
-$ghost-secondary-text: 8;
-$ghost-primary-text: 14;
+$ghost-muted-text: $muted-base-light;
+$ghost-tertiary-text: $tertiary-base-light;
+$ghost-secondary-text: $secondary-base-light;
+$ghost-primary-text: $primary-base-light;
 $ghost-inverse-text: 0;
 
 $ghost-neutral-text-hover: $ghost-neutral-text - 7;

@@ -2,13 +2,23 @@ $colors: 'gray', 'blue', 'green', 'amber', 'red', 'pink';
 $variants: solid, outline, soft-outline, ghost;
 $intents: neutral, muted, tertiary, secondary, primary, inverse;
 
+$muted-base-light: 1;
+$tertiary-base-light: 3;
+$secondary-base-light: 7;
+$primary-base-light: 13;
+
+$muted-base-dark: 2;
+$tertiary-base-dark: 3;
+$secondary-base-dark: 6;
+$primary-base-dark: 13;
+
 $saturation: 72%;
 
-$blue-hue: 222;
-$green-hue: 148;
-$amber-hue: 52;
-$red-hue: 0;
-$pink-hue: 325;
+$blue-hue: 232;
+$green-hue: 147;
+$amber-hue: 55;
+$red-hue: 8;
+$pink-hue: 328;
 
 $gray-lightness-0: 100%;
 $blue-lightness-0: 100%;

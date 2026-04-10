@@ -1,8 +1,10 @@
+@use 'styles/definitions/index' as *;
+
 $soft-outline-neutral-border: 1;
-$soft-outline-muted-border: 1;
-$soft-outline-tertiary-border: 3;
-$soft-outline-secondary-border: 8;
-$soft-outline-primary-border: 14;
+$soft-outline-muted-border: $muted-base-light;
+$soft-outline-tertiary-border: $tertiary-base-light;
+$soft-outline-secondary-border: $secondary-base-light;
+$soft-outline-primary-border: $primary-base-light;
 $soft-outline-inverse-border: 25;
 
 $soft-outline-neutral-border-hover: $soft-outline-neutral-border + 1;

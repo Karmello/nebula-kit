@@ -1,8 +1,10 @@
+@use 'styles/definitions/index' as *;
+
 $solid-neutral-bg: 0;
-$solid-muted-bg: 1;
-$solid-tertiary-bg: 3;
-$solid-secondary-bg: 8;
-$solid-primary-bg: 14;
+$solid-muted-bg: $muted-base-light;
+$solid-tertiary-bg: $tertiary-base-light;
+$solid-secondary-bg: $secondary-base-light;
+$solid-primary-bg: $primary-base-light;
 $solid-inverse-bg: 25;
 
 $solid-neutral-bg-hover: $solid-neutral-bg + 1;
