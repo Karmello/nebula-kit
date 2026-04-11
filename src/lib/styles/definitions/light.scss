@@ -1,16 +1,46 @@
-$blue-hue-light: 220;
-$green-hue-light: 145;
-$amber-hue-light: 60;
-$red-hue-light: 10;
-$pink-hue-light: 330;
+$gray-hue: 0;
+$blue-hue: 220;
+$green-hue: 145;
+$amber-hue: 60;
+$red-hue: 10;
+$pink-hue: 330;
 
-$blue-saturation-light: 75%;
-$green-saturation-light: 75%;
-$amber-saturation-light: 75%;
-$red-saturation-light: 75%;
-$pink-saturation-light: 75%;
+$gray-saturation: 0%;
+$blue-saturation: 75%;
+$green-saturation: 75%;
+$amber-saturation: 75%;
+$red-saturation: 75%;
+$pink-saturation: 75%;
 
-$muted-base-light: 1;
-$tertiary-base-light: 3;
-$secondary-base-light: 9;
-$primary-base-light: 14;
+$muted-base: 1;
+$tertiary-base: 3;
+$secondary-base: 9;
+$primary-base: 14;
+
+$neutral-hover-step: 1;
+$muted-hover-step: 1;
+$tertiary-hover-step: 1;
+$secondary-hover-step: 2;
+$primary-hover-step: 2;
+$inverse-hover-step: -4;
+
+$neutral-active-step: 3;
+$muted-active-step: 3;
+$tertiary-active-step: 3;
+$secondary-active-step: 4;
+$primary-active-step: 4;
+$inverse-active-step: -7;
+
+$neutral-selected-step: 1;
+$muted-selected-step: 1;
+$tertiary-selected-step: 1;
+$secondary-selected-step: 2;
+$primary-selected-step: 2;
+$inverse-selected-step: -4;
+
+$neutral-base-elevated-step: 0;
+$muted-base-elevated-step: 2;
+$tertiary-base-elevated-step: 2;
+$secondary-base-elevated-step: 2;
+$primary-base-elevated-step: 2;
+$inverse-base-elevated-step: -3;

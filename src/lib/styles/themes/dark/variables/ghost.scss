@@ -1,11 +1,11 @@
 @use 'styles/definitions/_index' as *;
 @use 'styles/definitions/dark.scss' as *;
 
-$ghost-neutral-text: 25;
-$ghost-muted-text: $muted-base-dark;
-$ghost-tertiary-text: $tertiary-base-dark;
-$ghost-secondary-text: $secondary-base-dark;
-$ghost-primary-text: $primary-base-dark;
+$ghost-neutral-text: $steps-count - 1;
+$ghost-muted-text: $muted-base;
+$ghost-tertiary-text: $tertiary-base;
+$ghost-secondary-text: $secondary-base;
+$ghost-primary-text: $primary-base;
 $ghost-inverse-text: 0;
 
 $ghost-neutral-text-hover: $ghost-neutral-text - 4;

@@ -2,11 +2,11 @@
 @use 'styles/definitions/dark.scss' as *;
 
 $outline-neutral-border: 2;
-$outline-muted-border: $muted-base-dark;
-$outline-tertiary-border: $tertiary-base-dark;
-$outline-secondary-border: $secondary-base-dark;
-$outline-primary-border: $primary-base-dark;
-$outline-inverse-border: 25;
+$outline-muted-border: $muted-base;
+$outline-tertiary-border: $tertiary-base;
+$outline-secondary-border: $secondary-base;
+$outline-primary-border: $primary-base;
+$outline-inverse-border: $steps-count - 1;
 
 $outline-neutral-border-hover: $outline-neutral-border + 1;
 $outline-muted-border-hover: $outline-neutral-border + 1;

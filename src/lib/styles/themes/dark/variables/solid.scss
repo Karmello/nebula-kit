@@ -2,17 +2,17 @@
 @use 'styles/definitions/dark.scss' as *;
 
 $solid-neutral-bg: 0;
-$solid-muted-bg: $muted-base-dark;
-$solid-tertiary-bg: $tertiary-base-dark;
-$solid-secondary-bg: $secondary-base-dark;
-$solid-primary-bg: $primary-base-dark;
-$solid-inverse-bg: 25;
+$solid-muted-bg: $muted-base;
+$solid-tertiary-bg: $tertiary-base;
+$solid-secondary-bg: $secondary-base;
+$solid-primary-bg: $primary-base;
+$solid-inverse-bg: $steps-count - 1;
 
 $solid-neutral-bg-hover: $solid-neutral-bg + 2;
-$solid-muted-bg-hover: $solid-muted-bg + 1;
-$solid-tertiary-bg-hover: $solid-tertiary-bg + 1;
+$solid-muted-bg-hover: $solid-muted-bg + 2;
+$solid-tertiary-bg-hover: $solid-tertiary-bg + 2;
 $solid-secondary-bg-hover: $solid-secondary-bg + 2;
-$solid-primary-bg-hover: $solid-primary-bg + 3;
+$solid-primary-bg-hover: $solid-primary-bg + 2;
 $solid-inverse-bg-hover: $solid-inverse-bg - 3;
 
 $solid-neutral-bg-active: $solid-neutral-bg + 3;

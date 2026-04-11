@@ -2,32 +2,32 @@
 @use 'styles/definitions/light.scss' as *;
 
 $solid-neutral-bg: 0;
-$solid-muted-bg: $muted-base-light;
-$solid-tertiary-bg: $tertiary-base-light;
-$solid-secondary-bg: $secondary-base-light;
-$solid-primary-bg: $primary-base-light;
-$solid-inverse-bg: 25;
+$solid-muted-bg: $muted-base;
+$solid-tertiary-bg: $tertiary-base;
+$solid-secondary-bg: $secondary-base;
+$solid-primary-bg: $primary-base;
+$solid-inverse-bg: $steps-count - 1;
 
-$solid-neutral-bg-hover: $solid-neutral-bg + 1;
-$solid-muted-bg-hover: $solid-muted-bg + 1;
-$solid-tertiary-bg-hover: $solid-tertiary-bg + 1;
-$solid-secondary-bg-hover: $solid-secondary-bg + 2;
-$solid-primary-bg-hover: $solid-primary-bg + 2;
-$solid-inverse-bg-hover: $solid-inverse-bg - 4;
+$solid-neutral-bg-hover: $solid-neutral-bg + $neutral-hover-step;
+$solid-muted-bg-hover: $solid-muted-bg + $muted-hover-step;
+$solid-tertiary-bg-hover: $solid-tertiary-bg + $tertiary-hover-step;
+$solid-secondary-bg-hover: $solid-secondary-bg + $secondary-hover-step;
+$solid-primary-bg-hover: $solid-primary-bg + $primary-hover-step;
+$solid-inverse-bg-hover: $solid-inverse-bg + $inverse-hover-step;
 
-$solid-neutral-bg-active: $solid-neutral-bg + 3;
-$solid-muted-bg-active: $solid-muted-bg + 3;
-$solid-tertiary-bg-active: $solid-tertiary-bg + 3;
-$solid-secondary-bg-active: $solid-secondary-bg + 4;
-$solid-primary-bg-active: $solid-primary-bg + 5;
-$solid-inverse-bg-active: $solid-inverse-bg - 7;
+$solid-neutral-bg-active: $solid-neutral-bg + $neutral-active-step;
+$solid-muted-bg-active: $solid-muted-bg + $muted-active-step;
+$solid-tertiary-bg-active: $solid-tertiary-bg + $tertiary-active-step;
+$solid-secondary-bg-active: $solid-secondary-bg + $secondary-active-step;
+$solid-primary-bg-active: $solid-primary-bg + $primary-active-step;
+$solid-inverse-bg-active: $solid-inverse-bg + $inverse-active-step;
 
-$solid-neutral-bg-selected: $solid-neutral-bg + 2;
-$solid-muted-bg-selected: $solid-muted-bg + 2;
-$solid-tertiary-bg-selected: $solid-tertiary-bg + 2;
-$solid-secondary-bg-selected: $solid-secondary-bg + 3;
-$solid-primary-bg-selected: $solid-primary-bg + 3;
-$solid-inverse-bg-selected: $solid-inverse-bg - 5;
+$solid-neutral-bg-selected: $solid-neutral-bg + $neutral-selected-step;
+$solid-muted-bg-selected: $solid-muted-bg + $muted-selected-step;
+$solid-tertiary-bg-selected: $solid-tertiary-bg + $tertiary-selected-step;
+$solid-secondary-bg-selected: $solid-secondary-bg + $secondary-selected-step;
+$solid-primary-bg-selected: $solid-primary-bg + $primary-selected-step;
+$solid-inverse-bg-selected: $solid-inverse-bg + $inverse-selected-step;
 
 @mixin set($color) {
   // bg

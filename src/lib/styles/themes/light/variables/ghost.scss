@@ -1,11 +1,11 @@
 @use 'styles/definitions/_index' as *;
 @use 'styles/definitions/light.scss' as *;
 
-$ghost-neutral-text: 25;
-$ghost-muted-text: $muted-base-light;
-$ghost-tertiary-text: $tertiary-base-light;
-$ghost-secondary-text: $secondary-base-light;
-$ghost-primary-text: $primary-base-light;
+$ghost-neutral-text: $steps-count - 1;
+$ghost-muted-text: $muted-base;
+$ghost-tertiary-text: $tertiary-base;
+$ghost-secondary-text: $secondary-base;
+$ghost-primary-text: $primary-base;
 $ghost-inverse-text: 0;
 
 $ghost-neutral-text-hover: $ghost-neutral-text - 7;
@@ -13,14 +13,14 @@ $ghost-muted-text-hover: $ghost-muted-text + 2;
 $ghost-tertiary-text-hover: $ghost-tertiary-text + 2;
 $ghost-secondary-text-hover: $ghost-secondary-text + 4;
 $ghost-primary-text-hover: $ghost-primary-text - 4;
-$ghost-inverse-text-hover: $ghost-inverse-text - 4;
+$ghost-inverse-text-hover: $ghost-inverse-text + 4;
 
 $ghost-neutral-text-active: $ghost-neutral-text - 12;
 $ghost-muted-text-active: $ghost-muted-text + 4;
 $ghost-tertiary-text-active: $ghost-tertiary-text + 4;
 $ghost-secondary-text-active: $ghost-secondary-text + 8;
 $ghost-primary-text-active: $ghost-primary-text - 7;
-$ghost-inverse-text-active: $ghost-inverse-text - 4;
+$ghost-inverse-text-active: $ghost-inverse-text + 7;
 
 $ghost-neutral-text-selected: $ghost-neutral-text - 3;
 $ghost-muted-text-selected: $ghost-muted-text - 3;

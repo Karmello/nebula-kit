@@ -2,32 +2,32 @@
 @use 'styles/definitions/light.scss' as *;
 
 $outline-neutral-border: 1;
-$outline-muted-border: $muted-base-light;
-$outline-tertiary-border: $tertiary-base-light;
-$outline-secondary-border: $secondary-base-light;
-$outline-primary-border: $primary-base-light;
-$outline-inverse-border: 25;
+$outline-muted-border: $muted-base;
+$outline-tertiary-border: $tertiary-base;
+$outline-secondary-border: $secondary-base;
+$outline-primary-border: $primary-base;
+$outline-inverse-border: $steps-count - 1;
 
-$outline-neutral-border-hover: $outline-neutral-border + 1;
-$outline-muted-border-hover: $outline-neutral-border + 1;
-$outline-tertiary-border-hover: $outline-tertiary-border + 1;
-$outline-secondary-border-hover: $outline-secondary-border + 2;
-$outline-primary-border-hover: $outline-primary-border + 2;
-$outline-inverse-border-hover: $outline-inverse-border - 4;
+$outline-neutral-border-hover: $outline-neutral-border + $neutral-hover-step;
+$outline-muted-border-hover: $outline-muted-border + $muted-hover-step;
+$outline-tertiary-border-hover: $outline-tertiary-border + $tertiary-hover-step;
+$outline-secondary-border-hover: $outline-secondary-border + $secondary-hover-step;
+$outline-primary-border-hover: $outline-primary-border + $primary-hover-step;
+$outline-inverse-border-hover: $outline-inverse-border + $inverse-hover-step;
 
-$outline-neutral-border-active: $outline-neutral-border + 3;
-$outline-muted-border-active: $outline-neutral-border + 3;
-$outline-tertiary-border-active: $outline-tertiary-border + 3;
-$outline-secondary-border-active: $outline-secondary-border + 4;
-$outline-primary-border-active: $outline-primary-border + 5;
-$outline-inverse-border-active: $outline-inverse-border - 7;
+$outline-neutral-border-active: $outline-neutral-border + $neutral-active-step;
+$outline-muted-border-active: $outline-muted-border + $muted-active-step;
+$outline-tertiary-border-active: $outline-tertiary-border + $tertiary-active-step;
+$outline-secondary-border-active: $outline-secondary-border + $secondary-active-step;
+$outline-primary-border-active: $outline-primary-border + $primary-active-step;
+$outline-inverse-border-active: $outline-inverse-border + $inverse-active-step;
 
-$outline-neutral-border-selected: $outline-neutral-border + 1;
-$outline-muted-border-selected: $outline-neutral-border + 1;
-$outline-tertiary-border-selected: $outline-tertiary-border + 1;
-$outline-secondary-border-selected: $outline-secondary-border + 1;
-$outline-primary-border-selected: $outline-primary-border + 1;
-$outline-inverse-border-selected: $outline-inverse-border + 1;
+$outline-neutral-border-selected: $outline-neutral-border + $neutral-selected-step;
+$outline-muted-border-selected: $outline-muted-border + $muted-selected-step;
+$outline-tertiary-border-selected: $outline-tertiary-border + $tertiary-selected-step;
+$outline-secondary-border-selected: $outline-secondary-border + $secondary-selected-step;
+$outline-primary-border-selected: $outline-primary-border + $primary-selected-step;
+$outline-inverse-border-selected: $outline-inverse-border + $inverse-selected-step;
 
 @mixin set($color) {
   // border
