@@ -1,12 +1,12 @@
+@use 'styles/definitions/light' as *;
 @use 'styles/definitions/_index' as *;
-@use 'styles/definitions/light.scss' as *;
 
-$outline-neutral-border: 1;
+$outline-neutral-border: $neutral-base + 1;
 $outline-muted-border: $muted-base;
 $outline-tertiary-border: $tertiary-base;
 $outline-secondary-border: $secondary-base;
 $outline-primary-border: $primary-base;
-$outline-inverse-border: $steps-count - 1;
+$outline-inverse-border: $inverse-base;
 
 $outline-neutral-border-hover: $outline-neutral-border + $neutral-hover-step;
 $outline-muted-border-hover: $outline-muted-border + $muted-hover-step;
@@ -95,18 +95,18 @@ $outline-inverse-border-selected: $outline-inverse-border + $inverse-selected-st
   --neb-ctx-light-outline-inverse-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$outline-inverse-border-selected})) 10%, transparent);
 
   // text disabled
-  --neb-ctx-light-outline-neutral-text-disabled: hsl(var(--neb-#{$color}-12) / 0.25);
-  --neb-ctx-light-outline-muted-text-disabled: hsl(var(--neb-#{$color}-12) / 0.25);
-  --neb-ctx-light-outline-tertiary-text-disabled: hsl(var(--neb-#{$color}-12) / 0.25);
-  --neb-ctx-light-outline-secondary-text-disabled: hsl(var(--neb-#{$color}-12) / 0.25);
-  --neb-ctx-light-outline-primary-text-disabled: hsl(var(--neb-#{$color}-12) / 0.25);
-  --neb-ctx-light-outline-inverse-text-disabled: hsl(var(--neb-#{$color}-12) / 0.25);
+  --neb-ctx-light-outline-neutral-text-disabled: hsl(var(--neb-#{$color}-#{$steps-count - 1}) / 0.25);
+  --neb-ctx-light-outline-muted-text-disabled: hsl(var(--neb-#{$color}-#{$steps-count - 1}) / 0.25);
+  --neb-ctx-light-outline-tertiary-text-disabled: hsl(var(--neb-#{$color}-#{$steps-count - 1}) / 0.25);
+  --neb-ctx-light-outline-secondary-text-disabled: hsl(var(--neb-#{$color}-#{$steps-count - 1}) / 0.25);
+  --neb-ctx-light-outline-primary-text-disabled: hsl(var(--neb-#{$color}-#{$steps-count - 1}) / 0.25);
+  --neb-ctx-light-outline-inverse-text-disabled: hsl(var(--neb-#{$color}-#{$steps-count - 1}) / 0.25);
 
   // loader
-  --neb-ctx-light-outline-neutral-loader: hsl(var(--neb-#{$color}-6));
-  --neb-ctx-light-outline-muted-loader: hsl(var(--neb-#{$color}-6));
-  --neb-ctx-light-outline-tertiary-loader: hsl(var(--neb-#{$color}-6));
-  --neb-ctx-light-outline-secondary-loader: hsl(var(--neb-#{$color}-6));
-  --neb-ctx-light-outline-primary-loader: hsl(var(--neb-#{$color}-6));
-  --neb-ctx-light-outline-inverse-loader: hsl(var(--neb-#{$color}-6));
+  --neb-ctx-light-outline-neutral-loader: hsl(var(--neb-#{$color}-#{$primary-base}));
+  --neb-ctx-light-outline-muted-loader: hsl(var(--neb-#{$color}-#{$primary-base}));
+  --neb-ctx-light-outline-tertiary-loader: hsl(var(--neb-#{$color}-#{$primary-base}));
+  --neb-ctx-light-outline-secondary-loader: hsl(var(--neb-#{$color}-#{$primary-base}));
+  --neb-ctx-light-outline-primary-loader: hsl(var(--neb-#{$color}-#{$primary-base}));
+  --neb-ctx-light-outline-inverse-loader: hsl(var(--neb-#{$color}-#{$primary-base}));
 }

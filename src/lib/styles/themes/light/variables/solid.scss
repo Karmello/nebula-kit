@@ -1,12 +1,12 @@
 @use 'styles/definitions/_index' as *;
-@use 'styles/definitions/light.scss' as *;
+@use 'styles/definitions/light' as *;
 
-$solid-neutral-bg: 0;
+$solid-neutral-bg: $neutral-base;
 $solid-muted-bg: $muted-base;
 $solid-tertiary-bg: $tertiary-base;
 $solid-secondary-bg: $secondary-base;
 $solid-primary-bg: $primary-base;
-$solid-inverse-bg: $steps-count - 1;
+$solid-inverse-bg: $inverse-base;
 
 $solid-neutral-bg-hover: $solid-neutral-bg + $neutral-hover-step;
 $solid-muted-bg-hover: $solid-muted-bg + $muted-hover-step;
@@ -71,26 +71,26 @@ $solid-inverse-bg-selected: $solid-inverse-bg + $inverse-selected-step;
   --neb-ctx-light-solid-inverse-bg-disabled: hsl(var(--neb-#{$color}-#{$solid-inverse-bg}) / 0.5);
 
   // text
-  --neb-ctx-light-solid-neutral-text: hsl(var(--neb-#{$color}-25));
-  --neb-ctx-light-solid-muted-text: hsl(var(--neb-#{$color}-25));
-  --neb-ctx-light-solid-tertiary-text: hsl(var(--neb-#{$color}-25));
+  --neb-ctx-light-solid-neutral-text: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-light-solid-muted-text: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-light-solid-tertiary-text: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
   --neb-ctx-light-solid-secondary-text: hsl(var(--neb-#{$color}-0));
   --neb-ctx-light-solid-primary-text: hsl(var(--neb-#{$color}-0));
   --neb-ctx-light-solid-inverse-text: hsl(var(--neb-#{$color}-0));
 
   // text disabled
-  --neb-ctx-light-solid-neutral-text-disabled: hsl(var(--neb-#{$color}-25) / 0.25);
-  --neb-ctx-light-solid-muted-text-disabled: hsl(var(--neb-#{$color}-25) / 0.25);
-  --neb-ctx-light-solid-tertiary-text-disabled: hsl(var(--neb-#{$color}-25) / 0.25);
-  --neb-ctx-light-solid-secondary-text-disabled: hsl(var(--neb-#{$color}-25) / 0.25);
+  --neb-ctx-light-solid-neutral-text-disabled: hsl(var(--neb-#{$color}-#{$steps-count - 1}) / 0.25);
+  --neb-ctx-light-solid-muted-text-disabled: hsl(var(--neb-#{$color}-#{$steps-count - 1}) / 0.25);
+  --neb-ctx-light-solid-tertiary-text-disabled: hsl(var(--neb-#{$color}-#{$steps-count - 1}) / 0.25);
+  --neb-ctx-light-solid-secondary-text-disabled: hsl(var(--neb-#{$color}-0) / 0.75);
   --neb-ctx-light-solid-primary-text-disabled: hsl(var(--neb-#{$color}-0) / 0.75);
   --neb-ctx-light-solid-inverse-text-disabled: hsl(var(--neb-#{$color}-0) / 0.75);
 
   // loader
-  --neb-ctx-light-solid-neutral-loader: hsl(var(--neb-#{$color}-25));
-  --neb-ctx-light-solid-muted-loader: hsl(var(--neb-#{$color}-25));
-  --neb-ctx-light-solid-tertiary-loader: hsl(var(--neb-#{$color}-25));
-  --neb-ctx-light-solid-secondary-loader: hsl(var(--neb-#{$color}-25));
-  --neb-ctx-light-solid-primary-loader: hsl(var(--neb-#{$color}-0));
+  --neb-ctx-light-solid-neutral-loader: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-light-solid-muted-loader: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-light-solid-tertiary-loader: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-light-solid-secondary-loader: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-light-solid-primary-loader: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
   --neb-ctx-light-solid-inverse-loader: hsl(var(--neb-#{$color}-0));
 }

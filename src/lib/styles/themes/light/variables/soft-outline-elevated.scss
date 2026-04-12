@@ -1,4 +1,5 @@
 @use './soft-outline.scss' as *;
+@use 'styles/definitions/_index' as *;
 @use 'styles/definitions/light' as *;
 
 $soft-outline-neutral-elevated-border: $soft-outline-neutral-border + $neutral-base-elevated-step;
@@ -87,7 +88,7 @@ $soft-outline-inverse-elevated-border-selected: $soft-outline-inverse-elevated-b
   --neb-ctx-light-soft-outline-inverse-elevated-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-inverse-elevated-border-selected})) 10%, transparent);
 
   // text
-  --neb-ctx-light-soft-outline-neutral-elevated-text: hsl(var(--neb-#{$color}-25));
+  --neb-ctx-light-soft-outline-neutral-elevated-text: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
   --neb-ctx-light-soft-outline-muted-elevated-text: hsl(var(--neb-#{$color}-#{$soft-outline-muted-elevated-border}));
   --neb-ctx-light-soft-outline-tertiary-elevated-text: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-elevated-border}));
   --neb-ctx-light-soft-outline-secondary-elevated-text: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-elevated-border}));
@@ -95,7 +96,7 @@ $soft-outline-inverse-elevated-border-selected: $soft-outline-inverse-elevated-b
   --neb-ctx-light-soft-outline-inverse-elevated-text: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-elevated-border}));
 
   // text hover
-  --neb-ctx-light-soft-outline-neutral-elevated-text-hover: hsl(var(--neb-#{$color}-25));
+  --neb-ctx-light-soft-outline-neutral-elevated-text-hover: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
   --neb-ctx-light-soft-outline-muted-elevated-text-hover: hsl(var(--neb-#{$color}-#{$soft-outline-muted-elevated-border-hover}));
   --neb-ctx-light-soft-outline-tertiary-elevated-text-hover: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-elevated-border-hover}));
   --neb-ctx-light-soft-outline-secondary-elevated-text-hover: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-elevated-border-hover}));
@@ -103,7 +104,7 @@ $soft-outline-inverse-elevated-border-selected: $soft-outline-inverse-elevated-b
   --neb-ctx-light-soft-outline-inverse-elevated-text-hover: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-elevated-border-hover}));
 
   // text active
-  --neb-ctx-light-soft-outline-neutral-elevated-text-active: hsl(var(--neb-#{$color}-25));
+  --neb-ctx-light-soft-outline-neutral-elevated-text-active: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
   --neb-ctx-light-soft-outline-muted-elevated-text-active: hsl(var(--neb-#{$color}-#{$soft-outline-muted-elevated-border-active}));
   --neb-ctx-light-soft-outline-tertiary-elevated-text-active: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-elevated-border-active}));
   --neb-ctx-light-soft-outline-secondary-elevated-text-active: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-elevated-border-active}));
@@ -111,7 +112,7 @@ $soft-outline-inverse-elevated-border-selected: $soft-outline-inverse-elevated-b
   --neb-ctx-light-soft-outline-inverse-elevated-text-active: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-elevated-border-active}));
 
   // text selected
-  --neb-ctx-light-soft-outline-neutral-elevated-text-selected: hsl(var(--neb-#{$color}-25));
+  --neb-ctx-light-soft-outline-neutral-elevated-text-selected: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
   --neb-ctx-light-soft-outline-muted-elevated-text-selected: hsl(var(--neb-#{$color}-#{$soft-outline-muted-elevated-border-selected}));
   --neb-ctx-light-soft-outline-tertiary-elevated-text-selected: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-elevated-border-selected}));
   --neb-ctx-light-soft-outline-secondary-elevated-text-selected: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-elevated-border-selected}));

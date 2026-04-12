@@ -1,12 +1,11 @@
-@use 'styles/definitions/_index' as *;
 @use 'styles/definitions/light.scss' as *;
 
-$ghost-neutral-text: $steps-count - 1;
+$ghost-neutral-text: $inverse-base;
 $ghost-muted-text: $muted-base;
 $ghost-tertiary-text: $tertiary-base;
 $ghost-secondary-text: $secondary-base;
 $ghost-primary-text: $primary-base;
-$ghost-inverse-text: 0;
+$ghost-inverse-text: $neutral-base;
 
 $ghost-neutral-text-hover: $ghost-neutral-text - 7;
 $ghost-muted-text-hover: $ghost-muted-text + 2;
@@ -71,10 +70,10 @@ $ghost-inverse-text-selected: $ghost-inverse-text + 3;
   --neb-ctx-light-ghost-inverse-text-disabled: hsl(var(--neb-#{$color}-#{$ghost-inverse-text}) / 0.25);
 
   // loader
-  --neb-ctx-light-ghost-neutral-loader: hsl(var(--neb-#{$color}-6));
-  --neb-ctx-light-ghost-muted-loader: hsl(var(--neb-#{$color}-6));
-  --neb-ctx-light-ghost-tertiary-loader: hsl(var(--neb-#{$color}-6));
-  --neb-ctx-light-ghost-secondary-loader: hsl(var(--neb-#{$color}-6));
-  --neb-ctx-light-ghost-primary-loader: hsl(var(--neb-#{$color}-6));
-  --neb-ctx-light-ghost-inverse-loader: hsl(var(--neb-#{$color}-6));
+  --neb-ctx-light-ghost-neutral-loader: hsl(var(--neb-#{$color}-#{$primary-base}));
+  --neb-ctx-light-ghost-muted-loader: hsl(var(--neb-#{$color}-#{$primary-base}));
+  --neb-ctx-light-ghost-tertiary-loader: hsl(var(--neb-#{$color}-#{$primary-base}));
+  --neb-ctx-light-ghost-secondary-loader: hsl(var(--neb-#{$color}-#{$primary-base}));
+  --neb-ctx-light-ghost-primary-loader: hsl(var(--neb-#{$color}-#{$primary-base}));
+  --neb-ctx-light-ghost-inverse-loader: hsl(var(--neb-#{$color}-#{$primary-base}));
 }
