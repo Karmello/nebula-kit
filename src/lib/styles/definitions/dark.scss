@@ -22,9 +22,9 @@ $neutral-hover-step: 2;
 $neutral-active-step: 3;
 $neutral-selected-step: 1;
 $neutral-base-elevated-step: 2;
-$neutral-fill-hover-perc: 5%;
-$neutral-fill-active-perc: 10%;
-$neutral-fill-selected-perc: 5%;
+$neutral-fill-hover-perc: 8%;
+$neutral-fill-active-perc: 15%;
+$neutral-fill-selected-perc: 8%;
 $neutral-fill-elevated-perc: 5%;
 
 // muted
@@ -33,9 +33,9 @@ $muted-hover-step: 1;
 $muted-active-step: 2;
 $muted-selected-step: 1;
 $muted-base-elevated-step: 2;
-$muted-fill-hover-perc: 5%;
-$muted-fill-active-perc: 10%;
-$muted-fill-selected-perc: 5%;
+$muted-fill-hover-perc: 8%;
+$muted-fill-active-perc: 15%;
+$muted-fill-selected-perc: 8%;
 $muted-fill-elevated-perc: 5%;
 
 // tertiary
@@ -44,9 +44,9 @@ $tertiary-hover-step: 1;
 $tertiary-active-step: 2;
 $tertiary-selected-step: 1;
 $tertiary-base-elevated-step: 2;
-$tertiary-fill-hover-perc: 8%;
-$tertiary-fill-active-perc: 16%;
-$tertiary-fill-selected-perc: 8%;
+$tertiary-fill-hover-perc: 11%;
+$tertiary-fill-active-perc: 18%;
+$tertiary-fill-selected-perc: 11%;
 $tertiary-fill-elevated-perc: 5%;
 
 // secondary
@@ -55,9 +55,9 @@ $secondary-hover-step: 2;
 $secondary-active-step: 4;
 $secondary-selected-step: 2;
 $secondary-base-elevated-step: 3;
-$secondary-fill-hover-perc: 15%;
-$secondary-fill-active-perc: 30%;
-$secondary-fill-selected-perc: 15%;
+$secondary-fill-hover-perc: 13%;
+$secondary-fill-active-perc: 26%;
+$secondary-fill-selected-perc: 13%;
 $secondary-fill-elevated-perc: 5%;
 
 // primary
@@ -67,7 +67,7 @@ $primary-active-step: 6;
 $primary-selected-step: 2;
 $primary-base-elevated-step: 3;
 $primary-fill-hover-perc: 20%;
-$primary-fill-active-perc: 40%;
+$primary-fill-active-perc: 35%;
 $primary-fill-selected-perc: 20%;
 $primary-fill-elevated-perc: 5%;
 
@@ -77,7 +77,7 @@ $inverse-hover-step: -3;
 $inverse-active-step: -6;
 $inverse-selected-step: -4;
 $inverse-base-elevated-step: -6;
-$inverse-fill-hover-perc: 20%;
-$inverse-fill-active-perc: 40%;
-$inverse-fill-selected-perc: 20%;
+$inverse-fill-hover-perc: 23%;
+$inverse-fill-active-perc: 35%;
+$inverse-fill-selected-perc: 23%;
 $inverse-fill-elevated-perc: 5%;
