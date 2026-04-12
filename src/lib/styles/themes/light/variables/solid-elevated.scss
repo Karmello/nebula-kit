@@ -1,4 +1,4 @@
-@use './solid.scss' as *;
+@use './solid' as *;
 @use 'styles/definitions/light' as *;
 
 $solid-neutral-elevated-bg: $solid-neutral-bg + $neutral-base-elevated-step;

@@ -1,12 +1,12 @@
-@use './ghost.scss' as ghost;
-@use './outline.scss' as outline;
-@use './soft-outline.scss' as soft-outline;
-@use './solid.scss' as solid;
+@use './ghost' as ghost;
+@use './outline' as outline;
+@use './soft-outline' as soft-outline;
+@use './solid' as solid;
 
-@use './ghost-elevated.scss' as ghost-elevated;
-@use './outline-elevated.scss' as outline-elevated;
-@use './soft-outline-elevated.scss' as soft-outline-elevated;
-@use './solid-elevated.scss' as solid-elevated;
+@use './ghost-elevated' as ghost-elevated;
+@use './outline-elevated' as outline-elevated;
+@use './soft-outline-elevated' as soft-outline-elevated;
+@use './solid-elevated' as solid-elevated;
 
 @mixin set-variables-dark($color) {
   --neb-background: hsl(var(--neb-#{$color}-0));
