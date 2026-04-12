@@ -18,7 +18,7 @@ $pink-saturation: 75%;
 
 // neutral
 $neutral-base: 0;
-$neutral-hover-step: 1;
+$neutral-hover-step: 2;
 $neutral-active-step: 3;
 $neutral-selected-step: 1;
 $neutral-base-elevated-step: 2;
@@ -30,7 +30,7 @@ $neutral-fill-elevated-perc: 5%;
 // muted
 $muted-base: 2;
 $muted-hover-step: 1;
-$muted-active-step: 3;
+$muted-active-step: 2;
 $muted-selected-step: 1;
 $muted-base-elevated-step: 2;
 $muted-fill-hover-perc: 5%;
@@ -41,7 +41,7 @@ $muted-fill-elevated-perc: 5%;
 // tertiary
 $tertiary-base: 3;
 $tertiary-hover-step: 1;
-$tertiary-active-step: 3;
+$tertiary-active-step: 2;
 $tertiary-selected-step: 1;
 $tertiary-base-elevated-step: 2;
 $tertiary-fill-hover-perc: 8%;
@@ -62,8 +62,8 @@ $secondary-fill-elevated-perc: 5%;
 
 // primary
 $primary-base: 12;
-$primary-hover-step: 2;
-$primary-active-step: 4;
+$primary-hover-step: 3;
+$primary-active-step: 6;
 $primary-selected-step: 2;
 $primary-base-elevated-step: 3;
 $primary-fill-hover-perc: 20%;
@@ -73,8 +73,8 @@ $primary-fill-elevated-perc: 5%;
 
 // inverse
 $inverse-base: $steps-count - 1;
-$inverse-hover-step: -4;
-$inverse-active-step: -7;
+$inverse-hover-step: -3;
+$inverse-active-step: -6;
 $inverse-selected-step: -4;
 $inverse-base-elevated-step: -6;
 $inverse-fill-hover-perc: 20%;
