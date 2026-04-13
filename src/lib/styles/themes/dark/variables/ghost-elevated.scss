@@ -1,32 +1,32 @@
 @use './ghost' as *;
 
-$ghost-neutral-elevated-text: $ghost-neutral-text;
-$ghost-muted-elevated-text: $ghost-muted-text;
+$ghost-neutral-elevated-text: $ghost-neutral-text - 1;
+$ghost-muted-elevated-text: $ghost-muted-text + 1;
 $ghost-tertiary-elevated-text: $ghost-tertiary-text + 1;
 $ghost-secondary-elevated-text: $ghost-secondary-text + 1;
 $ghost-primary-elevated-text: $ghost-primary-text + 1;
-$ghost-inverse-elevated-text: $ghost-inverse-text;
+$ghost-inverse-elevated-text: $ghost-inverse-text + 1;
 
-$ghost-neutral-elevated-text-hover: $ghost-neutral-text-hover;
-$ghost-muted-elevated-text-hover: $ghost-muted-text-hover;
+$ghost-neutral-elevated-text-hover: $ghost-neutral-text-hover - 1;
+$ghost-muted-elevated-text-hover: $ghost-muted-text-hover + 1;
 $ghost-tertiary-elevated-text-hover: $ghost-tertiary-text-hover + 1;
 $ghost-secondary-elevated-text-hover: $ghost-secondary-text-hover + 1;
 $ghost-primary-elevated-text-hover: $ghost-primary-text-hover + 1;
-$ghost-inverse-elevated-text-hover: $ghost-inverse-text-hover;
+$ghost-inverse-elevated-text-hover: $ghost-inverse-text-hover + 1;
 
-$ghost-neutral-elevated-text-active: $ghost-neutral-text-active;
-$ghost-muted-elevated-text-active: $ghost-muted-text-active;
+$ghost-neutral-elevated-text-active: $ghost-neutral-text-active - 1;
+$ghost-muted-elevated-text-active: $ghost-muted-text-active + 1;
 $ghost-tertiary-elevated-text-active: $ghost-tertiary-text-active + 1;
 $ghost-secondary-elevated-text-active: $ghost-secondary-text-active + 1;
 $ghost-primary-elevated-text-active: $ghost-primary-text-active + 1;
-$ghost-inverse-elevated-text-active: $ghost-inverse-text-active;
+$ghost-inverse-elevated-text-active: $ghost-inverse-text-active + 1;
 
-$ghost-neutral-elevated-text-selected: $ghost-neutral-text-selected;
-$ghost-muted-elevated-text-selected: $ghost-muted-text-selected;
+$ghost-neutral-elevated-text-selected: $ghost-neutral-text-selected - 1;
+$ghost-muted-elevated-text-selected: $ghost-muted-text-selected + 1;
 $ghost-tertiary-elevated-text-selected: $ghost-tertiary-text-selected + 1;
 $ghost-secondary-elevated-text-selected: $ghost-secondary-text-selected + 1;
 $ghost-primary-elevated-text-selected: $ghost-primary-text-selected + 1;
-$ghost-inverse-elevated-text-selected: $ghost-inverse-text-selected;
+$ghost-inverse-elevated-text-selected: $ghost-inverse-text-selected + 1;
 
 @mixin set($color) {
   // elevated text

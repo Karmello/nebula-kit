@@ -1,5 +1,6 @@
 @use './solid' as *;
 @use 'styles/definitions/light' as *;
+@use 'styles/definitions/_index' as *;
 
 $solid-neutral-elevated-bg: $solid-neutral-bg + $neutral-base-elevated-step;
 $solid-muted-elevated-bg: $solid-muted-bg + $muted-base-elevated-step;
@@ -61,4 +62,12 @@ $solid-inverse-elevated-bg-selected: $solid-inverse-elevated-bg + $inverse-selec
   --neb-ctx-light-solid-secondary-elevated-bg-selected: hsl(var(--neb-#{$color}-#{$solid-secondary-elevated-bg-selected}));
   --neb-ctx-light-solid-primary-elevated-bg-selected: hsl(var(--neb-#{$color}-#{$solid-primary-elevated-bg-selected}));
   --neb-ctx-light-solid-inverse-elevated-bg-selected: hsl(var(--neb-#{$color}-#{$solid-inverse-elevated-bg-selected}));
+
+  // elevated text
+  --neb-ctx-light-solid-neutral-elevated-text: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-light-solid-muted-elevated-text: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-light-solid-tertiary-elevated-text: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-light-solid-secondary-elevated-text: hsl(var(--neb-#{$color}-0));
+  --neb-ctx-light-solid-primary-elevated-text: hsl(var(--neb-#{$color}-0));
+  --neb-ctx-light-solid-inverse-elevated-text: hsl(var(--neb-#{$color}-0));
 }

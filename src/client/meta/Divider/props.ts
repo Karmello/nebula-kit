@@ -31,6 +31,7 @@ const DIVIDER_PROPS_META: ComponentMeta<DividerProps>['props'] = {
     ...BOX_PROPS_META.opacity,
     defaultValue: String(DEFAULT_DIVIDER_OPACITY),
   },
+  selected: BOX_PROPS_META.selected,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
 }

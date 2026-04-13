@@ -7,26 +7,26 @@ $ghost-secondary-text: $secondary-base;
 $ghost-primary-text: $primary-base;
 $ghost-inverse-text: $neutral-base;
 
-$ghost-neutral-text-hover: $ghost-neutral-text - 7;
+$ghost-neutral-text-hover: $ghost-neutral-text - 9;
 $ghost-muted-text-hover: $ghost-muted-text + 2;
-$ghost-tertiary-text-hover: $ghost-tertiary-text + 2;
-$ghost-secondary-text-hover: $ghost-secondary-text + 4;
-$ghost-primary-text-hover: $ghost-primary-text - 4;
+$ghost-tertiary-text-hover: $ghost-tertiary-text + 3;
+$ghost-secondary-text-hover: $ghost-secondary-text - 4;
+$ghost-primary-text-hover: $ghost-primary-text - 6;
 $ghost-inverse-text-hover: $ghost-inverse-text + 4;
 
-$ghost-neutral-text-active: $ghost-neutral-text - 12;
+$ghost-neutral-text-active: $ghost-neutral-text - 14;
 $ghost-muted-text-active: $ghost-muted-text + 4;
-$ghost-tertiary-text-active: $ghost-tertiary-text + 4;
-$ghost-secondary-text-active: $ghost-secondary-text + 8;
-$ghost-primary-text-active: $ghost-primary-text - 7;
-$ghost-inverse-text-active: $ghost-inverse-text + 7;
+$ghost-tertiary-text-active: $ghost-tertiary-text + 6;
+$ghost-secondary-text-active: $ghost-secondary-text - 6;
+$ghost-primary-text-active: $ghost-primary-text - 9;
+$ghost-inverse-text-active: $ghost-inverse-text + 9;
 
-$ghost-neutral-text-selected: $ghost-neutral-text - 3;
-$ghost-muted-text-selected: $ghost-muted-text - 3;
-$ghost-tertiary-text-selected: $ghost-tertiary-text + 1;
-$ghost-secondary-text-selected: $ghost-secondary-text + 2;
-$ghost-primary-text-selected: $ghost-primary-text - 2;
-$ghost-inverse-text-selected: $ghost-inverse-text + 3;
+$ghost-neutral-text-selected: $ghost-neutral-text - 9;
+$ghost-muted-text-selected: $ghost-muted-text + 2;
+$ghost-tertiary-text-selected: $ghost-tertiary-text + 3;
+$ghost-secondary-text-selected: $ghost-secondary-text - 4;
+$ghost-primary-text-selected: $ghost-primary-text - 6;
+$ghost-inverse-text-selected: $ghost-inverse-text + 4;
 
 @mixin set($color) {
   // text
