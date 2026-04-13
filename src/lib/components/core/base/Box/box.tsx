@@ -99,11 +99,20 @@ export const Box = <T extends ElementType = 'div'>({
   useEffect(() => {
     const el = finalRef?.current as Element
     if (!el) return
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
+
+    let raf1: number
+    let raf2: number
+
+    raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => {
         el.setAttribute('data-neb-box-transitions', 'true')
       })
     })
+
+    return () => {
+      cancelAnimationFrame(raf1)
+      cancelAnimationFrame(raf2)
+    }
   }, [])
 
   useLayoutEffect(() => {
