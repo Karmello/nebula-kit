@@ -100,10 +100,9 @@ export const Box = <T extends ElementType = 'div'>({
     const el = finalRef?.current as Element
     if (!el) return
 
-    let raf1: number
     let raf2: number
 
-    raf1 = requestAnimationFrame(() => {
+    const raf1 = requestAnimationFrame(() => {
       raf2 = requestAnimationFrame(() => {
         el.setAttribute('data-neb-box-transitions', 'true')
       })

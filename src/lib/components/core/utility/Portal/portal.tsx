@@ -18,8 +18,6 @@ export const Portal = ({ children, tagRef, tagAttrs, anchorRef, placement = DEFA
   const ref = useRef<HTMLDivElement | null>(null)
   const rootRef = tagRef || ref
 
-  const rafRef = useRef<number | null>(null)
-
   const updatePosition = useCallback(() => {
     if (!anchorRef?.current) return
 
@@ -53,15 +51,6 @@ export const Portal = ({ children, tagRef, tagAttrs, anchorRef, placement = DEFA
       return { top, left }
     })
   }, [placement, anchorRef, offset])
-
-  const scheduleUpdate = useCallback(() => {
-    if (rafRef.current !== null) return
-
-    rafRef.current = requestAnimationFrame(() => {
-      updatePosition()
-      rafRef.current = null
-    })
-  }, [updatePosition])
 
   // Create portal container
   useLayoutEffect(() => {

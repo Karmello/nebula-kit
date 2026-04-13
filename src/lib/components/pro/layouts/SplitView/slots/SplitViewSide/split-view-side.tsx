@@ -20,7 +20,7 @@ export const SplitViewSide = ({
   intent = DEFAULT_SPLIT_VIEW_SIDE_INTENT,
   inlineSize = DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
 }: SplitViewSideProps) => {
-  const { sideOpen, setSideOpen, sidePosition, switchAt, mode } = useSplitViewContext()
+  const { sideOpen, setSideOpen, sidePosition, mode } = useSplitViewContext()
 
   const ref = useRef(null)
 
