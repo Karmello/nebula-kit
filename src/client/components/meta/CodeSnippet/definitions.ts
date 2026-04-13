@@ -1,6 +1,6 @@
 export const COLOR_MAP = {
   // background
-  bg: 'hsl(var(--neb-gray-1))',
+  bg: 'var(--neb-solid-muted-bg)',
   // component name
   '#F78C6C': 'hsl(var(--neb-red-13))',
   // native html tag name

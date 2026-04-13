@@ -22,7 +22,7 @@ export const RELEASE_INFO: Record<
   }
 > = {
   '0.8.0': {
-    timestamp: 1774729367750,
+    timestamp: 1776057291520,
     changelog: {
       main: [
         'refined the color token system to better align with the internal styling model and improve consistency across themes, brands and surfaces',
