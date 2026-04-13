@@ -64,12 +64,13 @@ export const Portal = ({ children, tagRef, tagAttrs, anchorRef, placement = DEFA
     }
   }, [])
 
-  // Position tracking (event-driven)
+  // Position tracking (hybrid + drift detection)
   useLayoutEffect(() => {
     if (!anchorRef?.current) return
 
     let raf: number | null = null
     let timeout: number | null = null
+    let driftRaf: number | null = null
 
     const startTracking = () => {
       if (raf !== null) return
@@ -96,22 +97,39 @@ export const Portal = ({ children, tagRef, tagAttrs, anchorRef, placement = DEFA
         clearTimeout(timeout)
       }
 
-      // stop after activity settles
       timeout = window.setTimeout(() => {
         stopTracking()
-      }, 120) // tweak: 100–200ms sweet spot
+      }, 120)
     }
 
     // initial position
     updatePosition()
 
-    // listeners
+    // standard listeners
     window.addEventListener('resize', handleActivity)
     window.addEventListener('scroll', handleActivity, true)
 
-    // also observe anchor size
+    // observe anchor size
     const observer = new ResizeObserver(handleActivity)
     observer.observe(anchorRef.current)
+
+    // 🧠 DRIFT DETECTION LOOP (new)
+    const checkDrift = () => {
+      if (!anchorRef?.current) return
+
+      const rect = anchorRef.current.getBoundingClientRect()
+
+      const newTop = rect.top + window.scrollY
+      const newLeft = rect.left + window.scrollX
+
+      if (position.top !== newTop || position.left !== newLeft) {
+        handleActivity()
+      }
+
+      driftRaf = requestAnimationFrame(checkDrift)
+    }
+
+    driftRaf = requestAnimationFrame(checkDrift)
 
     return () => {
       stopTracking()
@@ -120,11 +138,15 @@ export const Portal = ({ children, tagRef, tagAttrs, anchorRef, placement = DEFA
         clearTimeout(timeout)
       }
 
+      if (driftRaf !== null) {
+        cancelAnimationFrame(driftRaf)
+      }
+
       window.removeEventListener('resize', handleActivity)
       window.removeEventListener('scroll', handleActivity, true)
       observer.disconnect()
     }
-  }, [anchorRef, updatePosition])
+  }, [anchorRef, updatePosition, position])
 
   const themeContext = useThemeContext()
   const brandContext = useBrandContext()
