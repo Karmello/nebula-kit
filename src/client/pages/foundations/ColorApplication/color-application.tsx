@@ -2,22 +2,22 @@ import { useState, useEffect } from 'react'
 import { sentenceCase } from 'change-case'
 
 import { Box, Button, Grid, Select, Spacer, Text, Switch, Flex } from 'lib/components'
-import { BOX_VARIANTS, BOX_INTENTS, BoxVariant } from 'lib/components/core/base/Box/definitions'
+import { BOX_VARIANTS, BOX_INTENTS, BoxVariant, BoxSurface, BOX_SURFACES } from 'lib/components/core/base/Box/definitions'
 import { COLORS } from 'lib/definitions'
 
 export default () => {
   const [variant, setVariant] = useState<BoxVariant>('solid')
-  const [elevated, setElevated] = useState<boolean>(false)
+  const [surface, setSurface] = useState<BoxSurface | 'base'>('base')
   const [selected, setSelected] = useState<boolean>(false)
   const [disabled, setDisabled] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(false)
 
   useEffect(() => {
-    if (elevated) {
+    if (surface !== 'base') {
       setDisabled(false)
       setLoading(false)
     }
-  }, [elevated])
+  }, [surface])
 
   useEffect(() => {
     if (selected) {
@@ -28,7 +28,7 @@ export default () => {
 
   useEffect(() => {
     if (disabled) {
-      setElevated(false)
+      setSurface('base')
       setSelected(false)
       setLoading(false)
     }
@@ -36,7 +36,7 @@ export default () => {
 
   useEffect(() => {
     if (loading) {
-      setElevated(false)
+      setSurface('base')
       setSelected(false)
       setDisabled(false)
     }
@@ -67,9 +67,19 @@ export default () => {
         </Flex.Item>
         <Flex.Item>
           <Text bold intent="primary">
-            Elevated
+            Surface
           </Text>
-          <Switch checked={elevated} onChange={setElevated} />
+          <Select
+            value={surface}
+            onChange={value => setSurface(value as BoxSurface)}
+            inlineSize="150px"
+            size="sm"
+            scrollAlign="center"
+          >
+            {['base', ...BOX_SURFACES].map(surface => (
+              <Select.Option value={surface}>{sentenceCase(surface)}</Select.Option>
+            ))}
+          </Select>
         </Flex.Item>
         <Flex.Item>
           <Text bold intent="primary">
@@ -104,7 +114,7 @@ export default () => {
                     fullWidth
                     disabled={disabled}
                     loading={loading}
-                    elevated={elevated}
+                    surface={surface !== 'base' ? surface : undefined}
                     selected={selected}
                   >
                     {intent} {color}

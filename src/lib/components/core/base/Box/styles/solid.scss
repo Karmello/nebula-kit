@@ -25,7 +25,7 @@
         // enabled
         &:not([data-neb-box-disabled='true']) {
           // elevated
-          &[data-neb-box-elevated='true'] {
+          &[data-neb-box-surface='elevated'] {
             --bg: var(--neb-solid-#{$intent}-elevated-bg);
             --bg-hover: var(--neb-solid-#{$intent}-elevated-bg-hover);
             --bg-active: var(--neb-solid-#{$intent}-elevated-bg-active);

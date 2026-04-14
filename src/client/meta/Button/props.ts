@@ -27,7 +27,6 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   color: BOX_PROPS_META.color,
   customSvgIcon: WITH_ICON_PROPS_META.customSvgIcon,
   disabled: BOX_PROPS_META.disabled,
-  elevated: BOX_PROPS_META.elevated,
   fullWidth: {
     options: ['boolean'],
     isResponsive: true,
@@ -72,6 +71,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     description:
       'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
   },
+  surface: BOX_PROPS_META.surface,
   tag: {
     ...HTML_TAG_PROPS_META.tag,
     options: BUTTON_TAGS as unknown as string[],

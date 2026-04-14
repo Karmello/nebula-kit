@@ -75,7 +75,7 @@ type PropsFromBox<T extends ButtonTag = 'button'> = Pick<
   | 'interactive'
   | 'selected'
   | 'disabled'
-  | 'elevated'
+  | 'surface'
   | 'inlineSize'
   | 'minInlineSize'
   | 'maxInlineSize'

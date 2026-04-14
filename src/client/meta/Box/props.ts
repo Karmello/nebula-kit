@@ -11,7 +11,7 @@ import {
   THEMES,
 } from 'lib/definitions'
 
-import { BoxProps, BOX_VARIANTS, BOX_INTENTS } from 'lib/components/core/base/Box'
+import { BoxProps, BOX_VARIANTS, BOX_INTENTS, BOX_SURFACES } from 'lib/components/core/base/Box'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
@@ -122,10 +122,6 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['boolean'],
     description:
       'Enables visual rendering for the Box surface. When enabled, the Box participates in theming, colors, variants and intents. When disabled, it behaves as a neutral structural container with no visual styling applied.',
-  },
-  elevated: {
-    options: ['boolean'],
-    description: 'Emphasizes the component by increasing its surface color intensity.',
   },
   inlineSize: {
     options: ['CSS'],
@@ -312,6 +308,10 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['boolean'],
     description:
       'Applies a persistent selected state, taking precedence over transient interaction states like hover and active.',
+  },
+  surface: {
+    options: BOX_SURFACES,
+    description: 'Selects the surface depth style used by the component.',
   },
   tag: HTML_TAG_PROPS_META.tag,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,

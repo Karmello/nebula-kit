@@ -34,7 +34,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   interactive = DEFAULT_BUTTON_INTERACTIVE,
   selected,
   disabled,
-  elevated,
+  surface,
   inlineSize,
   minInlineSize,
   maxInlineSize,
@@ -95,7 +95,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       maxInlineSize={maxInlineSize}
       interactive={interactive}
       selected={selected}
-      elevated={elevated}
+      surface={surface}
       position="relative"
       {...BUTTON_SIZE_CONFIG[size || 'md']}
     >

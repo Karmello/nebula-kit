@@ -27,6 +27,7 @@ const BOX_META: ComponentMeta<BoxProps> = {
       'removed activeOnFocus prop',
       'removed defaultState prop',
       'added selected prop',
+      'changed elevated prop to surface',
     ],
     '0.7.0': [
       'added visual active state styling alongside hover for interactive Box',

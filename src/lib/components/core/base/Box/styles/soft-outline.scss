@@ -31,7 +31,7 @@
         // enabled
         &:not([data-neb-box-disabled='true']) {
           // elevated
-          &[data-neb-box-elevated='true'] {
+          &[data-neb-box-surface='elevated'] {
             --border: var(--neb-soft-outline-#{$intent}-elevated-border);
             --border-hover: var(--neb-soft-outline-#{$intent}-elevated-border-hover);
             --border-active: var(--neb-soft-outline-#{$intent}-elevated-border-active);

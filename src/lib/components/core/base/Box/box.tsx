@@ -18,7 +18,7 @@ export const Box = <T extends ElementType = 'div'>({
   tagRef,
   // surface
   drawable,
-  elevated,
+  surface,
   theme,
   brand,
   color,
@@ -230,7 +230,7 @@ export const Box = <T extends ElementType = 'div'>({
               disabled,
               ...updateDomStaticDataset('Box', {
                 drawable,
-                elevated,
+                surface,
                 interactive,
                 selected,
                 disabled,

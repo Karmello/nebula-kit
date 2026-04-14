@@ -106,7 +106,7 @@ export const MultiSelect = ({
                         disabled={disabled}
                         fullWidth
                         ripple={!open}
-                        elevated={open}
+                        surface={open ? 'elevated' : undefined}
                         interactive={!open}
                       >
                         {currentLabel || 'Select ...'}

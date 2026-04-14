@@ -64,7 +64,7 @@ export const Switch = ({
         }}
         drawable
         interactive
-        elevated={animatedChecked && !disabled}
+        surface={animatedChecked && !disabled ? 'elevated' : undefined}
         selected={animatedChecked && !disabled}
         disabled={disabled}
         variant="solid"
