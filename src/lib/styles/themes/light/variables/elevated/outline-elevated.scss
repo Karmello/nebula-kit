@@ -1,4 +1,4 @@
-@use './outline' as *;
+@use '../outline' as *;
 @use 'styles/definitions/light' as *;
 
 $outline-neutral-elevated-border: $outline-neutral-border + $neutral-base-elevated-step;

@@ -3,10 +3,10 @@
 @use './soft-outline' as soft-outline;
 @use './solid' as solid;
 
-@use './ghost-elevated' as ghost-elevated;
-@use './outline-elevated' as outline-elevated;
-@use './soft-outline-elevated' as soft-outline-elevated;
-@use './solid-elevated' as solid-elevated;
+@use './elevated/ghost-elevated' as ghost-elevated;
+@use './elevated/outline-elevated' as outline-elevated;
+@use './elevated/soft-outline-elevated' as soft-outline-elevated;
+@use './elevated/solid-elevated' as solid-elevated;
 
 @mixin set-variables-light($color) {
   --neb-background: hsl(var(--neb-#{$color}-0));

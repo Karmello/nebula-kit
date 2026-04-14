@@ -1,4 +1,4 @@
-@use './ghost' as *;
+@use '../ghost' as *;
 
 $ghost-neutral-elevated-text: $ghost-neutral-text - 1;
 $ghost-muted-elevated-text: $ghost-muted-text + 1;
