@@ -3,8 +3,8 @@ import { BoxProps } from 'lib/components/core/base/Box/definitions'
 
 export const DEFAULT_DIVIDER_INTENT: DividerProps['intent'] = 'muted'
 export const DEFAULT_DIVIDER_MARGIN_BLOCK: DividerProps['marginBlock'] = '3px'
-export const DEFAULT_DIVIDER_OPACITY: DividerProps['opacity'] = '0.5'
-export const DEFAULT_DIVIDER_SURFACE: DividerProps['surface'] = 'elevated'
+export const DEFAULT_DIVIDER_OPACITY: DividerProps['opacity'] = '1'
+export const DEFAULT_DIVIDER_SURFACE: DividerProps['surface'] = 'raised'
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'hr'>, 'tagAttrs' | 'tagRef'>
 

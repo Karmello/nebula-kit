@@ -1,0 +1,73 @@
+@use '../solid' as *;
+@use 'styles/definitions/dark' as *;
+@use 'styles/definitions/_index' as *;
+
+$solid-neutral-raised-bg: $solid-neutral-bg + $neutral-base-raised-step;
+$solid-muted-raised-bg: $solid-muted-bg + $muted-base-raised-step;
+$solid-tertiary-raised-bg: $solid-tertiary-bg + $tertiary-base-raised-step;
+$solid-secondary-raised-bg: $solid-secondary-bg + $secondary-base-raised-step;
+$solid-primary-raised-bg: $solid-primary-bg + $primary-base-raised-step;
+$solid-inverse-raised-bg: $solid-inverse-bg + $inverse-base-raised-step;
+
+$solid-neutral-raised-bg-hover: $solid-neutral-raised-bg + $neutral-hover-step;
+$solid-muted-raised-bg-hover: $solid-muted-raised-bg + $muted-hover-step;
+$solid-tertiary-raised-bg-hover: $solid-tertiary-raised-bg + $tertiary-hover-step;
+$solid-secondary-raised-bg-hover: $solid-secondary-raised-bg + $secondary-hover-step;
+$solid-primary-raised-bg-hover: $solid-primary-raised-bg + $primary-hover-step;
+$solid-inverse-raised-bg-hover: $solid-inverse-raised-bg + $inverse-hover-step;
+
+$solid-neutral-raised-bg-active: $solid-neutral-raised-bg + $neutral-active-step;
+$solid-muted-raised-bg-active: $solid-muted-raised-bg + $muted-active-step;
+$solid-tertiary-raised-bg-active: $solid-tertiary-raised-bg + $tertiary-active-step;
+$solid-secondary-raised-bg-active: $solid-secondary-raised-bg + $secondary-active-step;
+$solid-primary-raised-bg-active: $solid-primary-raised-bg + $primary-active-step;
+$solid-inverse-raised-bg-active: $solid-inverse-raised-bg + $inverse-active-step;
+
+$solid-neutral-raised-bg-selected: $solid-neutral-raised-bg + $neutral-selected-step;
+$solid-muted-raised-bg-selected: $solid-muted-raised-bg + $muted-selected-step;
+$solid-tertiary-raised-bg-selected: $solid-tertiary-raised-bg + $tertiary-selected-step;
+$solid-secondary-raised-bg-selected: $solid-secondary-raised-bg + $secondary-selected-step;
+$solid-primary-raised-bg-selected: $solid-primary-raised-bg + $primary-selected-step;
+$solid-inverse-raised-bg-selected: $solid-inverse-raised-bg + $inverse-selected-step;
+
+@mixin set($color) {
+  // raised bg
+  --neb-ctx-dark-solid-neutral-raised-bg: hsl(var(--neb-#{$color}-#{$solid-neutral-raised-bg}));
+  --neb-ctx-dark-solid-muted-raised-bg: hsl(var(--neb-#{$color}-#{$solid-muted-raised-bg}));
+  --neb-ctx-dark-solid-tertiary-raised-bg: hsl(var(--neb-#{$color}-#{$solid-tertiary-raised-bg}));
+  --neb-ctx-dark-solid-secondary-raised-bg: hsl(var(--neb-#{$color}-#{$solid-secondary-raised-bg}));
+  --neb-ctx-dark-solid-primary-raised-bg: hsl(var(--neb-#{$color}-#{$solid-primary-raised-bg}));
+  --neb-ctx-dark-solid-inverse-raised-bg: hsl(var(--neb-#{$color}-#{$solid-inverse-raised-bg}));
+
+  // raised bg hover
+  --neb-ctx-dark-solid-neutral-raised-bg-hover: hsl(var(--neb-#{$color}-#{$solid-neutral-raised-bg-hover}));
+  --neb-ctx-dark-solid-muted-raised-bg-hover: hsl(var(--neb-#{$color}-#{$solid-muted-raised-bg-hover}));
+  --neb-ctx-dark-solid-tertiary-raised-bg-hover: hsl(var(--neb-#{$color}-#{$solid-tertiary-raised-bg-hover}));
+  --neb-ctx-dark-solid-secondary-raised-bg-hover: hsl(var(--neb-#{$color}-#{$solid-secondary-raised-bg-hover}));
+  --neb-ctx-dark-solid-primary-raised-bg-hover: hsl(var(--neb-#{$color}-#{$solid-primary-raised-bg-hover}));
+  --neb-ctx-dark-solid-inverse-raised-bg-hover: hsl(var(--neb-#{$color}-#{$solid-inverse-raised-bg-hover}));
+
+  // raised bg active
+  --neb-ctx-dark-solid-neutral-raised-bg-active: hsl(var(--neb-#{$color}-#{$solid-neutral-raised-bg-active}));
+  --neb-ctx-dark-solid-muted-raised-bg-active: hsl(var(--neb-#{$color}-#{$solid-muted-raised-bg-active}));
+  --neb-ctx-dark-solid-tertiary-raised-bg-active: hsl(var(--neb-#{$color}-#{$solid-tertiary-raised-bg-active}));
+  --neb-ctx-dark-solid-secondary-raised-bg-active: hsl(var(--neb-#{$color}-#{$solid-secondary-raised-bg-active}));
+  --neb-ctx-dark-solid-primary-raised-bg-active: hsl(var(--neb-#{$color}-#{$solid-primary-raised-bg-active}));
+  --neb-ctx-dark-solid-inverse-raised-bg-active: hsl(var(--neb-#{$color}-#{$solid-inverse-raised-bg-active}));
+
+  // raised bg selected
+  --neb-ctx-dark-solid-neutral-raised-bg-selected: hsl(var(--neb-#{$color}-#{$solid-neutral-raised-bg-selected}));
+  --neb-ctx-dark-solid-muted-raised-bg-selected: hsl(var(--neb-#{$color}-#{$solid-muted-raised-bg-selected}));
+  --neb-ctx-dark-solid-tertiary-raised-bg-selected: hsl(var(--neb-#{$color}-#{$solid-tertiary-raised-bg-selected}));
+  --neb-ctx-dark-solid-secondary-raised-bg-selected: hsl(var(--neb-#{$color}-#{$solid-secondary-raised-bg-selected}));
+  --neb-ctx-dark-solid-primary-raised-bg-selected: hsl(var(--neb-#{$color}-#{$solid-primary-raised-bg-selected}));
+  --neb-ctx-dark-solid-inverse-raised-bg-selected: hsl(var(--neb-#{$color}-#{$solid-inverse-raised-bg-selected}));
+
+  // raised text
+  --neb-ctx-dark-solid-neutral-raised-text: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-dark-solid-muted-raised-text: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-dark-solid-tertiary-raised-text: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-dark-solid-secondary-raised-text: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-dark-solid-primary-raised-text: hsl(var(--neb-#{$color}-0));
+  --neb-ctx-dark-solid-inverse-raised-text: hsl(var(--neb-#{$color}-0));
+}

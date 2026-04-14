@@ -1,0 +1,121 @@
+@use '../soft-outline' as *;
+@use 'styles/definitions/_index' as *;
+@use 'styles/definitions/light' as *;
+
+$soft-outline-neutral-raised-border: $soft-outline-neutral-border + $neutral-base-raised-step;
+$soft-outline-muted-raised-border: $soft-outline-muted-border + $muted-base-raised-step;
+$soft-outline-tertiary-raised-border: $soft-outline-tertiary-border + $tertiary-base-raised-step;
+$soft-outline-secondary-raised-border: $soft-outline-secondary-border + $secondary-base-raised-step;
+$soft-outline-primary-raised-border: $soft-outline-primary-border + $primary-base-raised-step;
+$soft-outline-inverse-raised-border: $soft-outline-inverse-border + $inverse-base-raised-step;
+
+$soft-outline-neutral-raised-border-hover: $soft-outline-neutral-raised-border + $neutral-hover-step;
+$soft-outline-muted-raised-border-hover: $soft-outline-muted-raised-border + $muted-hover-step;
+$soft-outline-tertiary-raised-border-hover: $soft-outline-tertiary-raised-border + $tertiary-hover-step;
+$soft-outline-secondary-raised-border-hover: $soft-outline-secondary-raised-border + $secondary-hover-step;
+$soft-outline-primary-raised-border-hover: $soft-outline-primary-raised-border + $primary-hover-step;
+$soft-outline-inverse-raised-border-hover: $soft-outline-inverse-raised-border + $inverse-hover-step;
+
+$soft-outline-neutral-raised-border-active: $soft-outline-neutral-raised-border + $neutral-active-step;
+$soft-outline-muted-raised-border-active: $soft-outline-muted-raised-border + $muted-active-step;
+$soft-outline-tertiary-raised-border-active: $soft-outline-tertiary-raised-border + $tertiary-active-step;
+$soft-outline-secondary-raised-border-active: $soft-outline-secondary-raised-border + $secondary-active-step;
+$soft-outline-primary-raised-border-active: $soft-outline-primary-raised-border + $primary-active-step;
+$soft-outline-inverse-raised-border-active: $soft-outline-inverse-raised-border + $inverse-active-step;
+
+$soft-outline-neutral-raised-border-selected: $soft-outline-neutral-raised-border + $neutral-selected-step;
+$soft-outline-muted-raised-border-selected: $soft-outline-muted-raised-border + $muted-selected-step;
+$soft-outline-tertiary-raised-border-selected: $soft-outline-tertiary-raised-border + $tertiary-selected-step;
+$soft-outline-secondary-raised-border-selected: $soft-outline-secondary-raised-border + $secondary-selected-step;
+$soft-outline-primary-raised-border-selected: $soft-outline-primary-raised-border + $primary-selected-step;
+$soft-outline-inverse-raised-border-selected: $soft-outline-inverse-raised-border + $inverse-selected-step;
+
+@mixin set($color) {
+  // raised border
+  --neb-ctx-light-soft-outline-neutral-raised-border: hsl(var(--neb-#{$color}-#{$soft-outline-neutral-raised-border}));
+  --neb-ctx-light-soft-outline-muted-raised-border: hsl(var(--neb-#{$color}-#{$soft-outline-muted-raised-border}));
+  --neb-ctx-light-soft-outline-tertiary-raised-border: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-raised-border}));
+  --neb-ctx-light-soft-outline-secondary-raised-border: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-raised-border}));
+  --neb-ctx-light-soft-outline-primary-raised-border: hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border}));
+  --neb-ctx-light-soft-outline-inverse-raised-border: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-raised-border}));
+
+  // raised border hover
+  --neb-ctx-light-soft-outline-neutral-raised-border-hover: hsl(var(--neb-#{$color}-#{$soft-outline-neutral-raised-border-hover}));
+  --neb-ctx-light-soft-outline-muted-raised-border-hover: hsl(var(--neb-#{$color}-#{$soft-outline-muted-raised-border-hover}));
+  --neb-ctx-light-soft-outline-tertiary-raised-border-hover: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-raised-border-hover}));
+  --neb-ctx-light-soft-outline-secondary-raised-border-hover: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-raised-border-hover}));
+  --neb-ctx-light-soft-outline-primary-raised-border-hover: hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border-hover}));
+  --neb-ctx-light-soft-outline-inverse-raised-border-hover: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-raised-border-hover}));
+
+  // raised border active
+  --neb-ctx-light-soft-outline-neutral-raised-border-active: hsl(var(--neb-#{$color}-#{$soft-outline-neutral-raised-border-active}));
+  --neb-ctx-light-soft-outline-muted-raised-border-active: hsl(var(--neb-#{$color}-#{$soft-outline-muted-raised-border-active}));
+  --neb-ctx-light-soft-outline-tertiary-raised-border-active: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-raised-border-active}));
+  --neb-ctx-light-soft-outline-secondary-raised-border-active: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-raised-border-active}));
+  --neb-ctx-light-soft-outline-primary-raised-border-active: hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border-active}));
+  --neb-ctx-light-soft-outline-inverse-raised-border-active: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-raised-border-active}));
+
+  // raised border selected
+  --neb-ctx-light-soft-outline-neutral-raised-border-selected: hsl(var(--neb-#{$color}-#{$soft-outline-neutral-raised-border-selected}));
+  --neb-ctx-light-soft-outline-muted-raised-border-selected: hsl(var(--neb-#{$color}-#{$soft-outline-muted-raised-border-selected}));
+  --neb-ctx-light-soft-outline-tertiary-raised-border-selected: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-raised-border-selected}));
+  --neb-ctx-light-soft-outline-secondary-raised-border-selected: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-raised-border-selected}));
+  --neb-ctx-light-soft-outline-primary-raised-border-selected: hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border-selected}));
+  --neb-ctx-light-soft-outline-inverse-raised-border-selected: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-raised-border-selected}));
+
+  // raised bg hover
+  --neb-ctx-light-soft-outline-neutral-raised-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$neutral-fill-hover-perc + $neutral-fill-raised-perc}, transparent);
+  --neb-ctx-light-soft-outline-muted-raised-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$muted-fill-hover-perc + $muted-fill-raised-perc}, transparent);
+  --neb-ctx-light-soft-outline-tertiary-raised-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$tertiary-fill-hover-perc + $tertiary-fill-raised-perc}, transparent);
+  --neb-ctx-light-soft-outline-secondary-raised-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$secondary-fill-hover-perc + $secondary-fill-raised-perc}, transparent);
+  --neb-ctx-light-soft-outline-primary-raised-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$primary-fill-hover-perc + $primary-fill-raised-perc}, transparent);
+  --neb-ctx-light-soft-outline-inverse-raised-bg-hover: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$inverse-fill-hover-perc + $inverse-fill-raised-perc}, transparent);
+
+  // raised bg active
+  --neb-ctx-light-soft-outline-neutral-raised-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$neutral-fill-active-perc + $neutral-fill-raised-perc}, transparent);
+  --neb-ctx-light-soft-outline-muted-raised-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$muted-fill-active-perc + $muted-fill-raised-perc}, transparent);
+  --neb-ctx-light-soft-outline-tertiary-raised-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$tertiary-fill-active-perc + $tertiary-fill-raised-perc}, transparent);
+  --neb-ctx-light-soft-outline-secondary-raised-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$secondary-fill-active-perc + $secondary-fill-raised-perc}, transparent);
+  --neb-ctx-light-soft-outline-primary-raised-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$primary-fill-active-perc + $primary-fill-raised-perc}, transparent);
+  --neb-ctx-light-soft-outline-inverse-raised-bg-active: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$inverse-fill-active-perc + $inverse-fill-raised-perc}, transparent);
+
+  // raised bg selected
+  --neb-ctx-light-soft-outline-neutral-raised-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$neutral-fill-selected-perc + $neutral-fill-raised-perc}, transparent);
+  --neb-ctx-light-soft-outline-muted-raised-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$muted-fill-selected-perc + $muted-fill-raised-perc}, transparent);
+  --neb-ctx-light-soft-outline-tertiary-raised-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$tertiary-fill-selected-perc + $tertiary-fill-raised-perc}, transparent);
+  --neb-ctx-light-soft-outline-secondary-raised-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$secondary-fill-selected-perc + $secondary-fill-raised-perc}, transparent);
+  --neb-ctx-light-soft-outline-primary-raised-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$primary-fill-selected-perc + $primary-fill-raised-perc}, transparent);
+  --neb-ctx-light-soft-outline-inverse-raised-bg-selected: color-mix(in srgb, hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border})) #{$inverse-fill-selected-perc + $inverse-fill-raised-perc}, transparent);
+
+  // text
+  --neb-ctx-light-soft-outline-neutral-raised-text: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-light-soft-outline-muted-raised-text: hsl(var(--neb-#{$color}-#{$soft-outline-muted-raised-border}));
+  --neb-ctx-light-soft-outline-tertiary-raised-text: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-raised-border}));
+  --neb-ctx-light-soft-outline-secondary-raised-text: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-raised-border}));
+  --neb-ctx-light-soft-outline-primary-raised-text: hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border}));
+  --neb-ctx-light-soft-outline-inverse-raised-text: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-raised-border}));
+
+  // text hover
+  --neb-ctx-light-soft-outline-neutral-raised-text-hover: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-light-soft-outline-muted-raised-text-hover: hsl(var(--neb-#{$color}-#{$soft-outline-muted-raised-border-hover}));
+  --neb-ctx-light-soft-outline-tertiary-raised-text-hover: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-raised-border-hover}));
+  --neb-ctx-light-soft-outline-secondary-raised-text-hover: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-raised-border-hover}));
+  --neb-ctx-light-soft-outline-primary-raised-text-hover: hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border-hover}));
+  --neb-ctx-light-soft-outline-inverse-raised-text-hover: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-raised-border-hover}));
+
+  // text active
+  --neb-ctx-light-soft-outline-neutral-raised-text-active: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-light-soft-outline-muted-raised-text-active: hsl(var(--neb-#{$color}-#{$soft-outline-muted-raised-border-active}));
+  --neb-ctx-light-soft-outline-tertiary-raised-text-active: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-raised-border-active}));
+  --neb-ctx-light-soft-outline-secondary-raised-text-active: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-raised-border-active}));
+  --neb-ctx-light-soft-outline-primary-raised-text-active: hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border-active}));
+  --neb-ctx-light-soft-outline-inverse-raised-text-active: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-raised-border-active}));
+
+  // text selected
+  --neb-ctx-light-soft-outline-neutral-raised-text-selected: hsl(var(--neb-#{$color}-#{$steps-count - 1}));
+  --neb-ctx-light-soft-outline-muted-raised-text-selected: hsl(var(--neb-#{$color}-#{$soft-outline-muted-raised-border-selected}));
+  --neb-ctx-light-soft-outline-tertiary-raised-text-selected: hsl(var(--neb-#{$color}-#{$soft-outline-tertiary-raised-border-selected}));
+  --neb-ctx-light-soft-outline-secondary-raised-text-selected: hsl(var(--neb-#{$color}-#{$soft-outline-secondary-raised-border-selected}));
+  --neb-ctx-light-soft-outline-primary-raised-text-selected: hsl(var(--neb-#{$color}-#{$soft-outline-primary-raised-border-selected}));
+  --neb-ctx-light-soft-outline-inverse-raised-text-selected: hsl(var(--neb-#{$color}-#{$soft-outline-inverse-raised-border-selected}));
+}

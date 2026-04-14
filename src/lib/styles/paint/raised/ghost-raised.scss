@@ -1,0 +1,33 @@
+@mixin paint() {
+  // raised text
+  --neb-ghost-neutral-raised-text: var(--neb-ctx-ghost-neutral-raised-text);
+  --neb-ghost-muted-raised-text: var(--neb-ctx-ghost-muted-raised-text);
+  --neb-ghost-tertiary-raised-text: var(--neb-ctx-ghost-tertiary-raised-text);
+  --neb-ghost-secondary-raised-text: var(--neb-ctx-ghost-secondary-raised-text);
+  --neb-ghost-primary-raised-text: var(--neb-ctx-ghost-primary-raised-text);
+  --neb-ghost-inverse-raised-text: var(--neb-ctx-ghost-inverse-raised-text);
+
+  // raised text hover
+  --neb-ghost-neutral-raised-text-hover: var(--neb-ctx-ghost-neutral-raised-text-hover);
+  --neb-ghost-muted-raised-text-hover: var(--neb-ctx-ghost-muted-raised-text-hover);
+  --neb-ghost-tertiary-raised-text-hover: var(--neb-ctx-ghost-tertiary-raised-text-hover);
+  --neb-ghost-secondary-raised-text-hover: var(--neb-ctx-ghost-secondary-raised-text-hover);
+  --neb-ghost-primary-raised-text-hover: var(--neb-ctx-ghost-primary-raised-text-hover);
+  --neb-ghost-inverse-raised-text-hover: var(--neb-ctx-ghost-inverse-raised-text-hover);
+
+  // raised text active
+  --neb-ghost-neutral-raised-text-active: var(--neb-ctx-ghost-neutral-raised-text-active);
+  --neb-ghost-muted-raised-text-active: var(--neb-ctx-ghost-muted-raised-text-active);
+  --neb-ghost-tertiary-raised-text-active: var(--neb-ctx-ghost-tertiary-raised-text-active);
+  --neb-ghost-secondary-raised-text-active: var(--neb-ctx-ghost-secondary-raised-text-active);
+  --neb-ghost-primary-raised-text-active: var(--neb-ctx-ghost-primary-raised-text-active);
+  --neb-ghost-inverse-raised-text-active: var(--neb-ctx-ghost-inverse-raised-text-active);
+
+  // raised text selected
+  --neb-ghost-neutral-raised-text-selected: var(--neb-ctx-ghost-neutral-raised-text-selected);
+  --neb-ghost-muted-raised-text-selected: var(--neb-ctx-ghost-muted-raised-text-selected);
+  --neb-ghost-tertiary-raised-text-selected: var(--neb-ctx-ghost-tertiary-raised-text-selected);
+  --neb-ghost-secondary-raised-text-selected: var(--neb-ctx-ghost-secondary-raised-text-selected);
+  --neb-ghost-primary-raised-text-selected: var(--neb-ctx-ghost-primary-raised-text-selected);
+  --neb-ghost-inverse-raised-text-selected: var(--neb-ctx-ghost-inverse-raised-text-selected);
+}

@@ -3,6 +3,11 @@
 @use './soft-outline' as soft-outline;
 @use './solid' as solid;
 
+@use './raised/ghost-raised' as ghost-raised;
+@use './raised/outline-raised' as outline-raised;
+@use './raised/soft-outline-raised' as soft-outline-raised;
+@use './raised/solid-raised' as solid-raised;
+
 @use './elevated/ghost-elevated' as ghost-elevated;
 @use './elevated/outline-elevated' as outline-elevated;
 @use './elevated/soft-outline-elevated' as soft-outline-elevated;
@@ -17,6 +22,11 @@
   @include outline.set($color);
   @include soft-outline.set($color);
   @include solid.set($color);
+
+  @include ghost-raised.set($color);
+  @include outline-raised.set($color);
+  @include soft-outline-raised.set($color);
+  @include solid-raised.set($color);
 
   @include ghost-elevated.set($color);
   @include outline-elevated.set($color);

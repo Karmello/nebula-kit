@@ -1,0 +1,33 @@
+@mixin set-context($theme) {
+  // raised text
+  --neb-ctx-ghost-neutral-raised-text: var(--neb-ctx-#{$theme}-ghost-neutral-raised-text);
+  --neb-ctx-ghost-muted-raised-text: var(--neb-ctx-#{$theme}-ghost-muted-raised-text);
+  --neb-ctx-ghost-tertiary-raised-text: var(--neb-ctx-#{$theme}-ghost-tertiary-raised-text);
+  --neb-ctx-ghost-secondary-raised-text: var(--neb-ctx-#{$theme}-ghost-secondary-raised-text);
+  --neb-ctx-ghost-primary-raised-text: var(--neb-ctx-#{$theme}-ghost-primary-raised-text);
+  --neb-ctx-ghost-inverse-raised-text: var(--neb-ctx-#{$theme}-ghost-inverse-raised-text);
+
+  // raised text hover
+  --neb-ctx-ghost-neutral-raised-text-hover: var(--neb-ctx-#{$theme}-ghost-neutral-raised-text-hover);
+  --neb-ctx-ghost-muted-raised-text-hover: var(--neb-ctx-#{$theme}-ghost-muted-raised-text-hover);
+  --neb-ctx-ghost-tertiary-raised-text-hover: var(--neb-ctx-#{$theme}-ghost-tertiary-raised-text-hover);
+  --neb-ctx-ghost-secondary-raised-text-hover: var(--neb-ctx-#{$theme}-ghost-secondary-raised-text-hover);
+  --neb-ctx-ghost-primary-raised-text-hover: var(--neb-ctx-#{$theme}-ghost-primary-raised-text-hover);
+  --neb-ctx-ghost-inverse-raised-text-hover: var(--neb-ctx-#{$theme}-ghost-inverse-raised-text-hover);
+
+  // raised text active
+  --neb-ctx-ghost-neutral-raised-text-active: var(--neb-ctx-#{$theme}-ghost-neutral-raised-text-active);
+  --neb-ctx-ghost-muted-raised-text-active: var(--neb-ctx-#{$theme}-ghost-muted-raised-text-active);
+  --neb-ctx-ghost-tertiary-raised-text-active: var(--neb-ctx-#{$theme}-ghost-tertiary-raised-text-active);
+  --neb-ctx-ghost-secondary-raised-text-active: var(--neb-ctx-#{$theme}-ghost-secondary-raised-text-active);
+  --neb-ctx-ghost-primary-raised-text-active: var(--neb-ctx-#{$theme}-ghost-primary-raised-text-active);
+  --neb-ctx-ghost-inverse-raised-text-active: var(--neb-ctx-#{$theme}-ghost-inverse-raised-text-active);
+
+  // raised text selected
+  --neb-ctx-ghost-neutral-raised-text-selected: var(--neb-ctx-#{$theme}-ghost-neutral-raised-text-selected);
+  --neb-ctx-ghost-muted-raised-text-selected: var(--neb-ctx-#{$theme}-ghost-muted-raised-text-selected);
+  --neb-ctx-ghost-tertiary-raised-text-selected: var(--neb-ctx-#{$theme}-ghost-tertiary-raised-text-selected);
+  --neb-ctx-ghost-secondary-raised-text-selected: var(--neb-ctx-#{$theme}-ghost-secondary-raised-text-selected);
+  --neb-ctx-ghost-primary-raised-text-selected: var(--neb-ctx-#{$theme}-ghost-primary-raised-text-selected);
+  --neb-ctx-ghost-inverse-raised-text-selected: var(--neb-ctx-#{$theme}-ghost-inverse-raised-text-selected);
+}

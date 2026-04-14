@@ -1,0 +1,57 @@
+@mixin set-context($theme) {
+  // raised border
+  --neb-ctx-outline-neutral-raised-border: var(--neb-ctx-#{$theme}-outline-neutral-raised-border);
+  --neb-ctx-outline-muted-raised-border: var(--neb-ctx-#{$theme}-outline-muted-raised-border);
+  --neb-ctx-outline-tertiary-raised-border: var(--neb-ctx-#{$theme}-outline-tertiary-raised-border);
+  --neb-ctx-outline-secondary-raised-border: var(--neb-ctx-#{$theme}-outline-secondary-raised-border);
+  --neb-ctx-outline-primary-raised-border: var(--neb-ctx-#{$theme}-outline-primary-raised-border);
+  --neb-ctx-outline-inverse-raised-border: var(--neb-ctx-#{$theme}-outline-inverse-raised-border);
+
+  // raised border hover
+  --neb-ctx-outline-neutral-raised-border-hover: var(--neb-ctx-#{$theme}-outline-neutral-raised-border-hover);
+  --neb-ctx-outline-muted-raised-border-hover: var(--neb-ctx-#{$theme}-outline-muted-raised-border-hover);
+  --neb-ctx-outline-tertiary-raised-border-hover: var(--neb-ctx-#{$theme}-outline-tertiary-raised-border-hover);
+  --neb-ctx-outline-secondary-raised-border-hover: var(--neb-ctx-#{$theme}-outline-secondary-raised-border-hover);
+  --neb-ctx-outline-primary-raised-border-hover: var(--neb-ctx-#{$theme}-outline-primary-raised-border-hover);
+  --neb-ctx-outline-inverse-raised-border-hover: var(--neb-ctx-#{$theme}-outline-inverse-raised-border-hover);
+
+  // raised border active
+  --neb-ctx-outline-neutral-raised-border-active: var(--neb-ctx-#{$theme}-outline-neutral-raised-border-active);
+  --neb-ctx-outline-muted-raised-border-active: var(--neb-ctx-#{$theme}-outline-muted-raised-border-active);
+  --neb-ctx-outline-tertiary-raised-border-active: var(--neb-ctx-#{$theme}-outline-tertiary-raised-border-active);
+  --neb-ctx-outline-secondary-raised-border-active: var(--neb-ctx-#{$theme}-outline-secondary-raised-border-active);
+  --neb-ctx-outline-primary-raised-border-active: var(--neb-ctx-#{$theme}-outline-primary-raised-border-active);
+  --neb-ctx-outline-inverse-raised-border-active: var(--neb-ctx-#{$theme}-outline-inverse-raised-border-active);
+
+  // raised border selected
+  --neb-ctx-outline-neutral-raised-border-selected: var(--neb-ctx-#{$theme}-outline-neutral-raised-border-selected);
+  --neb-ctx-outline-muted-raised-border-selected: var(--neb-ctx-#{$theme}-outline-muted-raised-border-selected);
+  --neb-ctx-outline-tertiary-raised-border-selected: var(--neb-ctx-#{$theme}-outline-tertiary-raised-border-selected);
+  --neb-ctx-outline-secondary-raised-border-selected: var(--neb-ctx-#{$theme}-outline-secondary-raised-border-selected);
+  --neb-ctx-outline-primary-raised-border-selected: var(--neb-ctx-#{$theme}-outline-primary-raised-border-selected);
+  --neb-ctx-outline-inverse-raised-border-selected: var(--neb-ctx-#{$theme}-outline-inverse-raised-border-selected);
+
+  // raised bg hover
+  --neb-ctx-outline-neutral-raised-bg-hover: var(--neb-ctx-#{$theme}-outline-neutral-raised-bg-hover);
+  --neb-ctx-outline-muted-raised-bg-hover: var(--neb-ctx-#{$theme}-outline-muted-raised-bg-hover);
+  --neb-ctx-outline-tertiary-raised-bg-hover: var(--neb-ctx-#{$theme}-outline-tertiary-raised-bg-hover);
+  --neb-ctx-outline-secondary-raised-bg-hover: var(--neb-ctx-#{$theme}-outline-secondary-raised-bg-hover);
+  --neb-ctx-outline-primary-raised-bg-hover: var(--neb-ctx-#{$theme}-outline-primary-raised-bg-hover);
+  --neb-ctx-outline-inverse-raised-bg-hover: var(--neb-ctx-#{$theme}-outline-inverse-raised-bg-hover);
+
+  // raised bg active
+  --neb-ctx-outline-neutral-raised-bg-active: var(--neb-ctx-#{$theme}-outline-neutral-raised-bg-active);
+  --neb-ctx-outline-muted-raised-bg-active: var(--neb-ctx-#{$theme}-outline-muted-raised-bg-active);
+  --neb-ctx-outline-tertiary-raised-bg-active: var(--neb-ctx-#{$theme}-outline-tertiary-raised-bg-active);
+  --neb-ctx-outline-secondary-raised-bg-active: var(--neb-ctx-#{$theme}-outline-secondary-raised-bg-active);
+  --neb-ctx-outline-primary-raised-bg-active: var(--neb-ctx-#{$theme}-outline-primary-raised-bg-active);
+  --neb-ctx-outline-inverse-raised-bg-active: var(--neb-ctx-#{$theme}-outline-inverse-raised-bg-active);
+
+  // raised bg selected
+  --neb-ctx-outline-neutral-raised-bg-selected: var(--neb-ctx-#{$theme}-outline-neutral-raised-bg-selected);
+  --neb-ctx-outline-muted-raised-bg-selected: var(--neb-ctx-#{$theme}-outline-muted-raised-bg-selected);
+  --neb-ctx-outline-tertiary-raised-bg-selected: var(--neb-ctx-#{$theme}-outline-tertiary-raised-bg-selected);
+  --neb-ctx-outline-secondary-raised-bg-selected: var(--neb-ctx-#{$theme}-outline-secondary-raised-bg-selected);
+  --neb-ctx-outline-primary-raised-bg-selected: var(--neb-ctx-#{$theme}-outline-primary-raised-bg-selected);
+  --neb-ctx-outline-inverse-raised-bg-selected: var(--neb-ctx-#{$theme}-outline-inverse-raised-bg-selected);
+}

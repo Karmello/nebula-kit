@@ -25,6 +25,17 @@
 
         // enabled
         &:not([data-neb-box-disabled='true']) {
+          // raised
+          &[data-neb-box-surface='raised'] {
+            --border: var(--neb-outline-#{$intent}-raised-border);
+            --border-hover: var(--neb-outline-#{$intent}-raised-border-hover);
+            --border-active: var(--neb-outline-#{$intent}-raised-border-active);
+            --border-selected: var(--neb-outline-#{$intent}-raised-border-selected);
+            --bg-hover: var(--neb-outline-#{$intent}-raised-bg-hover);
+            --bg-active: var(--neb-outline-#{$intent}-raised-bg-active);
+            --bg-selected: var(--neb-outline-#{$intent}-raised-bg-selected);
+          }
+
           // elevated
           &[data-neb-box-surface='elevated'] {
             --border: var(--neb-outline-#{$intent}-elevated-border);

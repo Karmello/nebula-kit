@@ -24,6 +24,15 @@
 
         // enabled
         &:not([data-neb-box-disabled='true']) {
+          // raised
+          &[data-neb-box-surface='raised'] {
+            --bg: var(--neb-solid-#{$intent}-raised-bg);
+            --bg-hover: var(--neb-solid-#{$intent}-raised-bg-hover);
+            --bg-active: var(--neb-solid-#{$intent}-raised-bg-active);
+            --bg-selected: var(--neb-solid-#{$intent}-raised-bg-selected);
+            --text: var(--neb-solid-#{$intent}-raised-text);
+          }
+
           // elevated
           &[data-neb-box-surface='elevated'] {
             --bg: var(--neb-solid-#{$intent}-elevated-bg);
