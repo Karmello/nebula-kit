@@ -1,5 +1,5 @@
-[data-brand='red'],
-[data-neb-box-color='red'] {
+html[data-brand='red'],
+.neb-box[data-neb-box-color='red'] {
   --h: 10;
   --s: 75%;
 

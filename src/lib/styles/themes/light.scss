@@ -1,5 +1,5 @@
-[data-theme='light'],
-[data-neb-box-theme='light'] {
+html[data-theme='light'],
+.neb-box[data-neb-box-theme='light'] {
   --l-0: var(--lightness-0);
   --l-1: var(--lightness-1);
   --l-2: var(--lightness-2);
@@ -26,4 +26,10 @@
   --l-23: var(--lightness-23);
   --l-24: var(--lightness-24);
   --l-25: var(--lightness-25);
+}
+
+.neb-box[data-neb-box-theme='light'] {
+  --solid-secondary-text: hsl(var(--h) var(--s) var(--l-0));
+  --solid-primary-text: hsl(var(--h) var(--s) var(--l-0));
+  --solid-inverse-text: hsl(var(--h) var(--s) var(--l-0));
 }

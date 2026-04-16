@@ -1,5 +1,5 @@
-[data-theme='dark'],
-[data-neb-box-theme='dark'] {
+html[data-theme='dark'],
+.neb-box[data-neb-box-theme='dark'] {
   --l-0: var(--lightness-25);
   --l-1: var(--lightness-24);
   --l-2: var(--lightness-23);
@@ -26,4 +26,8 @@
   --l-23: var(--lightness-2);
   --l-24: var(--lightness-1);
   --l-25: var(--lightness-0);
+}
+
+.neb-box[data-neb-box-theme='dark'] {
+  --solid-inverse-text: hsl(var(--h) var(--s) var(--l-0));
 }
