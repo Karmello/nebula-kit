@@ -1,5 +1,6 @@
 @use './intents.scss';
 @use './variants.scss';
+@use './variants_intents.scss';
 
 html {
   --neb-background: hsl(var(--h) var(--s) var(--l-0));
