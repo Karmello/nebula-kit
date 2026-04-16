@@ -1,72 +1,39 @@
-@use 'styles/definitions/_index' as *;
+.neb-box[data-neb-box-drawable='true'][data-neb-box-variant='ghost'] {
+  border-radius: var(--neb-border-radius);
 
-.neb-box[data-neb-box-drawable='true'] {
-  &[data-neb-box-variant='ghost'] {
-    border-radius: var(--neb-border-radius);
+  // rest
+  color: var(--text);
 
-    @each $intent in $intents {
-      &[data-neb-box-intent='#{$intent}'] {
-        --text: var(--neb-ghost-#{$intent}-text);
-        --text-hover: var(--neb-ghost-#{$intent}-text-hover);
-        --text-active: var(--neb-ghost-#{$intent}-text-active);
-        --text-selected: var(--neb-ghost-#{$intent}-text-selected);
-        --text-disabled: var(--neb-ghost-#{$intent}-text-disabled);
-        --loader: var(--neb-ghost-#{$intent}-loader);
-        --ripple: var(--neb-ghost-#{$intent}-ripple, currentColor);
-        --ripple-opacity: var(--neb-ghost-#{$intent}-ripple-opacity);
+  // enabled
+  &:not([data-neb-box-disabled='true']) {
+    // interactive
+    &[data-neb-box-interactive='true'] {
+      // hover
+      &:hover:not(:active),
+      &[data-neb-box-hovered='true'] {
+        color: var(--text-hover);
+      }
 
-        // rest
-        color: var(--text);
+      // active
+      &:active {
+        color: var(--text-active);
+      }
 
-        // enabled
-        &:not([data-neb-box-disabled='true']) {
-          // raised
-          &[data-neb-box-surface='raised'] {
-            --text: var(--neb-ghost-#{$intent}-raised-text);
-            --text-hover: var(--neb-ghost-#{$intent}-raised-text-hover);
-            --text-active: var(--neb-ghost-#{$intent}-raised-text-active);
-            --text-selected: var(--neb-ghost-#{$intent}-raised-text-selected);
-          }
-
-          // elevated
-          &[data-neb-box-surface='elevated'] {
-            --text: var(--neb-ghost-#{$intent}-elevated-text);
-            --text-hover: var(--neb-ghost-#{$intent}-elevated-text-hover);
-            --text-active: var(--neb-ghost-#{$intent}-elevated-text-active);
-            --text-selected: var(--neb-ghost-#{$intent}-elevated-text-selected);
-          }
-
-          // interactive
-          &[data-neb-box-interactive='true'] {
-            // hover
-            &:hover:not(:active),
-            &[data-neb-box-hovered='true'] {
-              color: var(--text-hover);
-            }
-
-            // active
-            &:active {
-              color: var(--text-active);
-            }
-
-            // focus, selected
-            &:focus-visible,
-            &[data-neb-box-selected='true'] {
-              color: var(--text-selected) !important;
-            }
-          }
-
-          // focus ring
-          &:focus-visible {
-            box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
-          }
-        }
-
-        // disabled
-        &[data-neb-box-disabled='true'] {
-          color: var(--text-disabled);
-        }
+      // focus, selected
+      &:focus-visible,
+      &[data-neb-box-selected='true'] {
+        color: var(--text-selected) !important;
       }
     }
+
+    // focus ring
+    &:focus-visible {
+      box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
+    }
+  }
+
+  // disabled
+  &[data-neb-box-disabled='true'] {
+    color: var(--text-disabled);
   }
 }

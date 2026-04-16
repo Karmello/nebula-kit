@@ -1,88 +1,45 @@
-@use 'styles/definitions/_index' as *;
+.neb-box[data-neb-box-drawable='true'][data-neb-box-variant='outline'] {
+  border-width: var(--neb-border-width);
+  border-radius: var(--neb-border-radius);
 
-.neb-box[data-neb-box-drawable='true'] {
-  &[data-neb-box-variant='outline'] {
-    border-width: var(--neb-border-width);
-    border-radius: var(--neb-border-radius);
+  // rest
+  border-color: var(--border);
 
-    @each $intent in $intents {
-      &[data-neb-box-intent='#{$intent}'] {
-        --border: var(--neb-outline-#{$intent}-border);
-        --border-hover: var(--neb-outline-#{$intent}-border-hover);
-        --border-active: var(--neb-outline-#{$intent}-border-active);
-        --border-selected: var(--neb-outline-#{$intent}-border-selected);
-        --border-disabled: var(--neb-outline-#{$intent}-border-disabled);
-        --bg-hover: var(--neb-outline-#{$intent}-bg-hover);
-        --bg-active: var(--neb-outline-#{$intent}-bg-active);
-        --bg-selected: var(--neb-outline-#{$intent}-bg-selected);
-        --text-disabled: var(--neb-outline-#{$intent}-text-disabled);
-        --loader: var(--neb-outline-#{$intent}-loader);
-        --ripple: currentColor;
-        --ripple-opacity: var(--neb-outline-#{$intent}-ripple-opacity);
+  // enabled
+  &:not([data-neb-box-disabled='true']) {
+    // interactive
+    &[data-neb-box-interactive='true'] {
+      // hover
+      &:hover:not(:active),
+      &[data-neb-box-hovered='true'] {
+        border-color: var(--border-hover);
+        background-color: var(--bg-hover);
+      }
 
-        // rest
-        border-color: var(--border);
+      // active
+      &:active {
+        border-color: var(--border-active);
+        background-color: var(--bg-active);
+      }
 
-        // enabled
-        &:not([data-neb-box-disabled='true']) {
-          // raised
-          &[data-neb-box-surface='raised'] {
-            --border: var(--neb-outline-#{$intent}-raised-border);
-            --border-hover: var(--neb-outline-#{$intent}-raised-border-hover);
-            --border-active: var(--neb-outline-#{$intent}-raised-border-active);
-            --border-selected: var(--neb-outline-#{$intent}-raised-border-selected);
-            --bg-hover: var(--neb-outline-#{$intent}-raised-bg-hover);
-            --bg-active: var(--neb-outline-#{$intent}-raised-bg-active);
-            --bg-selected: var(--neb-outline-#{$intent}-raised-bg-selected);
-          }
-
-          // elevated
-          &[data-neb-box-surface='elevated'] {
-            --border: var(--neb-outline-#{$intent}-elevated-border);
-            --border-hover: var(--neb-outline-#{$intent}-elevated-border-hover);
-            --border-active: var(--neb-outline-#{$intent}-elevated-border-active);
-            --border-selected: var(--neb-outline-#{$intent}-elevated-border-selected);
-            --bg-hover: var(--neb-outline-#{$intent}-elevated-bg-hover);
-            --bg-active: var(--neb-outline-#{$intent}-elevated-bg-active);
-            --bg-selected: var(--neb-outline-#{$intent}-elevated-bg-selected);
-          }
-
-          // interactive
-          &[data-neb-box-interactive='true'] {
-            // hover
-            &:hover:not(:active),
-            &[data-neb-box-hovered='true'] {
-              border-color: var(--border-hover);
-              background-color: var(--bg-hover);
-            }
-
-            // active
-            &:active {
-              border-color: var(--border-active);
-              background-color: var(--bg-active);
-            }
-
-            // focus, selected
-            &:focus-visible,
-            &[data-neb-box-selected='true'] {
-              border-color: var(--border-selected);
-              background-color: var(--bg-selected) !important;
-            }
-          }
-
-          // focus ring
-          &:focus-visible {
-            border-color: var(--neb-focus-border) !important;
-            box-shadow: inset 0 0 0 1px var(--neb-focus-border);
-          }
-        }
-
-        // disabled
-        &[data-neb-box-disabled='true'] {
-          border-color: var(--border-disabled);
-          color: var(--text-disabled);
-        }
+      // focus, selected
+      &:focus-visible,
+      &[data-neb-box-selected='true'] {
+        border-color: var(--border-selected);
+        background-color: var(--bg-selected) !important;
       }
     }
+
+    // focus ring
+    &:focus-visible {
+      border-color: var(--neb-focus-border) !important;
+      box-shadow: inset 0 0 0 1px var(--neb-focus-border);
+    }
+  }
+
+  // disabled
+  &[data-neb-box-disabled='true'] {
+    border-color: var(--border-disabled);
+    color: var(--text-disabled);
   }
 }

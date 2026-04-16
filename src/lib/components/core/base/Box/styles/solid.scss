@@ -1,85 +1,47 @@
-@use 'styles/definitions/_index' as *;
+.neb-box[data-neb-box-drawable='true'][data-neb-box-variant='solid'] {
+  border-radius: var(--neb-border-radius);
 
-.neb-box[data-neb-box-drawable='true'] {
-  &[data-neb-box-variant='solid'] {
-    border-radius: var(--neb-border-radius);
+  // rest
+  background-color: var(--bg);
+  color: var(--text);
 
-    @each $intent in $intents {
-      &[data-neb-box-intent='#{$intent}'] {
-        // base
-        --bg: var(--neb-solid-#{$intent}-bg);
-        --bg-hover: var(--neb-solid-#{$intent}-bg-hover);
-        --bg-active: var(--neb-solid-#{$intent}-bg-active);
-        --bg-selected: var(--neb-solid-#{$intent}-bg-selected);
-        --bg-disabled: var(--neb-solid-#{$intent}-bg-disabled);
-        --text: var(--neb-solid-#{$intent}-text);
-        --text-disabled: var(--neb-solid-#{$intent}-text-disabled);
-        --loader: var(--neb-solid-#{$intent}-loader);
-        --ripple: currentColor;
-        --ripple-opacity: var(--neb-solid-#{$intent}-ripple-opacity);
+  // enabled
+  &:not([data-neb-box-disabled='true']) {
+    // interactive
+    &[data-neb-box-interactive='true'] {
+      // hover
+      &:hover:not(:active),
+      &[data-neb-box-hovered='true'] {
+        background-color: var(--bg-hover);
+      }
 
-        // rest
-        background-color: var(--bg);
-        color: var(--text);
+      // active
+      &:active {
+        background-color: var(--bg-active);
+      }
 
-        // enabled
-        &:not([data-neb-box-disabled='true']) {
-          // raised
-          &[data-neb-box-surface='raised'] {
-            --bg: var(--neb-solid-#{$intent}-raised-bg);
-            --bg-hover: var(--neb-solid-#{$intent}-raised-bg-hover);
-            --bg-active: var(--neb-solid-#{$intent}-raised-bg-active);
-            --bg-selected: var(--neb-solid-#{$intent}-raised-bg-selected);
-            --text: var(--neb-solid-#{$intent}-raised-text);
-          }
-
-          // elevated
-          &[data-neb-box-surface='elevated'] {
-            --bg: var(--neb-solid-#{$intent}-elevated-bg);
-            --bg-hover: var(--neb-solid-#{$intent}-elevated-bg-hover);
-            --bg-active: var(--neb-solid-#{$intent}-elevated-bg-active);
-            --bg-selected: var(--neb-solid-#{$intent}-elevated-bg-selected);
-            --text: var(--neb-solid-#{$intent}-elevated-text);
-          }
-
-          // interactive
-          &[data-neb-box-interactive='true'] {
-            // hover
-            &:hover:not(:active),
-            &[data-neb-box-hovered='true'] {
-              background-color: var(--bg-hover);
-            }
-
-            // active
-            &:active {
-              background-color: var(--bg-active);
-            }
-
-            // focus, selected
-            &:focus-visible,
-            &[data-neb-box-selected='true'] {
-              background-color: var(--bg-selected) !important;
-            }
-          }
-
-          // focus ring
-          &:focus-visible {
-            box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
-
-            &[data-neb-box-intent='inverse'] {
-              box-shadow:
-                inset 0 0 0 1px var(--neb-focus-border),
-                inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-background);
-            }
-          }
-        }
-
-        // disabled
-        &[data-neb-box-disabled='true'] {
-          background-color: var(--bg-disabled);
-          color: var(--text-disabled);
-        }
+      // focus, selected
+      &:focus-visible,
+      &[data-neb-box-selected='true'] {
+        background-color: var(--bg-selected) !important;
       }
     }
+
+    // focus ring
+    &:focus-visible {
+      box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
+
+      &[data-neb-box-intent='inverse'] {
+        box-shadow:
+          inset 0 0 0 1px var(--neb-focus-border),
+          inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-background);
+      }
+    }
+  }
+
+  // disabled
+  &[data-neb-box-disabled='true'] {
+    background-color: var(--bg-disabled);
+    color: var(--text-disabled);
   }
 }

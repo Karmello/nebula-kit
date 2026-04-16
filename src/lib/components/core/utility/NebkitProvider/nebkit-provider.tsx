@@ -1,6 +1,7 @@
 import { ReactElement, useLayoutEffect, useRef } from 'react'
 
 import { useGlobalScrollLock } from 'lib/hooks'
+import { ThemeProvider, BrandProvider } from 'lib/components/core/internal'
 
 import {
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
@@ -87,7 +88,11 @@ export const NebkitProvider = ({
     scheduleEnableTransitions()
   }, [theme, brand, borderRadiusSize, rippleMode])
 
-  return children
+  return (
+    <ThemeProvider theme={theme}>
+      <BrandProvider brand={brand}>{children}</BrandProvider>
+    </ThemeProvider>
+  )
 }
 
 NebkitProvider.displayName = 'NebkitProvider'

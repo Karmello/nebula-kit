@@ -1,0 +1,7 @@
+@use './intents.scss';
+@use './variants.scss';
+
+html {
+  --neb-background: hsl(var(--h) var(--s) var(--l-0));
+  --neb-text: hsl(var(--h) var(--s) var(--l-25));
+}

@@ -1,0 +1,12 @@
+[data-neb-box-variant='solid'] {
+  --bg: hsl(var(--h) var(--s) var(--bg-l));
+  --bg-hover: hsl(var(--h) var(--s) var(--bg-l-hover));
+  --bg-active: hsl(var(--h) var(--s) var(--bg-l-active));
+  --text: hsl(var(--h) var(--s) var(--text-l));
+}
+
+[data-neb-box-variant='outline'] {
+  --border: hsl(var(--h) var(--s) var(--border-l));
+  --border-hover: hsl(var(--h) var(--s) var(--border-l-hover));
+  --border-active: hsl(var(--h) var(--s) var(--border-l-active));
+}

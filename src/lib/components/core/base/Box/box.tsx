@@ -3,7 +3,7 @@ import { ElementType, ComponentRef, ComponentProps, PropsWithoutRef, useLayoutEf
 import classNames from 'classnames'
 
 import { BoxProps, HtmlTag } from 'lib/components'
-import { ThemeProvider, BrandProvider } from 'lib/components/core/internal'
+import { ThemeProvider, BrandProvider, useThemeContext, useBrandContext } from 'lib/components/core/internal'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { updateDomRespStyle, updateDomRespDataset, updateDomStaticDataset } from 'lib/service'
@@ -11,12 +11,10 @@ import { updateDomRespStyle, updateDomRespDataset, updateDomStaticDataset } from
 import './styles/box.scss'
 
 export const Box = <T extends ElementType = 'div'>({
-  // HtmlTag
   children,
   tag,
   tagAttrs,
   tagRef,
-  // surface
   drawable,
   surface,
   theme,
@@ -24,11 +22,9 @@ export const Box = <T extends ElementType = 'div'>({
   color,
   variant,
   intent,
-  // interaction
   interactive,
   selected,
   disabled,
-  // css
   opacity,
   visibility,
   textAlign,
@@ -36,38 +32,32 @@ export const Box = <T extends ElementType = 'div'>({
   pointerEvents,
   aspectRatio,
   transform,
-  // border
   borderWidth,
   borderTopWidth,
   borderRightWidth,
   borderBottomWidth,
   borderLeftWidth,
-  // border radius
   borderRadius,
   borderTopLeftRadius,
   borderTopRightRadius,
   borderBottomRightRadius,
   borderBottomLeftRadius,
-  // display
   display,
   overflow,
   overflowX,
   overflowY,
-  // position
   position,
   inset,
   top,
   right,
   bottom,
   left,
-  // size
   blockSize,
   minBlockSize,
   maxBlockSize,
   inlineSize,
   minInlineSize,
   maxInlineSize,
-  // padding
   padding,
   paddingInline,
   paddingBlock,
@@ -75,7 +65,6 @@ export const Box = <T extends ElementType = 'div'>({
   paddingRight,
   paddingBottom,
   paddingLeft,
-  // margin
   margin,
   marginInline,
   marginBlock,
@@ -85,10 +74,17 @@ export const Box = <T extends ElementType = 'div'>({
   marginLeft,
 }: BoxProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
-
   const finalRef = tagRef || ref
 
   const { bp } = useScreen()
+
+  const themeCtx = useThemeContext()
+  const brandCtx = useBrandContext()
+
+  const finalTheme = theme ?? themeCtx?.theme
+  const ctxBrand = brandCtx?.brand
+  const finalBrand = brand ?? ctxBrand
+  const finalColor = color ?? finalBrand
 
   useLayoutEffect(() => {
     const el = finalRef?.current as Element
@@ -214,12 +210,17 @@ export const Box = <T extends ElementType = 'div'>({
   ])
 
   useLayoutEffect(() => {
-    updateDomRespDataset('Box', finalRef, bp, { theme, brand, color, variant, intent })
-  }, [bp, theme, brand, color, variant, intent])
+    updateDomRespDataset('Box', finalRef, bp, {
+      theme: finalTheme,
+      color: finalColor,
+      variant,
+      intent,
+    })
+  }, [bp, finalTheme, finalColor, variant, intent])
 
   return (
-    <ThemeProvider theme={theme}>
-      <BrandProvider brand={brand}>
+    <ThemeProvider theme={finalTheme}>
+      <BrandProvider brand={finalBrand}>
         <HtmlTag
           tag={tag}
           tagAttrs={
