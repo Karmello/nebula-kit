@@ -29,5 +29,11 @@ html[data-theme='dark'],
 }
 
 .neb-box[data-neb-box-theme='dark'] {
-  --solid-inverse-text: hsl(var(--h) var(--s) var(--l-0));
+  --solid-secondary-text-l: var(--l-25);
+  --solid-primary-text-l: var(--l-25);
+  --solid-inverse-text-l: var(--l-0);
+
+  --solid-secondary-text-disabled-alpha: 0.25;
+  --solid-primary-text-disabled-alpha: 0.25;
+  --solid-inverse-text-disabled-alpha: 0.75;
 }

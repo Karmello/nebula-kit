@@ -1,6 +1,6 @@
 @use './palette/_index' as *;
 @use './themes/_index' as *;
-@use './engine/_index' as *;
+@use './engine/_index';
 
 html {
   font-family:

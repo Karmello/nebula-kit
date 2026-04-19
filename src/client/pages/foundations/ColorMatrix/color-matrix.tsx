@@ -14,9 +14,10 @@ export default () => {
             return (
               <Flex.Item key={n} flexGrow="1">
                 <Box
-                  tagAttrs={{ style: { backgroundColor: `hsl(var(--neb-${color}-${n}))` } }}
+                  tagAttrs={{ style: { backgroundColor: `hsl(var(--h) var(--s) var(--l-${n}))` } }}
                   blockSize="50px"
                   borderRadius="0px"
+                  color={color}
                 />
               </Flex.Item>
             )

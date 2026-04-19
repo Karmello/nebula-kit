@@ -20,22 +20,15 @@
         background-color: var(--bg-active);
       }
 
-      // focus, selected
-      &:focus-visible,
+      // selected
       &[data-neb-box-selected='true'] {
-        background-color: var(--bg-selected) !important;
+        background-color: var(--bg-selected);
       }
     }
 
     // focus ring
     &:focus-visible {
-      box-shadow: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
-
-      &[data-neb-box-intent='inverse'] {
-        box-shadow:
-          inset 0 0 0 1px var(--neb-focus-border),
-          inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-background);
-      }
+      box-shadow: var(--box-shadow-focus);
     }
   }
 

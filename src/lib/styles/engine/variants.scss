@@ -3,27 +3,65 @@
     --bg: hsl(var(--h) var(--s) var(--main-l));
     --bg-hover: hsl(var(--h) var(--s) var(--main-l-hover));
     --bg-active: hsl(var(--h) var(--s) var(--main-l-active));
+    --bg-selected: hsl(var(--h) var(--s) var(--main-l-selected));
+    --bg-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.5);
+
+    --loader: hsl(var(--h) var(--s) var(--l-25));
+
+    --box-shadow-focus: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
   }
 
   &[data-neb-box-variant='outline'] {
     --border: hsl(var(--h) var(--s) var(--main-l));
     --border-hover: hsl(var(--h) var(--s) var(--main-l-hover));
     --border-active: hsl(var(--h) var(--s) var(--main-l-active));
+    --border-selected: hsl(var(--h) var(--s) var(--main-l-selected));
+    --border-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.5);
+    --border-focused: hsl(var(--h) var(--s) var(--l-25));
+
+    --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-hover)) 12%, transparent);
+    --bg-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-active)) 24%, transparent);
+    --bg-selected: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-selected)) 12%, transparent);
+
+    --text-disabled: hsl(var(--h) var(--s) var(--l-25) / 0.25);
+
+    --loader: hsl(var(--h) var(--s) var(--l-15));
+
+    --box-shadow-focus: inset 0 0 0 1px var(--neb-focus-border);
   }
 
   &[data-neb-box-variant='soft-outline'] {
     --border: hsl(var(--h) var(--s) var(--main-l));
     --border-hover: hsl(var(--h) var(--s) var(--main-l-hover));
     --border-active: hsl(var(--h) var(--s) var(--main-l-active));
+    --border-selected: hsl(var(--h) var(--s) var(--main-l-selected));
+    --border-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.5);
+    --border-focused: hsl(var(--h) var(--s) var(--l-25));
 
     --text: hsl(var(--h) var(--s) var(--main-l));
     --text-hover: hsl(var(--h) var(--s) var(--main-l-hover));
     --text-active: hsl(var(--h) var(--s) var(--main-l-active));
+    --text-selected: hsl(var(--h) var(--s) var(--main-l-selected));
+    --text-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.25);
+
+    --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-hover)) 12%, transparent);
+    --bg-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-active)) 24%, transparent);
+    --bg-selected: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-selected)) 12%, transparent);
+
+    --loader: hsl(var(--h) var(--s) var(--l-15));
+
+    --box-shadow-focus: inset 0 0 0 1px var(--neb-focus-border);
   }
 
   &[data-neb-box-variant='ghost'] {
     --text: hsl(var(--h) var(--s) var(--main-l));
     --text-hover: hsl(var(--h) var(--s) var(--main-l-hover));
     --text-active: hsl(var(--h) var(--s) var(--main-l-active));
+    --text-selected: hsl(var(--h) var(--s) var(--main-l-active));
+    --text-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.25);
+
+    --loader: hsl(var(--h) var(--s) var(--l-15));
+
+    --box-shadow-focus: inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-focus-border);
   }
 }

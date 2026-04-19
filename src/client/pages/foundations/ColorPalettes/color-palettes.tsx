@@ -30,7 +30,8 @@ export default () => {
                 drawable
                 variant="outline"
                 intent="tertiary"
-                tagAttrs={{ style: { backgroundColor: `hsl(var(--neb-${brand}-${n}))` } }}
+                brand={brand}
+                tagAttrs={{ style: { backgroundColor: `hsl(var(--h) var(--s) var(--l-${n}))` } }}
                 blockSize="50px"
               />
             </Flex.Item>
