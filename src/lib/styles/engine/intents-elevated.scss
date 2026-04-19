@@ -1,43 +1,43 @@
 .neb-box[data-neb-box-drawable='true'][data-neb-box-variant][data-neb-box-surface='elevated'] {
   &[data-neb-box-intent='neutral'] {
-    --main-l: var(--l-0);
-    --main-l-hover: var(--l-2);
-    --main-l-active: var(--l-4);
-    --main-l-selected: var(--l-2);
+    --main-l: var(--main-elevated-neutral-l);
+    --main-l-hover: var(--main-elevated-neutral-l-hover);
+    --main-l-active: var(--main-elevated-neutral-l-active);
+    --main-l-selected: var(--main-elevated-neutral-l-selected);
   }
 
   &[data-neb-box-intent='muted'] {
-    --main-l: var(--l-3);
-    --main-l-hover: var(--l-5);
-    --main-l-active: var(--l-7);
-    --main-l-selected: var(--l-5);
+    --main-l: var(--main-elevated-muted-l);
+    --main-l-hover: var(--main-elevated-muted-l-hover);
+    --main-l-active: var(--main-elevated-muted-l-active);
+    --main-l-selected: var(--main-elevated-muted-l-selected);
   }
 
   &[data-neb-box-intent='tertiary'] {
-    --main-l: var(--l-5);
-    --main-l-hover: var(--l-7);
-    --main-l-active: var(--l-9);
-    --main-l-selected: var(--l-7);
+    --main-l: var(--main-elevated-tertiary-l);
+    --main-l-hover: var(--main-elevated-tertiary-l-hover);
+    --main-l-active: var(--main-elevated-tertiary-l-active);
+    --main-l-selected: var(--main-elevated-tertiary-l-selected);
   }
 
   &[data-neb-box-intent='secondary'] {
-    --main-l: var(--l-10);
-    --main-l-hover: var(--l-12);
-    --main-l-active: var(--l-14);
-    --main-l-selected: var(--l-12);
+    --main-l: var(--main-elevated-secondary-l);
+    --main-l-hover: var(--main-elevated-secondary-l-hover);
+    --main-l-active: var(--main-elevated-secondary-l-active);
+    --main-l-selected: var(--main-elevated-secondary-l-selected);
   }
 
   &[data-neb-box-intent='primary'] {
-    --main-l: var(--l-16);
-    --main-l-hover: var(--l-18);
-    --main-l-active: var(--l-20);
-    --main-l-selected: var(--l-18);
+    --main-l: var(--main-elevated-primary-l);
+    --main-l-hover: var(--main-elevated-primary-l-hover);
+    --main-l-active: var(--main-elevated-primary-l-active);
+    --main-l-selected: var(--main-elevated-primary-l-selected);
   }
 
   &[data-neb-box-intent='inverse'] {
-    --main-l: var(--l-25);
-    --main-l-hover: var(--l-21);
-    --main-l-active: var(--l-19);
-    --main-l-selected: var(--l-21);
+    --main-l: var(--main-elevated-inverse-l);
+    --main-l-hover: var(--main-elevated-inverse-l-hover);
+    --main-l-active: var(--main-elevated-inverse-l-active);
+    --main-l-selected: var(--main-elevated-inverse-l-selected);
   }
 }
