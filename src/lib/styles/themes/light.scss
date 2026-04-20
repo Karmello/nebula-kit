@@ -26,6 +26,8 @@ html[data-theme='light'],
   --l-23: var(--lightness-23);
   --l-24: var(--lightness-24);
   --l-25: var(--lightness-25);
+
+  --neb-focus-border: hsl(var(--h) var(--s) var(--l-25));
 }
 
 .neb-box[data-neb-box-theme='light'] {
