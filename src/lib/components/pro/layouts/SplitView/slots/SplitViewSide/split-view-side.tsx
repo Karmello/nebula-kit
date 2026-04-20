@@ -42,7 +42,7 @@ export const SplitViewSide = ({
         variant="outline"
         color={color}
         intent={intent}
-        surface="elevated"
+        surface="raised"
         borderWidth="0px"
         borderRadius="0px"
         borderLeftWidth={mode === 'overlay' && sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : '0px'}

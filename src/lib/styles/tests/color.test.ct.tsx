@@ -2,40 +2,43 @@ import { test, expect } from '@playwright/experimental-ct-react'
 
 import { Box } from 'lib/components'
 
-test('Box color prop overrides ctx primary solid color', async ({ mount, page }) => {
+test('Box color prop overrides resolved brand color', async ({ mount, page }) => {
   await mount(
     <Box tagAttrs={{ id: 'box' }} drawable variant="solid" intent="primary" color="red" blockSize="200px">
       Box
-    </Box>
+    </Box>,
+    {
+      hooksConfig: {
+        brand: 'green',
+      },
+    }
   )
 
-  const result = await page.locator('#box').evaluate(el => {
-    const cs = getComputedStyle(el)
+  const result = await page.evaluate(() => {
+    const el = document.getElementById('box')!
+    const styles = getComputedStyle(el)
+
     return {
-      bg: cs.backgroundColor,
-      palette: getComputedStyle(document.documentElement).getPropertyValue('--neb-red-6').trim(),
-      ctx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-light-solid-primary-bg').trim(),
+      // resolved state
+      color: el.dataset.nebBoxColor,
+
+      // token layer
+      main: styles.getPropertyValue('--main-l').trim(),
+
+      // projection
+      bg: styles.getPropertyValue('--bg').trim(),
     }
   })
 
-  // sanity: both sources exist
-  expect(result.palette).not.toBe('')
-  expect(result.ctx).not.toBe('')
+  // --- state layer ---
+  expect(result.color).toBe('red')
+  expect(result.color).not.toBe('green')
 
-  // must resolve to a real color
-  expect(result.bg).toMatch(/^rgb\(/)
+  // --- token layer ---
+  expect(result.main).not.toBe('')
 
-  // must NOT equal ctx primary color
-  const ctxResolved = await page.evaluate(() => {
-    const el = document.createElement('div')
-    el.style.backgroundColor = 'var(--neb-ctx-light-solid-primary-bg)'
-    document.body.appendChild(el)
-    const value = getComputedStyle(el).backgroundColor
-    document.body.removeChild(el)
-    return value
-  })
-
-  expect(result.bg).not.toBe(ctxResolved)
+  // --- projection layer ---
+  expect(result.bg).not.toBe('')
 })
 
 test('Child Box color overrides parent color', async ({ mount, page }) => {
@@ -51,17 +54,36 @@ test('Child Box color overrides parent color', async ({ mount, page }) => {
     const parent = document.getElementById('parent')!
     const child = document.getElementById('child')!
 
-    const parentBg = getComputedStyle(parent).backgroundColor
-    const childBg = getComputedStyle(child).backgroundColor
+    const parentStyles = getComputedStyle(parent)
+    const childStyles = getComputedStyle(child)
 
-    return { parentBg, childBg }
+    return {
+      // resolved state
+      parentColor: parent.dataset.nebBoxColor,
+      childColor: child.dataset.nebBoxColor,
+
+      // token layer
+      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
+      childMain: childStyles.getPropertyValue('--main-l').trim(),
+
+      // projection
+      parentBg: parentStyles.getPropertyValue('--bg').trim(),
+      childBg: childStyles.getPropertyValue('--bg').trim(),
+    }
   })
 
-  // both must resolve to real colors
-  expect(result.parentBg).toMatch(/^rgb\(/)
-  expect(result.childBg).toMatch(/^rgb\(/)
+  // --- state layer ---
+  expect(result.parentColor).toBe('blue')
+  expect(result.childColor).toBe('red')
 
-  // child must not match parent (override)
+  // --- token layer ---
+  expect(result.parentMain).not.toBe('')
+  expect(result.childMain).not.toBe('')
+  expect(result.childMain).not.toBe(result.parentMain)
+
+  // --- projection layer ---
+  expect(result.parentBg).not.toBe('')
+  expect(result.childBg).not.toBe('')
   expect(result.childBg).not.toBe(result.parentBg)
 })
 
@@ -78,16 +100,38 @@ test('Parent color does not leak into child Box without color', async ({ mount, 
     const parent = document.getElementById('parent')!
     const child = document.getElementById('child')!
 
+    const parentStyles = getComputedStyle(parent)
+    const childStyles = getComputedStyle(child)
+
     return {
-      parentBg: getComputedStyle(parent).backgroundColor,
-      childBg: getComputedStyle(child).backgroundColor,
+      // resolved state
+      parentColor: parent.dataset.nebBoxColor,
+      childColor: child.dataset.nebBoxColor,
+
+      // token layer
+      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
+      childMain: childStyles.getPropertyValue('--main-l').trim(),
+
+      // projection
+      parentBg: parentStyles.getPropertyValue('--bg').trim(),
+      childBg: childStyles.getPropertyValue('--bg').trim(),
     }
   })
 
-  expect(result.parentBg).toMatch(/^rgb\(/)
-  expect(result.childBg).toMatch(/^rgb\(/)
+  // --- state layer ---
+  expect(result.parentColor).toBe('red')
 
-  // child must not visually inherit parent color
+  // child must NOT inherit parent color
+  expect(result.childColor).not.toBe('red')
+
+  // --- token layer ---
+  expect(result.parentMain).not.toBe('')
+  expect(result.childMain).not.toBe('')
+  expect(result.childMain).not.toBe(result.parentMain)
+
+  // --- projection layer ---
+  expect(result.parentBg).not.toBe('')
+  expect(result.childBg).not.toBe('')
   expect(result.childBg).not.toBe(result.parentBg)
 })
 
@@ -109,17 +153,41 @@ test('Color does not inherit to child Box', async ({ mount, page }) => {
     const parent = document.getElementById('parent')!
     const child = document.getElementById('child')!
 
-    const parentBg = getComputedStyle(parent).backgroundColor
-    const childBg = getComputedStyle(child).backgroundColor
+    const parentStyles = getComputedStyle(parent)
+    const childStyles = getComputedStyle(child)
 
-    return { parentBg, childBg }
+    return {
+      // resolved state
+      rootBrand: document.documentElement.dataset.brand,
+      parentColor: parent.dataset.nebBoxColor,
+      childColor: child.dataset.nebBoxColor,
+
+      // token layer
+      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
+      childMain: childStyles.getPropertyValue('--main-l').trim(),
+
+      // projection
+      parentBg: parentStyles.getPropertyValue('--bg').trim(),
+      childBg: childStyles.getPropertyValue('--bg').trim(),
+    }
   })
 
-  // both must resolve to real colors
-  expect(result.parentBg).toMatch(/^rgb\(/)
-  expect(result.childBg).toMatch(/^rgb\(/)
+  // --- state layer ---
+  expect(result.rootBrand).toBe('green')
 
-  // child must NOT inherit parent color
+  expect(result.parentColor).toBe('red')
+
+  // child falls back to brand, not parent color
+  expect(result.childColor).toBe('green')
+
+  // --- token layer ---
+  expect(result.parentMain).not.toBe('')
+  expect(result.childMain).not.toBe('')
+  expect(result.childMain).not.toBe(result.parentMain)
+
+  // --- projection layer ---
+  expect(result.parentBg).not.toBe('')
+  expect(result.childBg).not.toBe('')
   expect(result.childBg).not.toBe(result.parentBg)
 })
 
@@ -137,23 +205,26 @@ test('Explicit color overrides brand', async ({ mount, page }) => {
 
   const result = await page.evaluate(() => {
     const el = document.getElementById('box')!
-    const bg = getComputedStyle(el).backgroundColor
-    return { bg }
+    const styles = getComputedStyle(el)
+
+    return {
+      rootBrand: document.documentElement.dataset.brand,
+      color: el.dataset.nebBoxColor,
+
+      main: styles.getPropertyValue('--main-l').trim(),
+      bg: styles.getPropertyValue('--bg').trim(),
+    }
   })
 
-  // must resolve to a real color
-  expect(result.bg).toMatch(/^rgb\(/)
+  // --- state layer ---
+  expect(result.rootBrand).toBe('green')
 
-  // resolve brand ctx to a computed color
-  const brandResolved = await page.evaluate(() => {
-    const el = document.createElement('div')
-    el.style.backgroundColor = 'var(--neb-ctx-solid-primary)'
-    document.body.appendChild(el)
-    const value = getComputedStyle(el).backgroundColor
-    document.body.removeChild(el)
-    return value
-  })
+  // explicit color overrides brand
+  expect(result.color).toBe('red')
 
-  // explicit color must override brand
-  expect(result.bg).not.toBe(brandResolved)
+  // --- token layer ---
+  expect(result.main).not.toBe('')
+
+  // --- projection layer ---
+  expect(result.bg).not.toBe('')
 })

@@ -23,7 +23,7 @@ const BOX_META: ComponentMeta<BoxProps> = {
   examples: BOX_EXAMPLES_META,
   changelog: {
     '0.8.0': [
-      'updated Box to render internal ThemeProvider and BrandProvider automatically when theme or brand props are set, ensuring styling islands propagate correctly through portals',
+      'updated Box to always render internal ThemeProvider and BrandProvider, ensuring styling context is consistently resolved and propagates correctly through portals',
       'removed activeOnFocus prop',
       'removed defaultState prop',
       'added selected prop',
