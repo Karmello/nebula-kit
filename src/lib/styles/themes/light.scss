@@ -62,7 +62,7 @@ html[data-theme='light'],
   --main-inverse-l-selected: var(--l-20);
 
   // main raised rest
-  --main-raised-neutral-l: var(--l-0);
+  --main-raised-neutral-l: var(--l-1);
   --main-raised-muted-l: var(--l-2);
   --main-raised-tertiary-l: var(--l-4);
   --main-raised-secondary-l: var(--l-9);
@@ -94,7 +94,7 @@ html[data-theme='light'],
   --main-raised-inverse-l-selected: var(--l-20);
 
   // main elevated rest
-  --main-elevated-neutral-l: var(--l-0);
+  --main-elevated-neutral-l: var(--l-2);
   --main-elevated-muted-l: var(--l-3);
   --main-elevated-tertiary-l: var(--l-5);
   --main-elevated-secondary-l: var(--l-10);
@@ -112,7 +112,7 @@ html[data-theme='light'],
   // main elevated active
   --main-elevated-neutral-l-active: var(--l-4);
   --main-elevated-muted-l-active: var(--l-7);
-  --main-elevated-tertiary-l-active: var(--l9);
+  --main-elevated-tertiary-l-active: var(--l-9);
   --main-elevated-secondary-l-active: var(--l-14);
   --main-elevated-primary-l-active: var(--l-19);
   --main-elevated-inverse-l-active: var(--l-18);
@@ -133,4 +133,8 @@ html[data-theme='light'],
   --solid-secondary-text-disabled-alpha: 0.75;
   --solid-primary-text-disabled-alpha: 0.75;
   --solid-inverse-text-disabled-alpha: 0.75;
+
+  --solid-secondary-loader-l: var(--l-0);
+  --solid-primary-loader-l: var(--l-0);
+  --solid-inverse-loader-l: var(--l-0);
 }

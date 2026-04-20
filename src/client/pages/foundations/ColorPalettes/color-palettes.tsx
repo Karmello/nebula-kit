@@ -25,7 +25,7 @@ export default () => {
         {arr.map(n => {
           return (
             <Flex.Item key={n} flexGrow="1">
-              <Text scale="compact">{`--neb-${brand}-${n}`}</Text>
+              <Text scale="compact">{`Step ${n}`}</Text>
               <Box
                 drawable
                 variant="outline"

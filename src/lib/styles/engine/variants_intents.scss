@@ -8,17 +8,17 @@
     &[data-neb-box-intent='secondary'] {
       --text: hsl(var(--h) var(--s) var(--solid-secondary-text-l));
       --text-disabled: hsl(var(--h) var(--s) var(--solid-secondary-text-l) / var(--solid-secondary-text-disabled-alpha));
-      --loader: hsl(var(--h) var(--s) var(--l-0));
+      --loader: hsl(var(--h) var(--s) var(--solid-secondary-loader-l));
     }
     &[data-neb-box-intent='primary'] {
       --text: hsl(var(--h) var(--s) var(--solid-primary-text-l));
       --text-disabled: hsl(var(--h) var(--s) var(--solid-primary-text-l) / var(--solid-primary-text-disabled-alpha));
-      --loader: hsl(var(--h) var(--s) var(--l-0));
+      --loader: hsl(var(--h) var(--s) var(--solid-primary-loader-l));
     }
     &[data-neb-box-intent='inverse'] {
       --text: hsl(var(--h) var(--s) var(--solid-inverse-text-l));
       --text-disabled: hsl(var(--h) var(--s) var(--solid-inverse-text-l) / var(--solid-inverse-text-disabled-alpha));
-      --loader: hsl(var(--h) var(--s) var(--l-0));
+      --loader: hsl(var(--h) var(--s) var(--solid-inverse-loader-l));
       --box-shadow-focus: inset 0 0 0 1px var(--neb-focus-border), inset 0 0 0 calc(var(--neb-border-width) + 1px) var(--neb-background);
     }
   }
@@ -26,9 +26,10 @@
   &[data-neb-box-variant='outline'],
   &[data-neb-box-variant='soft-outline'] {
     &[data-neb-box-intent='neutral'] {
-      --border: hsl(var(--h) var(--s) var(--l-1));
-      --border-hover: hsl(var(--h) var(--s) var(--l-3));
-      --border-active: hsl(var(--h) var(--s) var(--l-5));
+      --border: hsl(var(--h) var(--s) var(--main-muted-l));
+      --border-hover: hsl(var(--h) var(--s) var(--main-muted-l-hover));
+      --border-active: hsl(var(--h) var(--s) var(--main-muted-l-active));
+      --border-disabled: hsl(var(--h) var(--s) var(--main-muted-l) / 0.5);
     }
   }
 

@@ -4,10 +4,10 @@ $arrowSize: calc($dotSize / 4);
 $lineSize: 2px;
 $borderSize: 5px;
 
-$dotColor: var(--neb-solid-secondary-bg);
-$arrowColor: var(--neb-solid-secondary-bg);
-$borderColor: var(--neb-solid-tertiary-bg);
-$borderGlowColor: var(--neb-solid-tertiary-bg);
+$dotColor: hsl(var(--h) var(--s) var(--main-secondary-l));
+$arrowColor: hsl(var(--h) var(--s) var(--main-secondary-l));
+$borderColor: hsl(var(--h) var(--s) var(--main-tertiary-l));
+$borderGlowColor: hsl(var(--h) var(--s) var(--main-tertiary-l));
 
 .neb-ortho {
   position: relative;

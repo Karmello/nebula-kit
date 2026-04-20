@@ -1,36 +1,38 @@
-export const COLOR_MAP = {
+import { BoxColor, BoxIntent } from 'lib/components/core/base/Box'
+
+export const COLOR_MAP: Record<string, { intent: BoxIntent; color: BoxColor }> = {
   // background
-  bg: 'var(--neb-solid-muted-bg)',
+  bg: { intent: 'muted', color: 'gray' },
   // component name
-  '#F78C6C': 'hsl(var(--neb-red-13))',
+  '#F78C6C': { intent: 'primary', color: 'red' },
   // native html tag name
-  '#CAECE6': 'hsl(var(--neb-red-13))',
+  '#CAECE6': { intent: 'primary', color: 'red' },
   // prop name
-  '#C5E478': 'hsl(var(--neb-blue-13))',
+  '#C5E478': { intent: 'primary', color: 'blue' },
   // object name, object key names
-  '#D6DEEB': 'hsl(var(--neb-gray-13))',
+  '#D6DEEB': { intent: 'primary', color: 'gray' },
   // value
-  '#ECC48D': 'hsl(var(--neb-amber-13))',
+  '#ECC48D': { intent: 'primary', color: 'amber' },
   // param name
-  '#D7DBE0': 'hsl(var(--neb-amber-13))',
+  '#D7DBE0': { intent: 'primary', color: 'amber' },
   // argument name
-  '#FF5874': 'hsl(var(--neb-amber-13))',
+  '#FF5874': { intent: 'primary', color: 'amber' },
   // called func name
-  '#82AAFF': 'hsl(var(--neb-blue-13))',
+  '#82AAFF': { intent: 'primary', color: 'blue' },
   // TS type name
-  '#FFCB8B': 'hsl(var(--neb-gray-25))',
+  '#FFCB8B': { intent: 'neutral', color: 'gray' },
   // angle brackets, cb curly brackets
-  '#7FDBCA': 'hsl(var(--neb-gray-25))',
+  '#7FDBCA': { intent: 'neutral', color: 'gray' },
   // prop curly brackets
-  '#D3423E': 'hsl(var(--neb-gray-25))',
+  '#D3423E': { intent: 'neutral', color: 'gray' },
   // equal sign, arrow func sign, dot
-  '#C792EA': 'hsl(var(--neb-gray-25))',
+  '#C792EA': { intent: 'neutral', color: 'gray' },
   // quotes
-  '#D9F5DD': 'hsl(var(--neb-gray-25))',
+  '#D9F5DD': { intent: 'neutral', color: 'gray' },
   // comments
-  '#637777': 'hsl(var(--neb-gray-25))',
+  '#637777': { intent: 'neutral', color: 'gray' },
   // extension
-  '#5CA7E4': 'hsl(var(--neb-blue-13))',
+  '#5CA7E4': { intent: 'primary', color: 'blue' },
   //
-  '#BAEBE2': 'hsl(var(--neb-blue-13))',
+  '#BAEBE2': { intent: 'primary', color: 'blue' },
 }
