@@ -19,7 +19,8 @@
       }
 
       // active
-      &:active {
+      &:active,
+      &[data-neb-box-active-on-focus='true']:focus-visible {
         border-color: var(--border-active);
         color: var(--text-active);
         background-color: var(--bg-active);

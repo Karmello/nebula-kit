@@ -16,6 +16,10 @@ import { BoxProps, BOX_VARIANTS, BOX_INTENTS, BOX_SURFACES } from 'lib/component
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
+  activeOnFocus: {
+    options: ['boolean'],
+    description: 'Applies the active (pressed) visual state while the element is focused.',
+  },
   aspectRatio: {
     options: ['CSS'],
     isResponsive: true,

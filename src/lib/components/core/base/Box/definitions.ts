@@ -37,6 +37,7 @@ type BoxOwnProps = {
   interactive?: boolean
   selected?: boolean
   disabled?: boolean
+  activeOnFocus?: boolean
   // css
   opacity?: RespValue<string>
   visibility?: RespValue<CssVisibility>

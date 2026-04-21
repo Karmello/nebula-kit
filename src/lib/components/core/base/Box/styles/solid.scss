@@ -5,8 +5,6 @@
   background-color: var(--bg);
   color: var(--text);
 
-  box-shadow: none;
-
   // enabled
   &:not([data-neb-box-disabled='true']) {
     // interactive
@@ -18,7 +16,8 @@
       }
 
       // active
-      &:active {
+      &:active,
+      &[data-neb-box-active-on-focus='true']:focus-visible {
         background-color: var(--bg-active);
       }
 
