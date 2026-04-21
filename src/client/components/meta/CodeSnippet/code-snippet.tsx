@@ -61,8 +61,11 @@ export const CodeSnippet = ({
       <Box
         drawable
         variant="solid"
-        intent={fullBg ? COLOR_MAP['bg'].intent : undefined}
-        color={fullBg ? COLOR_MAP['bg'].color : undefined}
+        tagAttrs={{
+          style: {
+            backgroundColor: fullBg ? 'hsl(var(--h) var(--s) var(--main-muted-l))' : undefined,
+          },
+        }}
       >
         <Flex alignItems="flex-end" columnGap="10px">
           <Flex.Item flex="1">
@@ -90,14 +93,15 @@ export const CodeSnippet = ({
         </Flex>
         <Box
           tagAttrs={{
-            style: { borderRadius: borderRadius ? 'var(--neb-border-radius)' : undefined },
+            style: {
+              borderRadius: borderRadius ? 'var(--neb-border-radius)' : undefined,
+              backgroundColor: 'hsl(var(--h) var(--s) var(--main-muted-l))',
+            },
           }}
           overflowY="auto"
           maxBlockSize="350px"
           drawable
           variant="solid"
-          intent={COLOR_MAP['bg'].intent}
-          color={COLOR_MAP['bg'].color}
         >
           <Flex tag="pre">
             <Box tag="code" paddingInline="20px" paddingBlock={fullBg ? '0px' : '14px'} paddingBottom="12px">

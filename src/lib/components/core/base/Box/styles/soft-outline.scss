@@ -35,8 +35,8 @@
 
     // focus ring
     &:focus-visible {
-      border-color: var(--border-focused) !important;
-      box-shadow: var(--box-shadow-focus);
+      outline: var(--neb-focus-ring-width) solid var(--neb-focus-ring-color);
+      outline-offset: calc(var(--neb-focus-ring-width) * -1);
     }
   }
 

@@ -31,6 +31,7 @@ export const RELEASE_INFO: Record<
         'expanded the palette to support a wider and more expressive range of values within the new system constraints',
         'simplified component APIs by removing experimental and no-longer-needed props made obsolete by the new styling model',
         'improved internal styling performance, debuggability and development velocity through clearer separation of concerns and removal of redundant abstraction layers',
+        'switched focus rings from box-shadow to outline to eliminate corner artifacts and ensure consistent rendering without layout shifts',
         'this release establishes a more predictable and explicit styling foundation for future components and features',
       ],
     },

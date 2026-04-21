@@ -5,6 +5,8 @@
   background-color: var(--bg);
   color: var(--text);
 
+  box-shadow: none;
+
   // enabled
   &:not([data-neb-box-disabled='true']) {
     // interactive
@@ -28,7 +30,8 @@
 
     // focus ring
     &:focus-visible {
-      box-shadow: var(--box-shadow-focus);
+      outline: var(--neb-focus-ring-width) solid var(--neb-focus-ring-color);
+      outline-offset: calc(var(--neb-focus-ring-width) * -1);
     }
   }
 

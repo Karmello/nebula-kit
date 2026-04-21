@@ -1,8 +1,6 @@
 import { BoxColor, BoxIntent } from 'lib/components/core/base/Box'
 
 export const COLOR_MAP: Record<string, { intent: BoxIntent; color: BoxColor }> = {
-  // background
-  bg: { intent: 'muted', color: 'gray' },
   // component name
   '#F78C6C': { intent: 'primary', color: 'red' },
   // native html tag name

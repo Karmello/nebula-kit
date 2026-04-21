@@ -29,7 +29,7 @@ html[data-theme='dark'],
 
   --neb-background: hsl(var(--h) var(--s) var(--l-0));
   --neb-text: hsl(var(--h) var(--s) var(--l-25));
-  --neb-focus-border: hsl(var(--h) var(--s) var(--l-25));
+  --neb-focus-ring-color: hsl(var(--h) var(--s) var(--l-25));
 }
 
 .neb-box[data-neb-box-theme='dark'] {
