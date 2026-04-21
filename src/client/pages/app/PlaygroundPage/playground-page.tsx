@@ -1,5 +1,5 @@
 import { useAppStore } from 'client/store'
-import { Box, Flex, Section, Spacer, SplitView, Text } from 'lib/components'
+import { Box, Flex, Section, Spacer, SplitView } from 'lib/components'
 
 import {
   ComponentSelect,
@@ -26,14 +26,6 @@ export const PlaygroundPage = () => {
               <>
                 <SplitView.Main>
                   <SplitView.MainBar>
-                    <Text>
-                      Playground state is stored locally. Props may change between versions - if things look off, clear
-                      <Text tag="span" space="both" bold>
-                        neb.playground
-                      </Text>
-                      from local storage and refresh.
-                    </Text>
-                    <Spacer blockSize="10px" />
                     <Flex flexWrap="wrap" gap="8px">
                       <Flex flexWrap="wrap" gap="8px">
                         <TogglePropsButton />
