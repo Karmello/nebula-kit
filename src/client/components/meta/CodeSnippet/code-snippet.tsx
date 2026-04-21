@@ -70,7 +70,7 @@ export const CodeSnippet = ({
               <Box paddingBlock="10px">
                 <Text
                   bold={boldDescription}
-                  iconName={descriptionIcon ? 'arrow-right' : undefined}
+                  iconName={descriptionIcon ? 'arrow-down' : undefined}
                   intent="neutral"
                   tagAttrs={{ style: { lineHeight: 1.25 } }}
                 >

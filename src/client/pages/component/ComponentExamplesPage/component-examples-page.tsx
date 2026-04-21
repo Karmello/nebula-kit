@@ -15,7 +15,11 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
 
   return (
     <>
-      {description && !noSandBox ? <Text iconName="arrow-down">{description}</Text> : null}
+      {description && !noSandBox ? (
+        <Text iconName="arrow-down" bold>
+          {description}
+        </Text>
+      ) : null}
       <Spacer blockSize="10px" />
       {!noSandBox ? (
         <>
@@ -44,7 +48,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
               lang="tsx"
               code={code || convertElemToString(jsx)}
               description={description}
-              boldDescription={false}
+              boldDescription
               descriptionIcon
             />
           )}
