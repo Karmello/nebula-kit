@@ -1,4 +1,4 @@
-import { BoxProps, ButtonProps, CalloutProps, SectionProps, TextProps, IconProps, Select } from 'lib/components'
+import { BoxProps, ButtonProps, CalloutProps, SectionProps, TextProps, IconProps, Select, SelectProps } from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
 
@@ -67,6 +67,12 @@ const CONFIG: Record<string, object[]> = {
       variant: 'outline',
     },
   ] as SectionProps[],
+  Select: [
+    {
+      color: 'blue',
+      inlineSize: '250px',
+    },
+  ] as SelectProps[],
   Text: [
     {
       children: 'This is basic text with default body typography.',
