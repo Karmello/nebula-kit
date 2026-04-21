@@ -47,6 +47,7 @@ export const FOUNDATIONS_CATEGORIES = [
         key: 'styling-system',
         label: 'Styling system',
         sections: [
+          { key: 'performance', label: 'Performance' },
           { key: 'drawable-surface', label: 'Drawable surface' },
           { key: 'styling-axes', label: 'Styling axes' },
           { key: 'breakpoints', label: 'Breakpoints' },

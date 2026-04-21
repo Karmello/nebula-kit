@@ -15,6 +15,7 @@ export { default as IntentsAndVariants } from './IntentsAndVariants/intents-and-
 export { default as JsxFirst } from './JsxFirst/jsx-first'
 export { default as License } from './License/license'
 export { default as OrthogonalStylingAxes } from './OrthogonalStylingAxes/orthogonal-styling-axes'
+export { default as Performance } from './Performance/performance'
 export { default as PrivacyPolicy } from './PrivacyPolicy/privacy-policy'
 export { default as ReactRefs } from './ReactRefs/react-refs'
 export { default as RenderFunction } from './RenderFunction/render-function'
