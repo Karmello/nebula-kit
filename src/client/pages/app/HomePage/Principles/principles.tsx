@@ -14,13 +14,13 @@ export const Principles = () => {
             through props without switching contexts.
           </Text>
         </Section>
-        <Section heading="Built on composition and inheritance" color="green" intent="primary" iconName="rectangle-circle">
+        <Section heading="Composition and inheritance" color="green" intent="primary" iconName="rectangle-circle">
           <Text intent="neutral">
             Pure composition drives all component behavior. Functionality is never duplicated. Composed functionality flows
             through prop inheritance, not redefinition.
           </Text>
         </Section>
-        <Section heading="Enforcing semantics" color="green" intent="primary" iconName="file-code">
+        <Section heading="Enforcing HTML semantics" color="green" intent="primary" iconName="file-code">
           <Text intent="neutral">
             Semantic HTML is part of the component contract. Components preserve structure and meaning by default.
           </Text>
@@ -31,7 +31,7 @@ export const Principles = () => {
             within its own context.
           </Text>
         </Section>
-        <Section heading="Unified drawing and responsiveness" color="green" intent="primary" iconName="paintbrush">
+        <Section heading="Unified models" color="green" intent="primary" iconName="paintbrush">
           <Text intent="neutral">
             The drawing mechanism producing visual output and the responsiveness mechanism are each driven by a single explicit
             model. This keeps behavior consistent across different states and breakpoints.
