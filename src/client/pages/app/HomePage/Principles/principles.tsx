@@ -27,20 +27,19 @@ export const Principles = () => {
         </Section>
         <Section heading="Orthogonal styling engine" color="green" intent="primary" iconName="atom">
           <Text intent="neutral">
-            Styling concerns are separated and scoped to prevent interference. Each styling dimension operates independently
-            within its own context.
+            Styling concerns are separated and scoped to prevent interference. Each styling dimension stays isolated. Performance
+            is a property of the architecture, not an added optimization.
           </Text>
         </Section>
         <Section heading="Unified models" color="green" intent="primary" iconName="paintbrush">
           <Text intent="neutral">
-            The drawing mechanism producing visual output and the responsiveness mechanism are each driven by a single explicit
-            model. This keeps behavior consistent across different states and breakpoints.
+            The mechanisms for drawing visual output and handling responsiveness are each driven by their own explicit model,
+            ensuring consistent behavior across the system.
           </Text>
         </Section>
         <Section heading="Resistant to entropy" color="green" intent="primary" iconName="shield-check">
           <Text intent="neutral">
-            System constraints minimize UI entropy and optimize for long-term consistency. This keeps the system stable as
-            applications grow.
+            System constraints minimize UI entropy and optimize for long-term consistency, keeping products stable as they grow.
           </Text>
         </Section>
       </Grid>

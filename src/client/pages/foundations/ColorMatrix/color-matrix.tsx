@@ -9,7 +9,7 @@ export default () => {
       <Text>Color calibration.</Text>
       <Spacer blockSize="50px" />
       {COLORS.map(color => (
-        <Flex flexDirection="row" alignItems="stretch">
+        <Flex key={color} flexDirection="row" alignItems="stretch">
           {arr.map(n => {
             return (
               <Flex.Item key={n} flexGrow="1">

@@ -3,9 +3,7 @@ import { Box, MarkerList, Spacer, Text } from 'lib/components'
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Text>
-        <Text>Performance in NebulaKit is not an optimization layer - it is a property of the architecture.</Text>
-      </Text>
+      <Text>Performance in NebulaKit is not an optimization layer - it is a property of the architecture.</Text>
       <Spacer />
       <Text>
         Performance in NebulaKit is not achieved through micro-optimizations or complex CSS tricks. It is a direct result of how
