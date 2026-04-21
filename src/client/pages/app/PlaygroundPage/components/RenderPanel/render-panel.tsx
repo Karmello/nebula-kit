@@ -7,7 +7,7 @@ import { usePlaygroundStore } from '../../store'
 export const RenderPanel = () => {
   const { activeComponent, getPropValues } = usePlaygroundStore()
 
-  let Component = (COMPONENT_TEMPLATES[activeComponent as never] || LIB_COMPONENTS[activeComponent as never]) as any
+  const Component = (COMPONENT_TEMPLATES[activeComponent as never] || LIB_COMPONENTS[activeComponent as never]) as any
 
   return (
     <>
