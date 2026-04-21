@@ -22,7 +22,7 @@
 
       // selected
       &[data-neb-box-selected='true'] {
-        color: var(--text-selected);
+        color: var(--text-selected) !important;
       }
     }
 

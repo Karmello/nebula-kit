@@ -23,7 +23,7 @@
 
       // selected
       &[data-neb-box-selected='true'] {
-        background-color: var(--bg-selected);
+        background-color: var(--bg-selected) !important;
       }
     }
 

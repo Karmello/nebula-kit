@@ -1,3 +1,22 @@
+$main-neutral-l: 0;
+$main-muted-l: 1;
+$main-tertiary-l: 3;
+$main-secondary-l: 8;
+$main-primary-l: 13;
+$main-inverse-l: 25;
+
+$hover: 1;
+$active: 3;
+$selected: 2;
+$raised: 1;
+$elevated: 3;
+
+$hover-inverse: -3;
+$active-inverse: -5;
+$selected-inverse: -2;
+$raised-inverse: 0;
+$elevated-inverse: -5;
+
 html[data-theme='light'],
 .neb-box[data-neb-box-theme='light'] {
   --l-0: var(--lightness-0);
@@ -34,100 +53,100 @@ html[data-theme='light'],
 
 .neb-box[data-neb-box-theme='light'] {
   // main base rest
-  --main-neutral-l: var(--l-0);
-  --main-muted-l: var(--l-1);
-  --main-tertiary-l: var(--l-3);
-  --main-secondary-l: var(--l-8);
-  --main-primary-l: var(--l-13);
-  --main-inverse-l: var(--l-25);
+  --main-neutral-l: var(--l-#{$main-neutral-l});
+  --main-muted-l: var(--l-#{$main-muted-l});
+  --main-tertiary-l: var(--l-#{$main-tertiary-l});
+  --main-secondary-l: var(--l-#{$main-secondary-l});
+  --main-primary-l: var(--l-#{$main-primary-l});
+  --main-inverse-l: var(--l-#{$main-inverse-l});
 
   // main base hover
-  --main-neutral-l-hover: var(--l-2);
-  --main-muted-l-hover: var(--l-3);
-  --main-tertiary-l-hover: var(--l-5);
-  --main-secondary-l-hover: var(--l-10);
-  --main-primary-l-hover: var(--l-15);
-  --main-inverse-l-hover: var(--l-20);
+  --main-neutral-l-hover: var(--l-#{$main-neutral-l + $hover});
+  --main-muted-l-hover: var(--l-#{$main-muted-l + $hover});
+  --main-tertiary-l-hover: var(--l-#{$main-tertiary-l + $hover});
+  --main-secondary-l-hover: var(--l-#{$main-secondary-l + $hover});
+  --main-primary-l-hover: var(--l-#{$main-primary-l + $hover});
+  --main-inverse-l-hover: var(--l-#{$main-inverse-l + $hover-inverse});
 
   // main base active
-  --main-neutral-l-active: var(--l-4);
-  --main-muted-l-active: var(--l-5);
-  --main-tertiary-l-active: var(--l-7);
-  --main-secondary-l-active: var(--l-12);
-  --main-primary-l-active: var(--l-17);
-  --main-inverse-l-active: var(--l-18);
+  --main-neutral-l-active: var(--l-#{$main-neutral-l + $active});
+  --main-muted-l-active: var(--l-#{$main-muted-l + $active});
+  --main-tertiary-l-active: var(--l-#{$main-tertiary-l + $active});
+  --main-secondary-l-active: var(--l-#{$main-secondary-l + $active});
+  --main-primary-l-active: var(--l-#{$main-primary-l + $active});
+  --main-inverse-l-active: var(--l-#{$main-inverse-l + $active-inverse});
 
   // main base selected
-  --main-neutral-l-selected: var(--l-2);
-  --main-muted-l-selected: var(--l-3);
-  --main-tertiary-l-selected: var(--l-5);
-  --main-secondary-l-selected: var(--l-10);
-  --main-primary-l-selected: var(--l-15);
-  --main-inverse-l-selected: var(--l-20);
+  --main-neutral-l-selected: var(--l-#{$main-neutral-l + $selected});
+  --main-muted-l-selected: var(--l-#{$main-muted-l + $selected});
+  --main-tertiary-l-selected: var(--l-#{$main-tertiary-l + $selected});
+  --main-secondary-l-selected: var(--l-#{$main-secondary-l + $selected});
+  --main-primary-l-selected: var(--l-#{$main-primary-l + $selected});
+  --main-inverse-l-selected: var(--l-#{$main-inverse-l + $selected-inverse});
 
   // main raised rest
-  --main-raised-neutral-l: var(--l-1);
-  --main-raised-muted-l: var(--l-2);
-  --main-raised-tertiary-l: var(--l-4);
-  --main-raised-secondary-l: var(--l-9);
-  --main-raised-primary-l: var(--l-14);
-  --main-raised-inverse-l: var(--l-25);
+  --main-raised-neutral-l: var(--l-#{$main-neutral-l + $raised});
+  --main-raised-muted-l: var(--l-#{$main-muted-l + $raised});
+  --main-raised-tertiary-l: var(--l-#{$main-tertiary-l + $raised});
+  --main-raised-secondary-l: var(--l-#{$main-secondary-l + $raised});
+  --main-raised-primary-l: var(--l-#{$main-primary-l + $raised});
+  --main-raised-inverse-l: var(--l-#{$main-inverse-l + $raised-inverse});
 
   // main raised hover
-  --main-raised-neutral-l-hover: var(--l-3);
-  --main-raised-muted-l-hover: var(--l-4);
-  --main-raised-tertiary-l-hover: var(--l-6);
-  --main-raised-secondary-l-hover: var(--l-11);
-  --main-raised-primary-l-hover: var(--l-16);
-  --main-raised-inverse-l-hover: var(--l-20);
+  --main-raised-neutral-l-hover: var(--l-#{$main-neutral-l + $raised + $hover});
+  --main-raised-muted-l-hover: var(--l-#{$main-muted-l + $raised + $hover});
+  --main-raised-tertiary-l-hover: var(--l-#{$main-tertiary-l + $raised + $hover});
+  --main-raised-secondary-l-hover: var(--l-#{$main-secondary-l + $raised + $hover});
+  --main-raised-primary-l-hover: var(--l-#{$main-primary-l + $raised + $hover});
+  --main-raised-inverse-l-hover: var(--l-#{$main-inverse-l + $raised-inverse + $hover-inverse});
 
   // main raised active
-  --main-raised-neutral-l-active: var(--l-5);
-  --main-raised-muted-l-active: var(--l-6);
-  --main-raised-tertiary-l-active: var(--l-8);
-  --main-raised-secondary-l-active: var(--l-13);
-  --main-raised-primary-l-active: var(--l-18);
-  --main-raised-inverse-l-active: var(--l-18);
+  --main-raised-neutral-l-active: var(--l-#{$main-neutral-l + $raised + $active});
+  --main-raised-muted-l-active: var(--l-#{$main-muted-l + $raised + $active});
+  --main-raised-tertiary-l-active: var(--l-#{$main-tertiary-l + $raised + $active});
+  --main-raised-secondary-l-active: var(--l-#{$main-secondary-l + $raised + $active});
+  --main-raised-primary-l-active: var(--l-#{$main-primary-l + $raised + $active});
+  --main-raised-inverse-l-active: var(--l-#{$main-inverse-l + $raised-inverse + $active-inverse});
 
   // main raised selected
-  --main-raised-neutral-l-selected: var(--l-3);
-  --main-raised-muted-l-selected: var(--l-4);
-  --main-raised-tertiary-l-selected: var(--l-6);
-  --main-raised-secondary-l-selected: var(--l-11);
-  --main-raised-primary-l-selected: var(--l-16);
-  --main-raised-inverse-l-selected: var(--l-20);
+  --main-raised-neutral-l-active: var(--l-#{$main-neutral-l + $raised + $selected});
+  --main-raised-muted-l-active: var(--l-#{$main-muted-l + $raised + $selected});
+  --main-raised-tertiary-l-active: var(--l-#{$main-tertiary-l + $raised + $selected});
+  --main-raised-secondary-l-active: var(--l-#{$main-secondary-l + $raised + $selected});
+  --main-raised-primary-l-active: var(--l-#{$main-primary-l + $raised + $selected});
+  --main-raised-inverse-l-active: var(--l-#{$main-inverse-l + $raised-inverse + $selected-inverse});
 
   // main elevated rest
-  --main-elevated-neutral-l: var(--l-2);
-  --main-elevated-muted-l: var(--l-3);
-  --main-elevated-tertiary-l: var(--l-5);
-  --main-elevated-secondary-l: var(--l-10);
-  --main-elevated-primary-l: var(--l-15);
-  --main-elevated-inverse-l: var(--l-25);
+  --main-elevated-neutral-l: var(--l-#{$main-neutral-l + $elevated});
+  --main-elevated-muted-l: var(--l-#{$main-muted-l + $elevated});
+  --main-elevated-tertiary-l: var(--l-#{$main-tertiary-l + $elevated});
+  --main-elevated-secondary-l: var(--l-#{$main-secondary-l + $elevated});
+  --main-elevated-primary-l: var(--l-#{$main-primary-l + $elevated});
+  --main-elevated-inverse-l: var(--l-#{$main-inverse-l + $elevated-inverse});
 
   // main elevated hover
-  --main-elevated-neutral-l-hover: var(--l-4);
-  --main-elevated-muted-l-hover: var(--l-5);
-  --main-elevated-tertiary-l-hover: var(--l-7);
-  --main-elevated-secondary-l-hover: var(--l-12);
-  --main-elevated-primary-l-hover: var(--l-17);
-  --main-elevated-inverse-l-hover: var(--l-20);
+  --main-elevated-neutral-l-hover: var(--l-#{$main-neutral-l + $elevated + $hover});
+  --main-elevated-muted-l-hover: var(--l-#{$main-muted-l + $elevated + $hover});
+  --main-elevated-tertiary-l-hover: var(--l-#{$main-tertiary-l + $elevated + $hover});
+  --main-elevated-secondary-l-hover: var(--l-#{$main-secondary-l + $elevated + $hover});
+  --main-elevated-primary-l-hover: var(--l-#{$main-primary-l + $elevated + $hover});
+  --main-elevated-inverse-l-hover: var(--l-#{$main-inverse-l + $elevated-inverse + $hover-inverse});
 
   // main elevated active
-  --main-elevated-neutral-l-active: var(--l-6);
-  --main-elevated-muted-l-active: var(--l-7);
-  --main-elevated-tertiary-l-active: var(--l-9);
-  --main-elevated-secondary-l-active: var(--l-14);
-  --main-elevated-primary-l-active: var(--l-19);
-  --main-elevated-inverse-l-active: var(--l-18);
+  --main-elevated-neutral-l-active: var(--l-#{$main-neutral-l + $elevated + $active});
+  --main-elevated-muted-l-active: var(--l-#{$main-muted-l + $elevated + $active});
+  --main-elevated-tertiary-l-active: var(--l-#{$main-tertiary-l + $elevated + $active});
+  --main-elevated-secondary-l-active: var(--l-#{$main-secondary-l + $elevated + $active});
+  --main-elevated-primary-l-active: var(--l-#{$main-primary-l + $elevated + $active});
+  --main-elevated-inverse-l-active: var(--l-#{$main-inverse-l + $elevated-inverse + $active-inverse});
 
   // main elevated selected
-  --main-elevated-neutral-l-selected: var(--l-4);
-  --main-elevated-muted-l-selected: var(--l-5);
-  --main-elevated-tertiary-l-selected: var(--l-7);
-  --main-elevated-secondary-l-selected: var(--l-12);
-  --main-elevated-primary-l-selected: var(--l-17);
-  --main-elevated-inverse-l-selected: var(--l-20);
+  --main-elevated-neutral-l-selected: var(--l-#{$main-neutral-l + $elevated + $selected});
+  --main-elevated-muted-l-selected: var(--l-#{$main-muted-l + $elevated + $selected});
+  --main-elevated-tertiary-l-selected: var(--l-#{$main-tertiary-l + $elevated + $selected});
+  --main-elevated-secondary-l-selected: var(--l-#{$main-secondary-l + $elevated + $selected});
+  --main-elevated-primary-l-selected: var(--l-#{$main-primary-l + $elevated + $selected});
+  --main-elevated-inverse-l-selected: var(--l-#{$main-inverse-l + $elevated-inverse + $selected-inverse});
 
   // other
   --solid-secondary-text-l: var(--l-0);

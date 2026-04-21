@@ -1,3 +1,10 @@
+$main-neutral-l: 0;
+$main-muted-l: 2;
+$main-tertiary-l: 3;
+$main-secondary-l: 6;
+$main-primary-l: 12;
+$main-inverse-l: 25;
+
 html[data-theme='dark'],
 .neb-box[data-neb-box-theme='dark'] {
   --l-0: var(--lightness-25);
@@ -34,12 +41,12 @@ html[data-theme='dark'],
 
 .neb-box[data-neb-box-theme='dark'] {
   // main base rest
-  --main-neutral-l: var(--l-0);
-  --main-muted-l: var(--l-2);
-  --main-tertiary-l: var(--l-3);
-  --main-secondary-l: var(--l-6);
-  --main-primary-l: var(--l-12);
-  --main-inverse-l: var(--l-25);
+  --main-neutral-l: var(--l-#{$main-neutral-l});
+  --main-muted-l: var(--l-#{$main-muted-l});
+  --main-tertiary-l: var(--l-#{$main-tertiary-l});
+  --main-secondary-l: var(--l-#{$main-secondary-l});
+  --main-primary-l: var(--l-#{$main-primary-l});
+  --main-inverse-l: var(--l-#{$main-inverse-l});
 
   // main base hover
   --main-neutral-l-hover: var(--l-2);
