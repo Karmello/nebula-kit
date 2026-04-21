@@ -17,7 +17,7 @@
     --border-active: hsl(var(--h) var(--s) var(--main-l-active));
     --border-selected: hsl(var(--h) var(--s) var(--main-l-selected));
     --border-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.5);
-    --border-focused: hsl(var(--h) var(--s) var(--l-14));
+    --border-focused: hsl(var(--h) var(--s) var(--l-25));
 
     --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-hover)) 12%, transparent);
     --bg-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-active)) 24%, transparent);
@@ -36,7 +36,7 @@
     --border-active: hsl(var(--h) var(--s) var(--main-l-active));
     --border-selected: hsl(var(--h) var(--s) var(--main-l-selected));
     --border-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.5);
-    --border-focused: hsl(var(--h) var(--s) var(--l-14));
+    --border-focused: hsl(var(--h) var(--s) var(--l-25));
 
     --text: hsl(var(--h) var(--s) var(--main-l));
     --text-hover: hsl(var(--h) var(--s) var(--main-l-hover));

@@ -3,8 +3,3 @@
 @use './intents-elevated.scss';
 @use './variants.scss';
 @use './variants_intents.scss';
-
-html {
-  --neb-background: hsl(var(--h) var(--s) var(--l-0));
-  --neb-text: hsl(var(--h) var(--s) var(--l-25));
-}
