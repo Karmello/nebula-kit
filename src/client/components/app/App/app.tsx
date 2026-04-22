@@ -76,6 +76,7 @@ export const App = () => {
                 >
                   <Button
                     intent="muted"
+                    surface={pathname.startsWith(PageKey.home) ? 'elevated' : undefined}
                     selected={pathname.startsWith(PageKey.home)}
                     bold={pathname.startsWith(PageKey.home)}
                     inlineSize="115px"

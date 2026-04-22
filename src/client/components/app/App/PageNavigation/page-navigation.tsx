@@ -46,6 +46,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         >
           <Button
             intent="muted"
+            surface={currentPageKey === PageKey.playground ? 'elevated' : undefined}
             selected={currentPageKey === PageKey.playground}
             bold={currentPageKey === PageKey.playground}
             iconName="shapes"
@@ -68,6 +69,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         >
           <Button
             intent="muted"
+            surface={currentPageKey === PageKey.foundations ? 'elevated' : undefined}
             selected={currentPageKey === PageKey.foundations}
             bold={currentPageKey === PageKey.foundations}
             iconName="book-open-text"
@@ -88,6 +90,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         >
           <Button
             intent="muted"
+            surface={currentPageKey === PageKey.core ? 'elevated' : undefined}
             selected={currentPageKey === PageKey.core}
             bold={currentPageKey === PageKey.core}
             iconName="package"
@@ -108,6 +111,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         >
           <Button
             intent="muted"
+            surface={currentPageKey === PageKey.pro ? 'elevated' : undefined}
             selected={currentPageKey === PageKey.pro}
             bold={currentPageKey === PageKey.pro}
             iconName="star"
@@ -128,6 +132,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         >
           <Button
             intent="muted"
+            surface={currentPageKey === PageKey.faq ? 'elevated' : undefined}
             selected={currentPageKey === PageKey.faq}
             bold={currentPageKey === PageKey.faq}
             iconName="message-circle-question-mark"
@@ -148,6 +153,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         >
           <Button
             intent="muted"
+            surface={currentPageKey === PageKey.blog ? 'elevated' : undefined}
             selected={currentPageKey === PageKey.blog}
             bold={currentPageKey === PageKey.blog}
             iconName="rss"
@@ -169,6 +175,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
           >
             <Button
               intent="muted"
+              surface={currentPageKey === PageKey.pricing ? 'elevated' : undefined}
               selected={currentPageKey === PageKey.pricing}
               bold={currentPageKey === PageKey.pricing}
               iconName="credit-card"
@@ -190,6 +197,7 @@ export const PageNavigation = ({ setMainOpen, mainOpen }: Props) => {
         >
           <Button
             intent="muted"
+            surface={currentPageKey === PageKey.feedback ? 'elevated' : undefined}
             selected={currentPageKey === PageKey.feedback}
             bold={currentPageKey === PageKey.feedback}
             iconName="mail"
