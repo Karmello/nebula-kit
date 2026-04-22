@@ -1,5 +1,5 @@
-@use './light.scss';
-@use './dark.scss';
+@use './light/light.scss';
+@use './light/light-main-tokens.scss';
 
-@use './main-light.scss';
-@use './main-dark.scss';
+@use './dark/dark.scss';
+@use './dark/dark-main-tokens.scss';
