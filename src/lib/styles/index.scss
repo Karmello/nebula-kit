@@ -35,11 +35,10 @@ html[data-ripple-mode='emphasized'] {
 html.neb-transitions {
   .neb-box[data-neb-box-drawable='true'][data-neb-box-transitions='true'] {
     transition:
-      background-color 0.2s linear,
-      border-color 0.2s linear,
-      color 0.2s linear,
-      opacity 0.2s linear,
-      box-shadow 0.2s linear;
+      background-color 0.15s linear,
+      border-color 0.15s linear,
+      color 0.15s linear,
+      opacity 0.15s linear;
   }
 }
 

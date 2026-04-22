@@ -2,7 +2,7 @@
 @use './intents-raised.scss';
 @use './intents-elevated.scss';
 @use './variants.scss';
-@use './variants_intents.scss';
+@use './overrides.scss';
 
 html {
   --neb-focus-ring-width: 3px;

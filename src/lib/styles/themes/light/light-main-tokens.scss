@@ -4,10 +4,10 @@
   $config: (
     // base
     neutral: 0,
-    muted: 2,
-    tertiary: 4,
-    secondary: 9,
-    primary: 13,
+    muted: 1,
+    tertiary: 3,
+    secondary: 8,
+    primary: 12,
     inverse: 25,
 
     // base hover
@@ -40,23 +40,23 @@
     raised-tertiary: 1,
     raised-secondary: 1,
     raised-primary: 1,
-    raised-inverse: -1,
+    raised-inverse: -13,
 
     // raised hover
     raised-neutral-hover: 1,
     raised-muted-hover: 1,
-    raised-tertiary-hover: 1,
-    raised-secondary-hover: 1,
-    raised-primary-hover: 1,
-    raised-inverse-hover: -1,
+    raised-tertiary-hover: 2,
+    raised-secondary-hover: 2,
+    raised-primary-hover: 2,
+    raised-inverse-hover: -2,
 
     // raised active
-    raised-neutral-active: 2,
-    raised-muted-active: 2,
-    raised-tertiary-active: 2,
-    raised-secondary-active: 2,
-    raised-primary-active: 2,
-    raised-inverse-active: -2,
+    raised-neutral-active: 3,
+    raised-muted-active: 3,
+    raised-tertiary-active: 4,
+    raised-secondary-active: 4,
+    raised-primary-active: 4,
+    raised-inverse-active: -4,
 
     // raised selected
     raised-neutral-selected: 2,
@@ -83,20 +83,28 @@
     elevated-inverse-hover: -1,
 
     // elevated active
-    elevated-neutral-active: 2,
-    elevated-muted-active: 2,
-    elevated-tertiary-active: 2,
-    elevated-secondary-active: 2,
-    elevated-primary-active: 2,
-    elevated-inverse-active: -2,
+    elevated-neutral-active: 3,
+    elevated-muted-active: 3,
+    elevated-tertiary-active: 3,
+    elevated-secondary-active: 3,
+    elevated-primary-active: 3,
+    elevated-inverse-active: -3,
 
     // elevated selected
-    elevated-neutral-selected: 2,
-    elevated-muted-selected: 2,
-    elevated-tertiary-selected: 2,
-    elevated-secondary-selected: 2,
-    elevated-primary-selected: 2,
-    elevated-inverse-selected: -2
+    elevated-neutral-selected: 3,
+    elevated-muted-selected: 3,
+    elevated-tertiary-selected: 3,
+    elevated-secondary-selected: 3,
+    elevated-primary-selected: 3,
+    elevated-inverse-selected: -3,
+
+    // fill
+    neutral-fill: 25%,
+    muted-fill: 16%,
+    tertiary-fill: 15%,
+    secondary-fill: 14%,
+    primary-fill: 13%,
+    inverse-fill: 12%
   );
 
   @include generate-main-tokens($config);

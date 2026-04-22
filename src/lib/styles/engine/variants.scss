@@ -17,9 +17,9 @@
     --border-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.5);
     --border-focused: hsl(var(--h) var(--s) var(--l-25));
 
-    --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-hover)) 12%, transparent);
-    --bg-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-active)) 24%, transparent);
-    --bg-selected: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-selected)) 12%, transparent);
+    --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-hover)) var(--main-fill), transparent);
+    --bg-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-active)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
+    --bg-selected: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-selected)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
 
     --text-disabled: hsl(var(--h) var(--s) var(--l-14) / 0.25);
 
@@ -40,9 +40,9 @@
     --text-selected: hsl(var(--h) var(--s) var(--main-l-selected));
     --text-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.25);
 
-    --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-hover)) 12%, transparent);
-    --bg-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-active)) 24%, transparent);
-    --bg-selected: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-selected)) 12%, transparent);
+    --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-hover)) var(--main-fill), transparent);
+    --bg-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-active)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
+    --bg-selected: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-selected)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
 
     --loader: hsl(var(--h) var(--s) var(--main-primary-l));
   }

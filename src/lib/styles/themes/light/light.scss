@@ -34,6 +34,9 @@ html[data-theme='light'],
   --solid-secondary-text-l: var(--l-0);
   --solid-primary-text-l: var(--l-0);
   --solid-inverse-text-l: var(--l-0);
+  --solid-secondary-elevated-text-l: var(--l-0);
+  --solid-primary-elevated-text-l: var(--l-0);
+  --solid-tertiary-elevated-selected-text-l: var(--l-0);
 
   --solid-secondary-text-disabled-alpha: 0.75;
   --solid-primary-text-disabled-alpha: 0.75;
@@ -42,4 +45,6 @@ html[data-theme='light'],
   --solid-secondary-loader-l: var(--l-0);
   --solid-primary-loader-l: var(--l-0);
   --solid-inverse-loader-l: var(--l-0);
+
+  --fill-multiplier: 2;
 }

@@ -96,4 +96,12 @@
   --main-elevated-secondary-l-selected: var(--l-#{map.get($config, secondary) + map.get($config, elevated-secondary) + map.get($config, elevated-secondary-selected)});
   --main-elevated-primary-l-selected: var(--l-#{map.get($config, primary) + map.get($config, elevated-primary) + map.get($config, elevated-primary-selected)});
   --main-elevated-inverse-l-selected: var(--l-#{map.get($config, inverse) + map.get($config, elevated-inverse) + map.get($config, elevated-inverse-selected)});
+
+  // fill
+  --main-neutral-fill: #{map.get($config, neutral-fill)};
+  --main-muted-fill: #{map.get($config, muted-fill)};
+  --main-tertiary-fill: #{map.get($config, tertiary-fill)};
+  --main-secondary-fill: #{map.get($config, secondary-fill)};
+  --main-primary-fill: #{map.get($config, primary-fill)};
+  --main-inverse-fill: #{map.get($config, inverse-fill)};
 }

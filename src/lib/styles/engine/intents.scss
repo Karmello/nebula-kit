@@ -4,6 +4,7 @@
     --main-l-hover: var(--main-neutral-l-hover);
     --main-l-active: var(--main-neutral-l-active);
     --main-l-selected: var(--main-neutral-l-selected);
+    --main-fill: var(--main-neutral-fill);
   }
 
   &[data-neb-box-intent='muted'] {
@@ -11,6 +12,7 @@
     --main-l-hover: var(--main-muted-l-hover);
     --main-l-active: var(--main-muted-l-active);
     --main-l-selected: var(--main-muted-l-selected);
+    --main-fill: var(--main-muted-fill);
   }
 
   &[data-neb-box-intent='tertiary'] {
@@ -18,6 +20,7 @@
     --main-l-hover: var(--main-tertiary-l-hover);
     --main-l-active: var(--main-tertiary-l-active);
     --main-l-selected: var(--main-tertiary-l-selected);
+    --main-fill: var(--main-tertiary-fill);
   }
 
   &[data-neb-box-intent='secondary'] {
@@ -25,6 +28,7 @@
     --main-l-hover: var(--main-secondary-l-hover);
     --main-l-active: var(--main-secondary-l-active);
     --main-l-selected: var(--main-secondary-l-selected);
+    --main-fill: var(--main-secondary-fill);
   }
 
   &[data-neb-box-intent='primary'] {
@@ -32,6 +36,7 @@
     --main-l-hover: var(--main-primary-l-hover);
     --main-l-active: var(--main-primary-l-active);
     --main-l-selected: var(--main-primary-l-selected);
+    --main-fill: var(--main-primary-fill);
   }
 
   &[data-neb-box-intent='inverse'] {
@@ -39,5 +44,6 @@
     --main-l-hover: var(--main-inverse-l-hover);
     --main-l-active: var(--main-inverse-l-active);
     --main-l-selected: var(--main-inverse-l-selected);
+    --main-fill: var(--main-inverse-fill);
   }
 }
