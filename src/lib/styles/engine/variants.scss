@@ -7,6 +7,8 @@
     --bg-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.5);
 
     --loader: hsl(var(--h) var(--s) var(--l-25));
+
+    --ripple: currentColor;
   }
 
   &[data-neb-box-variant='outline'] {
@@ -24,6 +26,8 @@
     --text-disabled: hsl(var(--h) var(--s) var(--l-14) / 0.25);
 
     --loader: hsl(var(--h) var(--s) var(--main-primary-l));
+
+    --ripple: hsl(var(--h) var(--s) var(--l-25));
   }
 
   &[data-neb-box-variant='soft-outline'] {
@@ -45,6 +49,8 @@
     --bg-selected: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-selected)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
 
     --loader: hsl(var(--h) var(--s) var(--main-primary-l));
+
+    --ripple: hsl(var(--h) var(--s) var(--l-25));
   }
 
   &[data-neb-box-variant='ghost'] {
@@ -55,5 +61,7 @@
     --text-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.25);
 
     --loader: hsl(var(--h) var(--s) var(--main-primary-l));
+
+    --ripple: hsl(var(--h) var(--s) var(--l-25));
   }
 }

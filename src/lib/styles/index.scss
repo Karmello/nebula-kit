@@ -20,18 +20,6 @@ html {
   }
 }
 
-html[data-ripple-mode='off'] {
-  --neb-ripple-factor: 0;
-}
-
-html[data-ripple-mode='default'] {
-  --neb-ripple-factor: 0.01;
-}
-
-html[data-ripple-mode='emphasized'] {
-  --neb-ripple-factor: 0.02;
-}
-
 html.neb-transitions {
   .neb-box[data-neb-box-drawable='true'][data-neb-box-transitions='true'] {
     transition:
@@ -45,8 +33,6 @@ html.neb-transitions {
 body {
   background: var(--neb-background);
   color: var(--neb-text);
-  --neb-border-width: 2px;
-  --neb-loader-opacity: 0.1;
 
   margin: 0;
   padding: 0;
