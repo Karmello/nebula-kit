@@ -24,6 +24,7 @@ export { default as ResistantToEntropy } from './ResistantToEntropy/resistant-to
 export { default as ResponsiveProps } from './ResponsiveProps/responsive-props'
 export { default as Slots } from './Slots/slots'
 export { default as StylingAxes } from './StylingAxes/styling-axes'
+export { default as System } from './System/system'
 export { default as TermsOfUse } from './TermsOfUse/terms-of-use'
 export { default as ThemeIsland } from './ThemeIsland/theme-island'
 export { default as Typography } from './Typography/typography'

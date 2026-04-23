@@ -12,7 +12,10 @@ export default () => {
         </Text>
         <Text>
           When you choose a tag, the type of the tagAttrs prop is automatically adjusted so that the correct native element
-          properties for that tag are available. This is achieved through polymorphic behavior implemented in the HtmlTag
+          properties for that tag are available. This is achieved through polymorphic behavior implemented in the
+          <Text tag="span" bold space="both">
+            HtmlTag
+          </Text>
           component, which is the underlying primitive used by every component in the library.
         </Text>
       </Flex>

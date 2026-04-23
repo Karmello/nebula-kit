@@ -44,6 +44,17 @@ export const FOUNDATIONS_CATEGORIES = [
     label: 'Concepts',
     items: [
       {
+        key: 'architecture',
+        label: 'Architecture',
+        sections: [
+          { key: 'system', label: 'System' },
+          { key: 'responsive-props', label: 'Responsive props' },
+          { key: 'react-refs', label: 'React refs' },
+          { key: 'slots', label: 'Slots' },
+          { key: 'render-function', label: 'Render function' },
+        ],
+      },
+      {
         key: 'styling-system',
         label: 'Styling system',
         sections: [
@@ -57,16 +68,6 @@ export const FOUNDATIONS_CATEGORIES = [
           { key: 'intents-and-variants', label: 'Intents + variants' },
           { key: 'color-application', label: 'Color application' },
           { key: 'theme-island', label: 'Theme island' },
-        ],
-      },
-      {
-        key: 'architecture',
-        label: 'Architecture',
-        sections: [
-          { key: 'responsive-props', label: 'Responsive props' },
-          { key: 'react-refs', label: 'React refs' },
-          { key: 'slots', label: 'Slots' },
-          { key: 'render-function', label: 'Render function' },
         ],
       },
     ],
