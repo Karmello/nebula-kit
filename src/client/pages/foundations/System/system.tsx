@@ -12,8 +12,9 @@ export default () => {
         </Text>
         are built from multiple layers. This page shows how those layers fit together at a high level.
       </Text>
-      <Spacer />
+      <Spacer blockSize="50px" />
       <Image src={systemImg} maxBlockSize="400px" />
+      <Spacer blockSize="10px" />
       <Text italic intent="secondary" typography="small">
         Detailed explanations of each layer are covered on the Philosophy page.
       </Text>
