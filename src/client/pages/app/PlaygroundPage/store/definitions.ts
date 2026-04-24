@@ -11,6 +11,7 @@ import {
   CheckboxProps,
   SelectProps,
   InputProps,
+  SwitchProps,
 } from 'lib/components'
 
 export type PropValue = RespValue<string | number | boolean>
@@ -95,6 +96,7 @@ export const PLAYGROUND_MAP: Record<string, unknown[]> = {
     'staticLabel',
     'visibleItemsCount',
   ] as (keyof SelectProps)[],
+  Switch: ['color', 'disabled', 'intent', 'size'] as (keyof SwitchProps)[],
   Text: [
     'bold',
     'children',

@@ -12,15 +12,13 @@ export const ComponentSelect = () => {
       <Flex justifyContent="space-between" alignItems="center">
         <Text bold>Component</Text>
         <Tooltip
-          content='Playground state is stored locally. Components or props may change between versions - if things look off,
-                              clear "neb.playground" from local storage and refresh.'
-          minInlineSize={250}
-          maxInlineSize={500}
+          content="This list is curated for the Playground - not all components are included, only the ones that make sense here."
+          minInlineSize={300}
+          maxInlineSize={400}
         >
           <Icon name="info" size="18px" color="blue" intent="primary" />
         </Tooltip>
       </Flex>
-
       <Spacer blockSize="5px" />
       <Select value={activeComponent} onChange={setActiveComponent} scrollAlign="center">
         {Object.keys(components).map(name => (
