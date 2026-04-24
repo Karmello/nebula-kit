@@ -1,4 +1,15 @@
-import { BoxProps, ButtonProps, CalloutProps, SectionProps, TextProps, IconProps, Select, SelectProps } from 'lib/components'
+import {
+  BoxProps,
+  ButtonProps,
+  CalloutProps,
+  SectionProps,
+  TextProps,
+  IconProps,
+  Select,
+  SelectProps,
+  CheckboxProps,
+  InputProps,
+} from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
 
@@ -52,6 +63,35 @@ const CONFIG: Record<string, object[]> = {
       variant: 'outline',
     },
   ] as CalloutProps[],
+  Checkbox: [
+    {
+      color: 'blue',
+      intent: 'secondary',
+      size: 'md',
+      variant: 'solid',
+    },
+  ] as CheckboxProps[],
+  Icon: [
+    {
+      color: 'blue',
+      intent: 'primary',
+      name: 'mail',
+      size: '30px',
+    },
+    {
+      color: 'red',
+      intent: 'secondary',
+      name: 'globe',
+      size: '40px',
+    },
+  ] as IconProps[],
+  Input: [
+    {
+      color: 'blue',
+      intent: 'primary',
+      variant: 'solid',
+    },
+  ] as InputProps[],
   Section: [
     {
       children: 'This is section content.',
@@ -85,20 +125,6 @@ const CONFIG: Record<string, object[]> = {
       typography: 'h4',
     },
   ] as TextProps[],
-  Icon: [
-    {
-      color: 'blue',
-      intent: 'primary',
-      name: 'mail',
-      size: '30px',
-    },
-    {
-      color: 'red',
-      intent: 'secondary',
-      name: 'globe',
-      size: '40px',
-    },
-  ] as IconProps[],
 }
 
 export const PredefinedExamples = () => {

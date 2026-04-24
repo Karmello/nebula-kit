@@ -10,6 +10,7 @@ import {
   IconProps,
   CheckboxProps,
   SelectProps,
+  InputProps,
 } from 'lib/components'
 
 export type PropValue = RespValue<string | number | boolean>
@@ -81,6 +82,7 @@ export const PLAYGROUND_MAP: Record<string, unknown[]> = {
   Callout: ['content', 'heading', 'intent', 'size', 'status', 'variant'] as (keyof CalloutProps)[],
   Checkbox: ['checked', 'color', 'disabled', 'intent', 'size', 'variant'] as (keyof CheckboxProps)[],
   Icon: ['color', 'intent', 'name', 'size'] as (keyof IconProps)[],
+  Input: ['color', 'disabled', 'intent', 'placeholder', 'readOnly', 'size', 'variant'] as (keyof InputProps)[],
   Section: ['children', 'color', 'heading', 'iconName', 'iconPlacement', 'intent', 'size', 'variant'] as (keyof SectionProps)[],
   Select: [
     'color',
