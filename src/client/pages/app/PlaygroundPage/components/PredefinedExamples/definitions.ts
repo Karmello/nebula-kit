@@ -8,6 +8,7 @@ import {
   SectionProps,
   SelectProps,
   SwitchProps,
+  TableProps,
   TextProps,
 } from 'lib/components'
 
@@ -117,6 +118,11 @@ export const PRESETS: Record<string, object[]> = {
       intent: 'primary',
     },
   ] as SwitchProps[],
+  Table: [
+    {
+      color: 'green',
+    },
+  ] as TableProps[],
   Text: [
     {
       children: 'This is basic text with default body typography.',

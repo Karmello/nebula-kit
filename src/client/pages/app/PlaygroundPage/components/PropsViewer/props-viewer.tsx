@@ -11,13 +11,14 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
   if (!displayProps) return null
 
   const props = components[activeComponent].props
+  const activeProp = components[activeComponent].activeProp
 
   return (
     <>
       <Text bold>Props table</Text>
       <Spacer blockSize="8px" />
-      <Table layout="fixed" paddingBlock="5px" paddingInline="10px" color="gray">
-        <Table.Body paddingBlock="8px" paddingInline="8px">
+      <Table layout="fixed" intent="neutral" paddingBlock="5px" paddingInline="10px">
+        <Table.Body intent="muted" paddingBlock="8px" paddingInline="8px">
           {Object.keys(props)
             .sort()
             .map(propName => {
@@ -37,7 +38,7 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
               }
 
               return (
-                <Table.Row key={propName}>
+                <Table.Row key={propName} intent={propName === activeProp ? 'tertiary' : 'muted'}>
                   <Table.Cell>
                     <Button
                       variant="ghost"

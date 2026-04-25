@@ -26,7 +26,10 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
 
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }}>
-      <Section heading={bundle === 'core' ? 'Core bundle' : 'Pro bundle'} iconName="package">
+      <Section
+        heading={bundle === 'core' ? `Core bundle (${CORE_DATA.length})` : `Pro bundle (${PRO_DATA.length})`}
+        iconName="package"
+      >
         <Flex alignItems="center" columnGap="50px" flexWrap="wrap" justifyContent="space-between">
           {bundle === 'core' ? <Text>All components available for free.</Text> : <Text>Comes with the paid plans.</Text>}
           <Link href={PageKey.pricing} onClick={() => navigateTo(PageKey.pricing)}>

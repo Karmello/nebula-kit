@@ -147,7 +147,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   interactive: {
     options: ['boolean'],
-    description: 'Enables visual interaction affordances such as hover or active styling.',
+    description: 'Enables visual interaction affordances such as hover, active or selected styling.',
   },
   left: {
     options: ['CSS'],

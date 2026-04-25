@@ -42,9 +42,9 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
     ),
   },
   {
-    description: 'Table with custom color displaying header and data rows.',
+    description: 'Table displaying header and data rows.',
     jsx: (
-      <Table color="blue">
+      <Table>
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeaderCell>First name</Table.HeaderCell>
@@ -79,7 +79,7 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
   {
     description: 'Table with caption and footer.',
     jsx: (
-      <Table color="red">
+      <Table>
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeaderCell>First name</Table.HeaderCell>
@@ -120,7 +120,7 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
   {
     description: 'Custom intent applied to the table.',
     jsx: (
-      <Table color="blue" intent="primary">
+      <Table intent="primary">
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeaderCell>First name</Table.HeaderCell>
@@ -164,7 +164,7 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
             <Table.HeaderCell>Position</Table.HeaderCell>
           </Table.HeaderRow>
         </Table.Header>
-        <Table.Body color="amber" intent="tertiary">
+        <Table.Body intent="tertiary">
           <Table.Row>
             <Table.Cell>Robert</Table.Cell>
             <Table.Cell>Lewandowski</Table.Cell>

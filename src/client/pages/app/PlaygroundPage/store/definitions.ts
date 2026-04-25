@@ -12,6 +12,7 @@ import {
   SelectProps,
   InputProps,
   SwitchProps,
+  TableProps,
 } from 'lib/components'
 
 export type PropValue = RespValue<string | number | boolean>
@@ -97,6 +98,17 @@ export const PLAYGROUND_MAP: Record<string, unknown[]> = {
     'visibleItemsCount',
   ] as (keyof SelectProps)[],
   Switch: ['color', 'disabled', 'intent', 'size'] as (keyof SwitchProps)[],
+  Table: [
+    'color',
+    'inlineSize',
+    'intent',
+    'layout',
+    'maxInlineSize',
+    'minInlineSize',
+    'paddingBlock',
+    'paddingInline',
+    'textAlign',
+  ] as (keyof TableProps)[],
   Text: [
     'bold',
     'children',

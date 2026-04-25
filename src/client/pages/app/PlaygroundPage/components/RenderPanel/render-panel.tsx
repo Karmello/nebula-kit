@@ -15,7 +15,7 @@ export const RenderPanel = () => {
         bold
         customSvgIcon={
           <Tooltip
-            content='Playground state is stored locally. Components or props may change between versions - if things look off, clear "neb.playground" from local storage and refresh.'
+            content='Playground state is stored locally. Components or props may change between versions - if things look outdated, clear "neb.playground" from local storage and refresh.'
             minInlineSize={300}
             maxInlineSize={400}
           >
@@ -27,14 +27,7 @@ export const RenderPanel = () => {
         Canvas
       </Text>
       <Spacer blockSize="8px" />
-      <Box
-        tagAttrs={{ style: { borderStyle: 'dashed' } }}
-        drawable
-        variant="outline"
-        intent="tertiary"
-        color="gray"
-        padding="25px"
-      >
+      <Box tagAttrs={{ style: { borderStyle: 'dashed' } }} drawable variant="outline" intent="tertiary" padding="25px">
         <Component {...getPropValues(activeComponent)} />
       </Box>
     </>
