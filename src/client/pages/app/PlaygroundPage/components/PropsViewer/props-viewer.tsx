@@ -17,8 +17,8 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
     <>
       <Text bold>Props table</Text>
       <Spacer blockSize="8px" />
-      <Table layout="fixed" intent="neutral" paddingBlock="5px" paddingInline="10px">
-        <Table.Body intent="muted" paddingBlock="8px" paddingInline="8px">
+      <Table layout="fixed" maxInlineSize="700px" intent="neutral" paddingBlock="5px" paddingInline="5px">
+        <Table.Body intent="muted">
           {Object.keys(props)
             .sort()
             .map(propName => {
@@ -39,7 +39,7 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
 
               return (
                 <Table.Row key={propName} intent={propName === activeProp ? 'tertiary' : 'muted'}>
-                  <Table.Cell>
+                  <Table.Cell textAlign="center">
                     <Button
                       variant="ghost"
                       intent="primary"
@@ -52,13 +52,14 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
                         setActiveProp(activeComponent, propName)
                         handleSideVisibility()
                       }}
+                      fullWidth
                     >
                       {propName}
                     </Button>
                   </Table.Cell>
                   <Table.Cell>
                     <Text
-                      tagAttrs={{ style: { wordBreak: 'break-all' } }}
+                      tagAttrs={{ style: { wordBreak: 'break-all', textAlign: 'center' } }}
                       bold={components[activeComponent].activeProp === propName}
                     >
                       {propValue}
