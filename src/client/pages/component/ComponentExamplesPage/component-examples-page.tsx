@@ -7,10 +7,12 @@ import { useAppStore, useCorePageStore, useProPageStore } from 'client/store'
 import { ComponentMeta, PageKey } from 'client/definitions'
 import { Box, Button, Flex, Reveal, Segment, Spacer, Text } from 'lib/components'
 import { THEMES } from 'lib/definitions'
+import { useCurrentTheme } from 'lib/hooks'
 
 const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   const { description, jsx, code, noSandBox, noCode, sandBoxWithNoPadding } = props
 
+  const theme = useCurrentTheme()
   const examplesTheme = useAppStore(state => state.examplesTheme)
 
   return (
@@ -23,16 +25,15 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
       <Spacer blockSize="10px" />
       {!noSandBox ? (
         <>
-          <Box tagAttrs={{ style: { borderStyle: 'dashed' } }} drawable variant="outline" intent="inverse" color="gray">
-            <Box
-              drawable
-              theme={examplesTheme}
-              variant="solid"
-              intent="neutral"
-              padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
-            >
-              {jsx}
-            </Box>
+          <Box
+            tagAttrs={{ style: { borderStyle: 'dashed' } }}
+            drawable
+            theme={examplesTheme}
+            variant={theme === examplesTheme ? 'outline' : 'solid'}
+            intent={theme === examplesTheme ? 'tertiary' : 'neutral'}
+            padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
+          >
+            {jsx}
           </Box>
           <Spacer blockSize="10px" />
         </>
