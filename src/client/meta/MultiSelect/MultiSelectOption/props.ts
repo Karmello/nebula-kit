@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { DROPDOWN_LIST_ITEM_PROPS_META } from 'client/meta/DropdownList/DropdownListItem/props'
 import { MultiSelectOptionProps } from 'lib/components'
-import { DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT } from 'lib/components/core/form-elements/Select'
+import { DEFAULT_MULTI_SELECT_OPTION_JUSTIFY_CONTENT } from 'lib/components/pro/form-elements/MultiSelect'
 
 const MULTI_SELECT_OPTION_PROPS_META: ComponentMeta<MultiSelectOptionProps>['props'] = {
   children: DROPDOWN_LIST_ITEM_PROPS_META.children,
@@ -10,7 +10,7 @@ const MULTI_SELECT_OPTION_PROPS_META: ComponentMeta<MultiSelectOptionProps>['pro
   iconPlacement: DROPDOWN_LIST_ITEM_PROPS_META.iconPlacement,
   justifyContent: {
     ...DROPDOWN_LIST_ITEM_PROPS_META.justifyContent,
-    defaultValue: String(DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT),
+    defaultValue: String(DEFAULT_MULTI_SELECT_OPTION_JUSTIFY_CONTENT),
   },
   selected: DROPDOWN_LIST_ITEM_PROPS_META?.selected,
   tagAttrs: DROPDOWN_LIST_ITEM_PROPS_META.tagAttrs,

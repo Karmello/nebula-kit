@@ -92,6 +92,7 @@ export const Pagination = ({
                 iconName={iconName}
                 disabled={disabled}
                 bold={active}
+                selected={active}
                 surface={active ? 'elevated' : undefined}
               >
                 {!iconName ? item.page : undefined}
