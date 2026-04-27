@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { TokensResult } from 'shiki'
 
 import { Box, Flex, Button, Text } from 'lib/components'
@@ -25,14 +25,10 @@ export const CodeSnippet = ({
   descriptionIcon = false,
   fullBg,
 }: CodeSnippetProps) => {
-  const [data, setData] = useState<TokensResult>()
+  const [data] = useState<TokensResult>(() => tokenizeCode(code, lang))
   const [copied, setCopied] = useState<boolean>(false)
 
   const timeoutRef = useRef<NodeJS.Timeout>(null)
-
-  useLayoutEffect(() => {
-    setData(tokenizeCode(code, lang))
-  }, [code])
 
   if (!data) {
     return null

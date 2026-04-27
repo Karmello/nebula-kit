@@ -18,7 +18,9 @@ export const generateDoc = (name: string, metaGroup: any) => {
   addSection(lines, 'Description', overview?.description)
   addSection(lines, 'Features', stringifyList(overview?.features))
   addSection(lines, 'Composed of', stringifyList(overview?.composedOf))
+  addSection(lines, 'Root tags', stringifyList(overview?.topLevelTags))
   addSection(lines, 'Slots', stringifyList(overview?.slots))
+  addSection(lines, 'Hooks', stringifyList(overview?.hooks))
   addSection(lines, 'Props', generateProps(props))
   addSection(lines, 'Examples', generateExamples(examples))
 

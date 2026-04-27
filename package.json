@@ -80,7 +80,9 @@
     "pack:pro": "npm pack ./dist/pro --pack-destination ./dist && mv dist/*private-pro-*.tgz dist/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz",
     "upload:pro:dev": "node ./scripts/update-local-versioning-json.js && aws s3 cp ./versioning.json s3://nebula-kit-pro-dev && aws s3 cp dist/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz s3://nebula-kit-pro-dev/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz",
     "upload:pro": "node ./scripts/update-local-versioning-json.js && aws s3 cp ./versioning.json s3://nebula-kit-pro && aws s3 cp dist/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz s3://nebula-kit-pro/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz",
-    "assistant:generate": "rimraf assistant/generated && NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./scripts/ignore-assets-loader.js' tsx ./assistant/scripts/generate-component-docs/index.ts",
+    "assistant:generate:foundations": "rimraf assistant/generated/foundations && NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./scripts/ignore-assets-loader.js' tsx ./assistant/scripts/generate-foundations/index.tsx",
+    "assistant:generate:docs": "rimraf assistant/generated/components && NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./scripts/ignore-assets-loader.js' tsx ./assistant/scripts/generate-component-docs/index.ts",
+    "assistant:generate": "yarn assistant:generate:foundations && yarn assistant:generate:docs",
     "publish:core": "yarn dist:core && npm publish ./dist/core --access public",
     "publish:pro": "yarn dist:pro && yarn pack:pro && yarn upload:pro",
     "publish:gh": "yarn dist && npm publish ./dist/core --registry=https://npm.pkg.github.com && npm publish ./dist/pro --registry=https://npm.pkg.github.com"
