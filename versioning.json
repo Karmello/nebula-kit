@@ -1,5 +1,5 @@
 {
-  "latest": "0.7.0",
+  "latest": "0.8.0",
   "all": [
     {
       "version": "0.2.3",
@@ -40,6 +40,10 @@
     {
       "version": "0.7.0",
       "shasum": "0a7fec320efe52fe64736bb7f640b4281a2f491b"
+    },
+    {
+      "version": "0.8.0",
+      "shasum": "c9cb876a134ee2f0b72479e79c6b9f8328fa644d"
     }
   ]
 }
