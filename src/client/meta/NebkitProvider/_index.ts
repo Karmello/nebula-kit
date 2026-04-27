@@ -16,6 +16,7 @@ const NEBKIT_PROVIDER_META: ComponentMeta<NebkitProviderProps> = {
   },
   props: NEBKIT_PROVIDER_PROPS_META,
   examples: NEBKIT_PROVIDER_EXAMPLES_META,
+  hideExamplesThemeToggle: true,
   changelog: {
     '0.6.0': ['changed ripple prop to rippleMode'],
     '0.5.0': ['added ripple prop'],

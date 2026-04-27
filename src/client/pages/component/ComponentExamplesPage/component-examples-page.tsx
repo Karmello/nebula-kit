@@ -73,23 +73,27 @@ export const ComponentExamplesPage = ({ pageKey }: { pageKey: PageKey.core | Pag
 
   return (
     <Box maxInlineSize="55rem">
-      <Text bold typography="small">
-        Theme
-      </Text>
-      <Segment key={examplesTheme}>
-        {THEMES.map(key => (
-          <Segment.Item key={key}>
-            <Button
-              intent={key === examplesTheme ? 'inverse' : 'tertiary'}
-              size="xs"
-              tagAttrs={{ onClick: () => setExamplesTheme(key) }}
-            >
-              {sentenceCase(key)}
-            </Button>
-          </Segment.Item>
-        ))}
-      </Segment>
-      <Spacer blockSize="50px" />
+      {!meta[itemKeyPascal][itemKeyPascal].hideExamplesThemeToggle ? (
+        <>
+          <Text bold typography="small">
+            Theme
+          </Text>
+          <Segment>
+            {THEMES.map(key => (
+              <Segment.Item key={key}>
+                <Button
+                  intent={key === examplesTheme ? 'inverse' : 'tertiary'}
+                  size="xs"
+                  tagAttrs={{ onClick: () => setExamplesTheme(key) }}
+                >
+                  {sentenceCase(key)}
+                </Button>
+              </Segment.Item>
+            ))}
+          </Segment>
+          <Spacer blockSize="50px" />
+        </>
+      ) : null}
       <Flex flexDirection="column" alignItems="stretch">
         {Object.keys(meta[itemKeyPascal] || []).map(key => {
           return (meta[itemKeyPascal][key].examples || [])

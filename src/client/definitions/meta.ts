@@ -45,4 +45,5 @@ export type ComponentMeta<PropsType> = {
   props?: Record<keyof PropsType, Prop>
   examples?: Example[]
   changelog?: Changelog
+  hideExamplesThemeToggle?: boolean
 }

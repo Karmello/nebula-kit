@@ -40,7 +40,7 @@ export const AppPrefsDialog = () => {
                 Theme
               </Text>
               <Spacer blockSize="2px" />
-              <Segment key={theme}>
+              <Segment>
                 {THEMES.map(key => (
                   <Segment.Item key={key}>
                     <Button intent={key === theme ? 'inverse' : 'tertiary'} size="xs" tagAttrs={{ onClick: () => setTheme(key) }}>
