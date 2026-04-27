@@ -5,6 +5,10 @@
       "path": ".",
     },
     {
+      "name": "assistant",
+      "path": "assistant",
+    },
+    {
       "name": "src",
       "path": "src",
     },
