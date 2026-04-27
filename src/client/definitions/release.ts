@@ -22,7 +22,7 @@ export const RELEASE_INFO: Record<
   }
 > = {
   '0.8.0': {
-    timestamp: 1776727280321,
+    timestamp: 1777258833132,
     changelog: {
       main: [
         'completely rebuilt the styling engine around explicit state and deterministic resolution - styling context (theme, brand, color) is now resolved in React and expressed directly on the DOM, eliminating implicit CSS inheritance and cascade-driven behavior',
