@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 
 import { Box, DropdownListProps } from 'lib/components'
 import { useOutsideClick } from 'lib/hooks'
@@ -44,6 +44,13 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
       setHoveredIndex(-1)
     }
   }, [resizeVisible])
+
+  useLayoutEffect(() => {
+    if (!open) return
+    const handleResize = () => setResizeVisible(false)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [open])
 
   const itemsCount = slotsByName['DropdownList.Item'].length
 

@@ -1,0 +1,107 @@
+@use 'sass:map';
+
+@mixin generate-main-tokens($config) {
+  // base rest
+  --main-neutral-l: var(--l-#{map.get($config, neutral)});
+  --main-muted-l: var(--l-#{map.get($config, muted)});
+  --main-tertiary-l: var(--l-#{map.get($config, tertiary)});
+  --main-secondary-l: var(--l-#{map.get($config, secondary)});
+  --main-primary-l: var(--l-#{map.get($config, primary)});
+  --main-inverse-l: var(--l-#{map.get($config, inverse)});
+
+  // base hover
+  --main-neutral-l-hover: var(--l-#{map.get($config, neutral) + map.get($config, neutral-hover)});
+  --main-muted-l-hover: var(--l-#{map.get($config, muted) + map.get($config, muted-hover)});
+  --main-tertiary-l-hover: var(--l-#{map.get($config, tertiary) + map.get($config, tertiary-hover)});
+  --main-secondary-l-hover: var(--l-#{map.get($config, secondary) + map.get($config, secondary-hover)});
+  --main-primary-l-hover: var(--l-#{map.get($config, primary) + map.get($config, primary-hover)});
+  --main-inverse-l-hover: var(--l-#{map.get($config, inverse) + map.get($config, inverse-hover)});
+
+  // base active
+  --main-neutral-l-active: var(--l-#{map.get($config, neutral) + map.get($config, neutral-active)});
+  --main-muted-l-active: var(--l-#{map.get($config, muted) + map.get($config, muted-active)});
+  --main-tertiary-l-active: var(--l-#{map.get($config, tertiary) + map.get($config, tertiary-active)});
+  --main-secondary-l-active: var(--l-#{map.get($config, secondary) + map.get($config, secondary-active)});
+  --main-primary-l-active: var(--l-#{map.get($config, primary) + map.get($config, primary-active)});
+  --main-inverse-l-active: var(--l-#{map.get($config, inverse) + map.get($config, inverse-active)});
+
+  // base selected
+  --main-neutral-l-selected: var(--l-#{map.get($config, neutral) + map.get($config, neutral-selected)});
+  --main-muted-l-selected: var(--l-#{map.get($config, muted) + map.get($config, muted-selected)});
+  --main-tertiary-l-selected: var(--l-#{map.get($config, tertiary) + map.get($config, tertiary-selected)});
+  --main-secondary-l-selected: var(--l-#{map.get($config, secondary) + map.get($config, secondary-selected)});
+  --main-primary-l-selected: var(--l-#{map.get($config, primary) + map.get($config, primary-selected)});
+  --main-inverse-l-selected: var(--l-#{map.get($config, inverse) + map.get($config, inverse-selected)});
+
+  // raised rest
+  --main-raised-neutral-l: var(--l-#{map.get($config, neutral) + map.get($config, raised-neutral)});
+  --main-raised-muted-l: var(--l-#{map.get($config, muted) + map.get($config, raised-muted)});
+  --main-raised-tertiary-l: var(--l-#{map.get($config, tertiary) + map.get($config, raised-tertiary)});
+  --main-raised-secondary-l: var(--l-#{map.get($config, secondary) + map.get($config, raised-secondary)});
+  --main-raised-primary-l: var(--l-#{map.get($config, primary) + map.get($config, raised-primary)});
+  --main-raised-inverse-l: var(--l-#{map.get($config, inverse) + map.get($config, raised-inverse)});
+
+  // raised hover
+  --main-raised-neutral-l-hover: var(--l-#{map.get($config, neutral) + map.get($config, raised-neutral) + map.get($config, raised-neutral-hover)});
+  --main-raised-muted-l-hover: var(--l-#{map.get($config, muted) + map.get($config, raised-muted) + map.get($config, raised-muted-hover)});
+  --main-raised-tertiary-l-hover: var(--l-#{map.get($config, tertiary) + map.get($config, raised-tertiary) + map.get($config, raised-tertiary-hover)});
+  --main-raised-secondary-l-hover: var(--l-#{map.get($config, secondary) + map.get($config, raised-secondary) + map.get($config, raised-secondary-hover)});
+  --main-raised-primary-l-hover: var(--l-#{map.get($config, primary) + map.get($config, raised-primary) + map.get($config, raised-primary-hover)});
+  --main-raised-inverse-l-hover: var(--l-#{map.get($config, inverse) + map.get($config, raised-inverse) + map.get($config, raised-inverse-hover)});
+
+  // raised active
+  --main-raised-neutral-l-active: var(--l-#{map.get($config, neutral) + map.get($config, raised-neutral) + map.get($config, raised-neutral-active)});
+  --main-raised-muted-l-active: var(--l-#{map.get($config, muted) + map.get($config, raised-muted) + map.get($config, raised-muted-active)});
+  --main-raised-tertiary-l-active: var(--l-#{map.get($config, tertiary) + map.get($config, raised-tertiary) + map.get($config, raised-tertiary-active)});
+  --main-raised-secondary-l-active: var(--l-#{map.get($config, secondary) + map.get($config, raised-secondary) + map.get($config, raised-secondary-active)});
+  --main-raised-primary-l-active: var(--l-#{map.get($config, primary) + map.get($config, raised-primary) + map.get($config, raised-primary-active)});
+  --main-raised-inverse-l-active: var(--l-#{map.get($config, inverse) + map.get($config, raised-inverse) + map.get($config, raised-inverse-active)});
+
+  // raised selected
+  --main-raised-neutral-l-selected: var(--l-#{map.get($config, neutral) + map.get($config, raised-neutral) + map.get($config, raised-neutral-selected)});
+  --main-raised-muted-l-selected: var(--l-#{map.get($config, muted) + map.get($config, raised-muted) + map.get($config, raised-muted-selected)});
+  --main-raised-tertiary-l-selected: var(--l-#{map.get($config, tertiary) + map.get($config, raised-tertiary) + map.get($config, raised-tertiary-selected)});
+  --main-raised-secondary-l-selected: var(--l-#{map.get($config, secondary) + map.get($config, raised-secondary) + map.get($config, raised-secondary-selected)});
+  --main-raised-primary-l-selected: var(--l-#{map.get($config, primary) + map.get($config, raised-primary) + map.get($config, raised-primary-selected)});
+  --main-raised-inverse-l-selected: var(--l-#{map.get($config, inverse) + map.get($config, raised-inverse) + map.get($config, raised-inverse-selected)});
+
+  // elevated rest
+  --main-elevated-neutral-l: var(--l-#{map.get($config, neutral) + map.get($config, elevated-neutral)});
+  --main-elevated-muted-l: var(--l-#{map.get($config, muted) + map.get($config, elevated-muted)});
+  --main-elevated-tertiary-l: var(--l-#{map.get($config, tertiary) + map.get($config, elevated-tertiary)});
+  --main-elevated-secondary-l: var(--l-#{map.get($config, secondary) + map.get($config, elevated-secondary)});
+  --main-elevated-primary-l: var(--l-#{map.get($config, primary) + map.get($config, elevated-primary)});
+  --main-elevated-inverse-l: var(--l-#{map.get($config, inverse) + map.get($config, elevated-inverse)});
+
+  // elevated hover
+  --main-elevated-neutral-l-hover: var(--l-#{map.get($config, neutral) + map.get($config, elevated-neutral) + map.get($config, elevated-neutral-hover)});
+  --main-elevated-muted-l-hover: var(--l-#{map.get($config, muted) + map.get($config, elevated-muted) + map.get($config, elevated-muted-hover)});
+  --main-elevated-tertiary-l-hover: var(--l-#{map.get($config, tertiary) + map.get($config, elevated-tertiary) + map.get($config, elevated-tertiary-hover)});
+  --main-elevated-secondary-l-hover: var(--l-#{map.get($config, secondary) + map.get($config, elevated-secondary) + map.get($config, elevated-secondary-hover)});
+  --main-elevated-primary-l-hover: var(--l-#{map.get($config, primary) + map.get($config, elevated-primary) + map.get($config, elevated-primary-hover)});
+  --main-elevated-inverse-l-hover: var(--l-#{map.get($config, inverse) + map.get($config, elevated-inverse) + map.get($config, elevated-inverse-hover)});
+
+  // elevated active
+  --main-elevated-neutral-l-active: var(--l-#{map.get($config, neutral) + map.get($config, elevated-neutral) + map.get($config, elevated-neutral-active)});
+  --main-elevated-muted-l-active: var(--l-#{map.get($config, muted) + map.get($config, elevated-muted) + map.get($config, elevated-muted-active)});
+  --main-elevated-tertiary-l-active: var(--l-#{map.get($config, tertiary) + map.get($config, elevated-tertiary) + map.get($config, elevated-tertiary-active)});
+  --main-elevated-secondary-l-active: var(--l-#{map.get($config, secondary) + map.get($config, elevated-secondary) + map.get($config, elevated-secondary-active)});
+  --main-elevated-primary-l-active: var(--l-#{map.get($config, primary) + map.get($config, elevated-primary) + map.get($config, elevated-primary-active)});
+  --main-elevated-inverse-l-active: var(--l-#{map.get($config, inverse) + map.get($config, elevated-inverse) + map.get($config, elevated-inverse-active)});
+
+  // elevated selected
+  --main-elevated-neutral-l-selected: var(--l-#{map.get($config, neutral) + map.get($config, elevated-neutral) + map.get($config, elevated-neutral-selected)});
+  --main-elevated-muted-l-selected: var(--l-#{map.get($config, muted) + map.get($config, elevated-muted) + map.get($config, elevated-muted-selected)});
+  --main-elevated-tertiary-l-selected: var(--l-#{map.get($config, tertiary) + map.get($config, elevated-tertiary) + map.get($config, elevated-tertiary-selected)});
+  --main-elevated-secondary-l-selected: var(--l-#{map.get($config, secondary) + map.get($config, elevated-secondary) + map.get($config, elevated-secondary-selected)});
+  --main-elevated-primary-l-selected: var(--l-#{map.get($config, primary) + map.get($config, elevated-primary) + map.get($config, elevated-primary-selected)});
+  --main-elevated-inverse-l-selected: var(--l-#{map.get($config, inverse) + map.get($config, elevated-inverse) + map.get($config, elevated-inverse-selected)});
+
+  // fill
+  --main-neutral-fill: #{map.get($config, neutral-fill)};
+  --main-muted-fill: #{map.get($config, muted-fill)};
+  --main-tertiary-fill: #{map.get($config, tertiary-fill)};
+  --main-secondary-fill: #{map.get($config, secondary-fill)};
+  --main-primary-fill: #{map.get($config, primary-fill)};
+  --main-inverse-fill: #{map.get($config, inverse-fill)};
+}

@@ -20,7 +20,7 @@ export const SideNavItem = ({
   iconName,
   iconPlacement,
   justifyContent,
-  elevated,
+  surface,
   // Link
   href,
   onClick,
@@ -51,7 +51,7 @@ export const SideNavItem = ({
         iconName={iconName}
         iconPlacement={iconPlacement}
         justifyContent={justifyContent}
-        elevated={elevated}
+        surface={surface}
       >
         {children}
       </Button>

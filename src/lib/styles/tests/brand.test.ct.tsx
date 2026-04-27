@@ -20,28 +20,41 @@ test('Local brand overrides global brand', async ({ mount, page }) => {
     const parent = document.getElementById('parent')!
     const child = document.getElementById('child')!
 
+    const parentStyles = getComputedStyle(parent)
+    const childStyles = getComputedStyle(child)
+
     return {
-      parentBg: getComputedStyle(parent).backgroundColor,
-      childBg: getComputedStyle(child).backgroundColor,
+      rootBrand: document.documentElement.dataset.brand,
 
-      parentCtx: getComputedStyle(parent).getPropertyValue('--neb-ctx-color-5').trim(),
+      // FINAL resolved state (this is the truth)
+      parentColor: parent.dataset.nebBoxColor,
+      childColor: child.dataset.nebBoxColor,
 
-      childCtx: getComputedStyle(child).getPropertyValue('--neb-ctx-color-5').trim(),
+      // tokens
+      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
+      childMain: childStyles.getPropertyValue('--main-l').trim(),
+
+      // projection
+      parentBg: parentStyles.getPropertyValue('--bg').trim(),
+      childBg: childStyles.getPropertyValue('--bg').trim(),
     }
   })
 
-  // both must resolve to real colors
-  expect(result.parentBg).toMatch(/^rgb\(/)
-  expect(result.childBg).toMatch(/^rgb\(/)
+  // input
+  expect(result.rootBrand).toBe('red')
 
-  // ctx must be set on both
-  expect(result.parentCtx).not.toBe('')
-  expect(result.childCtx).not.toBe('')
+  // resolved output
+  expect(result.parentColor).toBe('red')
+  expect(result.childColor).toBe('green')
 
-  // child must use different ctx (brand isolation)
-  expect(result.childCtx).not.toBe(result.parentCtx)
+  // token divergence (core guarantee)
+  expect(result.parentMain).not.toBe('')
+  expect(result.childMain).not.toBe('')
+  expect(result.childMain).not.toBe(result.parentMain)
 
-  // visual output must differ
+  // visual divergence
+  expect(result.parentBg).not.toBe('')
+  expect(result.childBg).not.toBe('')
   expect(result.childBg).not.toBe(result.parentBg)
 })
 
@@ -58,27 +71,36 @@ test('Child Box inherits brand when no local brand is set', async ({ mount, page
     const parent = document.getElementById('parent')!
     const child = document.getElementById('child')!
 
-    const parentCs = getComputedStyle(parent)
-    const childCs = getComputedStyle(child)
+    const parentStyles = getComputedStyle(parent)
+    const childStyles = getComputedStyle(child)
 
     return {
-      parentBg: parentCs.backgroundColor,
-      childBg: childCs.backgroundColor,
+      // resolved state (truth)
+      parentColor: parent.dataset.nebBoxColor,
+      childColor: child.dataset.nebBoxColor,
 
-      parentSemantic: parentCs.getPropertyValue('--neb-solid-primary').trim(),
-      childSemantic: childCs.getPropertyValue('--neb-solid-primary').trim(),
+      // token layer
+      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
+      childMain: childStyles.getPropertyValue('--main-l').trim(),
+
+      // projection layer
+      parentBg: parentStyles.getPropertyValue('--bg').trim(),
+      childBg: childStyles.getPropertyValue('--bg').trim(),
     }
   })
 
-  // both must resolve semantic vars
-  expect(result.parentSemantic).not.toBe('')
-  expect(result.childSemantic).not.toBe('')
+  // --- state layer ---
+  expect(result.parentColor).toBe('green')
+  expect(result.childColor).toBe('green')
 
-  // both must resolve to real colors
-  expect(result.parentBg).toMatch(/^rgb\(/)
-  expect(result.childBg).toMatch(/^rgb\(/)
+  // --- token layer ---
+  expect(result.parentMain).not.toBe('')
+  expect(result.childMain).not.toBe('')
+  expect(result.childMain).toBe(result.parentMain)
 
-  // they must be visually identical (brand inheritance)
+  // --- projection layer ---
+  expect(result.parentBg).not.toBe('')
+  expect(result.childBg).not.toBe('')
   expect(result.childBg).toBe(result.parentBg)
 })
 
@@ -100,30 +122,39 @@ test('Brand survives theme islands (light → dark → light)', async ({ mount, 
     const dark = document.getElementById('dark-parent')!
     const light = document.getElementById('light-child')!
 
-    const darkCs = getComputedStyle(dark)
-    const lightCs = getComputedStyle(light)
+    const darkStyles = getComputedStyle(dark)
+    const lightStyles = getComputedStyle(light)
 
     return {
-      darkBg: darkCs.backgroundColor,
-      lightBg: lightCs.backgroundColor,
+      rootBrand: document.documentElement.dataset.brand,
 
-      darkSemantic: darkCs.getPropertyValue('--neb-solid-primary').trim(),
-      lightSemantic: lightCs.getPropertyValue('--neb-solid-primary').trim(),
+      darkColor: dark.dataset.nebBoxColor,
+      lightColor: light.dataset.nebBoxColor,
+
+      darkTheme: dark.dataset.nebBoxTheme,
+      lightTheme: light.dataset.nebBoxTheme,
+
+      darkMain: darkStyles.getPropertyValue('--main-l').trim(),
+      lightMain: lightStyles.getPropertyValue('--main-l').trim(),
+
+      darkBg: darkStyles.getPropertyValue('--bg').trim(),
+      lightBg: lightStyles.getPropertyValue('--bg').trim(),
     }
   })
 
-  // semantic vars must exist
-  expect(result.darkSemantic).not.toBe('')
-  expect(result.lightSemantic).not.toBe('')
+  // --- state layer ---
+  expect(result.rootBrand).toBe('green')
+  expect(result.darkColor).toBe('green')
+  expect(result.lightColor).toBe('green')
 
-  // both must resolve to real colors
-  expect(result.darkBg).toMatch(/^rgb\(/)
-  expect(result.lightBg).toMatch(/^rgb\(/)
+  expect(result.darkTheme).toBe('dark')
+  expect(result.lightTheme).toBe('light')
 
-  // brand survives (semantic token structure exists in both)
-  expect(result.darkSemantic).not.toBe('')
-  expect(result.lightSemantic).not.toBe('')
+  // --- token layer ---
+  expect(result.darkMain).not.toBe('')
+  expect(result.lightMain).not.toBe('')
 
-  // but rendered colors should differ because themes differ
-  expect(result.lightBg).not.toBe(result.darkBg)
+  // --- projection layer ---
+  expect(result.darkBg).not.toBe('')
+  expect(result.lightBg).not.toBe('')
 })

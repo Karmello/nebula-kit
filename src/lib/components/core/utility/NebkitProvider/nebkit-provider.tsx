@@ -1,6 +1,7 @@
-import { ReactElement, useLayoutEffect } from 'react'
+import { ReactElement, useLayoutEffect, useRef } from 'react'
 
 import { useGlobalScrollLock } from 'lib/hooks'
+import { ThemeProvider, BrandProvider } from 'lib/components/core/internal'
 
 import {
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
@@ -21,6 +22,19 @@ export const NebkitProvider = ({
 }: NebkitProviderProps): ReactElement => {
   const { lock, unlock } = useGlobalScrollLock()
 
+  const enableRafRef = useRef<number | null>(null)
+
+  const scheduleEnableTransitions = () => {
+    if (enableRafRef.current !== null) {
+      cancelAnimationFrame(enableRafRef.current)
+    }
+
+    enableRafRef.current = requestAnimationFrame(() => {
+      document.documentElement.classList.add('neb-transitions')
+      enableRafRef.current = null
+    })
+  }
+
   useLayoutEffect(() => {
     if (lockGlobalScroll) {
       lock()
@@ -29,30 +43,18 @@ export const NebkitProvider = ({
     }
   }, [lockGlobalScroll, lock, unlock])
 
-  // shared transition re-enable gate
-  let enableRaf: number | null = null
-
-  const scheduleEnableTransitions = () => {
-    if (enableRaf !== null) {
-      cancelAnimationFrame(enableRaf)
-    }
-
-    enableRaf = requestAnimationFrame(() => {
-      document.documentElement.classList.add('neb-transitions')
-      enableRaf = null
-    })
-  }
-
   // hydration + initial enable
   useLayoutEffect(() => {
-    requestAnimationFrame(() => {
+    const raf = requestAnimationFrame(() => {
       window.dispatchEvent(new CustomEvent('neb:hydrated'))
       scheduleEnableTransitions()
     })
 
     return () => {
-      if (enableRaf !== null) {
-        cancelAnimationFrame(enableRaf)
+      cancelAnimationFrame(raf)
+
+      if (enableRafRef.current !== null) {
+        cancelAnimationFrame(enableRafRef.current)
       }
     }
   }, [])
@@ -86,7 +88,11 @@ export const NebkitProvider = ({
     scheduleEnableTransitions()
   }, [theme, brand, borderRadiusSize, rippleMode])
 
-  return children
+  return (
+    <ThemeProvider theme={theme}>
+      <BrandProvider brand={brand}>{children}</BrandProvider>
+    </ThemeProvider>
+  )
 }
 
 NebkitProvider.displayName = 'NebkitProvider'

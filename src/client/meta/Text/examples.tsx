@@ -27,19 +27,11 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
     description: 'Text with custom color applied.',
   },
   {
-    jsx: (
-      <Text color="blue" intent="primary" typography="h5">
-        Heading 5
-      </Text>
-    ),
+    jsx: <Text typography="h5">Heading 5</Text>,
     description: 'Typography prop sets HTML tag, font size and line height automatically.',
   },
   {
-    jsx: (
-      <Text color="blue" intent="primary" iconName="search">
-        Paragraph with an icon
-      </Text>
-    ),
+    jsx: <Text iconName="search">Paragraph with an icon</Text>,
     description: 'Text supports inline icons.',
   },
   {

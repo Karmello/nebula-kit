@@ -16,8 +16,7 @@ export default () => {
         simplifies state sharing between parent and child and removes the need for extra wrapper components or prop drilling. It
         also keeps markup cleaner, since the logic for how and when elements appear lives alongside the data that drives them.
       </Text>
-      <Spacer blockSize="40px" />
-      <Text bold>Example</Text>
+      <Spacer blockSize="30px" />
       <CodeSnippet
         lang="tsx"
         code={`<SplitView>
@@ -46,6 +45,7 @@ export default () => {
     </>
   )}
 </SplitView>`}
+        description="Example"
       />
     </Box>
   )

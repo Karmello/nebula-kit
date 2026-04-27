@@ -1,6 +1,6 @@
-@use './theme/theme.scss';
-@use './ripple/ripple-light.scss';
-@use './ripple/ripple-dark.scss';
+@use './palette/_index' as *;
+@use './themes/_index' as *;
+@use './engine/_index';
 
 html {
   font-family:
@@ -33,8 +33,6 @@ html.neb-transitions {
 body {
   background: var(--neb-background);
   color: var(--neb-text);
-  --neb-border-width: 2px;
-  --neb-loader-opacity: 0.1;
 
   margin: 0;
   padding: 0;

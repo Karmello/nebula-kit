@@ -69,15 +69,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                 {({ open }) => (
                   <>
                     <DropdownList.Trigger>
-                      <Button
-                        size={size}
-                        variant="ghost"
-                        color={color}
-                        intent="primary"
-                        ripple={!open}
-                        defaultState={open ? 'active' : undefined}
-                        bold
-                      >
+                      <Button size={size} variant="ghost" color={color} intent="primary" ripple={!open} selected={open} bold>
                         {levels[index].find(node => node.value === currentPath[index])?.label || 'Select ...'}
                       </Button>
                     </DropdownList.Trigger>
@@ -87,6 +79,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                         tagAttrs={{
                           onClick: () => handleChange(index, node.value),
                         }}
+                        selected={node.value === currentPath[index]}
                         bold={node.value === currentPath[index]}
                       >
                         {node.label}

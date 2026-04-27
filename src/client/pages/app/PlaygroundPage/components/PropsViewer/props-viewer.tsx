@@ -11,13 +11,14 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
   if (!displayProps) return null
 
   const props = components[activeComponent].props
+  const activeProp = components[activeComponent].activeProp
 
   return (
     <>
       <Text bold>Props table</Text>
       <Spacer blockSize="8px" />
-      <Table layout="fixed" paddingBlock="5px" paddingInline="10px" color="gray">
-        <Table.Body paddingBlock="8px" paddingInline="8px">
+      <Table layout="fixed" intent="neutral" paddingBlock="5px" paddingInline="5px">
+        <Table.Body intent="muted">
           {Object.keys(props)
             .sort()
             .map(propName => {
@@ -37,8 +38,8 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
               }
 
               return (
-                <Table.Row key={propName}>
-                  <Table.Cell>
+                <Table.Row key={propName} intent={propName === activeProp ? 'tertiary' : 'muted'}>
+                  <Table.Cell textAlign="center">
                     <Button
                       variant="ghost"
                       intent="primary"
@@ -51,13 +52,15 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
                         setActiveProp(activeComponent, propName)
                         handleSideVisibility()
                       }}
+                      fullWidth
+                      ripple={false}
                     >
                       {propName}
                     </Button>
                   </Table.Cell>
                   <Table.Cell>
                     <Text
-                      tagAttrs={{ style: { wordBreak: 'break-all' } }}
+                      tagAttrs={{ style: { wordBreak: 'break-all', textAlign: 'center' } }}
                       bold={components[activeComponent].activeProp === propName}
                     >
                       {propValue}

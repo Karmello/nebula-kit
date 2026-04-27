@@ -1,0 +1,50 @@
+html[data-theme='dark'],
+.neb-box[data-neb-box-theme='dark'] {
+  --l-0: var(--lightness-25);
+  --l-1: var(--lightness-24);
+  --l-2: var(--lightness-23);
+  --l-3: var(--lightness-22);
+  --l-4: var(--lightness-21);
+  --l-5: var(--lightness-20);
+  --l-6: var(--lightness-19);
+  --l-7: var(--lightness-18);
+  --l-8: var(--lightness-17);
+  --l-9: var(--lightness-16);
+  --l-10: var(--lightness-15);
+  --l-11: var(--lightness-14);
+  --l-12: var(--lightness-13);
+  --l-13: var(--lightness-12);
+  --l-14: var(--lightness-11);
+  --l-15: var(--lightness-10);
+  --l-16: var(--lightness-9);
+  --l-17: var(--lightness-8);
+  --l-18: var(--lightness-7);
+  --l-19: var(--lightness-6);
+  --l-20: var(--lightness-5);
+  --l-21: var(--lightness-4);
+  --l-22: var(--lightness-3);
+  --l-23: var(--lightness-2);
+  --l-24: var(--lightness-1);
+  --l-25: var(--lightness-0);
+
+  --neb-background: hsl(var(--h) var(--s) var(--l-0));
+  --neb-text: hsl(var(--h) var(--s) var(--l-25));
+  --neb-focus-ring-color: hsl(var(--h) var(--s) var(--l-25));
+
+  --solid-secondary-text-l: var(--l-25);
+  --solid-primary-text-l: var(--l-25);
+  --solid-inverse-text-l: var(--l-0);
+  --solid-secondary-elevated-text-l: var(--l-0);
+  --solid-primary-elevated-text-l: var(--l-0);
+  --solid-tertiary-elevated-selected-text-l: var(--l-25);
+
+  --solid-secondary-text-disabled-alpha: 0.25;
+  --solid-primary-text-disabled-alpha: 0.25;
+  --solid-inverse-text-disabled-alpha: 0.75;
+
+  --solid-secondary-loader-l: var(--l-25);
+  --solid-primary-loader-l: var(--l-25);
+  --solid-inverse-loader-l: var(--l-0);
+
+  --fill-multiplier: 1.5;
+}

@@ -62,7 +62,7 @@ export const DropdownListMenu = () => {
 
   const opensUpDownwards = (floatingResolved?.placement ?? 'bottom-start').startsWith('bottom')
 
-  const ListItemDivider = () => <Divider marginBlock="0px" color={color} intent={intent} opacity="0.5" elevated />
+  const ListItemDivider = () => <Divider marginBlock="0px" color={color} intent={intent} surface="elevated" opacity="0.5" />
 
   return (
     <Floating
@@ -76,61 +76,63 @@ export const DropdownListMenu = () => {
         }
       }}
     >
-      <Portal tagRef={portalRef} anchorRef={triggerRef} placement={floatingResolved?.placement || placement}>
-        <Resize
-          property="blockSize"
-          visible={resizeVisible}
-          duration={resizeVisible ? finalAnimationDuration : 0}
-          easing={resizeVisible ? 'ease-out' : undefined}
-        >
-          <Box
-            drawable
-            variant="solid"
-            intent={intent}
-            color={color}
-            blockSize={`${finalVisibleItemsCount * itemHeight}px`}
-            minInlineSize={`${triggerWidth}px`}
-            overflow="hidden"
-            borderTopWidth="0px"
-            borderTopLeftRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
-            borderTopRightRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
-            borderBottomLeftRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
-            borderBottomRightRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
+      {open ? (
+        <Portal tagRef={portalRef} anchorRef={triggerRef} placement={floatingResolved?.placement || placement}>
+          <Resize
+            property="blockSize"
+            visible={resizeVisible}
+            duration={resizeVisible ? finalAnimationDuration : 0}
+            easing={resizeVisible ? 'ease-out' : undefined}
           >
-            {slotsByName['DropdownList.Item'].length ? (
-              <VirtualList
-                key={String(open)}
-                tagRef={scrollWrapperRef}
-                items={slotsByName['DropdownList.Item']}
-                itemHeight={itemHeight}
-                visibleItemsCount={finalVisibleItemsCount ?? DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT}
-                scrollToIndex={scrollToIndex}
-                scrollAlign={scrollAlign}
-                color={color}
-                intent={intent}
-                renderItem={(slot, index) => {
-                  return (
-                    <>
-                      {opensUpDownwards ? <ListItemDivider /> : null}
-                      {cloneElement(slot as ReactElement<DropdownListItemProps & { index: number }>, {
-                        index,
-                      })}
-                      {!opensUpDownwards ? <ListItemDivider /> : null}
-                    </>
-                  )
-                }}
-                ensureVisibleIndex={ensureVisibleIndex}
-              />
-            ) : noOptionsLabel ? (
-              <>
-                {opensUpDownwards ? <ListItemDivider /> : null}
-                <DropdownList.Item disabled>{noOptionsLabel}</DropdownList.Item>
-                {!opensUpDownwards ? <ListItemDivider /> : null}
-              </>
-            ) : null}
-          </Box>
-        </Resize>
-      </Portal>
+            <Box
+              drawable
+              variant="solid"
+              intent={intent}
+              color={color}
+              blockSize={`${finalVisibleItemsCount * itemHeight}px`}
+              minInlineSize={`${triggerWidth}px`}
+              overflow="hidden"
+              borderTopWidth="0px"
+              borderTopLeftRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
+              borderTopRightRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
+              borderBottomLeftRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
+              borderBottomRightRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
+            >
+              {slotsByName['DropdownList.Item'].length ? (
+                <VirtualList
+                  key={String(open)}
+                  tagRef={scrollWrapperRef}
+                  items={slotsByName['DropdownList.Item']}
+                  itemHeight={itemHeight}
+                  visibleItemsCount={finalVisibleItemsCount ?? DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT}
+                  scrollToIndex={scrollToIndex}
+                  scrollAlign={scrollAlign}
+                  color={color}
+                  intent={intent}
+                  renderItem={(slot, index) => {
+                    return (
+                      <>
+                        {opensUpDownwards ? <ListItemDivider /> : null}
+                        {cloneElement(slot as ReactElement<DropdownListItemProps & { index: number }>, {
+                          index,
+                        })}
+                        {!opensUpDownwards ? <ListItemDivider /> : null}
+                      </>
+                    )
+                  }}
+                  ensureVisibleIndex={ensureVisibleIndex}
+                />
+              ) : noOptionsLabel ? (
+                <>
+                  {opensUpDownwards ? <ListItemDivider /> : null}
+                  <DropdownList.Item disabled>{noOptionsLabel}</DropdownList.Item>
+                  {!opensUpDownwards ? <ListItemDivider /> : null}
+                </>
+              ) : null}
+            </Box>
+          </Resize>
+        </Portal>
+      ) : null}
     </Floating>
   )
 }

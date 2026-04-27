@@ -49,14 +49,9 @@
 }
 
 .neb-box[data-neb-box-disabled='true'] {
-  opacity: 0.6;
   pointer-events: none;
 }
 
 .neb-box::placeholder {
   color: inherit;
-}
-
-.neb-box:focus-visible {
-  border-radius: 0px !important;
 }

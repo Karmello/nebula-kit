@@ -1,7 +1,7 @@
 import { cloneElement, ReactElement, useEffect, useState } from 'react'
 
 import { ComponentMeta } from 'client/definitions'
-import { Box, Flex, Slide, SlideProps } from 'lib/components'
+import { Box, Flex, Slide, SlideProps, Text } from 'lib/components'
 
 const SlideWrapper = ({ children }: { children: ReactElement }) => {
   const [visible, setVisible] = useState<boolean>(false)
@@ -31,56 +31,48 @@ const SLIDE_EXAMPLES_META: ComponentMeta<SlideProps>['examples'] = [
     jsx: (
       <SlideWrapper>
         <Slide visible={false} from="left" duration={1000}>
-          <Box drawable variant="outline" intent="secondary" color="blue">
-            Animated content.
-          </Box>
+          <Text>Animated content.</Text>
         </Slide>
       </SlideWrapper>
     ),
     code: `<Slide visible={visible} from="left" duration={1000}>
-  <Box variant="outline" intent="secondary" color="blue">
-    Animated content.
-  </Box>
+  <Text>Animated content.</Text>
 </Slide>`,
     sandBoxWithNoPadding: true,
   },
   {
     description: 'Sliding in from the right.',
     jsx: (
-      <Box overflowX="hidden">
-        <Flex justifyContent="flex-end">
+      <Flex justifyContent="flex-end">
+        <Box overflowX="hidden">
           <SlideWrapper>
             <Slide visible={false} from="right" duration={1000}>
-              <Box drawable variant="outline" intent="secondary" color="blue">
-                Animated content.
-              </Box>
+              <Text>Animated content.</Text>
             </Slide>
           </SlideWrapper>
-        </Flex>
-      </Box>
+        </Box>
+      </Flex>
     ),
     code: `<Slide visible={visible} from="right" duration={1000}>
-  <Box variant="outline" intent="secondary" color="blue">
-    Animated content.
-  </Box>
+  <Text>Animated content.</Text>
 </Slide>`,
     sandBoxWithNoPadding: true,
   },
   {
     description: 'Sliding in from the top.',
     jsx: (
-      <SlideWrapper>
-        <Slide visible={false} from="top" duration={1000}>
-          <Box drawable variant="outline" intent="secondary" color="blue">
-            Animated content.
-          </Box>
-        </Slide>
-      </SlideWrapper>
+      <Box overflowX="hidden">
+        <SlideWrapper>
+          <Slide visible={false} from="top" duration={1000}>
+            <Text>Animated content.</Text>
+          </Slide>
+        </SlideWrapper>
+      </Box>
     ),
     code: `<Slide visible={visible} from="top" duration={1000}>
-  <Box variant="outline" intent="secondary" color="blue">
+  <Text>
     Animated content.
-  </Box>
+  </Text>
 </Slide>`,
     sandBoxWithNoPadding: true,
   },

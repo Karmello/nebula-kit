@@ -65,7 +65,7 @@ export const Select = ({
               placement={dropdownPlacement}
             >
               {({ open, resolvedPlacement }) => {
-                const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(resolvedPlacement)
+                const opensUpDownwards = ['bottom-start', 'bottom-end', 'bottom-center', undefined].includes(resolvedPlacement)
 
                 return (
                   <>
@@ -94,7 +94,7 @@ export const Select = ({
                         disabled={disabled}
                         fullWidth
                         ripple={!open}
-                        elevated={open}
+                        surface={open ? 'elevated' : undefined}
                         interactive={!open}
                       >
                         {staticLabel || currentSlot?.props.children || 'Select ...'}
@@ -111,6 +111,7 @@ export const Select = ({
                             onClick: () => handleChange(slotProps.value),
                           }}
                           bold={slotProps.value === currentValue}
+                          selected={slotProps.value === currentValue}
                           justifyContent={slotProps.justifyContent || DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT}
                         >
                           {slot}

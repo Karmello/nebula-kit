@@ -12,10 +12,25 @@ export default () => {
         </Text>
         <Text>
           CSS still exists and drives the entire internal styling engine. The underlying DOM element of each component is exposed
-          through the tagAttrs prop, which allows for local overrides via the style attribute. You can also pass a className
-          through tagAttrs to hook into your own CSS stylesheet. However, direct CSS overrides are not recommended and are
-          intentionally discouraged, as they may interfere with how NebulaKit's internal styling engine works and can introduce
-          unexpected behavior.
+          through the
+          <Text tag="span" bold space="both">
+            tagAttrs
+          </Text>
+          prop, which allows for local overrides via the
+          <Text tag="span" bold space="both">
+            style
+          </Text>
+          attribute. You can also pass a
+          <Text tag="span" bold space="both">
+            className
+          </Text>
+          through
+          <Text tag="span" bold space="both">
+            tagAttrs
+          </Text>
+          to hook into your own CSS stylesheet. However, direct CSS overrides are not recommended and are intentionally
+          discouraged, as they may interfere with how NebulaKit's internal styling engine works and can introduce unexpected
+          behavior.
         </Text>
         <Text>
           NebulaKit hides CSS deliberately and exposes props on primitives that map one-to-one to CSS properties. This allows most

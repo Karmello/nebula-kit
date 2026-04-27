@@ -64,8 +64,8 @@ export const Switch = ({
         }}
         drawable
         interactive
-        defaultState={animatedChecked && !disabled ? 'active' : undefined}
-        elevated={animatedChecked && !disabled}
+        surface={animatedChecked && !disabled ? 'elevated' : undefined}
+        selected={animatedChecked && !disabled}
         disabled={disabled}
         variant="solid"
         intent={intent}

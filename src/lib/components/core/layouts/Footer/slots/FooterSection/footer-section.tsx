@@ -28,11 +28,6 @@ export const FooterSection = ({
       alignSelf={alignSelf}
     >
       <Box
-        tagAttrs={{
-          style: {
-            transition: 'none',
-          },
-        }}
         drawable
         variant="outline"
         blockSize="100%"
@@ -45,6 +40,7 @@ export const FooterSection = ({
         paddingRight={paddingRight}
         paddingBottom={paddingBottom}
         paddingLeft={paddingLeft}
+        surface="raised"
       >
         {children}
       </Box>

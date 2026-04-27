@@ -1,4 +1,4 @@
-import { Select, Spacer, Text } from 'lib/components'
+import { Flex, Icon, Select, Spacer, Text, Tooltip } from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
 
@@ -12,7 +12,16 @@ export const PropSelect = () => {
 
   return (
     <>
-      <Text bold>Property</Text>
+      <Flex justifyContent="space-between" alignItems="center">
+        <Text bold>Property</Text>
+        <Tooltip
+          content="The props list is intentionally curated to highlight the styling system in action. It does not include all available props."
+          minInlineSize={300}
+          maxInlineSize={400}
+        >
+          <Icon name="info" size="18px" color="blue" intent="primary" />
+        </Tooltip>
+      </Flex>
       <Spacer blockSize="5px" />
       <Select value={value} onChange={value => setActiveProp(activeComponent, value)} scrollAlign="center">
         {Object.keys(props)

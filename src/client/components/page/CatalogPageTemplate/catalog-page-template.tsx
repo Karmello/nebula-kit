@@ -58,7 +58,7 @@ export const CatalogPageTemplate = memo(
                               navigateTo(href)
                             }}
                             intent={{ base: 'tertiary', lg: 'neutral' }}
-                            elevated={isItemSelected}
+                            surface={isItemSelected ? 'elevated' : undefined}
                             bold={isItemSelected}
                           >
                             {label}
@@ -104,7 +104,7 @@ export const CatalogPageTemplate = memo(
                                   navigateTo(href)
                                 }}
                                 intent={{ base: 'tertiary', lg: 'neutral' }}
-                                elevated={isItemSelected}
+                                surface={isItemSelected ? 'elevated' : undefined}
                                 bold={isItemSelected}
                               >
                                 {label}
@@ -123,7 +123,7 @@ export const CatalogPageTemplate = memo(
                             <Box
                               drawable
                               variant="solid"
-                              intent="primary"
+                              intent="tertiary"
                               borderRadius="10px"
                               paddingBlock="3px"
                               paddingInline="7px"

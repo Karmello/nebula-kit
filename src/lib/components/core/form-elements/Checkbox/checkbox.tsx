@@ -66,6 +66,7 @@ export const Checkbox = ({
         disabled={disabled}
         variant={variant}
         intent={intent}
+        color={color}
         blockSize={CHECKBOX_SIZE_CONFIG[size || 'xs'].blockSize}
         inlineSize={CHECKBOX_SIZE_CONFIG[size || 'xs'].blockSize}
       />

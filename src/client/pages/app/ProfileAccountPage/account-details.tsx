@@ -5,7 +5,7 @@ import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
 import { useGetUser } from 'client/api'
 import { useAppStore } from 'client/store'
-import { Loader, Table, Text, Flex, Link, Button } from 'lib/components'
+import { Loader, Table, Text, Flex, Link, Button, Box } from 'lib/components'
 
 export default () => {
   const getUser = useGetUser()
@@ -28,15 +28,17 @@ export default () => {
         <Table.HeaderRow>
           <Table.HeaderCell blockSize="50px">
             <Flex alignItems="center" columnGap="20px">
-              <Text typography="h6" iconName="arrow-right">
+              <Text typography="h6" iconName="arrow-down">
                 Details
               </Text>
-              <Loader active={getUser.isMakingRequest} color="blue" size="sm" />
+              <Box>
+                <Loader active={getUser.isMakingRequest} color="blue" size="sm" />
+              </Box>
             </Flex>
           </Table.HeaderCell>
         </Table.HeaderRow>
       </Table.Header>
-      <Table.Body intent={getUser.isMakingRequest ? 'muted' : 'tertiary'} paddingBlock="10px" paddingInline="18px">
+      <Table.Body intent="tertiary" paddingBlock="10px" paddingInline="18px">
         <Table.Row>
           <Table.Cell colSpan={1}>
             <Text>Email</Text>

@@ -106,7 +106,7 @@ export const MultiSelect = ({
                         disabled={disabled}
                         fullWidth
                         ripple={!open}
-                        elevated={open}
+                        surface={open ? 'elevated' : undefined}
                         interactive={!open}
                       >
                         {currentLabel || 'Select ...'}
@@ -114,6 +114,7 @@ export const MultiSelect = ({
                     </DropdownList.Trigger>
                     {slotsByName['MultiSelect.Option'].map((slot, index) => {
                       const slotProps = (slot as ReactElement<any>).props
+                      const selected = currentValue.includes(slotProps.value)
                       return (
                         <DropdownList.Item
                           key={index}
@@ -122,8 +123,11 @@ export const MultiSelect = ({
                             ...slotProps.tagAttrs,
                             onClick: () => handleChange(slotProps.value),
                           }}
-                          bold={currentValue.includes(slotProps.value)}
+                          bold={selected}
+                          selected={selected}
                           justifyContent={slotProps.justifyContent || DEFAULT_MULTI_SELECT_OPTION_JUSTIFY_CONTENT}
+                          iconName={selected ? 'check' : undefined}
+                          iconPlacement="right"
                         >
                           {slot}
                         </DropdownList.Item>

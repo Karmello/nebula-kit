@@ -23,7 +23,9 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const content = (
     <Flex flexDirection="column" alignItems="stretch" gap="30px">
       <Box>
-        <Text typography="lead">{title}</Text>
+        <Text typography="lead" bold>
+          {title}
+        </Text>
         {examples?.[0] ? (
           <Box marginBlock="15px">
             <CodeSnippet lang="tsx" code={examples[0].code || convertElemToString(examples[0].jsx)} />
@@ -31,33 +33,33 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
         ) : null}
       </Box>
       {description ? (
-        <Section heading="Description" size="sm">
+        <Section size="xs" heading="Description" iconName="arrow-down">
           <Text>{description}</Text>
         </Section>
       ) : null}
       {features ? <ListWithHeading heading="Features" items={features} /> : null}
       {composedOf ? (
-        <Section size="xs" heading="Composed of" iconName="arrow-right">
+        <Section size="xs" heading="Composed of" iconName="arrow-down">
           <ListWithChips items={composedOf} color="red" />
         </Section>
       ) : null}
       {topLevelTags ? (
-        <Section size="xs" heading={topLevelTags.length > 1 ? 'Root tags' : 'Root tag'} iconName="arrow-right">
+        <Section size="xs" heading={topLevelTags.length > 1 ? 'Root tags' : 'Root tag'} iconName="arrow-down">
           <ListWithChips items={topLevelTags as string[]} color="amber" />
         </Section>
       ) : null}
       {props ? (
-        <Section size="xs" heading="Props" iconName="arrow-right">
+        <Section size="xs" heading="Props" iconName="arrow-down">
           <ListWithChips items={Object.keys(props).sort((a, b) => a.localeCompare(b))} />
         </Section>
       ) : null}
       {slots ? (
-        <Section size="xs" heading="Slots" iconName="arrow-right">
+        <Section size="xs" heading="Slots" iconName="arrow-down">
           <ListWithChips items={slots} color="gray" />
         </Section>
       ) : null}
       {hooks ? (
-        <Section size="xs" heading="Hooks" iconName="arrow-right">
+        <Section size="xs" heading="Hooks" iconName="arrow-down">
           <ListWithChips items={hooks} color="green" />
         </Section>
       ) : null}

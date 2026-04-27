@@ -1,29 +1,36 @@
-import { pascalCase } from 'change-case'
+import { pascalCase, sentenceCase } from 'change-case'
 
 import meta from 'client/meta'
 import { CodeSnippet } from 'client/components'
 import { convertElemToString } from 'client/helpers'
-import { useCorePageStore, useProPageStore } from 'client/store'
+import { useAppStore, useCorePageStore, useProPageStore } from 'client/store'
 import { ComponentMeta, PageKey } from 'client/definitions'
-import { Box, Flex, Reveal, Spacer, Text } from 'lib/components'
+import { Box, Button, Flex, Reveal, Segment, Spacer, Text } from 'lib/components'
+import { THEMES } from 'lib/definitions'
+import { useCurrentTheme } from 'lib/hooks'
 
 const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   const { description, jsx, code, noSandBox, noCode, sandBoxWithNoPadding } = props
 
+  const theme = useCurrentTheme()
+  const examplesTheme = useAppStore(state => state.examplesTheme)
+
   return (
     <>
-      {description ? <Text bold>{description}</Text> : null}
+      {description && !noSandBox ? (
+        <Text iconName="arrow-down" bold>
+          {description}
+        </Text>
+      ) : null}
       <Spacer blockSize="10px" />
       {!noSandBox ? (
         <>
           <Box
-            tagAttrs={{
-              style: { borderStyle: 'dashed' },
-            }}
+            tagAttrs={{ style: { borderStyle: 'dashed' } }}
             drawable
-            variant="outline"
-            color="gray"
-            intent="tertiary"
+            theme={examplesTheme}
+            variant={theme === examplesTheme ? 'outline' : 'solid'}
+            intent={theme === examplesTheme ? 'tertiary' : 'neutral'}
             padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
           >
             {jsx}
@@ -34,13 +41,17 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
       {!noCode ? (
         <>
           {!noSandBox ? (
-            <Reveal label="Code" color="gray" intent="muted">
-              <Box padding="4px">
-                <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} />
-              </Box>
+            <Reveal label="Code" intent="tertiary">
+              <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} borderRadius={false} fullBg />
             </Reveal>
           ) : (
-            <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} />
+            <CodeSnippet
+              lang="tsx"
+              code={code || convertElemToString(jsx)}
+              description={description}
+              boldDescription
+              descriptionIcon
+            />
           )}
         </>
       ) : null}
@@ -50,6 +61,9 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
 }
 
 export const ComponentExamplesPage = ({ pageKey }: { pageKey: PageKey.core | PageKey.pro }) => {
+  const examplesTheme = useAppStore(state => state.examplesTheme)
+  const setExamplesTheme = useAppStore(state => state.setExamplesTheme)
+
   const corePageItemKey = useCorePageStore(state => state.itemKey)
   const proPageItemKey = useProPageStore(state => state.itemKey)
 
@@ -59,6 +73,27 @@ export const ComponentExamplesPage = ({ pageKey }: { pageKey: PageKey.core | Pag
 
   return (
     <Box maxInlineSize="55rem">
+      {!meta[itemKeyPascal][itemKeyPascal].hideExamplesThemeToggle ? (
+        <>
+          <Text bold typography="small">
+            Theme
+          </Text>
+          <Segment>
+            {THEMES.map(key => (
+              <Segment.Item key={key}>
+                <Button
+                  intent={key === examplesTheme ? 'inverse' : 'tertiary'}
+                  size="xs"
+                  tagAttrs={{ onClick: () => setExamplesTheme(key) }}
+                >
+                  {sentenceCase(key)}
+                </Button>
+              </Segment.Item>
+            ))}
+          </Segment>
+          <Spacer blockSize="50px" />
+        </>
+      ) : null}
       <Flex flexDirection="column" alignItems="stretch">
         {Object.keys(meta[itemKeyPascal] || []).map(key => {
           return (meta[itemKeyPascal][key].examples || [])

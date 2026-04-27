@@ -2,11 +2,10 @@ import { useRef } from 'react'
 import classNames from 'classnames'
 
 import { Resize, Box, Flex, Button, FocusTrap } from 'lib/components'
-import { IslandProvider } from 'lib/components/core/internal'
 import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box/definitions'
 import { withPrefix } from 'lib/helpers'
 
-import { SplitViewSideProps, DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from './definitions'
+import { SplitViewSideProps, DEFAULT_SPLIT_VIEW_SIDE_WIDTH, DEFAULT_SPLIT_VIEW_SIDE_INTENT } from './definitions'
 import { useSplitViewContext } from '../../SplitViewProvider'
 
 export const SplitViewSide = ({
@@ -18,12 +17,10 @@ export const SplitViewSide = ({
   theme,
   brand,
   color,
-  intent,
+  intent = DEFAULT_SPLIT_VIEW_SIDE_INTENT,
   inlineSize = DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
-  // own
-  borderIntent,
 }: SplitViewSideProps) => {
-  const { sideOpen, setSideOpen, sidePosition, switchAt, mode } = useSplitViewContext()
+  const { sideOpen, setSideOpen, sidePosition, mode } = useSplitViewContext()
 
   const ref = useRef(null)
 
@@ -44,7 +41,8 @@ export const SplitViewSide = ({
         brand={brand}
         variant="outline"
         color={color}
-        intent={borderIntent || { base: 'muted', [String(switchAt)]: 'neutral' }}
+        intent={intent}
+        surface="raised"
         borderWidth="0px"
         borderRadius="0px"
         borderLeftWidth={mode === 'overlay' && sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
@@ -58,7 +56,7 @@ export const SplitViewSide = ({
           borderRadius="0px"
           variant="solid"
           color={color}
-          intent={intent || { base: 'tertiary', [String(switchAt)]: 'neutral' }}
+          intent={intent}
           blockSize="100%"
           overflowY={sideOpen ? 'auto' : 'hidden'}
           overflowX="hidden"
@@ -82,9 +80,9 @@ export const SplitViewSide = ({
                     </Box>
                   </Flex>
                 ) : null}
-                <IslandProvider theme={theme} brand={brand}>
+                <Box theme={theme} brand={brand}>
                   {children}
-                </IslandProvider>
+                </Box>
               </Box>
             </Box>
           </Resize>

@@ -66,7 +66,7 @@ export const Text = <T extends TextTag = 'p'>({
       disabled={disabled}
     >
       {space === 'start' || space === 'both' ? <> </> : null}
-      {iconName ? (
+      {iconName || customSvgIcon ? (
         <WithIcon
           iconName={iconName}
           iconPlacement={iconPlacement}

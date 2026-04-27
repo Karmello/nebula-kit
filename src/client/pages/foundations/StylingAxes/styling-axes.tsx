@@ -80,7 +80,7 @@ export default () => {
             <Text>Variant controls structure (solid, outline, soft-outline, ghost)</Text>
           </MarkerList.Item>
           <MarkerList.Item>
-            <Text>Intent controls semantic meaning (neutral, muted, primary, etc.)</Text>
+            <Text>Intent controls semantic meaning (neutral, tertiary, primary, etc.)</Text>
           </MarkerList.Item>
           <MarkerList.Item>
             <Text>Both are always local to the component</Text>

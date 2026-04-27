@@ -103,7 +103,7 @@ export const Avatar = ({
       tagRef={tagRef}
       drawable
       variant="solid"
-      intent="muted"
+      intent="tertiary"
       color="gray"
       blockSize={AVATAR_SIZES_MAP[size || 'md'].side}
       inlineSize={AVATAR_SIZES_MAP[size || 'md'].side}

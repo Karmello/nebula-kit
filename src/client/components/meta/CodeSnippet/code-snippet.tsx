@@ -4,50 +4,27 @@ import { TokensResult } from 'shiki'
 import { Box, Flex, Button, Text } from 'lib/components'
 
 import { tokenizeCode } from './highlight-tokens'
+import { COLOR_MAP } from './definitions'
 
 export type CodeSnippetProps = {
   code: string
   lang: 'log' | 'bash' | 'tsx'
+  borderRadius?: boolean
+  description?: string
+  boldDescription?: boolean
+  descriptionIcon?: boolean
+  fullBg?: boolean
 }
 
-const COLOR_MAP = {
-  // background
-  bg: 'var(--neb-gray-2)',
-  // component name
-  '#F78C6C': 'var(--neb-red-5)',
-  // native html tag name
-  '#CAECE6': 'var(--neb-red-5)',
-  // prop name
-  '#C5E478': 'var(--neb-blue-5)',
-  // object name, object key names
-  '#D6DEEB': 'var(--neb-gray-5)',
-  // value
-  '#ECC48D': 'var(--neb-amber-5)',
-  // param name
-  '#D7DBE0': 'var(--neb-amber-5)',
-  // argument name
-  '#FF5874': 'var(--neb-amber-5)',
-  // called func name
-  '#82AAFF': 'var(--neb-blue-5)',
-  // TS type name
-  '#FFCB8B': 'var(--neb-text)',
-  // angle brackets, cb curly brackets
-  '#7FDBCA': 'var(--neb-gray-9)',
-  // prop curly brackets
-  '#D3423E': 'var(--neb-gray-9)',
-  // equal sign, arrow func sign, dot
-  '#C792EA': 'var(--neb-gray-9)',
-  // quotes
-  '#D9F5DD': 'var(--neb-gray-9)',
-  // comments
-  '#637777': 'var(--neb-text)',
-  // extension
-  '#5CA7E4': 'var(--neb-blue-5)',
-  //
-  '#BAEBE2': 'var(--neb-blue-5)',
-}
-
-export const CodeSnippet = ({ code, lang = 'log' }: CodeSnippetProps) => {
+export const CodeSnippet = ({
+  code,
+  lang = 'log',
+  borderRadius = true,
+  description,
+  boldDescription = true,
+  descriptionIcon = false,
+  fullBg,
+}: CodeSnippetProps) => {
   const [data, setData] = useState<TokensResult>()
   const [copied, setCopied] = useState<boolean>(false)
 
@@ -75,44 +52,85 @@ export const CodeSnippet = ({ code, lang = 'log' }: CodeSnippetProps) => {
     <Flex
       flexDirection="column"
       alignItems="stretch"
-      tagAttrs={{ style: { backgroundColor: COLOR_MAP.bg, borderRadius: 'var(--neb-border-radius)' } }}
+      tagAttrs={{
+        style: {
+          borderRadius: borderRadius ? 'var(--neb-border-radius)' : undefined,
+        },
+      }}
     >
-      <Box padding="2px" textAlign="end">
-        <Button
-          iconName={copied ? 'check' : 'copy'}
-          size="xs"
-          variant="ghost"
-          intent="primary"
-          color="blue"
-          tagAttrs={{ onClick: handleCopy, 'aria-label': copied ? 'Copied' : 'Copy code' }}
-        />
-      </Box>
-      <Box overflowY="auto" maxBlockSize="350px">
-        <Flex tag="pre">
-          <Box tag="code" paddingInline="24px" paddingBottom="24px">
-            {data.tokens.map((token, i) => {
-              return (
-                <Box key={i}>
-                  {token.map(({ content, color }, j) => {
-                    if (!COLOR_MAP[color as never]) {
-                      console.log(color)
-                    }
-                    return (
-                      <Text
-                        key={j}
-                        tag="span"
-                        tagAttrs={{ style: { display: 'inline', color: COLOR_MAP[color as never] } }}
-                        typography="small"
-                      >
-                        {content}
-                      </Text>
-                    )
-                  })}
-                </Box>
-              )
-            })}
-          </Box>
+      <Box
+        drawable
+        variant="solid"
+        tagAttrs={{
+          style: {
+            backgroundColor: fullBg ? 'hsl(var(--h) var(--s) var(--main-muted-l))' : undefined,
+          },
+        }}
+      >
+        <Flex alignItems="flex-end" columnGap="10px">
+          <Flex.Item flex="1">
+            {description ? (
+              <Box paddingBlock="10px">
+                <Text
+                  bold={boldDescription}
+                  iconName={descriptionIcon ? 'arrow-down' : undefined}
+                  intent="neutral"
+                  tagAttrs={{ style: { lineHeight: 1.25 } }}
+                >
+                  {description}
+                </Text>
+              </Box>
+            ) : null}
+          </Flex.Item>
+          <Button
+            iconName={copied ? 'check' : 'copy'}
+            size="xs"
+            variant="ghost"
+            intent="primary"
+            color="blue"
+            tagAttrs={{ onClick: handleCopy, 'aria-label': copied ? 'Copied' : 'Copy code' }}
+          />
         </Flex>
+        <Box
+          tagAttrs={{
+            style: {
+              borderRadius: borderRadius ? 'var(--neb-border-radius)' : undefined,
+              backgroundColor: 'hsl(var(--h) var(--s) var(--main-muted-l))',
+            },
+          }}
+          overflowY="auto"
+          maxBlockSize="350px"
+          drawable
+          variant="solid"
+        >
+          <Flex tag="pre">
+            <Box tag="code" paddingInline="20px" paddingBlock={fullBg ? '0px' : '14px'} paddingBottom="12px">
+              {data.tokens.map((token, i) => {
+                return (
+                  <Box key={i}>
+                    {token.map(({ content, color }, j) => {
+                      if (!COLOR_MAP[color as never]) {
+                        console.log(color)
+                      }
+                      return (
+                        <Text
+                          key={j}
+                          tag="span"
+                          tagAttrs={{ style: { display: 'inline' } }}
+                          typography="small"
+                          intent={COLOR_MAP[color as never].intent}
+                          color={COLOR_MAP[color as never].color}
+                        >
+                          {content}
+                        </Text>
+                      )
+                    })}
+                  </Box>
+                )
+              })}
+            </Box>
+          </Flex>
+        </Box>
       </Box>
     </Flex>
   )

@@ -11,14 +11,14 @@ import {
   THEMES,
 } from 'lib/definitions'
 
-import { BoxProps, BOX_VARIANTS, BOX_INTENTS, BOX_DEFAULT_STATE } from 'lib/components/core/base/Box'
+import { BoxProps, BOX_VARIANTS, BOX_INTENTS, BOX_SURFACES } from 'lib/components/core/base/Box'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   activeOnFocus: {
     options: ['boolean'],
-    description: 'When true, applies the active visual state while the component is focus-visible.',
+    description: 'Applies the active (pressed) visual state while the element is focused.',
   },
   aspectRatio: {
     options: ['CSS'],
@@ -111,10 +111,6 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Color applied to the component.',
     tooltip: COLORS,
   },
-  defaultState: {
-    options: BOX_DEFAULT_STATE,
-    description: 'Overrides the base interaction state while preserving natural interaction behavior.',
-  },
   disabled: {
     options: ['boolean'],
     description: 'Disables the component and its interactions.',
@@ -130,10 +126,6 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: ['boolean'],
     description:
       'Enables visual rendering for the Box surface. When enabled, the Box participates in theming, colors, variants and intents. When disabled, it behaves as a neutral structural container with no visual styling applied.',
-  },
-  elevated: {
-    options: ['boolean'],
-    description: 'Emphasizes the component by increasing its surface color intensity.',
   },
   inlineSize: {
     options: ['CSS'],
@@ -155,7 +147,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   interactive: {
     options: ['boolean'],
-    description: 'Enables visual interaction affordances such as hover or active styling.',
+    description: 'Enables visual interaction affordances such as hover, active or selected styling.',
   },
   left: {
     options: ['CSS'],
@@ -315,6 +307,15 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     isResponsive: true,
     description: 'Right offset.',
     link: true,
+  },
+  selected: {
+    options: ['boolean'],
+    description:
+      'Applies a persistent selected state, taking precedence over transient interaction states like hover and active.',
+  },
+  surface: {
+    options: BOX_SURFACES,
+    description: 'Selects the surface depth style used by the component.',
   },
   tag: HTML_TAG_PROPS_META.tag,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,

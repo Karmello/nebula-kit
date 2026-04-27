@@ -10,7 +10,7 @@
     {
       "files": "*.scss",
       "options": {
-        "printWidth": 150
+        "printWidth": 250
       }
     }
   ]

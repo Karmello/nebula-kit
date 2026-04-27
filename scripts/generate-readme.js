@@ -24,28 +24,22 @@ React UI system built on composition and prop inheritance, with strict rules gov
 <br />
 
 #### JSX first
-JSX is the primary development flow. CSS exists only as an internal implementation detail.
+JSX is the primary development flow. CSS exists as an internal implementation detail. Customization happens directly through props without switching contexts.
 
-#### Built on composition
-Pure composition drives all component behavior. Functionality is never duplicated.
+#### Composition and inheritance
+Pure composition drives all component behavior. Functionality is never duplicated. Composed functionality flows through prop inheritance, not redefinition.
 
-#### Inheriting props
-Composed functionality flows through prop inheritance, not redefinition.
+#### Enforcing HTML semantics
+Semantic HTML is part of the component contract. Components preserve structure and meaning by default.
 
-#### Enforcing semantics
-Semantic HTML is part of the component contract.
+#### Orthogonal styling engine
+Styling concerns are separated and scoped to prevent interference. Each styling dimension stays isolated. Performance is a property of the architecture, not an added optimization.
 
-#### Orthogonal styling axes
-Styling concerns are separated and scoped to prevent interference.
-
-#### Unified drawing model
-All visual output is produced through a single drawing model.
-
-#### Unified responsiveness
-Responsive behavior follows a single explicit model.
+#### Unified models
+The mechanisms for drawing visual output and handling responsiveness are each driven by their own explicit model, ensuring consistent behavior across the system.
 
 #### Resistant to entropy
-System constraints minimize UI entropy and optimize for long-term consistency.
+System constraints minimize UI entropy and optimize for long-term consistency, keeping products stable as they grow.
 
 <br /><br />
 

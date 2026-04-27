@@ -8,7 +8,7 @@ export default () => {
   const brand = useAppStore(state => state.brand)
   const setBrand = useAppStore(state => state.setBrand)
 
-  const arr = Array.from({ length: 9 }, (v, k) => k)
+  const arr = Array.from({ length: 26 }, (v, k) => k)
 
   return (
     <Box maxInlineSize={{ lg: '55rem' }}>
@@ -25,12 +25,13 @@ export default () => {
         {arr.map(n => {
           return (
             <Flex.Item key={n} flexGrow="1">
-              <Text scale="compact">{`--neb-${brand}-${n + 1}`}</Text>
+              <Text scale="compact">{`Step ${n}`}</Text>
               <Box
                 drawable
                 variant="outline"
-                intent="muted"
-                tagAttrs={{ style: { backgroundColor: `var(--neb-${brand}-${n + 1})` } }}
+                intent="tertiary"
+                brand={brand}
+                tagAttrs={{ style: { backgroundColor: `hsl(var(--h) var(--s) var(--l-${n}))` } }}
                 blockSize="50px"
               />
             </Flex.Item>

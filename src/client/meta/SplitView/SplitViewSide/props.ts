@@ -2,15 +2,10 @@ import { ComponentMeta } from 'client/definitions'
 import { BOX_PROPS_META } from 'client/meta/Box/props'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { SplitViewSideProps } from 'lib/components'
-import { DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from 'lib/components/pro/layouts/SplitView'
+import { DEFAULT_SPLIT_VIEW_SIDE_INTENT, DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from 'lib/components/pro/layouts/SplitView'
 
 const SPLIT_VIEW_SIDE_PROPS_META: ComponentMeta<SplitViewSideProps>['props'] = {
   brand: BOX_PROPS_META.brand,
-  borderIntent: {
-    ...BOX_PROPS_META.intent,
-    defaultValue: "{ base: 'muted', [switchAt]: 'neutral' }",
-    description: "Sets the visual intent of the component's border.",
-  },
   children: {
     ...HTML_TAG_PROPS_META.children,
     isRequired: true,
@@ -22,7 +17,7 @@ const SPLIT_VIEW_SIDE_PROPS_META: ComponentMeta<SplitViewSideProps>['props'] = {
   },
   intent: {
     ...BOX_PROPS_META.intent,
-    defaultValue: "{ base: 'tertiary', [switchAt]: 'neutral' }",
+    defaultValue: JSON.stringify(DEFAULT_SPLIT_VIEW_SIDE_INTENT),
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,

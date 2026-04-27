@@ -17,8 +17,8 @@ const Family = ({
   const navigateTo = useNavigateTo()
 
   return (
-    <Box drawable variant="ghost" intent="primary" brand="teal">
-      <Section size="sm" variant="outline" intent="secondary" heading={heading} iconName={iconName}>
+    <Box drawable variant="ghost" intent="primary" brand="blue">
+      <Section size="sm" variant="outline" intent="tertiary" heading={heading} iconName={iconName}>
         <Text intent="neutral">{description}</Text>
         {components ? (
           <>
@@ -29,7 +29,7 @@ const Family = ({
                 const href = `/${pageKey}/${categoryKey}/${itemKey}/overview`
                 return (
                   <Link key={c} href={href} onClick={() => navigateTo(href)}>
-                    <Button size="sm" variant="solid" intent="secondary" iconName="box" iconPlacement="right">
+                    <Button size="sm" variant="solid" intent="tertiary" iconName="box" iconPlacement="right">
                       {c}
                     </Button>
                   </Link>
@@ -45,7 +45,7 @@ const Family = ({
 
 export const Families = () => {
   return (
-    <Section heading="Key areas of the system" size="sm" intent="primary" color="teal">
+    <Section heading="Key areas of the system" size="sm" intent="primary" color="blue">
       <Spacer blockSize="15px" />
       <Grid
         gridTemplateColumns={{

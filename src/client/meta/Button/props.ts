@@ -26,9 +26,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   },
   color: BOX_PROPS_META.color,
   customSvgIcon: WITH_ICON_PROPS_META.customSvgIcon,
-  defaultState: BOX_PROPS_META.defaultState,
   disabled: BOX_PROPS_META.disabled,
-  elevated: BOX_PROPS_META.elevated,
   fullWidth: {
     options: ['boolean'],
     isResponsive: true,
@@ -66,12 +64,14 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     defaultValue: String(DEFAULT_BUTTON_RIPPLE),
     description: 'Toggles the ripple effect on pointer interaction.',
   },
+  selected: BOX_PROPS_META.selected,
   size: {
     options: Object.values(BUTTON_SIZES),
     defaultValue: DEFAULT_BUTTON_SIZE,
     description:
       'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
   },
+  surface: BOX_PROPS_META.surface,
   tag: {
     ...HTML_TAG_PROPS_META.tag,
     options: BUTTON_TAGS as unknown as string[],

@@ -1,4 +1,5 @@
 export const RELEASE_VERSIONS = [
+  '0.8.0',
   '0.7.0',
   '0.6.1',
   '0.6.0',
@@ -20,6 +21,21 @@ export const RELEASE_INFO: Record<
     changelog?: { main?: string[]; core?: string[]; pro?: string[] }
   }
 > = {
+  '0.8.0': {
+    timestamp: 1777258833132,
+    changelog: {
+      main: [
+        'completely rebuilt the styling engine around explicit state and deterministic resolution - styling context (theme, brand, color) is now resolved in React and expressed directly on the DOM, eliminating implicit CSS inheritance and cascade-driven behavior',
+        'replaced the previous context-based token layer with a simplified, scoped token system - CSS now acts as a pure rendering layer instead of a logic engine',
+        'refined the color token system to align with the new architecture, improving consistency across themes, brands and surfaces while keeping behavior predictable and composable',
+        'expanded the palette to support a wider and more expressive range of values within the new system constraints',
+        'simplified component APIs by removing experimental and no-longer-needed props made obsolete by the new styling model',
+        'improved internal styling performance, debuggability and development velocity through clearer separation of concerns and removal of redundant abstraction layers',
+        'switched focus rings from box-shadow to outline to eliminate corner artifacts and ensure consistent rendering without layout shifts',
+        'this release establishes a more predictable and explicit styling foundation for future components and features',
+      ],
+    },
+  },
   '0.7.0': {
     timestamp: 1773443646502,
     changelog: {

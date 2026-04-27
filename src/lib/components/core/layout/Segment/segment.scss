@@ -1,6 +1,6 @@
 .neb-segment {
   .neb-segment-item {
-    > .neb-box {
+    > .neb-box[data-neb-box-drawable='true'] {
       border-radius: 0;
     }
   }
@@ -8,13 +8,13 @@
 
 .neb-segment[data-neb-flex-flex-direction='row'] {
   .neb-segment-item:first-child {
-    > .neb-box {
+    > .neb-box[data-neb-box-drawable='true'] {
       border-top-left-radius: var(--neb-border-radius);
       border-bottom-left-radius: var(--neb-border-radius);
     }
   }
   .neb-segment-item:last-child {
-    > .neb-box {
+    > .neb-box[data-neb-box-drawable='true'] {
       border-top-right-radius: var(--neb-border-radius);
       border-bottom-right-radius: var(--neb-border-radius);
     }
@@ -23,13 +23,13 @@
 
 .neb-segment[data-neb-flex-flex-direction='row-reverse'] {
   .neb-segment-item:last-child {
-    > .neb-box {
+    > .neb-box[data-neb-box-drawable='true'] {
       border-top-left-radius: var(--neb-border-radius);
       border-bottom-left-radius: var(--neb-border-radius);
     }
   }
   .neb-segment-item:first-child {
-    > .neb-box {
+    > .neb-box[data-neb-box-drawable='true'] {
       border-top-right-radius: var(--neb-border-radius);
       border-bottom-right-radius: var(--neb-border-radius);
     }
@@ -38,13 +38,13 @@
 
 .neb-segment[data-neb-flex-flex-direction='column'] {
   .neb-segment-item:first-child {
-    > .neb-box {
+    > .neb-box[data-neb-box-drawable='true'] {
       border-top-left-radius: var(--neb-border-radius);
       border-top-right-radius: var(--neb-border-radius);
     }
   }
   .neb-segment-item:last-child {
-    > .neb-box {
+    > .neb-box[data-neb-box-drawable='true'] {
       border-bottom-left-radius: var(--neb-border-radius);
       border-bottom-right-radius: var(--neb-border-radius);
     }
@@ -53,13 +53,13 @@
 
 .neb-segment[data-neb-flex-flex-direction='column-reverse'] {
   .neb-segment-item:last-child {
-    > .neb-box {
+    > .neb-box[data-neb-box-drawable='true'] {
       border-top-left-radius: var(--neb-border-radius);
       border-top-right-radius: var(--neb-border-radius);
     }
   }
   .neb-segment-item:first-child {
-    > .neb-box {
+    > .neb-box[data-neb-box-drawable='true'] {
       border-bottom-left-radius: var(--neb-border-radius);
       border-bottom-right-radius: var(--neb-border-radius);
     }

@@ -44,27 +44,30 @@ export const FOUNDATIONS_CATEGORIES = [
     label: 'Concepts',
     items: [
       {
-        key: 'styling-system',
-        label: 'Styling system',
-        sections: [
-          { key: 'color-palettes', label: 'Color palettes' },
-          { key: 'typography', label: 'Typography' },
-          { key: 'breakpoints', label: 'Breakpoints' },
-          { key: 'intents-and-variants', label: 'Intents + variants' },
-          { key: 'color-application', label: 'Color application' },
-          { key: 'styling-axes', label: 'Styling axes' },
-          { key: 'drawable-surface', label: 'Drawable surface' },
-          { key: 'theme-island', label: 'Theme island' },
-        ],
-      },
-      {
         key: 'architecture',
         label: 'Architecture',
         sections: [
+          { key: 'system', label: 'System' },
           { key: 'responsive-props', label: 'Responsive props' },
           { key: 'react-refs', label: 'React refs' },
           { key: 'slots', label: 'Slots' },
           { key: 'render-function', label: 'Render function' },
+        ],
+      },
+      {
+        key: 'styling-system',
+        label: 'Styling system',
+        sections: [
+          { key: 'performance', label: 'Performance' },
+          { key: 'drawable-surface', label: 'Drawable surface' },
+          { key: 'styling-axes', label: 'Styling axes' },
+          { key: 'breakpoints', label: 'Breakpoints' },
+          { key: 'typography', label: 'Typography' },
+          { key: 'color-matrix', label: 'Color matrix' },
+          { key: 'color-palettes', label: 'Color palettes' },
+          { key: 'intents-and-variants', label: 'Intents + variants' },
+          { key: 'color-application', label: 'Color application' },
+          { key: 'theme-island', label: 'Theme island' },
         ],
       },
     ],
@@ -77,6 +80,7 @@ export const FOUNDATIONS_CATEGORIES = [
         key: 'changelog',
         label: 'Changelog',
         sections: [
+          { key: 'v0.8.0', label: 'v0.8.0' },
           { key: 'v0.7.0', label: 'v0.7.0' },
           { key: 'v0.6.1', label: 'v0.6.1' },
           { key: 'v0.6.0', label: 'v0.6.0' },

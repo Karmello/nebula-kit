@@ -1,6 +1,6 @@
 {
   "name": "@nebula-kit/core",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "React UI system built on composition and prop inheritance, with strict rules governing component appearance and behavior. Designed to reduce UI entropy and keep interfaces consistent and maintainable as products grow over time.",
   "homepage": "https://nebulakit.dev",
   "funding": {
@@ -120,7 +120,6 @@
     "@types/node": "^24.5.1",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "@types/tinycolor2": "^1",
     "@typescript-eslint/eslint-plugin": "^8.44.0",
     "@typescript-eslint/parser": "^8.44.0",
     "@vitejs/plugin-react-swc": "^4.1.0",
@@ -138,7 +137,6 @@
     "react-dom": "^19.1.1",
     "rimraf": "^6.0.1",
     "sass": "^1.92.1",
-    "tinycolor2": "^1.6.0",
     "ts-morph": "^27.0.2",
     "tsd": "^0.33.0",
     "tsup": "^8.5.0",

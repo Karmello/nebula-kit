@@ -1,4 +1,4 @@
-import { Select, Spacer, Text } from 'lib/components'
+import { Select, Spacer, Text, Icon, Tooltip, Flex } from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
 
@@ -9,7 +9,16 @@ export const ComponentSelect = () => {
 
   return (
     <>
-      <Text bold>Component</Text>
+      <Flex justifyContent="space-between" alignItems="center">
+        <Text bold>Component</Text>
+        <Tooltip
+          content="This list is curated for the Playground - not all components are included, only the ones that make sense here."
+          minInlineSize={300}
+          maxInlineSize={400}
+        >
+          <Icon name="info" size="18px" color="blue" intent="primary" />
+        </Tooltip>
+      </Flex>
       <Spacer blockSize="5px" />
       <Select value={activeComponent} onChange={setActiveComponent} scrollAlign="center">
         {Object.keys(components).map(name => (

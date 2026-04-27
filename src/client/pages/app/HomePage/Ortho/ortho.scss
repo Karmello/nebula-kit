@@ -4,10 +4,10 @@ $arrowSize: calc($dotSize / 4);
 $lineSize: 2px;
 $borderSize: 5px;
 
-$dotColor: var(--neb-solid-secondary);
-$arrowColor: var(--neb-solid-secondary);
-$borderColor: var(--neb-solid-tertiary);
-$borderGlowColor: var(--neb-solid-tertiary);
+$dotColor: hsl(var(--h) var(--s) var(--main-secondary-l));
+$arrowColor: hsl(var(--h) var(--s) var(--main-secondary-l));
+$borderColor: hsl(var(--h) var(--s) var(--main-tertiary-l));
+$borderGlowColor: hsl(var(--h) var(--s) var(--main-tertiary-l));
 
 .neb-ortho {
   position: relative;
@@ -74,11 +74,7 @@ $borderGlowColor: var(--neb-solid-tertiary);
       top: 50%;
       block-size: $lineSize;
       inline-size: calc($size / 2 - $dotSize / 2 - $arrowSize);
-      background: repeating-linear-gradient(
-        to right,
-        $arrowColor 0 calc($lineSize * 2),
-        transparent calc($lineSize * 2) calc($lineSize * 4)
-      );
+      background: repeating-linear-gradient(to right, $arrowColor 0 calc($lineSize * 2), transparent calc($lineSize * 2) calc($lineSize * 4));
       animation:
         neb-ortho-pulse 2s ease-in-out infinite,
         neb-ortho-flow 0.25s linear infinite;

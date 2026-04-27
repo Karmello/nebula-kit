@@ -1,67 +1,45 @@
-@use 'styles/definitions/common.scss' as *;
+.neb-box[data-neb-box-drawable='true'][data-neb-box-intent][data-neb-box-variant='outline'] {
+  border-width: var(--neb-border-width);
+  border-radius: var(--neb-border-radius);
 
-.neb-box[data-neb-box-drawable='true'] {
-  &[data-neb-box-variant='outline'] {
-    border-width: var(--neb-border-width);
-    border-radius: var(--neb-border-radius);
+  // rest
+  border-color: var(--border);
 
-    @each $intent in $intents {
-      &[data-neb-box-intent='#{$intent}'] {
-        // base
-        --border: var(--neb-outline-#{$intent});
-        --border-hover: var(--neb-outline-#{$intent}-hover);
-        --border-active: var(--neb-outline-#{$intent}-active);
-        --bg-hover: var(--neb-outline-#{$intent}-bg-hover);
-        --bg-active: var(--neb-outline-#{$intent}-bg-active);
-        --text-disabled: var(--neb-outline-#{$intent}-disabled);
-        --loader: var(--neb-outline-#{$intent}-loader);
+  // enabled
+  &:not([data-neb-box-disabled='true']) {
+    // interactive
+    &[data-neb-box-interactive='true'] {
+      // hover
+      &:hover:not(:active),
+      &[data-neb-box-hovered='true'] {
+        border-color: var(--border-hover);
+        background-color: var(--bg-hover);
+      }
 
-        // elevated base
-        &[data-neb-box-elevated='true'] {
-          --border: var(--neb-outline-#{$intent}-elevated);
-          --border-hover: var(--neb-outline-#{$intent}-elevated-hover);
-          --border-active: var(--neb-outline-#{$intent}-elevated-active);
-          --bg-hover: var(--neb-outline-#{$intent}-elevated-bg-hover);
-          --bg-active: var(--neb-outline-#{$intent}-elevated-bg-active);
-          --text-disabled: var(--neb-outline-#{$intent}-elevated-disabled);
-        }
+      // active
+      &:active,
+      &[data-neb-box-active-on-focus='true']:focus-visible {
+        border-color: var(--border-active);
+        background-color: var(--bg-active);
+      }
 
-        // rest
-        border-color: var(--border);
-
-        // interaction
-        &:not([data-neb-box-disabled='true'])[data-neb-box-interactive='true'] {
-          &:hover:not(:active),
-          &:focus-visible,
-          &[data-neb-box-default-state='hover'] {
-            border-color: var(--border-hover);
-            background-color: var(--bg-hover);
-          }
-
-          &:active,
-          &[data-neb-box-default-state='active'],
-          &[data-neb-box-active-on-focus='true']:focus-visible {
-            border-color: var(--border-active) !important;
-            background-color: var(--bg-active) !important;
-          }
-        }
-
-        // focus ring
-        &:not([data-neb-box-disabled='true']) {
-          &:focus-visible {
-            border-color: var(--neb-focus-border) !important;
-            box-shadow: inset 0 0 0 1px var(--neb-focus-border);
-          }
-        }
-
-        // disabled
-        &[data-neb-box-disabled='true'] {
-          color: var(--text-disabled);
-        }
-        &[data-neb-box-disabled='true']:-webkit-autofill {
-          -webkit-text-fill-color: var(--text-disabled);
-        }
+      // selected
+      &[data-neb-box-selected='true'] {
+        border-color: var(--border-selected) !important;
+        background-color: var(--bg-selected) !important;
       }
     }
+
+    // focus ring
+    &:focus-visible {
+      outline: var(--neb-focus-ring-width) solid var(--neb-focus-ring-color);
+      outline-offset: calc(var(--neb-focus-ring-width) * -1);
+    }
+  }
+
+  // disabled
+  &[data-neb-box-disabled='true'] {
+    border-color: var(--border-disabled);
+    color: var(--text-disabled);
   }
 }

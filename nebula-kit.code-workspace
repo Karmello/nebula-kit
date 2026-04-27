@@ -43,5 +43,6 @@
   ],
   "settings": {
     "typescript.tsdk": "nebula-kit/node_modules/typescript/lib",
+    "js/ts.tsdk.path": "nebula-kit/node_modules/typescript/lib",
   },
 }

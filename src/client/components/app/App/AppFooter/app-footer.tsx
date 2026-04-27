@@ -51,7 +51,7 @@ export const AppFooter = () => {
             </Button>
           </Link>
           <Link href="mailto:contact@nebulakit.dev" target="_blank">
-            <Button color="blue" intent="primary" variant="outline" size="sm" iconName="mail">
+            <Button color="blue" intent="secondary" variant="outline" size="sm" iconName="mail">
               contact@nebulakit.dev
             </Button>
           </Link>

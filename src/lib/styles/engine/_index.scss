@@ -1,0 +1,23 @@
+@use './intents.scss';
+@use './intents-raised.scss';
+@use './intents-elevated.scss';
+@use './variants.scss';
+@use './overrides.scss';
+
+html {
+  --neb-border-width: 2px;
+  --neb-loader-opacity: 0.1;
+  --neb-focus-ring-width: 3px;
+}
+
+html[data-ripple-mode='off'] {
+  --neb-ripple-factor: 0;
+}
+
+html[data-ripple-mode='default'] {
+  --neb-ripple-factor: 1;
+}
+
+html[data-ripple-mode='emphasized'] {
+  --neb-ripple-factor: 2;
+}

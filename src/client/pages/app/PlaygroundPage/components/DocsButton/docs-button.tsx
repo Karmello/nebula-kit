@@ -29,7 +29,7 @@ export const DocsButton = () => {
       iconName="external-link"
       iconPlacement="right"
       variant="outline"
-      intent="secondary"
+      intent="tertiary"
       color="blue"
     >
       {activeComponent} props

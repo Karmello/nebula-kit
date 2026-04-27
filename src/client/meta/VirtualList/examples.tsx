@@ -15,7 +15,7 @@ const VIRTUAL_LIST_EXAMPLES_META: ComponentMeta<VirtualListProps>['examples'] = 
             drawable
             interactive
             variant="solid"
-            intent="primary"
+            intent="muted"
             borderRadius="0px"
             blockSize="50px"
             textAlign="center"
@@ -24,7 +24,7 @@ const VIRTUAL_LIST_EXAMPLES_META: ComponentMeta<VirtualListProps>['examples'] = 
             {label}
           </Box>
         )}
-        intent="primary"
+        intent="muted"
       />
     ),
     code: `<VirtualList<{ label: string }>
@@ -36,7 +36,7 @@ const VIRTUAL_LIST_EXAMPLES_META: ComponentMeta<VirtualListProps>['examples'] = 
       drawable
       interactive
       variant="solid"
-      intent="primary"
+      intent="muted"
       borderRadius="0px"
       blockSize="50px"
       textAlign="center"
@@ -45,7 +45,7 @@ const VIRTUAL_LIST_EXAMPLES_META: ComponentMeta<VirtualListProps>['examples'] = 
       {label}
     </Box>
   )}
-  intent="primary"
+  intent="muted"
 />`,
   },
 ]

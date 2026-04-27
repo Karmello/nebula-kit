@@ -51,7 +51,7 @@ export const App = () => {
   if (getUser.isMakingRequest || logoutUser.isMakingRequest) {
     return (
       <Box blockSize="100dvh">
-        <Loader centered size="lg" color="blue" />
+        <Loader centered size="lg" />
       </Box>
     )
   }
@@ -76,7 +76,8 @@ export const App = () => {
                 >
                   <Button
                     intent="muted"
-                    elevated={pathname.startsWith(PageKey.home)}
+                    surface={pathname.startsWith(PageKey.home) ? 'elevated' : undefined}
+                    selected={pathname.startsWith(PageKey.home)}
                     bold={pathname.startsWith(PageKey.home)}
                     inlineSize="115px"
                   >

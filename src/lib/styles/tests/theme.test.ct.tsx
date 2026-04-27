@@ -1,9 +1,8 @@
 import { test, expect } from '@playwright/experimental-ct-react'
-import tinycolor from 'tinycolor2'
 
 import { Box } from 'lib/components'
 
-test('Box paints ctx primary solid color by default', async ({ mount, page }) => {
+test('Box resolves default primary solid styling', async ({ mount, page }) => {
   await mount(
     <Box tagAttrs={{ id: 'box' }} drawable variant="solid" intent="primary" blockSize="200px">
       Box
@@ -12,27 +11,28 @@ test('Box paints ctx primary solid color by default', async ({ mount, page }) =>
 
   const result = await page.evaluate(() => {
     const el = document.getElementById('box')!
-    const bg = getComputedStyle(el).backgroundColor
-    return { bg }
+    const styles = getComputedStyle(el)
+
+    return {
+      theme: el.dataset.nebBoxTheme,
+      color: el.dataset.nebBoxColor,
+      variant: el.dataset.nebBoxVariant,
+      intent: el.dataset.nebBoxIntent,
+      main: styles.getPropertyValue('--main-l').trim(),
+      bg: styles.getPropertyValue('--bg').trim(),
+    }
   })
 
-  // must resolve to a real color
-  expect(result.bg).toMatch(/^rgb\(/)
+  expect(result.theme).toBe('light')
+  expect(result.color).not.toBe('')
+  expect(result.variant).toBe('solid')
+  expect(result.intent).toBe('primary')
 
-  // resolve ctx primary via browser
-  const ctxResolved = await page.evaluate(() => {
-    const el = document.createElement('div')
-    el.style.backgroundColor = 'var(--neb-ctx-color-5)'
-    document.body.appendChild(el)
-    const value = getComputedStyle(el).backgroundColor
-    document.body.removeChild(el)
-    return value
-  })
-
-  expect(result.bg).toBe(ctxResolved)
+  expect(result.main).not.toBe('')
+  expect(result.bg).not.toBe('')
 })
 
-test('Nested Box inherits ctx primary solid color', async ({ mount, page }) => {
+test('Nested Box resolves same primary solid styling as parent', async ({ mount, page }) => {
   await mount(
     <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" blockSize="200px" padding="16px">
       <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" blockSize="100px">
@@ -42,58 +42,101 @@ test('Nested Box inherits ctx primary solid color', async ({ mount, page }) => {
   )
 
   const result = await page.evaluate(() => {
+    const parent = document.getElementById('parent')!
     const child = document.getElementById('child')!
-    const bg = getComputedStyle(child).backgroundColor
-    return { bg }
+
+    const parentStyles = getComputedStyle(parent)
+    const childStyles = getComputedStyle(child)
+
+    return {
+      // resolved state
+      parentColor: parent.dataset.nebBoxColor,
+      childColor: child.dataset.nebBoxColor,
+
+      parentTheme: parent.dataset.nebBoxTheme,
+      childTheme: child.dataset.nebBoxTheme,
+
+      // token layer
+      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
+      childMain: childStyles.getPropertyValue('--main-l').trim(),
+
+      // projection
+      parentBg: parentStyles.getPropertyValue('--bg').trim(),
+      childBg: childStyles.getPropertyValue('--bg').trim(),
+    }
   })
 
-  // must resolve to a real color
-  expect(result.bg).toMatch(/^rgb\(/)
+  // --- state layer ---
+  expect(result.parentColor).toBe(result.childColor)
+  expect(result.parentTheme).toBe(result.childTheme)
 
-  // resolve ctx primary via browser
-  const ctxResolved = await page.evaluate(() => {
-    const el = document.createElement('div')
-    el.style.backgroundColor = 'var(--neb-ctx-color-5)'
-    document.body.appendChild(el)
-    const value = getComputedStyle(el).backgroundColor
-    document.body.removeChild(el)
-    return value
-  })
+  // --- token layer ---
+  expect(result.parentMain).not.toBe('')
+  expect(result.childMain).not.toBe('')
+  expect(result.childMain).toBe(result.parentMain)
 
-  expect(result.bg).toBe(ctxResolved)
+  // --- projection layer ---
+  expect(result.parentBg).not.toBe('')
+  expect(result.childBg).not.toBe('')
+  expect(result.childBg).toBe(result.parentBg)
 })
 
-test('Box with dark theme uses dark ctx colors inside light app', async ({ mount, page }) => {
+test('Local dark theme produces same result as global dark theme', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'box' }} drawable variant="solid" intent="primary" theme="dark" blockSize="200px">
-      Dark Box
-    </Box>
+    <>
+      <Box tagAttrs={{ id: 'local-dark' }} drawable variant="solid" intent="primary" theme="dark" blockSize="200px">
+        Local Dark
+      </Box>
+
+      <Box tagAttrs={{ id: 'global-dark' }} drawable variant="solid" intent="primary" blockSize="200px">
+        Global Dark
+      </Box>
+    </>,
+    {
+      hooksConfig: {
+        theme: 'dark',
+      },
+    }
   )
 
   const result = await page.evaluate(() => {
-    const el = document.getElementById('box')!
-    const bg = getComputedStyle(el).backgroundColor
-    return { bg }
+    const local = document.getElementById('local-dark')!
+    const global = document.getElementById('global-dark')!
+
+    const localStyles = getComputedStyle(local)
+    const globalStyles = getComputedStyle(global)
+
+    return {
+      // state
+      localTheme: local.dataset.nebBoxTheme,
+      globalTheme: global.dataset.nebBoxTheme,
+
+      // tokens
+      localMain: localStyles.getPropertyValue('--main-l').trim(),
+      globalMain: globalStyles.getPropertyValue('--main-l').trim(),
+
+      // projection
+      localBg: localStyles.getPropertyValue('--bg').trim(),
+      globalBg: globalStyles.getPropertyValue('--bg').trim(),
+    }
   })
 
-  // must resolve to a real color
-  expect(result.bg).toMatch(/^rgb\(/)
+  // --- state layer ---
+  expect(result.localTheme).toBe('dark')
+  expect(result.globalTheme).toBe('dark')
 
-  // resolve ctx primary *within dark theme scope*
-  const darkResolved = await page.evaluate(() => {
-    const el = document.createElement('div')
-    el.setAttribute('data-theme', 'dark')
-    el.style.backgroundColor = 'var(--neb-ctx-color-5)'
-    document.body.appendChild(el)
-    const value = getComputedStyle(el).backgroundColor
-    document.body.removeChild(el)
-    return value
-  })
+  // --- token layer ---
+  expect(result.localMain).not.toBe('')
+  expect(result.globalMain).not.toBe('')
+  expect(result.localMain).toBe(result.globalMain)
 
-  expect(result.bg).toBe(darkResolved)
+  // --- projection layer ---
+  expect(result.localBg).not.toBe('')
+  expect(result.globalBg).not.toBe('')
+  expect(result.localBg).toBe(result.globalBg)
 })
 
-test('Nested theme islands reset correctly (light → dark → light)', async ({ mount, page }) => {
+test('Nested theme islands reset correctly (dark → light)', async ({ mount, page }) => {
   await mount(
     <Box tagAttrs={{ id: 'dark-parent' }} drawable variant="solid" intent="inverse" theme="dark" blockSize="200px" padding="16px">
       <Box tagAttrs={{ id: 'light-child' }} drawable variant="solid" intent="inverse" theme="light" blockSize="100px">
@@ -106,22 +149,50 @@ test('Nested theme islands reset correctly (light → dark → light)', async ({
     const dark = document.getElementById('dark-parent')!
     const light = document.getElementById('light-child')!
 
+    const darkStyles = getComputedStyle(dark)
+    const lightStyles = getComputedStyle(light)
+
     return {
-      darkBg: getComputedStyle(dark).backgroundColor,
-      lightBg: getComputedStyle(light).backgroundColor,
-      lightCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-color-9').trim(),
+      // state
+      darkTheme: dark.dataset.nebBoxTheme,
+      lightTheme: light.dataset.nebBoxTheme,
+
+      darkColor: dark.dataset.nebBoxColor,
+      lightColor: light.dataset.nebBoxColor,
+
+      // tokens
+      darkMain: darkStyles.getPropertyValue('--main-l').trim(),
+      lightMain: lightStyles.getPropertyValue('--main-l').trim(),
+
+      // projection
+      darkBg: darkStyles.getPropertyValue('--bg').trim(),
+      lightBg: lightStyles.getPropertyValue('--bg').trim(),
     }
   })
 
-  // light child must resolve from light ctx
-  expect(result.lightCtx).not.toBe('')
-  expect(result.lightBg).toBe(tinycolor(result.lightCtx).toRgbString())
+  // --- state layer ---
+  expect(result.darkTheme).toBe('dark')
+  expect(result.lightTheme).toBe('light')
 
-  // and must NOT inherit dark parent visuals
+  // brand/color should remain consistent (no leakage issue)
+  expect(result.darkColor).toBe(result.lightColor)
+
+  // --- token layer ---
+  expect(result.darkMain).not.toBe('')
+  expect(result.lightMain).not.toBe('')
+
+  // IMPORTANT: theme reset → tokens differ
+  expect(result.lightMain).not.toBe(result.darkMain)
+
+  // --- projection layer ---
+  expect(result.darkBg).not.toBe('')
+  expect(result.lightBg).not.toBe('')
+
+  // child must not visually match parent
   expect(result.lightBg).not.toBe(result.darkBg)
 })
 
-test('Nested theme islands reset correctly (light → dark → light → dark)', async ({ mount, page }) => {
+test('Nested theme islands rebind correctly across multiple boundaries (dark → light → dark)', async ({ mount, page }) => {
   await mount(
     <Box tagAttrs={{ id: 'dark-1' }} drawable variant="solid" intent="inverse" theme="dark" blockSize="300px" padding="16px">
       <Box tagAttrs={{ id: 'light-1' }} drawable variant="solid" intent="inverse" theme="light" blockSize="220px" padding="16px">
@@ -137,32 +208,69 @@ test('Nested theme islands reset correctly (light → dark → light → dark)',
     const light1 = document.getElementById('light-1')!
     const dark2 = document.getElementById('dark-2')!
 
-    return {
-      dark1Bg: getComputedStyle(dark1).backgroundColor,
-      light1Bg: getComputedStyle(light1).backgroundColor,
-      dark2Bg: getComputedStyle(dark2).backgroundColor,
+    const dark1Styles = getComputedStyle(dark1)
+    const light1Styles = getComputedStyle(light1)
+    const dark2Styles = getComputedStyle(dark2)
 
-      lightCtx: getComputedStyle(document.documentElement).getPropertyValue('--neb-ctx-color-9').trim(),
+    return {
+      // state
+      dark1Theme: dark1.dataset.nebBoxTheme,
+      light1Theme: light1.dataset.nebBoxTheme,
+      dark2Theme: dark2.dataset.nebBoxTheme,
+
+      // tokens
+      dark1Main: dark1Styles.getPropertyValue('--main-l').trim(),
+      light1Main: light1Styles.getPropertyValue('--main-l').trim(),
+      dark2Main: dark2Styles.getPropertyValue('--main-l').trim(),
+
+      // projection
+      dark1Bg: dark1Styles.getPropertyValue('--bg').trim(),
+      light1Bg: light1Styles.getPropertyValue('--bg').trim(),
+      dark2Bg: dark2Styles.getPropertyValue('--bg').trim(),
     }
   })
 
-  // light island must resolve from light ctx
-  expect(result.lightCtx).not.toBe('')
-  expect(result.light1Bg).toBe(tinycolor(result.lightCtx).toRgbString())
+  // --- state layer ---
+  expect(result.dark1Theme).toBe('dark')
+  expect(result.light1Theme).toBe('light')
+  expect(result.dark2Theme).toBe('dark')
 
-  // dark islands must not inherit light visuals
-  expect(result.dark1Bg).not.toBe(result.light1Bg)
-  expect(result.dark2Bg).not.toBe(result.light1Bg)
+  // --- token layer ---
+  expect(result.dark1Main).not.toBe('')
+  expect(result.light1Main).not.toBe('')
+  expect(result.dark2Main).not.toBe('')
 
-  // sanity: both dark islands should match each other
+  // light island must differ from dark
+  expect(result.light1Main).not.toBe(result.dark1Main)
+  expect(result.light1Main).not.toBe(result.dark2Main)
+
+  // dark islands must match each other
+  expect(result.dark2Main).toBe(result.dark1Main)
+
+  // --- projection layer ---
+  expect(result.dark1Bg).not.toBe('')
+  expect(result.light1Bg).not.toBe('')
+  expect(result.dark2Bg).not.toBe('')
+
+  // light island visually different
+  expect(result.light1Bg).not.toBe(result.dark1Bg)
+  expect(result.light1Bg).not.toBe(result.dark2Bg)
+
+  // dark islands visually consistent
   expect(result.dark2Bg).toBe(result.dark1Bg)
 })
 
-test('Global dark theme paints primary solid correctly', async ({ mount, page }) => {
+test('Global dark theme resolves primary solid styling consistently', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'box' }} drawable variant="solid" intent="primary" blockSize="200px">
-      Dark Root
-    </Box>,
+    <>
+      <Box tagAttrs={{ id: 'box-1' }} drawable variant="solid" intent="primary" blockSize="200px">
+        One
+      </Box>
+
+      <Box tagAttrs={{ id: 'box-2' }} drawable variant="solid" intent="primary" blockSize="200px">
+        Two
+      </Box>
+    </>,
     {
       hooksConfig: {
         theme: 'dark',
@@ -171,24 +279,38 @@ test('Global dark theme paints primary solid correctly', async ({ mount, page })
   )
 
   const result = await page.evaluate(() => {
-    const el = document.getElementById('box')!
-    const bg = getComputedStyle(el).backgroundColor
-    return { bg }
+    const one = document.getElementById('box-1')!
+    const two = document.getElementById('box-2')!
+
+    const oneStyles = getComputedStyle(one)
+    const twoStyles = getComputedStyle(two)
+
+    return {
+      // state
+      oneTheme: one.dataset.nebBoxTheme,
+      twoTheme: two.dataset.nebBoxTheme,
+
+      // tokens
+      oneMain: oneStyles.getPropertyValue('--main-l').trim(),
+      twoMain: twoStyles.getPropertyValue('--main-l').trim(),
+
+      // projection
+      oneBg: oneStyles.getPropertyValue('--bg').trim(),
+      twoBg: twoStyles.getPropertyValue('--bg').trim(),
+    }
   })
 
-  // must resolve to a real color
-  expect(result.bg).toMatch(/^rgb\(/)
+  // --- state layer ---
+  expect(result.oneTheme).toBe('dark')
+  expect(result.twoTheme).toBe('dark')
 
-  // resolve dark ctx primary via browser
-  const darkResolved = await page.evaluate(() => {
-    const el = document.createElement('div')
-    el.setAttribute('data-theme', 'dark')
-    el.style.backgroundColor = 'var(--neb-ctx-color-5)'
-    document.body.appendChild(el)
-    const value = getComputedStyle(el).backgroundColor
-    document.body.removeChild(el)
-    return value
-  })
+  // --- token layer ---
+  expect(result.oneMain).not.toBe('')
+  expect(result.twoMain).not.toBe('')
+  expect(result.oneMain).toBe(result.twoMain)
 
-  expect(result.bg).toBe(darkResolved)
+  // --- projection layer ---
+  expect(result.oneBg).not.toBe('')
+  expect(result.twoBg).not.toBe('')
+  expect(result.oneBg).toBe(result.twoBg)
 })

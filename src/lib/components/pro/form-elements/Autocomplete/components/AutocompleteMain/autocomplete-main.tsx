@@ -158,7 +158,7 @@ export const AutocompleteMain = ({
                           }}
                           iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
                           iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
-                          elevated={open}
+                          surface={open ? 'elevated' : undefined}
                           interactive={!open}
                         />
                       )
@@ -168,6 +168,8 @@ export const AutocompleteMain = ({
             </DropdownList.Trigger>
             {filteredItems.map((slot, index) => {
               const slotProps = (slot as ReactElement<AutocompleteOptionProps>).props
+              const selected = slotProps.value === currentValue
+
               return (
                 <DropdownList.Item
                   key={index}
@@ -180,8 +182,11 @@ export const AutocompleteMain = ({
                       handleChange(slotProps.value)
                     },
                   }}
-                  bold={slotProps.value === currentValue}
+                  bold={selected}
+                  selected={selected}
                   justifyContent={slotProps.justifyContent || DEFAULT_AUTOCOMPLETE_OPTION_JUSTIFY_CONTENT}
+                  iconName={selected ? 'check' : undefined}
+                  iconPlacement="right"
                 >
                   {slot}
                 </DropdownList.Item>

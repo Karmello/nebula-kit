@@ -78,7 +78,7 @@ export const AppJump = () => {
       <Autocomplete
         key={String(showAppJump)}
         tagRef={autocompleteRef}
-        intent="secondary"
+        intent="tertiary"
         onChange={value => {
           setShowAppJump(false)
           setTimeout(() => {
@@ -125,7 +125,7 @@ export const AppJump = () => {
         borderBottomWidth="0px"
         borderRadius="0px"
       >
-        <Box drawable variant="solid" intent="muted" padding="0px" borderRadius="0px">
+        <Box drawable variant="solid" intent="tertiary" padding="0px" borderRadius="0px">
           {autocomplete}
         </Box>
       </Box>

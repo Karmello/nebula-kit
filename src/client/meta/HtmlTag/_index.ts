@@ -21,6 +21,7 @@ const HTML_TAG_META: ComponentMeta<HtmlTagProps<ElementType>> = {
   },
   props: HTML_TAG_PROPS_META,
   examples: HTML_TAG_EXAMPLES_META,
+  hideExamplesThemeToggle: true,
   changelog: {
     '0.2.3': ['released'],
   },

@@ -4,6 +4,7 @@ import { Sizes, Theme } from 'lib/definitions'
 import { BoxColor } from 'lib/components/core/base/Box'
 
 export const DEFAULT_NEBKIT_THEME: Theme = 'light'
+export const DEFAULT_NEBKIT_EXAMPLES_THEME: Theme = 'dark'
 export const DEFAULT_NEBKIT_BRAND: BoxColor = 'gray'
 export const DEFAULT_NEBKIT_BORDER_RADIUS_SIZE: NebkitProviderProps['borderRadiusSize'] = 'md'
 export const DEFAULT_NEBKIT_RIPPLE_MODE: NebkitProviderProps['rippleMode'] = 'default'
