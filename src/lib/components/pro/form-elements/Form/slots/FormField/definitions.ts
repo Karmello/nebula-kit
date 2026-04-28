@@ -17,6 +17,6 @@ type FormFieldOwnProps = {
   email?: boolean | string
 }
 
-type PropsFromFlexItem = Omit<FlexItemProps<'div'>, 'tag'>
+type PropsFromFlexItem = Omit<FlexItemProps<'div'>, 'tag' | 'hidden'>
 
 export type FormFieldProps = PropsFromFlexItem & FormFieldOwnProps

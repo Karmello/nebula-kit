@@ -5,7 +5,7 @@ import { getHtmlMetaData } from 'src/server/helpers'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useGetUser, useLogoutUser } from 'client/api'
-import { AppFrame, Box, Button, Link, Loader, Toolbar } from 'lib/components'
+import { AppFrame, Box, Loader, Toolbar } from 'lib/components'
 
 import { RootPage } from '../RootPage'
 import { PageNavigation } from './PageNavigation'

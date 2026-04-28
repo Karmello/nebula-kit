@@ -10,7 +10,7 @@ type FormActionButtonOwnProps = {
   onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
-type PropsFromFlexItem = Omit<FlexItemProps<'div'>, 'children' | 'tag'>
+type PropsFromFlexItem = Omit<FlexItemProps<'div'>, 'children' | 'tag' | 'hidden'>
 
 type PropsFromButton = Pick<
   ButtonProps,
