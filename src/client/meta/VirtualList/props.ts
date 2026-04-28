@@ -54,6 +54,10 @@ const VIRTUAL_LIST_PROPS_META: ComponentMeta<VirtualListProps>['props'] = {
     defaultValue: String(DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX),
     description: 'Scrolls the list to the item at the given index on render.',
   },
+  surface: {
+    ...BOX_PROPS_META.surface,
+    description: 'Selects the depth of the surface behind list items.',
+  },
   tagAttrs: BOX_PROPS_META.tagAttrs,
   tagRef: BOX_PROPS_META.tagRef,
   visibleItemsCount: {

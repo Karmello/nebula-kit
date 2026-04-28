@@ -110,7 +110,7 @@ export const Dialog = ({
                         maxBlockSize="90dvh"
                         position="relative"
                         overflowY="auto"
-                        intent="secondary"
+                        intent="primary"
                         inlineSize={DIALOG_SIZE_MAP[size || 'md']}
                         borderRadius="var(--neb-border-radius)"
                       >

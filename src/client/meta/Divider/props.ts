@@ -27,6 +27,7 @@ const DIVIDER_PROPS_META: ComponentMeta<DividerProps>['props'] = {
     ...BOX_PROPS_META.opacity,
     defaultValue: String(DEFAULT_DIVIDER_OPACITY),
   },
+  selected: BOX_PROPS_META.selected,
   surface: {
     ...BOX_PROPS_META.surface,
     defaultValue: String(DEFAULT_DIVIDER_SURFACE),

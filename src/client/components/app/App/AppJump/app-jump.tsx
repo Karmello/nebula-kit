@@ -48,11 +48,11 @@ export const AppJump = () => {
       input.onkeydown = e => {
         if (e.key === 'Escape') setShowAppJump(false)
       }
-      input.onblur = () => {
-        setTimeout(() => {
-          setShowAppJump(false)
-        }, RESIZE_DURATION)
-      }
+      // input.onblur = () => {
+      //   setTimeout(() => {
+      //     setShowAppJump(false)
+      //   }, RESIZE_DURATION)
+      // }
     }
   }, [autocompleteRef.current, showAppJump])
 
@@ -78,7 +78,7 @@ export const AppJump = () => {
       <Autocomplete
         key={String(showAppJump)}
         tagRef={autocompleteRef}
-        intent="tertiary"
+        intent="muted"
         onChange={value => {
           setShowAppJump(false)
           setTimeout(() => {
@@ -111,24 +111,7 @@ export const AppJump = () => {
 
   return (
     <Resize property="blockSize" visible={showAppJump} duration={RESIZE_DURATION} easing="cubic-bezier(0.4, 0, 0.2, 1)">
-      <Box
-        tagAttrs={{
-          style: {
-            '--neb-border-radius': '0px',
-          } as CSSProperties,
-        }}
-        drawable
-        variant="outline"
-        intent="tertiary"
-        borderLeftWidth="0px"
-        borderRightWidth="0px"
-        borderBottomWidth="0px"
-        borderRadius="0px"
-      >
-        <Box drawable variant="solid" intent="tertiary" padding="0px" borderRadius="0px">
-          {autocomplete}
-        </Box>
-      </Box>
+      {autocomplete}
     </Resize>
   )
 }

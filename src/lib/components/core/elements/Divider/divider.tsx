@@ -26,6 +26,7 @@ export const Divider = ({
   marginBottom,
   opacity = DEFAULT_DIVIDER_OPACITY,
   surface = DEFAULT_DIVIDER_SURFACE,
+  selected,
 }: DividerProps) => {
   return (
     <Box
@@ -46,6 +47,8 @@ export const Divider = ({
       marginBottom={marginBottom}
       opacity={opacity}
       surface={surface}
+      interactive={selected}
+      selected={selected}
     />
   )
 }

@@ -25,6 +25,7 @@
     &[data-neb-box-intent='primary'] {
       --text: hsl(var(--h) var(--s) var(--solid-primary-text-l));
       --text-disabled: hsl(var(--h) var(--s) var(--solid-primary-text-l) / var(--solid-primary-text-disabled-alpha));
+      --text-focused: hsl(var(--h) var(--s) var(--l-0));
       --loader: hsl(var(--h) var(--s) var(--solid-primary-loader-l));
 
       &[data-neb-box-surface='elevated'] {
