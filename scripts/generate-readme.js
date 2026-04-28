@@ -35,7 +35,7 @@ Semantic HTML is part of the component contract. Components preserve structure a
 #### Orthogonal styling engine
 Styling concerns are separated and scoped to prevent interference. Each styling dimension stays isolated. Performance is a property of the architecture, not an added optimization.
 
-#### Unified models
+#### Unified rendering models
 The mechanisms for drawing visual output and handling responsiveness are each driven by their own explicit model, ensuring consistent behavior across the system.
 
 #### Resistant to entropy

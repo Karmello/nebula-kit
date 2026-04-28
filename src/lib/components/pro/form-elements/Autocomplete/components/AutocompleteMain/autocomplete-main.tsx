@@ -127,7 +127,6 @@ export const AutocompleteMain = ({
                         borderTopLeftRadius: open ? 0 : undefined,
                         borderTopRightRadius: open ? 0 : undefined,
                       },
-                  type: 'search',
                 }}
                 value={inputValue}
                 onChange={value => {
