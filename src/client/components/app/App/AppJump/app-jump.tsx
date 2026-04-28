@@ -76,7 +76,7 @@ export const AppJump = () => {
   const autocomplete = useMemo(() => {
     return (
       <Autocomplete
-        key={String(showAppJump)}
+        // key={String(showAppJump)}
         tagRef={autocompleteRef}
         intent="muted"
         onChange={value => {

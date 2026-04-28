@@ -31,7 +31,7 @@ export const Principles = () => {
             is a property of the architecture, not an added optimization.
           </Text>
         </Section>
-        <Section heading="Unified models" color="green" intent="primary" iconName="paintbrush">
+        <Section heading="Unified rendering models" color="green" intent="primary" iconName="paintbrush">
           <Text intent="neutral">
             The mechanisms for drawing visual output and handling responsiveness are each driven by their own explicit model,
             ensuring consistent behavior across the system.
