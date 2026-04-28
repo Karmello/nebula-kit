@@ -127,8 +127,13 @@ export const AutocompleteMain = ({
                         borderTopLeftRadius: open ? 0 : undefined,
                         borderTopRightRadius: open ? 0 : undefined,
                       },
-                  autoComplete: 'off',
+                  name: 'nebula-search',
                   type: 'search',
+                  enterKeyHint: 'search',
+                  autoComplete: 'off',
+                  autoCorrect: 'off',
+                  autoCapitalize: 'none',
+                  spellCheck: false,
                 }}
                 value={inputValue}
                 onChange={value => {
