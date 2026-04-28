@@ -32,6 +32,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
             variant={theme === examplesTheme ? 'outline' : 'solid'}
             intent={theme === examplesTheme ? 'tertiary' : 'neutral'}
             padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
+            borderRadius="0px"
           >
             {jsx}
           </Box>

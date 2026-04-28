@@ -38,6 +38,7 @@ type BoxOwnProps = {
   selected?: boolean
   disabled?: boolean
   activeOnFocus?: boolean
+  hidden?: RespValue<boolean>
   // css
   opacity?: RespValue<string>
   visibility?: RespValue<CssVisibility>

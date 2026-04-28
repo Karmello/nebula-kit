@@ -2,7 +2,7 @@ import { useSyncExternalStore } from 'react'
 
 import { Breakpoint } from 'lib/definitions'
 
-export const BP = { sm: 480, md: 768, lg: 1024, xl: 1280 } as const
+export const BP = { sm: 480, md: 768, lg: 1024, xl: 1280, xxl: 1536 } as const
 
 const hasWindow = () => typeof window !== 'undefined' && 'matchMedia' in window
 const q = (px: number) => `(min-width: ${px}px)`
@@ -10,7 +10,14 @@ const q = (px: number) => `(min-width: ${px}px)`
 let started = false
 let current: Breakpoint = 'base'
 
-let mqls: { sm: MediaQueryList; md: MediaQueryList; lg: MediaQueryList; xl: MediaQueryList } | null = null
+let mqls: {
+  sm: MediaQueryList
+  md: MediaQueryList
+  lg: MediaQueryList
+  xl: MediaQueryList
+  xxl: MediaQueryList
+} | null = null
+
 const listeners = new Set<() => void>()
 
 const buildMqls = () => {
@@ -19,13 +26,15 @@ const buildMqls = () => {
     md: window.matchMedia(q(BP.md)),
     lg: window.matchMedia(q(BP.lg)),
     xl: window.matchMedia(q(BP.xl)),
+    xxl: window.matchMedia(q(BP.xxl)),
   }
   return mqls
 }
 
 const compute = (): Breakpoint => {
   if (!hasWindow()) return 'base'
-  const { sm, md, lg, xl } = mqls ?? buildMqls()
+  const { sm, md, lg, xl, xxl } = mqls ?? buildMqls()
+  if (xxl.matches) return 'xxl'
   if (xl.matches) return 'xl'
   if (lg.matches) return 'lg'
   if (md.matches) return 'md'
@@ -35,7 +44,8 @@ const compute = (): Breakpoint => {
 
 const start = () => {
   if (started || !hasWindow()) return
-  const { sm, md, lg, xl } = buildMqls()
+  const { sm, md, lg, xl, xxl } = buildMqls()
+
   const onChange = () => {
     const next = compute()
     if (next !== current) {
@@ -43,6 +53,7 @@ const start = () => {
       listeners.forEach(l => l())
     }
   }
+
   const add = (mql: MediaQueryList) => {
     if (mql.addEventListener) {
       mql.addEventListener('change', onChange)
@@ -50,10 +61,13 @@ const start = () => {
       mql.addListener(onChange)
     }
   }
+
   add(sm)
   add(md)
   add(lg)
   add(xl)
+  add(xxl)
+
   current = compute()
   started = true
 }
@@ -73,6 +87,6 @@ export const useScreen = () => {
   return {
     bp,
     isMobile: ['base', 'sm', 'md'].includes(bp),
-    isDesktop: ['lg', 'xl'].includes(bp),
+    isDesktop: ['lg', 'xl', 'xxl'].includes(bp),
   }
 }

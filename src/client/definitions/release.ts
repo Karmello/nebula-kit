@@ -1,4 +1,5 @@
 export const RELEASE_VERSIONS = [
+  '0.9.0',
   '0.8.0',
   '0.7.0',
   '0.6.1',
@@ -21,6 +22,12 @@ export const RELEASE_INFO: Record<
     changelog?: { main?: string[]; core?: string[]; pro?: string[] }
   }
 > = {
+  '0.9.0': {
+    timestamp: 1777389369475,
+    changelog: {
+      main: ['extended the breakpoint system with a new xxl range for large screens and wide layouts'],
+    },
+  },
   '0.8.0': {
     timestamp: 1777258833132,
     changelog: {

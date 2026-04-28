@@ -26,6 +26,7 @@ export const Box = <T extends ElementType = 'div'>({
   selected,
   disabled,
   activeOnFocus,
+  hidden,
   opacity,
   visibility,
   textAlign,
@@ -216,8 +217,9 @@ export const Box = <T extends ElementType = 'div'>({
       color: finalColor,
       variant,
       intent,
+      hidden,
     })
-  }, [bp, finalTheme, finalColor, variant, intent])
+  }, [bp, finalTheme, finalColor, variant, intent, hidden])
 
   return (
     <ThemeProvider theme={finalTheme}>

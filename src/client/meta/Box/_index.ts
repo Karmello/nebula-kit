@@ -24,6 +24,7 @@ const BOX_META: ComponentMeta<BoxProps> = {
   props: BOX_PROPS_META,
   examples: BOX_EXAMPLES_META,
   changelog: {
+    '0.9.0': ['added hidden prop'],
     '0.8.0': [
       'updated Box to always render internal ThemeProvider and BrandProvider, ensuring styling context is consistently resolved and propagates correctly through portals',
       'removed defaultState prop',

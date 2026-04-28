@@ -127,6 +127,11 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description:
       'Enables visual rendering for the Box surface. When enabled, the Box participates in theming, colors, variants and intents. When disabled, it behaves as a neutral structural container with no visual styling applied.',
   },
+  hidden: {
+    options: ['boolean'],
+    isResponsive: true,
+    description: 'Controls whether the element is hidden and removed from layout.',
+  },
   inlineSize: {
     options: ['CSS'],
     isResponsive: true,

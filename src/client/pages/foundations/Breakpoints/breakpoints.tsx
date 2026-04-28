@@ -38,6 +38,11 @@ export default () => {
           <Table.Row>
             <Table.Cell>xl</Table.Cell>
             <Table.Cell>{BP.xl}</Table.Cell>
+            <Table.Cell>{BP.xxl - 1}</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>xxl</Table.Cell>
+            <Table.Cell>{BP.xxl}</Table.Cell>
             <Table.Cell>Inf</Table.Cell>
           </Table.Row>
         </Table.Body>

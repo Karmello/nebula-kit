@@ -63,30 +63,14 @@ export const App = () => {
   return (
     <AppFrame stickyHeader>
       <AppFrame.Header>
-        <Toolbar switchAt="xl">
+        <Toolbar switchAt="xxl">
           {({ setMainOpen, mainOpen }) => (
             <>
               <Toolbar.Start>
-                <Link
-                  href={PageKey.home}
-                  onClick={async () => {
-                    if (mainOpen) await setMainOpen(false)
-                    navigateTo(PageKey.home)
-                  }}
-                >
-                  <Button
-                    intent="muted"
-                    surface={pathname.startsWith(PageKey.home) ? 'elevated' : undefined}
-                    selected={pathname.startsWith(PageKey.home)}
-                    bold={pathname.startsWith(PageKey.home)}
-                    inlineSize="115px"
-                  >
-                    NebulaKit
-                  </Button>
-                </Link>
+                <PageNavigation toolbarSlot="start" mainOpen={mainOpen} setMainOpen={setMainOpen} />
               </Toolbar.Start>
               <Toolbar.Main>
-                <PageNavigation setMainOpen={setMainOpen} mainOpen={mainOpen} />
+                <PageNavigation toolbarSlot="main" mainOpen={mainOpen} setMainOpen={setMainOpen} />
               </Toolbar.Main>
               <Toolbar.End>
                 <UserActionMenu />

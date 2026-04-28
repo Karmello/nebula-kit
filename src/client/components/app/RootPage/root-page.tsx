@@ -17,6 +17,7 @@ import {
   ConfirmActionPage,
   FeedbackPage,
   PlaygroundPage,
+  AssistantPage,
 } from 'client/pages'
 
 import { PageKey } from 'client/definitions'
@@ -38,6 +39,7 @@ export const RootPage = () => {
         <Route path={PageKey.pricingCore} element={<ComponentsBundlePage bundle="core" />} />
         <Route path={PageKey.pricingPro} element={<ComponentsBundlePage bundle="pro" />} />
         <Route path={PageKey.feedback} Component={FeedbackPage} />
+        <Route path={PageKey.assistant} Component={AssistantPage} />
         <Route path={PageKey.authLogin} Component={LoginPage} />
         <Route path={PageKey.authRegister} Component={RegisterPage} />
         <Route path={PageKey.authRecover} Component={RecoveryPage} />

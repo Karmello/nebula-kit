@@ -11,6 +11,7 @@ export enum PageKey {
   faq = '/faq',
   blog = '/blog',
   feedback = '/feedback',
+  assistant = '/assistant',
   foundations = '/foundations',
   home = '/home',
   playground = '/playground',

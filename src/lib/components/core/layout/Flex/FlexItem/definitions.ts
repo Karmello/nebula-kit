@@ -1,6 +1,6 @@
 import { ElementType } from 'react'
 
-import { HtmlTagProps } from 'lib/components'
+import { BoxProps, HtmlTagProps } from 'lib/components'
 import { RespValue, CssFlexItemAlignSelf } from 'lib/definitions'
 
 type FlexItemOwnProps = {
@@ -16,4 +16,6 @@ type PropsFromHtmlTag<T extends ElementType = 'div'> = Omit<HtmlTagProps<T>, 'ch
   children: HtmlTagProps<T>['children']
 }
 
-export type FlexItemProps<T extends ElementType = 'div'> = PropsFromHtmlTag<T> & FlexItemOwnProps
+type PropsFromBox<T extends ElementType = 'div'> = Pick<BoxProps<T>, 'hidden'>
+
+export type FlexItemProps<T extends ElementType = 'div'> = PropsFromHtmlTag<T> & PropsFromBox<T> & FlexItemOwnProps
