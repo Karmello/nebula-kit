@@ -83,7 +83,8 @@
     "assistant:generate:foundations": "rimraf assistant/generated/foundations && NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./scripts/ignore-assets-loader.js' tsx ./assistant/scripts/generate-foundations/index.tsx",
     "assistant:generate:docs": "rimraf assistant/generated/components && NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./scripts/ignore-assets-loader.js' tsx ./assistant/scripts/generate-component-docs/index.ts",
     "assistant:generate:releases": "rimraf assistant/generated/releases && NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./scripts/ignore-assets-loader.js' tsx ./assistant/scripts/generate-releases/index.ts",
-    "assistant:generate": "yarn assistant:generate:foundations && yarn assistant:generate:docs && yarn assistant:generate:releases",
+    "assistant:generate:faq": "rimraf assistant/generated/faq && NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./scripts/ignore-assets-loader.js' tsx ./assistant/scripts/generate-faq/index.ts",
+    "assistant:generate": "yarn assistant:generate:foundations && yarn assistant:generate:docs && yarn assistant:generate:releases && yarn assistant:generate:faq",
     "publish:core": "yarn dist:core && npm publish ./dist/core --access public",
     "publish:pro": "yarn dist:pro && yarn pack:pro && yarn upload:pro",
     "publish:gh": "yarn dist && npm publish ./dist/core --registry=https://npm.pkg.github.com && npm publish ./dist/pro --registry=https://npm.pkg.github.com"
