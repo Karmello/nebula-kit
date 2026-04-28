@@ -48,11 +48,11 @@ export const AppJump = () => {
       input.onkeydown = e => {
         if (e.key === 'Escape') setShowAppJump(false)
       }
-      // input.onblur = () => {
-      //   setTimeout(() => {
-      //     setShowAppJump(false)
-      //   }, RESIZE_DURATION)
-      // }
+      input.onblur = () => {
+        setTimeout(() => {
+          setShowAppJump(false)
+        }, RESIZE_DURATION)
+      }
     }
   }, [autocompleteRef.current, showAppJump])
 
@@ -80,7 +80,7 @@ export const AppJump = () => {
         tagRef={autocompleteRef}
         intent="muted"
         onChange={value => {
-          setShowAppJump(false)
+          // setShowAppJump(false)
           setTimeout(() => {
             navigateTo(value)
           }, RESIZE_DURATION)
