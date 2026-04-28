@@ -1,8 +1,8 @@
-import { CSSProperties, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { useLayoutEffect, useMemo, useRef, useState } from 'react'
 
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { Autocomplete, Box, Resize, Text } from 'lib/components'
+import { Autocomplete, Resize, Text } from 'lib/components'
 
 import { RESIZE_DURATION, OPTIONS } from './definitions'
 
@@ -80,7 +80,7 @@ export const AppJump = () => {
         tagRef={autocompleteRef}
         intent="muted"
         onChange={value => {
-          // setShowAppJump(false)
+          setShowAppJump(false)
           setTimeout(() => {
             navigateTo(value)
           }, RESIZE_DURATION)
