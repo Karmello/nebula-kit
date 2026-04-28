@@ -47,7 +47,12 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
 
   useLayoutEffect(() => {
     if (!open) return
-    const handleResize = () => setResizeVisible(false)
+    const initialWidth = window.innerWidth
+    const handleResize = () => {
+      if (window.innerWidth !== initialWidth) {
+        setResizeVisible(false)
+      }
+    }
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [open])
