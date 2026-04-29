@@ -1,3 +1,4 @@
+import { Children, ReactElement, ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
@@ -17,13 +18,37 @@ export const SystemMessage = ({ content }: SystemMessageProps) => {
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
-          code(props) {
-            const { className, children } = props
-            const lang = className?.replace('language-', '')
+          code({ className, children }) {
+            return (
+              <Box
+                tag="code"
+                display="inline-block"
+                drawable
+                variant="solid"
+                intent="muted"
+                paddingInline="6px"
+                paddingBlock="2px"
+              >
+                {children}
+              </Box>
+            )
+          },
+
+          pre({ children }) {
+            const code = Children.only(children) as ReactElement<{
+              className?: string
+              children?: ReactNode
+            }>
+
+            const className = code.props.className
+            const lang = className?.replace('language-', '') || 'txt'
+            const text = String(code.props.children).replace(/\n$/, '')
+
             if (CODE_SNIPPET_LANGS.includes(lang as never)) {
-              return <CodeSnippet code={String(children).replace(/\n$/, '')} lang="tsx" fullBg />
+              return <CodeSnippet code={text} lang={lang as never} fullBg />
             }
-            return <code className={className}>{children}</code>
+
+            return <pre>{children}</pre>
           },
         }}
       >

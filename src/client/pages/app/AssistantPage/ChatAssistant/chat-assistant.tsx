@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 
-import { Box, Segment } from 'lib/components'
+import { Box, Flex, Segment, Spacer } from 'lib/components'
 import { useAskAssistant } from 'client/api'
 
 import { ChatHistory, PROMPT_MAX_HEIGHT_PX } from './definitions'
-import { Chat, Prompt, SendButton } from './components'
+import { Chat, Prompt, SendButton, ContextMenu } from './components'
 
 export const ChatAssistant = () => {
   const [chatHistory, setChatHistory] = useState<ChatHistory>([])
@@ -38,6 +38,13 @@ export const ChatAssistant = () => {
     }
   }
 
+  const handleContextMenuChange = (value: string) => {
+    if (value === 'new-chat') {
+      setChatHistory([])
+      setPrompt('')
+    }
+  }
+
   useEffect(() => {
     chatScrollingAreaRef.current.scrollTop = chatScrollingAreaRef.current.scrollHeight
     textareaRef.current.focus()
@@ -45,7 +52,11 @@ export const ChatAssistant = () => {
 
   return (
     <Box blockSize={{ base: 'calc(100vh - 150px)', lg: 'calc(100vh - 175px)' }}>
-      <Segment tagAttrs={{ style: { blockSize: '100%' } }} flexDirection="column">
+      <Flex justifyContent="flex-end">
+        <ContextMenu onChange={handleContextMenuChange} disabled={askAssistant.isMakingRequest} />
+      </Flex>
+      <Spacer blockSize="10px" />
+      <Segment tagAttrs={{ style: { blockSize: 'calc(100% - 50px)' } }} flexDirection="column">
         <Segment.Item flex="1" tagAttrs={{ style: { overflowY: 'hidden' } }}>
           <Chat tagRef={chatScrollingAreaRef} chatHistory={chatHistory} isMakingRequest={askAssistant.isMakingRequest} />
         </Segment.Item>
