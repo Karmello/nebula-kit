@@ -58,13 +58,19 @@ export const AppJump = () => {
 
   useLayoutEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === '/') setShowAppJump(!showAppJump)
+      const target = e.target as HTMLElement
+      const isTyping = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable
+      if (isTyping) return
+      if (e.key === '/') {
+        e.preventDefault()
+        setShowAppJump(v => !v)
+      }
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [showAppJump])
+  }, [setShowAppJump])
 
   useLayoutEffect(() => {
     if (!showAppJump) {
@@ -88,7 +94,7 @@ export const AppJump = () => {
         onInputChange={setQuery}
         disableFiltering
         visibleItemsCount={10}
-        placeholder='Search website (toggle with "/")'
+        placeholder="Search website ... (open with /, close with ESC)"
         showToggle={false}
       >
         {filtered.map(({ label, href, iconName }) => {

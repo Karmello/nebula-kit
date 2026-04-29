@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
@@ -27,7 +28,7 @@ export type AppStore = {
   user: ApiUser | null
   setUser: (user: ApiUser | null) => void
   showAppJump: boolean
-  setShowAppJump: (showAppJump: boolean) => void
+  setShowAppJump: Dispatch<SetStateAction<boolean>>
   showAppSettings: boolean
   setShowAppSettings: (showAppSettings: boolean) => void
 }
