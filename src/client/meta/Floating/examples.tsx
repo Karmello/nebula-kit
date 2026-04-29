@@ -7,7 +7,7 @@ const FLOATING_EXAMPLES_META: ComponentMeta<FloatingProps>['examples'] = [
     noSandBox: true,
     code: `const anchorRef = useRef<HTMLElement | null>(null)
 const [resolved, setResolved] = useState<FloatingResolved>()
-\t
+
 return (
   <>
     <Box tagRef={anchorRef}>Anchor</Box>

@@ -23,7 +23,7 @@ const FOCUS_TRAP_EXAMPLES_META: ComponentMeta<FocusTrapProps>['examples'] = [
     jsx: <FocusTrapWrapper />,
     code: `// The tagRef must point to the same DOM element that visually contains the focusable content
 const ref = useRef(null)
-\t
+
 return (
   <FocusTrap tagRef={ref} active>
     <Flex tagRef={ref} gap="10px">

@@ -25,10 +25,10 @@ npm install @nebula-kit-private/pro`}
       <CodeSnippet
         lang="tsx"
         code={`import { NebkitProvider } from '@nebula-kit/core'
-\t
+
 import '@nebula-kit/core/styles.css'
 import '@nebula-kit-private/pro/styles.css'
-\t
+
 export default () => {
   return <NebkitProvider theme="dark"><App /></NebkitProvider>
 }`}

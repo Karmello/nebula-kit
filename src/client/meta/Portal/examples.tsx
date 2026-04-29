@@ -27,7 +27,7 @@ const PORTAL_EXAMPLES_META: ComponentMeta<PortalProps>['examples'] = [
   {
     code: `const [visible, setVisible] = useState<boolean>(false)
 const buttonRef = useRef<HTMLButtonElement>(null)
-\t
+
 return (
   <>
     <Button tagRef={buttonRef} tagAttrs={{ onClick: () => setVisible(!visible) }}>
