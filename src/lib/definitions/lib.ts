@@ -71,6 +71,8 @@ export const ICON_NAMES = [
   'screen-share',
   'search',
   'search-x',
+  'send',
+  'send-horizontal',
   'settings',
   'shapes',
   'share-2',
