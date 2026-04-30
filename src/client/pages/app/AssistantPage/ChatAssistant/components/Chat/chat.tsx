@@ -14,7 +14,7 @@ type ChatProps = {
 
 export const Chat = ({ tagRef, chatHistory, isMakingRequest, handleQuestionClick }: ChatProps) => {
   return (
-    <Box tagRef={tagRef} drawable variant="outline" intent="muted" padding="20px" blockSize="100%" overflowY="auto">
+    <Box tagRef={tagRef} drawable variant="outline" intent="muted" color="blue" padding="20px" blockSize="100%" overflowY="auto">
       <Flex flexDirection="column" rowGap="30px">
         {chatHistory.map(({ role, content }, key) =>
           role === 'system' ? (

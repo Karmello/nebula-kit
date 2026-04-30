@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-import { Box, Flex, Segment, Spacer } from 'lib/components'
+import { Box, Flex, Segment, Spacer, Text } from 'lib/components'
 import { useAskAssistant } from 'client/api'
 
 import { CHAT_INTRO_TEXT, ChatHistory, PROMPT_MAX_HEIGHT_PX } from './definitions'
@@ -14,6 +14,7 @@ export const ChatAssistant = () => {
 
   const chatScrollingAreaRef = useRef<HTMLDivElement | null>(null)
   const textareaRef = useRef<HTMLTextAreaElement | null>(null)
+  const focusAnchorRef = useRef<HTMLDivElement | null>(null)
 
   const handleChange = (value: string) => {
     setPrompt(value)
@@ -59,13 +60,19 @@ export const ChatAssistant = () => {
   useEffect(() => {
     if (chatHistory.length) {
       chatScrollingAreaRef.current.scrollTop = chatScrollingAreaRef.current.scrollHeight
+      focusAnchorRef.current.focus()
     }
   }, [chatHistory])
 
   return (
     <Box blockSize={{ base: 'calc(100vh - 150px)', lg: 'calc(100vh - 175px)' }}>
-      <Flex justifyContent="flex-end">
-        <ContextMenu onChange={handleContextMenuChange} disabled={askAssistant.isMakingRequest} />
+      <Flex justifyContent="space-between" alignItems="flex-end" columnGap="20px">
+        <Text tagAttrs={{ style: { lineHeight: 1.2 } }} intent="secondary" typography="small" color="amber">
+          ENTER sends | SHIFT + ENTER adds a new line | TAB returns to the prompt
+        </Text>
+        <Box>
+          <ContextMenu onChange={handleContextMenuChange} disabled={askAssistant.isMakingRequest} />
+        </Box>
       </Flex>
       <Spacer blockSize="10px" />
       <Segment tagAttrs={{ style: { blockSize: 'calc(100% - 50px)' } }} flexDirection="column">
@@ -90,6 +97,7 @@ export const ChatAssistant = () => {
             value={prompt}
             onChange={handleChange}
             disabled={chatHistory.length === 0 || askAssistant.isMakingRequest}
+            focusAnchorRef={focusAnchorRef}
           />
         </Segment.Item>
         <Segment.Item>
