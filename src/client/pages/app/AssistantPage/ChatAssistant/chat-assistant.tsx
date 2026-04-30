@@ -3,11 +3,11 @@ import { useEffect, useRef, useState } from 'react'
 import { Box, Flex, Segment, Spacer } from 'lib/components'
 import { useAskAssistant } from 'client/api'
 
-import { ChatHistory, PROMPT_MAX_HEIGHT_PX } from './definitions'
+import { CHAT_INTRO_TEXT, ChatHistory, PROMPT_MAX_HEIGHT_PX } from './definitions'
 import { Chat, Prompt, SendButton, ContextMenu } from './components'
 
 export const ChatAssistant = () => {
-  const [chatHistory, setChatHistory] = useState<ChatHistory>([])
+  const [chatHistory, setChatHistory] = useState<ChatHistory>([{ role: 'system', content: CHAT_INTRO_TEXT }])
   const [prompt, setPrompt] = useState<string>('')
 
   const askAssistant = useAskAssistant()
@@ -25,11 +25,11 @@ export const ChatAssistant = () => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
-      handleSubmit()
+      handleSubmit(prompt)
     }
   }
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (prompt: string) => {
     setPrompt('')
     setChatHistory(state => [...state, { role: 'user', content: prompt }])
     const res = await askAssistant.sendRequest({ prompt: JSON.stringify([...chatHistory, { role: 'user', content: prompt }]) })
@@ -42,12 +42,24 @@ export const ChatAssistant = () => {
     if (value === 'new-chat') {
       setChatHistory([])
       setPrompt('')
+      setTimeout(() => {
+        setChatHistory([{ role: 'system', content: CHAT_INTRO_TEXT }])
+      }, 150)
+    }
+  }
+
+  const handleQuestionClick = (question: string) => {
+    if (!askAssistant.isMakingRequest) {
+      setPrompt(question)
+      handleSubmit(question)
     }
   }
 
   useEffect(() => {
-    chatScrollingAreaRef.current.scrollTop = chatScrollingAreaRef.current.scrollHeight
-    textareaRef.current.focus()
+    if (chatHistory.length) {
+      chatScrollingAreaRef.current.scrollTop = chatScrollingAreaRef.current.scrollHeight
+      textareaRef.current.focus()
+    }
   }, [chatHistory])
 
   return (
@@ -58,7 +70,12 @@ export const ChatAssistant = () => {
       <Spacer blockSize="10px" />
       <Segment tagAttrs={{ style: { blockSize: 'calc(100% - 50px)' } }} flexDirection="column">
         <Segment.Item flex="1" tagAttrs={{ style: { overflowY: 'hidden' } }}>
-          <Chat tagRef={chatScrollingAreaRef} chatHistory={chatHistory} isMakingRequest={askAssistant.isMakingRequest} />
+          <Chat
+            tagRef={chatScrollingAreaRef}
+            chatHistory={chatHistory}
+            isMakingRequest={askAssistant.isMakingRequest}
+            handleQuestionClick={handleQuestionClick}
+          />
         </Segment.Item>
         <Segment.Item>
           <Prompt
@@ -72,14 +89,14 @@ export const ChatAssistant = () => {
             }}
             value={prompt}
             onChange={handleChange}
-            disabled={askAssistant.isMakingRequest}
+            disabled={chatHistory.length === 0 || askAssistant.isMakingRequest}
           />
         </Segment.Item>
         <Segment.Item>
           <SendButton
             loading={askAssistant.isMakingRequest}
             disabled={!prompt && !askAssistant.isMakingRequest}
-            onClick={handleSubmit}
+            onClick={() => handleSubmit(prompt)}
           >
             Send
           </SendButton>
