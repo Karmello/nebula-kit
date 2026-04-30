@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-import { Box, Flex, Segment, Spacer, Text } from 'lib/components'
+import { Box, Flex, Icon, Segment, Spacer, Text, Tooltip } from 'lib/components'
 import { useAskAssistant } from 'client/api'
 
 import { CHAT_INTRO_TEXT, ChatHistory, PROMPT_MAX_HEIGHT_PX } from './definitions'
@@ -31,6 +31,7 @@ export const ChatAssistant = () => {
   }
 
   const handleSubmit = async (prompt: string) => {
+    if (!prompt) return
     setPrompt('')
     setChatHistory(state => [...state, { role: 'user', content: prompt }])
     textareaRef.current.style.height = 'auto'
@@ -66,13 +67,8 @@ export const ChatAssistant = () => {
 
   return (
     <Box blockSize={{ base: 'calc(100vh - 150px)', lg: 'calc(100vh - 175px)' }}>
-      <Flex justifyContent="space-between" alignItems="flex-end" columnGap="20px">
-        <Text tagAttrs={{ style: { lineHeight: 1.2 } }} intent="secondary" typography="small" color="amber">
-          ENTER sends | SHIFT + ENTER adds a new line | TAB returns to the prompt
-        </Text>
-        <Box>
-          <ContextMenu onChange={handleContextMenuChange} disabled={askAssistant.isMakingRequest} />
-        </Box>
+      <Flex justifyContent="flex-end">
+        <ContextMenu onChange={handleContextMenuChange} disabled={askAssistant.isMakingRequest} />
       </Flex>
       <Spacer blockSize="10px" />
       <Segment tagAttrs={{ style: { blockSize: 'calc(100% - 50px)' } }} flexDirection="column">
@@ -91,6 +87,7 @@ export const ChatAssistant = () => {
               style: {
                 overflow: textareaRef.current?.scrollHeight > PROMPT_MAX_HEIGHT_PX ? 'visible' : 'hidden',
                 outline: 'none',
+                borderRadius: 0,
               },
               onKeyDown: handleKeyDown,
             }}
@@ -101,13 +98,24 @@ export const ChatAssistant = () => {
           />
         </Segment.Item>
         <Segment.Item>
-          <SendButton
-            loading={askAssistant.isMakingRequest}
-            disabled={!prompt && !askAssistant.isMakingRequest}
-            onClick={() => handleSubmit(prompt)}
-          >
-            Send
-          </SendButton>
+          <Box drawable theme="flipped" variant="solid" intent="neutral" padding="6px">
+            <Flex justifyContent="space-between" alignItems="flex-end">
+              <Tooltip
+                minInlineSize={300}
+                maxInlineSize={300}
+                content="ENTER sends | SHIFT + ENTER adds a new line | TAB returns to the prompt"
+              >
+                <Icon name="keyboard" size="17px" />
+              </Tooltip>
+              <SendButton
+                loading={askAssistant.isMakingRequest}
+                disabled={!prompt && !askAssistant.isMakingRequest}
+                onClick={() => handleSubmit(prompt)}
+              >
+                Send
+              </SendButton>
+            </Flex>
+          </Box>
         </Segment.Item>
       </Segment>
     </Box>

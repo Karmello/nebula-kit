@@ -45,6 +45,7 @@ export const ICON_NAMES = [
   'film',
   'globe',
   'info',
+  'keyboard',
   'key-round',
   'layers',
   'leaf',

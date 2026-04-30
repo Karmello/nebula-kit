@@ -8,10 +8,9 @@ import {
   CSS_POSITION,
   CSS_TEXT_ALIGN,
   CSS_VISIBILITY,
-  THEMES,
 } from 'lib/definitions'
 
-import { BoxProps, BOX_VARIANTS, BOX_INTENTS, BOX_SURFACES } from 'lib/components/core/base/Box'
+import { BoxProps, BOX_VARIANTS, BOX_INTENTS, BOX_SURFACES, BOX_THEMES } from 'lib/components/core/base/Box'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
@@ -333,10 +332,10 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     tooltip: CSS_TEXT_ALIGN,
   },
   theme: {
-    options: THEMES,
+    options: BOX_THEMES,
     isResponsive: true,
     description:
-      'Sets a local theme boundary for the component and its drawable descendants. Overrides the global application theme for this subtree without affecting the rest of the app.',
+      'Sets a local theme boundary for the component and its drawable descendants. Overrides the inherited theme for this subtree without affecting the rest of the app. When set to flipped, it inverts the currently inherited theme.',
   },
   top: {
     options: ['CSS'],

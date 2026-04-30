@@ -83,7 +83,11 @@ export const Box = <T extends ElementType = 'div'>({
   const themeCtx = useThemeContext()
   const brandCtx = useBrandContext()
 
-  const finalTheme = theme ?? themeCtx?.theme
+  const inheritedTheme = themeCtx?.theme
+  const resolvedTheme = theme ?? inheritedTheme
+
+  const finalTheme = resolvedTheme === 'flipped' ? (inheritedTheme === 'dark' ? 'light' : 'dark') : resolvedTheme
+
   const ctxBrand = brandCtx?.brand
   const finalBrand = brand ?? ctxBrand
   const finalColor = color ?? finalBrand

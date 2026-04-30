@@ -10,15 +10,18 @@ import {
   CssVisibility,
   RespValue,
   Theme,
+  THEMES,
 } from 'lib/definitions'
 
 import { HtmlTagProps } from 'lib/components'
 
+export const BOX_THEMES = [...THEMES, 'flipped'] as const
 export const BOX_VARIANTS = ['solid', 'outline', 'soft-outline', 'ghost'] as const
 export const BOX_INTENTS = ['neutral', 'muted', 'tertiary', 'secondary', 'primary', 'inverse'] as const
 export const BOX_SURFACES = ['raised', 'elevated'] as const
 export const BOX_BORDER_WIDTH = '2px'
 
+export type BoxTheme = (typeof BOX_THEMES)[number]
 export type BoxVariant = (typeof BOX_VARIANTS)[number]
 export type BoxIntent = (typeof BOX_INTENTS)[number]
 export type BoxSurface = (typeof BOX_SURFACES)[number]
@@ -28,7 +31,7 @@ type BoxOwnProps = {
   // surface
   drawable?: boolean
   surface?: BoxSurface
-  theme?: RespValue<Theme>
+  theme?: RespValue<BoxTheme>
   brand?: RespValue<BoxColor>
   color?: RespValue<BoxColor>
   variant?: RespValue<BoxVariant>
