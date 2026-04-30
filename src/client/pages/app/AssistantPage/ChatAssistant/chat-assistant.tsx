@@ -58,7 +58,6 @@ export const ChatAssistant = () => {
   useEffect(() => {
     if (chatHistory.length) {
       chatScrollingAreaRef.current.scrollTop = chatScrollingAreaRef.current.scrollHeight
-      textareaRef.current.focus()
     }
   }, [chatHistory])
 

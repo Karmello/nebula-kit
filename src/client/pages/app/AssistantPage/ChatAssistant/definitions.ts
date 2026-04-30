@@ -1,5 +1,12 @@
 export type ChatHistory = Array<{ role: 'system' | 'user'; content: string }>
 
+export const CHAT_ONGOING_REQUEST_TEXT = 'Captain Nebula is thinking ...'
+export const CHAT_LINE_HEIGHT = 1.7
+
+export const PROMPT_PLACEHOLDER = 'Ask me anything ...'
+export const PROMPT_DEFAULT_ROWS = 1
+export const PROMPT_MAX_HEIGHT_PX = 295
+
 export const CHAT_INTRO_TEXT = `**Hi, I'm Captain Nebula !**
 
 I can help you understand NebulaKit system behavior, components and their props using the official NebulaKit documentation.
@@ -15,10 +22,3 @@ Try asking:
 [How are composition and inheritance used?](app://ask/How%20are%20composition%20and%20inheritance%20used%3F)
 
 [What are orthogonal axes?](app://ask/What%20are%20orthogonal%20axes%3F)`
-
-export const CHAT_ONGOING_REQUEST_TEXT = 'Captain Nebula is thinking ...'
-export const CHAT_LINE_HEIGHT = 1.7
-
-export const PROMPT_PLACEHOLDER = 'Ask me anything ...'
-export const PROMPT_DEFAULT_ROWS = 3
-export const PROMPT_MAX_HEIGHT_PX = 295

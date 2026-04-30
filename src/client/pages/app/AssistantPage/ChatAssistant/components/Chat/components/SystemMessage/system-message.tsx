@@ -46,7 +46,7 @@ export const SystemMessage = ({ content, handleQuestionClick }: SystemMessagePro
             const text = String(code.props.children).replace(/\n$/, '')
 
             if (CODE_SNIPPET_LANGS.includes(lang as never)) {
-              return <CodeSnippet code={text} lang={lang as never} fullBg />
+              return <CodeSnippet code={text} lang={lang as never} />
             }
 
             return <pre>{children}</pre>
