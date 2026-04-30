@@ -32,6 +32,7 @@ export const ChatAssistant = () => {
   const handleSubmit = async (prompt: string) => {
     setPrompt('')
     setChatHistory(state => [...state, { role: 'user', content: prompt }])
+    textareaRef.current.style.height = 'auto'
     const res = await askAssistant.sendRequest({ prompt: JSON.stringify([...chatHistory, { role: 'user', content: prompt }]) })
     if (res.ok && res.data.answer) {
       setChatHistory(state => [...state, { role: 'system', content: res.data.answer }])
