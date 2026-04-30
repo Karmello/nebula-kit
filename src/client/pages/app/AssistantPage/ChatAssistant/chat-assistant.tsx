@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 
-import { Box, Flex, Icon, Segment, Spacer, Text, Tooltip } from 'lib/components'
+import { Box, Flex, Segment, Spacer } from 'lib/components'
 import { useAskAssistant } from 'client/api'
 
 import { CHAT_INTRO_TEXT, ChatHistory, PROMPT_MAX_HEIGHT_PX } from './definitions'
-import { Chat, Prompt, SendButton, ContextMenu } from './components'
+import { Chat, Prompt, ContextMenu, PromptToolbar } from './components'
 
 export const ChatAssistant = () => {
   const [chatHistory, setChatHistory] = useState<ChatHistory>([{ role: 'system', content: CHAT_INTRO_TEXT }])
@@ -98,24 +98,11 @@ export const ChatAssistant = () => {
           />
         </Segment.Item>
         <Segment.Item>
-          <Box drawable theme="flipped" variant="solid" intent="neutral" padding="6px">
-            <Flex justifyContent="space-between" alignItems="flex-end">
-              <Tooltip
-                minInlineSize={300}
-                maxInlineSize={300}
-                content="ENTER sends | SHIFT + ENTER adds a new line | TAB returns to the prompt"
-              >
-                <Icon name="keyboard" size="17px" />
-              </Tooltip>
-              <SendButton
-                loading={askAssistant.isMakingRequest}
-                disabled={!prompt && !askAssistant.isMakingRequest}
-                onClick={() => handleSubmit(prompt)}
-              >
-                Send
-              </SendButton>
-            </Flex>
-          </Box>
+          <PromptToolbar
+            loading={askAssistant.isMakingRequest}
+            disabled={!prompt && !askAssistant.isMakingRequest}
+            onClick={() => handleSubmit(prompt)}
+          />
         </Segment.Item>
       </Segment>
     </Box>

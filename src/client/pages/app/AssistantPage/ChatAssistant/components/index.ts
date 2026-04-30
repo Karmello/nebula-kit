@@ -1,4 +1,4 @@
 export * from './Chat'
 export * from './ContextMenu'
 export * from './Prompt'
-export * from './SendButton'
+export * from './PromptToolbar'
