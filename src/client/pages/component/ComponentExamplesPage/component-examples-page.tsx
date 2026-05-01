@@ -1,19 +1,18 @@
-import { pascalCase, sentenceCase } from 'change-case'
+import { pascalCase } from 'change-case'
 
 import meta from 'client/meta'
 import { CodeSnippet } from 'client/components'
 import { convertElemToString } from 'client/helpers'
 import { useAppStore, useCorePageStore, useProPageStore } from 'client/store'
 import { ComponentMeta, PageKey } from 'client/definitions'
-import { Box, Button, Flex, Reveal, Segment, Spacer, Text } from 'lib/components'
-import { THEMES } from 'lib/definitions'
+import { Box, Flex, Reveal, Spacer, Switch, Text } from 'lib/components'
 import { useCurrentTheme } from 'lib/hooks'
 
 const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   const { description, jsx, code, noSandBox, noCode, sandBoxWithNoPadding } = props
 
   const theme = useCurrentTheme()
-  const examplesTheme = useAppStore(state => state.examplesTheme)
+  const flipGlobalThemeOnExamples = useAppStore(state => state.flipGlobalThemeOnExamples)
 
   return (
     <>
@@ -28,9 +27,9 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           <Box
             tagAttrs={{ style: { borderStyle: 'dashed' } }}
             drawable
-            theme={examplesTheme}
-            variant={theme === examplesTheme ? 'outline' : 'solid'}
-            intent={theme === examplesTheme ? 'tertiary' : 'neutral'}
+            theme={flipGlobalThemeOnExamples ? 'flipped' : theme}
+            variant={!flipGlobalThemeOnExamples ? 'outline' : 'solid'}
+            intent={!flipGlobalThemeOnExamples ? 'tertiary' : 'neutral'}
             padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
             borderRadius="0px"
           >
@@ -62,8 +61,8 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
 }
 
 export const ComponentExamplesPage = ({ pageKey }: { pageKey: PageKey.core | PageKey.pro }) => {
-  const examplesTheme = useAppStore(state => state.examplesTheme)
-  const setExamplesTheme = useAppStore(state => state.setExamplesTheme)
+  const flipGlobalThemeOnExamples = useAppStore(state => state.flipGlobalThemeOnExamples)
+  const setFlipGlobalThemeOnExamples = useAppStore(state => state.setFlipGlobalThemeOnExamples)
 
   const corePageItemKey = useCorePageStore(state => state.itemKey)
   const proPageItemKey = useProPageStore(state => state.itemKey)
@@ -76,22 +75,12 @@ export const ComponentExamplesPage = ({ pageKey }: { pageKey: PageKey.core | Pag
     <Box maxInlineSize="55rem">
       {!meta[itemKeyPascal][itemKeyPascal].hideExamplesThemeToggle ? (
         <>
-          <Text bold typography="small">
-            Theme
-          </Text>
-          <Segment>
-            {THEMES.map(key => (
-              <Segment.Item key={key}>
-                <Button
-                  intent={key === examplesTheme ? 'inverse' : 'tertiary'}
-                  size="xs"
-                  tagAttrs={{ onClick: () => setExamplesTheme(key) }}
-                >
-                  {sentenceCase(key)}
-                </Button>
-              </Segment.Item>
-            ))}
-          </Segment>
+          <Flex alignItems="center" columnGap="15px">
+            <Switch size="xs" checked={flipGlobalThemeOnExamples} onChange={setFlipGlobalThemeOnExamples} />
+            <Text bold typography="small">
+              Use flipped theme
+            </Text>
+          </Flex>
           <Spacer blockSize="50px" />
         </>
       ) : null}
