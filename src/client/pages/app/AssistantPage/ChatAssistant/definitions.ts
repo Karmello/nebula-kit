@@ -1,9 +1,9 @@
 export type ChatHistory = Array<{ role: 'system' | 'user'; content: string }>
 
-export const CHAT_ONGOING_REQUEST_TEXT = 'Captain Nebula is thinking ...'
 export const CHAT_LINE_HEIGHT = 1.7
 
 export const PROMPT_PLACEHOLDER = 'Ask me anything ...'
+export const PROMPT_ONGOING_REQUEST_TEXT = 'Captain Nebula is thinking ...'
 export const PROMPT_DEFAULT_ROWS = 1
 export const PROMPT_MAX_HEIGHT_PX = 295
 

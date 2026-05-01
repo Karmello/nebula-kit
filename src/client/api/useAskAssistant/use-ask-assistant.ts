@@ -10,6 +10,7 @@ export const useAskAssistant = () => {
     path: '/assistant',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
+    minLoadingTime: 1000,
   })
 
   return {

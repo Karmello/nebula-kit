@@ -1,18 +1,17 @@
 import { RefObject } from 'react'
 
-import { Box, Flex, Text } from 'lib/components'
+import { Box, Flex } from 'lib/components'
 
-import { ChatHistory, CHAT_ONGOING_REQUEST_TEXT } from '../../definitions'
+import { ChatHistory } from '../../definitions'
 import { SystemMessage, UserMessage } from './components'
 
 type ChatProps = {
   tagRef: RefObject<HTMLDivElement>
   chatHistory: ChatHistory
-  isMakingRequest: boolean
   handleQuestionClick: (question: string) => void
 }
 
-export const Chat = ({ tagRef, chatHistory, isMakingRequest, handleQuestionClick }: ChatProps) => {
+export const Chat = ({ tagRef, chatHistory, handleQuestionClick }: ChatProps) => {
   return (
     <Box
       tagRef={tagRef}
@@ -32,11 +31,6 @@ export const Chat = ({ tagRef, chatHistory, isMakingRequest, handleQuestionClick
             <UserMessage key={key} content={content} />
           )
         )}
-        {isMakingRequest ? (
-          <Text color="blue" intent="primary">
-            {CHAT_ONGOING_REQUEST_TEXT}
-          </Text>
-        ) : null}
       </Flex>
     </Box>
   )

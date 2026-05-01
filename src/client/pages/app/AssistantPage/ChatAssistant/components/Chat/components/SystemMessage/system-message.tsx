@@ -20,7 +20,7 @@ export const SystemMessage = ({ content, handleQuestionClick }: SystemMessagePro
         remarkPlugins={[remarkGfm]}
         urlTransform={url => url}
         components={{
-          code({ className, children }) {
+          code({ children }) {
             return (
               <Box
                 tag="code"

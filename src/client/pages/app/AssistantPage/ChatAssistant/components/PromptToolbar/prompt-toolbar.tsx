@@ -8,14 +8,16 @@ type PromptToolbarProps = {
 
 export const PromptToolbar = ({ loading, disabled, onClick }: PromptToolbarProps) => {
   return (
-    <Box drawable theme="flipped" variant="solid" intent="neutral" padding="6px">
-      <Flex justifyContent="space-between" alignItems="flex-end">
+    <Box drawable theme="flipped" variant="solid" intent="neutral" padding="7px" paddingLeft="17px">
+      <Flex justifyContent="space-between" alignItems="center">
         <Tooltip
+          intent="primary"
+          variant="outline"
           minInlineSize={300}
           maxInlineSize={300}
           content="ENTER sends | SHIFT + ENTER adds a new line | TAB returns to the prompt"
         >
-          <Icon name="keyboard" size="17px" />
+          <Icon name="keyboard" size="22px" />
         </Tooltip>
         <Button
           intent="primary"

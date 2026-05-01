@@ -124,7 +124,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   drawable: {
     options: ['boolean'],
     description:
-      'Enables visual rendering for the Box surface. When enabled, the Box participates in theming, colors, variants and intents. When disabled, it behaves as a neutral structural container with no visual styling applied.',
+      'Enables visual rendering. When true, the Box can draw a surface using variant and intent. When false, it is structural and has no visual styling.',
   },
   hidden: {
     options: ['boolean'],
@@ -335,7 +335,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: BOX_THEMES,
     isResponsive: true,
     description:
-      'Sets a local theme boundary for the component and its drawable descendants. Overrides the inherited theme for this subtree without affecting the rest of the app. When set to flipped, it inverts the currently inherited theme.',
+      'Sets a local theme for the component and its drawable descendants. Overrides the inherited theme for this subtree. Use flipped to invert the inherited theme.',
   },
   top: {
     options: ['CSS'],

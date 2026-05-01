@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Box, Flex, Segment, Spacer } from 'lib/components'
 import { useAskAssistant } from 'client/api'
 
-import { CHAT_INTRO_TEXT, ChatHistory, PROMPT_MAX_HEIGHT_PX } from './definitions'
+import { CHAT_INTRO_TEXT, ChatHistory, PROMPT_MAX_HEIGHT_PX, PROMPT_ONGOING_REQUEST_TEXT } from './definitions'
 import { Chat, Prompt, ContextMenu, PromptToolbar } from './components'
 
 export const ChatAssistant = () => {
@@ -32,10 +32,11 @@ export const ChatAssistant = () => {
 
   const handleSubmit = async (prompt: string) => {
     if (!prompt) return
-    setPrompt('')
+    setPrompt(PROMPT_ONGOING_REQUEST_TEXT)
     setChatHistory(state => [...state, { role: 'user', content: prompt }])
     textareaRef.current.style.height = 'auto'
     const res = await askAssistant.sendRequest({ prompt: JSON.stringify([...chatHistory, { role: 'user', content: prompt }]) })
+    setPrompt('')
     if (res.ok && res.data.answer) {
       setChatHistory(state => [...state, { role: 'system', content: res.data.answer }])
     }
@@ -73,12 +74,7 @@ export const ChatAssistant = () => {
       <Spacer blockSize="10px" />
       <Segment tagAttrs={{ style: { blockSize: 'calc(100% - 50px)' } }} flexDirection="column">
         <Segment.Item flex="1" tagAttrs={{ style: { overflowY: 'hidden' } }}>
-          <Chat
-            tagRef={chatScrollingAreaRef}
-            chatHistory={chatHistory}
-            isMakingRequest={askAssistant.isMakingRequest}
-            handleQuestionClick={handleQuestionClick}
-          />
+          <Chat tagRef={chatScrollingAreaRef} chatHistory={chatHistory} handleQuestionClick={handleQuestionClick} />
         </Segment.Item>
         <Segment.Item>
           <Prompt

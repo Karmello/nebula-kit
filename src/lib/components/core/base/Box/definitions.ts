@@ -9,7 +9,6 @@ import {
   CssTextAlign,
   CssVisibility,
   RespValue,
-  Theme,
   THEMES,
 } from 'lib/definitions'
 

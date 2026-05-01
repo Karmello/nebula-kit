@@ -26,14 +26,13 @@ html[data-theme='dark'],
   --l-23: var(--lightness-2);
   --l-24: var(--lightness-1);
   --l-25: var(--lightness-0);
+}
 
-  --neb-background: hsl(var(--h) var(--s) var(--l-0));
-  --neb-text: hsl(var(--h) var(--s) var(--l-25));
-  --neb-focus-ring-color: hsl(var(--h) var(--s) var(--l-25));
-
+.neb-box[data-neb-box-theme='dark'] {
   --solid-secondary-text-l: var(--l-25);
   --solid-primary-text-l: var(--l-25);
   --solid-inverse-text-l: var(--l-0);
+
   --solid-secondary-elevated-text-l: var(--l-0);
   --solid-primary-elevated-text-l: var(--l-0);
   --solid-tertiary-elevated-selected-text-l: var(--l-25);
