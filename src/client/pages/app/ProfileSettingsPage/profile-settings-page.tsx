@@ -32,7 +32,7 @@ export const ProfileSettingsPage = () => {
       show({ status: 'success', content: 'You successfully connected your Discord account.' })
       window.history.replaceState({}, '', PageKey.profileSettings)
     } else if (params.get('github') === 'connected') {
-      show({ status: 'success', content: 'You successfully connected your Github account.' })
+      show({ status: 'success', content: 'You successfully connected your GitHub account.' })
       window.history.replaceState({}, '', PageKey.profileSettings)
     }
   }, [search])

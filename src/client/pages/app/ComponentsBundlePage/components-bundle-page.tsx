@@ -1,25 +1,12 @@
 import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
-import meta from 'client/meta'
 import { Box, Button, Flex, Grid, Link, Section, Spacer, Text } from 'lib/components'
+
+import { CORE_DATA, PRO_DATA } from './definitions'
 
 type Props = {
   bundle: 'core' | 'pro'
 }
-
-const CORE_DATA = Object.keys(meta)
-  .filter(key => meta[key][key].overview.bundle === 'core')
-  .map(key => ({
-    name: key,
-    title: meta[key][key].overview.title,
-  }))
-
-const PRO_DATA = Object.keys(meta)
-  .filter(key => meta[key][key].overview.bundle === 'pro')
-  .map(key => ({
-    name: key,
-    title: meta[key][key].overview.title,
-  }))
 
 export const ComponentsBundlePage = ({ bundle }: Props) => {
   const navigateTo = useNavigateTo()

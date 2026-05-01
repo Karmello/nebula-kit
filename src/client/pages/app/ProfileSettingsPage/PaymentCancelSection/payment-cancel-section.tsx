@@ -30,7 +30,7 @@ export const PaymentCancelSection = ({
           <Text intent="neutral">you get disconnected from Discord thus you lose your badge</Text>
         </MarkerList.Item>
         <MarkerList.Item>
-          <Text intent="neutral">you get disconnected from Github thus you lose access to the private roadmap</Text>
+          <Text intent="neutral">you get disconnected from GitHub thus you lose access to the private roadmap</Text>
         </MarkerList.Item>
         <MarkerList.Item>
           <Text intent="neutral">unused time in your billing period is not refunded</Text>

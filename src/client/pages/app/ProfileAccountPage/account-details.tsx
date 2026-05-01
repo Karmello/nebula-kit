@@ -133,7 +133,7 @@ export default () => {
         </Table.Row>
         <Table.Row>
           <Table.Cell colSpan={1}>
-            <Text>Github connection status</Text>
+            <Text>GitHub connection status</Text>
           </Table.Cell>
           <Table.Cell colSpan={2} blockSize="60px">
             {getUser.data ? (

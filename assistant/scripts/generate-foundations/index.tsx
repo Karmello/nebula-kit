@@ -41,7 +41,7 @@ const includedPages = [
   'PrivacyPolicy',
 ] as const
 
-const outputDir = path.resolve(process.cwd(), 'assistant/generated/foundations')
+const outputDir = path.resolve(process.cwd(), 'assistant/generated')
 
 const run = async () => {
   await fs.mkdir(outputDir, { recursive: true })

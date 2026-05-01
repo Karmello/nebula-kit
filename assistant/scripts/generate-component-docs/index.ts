@@ -4,7 +4,7 @@ import path from 'node:path'
 import META from '../../../src/client/meta/index'
 import { generateDoc } from './helpers/generate-doc'
 
-const outputDir = path.resolve(process.cwd(), 'assistant/generated/components')
+const outputDir = path.resolve(process.cwd(), 'assistant/generated')
 
 const run = async () => {
   await fs.mkdir(outputDir, { recursive: true })
