@@ -29,6 +29,8 @@ html[data-theme='light'],
 }
 
 .neb-box[data-neb-box-theme='light'] {
+  --neb-focus-ring-color: hsl(var(--h) var(--s) var(--l-25));
+
   --solid-secondary-text-l: var(--l-0);
   --solid-primary-text-l: var(--l-0);
   --solid-inverse-text-l: var(--l-0);
