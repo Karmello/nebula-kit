@@ -335,7 +335,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: BOX_THEMES,
     isResponsive: true,
     description:
-      'Sets a local theme for the component and its drawable descendants. Overrides the inherited theme for this subtree. Use flipped to invert the inherited theme.',
+      'Sets a local theme boundary for the component and its drawable descendants. Overrides the resolved theme for this subtree. Use flipped to invert the resolved theme at this boundary.',
   },
   top: {
     options: ['CSS'],
