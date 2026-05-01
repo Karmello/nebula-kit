@@ -35,7 +35,7 @@ const includedPages = [
   'Breakpoints',
   'Typography',
   'IntentsAndVariants',
-  'ThemeIsland',
+  'StylingIsland',
   'TermsOfUse',
   'License',
   'PrivacyPolicy',
