@@ -1,2 +1,2 @@
-export * from './SystemMessage'
+export * from './AssistantMessage'
 export * from './UserMessage'

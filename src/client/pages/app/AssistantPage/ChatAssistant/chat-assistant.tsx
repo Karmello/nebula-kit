@@ -3,11 +3,19 @@ import { useEffect, useRef, useState } from 'react'
 import { Box, Flex, Segment, Spacer } from 'lib/components'
 import { useAskAssistant } from 'client/api'
 
-import { CHAT_INTRO_TEXT, ChatHistory, PROMPT_MAX_HEIGHT_PX, PROMPT_ONGOING_REQUEST_TEXT } from './definitions'
+import {
+  CHAT_INTRO_TEXT,
+  ChatHistory,
+  PROMPT_MAX_HEIGHT_PX,
+  PROMPT_MAX_LENGTH,
+  PROMPT_ONGOING_REQUEST_TEXT,
+  CHAT_ASSISTANT_MAX_MESSAGES_SENT,
+} from './definitions'
+
 import { Chat, Prompt, ContextMenu, PromptToolbar } from './components'
 
 export const ChatAssistant = () => {
-  const [chatHistory, setChatHistory] = useState<ChatHistory>([{ role: 'system', content: CHAT_INTRO_TEXT }])
+  const [chatHistory, setChatHistory] = useState<ChatHistory>([{ role: 'assistant', content: CHAT_INTRO_TEXT }])
   const [prompt, setPrompt] = useState<string>('')
 
   const askAssistant = useAskAssistant()
@@ -35,10 +43,19 @@ export const ChatAssistant = () => {
     setPrompt(PROMPT_ONGOING_REQUEST_TEXT)
     setChatHistory(state => [...state, { role: 'user', content: prompt }])
     textareaRef.current.style.height = 'auto'
-    const res = await askAssistant.sendRequest({ prompt: JSON.stringify([...chatHistory, { role: 'user', content: prompt }]) })
+
+    const messagesToSend = [
+      ...chatHistory.slice(1).slice(-(CHAT_ASSISTANT_MAX_MESSAGES_SENT - 1)),
+      { role: 'user', content: prompt },
+    ]
+    const res = await askAssistant.sendRequest({ messages: messagesToSend })
+
     setPrompt('')
+
     if (res.ok && res.data.answer) {
-      setChatHistory(state => [...state, { role: 'system', content: res.data.answer }])
+      setChatHistory(state => [...state, { role: 'assistant', content: res.data.answer }])
+    } else {
+      setChatHistory(state => state.slice(0, -1))
     }
   }
 
@@ -47,8 +64,8 @@ export const ChatAssistant = () => {
       setChatHistory([])
       setPrompt('')
       setTimeout(() => {
-        setChatHistory([{ role: 'system', content: CHAT_INTRO_TEXT }])
-      }, 150)
+        setChatHistory([{ role: 'assistant', content: CHAT_INTRO_TEXT }])
+      }, 500)
     }
   }
 
@@ -97,7 +114,11 @@ export const ChatAssistant = () => {
           <PromptToolbar
             loading={askAssistant.isMakingRequest}
             disabled={!prompt && !askAssistant.isMakingRequest}
-            onClick={() => handleSubmit(prompt)}
+            lengthStatus={`${prompt.length} / ${PROMPT_MAX_LENGTH}`}
+            handleSend={() => handleSubmit(prompt)}
+            handleCancel={() => {
+              askAssistant.cancelRequest()
+            }}
           />
         </Segment.Item>
       </Segment>

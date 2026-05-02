@@ -25,6 +25,10 @@ const TEXTAREA_PROPS_META: ComponentMeta<TextareaProps>['props'] = {
     defaultValue: String(DEFAULT_TEXTAREA_INTENT),
   },
   maxInlineSize: BOX_PROPS_META.maxInlineSize,
+  maxLength: {
+    options: ['number'],
+    description: 'Maximum number of characters allowed for the textarea value.',
+  },
   minInlineSize: BOX_PROPS_META.minInlineSize,
   onBlur: {
     options: ['event => void'],

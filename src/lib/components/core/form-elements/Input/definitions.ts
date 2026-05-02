@@ -59,6 +59,7 @@ type InputOwnProps = {
   endAffix?: (props: InputAffixProps) => ReactNode
   placeholder?: string
   readOnly?: boolean
+  maxLength?: number
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'input'>, 'tagAttrs' | 'tagRef'>

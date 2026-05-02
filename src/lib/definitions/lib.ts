@@ -31,6 +31,7 @@ export const ICON_NAMES = [
   'chevrons-up',
   'circle-alert',
   'circle-user',
+  'circle-x',
   'close',
   'code',
   'component',

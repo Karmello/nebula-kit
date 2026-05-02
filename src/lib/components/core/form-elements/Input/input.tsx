@@ -35,6 +35,7 @@ export const Input = ({
   endAffix,
   placeholder,
   readOnly,
+  maxLength,
 }: InputProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
@@ -75,6 +76,7 @@ export const Input = ({
             onBlur,
             placeholder,
             readOnly,
+            maxLength,
           }}
           tagRef={tagRef}
           drawable

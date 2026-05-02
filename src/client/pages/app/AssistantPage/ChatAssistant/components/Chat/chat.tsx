@@ -3,7 +3,7 @@ import { RefObject } from 'react'
 import { Box, Flex } from 'lib/components'
 
 import { ChatHistory } from '../../definitions'
-import { SystemMessage, UserMessage } from './components'
+import { AssistantMessage, UserMessage } from './components'
 
 type ChatProps = {
   tagRef: RefObject<HTMLDivElement>
@@ -25,8 +25,8 @@ export const Chat = ({ tagRef, chatHistory, handleQuestionClick }: ChatProps) =>
     >
       <Flex flexDirection="column" rowGap="30px">
         {chatHistory.map(({ role, content }, key) =>
-          role === 'system' ? (
-            <SystemMessage key={key} content={content} handleQuestionClick={handleQuestionClick} />
+          role === 'assistant' ? (
+            <AssistantMessage key={key} content={content} handleQuestionClick={handleQuestionClick} />
           ) : (
             <UserMessage key={key} content={content} />
           )

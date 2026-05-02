@@ -6,11 +6,15 @@ export type UseAskAssistantError = { error: string }
 export type UseAskAssistantRes = UseMakeApiRequestRes<UseAskAssistantSuccess, UseAskAssistantError>
 
 export const useAskAssistant = () => {
-  const { code, data, error, isMakingRequest, sendRequest } = useMakeApiRequest<UseAskAssistantSuccess, UseAskAssistantError>({
+  const { code, data, error, isMakingRequest, sendRequest, cancelRequest } = useMakeApiRequest<
+    UseAskAssistantSuccess,
+    UseAskAssistantError
+  >({
     path: '/assistant',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     minLoadingTime: 1000,
+    timeout: 60_000,
   })
 
   return {
@@ -19,5 +23,6 @@ export const useAskAssistant = () => {
     error,
     isMakingRequest,
     sendRequest,
+    cancelRequest,
   }
 }

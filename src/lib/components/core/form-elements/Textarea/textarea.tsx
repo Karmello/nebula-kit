@@ -41,6 +41,7 @@ export const Textarea = ({
   resize = DEFAULT_TEXTAREA_RESIZE,
   placeholder,
   readOnly,
+  maxLength,
 }: TextareaProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
@@ -74,6 +75,7 @@ export const Textarea = ({
         rows,
         placeholder,
         readOnly,
+        maxLength,
       }}
       tagRef={tagRef}
       drawable

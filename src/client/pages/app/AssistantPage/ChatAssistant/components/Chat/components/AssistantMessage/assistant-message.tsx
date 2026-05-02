@@ -2,18 +2,18 @@ import { Children, ReactElement, ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-import { Box, Button } from 'lib/components'
+import { Box, Button, Divider } from 'lib/components'
 import { CodeSnippet } from 'client/components'
 import { CODE_SNIPPET_LANGS } from 'client/components/meta/CodeSnippet/definitions'
 
 import { CHAT_LINE_HEIGHT } from '../../../../definitions'
 
-type SystemMessageProps = {
+type AssistantMessageProps = {
   content: string
   handleQuestionClick: (question: string) => void
 }
 
-export const SystemMessage = ({ content, handleQuestionClick }: SystemMessageProps) => {
+export const AssistantMessage = ({ content, handleQuestionClick }: AssistantMessageProps) => {
   return (
     <Box tagAttrs={{ style: { lineHeight: CHAT_LINE_HEIGHT } }} inlineSize="100%">
       <ReactMarkdown
@@ -63,6 +63,9 @@ export const SystemMessage = ({ content, handleQuestionClick }: SystemMessagePro
             }
 
             return <a href={href}>{children}</a>
+          },
+          hr() {
+            return <Divider intent="muted" marginTop="35px" />
           },
         }}
       >
