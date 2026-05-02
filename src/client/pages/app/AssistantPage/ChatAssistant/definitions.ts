@@ -1,6 +1,6 @@
 export type ChatHistory = Array<{ role: 'assistant' | 'user'; content: string }>
 
-export const CHAT_ASSISTANT_MAX_MESSAGES_SENT = 10
+export const CHAT_ASSISTANT_MAX_MESSAGES_SENT = 2
 
 export const CHAT_INTRO_TEXT = `**Hi, I'm Captain Nebula !**
 
@@ -22,7 +22,7 @@ Try asking:
 
 export const CHAT_LINE_HEIGHT = 1.7
 
-export const PROMPT_PLACEHOLDER = 'Ask me anything ...'
+export const PROMPT_PLACEHOLDER = 'Ask a question or refine the last answer ...'
 export const PROMPT_ONGOING_REQUEST_TEXT = 'Captain Nebula is thinking ...'
 export const PROMPT_DEFAULT_ROWS = 1
 export const PROMPT_MAX_HEIGHT_PX = 295
