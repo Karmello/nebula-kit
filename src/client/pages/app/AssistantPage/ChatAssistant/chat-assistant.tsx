@@ -78,6 +78,7 @@ export const ChatAssistant = () => {
 
   useEffect(() => {
     if (chatHistory.length) {
+      window.scrollTo(0, 0)
       chatScrollingAreaRef.current.scrollTop = chatScrollingAreaRef.current.scrollHeight
       focusAnchorRef.current.focus()
     }

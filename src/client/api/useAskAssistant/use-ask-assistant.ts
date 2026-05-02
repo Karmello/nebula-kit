@@ -1,4 +1,7 @@
+import { useEffect } from 'react'
+
 import { useMakeApiRequest, UseMakeApiRequestRes } from 'client/hooks'
+import { useSnackbar } from 'lib/components'
 
 export type UseAskAssistantSuccess = { answer: string }
 export type UseAskAssistantError = { error: string }
@@ -16,6 +19,14 @@ export const useAskAssistant = () => {
     minLoadingTime: 1000,
     timeout: 60_000,
   })
+
+  const { show } = useSnackbar()
+
+  useEffect(() => {
+    if (error) {
+      show({ status: 'error', content: 'Something went wrong.' })
+    }
+  }, [error])
 
   return {
     code,
