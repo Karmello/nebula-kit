@@ -13,18 +13,25 @@ type ChatProps = {
 
 export const Chat = ({ tagRef, chatHistory, handleQuestionClick }: ChatProps) => {
   return (
-    <Box tagRef={tagRef} drawable variant="outline" intent="muted" blockSize="100%" overflowY="hidden" borderBottomWidth="0px">
-      <Box margin="20px" overflowX="auto">
-        <Flex flexDirection="column" rowGap="30px">
-          {chatHistory.map(({ role, content }, key) =>
-            role === 'assistant' ? (
-              <AssistantMessage key={key} content={content} handleQuestionClick={handleQuestionClick} />
-            ) : (
-              <UserMessage key={key} content={content} />
-            )
-          )}
-        </Flex>
-      </Box>
+    <Box
+      tagRef={tagRef}
+      drawable
+      variant="outline"
+      intent="muted"
+      blockSize="100%"
+      overflowY="auto"
+      padding="20px"
+      borderBottomWidth="0px"
+    >
+      <Flex flexDirection="column" rowGap="30px">
+        {chatHistory.map(({ role, content }, key) =>
+          role === 'assistant' ? (
+            <AssistantMessage key={key} content={content} handleQuestionClick={handleQuestionClick} />
+          ) : (
+            <UserMessage key={key} content={content} />
+          )
+        )}
+      </Flex>
     </Box>
   )
 }

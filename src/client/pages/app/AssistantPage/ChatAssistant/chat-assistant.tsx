@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react'
 import { Box, Flex, Segment, Spacer } from 'lib/components'
 import { useAskAssistant } from 'client/api'
 
+import { Chat, Prompt, ContextMenu, PromptToolbar } from './components'
+
 import {
   CHAT_INTRO_TEXT,
   ChatHistory,
@@ -11,8 +13,6 @@ import {
   PROMPT_ONGOING_REQUEST_TEXT,
   CHAT_ASSISTANT_MAX_MESSAGES_SENT,
 } from './definitions'
-
-import { Chat, Prompt, ContextMenu, PromptToolbar } from './components'
 
 export const ChatAssistant = () => {
   const [chatHistory, setChatHistory] = useState<ChatHistory>([{ role: 'assistant', content: CHAT_INTRO_TEXT }])
