@@ -35,6 +35,7 @@ export const RELEASE_INFO: Record<
     timestamp: 1777258833132,
     changelog: {
       main: [
+        'reduced final CSS bundle size from ~176 KB to ~43 KB',
         'completely rebuilt the styling engine around explicit state and deterministic resolution - styling context (theme, brand, color) is now resolved in React and expressed directly on the DOM, eliminating implicit CSS inheritance and cascade-driven behavior',
         'replaced the previous context-based token layer with a simplified, scoped token system - CSS now acts as a pure rendering layer instead of a logic engine',
         'refined the color token system to align with the new architecture, improving consistency across themes, brands and surfaces while keeping behavior predictable and composable',
