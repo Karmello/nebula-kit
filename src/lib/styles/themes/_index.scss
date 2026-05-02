@@ -3,8 +3,3 @@
 
 @use './dark/dark.scss';
 @use './dark/dark-main-tokens.scss';
-
-html {
-  --neb-background: hsl(var(--h) var(--s) var(--l-0));
-  --neb-text: hsl(var(--h) var(--s) var(--l-25));
-}
