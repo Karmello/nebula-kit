@@ -48,6 +48,7 @@ export const ChatAssistant = () => {
       ...chatHistory.slice(1).slice(-(CHAT_ASSISTANT_MAX_MESSAGES_SENT - 1)),
       { role: 'user', content: prompt },
     ]
+
     const res = await askAssistant.sendRequest({ messages: messagesToSend })
 
     setPrompt('')
