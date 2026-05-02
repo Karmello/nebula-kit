@@ -12,7 +12,7 @@ export const Hero = () => {
       alignItems="center"
       flexDirection={{ base: 'column', md: 'row', lg: 'column', xl: 'row' }}
     >
-      <Flex.Item>
+      <Flex.Item flex="1">
         <Text typography="h6">
           React UI system built on composition and prop inheritance, with strict rules governing component appearance and
           behavior. Designed to reduce UI entropy and keep interfaces consistent and maintainable as products grow over time.
@@ -41,7 +41,16 @@ export const Hero = () => {
           </Link>
         </Flex>
       </Flex.Item>
-      <Image src="/captain-nebula.webp" inlineSize="225px" blockSize="225px" alt="Captain Nebula" fetchPriority="high" />
+      <Flex.Item>
+        <Link
+          href={PageKey.assistant}
+          onClick={() => {
+            navigateTo(PageKey.assistant)
+          }}
+        >
+          <Image src="/captain-nebula.webp" inlineSize="225px" blockSize="225px" alt="Captain Nebula" fetchPriority="high" />
+        </Link>
+      </Flex.Item>
     </Flex>
   )
 }
