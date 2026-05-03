@@ -91,13 +91,13 @@ type BoxOwnProps = {
   paddingBottom?: RespValue<LengthValue>
   paddingLeft?: RespValue<LengthValue>
   // margin
-  margin?: RespValue<CssMargin | LengthValue>
-  marginInline?: RespValue<LengthValue>
-  marginBlock?: RespValue<LengthValue>
-  marginTop?: RespValue<LengthValue>
-  marginRight?: RespValue<LengthValue>
-  marginBottom?: RespValue<LengthValue>
-  marginLeft?: RespValue<LengthValue>
+  margin?: RespValue<LengthValue | CssMargin>
+  marginInline?: RespValue<LengthValue | 'auto'>
+  marginBlock?: RespValue<LengthValue | 'auto'>
+  marginTop?: RespValue<LengthValue | 'auto'>
+  marginRight?: RespValue<LengthValue | 'auto'>
+  marginBottom?: RespValue<LengthValue | 'auto'>
+  marginLeft?: RespValue<LengthValue | 'auto'>
 }
 
 export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & BoxOwnProps

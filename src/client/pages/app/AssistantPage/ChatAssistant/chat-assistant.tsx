@@ -86,7 +86,7 @@ export const ChatAssistant = () => {
   }, [chatHistory])
 
   return (
-    <Box blockSize={{ base: 'calc(100vh - 150px)', lg: 'calc(100vh - 175px)' }}>
+    <Box blockSize={{ base: 'calc(100vh - 165px)', lg: 'calc(100vh - 195px)' }}>
       <Flex justifyContent="flex-end">
         <ContextMenu onChange={handleContextMenuChange} disabled={askAssistant.isMakingRequest} />
       </Flex>

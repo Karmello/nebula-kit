@@ -92,7 +92,7 @@ export const DropdownListMenu = () => {
               intent={intent}
               color={color}
               blockSize={`${finalVisibleItemsCount * itemHeight}px`}
-              minInlineSize={`${triggerWidth}px`}
+              minInlineSize={triggerWidth !== undefined ? `${triggerWidth}px` : undefined}
               overflow="hidden"
               borderTopWidth="0px"
               borderTopLeftRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
