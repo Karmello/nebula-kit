@@ -1,5 +1,5 @@
 import { HtmlTagProps } from 'lib/components'
-import { BoxIntent } from 'lib/components/core/base/Box/definitions'
+import { BoxIntent, BoxProps } from 'lib/components/core/base/Box/definitions'
 import { LengthValue, TShirtSize } from 'lib/definitions'
 
 export const DIALOG_SIZE_MAP: Record<DialogSize, LengthValue> = {
@@ -9,12 +9,12 @@ export const DIALOG_SIZE_MAP: Record<DialogSize, LengthValue> = {
 }
 
 export const DIALOG_SIZES = ['sm', 'md', 'lg'] as const satisfies TShirtSize[]
+export const DIALOG_INTENT: BoxIntent = 'tertiary'
+export const DIALOG_PADDING: BoxProps['padding'] = '15px'
+export const DIALOG_RESIZE_DURATION = 200
+
 export const DEFAULT_DIALOG_SIZE: DialogProps['size'] = 'md'
 export const DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK: DialogProps['closeOnBackdropClick'] = false
-
-export const DIALOG_INTENT: BoxIntent = 'tertiary'
-export const DIALOG_PADDING: string = '15px'
-export const DIALOG_RESIZE_DURATION = 200
 
 export type DialogSize = (typeof DIALOG_SIZES)[number]
 

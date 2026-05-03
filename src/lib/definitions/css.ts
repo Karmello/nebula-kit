@@ -1,5 +1,7 @@
 // constants
 
+import { LengthValue } from './lib'
+
 export const CSS_TEXT_ALIGN = ['left', 'right', 'center', 'justify', 'start', 'end'] as const
 export const CSS_POINTER_EVENTS = ['auto', 'none'] as const
 export const CSS_DISPLAY = ['block', 'inline', 'inline-block', 'none', 'contents'] as const
@@ -89,3 +91,9 @@ export type CssLength =
   | `min(${string})`
   | `max(${string})`
   | 'auto'
+
+export type CssMargin =
+  | LengthValue
+  | `${string} ${string}`
+  | `${string} ${string} ${string}`
+  | `${string} ${string} ${string} ${string}`

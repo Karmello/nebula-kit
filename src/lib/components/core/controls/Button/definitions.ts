@@ -8,8 +8,8 @@ export const BUTTON_SIZE_CONFIG: Record<
   ButtonSize,
   {
     blockSize: LengthValue
-    paddingLeft: string
-    paddingRight: string
+    paddingLeft: LengthValue
+    paddingRight: LengthValue
     textScale: TextScale
     iconSize: string
   }

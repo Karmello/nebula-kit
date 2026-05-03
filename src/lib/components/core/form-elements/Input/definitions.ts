@@ -8,8 +8,8 @@ export const INPUT_SIZE_CONFIG: Record<
   InputSize,
   {
     blockSize: LengthValue
-    paddingLeft: string
-    paddingRight: string
+    paddingLeft: LengthValue
+    paddingRight: LengthValue
     fontSize: string
   }
 > = {

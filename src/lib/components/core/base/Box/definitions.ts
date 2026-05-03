@@ -3,6 +3,7 @@ import { ElementType } from 'react'
 import {
   COLORS,
   CssDisplay,
+  CssMargin,
   CssOverflow,
   CssPointerEvents,
   CssPosition,
@@ -76,27 +77,27 @@ type BoxOwnProps = {
   left?: RespValue<string>
   // size
   blockSize?: RespValue<LengthValue>
-  minBlockSize?: RespValue<string>
-  maxBlockSize?: RespValue<string>
+  minBlockSize?: RespValue<LengthValue>
+  maxBlockSize?: RespValue<LengthValue>
   inlineSize?: RespValue<LengthValue>
-  minInlineSize?: RespValue<string>
-  maxInlineSize?: RespValue<string>
+  minInlineSize?: RespValue<LengthValue>
+  maxInlineSize?: RespValue<LengthValue>
   // padding
   padding?: RespValue<LengthValue>
-  paddingInline?: RespValue<string>
-  paddingBlock?: RespValue<string>
-  paddingTop?: RespValue<string>
-  paddingRight?: RespValue<string>
-  paddingBottom?: RespValue<string>
-  paddingLeft?: RespValue<string>
+  paddingInline?: RespValue<LengthValue>
+  paddingBlock?: RespValue<LengthValue>
+  paddingTop?: RespValue<LengthValue>
+  paddingRight?: RespValue<LengthValue>
+  paddingBottom?: RespValue<LengthValue>
+  paddingLeft?: RespValue<LengthValue>
   // margin
-  margin?: RespValue<string>
-  marginInline?: RespValue<string>
-  marginBlock?: RespValue<string>
-  marginTop?: RespValue<string>
-  marginRight?: RespValue<string>
-  marginBottom?: RespValue<string>
-  marginLeft?: RespValue<string>
+  margin?: RespValue<CssMargin>
+  marginInline?: RespValue<LengthValue>
+  marginBlock?: RespValue<LengthValue>
+  marginTop?: RespValue<LengthValue>
+  marginRight?: RespValue<LengthValue>
+  marginBottom?: RespValue<LengthValue>
+  marginLeft?: RespValue<LengthValue>
 }
 
 export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & BoxOwnProps
