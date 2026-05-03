@@ -1,13 +1,13 @@
 import { ReactNode } from 'react'
 
 import { BoxProps, HtmlTagProps } from 'lib/components'
-import { Size } from 'lib/definitions'
+import { LengthValue, TShirtSize } from 'lib/definitions'
 import { TEXT_TYPOGRAPHY_CONFIG } from 'lib/components/core/base/Text/definitions'
 
 export const INPUT_SIZE_CONFIG: Record<
   InputSize,
   {
-    blockSize: string
+    blockSize: LengthValue
     paddingLeft: string
     paddingRight: string
     fontSize: string
@@ -42,7 +42,7 @@ export const INPUT_SIZE_CONFIG: Record<
 export const DEFAULT_INPUT_VARIANT: InputProps['variant'] = 'solid'
 export const DEFAULT_INPUT_INTENT: InputProps['intent'] = 'tertiary'
 export const DEFAULT_INPUT_SIZE: InputProps['size'] = 'md'
-export const INPUT_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies Size[]
+export const INPUT_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies TShirtSize[]
 
 export type InputSize = (typeof INPUT_SIZES)[number]
 

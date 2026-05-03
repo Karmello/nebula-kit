@@ -78,11 +78,11 @@ type BoxOwnProps = {
   blockSize?: RespValue<LengthValue>
   minBlockSize?: RespValue<string>
   maxBlockSize?: RespValue<string>
-  inlineSize?: RespValue<string>
+  inlineSize?: RespValue<LengthValue>
   minInlineSize?: RespValue<string>
   maxInlineSize?: RespValue<string>
   // padding
-  padding?: RespValue<string>
+  padding?: RespValue<LengthValue>
   paddingInline?: RespValue<string>
   paddingBlock?: RespValue<string>
   paddingTop?: RespValue<string>

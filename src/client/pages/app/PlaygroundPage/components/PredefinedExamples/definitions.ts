@@ -110,6 +110,7 @@ export const PRESETS: Record<string, object[]> = {
     {
       color: 'blue',
       inlineSize: '250px',
+      children: '',
     },
   ] as SelectProps[],
   Switch: [

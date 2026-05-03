@@ -8,6 +8,7 @@ import {
   CSS_POSITION,
   CSS_TEXT_ALIGN,
   CSS_VISIBILITY,
+  TSHIRT_SIZES,
 } from 'lib/definitions'
 
 import { BoxProps, BOX_VARIANTS, BOX_INTENTS, BOX_SURFACES, BOX_THEMES } from 'lib/components/core/base/Box'
@@ -32,7 +33,8 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     tooltip: COLORS,
   },
   blockSize: {
-    options: ['CSS'],
+    options: ['LengthValue'],
+    tooltip: [...TSHIRT_SIZES, 'CssLength'],
     isResponsive: true,
     description: 'Logical height.',
     link: true,
@@ -253,7 +255,8 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     tooltip: CSS_OVERFLOW,
   },
   padding: {
-    options: ['CSS'],
+    options: ['LengthValue'],
+    tooltip: [...TSHIRT_SIZES, 'CssLength'],
     isResponsive: true,
     description: 'Padding for all sides.',
     link: true,

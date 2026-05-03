@@ -3,11 +3,12 @@ import classNames from 'classnames'
 
 import { Box, Slide } from 'lib/components'
 import { BUTTON_SIZE_CONFIG } from 'lib/components/core/controls/Button'
-import { withPrefix } from 'lib/helpers'
+import { resolveLengthValue, withPrefix } from 'lib/helpers'
 
 import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SIZE, SWITCH_BORDER_MULTIPLIER, SwitchProps } from './definitions'
 
 import './switch.scss'
+import { LengthValue } from 'lib/definitions'
 
 export const Switch = ({
   // Box
@@ -42,7 +43,8 @@ export const Switch = ({
     onChange?.(checked)
   }
 
-  const thumbBlockSize = `calc(${BUTTON_SIZE_CONFIG[size || 'md'].blockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})`
+  const resolvedBlockSize = resolveLengthValue(BUTTON_SIZE_CONFIG[size || 'md'].blockSize)
+  const thumbBlockSize = `calc(${resolvedBlockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})` as LengthValue
 
   return (
     <Box
@@ -71,14 +73,14 @@ export const Switch = ({
         intent={intent}
         color={color}
         blockSize={BUTTON_SIZE_CONFIG[size || 'md'].blockSize}
-        inlineSize={`calc(${BUTTON_SIZE_CONFIG[size || 'md'].blockSize} * 2 - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})`}
+        inlineSize={`calc(${resolvedBlockSize} * 2 - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})`}
       />
       <Slide
         tagAttrs={{
           className: withPrefix('switch-thumb'),
           style: {
             top: `calc(var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`,
-            left: `calc(${BUTTON_SIZE_CONFIG[size || 'md'].blockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`,
+            left: `calc(${resolvedBlockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`,
           },
         }}
         from="left"

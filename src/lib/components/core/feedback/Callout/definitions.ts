@@ -1,17 +1,17 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
-import { IconName, Size } from 'lib/definitions'
+import { IconName, TShirtSize } from 'lib/definitions'
 import { BoxVariant, BoxColor } from 'lib/components/core/base/Box'
 import { TextTypography } from 'lib/components/core/base/Text'
 
 export const CALLOUT_SIZE_CONFIG: Record<
   CalloutSize,
-  { typography: Extract<TextTypography, 'h6' | 'h5' | 'h4' | 'h3' | 'h2'>; spacing: string }
+  { typography: Extract<TextTypography, 'h6' | 'h5' | 'h4' | 'h3' | 'h2'>; spacing: TShirtSize }
 > = {
-  sm: { typography: 'h6', spacing: '16px' },
-  md: { typography: 'h5', spacing: '20px' },
-  lg: { typography: 'h4', spacing: '24px' },
-  xl: { typography: 'h3', spacing: '26px' },
-  xxl: { typography: 'h2', spacing: '30px' },
+  sm: { typography: 'h6', spacing: 'sm' },
+  md: { typography: 'h5', spacing: 'md' },
+  lg: { typography: 'h4', spacing: 'lg' },
+  xl: { typography: 'h3', spacing: 'xl' },
+  '2xl': { typography: 'h2', spacing: '2xl' },
 }
 
 export const CALLOUT_CONFIG: Record<CalloutStatus, { color: BoxColor; heading: string; iconName: IconName }> = {
@@ -27,7 +27,7 @@ export const DEFAULT_CALLOUT_INTENT: CalloutProps['intent'] = 'primary'
 export const DEFAULT_CALLOUT_STATUS: CalloutProps['status'] = 'info'
 
 export const CALLOUT_TAGS = ['div', 'section', 'article', 'aside'] as const
-export const CALLOUT_SIZES = ['sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies Size[]
+export const CALLOUT_SIZES = ['sm', 'md', 'lg', 'xl', '2xl'] as const satisfies TShirtSize[]
 export const CALLOUT_VARIANTS = ['solid', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
 export const CALLOUT_STATUSES = ['info', 'success', 'warning', 'error'] as const
 

@@ -1,8 +1,8 @@
 import { ImageProps } from 'lib/components'
 import { TextScale, TextTypography } from 'lib/components/core/base/Text'
-import { Size } from 'lib/definitions'
+import { LengthValue, TShirtSize } from 'lib/definitions'
 
-export const AVATAR_SIZES_MAP: Record<AvatarSize, { side: string; typography: TextTypography; scale: TextScale }> = {
+export const AVATAR_SIZES_MAP: Record<AvatarSize, { side: LengthValue; typography: TextTypography; scale: TextScale }> = {
   xs: {
     side: '50px',
     typography: 'lead',
@@ -28,7 +28,7 @@ export const AVATAR_SIZES_MAP: Record<AvatarSize, { side: string; typography: Te
     typography: 'h1',
     scale: 'regular',
   },
-  xxl: {
+  '2xl': {
     side: '300px',
     typography: 'h1',
     scale: 'regular',
@@ -38,7 +38,7 @@ export const AVATAR_SIZES_MAP: Record<AvatarSize, { side: string; typography: Te
 export const LOADER_DELAY = 150
 export const MIN_LOADER_VISIBLE_TIME = 300
 
-export const AVATAR_SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies Size[]
+export const AVATAR_SIZES = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const satisfies TShirtSize[]
 export const AVATAR_SHAPES = ['round', 'square'] as const
 
 export const DEFAULT_AVATAR_SIZE: AvatarProps['size'] = 'md'

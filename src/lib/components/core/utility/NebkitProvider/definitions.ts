@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-import { Size, Theme } from 'lib/definitions'
+import { TShirtSize, Theme } from 'lib/definitions'
 import { BoxColor } from 'lib/components/core/base/Box'
 
 export const DEFAULT_NEBKIT_THEME: Theme = 'light'
@@ -14,7 +14,7 @@ export const NEBKIT_SIZES_MAP: {
   borderRadiusSize: { xs: '1px', sm: '3px', md: '5px', lg: '8px', xl: '12px' },
 }
 
-export const NEBKIT_BORDER_RADIUS_SIZES = ['xs', 'sm', 'md', 'lg', 'xl'] as const satisfies Size[]
+export const NEBKIT_BORDER_RADIUS_SIZES = ['xs', 'sm', 'md', 'lg', 'xl'] as const satisfies TShirtSize[]
 export const NEBKIT_RIPPLE_MODES = ['off', 'default', 'emphasized'] as const
 
 export type NebkitBorderRadiusSize = (typeof NEBKIT_BORDER_RADIUS_SIZES)[number]

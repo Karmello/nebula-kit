@@ -92,8 +92,6 @@ export const Box = <T extends ElementType = 'div'>({
   const finalBrand = brand ?? ctxBrand
   const finalColor = color ?? finalBrand
 
-  const resolvedBlockSize = blockSize ? resolveLengthValue(blockSize) : undefined
-
   useLayoutEffect(() => {
     const el = finalRef?.current as Element
     if (!el) return
@@ -146,13 +144,13 @@ export const Box = <T extends ElementType = 'div'>({
       right,
       bottom,
       left,
-      blockSize: resolvedBlockSize,
+      blockSize: blockSize && resolveLengthValue(blockSize),
       minBlockSize,
       maxBlockSize,
-      inlineSize,
+      inlineSize: inlineSize && resolveLengthValue(inlineSize),
       minInlineSize,
       maxInlineSize,
-      padding,
+      padding: padding && resolveLengthValue(padding),
       paddingInline,
       paddingBlock,
       paddingTop,

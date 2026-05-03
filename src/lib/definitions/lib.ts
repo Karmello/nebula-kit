@@ -1,3 +1,4 @@
+import { CssLength } from './css'
 import { ICON_NAMES } from './icon-names'
 
 // constants
@@ -10,12 +11,11 @@ export const SWITCH_AT = [...BREAKPOINTS.filter(bp => bp !== 'base')] as const
 
 export const THEMES = ['light', 'dark'] as const
 export const COLORS = ['gray', 'green', 'blue', 'red', 'pink', 'amber'] as const
-export const SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
-export const LENGTHS = ['3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'] as const
+export const TSHIRT_SIZES = ['3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'] as const
 
 export const DEFAULT_SWITCH_AT: SwitchAt = 'lg'
 
-export const LENGTH_VALUES: Record<Length, string> = {
+export const LENGTH_VALUES: Record<TShirtSize, LengthValue> = {
   '3xs': '2px',
   '2xs': '4px',
   xs: '8px',
@@ -31,10 +31,9 @@ export const LENGTH_VALUES: Record<Length, string> = {
 
 export type Breakpoint = (typeof BREAKPOINTS)[number]
 export type Theme = (typeof THEMES)[number]
-export type Size = (typeof SIZES)[number]
-export type Length = (typeof LENGTHS)[number]
+export type TShirtSize = (typeof TSHIRT_SIZES)[number]
 export type IconName = (typeof ICON_NAMES)[number]
 
 export type SwitchAt = (typeof SWITCH_AT)[number]
 export type RespValue<T> = T | Partial<Record<Breakpoint, T>>
-export type LengthValue = Length | (string & {})
+export type LengthValue = TShirtSize | CssLength

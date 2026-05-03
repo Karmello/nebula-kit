@@ -1,13 +1,13 @@
 import { MouseEventHandler } from 'react'
 
 import { BoxProps, FlexProps, HtmlTagProps, TextProps, WithIconProps } from 'lib/components'
-import { RespValue, Size } from 'lib/definitions'
+import { LengthValue, RespValue, TShirtSize } from 'lib/definitions'
 import { TextScale } from 'lib/components/core/base/Text/definitions'
 
 export const BUTTON_SIZE_CONFIG: Record<
   ButtonSize,
   {
-    blockSize: string
+    blockSize: LengthValue
     paddingLeft: string
     paddingRight: string
     textScale: TextScale
@@ -52,7 +52,7 @@ export const DEFAULT_BUTTON_RIPPLE: ButtonProps['ripple'] = true
 export const DEFAULT_BUTTON_JUSTIFY_CONTENT: FlexProps['justifyContent'] = 'center'
 
 export const BUTTON_TAGS = ['button', 'a'] as const
-export const BUTTON_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies Size[]
+export const BUTTON_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies TShirtSize[]
 
 export type ButtonTag = (typeof BUTTON_TAGS)[number]
 export type ButtonSize = (typeof BUTTON_SIZES)[number]

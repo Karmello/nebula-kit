@@ -4,7 +4,7 @@ import { Breakpoint, COLORS, ICON_NAMES } from 'lib/definitions'
 
 import { usePlaygroundStore } from '../../../../store'
 
-const PROPS_OPTIONS_FOR_INPUT = ['CSS', 'ReactNode', 'string', 'number']
+const PROPS_OPTIONS_FOR_INPUT = ['LengthValue', 'ReactNode', 'string', 'number']
 const PROPS_OPTIONS_FOR_BOOLEAN = ['boolean']
 const PROPS_OPTIONS_FOR_SELECT = ['IconName', 'BoxColor', 'BoxIntent'] as const
 
@@ -59,7 +59,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
       <Spacer blockSize="3xs" />
       {PROPS_OPTIONS_FOR_INPUT.includes(prop.options[0]) ? (
         <Input
-          placeholder={prop.options[0] === 'ReactNode' ? 'value' : prop.options[0].toLowerCase()}
+          placeholder={prop.options[0] === 'ReactNode' ? 'value' : prop.options[0]}
           value={value}
           onChange={onChange}
           endAffix={props => <Button {...props} iconName="close" tagAttrs={{ onClick: () => onChange('') }} />}
