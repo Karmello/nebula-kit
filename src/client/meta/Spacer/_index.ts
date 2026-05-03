@@ -9,8 +9,9 @@ const SPACER_META: ComponentMeta<SpacerProps> = {
     bundle: 'core',
     title: 'Layout component that introduces controlled empty space between elements.',
     features: [
-      'provides consistent vertical spacing between elements',
-      'improves readability by preventing content from feeling crowded',
+      'enables consistent vertical spacing across layouts',
+      'supports predefined spacing scale and custom CSS values',
+      'supports responsive spacing for adaptive layouts',
     ],
     composedOf: ['Box'],
     topLevelTags: ['div'],
@@ -18,7 +19,7 @@ const SPACER_META: ComponentMeta<SpacerProps> = {
   props: SPACER_PROPS_META,
   examples: SPACER_EXAMPLES_META,
   changelog: {
-    '0.9.0': ['removed blockSize prop', 'added size prop'],
+    '0.9.0': ['updated blockSize to support spacing scale values'],
     '0.2.3': ['released'],
   },
 }

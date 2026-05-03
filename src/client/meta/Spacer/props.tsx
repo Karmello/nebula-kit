@@ -1,17 +1,17 @@
 import { ComponentMeta } from 'client/definitions'
 import { SpacerProps } from 'lib/components'
-import { SIZES } from 'lib/definitions'
+import { SPACINGS } from 'lib/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-import { DEFAULT_SPACER_SIZE } from 'lib/components/core/layout/Spacer'
+import { DEFAULT_SPACER_BLOCK_SIZE } from 'lib/components/core/layout/Spacer'
 
 const SPACER_PROPS_META: ComponentMeta<SpacerProps>['props'] = {
-  size: {
-    options: SIZES,
-    tooltip: SIZES,
-    defaultValue: String(DEFAULT_SPACER_SIZE),
+  blockSize: {
+    options: [...SPACINGS, 'CSS'],
+    tooltip: [...SPACINGS, 'CSS'],
+    defaultValue: String(DEFAULT_SPACER_BLOCK_SIZE),
     isResponsive: true,
-    description: 'Predefined spacer height from the spacing scale.',
+    description: 'Controls the spacer height using predefined spacing tokens or any CSS value',
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,

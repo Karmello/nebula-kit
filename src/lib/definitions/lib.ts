@@ -9,12 +9,12 @@ export const SPACINGS = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies
 export const COLORS = ['gray', 'green', 'blue', 'red', 'pink', 'amber'] as const
 
 export const SPACING_VALUES: Record<Spacings, string> = {
-  xs: '4px',
-  sm: '8px',
-  md: '16px',
-  lg: '24px',
-  xl: '32px',
-  xxl: '48px',
+  xs: '5px',
+  sm: '15px',
+  md: '30px',
+  lg: '50px',
+  xl: '75px',
+  xxl: '100px',
 }
 
 export const ICON_NAMES = [

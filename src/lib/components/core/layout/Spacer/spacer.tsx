@@ -3,16 +3,16 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { resolveSpacingValue, withPrefix } from 'lib/helpers'
 
-import { SpacerProps, DEFAULT_SPACER_SIZE } from './definitions'
+import { SpacerProps, DEFAULT_SPACER_BLOCK_SIZE } from './definitions'
 
 export const Spacer = ({
   // HtmlTag
   tagAttrs,
   tagRef,
   // own
-  size = DEFAULT_SPACER_SIZE,
+  blockSize = DEFAULT_SPACER_BLOCK_SIZE,
 }: SpacerProps) => {
-  const blockSize = resolveSpacingValue(size)
+  const resolvedBlockSize = resolveSpacingValue(blockSize)
 
   return (
     <Box
@@ -23,7 +23,7 @@ export const Spacer = ({
         'aria-hidden': 'true',
       }}
       tagRef={tagRef}
-      blockSize={blockSize}
+      blockSize={resolvedBlockSize}
     />
   )
 }

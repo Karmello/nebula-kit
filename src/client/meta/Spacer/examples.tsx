@@ -1,10 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
 import { Spacer, SpacerProps, Text } from 'lib/components'
-import { DEFAULT_SPACER_SIZE } from 'lib/components/core/layout/Spacer'
+import { DEFAULT_SPACER_BLOCK_SIZE } from 'lib/components/core/layout/Spacer'
 
 const SPACER_EXAMPLES_META: ComponentMeta<SpacerProps>['examples'] = [
   {
-    description: `Vertical spacing between two text blocks using the default size (${DEFAULT_SPACER_SIZE}).`,
+    description: `Vertical spacing between two text blocks using the default blockSize (${DEFAULT_SPACER_BLOCK_SIZE}).`,
     jsx: (
       <>
         <Text>Text 1</Text>
@@ -14,31 +14,31 @@ const SPACER_EXAMPLES_META: ComponentMeta<SpacerProps>['examples'] = [
     ),
   },
   {
-    description: 'Vertical spacing between two text blocks using a larger predefined size (xxl).',
+    description: 'Vertical spacing between two text blocks using a larger spacing token (xxl).',
     jsx: (
       <>
         <Text>Text 1</Text>
-        <Spacer size="xxl" />
+        <Spacer blockSize="xxl" />
         <Text>Text 2</Text>
       </>
     ),
   },
   {
-    description: 'Vertical spacing between two text blocks using an explicit CSS value.',
+    description: 'Vertical spacing between two text blocks using an explicit CSS blockSize value.',
     jsx: (
       <>
         <Text>Text 1</Text>
-        <Spacer size="100px" />
+        <Spacer blockSize="100px" />
         <Text>Text 2</Text>
       </>
     ),
   },
   {
-    description: 'Responsive vertical spacing that increases on larger screens.',
+    description: 'Responsive vertical spacing between two text blocks using spacing tokens.',
     jsx: (
       <>
         <Text>Text 1</Text>
-        <Spacer size={{ base: 'sm', md: 'xl' }} />
+        <Spacer blockSize={{ base: 'sm', md: 'xl' }} />
         <Text>Text 2</Text>
       </>
     ),
