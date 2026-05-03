@@ -1,8 +1,12 @@
-import { BoxProps, HtmlTagProps } from 'lib/components'
+import { HtmlTagProps } from 'lib/components'
+import { RespValue, Spacings } from 'lib/definitions'
 
-export const DEFAULT_SPACER_BLOCK_SIZE = '25px'
+export const DEFAULT_SPACER_SIZE: SpacerProps['size'] = 'md'
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'>
-type PropsFromBox = Pick<BoxProps<'div'>, 'blockSize'>
 
-export type SpacerProps = PropsFromHtmlTag & PropsFromBox
+type SpacerOwnProps = {
+  size?: RespValue<Spacings | string>
+}
+
+export type SpacerProps = PropsFromHtmlTag & SpacerOwnProps

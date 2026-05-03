@@ -1,11 +1,19 @@
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { withPrefix } from 'lib/helpers'
+import { resolveSpacingValue, withPrefix } from 'lib/helpers'
 
-import { DEFAULT_SPACER_BLOCK_SIZE, SpacerProps } from './definitions'
+import { SpacerProps, DEFAULT_SPACER_SIZE } from './definitions'
 
-export const Spacer = ({ tagAttrs, tagRef, blockSize = DEFAULT_SPACER_BLOCK_SIZE }: SpacerProps) => {
+export const Spacer = ({
+  // HtmlTag
+  tagAttrs,
+  tagRef,
+  // own
+  size = DEFAULT_SPACER_SIZE,
+}: SpacerProps) => {
+  const blockSize = resolveSpacingValue(size)
+
   return (
     <Box
       tagAttrs={{

@@ -5,8 +5,17 @@ export const LIB_PREFIX = 'neb'
 
 export const BREAKPOINTS = ['base', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
 export const SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
-
+export const SPACINGS = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies Sizes[]
 export const COLORS = ['gray', 'green', 'blue', 'red', 'pink', 'amber'] as const
+
+export const SPACING_VALUES: Record<Spacings, string> = {
+  xs: '4px',
+  sm: '8px',
+  md: '16px',
+  lg: '24px',
+  xl: '32px',
+  xxl: '48px',
+}
 
 export const ICON_NAMES = [
   'arrow-down',
@@ -96,4 +105,5 @@ export const ICON_NAMES = [
 
 export type Breakpoint = (typeof BREAKPOINTS)[number]
 export type Sizes = (typeof SIZES)[number]
+export type Spacings = (typeof SPACINGS)[number]
 export type IconName = (typeof ICON_NAMES)[number]
