@@ -3,10 +3,10 @@ import { ElementType, ComponentRef, ComponentProps, PropsWithoutRef, useLayoutEf
 import classNames from 'classnames'
 
 import { BoxProps, HtmlTag } from 'lib/components'
-import { ThemeProvider, BrandProvider, useThemeContext, useBrandContext } from 'lib/components/core/internal'
-import { withPrefix } from 'lib/helpers'
-import { useScreen } from 'lib/hooks'
 import { updateDomRespStyle, updateDomRespDataset, updateDomStaticDataset } from 'lib/service'
+import { ThemeProvider, BrandProvider, useThemeContext, useBrandContext } from 'lib/components/core/internal'
+import { resolveLengthValue, withPrefix } from 'lib/helpers'
+import { useScreen } from 'lib/hooks'
 
 import './styles/box.scss'
 
@@ -92,6 +92,8 @@ export const Box = <T extends ElementType = 'div'>({
   const finalBrand = brand ?? ctxBrand
   const finalColor = color ?? finalBrand
 
+  const resolvedBlockSize = blockSize ? resolveLengthValue(blockSize) : undefined
+
   useLayoutEffect(() => {
     const el = finalRef?.current as Element
     if (!el) return
@@ -144,7 +146,7 @@ export const Box = <T extends ElementType = 'div'>({
       right,
       bottom,
       left,
-      blockSize,
+      blockSize: resolvedBlockSize,
       minBlockSize,
       maxBlockSize,
       inlineSize,

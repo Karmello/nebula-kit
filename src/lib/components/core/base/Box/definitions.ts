@@ -8,6 +8,7 @@ import {
   CssPosition,
   CssTextAlign,
   CssVisibility,
+  LengthValue,
   RespValue,
   THEMES,
 } from 'lib/definitions'
@@ -74,7 +75,7 @@ type BoxOwnProps = {
   bottom?: RespValue<string>
   left?: RespValue<string>
   // size
-  blockSize?: RespValue<string>
+  blockSize?: RespValue<LengthValue>
   minBlockSize?: RespValue<string>
   maxBlockSize?: RespValue<string>
   inlineSize?: RespValue<string>

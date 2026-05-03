@@ -9,11 +9,11 @@ export const SWITCH_AT = [...BREAKPOINTS.filter(bp => bp !== 'base')] as const
 export const THEMES = ['light', 'dark'] as const
 export const COLORS = ['gray', 'green', 'blue', 'red', 'pink', 'amber'] as const
 export const SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
-export const SPACINGS = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
+export const LENGTHS = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
 
 export const DEFAULT_SWITCH_AT: SwitchAt = 'lg'
 
-export const SPACING_VALUES: Record<Spacings, string> = {
+export const LENGTH_VALUES: Record<Lengths, string> = {
   xxs: '4px',
   xs: '8px',
   sm: '16px',
@@ -112,9 +112,9 @@ export const ICON_NAMES = [
 export type Breakpoint = (typeof BREAKPOINTS)[number]
 export type Theme = (typeof THEMES)[number]
 export type Sizes = (typeof SIZES)[number]
-export type Spacings = (typeof SPACINGS)[number]
+export type Lengths = (typeof LENGTHS)[number]
 export type IconName = (typeof ICON_NAMES)[number]
 
 export type SwitchAt = (typeof SWITCH_AT)[number]
 export type RespValue<T> = T | Partial<Record<Breakpoint, T>>
-export type SpacingValue = Spacings | (string & {})
+export type LengthValue = Lengths | (string & {})

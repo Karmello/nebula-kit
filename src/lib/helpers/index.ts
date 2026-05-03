@@ -1,3 +1,3 @@
 export * from './getLibMsg'
-export * from './resolveSpaceValue'
+export * from './resolveLengthValue'
 export * from './withPrefix'
