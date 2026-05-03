@@ -19,7 +19,7 @@ export const ComponentSelect = () => {
           <Icon name="info" size="18px" color="blue" intent="primary" />
         </Tooltip>
       </Flex>
-      <Spacer blockSize="xxs" />
+      <Spacer blockSize="3xs" />
       <Select value={activeComponent} onChange={setActiveComponent} scrollAlign="center">
         {Object.keys(components).map(name => (
           <Select.Option value={name}>{name}</Select.Option>

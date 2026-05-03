@@ -40,7 +40,7 @@ export default () => {
         <Text intent="neutral" bold iconName="arrow-down">
           Vite (recommended)
         </Text>
-        <Spacer blockSize="xxs" />
+        <Spacer blockSize="3xs" />
         <Text intent="neutral">
           Vite offers the fastest development experience and requires virtually no configuration. NebulaKit works out of the box,
           with styles and components resolving automatically in both dev and production builds.
@@ -49,7 +49,7 @@ export default () => {
         <Text intent="neutral" bold iconName="arrow-down">
           Webpack 5 (supported)
         </Text>
-        <Spacer blockSize="xxs" />
+        <Spacer blockSize="3xs" />
         <Text intent="neutral">
           NebulaKit also works with Webpack 5. The only additional requirement is enabling CSS loading via style-loader and
           css-loader. Once configured, usage is identical to Vite.
@@ -58,7 +58,7 @@ export default () => {
         <Text intent="neutral" bold iconName="arrow-down">
           Webpack 4 (not recommended)
         </Text>
-        <Spacer blockSize="xxs" />
+        <Spacer blockSize="3xs" />
         <Text intent="neutral">
           NebulaKit may work with Webpack 4 but it is not officially supported. Webpack 4 requires additional plugins for CSS
           extraction, manual Babel configuration and lacks modern module-resolution guarantees.
@@ -67,7 +67,7 @@ export default () => {
         <Text intent="neutral" bold iconName="arrow-down">
           Create React App (not recommended)
         </Text>
-        <Spacer blockSize="xxs" />
+        <Spacer blockSize="3xs" />
         <Text intent="neutral">
           Create React App (CRA) is deprecated and not officially supported. NebulaKit may work, but we recommend migrating to a
           newer bundling environment.

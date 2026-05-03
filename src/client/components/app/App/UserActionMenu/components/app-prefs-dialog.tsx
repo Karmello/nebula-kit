@@ -39,7 +39,7 @@ export const AppPrefsDialog = () => {
               <Text bold typography="small">
                 Theme
               </Text>
-              <Spacer blockSize="xxs" />
+              <Spacer blockSize="3xs" />
               <Segment>
                 {THEMES.map(key => (
                   <Segment.Item key={key}>
@@ -54,7 +54,7 @@ export const AppPrefsDialog = () => {
               <Text bold typography="small">
                 Brand
               </Text>
-              <Spacer blockSize="xxs" />
+              <Spacer blockSize="3xs" />
               <Select value={brand} onChange={setBrand} inlineSize="150px" size="xs" scrollAlign="center">
                 {COLORS.map(brand => (
                   <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
@@ -65,7 +65,7 @@ export const AppPrefsDialog = () => {
               <Text bold typography="small">
                 Border radius
               </Text>
-              <Spacer blockSize="xxs" />
+              <Spacer blockSize="3xs" />
               <Select value={borderRadiusSize} onChange={setBorderRadiusSize} inlineSize="150px" size="xs" scrollAlign="center">
                 {NEBKIT_BORDER_RADIUS_SIZES.map(n => (
                   <Select.Option value={n}>{n}</Select.Option>
@@ -76,7 +76,7 @@ export const AppPrefsDialog = () => {
               <Text bold typography="small">
                 Ripple mode
               </Text>
-              <Spacer blockSize="xxs" />
+              <Spacer blockSize="3xs" />
               <Select value={rippleMode} onChange={setRippleMode} inlineSize="150px" size="xs" scrollAlign="center">
                 {NEBKIT_RIPPLE_MODES.map(n => (
                   <Select.Option value={n}>{sentenceCase(n)}</Select.Option>

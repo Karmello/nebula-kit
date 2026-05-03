@@ -28,7 +28,7 @@ export default () => {
 `}
           description="To access it, add the following to your project's .npmrc file"
         />
-        <Spacer blockSize="xxs" />
+        <Spacer blockSize="3xs" />
         <Text typography="caption" intent="secondary" color="gray">
           NEB_TOKEN is your personal license key used to authenticate access to the Pro bundle. You'll find it in your NebulaKit
           account dashboard after subscribing.

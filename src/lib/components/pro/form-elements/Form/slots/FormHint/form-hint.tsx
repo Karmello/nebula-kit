@@ -19,7 +19,7 @@ export const FormHint = ({
 }: FormHintProps) => {
   return (
     <>
-      <Spacer blockSize="xxs" />
+      <Spacer blockSize="3xs" />
       <Text
         tag="span"
         tagAttrs={tagAttrs}

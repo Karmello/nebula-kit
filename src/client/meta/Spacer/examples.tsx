@@ -18,7 +18,7 @@ const SPACER_EXAMPLES_META: ComponentMeta<SpacerProps>['examples'] = [
     jsx: (
       <>
         <Text>Text 1</Text>
-        <Spacer blockSize="xxl" />
+        <Spacer blockSize="2xl" />
         <Text>Text 2</Text>
       </>
     ),

@@ -40,7 +40,7 @@ export const PricingPlanCard = ({
           <Icon name="check" intent="primary" color={color} />
           {children}
         </Flex>
-        <Spacer blockSize="xxs" />
+        <Spacer blockSize="3xs" />
       </>
     )
   }

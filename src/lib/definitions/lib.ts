@@ -11,18 +11,20 @@ export const SWITCH_AT = [...BREAKPOINTS.filter(bp => bp !== 'base')] as const
 export const THEMES = ['light', 'dark'] as const
 export const COLORS = ['gray', 'green', 'blue', 'red', 'pink', 'amber'] as const
 export const SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
-export const LENGTHS = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
+export const LENGTHS = ['3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'] as const
 
 export const DEFAULT_SWITCH_AT: SwitchAt = 'lg'
 
 export const LENGTH_VALUES: Record<Length, string> = {
-  xxs: '4px',
+  '3xs': '2px',
+  '2xs': '4px',
   xs: '8px',
   sm: '16px',
   md: '24px',
-  lg: '48px',
-  xl: '72px',
-  xxl: '96px',
+  lg: '32px',
+  xl: '64px',
+  '2xl': '96px',
+  '3xl': '128px',
 }
 
 // types

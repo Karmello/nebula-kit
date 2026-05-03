@@ -56,7 +56,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
   return (
     <>
       <Text>{bp ? `${activeProp} [${bp}]` : activeProp}</Text>
-      <Spacer blockSize="xxs" />
+      <Spacer blockSize="3xs" />
       {PROPS_OPTIONS_FOR_INPUT.includes(prop.options[0]) ? (
         <Input
           placeholder={prop.options[0] === 'ReactNode' ? 'value' : prop.options[0].toLowerCase()}
