@@ -12,7 +12,7 @@ export const Spacer = ({
   // own
   blockSize = DEFAULT_SPACER_BLOCK_SIZE,
 }: SpacerProps) => {
-  const resolvedBlockSize = resolveSpacingValue(blockSize)
+  const resolvedBlockSize = resolveSpacingValue(blockSize || 'md')
 
   return (
     <Box
