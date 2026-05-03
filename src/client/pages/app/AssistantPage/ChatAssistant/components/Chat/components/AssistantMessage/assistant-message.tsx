@@ -65,7 +65,7 @@ export const AssistantMessage = ({ content, handleQuestionClick }: AssistantMess
             return <a href={href}>{children}</a>
           },
           hr() {
-            return <Divider intent="muted" marginTop="35px" />
+            return <Divider intent="muted" marginTop="lg" />
           },
         }}
       >

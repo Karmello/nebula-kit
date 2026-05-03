@@ -38,7 +38,7 @@ export const ProfileSettingsPage = () => {
   }, [search])
 
   return (
-    <Box padding={{ base: '20px', lg: '50px' }} maxInlineSize="75rem">
+    <Box padding={{ base: 'md', lg: 'xl' }} maxInlineSize="75rem">
       <Section heading="Settings" iconName="settings">
         <Spacer blockSize="md" />
         {!getUser.data || getUser.isMakingRequest ? (

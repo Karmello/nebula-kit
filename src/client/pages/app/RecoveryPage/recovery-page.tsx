@@ -26,7 +26,7 @@ export const RecoveryPage = () => {
   }
 
   return (
-    <Box padding={{ base: '20px', lg: '50px' }}>
+    <Box padding={{ base: 'md', lg: 'xl' }}>
       <Box inlineSize="400px" maxInlineSize="100%" margin="0 auto">
         <Section heading="Password recovery" iconName="key-round">
           <Form<{ email?: string; newPassword?: string }>

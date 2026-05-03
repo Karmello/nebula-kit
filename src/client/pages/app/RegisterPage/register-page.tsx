@@ -47,7 +47,7 @@ export const RegisterPage = () => {
   }
 
   return (
-    <Box padding={{ base: '20px', lg: '50px' }}>
+    <Box padding={{ base: 'md', lg: 'xl' }}>
       <Box inlineSize="400px" maxInlineSize="100%" margin="0 auto">
         <Section heading="Registration" iconName="user-plus">
           <Text typography="caption" intent="secondary">

@@ -92,8 +92,4 @@ export type CssLength =
   | `max(${string})`
   | 'auto'
 
-export type CssMargin =
-  | LengthValue
-  | `${string} ${string}`
-  | `${string} ${string} ${string}`
-  | `${string} ${string} ${string} ${string}`
+export type CssMargin = `${string} ${string}` | `${string} ${string} ${string}` | `${string} ${string} ${string} ${string}`

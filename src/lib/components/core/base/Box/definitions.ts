@@ -91,7 +91,7 @@ type BoxOwnProps = {
   paddingBottom?: RespValue<LengthValue>
   paddingLeft?: RespValue<LengthValue>
   // margin
-  margin?: RespValue<CssMargin>
+  margin?: RespValue<CssMargin | LengthValue>
   marginInline?: RespValue<LengthValue>
   marginBlock?: RespValue<LengthValue>
   marginTop?: RespValue<LengthValue>

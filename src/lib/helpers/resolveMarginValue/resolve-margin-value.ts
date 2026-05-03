@@ -1,7 +1,7 @@
-import { CssMargin, LENGTH_VALUES, RespValue, TShirtSize } from 'lib/definitions'
+import { CssMargin, LENGTH_VALUES, LengthValue, RespValue, TShirtSize } from 'lib/definitions'
 
-export const resolveMarginValue = (value: RespValue<CssMargin>): RespValue<string> => {
-  const resolve = (v: CssMargin) => {
+export const resolveMarginValue = (value: RespValue<LengthValue | CssMargin>): RespValue<string> => {
+  const resolve = (v: LengthValue | CssMargin) => {
     if (typeof v !== 'string') return v
 
     // split shorthand
@@ -17,6 +17,6 @@ export const resolveMarginValue = (value: RespValue<CssMargin>): RespValue<strin
   return Object.fromEntries(
     Object.entries(value)
       .filter(([, v]) => v !== undefined)
-      .map(([bp, v]) => [bp, resolve(v as CssMargin)])
+      .map(([bp, v]) => [bp, resolve(v as LengthValue | CssMargin)])
   ) as RespValue<string>
 }

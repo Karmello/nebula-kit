@@ -26,6 +26,7 @@ export const RELEASE_INFO: Record<
     timestamp: 1777692394689,
     changelog: {
       main: [
+        'standardized logical size, margin and padding props to use predefined scale values',
         'extended the breakpoint system with a new xxl range for large screens and wide layouts',
         'with this release, the NebulaKit website introduced the AI chat assistant',
       ],

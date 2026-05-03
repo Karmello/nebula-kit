@@ -33,7 +33,7 @@ export const ConfirmActionPage = () => {
   const url = params.get('url')
 
   return (
-    <Box padding={{ base: '20px', lg: '50px' }} paddingTop="100px">
+    <Box padding={{ base: 'md', lg: 'xl' }} paddingTop="100px">
       <Flex justifyContent="center">
         <Button
           tagAttrs={{

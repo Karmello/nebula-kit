@@ -14,11 +14,11 @@ const SPACER_EXAMPLES_META: ComponentMeta<SpacerProps>['examples'] = [
     ),
   },
   {
-    description: 'Vertical spacing between two text blocks using a larger spacing token (xxl).',
+    description: 'Vertical spacing between two text blocks using a larger spacing token (4xl).',
     jsx: (
       <>
         <Text>Text 1</Text>
-        <Spacer blockSize="2xl" />
+        <Spacer blockSize="4xl" />
         <Text>Text 2</Text>
       </>
     ),

@@ -27,7 +27,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
           {title}
         </Text>
         {examples?.[0] ? (
-          <Box marginBlock="15px">
+          <Box marginBlock="sm">
             <CodeSnippet lang="tsx" code={examples[0].code || convertElemToString(examples[0].jsx)} />
           </Box>
         ) : null}
@@ -64,7 +64,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
         </Section>
       ) : null}
       {readMoreLink ? (
-        <Box marginTop="20px">
+        <Box marginTop="sm">
           <Link
             href={readMoreLink.href}
             onClick={() => {

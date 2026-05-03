@@ -10,7 +10,7 @@ import { Families } from './Families'
 
 export const HomePage = () => {
   return (
-    <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">
+    <Box padding={{ base: 'md', lg: 'xl' }} paddingTop="0px">
       <Flex
         flexDirection={{ base: 'column', lg: 'row' }}
         justifyContent="center"
@@ -26,7 +26,7 @@ export const HomePage = () => {
           <Divider />
           <Spacer blockSize="md" />
           <Hero />
-          <Divider marginBlock="30px" />
+          <Divider marginBlock="lg" />
           <Video />
         </Flex.Item>
         <Flex.Item flex="1">

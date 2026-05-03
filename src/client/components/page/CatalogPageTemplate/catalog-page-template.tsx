@@ -70,9 +70,9 @@ export const CatalogPageTemplate = memo(
                 })}
               </SideNav>
             </SplitView.Side>
-            <SplitView.Main paddingLeft="20px">
+            <SplitView.Main paddingLeft="md">
               <SplitView.MainBar>
-                <Box marginRight="20px">
+                <Box marginRight="md">
                   <CatalogPageBreadcrumb
                     pageKey={pageKey.replace('/', '')}
                     categoryKey={activeCategoryObj?.key}
