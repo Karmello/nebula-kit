@@ -44,7 +44,7 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
                 {slotsByName['SplitView.MainBar']}
               </Flex.Item>
             </Flex>
-            <Spacer blockSize="10px" />
+            <Spacer blockSize="xs" />
             {allNonSlots}
           </Box>
         )

@@ -22,7 +22,7 @@ export const PropSelect = () => {
           <Icon name="info" size="18px" color="blue" intent="primary" />
         </Tooltip>
       </Flex>
-      <Spacer blockSize="5px" />
+      <Spacer blockSize="xxs" />
       <Select value={value} onChange={value => setActiveProp(activeComponent, value)} scrollAlign="center">
         {Object.keys(props)
           .sort()

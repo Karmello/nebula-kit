@@ -19,7 +19,7 @@ export const PlaygroundPage = () => {
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} overflowY="hidden">
       <Section heading="Playground" iconName="shapes">
-        <Spacer blockSize="10px" />
+        <Spacer blockSize="xs" />
         <SplitView sidePosition="right">
           {({ mode, setSideOpen }) => {
             return (
@@ -34,9 +34,9 @@ export const PlaygroundPage = () => {
                       <DocsButton />
                     </Flex>
                   </SplitView.MainBar>
-                  <Spacer blockSize="30px" />
+                  <Spacer blockSize="md" />
                   <RenderPanel />
-                  <Spacer blockSize="50px" />
+                  <Spacer blockSize="lg" />
                   <PropsViewer
                     handleSideVisibility={() => {
                       if (mode === 'overlay') setSideOpen(true)
@@ -54,7 +54,7 @@ export const PlaygroundPage = () => {
                         <ComponentSelect />
                       </Flex.Item>
                       <Flex.Item>
-                        <Flex flexDirection="column" alignItems="stretch" rowGap="10px">
+                        <Flex flexDirection="column" alignItems="stretch" rowGap="16px">
                           <Flex.Item>
                             <PropSelect />
                           </Flex.Item>

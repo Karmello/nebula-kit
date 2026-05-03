@@ -22,7 +22,7 @@ const Family = ({
         <Text intent="neutral">{description}</Text>
         {components ? (
           <>
-            <Spacer blockSize="25px" />
+            <Spacer blockSize="md" />
             <Flex gap="7px">
               {components.map(c => {
                 const { pageKey, categoryKey, itemKey } = PAGE_SECTIONS.find(s => s.itemKey === c.toLowerCase())
@@ -46,7 +46,7 @@ const Family = ({
 export const Families = () => {
   return (
     <Section heading="Key areas of the system" size="sm" intent="primary" color="blue">
-      <Spacer blockSize="15px" />
+      <Spacer blockSize="sm" />
       <Grid
         gridTemplateColumns={{
           base: '1fr',

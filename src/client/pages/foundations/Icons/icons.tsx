@@ -11,7 +11,7 @@ export default () => {
           components and interfaces.
         </Text>
       </Box>
-      <Spacer blockSize="50px" />
+      <Spacer blockSize="lg" />
       <Flex flexWrap="wrap" justifyContent={{ base: 'center', xl: 'flex-start' }} gap="10px">
         {Object.keys(ICONS).map(iconName => (
           <Tooltip key={iconName} content={iconName} minInlineSize={0} maxInlineSize={300}>

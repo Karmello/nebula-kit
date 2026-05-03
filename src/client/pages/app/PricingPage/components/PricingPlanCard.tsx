@@ -40,7 +40,7 @@ export const PricingPlanCard = ({
           <Icon name="check" intent="primary" color={color} />
           {children}
         </Flex>
-        <Spacer blockSize="5px" />
+        <Spacer blockSize="xxs" />
       </>
     )
   }
@@ -66,7 +66,7 @@ export const PricingPlanCard = ({
         <Text intent="neutral" bold>
           What you get:
         </Text>
-        <Spacer blockSize="10px" />
+        <Spacer blockSize="xs" />
         <OptionIncluded>
           <Link
             href="/pricing/core"
@@ -98,11 +98,11 @@ export const PricingPlanCard = ({
             <Text intent="neutral">{s}</Text>
           </OptionIncluded>
         ))}
-        <Spacer blockSize="40px" />
+        <Spacer blockSize="lg" />
         <Flex justifyContent="center">
           <PricingPlanButton plan={plan} activePlan={activePlan} color={color} />
         </Flex>
-        <Spacer blockSize="12px" />
+        <Spacer blockSize="sm" />
       </Section>
     </Box>
   )

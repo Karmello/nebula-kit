@@ -19,7 +19,7 @@ export default () => {
         </Text>
         <Section heading="Solid variant" size="sm">
           <Text>Filled surface, strong emphasis.</Text>
-          <Spacer blockSize="30px" />
+          <Spacer blockSize="md" />
           <Flex flexWrap="wrap" gap="7px">
             {BOX_INTENTS.map(intent => {
               return (
@@ -32,7 +32,7 @@ export default () => {
         </Section>
         <Section heading="Outline variant" size="sm">
           <Text>Border only, background matches the app's surface.</Text>
-          <Spacer blockSize="30px" />
+          <Spacer blockSize="md" />
           <Flex flexWrap="wrap" gap="6px">
             {BOX_INTENTS.map(intent => {
               return (
@@ -45,7 +45,7 @@ export default () => {
         </Section>
         <Section heading="Soft outline variant" size="sm">
           <Text>Border only, background matches the app's surface, text matches the border.</Text>
-          <Spacer blockSize="30px" />
+          <Spacer blockSize="md" />
           <Flex flexWrap="wrap" gap="6px">
             {BOX_INTENTS.map(intent => {
               return (
@@ -58,7 +58,7 @@ export default () => {
         </Section>
         <Section heading="Ghost variant" size="sm">
           <Text>Text only, background and border match the app's surface.</Text>
-          <Spacer blockSize="30px" />
+          <Spacer blockSize="md" />
           <Flex flexWrap="wrap" gap="6px">
             {BOX_INTENTS.map(intent => {
               return (

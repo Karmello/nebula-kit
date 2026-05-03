@@ -17,7 +17,7 @@ export const AppFooter = () => {
           NebulaKit is actively developed and released in incremental updates. Each release introduces new components,
           improvements and refinements across the system.
         </Text>
-        <Spacer blockSize="10px" />
+        <Spacer blockSize="sm" />
         <Link
           href={`${PageKey.foundations}/resources/changelog/v${RELEASE_VERSIONS[0]}`}
           onClick={() => {

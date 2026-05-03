@@ -33,7 +33,7 @@ export const ComponentChangelogPage = ({ pageKey }: { pageKey: PageKey.core | Pa
           ))}
         </Flex>
       </Box>
-      <Spacer blockSize="60px" />
+      <Spacer blockSize="lg" />
     </>
   )
 }

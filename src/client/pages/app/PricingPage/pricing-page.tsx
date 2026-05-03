@@ -22,7 +22,7 @@ export const PricingPage = () => {
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }}>
       <Section heading="Pricing plans" iconName="credit-card">
         <Text>Choose the plan that fits your workflow.</Text>
-        <Spacer blockSize="50px" />
+        <Spacer blockSize="lg" />
         {getUser.isMakingRequest ? (
           <Loader centered size="lg" color="blue" />
         ) : (
@@ -73,7 +73,7 @@ export const PricingPage = () => {
                 options={PRICING_DATA.plans.enterprise.whatYouGet}
               />
             </Grid>
-            <Spacer blockSize="50px" />
+            <Spacer blockSize="lg" />
             <Flex flexDirection="column" rowGap="5px">
               {PRICING_DATA.additionalInfo.map((info, key) => (
                 <Text key={key} italic>

@@ -20,7 +20,7 @@ export default () => {
           <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
         ))}
       </Select>
-      <Spacer blockSize="50px" />
+      <Spacer blockSize="lg" />
       <Flex flexDirection="column" alignItems="stretch" rowGap="20px">
         {arr.map(n => {
           return (
@@ -38,7 +38,7 @@ export default () => {
           )
         })}
       </Flex>
-      <Spacer blockSize="15px" />
+      <Spacer blockSize="sm" />
     </Box>
   )
 }

@@ -26,7 +26,7 @@ export const RenderPanel = () => {
       >
         Canvas
       </Text>
-      <Spacer blockSize="8px" />
+      <Spacer blockSize="xs" />
       <Box tagAttrs={{ style: { borderStyle: 'dashed' } }} drawable variant="outline" intent="tertiary" padding="25px">
         <Component {...getPropValues(activeComponent)} />
       </Box>

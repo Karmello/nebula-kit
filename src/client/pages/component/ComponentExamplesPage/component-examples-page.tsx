@@ -21,7 +21,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           {description}
         </Text>
       ) : null}
-      <Spacer blockSize="10px" />
+      <Spacer blockSize="xs" />
       {!noSandBox ? (
         <>
           <Box
@@ -35,7 +35,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           >
             {jsx}
           </Box>
-          <Spacer blockSize="10px" />
+          <Spacer blockSize="xs" />
         </>
       ) : null}
       {!noCode ? (
@@ -55,7 +55,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           )}
         </>
       ) : null}
-      <Spacer blockSize="50px" />
+      <Spacer blockSize="lg" />
     </>
   )
 }
@@ -81,7 +81,7 @@ export const ComponentExamplesPage = ({ pageKey }: { pageKey: PageKey.core | Pag
               Use flipped theme
             </Text>
           </Flex>
-          <Spacer blockSize="50px" />
+          <Spacer blockSize="lg" />
         </>
       ) : null}
       <Flex flexDirection="column" alignItems="stretch">

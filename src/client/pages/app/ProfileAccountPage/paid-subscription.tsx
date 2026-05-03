@@ -99,7 +99,7 @@ export default ({ enabled }: { enabled: boolean }) => {
       </Table>
       {getPaymentInfo.data?.subscription.status === 'PAST_DUE' ? (
         <>
-          <Spacer blockSize="50px" />
+          <Spacer blockSize="lg" />
           <Callout
             size="sm"
             status="error"

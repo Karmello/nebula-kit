@@ -11,7 +11,7 @@ export const FeedbackPage = () => {
         <Text>
           Your input helps shape where we go next. Let us know what's on your mind. Your feedback is completely anonymous.
         </Text>
-        <Spacer blockSize="50px" />
+        <Spacer blockSize="lg" />
         <Form<{ message: string }>
           useFormProps={{ defaultValues: { message: '' } }}
           onValidSubmission={async ({ message }) => {

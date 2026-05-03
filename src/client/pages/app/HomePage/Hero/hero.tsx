@@ -17,7 +17,7 @@ export const Hero = () => {
           React UI system built on composition and prop inheritance, with strict rules governing component appearance and
           behavior. Designed to reduce UI entropy and keep interfaces consistent and maintainable as products grow over time.
         </Text>
-        <Spacer blockSize="30px" />
+        <Spacer blockSize="md" />
         <Flex gap="10px" flexWrap="wrap" justifyContent={{ base: 'center', md: 'flex-start' }}>
           <Link
             href={PageKey.playground}

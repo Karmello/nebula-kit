@@ -41,7 +41,7 @@ const PanelContent = ({ bundleNotes, componentNotes }: { bundleNotes?: string[];
       {componentNames.map((name, i) => (
         <Box key={name}>
           <Notes componentName={name} notes={componentNotes[name]} />
-          {i < componentNames.length - 1 ? <Spacer blockSize="40px" /> : null}
+          {i < componentNames.length - 1 ? <Spacer blockSize="lg" /> : null}
         </Box>
       ))}
     </Box>
@@ -77,13 +77,13 @@ export default ({ pathname }: { pathname: string }) => {
       <Text italic>{new Date(releaseInfo.timestamp).toDateString()}</Text>
       {releaseInfo.changelog?.main ? (
         <>
-          <Spacer blockSize="10px" />
+          <Spacer blockSize="xs" />
           <Notes notes={releaseInfo.changelog.main} />
         </>
       ) : null}
       {displayCoreNotes || displayProNotes ? (
         <>
-          <Spacer blockSize="40px" />
+          <Spacer blockSize="lg" />
           <Tabs defaultValue={displayCoreNotes ? 'core' : 'pro'} inlineSize="100%">
             {displayCoreNotes ? (
               <Tabs.Tab value="core" iconName="package">

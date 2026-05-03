@@ -17,7 +17,7 @@ export const UpdateEmailSection = () => {
         Your current email remains active until you complete the first login with the new one, so you always retain access
         throughout the process.
       </Text>
-      <Spacer blockSize="30px" />
+      <Spacer blockSize="md" />
       <Box maxInlineSize={{ md: '500px' }}>
         <Form<{ email: string }>
           useFormProps={{
@@ -64,7 +64,7 @@ export const UpdateEmailSection = () => {
           }}
         </Form>
       </Box>
-      <Spacer blockSize="7px" />
+      <Spacer blockSize="xs" />
     </Section>
   )
 }

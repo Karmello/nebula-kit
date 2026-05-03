@@ -81,7 +81,7 @@ export const CatalogPageTemplate = memo(
                   />
                 </Box>
               </SplitView.MainBar>
-              <Spacer blockSize="30px" />
+              <Spacer blockSize="md" />
               <SplitView sidePosition="right">
                 {({ mode, setSideOpen }) => (
                   <>

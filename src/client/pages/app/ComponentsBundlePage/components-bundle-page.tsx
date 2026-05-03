@@ -25,7 +25,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
             </Button>
           </Link>
         </Flex>
-        <Spacer blockSize="50px" />
+        <Spacer blockSize="lg" />
         <Grid
           gridTemplateColumns={{
             base: '1fr',
@@ -49,7 +49,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
             </Section>
           ))}
         </Grid>
-        <Spacer blockSize="50px" />
+        <Spacer blockSize="lg" />
         <Flex justifyContent="center">
           <Link
             href={bundle === 'core' ? PageKey.pricingPro : PageKey.pricingCore}

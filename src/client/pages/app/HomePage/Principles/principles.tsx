@@ -43,7 +43,7 @@ export const Principles = () => {
           </Text>
         </Section>
       </Grid>
-      <Spacer blockSize="40px" />
+      <Spacer blockSize="lg" />
       <Box textAlign="center">
         <Link
           href={`${PageKey.foundations}/overview/philosophy/jsx-first`}

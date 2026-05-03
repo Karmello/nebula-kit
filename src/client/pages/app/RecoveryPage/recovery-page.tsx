@@ -80,9 +80,9 @@ export const RecoveryPage = () => {
               </Form.ActionButton>
             </Form.Actions>
           </Form>
-          <Spacer blockSize="40px" />
+          <Spacer blockSize="lg" />
           <Divider />
-          <Spacer blockSize="15px" />
+          <Spacer blockSize="sm" />
           <Flex justifyContent="center">
             <Link
               href={PageKey.authLogin}

@@ -100,7 +100,7 @@ export default () => {
           <Switch checked={loading} onChange={setLoading} />
         </Flex.Item>
       </Flex>
-      <Spacer blockSize="50px" />
+      <Spacer blockSize="lg" />
       <Box overflowX="auto">
         <Grid gridTemplateColumns={`repeat(${BOX_INTENTS.length}, 1fr)`} gap="7px">
           {COLORS.map(color => {

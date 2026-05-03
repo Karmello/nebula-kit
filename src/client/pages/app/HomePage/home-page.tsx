@@ -19,12 +19,12 @@ export const HomePage = () => {
       >
         <Flex.Item flex="2">
           <About />
-          <Spacer blockSize="60px" />
+          <Spacer blockSize={{ base: 'lg', lg: 'xl' }} />
           <Text typography="h1" color="blue" intent="primary" bold>
             NebulaKit
           </Text>
           <Divider />
-          <Spacer blockSize="20px" />
+          <Spacer blockSize="md" />
           <Hero />
           <Divider marginBlock="30px" />
           <Video />
@@ -45,11 +45,11 @@ export const HomePage = () => {
               <Ortho />
             </Flex.Item>
           </Flex>
-          <Spacer blockSize="70px" />
+          <Spacer blockSize="xl" />
           <Principles />
         </Flex.Item>
       </Flex>
-      <Spacer blockSize="80px" />
+      <Spacer blockSize="xl" />
       <Families />
     </Box>
   )
