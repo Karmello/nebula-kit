@@ -1,6 +1,6 @@
 import { ImageProps } from 'lib/components'
 import { TextScale, TextTypography } from 'lib/components/core/base/Text'
-import { Sizes } from 'lib/definitions'
+import { Size } from 'lib/definitions'
 
 export const AVATAR_SIZES_MAP: Record<AvatarSize, { side: string; typography: TextTypography; scale: TextScale }> = {
   xs: {
@@ -38,7 +38,7 @@ export const AVATAR_SIZES_MAP: Record<AvatarSize, { side: string; typography: Te
 export const LOADER_DELAY = 150
 export const MIN_LOADER_VISIBLE_TIME = 300
 
-export const AVATAR_SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies Sizes[]
+export const AVATAR_SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies Size[]
 export const AVATAR_SHAPES = ['round', 'square'] as const
 
 export const DEFAULT_AVATAR_SIZE: AvatarProps['size'] = 'md'

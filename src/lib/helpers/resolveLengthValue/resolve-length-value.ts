@@ -1,7 +1,7 @@
-import { RespValue, LENGTH_VALUES, Lengths, LengthValue } from 'lib/definitions'
+import { RespValue, LENGTH_VALUES, Length, LengthValue } from 'lib/definitions'
 
 export const resolveLengthValue = (value: RespValue<LengthValue>): RespValue<string> => {
-  const resolve = (v: LengthValue) => LENGTH_VALUES[v as Lengths] ?? v
+  const resolve = (v: LengthValue) => LENGTH_VALUES[v as Length] ?? v
 
   if (typeof value === 'string') {
     return resolve(value)

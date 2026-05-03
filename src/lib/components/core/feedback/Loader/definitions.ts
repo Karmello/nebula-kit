@@ -1,5 +1,5 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
-import { Sizes } from 'lib/definitions'
+import { Size } from 'lib/definitions'
 
 export const DEFAULT_LOADER_SIZE: LoaderProps['size'] = 'md'
 export const DEFAULT_LOADER_ACTIVE: LoaderProps['active'] = true
@@ -11,7 +11,7 @@ export const LOADER_SIZE_CONFIG: Record<LoaderSize, string> = {
   lg: '24px',
 }
 
-export const LOADER_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies Sizes[]
+export const LOADER_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies Size[]
 
 export type LoaderSize = (typeof LOADER_SIZES)[number]
 

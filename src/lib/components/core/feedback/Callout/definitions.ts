@@ -1,5 +1,5 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
-import { IconName, Sizes } from 'lib/definitions'
+import { IconName, Size } from 'lib/definitions'
 import { BoxVariant, BoxColor } from 'lib/components/core/base/Box'
 import { TextTypography } from 'lib/components/core/base/Text'
 
@@ -27,7 +27,7 @@ export const DEFAULT_CALLOUT_INTENT: CalloutProps['intent'] = 'primary'
 export const DEFAULT_CALLOUT_STATUS: CalloutProps['status'] = 'info'
 
 export const CALLOUT_TAGS = ['div', 'section', 'article', 'aside'] as const
-export const CALLOUT_SIZES = ['sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies Sizes[]
+export const CALLOUT_SIZES = ['sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies Size[]
 export const CALLOUT_VARIANTS = ['solid', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
 export const CALLOUT_STATUSES = ['info', 'success', 'warning', 'error'] as const
 

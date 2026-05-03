@@ -1,6 +1,6 @@
 import { HtmlTagProps } from 'lib/components'
 import { BoxIntent } from 'lib/components/core/base/Box/definitions'
-import { Sizes } from 'lib/definitions'
+import { Size } from 'lib/definitions'
 
 export const DIALOG_SIZE_MAP: Record<DialogSize, string> = {
   sm: '360px',
@@ -8,7 +8,7 @@ export const DIALOG_SIZE_MAP: Record<DialogSize, string> = {
   lg: '720px',
 }
 
-export const DIALOG_SIZES = ['sm', 'md', 'lg'] as const satisfies Sizes[]
+export const DIALOG_SIZES = ['sm', 'md', 'lg'] as const satisfies Size[]
 export const DEFAULT_DIALOG_SIZE: DialogProps['size'] = 'md'
 export const DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK: DialogProps['closeOnBackdropClick'] = false
 

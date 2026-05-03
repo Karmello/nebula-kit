@@ -1,10 +1,10 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
 import { BoxIntent, BoxVariant } from 'lib/components/core/base/Box/definitions'
 import { TextProps, TextTag, TextTypography } from 'lib/components/core/base/Text/definitions'
-import { Sizes } from 'lib/definitions'
+import { Size } from 'lib/definitions'
 
 export const SECTION_TAGS = ['section', 'article', 'aside', 'div'] as const
-export const SECTION_SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies Sizes[]
+export const SECTION_SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies Size[]
 export const SECTION_VARIANTS = ['ghost', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
 
 export const DEFAULT_SECTION_VARIANT: SectionVariant = 'ghost'
