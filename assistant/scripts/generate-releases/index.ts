@@ -5,20 +5,25 @@ import { RELEASE_VERSIONS, RELEASE_INFO } from '../../../src/client/definitions/
 import { generateRelease } from './helpers/generate-release'
 
 const outputDir = path.resolve(process.cwd(), 'assistant/generated')
+const outputFile = path.join(outputDir, 'releases.md')
 
 const run = async () => {
   await fs.mkdir(outputDir, { recursive: true })
+
+  const docs: string[] = []
 
   for (const version of RELEASE_VERSIONS) {
     const doc = generateRelease(version, RELEASE_INFO)
     if (!doc) continue
 
-    const filePath = path.join(outputDir, `v${version}.md`)
-
-    await fs.writeFile(filePath, doc, 'utf8')
-
-    console.log(`Generated ${filePath}`)
+    docs.push(doc)
   }
+
+  const content = docs.join('\n\n---\n\n')
+
+  await fs.writeFile(outputFile, content, 'utf8')
+
+  console.log(`Generated ${outputFile}`)
 }
 
 run()
