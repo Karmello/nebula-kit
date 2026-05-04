@@ -56,7 +56,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   maxInlineSize: BOX_PROPS_META.maxInlineSize,
   minInlineSize: BOX_PROPS_META.minInlineSize,
   onClick: {
-    options: ['event => void'],
+    options: ['e => void'],
     description: 'Click event handler for the button element.',
   },
   ripple: {

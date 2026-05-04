@@ -55,11 +55,11 @@ const IMAGE_PROPS_META: ComponentMeta<ImageProps>['props'] = {
     link: true,
   },
   onError: {
-    options: ['event => void'],
+    options: ['e => void'],
     description: 'Called when the underlying img element fires an error event.',
   },
   onLoad: {
-    options: ['event => void'],
+    options: ['e => void'],
     description: 'Called when the underlying img element fires a load event.',
   },
   opacity: BOX_PROPS_META.opacity,

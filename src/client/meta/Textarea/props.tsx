@@ -31,7 +31,7 @@ const TEXTAREA_PROPS_META: ComponentMeta<TextareaProps>['props'] = {
   },
   minInlineSize: BOX_PROPS_META.minInlineSize,
   onBlur: {
-    options: ['event => void'],
+    options: ['e => void'],
     description: 'Callback fired when the textarea loses focus.',
   },
   onChange: {
@@ -39,7 +39,7 @@ const TEXTAREA_PROPS_META: ComponentMeta<TextareaProps>['props'] = {
     description: 'Callback fired when the value changes.',
   },
   onFocus: {
-    options: ['event => void'],
+    options: ['e => void'],
     description: 'Callback fired when the textarea receives focus.',
   },
   placeholder: {

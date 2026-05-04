@@ -21,7 +21,7 @@ const LINK_PROPS_META: ComponentMeta<LinkProps>['props'] = {
     description: 'Specifies where to open the linked document, following the standard HTML target attribute behavior.',
   },
   onClick: {
-    options: ['event => void'],
+    options: ['e => void'],
     description: 'Callback fired when the component is clicked. Automatically prevents default navigation when provided.',
   },
 }
