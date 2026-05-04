@@ -25,7 +25,15 @@ const includedPages = {
   },
   concepts: {
     architecture: ['System', 'Performance', 'ResponsiveProps', 'ReactRefs', 'Slots', 'RenderFunction'],
-    stylingSystem: ['StylingAxes', 'DrawableSurface', 'StylingIsland', 'IntentsAndVariants', 'Typography', 'Breakpoints'],
+    stylingSystem: [
+      'StylingAxes',
+      'DrawableSurface',
+      'StylingIsland',
+      'IntentsAndVariants',
+      'Typography',
+      'Sizing scale',
+      'Breakpoints',
+    ],
   },
   other: {
     legal: ['TermsOfUse', 'License', 'PrivacyPolicy'],

@@ -64,6 +64,7 @@ export const FOUNDATIONS_CATEGORIES = [
           { key: 'styling-island', label: 'Styling island' },
           { key: 'intents-and-variants', label: 'Intents + variants' },
           { key: 'typography', label: 'Typography' },
+          { key: 'sizing-scale', label: 'Sizing scale' },
           { key: 'breakpoints', label: 'Breakpoints' },
           { key: 'color-matrix', label: 'Color matrix' },
           { key: 'color-palettes', label: 'Color palettes' },
