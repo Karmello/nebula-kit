@@ -32,7 +32,7 @@ const includedPages = {
   },
 } as const
 
-const outputDir = path.resolve(process.cwd(), 'assistant/generated')
+const outputDir = path.resolve(process.cwd(), 'assistant/generated/foundations')
 
 const renderPage = (Page: React.ComponentType) => {
   const page = React.createElement(Page)
@@ -68,7 +68,7 @@ const run = async () => {
 
       if (!docs.length) continue
 
-      const fileName = `foundations_${snakeCase(sectionKey)}_${snakeCase(groupKey)}.md`
+      const fileName = `${snakeCase(sectionKey)}_${snakeCase(groupKey)}.md`
       const filePath = path.join(outputDir, fileName)
       const content = docs.join('\n\n---\n\n')
 

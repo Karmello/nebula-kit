@@ -9,19 +9,16 @@ const outputDir = path.resolve(process.cwd(), 'assistant/generated')
 const run = async () => {
   await fs.mkdir(outputDir, { recursive: true })
 
-  // marketing.md
   const marketingDoc = generateMarketing()
+  const registryDoc = generateBundleRegistry()
+
+  const content = [marketingDoc, registryDoc].filter(Boolean).join('\n\n---\n\n')
+
   const marketingPath = path.join(outputDir, 'marketing.md')
 
-  await fs.writeFile(marketingPath, marketingDoc, 'utf8')
+  await fs.writeFile(marketingPath, content, 'utf8')
+
   console.log(`Generated ${marketingPath}`)
-
-  // bundle-registry.md
-  const registryDoc = generateBundleRegistry()
-  const registryPath = path.join(outputDir, 'bundle-registry.md')
-
-  await fs.writeFile(registryPath, registryDoc, 'utf8')
-  console.log(`Generated ${registryPath}`)
 }
 
 run()
