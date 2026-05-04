@@ -25,7 +25,6 @@ export type Prop = {
   isResponsive?: boolean
   description?: string
   link?: boolean
-  tooltip?: readonly string[]
 }
 
 type Example = {

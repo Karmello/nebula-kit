@@ -40,7 +40,6 @@ const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
     options: CALLOUT_STATUSES,
     defaultValue: DEFAULT_CALLOUT_STATUS,
     description: 'Defines the type of message being communicated.',
-    tooltip: CALLOUT_STATUSES,
   },
   tag: HTML_TAG_PROPS_META.tag,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,

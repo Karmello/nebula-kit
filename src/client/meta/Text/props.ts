@@ -71,7 +71,6 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     defaultValue: DEFAULT_TEXT_TYPOGRAPHY,
     description:
       'Applies a predefined typography style from the design system, controlling tag, fontSize and lineHeight together.',
-    tooltip: TEXT_TYPOGRAPHY,
   },
   underline: {
     options: ['boolean'],

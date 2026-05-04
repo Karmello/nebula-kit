@@ -1,18 +1,7 @@
 import { Input, Button, Text, Spacer, Select } from 'lib/components'
-import { BOX_INTENTS } from 'lib/components/core/base/Box'
-import { Breakpoint, COLORS, ICON_NAMES } from 'lib/definitions'
+import { Breakpoint } from 'lib/definitions'
 
-import { usePlaygroundStore } from '../../../../store'
-
-const PROPS_OPTIONS_FOR_INPUT = ['LengthValue', 'ReactNode', 'string', 'number']
-const PROPS_OPTIONS_FOR_BOOLEAN = ['boolean']
-const PROPS_OPTIONS_FOR_SELECT = ['IconName', 'BoxColor', 'BoxIntent'] as const
-
-const SELECT_DATA_MAP: Record<(typeof PROPS_OPTIONS_FOR_SELECT)[number], readonly string[]> = {
-  IconName: ICON_NAMES,
-  BoxColor: COLORS,
-  BoxIntent: BOX_INTENTS,
-}
+import { usePlaygroundStore, PLAYGROUND_CONTROLS_MAP, PlaygroundProp, PLAYGROUND_ARRAY_DATA_MAP } from '../../../../store'
 
 export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
   const components = usePlaygroundStore(state => state.components)
@@ -57,35 +46,28 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
     <>
       <Text>{bp ? `${activeProp} [${bp}]` : activeProp}</Text>
       <Spacer blockSize="3xs" />
-      {PROPS_OPTIONS_FOR_INPUT.includes(prop.options[0]) ? (
+
+      {PLAYGROUND_CONTROLS_MAP[activeProp as PlaygroundProp].type === 'string' ? (
         <Input
-          placeholder={prop.options[0] === 'ReactNode' ? 'value' : prop.options[0]}
+          placeholder="..."
           value={value}
           onChange={onChange}
           endAffix={props => <Button {...props} iconName="close" tagAttrs={{ onClick: () => onChange('') }} />}
         />
       ) : null}
-      {PROPS_OPTIONS_FOR_BOOLEAN.includes(prop.options[0]) ? (
+
+      {PLAYGROUND_CONTROLS_MAP[activeProp as PlaygroundProp].type === 'boolean' ? (
         <Select value={value} onChange={onChange}>
           <Select.Option value="">...</Select.Option>
           <Select.Option value="true">true</Select.Option>
           <Select.Option value="false">false</Select.Option>
         </Select>
       ) : null}
-      {PROPS_OPTIONS_FOR_SELECT.includes(prop.options[0] as (typeof PROPS_OPTIONS_FOR_SELECT)[number]) ? (
-        <Select value={value} onChange={onChange}>
-          <Select.Option value="">...</Select.Option>
-          {SELECT_DATA_MAP[prop.options[0] as (typeof PROPS_OPTIONS_FOR_SELECT)[number]].map(value => (
-            <Select.Option key={value} value={value}>
-              {value}
-            </Select.Option>
-          ))}
-        </Select>
-      ) : null}
-      {![...PROPS_OPTIONS_FOR_INPUT, ...PROPS_OPTIONS_FOR_BOOLEAN, ...PROPS_OPTIONS_FOR_SELECT].includes(prop.options[0]) ? (
+
+      {PLAYGROUND_CONTROLS_MAP[activeProp as PlaygroundProp].type === 'array' ? (
         <Select value={value} onChange={onChange} scrollAlign="center">
           <Select.Option value="">...</Select.Option>
-          {prop.options.map(option => (
+          {(PLAYGROUND_ARRAY_DATA_MAP[prop.options[0]] || prop.options).map(option => (
             <Select.Option key={option} value={option}>
               {option}
             </Select.Option>

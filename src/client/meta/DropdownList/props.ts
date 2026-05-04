@@ -67,7 +67,6 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
     defaultValue: String(DEFAULT_DROPDOWN_LIST_PLACEMENT),
     description:
       'Defines the preferred position of the dropdown list relative to the trigger element. The position gets auto-adjusted so the list stays visible.',
-    tooltip: DROPDOWN_LIST_PLACEMENTS,
   },
   scrollAlign: {
     options: DROPDOWN_LIST_SCROLL_ALIGN,

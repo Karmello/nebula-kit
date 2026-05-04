@@ -28,7 +28,6 @@ const FLOATING_PROPS_META: ComponentMeta<FloatingProps>['props'] = {
     isRequired: true,
     description:
       'Defines the floating behavior and allowed axis. Combines positioning strategy (project or fit) with the axis constraint (x, y, or both) into a single required setting that determines how placement is resolved.',
-    tooltip: FLOATING_MODE,
   },
   offset: {
     options: ['number'],
@@ -39,13 +38,11 @@ const FLOATING_PROPS_META: ComponentMeta<FloatingProps>['props'] = {
     options: ['({ placement, blockSize? }) => void'],
     description:
       "Callback invoked when the floating element's placement is resolved. Receives the resolved placement and when applicable, the resolved block size.",
-    tooltip: ['({ placement, blockSize? }) => void'],
   },
   placement: {
     options: PORTAL_PLACEMENTS,
     description:
       'Preferred initial placement of the floating element. Acts as a hint and may be overridden during resolution depending on mode and available space.',
-    tooltip: PORTAL_PLACEMENTS,
   },
   floatingBlockSize: {
     options: ['number'],

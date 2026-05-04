@@ -1,6 +1,6 @@
 import META from 'client/meta'
 
-import { PLAYGROUND_MAP, Props, State } from './definitions'
+import { PLAYGROUND_PROPS_MAP, Props, State } from './definitions'
 
 export const getInitialState = (): State => {
   const state: State = {
@@ -10,10 +10,10 @@ export const getInitialState = (): State => {
   }
 
   Object.keys(META)
-    .filter(componentName => Object.keys(PLAYGROUND_MAP).includes(componentName))
+    .filter(componentName => Object.keys(PLAYGROUND_PROPS_MAP).includes(componentName))
     .forEach(componentName => {
       const componentPropNames = Object.keys(META[componentName][componentName].props).filter(name =>
-        PLAYGROUND_MAP[componentName].includes(name)
+        PLAYGROUND_PROPS_MAP[componentName].includes(name)
       )
 
       const props: Props = {}

@@ -32,7 +32,6 @@ const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListProps>['props'] = {
     isRequired: false,
     isResponsive: false,
     description: 'Defines the marker style used for list items.',
-    tooltip: MARKER_LIST_STYLES,
   },
   gap: {
     ...FLEX_PROPS_META.rowGap,

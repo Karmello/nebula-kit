@@ -54,7 +54,6 @@ const TEXTAREA_PROPS_META: ComponentMeta<TextareaProps>['props'] = {
     options: TEXTAREA_RESIZE,
     defaultValue: DEFAULT_TEXTAREA_RESIZE,
     description: "Controls the textarea's resize behavior.",
-    tooltip: TEXTAREA_RESIZE,
   },
   rows: {
     options: ['number'],

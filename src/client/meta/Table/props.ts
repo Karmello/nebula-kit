@@ -18,7 +18,6 @@ const TABLE_PROPS_META: ComponentMeta<TableProps>['props'] = {
     options: ['Table.Body', 'Table.Header', 'Table.Footer', 'Table.Caption'],
     isRequired: true,
     description: 'Table.Body is required, the rest optional.',
-    tooltip: ['Table.Body', 'Table.Header', 'Table.Footer', 'Table.Caption'],
   },
   color: {
     ...BOX_PROPS_META.color,

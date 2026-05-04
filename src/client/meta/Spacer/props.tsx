@@ -7,8 +7,7 @@ import { DEFAULT_SPACER_BLOCK_SIZE } from 'lib/components/core/layout/Spacer'
 
 const SPACER_PROPS_META: ComponentMeta<SpacerProps>['props'] = {
   blockSize: {
-    options: [...TSHIRT_SIZES, 'CSS'],
-    tooltip: [...TSHIRT_SIZES, 'CSS'],
+    options: ['<CSS>', ...TSHIRT_SIZES],
     defaultValue: String(DEFAULT_SPACER_BLOCK_SIZE),
     isResponsive: true,
     description: 'Controls the spacer block size using predefined length tokens or any CSS value.',

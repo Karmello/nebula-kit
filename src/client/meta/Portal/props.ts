@@ -23,7 +23,6 @@ const PORTAL_PROPS_META: ComponentMeta<PortalProps>['props'] = {
     options: PORTAL_PLACEMENTS,
     defaultValue: DEFAULT_PORTAL_PLACEMENT,
     description: 'Defines the position of the portal content relative to the anchor element.',
-    tooltip: PORTAL_PLACEMENTS,
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,

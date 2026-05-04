@@ -21,7 +21,7 @@ const ROTATE_PROPS_META: ComponentMeta<RotateProps>['props'] = {
     description: 'Animation duration in milliseconds.',
   },
   easing: {
-    options: ['CSS'],
+    options: ['<CSS>'],
     defaultValue: DEFAULT_ROTATE_EASING,
     description: 'Timing function for the animation.',
   },
