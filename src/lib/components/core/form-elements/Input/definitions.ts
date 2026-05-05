@@ -8,33 +8,28 @@ export const INPUT_SIZE_CONFIG: Record<
   InputSize,
   {
     blockSize: LengthValue
-    paddingLeft: LengthValue
-    paddingRight: LengthValue
+    padding: LengthValue
     fontSize: string
   }
 > = {
   xs: {
     blockSize: '34px',
-    paddingLeft: '8px',
-    paddingRight: '8px',
+    padding: '10px',
     fontSize: TEXT_TYPOGRAPHY_CONFIG.compact.body.fontSize,
   },
   sm: {
     blockSize: '38px',
-    paddingLeft: '10px',
-    paddingRight: '10px',
+    padding: '12px',
     fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
   },
   md: {
     blockSize: '44px',
-    paddingLeft: '13px',
-    paddingRight: '13px',
+    padding: '15px',
     fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
   },
   lg: {
     blockSize: '52px',
-    paddingLeft: '16px',
-    paddingRight: '16px',
+    padding: '20px',
     fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
   },
 }

@@ -2,45 +2,46 @@ import { MouseEventHandler } from 'react'
 
 import { BoxProps, FlexProps, HtmlTagProps, TextProps, WithIconProps } from 'lib/components'
 import { LengthValue, RespValue, TShirtSize } from 'lib/definitions'
-import { TextScale } from 'lib/components/core/base/Text/definitions'
+import { TextScale } from 'lib/components/core/base/Text'
+import { IconSize } from 'lib/components/core/elements/Icon'
 
 export const BUTTON_SIZE_CONFIG: Record<
   ButtonSize,
   {
     blockSize: LengthValue
     padding: LengthValue
-    textScale: TextScale
-    iconSize: string
+    iconSize: IconSize
     loaderSize: string
+    textScale: TextScale
   }
 > = {
   xs: {
     blockSize: '34px',
     padding: '10px',
+    iconSize: 'sm',
+    loaderSize: '14px',
     textScale: 'compact',
-    iconSize: '13px',
-    loaderSize: '10px',
   },
   sm: {
     blockSize: '38px',
     padding: '12px',
+    iconSize: 'sm',
+    loaderSize: '16px',
     textScale: 'regular',
-    iconSize: '15px',
-    loaderSize: '15px',
   },
   md: {
     blockSize: '44px',
-    padding: '16px',
+    padding: '15px',
+    iconSize: 'md',
+    loaderSize: '18px',
     textScale: 'regular',
-    iconSize: '16px',
-    loaderSize: '20px',
   },
   lg: {
     blockSize: '52px',
-    padding: '24px',
-    textScale: 'regular',
+    padding: '20px',
     iconSize: '17px',
-    loaderSize: '25px',
+    loaderSize: '22px',
+    textScale: 'regular',
   },
 }
 
