@@ -12,7 +12,7 @@ export const ComponentSelect = () => {
       <Flex justifyContent="space-between" alignItems="center">
         <Text bold>Component</Text>
         <Tooltip
-          content="This list is curated for the Playground - not all components are included, only the ones that make sense here."
+          content="This list does not include all components, only the ones that best fit the purpose of the Playground."
           minInlineSize={300}
           maxInlineSize={400}
         >

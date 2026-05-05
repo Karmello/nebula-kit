@@ -48,6 +48,7 @@ export const Switch = ({
 
   return (
     <Box
+      key={String(size)}
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('switch'), tagAttrs?.className),

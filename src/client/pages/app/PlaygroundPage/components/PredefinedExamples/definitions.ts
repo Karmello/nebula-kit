@@ -12,128 +12,214 @@ import {
   TextProps,
 } from 'lib/components'
 
-export const PRESETS: Record<string, object[]> = {
+export const PRESETS: Record<string, Array<{ name: string; props: object }>> = {
   Box: [
     {
-      blockSize: '100px',
-      borderRadius: '10px',
-      children: 'Drawable Box with variant, intent and color applied.',
-      color: 'green',
-      drawable: true,
-      intent: 'primary',
-      padding: '20px',
-      variant: 'outline',
+      name: 'Non-drawable Box',
+      props: {
+        children: 'Non-drawable Box used as a simple container.',
+      } as BoxProps,
     },
     {
-      blockSize: '100px',
-      borderRadius: '10px',
-      children: 'Interactive Box with variant, intent and color applied.',
-      color: 'blue',
-      drawable: true,
-      intent: 'primary',
-      interactive: true,
-      padding: '20px',
-      variant: 'solid',
+      name: 'Drawable Box',
+      props: {
+        children: 'Drawable Box with solid variant, primary intent and green color applied.',
+        drawable: true,
+        variant: 'solid',
+        color: 'green',
+        intent: 'primary',
+        padding: '20px',
+      } as BoxProps,
     },
-  ] as BoxProps[],
+    {
+      name: 'Interactive Box',
+      props: {
+        children: 'Interactive Box with solid variant, primary intent and blue color applied.',
+        drawable: true,
+        interactive: true,
+        variant: 'solid',
+        color: 'blue',
+        intent: 'primary',
+        padding: '20px',
+      } as BoxProps,
+    },
+  ],
   Button: [
     {
-      children: 'Simple primary button',
-      color: 'blue',
-      intent: 'primary',
+      name: 'Simple button',
+      props: {
+        children: 'Button',
+        color: 'green',
+        intent: 'primary',
+      } as ButtonProps,
     },
     {
-      children: 'Full-width button',
-      color: 'blue',
-      fullWidth: true,
-      intent: 'primary',
+      name: 'Full-width button',
+      props: {
+        children: 'Full-width button',
+        color: 'blue',
+        intent: 'primary',
+        fullWidth: true,
+      } as ButtonProps,
     },
-  ] as ButtonProps[],
+  ],
   Callout: [
     {
-      content: 'This is message content.',
-      heading: 'Custom success callout',
-      status: 'success',
+      name: 'Success callout',
+      props: {
+        content: 'Success callout with solid variant applied.',
+        status: 'success',
+      } as CalloutProps,
     },
     {
-      content: 'This is message content.',
-      heading: 'Outline warning callout',
-      status: 'warning',
-      variant: 'outline',
+      name: 'Info callout',
+      props: {
+        content: 'Info callout with outline variant applied.',
+        status: 'info',
+        variant: 'outline',
+      } as CalloutProps,
     },
-  ] as CalloutProps[],
+  ],
   Checkbox: [
     {
-      color: 'blue',
-      intent: 'secondary',
-      size: 'md',
-      variant: 'solid',
+      name: 'Standard checkbox',
+      props: {
+        color: 'gray',
+      } as CheckboxProps,
     },
-  ] as CheckboxProps[],
+    {
+      name: 'Solid checkbox',
+      props: {
+        variant: 'solid',
+        color: 'blue',
+      } as CheckboxProps,
+    },
+  ],
   Icon: [
     {
-      color: 'blue',
-      intent: 'primary',
-      name: 'mail',
-      size: '30px',
+      name: 'Default size icon',
+      props: {
+        name: 'mail',
+        color: 'green',
+        intent: 'primary',
+      } as IconProps,
     },
     {
-      color: 'red',
-      intent: 'secondary',
-      name: 'globe',
-      size: '40px',
+      name: 'Custom size icon',
+      props: {
+        name: 'globe',
+        color: 'blue',
+        intent: 'secondary',
+        size: '50px',
+      } as IconProps,
     },
-  ] as IconProps[],
+  ],
   Input: [
     {
-      color: 'blue',
-      intent: 'primary',
-      variant: 'solid',
+      name: 'Default Input',
+      props: {
+        placeholder: 'Input with solid variant applied',
+      } as InputProps,
     },
-  ] as InputProps[],
+    {
+      name: 'Custom Input',
+      props: {
+        placeholder: 'Input with outline variant applied',
+        variant: 'outline',
+      } as InputProps,
+    },
+  ],
   Section: [
     {
-      children: 'This is section content.',
-      heading: 'Basic section',
+      name: 'Basic section',
+      props: {
+        children: 'This is simple basic section.',
+        heading: 'Basic section',
+      } as SectionProps,
     },
     {
-      children: 'This is section content.',
-      color: 'blue',
-      heading: 'Custom section',
-      iconName: 'settings',
-      intent: 'secondary',
-      size: 'lg',
-      variant: 'outline',
+      name: 'Section with border',
+      props: {
+        children: 'This section has icon and blue border around the content.',
+        color: 'blue',
+        heading: 'Section with border',
+        iconName: 'settings',
+        intent: 'secondary',
+        size: 'lg',
+        variant: 'outline',
+      } as SectionProps,
     },
-  ] as SectionProps[],
+  ],
   Select: [
     {
-      color: 'blue',
-      inlineSize: '250px',
-      children: '',
+      name: 'Default select',
+      props: {
+        children: '',
+      } as SelectProps,
     },
-  ] as SelectProps[],
+    {
+      name: 'Custom width select',
+      props: {
+        children: '',
+        inlineSize: '200px',
+      } as SelectProps,
+    },
+    {
+      name: 'Blue primary select',
+      props: {
+        children: '',
+        inlineSize: '200px',
+        intent: 'primary',
+        color: 'blue',
+      } as SelectProps,
+    },
+  ],
   Switch: [
     {
-      color: 'blue',
-      intent: 'primary',
+      name: 'Default switch',
+      props: {
+        //
+      } as SwitchProps,
     },
-  ] as SwitchProps[],
+    {
+      name: 'Custom switch',
+      props: {
+        color: 'blue',
+        intent: 'primary',
+        size: 'lg',
+      } as SwitchProps,
+    },
+  ],
   Table: [
     {
-      color: 'green',
+      name: 'Default table',
+      props: {
+        //
+      } as TableProps,
     },
-  ] as TableProps[],
+    {
+      name: 'Borderless table',
+      props: {
+        intent: 'neutral',
+      } as TableProps,
+    },
+  ],
   Text: [
     {
-      children: 'This is basic text with default body typography.',
+      name: 'Default text',
+      props: {
+        children: 'This is basic text with default body typography.',
+      } as TextProps,
     },
     {
-      children: 'This is colored heading text with icon.',
-      color: 'red',
-      iconName: 'check',
-      intent: 'primary',
-      typography: 'h4',
+      name: 'Custom text',
+      props: {
+        children: 'This is colored heading text with icon.',
+        color: 'red',
+        iconName: 'check',
+        intent: 'primary',
+        typography: 'h4',
+      } as TextProps,
     },
-  ] as TextProps[],
+  ],
 }

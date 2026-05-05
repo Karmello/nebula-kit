@@ -97,7 +97,7 @@ export const CodeSnippet = ({
           variant="solid"
         >
           <Flex tag="pre">
-            <Box tag="code" paddingInline="20px" paddingBlock={fullBg ? '0px' : '14px'} paddingBottom="12px">
+            <Box tag="code" paddingInline="sm" paddingBlock={fullBg ? '0px' : 'sm'}>
               {data.tokens.map((token, i) => {
                 const isEmpty = token.length === 0
 

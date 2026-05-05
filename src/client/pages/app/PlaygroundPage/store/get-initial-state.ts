@@ -1,6 +1,7 @@
 import META from 'client/meta'
 
 import { PLAYGROUND_PROPS_MAP, Props, State } from './definitions'
+import { PRESETS } from '../components/PredefinedExamples/definitions'
 
 export const getInitialState = (): State => {
   const state: State = {
@@ -31,11 +32,13 @@ export const getInitialState = (): State => {
           parsedDefaultValue = defaultValue
         }
 
+        const presetPropValue = PRESETS[componentName][0].props[propName as never]
+
         props[propName] = {
           options,
           defaultValue: parsedDefaultValue,
           isResponsive,
-          value: parsedDefaultValue,
+          value: presetPropValue ?? parsedDefaultValue,
         }
       })
 

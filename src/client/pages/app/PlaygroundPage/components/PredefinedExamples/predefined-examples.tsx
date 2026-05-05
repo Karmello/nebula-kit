@@ -15,31 +15,28 @@ export const PredefinedExamples = () => {
   return (
     <Select
       size="xs"
-      staticLabel="Preset"
-      inlineSize="100px"
+      staticLabel={`${activeComponent} presets`}
+      inlineSize="175px"
       value=""
       onChange={value => {
         Object.keys(allProps).forEach(propName => {
           setPropField(activeComponent, propName, 'value', allProps[propName].defaultValue)
         })
 
-        if (value === 'reset') return
-
-        const props = PRESETS[activeComponent][Number(value)]
+        const { props } = PRESETS[activeComponent][Number(value)]
 
         Object.keys(props).forEach(propName => {
           setPropField(activeComponent, propName, 'value', props[propName as never])
         })
       }}
     >
-      {PRESETS[activeComponent].map((_, index) => {
+      {PRESETS[activeComponent].map(({ name }, index) => {
         return (
           <Select.Option key={index} value={String(index)}>
-            Example {index + 1}
+            {name}
           </Select.Option>
         )
       })}
-      <Select.Option value="reset">Reset</Select.Option>
     </Select>
   )
 }

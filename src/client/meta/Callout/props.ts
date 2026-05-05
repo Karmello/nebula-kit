@@ -24,8 +24,6 @@ const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
   heading: {
     description: 'Text displayed as the title of the Callout. Overrides the default heading associated with the selected status.',
     options: ['string'],
-    defaultValue: CALLOUT_CONFIG[DEFAULT_CALLOUT_STATUS].heading,
-    isResponsive: false,
   },
   intent: {
     ...BOX_PROPS_META.intent,

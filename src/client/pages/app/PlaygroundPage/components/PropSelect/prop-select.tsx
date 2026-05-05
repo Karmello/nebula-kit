@@ -15,7 +15,7 @@ export const PropSelect = () => {
       <Flex justifyContent="space-between" alignItems="center">
         <Text bold>Property</Text>
         <Tooltip
-          content="The props list is intentionally curated to highlight the styling system in action. It does not include all available props."
+          content="The props list was also intentionally narrowed to include only those that best fit this context."
           minInlineSize={300}
           maxInlineSize={400}
         >

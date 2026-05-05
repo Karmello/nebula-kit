@@ -1,5 +1,8 @@
+import { useEffect } from 'react'
+
 import { useAppStore } from 'client/store'
 import { Box, Flex, Section, Spacer, SplitView } from 'lib/components'
+import { LIB_PREFIX } from 'lib/definitions'
 
 import {
   ComponentSelect,
@@ -13,8 +16,17 @@ import {
   PredefinedExamples,
 } from './components'
 
+import { getInitialState } from './store/get-initial-state'
+
 export const PlaygroundPage = () => {
   const theme = useAppStore(state => state.theme)
+
+  useEffect(() => {
+    const key = `${LIB_PREFIX}.playground`
+    if (!localStorage.getItem(key)) {
+      localStorage.setItem(key, JSON.stringify({ state: getInitialState() }))
+    }
+  }, [])
 
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} overflowY="hidden">
