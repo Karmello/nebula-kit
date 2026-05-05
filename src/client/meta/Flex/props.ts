@@ -8,6 +8,7 @@ import {
   CSS_FLEX_DISPLAY,
   CSS_FLEX_JUSTIFY_CONTENT,
   CSS_FLEX_WRAP,
+  TSHIRT_SIZES,
 } from 'lib/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -32,7 +33,7 @@ const FLEX_PROPS_META: ComponentMeta<FlexProps>['props'] = {
     description: 'Flex.Item or any React node.',
   },
   columnGap: {
-    options: ['<CSS>'],
+    options: [...TSHIRT_SIZES, '<CSS>'],
     isResponsive: true,
     description: 'Defines horizontal spacing between columns of children.',
     link: true,
@@ -56,7 +57,7 @@ const FLEX_PROPS_META: ComponentMeta<FlexProps>['props'] = {
     link: true,
   },
   gap: {
-    options: ['<CSS>'],
+    options: [...TSHIRT_SIZES, '<CSS>'],
     isResponsive: true,
     description: 'Defines spacing between children on both axes.',
     link: true,
@@ -68,7 +69,7 @@ const FLEX_PROPS_META: ComponentMeta<FlexProps>['props'] = {
     link: true,
   },
   rowGap: {
-    options: ['<CSS>'],
+    options: [...TSHIRT_SIZES, '<CSS>'],
     isResponsive: true,
     description: 'Defines vertical spacing between rows of children.',
     link: true,

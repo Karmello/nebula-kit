@@ -13,7 +13,7 @@ const VISIBLE_OPTIONS_COUNT = 3
 
 export const PropsTable = ({ category, data }: Props) => {
   const table = (
-    <Table color="blue" intent="neutral" paddingBlock="5px" paddingInline="10px">
+    <Table color="blue" intent="neutral" paddingBlock="2xs" paddingInline="xs">
       <Table.Header>
         <Table.HeaderRow>
           <Table.HeaderCell>Name</Table.HeaderCell>
@@ -87,14 +87,14 @@ export const PropsTable = ({ category, data }: Props) => {
     return (
       <>
         <Section heading={category}>{table}</Section>
-        <Spacer blockSize="lg" />
+        <Spacer blockSize="2xl" />
       </>
     )
   } else {
     return (
       <>
         {table}
-        <Spacer blockSize="lg" />
+        <Spacer blockSize="2xl" />
       </>
     )
   }

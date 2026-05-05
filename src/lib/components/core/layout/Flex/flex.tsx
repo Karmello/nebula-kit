@@ -2,7 +2,7 @@ import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, useLayoutEf
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { withPrefix } from 'lib/helpers'
+import { withPrefix, resolveLengthValue } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { updateDomRespStyle, updateDomRespDataset } from 'lib/service'
 
@@ -39,9 +39,9 @@ export const Flex = <T extends ElementType = 'div'>({
       justifyContent,
       alignItems,
       alignContent,
-      gap,
-      rowGap,
-      columnGap,
+      gap: gap !== undefined ? resolveLengthValue(gap) : undefined,
+      rowGap: rowGap !== undefined ? resolveLengthValue(rowGap) : undefined,
+      columnGap: columnGap !== undefined ? resolveLengthValue(columnGap) : undefined,
     })
   }, [bp, display, flexDirection, flexWrap, justifyContent, alignItems, alignContent, gap, rowGap, columnGap])
 

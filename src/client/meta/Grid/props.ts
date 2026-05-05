@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { GridProps } from 'lib/components'
-import { CSS_GRID_AUTO_FLOW, CSS_GRID_PLACE_CONTENT, CSS_GRID_PLACE_ITEMS } from 'lib/definitions'
+import { CSS_GRID_AUTO_FLOW, CSS_GRID_PLACE_CONTENT, CSS_GRID_PLACE_ITEMS, TSHIRT_SIZES } from 'lib/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
@@ -12,13 +12,13 @@ const GRID_PROPS_META: ComponentMeta<GridProps>['props'] = {
     description: 'Grid.Item or any React node.',
   },
   columnGap: {
-    options: ['<CSS>'],
+    options: [...TSHIRT_SIZES, '<CSS>'],
     isResponsive: true,
     description: 'Sets the spacing between grid columns.',
     link: true,
   },
   gap: {
-    options: ['<CSS>'],
+    options: [...TSHIRT_SIZES, '<CSS>'],
     isResponsive: true,
     description: 'Sets the spacing between rows and columns in the grid.',
     link: true,
@@ -66,7 +66,7 @@ const GRID_PROPS_META: ComponentMeta<GridProps>['props'] = {
     link: true,
   },
   rowGap: {
-    options: ['<CSS>'],
+    options: [...TSHIRT_SIZES, '<CSS>'],
     isResponsive: true,
     description: 'Sets the spacing between grid rows.',
     link: true,
