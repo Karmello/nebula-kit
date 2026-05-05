@@ -44,7 +44,8 @@ export const Section = <T extends SectionTag = 'section'>({
       color={color}
       intent={intent}
       borderRadius={variant === 'ghost' ? '0px' : 'var(--neb-border-radius)'}
-      padding={variant === 'ghost' ? '0px' : SECTION_SIZE_CONFIG[size].spacing}
+      paddingBlock={variant === 'ghost' ? '0px' : SECTION_SIZE_CONFIG[size].paddingBlock}
+      paddingInline={variant === 'ghost' ? '0px' : SECTION_SIZE_CONFIG[size].paddingInline}
       maxInlineSize="100%"
       overflowX="auto"
       overflowY="hidden"
