@@ -97,7 +97,8 @@ export const Button = <T extends ButtonTag = 'button'>({
       selected={selected}
       surface={surface}
       position="relative"
-      {...BUTTON_SIZE_CONFIG[size || 'md']}
+      blockSize={BUTTON_SIZE_CONFIG[size || 'md'].blockSize}
+      padding={BUTTON_SIZE_CONFIG[size || 'md'].padding}
     >
       {iconName ? (
         <WithIcon
@@ -115,7 +116,17 @@ export const Button = <T extends ButtonTag = 'button'>({
       ) : (
         text
       )}
-      {loading && !disabled ? <Loader centered size={size} /> : null}
+      {loading && !disabled ? (
+        <Loader
+          tagAttrs={{
+            style: {
+              blockSize: BUTTON_SIZE_CONFIG[size || 'md'].loaderSize,
+              inlineSize: BUTTON_SIZE_CONFIG[size || 'md'].loaderSize,
+            },
+          }}
+          centered
+        />
+      ) : null}
       <Ripple parentRef={tagRef || ref} active={ripple && !loading && !disabled} />
     </Box>
   )

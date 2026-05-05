@@ -127,8 +127,7 @@ export const Pagination = ({
                   color={color}
                   disabled
                   blockSize={BUTTON_SIZE_CONFIG[size || 'md'].blockSize}
-                  paddingLeft={BUTTON_SIZE_CONFIG[size || 'md'].paddingLeft}
-                  paddingRight={BUTTON_SIZE_CONFIG[size || 'md'].paddingRight}
+                  paddingInline={BUTTON_SIZE_CONFIG[size || 'md'].padding}
                 >
                   <Flex tagAttrs={{ style: { blockSize: 'inherit' } }} alignItems="center">
                     <Icon name="ellipsis" />

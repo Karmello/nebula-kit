@@ -29,7 +29,7 @@ export const TabsPanel = ({
       }}
       tagRef={tagRef}
       overflowX="auto"
-      margin={BUTTON_SIZE_CONFIG.md.paddingLeft}
+      margin={BUTTON_SIZE_CONFIG.md.padding}
     >
       {children}
     </Box>

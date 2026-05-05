@@ -14,7 +14,7 @@ export const INPUT_SIZE_CONFIG: Record<
   }
 > = {
   xs: {
-    blockSize: '28px',
+    blockSize: '34px',
     paddingLeft: '8px',
     paddingRight: '8px',
     fontSize: TEXT_TYPOGRAPHY_CONFIG.compact.body.fontSize,

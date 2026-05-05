@@ -1,6 +1,7 @@
 import { RefObject } from 'react'
 
 import { Breakpoint, BREAKPOINTS } from 'lib/definitions'
+
 import { Bucket, PropValues, isBlank } from '../definitions'
 import { getBucketPerBp } from './get-bucket-per-bp'
 
@@ -10,11 +11,32 @@ export const updateDomRespStyle = (
   breakpoint: Breakpoint,
   propValues: PropValues
 ): void => {
-  if (!elemRef.current) return
+  const el = elemRef.current
+  if (!el) return
+
+  // -------------------------------------
+  // 0. Capture initial inline styles (user ownership)
+  // -------------------------------------
+  const initialKey = 'neb_initial_style_' + componentName.toLowerCase()
+
+  if (!el[initialKey]) {
+    const initial: Record<string, boolean> = {}
+
+    const style = el.style
+
+    for (const prop in style) {
+      if (style[prop]) {
+        initial[prop] = true
+      }
+    }
+
+    el[initialKey] = initial
+  }
+
+  const initial = el[initialKey] as Record<string, boolean>
 
   // -------------------------------------
   // 1. Collect controlled props
-  //    (undefined = uncontrolled)
   // -------------------------------------
   const activePropValues: PropValues = {}
   for (const propName in propValues) {
@@ -25,7 +47,6 @@ export const updateDomRespStyle = (
 
   // -------------------------------------
   // 2. Resolve merged bucket
-  //    (base → current breakpoint)
   // -------------------------------------
   let mergedBucket: Bucket = {}
 
@@ -39,12 +60,12 @@ export const updateDomRespStyle = (
   // 3. Cleanup previously applied styles
   // -------------------------------------
   const storeKey = 'neb_resp_style_' + componentName.toLowerCase()
-  const prevApplied: Set<string> = elemRef.current[storeKey] || new Set()
-  const nextApplied = new Set(Object.keys(mergedBucket))
+  const prevApplied: Set<string> = el[storeKey] || new Set()
+  const nextApplied = new Set<string>()
 
   for (const propName of prevApplied) {
-    if (!nextApplied.has(propName)) {
-      elemRef.current.style[propName] = ''
+    if (!(propName in mergedBucket)) {
+      el.style[propName] = ''
     }
   }
 
@@ -53,13 +74,17 @@ export const updateDomRespStyle = (
   // -------------------------------------
   for (const propName in mergedBucket) {
     const value = mergedBucket[propName]
-    if (!isBlank(value)) {
-      elemRef.current.style[propName] = value
-    }
+    if (isBlank(value)) continue
+
+    // 🔥 User owns it → never override
+    if (initial[propName]) continue
+
+    el.style[propName] = value
+    nextApplied.add(propName)
   }
 
   // -------------------------------------
   // 5. Persist applied keys
   // -------------------------------------
-  elemRef.current[storeKey] = nextApplied
+  el[storeKey] = nextApplied
 }

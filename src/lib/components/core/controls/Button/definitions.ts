@@ -8,39 +8,39 @@ export const BUTTON_SIZE_CONFIG: Record<
   ButtonSize,
   {
     blockSize: LengthValue
-    paddingLeft: LengthValue
-    paddingRight: LengthValue
+    padding: LengthValue
     textScale: TextScale
     iconSize: string
+    loaderSize: string
   }
 > = {
   xs: {
     blockSize: '34px',
-    paddingLeft: '10px',
-    paddingRight: '10px',
+    padding: '10px',
     textScale: 'compact',
     iconSize: '13px',
+    loaderSize: '10px',
   },
   sm: {
     blockSize: '38px',
-    paddingLeft: '12px',
-    paddingRight: '12px',
+    padding: '12px',
     textScale: 'regular',
     iconSize: '15px',
+    loaderSize: '15px',
   },
   md: {
     blockSize: '44px',
-    paddingLeft: '16px',
-    paddingRight: '16px',
+    padding: '16px',
     textScale: 'regular',
     iconSize: '16px',
+    loaderSize: '20px',
   },
   lg: {
     blockSize: '52px',
-    paddingLeft: '24px',
-    paddingRight: '24px',
+    padding: '24px',
     textScale: 'regular',
     iconSize: '17px',
+    loaderSize: '25px',
   },
 }
 
