@@ -8,7 +8,7 @@ const FocusTrapWrapper = () => {
 
   return (
     <FocusTrap tagRef={ref} active>
-      <Flex tagRef={ref} gap="10px">
+      <Flex tagRef={ref} gap="xs">
         <Button>Button 1</Button>
         <Button>Button 2</Button>
         <Button>Button 3</Button>
@@ -26,7 +26,7 @@ const ref = useRef(null)
 
 return (
   <FocusTrap tagRef={ref} active>
-    <Flex tagRef={ref} gap="10px">
+    <Flex tagRef={ref} gap="xs">
       <Button>Button 1</Button>
       <Button>Button 2</Button>
       <Button>Button 3</Button>

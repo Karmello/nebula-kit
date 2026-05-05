@@ -13,7 +13,7 @@ export const PromptToolbar = ({ loading, disabled, lengthStatus, handleSend, han
     <Box drawable theme="flipped" variant="solid" intent="neutral" padding="7px" paddingLeft="17px">
       <Flex alignItems="center">
         <Flex.Item flex="1">
-          <Flex alignItems="center" columnGap="15px">
+          <Flex alignItems="center" columnGap="sm">
             <Tooltip
               intent="primary"
               variant="outline"
@@ -26,7 +26,7 @@ export const PromptToolbar = ({ loading, disabled, lengthStatus, handleSend, han
             {!loading ? <Text typography="small">{lengthStatus}</Text> : null}
           </Flex>
         </Flex.Item>
-        <Flex alignItems="center" columnGap="12px">
+        <Flex alignItems="center" columnGap="sm">
           <Loader active={loading} size="sm" />
           <Button
             intent="primary"

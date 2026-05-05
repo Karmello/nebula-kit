@@ -21,7 +21,7 @@ export default () => {
         ))}
       </Select>
       <Spacer blockSize="lg" />
-      <Flex flexDirection="column" alignItems="stretch" rowGap="20px">
+      <Flex flexDirection="column" alignItems="stretch" rowGap="sm">
         {arr.map(n => {
           return (
             <Flex.Item key={n} flexGrow="1">

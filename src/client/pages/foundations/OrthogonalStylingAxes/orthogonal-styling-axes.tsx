@@ -6,7 +6,7 @@ export default () => {
 
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap="15px">
+      <Flex flexDirection="column" gap="sm">
         <Text>
           NebulaKit resolves visual styles using five orthogonal axes:
           <Text tag="span" bold space="start">

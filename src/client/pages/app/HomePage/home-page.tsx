@@ -14,7 +14,7 @@ export const HomePage = () => {
       <Flex
         flexDirection={{ base: 'column', lg: 'row' }}
         justifyContent="center"
-        rowGap="80px"
+        rowGap="2xl"
         columnGap={{ base: '50px', xl: '100px' }}
       >
         <Flex.Item flex="2">
@@ -33,8 +33,8 @@ export const HomePage = () => {
           <Flex
             alignItems="center"
             alignContent="center"
-            columnGap="50px"
-            rowGap="50px"
+            columnGap="xl"
+            rowGap="xl"
             justifyContent="center"
             flexDirection={{ base: 'column', md: 'row-reverse' }}
           >

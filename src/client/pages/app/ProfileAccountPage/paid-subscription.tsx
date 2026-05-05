@@ -25,7 +25,7 @@ export default ({ enabled }: { enabled: boolean }) => {
         <Table.Header paddingInline="0px">
           <Table.HeaderRow>
             <Table.HeaderCell colSpan={3} blockSize="50px">
-              <Flex alignItems="center" columnGap="20px">
+              <Flex alignItems="center" columnGap="sm">
                 <Text typography="h6" iconName="arrow-down">
                   Subscription
                 </Text>
@@ -34,7 +34,7 @@ export default ({ enabled }: { enabled: boolean }) => {
             </Table.HeaderCell>
           </Table.HeaderRow>
         </Table.Header>
-        <Table.Body intent={getPaymentInfo.isMakingRequest ? 'tertiary' : 'secondary'} paddingBlock="10px" paddingInline="15px">
+        <Table.Body intent="tertiary" paddingBlock="10px" paddingInline="15px">
           <Table.Row>
             <Table.Cell colSpan={1}>
               <Text>Renews every</Text>

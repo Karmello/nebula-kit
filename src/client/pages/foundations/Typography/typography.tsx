@@ -19,7 +19,7 @@ const MAP: Record<TextTypography, string> = {
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap="50px" alignItems="stretch">
+      <Flex flexDirection="column" gap="md" alignItems="stretch">
         <Text>All typography styles defined in the system.</Text>
         {TEXT_TYPOGRAPHY.map(typography => (
           <Section key={typography} heading={typography} size="xs" intent="primary">

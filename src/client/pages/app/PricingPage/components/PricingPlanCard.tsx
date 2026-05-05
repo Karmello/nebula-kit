@@ -36,7 +36,7 @@ export const PricingPlanCard = ({
   const OptionIncluded = ({ children }: { children: ReactNode }) => {
     return (
       <>
-        <Flex alignItems="center" columnGap="10px">
+        <Flex alignItems="center" columnGap="sm">
           <Icon name="check" intent="primary" color={color} />
           {children}
         </Flex>

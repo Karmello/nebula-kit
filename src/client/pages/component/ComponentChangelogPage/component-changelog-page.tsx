@@ -19,7 +19,7 @@ export const ComponentChangelogPage = ({ pageKey }: { pageKey: PageKey.core | Pa
   return (
     <>
       <Box maxInlineSize="55rem">
-        <Flex flexDirection="column" alignItems="stretch" gap="25px">
+        <Flex flexDirection="column" alignItems="stretch" gap="md">
           {versionKeys.map(vKey => (
             <Section key={vKey} heading={`v${vKey}`} size="sm" intent="primary" color="blue">
               <MarkerList>

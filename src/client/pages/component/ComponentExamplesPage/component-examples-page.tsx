@@ -75,7 +75,7 @@ export const ComponentExamplesPage = ({ pageKey }: { pageKey: PageKey.core | Pag
     <Box maxInlineSize="55rem">
       {!meta[itemKeyPascal][itemKeyPascal].hideExamplesThemeToggle ? (
         <>
-          <Flex alignItems="center" columnGap="15px">
+          <Flex alignItems="center" columnGap="sm">
             <Switch size="xs" checked={flipGlobalThemeOnExamples} onChange={setFlipGlobalThemeOnExamples} />
             <Text bold typography="small">
               Use flipped theme

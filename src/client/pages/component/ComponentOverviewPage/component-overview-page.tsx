@@ -21,7 +21,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   } = meta
 
   const content = (
-    <Flex flexDirection="column" alignItems="stretch" gap="30px">
+    <Flex flexDirection="column" alignItems="stretch" gap="lg">
       <Box>
         <Text typography="lead" bold>
           {title}

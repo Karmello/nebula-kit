@@ -23,7 +23,7 @@ const Family = ({
         {components ? (
           <>
             <Spacer blockSize="md" />
-            <Flex gap="7px">
+            <Flex gap="xs">
               {components.map(c => {
                 const { pageKey, categoryKey, itemKey } = PAGE_SECTIONS.find(s => s.itemKey === c.toLowerCase())
                 const href = `/${pageKey}/${categoryKey}/${itemKey}/overview`
@@ -53,7 +53,7 @@ export const Families = () => {
           md: 'repeat(2, 1fr)',
           xl: 'repeat(4, 1fr)',
         }}
-        gap="20px"
+        gap="sm"
       >
         <Family
           heading="Primitives"

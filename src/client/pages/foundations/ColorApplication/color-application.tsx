@@ -48,7 +48,7 @@ export default () => {
         Intents and variants combined through Button components, illustrating the system's full color spectrum in practice.
       </Text>
       <Spacer />
-      <Flex flexWrap="wrap" columnGap="15px" rowGap="10px">
+      <Flex flexWrap="wrap" columnGap="sm" rowGap="xs">
         <Flex.Item>
           <Text bold intent="primary">
             Variant
@@ -102,7 +102,7 @@ export default () => {
       </Flex>
       <Spacer blockSize="lg" />
       <Box overflowX="auto">
-        <Grid gridTemplateColumns={`repeat(${BOX_INTENTS.length}, 1fr)`} gap="7px">
+        <Grid gridTemplateColumns={`repeat(${BOX_INTENTS.length}, 1fr)`} gap="xs">
           {COLORS.map(color => {
             return BOX_INTENTS.map(intent => {
               return (

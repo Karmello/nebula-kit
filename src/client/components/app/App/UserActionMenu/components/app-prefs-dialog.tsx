@@ -34,7 +34,7 @@ export const AppPrefsDialog = () => {
       </Dialog.Header>
       <Dialog.Content>
         <Box padding="20px" paddingBottom="40px">
-          <Flex flexWrap="wrap" columnGap="15px" rowGap="25px">
+          <Flex flexWrap="wrap" columnGap="sm" rowGap="md">
             <Flex.Item>
               <Text bold typography="small">
                 Theme

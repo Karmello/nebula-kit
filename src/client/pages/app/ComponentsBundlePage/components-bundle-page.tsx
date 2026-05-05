@@ -17,7 +17,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
         heading={bundle === 'core' ? `Core bundle (${CORE_DATA.length})` : `Pro bundle (${PRO_DATA.length})`}
         iconName="package"
       >
-        <Flex alignItems="center" columnGap="50px" flexWrap="wrap" justifyContent="space-between">
+        <Flex alignItems="center" columnGap="xl" flexWrap="wrap" justifyContent="space-between">
           {bundle === 'core' ? <Text>All components available for free.</Text> : <Text>Comes with the paid plans.</Text>}
           <Link href={PageKey.pricing} onClick={() => navigateTo(PageKey.pricing)}>
             <Button size="sm" variant="ghost" intent="primary" color="blue" iconName="arrow-left">
@@ -33,7 +33,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
             lg: 'repeat(3, 1fr)',
             xl: 'repeat(4, 1fr)',
           }}
-          gap="20px"
+          gap="sm"
         >
           {(bundle === 'core' ? CORE_DATA : PRO_DATA).map(item => (
             <Section

@@ -11,7 +11,7 @@ export const ConnectToGithubSection = ({ userPlan, githubUsername }: { userPlan:
         track progress and stay aligned with what's being built next.
       </Text>
       <Spacer blockSize="md" />
-      <Flex alignItems="center" columnGap="20px">
+      <Flex alignItems="center" columnGap="sm">
         <Button
           tagAttrs={{
             onClick: async () => {

@@ -38,8 +38,8 @@ export const PlaygroundPage = () => {
               <>
                 <SplitView.Main>
                   <SplitView.MainBar>
-                    <Flex flexWrap="wrap" gap="8px">
-                      <Flex flexWrap="wrap" gap="8px">
+                    <Flex flexWrap="wrap" gap="xs">
+                      <Flex flexWrap="wrap" gap="xs">
                         <TogglePropsButton />
                         <PredefinedExamples />
                       </Flex>
@@ -61,12 +61,12 @@ export const PlaygroundPage = () => {
                   inlineSize="320px"
                 >
                   <Box padding={{ base: '10px', lg: '0px' }} paddingLeft={{ lg: '30px' }}>
-                    <Flex flexDirection="column" alignItems="stretch" rowGap="25px">
+                    <Flex flexDirection="column" alignItems="stretch" rowGap="md">
                       <Flex.Item>
                         <ComponentSelect />
                       </Flex.Item>
                       <Flex.Item>
-                        <Flex flexDirection="column" alignItems="stretch" rowGap="16px">
+                        <Flex flexDirection="column" alignItems="stretch" rowGap="sm">
                           <Flex.Item>
                             <PropSelect />
                           </Flex.Item>

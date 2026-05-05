@@ -6,19 +6,14 @@ export const Hero = () => {
   const navigateTo = useNavigateTo()
 
   return (
-    <Flex
-      columnGap="25px"
-      rowGap="50px"
-      alignItems="center"
-      flexDirection={{ base: 'column', md: 'row', lg: 'column', xl: 'row' }}
-    >
+    <Flex columnGap="md" rowGap="xl" alignItems="center" flexDirection={{ base: 'column', md: 'row', lg: 'column', xl: 'row' }}>
       <Flex.Item flex="1">
         <Text typography="h6">
           React UI system built on composition and prop inheritance, with strict rules governing component appearance and
           behavior. Designed to reduce UI entropy and keep interfaces consistent and maintainable as products grow over time.
         </Text>
         <Spacer blockSize="md" />
-        <Flex gap="10px" flexWrap="wrap" justifyContent={{ base: 'center', md: 'flex-start' }}>
+        <Flex gap="xs" flexWrap="wrap" justifyContent={{ base: 'center', md: 'flex-start' }}>
           <Link
             href={PageKey.playground}
             onClick={() => {

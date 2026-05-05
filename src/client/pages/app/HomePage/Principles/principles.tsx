@@ -7,7 +7,7 @@ export const Principles = () => {
 
   return (
     <>
-      <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="30px">
+      <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="lg">
         <Section heading="JSX first" color="green" intent="primary" iconName="code">
           <Text intent="neutral">
             JSX is the primary development flow. CSS exists as an internal implementation detail. Customization happens directly

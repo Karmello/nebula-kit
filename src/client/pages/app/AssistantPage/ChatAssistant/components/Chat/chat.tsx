@@ -23,7 +23,7 @@ export const Chat = ({ tagRef, chatHistory, handleQuestionClick }: ChatProps) =>
       padding="20px"
       borderBottomWidth="0px"
     >
-      <Flex flexDirection="column" rowGap="30px">
+      <Flex flexDirection="column" rowGap="lg">
         {chatHistory.map(({ role, content }, key) =>
           role === 'assistant' ? (
             <AssistantMessage key={key} content={content} handleQuestionClick={handleQuestionClick} />

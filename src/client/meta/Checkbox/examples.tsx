@@ -9,7 +9,7 @@ const CHECKBOX_EXAMPLES_META: ComponentMeta<CheckboxProps>['examples'] = [
   {
     description: 'Different checkbox sizes in the outline variant.',
     jsx: (
-      <Flex gap="10px" alignItems="center">
+      <Flex gap="xs" alignItems="center">
         <Checkbox size="xs" variant="outline" />
         <Checkbox size="sm" variant="outline" />
         <Checkbox size="md" variant="outline" />
@@ -20,7 +20,7 @@ const CHECKBOX_EXAMPLES_META: ComponentMeta<CheckboxProps>['examples'] = [
   {
     description: 'Different checkbox sizes in the soft-outline variant.',
     jsx: (
-      <Flex gap="10px" alignItems="center">
+      <Flex gap="xs" alignItems="center">
         <Checkbox size="xs" variant="soft-outline" />
         <Checkbox size="sm" variant="soft-outline" />
         <Checkbox size="md" variant="soft-outline" />
@@ -31,7 +31,7 @@ const CHECKBOX_EXAMPLES_META: ComponentMeta<CheckboxProps>['examples'] = [
   {
     description: 'Different checkbox sizes in the solid variant.',
     jsx: (
-      <Flex gap="10px" alignItems="center">
+      <Flex gap="xs" alignItems="center">
         <Checkbox size="xs" variant="solid" />
         <Checkbox size="sm" variant="solid" />
         <Checkbox size="md" variant="solid" />
@@ -42,7 +42,7 @@ const CHECKBOX_EXAMPLES_META: ComponentMeta<CheckboxProps>['examples'] = [
   {
     description: 'Disabled selected checkboxes.',
     jsx: (
-      <Flex gap="10px" alignItems="center">
+      <Flex gap="xs" alignItems="center">
         <Checkbox size="xs" variant="solid" disabled defaultChecked />
         <Checkbox size="sm" variant="solid" disabled defaultChecked />
         <Checkbox size="md" variant="solid" disabled defaultChecked />

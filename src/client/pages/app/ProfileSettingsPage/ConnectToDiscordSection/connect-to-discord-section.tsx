@@ -12,7 +12,7 @@ export const ConnectToDiscordSection = ({ userPlan, discordUserId }: { userPlan:
         your plan and provide the right level of support.
       </Text>
       <Spacer blockSize="md" />
-      <Flex alignItems="center" columnGap="20px">
+      <Flex alignItems="center" columnGap="sm">
         <Button
           tagAttrs={{
             onClick: async () => {

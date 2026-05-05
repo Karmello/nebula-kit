@@ -115,7 +115,7 @@ export const CatalogPageTemplate = memo(
                     </SplitView.Side>
                     <SplitView.Main paddingRight="20px">
                       <SplitView.MainBar>
-                        <Flex gap="15px" alignItems="center">
+                        <Flex gap="sm" alignItems="center">
                           <Text typography="h3">
                             {pageKey === PageKey.foundations.toString() ? activeSectionObj?.label : activeItemObj?.label}
                           </Text>

@@ -3,7 +3,7 @@ import { Box, Text, Flex } from 'lib/components'
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap="15px">
+      <Flex flexDirection="column" gap="sm">
         <Text>
           NebulaKit is one person's idea. It is the result of almost ten years of experimenting with user interfaces across
           different programming languages and frontend technologies. The framework is shaped by the problems encountered during

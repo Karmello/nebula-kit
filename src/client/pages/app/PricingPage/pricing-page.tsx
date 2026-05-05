@@ -27,7 +27,7 @@ export const PricingPage = () => {
           <Loader centered size="lg" color="blue" />
         ) : (
           <>
-            <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }} gap="20px">
+            <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }} gap="sm">
               <PricingPlanCard
                 plan={PRICING_DATA.plans.free.id as never}
                 activePlan={getUser.data?.user.plan}
@@ -74,7 +74,7 @@ export const PricingPage = () => {
               />
             </Grid>
             <Spacer blockSize="lg" />
-            <Flex flexDirection="column" rowGap="5px">
+            <Flex flexDirection="column" rowGap="2xs">
               {PRICING_DATA.additionalInfo.map((info, key) => (
                 <Text key={key} italic>
                   {info}
