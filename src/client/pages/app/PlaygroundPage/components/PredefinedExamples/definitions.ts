@@ -5,6 +5,7 @@ import {
   CheckboxProps,
   IconProps,
   InputProps,
+  LoaderProps,
   SectionProps,
   SelectProps,
   SwitchProps,
@@ -127,6 +128,19 @@ export const PRESETS: Record<string, Array<{ name: string; props: object }>> = {
         placeholder: 'Input with outline variant applied',
         variant: 'outline',
       } as InputProps,
+    },
+  ],
+  Loader: [
+    {
+      name: 'Default Loader',
+      props: {} as LoaderProps,
+    },
+    {
+      name: 'Custom Loader',
+      props: {
+        color: 'blue',
+        size: '2xl',
+      } as LoaderProps,
     },
   ],
   Section: [

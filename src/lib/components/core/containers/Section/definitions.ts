@@ -1,6 +1,6 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
 import { BoxIntent, BoxVariant } from 'lib/components/core/base/Box/definitions'
-import { TextProps, TextTag, TextTypography } from 'lib/components/core/base/Text/definitions'
+import { TextProps, TextTypography } from 'lib/components/core/base/Text/definitions'
 import { TShirtSize } from 'lib/definitions'
 
 export const SECTION_TAGS = ['section', 'article', 'aside', 'div'] as const
@@ -15,7 +15,7 @@ export const SECTION_SIZE_CONFIG: Record<
   SectionSize,
   {
     padding: TShirtSize
-    textTypography: Extract<TextTypography, 'h6' | 'h5' | 'h4' | 'h3' | 'h2'>
+    textTypography: TextTypography
     spacerBlockSize: TShirtSize
   }
 > = {

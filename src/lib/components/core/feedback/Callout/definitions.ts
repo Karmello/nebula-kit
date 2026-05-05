@@ -1,13 +1,13 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
 import { IconName, TShirtSize } from 'lib/definitions'
 import { BoxVariant, BoxColor } from 'lib/components/core/base/Box'
-import { TextTag, TextTypography } from 'lib/components/core/base/Text'
+import { TextTypography } from 'lib/components/core/base/Text'
 
 export const CALLOUT_SIZE_CONFIG: Record<
   CalloutSize,
   {
     padding: TShirtSize
-    textTypography: Extract<TextTypography, 'h6' | 'h5' | 'h4' | 'h3' | 'h2'>
+    textTypography: TextTypography
     spacerBlockSize: TShirtSize
   }
 > = {

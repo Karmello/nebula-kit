@@ -22,7 +22,7 @@ export default () => {
       <Flex flexDirection="column" gap="md" alignItems="stretch">
         <Text>All typography styles defined in the system.</Text>
         {TEXT_TYPOGRAPHY.map(typography => (
-          <Section key={typography} heading={typography} size="xs" intent="primary">
+          <Section key={typography} heading={typography} size="sm" intent="primary">
             <Text intent="neutral" typography={typography}>
               {MAP[typography]}
             </Text>

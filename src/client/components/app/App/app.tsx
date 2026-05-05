@@ -51,7 +51,7 @@ export const App = () => {
   if (getUser.isMakingRequest || logoutUser.isMakingRequest) {
     return (
       <Box blockSize="100dvh">
-        <Loader centered size="lg" />
+        <Loader centered />
       </Box>
     )
   }

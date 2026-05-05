@@ -13,6 +13,7 @@ import {
   InputProps,
   SwitchProps,
   TableProps,
+  LoaderProps,
 } from 'lib/components'
 
 export type PropValue = RespValue<string | number | boolean>
@@ -112,6 +113,8 @@ const PROPS_FROM_INPUT = [
   'variant',
 ] as const satisfies readonly (keyof InputProps)[]
 
+const PROPS_FROM_LOADER = ['active', 'centered', 'color', 'size'] as const satisfies readonly (keyof LoaderProps)[]
+
 const PROPS_FROM_SECTION = [
   'children',
   'color',
@@ -174,6 +177,7 @@ export const PLAYGROUND_PROPS_MAP: Record<string, readonly string[]> = {
   Checkbox: PROPS_FROM_CHECKBOX,
   Icon: PROPS_FROM_ICON,
   Input: PROPS_FROM_INPUT,
+  Loader: PROPS_FROM_LOADER,
   Section: PROPS_FROM_SECTION,
   Select: PROPS_FROM_SELECT,
   Switch: PROPS_FROM_SWITCH,
@@ -187,6 +191,7 @@ type PropsFromCalloutKey = (typeof PROPS_FROM_CALLOUT)[number]
 type PropsFromCheckboxKey = (typeof PROPS_FROM_CHECKBOX)[number]
 type PropsFromIconKey = (typeof PROPS_FROM_ICON)[number]
 type PropsFromInputKey = (typeof PROPS_FROM_INPUT)[number]
+type PropsFromLoaderKey = (typeof PROPS_FROM_LOADER)[number]
 type PropsFromSectionKey = (typeof PROPS_FROM_SECTION)[number]
 type PropsFromSelectKey = (typeof PROPS_FROM_SELECT)[number]
 type PropsFromSwitchKey = (typeof PROPS_FROM_SWITCH)[number]
@@ -200,6 +205,7 @@ export type PlaygroundProp =
   | PropsFromCheckboxKey
   | PropsFromIconKey
   | PropsFromInputKey
+  | PropsFromLoaderKey
   | PropsFromSectionKey
   | PropsFromSelectKey
   | PropsFromSwitchKey
@@ -207,11 +213,13 @@ export type PlaygroundProp =
   | PropsFromTextKey
 
 export const PLAYGROUND_CONTROLS_MAP: Record<PlaygroundProp, { type: 'array' | 'boolean' | 'string' }> = {
+  active: { type: 'boolean' },
   blockSize: { type: 'string' },
   bold: { type: 'boolean' },
   borderRadius: { type: 'string' },
   borderWidth: { type: 'string' },
   brand: { type: 'array' },
+  centered: { type: 'boolean' },
   checked: { type: 'boolean' },
   children: { type: 'string' },
   clampLines: { type: 'string' },
