@@ -1,17 +1,21 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
 import { IconName, TShirtSize } from 'lib/definitions'
 import { BoxVariant, BoxColor } from 'lib/components/core/base/Box'
-import { TextTypography } from 'lib/components/core/base/Text'
+import { TextTag, TextTypography } from 'lib/components/core/base/Text'
 
 export const CALLOUT_SIZE_CONFIG: Record<
   CalloutSize,
-  { typography: Extract<TextTypography, 'h6' | 'h5' | 'h4' | 'h3' | 'h2'>; spacing: TShirtSize }
+  {
+    padding: TShirtSize
+    textTypography: Extract<TextTypography, 'h6' | 'h5' | 'h4' | 'h3' | 'h2'>
+    spacerBlockSize: TShirtSize
+  }
 > = {
-  sm: { typography: 'h6', spacing: 'sm' },
-  md: { typography: 'h5', spacing: 'md' },
-  lg: { typography: 'h4', spacing: 'lg' },
-  xl: { typography: 'h3', spacing: 'xl' },
-  '2xl': { typography: 'h2', spacing: '2xl' },
+  sm: { padding: 'sm', textTypography: 'h6', spacerBlockSize: 'xs' },
+  md: { padding: 'md', textTypography: 'h5', spacerBlockSize: 'sm' },
+  lg: { padding: 'lg', textTypography: 'h4', spacerBlockSize: 'md' },
+  xl: { padding: 'xl', textTypography: 'h3', spacerBlockSize: 'lg' },
+  '2xl': { padding: '2xl', textTypography: 'h2', spacerBlockSize: 'xl' },
 }
 
 export const CALLOUT_CONFIG: Record<CalloutStatus, { color: BoxColor; heading: string; iconName: IconName }> = {
