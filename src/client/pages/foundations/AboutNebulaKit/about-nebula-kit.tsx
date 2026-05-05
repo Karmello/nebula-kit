@@ -25,7 +25,11 @@ export default () => {
           Visual taste that follows accessibility best practices is baked into the system by default. This includes themes,
           variants, intents, color palettes, sizes and related decisions. Customization is possible, but only to a certain extent.
           You can bend the system enough to achieve satisfying results while still keeping it healthy. NebulaKit is intentionally
-          opinionated, with strong defaults that reflect best practices and are designed to simply work.
+          opinionated, with strong defaults that reflect best practices and are designed to simply work. It does not block
+          advanced or unconventional behavior, but it also does not optimize for it. When necessary, you can step outside the
+          system using low-level access such as tagAttrs or direct DOM interaction, though these paths are intentionally more
+          explicit. The goal is not to make every possible pattern equally easy, but to make the right patterns obvious, fast and
+          consistent, while keeping edge cases achievable without compromising the system's clarity.
         </Text>
         <Text>
           A number of high-level decisions define what the system is. These include making JSX the primary development workflow,
