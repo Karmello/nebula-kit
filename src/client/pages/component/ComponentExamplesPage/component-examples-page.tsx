@@ -55,7 +55,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           )}
         </>
       ) : null}
-      <Spacer blockSize="lg" />
+      <Spacer blockSize="2xl" />
     </>
   )
 }
@@ -81,7 +81,7 @@ export const ComponentExamplesPage = ({ pageKey }: { pageKey: PageKey.core | Pag
               Use flipped theme
             </Text>
           </Flex>
-          <Spacer blockSize="lg" />
+          <Spacer blockSize="xl" />
         </>
       ) : null}
       <Flex flexDirection="column" alignItems="stretch">

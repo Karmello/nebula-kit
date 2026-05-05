@@ -45,11 +45,11 @@ export const HomePage = () => {
               <Ortho />
             </Flex.Item>
           </Flex>
-          <Spacer blockSize="xl" />
+          <Spacer blockSize="2xl" />
           <Principles />
         </Flex.Item>
       </Flex>
-      <Spacer blockSize="xl" />
+      <Spacer blockSize="2xl" />
       <Families />
     </Box>
   )

@@ -89,7 +89,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       ) : (
         content
       )}
-      <Spacer blockSize="lg" />
+      <Spacer blockSize="2xl" />
     </>
   )
 }
