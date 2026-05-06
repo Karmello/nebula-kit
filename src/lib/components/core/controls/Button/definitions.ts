@@ -1,53 +1,7 @@
 import { MouseEventHandler } from 'react'
 
 import { BoxProps, FlexProps, HtmlTagProps, TextProps, WithIconProps } from 'lib/components'
-import { CONTROL_SIZE_TOKENS, RespValue, TShirtSize } from 'lib/definitions'
-import { IconSize } from 'lib/components/core/elements/Icon'
-
-export const BUTTON_SIZE_CONFIG: Record<
-  ButtonSize,
-  {
-    blockSize: BoxProps['blockSize']
-    paddingInline: BoxProps['padding']
-    fontSize: TextProps['fontSize']
-    lineHeight: TextProps['lineHeight']
-    iconSize: IconSize
-    loaderSize: string
-  }
-> = {
-  xs: {
-    blockSize: CONTROL_SIZE_TOKENS.xs.blockSize,
-    paddingInline: CONTROL_SIZE_TOKENS.xs.paddingInline,
-    fontSize: CONTROL_SIZE_TOKENS.xs.fontSize,
-    lineHeight: 2,
-    iconSize: '14px',
-    loaderSize: '14px',
-  },
-  sm: {
-    blockSize: CONTROL_SIZE_TOKENS.sm.blockSize,
-    paddingInline: CONTROL_SIZE_TOKENS.sm.paddingInline,
-    fontSize: CONTROL_SIZE_TOKENS.sm.fontSize,
-    lineHeight: 2,
-    iconSize: '16px',
-    loaderSize: '16px',
-  },
-  md: {
-    blockSize: CONTROL_SIZE_TOKENS.md.blockSize,
-    paddingInline: CONTROL_SIZE_TOKENS.md.paddingInline,
-    fontSize: CONTROL_SIZE_TOKENS.md.fontSize,
-    lineHeight: 1.5,
-    iconSize: '18px',
-    loaderSize: '18px',
-  },
-  lg: {
-    blockSize: CONTROL_SIZE_TOKENS.lg.blockSize,
-    paddingInline: CONTROL_SIZE_TOKENS.lg.paddingInline,
-    fontSize: CONTROL_SIZE_TOKENS.lg.fontSize,
-    lineHeight: 1.5,
-    iconSize: '20px',
-    loaderSize: '22px',
-  },
-}
+import { RespValue, TShirtSize } from 'lib/definitions'
 
 export const DEFAULT_BUTTON_INTERACTIVE: ButtonProps['interactive'] = true
 export const DEFAULT_BUTTON_VARIANT: ButtonProps['variant'] = 'solid'

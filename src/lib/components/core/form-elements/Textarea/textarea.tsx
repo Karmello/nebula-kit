@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { CONTROL_SIZE_TOKENS } from 'lib/definitions'
+import { CONTROL_SIZE_TOKENS, FONT_SIZE_TOKENS } from 'lib/definitions'
 
 import {
   DEFAULT_TEXTAREA_INLINE_SIZE,
@@ -14,8 +14,6 @@ import {
   DEFAULT_TEXTAREA_VARIANT,
   TextareaProps,
 } from './definitions'
-
-import { TEXT_TYPOGRAPHY_CONFIG } from '../../base/Text/definitions'
 
 import './textarea.scss'
 
@@ -61,8 +59,8 @@ export const Textarea = ({
         className: classNames(withPrefix('textarea'), tagAttrs?.className),
         style: {
           ...tagAttrs?.style,
-          fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
-          lineHeight: TEXT_TYPOGRAPHY_CONFIG.regular.body.lineHeight,
+          fontSize: FONT_SIZE_TOKENS.regular.body.fontSize,
+          lineHeight: FONT_SIZE_TOKENS.regular.body.lineHeight,
           resize,
         },
         value: currentValue,

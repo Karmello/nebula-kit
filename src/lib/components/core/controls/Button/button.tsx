@@ -8,7 +8,6 @@ import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 
 import {
-  BUTTON_SIZE_CONFIG,
   ButtonTag,
   ButtonProps,
   DEFAULT_BUTTON_INTENT,
@@ -20,6 +19,7 @@ import {
 } from './definitions'
 
 import './button.scss'
+import { CONTROL_SIZE_TOKENS } from 'lib/definitions'
 
 export const Button = <T extends ButtonTag = 'button'>({
   // HtmlTag
@@ -64,8 +64,8 @@ export const Button = <T extends ButtonTag = 'button'>({
   const text = (
     <Text
       tag="span"
-      fontSize={BUTTON_SIZE_CONFIG[size || 'md'].fontSize}
-      lineHeight={BUTTON_SIZE_CONFIG[size || 'md'].lineHeight}
+      fontSize={CONTROL_SIZE_TOKENS[size || 'md'].fontSize}
+      lineHeight={CONTROL_SIZE_TOKENS[size || 'md'].lineHeight}
       bold={bold}
       truncate
     >
@@ -103,15 +103,15 @@ export const Button = <T extends ButtonTag = 'button'>({
       selected={selected}
       surface={surface}
       position="relative"
-      blockSize={BUTTON_SIZE_CONFIG[size || 'md'].blockSize}
-      paddingInline={BUTTON_SIZE_CONFIG[size || 'md'].paddingInline}
+      blockSize={CONTROL_SIZE_TOKENS[size || 'md'].blockSize}
+      paddingInline={CONTROL_SIZE_TOKENS[size || 'md'].paddingInline}
     >
       {iconName ? (
         <WithIcon
           inlineSize={children !== undefined ? '100%' : undefined}
           iconName={iconName}
           iconPlacement={iconPlacement}
-          iconSize={BUTTON_SIZE_CONFIG[size || 'md'].iconSize}
+          iconSize={CONTROL_SIZE_TOKENS[size || 'md'].iconSize}
           iconAngle={iconAngle}
           justifyContent={justifyContent}
           gap={children === undefined ? '0px' : undefined}
@@ -122,17 +122,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       ) : (
         text
       )}
-      {loading && !disabled ? (
-        <Loader
-          tagAttrs={{
-            style: {
-              blockSize: BUTTON_SIZE_CONFIG[size || 'md'].loaderSize,
-              inlineSize: BUTTON_SIZE_CONFIG[size || 'md'].loaderSize,
-            },
-          }}
-          centered
-        />
-      ) : null}
+      {loading && !disabled ? <Loader centered size={CONTROL_SIZE_TOKENS[size || 'md'].loaderSize} /> : null}
       <Ripple parentRef={tagRef || ref} active={ripple && !loading && !disabled} />
     </Box>
   )

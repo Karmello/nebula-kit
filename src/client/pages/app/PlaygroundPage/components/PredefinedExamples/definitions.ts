@@ -73,6 +73,15 @@ export const PRESETS: Record<string, Array<{ name: string; props: object }>> = {
         iconPlacement: 'right',
       } as ButtonProps,
     },
+    {
+      name: 'Loading button',
+      props: {
+        children: 'Loading ...',
+        color: 'blue',
+        intent: 'primary',
+        loading: true,
+      } as ButtonProps,
+    },
   ],
   Callout: [
     {

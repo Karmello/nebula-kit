@@ -88,7 +88,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                   </>
                 )}
               </DropdownList>
-              {index < levels.length - 1 ? <Icon name="chevron-right" color={color} intent="primary" /> : null}
+              {index < levels.length - 1 ? <Icon name="chevron-right" color={color} intent="primary" size="sm" /> : null}
             </Fragment>
           )
         })}

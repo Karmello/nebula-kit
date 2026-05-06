@@ -39,7 +39,7 @@ export default () => {
       <Spacer />
       <CodeSnippet
         lang="tsx"
-        description="Custom CSS values are supported when needed, but using the scale is recommended for consistency."
+        description="Custom CSS values are still supported."
         code={`<Box padding="20px" />
 <Box inlineSize="50%" />`}
       />

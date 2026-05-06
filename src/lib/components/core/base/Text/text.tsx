@@ -4,9 +4,10 @@ import { Box, WithIcon } from 'lib/components'
 import { updateDomStaticDataset } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
 
-import { TEXT_TYPOGRAPHY_CONFIG, DEFAULT_TEXT_TYPOGRAPHY, DEFAULT_TEXT_SCALE, TextTag, TextProps } from './definitions'
+import { DEFAULT_TEXT_TYPOGRAPHY, DEFAULT_TEXT_SCALE, TextTag, TextProps } from './definitions'
 
 import './text.scss'
+import { FONT_SIZE_TOKENS } from 'lib/definitions'
 
 export const Text = <T extends TextTag = 'p'>({
   // HtmlTag
@@ -38,14 +39,14 @@ export const Text = <T extends TextTag = 'p'>({
 }: TextProps<T>) => {
   return (
     <Box
-      tag={tag || TEXT_TYPOGRAPHY_CONFIG[scale][typography].tag}
+      tag={tag || FONT_SIZE_TOKENS[scale][typography].tag}
       tagRef={tagRef as any}
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('text'), tagAttrs?.className),
         style: {
-          fontSize: fontSize ?? TEXT_TYPOGRAPHY_CONFIG[scale][typography].fontSize,
-          lineHeight: lineHeight ?? TEXT_TYPOGRAPHY_CONFIG[scale][typography].lineHeight,
+          fontSize: fontSize ?? FONT_SIZE_TOKENS[scale][typography].fontSize,
+          lineHeight: lineHeight ?? FONT_SIZE_TOKENS[scale][typography].lineHeight,
           ...(clampLines && clampLines > 0
             ? {
                 display: '-webkit-box',
@@ -72,7 +73,7 @@ export const Text = <T extends TextTag = 'p'>({
         <WithIcon
           iconName={iconName}
           iconPlacement={iconPlacement}
-          iconSize={TEXT_TYPOGRAPHY_CONFIG[scale][typography].iconSize}
+          iconSize={FONT_SIZE_TOKENS[scale][typography].iconSize}
           customSvgIcon={customSvgIcon}
         >
           {children}
