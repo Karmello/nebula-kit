@@ -1,4 +1,4 @@
-import { ComponentMeta } from 'client/definitions'
+import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { ImageProps } from 'lib/components'
 
 import {
@@ -49,7 +49,7 @@ const IMAGE_PROPS_META: ComponentMeta<ImageProps>['props'] = {
     link: true,
   },
   objectPosition: {
-    options: ['<CSS>'],
+    options: [DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Sets the alignment of the image within its container.',
     link: true,

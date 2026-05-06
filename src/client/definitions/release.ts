@@ -26,7 +26,7 @@ export const RELEASE_INFO: Record<
     timestamp: 1777692394689,
     changelog: {
       main: [
-        'standardized logical size, margin and padding props to use predefined scale values',
+        'standardized logical size, margin, padding and gap props to use predefined scale values',
         'extended the breakpoint system with a new xxl range for large screens and wide layouts',
         'fixed an issue in the responsive styling system where runtime-applied styles could override user-defined inline styles (tagAttrs.style), inline styles are now respected as the source of truth and are no longer overwritten by system updates',
         'with this release, the NebulaKit website introduced the AI chat assistant',

@@ -1,4 +1,4 @@
-import { ComponentMeta } from 'client/definitions'
+import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { IconProps } from 'lib/components'
 import { DEFAULT_ICON_SIZE, ICON_SIZES } from 'lib/components/core/elements/Icon'
 
@@ -24,7 +24,7 @@ const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
     description: 'Name of the icon to render.',
   },
   size: {
-    options: [...ICON_SIZES, '<CSS>'],
+    options: [...ICON_SIZES, DOCS_CSS_LABEL],
     defaultValue: String(DEFAULT_ICON_SIZE),
     description: 'Size of the icon.',
   },

@@ -88,3 +88,27 @@ export type CssLength =
   | `clamp(${string})`
   | `min(${string})`
   | `max(${string})`
+
+export type CssFontSize =
+  | `${number}px`
+  | `${number}rem`
+  | `${number}em`
+  | `${number}%`
+  | `${number}ch`
+  | `calc(${string})`
+  | `clamp(${string})`
+  | `min(${string})`
+  | `max(${string})`
+
+export type CssLineHeight =
+  | number
+  | `${number}px`
+  | `${number}rem`
+  | `${number}em`
+  | `${number}%`
+  | `${number}lh`
+  | `${number}rlh`
+  | `calc(${string})`
+  | `clamp(${string})`
+  | `min(${string})`
+  | `max(${string})`

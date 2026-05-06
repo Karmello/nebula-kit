@@ -49,7 +49,7 @@ export const PRESETS: Record<string, Array<{ name: string; props: object }>> = {
     {
       name: 'Simple button',
       props: {
-        children: 'Button',
+        children: 'Click me',
         color: 'green',
         intent: 'primary',
       } as ButtonProps,
@@ -57,10 +57,20 @@ export const PRESETS: Record<string, Array<{ name: string; props: object }>> = {
     {
       name: 'Full-width button',
       props: {
-        children: 'Full-width button',
+        children: 'Click me',
         color: 'blue',
         intent: 'primary',
         fullWidth: true,
+      } as ButtonProps,
+    },
+    {
+      name: 'Button with icon',
+      props: {
+        children: 'Send',
+        color: 'blue',
+        intent: 'primary',
+        iconName: 'send',
+        iconPlacement: 'right',
       } as ButtonProps,
     },
   ],

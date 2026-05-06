@@ -62,7 +62,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   }, [bp, fullWidth])
 
   const text = (
-    <Text tag="span" scale={BUTTON_SIZE_CONFIG[size || 'md'].textScale} bold={bold} truncate>
+    <Text tag="span" fontSize={BUTTON_SIZE_CONFIG[size || 'md'].fontSize} bold={bold} truncate>
       {children}
     </Text>
   )

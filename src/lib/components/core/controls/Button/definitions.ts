@@ -2,7 +2,6 @@ import { MouseEventHandler } from 'react'
 
 import { BoxProps, FlexProps, HtmlTagProps, TextProps, WithIconProps } from 'lib/components'
 import { RespValue, TShirtSize } from 'lib/definitions'
-import { TextScale } from 'lib/components/core/base/Text'
 import { IconSize } from 'lib/components/core/elements/Icon'
 
 export const BUTTON_SIZE_CONFIG: Record<
@@ -10,38 +9,38 @@ export const BUTTON_SIZE_CONFIG: Record<
   {
     blockSize: BoxProps['blockSize']
     padding: BoxProps['padding']
+    fontSize: TextProps['fontSize']
     iconSize: IconSize
     loaderSize: string
-    textScale: TextScale
   }
 > = {
   xs: {
     blockSize: '34px',
     padding: '10px',
-    iconSize: 'sm',
+    fontSize: '14px',
+    iconSize: '14px',
     loaderSize: '14px',
-    textScale: 'compact',
   },
   sm: {
     blockSize: '38px',
     padding: '12px',
-    iconSize: 'sm',
+    fontSize: '15px',
+    iconSize: '16px',
     loaderSize: '16px',
-    textScale: 'regular',
   },
   md: {
     blockSize: '44px',
     padding: '15px',
-    iconSize: 'md',
+    fontSize: '16px',
+    iconSize: '18px',
     loaderSize: '18px',
-    textScale: 'regular',
   },
   lg: {
     blockSize: '52px',
     padding: '20px',
-    iconSize: 'md',
+    fontSize: '18px',
+    iconSize: '20px',
     loaderSize: '22px',
-    textScale: 'regular',
   },
 }
 

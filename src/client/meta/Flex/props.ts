@@ -1,4 +1,4 @@
-import { ComponentMeta } from 'client/definitions'
+import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { FlexProps } from 'lib/components'
 
 import {
@@ -33,7 +33,7 @@ const FLEX_PROPS_META: ComponentMeta<FlexProps>['props'] = {
     description: 'Flex.Item or any React node.',
   },
   columnGap: {
-    options: [...TSHIRT_SIZES, '<CSS>'],
+    options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Defines horizontal spacing between columns of children.',
     link: true,
@@ -57,7 +57,7 @@ const FLEX_PROPS_META: ComponentMeta<FlexProps>['props'] = {
     link: true,
   },
   gap: {
-    options: [...TSHIRT_SIZES, '<CSS>'],
+    options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Defines spacing between children on both axes.',
     link: true,
@@ -69,7 +69,7 @@ const FLEX_PROPS_META: ComponentMeta<FlexProps>['props'] = {
     link: true,
   },
   rowGap: {
-    options: [...TSHIRT_SIZES, '<CSS>'],
+    options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Defines vertical spacing between rows of children.',
     link: true,

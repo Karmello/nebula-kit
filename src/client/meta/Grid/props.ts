@@ -1,4 +1,4 @@
-import { ComponentMeta } from 'client/definitions'
+import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { GridProps } from 'lib/components'
 import { CSS_GRID_AUTO_FLOW, CSS_GRID_PLACE_CONTENT, CSS_GRID_PLACE_ITEMS, TSHIRT_SIZES } from 'lib/definitions'
 
@@ -12,13 +12,13 @@ const GRID_PROPS_META: ComponentMeta<GridProps>['props'] = {
     description: 'Grid.Item or any React node.',
   },
   columnGap: {
-    options: [...TSHIRT_SIZES, '<CSS>'],
+    options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Sets the spacing between grid columns.',
     link: true,
   },
   gap: {
-    options: [...TSHIRT_SIZES, '<CSS>'],
+    options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Sets the spacing between rows and columns in the grid.',
     link: true,
@@ -36,7 +36,7 @@ const GRID_PROPS_META: ComponentMeta<GridProps>['props'] = {
     link: true,
   },
   gridAutoRows: {
-    options: ['<CSS>'],
+    options: [DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Defines the size of rows that are created automatically.',
     link: true,
@@ -66,7 +66,7 @@ const GRID_PROPS_META: ComponentMeta<GridProps>['props'] = {
     link: true,
   },
   rowGap: {
-    options: [...TSHIRT_SIZES, '<CSS>'],
+    options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Sets the spacing between grid rows.',
     link: true,

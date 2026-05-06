@@ -1,4 +1,4 @@
-import { ComponentMeta } from 'client/definitions'
+import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { BOX_PROPS_META } from 'client/meta/Box/props'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { FlexItemProps } from 'lib/components'
@@ -17,32 +17,32 @@ const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemProps>['props'] = {
     isRequired: true,
   },
   flex: {
-    options: ['<CSS>'],
+    options: [DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Shorthand for flex-grow, flex-shrink and flex-basis.',
     link: true,
   },
   flexBasis: {
-    options: ['<CSS>'],
+    options: [DOCS_CSS_LABEL],
     isResponsive: true,
     description: "Sets the item's initial main-size before free space is distributed.",
     link: true,
   },
   flexGrow: {
-    options: ['<CSS>'],
+    options: [DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Controls how much the item can grow relative to the other items when extra space is available.',
     link: true,
   },
   flexShrink: {
-    options: ['<CSS>'],
+    options: [DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Controls how much the item can shrink relative to the other items when space is limited.',
     link: true,
   },
   hidden: BOX_PROPS_META.hidden,
   order: {
-    options: ['<CSS>'],
+    options: [DOCS_CSS_LABEL],
     isResponsive: true,
     description: "Defines the item's order relative to other items, independent of source order.",
     link: true,

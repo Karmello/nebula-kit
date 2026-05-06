@@ -24,8 +24,10 @@ export const Text = <T extends TextTag = 'p'>({
   iconPlacement,
   customSvgIcon,
   // own
-  typography = DEFAULT_TEXT_TYPOGRAPHY,
   scale = DEFAULT_TEXT_SCALE,
+  typography = DEFAULT_TEXT_TYPOGRAPHY,
+  fontSize,
+  lineHeight,
   bold,
   italic,
   underline,
@@ -42,8 +44,8 @@ export const Text = <T extends TextTag = 'p'>({
         ...tagAttrs,
         className: classNames(withPrefix('text'), tagAttrs?.className),
         style: {
-          fontSize: TEXT_TYPOGRAPHY_CONFIG[scale][typography].fontSize,
-          lineHeight: TEXT_TYPOGRAPHY_CONFIG[scale][typography].lineHeight,
+          fontSize: fontSize ?? TEXT_TYPOGRAPHY_CONFIG[scale][typography].fontSize,
+          lineHeight: lineHeight ?? TEXT_TYPOGRAPHY_CONFIG[scale][typography].lineHeight,
           ...(clampLines && clampLines > 0
             ? {
                 display: '-webkit-box',

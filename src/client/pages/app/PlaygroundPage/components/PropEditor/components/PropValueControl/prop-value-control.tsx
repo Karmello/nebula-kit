@@ -1,3 +1,4 @@
+import { DOCS_CSS_LABEL } from 'client/definitions'
 import { Input, Button, Text, Spacer, Select } from 'lib/components'
 import { Breakpoint } from 'lib/definitions'
 
@@ -67,7 +68,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
       {PLAYGROUND_CONTROLS_MAP[activeProp as PlaygroundProp].type === 'array' ? (
         <Select value={value} onChange={onChange} scrollAlign="center">
           <Select.Option value="">...</Select.Option>
-          {(PLAYGROUND_ARRAY_DATA_MAP[prop.options[0]] || prop.options).map(option => (
+          {(PLAYGROUND_ARRAY_DATA_MAP[prop.options[0]] || prop.options.filter(o => o !== DOCS_CSS_LABEL)).map(option => (
             <Select.Option key={option} value={option}>
               {option}
             </Select.Option>

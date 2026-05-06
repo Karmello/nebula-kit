@@ -1,4 +1,4 @@
-import { ComponentMeta } from 'client/definitions'
+import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { GridItemProps } from 'lib/components'
 import { CSS_GRID_ITEM_ALIGN_SELF, CSS_GRID_ITEM_JUSTIFY_SELF } from 'lib/definitions'
@@ -16,13 +16,13 @@ const GRID_ITEM_PROPS_META: ComponentMeta<GridItemProps>['props'] = {
     isRequired: true,
   },
   gridColumn: {
-    options: ['<CSS>'],
+    options: [DOCS_CSS_LABEL],
     isResponsive: true,
     description: "Sets the item's horizontal position or span between grid columns.",
     link: true,
   },
   gridRow: {
-    options: ['<CSS>'],
+    options: [DOCS_CSS_LABEL],
     isResponsive: true,
     description: "Sets the item's vertical position or span between grid rows.",
     link: true,
