@@ -34,7 +34,7 @@ export const AppFooter = () => {
           Community & Support
         </Text>
         <Divider marginBottom="sm" />
-        <Flex flexDirection="column" flexWrap="nowrap" gap="xs">
+        <Flex flexDirection="column" flexWrap="nowrap" gap="2xs">
           <Link href="https://x.com/captainnebula" target="_blank">
             <Button color="gray" intent="inverse" size="sm" iconName="external-link" iconPlacement="right">
               X profile
