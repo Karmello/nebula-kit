@@ -10,6 +10,7 @@ export const BUTTON_SIZE_CONFIG: Record<
     blockSize: BoxProps['blockSize']
     padding: BoxProps['padding']
     fontSize: TextProps['fontSize']
+    lineHeight: TextProps['lineHeight']
     iconSize: IconSize
     loaderSize: string
   }
@@ -18,6 +19,7 @@ export const BUTTON_SIZE_CONFIG: Record<
     blockSize: '34px',
     padding: '10px',
     fontSize: '14px',
+    lineHeight: 2,
     iconSize: '14px',
     loaderSize: '14px',
   },
@@ -25,6 +27,7 @@ export const BUTTON_SIZE_CONFIG: Record<
     blockSize: '38px',
     padding: '12px',
     fontSize: '15px',
+    lineHeight: 1.5,
     iconSize: '16px',
     loaderSize: '16px',
   },
@@ -32,6 +35,7 @@ export const BUTTON_SIZE_CONFIG: Record<
     blockSize: '44px',
     padding: '15px',
     fontSize: '16px',
+    lineHeight: 1.5,
     iconSize: '18px',
     loaderSize: '18px',
   },
@@ -39,6 +43,7 @@ export const BUTTON_SIZE_CONFIG: Record<
     blockSize: '52px',
     padding: '20px',
     fontSize: '18px',
+    lineHeight: 1.5,
     iconSize: '20px',
     loaderSize: '22px',
   },
