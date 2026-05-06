@@ -21,7 +21,7 @@ const FLEX_META: ComponentMeta<FlexProps> = {
   props: FLEX_PROPS_META,
   examples: FLEX_EXAMPLES_META,
   changelog: {
-    '0.9.0': ['exposed hidden prop on Flex.Item via Box'],
+    '0.9.0': ['exposed hidden prop on Flex.Item via Box', 'added support for predefined size scale values on gap-related props'],
     '0.2.3': ['released'],
   },
 }

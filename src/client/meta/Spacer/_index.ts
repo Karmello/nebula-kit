@@ -19,6 +19,7 @@ const SPACER_META: ComponentMeta<SpacerProps> = {
   props: SPACER_PROPS_META,
   examples: SPACER_EXAMPLES_META,
   changelog: {
+    '0.9.0': ['added support for predefined size scale values on the blockSize prop'],
     '0.2.3': ['released'],
   },
 }

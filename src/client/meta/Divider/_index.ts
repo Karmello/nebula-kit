@@ -18,7 +18,7 @@ const DIVIDER_META: ComponentMeta<DividerProps> = {
   props: DIVIDER_PROPS_META,
   examples: DIVIDER_EXAMPLES_META,
   changelog: {
-    '0.9.0': ['exposed selected prop via Box'],
+    '0.9.0': ['exposed selected prop via Box', 'added support for predefined size scale values on margin-related props'],
     '0.8.0': ['changed elevated prop to surface'],
     '0.7.0': ['exposed elevated prop via Box'],
     '0.6.0': ['exposed opacity prop via Box'],

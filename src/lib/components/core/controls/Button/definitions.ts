@@ -27,7 +27,7 @@ export const BUTTON_SIZE_CONFIG: Record<
     blockSize: '38px',
     padding: '12px',
     fontSize: '15px',
-    lineHeight: 1.5,
+    lineHeight: 2,
     iconSize: '16px',
     loaderSize: '16px',
   },
