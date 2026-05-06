@@ -3,6 +3,7 @@ import classNames from 'classnames'
 
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { CONTROL_SIZE_TOKENS } from 'lib/definitions'
 
 import {
   DEFAULT_TEXTAREA_INLINE_SIZE,
@@ -15,7 +16,6 @@ import {
 } from './definitions'
 
 import { TEXT_TYPOGRAPHY_CONFIG } from '../../base/Text/definitions'
-import { INPUT_SIZE_CONFIG } from '../Input'
 
 import './textarea.scss'
 
@@ -85,7 +85,7 @@ export const Textarea = ({
       inlineSize={inlineSize}
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
-      padding={INPUT_SIZE_CONFIG.md.padding}
+      padding={CONTROL_SIZE_TOKENS.md.paddingInline}
       interactive
       activeOnFocus
     />

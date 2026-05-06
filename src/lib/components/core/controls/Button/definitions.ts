@@ -1,14 +1,14 @@
 import { MouseEventHandler } from 'react'
 
 import { BoxProps, FlexProps, HtmlTagProps, TextProps, WithIconProps } from 'lib/components'
-import { RespValue, TShirtSize } from 'lib/definitions'
+import { CONTROL_SIZE_TOKENS, RespValue, TShirtSize } from 'lib/definitions'
 import { IconSize } from 'lib/components/core/elements/Icon'
 
 export const BUTTON_SIZE_CONFIG: Record<
   ButtonSize,
   {
     blockSize: BoxProps['blockSize']
-    padding: BoxProps['padding']
+    paddingInline: BoxProps['padding']
     fontSize: TextProps['fontSize']
     lineHeight: TextProps['lineHeight']
     iconSize: IconSize
@@ -16,33 +16,33 @@ export const BUTTON_SIZE_CONFIG: Record<
   }
 > = {
   xs: {
-    blockSize: '34px',
-    padding: '10px',
-    fontSize: '14px',
+    blockSize: CONTROL_SIZE_TOKENS.xs.blockSize,
+    paddingInline: CONTROL_SIZE_TOKENS.xs.paddingInline,
+    fontSize: CONTROL_SIZE_TOKENS.xs.fontSize,
     lineHeight: 2,
     iconSize: '14px',
     loaderSize: '14px',
   },
   sm: {
-    blockSize: '38px',
-    padding: '12px',
-    fontSize: '15px',
+    blockSize: CONTROL_SIZE_TOKENS.sm.blockSize,
+    paddingInline: CONTROL_SIZE_TOKENS.sm.paddingInline,
+    fontSize: CONTROL_SIZE_TOKENS.sm.fontSize,
     lineHeight: 2,
     iconSize: '16px',
     loaderSize: '16px',
   },
   md: {
-    blockSize: '44px',
-    padding: '15px',
-    fontSize: '16px',
+    blockSize: CONTROL_SIZE_TOKENS.md.blockSize,
+    paddingInline: CONTROL_SIZE_TOKENS.md.paddingInline,
+    fontSize: CONTROL_SIZE_TOKENS.md.fontSize,
     lineHeight: 1.5,
     iconSize: '18px',
     loaderSize: '18px',
   },
   lg: {
-    blockSize: '52px',
-    padding: '20px',
-    fontSize: '18px',
+    blockSize: CONTROL_SIZE_TOKENS.lg.blockSize,
+    paddingInline: CONTROL_SIZE_TOKENS.lg.paddingInline,
+    fontSize: CONTROL_SIZE_TOKENS.lg.fontSize,
     lineHeight: 1.5,
     iconSize: '20px',
     loaderSize: '22px',

@@ -104,7 +104,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       surface={surface}
       position="relative"
       blockSize={BUTTON_SIZE_CONFIG[size || 'md'].blockSize}
-      padding={BUTTON_SIZE_CONFIG[size || 'md'].padding}
+      paddingInline={BUTTON_SIZE_CONFIG[size || 'md'].paddingInline}
     >
       {iconName ? (
         <WithIcon

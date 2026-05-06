@@ -1,36 +1,35 @@
 import { ReactNode } from 'react'
 
 import { BoxProps, HtmlTagProps } from 'lib/components'
-import { TShirtSize } from 'lib/definitions'
-import { TEXT_TYPOGRAPHY_CONFIG } from 'lib/components/core/base/Text/definitions'
+import { CONTROL_SIZE_TOKENS, TShirtSize } from 'lib/definitions'
 
 export const INPUT_SIZE_CONFIG: Record<
   InputSize,
   {
     blockSize: BoxProps['blockSize']
-    padding: BoxProps['padding']
+    paddingInline: BoxProps['paddingInline']
     fontSize: string
   }
 > = {
   xs: {
-    blockSize: '34px',
-    padding: '10px',
-    fontSize: TEXT_TYPOGRAPHY_CONFIG.compact.body.fontSize,
+    blockSize: CONTROL_SIZE_TOKENS.xs.blockSize,
+    paddingInline: CONTROL_SIZE_TOKENS.xs.paddingInline,
+    fontSize: CONTROL_SIZE_TOKENS.xs.fontSize,
   },
   sm: {
-    blockSize: '38px',
-    padding: '12px',
-    fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
+    blockSize: CONTROL_SIZE_TOKENS.sm.blockSize,
+    paddingInline: CONTROL_SIZE_TOKENS.sm.paddingInline,
+    fontSize: CONTROL_SIZE_TOKENS.sm.fontSize,
   },
   md: {
-    blockSize: '44px',
-    padding: '15px',
-    fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
+    blockSize: CONTROL_SIZE_TOKENS.md.blockSize,
+    paddingInline: CONTROL_SIZE_TOKENS.md.paddingInline,
+    fontSize: CONTROL_SIZE_TOKENS.md.fontSize,
   },
   lg: {
-    blockSize: '52px',
-    padding: '20px',
-    fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
+    blockSize: CONTROL_SIZE_TOKENS.lg.blockSize,
+    paddingInline: CONTROL_SIZE_TOKENS.lg.paddingInline,
+    fontSize: CONTROL_SIZE_TOKENS.lg.fontSize,
   },
 }
 
