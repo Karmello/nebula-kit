@@ -6,6 +6,7 @@ import { Ripple } from 'lib/components/core/internal'
 import { updateDomRespDataset } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
+import { CONTROL_SIZE_TOKENS } from 'lib/definitions'
 
 import {
   ButtonTag,
@@ -19,7 +20,6 @@ import {
 } from './definitions'
 
 import './button.scss'
-import { CONTROL_SIZE_TOKENS } from 'lib/definitions'
 
 export const Button = <T extends ButtonTag = 'button'>({
   // HtmlTag
@@ -32,9 +32,8 @@ export const Button = <T extends ButtonTag = 'button'>({
   color,
   intent = DEFAULT_BUTTON_INTENT,
   interactive = DEFAULT_BUTTON_INTERACTIVE,
-  selected,
   disabled,
-  surface,
+  elevated,
   inlineSize,
   minInlineSize,
   maxInlineSize,
@@ -51,6 +50,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   fullWidth,
   loading,
   ripple = DEFAULT_BUTTON_RIPPLE,
+  selected,
   onClick,
 }: ButtonProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
@@ -100,8 +100,8 @@ export const Button = <T extends ButtonTag = 'button'>({
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
       interactive={interactive}
-      selected={selected}
-      surface={surface}
+      elevated={elevated}
+      surface={selected ? 'selected' : undefined}
       position="relative"
       blockSize={CONTROL_SIZE_TOKENS[size || 'md'].blockSize}
       paddingInline={CONTROL_SIZE_TOKENS[size || 'md'].paddingInline}

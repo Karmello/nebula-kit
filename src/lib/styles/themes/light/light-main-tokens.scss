@@ -34,37 +34,13 @@
     primary-selected: 2,
     inverse-selected: -4,
 
-    // raised
-    raised-neutral: 1,
-    raised-muted: 1,
-    raised-tertiary: 1,
-    raised-secondary: 1,
-    raised-primary: 1,
-    raised-inverse: -13,
-
-    // raised hover
-    raised-neutral-hover: 1,
-    raised-muted-hover: 1,
-    raised-tertiary-hover: 2,
-    raised-secondary-hover: 2,
-    raised-primary-hover: 2,
-    raised-inverse-hover: -2,
-
-    // raised active
-    raised-neutral-active: 3,
-    raised-muted-active: 3,
-    raised-tertiary-active: 4,
-    raised-secondary-active: 4,
-    raised-primary-active: 4,
-    raised-inverse-active: -4,
-
-    // raised selected
-    raised-neutral-selected: 2,
-    raised-muted-selected: 2,
-    raised-tertiary-selected: 2,
-    raised-secondary-selected: 2,
-    raised-primary-selected: 2,
-    raised-inverse-selected: -2,
+    // base dividing
+    neutral-dividing: 1,
+    muted-dividing: 1,
+    tertiary-dividing: -1,
+    secondary-dividing: -3,
+    primary-dividing: -5,
+    inverse-dividing: -11,
 
     // elevated
     elevated-neutral: 3,
@@ -97,6 +73,14 @@
     elevated-secondary-selected: 3,
     elevated-primary-selected: 3,
     elevated-inverse-selected: -3,
+
+    // elevated dividing
+    elevated-neutral-dividing: -1,
+    elevated-muted-dividing: -1,
+    elevated-tertiary-dividing: -2,
+    elevated-secondary-dividing: -2,
+    elevated-primary-dividing: -3,
+    elevated-inverse-dividing: -3,
 
     // fill
     neutral-fill: 25%,

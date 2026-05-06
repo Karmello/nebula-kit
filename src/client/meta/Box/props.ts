@@ -11,7 +11,7 @@ import {
   TSHIRT_SIZES,
 } from 'lib/definitions'
 
-import { BoxProps, BOX_VARIANTS, BOX_SURFACES, BOX_THEMES, BOX_INTENTS } from 'lib/components/core/base/Box'
+import { BoxProps, BOX_VARIANTS, BOX_THEMES, BOX_INTENTS, BOX_SURFACES } from 'lib/components/core/base/Box'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
@@ -124,6 +124,11 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description:
       'Enables visual rendering. When true, the Box can draw a surface using variant and intent. When false, it is structural and has no visual styling.',
   },
+  elevated: {
+    options: ['boolean'],
+    description:
+      'Shifts the component onto an elevated surface level, adjusting the base surface and all related interaction states together.',
+  },
   hidden: {
     options: ['boolean'],
     isResponsive: true,
@@ -148,7 +153,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   },
   interactive: {
     options: ['boolean'],
-    description: 'Enables visual interaction affordances such as hover, active or selected styling.',
+    description: 'Enables visual interaction affordances such as hover and active styling.',
   },
   left: {
     options: [DOCS_CSS_LABEL],
@@ -305,14 +310,9 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Right offset.',
     link: true,
   },
-  selected: {
-    options: ['boolean'],
-    description:
-      'Applies a persistent selected state, taking precedence over transient interaction states like hover and active.',
-  },
   surface: {
     options: BOX_SURFACES,
-    description: 'Selects the surface depth style used by the component.',
+    description: 'Applies a persistent surface behavior that overrides transient interaction states like hover and active.',
   },
   tag: HTML_TAG_PROPS_META.tag,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,

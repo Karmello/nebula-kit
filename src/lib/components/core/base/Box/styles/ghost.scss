@@ -19,11 +19,16 @@
       &[data-neb-box-active-on-focus='true']:focus-visible {
         color: var(--text-active);
       }
+    }
 
-      // selected
-      &[data-neb-box-selected='true'] {
-        color: var(--text-selected) !important;
-      }
+    // selected
+    &[data-neb-box-surface='selected'] {
+      color: var(--text-selected) !important;
+    }
+
+    // dividing
+    &[data-neb-box-surface='dividing'] {
+      color: var(--text-dividing) !important;
     }
 
     // focus ring

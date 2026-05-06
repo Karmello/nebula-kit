@@ -45,7 +45,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
           >
             <Button
               intent="muted"
-              surface={pathname.startsWith(PageKey.home) ? 'elevated' : undefined}
+              elevated={pathname.startsWith(PageKey.home)}
               selected={pathname.startsWith(PageKey.home)}
               bold={pathname.startsWith(PageKey.home)}
               inlineSize="115px"
@@ -65,7 +65,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
         >
           <Button
             intent="muted"
-            surface={currentPageKey === PageKey.playground ? 'elevated' : undefined}
+            elevated={currentPageKey === PageKey.playground}
             selected={currentPageKey === PageKey.playground}
             bold={currentPageKey === PageKey.playground}
             iconName="shapes"
@@ -88,7 +88,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
         >
           <Button
             intent="muted"
-            surface={currentPageKey === PageKey.foundations ? 'elevated' : undefined}
+            elevated={currentPageKey === PageKey.foundations}
             selected={currentPageKey === PageKey.foundations}
             bold={currentPageKey === PageKey.foundations}
             iconName="book-open-text"
@@ -109,7 +109,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
         >
           <Button
             intent="muted"
-            surface={currentPageKey === PageKey.core ? 'elevated' : undefined}
+            elevated={currentPageKey === PageKey.core}
             selected={currentPageKey === PageKey.core}
             bold={currentPageKey === PageKey.core}
             iconName="package"
@@ -130,7 +130,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
         >
           <Button
             intent="muted"
-            surface={currentPageKey === PageKey.pro ? 'elevated' : undefined}
+            elevated={currentPageKey === PageKey.pro}
             selected={currentPageKey === PageKey.pro}
             bold={currentPageKey === PageKey.pro}
             iconName="star"
@@ -151,7 +151,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
         >
           <Button
             intent="muted"
-            surface={currentPageKey === PageKey.faq ? 'elevated' : undefined}
+            elevated={currentPageKey === PageKey.faq}
             selected={currentPageKey === PageKey.faq}
             bold={currentPageKey === PageKey.faq}
             iconName="message-circle-question-mark"
@@ -172,7 +172,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
         >
           <Button
             intent="muted"
-            surface={currentPageKey === PageKey.blog ? 'elevated' : undefined}
+            elevated={currentPageKey === PageKey.blog}
             selected={currentPageKey === PageKey.blog}
             bold={currentPageKey === PageKey.blog}
             iconName="rss"
@@ -194,7 +194,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
           >
             <Button
               intent="muted"
-              surface={currentPageKey === PageKey.pricing ? 'elevated' : undefined}
+              elevated={currentPageKey === PageKey.pricing}
               selected={currentPageKey === PageKey.pricing}
               bold={currentPageKey === PageKey.pricing}
               iconName="credit-card"
@@ -216,7 +216,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
         >
           <Button
             intent="muted"
-            surface={currentPageKey === PageKey.feedback ? 'elevated' : undefined}
+            elevated={currentPageKey === PageKey.feedback}
             selected={currentPageKey === PageKey.feedback}
             bold={currentPageKey === PageKey.feedback}
             iconName="mail"
@@ -237,7 +237,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
         >
           <Button
             intent="muted"
-            surface={currentPageKey === PageKey.assistant ? 'elevated' : undefined}
+            elevated={currentPageKey === PageKey.assistant}
             selected={currentPageKey === PageKey.assistant}
             bold={currentPageKey === PageKey.assistant}
             iconName="sparkles"

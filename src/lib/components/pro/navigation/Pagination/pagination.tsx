@@ -92,7 +92,7 @@ export const Pagination = ({
                 disabled={disabled}
                 bold={active}
                 selected={active}
-                surface={active ? 'elevated' : undefined}
+                elevated={active}
               >
                 {!iconName ? item.page : undefined}
               </Button>

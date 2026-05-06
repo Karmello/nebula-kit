@@ -62,9 +62,7 @@ export const DropdownListMenu = () => {
 
   const opensUpDownwards = (floatingResolved?.placement ?? 'bottom-start').startsWith('bottom')
 
-  const ListItemDivider = () => (
-    <Divider marginBlock="0px" color={color} intent={intent} surface="elevated" selected opacity="0.25" />
-  )
+  const ListItemDivider = () => <Divider marginBlock="0px" color={color} intent={intent} elevated />
 
   return (
     <Floating
@@ -111,7 +109,7 @@ export const DropdownListMenu = () => {
                   scrollAlign={scrollAlign}
                   color={color}
                   intent={intent}
-                  surface="elevated"
+                  elevated
                   renderItem={(slot, index) => {
                     return (
                       <>

@@ -14,6 +14,10 @@ const VIRTUAL_LIST_PROPS_META: ComponentMeta<VirtualListProps>['props'] = {
     ...BOX_PROPS_META.color,
     description: 'Color applied to the surface behind list items.',
   },
+  elevated: {
+    ...BOX_PROPS_META.elevated,
+    description: 'Applies an elevated surface level behind the list items.',
+  },
   ensureVisibleIndex: {
     options: ['number'],
     description:
@@ -52,10 +56,6 @@ const VIRTUAL_LIST_PROPS_META: ComponentMeta<VirtualListProps>['props'] = {
     options: ['number'],
     defaultValue: String(DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX),
     description: 'Scrolls the list to the item at the given index on render.',
-  },
-  surface: {
-    ...BOX_PROPS_META.surface,
-    description: 'Selects the depth of the surface behind list items.',
   },
   tagAttrs: BOX_PROPS_META.tagAttrs,
   tagRef: BOX_PROPS_META.tagRef,

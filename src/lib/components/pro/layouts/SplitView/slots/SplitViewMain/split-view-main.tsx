@@ -37,7 +37,7 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
                   }}
                   iconName={getToggleIconName(sidePosition, sideOpen)}
                   intent="tertiary"
-                  size="sm"
+                  size="xs"
                 />
               </Flex.Item>
               <Flex.Item flex="1" tagAttrs={{ style: { minInlineSize: '0px' } }}>

@@ -40,7 +40,7 @@ export const FooterSection = ({
         paddingRight={paddingRight}
         paddingBottom={paddingBottom}
         paddingLeft={paddingLeft}
-        surface="raised"
+        surface="dividing"
       >
         {children}
       </Box>

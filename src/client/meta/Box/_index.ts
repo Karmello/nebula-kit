@@ -27,6 +27,8 @@ const BOX_META: ComponentMeta<BoxProps> = {
     '0.9.0': [
       'added hidden prop',
       'added support for the flipped theme value, allowing components to invert the nearest inherited theme within a subtree',
+      'changed surface prop to elevated',
+      'changed selected prop to surface',
     ],
     '0.8.0': [
       'updated Box to always render internal ThemeProvider and BrandProvider, ensuring styling context is consistently resolved and propagates correctly through portals',

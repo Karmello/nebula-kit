@@ -158,7 +158,7 @@ export const AutocompleteMain = ({
                           }}
                           iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
                           iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
-                          surface={open ? 'elevated' : undefined}
+                          elevated={open}
                           interactive={!open}
                         />
                       )

@@ -6,8 +6,8 @@
     }
 
     &[data-neb-box-intent='tertiary'] {
-      &[data-neb-box-surface='elevated'] {
-        &[data-neb-box-selected='true'] {
+      &[data-neb-box-elevated='true'] {
+        &[data-neb-box-surface='selected'] {
           --text: hsl(var(--h) var(--s) var(--solid-tertiary-elevated-selected-text-l));
         }
       }
@@ -18,7 +18,7 @@
       --text-disabled: hsl(var(--h) var(--s) var(--solid-secondary-text-l) / var(--solid-secondary-text-disabled-alpha));
       --loader: hsl(var(--h) var(--s) var(--solid-secondary-loader-l));
 
-      &[data-neb-box-surface='elevated'] {
+      &[data-neb-box-elevated='true'] {
         --text: hsl(var(--h) var(--s) var(--solid-secondary-elevated-text-l));
       }
     }
@@ -28,7 +28,7 @@
       --text-focused: hsl(var(--h) var(--s) var(--l-0));
       --loader: hsl(var(--h) var(--s) var(--solid-primary-loader-l));
 
-      &[data-neb-box-surface='elevated'] {
+      &[data-neb-box-elevated='true'] {
         --text: hsl(var(--h) var(--s) var(--solid-primary-elevated-text-l));
       }
     }

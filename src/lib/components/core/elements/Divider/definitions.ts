@@ -3,14 +3,9 @@ import { BoxProps } from 'lib/components/core/base/Box/definitions'
 
 export const DEFAULT_DIVIDER_INTENT: DividerProps['intent'] = 'muted'
 export const DEFAULT_DIVIDER_MARGIN_BLOCK: DividerProps['marginBlock'] = '3px'
-export const DEFAULT_DIVIDER_OPACITY: DividerProps['opacity'] = '1'
-export const DEFAULT_DIVIDER_SURFACE: DividerProps['surface'] = 'raised'
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'hr'>, 'tagAttrs' | 'tagRef'>
 
-type PropsFromBox = Pick<
-  BoxProps<'hr'>,
-  'color' | 'intent' | 'marginBlock' | 'marginTop' | 'marginBottom' | 'opacity' | 'surface' | 'selected'
->
+type PropsFromBox = Pick<BoxProps<'hr'>, 'color' | 'intent' | 'marginBlock' | 'marginTop' | 'marginBottom' | 'elevated'>
 
 export type DividerProps = PropsFromHtmlTag & PropsFromBox
