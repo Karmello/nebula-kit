@@ -1,6 +1,6 @@
 import { CodeSnippet } from 'client/components'
 import { Box, Spacer, Table, Text } from 'lib/components'
-import { LENGTH_VALUES } from 'lib/definitions'
+import { SIZING_SCALE } from 'lib/definitions'
 
 export default () => {
   return (
@@ -28,10 +28,10 @@ export default () => {
           </Table.HeaderRow>
         </Table.Header>
         <Table.Body>
-          {Object.keys(LENGTH_VALUES).map(key => (
+          {Object.keys(SIZING_SCALE).map(key => (
             <Table.Row key={key}>
               <Table.Cell>{key}</Table.Cell>
-              <Table.Cell>{LENGTH_VALUES[key as never]}</Table.Cell>
+              <Table.Cell>{SIZING_SCALE[key as never]}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

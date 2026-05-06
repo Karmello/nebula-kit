@@ -1,12 +1,12 @@
 import { HtmlTagProps } from 'lib/components'
-import { IconName, TShirtSize } from 'lib/definitions'
+import { CssLength, IconName, TShirtSize } from 'lib/definitions'
 import { BoxProps } from 'lib/components/core/base/Box'
 
 export const DEFAULT_ICON_SIZE: IconProps['size'] = 'md'
 
 export const ICON_SIZES = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const satisfies TShirtSize[]
 
-export type IconSize = (typeof ICON_SIZES)[number]
+export type IconSize = (typeof ICON_SIZES)[number] | CssLength
 
 type IconOwnProps = {
   name?: IconName

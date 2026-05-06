@@ -1,8 +1,8 @@
 import { HtmlTagProps } from 'lib/components'
 import { BoxIntent, BoxProps } from 'lib/components/core/base/Box/definitions'
-import { LengthValue, TShirtSize } from 'lib/definitions'
+import { TShirtSize } from 'lib/definitions'
 
-export const DIALOG_SIZE_MAP: Record<DialogSize, LengthValue> = {
+export const DIALOG_SIZE_MAP: Record<DialogSize, BoxProps['inlineSize']> = {
   sm: '360px',
   md: '520px',
   lg: '720px',

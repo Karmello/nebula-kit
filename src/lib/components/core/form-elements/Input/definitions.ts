@@ -1,14 +1,14 @@
 import { ReactNode } from 'react'
 
 import { BoxProps, HtmlTagProps } from 'lib/components'
-import { LengthValue, TShirtSize } from 'lib/definitions'
+import { TShirtSize } from 'lib/definitions'
 import { TEXT_TYPOGRAPHY_CONFIG } from 'lib/components/core/base/Text/definitions'
 
 export const INPUT_SIZE_CONFIG: Record<
   InputSize,
   {
-    blockSize: LengthValue
-    padding: LengthValue
+    blockSize: BoxProps['blockSize']
+    padding: BoxProps['padding']
     fontSize: string
   }
 > = {

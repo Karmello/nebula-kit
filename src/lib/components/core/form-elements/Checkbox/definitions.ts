@@ -1,8 +1,9 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
-import { LengthValue, TShirtSize } from 'lib/definitions'
+import { TShirtSize } from 'lib/definitions'
 import { BoxVariant } from 'lib/components/core/base/Box'
+import { IconSize } from 'lib/components/core/elements/Icon'
 
-export const CHECKBOX_SIZE_CONFIG: Record<CheckboxSize, { blockSize: LengthValue; iconSize: LengthValue }> = {
+export const CHECKBOX_SIZE_CONFIG: Record<CheckboxSize, { blockSize: BoxProps['blockSize']; iconSize: IconSize }> = {
   '2xs': { blockSize: '28px', iconSize: '18px' },
   xs: { blockSize: '34px', iconSize: '22px' },
   sm: { blockSize: '38px', iconSize: '26px' },

@@ -88,9 +88,3 @@ export type CssLength =
   | `clamp(${string})`
   | `min(${string})`
   | `max(${string})`
-
-export type CssMargin =
-  | `${string} ${string}`
-  | `${string} ${string} ${string}`
-  | `${string} ${string} ${string} ${string}`
-  | 'auto'

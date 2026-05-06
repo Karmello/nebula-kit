@@ -2,7 +2,7 @@ import { memo } from 'react'
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { resolveLengthValue, withPrefix } from 'lib/helpers'
+import { resolveSizeValue, withPrefix } from 'lib/helpers'
 import { getSvgIconComponent } from 'lib/icons/lucide'
 
 import { DEFAULT_ICON_SIZE, IconProps } from './definitions'
@@ -23,7 +23,7 @@ export const Icon = memo(
 
     const Svg = name ? getSvgIconComponent(name) : null
 
-    const resolvedSize = resolveLengthValue(size) as string
+    const resolvedSize = resolveSizeValue(size) as string
 
     return (
       <Box

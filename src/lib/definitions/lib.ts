@@ -15,7 +15,7 @@ export const TSHIRT_SIZES = ['3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', 
 
 export const DEFAULT_SWITCH_AT: SwitchAt = 'lg'
 
-export const LENGTH_VALUES: Record<TShirtSize, LengthValue> = {
+export const SIZING_SCALE: Record<TShirtSize, CssLength> = {
   '3xs': '2px',
   '2xs': '4px',
   xs: '8px',
@@ -37,4 +37,3 @@ export type IconName = (typeof ICON_NAMES)[number]
 
 export type SwitchAt = (typeof SWITCH_AT)[number]
 export type RespValue<T> = T | Partial<Record<Breakpoint, T>>
-export type LengthValue = TShirtSize | CssLength

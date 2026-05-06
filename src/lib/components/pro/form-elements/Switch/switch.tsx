@@ -1,14 +1,13 @@
 import { useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
-import { Box, Slide } from 'lib/components'
+import { Box, BoxProps, Slide } from 'lib/components'
 import { BUTTON_SIZE_CONFIG } from 'lib/components/core/controls/Button'
-import { resolveLengthValue, withPrefix } from 'lib/helpers'
+import { resolveSizeValue, withPrefix } from 'lib/helpers'
 
 import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SIZE, SWITCH_BORDER_MULTIPLIER, SwitchProps } from './definitions'
 
 import './switch.scss'
-import { LengthValue } from 'lib/definitions'
 
 export const Switch = ({
   // Box
@@ -43,8 +42,10 @@ export const Switch = ({
     onChange?.(checked)
   }
 
-  const resolvedBlockSize = resolveLengthValue(BUTTON_SIZE_CONFIG[size || 'md'].blockSize)
-  const thumbBlockSize = `calc(${resolvedBlockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})` as LengthValue
+  const resolvedBlockSize = resolveSizeValue(BUTTON_SIZE_CONFIG[size || 'md'].blockSize)
+
+  const thumbBlockSize =
+    `calc(${resolvedBlockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})` as BoxProps['blockSize']
 
   return (
     <Box

@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import { BoxProps, HtmlTag } from 'lib/components'
 import { updateDomRespStyle, updateDomRespDataset, updateDomStaticDataset } from 'lib/service'
 import { ThemeProvider, BrandProvider, useThemeContext, useBrandContext } from 'lib/components/core/internal'
-import { withPrefix, resolveLengthValue, resolveMarginValue } from 'lib/helpers'
+import { withPrefix, resolveSizeValue } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 
 import './styles/box.scss'
@@ -144,26 +144,26 @@ export const Box = <T extends ElementType = 'div'>({
       right,
       bottom,
       left,
-      blockSize: blockSize !== undefined ? resolveLengthValue(blockSize) : undefined,
-      minBlockSize: minBlockSize !== undefined ? resolveLengthValue(minBlockSize) : undefined,
-      maxBlockSize: maxBlockSize !== undefined ? resolveLengthValue(maxBlockSize) : undefined,
-      inlineSize: inlineSize !== undefined ? resolveLengthValue(inlineSize) : undefined,
-      minInlineSize: minInlineSize !== undefined ? resolveLengthValue(minInlineSize) : undefined,
-      maxInlineSize: maxInlineSize !== undefined ? resolveLengthValue(maxInlineSize) : undefined,
-      padding: padding !== undefined ? resolveLengthValue(padding) : undefined,
-      paddingInline: paddingInline !== undefined ? resolveLengthValue(paddingInline) : undefined,
-      paddingBlock: paddingBlock !== undefined ? resolveLengthValue(paddingBlock) : undefined,
-      paddingTop: paddingTop !== undefined ? resolveLengthValue(paddingTop) : undefined,
-      paddingRight: paddingRight !== undefined ? resolveLengthValue(paddingRight) : undefined,
-      paddingBottom: paddingBottom !== undefined ? resolveLengthValue(paddingBottom) : undefined,
-      paddingLeft: paddingLeft !== undefined ? resolveLengthValue(paddingLeft) : undefined,
-      margin: margin !== undefined ? resolveMarginValue(margin) : undefined,
-      marginInline: marginInline !== undefined ? resolveLengthValue(marginInline) : undefined,
-      marginBlock: marginBlock !== undefined ? resolveLengthValue(marginBlock) : undefined,
-      marginTop: marginTop !== undefined ? resolveLengthValue(marginTop) : undefined,
-      marginRight: marginRight !== undefined ? resolveLengthValue(marginRight) : undefined,
-      marginBottom: marginBottom !== undefined ? resolveLengthValue(marginBottom) : undefined,
-      marginLeft: marginLeft !== undefined ? resolveLengthValue(marginLeft) : undefined,
+      blockSize: blockSize !== undefined ? resolveSizeValue(blockSize) : undefined,
+      minBlockSize: minBlockSize !== undefined ? resolveSizeValue(minBlockSize) : undefined,
+      maxBlockSize: maxBlockSize !== undefined ? resolveSizeValue(maxBlockSize) : undefined,
+      inlineSize: inlineSize !== undefined ? resolveSizeValue(inlineSize) : undefined,
+      minInlineSize: minInlineSize !== undefined ? resolveSizeValue(minInlineSize) : undefined,
+      maxInlineSize: maxInlineSize !== undefined ? resolveSizeValue(maxInlineSize) : undefined,
+      padding: padding !== undefined ? resolveSizeValue(padding) : undefined,
+      paddingInline: paddingInline !== undefined ? resolveSizeValue(paddingInline) : undefined,
+      paddingBlock: paddingBlock !== undefined ? resolveSizeValue(paddingBlock) : undefined,
+      paddingTop: paddingTop !== undefined ? resolveSizeValue(paddingTop) : undefined,
+      paddingRight: paddingRight !== undefined ? resolveSizeValue(paddingRight) : undefined,
+      paddingBottom: paddingBottom !== undefined ? resolveSizeValue(paddingBottom) : undefined,
+      paddingLeft: paddingLeft !== undefined ? resolveSizeValue(paddingLeft) : undefined,
+      margin: margin !== undefined ? resolveSizeValue(margin, 'margin') : undefined,
+      marginInline: marginInline !== undefined ? resolveSizeValue(marginInline) : undefined,
+      marginBlock: marginBlock !== undefined ? resolveSizeValue(marginBlock) : undefined,
+      marginTop: marginTop !== undefined ? resolveSizeValue(marginTop) : undefined,
+      marginRight: marginRight !== undefined ? resolveSizeValue(marginRight) : undefined,
+      marginBottom: marginBottom !== undefined ? resolveSizeValue(marginBottom) : undefined,
+      marginLeft: marginLeft !== undefined ? resolveSizeValue(marginLeft) : undefined,
     })
   }, [
     bp,

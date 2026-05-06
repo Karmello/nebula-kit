@@ -1,6 +1,7 @@
 import { HtmlTagProps, WithIconProps } from 'lib/components'
 
 import { BoxProps } from '../Box'
+import { IconSize } from '../../elements/Icon'
 
 export const TEXT_TYPOGRAPHY_CONFIG: Record<
   TextScale,
@@ -10,7 +11,7 @@ export const TEXT_TYPOGRAPHY_CONFIG: Record<
       tag: TextTag
       fontSize: string
       lineHeight: number
-      iconSize: string
+      iconSize: IconSize
     }
   >
 > = {

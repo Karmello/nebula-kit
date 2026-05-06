@@ -63,7 +63,6 @@ export const Textarea = ({
           ...tagAttrs?.style,
           fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
           lineHeight: TEXT_TYPOGRAPHY_CONFIG.regular.body.lineHeight,
-          padding: INPUT_SIZE_CONFIG.md.paddingLeft,
           resize,
         },
         value: currentValue,
@@ -86,6 +85,7 @@ export const Textarea = ({
       inlineSize={inlineSize}
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
+      padding={INPUT_SIZE_CONFIG.md.padding}
       interactive
       activeOnFocus
     />

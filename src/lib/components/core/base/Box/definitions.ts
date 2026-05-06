@@ -3,15 +3,15 @@ import { ElementType } from 'react'
 import {
   COLORS,
   CssDisplay,
-  CssMargin,
   CssOverflow,
   CssPointerEvents,
   CssPosition,
   CssTextAlign,
   CssVisibility,
-  LengthValue,
   RespValue,
   THEMES,
+  TShirtSize,
+  CssLength,
 } from 'lib/definitions'
 
 import { HtmlTagProps } from 'lib/components'
@@ -76,28 +76,35 @@ type BoxOwnProps = {
   bottom?: RespValue<string>
   left?: RespValue<string>
   // size
-  blockSize?: RespValue<LengthValue>
-  minBlockSize?: RespValue<LengthValue>
-  maxBlockSize?: RespValue<LengthValue>
-  inlineSize?: RespValue<LengthValue>
-  minInlineSize?: RespValue<LengthValue>
-  maxInlineSize?: RespValue<LengthValue>
+  blockSize?: RespValue<TShirtSize | CssLength>
+  minBlockSize?: RespValue<TShirtSize | CssLength>
+  maxBlockSize?: RespValue<TShirtSize | CssLength>
+  inlineSize?: RespValue<TShirtSize | CssLength>
+  minInlineSize?: RespValue<TShirtSize | CssLength>
+  maxInlineSize?: RespValue<TShirtSize | CssLength>
   // padding
-  padding?: RespValue<LengthValue>
-  paddingInline?: RespValue<LengthValue>
-  paddingBlock?: RespValue<LengthValue>
-  paddingTop?: RespValue<LengthValue>
-  paddingRight?: RespValue<LengthValue>
-  paddingBottom?: RespValue<LengthValue>
-  paddingLeft?: RespValue<LengthValue>
+  padding?: RespValue<TShirtSize | CssLength>
+  paddingInline?: RespValue<TShirtSize | CssLength>
+  paddingBlock?: RespValue<TShirtSize | CssLength>
+  paddingTop?: RespValue<TShirtSize | CssLength>
+  paddingRight?: RespValue<TShirtSize | CssLength>
+  paddingBottom?: RespValue<TShirtSize | CssLength>
+  paddingLeft?: RespValue<TShirtSize | CssLength>
   // margin
-  margin?: RespValue<LengthValue | CssMargin>
-  marginInline?: RespValue<LengthValue | 'auto'>
-  marginBlock?: RespValue<LengthValue | 'auto'>
-  marginTop?: RespValue<LengthValue | 'auto'>
-  marginRight?: RespValue<LengthValue | 'auto'>
-  marginBottom?: RespValue<LengthValue | 'auto'>
-  marginLeft?: RespValue<LengthValue | 'auto'>
+  margin?: RespValue<
+    | TShirtSize
+    | CssLength
+    | `${string} ${string}`
+    | `${string} ${string} ${string}`
+    | `${string} ${string} ${string} ${string}`
+    | 'auto'
+  >
+  marginInline?: RespValue<TShirtSize | CssLength | 'auto'>
+  marginBlock?: RespValue<TShirtSize | CssLength | 'auto'>
+  marginTop?: RespValue<TShirtSize | CssLength | 'auto'>
+  marginRight?: RespValue<TShirtSize | CssLength | 'auto'>
+  marginBottom?: RespValue<TShirtSize | CssLength | 'auto'>
+  marginLeft?: RespValue<TShirtSize | CssLength | 'auto'>
 }
 
 export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & BoxOwnProps

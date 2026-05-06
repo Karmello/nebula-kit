@@ -1,4 +1,3 @@
 export * from './getLibMsg'
-export * from './resolveLengthValue'
-export * from './resolveMarginValue'
+export * from './resolveSizeValue'
 export * from './withPrefix'
