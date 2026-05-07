@@ -12,7 +12,7 @@ export const AppFooter = () => {
         <Text scale="compact" typography="lead" bold>
           Current release
         </Text>
-        <Divider marginBottom="sm" elevated />
+        <Divider marginBottom="sm" intent="tertiary" />
         <Text scale="compact" italic color="gray" intent="primary">
           NebulaKit is actively developed and released in incremental updates. Each release introduces new components,
           improvements and refinements across the system.
@@ -33,7 +33,7 @@ export const AppFooter = () => {
         <Text scale="compact" typography="lead" bold>
           Community & Support
         </Text>
-        <Divider marginBottom="sm" elevated />
+        <Divider marginBottom="sm" intent="tertiary" />
         <Flex flexDirection="column" flexWrap="nowrap" gap="2xs">
           <Link href="https://x.com/captainnebula" target="_blank">
             <Button color="gray" intent="inverse" size="sm" iconName="external-link" iconPlacement="right">
@@ -61,7 +61,7 @@ export const AppFooter = () => {
         <Text scale="compact" typography="lead" bold>
           Legal information
         </Text>
-        <Divider marginBottom="sm" elevated />
+        <Divider marginBottom="sm" intent="tertiary" />
         <MarkerList>
           <MarkerList.Item>
             <Link
