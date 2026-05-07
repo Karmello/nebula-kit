@@ -23,7 +23,7 @@ export const RELEASE_INFO: Record<
   }
 > = {
   '0.9.0': {
-    timestamp: 1778169109939,
+    timestamp: 1778182000639,
     changelog: {
       main: [
         'standardized logical size, margin, padding and gap props to use predefined scale values',
