@@ -60,6 +60,28 @@ export const AppFooter = () => {
       </Footer.Section>
       <Footer.Section>
         <Text scale="compact" typography="lead" bold>
+          About the author
+        </Text>
+        <Divider marginBottom="sm" intent="tertiary" />
+        <Text scale="compact" italic color="gray" intent="primary">
+          Designed and maintained by a solo software engineer focused on long-term UI architecture and system consistency.
+        </Text>
+        <Spacer blockSize="sm" />
+        <Flex flexDirection="row" flexWrap="wrap" gap="2xs">
+          <Link href="https://www.linkedin.com/in/nogakamil" target="_blank">
+            <Button color="blue" intent="primary" size="xs" iconName="external-link" iconPlacement="right">
+              LinkedIn
+            </Button>
+          </Link>
+          <Link href="https://github.com/Karmello" target="_blank">
+            <Button color="gray" intent="inverse" size="xs" iconName="external-link" iconPlacement="right">
+              GitHub
+            </Button>
+          </Link>
+        </Flex>
+      </Footer.Section>
+      <Footer.Section>
+        <Text scale="compact" typography="lead" bold>
           Legal information
         </Text>
         <Divider marginBottom="sm" intent="tertiary" />
@@ -111,28 +133,6 @@ export const AppFooter = () => {
         <Text scale="compact" typography="caption" intent="primary" color="gray">
           {getCopyrightInfo()}
         </Text>
-      </Footer.Section>
-      <Footer.Section>
-        <Text scale="compact" typography="lead" bold>
-          About the author
-        </Text>
-        <Divider marginBottom="sm" intent="tertiary" />
-        <Text scale="compact" italic color="gray" intent="primary">
-          Designed and maintained by a solo software engineer focused on long-term UI architecture and system consistency.
-        </Text>
-        <Spacer blockSize="sm" />
-        <Flex flexDirection="row" flexWrap="wrap" gap="2xs">
-          <Link href="https://github.com/Karmello" target="_blank">
-            <Button color="gray" intent="inverse" size="xs" iconName="external-link" iconPlacement="right">
-              GitHub
-            </Button>
-          </Link>
-          <Link href="https://www.linkedin.com/in/nogakamil" target="_blank">
-            <Button color="blue" intent="primary" size="xs" iconName="external-link" iconPlacement="right">
-              LinkedIn
-            </Button>
-          </Link>
-        </Flex>
       </Footer.Section>
     </Footer>
   )
