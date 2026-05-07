@@ -1,7 +1,7 @@
 html[data-brand='blue'],
 .neb-box[data-neb-box-color='blue'] {
   --h: 220;
-  --s: 75%;
+  --s: var(--neb-saturation);
 
   --lightness-0: 100%;
   --lightness-1: 97%;

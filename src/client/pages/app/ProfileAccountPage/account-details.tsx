@@ -69,7 +69,7 @@ export default () => {
                     navigateTo(PageKey.pricing)
                   }}
                 >
-                  <Button size="xs" variant="outline" intent="secondary" color="blue">
+                  <Button size="xs" variant="outline" intent="tertiary" color="blue">
                     {getUser.data?.user.plan === 'free' ? 'Upgrade' : 'Details'}
                   </Button>
                 </Link>

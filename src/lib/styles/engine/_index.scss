@@ -20,3 +20,11 @@ html[data-ripple-mode='default'] {
 html[data-ripple-mode='emphasized'] {
   --neb-ripple-factor: 2;
 }
+
+html[data-saturation='vivid'] {
+  --neb-saturation: 75%;
+}
+
+html[data-saturation='soft'] {
+  --neb-saturation: 55%;
+}

@@ -1,7 +1,7 @@
 html[data-brand='pink'],
 .neb-box[data-neb-box-color='pink'] {
   --h: 330;
-  --s: 75%;
+  --s: var(--neb-saturation);
 
   --lightness-0: 100%;
   --lightness-1: 96%;

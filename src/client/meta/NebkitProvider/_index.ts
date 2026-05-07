@@ -18,6 +18,7 @@ const NEBKIT_PROVIDER_META: ComponentMeta<NebkitProviderProps> = {
   examples: NEBKIT_PROVIDER_EXAMPLES_META,
   hideExamplesThemeToggle: true,
   changelog: {
+    '0.9.0': ['added global saturation support'],
     '0.6.0': ['changed ripple prop to rippleMode'],
     '0.5.0': ['added ripple prop'],
     '0.3.0': ['updated public API'],

@@ -36,22 +36,22 @@ export const AppFooter = () => {
         <Divider marginBottom="sm" intent="tertiary" />
         <Flex flexDirection="column" flexWrap="nowrap" gap="2xs">
           <Link href="https://x.com/captainnebula" target="_blank">
-            <Button color="gray" intent="inverse" size="sm" iconName="external-link" iconPlacement="right">
+            <Button color="gray" intent="inverse" size="xs" iconName="external-link" iconPlacement="right">
               X profile
             </Button>
           </Link>
           <Link href="https://discord.gg/BgezCRDN8H" target="_blank">
-            <Button color="blue" intent="primary" size="sm" iconName="external-link" iconPlacement="right">
+            <Button color="blue" intent="primary" size="xs" iconName="external-link" iconPlacement="right">
               Discord server
             </Button>
           </Link>
           <Link href="https://www.npmjs.com/package/@nebula-kit/core" target="_blank">
-            <Button color="red" intent="primary" size="sm" iconName="external-link" iconPlacement="right">
+            <Button color="red" intent="primary" size="xs" iconName="external-link" iconPlacement="right">
               @nebula-kit/core
             </Button>
           </Link>
           <Link href="mailto:contact@nebulakit.dev" target="_blank">
-            <Button color="blue" intent="secondary" variant="outline" size="sm" iconName="mail">
+            <Button color="blue" intent="secondary" variant="outline" size="xs" iconName="mail">
               contact@nebulakit.dev
             </Button>
           </Link>

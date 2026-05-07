@@ -3,13 +3,15 @@ import { sentenceCase } from 'change-case'
 import { useAppStore } from 'client/store'
 import { Button, Flex, Select, Dialog, Text, Segment, Box, Spacer } from 'lib/components'
 import { NEBKIT_BORDER_RADIUS_SIZES, NEBKIT_RIPPLE_MODES } from 'lib/components/core/utility/NebkitProvider'
-import { COLORS, THEMES } from 'lib/definitions'
+import { COLORS, SATURATIONS, THEMES } from 'lib/definitions'
 
 export const AppPrefsDialog = () => {
   const theme = useAppStore(state => state.theme)
   const setTheme = useAppStore(state => state.setTheme)
   const brand = useAppStore(state => state.brand)
   const setBrand = useAppStore(state => state.setBrand)
+  const saturation = useAppStore(state => state.saturation)
+  const setSaturation = useAppStore(state => state.setSaturation)
   const borderRadiusSize = useAppStore(state => state.borderRadiusSize)
   const setBorderRadiusSize = useAppStore(state => state.setBorderRadiusSize)
   const rippleMode = useAppStore(state => state.rippleMode)
@@ -58,6 +60,17 @@ export const AppPrefsDialog = () => {
               <Select value={brand} onChange={setBrand} inlineSize="150px" size="xs" scrollAlign="center">
                 {COLORS.map(brand => (
                   <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
+                ))}
+              </Select>
+            </Flex.Item>
+            <Flex.Item>
+              <Text bold typography="small">
+                Saturation
+              </Text>
+              <Spacer blockSize="3xs" />
+              <Select value={saturation} onChange={setSaturation} inlineSize="150px" size="xs" scrollAlign="center">
+                {SATURATIONS.map(saturation => (
+                  <Select.Option value={saturation}>{sentenceCase(saturation)}</Select.Option>
                 ))}
               </Select>
             </Flex.Item>

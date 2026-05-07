@@ -10,6 +10,7 @@ import {
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
   DEFAULT_NEBKIT_BRAND,
   DEFAULT_NEBKIT_RIPPLE_MODE,
+  DEFAULT_NEBKIT_SATURATION,
   DEFAULT_NEBKIT_THEME,
 } from 'lib/components/core/utility/NebkitProvider'
 
@@ -18,6 +19,8 @@ export type AppStore = {
   setTheme: (theme: NebkitProviderProps['theme']) => void
   brand: NebkitProviderProps['brand']
   setBrand: (brand: NebkitProviderProps['brand']) => void
+  saturation: NebkitProviderProps['saturation']
+  setSaturation: (saturation: NebkitProviderProps['saturation']) => void
   borderRadiusSize: NebkitProviderProps['borderRadiusSize']
   setBorderRadiusSize: (borderRadiusSize: NebkitProviderProps['borderRadiusSize']) => void
   rippleMode: NebkitProviderProps['rippleMode']
@@ -40,6 +43,8 @@ export const useAppStore = create<AppStore>()(
         setTheme: (theme: NebkitProviderProps['theme']) => set({ theme }),
         brand: DEFAULT_NEBKIT_BRAND,
         setBrand: (brand: NebkitProviderProps['brand']) => set({ brand }),
+        saturation: DEFAULT_NEBKIT_SATURATION,
+        setSaturation: (saturation: NebkitProviderProps['saturation']) => set({ saturation }),
         borderRadiusSize: DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
         setBorderRadiusSize: (borderRadiusSize: NebkitProviderProps['borderRadiusSize']) => set({ borderRadiusSize }),
         rippleMode: DEFAULT_NEBKIT_RIPPLE_MODE,
@@ -58,6 +63,7 @@ export const useAppStore = create<AppStore>()(
       partialize: state => ({
         theme: state.theme,
         brand: state.brand,
+        saturation: state.saturation,
         borderRadiusSize: state.borderRadiusSize,
         rippleMode: state.rippleMode,
         flipGlobalThemeOnExamples: state.flipGlobalThemeOnExamples,

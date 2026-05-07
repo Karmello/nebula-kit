@@ -9,6 +9,7 @@ export const BREAKPOINTS = ['base', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
 export const SWITCH_AT = [...BREAKPOINTS.filter(bp => bp !== 'base')] as const
 
 export const THEMES = ['light', 'dark'] as const
+export const SATURATIONS = ['vivid', 'soft'] as const
 export const COLORS = ['gray', 'green', 'blue', 'red', 'pink', 'amber'] as const
 
 export const DEFAULT_SWITCH_AT: SwitchAt = 'lg'
@@ -17,6 +18,7 @@ export const DEFAULT_SWITCH_AT: SwitchAt = 'lg'
 
 export type Breakpoint = (typeof BREAKPOINTS)[number]
 export type Theme = (typeof THEMES)[number]
+export type Saturation = (typeof SATURATIONS)[number]
 export type IconName = (typeof ICON_NAMES)[number]
 
 export type SwitchAt = (typeof SWITCH_AT)[number]
