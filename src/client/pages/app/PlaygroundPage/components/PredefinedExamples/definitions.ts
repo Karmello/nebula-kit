@@ -182,6 +182,19 @@ export const PRESETS: Record<string, Array<{ name: string; props: object }>> = {
         variant: 'outline',
       } as SectionProps,
     },
+    {
+      name: 'Interactive section',
+      props: {
+        children: 'This is interactive Section that responds visually to hover and active states',
+        color: 'blue',
+        heading: 'Interactive section',
+        iconName: 'settings',
+        intent: 'secondary',
+        size: 'lg',
+        variant: 'outline',
+        interactive: true,
+      } as SectionProps,
+    },
   ],
   Select: [
     {

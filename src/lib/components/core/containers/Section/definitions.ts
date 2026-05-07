@@ -40,7 +40,7 @@ type PropsFromHtmlTag<T extends SectionTag = 'section'> = Omit<HtmlTagProps<T>, 
   children: HtmlTagProps<T>['children']
 }
 
-type PropsFromBox<T extends SectionTag = 'section'> = Pick<BoxProps<T>, 'color' | 'intent'>
+type PropsFromBox<T extends SectionTag = 'section'> = Pick<BoxProps<T>, 'color' | 'intent' | 'interactive'>
 
 type PropsFromText = Pick<TextProps, 'iconName' | 'iconPlacement'>
 

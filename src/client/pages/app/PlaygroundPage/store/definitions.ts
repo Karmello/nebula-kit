@@ -122,6 +122,7 @@ const PROPS_FROM_SECTION = [
   'iconName',
   'iconPlacement',
   'intent',
+  'interactive',
   'size',
   'variant',
 ] as const satisfies readonly (keyof SectionProps)[]

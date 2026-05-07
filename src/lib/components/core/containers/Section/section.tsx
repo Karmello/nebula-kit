@@ -22,6 +22,7 @@ export const Section = <T extends SectionTag = 'section'>({
   variant = DEFAULT_SECTION_VARIANT,
   color,
   intent = DEFAULT_SECTION_INTENT,
+  interactive,
   // text
   iconName,
   iconPlacement,
@@ -40,6 +41,7 @@ export const Section = <T extends SectionTag = 'section'>({
       }
       tagRef={tagRef}
       drawable
+      interactive={interactive}
       variant={variant}
       color={color}
       intent={intent}

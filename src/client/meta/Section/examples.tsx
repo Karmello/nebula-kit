@@ -22,6 +22,14 @@ const SECTION_EXAMPLES_META: ComponentMeta<SectionProps>['examples'] = [
       </Section>
     ),
   },
+  {
+    description: 'Interactive section.',
+    jsx: (
+      <Section heading="Section heading" size="lg" variant="outline" intent="primary" interactive>
+        Section content area
+      </Section>
+    ),
+  },
 ]
 
 export { SECTION_EXAMPLES_META }
