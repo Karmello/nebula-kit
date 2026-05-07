@@ -2,92 +2,94 @@
 
 .neb-box[data-neb-box-theme='dark'] {
   $config: (
-    // base
+    // neutral
     neutral: 0,
-    muted: 2,
-    tertiary: 4,
-    secondary: 9,
-    primary: 13,
-    inverse: 25,
-
-    // base hover
     neutral-hover: 2,
-    muted-hover: 3,
-    tertiary-hover: 5,
-    secondary-hover: 11,
-    primary-hover: 15,
-    inverse-hover: 21,
-
-    // base active
     neutral-active: 3,
-    muted-active: 4,
-    tertiary-active: 6,
-    secondary-active: 13,
-    primary-active: 18,
-    inverse-active: 18,
-
-    // base selected
-    neutral-selected: 1,
-    muted-selected: 3,
-    tertiary-selected: 6,
-    secondary-selected: 11,
-    primary-selected: 15,
-    inverse-selected: 21,
-
-    // base dividing
+    neutral-selected: 5,
     neutral-dividing: 2,
-    muted-dividing: 3,
-    tertiary-dividing: 3,
-    secondary-dividing: 6,
-    primary-dividing: 8,
-    inverse-dividing: 14,
 
-    // elevated base
     elevated-neutral: 3,
-    elevated-muted: 4,
-    elevated-tertiary: 6,
-    elevated-secondary: 13,
-    elevated-primary: 18,
-    elevated-inverse: 18,
-
-    // elevated hover
     elevated-neutral-hover: 4,
-    elevated-muted-hover: 5,
-    elevated-tertiary-hover: 7,
-    elevated-secondary-hover: 15,
-    elevated-primary-hover: 20,
-    elevated-inverse-hover: 17,
-
-    // elevated active
     elevated-neutral-active: 5,
-    elevated-muted-active: 6,
-    elevated-tertiary-active: 9,
-    elevated-secondary-active: 17,
-    elevated-primary-active: 22,
-    elevated-inverse-active: 15,
-
-    // elevated selected
     elevated-neutral-selected: 5,
-    elevated-muted-selected: 6,
-    elevated-tertiary-selected: 9,
-    elevated-secondary-selected: 17,
-    elevated-primary-selected: 22,
-    elevated-inverse-selected: 15,
-
-    // elevated dividing
     elevated-neutral-dividing: 4,
-    elevated-muted-dividing: 5,
-    elevated-tertiary-dividing: 8,
-    elevated-secondary-dividing: 15,
-    elevated-primary-dividing: 20,
-    elevated-inverse-dividing: 20,
 
-    // fill
     neutral-fill: 55%,
+
+    // muted
+    muted: 2,
+    muted-hover: 3,
+    muted-active: 4,
+    muted-selected: 6,
+    muted-dividing: 3,
+
+    elevated-muted: 4,
+    elevated-muted-hover: 5,
+    elevated-muted-active: 6,
+    elevated-muted-selected: 6,
+    elevated-muted-dividing: 5,
+
     muted-fill: 35%,
+
+    // tertiary
+    tertiary: 4,
+    tertiary-hover: 5,
+    tertiary-active: 7,
+    tertiary-selected: 9,
+    tertiary-dividing: 5,
+
+    elevated-tertiary: 7,
+    elevated-tertiary-hover: 8,
+    elevated-tertiary-active: 10,
+    elevated-tertiary-selected: 10,
+    elevated-tertiary-dividing: 8,
+
     tertiary-fill: 35%,
+
+    // secondary
+    secondary: 9,
+    secondary-hover: 11,
+    secondary-active: 14,
+    secondary-selected: 16,
+    secondary-dividing: 6,
+
+    elevated-secondary: 14,
+    elevated-secondary-hover: 13,
+    elevated-secondary-active: 11,
+    elevated-secondary-selected: 11,
+    elevated-secondary-dividing: 15,
+
     secondary-fill: 18%,
+
+    // primary
+    primary: 13,
+    primary-hover: 15,
+    primary-active: 18,
+    primary-selected: 19,
+    primary-dividing: 8,
+
+    elevated-primary: 18,
+    elevated-primary-hover: 17,
+    elevated-primary-active: 15,
+    elevated-primary-selected: 15,
+    elevated-primary-dividing: 19,
+
     primary-fill: 17%,
+
+    // inverse
+    inverse: 25,
+    inverse-hover: 21,
+    inverse-active: 17,
+    inverse-selected: 15,
+    inverse-dividing: 16,
+
+    elevated-inverse: 17,
+    elevated-inverse-hover: 16,
+    elevated-inverse-active: 14,
+    elevated-inverse-selected: 14,
+    elevated-inverse-dividing: 19,
+
     inverse-fill: 16%
   );
 

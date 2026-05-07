@@ -20,6 +20,9 @@
 
       &[data-neb-box-elevated='true'] {
         --text: hsl(var(--h) var(--s) var(--solid-secondary-elevated-text-l));
+        &[data-neb-box-surface='selected'] {
+          --text: hsl(var(--h) var(--s) var(--solid-secondary-elevated-selected-text-l));
+        }
       }
     }
     &[data-neb-box-intent='primary'] {

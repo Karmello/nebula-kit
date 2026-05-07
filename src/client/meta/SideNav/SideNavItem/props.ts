@@ -20,6 +20,7 @@ const SIDE_NAV_ITEM_PROPS_META: ComponentMeta<SideNavItemProps>['props'] = {
   intent: BUTTON_PROPS_META.intent,
   justifyContent: BUTTON_PROPS_META.justifyContent,
   onClick: LINK_PROPS_META.onClick,
+  selected: BUTTON_PROPS_META.selected,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
   variant: {

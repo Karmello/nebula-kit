@@ -24,6 +24,7 @@ const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
   examples: SIDE_NAV_EXAMPLES_META,
   props: SIDE_NAV_PROPS_META,
   changelog: {
+    '0.9.0': ['exposed selected prop on SideNav.Item via Button'],
     '0.8.0': ['changed elevated prop to surface on SideNav.Item'],
     '0.2.3': ['released'],
   },
