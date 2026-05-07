@@ -1,46 +1,18 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { sentenceCase } from 'change-case'
 
 import { Box, Button, Grid, Select, Spacer, Text, Switch, Flex } from 'lib/components'
 import { BOX_VARIANTS, BOX_INTENTS, BoxVariant } from 'lib/components/core/base/Box/definitions'
 import { COLORS } from 'lib/definitions'
 
+const STATES = ['rest', 'selected', 'disabled', 'loading'] as const
+
+type State = (typeof STATES)[number]
+
 export default () => {
   const [variant, setVariant] = useState<BoxVariant>('solid')
   const [elevated, setElevated] = useState<boolean>(false)
-  const [selected, setSelected] = useState<boolean>(false)
-  const [disabled, setDisabled] = useState<boolean>(false)
-  const [loading, setLoading] = useState<boolean>(false)
-
-  useEffect(() => {
-    if (elevated) {
-      setDisabled(false)
-      setLoading(false)
-    }
-  }, [elevated])
-
-  useEffect(() => {
-    if (selected) {
-      setDisabled(false)
-      setLoading(false)
-    }
-  }, [selected])
-
-  useEffect(() => {
-    if (disabled) {
-      setElevated(false)
-      setSelected(false)
-      setLoading(false)
-    }
-  }, [disabled])
-
-  useEffect(() => {
-    if (loading) {
-      setElevated(false)
-      setSelected(false)
-      setDisabled(false)
-    }
-  }, [loading])
+  const [state, setState] = useState<State>('rest')
 
   return (
     <>
@@ -56,7 +28,7 @@ export default () => {
           <Select
             value={variant}
             onChange={value => setVariant(value as BoxVariant)}
-            inlineSize="150px"
+            inlineSize="140px"
             size="sm"
             scrollAlign="center"
           >
@@ -67,27 +39,19 @@ export default () => {
         </Flex.Item>
         <Flex.Item>
           <Text bold intent="primary">
+            State
+          </Text>
+          <Select value={state} onChange={value => setState(value as State)} inlineSize="130px" size="sm" scrollAlign="center">
+            {STATES.map(state => (
+              <Select.Option value={state}>{sentenceCase(state)}</Select.Option>
+            ))}
+          </Select>
+        </Flex.Item>
+        <Flex.Item>
+          <Text bold intent="primary">
             Elevated
           </Text>
           <Switch checked={elevated} onChange={setElevated} />
-        </Flex.Item>
-        <Flex.Item>
-          <Text bold intent="primary">
-            Selected
-          </Text>
-          <Switch checked={selected} onChange={setSelected} />
-        </Flex.Item>
-        <Flex.Item>
-          <Text bold intent="primary">
-            Disabled
-          </Text>
-          <Switch checked={disabled} onChange={setDisabled} />
-        </Flex.Item>
-        <Flex.Item>
-          <Text bold intent="primary">
-            Loading
-          </Text>
-          <Switch checked={loading} onChange={setLoading} />
         </Flex.Item>
       </Flex>
       <Spacer blockSize="lg" />
@@ -102,10 +66,10 @@ export default () => {
                     variant={variant}
                     intent={intent}
                     fullWidth
-                    disabled={disabled}
-                    loading={loading}
                     elevated={elevated}
-                    selected={selected}
+                    selected={state === 'selected'}
+                    disabled={state === 'disabled'}
+                    loading={state === 'loading'}
                   >
                     {intent} {color}
                   </Button>
