@@ -1,6 +1,6 @@
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
-import { Button, Flex, Image, Link, Spacer, Text } from 'lib/components'
+import { Button, Flex, Image, Link, Spacer, Text, Tooltip } from 'lib/components'
 
 export const Hero = () => {
   const navigateTo = useNavigateTo()
@@ -43,7 +43,9 @@ export const Hero = () => {
             navigateTo(PageKey.assistant)
           }}
         >
-          <Image src="/captain-nebula.webp" inlineSize="225px" blockSize="225px" alt="Captain Nebula" fetchPriority="high" />
+          <Tooltip content="Go to AI assistant" minInlineSize={150} maxInlineSize={250}>
+            <Image src="/captain-nebula.webp" inlineSize="225px" blockSize="225px" alt="Captain Nebula" fetchPriority="high" />
+          </Tooltip>
         </Link>
       </Flex.Item>
     </Flex>

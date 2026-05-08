@@ -30,13 +30,13 @@ describe('resolveSizeValue', () => {
   })
 
   it('resolves margin shorthand values using sizing scale', () => {
-    const result = resolveSizeValue('sm md', 'margin')
+    const result = resolveSizeValue('sm md', 'shorthand')
 
     expect(result).toBe(`${SIZING_SCALE.sm} ${SIZING_SCALE.md}`)
   })
 
   it('mixes sizing scale tokens and raw values in margin shorthand', () => {
-    const result = resolveSizeValue('sm 10px lg', 'margin')
+    const result = resolveSizeValue('sm 10px lg', 'shorthand')
 
     expect(result).toBe(`${SIZING_SCALE.sm} 10px ${SIZING_SCALE.lg}`)
   })
@@ -67,8 +67,49 @@ describe('resolveSizeValue', () => {
   })
 
   it('ignores extra whitespace in margin shorthand values', () => {
-    const result = resolveSizeValue('  sm   md  ', 'margin')
+    const result = resolveSizeValue('  sm   md  ', 'shorthand')
 
     expect(result).toBe(`${SIZING_SCALE.sm} ${SIZING_SCALE.md}`)
+  })
+
+  it('resolves inset shorthand with one sizing token', () => {
+    const result = resolveSizeValue('sm', 'shorthand')
+
+    expect(result).toBe(SIZING_SCALE.sm)
+  })
+
+  it('resolves inset shorthand with two sizing tokens', () => {
+    const result = resolveSizeValue('sm md', 'shorthand')
+
+    expect(result).toBe(`${SIZING_SCALE.sm} ${SIZING_SCALE.md}`)
+  })
+
+  it('resolves inset shorthand with four sizing tokens', () => {
+    const result = resolveSizeValue('xs sm md lg', 'shorthand')
+
+    expect(result).toBe(`${SIZING_SCALE.xs} ${SIZING_SCALE.sm} ${SIZING_SCALE.md} ${SIZING_SCALE.lg}`)
+  })
+
+  it('resolves responsive inset shorthand values', () => {
+    const result = resolveSizeValue(
+      {
+        base: 'sm',
+        md: 'sm md',
+        lg: 'xs sm md lg',
+      },
+      'shorthand'
+    )
+
+    expect(result).toEqual({
+      base: SIZING_SCALE.sm,
+      md: `${SIZING_SCALE.sm} ${SIZING_SCALE.md}`,
+      lg: `${SIZING_SCALE.xs} ${SIZING_SCALE.sm} ${SIZING_SCALE.md} ${SIZING_SCALE.lg}`,
+    })
+  })
+
+  it('preserves raw CSS values inside inset shorthand', () => {
+    const result = resolveSizeValue('sm 10px calc(100% - 20px) 0', 'shorthand')
+
+    expect(result).toBe(`${SIZING_SCALE.sm} 10px calc(100% - 20px) 0`)
   })
 })

@@ -1,13 +1,11 @@
 import { IconSize } from 'lib/components/core/elements/Icon'
 import { TextScale, TextTag, TextTypography } from 'lib/components/core/base/Text'
 
-import { CssFontSize, CssLength, CssLineHeight } from './css'
-
 // constants
 
 export const TSHIRT_SIZES = ['3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'] as const
 
-export const SIZING_SCALE: Record<TShirtSize, CssLength> = {
+export const SIZING_SCALE: Record<TShirtSize, string> = {
   '3xs': '2px',
   '2xs': '4px',
   xs: '8px',
@@ -25,8 +23,8 @@ export const FONT_SIZE_TOKENS: Record<
   Record<
     TextTypography,
     {
-      fontSize: CssFontSize
-      lineHeight: number
+      fontSize: string
+      lineHeight: number | string
       iconSize: IconSize
       tag: TextTag
     }
@@ -61,12 +59,12 @@ export const FONT_SIZE_TOKENS: Record<
 export const CONTROL_SIZE_TOKENS: Record<
   Extract<TShirtSize, '2xs' | 'xs' | 'sm' | 'md' | 'lg'>,
   {
-    blockSize: CssLength
-    paddingInline: CssLength
-    fontSize: CssFontSize
-    lineHeight: CssLineHeight
+    blockSize: string
+    paddingInline: string
+    fontSize: string
+    lineHeight: number | string
     iconSize: IconSize
-    loaderSize: CssLength
+    loaderSize: string
   }
 > = {
   '2xs': {

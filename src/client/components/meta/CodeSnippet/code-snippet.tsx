@@ -106,7 +106,13 @@ export const CodeSnippet = ({
                     {isEmpty
                       ? ' '
                       : token.map(({ content, color }, j) => (
-                          <Text key={j} tag="span" tagAttrs={{ style: { display: 'inline', color } }} typography="small">
+                          <Text
+                            key={j}
+                            tag="span"
+                            tagAttrs={{ style: { display: 'inline', color } }}
+                            scale="compact"
+                            typography="small"
+                          >
                             {content}
                           </Text>
                         ))}

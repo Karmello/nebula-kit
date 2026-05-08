@@ -1,5 +1,4 @@
 import { HtmlTagProps, WithIconProps } from 'lib/components'
-import { CssFontSize, CssLineHeight } from 'lib/definitions'
 
 import { BoxProps } from '../Box'
 
@@ -20,8 +19,8 @@ export type TextScale = (typeof TEXT_SCALE)[number]
 type TextOwnProps = {
   scale?: TextScale
   typography?: TextTypography
-  fontSize?: CssFontSize
-  lineHeight?: CssLineHeight
+  fontSize?: string
+  lineHeight?: number | string
   bold?: boolean
   italic?: boolean
   underline?: boolean

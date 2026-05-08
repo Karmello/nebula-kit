@@ -1,12 +1,12 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
-import { CssLength, TShirtSize } from 'lib/definitions'
+import { TShirtSize } from 'lib/definitions'
 
 export const DEFAULT_LOADER_SIZE: LoaderProps['size'] = 'md'
 export const DEFAULT_LOADER_ACTIVE: LoaderProps['active'] = true
 
 export const LOADER_SIZES = ['sm', 'md', 'lg', 'xl', '2xl'] as const satisfies TShirtSize[]
 
-export type LoaderSize = (typeof LOADER_SIZES)[number] | CssLength
+export type LoaderSize = (typeof LOADER_SIZES)[number] | string
 
 type LoaderOwnProps = {
   active?: boolean

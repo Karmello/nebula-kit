@@ -1,22 +1,18 @@
 import { RespValue, SIZING_SCALE, TShirtSize } from 'lib/definitions'
 
-type ResolveMode = 'default' | 'margin'
+type ResolveMode = 'single' | 'shorthand'
 
-export const resolveSizeValue = (value: RespValue<any>, mode: ResolveMode = 'default'): RespValue<string> => {
+export const resolveSizeValue = (value: RespValue<any>, mode: ResolveMode = 'single'): RespValue<string> => {
+  const resolveToken = (token: string) => SIZING_SCALE[token as TShirtSize] ?? token
+
   const resolveSingle = (v: string) => {
     if (typeof v !== 'string') return v
 
-    if (mode === 'margin') {
-      // handle shorthand: "sm md"
-      return v
-        .trim()
-        .split(/\s+/)
-        .map(part => SIZING_SCALE[part as TShirtSize] ?? part)
-        .join(' ')
+    if (mode === 'shorthand') {
+      return v.trim().split(/\s+/).map(resolveToken).join(' ')
     }
 
-    // default: direct mapping
-    return SIZING_SCALE[v as TShirtSize] ?? v
+    return resolveToken(v)
   }
 
   if (typeof value === 'string') {
