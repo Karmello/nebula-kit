@@ -24,16 +24,17 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
       <Spacer blockSize="xs" />
       {!noSandBox ? (
         <>
-          <Box
-            tagAttrs={{ style: { borderStyle: 'dashed' } }}
-            drawable
-            theme={flipGlobalThemeOnExamples ? 'flipped' : theme}
-            variant={!flipGlobalThemeOnExamples ? 'outline' : 'solid'}
-            intent={!flipGlobalThemeOnExamples ? 'tertiary' : 'neutral'}
-            padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
-            borderRadius="0px"
-          >
-            {jsx}
+          <Box drawable variant="outline" intent="tertiary" tagAttrs={{ style: { borderStyle: 'dashed' } }}>
+            <Box
+              drawable
+              theme={flipGlobalThemeOnExamples ? 'flipped' : theme}
+              variant="solid"
+              intent="neutral"
+              padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
+              borderRadius="0px"
+            >
+              {jsx}
+            </Box>
           </Box>
           <Spacer blockSize="xs" />
         </>
