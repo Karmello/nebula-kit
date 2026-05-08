@@ -12,6 +12,7 @@ import {
   NEBKIT_SIZES_MAP,
   NebkitProviderProps,
 } from './definitions'
+import { Theme } from 'lib/definitions'
 
 export const NebkitProvider = ({
   children,
@@ -78,10 +79,10 @@ export const NebkitProvider = ({
   useLayoutEffect(() => {
     document.documentElement.classList.remove('neb-transitions')
 
-    document.documentElement.setAttribute('data-theme', theme)
-    document.documentElement.setAttribute('data-brand', brand)
-    document.documentElement.setAttribute('data-saturation', saturation)
-    document.documentElement.setAttribute('data-ripple-mode', rippleMode || 'off')
+    document.documentElement.setAttribute('data-theme', theme || `${DEFAULT_NEBKIT_THEME}`)
+    document.documentElement.setAttribute('data-brand', brand || `${DEFAULT_NEBKIT_BRAND}`)
+    document.documentElement.setAttribute('data-saturation', saturation || `${DEFAULT_NEBKIT_SATURATION}`)
+    document.documentElement.setAttribute('data-ripple-mode', rippleMode || `${DEFAULT_NEBKIT_RIPPLE_MODE}`)
 
     document.documentElement.style.setProperty(
       '--neb-border-radius',
