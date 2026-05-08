@@ -93,7 +93,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     link: true,
   },
   bottom: {
-    options: [DOCS_CSS_LABEL],
+    options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Bottom offset.',
     link: true,
@@ -141,7 +141,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     link: true,
   },
   inset: {
-    options: [DOCS_CSS_LABEL],
+    options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Shorthand for setting top, right, bottom and left offsets. Directional props override it.',
     link: true,
@@ -156,7 +156,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     description: 'Enables visual interaction affordances such as hover and active styling.',
   },
   left: {
-    options: [DOCS_CSS_LABEL],
+    options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Left offset.',
     link: true,
@@ -305,7 +305,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     link: true,
   },
   right: {
-    options: [DOCS_CSS_LABEL],
+    options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Right offset.',
     link: true,
@@ -330,7 +330,7 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
       'Sets a local theme boundary for the component and its drawable descendants. Overrides the resolved theme for this subtree. Use flipped to invert the resolved theme at this boundary.',
   },
   top: {
-    options: [DOCS_CSS_LABEL],
+    options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Top offset.',
     link: true,

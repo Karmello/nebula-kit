@@ -12,7 +12,6 @@ import {
   NEBKIT_SIZES_MAP,
   NebkitProviderProps,
 } from './definitions'
-import { Theme } from 'lib/definitions'
 
 export const NebkitProvider = ({
   children,
