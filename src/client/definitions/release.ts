@@ -23,10 +23,10 @@ export const RELEASE_INFO: Record<
   }
 > = {
   '0.9.0': {
-    timestamp: 1778182000639,
+    timestamp: 1778277735858,
     changelog: {
       main: [
-        'standardized logical size, margin, padding and gap props to use predefined scale values',
+        'standardized logical size, margin, padding, gap and inset/offset props to use predefined scale values',
         'extended the breakpoint system with a new xxl range for large screens and wide layouts',
         'added support for global saturation profiles to control the overall color intensity of the application',
         'fixed an issue in the responsive styling system where runtime-applied styles could override user-defined inline styles (tagAttrs.style), inline styles are now respected as the source of truth and are no longer overwritten by system updates',
