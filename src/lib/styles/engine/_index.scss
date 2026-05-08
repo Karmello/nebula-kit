@@ -1,7 +1,7 @@
-@use './intents.scss';
-@use './intents-elevated.scss';
-@use './variants.scss';
-@use './overrides.scss';
+@use './intents';
+@use './intents-elevated';
+@use './variants';
+@use './overrides/index';
 
 html {
   --neb-border-width: 2px;

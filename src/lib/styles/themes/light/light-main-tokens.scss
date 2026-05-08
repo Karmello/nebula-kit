@@ -6,7 +6,7 @@
     neutral: 0,
     neutral-hover: 1,
     neutral-active: 3,
-    neutral-selected: 5,
+    neutral-selected: 3,
     neutral-dividing: 1,
 
     elevated-neutral: 3,
@@ -19,16 +19,16 @@
 
     // muted
     muted: 1,
-    muted-hover: 2,
-    muted-active: 4,
-    muted-selected: 6,
+    muted-hover: 3,
+    muted-active: 5,
+    muted-selected: 5,
     muted-dividing: 2,
 
-    elevated-muted: 4,
-    elevated-muted-hover: 5,
-    elevated-muted-active: 7,
-    elevated-muted-selected: 7,
-    elevated-muted-dividing: 3,
+    elevated-muted: 5,
+    elevated-muted-hover: 6,
+    elevated-muted-active: 8,
+    elevated-muted-selected: 8,
+    elevated-muted-dividing: 4,
 
     muted-fill: 16%,
 
@@ -36,8 +36,8 @@
     tertiary: 3,
     tertiary-hover: 5,
     tertiary-active: 7,
-    tertiary-selected: 9,
-    tertiary-dividing: 4,
+    tertiary-selected: 7,
+    tertiary-dividing: 2,
 
     elevated-tertiary: 7,
     elevated-tertiary-hover: 8,
@@ -48,47 +48,47 @@
     tertiary-fill: 15%,
 
     // secondary
-    secondary: 8,
-    secondary-hover: 10,
-    secondary-active: 13,
-    secondary-selected: 14,
-    secondary-dividing: 5,
+    secondary: 7,
+    secondary-hover: 9,
+    secondary-active: 11,
+    secondary-selected: 11,
+    secondary-dividing: 4,
 
-    elevated-secondary: 13,
-    elevated-secondary-hover: 14,
-    elevated-secondary-active: 16,
-    elevated-secondary-selected: 10,
-    elevated-secondary-dividing: 12,
+    elevated-secondary: 11,
+    elevated-secondary-hover: 13,
+    elevated-secondary-active: 15,
+    elevated-secondary-selected: 7,
+    elevated-secondary-dividing: 10,
 
     secondary-fill: 14%,
 
     // primary
-    primary: 12,
-    primary-hover: 14,
-    primary-active: 17,
-    primary-selected: 19,
+    primary: 13,
+    primary-hover: 15,
+    primary-active: 18,
+    primary-selected: 18,
     primary-dividing: 7,
 
-    elevated-primary: 17,
-    elevated-primary-hover: 18,
-    elevated-primary-active: 20,
+    elevated-primary: 18,
+    elevated-primary-hover: 19,
+    elevated-primary-active: 21,
     elevated-primary-selected: 14,
-    elevated-primary-dividing: 16,
+    elevated-primary-dividing: 17,
 
     primary-fill: 13%,
 
     // inverse
     inverse: 25,
-    inverse-hover: 20,
-    inverse-active: 17,
-    inverse-selected: 15,
-    inverse-dividing: 13,
+    inverse-hover: 21,
+    inverse-active: 18,
+    inverse-selected: 18,
+    inverse-dividing: 10,
 
-    elevated-inverse: 17,
-    elevated-inverse-hover: 18,
-    elevated-inverse-active: 20,
+    elevated-inverse: 18,
+    elevated-inverse-hover: 19,
+    elevated-inverse-active: 21,
     elevated-inverse-selected: 14,
-    elevated-inverse-dividing: 16,
+    elevated-inverse-dividing: 17,
 
     inverse-fill: 12%
   );

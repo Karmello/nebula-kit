@@ -7,6 +7,11 @@
     --bg-dividing: hsl(var(--h) var(--s) var(--main-l-dividing));
     --bg-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.5);
 
+    --text: hsl(var(--h) var(--s) var(--l-25));
+    --text-active: hsl(var(--h) var(--s) var(--l-25));
+    --text-selected: hsl(var(--h) var(--s) var(--l-25));
+    --text-disabled: hsl(var(--h) var(--s) var(--l-25) / 0.25);
+
     --loader: hsl(var(--h) var(--s) var(--l-25));
 
     --ripple: currentColor;
@@ -24,7 +29,7 @@
     --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-hover)) var(--main-fill), transparent);
     --bg-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-active)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
     --bg-selected: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-selected)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
-    --bg-dividing: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-dividing)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
+    --bg-dividing: transparent;
 
     --text-disabled: hsl(var(--h) var(--s) var(--l-14) / 0.25);
 
@@ -52,7 +57,7 @@
     --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-hover)) var(--main-fill), transparent);
     --bg-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-active)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
     --bg-selected: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-selected)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
-    --bg-dividing: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-dividing)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
+    --bg-dividing: transparent;
 
     --loader: hsl(var(--h) var(--s) var(--main-primary-l));
 

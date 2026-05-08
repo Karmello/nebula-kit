@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 import { useNavigateTo } from 'client/hooks'
 import { Plan } from 'client/definitions'
-import { Flex, Icon, Link, Section, Spacer, Text, Box } from 'lib/components'
+import { Flex, Icon, Link, Section, Spacer, Text } from 'lib/components'
 import { BoxColor } from 'lib/components/core/base/Box'
 import { IconName } from 'lib/definitions'
 

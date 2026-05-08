@@ -19,12 +19,14 @@
       &:active,
       &[data-neb-box-active-on-focus='true']:focus-visible {
         background-color: var(--bg-active);
+        color: var(--text-active);
       }
     }
 
     // selected
     &[data-neb-box-surface='selected'] {
       background-color: var(--bg-selected) !important;
+      color: var(--text-selected) !important;
     }
 
     // dividing

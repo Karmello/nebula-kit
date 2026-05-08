@@ -14,6 +14,8 @@ import {
   SwitchProps,
   TableProps,
   LoaderProps,
+  TabsProps,
+  RevealProps,
 } from 'lib/components'
 
 export type PropValue = RespValue<string | number | boolean>
@@ -79,6 +81,7 @@ const PROPS_FROM_BUTTON = [
   'minInlineSize',
   'maxInlineSize',
   'ripple',
+  'selected',
   'size',
   'variant',
 ] as const satisfies readonly (keyof ButtonProps)[]
@@ -114,6 +117,15 @@ const PROPS_FROM_INPUT = [
 ] as const satisfies readonly (keyof InputProps)[]
 
 const PROPS_FROM_LOADER = ['active', 'centered', 'color', 'size'] as const satisfies readonly (keyof LoaderProps)[]
+
+const PROPS_FROM_REVEAL = [
+  'children',
+  'color',
+  'disabled',
+  'intent',
+  'label',
+  'size',
+] as const satisfies readonly (keyof RevealProps)[]
 
 const PROPS_FROM_SECTION = [
   'children',
@@ -153,6 +165,15 @@ const PROPS_FROM_TABLE = [
   'textAlign',
 ] as const satisfies readonly (keyof TableProps)[]
 
+const PROPS_FROM_TABS = [
+  'color',
+  'flexDirection',
+  'inlineSize',
+  'intent',
+  'size',
+  'variant',
+] as const satisfies readonly (keyof TabsProps)[]
+
 const PROPS_FROM_TEXT = [
   'bold',
   'children',
@@ -181,25 +202,29 @@ export const PLAYGROUND_PROPS_MAP: Record<string, readonly string[]> = {
   Icon: PROPS_FROM_ICON,
   Input: PROPS_FROM_INPUT,
   Loader: PROPS_FROM_LOADER,
+  Reveal: PROPS_FROM_REVEAL,
   Section: PROPS_FROM_SECTION,
   Select: PROPS_FROM_SELECT,
   Switch: PROPS_FROM_SWITCH,
+  Tabs: PROPS_FROM_TABS,
   Table: PROPS_FROM_TABLE,
   Text: PROPS_FROM_TEXT,
 }
 
-type PropsFromBoxKey = (typeof PROPS_FROM_BOX)[number]
-type PropsFromButtonKey = (typeof PROPS_FROM_BUTTON)[number]
-type PropsFromCalloutKey = (typeof PROPS_FROM_CALLOUT)[number]
-type PropsFromCheckboxKey = (typeof PROPS_FROM_CHECKBOX)[number]
-type PropsFromIconKey = (typeof PROPS_FROM_ICON)[number]
-type PropsFromInputKey = (typeof PROPS_FROM_INPUT)[number]
-type PropsFromLoaderKey = (typeof PROPS_FROM_LOADER)[number]
-type PropsFromSectionKey = (typeof PROPS_FROM_SECTION)[number]
-type PropsFromSelectKey = (typeof PROPS_FROM_SELECT)[number]
-type PropsFromSwitchKey = (typeof PROPS_FROM_SWITCH)[number]
-type PropsFromTableKey = (typeof PROPS_FROM_TABLE)[number]
-type PropsFromTextKey = (typeof PROPS_FROM_TEXT)[number]
+export type PropsFromBoxKey = (typeof PROPS_FROM_BOX)[number]
+export type PropsFromButtonKey = (typeof PROPS_FROM_BUTTON)[number]
+export type PropsFromCalloutKey = (typeof PROPS_FROM_CALLOUT)[number]
+export type PropsFromCheckboxKey = (typeof PROPS_FROM_CHECKBOX)[number]
+export type PropsFromIconKey = (typeof PROPS_FROM_ICON)[number]
+export type PropsFromInputKey = (typeof PROPS_FROM_INPUT)[number]
+export type PropsFromLoaderKey = (typeof PROPS_FROM_LOADER)[number]
+export type PropsFromRevealKey = (typeof PROPS_FROM_REVEAL)[number]
+export type PropsFromSectionKey = (typeof PROPS_FROM_SECTION)[number]
+export type PropsFromSelectKey = (typeof PROPS_FROM_SELECT)[number]
+export type PropsFromSwitchKey = (typeof PROPS_FROM_SWITCH)[number]
+export type PropsFromTableKey = (typeof PROPS_FROM_TABLE)[number]
+export type PropsFromTabsKey = (typeof PROPS_FROM_TABS)[number]
+export type PropsFromTextKey = (typeof PROPS_FROM_TEXT)[number]
 
 export type PlaygroundProp =
   | PropsFromBoxKey
@@ -209,10 +234,12 @@ export type PlaygroundProp =
   | PropsFromIconKey
   | PropsFromInputKey
   | PropsFromLoaderKey
+  | PropsFromRevealKey
   | PropsFromSectionKey
   | PropsFromSelectKey
   | PropsFromSwitchKey
   | PropsFromTableKey
+  | PropsFromTabsKey
   | PropsFromTextKey
 
 export const PLAYGROUND_CONTROLS_MAP: Record<PlaygroundProp, { type: 'array' | 'boolean' | 'string' }> = {
@@ -232,6 +259,7 @@ export const PLAYGROUND_CONTROLS_MAP: Record<PlaygroundProp, { type: 'array' | '
   drawable: { type: 'boolean' },
   dropdownPlacement: { type: 'array' },
   elevated: { type: 'boolean' },
+  flexDirection: { type: 'array' },
   fontSize: { type: 'string' },
   fullWidth: { type: 'boolean' },
   heading: { type: 'string' },
@@ -243,6 +271,7 @@ export const PLAYGROUND_CONTROLS_MAP: Record<PlaygroundProp, { type: 'array' | '
   interactive: { type: 'boolean' },
   italic: { type: 'boolean' },
   justifyContent: { type: 'array' },
+  label: { type: 'string' },
   layout: { type: 'array' },
   lineHeight: { type: 'string' },
   loading: { type: 'boolean' },
@@ -259,6 +288,7 @@ export const PLAYGROUND_CONTROLS_MAP: Record<PlaygroundProp, { type: 'array' | '
   ripple: { type: 'boolean' },
   scale: { type: 'array' },
   scrollAlign: { type: 'array' },
+  selected: { type: 'boolean' },
   size: { type: 'array' },
   staticLabel: { type: 'string' },
   status: { type: 'array' },

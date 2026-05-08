@@ -3,9 +3,9 @@ import { ReactElement } from 'react'
 import { Saturation, TShirtSize, Theme } from 'lib/definitions'
 import { BoxColor } from 'lib/components/core/base/Box'
 
-export const DEFAULT_NEBKIT_THEME: Theme = 'light'
-export const DEFAULT_NEBKIT_BRAND: BoxColor = 'gray'
-export const DEFAULT_NEBKIT_SATURATION: Saturation = 'vivid'
+export const DEFAULT_NEBKIT_THEME: NebkitProviderProps['theme'] = 'light'
+export const DEFAULT_NEBKIT_BRAND: NebkitProviderProps['brand'] = 'gray'
+export const DEFAULT_NEBKIT_SATURATION: NebkitProviderProps['saturation'] = 'soft'
 export const DEFAULT_NEBKIT_BORDER_RADIUS_SIZE: NebkitProviderProps['borderRadiusSize'] = 'md'
 export const DEFAULT_NEBKIT_RIPPLE_MODE: NebkitProviderProps['rippleMode'] = 'default'
 
