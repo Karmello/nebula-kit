@@ -55,7 +55,7 @@ export const AppFooter = () => {
         </Flex>
       </Footer.Section>
       <Footer.Section>
-        <Text bold>Author</Text>
+        <Text bold>About the author</Text>
         <Divider marginBottom="sm" intent="tertiary" />
         <Text typography="small" italic color="gray" intent="primary">
           The product is designed and maintained by a solo software engineer focused on long-term UI architecture and system
