@@ -15,7 +15,7 @@ const Question = ({ question, answer }: { question: string; answer: string }) =>
 export const FaqPage = () => {
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} maxInlineSize="75rem">
-      <Section heading="Frequently asked questions" iconName="message-circle-question-mark">
+      <Section size="lg" heading="Frequently asked questions" iconName="message-circle-question-mark">
         <Flex flexDirection="column" rowGap="sm">
           {FAQ.map(({ question, answer }, key) => (
             <Question key={key} question={question} answer={answer} />

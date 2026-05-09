@@ -49,7 +49,7 @@ export const HomePage = () => {
           <Principles />
         </Flex.Item>
       </Flex>
-      <Spacer blockSize="2xl" />
+      <Spacer blockSize="3xl" />
       <Families />
     </Box>
   )

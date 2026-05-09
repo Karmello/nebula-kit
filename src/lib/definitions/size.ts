@@ -29,14 +29,14 @@ export const FONT_SIZE_TOKENS: Record<
 > = {
   body: { fontSize: '15px', lineHeight: 1.5, iconSize: '16px', tag: 'p' },
   lead: { fontSize: '17px', lineHeight: 1.4, iconSize: '18px', tag: 'p' },
-  small: { fontSize: '14px', lineHeight: 1.3, iconSize: '14px', tag: 'p' },
-  caption: { fontSize: '11px', lineHeight: 1.4, iconSize: '14px', tag: 'p' },
-  h6: { fontSize: '16px', lineHeight: 1.3, iconSize: '18px', tag: 'h6' },
-  h5: { fontSize: '21px', lineHeight: 1.3, iconSize: '22px', tag: 'h5' },
-  h4: { fontSize: '27px', lineHeight: 1.2, iconSize: '26px', tag: 'h4' },
-  h3: { fontSize: '37px', lineHeight: 1.2, iconSize: '30px', tag: 'h3' },
-  h2: { fontSize: '48px', lineHeight: 1.1, iconSize: '38px', tag: 'h2' },
-  h1: { fontSize: '60px', lineHeight: 1.1, iconSize: '46px', tag: 'h1' },
+  small: { fontSize: '14px', lineHeight: 1.3, iconSize: '13px', tag: 'p' },
+  caption: { fontSize: '11px', lineHeight: 1.4, iconSize: '12px', tag: 'p' },
+  h6: { fontSize: '16px', lineHeight: 1.3, iconSize: '15px', tag: 'h6' },
+  h5: { fontSize: '21px', lineHeight: 1.3, iconSize: '19px', tag: 'h5' },
+  h4: { fontSize: '27px', lineHeight: 1.2, iconSize: '25px', tag: 'h4' },
+  h3: { fontSize: '37px', lineHeight: 1.2, iconSize: '33px', tag: 'h3' },
+  h2: { fontSize: '48px', lineHeight: 1.1, iconSize: '40px', tag: 'h2' },
+  h1: { fontSize: '60px', lineHeight: 1.1, iconSize: '50px', tag: 'h1' },
 }
 
 export const CONTROL_SIZE_TOKENS: Record<

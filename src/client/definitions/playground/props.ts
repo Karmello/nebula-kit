@@ -107,6 +107,7 @@ export const PROPS_FROM_SECTION = [
   'children',
   'color',
   'heading',
+  'headingIntent',
   'iconName',
   'iconPlacement',
   'intent',

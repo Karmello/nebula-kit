@@ -23,6 +23,7 @@ export const PLAYGROUND_CONTROLS_MAP: Record<PlaygroundProp, { type: 'array' | '
   fontSize: { type: 'string' },
   fullWidth: { type: 'boolean' },
   heading: { type: 'string' },
+  headingIntent: { type: 'array' },
   iconAngle: { type: 'string' },
   iconName: { type: 'array' },
   iconPlacement: { type: 'array' },

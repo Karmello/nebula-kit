@@ -33,7 +33,11 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
   }
 
   return (
-    <Flex flexDirection={toolbarSlot === 'start' ? 'row' : 'column'} alignItems="stretch">
+    <Flex
+      flexDirection={toolbarSlot === 'start' ? 'row' : { base: 'column', md: 'row' }}
+      flexWrap={{ base: 'nowrap', md: 'wrap' }}
+      alignItems="stretch"
+    >
       {toolbarSlot === 'start' ? (
         <Flex.Item>
           <Link

@@ -34,7 +34,7 @@ const Article = ({ title, date, platform, href, iconName }: ArticleProps) => {
 export const BlogPage = () => {
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} maxInlineSize="75rem">
-      <Section heading="Blog" iconName="rss">
+      <Section size="lg" heading="Blog" iconName="rss">
         <Flex flexDirection="column" rowGap="sm" alignItems="stretch">
           <Article
             title="Local theme island in action"

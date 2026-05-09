@@ -3,8 +3,9 @@ import { memo } from 'react'
 import meta from 'client/meta'
 import { useNavigateTo } from 'client/hooks'
 import { ComponentsPageRoutes, FoundationsPageRoutes } from 'client/pages'
-import { PageKey } from 'client/definitions'
-import { Box, SideNav, Spacer, SplitView, Text, Divider, Flex } from 'lib/components'
+import { usePlaygroundStore } from 'client/pages/app/PlaygroundPage/store'
+import { PageKey, PLAYGROUND_PROPS_MAP } from 'client/definitions'
+import { Box, SideNav, Spacer, SplitView, Text, Divider, Flex, Link, Button } from 'lib/components'
 
 import { CatalogPageBreadcrumb } from './CatalogPageBreadcrumb'
 
@@ -24,8 +25,11 @@ type Props = {
 export const CatalogPageTemplate = memo(
   ({ pathname, pageKey, data, activeCategoryObj, activeItemObj, activeSectionObj }: Props) => {
     const navigateTo = useNavigateTo()
+    const setActiveComponent = usePlaygroundStore(state => state.setActiveComponent)
 
     const bundleLabel = meta[activeItemObj?.label]?.[activeItemObj?.label]?.overview.bundle
+
+    const isInPlayground = Object.keys(PLAYGROUND_PROPS_MAP).includes(activeItemObj?.label)
 
     return (
       <SplitView>
@@ -130,6 +134,26 @@ export const CatalogPageTemplate = memo(
                             >
                               <Text typography="small">{bundleLabel}</Text>
                             </Box>
+                          ) : null}
+                          {isInPlayground ? (
+                            <Link
+                              href={PageKey.playground}
+                              onClick={async () => {
+                                setActiveComponent(activeItemObj?.label)
+                                navigateTo(PageKey.playground)
+                              }}
+                            >
+                              <Button
+                                iconName="arrow-right"
+                                iconPlacement="right"
+                                size="xs"
+                                variant="ghost"
+                                intent="primary"
+                                color="blue"
+                              >
+                                Try in Playground
+                              </Button>
+                            </Link>
                           ) : null}
                         </Flex>
                         <Divider />

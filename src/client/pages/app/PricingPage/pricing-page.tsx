@@ -20,7 +20,7 @@ export const PricingPage = () => {
 
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }}>
-      <Section heading="Pricing plans" iconName="credit-card">
+      <Section size="lg" heading="Pricing plans" iconName="credit-card">
         <Text>Choose the plan that fits your workflow.</Text>
         <Spacer blockSize="lg" />
         {getUser.isMakingRequest ? (

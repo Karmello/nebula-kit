@@ -7,7 +7,7 @@ export const FeedbackPage = () => {
 
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} maxInlineSize="75rem">
-      <Section heading="Feedback" iconName="mail">
+      <Section size="lg" heading="Feedback" iconName="mail">
         <Text>
           Your input helps shape where we go next. Let us know what's on your mind. Your feedback is completely anonymous.
         </Text>

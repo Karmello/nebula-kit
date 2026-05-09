@@ -25,6 +25,10 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
     isRequired: true,
     description: 'Heading text.',
   },
+  headingIntent: {
+    ...TEXT_PROPS_META.intent,
+    description: "Color tone applied to the component's heading text.",
+  },
   iconName: TEXT_PROPS_META.iconName,
   iconPlacement: {
     ...TEXT_PROPS_META.iconPlacement,

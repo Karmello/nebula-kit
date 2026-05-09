@@ -39,7 +39,7 @@ export const ProfileSettingsPage = () => {
 
   return (
     <Box padding={{ base: 'md', lg: 'xl' }} maxInlineSize="75rem">
-      <Section heading="Settings" iconName="settings">
+      <Section size="lg" heading="Settings" iconName="settings">
         <Spacer blockSize="md" />
         {!getUser.data || getUser.isMakingRequest ? (
           <Box position="relative" blockSize="160px">

@@ -14,6 +14,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }}>
       <Section
+        size="lg"
         heading={bundle === 'core' ? `Core bundle (${CORE_DATA.length})` : `Pro bundle (${PRO_DATA.length})`}
         iconName="package"
       >
@@ -39,10 +40,11 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
             <Section
               key={item.name}
               heading={item.name}
-              size="sm"
+              size="md"
               variant="soft-outline"
               color="blue"
-              intent="primary"
+              intent="secondary"
+              headingIntent="primary"
               iconName="box"
             >
               <Text intent="neutral">{item.title}</Text>

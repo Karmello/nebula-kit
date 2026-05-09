@@ -204,7 +204,7 @@ export const PLAYGROUND_PRESETS: Record<string, Array<{ name: string; props: obj
     {
       name: 'Interactive',
       props: {
-        children: 'This is interactive Section that responds visually to hover and active states',
+        children: 'This is interactive Section that responds visually to hover and active states.',
         color: 'blue',
         heading: 'Interactive section',
         iconName: 'settings',

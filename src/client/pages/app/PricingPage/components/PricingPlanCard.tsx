@@ -54,12 +54,13 @@ export const PricingPlanCard = ({
       color={color}
       iconName={iconName}
       interactive
+      size="lg"
     >
       <Text intent="neutral" bold>
         {headline}
       </Text>
       <Spacer />
-      <Text typography="h6">{priceInfo}</Text>
+      <Text typography="h5">{priceInfo}</Text>
       <Spacer />
       <Text intent="neutral">{description}</Text>
       <Spacer />
