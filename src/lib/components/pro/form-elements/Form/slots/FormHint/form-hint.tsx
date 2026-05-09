@@ -1,6 +1,6 @@
 import { Spacer, Text } from 'lib/components'
 
-import { DEFAULT_FORM_HINT_COLOR, DEFAULT_FORM_HINT_INTENT, DEFAULT_FORM_HINT_SCALE, FormHintProps } from './definitions'
+import { DEFAULT_FORM_HINT_COLOR, DEFAULT_FORM_HINT_INTENT, FormHintProps } from './definitions'
 
 export const FormHint = ({
   // Text
@@ -13,7 +13,6 @@ export const FormHint = ({
   intent = DEFAULT_FORM_HINT_INTENT,
   color = DEFAULT_FORM_HINT_COLOR,
   noWrap,
-  scale = DEFAULT_FORM_HINT_SCALE,
   textAlign,
   truncate,
 }: FormHintProps) => {
@@ -24,7 +23,7 @@ export const FormHint = ({
         tag="span"
         tagAttrs={tagAttrs}
         tagRef={tagRef}
-        scale={scale}
+        typography="small"
         bold={bold}
         iconName={iconName}
         iconPlacement={iconPlacement}

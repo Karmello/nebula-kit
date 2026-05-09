@@ -1,4 +1,5 @@
 export const RELEASE_VERSIONS = [
+  '0.10.0',
   '0.9.0',
   '0.8.0',
   '0.7.0',
@@ -22,6 +23,15 @@ export const RELEASE_INFO: Record<
     changelog?: { main?: string[]; core?: string[]; pro?: string[] }
   }
 > = {
+  '0.10.0': {
+    timestamp: 1778333299699,
+    changelog: {
+      main: [
+        'removed the compact typography scale to simplify the typography system',
+        'refined the typography scale for better readability and visual balance',
+      ],
+    },
+  },
   '0.9.0': {
     timestamp: 1778295383512,
     changelog: {

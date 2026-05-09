@@ -109,9 +109,9 @@ export const CodeSnippet = ({
                           <Text
                             key={j}
                             tag="span"
-                            tagAttrs={{ style: { display: 'inline', color } }}
-                            scale="compact"
-                            typography="small"
+                            tagAttrs={{
+                              style: { display: 'inline', color, fontSize: '13px', letterSpacing: '0px' },
+                            }}
                           >
                             {content}
                           </Text>

@@ -34,6 +34,7 @@ export const ICON_NAMES = [
   'eye-off',
   'file-code',
   'film',
+  'flask-conical',
   'globe',
   'info',
   'keyboard',

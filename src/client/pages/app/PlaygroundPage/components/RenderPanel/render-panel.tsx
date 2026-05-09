@@ -1,7 +1,7 @@
+import { COMPONENT_TEMPLATES } from 'client/definitions'
 import * as LIB_COMPONENTS from 'lib/components'
 import { Text, Spacer, Box, Tooltip, Icon } from 'lib/components'
 
-import { COMPONENT_TEMPLATES } from './definitions'
 import { usePlaygroundStore } from '../../store'
 
 export const RenderPanel = () => {

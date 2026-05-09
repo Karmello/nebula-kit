@@ -8,7 +8,7 @@ export const Hero = () => {
   return (
     <Flex columnGap="md" rowGap="xl" alignItems="center" flexDirection={{ base: 'column', md: 'row', lg: 'column', xl: 'row' }}>
       <Flex.Item flex="1">
-        <Text typography="h6">
+        <Text typography="h5">
           React UI system built on composition and prop inheritance, with strict rules governing component appearance and
           behavior. Designed to reduce UI entropy and keep interfaces consistent and maintainable as products grow over time.
         </Text>

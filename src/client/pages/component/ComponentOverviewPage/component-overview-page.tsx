@@ -23,9 +23,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const content = (
     <Flex flexDirection="column" alignItems="stretch" gap="lg">
       <Box>
-        <Text typography="lead" bold>
-          {title}
-        </Text>
+        <Text typography="lead">{title}</Text>
         {examples?.[0] ? (
           <Box marginBlock="sm">
             <CodeSnippet lang="tsx" code={examples[0].code || convertElemToString(examples[0].jsx)} />
@@ -39,31 +37,17 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       ) : null}
       {features ? <ListWithHeading heading="Features" items={features} /> : null}
       {guidelines ? <ListWithHeading heading="Guidelines" items={guidelines} /> : null}
-      {composedOf ? (
-        <Section size="sm" heading="Composed of" iconName="arrow-down">
-          <ListWithChips items={composedOf} color="red" />
-        </Section>
-      ) : null}
+      {composedOf ? <ListWithChips heading="Composed of" items={composedOf} color="red" /> : null}
       {topLevelTags ? (
-        <Section size="sm" heading={topLevelTags.length > 1 ? 'Root tags' : 'Root tag'} iconName="arrow-down">
-          <ListWithChips items={topLevelTags as string[]} color="amber" />
-        </Section>
+        <ListWithChips
+          heading={topLevelTags.length > 1 ? 'Root tags' : 'Root tag'}
+          items={topLevelTags as string[]}
+          color="amber"
+        />
       ) : null}
-      {props ? (
-        <Section size="sm" heading="Props" iconName="arrow-down">
-          <ListWithChips items={Object.keys(props).sort((a, b) => a.localeCompare(b))} />
-        </Section>
-      ) : null}
-      {slots ? (
-        <Section size="sm" heading="Slots" iconName="arrow-down">
-          <ListWithChips items={slots} color="gray" />
-        </Section>
-      ) : null}
-      {hooks ? (
-        <Section size="sm" heading="Hooks" iconName="arrow-down">
-          <ListWithChips items={hooks} color="green" />
-        </Section>
-      ) : null}
+      {props ? <ListWithChips heading="Props" items={Object.keys(props).sort((a, b) => a.localeCompare(b))} /> : null}
+      {slots ? <ListWithChips heading="Slots" items={slots} color="gray" /> : null}
+      {hooks ? <ListWithChips heading="Hooks" items={hooks} color="green" /> : null}
       {readMoreLink ? (
         <Box marginTop="sm">
           <Link
@@ -84,7 +68,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   return (
     <>
       {name ? (
-        <Section heading={name} variant="outline" intent="tertiary">
+        <Section size="lg" heading={name} variant="outline" intent="tertiary">
           {content}
         </Section>
       ) : (

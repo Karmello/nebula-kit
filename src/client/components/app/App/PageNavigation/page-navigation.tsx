@@ -66,7 +66,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             intent="muted"
             selected={currentPageKey === PageKey.playground}
             bold={currentPageKey === PageKey.playground}
-            iconName="shapes"
+            iconName="flask-conical"
             fullWidth
             minInlineSize="155px"
           >

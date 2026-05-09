@@ -1,13 +1,6 @@
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
-import {
-  DEFAULT_TEXT_TYPOGRAPHY,
-  DEFAULT_TEXT_SCALE,
-  TEXT_SPACE,
-  TEXT_TYPOGRAPHY,
-  TEXT_SCALE,
-  TextProps,
-} from 'lib/components/core/base/Text'
+import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_SPACE, TEXT_TYPOGRAPHY, TextProps } from 'lib/components/core/base/Text'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
@@ -54,11 +47,6 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
   noWrap: {
     options: ['boolean'],
     description: 'Prevents the text from wrapping onto multiple lines.',
-  },
-  scale: {
-    options: Object.values(TEXT_SCALE),
-    defaultValue: DEFAULT_TEXT_SCALE,
-    description: 'Selects the size scale used for text rendering.',
   },
   space: {
     options: TEXT_SPACE as unknown as string[],

@@ -13,7 +13,6 @@ export const FormLabel = ({
   intent = DEFAULT_FORM_LABEL_INTENT,
   color,
   noWrap,
-  scale,
   textAlign,
   truncate,
 }: FormLabelProps) => {
@@ -23,19 +22,19 @@ export const FormLabel = ({
         tag="label"
         tagAttrs={tagAttrs}
         tagRef={tagRef}
+        typography="small"
         bold={bold}
         iconName={iconName}
         iconPlacement={iconPlacement}
         intent={intent}
         color={color}
         noWrap={noWrap}
-        scale={scale}
         textAlign={textAlign}
         truncate={truncate}
       >
         {children}
       </Text>
-      <Spacer blockSize="3xs" />
+      <Spacer blockSize="2xs" />
     </>
   )
 }

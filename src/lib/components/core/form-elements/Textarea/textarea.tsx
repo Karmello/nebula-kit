@@ -59,8 +59,8 @@ export const Textarea = ({
         className: classNames(withPrefix('textarea'), tagAttrs?.className),
         style: {
           ...tagAttrs?.style,
-          fontSize: FONT_SIZE_TOKENS.regular.body.fontSize,
-          lineHeight: FONT_SIZE_TOKENS.regular.body.lineHeight,
+          fontSize: FONT_SIZE_TOKENS.body.fontSize,
+          lineHeight: FONT_SIZE_TOKENS.body.lineHeight,
           resize,
         },
         value: currentValue,

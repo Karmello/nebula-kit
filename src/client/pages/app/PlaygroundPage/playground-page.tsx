@@ -30,7 +30,7 @@ export const PlaygroundPage = () => {
 
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} overflowY="hidden">
-      <Section heading="Playground" iconName="shapes">
+      <Section heading="Playground" iconName="flask-conical">
         <Spacer blockSize="xs" />
         <SplitView sidePosition="right">
           {({ mode, setSideOpen }) => {

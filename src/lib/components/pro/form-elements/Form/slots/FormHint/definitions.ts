@@ -2,7 +2,6 @@ import { TextProps } from 'lib/components/core/base'
 
 export const DEFAULT_FORM_HINT_INTENT: FormHintProps['intent'] = 'secondary'
 export const DEFAULT_FORM_HINT_COLOR: FormHintProps['color'] = 'blue'
-export const DEFAULT_FORM_HINT_SCALE: FormHintProps['scale'] = 'compact'
 
 type PropsFromText = Pick<
   TextProps<'span'>,
@@ -13,7 +12,6 @@ type PropsFromText = Pick<
   | 'iconPlacement'
   | 'intent'
   | 'noWrap'
-  | 'scale'
   | 'tagAttrs'
   | 'tagRef'
   | 'textAlign'

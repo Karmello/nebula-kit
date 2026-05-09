@@ -13,9 +13,17 @@ import {
   PropsFromTableKey,
   PropsFromTabsKey,
   PropsFromTextKey,
-} from '../../store'
+} from './types'
 
-export const PRESETS: Record<string, Array<{ name: string; props: object }>> = {
+export const PLAYGROUND_PRESETS: Record<string, Array<{ name: string; props: object }>> = {
+  Avatar: [
+    {
+      name: 'Default',
+      props: {
+        src: '/src/client/assets/img-2.webp',
+      },
+    },
+  ],
   Box: [
     {
       name: 'Non-drawable',

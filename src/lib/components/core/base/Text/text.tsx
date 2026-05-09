@@ -3,11 +3,11 @@ import classNames from 'classnames'
 import { Box, WithIcon } from 'lib/components'
 import { updateDomStaticDataset } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
+import { FONT_SIZE_TOKENS } from 'lib/definitions'
 
-import { DEFAULT_TEXT_TYPOGRAPHY, DEFAULT_TEXT_SCALE, TextTag, TextProps } from './definitions'
+import { DEFAULT_TEXT_TYPOGRAPHY, TextTag, TextProps } from './definitions'
 
 import './text.scss'
-import { FONT_SIZE_TOKENS } from 'lib/definitions'
 
 export const Text = <T extends TextTag = 'p'>({
   // HtmlTag
@@ -25,7 +25,6 @@ export const Text = <T extends TextTag = 'p'>({
   iconPlacement,
   customSvgIcon,
   // own
-  scale = DEFAULT_TEXT_SCALE,
   typography = DEFAULT_TEXT_TYPOGRAPHY,
   fontSize,
   lineHeight,
@@ -39,14 +38,14 @@ export const Text = <T extends TextTag = 'p'>({
 }: TextProps<T>) => {
   return (
     <Box
-      tag={tag || FONT_SIZE_TOKENS[scale][typography].tag}
+      tag={tag || FONT_SIZE_TOKENS[typography].tag}
       tagRef={tagRef as any}
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('text'), tagAttrs?.className),
         style: {
-          fontSize: fontSize ?? FONT_SIZE_TOKENS[scale][typography].fontSize,
-          lineHeight: lineHeight ?? FONT_SIZE_TOKENS[scale][typography].lineHeight,
+          fontSize: fontSize ?? FONT_SIZE_TOKENS[typography].fontSize,
+          lineHeight: lineHeight ?? FONT_SIZE_TOKENS[typography].lineHeight,
           ...(clampLines && clampLines > 0
             ? {
                 display: '-webkit-box',
@@ -73,7 +72,7 @@ export const Text = <T extends TextTag = 'p'>({
         <WithIcon
           iconName={iconName}
           iconPlacement={iconPlacement}
-          iconSize={FONT_SIZE_TOKENS[scale][typography].iconSize}
+          iconSize={FONT_SIZE_TOKENS[typography].iconSize}
           customSvgIcon={customSvgIcon}
         >
           {children}

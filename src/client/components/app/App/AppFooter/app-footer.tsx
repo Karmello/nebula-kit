@@ -9,11 +9,9 @@ export const AppFooter = () => {
   return (
     <Footer switchAt="lg" paddingBlock="sm" paddingInline="md" paddingBottom={{ base: 'sm', lg: 'lg' }}>
       <Footer.Section>
-        <Text scale="compact" typography="lead" bold>
-          Current release
-        </Text>
+        <Text bold>Current release</Text>
         <Divider marginBottom="sm" intent="tertiary" />
-        <Text scale="compact" italic color="gray" intent="primary">
+        <Text typography="small" italic color="gray" intent="primary">
           NebulaKit is actively developed and released in incremental updates. Each release introduces new components,
           improvements and refinements across the system.
         </Text>
@@ -24,7 +22,7 @@ export const AppFooter = () => {
             navigateTo(`${PageKey.foundations}/resources/changelog/v${RELEASE_VERSIONS[0]}`)
           }}
         >
-          <Text scale="compact" color="blue" intent="primary">
+          <Text typography="small" color="blue" intent="primary">
             NebulaKit v{RELEASE_VERSIONS[0]}
           </Text>
         </Link>
@@ -36,11 +34,9 @@ export const AppFooter = () => {
         </Link>
       </Footer.Section>
       <Footer.Section>
-        <Text scale="compact" typography="lead" bold>
-          Community & Support
-        </Text>
+        <Text bold>Community & Support</Text>
         <Divider marginBottom="sm" intent="tertiary" />
-        <Text scale="compact" italic color="gray" intent="primary">
+        <Text typography="small" italic color="gray" intent="primary">
           NebulaKit is a closed-source project, so there is no public GitHub repository. You can still follow updates, ask
           questions and join the community through the channels below.
         </Text>
@@ -59,11 +55,9 @@ export const AppFooter = () => {
         </Flex>
       </Footer.Section>
       <Footer.Section>
-        <Text scale="compact" typography="lead" bold>
-          About the author
-        </Text>
+        <Text bold>About the author</Text>
         <Divider marginBottom="sm" intent="tertiary" />
-        <Text scale="compact" italic color="gray" intent="primary">
+        <Text typography="small" italic color="gray" intent="primary">
           Designed and maintained by a solo software engineer focused on long-term UI architecture and system consistency.
         </Text>
         <Spacer blockSize="sm" />
@@ -81,9 +75,7 @@ export const AppFooter = () => {
         </Flex>
       </Footer.Section>
       <Footer.Section>
-        <Text scale="compact" typography="lead" bold>
-          Legal information
-        </Text>
+        <Text bold>Legal information</Text>
         <Divider marginBottom="sm" intent="tertiary" />
         <MarkerList>
           <MarkerList.Item>
@@ -93,7 +85,7 @@ export const AppFooter = () => {
                 navigateTo(`${PageKey.foundations}/other/legal/terms-of-use`)
               }}
             >
-              <Text scale="compact" color="blue" intent="primary">
+              <Text typography="small" color="blue" intent="primary">
                 Terms of Use
               </Text>
             </Link>
@@ -105,7 +97,7 @@ export const AppFooter = () => {
                 navigateTo(`${PageKey.foundations}/other/legal/license`)
               }}
             >
-              <Text scale="compact" color="blue" intent="primary">
+              <Text typography="small" color="blue" intent="primary">
                 License
               </Text>
             </Link>
@@ -117,7 +109,7 @@ export const AppFooter = () => {
                 navigateTo(`${PageKey.foundations}/other/legal/privacy-policy`)
               }}
             >
-              <Text scale="compact" color="blue" intent="primary">
+              <Text typography="small" color="blue" intent="primary">
                 Privacy Policy
               </Text>
             </Link>
@@ -130,7 +122,7 @@ export const AppFooter = () => {
           </Button>
         </Link>
         <Spacer blockSize="sm" />
-        <Text scale="compact" typography="caption" intent="primary" color="gray">
+        <Text typography="caption" intent="primary" color="gray">
           {getCopyrightInfo()}
         </Text>
       </Footer.Section>

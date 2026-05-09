@@ -1,12 +1,12 @@
 import META from 'client/meta'
+import { PLAYGROUND_PRESETS, PLAYGROUND_PROPS_MAP } from 'client/definitions'
 
-import { PLAYGROUND_PROPS_MAP, Props, State } from './definitions'
-import { PRESETS } from '../components/PredefinedExamples/definitions'
+import { Props, State } from './definitions'
 
 export const getInitialState = (): State => {
   const state: State = {
     displayProps: true,
-    activeComponent: 'Box',
+    activeComponent: Object.keys(PLAYGROUND_PROPS_MAP)[0],
     components: {},
   }
 
@@ -32,7 +32,7 @@ export const getInitialState = (): State => {
           parsedDefaultValue = defaultValue
         }
 
-        const presetPropValue = PRESETS[componentName][0].props[propName as never]
+        const presetPropValue = PLAYGROUND_PRESETS[componentName][0].props[propName as never]
 
         props[propName] = {
           options,

@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { TEXT_PROPS_META } from 'client/meta/Text/props'
 
-import { DEFAULT_FORM_HINT_INTENT, DEFAULT_FORM_HINT_SCALE, FormHintProps } from 'lib/components/pro/form-elements/Form'
+import { DEFAULT_FORM_HINT_INTENT, FormHintProps } from 'lib/components/pro/form-elements/Form'
 
 const FORM_HINT_PROPS_META: ComponentMeta<FormHintProps>['props'] = {
   bold: TEXT_PROPS_META.bold,
@@ -14,10 +14,6 @@ const FORM_HINT_PROPS_META: ComponentMeta<FormHintProps>['props'] = {
     defaultValue: String(DEFAULT_FORM_HINT_INTENT),
   },
   noWrap: TEXT_PROPS_META.noWrap,
-  scale: {
-    ...TEXT_PROPS_META.scale,
-    defaultValue: String(DEFAULT_FORM_HINT_SCALE),
-  },
   tagAttrs: TEXT_PROPS_META.tagAttrs,
   tagRef: TEXT_PROPS_META.tagRef,
   textAlign: TEXT_PROPS_META.textAlign,

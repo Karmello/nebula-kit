@@ -125,10 +125,10 @@ export const CatalogPageTemplate = memo(
                               variant="solid"
                               intent="tertiary"
                               borderRadius="10px"
-                              paddingBlock="3px"
-                              paddingInline="7px"
+                              paddingBlock="6px"
+                              paddingInline="9px"
                             >
-                              <Text scale="compact">{bundleLabel}</Text>
+                              <Text typography="small">{bundleLabel}</Text>
                             </Box>
                           ) : null}
                         </Flex>

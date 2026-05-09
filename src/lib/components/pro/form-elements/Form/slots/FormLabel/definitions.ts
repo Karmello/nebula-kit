@@ -11,7 +11,6 @@ type PropsFromText = Pick<
   | 'iconPlacement'
   | 'intent'
   | 'noWrap'
-  | 'scale'
   | 'tagAttrs'
   | 'tagRef'
   | 'textAlign'

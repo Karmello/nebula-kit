@@ -14,7 +14,6 @@ const FORM_LABEL_PROPS_META: ComponentMeta<FormLabelProps>['props'] = {
     defaultValue: String(DEFAULT_FORM_LABEL_INTENT),
   },
   noWrap: TEXT_PROPS_META.noWrap,
-  scale: TEXT_PROPS_META.scale,
   tagAttrs: TEXT_PROPS_META.tagAttrs,
   tagRef: TEXT_PROPS_META.tagRef,
   textAlign: TEXT_PROPS_META.textAlign,

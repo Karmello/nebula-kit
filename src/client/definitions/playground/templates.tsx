@@ -1,6 +1,7 @@
-import { Box, Reveal, Select, Table, Tabs } from 'lib/components'
+import { Avatar, Box, Reveal, Select, Table, Tabs } from 'lib/components'
 
 export const COMPONENT_TEMPLATES = {
+  Avatar: (props: any) => <Avatar {...props} />,
   Reveal: (props: any) => (
     <Reveal {...props}>
       <Box blockSize="80px" padding="20px">

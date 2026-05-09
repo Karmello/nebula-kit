@@ -21,6 +21,7 @@ const TEXT_META: ComponentMeta<TextProps> = {
   props: TEXT_PROPS_META,
   examples: TEXT_EXAMPLES_META,
   changelog: {
+    '0.10.0': ['removed scale prop'],
     '0.9.0': ['added fontSize and lineHeight props for overriding typography-derived values directly'],
     '0.7.0': ['fixed text link display behavior inside table cells'],
     '0.2.3': ['released'],
