@@ -12,8 +12,8 @@ export const AppFooter = () => {
         <Text bold>Current release</Text>
         <Divider marginBottom="sm" intent="tertiary" />
         <Text typography="small" italic color="gray" intent="primary">
-          NebulaKit is actively developed and released in incremental updates. Each release introduces new components,
-          improvements and refinements across the system.
+          NebulaKit is actively developed and released in incremental updates. Each release introduces improvements and
+          refinements across the system.
         </Text>
         <Spacer blockSize="sm" />
         <Link
@@ -37,8 +37,8 @@ export const AppFooter = () => {
         <Text bold>Community & Support</Text>
         <Divider marginBottom="sm" intent="tertiary" />
         <Text typography="small" italic color="gray" intent="primary">
-          NebulaKit is a closed-source project, so there is no public GitHub repository. You can still follow updates, ask
-          questions and join the community through the channels below.
+          This is a closed-source project. There is no public GitHub repository. You can still follow updates, ask questions and
+          join the community through the channels below.
         </Text>
         <Spacer blockSize="sm" />
         <Flex flexDirection="row" flexWrap="wrap" gap="2xs">
@@ -55,10 +55,11 @@ export const AppFooter = () => {
         </Flex>
       </Footer.Section>
       <Footer.Section>
-        <Text bold>About the author</Text>
+        <Text bold>Author</Text>
         <Divider marginBottom="sm" intent="tertiary" />
         <Text typography="small" italic color="gray" intent="primary">
-          Designed and maintained by a solo software engineer focused on long-term UI architecture and system consistency.
+          The product is designed and maintained by a solo software engineer focused on long-term UI architecture and system
+          consistency.
         </Text>
         <Spacer blockSize="sm" />
         <Flex flexDirection="row" flexWrap="wrap" gap="2xs">
