@@ -2,6 +2,7 @@
 /coverage
 /build
 /dist
+/assistant/generated
 /playwright/.cache/
 
 npm-debug.log*

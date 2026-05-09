@@ -36,7 +36,6 @@ const SNACKBAR_PROPS_META: ComponentMeta<SnackbarProps>['props'] = {
     options: SNACKBAR_PLACEMENTS,
     defaultValue: String(DEFAULT_SNACKBAR_PLACEMENT),
     description: 'Defines the default viewport placement for snackbars.',
-    tooltip: SNACKBAR_PLACEMENTS,
   },
 }
 

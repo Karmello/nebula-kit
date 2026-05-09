@@ -43,14 +43,14 @@ export const Callout = <T extends CalloutTag = 'div'>({
       color={CALLOUT_CONFIG[status || 'info'].color}
       intent={intent}
       borderRadius="var(--neb-border-radius)"
-      padding={CALLOUT_SIZE_CONFIG[size || 'md'].spacing}
+      padding={CALLOUT_SIZE_CONFIG[size || 'md'].padding}
     >
-      <Text typography={CALLOUT_SIZE_CONFIG[size || 'md'].typography} iconName={CALLOUT_CONFIG[status || 'info'].iconName}>
+      <Text typography={CALLOUT_SIZE_CONFIG[size || 'md'].textTypography} iconName={CALLOUT_CONFIG[status || 'info'].iconName}>
         {heading || CALLOUT_CONFIG[status || 'info'].heading}
       </Text>
       {content ? (
         <>
-          <Spacer blockSize={CALLOUT_SIZE_CONFIG[size || 'md'].spacing} />
+          <Spacer blockSize={CALLOUT_SIZE_CONFIG[size || 'md'].spacerBlockSize} />
           <Text>{content}</Text>
         </>
       ) : null}

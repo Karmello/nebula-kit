@@ -10,31 +10,31 @@ import { Families } from './Families'
 
 export const HomePage = () => {
   return (
-    <Box padding={{ base: '20px', lg: '50px' }} paddingTop="0px">
+    <Box padding={{ base: 'md', lg: 'xl' }} paddingTop="2xs">
       <Flex
         flexDirection={{ base: 'column', lg: 'row' }}
         justifyContent="center"
-        rowGap="80px"
+        rowGap="2xl"
         columnGap={{ base: '50px', xl: '100px' }}
       >
         <Flex.Item flex="2">
           <About />
-          <Spacer blockSize="60px" />
+          <Spacer blockSize={{ base: 'lg', lg: 'xl' }} />
           <Text typography="h1" color="blue" intent="primary" bold>
             NebulaKit
           </Text>
           <Divider />
-          <Spacer blockSize="20px" />
+          <Spacer blockSize="md" />
           <Hero />
-          <Divider marginBlock="30px" />
+          <Divider marginBlock="lg" />
           <Video />
         </Flex.Item>
         <Flex.Item flex="1">
           <Flex
             alignItems="center"
             alignContent="center"
-            columnGap="50px"
-            rowGap="50px"
+            columnGap="xl"
+            rowGap="xl"
             justifyContent="center"
             flexDirection={{ base: 'column', md: 'row-reverse' }}
           >
@@ -45,11 +45,11 @@ export const HomePage = () => {
               <Ortho />
             </Flex.Item>
           </Flex>
-          <Spacer blockSize="70px" />
+          <Spacer blockSize="2xl" />
           <Principles />
         </Flex.Item>
       </Flex>
-      <Spacer blockSize="80px" />
+      <Spacer blockSize="2xl" />
       <Families />
     </Box>
   )

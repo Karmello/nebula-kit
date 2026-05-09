@@ -6,9 +6,9 @@ import { Ripple } from 'lib/components/core/internal'
 import { updateDomRespDataset } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
+import { CONTROL_SIZE_TOKENS } from 'lib/definitions'
 
 import {
-  BUTTON_SIZE_CONFIG,
   ButtonTag,
   ButtonProps,
   DEFAULT_BUTTON_INTENT,
@@ -32,9 +32,8 @@ export const Button = <T extends ButtonTag = 'button'>({
   color,
   intent = DEFAULT_BUTTON_INTENT,
   interactive = DEFAULT_BUTTON_INTERACTIVE,
-  selected,
   disabled,
-  surface,
+  elevated,
   inlineSize,
   minInlineSize,
   maxInlineSize,
@@ -51,6 +50,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   fullWidth,
   loading,
   ripple = DEFAULT_BUTTON_RIPPLE,
+  selected,
   onClick,
 }: ButtonProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
@@ -62,7 +62,13 @@ export const Button = <T extends ButtonTag = 'button'>({
   }, [bp, fullWidth])
 
   const text = (
-    <Text tag="span" scale={BUTTON_SIZE_CONFIG[size || 'md'].textScale} bold={bold} truncate>
+    <Text
+      tag="span"
+      fontSize={CONTROL_SIZE_TOKENS[size || 'md'].fontSize}
+      lineHeight={CONTROL_SIZE_TOKENS[size || 'md'].lineHeight}
+      bold={bold}
+      truncate
+    >
       {children}
     </Text>
   )
@@ -94,17 +100,18 @@ export const Button = <T extends ButtonTag = 'button'>({
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
       interactive={interactive}
-      selected={selected}
-      surface={surface}
+      elevated={elevated}
+      surface={selected ? 'selected' : undefined}
       position="relative"
-      {...BUTTON_SIZE_CONFIG[size || 'md']}
+      blockSize={CONTROL_SIZE_TOKENS[size || 'md'].blockSize}
+      paddingInline={CONTROL_SIZE_TOKENS[size || 'md'].paddingInline}
     >
       {iconName ? (
         <WithIcon
           inlineSize={children !== undefined ? '100%' : undefined}
           iconName={iconName}
           iconPlacement={iconPlacement}
-          iconSize={BUTTON_SIZE_CONFIG[size || 'md'].iconSize}
+          iconSize={CONTROL_SIZE_TOKENS[size || 'md'].iconSize}
           iconAngle={iconAngle}
           justifyContent={justifyContent}
           gap={children === undefined ? '0px' : undefined}
@@ -115,7 +122,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       ) : (
         text
       )}
-      {loading && !disabled ? <Loader centered size={size} /> : null}
+      {loading && !disabled ? <Loader centered size={CONTROL_SIZE_TOKENS[size || 'md'].loaderSize} /> : null}
       <Ripple parentRef={tagRef || ref} active={ripple && !loading && !disabled} />
     </Box>
   )

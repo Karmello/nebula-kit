@@ -19,16 +19,24 @@
       &:active,
       &[data-neb-box-active-on-focus='true']:focus-visible {
         background-color: var(--bg-active);
+        color: var(--text-active);
       }
+    }
 
-      // selected
-      &[data-neb-box-selected='true'] {
-        background-color: var(--bg-selected) !important;
-      }
+    // selected
+    &[data-neb-box-surface='selected'] {
+      background-color: var(--bg-selected) !important;
+      color: var(--text-selected) !important;
+    }
+
+    // dividing
+    &[data-neb-box-surface='dividing'] {
+      background-color: var(--bg-dividing) !important;
     }
 
     // focus ring
     &:focus-visible {
+      color: var(--text-focused, var(--text));
       outline: var(--neb-focus-ring-width) solid var(--neb-focus-ring-color);
       outline-offset: calc(var(--neb-focus-ring-width) * -1);
     }

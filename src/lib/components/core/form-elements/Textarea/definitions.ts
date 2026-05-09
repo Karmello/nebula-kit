@@ -21,6 +21,7 @@ type TextareaOwnProps = {
   resize?: TextareaResize
   placeholder?: string
   readOnly?: boolean
+  maxLength?: number
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'textarea'>, 'tagAttrs' | 'tagRef'>

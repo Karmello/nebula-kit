@@ -10,6 +10,7 @@ export const VirtualList = <T,>({
   tagAttrs,
   intent,
   color,
+  elevated,
   // own
   items,
   itemHeight,
@@ -113,6 +114,7 @@ export const VirtualList = <T,>({
       variant="solid"
       intent={intent}
       color={color}
+      elevated={elevated}
       blockSize={`${viewportHeight}px`}
       overflowY="auto"
       overflowX="hidden"

@@ -1,10 +1,10 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
 import { BoxIntent, BoxVariant } from 'lib/components/core/base/Box/definitions'
-import { TextProps, TextTag, TextTypography } from 'lib/components/core/base/Text/definitions'
-import { Sizes } from 'lib/definitions'
+import { TextProps, TextTypography } from 'lib/components/core/base/Text/definitions'
+import { TShirtSize } from 'lib/definitions'
 
 export const SECTION_TAGS = ['section', 'article', 'aside', 'div'] as const
-export const SECTION_SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies Sizes[]
+export const SECTION_SIZES = ['sm', 'md', 'lg', 'xl', '2xl'] as const satisfies TShirtSize[]
 export const SECTION_VARIANTS = ['ghost', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
 
 export const DEFAULT_SECTION_VARIANT: SectionVariant = 'ghost'
@@ -14,17 +14,16 @@ export const DEFAULT_SECTION_SIZE: SectionSize = 'md'
 export const SECTION_SIZE_CONFIG: Record<
   SectionSize,
   {
-    tag: TextTag
-    typography: Extract<TextTypography, 'h6' | 'h5' | 'h4' | 'h3' | 'h2' | 'lead'>
-    spacing: string
+    padding: TShirtSize
+    textTypography: TextTypography
+    spacerBlockSize: TShirtSize
   }
 > = {
-  xs: { tag: 'h6', typography: 'lead', spacing: '12px' },
-  sm: { tag: 'h6', typography: 'h6', spacing: '16px' },
-  md: { tag: 'h5', typography: 'h5', spacing: '20px' },
-  lg: { tag: 'h4', typography: 'h4', spacing: '24px' },
-  xl: { tag: 'h3', typography: 'h3', spacing: '26px' },
-  xxl: { tag: 'h2', typography: 'h2', spacing: '30px' },
+  sm: { padding: 'sm', textTypography: 'h6', spacerBlockSize: 'xs' },
+  md: { padding: 'md', textTypography: 'h5', spacerBlockSize: 'sm' },
+  lg: { padding: 'lg', textTypography: 'h4', spacerBlockSize: 'md' },
+  xl: { padding: 'xl', textTypography: 'h3', spacerBlockSize: 'lg' },
+  '2xl': { padding: '2xl', textTypography: 'h2', spacerBlockSize: 'xl' },
 }
 
 export type SectionTag = (typeof SECTION_TAGS)[number]
@@ -41,7 +40,7 @@ type PropsFromHtmlTag<T extends SectionTag = 'section'> = Omit<HtmlTagProps<T>, 
   children: HtmlTagProps<T>['children']
 }
 
-type PropsFromBox<T extends SectionTag = 'section'> = Pick<BoxProps<T>, 'color' | 'intent'>
+type PropsFromBox<T extends SectionTag = 'section'> = Pick<BoxProps<T>, 'color' | 'intent' | 'interactive'>
 
 type PropsFromText = Pick<TextProps, 'iconName' | 'iconPlacement'>
 

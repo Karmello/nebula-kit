@@ -5,7 +5,7 @@ export default () => {
   return (
     <Box maxInlineSize={{ lg: '55rem' }}>
       <Text>Responsive breakpoints with their pixel ranges defined in the system.</Text>
-      <Spacer blockSize="50px" />
+      <Spacer blockSize="lg" />
       <Table paddingBlock="10px" paddingInline="15px">
         <Table.Header>
           <Table.HeaderRow>
@@ -38,6 +38,11 @@ export default () => {
           <Table.Row>
             <Table.Cell>xl</Table.Cell>
             <Table.Cell>{BP.xl}</Table.Cell>
+            <Table.Cell>{BP.xxl - 1}</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>xxl</Table.Cell>
+            <Table.Cell>{BP.xxl}</Table.Cell>
             <Table.Cell>Inf</Table.Cell>
           </Table.Row>
         </Table.Body>

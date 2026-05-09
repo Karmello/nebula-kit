@@ -120,4 +120,86 @@ describe('updateDomRespStyle', () => {
 
     expect(el.style.gap).toBe('10px')
   })
+
+  it('does not override initial inline styles (user ownership)', () => {
+    const el = document.createElement('div')
+    el.style.padding = '20px' // simulate tagAttrs.style
+
+    const ref = { current: el }
+
+    updateDomRespStyle('Box', ref, 'base' as any, {
+      padding: '8px',
+    })
+
+    expect(el.style.padding).toBe('20px') // must stay user-defined
+  })
+
+  it('does not track user-defined styles as system-owned', () => {
+    const el = document.createElement('div')
+    el.style.padding = '20px'
+
+    const ref = { current: el }
+
+    updateDomRespStyle('Box', ref, 'base' as any, {
+      padding: '8px',
+    })
+
+    const storeKey = 'neb_resp_style_box'
+    const stored = (el as any)[storeKey]
+
+    expect(stored.has('padding')).toBe(false)
+  })
+
+  it('still updates system-owned styles responsively', () => {
+    const el = document.createElement('div')
+    const ref = { current: el }
+
+    updateDomRespStyle('Box', ref, 'base' as any, {
+      padding: '8px',
+    })
+
+    updateDomRespStyle('Box', ref, 'md' as any, {
+      padding: {
+        base: '8px',
+        md: '16px',
+      },
+    })
+
+    expect(el.style.padding).toBe('16px')
+  })
+
+  it('preserves user inline styles across multiple updates', () => {
+    const el = document.createElement('div')
+    el.style.padding = '20px'
+
+    const ref = { current: el }
+
+    updateDomRespStyle('Box', ref, 'base' as any, {
+      padding: '8px',
+    })
+
+    updateDomRespStyle('Box', ref, 'md' as any, {
+      padding: {
+        base: '8px',
+        md: '16px',
+      },
+    })
+
+    expect(el.style.padding).toBe('20px')
+  })
+
+  it('does not clean up user inline styles', () => {
+    const el = document.createElement('div')
+    el.style.padding = '20px'
+
+    const ref = { current: el }
+
+    updateDomRespStyle('Box', ref, 'base' as any, {
+      padding: '8px',
+    })
+
+    updateDomRespStyle('Box', ref, 'base' as any, {})
+
+    expect(el.style.padding).toBe('20px')
+  })
 })

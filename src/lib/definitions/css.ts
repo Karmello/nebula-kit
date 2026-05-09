@@ -72,3 +72,5 @@ export type CssGridPlaceItems = (typeof CSS_GRID_PLACE_ITEMS)[number]
 export type CssGridPlaceContent = (typeof CSS_GRID_PLACE_CONTENT)[number]
 export type CssGridItemJustifySelf = (typeof CSS_GRID_ITEM_JUSTIFY_SELF)[number]
 export type CssGridItemAlignSelf = (typeof CSS_GRID_ITEM_ALIGN_SELF)[number]
+
+export type CssValue = string & {}

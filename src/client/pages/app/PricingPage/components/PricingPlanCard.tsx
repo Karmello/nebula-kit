@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 import { useNavigateTo } from 'client/hooks'
 import { Plan } from 'client/definitions'
-import { Flex, Icon, Link, Section, Spacer, Text, Box } from 'lib/components'
+import { Flex, Icon, Link, Section, Spacer, Text } from 'lib/components'
 import { BoxColor } from 'lib/components/core/base/Box'
 import { IconName } from 'lib/definitions'
 
@@ -36,74 +36,73 @@ export const PricingPlanCard = ({
   const OptionIncluded = ({ children }: { children: ReactNode }) => {
     return (
       <>
-        <Flex alignItems="center" columnGap="10px">
+        <Flex alignItems="center" columnGap="sm">
           <Icon name="check" intent="primary" color={color} />
           {children}
         </Flex>
-        <Spacer blockSize="5px" />
+        <Spacer blockSize="3xs" />
       </>
     )
   }
 
   return (
-    <Box drawable interactive variant="solid" intent="neutral" color={color}>
-      <Section
-        tagAttrs={{ style: { blockSize: '100%' } }}
-        heading={title}
-        variant={plan === 'free' ? 'outline' : 'soft-outline'}
-        intent={plan === 'free' ? 'tertiary' : 'primary'}
-        color={color}
-        iconName={iconName}
-      >
-        <Text intent="neutral" bold>
-          {headline}
-        </Text>
-        <Spacer />
-        <Text typography="h6">{priceInfo}</Text>
-        <Spacer />
-        <Text intent="neutral">{description}</Text>
-        <Spacer />
-        <Text intent="neutral" bold>
-          What you get:
-        </Text>
-        <Spacer blockSize="10px" />
+    <Section
+      tagAttrs={{ style: { blockSize: '100%' } }}
+      heading={title}
+      variant={plan === 'free' ? 'outline' : 'soft-outline'}
+      intent={plan === 'free' ? 'tertiary' : 'primary'}
+      color={color}
+      iconName={iconName}
+      interactive
+    >
+      <Text intent="neutral" bold>
+        {headline}
+      </Text>
+      <Spacer />
+      <Text typography="h6">{priceInfo}</Text>
+      <Spacer />
+      <Text intent="neutral">{description}</Text>
+      <Spacer />
+      <Text intent="neutral" bold>
+        What you get:
+      </Text>
+      <Spacer blockSize="xs" />
+      <OptionIncluded>
+        <Link
+          href="/pricing/core"
+          onClick={() => {
+            navigateTo('/pricing/core')
+          }}
+        >
+          <Text intent="primary" color={color}>
+            CORE bundle
+          </Text>
+        </Link>
+      </OptionIncluded>
+      {plan !== 'free' ? (
         <OptionIncluded>
           <Link
-            href="/pricing/core"
+            href="/pricing/pro"
             onClick={() => {
-              navigateTo('/pricing/core')
+              navigateTo('/pricing/pro')
             }}
           >
             <Text intent="primary" color={color}>
-              CORE bundle
+              PRO bundle
             </Text>
           </Link>
         </OptionIncluded>
-        {plan !== 'free' ? (
-          <OptionIncluded>
-            <Link
-              href="/pricing/pro"
-              onClick={() => {
-                navigateTo('/pricing/pro')
-              }}
-            >
-              <Text intent="primary" color={color}>
-                PRO bundle
-              </Text>
-            </Link>
-          </OptionIncluded>
-        ) : null}
-        {options.map((s, i) => (
-          <OptionIncluded key={i}>
-            <Text intent="neutral">{s}</Text>
-          </OptionIncluded>
-        ))}
-        <Spacer blockSize="40px" />
-        <Flex justifyContent="center">
-          <PricingPlanButton plan={plan} activePlan={activePlan} color={color} />
-        </Flex>
-        <Spacer blockSize="12px" />
-      </Section>
-    </Box>
+      ) : null}
+      {options.map((s, i) => (
+        <OptionIncluded key={i}>
+          <Text intent="neutral">{s}</Text>
+        </OptionIncluded>
+      ))}
+      <Spacer blockSize="lg" />
+      <Flex justifyContent="center">
+        <PricingPlanButton plan={plan} activePlan={activePlan} color={color} />
+      </Flex>
+      <Spacer blockSize="sm" />
+    </Section>
   )
 }

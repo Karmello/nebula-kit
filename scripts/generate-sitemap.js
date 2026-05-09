@@ -64,6 +64,7 @@ function generateSitemap() {
     '/pricing/core',
     '/pricing/pro',
     '/feedback',
+    '/assistant',
     '/profile/account',
     '/profile/settings',
     '/auth/login',

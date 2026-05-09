@@ -2,7 +2,7 @@ import { Box, Flex, Text } from 'lib/components'
 import { BoxColor } from 'lib/components/core/base/Box'
 
 export const ListWithChips = ({ items, color = 'blue' }: { items: string[]; color?: BoxColor }) => (
-  <Flex flexDirection="row" flexWrap="wrap" gap="7px">
+  <Flex flexDirection="row" flexWrap="wrap" gap="xs">
     {items.map((s, i) => (
       <Box
         key={i}

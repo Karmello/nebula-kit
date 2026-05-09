@@ -11,6 +11,7 @@
   width: auto;
   max-width: 100%;
   letter-spacing: 0.5px;
+  text-shadow: 0.25px 0px 0.5px currentColor;
   outline: none;
   border-style: solid;
   border-width: 0;
@@ -50,6 +51,10 @@
 
 .neb-box[data-neb-box-disabled='true'] {
   pointer-events: none;
+}
+
+.neb-box[data-neb-box-hidden='true'] {
+  display: none !important;
 }
 
 .neb-box::placeholder {

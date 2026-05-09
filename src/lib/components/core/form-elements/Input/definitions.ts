@@ -1,48 +1,42 @@
 import { ReactNode } from 'react'
 
 import { BoxProps, HtmlTagProps } from 'lib/components'
-import { Sizes } from 'lib/definitions'
-import { TEXT_TYPOGRAPHY_CONFIG } from 'lib/components/core/base/Text/definitions'
+import { CONTROL_SIZE_TOKENS, TShirtSize } from 'lib/definitions'
 
 export const INPUT_SIZE_CONFIG: Record<
   InputSize,
   {
-    blockSize: string
-    paddingLeft: string
-    paddingRight: string
+    blockSize: BoxProps['blockSize']
+    paddingInline: BoxProps['paddingInline']
     fontSize: string
   }
 > = {
   xs: {
-    blockSize: '28px',
-    paddingLeft: '8px',
-    paddingRight: '8px',
-    fontSize: TEXT_TYPOGRAPHY_CONFIG.compact.body.fontSize,
+    blockSize: CONTROL_SIZE_TOKENS.xs.blockSize,
+    paddingInline: CONTROL_SIZE_TOKENS.xs.paddingInline,
+    fontSize: CONTROL_SIZE_TOKENS.xs.fontSize,
   },
   sm: {
-    blockSize: '38px',
-    paddingLeft: '10px',
-    paddingRight: '10px',
-    fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
+    blockSize: CONTROL_SIZE_TOKENS.sm.blockSize,
+    paddingInline: CONTROL_SIZE_TOKENS.sm.paddingInline,
+    fontSize: CONTROL_SIZE_TOKENS.sm.fontSize,
   },
   md: {
-    blockSize: '44px',
-    paddingLeft: '13px',
-    paddingRight: '13px',
-    fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
+    blockSize: CONTROL_SIZE_TOKENS.md.blockSize,
+    paddingInline: CONTROL_SIZE_TOKENS.md.paddingInline,
+    fontSize: CONTROL_SIZE_TOKENS.md.fontSize,
   },
   lg: {
-    blockSize: '52px',
-    paddingLeft: '16px',
-    paddingRight: '16px',
-    fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
+    blockSize: CONTROL_SIZE_TOKENS.lg.blockSize,
+    paddingInline: CONTROL_SIZE_TOKENS.lg.paddingInline,
+    fontSize: CONTROL_SIZE_TOKENS.lg.fontSize,
   },
 }
 
 export const DEFAULT_INPUT_VARIANT: InputProps['variant'] = 'solid'
 export const DEFAULT_INPUT_INTENT: InputProps['intent'] = 'tertiary'
 export const DEFAULT_INPUT_SIZE: InputProps['size'] = 'md'
-export const INPUT_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies Sizes[]
+export const INPUT_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies TShirtSize[]
 
 export type InputSize = (typeof INPUT_SIZES)[number]
 
@@ -59,6 +53,7 @@ type InputOwnProps = {
   endAffix?: (props: InputAffixProps) => ReactNode
   placeholder?: string
   readOnly?: boolean
+  maxLength?: number
 }
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'input'>, 'tagAttrs' | 'tagRef'>

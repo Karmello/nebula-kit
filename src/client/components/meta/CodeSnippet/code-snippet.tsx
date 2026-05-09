@@ -1,20 +1,11 @@
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { TokensResult } from 'shiki'
 
 import { Box, Flex, Button, Text } from 'lib/components'
+import { useCurrentTheme } from 'lib/hooks'
 
 import { tokenizeCode } from './highlight-tokens'
-import { COLOR_MAP } from './definitions'
-
-export type CodeSnippetProps = {
-  code: string
-  lang: 'log' | 'bash' | 'tsx'
-  borderRadius?: boolean
-  description?: string
-  boldDescription?: boolean
-  descriptionIcon?: boolean
-  fullBg?: boolean
-}
+import { CodeSnippetProps } from './definitions'
 
 export const CodeSnippet = ({
   code,
@@ -25,14 +16,16 @@ export const CodeSnippet = ({
   descriptionIcon = false,
   fullBg,
 }: CodeSnippetProps) => {
-  const [data, setData] = useState<TokensResult>()
+  const theme = useCurrentTheme()
+
+  const [data, setData] = useState<TokensResult>(() => tokenizeCode(code, lang, theme))
   const [copied, setCopied] = useState<boolean>(false)
 
   const timeoutRef = useRef<NodeJS.Timeout>(null)
 
-  useLayoutEffect(() => {
-    setData(tokenizeCode(code, lang))
-  }, [code])
+  useEffect(() => {
+    setData(tokenizeCode(code, lang, theme))
+  }, [theme])
 
   if (!data) {
     return null
@@ -67,7 +60,7 @@ export const CodeSnippet = ({
           },
         }}
       >
-        <Flex alignItems="flex-end" columnGap="10px">
+        <Flex alignItems="flex-end" columnGap="xs">
           <Flex.Item flex="1">
             {description ? (
               <Box paddingBlock="10px">
@@ -104,27 +97,25 @@ export const CodeSnippet = ({
           variant="solid"
         >
           <Flex tag="pre">
-            <Box tag="code" paddingInline="20px" paddingBlock={fullBg ? '0px' : '14px'} paddingBottom="12px">
+            <Box tag="code" paddingInline="sm" paddingBlock={fullBg ? '0px' : 'sm'} paddingBottom="sm">
               {data.tokens.map((token, i) => {
+                const isEmpty = token.length === 0
+
                 return (
-                  <Box key={i}>
-                    {token.map(({ content, color }, j) => {
-                      if (!COLOR_MAP[color as never]) {
-                        console.log(color)
-                      }
-                      return (
-                        <Text
-                          key={j}
-                          tag="span"
-                          tagAttrs={{ style: { display: 'inline' } }}
-                          typography="small"
-                          intent={COLOR_MAP[color as never].intent}
-                          color={COLOR_MAP[color as never].color}
-                        >
-                          {content}
-                        </Text>
-                      )
-                    })}
+                  <Box key={i} tag="span" tagAttrs={{ style: { display: 'block' } }}>
+                    {isEmpty
+                      ? ' '
+                      : token.map(({ content, color }, j) => (
+                          <Text
+                            key={j}
+                            tag="span"
+                            tagAttrs={{ style: { display: 'inline', color } }}
+                            scale="compact"
+                            typography="small"
+                          >
+                            {content}
+                          </Text>
+                        ))}
                   </Box>
                 )
               })}

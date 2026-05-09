@@ -1,5 +1,5 @@
 import { Box } from 'lib/components'
-import { BUTTON_SIZE_CONFIG } from 'lib/components/core/controls/Button'
+import { CONTROL_SIZE_TOKENS } from 'lib/definitions'
 
 import { TabsPanelProps } from './definitions'
 import { useTabsContext } from '../../TabsContext'
@@ -29,7 +29,7 @@ export const TabsPanel = ({
       }}
       tagRef={tagRef}
       overflowX="auto"
-      margin={BUTTON_SIZE_CONFIG.md.paddingLeft}
+      margin={CONTROL_SIZE_TOKENS.md.paddingInline}
     >
       {children}
     </Box>

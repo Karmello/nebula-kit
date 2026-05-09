@@ -3,6 +3,7 @@ import classNames from 'classnames'
 
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { CONTROL_SIZE_TOKENS, FONT_SIZE_TOKENS } from 'lib/definitions'
 
 import {
   DEFAULT_TEXTAREA_INLINE_SIZE,
@@ -13,9 +14,6 @@ import {
   DEFAULT_TEXTAREA_VARIANT,
   TextareaProps,
 } from './definitions'
-
-import { TEXT_TYPOGRAPHY_CONFIG } from '../../base/Text/definitions'
-import { INPUT_SIZE_CONFIG } from '../Input'
 
 import './textarea.scss'
 
@@ -41,6 +39,7 @@ export const Textarea = ({
   resize = DEFAULT_TEXTAREA_RESIZE,
   placeholder,
   readOnly,
+  maxLength,
 }: TextareaProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
@@ -60,9 +59,8 @@ export const Textarea = ({
         className: classNames(withPrefix('textarea'), tagAttrs?.className),
         style: {
           ...tagAttrs?.style,
-          fontSize: TEXT_TYPOGRAPHY_CONFIG.regular.body.fontSize,
-          lineHeight: TEXT_TYPOGRAPHY_CONFIG.regular.body.lineHeight,
-          padding: INPUT_SIZE_CONFIG.md.paddingLeft,
+          fontSize: FONT_SIZE_TOKENS.regular.body.fontSize,
+          lineHeight: FONT_SIZE_TOKENS.regular.body.lineHeight,
           resize,
         },
         value: currentValue,
@@ -74,6 +72,7 @@ export const Textarea = ({
         rows,
         placeholder,
         readOnly,
+        maxLength,
       }}
       tagRef={tagRef}
       drawable
@@ -84,6 +83,7 @@ export const Textarea = ({
       inlineSize={inlineSize}
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
+      padding={CONTROL_SIZE_TOKENS.md.paddingInline}
       interactive
       activeOnFocus
     />

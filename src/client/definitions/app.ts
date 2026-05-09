@@ -11,6 +11,7 @@ export enum PageKey {
   faq = '/faq',
   blog = '/blog',
   feedback = '/feedback',
+  assistant = '/assistant',
   foundations = '/foundations',
   home = '/home',
   playground = '/playground',
@@ -27,3 +28,5 @@ export const PAGE_SECTIONS = [
   ...CORE_PAGE_SECTIONS.map(o => ({ ...o, pageKey: PageKey.core.replace('/', '') })),
   ...PRO_PAGE_SECTIONS.map(o => ({ ...o, pageKey: PageKey.pro.replace('/', '') })),
 ]
+
+export const DOCS_CSS_LABEL = '<CSS>'

@@ -12,7 +12,7 @@ type ArticleProps = {
 const Article = ({ title, date, platform, href, iconName }: ArticleProps) => {
   return (
     <Section heading={title} variant="outline" intent="secondary" size="sm" iconName={iconName}>
-      <Flex gap="7px">
+      <Flex gap="xs">
         <Text tag="span">{new Date(date).toDateString()}</Text>
         <Text tag="span" space="both">
           |
@@ -35,7 +35,7 @@ export const BlogPage = () => {
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} maxInlineSize="75rem">
       <Section heading="Blog" iconName="rss">
-        <Flex flexDirection="column" rowGap="15px" alignItems="stretch">
+        <Flex flexDirection="column" rowGap="sm" alignItems="stretch">
           <Article
             title="Local theme island in action"
             date="02-04-2026"

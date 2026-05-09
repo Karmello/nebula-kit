@@ -22,6 +22,7 @@ export const Section = <T extends SectionTag = 'section'>({
   variant = DEFAULT_SECTION_VARIANT,
   color,
   intent = DEFAULT_SECTION_INTENT,
+  interactive,
   // text
   iconName,
   iconPlacement,
@@ -40,18 +41,18 @@ export const Section = <T extends SectionTag = 'section'>({
       }
       tagRef={tagRef}
       drawable
+      interactive={interactive}
       variant={variant}
       color={color}
       intent={intent}
       borderRadius={variant === 'ghost' ? '0px' : 'var(--neb-border-radius)'}
-      padding={variant === 'ghost' ? '0px' : SECTION_SIZE_CONFIG[size].spacing}
+      padding={variant === 'ghost' ? '0px' : SECTION_SIZE_CONFIG[size].padding}
       maxInlineSize="100%"
       overflowX="auto"
       overflowY="hidden"
     >
       <Text
-        tag={SECTION_SIZE_CONFIG[size].tag}
-        typography={SECTION_SIZE_CONFIG[size].typography}
+        typography={SECTION_SIZE_CONFIG[size].textTypography}
         iconName={iconName}
         iconPlacement={iconPlacement}
         color={color}
@@ -62,7 +63,7 @@ export const Section = <T extends SectionTag = 'section'>({
       <Divider color={color} />
       {children ? (
         <>
-          <Spacer blockSize={`calc(${SECTION_SIZE_CONFIG[size].spacing} / 2)`} />
+          <Spacer blockSize={SECTION_SIZE_CONFIG[size].spacerBlockSize} />
           {children}
         </>
       ) : null}

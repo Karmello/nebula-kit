@@ -1,44 +1,45 @@
-import { ImageProps } from 'lib/components'
+import { BoxProps, ImageProps } from 'lib/components'
 import { TextScale, TextTypography } from 'lib/components/core/base/Text'
-import { Sizes } from 'lib/definitions'
+import { TShirtSize } from 'lib/definitions'
 
-export const AVATAR_SIZES_MAP: Record<AvatarSize, { side: string; typography: TextTypography; scale: TextScale }> = {
-  xs: {
-    side: '50px',
-    typography: 'lead',
-    scale: 'compact',
-  },
-  sm: {
-    side: '75px',
-    typography: 'h6',
-    scale: 'regular',
-  },
-  md: {
-    side: '125px',
-    typography: 'h3',
-    scale: 'regular',
-  },
-  lg: {
-    side: '175px',
-    typography: 'h2',
-    scale: 'regular',
-  },
-  xl: {
-    side: '225px',
-    typography: 'h1',
-    scale: 'regular',
-  },
-  xxl: {
-    side: '300px',
-    typography: 'h1',
-    scale: 'regular',
-  },
-}
+export const AVATAR_SIZES_MAP: Record<AvatarSize, { side: BoxProps['blockSize']; typography: TextTypography; scale: TextScale }> =
+  {
+    xs: {
+      side: '50px',
+      typography: 'lead',
+      scale: 'compact',
+    },
+    sm: {
+      side: '75px',
+      typography: 'h6',
+      scale: 'regular',
+    },
+    md: {
+      side: '125px',
+      typography: 'h3',
+      scale: 'regular',
+    },
+    lg: {
+      side: '175px',
+      typography: 'h2',
+      scale: 'regular',
+    },
+    xl: {
+      side: '225px',
+      typography: 'h1',
+      scale: 'regular',
+    },
+    '2xl': {
+      side: '300px',
+      typography: 'h1',
+      scale: 'regular',
+    },
+  }
 
 export const LOADER_DELAY = 150
 export const MIN_LOADER_VISIBLE_TIME = 300
 
-export const AVATAR_SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const satisfies Sizes[]
+export const AVATAR_SIZES = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const satisfies TShirtSize[]
 export const AVATAR_SHAPES = ['round', 'square'] as const
 
 export const DEFAULT_AVATAR_SIZE: AvatarProps['size'] = 'md'

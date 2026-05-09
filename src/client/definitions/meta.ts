@@ -8,6 +8,7 @@ type Overview = {
   title: string
   description?: string
   features?: string[]
+  guidelines?: string[]
   composedOf?: string[]
   topLevelTags?: readonly string[]
   slots?: string[]
@@ -25,7 +26,6 @@ export type Prop = {
   isResponsive?: boolean
   description?: string
   link?: boolean
-  tooltip?: readonly string[]
 }
 
 type Example = {

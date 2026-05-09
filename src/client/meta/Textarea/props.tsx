@@ -25,9 +25,13 @@ const TEXTAREA_PROPS_META: ComponentMeta<TextareaProps>['props'] = {
     defaultValue: String(DEFAULT_TEXTAREA_INTENT),
   },
   maxInlineSize: BOX_PROPS_META.maxInlineSize,
+  maxLength: {
+    options: ['number'],
+    description: 'Maximum number of characters allowed for the textarea value.',
+  },
   minInlineSize: BOX_PROPS_META.minInlineSize,
   onBlur: {
-    options: ['event => void'],
+    options: ['e => void'],
     description: 'Callback fired when the textarea loses focus.',
   },
   onChange: {
@@ -35,7 +39,7 @@ const TEXTAREA_PROPS_META: ComponentMeta<TextareaProps>['props'] = {
     description: 'Callback fired when the value changes.',
   },
   onFocus: {
-    options: ['event => void'],
+    options: ['e => void'],
     description: 'Callback fired when the textarea receives focus.',
   },
   placeholder: {
@@ -50,7 +54,6 @@ const TEXTAREA_PROPS_META: ComponentMeta<TextareaProps>['props'] = {
     options: TEXTAREA_RESIZE,
     defaultValue: DEFAULT_TEXTAREA_RESIZE,
     description: "Controls the textarea's resize behavior.",
-    tooltip: TEXTAREA_RESIZE,
   },
   rows: {
     options: ['number'],

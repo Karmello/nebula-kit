@@ -8,9 +8,12 @@ type Props = {
   data: ComponentMeta<Record<string, object>>['props']
 }
 
+const MIN_OPTIONS_FOR_TOOLTIP = 5
+const VISIBLE_OPTIONS_COUNT = 3
+
 export const PropsTable = ({ category, data }: Props) => {
   const table = (
-    <Table color="blue" intent="neutral" paddingBlock="5px" paddingInline="10px">
+    <Table color="blue" intent="neutral" paddingBlock="2xs" paddingInline="xs">
       <Table.Header>
         <Table.HeaderRow>
           <Table.HeaderCell>Name</Table.HeaderCell>
@@ -25,7 +28,11 @@ export const PropsTable = ({ category, data }: Props) => {
         {Object.keys(data)
           .sort((a, b) => a.localeCompare(b))
           .map(name => {
-            const { options, isRequired, isResponsive, defaultValue, description, link, tooltip } = data[name]
+            const { options, isRequired, isResponsive, defaultValue, description, link } = data[name]
+
+            const shouldShowTooltip = options.length >= MIN_OPTIONS_FOR_TOOLTIP
+            const visibleOptions = options.slice(0, VISIBLE_OPTIONS_COUNT).join(', ')
+
             return (
               <Table.Row key={name}>
                 <Table.Cell>
@@ -45,12 +52,12 @@ export const PropsTable = ({ category, data }: Props) => {
                   )}
                 </Table.Cell>
                 <Table.Cell>
-                  {tooltip ? (
-                    <Tooltip content={tooltip.join(', ')} placement="top-center" minInlineSize={250} maxInlineSize={350}>
-                      <Text>. . .</Text>
+                  {shouldShowTooltip ? (
+                    <Tooltip content={options.join(', ')} placement="top-center" minInlineSize={100} maxInlineSize={350}>
+                      <Text>{`${visibleOptions} . . .`}</Text>
                     </Tooltip>
                   ) : (
-                    <Text>{typeof options === 'string' ? options : options.join(', ')}</Text>
+                    <Text>{options.join(', ')}</Text>
                   )}
                 </Table.Cell>
                 <Table.Cell tagAttrs={{ style: { whiteSpace: 'nowrap' } }}>
@@ -80,14 +87,14 @@ export const PropsTable = ({ category, data }: Props) => {
     return (
       <>
         <Section heading={category}>{table}</Section>
-        <Spacer blockSize="60px" />
+        <Spacer blockSize="2xl" />
       </>
     )
   } else {
     return (
       <>
         {table}
-        <Spacer blockSize="60px" />
+        <Spacer blockSize="2xl" />
       </>
     )
   }

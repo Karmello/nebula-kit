@@ -7,37 +7,42 @@ import {
   CssPointerEvents,
   CssPosition,
   CssTextAlign,
+  CssValue,
   CssVisibility,
   RespValue,
-  Theme,
+  THEMES,
+  TShirtSize,
 } from 'lib/definitions'
 
 import { HtmlTagProps } from 'lib/components'
 
+export const BOX_THEMES = [...THEMES, 'flipped'] as const
 export const BOX_VARIANTS = ['solid', 'outline', 'soft-outline', 'ghost'] as const
 export const BOX_INTENTS = ['neutral', 'muted', 'tertiary', 'secondary', 'primary', 'inverse'] as const
-export const BOX_SURFACES = ['raised', 'elevated'] as const
+export const BOX_SURFACES = ['selected', 'dividing'] as const
 export const BOX_BORDER_WIDTH = '2px'
 
+export type BoxTheme = (typeof BOX_THEMES)[number]
 export type BoxVariant = (typeof BOX_VARIANTS)[number]
 export type BoxIntent = (typeof BOX_INTENTS)[number]
-export type BoxSurface = (typeof BOX_SURFACES)[number]
 export type BoxColor = (typeof COLORS)[number]
+export type BoxSurface = (typeof BOX_SURFACES)[number]
 
 type BoxOwnProps = {
   // surface
   drawable?: boolean
-  surface?: BoxSurface
-  theme?: RespValue<Theme>
+  elevated?: boolean
+  theme?: RespValue<BoxTheme>
   brand?: RespValue<BoxColor>
   color?: RespValue<BoxColor>
   variant?: RespValue<BoxVariant>
   intent?: RespValue<BoxIntent>
   // interaction
   interactive?: boolean
-  selected?: boolean
+  surface?: BoxSurface
   disabled?: boolean
   activeOnFocus?: boolean
+  hidden?: RespValue<boolean>
   // css
   opacity?: RespValue<string>
   visibility?: RespValue<CssVisibility>
@@ -65,34 +70,33 @@ type BoxOwnProps = {
   overflowY?: RespValue<CssOverflow>
   // position
   position?: RespValue<CssPosition>
-  inset?: RespValue<string>
-  top?: RespValue<string>
-  right?: RespValue<string>
-  bottom?: RespValue<string>
-  left?: RespValue<string>
+  inset?: RespValue<TShirtSize | CssValue>
+  top?: RespValue<TShirtSize | CssValue>
+  right?: RespValue<TShirtSize | CssValue>
+  bottom?: RespValue<TShirtSize | CssValue>
+  left?: RespValue<TShirtSize | CssValue>
   // size
-  blockSize?: RespValue<string>
-  minBlockSize?: RespValue<string>
-  maxBlockSize?: RespValue<string>
-  inlineSize?: RespValue<string>
-  minInlineSize?: RespValue<string>
-  maxInlineSize?: RespValue<string>
+  blockSize?: RespValue<TShirtSize | CssValue>
+  minBlockSize?: RespValue<TShirtSize | CssValue>
+  maxBlockSize?: RespValue<TShirtSize | CssValue>
+  inlineSize?: RespValue<TShirtSize | CssValue>
+  minInlineSize?: RespValue<TShirtSize | CssValue>
+  maxInlineSize?: RespValue<TShirtSize | CssValue>
   // padding
-  padding?: RespValue<string>
-  paddingInline?: RespValue<string>
-  paddingBlock?: RespValue<string>
-  paddingTop?: RespValue<string>
-  paddingRight?: RespValue<string>
-  paddingBottom?: RespValue<string>
-  paddingLeft?: RespValue<string>
-  // margin
-  margin?: RespValue<string>
-  marginInline?: RespValue<string>
-  marginBlock?: RespValue<string>
-  marginTop?: RespValue<string>
-  marginRight?: RespValue<string>
-  marginBottom?: RespValue<string>
-  marginLeft?: RespValue<string>
+  padding?: RespValue<TShirtSize | CssValue>
+  paddingInline?: RespValue<TShirtSize | CssValue>
+  paddingBlock?: RespValue<TShirtSize | CssValue>
+  paddingTop?: RespValue<TShirtSize | CssValue>
+  paddingRight?: RespValue<TShirtSize | CssValue>
+  paddingBottom?: RespValue<TShirtSize | CssValue>
+  paddingLeft?: RespValue<TShirtSize | CssValue>
+  margin?: RespValue<TShirtSize | CssValue>
+  marginInline?: RespValue<TShirtSize | CssValue>
+  marginBlock?: RespValue<TShirtSize | CssValue>
+  marginTop?: RespValue<TShirtSize | CssValue>
+  marginRight?: RespValue<TShirtSize | CssValue>
+  marginBottom?: RespValue<TShirtSize | CssValue>
+  marginLeft?: RespValue<TShirtSize | CssValue>
 }
 
 export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & BoxOwnProps

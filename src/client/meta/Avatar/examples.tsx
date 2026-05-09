@@ -18,7 +18,7 @@ const AVATAR_EXAMPLES_META: ComponentMeta<AvatarProps>['examples'] = [
   },
   {
     description: 'The biggest size.',
-    jsx: <Avatar src={img2} size="xxl" />,
+    jsx: <Avatar src={img2} size="2xl" />,
   },
   {
     description: 'Displaying initials as a fallback when the image cannot be loaded.',

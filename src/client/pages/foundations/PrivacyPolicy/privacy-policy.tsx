@@ -5,7 +5,7 @@ export default () => {
     <Box maxInlineSize="55rem">
       <Text>NebulaKit respects your privacy and only collects the minimum information needed to provide its services.</Text>
       <Spacer />
-      <MarkerList gap="15px">
+      <MarkerList gap="sm">
         <MarkerList.Item>
           <Text bold>Account registration</Text>
           <Text>

@@ -14,6 +14,10 @@ const VIRTUAL_LIST_PROPS_META: ComponentMeta<VirtualListProps>['props'] = {
     ...BOX_PROPS_META.color,
     description: 'Color applied to the surface behind list items.',
   },
+  elevated: {
+    ...BOX_PROPS_META.elevated,
+    description: 'Applies an elevated surface level behind the list items.',
+  },
   ensureVisibleIndex: {
     options: ['number'],
     description:
@@ -42,7 +46,6 @@ const VIRTUAL_LIST_PROPS_META: ComponentMeta<VirtualListProps>['props'] = {
     options: ['(item: T, index: number) => ReactNode'],
     isRequired: true,
     description: 'Render function called for each visible list item.',
-    tooltip: ['(item: T, index: number) => ReactNode'],
   },
   scrollAlign: {
     options: VIRTUAL_LIST_SCROLL_ALIGN,

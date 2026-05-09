@@ -15,14 +15,15 @@ export const PropSelect = () => {
       <Flex justifyContent="space-between" alignItems="center">
         <Text bold>Property</Text>
         <Tooltip
-          content="The props list is intentionally curated to highlight the styling system in action. It does not include all available props."
+          content="The props list was also intentionally narrowed to include only those that best fit this context."
           minInlineSize={300}
           maxInlineSize={400}
+          mode="click"
         >
           <Icon name="info" size="18px" color="blue" intent="primary" />
         </Tooltip>
       </Flex>
-      <Spacer blockSize="5px" />
+      <Spacer blockSize="2xs" />
       <Select value={value} onChange={value => setActiveProp(activeComponent, value)} scrollAlign="center">
         {Object.keys(props)
           .sort()

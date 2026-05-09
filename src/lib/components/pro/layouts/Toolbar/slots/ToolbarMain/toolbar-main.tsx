@@ -17,6 +17,7 @@ export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) =>
         style: {
           ...tagAttrs?.style,
           minInlineSize: 0,
+          maxInlineSize: '100vw',
         },
         inert: !isSwitchAtHit && !mainOpen,
       }}

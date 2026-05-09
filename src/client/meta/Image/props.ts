@@ -1,4 +1,4 @@
-import { ComponentMeta } from 'client/definitions'
+import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { ImageProps } from 'lib/components'
 
 import {
@@ -23,7 +23,6 @@ const IMAGE_PROPS_META: ComponentMeta<ImageProps>['props'] = {
   crossOrigin: {
     options: IMAGE_CROSS_ORIGIN,
     description: 'Controls the CORS mode used when fetching the image.',
-    tooltip: IMAGE_CROSS_ORIGIN,
   },
   decoding: {
     options: IMAGE_DECODING,
@@ -47,21 +46,20 @@ const IMAGE_PROPS_META: ComponentMeta<ImageProps>['props'] = {
     options: IMAGE_OBJECT_FIT,
     isResponsive: true,
     description: 'Defines how the image is resized to fit its container.',
-    tooltip: IMAGE_OBJECT_FIT,
     link: true,
   },
   objectPosition: {
-    options: ['CSS'],
+    options: [DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Sets the alignment of the image within its container.',
     link: true,
   },
   onError: {
-    options: ['event => void'],
+    options: ['e => void'],
     description: 'Called when the underlying img element fires an error event.',
   },
   onLoad: {
-    options: ['event => void'],
+    options: ['e => void'],
     description: 'Called when the underlying img element fires a load event.',
   },
   opacity: BOX_PROPS_META.opacity,
@@ -72,7 +70,6 @@ const IMAGE_PROPS_META: ComponentMeta<ImageProps>['props'] = {
   referrerPolicy: {
     options: IMAGE_REFERRER_POLICY,
     description: 'Controls which referrer information is sent when fetching the image.',
-    tooltip: IMAGE_REFERRER_POLICY,
   },
   src: {
     options: ['string'],

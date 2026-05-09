@@ -1,4 +1,4 @@
-import { ComponentMeta } from 'client/definitions'
+import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { SlideProps } from 'lib/components'
 
 import { DEFAULT_SLIDE_DURATION, DEFAULT_SLIDE_EASING, SLIDE_FROM } from 'lib/components/core/motion/Slide'
@@ -17,7 +17,7 @@ const SLIDE_PROPS_META: ComponentMeta<SlideProps>['props'] = {
     description: 'Animation duration in milliseconds.',
   },
   easing: {
-    options: ['CSS'],
+    options: [DOCS_CSS_LABEL],
     defaultValue: DEFAULT_SLIDE_EASING,
     description: 'Timing function for the animation.',
   },
@@ -25,7 +25,6 @@ const SLIDE_PROPS_META: ComponentMeta<SlideProps>['props'] = {
     options: SLIDE_FROM,
     isRequired: true,
     description: 'Edge from which the content slides when becoming visible.',
-    tooltip: SLIDE_FROM,
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,

@@ -32,15 +32,15 @@ export const ProfileSettingsPage = () => {
       show({ status: 'success', content: 'You successfully connected your Discord account.' })
       window.history.replaceState({}, '', PageKey.profileSettings)
     } else if (params.get('github') === 'connected') {
-      show({ status: 'success', content: 'You successfully connected your Github account.' })
+      show({ status: 'success', content: 'You successfully connected your GitHub account.' })
       window.history.replaceState({}, '', PageKey.profileSettings)
     }
   }, [search])
 
   return (
-    <Box padding={{ base: '20px', lg: '50px' }} maxInlineSize="75rem">
+    <Box padding={{ base: 'md', lg: 'xl' }} maxInlineSize="75rem">
       <Section heading="Settings" iconName="settings">
-        <Spacer blockSize="25px" />
+        <Spacer blockSize="md" />
         {!getUser.data || getUser.isMakingRequest ? (
           <Box position="relative" blockSize="160px">
             <Loader centered size="lg" color="blue" />
@@ -48,13 +48,13 @@ export const ProfileSettingsPage = () => {
         ) : (
           <>
             <UpdatePasswordSection />
-            <Spacer blockSize="50px" />
+            <Spacer blockSize="lg" />
             <UpdateEmailSection />
-            <Spacer blockSize="50px" />
+            <Spacer blockSize="lg" />
             <ConnectToDiscordSection userPlan={getUser.data.user.plan} discordUserId={getUser.data.user.discordUserId} />
-            <Spacer blockSize="50px" />
+            <Spacer blockSize="lg" />
             <ConnectToGithubSection userPlan={getUser.data.user.plan} githubUsername={getUser.data.user.githubUsername} />
-            <Spacer blockSize="50px" />
+            <Spacer blockSize="lg" />
             <PaymentCancelSection
               userEmail={getUser.data.user.email}
               userPlan={getUser.data.user.plan}
@@ -63,7 +63,7 @@ export const ProfileSettingsPage = () => {
                 getUser.sendRequest()
               }}
             />
-            <Spacer blockSize="50px" />
+            <Spacer blockSize="lg" />
             <AccountDeactivationSection
               userEmail={getUser.data.user.email}
               userPlan={getUser.data.user.plan}

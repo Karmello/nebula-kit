@@ -17,14 +17,12 @@ const USE_SNACKBAR_PROPS_META: ComponentMeta<UseSnackbarShowArgs>['props'] = {
     options: SNACKBAR_PLACEMENTS,
     defaultValue: DEFAULT_SNACKBAR_PLACEMENT,
     description: 'Overrides the default placement for the opened snackbar.',
-    tooltip: SNACKBAR_PLACEMENTS,
   },
   status: {
     options: CALLOUT_STATUSES,
     defaultValue: DEFAULT_CALLOUT_STATUS,
     isRequired: true,
     description: 'Defines the message type of the snackbar.',
-    tooltip: CALLOUT_STATUSES,
   },
 }
 

@@ -11,10 +11,10 @@ export const Preferences = () => {
   const setBrand = useAppStore(state => state.setBrand)
 
   return (
-    <Flex flexWrap="wrap" rowGap="20px" columnGap="15px" justifyContent="center">
+    <Flex flexWrap="wrap" rowGap="md" columnGap="sm" justifyContent="center">
       <Flex.Item>
         <Text bold>Theme</Text>
-        <Segment key={theme}>
+        <Segment>
           {THEMES.map(key => (
             <Segment.Item key={key}>
               <Button intent={key === theme ? 'inverse' : 'tertiary'} size="sm" tagAttrs={{ onClick: () => setTheme(key) }}>

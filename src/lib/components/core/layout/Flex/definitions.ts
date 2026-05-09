@@ -7,7 +7,9 @@ import {
   CssFlexDisplay,
   CssFlexJustifyContent,
   CssFlexWrap,
+  CssValue,
   RespValue,
+  TShirtSize,
 } from 'lib/definitions'
 
 import { HtmlTagProps } from 'lib/components'
@@ -19,9 +21,9 @@ type FlexOwnProps = {
   justifyContent?: RespValue<CssFlexJustifyContent>
   alignItems?: RespValue<CssFlexAlignItems>
   alignContent?: RespValue<CssFlexAlignContent>
-  gap?: RespValue<string>
-  rowGap?: RespValue<string>
-  columnGap?: RespValue<string>
+  gap?: RespValue<TShirtSize | CssValue>
+  rowGap?: RespValue<TShirtSize | CssValue>
+  columnGap?: RespValue<TShirtSize | CssValue>
 }
 
 type PropsFromHtmlTag<T extends ElementType = 'div'> = Omit<HtmlTagProps<T>, 'children'> & {

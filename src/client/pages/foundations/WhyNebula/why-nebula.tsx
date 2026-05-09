@@ -7,7 +7,7 @@ export default () => {
         A nebula is the space between chaos and creation - a cloud of scattered elements slowly forming structure, gravity pulling
         fragments into order. NebulaKit was born from that same idea.
       </Text>
-      <Spacer blockSize="15px" />
+      <Spacer blockSize="sm" />
       <Text>
         In the early stages of any interface, there's motion everywhere - new components, new layouts, new intentions. Without
         structure, it all drifts apart. NebulaKit gives that motion a center. Each primitive is a particle, small and clear in its
@@ -17,7 +17,7 @@ export default () => {
         isn't named for what it looks like, but for what it does - it turns scattered parts into structure and structure into
         light.
       </Text>
-      <Spacer blockSize="15px" />
+      <Spacer blockSize="sm" />
       <Text>
         For developers, that means predictability and freedom existing side by side. You build faster not because the library does
         more, but because it behaves the same everywhere. Every element, no matter how small, fits into the same architecture -

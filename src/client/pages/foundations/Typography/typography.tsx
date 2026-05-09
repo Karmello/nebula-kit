@@ -1,5 +1,8 @@
-import { Box, Flex, Section, Text } from 'lib/components'
-import { TEXT_TYPOGRAPHY, TextTypography } from 'lib/components/core/base/Text/definitions'
+import { useState, Fragment } from 'react'
+import { sentenceCase } from 'change-case'
+
+import { Box, Grid, Select, Spacer, Text } from 'lib/components'
+import { TEXT_SCALE, TEXT_TYPOGRAPHY, TextScale, TextTypography } from 'lib/components/core/base/Text'
 
 const MAP: Record<TextTypography, string> = {
   body: 'Default text for reading and general content. Balanced for legibility and rhythm across devices.',
@@ -17,18 +20,41 @@ const MAP: Record<TextTypography, string> = {
 }
 
 export default () => {
+  const [scale, setScale] = useState<TextScale>('regular')
+
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap="50px" alignItems="stretch">
-        <Text>All typography styles defined in the system.</Text>
-        {TEXT_TYPOGRAPHY.map(typography => (
-          <Section key={typography} heading={typography} size="xs" intent="primary">
-            <Text intent="neutral" typography={typography}>
-              {MAP[typography]}
-            </Text>
-          </Section>
+      <Text>All typography styles defined in the system.</Text>
+      <Spacer />
+      <Text bold intent="primary">
+        Scale
+      </Text>
+      <Select value={scale} onChange={value => setScale(value as TextScale)} inlineSize="150px" size="sm" scrollAlign="center">
+        {TEXT_SCALE.map(scale => (
+          <Select.Option value={scale}>{sentenceCase(scale)}</Select.Option>
         ))}
-      </Flex>
+      </Select>
+      <Spacer blockSize="xl" />
+      <Grid
+        gridTemplateColumns={{
+          base: '1fr',
+          md: 'max-content minmax(0, 1fr)',
+        }}
+        columnGap="lg"
+      >
+        {TEXT_TYPOGRAPHY.map(typography => (
+          <Fragment key={typography}>
+            <Text intent="primary" bold>
+              {typography}
+            </Text>
+            <Box drawable variant="outline" intent="muted" marginBottom="md">
+              <Text intent="neutral" scale={scale} typography={typography}>
+                {MAP[typography]}
+              </Text>
+            </Box>
+          </Fragment>
+        ))}
+      </Grid>
     </Box>
   )
 }

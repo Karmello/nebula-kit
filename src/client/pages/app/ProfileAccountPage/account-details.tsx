@@ -27,7 +27,7 @@ export default () => {
       <Table.Header paddingInline="0px">
         <Table.HeaderRow>
           <Table.HeaderCell blockSize="50px">
-            <Flex alignItems="center" columnGap="20px">
+            <Flex alignItems="center" columnGap="sm">
               <Text typography="h6" iconName="arrow-down">
                 Details
               </Text>
@@ -38,12 +38,12 @@ export default () => {
           </Table.HeaderCell>
         </Table.HeaderRow>
       </Table.Header>
-      <Table.Body intent="tertiary" paddingBlock="10px" paddingInline="18px">
+      <Table.Body intent="muted" paddingBlock="10px" paddingInline="18px">
         <Table.Row>
           <Table.Cell colSpan={1}>
             <Text>Email</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="60px">
+          <Table.Cell colSpan={2} blockSize="2xl">
             <Text bold>{getUser.data?.user.email}</Text>
           </Table.Cell>
         </Table.Row>
@@ -51,7 +51,7 @@ export default () => {
           <Table.Cell colSpan={1}>
             <Text>Registration date</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="60px">
+          <Table.Cell colSpan={2} blockSize="2xl">
             <Text bold>{getUser.data ? new Date(getUser.data.user.createdAt).toDateString() : ''}</Text>
           </Table.Cell>
         </Table.Row>
@@ -59,8 +59,8 @@ export default () => {
           <Table.Cell colSpan={1}>
             <Text>Pricing plan</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="60px">
-            <Flex alignItems="center" flexWrap="wrap" rowGap="10px" columnGap="15px">
+          <Table.Cell colSpan={2} blockSize="2xl">
+            <Flex alignItems="center" flexWrap="wrap" rowGap="xs" columnGap="sm">
               <Text bold>{getUser.data ? sentenceCase(getUser.data.user.plan) : ''}</Text>
               {!getUser.isMakingRequest ? (
                 <Link
@@ -69,7 +69,7 @@ export default () => {
                     navigateTo(PageKey.pricing)
                   }}
                 >
-                  <Button size="xs" variant="outline" intent="secondary" color="blue">
+                  <Button size="xs" variant="outline" intent="tertiary" color="blue">
                     {getUser.data?.user.plan === 'free' ? 'Upgrade' : 'Details'}
                   </Button>
                 </Link>
@@ -81,9 +81,9 @@ export default () => {
           <Table.Cell colSpan={1}>
             <Text>License key</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="60px">
+          <Table.Cell colSpan={2} blockSize="2xl">
             {getUser.data ? (
-              <Flex alignItems="center" gap="10px">
+              <Flex alignItems="center" gap="xs">
                 <Text
                   tagAttrs={{ style: { wordBreak: 'break-all' } }}
                   bold
@@ -116,7 +116,7 @@ export default () => {
           <Table.Cell colSpan={1}>
             <Text>Discord connection status</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="60px">
+          <Table.Cell colSpan={2} blockSize="2xl">
             {getUser.data ? (
               <Text
                 iconName={
@@ -133,11 +133,11 @@ export default () => {
         </Table.Row>
         <Table.Row>
           <Table.Cell colSpan={1}>
-            <Text>Github connection status</Text>
+            <Text>GitHub connection status</Text>
           </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="60px">
+          <Table.Cell colSpan={2} blockSize="2xl">
             {getUser.data ? (
-              <Flex alignItems="center" flexWrap="wrap" rowGap="10px" columnGap="15px">
+              <Flex alignItems="center" flexWrap="wrap" rowGap="xs" columnGap="sm">
                 <Flex.Item alignSelf="auto">
                   <Text
                     iconName={

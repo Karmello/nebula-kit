@@ -7,7 +7,7 @@ export const Principles = () => {
 
   return (
     <>
-      <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="30px">
+      <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="lg">
         <Section heading="JSX first" color="green" intent="primary" iconName="code">
           <Text intent="neutral">
             JSX is the primary development flow. CSS exists as an internal implementation detail. Customization happens directly
@@ -31,7 +31,7 @@ export const Principles = () => {
             is a property of the architecture, not an added optimization.
           </Text>
         </Section>
-        <Section heading="Unified models" color="green" intent="primary" iconName="paintbrush">
+        <Section heading="Unified rendering models" color="green" intent="primary" iconName="paintbrush">
           <Text intent="neutral">
             The mechanisms for drawing visual output and handling responsiveness are each driven by their own explicit model,
             ensuring consistent behavior across the system.
@@ -43,7 +43,7 @@ export const Principles = () => {
           </Text>
         </Section>
       </Grid>
-      <Spacer blockSize="40px" />
+      <Spacer blockSize="lg" />
       <Box textAlign="center">
         <Link
           href={`${PageKey.foundations}/overview/philosophy/jsx-first`}

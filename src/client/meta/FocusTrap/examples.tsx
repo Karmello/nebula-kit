@@ -8,7 +8,7 @@ const FocusTrapWrapper = () => {
 
   return (
     <FocusTrap tagRef={ref} active>
-      <Flex tagRef={ref} gap="10px">
+      <Flex tagRef={ref} gap="xs">
         <Button>Button 1</Button>
         <Button>Button 2</Button>
         <Button>Button 3</Button>
@@ -23,10 +23,10 @@ const FOCUS_TRAP_EXAMPLES_META: ComponentMeta<FocusTrapProps>['examples'] = [
     jsx: <FocusTrapWrapper />,
     code: `// The tagRef must point to the same DOM element that visually contains the focusable content
 const ref = useRef(null)
-\t
+
 return (
   <FocusTrap tagRef={ref} active>
-    <Flex tagRef={ref} gap="10px">
+    <Flex tagRef={ref} gap="xs">
       <Button>Button 1</Button>
       <Button>Button 2</Button>
       <Button>Button 3</Button>

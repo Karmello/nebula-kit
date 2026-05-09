@@ -1,4 +1,4 @@
-import { ComponentMeta } from 'client/definitions'
+import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING, RotateProps } from 'lib/components/core/motion/Rotate'
 
@@ -21,7 +21,7 @@ const ROTATE_PROPS_META: ComponentMeta<RotateProps>['props'] = {
     description: 'Animation duration in milliseconds.',
   },
   easing: {
-    options: ['CSS'],
+    options: [DOCS_CSS_LABEL],
     defaultValue: DEFAULT_ROTATE_EASING,
     description: 'Timing function for the animation.',
   },

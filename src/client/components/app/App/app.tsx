@@ -5,7 +5,7 @@ import { getHtmlMetaData } from 'src/server/helpers'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useGetUser, useLogoutUser } from 'client/api'
-import { AppFrame, Box, Button, Link, Loader, Toolbar } from 'lib/components'
+import { AppFrame, Box, Loader, Toolbar } from 'lib/components'
 
 import { RootPage } from '../RootPage'
 import { PageNavigation } from './PageNavigation'
@@ -63,30 +63,14 @@ export const App = () => {
   return (
     <AppFrame stickyHeader>
       <AppFrame.Header>
-        <Toolbar switchAt="xl">
+        <Toolbar switchAt="xxl">
           {({ setMainOpen, mainOpen }) => (
             <>
               <Toolbar.Start>
-                <Link
-                  href={PageKey.home}
-                  onClick={async () => {
-                    if (mainOpen) await setMainOpen(false)
-                    navigateTo(PageKey.home)
-                  }}
-                >
-                  <Button
-                    intent="muted"
-                    surface={pathname.startsWith(PageKey.home) ? 'elevated' : undefined}
-                    selected={pathname.startsWith(PageKey.home)}
-                    bold={pathname.startsWith(PageKey.home)}
-                    inlineSize="115px"
-                  >
-                    NebulaKit
-                  </Button>
-                </Link>
+                <PageNavigation toolbarSlot="start" mainOpen={mainOpen} setMainOpen={setMainOpen} />
               </Toolbar.Start>
               <Toolbar.Main>
-                <PageNavigation setMainOpen={setMainOpen} mainOpen={mainOpen} />
+                <PageNavigation toolbarSlot="main" mainOpen={mainOpen} setMainOpen={setMainOpen} />
               </Toolbar.Main>
               <Toolbar.End>
                 <UserActionMenu />
@@ -96,7 +80,7 @@ export const App = () => {
         </Toolbar>
         <AppJump />
       </AppFrame.Header>
-      <AppFrame.Main paddingTop={{ base: '20px', lg: '40px' }} paddingBottom="80px">
+      <AppFrame.Main paddingTop={{ base: 'md', lg: 'xl' }} paddingBottom="3xl">
         <RootPage />
       </AppFrame.Main>
       <AppFrame.Footer>

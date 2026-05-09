@@ -10,8 +10,8 @@ const TOOLTIP_META: ComponentMeta<TooltipProps> = {
     title: 'Non-interactive, overlaid hint for displaying short, contextual text.',
     features: [
       'displays short, non-interactive text in an overlaid surface',
-      'appears on hover or keyboard focus, dismisses automatically on pointer leave or focus loss',
-      'supports keyboard dismissal via Escape',
+      'supports hover and click interaction modes',
+      'click mode supports outside click, Escape dismissal and applies pointer cursor automatically',
       'positions itself relative to the trigger with automatic collision handling',
     ],
     composedOf: ['Box', 'Floating', 'Portal', 'Measure'],
@@ -19,6 +19,7 @@ const TOOLTIP_META: ComponentMeta<TooltipProps> = {
   props: TOOLTIP_PROPS_META,
   examples: TOOLTIP_EXAMPLES_META,
   changelog: {
+    '0.9.0': ['added configurable hover and click interaction modes with improved dismissal behavior'],
     '0.3.0': ['released'],
   },
 }

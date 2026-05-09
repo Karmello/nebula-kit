@@ -48,7 +48,7 @@ export const ComponentsPageRoutes = ({ pageKey }: { pageKey: PageKey.core | Page
 
   return (
     <>
-      <Spacer blockSize="20px" />
+      <Spacer blockSize="sm" />
       <Routes>
         {ROUTES}
         <Route

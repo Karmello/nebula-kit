@@ -1,4 +1,4 @@
-import { CssGridAutoFlow, CssGridPlaceContent, CssGridPlaceItems, RespValue } from 'lib/definitions'
+import { CssGridAutoFlow, CssGridPlaceContent, CssGridPlaceItems, CssValue, RespValue, TShirtSize } from 'lib/definitions'
 
 import { HtmlTagProps } from 'lib/components'
 
@@ -14,9 +14,9 @@ type GridOwnProps = {
   gridAutoFlow?: RespValue<CssGridAutoFlow>
   placeItems?: RespValue<CssGridPlaceItems>
   placeContent?: RespValue<CssGridPlaceContent>
-  gap?: RespValue<string>
-  rowGap?: RespValue<string>
-  columnGap?: RespValue<string>
+  gap?: RespValue<TShirtSize | CssValue>
+  rowGap?: RespValue<TShirtSize | CssValue>
+  columnGap?: RespValue<TShirtSize | CssValue>
 }
 
 type PropsFromHtmlTag<T extends GridTag = 'div'> = Omit<HtmlTagProps<T>, 'children'> & {

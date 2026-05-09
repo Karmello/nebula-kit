@@ -1,138 +1,296 @@
 import {
-  BoxProps,
-  ButtonProps,
-  CalloutProps,
-  CheckboxProps,
-  IconProps,
-  InputProps,
-  SectionProps,
-  SelectProps,
-  SwitchProps,
-  TableProps,
-  TextProps,
-} from 'lib/components'
+  PropsFromBoxKey,
+  PropsFromButtonKey,
+  PropsFromCalloutKey,
+  PropsFromCheckboxKey,
+  PropsFromIconKey,
+  PropsFromInputKey,
+  PropsFromLoaderKey,
+  PropsFromRevealKey,
+  PropsFromSectionKey,
+  PropsFromSelectKey,
+  PropsFromSwitchKey,
+  PropsFromTableKey,
+  PropsFromTabsKey,
+  PropsFromTextKey,
+} from '../../store'
 
-export const PRESETS: Record<string, object[]> = {
+export const PRESETS: Record<string, Array<{ name: string; props: object }>> = {
   Box: [
     {
-      blockSize: '100px',
-      borderRadius: '10px',
-      children: 'Drawable Box with variant, intent and color applied.',
-      color: 'green',
-      drawable: true,
-      intent: 'primary',
-      padding: '20px',
-      variant: 'outline',
+      name: 'Non-drawable',
+      props: {
+        children: 'Non-drawable Box used as a simple container.',
+      } as Record<PropsFromBoxKey, unknown>,
     },
     {
-      blockSize: '100px',
-      borderRadius: '10px',
-      children: 'Interactive Box with variant, intent and color applied.',
-      color: 'blue',
-      drawable: true,
-      intent: 'primary',
-      interactive: true,
-      padding: '20px',
-      variant: 'solid',
+      name: 'Drawable',
+      props: {
+        children: 'Drawable Box with solid variant, primary intent and green color applied.',
+        drawable: true,
+        variant: 'solid',
+        color: 'green',
+        intent: 'primary',
+        padding: '20px',
+      } as Record<PropsFromBoxKey, unknown>,
     },
-  ] as BoxProps[],
+    {
+      name: 'Interactive',
+      props: {
+        children: 'Interactive Box with solid variant, primary intent and blue color applied.',
+        drawable: true,
+        interactive: true,
+        variant: 'solid',
+        color: 'blue',
+        intent: 'primary',
+        padding: '20px',
+      } as Record<PropsFromBoxKey, unknown>,
+    },
+  ],
   Button: [
     {
-      children: 'Simple primary button',
-      color: 'blue',
-      intent: 'primary',
+      name: 'Simple',
+      props: {
+        children: 'Click me',
+        color: 'green',
+        intent: 'primary',
+      } as Record<PropsFromButtonKey, unknown>,
     },
     {
-      children: 'Full-width button',
-      color: 'blue',
-      fullWidth: true,
-      intent: 'primary',
+      name: 'Full-width',
+      props: {
+        children: 'Click me',
+        color: 'blue',
+        intent: 'primary',
+        fullWidth: true,
+      } as Record<PropsFromButtonKey, unknown>,
     },
-  ] as ButtonProps[],
+    {
+      name: 'With icon',
+      props: {
+        children: 'Send',
+        color: 'blue',
+        intent: 'primary',
+        iconName: 'send',
+        iconPlacement: 'right',
+      } as Record<PropsFromButtonKey, unknown>,
+    },
+    {
+      name: 'Loading',
+      props: {
+        children: 'Loading ...',
+        color: 'blue',
+        intent: 'primary',
+        loading: true,
+      } as Record<PropsFromButtonKey, unknown>,
+    },
+  ],
   Callout: [
     {
-      content: 'This is message content.',
-      heading: 'Custom success callout',
-      status: 'success',
+      name: 'Success',
+      props: {
+        content: 'Success callout with solid variant applied.',
+        status: 'success',
+      } as Record<PropsFromCalloutKey, unknown>,
     },
     {
-      content: 'This is message content.',
-      heading: 'Outline warning callout',
-      status: 'warning',
-      variant: 'outline',
+      name: 'Info',
+      props: {
+        content: 'Info callout with outline variant applied.',
+        status: 'info',
+        variant: 'outline',
+      } as Record<PropsFromCalloutKey, unknown>,
     },
-  ] as CalloutProps[],
+  ],
   Checkbox: [
     {
-      color: 'blue',
-      intent: 'secondary',
-      size: 'md',
-      variant: 'solid',
+      name: 'Standard',
+      props: {
+        color: 'gray',
+      } as Record<PropsFromCheckboxKey, unknown>,
     },
-  ] as CheckboxProps[],
+    {
+      name: 'Solid',
+      props: {
+        variant: 'solid',
+        color: 'blue',
+      } as Record<PropsFromCheckboxKey, unknown>,
+    },
+  ],
   Icon: [
     {
-      color: 'blue',
-      intent: 'primary',
-      name: 'mail',
-      size: '30px',
+      name: 'Default size',
+      props: {
+        name: 'mail',
+        color: 'green',
+        intent: 'primary',
+      } as Record<PropsFromIconKey, unknown>,
     },
     {
-      color: 'red',
-      intent: 'secondary',
-      name: 'globe',
-      size: '40px',
+      name: 'Custom size',
+      props: {
+        name: 'globe',
+        color: 'blue',
+        intent: 'secondary',
+        size: '50px',
+      } as Record<PropsFromIconKey, unknown>,
     },
-  ] as IconProps[],
+  ],
   Input: [
     {
-      color: 'blue',
-      intent: 'primary',
-      variant: 'solid',
+      name: 'Default',
+      props: {
+        placeholder: 'Input with solid variant applied',
+      } as Record<PropsFromInputKey, unknown>,
     },
-  ] as InputProps[],
+    {
+      name: 'Custom',
+      props: {
+        placeholder: 'Input with outline variant applied',
+        variant: 'outline',
+      } as Record<PropsFromInputKey, unknown>,
+    },
+  ],
+  Loader: [
+    {
+      name: 'Default',
+      props: {} as Record<PropsFromLoaderKey, unknown>,
+    },
+    {
+      name: 'Custom',
+      props: {
+        color: 'blue',
+        size: '2xl',
+      } as Record<PropsFromLoaderKey, unknown>,
+    },
+  ],
+  Reveal: [
+    {
+      name: 'Basic',
+      props: {
+        children: 'Hidden by default. Revealed with motion when the moment feels right.',
+        label: 'Reveal me !',
+      } as Record<PropsFromRevealKey, unknown>,
+    },
+  ],
   Section: [
     {
-      children: 'This is section content.',
-      heading: 'Basic section',
+      name: 'Basic',
+      props: {
+        children: 'This is simple basic section.',
+        heading: 'Basic section',
+      } as Record<PropsFromSectionKey, unknown>,
     },
     {
-      children: 'This is section content.',
-      color: 'blue',
-      heading: 'Custom section',
-      iconName: 'settings',
-      intent: 'secondary',
-      size: 'lg',
-      variant: 'outline',
+      name: 'With border',
+      props: {
+        children: 'This section has icon and blue border around the content.',
+        color: 'blue',
+        heading: 'Section with border',
+        iconName: 'settings',
+        intent: 'secondary',
+        size: 'lg',
+        variant: 'outline',
+      } as Record<PropsFromSectionKey, unknown>,
     },
-  ] as SectionProps[],
+    {
+      name: 'Interactive',
+      props: {
+        children: 'This is interactive Section that responds visually to hover and active states',
+        color: 'blue',
+        heading: 'Interactive section',
+        iconName: 'settings',
+        intent: 'secondary',
+        size: 'lg',
+        variant: 'outline',
+        interactive: true,
+      } as Record<PropsFromSectionKey, unknown>,
+    },
+  ],
   Select: [
     {
-      color: 'blue',
-      inlineSize: '250px',
+      name: 'Default',
+      props: {
+        //
+      } as Record<PropsFromSelectKey, unknown>,
     },
-  ] as SelectProps[],
+    {
+      name: 'Custom width',
+      props: {
+        inlineSize: '200px',
+      } as Record<PropsFromSelectKey, unknown>,
+    },
+    {
+      name: 'Blue primary',
+      props: {
+        inlineSize: '200px',
+        intent: 'primary',
+        color: 'blue',
+      } as Record<PropsFromSelectKey, unknown>,
+    },
+  ],
   Switch: [
     {
-      color: 'blue',
-      intent: 'primary',
+      name: 'Default',
+      props: {
+        //
+      } as Record<PropsFromSwitchKey, unknown>,
     },
-  ] as SwitchProps[],
+    {
+      name: 'Custom',
+      props: {
+        color: 'blue',
+        intent: 'primary',
+        size: 'lg',
+      } as Record<PropsFromSwitchKey, unknown>,
+    },
+  ],
   Table: [
     {
-      color: 'green',
+      name: 'Default',
+      props: {
+        //
+      } as Record<PropsFromTableKey, unknown>,
     },
-  ] as TableProps[],
+    {
+      name: 'Borderless',
+      props: {
+        intent: 'neutral',
+      } as Record<PropsFromTableKey, unknown>,
+    },
+  ],
+  Tabs: [
+    {
+      name: 'Default',
+      props: {
+        //
+      } as Record<PropsFromTabsKey, unknown>,
+    },
+    {
+      name: 'Custom',
+      props: {
+        inlineSize: '100%',
+        variant: 'solid',
+        intent: 'primary',
+      } as Record<PropsFromTabsKey, unknown>,
+    },
+  ],
   Text: [
     {
-      children: 'This is basic text with default body typography.',
+      name: 'Default',
+      props: {
+        children: 'This is basic text with default body typography.',
+      } as Record<PropsFromTextKey, unknown>,
     },
     {
-      children: 'This is colored heading text with icon.',
-      color: 'red',
-      iconName: 'check',
-      intent: 'primary',
-      typography: 'h4',
+      name: 'Custom',
+      props: {
+        children: 'This is colored heading text with icon.',
+        color: 'red',
+        iconName: 'check',
+        intent: 'primary',
+        typography: 'h4',
+      } as Record<PropsFromTextKey, unknown>,
     },
-  ] as TextProps[],
+  ],
 }

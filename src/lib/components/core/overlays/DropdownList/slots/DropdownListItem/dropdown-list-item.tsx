@@ -52,7 +52,7 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
       color={color}
       intent={intent}
       size={size}
-      surface="elevated"
+      elevated
       fullWidth
       {...buttonProps}
     >

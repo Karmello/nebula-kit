@@ -1,16 +1,18 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
-import { Sizes } from 'lib/definitions'
+import { CONTROL_SIZE_TOKENS, TShirtSize } from 'lib/definitions'
 import { BoxVariant } from 'lib/components/core/base/Box'
+import { IconSize } from 'lib/components/core/elements/Icon'
 
-export const CHECKBOX_SIZE_CONFIG: Record<CheckboxSize, { blockSize: string; iconSize: string }> = {
-  xs: { blockSize: '28px', iconSize: '20px' },
-  sm: { blockSize: '38px', iconSize: '26px' },
-  md: { blockSize: '44px', iconSize: '30px' },
-  lg: { blockSize: '52px', iconSize: '35px' },
+export const CHECKBOX_SIZE_CONFIG: Record<CheckboxSize, { blockSize: BoxProps['blockSize']; iconSize: IconSize }> = {
+  '2xs': { blockSize: CONTROL_SIZE_TOKENS['2xs'].blockSize, iconSize: '18px' },
+  xs: { blockSize: CONTROL_SIZE_TOKENS.xs.blockSize, iconSize: '22px' },
+  sm: { blockSize: CONTROL_SIZE_TOKENS.sm.blockSize, iconSize: '26px' },
+  md: { blockSize: CONTROL_SIZE_TOKENS.md.blockSize, iconSize: '30px' },
+  lg: { blockSize: CONTROL_SIZE_TOKENS.lg.blockSize, iconSize: '35px' },
 }
 
 export const CHECKBOX_VARIANTS = ['solid', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
-export const CHECKBOX_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies Sizes[]
+export const CHECKBOX_SIZES = ['2xs', 'xs', 'sm', 'md', 'lg'] as const satisfies TShirtSize[]
 
 export const DEFAULT_CHECKBOX_VARIANT: CheckboxProps['variant'] = 'outline'
 export const DEFAULT_CHECKBOX_INTENT: CheckboxProps['intent'] = 'tertiary'

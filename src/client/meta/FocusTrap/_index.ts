@@ -13,8 +13,10 @@ const FOCUS_TRAP_META: ComponentMeta<FocusTrapProps> = {
       'restores focus to the previously focused element when deactivated',
       'detects ESC key presses and optional outside clicks to request dismissal',
       'adds no extra DOM, returning children unchanged',
+    ],
+    guidelines: [
       'does not manage or infer child focusability - focusable elements are determined by native browser behavior (tabIndex, disabled state and element semantics)',
-      'FocusTrap is commonly used for dialogs, modals, popovers and other transient UI that must not allow focus to escape while active',
+      'commonly used for dialogs, modals, popovers and other transient UI that must not allow focus to escape while active',
     ],
   },
   props: FOCUS_TRAP_PROPS_META,

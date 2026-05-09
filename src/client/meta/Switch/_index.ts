@@ -15,6 +15,7 @@ const SWITCH_META: ComponentMeta<SwitchProps> = {
   props: SWITCH_PROPS_META,
   examples: SWITCH_EXAMPLES_META,
   changelog: {
+    '0.9.0': ['narrowed supported intent values'],
     '0.7.0': ['added intent prop'],
     '0.4.0': ['released'],
   },

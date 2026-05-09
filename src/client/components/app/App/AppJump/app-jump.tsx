@@ -1,8 +1,8 @@
-import { CSSProperties, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { useLayoutEffect, useMemo, useRef, useState } from 'react'
 
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { Autocomplete, Box, Resize, Text } from 'lib/components'
+import { Autocomplete, Resize, Text } from 'lib/components'
 
 import { RESIZE_DURATION, OPTIONS } from './definitions'
 
@@ -58,13 +58,19 @@ export const AppJump = () => {
 
   useLayoutEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === '/') setShowAppJump(!showAppJump)
+      const target = e.target as HTMLElement
+      const isTyping = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable
+      if (isTyping) return
+      if (e.key === '/') {
+        e.preventDefault()
+        setShowAppJump(v => !v)
+      }
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [showAppJump])
+  }, [setShowAppJump])
 
   useLayoutEffect(() => {
     if (!showAppJump) {
@@ -78,7 +84,7 @@ export const AppJump = () => {
       <Autocomplete
         key={String(showAppJump)}
         tagRef={autocompleteRef}
-        intent="tertiary"
+        intent="muted"
         onChange={value => {
           setShowAppJump(false)
           setTimeout(() => {
@@ -88,7 +94,7 @@ export const AppJump = () => {
         onInputChange={setQuery}
         disableFiltering
         visibleItemsCount={10}
-        placeholder='Search website (toggle with "/")'
+        placeholder="Search website ... (open with /, close with ESC)"
         showToggle={false}
       >
         {filtered.map(({ label, href, iconName }) => {
@@ -111,24 +117,7 @@ export const AppJump = () => {
 
   return (
     <Resize property="blockSize" visible={showAppJump} duration={RESIZE_DURATION} easing="cubic-bezier(0.4, 0, 0.2, 1)">
-      <Box
-        tagAttrs={{
-          style: {
-            '--neb-border-radius': '0px',
-          } as CSSProperties,
-        }}
-        drawable
-        variant="outline"
-        intent="tertiary"
-        borderLeftWidth="0px"
-        borderRightWidth="0px"
-        borderBottomWidth="0px"
-        borderRadius="0px"
-      >
-        <Box drawable variant="solid" intent="tertiary" padding="0px" borderRadius="0px">
-          {autocomplete}
-        </Box>
-      </Box>
+      {autocomplete}
     </Resize>
   )
 }

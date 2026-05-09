@@ -58,7 +58,7 @@ export const CatalogPageTemplate = memo(
                               navigateTo(href)
                             }}
                             intent={{ base: 'tertiary', lg: 'neutral' }}
-                            surface={isItemSelected ? 'elevated' : undefined}
+                            selected={isItemSelected}
                             bold={isItemSelected}
                           >
                             {label}
@@ -70,9 +70,9 @@ export const CatalogPageTemplate = memo(
                 })}
               </SideNav>
             </SplitView.Side>
-            <SplitView.Main paddingLeft="20px">
+            <SplitView.Main paddingLeft="md">
               <SplitView.MainBar>
-                <Box marginRight="20px">
+                <Box marginRight="md">
                   <CatalogPageBreadcrumb
                     pageKey={pageKey.replace('/', '')}
                     categoryKey={activeCategoryObj?.key}
@@ -81,7 +81,7 @@ export const CatalogPageTemplate = memo(
                   />
                 </Box>
               </SplitView.MainBar>
-              <Spacer blockSize="30px" />
+              <Spacer blockSize="md" />
               <SplitView sidePosition="right">
                 {({ mode, setSideOpen }) => (
                   <>
@@ -104,7 +104,7 @@ export const CatalogPageTemplate = memo(
                                   navigateTo(href)
                                 }}
                                 intent={{ base: 'tertiary', lg: 'neutral' }}
-                                surface={isItemSelected ? 'elevated' : undefined}
+                                selected={isItemSelected}
                                 bold={isItemSelected}
                               >
                                 {label}
@@ -115,7 +115,7 @@ export const CatalogPageTemplate = memo(
                     </SplitView.Side>
                     <SplitView.Main paddingRight="20px">
                       <SplitView.MainBar>
-                        <Flex gap="15px" alignItems="center">
+                        <Flex gap="sm" alignItems="center">
                           <Text typography="h3">
                             {pageKey === PageKey.foundations.toString() ? activeSectionObj?.label : activeItemObj?.label}
                           </Text>

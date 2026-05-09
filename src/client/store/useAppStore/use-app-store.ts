@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
@@ -9,17 +10,17 @@ import {
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
   DEFAULT_NEBKIT_BRAND,
   DEFAULT_NEBKIT_RIPPLE_MODE,
+  DEFAULT_NEBKIT_SATURATION,
   DEFAULT_NEBKIT_THEME,
-  DEFAULT_NEBKIT_EXAMPLES_THEME,
 } from 'lib/components/core/utility/NebkitProvider'
 
 export type AppStore = {
   theme: NebkitProviderProps['theme']
   setTheme: (theme: NebkitProviderProps['theme']) => void
-  examplesTheme: NebkitProviderProps['theme']
-  setExamplesTheme: (examplesTheme: NebkitProviderProps['theme']) => void
   brand: NebkitProviderProps['brand']
   setBrand: (brand: NebkitProviderProps['brand']) => void
+  saturation: NebkitProviderProps['saturation']
+  setSaturation: (saturation: NebkitProviderProps['saturation']) => void
   borderRadiusSize: NebkitProviderProps['borderRadiusSize']
   setBorderRadiusSize: (borderRadiusSize: NebkitProviderProps['borderRadiusSize']) => void
   rippleMode: NebkitProviderProps['rippleMode']
@@ -27,9 +28,11 @@ export type AppStore = {
   user: ApiUser | null
   setUser: (user: ApiUser | null) => void
   showAppJump: boolean
-  setShowAppJump: (showAppJump: boolean) => void
+  setShowAppJump: Dispatch<SetStateAction<boolean>>
   showAppSettings: boolean
   setShowAppSettings: (showAppSettings: boolean) => void
+  flipGlobalThemeOnExamples: boolean
+  setFlipGlobalThemeOnExamples: (flipGlobalThemeOnExamples: boolean) => void
 }
 
 export const useAppStore = create<AppStore>()(
@@ -38,10 +41,10 @@ export const useAppStore = create<AppStore>()(
       ({
         theme: DEFAULT_NEBKIT_THEME,
         setTheme: (theme: NebkitProviderProps['theme']) => set({ theme }),
-        examplesTheme: DEFAULT_NEBKIT_EXAMPLES_THEME,
-        setExamplesTheme: (examplesTheme: NebkitProviderProps['theme']) => set({ examplesTheme }),
         brand: DEFAULT_NEBKIT_BRAND,
         setBrand: (brand: NebkitProviderProps['brand']) => set({ brand }),
+        saturation: DEFAULT_NEBKIT_SATURATION,
+        setSaturation: (saturation: NebkitProviderProps['saturation']) => set({ saturation }),
         borderRadiusSize: DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
         setBorderRadiusSize: (borderRadiusSize: NebkitProviderProps['borderRadiusSize']) => set({ borderRadiusSize }),
         rippleMode: DEFAULT_NEBKIT_RIPPLE_MODE,
@@ -52,15 +55,18 @@ export const useAppStore = create<AppStore>()(
         setShowAppJump: (showAppJump: boolean) => set({ showAppJump }),
         showAppSettings: false,
         setShowAppSettings: (showAppSettings: boolean) => set({ showAppSettings }),
+        flipGlobalThemeOnExamples: true,
+        setFlipGlobalThemeOnExamples: flipGlobalThemeOnExamples => set({ flipGlobalThemeOnExamples }),
       }) as AppStore,
     {
       name: `${LIB_PREFIX}.app`,
       partialize: state => ({
         theme: state.theme,
-        examplesTheme: state.examplesTheme,
         brand: state.brand,
+        saturation: state.saturation,
         borderRadiusSize: state.borderRadiusSize,
         rippleMode: state.rippleMode,
+        flipGlobalThemeOnExamples: state.flipGlobalThemeOnExamples,
       }),
     }
   )

@@ -11,9 +11,9 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
     jsx: (
       <>
         <Callout content="Callout text content" />
-        <Spacer blockSize="20px" />
+        <Spacer blockSize="md" />
         <Callout content="Callout text content" variant="outline" />
-        <Spacer blockSize="20px" />
+        <Spacer blockSize="md" />
         <Callout content="Callout text content" variant="soft-outline" />
       </>
     ),
@@ -23,9 +23,9 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
     jsx: (
       <>
         <Callout content="Callout text content" status="success" />
-        <Spacer blockSize="20px" />
+        <Spacer blockSize="md" />
         <Callout content="Callout text content" variant="outline" status="success" />
-        <Spacer blockSize="20px" />
+        <Spacer blockSize="md" />
         <Callout content="Callout text content" variant="soft-outline" status="success" />
       </>
     ),
@@ -35,9 +35,9 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
     jsx: (
       <>
         <Callout content="Callout text content" status="warning" />
-        <Spacer blockSize="20px" />
+        <Spacer blockSize="md" />
         <Callout content="Callout text content" variant="outline" status="warning" />
-        <Spacer blockSize="20px" />
+        <Spacer blockSize="md" />
         <Callout content="Callout text content" variant="soft-outline" status="warning" />
       </>
     ),
@@ -47,9 +47,9 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
     jsx: (
       <>
         <Callout content="Callout text content" status="error" />
-        <Spacer blockSize="20px" />
+        <Spacer blockSize="md" />
         <Callout content="Callout text content" variant="outline" status="error" />
-        <Spacer blockSize="20px" />
+        <Spacer blockSize="md" />
         <Callout content="Callout text content" variant="soft-outline" status="error" />
       </>
     ),

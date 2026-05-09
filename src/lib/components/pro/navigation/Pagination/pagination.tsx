@@ -1,8 +1,7 @@
 import { useCallback, useMemo } from 'react'
 
 import { Box, Button, Flex, Icon, Link, Segment } from 'lib/components'
-import { BUTTON_SIZE_CONFIG } from 'lib/components/core/controls/Button'
-import { IconName } from 'lib/definitions'
+import { CONTROL_SIZE_TOKENS, IconName } from 'lib/definitions'
 
 import {
   PaginationProps,
@@ -93,7 +92,7 @@ export const Pagination = ({
                 disabled={disabled}
                 bold={active}
                 selected={active}
-                surface={active ? 'elevated' : undefined}
+                elevated={active}
               >
                 {!iconName ? item.page : undefined}
               </Button>
@@ -126,9 +125,8 @@ export const Pagination = ({
                   intent={intent}
                   color={color}
                   disabled
-                  blockSize={BUTTON_SIZE_CONFIG[size || 'md'].blockSize}
-                  paddingLeft={BUTTON_SIZE_CONFIG[size || 'md'].paddingLeft}
-                  paddingRight={BUTTON_SIZE_CONFIG[size || 'md'].paddingRight}
+                  blockSize={CONTROL_SIZE_TOKENS[size || 'md'].blockSize}
+                  paddingInline={CONTROL_SIZE_TOKENS[size || 'md'].paddingInline}
                 >
                   <Flex tagAttrs={{ style: { blockSize: 'inherit' } }} alignItems="center">
                     <Icon name="ellipsis" />

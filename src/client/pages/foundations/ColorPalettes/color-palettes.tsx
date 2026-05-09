@@ -20,8 +20,8 @@ export default () => {
           <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
         ))}
       </Select>
-      <Spacer blockSize="50px" />
-      <Flex flexDirection="column" alignItems="stretch" rowGap="20px">
+      <Spacer blockSize="lg" />
+      <Flex flexDirection="column" alignItems="stretch" rowGap="sm">
         {arr.map(n => {
           return (
             <Flex.Item key={n} flexGrow="1">
@@ -29,7 +29,7 @@ export default () => {
               <Box
                 drawable
                 variant="outline"
-                intent="tertiary"
+                intent="muted"
                 brand={brand}
                 tagAttrs={{ style: { backgroundColor: `hsl(var(--h) var(--s) var(--l-${n}))` } }}
                 blockSize="50px"
@@ -38,7 +38,7 @@ export default () => {
           )
         })}
       </Flex>
-      <Spacer blockSize="15px" />
+      <Spacer blockSize="sm" />
     </Box>
   )
 }

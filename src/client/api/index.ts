@@ -1,3 +1,4 @@
+export * from './useAskAssistant'
 export * from './useCancelPaidPlan'
 export * from './useCheckoutPaidPlan'
 export * from './useConnectToDiscord'

@@ -18,7 +18,7 @@ export const AccountDeactivationSection = ({
         data, disconnects any linked services and signs you out immediately. Your email becomes free to register a new account in
         the future.
       </Text>
-      <Spacer blockSize="30px" />
+      <Spacer blockSize="md" />
       <AccountDeactivationForm userEmail={userEmail} userPlan={userPlan} handleDeactivateSuccess={handleDeactivateSuccess} />
     </Section>
   )

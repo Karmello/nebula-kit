@@ -14,6 +14,8 @@ const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
     features: [
       'supports flat items and expandable categories for hierarchical navigation',
       'allows single or multiple categories to be expanded at once',
+    ],
+    guidelines: [
       'designed for use in sidebar layouts such as SplitView.Side',
       'intentionally opinionated and optimized for sidebar navigation, it is not intended as a general-purpose menu component',
     ],
@@ -24,6 +26,7 @@ const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
   examples: SIDE_NAV_EXAMPLES_META,
   props: SIDE_NAV_PROPS_META,
   changelog: {
+    '0.9.0': ['exposed selected prop on SideNav.Item via Button'],
     '0.8.0': ['changed elevated prop to surface on SideNav.Item'],
     '0.2.3': ['released'],
   },

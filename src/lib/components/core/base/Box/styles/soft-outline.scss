@@ -25,13 +25,20 @@
         color: var(--text-active);
         background-color: var(--bg-active);
       }
+    }
 
-      // selected
-      &[data-neb-box-selected='true'] {
-        border-color: var(--border-selected) !important;
-        color: var(--text-selected) !important;
-        background-color: var(--bg-selected) !important;
-      }
+    // selected
+    &[data-neb-box-surface='selected'] {
+      border-color: var(--border-selected) !important;
+      color: var(--text-selected) !important;
+      background-color: var(--bg-selected) !important;
+    }
+
+    // dividing
+    &[data-neb-box-surface='dividing'] {
+      border-color: var(--border-dividing) !important;
+      color: var(--text-dividing) !important;
+      background-color: var(--bg-dividing) !important;
     }
 
     // focus ring

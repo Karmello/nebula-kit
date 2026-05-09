@@ -1,12 +1,16 @@
 import { HtmlTagProps } from 'lib/components'
-import { IconName } from 'lib/definitions'
+import { IconName, TShirtSize } from 'lib/definitions'
 import { BoxProps } from 'lib/components/core/base/Box'
 
-export const DEFAULT_ICON_SIZE: string = '16px'
+export const DEFAULT_ICON_SIZE: IconProps['size'] = 'sm'
+
+export const ICON_SIZES = ['sm', 'md', 'lg', 'xl', '2xl'] as const satisfies TShirtSize[]
+
+export type IconSize = (typeof ICON_SIZES)[number] | string
 
 type IconOwnProps = {
   name?: IconName
-  size?: string
+  size?: IconSize
   intent?: BoxProps['intent']
   color?: BoxProps['color']
 }

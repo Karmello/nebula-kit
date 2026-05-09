@@ -1,24 +1,19 @@
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
-import { Button, Flex, Image, Link, Spacer, Text } from 'lib/components'
+import { Button, Flex, Image, Link, Spacer, Text, Tooltip } from 'lib/components'
 
 export const Hero = () => {
   const navigateTo = useNavigateTo()
 
   return (
-    <Flex
-      columnGap="25px"
-      rowGap="50px"
-      alignItems="center"
-      flexDirection={{ base: 'column', md: 'row', lg: 'column', xl: 'row' }}
-    >
-      <Flex.Item>
+    <Flex columnGap="md" rowGap="xl" alignItems="center" flexDirection={{ base: 'column', md: 'row', lg: 'column', xl: 'row' }}>
+      <Flex.Item flex="1">
         <Text typography="h6">
           React UI system built on composition and prop inheritance, with strict rules governing component appearance and
           behavior. Designed to reduce UI entropy and keep interfaces consistent and maintainable as products grow over time.
         </Text>
-        <Spacer blockSize="30px" />
-        <Flex gap="10px" flexWrap="wrap" justifyContent={{ base: 'center', md: 'flex-start' }}>
+        <Spacer blockSize="lg" />
+        <Flex gap="xs" flexWrap="wrap" justifyContent={{ base: 'center', md: 'flex-start' }}>
           <Link
             href={PageKey.playground}
             onClick={() => {
@@ -41,7 +36,18 @@ export const Hero = () => {
           </Link>
         </Flex>
       </Flex.Item>
-      <Image src="/captain-nebula.webp" inlineSize="225px" blockSize="225px" alt="Captain Nebula" fetchPriority="high" />
+      <Flex.Item>
+        <Link
+          href={PageKey.assistant}
+          onClick={() => {
+            navigateTo(PageKey.assistant)
+          }}
+        >
+          <Tooltip content="Go to AI assistant" minInlineSize={150} maxInlineSize={250}>
+            <Image src="/captain-nebula.webp" inlineSize="225px" blockSize="225px" alt="Captain Nebula" fetchPriority="high" />
+          </Tooltip>
+        </Link>
+      </Flex.Item>
     </Flex>
   )
 }

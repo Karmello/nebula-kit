@@ -1,6 +1,13 @@
-import { Select, Table } from 'lib/components'
+import { Box, Reveal, Select, Table, Tabs } from 'lib/components'
 
 export const COMPONENT_TEMPLATES = {
+  Reveal: (props: any) => (
+    <Reveal {...props}>
+      <Box blockSize="80px" padding="20px">
+        Hidden by default. Revealed with motion when the moment feels right.
+      </Box>
+    </Reveal>
+  ),
   Select: (props: any) => (
     <Select {...props}>
       {Array.from({ length: 10 }, (v, k) => (
@@ -9,6 +16,30 @@ export const COMPONENT_TEMPLATES = {
         </Select.Option>
       ))}
     </Select>
+  ),
+  Tabs: (props: any) => (
+    <Tabs {...props}>
+      <Tabs.Tab value={1} inlineSize="100px">
+        First
+      </Tabs.Tab>
+      <Tabs.Tab value={2} inlineSize="100px">
+        Second
+      </Tabs.Tab>
+      <Tabs.Tab value={3} inlineSize="100px">
+        Third
+      </Tabs.Tab>
+      <Tabs.Tab value={4} inlineSize="100px">
+        Fourth
+      </Tabs.Tab>
+      <Tabs.Tab value={5} inlineSize="100px">
+        Fifth
+      </Tabs.Tab>
+      <Tabs.Panel value={1}>This is the first tab content.</Tabs.Panel>
+      <Tabs.Panel value={2}>This is the second tab content.</Tabs.Panel>
+      <Tabs.Panel value={3}>This is the third tab content.</Tabs.Panel>
+      <Tabs.Panel value={4}>This is the fourth tab content.</Tabs.Panel>
+      <Tabs.Panel value={5}>This is the fifth tab content.</Tabs.Panel>
+    </Tabs>
   ),
   Table: (props: any) => (
     <Table {...props}>

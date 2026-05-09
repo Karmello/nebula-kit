@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { NebkitProviderProps } from 'lib/components'
-import { COLORS, THEMES } from 'lib/definitions'
+import { SATURATIONS, THEMES } from 'lib/definitions'
 
 import {
   NEBKIT_BORDER_RADIUS_SIZES,
@@ -9,6 +9,7 @@ import {
   DEFAULT_NEBKIT_THEME,
   DEFAULT_NEBKIT_RIPPLE_MODE,
   NEBKIT_RIPPLE_MODES,
+  DEFAULT_NEBKIT_SATURATION,
 } from 'lib/components/core/utility/NebkitProvider'
 
 const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = {
@@ -26,7 +27,6 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = 
     options: ['BoxColor'],
     defaultValue: DEFAULT_NEBKIT_BRAND,
     description: 'Global brand color used as the primary accent across components.',
-    tooltip: COLORS,
   },
   lockGlobalScroll: {
     options: ['boolean'],
@@ -37,8 +37,13 @@ const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = 
     defaultValue: DEFAULT_NEBKIT_RIPPLE_MODE,
     description: 'Controls how visible the ripple interaction effect is across components.',
   },
+  saturation: {
+    options: SATURATIONS,
+    defaultValue: DEFAULT_NEBKIT_SATURATION,
+    description: 'Global color saturation profile used across NebulaKit components.',
+  },
   theme: {
-    options: THEMES as unknown as string[],
+    options: THEMES,
     defaultValue: DEFAULT_NEBKIT_THEME,
     description: 'Global theme.',
   },

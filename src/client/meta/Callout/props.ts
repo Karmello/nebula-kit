@@ -4,7 +4,6 @@ import {
   DEFAULT_CALLOUT_STATUS,
   DEFAULT_CALLOUT_VARIANT,
   DEFAULT_CALLOUT_SIZE,
-  CALLOUT_CONFIG,
   CALLOUT_STATUSES,
   CALLOUT_VARIANTS,
   CALLOUT_SIZES,
@@ -24,8 +23,6 @@ const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
   heading: {
     description: 'Text displayed as the title of the Callout. Overrides the default heading associated with the selected status.',
     options: ['string'],
-    defaultValue: CALLOUT_CONFIG[DEFAULT_CALLOUT_STATUS].heading,
-    isResponsive: false,
   },
   intent: {
     ...BOX_PROPS_META.intent,
@@ -40,7 +37,6 @@ const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
     options: CALLOUT_STATUSES,
     defaultValue: DEFAULT_CALLOUT_STATUS,
     description: 'Defines the type of message being communicated.',
-    tooltip: CALLOUT_STATUSES,
   },
   tag: HTML_TAG_PROPS_META.tag,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,

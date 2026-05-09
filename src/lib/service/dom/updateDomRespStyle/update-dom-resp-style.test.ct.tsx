@@ -39,3 +39,67 @@ test('responsive inline styles update with breakpoint changes', async ({ mount, 
   await page.setViewportSize({ width: 1200, height: 800 })
   await expect(box).toHaveCSS('padding', '16px')
 })
+
+test('user inline style overrides system style on mount', async ({ mount, page }) => {
+  await mount(
+    <Box tagAttrs={{ id: 'box', style: { padding: '20px' } }} padding="8px">
+      Box
+    </Box>
+  )
+
+  const box = page.locator('#box')
+
+  await expect(box).toHaveCSS('padding', '20px')
+})
+
+test('user inline style persists across responsive updates', async ({ mount, page }) => {
+  await page.setViewportSize({ width: 375, height: 800 })
+
+  await mount(
+    <Box tagAttrs={{ id: 'box', style: { padding: '20px' } }} padding={{ base: '8px', md: '16px' }}>
+      Box
+    </Box>
+  )
+
+  const box = page.locator('#box')
+
+  // initial
+  await expect(box).toHaveCSS('padding', '20px')
+
+  // resize → should still be user value
+  await page.setViewportSize({ width: 800, height: 800 })
+  await expect(box).toHaveCSS('padding', '20px')
+})
+
+test('system styles still update when no user override exists', async ({ mount, page }) => {
+  await page.setViewportSize({ width: 375, height: 800 })
+
+  await mount(
+    <Box tagAttrs={{ id: 'box' }} padding={{ base: '8px', md: '16px' }}>
+      Box
+    </Box>
+  )
+
+  const box = page.locator('#box')
+
+  await expect(box).toHaveCSS('padding', '8px')
+
+  await page.setViewportSize({ width: 800, height: 800 })
+  await expect(box).toHaveCSS('padding', '16px')
+})
+
+test('removing system prop does not remove user inline style', async ({ mount, page }) => {
+  const component = await mount(
+    <Box tagAttrs={{ id: 'box', style: { padding: '20px' } }} padding="8px">
+      Box
+    </Box>
+  )
+
+  const box = page.locator('#box')
+
+  await expect(box).toHaveCSS('padding', '20px')
+
+  await component.update(<Box tagAttrs={{ id: 'box', style: { padding: '20px' } }}>Box</Box>)
+
+  await expect(box).toHaveCSS('padding', '20px')
+})

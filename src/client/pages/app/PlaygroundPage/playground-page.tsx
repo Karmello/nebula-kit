@@ -1,5 +1,8 @@
+import { useEffect } from 'react'
+
 import { useAppStore } from 'client/store'
 import { Box, Flex, Section, Spacer, SplitView } from 'lib/components'
+import { LIB_PREFIX } from 'lib/definitions'
 
 import {
   ComponentSelect,
@@ -13,30 +16,39 @@ import {
   PredefinedExamples,
 } from './components'
 
+import { getInitialState } from './store/get-initial-state'
+
 export const PlaygroundPage = () => {
   const theme = useAppStore(state => state.theme)
+
+  useEffect(() => {
+    const key = `${LIB_PREFIX}.playground`
+    if (!localStorage.getItem(key)) {
+      localStorage.setItem(key, JSON.stringify({ state: getInitialState() }))
+    }
+  }, [])
 
   return (
     <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} overflowY="hidden">
       <Section heading="Playground" iconName="shapes">
-        <Spacer blockSize="10px" />
+        <Spacer blockSize="xs" />
         <SplitView sidePosition="right">
           {({ mode, setSideOpen }) => {
             return (
               <>
                 <SplitView.Main>
                   <SplitView.MainBar>
-                    <Flex flexWrap="wrap" gap="8px">
-                      <Flex flexWrap="wrap" gap="8px">
+                    <Flex flexWrap="wrap" gap="xs">
+                      <Flex flexWrap="wrap" gap="xs">
                         <TogglePropsButton />
                         <PredefinedExamples />
                       </Flex>
                       <DocsButton />
                     </Flex>
                   </SplitView.MainBar>
-                  <Spacer blockSize="30px" />
+                  <Spacer blockSize="md" />
                   <RenderPanel />
-                  <Spacer blockSize="50px" />
+                  <Spacer blockSize="lg" />
                   <PropsViewer
                     handleSideVisibility={() => {
                       if (mode === 'overlay') setSideOpen(true)
@@ -49,12 +61,12 @@ export const PlaygroundPage = () => {
                   inlineSize="320px"
                 >
                   <Box padding={{ base: '10px', lg: '0px' }} paddingLeft={{ lg: '30px' }}>
-                    <Flex flexDirection="column" alignItems="stretch" rowGap="25px">
+                    <Flex flexDirection="column" alignItems="stretch" rowGap="md">
                       <Flex.Item>
                         <ComponentSelect />
                       </Flex.Item>
                       <Flex.Item>
-                        <Flex flexDirection="column" alignItems="stretch" rowGap="10px">
+                        <Flex flexDirection="column" alignItems="stretch" rowGap="xs">
                           <Flex.Item>
                             <PropSelect />
                           </Flex.Item>

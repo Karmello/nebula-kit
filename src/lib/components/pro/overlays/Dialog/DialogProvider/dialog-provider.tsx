@@ -1,10 +1,10 @@
 import { createContext, useContext, ReactNode } from 'react'
 
-import { BoxIntent } from 'lib/components/core/base/Box/definitions'
+import { BoxIntent, BoxProps } from 'lib/components/core/base/Box/definitions'
 
 type DialogContextValue = {
   intent: BoxIntent
-  padding: string
+  padding: BoxProps['padding']
 }
 
 const DialogContext = createContext<DialogContextValue | undefined>(undefined)

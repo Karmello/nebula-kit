@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
 
+import { resolveSizeValue } from 'lib/helpers'
+
 import { DEFAULT_ICON_SIZE } from '../definitions'
 import { Icon } from '..'
 
@@ -15,8 +17,8 @@ describe('<Icon />', () => {
     render(<Icon tagAttrs={{ 'data-testid': 'icon' }} name="search" />)
     const el = screen.getByTestId('icon').querySelector('svg')
     expect(el).toHaveStyle({
-      width: DEFAULT_ICON_SIZE,
-      height: DEFAULT_ICON_SIZE,
+      width: resolveSizeValue(DEFAULT_ICON_SIZE),
+      height: resolveSizeValue(DEFAULT_ICON_SIZE),
     })
   })
 

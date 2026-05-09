@@ -21,7 +21,7 @@ const FORM_ACTION_BUTTON_PROPS_META: ComponentMeta<FormActionButtonProps>['props
     defaultValue: `${DEFAULT_BUTTON_INTENT}, ${DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT} for submit`,
   },
   onClick: {
-    options: ['event => void'],
+    options: ['e => void'],
     description: 'Callback fired when the button is clicked.',
   },
   order: FLEX_ITEM_PROPS_META.order,

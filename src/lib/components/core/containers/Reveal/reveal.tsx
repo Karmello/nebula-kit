@@ -33,6 +33,8 @@ export const Reveal = <T extends RevealTag = 'div'>({
       borderRadius="var(--neb-border-radius)"
       overflow="hidden"
       maxInlineSize="100%"
+      surface="dividing"
+      disabled={disabled}
     >
       <Flex flexDirection="column" alignItems="stretch">
         <Button

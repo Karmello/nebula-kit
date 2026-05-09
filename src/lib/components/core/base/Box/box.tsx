@@ -3,10 +3,10 @@ import { ElementType, ComponentRef, ComponentProps, PropsWithoutRef, useLayoutEf
 import classNames from 'classnames'
 
 import { BoxProps, HtmlTag } from 'lib/components'
-import { ThemeProvider, BrandProvider, useThemeContext, useBrandContext } from 'lib/components/core/internal'
-import { withPrefix } from 'lib/helpers'
-import { useScreen } from 'lib/hooks'
 import { updateDomRespStyle, updateDomRespDataset, updateDomStaticDataset } from 'lib/service'
+import { ThemeProvider, BrandProvider, useThemeContext, useBrandContext } from 'lib/components/core/internal'
+import { withPrefix, resolveSizeValue } from 'lib/helpers'
+import { useScreen } from 'lib/hooks'
 
 import './styles/box.scss'
 
@@ -16,16 +16,17 @@ export const Box = <T extends ElementType = 'div'>({
   tagAttrs,
   tagRef,
   drawable,
-  surface,
+  elevated,
   theme,
   brand,
   color,
   variant,
   intent,
   interactive,
-  selected,
+  surface,
   disabled,
   activeOnFocus,
+  hidden,
   opacity,
   visibility,
   textAlign,
@@ -82,7 +83,11 @@ export const Box = <T extends ElementType = 'div'>({
   const themeCtx = useThemeContext()
   const brandCtx = useBrandContext()
 
-  const finalTheme = theme ?? themeCtx?.theme
+  const inheritedTheme = themeCtx?.theme
+  const resolvedTheme = theme ?? inheritedTheme
+
+  const finalTheme = resolvedTheme === 'flipped' ? (inheritedTheme === 'dark' ? 'light' : 'dark') : resolvedTheme
+
   const ctxBrand = brandCtx?.brand
   const finalBrand = brand ?? ctxBrand
   const finalColor = color ?? finalBrand
@@ -134,31 +139,31 @@ export const Box = <T extends ElementType = 'div'>({
       overflowX,
       overflowY,
       position,
-      inset,
-      top,
-      right,
-      bottom,
-      left,
-      blockSize,
-      minBlockSize,
-      maxBlockSize,
-      inlineSize,
-      minInlineSize,
-      maxInlineSize,
-      padding,
-      paddingInline,
-      paddingBlock,
-      paddingTop,
-      paddingRight,
-      paddingBottom,
-      paddingLeft,
-      margin,
-      marginInline,
-      marginBlock,
-      marginTop,
-      marginRight,
-      marginBottom,
-      marginLeft,
+      inset: inset !== undefined ? resolveSizeValue(inset, 'shorthand') : undefined,
+      top: top !== undefined ? resolveSizeValue(top) : undefined,
+      right: right !== undefined ? resolveSizeValue(right) : undefined,
+      bottom: bottom !== undefined ? resolveSizeValue(bottom) : undefined,
+      left: left !== undefined ? resolveSizeValue(left) : undefined,
+      blockSize: blockSize !== undefined ? resolveSizeValue(blockSize) : undefined,
+      minBlockSize: minBlockSize !== undefined ? resolveSizeValue(minBlockSize) : undefined,
+      maxBlockSize: maxBlockSize !== undefined ? resolveSizeValue(maxBlockSize) : undefined,
+      inlineSize: inlineSize !== undefined ? resolveSizeValue(inlineSize) : undefined,
+      minInlineSize: minInlineSize !== undefined ? resolveSizeValue(minInlineSize) : undefined,
+      maxInlineSize: maxInlineSize !== undefined ? resolveSizeValue(maxInlineSize) : undefined,
+      padding: padding !== undefined ? resolveSizeValue(padding) : undefined,
+      paddingInline: paddingInline !== undefined ? resolveSizeValue(paddingInline) : undefined,
+      paddingBlock: paddingBlock !== undefined ? resolveSizeValue(paddingBlock) : undefined,
+      paddingTop: paddingTop !== undefined ? resolveSizeValue(paddingTop) : undefined,
+      paddingRight: paddingRight !== undefined ? resolveSizeValue(paddingRight) : undefined,
+      paddingBottom: paddingBottom !== undefined ? resolveSizeValue(paddingBottom) : undefined,
+      paddingLeft: paddingLeft !== undefined ? resolveSizeValue(paddingLeft) : undefined,
+      margin: margin !== undefined ? resolveSizeValue(margin, 'shorthand') : undefined,
+      marginInline: marginInline !== undefined ? resolveSizeValue(marginInline) : undefined,
+      marginBlock: marginBlock !== undefined ? resolveSizeValue(marginBlock) : undefined,
+      marginTop: marginTop !== undefined ? resolveSizeValue(marginTop) : undefined,
+      marginRight: marginRight !== undefined ? resolveSizeValue(marginRight) : undefined,
+      marginBottom: marginBottom !== undefined ? resolveSizeValue(marginBottom) : undefined,
+      marginLeft: marginLeft !== undefined ? resolveSizeValue(marginLeft) : undefined,
     })
   }, [
     bp,
@@ -216,8 +221,9 @@ export const Box = <T extends ElementType = 'div'>({
       color: finalColor,
       variant,
       intent,
+      hidden,
     })
-  }, [bp, finalTheme, finalColor, variant, intent])
+  }, [bp, finalTheme, finalColor, variant, intent, hidden])
 
   return (
     <ThemeProvider theme={finalTheme}>
@@ -232,9 +238,9 @@ export const Box = <T extends ElementType = 'div'>({
               disabled,
               ...updateDomStaticDataset('Box', {
                 drawable,
-                surface,
+                elevated,
                 interactive,
-                selected,
+                surface,
                 disabled,
                 activeOnFocus,
               }),

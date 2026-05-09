@@ -35,7 +35,7 @@ export const FormLabel = ({
       >
         {children}
       </Text>
-      <Spacer blockSize="3px" />
+      <Spacer blockSize="3xs" />
     </>
   )
 }

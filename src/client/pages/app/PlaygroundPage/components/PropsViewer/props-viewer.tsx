@@ -16,8 +16,8 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
   return (
     <>
       <Text bold>Props table</Text>
-      <Spacer blockSize="8px" />
-      <Table layout="fixed" intent="neutral" paddingBlock="5px" paddingInline="5px">
+      <Spacer blockSize="xs" />
+      <Table layout="fixed" intent="neutral" paddingBlock="3xs" paddingInline="xs">
         <Table.Body intent="muted">
           {Object.keys(props)
             .sort()

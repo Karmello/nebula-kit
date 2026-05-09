@@ -4,10 +4,12 @@ import { PORTAL_PLACEMENTS } from 'lib/components/core/utility/Portal'
 
 import {
   DEFAULT_TOOLTIP_INTENT,
+  DEFAULT_TOOLTIP_MODE,
   DEFAULT_TOOLTIP_OFFSET,
   DEFAULT_TOOLTIP_PADDING,
   DEFAULT_TOOLTIP_PLACEMENT,
   DEFAULT_TOOLTIP_VARIANT,
+  TOOLTIP_MODES,
   TOOLTIP_VARIANTS,
 } from 'lib/components/pro/overlays/Tooltip'
 
@@ -40,6 +42,11 @@ const TOOLTIP_PROPS_META: ComponentMeta<TooltipProps>['props'] = {
     isRequired: true,
     isResponsive: false,
   },
+  mode: {
+    options: TOOLTIP_MODES,
+    defaultValue: DEFAULT_TOOLTIP_MODE,
+    description: 'Controls which interaction opens the tooltip.',
+  },
   offset: {
     options: ['number'],
     defaultValue: String(DEFAULT_TOOLTIP_OFFSET),
@@ -56,7 +63,6 @@ const TOOLTIP_PROPS_META: ComponentMeta<TooltipProps>['props'] = {
     defaultValue: DEFAULT_TOOLTIP_PLACEMENT,
     description:
       'Preferred position of the tooltip relative to its trigger element. The position gets auto-adjusted so the tooltip stays visible.',
-    tooltip: PORTAL_PLACEMENTS,
   },
   tagAttrs: BOX_PROPS_META.tagAttrs,
   tagRef: BOX_PROPS_META.tagRef,

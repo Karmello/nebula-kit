@@ -19,10 +19,9 @@ const LINK_PROPS_META: ComponentMeta<LinkProps>['props'] = {
     options: LINK_TARGETS,
     defaultValue: DEFAULT_LINK_TARGET,
     description: 'Specifies where to open the linked document, following the standard HTML target attribute behavior.',
-    tooltip: LINK_TARGETS,
   },
   onClick: {
-    options: ['event => void'],
+    options: ['e => void'],
     description: 'Callback fired when the component is clicked. Automatically prevents default navigation when provided.',
   },
 }

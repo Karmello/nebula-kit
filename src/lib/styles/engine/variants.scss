@@ -4,7 +4,13 @@
     --bg-hover: hsl(var(--h) var(--s) var(--main-l-hover));
     --bg-active: hsl(var(--h) var(--s) var(--main-l-active));
     --bg-selected: hsl(var(--h) var(--s) var(--main-l-selected));
+    --bg-dividing: hsl(var(--h) var(--s) var(--main-l-dividing));
     --bg-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.5);
+
+    --text: hsl(var(--h) var(--s) var(--l-25));
+    --text-active: hsl(var(--h) var(--s) var(--l-25));
+    --text-selected: hsl(var(--h) var(--s) var(--l-25));
+    --text-disabled: hsl(var(--h) var(--s) var(--l-25) / 0.25);
 
     --loader: hsl(var(--h) var(--s) var(--l-25));
 
@@ -16,12 +22,14 @@
     --border-hover: hsl(var(--h) var(--s) var(--main-l-hover));
     --border-active: hsl(var(--h) var(--s) var(--main-l-active));
     --border-selected: hsl(var(--h) var(--s) var(--main-l-selected));
+    --border-dividing: hsl(var(--h) var(--s) var(--main-l-dividing));
     --border-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.5);
     --border-focused: hsl(var(--h) var(--s) var(--l-25));
 
     --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-hover)) var(--main-fill), transparent);
     --bg-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-active)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
     --bg-selected: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-selected)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
+    --bg-dividing: transparent;
 
     --text-disabled: hsl(var(--h) var(--s) var(--l-14) / 0.25);
 
@@ -35,6 +43,7 @@
     --border-hover: hsl(var(--h) var(--s) var(--main-l-hover));
     --border-active: hsl(var(--h) var(--s) var(--main-l-active));
     --border-selected: hsl(var(--h) var(--s) var(--main-l-selected));
+    --border-dividing: hsl(var(--h) var(--s) var(--main-l-dividing));
     --border-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.5);
     --border-focused: hsl(var(--h) var(--s) var(--l-25));
 
@@ -42,11 +51,13 @@
     --text-hover: hsl(var(--h) var(--s) var(--main-l-hover));
     --text-active: hsl(var(--h) var(--s) var(--main-l-active));
     --text-selected: hsl(var(--h) var(--s) var(--main-l-selected));
+    --text-dividing: hsl(var(--h) var(--s) var(--main-l-dividing));
     --text-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.25);
 
     --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-hover)) var(--main-fill), transparent);
     --bg-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-active)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
     --bg-selected: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-selected)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
+    --bg-dividing: transparent;
 
     --loader: hsl(var(--h) var(--s) var(--main-primary-l));
 
@@ -57,7 +68,8 @@
     --text: hsl(var(--h) var(--s) var(--main-l));
     --text-hover: hsl(var(--h) var(--s) var(--main-l-hover));
     --text-active: hsl(var(--h) var(--s) var(--main-l-active));
-    --text-selected: hsl(var(--h) var(--s) var(--main-l-active));
+    --text-selected: hsl(var(--h) var(--s) var(--main-l-selected));
+    --text-dividing: hsl(var(--h) var(--s) var(--main-l-dividing));
     --text-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.25);
 
     --loader: hsl(var(--h) var(--s) var(--main-primary-l));

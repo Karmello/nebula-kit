@@ -7,7 +7,7 @@ export default () => {
       <Text intent="neutral" bold>
         NebulaKit works with Vite out of the box.
       </Text>
-      <Spacer blockSize="15px" />
+      <Spacer blockSize="sm" />
       <Text intent="neutral">
         No loaders, plugins or additional configuration are required. Just install the package and start importing components.
         Vite handles ESM, TypeScript and CSS natively, so everything "just works" the moment you pull NebulaKit into your project.
@@ -25,16 +25,16 @@ npm install @nebula-kit-private/pro`}
       <CodeSnippet
         lang="tsx"
         code={`import { NebkitProvider } from '@nebula-kit/core'
-\t
+
 import '@nebula-kit/core/styles.css'
 import '@nebula-kit-private/pro/styles.css'
-\t
+
 export default () => {
   return <NebkitProvider theme="dark"><App /></NebkitProvider>
 }`}
         description="Then wrap your entire App with NebkitProvider and import styles:"
       />
-      <Spacer blockSize="40px" />
+      <Spacer blockSize="lg" />
       <Text>
         That's it - no setup friction, no config files, no bundler pitfalls. Vite gives you the smoothest NebulaKit experience
         right out of the box.

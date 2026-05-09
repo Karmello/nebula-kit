@@ -23,6 +23,7 @@ const GRID_META: ComponentMeta<GridProps> = {
   props: GRID_PROPS_META,
   examples: GRID_EXAMPLES_META,
   changelog: {
+    '0.9.0': ['added support for predefined size scale values on gap-related props'],
     '0.2.3': ['released'],
   },
 }

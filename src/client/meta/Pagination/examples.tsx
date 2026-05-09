@@ -48,14 +48,14 @@ const PAGINATION_EXAMPLES_META: ComponentMeta<PaginationProps>['examples'] = [
     description: 'Basic controlled pagination.',
     jsx: <Example1 />,
     code: `const [page, setPage] = useState<number>(1)
-\t
+
 return <Pagination currentPage={page} totalPages={10} onChange={setPage} />`,
   },
   {
     description: 'Pagination with routing.',
     jsx: <Example2 />,
     code: `const [page, setPage] = useState<number>(1)
-\t
+
 return (
   <Pagination
     variant="solid"
@@ -75,7 +75,7 @@ return (
     description: 'Pagination with extended controls.',
     jsx: <Example3 />,
     code: `const [page, setPage] = useState<number>(1)
-\t
+
 return (
   <Pagination
     variant="outline"

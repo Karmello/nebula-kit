@@ -51,7 +51,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
 
   return (
     <Box tag={tag} tagAttrs={tagAttrs} tagRef={tagRef} overflowX="auto">
-      <Flex gap="8px" alignItems="center">
+      <Flex gap="xs" alignItems="center">
         {levels.slice(0, currentPath.length + 1).map((level, index) => {
           const scrollToIndex = levels[index].findIndex(node => node.value === currentPath[index])
 
@@ -88,7 +88,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                   </>
                 )}
               </DropdownList>
-              {index < levels.length - 1 ? <Icon name="chevron-right" color={color} intent="primary" /> : null}
+              {index < levels.length - 1 ? <Icon name="chevron-right" color={color} intent="primary" size="sm" /> : null}
             </Fragment>
           )
         })}

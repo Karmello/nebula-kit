@@ -1,31 +1,17 @@
-import { cloneElement, isValidElement, useId, useRef, useState } from 'react'
+import { cloneElement, isValidElement, useEffect, useId, useRef, useState } from 'react'
 
 import { Box, Floating, FloatingResolved, Portal, Text } from 'lib/components'
 
 import {
   DEFAULT_TOOLTIP_INTENT,
+  DEFAULT_TOOLTIP_MODE,
   DEFAULT_TOOLTIP_OFFSET,
   DEFAULT_TOOLTIP_PADDING,
   DEFAULT_TOOLTIP_PLACEMENT,
   DEFAULT_TOOLTIP_VARIANT,
-  TooltipInputModality,
   TooltipOpenReason,
   TooltipProps,
 } from './definitions'
-
-let lastInputModality: TooltipInputModality = null
-const getLastInputModality = () => lastInputModality
-
-const onKeyDown = (e: KeyboardEvent) => {
-  if (e.key === 'Tab') lastInputModality = 'keyboard'
-}
-const onMouseDown = () => {
-  lastInputModality = 'mouse'
-}
-if (typeof document !== 'undefined') {
-  document.addEventListener('keydown', onKeyDown)
-  document.addEventListener('mousedown', onMouseDown)
-}
 
 export const Tooltip = ({
   // HtmlTag
@@ -44,47 +30,67 @@ export const Tooltip = ({
   // own
   content,
   placement = DEFAULT_TOOLTIP_PLACEMENT,
+  mode = DEFAULT_TOOLTIP_MODE,
   offset = DEFAULT_TOOLTIP_OFFSET,
   variant = DEFAULT_TOOLTIP_VARIANT,
 }: TooltipProps) => {
   const [open, setOpen] = useState(false)
   const [openReason, setOpenReason] = useState<TooltipOpenReason | null>(null)
-
   const [floatingResolved, setFloatingResolved] = useState<FloatingResolved>()
 
-  const dismissedByEsc = useRef(false)
   const localRef = useRef(null)
+
   const triggerRef = tagRef || localRef
 
   const tooltipId = useId()
 
-  const eventHandlers = {
-    onMouseEnter: () => {
-      if (!open) {
-        setOpen(true)
-        setOpenReason('mouse')
-      }
-    },
-    onMouseLeave: () => {
-      setOpen(false)
-      setOpenReason(null)
-    },
-    onFocus: () => {
-      if (getLastInputModality() === 'keyboard' && !dismissedByEsc.current) {
-        setOpen(true)
-        setOpenReason('keyboard')
-      }
-    },
-    onBlur: () => {
-      dismissedByEsc.current = false
-      setOpen(false)
-      setOpenReason(null)
-    },
-    onKeyDown: (e: { key: string }) => {
-      if (e.key === 'Escape' && open && openReason === 'keyboard') {
-        dismissedByEsc.current = true
+  useEffect(() => {
+    if (!open || mode !== 'click') return
+
+    const onDocumentMouseDown = (e: MouseEvent) => {
+      const target = e.target as Node
+
+      if (triggerRef.current && !triggerRef.current.contains(target)) {
         setOpen(false)
         setOpenReason(null)
+      }
+    }
+
+    const onDocumentKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false)
+        setOpenReason(null)
+      }
+    }
+
+    document.addEventListener('mousedown', onDocumentMouseDown)
+    document.addEventListener('keydown', onDocumentKeyDown)
+
+    return () => {
+      document.removeEventListener('mousedown', onDocumentMouseDown)
+      document.removeEventListener('keydown', onDocumentKeyDown)
+    }
+  }, [open, mode, triggerRef])
+
+  const eventHandlers = {
+    onMouseEnter: () => {
+      if (mode === 'hover' && !open) {
+        setOpen(true)
+        setOpenReason('hover')
+      }
+    },
+
+    onMouseLeave: () => {
+      if (openReason === 'hover') {
+        setOpen(false)
+        setOpenReason(null)
+      }
+    },
+
+    onClick: () => {
+      if (mode === 'click') {
+        setOpen(prev => !prev)
+        setOpenReason(prev => (prev === 'click' ? null : 'click'))
       }
     },
   }
@@ -98,6 +104,10 @@ export const Tooltip = ({
             ...(children as any).props.tagAttrs,
             ...eventHandlers,
             'aria-describedby': open ? tooltipId : undefined,
+            style: {
+              ...(children as any).props.tagAttrs?.style,
+              cursor: mode === 'click' ? 'pointer' : undefined,
+            },
           },
         })
       ) : (
@@ -108,12 +118,17 @@ export const Tooltip = ({
             ...tagAttrs,
             ...eventHandlers,
             'aria-describedby': open ? tooltipId : undefined,
+            style: {
+              ...tagAttrs?.style,
+              cursor: mode === 'click' ? 'pointer' : undefined,
+            },
           }}
           display="inline-block"
         >
           {children}
         </Box>
       )}
+
       {open ? (
         <Floating
           anchorRef={triggerRef}
@@ -127,13 +142,18 @@ export const Tooltip = ({
               if (prev && prev.placement === resolved.placement && prev.blockSize === resolved.blockSize) {
                 return prev
               }
+
               return resolved
             })
           }}
         >
           <Portal anchorRef={triggerRef} placement={floatingResolved?.placement || placement} offset={offset}>
             <Box
-              tagAttrs={{ role: 'tooltip', id: tooltipId, 'aria-hidden': !open }}
+              tagAttrs={{
+                role: 'tooltip',
+                id: tooltipId,
+                'aria-hidden': !open,
+              }}
               drawable
               color={color}
               intent="neutral"

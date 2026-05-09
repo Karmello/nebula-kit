@@ -30,21 +30,11 @@ html[data-theme='dark'],
   --neb-background: hsl(var(--h) var(--s) var(--l-0));
   --neb-text: hsl(var(--h) var(--s) var(--l-25));
   --neb-focus-ring-color: hsl(var(--h) var(--s) var(--l-25));
+}
 
-  --solid-secondary-text-l: var(--l-25);
-  --solid-primary-text-l: var(--l-25);
-  --solid-inverse-text-l: var(--l-0);
-  --solid-secondary-elevated-text-l: var(--l-0);
-  --solid-primary-elevated-text-l: var(--l-0);
-  --solid-tertiary-elevated-selected-text-l: var(--l-25);
-
-  --solid-secondary-text-disabled-alpha: 0.25;
-  --solid-primary-text-disabled-alpha: 0.25;
-  --solid-inverse-text-disabled-alpha: 0.75;
-
-  --solid-secondary-loader-l: var(--l-25);
-  --solid-primary-loader-l: var(--l-25);
-  --solid-inverse-loader-l: var(--l-0);
+.neb-box[data-neb-box-theme='dark'] {
+  --light-l: var(--l-25);
+  --dark-l: var(--l-0);
 
   --fill-multiplier: 1.5;
 }

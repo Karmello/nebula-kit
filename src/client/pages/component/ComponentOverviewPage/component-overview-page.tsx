@@ -15,56 +15,57 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const navigateTo = useNavigateTo()
 
   const {
-    overview: { name, title, description, features, composedOf, topLevelTags, slots, hooks, readMoreLink },
+    overview: { name, title, description, features, guidelines, composedOf, topLevelTags, slots, hooks, readMoreLink },
     examples,
     props,
   } = meta
 
   const content = (
-    <Flex flexDirection="column" alignItems="stretch" gap="30px">
+    <Flex flexDirection="column" alignItems="stretch" gap="lg">
       <Box>
         <Text typography="lead" bold>
           {title}
         </Text>
         {examples?.[0] ? (
-          <Box marginBlock="15px">
+          <Box marginBlock="sm">
             <CodeSnippet lang="tsx" code={examples[0].code || convertElemToString(examples[0].jsx)} />
           </Box>
         ) : null}
       </Box>
       {description ? (
-        <Section size="xs" heading="Description" iconName="arrow-down">
+        <Section size="sm" heading="Description" iconName="arrow-down">
           <Text>{description}</Text>
         </Section>
       ) : null}
       {features ? <ListWithHeading heading="Features" items={features} /> : null}
+      {guidelines ? <ListWithHeading heading="Guidelines" items={guidelines} /> : null}
       {composedOf ? (
-        <Section size="xs" heading="Composed of" iconName="arrow-down">
+        <Section size="sm" heading="Composed of" iconName="arrow-down">
           <ListWithChips items={composedOf} color="red" />
         </Section>
       ) : null}
       {topLevelTags ? (
-        <Section size="xs" heading={topLevelTags.length > 1 ? 'Root tags' : 'Root tag'} iconName="arrow-down">
+        <Section size="sm" heading={topLevelTags.length > 1 ? 'Root tags' : 'Root tag'} iconName="arrow-down">
           <ListWithChips items={topLevelTags as string[]} color="amber" />
         </Section>
       ) : null}
       {props ? (
-        <Section size="xs" heading="Props" iconName="arrow-down">
+        <Section size="sm" heading="Props" iconName="arrow-down">
           <ListWithChips items={Object.keys(props).sort((a, b) => a.localeCompare(b))} />
         </Section>
       ) : null}
       {slots ? (
-        <Section size="xs" heading="Slots" iconName="arrow-down">
+        <Section size="sm" heading="Slots" iconName="arrow-down">
           <ListWithChips items={slots} color="gray" />
         </Section>
       ) : null}
       {hooks ? (
-        <Section size="xs" heading="Hooks" iconName="arrow-down">
+        <Section size="sm" heading="Hooks" iconName="arrow-down">
           <ListWithChips items={hooks} color="green" />
         </Section>
       ) : null}
       {readMoreLink ? (
-        <Box marginTop="20px">
+        <Box marginTop="sm">
           <Link
             href={readMoreLink.href}
             onClick={() => {
@@ -89,7 +90,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       ) : (
         content
       )}
-      <Spacer blockSize="60px" />
+      <Spacer blockSize="2xl" />
     </>
   )
 }

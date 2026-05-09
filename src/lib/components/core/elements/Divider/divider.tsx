@@ -4,13 +4,7 @@ import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box/definitions'
 
-import {
-  DEFAULT_DIVIDER_SURFACE,
-  DEFAULT_DIVIDER_INTENT,
-  DEFAULT_DIVIDER_MARGIN_BLOCK,
-  DEFAULT_DIVIDER_OPACITY,
-  DividerProps,
-} from './definitions'
+import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_MARGIN_BLOCK, DividerProps } from './definitions'
 
 import './divider.scss'
 
@@ -24,8 +18,8 @@ export const Divider = ({
   marginBlock = DEFAULT_DIVIDER_MARGIN_BLOCK,
   marginTop,
   marginBottom,
-  opacity = DEFAULT_DIVIDER_OPACITY,
-  surface = DEFAULT_DIVIDER_SURFACE,
+  elevated,
+  surface,
 }: DividerProps) => {
   return (
     <Box
@@ -44,7 +38,7 @@ export const Divider = ({
       marginBlock={marginBlock}
       marginTop={marginTop}
       marginBottom={marginBottom}
-      opacity={opacity}
+      elevated={elevated}
       surface={surface}
     />
   )

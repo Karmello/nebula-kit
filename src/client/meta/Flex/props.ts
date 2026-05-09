@@ -1,4 +1,4 @@
-import { ComponentMeta } from 'client/definitions'
+import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { FlexProps } from 'lib/components'
 
 import {
@@ -8,6 +8,7 @@ import {
   CSS_FLEX_DISPLAY,
   CSS_FLEX_JUSTIFY_CONTENT,
   CSS_FLEX_WRAP,
+  TSHIRT_SIZES,
 } from 'lib/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -19,14 +20,12 @@ const FLEX_PROPS_META: ComponentMeta<FlexProps>['props'] = {
     isResponsive: true,
     description: 'Aligns rows of items along the cross axis when wrapping is enabled.',
     link: true,
-    tooltip: CSS_FLEX_ALIGN_CONTENT,
   },
   alignItems: {
     options: CSS_FLEX_ALIGN_ITEMS,
     isResponsive: true,
     description: 'Aligns items within each row along the cross axis.',
     link: true,
-    tooltip: CSS_FLEX_ALIGN_ITEMS,
   },
   children: {
     ...HTML_TAG_PROPS_META.children,
@@ -34,7 +33,7 @@ const FLEX_PROPS_META: ComponentMeta<FlexProps>['props'] = {
     description: 'Flex.Item or any React node.',
   },
   columnGap: {
-    options: ['CSS'],
+    options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Defines horizontal spacing between columns of children.',
     link: true,
@@ -50,17 +49,15 @@ const FLEX_PROPS_META: ComponentMeta<FlexProps>['props'] = {
     isResponsive: true,
     description: 'Sets the flow of children along the main axis.',
     link: true,
-    tooltip: CSS_FLEX_DIRECTION,
   },
   flexWrap: {
     options: CSS_FLEX_WRAP,
     isResponsive: true,
     description: 'Controls whether children stay on one line or wrap onto multiple lines.',
     link: true,
-    tooltip: CSS_FLEX_WRAP,
   },
   gap: {
-    options: ['CSS'],
+    options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Defines spacing between children on both axes.',
     link: true,
@@ -70,10 +67,9 @@ const FLEX_PROPS_META: ComponentMeta<FlexProps>['props'] = {
     isResponsive: true,
     description: 'Distributes children along the main axis.',
     link: true,
-    tooltip: CSS_FLEX_JUSTIFY_CONTENT,
   },
   rowGap: {
-    options: ['CSS'],
+    options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Defines vertical spacing between rows of children.',
     link: true,

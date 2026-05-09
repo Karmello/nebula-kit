@@ -23,6 +23,8 @@ export const FlexItem = <T extends ElementType = 'div'>({
   tag,
   tagAttrs,
   tagRef,
+  // Box
+  hidden,
 }: FlexItemProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
 
@@ -49,6 +51,7 @@ export const FlexItem = <T extends ElementType = 'div'>({
         } as PropsWithoutRef<ComponentProps<T>>
       }
       tagRef={tagRef || ref}
+      hidden={hidden}
     >
       {children}
     </Box>

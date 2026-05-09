@@ -1,9 +1,9 @@
 import { useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
-import { Box, Slide } from 'lib/components'
-import { BUTTON_SIZE_CONFIG } from 'lib/components/core/controls/Button'
-import { withPrefix } from 'lib/helpers'
+import { Box, BoxProps, Slide } from 'lib/components'
+import { resolveSizeValue, withPrefix } from 'lib/helpers'
+import { CONTROL_SIZE_TOKENS } from 'lib/definitions'
 
 import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SIZE, SWITCH_BORDER_MULTIPLIER, SwitchProps } from './definitions'
 
@@ -42,10 +42,14 @@ export const Switch = ({
     onChange?.(checked)
   }
 
-  const thumbBlockSize = `calc(${BUTTON_SIZE_CONFIG[size || 'md'].blockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})`
+  const resolvedBlockSize = resolveSizeValue(CONTROL_SIZE_TOKENS[size || 'md'].blockSize)
+
+  const thumbBlockSize =
+    `calc(${resolvedBlockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})` as BoxProps['blockSize']
 
   return (
     <Box
+      key={String(size)}
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('switch'), tagAttrs?.className),
@@ -64,21 +68,21 @@ export const Switch = ({
         }}
         drawable
         interactive
-        surface={animatedChecked && !disabled ? 'elevated' : undefined}
-        selected={animatedChecked && !disabled}
+        elevated={animatedChecked && !disabled}
+        surface={animatedChecked && !disabled ? 'selected' : undefined}
         disabled={disabled}
         variant="solid"
         intent={intent}
         color={color}
-        blockSize={BUTTON_SIZE_CONFIG[size || 'md'].blockSize}
-        inlineSize={`calc(${BUTTON_SIZE_CONFIG[size || 'md'].blockSize} * 2 - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})`}
+        blockSize={CONTROL_SIZE_TOKENS[size || 'md'].blockSize}
+        inlineSize={`calc(${resolvedBlockSize} * 2 - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})`}
       />
       <Slide
         tagAttrs={{
           className: withPrefix('switch-thumb'),
           style: {
             top: `calc(var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`,
-            left: `calc(${BUTTON_SIZE_CONFIG[size || 'md'].blockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`,
+            left: `calc(${resolvedBlockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`,
           },
         }}
         from="left"

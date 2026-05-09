@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { PageKey } from 'client/definitions'
 
@@ -7,6 +7,7 @@ type Args = {
   method?: string
   headers?: HeadersInit
   minLoadingTime?: number
+  timeout?: number
   disableAutoLogout?: boolean
 }
 
@@ -22,6 +23,7 @@ export const useMakeApiRequest = <TData, TError>({
   method = 'GET',
   headers = {},
   minLoadingTime = 350,
+  timeout,
   disableAutoLogout = false,
 }: Args) => {
   const [data, setData] = useState<TData>(null)
@@ -29,40 +31,70 @@ export const useMakeApiRequest = <TData, TError>({
   const [code, setCode] = useState<number>(null)
   const [isMakingRequest, setIsMakingRequest] = useState<boolean>(false)
 
+  const controllerRef = useRef<AbortController | null>(null)
+
   const sendRequest = useCallback(async (body?: object): Promise<UseMakeApiRequestRes<TData, TError>> => {
     if (isMakingRequest) return
+
+    const controller = new AbortController()
+    controllerRef.current = controller
+
+    const timeoutId =
+      timeout && timeout > 0
+        ? setTimeout(() => {
+            controller.abort()
+          }, timeout)
+        : null
 
     setIsMakingRequest(true)
     setCode(null)
 
     const start = Date.now()
 
-    const res = await fetch(process.env.API_URL + path, {
-      method,
-      headers,
-      body: body ? JSON.stringify(body) : undefined,
-      credentials: 'include',
-    })
+    try {
+      const res = await fetch(process.env.API_URL + path, {
+        method,
+        headers,
+        body: body ? JSON.stringify(body) : undefined,
+        credentials: 'include',
+        signal: controller.signal,
+      })
 
-    if (minLoadingTime) {
-      const remaining = minLoadingTime - (Date.now() - start)
-      if (remaining > 0) {
-        await new Promise(resolve => setTimeout(resolve, remaining))
+      if (minLoadingTime) {
+        const remaining = minLoadingTime - (Date.now() - start)
+        if (remaining > 0) {
+          await new Promise(resolve => setTimeout(resolve, remaining))
+        }
       }
-    }
 
-    const json = await res.json()
-    setCode(res.status)
+      const json = await res.json()
+      setCode(res.status)
 
-    if (res.ok) {
-      setData(json)
+      if (res.ok) {
+        setData(json)
+        setIsMakingRequest(false)
+        return { ok: res.ok, data: json, error: null, code: res.status }
+      } else {
+        setError(json)
+        setIsMakingRequest(false)
+        return { ok: res.ok, data: null, error: json, code: res.status }
+      }
+    } catch (err) {
+      return {
+        ok: false,
+        data: null,
+        error: { message: err.name === 'AbortError' ? 'Request aborted' : 'Request failed' } as TError,
+        code: 0,
+      }
+    } finally {
+      if (timeoutId) clearTimeout(timeoutId)
       setIsMakingRequest(false)
-      return { ok: res.ok, data: json, error: null, code: res.status }
-    } else {
-      setError(json)
-      setIsMakingRequest(false)
-      return { ok: res.ok, data: null, error: json, code: res.status }
+      controllerRef.current = null
     }
+  }, [])
+
+  const cancelRequest = useCallback(() => {
+    controllerRef.current?.abort()
   }, [])
 
   useEffect(() => {
@@ -71,5 +103,5 @@ export const useMakeApiRequest = <TData, TError>({
     }
   }, [code])
 
-  return { data, error, code, isMakingRequest, sendRequest }
+  return { data, error, code, isMakingRequest, sendRequest, cancelRequest }
 }

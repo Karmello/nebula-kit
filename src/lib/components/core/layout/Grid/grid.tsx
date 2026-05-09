@@ -2,7 +2,7 @@ import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef 
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { withPrefix } from 'lib/helpers'
+import { withPrefix, resolveSizeValue } from 'lib/helpers'
 import { updateDomRespStyle } from 'lib/service'
 import { useScreen } from 'lib/hooks'
 
@@ -41,9 +41,9 @@ export const Grid = <T extends GridTag = 'div'>({
       gridAutoFlow,
       placeItems,
       placeContent,
-      gap,
-      rowGap,
-      columnGap,
+      gap: gap !== undefined ? resolveSizeValue(gap) : undefined,
+      rowGap: rowGap !== undefined ? resolveSizeValue(rowGap) : undefined,
+      columnGap: columnGap !== undefined ? resolveSizeValue(columnGap) : undefined,
     })
   }, [
     bp,

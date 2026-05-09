@@ -28,7 +28,7 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
             tagRef={tagRef}
             {...paddings}
           >
-            <Flex alignItems="center" flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'} gap="15px">
+            <Flex alignItems="center" flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'} gap="sm">
               <Flex.Item>
                 <Button
                   tagAttrs={{
@@ -37,14 +37,14 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
                   }}
                   iconName={getToggleIconName(sidePosition, sideOpen)}
                   intent="tertiary"
-                  size="sm"
+                  size="xs"
                 />
               </Flex.Item>
               <Flex.Item flex="1" tagAttrs={{ style: { minInlineSize: '0px' } }}>
                 {slotsByName['SplitView.MainBar']}
               </Flex.Item>
             </Flex>
-            <Spacer blockSize="10px" />
+            <Spacer blockSize="xs" />
             {allNonSlots}
           </Box>
         )

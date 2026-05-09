@@ -1,4 +1,4 @@
-import { ComponentMeta } from 'client/definitions'
+import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { ResizeProps } from 'lib/components'
 
 import { RESIZE_PROPERTIES, DEFAULT_RESIZE_DURATION, DEFAULT_RESIZE_EASING } from 'lib/components/core/motion/Resize'
@@ -17,7 +17,7 @@ const RESIZE_PROPS_META: ComponentMeta<ResizeProps>['props'] = {
     description: 'Animation duration in milliseconds.',
   },
   easing: {
-    options: ['CSS'],
+    options: [DOCS_CSS_LABEL],
     defaultValue: DEFAULT_RESIZE_EASING,
     description: 'Timing function for the animation.',
   },

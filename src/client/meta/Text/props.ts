@@ -1,4 +1,4 @@
-import { ComponentMeta } from 'client/definitions'
+import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import {
   DEFAULT_TEXT_TYPOGRAPHY,
@@ -33,6 +33,10 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     ...BOX_PROPS_META.disabled,
     description: 'Applies the disabled visual state and disables interaction when rendered as an <a> tag.',
   },
+  fontSize: {
+    options: [DOCS_CSS_LABEL],
+    description: 'Sets the fontSize value, bypassing typography and scale.',
+  },
   iconName: {
     ...WITH_ICON_PROPS_META['iconName'],
     isRequired: false,
@@ -42,6 +46,10 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
   italic: {
     options: ['boolean'],
     description: 'Toggles italic styling.',
+  },
+  lineHeight: {
+    options: [DOCS_CSS_LABEL],
+    description: 'Sets the lineHeight value, bypassing typography and scale.',
   },
   noWrap: {
     options: ['boolean'],
@@ -71,7 +79,6 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     defaultValue: DEFAULT_TEXT_TYPOGRAPHY,
     description:
       'Applies a predefined typography style from the design system, controlling tag, fontSize and lineHeight together.',
-    tooltip: TEXT_TYPOGRAPHY,
   },
   underline: {
     options: ['boolean'],

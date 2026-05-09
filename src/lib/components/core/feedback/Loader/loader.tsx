@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { LoaderProps, LOADER_SIZE_CONFIG, DEFAULT_LOADER_SIZE, DEFAULT_LOADER_ACTIVE } from './definitions'
+import { LoaderProps, DEFAULT_LOADER_SIZE, DEFAULT_LOADER_ACTIVE } from './definitions'
 
 import './loader.scss'
 
@@ -29,14 +29,15 @@ export const Loader = ({
         ...tagAttrs,
         className: classNames(withPrefix('loader'), tagAttrs?.className || ''),
         style: {
-          '--neb-loader-color': color ? `hsl(var(--h) var(--s) var(--main-primary-l))` : 'var(--loader)',
+          ...tagAttrs?.style,
+          '--neb-loader-color': color ? 'hsl(var(--h) var(--s) var(--main-primary-l))' : 'var(--loader)',
         } as CSSProperties,
       }}
       tagRef={tagRef}
       drawable
       variant="ghost"
-      blockSize={LOADER_SIZE_CONFIG[size || 'md']}
-      inlineSize={LOADER_SIZE_CONFIG[size || 'md']}
+      blockSize={size}
+      inlineSize={size}
       color={color}
       position={centered ? 'absolute' : undefined}
       margin={centered ? 'auto' : undefined}

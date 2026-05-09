@@ -1,6 +1,6 @@
 {
   "name": "@nebula-kit/core",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "React UI system built on composition and prop inheritance, with strict rules governing component appearance and behavior. Designed to reduce UI entropy and keep interfaces consistent and maintainable as products grow over time.",
   "homepage": "https://nebulakit.dev",
   "funding": {
@@ -80,6 +80,12 @@
     "pack:pro": "npm pack ./dist/pro --pack-destination ./dist && mv dist/*private-pro-*.tgz dist/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz",
     "upload:pro:dev": "node ./scripts/update-local-versioning-json.js && aws s3 cp ./versioning.json s3://nebula-kit-pro-dev && aws s3 cp dist/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz s3://nebula-kit-pro-dev/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz",
     "upload:pro": "node ./scripts/update-local-versioning-json.js && aws s3 cp ./versioning.json s3://nebula-kit-pro && aws s3 cp dist/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz s3://nebula-kit-pro/nebula-kit-pro-$(node -p \"require('./package.json').version\").tgz",
+    "assistant:generate:foundations": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./scripts/ignore-assets-loader.js' tsx ./assistant/scripts/generate-foundations/index.tsx",
+    "assistant:generate:docs": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./scripts/ignore-assets-loader.js' tsx ./assistant/scripts/generate-component-docs/index.ts",
+    "assistant:generate:releases": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./scripts/ignore-assets-loader.js' tsx ./assistant/scripts/generate-releases/index.ts",
+    "assistant:generate:faq": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./scripts/ignore-assets-loader.js' tsx ./assistant/scripts/generate-faq/index.ts",
+    "assistant:generate:marketing": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./scripts/ignore-assets-loader.js' tsx ./assistant/scripts/generate-marketing-data/index.ts",
+    "assistant:generate": "rimraf assistant/generated && yarn assistant:generate:foundations && yarn assistant:generate:docs && yarn assistant:generate:releases && yarn assistant:generate:faq && yarn assistant:generate:marketing",
     "publish:core": "yarn dist:core && npm publish ./dist/core --access public",
     "publish:pro": "yarn dist:pro && yarn pack:pro && yarn upload:pro",
     "publish:gh": "yarn dist && npm publish ./dist/core --registry=https://npm.pkg.github.com && npm publish ./dist/pro --registry=https://npm.pkg.github.com"
@@ -101,7 +107,9 @@
     "react-element-to-jsx-string": "^17.0.1",
     "react-hook-form": "7.66.0",
     "react-is": "^19.1.1",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.9.1",
+    "remark-gfm": "^4.0.1",
     "shiki": "^3.12.0",
     "zustand": "^5.0.8"
   },

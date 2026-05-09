@@ -10,6 +10,7 @@ import 'lib/styles/index.scss'
 const Node = () => {
   const theme = useAppStore(state => state.theme)
   const brand = useAppStore(state => state.brand)
+  const saturation = useAppStore(state => state.saturation)
   const borderRadiusSize = useAppStore(state => state.borderRadiusSize)
   const rippleMode = useAppStore(state => state.rippleMode)
   const showAppJump = useAppStore(state => state.showAppJump)
@@ -20,6 +21,7 @@ const Node = () => {
         <NebkitProvider
           theme={theme}
           brand={brand}
+          saturation={saturation}
           borderRadiusSize={borderRadiusSize}
           rippleMode={rippleMode}
           lockGlobalScroll={showAppJump}

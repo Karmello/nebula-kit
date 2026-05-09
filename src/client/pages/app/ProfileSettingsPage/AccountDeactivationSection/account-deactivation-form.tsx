@@ -35,7 +35,7 @@ export const AccountDeactivationForm = ({
         }}
         handleDeactivateSuccess={handleDeactivateSuccess}
       />
-      <Flex flexDirection="column" rowGap="7px">
+      <Flex flexDirection="column" rowGap="xs">
         {!deactivateSectionEnabled ? (
           <Text intent="secondary" color="gray" italic>
             * You need to unsubscribe from your paid plan first
