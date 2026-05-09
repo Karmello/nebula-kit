@@ -8,10 +8,8 @@ const SPLIT_VIEW_SIDE_META: ComponentMeta<SplitViewSideProps> = {
     bundle: 'pro',
     name: 'SplitView.Side',
     title: 'Defines the side panel region of the SplitView layout.',
-    features: [
-      'typically used for navigation, menus or supplementary content',
-      'traps keyboard focus when the side panel is rendered in overlay mode',
-    ],
+    features: ['traps keyboard focus when the side panel is rendered in overlay mode'],
+    guidelines: ['typically used for navigation, menus or supplementary content'],
     composedOf: ['Box', 'Flex', 'Button', 'Resize', 'FocusTrap'],
     topLevelTags: ['aside'],
   },

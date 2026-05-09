@@ -8,7 +8,7 @@ const TABLE_CELL_META: ComponentMeta<TableCellProps> = {
     bundle: 'core',
     name: 'Table.Cell',
     title: 'Represents a single cell within a table row.',
-    features: ['should be used inside Table.Row'],
+    guidelines: ['should be used inside Table.Row'],
     composedOf: ['Box'],
     topLevelTags: ['td'],
   },

@@ -22,7 +22,7 @@ const TABLE_META: ComponentMeta<TableProps> = {
       'provides a semantic table-based layout wrapper',
       'organizes content into rows and columns with header, body and footer sections',
       'supports alignment and sizing of cells for structured data presentation',
-      'Table does not inherit the global border radius and always renders with square corners',
+      'always renders with square corners and does not inherit the global border radius',
     ],
     composedOf: ['Box'],
     topLevelTags: ['table'],

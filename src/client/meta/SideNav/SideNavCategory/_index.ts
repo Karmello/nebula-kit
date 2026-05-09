@@ -11,6 +11,8 @@ const SIDE_NAV_CATEGORY_META: ComponentMeta<SideNavCategoryProps> = {
     features: [
       'acts as a collapsible container for one or more SideNav.Item elements',
       'controls the expand and collapse behavior for its nested items',
+    ],
+    guidelines: [
       'intended exclusively for hierarchical navigation within SideNav',
       'expects only SideNav.Item elements as children',
     ],

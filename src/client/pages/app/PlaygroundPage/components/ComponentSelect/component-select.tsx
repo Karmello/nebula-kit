@@ -15,11 +15,12 @@ export const ComponentSelect = () => {
           content="This list does not include all components, only the ones that best fit the purpose of the Playground."
           minInlineSize={300}
           maxInlineSize={400}
+          mode="click"
         >
           <Icon name="info" size="18px" color="blue" intent="primary" />
         </Tooltip>
       </Flex>
-      <Spacer blockSize="3xs" />
+      <Spacer blockSize="2xs" />
       <Select value={activeComponent} onChange={setActiveComponent} scrollAlign="center">
         {Object.keys(components).map(name => (
           <Select.Option value={name}>{name}</Select.Option>

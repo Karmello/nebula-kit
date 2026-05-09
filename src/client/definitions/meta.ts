@@ -8,6 +8,7 @@ type Overview = {
   title: string
   description?: string
   features?: string[]
+  guidelines?: string[]
   composedOf?: string[]
   topLevelTags?: readonly string[]
   slots?: string[]

@@ -8,7 +8,7 @@ const TABLE_HEADER_CELL_META: ComponentMeta<TableHeaderCellProps> = {
     bundle: 'core',
     name: 'Table.HeaderCell?',
     title: 'Represents a single header cell.',
-    features: ['can be used inside Table.Row or Table.HeaderRow'],
+    guidelines: ['can be used inside Table.Row or Table.HeaderRow'],
     composedOf: ['Box'],
     topLevelTags: ['th'],
   },

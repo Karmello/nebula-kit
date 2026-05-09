@@ -8,11 +8,8 @@ const TOOLBAR_END_META: ComponentMeta<ToolbarEndProps> = {
     bundle: 'pro',
     name: 'Toolbar.End?',
     title: 'Defines the end slot of Toolbar.',
-    features: [
-      'fixed region at the end of the toolbar',
-      'remains visible when the main section is collapsed',
-      'commonly used for user actions, menus or status items',
-    ],
+    features: ['fixed region at the end of the toolbar', 'remains visible when the main section is collapsed'],
+    guidelines: ['commonly used for user actions, menus or status items'],
     composedOf: ['Grid.Item'],
   },
   props: TOOLBAR_END_PROPS_META,

@@ -18,11 +18,12 @@ export const PropSelect = () => {
           content="The props list was also intentionally narrowed to include only those that best fit this context."
           minInlineSize={300}
           maxInlineSize={400}
+          mode="click"
         >
           <Icon name="info" size="18px" color="blue" intent="primary" />
         </Tooltip>
       </Flex>
-      <Spacer blockSize="3xs" />
+      <Spacer blockSize="2xs" />
       <Select value={value} onChange={value => setActiveProp(activeComponent, value)} scrollAlign="center">
         {Object.keys(props)
           .sort()

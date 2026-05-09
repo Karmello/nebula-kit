@@ -14,6 +14,8 @@ const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
     features: [
       'supports flat items and expandable categories for hierarchical navigation',
       'allows single or multiple categories to be expanded at once',
+    ],
+    guidelines: [
       'designed for use in sidebar layouts such as SplitView.Side',
       'intentionally opinionated and optimized for sidebar navigation, it is not intended as a general-purpose menu component',
     ],

@@ -9,7 +9,7 @@ const USE_SNACKBAR_META: ComponentMeta<UseSnackbarShowArgs> = {
     bundle: 'pro',
     name: 'useSnackbar.show()',
     title: 'Programmatic API for triggering snackbar messages.',
-    features: [
+    guidelines: [
       'must be used within a Snackbar provider context',
       'if a Snackbar is already visible, additional calls are ignored',
     ],

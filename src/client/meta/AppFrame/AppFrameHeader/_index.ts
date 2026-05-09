@@ -8,7 +8,7 @@ const APP_FRAME_HEADER_META: ComponentMeta<AppFrameHeaderProps> = {
     bundle: 'core',
     name: 'AppFrame.Header',
     title: 'Defines the top region of AppFrame.',
-    features: ['typically used for navigation, branding or other global actions'],
+    guidelines: ['typically used for navigation, branding or other global actions'],
     composedOf: ['Box'],
     topLevelTags: ['header'],
   },

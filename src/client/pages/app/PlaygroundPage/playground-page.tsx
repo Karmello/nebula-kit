@@ -66,7 +66,7 @@ export const PlaygroundPage = () => {
                         <ComponentSelect />
                       </Flex.Item>
                       <Flex.Item>
-                        <Flex flexDirection="column" alignItems="stretch" rowGap="sm">
+                        <Flex flexDirection="column" alignItems="stretch" rowGap="xs">
                           <Flex.Item>
                             <PropSelect />
                           </Flex.Item>

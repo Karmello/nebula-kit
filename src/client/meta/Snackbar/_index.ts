@@ -14,8 +14,10 @@ const SNACKBAR_META: ComponentMeta<SnackbarProps> = {
       'displays short, non-intrusive status messages without affecting page layout',
       'appears above the UI and automatically hides after a configurable duration',
       'supports six viewport placement regions',
-      'managed by a provider and controlled via the "useSnackbar" hook',
+    ],
+    guidelines: [
       'Snackbar must wrap the application root and should be rendered once at the top level',
+      'managed by a provider and controlled via the "useSnackbar" hook',
     ],
     composedOf: ['Flex', 'Box', 'Callout', 'Button', 'Slide'],
     hooks: ['useSnackbar'],

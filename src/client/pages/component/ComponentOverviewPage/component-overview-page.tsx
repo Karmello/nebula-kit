@@ -15,7 +15,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const navigateTo = useNavigateTo()
 
   const {
-    overview: { name, title, description, features, composedOf, topLevelTags, slots, hooks, readMoreLink },
+    overview: { name, title, description, features, guidelines, composedOf, topLevelTags, slots, hooks, readMoreLink },
     examples,
     props,
   } = meta
@@ -38,6 +38,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
         </Section>
       ) : null}
       {features ? <ListWithHeading heading="Features" items={features} /> : null}
+      {guidelines ? <ListWithHeading heading="Guidelines" items={guidelines} /> : null}
       {composedOf ? (
         <Section size="sm" heading="Composed of" iconName="arrow-down">
           <ListWithChips items={composedOf} color="red" />
