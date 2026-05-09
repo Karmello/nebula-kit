@@ -31,7 +31,7 @@ const includedPages = {
       'StylingIsland',
       'IntentsAndVariants',
       'Typography',
-      'Sizing scale',
+      'SizingScale',
       'Breakpoints',
     ],
   },
@@ -57,7 +57,7 @@ const run = async () => {
       const docs: string[] = []
 
       for (const name of pageNames) {
-        const Page = (Foundations as Record<string, React.ComponentType>)[name]
+        const Page = Foundations[name as never]
 
         if (!Page) {
           console.warn(`Missing page: ${name}`)
