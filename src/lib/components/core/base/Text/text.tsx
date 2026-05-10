@@ -28,6 +28,7 @@ export const Text = <T extends TextTag = 'p'>({
   typography = DEFAULT_TEXT_TYPOGRAPHY,
   fontSize,
   lineHeight,
+  wordBreak,
   bold,
   italic,
   underline,
@@ -46,6 +47,7 @@ export const Text = <T extends TextTag = 'p'>({
         style: {
           fontSize: fontSize ?? TYPOGRAPHY_TOKENS[typography].fontSize,
           lineHeight: lineHeight ?? TYPOGRAPHY_TOKENS[typography].lineHeight,
+          wordBreak,
           ...(clampLines && clampLines > 0
             ? {
                 display: '-webkit-box',

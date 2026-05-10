@@ -1,6 +1,6 @@
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
-import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_SPACE, TEXT_TYPOGRAPHY, TextProps } from 'lib/components/core/base/Text'
+import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_SPACE, TEXT_TYPOGRAPHY, TEXT_WORD_BREAK, TextProps } from 'lib/components/core/base/Text'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
@@ -71,6 +71,10 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
   underline: {
     options: ['boolean'],
     description: 'Toggles underlined styling.',
+  },
+  wordBreak: {
+    options: TEXT_WORD_BREAK,
+    description: 'Controls how words break and wrap when text overflows its container.',
   },
 }
 

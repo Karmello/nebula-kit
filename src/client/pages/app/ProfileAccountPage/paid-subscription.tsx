@@ -2,7 +2,7 @@ import { useLayoutEffect } from 'react'
 
 import { useGetPaymentDetailsUrl, useGetPaymentInfo } from 'client/api'
 import { useAppStore } from 'client/store'
-import { Button, Callout, Flex, Loader, Spacer, Table, Text } from 'lib/components'
+import { Box, Button, Callout, Link, Loader, Section, Spacer, Table, Text } from 'lib/components'
 
 export default ({ enabled }: { enabled: boolean }) => {
   const user = useAppStore(state => state.user)
@@ -20,97 +20,91 @@ export default ({ enabled }: { enabled: boolean }) => {
   if (!enabled) return null
 
   return (
-    <>
-      <Table layout="fixed" intent="neutral" color="blue">
-        <Table.Header paddingInline="0px">
-          <Table.HeaderRow>
-            <Table.HeaderCell colSpan={3} blockSize="50px">
-              <Flex alignItems="center" columnGap="sm">
-                <Text typography="h6" iconName="arrow-down">
-                  Subscription
-                </Text>
-                <Loader active={getPaymentInfo.isMakingRequest} color="blue" size="sm" />
-              </Flex>
-            </Table.HeaderCell>
-          </Table.HeaderRow>
-        </Table.Header>
-        <Table.Body intent="muted" paddingBlock="10px" paddingInline="15px">
-          <Table.Row>
-            <Table.Cell colSpan={1}>
-              <Text>Renews every</Text>
-            </Table.Cell>
-            <Table.Cell colSpan={2} blockSize="60px">
-              <Text bold>{getPaymentInfo.data?.subscription.interval}</Text>
-            </Table.Cell>
-          </Table.Row>
-          {getPaymentInfo.data?.subscription.status && getPaymentInfo.data?.subscription.status !== 'PAST_DUE' ? (
-            <Table.Row>
-              <Table.Cell colSpan={1}>
-                <Text>Amount</Text>
-              </Table.Cell>
-              <Table.Cell colSpan={2} blockSize="60px">
-                <Text bold>{getPaymentInfo.data?.subscription.amount}</Text>
-              </Table.Cell>
-            </Table.Row>
-          ) : null}
-          {getPaymentInfo.data?.subscription.status && getPaymentInfo.data?.subscription.status !== 'PAST_DUE' ? (
-            <Table.Row>
-              <Table.Cell colSpan={1}>
-                <Text>Last payment</Text>
-              </Table.Cell>
-              <Table.Cell colSpan={2} blockSize="60px">
-                <Text bold>
-                  {getPaymentInfo.data?.subscription.lastPayment
-                    ? new Date(getPaymentInfo.data.subscription.lastPayment).toUTCString()
-                    : ''}
-                </Text>
-              </Table.Cell>
-            </Table.Row>
-          ) : null}
-          <Table.Row>
-            <Table.Cell colSpan={1}>
-              <Text>Status</Text>
-            </Table.Cell>
-            <Table.Cell colSpan={2} blockSize="60px">
-              <Text bold>{getPaymentInfo.data?.subscription.status}</Text>
-            </Table.Cell>
-          </Table.Row>
-        </Table.Body>
-        <Table.Footer>
-          <Table.Row>
-            <Table.Cell colSpan={3} textAlign={{ base: 'center', md: 'start' }}>
-              <Button
-                tagAttrs={{
-                  onClick: async () => {
-                    window.location.href = getPaymentDetailsUrl.data.url
-                  },
-                }}
-                size="sm"
-                intent="primary"
-                variant="ghost"
-                color="blue"
-                disabled={!!getPaymentDetailsUrl.error}
-                iconName="arrow-right"
-                iconPlacement="right"
-              >
-                View more details on Stripe
-              </Button>
-            </Table.Cell>
-          </Table.Row>
-        </Table.Footer>
-      </Table>
-      {getPaymentInfo.data?.subscription.status === 'PAST_DUE' ? (
+    <Section heading="Subscription" size="sm" intent="primary" color="blue">
+      <Spacer blockSize="xs" />
+      {!getPaymentInfo.isMakingRequest ? (
         <>
-          <Spacer blockSize="lg" />
-          <Callout
-            size="sm"
-            status="error"
-            heading="Payment issue"
-            content="Your subscription renewal failed. Please update your
+          <Table layout="fixed" intent="neutral">
+            <Table.Body intent="muted" paddingBlock="10px" paddingInline="12px">
+              <Table.Row>
+                <Table.Cell colSpan={1}>
+                  <Text lineHeight={1.2}>Renews every</Text>
+                </Table.Cell>
+                <Table.Cell colSpan={2}>
+                  <Text lineHeight={1.2} wordBreak="break-all">
+                    {getPaymentInfo.data?.subscription.interval}
+                  </Text>
+                </Table.Cell>
+              </Table.Row>
+              {getPaymentInfo.data?.subscription.status && getPaymentInfo.data?.subscription.status !== 'PAST_DUE' ? (
+                <Table.Row>
+                  <Table.Cell colSpan={1}>
+                    <Text lineHeight={1.2}>Amount</Text>
+                  </Table.Cell>
+                  <Table.Cell colSpan={2}>
+                    <Text lineHeight={1.2} wordBreak="break-all">
+                      {getPaymentInfo.data?.subscription.amount}
+                    </Text>
+                  </Table.Cell>
+                </Table.Row>
+              ) : null}
+              {getPaymentInfo.data?.subscription.status && getPaymentInfo.data?.subscription.status !== 'PAST_DUE' ? (
+                <Table.Row>
+                  <Table.Cell colSpan={1}>
+                    <Text lineHeight={1.2}>Last payment</Text>
+                  </Table.Cell>
+                  <Table.Cell colSpan={2}>
+                    <Text lineHeight={1.2} wordBreak="break-all">
+                      {getPaymentInfo.data?.subscription.lastPayment
+                        ? new Date(getPaymentInfo.data.subscription.lastPayment).toUTCString()
+                        : ''}
+                    </Text>
+                  </Table.Cell>
+                </Table.Row>
+              ) : null}
+              <Table.Row>
+                <Table.Cell colSpan={1}>
+                  <Text lineHeight={1.2}>Status</Text>
+                </Table.Cell>
+                <Table.Cell colSpan={2}>
+                  <Text lineHeight={1.2} wordBreak="break-all" bold>
+                    {getPaymentInfo.data?.subscription.status}
+                  </Text>
+                </Table.Cell>
+              </Table.Row>
+            </Table.Body>
+          </Table>
+          <Spacer blockSize="sm" />
+          <Link href={getPaymentDetailsUrl.data?.url} target="_blank">
+            <Button
+              size="xs"
+              intent="primary"
+              color="blue"
+              disabled={!!getPaymentDetailsUrl.error}
+              iconName="external-link"
+              iconPlacement="right"
+            >
+              View details on Stripe
+            </Button>
+          </Link>
+          {getPaymentInfo.data?.subscription.status === 'PAST_DUE' ? (
+            <>
+              <Spacer blockSize="lg" />
+              <Callout
+                size="sm"
+                status="error"
+                heading="Payment issue"
+                content="Your subscription renewal failed. Please update your
               payment method to avoid any interruption."
-          />
+              />
+            </>
+          ) : null}
         </>
-      ) : null}
-    </>
+      ) : (
+        <Box position="relative" blockSize="2xl" drawable variant="solid" intent="muted">
+          <Loader centered active color="blue" size="sm" />
+        </Box>
+      )}
+    </Section>
   )
 }

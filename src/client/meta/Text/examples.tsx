@@ -68,6 +68,16 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
   },
   {
     jsx: (
+      <Text wordBreak="break-word">
+        This text contains a very long unbroken value like
+        user-generated-content-without-natural-spaces-that-would-normally-overflow, so wordBreak allows it to wrap safely inside
+        the container.
+      </Text>
+    ),
+    description: 'Text with controlled word breaking.',
+  },
+  {
+    jsx: (
       <Text>
         This paragraph combines different text styles like
         <Text tag="span" bold space="both">
