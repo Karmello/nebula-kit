@@ -74,7 +74,14 @@ export default ({ pathname }: { pathname: string }) => {
 
   return (
     <Box maxInlineSize="55rem">
-      <Text italic>{new Date(releaseInfo.timestamp).toDateString()}</Text>
+      <Text italic intent="primary" typography="lead">
+        {new Date(releaseInfo.timestamp).toDateString()}
+      </Text>
+      {releaseInfo.headline ? (
+        <Box marginBlock="xs">
+          <Text typography="lead">{releaseInfo.headline}</Text>
+        </Box>
+      ) : null}
       {releaseInfo.changelog?.main ? (
         <>
           <Spacer blockSize="xs" />

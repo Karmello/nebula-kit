@@ -20,11 +20,13 @@ export const RELEASE_INFO: Record<
   ReleaseVersion,
   {
     timestamp: number
+    headline?: string
     changelog?: { main?: string[]; core?: string[]; pro?: string[] }
   }
 > = {
   '0.10.0': {
     timestamp: 1778333299699,
+    headline: 'Typography simplification',
     changelog: {
       main: [
         'removed the compact typography scale to simplify the typography system',
@@ -35,6 +37,7 @@ export const RELEASE_INFO: Record<
   },
   '0.9.0': {
     timestamp: 1778295383512,
+    headline: 'Scale standardization + responsiveness evolution',
     changelog: {
       main: [
         'standardized logical size, margin, padding, gap and inset/offset props to use predefined scale values',
@@ -47,6 +50,7 @@ export const RELEASE_INFO: Record<
   },
   '0.8.0': {
     timestamp: 1777258833132,
+    headline: 'Styling engine rewrite',
     changelog: {
       main: [
         'reduced final CSS bundle size from ~176 KB to ~43 KB',
@@ -63,6 +67,7 @@ export const RELEASE_INFO: Record<
   },
   '0.7.0': {
     timestamp: 1773443646502,
+    headline: 'Color system consolidation',
     changelog: {
       main: [
         'simplified the color system by reducing the palette to nine core colors',
@@ -86,12 +91,14 @@ export const RELEASE_INFO: Record<
   },
   '0.6.0': {
     timestamp: 1770590689376,
+    headline: 'Component refinement',
     changelog: {
       main: ['refined Button sizing'],
     },
   },
   '0.5.0': {
     timestamp: 1770177660907,
+    headline: 'Interaction polish',
     changelog: {
       main: ['improved ripple animation', 'improved focus rings'],
     },
@@ -116,11 +123,14 @@ export const RELEASE_INFO: Record<
   },
   '0.4.0': {
     timestamp: 1769178791000,
+    headline: 'Expansion + DX refinement',
   },
   '0.3.0': {
     timestamp: 1768567158078,
+    headline: 'First advanced/pro ecosystem',
   },
   '0.2.3': {
     timestamp: 1767722681237,
+    headline: 'Initial public foundation',
   },
 }
