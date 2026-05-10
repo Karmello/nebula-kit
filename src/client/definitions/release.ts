@@ -29,6 +29,7 @@ export const RELEASE_INFO: Record<
       main: [
         'removed the compact typography scale to simplify the typography system',
         'refined the typography scale for better readability and visual balance',
+        'exposed typography and sizing scales as reusable CSS custom properties for external styling and custom content',
       ],
     },
   },

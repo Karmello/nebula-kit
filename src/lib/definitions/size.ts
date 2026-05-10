@@ -6,37 +6,87 @@ import { TextTag, TextTypography } from 'lib/components/core/base/Text'
 export const TSHIRT_SIZES = ['3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'] as const
 
 export const SIZING_SCALE: Record<TShirtSize, string> = {
-  '3xs': '2px',
-  '2xs': '4px',
-  xs: '8px',
-  sm: '16px',
-  md: '24px',
-  lg: '32px',
-  xl: '48px',
-  '2xl': '64px',
-  '3xl': '96px',
-  '4xl': '128px',
+  '3xs': 'var(--neb-size-3xs)',
+  '2xs': 'var(--neb-size-2xs)',
+  xs: 'var(--neb-size-xs)',
+  sm: 'var(--neb-size-sm)',
+  md: 'var(--neb-size-md)',
+  lg: 'var(--neb-size-lg)',
+  xl: 'var(--neb-size-xl)',
+  '2xl': 'var(--neb-size-2xl)',
+  '3xl': 'var(--neb-size-3xl)',
+  '4xl': 'var(--neb-size-4xl)',
 }
 
-export const FONT_SIZE_TOKENS: Record<
+export const TYPOGRAPHY_TOKENS: Record<
   TextTypography,
   {
     fontSize: string
-    lineHeight: number | string
+    lineHeight: string
     iconSize: IconSize
     tag: TextTag
   }
 > = {
-  body: { fontSize: '15px', lineHeight: 1.5, iconSize: '16px', tag: 'p' },
-  lead: { fontSize: '17px', lineHeight: 1.4, iconSize: '18px', tag: 'p' },
-  small: { fontSize: '14px', lineHeight: 1.3, iconSize: '13px', tag: 'p' },
-  caption: { fontSize: '11px', lineHeight: 1.4, iconSize: '12px', tag: 'p' },
-  h6: { fontSize: '16px', lineHeight: 1.3, iconSize: '15px', tag: 'h6' },
-  h5: { fontSize: '21px', lineHeight: 1.3, iconSize: '19px', tag: 'h5' },
-  h4: { fontSize: '27px', lineHeight: 1.2, iconSize: '25px', tag: 'h4' },
-  h3: { fontSize: '37px', lineHeight: 1.2, iconSize: '33px', tag: 'h3' },
-  h2: { fontSize: '48px', lineHeight: 1.1, iconSize: '40px', tag: 'h2' },
-  h1: { fontSize: '60px', lineHeight: 1.1, iconSize: '50px', tag: 'h1' },
+  body: {
+    fontSize: 'var(--neb-typography-body-font-size)',
+    lineHeight: 'var(--neb-typography-body-line-height)',
+    iconSize: '16px',
+    tag: 'p',
+  },
+  lead: {
+    fontSize: 'var(--neb-typography-lead-font-size)',
+    lineHeight: 'var(--neb-typography-lead-line-height)',
+    iconSize: '18px',
+    tag: 'p',
+  },
+  small: {
+    fontSize: 'var(--neb-typography-small-font-size)',
+    lineHeight: 'var(--neb-typography-small-line-height)',
+    iconSize: '13px',
+    tag: 'p',
+  },
+  caption: {
+    fontSize: 'var(--neb-typography-caption-font-size)',
+    lineHeight: 'var(--neb-typography-caption-line-height)',
+    iconSize: '12px',
+    tag: 'p',
+  },
+  h6: {
+    fontSize: 'var(--neb-typography-h6-font-size)',
+    lineHeight: 'var(--neb-typography-h6-line-height)',
+    iconSize: '15px',
+    tag: 'h6',
+  },
+  h5: {
+    fontSize: 'var(--neb-typography-h5-font-size)',
+    lineHeight: 'var(--neb-typography-h5-line-height)',
+    iconSize: '19px',
+    tag: 'h5',
+  },
+  h4: {
+    fontSize: 'var(--neb-typography-h4-font-size)',
+    lineHeight: 'var(--neb-typography-h4-line-height)',
+    iconSize: '25px',
+    tag: 'h4',
+  },
+  h3: {
+    fontSize: 'var(--neb-typography-h3-font-size)',
+    lineHeight: 'var(--neb-typography-h3-line-height)',
+    iconSize: '33px',
+    tag: 'h3',
+  },
+  h2: {
+    fontSize: 'var(--neb-typography-h2-font-size)',
+    lineHeight: 'var(--neb-typography-h2-line-height)',
+    iconSize: '40px',
+    tag: 'h2',
+  },
+  h1: {
+    fontSize: 'var(--neb-typography-h1-font-size)',
+    lineHeight: 'var(--neb-typography-h1-line-height)',
+    iconSize: '50px',
+    tag: 'h1',
+  },
 }
 
 export const CONTROL_SIZE_TOKENS: Record<
@@ -53,41 +103,41 @@ export const CONTROL_SIZE_TOKENS: Record<
   '2xs': {
     blockSize: '28px',
     paddingInline: '7px',
-    fontSize: FONT_SIZE_TOKENS.small.fontSize,
-    lineHeight: FONT_SIZE_TOKENS.small.lineHeight,
-    iconSize: FONT_SIZE_TOKENS.small.iconSize,
+    fontSize: TYPOGRAPHY_TOKENS.small.fontSize,
+    lineHeight: TYPOGRAPHY_TOKENS.small.lineHeight,
+    iconSize: TYPOGRAPHY_TOKENS.small.iconSize,
     loaderSize: '12px',
   },
   xs: {
     blockSize: '34px',
     paddingInline: '10px',
-    fontSize: FONT_SIZE_TOKENS.small.fontSize,
-    lineHeight: FONT_SIZE_TOKENS.small.lineHeight,
-    iconSize: FONT_SIZE_TOKENS.small.iconSize,
+    fontSize: TYPOGRAPHY_TOKENS.small.fontSize,
+    lineHeight: TYPOGRAPHY_TOKENS.small.lineHeight,
+    iconSize: TYPOGRAPHY_TOKENS.small.iconSize,
     loaderSize: '14px',
   },
   sm: {
     blockSize: '38px',
     paddingInline: '12px',
-    fontSize: FONT_SIZE_TOKENS.body.fontSize,
-    lineHeight: FONT_SIZE_TOKENS.body.lineHeight,
-    iconSize: FONT_SIZE_TOKENS.body.iconSize,
+    fontSize: TYPOGRAPHY_TOKENS.body.fontSize,
+    lineHeight: TYPOGRAPHY_TOKENS.body.lineHeight,
+    iconSize: TYPOGRAPHY_TOKENS.body.iconSize,
     loaderSize: '16px',
   },
   md: {
     blockSize: '44px',
     paddingInline: '15px',
-    fontSize: FONT_SIZE_TOKENS.body.fontSize,
-    lineHeight: FONT_SIZE_TOKENS.body.lineHeight,
-    iconSize: FONT_SIZE_TOKENS.body.iconSize,
+    fontSize: TYPOGRAPHY_TOKENS.body.fontSize,
+    lineHeight: TYPOGRAPHY_TOKENS.body.lineHeight,
+    iconSize: TYPOGRAPHY_TOKENS.body.iconSize,
     loaderSize: '18px',
   },
   lg: {
     blockSize: '52px',
     paddingInline: '20px',
-    fontSize: FONT_SIZE_TOKENS.body.fontSize,
-    lineHeight: FONT_SIZE_TOKENS.body.lineHeight,
-    iconSize: FONT_SIZE_TOKENS.body.iconSize,
+    fontSize: TYPOGRAPHY_TOKENS.body.fontSize,
+    lineHeight: TYPOGRAPHY_TOKENS.body.lineHeight,
+    iconSize: TYPOGRAPHY_TOKENS.body.iconSize,
     loaderSize: '22px',
   },
 }

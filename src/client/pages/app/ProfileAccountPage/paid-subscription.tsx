@@ -34,7 +34,7 @@ export default ({ enabled }: { enabled: boolean }) => {
             </Table.HeaderCell>
           </Table.HeaderRow>
         </Table.Header>
-        <Table.Body intent="tertiary" paddingBlock="10px" paddingInline="15px">
+        <Table.Body intent="muted" paddingBlock="10px" paddingInline="15px">
           <Table.Row>
             <Table.Cell colSpan={1}>
               <Text>Renews every</Text>
@@ -90,6 +90,8 @@ export default ({ enabled }: { enabled: boolean }) => {
                 variant="ghost"
                 color="blue"
                 disabled={!!getPaymentDetailsUrl.error}
+                iconName="arrow-right"
+                iconPlacement="right"
               >
                 View more details on Stripe
               </Button>

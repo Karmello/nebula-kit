@@ -1,6 +1,7 @@
 @use './palette/_index' as *;
 @use './themes/_index' as *;
-@use './engine/_index';
+@use './engine/_index' as *;
+@use './tokens/_index' as *;
 
 html {
   font-family:
@@ -33,6 +34,9 @@ html.neb-transitions {
 body {
   background: var(--neb-background);
   color: var(--neb-text);
+
+  font-size: var(--neb-typography-body-font-size);
+  line-height: var(--neb-typography-body-line-height);
 
   margin: 0;
   padding: 0;

@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { Box, WithIcon } from 'lib/components'
 import { updateDomStaticDataset } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
-import { FONT_SIZE_TOKENS } from 'lib/definitions'
+import { TYPOGRAPHY_TOKENS } from 'lib/definitions'
 
 import { DEFAULT_TEXT_TYPOGRAPHY, TextTag, TextProps } from './definitions'
 
@@ -38,14 +38,14 @@ export const Text = <T extends TextTag = 'p'>({
 }: TextProps<T>) => {
   return (
     <Box
-      tag={tag || FONT_SIZE_TOKENS[typography].tag}
+      tag={tag || TYPOGRAPHY_TOKENS[typography].tag}
       tagRef={tagRef as any}
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('text'), tagAttrs?.className),
         style: {
-          fontSize: fontSize ?? FONT_SIZE_TOKENS[typography].fontSize,
-          lineHeight: lineHeight ?? FONT_SIZE_TOKENS[typography].lineHeight,
+          fontSize: fontSize ?? TYPOGRAPHY_TOKENS[typography].fontSize,
+          lineHeight: lineHeight ?? TYPOGRAPHY_TOKENS[typography].lineHeight,
           ...(clampLines && clampLines > 0
             ? {
                 display: '-webkit-box',
@@ -72,7 +72,7 @@ export const Text = <T extends TextTag = 'p'>({
         <WithIcon
           iconName={iconName}
           iconPlacement={iconPlacement}
-          iconSize={FONT_SIZE_TOKENS[typography].iconSize}
+          iconSize={TYPOGRAPHY_TOKENS[typography].iconSize}
           customSvgIcon={customSvgIcon}
         >
           {children}

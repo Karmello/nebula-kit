@@ -9,21 +9,42 @@ export default () => {
         The sizing scale defines the set of consistent values used for spacing and dimensions across the system. It is used in
         layout-related props such as logical sizes as well as margin, padding and gap props. It replaces arbitrary CSS values with
         a predictable scale, making layouts easier to reason about and maintain. The scale follows a progressive step pattern,
-        allowing small adjustments at lower values and larger jumps for layout-level spacing.
+        allowing small adjustments at lower values and larger jumps for layout-level spacing. Each sizing token is also exposed as
+        a CSS custom property, allowing the scale to be referenced directly in custom styles and external content.
       </Text>
       <Spacer blockSize="xl" />
       <Table paddingBlock="10px" paddingInline="15px">
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeaderCell>T-shirt size</Table.HeaderCell>
+            <Table.HeaderCell>CSS token name</Table.HeaderCell>
             <Table.HeaderCell>Resolved value</Table.HeaderCell>
           </Table.HeaderRow>
         </Table.Header>
         <Table.Body>
           {Object.keys(SIZING_SCALE).map(key => (
             <Table.Row key={key}>
-              <Table.Cell>{key}</Table.Cell>
-              <Table.Cell>{SIZING_SCALE[key as never]}</Table.Cell>
+              <Table.Cell>
+                <Text intent="primary" bold>
+                  {key}
+                </Text>
+              </Table.Cell>
+              <Table.Cell>
+                <Text italic>
+                  {String(SIZING_SCALE[key as never])
+                    .replace('var(', '')
+                    .replace(')', '')}
+                </Text>
+              </Table.Cell>
+              <Table.Cell>
+                <Text>
+                  {getComputedStyle(document.documentElement).getPropertyValue(
+                    String(SIZING_SCALE[key as never])
+                      .replace('var(', '')
+                      .replace(')', '')
+                  )}
+                </Text>
+              </Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

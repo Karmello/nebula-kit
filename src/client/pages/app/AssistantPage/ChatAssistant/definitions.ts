@@ -20,8 +20,6 @@ Try asking:
 
 ---`
 
-export const CHAT_LINE_HEIGHT = 1.7
-
 export const PROMPT_PLACEHOLDER = 'Ask a question or refine the last answer ...'
 export const PROMPT_ONGOING_REQUEST_TEXT = 'Captain Nebula is thinking ...'
 export const PROMPT_DEFAULT_ROWS = 1
