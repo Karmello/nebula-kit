@@ -17,7 +17,7 @@ export const Preferences = () => {
         <Segment>
           {THEMES.map(key => (
             <Segment.Item key={key}>
-              <Button intent={key === theme ? 'inverse' : 'tertiary'} size="sm" tagAttrs={{ onClick: () => setTheme(key) }}>
+              <Button intent={key === theme ? 'inverse' : 'tertiary'} size="sm" onClick={() => setTheme(key)}>
                 {sentenceCase(key)}
               </Button>
             </Segment.Item>

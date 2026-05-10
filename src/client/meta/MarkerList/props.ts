@@ -1,11 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-
-import {
-  DEFAULT_MARKER_LIST_GAP,
-  MarkerListProps,
-  MARKER_LIST_STYLES,
-  MARKER_LIST_TAGS,
-} from 'lib/components/core/elements/MarkerList'
+import { MarkerListProps, MARKER_LIST_STYLES, MARKER_LIST_TAGS } from 'lib/components/core/elements/MarkerList'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { FLEX_PROPS_META } from '../Flex/props'
@@ -33,10 +27,7 @@ const MARKER_LIST_PROPS_META: ComponentMeta<MarkerListProps>['props'] = {
     isResponsive: false,
     description: 'Defines the marker style used for list items.',
   },
-  gap: {
-    ...FLEX_PROPS_META.rowGap,
-    defaultValue: String(DEFAULT_MARKER_LIST_GAP),
-  },
+  gap: FLEX_PROPS_META.rowGap,
   tag: {
     ...HTML_TAG_PROPS_META.tag,
     options: MARKER_LIST_TAGS,
