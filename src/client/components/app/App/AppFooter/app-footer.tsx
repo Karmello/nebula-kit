@@ -78,7 +78,7 @@ export const AppFooter = () => {
       <Footer.Section>
         <Text bold>Legal information</Text>
         <Divider marginBottom="sm" intent="tertiary" />
-        <MarkerList>
+        <MarkerList gap="0px">
           <MarkerList.Item>
             <Link
               href={`${PageKey.foundations}/other/legal/terms-of-use`}
