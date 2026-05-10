@@ -5,6 +5,7 @@ export const SIDE_NAV_EXPAND_MODES = ['single', 'multiple'] as const
 export const SIDE_NAV_VARIANTS = ['solid', 'ghost'] as const satisfies BoxVariant[]
 
 export const DEFAULT_SIDE_NAV_EXPAND_MODE: SideNavProps['expandMode'] = 'multiple'
+export const DEFAULT_SIDE_NAV_SIZE: SideNavProps['size'] = 'sm'
 
 export type SideNavExpandMode = (typeof SIDE_NAV_EXPAND_MODES)[number]
 export type SideNavVariant = (typeof SIDE_NAV_VARIANTS)[number]
@@ -18,6 +19,6 @@ type PropsFromHtmlTag = Pick<HtmlTagProps<'nav'>, 'tagAttrs' | 'tagRef'> & {
   variant?: SideNavVariant
 }
 
-type PropsFromButton = Pick<ButtonProps<'a'>, 'color' | 'intent'>
+type PropsFromButton = Pick<ButtonProps<'a'>, 'color' | 'intent' | 'size'>
 
 export type SideNavProps = PropsFromHtmlTag & PropsFromButton & SideNavOwnProps

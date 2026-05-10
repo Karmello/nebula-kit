@@ -32,6 +32,7 @@ export const RELEASE_INFO: Record<
         'removed the compact typography scale to simplify the typography system',
         'refined the typography scale for better readability and visual balance',
         'exposed typography and sizing scales as reusable CSS custom properties for external styling and custom content',
+        'fixed slot resolution behavior by distinguishing between strict and optional slot systems, preserving plain text and non-slot children when no required slots are defined',
       ],
     },
   },

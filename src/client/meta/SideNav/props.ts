@@ -1,7 +1,12 @@
 import { ComponentMeta } from 'client/definitions'
 import { SideNavProps } from 'lib/components'
 
-import { DEFAULT_SIDE_NAV_EXPAND_MODE, SIDE_NAV_EXPAND_MODES, SIDE_NAV_VARIANTS } from 'lib/components/pro/navigation/SideNav'
+import {
+  DEFAULT_SIDE_NAV_EXPAND_MODE,
+  DEFAULT_SIDE_NAV_SIZE,
+  SIDE_NAV_EXPAND_MODES,
+  SIDE_NAV_VARIANTS,
+} from 'lib/components/pro/navigation/SideNav'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BUTTON_PROPS_META } from '../Button/props'
@@ -25,6 +30,10 @@ const SIDE_NAV_PROPS_META: ComponentMeta<SideNavProps>['props'] = {
   intent: {
     ...BUTTON_PROPS_META.intent,
     description: 'Color tone applied to all categories and items.',
+  },
+  size: {
+    ...BUTTON_PROPS_META.size,
+    defaultValue: DEFAULT_SIDE_NAV_SIZE,
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,

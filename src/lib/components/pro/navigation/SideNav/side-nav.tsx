@@ -7,7 +7,7 @@ import { withPrefix } from 'lib/helpers'
 
 import { SideNavProvider } from './SideNavProvider'
 import { SideNavToggle } from './components'
-import { DEFAULT_SIDE_NAV_EXPAND_MODE, SideNavProps } from './definitions'
+import { DEFAULT_SIDE_NAV_EXPAND_MODE, DEFAULT_SIDE_NAV_SIZE, SideNavProps } from './definitions'
 
 import './side-nav.scss'
 
@@ -19,6 +19,7 @@ export const SideNav = ({
   // Button
   color,
   intent,
+  size = DEFAULT_SIDE_NAV_SIZE,
   // own
   expandMode = DEFAULT_SIDE_NAV_EXPAND_MODE,
   variant,
@@ -34,7 +35,7 @@ export const SideNav = ({
       childrenToVerify={children}
     >
       {({ slotsByName, allValidSlots }) => (
-        <SideNavProvider expandMode={expandMode} variant={variant} color={color} intent={intent}>
+        <SideNavProvider expandMode={expandMode} variant={variant} color={color} intent={intent} size={size}>
           <Flex
             tag="nav"
             tagAttrs={{
