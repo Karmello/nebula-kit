@@ -55,6 +55,7 @@ function generateSitemap() {
     '',
     '/home',
     '/playground',
+    '/patterns',
     '/foundations',
     '/core',
     '/pro',

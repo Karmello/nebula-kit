@@ -58,10 +58,10 @@ export const Textarea = ({
         ...tagAttrs,
         className: classNames(withPrefix('textarea'), tagAttrs?.className),
         style: {
-          ...tagAttrs?.style,
           fontSize: TYPOGRAPHY_TOKENS.body.fontSize,
           lineHeight: TYPOGRAPHY_TOKENS.body.lineHeight,
           resize,
+          ...tagAttrs?.style,
         },
         value: currentValue,
         onChange: e => {

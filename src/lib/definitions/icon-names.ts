@@ -58,6 +58,7 @@ export const ICON_NAMES = [
   'panel-top-bottom-dashed',
   'plug',
   'puzzle',
+  'pyramid',
   'receipt',
   'rectangle-circle',
   'rss',

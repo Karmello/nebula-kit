@@ -13,12 +13,7 @@ type AssistantMessageProps = {
 
 export const AssistantMessage = ({ content, handleQuestionClick }: AssistantMessageProps) => {
   return (
-    <Box
-      tagAttrs={{
-        style: { fontSize: 'var(--neb-typography-small-font-size)', lineHeight: 'var(--neb-typography-small-line-height)' },
-      }}
-      inlineSize="100%"
-    >
+    <Box inlineSize="100%">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         urlTransform={url => url}

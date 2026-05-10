@@ -15,6 +15,7 @@ export enum PageKey {
   foundations = '/foundations',
   home = '/home',
   playground = '/playground',
+  patterns = '/patterns',
   pricing = '/pricing',
   pricingCore = '/pricing/core',
   pricingPro = '/pricing/pro',

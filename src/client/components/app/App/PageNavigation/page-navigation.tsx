@@ -51,13 +51,33 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
               intent="muted"
               selected={pathname.startsWith(PageKey.home)}
               bold={pathname.startsWith(PageKey.home)}
-              inlineSize="115px"
+              inlineSize="110px"
             >
               NebulaKit
             </Button>
           </Link>
         </Flex.Item>
       ) : null}
+      <Flex.Item hidden={{ base: toolbarSlot === 'start', sm: toolbarSlot !== 'start' }}>
+        <Link
+          href={PageKey.patterns}
+          onClick={async () => {
+            if (mainOpen) await setMainOpen(false)
+            navigateTo(PageKey.patterns)
+          }}
+        >
+          <Button
+            intent="muted"
+            selected={currentPageKey === PageKey.patterns}
+            bold={currentPageKey === PageKey.patterns}
+            iconName="pyramid"
+            fullWidth
+            minInlineSize="120px"
+          >
+            Patterns
+          </Button>
+        </Link>
+      </Flex.Item>
       <Flex.Item hidden={{ base: toolbarSlot === 'start', md: toolbarSlot !== 'start' }}>
         <Link
           href={PageKey.playground}
@@ -72,13 +92,13 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             bold={currentPageKey === PageKey.playground}
             iconName="flask-conical"
             fullWidth
-            minInlineSize="155px"
+            minInlineSize="140px"
           >
             Playground
           </Button>
         </Link>
       </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', md: toolbarSlot !== 'start' }}>
+      <Flex.Item hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
         <Link
           href={`${PageKey.foundations}/${foundationsPageCategoryKey}/${foundationsPageItemKey}/${foundationsPageSectionKey}`}
           onClick={async () => {
@@ -94,7 +114,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             bold={currentPageKey === PageKey.foundations}
             iconName="book-open-text"
             fullWidth
-            minInlineSize="160px"
+            minInlineSize="150px"
           >
             Foundations
           </Button>
@@ -114,7 +134,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             bold={currentPageKey === PageKey.core}
             iconName="package"
             fullWidth
-            minInlineSize="100px"
+            minInlineSize="90px"
           >
             Core
           </Button>
@@ -134,13 +154,13 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             bold={currentPageKey === PageKey.pro}
             iconName="star"
             fullWidth
-            minInlineSize="90px"
+            minInlineSize="80px"
           >
             Pro
           </Button>
         </Link>
       </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
+      <Flex.Item hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
         <Link
           href={PageKey.faq}
           onClick={async () => {
@@ -154,7 +174,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             bold={currentPageKey === PageKey.faq}
             iconName="message-circle-question-mark"
             fullWidth
-            minInlineSize="95px"
+            minInlineSize="90px"
           >
             FAQ
           </Button>
@@ -174,14 +194,14 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             bold={currentPageKey === PageKey.blog}
             iconName="rss"
             fullWidth
-            minInlineSize="100px"
+            minInlineSize="95px"
           >
             Blog
           </Button>
         </Link>
       </Flex.Item>
       {!user?.plan || user.plan === 'free' ? (
-        <Flex.Item hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
+        <Flex.Item hidden={{ base: toolbarSlot === 'start', xxl: toolbarSlot !== 'start' }}>
           <Link
             href={PageKey.pricing}
             onClick={async () => {
@@ -195,7 +215,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
               bold={currentPageKey === PageKey.pricing}
               iconName="credit-card"
               fullWidth
-              minInlineSize="120px"
+              minInlineSize="110px"
             >
               Pricing
             </Button>
@@ -216,7 +236,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             bold={currentPageKey === PageKey.feedback}
             iconName="mail"
             fullWidth
-            minInlineSize="140px"
+            minInlineSize="130px"
           >
             Feedback
           </Button>
@@ -236,7 +256,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             bold={currentPageKey === PageKey.assistant}
             iconName="sparkles"
             fullWidth
-            minInlineSize="140px"
+            minInlineSize="130px"
           >
             Assistant
           </Button>
