@@ -1,6 +1,5 @@
 import { getDataAttrs } from './get-data-attrs'
-
-export type ComponentName = 'Box' | 'Text' | 'AppFrameHeader' | 'Footer' | 'SplitView'
+import { ComponentName } from './definitions'
 
 export const updateDomStaticDataset = (componentName: ComponentName, props: Record<string, unknown>) => {
   let dataAttrs: Record<string, unknown> = {}

@@ -1,22 +1,10 @@
-import { createContext, useContext, useState, ReactNode, useLayoutEffect } from 'react'
+import { createContext, useContext, useState, useLayoutEffect } from 'react'
 
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize/definitions'
 import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
 import { useScreen, useGlobalScrollLock } from 'lib/hooks'
 
-import { SplitViewOwnProps } from '../definitions'
-
-type ProviderProps = SplitViewOwnProps & {
-  children: ReactNode
-}
-
-export type SplitViewMode = 'overlay' | 'inline'
-
-export type SplitViewContextProps = Omit<ProviderProps, 'children'> & {
-  sideOpen: boolean
-  setSideOpen: (sideOpen: boolean) => void
-  mode: SplitViewMode
-}
+import { ProviderProps, SplitViewContextProps, SplitViewMode } from './definitions'
 
 const SplitViewContext = createContext<SplitViewContextProps>({} as SplitViewContextProps)
 

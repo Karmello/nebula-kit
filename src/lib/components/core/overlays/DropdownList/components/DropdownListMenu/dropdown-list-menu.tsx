@@ -2,7 +2,7 @@ import { cloneElement, ReactElement, RefObject, useLayoutEffect, useRef, useStat
 
 import { Box, Floating, Portal, Resize, VirtualList, DropdownList, DropdownListItemProps, Divider } from 'lib/components'
 
-import { useDropdownListContext } from '..'
+import { useDropdownListContext } from '../DropdownListProvider'
 import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'
 
 export const DropdownListMenu = () => {
