@@ -39,9 +39,8 @@ export default () => {
         </Table.Header>
         <Table.Body>
           {Object.keys(TYPOGRAPHY_TOKENS).map(key => {
-            const fontSize: string = (TYPOGRAPHY_TOKENS[key as never] as any).fontSize.replace('var(', '').replace(')', '')
-
-            const lineHeight: string = (TYPOGRAPHY_TOKENS[key as never] as any).lineHeight.replace('var(', '').replace(')', '')
+            const fontSize: string = (TYPOGRAPHY_TOKENS[key as never] as any).fontSize
+            const lineHeight: string = (TYPOGRAPHY_TOKENS[key as never] as any).lineHeight
 
             return (
               <Table.Row key={key}>
@@ -51,12 +50,14 @@ export default () => {
                   </Text>
                 </Table.Cell>
                 <Table.Cell>
-                  <Text italic>{fontSize}</Text>
-                  <Text italic>{lineHeight}</Text>
+                  <Text italic noWrap>
+                    {`--neb-typography-${key}-font-size`},
+                  </Text>
+                  <Text italic noWrap>{`--neb-typography-${key}-line-height`}</Text>
                 </Table.Cell>
                 <Table.Cell>
-                  <Text>{getComputedStyle(document.documentElement).getPropertyValue(fontSize)}</Text>
-                  <Text>{getComputedStyle(document.documentElement).getPropertyValue(lineHeight)}</Text>
+                  <Text>{fontSize},</Text>
+                  <Text>{lineHeight}</Text>
                 </Table.Cell>
               </Table.Row>
             )

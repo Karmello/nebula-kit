@@ -6,84 +6,84 @@ import { TextTag, TextTypography } from 'lib/components/core/base/Text'
 export const TSHIRT_SIZES = ['3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'] as const
 
 export const SIZING_SCALE: Record<TShirtSize, string> = {
-  '3xs': 'var(--neb-size-3xs)',
-  '2xs': 'var(--neb-size-2xs)',
-  xs: 'var(--neb-size-xs)',
-  sm: 'var(--neb-size-sm)',
-  md: 'var(--neb-size-md)',
-  lg: 'var(--neb-size-lg)',
-  xl: 'var(--neb-size-xl)',
-  '2xl': 'var(--neb-size-2xl)',
-  '3xl': 'var(--neb-size-3xl)',
-  '4xl': 'var(--neb-size-4xl)',
+  '3xs': '2px',
+  '2xs': '4px',
+  xs: '8px',
+  sm: '16px',
+  md: '24px',
+  lg: '32px',
+  xl: '48px',
+  '2xl': '64px',
+  '3xl': '96px',
+  '4xl': '128px',
 }
 
 export const TYPOGRAPHY_TOKENS: Record<
   TextTypography,
   {
     fontSize: string
-    lineHeight: string
+    lineHeight: number
     iconSize: IconSize
     tag: TextTag
   }
 > = {
   body: {
-    fontSize: 'var(--neb-typography-body-font-size)',
-    lineHeight: 'var(--neb-typography-body-line-height)',
+    fontSize: '15px',
+    lineHeight: 1.5,
     iconSize: '16px',
     tag: 'p',
   },
   lead: {
-    fontSize: 'var(--neb-typography-lead-font-size)',
-    lineHeight: 'var(--neb-typography-lead-line-height)',
+    fontSize: '17px',
+    lineHeight: 1.4,
     iconSize: '18px',
     tag: 'p',
   },
   small: {
-    fontSize: 'var(--neb-typography-small-font-size)',
-    lineHeight: 'var(--neb-typography-small-line-height)',
+    fontSize: '14px',
+    lineHeight: 1.3,
     iconSize: '13px',
     tag: 'p',
   },
   caption: {
-    fontSize: 'var(--neb-typography-caption-font-size)',
-    lineHeight: 'var(--neb-typography-caption-line-height)',
+    fontSize: '11px',
+    lineHeight: 1.4,
     iconSize: '12px',
     tag: 'p',
   },
   h6: {
-    fontSize: 'var(--neb-typography-h6-font-size)',
-    lineHeight: 'var(--neb-typography-h6-line-height)',
+    fontSize: '16px',
+    lineHeight: 1.3,
     iconSize: '15px',
     tag: 'h6',
   },
   h5: {
-    fontSize: 'var(--neb-typography-h5-font-size)',
-    lineHeight: 'var(--neb-typography-h5-line-height)',
+    fontSize: '21px',
+    lineHeight: 1.3,
     iconSize: '19px',
     tag: 'h5',
   },
   h4: {
-    fontSize: 'var(--neb-typography-h4-font-size)',
-    lineHeight: 'var(--neb-typography-h4-line-height)',
+    fontSize: '27px',
+    lineHeight: 1.2,
     iconSize: '25px',
     tag: 'h4',
   },
   h3: {
-    fontSize: 'var(--neb-typography-h3-font-size)',
-    lineHeight: 'var(--neb-typography-h3-line-height)',
+    fontSize: '37px',
+    lineHeight: 1.2,
     iconSize: '33px',
     tag: 'h3',
   },
   h2: {
-    fontSize: 'var(--neb-typography-h2-font-size)',
-    lineHeight: 'var(--neb-typography-h2-line-height)',
+    fontSize: '48px',
+    lineHeight: 1.1,
     iconSize: '40px',
     tag: 'h2',
   },
   h1: {
-    fontSize: 'var(--neb-typography-h1-font-size)',
-    lineHeight: 'var(--neb-typography-h1-line-height)',
+    fontSize: '60px',
+    lineHeight: 1.1,
     iconSize: '50px',
     tag: 'h1',
   },

@@ -40,7 +40,7 @@ const includedPages = {
   },
 } as const
 
-const outputDir = path.resolve(process.cwd(), 'assistant/generated/foundations')
+const outputDir = path.resolve(process.cwd(), '../assistant/foundations')
 
 const renderPage = (Page: React.ComponentType) => {
   const page = React.createElement(Page)

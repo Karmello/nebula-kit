@@ -4,7 +4,7 @@ import path from 'node:path'
 import { RELEASE_VERSIONS, RELEASE_INFO } from '../../../src/client/definitions/release'
 import { generateRelease } from './helpers/generate-release'
 
-const outputDir = path.resolve(process.cwd(), 'assistant/generated')
+const outputDir = path.resolve(process.cwd(), '../assistant')
 const outputFile = path.join(outputDir, 'releases.md')
 
 const run = async () => {

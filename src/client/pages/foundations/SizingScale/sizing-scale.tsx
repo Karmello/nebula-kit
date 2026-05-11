@@ -30,20 +30,10 @@ export default () => {
                 </Text>
               </Table.Cell>
               <Table.Cell>
-                <Text italic>
-                  {String(SIZING_SCALE[key as never])
-                    .replace('var(', '')
-                    .replace(')', '')}
-                </Text>
+                <Text italic>{`--neb-size-${key}`}</Text>
               </Table.Cell>
               <Table.Cell>
-                <Text>
-                  {getComputedStyle(document.documentElement).getPropertyValue(
-                    String(SIZING_SCALE[key as never])
-                      .replace('var(', '')
-                      .replace(')', '')
-                  )}
-                </Text>
+                <Text>{SIZING_SCALE[key as never]}</Text>
               </Table.Cell>
             </Table.Row>
           ))}

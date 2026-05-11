@@ -5,8 +5,8 @@
       "path": ".",
     },
     {
-      "name": "assistant",
-      "path": "assistant",
+      "name": "tools",
+      "path": "tools",
     },
     {
       "name": "src",

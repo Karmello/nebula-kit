@@ -4,7 +4,7 @@ import path from 'node:path'
 import { FAQ } from '../../../src/client/pages/app/FaqPage/definitions'
 import { generateFAQ } from './helpers/generate-faq'
 
-const outputDir = path.resolve(process.cwd(), 'assistant/generated')
+const outputDir = path.resolve(process.cwd(), '../assistant')
 
 const run = async () => {
   await fs.mkdir(outputDir, { recursive: true })
