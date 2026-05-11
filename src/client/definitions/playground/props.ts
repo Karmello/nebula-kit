@@ -14,7 +14,7 @@ import {
   TabsProps,
   RevealProps,
   AvatarProps,
-} from 'lib/components'
+} from '../../../lib/components'
 
 export const PROPS_FROM_AVATAR = ['initials', 'shape', 'size', 'src'] as const satisfies readonly (keyof AvatarProps)[]
 
