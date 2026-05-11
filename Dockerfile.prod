@@ -12,6 +12,9 @@ RUN corepack enable && corepack use yarn@4.10.3
 # copy package files first
 COPY package.json yarn.lock .yarnrc.yml ./
 
+# copy workspace manifests
+COPY tools/package.json ./tools/package.json
+
 # install dependencies (classic node_modules linker)
 RUN yarn install --immutable
 
@@ -31,6 +34,8 @@ RUN corepack enable && corepack use yarn@4.10.3
 
 # copy only the production subset
 COPY package.json yarn.lock .yarnrc.yml ./
+COPY tools/package.json ./tools/package.json
+
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/index.html ./index.html
