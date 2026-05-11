@@ -1,6 +1,6 @@
 import { SyntheticEvent } from 'react'
 
-import { BoxProps } from 'lib/components'
+import type { BoxProps } from 'lib/components'
 import { RespValue } from 'lib/definitions'
 
 export const IMAGE_LOADING = ['eager', 'lazy'] as const

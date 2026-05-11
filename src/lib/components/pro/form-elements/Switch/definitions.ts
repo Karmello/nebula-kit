@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/components'
+import type { BoxProps } from 'lib/components'
 import { BoxIntent } from 'lib/components/core/base/Box'
 import { ButtonSize } from 'lib/components/core/controls/Button'
 

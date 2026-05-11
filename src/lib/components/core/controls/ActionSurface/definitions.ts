@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/components'
+import type { BoxProps } from 'lib/components'
 
 export const ACTION_SURFACE_TAGS = ['button', 'a', 'div'] as const
 

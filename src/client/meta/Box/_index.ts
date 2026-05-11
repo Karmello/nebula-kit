@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { BoxProps } from 'lib/components'
+import type { BoxProps } from 'lib/components'
 
 import { BOX_PROPS_META } from './props'
 import { BOX_EXAMPLES_META } from './examples'
