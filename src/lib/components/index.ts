@@ -1,2 +1,2 @@
-export * from './pro'
 export * from './core'
+export * from './pro'
