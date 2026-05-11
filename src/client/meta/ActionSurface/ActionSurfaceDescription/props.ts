@@ -1,13 +1,14 @@
 import { ComponentMeta } from 'client/definitions'
-import { TEXT_PROPS_META } from 'client/meta/Text/props'
-import { ActionSurfaceDescriptionProps } from 'lib/components/core/controls/ActionSurface/slots/ActionSurfaceDescription'
 
 import {
+  ActionSurfaceDescriptionProps,
   ACTION_SURFACE_DESCRIPTION_TYPOGRAPHY,
   DEFAULT_ACTION_SURFACE_DESCRIPTION_CLAMP_LINES,
   DEFAULT_ACTION_SURFACE_DESCRIPTION_INTENT,
   DEFAULT_ACTION_SURFACE_DESCRIPTION_TYPOGRAPHY,
 } from 'lib/components/core/controls/ActionSurface/slots/ActionSurfaceDescription/definitions'
+
+import { TEXT_PROPS_META } from '../../Text/props'
 
 const ACTION_SURFACE_DESCRIPTION_PROPS_META: ComponentMeta<ActionSurfaceDescriptionProps>['props'] = {
   children: TEXT_PROPS_META.children,

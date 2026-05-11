@@ -1,13 +1,14 @@
 import { ComponentMeta } from 'client/definitions'
-import { TEXT_PROPS_META } from 'client/meta/Text/props'
-import { ActionSurfaceHeadingProps } from 'lib/components/core/controls/ActionSurface/slots/ActionSurfaceHeading'
 
 import {
+  ActionSurfaceHeadingProps,
   ACTION_SURFACE_HEADING_TYPOGRAPHY,
   DEFAULT_ACTION_SURFACE_HEADING_BOLD,
   DEFAULT_ACTION_SURFACE_HEADING_TRUNCATE,
   DEFAULT_ACTION_SURFACE_HEADING_TYPOGRAPHY,
 } from 'lib/components/core/controls/ActionSurface/slots/ActionSurfaceHeading/definitions'
+
+import { TEXT_PROPS_META } from '../../Text/props'
 
 const ACTION_SURFACE_HEADING_PROPS_META: ComponentMeta<ActionSurfaceHeadingProps>['props'] = {
   bold: {
