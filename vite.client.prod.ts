@@ -40,6 +40,11 @@ export default defineConfig({
             if (id.includes('/classnames')) return 'classnames'
             return 'vendor'
           }
+
+          // CRITICAL
+          if (id.includes('/src/lib/')) {
+            return 'nebulakit'
+          }
         },
       },
     },
