@@ -3,7 +3,7 @@ import { useRef, useState } from 'react'
 import { FloatingResolved } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
 import { DEFAULT_BUTTON_SIZE } from 'lib/components/core/controls/Button/definitions'
-import { CONTROL_SIZE_TOKENS } from 'lib/definitions'
+import { CONTROL_SIZE_TOKENS, SIZING_SCALE } from 'lib/definitions'
 
 import {
   DropdownListProps,
@@ -77,7 +77,7 @@ export const DropdownList = ({
 
         const itemHeight =
           Number((CONTROL_SIZE_TOKENS[size || 'md'].blockSize as string).replace('px', '')) +
-          Number(getComputedStyle(document.documentElement).getPropertyValue('--neb-size-3xs').replace('px', ''))
+          Number(SIZING_SCALE['3xs'].replace('px', ''))
 
         return (
           <DropdownListProvider
