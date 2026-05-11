@@ -3,7 +3,6 @@ import classNames from 'classnames'
 
 import { WithSlots } from 'lib/components/core/internal'
 import { Resize, Box, Button, Flex, Spacer } from 'lib/components'
-import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box'
 import { withPrefix } from 'lib/helpers'
 
 import { useSideNavContext } from '../../SideNavProvider'
@@ -38,6 +37,7 @@ export const SideNavCategory = ({
     color: rootColor,
     intent: rootIntent,
     size,
+    gap,
   } = useSideNavContext()
 
   const id = useId()
@@ -99,8 +99,8 @@ export const SideNavCategory = ({
             </Box>
             <Box tag="li">
               <Resize property="blockSize" visible={expandedCategories[id]}>
-                <Spacer blockSize={BOX_BORDER_WIDTH} />
-                <Flex tag="ul" flexDirection="column" gap={BOX_BORDER_WIDTH}>
+                <Spacer blockSize={gap} />
+                <Flex tag="ul" flexDirection="column" gap={gap}>
                   {slotsByName['SideNav.Item'].map((slot, key) => (
                     <Box key={key} tag="li" inlineSize="100%">
                       {cloneElement(slot as any, { categoryId: id })}

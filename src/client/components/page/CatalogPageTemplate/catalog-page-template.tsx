@@ -150,6 +150,7 @@ export const CatalogPageTemplate = memo(
                                 variant="ghost"
                                 intent="primary"
                                 color="blue"
+                                bold
                               >
                                 Try in Playground
                               </Button>

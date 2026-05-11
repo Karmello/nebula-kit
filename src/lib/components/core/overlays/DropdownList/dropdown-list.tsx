@@ -17,7 +17,6 @@ import {
 } from './definitions'
 
 import { DropdownListProvider, DropdownListMain } from './components'
-import { BOX_BORDER_WIDTH } from '../../base/Box'
 
 export const DropdownList = ({
   // HtmlTag
@@ -78,7 +77,7 @@ export const DropdownList = ({
 
         const itemHeight =
           Number((CONTROL_SIZE_TOKENS[size || 'md'].blockSize as string).replace('px', '')) +
-          Number(BOX_BORDER_WIDTH.replace('px', ''))
+          Number(getComputedStyle(document.documentElement).getPropertyValue('--neb-size-3xs').replace('px', ''))
 
         return (
           <DropdownListProvider

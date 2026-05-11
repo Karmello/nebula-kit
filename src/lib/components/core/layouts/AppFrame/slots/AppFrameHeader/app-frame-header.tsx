@@ -3,7 +3,6 @@ import classNames from 'classnames'
 import { updateDomStaticDataset } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
 import { Box } from 'lib/components'
-import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box/definitions'
 
 import { useAppFrameContext } from '../../AppFrameProvider'
 import { AppFrameHeaderProps, DEFAULT_APP_FRAME_HEADER_INTENT } from './definitions'
@@ -38,7 +37,7 @@ export const AppFrameHeader = ({
       intent={intent}
       borderWidth="0px"
       borderRadius="0px"
-      borderBottomWidth={BOX_BORDER_WIDTH}
+      borderBottomWidth="var(--neb-size-3xs)"
       surface="dividing"
     >
       <Box drawable borderRadius="0px" variant="solid" color={color} intent={intent} {...paddings}>

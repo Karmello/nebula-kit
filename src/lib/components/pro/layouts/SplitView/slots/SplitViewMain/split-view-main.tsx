@@ -8,7 +8,20 @@ import { SplitViewMainProps } from './definitions'
 import { getToggleIconName } from '../../helpers'
 import { useSplitViewContext } from '../../SplitViewProvider'
 
-export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: SplitViewMainProps) => {
+export const SplitViewMain = ({
+  // HtmlTag
+  children,
+  tagAttrs,
+  tagRef,
+  // Box
+  padding,
+  paddingInline,
+  paddingBlock,
+  paddingTop,
+  paddingRight,
+  paddingBottom,
+  paddingLeft,
+}: SplitViewMainProps) => {
   const { sideOpen, setSideOpen, sidePosition } = useSplitViewContext()
 
   return (
@@ -26,7 +39,13 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
               className: classNames(withPrefix('split-view-main'), tagAttrs?.className),
             }}
             tagRef={tagRef}
-            {...paddings}
+            padding={padding}
+            paddingInline={paddingInline}
+            paddingBlock={paddingBlock}
+            paddingTop={paddingTop}
+            paddingRight={paddingRight}
+            paddingBottom={paddingBottom}
+            paddingLeft={paddingLeft}
           >
             <Flex alignItems="center" flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'} gap="sm">
               <Flex.Item>
@@ -36,7 +55,7 @@ export const SplitViewMain = ({ children, tagAttrs, tagRef, ...paddings }: Split
                     'aria-expanded': sideOpen,
                   }}
                   iconName={getToggleIconName(sidePosition, sideOpen)}
-                  intent="tertiary"
+                  intent="muted"
                   size="xs"
                 />
               </Flex.Item>
