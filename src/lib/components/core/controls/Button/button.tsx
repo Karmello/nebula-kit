@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { Box, Text, Loader } from 'lib/components'
 import { Ripple } from 'lib/components/core/internal'
 import { updateDomRespDataset } from 'lib/service'
+import { CONTROL_SIZE_MAP } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 
@@ -17,7 +18,6 @@ import {
   DEFAULT_BUTTON_INTERACTIVE,
   DEFAULT_BUTTON_TEXT_ALIGN,
   DEFAULT_BUTTON_JUSTIFY_CONTENT,
-  BUTTON_SIZE_MAP,
 } from './definitions'
 
 import './button.scss'
@@ -92,14 +92,14 @@ export const Button = <T extends ButtonTag = 'button'>({
       elevated={elevated}
       surface={selected ? 'selected' : undefined}
       position="relative"
-      blockSize={BUTTON_SIZE_MAP[size || 'md'].blockSize}
-      paddingInline={BUTTON_SIZE_MAP[size || 'md'].paddingInline}
+      blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
+      paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
     >
       <Text
         tag="span"
         tagAttrs={{ style: { inlineSize: '100%' } }}
-        fontSize={BUTTON_SIZE_MAP[size || 'md'].fontSize}
-        lineHeight={BUTTON_SIZE_MAP[size || 'md'].lineHeight}
+        fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
+        lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
         bold={bold}
         truncate
         iconName={iconName}
@@ -111,7 +111,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       >
         {children}
       </Text>
-      {loading && !disabled ? <Loader centered size={BUTTON_SIZE_MAP[size || 'md'].loaderSize} /> : null}
+      {loading && !disabled ? <Loader centered size={CONTROL_SIZE_MAP[size || 'md'].loaderSize} /> : null}
       <Ripple parentRef={tagRef || ref} active={ripple && !loading && !disabled} />
     </Box>
   )

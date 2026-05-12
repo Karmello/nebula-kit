@@ -3,15 +3,9 @@ import classNames from 'classnames'
 
 import { Box, Segment } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { CONTROL_SIZE_MAP } from 'lib/definitions'
 
-import {
-  DEFAULT_INPUT_INTENT,
-  DEFAULT_INPUT_SIZE,
-  DEFAULT_INPUT_VARIANT,
-  INPUT_SIZE_CONFIG,
-  InputAffixProps,
-  InputProps,
-} from './definitions'
+import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_SIZE, DEFAULT_INPUT_VARIANT, InputAffixProps, InputProps } from './definitions'
 
 import './input.scss'
 
@@ -66,7 +60,7 @@ export const Input = ({
             className: classNames(withPrefix('input'), tagAttrs?.className),
             style: {
               ...tagAttrs?.style,
-              fontSize: INPUT_SIZE_CONFIG[size || 'md'].fontSize,
+              fontSize: CONTROL_SIZE_MAP[size || 'md'].fontSize,
             },
             value: currentValue,
             onChange: e => {
@@ -87,7 +81,7 @@ export const Input = ({
           inlineSize="100%"
           interactive
           activeOnFocus
-          {...INPUT_SIZE_CONFIG[size || 'md']}
+          {...CONTROL_SIZE_MAP[size || 'md']}
         />
       </Segment.Item>
       {endAffix ? <Segment.Item>{endAffix(affixProps)}</Segment.Item> : null}

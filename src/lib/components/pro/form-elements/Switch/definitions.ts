@@ -4,7 +4,7 @@ import { ButtonSize } from 'lib/components/core/controls/Button'
 
 export const SWITCH_BORDER_MULTIPLIER = 2
 
-export const DEFAULT_SWITCH_SIZE: SwitchProps['size'] = 'sm'
+export const DEFAULT_SWITCH_SIZE: SwitchProps['size'] = 'xs'
 export const DEFAULT_SWITCH_INTENT: SwitchProps['intent'] = 'tertiary'
 
 export const SWITCH_INTENTS = ['muted', 'tertiary', 'secondary', 'primary'] as const satisfies BoxIntent[]

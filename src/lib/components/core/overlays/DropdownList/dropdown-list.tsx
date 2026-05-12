@@ -2,8 +2,8 @@ import { useRef, useState } from 'react'
 
 import { FloatingResolved } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
-import { BUTTON_SIZE_MAP, DEFAULT_BUTTON_SIZE } from 'lib/components/core/controls/Button/definitions'
-import { LENGTH_SCALE } from 'lib/definitions'
+import { DEFAULT_BUTTON_SIZE } from 'lib/components/core/controls/Button/definitions'
+import { CONTROL_SIZE_MAP, LENGTH_SCALE } from 'lib/definitions'
 
 import {
   DropdownListProps,
@@ -76,7 +76,7 @@ export const DropdownList = ({
         if (correctedVisibleItemsCount <= 0 && noOptionsLabel) correctedVisibleItemsCount = 1
 
         const itemHeight =
-          Number((BUTTON_SIZE_MAP[size || 'md'].blockSize as string).replace('px', '')) +
+          Number((CONTROL_SIZE_MAP[size || 'md'].blockSize as string).replace('px', '')) +
           Number(LENGTH_SCALE['3xs'].replace('px', ''))
 
         return (

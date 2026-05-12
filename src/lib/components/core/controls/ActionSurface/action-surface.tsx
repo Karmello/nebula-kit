@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { Box, Text, Loader, Flex } from 'lib/components'
 import { Ripple } from 'lib/components/core/internal'
 import { updateDomRespDataset } from 'lib/service'
+import { CONTROL_SIZE_MAP } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 
@@ -18,8 +19,6 @@ import {
   DEFAULT_ACTION_SURFACE_TEXT_ALIGN,
   DEFAULT_ACTION_SURFACE_JUSTIFY_CONTENT,
 } from './definitions'
-
-import { BUTTON_SIZE_MAP } from '../Button'
 
 import './action-surface.scss'
 
@@ -90,14 +89,14 @@ export const ActionSurface = <T extends ActionSurfaceTag = 'button'>({
       elevated={elevated}
       surface={selected ? 'selected' : undefined}
       position="relative"
-      blockSize={BUTTON_SIZE_MAP[size || 'md'].blockSize}
-      paddingInline={BUTTON_SIZE_MAP[size || 'md'].paddingInline}
+      blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
+      paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
     >
       <Flex tag="span" flexDirection="column">
         <Text
           tag="span"
-          fontSize={BUTTON_SIZE_MAP[size || 'md'].fontSize}
-          lineHeight={BUTTON_SIZE_MAP[size || 'md'].lineHeight}
+          fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
+          lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
           bold={bold}
           truncate
           iconName={iconName}
@@ -115,7 +114,7 @@ export const ActionSurface = <T extends ActionSurfaceTag = 'button'>({
           </Text>
         ) : null}
       </Flex>
-      {loading && !disabled ? <Loader centered size={BUTTON_SIZE_MAP[size || 'md'].loaderSize} /> : null}
+      {loading && !disabled ? <Loader centered size={CONTROL_SIZE_MAP[size || 'md'].loaderSize} /> : null}
       <Ripple parentRef={tagRef || ref} active={ripple && !loading && !disabled} />
     </Box>
   )

@@ -3,6 +3,7 @@ import classNames from 'classnames'
 
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { CONTROL_SIZE_MAP } from 'lib/definitions'
 
 import {
   DEFAULT_TEXTAREA_INLINE_SIZE,
@@ -15,7 +16,6 @@ import {
 } from './definitions'
 
 import { TEXT_TYPOGRAPHY_MAP } from '../../base/Text'
-import { BUTTON_SIZE_MAP } from '../../controls/Button'
 
 import './textarea.scss'
 
@@ -85,7 +85,7 @@ export const Textarea = ({
       inlineSize={inlineSize}
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
-      padding={BUTTON_SIZE_MAP.md.paddingInline}
+      padding={CONTROL_SIZE_MAP.md.paddingInline}
       interactive
       activeOnFocus
     />
