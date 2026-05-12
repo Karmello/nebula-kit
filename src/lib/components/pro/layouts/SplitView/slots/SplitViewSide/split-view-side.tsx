@@ -51,8 +51,8 @@ export const SplitViewSide = ({
         surface="dividing"
         borderWidth="0px"
         borderRadius="0px"
-        borderLeftWidth={mode === 'overlay' && sidePosition === 'right' && sideOpen ? 'var(--neb-size-3xs)' : '0px'}
-        borderRightWidth={mode === 'overlay' && sidePosition === 'left' && sideOpen ? 'var(--neb-size-3xs)' : '0px'}
+        borderLeftWidth={mode === 'overlay' && sidePosition === 'right' && sideOpen ? 'var(--neb-length-3xs)' : '0px'}
+        borderRightWidth={mode === 'overlay' && sidePosition === 'left' && sideOpen ? 'var(--neb-length-3xs)' : '0px'}
         left={sidePosition === 'left' ? '0px' : undefined}
         right={sidePosition === 'right' ? '0px' : undefined}
         maxInlineSize={mode === 'inline' ? inlineSize : undefined}

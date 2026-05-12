@@ -30,7 +30,7 @@ export default () => {
                 </Text>
               </Table.Cell>
               <Table.Cell>
-                <Text italic>{`--neb-size-${key}`}</Text>
+                <Text italic>{`--neb-length-${key}`}</Text>
               </Table.Cell>
               <Table.Cell>
                 <Text>{LENGTH_SCALE[key as never]}</Text>
@@ -42,7 +42,7 @@ export default () => {
       <Spacer />
       <CodeSnippet
         lang="tsx"
-        description="Scale values can be used anywhere sizing props are accepted."
+        description="Scale values can be used anywhere length props are accepted."
         code={`<Box padding="md" />
 <Box margin="lg" />
 <Box inlineSize="2xl" />`}

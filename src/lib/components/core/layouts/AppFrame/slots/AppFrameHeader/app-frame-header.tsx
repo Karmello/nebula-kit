@@ -37,7 +37,7 @@ export const AppFrameHeader = ({
       intent={intent}
       borderWidth="0px"
       borderRadius="0px"
-      borderBottomWidth="var(--neb-size-3xs)"
+      borderBottomWidth="var(--neb-length-3xs)"
       surface="dividing"
     >
       <Box drawable borderRadius="0px" variant="solid" color={color} intent={intent} {...paddings}>

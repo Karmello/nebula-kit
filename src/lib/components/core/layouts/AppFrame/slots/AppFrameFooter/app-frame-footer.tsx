@@ -30,7 +30,7 @@ export const AppFrameFooter = ({
       intent={intent}
       borderWidth="0px"
       borderRadius="0px"
-      borderTopWidth="var(--neb-size-3xs)"
+      borderTopWidth="var(--neb-length-3xs)"
       surface="dividing"
     >
       <Box drawable borderRadius="0px" variant="solid" color={color} intent={intent} {...paddings}>
