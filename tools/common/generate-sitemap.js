@@ -3,9 +3,9 @@ import { writeFileSync } from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-import { FOUNDATIONS_CATEGORIES } from '../src/client/definitions/foundations-routing.js'
-import { CORE_PAGE_CATEGORIES } from '../src/client/definitions/core-page-routing.js'
-import { PRO_PAGE_CATEGORIES } from '../src/client/definitions/pro-page-routing.js'
+import { FOUNDATIONS_CATEGORIES } from '../../src/client/definitions/foundations-routing.js'
+import { CORE_PAGE_CATEGORIES } from '../../src/client/definitions/core-page-routing.js'
+import { PRO_PAGE_CATEGORIES } from '../../src/client/definitions/pro-page-routing.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -82,7 +82,7 @@ function generateSitemap() {
     routes.map(route => `  <url><loc>${domain}${route}</loc></url>`).join('\n') +
     `\n</urlset>`
 
-  const outputPath = path.join(__dirname, '../build/client/sitemap.xml')
+  const outputPath = path.join(__dirname, '../../build/client/sitemap.xml')
 
   mkdirSync(path.dirname(outputPath), { recursive: true })
   writeFileSync(outputPath, xml)

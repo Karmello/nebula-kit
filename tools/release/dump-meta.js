@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-import META from '../src/client/meta/index.ts'
+import META from '../../src/client/meta/index.ts'
 
 const bundle = process.env.TSUP_BUNDLE
 
@@ -10,7 +10,7 @@ if (!bundle) {
   process.exit(1)
 }
 
-const outDir = path.resolve(`dist/${bundle}`)
+const outDir = path.resolve(`../dist/${bundle}`)
 fs.mkdirSync(outDir, { recursive: true })
 
 const outFile = path.join(outDir, 'meta.js')

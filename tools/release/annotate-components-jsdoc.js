@@ -3,8 +3,8 @@ import fs from 'fs'
 import { pathToFileURL } from 'node:url'
 import { kebabCase } from 'change-case'
 
-import { CORE_PAGE_SECTIONS } from '../src/client/definitions/core-page-routing.js'
-import { PRO_PAGE_SECTIONS } from '../src/client/definitions/pro-page-routing.js'
+import { CORE_PAGE_SECTIONS } from '../../src/client/definitions/core-page-routing.js'
+import { PRO_PAGE_SECTIONS } from '../../src/client/definitions/pro-page-routing.js'
 
 const SECTIONS = {
   core: CORE_PAGE_SECTIONS,
