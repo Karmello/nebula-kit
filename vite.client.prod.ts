@@ -28,7 +28,6 @@ export default defineConfig({
     assetsDir: 'assets',
     emptyOutDir: true,
     manifest: true,
-    minify: false,
     sourcemap: true,
     rollupOptions: {
       input: path.resolve(__dirname, 'index.html'),

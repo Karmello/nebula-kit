@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { ActionSurfaceProps } from 'lib/components'
-import { ACTION_SURFACE_TAGS } from 'lib/components/core/controls/ActionSurface'
+import { ACTION_SURFACE_TAGS } from 'lib/components/core/controls/ActionSurface/definitions'
 
 import { ACTION_SURFACE_PROPS_META } from './props'
 import { ACTION_SURFACE_EXAMPLES_META } from './examples'
