@@ -1,4 +1,4 @@
-import { HtmlTagProps } from 'lib/components/core/base'
+import { HtmlTagProps } from 'lib/components'
 
 type PropsFromHtmlTag = Pick<HtmlTagProps, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<'dialog'>['children']

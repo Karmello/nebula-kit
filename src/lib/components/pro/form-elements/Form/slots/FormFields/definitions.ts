@@ -1,4 +1,4 @@
-import { FlexProps } from 'lib/components/core/layout'
+import { type FlexProps } from 'lib/components'
 
 export const DEFAULT_FORM_FIELDS_FLEX_DIRECTION: FormFieldsProps['flexDirection'] = 'column'
 export const DEFAULT_FORM_FIELDS_ALIGN_ITEMS: FormFieldsProps['alignItems'] = 'stretch'
