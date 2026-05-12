@@ -1,5 +1,5 @@
 import { TextProps } from 'lib/components'
-import { TextTypography } from 'lib/components/core/base/Text'
+import type { TextTypography } from 'lib/components/core/base/Text'
 
 export const ACTION_SURFACE_HEADING_TYPOGRAPHY = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const satisfies TextTypography[]
 

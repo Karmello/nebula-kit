@@ -1,5 +1,5 @@
 import { TextProps } from 'lib/components'
-import { TextTypography } from 'lib/components/core/base/Text'
+import type { TextTypography } from 'lib/components/core/base/Text'
 
 export const ACTION_SURFACE_DESCRIPTION_TYPOGRAPHY = ['body', 'small', 'caption'] as const satisfies TextTypography[]
 

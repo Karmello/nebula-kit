@@ -2,7 +2,7 @@ import { Children, Fragment, isValidElement, ReactNode, useEffect, useMemo } fro
 
 import { getLibMsg } from 'lib/helpers'
 
-import { WithSlotsProps } from './definitions'
+import { type WithSlotsProps } from './definitions'
 
 type ResolvedSlots<SlotName extends string> = {
   slotsByName: Record<SlotName, ReactNode[]>

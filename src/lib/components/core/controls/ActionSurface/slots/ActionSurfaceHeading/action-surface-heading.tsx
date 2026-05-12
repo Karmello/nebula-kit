@@ -1,7 +1,7 @@
 import { Text } from 'lib/components'
 
 import {
-  ActionSurfaceHeadingProps,
+  type ActionSurfaceHeadingProps,
   DEFAULT_ACTION_SURFACE_HEADING_BOLD,
   DEFAULT_ACTION_SURFACE_HEADING_TRUNCATE,
   DEFAULT_ACTION_SURFACE_HEADING_TYPOGRAPHY,

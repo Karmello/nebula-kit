@@ -10,7 +10,6 @@ type ActionSurfaceOwnProps = {
 
 type PropsFromBox<T extends ActionSurfaceTag = 'button'> = Pick<
   BoxProps<T>,
-  | 'children'
   | 'tag'
   | 'tagAttrs'
   | 'tagRef'
@@ -26,6 +25,8 @@ type PropsFromBox<T extends ActionSurfaceTag = 'button'> = Pick<
   | 'maxInlineSize'
   | 'intent'
   | 'variant'
->
+> & {
+  children: BoxProps['children']
+}
 
 export type ActionSurfaceProps<T extends ActionSurfaceTag = 'button'> = PropsFromBox<T> & ActionSurfaceOwnProps

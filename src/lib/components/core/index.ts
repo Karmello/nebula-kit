@@ -9,7 +9,13 @@ export { Reveal, type RevealProps } from './containers/Reveal'
 export { Section, type SectionProps } from './containers/Section'
 
 // controls
-export { ActionSurface, type ActionSurfaceProps } from './controls/ActionSurface'
+export {
+  ActionSurface,
+  type ActionSurfaceProps,
+  type ActionSurfaceHeadingProps,
+  type ActionSurfaceDescriptionProps,
+} from './controls/ActionSurface'
+
 export { Button, type ButtonProps } from './controls/Button'
 export { Link, type LinkProps } from './controls/Link'
 

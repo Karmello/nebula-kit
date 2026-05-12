@@ -1,7 +1,7 @@
 import { Text } from 'lib/components'
 
 import {
-  ActionSurfaceDescriptionProps,
+  type ActionSurfaceDescriptionProps,
   DEFAULT_ACTION_SURFACE_DESCRIPTION_CLAMP_LINES,
   DEFAULT_ACTION_SURFACE_DESCRIPTION_INTENT,
   DEFAULT_ACTION_SURFACE_DESCRIPTION_TYPOGRAPHY,

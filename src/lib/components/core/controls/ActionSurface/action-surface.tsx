@@ -1,7 +1,7 @@
 import { Box } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
 
-import { ActionSurfaceProps, ActionSurfaceTag } from './definitions'
+import type { ActionSurfaceProps, ActionSurfaceTag } from './definitions'
 
 export const ActionSurface = <T extends ActionSurfaceTag = 'button'>({
   // HtmlTag
