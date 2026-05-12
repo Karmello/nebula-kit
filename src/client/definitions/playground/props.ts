@@ -15,6 +15,7 @@ import type {
   RevealProps,
   AvatarProps,
   ActionSurfaceProps,
+  WithIconProps,
 } from 'lib/components'
 
 export const PROPS_FROM_ACTION_SURFACE = [
@@ -195,6 +196,19 @@ export const PROPS_FROM_TEXT = [
   'underline',
 ] as const satisfies readonly (keyof TextProps)[]
 
+export const PROPS_FROM_WITH_ICON = [
+  'children',
+  'gap',
+  'iconAngle',
+  'iconColor',
+  'iconIntent',
+  'iconName',
+  'iconPlacement',
+  'iconSize',
+  'inlineSize',
+  'justifyContent',
+] as const satisfies readonly (keyof WithIconProps)[]
+
 export const PLAYGROUND_PROPS_MAP: Record<string, readonly string[]> = {
   Avatar: PROPS_FROM_AVATAR,
   ActionSurface: PROPS_FROM_ACTION_SURFACE,
@@ -212,4 +226,5 @@ export const PLAYGROUND_PROPS_MAP: Record<string, readonly string[]> = {
   Tabs: PROPS_FROM_TABS,
   Table: PROPS_FROM_TABLE,
   Text: PROPS_FROM_TEXT,
+  WithIcon: PROPS_FROM_WITH_ICON,
 }

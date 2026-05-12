@@ -92,7 +92,7 @@ export const ActionSurface = <T extends ActionSurfaceTag = 'button'>({
       blockSize={ACTION_SURFACE_SIZE_MAP[size || 'md'].blockSize}
       paddingInline={ACTION_SURFACE_SIZE_MAP[size || 'md'].paddingInline}
     >
-      <Flex tag="span" flexDirection="column">
+      <Flex tag="span" flexDirection="column" alignItems="stretch">
         <Text
           tag="span"
           fontSize={ACTION_SURFACE_SIZE_MAP[size || 'md'].fontSize}
@@ -104,7 +104,7 @@ export const ActionSurface = <T extends ActionSurfaceTag = 'button'>({
           iconAngle={iconAngle}
           customSvgIcon={customSvgIcon}
           justifyContent={justifyContent}
-          textAlign={textAlign}
+          // textAlign={textAlign}
         >
           {heading}
         </Text>
@@ -113,6 +113,7 @@ export const ActionSurface = <T extends ActionSurfaceTag = 'button'>({
             tag="span"
             fontSize={ACTION_SURFACE_SIZE_MAP[size || 'md'].fontSize}
             lineHeight={ACTION_SURFACE_SIZE_MAP[size || 'md'].lineHeight}
+            justifyContent={justifyContent}
             textAlign={textAlign}
           >
             {description}

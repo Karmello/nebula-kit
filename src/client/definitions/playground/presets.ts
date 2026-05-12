@@ -15,6 +15,7 @@ import type {
   PropsFromTableKey,
   PropsFromTabsKey,
   PropsFromTextKey,
+  PropsFromWithIconKey,
 } from './types'
 
 export const PLAYGROUND_PRESETS: Record<string, Array<{ name: string; props: object }>> = {
@@ -309,6 +310,16 @@ export const PLAYGROUND_PRESETS: Record<string, Array<{ name: string; props: obj
         intent: 'primary',
         typography: 'h4',
       } as Record<PropsFromTextKey, unknown>,
+    },
+  ],
+  WithIcon: [
+    {
+      name: 'Icon on the right',
+      props: {
+        children: 'Text aligned together with icon',
+        iconName: 'puzzle',
+        iconPlacement: 'right',
+      } as Record<PropsFromWithIconKey, unknown>,
     },
   ],
 }
