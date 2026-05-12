@@ -5,11 +5,12 @@ import {
   BUTTON_SIZES,
   BUTTON_TAGS,
   DEFAULT_BUTTON_INTENT,
-  DEFAULT_BUTTON_JUSTIFY_CONTENT,
   DEFAULT_BUTTON_SIZE,
   DEFAULT_BUTTON_VARIANT,
   DEFAULT_BUTTON_RIPPLE,
   DEFAULT_BUTTON_INTERACTIVE,
+  DEFAULT_BUTTON_TEXT_ALIGN,
+  DEFAULT_BUTTON_JUSTIFY_CONTENT,
 } from 'lib/components/core/controls/Button'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -82,6 +83,10 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
+  textAlign: {
+    ...TEXT_PROPS_META.textAlign,
+    defaultValue: String(DEFAULT_BUTTON_TEXT_ALIGN),
+  },
   variant: {
     ...BOX_PROPS_META.variant,
     defaultValue: String(DEFAULT_BUTTON_VARIANT),

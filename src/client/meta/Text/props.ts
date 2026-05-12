@@ -1,19 +1,24 @@
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
-import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_SPACE, TEXT_TYPOGRAPHY, TEXT_WORD_BREAK, TextProps } from 'lib/components/core/base/Text'
+import {
+  DEFAULT_TEXT_TYPOGRAPHY,
+  TEXT_SPACE,
+  TEXT_TYPOGRAPHY,
+  TEXT_WORD_BREAK,
+  TextProps,
+} from 'lib/components/core/base/Text/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 import { WITH_ICON_PROPS_META } from '../WithIcon/props'
 
 const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
-  ...HTML_TAG_PROPS_META,
   bold: {
     options: ['boolean'],
     description: 'Toggles bold styling.',
   },
   children: {
-    ...HTML_TAG_PROPS_META['children'],
+    ...HTML_TAG_PROPS_META.children,
     isRequired: true,
   },
   clampLines: {
@@ -30,16 +35,18 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     options: [DOCS_CSS_LABEL],
     description: 'Sets the fontSize value, bypassing typography and scale.',
   },
+  iconAngle: WITH_ICON_PROPS_META.iconAngle,
   iconName: {
-    ...WITH_ICON_PROPS_META['iconName'],
+    ...WITH_ICON_PROPS_META.iconName,
     isRequired: false,
   },
-  iconPlacement: WITH_ICON_PROPS_META['iconPlacement'],
-  intent: BOX_PROPS_META['intent'],
+  iconPlacement: WITH_ICON_PROPS_META.iconPlacement,
+  intent: BOX_PROPS_META.intent,
   italic: {
     options: ['boolean'],
     description: 'Toggles italic styling.',
   },
+  justifyContent: WITH_ICON_PROPS_META.justifyContent,
   lineHeight: {
     options: [DOCS_CSS_LABEL],
     description: 'Sets the lineHeight value, bypassing typography and scale.',
@@ -49,15 +56,17 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     description: 'Prevents the text from wrapping onto multiple lines.',
   },
   space: {
-    options: TEXT_SPACE as unknown as string[],
+    options: TEXT_SPACE,
     description:
       'Controls the insertion of non-breaking spaces before and/or after the text content. Useful when composing multiple inline Text elements.',
   },
   tag: {
-    ...HTML_TAG_PROPS_META['tag'],
+    ...HTML_TAG_PROPS_META.tag,
     defaultValue: 'p',
   },
-  textAlign: BOX_PROPS_META['textAlign'],
+  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
+  tagRef: HTML_TAG_PROPS_META.tagRef,
+  textAlign: BOX_PROPS_META.textAlign,
   truncate: {
     options: ['boolean'],
     description: 'Shortens overflowing text to a single line with an ellipsis.',

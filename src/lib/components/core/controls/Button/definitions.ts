@@ -1,6 +1,6 @@
 import { MouseEventHandler } from 'react'
 
-import { BoxProps, FlexProps, HtmlTagProps, TextProps, WithIconProps } from 'lib/components'
+import { BoxProps, HtmlTagProps, TextProps } from 'lib/components'
 import { RespValue, TShirtSize } from 'lib/definitions'
 
 export const DEFAULT_BUTTON_INTERACTIVE: ButtonProps['interactive'] = true
@@ -8,7 +8,8 @@ export const DEFAULT_BUTTON_VARIANT: ButtonProps['variant'] = 'solid'
 export const DEFAULT_BUTTON_INTENT: ButtonProps['intent'] = 'tertiary'
 export const DEFAULT_BUTTON_SIZE: ButtonProps['size'] = 'md'
 export const DEFAULT_BUTTON_RIPPLE: ButtonProps['ripple'] = true
-export const DEFAULT_BUTTON_JUSTIFY_CONTENT: FlexProps['justifyContent'] = 'center'
+export const DEFAULT_BUTTON_JUSTIFY_CONTENT: ButtonProps['justifyContent'] = 'center'
+export const DEFAULT_BUTTON_TEXT_ALIGN: ButtonProps['textAlign'] = 'center'
 
 export const BUTTON_TAGS = ['button', 'a'] as const
 export const BUTTON_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies TShirtSize[]
@@ -32,15 +33,9 @@ type PropsFromBox<T extends ButtonTag = 'button'> = Pick<
   'variant' | 'color' | 'intent' | 'interactive' | 'disabled' | 'elevated' | 'inlineSize' | 'minInlineSize' | 'maxInlineSize'
 >
 
-type PropsFromFlex = Pick<FlexProps<'span'>, 'justifyContent'>
+type PropsFromText = Pick<
+  TextProps<'span'>,
+  'bold' | 'iconName' | 'iconPlacement' | 'iconAngle' | 'customSvgIcon' | 'justifyContent' | 'textAlign'
+>
 
-type PropsFromText = Pick<TextProps<'span'>, 'iconName' | 'iconPlacement' | 'bold'>
-
-type PropsFromWithIcon = Pick<WithIconProps, 'iconAngle' | 'customSvgIcon'>
-
-export type ButtonProps<T extends ButtonTag = 'button'> = PropsFromHtmlTag<T> &
-  PropsFromBox<T> &
-  PropsFromFlex &
-  PropsFromText &
-  PropsFromWithIcon &
-  ButtonOwnProps
+export type ButtonProps<T extends ButtonTag = 'button'> = PropsFromHtmlTag<T> & PropsFromBox<T> & PropsFromText & ButtonOwnProps

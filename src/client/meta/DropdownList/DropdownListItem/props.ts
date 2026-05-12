@@ -1,6 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { BUTTON_PROPS_META } from 'client/meta/Button/props'
 import { DropdownListItemProps } from 'lib/components'
+import { DEFAULT_DROPDOWN_LIST_ITEM_TEXT_ALIGN } from 'lib/components/core/overlays/DropdownList/slots/DropdownListItem/definitions'
 
 import { HTML_TAG_PROPS_META } from '../../HtmlTag/props'
 
@@ -18,6 +19,10 @@ const DROPDOWN_LIST_ITEM_PROPS_META: ComponentMeta<DropdownListItemProps>['props
   tag: BUTTON_PROPS_META.tag,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
+  textAlign: {
+    ...BUTTON_PROPS_META.textAlign,
+    defaultValue: String(DEFAULT_DROPDOWN_LIST_ITEM_TEXT_ALIGN),
+  },
 }
 
 export { DROPDOWN_LIST_ITEM_PROPS_META }

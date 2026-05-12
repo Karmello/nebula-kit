@@ -59,6 +59,7 @@ export const PROPS_FROM_BUTTON = [
   'ripple',
   'selected',
   'size',
+  'textAlign',
   'variant',
 ] as const satisfies readonly (keyof ButtonProps)[]
 

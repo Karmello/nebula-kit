@@ -21,6 +21,7 @@ const AUTOCOMPLETE_OPTION_PROPS_META: ComponentMeta<AutocompleteOptionProps>['pr
   selected: DROPDOWN_LIST_ITEM_PROPS_META?.selected,
   tagAttrs: DROPDOWN_LIST_ITEM_PROPS_META.tagAttrs,
   tagRef: DROPDOWN_LIST_ITEM_PROPS_META.tagRef,
+  textAlign: DROPDOWN_LIST_ITEM_PROPS_META.textAlign,
   value: {
     options: ['string'],
     isRequired: true,

@@ -23,7 +23,9 @@ export const Text = <T extends TextTag = 'p'>({
   // WithIcon
   iconName,
   iconPlacement,
+  iconAngle,
   customSvgIcon,
+  justifyContent,
   // own
   typography = DEFAULT_TEXT_TYPOGRAPHY,
   fontSize,
@@ -74,8 +76,10 @@ export const Text = <T extends TextTag = 'p'>({
         <WithIcon
           iconName={iconName}
           iconPlacement={iconPlacement}
+          iconAngle={iconAngle}
           iconSize={TYPOGRAPHY_TOKENS[typography].iconSize}
           customSvgIcon={customSvgIcon}
+          justifyContent={justifyContent}
         >
           {children}
         </WithIcon>

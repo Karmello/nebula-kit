@@ -39,7 +39,6 @@ export const ActionSurface = <T extends ActionSurfaceTag = 'button'>({
   intent = DEFAULT_ACTION_SURFACE_INTENT,
   variant = DEFAULT_ACTION_SURFACE_VARIANT,
   // own
-  size,
   fullWidth,
   selected,
   ripple = DEFAULT_ACTION_SURFACE_RIPPLE,
