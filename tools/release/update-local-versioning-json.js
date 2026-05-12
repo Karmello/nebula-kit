@@ -2,12 +2,14 @@ import { readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
 import crypto from 'node:crypto'
+import { fileURLToPath } from 'node:url'
 
-const root = process.cwd()
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const root = path.resolve(__dirname, '../..')
 const versionFile = path.join(root, 'versioning.json')
 
 // read version
-const pkg = JSON.parse(await readFile('./package.json', 'utf8'))
+const pkg = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'))
 const version = pkg.version
 
 // tarball path produced by `npm pack`
