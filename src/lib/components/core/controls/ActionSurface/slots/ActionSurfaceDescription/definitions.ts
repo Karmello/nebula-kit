@@ -5,7 +5,7 @@ export const ACTION_SURFACE_DESCRIPTION_TYPOGRAPHY = ['body', 'small', 'caption'
 
 export const DEFAULT_ACTION_SURFACE_DESCRIPTION_TYPOGRAPHY: ActionSurfaceDescriptionProps['typography'] = 'small'
 export const DEFAULT_ACTION_SURFACE_DESCRIPTION_CLAMP_LINES: ActionSurfaceDescriptionProps['clampLines'] = 2
-export const DEFAULT_ACTION_SURFACE_DESCRIPTION_INTENT: ActionSurfaceDescriptionProps['intent'] = 'secondary'
+export const DEFAULT_ACTION_SURFACE_DESCRIPTION_INTENT: ActionSurfaceDescriptionProps['intent'] = 'primary'
 
 type ActionSurfaceDescriptionTypography = (typeof ACTION_SURFACE_DESCRIPTION_TYPOGRAPHY)[number]
 

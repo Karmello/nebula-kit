@@ -1,0 +1,17 @@
+.neb-action-surface {
+  background-color: transparent;
+  font-family: inherit;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: var(--neb-border-radius);
+}
+
+a.neb-action-surface {
+  text-decoration: none;
+}
+
+.neb-action-surface[data-neb-action-surface-full-width='true'] {
+  inline-size: 100%;
+}

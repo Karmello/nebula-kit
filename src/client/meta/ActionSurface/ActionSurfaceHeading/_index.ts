@@ -10,7 +10,7 @@ const ACTION_SURFACE_HEADING_META: ComponentMeta<ActionSurfaceHeadingProps> = {
     title: '...',
     guidelines: ['...'],
     composedOf: ['Text'],
-    // topLevelTags: ['footer'],
+    topLevelTags: ['span'],
   },
   props: ACTION_SURFACE_HEADING_PROPS_META,
 }
