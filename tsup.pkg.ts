@@ -21,13 +21,7 @@ const cssWiringPlugin = (): Plugin => ({
       }
 
       const loader =
-        extname(args.path) === '.tsx'
-          ? 'tsx'
-          : extname(args.path) === '.ts'
-            ? 'ts'
-            : extname(args.path) === '.jsx'
-              ? 'jsx'
-              : 'js'
+        extname(args.path) === '.tsx' ? 'tsx' : extname(args.path) === '.ts' ? 'ts' : extname(args.path) === '.jsx' ? 'jsx' : 'js'
 
       return { contents: out, loader }
     })
