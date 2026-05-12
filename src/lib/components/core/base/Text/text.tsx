@@ -3,9 +3,8 @@ import classNames from 'classnames'
 import { Box, WithIcon } from 'lib/components'
 import { updateDomStaticDataset } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
-import { TYPOGRAPHY_TOKENS } from 'lib/definitions'
 
-import { DEFAULT_TEXT_TYPOGRAPHY, TextTag, TextProps } from './definitions'
+import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_TYPOGRAPHY_MAP, TextTag, TextProps } from './definitions'
 
 import './text.scss'
 
@@ -41,14 +40,14 @@ export const Text = <T extends TextTag = 'p'>({
 }: TextProps<T>) => {
   return (
     <Box
-      tag={tag || TYPOGRAPHY_TOKENS[typography].tag}
+      tag={tag || TEXT_TYPOGRAPHY_MAP[typography].tag}
       tagRef={tagRef as any}
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('text'), tagAttrs?.className),
         style: {
-          fontSize: fontSize ?? TYPOGRAPHY_TOKENS[typography].fontSize,
-          lineHeight: lineHeight ?? TYPOGRAPHY_TOKENS[typography].lineHeight,
+          fontSize: fontSize ?? TEXT_TYPOGRAPHY_MAP[typography].fontSize,
+          lineHeight: lineHeight ?? TEXT_TYPOGRAPHY_MAP[typography].lineHeight,
           wordBreak,
           ...(clampLines && clampLines > 0
             ? {
@@ -77,7 +76,7 @@ export const Text = <T extends TextTag = 'p'>({
           iconName={iconName}
           iconPlacement={iconPlacement}
           iconAngle={iconAngle}
-          iconSize={TYPOGRAPHY_TOKENS[typography].iconSize}
+          iconSize={TEXT_TYPOGRAPHY_MAP[typography].iconSize}
           customSvgIcon={customSvgIcon}
           justifyContent={justifyContent}
         >

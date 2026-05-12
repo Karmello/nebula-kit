@@ -1,14 +1,16 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
-import { CONTROL_SIZE_TOKENS, TShirtSize } from 'lib/definitions'
+import { TShirtSize } from 'lib/definitions'
 import { BoxVariant } from 'lib/components/core/base/Box'
 import { IconSize } from 'lib/components/core/elements/Icon'
 
+import { BUTTON_SIZE_MAP } from '../../controls/Button'
+
 export const CHECKBOX_SIZE_CONFIG: Record<CheckboxSize, { blockSize: BoxProps['blockSize']; iconSize: IconSize }> = {
-  '2xs': { blockSize: CONTROL_SIZE_TOKENS['2xs'].blockSize, iconSize: '18px' },
-  xs: { blockSize: CONTROL_SIZE_TOKENS.xs.blockSize, iconSize: '22px' },
-  sm: { blockSize: CONTROL_SIZE_TOKENS.sm.blockSize, iconSize: '26px' },
-  md: { blockSize: CONTROL_SIZE_TOKENS.md.blockSize, iconSize: '30px' },
-  lg: { blockSize: CONTROL_SIZE_TOKENS.lg.blockSize, iconSize: '35px' },
+  '2xs': { blockSize: BUTTON_SIZE_MAP['2xs'].blockSize, iconSize: '18px' },
+  xs: { blockSize: BUTTON_SIZE_MAP.xs.blockSize, iconSize: '22px' },
+  sm: { blockSize: BUTTON_SIZE_MAP.sm.blockSize, iconSize: '26px' },
+  md: { blockSize: BUTTON_SIZE_MAP.md.blockSize, iconSize: '30px' },
+  lg: { blockSize: BUTTON_SIZE_MAP.lg.blockSize, iconSize: '35px' },
 }
 
 export const CHECKBOX_VARIANTS = ['solid', 'outline', 'soft-outline'] as const satisfies BoxVariant[]

@@ -1,15 +1,15 @@
 import { CodeSnippet } from 'client/components'
 import { Box, Spacer, Table, Text } from 'lib/components'
-import { SIZING_SCALE } from 'lib/definitions'
+import { LENGTH_SCALE } from 'lib/definitions'
 
 export default () => {
   return (
     <Box maxInlineSize={{ lg: '55rem' }}>
       <Text>
-        The sizing scale defines the set of consistent values used for spacing and dimensions across the system. It is used in
+        The length scale defines the set of consistent values used for spacing and dimensions across the system. It is used in
         layout-related props such as logical sizes as well as margin, padding and gap props. It replaces arbitrary CSS values with
         a predictable scale, making layouts easier to reason about and maintain. The scale follows a progressive step pattern,
-        allowing small adjustments at lower values and larger jumps for layout-level spacing. Each sizing token is also exposed as
+        allowing small adjustments at lower values and larger jumps for layout-level spacing. Each length token is also exposed as
         a CSS custom property, allowing the scale to be referenced directly in custom styles and external content.
       </Text>
       <Spacer blockSize="xl" />
@@ -22,7 +22,7 @@ export default () => {
           </Table.HeaderRow>
         </Table.Header>
         <Table.Body>
-          {Object.keys(SIZING_SCALE).map(key => (
+          {Object.keys(LENGTH_SCALE).map(key => (
             <Table.Row key={key}>
               <Table.Cell>
                 <Text intent="primary" bold>
@@ -33,7 +33,7 @@ export default () => {
                 <Text italic>{`--neb-size-${key}`}</Text>
               </Table.Cell>
               <Table.Cell>
-                <Text>{SIZING_SCALE[key as never]}</Text>
+                <Text>{LENGTH_SCALE[key as never]}</Text>
               </Table.Cell>
             </Table.Row>
           ))}

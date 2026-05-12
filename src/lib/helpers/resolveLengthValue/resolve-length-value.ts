@@ -1,9 +1,9 @@
-import { RespValue, SIZING_SCALE, TShirtSize } from 'lib/definitions'
+import { RespValue, LENGTH_SCALE, TShirtSize } from 'lib/definitions'
 
 type ResolveMode = 'single' | 'shorthand'
 
-export const resolveSizeValue = (value: RespValue<any>, mode: ResolveMode = 'single'): RespValue<string> => {
-  const resolveToken = (token: string) => SIZING_SCALE[token as TShirtSize] ?? token
+export const resolveLengthValue = (value: RespValue<any>, mode: ResolveMode = 'single'): RespValue<string> => {
+  const resolveToken = (token: string) => LENGTH_SCALE[token as TShirtSize] ?? token
 
   const resolveSingle = (v: string) => {
     if (typeof v !== 'string') return v

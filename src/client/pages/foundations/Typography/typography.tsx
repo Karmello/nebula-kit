@@ -1,8 +1,7 @@
 import { Fragment } from 'react'
 
 import { Box, Grid, Spacer, Table, Text } from 'lib/components'
-import { TEXT_TYPOGRAPHY, TextTypography } from 'lib/components/core/base/Text'
-import { TYPOGRAPHY_TOKENS } from 'lib/definitions'
+import { TEXT_TYPOGRAPHY, TEXT_TYPOGRAPHY_MAP, TextTypography } from 'lib/components/core/base/Text'
 
 const MAP: Record<TextTypography, string> = {
   body: 'Default text for reading and general content. Balanced for legibility and rhythm across devices.',
@@ -38,9 +37,9 @@ export default () => {
           </Table.HeaderRow>
         </Table.Header>
         <Table.Body>
-          {Object.keys(TYPOGRAPHY_TOKENS).map(key => {
-            const fontSize: string = (TYPOGRAPHY_TOKENS[key as never] as any).fontSize
-            const lineHeight: string = (TYPOGRAPHY_TOKENS[key as never] as any).lineHeight
+          {Object.keys(TEXT_TYPOGRAPHY_MAP).map(key => {
+            const fontSize: string = (TEXT_TYPOGRAPHY_MAP[key as never] as any).fontSize
+            const lineHeight: string = (TEXT_TYPOGRAPHY_MAP[key as never] as any).lineHeight
 
             return (
               <Table.Row key={key}>

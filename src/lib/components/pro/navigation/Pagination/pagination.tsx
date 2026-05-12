@@ -1,7 +1,8 @@
 import { useCallback, useMemo } from 'react'
 
 import { Box, Button, Flex, Icon, Link, Segment } from 'lib/components'
-import { CONTROL_SIZE_TOKENS, IconName } from 'lib/definitions'
+import { BUTTON_SIZE_MAP } from 'lib/components/core/controls/Button/definitions'
+import { IconName } from 'lib/definitions'
 
 import {
   PaginationProps,
@@ -125,8 +126,8 @@ export const Pagination = ({
                   intent={intent}
                   color={color}
                   disabled
-                  blockSize={CONTROL_SIZE_TOKENS[size || 'md'].blockSize}
-                  paddingInline={CONTROL_SIZE_TOKENS[size || 'md'].paddingInline}
+                  blockSize={BUTTON_SIZE_MAP[size || 'md'].blockSize}
+                  paddingInline={BUTTON_SIZE_MAP[size || 'md'].paddingInline}
                 >
                   <Flex tagAttrs={{ style: { blockSize: 'inherit' } }} alignItems="center">
                     <Icon name="ellipsis" />

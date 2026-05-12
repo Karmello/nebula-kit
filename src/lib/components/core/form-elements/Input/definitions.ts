@@ -1,7 +1,9 @@
 import { ReactNode } from 'react'
 
 import { BoxProps, HtmlTagProps } from 'lib/components'
-import { CONTROL_SIZE_TOKENS, TShirtSize } from 'lib/definitions'
+import { TShirtSize } from 'lib/definitions'
+
+import { BUTTON_SIZE_MAP } from '../../controls/Button'
 
 export const INPUT_SIZE_CONFIG: Record<
   InputSize,
@@ -12,24 +14,24 @@ export const INPUT_SIZE_CONFIG: Record<
   }
 > = {
   xs: {
-    blockSize: CONTROL_SIZE_TOKENS.xs.blockSize,
-    paddingInline: CONTROL_SIZE_TOKENS.xs.paddingInline,
-    fontSize: CONTROL_SIZE_TOKENS.xs.fontSize,
+    blockSize: BUTTON_SIZE_MAP.xs.blockSize,
+    paddingInline: BUTTON_SIZE_MAP.xs.paddingInline,
+    fontSize: BUTTON_SIZE_MAP.xs.fontSize,
   },
   sm: {
-    blockSize: CONTROL_SIZE_TOKENS.sm.blockSize,
-    paddingInline: CONTROL_SIZE_TOKENS.sm.paddingInline,
-    fontSize: CONTROL_SIZE_TOKENS.sm.fontSize,
+    blockSize: BUTTON_SIZE_MAP.sm.blockSize,
+    paddingInline: BUTTON_SIZE_MAP.sm.paddingInline,
+    fontSize: BUTTON_SIZE_MAP.sm.fontSize,
   },
   md: {
-    blockSize: CONTROL_SIZE_TOKENS.md.blockSize,
-    paddingInline: CONTROL_SIZE_TOKENS.md.paddingInline,
-    fontSize: CONTROL_SIZE_TOKENS.md.fontSize,
+    blockSize: BUTTON_SIZE_MAP.md.blockSize,
+    paddingInline: BUTTON_SIZE_MAP.md.paddingInline,
+    fontSize: BUTTON_SIZE_MAP.md.fontSize,
   },
   lg: {
-    blockSize: CONTROL_SIZE_TOKENS.lg.blockSize,
-    paddingInline: CONTROL_SIZE_TOKENS.lg.paddingInline,
-    fontSize: CONTROL_SIZE_TOKENS.lg.fontSize,
+    blockSize: BUTTON_SIZE_MAP.lg.blockSize,
+    paddingInline: BUTTON_SIZE_MAP.lg.paddingInline,
+    fontSize: BUTTON_SIZE_MAP.lg.fontSize,
   },
 }
 

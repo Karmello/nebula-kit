@@ -5,17 +5,13 @@ import { ACTION_SURFACE_TAGS } from 'lib/components/core/controls/ActionSurface/
 import { ACTION_SURFACE_PROPS_META } from './props'
 import { ACTION_SURFACE_EXAMPLES_META } from './examples'
 
-import { ACTION_SURFACE_HEADING_META } from './ActionSurfaceHeading/_index'
-import { ACTION_SURFACE_DESCRIPTION_META } from './ActionSurfaceDescription/_index'
-
 const ACTION_SURFACE_META: ComponentMeta<ActionSurfaceProps> = {
   overview: {
     bundle: 'core',
     title: '...',
     features: ['...'],
-    composedOf: ['Box'],
+    composedOf: ['Box', 'Text', 'Loader'],
     topLevelTags: ACTION_SURFACE_TAGS,
-    slots: ['ActionSurface.Heading', 'ActionSurface.Description'],
   },
   props: ACTION_SURFACE_PROPS_META,
   examples: ACTION_SURFACE_EXAMPLES_META,
@@ -26,6 +22,4 @@ const ACTION_SURFACE_META: ComponentMeta<ActionSurfaceProps> = {
 
 export default {
   ActionSurface: ACTION_SURFACE_META,
-  ActionSurfaceHeading: ACTION_SURFACE_HEADING_META,
-  ActionSurfaceDescription: ACTION_SURFACE_DESCRIPTION_META,
 }
