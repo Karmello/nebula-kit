@@ -2,6 +2,7 @@ import { ReactNode, MouseEventHandler } from 'react'
 
 import { BoxProps, HtmlTagProps, TextProps } from 'lib/components'
 import { RespValue, TShirtSize } from 'lib/definitions'
+import { TEXT_TYPOGRAPHY_MAP } from '../../base/Text'
 
 export const DEFAULT_ACTION_SURFACE_INTERACTIVE: ActionSurfaceProps['interactive'] = true
 export const DEFAULT_ACTION_SURFACE_VARIANT: ActionSurfaceProps['variant'] = 'solid'
@@ -44,3 +45,37 @@ export type ActionSurfaceProps<T extends ActionSurfaceTag = 'button'> = PropsFro
   PropsFromBox<T> &
   PropsFromText &
   ActionSurfaceOwnProps
+
+export const ACTION_SURFACE_SIZE_MAP: Record<
+  ActionSurfaceSize,
+  { fontSize: string; lineHeight: number; blockSize: string; paddingInline: string; loaderSize: string }
+> = {
+  xs: {
+    fontSize: TEXT_TYPOGRAPHY_MAP.small.fontSize,
+    lineHeight: TEXT_TYPOGRAPHY_MAP.small.lineHeight,
+    blockSize: '20px',
+    paddingInline: '20px',
+    loaderSize: '30px',
+  },
+  sm: {
+    fontSize: TEXT_TYPOGRAPHY_MAP.small.fontSize,
+    lineHeight: TEXT_TYPOGRAPHY_MAP.small.lineHeight,
+    blockSize: '30px',
+    paddingInline: '20px',
+    loaderSize: '30px',
+  },
+  md: {
+    fontSize: TEXT_TYPOGRAPHY_MAP.body.fontSize,
+    lineHeight: TEXT_TYPOGRAPHY_MAP.body.lineHeight,
+    blockSize: '60px',
+    paddingInline: '15px',
+    loaderSize: '22px',
+  },
+  lg: {
+    fontSize: TEXT_TYPOGRAPHY_MAP.body.fontSize,
+    lineHeight: TEXT_TYPOGRAPHY_MAP.body.lineHeight,
+    blockSize: '70px',
+    paddingInline: '20px',
+    loaderSize: '30px',
+  },
+}

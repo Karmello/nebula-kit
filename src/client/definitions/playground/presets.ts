@@ -1,4 +1,6 @@
 import type {
+  PropsFromActionSurfaceKey,
+  PropsFromAvatarKey,
   PropsFromBoxKey,
   PropsFromButtonKey,
   PropsFromCalloutKey,
@@ -16,12 +18,20 @@ import type {
 } from './types'
 
 export const PLAYGROUND_PRESETS: Record<string, Array<{ name: string; props: object }>> = {
+  ActionSurface: [
+    {
+      name: 'Default',
+      props: {
+        heading: 'Heading text',
+      } as Record<PropsFromActionSurfaceKey, unknown>,
+    },
+  ],
   Avatar: [
     {
       name: 'Default',
       props: {
         src: '/src/client/assets/img-2.webp',
-      },
+      } as Record<PropsFromAvatarKey, unknown>,
     },
   ],
   Box: [

@@ -4,7 +4,6 @@ import classNames from 'classnames'
 import { Box, Text, Loader, Flex } from 'lib/components'
 import { Ripple } from 'lib/components/core/internal'
 import { updateDomRespDataset } from 'lib/service'
-import { CONTROL_SIZE_MAP } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 
@@ -18,6 +17,7 @@ import {
   DEFAULT_ACTION_SURFACE_INTERACTIVE,
   DEFAULT_ACTION_SURFACE_TEXT_ALIGN,
   DEFAULT_ACTION_SURFACE_JUSTIFY_CONTENT,
+  ACTION_SURFACE_SIZE_MAP,
 } from './definitions'
 
 import './action-surface.scss'
@@ -89,14 +89,14 @@ export const ActionSurface = <T extends ActionSurfaceTag = 'button'>({
       elevated={elevated}
       surface={selected ? 'selected' : undefined}
       position="relative"
-      blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
-      paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
+      blockSize={ACTION_SURFACE_SIZE_MAP[size || 'md'].blockSize}
+      paddingInline={ACTION_SURFACE_SIZE_MAP[size || 'md'].paddingInline}
     >
       <Flex tag="span" flexDirection="column">
         <Text
           tag="span"
-          fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
-          lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
+          fontSize={ACTION_SURFACE_SIZE_MAP[size || 'md'].fontSize}
+          lineHeight={ACTION_SURFACE_SIZE_MAP[size || 'md'].lineHeight}
           bold={bold}
           truncate
           iconName={iconName}
@@ -109,12 +109,17 @@ export const ActionSurface = <T extends ActionSurfaceTag = 'button'>({
           {heading}
         </Text>
         {description ? (
-          <Text tag="span" textAlign={textAlign}>
+          <Text
+            tag="span"
+            fontSize={ACTION_SURFACE_SIZE_MAP[size || 'md'].fontSize}
+            lineHeight={ACTION_SURFACE_SIZE_MAP[size || 'md'].lineHeight}
+            textAlign={textAlign}
+          >
             {description}
           </Text>
         ) : null}
       </Flex>
-      {loading && !disabled ? <Loader centered size={CONTROL_SIZE_MAP[size || 'md'].loaderSize} /> : null}
+      {loading && !disabled ? <Loader centered size={ACTION_SURFACE_SIZE_MAP[size || 'md'].loaderSize} /> : null}
       <Ripple parentRef={tagRef || ref} active={ripple && !loading && !disabled} />
     </Box>
   )

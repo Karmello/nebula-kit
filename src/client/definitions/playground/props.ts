@@ -14,7 +14,31 @@ import type {
   TabsProps,
   RevealProps,
   AvatarProps,
+  ActionSurfaceProps,
 } from 'lib/components'
+
+export const PROPS_FROM_ACTION_SURFACE = [
+  'bold',
+  'color',
+  'description',
+  'disabled',
+  'elevated',
+  'fullWidth',
+  'heading',
+  'iconAngle',
+  'iconName',
+  'iconPlacement',
+  'inlineSize',
+  'intent',
+  'interactive',
+  'justifyContent',
+  'loading',
+  'ripple',
+  'selected',
+  'size',
+  'textAlign',
+  'variant',
+] as const satisfies readonly (keyof ActionSurfaceProps)[]
 
 export const PROPS_FROM_AVATAR = ['initials', 'shape', 'size', 'src'] as const satisfies readonly (keyof AvatarProps)[]
 
@@ -173,6 +197,7 @@ export const PROPS_FROM_TEXT = [
 
 export const PLAYGROUND_PROPS_MAP: Record<string, readonly string[]> = {
   Avatar: PROPS_FROM_AVATAR,
+  ActionSurface: PROPS_FROM_ACTION_SURFACE,
   Box: PROPS_FROM_BOX,
   Button: PROPS_FROM_BUTTON,
   Callout: PROPS_FROM_CALLOUT,

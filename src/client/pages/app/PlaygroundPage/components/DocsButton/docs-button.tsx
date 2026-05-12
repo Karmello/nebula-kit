@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { kebabCase } from 'change-case'
 
 import { CORE_PAGE_CATEGORIES, PRO_PAGE_CATEGORIES } from 'client/definitions'
 import { Button } from 'lib/components'
@@ -12,7 +13,7 @@ export const DocsButton = () => {
   const { bundle } = components[activeComponent]
 
   const url = useMemo(() => {
-    const componentName = activeComponent.toLowerCase()
+    const componentName = kebabCase(activeComponent)
 
     const { key: category } = (bundle === 'core' ? CORE_PAGE_CATEGORIES : PRO_PAGE_CATEGORIES).find(obj =>
       obj.items.some(obj => obj.key === componentName)

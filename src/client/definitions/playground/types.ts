@@ -1,4 +1,5 @@
 import {
+  PROPS_FROM_ACTION_SURFACE,
   PROPS_FROM_AVATAR,
   PROPS_FROM_BOX,
   PROPS_FROM_BUTTON,
@@ -16,6 +17,7 @@ import {
   PROPS_FROM_TEXT,
 } from './props'
 
+export type PropsFromActionSurfaceKey = (typeof PROPS_FROM_ACTION_SURFACE)[number]
 export type PropsFromAvatarKey = (typeof PROPS_FROM_AVATAR)[number]
 export type PropsFromBoxKey = (typeof PROPS_FROM_BOX)[number]
 export type PropsFromButtonKey = (typeof PROPS_FROM_BUTTON)[number]
@@ -33,6 +35,7 @@ export type PropsFromTabsKey = (typeof PROPS_FROM_TABS)[number]
 export type PropsFromTextKey = (typeof PROPS_FROM_TEXT)[number]
 
 export type PlaygroundProp =
+  | PropsFromActionSurfaceKey
   | PropsFromAvatarKey
   | PropsFromBoxKey
   | PropsFromButtonKey
