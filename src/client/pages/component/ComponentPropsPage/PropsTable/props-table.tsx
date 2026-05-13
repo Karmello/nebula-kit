@@ -1,6 +1,6 @@
 import { kebabCase } from 'change-case'
 
-import { Icon, Section, Spacer, Table, Text, Link, Tooltip, Flex } from 'lib/components'
+import { Icon, Section, Spacer, Table, Text, Link, Tooltip, Flex, WithIcon } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 
 type Props = {
@@ -41,14 +41,16 @@ export const PropsTable = ({ category, data }: Props) => {
                       {name}
                     </Text>
                   ) : (
-                    <Link
-                      href={`https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/${kebabCase(name)}`}
-                      target="_blank"
-                    >
-                      <Text intent="primary" color="blue" bold iconName="external-link" iconPlacement="right" underline={false}>
-                        {name}
-                      </Text>
-                    </Link>
+                    <WithIcon iconName="external-link" iconPlacement="right" iconColor="blue" iconIntent="primary">
+                      <Link
+                        href={`https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/${kebabCase(name)}`}
+                        target="_blank"
+                      >
+                        <Text intent="primary" color="blue" bold iconName="external-link" underline={false}>
+                          {name}
+                        </Text>
+                      </Link>
+                    </WithIcon>
                   )}
                 </Table.Cell>
                 <Table.Cell>

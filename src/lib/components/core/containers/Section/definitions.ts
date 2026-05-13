@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { BoxProps, HtmlTagProps } from 'lib/components'
+import { BoxProps, HtmlTagProps, WithIconProps } from 'lib/components'
 import { BoxIntent, BoxVariant } from 'lib/components/core/base/Box/definitions'
 import { TextProps, TextTypography } from 'lib/components/core/base/Text/definitions'
 import { TShirtSize } from 'lib/definitions'
@@ -44,11 +44,14 @@ type PropsFromHtmlTag<T extends SectionTag = 'section'> = Omit<HtmlTagProps<T>, 
 
 type PropsFromBox<T extends SectionTag = 'section'> = Pick<BoxProps<T>, 'color' | 'intent' | 'interactive'>
 
-type PropsFromText = Pick<TextProps, 'iconName' | 'iconPlacement'> & {
+type PropsFromText = Pick<TextProps, 'iconName'> & {
   headingIntent?: TextProps['intent']
 }
+
+type PropsFromWithIcon = Pick<WithIconProps, 'iconPlacement'>
 
 export type SectionProps<T extends SectionTag = 'section'> = PropsFromHtmlTag<T> &
   PropsFromBox<T> &
   PropsFromText &
+  PropsFromWithIcon &
   SectionOwnProps

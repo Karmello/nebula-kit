@@ -1,7 +1,7 @@
 import { ComponentProps, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Divider, SectionProps, Spacer, Text } from 'lib/components'
+import { Box, Divider, SectionProps, Spacer, Text, WithIcon } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import {
@@ -11,6 +11,8 @@ import {
   DEFAULT_SECTION_VARIANT,
   SectionTag,
 } from './definitions'
+
+import { TEXT_TYPOGRAPHY_MAP } from '../../base/Text'
 
 export const Section = <T extends SectionTag = 'section'>({
   // HtmlTag
@@ -23,10 +25,11 @@ export const Section = <T extends SectionTag = 'section'>({
   color,
   intent = DEFAULT_SECTION_INTENT,
   interactive,
-  // text
+  // Text
   iconName,
-  iconPlacement,
   headingIntent,
+  // WithIcon
+  iconPlacement,
   // own
   heading,
   size = DEFAULT_SECTION_SIZE,
@@ -52,16 +55,15 @@ export const Section = <T extends SectionTag = 'section'>({
       overflowX="auto"
       overflowY="hidden"
     >
-      <Text
-        typography={SECTION_SIZE_CONFIG[size].textTypography}
+      <WithIcon
         iconName={iconName}
         iconPlacement={iconPlacement}
-        color={color}
-        intent={headingIntent}
-        bold
+        iconSize={TEXT_TYPOGRAPHY_MAP[SECTION_SIZE_CONFIG[size].textTypography].iconSize}
       >
-        {heading}
-      </Text>
+        <Text typography={SECTION_SIZE_CONFIG[size].textTypography} color={color} intent={headingIntent} bold>
+          {heading}
+        </Text>
+      </WithIcon>
       <Divider color={color} marginTop="2xs" />
       {children ? (
         <>

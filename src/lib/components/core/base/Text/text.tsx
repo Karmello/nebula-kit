@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import { Box, WithIcon } from 'lib/components'
+import { Box } from 'lib/components'
 import { updateDomStaticDataset } from 'lib/service'
 import { withPrefix } from 'lib/helpers'
 
@@ -21,10 +21,6 @@ export const Text = <T extends TextTag = 'p'>({
   disabled,
   // WithIcon
   iconName,
-  iconPlacement,
-  iconAngle,
-  customSvgIcon,
-  justifyContent,
   // own
   typography = DEFAULT_TEXT_TYPOGRAPHY,
   fontSize,
@@ -71,20 +67,7 @@ export const Text = <T extends TextTag = 'p'>({
       disabled={disabled}
     >
       {space === 'start' || space === 'both' ? <> </> : null}
-      {iconName || customSvgIcon ? (
-        <WithIcon
-          iconName={iconName}
-          iconPlacement={iconPlacement}
-          iconAngle={iconAngle}
-          iconSize={TEXT_TYPOGRAPHY_MAP[typography].iconSize}
-          customSvgIcon={customSvgIcon}
-          justifyContent={justifyContent}
-        >
-          {children}
-        </WithIcon>
-      ) : (
-        children
-      )}
+      {children}
       {space === 'end' || space === 'both' ? <> </> : null}
     </Box>
   )

@@ -1,7 +1,7 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Text, Loader } from 'lib/components'
+import { Box, Text, Loader, WithIcon } from 'lib/components'
 import { Ripple } from 'lib/components/core/internal'
 import { updateDomRespDataset } from 'lib/service'
 import { CONTROL_SIZE_MAP } from 'lib/definitions'
@@ -40,9 +40,10 @@ export const Button = <T extends ButtonTag = 'button'>({
   // Text
   bold,
   iconName,
-  iconPlacement,
-  iconAngle,
+  // WithIcon
   customSvgIcon,
+  iconAngle,
+  iconPlacement,
   // own
   size = DEFAULT_BUTTON_SIZE,
   fullWidth,
@@ -93,22 +94,27 @@ export const Button = <T extends ButtonTag = 'button'>({
       blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
       paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
     >
-      <Text
-        tag="span"
+      <WithIcon
         tagAttrs={{ style: { inlineSize: '100%' } }}
-        fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
-        lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
-        bold={bold}
-        truncate
         iconName={iconName}
         iconPlacement={iconPlacement}
         iconAngle={iconAngle}
         customSvgIcon={customSvgIcon}
         justifyContent={align === 'split' ? 'space-between' : align === 'center' ? 'center' : 'flex-start'}
-        textAlign={align === 'center' ? 'center' : undefined}
       >
-        {children}
-      </Text>
+        {children ? (
+          <Text
+            tag="span"
+            fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
+            lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
+            bold={bold}
+            truncate
+            textAlign={align === 'center' ? 'center' : undefined}
+          >
+            {children}
+          </Text>
+        ) : null}
+      </WithIcon>
       {loading && !disabled ? <Loader centered size={CONTROL_SIZE_MAP[size || 'md'].loaderSize} /> : null}
       <Ripple parentRef={tagRef || ref} active={ripple && !loading && !disabled} />
     </Box>

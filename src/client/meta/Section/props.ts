@@ -12,6 +12,7 @@ import {
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 import { TEXT_PROPS_META } from '../Text/props'
+import { WITH_ICON_PROPS_META } from '../WithIcon/props'
 
 const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
   ...HTML_TAG_PROPS_META,
@@ -31,7 +32,7 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
   },
   iconName: TEXT_PROPS_META.iconName,
   iconPlacement: {
-    ...TEXT_PROPS_META.iconPlacement,
+    ...WITH_ICON_PROPS_META.iconPlacement,
     description: 'Icon placement relative to heading.',
   },
   intent: {

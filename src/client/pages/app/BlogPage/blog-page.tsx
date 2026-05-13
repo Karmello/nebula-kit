@@ -1,4 +1,4 @@
-import { Box, Flex, Link, Section, Text } from 'lib/components'
+import { Box, Flex, Link, Section, Text, WithIcon } from 'lib/components'
 import { IconName } from 'lib/definitions'
 
 type ArticleProps = {
@@ -21,11 +21,13 @@ const Article = ({ title, date, platform, href, iconName }: ArticleProps) => {
         <Text tag="span" space="both">
           |
         </Text>
-        <Link href={href} target="_blank">
-          <Text tag="span" intent="primary" color="blue" iconName="external-link" iconPlacement="right">
-            Open
-          </Text>
-        </Link>
+        <WithIcon iconName="external-link" iconPlacement="right" iconIntent="primary" iconColor="blue">
+          <Link href={href} target="_blank">
+            <Text tag="span" intent="primary" color="blue">
+              Open
+            </Text>
+          </Link>
+        </WithIcon>
       </Flex>
     </Section>
   )

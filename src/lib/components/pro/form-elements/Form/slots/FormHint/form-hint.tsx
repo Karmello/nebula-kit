@@ -1,4 +1,4 @@
-import { Spacer, Text } from 'lib/components'
+import { Text, Spacer, WithIcon } from 'lib/components'
 
 import { DEFAULT_FORM_HINT_COLOR, DEFAULT_FORM_HINT_INTENT, FormHintProps } from './definitions'
 
@@ -9,32 +9,34 @@ export const FormHint = ({
   tagRef,
   bold,
   iconName,
-  iconPlacement,
   intent = DEFAULT_FORM_HINT_INTENT,
   color = DEFAULT_FORM_HINT_COLOR,
   noWrap,
   textAlign,
   truncate,
+  // WithIcon
+  iconPlacement,
 }: FormHintProps) => {
   return (
     <>
       <Spacer blockSize="2xs" />
-      <Text
-        tag="span"
-        tagAttrs={tagAttrs}
-        tagRef={tagRef}
-        typography="small"
-        bold={bold}
-        iconName={iconName}
-        iconPlacement={iconPlacement}
-        intent={intent}
-        color={color}
-        noWrap={noWrap}
-        textAlign={textAlign}
-        truncate={truncate}
-      >
-        {children}
-      </Text>
+      <WithIcon iconPlacement={iconPlacement}>
+        <Text
+          tag="span"
+          tagAttrs={tagAttrs}
+          tagRef={tagRef}
+          typography="small"
+          bold={bold}
+          iconName={iconName}
+          intent={intent}
+          color={color}
+          noWrap={noWrap}
+          textAlign={textAlign}
+          truncate={truncate}
+        >
+          {children}
+        </Text>
+      </WithIcon>
     </>
   )
 }

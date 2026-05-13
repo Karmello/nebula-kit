@@ -16,6 +16,7 @@ import {
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 import { TEXT_PROPS_META } from '../Text/props'
+import { WITH_ICON_PROPS_META } from '../WithIcon/props'
 
 const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   align: {
@@ -30,7 +31,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     description: 'Label rendered.',
   },
   color: BOX_PROPS_META.color,
-  customSvgIcon: TEXT_PROPS_META.customSvgIcon,
+  customSvgIcon: WITH_ICON_PROPS_META.customSvgIcon,
   disabled: BOX_PROPS_META.disabled,
   elevated: BOX_PROPS_META.elevated,
   fullWidth: {
@@ -38,9 +39,9 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     isResponsive: true,
     description: 'Expands the button to match the full width of its container.',
   },
-  iconAngle: TEXT_PROPS_META.iconAngle,
+  iconAngle: WITH_ICON_PROPS_META.iconAngle,
   iconName: TEXT_PROPS_META.iconName,
-  iconPlacement: TEXT_PROPS_META.iconPlacement,
+  iconPlacement: WITH_ICON_PROPS_META.iconPlacement,
   inlineSize: BOX_PROPS_META.inlineSize,
   intent: {
     ...BOX_PROPS_META.intent,

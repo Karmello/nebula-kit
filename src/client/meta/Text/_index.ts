@@ -12,16 +12,14 @@ const TEXT_META: ComponentMeta<TextProps> = {
     features: [
       'renders semantic text elements with consistent typography',
       'provides common text styling and formatting options',
-      'supports inline icons alongside text',
-      'adapts to different layout contexts through adjustable text scale',
     ],
-    composedOf: ['Box', 'WithIcon'],
+    composedOf: ['Box'],
     topLevelTags: TEXT_TAGS,
   },
   props: TEXT_PROPS_META,
   examples: TEXT_EXAMPLES_META,
   changelog: {
-    '0.10.0': ['removed scale prop', 'added wordBreak prop', 'exposed iconAngle prop via WithIcon'],
+    '0.10.0': ['removed scale prop', 'added wordBreak prop', 'removed WithIcon dependency'],
     '0.9.0': ['added fontSize and lineHeight props for overriding typography-derived values directly'],
     '0.7.0': ['fixed text link display behavior inside table cells'],
     '0.2.3': ['released'],

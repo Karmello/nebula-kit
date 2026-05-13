@@ -160,7 +160,6 @@ export const PROPS_FROM_TEXT = [
   'disabled',
   'fontSize',
   'iconName',
-  'iconPlacement',
   'intent',
   'italic',
   'lineHeight',
@@ -169,7 +168,6 @@ export const PROPS_FROM_TEXT = [
   'truncate',
   'typography',
   'underline',
-  'justifyContent',
 ] as const satisfies readonly (keyof TextProps)[]
 
 export const PROPS_FROM_WITH_ICON = [

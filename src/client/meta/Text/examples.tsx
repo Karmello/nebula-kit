@@ -31,10 +31,6 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
     description: 'Typography prop sets HTML tag, font size and line height automatically.',
   },
   {
-    jsx: <Text iconName="search">Paragraph with an icon</Text>,
-    description: 'Text supports inline icons.',
-  },
-  {
     jsx: (
       <Text textAlign="center">
         This is an intentionally long line of text that stretches across the container so you can clearly see how the textAlign

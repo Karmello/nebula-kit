@@ -5,7 +5,7 @@ import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
 import { useGetUser } from 'client/api'
 import { useAppStore } from 'client/store'
-import { Loader, Table, Text, Flex, Link, Button, Box, Spacer, Section } from 'lib/components'
+import { Loader, Table, Text, Flex, Link, Button, Box, Spacer, Section, WithIcon } from 'lib/components'
 import { CopyButton } from 'client/components'
 
 export default () => {
@@ -92,20 +92,29 @@ export default () => {
               </Table.Cell>
               <Table.Cell colSpan={2}>
                 {getUser.data ? (
-                  <Text
+                  <WithIcon
                     iconName={
                       getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.discordUserId ? 'check' : undefined) : undefined
                     }
                     iconPlacement="right"
-                    color={getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.discordUserId ? 'green' : 'red') : undefined}
-                    intent={getUser.data.user.plan !== 'free' ? 'primary' : undefined}
+                    iconColor={
+                      getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.discordUserId ? 'green' : 'red') : undefined
+                    }
+                    iconIntent={getUser.data.user.plan !== 'free' ? 'primary' : undefined}
                   >
-                    {getUser.data.user.plan !== 'free'
-                      ? !!getUser.data?.user.discordUserId
-                        ? 'Connected'
-                        : 'Not connected'
-                      : '-'}
-                  </Text>
+                    <Text
+                      color={
+                        getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.discordUserId ? 'green' : 'red') : undefined
+                      }
+                      intent={getUser.data.user.plan !== 'free' ? 'primary' : undefined}
+                    >
+                      {getUser.data.user.plan !== 'free'
+                        ? !!getUser.data?.user.discordUserId
+                          ? 'Connected'
+                          : 'Not connected'
+                        : '-'}
+                    </Text>
+                  </WithIcon>
                 ) : null}
               </Table.Cell>
             </Table.Row>
@@ -117,7 +126,7 @@ export default () => {
                 {getUser.data ? (
                   <Flex alignItems="center" flexWrap="wrap" rowGap="xs" columnGap="sm">
                     <Flex.Item alignSelf="auto">
-                      <Text
+                      <WithIcon
                         iconName={
                           getUser.data.user.plan !== 'free'
                             ? !!getUser.data?.user.githubUsername
@@ -126,17 +135,28 @@ export default () => {
                             : undefined
                         }
                         iconPlacement="right"
-                        color={
+                        iconColor={
                           getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.githubUsername ? 'green' : 'red') : undefined
                         }
-                        intent={getUser.data.user.plan !== 'free' ? 'primary' : undefined}
+                        iconIntent={getUser.data.user.plan !== 'free' ? 'primary' : undefined}
                       >
-                        {getUser.data.user.plan !== 'free'
-                          ? !!getUser.data?.user.githubUsername
-                            ? `Connected as ${getUser.data.user.githubUsername}`
-                            : 'Not connected'
-                          : '-'}
-                      </Text>
+                        <Text
+                          color={
+                            getUser.data.user.plan !== 'free'
+                              ? !!getUser.data?.user.githubUsername
+                                ? 'green'
+                                : 'red'
+                              : undefined
+                          }
+                          intent={getUser.data.user.plan !== 'free' ? 'primary' : undefined}
+                        >
+                          {getUser.data.user.plan !== 'free'
+                            ? !!getUser.data?.user.githubUsername
+                              ? `Connected as ${getUser.data.user.githubUsername}`
+                              : 'Not connected'
+                            : '-'}
+                        </Text>
+                      </WithIcon>
                     </Flex.Item>
                     {getUser.data?.user.githubUsername ? (
                       <Link href="https://github.com/orgs/nebula-kit/projects/1" target="_blank">

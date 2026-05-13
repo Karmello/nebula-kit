@@ -1,6 +1,6 @@
 import { COMPONENT_TEMPLATES } from 'client/definitions'
 import * as LIB_COMPONENTS from 'lib/components'
-import { Text, Spacer, Box, Tooltip, Icon } from 'lib/components'
+import { Text, Spacer, Box, Tooltip, Icon, WithIcon } from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
 
@@ -11,8 +11,7 @@ export const RenderPanel = () => {
 
   return (
     <>
-      <Text
-        bold
+      <WithIcon
         customSvgIcon={
           <Tooltip
             content='Playground state is stored locally. Components or props may change between versions. To make sure you are up to date, clear "neb.playground" from local storage and refresh.'
@@ -25,8 +24,8 @@ export const RenderPanel = () => {
         }
         iconPlacement="right"
       >
-        Canvas
-      </Text>
+        <Text bold>Canvas</Text>
+      </WithIcon>
       <Spacer blockSize="2xs" />
       <Box tagAttrs={{ style: { borderStyle: 'dashed' } }} drawable variant="outline" intent="tertiary" padding="25px">
         <Component {...getPropValues(activeComponent)} />
