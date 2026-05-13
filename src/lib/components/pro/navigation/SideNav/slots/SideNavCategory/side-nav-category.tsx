@@ -23,7 +23,7 @@ export const SideNavCategory = ({
   variant = DEFAULT_SIDE_NAV_CATEGORY_VARIANT,
   color,
   intent = DEFAULT_SIDE_NAV_CATEGORY_INTENT,
-  justifyContent,
+  align,
   bold,
   // own
   label,
@@ -88,7 +88,7 @@ export const SideNavCategory = ({
                 variant={variant || rootVariant}
                 color={color || rootColor}
                 intent={intent || rootIntent}
-                justifyContent={justifyContent}
+                align={align}
                 size={size}
                 fullWidth
                 bold={bold}

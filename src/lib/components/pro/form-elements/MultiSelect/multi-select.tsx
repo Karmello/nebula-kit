@@ -6,7 +6,7 @@ import { WithSlots } from 'lib/components/core/internal'
 import { withPrefix } from 'lib/helpers'
 
 import { MultiSelectProvider } from './MultiSelectProvider'
-import { DEFAULT_MULTI_SELECT_OPTION_JUSTIFY_CONTENT } from './slots'
+import { DEFAULT_MULTI_SELECT_OPTION_ALIGN } from './slots'
 import { DEFAULT_MULTI_SELECT_INLINE_SIZE, MultiSelectProps } from './definitions'
 
 export const MultiSelect = ({
@@ -98,7 +98,7 @@ export const MultiSelect = ({
                         iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
                         iconPlacement="right"
                         iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
-                        justifyContent="space-between"
+                        align="split"
                         size={size}
                         variant="solid"
                         intent={intent}
@@ -125,7 +125,7 @@ export const MultiSelect = ({
                           }}
                           bold={selected}
                           selected={selected}
-                          justifyContent={slotProps.justifyContent || DEFAULT_MULTI_SELECT_OPTION_JUSTIFY_CONTENT}
+                          align={slotProps.align || DEFAULT_MULTI_SELECT_OPTION_ALIGN}
                           iconName={selected ? 'check' : undefined}
                           iconPlacement="right"
                         >

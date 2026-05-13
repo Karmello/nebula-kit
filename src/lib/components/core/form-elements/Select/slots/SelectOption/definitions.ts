@@ -1,6 +1,6 @@
 import { DropdownListItemProps } from 'lib/components'
 
-export const DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT: SelectOptionProps['justifyContent'] = 'flex-start'
+export const DEFAULT_SELECT_OPTION_ALIGN: SelectOptionProps['align'] = 'start'
 
 type SelectOptionOwnProps = {
   value: string

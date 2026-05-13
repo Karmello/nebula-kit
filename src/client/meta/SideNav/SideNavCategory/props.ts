@@ -8,6 +8,7 @@ import { DEFAULT_SIDE_NAV_CATEGORY_EXPANDED, SIDE_NAV_VARIANTS } from 'lib/compo
 import { DEFAULT_SIDE_NAV_CATEGORY_INTENT, DEFAULT_SIDE_NAV_CATEGORY_VARIANT } from 'lib/components/pro/navigation/SideNav'
 
 const SIDE_NAV_CATEGORY_PROPS_META: ComponentMeta<SideNavCategoryProps>['props'] = {
+  align: BUTTON_PROPS_META.align,
   bold: BUTTON_PROPS_META.bold,
   children: {
     ...HTML_TAG_PROPS_META.children,
@@ -25,7 +26,6 @@ const SIDE_NAV_CATEGORY_PROPS_META: ComponentMeta<SideNavCategoryProps>['props']
     ...BUTTON_PROPS_META.intent,
     defaultValue: String(DEFAULT_SIDE_NAV_CATEGORY_INTENT),
   },
-  justifyContent: BUTTON_PROPS_META.justifyContent,
   label: {
     options: ['string'],
     isRequired: true,

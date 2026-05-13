@@ -19,7 +19,7 @@ export const SideNavItem = ({
   customSvgIcon,
   iconName,
   iconPlacement,
-  justifyContent,
+  align,
   elevated,
   selected,
   // Link
@@ -51,7 +51,7 @@ export const SideNavItem = ({
         customSvgIcon={customSvgIcon}
         iconName={iconName}
         iconPlacement={iconPlacement}
-        justifyContent={justifyContent}
+        align={align}
         elevated={elevated}
         selected={selected}
       >

@@ -1,6 +1,6 @@
 import { DropdownListItemProps } from 'lib/components'
 
-export const DEFAULT_AUTOCOMPLETE_OPTION_JUSTIFY_CONTENT: AutocompleteOptionProps['justifyContent'] = 'space-between'
+export const DEFAULT_AUTOCOMPLETE_OPTION_ALIGN: AutocompleteOptionProps['align'] = 'split'
 
 type AutocompleteOptionOwnProps = {
   value: string

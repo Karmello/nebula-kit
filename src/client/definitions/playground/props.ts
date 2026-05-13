@@ -41,6 +41,7 @@ export const PROPS_FROM_BOX = [
 ] as const satisfies readonly (keyof BoxProps)[]
 
 export const PROPS_FROM_BUTTON = [
+  'align',
   'bold',
   'children',
   'color',
@@ -53,14 +54,12 @@ export const PROPS_FROM_BUTTON = [
   'inlineSize',
   'intent',
   'interactive',
-  'justifyContent',
   'loading',
   'minInlineSize',
   'maxInlineSize',
   'ripple',
   'selected',
   'size',
-  'textAlign',
   'variant',
 ] as const satisfies readonly (keyof ButtonProps)[]
 
@@ -170,6 +169,7 @@ export const PROPS_FROM_TEXT = [
   'truncate',
   'typography',
   'underline',
+  'justifyContent',
 ] as const satisfies readonly (keyof TextProps)[]
 
 export const PROPS_FROM_WITH_ICON = [

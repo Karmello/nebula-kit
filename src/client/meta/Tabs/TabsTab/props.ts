@@ -3,6 +3,7 @@ import { BUTTON_PROPS_META } from 'client/meta/Button/props'
 import { TabsTabProps } from 'lib/components'
 
 const TABS_TAB_PROPS_META: ComponentMeta<TabsTabProps>['props'] = {
+  align: BUTTON_PROPS_META.align,
   children: {
     ...BUTTON_PROPS_META.children,
     isRequired: true,
@@ -12,7 +13,6 @@ const TABS_TAB_PROPS_META: ComponentMeta<TabsTabProps>['props'] = {
   iconName: BUTTON_PROPS_META.iconName,
   iconPlacement: BUTTON_PROPS_META.iconPlacement,
   inlineSize: BUTTON_PROPS_META.inlineSize,
-  justifyContent: BUTTON_PROPS_META.justifyContent,
   tagAttrs: BUTTON_PROPS_META.tagAttrs,
   tagRef: BUTTON_PROPS_META.tagRef,
   value: {

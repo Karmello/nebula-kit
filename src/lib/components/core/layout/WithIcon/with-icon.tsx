@@ -42,14 +42,7 @@ export const WithIcon = ({
       tagRef={tagRef}
       inlineSize={inlineSize}
     >
-      <Flex
-        tag="span"
-        alignItems="center"
-        flexDirection="row"
-        flexWrap="nowrap"
-        justifyContent={justifyContent === 'space-between' && iconPlacement === 'left' ? undefined : justifyContent}
-        gap={gap}
-      >
+      <Flex tag="span" alignItems="center" flexDirection="row" flexWrap="nowrap" justifyContent={justifyContent} gap={gap}>
         {iconPlacement === 'left' ? iconAngle !== undefined ? <Rotate angle={iconAngle}>{icon}</Rotate> : icon : null}
         {children}
         {iconPlacement === 'right' ? iconAngle !== undefined ? <Rotate angle={iconAngle}>{icon}</Rotate> : icon : null}

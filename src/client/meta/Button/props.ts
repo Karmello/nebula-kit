@@ -4,21 +4,26 @@ import {
   ButtonProps,
   BUTTON_SIZES,
   BUTTON_TAGS,
+  BUTTON_ALIGNS,
   DEFAULT_BUTTON_INTENT,
   DEFAULT_BUTTON_SIZE,
   DEFAULT_BUTTON_VARIANT,
   DEFAULT_BUTTON_RIPPLE,
   DEFAULT_BUTTON_INTERACTIVE,
-  DEFAULT_BUTTON_TEXT_ALIGN,
-  DEFAULT_BUTTON_JUSTIFY_CONTENT,
+  DEFAULT_BUTTON_ALIGN,
 } from 'lib/components/core/controls/Button/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 import { TEXT_PROPS_META } from '../Text/props'
-import { FLEX_PROPS_META } from '../Flex/props'
 
 const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
+  align: {
+    options: BUTTON_ALIGNS,
+    defaultValue: String(DEFAULT_BUTTON_ALIGN),
+    isResponsive: true,
+    description: 'Controls how inner content is arranged within the container',
+  },
   bold: TEXT_PROPS_META.bold,
   children: {
     ...HTML_TAG_PROPS_META.children,
@@ -44,11 +49,6 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   interactive: {
     ...BOX_PROPS_META.interactive,
     defaultValue: String(DEFAULT_BUTTON_INTERACTIVE),
-  },
-  justifyContent: {
-    ...FLEX_PROPS_META.justifyContent,
-    defaultValue: String(DEFAULT_BUTTON_JUSTIFY_CONTENT),
-    description: 'Distributes text and icon along the main axis.',
   },
   loading: {
     options: ['boolean'],
@@ -82,10 +82,6 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
   tagRef: HTML_TAG_PROPS_META.tagRef,
-  textAlign: {
-    ...TEXT_PROPS_META.textAlign,
-    defaultValue: String(DEFAULT_BUTTON_TEXT_ALIGN),
-  },
   variant: {
     ...BOX_PROPS_META.variant,
     defaultValue: String(DEFAULT_BUTTON_VARIANT),

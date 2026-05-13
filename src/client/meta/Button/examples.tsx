@@ -30,7 +30,7 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
   {
     description: 'Full width Button with an icon aligned to the right edge.',
     jsx: (
-      <Button fullWidth iconName="search" iconPlacement="right" justifyContent="space-between">
+      <Button fullWidth iconName="search" iconPlacement="right" align="split">
         Button with icon
       </Button>
     ),

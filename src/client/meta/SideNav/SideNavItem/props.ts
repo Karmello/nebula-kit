@@ -6,6 +6,7 @@ import { SideNavItemProps } from 'lib/components'
 import { SIDE_NAV_VARIANTS } from 'lib/components/pro/navigation/SideNav/'
 
 const SIDE_NAV_ITEM_PROPS_META: ComponentMeta<SideNavItemProps>['props'] = {
+  align: BUTTON_PROPS_META.align,
   bold: BUTTON_PROPS_META.bold,
   children: {
     ...HTML_TAG_PROPS_META.children,
@@ -18,7 +19,6 @@ const SIDE_NAV_ITEM_PROPS_META: ComponentMeta<SideNavItemProps>['props'] = {
   iconName: BUTTON_PROPS_META.iconName,
   iconPlacement: BUTTON_PROPS_META.iconPlacement,
   intent: BUTTON_PROPS_META.intent,
-  justifyContent: BUTTON_PROPS_META.justifyContent,
   onClick: LINK_PROPS_META.onClick,
   selected: BUTTON_PROPS_META.selected,
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,

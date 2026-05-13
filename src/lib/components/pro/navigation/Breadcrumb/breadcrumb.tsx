@@ -81,7 +81,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                         }}
                         selected={node.value === currentPath[index]}
                         bold={node.value === currentPath[index]}
-                        textAlign="center"
+                        align="center"
                       >
                         {node.label}
                       </DropdownList.Item>

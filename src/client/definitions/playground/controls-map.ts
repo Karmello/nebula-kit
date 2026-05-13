@@ -4,6 +4,7 @@ import { PlaygroundProp } from './types'
 
 export const PLAYGROUND_CONTROLS_MAP: Record<PlaygroundProp, { type: 'array' | 'boolean' | 'string' }> = {
   active: { type: 'boolean' },
+  align: { type: 'array' },
   blockSize: { type: 'string' },
   bold: { type: 'boolean' },
   borderRadius: { type: 'string' },

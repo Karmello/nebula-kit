@@ -32,7 +32,7 @@ export const PropSelect = () => {
               value={propName}
               iconName={props[propName].isResponsive ? 'screen-share' : undefined}
               iconPlacement="right"
-              justifyContent="space-between"
+              align="split"
             >
               {propName}
             </Select.Option>

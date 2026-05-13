@@ -15,7 +15,7 @@ export const TabsTab = ({
   iconName,
   iconPlacement,
   inlineSize,
-  justifyContent,
+  align,
   tagAttrs,
   tagRef,
   // own
@@ -42,7 +42,6 @@ export const TabsTab = ({
     <Button
       bold={isSelected}
       selected={isSelected}
-      // elevated={isSelected}
       color={color}
       customSvgIcon={customSvgIcon}
       disabled={disabled}
@@ -51,7 +50,7 @@ export const TabsTab = ({
       iconPlacement={iconPlacement}
       inlineSize={inlineSize}
       intent={intent}
-      justifyContent={justifyContent}
+      align={align}
       size={size}
       tagAttrs={{
         ...tagAttrs,

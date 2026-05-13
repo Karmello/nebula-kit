@@ -5,7 +5,7 @@ import { AutocompleteOptionProps, Button, DropdownList, Input } from 'lib/compon
 import { withPrefix } from 'lib/helpers'
 
 import { AutocompleteProps } from '../../definitions'
-import { DEFAULT_AUTOCOMPLETE_OPTION_JUSTIFY_CONTENT } from '../../slots'
+import { DEFAULT_AUTOCOMPLETE_OPTION_ALIGN } from '../../slots'
 
 type AutocompleteMainProps = Omit<AutocompleteProps, 'children' | 'defaultValue' | 'value' | 'onChange'> & {
   items: ReactNode[]
@@ -184,8 +184,8 @@ export const AutocompleteMain = ({
                   }}
                   bold={selected}
                   selected={selected}
-                  justifyContent={slotProps.justifyContent || DEFAULT_AUTOCOMPLETE_OPTION_JUSTIFY_CONTENT}
-                  iconName={selected ? 'check' : undefined}
+                  align={slotProps.align || DEFAULT_AUTOCOMPLETE_OPTION_ALIGN}
+                  iconName={slotProps.iconName ? slotProps.iconName : selected ? 'check' : undefined}
                   iconPlacement="right"
                 >
                   {slot}

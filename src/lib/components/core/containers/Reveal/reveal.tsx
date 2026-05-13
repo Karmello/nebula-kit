@@ -40,7 +40,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
         <Button
           disabled={disabled}
           size={size}
-          justifyContent="space-between"
+          align="split"
           color={color}
           intent={intent}
           iconName="chevron-down"

@@ -16,8 +16,7 @@ import {
   DEFAULT_BUTTON_VARIANT,
   DEFAULT_BUTTON_RIPPLE,
   DEFAULT_BUTTON_INTERACTIVE,
-  DEFAULT_BUTTON_TEXT_ALIGN,
-  DEFAULT_BUTTON_JUSTIFY_CONTENT,
+  DEFAULT_BUTTON_ALIGN,
 } from './definitions'
 
 import './button.scss'
@@ -44,11 +43,10 @@ export const Button = <T extends ButtonTag = 'button'>({
   iconPlacement,
   iconAngle,
   customSvgIcon,
-  justifyContent = DEFAULT_BUTTON_JUSTIFY_CONTENT,
-  textAlign = DEFAULT_BUTTON_TEXT_ALIGN,
   // own
   size = DEFAULT_BUTTON_SIZE,
   fullWidth,
+  align = DEFAULT_BUTTON_ALIGN,
   loading,
   ripple = DEFAULT_BUTTON_RIPPLE,
   selected,
@@ -106,8 +104,8 @@ export const Button = <T extends ButtonTag = 'button'>({
         iconPlacement={iconPlacement}
         iconAngle={iconAngle}
         customSvgIcon={customSvgIcon}
-        justifyContent={justifyContent}
-        textAlign={textAlign}
+        justifyContent={align === 'split' ? 'space-between' : align === 'center' ? 'center' : 'flex-start'}
+        textAlign={align === 'center' ? 'center' : undefined}
       >
         {children}
       </Text>

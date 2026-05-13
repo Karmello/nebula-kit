@@ -45,7 +45,7 @@ export const CatalogPageTemplate = memo(
                       label={label}
                       variant="ghost"
                       expanded={isCategorySelected}
-                      justifyContent="flex-start"
+                      align="start"
                       bold={isCategorySelected}
                     >
                       {items.map(({ key: itemKey, label, sections }) => {
