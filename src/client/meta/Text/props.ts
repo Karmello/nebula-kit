@@ -25,10 +25,6 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
   },
   color: BOX_PROPS_META.color,
-  disabled: {
-    ...BOX_PROPS_META.disabled,
-    description: 'Applies the disabled visual state and disables interaction when rendered as an <a> tag.',
-  },
   fontSize: {
     options: [DOCS_CSS_LABEL],
     description: 'Sets the fontSize value, bypassing typography.',

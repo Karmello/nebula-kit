@@ -45,7 +45,7 @@ const TABS_EXAMPLES_META: ComponentMeta<TabsProps>['examples'] = [
   {
     description: 'Vertical tab arrangement with the outline variant.',
     jsx: (
-      <Tabs inlineSize="100%" flexDirection="column">
+      <Tabs inlineSize="100%" orientation="vertical">
         <Tabs.Tab value={1} inlineSize="110px">
           First
         </Tabs.Tab>
@@ -91,7 +91,7 @@ const TABS_EXAMPLES_META: ComponentMeta<TabsProps>['examples'] = [
   {
     description: 'Vertical tab arrangement with the solid variant.',
     jsx: (
-      <Tabs variant="solid" inlineSize="100%" flexDirection="column">
+      <Tabs variant="solid" inlineSize="100%" orientation="vertical">
         <Tabs.Tab value={1} inlineSize="110px">
           First
         </Tabs.Tab>

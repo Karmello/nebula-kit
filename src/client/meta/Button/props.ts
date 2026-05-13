@@ -23,7 +23,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     options: BUTTON_ALIGNS,
     defaultValue: String(DEFAULT_BUTTON_ALIGN),
     isResponsive: true,
-    description: 'Controls how inner content is arranged within the container',
+    description: 'Controls how inner content is arranged within the container.',
   },
   bold: TEXT_PROPS_META.bold,
   children: {

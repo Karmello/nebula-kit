@@ -3,7 +3,7 @@ import { useRef, useState } from 'react'
 import { Box, Flex, Segment } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
 
-import { TabsProps, DEFAULT_TABS_VARIANT, DEFAULT_TABS_INTENT, DEFAULT_TABS_FLEX_DIRECTION } from './definitions'
+import { TabsProps, DEFAULT_TABS_VARIANT, DEFAULT_TABS_INTENT, DEFAULT_TABS_ORIENTATION } from './definitions'
 
 import { TabsContext, TabsContextValue } from './TabsContext'
 
@@ -17,11 +17,10 @@ export const Tabs = ({
   intent = DEFAULT_TABS_INTENT,
   variant = DEFAULT_TABS_VARIANT,
   inlineSize,
-  // Flex
-  flexDirection = DEFAULT_TABS_FLEX_DIRECTION,
   // Button
   size,
   // own
+  orientation = DEFAULT_TABS_ORIENTATION,
   value,
   defaultValue,
   onChange,
@@ -63,7 +62,7 @@ export const Tabs = ({
               color,
               intent,
               size,
-              flexDirection,
+              orientation,
             }}
           >
             <Box
@@ -78,22 +77,22 @@ export const Tabs = ({
               overflow="hidden"
               display="inline-block"
             >
-              <Flex flexDirection={flexDirection === 'column' ? 'row' : 'column'} alignItems="stretch">
+              <Flex flexDirection={orientation === 'vertical' ? 'row' : 'column'} alignItems="stretch">
                 <Box
                   drawable
                   variant="solid"
                   intent={intent}
                   color={color}
                   borderRadius="0px"
-                  inlineSize={flexDirection === 'row' ? '100%' : undefined}
+                  inlineSize={orientation === 'horizontal' ? '100%' : undefined}
                   maxInlineSize="100%"
-                  overflowX={flexDirection === 'row' ? 'auto' : undefined}
+                  overflowX={orientation === 'horizontal' ? 'auto' : undefined}
                 >
                   <Segment
-                    flexDirection={flexDirection}
+                    flexDirection={orientation === 'horizontal' ? 'row' : 'column'}
                     tagAttrs={{
                       role: 'tablist',
-                      'aria-orientation': flexDirection === 'column' ? 'vertical' : 'horizontal',
+                      'aria-orientation': orientation,
                     }}
                   >
                     {slotsByName['Tabs.Tab'].map((tab, index) => {

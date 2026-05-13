@@ -34,7 +34,7 @@ export default () => {
           always local. They describe how a specific drawable surface presents itself within that environment. Each axis operates
           independently, so changing one never changes the meaning or behavior of the others.
         </Text>
-        <WithIcon iconName="external-link" iconPlacement="right" iconColor="blue" iconIntent="primary">
+        <WithIcon iconName="arrow-right" iconPlacement="right" iconColor="blue" iconIntent="primary">
           <Link
             href="/foundations/concepts/styling-system/styling-axes"
             onClick={() => {

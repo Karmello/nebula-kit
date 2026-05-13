@@ -19,7 +19,6 @@ export const Text = <T extends TextTag = 'p'>({
   color,
   intent,
   textAlign,
-  disabled,
   // own
   typography = DEFAULT_TEXT_TYPOGRAPHY,
   fontSize,
@@ -63,7 +62,6 @@ export const Text = <T extends TextTag = 'p'>({
       color={color}
       textAlign={textAlign}
       interactive={tag === 'a'}
-      disabled={disabled}
     >
       {space === 'start' || space === 'both' ? <> </> : null}
       {children}

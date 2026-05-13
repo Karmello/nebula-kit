@@ -21,7 +21,7 @@ export const TabsTab = ({
   // own
   value,
 }: TabsTabProps) => {
-  const { rootRef, tabs, currentValue, handleChange, color, intent, size, flexDirection } = useTabsContext()
+  const { rootRef, tabs, currentValue, handleChange, color, intent, size, orientation } = useTabsContext()
 
   const findNext = useCallback(
     (start: number, direction: 1 | -1) => {
@@ -69,8 +69,8 @@ export const TabsTab = ({
         },
         onKeyDown: e => {
           if (
-            (['ArrowRight', 'ArrowLeft'].includes(e.key) && flexDirection === 'column') ||
-            (['ArrowDown', 'ArrowUp'].includes(e.key) && flexDirection === 'row')
+            (['ArrowRight', 'ArrowLeft'].includes(e.key) && orientation === 'vertical') ||
+            (['ArrowDown', 'ArrowUp'].includes(e.key) && orientation === 'horizontal')
           ) {
             return
           }

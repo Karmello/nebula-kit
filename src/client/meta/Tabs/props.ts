@@ -1,12 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { TabsProps } from 'lib/components'
 
-import {
-  DEFAULT_TABS_FLEX_DIRECTION,
-  DEFAULT_TABS_VARIANT,
-  TABS_FLEX_DIRECTION,
-  TABS_VARIANTS,
-} from 'lib/components/pro/controls/Tabs'
+import { DEFAULT_TABS_ORIENTATION, DEFAULT_TABS_VARIANT, TABS_ORIENTATION, TABS_VARIANTS } from 'lib/components/pro/controls/Tabs'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
@@ -25,17 +20,16 @@ const TABS_PROPS_META: ComponentMeta<TabsProps>['props'] = {
     options: ['string', 'number'],
     description: 'Sets the initial active tab in uncontrolled mode.',
   },
-  flexDirection: {
-    ...FLEX_PROPS_META.flexDirection,
-    options: TABS_FLEX_DIRECTION as never,
-    defaultValue: DEFAULT_TABS_FLEX_DIRECTION,
-    description: 'Sets whether tab items are arranged horizontally or vertically.',
-  },
   inlineSize: BOX_PROPS_META.inlineSize,
   intent: BOX_PROPS_META.intent,
   onChange: {
     options: ['(value: string | number) => void'],
     description: 'Called when the active tab value changes.',
+  },
+  orientation: {
+    options: TABS_ORIENTATION,
+    defaultValue: DEFAULT_TABS_ORIENTATION,
+    description: 'Sets whether tab items are arranged horizontally or vertically.',
   },
   size: {
     ...BUTTON_PROPS_META.size,

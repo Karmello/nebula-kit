@@ -145,9 +145,9 @@ export const PROPS_FROM_TABLE = [
 
 export const PROPS_FROM_TABS = [
   'color',
-  'flexDirection',
   'inlineSize',
   'intent',
+  'orientation',
   'size',
   'variant',
 ] as const satisfies readonly (keyof TabsProps)[]
@@ -157,7 +157,6 @@ export const PROPS_FROM_TEXT = [
   'children',
   'clampLines',
   'color',
-  'disabled',
   'fontSize',
   'intent',
   'italic',

@@ -31,7 +31,7 @@ const includedPages = {
       'StylingIsland',
       'IntentsAndVariants',
       'Typography',
-      'SizingScale',
+      'LengthScale',
       'Breakpoints',
     ],
   },

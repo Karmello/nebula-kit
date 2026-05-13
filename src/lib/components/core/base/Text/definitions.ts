@@ -32,6 +32,6 @@ type PropsFromHtmlTag<T extends TextTag = 'p'> = Omit<HtmlTagProps<T>, 'children
   children: HtmlTagProps<T>['children']
 }
 
-type PropsFromBox<T extends TextTag = 'p'> = Pick<BoxProps<T>, 'color' | 'intent' | 'textAlign' | 'disabled'>
+type PropsFromBox<T extends TextTag = 'p'> = Pick<BoxProps<T>, 'color' | 'intent' | 'textAlign'>
 
 export type TextProps<T extends TextTag = 'p'> = PropsFromHtmlTag<T> & PropsFromBox<T> & TextOwnProps
