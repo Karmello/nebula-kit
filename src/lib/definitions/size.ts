@@ -1,5 +1,4 @@
 import { TextTag, TextTypography } from 'lib/components/core/base/Text/definitions'
-import { IconSize } from 'lib/components/core/elements/Icon/definitions'
 
 // constants
 

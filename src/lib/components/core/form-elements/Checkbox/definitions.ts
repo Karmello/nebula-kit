@@ -1,7 +1,6 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
 import { CONTROL_SIZE_MAP, TShirtSize } from 'lib/definitions'
 import { BoxVariant } from 'lib/components/core/base/Box'
-import { IconSize } from 'lib/components/core/elements/Icon'
 
 export const CHECKBOX_SIZE_MAP: Record<CheckboxSize, { blockSize: BoxProps['blockSize']; iconSize: string }> = {
   xs: { blockSize: CONTROL_SIZE_MAP['2xs'].blockSize, iconSize: '22px' },
