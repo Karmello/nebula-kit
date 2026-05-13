@@ -33,7 +33,7 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
   },
   fontSize: {
     options: [DOCS_CSS_LABEL],
-    description: 'Sets the fontSize value, bypassing typography and scale.',
+    description: 'Sets the fontSize value, bypassing typography.',
   },
   iconAngle: WITH_ICON_PROPS_META.iconAngle,
   iconName: {
@@ -49,7 +49,7 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
   justifyContent: WITH_ICON_PROPS_META.justifyContent,
   lineHeight: {
     options: [DOCS_CSS_LABEL],
-    description: 'Sets the lineHeight value, bypassing typography and scale.',
+    description: 'Sets the lineHeight value, bypassing typography.',
   },
   noWrap: {
     options: ['boolean'],

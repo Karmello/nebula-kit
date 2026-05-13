@@ -3,7 +3,8 @@ import { ComponentMeta } from 'client/definitions'
 import {
   DEFAULT_WITH_ICON_GAP,
   DEFAULT_WITH_ICON_ICON_PLACEMENT,
-  ICON_PLACEMENT,
+  WITH_ICON_ICON_PLACEMENTS,
+  WITH_ICON_JUSTIFY_CONTENT,
   WithIconProps,
 } from 'lib/components/core/layout/WithIcon'
 
@@ -33,7 +34,7 @@ const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
   iconIntent: ICON_PROPS_META.intent,
   iconName: ICON_PROPS_META.name,
   iconPlacement: {
-    options: ICON_PLACEMENT as unknown as string[],
+    options: WITH_ICON_ICON_PLACEMENTS as unknown as string[],
     defaultValue: DEFAULT_WITH_ICON_ICON_PLACEMENT,
     isRequired: false,
     isResponsive: false,
@@ -43,6 +44,7 @@ const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
   inlineSize: BOX_PROPS_META.inlineSize,
   justifyContent: {
     ...FLEX_PROPS_META.justifyContent,
+    options: WITH_ICON_JUSTIFY_CONTENT,
     description: 'Distributes an icon and children along the main axis.',
   },
   tagAttrs: HTML_TAG_PROPS_META['tagAttrs'],
