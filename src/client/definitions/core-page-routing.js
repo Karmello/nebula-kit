@@ -42,7 +42,6 @@ export const CORE_PAGE_CATEGORIES = [
     key: 'controls',
     label: 'Controls',
     items: [
-      { key: 'action-surface', label: 'ActionSurface', sections },
       { key: 'button', label: 'Button', sections },
       { key: 'link', label: 'Link', sections },
     ],

@@ -1,1 +1,1 @@
-export type ComponentName = 'Box' | 'Flex' | 'ActionSurface' | 'Button'
+export type ComponentName = 'Box' | 'Flex' | 'Button'

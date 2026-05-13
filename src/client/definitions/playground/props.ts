@@ -14,33 +14,8 @@ import type {
   TabsProps,
   RevealProps,
   AvatarProps,
-  ActionSurfaceProps,
   WithIconProps,
 } from 'lib/components'
-
-export const PROPS_FROM_ACTION_SURFACE = [
-  'boldHeading',
-  'color',
-  'description',
-  'disabled',
-  'elevated',
-  'fullWidth',
-  'heading',
-  'iconAngle',
-  'iconName',
-  'iconPlacement',
-  'inlineSize',
-  'inlineTrailingIcon',
-  'intent',
-  'interactive',
-  'italicDescription',
-  'loading',
-  'ripple',
-  'selected',
-  'size',
-  'textAlign',
-  'variant',
-] as const satisfies readonly (keyof ActionSurfaceProps)[]
 
 export const PROPS_FROM_AVATAR = ['initials', 'shape', 'size', 'src'] as const satisfies readonly (keyof AvatarProps)[]
 
@@ -211,7 +186,6 @@ export const PROPS_FROM_WITH_ICON = [
 ] as const satisfies readonly (keyof WithIconProps)[]
 
 export const PLAYGROUND_PROPS_MAP: Record<string, readonly string[]> = {
-  ActionSurface: PROPS_FROM_ACTION_SURFACE,
   Avatar: PROPS_FROM_AVATAR,
   Box: PROPS_FROM_BOX,
   Button: PROPS_FROM_BUTTON,
