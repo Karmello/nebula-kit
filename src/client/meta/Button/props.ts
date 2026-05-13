@@ -11,7 +11,7 @@ import {
   DEFAULT_BUTTON_INTERACTIVE,
   DEFAULT_BUTTON_TEXT_ALIGN,
   DEFAULT_BUTTON_JUSTIFY_CONTENT,
-} from 'lib/components/core/controls/Button'
+} from 'lib/components/core/controls/Button/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
