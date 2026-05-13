@@ -23,7 +23,7 @@ export const TEXT_TYPOGRAPHY_MAP: Record<
   {
     fontSize: string
     lineHeight: number
-    iconSize: IconSize
+    iconSize: string
     tag: TextTag
   }
 > = {
@@ -96,7 +96,7 @@ export const CONTROL_SIZE_MAP: Record<
     paddingInline: string
     fontSize: string
     lineHeight: number | string
-    iconSize: IconSize
+    iconSize: string
     loaderSize: string
   }
 > = {
