@@ -27,7 +27,7 @@ const FORM_META: ComponentMeta<FormProps> = {
   props: FORM_PROPS_META,
   examples: FORM_EXAMPLES_META,
   changelog: {
-    '0.10.0': ['removed scale prop on Form.Label and Form.Hint slots'],
+    '0.10.0': ['removed display prop', 'removed scale and textAlign props on Form.Label and Form.Hint slots'],
     '0.2.3': ['released'],
   },
 }

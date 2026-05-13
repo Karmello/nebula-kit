@@ -25,7 +25,7 @@ type PropsFromHtmlTag<TFieldValues extends FieldValues = FieldValues, TContext =
 
 type PropsFromFlex = Pick<
   FlexProps<'form'>,
-  'display' | 'flexDirection' | 'flexWrap' | 'justifyContent' | 'alignItems' | 'gap' | 'columnGap' | 'rowGap'
+  'flexDirection' | 'flexWrap' | 'justifyContent' | 'alignItems' | 'gap' | 'columnGap' | 'rowGap'
 >
 
 export type FormProps<TFieldValues extends FieldValues = FieldValues, TContext = any, TTransformedValues = TFieldValues> = {

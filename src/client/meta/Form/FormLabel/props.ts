@@ -17,7 +17,6 @@ const FORM_LABEL_PROPS_META: ComponentMeta<FormLabelProps>['props'] = {
   noWrap: TEXT_PROPS_META.noWrap,
   tagAttrs: TEXT_PROPS_META.tagAttrs,
   tagRef: TEXT_PROPS_META.tagRef,
-  textAlign: TEXT_PROPS_META.textAlign,
   truncate: TEXT_PROPS_META.truncate,
 }
 

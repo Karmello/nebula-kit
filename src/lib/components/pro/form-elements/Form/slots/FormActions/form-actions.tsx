@@ -8,7 +8,6 @@ export const FormActions = ({
   children,
   tagAttrs,
   tagRef,
-  display,
   flexDirection,
   flexWrap,
   justifyContent,
@@ -28,7 +27,6 @@ export const FormActions = ({
           <Flex
             tagAttrs={tagAttrs}
             tagRef={tagRef}
-            display={display}
             flexDirection={flexDirection}
             flexWrap={flexWrap}
             justifyContent={justifyContent}

@@ -5,6 +5,6 @@ export const DEFAULT_FORM_FIELDS_ALIGN_ITEMS: FormFieldsProps['alignItems'] = 's
 export const DEFAULT_FORM_FIELDS_COLUMN_GAP: FormFieldsProps['columnGap'] = '10px'
 export const DEFAULT_FORM_FIELDS_ROW_GAP: FormFieldsProps['rowGap'] = '20px'
 
-type PropsFromFlex = Omit<FlexProps<'div'>, 'tag'>
+type PropsFromFlex = Omit<FlexProps<'div'>, 'tag' | 'display'>
 
 export type FormFieldsProps = PropsFromFlex

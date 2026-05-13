@@ -5,7 +5,6 @@ import { DEFAULT_TABS_ORIENTATION, DEFAULT_TABS_VARIANT, TABS_ORIENTATION, TABS_
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
-import { FLEX_PROPS_META } from '../Flex/props'
 import { BUTTON_PROPS_META } from '../Button/props'
 
 const TABS_PROPS_META: ComponentMeta<TabsProps>['props'] = {

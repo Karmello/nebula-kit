@@ -24,6 +24,7 @@ const TABS_META: ComponentMeta<TabsProps> = {
   props: TABS_PROPS_META,
   examples: TABS_EXAMPLES_META,
   changelog: {
+    '0.10.0': ['changed flexDirection prop to orientation'],
     '0.3.0': ['released'],
   },
 }

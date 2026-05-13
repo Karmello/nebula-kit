@@ -26,7 +26,6 @@ export const Form = <TFieldValues extends FieldValues = FieldValues, TContext = 
   tagAttrs,
   tagRef,
   // Flex
-  display,
   flexDirection = DEFAULT_FORM_FLEX_DIRECTION,
   flexWrap,
   justifyContent,
@@ -74,7 +73,6 @@ export const Form = <TFieldValues extends FieldValues = FieldValues, TContext = 
                 onSubmit: handleSubmit,
               }}
               tagRef={tagRef}
-              display={display}
               flexDirection={flexDirection}
               flexWrap={flexWrap}
               justifyContent={justifyContent}

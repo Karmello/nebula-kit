@@ -11,7 +11,6 @@ export const FormHint = ({
   intent = DEFAULT_FORM_HINT_INTENT,
   color = DEFAULT_FORM_HINT_COLOR,
   noWrap,
-  textAlign,
   truncate,
   // WithIcon
   iconName,
@@ -30,7 +29,6 @@ export const FormHint = ({
           intent={intent}
           color={color}
           noWrap={noWrap}
-          textAlign={textAlign}
           truncate={truncate}
         >
           {children}

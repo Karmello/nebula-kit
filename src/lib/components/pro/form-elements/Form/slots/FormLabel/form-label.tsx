@@ -11,7 +11,6 @@ export const FormLabel = ({
   intent = DEFAULT_FORM_LABEL_INTENT,
   color,
   noWrap,
-  textAlign,
   truncate,
   // WithIcon
   iconName,
@@ -29,7 +28,6 @@ export const FormLabel = ({
           intent={intent}
           color={color}
           noWrap={noWrap}
-          textAlign={textAlign}
           truncate={truncate}
         >
           {children}

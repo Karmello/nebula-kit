@@ -17,7 +17,6 @@ export const FormFields = ({
   children,
   tagAttrs,
   tagRef,
-  display,
   flexDirection = DEFAULT_FORM_FIELDS_FLEX_DIRECTION,
   flexWrap,
   justifyContent,
@@ -46,7 +45,6 @@ export const FormFields = ({
               className: classNames(withPrefix('form-fields'), tagAttrs?.className),
             }}
             tagRef={tagRef}
-            display={display}
             flexDirection={flexDirection}
             flexWrap={flexWrap}
             justifyContent={justifyContent}
