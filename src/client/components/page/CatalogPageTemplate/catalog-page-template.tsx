@@ -119,7 +119,7 @@ export const CatalogPageTemplate = memo(
                     </SplitView.Side>
                     <SplitView.Main paddingRight="20px">
                       <SplitView.MainBar>
-                        <Flex gap="sm" alignItems="center">
+                        <Flex columnGap="sm" rowGap="2xs" alignItems="center" flexWrap="wrap">
                           <Text typography="h3">
                             {pageKey === PageKey.foundations.toString() ? activeSectionObj?.label : activeItemObj?.label}
                           </Text>
@@ -157,7 +157,7 @@ export const CatalogPageTemplate = memo(
                             </Link>
                           ) : null}
                         </Flex>
-                        <Divider />
+                        <Divider marginTop="xs" />
                       </SplitView.MainBar>
                       {pageKey === PageKey.foundations.toString() ? (
                         <FoundationsPageRoutes />

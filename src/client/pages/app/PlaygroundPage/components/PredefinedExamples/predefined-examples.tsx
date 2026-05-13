@@ -15,8 +15,8 @@ export const PredefinedExamples = () => {
   return (
     <Select
       size="xs"
-      staticLabel={`${activeComponent} presets`}
-      inlineSize="175px"
+      staticLabel="Presets"
+      inlineSize="140px"
       value=""
       onChange={value => {
         Object.keys(allProps).forEach(propName => {

@@ -16,11 +16,11 @@ import {
   DEFAULT_ACTION_SURFACE_RIPPLE,
   DEFAULT_ACTION_SURFACE_INTERACTIVE,
   DEFAULT_ACTION_SURFACE_TEXT_ALIGN,
-  DEFAULT_ACTION_SURFACE_JUSTIFY_CONTENT,
   ACTION_SURFACE_SIZE_MAP,
 } from './definitions'
 
 import './action-surface.scss'
+import { TEXT_TYPOGRAPHY_MAP } from '../../base/Text'
 
 export const ActionSurface = <T extends ActionSurfaceTag = 'button'>({
   // HtmlTag
@@ -38,12 +38,12 @@ export const ActionSurface = <T extends ActionSurfaceTag = 'button'>({
   minInlineSize,
   maxInlineSize,
   // Text
-  bold,
+  boldHeading,
+  italicDescription,
   iconName,
   iconPlacement,
   iconAngle,
   customSvgIcon,
-  justifyContent = DEFAULT_ACTION_SURFACE_JUSTIFY_CONTENT,
   textAlign = DEFAULT_ACTION_SURFACE_TEXT_ALIGN,
   // own
   heading,
@@ -53,6 +53,7 @@ export const ActionSurface = <T extends ActionSurfaceTag = 'button'>({
   loading,
   ripple = DEFAULT_ACTION_SURFACE_RIPPLE,
   selected,
+  inlineTrailingIcon,
   onClick,
 }: ActionSurfaceProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
@@ -63,6 +64,8 @@ export const ActionSurface = <T extends ActionSurfaceTag = 'button'>({
     updateDomRespDataset('ActionSurface', tagRef || ref, bp, { fullWidth })
   }, [bp, fullWidth])
 
+  const buttonAttrs = tag === 'button' ? (tagAttrs as React.ButtonHTMLAttributes<HTMLButtonElement> | undefined) : undefined
+
   return (
     <Box
       tag={tag}
@@ -70,7 +73,7 @@ export const ActionSurface = <T extends ActionSurfaceTag = 'button'>({
         {
           ...tagAttrs,
           className: classNames(withPrefix('action-surface'), tagAttrs?.className),
-          type: tag === 'button' ? tagAttrs?.type || 'button' : undefined,
+          type: buttonAttrs?.type || 'button',
           'aria-disabled': disabled || undefined,
           style: { ...tagAttrs?.style, pointerEvents: loading ? 'none' : undefined },
           onClick,
@@ -92,29 +95,39 @@ export const ActionSurface = <T extends ActionSurfaceTag = 'button'>({
       blockSize={ACTION_SURFACE_SIZE_MAP[size || 'md'].blockSize}
       paddingInline={ACTION_SURFACE_SIZE_MAP[size || 'md'].paddingInline}
     >
-      <Flex tag="span" flexDirection="column" alignItems="stretch">
+      <Flex
+        tag="span"
+        tagAttrs={{ style: { blockSize: '100%' } }}
+        flexDirection="column"
+        alignItems="stretch"
+        justifyContent="center"
+        rowGap={ACTION_SURFACE_SIZE_MAP[size || 'md'].gap || '0px'}
+      >
         <Text
           tag="span"
           fontSize={ACTION_SURFACE_SIZE_MAP[size || 'md'].fontSize}
           lineHeight={ACTION_SURFACE_SIZE_MAP[size || 'md'].lineHeight}
-          bold={bold}
+          bold={boldHeading}
           truncate
           iconName={iconName}
           iconPlacement={iconPlacement}
           iconAngle={iconAngle}
           customSvgIcon={customSvgIcon}
-          justifyContent={justifyContent}
-          // textAlign={textAlign}
+          justifyContent={
+            textAlign === 'center' ? 'center' : iconPlacement === 'right' && !inlineTrailingIcon ? 'space-between' : 'flex-start'
+          }
+          textAlign={textAlign}
         >
           {heading}
         </Text>
         {description ? (
           <Text
             tag="span"
-            fontSize={ACTION_SURFACE_SIZE_MAP[size || 'md'].fontSize}
-            lineHeight={ACTION_SURFACE_SIZE_MAP[size || 'md'].lineHeight}
-            justifyContent={justifyContent}
+            fontSize={TEXT_TYPOGRAPHY_MAP.small.fontSize}
+            lineHeight={TEXT_TYPOGRAPHY_MAP.small.lineHeight}
             textAlign={textAlign}
+            italic={italicDescription}
+            clampLines={1}
           >
             {description}
           </Text>

@@ -19,7 +19,7 @@ import type {
 } from 'lib/components'
 
 export const PROPS_FROM_ACTION_SURFACE = [
-  'bold',
+  'boldHeading',
   'color',
   'description',
   'disabled',
@@ -30,9 +30,10 @@ export const PROPS_FROM_ACTION_SURFACE = [
   'iconName',
   'iconPlacement',
   'inlineSize',
+  'inlineTrailingIcon',
   'intent',
   'interactive',
-  'justifyContent',
+  'italicDescription',
   'loading',
   'ripple',
   'selected',
@@ -210,8 +211,8 @@ export const PROPS_FROM_WITH_ICON = [
 ] as const satisfies readonly (keyof WithIconProps)[]
 
 export const PLAYGROUND_PROPS_MAP: Record<string, readonly string[]> = {
-  Avatar: PROPS_FROM_AVATAR,
   ActionSurface: PROPS_FROM_ACTION_SURFACE,
+  Avatar: PROPS_FROM_AVATAR,
   Box: PROPS_FROM_BOX,
   Button: PROPS_FROM_BUTTON,
   Callout: PROPS_FROM_CALLOUT,

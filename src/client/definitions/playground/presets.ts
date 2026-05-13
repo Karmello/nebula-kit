@@ -21,9 +21,28 @@ import type {
 export const PLAYGROUND_PRESETS: Record<string, Array<{ name: string; props: object }>> = {
   ActionSurface: [
     {
-      name: 'Default',
+      name: 'Centered',
       props: {
         heading: 'Heading text',
+        description: 'Description text',
+        textAlign: 'center',
+        inlineSize: '250px',
+      } as Record<PropsFromActionSurfaceKey, unknown>,
+    },
+    {
+      name: 'Styled',
+      props: {
+        heading: 'Heading text',
+        description: 'Description text',
+        boldHeading: true,
+        italicDescription: true,
+        textAlign: 'left',
+        inlineSize: '300px',
+        iconName: 'puzzle',
+        iconPlacement: 'right',
+        color: 'blue',
+        intent: 'tertiary',
+        size: 'lg',
       } as Record<PropsFromActionSurfaceKey, unknown>,
     },
   ],

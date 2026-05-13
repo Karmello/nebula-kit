@@ -1,24 +1,26 @@
-import { ReactNode, MouseEventHandler } from 'react'
+import { ReactNode, ComponentProps } from 'react'
 
 import { BoxProps, HtmlTagProps, TextProps } from 'lib/components'
-import { RespValue, TShirtSize } from 'lib/definitions'
+import { CssTextAlign, RespValue, TShirtSize } from 'lib/definitions'
+
 import { TEXT_TYPOGRAPHY_MAP } from '../../base/Text'
 
 export const DEFAULT_ACTION_SURFACE_INTERACTIVE: ActionSurfaceProps['interactive'] = true
 export const DEFAULT_ACTION_SURFACE_VARIANT: ActionSurfaceProps['variant'] = 'solid'
 export const DEFAULT_ACTION_SURFACE_INTENT: ActionSurfaceProps['intent'] = 'tertiary'
-export const DEFAULT_ACTION_SURFACE_SIZE: ActionSurfaceProps['size'] = 'md'
+export const DEFAULT_ACTION_SURFACE_SIZE: ActionSurfaceProps['size'] = 'sm'
 export const DEFAULT_ACTION_SURFACE_RIPPLE: ActionSurfaceProps['ripple'] = true
-export const DEFAULT_ACTION_SURFACE_JUSTIFY_CONTENT: ActionSurfaceProps['justifyContent'] = 'center'
-export const DEFAULT_ACTION_SURFACE_TEXT_ALIGN: ActionSurfaceProps['textAlign'] = 'center'
+export const DEFAULT_ACTION_SURFACE_TEXT_ALIGN: ActionSurfaceProps['textAlign'] = 'left'
 
-export const ACTION_SURFACE_TAGS = ['button', 'a'] as const
+export const ACTION_SURFACE_TAGS = ['button', 'a', 'div'] as const
 export const ACTION_SURFACE_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies TShirtSize[]
+export const ACTION_SURFACE_TEXT_ALIGNS = ['left', 'center'] as const satisfies CssTextAlign[]
 
 export type ActionSurfaceTag = (typeof ACTION_SURFACE_TAGS)[number]
 export type ActionSurfaceSize = (typeof ACTION_SURFACE_SIZES)[number]
+export type ActionSurfaceTextAlign = (typeof ACTION_SURFACE_TEXT_ALIGNS)[number]
 
-type ActionSurfaceOwnProps = {
+type ActionSurfaceOwnProps<T extends ActionSurfaceTag = 'button'> = {
   heading: ReactNode
   description?: ReactNode
   size?: ActionSurfaceSize
@@ -26,7 +28,8 @@ type ActionSurfaceOwnProps = {
   loading?: boolean
   ripple?: boolean
   selected?: boolean
-  onClick?: React.MouseEventHandler<HTMLButtonElement> | MouseEventHandler<HTMLAnchorElement>
+  inlineTrailingIcon?: boolean
+  onClick?: ComponentProps<T>['onClick']
 }
 
 type PropsFromHtmlTag<T extends ActionSurfaceTag = 'button'> = Pick<HtmlTagProps<T>, 'tag' | 'tagAttrs' | 'tagRef'>
@@ -36,46 +39,50 @@ type PropsFromBox<T extends ActionSurfaceTag = 'button'> = Pick<
   'variant' | 'color' | 'intent' | 'interactive' | 'disabled' | 'elevated' | 'inlineSize' | 'minInlineSize' | 'maxInlineSize'
 >
 
-type PropsFromText = Pick<
-  TextProps<'span'>,
-  'bold' | 'iconName' | 'iconPlacement' | 'iconAngle' | 'customSvgIcon' | 'justifyContent' | 'textAlign'
->
+type PropsFromText = Pick<TextProps<'span'>, 'iconName' | 'iconPlacement' | 'iconAngle' | 'customSvgIcon'> & {
+  textAlign?: ActionSurfaceTextAlign
+  boldHeading?: TextProps<'span'>['bold']
+  italicDescription?: TextProps<'span'>['italic']
+}
 
 export type ActionSurfaceProps<T extends ActionSurfaceTag = 'button'> = PropsFromHtmlTag<T> &
   PropsFromBox<T> &
   PropsFromText &
-  ActionSurfaceOwnProps
+  ActionSurfaceOwnProps<T>
 
 export const ACTION_SURFACE_SIZE_MAP: Record<
   ActionSurfaceSize,
-  { fontSize: string; lineHeight: number; blockSize: string; paddingInline: string; loaderSize: string }
+  { fontSize: string; lineHeight: number; blockSize: string; paddingInline: string; gap?: TShirtSize; loaderSize: string }
 > = {
   xs: {
-    fontSize: TEXT_TYPOGRAPHY_MAP.small.fontSize,
-    lineHeight: TEXT_TYPOGRAPHY_MAP.small.lineHeight,
-    blockSize: '20px',
-    paddingInline: '20px',
-    loaderSize: '30px',
+    fontSize: TEXT_TYPOGRAPHY_MAP.body.fontSize,
+    lineHeight: TEXT_TYPOGRAPHY_MAP.body.lineHeight,
+    blockSize: '58px',
+    paddingInline: '14px',
+    loaderSize: '21px',
   },
   sm: {
-    fontSize: TEXT_TYPOGRAPHY_MAP.small.fontSize,
-    lineHeight: TEXT_TYPOGRAPHY_MAP.small.lineHeight,
-    blockSize: '30px',
-    paddingInline: '20px',
-    loaderSize: '30px',
+    fontSize: TEXT_TYPOGRAPHY_MAP.h6.fontSize,
+    lineHeight: TEXT_TYPOGRAPHY_MAP.h6.lineHeight,
+    blockSize: '67px',
+    paddingInline: '16px',
+    gap: '3xs',
+    loaderSize: '24px',
   },
   md: {
-    fontSize: TEXT_TYPOGRAPHY_MAP.body.fontSize,
-    lineHeight: TEXT_TYPOGRAPHY_MAP.body.lineHeight,
-    blockSize: '60px',
-    paddingInline: '15px',
-    loaderSize: '22px',
+    fontSize: TEXT_TYPOGRAPHY_MAP.h6.fontSize,
+    lineHeight: TEXT_TYPOGRAPHY_MAP.h6.lineHeight,
+    blockSize: '77px',
+    paddingInline: '20px',
+    gap: '2xs',
+    loaderSize: '27px',
   },
   lg: {
-    fontSize: TEXT_TYPOGRAPHY_MAP.body.fontSize,
-    lineHeight: TEXT_TYPOGRAPHY_MAP.body.lineHeight,
-    blockSize: '70px',
-    paddingInline: '20px',
+    fontSize: TEXT_TYPOGRAPHY_MAP.h5.fontSize,
+    lineHeight: TEXT_TYPOGRAPHY_MAP.h5.lineHeight,
+    blockSize: '84px',
+    paddingInline: '22px',
+    gap: '2xs',
     loaderSize: '30px',
   },
 }

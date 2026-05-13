@@ -17,9 +17,11 @@ import {
 } from './components'
 
 import { getInitialState } from './store/get-initial-state'
+import { usePlaygroundStore } from './store'
 
 export const PlaygroundPage = () => {
   const theme = useAppStore(state => state.theme)
+  const activeComponent = usePlaygroundStore(state => state.activeComponent)
 
   useEffect(() => {
     const key = `${LIB_PREFIX}.playground`
@@ -30,7 +32,7 @@ export const PlaygroundPage = () => {
 
   return (
     <Box paddingTop="sm" paddingInline={{ base: 'md', lg: 'xl' }} overflowY="hidden">
-      <Section size="lg" heading="Playground" iconName="flask-conical">
+      <Section size="lg" heading={`Playground (${activeComponent})`} iconName="flask-conical">
         <Spacer blockSize="xs" />
         <SplitView sidePosition="right">
           {({ mode, setSideOpen }) => {

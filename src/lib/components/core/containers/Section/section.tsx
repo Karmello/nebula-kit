@@ -62,7 +62,7 @@ export const Section = <T extends SectionTag = 'section'>({
       >
         {heading}
       </Text>
-      <Divider color={color} />
+      <Divider color={color} marginTop="2xs" />
       {children ? (
         <>
           <Spacer blockSize={SECTION_SIZE_CONFIG[size].spacerBlockSize} />
