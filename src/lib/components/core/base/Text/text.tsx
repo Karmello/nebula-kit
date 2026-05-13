@@ -2,9 +2,10 @@ import classNames from 'classnames'
 
 import { Box } from 'lib/components'
 import { updateDomStaticDataset } from 'lib/service'
+import { TEXT_TYPOGRAPHY_MAP } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
-import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_TYPOGRAPHY_MAP, TextTag, TextProps } from './definitions'
+import { DEFAULT_TEXT_TYPOGRAPHY, TextTag, TextProps } from './definitions'
 
 import './text.scss'
 
@@ -19,8 +20,6 @@ export const Text = <T extends TextTag = 'p'>({
   intent,
   textAlign,
   disabled,
-  // WithIcon
-  iconName,
   // own
   typography = DEFAULT_TEXT_TYPOGRAPHY,
   fontSize,

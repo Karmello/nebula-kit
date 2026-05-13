@@ -12,8 +12,6 @@ import {
   SectionTag,
 } from './definitions'
 
-import { TEXT_TYPOGRAPHY_MAP } from '../../base/Text'
-
 export const Section = <T extends SectionTag = 'section'>({
   // HtmlTag
   tag = 'section' as T,
@@ -25,13 +23,12 @@ export const Section = <T extends SectionTag = 'section'>({
   color,
   intent = DEFAULT_SECTION_INTENT,
   interactive,
-  // Text
-  iconName,
-  headingIntent,
   // WithIcon
+  iconName,
   iconPlacement,
   // own
   heading,
+  headingIntent,
   size = DEFAULT_SECTION_SIZE,
 }: SectionProps<T>) => {
   return (
@@ -55,11 +52,7 @@ export const Section = <T extends SectionTag = 'section'>({
       overflowX="auto"
       overflowY="hidden"
     >
-      <WithIcon
-        iconName={iconName}
-        iconPlacement={iconPlacement}
-        iconSize={TEXT_TYPOGRAPHY_MAP[SECTION_SIZE_CONFIG[size].textTypography].iconSize}
-      >
+      <WithIcon iconTypography={SECTION_SIZE_CONFIG[size].textTypography} iconName={iconName} iconPlacement={iconPlacement}>
         <Text typography={SECTION_SIZE_CONFIG[size].textTypography} color={color} intent={headingIntent} bold>
           {heading}
         </Text>

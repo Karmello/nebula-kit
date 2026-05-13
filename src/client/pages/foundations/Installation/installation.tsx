@@ -8,7 +8,7 @@ export default () => {
         <Text intent="neutral">The Core bundle is published on the public npm registry.</Text>
         <WithIcon iconName="external-link" iconPlacement="right" iconColor="blue" iconIntent="primary">
           <Link href="https://www.npmjs.com/package/@nebula-kit/core" target="_blank">
-            <Text intent="primary" color="blue" iconName="external-link">
+            <Text intent="primary" color="blue">
               https://www.npmjs.com/package/@nebula-kit/core
             </Text>
           </Link>

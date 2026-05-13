@@ -13,6 +13,7 @@ import { ICON_PROPS_META } from '../Icon/props'
 import { FLEX_PROPS_META } from '../Flex/props'
 import { ROTATE_PROPS_META } from '../Rotate/props'
 import { BOX_PROPS_META } from '../Box/props'
+import { TEXT_PROPS_META } from '../Text/props'
 
 const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
   children: {
@@ -41,6 +42,7 @@ const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
     description: 'Icon placement relative to children.',
   },
   iconSize: ICON_PROPS_META.size,
+  iconTypography: TEXT_PROPS_META.typography,
   inlineSize: BOX_PROPS_META.inlineSize,
   justifyContent: {
     ...FLEX_PROPS_META.justifyContent,

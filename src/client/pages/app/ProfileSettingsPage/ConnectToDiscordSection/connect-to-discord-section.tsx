@@ -36,8 +36,8 @@ export const ConnectToDiscordSection = ({ userPlan, discordUserId }: { userPlan:
             * For paid users
           </Text>
         ) : discordUserId ? (
-          <WithIcon iconPlacement="right">
-            <Text intent="secondary" color="gray" italic iconName="check">
+          <WithIcon iconName="check" iconPlacement="right">
+            <Text intent="secondary" color="gray" italic>
               Done
             </Text>
           </WithIcon>

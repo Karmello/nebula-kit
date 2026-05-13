@@ -39,9 +39,9 @@ export const Button = <T extends ButtonTag = 'button'>({
   maxInlineSize,
   // Text
   bold,
-  iconName,
   // WithIcon
   customSvgIcon,
+  iconName,
   iconAngle,
   iconPlacement,
   // own

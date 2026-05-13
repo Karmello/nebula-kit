@@ -8,26 +8,25 @@ export const FormHint = ({
   tagAttrs,
   tagRef,
   bold,
-  iconName,
   intent = DEFAULT_FORM_HINT_INTENT,
   color = DEFAULT_FORM_HINT_COLOR,
   noWrap,
   textAlign,
   truncate,
   // WithIcon
+  iconName,
   iconPlacement,
 }: FormHintProps) => {
   return (
     <>
       <Spacer blockSize="2xs" />
-      <WithIcon iconPlacement={iconPlacement}>
+      <WithIcon iconName={iconName} iconPlacement={iconPlacement}>
         <Text
           tag="span"
           tagAttrs={tagAttrs}
           tagRef={tagRef}
           typography="small"
           bold={bold}
-          iconName={iconName}
           intent={intent}
           color={color}
           noWrap={noWrap}

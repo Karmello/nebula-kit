@@ -295,9 +295,8 @@ export const PLAYGROUND_PRESETS: Record<string, Array<{ name: string; props: obj
     {
       name: 'Custom',
       props: {
-        children: 'This is colored heading text with icon.',
+        children: 'This is colored heading text.',
         color: 'red',
-        iconName: 'check',
         intent: 'primary',
         typography: 'h4',
       } as Record<PropsFromTextKey, unknown>,

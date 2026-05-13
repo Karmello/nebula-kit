@@ -1,7 +1,7 @@
 import { sentenceCase } from 'change-case'
 
 import { useAppStore } from 'client/store'
-import { Button, Flex, Select, Dialog, Text, Segment, Box, Spacer } from 'lib/components'
+import { Button, Flex, Select, Dialog, Text, Segment, Box, Spacer, WithIcon } from 'lib/components'
 import { NEBKIT_BORDER_RADIUS_SIZES, NEBKIT_RIPPLE_MODES } from 'lib/components/core/utility/NebkitProvider'
 import { COLORS, SATURATIONS, THEMES } from 'lib/definitions'
 
@@ -30,9 +30,9 @@ export const AppPrefsDialog = () => {
       closeOnBackdropClick
     >
       <Dialog.Header>
-        <Text bold iconName="settings">
-          Preferences
-        </Text>
+        <WithIcon iconName="settings">
+          <Text bold>Preferences</Text>
+        </WithIcon>
       </Dialog.Header>
       <Dialog.Content>
         <Box padding="20px" paddingBottom="40px">

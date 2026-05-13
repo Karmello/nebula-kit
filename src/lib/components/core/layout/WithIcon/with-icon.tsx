@@ -1,9 +1,11 @@
 import classNames from 'classnames'
 
 import { Box, Flex, Icon, Rotate } from 'lib/components'
+import { TEXT_TYPOGRAPHY_MAP } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
 import { DEFAULT_WITH_ICON_GAP, DEFAULT_WITH_ICON_ICON_PLACEMENT, WithIconProps } from './definitions'
+import { DEFAULT_TEXT_TYPOGRAPHY } from '../../base/Text'
 
 export const WithIcon = ({
   // HtmlTag
@@ -24,10 +26,16 @@ export const WithIcon = ({
   // Rotate
   iconAngle,
   // own
+  iconTypography = DEFAULT_TEXT_TYPOGRAPHY,
   iconPlacement = DEFAULT_WITH_ICON_ICON_PLACEMENT,
 }: WithIconProps) => {
   const icon = (
-    <Icon name={iconName} size={iconSize} intent={iconIntent} color={iconColor}>
+    <Icon
+      name={iconName}
+      size={iconSize !== undefined ? iconSize : TEXT_TYPOGRAPHY_MAP[iconTypography].iconSize}
+      intent={iconIntent}
+      color={iconColor}
+    >
       {customSvgIcon}
     </Icon>
   )

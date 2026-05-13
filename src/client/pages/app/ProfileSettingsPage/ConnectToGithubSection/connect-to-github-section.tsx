@@ -35,8 +35,8 @@ export const ConnectToGithubSection = ({ userPlan, githubUsername }: { userPlan:
             * For paid users
           </Text>
         ) : githubUsername ? (
-          <WithIcon iconPlacement="right">
-            <Text intent="secondary" color="gray" italic iconName="check">
+          <WithIcon iconName="check" iconPlacement="right">
+            <Text intent="secondary" color="gray" italic>
               Done
             </Text>
           </WithIcon>

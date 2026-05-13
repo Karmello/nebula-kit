@@ -1,4 +1,4 @@
-import { Button, Spacer, Table, Text } from 'lib/components'
+import { Button, Spacer, Table, Text, WithIcon } from 'lib/components'
 
 import { usePlaygroundStore } from '../../store'
 
@@ -72,9 +72,9 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
         </Table.Body>
       </Table>
       <Spacer />
-      <Text iconName="screen-share" italic>
-        = responsive prop
-      </Text>
+      <WithIcon iconName="screen-share">
+        <Text italic>= responsive prop</Text>
+      </WithIcon>
     </>
   )
 }

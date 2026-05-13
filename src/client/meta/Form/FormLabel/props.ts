@@ -8,7 +8,7 @@ const FORM_LABEL_PROPS_META: ComponentMeta<FormLabelProps>['props'] = {
   bold: TEXT_PROPS_META.bold,
   children: TEXT_PROPS_META.children,
   color: TEXT_PROPS_META.color,
-  iconName: TEXT_PROPS_META.iconName,
+  iconName: WITH_ICON_PROPS_META.iconName,
   iconPlacement: WITH_ICON_PROPS_META.iconPlacement,
   intent: {
     ...TEXT_PROPS_META.intent,

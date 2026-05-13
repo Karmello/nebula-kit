@@ -8,25 +8,24 @@ export const FormLabel = ({
   tagAttrs,
   tagRef,
   bold,
-  iconName,
   intent = DEFAULT_FORM_LABEL_INTENT,
   color,
   noWrap,
   textAlign,
   truncate,
   // WithIcon
+  iconName,
   iconPlacement,
 }: FormLabelProps) => {
   return (
     <>
-      <WithIcon iconPlacement={iconPlacement}>
+      <WithIcon iconName={iconName} iconPlacement={iconPlacement}>
         <Text
           tag="label"
           tagAttrs={tagAttrs}
           tagRef={tagRef}
           typography="small"
           bold={bold}
-          iconName={iconName}
           intent={intent}
           color={color}
           noWrap={noWrap}

@@ -5,9 +5,9 @@ export const DEFAULT_FORM_HINT_COLOR: FormHintProps['color'] = 'blue'
 
 type PropsFromText = Pick<
   TextProps<'span'>,
-  'bold' | 'children' | 'color' | 'iconName' | 'intent' | 'noWrap' | 'tagAttrs' | 'tagRef' | 'textAlign' | 'truncate'
+  'bold' | 'children' | 'color' | 'intent' | 'noWrap' | 'tagAttrs' | 'tagRef' | 'textAlign' | 'truncate'
 >
 
-type PropsFromWithIcon = Pick<WithIconProps, 'iconPlacement'>
+type PropsFromWithIcon = Pick<WithIconProps, 'iconName' | 'iconPlacement'>
 
 export type FormHintProps = PropsFromText & PropsFromWithIcon

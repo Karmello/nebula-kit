@@ -10,7 +10,6 @@ import {
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
-import { WITH_ICON_PROPS_META } from '../WithIcon/props'
 
 const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
   bold: {
@@ -33,10 +32,6 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
   fontSize: {
     options: [DOCS_CSS_LABEL],
     description: 'Sets the fontSize value, bypassing typography.',
-  },
-  iconName: {
-    ...WITH_ICON_PROPS_META.iconName,
-    isRequired: false,
   },
   intent: BOX_PROPS_META.intent,
   italic: {

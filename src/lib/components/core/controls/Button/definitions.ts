@@ -35,9 +35,9 @@ type PropsFromBox<T extends ButtonTag = 'button'> = Pick<
   'variant' | 'color' | 'intent' | 'interactive' | 'disabled' | 'elevated' | 'inlineSize' | 'minInlineSize' | 'maxInlineSize'
 >
 
-type PropsFromText = Pick<TextProps<'span'>, 'bold' | 'iconName'>
+type PropsFromText = Pick<TextProps<'span'>, 'bold'>
 
-type PropsFromWithIcon = Pick<WithIconProps, 'customSvgIcon' | 'iconAngle' | 'iconPlacement'>
+type PropsFromWithIcon = Pick<WithIconProps, 'customSvgIcon' | 'iconName' | 'iconAngle' | 'iconPlacement'>
 
 export type ButtonProps<T extends ButtonTag = 'button'> = PropsFromHtmlTag<T> &
   PropsFromBox<T> &

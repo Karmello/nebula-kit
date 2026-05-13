@@ -2,6 +2,8 @@ import { BoxProps, FlexProps, HtmlTagProps, IconProps } from 'lib/components'
 import { CssFlexJustifyContent } from 'lib/definitions'
 import { RotateProps } from 'lib/components/core/motion/Rotate/definitions'
 
+import { TextTypography } from '../../base/Text/definitions'
+
 export const DEFAULT_WITH_ICON_ICON_PLACEMENT: WithIconProps['iconPlacement'] = 'left'
 export const DEFAULT_WITH_ICON_GAP: WithIconProps['gap'] = 'xs'
 
@@ -12,6 +14,7 @@ export type WithIconIconPlacement = (typeof WITH_ICON_ICON_PLACEMENTS)[number]
 export type WithIconJustifyContent = (typeof WITH_ICON_JUSTIFY_CONTENT)[number]
 
 type WithIconOwnProps = {
+  iconTypography?: TextTypography
   iconPlacement?: WithIconIconPlacement
 }
 

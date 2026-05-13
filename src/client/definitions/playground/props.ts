@@ -159,7 +159,6 @@ export const PROPS_FROM_TEXT = [
   'color',
   'disabled',
   'fontSize',
-  'iconName',
   'intent',
   'italic',
   'lineHeight',

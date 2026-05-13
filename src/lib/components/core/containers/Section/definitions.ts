@@ -34,6 +34,7 @@ export type SectionVariant = (typeof SECTION_VARIANTS)[number]
 
 type SectionOwnProps = {
   heading: ReactNode
+  headingIntent?: TextProps['intent']
   size?: SectionSize
   variant?: SectionVariant
 }
@@ -44,14 +45,9 @@ type PropsFromHtmlTag<T extends SectionTag = 'section'> = Omit<HtmlTagProps<T>, 
 
 type PropsFromBox<T extends SectionTag = 'section'> = Pick<BoxProps<T>, 'color' | 'intent' | 'interactive'>
 
-type PropsFromText = Pick<TextProps, 'iconName'> & {
-  headingIntent?: TextProps['intent']
-}
-
-type PropsFromWithIcon = Pick<WithIconProps, 'iconPlacement'>
+type PropsFromWithIcon = Pick<WithIconProps, 'iconName' | 'iconPlacement'>
 
 export type SectionProps<T extends SectionTag = 'section'> = PropsFromHtmlTag<T> &
   PropsFromBox<T> &
-  PropsFromText &
   PropsFromWithIcon &
   SectionOwnProps

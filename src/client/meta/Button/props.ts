@@ -40,7 +40,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     description: 'Expands the button to match the full width of its container.',
   },
   iconAngle: WITH_ICON_PROPS_META.iconAngle,
-  iconName: TEXT_PROPS_META.iconName,
+  iconName: WITH_ICON_PROPS_META.iconName,
   iconPlacement: WITH_ICON_PROPS_META.iconPlacement,
   inlineSize: BOX_PROPS_META.inlineSize,
   intent: {
