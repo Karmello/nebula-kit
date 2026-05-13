@@ -20,7 +20,7 @@ const BUTTON_META: ComponentMeta<ButtonProps> = {
   props: BUTTON_PROPS_META,
   examples: BUTTON_EXAMPLES_META,
   changelog: {
-    '0.10.0': ['added align prop'],
+    '0.10.0': ['removed justifyContent prop', 'removed textAlign prop', 'added align prop'],
     '0.9.0': ['changed surface prop to elevated'],
     '0.8.0': ['exposed selected prop', 'changed elevated prop to surface'],
     '0.7.0': ['exposed interactive prop'],
