@@ -94,6 +94,18 @@ export const PLAYGROUND_PRESETS: Record<string, Array<{ name: string; props: obj
         loading: true,
       } as Record<PropsFromButtonKey, unknown>,
     },
+    {
+      name: 'Extra large',
+      props: {
+        children: 'Extra large button',
+        description: 'Extra large button displays description.',
+        bold: true,
+        size: 'xl',
+        iconName: 'tree-pine',
+        color: 'blue',
+        intent: 'secondary',
+      } as Record<PropsFromButtonKey, unknown>,
+    },
   ],
   Callout: [
     {

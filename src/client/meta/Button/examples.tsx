@@ -10,9 +10,9 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
   {
     description: 'Examples of different button sizes.',
     jsx: (
-      <Flex alignItems="center" gap="xs">
+      <Flex flexWrap="wrap" alignItems="center" gap="xs">
         {BUTTON_SIZES.map(size => (
-          <Button key={size} size={size}>
+          <Button key={size} size={size} iconName="tree-pine">
             {size}
           </Button>
         ))}
@@ -28,7 +28,7 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     jsx: <Button iconName="search">Button with icon</Button>,
   },
   {
-    description: 'Full width Button with an icon aligned to the right edge.',
+    description: 'Full width button with an icon aligned to the right edge.',
     jsx: (
       <Button fullWidth iconName="search" iconPlacement="right" align="split">
         Button with icon
@@ -50,6 +50,14 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
   {
     description: 'Button in loading state.',
     jsx: <Button loading>Loading</Button>,
+  },
+  {
+    description: 'Extra large button with description.',
+    jsx: (
+      <Button description="Description text." size="xl" bold>
+        Extra large button
+      </Button>
+    ),
   },
 ]
 

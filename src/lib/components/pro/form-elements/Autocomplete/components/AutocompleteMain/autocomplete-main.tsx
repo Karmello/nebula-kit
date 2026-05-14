@@ -185,8 +185,8 @@ export const AutocompleteMain = ({
                   bold={selected}
                   selected={selected}
                   align={slotProps.align || DEFAULT_AUTOCOMPLETE_OPTION_ALIGN}
-                  iconName={slotProps.iconName ? slotProps.iconName : selected ? 'check' : undefined}
-                  iconPlacement="right"
+                  iconName={slotProps.iconName !== undefined ? slotProps.iconName : selected ? 'check' : undefined}
+                  iconPlacement={slotProps.iconPlacement}
                 >
                   {slot}
                 </DropdownList.Item>

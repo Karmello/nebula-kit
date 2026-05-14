@@ -3,7 +3,7 @@ import { BUTTON_PROPS_META } from 'client/meta/Button/props'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { LINK_PROPS_META } from 'client/meta/Link/props'
 import { SideNavItemProps } from 'lib/components'
-import { SIDE_NAV_VARIANTS } from 'lib/components/pro/navigation/SideNav/'
+import { SIDE_NAV_VARIANTS } from 'lib/components/pro/navigation/SideNav/definitions'
 
 const SIDE_NAV_ITEM_PROPS_META: ComponentMeta<SideNavItemProps>['props'] = {
   align: BUTTON_PROPS_META.align,
@@ -14,6 +14,7 @@ const SIDE_NAV_ITEM_PROPS_META: ComponentMeta<SideNavItemProps>['props'] = {
   },
   color: BUTTON_PROPS_META.color,
   customSvgIcon: BUTTON_PROPS_META.customSvgIcon,
+  description: BUTTON_PROPS_META.description,
   elevated: BUTTON_PROPS_META.elevated,
   href: LINK_PROPS_META.href,
   iconName: BUTTON_PROPS_META.iconName,

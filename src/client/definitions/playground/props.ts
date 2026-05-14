@@ -45,6 +45,7 @@ export const PROPS_FROM_BUTTON = [
   'bold',
   'children',
   'color',
+  'description',
   'disabled',
   'elevated',
   'fullWidth',

@@ -32,6 +32,10 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   },
   color: BOX_PROPS_META.color,
   customSvgIcon: WITH_ICON_PROPS_META.customSvgIcon,
+  description: {
+    options: ['string'],
+    description: 'Secondary text displayed below the main label. Works with xl size only.',
+  },
   disabled: BOX_PROPS_META.disabled,
   elevated: BOX_PROPS_META.elevated,
   fullWidth: {

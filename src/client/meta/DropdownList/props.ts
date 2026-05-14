@@ -9,8 +9,10 @@ import {
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
   DROPDOWN_LIST_PLACEMENTS,
-  DEFAULT_DROPDOWN_OPEN_ON_FOCUS,
+  DEFAULT_DROPDOWN_LIST_OPEN_ON_FOCUS,
   DEFAULT_DROPDOWN_LIST_INTENT,
+  DROPDOWN_LIST_SIZES,
+  DEFAULT_DROPDOWN_LIST_SIZE,
 } from 'lib/components/core/overlays/DropdownList'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
@@ -57,7 +59,7 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
   },
   openOnFocus: {
     options: ['boolean'],
-    defaultValue: String(DEFAULT_DROPDOWN_OPEN_ON_FOCUS),
+    defaultValue: String(DEFAULT_DROPDOWN_LIST_OPEN_ON_FOCUS),
     description:
       'Opens the dropdown when the trigger receives focus. When enabled, the trigger does not toggle the dropdown closed on click.',
   },
@@ -79,7 +81,8 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
     description: 'Scrolls the list to the item at the given index on render.',
   },
   size: {
-    ...BUTTON_PROPS_META.size,
+    options: DROPDOWN_LIST_SIZES,
+    defaultValue: DEFAULT_DROPDOWN_LIST_SIZE,
     description: 'Applies the selected size to the list items.',
   },
   tagAttrs: HTML_TAG_PROPS_META.tagAttrs,

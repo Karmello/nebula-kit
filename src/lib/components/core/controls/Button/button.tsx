@@ -1,7 +1,7 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Text, Loader, WithIcon } from 'lib/components'
+import { Box, Text, Loader, WithIcon, Flex } from 'lib/components'
 import { Ripple } from 'lib/components/core/internal'
 import { updateDomRespDataset } from 'lib/service'
 import { CONTROL_SIZE_MAP } from 'lib/definitions'
@@ -51,6 +51,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   loading,
   ripple = DEFAULT_BUTTON_RIPPLE,
   selected,
+  description,
   onClick,
 }: ButtonProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
@@ -61,6 +62,8 @@ export const Button = <T extends ButtonTag = 'button'>({
     updateDomRespDataset('Button', tagRef || ref, bp, { fullWidth })
   }, [bp, fullWidth])
 
+  const isSquare = children === undefined || size === '2xs'
+
   return (
     <Box
       tag={tag}
@@ -68,11 +71,7 @@ export const Button = <T extends ButtonTag = 'button'>({
         {
           onClick,
           ...tagAttrs,
-          className: classNames(
-            withPrefix('button'),
-            children === undefined ? withPrefix('button-square') : undefined,
-            tagAttrs?.className
-          ),
+          className: classNames(withPrefix('button'), isSquare ? withPrefix('button-square') : undefined, tagAttrs?.className),
           type: tagAttrs?.type || 'button',
           'aria-disabled': disabled || undefined,
           style: { ...tagAttrs?.style, pointerEvents: loading ? 'none' : undefined },
@@ -84,7 +83,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       color={color}
       intent={intent}
       disabled={disabled || loading}
-      inlineSize={inlineSize}
+      inlineSize={isSquare ? CONTROL_SIZE_MAP[size || 'md'].blockSize : inlineSize}
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
       interactive={interactive}
@@ -95,24 +94,37 @@ export const Button = <T extends ButtonTag = 'button'>({
       paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
     >
       <WithIcon
-        tagAttrs={{ style: { inlineSize: '100%' } }}
+        inlineSize="100%"
         iconName={iconName}
         iconPlacement={iconPlacement}
+        iconSize={CONTROL_SIZE_MAP[size || 'md'].iconSize}
         iconAngle={iconAngle}
         customSvgIcon={customSvgIcon}
         justifyContent={align === 'split' ? 'space-between' : align === 'center' ? 'center' : 'flex-start'}
+        gap={CONTROL_SIZE_MAP[size || 'md'].iconGap}
       >
-        {children ? (
-          <Text
-            tag="span"
-            fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
-            lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
-            bold={bold}
-            truncate
-            textAlign={align === 'center' ? 'center' : undefined}
-          >
-            {children}
-          </Text>
+        {!isSquare ? (
+          <Flex tag="span" flexDirection="column">
+            <Text
+              tag="span"
+              fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
+              lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
+              bold={bold}
+              textAlign={align === 'center' ? 'center' : undefined}
+            >
+              {children}
+            </Text>
+            {description && size === 'xl' ? (
+              <Text
+                tag="span"
+                fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
+                lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
+                textAlign={align === 'center' ? 'center' : undefined}
+              >
+                {description}
+              </Text>
+            ) : null}
+          </Flex>
         ) : null}
       </WithIcon>
       {loading && !disabled ? <Loader centered size={CONTROL_SIZE_MAP[size || 'md'].loaderSize} /> : null}

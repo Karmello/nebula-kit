@@ -25,8 +25,8 @@ export const PatternsPage = () => {
                   </SplitView.MainBar>
                 </SplitView.Main>
                 <SplitView.Side paddingRight={{ lg: 'md' }}>
-                  <SideNav size="xs" gap="2xs" intent={{ base: 'tertiary', lg: 'muted' }}>
-                    {PATTERNS.map(({ id, title }) => {
+                  <SideNav size="xl" gap="2xs" intent={{ base: 'tertiary', lg: 'muted' }}>
+                    {PATTERNS.map(({ id, title, description }) => {
                       const href = `/patterns?id=${id}`
 
                       return (
@@ -38,6 +38,9 @@ export const PatternsPage = () => {
                             navigateTo(href)
                           }}
                           selected={patternId === id}
+                          description={description}
+                          bold
+                          align="start"
                         >
                           {title}
                         </SideNav.Item>

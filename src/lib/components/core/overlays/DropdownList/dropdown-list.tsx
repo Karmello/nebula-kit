@@ -2,7 +2,6 @@ import { useRef, useState } from 'react'
 
 import { FloatingResolved } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
-import { DEFAULT_BUTTON_SIZE } from 'lib/components/core/controls/Button/definitions'
 import { CONTROL_SIZE_MAP, LENGTH_SCALE } from 'lib/definitions'
 
 import {
@@ -13,7 +12,8 @@ import {
   DEFAULT_DROPDOWN_LIST_INTENT,
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
-  DEFAULT_DROPDOWN_OPEN_ON_FOCUS,
+  DEFAULT_DROPDOWN_LIST_OPEN_ON_FOCUS,
+  DEFAULT_DROPDOWN_LIST_SIZE,
 } from './definitions'
 
 import { DropdownListProvider, DropdownListMain } from './components'
@@ -26,12 +26,12 @@ export const DropdownList = ({
   // Button
   color,
   intent = DEFAULT_DROPDOWN_LIST_INTENT,
-  size = DEFAULT_BUTTON_SIZE,
   // Portal
   placement = DEFAULT_DROPDOWN_LIST_PLACEMENT,
   // own
+  size = DEFAULT_DROPDOWN_LIST_SIZE,
   visibleItemsCount = DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
-  openOnFocus = DEFAULT_DROPDOWN_OPEN_ON_FOCUS,
+  openOnFocus = DEFAULT_DROPDOWN_LIST_OPEN_ON_FOCUS,
   keepOpen = DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
   scrollToIndex = DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
   scrollAlign = DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,

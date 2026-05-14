@@ -11,7 +11,7 @@ export const DEFAULT_BUTTON_RIPPLE: ButtonProps['ripple'] = true
 export const DEFAULT_BUTTON_ALIGN: ButtonProps['align'] = 'center'
 
 export const BUTTON_TAGS = ['button', 'a'] as const
-export const BUTTON_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies TShirtSize[]
+export const BUTTON_SIZES = ['2xs', 'xs', 'sm', 'md', 'lg', 'xl'] as const satisfies TShirtSize[]
 export const BUTTON_ALIGNS = ['center', 'start', 'split'] as const
 
 export type ButtonTag = (typeof BUTTON_TAGS)[number]
@@ -25,6 +25,7 @@ type ButtonOwnProps = {
   loading?: boolean
   ripple?: boolean
   selected?: boolean
+  description?: string
   onClick?: React.MouseEventHandler<HTMLButtonElement> | MouseEventHandler<HTMLAnchorElement>
 }
 

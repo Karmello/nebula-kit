@@ -89,13 +89,14 @@ export const TEXT_TYPOGRAPHY_MAP: Record<
 }
 
 export const CONTROL_SIZE_MAP: Record<
-  Extract<TShirtSize, '2xs' | 'xs' | 'sm' | 'md' | 'lg'>,
+  Extract<TShirtSize, '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'>,
   {
     blockSize: string
     paddingInline: string
     fontSize: string
     lineHeight: number | string
     iconSize: string
+    iconGap: string
     loaderSize: string
   }
 > = {
@@ -105,7 +106,8 @@ export const CONTROL_SIZE_MAP: Record<
     fontSize: TEXT_TYPOGRAPHY_MAP.small.fontSize,
     lineHeight: TEXT_TYPOGRAPHY_MAP.small.lineHeight,
     iconSize: TEXT_TYPOGRAPHY_MAP.small.iconSize,
-    loaderSize: '12px',
+    iconGap: '0px',
+    loaderSize: '13px',
   },
   xs: {
     blockSize: '34px',
@@ -113,6 +115,7 @@ export const CONTROL_SIZE_MAP: Record<
     fontSize: TEXT_TYPOGRAPHY_MAP.small.fontSize,
     lineHeight: TEXT_TYPOGRAPHY_MAP.small.lineHeight,
     iconSize: TEXT_TYPOGRAPHY_MAP.small.iconSize,
+    iconGap: LENGTH_SCALE.xs,
     loaderSize: '14px',
   },
   sm: {
@@ -121,6 +124,7 @@ export const CONTROL_SIZE_MAP: Record<
     fontSize: TEXT_TYPOGRAPHY_MAP.body.fontSize,
     lineHeight: TEXT_TYPOGRAPHY_MAP.body.lineHeight,
     iconSize: TEXT_TYPOGRAPHY_MAP.body.iconSize,
+    iconGap: LENGTH_SCALE.xs,
     loaderSize: '16px',
   },
   md: {
@@ -129,6 +133,7 @@ export const CONTROL_SIZE_MAP: Record<
     fontSize: TEXT_TYPOGRAPHY_MAP.body.fontSize,
     lineHeight: TEXT_TYPOGRAPHY_MAP.body.lineHeight,
     iconSize: TEXT_TYPOGRAPHY_MAP.body.iconSize,
+    iconGap: LENGTH_SCALE.xs,
     loaderSize: '18px',
   },
   lg: {
@@ -137,7 +142,17 @@ export const CONTROL_SIZE_MAP: Record<
     fontSize: TEXT_TYPOGRAPHY_MAP.body.fontSize,
     lineHeight: TEXT_TYPOGRAPHY_MAP.body.lineHeight,
     iconSize: TEXT_TYPOGRAPHY_MAP.body.iconSize,
+    iconGap: LENGTH_SCALE.xs,
     loaderSize: '22px',
+  },
+  xl: {
+    blockSize: '66px',
+    paddingInline: '16px',
+    fontSize: TEXT_TYPOGRAPHY_MAP.body.fontSize,
+    lineHeight: TEXT_TYPOGRAPHY_MAP.body.lineHeight,
+    iconSize: TEXT_TYPOGRAPHY_MAP.h3.iconSize,
+    iconGap: LENGTH_SCALE.sm,
+    loaderSize: '27px',
   },
 }
 
