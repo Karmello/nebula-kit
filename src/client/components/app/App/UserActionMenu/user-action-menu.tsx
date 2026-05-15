@@ -6,6 +6,7 @@ import { useAppStore } from 'client/store'
 import { useLogoutUser } from 'client/api'
 import { Button, Flex, Select } from 'lib/components'
 
+import { WebsiteMapDialog } from './components/website-map-dialog'
 import { AppPrefsDialog } from './components/app-prefs-dialog'
 
 export const UserActionMenu = () => {
@@ -14,6 +15,8 @@ export const UserActionMenu = () => {
   const logoutUser = useLogoutUser()
 
   const user = useAppStore(state => state.user)
+  const showWebsiteMap = useAppStore(state => state.showWebsiteMap)
+  const setShowWebsiteMap = useAppStore(state => state.setShowWebsiteMap)
   const showAppJump = useAppStore(state => state.showAppJump)
   const setShowAppJump = useAppStore(state => state.setShowAppJump)
   const showAppSettings = useAppStore(state => state.showAppSettings)
@@ -25,6 +28,15 @@ export const UserActionMenu = () => {
   return (
     <>
       <Flex>
+        <Button
+          tagAttrs={{
+            onClick: () => {
+              if (!showWebsiteMap) setShowWebsiteMap(true)
+            },
+          }}
+          iconName="compass"
+          intent="muted"
+        />
         <Button
           tagAttrs={{
             onClick: () => {
@@ -71,6 +83,7 @@ export const UserActionMenu = () => {
           )}
         </Select>
       </Flex>
+      <WebsiteMapDialog />
       <AppPrefsDialog />
     </>
   )

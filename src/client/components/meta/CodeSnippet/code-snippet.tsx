@@ -6,7 +6,7 @@ import { useCurrentTheme } from 'lib/hooks'
 
 import { CopyButton } from '../CopyButton'
 import { tokenizeCode } from './highlight-tokens'
-import { CodeSnippetProps } from './definitions'
+import { CodeSnippetProps, DEFAULT_MAX_BLOCK_SIZE } from './definitions'
 
 export const CodeSnippet = ({
   code,
@@ -16,6 +16,7 @@ export const CodeSnippet = ({
   boldDescription = true,
   descriptionIcon = false,
   fullBg,
+  maxBlockSize = DEFAULT_MAX_BLOCK_SIZE,
 }: CodeSnippetProps) => {
   const theme = useCurrentTheme()
 
@@ -70,7 +71,7 @@ export const CodeSnippet = ({
             },
           }}
           overflowY="auto"
-          maxBlockSize="350px"
+          maxBlockSize={maxBlockSize}
           drawable
           variant="solid"
         >

@@ -24,6 +24,7 @@ export const ICON_NAMES = [
   'circle-x',
   'close',
   'code',
+  'compass',
   'component',
   'copy',
   'copy-check',

@@ -27,6 +27,8 @@ export type AppStore = {
   setRippleMode: (rippleMode: NebkitProviderProps['rippleMode']) => void
   user: ApiUser | null
   setUser: (user: ApiUser | null) => void
+  showWebsiteMap: boolean
+  setShowWebsiteMap: Dispatch<SetStateAction<boolean>>
   showAppJump: boolean
   setShowAppJump: Dispatch<SetStateAction<boolean>>
   showAppSettings: boolean
@@ -51,6 +53,8 @@ export const useAppStore = create<AppStore>()(
         setRippleMode: (rippleMode: NebkitProviderProps['rippleMode']) => set({ rippleMode }),
         user: null,
         setUser: (user: ApiUser | null) => set({ user }),
+        showWebsiteMap: false,
+        setShowWebsiteMap: (showWebsiteMap: boolean) => set({ showWebsiteMap }),
         showAppJump: false,
         setShowAppJump: (showAppJump: boolean) => set({ showAppJump }),
         showAppSettings: false,

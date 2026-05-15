@@ -117,7 +117,13 @@ export const Dialog = ({
                         <Box drawable variant="solid" intent="neutral" borderRadius="0px">
                           {onClose ? (
                             <Box position="absolute" top="8px" right="8px">
-                              <Button tagAttrs={{ onClick: onClose }} size="2xs" iconName="close" intent="tertiary" />
+                              <Button
+                                tagAttrs={{ onClick: onClose }}
+                                size="2xs"
+                                iconName="close"
+                                variant="outline"
+                                intent="tertiary"
+                              />
                             </Box>
                           ) : null}
                           {slotsByName['Dialog.Header']}

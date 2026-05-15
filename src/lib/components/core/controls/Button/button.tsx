@@ -55,11 +55,12 @@ export const Button = <T extends ButtonTag = 'button'>({
   onClick,
 }: ButtonProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
+  const finalRef = tagRef || ref
 
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    updateDomRespDataset('Button', tagRef || ref, bp, { fullWidth })
+    updateDomRespDataset('Button', finalRef, bp, { fullWidth })
   }, [bp, fullWidth])
 
   const isSquare = children === undefined || size === '2xs'
@@ -77,7 +78,7 @@ export const Button = <T extends ButtonTag = 'button'>({
           style: { ...tagAttrs?.style, pointerEvents: loading ? 'none' : undefined },
         } as PropsWithoutRef<ComponentProps<T>>
       }
-      tagRef={tagRef || ref}
+      tagRef={finalRef}
       drawable
       variant={variant}
       color={color}
@@ -104,13 +105,14 @@ export const Button = <T extends ButtonTag = 'button'>({
         gap={CONTROL_SIZE_MAP[size || 'md'].iconGap}
       >
         {!isSquare ? (
-          <Flex tag="span" flexDirection="column">
+          <Flex tag="span" tagAttrs={{ style: { minInlineSize: 0 } }} flexDirection="column">
             <Text
               tag="span"
               fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
               lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
               bold={bold}
               textAlign={align === 'center' ? 'center' : undefined}
+              truncate
             >
               {children}
             </Text>
@@ -120,6 +122,7 @@ export const Button = <T extends ButtonTag = 'button'>({
                 fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
                 lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
                 textAlign={align === 'center' ? 'center' : undefined}
+                truncate
               >
                 {description}
               </Text>
@@ -128,7 +131,7 @@ export const Button = <T extends ButtonTag = 'button'>({
         ) : null}
       </WithIcon>
       {loading && !disabled ? <Loader centered size={CONTROL_SIZE_MAP[size || 'md'].loaderSize} /> : null}
-      <Ripple parentRef={tagRef || ref} active={ripple && !loading && !disabled} />
+      <Ripple parentRef={finalRef} active={ripple && !loading && !disabled} />
     </Box>
   )
 }
