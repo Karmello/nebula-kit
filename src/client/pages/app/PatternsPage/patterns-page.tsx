@@ -20,6 +20,8 @@ export const PatternsPage = () => {
 
   const pattern = PATTERNS.find(p => p.id === patternId)
 
+  if (!pattern) return null
+
   return (
     <Box paddingTop="sm" paddingInline={{ base: 'md', lg: 'xl' }}>
       <Section size="lg" heading="Patterns" iconName="pyramid">
@@ -31,7 +33,7 @@ export const PatternsPage = () => {
                   <SplitView.MainBar>
                     <Flex alignItems="center" flexWrap="wrap" columnGap="md" rowGap="2xs">
                       <Flex.Item flex="1">
-                        <Text typography="h5">{pattern?.title}</Text>
+                        <Text typography="h5">{pattern.title}</Text>
                       </Flex.Item>
                       <Segment>
                         <Segment.Item>
@@ -60,19 +62,33 @@ export const PatternsPage = () => {
                     </Flex>
                   </SplitView.MainBar>
                   <Spacer />
-                  {pattern?.jsx ? (
+                  <Text>{pattern.description}</Text>
+                  <Spacer />
+                  {pattern.jsx ? (
                     viewMode === 'code' ? (
-                      <CodeSnippet lang="tsx" code={convertElemToString(pattern.jsx)} maxBlockSize="calc(100dvh - 275px)" />
+                      <CodeSnippet
+                        key={patternId}
+                        lang="tsx"
+                        code={convertElemToString(pattern.jsx)}
+                        maxBlockSize="calc(100dvh - 275px)"
+                      />
                     ) : (
-                      <Box drawable variant="outline" intent="muted" maxBlockSize="calc(100dvh - 275px)" padding="sm">
+                      <Box
+                        tagAttrs={{ style: { borderStyle: 'dashed' } }}
+                        drawable
+                        variant="outline"
+                        intent="muted"
+                        maxBlockSize="calc(100dvh - 275px)"
+                        padding="sm"
+                      >
                         {pattern.jsx}
                       </Box>
                     )
                   ) : null}
                 </SplitView.Main>
-                <SplitView.Side paddingRight={{ lg: 'md' }}>
+                <SplitView.Side inlineSize="350px" paddingRight={{ lg: 'md' }}>
                   <SideNav size="xl" gap="2xs" intent={{ base: 'tertiary', lg: 'muted' }}>
-                    {PATTERNS.map(({ id, title, description }) => {
+                    {PATTERNS.map(({ id, title, category }) => {
                       const href = `/patterns?id=${id}`
 
                       return (
@@ -84,11 +100,11 @@ export const PatternsPage = () => {
                             navigateTo(href)
                           }}
                           selected={patternId === id}
-                          description={description}
+                          description={title}
                           bold
                           align="start"
                         >
-                          {title}
+                          {category}
                         </SideNav.Item>
                       )
                     })}
