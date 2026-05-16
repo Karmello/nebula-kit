@@ -87,7 +87,7 @@ export const Dialog = ({
                 >
                   <FocusTrap tagRef={tagRef || ref} active={open} onFocusEscape={onClose} disableEscapeOnOutsideClick>
                     <Resize
-                      property="inlineSize"
+                      property="blockSize"
                       visible={open}
                       easing={open ? 'ease-out' : 'ease-in'}
                       duration={DIALOG_RESIZE_DURATION}
@@ -106,7 +106,7 @@ export const Dialog = ({
                         tagRef={tagRef || ref}
                         drawable
                         variant="outline"
-                        maxInlineSize="100dvw"
+                        maxInlineSize="95dvw"
                         maxBlockSize="90dvh"
                         position="relative"
                         overflowY="auto"

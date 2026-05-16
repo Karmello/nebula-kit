@@ -11,7 +11,7 @@ export const DIALOG_SIZE_MAP: Record<DialogSize, BoxProps['inlineSize']> = {
 export const DIALOG_SIZES = ['sm', 'md', 'lg'] as const satisfies TShirtSize[]
 export const DIALOG_INTENT: BoxIntent = 'tertiary'
 export const DIALOG_PADDING: BoxProps['padding'] = '15px'
-export const DIALOG_RESIZE_DURATION = 200
+export const DIALOG_RESIZE_DURATION = 150
 
 export const DEFAULT_DIALOG_SIZE: DialogProps['size'] = 'md'
 export const DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK: DialogProps['closeOnBackdropClick'] = false
