@@ -12,7 +12,7 @@ export const PatternsPage = () => {
 
   const navigateTo = useNavigateTo()
   const { pathname, search } = useLocation()
-  let patternId = new URLSearchParams(search).get('id')
+  const patternId = new URLSearchParams(search).get('id')
 
   if (patternId == null) {
     return <Navigate replace to={{ pathname, search: `?id=${encodeURIComponent(PATTERNS[0].id)}` }} />
