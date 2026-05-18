@@ -37,7 +37,7 @@ export const PricingPlanCard = ({
     return (
       <>
         <Flex alignItems="center" columnGap="sm">
-          <Icon name="check" intent="primary" color={color} />
+          <Icon name="check" intent="primary" color={color} size="sm" />
           {children}
         </Flex>
         <Spacer blockSize="3xs" />

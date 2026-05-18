@@ -1,11 +1,14 @@
-import { memo } from 'react'
+import { memo, useLayoutEffect, useRef, useState } from 'react'
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
+import { updateDomRespDataset } from 'lib/service'
 import { resolveLengthValue, withPrefix } from 'lib/helpers'
+import { useScreen } from 'lib/hooks'
+import { CssValue, IconName } from 'lib/definitions'
 import { getSvgIconComponent } from 'lib/icons/lucide'
 
-import { DEFAULT_ICON_SIZE, IconProps } from './definitions'
+import { DEFAULT_ICON_SIZE, IconProps, IconSize } from './definitions'
 
 export const Icon = memo(
   ({
@@ -19,16 +22,28 @@ export const Icon = memo(
     intent,
     color,
   }: IconProps) => {
+    const localRef = useRef<HTMLSpanElement>(null)
+    const { bp } = useScreen()
+
+    const finalRef = tagRef || localRef
+
+    const [resolvedName, setResolvedName] = useState<IconName>()
+    const [resolvedSize, setResolvedSize] = useState<IconSize | CssValue>()
+
+    useLayoutEffect(() => {
+      updateDomRespDataset('Icon', finalRef, bp, { name, size: size !== undefined ? resolveLengthValue(size) : undefined })
+      setResolvedName(finalRef.current?.dataset.nebIconName as IconName)
+      setResolvedSize(finalRef.current?.dataset.nebIconSize)
+    }, [bp, name, size])
+
     if (!name && !children) return null
 
-    const Svg = name ? getSvgIconComponent(name) : null
-
-    const resolvedSize = resolveLengthValue(size) as string
+    const Svg = resolvedName ? getSvgIconComponent(resolvedName) : null
 
     return (
       <Box
         tag="span"
-        tagRef={tagRef}
+        tagRef={finalRef}
         tagAttrs={{
           ...tagAttrs,
           className: classNames(withPrefix('icon'), tagAttrs?.className),
