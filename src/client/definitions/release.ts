@@ -25,7 +25,7 @@ export const RELEASE_INFO: Record<
   }
 > = {
   '0.10.0': {
-    timestamp: 1778333299699,
+    timestamp: 1778951991868,
     headline: 'Typography simplification',
     changelog: {
       main: [
@@ -33,6 +33,7 @@ export const RELEASE_INFO: Record<
         'refined the typography scale for better readability and visual balance',
         'exposed typography and length scales as reusable CSS custom properties for external styling and custom content',
         'fixed slot resolution behavior by distinguishing between strict and optional slot systems, preserving plain text and non-slot children when no required slots are defined',
+        'with this release, the NebulaKit website introduced the new Patterns page and Website Map',
       ],
     },
   },

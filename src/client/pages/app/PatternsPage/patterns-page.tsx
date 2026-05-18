@@ -39,6 +39,7 @@ export const PatternsPage = () => {
                         <Segment.Item>
                           <Button
                             size="xs"
+                            intent="muted"
                             selected={viewMode === 'code'}
                             bold={viewMode === 'code'}
                             inlineSize="85px"
@@ -50,6 +51,7 @@ export const PatternsPage = () => {
                         <Segment.Item>
                           <Button
                             size="xs"
+                            intent="muted"
                             selected={viewMode === 'preview'}
                             bold={viewMode === 'preview'}
                             inlineSize="85px"
@@ -87,7 +89,7 @@ export const PatternsPage = () => {
                   ) : null}
                 </SplitView.Main>
                 <SplitView.Side inlineSize="350px" paddingRight={{ lg: 'md' }}>
-                  <SideNav size="xl" gap="2xs" intent={{ base: 'tertiary', lg: 'muted' }}>
+                  <SideNav size="xl" gap="3xs" intent={{ base: 'tertiary', lg: 'muted' }}>
                     {PATTERNS.map(({ id, title, category }) => {
                       const href = `/patterns?id=${id}`
 
@@ -100,11 +102,11 @@ export const PatternsPage = () => {
                             navigateTo(href)
                           }}
                           selected={patternId === id}
-                          description={title}
+                          description={category}
                           bold
                           align="start"
                         >
-                          {category}
+                          {title}
                         </SideNav.Item>
                       )
                     })}
