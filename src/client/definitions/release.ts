@@ -25,7 +25,7 @@ export const RELEASE_INFO: Record<
   }
 > = {
   '0.10.0': {
-    timestamp: 1778951991868,
+    timestamp: 1779143498311,
     headline: 'Typography simplification',
     changelog: {
       main: [
