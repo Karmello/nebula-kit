@@ -37,7 +37,7 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
   },
   intent: {
     ...BOX_PROPS_META.intent,
-    defaultValue: DEFAULT_SECTION_INTENT,
+    defaultValue: String(DEFAULT_SECTION_INTENT),
   },
   interactive: BOX_PROPS_META.interactive,
   size: {

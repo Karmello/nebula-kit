@@ -5,8 +5,8 @@ import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
 import { useGetUser } from 'client/api'
 import { useAppStore } from 'client/store'
-import { Loader, Table, Text, Flex, Link, Button, Box, Spacer, Section, WithIcon } from 'lib/components'
 import { CopyButton } from 'client/components'
+import { Loader, Table, Text, Flex, Link, Button, Box, Spacer, Section, WithIcon } from 'lib/components'
 
 export default () => {
   const getUser = useGetUser()
@@ -19,35 +19,57 @@ export default () => {
     }
   }, [user])
 
+  const userData = getUser.data?.user
+
+  const hasPaidPlan = userData?.plan !== 'free'
+
+  const isDiscordConnected = !!userData?.discordUserId
+  const isGithubConnected = !!userData?.githubUsername
+
+  const discordStatusColor = hasPaidPlan ? (isDiscordConnected ? 'green' : 'red') : undefined
+
+  const githubStatusColor = hasPaidPlan ? (isGithubConnected ? 'green' : 'red') : undefined
+
+  const discordStatusText = hasPaidPlan ? (isDiscordConnected ? 'Connected' : 'Not connected') : '-'
+
+  const githubStatusText = hasPaidPlan ? (isGithubConnected ? `Connected as ${userData?.githubUsername}` : 'Not connected') : '-'
+
   return (
     <Section heading="Details" size="sm" intent="primary" color="blue">
       <Spacer blockSize="xs" />
+
       {!getUser.isMakingRequest ? (
         <Table layout="fixed" intent="neutral">
           <Table.Body intent="muted" paddingBlock="10px" paddingInline="12px">
             <Table.Row>
-              <Table.Cell colSpan={1}>
+              <Table.Cell>
                 <Text lineHeight={1.2}>Email</Text>
               </Table.Cell>
+
               <Table.Cell colSpan={2}>
-                <Text wordBreak="break-all">{getUser.data?.user.email}</Text>
+                <Text wordBreak="break-all">{userData?.email}</Text>
               </Table.Cell>
             </Table.Row>
+
             <Table.Row>
-              <Table.Cell colSpan={1}>
+              <Table.Cell>
                 <Text lineHeight={1.2}>Registration date</Text>
               </Table.Cell>
+
               <Table.Cell colSpan={2}>
-                <Text wordBreak="break-all">{getUser.data ? new Date(getUser.data.user.createdAt).toDateString() : ''}</Text>
+                <Text wordBreak="break-all">{userData ? new Date(userData.createdAt).toDateString() : ''}</Text>
               </Table.Cell>
             </Table.Row>
+
             <Table.Row>
-              <Table.Cell colSpan={1}>
+              <Table.Cell>
                 <Text lineHeight={1.2}>Pricing plan</Text>
               </Table.Cell>
+
               <Table.Cell colSpan={2}>
                 <Flex alignItems="center" flexWrap="wrap" rowGap="xs" columnGap="sm">
-                  <Text bold>{getUser.data ? sentenceCase(getUser.data.user.plan) : ''}</Text>
+                  <Text bold>{userData ? sentenceCase(userData.plan) : ''}</Text>
+
                   {!getUser.isMakingRequest ? (
                     <Link
                       href={PageKey.pricing}
@@ -56,109 +78,83 @@ export default () => {
                       }}
                     >
                       <Button size="xs" variant="outline" intent="tertiary" color="blue">
-                        {getUser.data?.user.plan === 'free' ? 'Upgrade' : 'Details'}
+                        {userData?.plan === 'free' ? 'Upgrade' : 'Details'}
                       </Button>
                     </Link>
                   ) : null}
                 </Flex>
               </Table.Cell>
             </Table.Row>
+
             <Table.Row>
-              <Table.Cell colSpan={1}>
+              <Table.Cell>
                 <Text lineHeight={1.2}>License key</Text>
               </Table.Cell>
+
               <Table.Cell colSpan={2}>
-                {getUser.data ? (
+                {userData ? (
                   <Flex alignItems="center" gap="xs">
                     <Text
-                      intent={getUser.data.user.licenseKey ? 'primary' : undefined}
-                      color={getUser.data.user.licenseKey ? 'blue' : undefined}
+                      intent={userData.licenseKey ? 'primary' : undefined}
+                      color={userData.licenseKey ? 'blue' : undefined}
                       wordBreak="break-all"
                       lineHeight={1.2}
-                      bold={!!getUser.data.user.licenseKey}
+                      bold={!!userData.licenseKey}
                     >
-                      {getUser.data.user.licenseKey || '-'}
+                      {userData.licenseKey || '-'}
                     </Text>
-                    {getUser.data.user.licenseKey ? <CopyButton text={getUser.data.user.licenseKey} /> : null}
+
+                    {userData.licenseKey ? <CopyButton text={userData.licenseKey} /> : null}
                   </Flex>
                 ) : (
                   ''
                 )}
               </Table.Cell>
             </Table.Row>
+
             <Table.Row>
-              <Table.Cell colSpan={1}>
+              <Table.Cell>
                 <Text lineHeight={1.2}>Discord connection status</Text>
               </Table.Cell>
+
               <Table.Cell colSpan={2}>
-                {getUser.data ? (
+                {userData ? (
                   <WithIcon
-                    iconName={
-                      getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.discordUserId ? 'check' : undefined) : undefined
-                    }
+                    iconName={hasPaidPlan ? (isDiscordConnected ? 'check' : undefined) : undefined}
                     iconPlacement="right"
-                    iconColor={
-                      getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.discordUserId ? 'green' : 'red') : undefined
-                    }
-                    iconIntent={getUser.data.user.plan !== 'free' ? 'primary' : undefined}
+                    iconColor={discordStatusColor}
+                    iconIntent={hasPaidPlan ? 'primary' : undefined}
                   >
-                    <Text
-                      color={
-                        getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.discordUserId ? 'green' : 'red') : undefined
-                      }
-                      intent={getUser.data.user.plan !== 'free' ? 'primary' : undefined}
-                    >
-                      {getUser.data.user.plan !== 'free'
-                        ? !!getUser.data?.user.discordUserId
-                          ? 'Connected'
-                          : 'Not connected'
-                        : '-'}
+                    <Text color={discordStatusColor} intent={hasPaidPlan ? 'primary' : undefined}>
+                      {discordStatusText}
                     </Text>
                   </WithIcon>
                 ) : null}
               </Table.Cell>
             </Table.Row>
+
             <Table.Row>
-              <Table.Cell colSpan={1}>
+              <Table.Cell>
                 <Text lineHeight={1.2}>GitHub connection status</Text>
               </Table.Cell>
+
               <Table.Cell colSpan={2}>
-                {getUser.data ? (
+                {userData ? (
                   <Flex alignItems="center" flexWrap="wrap" rowGap="xs" columnGap="sm">
                     <Flex.Item alignSelf="auto">
                       <WithIcon
-                        iconName={
-                          getUser.data.user.plan !== 'free'
-                            ? !!getUser.data?.user.githubUsername
-                              ? 'check'
-                              : undefined
-                            : undefined
-                        }
+                        iconName={hasPaidPlan ? (isGithubConnected ? 'check' : undefined) : undefined}
                         iconPlacement="right"
-                        iconColor={
-                          getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.githubUsername ? 'green' : 'red') : undefined
-                        }
-                        iconIntent={getUser.data.user.plan !== 'free' ? 'primary' : undefined}
+                        iconColor={githubStatusColor}
+                        iconIntent={hasPaidPlan ? 'primary' : undefined}
                       >
-                        <Text
-                          color={
-                            getUser.data.user.plan !== 'free'
-                              ? !!getUser.data?.user.githubUsername
-                                ? 'green'
-                                : 'red'
-                              : undefined
-                          }
-                          intent={getUser.data.user.plan !== 'free' ? 'primary' : undefined}
-                        >
-                          {getUser.data.user.plan !== 'free'
-                            ? !!getUser.data?.user.githubUsername
-                              ? `Connected as ${getUser.data.user.githubUsername}`
-                              : 'Not connected'
-                            : '-'}
+                        <Text color={githubStatusColor} intent={hasPaidPlan ? 'primary' : undefined}>
+                          {githubStatusText}
                         </Text>
                       </WithIcon>
                     </Flex.Item>
-                    {getUser.data?.user.githubUsername ? (
+
+                    {isGithubConnected ? (
                       <Link href="https://github.com/orgs/nebula-kit/projects/1" target="_blank">
                         <Button
                           size="xs"

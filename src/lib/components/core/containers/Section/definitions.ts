@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
 import { BoxProps, HtmlTagProps, WithIconProps } from 'lib/components'
-import { BoxIntent, BoxVariant } from 'lib/components/core/base/Box/definitions'
+import { BoxVariant } from 'lib/components/core/base/Box/definitions'
 import { TextProps, TextTypography } from 'lib/components/core/base/Text/definitions'
 import { TShirtSize } from 'lib/definitions'
 
@@ -9,9 +9,9 @@ export const SECTION_TAGS = ['section', 'article', 'aside', 'div'] as const
 export const SECTION_SIZES = ['sm', 'md', 'lg', 'xl', '2xl'] as const satisfies TShirtSize[]
 export const SECTION_VARIANTS = ['ghost', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
 
-export const DEFAULT_SECTION_VARIANT: SectionVariant = 'ghost'
-export const DEFAULT_SECTION_INTENT: BoxIntent = 'neutral'
-export const DEFAULT_SECTION_SIZE: SectionSize = 'md'
+export const DEFAULT_SECTION_VARIANT: SectionProps['variant'] = 'ghost'
+export const DEFAULT_SECTION_INTENT: SectionProps['intent'] = 'neutral'
+export const DEFAULT_SECTION_SIZE: SectionProps['size'] = 'md'
 
 export const SECTION_SIZE_CONFIG: Record<
   SectionSize,

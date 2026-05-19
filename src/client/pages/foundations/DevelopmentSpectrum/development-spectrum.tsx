@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Icon, MarkerList, Spacer, Text, WithIcon } from 'lib/components'
+import { Box, Divider, Flex, Icon, Spacer, Text, WithIcon } from 'lib/components'
 
 export default () => {
   return (

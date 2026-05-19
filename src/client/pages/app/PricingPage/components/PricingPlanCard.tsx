@@ -47,7 +47,6 @@ export const PricingPlanCard = ({
 
   return (
     <Section
-      tagAttrs={{ style: { blockSize: '100%' } }}
       heading={title}
       variant={plan === 'free' ? 'outline' : 'soft-outline'}
       intent={plan === 'free' ? 'tertiary' : 'primary'}
