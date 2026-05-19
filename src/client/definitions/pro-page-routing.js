@@ -60,6 +60,7 @@ export const PRO_PAGE_CATEGORIES = [
       { key: 'multi-select', label: 'MultiSelect', sections },
       { key: 'autocomplete', label: 'Autocomplete', sections },
       { key: 'switch', label: 'Switch', sections },
+      { key: 'password-input', label: 'PasswordInput', sections },
     ],
   },
   {

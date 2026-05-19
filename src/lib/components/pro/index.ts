@@ -22,7 +22,7 @@ export {
 } from './form-elements/Form'
 
 export { MultiSelect, type MultiSelectProps, type MultiSelectOptionProps } from './form-elements/MultiSelect'
-
+export { PasswordInput, type PasswordInputProps } from './form-elements/PasswordInput'
 export { Switch, type SwitchProps } from './form-elements/Switch'
 
 // layout
