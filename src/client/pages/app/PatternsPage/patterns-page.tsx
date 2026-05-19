@@ -3,9 +3,9 @@ import { useLocation, Navigate } from 'react-router-dom'
 
 import { useNavigateTo } from 'client/hooks'
 import { PATTERNS } from 'client/definitions'
-import { Box, Button, Flex, Section, Segment, SideNav, Spacer, SplitView, Text } from 'lib/components'
 import { CodeSnippet } from 'client/components'
 import { convertElemToString } from 'client/helpers'
+import { Box, Button, Flex, Section, Segment, SideNav, Spacer, SplitView, Text } from 'lib/components'
 
 export const PatternsPage = () => {
   const [viewMode, setViewMode] = useState<'code' | 'preview'>('code')
