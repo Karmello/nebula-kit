@@ -11,6 +11,12 @@ export default () => {
           possible while building applications.
         </Text>
         <Text>
+          NebulaKit does not aim to replace CSS knowledge. Layout, spacing, positioning and responsiveness still follow the same
+          core concepts used by the platform itself. Props on primitives intentionally map closely to native CSS behavior, so
+          developers who understand CSS can transfer that knowledge directly into JSX without learning a separate abstraction
+          language. The goal is not to hide how the web works, but to make working with it more compositional.
+        </Text>
+        <Text>
           CSS still exists and drives the entire internal styling engine. The underlying DOM element of each component is exposed
           through the
           <Text tag="span" bold space="both">
@@ -31,11 +37,6 @@ export default () => {
           to hook into your own CSS stylesheet. However, direct CSS overrides are not recommended and are intentionally
           discouraged, as they may interfere with how NebulaKit's internal styling engine works and can introduce unexpected
           behavior.
-        </Text>
-        <Text>
-          NebulaKit hides CSS deliberately and exposes props on primitives that map one-to-one to CSS properties. This allows most
-          customization to happen directly in JSX while letting the styling engine perform its internal work in a predictable and
-          consistent way.
         </Text>
       </Flex>
     </Box>

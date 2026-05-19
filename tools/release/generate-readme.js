@@ -24,7 +24,7 @@ React UI system built on composition and prop inheritance, with strict rules gov
 <br />
 
 #### JSX first
-JSX is the primary development flow. CSS exists as an internal implementation detail. Customization happens directly through props without switching contexts.
+JSX is the primary development flow. Styling happens through structured props instead of constant CSS authoring, while preserving familiar CSS concepts underneath.
 
 #### Composition and inheritance
 Pure composition drives all component behavior. Functionality is never duplicated. Composed functionality flows through prop inheritance, not redefinition.

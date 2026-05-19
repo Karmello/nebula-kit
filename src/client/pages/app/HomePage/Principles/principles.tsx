@@ -10,8 +10,8 @@ export const Principles = () => {
       <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="lg">
         <Section heading="JSX first" color="green" intent="primary" iconName="code">
           <Text intent="neutral">
-            JSX is the primary development flow. CSS exists as an internal implementation detail. Customization happens directly
-            through props without switching contexts.
+            JSX is the primary development flow. Styling happens through structured props instead of constant CSS authoring, while
+            preserving familiar CSS concepts underneath.
           </Text>
         </Section>
         <Section heading="Composition and inheritance" color="green" intent="primary" iconName="rectangle-circle">
