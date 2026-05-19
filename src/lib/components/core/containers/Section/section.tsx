@@ -47,20 +47,24 @@ export const Section = <T extends SectionTag = 'section'>({
       color={color}
       intent={intent}
       borderRadius={variant === 'ghost' ? '0px' : 'var(--neb-border-radius)'}
-      padding={variant === 'ghost' ? '0px' : SECTION_SIZE_CONFIG[size].padding}
+      padding={variant === 'ghost' ? '0px' : SECTION_SIZE_CONFIG[size || 'md'].padding}
       overflowX="auto"
       overflowY="hidden"
       maxInlineSize="100%"
     >
-      <WithIcon iconTypography={SECTION_SIZE_CONFIG[size].textTypography} iconName={iconName} iconPlacement={iconPlacement}>
-        <Text typography={SECTION_SIZE_CONFIG[size].textTypography} color={color} intent={headingIntent} bold>
+      <WithIcon
+        iconTypography={SECTION_SIZE_CONFIG[size || 'md'].textTypography}
+        iconName={iconName}
+        iconPlacement={iconPlacement}
+      >
+        <Text typography={SECTION_SIZE_CONFIG[size || 'md'].textTypography} color={color} intent={headingIntent} bold>
           {heading}
         </Text>
       </WithIcon>
       <Divider color={color} marginTop="2xs" />
       {children ? (
         <>
-          <Spacer blockSize={SECTION_SIZE_CONFIG[size].spacerBlockSize} />
+          <Spacer blockSize={SECTION_SIZE_CONFIG[size || 'md'].spacerBlockSize} />
           {children}
         </>
       ) : null}
