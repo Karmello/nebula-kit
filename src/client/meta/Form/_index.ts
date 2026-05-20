@@ -28,9 +28,9 @@ const FORM_META: ComponentMeta<FormProps> = {
   examples: FORM_EXAMPLES_META,
   changelog: {
     '0.10.0': [
-      'removed display prop',
-      'removed scale and textAlign props on Form.Label and Form.Hint slots',
-      'made onValidSubmission prop optional',
+      'removed `display` prop',
+      'removed `scale` and `textAlign` props on Form.Label and Form.Hint slots',
+      'made `onValidSubmission` prop optional',
     ],
     '0.2.3': ['released'],
   },

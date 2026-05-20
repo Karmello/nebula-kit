@@ -1,4 +1,4 @@
-import { Text } from 'lib/components'
+import { Box } from 'lib/components'
 
 import { MarkupPart } from '../definitions'
 
@@ -10,16 +10,11 @@ export const renderPart = (part: MarkupPart, index: number) => {
     case 'italic':
       return <em key={index}>{part.value}</em>
 
-    case 'code':
+    case 'token':
       return (
-        <code
-          key={index}
-          style={{
-            fontFamily: 'monospace',
-          }}
-        >
+        <Box key={index} drawable display="inline-block" variant="solid" intent="tertiary" paddingInline="2xs">
           {part.value}
-        </code>
+        </Box>
       )
 
     default:

@@ -23,7 +23,7 @@ const APP_FRAME_META: ComponentMeta<AppFrameProps> = {
   props: APP_FRAME_PROPS_META,
   examples: APP_FRAME_EXAMPLES_META,
   changelog: {
-    '0.8.0': ['removed borderIntent prop'],
+    '0.8.0': ['removed `borderIntent` prop'],
     '0.2.3': ['released'],
   },
 }

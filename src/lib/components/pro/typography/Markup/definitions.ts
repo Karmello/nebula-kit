@@ -1,6 +1,6 @@
 import { BoxProps } from 'lib/components'
 
-export const MARKUP_REGEX = /(\*\*.*?\*\*|_.*?_|`.*?`)/g
+export const MARKUP_REGEX = /(\*\*.*?\*\*|_.*?_|`(?:\\`|[^`])*`)/g
 
 export type MarkupPart =
   | {
@@ -16,7 +16,7 @@ export type MarkupPart =
       value: string
     }
   | {
-      type: 'code'
+      type: 'token'
       value: string
     }
 

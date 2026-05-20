@@ -20,8 +20,8 @@ export const parseString = (value: string): MarkupPart[] => {
 
     if (part.startsWith('`') && part.endsWith('`')) {
       return {
-        type: 'code',
-        value: part.slice(1, -1),
+        type: 'token',
+        value: part.slice(1, -1).replaceAll('\\`', '`'),
       }
     }
 

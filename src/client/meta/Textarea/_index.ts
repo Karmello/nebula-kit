@@ -15,7 +15,7 @@ const TEXTAREA_META: ComponentMeta<TextareaProps> = {
   props: TEXTAREA_PROPS_META,
   examples: TEXTAREA_EXAMPLES_META,
   changelog: {
-    '0.9.0': ['added maxLength prop'],
+    '0.9.0': ['added `maxLength` prop'],
     '0.2.3': ['released'],
   },
 }

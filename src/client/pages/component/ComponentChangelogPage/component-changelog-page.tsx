@@ -3,7 +3,7 @@ import { pascalCase } from 'change-case'
 import meta from 'client/meta'
 import { PageKey } from 'client/definitions'
 import { useCorePageStore, useProPageStore } from 'client/store'
-import { Box, Flex, MarkerList, Section, Spacer, Text } from 'lib/components'
+import { Box, Flex, MarkerList, Markup, Section, Spacer, Text } from 'lib/components'
 
 export const ComponentChangelogPage = ({ pageKey }: { pageKey: PageKey.core | PageKey.pro }) => {
   const corePageItemKey = useCorePageStore(state => state.itemKey)
@@ -25,7 +25,9 @@ export const ComponentChangelogPage = ({ pageKey }: { pageKey: PageKey.core | Pa
               <MarkerList>
                 {(changelog[vKey as never] as string[]).map((s, i) => (
                   <MarkerList.Item key={i}>
-                    <Text intent="neutral">{s}</Text>
+                    <Markup>
+                      <Text intent="neutral">{s}</Text>
+                    </Markup>
                   </MarkerList.Item>
                 ))}
               </MarkerList>

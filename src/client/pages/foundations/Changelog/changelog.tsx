@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 
 import meta from 'client/meta'
 import { RELEASE_INFO, ReleaseVersion } from 'client/definitions'
-import { Box, MarkerList, Section, Spacer, Text, Tabs } from 'lib/components'
+import { Box, MarkerList, Section, Spacer, Text, Tabs, Markup } from 'lib/components'
 
 type Notes = { core: Record<string, string[]>; pro: Record<string, string[]> }
 
@@ -14,7 +14,9 @@ const Notes = ({ componentName, notes = [] }: { componentName?: string; notes: s
       {notes.map((n, i) => {
         return (
           <MarkerList.Item key={i}>
-            <Text>{n}</Text>
+            <Markup>
+              <Text>{n}</Text>
+            </Markup>
           </MarkerList.Item>
         )
       })}

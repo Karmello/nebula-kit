@@ -18,9 +18,9 @@ const MARKUP_META: ComponentMeta<MarkupProps> = {
     ],
     guidelines: [
       'wrap Text components with Markup instead of placing Markup inside Text',
-      'use **text** to render bold inline text',
-      'use _text_ to render italic inline text',
-      'use `text` to render inline code or short technical values',
+      'use `**text**` to render bold inline text',
+      'use `_text_` to render italic inline text',
+      'use `\\`text\\`` to render inline code or short technical values',
       'Markup can process nested string children recursively when they appear inside Text-based structures',
     ],
     composedOf: ['Box'],
