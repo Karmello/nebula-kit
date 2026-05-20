@@ -10,7 +10,7 @@ import { htmlToText } from './helpers/html-to-text'
 
 const includedPages = {
   overview: {
-    introduction: ['WhyNebula', 'AboutNebulaKit', 'DevelopmentSpectrum', 'Audience', 'UnderTheHood'],
+    introduction: ['WhyNebula', 'AboutNebulaKit', 'DevelopmentSpectrum', 'Audience', 'AuthoringApps', 'UnderTheHood'],
     philosophy: [
       'JsxFirst',
       'BuiltOnComposition',

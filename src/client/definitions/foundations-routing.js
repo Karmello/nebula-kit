@@ -11,6 +11,7 @@ export const FOUNDATIONS_CATEGORIES = [
           { key: 'about-nebula-kit', label: 'About NebulaKit' },
           { key: 'development-spectrum', label: 'Development spectrum' },
           { key: 'audience', label: 'Audience' },
+          { key: 'authoring-apps', label: 'Authoring apps' },
           { key: 'under-the-hood', label: 'Under the hood' },
         ],
       },

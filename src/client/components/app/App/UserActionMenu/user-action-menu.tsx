@@ -29,31 +29,25 @@ export const UserActionMenu = () => {
     <>
       <Flex>
         <Button
-          tagAttrs={{
-            onClick: () => {
-              if (!showWebsiteMap) setShowWebsiteMap(true)
-            },
-          }}
           iconName="compass"
           intent="muted"
+          onClick={() => {
+            if (!showWebsiteMap) setShowWebsiteMap(true)
+          }}
         />
         <Button
-          tagAttrs={{
-            onClick: () => {
-              if (!showAppJump) setShowAppJump(true)
-            },
-          }}
           iconName={showAppJump ? 'search-x' : 'search'}
           intent="muted"
+          onClick={() => {
+            if (!showAppJump) setShowAppJump(true)
+          }}
         />
         <Button
-          tagAttrs={{
-            onClick: () => {
-              if (!showAppSettings) setShowAppSettings(true)
-            },
-          }}
           iconName="settings"
           intent="muted"
+          onClick={() => {
+            if (!showAppSettings) setShowAppSettings(true)
+          }}
         />
         <Select
           intent="muted"

@@ -1,5 +1,6 @@
 export { default as AboutNebulaKit } from './AboutNebulaKit/about-nebula-kit'
 export { default as Audience } from './Audience/audience'
+export { default as AuthoringApps } from './AuthoringApps/authoring-apps'
 export { default as Breakpoints } from './Breakpoints/breakpoints'
 export { default as BuiltOnComposition } from './BuiltOnComposition/built-on-composition'
 export { default as Changelog } from './Changelog/changelog'
