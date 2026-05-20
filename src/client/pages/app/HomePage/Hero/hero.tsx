@@ -15,13 +15,13 @@ export const Hero = () => {
         <Spacer blockSize="lg" />
         <Flex gap="xs" flexWrap="wrap" justifyContent={{ base: 'center', md: 'flex-start' }}>
           <Link
-            href={PageKey.playground}
+            href={`${PageKey.foundations}/overview/introduction/why-nebula`}
             onClick={() => {
-              navigateTo(PageKey.playground)
+              navigateTo(`${PageKey.foundations}/overview/introduction/why-nebula`)
             }}
           >
             <Button color="blue" intent="primary" iconName="arrow-right" iconPlacement="right" size="sm">
-              Playground
+              Foundations
             </Button>
           </Link>
           <Link

@@ -4,7 +4,7 @@ import { Pattern } from '../definitions'
 
 export const THEME_ISLAND: Pattern = {
   id: 'theme-island',
-  category: 'Styling',
+  category: 'Styling system',
   title: 'Theme island',
   description: 'Nested components resolve against a locally scoped theme without affecting the surrounding interface.',
   jsx: (

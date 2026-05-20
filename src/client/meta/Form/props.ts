@@ -49,7 +49,6 @@ const FORM_PROPS_META: ComponentMeta<FormProps>['props'] = {
   },
   onValidSubmission: {
     options: ['(values, event) => void'],
-    isRequired: true,
     description:
       'Callback fired when form data passes validation, receiving the validated values. Return a Promise to run asynchronous actions like API calls. The form will wait for the Promise to resolve or reject before continuing and then call the "onResponse" callback.',
   },

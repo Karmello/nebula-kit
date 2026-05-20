@@ -4,7 +4,7 @@ import { Pattern } from '../definitions'
 
 export const CONTENT_CARD: Pattern = {
   id: 'content-card',
-  category: 'Composition',
+  category: 'Layout',
   title: 'Content card',
   description:
     'A simple content block can be composed from Box and Text while keeping surface, spacing and typography decisions explicit.',

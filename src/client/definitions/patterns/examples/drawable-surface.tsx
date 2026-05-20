@@ -4,7 +4,7 @@ import { Pattern } from '../definitions'
 
 export const DRAWABLE_SURFACE: Pattern = {
   id: 'drawable-surface',
-  category: 'Styling',
+  category: 'Styling system',
   title: 'Drawable surface',
   description:
     'A Box stays structural by default and only renders visual styling when drawable, variant and intent are provided.',

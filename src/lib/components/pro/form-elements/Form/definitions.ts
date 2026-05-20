@@ -30,7 +30,7 @@ type PropsFromFlex = Pick<
 
 export type FormProps<TFieldValues extends FieldValues = FieldValues, TContext = any, TTransformedValues = TFieldValues> = {
   useFormProps?: UseFormProps<TFieldValues, TContext, TTransformedValues>
-  onValidSubmission: SubmitHandler<TTransformedValues>
+  onValidSubmission?: SubmitHandler<TTransformedValues>
   onInvalidSubmission?: SubmitErrorHandler<TFieldValues>
 } & PropsFromHtmlTag<TFieldValues, TContext, TTransformedValues> &
   PropsFromFlex &

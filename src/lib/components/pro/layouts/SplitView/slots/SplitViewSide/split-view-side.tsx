@@ -72,7 +72,7 @@ export const SplitViewSide = ({
               <Box>
                 {mode === 'overlay' ? (
                   <Flex justifyContent="flex-end">
-                    <Box padding="6px" paddingBottom="20px">
+                    <Box padding="2xs" paddingRight="3xs" paddingBottom="md">
                       <Button
                         tagAttrs={{
                           onClick: () => {
