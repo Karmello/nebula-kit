@@ -7,6 +7,11 @@ const sections = [
 
 export const PRO_PAGE_CATEGORIES = [
   {
+    key: 'typography',
+    label: 'Typography',
+    items: [{ key: 'markup', label: 'Markup', sections }],
+  },
+  {
     key: 'layout',
     label: 'Layout',
     items: [{ key: 'virtual-list', label: 'VirtualList', sections }],

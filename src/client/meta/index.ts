@@ -25,6 +25,7 @@ import inputMeta from './Input/_index'
 import linkMeta from './Link/_index'
 import loaderMeta from './Loader/_index'
 import markerListMeta from './MarkerList/_index'
+import markupMeta from './Markup/_index'
 import measureMeta from './Measure/_index'
 import multiSelectMeta from './MultiSelect/_index'
 import nebkitProviderMeta from './NebkitProvider/_index'
@@ -78,6 +79,7 @@ const META = {
   Link: linkMeta,
   Loader: loaderMeta,
   MarkerList: markerListMeta,
+  Markup: markupMeta,
   Measure: measureMeta,
   MultiSelect: multiSelectMeta,
   NebkitProvider: nebkitProviderMeta,

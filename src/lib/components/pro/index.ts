@@ -61,6 +61,9 @@ export {
 export { Floating, type FloatingProps, type FloatingResolved } from './overlays/Floating'
 export { Tooltip, type TooltipProps } from './overlays/Tooltip'
 
+// typography
+export { Markup, type MarkupProps } from './typography/Markup'
+
 // utility
 export { FocusTrap, type FocusTrapProps } from './utility/FocusTrap'
 export { Measure, type MeasureProps } from './utility/Measure'
