@@ -24,7 +24,8 @@
     "assistant:generate:releases": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./common/ignore-assets-loader.js' tsx ./assistant/generate-releases/index.ts",
     "assistant:generate:faq": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./common/ignore-assets-loader.js' tsx ./assistant/generate-faq/index.ts",
     "assistant:generate:marketing": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./common/ignore-assets-loader.js' tsx ./assistant/generate-marketing-data/index.ts",
-    "assistant:generate": "rimraf ../assistant && yarn assistant:generate:foundations && yarn assistant:generate:docs && yarn assistant:generate:releases && yarn assistant:generate:faq && yarn assistant:generate:marketing"
+    "assistant:generate:patterns": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./common/ignore-assets-loader.js' tsx ./assistant/generate-patterns/index.ts",
+    "assistant:generate": "rimraf ../assistant && yarn assistant:generate:foundations && yarn assistant:generate:docs && yarn assistant:generate:releases && yarn assistant:generate:faq && yarn assistant:generate:marketing && yarn assistant:generate:patterns"
   },
   "devDependencies": {
     "rimraf": "^6.1.3",
