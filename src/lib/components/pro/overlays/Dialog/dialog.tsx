@@ -106,7 +106,7 @@ export const Dialog = ({
                         tagRef={tagRef || ref}
                         drawable
                         variant="outline"
-                        maxInlineSize="100dvw"
+                        maxInlineSize="95dvw"
                         maxBlockSize="90dvh"
                         position="relative"
                         overflowY="auto"
