@@ -1,5 +1,5 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
-import { IconName, TShirtSize } from 'lib/definitions'
+import { IconName, RespValue, TShirtSize } from 'lib/definitions'
 import { BoxVariant, BoxColor } from 'lib/components/core/base/Box'
 import { TextTypography } from 'lib/components/core/base/Text'
 
@@ -44,7 +44,7 @@ type CalloutOwnProps = {
   content: string
   heading?: string
   size?: CalloutSize
-  variant?: CalloutVariant
+  variant?: RespValue<CalloutVariant>
   status?: CalloutStatus
 }
 

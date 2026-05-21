@@ -1,5 +1,5 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
-import { CONTROL_SIZE_MAP, TShirtSize } from 'lib/definitions'
+import { CONTROL_SIZE_MAP, RespValue, TShirtSize } from 'lib/definitions'
 import { BoxVariant } from 'lib/components/core/base/Box'
 
 export const CHECKBOX_SIZE_MAP: Record<CheckboxSize, { blockSize: BoxProps['blockSize']; iconSize: string }> = {
@@ -24,7 +24,7 @@ type PropsFromHtmlTag = Pick<HtmlTagProps, 'tagAttrs' | 'tagRef'>
 type PropsFromBox = Pick<BoxProps<'input'>, 'intent' | 'color' | 'disabled'>
 
 type CheckboxOwnProps = {
-  variant?: CheckboxVariant
+  variant?: RespValue<CheckboxVariant>
   size?: CheckboxSize
   checked?: boolean
   defaultChecked?: boolean

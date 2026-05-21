@@ -1,3 +1,5 @@
+import { ComponentProps, PropsWithoutRef } from 'react'
+
 import { Flex } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
 import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
@@ -6,11 +8,11 @@ import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 
 import { FooterProvider } from './FooterProvider'
-import { DEFAULT_FOOTER_BORDER_INTENT, FooterProps } from './definitions'
+import { DEFAULT_FOOTER_BORDER_INTENT, FooterProps, FooterTag } from './definitions'
 
 import './footer.scss'
 
-export const Footer = ({
+export const Footer = <T extends FooterTag = 'div'>({
   // HtmlTag
   children,
   tag,
@@ -27,7 +29,7 @@ export const Footer = ({
   // own
   switchAt = DEFAULT_SWITCH_AT,
   borderIntent = DEFAULT_FOOTER_BORDER_INTENT,
-}: FooterProps) => {
+}: FooterProps<T>) => {
   const { bp } = useScreen()
 
   const direction = BREAKPOINTS.slice(0, BREAKPOINTS.indexOf(switchAt)).includes(bp) ? 'column' : 'row'
@@ -52,11 +54,13 @@ export const Footer = ({
           >
             <Flex
               tag={tag}
-              tagAttrs={{
-                ...tagAttrs,
-                className: withPrefix('footer'),
-                ...updateDomStaticDataset('Footer', { direction }),
-              }}
+              tagAttrs={
+                {
+                  ...tagAttrs,
+                  className: withPrefix('footer'),
+                  ...updateDomStaticDataset('Footer', { direction }),
+                } as PropsWithoutRef<ComponentProps<T>>
+              }
               tagRef={tagRef}
               alignItems="stretch"
               flexDirection={{ base: 'column', [switchAt]: 'row' }}
