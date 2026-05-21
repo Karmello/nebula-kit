@@ -70,7 +70,7 @@ const TOOLTIP_PROPS_META: ComponentMeta<TooltipProps>['props'] = {
   variant: {
     ...BOX_PROPS_META.variant,
     options: TOOLTIP_VARIANTS,
-    defaultValue: DEFAULT_TOOLTIP_VARIANT,
+    defaultValue: String(DEFAULT_TOOLTIP_VARIANT),
   },
 }
 
