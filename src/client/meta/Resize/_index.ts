@@ -8,9 +8,11 @@ const RESIZE_META: ComponentMeta<ResizeProps> = {
   overview: {
     bundle: 'core',
     title: 'Wrapper that animates element size using measured layout.',
+    description:
+      'Resize is intended for layout-affecting expand/collapse motion, such as accordions, panels and content reveals.',
     features: [
       'wraps content in a Box and animates its block or inline size',
-      "measures the content's intrinsic size and animates the container to match it, preventing layout jumps and reflow glitches",
+      'measures content size and animates the container between collapsed and expanded layout states',
       'enables smooth expand/collapse transitions without hard-coding sizes',
     ],
     composedOf: ['Box'],

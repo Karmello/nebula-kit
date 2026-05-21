@@ -25,8 +25,8 @@ export const RELEASE_INFO: Record<
   }
 > = {
   '0.10.0': {
-    timestamp: 1779143498311,
-    headline: 'Typography simplification',
+    timestamp: 1779319530393,
+    headline: 'Typography refinement',
     changelog: {
       main: [
         'removed the compact typography scale to simplify the typography system',
