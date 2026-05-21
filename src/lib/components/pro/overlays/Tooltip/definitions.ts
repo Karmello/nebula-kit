@@ -1,5 +1,6 @@
 import { HtmlTagProps, FloatingProps, BoxProps } from 'lib/components'
 import { BoxVariant } from 'lib/components/core/base/Box'
+import { RespValue } from 'lib/definitions'
 
 export const TOOLTIP_VARIANTS = ['solid', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
 export const TOOLTIP_MODES = ['hover', 'click'] as const
@@ -30,7 +31,7 @@ type TooltipOwnProps = {
   placement?: FloatingProps['placement']
   mode?: TooltipMode
   offset?: number
-  variant?: TooltipVariant
+  variant?: RespValue<TooltipVariant>
 }
 
 export type TooltipProps = PropsFromHtmlTag & PropsFromBox & TooltipOwnProps

@@ -46,6 +46,7 @@ const SIDE_NAV_PROPS_META: ComponentMeta<SideNavProps>['props'] = {
   tagRef: HTML_TAG_PROPS_META.tagRef,
   variant: {
     options: SIDE_NAV_VARIANTS,
+    isResponsive: true,
     description: 'Visual style variant applied to all categories and items.',
   },
 }

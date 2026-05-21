@@ -1,10 +1,11 @@
 import { HtmlTagProps, LinkProps, ButtonProps } from 'lib/components'
+import { RespValue } from 'lib/definitions'
 
 import { SideNavVariant } from '../../definitions'
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'a'>, 'tagRef' | 'tagAttrs'> & {
   children: HtmlTagProps<'a'>['children']
-  variant?: SideNavVariant
+  variant?: RespValue<SideNavVariant>
 }
 
 type PropsFromButton = Pick<

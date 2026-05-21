@@ -1,5 +1,6 @@
 import { ButtonProps, FlexProps, HtmlTagProps } from 'lib/components'
 import { BoxVariant } from 'lib/components/core/base/Box'
+import { RespValue } from 'lib/definitions'
 
 export const SIDE_NAV_EXPAND_MODES = ['single', 'multiple'] as const
 export const SIDE_NAV_VARIANTS = ['solid', 'ghost'] as const satisfies BoxVariant[]
@@ -17,7 +18,7 @@ export type SideNavOwnProps = {
 
 type PropsFromHtmlTag = Pick<HtmlTagProps<'nav'>, 'tagAttrs' | 'tagRef'> & {
   children: HtmlTagProps<'nav'>['children']
-  variant?: SideNavVariant
+  variant?: RespValue<SideNavVariant>
 }
 
 type PropsFromFlex = Pick<FlexProps, 'gap'>

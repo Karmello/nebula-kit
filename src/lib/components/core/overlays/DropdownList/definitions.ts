@@ -30,7 +30,7 @@ export type DropdownListSize = (typeof DROPDOWN_LIST_SIZES)[number]
 export type DropdownListScrollAlign = (typeof DROPDOWN_LIST_SCROLL_ALIGN)[number]
 export type DropdownListPlacement = (typeof DROPDOWN_LIST_PLACEMENTS)[number]
 
-type ChildrenAsFuncArgs = {
+export type ChildrenAsFuncArgs = {
   open: boolean
   setOpen: (open: boolean) => void
   resolvedPlacement?: DropdownListPlacement
