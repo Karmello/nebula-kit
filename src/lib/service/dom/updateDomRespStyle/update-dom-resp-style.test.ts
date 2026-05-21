@@ -202,4 +202,21 @@ describe('updateDomRespStyle', () => {
 
     expect(el.style.padding).toBe('20px')
   })
+
+  it('does not rewrite style when resolved value is unchanged', () => {
+    const el = document.createElement('div')
+    const ref = { current: el }
+
+    updateDomRespStyle('Box', ref, 'base' as any, {
+      padding: '8px',
+    })
+
+    const setPropertySpy = vi.spyOn(el.style, 'setProperty')
+
+    updateDomRespStyle('Box', ref, 'base' as any, {
+      padding: '8px',
+    })
+
+    expect(setPropertySpy).not.toHaveBeenCalled()
+  })
 })

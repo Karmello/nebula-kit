@@ -49,7 +49,9 @@ export const updateDomRespDataset = (
 
   for (const bp of BREAKPOINTS) {
     const bucket = getBucketPerBp(componentName, bp, activePropValues)
-    mergedBucket = { ...mergedBucket, ...bucket }
+    for (const key in bucket) {
+      mergedBucket[key] = bucket[key]
+    }
     if (bp === breakpoint) break
   }
 
@@ -66,28 +68,19 @@ export const updateDomRespDataset = (
   }
 
   // -------------------------------------
-  // 5. Reset currently controlled dataset
-  //    attributes before applying resolved
-  //    values to avoid stale state
+  // 5. Synchronize resolved dataset attrs
+  //    without redundant DOM mutations
   // -------------------------------------
-  for (const propName in activePropValues) {
-    const value = activePropValues[propName]
-    if (!isNil(value) && !isBlank(value)) {
-      const domAttrName = getDataAttrName(componentName, propName)
-      delete elemRef.current.dataset[domAttrName]
+  for (const propName in mergedBucket) {
+    const nextValue = mergedBucket[propName]
+
+    if (elemRef.current.dataset[propName] !== nextValue) {
+      elemRef.current.dataset[propName] = nextValue
     }
   }
 
   // -------------------------------------
-  // 6. Apply resolved dataset attributes
-  //    for the current breakpoint
-  // -------------------------------------
-  for (const propName in mergedBucket) {
-    elemRef.current.dataset[propName] = mergedBucket[propName]
-  }
-
-  // -------------------------------------
-  // 7. Persist current semantic prop names
+  // 6. Persist current semantic prop names
   //    for the next update cycle
   // -------------------------------------
   elemRef.current[storeKey] = currentPropNames

@@ -386,4 +386,31 @@ describe('updateDomRespDataset', () => {
 
     expect(Object.values(el.dataset)).toHaveLength(0)
   })
+
+  it('does not rewrite dataset attributes when resolved value is unchanged', () => {
+    const el = document.createElement('div')
+    const ref = { current: el }
+
+    updateDomRespDataset(
+      'Box',
+      ref,
+      'base' as any,
+      {
+        padding: 8,
+      } as any
+    )
+
+    const setAttrSpy = vi.spyOn(el, 'setAttribute')
+
+    updateDomRespDataset(
+      'Box',
+      ref,
+      'base' as any,
+      {
+        padding: 8,
+      } as any
+    )
+
+    expect(setAttrSpy).not.toHaveBeenCalled()
+  })
 })

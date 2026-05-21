@@ -52,7 +52,9 @@ export const updateDomRespStyle = (
 
   for (const bp of BREAKPOINTS) {
     const bucket = getBucketPerBp(bp, activePropValues)
-    mergedBucket = { ...mergedBucket, ...bucket }
+    for (const key in bucket) {
+      mergedBucket[key] = bucket[key]
+    }
     if (bp === breakpoint) break
   }
 
@@ -79,7 +81,10 @@ export const updateDomRespStyle = (
     // 🔥 User owns it → never override
     if (initial[propName]) continue
 
-    el.style[propName] = value
+    if (el.style[propName] !== value) {
+      el.style[propName] = value
+    }
+
     nextApplied.add(propName)
   }
 

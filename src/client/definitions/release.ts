@@ -29,7 +29,10 @@ export const RELEASE_INFO: Record<
     timestamp: 1779375775922,
     headline: '...',
     changelog: {
-      main: ['improved tsd coverage and aligned specs more accurately with documented component APIs'],
+      main: [
+        'improved tsd coverage and aligned specs more accurately with documented component APIs',
+        'optimized Box runtime DOM synchronization by reducing redundant dataset/style mutations and minimizing internal allocation overhead during responsive updates',
+      ],
     },
   },
   '0.10.0': {
