@@ -27,6 +27,10 @@ export const RELEASE_INFO: Record<
 > = {
   '0.11.0': {
     timestamp: 1779375775922,
+    headline: '...',
+    changelog: {
+      main: ['improved tsd coverage and aligned specs more accurately with documented component APIs'],
+    },
   },
   '0.10.0': {
     timestamp: 1779319530393,
