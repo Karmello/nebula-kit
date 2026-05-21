@@ -1,5 +1,6 @@
 import { BoxProps, ButtonProps, HtmlTagProps } from 'lib/components'
 import { BoxVariant } from 'lib/components/core/base/Box'
+import { RespValue } from 'lib/definitions'
 
 export const TABS_VARIANTS = ['solid', 'outline'] as const satisfies BoxVariant[]
 export const TABS_ORIENTATION = ['horizontal', 'vertical'] as const
@@ -16,7 +17,7 @@ type PropsFromHtmlTag = Pick<HtmlTagProps, 'tagAttrs' | 'tagRef'> & {
 }
 
 type PropsFromBox = Pick<BoxProps, 'color' | 'intent' | 'inlineSize'> & {
-  variant?: TabsVariant
+  variant?: RespValue<TabsVariant>
 }
 
 type PropsFromButton = Pick<ButtonProps, 'size'>

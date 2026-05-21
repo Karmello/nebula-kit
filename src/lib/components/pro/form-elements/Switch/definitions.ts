@@ -1,6 +1,7 @@
 import type { BoxProps } from 'lib/components'
 import { BoxIntent } from 'lib/components/core/base/Box'
 import { ButtonSize } from 'lib/components/core/controls/Button'
+import { RespValue } from 'lib/definitions'
 
 export const SWITCH_BORDER_MULTIPLIER = 2
 
@@ -12,7 +13,7 @@ export const SWITCH_INTENTS = ['muted', 'tertiary', 'secondary', 'primary'] as c
 export type SwitchIntent = (typeof SWITCH_INTENTS)[number]
 
 type PropsFromBox = Pick<BoxProps, 'tagAttrs' | 'tagRef' | 'disabled' | 'color'> & {
-  intent?: SwitchIntent
+  intent?: RespValue<SwitchIntent>
 }
 
 type SwitchOwnProps = {
