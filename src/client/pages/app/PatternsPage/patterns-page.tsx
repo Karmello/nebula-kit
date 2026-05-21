@@ -31,9 +31,11 @@ export const PatternsPage = () => {
               <>
                 <SplitView.Main>
                   <SplitView.MainBar>
-                    <Flex alignItems="center" flexWrap="wrap" columnGap="md" rowGap="2xs">
+                    <Flex alignItems="center" flexWrap="wrap" columnGap="md" rowGap="xs">
                       <Flex.Item flex="1">
-                        <Text typography="h5">{pattern.title}</Text>
+                        <Text typography="h5" noWrap>
+                          {pattern.title}
+                        </Text>
                       </Flex.Item>
                       <Segment>
                         <Segment.Item>

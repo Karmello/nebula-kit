@@ -7,7 +7,7 @@ export const CENTERED_FORM: Pattern = {
   category: 'Forms',
   title: 'Centered form',
   description:
-    'A medium-density form interface can be composed from Box, Section and Form while keeping layout, validation and interaction behavior explicit and locally authored.',
+    'A form interface can be composed from Box, Section and Form while keeping layout, validation and interaction behavior explicit and locally authored.',
   jsx: (
     <Box padding={{ base: 'md', lg: 'xl' }}>
       <Box inlineSize="400px" maxInlineSize="100%" margin="0 auto">
