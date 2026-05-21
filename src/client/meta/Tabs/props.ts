@@ -43,7 +43,7 @@ const TABS_PROPS_META: ComponentMeta<TabsProps>['props'] = {
   variant: {
     ...BOX_PROPS_META.variant,
     options: TABS_VARIANTS,
-    defaultValue: DEFAULT_TABS_VARIANT,
+    defaultValue: String(DEFAULT_TABS_VARIANT),
   },
 }
 
