@@ -51,8 +51,8 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
   },
   variant: {
     ...BOX_PROPS_META.variant,
-    options: SECTION_VARIANTS as unknown as string[],
-    defaultValue: DEFAULT_SECTION_VARIANT,
+    options: SECTION_VARIANTS,
+    defaultValue: String(DEFAULT_SECTION_VARIANT),
   },
 }
 
