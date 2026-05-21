@@ -3,7 +3,7 @@ import { JSX } from 'react'
 import { SwitchAt } from 'lib/definitions'
 import { HtmlTagProps } from 'lib/components'
 
-import { SplitViewContextProps } from './SplitViewProvider'
+import { SplitViewContextProps } from './SplitViewProvider/definitions'
 
 export const SPLIT_VIEW_SIDE_POSITIONS = ['left', 'right'] as const
 

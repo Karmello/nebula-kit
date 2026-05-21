@@ -2,8 +2,7 @@ import { useRef, useState } from 'react'
 
 import { FloatingResolved } from 'lib/components'
 import { WithSlots } from 'lib/components/core/internal'
-import { DEFAULT_BUTTON_SIZE } from 'lib/components/core/controls/Button/definitions'
-import { CONTROL_SIZE_TOKENS } from 'lib/definitions'
+import { CONTROL_SIZE_MAP, LENGTH_SCALE } from 'lib/definitions'
 
 import {
   DropdownListProps,
@@ -13,11 +12,11 @@ import {
   DEFAULT_DROPDOWN_LIST_INTENT,
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
-  DEFAULT_DROPDOWN_OPEN_ON_FOCUS,
+  DEFAULT_DROPDOWN_LIST_OPEN_ON_FOCUS,
+  DEFAULT_DROPDOWN_LIST_SIZE,
 } from './definitions'
 
 import { DropdownListProvider, DropdownListMain } from './components'
-import { BOX_BORDER_WIDTH } from '../../base/Box'
 
 export const DropdownList = ({
   // HtmlTag
@@ -27,12 +26,12 @@ export const DropdownList = ({
   // Button
   color,
   intent = DEFAULT_DROPDOWN_LIST_INTENT,
-  size = DEFAULT_BUTTON_SIZE,
   // Portal
   placement = DEFAULT_DROPDOWN_LIST_PLACEMENT,
   // own
+  size = DEFAULT_DROPDOWN_LIST_SIZE,
   visibleItemsCount = DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
-  openOnFocus = DEFAULT_DROPDOWN_OPEN_ON_FOCUS,
+  openOnFocus = DEFAULT_DROPDOWN_LIST_OPEN_ON_FOCUS,
   keepOpen = DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
   scrollToIndex = DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
   scrollAlign = DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
@@ -77,8 +76,8 @@ export const DropdownList = ({
         if (correctedVisibleItemsCount <= 0 && noOptionsLabel) correctedVisibleItemsCount = 1
 
         const itemHeight =
-          Number((CONTROL_SIZE_TOKENS[size || 'md'].blockSize as string).replace('px', '')) +
-          Number(BOX_BORDER_WIDTH.replace('px', ''))
+          Number((CONTROL_SIZE_MAP[size || 'md'].blockSize as string).replace('px', '')) +
+          Number(LENGTH_SCALE['3xs'].replace('px', ''))
 
         return (
           <DropdownListProvider

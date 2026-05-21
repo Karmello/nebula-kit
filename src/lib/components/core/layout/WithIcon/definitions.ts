@@ -1,14 +1,21 @@
 import { BoxProps, FlexProps, HtmlTagProps, IconProps } from 'lib/components'
+import { CssFlexJustifyContent } from 'lib/definitions'
 import { RotateProps } from 'lib/components/core/motion/Rotate/definitions'
 
-export const DEFAULT_WITH_ICON_ICON_PLACEMENT: WithIconProps['iconPlacement'] = 'left'
-export const DEFAULT_WITH_ICON_GAP: WithIconProps['gap'] = '12px'
-export const ICON_PLACEMENT = ['left', 'right'] as const
+import { TextTypography } from '../../base/Text/definitions'
 
-export type IconPlacement = (typeof ICON_PLACEMENT)[number]
+export const DEFAULT_WITH_ICON_ICON_PLACEMENT: WithIconProps['iconPlacement'] = 'left'
+export const DEFAULT_WITH_ICON_GAP: WithIconProps['gap'] = 'xs'
+
+export const WITH_ICON_ICON_PLACEMENTS = ['left', 'right'] as const
+export const WITH_ICON_JUSTIFY_CONTENT = ['center', 'flex-start', 'space-between'] as const satisfies CssFlexJustifyContent[]
+
+export type WithIconIconPlacement = (typeof WITH_ICON_ICON_PLACEMENTS)[number]
+export type WithIconJustifyContent = (typeof WITH_ICON_JUSTIFY_CONTENT)[number]
 
 type WithIconOwnProps = {
-  iconPlacement?: IconPlacement
+  iconTypography?: TextTypography
+  iconPlacement?: WithIconIconPlacement
 }
 
 type PropsFromHtmlTag = Omit<HtmlTagProps<'span'>, 'tag' | 'children'> & {
@@ -17,7 +24,9 @@ type PropsFromHtmlTag = Omit<HtmlTagProps<'span'>, 'tag' | 'children'> & {
 
 type PropsFromBox = Pick<BoxProps<'span'>, 'inlineSize'>
 
-type PropsFromFlex = Pick<FlexProps, 'justifyContent' | 'gap'>
+type PropsFromFlex = Pick<FlexProps, 'gap'> & {
+  justifyContent?: WithIconJustifyContent
+}
 
 type PropsFromIcon = {
   iconName?: IconProps['name']

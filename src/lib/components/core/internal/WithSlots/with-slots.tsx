@@ -2,7 +2,7 @@ import { Children, Fragment, isValidElement, ReactNode, useEffect, useMemo } fro
 
 import { getLibMsg } from 'lib/helpers'
 
-import { WithSlotsProps } from './definitions'
+import { type WithSlotsProps } from './definitions'
 
 type ResolvedSlots<SlotName extends string> = {
   slotsByName: Record<SlotName, ReactNode[]>
@@ -27,6 +27,16 @@ export const WithSlots = <SlotName extends string>({
     const allValidSlots: ReactNode[] = []
     const allNonSlots: ReactNode[] = []
 
+    // IMPORTANT:
+    // if at least one required slot exists, the structure becomes strict:
+    // - only registered slot elements are considered valid children
+    // - plain text and unknown nodes are ignored
+    //
+    // if there are no required slots, slots act only as optional enhancements:
+    // - arbitrary content is allowed alongside recognized slots
+    // - non-slot nodes are preserved in allNonSlots
+    const hasRequiredSlots = slotsConfig.some(slot => slot.required)
+
     for (const { name } of slotsConfig) {
       slotsByName[name] = []
     }
@@ -36,17 +46,34 @@ export const WithSlots = <SlotName extends string>({
     // - do not clone elements
     // - preserve child element references as-is
     Children.forEach(finalChildrenToVerify as any, child => {
-      if (!isValidElement(child)) return
+      // allow plain text / primitive children only when the slot system is non-strict
+      if (!isValidElement(child)) {
+        if (!hasRequiredSlots) {
+          allNonSlots.push(child)
+        }
+
+        return
+      }
 
       const displayName: string | undefined = (child.type as any)?.displayName
+
+      // non-slot React elements are allowed only in optional-only slot systems
       if (!displayName) {
-        allNonSlots.push(child)
+        if (!hasRequiredSlots) {
+          allNonSlots.push(child)
+        }
+
         return
       }
 
       const slotConfig = slotsConfig.find(c => c.name === displayName)
+
+      // unknown slot element
       if (!slotConfig) {
-        allNonSlots.push(child)
+        if (!hasRequiredSlots) {
+          allNonSlots.push(child)
+        }
+
         return
       }
 

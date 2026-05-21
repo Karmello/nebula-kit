@@ -2,7 +2,6 @@ import classNames from 'classnames'
 
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box/definitions'
 
 import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_MARGIN_BLOCK, DividerProps } from './definitions'
 
@@ -33,7 +32,7 @@ export const Divider = ({
       variant="solid"
       color={color}
       intent={intent}
-      blockSize={BOX_BORDER_WIDTH}
+      blockSize="3xs"
       borderWidth="0px"
       marginBlock={marginBlock}
       marginTop={marginTop}

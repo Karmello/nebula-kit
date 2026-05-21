@@ -68,7 +68,7 @@ const FORM_EXAMPLES_META: ComponentMeta<FormProps>['examples'] = [
             </MultiSelect>
           </Form.Field>
           <Form.Field name="newsletter" label="Subscribe to a newsletter">
-            <Switch size="xs" />
+            <Switch />
           </Form.Field>
           <Form.Field name="verified" label="I am not a robot">
             <Checkbox />

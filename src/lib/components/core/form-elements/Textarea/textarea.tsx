@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { CONTROL_SIZE_TOKENS, FONT_SIZE_TOKENS } from 'lib/definitions'
+import { CONTROL_SIZE_MAP, TEXT_TYPOGRAPHY_MAP } from 'lib/definitions'
 
 import {
   DEFAULT_TEXTAREA_INLINE_SIZE,
@@ -58,10 +58,10 @@ export const Textarea = ({
         ...tagAttrs,
         className: classNames(withPrefix('textarea'), tagAttrs?.className),
         style: {
-          ...tagAttrs?.style,
-          fontSize: FONT_SIZE_TOKENS.regular.body.fontSize,
-          lineHeight: FONT_SIZE_TOKENS.regular.body.lineHeight,
+          fontSize: TEXT_TYPOGRAPHY_MAP.body.fontSize,
+          lineHeight: TEXT_TYPOGRAPHY_MAP.body.lineHeight,
           resize,
+          ...tagAttrs?.style,
         },
         value: currentValue,
         onChange: e => {
@@ -83,7 +83,7 @@ export const Textarea = ({
       inlineSize={inlineSize}
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
-      padding={CONTROL_SIZE_TOKENS.md.paddingInline}
+      padding={CONTROL_SIZE_MAP.md.paddingInline}
       interactive
       activeOnFocus
     />

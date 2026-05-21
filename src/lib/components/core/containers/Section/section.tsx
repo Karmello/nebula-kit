@@ -1,15 +1,15 @@
 import { ComponentProps, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Divider, SectionProps, Spacer, Text } from 'lib/components'
+import { Box, Divider, SectionProps, Spacer, Text, WithIcon } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import {
+  SectionTag,
   SECTION_SIZE_CONFIG,
   DEFAULT_SECTION_SIZE,
   DEFAULT_SECTION_INTENT,
   DEFAULT_SECTION_VARIANT,
-  SectionTag,
 } from './definitions'
 
 export const Section = <T extends SectionTag = 'section'>({
@@ -23,11 +23,12 @@ export const Section = <T extends SectionTag = 'section'>({
   color,
   intent = DEFAULT_SECTION_INTENT,
   interactive,
-  // text
+  // WithIcon
   iconName,
   iconPlacement,
   // own
   heading,
+  headingIntent,
   size = DEFAULT_SECTION_SIZE,
 }: SectionProps<T>) => {
   return (
@@ -46,24 +47,24 @@ export const Section = <T extends SectionTag = 'section'>({
       color={color}
       intent={intent}
       borderRadius={variant === 'ghost' ? '0px' : 'var(--neb-border-radius)'}
-      padding={variant === 'ghost' ? '0px' : SECTION_SIZE_CONFIG[size].padding}
-      maxInlineSize="100%"
+      padding={variant === 'ghost' ? '0px' : SECTION_SIZE_CONFIG[size || 'md'].padding}
       overflowX="auto"
       overflowY="hidden"
+      maxInlineSize="100%"
     >
-      <Text
-        typography={SECTION_SIZE_CONFIG[size].textTypography}
+      <WithIcon
+        iconTypography={SECTION_SIZE_CONFIG[size || 'md'].textTypography}
         iconName={iconName}
         iconPlacement={iconPlacement}
-        color={color}
-        bold
       >
-        {heading}
-      </Text>
-      <Divider color={color} />
+        <Text typography={SECTION_SIZE_CONFIG[size || 'md'].textTypography} color={color} intent={headingIntent} bold>
+          {heading}
+        </Text>
+      </WithIcon>
+      <Divider color={color} marginTop="2xs" />
       {children ? (
         <>
-          <Spacer blockSize={SECTION_SIZE_CONFIG[size].spacerBlockSize} />
+          <Spacer blockSize={SECTION_SIZE_CONFIG[size || 'md'].spacerBlockSize} />
           {children}
         </>
       ) : null}

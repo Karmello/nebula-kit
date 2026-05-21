@@ -1,6 +1,7 @@
 @use './palette/_index' as *;
 @use './themes/_index' as *;
-@use './engine/_index';
+@use './engine/_index' as *;
+@use './tokens/_index' as *;
 
 html {
   font-family:
@@ -34,6 +35,9 @@ body {
   background: var(--neb-background);
   color: var(--neb-text);
 
+  font-size: var(--neb-typography-body-font-size);
+  line-height: var(--neb-typography-body-line-height);
+
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -43,6 +47,11 @@ a,
 button,
 [role='button'] {
   -webkit-tap-highlight-color: transparent;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  line-height: 1;
 }
 
 ::selection {

@@ -3,11 +3,10 @@ import isNil from 'lodash-es/isNil.js'
 
 import { Breakpoint, BREAKPOINTS } from 'lib/definitions'
 
-import { Bucket, isBlank, PropValues } from '../definitions'
 import { getBucketPerBp } from './get-bucket-per-bp'
 import { getDataAttrName } from './get-data-attr-name'
-
-export type ComponentName = 'Box' | 'Flex' | 'Button'
+import { Bucket, isBlank, PropValues } from '../definitions'
+import { ComponentName } from './definitions'
 
 export const updateDomRespDataset = (
   componentName: ComponentName,

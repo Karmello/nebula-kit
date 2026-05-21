@@ -31,10 +31,6 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
     description: 'Typography prop sets HTML tag, font size and line height automatically.',
   },
   {
-    jsx: <Text iconName="search">Paragraph with an icon</Text>,
-    description: 'Text supports inline icons.',
-  },
-  {
     jsx: (
       <Text textAlign="center">
         This is an intentionally long line of text that stretches across the container so you can clearly see how the textAlign
@@ -65,6 +61,16 @@ const TEXT_EXAMPLES_META: ComponentMeta<TextProps>['examples'] = [
       <Text noWrap>This is a very long line of text that will not wrap onto the next line when the noWrap prop is enabled.</Text>
     ),
     description: 'Text without wrapping.',
+  },
+  {
+    jsx: (
+      <Text wordBreak="break-word">
+        This text contains a very long unbroken value like
+        user-generated-content-without-natural-spaces-that-would-normally-overflow, so wordBreak allows it to wrap safely inside
+        the container.
+      </Text>
+    ),
+    description: 'Text with controlled word breaking.',
   },
   {
     jsx: (

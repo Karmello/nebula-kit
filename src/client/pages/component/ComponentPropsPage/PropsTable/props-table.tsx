@@ -1,6 +1,6 @@
 import { kebabCase } from 'change-case'
 
-import { Icon, Section, Spacer, Table, Text, Link, Tooltip, Flex } from 'lib/components'
+import { Icon, Section, Spacer, Table, Text, Link, Tooltip, Flex, WithIcon } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 
 type Props = {
@@ -17,7 +17,7 @@ export const PropsTable = ({ category, data }: Props) => {
       <Table.Header>
         <Table.HeaderRow>
           <Table.HeaderCell>Name</Table.HeaderCell>
-          <Table.HeaderCell>Value</Table.HeaderCell>
+          <Table.HeaderCell minInlineSize="20ch">Value</Table.HeaderCell>
           <Table.HeaderCell textAlign="center">Default</Table.HeaderCell>
           <Table.HeaderCell textAlign="center">Required</Table.HeaderCell>
           <Table.HeaderCell textAlign="center">Responsive</Table.HeaderCell>
@@ -41,20 +41,28 @@ export const PropsTable = ({ category, data }: Props) => {
                       {name}
                     </Text>
                   ) : (
-                    <Link
-                      href={`https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/${kebabCase(name)}`}
-                      target="_blank"
-                    >
-                      <Text intent="primary" color="blue" bold iconName="external-link" iconPlacement="right" underline={false}>
-                        {name}
-                      </Text>
-                    </Link>
+                    <WithIcon iconName="external-link" iconPlacement="right" iconColor="blue" iconIntent="primary">
+                      <Link
+                        href={`https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/${kebabCase(name)}`}
+                        target="_blank"
+                      >
+                        <Text intent="primary" color="blue" bold>
+                          {name}
+                        </Text>
+                      </Link>
+                    </WithIcon>
                   )}
                 </Table.Cell>
                 <Table.Cell>
                   {shouldShowTooltip ? (
                     <Tooltip content={options.join(', ')} placement="top-center" minInlineSize={100} maxInlineSize={350}>
-                      <Text>{`${visibleOptions} . . .`}</Text>
+                      <Text>
+                        {visibleOptions}
+                        <Text tag="span" noWrap>
+                          {' '}
+                          . . .
+                        </Text>
+                      </Text>
                     </Tooltip>
                   ) : (
                     <Text>{options.join(', ')}</Text>

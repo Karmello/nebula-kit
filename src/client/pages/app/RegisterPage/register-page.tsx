@@ -49,7 +49,7 @@ export const RegisterPage = () => {
   return (
     <Box padding={{ base: 'md', lg: 'xl' }}>
       <Box inlineSize="400px" maxInlineSize="100%" margin="0 auto">
-        <Section heading="Registration" iconName="user-plus">
+        <Section size="lg" heading="Registration" iconName="user-plus">
           <Text typography="caption" intent="secondary">
             We only use your email for account access and essential security steps. If you ever change your mind, you can
             permanently remove your account in the settings.

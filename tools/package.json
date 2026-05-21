@@ -1,0 +1,36 @@
+{
+  "name": "@nebula-kit/tools",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "yarn@4.10.3",
+  "scripts": {
+    "dump:meta": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./common/ignore-assets-loader.js' tsx ./release/dump-meta.js",
+    "dist:css": "sass --load-path ../src/lib ../src/lib/styles/index.$TSUP_BUNDLE.scss ../dist/$TSUP_BUNDLE/styles.css --no-source-map",
+    "dist:bundle": "yarn dump:meta && cd .. && tsup --config tsup.pkg.ts && yarn --cwd tools dist:css && node ./tools/release/annotate-props-jsdoc.js && node ./tools/release/annotate-components-jsdoc.js && node ./tools/release/annotate-slots-jsdoc.js && node ./tools/release/generate-package-json.js && node ./tools/release/generate-readme.js",
+    "dist:core": "rimraf ../dist/core && TSUP_BUNDLE=core yarn dist:bundle && TSUP_BUNDLE=core yarn dist:clean",
+    "dist:pro": "rimraf ../dist/pro && TSUP_BUNDLE=pro yarn dist:bundle && TSUP_BUNDLE=pro yarn dist:clean",
+    "dist:clean": "rimraf ../dist/$TSUP_BUNDLE/index.d.cts && rimraf ../dist/$TSUP_BUNDLE/meta.js",
+    "pack:pro": "npm pack ../dist/pro --pack-destination ../dist && mv ../dist/*private-pro-*.tgz ../dist/nebula-kit-pro-$(node -p \"require('../package.json').version\").tgz",
+    "upload:pro:dev": "node ./release/update-local-versioning-json.js && aws s3 cp ../versioning.json s3://nebula-kit-pro-dev && aws s3 cp ../dist/nebula-kit-pro-$(node -p \"require('../package.json').version\").tgz s3://nebula-kit-pro-dev/nebula-kit-pro-$(node -p \"require('../package.json').version\").tgz",
+    "upload:pro": "node ./release/update-local-versioning-json.js && aws s3 cp ../versioning.json s3://nebula-kit-pro && aws s3 cp ../dist/nebula-kit-pro-$(node -p \"require('../package.json').version\").tgz s3://nebula-kit-pro/nebula-kit-pro-$(node -p \"require('../package.json').version\").tgz",
+    "publish:core": "yarn dist:core && npm publish ../dist/core --access public",
+    "publish:pro": "yarn dist:pro && yarn pack:pro && yarn upload:pro",
+    "publish:gh": "yarn dist:core && yarn dist:pro && npm publish ../dist/core --registry=https://npm.pkg.github.com && npm publish ../dist/pro --registry=https://npm.pkg.github.com",
+    "assistant:generate:foundations": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./common/ignore-assets-loader.js' tsx ./assistant/generate-foundations/index.tsx",
+    "assistant:generate:docs": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./common/ignore-assets-loader.js' tsx ./assistant/generate-component-docs/index.ts",
+    "assistant:generate:releases": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./common/ignore-assets-loader.js' tsx ./assistant/generate-releases/index.ts",
+    "assistant:generate:faq": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./common/ignore-assets-loader.js' tsx ./assistant/generate-faq/index.ts",
+    "assistant:generate:marketing": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./common/ignore-assets-loader.js' tsx ./assistant/generate-marketing-data/index.ts",
+    "assistant:generate:patterns": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./common/ignore-assets-loader.js' tsx ./assistant/generate-patterns/index.ts",
+    "assistant:generate": "rimraf ../assistant && yarn assistant:generate:foundations && yarn assistant:generate:docs && yarn assistant:generate:releases && yarn assistant:generate:faq && yarn assistant:generate:marketing && yarn assistant:generate:patterns"
+  },
+  "devDependencies": {
+    "rimraf": "^6.1.3",
+    "sass": "^1.99.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0"
+  }
+}

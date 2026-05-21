@@ -6,8 +6,6 @@ import { Box, Button, Divider } from 'lib/components'
 import { CodeSnippet } from 'client/components'
 import { CODE_SNIPPET_LANGS } from 'client/components/meta/CodeSnippet/definitions'
 
-import { CHAT_LINE_HEIGHT } from '../../../../definitions'
-
 type AssistantMessageProps = {
   content: string
   handleQuestionClick: (question: string) => void
@@ -15,7 +13,7 @@ type AssistantMessageProps = {
 
 export const AssistantMessage = ({ content, handleQuestionClick }: AssistantMessageProps) => {
   return (
-    <Box tagAttrs={{ style: { lineHeight: CHAT_LINE_HEIGHT } }} inlineSize="100%">
+    <Box inlineSize="100%">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         urlTransform={url => url}

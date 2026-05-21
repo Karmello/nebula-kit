@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { BUTTON_TAGS, ButtonProps } from 'lib/components/core/controls/Button'
+import { BUTTON_TAGS, ButtonProps } from 'lib/components/core/controls/Button/definitions'
 
 import { BUTTON_PROPS_META } from './props'
 import { BUTTON_EXAMPLES_META } from './examples'
@@ -20,10 +20,11 @@ const BUTTON_META: ComponentMeta<ButtonProps> = {
   props: BUTTON_PROPS_META,
   examples: BUTTON_EXAMPLES_META,
   changelog: {
-    '0.9.0': ['changed surface prop to elevated'],
-    '0.8.0': ['exposed selected prop', 'changed elevated prop to surface'],
-    '0.7.0': ['exposed interactive prop'],
-    '0.4.0': ['added onClick prop'],
+    '0.10.0': ['removed `justifyContent` prop', 'removed `textAlign` prop', 'added `align` prop'],
+    '0.9.0': ['changed `surface` prop to `elevated`'],
+    '0.8.0': ['exposed `selected` prop', 'changed `elevated` prop to `surface`'],
+    '0.7.0': ['exposed `interactive` prop'],
+    '0.4.0': ['added `onClick` prop'],
     '0.2.3': ['released'],
   },
 }

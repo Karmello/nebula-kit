@@ -18,6 +18,7 @@ const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
     guidelines: [
       'designed for use in sidebar layouts such as SplitView.Side',
       'intentionally opinionated and optimized for sidebar navigation, it is not intended as a general-purpose menu component',
+      'does not manage selected state internally - active items should be derived from the current route, pathname or query parameters',
     ],
     composedOf: ['Flex'],
     topLevelTags: ['nav'],
@@ -26,8 +27,9 @@ const SIDE_NAV_META: ComponentMeta<SideNavProps> = {
   examples: SIDE_NAV_EXAMPLES_META,
   props: SIDE_NAV_PROPS_META,
   changelog: {
-    '0.9.0': ['exposed selected prop on SideNav.Item via Button'],
-    '0.8.0': ['changed elevated prop to surface on SideNav.Item'],
+    '0.10.0': ['exposed `size` prop via Button', 'exposed `gap` prop via Flex'],
+    '0.9.0': ['exposed `selected` prop on SideNav.Item via Button'],
+    '0.8.0': ['changed `elevated` prop to `surface` on SideNav.Item'],
     '0.2.3': ['released'],
   },
 }

@@ -9,7 +9,7 @@ const FORM_HINT_META: ComponentMeta<FormHintProps> = {
     name: 'Form.Hint',
     title: "Helper text slot for a form field's control.",
     features: ['replaces the "hint" prop on Form.Field when provided'],
-    composedOf: ['Text', 'Spacer'],
+    composedOf: ['Text', 'Spacer', 'WithIcon'],
     topLevelTags: ['span'],
   },
   props: FORM_HINT_PROPS_META,

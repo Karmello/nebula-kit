@@ -5,7 +5,8 @@ import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
 import { useGetUser } from 'client/api'
 import { useAppStore } from 'client/store'
-import { Loader, Table, Text, Flex, Link, Button, Box } from 'lib/components'
+import { CopyButton } from 'client/components'
+import { Loader, Table, Text, Flex, Link, Button, Box, Spacer, Section, WithIcon } from 'lib/components'
 
 export default () => {
   const getUser = useGetUser()
@@ -18,163 +19,166 @@ export default () => {
     }
   }, [user])
 
-  const handleCopy = async () => {
-    await navigator.clipboard.writeText(getUser.data.user.licenseKey)
-  }
+  const userData = getUser.data?.user
+
+  const hasPaidPlan = userData?.plan !== 'free'
+
+  const isDiscordConnected = !!userData?.discordUserId
+  const isGithubConnected = !!userData?.githubUsername
+
+  const discordStatusColor = hasPaidPlan ? (isDiscordConnected ? 'green' : 'red') : undefined
+
+  const githubStatusColor = hasPaidPlan ? (isGithubConnected ? 'green' : 'red') : undefined
+
+  const discordStatusText = hasPaidPlan ? (isDiscordConnected ? 'Connected' : 'Not connected') : '-'
+
+  const githubStatusText = hasPaidPlan ? (isGithubConnected ? `Connected as ${userData?.githubUsername}` : 'Not connected') : '-'
 
   return (
-    <Table layout="fixed" intent="neutral" color="blue">
-      <Table.Header paddingInline="0px">
-        <Table.HeaderRow>
-          <Table.HeaderCell blockSize="50px">
-            <Flex alignItems="center" columnGap="sm">
-              <Text typography="h6" iconName="arrow-down">
-                Details
-              </Text>
-              <Box>
-                <Loader active={getUser.isMakingRequest} color="blue" size="sm" />
-              </Box>
-            </Flex>
-          </Table.HeaderCell>
-        </Table.HeaderRow>
-      </Table.Header>
-      <Table.Body intent="muted" paddingBlock="10px" paddingInline="18px">
-        <Table.Row>
-          <Table.Cell colSpan={1}>
-            <Text>Email</Text>
-          </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="2xl">
-            <Text bold>{getUser.data?.user.email}</Text>
-          </Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell colSpan={1}>
-            <Text>Registration date</Text>
-          </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="2xl">
-            <Text bold>{getUser.data ? new Date(getUser.data.user.createdAt).toDateString() : ''}</Text>
-          </Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell colSpan={1}>
-            <Text>Pricing plan</Text>
-          </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="2xl">
-            <Flex alignItems="center" flexWrap="wrap" rowGap="xs" columnGap="sm">
-              <Text bold>{getUser.data ? sentenceCase(getUser.data.user.plan) : ''}</Text>
-              {!getUser.isMakingRequest ? (
-                <Link
-                  href={PageKey.pricing}
-                  onClick={() => {
-                    navigateTo(PageKey.pricing)
-                  }}
-                >
-                  <Button size="xs" variant="outline" intent="tertiary" color="blue">
-                    {getUser.data?.user.plan === 'free' ? 'Upgrade' : 'Details'}
-                  </Button>
-                </Link>
-              ) : null}
-            </Flex>
-          </Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell colSpan={1}>
-            <Text>License key</Text>
-          </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="2xl">
-            {getUser.data ? (
-              <Flex alignItems="center" gap="xs">
-                <Text
-                  tagAttrs={{ style: { wordBreak: 'break-all' } }}
-                  bold
-                  intent={getUser.data.user.licenseKey ? 'primary' : undefined}
-                  color={getUser.data.user.licenseKey ? 'blue' : undefined}
-                >
-                  {getUser.data.user.licenseKey || '-'}
-                </Text>
-                {getUser.data.user.licenseKey ? (
-                  <Button
-                    tagAttrs={{
-                      onClick: () => {
-                        handleCopy()
-                      },
-                    }}
-                    iconName="copy"
-                    size="xs"
-                    variant="ghost"
-                    intent="primary"
-                    color="blue"
-                  />
-                ) : null}
-              </Flex>
-            ) : (
-              ''
-            )}
-          </Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell colSpan={1}>
-            <Text>Discord connection status</Text>
-          </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="2xl">
-            {getUser.data ? (
-              <Text
-                iconName={
-                  getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.discordUserId ? 'check' : 'close') : undefined
-                }
-                color={getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.discordUserId ? 'green' : 'red') : undefined}
-                intent={getUser.data.user.plan !== 'free' ? 'primary' : undefined}
-                bold
-              >
-                {getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.discordUserId ? 'Connected' : 'Not connected') : '-'}
-              </Text>
-            ) : null}
-          </Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell colSpan={1}>
-            <Text>GitHub connection status</Text>
-          </Table.Cell>
-          <Table.Cell colSpan={2} blockSize="2xl">
-            {getUser.data ? (
-              <Flex alignItems="center" flexWrap="wrap" rowGap="xs" columnGap="sm">
-                <Flex.Item alignSelf="auto">
-                  <Text
-                    iconName={
-                      getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.githubUsername ? 'check' : 'close') : undefined
-                    }
-                    color={
-                      getUser.data.user.plan !== 'free' ? (!!getUser.data?.user.githubUsername ? 'green' : 'red') : undefined
-                    }
-                    intent={getUser.data.user.plan !== 'free' ? 'primary' : undefined}
-                    bold
-                  >
-                    {getUser.data.user.plan !== 'free'
-                      ? !!getUser.data?.user.githubUsername
-                        ? `Connected as ${getUser.data.user.githubUsername}`
-                        : 'Not connected'
-                      : '-'}
-                  </Text>
-                </Flex.Item>
-                {getUser.data?.user.githubUsername ? (
-                  <Link href="https://github.com/orgs/nebula-kit/projects/1" target="_blank">
-                    <Button
-                      size="xs"
-                      variant="outline"
-                      intent="secondary"
-                      color="blue"
-                      iconName="external-link"
-                      iconPlacement="right"
+    <Section heading="Details" size="sm" intent="primary" color="blue">
+      <Spacer blockSize="xs" />
+
+      {!getUser.isMakingRequest ? (
+        <Table layout="fixed" intent="neutral">
+          <Table.Body intent="muted" paddingBlock="10px" paddingInline="12px">
+            <Table.Row>
+              <Table.Cell>
+                <Text lineHeight={1.2}>Email</Text>
+              </Table.Cell>
+
+              <Table.Cell colSpan={2}>
+                <Text wordBreak="break-all">{userData?.email}</Text>
+              </Table.Cell>
+            </Table.Row>
+
+            <Table.Row>
+              <Table.Cell>
+                <Text lineHeight={1.2}>Registration date</Text>
+              </Table.Cell>
+
+              <Table.Cell colSpan={2}>
+                <Text wordBreak="break-all">{userData ? new Date(userData.createdAt).toDateString() : ''}</Text>
+              </Table.Cell>
+            </Table.Row>
+
+            <Table.Row>
+              <Table.Cell>
+                <Text lineHeight={1.2}>Pricing plan</Text>
+              </Table.Cell>
+
+              <Table.Cell colSpan={2}>
+                <Flex alignItems="center" flexWrap="wrap" rowGap="xs" columnGap="sm">
+                  <Text bold>{userData ? sentenceCase(userData.plan) : ''}</Text>
+
+                  {!getUser.isMakingRequest ? (
+                    <Link
+                      href={PageKey.pricing}
+                      onClick={() => {
+                        navigateTo(PageKey.pricing)
+                      }}
                     >
-                      Roadmap
-                    </Button>
-                  </Link>
+                      <Button size="xs" variant="outline" intent="tertiary" color="blue">
+                        {userData?.plan === 'free' ? 'Upgrade' : 'Details'}
+                      </Button>
+                    </Link>
+                  ) : null}
+                </Flex>
+              </Table.Cell>
+            </Table.Row>
+
+            <Table.Row>
+              <Table.Cell>
+                <Text lineHeight={1.2}>License key</Text>
+              </Table.Cell>
+
+              <Table.Cell colSpan={2}>
+                {userData ? (
+                  <Flex alignItems="center" gap="xs">
+                    <Text
+                      intent={userData.licenseKey ? 'primary' : undefined}
+                      color={userData.licenseKey ? 'blue' : undefined}
+                      wordBreak="break-all"
+                      lineHeight={1.2}
+                      bold={!!userData.licenseKey}
+                    >
+                      {userData.licenseKey || '-'}
+                    </Text>
+
+                    {userData.licenseKey ? <CopyButton text={userData.licenseKey} /> : null}
+                  </Flex>
+                ) : (
+                  ''
+                )}
+              </Table.Cell>
+            </Table.Row>
+
+            <Table.Row>
+              <Table.Cell>
+                <Text lineHeight={1.2}>Discord connection status</Text>
+              </Table.Cell>
+
+              <Table.Cell colSpan={2}>
+                {userData ? (
+                  <WithIcon
+                    iconName={hasPaidPlan ? (isDiscordConnected ? 'check' : undefined) : undefined}
+                    iconPlacement="right"
+                    iconColor={discordStatusColor}
+                    iconIntent={hasPaidPlan ? 'primary' : undefined}
+                  >
+                    <Text color={discordStatusColor} intent={hasPaidPlan ? 'primary' : undefined}>
+                      {discordStatusText}
+                    </Text>
+                  </WithIcon>
                 ) : null}
-              </Flex>
-            ) : null}
-          </Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table>
+              </Table.Cell>
+            </Table.Row>
+
+            <Table.Row>
+              <Table.Cell>
+                <Text lineHeight={1.2}>GitHub connection status</Text>
+              </Table.Cell>
+
+              <Table.Cell colSpan={2}>
+                {userData ? (
+                  <Flex alignItems="center" flexWrap="wrap" rowGap="xs" columnGap="sm">
+                    <Flex.Item alignSelf="auto">
+                      <WithIcon
+                        iconName={hasPaidPlan ? (isGithubConnected ? 'check' : undefined) : undefined}
+                        iconPlacement="right"
+                        iconColor={githubStatusColor}
+                        iconIntent={hasPaidPlan ? 'primary' : undefined}
+                      >
+                        <Text color={githubStatusColor} intent={hasPaidPlan ? 'primary' : undefined}>
+                          {githubStatusText}
+                        </Text>
+                      </WithIcon>
+                    </Flex.Item>
+
+                    {isGithubConnected ? (
+                      <Link href="https://github.com/orgs/nebula-kit/projects/1" target="_blank">
+                        <Button
+                          size="xs"
+                          variant="outline"
+                          intent="secondary"
+                          color="blue"
+                          iconName="external-link"
+                          iconPlacement="right"
+                        >
+                          Roadmap
+                        </Button>
+                      </Link>
+                    ) : null}
+                  </Flex>
+                ) : null}
+              </Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>
+      ) : (
+        <Box position="relative" blockSize="2xl" drawable variant="solid" intent="muted">
+          <Loader centered active color="blue" size="sm" />
+        </Box>
+      )}
+    </Section>
   )
 }

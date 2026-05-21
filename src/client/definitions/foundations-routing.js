@@ -9,7 +9,9 @@ export const FOUNDATIONS_CATEGORIES = [
         sections: [
           { key: 'why-nebula', label: 'Why "Nebula"' },
           { key: 'about-nebula-kit', label: 'About NebulaKit' },
+          { key: 'development-spectrum', label: 'Development spectrum' },
           { key: 'audience', label: 'Audience' },
+          { key: 'authoring-apps', label: 'Authoring apps' },
           { key: 'under-the-hood', label: 'Under the hood' },
         ],
       },
@@ -64,7 +66,7 @@ export const FOUNDATIONS_CATEGORIES = [
           { key: 'styling-island', label: 'Styling island' },
           { key: 'intents-and-variants', label: 'Intents + variants' },
           { key: 'typography', label: 'Typography' },
-          { key: 'sizing-scale', label: 'Sizing scale' },
+          { key: 'length-scale', label: 'Length scale' },
           { key: 'breakpoints', label: 'Breakpoints' },
           { key: 'color-matrix', label: 'Color matrix' },
           { key: 'color-palettes', label: 'Color palettes' },
@@ -81,6 +83,7 @@ export const FOUNDATIONS_CATEGORIES = [
         key: 'changelog',
         label: 'Changelog',
         sections: [
+          { key: 'v0.10.0', label: 'v0.10.0' },
           { key: 'v0.9.0', label: 'v0.9.0' },
           { key: 'v0.8.0', label: 'v0.8.0' },
           { key: 'v0.7.0', label: 'v0.7.0' },

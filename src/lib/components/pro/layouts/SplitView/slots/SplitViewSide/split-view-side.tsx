@@ -2,7 +2,6 @@ import { useRef } from 'react'
 import classNames from 'classnames'
 
 import { Resize, Box, Flex, Button, FocusTrap } from 'lib/components'
-import { BOX_BORDER_WIDTH } from 'lib/components/core/base/Box/definitions'
 import { withPrefix } from 'lib/helpers'
 
 import { SplitViewSideProps, DEFAULT_SPLIT_VIEW_SIDE_WIDTH, DEFAULT_SPLIT_VIEW_SIDE_INTENT } from './definitions'
@@ -19,6 +18,13 @@ export const SplitViewSide = ({
   color,
   intent = DEFAULT_SPLIT_VIEW_SIDE_INTENT,
   inlineSize = DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
+  padding,
+  paddingInline,
+  paddingBlock,
+  paddingTop,
+  paddingRight,
+  paddingBottom,
+  paddingLeft,
 }: SplitViewSideProps) => {
   const { sideOpen, setSideOpen, sidePosition, mode } = useSplitViewContext()
 
@@ -45,8 +51,8 @@ export const SplitViewSide = ({
         surface="dividing"
         borderWidth="0px"
         borderRadius="0px"
-        borderLeftWidth={mode === 'overlay' && sidePosition === 'right' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
-        borderRightWidth={mode === 'overlay' && sidePosition === 'left' && sideOpen ? BOX_BORDER_WIDTH : '0px'}
+        borderLeftWidth={mode === 'overlay' && sidePosition === 'right' && sideOpen ? 'var(--neb-length-3xs)' : '0px'}
+        borderRightWidth={mode === 'overlay' && sidePosition === 'left' && sideOpen ? 'var(--neb-length-3xs)' : '0px'}
         left={sidePosition === 'left' ? '0px' : undefined}
         right={sidePosition === 'right' ? '0px' : undefined}
         maxInlineSize={mode === 'inline' ? inlineSize : undefined}
@@ -62,11 +68,11 @@ export const SplitViewSide = ({
           overflowX="hidden"
         >
           <Resize property="inlineSize" visible={sideOpen} easing="cubic-bezier(0.4, 0, 0.2, 1)">
-            <Box inlineSize={inlineSize} maxInlineSize="100dvw" paddingRight={BOX_BORDER_WIDTH}>
+            <Box inlineSize={inlineSize} maxInlineSize="100dvw" paddingRight="3xs">
               <Box>
                 {mode === 'overlay' ? (
                   <Flex justifyContent="flex-end">
-                    <Box padding="6px" paddingBottom="20px">
+                    <Box padding="2xs" paddingRight="3xs" paddingBottom="md">
                       <Button
                         tagAttrs={{
                           onClick: () => {
@@ -75,12 +81,22 @@ export const SplitViewSide = ({
                         }}
                         iconName="close"
                         intent={intent || 'tertiary'}
-                        size="xs"
+                        size="2xs"
                       />
                     </Box>
                   </Flex>
                 ) : null}
-                <Box theme={theme} brand={brand}>
+                <Box
+                  theme={theme}
+                  brand={brand}
+                  padding={padding}
+                  paddingInline={paddingInline}
+                  paddingBlock={paddingBlock}
+                  paddingTop={paddingTop}
+                  paddingRight={paddingRight}
+                  paddingBottom={paddingBottom}
+                  paddingLeft={paddingLeft}
+                >
                   {children}
                 </Box>
               </Box>

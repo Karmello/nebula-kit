@@ -5,12 +5,8 @@ import { Footprints } from 'lucide-react'
 
 const ICON_EXAMPLES_META: ComponentMeta<IconProps>['examples'] = [
   {
-    description: 'Search icon.',
+    description: 'Default icon.',
     jsx: <Icon name="search" />,
-  },
-  {
-    description: 'Search icon at a larger size.',
-    jsx: <Icon name="search" size="2xl" />,
   },
   {
     description: 'Icon with custom color and intent.',
@@ -19,10 +15,21 @@ const ICON_EXAMPLES_META: ComponentMeta<IconProps>['examples'] = [
   {
     description: 'Custom SVG icon passed as children, semantic styling stays preserved.',
     jsx: (
-      <Icon>
+      <Icon color="blue" intent="primary">
         <Footprints />
       </Icon>
     ),
+    code: `import { Icon } from 'lib/components'
+import { Footprints } from 'lucide-react'
+
+<Icon color="blue" intent="primary">
+  <Footprints />
+</Icon>
+`,
+  },
+  {
+    description: 'Icon with custom size.',
+    jsx: <Icon name="search" size="xl" />,
   },
 ]
 

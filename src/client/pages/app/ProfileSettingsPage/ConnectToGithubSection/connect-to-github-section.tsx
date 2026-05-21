@@ -1,4 +1,4 @@
-import { Section, Button, Text, Spacer, Flex } from 'lib/components'
+import { Section, Button, Text, Spacer, Flex, WithIcon } from 'lib/components'
 import { useConnectToGithub } from 'client/api'
 
 export const ConnectToGithubSection = ({ userPlan, githubUsername }: { userPlan: string; githubUsername: string }) => {
@@ -35,9 +35,11 @@ export const ConnectToGithubSection = ({ userPlan, githubUsername }: { userPlan:
             * For paid users
           </Text>
         ) : githubUsername ? (
-          <Text intent="secondary" color="gray" italic iconName="check" iconPlacement="right">
-            Done
-          </Text>
+          <WithIcon iconName="check" iconPlacement="right">
+            <Text intent="secondary" color="gray" italic>
+              Done
+            </Text>
+          </WithIcon>
         ) : null}
       </Flex>
       <Spacer blockSize="xs" />

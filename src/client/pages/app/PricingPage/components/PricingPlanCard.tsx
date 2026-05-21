@@ -37,7 +37,7 @@ export const PricingPlanCard = ({
     return (
       <>
         <Flex alignItems="center" columnGap="sm">
-          <Icon name="check" intent="primary" color={color} />
+          <Icon name="check" intent="primary" color={color} size="sm" />
           {children}
         </Flex>
         <Spacer blockSize="3xs" />
@@ -47,19 +47,19 @@ export const PricingPlanCard = ({
 
   return (
     <Section
-      tagAttrs={{ style: { blockSize: '100%' } }}
       heading={title}
       variant={plan === 'free' ? 'outline' : 'soft-outline'}
       intent={plan === 'free' ? 'tertiary' : 'primary'}
       color={color}
       iconName={iconName}
       interactive
+      size="lg"
     >
       <Text intent="neutral" bold>
         {headline}
       </Text>
       <Spacer />
-      <Text typography="h6">{priceInfo}</Text>
+      <Text typography="h5">{priceInfo}</Text>
       <Spacer />
       <Text intent="neutral">{description}</Text>
       <Spacer />

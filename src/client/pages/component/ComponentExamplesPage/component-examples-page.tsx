@@ -5,7 +5,7 @@ import { CodeSnippet } from 'client/components'
 import { convertElemToString } from 'client/helpers'
 import { useAppStore, useCorePageStore, useProPageStore } from 'client/store'
 import { ComponentMeta, PageKey } from 'client/definitions'
-import { Box, Flex, Reveal, Spacer, Switch, Text } from 'lib/components'
+import { Box, Flex, Reveal, Spacer, Switch, Text, WithIcon } from 'lib/components'
 import { useCurrentTheme } from 'lib/hooks'
 
 const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
@@ -17,9 +17,9 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   return (
     <>
       {description && !noSandBox ? (
-        <Text iconName="arrow-down" bold>
-          {description}
-        </Text>
+        <WithIcon iconName="arrow-down">
+          <Text bold>{description}</Text>
+        </WithIcon>
       ) : null}
       <Spacer blockSize="xs" />
       {!noSandBox ? (

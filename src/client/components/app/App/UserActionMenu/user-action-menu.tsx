@@ -6,6 +6,7 @@ import { useAppStore } from 'client/store'
 import { useLogoutUser } from 'client/api'
 import { Button, Flex, Select } from 'lib/components'
 
+import { WebsiteMapDialog } from './components/website-map-dialog'
 import { AppPrefsDialog } from './components/app-prefs-dialog'
 
 export const UserActionMenu = () => {
@@ -14,6 +15,8 @@ export const UserActionMenu = () => {
   const logoutUser = useLogoutUser()
 
   const user = useAppStore(state => state.user)
+  const showWebsiteMap = useAppStore(state => state.showWebsiteMap)
+  const setShowWebsiteMap = useAppStore(state => state.setShowWebsiteMap)
   const showAppJump = useAppStore(state => state.showAppJump)
   const setShowAppJump = useAppStore(state => state.setShowAppJump)
   const showAppSettings = useAppStore(state => state.showAppSettings)
@@ -26,22 +29,25 @@ export const UserActionMenu = () => {
     <>
       <Flex>
         <Button
-          tagAttrs={{
-            onClick: () => {
-              if (!showAppJump) setShowAppJump(true)
-            },
-          }}
-          iconName={showAppJump ? 'search-x' : 'search'}
+          iconName="compass"
           intent="muted"
+          onClick={() => {
+            if (!showWebsiteMap) setShowWebsiteMap(true)
+          }}
         />
         <Button
-          tagAttrs={{
-            onClick: () => {
-              if (!showAppSettings) setShowAppSettings(true)
-            },
+          iconName={showAppJump ? 'search-x' : 'search'}
+          intent="muted"
+          onClick={() => {
+            if (!showAppJump) setShowAppJump(true)
           }}
+        />
+        <Button
           iconName="settings"
           intent="muted"
+          onClick={() => {
+            if (!showAppSettings) setShowAppSettings(true)
+          }}
         />
         <Select
           intent="muted"
@@ -71,6 +77,7 @@ export const UserActionMenu = () => {
           )}
         </Select>
       </Flex>
+      <WebsiteMapDialog />
       <AppPrefsDialog />
     </>
   )

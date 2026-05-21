@@ -2,7 +2,7 @@ import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
 import { useCheckoutPaidPlan } from 'client/api'
-import { Box, Button, Link, Text } from 'lib/components'
+import { Box, Button, Link, Text, WithIcon } from 'lib/components'
 import { BoxColor } from 'lib/components/core/base/Box'
 
 type PricingPlanButtonProps = {
@@ -67,9 +67,9 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
         if (plan === activePlan) {
           return (
             <Box drawable variant="solid" intent="secondary" color={color} paddingBlock="10px" paddingInline="14px">
-              <Text iconName="check" iconPlacement="right" bold>
-                This is the plan you are on
-              </Text>
+              <WithIcon iconName="check" iconPlacement="right">
+                <Text bold>This is the plan you are on</Text>
+              </WithIcon>
             </Box>
           )
         } else {

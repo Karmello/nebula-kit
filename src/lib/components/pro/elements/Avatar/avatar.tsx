@@ -111,21 +111,23 @@ export const Avatar = ({
       position="relative"
       overflow="hidden"
     >
-      <Image
-        tagRef={imgRef}
-        src={src}
-        alt={alt}
-        title={title}
-        loading={loading}
-        decoding={decoding}
-        fetchPriority={fetchPriority}
-        crossOrigin={crossOrigin}
-        referrerPolicy={referrerPolicy}
-        objectFit={objectFit}
-        objectPosition={objectPosition}
-        onLoad={() => resolveImage('success')}
-        onError={() => resolveImage('error')}
-      />
+      {fetchStatus !== 'error' ? (
+        <Image
+          tagRef={imgRef}
+          src={src}
+          alt={alt}
+          title={title}
+          loading={loading}
+          decoding={decoding}
+          fetchPriority={fetchPriority}
+          crossOrigin={crossOrigin}
+          referrerPolicy={referrerPolicy}
+          objectFit={objectFit}
+          objectPosition={objectPosition}
+          onLoad={() => resolveImage('success')}
+          onError={() => resolveImage('error')}
+        />
+      ) : null}
       {showLoader ? (
         <Loader centered active={showLoader} color="blue" />
       ) : initials && fetchStatus !== 'pending' && fetchStatus !== 'success' ? (
@@ -138,8 +140,7 @@ export const Avatar = ({
               transform: 'translate(-50%, -50%)',
             },
           }}
-          typography={AVATAR_SIZES_MAP[size || 'md'].typography}
-          scale={AVATAR_SIZES_MAP[size || 'md'].scale}
+          fontSize={AVATAR_SIZES_MAP[size || 'md'].fontSize}
           intent="primary"
           color="blue"
           bold

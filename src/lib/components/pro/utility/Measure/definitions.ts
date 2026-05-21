@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/components'
+import type { BoxProps } from 'lib/components'
 
 export type MeasuredInfo = { blockSize: number; inlineSize: number }
 

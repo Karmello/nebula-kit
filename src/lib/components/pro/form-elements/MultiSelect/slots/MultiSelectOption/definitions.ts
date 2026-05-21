@@ -1,6 +1,6 @@
 import { DropdownListItemProps } from 'lib/components'
 
-export const DEFAULT_MULTI_SELECT_OPTION_JUSTIFY_CONTENT: MultiSelectOptionProps['justifyContent'] = 'space-between'
+export const DEFAULT_MULTI_SELECT_OPTION_ALIGN: MultiSelectOptionProps['align'] = 'split'
 
 type MultiSelectOptionOwnProps = {
   value: string

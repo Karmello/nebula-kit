@@ -6,7 +6,7 @@ import { withPrefix } from 'lib/helpers'
 
 import {
   CheckboxProps,
-  CHECKBOX_SIZE_CONFIG,
+  CHECKBOX_SIZE_MAP,
   DEFAULT_CHECKBOX_SIZE,
   DEFAULT_CHECKBOX_VARIANT,
   DEFAULT_CHECKBOX_INTENT,
@@ -67,10 +67,10 @@ export const Checkbox = ({
         variant={variant}
         intent={intent}
         color={color}
-        blockSize={CHECKBOX_SIZE_CONFIG[size || 'xs'].blockSize}
-        inlineSize={CHECKBOX_SIZE_CONFIG[size || 'xs'].blockSize}
+        blockSize={CHECKBOX_SIZE_MAP[size || 'xs'].blockSize}
+        inlineSize={CHECKBOX_SIZE_MAP[size || 'xs'].blockSize}
       />
-      {currentChecked ? <Icon name="check" size={CHECKBOX_SIZE_CONFIG[size || 'xs'].iconSize} /> : null}
+      {currentChecked ? <Icon name="check" size={CHECKBOX_SIZE_MAP[size || 'xs'].iconSize} /> : null}
     </Box>
   )
 }

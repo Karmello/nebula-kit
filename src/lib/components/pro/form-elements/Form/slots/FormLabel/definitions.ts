@@ -1,21 +1,12 @@
-import { TextProps } from 'lib/components/core/base'
+import { TextProps, WithIconProps } from 'lib/components'
 
 export const DEFAULT_FORM_LABEL_INTENT: FormLabelProps['intent'] = 'neutral'
 
 type PropsFromText = Pick<
   TextProps<'label'>,
-  | 'bold'
-  | 'children'
-  | 'color'
-  | 'iconName'
-  | 'iconPlacement'
-  | 'intent'
-  | 'noWrap'
-  | 'scale'
-  | 'tagAttrs'
-  | 'tagRef'
-  | 'textAlign'
-  | 'truncate'
+  'bold' | 'children' | 'color' | 'intent' | 'noWrap' | 'tagAttrs' | 'tagRef' | 'truncate'
 >
 
-export type FormLabelProps = PropsFromText
+type PropsFromWithIcon = Pick<WithIconProps, 'iconName' | 'iconPlacement'>
+
+export type FormLabelProps = PropsFromText & PropsFromWithIcon

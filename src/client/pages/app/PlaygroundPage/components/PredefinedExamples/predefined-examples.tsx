@@ -1,6 +1,6 @@
+import { PLAYGROUND_PRESETS } from 'client/definitions'
 import { Select } from 'lib/components'
 
-import { PRESETS } from './definitions'
 import { usePlaygroundStore } from '../../store'
 
 export const PredefinedExamples = () => {
@@ -8,29 +8,29 @@ export const PredefinedExamples = () => {
   const activeComponent = usePlaygroundStore(state => state.activeComponent)
   const setPropField = usePlaygroundStore(state => state.setPropField)
 
-  if (!PRESETS[activeComponent]) return null
+  if (!PLAYGROUND_PRESETS[activeComponent]) return null
 
   const allProps = components[activeComponent].props
 
   return (
     <Select
       size="xs"
-      staticLabel={`${activeComponent} presets`}
-      inlineSize="175px"
+      staticLabel="Presets"
+      inlineSize="140px"
       value=""
       onChange={value => {
         Object.keys(allProps).forEach(propName => {
           setPropField(activeComponent, propName, 'value', allProps[propName].defaultValue)
         })
 
-        const { props } = PRESETS[activeComponent][Number(value)]
+        const { props } = PLAYGROUND_PRESETS[activeComponent][Number(value)]
 
         Object.keys(props).forEach(propName => {
           setPropField(activeComponent, propName, 'value', props[propName as never])
         })
       }}
     >
-      {PRESETS[activeComponent].map(({ name }, index) => {
+      {PLAYGROUND_PRESETS[activeComponent].map(({ name }, index) => {
         return (
           <Select.Option key={index} value={String(index)}>
             {name}

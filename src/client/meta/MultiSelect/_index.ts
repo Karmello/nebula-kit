@@ -18,8 +18,8 @@ const MULTI_SELECT_META: ComponentMeta<MultiSelectProps> = {
   props: MULTI_SELECT_PROPS_META,
   examples: MULTI_SELECT_EXAMPLES_META,
   changelog: {
-    '0.7.0': ['replaced triggerIntent and listIntent with a single intent prop'],
-    '0.6.0': ['replaced intent with separate triggerIntent and listIntent props'],
+    '0.7.0': ['replaced `triggerIntent` and `listIntent` with a single `intent` prop'],
+    '0.6.0': ['replaced `intent` with separate `triggerIntent` and `listIntent` props'],
     '0.3.0': ['released'],
   },
 }

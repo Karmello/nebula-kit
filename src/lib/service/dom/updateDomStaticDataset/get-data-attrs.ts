@@ -2,7 +2,7 @@ import { kebabCase } from 'change-case'
 
 import { LIB_PREFIX } from 'lib/definitions'
 
-import { ComponentName } from './update-dom-static-dataset'
+import { ComponentName } from './definitions'
 
 export const getDataAttrs = (componentName: ComponentName, propValues: Record<string, unknown>, propName: string) => {
   const propValue = propValues[propName]

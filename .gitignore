@@ -1,8 +1,9 @@
 /node_modules
+/tools/node_modules
 /coverage
 /build
 /dist
-/assistant/generated
+/assistant
 /playwright/.cache/
 
 npm-debug.log*

@@ -1,4 +1,5 @@
 export const CODE_SNIPPET_LANGS = ['log', 'bash', 'tsx', 'ts', 'jsx', 'js', 'css', 'json'] as const
+export const DEFAULT_MAX_BLOCK_SIZE = '350px'
 
 export type CodeSnippetLang = (typeof CODE_SNIPPET_LANGS)[number]
 
@@ -10,4 +11,5 @@ export type CodeSnippetProps = {
   boldDescription?: boolean
   descriptionIcon?: boolean
   fullBg?: boolean
+  maxBlockSize?: string
 }

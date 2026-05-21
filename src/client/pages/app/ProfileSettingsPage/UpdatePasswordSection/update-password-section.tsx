@@ -1,14 +1,9 @@
-import { useState } from 'react'
-
 import { useUpdatePassword, UseUpdatePasswordRes, useLogoutUser } from 'client/api'
 import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
-import { Box, Button, Form, Input, Section, Spacer, Text, useSnackbar } from 'lib/components'
+import { Box, Form, Section, Spacer, Text, useSnackbar, PasswordInput } from 'lib/components'
 
 export const UpdatePasswordSection = () => {
-  const [hideCurrentPassword, setHideCurrentPassword] = useState<boolean>(true)
-  const [hideNewPassword, setHideNewPassword] = useState<boolean>(true)
-
   const navigateTo = useNavigateTo()
   const { show } = useSnackbar()
   const updatePassword = useUpdatePassword()
@@ -45,40 +40,10 @@ export const UpdatePasswordSection = () => {
               <>
                 <Form.Fields>
                   <Form.Field name="currentPassword" label="Current password" required minLength={8} maxLength={128}>
-                    <Input
-                      tagAttrs={{
-                        type: hideCurrentPassword ? 'password' : 'text',
-                        autoComplete: 'current-password',
-                      }}
-                      placeholder="Enter password"
-                      endAffix={props => (
-                        <Button
-                          {...props}
-                          tagAttrs={{
-                            onClick: () => setHideCurrentPassword(!hideCurrentPassword),
-                          }}
-                          iconName={hideCurrentPassword ? 'eye-off' : 'eye'}
-                        />
-                      )}
-                    />
+                    <PasswordInput autoComplete="current-password" placeholder="Enter password" />
                   </Form.Field>
                   <Form.Field name="newPassword" label="New password" required minLength={8} maxLength={128}>
-                    <Input
-                      tagAttrs={{
-                        type: hideNewPassword ? 'password' : 'text',
-                        autoComplete: 'new-password',
-                      }}
-                      placeholder="Enter password"
-                      endAffix={props => (
-                        <Button
-                          {...props}
-                          tagAttrs={{
-                            onClick: () => setHideNewPassword(!hideNewPassword),
-                          }}
-                          iconName={hideNewPassword ? 'eye-off' : 'eye'}
-                        />
-                      )}
-                    />
+                    <PasswordInput autoComplete="new-password" placeholder="Enter password" />
                   </Form.Field>
                 </Form.Fields>
                 <Form.Actions>

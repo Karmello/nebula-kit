@@ -1,1 +1,2 @@
-export * from './components'
+export * from './components/core'
+export * from './components/pro'

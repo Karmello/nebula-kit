@@ -7,6 +7,11 @@ const sections = [
 
 export const PRO_PAGE_CATEGORIES = [
   {
+    key: 'typography',
+    label: 'Typography',
+    items: [{ key: 'markup', label: 'Markup', sections }],
+  },
+  {
     key: 'layout',
     label: 'Layout',
     items: [{ key: 'virtual-list', label: 'VirtualList', sections }],
@@ -60,6 +65,7 @@ export const PRO_PAGE_CATEGORIES = [
       { key: 'multi-select', label: 'MultiSelect', sections },
       { key: 'autocomplete', label: 'Autocomplete', sections },
       { key: 'switch', label: 'Switch', sections },
+      { key: 'password-input', label: 'PasswordInput', sections },
     ],
   },
   {

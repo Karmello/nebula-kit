@@ -1,4 +1,4 @@
-import { HtmlTagProps } from 'lib/components/core/base'
+import { HtmlTagProps } from 'lib/components'
 
 export const DEFAULT_ROTATE_DURATION: RotateProps['duration'] = 200
 export const DEFAULT_ROTATE_EASING: RotateProps['easing'] = 'linear'

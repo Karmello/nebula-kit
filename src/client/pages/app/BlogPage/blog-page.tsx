@@ -1,4 +1,4 @@
-import { Box, Flex, Link, Section, Text } from 'lib/components'
+import { Box, Flex, Link, Section, Text, WithIcon } from 'lib/components'
 import { IconName } from 'lib/definitions'
 
 type ArticleProps = {
@@ -21,11 +21,13 @@ const Article = ({ title, date, platform, href, iconName }: ArticleProps) => {
         <Text tag="span" space="both">
           |
         </Text>
-        <Link href={href} target="_blank">
-          <Text tag="span" intent="primary" color="blue" iconName="external-link" iconPlacement="right">
-            Open
-          </Text>
-        </Link>
+        <WithIcon iconName="external-link" iconPlacement="right" iconIntent="primary" iconColor="blue">
+          <Link href={href} target="_blank">
+            <Text tag="span" intent="primary" color="blue">
+              Open
+            </Text>
+          </Link>
+        </WithIcon>
       </Flex>
     </Section>
   )
@@ -33,8 +35,8 @@ const Article = ({ title, date, platform, href, iconName }: ArticleProps) => {
 
 export const BlogPage = () => {
   return (
-    <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }} maxInlineSize="75rem">
-      <Section heading="Blog" iconName="rss">
+    <Box paddingTop="sm" paddingInline={{ base: 'md', lg: 'xl' }} maxInlineSize="75rem">
+      <Section size="lg" heading="Blog" iconName="rss">
         <Flex flexDirection="column" rowGap="sm" alignItems="stretch">
           <Article
             title="Local theme island in action"

@@ -1,13 +1,13 @@
 import classNames from 'classnames'
 
-import { Box, WithIcon } from 'lib/components'
+import { Box } from 'lib/components'
 import { updateDomStaticDataset } from 'lib/service'
+import { TEXT_TYPOGRAPHY_MAP } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
-import { DEFAULT_TEXT_TYPOGRAPHY, DEFAULT_TEXT_SCALE, TextTag, TextProps } from './definitions'
+import { DEFAULT_TEXT_TYPOGRAPHY, TextTag, TextProps } from './definitions'
 
 import './text.scss'
-import { FONT_SIZE_TOKENS } from 'lib/definitions'
 
 export const Text = <T extends TextTag = 'p'>({
   // HtmlTag
@@ -19,16 +19,11 @@ export const Text = <T extends TextTag = 'p'>({
   color,
   intent,
   textAlign,
-  disabled,
-  // WithIcon
-  iconName,
-  iconPlacement,
-  customSvgIcon,
   // own
-  scale = DEFAULT_TEXT_SCALE,
   typography = DEFAULT_TEXT_TYPOGRAPHY,
   fontSize,
   lineHeight,
+  wordBreak,
   bold,
   italic,
   underline,
@@ -39,14 +34,15 @@ export const Text = <T extends TextTag = 'p'>({
 }: TextProps<T>) => {
   return (
     <Box
-      tag={tag || FONT_SIZE_TOKENS[scale][typography].tag}
+      tag={tag || TEXT_TYPOGRAPHY_MAP[typography].tag}
       tagRef={tagRef as any}
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('text'), tagAttrs?.className),
         style: {
-          fontSize: fontSize ?? FONT_SIZE_TOKENS[scale][typography].fontSize,
-          lineHeight: lineHeight ?? FONT_SIZE_TOKENS[scale][typography].lineHeight,
+          fontSize: fontSize ?? TEXT_TYPOGRAPHY_MAP[typography].fontSize,
+          lineHeight: lineHeight ?? TEXT_TYPOGRAPHY_MAP[typography].lineHeight,
+          wordBreak,
           ...(clampLines && clampLines > 0
             ? {
                 display: '-webkit-box',
@@ -66,21 +62,9 @@ export const Text = <T extends TextTag = 'p'>({
       color={color}
       textAlign={textAlign}
       interactive={tag === 'a'}
-      disabled={disabled}
     >
       {space === 'start' || space === 'both' ? <> </> : null}
-      {iconName || customSvgIcon ? (
-        <WithIcon
-          iconName={iconName}
-          iconPlacement={iconPlacement}
-          iconSize={FONT_SIZE_TOKENS[scale][typography].iconSize}
-          customSvgIcon={customSvgIcon}
-        >
-          {children}
-        </WithIcon>
-      ) : (
-        children
-      )}
+      {children}
       {space === 'end' || space === 'both' ? <> </> : null}
     </Box>
   )

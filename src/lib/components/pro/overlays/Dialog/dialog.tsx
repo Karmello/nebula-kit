@@ -87,7 +87,7 @@ export const Dialog = ({
                 >
                   <FocusTrap tagRef={tagRef || ref} active={open} onFocusEscape={onClose} disableEscapeOnOutsideClick>
                     <Resize
-                      property="inlineSize"
+                      property="blockSize"
                       visible={open}
                       easing={open ? 'ease-out' : 'ease-in'}
                       duration={DIALOG_RESIZE_DURATION}
@@ -106,7 +106,7 @@ export const Dialog = ({
                         tagRef={tagRef || ref}
                         drawable
                         variant="outline"
-                        maxInlineSize="100dvw"
+                        maxInlineSize="95dvw"
                         maxBlockSize="90dvh"
                         position="relative"
                         overflowY="auto"
@@ -116,8 +116,8 @@ export const Dialog = ({
                       >
                         <Box drawable variant="solid" intent="neutral" borderRadius="0px">
                           {onClose ? (
-                            <Box position="absolute" top="7px" right="7px">
-                              <Button tagAttrs={{ onClick: onClose }} size="xs" iconName="close" intent="tertiary" />
+                            <Box position="absolute" top="8px" right="8px">
+                              <Button size="2xs" iconName="close" variant="outline" intent="tertiary" onClick={onClose} />
                             </Box>
                           ) : null}
                           {slotsByName['Dialog.Header']}

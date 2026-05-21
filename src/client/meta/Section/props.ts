@@ -12,6 +12,7 @@ import {
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 import { TEXT_PROPS_META } from '../Text/props'
+import { WITH_ICON_PROPS_META } from '../WithIcon/props'
 
 const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
   ...HTML_TAG_PROPS_META,
@@ -25,14 +26,18 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
     isRequired: true,
     description: 'Heading text.',
   },
-  iconName: TEXT_PROPS_META.iconName,
+  headingIntent: {
+    ...TEXT_PROPS_META.intent,
+    description: "Color tone applied to the component's heading text.",
+  },
+  iconName: WITH_ICON_PROPS_META.iconName,
   iconPlacement: {
-    ...TEXT_PROPS_META.iconPlacement,
+    ...WITH_ICON_PROPS_META.iconPlacement,
     description: 'Icon placement relative to heading.',
   },
   intent: {
     ...BOX_PROPS_META.intent,
-    defaultValue: DEFAULT_SECTION_INTENT,
+    defaultValue: String(DEFAULT_SECTION_INTENT),
   },
   interactive: BOX_PROPS_META.interactive,
   size: {

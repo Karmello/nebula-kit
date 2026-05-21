@@ -1,8 +1,9 @@
-import { DOCS_CSS_LABEL } from 'client/definitions'
+import { DOCS_CSS_LABEL, PLAYGROUND_ARRAY_DATA_MAP, PLAYGROUND_CONTROLS_MAP, PlaygroundProp } from 'client/definitions'
 import { Input, Button, Text, Spacer, Select } from 'lib/components'
 import { Breakpoint } from 'lib/definitions'
 
-import { usePlaygroundStore, PLAYGROUND_CONTROLS_MAP, PlaygroundProp, PLAYGROUND_ARRAY_DATA_MAP } from '../../../../store'
+import { usePlaygroundStore } from '../../../../store'
+import { sentenceCase } from 'change-case'
 
 export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
   const components = usePlaygroundStore(state => state.components)
@@ -45,7 +46,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
 
   return (
     <>
-      <Text>{bp ? `${activeProp} [${bp}]` : activeProp}</Text>
+      <Text bold>{bp ? `${activeProp} [${bp}]` : sentenceCase(activeProp)}</Text>
       <Spacer blockSize="2xs" />
 
       {PLAYGROUND_CONTROLS_MAP[activeProp as PlaygroundProp].type === 'string' ? (

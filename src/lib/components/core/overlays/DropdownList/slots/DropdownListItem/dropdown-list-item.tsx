@@ -5,7 +5,7 @@ import { Button } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { ButtonTag } from 'lib/components/core/controls/Button/definitions'
 
-import { DropdownListItemProps } from './definitions'
+import { DEFAULT_DROPDOWN_LIST_ITEM_ALIGN, DropdownListItemProps } from './definitions'
 import { useDropdownListContext } from '../../components'
 
 import './dropdown-list-item.scss'
@@ -15,6 +15,8 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
   tag,
   tagRef,
   tagAttrs,
+  // Button
+  align = DEFAULT_DROPDOWN_LIST_ITEM_ALIGN,
   ...buttonProps
 }: DropdownListItemProps<T>) => {
   const { setResizeVisible, keepOpen, size, color, intent, hoveredIndex, setHoveredIndex, blockMouse, setBlockMouse } =
@@ -54,6 +56,7 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
       size={size}
       elevated
       fullWidth
+      align={align}
       {...buttonProps}
     >
       {children}

@@ -3,8 +3,9 @@ import { memo } from 'react'
 import meta from 'client/meta'
 import { useNavigateTo } from 'client/hooks'
 import { ComponentsPageRoutes, FoundationsPageRoutes } from 'client/pages'
-import { PageKey } from 'client/definitions'
-import { Box, SideNav, Spacer, SplitView, Text, Divider, Flex } from 'lib/components'
+import { usePlaygroundStore } from 'client/pages/app/PlaygroundPage/store'
+import { PageKey, PLAYGROUND_PROPS_MAP } from 'client/definitions'
+import { Box, SideNav, Spacer, SplitView, Text, Divider, Flex, Link, Button } from 'lib/components'
 
 import { CatalogPageBreadcrumb } from './CatalogPageBreadcrumb'
 
@@ -24,8 +25,11 @@ type Props = {
 export const CatalogPageTemplate = memo(
   ({ pathname, pageKey, data, activeCategoryObj, activeItemObj, activeSectionObj }: Props) => {
     const navigateTo = useNavigateTo()
+    const setActiveComponent = usePlaygroundStore(state => state.setActiveComponent)
 
     const bundleLabel = meta[activeItemObj?.label]?.[activeItemObj?.label]?.overview.bundle
+
+    const isInPlayground = Object.keys(PLAYGROUND_PROPS_MAP).includes(activeItemObj?.label)
 
     return (
       <SplitView>
@@ -41,7 +45,7 @@ export const CatalogPageTemplate = memo(
                       label={label}
                       variant="ghost"
                       expanded={isCategorySelected}
-                      justifyContent="flex-start"
+                      align="start"
                       bold={isCategorySelected}
                     >
                       {items.map(({ key: itemKey, label, sections }) => {
@@ -115,7 +119,7 @@ export const CatalogPageTemplate = memo(
                     </SplitView.Side>
                     <SplitView.Main paddingRight="20px">
                       <SplitView.MainBar>
-                        <Flex gap="sm" alignItems="center">
+                        <Flex columnGap="sm" rowGap="2xs" alignItems="center" flexWrap="wrap">
                           <Text typography="h3">
                             {pageKey === PageKey.foundations.toString() ? activeSectionObj?.label : activeItemObj?.label}
                           </Text>
@@ -125,14 +129,35 @@ export const CatalogPageTemplate = memo(
                               variant="solid"
                               intent="tertiary"
                               borderRadius="10px"
-                              paddingBlock="3px"
-                              paddingInline="7px"
+                              paddingBlock="6px"
+                              paddingInline="9px"
                             >
-                              <Text scale="compact">{bundleLabel}</Text>
+                              <Text typography="small">{bundleLabel}</Text>
                             </Box>
                           ) : null}
+                          {isInPlayground ? (
+                            <Link
+                              href={PageKey.playground}
+                              onClick={async () => {
+                                setActiveComponent(activeItemObj?.label)
+                                navigateTo(PageKey.playground)
+                              }}
+                            >
+                              <Button
+                                iconName="arrow-right"
+                                iconPlacement="right"
+                                size="xs"
+                                variant="ghost"
+                                intent="primary"
+                                color="blue"
+                                bold
+                              >
+                                Try in Playground
+                              </Button>
+                            </Link>
+                          ) : null}
                         </Flex>
-                        <Divider />
+                        <Divider marginTop="xs" />
                       </SplitView.MainBar>
                       {pageKey === PageKey.foundations.toString() ? (
                         <FoundationsPageRoutes />

@@ -1,11 +1,13 @@
-import { MarkerList, Section, Text } from 'lib/components'
+import { MarkerList, Markup, Section, Text } from 'lib/components'
 
 export const ListWithHeading = ({ heading, items }: { heading: string; items: string[] }) => (
-  <Section heading={heading} size="sm" iconName="arrow-down">
+  <Section heading={heading} size="sm">
     <MarkerList>
       {items.map((s, i) => (
         <MarkerList.Item key={i}>
-          <Text>{s}</Text>
+          <Markup>
+            <Text>{s}</Text>
+          </Markup>
         </MarkerList.Item>
       ))}
     </MarkerList>

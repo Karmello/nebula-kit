@@ -19,15 +19,16 @@ export const SideNavItem = ({
   customSvgIcon,
   iconName,
   iconPlacement,
-  justifyContent,
+  align,
   elevated,
   selected,
+  description,
   // Link
   href,
   onClick,
   ...props
 }: SideNavItemProps) => {
-  const { variant: rootVariant, color: rootColor, intent: rootIntent, expandedCategories } = useSideNavContext()
+  const { variant: rootVariant, color: rootColor, intent: rootIntent, expandedCategories, size } = useSideNavContext()
 
   const { categoryId } = props || ({} as any)
 
@@ -45,15 +46,16 @@ export const SideNavItem = ({
         variant={variant || rootVariant}
         color={color || rootColor}
         intent={intent || rootIntent}
-        size="sm"
+        size={size}
         fullWidth
         bold={bold}
         customSvgIcon={customSvgIcon}
         iconName={iconName}
         iconPlacement={iconPlacement}
-        justifyContent={justifyContent}
+        align={align}
         elevated={elevated}
         selected={selected}
+        description={description}
       >
         {children}
       </Button>

@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-import { BoxProps } from 'lib/components'
+import type { BoxProps } from 'lib/components'
 import { CalloutStatus } from 'lib/components/core/feedback/Callout'
 
 export const SNACKBAR_PLACEMENTS = [

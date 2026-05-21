@@ -1,4 +1,4 @@
-import { Box, Text, Flex, Link } from 'lib/components'
+import { Box, Text, Flex, Link, WithIcon } from 'lib/components'
 
 export default () => {
   return (
@@ -28,11 +28,13 @@ export default () => {
           NebulaKit lets frontend projects grow over time, add more features and involve more developers without relying on
           everyone remembering rules or enforcing them manually.
         </Text>
-        <Link href="https://dev.to/karmello/design-systems-and-the-problem-of-ui-entropy-e3c" target="_blank">
-          <Text iconName="external-link" iconPlacement="right" intent="primary" color="blue">
-            More on the topic
-          </Text>
-        </Link>
+        <WithIcon iconName="external-link" iconPlacement="right" iconColor="blue" iconIntent="primary">
+          <Link href="https://dev.to/karmello/design-systems-and-the-problem-of-ui-entropy-e3c" target="_blank">
+            <Text intent="primary" color="blue">
+              More on the topic
+            </Text>
+          </Link>
+        </WithIcon>
       </Flex>
     </Box>
   )

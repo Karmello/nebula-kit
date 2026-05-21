@@ -99,14 +99,7 @@ export const AppJump = () => {
       >
         {filtered.map(({ label, href, iconName }) => {
           return (
-            <Autocomplete.Option
-              key={href}
-              value={href}
-              label={href}
-              iconName={iconName}
-              iconPlacement="right"
-              justifyContent="space-between"
-            >
+            <Autocomplete.Option key={href} value={href} label={href} iconName={iconName}>
               <Text tagAttrs={{ style: { whiteSpace: 'wrap', lineHeight: 1.1 } }}>{label}</Text>
             </Autocomplete.Option>
           )

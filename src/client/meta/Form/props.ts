@@ -26,7 +26,6 @@ const FORM_PROPS_META: ComponentMeta<FormProps>['props'] = {
     ...FLEX_PROPS_META.columnGap,
     defaultValue: String(DEFAULT_FORM_COLUMN_GAP),
   },
-  display: FLEX_PROPS_META.display,
   flexDirection: {
     ...FLEX_PROPS_META.flexDirection,
     defaultValue: String(DEFAULT_FORM_FLEX_DIRECTION),
@@ -50,7 +49,6 @@ const FORM_PROPS_META: ComponentMeta<FormProps>['props'] = {
   },
   onValidSubmission: {
     options: ['(values, event) => void'],
-    isRequired: true,
     description:
       'Callback fired when form data passes validation, receiving the validated values. Return a Promise to run asynchronous actions like API calls. The form will wait for the Promise to resolve or reject before continuing and then call the "onResponse" callback.',
   },

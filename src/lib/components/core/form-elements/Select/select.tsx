@@ -6,7 +6,7 @@ import { WithSlots } from 'lib/components/core/internal'
 import { withPrefix } from 'lib/helpers'
 
 import { SelectProvider } from './SelectProvider'
-import { DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT } from './slots'
+import { DEFAULT_SELECT_OPTION_ALIGN } from './slots'
 import { DEFAULT_SELECT_INLINE_SIZE, SelectProps } from './definitions'
 
 export const Select = ({
@@ -86,7 +86,7 @@ export const Select = ({
                         iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
                         iconPlacement="right"
                         iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
-                        justifyContent="space-between"
+                        align="split"
                         size={size}
                         variant="solid"
                         intent={intent}
@@ -112,7 +112,7 @@ export const Select = ({
                           }}
                           bold={slotProps.value === currentValue}
                           selected={slotProps.value === currentValue}
-                          justifyContent={slotProps.justifyContent || DEFAULT_SELECT_OPTION_JUSTIFY_CONTENT}
+                          align={slotProps.align || DEFAULT_SELECT_OPTION_ALIGN}
                         >
                           {slot}
                         </DropdownList.Item>

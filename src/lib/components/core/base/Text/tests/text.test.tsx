@@ -22,19 +22,6 @@ describe('<Text />', () => {
     })
   })
 
-  describe('icon', () => {
-    it('renders with icon', () => {
-      render(
-        <Text tagAttrs={{ 'data-testid': 'elem' }} iconName="check">
-          text
-        </Text>
-      )
-      const el = screen.getByTestId('elem')
-      expect(el).toHaveTextContent('text')
-      expect(el.querySelector('svg')).toBeInTheDocument()
-    })
-  })
-
   describe('data attrs', () => {
     it('adds data attr for typography', () => {
       render(

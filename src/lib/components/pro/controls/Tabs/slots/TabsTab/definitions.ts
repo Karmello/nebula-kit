@@ -2,7 +2,7 @@ import { ButtonProps } from 'lib/components'
 
 type PropsFromButton = Pick<
   ButtonProps,
-  'customSvgIcon' | 'disabled' | 'iconName' | 'iconPlacement' | 'inlineSize' | 'justifyContent' | 'tagAttrs' | 'tagRef'
+  'customSvgIcon' | 'disabled' | 'iconName' | 'iconPlacement' | 'inlineSize' | 'align' | 'tagAttrs' | 'tagRef'
 > & {
   children: ButtonProps['children']
 }

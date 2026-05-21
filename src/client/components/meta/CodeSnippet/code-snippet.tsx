@@ -1,11 +1,12 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { TokensResult } from 'shiki'
 
-import { Box, Flex, Button, Text } from 'lib/components'
+import { Box, Flex, Text, WithIcon } from 'lib/components'
 import { useCurrentTheme } from 'lib/hooks'
 
+import { CopyButton } from '../CopyButton'
 import { tokenizeCode } from './highlight-tokens'
-import { CodeSnippetProps } from './definitions'
+import { CodeSnippetProps, DEFAULT_MAX_BLOCK_SIZE } from './definitions'
 
 export const CodeSnippet = ({
   code,
@@ -15,13 +16,11 @@ export const CodeSnippet = ({
   boldDescription = true,
   descriptionIcon = false,
   fullBg,
+  maxBlockSize = DEFAULT_MAX_BLOCK_SIZE,
 }: CodeSnippetProps) => {
   const theme = useCurrentTheme()
 
   const [data, setData] = useState<TokensResult>(() => tokenizeCode(code, lang, theme))
-  const [copied, setCopied] = useState<boolean>(false)
-
-  const timeoutRef = useRef<NodeJS.Timeout>(null)
 
   useEffect(() => {
     setData(tokenizeCode(code, lang, theme))
@@ -29,16 +28,6 @@ export const CodeSnippet = ({
 
   if (!data) {
     return null
-  }
-
-  const handleCopy = async () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
-      timeoutRef.current = null
-    }
-    await navigator.clipboard.writeText(code)
-    setCopied(true)
-    timeoutRef.current = setTimeout(() => setCopied(false), 1000)
   }
 
   return (
@@ -64,25 +53,15 @@ export const CodeSnippet = ({
           <Flex.Item flex="1">
             {description ? (
               <Box paddingBlock="10px">
-                <Text
-                  bold={boldDescription}
-                  iconName={descriptionIcon ? 'arrow-down' : undefined}
-                  intent="neutral"
-                  tagAttrs={{ style: { lineHeight: 1.25 } }}
-                >
-                  {description}
-                </Text>
+                <WithIcon iconName={descriptionIcon ? 'arrow-down' : undefined}>
+                  <Text bold={boldDescription} intent="neutral" tagAttrs={{ style: { lineHeight: 1.25 } }}>
+                    {description}
+                  </Text>
+                </WithIcon>
               </Box>
             ) : null}
           </Flex.Item>
-          <Button
-            iconName={copied ? 'check' : 'copy'}
-            size="xs"
-            variant="ghost"
-            intent="primary"
-            color="blue"
-            tagAttrs={{ onClick: handleCopy, 'aria-label': copied ? 'Copied' : 'Copy code' }}
-          />
+          <CopyButton text={code} />
         </Flex>
         <Box
           tagAttrs={{
@@ -92,7 +71,7 @@ export const CodeSnippet = ({
             },
           }}
           overflowY="auto"
-          maxBlockSize="350px"
+          maxBlockSize={maxBlockSize}
           drawable
           variant="solid"
         >
@@ -109,9 +88,9 @@ export const CodeSnippet = ({
                           <Text
                             key={j}
                             tag="span"
-                            tagAttrs={{ style: { display: 'inline', color } }}
-                            scale="compact"
-                            typography="small"
+                            tagAttrs={{
+                              style: { display: 'inline', color, fontSize: '13px', letterSpacing: '0px' },
+                            }}
                           >
                             {content}
                           </Text>

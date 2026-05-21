@@ -26,7 +26,6 @@ export const Form = <TFieldValues extends FieldValues = FieldValues, TContext = 
   tagAttrs,
   tagRef,
   // Flex
-  display,
   flexDirection = DEFAULT_FORM_FLEX_DIRECTION,
   flexWrap,
   justifyContent,
@@ -42,6 +41,10 @@ export const Form = <TFieldValues extends FieldValues = FieldValues, TContext = 
   const form = useForm<TFieldValues, TContext, TTransformedValues>(useFormProps)
   const handleSubmit = form.handleSubmit(async (...args) => {
     const start = Date.now()
+    if (!onValidSubmission) {
+      await waitForTime(start, minLoadingTime)
+      return
+    }
     try {
       const res = (await onValidSubmission(...args)) as Response
       await waitForTime(start, minLoadingTime)
@@ -74,7 +77,6 @@ export const Form = <TFieldValues extends FieldValues = FieldValues, TContext = 
                 onSubmit: handleSubmit,
               }}
               tagRef={tagRef}
-              display={display}
               flexDirection={flexDirection}
               flexWrap={flexWrap}
               justifyContent={justifyContent}

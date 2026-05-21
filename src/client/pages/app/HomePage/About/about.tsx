@@ -2,7 +2,7 @@ import { Box, Reveal, Spacer, Text } from 'lib/components'
 
 export const About = () => {
   return (
-    <Reveal size="sm" intent="tertiary" label="About the website">
+    <Reveal size="sm" intent="tertiary" label="Read me">
       <Box padding="15px">
         <Text>
           This website is built entirely with NebulaKit components. It serves as both documentation and a live showcase of the

@@ -15,7 +15,7 @@ export const Video = () => {
         aspectRatio="16 / 9"
       />
       <Spacer blockSize="xs" />
-      <Text intent="secondary" color="gray" italic scale="compact">
+      <Text typography="small" intent="secondary" color="gray" italic>
         Video hosted on YouTube. Playback may set cookies.
       </Text>
     </Box>

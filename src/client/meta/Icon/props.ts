@@ -21,11 +21,13 @@ const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
   name: {
     options: ['IconName'],
     isRequired: true,
+    isResponsive: true,
     description: 'Name of the icon to render.',
   },
   size: {
     options: [...ICON_SIZES, DOCS_CSS_LABEL],
     defaultValue: String(DEFAULT_ICON_SIZE),
+    isResponsive: true,
     description: 'Size of the icon.',
   },
   tagAttrs: HTML_TAG_PROPS_META['tagAttrs'],

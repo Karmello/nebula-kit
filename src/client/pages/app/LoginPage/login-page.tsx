@@ -70,7 +70,7 @@ export const LoginPage = () => {
   return (
     <Box padding={{ base: 'md', lg: 'xl' }}>
       <Box inlineSize="400px" maxInlineSize="100%" margin="0 auto">
-        <Section heading="Log in" iconName="log-in">
+        <Section size="lg" heading="Log in" iconName="log-in">
           <Form
             onValidSubmission={onValidSubmission}
             onInvalidSubmission={errors => {

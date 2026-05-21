@@ -25,12 +25,12 @@ type PropsFromHtmlTag<TFieldValues extends FieldValues = FieldValues, TContext =
 
 type PropsFromFlex = Pick<
   FlexProps<'form'>,
-  'display' | 'flexDirection' | 'flexWrap' | 'justifyContent' | 'alignItems' | 'gap' | 'columnGap' | 'rowGap'
+  'flexDirection' | 'flexWrap' | 'justifyContent' | 'alignItems' | 'gap' | 'columnGap' | 'rowGap'
 >
 
 export type FormProps<TFieldValues extends FieldValues = FieldValues, TContext = any, TTransformedValues = TFieldValues> = {
   useFormProps?: UseFormProps<TFieldValues, TContext, TTransformedValues>
-  onValidSubmission: SubmitHandler<TTransformedValues>
+  onValidSubmission?: SubmitHandler<TTransformedValues>
   onInvalidSubmission?: SubmitErrorHandler<TFieldValues>
 } & PropsFromHtmlTag<TFieldValues, TContext, TTransformedValues> &
   PropsFromFlex &

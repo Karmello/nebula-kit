@@ -3,7 +3,8 @@ import { useEffect, useLayoutEffect } from 'react'
 import { Box, DropdownListProps } from 'lib/components'
 import { useOutsideClick } from 'lib/hooks'
 
-import { useDropdownListContext, DropdownListMenu } from '../'
+import { DropdownListMenu } from '../DropdownListMenu'
+import { useDropdownListContext } from '../DropdownListProvider'
 import { getNextActiveIndex } from '../../helpers'
 
 export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, 'tagRef' | 'tagAttrs'>) => {

@@ -17,6 +17,7 @@ import {
   ConfirmActionPage,
   FeedbackPage,
   PlaygroundPage,
+  PatternsPage,
   AssistantPage,
 } from 'client/pages'
 
@@ -29,6 +30,7 @@ export const RootPage = () => {
     <div className={styles.RootPage}>
       <Routes>
         <Route path={PageKey.home} Component={HomePage} />
+        <Route path={PageKey.patterns} Component={PatternsPage} />
         <Route path={PageKey.playground} Component={PlaygroundPage} />
         <Route path={`${PageKey.foundations}/*`} Component={FoundationsPage} />
         <Route path={`${PageKey.core}/*`} Component={CorePage} />
