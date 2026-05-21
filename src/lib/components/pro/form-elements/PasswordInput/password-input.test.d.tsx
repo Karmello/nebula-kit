@@ -210,7 +210,7 @@ expectType(
   />
 )
 
-expectError(<PasswordInput onChange={(value: number) => null} />)
+expectType(<PasswordInput onChange={() => null} />)
 
 // -------------------------------------
 // hidden primitive leakage

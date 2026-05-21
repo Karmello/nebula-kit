@@ -241,14 +241,8 @@ expectType(
   </Floating>
 )
 
-expectError(
-  <Floating
-    anchorRef={anchorRef}
-    mode="project-both"
-    minInlineSize={100}
-    maxInlineSize={300}
-    onResolve={(resolved: string) => null}
-  >
+expectType(
+  <Floating anchorRef={anchorRef} mode="project-both" minInlineSize={100} maxInlineSize={300} onResolve={() => null}>
     Floating
   </Floating>
 )

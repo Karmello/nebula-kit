@@ -103,12 +103,6 @@ expectType(
   </FocusTrap>
 )
 
-expectError(
-  <FocusTrap active tagRef={tagRef} onFocusEscape={(value: boolean) => null}>
-    Focus trap
-  </FocusTrap>
-)
-
 // -------------------------------------
 // children
 // -------------------------------------

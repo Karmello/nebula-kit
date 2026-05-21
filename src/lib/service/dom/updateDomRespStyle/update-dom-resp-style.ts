@@ -48,7 +48,7 @@ export const updateDomRespStyle = (
   // -------------------------------------
   // 2. Resolve merged bucket
   // -------------------------------------
-  let mergedBucket: Bucket = {}
+  const mergedBucket: Bucket = {}
 
   for (const bp of BREAKPOINTS) {
     const bucket = getBucketPerBp(bp, activePropValues)

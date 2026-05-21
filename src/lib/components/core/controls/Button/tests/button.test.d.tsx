@@ -88,7 +88,7 @@ expectType(
 expectError(<Button iconPlacement="top">Button</Button>)
 
 // callback typing
-const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {}
+const handleClick = () => {}
 expectType(<Button onClick={handleClick}>Button</Button>)
 
 // anchor attrs allowed when polymorphic

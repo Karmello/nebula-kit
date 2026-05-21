@@ -52,7 +52,7 @@ expectType<React.JSX.Element>(
 expectError(<MultiSelect />)
 expectError(<MultiSelect defaultValue="one" />)
 expectError(<MultiSelect value="one" />)
-expectError(<MultiSelect onChange={(value: string) => {}} />)
+expectError(<MultiSelect onChange={() => {}} />)
 
 expectError(
   <MultiSelect color="purple">

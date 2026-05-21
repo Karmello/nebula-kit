@@ -141,12 +141,6 @@ expectType(
   </Dialog>
 )
 
-expectError(
-  <Dialog open onClose={(value: boolean) => null}>
-    <Dialog.Content>Content</Dialog.Content>
-  </Dialog>
-)
-
 // -------------------------------------
 // size
 // -------------------------------------

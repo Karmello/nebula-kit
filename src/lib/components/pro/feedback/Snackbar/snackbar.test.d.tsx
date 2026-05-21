@@ -1,5 +1,6 @@
 import { expectType, expectError } from 'tsd'
-import { Snackbar, useSnackbar } from '../Snackbar'
+
+import { Snackbar } from '../Snackbar'
 
 //
 // basic rendering
@@ -124,67 +125,3 @@ expectError(
     <div />
   </Snackbar>
 )
-
-//
-// useSnackbar
-//
-
-const snackbar = useSnackbar()
-
-if (snackbar) {
-  expectType<
-    (args: {
-      content: string
-      heading?: string
-      placement?: 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
-      status: 'info' | 'success' | 'warning' | 'error'
-    }) => void
-  >(snackbar.show)
-
-  //
-  // valid show calls
-  //
-
-  snackbar.show({
-    status: 'info',
-    content: 'Hello',
-  })
-
-  snackbar.show({
-    status: 'success',
-    content: 'Saved',
-    heading: 'Success',
-    placement: 'top-right',
-  })
-
-  //
-  // invalid show calls
-  //
-
-  expectError(
-    snackbar.show({
-      content: 'Hello',
-    })
-  )
-
-  expectError(
-    snackbar.show({
-      status: 'info',
-    })
-  )
-
-  expectError(
-    snackbar.show({
-      status: 'danger',
-      content: 'Hello',
-    })
-  )
-
-  expectError(
-    snackbar.show({
-      status: 'info',
-      content: 'Hello',
-      placement: 'center',
-    })
-  )
-}

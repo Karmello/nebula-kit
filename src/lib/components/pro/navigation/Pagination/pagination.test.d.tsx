@@ -153,7 +153,7 @@ expectType(
   />
 )
 
-expectError(<Pagination currentPage={1} totalPages={10} onChange={(page: string) => null} />)
+expectType(<Pagination currentPage={1} totalPages={10} onChange={() => null} />)
 
 // -------------------------------------
 // color

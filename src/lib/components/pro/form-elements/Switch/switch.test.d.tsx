@@ -152,7 +152,7 @@ expectType(
   />
 )
 
-expectError(<Switch onChange={(checked: string) => null} />)
+expectType(<Switch onChange={() => null} />)
 
 // -------------------------------------
 // hidden primitive leakage

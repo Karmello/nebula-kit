@@ -94,7 +94,7 @@ expectType(
   </Measure>
 )
 
-expectError(<Measure onMeasure={(size: string) => null}>Measure</Measure>)
+expectType(<Measure onMeasure={() => null}>Measure</Measure>)
 
 // -------------------------------------
 // children

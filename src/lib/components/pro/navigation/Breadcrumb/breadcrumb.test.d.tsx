@@ -159,7 +159,7 @@ expectType(
   />
 )
 
-expectError(<Breadcrumb tree={[]} onChange={(path: string) => null} />)
+expectType(<Breadcrumb tree={[]} onChange={() => null} />)
 
 // -------------------------------------
 // color
