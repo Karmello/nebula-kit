@@ -1,14 +1,16 @@
 import { createRef } from 'react'
-import { expectType, expectError } from 'tsd'
+import { expectError, expectType } from 'tsd'
 
 import { Box } from 'lib/components'
 
 import { Grid } from '..'
 
-// children required
+// -------------------------------------
+// children
+// -------------------------------------
+
 expectError(<Grid />)
 
-// children passed
 expectType(
   <Grid>
     <Box>Item 1</Box>
@@ -16,62 +18,339 @@ expectType(
   </Grid>
 )
 
-// tag possible to change
+// -------------------------------------
+// allowed tags
+// -------------------------------------
+
+expectType(
+  <Grid tag="div">
+    <Box />
+  </Grid>
+)
+
+expectType(
+  <Grid tag="section">
+    <Box />
+  </Grid>
+)
+
+expectType(
+  <Grid tag="main">
+    <Box />
+  </Grid>
+)
+
+expectType(
+  <Grid tag="article">
+    <Box />
+  </Grid>
+)
+
+expectType(
+  <Grid tag="aside">
+    <Box />
+  </Grid>
+)
+
+expectType(
+  <Grid tag="nav">
+    <Box />
+  </Grid>
+)
+
 expectType(
   <Grid tag="ul">
-    <Box>Item 1</Box>
-    <Box>Item 2</Box>
+    <Box />
   </Grid>
 )
 
-// certain tags not allowed
+expectType(
+  <Grid tag="ol">
+    <Box />
+  </Grid>
+)
+
+// -------------------------------------
+// invalid tags
+// -------------------------------------
+
 expectError(
   <Grid tag="span">
-    <Box>Item 1</Box>
-    <Box>Item 2</Box>
+    <Box />
   </Grid>
 )
 
-// wrong ref type not allowed
 expectError(
-  <Grid tag="ul" tagRef={createRef<HTMLButtonElement>()}>
-    <Box>Item 1</Box>
-    <Box>Item 2</Box>
+  <Grid tag="button">
+    <Box />
   </Grid>
 )
 
-// right ref type allowed
+// -------------------------------------
+// refs
+// -------------------------------------
+
 expectType(
   <Grid tag="ul" tagRef={createRef<HTMLUListElement>()}>
-    <Box>Item 1</Box>
-    <Box>Item 2</Box>
+    <Box />
   </Grid>
 )
 
-// right props passed
+expectError(
+  <Grid tag="ul" tagRef={createRef<HTMLButtonElement>()}>
+    <Box />
+  </Grid>
+)
+
+// -------------------------------------
+// gridTemplateColumns
+// -------------------------------------
+
 expectType(
-  <Grid gridTemplateColumns="1fr auto" gap="5px">
-    <Box>Item 1</Box>
-    <Box>Item 2</Box>
+  <Grid gridTemplateColumns="1fr auto">
+    <Box />
   </Grid>
 )
 
-// wrong props passed
+expectError(
+  <Grid gridTemplateColumns={2}>
+    <Box />
+  </Grid>
+)
+
+expectType(
+  <Grid gridTemplateColumns={{ md: '1fr 1fr' }}>
+    <Box />
+  </Grid>
+)
+
+// -------------------------------------
+// gridTemplateRows
+// -------------------------------------
+
+expectType(
+  <Grid gridTemplateRows="auto 1fr">
+    <Box />
+  </Grid>
+)
+
+expectError(
+  <Grid gridTemplateRows={2}>
+    <Box />
+  </Grid>
+)
+
+// -------------------------------------
+// gridAutoFlow
+// -------------------------------------
+
+expectType(
+  <Grid gridAutoFlow="row">
+    <Box />
+  </Grid>
+)
+expectType(
+  <Grid gridAutoFlow="column">
+    <Box />
+  </Grid>
+)
+expectType(
+  <Grid gridAutoFlow="row dense">
+    <Box />
+  </Grid>
+)
+expectType(
+  <Grid gridAutoFlow="column dense">
+    <Box />
+  </Grid>
+)
+
+expectError(
+  <Grid gridAutoFlow="wrong">
+    <Box />
+  </Grid>
+)
+
+// -------------------------------------
+// placeContent
+// -------------------------------------
+
+expectType(
+  <Grid placeContent="center">
+    <Box />
+  </Grid>
+)
+expectType(
+  <Grid placeContent="space-between">
+    <Box />
+  </Grid>
+)
+
+expectError(
+  <Grid placeContent="wrong">
+    <Box />
+  </Grid>
+)
+
+// -------------------------------------
+// placeItems
+// -------------------------------------
+
+expectType(
+  <Grid placeItems="stretch">
+    <Box />
+  </Grid>
+)
+expectType(
+  <Grid placeItems="center">
+    <Box />
+  </Grid>
+)
+
+expectError(
+  <Grid placeItems="wrong">
+    <Box />
+  </Grid>
+)
+
+// -------------------------------------
+// gaps
+// -------------------------------------
+
+expectType(
+  <Grid gap="md" rowGap="5px" columnGap="xl">
+    <Box />
+  </Grid>
+)
+
+expectType(
+  <Grid gap={{ md: 'lg' }}>
+    <Box />
+  </Grid>
+)
+
+expectError(
+  <Grid gap={{ wrong: 'md' }}>
+    <Box />
+  </Grid>
+)
+
+// -------------------------------------
+// props intentionally NOT exposed from Box
+// -------------------------------------
+
 expectError(
   <Grid blockSize="5px">
-    <Box>Item 1</Box>
-    <Box>Item 2</Box>
+    <Box />
   </Grid>
 )
+
 expectError(
   <Grid margin="5px">
-    <Box>Item 1</Box>
-    <Box>Item 2</Box>
+    <Box />
   </Grid>
 )
+
 expectError(
   <Grid padding="5px">
-    <Box>Item 1</Box>
-    <Box>Item 2</Box>
+    <Box />
+  </Grid>
+)
+
+expectError(
+  <Grid variant="solid">
+    <Box />
+  </Grid>
+)
+
+// -------------------------------------
+// Grid.Item
+// -------------------------------------
+
+expectType(
+  <Grid>
+    <Grid.Item>
+      <Box />
+    </Grid.Item>
+  </Grid>
+)
+
+// -------------------------------------
+// Grid.Item props
+// -------------------------------------
+
+expectType(
+  <Grid>
+    <Grid.Item gridColumn="1 / 3">
+      <Box />
+    </Grid.Item>
+
+    <Grid.Item gridRow="2 / 4">
+      <Box />
+    </Grid.Item>
+
+    <Grid.Item alignSelf="center">
+      <Box />
+    </Grid.Item>
+
+    <Grid.Item justifySelf="stretch">
+      <Box />
+    </Grid.Item>
+  </Grid>
+)
+
+// -------------------------------------
+// Grid.Item responsive props
+// -------------------------------------
+
+expectType(
+  <Grid>
+    <Grid.Item gridColumn={{ md: '1 / -1' }}>
+      <Box />
+    </Grid.Item>
+  </Grid>
+)
+
+expectType(
+  <Grid>
+    <Grid.Item justifySelf={{ lg: 'center' }}>
+      <Box />
+    </Grid.Item>
+  </Grid>
+)
+
+// -------------------------------------
+// Grid.Item invalid props
+// -------------------------------------
+
+expectError(
+  <Grid>
+    <Grid.Item margin="5px">
+      <Box />
+    </Grid.Item>
+  </Grid>
+)
+
+expectError(
+  <Grid>
+    <Grid.Item padding="5px">
+      <Box />
+    </Grid.Item>
+  </Grid>
+)
+
+expectError(
+  <Grid>
+    <Grid.Item alignSelf="wrong">
+      <Box />
+    </Grid.Item>
+  </Grid>
+)
+
+expectError(
+  <Grid>
+    <Grid.Item justifySelf="wrong">
+      <Box />
+    </Grid.Item>
   </Grid>
 )

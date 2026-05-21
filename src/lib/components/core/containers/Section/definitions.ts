@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 import { BoxProps, HtmlTagProps, WithIconProps } from 'lib/components'
 import { BoxVariant } from 'lib/components/core/base/Box/definitions'
 import { TextProps, TextTypography } from 'lib/components/core/base/Text/definitions'
-import { TShirtSize } from 'lib/definitions'
+import { RespValue, TShirtSize } from 'lib/definitions'
 
 export const SECTION_TAGS = ['section', 'article', 'aside', 'div'] as const
 export const SECTION_SIZES = ['sm', 'md', 'lg', 'xl', '2xl'] as const satisfies TShirtSize[]
@@ -36,7 +36,7 @@ type SectionOwnProps = {
   heading: ReactNode
   headingIntent?: TextProps['intent']
   size?: SectionSize
-  variant?: SectionVariant
+  variant?: RespValue<SectionVariant>
 }
 
 type PropsFromHtmlTag<T extends SectionTag = 'section'> = Omit<HtmlTagProps<T>, 'children'> & {

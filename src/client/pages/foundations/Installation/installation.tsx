@@ -26,8 +26,7 @@ export default () => {
           lang="log"
           code={`@nebula-kit-private:registry=https://api.nebulakit.dev/registry
 //api.nebulakit.dev/registry/:_authToken=\${NEB_TOKEN}\
-\nalways-auth=true
-`}
+\nalways-auth=true`}
           description="To access it, add the following to your project's .npmrc file"
         />
         <Spacer blockSize="xs" />

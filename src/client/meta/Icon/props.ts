@@ -20,7 +20,6 @@ const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
   },
   name: {
     options: ['IconName'],
-    isRequired: true,
     isResponsive: true,
     description: 'Name of the icon to render.',
   },

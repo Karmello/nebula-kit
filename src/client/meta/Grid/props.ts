@@ -24,7 +24,7 @@ const GRID_PROPS_META: ComponentMeta<GridProps>['props'] = {
     link: true,
   },
   gridAutoColumns: {
-    options: ['string'],
+    options: [DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Defines the size of columns that are created automatically.',
     link: true,
@@ -42,13 +42,13 @@ const GRID_PROPS_META: ComponentMeta<GridProps>['props'] = {
     link: true,
   },
   gridTemplateColumns: {
-    options: ['string', 'number'],
+    options: [DOCS_CSS_LABEL],
     isResponsive: true,
     description: 'Defines the column structure of the grid.',
     link: true,
   },
   gridTemplateRows: {
-    options: ['string', 'number'],
+    options: [DOCS_CSS_LABEL],
     isResponsive: true,
     description: "Sets how the grid's rows are laid out.",
     link: true,

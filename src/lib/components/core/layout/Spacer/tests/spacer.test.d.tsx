@@ -1,22 +1,59 @@
 import { createRef } from 'react'
-import { expectType, expectError } from 'tsd'
+import { expectError, expectType } from 'tsd'
 
 import { Spacer } from '..'
 
+// -------------------------------------
 // no props required
+// -------------------------------------
+
 expectType(<Spacer />)
 
-// not allowed to pass children
+// -------------------------------------
+// children not allowed
+// -------------------------------------
+
 expectError(<Spacer>children</Spacer>)
 
-// custom blockSize
+// -------------------------------------
+// blockSize
+// -------------------------------------
+
 expectType(<Spacer blockSize="xs" />)
 
-// can't change tag
+expectType(<Spacer blockSize="100px" />)
+
+expectType(<Spacer blockSize={{ md: 'xl' }} />)
+
+expectError(<Spacer blockSize={{ wrong: 'xl' }} />)
+
+// -------------------------------------
+// no polymorphism
+// -------------------------------------
+
 expectError(<Spacer tag="span" />)
 
-// wrong ref passed
+// -------------------------------------
+// refs
+// -------------------------------------
+
+expectType(<Spacer tagRef={createRef<HTMLDivElement>()} />)
+
 expectError(<Spacer tagRef={createRef<HTMLSpanElement>()} />)
 
-// valid ref passed
-expectType(<Spacer tagRef={createRef<HTMLDivElement>()} />)
+// -------------------------------------
+// tagAttrs
+// -------------------------------------
+
+expectType(<Spacer tagAttrs={{ 'data-testid': 'spacer' }} />)
+
+expectError(<Spacer tagAttrs={{ href: '/x' }} />)
+
+// -------------------------------------
+// props intentionally NOT exposed
+// -------------------------------------
+
+expectError(<Spacer margin="10px" />)
+expectError(<Spacer padding="10px" />)
+expectError(<Spacer variant="solid" />)
+expectError(<Spacer interactive />)

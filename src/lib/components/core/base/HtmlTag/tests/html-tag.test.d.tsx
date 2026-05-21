@@ -1,34 +1,88 @@
 import { createRef } from 'react'
-import { expectType, expectError } from 'tsd'
+import { expectError, expectType } from 'tsd'
 
 import { HtmlTag } from '..'
 
-// children not required
-expectType(<HtmlTag />)
+// -------------------------------------
+// children
+// -------------------------------------
 
-// unknown attr not allowed
+expectType(<HtmlTag />)
+expectType(<HtmlTag>Content</HtmlTag>)
+
+// -------------------------------------
+// unknown props
+// -------------------------------------
+
 expectError(<HtmlTag unknown="v" />)
 
-// unknown attr in htmlAttrs not allowed
 expectError(<HtmlTag tagAttrs={{ unknown: 'v' }} />)
 
-// data attr in htmlAttrs allowed
-expectType(<HtmlTag tagAttrs={{ 'data-testid': 'id' }} />)
+// -------------------------------------
+// default div behavior
+// -------------------------------------
 
-// default <div> tag attrs available
 expectType(<HtmlTag tagAttrs={{ onClick: () => null }} />)
 
-// proper ref type passed
+expectType(<HtmlTag tagAttrs={{ 'data-testid': 'id' }} />)
+
+expectError(<HtmlTag tagAttrs={{ href: '/x' }} />)
+
+// -------------------------------------
+// default div refs
+// -------------------------------------
+
 expectType(<HtmlTag tagRef={createRef<HTMLDivElement>()} />)
 
-// wrong ref type for <div> tag passed
 expectError(<HtmlTag tagRef={createRef<HTMLAnchorElement>()} />)
 
-// <a> tag attrs not available on <div>
-expectError(<HtmlTag tagAttrs={{ href: 'href' }} />)
+// -------------------------------------
+// anchor tag
+// -------------------------------------
 
-// <a> tag attrs available when tag is <a>
-expectType(<HtmlTag tag="a" tagAttrs={{ href: 'href' }} />)
+expectType(
+  <HtmlTag
+    tag="a"
+    tagAttrs={{
+      href: '/x',
+      target: '_blank',
+      rel: 'noreferrer',
+    }}
+  />
+)
 
-// proper ref type for <a> tag passed
 expectType(<HtmlTag tag="a" tagRef={createRef<HTMLAnchorElement>()} />)
+
+expectError(<HtmlTag tag="a" tagRef={createRef<HTMLDivElement>()} />)
+
+expectType(<HtmlTag tag="a" tagAttrs={{ type: 'button' }} />)
+
+// -------------------------------------
+// button tag
+// -------------------------------------
+
+expectType(
+  <HtmlTag
+    tag="button"
+    tagAttrs={{
+      type: 'button',
+      disabled: true,
+    }}
+  />
+)
+
+expectType(<HtmlTag tag="button" tagRef={createRef<HTMLButtonElement>()} />)
+
+expectError(<HtmlTag tag="button" tagAttrs={{ href: '/x' }} />)
+
+expectError(<HtmlTag tag="button" tagRef={createRef<HTMLAnchorElement>()} />)
+
+// -------------------------------------
+// semantic tags
+// -------------------------------------
+
+expectType(<HtmlTag tag="section" />)
+expectType(<HtmlTag tag="article" />)
+expectType(<HtmlTag tag="nav" />)
+
+expectError(<HtmlTag tag="wrong-tag" />)

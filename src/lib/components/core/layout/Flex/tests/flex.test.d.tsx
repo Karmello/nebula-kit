@@ -1,14 +1,16 @@
 import { createRef } from 'react'
-import { expectType, expectError } from 'tsd'
+import { expectError, expectType } from 'tsd'
 
 import { Box } from 'lib/components'
 
 import { Flex } from '..'
 
-// children required
+// -------------------------------------
+// children
+// -------------------------------------
+
 expectError(<Flex />)
 
-// children passed
 expectType(
   <Flex>
     <Box>Item 1</Box>
@@ -16,7 +18,10 @@ expectType(
   </Flex>
 )
 
-// tag possible to change
+// -------------------------------------
+// polymorphic tags
+// -------------------------------------
+
 expectType(
   <Flex tag="ul">
     <Box>Item 1</Box>
@@ -24,15 +29,6 @@ expectType(
   </Flex>
 )
 
-// wrong ref type not allowed
-expectError(
-  <Flex tag="ul" tagRef={createRef<HTMLButtonElement>()}>
-    <Box>Item 1</Box>
-    <Box>Item 2</Box>
-  </Flex>
-)
-
-// right ref type allowed
 expectType(
   <Flex tag="ul" tagRef={createRef<HTMLUListElement>()}>
     <Box>Item 1</Box>
@@ -40,82 +36,332 @@ expectType(
   </Flex>
 )
 
-// right props passed
-expectType(
-  <Flex flexDirection="column" flexWrap="wrap" justifyContent="center" alignItems="center">
+expectError(
+  <Flex tag="ul" tagRef={createRef<HTMLButtonElement>()}>
     <Box>Item 1</Box>
     <Box>Item 2</Box>
   </Flex>
 )
 
-// gaps possible to set as scale value
+// -------------------------------------
+// flexDirection
+// -------------------------------------
+
 expectType(
-  <Flex gap="5px" rowGap="5px" columnGap="5px">
-    <Box>Item 1</Box>
-    <Box>Item 2</Box>
+  <Flex flexDirection="row">
+    <Box />
+  </Flex>
+)
+expectType(
+  <Flex flexDirection="row-reverse">
+    <Box />
+  </Flex>
+)
+expectType(
+  <Flex flexDirection="column">
+    <Box />
+  </Flex>
+)
+expectType(
+  <Flex flexDirection="column-reverse">
+    <Box />
   </Flex>
 )
 
-// gaps possible to set as CSS string
 expectType(
-  <Flex gap="5px" rowGap="5px" columnGap="5px">
-    <Box>Item 1</Box>
-    <Box>Item 2</Box>
+  <Flex flexDirection={{ md: 'column' }}>
+    <Box />
   </Flex>
 )
 
-// wrong props passed
+expectError(
+  <Flex flexDirection="wrong">
+    <Box />
+  </Flex>
+)
+
+expectError(
+  <Flex flexDirection={{ md: 'wrong' }}>
+    <Box />
+  </Flex>
+)
+
+// -------------------------------------
+// flexWrap
+// -------------------------------------
+
+expectType(
+  <Flex flexWrap="nowrap">
+    <Box />
+  </Flex>
+)
+expectType(
+  <Flex flexWrap="wrap">
+    <Box />
+  </Flex>
+)
+expectType(
+  <Flex flexWrap="wrap-reverse">
+    <Box />
+  </Flex>
+)
+
+expectError(
+  <Flex flexWrap="wrong">
+    <Box />
+  </Flex>
+)
+
+// -------------------------------------
+// justifyContent
+// -------------------------------------
+
+expectType(
+  <Flex justifyContent="center">
+    <Box />
+  </Flex>
+)
+expectType(
+  <Flex justifyContent="space-between">
+    <Box />
+  </Flex>
+)
+
+expectError(
+  <Flex justifyContent="wrong">
+    <Box />
+  </Flex>
+)
+
+// -------------------------------------
+// alignItems
+// -------------------------------------
+
+expectType(
+  <Flex alignItems="center">
+    <Box />
+  </Flex>
+)
+expectType(
+  <Flex alignItems="baseline">
+    <Box />
+  </Flex>
+)
+
+expectError(
+  <Flex alignItems="wrong">
+    <Box />
+  </Flex>
+)
+
+// -------------------------------------
+// alignContent
+// -------------------------------------
+
+expectType(
+  <Flex alignContent="stretch">
+    <Box />
+  </Flex>
+)
+expectType(
+  <Flex alignContent="space-evenly">
+    <Box />
+  </Flex>
+)
+
+expectError(
+  <Flex alignContent="wrong">
+    <Box />
+  </Flex>
+)
+
+// -------------------------------------
+// display
+// -------------------------------------
+
+expectType(
+  <Flex display="flex">
+    <Box />
+  </Flex>
+)
+expectType(
+  <Flex display="inline-flex">
+    <Box />
+  </Flex>
+)
+
+expectType(
+  <Flex display={{ md: 'flex' }}>
+    <Box />
+  </Flex>
+)
+
+expectError(
+  <Flex display="block">
+    <Box />
+  </Flex>
+)
+
+expectError(
+  <Flex display={{ md: 'block' }}>
+    <Box />
+  </Flex>
+)
+
+// -------------------------------------
+// gaps
+// -------------------------------------
+
+expectType(
+  <Flex gap="md" rowGap="5px" columnGap="xl">
+    <Box />
+  </Flex>
+)
+
+expectType(
+  <Flex gap={{ md: 'lg' }}>
+    <Box />
+  </Flex>
+)
+
+expectError(
+  <Flex gap={{ wrong: 'md' }}>
+    <Box />
+  </Flex>
+)
+
+// -------------------------------------
+// props intentionally NOT exposed from Box
+// -------------------------------------
+
 expectError(
   <Flex blockSize="5px">
-    <Box>Item 1</Box>
-    <Box>Item 2</Box>
-  </Flex>
-)
-expectError(
-  <Flex margin="5px">
-    <Box>Item 1</Box>
-    <Box>Item 2</Box>
-  </Flex>
-)
-expectError(
-  <Flex padding="5px">
-    <Box>Item 1</Box>
-    <Box>Item 2</Box>
+    <Box />
   </Flex>
 )
 
-// Flex.Item used
+expectError(
+  <Flex margin="5px">
+    <Box />
+  </Flex>
+)
+
+expectError(
+  <Flex padding="5px">
+    <Box />
+  </Flex>
+)
+
+expectError(
+  <Flex variant="solid">
+    <Box />
+  </Flex>
+)
+
+// -------------------------------------
+// Flex.Item
+// -------------------------------------
+
 expectType(
   <Flex>
     <Flex.Item>
       <Box>Item 1</Box>
     </Flex.Item>
+
     <Flex.Item>
       <Box>Item 2</Box>
     </Flex.Item>
   </Flex>
 )
 
-// Flex.Item with right props passed
+// -------------------------------------
+// Flex.Item props
+// -------------------------------------
+
 expectType(
   <Flex>
     <Flex.Item flex="1">
-      <Box>Item 1</Box>
+      <Box />
     </Flex.Item>
-    <Flex.Item>
-      <Box>Item 2</Box>
+
+    <Flex.Item flexGrow="1">
+      <Box />
+    </Flex.Item>
+
+    <Flex.Item flexShrink="0">
+      <Box />
+    </Flex.Item>
+
+    <Flex.Item flexBasis="200px">
+      <Box />
+    </Flex.Item>
+
+    <Flex.Item order="2">
+      <Box />
+    </Flex.Item>
+
+    <Flex.Item alignSelf="center">
+      <Box />
+    </Flex.Item>
+
+    <Flex.Item hidden>
+      <Box />
     </Flex.Item>
   </Flex>
 )
 
-// Flex.Item with wrong props passed
+// -------------------------------------
+// Flex.Item responsive props
+// -------------------------------------
+
+expectType(
+  <Flex>
+    <Flex.Item hidden={{ md: true }}>
+      <Box />
+    </Flex.Item>
+  </Flex>
+)
+
+expectType(
+  <Flex>
+    <Flex.Item alignSelf={{ lg: 'stretch' }}>
+      <Box />
+    </Flex.Item>
+  </Flex>
+)
+
+// -------------------------------------
+// Flex.Item invalid props
+// -------------------------------------
+
 expectError(
   <Flex>
     <Flex.Item margin="5px">
-      <Box>Item 1</Box>
+      <Box />
     </Flex.Item>
+  </Flex>
+)
+
+expectError(
+  <Flex>
     <Flex.Item padding="5px">
-      <Box>Item 2</Box>
+      <Box />
+    </Flex.Item>
+  </Flex>
+)
+
+expectError(
+  <Flex>
+    <Flex.Item alignSelf="wrong">
+      <Box />
+    </Flex.Item>
+  </Flex>
+)
+
+expectError(
+  <Flex>
+    <Flex.Item hidden="true">
+      <Box />
     </Flex.Item>
   </Flex>
 )
