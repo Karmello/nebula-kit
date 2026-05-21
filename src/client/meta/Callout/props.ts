@@ -44,7 +44,7 @@ const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
   variant: {
     ...BOX_PROPS_META.variant,
     options: Object.values(CALLOUT_VARIANTS),
-    defaultValue: DEFAULT_CALLOUT_VARIANT,
+    defaultValue: String(DEFAULT_CALLOUT_VARIANT),
   },
 }
 

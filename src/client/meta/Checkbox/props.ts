@@ -41,7 +41,7 @@ const CHECKBOX_PROPS_META: ComponentMeta<CheckboxProps>['props'] = {
   variant: {
     ...BOX_PROPS_META.variant,
     options: CHECKBOX_VARIANTS,
-    defaultValue: DEFAULT_CHECKBOX_VARIANT,
+    defaultValue: String(DEFAULT_CHECKBOX_VARIANT),
   },
 }
 
