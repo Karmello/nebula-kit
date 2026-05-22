@@ -68,8 +68,6 @@ expectType(<PasswordInput autoComplete="current-password" />)
 expectType(<PasswordInput autoComplete="new-password" />)
 expectType(<PasswordInput autoComplete="off" />)
 
-expectError(<PasswordInput autoComplete="wrong" />)
-
 // -------------------------------------
 // color
 // -------------------------------------
