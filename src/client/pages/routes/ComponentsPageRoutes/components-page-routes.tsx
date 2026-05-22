@@ -3,30 +3,28 @@ import { Navigate, Route, Routes } from 'react-router'
 
 import { ComponentOverviewPage, ComponentPropsPage, ComponentExamplesPage, ComponentChangelogPage } from 'client/pages'
 
-import { CORE_PAGE_CATEGORIES, PRO_PAGE_CATEGORIES, PageKey } from 'client/definitions'
+import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
 import { NextPageButton } from 'client/components'
 import { Spacer } from 'lib/components'
 
-const PageResolver = ({ pageKey, sectionKey }: { pageKey: PageKey.core | PageKey.pro; sectionKey: string }) => {
+const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
   switch (sectionKey) {
     case 'overview':
-      return <ComponentOverviewPage pageKey={pageKey} />
+      return <ComponentOverviewPage />
     case 'props':
-      return <ComponentPropsPage pageKey={pageKey} />
+      return <ComponentPropsPage />
     case 'examples':
-      return <ComponentExamplesPage pageKey={pageKey} />
+      return <ComponentExamplesPage />
     case 'changelog':
-      return <ComponentChangelogPage pageKey={pageKey} />
+      return <ComponentChangelogPage />
     default:
       return null
   }
 }
 
-export const ComponentsPageRoutes = ({ pageKey }: { pageKey: PageKey.core | PageKey.pro }) => {
-  const CATEGORIES = pageKey === PageKey.core ? CORE_PAGE_CATEGORIES : PRO_PAGE_CATEGORIES
-
+export const ComponentsPageRoutes = ({ pageKey }: { pageKey: PageKey.foundations | PageKey.components }) => {
   const ROUTES = useMemo(() => {
-    return CATEGORIES.map(({ key: categoryKey, items }) =>
+    return COMPONENT_CATEGORIES.map(({ key: categoryKey, items }) =>
       items.map(({ key: itemKey, sections }) =>
         sections.map(({ key: sectionKey }) => {
           return (
@@ -35,7 +33,7 @@ export const ComponentsPageRoutes = ({ pageKey }: { pageKey: PageKey.core | Page
               path={`${categoryKey}/${itemKey}/${sectionKey}`}
               element={
                 <>
-                  <PageResolver pageKey={pageKey} sectionKey={sectionKey} />
+                  <PageResolver sectionKey={sectionKey} />
                   <NextPageButton pageKey={pageKey} />
                 </>
               }
@@ -58,7 +56,7 @@ export const ComponentsPageRoutes = ({ pageKey }: { pageKey: PageKey.core | Page
             return (
               <Navigate
                 to={{
-                  pathname: `${pageKey}/${CATEGORIES[0].key}/${CATEGORIES[0].items[0].key}/${CATEGORIES[0].items[0].sections[0].key}`,
+                  pathname: `${pageKey}/${COMPONENT_CATEGORIES[0].key}/${COMPONENT_CATEGORIES[0].items[0].key}/${COMPONENT_CATEGORIES[0].items[0].sections[0].key}`,
                 }}
                 replace
               />

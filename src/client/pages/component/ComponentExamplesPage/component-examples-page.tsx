@@ -3,8 +3,8 @@ import { pascalCase } from 'change-case'
 import meta from 'client/meta'
 import { CodeSnippet } from 'client/components'
 import { convertElemToString } from 'client/helpers'
-import { useAppStore, useCorePageStore, useProPageStore } from 'client/store'
-import { ComponentMeta, PageKey } from 'client/definitions'
+import { useAppStore, useComponentsPageStore } from 'client/store'
+import { ComponentMeta } from 'client/definitions'
 import { Box, Flex, Reveal, Spacer, Switch, Text, WithIcon } from 'lib/components'
 import { useCurrentTheme } from 'lib/hooks'
 
@@ -61,14 +61,13 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   )
 }
 
-export const ComponentExamplesPage = ({ pageKey }: { pageKey: PageKey.core | PageKey.pro }) => {
+export const ComponentExamplesPage = () => {
   const flipGlobalThemeOnExamples = useAppStore(state => state.flipGlobalThemeOnExamples)
   const setFlipGlobalThemeOnExamples = useAppStore(state => state.setFlipGlobalThemeOnExamples)
 
-  const corePageItemKey = useCorePageStore(state => state.itemKey)
-  const proPageItemKey = useProPageStore(state => state.itemKey)
+  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
 
-  const itemKeyPascal = pascalCase((pageKey === PageKey.core ? corePageItemKey : proPageItemKey) || '')
+  const itemKeyPascal = pascalCase(componentsPageItemKey || '')
 
   if (!meta[itemKeyPascal]) return null
 

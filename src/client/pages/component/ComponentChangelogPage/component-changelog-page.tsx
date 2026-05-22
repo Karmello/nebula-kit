@@ -1,15 +1,13 @@
 import { pascalCase } from 'change-case'
 
 import meta from 'client/meta'
-import { PageKey } from 'client/definitions'
-import { useCorePageStore, useProPageStore } from 'client/store'
+import { useComponentsPageStore } from 'client/store'
 import { Box, Flex, MarkerList, Markup, Section, Spacer, Text } from 'lib/components'
 
-export const ComponentChangelogPage = ({ pageKey }: { pageKey: PageKey.core | PageKey.pro }) => {
-  const corePageItemKey = useCorePageStore(state => state.itemKey)
-  const proPageItemKey = useProPageStore(state => state.itemKey)
+export const ComponentChangelogPage = () => {
+  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
 
-  const itemKeyPascal = pascalCase((pageKey === PageKey.core ? corePageItemKey : proPageItemKey) || '')
+  const itemKeyPascal = pascalCase(componentsPageItemKey || '')
 
   if (!meta[itemKeyPascal]) return null
 

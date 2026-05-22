@@ -3,8 +3,7 @@ import { Routes, Route, Navigate } from 'react-router'
 import {
   HomePage,
   FoundationsPage,
-  CorePage,
-  ProPage,
+  ComponentsPage,
   FaqPage,
   BlogPage,
   PricingPage,
@@ -33,8 +32,7 @@ export const RootPage = () => {
         <Route path={PageKey.patterns} Component={PatternsPage} />
         <Route path={PageKey.playground} Component={PlaygroundPage} />
         <Route path={`${PageKey.foundations}/*`} Component={FoundationsPage} />
-        <Route path={`${PageKey.core}/*`} Component={CorePage} />
-        <Route path={`${PageKey.pro}/*`} Component={ProPage} />
+        <Route path={`${PageKey.components}/*`} Component={ComponentsPage} />
         <Route path={PageKey.faq} Component={FaqPage} />
         <Route path={PageKey.blog} Component={BlogPage} />
         <Route path={PageKey.pricing} Component={PricingPage} />

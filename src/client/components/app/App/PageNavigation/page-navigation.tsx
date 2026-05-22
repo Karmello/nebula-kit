@@ -2,7 +2,7 @@ import { useLocation } from 'react-router'
 
 import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
-import { useAppStore, useCorePageStore, useProPageStore, useFoundationsPageStore, usePatternsStore } from 'client/store'
+import { useAppStore, useComponentsPageStore, useFoundationsPageStore, usePatternsStore } from 'client/store'
 import { Button, Flex, Link } from 'lib/components'
 
 type Props = {
@@ -20,12 +20,10 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
   const foundationsPageCategoryKey = useFoundationsPageStore(state => state.categoryKey)
   const foundationsPageItemKey = useFoundationsPageStore(state => state.itemKey)
   const foundationsPageSectionKey = useFoundationsPageStore(state => state.sectionKey)
-  const corePageCategoryKey = useCorePageStore(state => state.categoryKey)
-  const corePageItemKey = useCorePageStore(state => state.itemKey)
-  const corePageSectionKey = useCorePageStore(state => state.sectionKey)
-  const proPageCategoryKey = useProPageStore(state => state.categoryKey)
-  const proPageItemKey = useProPageStore(state => state.itemKey)
-  const proPageSectionKey = useProPageStore(state => state.sectionKey)
+
+  const componentsPageCategoryKey = useComponentsPageStore(state => state.categoryKey)
+  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
+  const componentsPageSectionKey = useComponentsPageStore(state => state.sectionKey)
 
   const currentPageKey = `/${pathname.split('/')[1]}`
 
@@ -123,41 +121,21 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
       </Flex.Item>
       <Flex.Item hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
         <Link
-          href={`${PageKey.core}/${corePageCategoryKey}/${corePageItemKey}/${corePageSectionKey}`}
+          href={`${PageKey.components}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
-            navigateTo(`${PageKey.core}/${corePageCategoryKey}/${corePageItemKey}/${corePageSectionKey}`)
+            navigateTo(`${PageKey.components}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`)
           }}
         >
           <Button
             intent="muted"
-            selected={currentPageKey === PageKey.core}
-            bold={currentPageKey === PageKey.core}
+            selected={currentPageKey === PageKey.components}
+            bold={currentPageKey === PageKey.components}
             iconName="package"
             fullWidth
             minInlineSize="90px"
           >
-            Core
-          </Button>
-        </Link>
-      </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
-        <Link
-          href={`${PageKey.pro}/${proPageCategoryKey}/${proPageItemKey}/${proPageSectionKey}`}
-          onClick={async () => {
-            if (mainOpen) await setMainOpen(false)
-            navigateTo(`${PageKey.pro}/${proPageCategoryKey}/${proPageItemKey}/${proPageSectionKey}`)
-          }}
-        >
-          <Button
-            intent="muted"
-            selected={currentPageKey === PageKey.pro}
-            bold={currentPageKey === PageKey.pro}
-            iconName="star"
-            fullWidth
-            minInlineSize="80px"
-          >
-            Pro
+            Components
           </Button>
         </Link>
       </Flex.Item>

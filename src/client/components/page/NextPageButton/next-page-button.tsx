@@ -1,12 +1,12 @@
 import { useLayoutEffect, useState } from 'react'
 
-import { PageKey, FOUNDATIONS_SECTIONS, CORE_PAGE_SECTIONS, PRO_PAGE_SECTIONS } from 'client/definitions'
-import { useCorePageStore, useFoundationsPageStore, useProPageStore } from 'client/store'
+import { PageKey, FOUNDATIONS_SECTIONS, COMPONENTS_PAGE_SECTIONS } from 'client/definitions'
+import { useComponentsPageStore, useFoundationsPageStore } from 'client/store'
 import { useNavigateTo } from 'client/hooks'
 import { Flex, Button, Link } from 'lib/components'
 
 export type NextPageButtonProps = {
-  pageKey: PageKey.foundations | PageKey.core | PageKey.pro
+  pageKey: PageKey.foundations | PageKey.components
 }
 
 type Section = { categoryKey: string; itemKey: string; sectionKey: string }
@@ -19,12 +19,10 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
   const foundationsPageCategoryKey = useFoundationsPageStore(state => state.categoryKey)
   const foundationsPageItemKey = useFoundationsPageStore(state => state.itemKey)
   const foundationsPageSectionKey = useFoundationsPageStore(state => state.sectionKey)
-  const corePageCategoryKey = useCorePageStore(state => state.categoryKey)
-  const corePageItemKey = useCorePageStore(state => state.itemKey)
-  const corePageSectionKey = useCorePageStore(state => state.sectionKey)
-  const proPageCategoryKey = useProPageStore(state => state.categoryKey)
-  const proPageItemKey = useProPageStore(state => state.itemKey)
-  const proPageSectionKey = useProPageStore(state => state.sectionKey)
+
+  const componentsPageCategoryKey = useComponentsPageStore(state => state.categoryKey)
+  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
+  const componentsPageSectionKey = useComponentsPageStore(state => state.sectionKey)
 
   const MAP = {
     [PageKey.foundations]: {
@@ -35,20 +33,12 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
         sectionKey: foundationsPageSectionKey,
       },
     },
-    [PageKey.core]: {
-      sections: CORE_PAGE_SECTIONS,
+    [PageKey.components]: {
+      sections: COMPONENTS_PAGE_SECTIONS,
       keys: {
-        categoryKey: corePageCategoryKey,
-        itemKey: corePageItemKey,
-        sectionKey: corePageSectionKey,
-      },
-    },
-    [PageKey.pro]: {
-      sections: PRO_PAGE_SECTIONS,
-      keys: {
-        categoryKey: proPageCategoryKey,
-        itemKey: proPageItemKey,
-        sectionKey: proPageSectionKey,
+        categoryKey: componentsPageCategoryKey,
+        itemKey: componentsPageItemKey,
+        sectionKey: componentsPageSectionKey,
       },
     },
   }

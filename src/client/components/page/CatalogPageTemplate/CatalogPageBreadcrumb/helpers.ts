@@ -1,8 +1,6 @@
-import { FOUNDATIONS_CATEGORIES, CORE_PAGE_CATEGORIES, PRO_PAGE_CATEGORIES } from 'client/definitions'
+import { FOUNDATIONS_CATEGORIES, COMPONENT_CATEGORIES } from 'client/definitions'
 
-export const parsePageCategories = (
-  pageCategories: typeof FOUNDATIONS_CATEGORIES | typeof CORE_PAGE_CATEGORIES | typeof PRO_PAGE_CATEGORIES
-) => {
+export const parsePageCategories = (pageCategories: typeof FOUNDATIONS_CATEGORIES | typeof COMPONENT_CATEGORIES) => {
   return pageCategories.map(c => ({
     value: c.key,
     label: c.label,

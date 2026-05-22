@@ -1,8 +1,8 @@
 import { pascalCase } from 'change-case'
 
 import meta from 'client/meta'
-import { useCorePageStore, useProPageStore } from 'client/store'
-import { ComponentMeta, PageKey } from 'client/definitions'
+import { useComponentsPageStore } from 'client/store'
+import { ComponentMeta } from 'client/definitions'
 import { CodeSnippet } from 'client/components'
 import { convertElemToString } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'
@@ -79,11 +79,10 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   )
 }
 
-export const ComponentOverviewPage = ({ pageKey }: { pageKey: PageKey.core | PageKey.pro }) => {
-  const corePageItemKey = useCorePageStore(state => state.itemKey)
-  const proPageItemKey = useProPageStore(state => state.itemKey)
+export const ComponentOverviewPage = () => {
+  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
 
-  const itemKeyPascal = pascalCase((pageKey === PageKey.core ? corePageItemKey : proPageItemKey) || '')
+  const itemKeyPascal = pascalCase(componentsPageItemKey || '')
 
   if (!meta[itemKeyPascal]) return null
 

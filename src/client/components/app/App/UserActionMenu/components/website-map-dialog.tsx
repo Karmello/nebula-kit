@@ -74,19 +74,11 @@ export const WebsiteMapDialog = () => {
           </Button>
           <Button
             {...commonButtonProps}
-            description="Documentation for free components."
+            description="Documentation for all components."
             customSvgIcon={<Icon {...commonIconProps} name="package" />}
-            onClick={() => handleClick(PageKey.core)}
+            onClick={() => handleClick(PageKey.components)}
           >
-            Core
-          </Button>
-          <Button
-            {...commonButtonProps}
-            description="Documentation for paid components."
-            customSvgIcon={<Icon {...commonIconProps} name="star" />}
-            onClick={() => handleClick(PageKey.pro)}
-          >
-            Pro
+            Components
           </Button>
           <Button
             {...commonButtonProps}

@@ -1,6 +1,5 @@
 export * from './useAppStore'
-export * from './useCorePageStore'
+export * from './useComponentsPageStore'
 export * from './useFoundationsPageStore'
 export * from './usePatternsStore'
 export * from './usePlaygroundStore'
-export * from './useProPageStore'

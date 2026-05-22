@@ -1,10 +1,10 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-import { CORE_PAGE_CATEGORIES } from 'client/definitions'
+import { COMPONENT_CATEGORIES } from 'client/definitions'
 import { LIB_PREFIX } from 'lib/definitions'
 
-export type CorePageStore = {
+export type ComponentsPageStore = {
   categoryKey: string
   setCategoryKey: (categoryKey: string) => void
   itemKey: string
@@ -13,18 +13,18 @@ export type CorePageStore = {
   setSectionKey: (sectionKey: string) => void
 }
 
-export const useCorePageStore = create<CorePageStore>()(
+export const useComponentsPageStore = create<ComponentsPageStore>()(
   persist(
     set => ({
-      categoryKey: CORE_PAGE_CATEGORIES[0].key,
+      categoryKey: COMPONENT_CATEGORIES[0].key,
       setCategoryKey: categoryKey => set(() => ({ categoryKey })),
-      itemKey: CORE_PAGE_CATEGORIES[0].items[0].key,
+      itemKey: COMPONENT_CATEGORIES[0].items[0].key,
       setItemKey: itemKey => set(() => ({ itemKey })),
-      sectionKey: CORE_PAGE_CATEGORIES[0].items[0].sections[0].key,
+      sectionKey: COMPONENT_CATEGORIES[0].items[0].sections[0].key,
       setSectionKey: sectionKey => set(() => ({ sectionKey })),
     }),
     {
-      name: `${LIB_PREFIX}.core`,
+      name: `${LIB_PREFIX}.components`,
     }
   )
 )

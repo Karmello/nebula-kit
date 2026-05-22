@@ -11,7 +11,7 @@ import { CatalogPageBreadcrumb } from './CatalogPageBreadcrumb'
 
 type Props = {
   pathname: string
-  pageKey: PageKey.foundations | PageKey.core | PageKey.pro
+  pageKey: PageKey.foundations | PageKey.components
   data: {
     key: string
     label: string
