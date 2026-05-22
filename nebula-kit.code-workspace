@@ -21,6 +21,10 @@
       "path": "src/client",
     },
     {
+      "name": "definitions",
+      "path": "src/client/definitions",
+    },
+    {
       "name": "meta",
       "path": "src/client/meta",
     },

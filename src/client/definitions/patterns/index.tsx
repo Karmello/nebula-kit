@@ -15,3 +15,5 @@ export const PATTERNS: Array<Pattern> = [
   CONTENT_CARD,
   CENTERED_FORM,
 ]
+
+export * from './definitions'

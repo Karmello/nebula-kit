@@ -3,7 +3,7 @@ import { memo } from 'react'
 import meta from 'client/meta'
 import { useNavigateTo } from 'client/hooks'
 import { ComponentsPageRoutes, FoundationsPageRoutes } from 'client/pages'
-import { usePlaygroundStore } from 'client/pages/app/PlaygroundPage/store'
+import { usePlaygroundStore } from 'client/store'
 import { PageKey, PLAYGROUND_PROPS_MAP } from 'client/definitions'
 import { Box, SideNav, Spacer, SplitView, Text, Divider, Flex, Link, Button } from 'lib/components'
 

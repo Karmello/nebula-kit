@@ -1,6 +1,5 @@
+import { usePlaygroundStore } from 'client/store'
 import { Flex, Icon, Select, Spacer, Text, Tooltip } from 'lib/components'
-
-import { usePlaygroundStore } from '../../store'
 
 export const PropSelect = () => {
   const components = usePlaygroundStore(state => state.components)

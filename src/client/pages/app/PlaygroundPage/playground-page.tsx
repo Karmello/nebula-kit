@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-import { useAppStore } from 'client/store'
+import { useAppStore, usePlaygroundStore, getInitialState } from 'client/store'
 import { Box, Flex, Section, Spacer, SplitView } from 'lib/components'
 import { LIB_PREFIX } from 'lib/definitions'
 
@@ -15,9 +15,6 @@ import {
   DocsButton,
   PredefinedExamples,
 } from './components'
-
-import { getInitialState } from './store/get-initial-state'
-import { usePlaygroundStore } from './store'
 
 export const PlaygroundPage = () => {
   const theme = useAppStore(state => state.theme)

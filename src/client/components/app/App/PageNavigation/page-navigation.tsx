@@ -2,7 +2,7 @@ import { useLocation } from 'react-router'
 
 import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
-import { useAppStore, useCorePageStore, useProPageStore, useFoundationsPageStore } from 'client/store'
+import { useAppStore, useCorePageStore, useProPageStore, useFoundationsPageStore, usePatternsStore } from 'client/store'
 import { Button, Flex, Link } from 'lib/components'
 
 type Props = {
@@ -15,6 +15,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
   const { pathname } = useLocation()
   const navigateTo = useNavigateTo()
   const user = useAppStore(state => state.user)
+  const activePatternId = usePatternsStore(state => state.activePatternId)
 
   const foundationsPageCategoryKey = useFoundationsPageStore(state => state.categoryKey)
   const foundationsPageItemKey = useFoundationsPageStore(state => state.itemKey)
@@ -63,7 +64,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
           href={PageKey.patterns}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
-            navigateTo(PageKey.patterns)
+            navigateTo(`${PageKey.patterns}?id=${activePatternId}`)
           }}
         >
           <Button

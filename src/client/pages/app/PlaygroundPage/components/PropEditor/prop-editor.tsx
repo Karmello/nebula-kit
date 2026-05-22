@@ -1,7 +1,7 @@
+import { usePlaygroundStore } from 'client/store'
 import { Flex } from 'lib/components'
 import { BREAKPOINTS } from 'lib/definitions'
 
-import { usePlaygroundStore } from '../../store'
 import { PropValueControl } from './components'
 
 export const PropEditor = () => {

@@ -3,9 +3,8 @@ import { kebabCase } from 'change-case'
 
 import { CORE_PAGE_CATEGORIES, PRO_PAGE_CATEGORIES } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
+import { usePlaygroundStore } from 'client/store'
 import { Button, Link } from 'lib/components'
-
-import { usePlaygroundStore } from '../../store'
 
 export const DocsButton = () => {
   const navigateTo = useNavigateTo()

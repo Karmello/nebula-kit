@@ -117,13 +117,7 @@ export const Button = <T extends ButtonTag = 'button'>({
               {children}
             </Text>
             {description && size === 'xl' ? (
-              <Text
-                tag="span"
-                fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
-                lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
-                textAlign={align === 'center' ? 'center' : undefined}
-                truncate
-              >
+              <Text tag="span" typography="small" textAlign={align === 'center' ? 'center' : undefined} truncate>
                 {description}
               </Text>
             ) : null}
