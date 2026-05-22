@@ -12,17 +12,8 @@ export const COMPONENT_CATEGORIES = [
     items: [
       { key: 'html-tag', label: 'HtmlTag', sections, bundle: 'core' },
       { key: 'box', label: 'Box', sections, bundle: 'core' },
-      { key: 'text', label: 'Text', sections, bundle: 'core' },
-      { key: 'image', label: 'Image', sections, bundle: 'core' },
     ],
   },
-
-  {
-    key: 'typography',
-    label: 'Typography',
-    items: [{ key: 'markup', label: 'Markup', sections, bundle: 'pro' }],
-  },
-
   {
     key: 'layout',
     label: 'Layout',
@@ -34,10 +25,25 @@ export const COMPONENT_CATEGORIES = [
       { key: 'spacer', label: 'Spacer', sections, bundle: 'core' },
       { key: 'divider', label: 'Divider', sections, bundle: 'core' },
       { key: 'with-icon', label: 'WithIcon', sections, bundle: 'core' },
-      { key: 'virtual-list', label: 'VirtualList', sections, bundle: 'pro' },
     ],
   },
-
+  {
+    key: 'typography',
+    label: 'Typography',
+    items: [
+      { key: 'text', label: 'Text', sections, bundle: 'core' },
+      { key: 'icon', label: 'Icon', sections, bundle: 'core' },
+      { key: 'markup', label: 'Markup', sections, bundle: 'pro' },
+    ],
+  },
+  {
+    key: 'images',
+    label: 'Images',
+    items: [
+      { key: 'image', label: 'Image', sections, bundle: 'core' },
+      { key: 'avatar', label: 'Avatar', sections, bundle: 'pro' },
+    ],
+  },
   {
     key: 'motion',
     label: 'Motion',
@@ -47,7 +53,6 @@ export const COMPONENT_CATEGORIES = [
       { key: 'slide', label: 'Slide', sections, bundle: 'core' },
     ],
   },
-
   {
     key: 'controls',
     label: 'Controls',
@@ -57,17 +62,6 @@ export const COMPONENT_CATEGORIES = [
       { key: 'tabs', label: 'Tabs', sections, bundle: 'pro' },
     ],
   },
-
-  {
-    key: 'elements',
-    label: 'Elements',
-    items: [
-      { key: 'icon', label: 'Icon', sections, bundle: 'core' },
-      { key: 'marker-list', label: 'MarkerList', sections, bundle: 'core' },
-      { key: 'avatar', label: 'Avatar', sections, bundle: 'pro' },
-    ],
-  },
-
   {
     key: 'containers',
     label: 'Containers',
@@ -76,7 +70,15 @@ export const COMPONENT_CATEGORIES = [
       { key: 'reveal', label: 'Reveal', sections, bundle: 'core' },
     ],
   },
-
+  {
+    key: 'navigation',
+    label: 'Navigation',
+    items: [
+      { key: 'side-nav', label: 'SideNav', sections, bundle: 'pro' },
+      { key: 'breadcrumb', label: 'Breadcrumb', sections, bundle: 'pro' },
+      { key: 'pagination', label: 'Pagination', sections, bundle: 'pro' },
+    ],
+  },
   {
     key: 'feedback',
     label: 'Feedback',
@@ -86,18 +88,41 @@ export const COMPONENT_CATEGORIES = [
       { key: 'snackbar', label: 'Snackbar', sections, bundle: 'pro' },
     ],
   },
-
+  {
+    key: 'lists',
+    label: 'Lists',
+    items: [
+      { key: 'marker-list', label: 'MarkerList', sections, bundle: 'core' },
+      { key: 'virtual-list', label: 'VirtualList', sections, bundle: 'pro' },
+    ],
+  },
   {
     key: 'overlays',
     label: 'Overlays',
     items: [
       { key: 'dropdown-list', label: 'DropdownList', sections, bundle: 'core' },
       { key: 'dialog', label: 'Dialog', sections, bundle: 'pro' },
+      { key: 'portal', label: 'Portal', sections, bundle: 'core' },
       { key: 'floating', label: 'Floating', sections, bundle: 'pro' },
       { key: 'tooltip', label: 'Tooltip', sections, bundle: 'pro' },
+      { key: 'focus-trap', label: 'FocusTrap', sections, bundle: 'pro' },
     ],
   },
-
+  {
+    key: 'form-elements',
+    label: 'Form elements',
+    items: [
+      { key: 'form', label: 'Form', sections, bundle: 'pro' },
+      { key: 'input', label: 'Input', sections, bundle: 'core' },
+      { key: 'password-input', label: 'PasswordInput', sections, bundle: 'pro' },
+      { key: 'textarea', label: 'Textarea', sections, bundle: 'core' },
+      { key: 'select', label: 'Select', sections, bundle: 'core' },
+      { key: 'multi-select', label: 'MultiSelect', sections, bundle: 'pro' },
+      { key: 'autocomplete', label: 'Autocomplete', sections, bundle: 'pro' },
+      { key: 'checkbox', label: 'Checkbox', sections, bundle: 'core' },
+      { key: 'switch', label: 'Switch', sections, bundle: 'pro' },
+    ],
+  },
   {
     key: 'layouts',
     label: 'Layouts',
@@ -108,44 +133,17 @@ export const COMPONENT_CATEGORIES = [
       { key: 'toolbar', label: 'Toolbar', sections, bundle: 'pro' },
     ],
   },
-
-  {
-    key: 'navigation',
-    label: 'Navigation',
-    items: [
-      { key: 'side-nav', label: 'SideNav', sections, bundle: 'pro' },
-      { key: 'breadcrumb', label: 'Breadcrumb', sections, bundle: 'pro' },
-      { key: 'pagination', label: 'Pagination', sections, bundle: 'pro' },
-    ],
-  },
-
-  {
-    key: 'form-elements',
-    label: 'Form elements',
-    items: [
-      { key: 'input', label: 'Input', sections, bundle: 'core' },
-      { key: 'textarea', label: 'Textarea', sections, bundle: 'core' },
-      { key: 'select', label: 'Select', sections, bundle: 'core' },
-      { key: 'checkbox', label: 'Checkbox', sections, bundle: 'core' },
-
-      { key: 'form', label: 'Form', sections, bundle: 'pro' },
-      { key: 'multi-select', label: 'MultiSelect', sections, bundle: 'pro' },
-      { key: 'autocomplete', label: 'Autocomplete', sections, bundle: 'pro' },
-      { key: 'switch', label: 'Switch', sections, bundle: 'pro' },
-      { key: 'password-input', label: 'PasswordInput', sections, bundle: 'pro' },
-    ],
-  },
-
   {
     key: 'utility',
     label: 'Utility',
+    items: [{ key: 'measure', label: 'Measure', sections, bundle: 'pro' }],
+  },
+  {
+    key: 'system',
+    label: 'System',
     items: [
       { key: 'nebkit-provider', label: 'NebkitProvider', sections, bundle: 'core' },
       { key: 'hydration-gate', label: 'HydrationGate', sections, bundle: 'core' },
-      { key: 'portal', label: 'Portal', sections, bundle: 'core' },
-
-      { key: 'focus-trap', label: 'FocusTrap', sections, bundle: 'pro' },
-      { key: 'measure', label: 'Measure', sections, bundle: 'pro' },
     ],
   },
 ]

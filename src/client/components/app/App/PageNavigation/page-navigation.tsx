@@ -57,9 +57,9 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
           </Link>
         </Flex.Item>
       ) : null}
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', sm: toolbarSlot !== 'start' }}>
+      <Flex.Item hidden={{ base: toolbarSlot === 'start', md: toolbarSlot !== 'start' }}>
         <Link
-          href={PageKey.patterns}
+          href={`${PageKey.patterns}?id=${activePatternId}`}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
             navigateTo(`${PageKey.patterns}?id=${activePatternId}`)
@@ -78,26 +78,6 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
         </Link>
       </Flex.Item>
       <Flex.Item hidden={{ base: toolbarSlot === 'start', md: toolbarSlot !== 'start' }}>
-        <Link
-          href={PageKey.playground}
-          onClick={async () => {
-            if (mainOpen) await setMainOpen(false)
-            navigateTo(PageKey.playground)
-          }}
-        >
-          <Button
-            intent="muted"
-            selected={currentPageKey === PageKey.playground}
-            bold={currentPageKey === PageKey.playground}
-            iconName="flask-conical"
-            fullWidth
-            minInlineSize="140px"
-          >
-            Playground
-          </Button>
-        </Link>
-      </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
         <Link
           href={`${PageKey.foundations}/${foundationsPageCategoryKey}/${foundationsPageItemKey}/${foundationsPageSectionKey}`}
           onClick={async () => {
@@ -133,9 +113,29 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             bold={currentPageKey === PageKey.components}
             iconName="package"
             fullWidth
-            minInlineSize="90px"
+            minInlineSize="150px"
           >
             Components
+          </Button>
+        </Link>
+      </Flex.Item>
+      <Flex.Item hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
+        <Link
+          href={PageKey.playground}
+          onClick={async () => {
+            if (mainOpen) await setMainOpen(false)
+            navigateTo(PageKey.playground)
+          }}
+        >
+          <Button
+            intent="muted"
+            selected={currentPageKey === PageKey.playground}
+            bold={currentPageKey === PageKey.playground}
+            iconName="flask-conical"
+            fullWidth
+            minInlineSize="140px"
+          >
+            Playground
           </Button>
         </Link>
       </Flex.Item>
@@ -180,7 +180,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
         </Link>
       </Flex.Item>
       {!user?.plan || user.plan === 'free' ? (
-        <Flex.Item hidden={{ base: toolbarSlot === 'start', xxl: toolbarSlot !== 'start' }}>
+        <Flex.Item hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
           <Link
             href={PageKey.pricing}
             onClick={async () => {

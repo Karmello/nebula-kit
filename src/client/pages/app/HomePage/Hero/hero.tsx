@@ -1,9 +1,11 @@
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
+import { usePatternsStore } from 'client/store'
 import { Button, Flex, Image, Link, Spacer, Text, Tooltip } from 'lib/components'
 
 export const Hero = () => {
   const navigateTo = useNavigateTo()
+  const activePatternId = usePatternsStore(state => state.activePatternId)
 
   return (
     <Flex columnGap="md" rowGap="xl" alignItems="center" flexDirection={{ base: 'column', md: 'row', lg: 'column', xl: 'row' }}>
@@ -15,23 +17,23 @@ export const Hero = () => {
         <Spacer blockSize="lg" />
         <Flex gap="xs" flexWrap="wrap" justifyContent={{ base: 'center', md: 'flex-start' }}>
           <Link
-            href={`${PageKey.foundations}/overview/introduction/why-nebula`}
+            href={`${PageKey.patterns}?id=${activePatternId}`}
             onClick={() => {
-              navigateTo(`${PageKey.foundations}/overview/introduction/why-nebula`)
+              navigateTo(`${PageKey.patterns}?id=${activePatternId}`)
             }}
           >
             <Button color="blue" intent="primary" iconName="arrow-right" iconPlacement="right" size="sm">
-              Foundations
+              Explore patterns
             </Button>
           </Link>
           <Link
-            href={`${PageKey.foundations}/overview/getting-started/installation`}
+            href={PageKey.components}
             onClick={() => {
-              navigateTo(`${PageKey.foundations}/overview/getting-started/installation`)
+              navigateTo(PageKey.components)
             }}
           >
             <Button variant="ghost" color="blue" intent="primary" iconName="arrow-right" iconPlacement="right" size="sm">
-              Getting started
+              Browse components
             </Button>
           </Link>
         </Flex>
