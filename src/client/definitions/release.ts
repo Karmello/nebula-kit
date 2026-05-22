@@ -26,13 +26,14 @@ export const RELEASE_INFO: Record<
   }
 > = {
   '0.11.0': {
-    timestamp: 1779375775922,
-    headline: '...',
+    timestamp: 1779493240132,
+    headline: 'Performance, testing and website refinements',
     changelog: {
       main: [
         'improved tsd coverage and aligned specs more accurately with documented component APIs',
         'optimized Box runtime DOM synchronization by reducing redundant dataset/style mutations and minimizing internal allocation overhead during responsive updates',
         'improved Patterns page',
+        'unified Core and Pro pages into a single Components page',
       ],
     },
   },
