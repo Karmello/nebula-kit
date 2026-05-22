@@ -1,11 +1,11 @@
-import { useCallback, useLayoutEffect, useState } from 'react'
+import { useCallback, useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
 import { PageKey } from 'client/definitions'
 import { useLoginUser, UseLoginUserRes } from 'client/api'
-import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnackbar } from 'lib/components'
+import { Box, Button, Divider, Flex, Form, Input, Link, PasswordInput, Section, Spacer, useSnackbar } from 'lib/components'
 
 type LoginFormValues = {
   email: string
@@ -13,8 +13,6 @@ type LoginFormValues = {
 }
 
 export const LoginPage = () => {
-  const [hidePassword, setHidePassword] = useState<boolean>(true)
-
   const { search } = useLocation()
   const navigateTo = useNavigateTo()
   const { show } = useSnackbar()
@@ -85,18 +83,7 @@ export const LoginPage = () => {
                 <Input placeholder="name@example.com" />
               </Form.Field>
               <Form.Field name="password" label="Password" required minLength={8} maxLength={128}>
-                <Input
-                  tagAttrs={{ type: hidePassword ? 'password' : 'text' }}
-                  endAffix={props => (
-                    <Button
-                      {...props}
-                      tagAttrs={{
-                        onClick: () => setHidePassword(!hidePassword),
-                      }}
-                      iconName={hidePassword ? 'eye-off' : 'eye'}
-                    />
-                  )}
-                />
+                <PasswordInput />
               </Form.Field>
             </Form.Fields>
             <Form.Actions>

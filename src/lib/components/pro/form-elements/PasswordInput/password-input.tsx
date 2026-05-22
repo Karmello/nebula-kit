@@ -18,11 +18,10 @@ export const PasswordInput = ({
   onFocus,
   placeholder,
   readOnly,
+  autoComplete = DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE,
   size,
   value,
   variant,
-  // own
-  autoComplete = DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE,
 }: PasswordInputProps) => {
   const [hidePassword, setHidePassword] = useState<boolean>(true)
 
@@ -53,6 +52,7 @@ export const PasswordInput = ({
       onFocus={onFocus}
       placeholder={placeholder}
       readOnly={readOnly}
+      autoComplete={autoComplete}
       size={size}
       value={value}
       variant={variant}

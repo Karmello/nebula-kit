@@ -1,11 +1,11 @@
-import { useCallback, useState } from 'react'
+import { useCallback } from 'react'
 
 import { UseMakeApiRequestRes, useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
 import { PageKey } from 'client/definitions'
 import { useRegisterUser } from 'client/api'
 
-import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, Text, useSnackbar } from 'lib/components'
+import { Box, Button, Divider, Flex, Form, Input, Link, PasswordInput, Section, Spacer, Text, useSnackbar } from 'lib/components'
 
 type RegisterFormValues = {
   email: string
@@ -13,8 +13,6 @@ type RegisterFormValues = {
 }
 
 export const RegisterPage = () => {
-  const [hidePassword, setHidePassword] = useState<boolean>(true)
-
   const user = useAppStore(state => state.user)
   const { show } = useSnackbar()
   const navigateTo = useNavigateTo()
@@ -69,18 +67,7 @@ export const RegisterPage = () => {
                 <Input placeholder="name@example.com" />
               </Form.Field>
               <Form.Field name="password" label="Password" required minLength={8} maxLength={128}>
-                <Input
-                  tagAttrs={{ type: hidePassword ? 'password' : 'text' }}
-                  endAffix={props => (
-                    <Button
-                      {...props}
-                      tagAttrs={{
-                        onClick: () => setHidePassword(!hidePassword),
-                      }}
-                      iconName={hidePassword ? 'eye-off' : 'eye'}
-                    />
-                  )}
-                />
+                <PasswordInput />
               </Form.Field>
             </Form.Fields>
             <Form.Actions>

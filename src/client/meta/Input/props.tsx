@@ -12,6 +12,10 @@ import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
+  autoComplete: {
+    options: ['HTMLInputAutoCompleteAttribute'],
+    description: 'Controls the browser autocomplete behavior for the input field.',
+  },
   color: BOX_PROPS_META.color,
   defaultValue: {
     options: ['string'],

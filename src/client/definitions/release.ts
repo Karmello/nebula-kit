@@ -32,6 +32,7 @@ export const RELEASE_INFO: Record<
       main: [
         'improved tsd coverage and aligned specs more accurately with documented component APIs',
         'optimized Box runtime DOM synchronization by reducing redundant dataset/style mutations and minimizing internal allocation overhead during responsive updates',
+        'improved Patterns page',
       ],
     },
   },

@@ -6,7 +6,7 @@ import { PATTERNS, PATTERN_CATEGORIES } from 'client/definitions'
 import { CodeSnippet } from 'client/components'
 import { convertElemToString } from 'client/helpers'
 import { usePatternsStore } from 'client/store'
-import { Box, Flex, MultiSelect, Section, SideNav, Spacer, SplitView, Text } from 'lib/components'
+import { Box, Flex, Markup, MultiSelect, Section, SideNav, Spacer, SplitView, Text } from 'lib/components'
 
 export const PatternsPage = () => {
   const navigateTo = useNavigateTo()
@@ -39,7 +39,9 @@ export const PatternsPage = () => {
                       {pattern.title}
                     </Text>
                     <Spacer blockSize="3xs" />
-                    <Text intent="primary">{pattern.description}</Text>
+                    <Markup>
+                      <Text intent="primary">{pattern.description}</Text>
+                    </Markup>
                   </SplitView.MainBar>
                   <Spacer blockSize="lg" />
                   {pattern.jsx ? (

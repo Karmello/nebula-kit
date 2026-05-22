@@ -1,18 +1,13 @@
 import { ComponentMeta } from 'client/definitions'
 import { PasswordInputProps } from 'lib/components'
-
-import {
-  DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE,
-  PASSWORD_INPUT_AUTO_COMPLETE,
-} from 'lib/components/pro/form-elements/PasswordInput/definitions'
+import { DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE } from 'lib/components/pro/form-elements/PasswordInput/definitions'
 
 import { INPUT_PROPS_META } from '../Input/props'
 
 const PASSWORD_INPUT_PROPS_META: ComponentMeta<PasswordInputProps>['props'] = {
   autoComplete: {
-    options: PASSWORD_INPUT_AUTO_COMPLETE,
+    ...INPUT_PROPS_META.autoComplete,
     defaultValue: DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE,
-    description: 'Controls the browser autocomplete behavior for password-related input fields.',
   },
   color: INPUT_PROPS_META.color,
   defaultValue: INPUT_PROPS_META.defaultValue,

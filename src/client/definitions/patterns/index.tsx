@@ -1,19 +1,12 @@
 import { Pattern } from './definitions'
 
-import { DRAWABLE_SURFACE } from './examples/drawable-surface'
-import { THEME_ISLAND } from './examples/theme-island'
-import { RESPONSIVE_STACK } from './examples/responsive-stack'
-import { ACTION_ROW } from './examples/action-row'
-import { CONTENT_CARD } from './examples/content-card'
-import { CENTERED_FORM } from './examples/centered-form'
+import { DRAWABLE_SURFACE } from './examples/system/drawable-surface'
+import { STYLING_ISLAND } from './examples/system/styling-island'
 
-export const PATTERNS: Array<Pattern> = [
-  DRAWABLE_SURFACE,
-  THEME_ISLAND,
-  RESPONSIVE_STACK,
-  ACTION_ROW,
-  CONTENT_CARD,
-  CENTERED_FORM,
-]
+import { RESPONSIVE_STACK } from './examples/layout/responsive-stack'
+
+import { LOGIN_FORM } from './examples/forms/login-form'
+
+export const PATTERNS: Array<Pattern> = [DRAWABLE_SURFACE, STYLING_ISLAND, RESPONSIVE_STACK, LOGIN_FORM]
 
 export * from './definitions'

@@ -1,17 +1,10 @@
 import { InputProps } from 'lib/components'
 
-export const PASSWORD_INPUT_AUTO_COMPLETE = ['current-password', 'new-password', 'off'] as const
-
 export const DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE: PasswordInputProps['autoComplete'] = 'current-password'
-
-export type PasswordInputAutoComplete = (typeof PASSWORD_INPUT_AUTO_COMPLETE)[number]
-
-type PasswordInputOwnProps = {
-  autoComplete?: PasswordInputAutoComplete
-}
 
 type PropsFromInput = Pick<
   InputProps,
+  | 'autoComplete'
   | 'color'
   | 'defaultValue'
   | 'disabled'
@@ -29,4 +22,4 @@ type PropsFromInput = Pick<
   | 'variant'
 >
 
-export type PasswordInputProps = PropsFromInput & PasswordInputOwnProps
+export type PasswordInputProps = PropsFromInput

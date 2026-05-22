@@ -15,6 +15,7 @@ const INPUT_META: ComponentMeta<InputProps> = {
   props: INPUT_PROPS_META,
   examples: INPUT_EXAMPLES_META,
   changelog: {
+    '0.11.0': ['added `autoComplete` prop'],
     '0.9.0': ['added `maxLength` prop'],
     '0.2.3': ['released'],
   },

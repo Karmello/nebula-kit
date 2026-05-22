@@ -30,6 +30,7 @@ export const Input = ({
   placeholder,
   readOnly,
   maxLength,
+  autoComplete,
 }: InputProps) => {
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
@@ -71,6 +72,7 @@ export const Input = ({
             placeholder,
             readOnly,
             maxLength,
+            autoComplete,
           }}
           tagRef={tagRef}
           drawable

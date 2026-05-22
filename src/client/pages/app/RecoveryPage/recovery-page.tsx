@@ -1,15 +1,12 @@
-import { useState } from 'react'
 import { useLocation } from 'react-router'
 
 import { useRecoverPassword, useRecoverPasswordConfirm, UseRecoverPasswordRes } from 'client/api'
 import { useAppStore } from 'client/store'
 import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
-import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnackbar } from 'lib/components'
+import { Box, Button, Divider, Flex, Form, Input, Link, PasswordInput, Section, Spacer, useSnackbar } from 'lib/components'
 
 export const RecoveryPage = () => {
-  const [hidePassword, setHidePassword] = useState<boolean>(true)
-
   const user = useAppStore(state => state.user)
   const { search } = useLocation()
   const navigateTo = useNavigateTo()
@@ -55,22 +52,7 @@ export const RecoveryPage = () => {
                 </Form.Field>
               ) : (
                 <Form.Field name="newPassword" label="New password" required minLength={8} maxLength={128}>
-                  <Input
-                    tagAttrs={{
-                      type: hidePassword ? 'password' : 'text',
-                      autoComplete: 'off',
-                    }}
-                    placeholder="Enter password"
-                    endAffix={props => (
-                      <Button
-                        {...props}
-                        tagAttrs={{
-                          onClick: () => setHidePassword(!hidePassword),
-                        }}
-                        iconName={hidePassword ? 'eye-off' : 'eye'}
-                      />
-                    )}
-                  />
+                  <PasswordInput placeholder="Enter password" autoComplete="off" />
                 </Form.Field>
               )}
             </Form.Fields>
