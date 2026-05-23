@@ -1,7 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { CALLOUT_STATUSES, DEFAULT_CALLOUT_STATUS } from 'lib/components/core/Callout'
-
-import { DEFAULT_SNACKBAR_PLACEMENT, SNACKBAR_PLACEMENTS, UseSnackbarShowArgs } from 'lib/components/pro/feedback/Snackbar'
+import { DEFAULT_SNACKBAR_PLACEMENT, SNACKBAR_PLACEMENTS, UseSnackbarShowArgs } from 'lib/components/pro/Snackbar'
 
 const USE_SNACKBAR_PROPS_META: ComponentMeta<UseSnackbarShowArgs>['props'] = {
   content: {

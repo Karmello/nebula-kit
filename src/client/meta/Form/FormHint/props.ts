@@ -1,8 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { TEXT_PROPS_META } from 'client/meta/Text/props'
 import { WITH_ICON_PROPS_META } from 'client/meta/WithIcon/props'
-
-import { DEFAULT_FORM_HINT_INTENT, FormHintProps } from 'lib/components/pro/form-elements/Form'
+import { DEFAULT_FORM_HINT_INTENT, FormHintProps } from 'lib/components/pro/Form'
 
 const FORM_HINT_PROPS_META: ComponentMeta<FormHintProps>['props'] = {
   bold: TEXT_PROPS_META.bold,

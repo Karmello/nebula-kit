@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { DROPDOWN_LIST_ITEM_PROPS_META } from 'client/meta/DropdownList/DropdownListItem/props'
 import { AutocompleteOptionProps } from 'lib/components'
-import { DEFAULT_AUTOCOMPLETE_OPTION_ALIGN } from 'lib/components/pro/form-elements/Autocomplete'
+import { DEFAULT_AUTOCOMPLETE_OPTION_ALIGN } from 'lib/components/pro/Autocomplete'
 
 const AUTOCOMPLETE_OPTION_PROPS_META: ComponentMeta<AutocompleteOptionProps>['props'] = {
   align: {

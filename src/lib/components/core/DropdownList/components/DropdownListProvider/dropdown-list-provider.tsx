@@ -1,6 +1,6 @@
 import { createContext, useContext, ReactNode, RefObject } from 'react'
 
-import { FloatingResolved } from '../../../../pro/overlays/Floating'
+import { FloatingResolved } from '../../../../pro/Floating'
 import { DropdownListProps } from '../../definitions'
 
 type ContextValue = {

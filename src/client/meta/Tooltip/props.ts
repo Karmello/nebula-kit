@@ -11,7 +11,7 @@ import {
   DEFAULT_TOOLTIP_VARIANT,
   TOOLTIP_MODES,
   TOOLTIP_VARIANTS,
-} from 'lib/components/pro/overlays/Tooltip'
+} from 'lib/components/pro/Tooltip'
 
 import { BOX_PROPS_META } from '../Box/props'
 

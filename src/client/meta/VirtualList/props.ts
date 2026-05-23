@@ -5,7 +5,7 @@ import {
   DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN,
   DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX,
   VIRTUAL_LIST_SCROLL_ALIGN,
-} from 'lib/components/pro/layout/VirtualList'
+} from 'lib/components/pro/VirtualList'
 
 import { BOX_PROPS_META } from '../Box/props'
 

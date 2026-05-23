@@ -1,14 +1,9 @@
-// controls
-export { Tabs, type TabsProps, type TabsTabProps, type TabsPanelProps } from './controls/Tabs'
-
-// elements
-export { Avatar, type AvatarProps } from './elements/Avatar'
-
-// feedback
-export { Snackbar, type SnackbarProps, useSnackbar } from './feedback/Snackbar'
-
-// form-elements
-export { Autocomplete, type AutocompleteProps, type AutocompleteOptionProps } from './form-elements/Autocomplete'
+export { Autocomplete, type AutocompleteProps, type AutocompleteOptionProps } from './Autocomplete'
+export { Avatar, type AvatarProps } from './Avatar'
+export { Breadcrumb, type BreadcrumbProps } from './Breadcrumb'
+export { Dialog, type DialogProps, type DialogHeaderProps, type DialogContentProps, type DialogFooterProps } from './Dialog'
+export { Floating, type FloatingProps, type FloatingResolved } from './Floating'
+export { FocusTrap, type FocusTrapProps } from './FocusTrap'
 
 export {
   Form,
@@ -19,51 +14,26 @@ export {
   type FormFieldsProps,
   type FormHintProps,
   type FormLabelProps,
-} from './form-elements/Form'
+} from './Form'
 
-export { MultiSelect, type MultiSelectProps, type MultiSelectOptionProps } from './form-elements/MultiSelect'
-export { PasswordInput, type PasswordInputProps } from './form-elements/PasswordInput'
-export { Switch, type SwitchProps } from './form-elements/Switch'
+export { Markup, type MarkupProps } from './Markup'
+export { Measure, type MeasureProps } from './Measure'
+export { MultiSelect, type MultiSelectProps, type MultiSelectOptionProps } from './MultiSelect'
+export { Pagination, type PaginationProps } from './Pagination'
+export { PasswordInput, type PasswordInputProps } from './PasswordInput'
+export { SideNav, type SideNavProps, type SideNavCategoryProps, type SideNavItemProps } from './SideNav'
+export { Snackbar, type SnackbarProps, useSnackbar } from './Snackbar'
 
-// layout
-export { VirtualList, type VirtualListProps } from './layout/VirtualList'
-
-// layouts
 export {
   SplitView,
   type SplitViewProps,
   type SplitViewMainProps,
   type SplitViewMainBarProps,
   type SplitViewSideProps,
-} from './layouts/SplitView'
+} from './SplitView'
 
-export {
-  Toolbar,
-  type ToolbarProps,
-  type ToolbarStartProps,
-  type ToolbarMainProps,
-  type ToolbarEndProps,
-} from './layouts/Toolbar'
-
-// navigation
-export { Breadcrumb, type BreadcrumbProps } from './navigation/Breadcrumb'
-export { Pagination, type PaginationProps } from './navigation/Pagination'
-export { SideNav, type SideNavProps, type SideNavCategoryProps, type SideNavItemProps } from './navigation/SideNav'
-
-// overlays
-export {
-  Dialog,
-  type DialogProps,
-  type DialogHeaderProps,
-  type DialogContentProps,
-  type DialogFooterProps,
-} from './overlays/Dialog'
-export { Floating, type FloatingProps, type FloatingResolved } from './overlays/Floating'
-export { Tooltip, type TooltipProps } from './overlays/Tooltip'
-
-// typography
-export { Markup, type MarkupProps } from './typography/Markup'
-
-// utility
-export { FocusTrap, type FocusTrapProps } from './utility/FocusTrap'
-export { Measure, type MeasureProps } from './utility/Measure'
+export { Switch, type SwitchProps } from './Switch'
+export { Tabs, type TabsProps, type TabsTabProps, type TabsPanelProps } from './Tabs'
+export { Toolbar, type ToolbarProps, type ToolbarStartProps, type ToolbarMainProps, type ToolbarEndProps } from './Toolbar'
+export { Tooltip, type TooltipProps } from './Tooltip'
+export { VirtualList, type VirtualListProps } from './VirtualList'

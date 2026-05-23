@@ -9,7 +9,7 @@ import {
   DEFAULT_PAGINATION_SHOW_PREV_NEXT,
   DEFAULT_PAGINATION_SIBLING_COUNT,
   DEFAULT_PAGINATION_VARIANT,
-} from 'lib/components/pro/navigation/Pagination'
+} from 'lib/components/pro/Pagination'
 
 import { BUTTON_PROPS_META } from '../Button/props'
 import { BOX_PROPS_META } from '../Box/props'

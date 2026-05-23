@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { PasswordInputProps } from 'lib/components'
-import { DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE } from 'lib/components/pro/form-elements/PasswordInput/definitions'
+import { DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE } from 'lib/components/pro/PasswordInput/definitions'
 
 import { INPUT_PROPS_META } from '../Input/props'
 

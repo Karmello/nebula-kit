@@ -1,7 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { TabsProps } from 'lib/components'
-
-import { DEFAULT_TABS_ORIENTATION, DEFAULT_TABS_VARIANT, TABS_ORIENTATION, TABS_VARIANTS } from 'lib/components/pro/controls/Tabs'
+import { DEFAULT_TABS_ORIENTATION, DEFAULT_TABS_VARIANT, TABS_ORIENTATION, TABS_VARIANTS } from 'lib/components/pro/Tabs'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

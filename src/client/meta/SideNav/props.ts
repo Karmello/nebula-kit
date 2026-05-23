@@ -7,7 +7,7 @@ import {
   DEFAULT_SIDE_NAV_SIZE,
   SIDE_NAV_EXPAND_MODES,
   SIDE_NAV_VARIANTS,
-} from 'lib/components/pro/navigation/SideNav'
+} from 'lib/components/pro/SideNav'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BUTTON_PROPS_META } from '../Button/props'

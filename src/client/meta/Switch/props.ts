@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { SwitchProps } from 'lib/components'
-import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SIZE, SWITCH_INTENTS } from 'lib/components/pro/form-elements/Switch'
+import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SIZE, SWITCH_INTENTS } from 'lib/components/pro/Switch'
 
 import { BOX_PROPS_META } from '../Box/props'
 import { BUTTON_PROPS_META } from '../Button/props'

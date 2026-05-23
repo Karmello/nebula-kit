@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { FLEX_ITEM_PROPS_META } from 'client/meta/Flex/FlexItem/props'
 import { FormFieldProps } from 'lib/components'
-import { DEFAULT_FORM_FIELD_FLEX } from 'lib/components/pro/form-elements/Form'
+import { DEFAULT_FORM_FIELD_FLEX } from 'lib/components/pro/Form'
 
 const FORM_FIELD_PROPS_META: ComponentMeta<FormFieldProps>['props'] = {
   alignSelf: FLEX_ITEM_PROPS_META.alignSelf,

@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { TEXT_PROPS_META } from 'client/meta/Text/props'
 import { WITH_ICON_PROPS_META } from 'client/meta/WithIcon/props'
 import { FormLabelProps } from 'lib/components'
-import { DEFAULT_FORM_LABEL_INTENT } from 'lib/components/pro/form-elements/Form'
+import { DEFAULT_FORM_LABEL_INTENT } from 'lib/components/pro/Form'
 
 const FORM_LABEL_PROPS_META: ComponentMeta<FormLabelProps>['props'] = {
   bold: TEXT_PROPS_META.bold,

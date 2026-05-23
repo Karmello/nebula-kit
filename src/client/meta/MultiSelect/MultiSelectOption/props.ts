@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { DROPDOWN_LIST_ITEM_PROPS_META } from 'client/meta/DropdownList/DropdownListItem/props'
 import { MultiSelectOptionProps } from 'lib/components'
-import { DEFAULT_MULTI_SELECT_OPTION_ALIGN } from 'lib/components/pro/form-elements/MultiSelect'
+import { DEFAULT_MULTI_SELECT_OPTION_ALIGN } from 'lib/components/pro/MultiSelect'
 
 const MULTI_SELECT_OPTION_PROPS_META: ComponentMeta<MultiSelectOptionProps>['props'] = {
   align: {

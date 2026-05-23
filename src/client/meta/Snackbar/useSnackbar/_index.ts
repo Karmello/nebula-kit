@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { UseSnackbarShowArgs } from 'lib/components/pro/feedback/Snackbar'
+import { UseSnackbarShowArgs } from 'lib/components/pro/Snackbar'
 
 import { USE_SNACKBAR_EXAMPLES_META } from './examples'
 import { USE_SNACKBAR_PROPS_META } from './props'

@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/definitions'
-import { SplitViewProps, SPLIT_VIEW_SIDE_POSITIONS } from 'lib/components/pro/layouts/SplitView'
+import { SplitViewProps, SPLIT_VIEW_SIDE_POSITIONS } from 'lib/components/pro/SplitView'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
