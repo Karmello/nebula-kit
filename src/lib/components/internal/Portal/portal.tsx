@@ -6,7 +6,8 @@ import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import { DEFAULT_PORTAL_PLACEMENT, PortalProps } from './definitions'
-import { useThemeContext, useBrandContext } from '../../internal'
+import { useThemeContext } from '../../internal/ThemeProvider'
+import { useBrandContext } from '../../internal/BrandProvider'
 
 export const Portal = ({ children, tagRef, tagAttrs, anchorRef, placement = DEFAULT_PORTAL_PLACEMENT, offset }: PortalProps) => {
   // Holds the DOM node we render the portal into (appended to <body>)
