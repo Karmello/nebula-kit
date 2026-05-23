@@ -2,13 +2,12 @@ import { ComponentMeta } from 'client/definitions'
 import { TabsProps } from 'lib/components'
 import { DEFAULT_TABS_ORIENTATION, DEFAULT_TABS_VARIANT, TABS_ORIENTATION, TABS_VARIANTS } from 'lib/components/pro/Tabs'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 import { BUTTON_PROPS_META } from '../Button/props'
 
 const TABS_PROPS_META: ComponentMeta<TabsProps>['props'] = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     options: ['Tabs.Tab', 'Tabs.Panel'],
     isRequired: true,
     description: 'Available slots.',
@@ -33,8 +32,8 @@ const TABS_PROPS_META: ComponentMeta<TabsProps>['props'] = {
     ...BUTTON_PROPS_META.size,
     description: 'Sets the size of the tab items.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
   value: {
     options: ['string', 'number'],
     description: 'Controls the active tab value.',

@@ -1,4 +1,4 @@
-import { HtmlTagProps, BoxProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 import { FloatingProps } from 'lib/components/internal'
 import { BoxVariant } from 'lib/components/core/Box'
 import { RespValue } from 'lib/definitions'
@@ -18,11 +18,11 @@ export type TooltipOpenReason = TooltipMode
 export type TooltipVariant = (typeof TOOLTIP_VARIANTS)[number]
 export type TooltipMode = (typeof TOOLTIP_MODES)[number]
 
-type PropsFromHtmlTag = Pick<HtmlTagProps, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps['children']
-}
-
-type PropsFromBox = Pick<BoxProps, 'color' | 'intent' | 'padding' | 'paddingBlock' | 'paddingInline' | 'textAlign'> & {
+type PropsFromBox = Pick<
+  BoxProps,
+  'tagAttrs' | 'tagRef' | 'color' | 'intent' | 'padding' | 'paddingBlock' | 'paddingInline' | 'textAlign'
+> & {
+  children: BoxProps['children']
   minInlineSize: number
   maxInlineSize: number
 }
@@ -35,4 +35,4 @@ type TooltipOwnProps = {
   variant?: RespValue<TooltipVariant>
 }
 
-export type TooltipProps = PropsFromHtmlTag & PropsFromBox & TooltipOwnProps
+export type TooltipProps = PropsFromBox & TooltipOwnProps

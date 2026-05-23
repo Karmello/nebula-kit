@@ -8,11 +8,10 @@ import { TabsProps, DEFAULT_TABS_VARIANT, DEFAULT_TABS_INTENT, DEFAULT_TABS_ORIE
 import { TabsContext, TabsContextValue } from './TabsContext'
 
 export const Tabs = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,
-  // Box
   color,
   intent = DEFAULT_TABS_INTENT,
   variant = DEFAULT_TABS_VARIANT,

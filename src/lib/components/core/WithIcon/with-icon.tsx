@@ -8,11 +8,10 @@ import { DEFAULT_WITH_ICON_GAP, DEFAULT_WITH_ICON_ICON_PLACEMENT, WithIconProps 
 import { DEFAULT_TEXT_TYPOGRAPHY } from '../Text'
 
 export const WithIcon = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,
-  // Box
   inlineSize,
   // Flex
   justifyContent,

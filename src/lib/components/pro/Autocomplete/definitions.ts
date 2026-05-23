@@ -1,4 +1,4 @@
-import { BoxProps, DropdownListProps, HtmlTagProps } from 'lib/components'
+import { BoxProps, DropdownListProps } from 'lib/components'
 
 export const DEFAULT_AUTOCOMPLETE_INLINE_SIZE: AutocompleteProps['inlineSize'] = '100%'
 export const DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING: AutocompleteProps['disableFiltering'] = false
@@ -16,15 +16,13 @@ type AutocompleteOwnProps = {
   showToggle?: boolean
 }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'div'>['children']
-}
-
 type PropsFromBox = Pick<BoxProps<'div'>, 'inlineSize' | 'disabled'>
 
 type PropsFromDropdownList = Pick<
   DropdownListProps,
-  'color' | 'size' | 'intent' | 'scrollAlign' | 'visibleItemsCount' | 'noOptionsLabel'
->
+  'tagAttrs' | 'tagRef' | 'color' | 'size' | 'intent' | 'scrollAlign' | 'visibleItemsCount' | 'noOptionsLabel'
+> & {
+  children: DropdownListProps['children']
+}
 
-export type AutocompleteProps = PropsFromHtmlTag & PropsFromBox & PropsFromDropdownList & AutocompleteOwnProps
+export type AutocompleteProps = PropsFromBox & PropsFromDropdownList & AutocompleteOwnProps

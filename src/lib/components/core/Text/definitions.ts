@@ -1,5 +1,3 @@
-import { HtmlTagProps } from 'lib/components'
-
 import { BoxProps } from '../Box'
 
 export const TEXT_TAGS = ['p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a', 'label'] as const
@@ -28,10 +26,11 @@ type TextOwnProps = {
   space?: TextSpace
 }
 
-type PropsFromHtmlTag<T extends TextTag = 'p'> = Omit<HtmlTagProps<T>, 'children'> & {
-  children: HtmlTagProps<T>['children']
+type PropsFromBox<T extends TextTag = 'p'> = Pick<
+  BoxProps<T>,
+  'tag' | 'tagAttrs' | 'tagRef' | 'color' | 'intent' | 'textAlign'
+> & {
+  children: BoxProps<T>['children']
 }
 
-type PropsFromBox<T extends TextTag = 'p'> = Pick<BoxProps<T>, 'color' | 'intent' | 'textAlign'>
-
-export type TextProps<T extends TextTag = 'p'> = PropsFromHtmlTag<T> & PropsFromBox<T> & TextOwnProps
+export type TextProps<T extends TextTag = 'p'> = PropsFromBox<T> & TextOwnProps

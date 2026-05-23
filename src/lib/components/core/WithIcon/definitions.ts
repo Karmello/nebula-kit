@@ -1,4 +1,4 @@
-import { BoxProps, FlexProps, HtmlTagProps, IconProps } from 'lib/components'
+import { BoxProps, FlexProps, IconProps } from 'lib/components'
 import { CssFlexJustifyContent } from 'lib/definitions'
 import { RotateProps } from 'lib/components/core/Rotate/definitions'
 
@@ -18,11 +18,9 @@ type WithIconOwnProps = {
   iconPlacement?: WithIconIconPlacement
 }
 
-type PropsFromHtmlTag = Omit<HtmlTagProps<'span'>, 'tag' | 'children'> & {
-  children: HtmlTagProps<'span'>['children']
+type PropsFromBox = Pick<BoxProps<'span'>, 'tagAttrs' | 'tagRef' | 'inlineSize'> & {
+  children: BoxProps<'span'>['children']
 }
-
-type PropsFromBox = Pick<BoxProps<'span'>, 'inlineSize'>
 
 type PropsFromFlex = Pick<FlexProps, 'gap'> & {
   justifyContent?: WithIconJustifyContent
@@ -40,4 +38,4 @@ type PropsFromRotate = {
   iconAngle?: RotateProps['angle']
 }
 
-export type WithIconProps = PropsFromHtmlTag & PropsFromBox & PropsFromFlex & PropsFromIcon & PropsFromRotate & WithIconOwnProps
+export type WithIconProps = PropsFromBox & PropsFromFlex & PropsFromIcon & PropsFromRotate & WithIconOwnProps

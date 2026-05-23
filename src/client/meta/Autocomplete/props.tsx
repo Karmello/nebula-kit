@@ -7,7 +7,6 @@ import {
   DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
 } from 'lib/components/pro/Autocomplete'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'
 import { BOX_PROPS_META } from '../Box/props'
 
@@ -68,8 +67,8 @@ const AUTOCOMPLETE_PROPS_META: ComponentMeta<AutocompleteProps>['props'] = {
     description: 'Controls whether the dropdown toggle is rendered next to the input.',
   },
   size: DROPDOWN_LIST_PROPS_META.size,
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: DROPDOWN_LIST_PROPS_META.tagAttrs,
+  tagRef: DROPDOWN_LIST_PROPS_META.tagRef,
   value: {
     options: ['string'],
     description: 'Current selected item value when the component is used in controlled mode.',

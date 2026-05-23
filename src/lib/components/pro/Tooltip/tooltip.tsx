@@ -15,11 +15,10 @@ import {
 } from './definitions'
 
 export const Tooltip = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,
-  // Box
   color,
   intent = DEFAULT_TOOLTIP_INTENT,
   padding = DEFAULT_TOOLTIP_PADDING,

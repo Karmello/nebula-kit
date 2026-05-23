@@ -10,12 +10,11 @@ import { DEFAULT_TEXT_TYPOGRAPHY, TextTag, TextProps } from './definitions'
 import './text.scss'
 
 export const Text = <T extends TextTag = 'p'>({
-  // HtmlTag
+  // Box
   children,
   tag,
   tagAttrs,
   tagRef,
-  // Box
   color,
   intent,
   textAlign,

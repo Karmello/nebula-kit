@@ -8,7 +8,6 @@ import {
   WithIconProps,
 } from 'lib/components/core/WithIcon'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { ICON_PROPS_META } from '../Icon/props'
 import { FLEX_PROPS_META } from '../Flex/props'
 import { ROTATE_PROPS_META } from '../Rotate/props'
@@ -17,7 +16,7 @@ import { TEXT_PROPS_META } from '../Text/props'
 
 const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
   children: {
-    ...HTML_TAG_PROPS_META['children'],
+    ...BOX_PROPS_META['children'],
     isRequired: true,
   },
   customSvgIcon: ICON_PROPS_META.children,
@@ -49,8 +48,8 @@ const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
     options: WITH_ICON_JUSTIFY_CONTENT,
     description: 'Distributes an icon and children along the main axis.',
   },
-  tagAttrs: HTML_TAG_PROPS_META['tagAttrs'],
-  tagRef: HTML_TAG_PROPS_META['tagRef'],
+  tagAttrs: BOX_PROPS_META['tagAttrs'],
+  tagRef: BOX_PROPS_META['tagRef'],
 }
 
 export { WITH_ICON_PROPS_META }

@@ -1,4 +1,4 @@
-import { BoxProps, ButtonProps, HtmlTagProps } from 'lib/components'
+import { BoxProps, ButtonProps } from 'lib/components'
 import { BoxVariant } from 'lib/components/core/Box'
 import { RespValue } from 'lib/definitions'
 
@@ -12,11 +12,8 @@ export const DEFAULT_TABS_ORIENTATION: TabsProps['orientation'] = 'horizontal'
 export type TabsVariant = (typeof TABS_VARIANTS)[number]
 export type TabsOrientation = (typeof TABS_ORIENTATION)[number]
 
-type PropsFromHtmlTag = Pick<HtmlTagProps, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps['children']
-}
-
-type PropsFromBox = Pick<BoxProps, 'color' | 'intent' | 'inlineSize'> & {
+type PropsFromBox = Pick<BoxProps, 'tagAttrs' | 'tagRef' | 'color' | 'intent' | 'inlineSize'> & {
+  children: BoxProps['children']
   variant?: RespValue<TabsVariant>
 }
 
@@ -29,4 +26,4 @@ type TabsOwnProps = {
   onChange?: (value: string | number) => void
 }
 
-export type TabsProps = PropsFromHtmlTag & PropsFromBox & PropsFromButton & TabsOwnProps
+export type TabsProps = PropsFromBox & PropsFromButton & TabsOwnProps

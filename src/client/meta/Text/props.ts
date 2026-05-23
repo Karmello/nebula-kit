@@ -8,7 +8,6 @@ import {
   TextProps,
 } from 'lib/components/core/Text/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
@@ -17,7 +16,7 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
     description: 'Toggles bold styling.',
   },
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     isRequired: true,
   },
   clampLines: {
@@ -48,11 +47,11 @@ const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
       'Controls the insertion of non-breaking spaces before and/or after the text content. Useful when composing multiple inline Text elements.',
   },
   tag: {
-    ...HTML_TAG_PROPS_META.tag,
+    ...BOX_PROPS_META.tag,
     defaultValue: 'p',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
   textAlign: BOX_PROPS_META.textAlign,
   truncate: {
     options: ['boolean'],
