@@ -1,6 +1,6 @@
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { IconProps } from 'lib/components'
-import { DEFAULT_ICON_SIZE, ICON_SIZES } from 'lib/components/core/elements/Icon'
+import { DEFAULT_ICON_SIZE, ICON_SIZES } from 'lib/components/core/Icon'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

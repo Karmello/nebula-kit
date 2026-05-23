@@ -2,7 +2,7 @@ import { ReactElement } from 'react'
 import classNames from 'classnames'
 
 import { Flex, FormHintProps, FormLabelProps } from 'lib/components'
-import { WithSlots } from 'lib/components/core/internal'
+import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
 import { DEFAULT_FORM_FIELD_FLEX, FormFieldProps } from './definitions'

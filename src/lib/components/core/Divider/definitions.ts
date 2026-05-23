@@ -1,0 +1,14 @@
+import { HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components/core/Box/definitions'
+
+export const DEFAULT_DIVIDER_INTENT: DividerProps['intent'] = 'muted'
+export const DEFAULT_DIVIDER_MARGIN_BLOCK: DividerProps['marginBlock'] = '3px'
+
+type PropsFromHtmlTag = Pick<HtmlTagProps<'hr'>, 'tagAttrs' | 'tagRef'>
+
+type PropsFromBox = Pick<
+  BoxProps<'hr'>,
+  'color' | 'intent' | 'marginBlock' | 'marginTop' | 'marginBottom' | 'elevated' | 'surface'
+>
+
+export type DividerProps = PropsFromHtmlTag & PropsFromBox

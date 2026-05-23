@@ -12,7 +12,7 @@ import {
   DEFAULT_NEBKIT_RIPPLE_MODE,
   DEFAULT_NEBKIT_SATURATION,
   DEFAULT_NEBKIT_THEME,
-} from 'lib/components/core/utility/NebkitProvider'
+} from 'lib/components/core/NebkitProvider'
 
 export type AppStore = {
   theme: NebkitProviderProps['theme']

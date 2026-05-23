@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { PaginationProps } from 'lib/components'
-import { DEFAULT_BUTTON_SIZE } from 'lib/components/core/controls/Button'
+import { DEFAULT_BUTTON_SIZE } from 'lib/components/core/Button'
 
 import {
   DEFAULT_PAGINATION_BOUNDARY_COUNT,

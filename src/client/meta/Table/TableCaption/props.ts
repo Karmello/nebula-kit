@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { BOX_PROPS_META } from 'client/meta/Box/props'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { TableCaptionProps } from 'lib/components'
-import { DEFAULT_TABLE_CAPTION_INTENT } from 'lib/components/core/layout/Table/slots/TableCaption/definitions'
+import { DEFAULT_TABLE_CAPTION_INTENT } from 'lib/components/core/Table/slots/TableCaption/definitions'
 
 const TABLE_CAPTION_PROPS_META: ComponentMeta<TableCaptionProps>['props'] = {
   children: {

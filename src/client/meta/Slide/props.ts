@@ -1,7 +1,6 @@
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { SlideProps } from 'lib/components'
-
-import { DEFAULT_SLIDE_DURATION, DEFAULT_SLIDE_EASING, SLIDE_FROM } from 'lib/components/core/motion/Slide'
+import { DEFAULT_SLIDE_DURATION, DEFAULT_SLIDE_EASING, SLIDE_FROM } from 'lib/components/core/Slide'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 

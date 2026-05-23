@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { AppFrameFooterProps } from 'lib/components'
 
-import { DEFAULT_APP_FRAME_FOOTER_INTENT } from 'lib/components/core/layouts/AppFrame'
+import { DEFAULT_APP_FRAME_FOOTER_INTENT } from 'lib/components/core/AppFrame'
 
 import { HTML_TAG_PROPS_META } from '../../HtmlTag/props'
 import { BOX_PROPS_META } from '../../Box/props'

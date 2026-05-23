@@ -1,6 +1,5 @@
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
-
-import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING, RotateProps } from 'lib/components/core/motion/Rotate'
+import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING, RotateProps } from 'lib/components/core/Rotate'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 

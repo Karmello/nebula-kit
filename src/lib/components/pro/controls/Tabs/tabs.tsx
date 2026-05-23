@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 
 import { Box, Flex, Segment } from 'lib/components'
-import { WithSlots } from 'lib/components/core/internal'
+import { WithSlots } from 'lib/components/internal'
 
 import { TabsProps, DEFAULT_TABS_VARIANT, DEFAULT_TABS_INTENT, DEFAULT_TABS_ORIENTATION } from './definitions'
 

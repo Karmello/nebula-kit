@@ -11,7 +11,7 @@ import {
   DEFAULT_BUTTON_RIPPLE,
   DEFAULT_BUTTON_INTERACTIVE,
   DEFAULT_BUTTON_ALIGN,
-} from 'lib/components/core/controls/Button/definitions'
+} from 'lib/components/core/Button/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

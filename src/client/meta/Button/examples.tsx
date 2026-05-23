@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { Button, Flex } from 'lib/components'
-import { ButtonProps, BUTTON_SIZES } from 'lib/components/core/controls/Button/definitions'
+import { ButtonProps, BUTTON_SIZES } from 'lib/components/core/Button/definitions'
 
 const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
   {

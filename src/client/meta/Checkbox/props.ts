@@ -7,7 +7,7 @@ import {
   DEFAULT_CHECKBOX_INTENT,
   DEFAULT_CHECKBOX_SIZE,
   DEFAULT_CHECKBOX_VARIANT,
-} from 'lib/components/core/form-elements/Checkbox'
+} from 'lib/components/core/Checkbox'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { Spacer, SpacerProps, Text } from 'lib/components'
-import { DEFAULT_SPACER_BLOCK_SIZE } from 'lib/components/core/layout/Spacer'
+import { DEFAULT_SPACER_BLOCK_SIZE } from 'lib/components/core/Spacer'
 
 const SPACER_EXAMPLES_META: ComponentMeta<SpacerProps>['examples'] = [
   {

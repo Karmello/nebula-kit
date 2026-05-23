@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { SelectProps } from 'lib/components'
-import { DEFAULT_SELECT_INLINE_SIZE } from 'lib/components/core/form-elements/Select'
+import { DEFAULT_SELECT_INLINE_SIZE } from 'lib/components/core/Select'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'

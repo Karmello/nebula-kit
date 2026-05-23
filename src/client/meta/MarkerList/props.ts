@@ -1,11 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-
-import {
-  DEFAULT_MARKER_LIST_GAP,
-  MarkerListProps,
-  MARKER_LIST_STYLES,
-  MARKER_LIST_TAGS,
-} from 'lib/components/core/elements/MarkerList'
+import { DEFAULT_MARKER_LIST_GAP, MarkerListProps, MARKER_LIST_STYLES, MARKER_LIST_TAGS } from 'lib/components/core/MarkerList'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { FLEX_PROPS_META } from '../Flex/props'

@@ -1,8 +1,8 @@
 import { useCallback } from 'react'
 
 import { Grid } from 'lib/components'
-import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/motion/Resize/definitions'
-import { WithSlots } from 'lib/components/core/internal'
+import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize/definitions'
+import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 import { DEFAULT_SWITCH_AT } from 'lib/definitions'
 import { updateDomStaticDataset } from 'lib/service'

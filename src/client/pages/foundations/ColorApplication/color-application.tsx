@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { sentenceCase } from 'change-case'
 
 import { Box, Button, Grid, Select, Spacer, Text, Switch, Flex } from 'lib/components'
-import { BOX_VARIANTS, BOX_INTENTS, BoxVariant } from 'lib/components/core/base/Box/definitions'
+import { BOX_VARIANTS, BOX_INTENTS, BoxVariant } from 'lib/components/core/Box/definitions'
 import { COLORS } from 'lib/definitions'
 
 const STATES = ['rest', 'selected', 'disabled', 'loading'] as const

@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { LinkProps } from 'lib/components'
-import { DEFAULT_LINK_TARGET, LINK_TARGETS } from 'lib/components/core/controls/Link'
+import { DEFAULT_LINK_TARGET, LINK_TARGETS } from 'lib/components/core/Link'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 

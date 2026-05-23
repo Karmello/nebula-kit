@@ -1,5 +1,5 @@
 import { ButtonProps, FlexProps, HtmlTagProps } from 'lib/components'
-import { BoxVariant } from 'lib/components/core/base/Box'
+import { BoxVariant } from 'lib/components/core/Box'
 import { RespValue } from 'lib/definitions'
 
 export const SIDE_NAV_EXPAND_MODES = ['single', 'multiple'] as const

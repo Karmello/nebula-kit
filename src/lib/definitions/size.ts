@@ -1,4 +1,4 @@
-import { TextTag, TextTypography } from 'lib/components/core/base/Text/definitions'
+import { TextTag, TextTypography } from 'lib/components/core/Text/definitions'
 
 // constants
 

@@ -6,7 +6,7 @@ import {
   WITH_ICON_ICON_PLACEMENTS,
   WITH_ICON_JUSTIFY_CONTENT,
   WithIconProps,
-} from 'lib/components/core/layout/WithIcon'
+} from 'lib/components/core/WithIcon'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { ICON_PROPS_META } from '../Icon/props'

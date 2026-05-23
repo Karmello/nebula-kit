@@ -1,46 +1,47 @@
 @use './index.scss';
 
-// Base
-@use '../components/core/base/Box/styles/box.scss';
-@use '../components/core/base/Box/styles/ghost.scss';
-@use '../components/core/base/Box/styles/outline.scss';
-@use '../components/core/base/Box/styles/soft-outline.scss';
-@use '../components/core/base/Box/styles/solid.scss';
-@use '../components/core/base/Image/image.scss';
-@use '../components/core/base/Text/text.scss';
+@use '../components/core/AppFrame/app-frame.scss';
+@use '../components/core/AppFrame/slots/AppFrameHeader/app-frame-header.scss';
+@use '../components/core/AppFrame/slots/AppFrameMain/app-frame-main.scss';
 
-// Controls
-@use '../components/core/controls/Button/button.scss';
-@use '../components/core/controls/Link/link.scss';
+@use '../components/core/Box/styles/box.scss';
+@use '../components/core/Box/styles/ghost.scss';
+@use '../components/core/Box/styles/outline.scss';
+@use '../components/core/Box/styles/soft-outline.scss';
+@use '../components/core/Box/styles/solid.scss';
 
-// Elements
-@use '../components/core/elements/Divider/divider.scss';
-@use '../components/core/elements/MarkerList/marker-list.scss';
+@use '../components/core/Button/button.scss';
 
-// Feedback
-@use '../components/core/feedback/Loader/loader.scss';
+@use '../components/core/Checkbox/checkbox.scss';
 
-// Form elements
-@use '../components/core/form-elements/Checkbox/checkbox.scss';
-@use '../components/core/form-elements/Input/input.scss';
-@use '../components/core/form-elements/Textarea/textarea.scss';
+@use '../components/core/Divider/divider.scss';
 
-// Internal
-@use '../components/core/internal/Ripple/ripple.scss';
+@use '../components/core/DropdownList/slots/DropdownListItem/dropdown-list-item.scss';
 
-// Layout
-@use '../components/core/layout/Flex/flex.scss';
-@use '../components/core/layout/Flex/FlexItem/flex-item.scss';
-@use '../components/core/layout/Grid/grid.scss';
-@use '../components/core/layout/Grid/GridItem/grid-item.scss';
-@use '../components/core/layout/Segment/segment.scss';
-@use '../components/core/layout/Table/table.scss';
+@use '../components/core/Flex/flex.scss';
+@use '../components/core/Flex/FlexItem/flex-item.scss';
 
-// Layouts
-@use '../components/core/layouts/AppFrame/app-frame.scss';
-@use '../components/core/layouts/AppFrame/slots/AppFrameHeader/app-frame-header.scss';
-@use '../components/core/layouts/AppFrame/slots/AppFrameMain/app-frame-main.scss';
-@use '../components/core/layouts/Footer/footer.scss';
+@use '../components/core/Footer/footer.scss';
 
-// Overlays
-@use '../components/core/overlays/DropdownList/slots/DropdownListItem/dropdown-list-item.scss';
+@use '../components/core/Grid/grid.scss';
+@use '../components/core/Grid/GridItem/grid-item.scss';
+
+@use '../components/core/Image/image.scss';
+
+@use '../components/core/Input/input.scss';
+
+@use '../components/core/Link/link.scss';
+
+@use '../components/core/Loader/loader.scss';
+
+@use '../components/core/MarkerList/marker-list.scss';
+
+@use '../components/core/Ripple/ripple.scss';
+
+@use '../components/core/Segment/segment.scss';
+
+@use '../components/core/Table/table.scss';
+
+@use '../components/core/Text/text.scss';
+
+@use '../components/core/Textarea/textarea.scss';

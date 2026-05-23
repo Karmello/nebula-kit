@@ -13,7 +13,7 @@ import {
   DEFAULT_DROPDOWN_LIST_INTENT,
   DROPDOWN_LIST_SIZES,
   DEFAULT_DROPDOWN_LIST_SIZE,
-} from 'lib/components/core/overlays/DropdownList'
+} from 'lib/components/core/DropdownList'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BUTTON_PROPS_META } from '../Button/props'

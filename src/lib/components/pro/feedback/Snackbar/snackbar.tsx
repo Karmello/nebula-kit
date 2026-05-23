@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from 'react'
 
 import { Box, Button, Callout, Flex, Slide } from 'lib/components'
-import { CALLOUT_CONFIG } from 'lib/components/core/feedback/Callout'
+import { CALLOUT_CONFIG } from 'lib/components/core/Callout/definitions'
 
 import {
   UseSnackbarShowArgs,

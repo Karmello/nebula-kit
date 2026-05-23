@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { DROPDOWN_LIST_ITEM_PROPS_META } from 'client/meta/DropdownList/DropdownListItem/props'
 import { SelectOptionProps } from 'lib/components'
-import { DEFAULT_SELECT_OPTION_ALIGN } from 'lib/components/core/form-elements/Select'
+import { DEFAULT_SELECT_OPTION_ALIGN } from 'lib/components/core/Select'
 
 const SELECT_OPTION_PROPS_META: ComponentMeta<SelectOptionProps>['props'] = {
   align: {

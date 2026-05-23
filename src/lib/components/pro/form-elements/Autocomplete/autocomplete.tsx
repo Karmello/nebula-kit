@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { WithSlots } from 'lib/components/core/internal'
+import { WithSlots } from 'lib/components/internal'
 
 import {
   AutocompleteProps,

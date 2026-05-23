@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { TooltipProps } from 'lib/components'
-import { PORTAL_PLACEMENTS } from 'lib/components/core/utility/Portal'
+import { PORTAL_PLACEMENTS } from 'lib/components/core/Portal'
 
 import {
   DEFAULT_TOOLTIP_INTENT,

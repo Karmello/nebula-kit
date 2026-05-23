@@ -3,7 +3,7 @@ import { SpacerProps } from 'lib/components'
 import { TSHIRT_SIZES } from 'lib/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-import { DEFAULT_SPACER_BLOCK_SIZE } from 'lib/components/core/layout/Spacer'
+import { DEFAULT_SPACER_BLOCK_SIZE } from 'lib/components/core/Spacer'
 
 const SPACER_PROPS_META: ComponentMeta<SpacerProps>['props'] = {
   blockSize: {

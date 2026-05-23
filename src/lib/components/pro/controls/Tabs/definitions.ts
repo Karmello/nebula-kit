@@ -1,5 +1,5 @@
 import { BoxProps, ButtonProps, HtmlTagProps } from 'lib/components'
-import { BoxVariant } from 'lib/components/core/base/Box'
+import { BoxVariant } from 'lib/components/core/Box'
 import { RespValue } from 'lib/definitions'
 
 export const TABS_VARIANTS = ['solid', 'outline'] as const satisfies BoxVariant[]

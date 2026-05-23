@@ -7,7 +7,7 @@ import {
   DEFAULT_TEXTAREA_ROWS,
   DEFAULT_TEXTAREA_VARIANT,
   TEXTAREA_RESIZE,
-} from 'lib/components/core/form-elements/Textarea'
+} from 'lib/components/core/Textarea'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

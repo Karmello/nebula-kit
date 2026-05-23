@@ -7,7 +7,7 @@ import {
   DEFAULT_TABLE_PADDING_BLOCK,
   DEFAULT_TABLE_PADDING_INLINE,
   TABLE_LAYOUTS,
-} from 'lib/components/core/layout/Table'
+} from 'lib/components/core/Table'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

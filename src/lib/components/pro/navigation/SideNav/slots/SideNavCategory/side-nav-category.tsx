@@ -1,7 +1,7 @@
 import { cloneElement, useEffect, useId, useLayoutEffect } from 'react'
 import classNames from 'classnames'
 
-import { WithSlots } from 'lib/components/core/internal'
+import { WithSlots } from 'lib/components/internal'
 import { Resize, Box, Button, Flex, Spacer } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 

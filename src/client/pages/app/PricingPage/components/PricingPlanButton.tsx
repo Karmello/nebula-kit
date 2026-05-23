@@ -3,7 +3,7 @@ import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
 import { useCheckoutPaidPlan } from 'client/api'
 import { Box, Button, Link, Text, WithIcon } from 'lib/components'
-import { BoxColor } from 'lib/components/core/base/Box'
+import { BoxColor } from 'lib/components/core/Box'
 
 type PricingPlanButtonProps = {
   plan: string

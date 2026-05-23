@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { BOX_PROPS_META } from 'client/meta/Box/props'
 import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { TableBodyProps } from 'lib/components'
-import { DEFAULT_TABLE_BODY_INTENT } from 'lib/components/core/layout/Table/slots/TableBody/definitions'
+import { DEFAULT_TABLE_BODY_INTENT } from 'lib/components/core/Table/slots/TableBody/definitions'
 
 import { TABLE_PROPS_META } from '../props'
 

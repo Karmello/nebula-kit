@@ -6,7 +6,7 @@ import {
   DEFAULT_INPUT_SIZE,
   DEFAULT_INPUT_VARIANT,
   INPUT_SIZES,
-} from 'lib/components/core/form-elements/Input'
+} from 'lib/components/core/Input/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

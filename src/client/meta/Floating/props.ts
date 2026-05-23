@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { FloatingProps } from 'lib/components'
-import { PORTAL_PLACEMENTS } from 'lib/components/core/utility/Portal'
+import { PORTAL_PLACEMENTS } from 'lib/components/core/Portal'
 import { FLOATING_MODE } from 'lib/components/pro/overlays/Floating'
 
 const FLOATING_PROPS_META: ComponentMeta<FloatingProps>['props'] = {

@@ -9,7 +9,7 @@ import {
   CALLOUT_SIZES,
   CalloutProps,
   DEFAULT_CALLOUT_INTENT,
-} from 'lib/components/core/feedback/Callout'
+} from 'lib/components/core/Callout'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { SECTION_TAGS, SectionProps } from 'lib/components/core/containers/Section'
+import { SECTION_TAGS, SectionProps } from 'lib/components/core/Section'
 
 import { SECTION_PROPS_META } from './props'
 import { SECTION_EXAMPLES_META } from './examples'

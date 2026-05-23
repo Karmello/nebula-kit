@@ -10,7 +10,7 @@ import {
   DEFAULT_NEBKIT_RIPPLE_MODE,
   NEBKIT_RIPPLE_MODES,
   DEFAULT_NEBKIT_SATURATION,
-} from 'lib/components/core/utility/NebkitProvider'
+} from 'lib/components/core/NebkitProvider'
 
 const NEBKIT_PROVIDER_PROPS_META: ComponentMeta<NebkitProviderProps>['props'] = {
   children: {

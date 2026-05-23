@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { PortalProps } from 'lib/components'
-import { DEFAULT_PORTAL_PLACEMENT, PORTAL_PLACEMENTS } from 'lib/components/core/utility/Portal'
+import { DEFAULT_PORTAL_PLACEMENT, PORTAL_PLACEMENTS } from 'lib/components/core/Portal'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 

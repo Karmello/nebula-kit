@@ -11,7 +11,7 @@ import {
   TSHIRT_SIZES,
 } from 'lib/definitions'
 
-import { BoxProps, BOX_VARIANTS, BOX_THEMES, BOX_INTENTS, BOX_SURFACES } from 'lib/components/core/base/Box/definitions'
+import { BoxProps, BOX_VARIANTS, BOX_THEMES, BOX_INTENTS, BOX_SURFACES } from 'lib/components/core/Box/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 

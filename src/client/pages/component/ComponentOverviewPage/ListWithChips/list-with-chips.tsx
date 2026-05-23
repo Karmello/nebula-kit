@@ -1,5 +1,5 @@
 import { Box, Flex, Section, Text } from 'lib/components'
-import { BoxColor } from 'lib/components/core/base/Box'
+import { BoxColor } from 'lib/components/core/Box'
 
 export const ListWithChips = ({ heading, items, color = 'blue' }: { heading: string; items: string[]; color?: BoxColor }) => (
   <Section heading={heading} size="sm">

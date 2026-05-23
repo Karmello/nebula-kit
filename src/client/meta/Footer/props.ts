@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { FooterProps } from 'lib/components'
-import { DEFAULT_FOOTER_BORDER_INTENT, FOOTER_TAGS } from 'lib/components/core/layouts/Footer'
+import { DEFAULT_FOOTER_BORDER_INTENT, FOOTER_TAGS } from 'lib/components/core/Footer'
 import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'

@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 
 import { Box, Grid, Spacer, Table, Text } from 'lib/components'
-import { TEXT_TYPOGRAPHY, TextTypography } from 'lib/components/core/base/Text'
+import { TEXT_TYPOGRAPHY, TextTypography } from 'lib/components/core/Text'
 import { TEXT_TYPOGRAPHY_MAP } from 'lib/definitions'
 
 const MAP: Record<TextTypography, string> = {

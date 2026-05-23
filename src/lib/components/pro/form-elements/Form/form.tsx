@@ -3,7 +3,7 @@ import { FieldValues, FormProvider, useForm } from 'react-hook-form'
 import classNames from 'classnames'
 
 import { Flex } from 'lib/components'
-import { WithSlots } from 'lib/components/core/internal'
+import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
 import { waitForTime } from './helpers'

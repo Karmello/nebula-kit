@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 import { Box, Flex, Spacer, Button } from 'lib/components'
-import { WithSlots } from 'lib/components/core/internal'
+import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
 import { SplitViewMainProps } from './definitions'

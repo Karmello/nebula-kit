@@ -1,5 +1,5 @@
 import { HtmlTagProps, FloatingProps, BoxProps } from 'lib/components'
-import { BoxVariant } from 'lib/components/core/base/Box'
+import { BoxVariant } from 'lib/components/core/Box'
 import { RespValue } from 'lib/definitions'
 
 export const TOOLTIP_VARIANTS = ['solid', 'outline', 'soft-outline'] as const satisfies BoxVariant[]

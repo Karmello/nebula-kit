@@ -8,7 +8,7 @@ import {
   IMAGE_LOADING,
   IMAGE_OBJECT_FIT,
   IMAGE_REFERRER_POLICY,
-} from 'lib/components/core/base/Image'
+} from 'lib/components/core/Image'
 
 import { BOX_PROPS_META } from '../Box/props'
 

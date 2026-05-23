@@ -6,7 +6,7 @@ import {
   TEXT_TYPOGRAPHY,
   TEXT_WORD_BREAK,
   TextProps,
-} from 'lib/components/core/base/Text/definitions'
+} from 'lib/components/core/Text/definitions'
 
 import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'

@@ -1,6 +1,6 @@
 import { RefObject, ReactNode } from 'react'
 
-import { PortalPlacement } from 'lib/components/core/utility/Portal'
+import { PortalPlacement } from 'lib/components/core/Portal'
 
 export const FLOATING_MODE = ['project-both', 'project-x', 'project-y', 'fit-x', 'fit-y'] as const
 export const DEFAULT_FLOATING_PLACEMENT: FloatingProps['placement'] = 'bottom-start'

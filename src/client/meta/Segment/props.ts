@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { SegmentProps } from 'lib/components'
-import { DEFAULT_SEGMENT_FLEX_DIRECTION } from 'lib/components/core/layout/Segment'
+import { DEFAULT_SEGMENT_FLEX_DIRECTION } from 'lib/components/core/Segment'
 
 import { FLEX_PROPS_META } from '../Flex/props'
 

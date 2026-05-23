@@ -2,7 +2,7 @@ import { ReactElement, useState } from 'react'
 import classNames from 'classnames'
 
 import { DropdownList, Button } from 'lib/components'
-import { WithSlots } from 'lib/components/core/internal'
+import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
 import { MultiSelectProvider } from './MultiSelectProvider'
