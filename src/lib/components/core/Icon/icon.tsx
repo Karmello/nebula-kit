@@ -12,7 +12,7 @@ import { DEFAULT_ICON_SIZE, IconProps, IconSize } from './definitions'
 
 export const Icon = memo(
   ({
-    // HtmlTag
+    // Box
     children,
     tagAttrs,
     tagRef,

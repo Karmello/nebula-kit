@@ -1,9 +1,8 @@
 import { JSX } from 'react'
 
 import { BoxProps, ButtonProps } from 'lib/components'
-
-import { PortalPlacement } from '../Portal'
 import { TShirtSize } from 'lib/definitions'
+import { PortalPlacement } from 'lib/components/internal/Portal'
 
 export const DROPDOWN_LIST_PLACEMENTS = [
   'bottom-start',

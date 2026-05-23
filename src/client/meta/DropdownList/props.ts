@@ -16,7 +16,6 @@ import {
 } from 'lib/components/core/DropdownList'
 
 import { BUTTON_PROPS_META } from '../Button/props'
-import { PORTAL_PROPS_META } from '../Portal/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
@@ -64,7 +63,6 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
       'Opens the dropdown when the trigger receives focus. When enabled, the trigger does not toggle the dropdown closed on click.',
   },
   placement: {
-    ...PORTAL_PROPS_META.placement,
     options: DROPDOWN_LIST_PLACEMENTS,
     defaultValue: String(DEFAULT_DROPDOWN_LIST_PLACEMENT),
     description:

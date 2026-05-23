@@ -1,7 +1,7 @@
 import { cloneElement, isValidElement, useEffect, useId, useRef, useState } from 'react'
 
-import { Box, Portal, Text } from 'lib/components'
-import { Floating, FloatingResolved } from 'lib/components/internal'
+import { Box, Text } from 'lib/components'
+import { Floating, FloatingResolved, Portal } from 'lib/components/internal'
 
 import {
   DEFAULT_TOOLTIP_INTENT,

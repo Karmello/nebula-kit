@@ -28,7 +28,6 @@ import multiSelectMeta from './MultiSelect/_index'
 import nebkitProviderMeta from './NebkitProvider/_index'
 import paginationMeta from './Pagination/_index'
 import passwordInput from './PasswordInput/_index'
-import portalMeta from './Portal/_index'
 import resizeMeta from './Resize/_index'
 import revealMeta from './Reveal/_index'
 import rotateMeta from './Rotate/_index'
@@ -79,7 +78,6 @@ const META = {
   NebkitProvider: nebkitProviderMeta,
   Pagination: paginationMeta,
   PasswordInput: passwordInput,
-  Portal: portalMeta,
   Resize: resizeMeta,
   Reveal: revealMeta,
   Rotate: rotateMeta,

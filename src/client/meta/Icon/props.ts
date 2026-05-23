@@ -2,12 +2,11 @@ import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { IconProps } from 'lib/components'
 import { DEFAULT_ICON_SIZE, ICON_SIZES } from 'lib/components/core/Icon'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     description: 'Custom SVG icon.',
   },
   color: {
@@ -29,8 +28,8 @@ const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
     isResponsive: true,
     description: 'Size of the icon.',
   },
-  tagAttrs: HTML_TAG_PROPS_META['tagAttrs'],
-  tagRef: HTML_TAG_PROPS_META['tagRef'],
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
 }
 
 export { ICON_PROPS_META }

@@ -102,7 +102,6 @@ export const COMPONENT_CATEGORIES = [
     items: [
       { key: 'dropdown-list', label: 'DropdownList', sections, bundle: 'core' },
       { key: 'dialog', label: 'Dialog', sections, bundle: 'pro' },
-      { key: 'portal', label: 'Portal', sections, bundle: 'core' },
       { key: 'tooltip', label: 'Tooltip', sections, bundle: 'pro' },
     ],
   },

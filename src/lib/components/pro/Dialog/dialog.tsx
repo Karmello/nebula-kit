@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Button, Flex, Portal, Resize } from 'lib/components'
-import { WithSlots, FocusTrap } from 'lib/components/internal'
+import { Box, Button, Flex, Resize } from 'lib/components'
+import { WithSlots, FocusTrap, Portal } from 'lib/components/internal'
 import { useGlobalScrollLock, useCurrentTheme } from 'lib/hooks'
 import { withPrefix } from 'lib/helpers'
 

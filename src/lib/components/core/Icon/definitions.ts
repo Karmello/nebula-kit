@@ -1,4 +1,3 @@
-import { HtmlTagProps } from 'lib/components'
 import { CssValue, IconName, RespValue, TShirtSize } from 'lib/definitions'
 import { BoxProps } from 'lib/components/core/Box'
 
@@ -15,4 +14,4 @@ type IconOwnProps = {
   color?: BoxProps['color']
 }
 
-export type IconProps = Pick<HtmlTagProps<'span'>, 'children' | 'tagAttrs' | 'tagRef'> & IconOwnProps
+export type IconProps = Pick<BoxProps<'span'>, 'children' | 'tagAttrs' | 'tagRef'> & IconOwnProps
