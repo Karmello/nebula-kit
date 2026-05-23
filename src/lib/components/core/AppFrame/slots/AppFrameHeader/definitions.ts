@@ -2,10 +2,8 @@ import { BoxProps, HtmlTagProps } from 'lib/components'
 
 export const DEFAULT_APP_FRAME_HEADER_INTENT: AppFrameHeaderProps['intent'] = 'muted'
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'header'>, 'tagAttrs' | 'tagRef'> & {
+type PropsFromBox = Pick<BoxProps<'header'>, 'tagAttrs' | 'tagRef' | 'color' | 'intent'> & {
   children: HtmlTagProps<'header'>['children']
 }
 
-type PropsFromBox = Pick<BoxProps<'header'>, 'color' | 'intent'>
-
-export type AppFrameHeaderProps = PropsFromHtmlTag & PropsFromBox
+export type AppFrameHeaderProps = PropsFromBox

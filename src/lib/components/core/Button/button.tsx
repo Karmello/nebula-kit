@@ -22,12 +22,11 @@ import {
 import './button.scss'
 
 export const Button = <T extends ButtonTag = 'button'>({
-  // HtmlTag
+  // Box
   tag = 'button' as T,
   tagAttrs,
   tagRef,
   children,
-  // Box
   variant = DEFAULT_BUTTON_VARIANT,
   color,
   intent = DEFAULT_BUTTON_INTENT,

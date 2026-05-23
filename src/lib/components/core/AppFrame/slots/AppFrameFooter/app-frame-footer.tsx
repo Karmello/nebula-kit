@@ -6,14 +6,12 @@ import { withPrefix } from 'lib/helpers'
 import { AppFrameFooterProps, DEFAULT_APP_FRAME_FOOTER_INTENT } from './definitions'
 
 export const AppFrameFooter = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,
-  // Box
   color,
   intent = DEFAULT_APP_FRAME_FOOTER_INTENT,
-  // Box
   ...paddings
 }: AppFrameFooterProps) => {
   return (

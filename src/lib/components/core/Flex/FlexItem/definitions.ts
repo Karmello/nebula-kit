@@ -12,10 +12,8 @@ type FlexItemOwnProps = {
   order?: RespValue<string>
 }
 
-type PropsFromHtmlTag<T extends ElementType = 'div'> = Omit<HtmlTagProps<T>, 'children'> & {
+type PropsFromBox<T extends ElementType = 'div'> = Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef' | 'hidden'> & {
   children: HtmlTagProps<T>['children']
 }
 
-type PropsFromBox<T extends ElementType = 'div'> = Pick<BoxProps<T>, 'hidden'>
-
-export type FlexItemProps<T extends ElementType = 'div'> = PropsFromHtmlTag<T> & PropsFromBox<T> & FlexItemOwnProps
+export type FlexItemProps<T extends ElementType = 'div'> = PropsFromBox<T> & FlexItemOwnProps

@@ -13,7 +13,6 @@ import {
   DEFAULT_BUTTON_ALIGN,
 } from 'lib/components/core/Button/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 import { TEXT_PROPS_META } from '../Text/props'
 import { WITH_ICON_PROPS_META } from '../WithIcon/props'
@@ -27,7 +26,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   },
   bold: TEXT_PROPS_META.bold,
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     description: 'Label rendered.',
   },
   color: BOX_PROPS_META.color,
@@ -81,12 +80,12 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
       'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
   },
   tag: {
-    ...HTML_TAG_PROPS_META.tag,
-    options: BUTTON_TAGS as unknown as string[],
+    ...BOX_PROPS_META.tag,
+    options: BUTTON_TAGS,
     defaultValue: 'button',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
   variant: {
     ...BOX_PROPS_META.variant,
     defaultValue: String(DEFAULT_BUTTON_VARIANT),

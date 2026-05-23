@@ -11,10 +11,9 @@ import {
   TSHIRT_SIZES,
 } from 'lib/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
+import { BOX_PROPS_META } from '../Box/props'
 
 const FLEX_PROPS_META: ComponentMeta<FlexProps>['props'] = {
-  ...HTML_TAG_PROPS_META,
   alignContent: {
     options: CSS_FLEX_ALIGN_CONTENT,
     isResponsive: true,
@@ -28,7 +27,7 @@ const FLEX_PROPS_META: ComponentMeta<FlexProps>['props'] = {
     link: true,
   },
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     isRequired: true,
     description: 'Flex.Item or any React node.',
   },
@@ -74,6 +73,9 @@ const FLEX_PROPS_META: ComponentMeta<FlexProps>['props'] = {
     description: 'Defines vertical spacing between rows of children.',
     link: true,
   },
+  tag: BOX_PROPS_META.tag,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
 }
 
 export { FLEX_PROPS_META }

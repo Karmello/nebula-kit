@@ -11,6 +11,12 @@ import { FlexItemProps } from './definitions'
 import './flex-item.scss'
 
 export const FlexItem = <T extends ElementType = 'div'>({
+  // Box
+  children,
+  tag,
+  tagAttrs,
+  tagRef,
+  hidden,
   // own
   flex,
   flexGrow,
@@ -18,13 +24,6 @@ export const FlexItem = <T extends ElementType = 'div'>({
   flexBasis,
   alignSelf,
   order,
-  // HtmlTag
-  children,
-  tag,
-  tagAttrs,
-  tagRef,
-  // Box
-  hidden,
 }: FlexItemProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
 

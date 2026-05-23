@@ -10,14 +10,12 @@ import { AppFrameHeaderProps, DEFAULT_APP_FRAME_HEADER_INTENT } from './definiti
 import './app-frame-header.scss'
 
 export const AppFrameHeader = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,
-  // Box
   color,
   intent = DEFAULT_APP_FRAME_HEADER_INTENT,
-  // Box
   ...paddings
 }: AppFrameHeaderProps) => {
   const { stickyHeader } = useAppFrameContext()

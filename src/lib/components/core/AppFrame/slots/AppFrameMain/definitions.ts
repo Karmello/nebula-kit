@@ -1,12 +1,18 @@
 import { BoxProps, HtmlTagProps } from 'lib/components'
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'main'>, 'tagAttrs' | 'tagRef'> & {
+type PropsFromBox = Pick<
+  BoxProps<'main'>,
+  | 'tagAttrs'
+  | 'tagRef'
+  | 'padding'
+  | 'paddingInline'
+  | 'paddingBlock'
+  | 'paddingTop'
+  | 'paddingRight'
+  | 'paddingBottom'
+  | 'paddingLeft'
+> & {
   children: HtmlTagProps<'main'>['children']
 }
 
-type PropsFromBox = Pick<
-  BoxProps<'main'>,
-  'padding' | 'paddingInline' | 'paddingBlock' | 'paddingTop' | 'paddingRight' | 'paddingBottom' | 'paddingLeft'
->
-
-export type AppFrameMainProps = PropsFromHtmlTag & PropsFromBox
+export type AppFrameMainProps = PropsFromBox

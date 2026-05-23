@@ -12,7 +12,7 @@ import {
   TShirtSize,
 } from 'lib/definitions'
 
-import { HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 
 type FlexOwnProps = {
   display?: RespValue<CssFlexDisplay>
@@ -26,8 +26,8 @@ type FlexOwnProps = {
   columnGap?: RespValue<TShirtSize | CssValue>
 }
 
-type PropsFromHtmlTag<T extends ElementType = 'div'> = Omit<HtmlTagProps<T>, 'children'> & {
-  children: HtmlTagProps<T>['children']
+type PropsFromBox<T extends ElementType = 'div'> = Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef'> & {
+  children: BoxProps<T>['children']
 }
 
-export type FlexProps<T extends ElementType = 'div'> = PropsFromHtmlTag<T> & FlexOwnProps
+export type FlexProps<T extends ElementType = 'div'> = PropsFromBox<T> & FlexOwnProps

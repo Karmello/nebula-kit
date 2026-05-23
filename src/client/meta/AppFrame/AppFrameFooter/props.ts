@@ -3,12 +3,11 @@ import { AppFrameFooterProps } from 'lib/components'
 
 import { DEFAULT_APP_FRAME_FOOTER_INTENT } from 'lib/components/core/AppFrame'
 
-import { HTML_TAG_PROPS_META } from '../../HtmlTag/props'
 import { BOX_PROPS_META } from '../../Box/props'
 
 const APP_FRAME_FOOTER_PROPS_META: ComponentMeta<AppFrameFooterProps>['props'] = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     isRequired: true,
   },
   color: BOX_PROPS_META.color,
@@ -23,8 +22,8 @@ const APP_FRAME_FOOTER_PROPS_META: ComponentMeta<AppFrameFooterProps>['props'] =
   paddingLeft: BOX_PROPS_META.paddingLeft,
   paddingRight: BOX_PROPS_META.paddingRight,
   paddingTop: BOX_PROPS_META.paddingTop,
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
 }
 
 export { APP_FRAME_FOOTER_PROPS_META }

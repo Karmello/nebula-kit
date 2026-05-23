@@ -1,6 +1,6 @@
 import { CssGridAutoFlow, CssGridPlaceContent, CssGridPlaceItems, CssValue, RespValue, TShirtSize } from 'lib/definitions'
 
-import { HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 
 export const GRID_TAGS = ['div', 'section', 'main', 'article', 'aside', 'nav', 'ul', 'ol'] as const
 
@@ -19,8 +19,8 @@ type GridOwnProps = {
   columnGap?: RespValue<TShirtSize | CssValue>
 }
 
-type PropsFromHtmlTag<T extends GridTag = 'div'> = Omit<HtmlTagProps<T>, 'children'> & {
-  children: HtmlTagProps<T>['children']
+type PropsFromBox<T extends GridTag = 'div'> = Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef'> & {
+  children: BoxProps<T>['children']
 }
 
-export type GridProps<T extends GridTag = 'div'> = PropsFromHtmlTag<T> & GridOwnProps
+export type GridProps<T extends GridTag = 'div'> = PropsFromBox<T> & GridOwnProps

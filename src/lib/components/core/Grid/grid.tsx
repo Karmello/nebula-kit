@@ -11,6 +11,11 @@ import { GridTag, GridProps } from './definitions'
 import './grid.scss'
 
 export const Grid = <T extends GridTag = 'div'>({
+  // Box
+  children,
+  tag,
+  tagAttrs,
+  tagRef,
   // own
   gridTemplateColumns,
   gridTemplateRows,
@@ -22,11 +27,6 @@ export const Grid = <T extends GridTag = 'div'>({
   gap,
   rowGap,
   columnGap,
-  // Box
-  children,
-  tag,
-  tagAttrs,
-  tagRef,
 }: GridProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
 

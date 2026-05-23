@@ -1,4 +1,4 @@
-import { BoxProps, HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 import { IconName, RespValue, TShirtSize } from 'lib/definitions'
 import { BoxVariant, BoxColor } from 'lib/components/core/Box'
 import { TextTypography } from 'lib/components/core/Text'
@@ -48,8 +48,6 @@ type CalloutOwnProps = {
   status?: CalloutStatus
 }
 
-type PropsFromHtmlTag<T extends CalloutTag = 'div'> = Omit<HtmlTagProps<T>, 'children'>
+type PropsFromBox<T extends CalloutTag = 'div'> = Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef' | 'intent'>
 
-type PropsFromBox<T extends CalloutTag = 'div'> = Pick<BoxProps<T>, 'intent'>
-
-export type CalloutProps<T extends CalloutTag = 'div'> = PropsFromHtmlTag<T> & PropsFromBox<T> & CalloutOwnProps
+export type CalloutProps<T extends CalloutTag = 'div'> = PropsFromBox<T> & CalloutOwnProps

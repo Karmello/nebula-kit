@@ -8,10 +8,9 @@ import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_MARGIN_BLOCK, DividerProps } fr
 import './divider.scss'
 
 export const Divider = ({
-  // HtmlTag
+  // Box
   tagAttrs,
   tagRef,
-  // Box
   color,
   intent = DEFAULT_DIVIDER_INTENT,
   marginBlock = DEFAULT_DIVIDER_MARGIN_BLOCK,

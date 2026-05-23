@@ -15,10 +15,9 @@ import {
 import './checkbox.scss'
 
 export const Checkbox = ({
-  // HtmlTag
+  // Box
   tagAttrs,
   tagRef,
-  // Box
   color,
   intent = DEFAULT_CHECKBOX_INTENT,
   disabled,

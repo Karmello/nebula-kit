@@ -11,6 +11,11 @@ import { FlexProps } from './definitions'
 import './flex.scss'
 
 export const Flex = <T extends ElementType = 'div'>({
+  // Box
+  children,
+  tag,
+  tagAttrs,
+  tagRef,
   // own
   display,
   flexDirection,
@@ -21,11 +26,6 @@ export const Flex = <T extends ElementType = 'div'>({
   gap,
   rowGap,
   columnGap,
-  // Box
-  children,
-  tag,
-  tagAttrs,
-  tagRef,
 }: FlexProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
 

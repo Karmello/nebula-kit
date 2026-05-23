@@ -11,7 +11,6 @@ import {
   DEFAULT_CALLOUT_INTENT,
 } from 'lib/components/core/Callout'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
@@ -38,9 +37,9 @@ const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
     defaultValue: DEFAULT_CALLOUT_STATUS,
     description: 'Defines the type of message being communicated.',
   },
-  tag: HTML_TAG_PROPS_META.tag,
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tag: BOX_PROPS_META.tag,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
   variant: {
     ...BOX_PROPS_META.variant,
     options: Object.values(CALLOUT_VARIANTS),

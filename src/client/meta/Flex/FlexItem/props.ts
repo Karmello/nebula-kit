@@ -1,11 +1,9 @@
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { BOX_PROPS_META } from 'client/meta/Box/props'
-import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { FlexItemProps } from 'lib/components'
 import { CSS_FLEX_ITEM_ALIGN_SELF } from 'lib/definitions'
 
 const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemProps>['props'] = {
-  ...HTML_TAG_PROPS_META,
   alignSelf: {
     options: CSS_FLEX_ITEM_ALIGN_SELF,
     isResponsive: true,
@@ -13,7 +11,7 @@ const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemProps>['props'] = {
     link: true,
   },
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     isRequired: true,
   },
   flex: {
@@ -47,6 +45,9 @@ const FLEX_ITEM_PROPS_META: ComponentMeta<FlexItemProps>['props'] = {
     description: "Defines the item's order relative to other items, independent of source order.",
     link: true,
   },
+  tag: BOX_PROPS_META.tag,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
 }
 
 export { FLEX_ITEM_PROPS_META }

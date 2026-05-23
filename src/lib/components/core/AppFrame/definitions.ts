@@ -1,11 +1,11 @@
-import { HtmlTagProps } from 'lib/components'
+import { GridProps, HtmlTagProps } from 'lib/components'
 
 type AppFrameOwnProps = {
   stickyHeader?: boolean
 }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'div'>['children']
+type PropsFromGrid = Pick<GridProps, 'tagAttrs' | 'tagRef'> & {
+  children: GridProps['children']
 }
 
-export type AppFrameProps = PropsFromHtmlTag & AppFrameOwnProps
+export type AppFrameProps = PropsFromGrid & AppFrameOwnProps

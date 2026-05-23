@@ -1,7 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_MARGIN_BLOCK, DividerProps } from 'lib/components/core/Divider'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const DIVIDER_PROPS_META: ComponentMeta<DividerProps>['props'] = {
@@ -18,8 +17,8 @@ const DIVIDER_PROPS_META: ComponentMeta<DividerProps>['props'] = {
   marginBottom: BOX_PROPS_META.marginBottom,
   marginTop: BOX_PROPS_META.marginTop,
   surface: BOX_PROPS_META.surface,
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
 }
 
 export { DIVIDER_PROPS_META }

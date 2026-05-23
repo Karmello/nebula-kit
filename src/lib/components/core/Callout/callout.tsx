@@ -16,10 +16,10 @@ import {
 } from './definitions'
 
 export const Callout = <T extends CalloutTag = 'div'>({
+  // Box
   tag,
   tagAttrs,
   tagRef,
-  // Box
   size = DEFAULT_CALLOUT_SIZE,
   variant = DEFAULT_CALLOUT_VARIANT,
   intent = DEFAULT_CALLOUT_INTENT,

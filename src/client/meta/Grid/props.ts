@@ -2,12 +2,11 @@ import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { GridProps } from 'lib/components'
 import { CSS_GRID_AUTO_FLOW, CSS_GRID_PLACE_CONTENT, CSS_GRID_PLACE_ITEMS, TSHIRT_SIZES } from 'lib/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
+import { BOX_PROPS_META } from '../Box/props'
 
 const GRID_PROPS_META: ComponentMeta<GridProps>['props'] = {
-  ...HTML_TAG_PROPS_META,
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     isRequired: true,
     description: 'Grid.Item or any React node.',
   },
@@ -71,6 +70,9 @@ const GRID_PROPS_META: ComponentMeta<GridProps>['props'] = {
     description: 'Sets the spacing between grid rows.',
     link: true,
   },
+  tag: BOX_PROPS_META.tag,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
 }
 
 export { GRID_PROPS_META }

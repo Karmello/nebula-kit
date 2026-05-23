@@ -9,7 +9,6 @@ import {
   DEFAULT_CHECKBOX_VARIANT,
 } from 'lib/components/core/Checkbox'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const CHECKBOX_PROPS_META: ComponentMeta<CheckboxProps>['props'] = {
@@ -36,8 +35,8 @@ const CHECKBOX_PROPS_META: ComponentMeta<CheckboxProps>['props'] = {
     defaultValue: DEFAULT_CHECKBOX_SIZE,
     description: 'Controls overall proportions, adjusting the checkbox and icon size.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
   variant: {
     ...BOX_PROPS_META.variant,
     options: CHECKBOX_VARIANTS,
