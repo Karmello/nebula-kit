@@ -1,6 +1,6 @@
 import { JSX } from 'react'
 
-import { ButtonProps, HtmlTagProps } from 'lib/components'
+import { BoxProps, ButtonProps } from 'lib/components'
 
 import { PortalPlacement } from '../Portal'
 import { TShirtSize } from 'lib/definitions'
@@ -50,10 +50,10 @@ type DropdownListOwnProps = {
   onClosed?: () => void
 }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagRef' | 'tagAttrs'> & {
-  children: HtmlTagProps<'div'>['children'] | ((args: ChildrenAsFuncArgs) => JSX.Element)
+type PropsFromBox = Pick<BoxProps<'div'>, 'tagRef' | 'tagAttrs'> & {
+  children: BoxProps<'div'>['children'] | ((args: ChildrenAsFuncArgs) => JSX.Element)
 }
 
 type PropsFromButton = Pick<ButtonProps, 'color' | 'intent'>
 
-export type DropdownListProps = PropsFromHtmlTag & PropsFromButton & DropdownListOwnProps
+export type DropdownListProps = PropsFromBox & PropsFromButton & DropdownListOwnProps

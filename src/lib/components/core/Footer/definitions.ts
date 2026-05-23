@@ -1,4 +1,4 @@
-import { BoxProps, HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 import { SwitchAt } from 'lib/definitions'
 
 export const FOOTER_TAGS = ['div', 'footer'] as const
@@ -11,13 +11,20 @@ type FooterOwnProps = {
   borderIntent?: BoxProps['intent']
 }
 
-type PropsFromHtmlTag<T extends FooterTag = 'div'> = Omit<HtmlTagProps<T>, 'children'> & {
-  children: HtmlTagProps<T>['children']
-}
-
 type PropsFromBox<T extends FooterTag = 'div'> = Pick<
   BoxProps<T>,
-  'padding' | 'paddingBlock' | 'paddingInline' | 'paddingTop' | 'paddingRight' | 'paddingBottom' | 'paddingLeft'
->
+  | 'tag'
+  | 'tagAttrs'
+  | 'tagRef'
+  | 'padding'
+  | 'paddingBlock'
+  | 'paddingInline'
+  | 'paddingTop'
+  | 'paddingRight'
+  | 'paddingBottom'
+  | 'paddingLeft'
+> & {
+  children: BoxProps<T>['children']
+}
 
-export type FooterProps<T extends FooterTag = 'div'> = PropsFromHtmlTag<T> & PropsFromBox<T> & FooterOwnProps
+export type FooterProps<T extends FooterTag = 'div'> = PropsFromBox<T> & FooterOwnProps

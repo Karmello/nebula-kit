@@ -10,12 +10,11 @@ import { MarkerListTag, MarkerListProps, DEFAULT_MARKER_LIST_GAP } from './defin
 import './marker-list.scss'
 
 export const MarkerList = <T extends MarkerListTag = 'ul'>({
-  // HtmlTag
+  // Flex
   children,
   tag,
   tagAttrs,
   tagRef,
-  // Flex
   gap = DEFAULT_MARKER_LIST_GAP,
   // Box
   color,

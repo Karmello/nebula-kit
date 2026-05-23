@@ -1,6 +1,6 @@
 import { InputHTMLAttributes, ReactNode } from 'react'
 
-import { BoxProps, HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 import { TShirtSize } from 'lib/definitions'
 
 export const DEFAULT_INPUT_VARIANT: InputProps['variant'] = 'solid'
@@ -27,8 +27,6 @@ type InputOwnProps = {
   autoComplete?: InputHTMLAttributes<HTMLInputElement>['autoComplete']
 }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'input'>, 'tagAttrs' | 'tagRef'>
+type PropsFromBox = Pick<BoxProps<'input'>, 'tagAttrs' | 'tagRef' | 'variant' | 'color' | 'intent' | 'disabled'>
 
-type PropsFromBox = Pick<BoxProps<'input'>, 'variant' | 'color' | 'intent' | 'disabled'>
-
-export type InputProps = PropsFromHtmlTag & PropsFromBox & InputOwnProps
+export type InputProps = PropsFromBox & InputOwnProps

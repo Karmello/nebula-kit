@@ -5,11 +5,11 @@ import { useFooterContext } from '../../FooterProvider'
 import { DEFAULT_FOOTER_SECTION_FLEX, FooterSectionProps } from './definitions'
 
 export const FooterSection = ({
-  // HtmlTag
+  // Box
   children,
+  // Flex.Item
   tagAttrs,
   tagRef,
-  // Flex
   flex = DEFAULT_FOOTER_SECTION_FLEX,
   alignSelf,
 }: FooterSectionProps) => {

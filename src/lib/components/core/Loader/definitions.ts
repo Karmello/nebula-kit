@@ -1,4 +1,4 @@
-import { BoxProps, HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 import { TShirtSize } from 'lib/definitions'
 
 export const DEFAULT_LOADER_SIZE: LoaderProps['size'] = 'md'
@@ -14,8 +14,6 @@ type LoaderOwnProps = {
   centered?: boolean
 }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps, 'tagAttrs' | 'tagRef'>
+type PropsFromBox = Pick<BoxProps, 'tagAttrs' | 'tagRef' | 'color'>
 
-type PropsFromBox = Pick<BoxProps, 'color'>
-
-export type LoaderProps = PropsFromHtmlTag & PropsFromBox & LoaderOwnProps
+export type LoaderProps = PropsFromBox & LoaderOwnProps

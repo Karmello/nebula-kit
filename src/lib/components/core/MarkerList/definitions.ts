@@ -1,4 +1,4 @@
-import { BoxProps, FlexProps, HtmlTagProps } from 'lib/components'
+import { BoxProps, FlexProps } from 'lib/components'
 
 export const MARKER_LIST_TAGS = ['ul', 'ol'] as const
 export const MARKER_LIST_STYLES = ['disc', 'circle', 'square', 'decimal'] as const
@@ -12,15 +12,8 @@ type MarkerListOwnProps = {
   listStyle?: MarkerListStyle
 }
 
-type PropsFromHtmlTag<T extends MarkerListTag = 'ul'> = Pick<HtmlTagProps<T>, 'tag' | 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<T>['children']
-}
-
-type PropsFromFlex<T extends MarkerListTag = 'ul'> = Pick<FlexProps<T>, 'gap'>
+type PropsFromFlex<T extends MarkerListTag = 'ul'> = Pick<FlexProps<T>, 'tag' | 'tagAttrs' | 'tagRef' | 'children' | 'gap'>
 
 type PropsFromBox<T extends MarkerListTag = 'ul'> = Pick<BoxProps<T>, 'color' | 'intent'>
 
-export type MarkerListProps<T extends MarkerListTag = 'ul'> = PropsFromHtmlTag<T> &
-  PropsFromFlex<T> &
-  PropsFromBox<T> &
-  MarkerListOwnProps
+export type MarkerListProps<T extends MarkerListTag = 'ul'> = PropsFromFlex<T> & PropsFromBox<T> & MarkerListOwnProps

@@ -15,13 +15,13 @@ import {
   DEFAULT_DROPDOWN_LIST_SIZE,
 } from 'lib/components/core/DropdownList'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BUTTON_PROPS_META } from '../Button/props'
 import { PORTAL_PROPS_META } from '../Portal/props'
+import { BOX_PROPS_META } from '../Box/props'
 
 const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     options: ['DropdownList.Trigger', 'DropdownList.Item'],
     isRequired: true,
     description: 'Accepts slots directly or via a render function with access to the context argument.',
@@ -85,8 +85,8 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
     defaultValue: DEFAULT_DROPDOWN_LIST_SIZE,
     description: 'Applies the selected size to the list items.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
   visibleItemsCount: {
     options: ['number'],
     defaultValue: String(DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT),

@@ -10,10 +10,9 @@ import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_SIZE, DEFAULT_INPUT_VARIANT, InputA
 import './input.scss'
 
 export const Input = ({
-  // HtmlTag
+  // Box
   tagAttrs,
   tagRef,
-  // Box
   variant = DEFAULT_INPUT_VARIANT,
   color,
   intent = DEFAULT_INPUT_INTENT,

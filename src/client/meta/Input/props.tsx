@@ -8,7 +8,6 @@ import {
   INPUT_SIZES,
 } from 'lib/components/core/Input/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
@@ -66,8 +65,8 @@ const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
     description:
       'Render function that receives Input props and returns the start affix. Only defined props are passed to the render function.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
   value: {
     options: ['string'],
     description: 'Current value displayed when the component is used in controlled mode.',

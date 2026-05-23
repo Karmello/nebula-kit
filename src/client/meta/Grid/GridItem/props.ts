@@ -1,10 +1,9 @@
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
-import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
+import { BOX_PROPS_META } from 'client/meta/Box/props'
 import { GridItemProps } from 'lib/components'
 import { CSS_GRID_ITEM_ALIGN_SELF, CSS_GRID_ITEM_JUSTIFY_SELF } from 'lib/definitions'
 
 const GRID_ITEM_PROPS_META: ComponentMeta<GridItemProps>['props'] = {
-  ...HTML_TAG_PROPS_META,
   alignSelf: {
     options: CSS_GRID_ITEM_ALIGN_SELF,
     isResponsive: true,
@@ -12,7 +11,7 @@ const GRID_ITEM_PROPS_META: ComponentMeta<GridItemProps>['props'] = {
     link: true,
   },
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     isRequired: true,
   },
   gridColumn: {
@@ -33,6 +32,9 @@ const GRID_ITEM_PROPS_META: ComponentMeta<GridItemProps>['props'] = {
     description: 'Controls horizontal alignment of the item within its grid cell.',
     link: true,
   },
+  tag: BOX_PROPS_META.tag,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
 }
 
 export { GRID_ITEM_PROPS_META }

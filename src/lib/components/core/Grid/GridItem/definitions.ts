@@ -1,7 +1,7 @@
 import { ElementType } from 'react'
 
 import { RespValue, CssGridItemJustifySelf, CssGridItemAlignSelf } from 'lib/definitions'
-import { HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 
 type GridItemOwnProps = {
   gridColumn?: RespValue<string>
@@ -10,8 +10,8 @@ type GridItemOwnProps = {
   alignSelf?: RespValue<CssGridItemAlignSelf>
 }
 
-type PropsFromHtmlTag<T extends ElementType = 'div'> = Omit<HtmlTagProps<T>, 'children'> & {
-  children: HtmlTagProps<T>['children']
+type PropsFromBox<T extends ElementType = 'div'> = Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef'> & {
+  children: BoxProps<T>['children']
 }
 
-export type GridItemProps<T extends ElementType = 'div'> = PropsFromHtmlTag<T> & GridItemOwnProps
+export type GridItemProps<T extends ElementType = 'div'> = PropsFromBox<T> & GridItemOwnProps

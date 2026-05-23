@@ -3,7 +3,6 @@ import { FooterProps } from 'lib/components'
 import { DEFAULT_FOOTER_BORDER_INTENT, FOOTER_TAGS } from 'lib/components/core/Footer'
 import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const FOOTER_PROPS_META: ComponentMeta<FooterProps>['props'] = {
@@ -13,7 +12,7 @@ const FOOTER_PROPS_META: ComponentMeta<FooterProps>['props'] = {
     description: 'Sets the visual intent of the dividers between sections.',
   },
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     options: ['Footer.Section'],
     isRequired: true,
     description: 'Slots rendered.',
@@ -32,11 +31,11 @@ const FOOTER_PROPS_META: ComponentMeta<FooterProps>['props'] = {
       'Defines the breakpoint at which footer sections switch from stacking vertically to arranging horizontally within the layout.',
   },
   tag: {
-    ...HTML_TAG_PROPS_META.tag,
-    options: FOOTER_TAGS as unknown as string[],
+    ...BOX_PROPS_META.tag,
+    options: FOOTER_TAGS,
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
 }
 
 export { FOOTER_PROPS_META }

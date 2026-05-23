@@ -11,16 +11,16 @@ import { GridItemProps } from './definitions'
 import './grid-item.scss'
 
 export const GridItem = <T extends ElementType = 'div'>({
+  // Box
+  children,
+  tag,
+  tagAttrs,
+  tagRef,
   // own
   gridColumn,
   gridRow,
   justifySelf,
   alignSelf,
-  // HtmlTag
-  children,
-  tag,
-  tagAttrs,
-  tagRef,
 }: GridItemProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
 

@@ -9,10 +9,9 @@ import { LoaderProps, DEFAULT_LOADER_SIZE, DEFAULT_LOADER_ACTIVE } from './defin
 import './loader.scss'
 
 export const Loader = ({
-  // HtmlTag
+  // Box
   tagAttrs,
   tagRef,
-  // Box
   color,
   // own
   active = DEFAULT_LOADER_ACTIVE,

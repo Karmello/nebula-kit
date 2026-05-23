@@ -3,7 +3,6 @@ import { LoaderProps } from 'lib/components'
 import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE, LOADER_SIZES } from 'lib/components/core/Loader'
 
 import { BOX_PROPS_META } from '../Box/props'
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 
 const LOADER_PROPS_META: ComponentMeta<LoaderProps>['props'] = {
   active: {
@@ -24,8 +23,8 @@ const LOADER_PROPS_META: ComponentMeta<LoaderProps>['props'] = {
     defaultValue: String(DEFAULT_LOADER_SIZE),
     description: 'Controls the diameter of the loader.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
 }
 
 export { LOADER_PROPS_META }
