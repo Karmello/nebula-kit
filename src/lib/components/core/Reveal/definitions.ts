@@ -1,4 +1,4 @@
-import { BoxProps, ButtonProps, HtmlTagProps } from 'lib/components'
+import { BoxProps, ButtonProps, ResizeProps } from 'lib/components'
 
 export const REVEAL_TAGS = ['div', 'section', 'article', 'aside', 'li'] as const
 export const DEFAULT_REVEAL_INTENT: RevealProps['intent'] = 'tertiary'
@@ -10,12 +10,12 @@ type RevealOwnProps = {
   label: string
 }
 
-type PropsFromHtmlTag<T extends RevealTag = 'div'> = Omit<HtmlTagProps<T>, 'children'> & {
-  children: HtmlTagProps<T>['children']
+type PropsFromResize = {
+  children: ResizeProps['children']
 }
 
-type PropsFromBox<T extends RevealTag = 'div'> = Pick<BoxProps<T>, 'color' | 'intent'>
+type PropsFromBox<T extends RevealTag = 'div'> = Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef' | 'color' | 'intent'>
 
 type PropsFromButton = Pick<ButtonProps<'button'>, 'size' | 'disabled'>
 
-export type RevealProps<T extends RevealTag = 'div'> = PropsFromHtmlTag<T> & PropsFromBox<T> & PropsFromButton & RevealOwnProps
+export type RevealProps<T extends RevealTag = 'div'> = PropsFromResize & PropsFromBox<T> & PropsFromButton & RevealOwnProps

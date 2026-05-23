@@ -1,7 +1,6 @@
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING, RotateProps } from 'lib/components/core/Rotate'
-
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
+import { BOX_PROPS_META } from '../Box/props'
 
 const ROTATE_PROPS_META: ComponentMeta<RotateProps>['props'] = {
   angle: {
@@ -10,7 +9,7 @@ const ROTATE_PROPS_META: ComponentMeta<RotateProps>['props'] = {
     description: 'Rotation angle of the content in degrees. Changing the value triggers a rotation animation.',
   },
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     isRequired: true,
     description: 'Content being rotated.',
   },
@@ -24,8 +23,8 @@ const ROTATE_PROPS_META: ComponentMeta<RotateProps>['props'] = {
     defaultValue: DEFAULT_ROTATE_EASING,
     description: 'Timing function for the animation.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
 }
 
 export { ROTATE_PROPS_META }

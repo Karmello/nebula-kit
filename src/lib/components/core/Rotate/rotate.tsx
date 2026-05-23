@@ -3,7 +3,7 @@ import { Box } from 'lib/components'
 import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING, RotateProps } from './definitions'
 
 export const Rotate = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,

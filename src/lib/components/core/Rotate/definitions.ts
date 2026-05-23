@@ -1,4 +1,4 @@
-import { HtmlTagProps } from 'lib/components'
+import { BoxProps } from '../Box'
 
 export const DEFAULT_ROTATE_DURATION: RotateProps['duration'] = 200
 export const DEFAULT_ROTATE_EASING: RotateProps['easing'] = 'linear'
@@ -9,8 +9,8 @@ type RotateOwnProps = {
   easing?: string
 }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'span'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'span'>['children']
+type PropsFromBox = Pick<BoxProps<'span'>, 'tagAttrs' | 'tagRef'> & {
+  children: BoxProps<'span'>['children']
 }
 
-export type RotateProps = PropsFromHtmlTag & RotateOwnProps
+export type RotateProps = PropsFromBox & RotateOwnProps

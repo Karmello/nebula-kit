@@ -10,17 +10,16 @@ import { DEFAULT_SELECT_OPTION_ALIGN } from './slots'
 import { DEFAULT_SELECT_INLINE_SIZE, SelectProps } from './definitions'
 
 export const Select = ({
-  // HtmlTag
-  children,
+  // DropdownList
   tagAttrs,
   tagRef,
-  // DropdownList
   color,
   size,
   intent,
   scrollAlign,
   visibleItemsCount,
   // Box
+  children,
   inlineSize = DEFAULT_SELECT_INLINE_SIZE,
   disabled,
   // own

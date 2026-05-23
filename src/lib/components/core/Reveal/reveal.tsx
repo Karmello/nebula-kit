@@ -5,12 +5,12 @@ import { Box, Flex, Button, Resize, RevealProps } from 'lib/components'
 import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SIZE, RevealTag } from './definitions'
 
 export const Reveal = <T extends RevealTag = 'div'>({
-  // HtmlTag
+  // Resize
+  children,
+  // Box
   tag = 'div' as T,
   tagAttrs,
   tagRef,
-  children,
-  // Box
   intent = DEFAULT_REVEAL_INTENT,
   color,
   // Button

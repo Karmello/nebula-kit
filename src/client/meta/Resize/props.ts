@@ -1,13 +1,12 @@
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { ResizeProps } from 'lib/components'
-
 import { RESIZE_PROPERTIES, DEFAULT_RESIZE_DURATION, DEFAULT_RESIZE_EASING } from 'lib/components/core/Resize'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
+import { BOX_PROPS_META } from '../Box/props'
 
 const RESIZE_PROPS_META: ComponentMeta<ResizeProps>['props'] = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     isRequired: true,
     description: 'Content animated.',
   },
@@ -26,8 +25,8 @@ const RESIZE_PROPS_META: ComponentMeta<ResizeProps>['props'] = {
     isRequired: true,
     description: 'Property to animate (logical size only).',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
   visible: {
     options: ['boolean'],
     isRequired: true,

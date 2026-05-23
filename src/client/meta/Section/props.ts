@@ -9,15 +9,13 @@ import {
   SectionProps,
 } from 'lib/components/core/Section'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 import { TEXT_PROPS_META } from '../Text/props'
 import { WITH_ICON_PROPS_META } from '../WithIcon/props'
 
 const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
-  ...HTML_TAG_PROPS_META,
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     isRequired: true,
   },
   color: BOX_PROPS_META.color,
@@ -46,9 +44,11 @@ const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
     description: 'Controls overall proportions - adjusting heading size and spacings.',
   },
   tag: {
-    ...HTML_TAG_PROPS_META.tag,
+    ...BOX_PROPS_META.tag,
     defaultValue: 'section',
   },
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
   variant: {
     ...BOX_PROPS_META.variant,
     options: SECTION_VARIANTS,

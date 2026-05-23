@@ -1,4 +1,4 @@
-import { BoxProps, DropdownListProps, HtmlTagProps } from 'lib/components'
+import { BoxProps, DropdownListProps } from 'lib/components'
 
 export const DEFAULT_SELECT_INLINE_SIZE: SelectProps['inlineSize'] = '100%'
 
@@ -10,12 +10,13 @@ type SelectOwnProps = {
   staticLabel?: string
 }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'div'>['children']
+type PropsFromBox = Pick<BoxProps<'div'>, 'inlineSize' | 'disabled'> & {
+  children: BoxProps<'div'>['children']
 }
 
-type PropsFromBox = Pick<BoxProps<'div'>, 'inlineSize' | 'disabled'>
+type PropsFromDropdownList = Pick<
+  DropdownListProps,
+  'tagAttrs' | 'tagRef' | 'color' | 'size' | 'intent' | 'scrollAlign' | 'visibleItemsCount'
+>
 
-type PropsFromDropdownList = Pick<DropdownListProps, 'color' | 'size' | 'intent' | 'scrollAlign' | 'visibleItemsCount'>
-
-export type SelectProps = PropsFromHtmlTag & PropsFromBox & PropsFromDropdownList & SelectOwnProps
+export type SelectProps = PropsFromBox & PropsFromDropdownList & SelectOwnProps

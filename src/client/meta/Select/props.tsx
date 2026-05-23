@@ -2,7 +2,6 @@ import { ComponentMeta } from 'client/definitions'
 import { SelectProps } from 'lib/components'
 import { DEFAULT_SELECT_INLINE_SIZE } from 'lib/components/core/Select'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'
 import { BOX_PROPS_META } from '../Box/props'
 
@@ -47,8 +46,8 @@ const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
     description:
       'Displays a fixed label instead of the selected value. Useful for navigation-style selects where the trigger text should stay constant.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
   value: {
     options: ['string'],
     description: 'Current selected item value when the component is used in controlled mode.',

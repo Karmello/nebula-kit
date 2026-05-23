@@ -13,12 +13,11 @@ import {
 } from './definitions'
 
 export const Section = <T extends SectionTag = 'section'>({
-  // HtmlTag
+  // Box
   tag = 'section' as T,
   tagAttrs,
   tagRef,
   children,
-  // Box
   variant = DEFAULT_SECTION_VARIANT,
   color,
   intent = DEFAULT_SECTION_INTENT,

@@ -2,13 +2,13 @@ import { ComponentMeta } from 'client/definitions'
 import { RevealProps } from 'lib/components'
 import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SIZE } from 'lib/components/core/Reveal'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BUTTON_PROPS_META } from '../Button/props'
 import { BOX_PROPS_META } from '../Box/props'
+import { RESIZE_PROPS_META } from '../Resize/props'
 
 const REVEAL_PROPS_META: ComponentMeta<RevealProps>['props'] = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...RESIZE_PROPS_META.children,
     isRequired: true,
   },
   color: BUTTON_PROPS_META.color,
@@ -27,9 +27,9 @@ const REVEAL_PROPS_META: ComponentMeta<RevealProps>['props'] = {
     defaultValue: DEFAULT_REVEAL_SIZE,
     description: 'Size of the reveal button.',
   },
-  tag: HTML_TAG_PROPS_META.tag,
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tag: BOX_PROPS_META.tag,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
 }
 
 export { REVEAL_PROPS_META }

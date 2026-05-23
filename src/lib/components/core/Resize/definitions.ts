@@ -1,4 +1,4 @@
-import { HtmlTagProps, BoxProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 
 export const RESIZE_PROPERTIES = ['blockSize', 'inlineSize'] as const satisfies (keyof BoxProps)[]
 export const DEFAULT_RESIZE_DURATION: ResizeProps['duration'] = 200
@@ -13,8 +13,8 @@ type ResizeOwnProps = {
   easing?: string
 }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'div'>['children']
+type PropsFromBox = Pick<BoxProps<'div'>, 'tagAttrs' | 'tagRef'> & {
+  children: BoxProps<'div'>['children']
 }
 
-export type ResizeProps = PropsFromHtmlTag & ResizeOwnProps
+export type ResizeProps = PropsFromBox & ResizeOwnProps
