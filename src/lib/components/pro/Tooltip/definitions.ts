@@ -1,4 +1,5 @@
-import { HtmlTagProps, FloatingProps, BoxProps } from 'lib/components'
+import { HtmlTagProps, BoxProps } from 'lib/components'
+import { FloatingProps } from 'lib/components/internal'
 import { BoxVariant } from 'lib/components/core/Box'
 import { RespValue } from 'lib/definitions'
 
