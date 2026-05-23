@@ -2,19 +2,19 @@ import { ComponentMeta } from 'client/definitions'
 import { ToolbarProps } from 'lib/components'
 import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
+import { GRID_PROPS_META } from '../Grid/props'
 
 const TOOLBAR_PROPS_META: ComponentMeta<ToolbarProps>['props'] = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...GRID_PROPS_META.children,
     isRequired: true,
     options: ['Toolbar.Start', 'Toolbar.Main', 'Toolbar.End'],
     description: 'Accepts slots directly or via a render function with access to the context argument.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: GRID_PROPS_META.tagAttrs,
+  tagRef: GRID_PROPS_META.tagRef,
   switchAt: {
-    options: SWITCH_AT as unknown as string[],
+    options: SWITCH_AT,
     defaultValue: DEFAULT_SWITCH_AT,
     isRequired: false,
     isResponsive: false,

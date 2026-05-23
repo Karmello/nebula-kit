@@ -1,7 +1,7 @@
 import { JSX } from 'react'
 
 import { SwitchAt } from 'lib/definitions'
-import { HtmlTagProps } from 'lib/components'
+import { GridProps } from 'lib/components'
 
 import { SplitViewContextProps } from './SplitViewProvider/definitions'
 
@@ -19,8 +19,8 @@ export type SplitViewOwnProps = {
   switchAt?: SwitchAt
 }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'div'>['children'] | ((args: ChildrenAsFuncArgs) => JSX.Element)
+type PropsFromGrid = Pick<GridProps<'div'>, 'tagAttrs' | 'tagRef'> & {
+  children: GridProps<'div'>['children'] | ((args: ChildrenAsFuncArgs) => JSX.Element)
 }
 
-export type SplitViewProps = PropsFromHtmlTag & SplitViewOwnProps
+export type SplitViewProps = PropsFromGrid & SplitViewOwnProps

@@ -5,7 +5,7 @@ import { TabsPanelProps } from './definitions'
 import { useTabsContext } from '../../TabsContext'
 
 export const TabsPanel = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,

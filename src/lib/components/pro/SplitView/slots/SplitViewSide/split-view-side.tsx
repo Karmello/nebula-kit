@@ -9,11 +9,10 @@ import { SplitViewSideProps, DEFAULT_SPLIT_VIEW_SIDE_WIDTH, DEFAULT_SPLIT_VIEW_S
 import { useSplitViewContext } from '../../SplitViewProvider'
 
 export const SplitViewSide = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,
-  // Box
   theme,
   brand,
   color,

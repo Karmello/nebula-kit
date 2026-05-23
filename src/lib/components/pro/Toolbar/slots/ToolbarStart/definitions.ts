@@ -1,7 +1,7 @@
-import { HtmlTagProps } from 'lib/components'
+import { GridItemProps } from 'lib/components'
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'div'>['children']
+type PropsFromGridItem = Pick<GridItemProps<'div'>, 'tagAttrs' | 'tagRef'> & {
+  children: GridItemProps<'div'>['children']
 }
 
-export type ToolbarStartProps = PropsFromHtmlTag
+export type ToolbarStartProps = PropsFromGridItem

@@ -4,12 +4,10 @@ import { DEFAULT_SWITCH_AT } from 'lib/definitions'
 export const DEFAULT_SPLIT_VIEW_SIDE_WIDTH = '225px'
 export const DEFAULT_SPLIT_VIEW_SIDE_INTENT: SplitViewSideProps['intent'] = { base: 'tertiary', [DEFAULT_SWITCH_AT]: 'neutral' }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'aside'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'aside'>['children']
-}
-
 type PropsFromBox = Pick<
   BoxProps<'aside'>,
+  | 'tagAttrs'
+  | 'tagRef'
   | 'theme'
   | 'brand'
   | 'color'
@@ -22,6 +20,8 @@ type PropsFromBox = Pick<
   | 'paddingRight'
   | 'paddingBottom'
   | 'paddingLeft'
->
+> & {
+  children: HtmlTagProps<'aside'>['children']
+}
 
-export type SplitViewSideProps = PropsFromHtmlTag & PropsFromBox
+export type SplitViewSideProps = PropsFromBox

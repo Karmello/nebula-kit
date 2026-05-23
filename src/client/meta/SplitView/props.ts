@@ -2,13 +2,13 @@ import { ComponentMeta } from 'client/definitions'
 import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/definitions'
 import { SplitViewProps, SPLIT_VIEW_SIDE_POSITIONS } from 'lib/components/pro/SplitView'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
+import { GRID_PROPS_META } from '../Grid/props'
 
 const SPLIT_VIEW_PROPS_META: ComponentMeta<SplitViewProps>['props'] = {
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: GRID_PROPS_META.tagAttrs,
+  tagRef: GRID_PROPS_META.tagRef,
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...GRID_PROPS_META.children,
     isRequired: true,
     options: ['SplitView.Side', 'SplitView.Main'],
     description: 'Accepts slots directly or via a render function with access to the SplitView context.',

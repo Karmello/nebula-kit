@@ -1,12 +1,18 @@
-import { BoxProps, HtmlTagProps } from 'lib/components'
-
-type PropsFromHtmlTag = Pick<HtmlTagProps<'section'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'section'>['children']
-}
+import { BoxProps } from 'lib/components'
 
 type PropsFromBox = Pick<
   BoxProps<'section'>,
-  'padding' | 'paddingInline' | 'paddingBlock' | 'paddingTop' | 'paddingRight' | 'paddingBottom' | 'paddingLeft'
->
+  | 'tagAttrs'
+  | 'tagRef'
+  | 'padding'
+  | 'paddingInline'
+  | 'paddingBlock'
+  | 'paddingTop'
+  | 'paddingRight'
+  | 'paddingBottom'
+  | 'paddingLeft'
+> & {
+  children: BoxProps<'section'>['children']
+}
 
-export type SplitViewMainProps = PropsFromHtmlTag & PropsFromBox
+export type SplitViewMainProps = PropsFromBox

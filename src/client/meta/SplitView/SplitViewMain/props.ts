@@ -1,11 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
 import { BOX_PROPS_META } from 'client/meta/Box/props'
-import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { SplitViewMainProps } from 'lib/components'
 
 const SPLIT_VIEW_MAIN_PROPS_META: ComponentMeta<SplitViewMainProps>['props'] = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     options: ['ReactNode', 'SplitView.MainBar'],
     isRequired: true,
     description: 'Main slot content plus optional MainBar slot.',
@@ -17,8 +16,8 @@ const SPLIT_VIEW_MAIN_PROPS_META: ComponentMeta<SplitViewMainProps>['props'] = {
   paddingRight: BOX_PROPS_META.paddingRight,
   paddingBottom: BOX_PROPS_META.paddingBottom,
   paddingLeft: BOX_PROPS_META.paddingLeft,
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
 }
 
 export { SPLIT_VIEW_MAIN_PROPS_META }

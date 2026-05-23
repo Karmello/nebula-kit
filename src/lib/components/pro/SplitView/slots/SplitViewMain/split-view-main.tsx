@@ -9,11 +9,10 @@ import { getToggleIconName } from '../../helpers'
 import { useSplitViewContext } from '../../SplitViewProvider'
 
 export const SplitViewMain = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,
-  // Box
   padding,
   paddingInline,
   paddingBlock,

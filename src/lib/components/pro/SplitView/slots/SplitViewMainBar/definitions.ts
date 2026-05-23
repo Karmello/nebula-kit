@@ -1,7 +1,7 @@
-import { HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps['children']
+type PropsFromBox = Pick<BoxProps<'div'>, 'tagAttrs' | 'tagRef'> & {
+  children: BoxProps['children']
 }
 
-export type SplitViewMainBarProps = PropsFromHtmlTag
+export type SplitViewMainBarProps = PropsFromBox

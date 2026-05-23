@@ -16,7 +16,7 @@ export type SideNavOwnProps = {
   expandMode?: SideNavExpandMode
 }
 
-type PropsFromFlex = Pick<FlexProps, 'tagAttrs' | 'tagRef' | 'gap'>
+type PropsFromFlex = Pick<FlexProps<'nav'>, 'tagAttrs' | 'tagRef' | 'gap'>
 
 type PropsFromButton = Pick<ButtonProps<'a'>, 'color' | 'intent' | 'size'>
 
