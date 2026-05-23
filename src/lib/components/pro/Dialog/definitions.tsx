@@ -1,4 +1,3 @@
-import { HtmlTagProps } from 'lib/components'
 import { BoxIntent, BoxProps } from 'lib/components/core/Box/definitions'
 import { TShirtSize } from 'lib/definitions'
 
@@ -25,8 +24,8 @@ type DialogOwnProps = {
   size?: DialogSize
 }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'dialog'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'dialog'>['children']
+type PropsFromBox = Pick<BoxProps<'dialog'>, 'tagAttrs' | 'tagRef'> & {
+  children: BoxProps<'dialog'>['children']
 }
 
-export type DialogProps = PropsFromHtmlTag & DialogOwnProps
+export type DialogProps = PropsFromBox & DialogOwnProps

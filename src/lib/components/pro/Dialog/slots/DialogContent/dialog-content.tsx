@@ -7,7 +7,7 @@ import { useDialogContext } from '../../DialogProvider'
 import { DialogContentProps } from './definitions'
 
 export const DialogContent = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,

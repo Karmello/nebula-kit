@@ -10,17 +10,16 @@ import { DEFAULT_MULTI_SELECT_OPTION_ALIGN } from './slots'
 import { DEFAULT_MULTI_SELECT_INLINE_SIZE, MultiSelectProps } from './definitions'
 
 export const MultiSelect = ({
-  // HtmlTag
-  children,
+  // DropdownList
   tagAttrs,
   tagRef,
-  // DropdownList
   color,
   size,
   intent,
   scrollAlign,
   visibleItemsCount,
   // Box
+  children,
   inlineSize = DEFAULT_MULTI_SELECT_INLINE_SIZE,
   disabled,
   // own

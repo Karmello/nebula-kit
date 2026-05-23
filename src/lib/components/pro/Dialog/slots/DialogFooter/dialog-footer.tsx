@@ -7,7 +7,7 @@ import { useDialogContext } from '../../DialogProvider'
 import { DialogFooterProps } from './definitions'
 
 export const DialogFooter = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,

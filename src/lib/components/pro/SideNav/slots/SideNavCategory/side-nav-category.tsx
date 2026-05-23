@@ -15,7 +15,7 @@ import {
 } from './definitions'
 
 export const SideNavCategory = ({
-  // HtmlTag
+  // Box
   tagAttrs,
   tagRef,
   children,

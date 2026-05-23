@@ -1,7 +1,7 @@
-import { HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 
-type PropsFromHtmlTag = Pick<HtmlTagProps, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'dialog'>['children']
+type PropsFromBox = Pick<BoxProps, 'tagAttrs' | 'tagRef'> & {
+  children: BoxProps<'dialog'>['children']
 }
 
-export type DialogFooterProps = PropsFromHtmlTag
+export type DialogFooterProps = PropsFromBox

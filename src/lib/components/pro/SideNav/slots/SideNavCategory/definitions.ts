@@ -1,4 +1,4 @@
-import { ButtonProps, HtmlTagProps } from 'lib/components'
+import { BoxProps, ButtonProps } from 'lib/components'
 
 import { SideNavVariant } from '../../definitions'
 import { RespValue } from 'lib/definitions'
@@ -12,11 +12,11 @@ type SideNavCategoryOwnProps = {
   expanded?: boolean
 }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'ul'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'ul'>['children']
+type PropsFromBox = Pick<BoxProps<'ul'>, 'tagAttrs' | 'tagRef'> & {
+  children: BoxProps<'ul'>['children']
   variant?: RespValue<SideNavVariant>
 }
 
 type PropsFromButton = Pick<ButtonProps<'button'>, 'color' | 'intent' | 'align' | 'bold'>
 
-export type SideNavCategoryProps = PropsFromHtmlTag & PropsFromButton & SideNavCategoryOwnProps
+export type SideNavCategoryProps = PropsFromBox & PropsFromButton & SideNavCategoryOwnProps

@@ -11,11 +11,10 @@ import { DEFAULT_SIDE_NAV_EXPAND_MODE, DEFAULT_SIDE_NAV_SIZE, DEFAULT_SIDE_NAV_G
 import './side-nav.scss'
 
 export const SideNav = ({
-  // HtmlTag
+  // Flex
+  children,
   tagAttrs,
   tagRef,
-  children,
-  // Flex
   gap = DEFAULT_SIDE_NAV_GAP,
   // Button
   color,

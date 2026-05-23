@@ -7,7 +7,7 @@ import { useDialogContext } from '../../DialogProvider'
 import { DialogHeaderProps } from './definitions'
 
 export const DialogHeader = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,

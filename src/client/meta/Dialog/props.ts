@@ -2,11 +2,11 @@ import { ComponentMeta } from 'client/definitions'
 import { DialogProps } from 'lib/components'
 import { DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK, DEFAULT_DIALOG_SIZE, DIALOG_SIZES } from 'lib/components/pro/Dialog'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
+import { BOX_PROPS_META } from '../Box/props'
 
 const DIALOG_PROPS_META: ComponentMeta<DialogProps>['props'] = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     options: ['Dialog.Header', 'Dialog.Content', 'Dialog.Footer'],
     isRequired: true,
     description: 'Dialog.Content slot is required. Dialog.Header and Dialog.Footer are optional.',
@@ -31,8 +31,8 @@ const DIALOG_PROPS_META: ComponentMeta<DialogProps>['props'] = {
     defaultValue: DEFAULT_DIALOG_SIZE,
     description: 'Defines the dialog width using predefined size presets.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
 }
 
 export { DIALOG_PROPS_META }
