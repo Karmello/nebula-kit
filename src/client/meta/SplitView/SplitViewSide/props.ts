@@ -4,6 +4,7 @@ import { SplitViewSideProps } from 'lib/components'
 import { DEFAULT_SPLIT_VIEW_SIDE_INTENT, DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from 'lib/components/pro/SplitView'
 
 const SPLIT_VIEW_SIDE_PROPS_META: ComponentMeta<SplitViewSideProps>['props'] = {
+  blockSize: BOX_PROPS_META.blockSize,
   brand: BOX_PROPS_META.brand,
   children: {
     ...BOX_PROPS_META.children,

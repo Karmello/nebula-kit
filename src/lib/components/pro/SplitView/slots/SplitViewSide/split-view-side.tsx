@@ -18,6 +18,7 @@ export const SplitViewSide = ({
   color,
   intent = DEFAULT_SPLIT_VIEW_SIDE_INTENT,
   inlineSize = DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
+  blockSize,
   padding,
   paddingInline,
   paddingBlock,
@@ -56,6 +57,7 @@ export const SplitViewSide = ({
         left={sidePosition === 'left' ? '0px' : undefined}
         right={sidePosition === 'right' ? '0px' : undefined}
         maxInlineSize={mode === 'inline' ? inlineSize : undefined}
+        blockSize={blockSize}
       >
         <Box
           drawable

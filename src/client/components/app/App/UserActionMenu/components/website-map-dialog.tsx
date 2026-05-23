@@ -74,7 +74,7 @@ export const WebsiteMapDialog = () => {
           </Button>
           <Button
             {...commonButtonProps}
-            description="Documentation for all components."
+            description="Documentation for Core and Pro components."
             customSvgIcon={<Icon {...commonIconProps} name="package" />}
             onClick={() => handleClick(PageKey.components)}
           >

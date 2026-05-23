@@ -13,6 +13,7 @@ type PropsFromBox = Pick<
   | 'color'
   | 'intent'
   | 'inlineSize'
+  | 'blockSize'
   | 'padding'
   | 'paddingInline'
   | 'paddingBlock'
