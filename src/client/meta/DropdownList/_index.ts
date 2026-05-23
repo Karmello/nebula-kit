@@ -19,7 +19,7 @@ const DROPDOWN_LIST_META: ComponentMeta<DropdownListProps> = {
       'applies consistent styling to list items',
       'intended to be composed into higher-level selection components',
     ],
-    composedOf: ['Box', 'Floating', 'Portal', 'Resize', 'VirtualList'],
+    composedOf: ['Box', 'Resize', 'VirtualList'],
     topLevelTags: ['div'],
     slots: ['DropdownList.Trigger', 'DropdownList.Item'],
   },

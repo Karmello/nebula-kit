@@ -14,7 +14,7 @@ const TOOLTIP_META: ComponentMeta<TooltipProps> = {
       'click mode supports outside click, Escape dismissal and applies pointer cursor automatically',
       'positions itself relative to the trigger with automatic collision handling',
     ],
-    composedOf: ['Box', 'Floating', 'Portal', 'Measure'],
+    composedOf: ['Box', 'Text'],
   },
   props: TOOLTIP_PROPS_META,
   examples: TOOLTIP_EXAMPLES_META,
