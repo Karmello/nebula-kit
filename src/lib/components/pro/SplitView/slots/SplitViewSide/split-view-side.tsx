@@ -1,7 +1,8 @@
 import { useRef } from 'react'
 import classNames from 'classnames'
 
-import { Resize, Box, Flex, Button, FocusTrap } from 'lib/components'
+import { Resize, Box, Flex, Button } from 'lib/components'
+import { FocusTrap } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 
 import { SplitViewSideProps, DEFAULT_SPLIT_VIEW_SIDE_WIDTH, DEFAULT_SPLIT_VIEW_SIDE_INTENT } from './definitions'

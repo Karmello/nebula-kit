@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
 
-import { FloatingResolved } from 'lib/components'
-import { WithSlots } from 'lib/components/internal'
+import { WithSlots, FloatingResolved } from 'lib/components/internal'
 import { CONTROL_SIZE_MAP, LENGTH_SCALE } from 'lib/definitions'
 
 import {

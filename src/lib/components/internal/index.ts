@@ -1,4 +1,7 @@
 export * from './BrandProvider'
+export * from './Floating'
+export * from './FocusTrap'
+export * from './Measure'
 export * from './Ripple'
 export * from './ThemeProvider'
 export * from './WithSlots'

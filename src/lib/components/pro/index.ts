@@ -2,8 +2,6 @@ export { Autocomplete, type AutocompleteProps, type AutocompleteOptionProps } fr
 export { Avatar, type AvatarProps } from './Avatar'
 export { Breadcrumb, type BreadcrumbProps } from './Breadcrumb'
 export { Dialog, type DialogProps, type DialogHeaderProps, type DialogContentProps, type DialogFooterProps } from './Dialog'
-export { Floating, type FloatingProps, type FloatingResolved } from './Floating'
-export { FocusTrap, type FocusTrapProps } from './FocusTrap'
 
 export {
   Form,
@@ -17,7 +15,6 @@ export {
 } from './Form'
 
 export { Markup, type MarkupProps } from './Markup'
-export { Measure, type MeasureProps } from './Measure'
 export { MultiSelect, type MultiSelectProps, type MultiSelectOptionProps } from './MultiSelect'
 export { Pagination, type PaginationProps } from './Pagination'
 export { PasswordInput, type PasswordInputProps } from './PasswordInput'

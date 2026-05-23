@@ -12,8 +12,6 @@ import dialogMeta from './Dialog/_index'
 import dividerMeta from './Divider/_index'
 import dropdownList from './DropdownList/_index'
 import flexMeta from './Flex/_index'
-import floatingMeta from './Floating/_index'
-import focusTrapMeta from './FocusTrap/_index'
 import footerMeta from './Footer/_index'
 import formMeta from './Form/_index'
 import gridMeta from './Grid/_index'
@@ -26,7 +24,6 @@ import linkMeta from './Link/_index'
 import loaderMeta from './Loader/_index'
 import markerListMeta from './MarkerList/_index'
 import markupMeta from './Markup/_index'
-import measureMeta from './Measure/_index'
 import multiSelectMeta from './MultiSelect/_index'
 import nebkitProviderMeta from './NebkitProvider/_index'
 import paginationMeta from './Pagination/_index'
@@ -66,8 +63,6 @@ const META = {
   Divider: dividerMeta,
   DropdownList: dropdownList,
   Flex: flexMeta,
-  Floating: floatingMeta,
-  FocusTrap: focusTrapMeta,
   Footer: footerMeta,
   Form: formMeta,
   Grid: gridMeta,
@@ -80,7 +75,6 @@ const META = {
   Loader: loaderMeta,
   MarkerList: markerListMeta,
   Markup: markupMeta,
-  Measure: measureMeta,
   MultiSelect: multiSelectMeta,
   NebkitProvider: nebkitProviderMeta,
   Pagination: paginationMeta,

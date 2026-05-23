@@ -103,9 +103,7 @@ export const COMPONENT_CATEGORIES = [
       { key: 'dropdown-list', label: 'DropdownList', sections, bundle: 'core' },
       { key: 'dialog', label: 'Dialog', sections, bundle: 'pro' },
       { key: 'portal', label: 'Portal', sections, bundle: 'core' },
-      { key: 'floating', label: 'Floating', sections, bundle: 'pro' },
       { key: 'tooltip', label: 'Tooltip', sections, bundle: 'pro' },
-      { key: 'focus-trap', label: 'FocusTrap', sections, bundle: 'pro' },
     ],
   },
   {
@@ -136,11 +134,6 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'utility',
     label: 'Utility',
-    items: [{ key: 'measure', label: 'Measure', sections, bundle: 'pro' }],
-  },
-  {
-    key: 'system',
-    label: 'System',
     items: [
       { key: 'nebkit-provider', label: 'NebkitProvider', sections, bundle: 'core' },
       { key: 'hydration-gate', label: 'HydrationGate', sections, bundle: 'core' },
