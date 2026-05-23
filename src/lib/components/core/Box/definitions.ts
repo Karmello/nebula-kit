@@ -14,7 +14,7 @@ import {
   TShirtSize,
 } from 'lib/definitions'
 
-import { HtmlTagProps } from 'lib/components'
+import { HtmlTagProps } from 'lib/components/internal'
 
 export const BOX_THEMES = [...THEMES, 'flipped'] as const
 export const BOX_VARIANTS = ['solid', 'outline', 'soft-outline', 'ghost'] as const

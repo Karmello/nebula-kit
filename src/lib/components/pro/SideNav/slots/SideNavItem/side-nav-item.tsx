@@ -7,7 +7,6 @@ import { SideNavItemProps } from './definitions'
 import { useSideNavContext } from '../../SideNavProvider'
 
 export const SideNavItem = ({
-  // HtmlTag
   tagRef,
   tagAttrs,
   children,

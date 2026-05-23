@@ -13,8 +13,6 @@ import {
 
 import { BoxProps, BOX_VARIANTS, BOX_THEMES, BOX_INTENTS, BOX_SURFACES } from 'lib/components/core/Box/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-
 const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
   activeOnFocus: {
     options: ['boolean'],
@@ -103,7 +101,10 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     isResponsive: true,
     description: 'Default surface color context for the component and its descendants.',
   },
-  children: HTML_TAG_PROPS_META.children,
+  children: {
+    options: ['ReactNode'],
+    description: 'Content rendered.',
+  },
   color: {
     options: COLORS,
     isResponsive: true,
@@ -314,9 +315,19 @@ const BOX_PROPS_META: ComponentMeta<BoxProps>['props'] = {
     options: BOX_SURFACES,
     description: 'Applies a persistent surface behavior that overrides transient interaction states like hover and active.',
   },
-  tag: HTML_TAG_PROPS_META.tag,
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tag: {
+    options: ['HTML tag'],
+    defaultValue: 'div',
+    description: 'The HTML tag to be rendered as the container.',
+  },
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   textAlign: {
     options: CSS_TEXT_ALIGN,
     isResponsive: true,

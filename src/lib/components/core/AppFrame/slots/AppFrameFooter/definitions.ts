@@ -1,4 +1,4 @@
-import { BoxProps, HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 
 export const DEFAULT_APP_FRAME_FOOTER_INTENT: AppFrameFooterProps['intent'] = 'muted'
 
@@ -16,7 +16,7 @@ type PropsFromBox = Pick<
   | 'paddingBottom'
   | 'paddingLeft'
 > & {
-  children: HtmlTagProps<'footer'>['children']
+  children: BoxProps<'footer'>['children']
 }
 
 export type AppFrameFooterProps = PropsFromBox

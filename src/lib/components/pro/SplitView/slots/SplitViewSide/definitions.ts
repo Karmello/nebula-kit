@@ -1,4 +1,4 @@
-import { BoxProps, HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 import { DEFAULT_SWITCH_AT } from 'lib/definitions'
 
 export const DEFAULT_SPLIT_VIEW_SIDE_WIDTH = '225px'
@@ -21,7 +21,7 @@ type PropsFromBox = Pick<
   | 'paddingBottom'
   | 'paddingLeft'
 > & {
-  children: HtmlTagProps<'aside'>['children']
+  children: BoxProps<'aside'>['children']
 }
 
 export type SplitViewSideProps = PropsFromBox

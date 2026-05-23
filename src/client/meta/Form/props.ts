@@ -8,8 +8,8 @@ import {
   DEFAULT_FORM_ROW_GAP,
 } from 'lib/components/pro/Form'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { FLEX_PROPS_META } from '../Flex/props'
+import { FLEX_ITEM_PROPS_META } from '../Flex/FlexItem/props'
 
 const FORM_PROPS_META: ComponentMeta<FormProps>['props'] = {
   alignItems: {
@@ -17,7 +17,7 @@ const FORM_PROPS_META: ComponentMeta<FormProps>['props'] = {
     defaultValue: String(DEFAULT_FORM_ALIGN_ITEMS),
   },
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...FLEX_ITEM_PROPS_META.children,
     options: ['Form.Fields', 'Form.Actions'],
     isRequired: true,
     description: 'Available slots.',
@@ -61,8 +61,8 @@ const FORM_PROPS_META: ComponentMeta<FormProps>['props'] = {
     ...FLEX_PROPS_META.rowGap,
     defaultValue: String(DEFAULT_FORM_ROW_GAP),
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: FLEX_PROPS_META.tagAttrs,
+  tagRef: FLEX_PROPS_META.tagRef,
   useFormProps: {
     options: ['UseFormProps (RHF)'],
     description: 'Passes configuration options directly to RHF useForm.',

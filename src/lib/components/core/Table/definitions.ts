@@ -1,4 +1,4 @@
-import { BoxProps, HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 
 export const TABLE_LAYOUTS = ['auto', 'fixed'] as const
 export const DEFAULT_TABLE_LAYOUT: TableProps['layout'] = 'auto'
@@ -26,7 +26,7 @@ type PropsFromBox = Pick<
   | 'paddingInline'
   | 'textAlign'
 > & {
-  children: HtmlTagProps<'table'>['children']
+  children: BoxProps<'table'>['children']
 }
 
 export type TableProps = PropsFromBox & TableOwnProps

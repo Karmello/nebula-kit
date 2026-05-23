@@ -21,11 +21,10 @@ export const Form = <TFieldValues extends FieldValues = FieldValues, TContext = 
   useFormProps,
   onValidSubmission,
   onInvalidSubmission,
-  // HtmlTag
+  // Flex
   children,
   tagAttrs,
   tagRef,
-  // Flex
   flexDirection = DEFAULT_FORM_FLEX_DIRECTION,
   flexWrap,
   justifyContent,

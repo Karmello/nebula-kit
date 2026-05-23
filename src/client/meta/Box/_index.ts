@@ -21,7 +21,6 @@ const BOX_META: ComponentMeta<BoxProps> = {
       'use `brand` prop to apply a brand context to wrapping Box and its children',
       'use `surface` prop to control the depth style of the component',
     ],
-    composedOf: ['HtmlTag'],
   },
   props: BOX_PROPS_META,
   examples: BOX_EXAMPLES_META,

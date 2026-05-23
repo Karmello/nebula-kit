@@ -31,10 +31,10 @@ describe('server / helpers / getHtmlMetaData', () => {
     })
   })
 
-  it('path /core/base/html-tag/overview', () => {
-    expect(getHtmlMetaData('/core/base/html-tag/overview')).toEqual({
-      title: 'NebulaKit | Core | Base | HtmlTag | Overview',
-      description: META.HtmlTag.HtmlTag.overview.title,
+  it('path /core/base/box/overview', () => {
+    expect(getHtmlMetaData('/core/base/box/overview')).toEqual({
+      title: 'NebulaKit | Core | Base | Box | Overview',
+      description: META.Box.Box.overview.title,
     })
   })
 

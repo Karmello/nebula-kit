@@ -1,4 +1,4 @@
-import { GridProps, HtmlTagProps } from 'lib/components'
+import { GridProps } from 'lib/components'
 
 type AppFrameOwnProps = {
   stickyHeader?: boolean

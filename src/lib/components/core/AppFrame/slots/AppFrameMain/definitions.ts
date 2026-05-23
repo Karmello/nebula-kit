@@ -1,4 +1,4 @@
-import { BoxProps, HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 
 type PropsFromBox = Pick<
   BoxProps<'main'>,
@@ -12,7 +12,7 @@ type PropsFromBox = Pick<
   | 'paddingBottom'
   | 'paddingLeft'
 > & {
-  children: HtmlTagProps<'main'>['children']
+  children: BoxProps<'main'>['children']
 }
 
 export type AppFrameMainProps = PropsFromBox

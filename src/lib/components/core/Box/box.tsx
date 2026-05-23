@@ -2,9 +2,9 @@ import { ElementType, ComponentRef, ComponentProps, PropsWithoutRef, useLayoutEf
 
 import classNames from 'classnames'
 
-import { BoxProps, HtmlTag } from 'lib/components'
+import { BoxProps } from 'lib/components'
 import { updateDomRespStyle, updateDomRespDataset, updateDomStaticDataset } from 'lib/service'
-import { ThemeProvider, BrandProvider, useThemeContext, useBrandContext } from 'lib/components/internal'
+import { ThemeProvider, BrandProvider, useThemeContext, useBrandContext, HtmlTag } from 'lib/components/internal'
 import { withPrefix, resolveLengthValue } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 

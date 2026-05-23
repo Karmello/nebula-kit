@@ -2,11 +2,9 @@ import { ComponentMeta } from 'client/definitions'
 import { LinkProps } from 'lib/components'
 import { DEFAULT_LINK_TARGET, LINK_TARGETS } from 'lib/components/core/Link'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-
 const LINK_PROPS_META: ComponentMeta<LinkProps>['props'] = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    options: ['ReactNode'],
     isRequired: true,
     description: 'Single child component to be wrapped.',
   },

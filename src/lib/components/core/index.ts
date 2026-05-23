@@ -15,7 +15,6 @@ export { DropdownList, type DropdownListProps, type DropdownListTriggerProps, ty
 export { Flex, type FlexProps, type FlexItemProps } from './Flex'
 export { Footer, type FooterProps, type FooterSectionProps } from './Footer'
 export { Grid, type GridProps, type GridItemProps } from './Grid'
-export { HtmlTag, type HtmlTagProps } from './HtmlTag'
 export { HydrationGate, type HydrationGateProps } from './HydrationGate'
 export { Icon, type IconProps } from './Icon'
 export { Image, type ImageProps } from './Image'

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 
-import { HtmlTag } from 'lib/components'
+import { HtmlTag } from '../html-tag'
 
 describe('<HtmlTag />', () => {
   it('renders as <div> by default', () => {

@@ -15,7 +15,6 @@ import flexMeta from './Flex/_index'
 import footerMeta from './Footer/_index'
 import formMeta from './Form/_index'
 import gridMeta from './Grid/_index'
-import htmlTagMeta from './HtmlTag/_index'
 import hydrationGateMeta from './HydrationGate/_index'
 import iconMeta from './Icon/_index'
 import imageMeta from './Image/_index'
@@ -65,7 +64,6 @@ const META = {
   Footer: footerMeta,
   Form: formMeta,
   Grid: gridMeta,
-  HtmlTag: htmlTagMeta,
   HydrationGate: hydrationGateMeta,
   Icon: iconMeta,
   Image: imageMeta,

@@ -1,6 +1,7 @@
 import { ElementType } from 'react'
 
-import { BoxProps, HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
+import { HtmlTagProps } from 'lib/components/internal'
 import { RespValue, CssFlexItemAlignSelf } from 'lib/definitions'
 
 type FlexItemOwnProps = {
