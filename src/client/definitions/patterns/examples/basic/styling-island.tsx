@@ -4,7 +4,7 @@ import { Pattern } from '../../definitions'
 
 export const STYLING_ISLAND: Pattern = {
   id: 'styling-island',
-  category: 'System',
+  category: 'Basic',
   title: 'Styling island',
   description: 'Components within a styling island resolve against the local **theme** and **brand**.',
   jsx: (

@@ -1,7 +1,7 @@
 import { Pattern } from './definitions'
 
-import { DRAWABLE_SURFACE } from './examples/system/drawable-surface'
-import { STYLING_ISLAND } from './examples/system/styling-island'
+import { DRAWABLE_SURFACE } from './examples/basic/drawable-surface'
+import { STYLING_ISLAND } from './examples/basic/styling-island'
 
 import { RESPONSIVE_STACK } from './examples/layout/responsive-stack'
 
