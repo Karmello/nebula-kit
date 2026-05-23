@@ -19,7 +19,7 @@ const ROOT = JSON.parse(fs.readFileSync('package.json', 'utf8'))
 
 const content = `# NebulaKit
 
-React UI system built on composition and prop inheritance, with strict rules governing component appearance and behavior. Designed to reduce UI entropy and keep interfaces consistent and maintainable as products grow over time.
+React UI system designed to produce coherent application interfaces through composable foundations with consistent structure and predictable behavior. Designed to reduce UI entropy and keep interfaces maintainable as products grow over time.
 
 <br />
 
