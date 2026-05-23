@@ -15,7 +15,7 @@ export const Hero = () => {
           behavior. Designed to reduce UI entropy and keep interfaces consistent and maintainable as products grow over time.
         </Text>
         <Spacer blockSize="lg" />
-        <Flex gap="xs" flexWrap="wrap" justifyContent={{ base: 'center', md: 'flex-start' }}>
+        <Flex columnGap="xs" rowGap="sm" flexWrap="wrap" justifyContent={{ base: 'center', md: 'flex-start' }}>
           <Link
             href={`${PageKey.patterns}?id=${activePatternId}`}
             onClick={() => {
