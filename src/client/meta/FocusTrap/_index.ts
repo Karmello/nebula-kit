@@ -7,7 +7,7 @@ import { FOCUS_TRAP_EXAMPLES_META } from './examples'
 const FOCUS_TRAP_META: ComponentMeta<FocusTrapProps> = {
   overview: {
     bundle: 'pro',
-    title: 'Utility for trapping keyboard focus within a specific region.',
+    title: 'Low-level interaction primitive for trapping keyboard focus within a specific region.',
     features: [
       'traps keyboard focus within a specific DOM element while active',
       'restores focus to the previously focused element when deactivated',
