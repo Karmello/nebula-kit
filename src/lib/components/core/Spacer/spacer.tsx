@@ -6,10 +6,9 @@ import { withPrefix } from 'lib/helpers'
 import { SpacerProps, DEFAULT_SPACER_BLOCK_SIZE } from './definitions'
 
 export const Spacer = ({
-  // HtmlTag
+  // Box
   tagAttrs,
   tagRef,
-  // Box
   blockSize = DEFAULT_SPACER_BLOCK_SIZE,
 }: SpacerProps) => {
   return (

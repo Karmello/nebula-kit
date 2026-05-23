@@ -13,13 +13,20 @@ type TableOwnProps = {
   layout?: TableLayout
 }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'table'>, 'tagAttrs' | 'tagRef'> & {
+type PropsFromBox = Pick<
+  BoxProps<'table'>,
+  | 'tagAttrs'
+  | 'tagRef'
+  | 'inlineSize'
+  | 'minInlineSize'
+  | 'maxInlineSize'
+  | 'color'
+  | 'intent'
+  | 'paddingBlock'
+  | 'paddingInline'
+  | 'textAlign'
+> & {
   children: HtmlTagProps<'table'>['children']
 }
 
-type PropsFromBox = Pick<
-  BoxProps<'table'>,
-  'inlineSize' | 'minInlineSize' | 'maxInlineSize' | 'color' | 'intent' | 'paddingBlock' | 'paddingInline' | 'textAlign'
->
-
-export type TableProps = PropsFromHtmlTag & PropsFromBox & TableOwnProps
+export type TableProps = PropsFromBox & TableOwnProps

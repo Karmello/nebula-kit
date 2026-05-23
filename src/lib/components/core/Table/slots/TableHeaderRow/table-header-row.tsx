@@ -8,11 +8,10 @@ import { TableHeaderRowProps } from './definitions'
 import { TableContext, useTableContext } from '../../TableContext'
 
 export const TableHeaderRow = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,
-  // Box
   color,
   intent,
   textAlign,

@@ -2,8 +2,8 @@ import { ComponentMeta } from 'client/definitions'
 import { BreadcrumbProps } from 'lib/components'
 import { BREADCRUMB_TAGS, DEFAULT_BREADCRUMB_INTENT, DEFAULT_BREADCRUMB_SIZE } from 'lib/components/pro/Breadcrumb'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'
+import { BOX_PROPS_META } from '../Box/props'
 
 const BREADCRUMB_PROPS_META: ComponentMeta<BreadcrumbProps>['props'] = {
   color: DROPDOWN_LIST_PROPS_META.color,
@@ -29,11 +29,11 @@ const BREADCRUMB_PROPS_META: ComponentMeta<BreadcrumbProps>['props'] = {
     defaultValue: DEFAULT_BREADCRUMB_SIZE,
   },
   tag: {
-    ...HTML_TAG_PROPS_META.tag,
+    ...BOX_PROPS_META.tag,
     options: BREADCRUMB_TAGS as never,
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
   tree: {
     options: ['object[]'],
     isRequired: true,

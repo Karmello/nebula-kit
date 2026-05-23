@@ -1,14 +1,15 @@
-import { BoxProps, HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 
 type TableHeaderCellOwnProps = {
   colSpan?: number
   rowSpan?: number
 }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'th'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'th'>['children']
+type PropsFromBox = Pick<
+  BoxProps<'th'>,
+  'tagAttrs' | 'tagRef' | 'minInlineSize' | 'maxInlineSize' | 'blockSize' | 'textAlign' | 'color' | 'intent'
+> & {
+  children: BoxProps<'th'>['children']
 }
 
-type PropsFromBox = Pick<BoxProps<'th'>, 'minInlineSize' | 'maxInlineSize' | 'blockSize' | 'textAlign' | 'color' | 'intent'>
-
-export type TableHeaderCellProps = PropsFromHtmlTag & PropsFromBox & TableHeaderCellOwnProps
+export type TableHeaderCellProps = PropsFromBox & TableHeaderCellOwnProps

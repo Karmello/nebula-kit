@@ -7,11 +7,10 @@ import { DEFAULT_TABLE_CAPTION_INTENT, TableCaptionProps } from './definitions'
 import { useTableContext } from '../../TableContext'
 
 export const TableCaption = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,
-  // Box
   color,
   intent = DEFAULT_TABLE_CAPTION_INTENT,
   paddingBlock,

@@ -1,4 +1,4 @@
-import { DropdownListProps, HtmlTagProps } from 'lib/components'
+import { BoxProps, DropdownListProps } from 'lib/components'
 
 export const BREADCRUMB_TAGS = ['div', 'nav', 'section'] as const
 
@@ -20,8 +20,8 @@ type BreadcrumbOwnProps = {
   onChange?: (path: string[]) => void
 }
 
-type PropsFromHtmlTag<T extends BreadcrumbTag = 'div'> = Pick<HtmlTagProps<T>, 'tag' | 'tagAttrs' | 'tagRef'>
+type PropsFromBox<T extends BreadcrumbTag = 'div'> = Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef'>
 
 type PropsFromDropdownList = Pick<DropdownListProps, 'color' | 'intent' | 'size'>
 
-export type BreadcrumbProps<T extends BreadcrumbTag = 'div'> = PropsFromHtmlTag<T> & PropsFromDropdownList & BreadcrumbOwnProps
+export type BreadcrumbProps<T extends BreadcrumbTag = 'div'> = PropsFromBox<T> & PropsFromDropdownList & BreadcrumbOwnProps

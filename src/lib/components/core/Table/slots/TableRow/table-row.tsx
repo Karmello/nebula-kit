@@ -9,11 +9,10 @@ import { TableRowProps } from './definitions'
 import { useTableContext, TableContext } from '../../TableContext'
 
 export const TableRow = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,
-  // Box
   color,
   intent,
   textAlign,

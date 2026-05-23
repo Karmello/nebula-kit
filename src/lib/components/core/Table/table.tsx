@@ -17,11 +17,10 @@ import {
 import './table.scss'
 
 export const Table = ({
-  // HtmlTag
+  // Box
   tagAttrs,
   tagRef,
   children,
-  // Box
   inlineSize,
   minInlineSize,
   maxInlineSize,

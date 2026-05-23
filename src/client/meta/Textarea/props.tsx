@@ -9,7 +9,6 @@ import {
   TEXTAREA_RESIZE,
 } from 'lib/components/core/Textarea'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const TEXTAREA_PROPS_META: ComponentMeta<TextareaProps>['props'] = {
@@ -60,8 +59,8 @@ const TEXTAREA_PROPS_META: ComponentMeta<TextareaProps>['props'] = {
     defaultValue: DEFAULT_TEXTAREA_ROWS as never,
     description: 'Initial number of text rows to display.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
   value: {
     options: ['string'],
     description: 'Current value displayed when the component is used in controlled mode.',

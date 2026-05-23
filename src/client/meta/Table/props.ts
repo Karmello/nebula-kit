@@ -9,12 +9,11 @@ import {
   TABLE_LAYOUTS,
 } from 'lib/components/core/Table'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
 import { BOX_PROPS_META } from '../Box/props'
 
 const TABLE_PROPS_META: ComponentMeta<TableProps>['props'] = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     options: ['Table.Body', 'Table.Header', 'Table.Footer', 'Table.Caption'],
     isRequired: true,
     description: 'Table.Body is required, the rest optional.',
@@ -46,8 +45,8 @@ const TABLE_PROPS_META: ComponentMeta<TableProps>['props'] = {
     defaultValue: DEFAULT_TABLE_PADDING_INLINE as never,
     description: 'Padding for the left and right sides applied to every cell.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
   textAlign: {
     ...BOX_PROPS_META.textAlign,
     description: 'Text alignment applied to every cell.',

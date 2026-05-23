@@ -8,11 +8,10 @@ import { TableHeaderProps } from './definitions'
 import { TableContext, useTableContext } from '../../TableContext'
 
 export const TableHeader = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,
-  // Box
   color,
   intent,
   paddingBlock,

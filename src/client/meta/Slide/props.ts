@@ -2,11 +2,11 @@ import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { SlideProps } from 'lib/components'
 import { DEFAULT_SLIDE_DURATION, DEFAULT_SLIDE_EASING, SLIDE_FROM } from 'lib/components/core/Slide'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
+import { BOX_PROPS_META } from '../Box/props'
 
 const SLIDE_PROPS_META: ComponentMeta<SlideProps>['props'] = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     isRequired: true,
     description: 'Content animated.',
   },
@@ -25,8 +25,8 @@ const SLIDE_PROPS_META: ComponentMeta<SlideProps>['props'] = {
     isRequired: true,
     description: 'Edge from which the content slides when becoming visible.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
   visible: {
     options: ['boolean'],
     isRequired: true,

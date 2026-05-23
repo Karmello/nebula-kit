@@ -1,12 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
 import { BOX_PROPS_META } from 'client/meta/Box/props'
-import { HTML_TAG_PROPS_META } from 'client/meta/HtmlTag/props'
 import { TableCellProps } from 'lib/components'
 
 const TABLE_CELL_PROPS_META: ComponentMeta<TableCellProps>['props'] = {
   blockSize: BOX_PROPS_META.blockSize,
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    ...BOX_PROPS_META.children,
     isRequired: true,
   },
   color: BOX_PROPS_META.color,
@@ -21,8 +20,8 @@ const TABLE_CELL_PROPS_META: ComponentMeta<TableCellProps>['props'] = {
     options: ['number'],
     description: 'Specifies how many rows the cell should span vertically within the table.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
   textAlign: BOX_PROPS_META.textAlign,
 }
 

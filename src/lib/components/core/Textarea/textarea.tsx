@@ -18,10 +18,9 @@ import {
 import './textarea.scss'
 
 export const Textarea = ({
-  // HtmlTag
+  // Box
   tagAttrs,
   tagRef,
-  // Box
   variant = DEFAULT_TEXTAREA_VARIANT,
   color,
   intent = DEFAULT_TEXTAREA_INTENT,

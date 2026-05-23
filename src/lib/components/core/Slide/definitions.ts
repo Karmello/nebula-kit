@@ -1,4 +1,4 @@
-import { HtmlTagProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
 
 export const SLIDE_FROM = ['top', 'right', 'bottom', 'left'] as const
 
@@ -14,8 +14,8 @@ type SlideOwnProps = {
   easing?: string
 }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
-  children: HtmlTagProps<'div'>['children']
+type PropsFromBox = Pick<BoxProps<'div'>, 'tagAttrs' | 'tagRef'> & {
+  children: BoxProps<'div'>['children']
 }
 
-export type SlideProps = PropsFromHtmlTag & SlideOwnProps
+export type SlideProps = PropsFromBox & SlideOwnProps

@@ -8,11 +8,10 @@ import { DEFAULT_TABLE_FOOTER_INTENT, TableFooterProps } from './definitions'
 import { TableContext, useTableContext } from '../../TableContext'
 
 export const TableFooter = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,
-  // Box
   color,
   intent = DEFAULT_TABLE_FOOTER_INTENT,
   paddingBlock,

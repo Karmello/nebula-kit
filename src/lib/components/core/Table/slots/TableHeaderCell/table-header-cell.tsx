@@ -7,11 +7,10 @@ import { TableHeaderCellProps } from './definitions'
 import { useTableContext } from '../../TableContext'
 
 export const TableHeaderCell = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,
-  // Box
   minInlineSize,
   maxInlineSize,
   blockSize,

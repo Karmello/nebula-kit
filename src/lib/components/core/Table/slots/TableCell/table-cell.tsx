@@ -7,11 +7,10 @@ import { TableCellProps } from './definitions'
 import { useTableContext } from '../../TableContext'
 
 export const TableCell = ({
-  // HtmlTag
+  // Box
   children,
   tagAttrs,
   tagRef,
-  // Box
   minInlineSize,
   maxInlineSize,
   blockSize,
