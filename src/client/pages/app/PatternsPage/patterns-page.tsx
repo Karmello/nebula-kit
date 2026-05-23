@@ -45,7 +45,7 @@ export const PatternsPage = () => {
                   </SplitView.MainBar>
                   <Spacer blockSize="lg" />
                   {pattern.jsx ? (
-                    <Flex gap="md" flexDirection="column" alignItems="stretch">
+                    <Flex key={pattern.id} gap="md" flexDirection="column" alignItems="stretch">
                       <Flex.Item flex="1">
                         <Box
                           tagAttrs={{ style: { borderStyle: 'dashed' } }}
@@ -59,12 +59,7 @@ export const PatternsPage = () => {
                         </Box>
                       </Flex.Item>
                       <Flex.Item flex="1">
-                        <CodeSnippet
-                          key={pattern.id}
-                          lang="tsx"
-                          code={convertElemToString(pattern.jsx)}
-                          maxBlockSize="calc(100dvh - 275px)"
-                        />
+                        <CodeSnippet lang="tsx" code={convertElemToString(pattern.jsx)} maxBlockSize="calc(100dvh - 275px)" />
                       </Flex.Item>
                     </Flex>
                   ) : null}
