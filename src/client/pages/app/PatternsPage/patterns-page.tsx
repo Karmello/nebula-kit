@@ -51,7 +51,7 @@ export const PatternsPage = () => {
                           tagAttrs={{ style: { borderStyle: 'dashed' } }}
                           drawable
                           variant="outline"
-                          intent="muted"
+                          intent="tertiary"
                           maxBlockSize="calc(100dvh - 275px)"
                           padding="sm"
                         >
