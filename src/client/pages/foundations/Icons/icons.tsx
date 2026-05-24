@@ -16,7 +16,7 @@ export default () => {
         {Object.keys(ICONS).map(iconName => (
           <Tooltip key={iconName} content={iconName} minInlineSize={0} maxInlineSize={300}>
             <Box tagAttrs={{ style: { lineHeight: 0 } }} drawable variant="outline" intent="tertiary" padding="20px">
-              <Icon name={iconName as IconName} size="30px" intent="primary" />
+              <Icon name={iconName as IconName} size="30px" intent="primary" color="blue" />
             </Box>
           </Tooltip>
         ))}
