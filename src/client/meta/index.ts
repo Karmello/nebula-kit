@@ -10,7 +10,8 @@ import calloutMeta from './Callout/_index'
 import checkboxMeta from './Checkbox/_index'
 import dialogMeta from './Dialog/_index'
 import dividerMeta from './Divider/_index'
-import dropdownList from './DropdownList/_index'
+import dropdownListMeta from './DropdownList/_index'
+import fadeMeta from './Fade/_index'
 import flexMeta from './Flex/_index'
 import footerMeta from './Footer/_index'
 import formMeta from './Form/_index'
@@ -59,7 +60,8 @@ const META = {
   Checkbox: checkboxMeta,
   Dialog: dialogMeta,
   Divider: dividerMeta,
-  DropdownList: dropdownList,
+  DropdownList: dropdownListMeta,
+  Fade: fadeMeta,
   Flex: flexMeta,
   Footer: footerMeta,
   Form: formMeta,

@@ -49,6 +49,7 @@
       "path": "src/lib/components",
     },
     {
+      "name": "internals",
       "path": "src/lib/internals",
     },
   ],

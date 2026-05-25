@@ -1,14 +1,13 @@
-import { ReactNode, RefObject } from 'react'
+import { BoxProps } from '../../core/Box'
 
-export const DEFAULT_FADE_DURATION = 250
-export const DEFAULT_FADE_EASING = 'ease-out'
-
-export type FadeProps = {
-  children: ReactNode
+type FadeOwnProps = {
   visible: boolean
   duration?: number
   easing?: string
-  from?: number
-  to?: number
-  tagRef?: RefObject<HTMLDivElement>
 }
+
+type PropsFromBox = Pick<BoxProps<'span'>, 'tagAttrs' | 'tagRef'> & {
+  children: BoxProps<'span'>['children']
+}
+
+export type FadeProps = PropsFromBox & FadeOwnProps

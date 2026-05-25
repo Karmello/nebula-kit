@@ -1,6 +1,6 @@
 import { Box } from 'lib/components'
 
-import { buildTransformTransition } from 'lib/internals/motion'
+import { buildTransition } from 'lib/internals/motion'
 
 import { RotateProps } from './definitions'
 
@@ -17,7 +17,7 @@ export const Rotate = ({
   duration = DEFAULT_ROTATE_DURATION,
   easing = DEFAULT_ROTATE_EASING,
 }: RotateProps) => {
-  const transition = buildTransformTransition({ duration, easing })
+  const transition = buildTransition({ property: 'transform', duration, easing })
 
   return (
     <Box

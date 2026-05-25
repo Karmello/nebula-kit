@@ -2,6 +2,7 @@ export { Autocomplete, type AutocompleteProps, type AutocompleteOptionProps } fr
 export { Avatar, type AvatarProps } from './Avatar'
 export { Breadcrumb, type BreadcrumbProps } from './Breadcrumb'
 export { Dialog, type DialogProps, type DialogHeaderProps, type DialogContentProps, type DialogFooterProps } from './Dialog'
+export { Fade, type FadeProps } from './Fade'
 
 export {
   Form,

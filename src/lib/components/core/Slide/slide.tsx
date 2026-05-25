@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { buildTransformTransition, useVisibilityTransition } from 'lib/internals/motion'
+import { buildTransition, useVisibilityTransition } from 'lib/internals/motion'
 import { withPrefix } from 'lib/helpers'
 
 import { SlideProps } from './definitions'
@@ -24,7 +24,8 @@ export const Slide = ({
 
   const finalRef = tagRef || ref
 
-  const transition = buildTransformTransition({
+  const transition = buildTransition({
+    property: 'transform',
     duration,
     easing,
   })

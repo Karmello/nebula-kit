@@ -1,4 +1,4 @@
 export * from './buildSizeTransition'
-export * from './buildTransformTransition'
+export * from './buildTransition'
 export * from './useTransitionLifecycle'
 export * from './useVisibilityTransition'
