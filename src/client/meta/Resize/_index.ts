@@ -7,13 +7,13 @@ import { RESIZE_EXAMPLES_META } from './examples'
 const RESIZE_META: ComponentMeta<ResizeProps> = {
   overview: {
     bundle: 'core',
-    title: 'Wrapper that animates element size using measured layout.',
+    title: 'Motion component for animating layout size.',
     description:
-      'Resize is intended for layout-affecting expand/collapse motion, such as accordions, panels and content reveals.',
+      'Resize animates layout-affecting expand and collapse motion by measuring content and transitioning block or inline size.',
     features: [
-      'wraps content in a Box and animates its block or inline size',
-      'measures content size and animates the container between collapsed and expanded layout states',
-      'enables smooth expand/collapse transitions without hard-coding sizes',
+      'animates block or inline size using measured content dimensions',
+      'supports expand and collapse motion for panels, accordions and content reveals',
+      'keeps layout motion explicit without hard-coded sizes',
     ],
     composedOf: ['Box'],
     topLevelTags: ['div'],

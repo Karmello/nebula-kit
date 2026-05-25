@@ -7,10 +7,14 @@ import { SLIDE_EXAMPLES_META } from './examples'
 const SLIDE_META: ComponentMeta<SlideProps> = {
   overview: {
     bundle: 'core',
-    title: 'Wrapper component that animates content by sliding it into and out of view.',
+    title: 'Motion component for animating directional slide transitions.',
+    description:
+      'Slide applies transform-based motion that moves content into and out of view from a chosen direction. It is intended for lightweight visibility transitions such as drawers, floating panels, notifications and contextual UI reveals.',
     features: [
-      'wraps content in a Box and positions it on and off view based on the "from" prop',
-      'slides content into and out of view when "visible" prop changes',
+      'animates content from the top, right, bottom or left',
+      'performs transform-based visibility motion without affecting layout',
+      'coordinates enter and exit transitions using visibility state',
+      'works well for overlays, drawers, popovers and transient UI',
     ],
   },
   props: SLIDE_PROPS_META,

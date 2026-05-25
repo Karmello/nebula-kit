@@ -31,6 +31,7 @@ import passwordInput from './PasswordInput/_index'
 import resizeMeta from './Resize/_index'
 import revealMeta from './Reveal/_index'
 import rotateMeta from './Rotate/_index'
+import scaleMeta from './Scale/_index'
 import sectionMeta from './Section/_index'
 import segmentMeta from './Segment/_index'
 import selectMeta from './Select/_index'
@@ -81,6 +82,7 @@ const META = {
   Resize: resizeMeta,
   Reveal: revealMeta,
   Rotate: rotateMeta,
+  Scale: scaleMeta,
   Section: sectionMeta,
   Segment: segmentMeta,
   Select: selectMeta,

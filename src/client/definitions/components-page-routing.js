@@ -49,6 +49,7 @@ export const COMPONENT_CATEGORIES = [
       { key: 'rotate', label: 'Rotate', sections, bundle: 'core' },
       { key: 'slide', label: 'Slide', sections, bundle: 'core' },
       { key: 'fade', label: 'Fade', sections, bundle: 'pro' },
+      { key: 'scale', label: 'Scale', sections, bundle: 'pro' },
     ],
   },
   {

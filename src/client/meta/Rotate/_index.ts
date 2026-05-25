@@ -7,8 +7,15 @@ import { ROTATE_EXAMPLES_META } from './examples'
 const ROTATE_META: ComponentMeta<RotateProps> = {
   overview: {
     bundle: 'core',
-    title: 'Wrapper component that animates rotation based on angle changes.',
-    features: ['rotates its children based on the "angle" prop', 'performs animation when the "angle" prop value changes'],
+    title: 'Motion component for animating rotation.',
+    description:
+      'Rotate applies transform-based rotation motion by animating changes to the provided angle value. It is intended for lightweight visual motion such as icons, indicators and directional state changes.',
+    features: [
+      'animates rotation using CSS transforms',
+      'reacts to angle changes with smooth visual motion',
+      'uses transform-based animation without affecting layou',
+      'works well for icons, toggles and directional indicators',
+    ],
     composedOf: ['Box'],
     topLevelTags: ['span'],
   },

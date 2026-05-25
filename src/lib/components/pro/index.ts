@@ -19,6 +19,7 @@ export { Markup, type MarkupProps } from './Markup'
 export { MultiSelect, type MultiSelectProps, type MultiSelectOptionProps } from './MultiSelect'
 export { Pagination, type PaginationProps } from './Pagination'
 export { PasswordInput, type PasswordInputProps } from './PasswordInput'
+export { Scale, type ScaleProps } from './Scale'
 export { SideNav, type SideNavProps, type SideNavCategoryProps, type SideNavItemProps } from './SideNav'
 export { Snackbar, type SnackbarProps, useSnackbar } from './Snackbar'
 
