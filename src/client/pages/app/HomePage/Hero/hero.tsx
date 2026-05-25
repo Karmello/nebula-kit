@@ -1,11 +1,15 @@
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
-import { usePatternsStore } from 'client/store'
+import { useComponentsPageStore, usePatternsStore } from 'client/store'
 import { Button, Flex, Image, Link, Spacer, Text, Tooltip } from 'lib/components'
 
 export const Hero = () => {
   const navigateTo = useNavigateTo()
   const activePatternId = usePatternsStore(state => state.activePatternId)
+
+  const componentsPageCategoryKey = useComponentsPageStore(state => state.categoryKey)
+  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
+  const componentsPageSectionKey = useComponentsPageStore(state => state.sectionKey)
 
   return (
     <Flex columnGap="md" rowGap="xl" alignItems="center" flexDirection={{ base: 'column', md: 'row', lg: 'column', xl: 'row' }}>
@@ -28,9 +32,11 @@ export const Hero = () => {
             </Button>
           </Link>
           <Link
-            href={PageKey.components}
+            href={`${PageKey.components}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`}
             onClick={() => {
-              navigateTo(PageKey.components)
+              navigateTo(
+                `${PageKey.components}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`
+              )
             }}
           >
             <Button variant="ghost" color="blue" intent="primary" iconName="arrow-right" iconPlacement="right" size="sm">

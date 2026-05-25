@@ -19,7 +19,7 @@ const DIALOG_META: ComponentMeta<DialogProps> = {
       'includes an optional close button and configurable dismissal behavior',
       'automatically disables page scrolling while open',
     ],
-    composedOf: ['Flex', 'Box', 'Button', 'Resize'],
+    composedOf: ['Flex', 'Box', 'Button', 'Scale'],
     topLevelTags: ['dialog'],
     slots: ['Dialog.Header', 'Dialog.Content', 'Dialog.Footer'],
   },

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Button, Flex, Resize } from 'lib/components'
+import { Box, Button, Flex, Scale } from 'lib/components'
 import { WithSlots, FocusTrap, Portal } from 'lib/components/internal'
 import { useGlobalScrollLock, useCurrentTheme } from 'lib/hooks'
 import { withPrefix } from 'lib/helpers'
@@ -86,12 +86,7 @@ export const Dialog = ({
                   alignItems="center"
                 >
                   <FocusTrap tagRef={tagRef || ref} active={open} onFocusEscape={onClose} disableEscapeOnOutsideClick>
-                    <Resize
-                      property="blockSize"
-                      visible={open}
-                      easing={open ? 'ease-out' : 'ease-in'}
-                      duration={DIALOG_RESIZE_DURATION}
-                    >
+                    <Scale visible={open} easing={open ? 'ease-out' : 'ease-in'}>
                       <Box
                         tag="dialog"
                         tagAttrs={{
@@ -125,7 +120,7 @@ export const Dialog = ({
                           {slotsByName['Dialog.Footer']}
                         </Box>
                       </Box>
-                    </Resize>
+                    </Scale>
                   </FocusTrap>
                 </Flex>
               </Box>
