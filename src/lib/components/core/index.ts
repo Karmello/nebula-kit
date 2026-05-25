@@ -1,3 +1,5 @@
+export { Box, type BoxProps } from './Box'
+
 export {
   AppFrame,
   type AppFrameProps,
@@ -6,7 +8,6 @@ export {
   type AppFrameFooterProps,
 } from './AppFrame'
 
-export { Box, type BoxProps } from './Box'
 export { Button, type ButtonProps } from './Button'
 export { Callout, type CalloutProps } from './Callout'
 export { Checkbox, type CheckboxProps } from './Checkbox'

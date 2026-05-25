@@ -1,14 +1,14 @@
 @use './index.scss';
 
-@use '../components/core/AppFrame/app-frame.scss';
-@use '../components/core/AppFrame/slots/AppFrameHeader/app-frame-header.scss';
-@use '../components/core/AppFrame/slots/AppFrameMain/app-frame-main.scss';
-
 @use '../components/core/Box/styles/box.scss';
 @use '../components/core/Box/styles/ghost.scss';
 @use '../components/core/Box/styles/outline.scss';
 @use '../components/core/Box/styles/soft-outline.scss';
 @use '../components/core/Box/styles/solid.scss';
+
+@use '../components/core/AppFrame/app-frame.scss';
+@use '../components/core/AppFrame/slots/AppFrameHeader/app-frame-header.scss';
+@use '../components/core/AppFrame/slots/AppFrameMain/app-frame-main.scss';
 
 @use '../components/core/Button/button.scss';
 
@@ -36,8 +36,6 @@
 
 @use '../components/core/MarkerList/marker-list.scss';
 
-@use '../components/core/Ripple/ripple.scss';
-
 @use '../components/core/Segment/segment.scss';
 
 @use '../components/core/Table/table.scss';
@@ -45,3 +43,5 @@
 @use '../components/core/Text/text.scss';
 
 @use '../components/core/Textarea/textarea.scss';
+
+@use '../components/internal/Ripple/ripple.scss';
