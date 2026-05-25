@@ -6,9 +6,11 @@ import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { useAnchoredPosition } from 'lib/internals/positioning'
 
-import { DEFAULT_PORTAL_PLACEMENT, PortalProps } from './definitions'
+import { PortalProps } from './definitions'
 import { useThemeContext } from '../../internal/ThemeProvider'
 import { useBrandContext } from '../../internal/BrandProvider'
+
+export const DEFAULT_PORTAL_PLACEMENT: PortalProps['placement'] = 'bottom-start'
 
 export const Portal = ({ children, tagRef, tagAttrs, anchorRef, placement = DEFAULT_PORTAL_PLACEMENT, offset }: PortalProps) => {
   const [container, setContainer] = useState<HTMLElement | null>(null)

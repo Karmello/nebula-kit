@@ -2,8 +2,6 @@ import { RefObject } from 'react'
 
 import { HtmlTagProps } from 'lib/components/internal'
 
-export const DEFAULT_PORTAL_PLACEMENT: PortalProps['placement'] = 'bottom-start'
-
 export const PORTAL_PLACEMENTS = [
   'top-start',
   'top-center',

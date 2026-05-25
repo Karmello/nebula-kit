@@ -5,7 +5,7 @@ import { resolveAnchoredPosition } from '../resolveAnchoredPosition'
 import { resolvePlacementTransform } from '../resolvePlacementTransform'
 
 export type UseAnchoredPositionProps = {
-  anchorRef: RefObject<HTMLElement | null>
+  anchorRef?: RefObject<HTMLElement | null>
   placement: AnchoredPlacement
   offset?: number
 }
@@ -20,7 +20,7 @@ export const useAnchoredPosition = ({ anchorRef, placement, offset }: UseAnchore
   const frameRef = useRef<number | null>(null)
 
   const updatePosition = useCallback(() => {
-    const anchor = anchorRef.current
+    const anchor = anchorRef?.current
 
     if (!anchor) return
 
