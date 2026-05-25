@@ -1,7 +1,7 @@
 import { cloneElement, ReactElement, RefObject, useLayoutEffect, useRef, useState } from 'react'
 
 import { Box, Resize, VirtualList, DropdownList, DropdownListItemProps, Divider } from 'lib/components'
-import { Floating, Portal } from 'lib/components/internal'
+import { Floating, Portal } from 'lib/components/shared'
 
 import { useDropdownListContext } from '../DropdownListProvider'
 import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'

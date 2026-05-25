@@ -1,5 +1,5 @@
 import { Flex } from 'lib/components'
-import { WithSlots } from 'lib/components/internal'
+import { WithSlots } from 'lib/components/shared'
 
 import { DEFAULT_FORM_ACTIONS_GAP, FormActionsProps } from './definitions'
 

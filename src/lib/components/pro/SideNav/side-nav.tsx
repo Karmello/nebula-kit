@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import { WithSlots } from 'lib/components/internal'
+import { WithSlots } from 'lib/components/shared'
 import { Flex } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 

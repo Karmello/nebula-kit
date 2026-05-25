@@ -1,5 +1,5 @@
 import { BoxProps } from 'lib/components'
-import { FloatingProps } from 'lib/components/internal'
+import { FloatingProps } from 'lib/components/shared'
 import { BoxVariant } from 'lib/components/core/Box'
 import { RespValue } from 'lib/definitions'
 

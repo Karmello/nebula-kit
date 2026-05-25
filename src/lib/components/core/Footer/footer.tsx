@@ -1,7 +1,7 @@
 import { ComponentProps, PropsWithoutRef } from 'react'
 
 import { Flex } from 'lib/components'
-import { WithSlots } from 'lib/components/internal'
+import { WithSlots } from 'lib/components/shared'
 import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
 import { buildStaticDataset } from 'lib/internals/dom'
 import { withPrefix } from 'lib/helpers'

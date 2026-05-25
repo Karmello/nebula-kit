@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { Flex } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { WithSlots } from 'lib/components/internal'
+import { WithSlots } from 'lib/components/shared'
 
 import { DEFAULT_SEGMENT_FLEX_DIRECTION, SegmentProps } from './definitions'
 

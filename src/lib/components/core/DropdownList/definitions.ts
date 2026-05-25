@@ -2,7 +2,7 @@ import { JSX } from 'react'
 
 import { BoxProps, ButtonProps } from 'lib/components'
 import { TShirtSize } from 'lib/definitions'
-import { PortalPlacement } from 'lib/components/internal/Portal'
+import { PortalPlacement } from 'lib/components/shared/Portal'
 
 export const DROPDOWN_LIST_PLACEMENTS = [
   'bottom-start',

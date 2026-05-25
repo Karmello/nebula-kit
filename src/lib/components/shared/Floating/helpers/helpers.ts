@@ -1,4 +1,4 @@
-import { PortalPlacement } from 'lib/components/internal'
+import { PortalPlacement } from 'lib/components/shared'
 
 export type Side = 'top' | 'bottom' | 'left' | 'right'
 export type Align = 'start' | 'center' | 'end'

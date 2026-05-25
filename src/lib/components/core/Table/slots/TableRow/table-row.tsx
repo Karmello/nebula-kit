@@ -2,7 +2,7 @@ import { cloneElement } from 'react'
 import classNames from 'classnames'
 
 import { Box, TableHeaderCellProps } from 'lib/components'
-import { WithSlots } from 'lib/components/internal'
+import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 
 import { TableRowProps } from './definitions'

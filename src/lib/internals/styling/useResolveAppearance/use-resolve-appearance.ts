@@ -1,5 +1,5 @@
 import { BoxProps } from 'lib/components'
-import { useBrandContext, useThemeContext } from 'lib/components/internal'
+import { useBrandContext, useThemeContext } from 'lib/components/shared'
 
 export const useResolveAppearance = ({
   theme,

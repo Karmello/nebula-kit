@@ -1,7 +1,7 @@
 import { ReactElement, useLayoutEffect, useRef } from 'react'
 
 import { useGlobalScrollLock } from 'lib/hooks'
-import { ThemeProvider, BrandProvider } from 'lib/components/internal'
+import { ThemeProvider, BrandProvider } from 'lib/components/shared'
 
 import {
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,

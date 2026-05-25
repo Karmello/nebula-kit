@@ -1,7 +1,6 @@
 export * from './BrandProvider'
 export * from './Floating'
 export * from './HtmlTag'
-export * from './Measure'
 export * from './Portal'
 export * from './Ripple'
 export * from './ThemeProvider'

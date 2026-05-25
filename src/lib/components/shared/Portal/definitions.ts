@@ -1,6 +1,6 @@
 import { RefObject } from 'react'
 
-import { HtmlTagProps } from 'lib/components/internal'
+import { HtmlTagProps } from 'lib/components/shared'
 
 export const PORTAL_PLACEMENTS = [
   'top-start',

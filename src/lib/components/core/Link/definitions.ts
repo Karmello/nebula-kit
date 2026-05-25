@@ -1,6 +1,6 @@
 import { MouseEventHandler } from 'react'
 
-import { HtmlTagProps } from 'lib/components/internal'
+import { HtmlTagProps } from 'lib/components/shared'
 
 export const LINK_TARGETS = ['_self', '_blank', '_parent', '_top'] as const
 export const DEFAULT_LINK_TARGET: LinkProps['target'] = '_self'

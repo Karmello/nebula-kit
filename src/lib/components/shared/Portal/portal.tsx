@@ -7,8 +7,8 @@ import { withPrefix } from 'lib/helpers'
 import { useAnchoredPosition } from 'lib/internals/positioning'
 
 import { PortalProps } from './definitions'
-import { useThemeContext } from '../../internal/ThemeProvider'
-import { useBrandContext } from '../../internal/BrandProvider'
+import { useThemeContext } from '../../shared/ThemeProvider'
+import { useBrandContext } from '../../shared/BrandProvider'
 
 export const DEFAULT_PORTAL_PLACEMENT: PortalProps['placement'] = 'bottom-start'
 

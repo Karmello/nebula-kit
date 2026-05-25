@@ -2,7 +2,7 @@ import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef 
 import classNames from 'classnames'
 
 import { Box, Text, Loader, WithIcon, Flex } from 'lib/components'
-import { Ripple } from 'lib/components/internal'
+import { Ripple } from 'lib/components/shared'
 import { syncRespDataset } from 'lib/internals/dom'
 import { CONTROL_SIZE_MAP } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'

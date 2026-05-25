@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
 import { Box, Button, Fade, Flex, Scale } from 'lib/components'
-import { WithSlots, Portal } from 'lib/components/internal'
+import { WithSlots, Portal } from 'lib/components/shared'
 import { useGlobalScrollLock, useCurrentTheme } from 'lib/hooks'
 import { useFocusTrap } from 'lib/internals/focus'
 import { withPrefix } from 'lib/helpers'

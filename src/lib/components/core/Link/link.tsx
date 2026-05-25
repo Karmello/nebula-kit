@@ -1,7 +1,7 @@
 import { Children, cloneElement, MouseEvent } from 'react'
 import classNames from 'classnames'
 
-import { HtmlTag, HtmlTagProps } from 'lib/components/internal'
+import { HtmlTag, HtmlTagProps } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 
 import { DEFAULT_LINK_TARGET, LinkProps } from './definitions'
