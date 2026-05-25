@@ -1,6 +1,5 @@
 export * from './BrandProvider'
 export * from './Floating'
-export * from './FocusTrap'
 export * from './HtmlTag'
 export * from './Measure'
 export * from './Portal'

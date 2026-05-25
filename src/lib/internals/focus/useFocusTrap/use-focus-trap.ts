@@ -1,20 +1,20 @@
-import { useEffect, useRef } from 'react'
+import { RefObject, useEffect, useRef } from 'react'
 
-import { DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK, FocusTrapProps } from './definitions'
 import { isInsideLogicalTree } from './helpers'
 
-export const FocusTrap = ({
-  tagRef,
-  children,
-  active,
-  onFocusEscape,
-  disableEscapeOnOutsideClick = DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK,
-}: FocusTrapProps) => {
+export type UseFocusTrapProps = {
+  active: boolean
+  targetRef: RefObject<HTMLElement | null>
+  onFocusEscape?: () => void
+  disableEscapeOnOutsideClick?: boolean
+}
+
+export const useFocusTrap = ({ active, targetRef, onFocusEscape, disableEscapeOnOutsideClick }: UseFocusTrapProps) => {
   const triggerRef = useRef<HTMLElement | null>(null)
   const prevActiveRef = useRef(false)
   const hadTabIndexRef = useRef(false)
+  const tabDirectionRef = useRef<'forward' | 'backward'>('forward')
 
-  // Restore focus on close
   useEffect(() => {
     const prevActive = prevActiveRef.current
 
@@ -31,7 +31,8 @@ export const FocusTrap = ({
   }, [active])
 
   useEffect(() => {
-    const target = tagRef?.current as HTMLElement | null
+    const target = targetRef?.current
+
     if (!active || !target) return
 
     if (!triggerRef.current) {
@@ -40,7 +41,23 @@ export const FocusTrap = ({
 
     const getTabbables = () => {
       const all = Array.from(target.querySelectorAll<HTMLElement>('*'))
+
       return all.filter(el => el.tabIndex >= 0)
+    }
+
+    const focusBoundary = () => {
+      const tabbables = getTabbables()
+
+      if (tabbables.length === 0) {
+        target.focus()
+        return
+      }
+
+      if (tabDirectionRef.current === 'backward') {
+        tabbables[tabbables.length - 1].focus()
+      } else {
+        tabbables[0].focus()
+      }
     }
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -51,40 +68,54 @@ export const FocusTrap = ({
         return
       }
 
+      tabDirectionRef.current = e.shiftKey ? 'backward' : 'forward'
+
       const tabbables = getTabbables()
-      if (tabbables.length === 0) return
+
+      if (tabbables.length === 0) {
+        e.preventDefault()
+        target.focus()
+        return
+      }
 
       const first = tabbables[0]
       const last = tabbables[tabbables.length - 1]
       const activeEl = document.activeElement as HTMLElement | null
 
-      if (!activeEl || !target.contains(activeEl)) return
-
-      if (!e.shiftKey) {
-        if (activeEl === last) {
-          e.preventDefault()
-          first.focus()
-        }
-      } else {
-        if (activeEl === first) {
-          e.preventDefault()
-          last.focus()
-        }
+      if (e.shiftKey && activeEl === first) {
+        e.preventDefault()
+        last.focus()
+        return
       }
+
+      if (!e.shiftKey && activeEl === last) {
+        e.preventDefault()
+        first.focus()
+      }
+    }
+
+    const handleFocusIn = () => {
+      const activeEl = document.activeElement as HTMLElement | null
+
+      if (!activeEl || isInsideLogicalTree(activeEl, target)) return
+
+      focusBoundary()
     }
 
     const handlePointerDown = (e: PointerEvent) => {
       if (disableEscapeOnOutsideClick) return
+
       if (!isInsideLogicalTree(e.target as Node, target)) {
         onFocusEscape?.()
       }
     }
 
-    document.addEventListener('keydown', handleKeyDown)
+    document.addEventListener('keydown', handleKeyDown, true)
+    document.addEventListener('focusin', handleFocusIn)
     document.addEventListener('pointerdown', handlePointerDown)
 
-    // Ensure root itself can receive focus
     hadTabIndexRef.current = target.hasAttribute('tabindex')
+
     if (!hadTabIndexRef.current) {
       target.setAttribute('tabindex', '-1')
     }
@@ -94,14 +125,13 @@ export const FocusTrap = ({
     }
 
     return () => {
-      document.removeEventListener('keydown', handleKeyDown)
+      document.removeEventListener('keydown', handleKeyDown, true)
+      document.removeEventListener('focusin', handleFocusIn)
       document.removeEventListener('pointerdown', handlePointerDown)
 
       if (!hadTabIndexRef.current) {
         target.removeAttribute('tabindex')
       }
     }
-  }, [active, tagRef, onFocusEscape, disableEscapeOnOutsideClick])
-
-  return children
+  }, [active, targetRef, onFocusEscape, disableEscapeOnOutsideClick])
 }

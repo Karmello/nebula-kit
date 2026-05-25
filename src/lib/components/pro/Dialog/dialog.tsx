@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Button, Flex, Scale } from 'lib/components'
-import { WithSlots, FocusTrap, Portal } from 'lib/components/internal'
+import { Box, Button, Fade, Flex, Scale } from 'lib/components'
+import { WithSlots, Portal } from 'lib/components/internal'
 import { useGlobalScrollLock, useCurrentTheme } from 'lib/hooks'
+import { useFocusTrap } from 'lib/internals/focus'
 import { withPrefix } from 'lib/helpers'
 
 import { DialogProvider } from './DialogProvider'
@@ -29,28 +30,32 @@ export const Dialog = ({
   closeOnBackdropClick = DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK,
   size = DEFAULT_DIALOG_SIZE,
 }: DialogProps) => {
-  const ref = useRef(null)
-  const canAnimateRef = useRef(false)
+  const ref = useRef<HTMLDialogElement | null>(null)
+
+  const finalRef = tagRef || ref
 
   const { lock, unlock } = useGlobalScrollLock()
+
   const theme = useCurrentTheme()
 
   useEffect(() => {
-    const id = requestAnimationFrame(() => {
-      canAnimateRef.current = true
-    })
-    return () => cancelAnimationFrame(id)
-  }, [])
-
-  useEffect(() => {
     if (!open) return
+
     lock()
+
     return () => {
       setTimeout(() => {
         unlock()
       }, DIALOG_RESIZE_DURATION)
     }
   }, [open])
+
+  useFocusTrap({
+    active: open,
+    targetRef: finalRef,
+    onFocusEscape: onClose,
+    disableEscapeOnOutsideClick: true,
+  })
 
   return (
     <WithSlots<'Dialog.Header' | 'Dialog.Content' | 'Dialog.Footer'>
@@ -62,30 +67,30 @@ export const Dialog = ({
         return (
           <DialogProvider intent={DIALOG_INTENT} padding={DIALOG_PADDING}>
             <Portal>
-              <Box
-                tagAttrs={{
-                  style: {
-                    backgroundColor: theme === 'light' ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)',
-                    transition: canAnimateRef.current ? 'opacity 0.4s ease-out' : 'none',
-                  },
-                  onClick: () => {
-                    if (closeOnBackdropClick) onClose?.()
-                  },
-                }}
-                position="fixed"
-                inset="0px"
-                opacity={open ? '1' : '0'}
-                pointerEvents={open ? 'auto' : 'none'}
-                zIndex={1000}
-              >
-                <Flex
+              <Fade visible={open}>
+                <Box
                   tagAttrs={{
-                    style: { blockSize: '100%', inlineSize: '100%' },
+                    style: {
+                      backgroundColor: theme === 'light' ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)',
+                    },
+                    onClick: () => {
+                      if (closeOnBackdropClick) {
+                        onClose?.()
+                      }
+                    },
                   }}
-                  justifyContent="center"
-                  alignItems="center"
+                  position="fixed"
+                  inset="0px"
+                  pointerEvents={open ? 'auto' : 'none'}
+                  zIndex={1000}
                 >
-                  <FocusTrap tagRef={tagRef || ref} active={open} onFocusEscape={onClose} disableEscapeOnOutsideClick>
+                  <Flex
+                    tagAttrs={{
+                      style: { blockSize: '100%', inlineSize: '100%' },
+                    }}
+                    justifyContent="center"
+                    alignItems="center"
+                  >
                     <Scale visible={open} easing={open ? 'ease-out' : 'ease-in'}>
                       <Box
                         tag="dialog"
@@ -98,7 +103,7 @@ export const Dialog = ({
                             e.stopPropagation()
                           },
                         }}
-                        tagRef={tagRef || ref}
+                        tagRef={finalRef}
                         drawable
                         variant="outline"
                         maxInlineSize="95dvw"
@@ -115,15 +120,16 @@ export const Dialog = ({
                               <Button size="2xs" iconName="close" variant="outline" intent="tertiary" onClick={onClose} />
                             </Box>
                           ) : null}
+
                           {slotsByName['Dialog.Header']}
                           {slotsByName['Dialog.Content']}
                           {slotsByName['Dialog.Footer']}
                         </Box>
                       </Box>
                     </Scale>
-                  </FocusTrap>
-                </Flex>
-              </Box>
+                  </Flex>
+                </Box>
+              </Fade>
             </Portal>
           </DialogProvider>
         )
