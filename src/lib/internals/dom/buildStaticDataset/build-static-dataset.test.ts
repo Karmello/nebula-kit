@@ -1,8 +1,8 @@
-import { updateDomStaticDataset } from '../updateDomStaticDataset'
+import { buildStaticDataset } from '../buildStaticDataset'
 
-describe('updateDomStaticDataset', () => {
+describe('buildStaticDataset', () => {
   it('maps defined props to static data attributes', () => {
-    const result = updateDomStaticDataset('Box', {
+    const result = buildStaticDataset('Box', {
       intent: 'primary',
       variant: 'solid',
     })
@@ -14,7 +14,7 @@ describe('updateDomStaticDataset', () => {
   })
 
   it('ignores props with undefined values', () => {
-    const result = updateDomStaticDataset('Box', {
+    const result = buildStaticDataset('Box', {
       intent: 'primary',
       variant: undefined,
     })
@@ -27,7 +27,7 @@ describe('updateDomStaticDataset', () => {
   })
 
   it('returns an empty object when no valid props are provided', () => {
-    const result = updateDomStaticDataset('Text', {
+    const result = buildStaticDataset('Text', {
       size: undefined,
       weight: undefined,
     })
@@ -36,7 +36,7 @@ describe('updateDomStaticDataset', () => {
   })
 
   it('kebab-cases component and prop names in data attributes', () => {
-    const result = updateDomStaticDataset('AppFrameHeader', {
+    const result = buildStaticDataset('AppFrameHeader', {
       isSticky: true,
     })
 

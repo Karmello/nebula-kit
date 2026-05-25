@@ -5,9 +5,8 @@ import { Breakpoint } from 'lib/definitions'
 
 import { getDataAttrName } from './get-data-attr-name'
 import { Bucket, isBlank, PropValues } from '../definitions'
-import { ComponentName } from './definitions'
 
-export const getBucketPerBp = (componentName: ComponentName, breakpoint: Breakpoint, propValues: PropValues): Bucket => {
+export const getBucketPerBp = (namespace: string, breakpoint: Breakpoint, propValues: PropValues): Bucket => {
   const bucket: Bucket = {}
 
   for (const propName in propValues) {
@@ -20,7 +19,7 @@ export const getBucketPerBp = (componentName: ComponentName, breakpoint: Breakpo
     if (breakpoint === 'base' || isObject(propValue)) {
       const finalValue = isObject(propValue) ? propValue[breakpoint] : propValue
       if (!isNil(finalValue) && !isBlank(finalValue)) {
-        bucket[getDataAttrName(componentName, propName)] = String(finalValue)
+        bucket[getDataAttrName(namespace, propName)] = String(finalValue)
       }
     }
   }

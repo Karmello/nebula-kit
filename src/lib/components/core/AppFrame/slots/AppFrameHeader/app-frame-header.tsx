@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import { updateDomStaticDataset } from 'lib/internals/dom'
+import { buildStaticDataset } from 'lib/internals/dom'
 import { withPrefix } from 'lib/helpers'
 import { Box } from 'lib/components'
 
@@ -26,7 +26,7 @@ export const AppFrameHeader = ({
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('app-frame-header'), tagAttrs?.className),
-        ...updateDomStaticDataset('AppFrameHeader', { stickyHeader }),
+        ...buildStaticDataset('AppFrameHeader', { stickyHeader }),
       }}
       tagRef={tagRef}
       drawable

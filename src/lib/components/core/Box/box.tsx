@@ -1,9 +1,8 @@
 import { ElementType, ComponentRef, ComponentProps, PropsWithoutRef, useLayoutEffect, useEffect, useRef } from 'react'
-
 import classNames from 'classnames'
 
 import { BoxProps } from 'lib/components'
-import { updateDomRespStyle, syncRespDataset, updateDomStaticDataset } from 'lib/internals/dom'
+import { syncRespStyle, syncRespDataset, buildStaticDataset } from 'lib/internals/dom'
 import { ThemeProvider, BrandProvider, useThemeContext, useBrandContext, HtmlTag } from 'lib/components/internal'
 import { withPrefix, resolveLengthValue } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
@@ -117,7 +116,7 @@ export const Box = <T extends ElementType = 'div'>({
   }, [])
 
   useLayoutEffect(() => {
-    updateDomRespStyle('Box', finalRef, bp, {
+    syncRespStyle('Box', finalRef, bp, {
       opacity,
       visibility,
       textAlign,
@@ -236,7 +235,7 @@ export const Box = <T extends ElementType = 'div'>({
               className: classNames(withPrefix('box'), tagAttrs?.className || ''),
               style: { ...tagAttrs?.style, pointerEvents },
               disabled,
-              ...updateDomStaticDataset('Box', {
+              ...buildStaticDataset('Box', {
                 drawable,
                 elevated,
                 interactive,

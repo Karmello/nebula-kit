@@ -2,9 +2,7 @@ import { kebabCase } from 'change-case'
 
 import { LIB_PREFIX } from 'lib/definitions'
 
-import { ComponentName } from './definitions'
-
-export const getDataAttrs = (componentName: ComponentName, propValues: Record<string, unknown>, propName: string) => {
+export const getDataAttrs = (namespace: string, propValues: Record<string, unknown>, propName: string) => {
   const propValue = propValues[propName]
   const dataAttrs: Record<string, typeof propValue> = {}
 
@@ -12,6 +10,6 @@ export const getDataAttrs = (componentName: ComponentName, propValues: Record<st
     return dataAttrs
   }
 
-  dataAttrs[`data-${LIB_PREFIX}-${kebabCase(componentName)}-${kebabCase(propName)}`] = propValue
+  dataAttrs[`data-${LIB_PREFIX}-${kebabCase(namespace)}-${kebabCase(propName)}`] = propValue
   return dataAttrs
 }

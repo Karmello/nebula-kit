@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { updateDomRespStyle } from 'lib/internals/dom'
+import { syncRespStyle } from 'lib/internals/dom'
 import { useScreen } from 'lib/hooks'
 import { withPrefix } from 'lib/helpers'
 
@@ -49,7 +49,7 @@ export const Image = ({
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    updateDomRespStyle('Image', finalRef, bp, { objectFit, objectPosition })
+    syncRespStyle('Image', finalRef, bp, { objectFit, objectPosition })
   }, [bp, objectFit, objectPosition])
 
   return (

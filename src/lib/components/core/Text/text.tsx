@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { updateDomStaticDataset } from 'lib/internals/dom'
+import { buildStaticDataset } from 'lib/internals/dom'
 import { TEXT_TYPOGRAPHY_MAP } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
@@ -53,7 +53,7 @@ export const Text = <T extends TextTag = 'p'>({
             : {}),
           ...(tagAttrs?.style || {}),
         },
-        ...updateDomStaticDataset('Text', { typography, bold, italic, underline, noWrap, truncate }),
+        ...buildStaticDataset('Text', { typography, bold, italic, underline, noWrap, truncate }),
       }}
       drawable
       variant="ghost"

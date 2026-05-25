@@ -1,3 +1,3 @@
+export { buildStaticDataset } from './buildStaticDataset'
 export { syncRespDataset } from './syncRespDataset'
-export { updateDomRespStyle } from './updateDomRespStyle'
-export { updateDomStaticDataset } from './updateDomStaticDataset'
+export { syncRespStyle } from './syncRespStyle'

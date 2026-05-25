@@ -1,11 +1,11 @@
-import { updateDomRespStyle } from '../updateDomRespStyle'
+import { syncRespStyle } from '../syncRespStyle'
 
-describe('updateDomRespStyle', () => {
+describe('syncRespStyle', () => {
   it('applies a plain style value and stores applied keys', () => {
     const el = document.createElement('div')
     const ref = { current: el }
 
-    updateDomRespStyle('Box', ref, 'base' as any, {
+    syncRespStyle('Box', ref, 'base' as any, {
       padding: '8px',
       margin: undefined, // ignored
     })
@@ -25,7 +25,7 @@ describe('updateDomRespStyle', () => {
     const el = document.createElement('div')
     const ref = { current: el }
 
-    updateDomRespStyle('Box', ref, 'md' as any, {
+    syncRespStyle('Box', ref, 'md' as any, {
       gap: '12px',
     })
 
@@ -36,7 +36,7 @@ describe('updateDomRespStyle', () => {
     const el = document.createElement('div')
     const ref = { current: el }
 
-    updateDomRespStyle('Box', ref, 'md' as any, {
+    syncRespStyle('Box', ref, 'md' as any, {
       padding: {
         base: '8px',
         md: '16px',
@@ -50,7 +50,7 @@ describe('updateDomRespStyle', () => {
     const el = document.createElement('div')
     const ref = { current: el }
 
-    updateDomRespStyle('Box', ref, 'md' as any, {
+    syncRespStyle('Box', ref, 'md' as any, {
       padding: {
         base: '8px',
       },
@@ -64,14 +64,14 @@ describe('updateDomRespStyle', () => {
     const ref = { current: el }
 
     // First render
-    updateDomRespStyle('Box', ref, 'base' as any, {
+    syncRespStyle('Box', ref, 'base' as any, {
       padding: '8px',
     })
 
     expect(el.style.padding).toBe('8px')
 
     // Second render: prop removed
-    updateDomRespStyle('Box', ref, 'base' as any, {})
+    syncRespStyle('Box', ref, 'base' as any, {})
 
     expect(el.style.padding).toBe('')
   })
@@ -82,11 +82,11 @@ describe('updateDomRespStyle', () => {
 
     const ref = { current: el }
 
-    updateDomRespStyle('Box', ref, 'base' as any, {
+    syncRespStyle('Box', ref, 'base' as any, {
       padding: '8px',
     })
 
-    updateDomRespStyle('Box', ref, 'base' as any, {})
+    syncRespStyle('Box', ref, 'base' as any, {})
 
     expect(el.style.padding).toBe('')
     expect(el.style.color).toBe('red')
@@ -96,11 +96,11 @@ describe('updateDomRespStyle', () => {
     const el = document.createElement('div')
     const ref = { current: el }
 
-    updateDomRespStyle('Box', ref, 'base' as any, {
+    syncRespStyle('Box', ref, 'base' as any, {
       padding: '8px',
     })
 
-    updateDomRespStyle('Flex', ref, 'base' as any, {})
+    syncRespStyle('Flex', ref, 'base' as any, {})
 
     // Box-applied style must survive Flex update
     expect(el.style.padding).toBe('8px')
@@ -110,11 +110,11 @@ describe('updateDomRespStyle', () => {
     const el = document.createElement('div')
     const ref = { current: el }
 
-    updateDomRespStyle('Box', ref, 'base' as any, {
+    syncRespStyle('Box', ref, 'base' as any, {
       gap: '10px',
     })
 
-    updateDomRespStyle('Box', ref, 'base' as any, {
+    syncRespStyle('Box', ref, 'base' as any, {
       gap: '10px',
     })
 
@@ -127,7 +127,7 @@ describe('updateDomRespStyle', () => {
 
     const ref = { current: el }
 
-    updateDomRespStyle('Box', ref, 'base' as any, {
+    syncRespStyle('Box', ref, 'base' as any, {
       padding: '8px',
     })
 
@@ -140,7 +140,7 @@ describe('updateDomRespStyle', () => {
 
     const ref = { current: el }
 
-    updateDomRespStyle('Box', ref, 'base' as any, {
+    syncRespStyle('Box', ref, 'base' as any, {
       padding: '8px',
     })
 
@@ -154,11 +154,11 @@ describe('updateDomRespStyle', () => {
     const el = document.createElement('div')
     const ref = { current: el }
 
-    updateDomRespStyle('Box', ref, 'base' as any, {
+    syncRespStyle('Box', ref, 'base' as any, {
       padding: '8px',
     })
 
-    updateDomRespStyle('Box', ref, 'md' as any, {
+    syncRespStyle('Box', ref, 'md' as any, {
       padding: {
         base: '8px',
         md: '16px',
@@ -174,11 +174,11 @@ describe('updateDomRespStyle', () => {
 
     const ref = { current: el }
 
-    updateDomRespStyle('Box', ref, 'base' as any, {
+    syncRespStyle('Box', ref, 'base' as any, {
       padding: '8px',
     })
 
-    updateDomRespStyle('Box', ref, 'md' as any, {
+    syncRespStyle('Box', ref, 'md' as any, {
       padding: {
         base: '8px',
         md: '16px',
@@ -194,11 +194,11 @@ describe('updateDomRespStyle', () => {
 
     const ref = { current: el }
 
-    updateDomRespStyle('Box', ref, 'base' as any, {
+    syncRespStyle('Box', ref, 'base' as any, {
       padding: '8px',
     })
 
-    updateDomRespStyle('Box', ref, 'base' as any, {})
+    syncRespStyle('Box', ref, 'base' as any, {})
 
     expect(el.style.padding).toBe('20px')
   })
@@ -207,13 +207,13 @@ describe('updateDomRespStyle', () => {
     const el = document.createElement('div')
     const ref = { current: el }
 
-    updateDomRespStyle('Box', ref, 'base' as any, {
+    syncRespStyle('Box', ref, 'base' as any, {
       padding: '8px',
     })
 
     const setPropertySpy = vi.spyOn(el.style, 'setProperty')
 
-    updateDomRespStyle('Box', ref, 'base' as any, {
+    syncRespStyle('Box', ref, 'base' as any, {
       padding: '8px',
     })
 

@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix, resolveLengthValue } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
-import { updateDomRespStyle, syncRespDataset } from 'lib/internals/dom'
+import { syncRespStyle, syncRespDataset } from 'lib/internals/dom'
 
 import { FlexProps } from './definitions'
 
@@ -32,7 +32,7 @@ export const Flex = <T extends ElementType = 'div'>({
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    updateDomRespStyle('Flex', tagRef || ref, bp, {
+    syncRespStyle('Flex', tagRef || ref, bp, {
       display,
       flexDirection,
       flexWrap,

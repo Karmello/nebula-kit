@@ -5,10 +5,9 @@ import { Breakpoint, BREAKPOINTS } from 'lib/definitions'
 import { getBucketPerBp } from './get-bucket-per-bp'
 import { getDataAttrName } from './get-data-attr-name'
 import { Bucket, PropValues } from '../definitions'
-import { ComponentName } from './definitions'
 
 export const syncRespDataset = (
-  componentName: ComponentName,
+  namespace: string,
   elemRef: RefObject<any>,
   breakpoint: Breakpoint,
   propValues: PropValues
@@ -34,7 +33,7 @@ export const syncRespDataset = (
   //    props for this component instance.
   //    Used to determine removals and cleanup
   // -------------------------------------
-  const storeKey = 'neb_resp_dataset_' + componentName.toLowerCase()
+  const storeKey = 'neb_resp_dataset_' + namespace.toLowerCase()
   const prevPropNames: Set<string> = elemRef.current[storeKey] || new Set()
   const currentPropNames = new Set(Object.keys(activePropValues))
 
@@ -47,7 +46,7 @@ export const syncRespDataset = (
   const mergedBucket: Bucket = {}
 
   for (const bp of BREAKPOINTS) {
-    const bucket = getBucketPerBp(componentName, bp, activePropValues)
+    const bucket = getBucketPerBp(namespace, bp, activePropValues)
     for (const key in bucket) {
       mergedBucket[key] = bucket[key]
     }
@@ -60,7 +59,7 @@ export const syncRespDataset = (
   //    longer present and not inherited
   // -------------------------------------
   for (const propName of prevPropNames) {
-    const domAttrName = getDataAttrName(componentName, propName)
+    const domAttrName = getDataAttrName(namespace, propName)
     if (!currentPropNames.has(propName) && !(domAttrName in mergedBucket)) {
       delete elemRef.current.dataset[domAttrName]
     }

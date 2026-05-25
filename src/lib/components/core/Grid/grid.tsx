@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { Box } from 'lib/components'
 import { withPrefix, resolveLengthValue } from 'lib/helpers'
-import { updateDomRespStyle } from 'lib/internals/dom'
+import { syncRespStyle } from 'lib/internals/dom'
 import { useScreen } from 'lib/hooks'
 
 import { GridTag, GridProps } from './definitions'
@@ -33,7 +33,7 @@ export const Grid = <T extends GridTag = 'div'>({
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    updateDomRespStyle('Grid', tagRef || ref, bp, {
+    syncRespStyle('Grid', tagRef || ref, bp, {
       gridTemplateColumns,
       gridTemplateRows,
       gridAutoRows,

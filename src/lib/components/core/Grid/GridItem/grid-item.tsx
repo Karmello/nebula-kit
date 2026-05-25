@@ -2,7 +2,7 @@ import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, useLayoutEf
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { updateDomRespStyle } from 'lib/internals/dom'
+import { syncRespStyle } from 'lib/internals/dom'
 import { useScreen } from 'lib/hooks'
 import { withPrefix } from 'lib/helpers'
 
@@ -27,7 +27,7 @@ export const GridItem = <T extends ElementType = 'div'>({
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    updateDomRespStyle('Grid.Item', tagRef || ref, bp, {
+    syncRespStyle('Grid.Item', tagRef || ref, bp, {
       gridColumn,
       gridRow,
       justifySelf,

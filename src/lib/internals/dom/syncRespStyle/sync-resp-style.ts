@@ -5,8 +5,8 @@ import { Breakpoint, BREAKPOINTS } from 'lib/definitions'
 import { Bucket, PropValues, isBlank } from '../definitions'
 import { getBucketPerBp } from './get-bucket-per-bp'
 
-export const updateDomRespStyle = (
-  componentName: 'Box' | 'Flex' | 'Flex.Item' | 'Grid' | 'Grid.Item' | 'Image',
+export const syncRespStyle = (
+  namespace: string,
   elemRef: RefObject<any>,
   breakpoint: Breakpoint,
   propValues: PropValues
@@ -17,7 +17,7 @@ export const updateDomRespStyle = (
   // -------------------------------------
   // 0. Capture initial inline styles (user ownership)
   // -------------------------------------
-  const initialKey = 'neb_initial_style_' + componentName.toLowerCase()
+  const initialKey = 'neb_initial_style_' + namespace.toLowerCase()
 
   if (!el[initialKey]) {
     const initial: Record<string, boolean> = {}
@@ -61,7 +61,7 @@ export const updateDomRespStyle = (
   // -------------------------------------
   // 3. Cleanup previously applied styles
   // -------------------------------------
-  const storeKey = 'neb_resp_style_' + componentName.toLowerCase()
+  const storeKey = 'neb_resp_style_' + namespace.toLowerCase()
   const prevApplied: Set<string> = el[storeKey] || new Set()
   const nextApplied = new Set<string>()
 
