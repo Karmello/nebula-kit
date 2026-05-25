@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 
 import { Grid } from 'lib/components'
-import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize/definitions'
+import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
 import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 import { DEFAULT_SWITCH_AT } from 'lib/definitions'

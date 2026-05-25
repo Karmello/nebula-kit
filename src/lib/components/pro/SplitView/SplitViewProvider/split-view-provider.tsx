@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useLayoutEffect } from 'react'
 
-import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize/definitions'
+import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
 import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
 import { useScreen, useGlobalScrollLock } from 'lib/hooks'
 
