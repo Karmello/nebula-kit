@@ -48,6 +48,9 @@
       "name": "components",
       "path": "src/lib/components",
     },
+    {
+      "path": "src/lib/internals",
+    },
   ],
   "settings": {
     "typescript.tsdk": "nebula-kit/node_modules/typescript/lib",

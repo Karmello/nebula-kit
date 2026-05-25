@@ -1,11 +1,15 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
+import { buildTransformTransition, useVisibilityTransition } from 'lib/internals/motion'
 import { withPrefix } from 'lib/helpers'
 
-import { DEFAULT_SLIDE_DURATION, DEFAULT_SLIDE_EASING, SlideProps } from './definitions'
-import { updatePosition } from './helpers'
+import { SlideProps } from './definitions'
+import { syncSlidePosition } from './helpers'
+
+export const DEFAULT_SLIDE_DURATION: SlideProps['duration'] = 200
+export const DEFAULT_SLIDE_EASING: SlideProps['easing'] = 'linear'
 
 export const Slide = ({
   children,
@@ -16,61 +20,34 @@ export const Slide = ({
   duration = DEFAULT_SLIDE_DURATION,
   easing = DEFAULT_SLIDE_EASING,
 }: SlideProps) => {
-  const hasMountedRef = useRef(false)
-  const prevVisibleRef = useRef<boolean | null>(null)
   const ref = useRef<HTMLDivElement | null>(null)
-  const rafRef = useRef<number | null>(null)
 
   const finalRef = tagRef || ref
 
-  useEffect(() => {
-    if (!finalRef.current) return
+  const transition = buildTransformTransition({
+    duration,
+    easing,
+  })
 
-    // Initialize without animation to the correct state
-    updatePosition(finalRef, from, visible, false, duration, easing)
-    hasMountedRef.current = true
+  useVisibilityTransition({
+    visible,
 
-    return () => {
-      if (rafRef.current !== null) {
-        cancelAnimationFrame(rafRef.current)
-        rafRef.current = null
-      }
-    }
-  }, [])
+    onInitialize: () => {
+      syncSlidePosition(finalRef, from, visible, null)
+    },
 
-  useEffect(() => {
-    if (!hasMountedRef.current) return
-    if (!finalRef.current) return
+    onEnterPrepare: () => {
+      syncSlidePosition(finalRef, from, false, null)
+    },
 
-    const wasVisible = prevVisibleRef.current
-    prevVisibleRef.current = visible
+    onEnterTransition: () => {
+      syncSlidePosition(finalRef, from, true, transition)
+    },
 
-    if (rafRef.current !== null) {
-      cancelAnimationFrame(rafRef.current)
-      rafRef.current = null
-    }
-
-    // INITIAL MOUNT: visible was null → true
-    if (wasVisible === null) {
-      return
-    }
-
-    // SHOW: false → true
-    if (!wasVisible && visible) {
-      updatePosition(finalRef, from, false, false, duration, easing)
-
-      rafRef.current = requestAnimationFrame(() => {
-        updatePosition(finalRef, from, true, true, duration, easing)
-        rafRef.current = null
-      })
-      return
-    }
-
-    // HIDE: true → false
-    if (wasVisible && !visible) {
-      updatePosition(finalRef, from, false, true, duration, easing)
-    }
-  }, [visible])
+    onExitTransition: () => {
+      syncSlidePosition(finalRef, from, false, transition)
+    },
+  })
 
   return (
     <Box
