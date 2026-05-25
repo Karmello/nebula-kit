@@ -1,9 +1,11 @@
-import { ElementType, ComponentRef, ComponentProps, PropsWithoutRef, useLayoutEffect, useEffect, useRef } from 'react'
+import { ElementType, ComponentRef, ComponentProps, PropsWithoutRef, useLayoutEffect, useRef, RefObject } from 'react'
 import classNames from 'classnames'
 
 import { BoxProps } from 'lib/components'
 import { syncRespStyle, syncRespDataset, buildStaticDataset } from 'lib/internals/dom'
-import { ThemeProvider, BrandProvider, useThemeContext, useBrandContext, HtmlTag } from 'lib/components/internal'
+import { useResolveAppearance } from 'lib/internals/styling'
+import { ThemeProvider, BrandProvider, HtmlTag } from 'lib/components/internal'
+import { useTransitionLifecycle } from 'lib/internals/motion'
 import { withPrefix, resolveLengthValue } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 
@@ -79,41 +81,9 @@ export const Box = <T extends ElementType = 'div'>({
 
   const { bp } = useScreen()
 
-  const themeCtx = useThemeContext()
-  const brandCtx = useBrandContext()
+  const resolvedAppearance = useResolveAppearance({ theme, brand, color })
 
-  const inheritedTheme = themeCtx?.theme
-  const resolvedTheme = theme ?? inheritedTheme
-
-  const finalTheme = resolvedTheme === 'flipped' ? (inheritedTheme === 'dark' ? 'light' : 'dark') : resolvedTheme
-
-  const ctxBrand = brandCtx?.brand
-  const finalBrand = brand ?? ctxBrand
-  const finalColor = color ?? finalBrand
-
-  useLayoutEffect(() => {
-    const el = finalRef?.current as Element
-    if (!el) return
-    el.setAttribute('data-neb-box-transitions', 'false')
-  }, [])
-
-  useEffect(() => {
-    const el = finalRef?.current as Element
-    if (!el) return
-
-    let raf2: number
-
-    const raf1 = requestAnimationFrame(() => {
-      raf2 = requestAnimationFrame(() => {
-        el.setAttribute('data-neb-box-transitions', 'true')
-      })
-    })
-
-    return () => {
-      cancelAnimationFrame(raf1)
-      cancelAnimationFrame(raf2)
-    }
-  }, [])
+  useTransitionLifecycle(finalRef as RefObject<HTMLElement>)
 
   useLayoutEffect(() => {
     syncRespStyle('Box', finalRef, bp, {
@@ -216,17 +186,17 @@ export const Box = <T extends ElementType = 'div'>({
 
   useLayoutEffect(() => {
     syncRespDataset('Box', finalRef, bp, {
-      theme: finalTheme,
-      color: finalColor,
+      theme: resolvedAppearance.theme,
+      color: resolvedAppearance.color,
       variant,
       intent,
       hidden,
     })
-  }, [bp, finalTheme, finalColor, variant, intent, hidden])
+  }, [bp, resolvedAppearance.theme, resolvedAppearance.color, variant, intent, hidden])
 
   return (
-    <ThemeProvider theme={finalTheme}>
-      <BrandProvider brand={finalBrand}>
+    <ThemeProvider theme={resolvedAppearance.theme}>
+      <BrandProvider brand={resolvedAppearance.brand}>
         <HtmlTag
           tag={tag}
           tagAttrs={
