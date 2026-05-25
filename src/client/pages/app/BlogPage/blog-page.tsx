@@ -12,15 +12,11 @@ type ArticleProps = {
 const Article = ({ title, date, platform, href, iconName }: ArticleProps) => {
   return (
     <Section heading={title} variant="outline" intent="secondary" size="sm" iconName={iconName}>
-      <Flex gap="xs">
-        <Text tag="span">{new Date(date).toDateString()}</Text>
-        <Text tag="span" space="both">
-          |
+      <Flex columnGap="xs" flexWrap="wrap">
+        <Text tag="span" noWrap>
+          {`${new Date(date).toDateString()} |`}
         </Text>
-        <Text tag="span">{platform}</Text>
-        <Text tag="span" space="both">
-          |
-        </Text>
+        <Text tag="span">{`${platform} |`}</Text>
         <WithIcon iconName="external-link" iconPlacement="right" iconIntent="primary" iconColor="blue">
           <Link href={href} target="_blank">
             <Text tag="span" intent="primary" color="blue">

@@ -1,4 +1,10 @@
 export { Box, type BoxProps } from './Box'
+export { Flex, type FlexProps, type FlexItemProps } from './Flex'
+export { Grid, type GridProps, type GridItemProps } from './Grid'
+export { Text, type TextProps } from './Text'
+export { Image, type ImageProps } from './Image'
+export { Icon, type IconProps } from './Icon'
+export { Button, type ButtonProps } from './Button'
 
 export {
   AppFrame,
@@ -8,17 +14,13 @@ export {
   type AppFrameFooterProps,
 } from './AppFrame'
 
-export { Button, type ButtonProps } from './Button'
 export { Callout, type CalloutProps } from './Callout'
 export { Checkbox, type CheckboxProps } from './Checkbox'
 export { Divider, type DividerProps } from './Divider'
 export { DropdownList, type DropdownListProps, type DropdownListTriggerProps, type DropdownListItemProps } from './DropdownList'
-export { Flex, type FlexProps, type FlexItemProps } from './Flex'
+
 export { Footer, type FooterProps, type FooterSectionProps } from './Footer'
-export { Grid, type GridProps, type GridItemProps } from './Grid'
 export { HydrationGate, type HydrationGateProps } from './HydrationGate'
-export { Icon, type IconProps } from './Icon'
-export { Image, type ImageProps } from './Image'
 export { Input, type InputProps, type InputAffixProps } from './Input'
 export { Link, type LinkProps } from './Link'
 export { Loader, type LoaderProps } from './Loader'
@@ -46,6 +48,5 @@ export {
   type TableRowProps,
 } from './Table'
 
-export { Text, type TextProps } from './Text'
 export { Textarea, type TextareaProps } from './Textarea'
 export { WithIcon, type WithIconProps } from './WithIcon'
