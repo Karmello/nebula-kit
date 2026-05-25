@@ -1,5 +1,7 @@
 import { Box } from 'lib/components'
 
+import { useTransformTransition } from 'lib/internals/motion'
+
 import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING, RotateProps } from './definitions'
 
 export const Rotate = ({
@@ -12,6 +14,11 @@ export const Rotate = ({
   duration = DEFAULT_ROTATE_DURATION,
   easing = DEFAULT_ROTATE_EASING,
 }: RotateProps) => {
+  const transitionStyle = useTransformTransition({
+    duration,
+    easing,
+  })
+
   return (
     <Box
       tag="span"
@@ -20,9 +27,9 @@ export const Rotate = ({
         ...tagAttrs,
         style: {
           ...tagAttrs?.style,
+          ...transitionStyle,
           transform: `rotate(${angle}deg)`,
           transformOrigin: 'center',
-          transition: `transform ${duration}ms ${easing}`,
           lineHeight: 0,
         },
       }}
