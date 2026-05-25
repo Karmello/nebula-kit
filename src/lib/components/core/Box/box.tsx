@@ -3,7 +3,7 @@ import { ElementType, ComponentRef, ComponentProps, PropsWithoutRef, useLayoutEf
 import classNames from 'classnames'
 
 import { BoxProps } from 'lib/components'
-import { updateDomRespStyle, updateDomRespDataset, updateDomStaticDataset } from 'lib/service'
+import { updateDomRespStyle, syncRespDataset, updateDomStaticDataset } from 'lib/internals/dom'
 import { ThemeProvider, BrandProvider, useThemeContext, useBrandContext, HtmlTag } from 'lib/components/internal'
 import { withPrefix, resolveLengthValue } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
@@ -216,7 +216,7 @@ export const Box = <T extends ElementType = 'div'>({
   ])
 
   useLayoutEffect(() => {
-    updateDomRespDataset('Box', finalRef, bp, {
+    syncRespDataset('Box', finalRef, bp, {
       theme: finalTheme,
       color: finalColor,
       variant,

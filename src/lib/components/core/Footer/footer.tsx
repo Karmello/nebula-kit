@@ -3,7 +3,7 @@ import { ComponentProps, PropsWithoutRef } from 'react'
 import { Flex } from 'lib/components'
 import { WithSlots } from 'lib/components/internal'
 import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
-import { updateDomStaticDataset } from 'lib/service'
+import { updateDomStaticDataset } from 'lib/internals/dom'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 

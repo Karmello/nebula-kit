@@ -1,13 +1,13 @@
 import { describe, it, expect } from 'vitest'
 
-import { updateDomRespDataset } from '../updateDomRespDataset'
+import { syncRespDataset } from '../syncRespDataset'
 
-describe('updateDomRespDataset', () => {
+describe('syncRespDataset', () => {
   it('applies a plain value to dataset and stores controlled prop names', () => {
     const el = document.createElement('div')
     const ref = { current: el }
 
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'base' as any,
@@ -37,7 +37,7 @@ describe('updateDomRespDataset', () => {
     const ref = { current: el }
 
     // initial render at base
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'base' as any,
@@ -49,7 +49,7 @@ describe('updateDomRespDataset', () => {
     const baseDatasetSnapshot = { ...el.dataset }
 
     // simulate breakpoint change to md
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'md' as any,
@@ -75,7 +75,7 @@ describe('updateDomRespDataset', () => {
     const ref = { current: el }
 
     // base render
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'base' as any,
@@ -88,7 +88,7 @@ describe('updateDomRespDataset', () => {
     expect(baseValue).toBe('8')
 
     // md breakpoint
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'md' as any,
@@ -101,7 +101,7 @@ describe('updateDomRespDataset', () => {
     expect(mdValue).toBe('16')
 
     // lg breakpoint (override should persist)
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'lg' as any,
@@ -119,7 +119,7 @@ describe('updateDomRespDataset', () => {
     const ref = { current: el }
 
     // initial render with padding
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'base' as any,
@@ -131,7 +131,7 @@ describe('updateDomRespDataset', () => {
     expect(Object.values(el.dataset)).toEqual(['8'])
 
     // re-render without padding prop
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'base' as any,
@@ -155,7 +155,7 @@ describe('updateDomRespDataset', () => {
     const ref = { current: el }
 
     // set responsive value (base only)
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'base' as any,
@@ -167,7 +167,7 @@ describe('updateDomRespDataset', () => {
     expect(Object.values(el.dataset)).toEqual(['8'])
 
     // at md it should still be applied while prop exists
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'md' as any,
@@ -179,7 +179,7 @@ describe('updateDomRespDataset', () => {
     expect(Object.values(el.dataset)).toEqual(['8'])
 
     // now remove the prop from JSX entirely
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'md' as any,
@@ -202,7 +202,7 @@ describe('updateDomRespDataset', () => {
     const ref = { current: el }
 
     // base value defined, lg explicitly undefined
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'base' as any,
@@ -214,7 +214,7 @@ describe('updateDomRespDataset', () => {
     expect(Object.values(el.dataset)).toEqual(['8'])
 
     // move to md — still inherited from base
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'md' as any,
@@ -226,7 +226,7 @@ describe('updateDomRespDataset', () => {
     expect(Object.values(el.dataset)).toEqual(['8'])
 
     // move to lg — undefined must not cancel base
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'lg' as any,
@@ -238,7 +238,7 @@ describe('updateDomRespDataset', () => {
     expect(Object.values(el.dataset)).toEqual(['8'])
 
     // same behavior with null
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'lg' as any,
@@ -255,7 +255,7 @@ describe('updateDomRespDataset', () => {
     const ref = { current: el }
 
     // Box writes its dataset
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'base' as any,
@@ -265,7 +265,7 @@ describe('updateDomRespDataset', () => {
     )
 
     // Button writes its dataset on the same element
-    updateDomRespDataset(
+    syncRespDataset(
       'Button',
       ref,
       'base' as any,
@@ -278,7 +278,7 @@ describe('updateDomRespDataset', () => {
     expect(datasetValuesAfterBoth.length).toBe(2)
 
     // Now remove Box prop
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'base' as any,
@@ -309,7 +309,7 @@ describe('updateDomRespDataset', () => {
     const ref = { current: el }
 
     // initial: base only
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'base' as any,
@@ -321,7 +321,7 @@ describe('updateDomRespDataset', () => {
     expect(Object.values(el.dataset)).toEqual(['8'])
 
     // move to sm (still base)
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'sm' as any,
@@ -333,7 +333,7 @@ describe('updateDomRespDataset', () => {
     expect(Object.values(el.dataset)).toEqual(['8'])
 
     // move to md (override kicks in)
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'md' as any,
@@ -345,7 +345,7 @@ describe('updateDomRespDataset', () => {
     expect(Object.values(el.dataset)).toEqual(['16'])
 
     // move to lg (override propagates)
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'lg' as any,
@@ -357,7 +357,7 @@ describe('updateDomRespDataset', () => {
     expect(Object.values(el.dataset)).toEqual(['16'])
 
     // now remove the prop entirely
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'lg' as any,
@@ -375,7 +375,7 @@ describe('updateDomRespDataset', () => {
     expect(stored.size).toBe(0)
 
     // move breakpoint again — nothing should reappear
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'md' as any,
@@ -391,7 +391,7 @@ describe('updateDomRespDataset', () => {
     const el = document.createElement('div')
     const ref = { current: el }
 
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'base' as any,
@@ -402,7 +402,7 @@ describe('updateDomRespDataset', () => {
 
     const setAttrSpy = vi.spyOn(el, 'setAttribute')
 
-    updateDomRespDataset(
+    syncRespDataset(
       'Box',
       ref,
       'base' as any,

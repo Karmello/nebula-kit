@@ -7,7 +7,7 @@ import { getDataAttrName } from './get-data-attr-name'
 import { Bucket, PropValues } from '../definitions'
 import { ComponentName } from './definitions'
 
-export const updateDomRespDataset = (
+export const syncRespDataset = (
   componentName: ComponentName,
   elemRef: RefObject<any>,
   breakpoint: Breakpoint,

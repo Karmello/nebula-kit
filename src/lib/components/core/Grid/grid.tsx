@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { Box } from 'lib/components'
 import { withPrefix, resolveLengthValue } from 'lib/helpers'
-import { updateDomRespStyle } from 'lib/service'
+import { updateDomRespStyle } from 'lib/internals/dom'
 import { useScreen } from 'lib/hooks'
 
 import { GridTag, GridProps } from './definitions'

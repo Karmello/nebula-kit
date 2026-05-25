@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix, resolveLengthValue } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
-import { updateDomRespStyle, updateDomRespDataset } from 'lib/service'
+import { updateDomRespStyle, syncRespDataset } from 'lib/internals/dom'
 
 import { FlexProps } from './definitions'
 
@@ -46,7 +46,7 @@ export const Flex = <T extends ElementType = 'div'>({
   }, [bp, display, flexDirection, flexWrap, justifyContent, alignItems, alignContent, gap, rowGap, columnGap])
 
   useLayoutEffect(() => {
-    updateDomRespDataset('Flex', tagRef || ref, bp, { flexDirection })
+    syncRespDataset('Flex', tagRef || ref, bp, { flexDirection })
   }, [bp, flexDirection])
 
   return (

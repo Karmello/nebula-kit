@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { updateDomStaticDataset } from 'lib/service'
+import { updateDomStaticDataset } from 'lib/internals/dom'
 import { TEXT_TYPOGRAPHY_MAP } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 

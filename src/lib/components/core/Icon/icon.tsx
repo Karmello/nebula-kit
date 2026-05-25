@@ -2,7 +2,7 @@ import { memo, useLayoutEffect, useRef, useState } from 'react'
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { updateDomRespDataset } from 'lib/service'
+import { syncRespDataset } from 'lib/internals/dom'
 import { resolveLengthValue, withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { CssValue, IconName } from 'lib/definitions'
@@ -31,7 +31,7 @@ export const Icon = memo(
     const [resolvedSize, setResolvedSize] = useState<IconSize | CssValue>()
 
     useLayoutEffect(() => {
-      updateDomRespDataset('Icon', finalRef, bp, { name, size: size !== undefined ? resolveLengthValue(size) : undefined })
+      syncRespDataset('Icon', finalRef, bp, { name, size: size !== undefined ? resolveLengthValue(size) : undefined })
       setResolvedName(finalRef.current?.dataset.nebIconName as IconName)
       setResolvedSize(finalRef.current?.dataset.nebIconSize)
     }, [bp, name, size])

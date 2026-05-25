@@ -5,7 +5,7 @@ import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize/definitions'
 import { WithSlots } from 'lib/components/internal'
 import { withPrefix } from 'lib/helpers'
 import { DEFAULT_SWITCH_AT } from 'lib/definitions'
-import { updateDomStaticDataset } from 'lib/service'
+import { updateDomStaticDataset } from 'lib/internals/dom'
 
 import { SplitViewProvider, useSplitViewContext } from './SplitViewProvider'
 import { SPLIT_VIEW_SIDE_POSITIONS, SplitViewProps } from './definitions'

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import { updateDomStaticDataset } from 'lib/service'
+import { updateDomStaticDataset } from 'lib/internals/dom'
 import { withPrefix } from 'lib/helpers'
 import { Box } from 'lib/components'
 

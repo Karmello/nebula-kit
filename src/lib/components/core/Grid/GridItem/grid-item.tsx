@@ -2,7 +2,7 @@ import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, useLayoutEf
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { updateDomRespStyle } from 'lib/service'
+import { updateDomRespStyle } from 'lib/internals/dom'
 import { useScreen } from 'lib/hooks'
 import { withPrefix } from 'lib/helpers'
 

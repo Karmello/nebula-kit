@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { Box, Text, Loader, WithIcon, Flex } from 'lib/components'
 import { Ripple } from 'lib/components/internal'
-import { updateDomRespDataset } from 'lib/service'
+import { syncRespDataset } from 'lib/internals/dom'
 import { CONTROL_SIZE_MAP } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
@@ -59,7 +59,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    updateDomRespDataset('Button', finalRef, bp, { fullWidth })
+    syncRespDataset('Button', finalRef, bp, { fullWidth })
   }, [bp, fullWidth])
 
   const isSquare = children === undefined || size === '2xs'
