@@ -10,7 +10,25 @@ export type ActionSurfaceTag = (typeof ACTION_SURFACE_TAGS)[number]
 
 type PropsFromBox<T extends ActionSurfaceTag = typeof DEFAULT_ACTION_SURFACE_TAG> = Pick<
   BoxProps<T>,
-  'children' | 'tag' | 'tagAttrs' | 'tagRef' | 'disabled' | 'interactive' | 'elevated' | 'variant' | 'color' | 'intent'
+  | 'children'
+  | 'tag'
+  | 'tagAttrs'
+  | 'tagRef'
+  | 'disabled'
+  | 'interactive'
+  | 'elevated'
+  | 'variant'
+  | 'color'
+  | 'intent'
+  | 'blockSize'
+  | 'minBlockSize'
+  | 'maxBlockSize'
+  | 'inlineSize'
+  | 'minInlineSize'
+  | 'maxInlineSize'
+  | 'padding'
+  | 'paddingBlock'
+  | 'paddingInline'
 >
 
 type OwnProps<T extends ActionSurfaceTag = typeof DEFAULT_ACTION_SURFACE_TAG> = {

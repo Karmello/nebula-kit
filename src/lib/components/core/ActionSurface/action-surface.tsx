@@ -26,6 +26,15 @@ export const ActionSurface = <T extends ActionSurfaceTag = typeof DEFAULT_ACTION
   ripple = DEFAULT_ACTION_SURFACE_RIPPLE,
   selected,
   variant,
+  inlineSize,
+  minInlineSize,
+  maxInlineSize,
+  blockSize,
+  minBlockSize,
+  maxBlockSize,
+  padding,
+  paddingBlock,
+  paddingInline,
 }: ActionSurfaceProps<T>) => {
   const localRef = useRef<ComponentRef<T>>(null)
   const finalRef = tagRef || localRef
@@ -56,6 +65,15 @@ export const ActionSurface = <T extends ActionSurfaceTag = typeof DEFAULT_ACTION
       elevated={elevated}
       surface={selected ? 'selected' : undefined}
       position="relative"
+      inlineSize={inlineSize}
+      minInlineSize={minInlineSize}
+      maxInlineSize={maxInlineSize}
+      blockSize={blockSize}
+      minBlockSize={minBlockSize}
+      maxBlockSize={maxBlockSize}
+      padding={padding}
+      paddingBlock={paddingBlock}
+      paddingInline={paddingInline}
     >
       {children}
       <Ripple parentRef={finalRef} active={ripple && !disabled} />

@@ -5,16 +5,25 @@ import { DEFAULT_ACTION_SURFACE_RIPPLE } from 'lib/components/core/ActionSurface
 import { BOX_PROPS_META } from '../Box/props'
 
 const ACTION_SURFACE_PROPS_META: ComponentMeta<ActionSurfaceProps>['props'] = {
+  blockSize: BOX_PROPS_META.blockSize,
   children: BOX_PROPS_META.children,
   color: BOX_PROPS_META.color,
   disabled: BOX_PROPS_META.disabled,
   elevated: BOX_PROPS_META.elevated,
+  inlineSize: BOX_PROPS_META.inlineSize,
   intent: BOX_PROPS_META.intent,
   interactive: BOX_PROPS_META.interactive,
+  maxBlockSize: BOX_PROPS_META.maxBlockSize,
+  maxInlineSize: BOX_PROPS_META.maxInlineSize,
+  minBlockSize: BOX_PROPS_META.minBlockSize,
+  minInlineSize: BOX_PROPS_META.minInlineSize,
   onClick: {
     options: ['e => void'],
     description: 'Click event handler.',
   },
+  padding: BOX_PROPS_META.padding,
+  paddingBlock: BOX_PROPS_META.paddingBlock,
+  paddingInline: BOX_PROPS_META.paddingInline,
   ripple: {
     options: ['boolean'],
     defaultValue: String(DEFAULT_ACTION_SURFACE_RIPPLE),
