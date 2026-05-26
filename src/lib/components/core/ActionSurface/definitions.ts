@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react'
 
 import { BoxProps } from 'lib/components'
-import { DEFAULT_ACTION_SURFACE_TAG } from 'lib/components/core/ActionSurface'
+import { DEFAULT_ACTION_SURFACE_TAG } from 'lib/components/core/ActionSurface/action-surface'
 
 export const ACTION_SURFACE_TAGS = ['button', 'a', 'div'] as const
 
