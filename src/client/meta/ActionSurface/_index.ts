@@ -1,5 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import type { ActionSurfaceProps } from 'lib/components'
+import { ACTION_SURFACE_TAGS } from 'lib/components/core/ActionSurface/definitions'
 
 import { ACTION_SURFACE_PROPS_META } from './props'
 import { ACTION_SURFACE_EXAMPLES_META } from './examples'
@@ -17,6 +18,8 @@ const ACTION_SURFACE_META: ComponentMeta<ActionSurfaceProps> = {
       'adds ripple feedback without imposing button-specific layout, typography or sizing',
       'intended for building custom interactive components without reusing Button',
     ],
+    composedOf: ['Box'],
+    topLevelTags: ACTION_SURFACE_TAGS,
   },
   props: ACTION_SURFACE_PROPS_META,
   examples: ACTION_SURFACE_EXAMPLES_META,
