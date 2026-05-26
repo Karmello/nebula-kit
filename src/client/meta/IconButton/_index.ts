@@ -1,6 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { IconButtonProps } from 'lib/components'
-import { ICON_BUTTON_TAGS } from 'lib/components/core/IconButton/definitions'
+import { IconButtonProps, ICON_BUTTON_TAGS } from 'lib/components/core/IconButton/definitions'
 
 import { ICON_BUTTON_PROPS_META } from './props'
 import { ICON_BUTTON_EXAMPLES_META } from './examples'
