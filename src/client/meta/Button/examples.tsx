@@ -1,6 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { Button, Flex } from 'lib/components'
-import { ButtonProps, BUTTON_SIZES } from 'lib/components/core/Button/definitions'
+import { ButtonProps } from 'lib/components/core/Button/definitions'
+import { CONTROL_SIZES } from 'lib/definitions'
 
 const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
   {
@@ -11,7 +12,7 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     description: 'Examples of different button sizes.',
     jsx: (
       <Flex flexWrap="wrap" alignItems="center" gap="xs">
-        {BUTTON_SIZES.map(size => (
+        {CONTROL_SIZES.map(size => (
           <Button key={size} size={size} iconName="tree-pine">
             {size}
           </Button>

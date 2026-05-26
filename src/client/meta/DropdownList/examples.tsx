@@ -33,7 +33,7 @@ const DROPDOWN_LIST_EXAMPLES_META: ComponentMeta<DropdownListProps>['examples'] 
   {
     description: 'DropdownList rendered with items of a custom size.',
     jsx: (
-      <DropdownList size="lg">
+      <DropdownList itemBlockSize={120}>
         <DropdownList.Trigger>
           <Button variant="ghost" intent="primary">
             Toggle list

@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { ActionSurface, Text, Loader, WithIcon, Flex } from 'lib/components'
 import { syncRespDataset } from 'lib/internals/dom'
-import { CONTROL_SIZE_MAP } from 'lib/definitions'
+import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 
@@ -11,7 +11,6 @@ import {
   ButtonTag,
   ButtonProps,
   DEFAULT_BUTTON_INTENT,
-  DEFAULT_BUTTON_SIZE,
   DEFAULT_BUTTON_VARIANT,
   DEFAULT_BUTTON_RIPPLE,
   DEFAULT_BUTTON_INTERACTIVE,
@@ -43,7 +42,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   iconAngle,
   iconPlacement,
   // own
-  size = DEFAULT_BUTTON_SIZE,
+  size = DEFAULT_CONTROL_SIZE,
   fullWidth,
   align = DEFAULT_BUTTON_ALIGN,
   loading,

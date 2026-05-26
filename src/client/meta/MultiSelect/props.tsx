@@ -1,6 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { MultiSelectProps } from 'lib/components'
 import { DEFAULT_SELECT_INLINE_SIZE } from 'lib/components/core/Select'
+import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
 import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'
 import { BOX_PROPS_META } from '../Box/props'
@@ -37,7 +38,10 @@ const MULTI_SELECT_PROPS_META: ComponentMeta<MultiSelectProps>['props'] = {
     ...DROPDOWN_LIST_PROPS_META.scrollAlign,
     description: 'Defines how the selected option is positioned within the scroll area.',
   },
-  size: DROPDOWN_LIST_PROPS_META.size,
+  size: {
+    options: CONTROL_SIZES,
+    defaultValue: DEFAULT_CONTROL_SIZE,
+  },
   tagAttrs: BOX_PROPS_META.tagAttrs,
   tagRef: BOX_PROPS_META.tagRef,
   value: {

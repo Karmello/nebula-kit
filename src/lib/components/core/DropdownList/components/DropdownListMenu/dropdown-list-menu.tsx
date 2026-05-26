@@ -5,7 +5,7 @@ import { Portal } from 'lib/components/shared'
 import { FloatingResolved, useFloating } from 'lib/internals/positioning'
 
 import { useDropdownListContext } from '../DropdownListProvider'
-import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'
+import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../dropdown-list'
 
 export const DropdownListMenu = () => {
   const [triggerWidth, setTriggerWidth] = useState<number | undefined>(undefined)
@@ -27,7 +27,7 @@ export const DropdownListMenu = () => {
     scrollToIndex,
     scrollAlign,
     ensureVisibleIndex,
-    itemHeight,
+    finalItemBlockSize,
     floatingResolved,
     setFloatingResolved,
     disableListAnimation,
@@ -36,7 +36,7 @@ export const DropdownListMenu = () => {
   const prevOpenRef = useRef<boolean>(open)
 
   const finalVisibleItemsCount = floatingResolved?.blockSize
-    ? Math.floor(floatingResolved.blockSize / itemHeight)
+    ? Math.floor(floatingResolved.blockSize / finalItemBlockSize)
     : correctedVisibleItemsCount
 
   const finalAnimationDuration = !disableListAnimation ? Math.min(400, Math.max(200, finalVisibleItemsCount * 40)) : 0
@@ -79,7 +79,7 @@ export const DropdownListMenu = () => {
     enabled: true,
     anchorRef: triggerRef,
     mode: 'fit-y',
-    floatingBlockSize: correctedVisibleItemsCount * itemHeight,
+    floatingBlockSize: correctedVisibleItemsCount * finalItemBlockSize,
     placement,
     onResolve: handleResolve,
   })
@@ -101,7 +101,7 @@ export const DropdownListMenu = () => {
           variant="solid"
           intent={intent}
           color={color}
-          blockSize={`${finalVisibleItemsCount * itemHeight}px`}
+          blockSize={`${finalVisibleItemsCount * finalItemBlockSize}px`}
           minInlineSize={triggerWidth !== undefined ? `${triggerWidth}px` : undefined}
           overflow="hidden"
           borderTopWidth="0px"
@@ -115,7 +115,7 @@ export const DropdownListMenu = () => {
               key={String(open)}
               tagRef={scrollWrapperRef}
               items={slotsByName['DropdownList.Item']}
-              itemHeight={itemHeight}
+              itemBlockSize={finalItemBlockSize}
               visibleItemsCount={finalVisibleItemsCount ?? DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT}
               scrollToIndex={scrollToIndex}
               scrollAlign={scrollAlign}

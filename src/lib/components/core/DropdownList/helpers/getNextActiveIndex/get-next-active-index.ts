@@ -4,19 +4,19 @@ export const getNextActiveIndex = ({
   activeIndex,
   scrollTop,
   visibleItemsCount,
-  itemHeight,
+  itemBlockSize,
 }: {
   key: 'ArrowDown' | 'ArrowUp'
   itemsCount: number
   activeIndex: number
   scrollTop: number
   visibleItemsCount: number
-  itemHeight: number
+  itemBlockSize: number
 }) => {
-  const listHeight = visibleItemsCount * itemHeight
+  const listHeight = visibleItemsCount * itemBlockSize
 
-  const firstVisibleIndex = Math.floor(scrollTop / itemHeight)
-  const lastVisibleIndex = Math.min(Math.ceil((scrollTop + listHeight) / itemHeight) - 1, itemsCount - 1)
+  const firstVisibleIndex = Math.floor(scrollTop / itemBlockSize)
+  const lastVisibleIndex = Math.min(Math.ceil((scrollTop + listHeight) / itemBlockSize) - 1, itemsCount - 1)
 
   // ✅ first navigation from "no selection" uses current viewport
   if (activeIndex === -1) {

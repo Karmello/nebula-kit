@@ -1,8 +1,8 @@
 import { BoxProps, DropdownListProps } from 'lib/components'
+import { ControlSize } from 'lib/definitions'
 
 export const BREADCRUMB_TAGS = ['div', 'nav', 'section'] as const
 
-export const DEFAULT_BREADCRUMB_SIZE: BreadcrumbProps['size'] = 'xs'
 export const DEFAULT_BREADCRUMB_INTENT: BreadcrumbProps['intent'] = 'muted'
 
 export type BreadcrumbTag = (typeof BREADCRUMB_TAGS)[number]
@@ -17,11 +17,12 @@ type BreadcrumbOwnProps = {
   tree: BreadcrumbNode[]
   defaultPath?: string[]
   path?: string[]
+  size?: ControlSize
   onChange?: (path: string[]) => void
 }
 
 type PropsFromBox<T extends BreadcrumbTag = 'div'> = Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef'>
 
-type PropsFromDropdownList = Pick<DropdownListProps, 'color' | 'intent' | 'size'>
+type PropsFromDropdownList = Pick<DropdownListProps, 'color' | 'intent'>
 
 export type BreadcrumbProps<T extends BreadcrumbTag = 'div'> = PropsFromBox<T> & PropsFromDropdownList & BreadcrumbOwnProps

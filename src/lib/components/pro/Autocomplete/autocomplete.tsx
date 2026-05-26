@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { WithSlots } from 'lib/components/shared'
+import { DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
 import {
   AutocompleteProps,
@@ -18,7 +19,6 @@ export const Autocomplete = ({
   tagRef,
   // DropdownList
   color,
-  size,
   intent,
   scrollAlign,
   visibleItemsCount,
@@ -31,6 +31,7 @@ export const Autocomplete = ({
   value,
   onChange,
   onInputChange,
+  size = DEFAULT_CONTROL_SIZE,
   dropdownPlacement,
   disableFiltering = DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
   debounceDelay,

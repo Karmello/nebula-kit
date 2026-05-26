@@ -144,9 +144,9 @@ expectError(
   </DropdownList>
 )
 
-// valid sizes
+// valid itemBlockSize
 expectType(
-  <DropdownList size="xs">
+  <DropdownList itemBlockSize={20}>
     <DropdownList.Trigger>Trigger</DropdownList.Trigger>
 
     <DropdownList.Item>Item</DropdownList.Item>
@@ -154,16 +154,16 @@ expectType(
 )
 
 expectType(
-  <DropdownList size="lg">
+  <DropdownList itemBlockSize={50}>
     <DropdownList.Trigger>Trigger</DropdownList.Trigger>
 
     <DropdownList.Item>Item</DropdownList.Item>
   </DropdownList>
 )
 
-// invalid size
+// invalid itemBlockSize
 expectError(
-  <DropdownList size="xl">
+  <DropdownList itemBlockSize="xl">
     <DropdownList.Trigger>Trigger</DropdownList.Trigger>
 
     <DropdownList.Item>Item</DropdownList.Item>

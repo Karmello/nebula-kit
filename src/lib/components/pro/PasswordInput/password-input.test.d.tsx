@@ -131,8 +131,7 @@ expectType(<PasswordInput size="xs" />)
 expectType(<PasswordInput size="sm" />)
 expectType(<PasswordInput size="md" />)
 expectType(<PasswordInput size="lg" />)
-
-expectError(<PasswordInput size="xl" />)
+expectType(<PasswordInput size="xl" />)
 
 // non-responsive
 expectError(<PasswordInput size={{ md: 'lg' }} />)

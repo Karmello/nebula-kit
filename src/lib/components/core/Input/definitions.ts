@@ -1,15 +1,11 @@
 import { InputHTMLAttributes, ReactNode } from 'react'
 
 import { BoxProps } from 'lib/components'
-import { TShirtSize } from 'lib/definitions'
+import { ControlSize } from 'lib/definitions'
 
 export const DEFAULT_INPUT_VARIANT: InputProps['variant'] = 'solid'
 export const DEFAULT_INPUT_INTENT: InputProps['intent'] = 'tertiary'
-export const DEFAULT_INPUT_SIZE: InputProps['size'] = 'md'
 
-export const INPUT_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies TShirtSize[]
-
-export type InputSize = (typeof INPUT_SIZES)[number]
 export type InputAffixProps = Pick<InputProps, 'color' | 'disabled' | 'intent' | 'size' | 'variant'>
 
 type InputOwnProps = {
@@ -18,7 +14,7 @@ type InputOwnProps = {
   onChange?: (value: string) => void
   onFocus?: React.FocusEventHandler<HTMLInputElement>
   onBlur?: React.FocusEventHandler<HTMLInputElement>
-  size?: InputSize
+  size?: ControlSize
   startAffix?: (props: InputAffixProps) => ReactNode
   endAffix?: (props: InputAffixProps) => ReactNode
   placeholder?: string

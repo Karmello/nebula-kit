@@ -6,6 +6,7 @@ import { withPrefix } from 'lib/helpers'
 
 import { AutocompleteProps } from '../../definitions'
 import { DEFAULT_AUTOCOMPLETE_OPTION_ALIGN } from '../../slots'
+import { CONTROL_SIZE_MAP } from 'lib/definitions'
 
 type AutocompleteMainProps = Omit<AutocompleteProps, 'children' | 'defaultValue' | 'value' | 'onChange'> & {
   items: ReactNode[]
@@ -97,7 +98,7 @@ export const AutocompleteMain = ({
       }}
       intent={intent}
       color={color}
-      size={size}
+      itemBlockSize={Number(CONTROL_SIZE_MAP[size || 'md'].blockSize.replace('px', ''))}
       scrollToIndex={currentItemIndex}
       scrollAlign={scrollAlign}
       visibleItemsCount={visibleItemsCount}

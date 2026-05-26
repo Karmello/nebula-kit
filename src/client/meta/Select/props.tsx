@@ -1,6 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { SelectProps } from 'lib/components'
 import { DEFAULT_SELECT_INLINE_SIZE } from 'lib/components/core/Select'
+import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
 import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'
 import { BOX_PROPS_META } from '../Box/props'
@@ -38,8 +39,8 @@ const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
     description: 'Defines how the selected option is positioned within the scroll area.',
   },
   size: {
-    ...DROPDOWN_LIST_PROPS_META.size,
-    description: 'Applies the selected size to the trigger and list items.',
+    options: CONTROL_SIZES,
+    defaultValue: DEFAULT_CONTROL_SIZE,
   },
   staticLabel: {
     options: ['string'],

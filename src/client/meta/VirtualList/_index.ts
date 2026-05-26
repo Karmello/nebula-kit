@@ -23,6 +23,7 @@ const VIRTUAL_LIST_META: ComponentMeta<VirtualListProps> = {
   props: VIRTUAL_LIST_PROPS_META,
   examples: VIRTUAL_LIST_EXAMPLES_META,
   changelog: {
+    '0.11.0': ['changed `itemHeight` prop to `itemBlockSize`'],
     '0.3.0': ['released'],
   },
 }

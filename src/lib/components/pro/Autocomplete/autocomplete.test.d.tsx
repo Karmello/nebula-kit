@@ -135,7 +135,7 @@ expectError(
   </Autocomplete>
 )
 
-expectError(
+expectType(
   <Autocomplete size="xl">
     <Autocomplete.Option value="pl" label="Poland">
       Poland

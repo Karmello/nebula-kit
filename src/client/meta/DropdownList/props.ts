@@ -4,16 +4,14 @@ import { DropdownListProps } from 'lib/components'
 import {
   DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
   DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
-  DROPDOWN_LIST_SCROLL_ALIGN,
   DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
-  DROPDOWN_LIST_PLACEMENTS,
   DEFAULT_DROPDOWN_LIST_OPEN_ON_FOCUS,
   DEFAULT_DROPDOWN_LIST_INTENT,
-  DROPDOWN_LIST_SIZES,
-  DEFAULT_DROPDOWN_LIST_SIZE,
-} from 'lib/components/core/DropdownList'
+} from 'lib/components/core/DropdownList/dropdown-list'
+
+import { DROPDOWN_LIST_PLACEMENTS, DROPDOWN_LIST_SCROLL_ALIGN } from 'lib/components/core/DropdownList/definitions'
 
 import { BUTTON_PROPS_META } from '../Button/props'
 import { BOX_PROPS_META } from '../Box/props'
@@ -37,6 +35,10 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
     ...BUTTON_PROPS_META.intent,
     defaultValue: String(DEFAULT_DROPDOWN_LIST_INTENT),
     description: 'Color tone applied to the list.',
+  },
+  itemBlockSize: {
+    options: ['number'],
+    description: 'Applies the selected size to the list items.',
   },
   keepOpen: {
     options: ['boolean'],
@@ -77,11 +79,6 @@ const DROPDOWN_LIST_PROPS_META: ComponentMeta<DropdownListProps>['props'] = {
     options: ['number'],
     defaultValue: String(DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX),
     description: 'Scrolls the list to the item at the given index on render.',
-  },
-  size: {
-    options: DROPDOWN_LIST_SIZES,
-    defaultValue: DEFAULT_DROPDOWN_LIST_SIZE,
-    description: 'Applies the selected size to the list items.',
   },
   tagAttrs: BOX_PROPS_META.tagAttrs,
   tagRef: BOX_PROPS_META.tagRef,

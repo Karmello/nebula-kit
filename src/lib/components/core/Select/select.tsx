@@ -8,13 +8,13 @@ import { withPrefix } from 'lib/helpers'
 import { SelectProvider } from './SelectProvider'
 import { DEFAULT_SELECT_OPTION_ALIGN } from './slots'
 import { DEFAULT_SELECT_INLINE_SIZE, SelectProps } from './definitions'
+import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
 export const Select = ({
   // DropdownList
   tagAttrs,
   tagRef,
   color,
-  size,
   intent,
   scrollAlign,
   visibleItemsCount,
@@ -26,6 +26,7 @@ export const Select = ({
   defaultValue,
   value,
   onChange,
+  size = DEFAULT_CONTROL_SIZE,
   dropdownPlacement,
   staticLabel,
 }: SelectProps) => {
@@ -56,7 +57,7 @@ export const Select = ({
               tagRef={tagRef}
               tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('select'), tagAttrs?.className) }}
               color={color}
-              size={size}
+              itemBlockSize={Number(CONTROL_SIZE_MAP[size || 'md'].blockSize.replace('px', ''))}
               intent={intent}
               scrollToIndex={currentSlotIndex}
               scrollAlign={scrollAlign}

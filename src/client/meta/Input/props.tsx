@@ -1,14 +1,9 @@
 import { ComponentMeta } from 'client/definitions'
 import { InputProps } from 'lib/components'
-
-import {
-  DEFAULT_INPUT_INTENT,
-  DEFAULT_INPUT_SIZE,
-  DEFAULT_INPUT_VARIANT,
-  INPUT_SIZES,
-} from 'lib/components/core/Input/definitions'
+import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_VARIANT } from 'lib/components/core/Input/definitions'
 
 import { BOX_PROPS_META } from '../Box/props'
+import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
 const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
   autoComplete: {
@@ -55,8 +50,8 @@ const INPUT_PROPS_META: ComponentMeta<InputProps>['props'] = {
     description: 'Prevents editing the value while keeping the field focusable.',
   },
   size: {
-    options: Object.values(INPUT_SIZES),
-    defaultValue: DEFAULT_INPUT_SIZE,
+    options: CONTROL_SIZES,
+    defaultValue: DEFAULT_CONTROL_SIZE,
     description:
       'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
   },

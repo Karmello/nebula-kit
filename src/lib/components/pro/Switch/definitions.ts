@@ -1,7 +1,6 @@
 import type { BoxProps } from 'lib/components'
 import { BoxIntent } from 'lib/components/core/Box'
-import { ButtonSize } from 'lib/components/core/Button'
-import { RespValue } from 'lib/definitions'
+import { ControlSize, RespValue } from 'lib/definitions'
 
 export const SWITCH_BORDER_MULTIPLIER = 2
 
@@ -20,7 +19,7 @@ type SwitchOwnProps = {
   checked?: boolean
   defaultChecked?: boolean
   onChange?: (checked: boolean) => void
-  size?: ButtonSize
+  size?: ControlSize
 }
 
 export type SwitchProps = PropsFromBox & SwitchOwnProps

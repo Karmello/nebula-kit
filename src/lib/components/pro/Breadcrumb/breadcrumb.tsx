@@ -1,8 +1,9 @@
 import { useState, Fragment, useCallback } from 'react'
 
 import { Box, Flex, Button, DropdownList, Icon } from 'lib/components'
+import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
-import { BreadcrumbProps, BreadcrumbTag, DEFAULT_BREADCRUMB_SIZE, DEFAULT_BREADCRUMB_INTENT } from './definitions'
+import { BreadcrumbProps, BreadcrumbTag, DEFAULT_BREADCRUMB_INTENT } from './definitions'
 
 import { convertTreeToLevels } from './helpers'
 
@@ -14,11 +15,11 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
   // DropdownList
   color,
   intent = DEFAULT_BREADCRUMB_INTENT,
-  size = DEFAULT_BREADCRUMB_SIZE,
   // own
   tree,
   defaultPath,
   path,
+  size = DEFAULT_CONTROL_SIZE,
   onChange,
 }: BreadcrumbProps<T>) => {
   const [internalPath, setInternalPath] = useState<string[]>(defaultPath || [])
@@ -59,7 +60,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
             <Fragment key={index}>
               <DropdownList
                 tagAttrs={{ style: { minInlineSize: 'auto' } }}
-                size={size}
+                itemBlockSize={Number(CONTROL_SIZE_MAP[size || 'md'].blockSize.replace('px', ''))}
                 color={color}
                 intent={intent}
                 scrollToIndex={scrollToIndex > -1 ? scrollToIndex : undefined}

@@ -72,7 +72,7 @@ expectError(<Input intent="danger" />)
 
 expectError(<Input variant="banana" />)
 
-expectError(<Input size="xl" />)
+expectType(<Input size="xl" />)
 
 //
 // invalid responsive breakpoint keys

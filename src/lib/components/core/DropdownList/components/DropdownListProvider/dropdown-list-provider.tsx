@@ -26,7 +26,7 @@ type ContextValue = {
   floatingResolved: FloatingResolved | undefined
   setFloatingResolved: (floatingResolved: FloatingResolved) => void
   // extra
-  itemHeight: number
+  finalItemBlockSize: number
 } & Omit<DropdownListProps, 'children' | 'tagAttrs' | 'tagRef'>
 
 type ProviderProps = {

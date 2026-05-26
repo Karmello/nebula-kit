@@ -78,7 +78,7 @@ expectError(
   </MultiSelect>
 )
 
-expectError(
+expectType(
   <MultiSelect size="xl">
     <MultiSelect.Option value="one">One</MultiSelect.Option>
   </MultiSelect>

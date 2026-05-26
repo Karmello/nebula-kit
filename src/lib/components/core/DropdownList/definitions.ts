@@ -1,7 +1,6 @@
 import { JSX } from 'react'
 
 import { BoxProps, ButtonProps } from 'lib/components'
-import { TShirtSize } from 'lib/definitions'
 import { PortalPlacement } from 'lib/components/shared/Portal'
 
 export const DROPDOWN_LIST_PLACEMENTS = [
@@ -13,19 +12,8 @@ export const DROPDOWN_LIST_PLACEMENTS = [
   'top-end',
 ] as const satisfies PortalPlacement[]
 
-export const DROPDOWN_LIST_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies TShirtSize[]
 export const DROPDOWN_LIST_SCROLL_ALIGN = ['start', 'center', 'end'] as const
 
-export const DEFAULT_DROPDOWN_LIST_SIZE: DropdownListProps['size'] = 'md'
-export const DEFAULT_DROPDOWN_LIST_OPEN_ON_FOCUS: DropdownListProps['openOnFocus'] = false
-export const DEFAULT_DROPDOWN_LIST_KEEP_OPEN: DropdownListProps['keepOpen'] = false
-export const DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT: DropdownListProps['visibleItemsCount'] = 5
-export const DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX: DropdownListProps['scrollToIndex'] = 0
-export const DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN: DropdownListProps['scrollAlign'] = 'start'
-export const DEFAULT_DROPDOWN_LIST_INTENT: DropdownListProps['intent'] = 'tertiary'
-export const DEFAULT_DROPDOWN_LIST_PLACEMENT: DropdownListProps['placement'] = 'bottom-start'
-
-export type DropdownListSize = (typeof DROPDOWN_LIST_SIZES)[number]
 export type DropdownListScrollAlign = (typeof DROPDOWN_LIST_SCROLL_ALIGN)[number]
 export type DropdownListPlacement = (typeof DROPDOWN_LIST_PLACEMENTS)[number]
 
@@ -36,7 +24,7 @@ export type ChildrenAsFuncArgs = {
 }
 
 type DropdownListOwnProps = {
-  size?: DropdownListSize
+  itemBlockSize?: number
   visibleItemsCount?: number
   openOnFocus?: boolean
   keepOpen?: boolean

@@ -1,6 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { BreadcrumbProps } from 'lib/components'
-import { BREADCRUMB_TAGS, DEFAULT_BREADCRUMB_INTENT, DEFAULT_BREADCRUMB_SIZE } from 'lib/components/pro/Breadcrumb'
+import { BREADCRUMB_TAGS, DEFAULT_BREADCRUMB_INTENT } from 'lib/components/pro/Breadcrumb'
+import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
 import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'
 import { BOX_PROPS_META } from '../Box/props'
@@ -25,8 +26,8 @@ const BREADCRUMB_PROPS_META: ComponentMeta<BreadcrumbProps>['props'] = {
     description: 'Controls the active breadcrumb path, enabling fully controlled behavior.',
   },
   size: {
-    ...DROPDOWN_LIST_PROPS_META.size,
-    defaultValue: DEFAULT_BREADCRUMB_SIZE,
+    options: CONTROL_SIZES,
+    defaultValue: DEFAULT_CONTROL_SIZE,
   },
   tag: {
     ...BOX_PROPS_META.tag,

@@ -1,5 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { AutocompleteProps } from 'lib/components'
+import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
 import {
   DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
@@ -66,7 +67,10 @@ const AUTOCOMPLETE_PROPS_META: ComponentMeta<AutocompleteProps>['props'] = {
     defaultValue: String(DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE),
     description: 'Controls whether the dropdown toggle is rendered next to the input.',
   },
-  size: DROPDOWN_LIST_PROPS_META.size,
+  size: {
+    options: CONTROL_SIZES,
+    defaultValue: DEFAULT_CONTROL_SIZE,
+  },
   tagAttrs: DROPDOWN_LIST_PROPS_META.tagAttrs,
   tagRef: DROPDOWN_LIST_PROPS_META.tagRef,
   value: {

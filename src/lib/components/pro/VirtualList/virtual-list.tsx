@@ -13,7 +13,7 @@ export const VirtualList = <T,>({
   elevated,
   // own
   items,
-  itemHeight,
+  itemBlockSize,
   visibleItemsCount,
   renderItem,
   scrollToIndex = DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX,
@@ -26,8 +26,8 @@ export const VirtualList = <T,>({
 
   const [scrollTop, setScrollTop] = useState<number>(0)
 
-  const viewportHeight = visibleItemsCount * itemHeight
-  const totalHeight = items.length * itemHeight
+  const viewportHeight = visibleItemsCount * itemBlockSize
+  const totalHeight = items.length * itemBlockSize
 
   const resolvedOverscan = overscan === undefined ? visibleItemsCount : overscan
 
@@ -43,14 +43,14 @@ export const VirtualList = <T,>({
       baseIndex -= visibleItemsCount - 1
     }
 
-    const maxScrollTop = Math.max(0, (items.length - visibleItemsCount) * itemHeight)
-    const nextScrollTop = Math.max(0, Math.min(baseIndex * itemHeight, maxScrollTop))
+    const maxScrollTop = Math.max(0, (items.length - visibleItemsCount) * itemBlockSize)
+    const nextScrollTop = Math.max(0, Math.min(baseIndex * itemBlockSize, maxScrollTop))
 
     if (el.scrollTop !== nextScrollTop) {
       el.scrollTop = nextScrollTop
       setScrollTop(nextScrollTop)
     }
-  }, [scrollToIndex, scrollAlign, visibleItemsCount, itemHeight, items.length])
+  }, [scrollToIndex, scrollAlign, visibleItemsCount, itemBlockSize, items.length])
 
   useLayoutEffect(() => {
     if (ensureVisibleIndex === undefined) return
@@ -58,10 +58,10 @@ export const VirtualList = <T,>({
     const el = resolvedRef.current
     if (!el) return
 
-    const listHeight = visibleItemsCount * itemHeight
+    const listHeight = visibleItemsCount * itemBlockSize
 
-    const itemTop = ensureVisibleIndex * itemHeight
-    const itemBottom = itemTop + itemHeight
+    const itemTop = ensureVisibleIndex * itemBlockSize
+    const itemBottom = itemTop + itemBlockSize
 
     const viewportTop = el.scrollTop
     const viewportBottom = viewportTop + listHeight
@@ -74,17 +74,17 @@ export const VirtualList = <T,>({
       nextScrollTop = itemBottom - listHeight // new item becomes last visible
     }
 
-    const maxScrollTop = Math.max(0, (items.length - visibleItemsCount) * itemHeight)
+    const maxScrollTop = Math.max(0, (items.length - visibleItemsCount) * itemBlockSize)
     nextScrollTop = Math.max(0, Math.min(nextScrollTop, maxScrollTop))
 
     if (nextScrollTop !== viewportTop) {
       el.scrollTop = nextScrollTop
       setScrollTop(nextScrollTop)
     }
-  }, [ensureVisibleIndex, visibleItemsCount, itemHeight, items.length])
+  }, [ensureVisibleIndex, visibleItemsCount, itemBlockSize, items.length])
 
   const { startIndex, endIndex, offsetY } = useMemo(() => {
-    let start = Math.floor(scrollTop / itemHeight) - resolvedOverscan
+    let start = Math.floor(scrollTop / itemBlockSize) - resolvedOverscan
     let end = start + visibleItemsCount + resolvedOverscan * 2
 
     start = Math.max(0, start)
@@ -93,9 +93,9 @@ export const VirtualList = <T,>({
     return {
       startIndex: start,
       endIndex: end,
-      offsetY: start * itemHeight,
+      offsetY: start * itemBlockSize,
     }
-  }, [scrollTop, itemHeight, visibleItemsCount, resolvedOverscan, items.length])
+  }, [scrollTop, itemBlockSize, visibleItemsCount, resolvedOverscan, items.length])
 
   const visibleItems = items.slice(startIndex, endIndex)
 

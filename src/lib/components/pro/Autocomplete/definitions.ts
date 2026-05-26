@@ -1,4 +1,5 @@
 import { BoxProps, DropdownListProps } from 'lib/components'
+import { ControlSize } from 'lib/definitions'
 
 export const DEFAULT_AUTOCOMPLETE_INLINE_SIZE: AutocompleteProps['inlineSize'] = '100%'
 export const DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING: AutocompleteProps['disableFiltering'] = false
@@ -9,6 +10,7 @@ type AutocompleteOwnProps = {
   value?: string
   onChange?: (value: string) => void
   onInputChange?: (value: string) => void
+  size?: ControlSize
   dropdownPlacement?: DropdownListProps['placement']
   disableFiltering?: boolean
   debounceDelay?: number
@@ -22,7 +24,7 @@ type PropsFromBox = Pick<BoxProps<'div'>, 'inlineSize' | 'disabled'> & {
 
 type PropsFromDropdownList = Pick<
   DropdownListProps,
-  'tagAttrs' | 'tagRef' | 'color' | 'size' | 'intent' | 'scrollAlign' | 'visibleItemsCount' | 'noOptionsLabel'
+  'tagAttrs' | 'tagRef' | 'color' | 'intent' | 'scrollAlign' | 'visibleItemsCount' | 'noOptionsLabel'
 >
 
 export type AutocompleteProps = PropsFromBox & PropsFromDropdownList & AutocompleteOwnProps

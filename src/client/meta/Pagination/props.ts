@@ -1,6 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { PaginationProps } from 'lib/components'
-import { DEFAULT_BUTTON_SIZE } from 'lib/components/core/Button'
+import { DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
 import {
   DEFAULT_PAGINATION_BOUNDARY_COUNT,
@@ -58,7 +58,7 @@ const PAGINATION_PROPS_META: ComponentMeta<PaginationProps>['props'] = {
   },
   size: {
     ...BUTTON_PROPS_META.size,
-    defaultValue: String(DEFAULT_BUTTON_SIZE),
+    defaultValue: DEFAULT_CONTROL_SIZE,
   },
   tagAttrs: BOX_PROPS_META.tagAttrs,
   tagRef: BOX_PROPS_META.tagRef,

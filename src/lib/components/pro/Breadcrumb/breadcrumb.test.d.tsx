@@ -199,7 +199,7 @@ expectType(<Breadcrumb tree={[]} size="md" />)
 
 expectType(<Breadcrumb tree={[]} size="lg" />)
 
-expectError(<Breadcrumb tree={[]} size="xl" />)
+expectType(<Breadcrumb tree={[]} size="xl" />)
 
 // non-responsive
 expectError(<Breadcrumb tree={[]} size={{ md: 'lg' }} />)

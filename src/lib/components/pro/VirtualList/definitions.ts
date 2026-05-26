@@ -10,7 +10,7 @@ export type VirtualListScrollAlign = (typeof VIRTUAL_LIST_SCROLL_ALIGN)[number]
 
 type VirtualListOwnProps<T = any> = {
   items: T[]
-  itemHeight: number
+  itemBlockSize: number
   visibleItemsCount: number
   renderItem: (item: T, index: number) => ReactNode
   scrollToIndex?: number

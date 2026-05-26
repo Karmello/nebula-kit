@@ -3,9 +3,9 @@ import classNames from 'classnames'
 
 import { Box, Segment } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { CONTROL_SIZE_MAP } from 'lib/definitions'
+import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
-import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_SIZE, DEFAULT_INPUT_VARIANT, InputAffixProps, InputProps } from './definitions'
+import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_VARIANT, InputAffixProps, InputProps } from './definitions'
 
 import './input.scss'
 
@@ -23,7 +23,7 @@ export const Input = ({
   onChange,
   onFocus,
   onBlur,
-  size = DEFAULT_INPUT_SIZE,
+  size = DEFAULT_CONTROL_SIZE,
   startAffix,
   endAffix,
   placeholder,

@@ -1,12 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
+import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
 import {
   ButtonProps,
-  BUTTON_SIZES,
   BUTTON_TAGS,
   BUTTON_ALIGNS,
   DEFAULT_BUTTON_INTENT,
-  DEFAULT_BUTTON_SIZE,
   DEFAULT_BUTTON_VARIANT,
   DEFAULT_BUTTON_RIPPLE,
   DEFAULT_BUTTON_INTERACTIVE,
@@ -74,8 +73,8 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     description: 'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
   },
   size: {
-    options: Object.values(BUTTON_SIZES),
-    defaultValue: DEFAULT_BUTTON_SIZE,
+    options: CONTROL_SIZES,
+    defaultValue: DEFAULT_CONTROL_SIZE,
     description:
       'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
   },

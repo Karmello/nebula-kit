@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { DropdownList, Button } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
+import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
 import { MultiSelectProvider } from './MultiSelectProvider'
 import { DEFAULT_MULTI_SELECT_OPTION_ALIGN } from './slots'
@@ -14,7 +15,6 @@ export const MultiSelect = ({
   tagAttrs,
   tagRef,
   color,
-  size,
   intent,
   scrollAlign,
   visibleItemsCount,
@@ -26,6 +26,7 @@ export const MultiSelect = ({
   defaultValue,
   value,
   onChange,
+  size = DEFAULT_CONTROL_SIZE,
   dropdownPlacement,
 }: MultiSelectProps) => {
   const [internalValue, setInternalValue] = useState<string[]>(defaultValue || [])
@@ -68,7 +69,7 @@ export const MultiSelect = ({
               }}
               intent={intent}
               color={color}
-              size={size}
+              itemBlockSize={Number(CONTROL_SIZE_MAP[size].blockSize.replace('px', ''))}
               scrollToIndex={currentSlotIndex}
               scrollAlign={scrollAlign}
               visibleItemsCount={visibleItemsCount}

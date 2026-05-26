@@ -19,7 +19,7 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
   align = DEFAULT_DROPDOWN_LIST_ITEM_ALIGN,
   ...buttonProps
 }: DropdownListItemProps<T>) => {
-  const { setResizeVisible, keepOpen, size, color, intent, hoveredIndex, setHoveredIndex, blockMouse, setBlockMouse } =
+  const { setResizeVisible, keepOpen, itemBlockSize, color, intent, hoveredIndex, setHoveredIndex, blockMouse, setBlockMouse } =
     useDropdownListContext()
 
   const index = (buttonProps as any).index
@@ -53,7 +53,8 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
       variant="solid"
       color={color}
       intent={intent}
-      size={size}
+      // TODO
+      // size={size}
       elevated
       fullWidth
       align={align}

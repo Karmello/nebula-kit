@@ -92,7 +92,7 @@ expectError(
   </Select>
 )
 
-expectError(
+expectType(
   <Select size="xl">
     <Select.Option value="a">A</Select.Option>
   </Select>

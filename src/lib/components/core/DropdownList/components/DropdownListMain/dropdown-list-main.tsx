@@ -21,7 +21,7 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
     setHoveredIndex,
     setEnsureVisibleIndex,
     setBlockMouse,
-    itemHeight,
+    finalItemBlockSize,
     floatingResolved,
   } = useDropdownListContext()
 
@@ -94,8 +94,8 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
               itemsCount,
               activeIndex: hoveredIndex,
               scrollTop: scrollWrapperRef.current.scrollTop,
-              visibleItemsCount: floatingResolved?.blockSize ? Math.floor(floatingResolved.blockSize / itemHeight) : 1,
-              itemHeight,
+              visibleItemsCount: floatingResolved?.blockSize ? Math.floor(floatingResolved.blockSize / finalItemBlockSize) : 1,
+              itemBlockSize: finalItemBlockSize,
             })
 
             setBlockMouse(true)
