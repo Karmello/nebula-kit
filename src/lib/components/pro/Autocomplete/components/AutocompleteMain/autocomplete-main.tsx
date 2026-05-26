@@ -1,7 +1,7 @@
 import { ReactElement, ReactNode, useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
-import { AutocompleteOptionProps, Button, DropdownList, Input } from 'lib/components'
+import { AutocompleteOptionProps, DropdownList, IconButton, Input } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import { AutocompleteProps } from '../../definitions'
@@ -144,7 +144,7 @@ export const AutocompleteMain = ({
                 endAffix={
                   showToggle
                     ? props => (
-                        <Button
+                        <IconButton
                           {...props}
                           tagAttrs={{
                             onClick: () => {

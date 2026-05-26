@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import { Box, Flex, Spacer, Button } from 'lib/components'
+import { Box, Flex, Spacer, IconButton } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 
@@ -48,14 +48,12 @@ export const SplitViewMain = ({
           >
             <Flex alignItems="center" flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'} gap="sm">
               <Flex.Item>
-                <Button
-                  tagAttrs={{
-                    onClick: () => setSideOpen(!sideOpen),
-                    'aria-expanded': sideOpen,
-                  }}
+                <IconButton
+                  tagAttrs={{ 'aria-expanded': sideOpen }}
                   iconName={getToggleIconName(sidePosition, sideOpen)}
                   intent="tertiary"
                   size="xs"
+                  onClick={() => setSideOpen(!sideOpen)}
                 />
               </Flex.Item>
               <Flex.Item flex="1" tagAttrs={{ style: { minInlineSize: '0px' } }}>

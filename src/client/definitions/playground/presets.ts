@@ -4,6 +4,7 @@ import type {
   PropsFromButtonKey,
   PropsFromCalloutKey,
   PropsFromCheckboxKey,
+  PropsFromIconButtonKey,
   PropsFromIconKey,
   PropsFromInputKey,
   PropsFromLoaderKey,
@@ -156,6 +157,15 @@ export const PLAYGROUND_PRESETS: Record<string, Array<{ name: string; props: obj
         intent: 'secondary',
         size: '50px',
       } as Record<PropsFromIconKey, unknown>,
+    },
+  ],
+  IconButton: [
+    {
+      name: 'Default',
+      props: {
+        iconName: 'send',
+        color: 'blue',
+      } as Record<PropsFromIconButtonKey, unknown>,
     },
   ],
   Input: [

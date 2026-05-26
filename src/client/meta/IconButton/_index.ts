@@ -21,7 +21,7 @@ const ICON_BUTTON_META: ComponentMeta<IconButtonProps> = {
       'supports polymorphic rendering as button or anchor',
       'keeps interaction geometry consistent with the global control sizing system',
     ],
-    composedOf: ['ActionSurface', 'Icon', 'Flex', 'Loader'],
+    composedOf: ['ActionSurface', 'WithIcon', 'Loader'],
     topLevelTags: ICON_BUTTON_TAGS,
   },
   props: ICON_BUTTON_PROPS_META,

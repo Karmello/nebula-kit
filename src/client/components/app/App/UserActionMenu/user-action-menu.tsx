@@ -4,7 +4,7 @@ import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
 import { useAppStore } from 'client/store'
 import { useLogoutUser } from 'client/api'
-import { Button, Flex, Select } from 'lib/components'
+import { Flex, IconButton, Select } from 'lib/components'
 
 import { WebsiteMapDialog } from './components/website-map-dialog'
 import { AppPrefsDialog } from './components/app-prefs-dialog'
@@ -28,21 +28,21 @@ export const UserActionMenu = () => {
   return (
     <>
       <Flex>
-        <Button
+        <IconButton
           iconName="compass"
           intent="muted"
           onClick={() => {
             if (!showWebsiteMap) setShowWebsiteMap(true)
           }}
         />
-        <Button
+        <IconButton
           iconName={showAppJump ? 'search-x' : 'search'}
           intent="muted"
           onClick={() => {
             if (!showAppJump) setShowAppJump(true)
           }}
         />
-        <Button
+        <IconButton
           iconName="settings"
           intent="muted"
           onClick={() => {

@@ -5,6 +5,7 @@ import {
   PROPS_FROM_CALLOUT,
   PROPS_FROM_CHECKBOX,
   PROPS_FROM_ICON,
+  PROPS_FROM_ICON_BUTTON,
   PROPS_FROM_INPUT,
   PROPS_FROM_LOADER,
   PROPS_FROM_REVEAL,
@@ -23,6 +24,7 @@ export type PropsFromButtonKey = (typeof PROPS_FROM_BUTTON)[number]
 export type PropsFromCalloutKey = (typeof PROPS_FROM_CALLOUT)[number]
 export type PropsFromCheckboxKey = (typeof PROPS_FROM_CHECKBOX)[number]
 export type PropsFromIconKey = (typeof PROPS_FROM_ICON)[number]
+export type PropsFromIconButtonKey = (typeof PROPS_FROM_ICON_BUTTON)[number]
 export type PropsFromInputKey = (typeof PROPS_FROM_INPUT)[number]
 export type PropsFromLoaderKey = (typeof PROPS_FROM_LOADER)[number]
 export type PropsFromRevealKey = (typeof PROPS_FROM_REVEAL)[number]
@@ -41,6 +43,7 @@ export type PlaygroundProp =
   | PropsFromCalloutKey
   | PropsFromCheckboxKey
   | PropsFromIconKey
+  | PropsFromIconButtonKey
   | PropsFromInputKey
   | PropsFromLoaderKey
   | PropsFromRevealKey

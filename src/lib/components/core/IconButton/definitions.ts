@@ -1,4 +1,4 @@
-import { ActionSurfaceProps, IconProps } from 'lib/components'
+import { ActionSurfaceProps, WithIconProps } from 'lib/components'
 import { ControlSize } from 'lib/definitions'
 import { DEFAULT_ICON_BUTTON_TAG } from 'lib/components/core/IconButton/icon-button'
 
@@ -13,13 +13,11 @@ type IconButtonOwnProps = {
 
 type PropsFromActionSurface<T extends IconButtonTag = typeof DEFAULT_ICON_BUTTON_TAG> = Pick<
   ActionSurfaceProps<T>,
-  'tag' | 'tagAttrs' | 'tagRef' | 'variant' | 'color' | 'intent' | 'disabled' | 'ripple' | 'onClick'
+  'tag' | 'tagAttrs' | 'tagRef' | 'variant' | 'color' | 'intent' | 'disabled' | 'ripple' | 'onClick' | 'elevated' | 'interactive'
 >
 
-type PropsFromIcon = Pick<IconProps, 'children'> & {
-  iconName?: IconProps['name']
-}
+type PropsFromWithIcon = Pick<WithIconProps, 'customSvgIcon' | 'iconName' | 'iconAngle'>
 
 export type IconButtonProps<T extends IconButtonTag = typeof DEFAULT_ICON_BUTTON_TAG> = PropsFromActionSurface<T> &
-  PropsFromIcon &
+  PropsFromWithIcon &
   IconButtonOwnProps

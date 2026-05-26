@@ -1,5 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { ActionSurfaceProps } from 'lib/components'
+
 import {
   DEFAULT_ACTION_SURFACE_INTERACTIVE,
   DEFAULT_ACTION_SURFACE_RIPPLE,
@@ -10,7 +11,10 @@ import { BOX_PROPS_META } from '../Box/props'
 
 const ACTION_SURFACE_PROPS_META: ComponentMeta<ActionSurfaceProps>['props'] = {
   blockSize: BOX_PROPS_META.blockSize,
-  children: BOX_PROPS_META.children,
+  children: {
+    ...BOX_PROPS_META.children,
+    isRequired: true,
+  },
   color: BOX_PROPS_META.color,
   disabled: BOX_PROPS_META.disabled,
   elevated: BOX_PROPS_META.elevated,

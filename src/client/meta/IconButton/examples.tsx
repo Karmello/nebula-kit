@@ -17,16 +17,10 @@ const ICON_BUTTON_EXAMPLES_META: ComponentMeta<IconButtonProps>['examples'] = [
   },
   {
     description: 'Custon SVG icon.',
-    jsx: (
-      <IconButton>
-        <Activity size="18px" />
-      </IconButton>
-    ),
+    jsx: <IconButton customSvgIcon={<Activity size="18px" />} />,
     code: `import { Activity } from 'lucide-react'
 
-<IconButton>
-  <Activity size="18px" />
-</IconButton>`,
+<IconButton customSvgIcon={<Activity size="18px" />} />`,
   },
 ]
 

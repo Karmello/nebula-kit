@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import classNames from 'classnames'
 
-import { Resize, Box, Flex, Button } from 'lib/components'
+import { Resize, Box, Flex, IconButton } from 'lib/components'
 import { useFocusTrap } from 'lib/internals/focus'
 import { withPrefix } from 'lib/helpers'
 
@@ -81,15 +81,13 @@ export const SplitViewSide = ({
               {mode === 'overlay' ? (
                 <Flex justifyContent="flex-end">
                   <Box padding="2xs" paddingRight="3xs" paddingBottom="md">
-                    <Button
-                      tagAttrs={{
-                        onClick: () => {
-                          setSideOpen(false)
-                        },
-                      }}
+                    <IconButton
                       iconName="close"
                       intent={intent || 'tertiary'}
                       size="2xs"
+                      onClick={() => {
+                        setSideOpen(false)
+                      }}
                     />
                   </Box>
                 </Flex>

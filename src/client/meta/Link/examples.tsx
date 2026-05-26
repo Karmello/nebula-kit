@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { Button, Image, Link, LinkProps, Text } from 'lib/components'
+import { Button, IconButton, Image, Link, LinkProps, Text } from 'lib/components'
 
 import img1 from 'client/assets/img-1.webp'
 
@@ -15,10 +15,10 @@ const LINK_EXAMPLES_META: ComponentMeta<LinkProps>['examples'] = [
   {
     jsx: (
       <Link href="https://google.com" target="_blank">
-        <Button iconName="external-link" intent="primary" />
+        <IconButton iconName="external-link" intent="primary" />
       </Link>
     ),
-    description: 'Using Link to make Button open an external page in a new tab.',
+    description: 'Using Link to make IconButton open an external page in a new tab.',
   },
   {
     jsx: (

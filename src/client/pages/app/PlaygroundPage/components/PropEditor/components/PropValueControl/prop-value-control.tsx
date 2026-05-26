@@ -2,7 +2,7 @@ import { sentenceCase } from 'change-case'
 
 import { DOCS_CSS_LABEL, PLAYGROUND_ARRAY_DATA_MAP, PLAYGROUND_CONTROLS_MAP, PlaygroundProp } from 'client/definitions'
 import { usePlaygroundStore } from 'client/store'
-import { Input, Button, Text, Spacer, Select } from 'lib/components'
+import { Input, Text, Spacer, Select, IconButton } from 'lib/components'
 import { Breakpoint } from 'lib/definitions'
 
 export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
@@ -54,7 +54,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
           placeholder="..."
           value={value}
           onChange={onChange}
-          endAffix={props => <Button {...props} iconName="close" tagAttrs={{ onClick: () => onChange('') }} />}
+          endAffix={props => <IconButton {...props} iconName="close" onClick={() => onChange('')} />}
         />
       ) : null}
 

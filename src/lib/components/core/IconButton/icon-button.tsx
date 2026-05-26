@@ -1,7 +1,7 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useRef } from 'react'
 import classNames from 'classnames'
 
-import { ActionSurface, Icon, Flex, Loader } from 'lib/components'
+import { ActionSurface, WithIcon, Loader } from 'lib/components'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
@@ -23,9 +23,12 @@ export const IconButton = <T extends IconButtonTag = typeof DEFAULT_ICON_BUTTON_
   color,
   intent = DEFAULT_ICON_BUTTON_INTENT,
   disabled,
-  // icon
-  children,
+  elevated,
+  interactive,
+  // WithIcon
+  customSvgIcon,
   iconName,
+  iconAngle,
   // own
   size = DEFAULT_CONTROL_SIZE,
   loading,
@@ -49,16 +52,20 @@ export const IconButton = <T extends IconButtonTag = typeof DEFAULT_ICON_BUTTON_
       color={color}
       intent={intent}
       disabled={disabled || loading}
+      elevated={elevated}
+      interactive={interactive}
       ripple={ripple}
       onClick={onClick}
       inlineSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
       blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
     >
-      <Flex justifyContent="center">
-        <Icon name={iconName} size={CONTROL_SIZE_MAP[size || 'md'].iconSize}>
-          {children}
-        </Icon>
-      </Flex>
+      <WithIcon
+        customSvgIcon={customSvgIcon}
+        iconName={iconName}
+        iconAngle={iconAngle}
+        iconSize={CONTROL_SIZE_MAP[size || 'md'].iconSize}
+        justifyContent="center"
+      />
       {loading && !disabled ? <Loader centered size={CONTROL_SIZE_MAP[size || 'md'].loaderSize} /> : null}
     </ActionSurface>
   )

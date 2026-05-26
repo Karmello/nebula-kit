@@ -8,7 +8,6 @@ import {
   DEFAULT_BUTTON_INTENT,
   DEFAULT_BUTTON_VARIANT,
   DEFAULT_BUTTON_RIPPLE,
-  DEFAULT_BUTTON_INTERACTIVE,
   DEFAULT_BUTTON_ALIGN,
 } from 'lib/components/core/Button/definitions'
 
@@ -26,6 +25,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   bold: TEXT_PROPS_META.bold,
   children: {
     ...ACTION_SURFACE_PROPS_META.children,
+    isRequired: true,
     description: 'Label rendered.',
   },
   color: ACTION_SURFACE_PROPS_META.color,
@@ -49,10 +49,7 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
     ...ACTION_SURFACE_PROPS_META.intent,
     defaultValue: String(DEFAULT_BUTTON_INTENT),
   },
-  interactive: {
-    ...ACTION_SURFACE_PROPS_META.interactive,
-    defaultValue: String(DEFAULT_BUTTON_INTERACTIVE),
-  },
+  interactive: ACTION_SURFACE_PROPS_META.interactive,
   loading: {
     options: ['boolean'],
     description: 'Activates the loading state, shows a spinner and prevents interaction.',

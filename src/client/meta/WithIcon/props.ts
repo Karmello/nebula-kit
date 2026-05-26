@@ -15,10 +15,7 @@ import { BOX_PROPS_META } from '../Box/props'
 import { TEXT_PROPS_META } from '../Text/props'
 
 const WITH_ICON_PROPS_META: ComponentMeta<WithIconProps>['props'] = {
-  children: {
-    ...BOX_PROPS_META['children'],
-    isRequired: true,
-  },
+  children: BOX_PROPS_META.children,
   customSvgIcon: ICON_PROPS_META.children,
   gap: {
     ...FLEX_PROPS_META.gap,

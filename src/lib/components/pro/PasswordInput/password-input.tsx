@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { Button, Input } from 'lib/components'
+import { IconButton, Input } from 'lib/components'
 
 import { DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE, PasswordInputProps } from './definitions'
 
@@ -34,13 +34,7 @@ export const PasswordInput = ({
       }}
       tagRef={tagRef}
       endAffix={props => (
-        <Button
-          {...props}
-          tagAttrs={{
-            onClick: () => setHidePassword(!hidePassword),
-          }}
-          iconName={hidePassword ? 'eye-off' : 'eye'}
-        />
+        <IconButton {...props} iconName={hidePassword ? 'eye-off' : 'eye'} onClick={() => setHidePassword(!hidePassword)} />
       )}
       color={color}
       defaultValue={defaultValue}

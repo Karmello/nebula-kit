@@ -1,4 +1,4 @@
-import { Box, Divider, Button, Spacer } from 'lib/components'
+import { Box, Divider, Spacer, IconButton } from 'lib/components'
 
 import { useSideNavContext } from '../../SideNavProvider'
 
@@ -14,15 +14,15 @@ export const SideNavToggle = () => {
   return (
     <>
       <Box padding="10px">
-        <Button
+        <IconButton
           tagAttrs={{
-            onClick: () => {
-              setExpandedCategories(state => Object.fromEntries(Object.keys(state).map(id => [id, !isAnyCategoryExpanded])))
-            },
             'aria-expanded': isAnyCategoryExpanded,
           }}
           iconName={isAnyCategoryExpanded ? 'list-chevrons-down-up' : 'list-chevrons-up-down'}
           size="xs"
+          onClick={() => {
+            setExpandedCategories(state => Object.fromEntries(Object.keys(state).map(id => [id, !isAnyCategoryExpanded])))
+          }}
         />
       </Box>
       <Divider />

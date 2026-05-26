@@ -3,18 +3,21 @@ import { IconButtonProps } from 'lib/components'
 import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 import { ICON_BUTTON_TAGS } from 'lib/components/core/IconButton'
 
-import { ICON_PROPS_META } from '../Icon/props'
 import { ACTION_SURFACE_PROPS_META } from '../ActionSurface/props'
+import { WITH_ICON_PROPS_META } from '../WithIcon/props'
 
 const ICON_BUTTON_PROPS_META: ComponentMeta<IconButtonProps>['props'] = {
-  children: {
-    ...ICON_PROPS_META.children,
+  color: ACTION_SURFACE_PROPS_META.color,
+  customSvgIcon: {
+    ...WITH_ICON_PROPS_META.customSvgIcon,
     description: 'Custom SVG icon rendered instead of iconName.',
   },
-  color: ACTION_SURFACE_PROPS_META.color,
   disabled: ACTION_SURFACE_PROPS_META.disabled,
-  iconName: ICON_PROPS_META.name,
+  elevated: ACTION_SURFACE_PROPS_META.elevated,
+  iconAngle: WITH_ICON_PROPS_META.iconAngle,
+  iconName: WITH_ICON_PROPS_META.iconName,
   intent: ACTION_SURFACE_PROPS_META.intent,
+  interactive: ACTION_SURFACE_PROPS_META.interactive,
   loading: {
     options: ['boolean'],
     description: 'Activates the loading state, shows a spinner and prevents interaction.',

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { ComponentMeta } from 'client/definitions'
-import { Button, Input, InputProps } from 'lib/components'
+import { IconButton, Input, InputProps } from 'lib/components'
 
 const InputControlled = () => {
   const [value, setValue] = useState<string>('value')
@@ -26,28 +26,28 @@ return (
     description: 'Input with interactive elements attached on the left and right.',
     jsx: (
       <Input
-        startAffix={props => <Button {...props} iconName="search" />}
-        endAffix={props => <Button {...props} iconName="eye" />}
+        startAffix={props => <IconButton {...props} iconName="search" />}
+        endAffix={props => <IconButton {...props} iconName="eye" />}
       />
     ),
     code: `<Input
-  startAffix={props => <Button {...props} iconName="search" />}
-  endAffix={props => <Button {...props} iconName="eye" />}
+  startAffix={props => <IconButton {...props} iconName="search" />}
+  endAffix={props => <IconButton {...props} iconName="eye" />}
 />`,
   },
   {
     description: 'Disabled Input.',
     jsx: (
       <Input
-        startAffix={props => <Button {...props} iconName="search" />}
-        endAffix={props => <Button {...props} iconName="eye" />}
+        startAffix={props => <IconButton {...props} iconName="search" />}
+        endAffix={props => <IconButton {...props} iconName="eye" />}
         disabled
         value="value"
       />
     ),
     code: `<Input
-  startAffix={props => <Button {...props} iconName="search" />}
-  endAffix={props => <Button {...props} iconName="eye" />}
+  startAffix={props => <IconButton {...props} iconName="search" />}
+  endAffix={props => <IconButton {...props} iconName="eye" />}
   disabled
 />`,
   },

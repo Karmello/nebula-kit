@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Button, Fade, Flex, Scale } from 'lib/components'
+import { Box, Fade, Flex, IconButton, Scale } from 'lib/components'
 import { WithSlots, Portal } from 'lib/components/shared'
 import { useGlobalScrollLock, useCurrentTheme } from 'lib/hooks'
 import { useFocusTrap } from 'lib/internals/focus'
@@ -117,7 +117,7 @@ export const Dialog = ({
                         <Box drawable variant="solid" intent="neutral" borderRadius="0px">
                           {onClose ? (
                             <Box position="absolute" top="8px" right="8px">
-                              <Button size="2xs" iconName="close" variant="outline" intent="tertiary" onClick={onClose} />
+                              <IconButton size="2xs" iconName="close" variant="outline" intent="tertiary" onClick={onClose} />
                             </Box>
                           ) : null}
 

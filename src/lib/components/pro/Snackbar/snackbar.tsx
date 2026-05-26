@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from 'react'
 
-import { Box, Button, Callout, Flex, Slide } from 'lib/components'
+import { Box, Callout, Flex, IconButton, Slide } from 'lib/components'
 import { CALLOUT_CONFIG } from 'lib/components/core/Callout/definitions'
 
 import {
@@ -61,13 +61,13 @@ export const Snackbar = ({
               maxInlineSize="calc(100vw - 10px)"
             >
               <Box position="absolute" top="15px" right="15px">
-                <Button
-                  tagAttrs={{ onClick: handleClose }}
+                <IconButton
                   iconName="close"
                   size="xs"
                   variant="solid"
                   intent="primary"
                   color={CALLOUT_CONFIG[snackbar?.status || 'info'].color}
+                  onClick={handleClose}
                 />
               </Box>
               <Callout size="sm" content={snackbar?.content || ''} heading={snackbar?.heading} status={snackbar?.status} />

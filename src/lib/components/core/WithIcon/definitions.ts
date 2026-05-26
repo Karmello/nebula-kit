@@ -18,9 +18,7 @@ type WithIconOwnProps = {
   iconPlacement?: WithIconIconPlacement
 }
 
-type PropsFromBox = Pick<BoxProps<'span'>, 'tagAttrs' | 'tagRef' | 'inlineSize'> & {
-  children: BoxProps<'span'>['children']
-}
+type PropsFromBox = Pick<BoxProps<'span'>, 'children' | 'tagAttrs' | 'tagRef' | 'inlineSize'>
 
 type PropsFromFlex = Pick<FlexProps, 'gap'> & {
   justifyContent?: WithIconJustifyContent

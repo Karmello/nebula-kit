@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { Box, Button, Flex, Input, Resize, Text } from 'lib/components'
+import { Box, Button, Flex, IconButton, Input, Resize, Text } from 'lib/components'
 
 import { PaymentCancelDialog } from './payment-cancel-dialog'
 
@@ -70,14 +70,12 @@ export const PaymentCancelForm = ({
                   intent="tertiary"
                   color="red"
                   startAffix={props => (
-                    <Button
+                    <IconButton
                       {...props}
-                      tagAttrs={{
-                        onClick: () => {
-                          setEnableInput(false)
-                        },
-                      }}
                       iconName="close"
+                      onClick={() => {
+                        setEnableInput(false)
+                      }}
                     />
                   )}
                   endAffix={props => (

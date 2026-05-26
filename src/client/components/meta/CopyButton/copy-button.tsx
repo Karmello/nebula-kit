@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 
-import { Button } from 'lib/components'
+import { IconButton } from 'lib/components'
 
 type CopyButtonProps = {
   text: string
@@ -22,13 +22,14 @@ export const CopyButton = ({ text }: CopyButtonProps) => {
   }
 
   return (
-    <Button
+    <IconButton
+      tagAttrs={{ 'aria-label': copied ? 'Copied' : 'Copy code' }}
       iconName={copied ? 'check' : 'copy'}
       size="xs"
       variant="ghost"
       intent="primary"
       color="blue"
-      tagAttrs={{ onClick: handleCopy, 'aria-label': copied ? 'Copied' : 'Copy code' }}
+      onClick={handleCopy}
     />
   )
 }

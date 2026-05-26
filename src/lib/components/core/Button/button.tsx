@@ -13,7 +13,6 @@ import {
   DEFAULT_BUTTON_INTENT,
   DEFAULT_BUTTON_VARIANT,
   DEFAULT_BUTTON_RIPPLE,
-  DEFAULT_BUTTON_INTERACTIVE,
   DEFAULT_BUTTON_ALIGN,
 } from './definitions'
 
@@ -28,7 +27,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   variant = DEFAULT_BUTTON_VARIANT,
   color,
   intent = DEFAULT_BUTTON_INTENT,
-  interactive = DEFAULT_BUTTON_INTERACTIVE,
+  interactive,
   disabled,
   elevated,
   inlineSize,

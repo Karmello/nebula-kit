@@ -9,7 +9,6 @@ export type ActionSurfaceTag = (typeof ACTION_SURFACE_TAGS)[number]
 
 type PropsFromBox<T extends ActionSurfaceTag = typeof DEFAULT_ACTION_SURFACE_TAG> = Pick<
   BoxProps<T>,
-  | 'children'
   | 'tag'
   | 'tagAttrs'
   | 'tagRef'
@@ -28,7 +27,9 @@ type PropsFromBox<T extends ActionSurfaceTag = typeof DEFAULT_ACTION_SURFACE_TAG
   | 'padding'
   | 'paddingBlock'
   | 'paddingInline'
->
+> & {
+  children: BoxProps<T>['children']
+}
 
 type OwnProps<T extends ActionSurfaceTag = typeof DEFAULT_ACTION_SURFACE_TAG> = {
   ripple?: boolean

@@ -1,4 +1,4 @@
-import { Box, Button } from 'lib/components'
+import { Box, IconButton } from 'lib/components'
 
 import { useToolbarContext } from '../ToolbarProvider'
 
@@ -6,18 +6,16 @@ export const ToolbarToggle = () => {
   const { switchAt, mainOpen, setMainOpen, isSwitchAtHit } = useToolbarContext()
 
   return (
-    <Box>
-      <Box display={{ [String(switchAt)]: 'none' }}>
-        <Button
-          variant="ghost"
-          intent="primary"
-          iconName={mainOpen ? 'close' : 'menu'}
-          tagAttrs={{
-            onClick: () => setMainOpen(!mainOpen),
-            'aria-expanded': isSwitchAtHit || mainOpen,
-          }}
-        />
-      </Box>
+    <Box display={{ [String(switchAt)]: 'none' }}>
+      <IconButton
+        tagAttrs={{
+          'aria-expanded': isSwitchAtHit || mainOpen,
+        }}
+        variant="ghost"
+        intent="primary"
+        iconName={mainOpen ? 'close' : 'menu'}
+        onClick={() => setMainOpen(!mainOpen)}
+      />
     </Box>
   )
 }

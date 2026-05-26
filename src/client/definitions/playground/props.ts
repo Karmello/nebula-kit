@@ -15,6 +15,7 @@ import type {
   RevealProps,
   AvatarProps,
   WithIconProps,
+  IconButtonProps,
 } from 'lib/components'
 
 export const PROPS_FROM_AVATAR = ['initials', 'shape', 'size', 'src'] as const satisfies readonly (keyof AvatarProps)[]
@@ -83,6 +84,18 @@ export const PROPS_FROM_CHECKBOX = [
 ] as const satisfies readonly (keyof CheckboxProps)[]
 
 export const PROPS_FROM_ICON = ['color', 'intent', 'name', 'size'] as const satisfies readonly (keyof IconProps)[]
+
+export const PROPS_FROM_ICON_BUTTON = [
+  'color',
+  'disabled',
+  'elevated',
+  'iconName',
+  'intent',
+  'loading',
+  'ripple',
+  'size',
+  'variant',
+] as const satisfies readonly (keyof IconButtonProps)[]
 
 export const PROPS_FROM_INPUT = [
   'color',
@@ -189,6 +202,7 @@ export const PLAYGROUND_PROPS_MAP: Record<string, readonly string[]> = {
   Callout: PROPS_FROM_CALLOUT,
   Checkbox: PROPS_FROM_CHECKBOX,
   Icon: PROPS_FROM_ICON,
+  IconButton: PROPS_FROM_ICON_BUTTON,
   Input: PROPS_FROM_INPUT,
   Loader: PROPS_FROM_LOADER,
   Reveal: PROPS_FROM_REVEAL,
