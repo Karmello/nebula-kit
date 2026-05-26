@@ -1,4 +1,4 @@
-import { ActionSurfaceProps, IconProps, TextProps, WithIconProps } from 'lib/components'
+import { ActionSurfaceProps, IconProps } from 'lib/components'
 import { ControlSize } from 'lib/definitions'
 import { DEFAULT_ICON_BUTTON_TAG } from 'lib/components/core/IconButton/icon-button'
 

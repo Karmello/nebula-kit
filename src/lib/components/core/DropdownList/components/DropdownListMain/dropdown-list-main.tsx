@@ -1,9 +1,9 @@
 import { useEffect, useLayoutEffect } from 'react'
 
 import { Box, DropdownListProps } from 'lib/components'
+import { DropdownListMenu } from 'lib/components/core/DropdownList/components'
 import { useOutsideClick } from 'lib/hooks'
 
-import { DropdownListMenu } from '../DropdownListMenu'
 import { useDropdownListContext } from '../DropdownListProvider'
 import { getNextActiveIndex } from '../../helpers'
 

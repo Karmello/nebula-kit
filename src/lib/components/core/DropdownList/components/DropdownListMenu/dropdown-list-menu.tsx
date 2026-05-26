@@ -3,9 +3,9 @@ import { cloneElement, ReactElement, RefObject, useCallback, useLayoutEffect, us
 import { Box, Resize, VirtualList, DropdownList, DropdownListItemProps, Divider } from 'lib/components'
 import { Portal } from 'lib/components/shared'
 import { FloatingResolved, useFloating } from 'lib/internals/positioning'
+import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from 'lib/components/core/DropdownList/dropdown-list'
 
 import { useDropdownListContext } from '../DropdownListProvider'
-import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../dropdown-list'
 
 export const DropdownListMenu = () => {
   const [triggerWidth, setTriggerWidth] = useState<number | undefined>(undefined)
