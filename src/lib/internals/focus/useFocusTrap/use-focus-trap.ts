@@ -13,7 +13,7 @@ export const useFocusTrap = ({ active, targetRef, onFocusEscape, disableEscapeOn
   const triggerRef = useRef<HTMLElement | null>(null)
   const prevActiveRef = useRef(false)
   const hadTabIndexRef = useRef(false)
-  const lastFocusedRef = useRef(null)
+  const lastFocusedRef = useRef<HTMLElement | null>(null)
   const tabDirectionRef = useRef<'forward' | 'backward'>('forward')
 
   useEffect(() => {
