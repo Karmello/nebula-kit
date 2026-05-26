@@ -1,6 +1,4 @@
-import { MouseEventHandler } from 'react'
-
-import { BoxProps, TextProps, WithIconProps } from 'lib/components'
+import { ActionSurfaceProps, TextProps, WithIconProps } from 'lib/components'
 import { RespValue, TShirtSize } from 'lib/definitions'
 
 export const DEFAULT_BUTTON_INTERACTIVE: ButtonProps['interactive'] = true
@@ -23,14 +21,11 @@ type ButtonOwnProps = {
   fullWidth?: RespValue<boolean>
   align?: RespValue<ButtonAlign>
   loading?: boolean
-  ripple?: boolean
-  selected?: boolean
   description?: string
-  onClick?: React.MouseEventHandler<HTMLButtonElement> | MouseEventHandler<HTMLAnchorElement>
 }
 
-type PropsFromBox<T extends ButtonTag = 'button'> = Pick<
-  BoxProps<T>,
+type PropsFromActionSurface<T extends ButtonTag = 'button'> = Pick<
+  ActionSurfaceProps<T>,
   | 'children'
   | 'tag'
   | 'tagAttrs'
@@ -44,10 +39,16 @@ type PropsFromBox<T extends ButtonTag = 'button'> = Pick<
   | 'inlineSize'
   | 'minInlineSize'
   | 'maxInlineSize'
+  | 'ripple'
+  | 'selected'
+  | 'onClick'
 >
 
 type PropsFromText = Pick<TextProps<'span'>, 'bold'>
 
 type PropsFromWithIcon = Pick<WithIconProps, 'customSvgIcon' | 'iconName' | 'iconAngle' | 'iconPlacement'>
 
-export type ButtonProps<T extends ButtonTag = 'button'> = PropsFromBox<T> & PropsFromText & PropsFromWithIcon & ButtonOwnProps
+export type ButtonProps<T extends ButtonTag = 'button'> = PropsFromActionSurface<T> &
+  PropsFromText &
+  PropsFromWithIcon &
+  ButtonOwnProps

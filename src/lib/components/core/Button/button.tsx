@@ -1,8 +1,7 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Text, Loader, WithIcon, Flex } from 'lib/components'
-import { Ripple } from 'lib/components/shared'
+import { ActionSurface, Text, Loader, WithIcon, Flex } from 'lib/components'
 import { syncRespDataset } from 'lib/internals/dom'
 import { CONTROL_SIZE_MAP } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
@@ -65,20 +64,15 @@ export const Button = <T extends ButtonTag = 'button'>({
   const isSquare = children === undefined || size === '2xs'
 
   return (
-    <Box
+    <ActionSurface
       tag={tag}
       tagAttrs={
         {
-          onClick,
           ...tagAttrs,
           className: classNames(withPrefix('button'), isSquare ? withPrefix('button-square') : undefined, tagAttrs?.className),
-          type: tagAttrs?.type || 'button',
-          'aria-disabled': disabled || undefined,
-          style: { ...tagAttrs?.style, pointerEvents: loading ? 'none' : undefined },
         } as PropsWithoutRef<ComponentProps<T>>
       }
       tagRef={finalRef}
-      drawable
       variant={variant}
       color={color}
       intent={intent}
@@ -88,10 +82,11 @@ export const Button = <T extends ButtonTag = 'button'>({
       maxInlineSize={maxInlineSize}
       interactive={interactive}
       elevated={elevated}
-      surface={selected ? 'selected' : undefined}
-      position="relative"
+      selected={selected}
       blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
       paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
+      ripple={ripple}
+      onClick={onClick}
     >
       <WithIcon
         inlineSize="100%"
@@ -124,8 +119,7 @@ export const Button = <T extends ButtonTag = 'button'>({
         ) : null}
       </WithIcon>
       {loading && !disabled ? <Loader centered size={CONTROL_SIZE_MAP[size || 'md'].loaderSize} /> : null}
-      <Ripple parentRef={finalRef} active={ripple && !loading && !disabled} />
-    </Box>
+    </ActionSurface>
   )
 }
 

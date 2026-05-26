@@ -65,6 +65,7 @@ export const ActionSurface = <T extends ActionSurfaceTag = typeof DEFAULT_ACTION
       elevated={elevated}
       surface={selected ? 'selected' : undefined}
       position="relative"
+      overflow="clip"
       inlineSize={inlineSize}
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}

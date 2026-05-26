@@ -14,7 +14,7 @@ const BUTTON_META: ComponentMeta<ButtonProps> = {
       'supports first-class icon composition, including custom SVG icons',
       'supports full-width layout to span the entire container',
     ],
-    composedOf: ['Box', 'Text', 'WithIcon', 'Loader'],
+    composedOf: ['ActionSurface', 'Text', 'Loader', 'WithIcon', 'Flex'],
     topLevelTags: BUTTON_TAGS,
   },
   props: BUTTON_PROPS_META,

@@ -1,6 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
 import { ActionSurfaceProps } from 'lib/components'
-import { DEFAULT_ACTION_SURFACE_RIPPLE } from 'lib/components/core/ActionSurface'
+import {
+  DEFAULT_ACTION_SURFACE_INTERACTIVE,
+  DEFAULT_ACTION_SURFACE_RIPPLE,
+  DEFAULT_ACTION_SURFACE_TAG,
+} from 'lib/components/core/ActionSurface'
 
 import { BOX_PROPS_META } from '../Box/props'
 
@@ -12,7 +16,10 @@ const ACTION_SURFACE_PROPS_META: ComponentMeta<ActionSurfaceProps>['props'] = {
   elevated: BOX_PROPS_META.elevated,
   inlineSize: BOX_PROPS_META.inlineSize,
   intent: BOX_PROPS_META.intent,
-  interactive: BOX_PROPS_META.interactive,
+  interactive: {
+    ...BOX_PROPS_META.interactive,
+    defaultValue: String(DEFAULT_ACTION_SURFACE_INTERACTIVE),
+  },
   maxBlockSize: BOX_PROPS_META.maxBlockSize,
   maxInlineSize: BOX_PROPS_META.maxInlineSize,
   minBlockSize: BOX_PROPS_META.minBlockSize,
@@ -33,7 +40,10 @@ const ACTION_SURFACE_PROPS_META: ComponentMeta<ActionSurfaceProps>['props'] = {
     options: ['boolean'],
     description: 'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
   },
-  tag: BOX_PROPS_META.tag,
+  tag: {
+    ...BOX_PROPS_META.tag,
+    defaultValue: DEFAULT_ACTION_SURFACE_TAG,
+  },
   tagAttrs: BOX_PROPS_META.tagAttrs,
   tagRef: BOX_PROPS_META.tagRef,
   variant: BOX_PROPS_META.variant,

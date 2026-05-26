@@ -13,7 +13,7 @@ import {
   DEFAULT_BUTTON_ALIGN,
 } from 'lib/components/core/Button/definitions'
 
-import { BOX_PROPS_META } from '../Box/props'
+import { ACTION_SURFACE_PROPS_META } from '../ActionSurface/props'
 import { TEXT_PROPS_META } from '../Text/props'
 import { WITH_ICON_PROPS_META } from '../WithIcon/props'
 
@@ -26,17 +26,17 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   },
   bold: TEXT_PROPS_META.bold,
   children: {
-    ...BOX_PROPS_META.children,
+    ...ACTION_SURFACE_PROPS_META.children,
     description: 'Label rendered.',
   },
-  color: BOX_PROPS_META.color,
+  color: ACTION_SURFACE_PROPS_META.color,
   customSvgIcon: WITH_ICON_PROPS_META.customSvgIcon,
   description: {
     options: ['string'],
     description: 'Secondary text displayed below the main label. Works with xl size only.',
   },
-  disabled: BOX_PROPS_META.disabled,
-  elevated: BOX_PROPS_META.elevated,
+  disabled: ACTION_SURFACE_PROPS_META.disabled,
+  elevated: ACTION_SURFACE_PROPS_META.elevated,
   fullWidth: {
     options: ['boolean'],
     isResponsive: true,
@@ -45,21 +45,21 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
   iconAngle: WITH_ICON_PROPS_META.iconAngle,
   iconName: WITH_ICON_PROPS_META.iconName,
   iconPlacement: WITH_ICON_PROPS_META.iconPlacement,
-  inlineSize: BOX_PROPS_META.inlineSize,
+  inlineSize: ACTION_SURFACE_PROPS_META.inlineSize,
   intent: {
-    ...BOX_PROPS_META.intent,
+    ...ACTION_SURFACE_PROPS_META.intent,
     defaultValue: String(DEFAULT_BUTTON_INTENT),
   },
   interactive: {
-    ...BOX_PROPS_META.interactive,
+    ...ACTION_SURFACE_PROPS_META.interactive,
     defaultValue: String(DEFAULT_BUTTON_INTERACTIVE),
   },
   loading: {
     options: ['boolean'],
     description: 'Activates the loading state, shows a spinner and prevents interaction.',
   },
-  maxInlineSize: BOX_PROPS_META.maxInlineSize,
-  minInlineSize: BOX_PROPS_META.minInlineSize,
+  maxInlineSize: ACTION_SURFACE_PROPS_META.maxInlineSize,
+  minInlineSize: ACTION_SURFACE_PROPS_META.minInlineSize,
   onClick: {
     options: ['e => void'],
     description: 'Click event handler for the button element.',
@@ -80,14 +80,14 @@ const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
       'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
   },
   tag: {
-    ...BOX_PROPS_META.tag,
+    ...ACTION_SURFACE_PROPS_META.tag,
     options: BUTTON_TAGS,
     defaultValue: 'button',
   },
-  tagAttrs: BOX_PROPS_META.tagAttrs,
-  tagRef: BOX_PROPS_META.tagRef,
+  tagAttrs: ACTION_SURFACE_PROPS_META.tagAttrs,
+  tagRef: ACTION_SURFACE_PROPS_META.tagRef,
   variant: {
-    ...BOX_PROPS_META.variant,
+    ...ACTION_SURFACE_PROPS_META.variant,
     defaultValue: String(DEFAULT_BUTTON_VARIANT),
   },
 }
