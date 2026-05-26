@@ -13,6 +13,7 @@ export const useFocusTrap = ({ active, targetRef, onFocusEscape, disableEscapeOn
   const triggerRef = useRef<HTMLElement | null>(null)
   const prevActiveRef = useRef(false)
   const hadTabIndexRef = useRef(false)
+  const lastFocusedRef = useRef(null)
   const tabDirectionRef = useRef<'forward' | 'backward'>('forward')
 
   useEffect(() => {
@@ -95,10 +96,10 @@ export const useFocusTrap = ({ active, targetRef, onFocusEscape, disableEscapeOn
     }
 
     const handleFocusIn = () => {
+      if (document.activeElement === lastFocusedRef.current) return
       const activeEl = document.activeElement as HTMLElement | null
-
       if (!activeEl || isInsideLogicalTree(activeEl, target)) return
-
+      lastFocusedRef.current = activeEl
       focusBoundary()
     }
 
