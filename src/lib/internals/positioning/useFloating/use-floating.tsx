@@ -5,6 +5,7 @@ import { DEFAULT_FLOATING_PLACEMENT, FloatingProps } from './definitions'
 
 export const useFloating = ({
   anchorRef,
+  enabled = true,
   mode,
   placement = DEFAULT_FLOATING_PLACEMENT,
   floatingBlockSize,
@@ -53,6 +54,8 @@ export const useFloating = ({
   }, [anchorRef, mode, placement, offset, viewportPadding, floatingBlockSize, minInlineSize, maxInlineSize, onResolve])
 
   useEffect(() => {
+    if (!enabled) return
+
     const anchor = anchorRef.current
 
     if (!anchor) return
@@ -86,5 +89,5 @@ export const useFloating = ({
         cancelAnimationFrame(scrollFrameRef.current)
       }
     }
-  }, [anchorRef, resolve])
+  }, [enabled, anchorRef, resolve])
 }

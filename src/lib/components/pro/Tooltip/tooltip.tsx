@@ -1,4 +1,4 @@
-import { cloneElement, isValidElement, useEffect, useId, useRef, useState } from 'react'
+import { cloneElement, isValidElement, useCallback, useEffect, useId, useRef, useState } from 'react'
 
 import { Box, Text } from 'lib/components'
 import { Portal } from 'lib/components/shared'
@@ -96,22 +96,25 @@ export const Tooltip = ({
     },
   }
 
+  const handleResolve = useCallback((resolved: FloatingResolved) => {
+    setFloatingResolved(prev => {
+      if (prev && prev.placement === resolved.placement && prev.blockSize === resolved.blockSize) {
+        return prev
+      }
+
+      return resolved
+    })
+  }, [])
+
   useFloating({
+    enabled: open,
     anchorRef: triggerRef,
     placement,
     mode: 'project-both',
     minInlineSize,
     maxInlineSize,
     offset,
-    onResolve: (resolved: FloatingResolved) => {
-      setFloatingResolved(prev => {
-        if (prev && prev.placement === resolved.placement && prev.blockSize === resolved.blockSize) {
-          return prev
-        }
-
-        return resolved
-      })
-    },
+    onResolve: handleResolve,
   })
 
   return (

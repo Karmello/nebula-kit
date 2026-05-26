@@ -1,8 +1,8 @@
-import { cloneElement, ReactElement, RefObject, useLayoutEffect, useRef, useState } from 'react'
+import { cloneElement, ReactElement, RefObject, useCallback, useLayoutEffect, useRef, useState } from 'react'
 
 import { Box, Resize, VirtualList, DropdownList, DropdownListItemProps, Divider } from 'lib/components'
 import { Portal } from 'lib/components/shared'
-import { useFloating } from 'lib/internals/positioning'
+import { FloatingResolved, useFloating } from 'lib/internals/positioning'
 
 import { useDropdownListContext } from '../DropdownListProvider'
 import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'
@@ -66,16 +66,22 @@ export const DropdownListMenu = () => {
 
   const ListItemDivider = () => <Divider marginBlock="0px" color={color} intent={intent} elevated surface="dividing" />
 
-  useFloating({
-    anchorRef: triggerRef,
-    mode: 'fit-y',
-    floatingBlockSize: correctedVisibleItemsCount * itemHeight,
-    placement,
-    onResolve: resolved => {
+  const handleResolve = useCallback(
+    (resolved: FloatingResolved) => {
       if (resolved.placement !== floatingResolved?.placement || resolved.blockSize !== floatingResolved?.blockSize) {
         setFloatingResolved(resolved)
       }
     },
+    [floatingResolved?.placement, floatingResolved?.blockSize, setFloatingResolved]
+  )
+
+  useFloating({
+    enabled: true,
+    anchorRef: triggerRef,
+    mode: 'fit-y',
+    floatingBlockSize: correctedVisibleItemsCount * itemHeight,
+    placement,
+    onResolve: handleResolve,
   })
 
   if (!open) {

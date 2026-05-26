@@ -14,6 +14,7 @@ export type FloatingMode = (typeof FLOATING_MODE)[number]
 
 type FloatingBaseProps = {
   anchorRef: RefObject<HTMLElement | null>
+  enabled?: boolean
   placement?: PortalPlacement
   offset?: number
   viewportPadding?: number
