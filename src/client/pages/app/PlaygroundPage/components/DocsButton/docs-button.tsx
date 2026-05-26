@@ -1,24 +1,20 @@
 import { useMemo } from 'react'
 import { kebabCase } from 'change-case'
 
-import { COMPONENT_CATEGORIES } from 'client/definitions'
+import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { usePlaygroundStore } from 'client/store'
 import { Button, Link } from 'lib/components'
 
 export const DocsButton = () => {
   const navigateTo = useNavigateTo()
-
-  const components = usePlaygroundStore(state => state.components)
   const activeComponent = usePlaygroundStore(state => state.activeComponent)
-
-  const { bundle } = components[activeComponent]
 
   const url = useMemo(() => {
     const componentName = kebabCase(activeComponent)
 
     const { key: category } = COMPONENT_CATEGORIES.find(obj => obj.items.some(obj => obj.key === componentName))
-    return `/${bundle}/${category}/${componentName}/overview`
+    return `${PageKey.components}/${category}/${componentName}/overview`
   }, [activeComponent])
 
   return (
