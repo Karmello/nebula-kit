@@ -1,6 +1,6 @@
 import { createContext, useContext, ReactNode, RefObject } from 'react'
 
-import { FloatingResolved } from 'lib/components/shared'
+import { FloatingResolved } from 'lib/internals/positioning'
 
 import { DropdownListProps } from '../../definitions'
 

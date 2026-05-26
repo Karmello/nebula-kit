@@ -3,8 +3,7 @@ import { useCallback, useEffect, useRef } from 'react'
 import { resolveFitStrategy, resolveProjectStrategy } from './strategies'
 import { DEFAULT_FLOATING_PLACEMENT, FloatingProps } from './definitions'
 
-export const Floating = ({
-  children,
+export const useFloating = ({
   anchorRef,
   mode,
   placement = DEFAULT_FLOATING_PLACEMENT,
@@ -20,6 +19,7 @@ export const Floating = ({
 
   const resolve = useCallback(() => {
     const anchor = anchorRef.current
+
     if (!anchor) return
 
     const next =
@@ -54,19 +54,17 @@ export const Floating = ({
 
   useEffect(() => {
     const anchor = anchorRef.current
+
     if (!anchor) return
 
-    // initial resolve
     resolve()
 
-    // ResizeObserver (post-layout safe)
     const resizeObserver = new ResizeObserver(() => {
       requestAnimationFrame(resolve)
     })
 
     resizeObserver.observe(anchor)
 
-    // scroll → RAF throttled
     const onScroll = () => {
       if (scrollFrameRef.current !== null) {
         cancelAnimationFrame(scrollFrameRef.current)
@@ -81,6 +79,7 @@ export const Floating = ({
 
     return () => {
       resizeObserver.disconnect()
+
       window.removeEventListener('scroll', onScroll, true)
 
       if (scrollFrameRef.current !== null) {
@@ -88,8 +87,4 @@ export const Floating = ({
       }
     }
   }, [anchorRef, resolve])
-
-  return children
 }
-
-Floating.displayName = 'Floating'

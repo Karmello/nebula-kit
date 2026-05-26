@@ -23,7 +23,7 @@ const getBlockSpace = (side: Side, anchor: DOMRect, viewport: Rect, offset: numb
   }
 }
 
-export const resolveFitStrategy = (props: Omit<FloatingFitProps, 'children' | 'onResolve'>): FloatingResolved => {
+export const resolveFitStrategy = (props: Omit<FloatingFitProps, 'onResolve'>): FloatingResolved => {
   const { mode, placement = 'bottom-start', floatingBlockSize, offset = 0, viewportPadding = 0, anchorRef } = props
 
   const anchor = anchorRef.current?.getBoundingClientRect()

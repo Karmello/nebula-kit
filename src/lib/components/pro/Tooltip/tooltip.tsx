@@ -1,7 +1,8 @@
 import { cloneElement, isValidElement, useEffect, useId, useRef, useState } from 'react'
 
 import { Box, Text } from 'lib/components'
-import { Floating, FloatingResolved, Portal } from 'lib/components/shared'
+import { Portal } from 'lib/components/shared'
+import { FloatingResolved, useFloating } from 'lib/internals/positioning'
 
 import {
   DEFAULT_TOOLTIP_INTENT,
@@ -95,6 +96,24 @@ export const Tooltip = ({
     },
   }
 
+  useFloating({
+    anchorRef: triggerRef,
+    placement,
+    mode: 'project-both',
+    minInlineSize,
+    maxInlineSize,
+    offset,
+    onResolve: (resolved: FloatingResolved) => {
+      setFloatingResolved(prev => {
+        if (prev && prev.placement === resolved.placement && prev.blockSize === resolved.blockSize) {
+          return prev
+        }
+
+        return resolved
+      })
+    },
+  })
+
   return (
     <>
       {isValidElement(children) ? (
@@ -128,57 +147,38 @@ export const Tooltip = ({
           {children}
         </Box>
       )}
-
       {open ? (
-        <Floating
-          anchorRef={triggerRef}
-          placement={placement}
-          mode="project-both"
-          minInlineSize={minInlineSize}
-          maxInlineSize={maxInlineSize}
-          offset={offset}
-          onResolve={(resolved: FloatingResolved) => {
-            setFloatingResolved(prev => {
-              if (prev && prev.placement === resolved.placement && prev.blockSize === resolved.blockSize) {
-                return prev
-              }
-
-              return resolved
-            })
-          }}
-        >
-          <Portal anchorRef={triggerRef} placement={floatingResolved?.placement || placement} offset={offset}>
+        <Portal anchorRef={triggerRef} placement={floatingResolved?.placement || placement} offset={offset}>
+          <Box
+            tagAttrs={{
+              role: 'tooltip',
+              id: tooltipId,
+              'aria-hidden': !open,
+            }}
+            drawable
+            color={color}
+            intent="neutral"
+            variant="solid"
+            pointerEvents="none"
+            minInlineSize={`${minInlineSize}px`}
+            maxInlineSize={`${maxInlineSize}px`}
+          >
             <Box
-              tagAttrs={{
-                role: 'tooltip',
-                id: tooltipId,
-                'aria-hidden': !open,
-              }}
               drawable
+              variant={variant}
+              intent={intent}
               color={color}
-              intent="neutral"
-              variant="solid"
-              pointerEvents="none"
-              minInlineSize={`${minInlineSize}px`}
-              maxInlineSize={`${maxInlineSize}px`}
+              padding={padding}
+              paddingBlock={paddingBlock}
+              paddingInline={paddingInline}
+              textAlign={textAlign}
+              blockSize="100%"
+              inlineSize="100%"
             >
-              <Box
-                drawable
-                variant={variant}
-                intent={intent}
-                color={color}
-                padding={padding}
-                paddingBlock={paddingBlock}
-                paddingInline={paddingInline}
-                textAlign={textAlign}
-                blockSize="100%"
-                inlineSize="100%"
-              >
-                <Text>{content}</Text>
-              </Box>
+              <Text>{content}</Text>
             </Box>
-          </Portal>
-        </Floating>
+          </Box>
+        </Portal>
       ) : null}
     </>
   )

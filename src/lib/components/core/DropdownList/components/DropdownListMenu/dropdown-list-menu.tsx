@@ -1,7 +1,8 @@
 import { cloneElement, ReactElement, RefObject, useLayoutEffect, useRef, useState } from 'react'
 
 import { Box, Resize, VirtualList, DropdownList, DropdownListItemProps, Divider } from 'lib/components'
-import { Floating, Portal } from 'lib/components/shared'
+import { Portal } from 'lib/components/shared'
+import { useFloating } from 'lib/internals/positioning'
 
 import { useDropdownListContext } from '../DropdownListProvider'
 import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'
@@ -65,76 +66,78 @@ export const DropdownListMenu = () => {
 
   const ListItemDivider = () => <Divider marginBlock="0px" color={color} intent={intent} elevated surface="dividing" />
 
+  useFloating({
+    anchorRef: triggerRef,
+    mode: 'fit-y',
+    floatingBlockSize: correctedVisibleItemsCount * itemHeight,
+    placement,
+    onResolve: resolved => {
+      if (resolved.placement !== floatingResolved?.placement || resolved.blockSize !== floatingResolved?.blockSize) {
+        setFloatingResolved(resolved)
+      }
+    },
+  })
+
+  if (!open) {
+    return null
+  }
+
   return (
-    <Floating
-      anchorRef={triggerRef}
-      mode="fit-y"
-      floatingBlockSize={correctedVisibleItemsCount * itemHeight}
-      placement={placement}
-      onResolve={resolved => {
-        if (resolved.placement !== floatingResolved?.placement || resolved.blockSize !== floatingResolved?.blockSize) {
-          setFloatingResolved(resolved)
-        }
-      }}
-    >
-      {open ? (
-        <Portal tagRef={portalRef} anchorRef={triggerRef} placement={floatingResolved?.placement || placement}>
-          <Resize
-            property="blockSize"
-            visible={resizeVisible}
-            duration={resizeVisible ? finalAnimationDuration : 0}
-            easing={resizeVisible ? 'ease-out' : undefined}
-          >
-            <Box
-              drawable
-              variant="solid"
-              intent={intent}
+    <Portal tagRef={portalRef} anchorRef={triggerRef} placement={floatingResolved?.placement || placement}>
+      <Resize
+        property="blockSize"
+        visible={resizeVisible}
+        duration={resizeVisible ? finalAnimationDuration : 0}
+        easing={resizeVisible ? 'ease-out' : undefined}
+      >
+        <Box
+          drawable
+          variant="solid"
+          intent={intent}
+          color={color}
+          blockSize={`${finalVisibleItemsCount * itemHeight}px`}
+          minInlineSize={triggerWidth !== undefined ? `${triggerWidth}px` : undefined}
+          overflow="hidden"
+          borderTopWidth="0px"
+          borderTopLeftRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
+          borderTopRightRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
+          borderBottomLeftRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
+          borderBottomRightRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
+        >
+          {slotsByName['DropdownList.Item'].length ? (
+            <VirtualList
+              key={String(open)}
+              tagRef={scrollWrapperRef}
+              items={slotsByName['DropdownList.Item']}
+              itemHeight={itemHeight}
+              visibleItemsCount={finalVisibleItemsCount ?? DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT}
+              scrollToIndex={scrollToIndex}
+              scrollAlign={scrollAlign}
               color={color}
-              blockSize={`${finalVisibleItemsCount * itemHeight}px`}
-              minInlineSize={triggerWidth !== undefined ? `${triggerWidth}px` : undefined}
-              overflow="hidden"
-              borderTopWidth="0px"
-              borderTopLeftRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
-              borderTopRightRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
-              borderBottomLeftRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
-              borderBottomRightRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
-            >
-              {slotsByName['DropdownList.Item'].length ? (
-                <VirtualList
-                  key={String(open)}
-                  tagRef={scrollWrapperRef}
-                  items={slotsByName['DropdownList.Item']}
-                  itemHeight={itemHeight}
-                  visibleItemsCount={finalVisibleItemsCount ?? DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT}
-                  scrollToIndex={scrollToIndex}
-                  scrollAlign={scrollAlign}
-                  color={color}
-                  intent={intent}
-                  elevated
-                  renderItem={(slot, index) => {
-                    return (
-                      <>
-                        {opensUpDownwards ? <ListItemDivider /> : null}
-                        {cloneElement(slot as ReactElement<DropdownListItemProps & { index: number }>, {
-                          index,
-                        })}
-                        {!opensUpDownwards ? <ListItemDivider /> : null}
-                      </>
-                    )
-                  }}
-                  ensureVisibleIndex={ensureVisibleIndex}
-                />
-              ) : noOptionsLabel ? (
-                <>
-                  {opensUpDownwards ? <ListItemDivider /> : null}
-                  <DropdownList.Item disabled>{noOptionsLabel}</DropdownList.Item>
-                  {!opensUpDownwards ? <ListItemDivider /> : null}
-                </>
-              ) : null}
-            </Box>
-          </Resize>
-        </Portal>
-      ) : null}
-    </Floating>
+              intent={intent}
+              elevated
+              renderItem={(slot, index) => {
+                return (
+                  <>
+                    {opensUpDownwards ? <ListItemDivider /> : null}
+                    {cloneElement(slot as ReactElement<DropdownListItemProps & { index: number }>, {
+                      index,
+                    })}
+                    {!opensUpDownwards ? <ListItemDivider /> : null}
+                  </>
+                )
+              }}
+              ensureVisibleIndex={ensureVisibleIndex}
+            />
+          ) : noOptionsLabel ? (
+            <>
+              {opensUpDownwards ? <ListItemDivider /> : null}
+              <DropdownList.Item disabled>{noOptionsLabel}</DropdownList.Item>
+              {!opensUpDownwards ? <ListItemDivider /> : null}
+            </>
+          ) : null}
+        </Box>
+      </Resize>
+    </Portal>
   )
 }

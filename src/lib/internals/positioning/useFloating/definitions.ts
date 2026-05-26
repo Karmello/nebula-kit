@@ -1,4 +1,4 @@
-import { RefObject, ReactNode } from 'react'
+import { RefObject } from 'react'
 
 import { PortalPlacement } from 'lib/components/shared'
 
@@ -13,7 +13,6 @@ export type FloatingResolved = {
 export type FloatingMode = (typeof FLOATING_MODE)[number]
 
 type FloatingBaseProps = {
-  children: ReactNode
   anchorRef: RefObject<HTMLElement | null>
   placement?: PortalPlacement
   offset?: number

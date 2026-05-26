@@ -1,7 +1,7 @@
 import { BoxProps } from 'lib/components'
-import { FloatingProps } from 'lib/components/shared'
 import { BoxVariant } from 'lib/components/core/Box'
 import { RespValue } from 'lib/definitions'
+import { FloatingProps } from 'lib/internals/positioning'
 
 export const TOOLTIP_VARIANTS = ['solid', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
 export const TOOLTIP_MODES = ['hover', 'click'] as const

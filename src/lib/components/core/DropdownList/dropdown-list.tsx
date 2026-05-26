@@ -1,7 +1,8 @@
 import { useRef, useState } from 'react'
 
-import { WithSlots, FloatingResolved } from 'lib/components/shared'
+import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP, LENGTH_SCALE } from 'lib/definitions'
+import { FloatingResolved } from 'lib/internals/positioning'
 
 import {
   DropdownListProps,
