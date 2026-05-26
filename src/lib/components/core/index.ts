@@ -6,6 +6,7 @@ export { Text, type TextProps } from './Text'
 export { Image, type ImageProps } from './Image'
 export { Icon, type IconProps } from './Icon'
 export { Button, type ButtonProps } from './Button'
+export { IconButton, type IconButtonProps } from './IconButton'
 
 export {
   AppFrame,

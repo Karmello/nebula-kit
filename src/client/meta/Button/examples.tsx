@@ -37,10 +37,6 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     ),
   },
   {
-    description: 'Icon button.',
-    jsx: <Button iconName="close" />,
-  },
-  {
     description: 'Button with bolded text.',
     jsx: <Button bold>Bold</Button>,
   },

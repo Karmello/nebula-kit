@@ -19,6 +19,7 @@ import formMeta from './Form/_index'
 import gridMeta from './Grid/_index'
 import hydrationGateMeta from './HydrationGate/_index'
 import iconMeta from './Icon/_index'
+import iconButtonMeta from './IconButton/_index'
 import imageMeta from './Image/_index'
 import inputMeta from './Input/_index'
 import linkMeta from './Link/_index'
@@ -71,6 +72,7 @@ const META = {
   Grid: gridMeta,
   HydrationGate: hydrationGateMeta,
   Icon: iconMeta,
+  IconButton: iconButtonMeta,
   Image: imageMeta,
   Input: inputMeta,
   Link: linkMeta,

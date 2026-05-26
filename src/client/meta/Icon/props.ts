@@ -7,7 +7,7 @@ import { BOX_PROPS_META } from '../Box/props'
 const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
   children: {
     ...BOX_PROPS_META.children,
-    description: 'Custom SVG icon.',
+    description: 'Custom SVG icon rendered instead of name.',
   },
   color: {
     ...BOX_PROPS_META.color,

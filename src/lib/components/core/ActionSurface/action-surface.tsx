@@ -7,6 +7,8 @@ import { withPrefix } from 'lib/helpers'
 
 import { ActionSurfaceProps, ActionSurfaceTag } from './definitions'
 
+import './action-surface.scss'
+
 export const DEFAULT_ACTION_SURFACE_TAG: ActionSurfaceTag = 'button'
 export const DEFAULT_ACTION_SURFACE_INTERACTIVE: ActionSurfaceProps['interactive'] = true
 export const DEFAULT_ACTION_SURFACE_RIPPLE: ActionSurfaceProps['ripple'] = true
