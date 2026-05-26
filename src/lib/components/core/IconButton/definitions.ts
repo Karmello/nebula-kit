@@ -1,6 +1,7 @@
 import { ActionSurfaceProps, WithIconProps } from 'lib/components'
 import { ControlSize } from 'lib/definitions'
-import { DEFAULT_ICON_BUTTON_TAG } from 'lib/components/core/IconButton/icon-button'
+
+import { DEFAULT_ICON_BUTTON_TAG } from './icon-button'
 
 export const ICON_BUTTON_TAGS = ['button', 'a'] as const
 
