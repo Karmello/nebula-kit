@@ -1,5 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 
+import actionSurfaceMeta from './ActionSurface/_index'
 import appFrameMeta from './AppFrame/_index'
 import autocompleteMeta from './Autocomplete/_index'
 import avatarMeta from './Avatar/_index'
@@ -51,6 +52,7 @@ import virtualListMeta from './VirtualList/_index'
 import withIconMeta from './WithIcon/_index'
 
 const META = {
+  ActionSurface: actionSurfaceMeta,
   AppFrame: appFrameMeta,
   Autocomplete: autocompleteMeta,
   Avatar: avatarMeta,

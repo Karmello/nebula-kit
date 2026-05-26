@@ -1,4 +1,5 @@
 export { Box, type BoxProps } from './Box'
+export { ActionSurface, type ActionSurfaceProps } from './ActionSurface'
 export { Flex, type FlexProps, type FlexItemProps } from './Flex'
 export { Grid, type GridProps, type GridItemProps } from './Grid'
 export { Text, type TextProps } from './Text'

@@ -9,7 +9,10 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'base',
     label: 'Base',
-    items: [{ key: 'box', label: 'Box', sections, bundle: 'core' }],
+    items: [
+      { key: 'box', label: 'Box', sections, bundle: 'core' },
+      { key: 'action-surface', label: 'ActionSurface', sections, bundle: 'core' },
+    ],
   },
   {
     key: 'layout',

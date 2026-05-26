@@ -7,9 +7,9 @@ import { BOX_EXAMPLES_META } from './examples'
 const BOX_META: ComponentMeta<BoxProps> = {
   overview: {
     bundle: 'core',
-    title: 'Foundational surface component that exposes a curated set of core CSS properties.',
+    title: 'Foundational visual surface component that exposes a curated set of core CSS properties.',
     description:
-      'Box is a foundational surface component that exposes a curated set of core CSS properties - appearance, spacing, sizing and positioning - so you can style a plain block-level element directly in JSX.',
+      'Box is a foundational visual surface component that exposes a curated set of core CSS properties - appearance, spacing, sizing and positioning - so you can style a plain block-level element directly in JSX.',
     features: [
       'acts as the surface foundation that higher-level components (e.g. Flex, Grid, Button, Text) render under the hood',
       'provides optional interactivity - hover, active, focus, disabled and selected states',
