@@ -4,10 +4,10 @@ import { expectError, expectType } from 'tsd'
 import { WithIcon } from '../'
 
 // -------------------------------------
-// children required
+// children optional
 // -------------------------------------
 
-expectError(<WithIcon iconName="check" />)
+expectType(<WithIcon iconName="check" />)
 
 expectType(<WithIcon iconName="check">children</WithIcon>)
 
