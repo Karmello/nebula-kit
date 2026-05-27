@@ -16,7 +16,7 @@ const BREADCRUMB_META: ComponentMeta<BreadcrumbProps> = {
       'integrates cleanly with routing, configuration and non-routing flows',
       'keeps application logic and navigation policy outside the component',
     ],
-    composedOf: ['Box', 'Flex', 'Button', 'DropdownList'],
+    composedOf: ['Box', 'Flex', 'Button'],
     topLevelTags: ['div', 'nav', 'section'],
   },
   props: BREADCRUMB_PROPS_META,

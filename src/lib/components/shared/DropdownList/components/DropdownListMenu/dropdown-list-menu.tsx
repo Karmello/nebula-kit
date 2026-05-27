@@ -1,37 +1,40 @@
-import { cloneElement, ReactElement, RefObject, useCallback, useLayoutEffect, useRef, useState } from 'react'
+import { cloneElement, ReactNode, RefObject, useCallback, useLayoutEffect, useRef, useState } from 'react'
 
-import { Box, Resize, VirtualList, DropdownList, DropdownListItemProps, Divider } from 'lib/components'
-import { Portal } from 'lib/components/shared'
+import { Box, Resize, VirtualList, Divider } from 'lib/components'
+import { Portal, DropdownList } from 'lib/components/shared'
 import { FloatingResolved, useFloating } from 'lib/internals/positioning'
-import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from 'lib/components/core/DropdownList/dropdown-list'
 
-import { useDropdownListContext } from '../DropdownListProvider'
+import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'
+import { useDropdownListContext } from '../../providers'
 
-export const DropdownListMenu = () => {
-  const [triggerWidth, setTriggerWidth] = useState<number | undefined>(undefined)
-
+export const DropdownListMenu = ({
+  items,
+  finalItemBlockSize,
+  correctedVisibleItemsCount,
+}: {
+  items: Array<unknown>
+  finalItemBlockSize: number
+  correctedVisibleItemsCount: number
+}) => {
   const {
     triggerRef,
     portalRef,
     scrollWrapperRef,
-    slotsByName,
-    resizeVisible,
-    correctedVisibleItemsCount,
-    intent,
-    color,
-    noOptionsLabel,
-    placement,
     open,
-    onOpened,
-    onClosed,
-    scrollToIndex,
-    scrollAlign,
-    ensureVisibleIndex,
-    finalItemBlockSize,
     floatingResolved,
     setFloatingResolved,
+    resizeVisible,
+    ensureVisibleIndex,
+    scrollToIndex,
+    scrollAlign,
     disableListAnimation,
+    onClosed,
+    onOpened,
+    placement,
+    noOptionsLabel,
   } = useDropdownListContext()
+
+  const [triggerWidth, setTriggerWidth] = useState<number | undefined>(undefined)
 
   const prevOpenRef = useRef<boolean>(open)
 
@@ -64,7 +67,15 @@ export const DropdownListMenu = () => {
 
   const opensUpDownwards = (floatingResolved?.placement ?? 'bottom-start').startsWith('bottom')
 
-  const ListItemDivider = () => <Divider marginBlock="0px" color={color} intent={intent} elevated surface="dividing" />
+  const ListItemDivider = () => (
+    <Divider
+      marginBlock="0px"
+      // color={color}
+      // intent={intent}
+      elevated
+      surface="dividing"
+    />
+  )
 
   const handleResolve = useCallback(
     (resolved: FloatingResolved) => {
@@ -99,8 +110,6 @@ export const DropdownListMenu = () => {
         <Box
           drawable
           variant="solid"
-          intent={intent}
-          color={color}
           blockSize={`${finalVisibleItemsCount * finalItemBlockSize}px`}
           minInlineSize={triggerWidth !== undefined ? `${triggerWidth}px` : undefined}
           overflow="hidden"
@@ -110,25 +119,21 @@ export const DropdownListMenu = () => {
           borderBottomLeftRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
           borderBottomRightRadius={!opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
         >
-          {slotsByName['DropdownList.Item'].length ? (
+          {items.length ? (
             <VirtualList
               key={String(open)}
               tagRef={scrollWrapperRef}
-              items={slotsByName['DropdownList.Item']}
+              items={items}
               itemBlockSize={finalItemBlockSize}
               visibleItemsCount={finalVisibleItemsCount ?? DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT}
               scrollToIndex={scrollToIndex}
               scrollAlign={scrollAlign}
-              color={color}
-              intent={intent}
               elevated
-              renderItem={(slot, index) => {
+              renderItem={(item: ReactNode, index) => {
                 return (
                   <>
                     {opensUpDownwards ? <ListItemDivider /> : null}
-                    {cloneElement(slot as ReactElement<DropdownListItemProps & { index: number }>, {
-                      index,
-                    })}
+                    {cloneElement(item as any, { index })}
                     {!opensUpDownwards ? <ListItemDivider /> : null}
                   </>
                 )
@@ -138,7 +143,7 @@ export const DropdownListMenu = () => {
           ) : noOptionsLabel ? (
             <>
               {opensUpDownwards ? <ListItemDivider /> : null}
-              <DropdownList.Item disabled>{noOptionsLabel}</DropdownList.Item>
+              <DropdownList.Item index={0}>{noOptionsLabel}</DropdownList.Item>
               {!opensUpDownwards ? <ListItemDivider /> : null}
             </>
           ) : null}

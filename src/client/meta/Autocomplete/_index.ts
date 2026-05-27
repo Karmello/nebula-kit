@@ -17,7 +17,7 @@ const AUTOCOMPLETE_META: ComponentMeta<AutocompleteProps> = {
       'allows debounced result updates while typing',
       'renders its dropdown without animation for maximum responsiveness',
     ],
-    composedOf: ['DropdownList', 'Input', 'Button'],
+    composedOf: ['Input', 'Button'],
     topLevelTags: ['div'],
     slots: ['Autocomplete.Option'],
   },

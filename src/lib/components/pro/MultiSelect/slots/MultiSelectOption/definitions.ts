@@ -1,6 +1,4 @@
-import { DropdownListItemProps } from 'lib/components'
-
-export const DEFAULT_MULTI_SELECT_OPTION_ALIGN: MultiSelectOptionProps['align'] = 'split'
+import { DropdownListItemProps } from 'lib/components/shared'
 
 type MultiSelectOptionOwnProps = {
   value: string

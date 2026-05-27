@@ -1,11 +1,12 @@
 import { useState, Fragment, useCallback } from 'react'
 
-import { Box, Flex, Button, DropdownList, Icon } from 'lib/components'
+import { Box, Flex, Button, Icon } from 'lib/components'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
 import { BreadcrumbProps, BreadcrumbTag, DEFAULT_BREADCRUMB_INTENT } from './definitions'
 
 import { convertTreeToLevels } from './helpers'
+import { DropdownList } from 'lib/components/shared'
 
 export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
   // HtmlTag
@@ -50,6 +51,8 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
 
   const levels = convertTreeToLevels(tree, currentPath)
 
+  return null
+
   return (
     <Box tag={tag} tagAttrs={tagAttrs} tagRef={tagRef} overflowX="auto">
       <Flex gap="xs" alignItems="center">
@@ -80,9 +83,9 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                         tagAttrs={{
                           onClick: () => handleChange(index, node.value),
                         }}
-                        selected={node.value === currentPath[index]}
-                        bold={node.value === currentPath[index]}
-                        align="center"
+                        // selected={node.value === currentPath[index]}
+                        // bold={node.value === currentPath[index]}
+                        // align="center"
                       >
                         {node.label}
                       </DropdownList.Item>

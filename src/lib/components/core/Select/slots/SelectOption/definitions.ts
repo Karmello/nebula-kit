@@ -1,6 +1,4 @@
-import { DropdownListItemProps } from 'lib/components'
-
-export const DEFAULT_SELECT_OPTION_ALIGN: SelectOptionProps['align'] = 'start'
+import { DropdownListItemProps } from 'lib/components/shared'
 
 type SelectOptionOwnProps = {
   value: string

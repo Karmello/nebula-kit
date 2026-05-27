@@ -1,4 +1,5 @@
-import { BoxProps, DropdownListProps } from 'lib/components'
+import { BoxProps } from 'lib/components'
+import { DropdownListProps } from 'lib/components/shared'
 import { ControlSize } from 'lib/definitions'
 
 export const DEFAULT_AUTOCOMPLETE_INLINE_SIZE: AutocompleteProps['inlineSize'] = '100%'

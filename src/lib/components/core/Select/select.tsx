@@ -1,23 +1,23 @@
 import { ReactElement, useState } from 'react'
 import classNames from 'classnames'
 
-import { DropdownList, Button } from 'lib/components'
-import { WithSlots } from 'lib/components/shared'
+import { Text } from 'lib/components'
+import { WithSlots, DropdownList } from 'lib/components/shared'
+import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
 import { SelectProvider } from './SelectProvider'
-import { DEFAULT_SELECT_OPTION_ALIGN } from './slots'
-import { DEFAULT_SELECT_INLINE_SIZE, SelectProps } from './definitions'
-import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
+import { DEFAULT_SELECT_INLINE_SIZE, DEFAULT_SELECT_INTENT, SelectProps } from './definitions'
 
 export const Select = ({
   // DropdownList
   tagAttrs,
   tagRef,
-  color,
-  intent,
   scrollAlign,
   visibleItemsCount,
+  // ActionSurface
+  color,
+  intent = DEFAULT_SELECT_INTENT,
   // Box
   children,
   inlineSize = DEFAULT_SELECT_INLINE_SIZE,
@@ -56,71 +56,42 @@ export const Select = ({
             <DropdownList
               tagRef={tagRef}
               tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('select'), tagAttrs?.className) }}
-              color={color}
               itemBlockSize={Number(CONTROL_SIZE_MAP[size || 'md'].blockSize.replace('px', ''))}
-              intent={intent}
               scrollToIndex={currentSlotIndex}
               scrollAlign={scrollAlign}
               visibleItemsCount={visibleItemsCount}
               placement={dropdownPlacement}
             >
-              {({ open, resolvedPlacement }) => {
-                const opensUpDownwards = ['bottom-start', 'bottom-end', 'bottom-center', undefined].includes(resolvedPlacement)
-
+              <DropdownList.Trigger
+                variant="solid"
+                color={color}
+                intent={intent}
+                blockSize={CONTROL_SIZE_MAP[size].blockSize}
+                paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
+                inlineSize={inlineSize}
+              >
+                <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight}>
+                  {staticLabel || currentSlot}
+                </Text>
+              </DropdownList.Trigger>
+              {slotsByName['Select.Option'].map((slot, index) => {
+                const slotProps = (slot as ReactElement<any>).props
                 return (
-                  <>
-                    <DropdownList.Trigger inlineSize={inlineSize} disabled={disabled}>
-                      <Button
-                        tagAttrs={{
-                          'aria-labelledby': tagAttrs?.['aria-labelledby'],
-                          style: opensUpDownwards
-                            ? {
-                                borderBottomLeftRadius: open ? 0 : undefined,
-                                borderBottomRightRadius: open ? 0 : undefined,
-                              }
-                            : {
-                                borderTopLeftRadius: open ? 0 : undefined,
-                                borderTopRightRadius: open ? 0 : undefined,
-                              },
-                        }}
-                        iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
-                        iconPlacement="right"
-                        iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
-                        align="split"
-                        size={size}
-                        variant="solid"
-                        intent={intent}
-                        color={color}
-                        disabled={disabled}
-                        fullWidth
-                        ripple={!open}
-                        elevated={open}
-                        // interactive={!open}
-                      >
-                        {staticLabel || currentSlot?.props.children || 'Select ...'}
-                      </Button>
-                    </DropdownList.Trigger>
-                    {slotsByName['Select.Option'].map((slot, index) => {
-                      const slotProps = (slot as ReactElement<any>).props
-                      return (
-                        <DropdownList.Item
-                          key={index}
-                          {...slotProps}
-                          tagAttrs={{
-                            ...slotProps.tagAttrs,
-                            onClick: () => handleChange(slotProps.value),
-                          }}
-                          bold={slotProps.value === currentValue}
-                          selected={slotProps.value === currentValue}
-                          align={slotProps.align || DEFAULT_SELECT_OPTION_ALIGN}
-                        >
-                          {slot}
-                        </DropdownList.Item>
-                      )
-                    })}
-                  </>
+                  <DropdownList.Item
+                    key={index}
+                    index={index}
+                    variant="solid"
+                    color={color}
+                    intent={intent}
+                    blockSize={CONTROL_SIZE_MAP[size].blockSize}
+                    paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
+                    inlineSize={inlineSize}
+                    onClick={() => handleChange(slotProps.value)}
+                  >
+                    {slot}
+                  </DropdownList.Item>
                 )
-              }}
+              })}
             </DropdownList>
           </SelectProvider>
         )

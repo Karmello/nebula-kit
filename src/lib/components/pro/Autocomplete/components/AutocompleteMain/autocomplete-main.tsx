@@ -1,12 +1,12 @@
 import { ReactElement, ReactNode, useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
-import { AutocompleteOptionProps, DropdownList, IconButton, Input } from 'lib/components'
+import { AutocompleteOptionProps, IconButton, Input } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import { AutocompleteProps } from '../../definitions'
-import { DEFAULT_AUTOCOMPLETE_OPTION_ALIGN } from '../../slots'
 import { CONTROL_SIZE_MAP } from 'lib/definitions'
+import { DropdownList } from 'lib/components/shared'
 
 type AutocompleteMainProps = Omit<AutocompleteProps, 'children' | 'defaultValue' | 'value' | 'onChange'> & {
   items: ReactNode[]
@@ -183,11 +183,11 @@ export const AutocompleteMain = ({
                       handleChange(slotProps.value)
                     },
                   }}
-                  bold={selected}
-                  selected={selected}
-                  align={slotProps.align || DEFAULT_AUTOCOMPLETE_OPTION_ALIGN}
-                  iconName={slotProps.iconName !== undefined ? slotProps.iconName : selected ? 'check' : undefined}
-                  iconPlacement={slotProps.iconPlacement}
+                  // bold={selected}
+                  // selected={selected}
+                  // align={slotProps.align || DEFAULT_AUTOCOMPLETE_OPTION_ALIGN}
+                  // iconName={slotProps.iconName !== undefined ? slotProps.iconName : selected ? 'check' : undefined}
+                  // iconPlacement={slotProps.iconPlacement}
                 >
                   {slot}
                 </DropdownList.Item>

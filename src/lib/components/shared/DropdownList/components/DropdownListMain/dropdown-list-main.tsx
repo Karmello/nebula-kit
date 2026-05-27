@@ -1,28 +1,33 @@
 import { useEffect, useLayoutEffect } from 'react'
 
-import { Box, DropdownListProps } from 'lib/components'
-import { DropdownListMenu } from 'lib/components/core/DropdownList/components'
+import { Box, BoxProps } from 'lib/components'
 import { useOutsideClick } from 'lib/hooks'
 
-import { useDropdownListContext } from '../DropdownListProvider'
 import { getNextActiveIndex } from '../../helpers'
+import { useDropdownListContext } from '../../providers'
 
-export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, 'tagRef' | 'tagAttrs'>) => {
+export const DropdownListMain = ({
+  // Box
+  children,
+  tagAttrs,
+  tagRef,
+  // own
+  itemsCount,
+  finalItemBlockSize,
+}: Pick<BoxProps, 'children' | 'tagAttrs' | 'tagRef'> & { itemsCount: number; finalItemBlockSize: number }) => {
   const {
     triggerRef,
     portalRef,
     scrollWrapperRef,
-    slotsByName,
     resizeVisible,
     setResizeVisible,
     open,
     setOpen,
-    hoveredIndex,
     setHoveredIndex,
-    setEnsureVisibleIndex,
-    setBlockMouse,
-    finalItemBlockSize,
+    hoveredIndex,
     floatingResolved,
+    setBlockMouse,
+    setEnsureVisibleIndex,
   } = useDropdownListContext()
 
   useOutsideClick([triggerRef, portalRef], () => setResizeVisible(false))
@@ -57,8 +62,6 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [open])
-
-  const itemsCount = slotsByName['DropdownList.Item'].length
 
   return (
     <Box
@@ -105,8 +108,7 @@ export const DropdownListMain = ({ tagRef, tagAttrs }: Pick<DropdownListProps, '
         },
       }}
     >
-      {slotsByName['DropdownList.Trigger']}
-      <DropdownListMenu />
+      {children}
     </Box>
   )
 }

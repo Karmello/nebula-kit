@@ -29,9 +29,9 @@ export const PropSelect = () => {
           .map(propName => (
             <Select.Option
               value={propName}
-              iconName={props[propName].isResponsive ? 'screen-share' : undefined}
-              iconPlacement="right"
-              align="split"
+              // iconName={props[propName].isResponsive ? 'screen-share' : undefined}
+              // iconPlacement="right"
+              // align="split"
             >
               {propName}
             </Select.Option>

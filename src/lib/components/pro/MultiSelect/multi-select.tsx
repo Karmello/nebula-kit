@@ -1,13 +1,13 @@
 import { ReactElement, useState } from 'react'
 import classNames from 'classnames'
 
-import { DropdownList, Button } from 'lib/components'
-import { WithSlots } from 'lib/components/shared'
+import { Button } from 'lib/components'
+import { WithSlots, DropdownList } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
 import { MultiSelectProvider } from './MultiSelectProvider'
-import { DEFAULT_MULTI_SELECT_OPTION_ALIGN } from './slots'
+// import { DEFAULT_MULTI_SELECT_OPTION_ALIGN } from './slots'
 import { DEFAULT_MULTI_SELECT_INLINE_SIZE, MultiSelectProps } from './definitions'
 
 export const MultiSelect = ({
@@ -40,6 +40,8 @@ export const MultiSelect = ({
     if (!isControlled) setInternalValue(nextValue)
     onChange?.(nextValue)
   }
+
+  return null
 
   return (
     <WithSlots<'MultiSelect.Option'>
@@ -125,7 +127,7 @@ export const MultiSelect = ({
                           }}
                           bold={selected}
                           selected={selected}
-                          align={slotProps.align || DEFAULT_MULTI_SELECT_OPTION_ALIGN}
+                          // align={slotProps.align || DEFAULT_MULTI_SELECT_OPTION_ALIGN}
                           iconName={selected ? 'check' : undefined}
                           iconPlacement="right"
                         >

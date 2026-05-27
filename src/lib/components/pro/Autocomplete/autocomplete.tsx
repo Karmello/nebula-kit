@@ -48,6 +48,8 @@ export const Autocomplete = ({
     onChange?.(value)
   }
 
+  return null
+
   return (
     <WithSlots<'Autocomplete.Option'>
       childrenToVerify={children}

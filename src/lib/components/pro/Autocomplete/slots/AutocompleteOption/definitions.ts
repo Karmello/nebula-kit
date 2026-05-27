@@ -1,6 +1,4 @@
-import { DropdownListItemProps } from 'lib/components'
-
-export const DEFAULT_AUTOCOMPLETE_OPTION_ALIGN: AutocompleteOptionProps['align'] = 'split'
+import { DropdownListItemProps } from 'lib/components/shared'
 
 type AutocompleteOptionOwnProps = {
   value: string

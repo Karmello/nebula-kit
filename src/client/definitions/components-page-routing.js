@@ -103,7 +103,6 @@ export const COMPONENT_CATEGORIES = [
     key: 'overlays',
     label: 'Overlays',
     items: [
-      { key: 'dropdown-list', label: 'DropdownList', sections, bundle: 'core' },
       { key: 'dialog', label: 'Dialog', sections, bundle: 'pro' },
       { key: 'tooltip', label: 'Tooltip', sections, bundle: 'pro' },
     ],

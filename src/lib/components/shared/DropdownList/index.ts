@@ -1,6 +1,6 @@
 import { DropdownList as DropdownListBase } from './dropdown-list'
 
-import { DropdownListItem, DropdownListTrigger } from './slots'
+import { DropdownListTrigger, DropdownListItem } from './slots'
 
 export const DropdownList = Object.assign(DropdownListBase, {
   Trigger: DropdownListTrigger,

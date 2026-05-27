@@ -1,4 +1,5 @@
 export * from './BrandProvider'
+export * from './DropdownList'
 export * from './HtmlTag'
 export * from './Portal'
 export * from './Ripple'

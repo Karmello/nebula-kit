@@ -16,8 +16,6 @@
 
 @use '../components/core/Divider/divider.scss';
 
-@use '../components/core/DropdownList/slots/DropdownListItem/dropdown-list-item.scss';
-
 @use '../components/core/Flex/flex.scss';
 @use '../components/core/Flex/FlexItem/flex-item.scss';
 
@@ -44,4 +42,7 @@
 
 @use '../components/core/Textarea/textarea.scss';
 
+// shared
+
+@use '../components/shared/DropdownList/slots/DropdownListItem/dropdown-list-item.scss';
 @use '../components/shared/Ripple/ripple.scss';

@@ -19,7 +19,6 @@ export {
 export { Callout, type CalloutProps } from './Callout'
 export { Checkbox, type CheckboxProps } from './Checkbox'
 export { Divider, type DividerProps } from './Divider'
-export { DropdownList, type DropdownListProps, type DropdownListTriggerProps, type DropdownListItemProps } from './DropdownList'
 
 export { Footer, type FooterProps, type FooterSectionProps } from './Footer'
 export { HydrationGate, type HydrationGateProps } from './HydrationGate'
