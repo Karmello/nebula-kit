@@ -5,12 +5,15 @@ import { Box } from 'lib/components'
 import { Ripple } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 
-import { type ActionSurfaceProps, ActionSurfaceTag, DEFAULT_ACTION_SURFACE_TAG } from './definitions'
+import {
+  type ActionSurfaceProps,
+  ActionSurfaceTag,
+  DEFAULT_ACTION_SURFACE_INTERACTIVE,
+  DEFAULT_ACTION_SURFACE_RIPPLE,
+  DEFAULT_ACTION_SURFACE_TAG,
+} from './definitions'
 
 import './action-surface.scss'
-
-export const DEFAULT_ACTION_SURFACE_INTERACTIVE: ActionSurfaceProps['interactive'] = true
-export const DEFAULT_ACTION_SURFACE_RIPPLE: ActionSurfaceProps['ripple'] = true
 
 export const ActionSurface = <T extends ActionSurfaceTag = typeof DEFAULT_ACTION_SURFACE_TAG>({
   // Box

@@ -2,7 +2,10 @@ import { ComponentProps } from 'react'
 
 import { BoxProps } from 'lib/components'
 
+export const DEFAULT_ACTION_SURFACE_INTERACTIVE: ActionSurfaceProps['interactive'] = true
+export const DEFAULT_ACTION_SURFACE_RIPPLE: ActionSurfaceProps['ripple'] = true
 export const DEFAULT_ACTION_SURFACE_TAG: ActionSurfaceTag = 'button'
+
 export const ACTION_SURFACE_TAGS = ['button', 'a', 'div'] as const
 
 export type ActionSurfaceTag = (typeof ACTION_SURFACE_TAGS)[number]

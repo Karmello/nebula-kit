@@ -1,10 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
-import { type ActionSurfaceProps, DEFAULT_ACTION_SURFACE_TAG } from 'lib/components/core/ActionSurface/definitions'
 
 import {
+  type ActionSurfaceProps,
   DEFAULT_ACTION_SURFACE_INTERACTIVE,
   DEFAULT_ACTION_SURFACE_RIPPLE,
-} from 'lib/components/core/ActionSurface/action-surface'
+  DEFAULT_ACTION_SURFACE_TAG,
+} from 'lib/components/core/ActionSurface/definitions'
 
 import { BOX_PROPS_META } from '../Box/props'
 
