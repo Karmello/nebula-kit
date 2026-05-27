@@ -1,10 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
 
+import boxMeta from './Box/_index'
 import actionSurfaceMeta from './ActionSurface/_index'
 import appFrameMeta from './AppFrame/_index'
 import autocompleteMeta from './Autocomplete/_index'
 import avatarMeta from './Avatar/_index'
-import boxMeta from './Box/_index'
 import breadcrumbMeta from './Breadcrumb/_index'
 import buttonMeta from './Button/_index'
 import calloutMeta from './Callout/_index'
