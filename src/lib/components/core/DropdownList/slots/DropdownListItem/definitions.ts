@@ -1,11 +1,7 @@
-import { ButtonProps } from 'lib/components'
-import { ButtonTag } from 'lib/components/core/Button/definitions'
+import { ActionSurfaceProps } from 'lib/components'
+import { ActionSurfaceTag, DEFAULT_ACTION_SURFACE_TAG } from 'lib/components/core/ActionSurface/definitions'
 
-export const DEFAULT_DROPDOWN_LIST_ITEM_ALIGN: DropdownListItemProps['align'] = 'start'
-
-export type DropdownListItemProps<T extends ButtonTag = 'button'> = Pick<
-  ButtonProps<T>,
-  'bold' | 'selected' | 'disabled' | 'iconName' | 'iconPlacement' | 'align' | 'tag' | 'tagAttrs' | 'tagRef'
-> & {
-  children: ButtonProps<T>['children']
-}
+export type DropdownListItemProps<T extends ActionSurfaceTag = typeof DEFAULT_ACTION_SURFACE_TAG> = Pick<
+  ActionSurfaceProps<T>,
+  'children' | 'tag' | 'tagAttrs' | 'tagRef' | 'disabled'
+>

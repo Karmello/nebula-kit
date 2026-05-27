@@ -1,31 +1,30 @@
 import { ComponentProps, PropsWithoutRef, MouseEvent } from 'react'
 import classNames from 'classnames'
 
-import { Button } from 'lib/components'
+import { ActionSurface } from 'lib/components'
+import { ActionSurfaceTag, DEFAULT_ACTION_SURFACE_TAG } from 'lib/components/core/ActionSurface/definitions'
 import { withPrefix } from 'lib/helpers'
-import { ButtonTag } from 'lib/components/core/Button/definitions'
 
-import { DEFAULT_DROPDOWN_LIST_ITEM_ALIGN, DropdownListItemProps } from './definitions'
+import { type DropdownListItemProps } from './definitions'
 import { useDropdownListContext } from '../../components'
 
 import './dropdown-list-item.scss'
 
-export const DropdownListItem = <T extends ButtonTag = 'button'>({
+export const DropdownListItem = <T extends ActionSurfaceTag = typeof DEFAULT_ACTION_SURFACE_TAG>({
+  // ActionSurface
   children,
   tag,
   tagRef,
   tagAttrs,
-  // Button
-  align = DEFAULT_DROPDOWN_LIST_ITEM_ALIGN,
-  ...buttonProps
+  ...rest
 }: DropdownListItemProps<T>) => {
   const { setResizeVisible, keepOpen, itemBlockSize, color, intent, hoveredIndex, setHoveredIndex, blockMouse, setBlockMouse } =
     useDropdownListContext()
 
-  const index = (buttonProps as any).index
+  const index = (rest as any).index
 
   return (
-    <Button
+    <ActionSurface
       tag={tag}
       tagRef={tagRef}
       tagAttrs={
@@ -56,12 +55,12 @@ export const DropdownListItem = <T extends ButtonTag = 'button'>({
       // TODO
       // size={size}
       elevated
-      fullWidth
-      align={align}
-      {...buttonProps}
+      // fullWidth
+      // align={align}
+      // {...buttonProps}
     >
       {children}
-    </Button>
+    </ActionSurface>
   )
 }
 
