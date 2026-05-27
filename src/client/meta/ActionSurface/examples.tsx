@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
 import { Text } from 'lib/components/core/Text'
+import { ActionSurface } from 'lib/components/core/ActionSurface/action-surface'
 import { type ActionSurfaceProps } from 'lib/components/core/ActionSurface/definitions'
-import { ActionSurface } from '../../../lib/components/core/ActionSurface/action-surface'
 
 const ACTION_SURFACE_EXAMPLES_META: ComponentMeta<ActionSurfaceProps>['examples'] = [
   {

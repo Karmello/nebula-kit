@@ -9,7 +9,7 @@ import { useScreen } from 'lib/hooks'
 
 import {
   ButtonTag,
-  ButtonProps,
+  type ButtonProps,
   DEFAULT_BUTTON_INTENT,
   DEFAULT_BUTTON_VARIANT,
   DEFAULT_BUTTON_RIPPLE,

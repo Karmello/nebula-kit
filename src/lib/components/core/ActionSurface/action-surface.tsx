@@ -5,7 +5,7 @@ import { Box } from 'lib/components'
 import { Ripple } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 
-import { ActionSurfaceProps, ActionSurfaceTag } from './definitions'
+import { type ActionSurfaceProps, ActionSurfaceTag } from './definitions'
 
 import './action-surface.scss'
 

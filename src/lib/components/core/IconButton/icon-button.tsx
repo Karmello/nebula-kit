@@ -5,7 +5,7 @@ import { ActionSurface, WithIcon, Loader } from 'lib/components'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
-import { IconButtonProps, IconButtonTag } from './definitions'
+import { type IconButtonProps, IconButtonTag } from './definitions'
 
 import './icon-button.scss'
 
