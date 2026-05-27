@@ -1,6 +1,7 @@
+import { Activity } from 'lucide-react'
+
 import { ComponentMeta } from 'client/definitions'
 import { IconButton, IconButtonProps } from 'lib/components'
-import { Activity } from 'lucide-react'
 
 const ICON_BUTTON_EXAMPLES_META: ComponentMeta<IconButtonProps>['examples'] = [
   {

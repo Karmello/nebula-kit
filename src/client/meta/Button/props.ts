@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
 import {
-  ButtonProps,
+  type ButtonProps,
   BUTTON_TAGS,
   BUTTON_ALIGNS,
   DEFAULT_BUTTON_INTENT,

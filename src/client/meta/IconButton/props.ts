@@ -1,7 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
-import { IconButtonProps } from 'lib/components'
+import { type IconButtonProps } from 'lib/components'
 import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
-import { ICON_BUTTON_TAGS } from 'lib/components/core/IconButton'
+import { ICON_BUTTON_TAGS } from 'lib/components/core/IconButton/definitions'
 
 import { ACTION_SURFACE_PROPS_META } from '../ActionSurface/props'
 import { WITH_ICON_PROPS_META } from '../WithIcon/props'

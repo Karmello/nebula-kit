@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { BUTTON_TAGS, ButtonProps } from 'lib/components/core/Button/definitions'
+import { BUTTON_TAGS, type ButtonProps } from 'lib/components/core/Button/definitions'
 
 import { BUTTON_PROPS_META } from './props'
 import { BUTTON_EXAMPLES_META } from './examples'
