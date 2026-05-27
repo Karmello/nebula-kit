@@ -29,7 +29,6 @@ export default defineConfig({
     emptyOutDir: true,
     manifest: true,
     sourcemap: true,
-    minify: false,
     rollupOptions: {
       input: path.resolve(__dirname, 'index.html'),
       output: {

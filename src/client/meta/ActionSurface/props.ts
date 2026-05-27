@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { type ActionSurfaceProps, DEFAULT_ACTION_SURFACE_TAG } from 'lib/components/core/ActionSurface/definitions'
+import { type ActionSurfaceProps } from 'lib/components/core/ActionSurface/definitions'
 
 import {
   DEFAULT_ACTION_SURFACE_INTERACTIVE,
@@ -45,7 +45,7 @@ const ACTION_SURFACE_PROPS_META: ComponentMeta<ActionSurfaceProps>['props'] = {
   },
   tag: {
     ...BOX_PROPS_META.tag,
-    defaultValue: DEFAULT_ACTION_SURFACE_TAG,
+    defaultValue: 'button',
   },
   tagAttrs: BOX_PROPS_META.tagAttrs,
   tagRef: BOX_PROPS_META.tagRef,
