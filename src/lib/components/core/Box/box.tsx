@@ -1,13 +1,14 @@
 import { ElementType, ComponentRef, ComponentProps, PropsWithoutRef, useLayoutEffect, useRef, RefObject } from 'react'
 import classNames from 'classnames'
 
-import { BoxProps } from 'lib/components'
 import { syncRespStyle, syncRespDataset, buildStaticDataset } from 'lib/internals/dom'
 import { useResolveAppearance } from 'lib/internals/styling'
 import { ThemeProvider, BrandProvider, HtmlTag } from 'lib/components/shared'
 import { useTransitionLifecycle } from 'lib/internals/motion'
 import { withPrefix, resolveLengthValue } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
+
+import { type BoxProps } from './definitions'
 
 import './styles/box.scss'
 

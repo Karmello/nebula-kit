@@ -1,11 +1,16 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { ActionSurface, Text, Loader, WithIcon, Flex } from 'lib/components'
 import { syncRespDataset } from 'lib/internals/dom'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
+
+import { ActionSurface } from '../ActionSurface'
+import { Text } from '../Text'
+import { Loader } from '../Loader'
+import { WithIcon } from '../WithIcon'
+import { Flex } from '../Flex'
 
 import {
   ButtonTag,

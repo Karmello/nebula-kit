@@ -1,9 +1,12 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useRef } from 'react'
 import classNames from 'classnames'
 
-import { ActionSurface, WithIcon, Loader } from 'lib/components'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
+
+import { ActionSurface } from '../ActionSurface'
+import { WithIcon } from '../WithIcon'
+import { Loader } from '../Loader'
 
 import { type IconButtonProps, IconButtonTag } from './definitions'
 
