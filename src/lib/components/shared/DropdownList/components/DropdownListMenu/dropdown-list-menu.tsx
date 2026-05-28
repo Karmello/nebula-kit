@@ -20,7 +20,7 @@ export const DropdownListMenu = ({
     triggerRef,
     portalRef,
     scrollWrapperRef,
-    open,
+    internalOpen,
     floatingResolved,
     setFloatingResolved,
     resizeVisible,
@@ -32,11 +32,13 @@ export const DropdownListMenu = ({
     onOpened,
     placement,
     noOptionsLabel,
+    color,
+    intent,
   } = useDropdownListContext()
 
   const [triggerWidth, setTriggerWidth] = useState<number | undefined>(undefined)
 
-  const prevOpenRef = useRef<boolean>(open)
+  const prevOpenRef = useRef<boolean>(internalOpen)
 
   const finalVisibleItemsCount = floatingResolved?.blockSize
     ? Math.floor(floatingResolved.blockSize / finalItemBlockSize)
@@ -46,15 +48,15 @@ export const DropdownListMenu = ({
 
   useLayoutEffect(() => {
     const wasOpen = prevOpenRef.current
-    prevOpenRef.current = open
-    if (wasOpen && !open) {
+    prevOpenRef.current = internalOpen
+    if (wasOpen && !internalOpen) {
       onClosed?.()
-    } else if (!wasOpen && open) {
+    } else if (!wasOpen && internalOpen) {
       setTimeout(() => {
         onOpened?.()
       }, finalAnimationDuration)
     }
-    if (!open) return
+    if (!internalOpen) return
 
     const el = (triggerRef as RefObject<HTMLElement>).current
     if (!el) return
@@ -63,19 +65,11 @@ export const DropdownListMenu = ({
     const observer = new ResizeObserver(update)
     observer.observe(el)
     return () => observer.disconnect()
-  }, [open, finalAnimationDuration])
+  }, [internalOpen, finalAnimationDuration])
 
   const opensUpDownwards = (floatingResolved?.placement ?? 'bottom-start').startsWith('bottom')
 
-  const ListItemDivider = () => (
-    <Divider
-      marginBlock="0px"
-      // color={color}
-      // intent={intent}
-      elevated
-      surface="dividing"
-    />
-  )
+  const ListItemDivider = () => <Divider marginBlock="0px" color={color} intent={intent} elevated surface="dividing" />
 
   const handleResolve = useCallback(
     (resolved: FloatingResolved) => {
@@ -95,7 +89,7 @@ export const DropdownListMenu = ({
     onResolve: handleResolve,
   })
 
-  if (!open) {
+  if (!internalOpen) {
     return null
   }
 
@@ -121,7 +115,7 @@ export const DropdownListMenu = ({
         >
           {items.length ? (
             <VirtualList
-              key={String(open)}
+              // key={String(internalOpen)}
               tagRef={scrollWrapperRef}
               items={items}
               itemBlockSize={finalItemBlockSize}

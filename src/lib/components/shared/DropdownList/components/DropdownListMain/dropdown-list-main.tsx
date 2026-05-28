@@ -21,8 +21,8 @@ export const DropdownListMain = ({
     scrollWrapperRef,
     resizeVisible,
     setResizeVisible,
-    open,
-    setOpen,
+    internalOpen,
+    setInternalOpen,
     setHoveredIndex,
     hoveredIndex,
     floatingResolved,
@@ -33,7 +33,7 @@ export const DropdownListMain = ({
   useOutsideClick([triggerRef, portalRef], () => setResizeVisible(false))
 
   useEffect(() => {
-    if (open) {
+    if (internalOpen) {
       setTimeout(() => {
         setResizeVisible(true)
       })
@@ -42,17 +42,17 @@ export const DropdownListMain = ({
         setResizeVisible(false)
       })
     }
-  }, [open])
+  }, [internalOpen])
 
   useEffect(() => {
     if (!resizeVisible) {
-      setOpen(false)
+      setInternalOpen(false)
       setHoveredIndex(-1)
     }
   }, [resizeVisible])
 
   useLayoutEffect(() => {
-    if (!open) return
+    if (!internalOpen) return
     const initialWidth = window.innerWidth
     const handleResize = () => {
       if (window.innerWidth !== initialWidth) {
@@ -61,7 +61,7 @@ export const DropdownListMain = ({
     }
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
-  }, [open])
+  }, [internalOpen])
 
   return (
     <Box
@@ -80,7 +80,7 @@ export const DropdownListMain = ({
           if (!scrollWrapperRef.current) return
 
           if (e.key === 'Enter') {
-            if (open) {
+            if (internalOpen) {
               e.preventDefault()
               const el = scrollWrapperRef.current.querySelector<HTMLElement>(
                 `[data-neb-dropdown-list-item-index="${hoveredIndex}"]`

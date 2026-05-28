@@ -8,6 +8,7 @@ import {
   DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
   DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
+  DEFAULT_AUTOCOMPLETE_INTENT,
 } from './definitions'
 
 import { AutocompleteMain } from './components'
@@ -19,7 +20,7 @@ export const Autocomplete = ({
   tagRef,
   // DropdownList
   color,
-  intent,
+  intent = DEFAULT_AUTOCOMPLETE_INTENT,
   scrollAlign,
   visibleItemsCount,
   noOptionsLabel,
@@ -47,8 +48,6 @@ export const Autocomplete = ({
     if (!isControlled) setInternalValue(value)
     onChange?.(value)
   }
-
-  return null
 
   return (
     <WithSlots<'Autocomplete.Option'>

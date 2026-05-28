@@ -1,8 +1,8 @@
 import { ReactElement, useState } from 'react'
 import classNames from 'classnames'
 
-import { Text } from 'lib/components'
-import { WithSlots, DropdownList } from 'lib/components/shared'
+import { Text, WithIcon } from 'lib/components'
+import { WithSlots, DropdownList, DropdownListProps } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
@@ -30,6 +30,11 @@ export const Select = ({
   dropdownPlacement,
   staticLabel,
 }: SelectProps) => {
+  const [dropdownListState, setDropdownListState] = useState<DropdownListProps['state']>({
+    open: false,
+    placement: dropdownPlacement,
+  })
+
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
 
   const isControlled = value !== undefined
@@ -48,7 +53,6 @@ export const Select = ({
     >
       {({ slotsByName }) => {
         const currentSlotIndex = slotsByName['Select.Option'].findIndex(slot => (slot as any).props.value === currentValue)
-
         const currentSlot = slotsByName['Select.Option'][currentSlotIndex] as ReactElement<any>
 
         return (
@@ -56,23 +60,35 @@ export const Select = ({
             <DropdownList
               tagRef={tagRef}
               tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('select'), tagAttrs?.className) }}
+              state={dropdownListState}
+              onStateChange={setDropdownListState}
               itemBlockSize={Number(CONTROL_SIZE_MAP[size || 'md'].blockSize.replace('px', ''))}
               scrollToIndex={currentSlotIndex}
               scrollAlign={scrollAlign}
               visibleItemsCount={visibleItemsCount}
               placement={dropdownPlacement}
+              color={color}
+              intent={intent}
             >
               <DropdownList.Trigger
-                variant="solid"
-                color={color}
-                intent={intent}
                 blockSize={CONTROL_SIZE_MAP[size].blockSize}
                 paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
                 inlineSize={inlineSize}
+                disabled={disabled}
+                selected={dropdownListState.open}
+                ripple={!dropdownListState.open}
               >
-                <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight}>
-                  {staticLabel || currentSlot}
-                </Text>
+                <WithIcon
+                  iconName={dropdownListState.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'}
+                  iconPlacement="right"
+                  justifyContent="space-between"
+                  iconAngle={dropdownListState.open ? 180 : 0}
+                  iconSize={CONTROL_SIZE_MAP[size].iconSize}
+                >
+                  <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight}>
+                    {staticLabel || currentSlot}
+                  </Text>
+                </WithIcon>
               </DropdownList.Trigger>
               {slotsByName['Select.Option'].map((slot, index) => {
                 const slotProps = (slot as ReactElement<any>).props
@@ -80,15 +96,20 @@ export const Select = ({
                   <DropdownList.Item
                     key={index}
                     index={index}
-                    variant="solid"
-                    color={color}
-                    intent={intent}
+                    elevated={dropdownListState.open}
+                    selected={index === currentSlotIndex}
                     blockSize={CONTROL_SIZE_MAP[size].blockSize}
                     paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
-                    inlineSize={inlineSize}
+                    inlineSize="100%"
                     onClick={() => handleChange(slotProps.value)}
                   >
-                    {slot}
+                    <Text
+                      fontSize={CONTROL_SIZE_MAP[size].fontSize}
+                      lineHeight={CONTROL_SIZE_MAP[size].lineHeight}
+                      bold={index === currentSlotIndex}
+                    >
+                      {slot}
+                    </Text>
                   </DropdownList.Item>
                 )
               })}

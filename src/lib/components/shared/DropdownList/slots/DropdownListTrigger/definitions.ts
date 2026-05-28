@@ -4,10 +4,8 @@ export type DropdownListTriggerProps = Pick<
   ActionSurfaceProps,
   | 'blockSize'
   | 'children'
-  | 'color'
   | 'disabled'
   | 'inlineSize'
-  | 'intent'
   | 'maxBlockSize'
   | 'minBlockSize'
   | 'maxInlineSize'
@@ -18,5 +16,4 @@ export type DropdownListTriggerProps = Pick<
   | 'paddingInline'
   | 'ripple'
   | 'selected'
-  | 'variant'
 >

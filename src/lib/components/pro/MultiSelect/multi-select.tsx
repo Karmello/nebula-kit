@@ -1,13 +1,12 @@
 import { ReactElement, useState } from 'react'
 import classNames from 'classnames'
 
-import { Button } from 'lib/components'
-import { WithSlots, DropdownList } from 'lib/components/shared'
+import { SelectOptionProps, Text, WithIcon } from 'lib/components'
+import { WithSlots, DropdownList, DropdownListProps } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
 import { MultiSelectProvider } from './MultiSelectProvider'
-// import { DEFAULT_MULTI_SELECT_OPTION_ALIGN } from './slots'
 import { DEFAULT_MULTI_SELECT_INLINE_SIZE, MultiSelectProps } from './definitions'
 
 export const MultiSelect = ({
@@ -29,6 +28,11 @@ export const MultiSelect = ({
   size = DEFAULT_CONTROL_SIZE,
   dropdownPlacement,
 }: MultiSelectProps) => {
+  const [dropdownListState, setDropdownListState] = useState<DropdownListProps['state']>({
+    open: false,
+    placement: dropdownPlacement,
+  })
+
   const [internalValue, setInternalValue] = useState<string[]>(defaultValue || [])
 
   const isControlled = value !== undefined
@@ -40,8 +44,6 @@ export const MultiSelect = ({
     if (!isControlled) setInternalValue(nextValue)
     onChange?.(nextValue)
   }
-
-  return null
 
   return (
     <WithSlots<'MultiSelect.Option'>
@@ -69,6 +71,8 @@ export const MultiSelect = ({
                 ...tagAttrs,
                 className: classNames(withPrefix('multi-select'), tagAttrs?.className),
               }}
+              state={dropdownListState}
+              onStateChange={setDropdownListState}
               intent={intent}
               color={color}
               itemBlockSize={Number(CONTROL_SIZE_MAP[size].blockSize.replace('px', ''))}
@@ -78,66 +82,53 @@ export const MultiSelect = ({
               placement={dropdownPlacement}
               keepOpen
             >
-              {({ open, resolvedPlacement }) => {
-                const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(resolvedPlacement)
-
+              <DropdownList.Trigger
+                blockSize={CONTROL_SIZE_MAP[size].blockSize}
+                paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
+                inlineSize={inlineSize}
+                disabled={disabled}
+                selected={dropdownListState.open}
+                ripple={!dropdownListState.open}
+              >
+                <WithIcon
+                  iconName={dropdownListState.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'}
+                  iconPlacement="right"
+                  justifyContent="space-between"
+                  iconAngle={dropdownListState.open ? 180 : 0}
+                  iconSize={CONTROL_SIZE_MAP[size].iconSize}
+                >
+                  <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight} truncate>
+                    {currentLabel || 'Select ...'}
+                  </Text>
+                </WithIcon>
+              </DropdownList.Trigger>
+              {slotsByName['MultiSelect.Option'].map((slot, index) => {
+                const slotProps = (slot as ReactElement<SelectOptionProps>).props
+                const isSelected = currentValue.includes(slotProps.value)
                 return (
-                  <>
-                    <DropdownList.Trigger inlineSize={inlineSize} disabled={disabled}>
-                      <Button
-                        tagAttrs={{
-                          'aria-labelledby': tagAttrs?.['aria-labelledby'],
-                          style: opensUpDownwards
-                            ? {
-                                borderBottomLeftRadius: open ? 0 : undefined,
-                                borderBottomRightRadius: open ? 0 : undefined,
-                              }
-                            : {
-                                borderTopLeftRadius: open ? 0 : undefined,
-                                borderTopRightRadius: open ? 0 : undefined,
-                              },
-                        }}
-                        iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
-                        iconPlacement="right"
-                        iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
-                        align="split"
-                        size={size}
-                        variant="solid"
-                        intent={intent}
-                        color={color}
-                        disabled={disabled}
-                        fullWidth
-                        ripple={!open}
-                        elevated={open}
-                        interactive={!open}
+                  <DropdownList.Item
+                    key={index}
+                    index={index}
+                    elevated={dropdownListState.open}
+                    selected={isSelected}
+                    blockSize={CONTROL_SIZE_MAP[size].blockSize}
+                    paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
+                    inlineSize="100%"
+                    onClick={() => handleChange(slotProps.value)}
+                    ripple={false}
+                  >
+                    <WithIcon iconName={isSelected ? 'check' : undefined} iconPlacement="right" justifyContent="space-between">
+                      <Text
+                        fontSize={CONTROL_SIZE_MAP[size].fontSize}
+                        lineHeight={CONTROL_SIZE_MAP[size].lineHeight}
+                        bold={isSelected}
                       >
-                        {currentLabel || 'Select ...'}
-                      </Button>
-                    </DropdownList.Trigger>
-                    {slotsByName['MultiSelect.Option'].map((slot, index) => {
-                      const slotProps = (slot as ReactElement<any>).props
-                      const selected = currentValue.includes(slotProps.value)
-                      return (
-                        <DropdownList.Item
-                          key={index}
-                          {...slotProps}
-                          tagAttrs={{
-                            ...slotProps.tagAttrs,
-                            onClick: () => handleChange(slotProps.value),
-                          }}
-                          bold={selected}
-                          selected={selected}
-                          // align={slotProps.align || DEFAULT_MULTI_SELECT_OPTION_ALIGN}
-                          iconName={selected ? 'check' : undefined}
-                          iconPlacement="right"
-                        >
-                          {slot}
-                        </DropdownList.Item>
-                      )
-                    })}
-                  </>
+                        {slot}
+                      </Text>
+                    </WithIcon>
+                  </DropdownList.Item>
                 )
-              }}
+              })}
             </DropdownList>
           </MultiSelectProvider>
         )

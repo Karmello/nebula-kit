@@ -4,11 +4,9 @@ export type DropdownListItemProps = Pick<
   ActionSurfaceProps,
   | 'blockSize'
   | 'children'
-  | 'color'
   | 'disabled'
   | 'elevated'
   | 'inlineSize'
-  | 'intent'
   | 'maxBlockSize'
   | 'maxInlineSize'
   | 'minBlockSize'
@@ -19,5 +17,4 @@ export type DropdownListItemProps = Pick<
   | 'paddingInline'
   | 'ripple'
   | 'selected'
-  | 'variant'
 >

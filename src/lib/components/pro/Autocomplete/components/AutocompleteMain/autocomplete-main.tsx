@@ -1,12 +1,12 @@
 import { ReactElement, ReactNode, useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
-import { AutocompleteOptionProps, IconButton, Input } from 'lib/components'
+import { AutocompleteOptionProps, IconButton, Input, Text } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import { AutocompleteProps } from '../../definitions'
 import { CONTROL_SIZE_MAP } from 'lib/definitions'
-import { DropdownList } from 'lib/components/shared'
+import { DropdownList, DropdownListProps } from 'lib/components/shared'
 
 type AutocompleteMainProps = Omit<AutocompleteProps, 'children' | 'defaultValue' | 'value' | 'onChange'> & {
   items: ReactNode[]
@@ -43,6 +43,11 @@ export const AutocompleteMain = ({
   const [inputValue, setInputValue] = useState<string>('')
   const [queryValue, setQueryValue] = useState<string>('')
   const [filteredItems, setFilteredItems] = useState<AutocompleteMainProps['items']>([])
+
+  const [dropdownListState, setDropdownListState] = useState<DropdownListProps['state']>({
+    open: false,
+    placement: dropdownPlacement,
+  })
 
   useLayoutEffect(() => {
     if (queryValue && !disableFiltering) {
@@ -96,6 +101,8 @@ export const AutocompleteMain = ({
         ...tagAttrs,
         className: classNames(withPrefix('autocomplete'), tagAttrs?.className),
       }}
+      state={dropdownListState}
+      onStateChange={setDropdownListState}
       intent={intent}
       color={color}
       itemBlockSize={Number(CONTROL_SIZE_MAP[size || 'md'].blockSize.replace('px', ''))}
@@ -110,92 +117,69 @@ export const AutocompleteMain = ({
         setIsOpen(true)
       }}
     >
-      {({ open, setOpen, resolvedPlacement }) => {
-        const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(resolvedPlacement)
+      <DropdownList.Trigger inlineSize={inlineSize} disabled={disabled} selected={dropdownListState.open}>
+        <Input
+          tagAttrs={{
+            'aria-labelledby': tagAttrs?.['aria-labelledby'],
+          }}
+          value={inputValue}
+          onChange={value => {
+            setInputValue(value)
+            if (!open) setIsOpen(true)
+            onInputChange?.(value)
+          }}
+          placeholder={placeholder}
+          size={size}
+          variant="solid"
+          intent={intent}
+          color={color}
+          disabled={disabled}
+          endAffix={
+            showToggle
+              ? props => (
+                  <IconButton
+                    {...props}
+                    tagAttrs={{
+                      onFocus: e => {
+                        e.stopPropagation()
+                      },
+                    }}
+                    iconName={dropdownListState.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'}
+                    iconAngle={dropdownListState.open ? 180 : 0}
+                    // elevated={open}
+                    // interactive={!open}
+                    onClick={() => {
+                      setIsOpen(!open)
+                    }}
+                  />
+                )
+              : undefined
+          }
+        />
+      </DropdownList.Trigger>
+      {filteredItems.map((slot, index) => {
+        const slotProps = (slot as ReactElement<AutocompleteOptionProps>).props
+        const isSelected = slotProps.value === currentValue
 
         return (
-          <>
-            <DropdownList.Trigger inlineSize={inlineSize} disabled={disabled}>
-              <Input
-                tagAttrs={{
-                  'aria-labelledby': tagAttrs?.['aria-labelledby'],
-                  style: opensUpDownwards
-                    ? {
-                        borderBottomLeftRadius: open ? 0 : undefined,
-                        borderBottomRightRadius: open ? 0 : undefined,
-                      }
-                    : {
-                        borderTopLeftRadius: open ? 0 : undefined,
-                        borderTopRightRadius: open ? 0 : undefined,
-                      },
-                }}
-                value={inputValue}
-                onChange={value => {
-                  setInputValue(value)
-                  if (!open) setOpen(true)
-                  onInputChange?.(value)
-                }}
-                placeholder={placeholder}
-                size={size}
-                variant="solid"
-                intent={intent}
-                color={color}
-                disabled={disabled}
-                endAffix={
-                  showToggle
-                    ? props => (
-                        <IconButton
-                          {...props}
-                          tagAttrs={{
-                            onClick: () => {
-                              setOpen(!open)
-                            },
-                            onFocus: e => {
-                              e.stopPropagation()
-                            },
-                            style: opensUpDownwards
-                              ? { borderBottomRightRadius: open ? 0 : undefined }
-                              : { borderTopRightRadius: open ? 0 : undefined },
-                          }}
-                          iconName={opensUpDownwards ? 'chevron-down' : 'chevron-up'}
-                          iconAngle={open ? (opensUpDownwards ? 180 : -180) : 0}
-                          elevated={open}
-                          interactive={!open}
-                        />
-                      )
-                    : undefined
-                }
-              />
-            </DropdownList.Trigger>
-            {filteredItems.map((slot, index) => {
-              const slotProps = (slot as ReactElement<AutocompleteOptionProps>).props
-              const selected = slotProps.value === currentValue
-
-              return (
-                <DropdownList.Item
-                  key={index}
-                  {...slotProps}
-                  tagAttrs={{
-                    ...slotProps.tagAttrs,
-                    onClick: () => {
-                      setInputValue(slotProps.label)
-                      setQueryValue(slotProps.label)
-                      handleChange(slotProps.value)
-                    },
-                  }}
-                  // bold={selected}
-                  // selected={selected}
-                  // align={slotProps.align || DEFAULT_AUTOCOMPLETE_OPTION_ALIGN}
-                  // iconName={slotProps.iconName !== undefined ? slotProps.iconName : selected ? 'check' : undefined}
-                  // iconPlacement={slotProps.iconPlacement}
-                >
-                  {slot}
-                </DropdownList.Item>
-              )
-            })}
-          </>
+          <DropdownList.Item
+            key={index}
+            index={index}
+            blockSize={CONTROL_SIZE_MAP[size].blockSize}
+            paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
+            elevated={dropdownListState.open}
+            selected={isSelected}
+            inlineSize="100%"
+            onClick={() => {
+              setInputValue(slotProps.label)
+              setQueryValue(slotProps.label)
+              handleChange(slotProps.value)
+            }}
+          >
+            <Text bold={isSelected}>{slot}</Text>
+          </DropdownList.Item>
         )
-      }}
+      })}
     </DropdownList>
   )
 }

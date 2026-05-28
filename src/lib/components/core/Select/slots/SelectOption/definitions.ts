@@ -4,6 +4,6 @@ type SelectOptionOwnProps = {
   value: string
 }
 
-type PropsFromDropdownListItem = Omit<DropdownListItemProps<'button'>, 'bold' | 'tag'>
+type PropsFromDropdownListItem = Pick<DropdownListItemProps, 'children'>
 
 export type SelectOptionProps = PropsFromDropdownListItem & SelectOptionOwnProps

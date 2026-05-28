@@ -39,6 +39,11 @@ export const ActionSurface = <T extends ActionSurfaceTag = typeof DEFAULT_ACTION
   padding,
   paddingBlock,
   paddingInline,
+  borderRadius,
+  borderBottomLeftRadius,
+  borderBottomRightRadius,
+  borderTopLeftRadius,
+  borderTopRightRadius,
 }: ActionSurfaceProps<T>) => {
   const localRef = useRef<ComponentRef<T>>(null)
   const finalRef = tagRef || localRef
@@ -79,6 +84,11 @@ export const ActionSurface = <T extends ActionSurfaceTag = typeof DEFAULT_ACTION
       padding={padding}
       paddingBlock={paddingBlock}
       paddingInline={paddingInline}
+      borderRadius={borderRadius}
+      borderBottomLeftRadius={borderBottomLeftRadius}
+      borderBottomRightRadius={borderBottomRightRadius}
+      borderTopLeftRadius={borderTopLeftRadius}
+      borderTopRightRadius={borderTopRightRadius}
     >
       {children}
       <Ripple parentRef={finalRef} active={ripple && !disabled} />

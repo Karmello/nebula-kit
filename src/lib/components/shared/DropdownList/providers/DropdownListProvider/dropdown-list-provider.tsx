@@ -1,13 +1,15 @@
-import { createContext, useContext, ReactNode, RefObject, useState, useRef } from 'react'
+import { createContext, useContext, ReactNode, RefObject, useState, useRef, useEffect } from 'react'
 
 import { FloatingResolved } from 'lib/internals/positioning'
 
-import { type DropdownListProps } from '../../definitions'
+import { type DropdownListPlacement, type DropdownListProps } from '../../definitions'
 
 type ProviderProps = { children: ReactNode } & ExternalProps
 
 type ExternalProps = Pick<
   DropdownListProps,
+  | 'state'
+  | 'onStateChange'
   | 'keepOpen'
   | 'openOnFocus'
   | 'scrollToIndex'
@@ -17,6 +19,8 @@ type ExternalProps = Pick<
   | 'onOpened'
   | 'placement'
   | 'noOptionsLabel'
+  | 'color'
+  | 'intent'
 >
 
 export type ProviderContextValue = {
@@ -25,8 +29,8 @@ export type ProviderContextValue = {
   portalRef: RefObject<HTMLDivElement>
   scrollWrapperRef: RefObject<HTMLDivElement>
   // state
-  open: boolean
-  setOpen: (open: boolean) => void
+  internalOpen: boolean
+  setInternalOpen: (internalOpen: boolean) => void
   resizeVisible: boolean
   setResizeVisible: (visible: boolean) => void
   hoveredIndex: number
@@ -45,6 +49,8 @@ const Context = createContext<ProviderContextValue | undefined>(undefined)
 export const DropdownListProvider = ({
   children,
   // external props
+  state,
+  onStateChange,
   keepOpen,
   openOnFocus,
   scrollToIndex,
@@ -54,17 +60,23 @@ export const DropdownListProvider = ({
   onOpened,
   placement,
   noOptionsLabel,
+  color,
+  intent,
 }: ProviderProps) => {
   const triggerRef = useRef<HTMLButtonElement>(null)
   const portalRef = useRef<HTMLDivElement>(null)
   const scrollWrapperRef = useRef<HTMLDivElement>(null)
 
-  const [open, setOpen] = useState<boolean>(false)
+  const [internalOpen, setInternalOpen] = useState<boolean>(state?.open || false)
   const [resizeVisible, setResizeVisible] = useState<boolean>(false)
   const [hoveredIndex, setHoveredIndex] = useState<number>(-1)
   const [ensureVisibleIndex, setEnsureVisibleIndex] = useState<number | undefined>(undefined)
   const [blockMouse, setBlockMouse] = useState<boolean>(false)
   const [floatingResolved, setFloatingResolved] = useState<FloatingResolved | undefined>(undefined)
+
+  useEffect(() => {
+    onStateChange?.({ open: internalOpen, placement: floatingResolved?.placement as DropdownListPlacement })
+  }, [internalOpen, floatingResolved?.placement])
 
   return (
     <Context.Provider
@@ -74,8 +86,8 @@ export const DropdownListProvider = ({
         portalRef,
         scrollWrapperRef,
         // state
-        open,
-        setOpen,
+        internalOpen,
+        setInternalOpen,
         resizeVisible,
         setResizeVisible,
         hoveredIndex,
@@ -96,6 +108,8 @@ export const DropdownListProvider = ({
         onOpened,
         placement,
         noOptionsLabel,
+        color,
+        intent,
       }}
     >
       {children}

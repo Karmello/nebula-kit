@@ -5,7 +5,10 @@ import { useDropdownListContext } from '../../providers'
 import { DropdownListTriggerProps } from './definitions'
 
 export const DropdownListTrigger = ({ children, ...rest }: DropdownListTriggerProps) => {
-  const { triggerRef, open, setOpen, setResizeVisible, openOnFocus } = useDropdownListContext()
+  const { triggerRef, internalOpen, setInternalOpen, setResizeVisible, openOnFocus, floatingResolved, color, intent } =
+    useDropdownListContext()
+
+  const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(floatingResolved?.placement)
 
   return (
     <ActionSurface
@@ -15,28 +18,35 @@ export const DropdownListTrigger = ({ children, ...rest }: DropdownListTriggerPr
         'aria-haspopup': 'listbox',
         'aria-expanded': false,
         onFocus: () => {
-          if (openOnFocus && !open) {
-            setOpen(true)
+          if (openOnFocus && !internalOpen) {
+            setInternalOpen(true)
           }
         },
         onKeyDown: (e: { key: string; preventDefault: () => void }) => {
           if (e.key === 'Enter') {
-            if (!open) {
+            if (!internalOpen) {
               e.preventDefault()
-              setOpen(true)
+              setInternalOpen(true)
             }
           }
         },
       }}
       onClick={() => {
         if (!rest.disabled && !openOnFocus) {
-          if (open) {
+          if (internalOpen) {
             setResizeVisible(false)
           } else {
-            setOpen(true)
+            setInternalOpen(true)
           }
         }
       }}
+      variant="solid"
+      color={color}
+      intent={intent}
+      borderBottomLeftRadius={internalOpen && opensUpDownwards ? '0px' : undefined}
+      borderBottomRightRadius={internalOpen && opensUpDownwards ? '0px' : undefined}
+      borderTopLeftRadius={internalOpen && !opensUpDownwards ? '0px' : undefined}
+      borderTopRightRadius={internalOpen && !opensUpDownwards ? '0px' : undefined}
       {...rest}
     >
       {children}

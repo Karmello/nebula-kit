@@ -6,7 +6,8 @@ import { useDropdownListContext } from '../../providers'
 import { DropdownListItemProps } from './definitions'
 
 export const DropdownListItem = ({ index, children, ...rest }: DropdownListItemProps & { index: number }) => {
-  const { blockMouse, hoveredIndex, setResizeVisible, setBlockMouse, setHoveredIndex, keepOpen } = useDropdownListContext()
+  const { blockMouse, hoveredIndex, setResizeVisible, setBlockMouse, setHoveredIndex, keepOpen, color, intent } =
+    useDropdownListContext()
 
   return (
     <ActionSurface
@@ -26,6 +27,10 @@ export const DropdownListItem = ({ index, children, ...rest }: DropdownListItemP
           if (!blockMouse) setHoveredIndex(-1)
         },
       }}
+      variant="solid"
+      color={color}
+      intent={intent}
+      borderRadius="0px"
       {...rest}
     >
       {children}

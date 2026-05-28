@@ -6,6 +6,7 @@ import { WithSlots } from '../WithSlots'
 
 import {
   DEFAULT_DROPDOWN_ITEM_BLOCK_SIZE,
+  DEFAULT_DROPDOWN_LIST_INTENT,
   DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
   DEFAULT_DROPDOWN_LIST_OPEN_ON_FOCUS,
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
@@ -20,9 +21,14 @@ export const DropdownList = ({
   children,
   tagRef,
   tagAttrs,
+  // ActionSurface
+  color,
+  intent = DEFAULT_DROPDOWN_LIST_INTENT,
   // Portal
   placement = DEFAULT_DROPDOWN_LIST_PLACEMENT,
   // own
+  state,
+  onStateChange,
   itemBlockSize = DEFAULT_DROPDOWN_ITEM_BLOCK_SIZE,
   visibleItemsCount = DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   openOnFocus = DEFAULT_DROPDOWN_LIST_OPEN_ON_FOCUS,
@@ -52,6 +58,8 @@ export const DropdownList = ({
 
         return (
           <DropdownListProvider
+            state={state}
+            onStateChange={onStateChange}
             keepOpen={keepOpen}
             openOnFocus={openOnFocus}
             scrollToIndex={scrollToIndex}
@@ -61,6 +69,8 @@ export const DropdownList = ({
             onOpened={onOpened}
             placement={placement}
             noOptionsLabel={noOptionsLabel}
+            color={color}
+            intent={intent}
           >
             <DropdownListMain tagRef={tagRef} tagAttrs={tagAttrs} itemsCount={itemsCount} finalItemBlockSize={finalItemBlockSize}>
               {slotsByName['DropdownList.Trigger']}

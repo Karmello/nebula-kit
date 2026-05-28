@@ -30,6 +30,11 @@ type PropsFromBox<T extends ActionSurfaceTag = typeof DEFAULT_ACTION_SURFACE_TAG
   | 'padding'
   | 'paddingBlock'
   | 'paddingInline'
+  | 'borderRadius'
+  | 'borderTopLeftRadius'
+  | 'borderTopRightRadius'
+  | 'borderBottomLeftRadius'
+  | 'borderBottomRightRadius'
 > & {
   children: BoxProps<T>['children']
 }
