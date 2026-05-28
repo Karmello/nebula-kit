@@ -106,7 +106,7 @@ export const DropdownListMenu = ({
           variant="solid"
           blockSize={`${finalVisibleItemsCount * finalItemBlockSize}px`}
           minInlineSize={triggerWidth !== undefined ? `${triggerWidth}px` : undefined}
-          overflow="hidden"
+          overflow="clip"
           borderTopWidth="0px"
           borderTopLeftRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
           borderTopRightRadius={opensUpDownwards ? '0px' : 'var(--neb-border-radius)'}
@@ -115,7 +115,6 @@ export const DropdownListMenu = ({
         >
           {items.length ? (
             <VirtualList
-              // key={String(internalOpen)}
               tagRef={scrollWrapperRef}
               items={items}
               itemBlockSize={finalItemBlockSize}

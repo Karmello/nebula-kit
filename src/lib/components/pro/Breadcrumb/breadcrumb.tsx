@@ -1,12 +1,11 @@
 import { useState, Fragment, useCallback } from 'react'
 
-import { Box, Flex, Button, Icon } from 'lib/components'
-import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
-
-import { BreadcrumbProps, BreadcrumbTag, DEFAULT_BREADCRUMB_INTENT } from './definitions'
-
-import { convertTreeToLevels } from './helpers'
+import { Box, Flex, Icon, Text } from 'lib/components'
+import { CONTROL_SIZE_MAP } from 'lib/definitions'
 import { DropdownList } from 'lib/components/shared'
+
+import { BreadcrumbProps, BreadcrumbTag, DEFAULT_BREADCRUMB_INTENT, DEFAULT_BREADCRUMB_SIZE } from './definitions'
+import { convertTreeToLevels } from './helpers'
 
 export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
   // HtmlTag
@@ -20,11 +19,12 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
   tree,
   defaultPath,
   path,
-  size = DEFAULT_CONTROL_SIZE,
+  size = DEFAULT_BREADCRUMB_SIZE,
   onChange,
 }: BreadcrumbProps<T>) => {
-  const [internalPath, setInternalPath] = useState<string[]>(defaultPath || [])
+  const [openIndex, setOpenIndex] = useState<number>(-1)
 
+  const [internalPath, setInternalPath] = useState<string[]>(defaultPath || [])
   const isControlled = path !== undefined
   const currentPath = isControlled ? path : internalPath
 
@@ -51,13 +51,13 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
 
   const levels = convertTreeToLevels(tree, currentPath)
 
-  return null
-
   return (
     <Box tag={tag} tagAttrs={tagAttrs} tagRef={tagRef} overflowX="auto">
       <Flex gap="xs" alignItems="center">
         {levels.slice(0, currentPath.length + 1).map((level, index) => {
           const scrollToIndex = levels[index].findIndex(node => node.value === currentPath[index])
+
+          const isOpen = index === openIndex
 
           return (
             <Fragment key={index}>
@@ -69,29 +69,52 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                 scrollToIndex={scrollToIndex > -1 ? scrollToIndex : undefined}
                 scrollAlign="center"
                 placement={index === 0 || index < levels.length - 1 ? 'bottom-start' : 'bottom-end'}
+                state={{ open: false, placement: 'bottom-center' }}
+                onStateChange={() => {
+                  setOpenIndex(index)
+                }}
               >
-                {({ open }) => (
-                  <>
-                    <DropdownList.Trigger>
-                      <Button size={size} variant="ghost" color={color} intent="primary" ripple={!open} selected={open} bold>
-                        {levels[index].find(node => node.value === currentPath[index])?.label || 'Select ...'}
-                      </Button>
-                    </DropdownList.Trigger>
-                    {level.map(node => (
-                      <DropdownList.Item
-                        key={node.value}
-                        tagAttrs={{
-                          onClick: () => handleChange(index, node.value),
-                        }}
-                        // selected={node.value === currentPath[index]}
-                        // bold={node.value === currentPath[index]}
-                        // align="center"
+                <DropdownList.Trigger
+                  variant="ghost"
+                  intent="primary"
+                  selected={isOpen}
+                  ripple={!isOpen}
+                  blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
+                  paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
+                >
+                  <Text
+                    bold
+                    intent="primary"
+                    fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
+                    lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
+                  >
+                    {levels[index].find(node => node.value === currentPath[index])?.label || 'Select ...'}
+                  </Text>
+                </DropdownList.Trigger>
+                {level.map(node => {
+                  const isSelected = node.value === currentPath[index]
+                  return (
+                    <DropdownList.Item
+                      key={node.value}
+                      index={index}
+                      inlineSize="100%"
+                      blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
+                      paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
+                      onClick={() => handleChange(index, node.value)}
+                      selected={isSelected}
+                      elevated
+                    >
+                      <Text
+                        bold={isSelected}
+                        fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
+                        lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
+                        textAlign="center"
                       >
                         {node.label}
-                      </DropdownList.Item>
-                    ))}
-                  </>
-                )}
+                      </Text>
+                    </DropdownList.Item>
+                  )
+                })}
               </DropdownList>
               {index < levels.length - 1 ? <Icon name="chevron-right" color={color} intent="primary" size="sm" /> : null}
             </Fragment>

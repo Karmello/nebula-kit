@@ -25,7 +25,7 @@ type ExternalProps = Pick<
 
 export type ProviderContextValue = {
   // refs
-  triggerRef: RefObject<HTMLButtonElement>
+  triggerRef: RefObject<HTMLButtonElement | HTMLAnchorElement | HTMLDivElement>
   portalRef: RefObject<HTMLDivElement>
   scrollWrapperRef: RefObject<HTMLDivElement>
   // state
@@ -63,7 +63,7 @@ export const DropdownListProvider = ({
   color,
   intent,
 }: ProviderProps) => {
-  const triggerRef = useRef<HTMLButtonElement>(null)
+  const triggerRef = useRef<HTMLButtonElement | HTMLAnchorElement | HTMLDivElement>(null)
   const portalRef = useRef<HTMLDivElement>(null)
   const scrollWrapperRef = useRef<HTMLDivElement>(null)
 
@@ -77,6 +77,10 @@ export const DropdownListProvider = ({
   useEffect(() => {
     onStateChange?.({ open: internalOpen, placement: floatingResolved?.placement as DropdownListPlacement })
   }, [internalOpen, floatingResolved?.placement])
+
+  useEffect(() => {
+    if (state?.open !== undefined) setInternalOpen(state?.open)
+  }, [state?.open])
 
   return (
     <Context.Provider

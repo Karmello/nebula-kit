@@ -39,7 +39,6 @@ export const AutocompleteMain = ({
   currentValue,
   handleChange,
 }: AutocompleteMainProps) => {
-  const [isOpen, setIsOpen] = useState(false)
   const [inputValue, setInputValue] = useState<string>('')
   const [queryValue, setQueryValue] = useState<string>('')
   const [filteredItems, setFilteredItems] = useState<AutocompleteMainProps['items']>([])
@@ -74,7 +73,7 @@ export const AutocompleteMain = ({
   }, [currentValue])
 
   useLayoutEffect(() => {
-    if (!isOpen) return
+    if (!dropdownListState.open) return
 
     if (!debounceDelay) {
       setQueryValue(inputValue)
@@ -86,13 +85,13 @@ export const AutocompleteMain = ({
     }, debounceDelay)
 
     return () => clearTimeout(id)
-  }, [inputValue, debounceDelay, isOpen])
+  }, [inputValue, debounceDelay, dropdownListState.open])
 
   useLayoutEffect(() => {
-    if (!isOpen) {
+    if (!dropdownListState.open) {
       setQueryValue(inputValue)
     }
-  }, [isOpen])
+  }, [dropdownListState.open])
 
   return (
     <DropdownList
@@ -114,18 +113,19 @@ export const AutocompleteMain = ({
       placement={dropdownPlacement}
       openOnFocus
       onOpened={() => {
-        setIsOpen(true)
+        setDropdownListState(prev => ({ ...prev, open: true }))
       }}
     >
-      <DropdownList.Trigger inlineSize={inlineSize} disabled={disabled} selected={dropdownListState.open}>
+      <DropdownList.Trigger tag="div" inlineSize={inlineSize} disabled={disabled} selected={dropdownListState.open}>
         <Input
           tagAttrs={{
             'aria-labelledby': tagAttrs?.['aria-labelledby'],
+            style: { borderRadius: '0px' },
           }}
           value={inputValue}
           onChange={value => {
             setInputValue(value)
-            if (!open) setIsOpen(true)
+            if (!dropdownListState.open) setDropdownListState(prev => ({ ...prev, open: true }))
             onInputChange?.(value)
           }}
           placeholder={placeholder}
@@ -146,10 +146,10 @@ export const AutocompleteMain = ({
                     }}
                     iconName={dropdownListState.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'}
                     iconAngle={dropdownListState.open ? 180 : 0}
-                    // elevated={open}
-                    // interactive={!open}
+                    elevated={dropdownListState.open}
+                    interactive={!dropdownListState.open}
                     onClick={() => {
-                      setIsOpen(!open)
+                      setDropdownListState(prev => ({ ...prev, open: !prev.open }))
                     }}
                   />
                 )

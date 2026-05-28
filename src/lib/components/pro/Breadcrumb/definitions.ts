@@ -1,10 +1,11 @@
-import { BoxProps } from 'lib/components'
+import { BoxProps, Breadcrumb } from 'lib/components'
 import { DropdownListProps } from 'lib/components/shared'
 import { ControlSize } from 'lib/definitions'
 
 export const BREADCRUMB_TAGS = ['div', 'nav', 'section'] as const
 
 export const DEFAULT_BREADCRUMB_INTENT: BreadcrumbProps['intent'] = 'muted'
+export const DEFAULT_BREADCRUMB_SIZE: BreadcrumbProps['size'] = 'xs'
 
 export type BreadcrumbTag = (typeof BREADCRUMB_TAGS)[number]
 
