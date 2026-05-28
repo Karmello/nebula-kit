@@ -11,6 +11,11 @@ import { BOX_PROPS_META } from '../Box/props'
 
 const ACTION_SURFACE_PROPS_META: ComponentMeta<ActionSurfaceProps>['props'] = {
   blockSize: BOX_PROPS_META.blockSize,
+  borderBottomLeftRadius: BOX_PROPS_META.borderBottomLeftRadius,
+  borderBottomRightRadius: BOX_PROPS_META.borderBottomRightRadius,
+  borderRadius: BOX_PROPS_META.borderRadius,
+  borderTopLeftRadius: BOX_PROPS_META.borderTopLeftRadius,
+  borderTopRightRadius: BOX_PROPS_META.borderTopRightRadius,
   children: {
     ...BOX_PROPS_META.children,
     isRequired: true,

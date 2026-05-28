@@ -3,10 +3,10 @@ import classNames from 'classnames'
 
 import { AutocompleteOptionProps, IconButton, Input, Text } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { CONTROL_SIZE_MAP } from 'lib/definitions'
+import { DropdownList, DropdownListState } from 'lib/components/shared'
 
 import { AutocompleteProps } from '../../definitions'
-import { CONTROL_SIZE_MAP } from 'lib/definitions'
-import { DropdownList, DropdownListProps } from 'lib/components/shared'
 
 type AutocompleteMainProps = Omit<AutocompleteProps, 'children' | 'defaultValue' | 'value' | 'onChange'> & {
   items: ReactNode[]
@@ -43,9 +43,9 @@ export const AutocompleteMain = ({
   const [queryValue, setQueryValue] = useState<string>('')
   const [filteredItems, setFilteredItems] = useState<AutocompleteMainProps['items']>([])
 
-  const [dropdownListState, setDropdownListState] = useState<DropdownListProps['state']>({
+  const [dropdownListState, setDropdownListState] = useState<DropdownListState>({
     open: false,
-    placement: dropdownPlacement,
+    placement: dropdownPlacement || 'bottom-center',
   })
 
   useLayoutEffect(() => {
@@ -73,7 +73,7 @@ export const AutocompleteMain = ({
   }, [currentValue])
 
   useLayoutEffect(() => {
-    if (!dropdownListState.open) return
+    if (!dropdownListState?.open) return
 
     if (!debounceDelay) {
       setQueryValue(inputValue)
@@ -85,13 +85,13 @@ export const AutocompleteMain = ({
     }, debounceDelay)
 
     return () => clearTimeout(id)
-  }, [inputValue, debounceDelay, dropdownListState.open])
+  }, [inputValue, debounceDelay, dropdownListState?.open])
 
   useLayoutEffect(() => {
-    if (!dropdownListState.open) {
+    if (!dropdownListState?.open) {
       setQueryValue(inputValue)
     }
-  }, [dropdownListState.open])
+  }, [dropdownListState?.open])
 
   return (
     <DropdownList
@@ -116,7 +116,7 @@ export const AutocompleteMain = ({
         setDropdownListState(prev => ({ ...prev, open: true }))
       }}
     >
-      <DropdownList.Trigger tag="div" inlineSize={inlineSize} disabled={disabled} selected={dropdownListState.open}>
+      <DropdownList.Trigger tag="div" inlineSize={inlineSize} disabled={disabled} selected={dropdownListState?.open}>
         <Input
           tagAttrs={{
             'aria-labelledby': tagAttrs?.['aria-labelledby'],
@@ -125,7 +125,7 @@ export const AutocompleteMain = ({
           value={inputValue}
           onChange={value => {
             setInputValue(value)
-            if (!dropdownListState.open) setDropdownListState(prev => ({ ...prev, open: true }))
+            if (!dropdownListState?.open) setDropdownListState(prev => ({ ...prev, open: true }))
             onInputChange?.(value)
           }}
           placeholder={placeholder}
@@ -144,10 +144,10 @@ export const AutocompleteMain = ({
                         e.stopPropagation()
                       },
                     }}
-                    iconName={dropdownListState.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'}
-                    iconAngle={dropdownListState.open ? 180 : 0}
-                    elevated={dropdownListState.open}
-                    interactive={!dropdownListState.open}
+                    iconName={dropdownListState?.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'}
+                    iconAngle={dropdownListState?.open ? 180 : 0}
+                    elevated={dropdownListState?.open}
+                    interactive={!dropdownListState?.open}
                     onClick={() => {
                       setDropdownListState(prev => ({ ...prev, open: !prev.open }))
                     }}
@@ -165,9 +165,9 @@ export const AutocompleteMain = ({
           <DropdownList.Item
             key={index}
             index={index}
-            blockSize={CONTROL_SIZE_MAP[size].blockSize}
-            paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
-            elevated={dropdownListState.open}
+            blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
+            paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
+            elevated={dropdownListState?.open}
             selected={isSelected}
             inlineSize="100%"
             onClick={() => {

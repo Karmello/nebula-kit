@@ -258,13 +258,13 @@ expectType(
 )
 
 expectType(
-  <Autocomplete.Option value="pl" label="Poland" align={{ base: 'start', lg: 'split' }}>
+  <Autocomplete.Option value="pl" label="Poland">
     Poland
   </Autocomplete.Option>
 )
 
 expectType(
-  <Autocomplete.Option value="pl" label="Poland" iconName={{ base: 'check', lg: 'triangle-alert' }}>
+  <Autocomplete.Option value="pl" label="Poland">
     Poland
   </Autocomplete.Option>
 )

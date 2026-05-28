@@ -25,9 +25,9 @@ type ExternalProps = Pick<
 
 export type ProviderContextValue = {
   // refs
-  triggerRef: RefObject<HTMLButtonElement | HTMLAnchorElement | HTMLDivElement>
-  portalRef: RefObject<HTMLDivElement>
-  scrollWrapperRef: RefObject<HTMLDivElement>
+  triggerRef: RefObject<HTMLButtonElement | HTMLAnchorElement | HTMLDivElement | null>
+  portalRef: RefObject<HTMLDivElement | null>
+  scrollWrapperRef: RefObject<HTMLDivElement | null>
   // state
   internalOpen: boolean
   setInternalOpen: (internalOpen: boolean) => void
@@ -44,7 +44,7 @@ export type ProviderContextValue = {
   // props
 } & ExternalProps
 
-const Context = createContext<ProviderContextValue | undefined>(undefined)
+const Context = createContext<ProviderContextValue>({} as ProviderContextValue)
 
 export const DropdownListProvider = ({
   children,

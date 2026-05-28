@@ -1,18 +1,19 @@
 import { cloneElement, ReactNode, RefObject, useCallback, useLayoutEffect, useRef, useState } from 'react'
 
 import { Box, Resize, VirtualList, Divider } from 'lib/components'
-import { Portal, DropdownList } from 'lib/components/shared'
+import { Portal } from 'lib/components/shared'
 import { FloatingResolved, useFloating } from 'lib/internals/positioning'
+import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from 'lib/components/shared/DropdownList/dropdown-list'
 
-import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'
 import { useDropdownListContext } from '../../providers'
+import { DropdownListItem } from '../../slots/DropdownListItem/dropdown-list-item'
 
 export const DropdownListMenu = ({
   items,
   finalItemBlockSize,
   correctedVisibleItemsCount,
 }: {
-  items: Array<unknown>
+  items: ReactNode[]
   finalItemBlockSize: number
   correctedVisibleItemsCount: number
 }) => {
@@ -138,7 +139,7 @@ export const DropdownListMenu = ({
           ) : noOptionsLabel ? (
             <>
               {opensUpDownwards ? <ListItemDivider /> : null}
-              <DropdownList.Item index={0}>{noOptionsLabel}</DropdownList.Item>
+              <DropdownListItem index={0}>{noOptionsLabel}</DropdownListItem>
               {!opensUpDownwards ? <ListItemDivider /> : null}
             </>
           ) : null}

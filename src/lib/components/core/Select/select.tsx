@@ -2,7 +2,7 @@ import { ReactElement, useState } from 'react'
 import classNames from 'classnames'
 
 import { Text, WithIcon } from 'lib/components'
-import { WithSlots, DropdownList, DropdownListProps } from 'lib/components/shared'
+import { WithSlots, DropdownList, DropdownListState } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
@@ -30,9 +30,9 @@ export const Select = ({
   dropdownPlacement,
   staticLabel,
 }: SelectProps) => {
-  const [dropdownListState, setDropdownListState] = useState<DropdownListProps['state']>({
+  const [dropdownListState, setDropdownListState] = useState<DropdownListState>({
     open: false,
-    placement: dropdownPlacement,
+    placement: dropdownPlacement || 'bottom-center',
   })
 
   const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
@@ -75,14 +75,14 @@ export const Select = ({
                 paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
                 inlineSize={inlineSize}
                 disabled={disabled}
-                selected={dropdownListState.open}
-                ripple={!dropdownListState.open}
+                selected={dropdownListState?.open}
+                ripple={!dropdownListState?.open}
               >
                 <WithIcon
-                  iconName={dropdownListState.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'}
+                  iconName={dropdownListState?.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'}
                   iconPlacement="right"
                   justifyContent="space-between"
-                  iconAngle={dropdownListState.open ? 180 : 0}
+                  iconAngle={dropdownListState?.open ? 180 : 0}
                   iconSize={CONTROL_SIZE_MAP[size].iconSize}
                 >
                   <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight} truncate>
@@ -96,7 +96,7 @@ export const Select = ({
                   <DropdownList.Item
                     key={index}
                     index={index}
-                    elevated={dropdownListState.open}
+                    elevated={dropdownListState?.open}
                     selected={index === currentSlotIndex}
                     blockSize={CONTROL_SIZE_MAP[size].blockSize}
                     paddingInline={CONTROL_SIZE_MAP[size].paddingInline}

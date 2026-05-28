@@ -1,4 +1,4 @@
-import { BoxProps, Breadcrumb } from 'lib/components'
+import { BoxProps } from 'lib/components'
 import { DropdownListProps } from 'lib/components/shared'
 import { ControlSize } from 'lib/definitions'
 

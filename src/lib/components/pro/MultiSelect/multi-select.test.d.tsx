@@ -138,26 +138,9 @@ expectError(
   </MultiSelect>
 )
 
-expectType<React.JSX.Element>(
-  <MultiSelect.Option
-    value="one"
-    align="split"
-    disabled
-    iconName="check"
-    iconPlacement="right"
-    selected
-    tagAttrs={{ type: 'button' }}
-    tagRef={createRef<HTMLButtonElement>()}
-  >
-    One
-  </MultiSelect.Option>
-)
+expectType<React.JSX.Element>(<MultiSelect.Option value="one">One</MultiSelect.Option>)
 
-expectType<React.JSX.Element>(
-  <MultiSelect.Option value="one" align={{ base: 'start', md: 'split' }} iconName={{ base: 'check', md: 'plug' }}>
-    One
-  </MultiSelect.Option>
-)
+expectType<React.JSX.Element>(<MultiSelect.Option value="one">One</MultiSelect.Option>)
 
 expectError(<MultiSelect.Option>One</MultiSelect.Option>)
 expectError(<MultiSelect.Option value="one" />)

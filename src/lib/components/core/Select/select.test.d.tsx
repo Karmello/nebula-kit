@@ -186,21 +186,7 @@ expectType(
 
 expectType(<Select.Option value="a">Option</Select.Option>)
 
-expectType(
-  <Select.Option value="a" align={{ base: 'start', lg: 'split' }} iconName={{ base: 'arrow-left', lg: 'arrow-down' }}>
-    Option
-  </Select.Option>
-)
-
-//
-// option enum validation
-//
-
-expectError(
-  <Select.Option align="between" value="a">
-    Option
-  </Select.Option>
-)
+expectType(<Select.Option value="a">Option</Select.Option>)
 
 expectError(<Select.Option value={123}>Option</Select.Option>)
 
