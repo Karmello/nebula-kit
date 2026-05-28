@@ -9,12 +9,12 @@ import { InteractiveCard } from './jsx/interactive-card'
 import { LoginForm } from './jsx/login-form'
 
 // code
-import testCode from './jsx/test?raw'
-import drawableSurfaceCode from './jsx/drawable-surface?raw'
-import stylingIslandCode from './jsx/styling-island?raw'
-import responsiveStackCode from './jsx/responsive-stack?raw'
-import interactiveCardCode from './jsx/interactive-card?raw'
-import loginFormCode from './jsx/login-form?raw'
+import testCode from './jsx/test.tsx?raw'
+import drawableSurfaceCode from './jsx/drawable-surface.tsx?raw'
+import stylingIslandCode from './jsx/styling-island.tsx?raw'
+import responsiveStackCode from './jsx/responsive-stack.tsx?raw'
+import interactiveCardCode from './jsx/interactive-card.tsx?raw'
+import loginFormCode from './jsx/login-form.tsx?raw'
 
 export const PATTERNS: Array<Pattern> = [
   {
