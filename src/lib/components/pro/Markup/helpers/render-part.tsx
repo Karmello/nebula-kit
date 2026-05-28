@@ -12,7 +12,7 @@ export const renderPart = (part: MarkupPart, index: number) => {
 
     case 'token':
       return (
-        <Box key={index} drawable display="inline-block" variant="solid" intent="tertiary" paddingInline="2xs">
+        <Box tag="span" key={index} drawable display="inline-block" variant="solid" intent="tertiary" paddingInline="2xs">
           {part.value}
         </Box>
       )

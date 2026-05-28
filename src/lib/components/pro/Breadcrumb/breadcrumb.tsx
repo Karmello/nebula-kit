@@ -2,7 +2,7 @@ import { useState, Fragment, useCallback } from 'react'
 
 import { Box, Flex, Icon, Text } from 'lib/components'
 import { CONTROL_SIZE_MAP } from 'lib/definitions'
-import { DropdownList } from 'lib/components/shared'
+import { DropdownList, DropdownListState } from 'lib/components/shared'
 
 import { BreadcrumbProps, BreadcrumbTag, DEFAULT_BREADCRUMB_INTENT, DEFAULT_BREADCRUMB_SIZE } from './definitions'
 import { convertTreeToLevels } from './helpers'
@@ -70,8 +70,8 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                 scrollAlign="center"
                 placement={index === 0 || index < levels.length - 1 ? 'bottom-start' : 'bottom-end'}
                 state={{ open: false, placement: 'bottom-center' }}
-                onStateChange={() => {
-                  setOpenIndex(index)
+                onStateChange={(prev: DropdownListState) => {
+                  setOpenIndex(prev.open ? index : -1)
                 }}
               >
                 <DropdownList.Trigger
