@@ -1,3 +1,4 @@
+import { kebabCase } from 'change-case'
 import { PAGE_SECTIONS } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { Box, Button, Flex, Grid, Link, Section, Spacer, Text } from 'lib/components'
@@ -25,7 +26,7 @@ const Family = ({
             <Spacer blockSize="md" />
             <Flex gap="xs">
               {components.map(c => {
-                const { pageKey, categoryKey, itemKey } = PAGE_SECTIONS.find(s => s.itemKey === c.toLowerCase())
+                const { pageKey, categoryKey, itemKey } = PAGE_SECTIONS.find(s => s.itemKey === kebabCase(c))
                 const href = `/${pageKey}/${categoryKey}/${itemKey}/overview`
                 return (
                   <Link key={c} href={href} onClick={() => navigateTo(href)}>
@@ -57,7 +58,7 @@ export const Families = () => {
         heading="Primitives"
         description="All foundational building blocks are exposed for composing UI, allowing application interfaces to be assembled quickly through consistent and predictable composition."
         iconName="puzzle"
-        components={['Box', 'Text']}
+        components={['Box', 'ActionSurface']}
       />
       <Family
         heading="Layout"
@@ -75,7 +76,7 @@ export const Families = () => {
         heading="Forms"
         description="Form components simplify form bootstrapping while remaining consistent with system surfaces and UI."
         iconName="text-select"
-        components={['Form', 'Input']}
+        components={['Form', 'Select']}
       />
     </Grid>
   )
