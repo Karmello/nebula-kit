@@ -1,5 +1,5 @@
-import { useLayoutEffect } from 'react'
-import { useLocation, Navigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 import { useNavigateTo } from 'client/hooks'
 import { PATTERNS, PATTERN_CATEGORIES } from 'client/definitions'
@@ -15,14 +15,16 @@ export const PatternsPage = () => {
   const patternIdParam = new URLSearchParams(search).get('id')
   const pattern = PATTERNS.find(p => p.id === patternIdParam)
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (pattern) {
       setActivePatternId(pattern.id)
+    } else {
+      navigateTo(`${pathname}?id=${activePatternId}`, { replace: true })
     }
   }, [pattern])
 
   if (!pattern) {
-    return <Navigate replace to={{ pathname, search: `?id=${activePatternId}` }} />
+    return null
   }
 
   const Component = pattern.component
