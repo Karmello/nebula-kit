@@ -1,7 +1,5 @@
 import { Box, Image, Section, Spacer, Text } from 'lib/components'
 
-import systemImg from 'client/assets/system.webp'
-
 export default () => {
   return (
     <Box maxInlineSize="55rem">
@@ -13,7 +11,7 @@ export default () => {
         are built from multiple layers. This page shows how those layers fit together at a high level.
       </Text>
       <Spacer blockSize="lg" />
-      <Image src={systemImg} maxBlockSize="400px" />
+      <Image src="/imgs/system.webp" maxBlockSize="400px" />
       <Spacer blockSize="xs" />
       <Text italic intent="secondary" typography="small">
         Detailed explanations of each layer are covered on the Philosophy page.

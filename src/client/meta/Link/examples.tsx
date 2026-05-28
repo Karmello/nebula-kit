@@ -1,8 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { Button, IconButton, Image, Link, LinkProps, Text } from 'lib/components'
 
-import img1 from 'client/assets/img-1.webp'
-
 const LINK_EXAMPLES_META: ComponentMeta<LinkProps>['examples'] = [
   {
     jsx: (
@@ -58,7 +56,7 @@ const LINK_EXAMPLES_META: ComponentMeta<LinkProps>['examples'] = [
     description: 'Using Link together with Image.',
     jsx: (
       <Link href="https://google.com" target="_blank">
-        <Image src={img1} display="inline-block" inlineSize="300px" />
+        <Image src="/imgs/town.webp" display="inline-block" inlineSize="300px" />
       </Link>
     ),
   },

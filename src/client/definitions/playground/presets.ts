@@ -23,7 +23,7 @@ export const PLAYGROUND_PRESETS: Record<string, Array<{ name: string; props: obj
     {
       name: 'Default',
       props: {
-        src: '/src/client/assets/img-2.webp',
+        src: '/imgs/mj23.webp',
       } as Record<PropsFromAvatarKey, unknown>,
     },
   ],

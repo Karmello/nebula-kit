@@ -1,8 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { Box, Image, ImageProps } from 'lib/components'
 
-import img1 from 'client/assets/img-1.webp'
-
 const IMAGE_EXAMPLES_META: ComponentMeta<ImageProps>['examples'] = [
   {
     jsx: <Image />,
@@ -12,7 +10,7 @@ const IMAGE_EXAMPLES_META: ComponentMeta<ImageProps>['examples'] = [
     description: 'Basic image rendering with a defined size.',
     jsx: (
       <Box textAlign="center">
-        <Image src={img1} display="inline-block" inlineSize="300px" />
+        <Image src="/imgs/town.webp" display="inline-block" inlineSize="300px" />
       </Box>
     ),
   },
@@ -20,7 +18,7 @@ const IMAGE_EXAMPLES_META: ComponentMeta<ImageProps>['examples'] = [
     description: 'Rounded image.',
     jsx: (
       <Box textAlign="center">
-        <Image src={img1} display="inline-block" inlineSize="300px" borderRadius="50%" overflow="hidden" />
+        <Image src="/imgs/town.webp" display="inline-block" inlineSize="300px" borderRadius="50%" overflow="hidden" />
       </Box>
     ),
   },
@@ -28,7 +26,14 @@ const IMAGE_EXAMPLES_META: ComponentMeta<ImageProps>['examples'] = [
     description: 'Image constrained by a fixed aspect ratio.',
     jsx: (
       <Box textAlign="center">
-        <Image src={img1} display="inline-block" inlineSize="300px" aspectRatio="16 / 9" objectFit="cover" overflow="hidden" />
+        <Image
+          src="/imgs/town.webp"
+          display="inline-block"
+          inlineSize="300px"
+          aspectRatio="16 / 9"
+          objectFit="cover"
+          overflow="hidden"
+        />
       </Box>
     ),
   },

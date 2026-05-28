@@ -1,8 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 import { Avatar, AvatarProps } from 'lib/components'
 
-import img2 from 'client/assets/img-2.webp'
-
 const AVATAR_EXAMPLES_META: ComponentMeta<AvatarProps>['examples'] = [
   {
     code: '<Avatar src={src} size="sm" />',
@@ -10,15 +8,15 @@ const AVATAR_EXAMPLES_META: ComponentMeta<AvatarProps>['examples'] = [
   },
   {
     description: 'Defalt medium size.',
-    jsx: <Avatar src={img2} />,
+    jsx: <Avatar src="/imgs/mj23.webp" />,
   },
   {
     description: 'The smallest size.',
-    jsx: <Avatar src={img2} size="xs" />,
+    jsx: <Avatar src="/imgs/mj23.webp" size="xs" />,
   },
   {
     description: 'The biggest size.',
-    jsx: <Avatar src={img2} size="2xl" />,
+    jsx: <Avatar src="/imgs/mj23.webp" size="2xl" />,
   },
   {
     description: 'Displaying initials as a fallback when the image cannot be loaded.',
@@ -26,7 +24,7 @@ const AVATAR_EXAMPLES_META: ComponentMeta<AvatarProps>['examples'] = [
   },
   {
     description: 'Square shape.',
-    jsx: <Avatar src={img2} shape="square" />,
+    jsx: <Avatar src="/imgs/mj23.webp" shape="square" />,
   },
 ]
 
