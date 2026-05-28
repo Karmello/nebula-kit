@@ -4,7 +4,6 @@ import { useLocation, Navigate } from 'react-router-dom'
 import { useNavigateTo } from 'client/hooks'
 import { PATTERNS, PATTERN_CATEGORIES } from 'client/definitions'
 import { CodeSnippet } from 'client/components'
-import { convertElemToString } from 'client/helpers'
 import { usePatternsStore } from 'client/store'
 import { Box, Flex, Markup, MultiSelect, Section, SideNav, Spacer, SplitView, Text } from 'lib/components'
 
@@ -26,6 +25,8 @@ export const PatternsPage = () => {
     return <Navigate replace to={{ pathname, search: `?id=${activePatternId}` }} />
   }
 
+  const Component = pattern.component
+
   return (
     <Box paddingTop="sm" paddingInline={{ base: 'md', lg: 'xl' }}>
       <Section size="lg" heading="Patterns" iconName="pyramid">
@@ -44,29 +45,23 @@ export const PatternsPage = () => {
                     </Markup>
                   </SplitView.MainBar>
                   <Spacer blockSize="lg" />
-                  {pattern.jsx ? (
-                    <Flex key={pattern.id} gap="md" flexDirection="column" alignItems="stretch">
-                      <Flex.Item flex="1">
-                        <Box
-                          tagAttrs={{ style: { borderStyle: 'dashed' } }}
-                          drawable
-                          variant="outline"
-                          intent="tertiary"
-                          maxBlockSize="calc(100dvh - 275px)"
-                          padding="sm"
-                        >
-                          {pattern.jsx}
-                        </Box>
-                      </Flex.Item>
-                      <Flex.Item flex="1">
-                        <CodeSnippet
-                          lang="tsx"
-                          code={pattern.code || convertElemToString(pattern.jsx)}
-                          maxBlockSize="calc(100dvh - 275px)"
-                        />
-                      </Flex.Item>
-                    </Flex>
-                  ) : null}
+                  <Flex gap="md" flexDirection="column" alignItems="stretch">
+                    <Flex.Item flex="1">
+                      <Box
+                        tagAttrs={{ style: { borderStyle: 'dashed' } }}
+                        drawable
+                        variant="outline"
+                        intent="tertiary"
+                        maxBlockSize="calc(100dvh - 275px)"
+                        padding="sm"
+                      >
+                        <Component />
+                      </Box>
+                    </Flex.Item>
+                    <Flex.Item flex="1">
+                      <CodeSnippet lang="tsx" code={pattern.code} usage={pattern.usage} maxBlockSize="calc(100dvh - 275px)" />
+                    </Flex.Item>
+                  </Flex>
                 </SplitView.Main>
                 <SplitView.Side inlineSize="350px" paddingRight={{ lg: 'md' }}>
                   <MultiSelect

@@ -1,4 +1,4 @@
-import { JSX } from 'react'
+import { ComponentType } from 'react'
 
 export const PATTERN_CATEGORIES = ['Basic', 'Layout', 'Cards', 'Forms'] as const
 
@@ -9,6 +9,7 @@ export type Pattern = {
   category: PatternCategory
   title: string
   description: string
-  jsx: JSX.Element
-  code?: string
+  component: ComponentType
+  code: string
+  usage?: string
 }

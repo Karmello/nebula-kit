@@ -17,7 +17,7 @@ export const App = () => {
   const { pathname } = useLocation()
   const navigateTo = useNavigateTo()
 
-  const getUser = useGetUser(true, 1000)
+  const getUser = useGetUser(true, 300)
   const logoutUser = useLogoutUser()
 
   const runAsync = async () => {

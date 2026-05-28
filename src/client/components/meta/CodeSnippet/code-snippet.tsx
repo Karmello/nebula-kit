@@ -10,6 +10,7 @@ import { CodeSnippetProps, DEFAULT_MAX_BLOCK_SIZE } from './definitions'
 
 export const CodeSnippet = ({
   code,
+  usage,
   lang = 'log',
   borderRadius = true,
   description,
@@ -23,8 +24,8 @@ export const CodeSnippet = ({
   const [data, setData] = useState<TokensResult>(() => tokenizeCode(code, lang, theme))
 
   useEffect(() => {
-    setData(tokenizeCode(code, lang, theme))
-  }, [theme])
+    setData(tokenizeCode(code + `${usage ? `\n// Render\n${usage}` : ''}`, lang, theme))
+  }, [code, lang, theme])
 
   if (!data) {
     return null

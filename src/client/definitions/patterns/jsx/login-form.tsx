@@ -1,13 +1,7 @@
 import { Box, Form, Input, PasswordInput, Section } from 'lib/components'
 
-import { Pattern } from '../../definitions'
-
-export const LOGIN_FORM: Pattern = {
-  id: 'login-form',
-  category: 'Forms',
-  title: 'Login form',
-  description: 'Simple login form composition.',
-  jsx: (
+export const LoginForm = () => {
+  return (
     <Box inlineSize="350px" maxInlineSize="100%" margin="0 auto">
       <Section size="lg" heading="Log in" iconName="log-in">
         <Form>
@@ -27,5 +21,5 @@ export const LOGIN_FORM: Pattern = {
         </Form>
       </Section>
     </Box>
-  ),
+  )
 }
