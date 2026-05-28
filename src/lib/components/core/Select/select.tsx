@@ -86,7 +86,7 @@ export const Select = ({
                   iconSize={CONTROL_SIZE_MAP[size].iconSize}
                 >
                   <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight} truncate>
-                    {staticLabel || currentSlot}
+                    {staticLabel || currentSlot || 'Select ...'}
                   </Text>
                 </WithIcon>
               </DropdownList.Trigger>

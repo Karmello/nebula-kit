@@ -1,6 +1,6 @@
 import { JSX } from 'react'
 
-export const PATTERN_CATEGORIES = ['Basic', 'Layout', 'Forms'] as const
+export const PATTERN_CATEGORIES = ['Basic', 'Layout', 'Cards', 'Forms'] as const
 
 export type PatternCategory = (typeof PATTERN_CATEGORIES)[number]
 
@@ -10,4 +10,5 @@ export type Pattern = {
   title: string
   description: string
   jsx: JSX.Element
+  code?: string
 }

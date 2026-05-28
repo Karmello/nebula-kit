@@ -55,12 +55,9 @@ expectError(<Divider intent={{ base: 'primary', md: 'danger' }} />)
 // exposed Box props
 expectType(<Divider elevated />)
 
-expectType(<Divider surface="selected" />)
-
-expectType(<Divider surface="dividing" />)
-
-// invalid surface
+// no surface prop
 expectError(<Divider surface="hovered" />)
+expectError(<Divider surface="selected" />)
 
 // tagAttrs exposed
 expectType(

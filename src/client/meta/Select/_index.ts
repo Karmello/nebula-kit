@@ -11,7 +11,7 @@ const SELECT_META: ComponentMeta<SelectProps> = {
     bundle: 'core',
     title: 'Form control for choosing a single option from a list.',
     features: ['supports both controlled and uncontrolled modes'],
-    composedOf: ['Button'],
+    composedOf: ['Text', 'WithIcon'],
     topLevelTags: ['div'],
     slots: ['Select.Option'],
   },

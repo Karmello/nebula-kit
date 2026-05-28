@@ -66,9 +66,11 @@ yarn install
 ### Run the app in development
 
 - **Client with HMR**
+
   ```bash
   yarn dev
   ```
+
   Starts Vite in dev mode with automatic reloads.
 
 - **SSR dev server**
@@ -88,7 +90,7 @@ node build/server/server.prod.js
 
 ```bash
 yarn lint        # ESLint for TS/TSX
-yarn typecheck   # Strict tsc pass with no emit
+yarn ts   # Strict tsc pass with no emit
 yarn test        # Vitest unit tests
 yarn pw          # Playwright tests
 ```

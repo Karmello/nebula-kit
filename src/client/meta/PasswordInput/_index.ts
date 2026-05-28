@@ -14,7 +14,7 @@ const PASSWORD_INPUT_META: ComponentMeta<PasswordInputProps> = {
       'preserves native password input semantics',
       'supports both controlled and uncontrolled modes',
     ],
-    composedOf: ['Input', 'Button'],
+    composedOf: ['Input', 'IconButton'],
     topLevelTags: ['input'],
   },
   props: PASSWORD_INPUT_PROPS_META,

@@ -17,7 +17,7 @@ export default () => {
                 <Text typography="h5" intent="primary" color="red">
                   Building from scratch
                 </Text>
-                <Divider surface="dividing" marginTop="xs" marginBottom="sm" color="red" />
+                <Divider marginTop="xs" marginBottom="sm" color="red" />
                 <Text italic>
                   Building interfaces largely by hand using raw HTML, CSS or frameworks built directly on top of them while
                   manually assembling layouts, accessibility and reusable component architecture.
@@ -42,7 +42,7 @@ export default () => {
                 <Text typography="h5" intent="primary" color="blue">
                   Using NebulaKit
                 </Text>
-                <Divider surface="dividing" marginTop="xs" marginBottom="sm" color="blue" />
+                <Divider marginTop="xs" marginBottom="sm" color="blue" />
                 <Text italic>
                   Building interfaces through a structured component system that reduces repetitive implementation work while
                   preserving consistency, composability and architectural clarity.
@@ -70,7 +70,7 @@ export default () => {
                 <Text typography="h5" intent="primary" color="red">
                   AI-driven development
                 </Text>
-                <Divider surface="dividing" marginTop="xs" marginBottom="sm" color="red" />
+                <Divider marginTop="xs" marginBottom="sm" color="red" />
                 <Text italic>
                   Building interfaces through large-scale automatically generated code where much of the implementation and
                   interface assembly is delegated directly to AI systems.

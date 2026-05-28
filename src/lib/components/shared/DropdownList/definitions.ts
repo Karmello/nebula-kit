@@ -1,5 +1,3 @@
-import { Dispatch, SetStateAction } from 'react'
-
 import { ActionSurfaceProps, BoxProps } from 'lib/components'
 import { PortalPlacement } from 'lib/components/shared/Portal'
 
@@ -29,7 +27,7 @@ export type DropdownListProps = {
   intent?: ActionSurfaceProps['intent']
   // own
   state?: DropdownListState
-  onStateChange?: Dispatch<SetStateAction<DropdownListState>>
+  onStateChange?: (state: DropdownListState) => void
   itemBlockSize?: number
   visibleItemsCount?: number
   openOnFocus?: boolean

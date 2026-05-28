@@ -58,7 +58,7 @@ jobs:
         run: yarn circular
 
       - name: Run typecheck
-        run: yarn typecheck
+        run: yarn ts
 
       - name: Run TSD tests
         run: yarn tsd

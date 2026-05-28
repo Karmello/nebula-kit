@@ -59,7 +59,11 @@ export const PatternsPage = () => {
                         </Box>
                       </Flex.Item>
                       <Flex.Item flex="1">
-                        <CodeSnippet lang="tsx" code={convertElemToString(pattern.jsx)} maxBlockSize="calc(100dvh - 275px)" />
+                        <CodeSnippet
+                          lang="tsx"
+                          code={pattern.code || convertElemToString(pattern.jsx)}
+                          maxBlockSize="calc(100dvh - 275px)"
+                        />
                       </Flex.Item>
                     </Flex>
                   ) : null}

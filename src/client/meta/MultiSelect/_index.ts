@@ -11,7 +11,7 @@ const MULTI_SELECT_META: ComponentMeta<MultiSelectProps> = {
     bundle: 'pro',
     title: 'Form control for choosing multiple options from a list.',
     features: ['supports both controlled and uncontrolled modes'],
-    composedOf: ['Button'],
+    composedOf: ['Text', 'WithIcon'],
     topLevelTags: ['div'],
     slots: ['MultiSelect.Option'],
   },

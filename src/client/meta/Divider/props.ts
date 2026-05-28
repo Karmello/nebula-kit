@@ -16,7 +16,6 @@ const DIVIDER_PROPS_META: ComponentMeta<DividerProps>['props'] = {
   },
   marginBottom: BOX_PROPS_META.marginBottom,
   marginTop: BOX_PROPS_META.marginTop,
-  surface: BOX_PROPS_META.surface,
   tagAttrs: BOX_PROPS_META.tagAttrs,
   tagRef: BOX_PROPS_META.tagRef,
 }

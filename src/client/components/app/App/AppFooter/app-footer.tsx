@@ -10,7 +10,7 @@ export const AppFooter = () => {
     <Footer switchAt="lg" paddingBlock="sm" paddingInline="md" paddingBottom={{ base: 'sm', lg: 'lg' }}>
       <Footer.Section>
         <Text bold>Current release</Text>
-        <Divider marginBottom="sm" intent="tertiary" />
+        <Divider marginBottom="sm" intent="muted" />
         <Text typography="small" italic color="gray" intent="primary">
           NebulaKit is actively developed and released in incremental updates. Each release introduces improvements and
           refinements across the system.
@@ -35,7 +35,7 @@ export const AppFooter = () => {
       </Footer.Section>
       <Footer.Section>
         <Text bold>Community & Support</Text>
-        <Divider marginBottom="sm" intent="tertiary" />
+        <Divider marginBottom="sm" intent="muted" />
         <Text typography="small" italic color="gray" intent="primary">
           This is a closed-source project. There is no public GitHub repository. You can still follow updates, ask questions and
           join the community through the channels below.
@@ -56,7 +56,7 @@ export const AppFooter = () => {
       </Footer.Section>
       <Footer.Section>
         <Text bold>About the author</Text>
-        <Divider marginBottom="sm" intent="tertiary" />
+        <Divider marginBottom="sm" intent="muted" />
         <Text typography="small" italic color="gray" intent="primary">
           The product is designed and maintained by a solo software engineer focused on long-term UI architecture and system
           consistency.
@@ -77,7 +77,7 @@ export const AppFooter = () => {
       </Footer.Section>
       <Footer.Section>
         <Text bold>Legal information</Text>
-        <Divider marginBottom="sm" intent="tertiary" />
+        <Divider marginBottom="sm" intent="muted" />
         <MarkerList gap="0px">
           <MarkerList.Item>
             <Link
