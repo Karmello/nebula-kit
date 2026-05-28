@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import path from 'node:path'
 
 import { defineConfig } from 'tsup'
 
@@ -9,11 +10,17 @@ export default defineConfig({
   format: ['esm'],
   outDir: 'build/server',
   sourcemap: false,
+
   external: ['react', 'react-dom', 'qs', 'object-inspect', 'side-channel'],
-  loader: { '.scss': 'text' },
+
+  loader: {
+    '.scss': 'text',
+  },
 
   esbuildOptions(o) {
-    o.logOverride = { 'ignored-bare-import': 'silent' }
+    o.logOverride = {
+      'ignored-bare-import': 'silent',
+    }
 
     o.plugins = [
       ...(o.plugins || []),
@@ -24,28 +31,23 @@ export default defineConfig({
         setup(build) {
           build.onResolve({ filter: /\?raw$/ }, args => {
             return {
-              path: args.path,
+              path: path.resolve(args.resolveDir, args.path.replace('?raw', '')),
               namespace: 'raw-loader',
-              pluginData: {
-                resolveDir: args.resolveDir,
-              },
             }
           })
 
-          build.onLoad({ filter: /.*/, namespace: 'raw-loader' }, async args => {
-            const resolveDir = args.pluginData.resolveDir
+          build.onLoad(
+            { filter: /.*/, namespace: 'raw-loader' },
 
-            const relativePath = args.path.replace('?raw', '')
+            async args => {
+              const contents = await fs.readFile(args.path, 'utf8')
 
-            const fullPath = new URL(relativePath, `file://${resolveDir}/`)
-
-            const contents = await fs.readFile(fullPath, 'utf8')
-
-            return {
-              contents: `export default ${JSON.stringify(contents)}`,
-              loader: 'js',
+              return {
+                contents: `export default ${JSON.stringify(contents)}`,
+                loader: 'js',
+              }
             }
-          })
+          )
         },
       },
     ]
