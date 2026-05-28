@@ -85,7 +85,7 @@ export const Select = ({
                   iconAngle={dropdownListState.open ? 180 : 0}
                   iconSize={CONTROL_SIZE_MAP[size].iconSize}
                 >
-                  <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight}>
+                  <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight} truncate>
                     {staticLabel || currentSlot}
                   </Text>
                 </WithIcon>

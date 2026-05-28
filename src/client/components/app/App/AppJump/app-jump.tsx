@@ -2,7 +2,7 @@ import { useLayoutEffect, useMemo, useRef, useState } from 'react'
 
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { Autocomplete, Resize, Text } from 'lib/components'
+import { Autocomplete, Resize, Text, WithIcon } from 'lib/components'
 
 import { RESIZE_DURATION, OPTIONS } from './definitions'
 
@@ -84,7 +84,7 @@ export const AppJump = () => {
       <Autocomplete
         key={String(showAppJump)}
         tagRef={autocompleteRef}
-        intent="muted"
+        intent="neutral"
         onChange={value => {
           setShowAppJump(false)
           setTimeout(() => {
@@ -99,8 +99,12 @@ export const AppJump = () => {
       >
         {filtered.map(({ label, href, iconName }) => {
           return (
-            <Autocomplete.Option key={href} value={href} label={href} iconName={iconName}>
-              <Text tagAttrs={{ style: { whiteSpace: 'wrap', lineHeight: 1.1 } }}>{label}</Text>
+            <Autocomplete.Option key={href} value={href} label={href}>
+              <WithIcon iconName={iconName}>
+                <Text tag="span" tagAttrs={{ style: { whiteSpace: 'wrap', lineHeight: 1.1 } }}>
+                  {label}
+                </Text>
+              </WithIcon>
             </Autocomplete.Option>
           )
         })}

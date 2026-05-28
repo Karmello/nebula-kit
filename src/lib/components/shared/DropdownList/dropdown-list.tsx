@@ -46,7 +46,7 @@ export const DropdownList = ({
       childrenToVerify={children}
       slotsConfig={[
         { name: 'DropdownList.Trigger', required: true },
-        { name: 'DropdownList.Item', required: true, allowMultiple: true },
+        { name: 'DropdownList.Item', allowMultiple: true },
       ]}
     >
       {({ slotsByName }) => {

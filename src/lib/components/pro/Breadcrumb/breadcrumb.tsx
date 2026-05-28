@@ -87,6 +87,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                     intent="primary"
                     fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
                     lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
+                    noWrap
                   >
                     {levels[index].find(node => node.value === currentPath[index])?.label || 'Select ...'}
                   </Text>

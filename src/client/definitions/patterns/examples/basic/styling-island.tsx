@@ -12,7 +12,7 @@ export const STYLING_ISLAND: Pattern = {
       <Text typography="h4">Styling island</Text>
       <Text intent="primary">Flipped global app theme and red brand.</Text>
       <Spacer />
-      <Flex gap="xs">
+      <Flex gap="xs" flexWrap="wrap">
         <Button intent="primary">Solid button</Button>
         <Button variant="outline">Outline button</Button>
       </Flex>

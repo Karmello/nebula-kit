@@ -122,6 +122,8 @@ export const DropdownListMenu = ({
               scrollToIndex={scrollToIndex}
               scrollAlign={scrollAlign}
               elevated
+              color={color}
+              intent={intent}
               renderItem={(item: ReactNode, index) => {
                 return (
                   <>
