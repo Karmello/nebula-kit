@@ -1,5 +1,5 @@
 import { useLayoutEffect } from 'react'
-import { useLocation, Navigate } from 'react-router-dom'
+import { useLocation, Navigate } from 'react-router'
 
 import { useNavigateTo } from 'client/hooks'
 import { PATTERNS, PATTERN_CATEGORIES } from 'client/definitions'
