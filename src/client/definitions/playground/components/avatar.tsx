@@ -1,0 +1,16 @@
+import { Avatar, AvatarProps } from 'lib/components'
+
+export type PropsFromAvatarKey = (typeof PROPS_FROM_AVATAR)[number]
+
+export const PROPS_FROM_AVATAR = ['initials', 'shape', 'size', 'src'] as const satisfies readonly (keyof AvatarProps)[]
+
+export const AVATAR_PRESETS = [
+  {
+    name: 'Default',
+    props: {
+      src: '/imgs/mj23.webp',
+    } as Record<PropsFromAvatarKey, unknown>,
+  },
+]
+
+export const AvatarTemplate = (props: any) => <Avatar {...props} />

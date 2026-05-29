@@ -1,8 +1,7 @@
 import { Placement } from '@floating-ui/react'
 
 import { BoxVariant } from 'lib/components/core/Box/definitions'
-
-import { TooltipProps } from './types'
+import { TooltipProps } from 'lib/components/pro/Tooltip/types'
 
 export const TOOLTIP_PLACEMENTS = [
   'top',
