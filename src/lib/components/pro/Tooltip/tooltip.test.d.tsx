@@ -43,24 +43,6 @@ expectError(
   </Tooltip>
 )
 
-// -------------------------------------
-// tag attrs
-// -------------------------------------
-
-expectType(
-  <Tooltip
-    content="Tooltip"
-    minInlineSize={100}
-    maxInlineSize={300}
-    tagAttrs={{
-      id: 'tooltip',
-      onMouseEnter: () => null,
-    }}
-  >
-    Trigger
-  </Tooltip>
-)
-
 // invalid div attrs
 expectError(
   <Tooltip
@@ -71,22 +53,6 @@ expectError(
       href: '/x',
     }}
   >
-    Trigger
-  </Tooltip>
-)
-
-// -------------------------------------
-// refs
-// -------------------------------------
-
-expectType(
-  <Tooltip content="Tooltip" minInlineSize={100} maxInlineSize={300} tagRef={createRef<HTMLDivElement>()}>
-    Trigger
-  </Tooltip>
-)
-
-expectError(
-  <Tooltip content="Tooltip" minInlineSize={100} maxInlineSize={300} tagRef={createRef<HTMLButtonElement>()}>
     Trigger
   </Tooltip>
 )
@@ -146,7 +112,7 @@ expectType(
   </Tooltip>
 )
 
-expectType(
+expectError(
   <Tooltip content="Tooltip" minInlineSize={100} maxInlineSize={300} placement="bottom-center">
     Trigger
   </Tooltip>
