@@ -15,9 +15,8 @@ export const Hero = () => {
     <Flex columnGap="md" rowGap="xl" alignItems="center" flexDirection={{ base: 'column', md: 'row', lg: 'column', xl: 'row' }}>
       <Flex.Item flex="1">
         <Text typography="h5">
-          React UI system designed to produce coherent application interfaces through composable foundations with consistent
-          structure and predictable behavior. Designed to reduce UI entropy and keep interfaces maintainable as products grow over
-          time.
+          React UI system designed to minimize interface development effort, letting you focus on application logic while keeping
+          products consistent, maintainable and resistant to entropy.
         </Text>
         <Spacer blockSize="lg" />
         <Flex columnGap="xs" rowGap="sm" flexWrap="wrap" justifyContent={{ base: 'center', md: 'flex-start' }}>

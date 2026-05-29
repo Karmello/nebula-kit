@@ -7,10 +7,16 @@ const sections = [
 
 export const COMPONENT_CATEGORIES = [
   {
-    key: 'base',
-    label: 'Base',
+    key: 'primitives',
+    label: 'Primitives',
     items: [
       { key: 'box', label: 'Box', sections, bundle: 'core' },
+      { key: 'flex', label: 'Flex', sections, bundle: 'core' },
+      { key: 'grid', label: 'Grid', sections, bundle: 'core' },
+      { key: 'table', label: 'Table', sections, bundle: 'core' },
+      { key: 'text', label: 'Text', sections, bundle: 'core' },
+      { key: 'image', label: 'Image', sections, bundle: 'core' },
+      { key: 'icon', label: 'Icon', sections, bundle: 'core' },
       { key: 'action-surface', label: 'ActionSurface', sections, bundle: 'core' },
     ],
   },
@@ -18,9 +24,6 @@ export const COMPONENT_CATEGORIES = [
     key: 'layout',
     label: 'Layout',
     items: [
-      { key: 'flex', label: 'Flex', sections, bundle: 'core' },
-      { key: 'grid', label: 'Grid', sections, bundle: 'core' },
-      { key: 'table', label: 'Table', sections, bundle: 'core' },
       { key: 'segment', label: 'Segment', sections, bundle: 'core' },
       { key: 'spacer', label: 'Spacer', sections, bundle: 'core' },
       { key: 'divider', label: 'Divider', sections, bundle: 'core' },
@@ -30,19 +33,12 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'typography',
     label: 'Typography',
-    items: [
-      { key: 'text', label: 'Text', sections, bundle: 'core' },
-      { key: 'icon', label: 'Icon', sections, bundle: 'core' },
-      { key: 'markup', label: 'Markup', sections, bundle: 'pro' },
-    ],
+    items: [{ key: 'markup', label: 'Markup', sections, bundle: 'pro' }],
   },
   {
     key: 'images',
     label: 'Images',
-    items: [
-      { key: 'image', label: 'Image', sections, bundle: 'core' },
-      { key: 'avatar', label: 'Avatar', sections, bundle: 'pro' },
-    ],
+    items: [{ key: 'avatar', label: 'Avatar', sections, bundle: 'pro' }],
   },
   {
     key: 'motion',

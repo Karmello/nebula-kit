@@ -48,7 +48,7 @@ export const PLAYGROUND_CONTROLS_MAP: Record<PlaygroundProp, { type: 'array' | '
   mode: { type: 'array' },
   name: { type: 'array' },
   noWrap: { type: 'boolean' },
-  offset: { type: 'string' },
+  offset: { type: 'array' },
   orientation: { type: 'array' },
   padding: { type: 'string' },
   paddingBlock: { type: 'string' },

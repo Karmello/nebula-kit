@@ -14,7 +14,6 @@ export const PROPS_FROM_TOOLTIP = [
   'paddingBlock',
   'paddingInline',
   'placement',
-  'textAlign',
   'variant',
 ] as const satisfies readonly (keyof TooltipProps)[]
 
@@ -22,7 +21,17 @@ export const TOOLTIP_PRESETS = [
   {
     name: 'Default',
     props: {
-      //
+      content: 'This is tooltip content.',
+    } as Record<PropsFromTooltipKey, unknown>,
+  },
+  {
+    name: 'Custom',
+    props: {
+      color: 'blue',
+      intent: 'primary',
+      variant: 'outline',
+      mode: 'click',
+      content: 'This is much much longer tooltip content to display maxInlineSize in action.',
     } as Record<PropsFromTooltipKey, unknown>,
   },
 ]

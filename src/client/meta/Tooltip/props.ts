@@ -1,15 +1,19 @@
 import { ComponentMeta } from 'client/definitions'
 import { TooltipProps } from 'lib/components'
-import { PORTAL_PLACEMENTS } from 'lib/components/shared'
+import { COLORS } from 'lib/definitions'
 
 import {
   DEFAULT_TOOLTIP_INTENT,
+  DEFAULT_TOOLTIP_MAX_INLINE_SIZE,
   DEFAULT_TOOLTIP_MODE,
   DEFAULT_TOOLTIP_OFFSET,
   DEFAULT_TOOLTIP_PADDING,
   DEFAULT_TOOLTIP_PLACEMENT,
   DEFAULT_TOOLTIP_VARIANT,
+  TOOLTIP_INTENTS,
   TOOLTIP_MODES,
+  TOOLTIP_OFFSET,
+  TOOLTIP_PLACEMENTS,
   TOOLTIP_VARIANTS,
 } from 'lib/components/pro/Tooltip/constants'
 
@@ -17,30 +21,32 @@ import { BOX_PROPS_META } from '../Box/props'
 
 const TOOLTIP_PROPS_META: ComponentMeta<TooltipProps>['props'] = {
   children: {
-    ...BOX_PROPS_META.children,
+    options: BOX_PROPS_META.children.options,
     isRequired: true,
+    description: BOX_PROPS_META.children.description,
   },
-  color: BOX_PROPS_META.color,
+  color: {
+    options: COLORS,
+    description: BOX_PROPS_META.color.description,
+  },
   content: {
     options: ['string'],
     isRequired: true,
     description: 'The text content displayed inside the tooltip.',
   },
   intent: {
-    ...BOX_PROPS_META.intent,
+    options: TOOLTIP_INTENTS,
     defaultValue: String(DEFAULT_TOOLTIP_INTENT),
+    description: BOX_PROPS_META.intent.description,
   },
   maxInlineSize: {
-    ...BOX_PROPS_META.maxInlineSize,
     options: ['number'],
-    isRequired: true,
-    isResponsive: false,
+    defaultValue: String(DEFAULT_TOOLTIP_MAX_INLINE_SIZE),
+    description: 'Maximum logical width in pixels.',
   },
   minInlineSize: {
-    ...BOX_PROPS_META.minInlineSize,
     options: ['number'],
-    isRequired: true,
-    isResponsive: false,
+    description: 'Minimum logical width in pixels.',
   },
   mode: {
     options: TOOLTIP_MODES,
@@ -48,9 +54,9 @@ const TOOLTIP_PROPS_META: ComponentMeta<TooltipProps>['props'] = {
     description: 'Controls which interaction opens the tooltip.',
   },
   offset: {
-    options: ['number'],
+    options: TOOLTIP_OFFSET,
     defaultValue: String(DEFAULT_TOOLTIP_OFFSET),
-    description: 'Distance in pixels between the tooltip and its trigger element.',
+    description: 'Distance between the tooltip and its trigger element.',
   },
   padding: {
     ...BOX_PROPS_META.padding,
@@ -59,16 +65,15 @@ const TOOLTIP_PROPS_META: ComponentMeta<TooltipProps>['props'] = {
   paddingBlock: BOX_PROPS_META.paddingBlock,
   paddingInline: BOX_PROPS_META.paddingInline,
   placement: {
-    options: PORTAL_PLACEMENTS,
+    options: TOOLTIP_PLACEMENTS,
     defaultValue: DEFAULT_TOOLTIP_PLACEMENT,
     description:
       'Preferred position of the tooltip relative to its trigger element. The position gets auto-adjusted so the tooltip stays visible.',
   },
-  textAlign: BOX_PROPS_META.textAlign,
   variant: {
-    ...BOX_PROPS_META.variant,
     options: TOOLTIP_VARIANTS,
     defaultValue: String(DEFAULT_TOOLTIP_VARIANT),
+    description: BOX_PROPS_META.variant.description,
   },
 }
 

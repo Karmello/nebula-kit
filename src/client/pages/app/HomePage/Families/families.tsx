@@ -56,9 +56,9 @@ export const Families = () => {
     >
       <Family
         heading="Primitives"
-        description="All foundational building blocks are exposed for composing UI, allowing application interfaces to be assembled quickly through consistent and predictable composition."
+        description="Foundational building blocks for composing higher-level components quickly through consistent, predictable and reusable patterns."
         iconName="puzzle"
-        components={['Box', 'ActionSurface']}
+        components={['Box', 'Flex', 'Text']}
       />
       <Family
         heading="Layout"

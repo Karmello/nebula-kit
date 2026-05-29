@@ -1,6 +1,7 @@
 import type { Placement } from '@floating-ui/react'
 
-import type { BoxVariant } from 'lib/components/core/Box/definitions'
+import { CssTextAlign, TShirtSize } from 'lib/definitions'
+import type { BoxIntent, BoxVariant } from 'lib/components/core/Box/definitions'
 import type { TooltipProps } from 'lib/components/pro/Tooltip/types'
 
 export const TOOLTIP_PLACEMENTS = [
@@ -18,12 +19,15 @@ export const TOOLTIP_PLACEMENTS = [
   'left-end',
 ] as const satisfies readonly Placement[]
 
-export const TOOLTIP_VARIANTS = ['solid', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
+export const TOOLTIP_VARIANTS = ['solid', 'outline'] as const satisfies BoxVariant[]
+export const TOOLTIP_INTENTS = ['muted', 'tertiary', 'secondary', 'primary', 'inverse'] as const satisfies BoxIntent[]
 export const TOOLTIP_MODES = ['hover', 'click'] as const
+export const TOOLTIP_OFFSET = ['xs', 'sm', 'md'] as const satisfies readonly TShirtSize[]
 
 export const DEFAULT_TOOLTIP_VARIANT: TooltipProps['variant'] = 'solid'
 export const DEFAULT_TOOLTIP_INTENT: TooltipProps['intent'] = 'inverse'
-export const DEFAULT_TOOLTIP_PADDING: TooltipProps['padding'] = '10px'
+export const DEFAULT_TOOLTIP_PADDING: TooltipProps['padding'] = 'xs'
 export const DEFAULT_TOOLTIP_PLACEMENT: TooltipProps['placement'] = 'top'
-export const DEFAULT_TOOLTIP_OFFSET: TooltipProps['offset'] = 10
+export const DEFAULT_TOOLTIP_OFFSET: TooltipProps['offset'] = 'xs'
 export const DEFAULT_TOOLTIP_MODE: TooltipProps['mode'] = 'hover'
+export const DEFAULT_TOOLTIP_MAX_INLINE_SIZE: TooltipProps['maxInlineSize'] = 250

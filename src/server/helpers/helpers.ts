@@ -5,7 +5,7 @@ import META from 'client/meta'
 export const DEFAULT_TITLE = 'NebulaKit | React UI System'
 
 export const DEFAULT_DESCRIPTION =
-  'React UI system designed to produce coherent application interfaces through composable foundations with consistent structure and predictable behavior. Designed to reduce UI entropy and keep interfaces maintainable as products grow over time.'
+  'React UI system designed to minimize interface development effort, letting you focus on application logic while keeping products consistent, maintainable and resistant to entropy.'
 
 export const getHtmlMetaData = (path: string): { title: string; description: string } => {
   let title, description

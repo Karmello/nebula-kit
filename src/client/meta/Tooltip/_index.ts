@@ -7,12 +7,15 @@ import { TOOLTIP_EXAMPLES_META } from './examples'
 const TOOLTIP_META: ComponentMeta<TooltipProps> = {
   overview: {
     bundle: 'pro',
-    title: 'Non-interactive, overlaid hint for displaying short, contextual text.',
+    title: 'Non-interactive overlay for displaying short, contextual information.',
+    description:
+      'Tooltip displays supplementary information related to another element. It is intended for brief hints, explanations and labels that appear on demand without disrupting the surrounding interface.',
     features: [
-      'displays short, non-interactive text in an overlaid surface',
-      'supports hover and click interaction modes',
-      'click mode supports outside click, Escape dismissal and applies pointer cursor automatically',
-      'positions itself relative to the trigger with automatic collision handling',
+      'supports hover and click activation modes',
+      'positions itself automatically relative to its trigger',
+      'prevents viewport overflow through collision detection',
+      'supports automatic dismissal via outside click and Escape key',
+      'configurable placement and offset behavior',
     ],
     composedOf: ['Box', 'Text'],
   },

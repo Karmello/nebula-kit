@@ -5,7 +5,7 @@ const TOOLTIP_EXAMPLES_META: ComponentMeta<TooltipProps>['examples'] = [
   {
     description: 'Tooltip using hover mode (default).',
     jsx: (
-      <Tooltip content="This tooltip shows on hover." minInlineSize={200} maxInlineSize={300}>
+      <Tooltip content="This tooltip shows on hover." mode="hover">
         <Icon name="message-circle-question-mark" size="40px" />
       </Tooltip>
     ),
@@ -13,7 +13,7 @@ const TOOLTIP_EXAMPLES_META: ComponentMeta<TooltipProps>['examples'] = [
   {
     description: 'Tooltip using click mode.',
     jsx: (
-      <Tooltip content="This tooltip shows on click." minInlineSize={200} maxInlineSize={300} mode="click">
+      <Tooltip content="This tooltip shows on click." mode="click">
         <Button>Click me</Button>
       </Tooltip>
     ),
