@@ -8,8 +8,8 @@ import { usePatternsStore } from 'client/store'
 import { Box, Flex, Markup, MultiSelect, Section, SideNav, Spacer, SplitView, Text } from 'lib/components'
 
 export const PatternsPage = () => {
-  const navigateTo = useNavigateTo()
   const { pathname, search } = useLocation()
+  const navigateTo = useNavigateTo()
   const { patternCategories, setPatternCategories, activePatternId, setActivePatternId } = usePatternsStore()
 
   const patternIdParam = new URLSearchParams(search).get('id')
@@ -21,9 +21,9 @@ export const PatternsPage = () => {
     }
   }, [pattern])
 
-  // if (!pattern) {
-  //   return <Navigate replace to={{ pathname, search: `?id=${activePatternId}` }} />
-  // }
+  if (!pattern) {
+    return <Navigate replace to={{ pathname, search: `?id=${activePatternId}` }} />
+  }
 
   const Component = pattern.component
 
