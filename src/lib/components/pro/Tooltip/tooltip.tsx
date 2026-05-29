@@ -53,7 +53,7 @@ export const Tooltip = ({
     open,
     onOpenChange: setOpen,
     placement,
-    middleware: [floatingOffset(Number.parseFloat(resolveLengthToken(offset))), flip(), shift()],
+    middleware: [floatingOffset(Number.parseFloat(resolveLengthToken(offset as any))), flip(), shift()],
   })
 
   useLayoutEffect(() => {
@@ -69,7 +69,15 @@ export const Tooltip = ({
 
   return (
     <>
-      <Box tag="span" display="inline-block" tagRef={triggerRef as any} tagAttrs={getReferenceProps() as any}>
+      <Box
+        tag="span"
+        display="inline-block"
+        tagRef={triggerRef as any}
+        tagAttrs={{
+          ...(getReferenceProps() as any),
+          style: { cursor: mode === 'click' ? 'pointer' : undefined },
+        }}
+      >
         {children}
       </Box>
       {open && (
