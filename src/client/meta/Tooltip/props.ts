@@ -7,7 +7,8 @@ import {
   DEFAULT_TOOLTIP_MAX_INLINE_SIZE,
   DEFAULT_TOOLTIP_MODE,
   DEFAULT_TOOLTIP_OFFSET,
-  DEFAULT_TOOLTIP_PADDING,
+  DEFAULT_TOOLTIP_PADDING_INLINE,
+  DEFAULT_TOOLTIP_PADDING_BLOCK,
   DEFAULT_TOOLTIP_PLACEMENT,
   DEFAULT_TOOLTIP_VARIANT,
   TOOLTIP_INTENTS,
@@ -58,12 +59,15 @@ const TOOLTIP_PROPS_META: ComponentMeta<TooltipProps>['props'] = {
     defaultValue: String(DEFAULT_TOOLTIP_OFFSET),
     description: 'Distance between the tooltip and its trigger element.',
   },
-  padding: {
-    ...BOX_PROPS_META.padding,
-    defaultValue: String(DEFAULT_TOOLTIP_PADDING),
+  padding: BOX_PROPS_META.padding,
+  paddingBlock: {
+    ...BOX_PROPS_META.paddingBlock,
+    defaultValue: String(DEFAULT_TOOLTIP_PADDING_BLOCK),
   },
-  paddingBlock: BOX_PROPS_META.paddingBlock,
-  paddingInline: BOX_PROPS_META.paddingInline,
+  paddingInline: {
+    ...BOX_PROPS_META.paddingInline,
+    defaultValue: String(DEFAULT_TOOLTIP_PADDING_INLINE),
+  },
   placement: {
     options: TOOLTIP_PLACEMENTS,
     defaultValue: DEFAULT_TOOLTIP_PLACEMENT,

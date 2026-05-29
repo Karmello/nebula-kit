@@ -1,6 +1,6 @@
 import type { Placement } from '@floating-ui/react'
 
-import { CssTextAlign, TShirtSize } from 'lib/definitions'
+import { TShirtSize } from 'lib/definitions'
 import type { BoxIntent, BoxVariant } from 'lib/components/core/Box/definitions'
 import type { TooltipProps } from 'lib/components/pro/Tooltip/types'
 
@@ -26,7 +26,8 @@ export const TOOLTIP_OFFSET = ['xs', 'sm', 'md'] as const satisfies readonly TSh
 
 export const DEFAULT_TOOLTIP_VARIANT: TooltipProps['variant'] = 'solid'
 export const DEFAULT_TOOLTIP_INTENT: TooltipProps['intent'] = 'inverse'
-export const DEFAULT_TOOLTIP_PADDING: TooltipProps['padding'] = 'xs'
+export const DEFAULT_TOOLTIP_PADDING_BLOCK: TooltipProps['padding'] = 'xs'
+export const DEFAULT_TOOLTIP_PADDING_INLINE: TooltipProps['padding'] = 'sm'
 export const DEFAULT_TOOLTIP_PLACEMENT: TooltipProps['placement'] = 'top'
 export const DEFAULT_TOOLTIP_OFFSET: TooltipProps['offset'] = 'xs'
 export const DEFAULT_TOOLTIP_MODE: TooltipProps['mode'] = 'hover'

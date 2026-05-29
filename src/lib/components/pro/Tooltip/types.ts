@@ -1,7 +1,6 @@
 import type { Placement } from '@floating-ui/react'
 
 import type { BoxProps } from 'lib/components'
-import type { RespValue } from 'lib/definitions'
 
 import { TOOLTIP_INTENTS, TOOLTIP_MODES, TOOLTIP_OFFSET, TOOLTIP_VARIANTS } from './constants'
 import { BoxColor } from 'lib/components/core/Box'
