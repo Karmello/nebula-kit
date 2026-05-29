@@ -55,7 +55,7 @@ export const PropsTable = ({ category, data }: Props) => {
                 </Table.Cell>
                 <Table.Cell>
                   {shouldShowTooltip ? (
-                    <Tooltip content={options.join(', ')} placement="top-center" minInlineSize={100} maxInlineSize={350}>
+                    <Tooltip content={options.join(', ')} placement="top" minInlineSize={100} maxInlineSize={350}>
                       <Text>
                         {visibleOptions}
                         <Text tag="span" noWrap>

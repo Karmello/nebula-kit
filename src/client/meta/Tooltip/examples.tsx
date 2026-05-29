@@ -5,7 +5,7 @@ const TOOLTIP_EXAMPLES_META: ComponentMeta<TooltipProps>['examples'] = [
   {
     description: 'Tooltip using hover mode (default).',
     jsx: (
-      <Tooltip content="This tooltip shows on hover." placement="right-center" minInlineSize={200} maxInlineSize={300}>
+      <Tooltip content="This tooltip shows on hover." minInlineSize={200} maxInlineSize={300}>
         <Icon name="message-circle-question-mark" size="40px" />
       </Tooltip>
     ),

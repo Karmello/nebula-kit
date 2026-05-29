@@ -11,7 +11,7 @@ import {
   DEFAULT_TOOLTIP_VARIANT,
   TOOLTIP_MODES,
   TOOLTIP_VARIANTS,
-} from 'lib/components/pro/Tooltip'
+} from 'lib/components/pro/Tooltip/constants'
 
 import { BOX_PROPS_META } from '../Box/props'
 
@@ -64,8 +64,6 @@ const TOOLTIP_PROPS_META: ComponentMeta<TooltipProps>['props'] = {
     description:
       'Preferred position of the tooltip relative to its trigger element. The position gets auto-adjusted so the tooltip stays visible.',
   },
-  tagAttrs: BOX_PROPS_META.tagAttrs,
-  tagRef: BOX_PROPS_META.tagRef,
   textAlign: BOX_PROPS_META.textAlign,
   variant: {
     ...BOX_PROPS_META.variant,

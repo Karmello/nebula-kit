@@ -11,7 +11,7 @@ export const Test = () => {
       <Box tagRef={anchorRef} display="inline-block" drawable variant="solid" intent="primary">
         Anchor
       </Box>
-      <Portal anchorRef={anchorRef} placement="bottom-center">
+      <Portal anchorRef={anchorRef} placement="bottom-end">
         <Box drawable variant="outline" intent="primary">
           hello
         </Box>

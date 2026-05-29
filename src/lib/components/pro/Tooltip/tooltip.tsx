@@ -1,8 +1,19 @@
-import { cloneElement, isValidElement, useCallback, useEffect, useId, useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 
-import { Box, Text } from 'lib/components'
-import { Portal } from 'lib/components/shared'
-import { FloatingResolved, useFloating } from 'lib/internals/positioning'
+import {
+  useFloating,
+  useHover,
+  useClick,
+  useDismiss,
+  useInteractions,
+  FloatingPortal,
+  offset as floatingOffset,
+  flip,
+  shift,
+  useRole,
+} from '@floating-ui/react'
+
+import { Box } from 'lib/components'
 
 import {
   DEFAULT_TOOLTIP_INTENT,
@@ -11,161 +22,58 @@ import {
   DEFAULT_TOOLTIP_PADDING,
   DEFAULT_TOOLTIP_PLACEMENT,
   DEFAULT_TOOLTIP_VARIANT,
-  TooltipOpenReason,
-  TooltipProps,
-} from './definitions'
+} from './constants'
+
+import { TooltipProps } from './types'
 
 export const Tooltip = ({
   // Box
   children,
-  tagAttrs,
-  tagRef,
-  color,
+  variant = DEFAULT_TOOLTIP_VARIANT,
   intent = DEFAULT_TOOLTIP_INTENT,
+  color,
   padding = DEFAULT_TOOLTIP_PADDING,
   paddingBlock,
   paddingInline,
   textAlign,
-  minInlineSize,
-  maxInlineSize,
   // own
   content,
+  minInlineSize,
+  maxInlineSize,
   placement = DEFAULT_TOOLTIP_PLACEMENT,
   mode = DEFAULT_TOOLTIP_MODE,
   offset = DEFAULT_TOOLTIP_OFFSET,
-  variant = DEFAULT_TOOLTIP_VARIANT,
 }: TooltipProps) => {
   const [open, setOpen] = useState(false)
-  const [openReason, setOpenReason] = useState<TooltipOpenReason | null>(null)
-  const [floatingResolved, setFloatingResolved] = useState<FloatingResolved>()
 
-  const localRef = useRef(null)
+  const triggerRef = useRef(null)
 
-  const triggerRef = tagRef || localRef
+  const { refs, floatingStyles, context } = useFloating({
+    open,
+    onOpenChange: setOpen,
+    placement,
+    middleware: [floatingOffset(offset), flip(), shift()],
+  })
 
-  const tooltipId = useId()
-
-  useEffect(() => {
-    if (!open || mode !== 'click') return
-
-    const onDocumentMouseDown = (e: MouseEvent) => {
-      const target = e.target as Node
-
-      if (triggerRef.current && !triggerRef.current.contains(target)) {
-        setOpen(false)
-        setOpenReason(null)
-      }
-    }
-
-    const onDocumentKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setOpen(false)
-        setOpenReason(null)
-      }
-    }
-
-    document.addEventListener('mousedown', onDocumentMouseDown)
-    document.addEventListener('keydown', onDocumentKeyDown)
-
-    return () => {
-      document.removeEventListener('mousedown', onDocumentMouseDown)
-      document.removeEventListener('keydown', onDocumentKeyDown)
-    }
-  }, [open, mode, triggerRef])
-
-  const eventHandlers = {
-    onMouseEnter: () => {
-      if (mode === 'hover' && !open) {
-        setOpen(true)
-        setOpenReason('hover')
-      }
-    },
-
-    onMouseLeave: () => {
-      if (openReason === 'hover') {
-        setOpen(false)
-        setOpenReason(null)
-      }
-    },
-
-    onClick: () => {
-      if (mode === 'click') {
-        setOpen(prev => !prev)
-        setOpenReason(prev => (prev === 'click' ? null : 'click'))
-      }
-    },
-  }
-
-  const handleResolve = useCallback((resolved: FloatingResolved) => {
-    setFloatingResolved(prev => {
-      if (prev && prev.placement === resolved.placement && prev.blockSize === resolved.blockSize) {
-        return prev
-      }
-
-      return resolved
-    })
+  useLayoutEffect(() => {
+    refs.setReference(triggerRef.current)
   }, [])
 
-  useFloating({
-    enabled: open,
-    anchorRef: triggerRef,
-    placement,
-    mode: 'project-both',
-    minInlineSize,
-    maxInlineSize,
-    offset,
-    onResolve: handleResolve,
-  })
+  const hover = useHover(context, { enabled: mode === 'hover' })
+  const click = useClick(context, { enabled: mode === 'click' })
+  const dismiss = useDismiss(context)
+  const role = useRole(context, { role: 'tooltip' })
+
+  const { getReferenceProps, getFloatingProps } = useInteractions([hover, click, dismiss, role])
 
   return (
     <>
-      {isValidElement(children) ? (
-        cloneElement(children as any, {
-          tagRef: triggerRef,
-          tagAttrs: {
-            ...(children as any).props.tagAttrs,
-            ...eventHandlers,
-            'aria-describedby': open ? tooltipId : undefined,
-            style: {
-              ...(children as any).props.tagAttrs?.style,
-              cursor: mode === 'click' ? 'pointer' : undefined,
-            },
-          },
-        })
-      ) : (
-        <Box
-          tag="span"
-          tagRef={triggerRef}
-          tagAttrs={{
-            ...tagAttrs,
-            ...eventHandlers,
-            'aria-describedby': open ? tooltipId : undefined,
-            style: {
-              ...tagAttrs?.style,
-              cursor: mode === 'click' ? 'pointer' : undefined,
-            },
-          }}
-          display="inline-block"
-        >
-          {children}
-        </Box>
-      )}
-      {open ? (
-        <Portal anchorRef={triggerRef} placement={floatingResolved?.placement || placement} offset={offset}>
-          <Box
-            tagAttrs={{
-              role: 'tooltip',
-              id: tooltipId,
-              'aria-hidden': !open,
-            }}
-            drawable
-            color={color}
-            intent="neutral"
-            variant="solid"
-            pointerEvents="none"
-            minInlineSize={`${minInlineSize}px`}
-            maxInlineSize={`${maxInlineSize}px`}
-          >
+      <Box tag="span" display="inline-block" tagRef={triggerRef as any} tagAttrs={getReferenceProps() as any}>
+        {children}
+      </Box>
+      {open && (
+        <FloatingPortal>
+          <Box tagRef={refs.setFloating as any} tagAttrs={{ style: floatingStyles, ...getFloatingProps() }}>
             <Box
               drawable
               variant={variant}
@@ -175,14 +83,12 @@ export const Tooltip = ({
               paddingBlock={paddingBlock}
               paddingInline={paddingInline}
               textAlign={textAlign}
-              blockSize="100%"
-              inlineSize="100%"
             >
-              <Text>{content}</Text>
+              {content}
             </Box>
           </Box>
-        </Portal>
-      ) : null}
+        </FloatingPortal>
+      )}
     </>
   )
 }
