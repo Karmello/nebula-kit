@@ -10,6 +10,7 @@ export default defineConfig({
       client: path.resolve(__dirname, 'src/client'),
       lib: path.resolve(__dirname, 'src/lib'),
     },
+    dedupe: ['react', 'react-dom'],
   },
   css: {
     preprocessorOptions: {
@@ -34,14 +35,9 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            // if (id.includes('/react-dom')) return 'react-dom'
-            if (id.includes('/react-router')) return 'react-router'
-            if (id.includes('/react/')) return 'react'
-            if (id.includes('/classnames')) return 'classnames'
             return 'vendor'
           }
 
-          // CRITICAL
           if (id.includes('/src/lib/')) {
             return 'nebulakit'
           }
