@@ -21,9 +21,9 @@ export const PatternsPage = () => {
     }
   }, [pattern])
 
-  if (!pattern) {
-    return <Navigate replace to={{ pathname, search: `?id=${activePatternId}` }} />
-  }
+  // if (!pattern) {
+  //   return <Navigate replace to={{ pathname, search: `?id=${activePatternId}` }} />
+  // }
 
   const Component = pattern.component
 
