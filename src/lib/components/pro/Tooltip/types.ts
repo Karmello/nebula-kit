@@ -1,7 +1,7 @@
-import { Placement } from '@floating-ui/react'
+import type { Placement } from '@floating-ui/react'
 
-import { BoxProps } from 'lib/components'
-import { RespValue } from 'lib/definitions'
+import type { BoxProps } from 'lib/components'
+import type { RespValue } from 'lib/definitions'
 
 import { TOOLTIP_MODES, TOOLTIP_VARIANTS } from './constants'
 

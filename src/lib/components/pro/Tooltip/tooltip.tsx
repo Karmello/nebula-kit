@@ -24,7 +24,7 @@ import {
   DEFAULT_TOOLTIP_VARIANT,
 } from './constants'
 
-import { TooltipProps } from './types'
+import type { TooltipProps } from './types'
 
 export const Tooltip = ({
   // Box
