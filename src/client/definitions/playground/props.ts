@@ -14,6 +14,7 @@ import { PROPS_FROM_SWITCH } from './components/switch'
 import { PROPS_FROM_TABLE } from './components/table'
 import { PROPS_FROM_TABS } from './components/tabs'
 import { PROPS_FROM_TEXT } from './components/text'
+import { PROPS_FROM_TOOLTIP } from './components/tooltip'
 import { PROPS_FROM_WITH_ICON } from './components/with-icon'
 
 export const PLAYGROUND_PROPS_MAP: Record<string, readonly string[]> = {
@@ -33,5 +34,6 @@ export const PLAYGROUND_PROPS_MAP: Record<string, readonly string[]> = {
   Tabs: PROPS_FROM_TABS,
   Table: PROPS_FROM_TABLE,
   Text: PROPS_FROM_TEXT,
+  Tooltip: PROPS_FROM_TOOLTIP,
   WithIcon: PROPS_FROM_WITH_ICON,
 }

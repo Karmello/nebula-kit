@@ -14,6 +14,7 @@ import { SWITCH_PRESETS } from './components/switch'
 import { TABLE_PRESETS } from './components/table'
 import { TABS_PRESETS } from './components/tabs'
 import { TEXT_PRESETS } from './components/text'
+import { TOOLTIP_PRESETS } from './components/tooltip'
 import { WITH_ICON_PRESETS } from './components/with-icon'
 
 export const PLAYGROUND_PRESETS: Record<string, Array<{ name: string; props: object }>> = {
@@ -33,5 +34,6 @@ export const PLAYGROUND_PRESETS: Record<string, Array<{ name: string; props: obj
   Table: TABLE_PRESETS,
   Tabs: TABS_PRESETS,
   Text: TEXT_PRESETS,
+  Tooltip: TOOLTIP_PRESETS,
   WithIcon: WITH_ICON_PRESETS,
 }

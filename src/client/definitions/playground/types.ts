@@ -14,6 +14,7 @@ import { PropsFromSwitchKey } from './components/switch'
 import { PropsFromTableKey } from './components/table'
 import { PropsFromTabsKey } from './components/tabs'
 import { PropsFromTextKey } from './components/text'
+import { PropsFromTooltipKey } from './components/tooltip'
 import { PropsFromWithIconKey } from './components/with-icon'
 
 export type PlaygroundProp =
@@ -33,4 +34,5 @@ export type PlaygroundProp =
   | PropsFromTableKey
   | PropsFromTabsKey
   | PropsFromTextKey
+  | PropsFromTooltipKey
   | PropsFromWithIconKey
