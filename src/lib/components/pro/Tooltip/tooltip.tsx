@@ -82,7 +82,16 @@ export const Tooltip = ({
       </Box>
       {open && (
         <FloatingPortal>
-          <Box tagRef={refs.setFloating as any} tagAttrs={{ style: floatingStyles, ...getFloatingProps() }}>
+          <Box
+            tagRef={refs.setFloating as any}
+            tagAttrs={{
+              style: {
+                ...floatingStyles,
+                zIndex: 'var(--neb-z-tooltip)',
+              },
+              ...getFloatingProps(),
+            }}
+          >
             <Box
               drawable
               variant={variant}
