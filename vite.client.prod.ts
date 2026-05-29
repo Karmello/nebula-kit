@@ -31,22 +31,22 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       input: path.resolve(__dirname, 'index.html'),
-      // output: {
-      //   manualChunks(id) {
-      //     if (id.includes('node_modules')) {
-      //       if (id.includes('/react-dom')) return 'react-dom'
-      //       if (id.includes('/react-router')) return 'react-router'
-      //       if (id.includes('/react/')) return 'react'
-      //       if (id.includes('/classnames')) return 'classnames'
-      //       return 'vendor'
-      //     }
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('/react-dom')) return 'react-dom'
+            if (id.includes('/react-router')) return 'react-router'
+            // if (id.includes('/react/')) return 'react'
+            if (id.includes('/classnames')) return 'classnames'
+            return 'vendor'
+          }
 
-      //     // CRITICAL
-      //     if (id.includes('/src/lib/')) {
-      //       return 'nebulakit'
-      //     }
-      //   },
-      // },
+          // CRITICAL
+          if (id.includes('/src/lib/')) {
+            return 'nebulakit'
+          }
+        },
+      },
     },
   },
 })
