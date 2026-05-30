@@ -25,13 +25,7 @@ export default () => {
           <Text bold intent="primary">
             Variant
           </Text>
-          <Select
-            value={variant}
-            onChange={value => setVariant(value as BoxVariant)}
-            inlineSize="140px"
-            size="sm"
-            scrollAlign="center"
-          >
+          <Select value={variant} onChange={value => setVariant(value as BoxVariant)} inlineSize="140px" size="sm">
             {BOX_VARIANTS.map(variant => (
               <Select.Option value={variant}>{sentenceCase(variant)}</Select.Option>
             ))}
@@ -41,7 +35,7 @@ export default () => {
           <Text bold intent="primary">
             State
           </Text>
-          <Select value={state} onChange={value => setState(value as State)} inlineSize="130px" size="sm" scrollAlign="center">
+          <Select value={state} onChange={value => setState(value as State)} inlineSize="130px" size="sm">
             {STATES.map(state => (
               <Select.Option value={state}>{sentenceCase(state)}</Select.Option>
             ))}

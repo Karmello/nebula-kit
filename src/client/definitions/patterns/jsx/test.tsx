@@ -1,21 +1,15 @@
-import { useRef } from 'react'
-
-import { Box } from 'lib/components'
-import { Portal } from 'lib/components/shared'
+import { Box, Select } from 'lib/components'
 
 export const Test = () => {
-  const anchorRef = useRef(null)
-
   return (
     <>
-      <Box tagRef={anchorRef} display="inline-block" drawable variant="solid" intent="primary">
-        Anchor
+      <Box drawable variant="solid" intent="primary" padding="3xl">
+        <Select variant="outline">
+          <Select.Option value="option-1">Option 1</Select.Option>
+          <Select.Option value="option-2">Option 2</Select.Option>
+          <Select.Option value="option-3">Option 3</Select.Option>
+        </Select>
       </Box>
-      <Portal anchorRef={anchorRef} placement="bottom-end">
-        <Box drawable variant="outline" intent="primary">
-          hello
-        </Box>
-      </Portal>
     </>
   )
 }

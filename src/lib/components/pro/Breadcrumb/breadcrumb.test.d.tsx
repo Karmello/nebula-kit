@@ -219,5 +219,3 @@ expectError(<Breadcrumb tree={[]} flex="1" />)
 expectError(<Breadcrumb tree={[]} variant="solid" />)
 
 expectError(<Breadcrumb tree={[]} inlineSize="md" />)
-
-expectError(<Breadcrumb tree={[]} dropdownPlacement="top-start" />)

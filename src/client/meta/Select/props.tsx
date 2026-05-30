@@ -2,16 +2,16 @@ import { ComponentMeta } from 'client/definitions'
 import { SelectProps } from 'lib/components'
 import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 import { BOX_INTENTS } from 'lib/components/core/Box/definitions'
-import { DROPDOWN_LIST_PLACEMENTS, DROPDOWN_LIST_SCROLL_ALIGN } from 'lib/components/shared'
+import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from 'lib/components/shared/DropdownList/dropdown-list'
 
 import {
-  DEFAULT_DROPDOWN_LIST_PLACEMENT,
-  DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
-  DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
-} from 'lib/components/shared/DropdownList/dropdown-list'
+  DEFAULT_SELECT_INLINE_SIZE,
+  DEFAULT_SELECT_INTENT,
+  DEFAULT_SELECT_VARIANT,
+  SELECT_VARIANTS,
+} from 'lib/components/core/Select/constants'
 
 import { BOX_PROPS_META } from '../Box/props'
-import { DEFAULT_SELECT_INLINE_SIZE } from 'lib/components/core/Select/constants'
 
 const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
   children: {
@@ -28,28 +28,20 @@ const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
     description: 'Initial selected item value when the component is used in uncontrolled mode.',
   },
   disabled: BOX_PROPS_META.disabled,
-  dropdownPlacement: {
-    options: DROPDOWN_LIST_PLACEMENTS,
-    defaultValue: DEFAULT_DROPDOWN_LIST_PLACEMENT,
-    description:
-      'Defines the preferred placement of the dropdown relative to the trigger. The final placement may be adjusted automatically to keep the list visible.',
-  },
   inlineSize: {
-    ...BOX_PROPS_META.inlineSize,
+    options: BOX_PROPS_META.inlineSize.options,
     defaultValue: String(DEFAULT_SELECT_INLINE_SIZE),
+    isResponsive: true,
+    description: BOX_PROPS_META.inlineSize.description,
   },
   intent: {
     options: BOX_INTENTS,
-    description: 'Color tone applied to the component.',
+    defaultValue: DEFAULT_SELECT_INTENT,
+    description: BOX_PROPS_META.intent.description,
   },
   onChange: {
     options: ['(value: string) => void'],
     description: 'Callback fired when the selected value changes.',
-  },
-  scrollAlign: {
-    options: DROPDOWN_LIST_SCROLL_ALIGN,
-    defaultValue: DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
-    description: 'Defines how the selected option is positioned within the scroll area.',
   },
   size: {
     options: CONTROL_SIZES,
@@ -62,11 +54,14 @@ const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
     description:
       'Displays a fixed label instead of the selected value. Useful for navigation-style selects where the trigger text should stay constant.',
   },
-  tagAttrs: BOX_PROPS_META.tagAttrs,
-  tagRef: BOX_PROPS_META.tagRef,
   value: {
     options: ['string'],
     description: 'Current selected item value when the component is used in controlled mode.',
+  },
+  variant: {
+    options: SELECT_VARIANTS,
+    defaultValue: DEFAULT_SELECT_VARIANT,
+    description: BOX_PROPS_META.variant.description,
   },
   visibleItemsCount: {
     options: ['number'],

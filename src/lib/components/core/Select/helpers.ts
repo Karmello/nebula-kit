@@ -1,22 +1,27 @@
 import { resolveLengthToken } from 'lib/helpers'
 
-export const resolveBlockSizes = ({
+export const resolveSelectValues = ({
   visibleItemsCount,
   optionBlockSize,
   itemsCount,
+  removeSingleDivider,
 }: {
   visibleItemsCount: number
   optionBlockSize: number
   itemsCount: number
-}): { menuBlockSize: number; menuScrollingBlockSize: number } => {
+  removeSingleDivider: boolean
+}): { menuBlockSize: number; menuScrollingBlockSize: number; finalVisibleItemsCount: number } => {
   const finalVisibleItemsCount = Math.min(itemsCount, visibleItemsCount)
 
-  const menuBlockSize =
-    finalVisibleItemsCount * optionBlockSize + (finalVisibleItemsCount - 1) * Number.parseFloat(resolveLengthToken('3xs'))
-  const menuScrollingBlockSize = itemsCount * optionBlockSize + (itemsCount - 1) * Number.parseFloat(resolveLengthToken('3xs'))
+  const countOffset = removeSingleDivider ? 1 : 0
+  const dividerSize = Number.parseFloat(resolveLengthToken('3xs'))
+
+  const menuBlockSize = finalVisibleItemsCount * optionBlockSize + (finalVisibleItemsCount - countOffset) * dividerSize
+  const menuScrollingBlockSize = itemsCount * optionBlockSize + (itemsCount - countOffset) * dividerSize
 
   return {
     menuBlockSize,
     menuScrollingBlockSize,
+    finalVisibleItemsCount,
   }
 }

@@ -153,7 +153,7 @@ export const CONTROL_SIZE_MAP: Record<
     paddingInline: '16px',
     fontSize: TEXT_TYPOGRAPHY_MAP.body.fontSize,
     lineHeight: TEXT_TYPOGRAPHY_MAP.body.lineHeight,
-    iconSize: TEXT_TYPOGRAPHY_MAP.h3.iconSize,
+    iconSize: TEXT_TYPOGRAPHY_MAP.body.iconSize,
     iconGap: LENGTH_SCALE.sm,
     loaderSize: '27px',
   },

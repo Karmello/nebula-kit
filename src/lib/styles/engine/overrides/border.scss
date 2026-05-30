@@ -6,6 +6,7 @@
       --border-hover: hsl(var(--h) var(--s) var(--main-muted-l-hover));
       --border-active: hsl(var(--h) var(--s) var(--main-muted-l-active));
       --border-disabled: hsl(var(--h) var(--s) var(--main-muted-l) / 0.5);
+      --border-selected: hsl(var(--h) var(--s) var(--main-muted-l-selected));
     }
   }
 }

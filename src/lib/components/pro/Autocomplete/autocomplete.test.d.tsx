@@ -100,14 +100,6 @@ expectError(
 )
 
 expectError(
-  <Autocomplete dropdownPlacement={{ base: 'top-start' }}>
-    <Autocomplete.Option value="pl" label="Poland">
-      Poland
-    </Autocomplete.Option>
-  </Autocomplete>
-)
-
-expectError(
   <Autocomplete debounceDelay={{ base: 100 }}>
     <Autocomplete.Option value="pl" label="Poland">
       Poland
@@ -137,14 +129,6 @@ expectError(
 
 expectType(
   <Autocomplete size="xl">
-    <Autocomplete.Option value="pl" label="Poland">
-      Poland
-    </Autocomplete.Option>
-  </Autocomplete>
-)
-
-expectError(
-  <Autocomplete dropdownPlacement="left">
     <Autocomplete.Option value="pl" label="Poland">
       Poland
     </Autocomplete.Option>

@@ -23,16 +23,6 @@ const SELECT_EXAMPLES_META: ComponentMeta<SelectProps>['examples'] = [
     ),
   },
   {
-    description: 'Select configured to open above the trigger element.',
-    jsx: (
-      <Select defaultValue="option-1" inlineSize="200px" dropdownPlacement="top-start">
-        <Select.Option value="option-1">Option 1</Select.Option>
-        <Select.Option value="option-2">Option 2</Select.Option>
-        <Select.Option value="option-3">Option 3</Select.Option>
-      </Select>
-    ),
-  },
-  {
     description: 'Disabled Select.',
     jsx: (
       <Select defaultValue="option-1" inlineSize="200px" disabled>

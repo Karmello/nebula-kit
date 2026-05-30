@@ -5,12 +5,11 @@ export type PropsFromSelectKey = (typeof PROPS_FROM_SELECT)[number]
 export const PROPS_FROM_SELECT = [
   'color',
   'disabled',
-  'dropdownPlacement',
   'inlineSize',
   'intent',
-  'scrollAlign',
   'size',
   'staticLabel',
+  'variant',
   'visibleItemsCount',
 ] as const satisfies readonly (keyof SelectProps)[]
 

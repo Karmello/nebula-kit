@@ -20,7 +20,7 @@ export const ComponentSelect = () => {
         </Tooltip>
       </Flex>
       <Spacer blockSize="2xs" />
-      <Select value={activeComponent} onChange={setActiveComponent} scrollAlign="center">
+      <Select value={activeComponent} onChange={setActiveComponent}>
         {Object.keys(components).map(name => (
           <Select.Option value={name}>{name}</Select.Option>
         ))}

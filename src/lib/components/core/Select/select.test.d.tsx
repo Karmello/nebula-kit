@@ -38,22 +38,6 @@ expectType(
   </Select>
 )
 
-//
-// responsive inherited props
-//
-
-expectType(
-  <Select color={{ base: 'blue', lg: 'red' }}>
-    <Select.Option value="a">A</Select.Option>
-  </Select>
-)
-
-expectType(
-  <Select intent={{ base: 'primary', lg: 'secondary' }}>
-    <Select.Option value="a">A</Select.Option>
-  </Select>
-)
-
 expectType(
   <Select inlineSize={{ base: '100%', lg: '400px' }}>
     <Select.Option value="a">A</Select.Option>
@@ -66,12 +50,6 @@ expectType(
 
 expectError(
   <Select size={{ base: 'sm', lg: 'md' }}>
-    <Select.Option value="a">A</Select.Option>
-  </Select>
-)
-
-expectError(
-  <Select dropdownPlacement={{ base: 'top-start' }}>
     <Select.Option value="a">A</Select.Option>
   </Select>
 )
@@ -94,12 +72,6 @@ expectError(
 
 expectType(
   <Select size="xl">
-    <Select.Option value="a">A</Select.Option>
-  </Select>
-)
-
-expectError(
-  <Select dropdownPlacement="left">
     <Select.Option value="a">A</Select.Option>
   </Select>
 )
@@ -155,27 +127,7 @@ expectError(
 )
 
 expectError(
-  <Select variant="solid">
-    <Select.Option value="a">A</Select.Option>
-  </Select>
-)
-
-expectError(
   <Select tag="button">
-    <Select.Option value="a">A</Select.Option>
-  </Select>
-)
-
-//
-// root contract
-//
-
-expectType(
-  <Select
-    tagAttrs={{
-      id: 'country',
-    }}
-  >
     <Select.Option value="a">A</Select.Option>
   </Select>
 )

@@ -23,7 +23,7 @@ export const PropSelect = () => {
         </Tooltip>
       </Flex>
       <Spacer blockSize="2xs" />
-      <Select value={value} onChange={value => setActiveProp(activeComponent, value)} scrollAlign="center">
+      <Select value={value} onChange={value => setActiveProp(activeComponent, value)}>
         {Object.keys(props)
           .sort()
           .map(propName => (

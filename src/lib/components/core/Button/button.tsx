@@ -64,15 +64,13 @@ export const Button = <T extends ButtonTag = 'button'>({
     syncRespDataset('Button', finalRef, bp, { fullWidth })
   }, [bp, fullWidth])
 
-  const isSquare = children === undefined || size === '2xs'
-
   return (
     <ActionSurface
       tag={tag}
       tagAttrs={
         {
           ...tagAttrs,
-          className: classNames(withPrefix('button'), isSquare ? withPrefix('button-square') : undefined, tagAttrs?.className),
+          className: classNames(withPrefix('button'), tagAttrs?.className),
         } as PropsWithoutRef<ComponentProps<T>>
       }
       tagRef={finalRef}
@@ -80,7 +78,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       color={color}
       intent={intent}
       disabled={disabled || loading}
-      inlineSize={isSquare ? CONTROL_SIZE_MAP[size || 'md'].blockSize : inlineSize}
+      inlineSize={inlineSize}
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
       interactive={interactive}
@@ -101,25 +99,23 @@ export const Button = <T extends ButtonTag = 'button'>({
         justifyContent={align === 'split' ? 'space-between' : align === 'center' ? 'center' : 'flex-start'}
         gap={CONTROL_SIZE_MAP[size || 'md'].iconGap}
       >
-        {!isSquare ? (
-          <Flex tag="span" tagAttrs={{ style: { minInlineSize: 0 } }} flexDirection="column">
-            <Text
-              tag="span"
-              fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
-              lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
-              bold={bold}
-              textAlign={align === 'center' ? 'center' : undefined}
-              truncate
-            >
-              {children}
+        <Flex tag="span" tagAttrs={{ style: { minInlineSize: 0 } }} flexDirection="column">
+          <Text
+            tag="span"
+            fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
+            lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
+            bold={bold}
+            textAlign={align === 'center' ? 'center' : undefined}
+            truncate
+          >
+            {children}
+          </Text>
+          {description && size === 'xl' ? (
+            <Text tag="span" typography="small" textAlign={align === 'center' ? 'center' : undefined} truncate>
+              {description}
             </Text>
-            {description && size === 'xl' ? (
-              <Text tag="span" typography="small" textAlign={align === 'center' ? 'center' : undefined} truncate>
-                {description}
-              </Text>
-            ) : null}
-          </Flex>
-        ) : null}
+          ) : null}
+        </Flex>
       </WithIcon>
       {loading && !disabled ? <Loader centered size={CONTROL_SIZE_MAP[size || 'md'].loaderSize} /> : null}
     </ActionSurface>

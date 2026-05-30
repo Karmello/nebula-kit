@@ -51,7 +51,6 @@ export const UserActionMenu = () => {
         />
         <Select
           intent="muted"
-          dropdownPlacement="bottom-end"
           staticLabel="Profile"
           value={currentPageKey}
           onChange={async value => {

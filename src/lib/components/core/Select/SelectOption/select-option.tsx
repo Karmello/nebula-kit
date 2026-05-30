@@ -11,32 +11,36 @@ export const SelectOption = ({
   // internal
   ...internalProps
 }: SelectOptionProps) => {
-  const { tagRef, tagAttrs, color, intent, selected, size, variant, isLast } = internalProps as SelectOptionInternalProps
+  const { tagRef, tagAttrs, color, intent, selected, size, variant, isOpeningUpwards, isFirst } =
+    internalProps as SelectOptionInternalProps
 
   return (
     <>
+      {isOpeningUpwards && (variant !== 'outline' || !isFirst) ? (
+        <Divider intent={variant === 'outline' ? 'neutral' : intent} color={color} elevated marginBlock="0px" />
+      ) : null}
       <ActionSurface
         tagRef={tagRef}
         tagAttrs={{
           tabIndex: -1,
           ...tagAttrs,
-          style: { ...tagAttrs.style, border: '0px' },
+          style: { ...tagAttrs?.style, border: '0px' },
         }}
         variant={variant}
         intent={intent}
         color={color}
         inlineSize="100%"
-        blockSize={CONTROL_SIZE_MAP[size].blockSize}
-        paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
+        blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
+        paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
         selected={selected}
         elevated
         borderRadius="0px"
       >
-        <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight}>
+        <Text fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize} lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}>
           {children}
         </Text>
       </ActionSurface>
-      {!isLast ? <Divider intent={intent} color={color} elevated={variant === 'solid'} marginBlock="0px" /> : null}
+      {!isOpeningUpwards ? <Divider intent={intent} color={color} elevated={variant === 'solid'} marginBlock="0px" /> : null}
     </>
   )
 }

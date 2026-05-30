@@ -67,7 +67,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
       ) : null}
 
       {PLAYGROUND_CONTROLS_MAP[activeProp as PlaygroundProp].type === 'array' ? (
-        <Select value={value} onChange={onChange} scrollAlign="center">
+        <Select value={value} onChange={onChange}>
           <Select.Option value="">...</Select.Option>
           {(PLAYGROUND_ARRAY_DATA_MAP[prop.options[0]] || prop.options.filter(o => o !== DOCS_CSS_LABEL)).map(option => (
             <Select.Option key={option} value={option}>

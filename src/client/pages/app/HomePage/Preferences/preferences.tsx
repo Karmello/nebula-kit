@@ -26,7 +26,7 @@ export const Preferences = () => {
       </Flex.Item>
       <Flex.Item>
         <Text bold>Brand</Text>
-        <Select value={brand} onChange={setBrand} inlineSize="150px" size="sm" scrollAlign="center">
+        <Select value={brand} onChange={setBrand} inlineSize="150px" size="sm">
           {COLORS.map(brand => (
             <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
           ))}

@@ -57,7 +57,7 @@ export const AppPrefsDialog = () => {
                 Brand
               </Text>
               <Spacer blockSize="3xs" />
-              <Select value={brand} onChange={setBrand} inlineSize="150px" size="xs" scrollAlign="center">
+              <Select value={brand} onChange={setBrand} inlineSize="150px" size="xs">
                 {COLORS.map(brand => (
                   <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
                 ))}
@@ -68,7 +68,7 @@ export const AppPrefsDialog = () => {
                 Saturation
               </Text>
               <Spacer blockSize="3xs" />
-              <Select value={saturation} onChange={setSaturation} inlineSize="150px" size="xs" scrollAlign="center">
+              <Select value={saturation} onChange={setSaturation} inlineSize="150px" size="xs">
                 {SATURATIONS.map(saturation => (
                   <Select.Option value={saturation}>{sentenceCase(saturation)}</Select.Option>
                 ))}
@@ -79,7 +79,7 @@ export const AppPrefsDialog = () => {
                 Border radius
               </Text>
               <Spacer blockSize="3xs" />
-              <Select value={borderRadiusSize} onChange={setBorderRadiusSize} inlineSize="150px" size="xs" scrollAlign="center">
+              <Select value={borderRadiusSize} onChange={setBorderRadiusSize} inlineSize="150px" size="xs">
                 {NEBKIT_BORDER_RADIUS_SIZES.map(n => (
                   <Select.Option value={n}>{n}</Select.Option>
                 ))}
@@ -90,7 +90,7 @@ export const AppPrefsDialog = () => {
                 Ripple mode
               </Text>
               <Spacer blockSize="3xs" />
-              <Select value={rippleMode} onChange={setRippleMode} inlineSize="150px" size="xs" scrollAlign="center">
+              <Select value={rippleMode} onChange={setRippleMode} inlineSize="150px" size="xs">
                 {NEBKIT_RIPPLE_MODES.map(n => (
                   <Select.Option value={n}>{sentenceCase(n)}</Select.Option>
                 ))}
