@@ -1,6 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
 import { SelectProps } from 'lib/components'
-import { DEFAULT_SELECT_INLINE_SIZE } from 'lib/components/core/Select'
 import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 import { BOX_INTENTS } from 'lib/components/core/Box/definitions'
 import { DROPDOWN_LIST_PLACEMENTS, DROPDOWN_LIST_SCROLL_ALIGN } from 'lib/components/shared'
@@ -12,6 +11,7 @@ import {
 } from 'lib/components/shared/DropdownList/dropdown-list'
 
 import { BOX_PROPS_META } from '../Box/props'
+import { DEFAULT_SELECT_INLINE_SIZE } from 'lib/components/core/Select/constants'
 
 const SELECT_PROPS_META: ComponentMeta<SelectProps>['props'] = {
   children: {

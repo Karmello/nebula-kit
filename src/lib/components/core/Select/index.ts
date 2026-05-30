@@ -1,10 +1,12 @@
 import { Select as SelectBase } from './select'
 
-import { SelectOption } from './slots'
+import { SelectOption } from './SelectOption'
 
 export const Select = Object.assign(SelectBase, {
   Option: SelectOption,
 })
 
-export * from './definitions'
-export * from './slots'
+export * from './types'
+export * from './constants'
+
+export * from './SelectOption'

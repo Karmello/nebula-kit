@@ -1,25 +1,32 @@
-import { ReactElement, useState } from 'react'
-import classNames from 'classnames'
+import { ReactElement, useState, useLayoutEffect, useRef, cloneElement, useEffect } from 'react'
 
-import { Text, WithIcon } from 'lib/components'
-import { WithSlots, DropdownList, DropdownListState } from 'lib/components/shared'
+import { FloatingPortal, flip, shift, useClick, useDismiss, useFloating, useInteractions } from '@floating-ui/react'
+
+import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
-import { withPrefix } from 'lib/helpers'
+import { useControlled } from 'lib/hooks'
 
-import { SelectProvider } from './SelectProvider'
-import { DEFAULT_SELECT_INLINE_SIZE, DEFAULT_SELECT_INTENT, SelectProps } from './definitions'
+import {
+  DEFAULT_SELECT_INLINE_SIZE,
+  DEFAULT_SELECT_INTENT,
+  DEFAULT_SELECT_SCROLL_ALIGN,
+  DEFAULT_SELECT_VARIANT,
+  DEFAULT_SELECT_VISIBLE_ITEMS_COUNT,
+} from './constants'
 
-export const Select = ({
-  // DropdownList
-  tagAttrs,
-  tagRef,
-  scrollAlign,
-  visibleItemsCount,
+import { SelectProps } from './types'
+import { SelectOptionInternalProps, type SelectOptionProps } from './SelectOption'
+import { ActionSurface } from '../ActionSurface'
+import { Box } from '../Box'
+import { Text } from '../Text'
+import { WithIcon } from '../WithIcon'
+import { Flex } from '../Flex'
+
+export const SelectImpl = ({
   // ActionSurface
-  color,
+  variant = DEFAULT_SELECT_VARIANT,
   intent = DEFAULT_SELECT_INTENT,
-  // Box
-  children,
+  color,
   inlineSize = DEFAULT_SELECT_INLINE_SIZE,
   disabled,
   // own
@@ -27,95 +34,124 @@ export const Select = ({
   value,
   onChange,
   size = DEFAULT_CONTROL_SIZE,
-  dropdownPlacement,
+  scrollAlign = DEFAULT_SELECT_SCROLL_ALIGN,
+  visibleItemsCount = DEFAULT_SELECT_VISIBLE_ITEMS_COUNT,
   staticLabel,
-}: SelectProps) => {
-  const [dropdownListState, setDropdownListState] = useState<DropdownListState>({
-    open: false,
-    placement: dropdownPlacement || 'bottom-center',
+  // extra
+  optionSlots,
+}: SelectProps & { optionSlots: ReactElement<SelectOptionProps & SelectOptionInternalProps>[] }) => {
+  const [open, setOpen] = useState(false)
+
+  const [currentValue, setCurrentValue] = useControlled({
+    value,
+    defaultValue,
+    onChange,
   })
 
-  const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
+  const triggerRef = useRef(null)
+  const menuRef = useRef<HTMLDivElement | null>(null)
+  const selectedOptionRef = useRef<HTMLButtonElement | null>(null)
 
-  const isControlled = value !== undefined
-  const currentValue = isControlled ? value : internalValue
+  const { refs, floatingStyles, context } = useFloating({
+    open,
+    onOpenChange: setOpen,
+    placement: 'bottom-start',
+    middleware: [flip(), shift()],
+  })
 
-  const handleChange = (value: string) => {
-    if (!isControlled) setInternalValue(value)
-    onChange?.(value)
+  useLayoutEffect(() => {
+    refs.setReference(triggerRef.current)
+  }, [])
+
+  const click = useClick(context)
+  const dismiss = useDismiss(context)
+
+  const { getReferenceProps, getFloatingProps } = useInteractions([click, dismiss])
+
+  const triggerWidth = triggerRef.current?.offsetWidth
+  const optionBlockSize = Number(CONTROL_SIZE_MAP[size].blockSize.replace('px', ''))
+  const menuBlockSize = visibleItemsCount * optionBlockSize
+
+  const handleOnOptionClick = (value: string) => {
+    setCurrentValue(value)
+    setOpen(false)
   }
 
+  const selectedOptionIndex = optionSlots.findIndex(slot => slot.props.value === currentValue)
+  const selectedOptionSlot = optionSlots[selectedOptionIndex]
+
+  return (
+    <>
+      <ActionSurface
+        tagRef={triggerRef as any}
+        variant={variant}
+        intent={intent}
+        color={color}
+        inlineSize={inlineSize}
+        blockSize={CONTROL_SIZE_MAP[size].blockSize}
+        paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
+        disabled={disabled}
+        selected={open}
+        {...(getReferenceProps() as any)}
+      >
+        <WithIcon iconName="chevron-down" iconPlacement="right" justifyContent="space-between" iconAngle={open ? 180 : 0}>
+          <Text>{staticLabel ?? selectedOptionSlot?.props.children ?? 'Select...'}</Text>
+        </WithIcon>
+      </ActionSurface>
+      {open && (
+        <FloatingPortal>
+          <Box
+            tagRef={refs.setFloating as any}
+            tagAttrs={{
+              style: {
+                ...floatingStyles,
+                zIndex: 'var(--neb-z-dropdown)',
+              },
+              ...getFloatingProps(),
+            }}
+          >
+            <Box
+              tagRef={menuRef}
+              drawable
+              variant={variant}
+              intent={intent}
+              color={color}
+              overflowY="auto"
+              inlineSize={`${triggerWidth}px`}
+              maxBlockSize={`${menuBlockSize}px`}
+            >
+              <Flex flexDirection="column">
+                {optionSlots.map(optionSlot =>
+                  cloneElement(optionSlot, {
+                    key: optionSlot.props.value,
+                    selected: currentValue === optionSlot.props.value,
+                    variant,
+                    intent,
+                    color,
+                    size,
+                    onClick: () => handleOnOptionClick(optionSlot.props.value),
+                  })
+                )}
+              </Flex>
+            </Box>
+          </Box>
+        </FloatingPortal>
+      )}
+    </>
+  )
+}
+
+export const Select = (props: SelectProps) => {
   return (
     <WithSlots<'Select.Option'>
-      childrenToVerify={children}
+      childrenToVerify={props.children}
       componentName="Select"
       slotsConfig={[{ name: 'Select.Option', required: true, allowMultiple: true }]}
     >
       {({ slotsByName }) => {
-        const currentSlotIndex = slotsByName['Select.Option'].findIndex(slot => (slot as any).props.value === currentValue)
-        const currentSlot = slotsByName['Select.Option'][currentSlotIndex] as ReactElement<any>
+        const optionSlots = slotsByName['Select.Option'] as ReactElement<SelectOptionProps & SelectOptionInternalProps>[]
 
-        return (
-          <SelectProvider currentValue={currentValue} handleChange={handleChange}>
-            <DropdownList
-              tagRef={tagRef}
-              tagAttrs={{ ...tagAttrs, className: classNames(withPrefix('select'), tagAttrs?.className) }}
-              state={dropdownListState}
-              onStateChange={setDropdownListState}
-              itemBlockSize={Number(CONTROL_SIZE_MAP[size || 'md'].blockSize.replace('px', ''))}
-              scrollToIndex={currentSlotIndex}
-              scrollAlign={scrollAlign}
-              visibleItemsCount={visibleItemsCount}
-              placement={dropdownPlacement}
-              color={color}
-              intent={intent}
-            >
-              <DropdownList.Trigger
-                blockSize={CONTROL_SIZE_MAP[size].blockSize}
-                paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
-                inlineSize={inlineSize}
-                disabled={disabled}
-                selected={dropdownListState?.open}
-                ripple={!dropdownListState?.open}
-              >
-                <WithIcon
-                  iconName={dropdownListState?.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'}
-                  iconPlacement="right"
-                  justifyContent="space-between"
-                  iconAngle={dropdownListState?.open ? 180 : 0}
-                  iconSize={CONTROL_SIZE_MAP[size].iconSize}
-                >
-                  <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight} truncate>
-                    {staticLabel || currentSlot || 'Select ...'}
-                  </Text>
-                </WithIcon>
-              </DropdownList.Trigger>
-              {slotsByName['Select.Option'].map((slot, index) => {
-                const slotProps = (slot as ReactElement<any>).props
-                return (
-                  <DropdownList.Item
-                    key={index}
-                    index={index}
-                    elevated={dropdownListState?.open}
-                    selected={index === currentSlotIndex}
-                    blockSize={CONTROL_SIZE_MAP[size].blockSize}
-                    paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
-                    inlineSize="100%"
-                    onClick={() => handleChange(slotProps.value)}
-                  >
-                    <Text
-                      fontSize={CONTROL_SIZE_MAP[size].fontSize}
-                      lineHeight={CONTROL_SIZE_MAP[size].lineHeight}
-                      bold={index === currentSlotIndex}
-                    >
-                      {slot}
-                    </Text>
-                  </DropdownList.Item>
-                )
-              })}
-            </DropdownList>
-          </SelectProvider>
-        )
+        return <SelectImpl {...props} optionSlots={optionSlots} />
       }}
     </WithSlots>
   )
