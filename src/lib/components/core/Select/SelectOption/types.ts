@@ -8,11 +8,15 @@ export type SelectOptionProps = {
 }
 
 export type SelectOptionInternalProps = {
+  // ActionSurface
+  tagRef: ActionSurfaceProps['tagRef']
+  tagAttrs: ActionSurfaceProps['tagAttrs']
   selected: ActionSurfaceProps['selected']
-  onClick: ActionSurfaceProps['onClick']
   // Select
   variant: SelectProps['variant']
   intent: SelectProps['intent']
   color: SelectProps['color']
   size: SelectProps['size']
+  // own
+  isLast: boolean
 }

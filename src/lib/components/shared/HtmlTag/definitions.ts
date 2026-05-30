@@ -1,7 +1,7 @@
-import { ComponentPropsWithoutRef, ComponentRef, ElementType, ReactNode, RefObject } from 'react'
+import { ComponentPropsWithoutRef, ComponentRef, ElementType, ReactNode, Ref, RefObject } from 'react'
 
 type DataAttrs = {
-  [K in `data-${string}`]?: string | number | boolean | undefined
+  [K in `data-${string}`]?: unknown
 }
 
 export type HtmlTagProps<T extends ElementType = 'div'> = {

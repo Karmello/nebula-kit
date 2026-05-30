@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react'
+import { RefObject, useLayoutEffect, useRef, useState } from 'react'
 
 import {
   useFloating,
@@ -73,9 +73,9 @@ export const Tooltip = ({
       <Box
         tag="span"
         display="inline-block"
-        tagRef={triggerRef as any}
+        tagRef={triggerRef}
         tagAttrs={{
-          ...(getReferenceProps() as any),
+          ...getReferenceProps(),
           style: { cursor: mode === 'click' ? 'pointer' : undefined },
         }}
       >
@@ -84,7 +84,7 @@ export const Tooltip = ({
       {open && (
         <FloatingPortal>
           <Box
-            tagRef={refs.setFloating as any}
+            tagRef={refs.setFloating as unknown as RefObject<HTMLDivElement>}
             tagAttrs={{
               style: {
                 ...floatingStyles,

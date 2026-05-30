@@ -1,6 +1,15 @@
-import { ReactElement, useState, useLayoutEffect, useRef, cloneElement, useEffect } from 'react'
+import { ReactElement, useState, useLayoutEffect, useRef, cloneElement, RefObject, createRef, useEffect, Ref } from 'react'
 
-import { FloatingPortal, flip, shift, useClick, useDismiss, useFloating, useInteractions } from '@floating-ui/react'
+import {
+  FloatingPortal,
+  flip,
+  shift,
+  useClick,
+  useDismiss,
+  useFloating,
+  useInteractions,
+  useListNavigation,
+} from '@floating-ui/react'
 
 import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
@@ -14,6 +23,7 @@ import {
   DEFAULT_SELECT_VISIBLE_ITEMS_COUNT,
 } from './constants'
 
+import { resolveBlockSizes } from './helpers'
 import { SelectProps } from './types'
 import { SelectOptionInternalProps, type SelectOptionProps } from './SelectOption'
 import { ActionSurface } from '../ActionSurface'
@@ -41,6 +51,7 @@ export const SelectImpl = ({
   optionSlots,
 }: SelectProps & { optionSlots: ReactElement<SelectOptionProps & SelectOptionInternalProps>[] }) => {
   const [open, setOpen] = useState(false)
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   const [currentValue, setCurrentValue] = useControlled({
     value,
@@ -48,11 +59,21 @@ export const SelectImpl = ({
     onChange,
   })
 
-  const triggerRef = useRef(null)
-  const menuRef = useRef<HTMLDivElement | null>(null)
-  const selectedOptionRef = useRef<HTMLButtonElement | null>(null)
+  useEffect(() => {
+    if (!open) triggerRef.current?.focus()
+  }, [open])
 
-  const { refs, floatingStyles, context } = useFloating({
+  const triggerRef = useRef<HTMLDivElement | null>(null)
+  const menuRef = useRef<HTMLDivElement | null>(null)
+  const listRef = useRef<Array<HTMLElement | null>>([])
+
+  useEffect(() => {
+    listRef.current = itemRefs.current.map(ref => ref.current)
+  })
+
+  const itemRefs = useRef<RefObject<HTMLButtonElement>[]>(optionSlots.map(() => createRef<HTMLButtonElement>()))
+
+  const { refs, floatingStyles, context, placement } = useFloating({
     open,
     onOpenChange: setOpen,
     placement: 'bottom-start',
@@ -64,13 +85,16 @@ export const SelectImpl = ({
   }, [])
 
   const click = useClick(context)
-  const dismiss = useDismiss(context)
-
-  const { getReferenceProps, getFloatingProps } = useInteractions([click, dismiss])
+  const dismiss = useDismiss(context, { outsidePress: true, escapeKey: true })
 
   const triggerWidth = triggerRef.current?.offsetWidth
   const optionBlockSize = Number(CONTROL_SIZE_MAP[size].blockSize.replace('px', ''))
-  const menuBlockSize = visibleItemsCount * optionBlockSize
+
+  const { menuBlockSize, menuScrollingBlockSize } = resolveBlockSizes({
+    visibleItemsCount,
+    optionBlockSize,
+    itemsCount: optionSlots.length,
+  })
 
   const handleOnOptionClick = (value: string) => {
     setCurrentValue(value)
@@ -80,10 +104,24 @@ export const SelectImpl = ({
   const selectedOptionIndex = optionSlots.findIndex(slot => slot.props.value === currentValue)
   const selectedOptionSlot = optionSlots[selectedOptionIndex]
 
+  const listNavigation = useListNavigation(context, {
+    listRef,
+    activeIndex,
+    selectedIndex: selectedOptionIndex,
+    onNavigate: setActiveIndex,
+    loop: true,
+    virtual: false,
+    focusItemOnOpen: true,
+  })
+
+  const { getReferenceProps, getFloatingProps, getItemProps } = useInteractions([click, dismiss, listNavigation])
+
+  const openDownwards = placement.includes('bottom')
+
   return (
     <>
       <ActionSurface
-        tagRef={triggerRef as any}
+        tagRef={triggerRef}
         variant={variant}
         intent={intent}
         color={color}
@@ -92,22 +130,38 @@ export const SelectImpl = ({
         paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
         disabled={disabled}
         selected={open}
-        {...(getReferenceProps() as any)}
+        borderBottomLeftRadius={open && openDownwards ? '0px' : undefined}
+        borderBottomRightRadius={open && openDownwards ? '0px' : undefined}
+        borderTopLeftRadius={open && !openDownwards ? '0px' : undefined}
+        borderTopRightRadius={open && !openDownwards ? '0px' : undefined}
+        {...getReferenceProps()}
       >
-        <WithIcon iconName="chevron-down" iconPlacement="right" justifyContent="space-between" iconAngle={open ? 180 : 0}>
-          <Text>{staticLabel ?? selectedOptionSlot?.props.children ?? 'Select...'}</Text>
+        <WithIcon
+          iconName="chevron-down"
+          iconPlacement="right"
+          iconSize={CONTROL_SIZE_MAP[size].iconSize}
+          justifyContent="space-between"
+          iconAngle={open ? 180 : 0}
+        >
+          <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight}>
+            {staticLabel ?? selectedOptionSlot?.props.children ?? 'Select...'}
+          </Text>
         </WithIcon>
       </ActionSurface>
       {open && (
         <FloatingPortal>
           <Box
-            tagRef={refs.setFloating as any}
+            tagRef={refs.setFloating as unknown as RefObject<HTMLDivElement>}
             tagAttrs={{
               style: {
                 ...floatingStyles,
                 zIndex: 'var(--neb-z-dropdown)',
               },
-              ...getFloatingProps(),
+              ...getFloatingProps({
+                onKeyDown: e => {
+                  if (e.key === 'Tab') setOpen(false)
+                },
+              }),
             }}
           >
             <Box
@@ -116,23 +170,35 @@ export const SelectImpl = ({
               variant={variant}
               intent={intent}
               color={color}
+              elevated
               overflowY="auto"
               inlineSize={`${triggerWidth}px`}
-              maxBlockSize={`${menuBlockSize}px`}
+              blockSize={`${menuBlockSize}px`}
+              borderTopWidth="0px"
+              borderTopLeftRadius={openDownwards ? '0px' : undefined}
+              borderTopRightRadius={openDownwards ? '0px' : undefined}
+              borderBottomLeftRadius={!openDownwards ? '0px' : undefined}
+              borderBottomRightRadius={!openDownwards ? '0px' : undefined}
             >
-              <Flex flexDirection="column">
-                {optionSlots.map(optionSlot =>
-                  cloneElement(optionSlot, {
-                    key: optionSlot.props.value,
-                    selected: currentValue === optionSlot.props.value,
-                    variant,
-                    intent,
-                    color,
-                    size,
-                    onClick: () => handleOnOptionClick(optionSlot.props.value),
-                  })
-                )}
-              </Flex>
+              <Box drawable variant="solid" intent="neutral" blockSize={`${menuScrollingBlockSize}px`}>
+                <Flex flexDirection="column">
+                  {optionSlots.map((optionSlot, index) =>
+                    cloneElement(optionSlot, {
+                      key: optionSlot.props.value,
+                      tagRef: itemRefs.current[index],
+                      tagAttrs: getItemProps({
+                        onClick: () => handleOnOptionClick(optionSlot.props.value),
+                      }),
+                      selected: currentValue === optionSlot.props.value,
+                      variant,
+                      intent,
+                      color,
+                      size,
+                      isLast: index === optionSlots.length - 1,
+                    })
+                  )}
+                </Flex>
+              </Box>
             </Box>
           </Box>
         </FloatingPortal>
