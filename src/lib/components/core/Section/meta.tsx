@@ -11,8 +11,8 @@ import {
 } from './definitions'
 
 import BOX_META from './../Box/meta'
-import TEXT_META from './../Text/meta/_index'
-import WITH_ICON_META from './../WithIcon/meta/_index'
+import TEXT_META from './../Text/meta'
+import WITH_ICON_META from './../WithIcon/meta'
 import { Section } from './section'
 
 export default {

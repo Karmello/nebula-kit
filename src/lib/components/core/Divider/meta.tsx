@@ -1,9 +1,9 @@
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_MARGIN_BLOCK, type DividerProps } from '../definitions'
-import BOX_META from '../../Box/meta'
-import { Divider } from '../divider'
-import { Text } from '../../Text'
+import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_MARGIN_BLOCK, type DividerProps } from './definitions'
+import BOX_META from './../Box/meta'
+import { Divider } from './divider'
+import { Text } from './../Text'
 
 export default {
   Divider: {

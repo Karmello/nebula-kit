@@ -6,7 +6,7 @@ import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 import { type IconButtonProps, ICON_BUTTON_TAGS } from './definitions'
 import { IconButton } from './icon-button'
 import ACTION_SURFACE_META from '../ActionSurface/meta'
-import WITH_ICON_META from '../WithIcon/meta/_index'
+import WITH_ICON_META from '../WithIcon/meta'
 
 export default {
   IconButton: {

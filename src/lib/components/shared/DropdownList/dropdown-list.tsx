@@ -1,23 +1,22 @@
-import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE, LENGTH_SCALE } from 'lib/definitions'
+import { LENGTH_SCALE } from 'lib/definitions'
 
 import { DropdownListProvider } from './providers'
 import { WithSlots } from '../WithSlots'
 
 import { DropdownListMain } from './components/DropdownListMain/dropdown-list-main'
 import { DropdownListMenu } from './components/DropdownListMenu/dropdown-list-menu'
-import { DropdownListProps } from './definitions'
 
-export const DEFAULT_DROPDOWN_LIST_OPEN_ON_FOCUS: DropdownListProps['openOnFocus'] = false
-export const DEFAULT_DROPDOWN_LIST_KEEP_OPEN: DropdownListProps['keepOpen'] = false
-export const DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT: DropdownListProps['visibleItemsCount'] = 5
-export const DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX: DropdownListProps['scrollToIndex'] = 0
-export const DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN: DropdownListProps['scrollAlign'] = 'start'
-export const DEFAULT_DROPDOWN_LIST_PLACEMENT: DropdownListProps['placement'] = 'bottom-start'
-export const DEFAULT_DROPDOWN_LIST_INTENT: DropdownListProps['intent'] = 'tertiary'
-
-export const DEFAULT_DROPDOWN_ITEM_BLOCK_SIZE: DropdownListProps['itemBlockSize'] = Number(
-  CONTROL_SIZE_MAP[DEFAULT_CONTROL_SIZE].blockSize.replace('px', '')
-)
+import {
+  DEFAULT_DROPDOWN_ITEM_BLOCK_SIZE,
+  DEFAULT_DROPDOWN_LIST_INTENT,
+  DEFAULT_DROPDOWN_LIST_KEEP_OPEN,
+  DEFAULT_DROPDOWN_LIST_OPEN_ON_FOCUS,
+  DEFAULT_DROPDOWN_LIST_PLACEMENT,
+  DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
+  DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
+  DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
+  DropdownListProps,
+} from './definitions'
 
 export const DropdownList = ({
   // Box
@@ -57,7 +56,8 @@ export const DropdownList = ({
         let correctedVisibleItemsCount = itemsCount < (visibleItemsCount ?? 0) ? itemsCount : (visibleItemsCount ?? 0)
         if (correctedVisibleItemsCount <= 0 && noOptionsLabel) correctedVisibleItemsCount = 1
 
-        const finalItemBlockSize = itemBlockSize + Number(LENGTH_SCALE['3xs'].replace('px', ''))
+        const finalItemBlockSize =
+          (itemBlockSize !== undefined ? itemBlockSize : 50) + Number(LENGTH_SCALE['3xs'].replace('px', ''))
 
         return (
           <DropdownListProvider

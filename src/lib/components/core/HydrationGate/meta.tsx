@@ -1,9 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
-import { App } from 'client/components'
 
 import { type HydrationGateProps } from './definitions'
-import { HydrationGate } from './hydration-gate'
-import { NebkitProvider } from '../NebkitProvider'
 
 export default {
   HydrationGate: {
@@ -34,13 +31,11 @@ export default {
     examples: [
       {
         description: 'Must wrap NebkitProvider in SSR environments.',
-        jsx: (
-          <HydrationGate>
-            <NebkitProvider>
-              <App />
-            </NebkitProvider>
-          </HydrationGate>
-        ),
+        code: `<HydrationGate>
+  <NebkitProvider>
+    <App />
+  </NebkitProvider>
+</HydrationGate>`,
         noSandBox: true,
       },
     ],

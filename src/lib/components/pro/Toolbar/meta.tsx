@@ -1,0 +1,146 @@
+import { ComponentMeta } from 'client/definitions'
+import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/definitions'
+
+import { type ToolbarProps } from './definitions'
+import { ToolbarEndProps, ToolbarMainProps, ToolbarStartProps } from './slots'
+import { Toolbar } from '.'
+import { Box } from '../../core/Box'
+import { Button } from '../../core/Button'
+import { Segment } from '../../core/Segment'
+import { Select } from '../../core/Select'
+import GRID_META from '../../core/Grid/meta'
+
+export default {
+  Toolbar: {
+    overview: {
+      bundle: 'pro',
+      title: 'Horizontal bar with Start, Main and End slots for organizing actions and controls.',
+      features: [
+        'the main section is toggleable in collapsed mode and always visible in inline mode',
+        'all drawable Box components inside Toolbar are forced to use square corners',
+      ],
+      guidelines: [
+        'often used inside AppFrame.Header to control navigation and provide additional tools',
+        'often paired with ButtonGroup rendered inside the main section',
+      ],
+      composedOf: ['Grid'],
+      topLevelTags: ['nav'],
+      slots: ['Toolbar.Main', 'Toolbar.Start', 'Toolbar.End'],
+    },
+    props: {
+      children: {
+        ...GRID_META.Grid.props.children,
+        isRequired: true,
+        options: ['Toolbar.Start', 'Toolbar.Main', 'Toolbar.End'],
+        description: 'Accepts slots directly or via a render function with access to the context argument.',
+      },
+      tagAttrs: GRID_META.Grid.props.tagAttrs,
+      tagRef: GRID_META.Grid.props.tagRef,
+      switchAt: {
+        options: SWITCH_AT,
+        defaultValue: DEFAULT_SWITCH_AT,
+        isRequired: false,
+        isResponsive: false,
+        description: 'Defines the breakpoint at which the main section switches between collapsed and inline layout.',
+      },
+    },
+    examples: [
+      {
+        description: 'Basic render case for Toolbar.',
+        jsx: (
+          <Toolbar>
+            <Toolbar.Start>Start</Toolbar.Start>
+            <Toolbar.Main>Main</Toolbar.Main>
+            <Toolbar.End>End</Toolbar.End>
+          </Toolbar>
+        ),
+        noSandBox: true,
+        skip: true,
+      },
+      {
+        description:
+          'Application header with a brand label on the left, navigation links in the main section that adapt responsively from column to row and an action menu on the right.',
+        jsx: (
+          <Toolbar switchAt="md">
+            <Toolbar.Start>
+              <Box paddingInline="20px">Brand</Box>
+            </Toolbar.Start>
+            <Toolbar.Main>
+              <Segment flexDirection={{ base: 'column', md: 'row' }}>
+                <Segment.Item>
+                  <Button fullWidth>Page 1</Button>
+                </Segment.Item>
+                <Segment.Item>
+                  <Button fullWidth>Page 2</Button>
+                </Segment.Item>
+              </Segment>
+            </Toolbar.Main>
+            <Toolbar.End>
+              <Select staticLabel="Menu">
+                <Select.Option value="option-1">Option 1</Select.Option>
+                <Select.Option value="option-2">Option 2</Select.Option>
+              </Select>
+            </Toolbar.End>
+          </Toolbar>
+        ),
+        sandBoxWithNoPadding: true,
+      },
+    ],
+    changelog: {
+      '0.2.3': ['released'],
+    },
+  } as ComponentMeta<ToolbarProps>,
+  ToolbarMain: {
+    overview: {
+      bundle: 'pro',
+      name: 'Toolbar.Main',
+      title: 'Defines the main slot of Toolbar.',
+      features: ['holds the primary, collapsible content of the toolbar'],
+      composedOf: ['Grid.Item'],
+    },
+    props: {
+      children: {
+        ...GRID_META.GridItem.props.children,
+        isRequired: true,
+      },
+      tagAttrs: GRID_META.GridItem.props.tagAttrs,
+      tagRef: GRID_META.GridItem.props.tagRef,
+    },
+  } as ComponentMeta<ToolbarMainProps>,
+  ToolbarStart: {
+    overview: {
+      bundle: 'pro',
+      name: 'Toolbar.Start?',
+      title: 'Defines the start slot of Toolbar.',
+      features: ['fixed region at the start of the toolbar', 'remains visible when the main section is collapsed'],
+      guidelines: ['commonly used for brand, logo or home button'],
+      composedOf: ['Grid.Item'],
+    },
+    props: {
+      children: {
+        ...GRID_META.GridItem.props.children,
+        isRequired: true,
+      },
+      tagAttrs: GRID_META.GridItem.props.tagAttrs,
+      tagRef: GRID_META.GridItem.props.tagRef,
+    },
+  } as ComponentMeta<ToolbarStartProps>,
+  ToolbarEnd: {
+    overview: {
+      bundle: 'pro',
+      name: 'Toolbar.End?',
+      title: 'Defines the end slot of Toolbar.',
+      features: ['fixed region at the end of the toolbar', 'remains visible when the main section is collapsed'],
+      guidelines: ['commonly used for user actions, menus or status items'],
+      composedOf: ['Grid.Item'],
+    },
+    props: {
+      children: {
+        ...GRID_META.GridItem.props.children,
+        isRequired: true,
+      },
+      tagAttrs: GRID_META.GridItem.props.tagAttrs,
+      tagRef: GRID_META.GridItem.props.tagRef,
+    },
+  } as ComponentMeta<ToolbarEndProps>,
+}

@@ -140,7 +140,7 @@ export const AutocompleteMain = ({
                   <IconButton
                     {...props}
                     tagAttrs={{
-                      onFocus: e => {
+                      onFocus: (e: { stopPropagation: () => void }) => {
                         e.stopPropagation()
                       },
                     }}

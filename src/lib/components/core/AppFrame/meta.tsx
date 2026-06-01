@@ -1,8 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 
 import { type AppFrameProps } from './../AppFrame/definitions'
-import { BOX_PROPS_META } from './../Box/meta/props'
-import { GRID_PROPS_META } from '../Grid/meta/props'
+import BOX_META from './../Box/meta'
+import GRID_META from '../Grid/meta'
 import { AppFrame } from '.'
 
 import {
@@ -28,13 +28,13 @@ export default {
     },
     props: {
       children: {
-        ...GRID_PROPS_META.children,
+        ...GRID_META.Grid.props.children,
         isRequired: true,
         options: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer'],
         description: 'AppFrame.Footer is optional, the rest is required.',
       },
-      tagAttrs: GRID_PROPS_META.tagAttrs,
-      tagRef: GRID_PROPS_META.tagRef,
+      tagAttrs: GRID_META.Grid.props.tagAttrs,
+      tagRef: GRID_META.Grid.props.tagRef,
       stickyHeader: {
         options: ['boolean'],
         defaultValue: 'false',
@@ -72,16 +72,16 @@ export default {
     },
     props: {
       children: {
-        ...BOX_PROPS_META.children,
+        ...BOX_META.Box.props.children,
         isRequired: true,
       },
-      color: BOX_PROPS_META.color,
+      color: BOX_META.Box.props.color,
       intent: {
-        ...BOX_PROPS_META.intent,
+        ...BOX_META.Box.props.intent,
         defaultValue: String(DEFAULT_APP_FRAME_HEADER_INTENT),
       },
-      tagAttrs: BOX_PROPS_META.tagAttrs,
-      tagRef: BOX_PROPS_META.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
   } as ComponentMeta<AppFrameHeaderProps>,
   AppFrameMain: {
@@ -95,18 +95,18 @@ export default {
     },
     props: {
       children: {
-        ...BOX_PROPS_META.children,
+        ...BOX_META.Box.props.children,
         isRequired: true,
       },
-      tagAttrs: BOX_PROPS_META.tagAttrs,
-      tagRef: BOX_PROPS_META.tagRef,
-      padding: BOX_PROPS_META.padding,
-      paddingInline: BOX_PROPS_META.paddingInline,
-      paddingBlock: BOX_PROPS_META.paddingBlock,
-      paddingTop: BOX_PROPS_META.paddingTop,
-      paddingRight: BOX_PROPS_META.paddingRight,
-      paddingBottom: BOX_PROPS_META.paddingBottom,
-      paddingLeft: BOX_PROPS_META.paddingLeft,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
+      padding: BOX_META.Box.props.padding,
+      paddingInline: BOX_META.Box.props.paddingInline,
+      paddingBlock: BOX_META.Box.props.paddingBlock,
+      paddingTop: BOX_META.Box.props.paddingTop,
+      paddingRight: BOX_META.Box.props.paddingRight,
+      paddingBottom: BOX_META.Box.props.paddingBottom,
+      paddingLeft: BOX_META.Box.props.paddingLeft,
     },
   } as ComponentMeta<AppFrameMainProps>,
   AppFrameFooter: {
@@ -120,23 +120,23 @@ export default {
     },
     props: {
       children: {
-        ...BOX_PROPS_META.children,
+        ...BOX_META.Box.props.children,
         isRequired: true,
       },
-      color: BOX_PROPS_META.color,
+      color: BOX_META.Box.props.color,
       intent: {
-        ...BOX_PROPS_META.intent,
+        ...BOX_META.Box.props.intent,
         defaultValue: String(DEFAULT_APP_FRAME_FOOTER_INTENT),
       },
-      padding: BOX_PROPS_META.padding,
-      paddingBlock: BOX_PROPS_META.paddingBlock,
-      paddingBottom: BOX_PROPS_META.paddingBottom,
-      paddingInline: BOX_PROPS_META.paddingInline,
-      paddingLeft: BOX_PROPS_META.paddingLeft,
-      paddingRight: BOX_PROPS_META.paddingRight,
-      paddingTop: BOX_PROPS_META.paddingTop,
-      tagAttrs: BOX_PROPS_META.tagAttrs,
-      tagRef: BOX_PROPS_META.tagRef,
+      padding: BOX_META.Box.props.padding,
+      paddingBlock: BOX_META.Box.props.paddingBlock,
+      paddingBottom: BOX_META.Box.props.paddingBottom,
+      paddingInline: BOX_META.Box.props.paddingInline,
+      paddingLeft: BOX_META.Box.props.paddingLeft,
+      paddingRight: BOX_META.Box.props.paddingRight,
+      paddingTop: BOX_META.Box.props.paddingTop,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
   } as ComponentMeta<AppFrameFooterProps>,
 }

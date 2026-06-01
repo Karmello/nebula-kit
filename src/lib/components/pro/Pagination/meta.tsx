@@ -1,0 +1,187 @@
+import { useState } from 'react'
+
+import { ComponentMeta } from 'client/definitions'
+import { DEFAULT_CONTROL_SIZE } from 'lib/definitions'
+
+import {
+  DEFAULT_PAGINATION_BOUNDARY_COUNT,
+  DEFAULT_PAGINATION_INTENT,
+  DEFAULT_PAGINATION_SHOW_FIRST_LAST,
+  DEFAULT_PAGINATION_SHOW_PREV_NEXT,
+  DEFAULT_PAGINATION_SIBLING_COUNT,
+  DEFAULT_PAGINATION_VARIANT,
+  PaginationProps,
+} from './definitions'
+
+import { Pagination } from './pagination'
+import BOX_META from '../../core/Box/meta'
+import BUTTON_META from '../../core/Button/meta'
+
+const Example1 = () => {
+  const [page, setPage] = useState<number>(1)
+  return <Pagination currentPage={page} totalPages={10} onChange={setPage} />
+}
+
+const Example2 = () => {
+  const [page, setPage] = useState<number>(1)
+  return (
+    <Pagination
+      variant="solid"
+      intent="tertiary"
+      currentPage={page}
+      totalPages={20}
+      onChange={page => {
+        setPage(page)
+        // manual navigation
+      }}
+      hrefBuilder={page => `/products?page=${page}`}
+      showPrevNext
+    />
+  )
+}
+
+const Example3 = () => {
+  const [page, setPage] = useState<number>(1)
+  return (
+    <Pagination
+      variant="outline"
+      intent="tertiary"
+      currentPage={page}
+      totalPages={50}
+      onChange={setPage}
+      showFirstLast
+      showPrevNext
+      siblingCount={2}
+      boundaryCount={2}
+    />
+  )
+}
+
+export default {
+  Pagination: {
+    overview: {
+      bundle: 'pro',
+      title: 'Navigation control for paging through large collections of content.',
+      description:
+        'Pagination provides a controlled navigation interface for moving between pages of content. It supports large page ranges with configurable boundaries, sibling pages, first, last, previous and next controls, while remaining accessible and responsive by default.',
+      features: [
+        'controlled API with explicit page state',
+        'boundary and sibling page windowing',
+        'first, last, previous and next controls',
+        'automatic ellipsis handling',
+        'routing support via hrefBuilder for URL-based pagination and deep linking',
+      ],
+      composedOf: ['Box', 'Segment', 'Flex', 'Button', 'Link', 'Icon'],
+      topLevelTags: ['nav'],
+    },
+    props: {
+      boundaryCount: {
+        options: ['number'],
+        defaultValue: String(DEFAULT_PAGINATION_BOUNDARY_COUNT),
+        description: 'Number of page items always shown at the beginning and end of the pagination range.',
+      },
+      color: BUTTON_META.Button.props.color,
+      currentPage: {
+        options: ['number'],
+        isRequired: true,
+        description: 'The currently active page number.',
+      },
+      disabled: BUTTON_META.Button.props.disabled,
+      hrefBuilder: {
+        options: ['(page: number) => string'],
+        description:
+          'Function called with a page number to produce the target URL for that page, enabling routing-based pagination and deep linking.',
+      },
+      intent: {
+        ...BUTTON_META.Button.props.intent,
+        defaultValue: String(DEFAULT_PAGINATION_INTENT),
+      },
+      onChange: {
+        options: ['(page: number) => void'],
+        isRequired: true,
+        description: 'Callback invoked with the target page number when the active page changes.',
+      },
+      showFirstLast: {
+        options: ['boolean'],
+        defaultValue: String(DEFAULT_PAGINATION_SHOW_FIRST_LAST),
+        description: 'Whether to display controls for jumping to the first and last page.',
+      },
+      showPrevNext: {
+        options: ['boolean'],
+        defaultValue: String(DEFAULT_PAGINATION_SHOW_PREV_NEXT),
+        description: 'Whether to display controls for navigating to the previous and next page.',
+      },
+      siblingCount: {
+        options: ['number'],
+        defaultValue: String(DEFAULT_PAGINATION_SIBLING_COUNT),
+        description: 'Number of page items shown adjacent to the current page.',
+      },
+      size: {
+        ...BUTTON_META.Button.props.size,
+        defaultValue: DEFAULT_CONTROL_SIZE,
+      },
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
+      totalPages: {
+        options: ['number'],
+        isRequired: true,
+        description: 'Total number of available pages.',
+      },
+      variant: {
+        ...BUTTON_META.Button.props.variant,
+        defaultValue: String(DEFAULT_PAGINATION_VARIANT),
+      },
+    },
+    examples: [
+      {
+        description: 'Basic controlled pagination.',
+        jsx: <Example1 />,
+        code: `const [page, setPage] = useState<number>(1)
+
+return <Pagination currentPage={page} totalPages={10} onChange={setPage} />`,
+      },
+      {
+        description: 'Pagination with routing.',
+        jsx: <Example2 />,
+        code: `const [page, setPage] = useState<number>(1)
+
+return (
+  <Pagination
+    variant="solid"
+    intent="tertiary"
+    currentPage={page}
+    totalPages={20}
+    onChange={page => {
+      setPage(page)
+      // manual navigation
+    }}
+    hrefBuilder={page => \`/products?page=$\{page}\`}
+    showPrevNext
+  />
+)`,
+      },
+      {
+        description: 'Pagination with extended controls.',
+        jsx: <Example3 />,
+        code: `const [page, setPage] = useState<number>(1)
+
+return (
+  <Pagination
+    variant="outline"
+    intent="tertiary"
+    currentPage={page}
+    totalPages={50}
+    onChange={setPage}
+    showFirstLast
+    showPrevNext
+    siblingCount={2}
+    boundaryCount={2}
+  />
+)`,
+      },
+    ],
+    changelog: {
+      '0.4.0': ['released'],
+    },
+  } as ComponentMeta<PaginationProps>,
+}

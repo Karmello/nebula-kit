@@ -1,5 +1,4 @@
 import { ComponentMeta } from 'client/definitions'
-import { App } from 'client/components'
 import { SATURATIONS, THEMES } from 'lib/definitions'
 
 import {
@@ -12,8 +11,6 @@ import {
   NEBKIT_BORDER_RADIUS_SIZES,
   NEBKIT_RIPPLE_MODES,
 } from './definitions'
-
-import { NebkitProvider } from './nebkit-provider'
 
 export default {
   NebkitProvider: {
@@ -65,20 +62,16 @@ export default {
     examples: [
       {
         description: 'Use it as a wrapper around your entire app.',
-        jsx: (
-          <NebkitProvider>
-            <App />
-          </NebkitProvider>
-        ),
+        code: `<NebkitProvider>
+  <App />
+</NebkitProvider>`,
         noSandBox: true,
       },
       {
         description: 'Changing global configuration.',
-        jsx: (
-          <NebkitProvider theme="dark" brand="blue" borderRadiusSize="xs">
-            <App />
-          </NebkitProvider>
-        ),
+        code: `<NebkitProvider theme="dark" brand="blue" borderRadiusSize="xs">
+  <App />
+</NebkitProvider>`,
         noSandBox: true,
       },
     ],

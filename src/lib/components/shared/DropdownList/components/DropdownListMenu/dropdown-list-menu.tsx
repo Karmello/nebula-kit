@@ -1,9 +1,8 @@
 import { cloneElement, ReactNode, RefObject, useCallback, useLayoutEffect, useRef, useState } from 'react'
 
 import { Box, Resize, VirtualList, Divider } from 'lib/components'
-import { Portal } from 'lib/components/shared'
+import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT, Portal } from 'lib/components/shared'
 import { FloatingResolved, useFloating } from 'lib/internals/positioning'
-import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from 'lib/components/shared/DropdownList/dropdown-list'
 
 import { useDropdownListContext } from '../../providers'
 import { DropdownListItem } from '../../slots/DropdownListItem/dropdown-list-item'

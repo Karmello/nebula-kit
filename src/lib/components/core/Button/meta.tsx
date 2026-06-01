@@ -1,9 +1,9 @@
 import { ComponentMeta } from 'client/definitions'
 import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 
-import TEXT_META from '../Text/meta/_index'
+import TEXT_META from '../Text/meta'
 import ACTION_SURFACE_META from '../ActionSurface/meta'
-import WITH_ICON_META from '../WithIcon/meta/_index'
+import WITH_ICON_META from '../WithIcon/meta'
 
 import {
   BUTTON_ALIGNS,

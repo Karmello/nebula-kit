@@ -8,7 +8,7 @@ import {
   DEFAULT_ACTION_SURFACE_TAG,
 } from './definitions'
 
-import { BOX_PROPS_META } from '../Box/meta/props'
+import BOX_META from '../Box/meta'
 import { ActionSurface } from './action-surface'
 import { Text } from '../Text'
 
@@ -30,36 +30,36 @@ export default {
       topLevelTags: ACTION_SURFACE_TAGS,
     },
     props: {
-      blockSize: BOX_PROPS_META.blockSize,
-      borderBottomLeftRadius: BOX_PROPS_META.borderBottomLeftRadius,
-      borderBottomRightRadius: BOX_PROPS_META.borderBottomRightRadius,
-      borderRadius: BOX_PROPS_META.borderRadius,
-      borderTopLeftRadius: BOX_PROPS_META.borderTopLeftRadius,
-      borderTopRightRadius: BOX_PROPS_META.borderTopRightRadius,
+      blockSize: BOX_META.Box.props.blockSize,
+      borderBottomLeftRadius: BOX_META.Box.props.borderBottomLeftRadius,
+      borderBottomRightRadius: BOX_META.Box.props.borderBottomRightRadius,
+      borderRadius: BOX_META.Box.props.borderRadius,
+      borderTopLeftRadius: BOX_META.Box.props.borderTopLeftRadius,
+      borderTopRightRadius: BOX_META.Box.props.borderTopRightRadius,
       children: {
-        ...BOX_PROPS_META.children,
+        ...BOX_META.Box.props.children,
         isRequired: true,
       },
-      color: BOX_PROPS_META.color,
-      disabled: BOX_PROPS_META.disabled,
-      elevated: BOX_PROPS_META.elevated,
-      inlineSize: BOX_PROPS_META.inlineSize,
-      intent: BOX_PROPS_META.intent,
+      color: BOX_META.Box.props.color,
+      disabled: BOX_META.Box.props.disabled,
+      elevated: BOX_META.Box.props.elevated,
+      inlineSize: BOX_META.Box.props.inlineSize,
+      intent: BOX_META.Box.props.intent,
       interactive: {
-        ...BOX_PROPS_META.interactive,
+        ...BOX_META.Box.props.interactive,
         defaultValue: String(DEFAULT_ACTION_SURFACE_INTERACTIVE),
       },
-      maxBlockSize: BOX_PROPS_META.maxBlockSize,
-      maxInlineSize: BOX_PROPS_META.maxInlineSize,
-      minBlockSize: BOX_PROPS_META.minBlockSize,
-      minInlineSize: BOX_PROPS_META.minInlineSize,
+      maxBlockSize: BOX_META.Box.props.maxBlockSize,
+      maxInlineSize: BOX_META.Box.props.maxInlineSize,
+      minBlockSize: BOX_META.Box.props.minBlockSize,
+      minInlineSize: BOX_META.Box.props.minInlineSize,
       onClick: {
         options: ['e => void'],
         description: 'Click event handler.',
       },
-      padding: BOX_PROPS_META.padding,
-      paddingBlock: BOX_PROPS_META.paddingBlock,
-      paddingInline: BOX_PROPS_META.paddingInline,
+      padding: BOX_META.Box.props.padding,
+      paddingBlock: BOX_META.Box.props.paddingBlock,
+      paddingInline: BOX_META.Box.props.paddingInline,
       ripple: {
         options: ['boolean'],
         defaultValue: String(DEFAULT_ACTION_SURFACE_RIPPLE),
@@ -70,12 +70,12 @@ export default {
         description: 'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
       },
       tag: {
-        ...BOX_PROPS_META.tag,
+        ...BOX_META.Box.props.tag,
         defaultValue: DEFAULT_ACTION_SURFACE_TAG,
       },
-      tagAttrs: BOX_PROPS_META.tagAttrs,
-      tagRef: BOX_PROPS_META.tagRef,
-      variant: BOX_PROPS_META.variant,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
+      variant: BOX_META.Box.props.variant,
     },
     examples: [
       {
