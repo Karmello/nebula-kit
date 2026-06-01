@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { SelectOptionProps, Text, WithIcon } from 'lib/components'
 import { WithSlots, DropdownList, DropdownListState } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
-import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
+import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 
 import { MultiSelectProvider } from './MultiSelectProvider'
 import { DEFAULT_MULTI_SELECT_INLINE_SIZE, MultiSelectProps } from './definitions'

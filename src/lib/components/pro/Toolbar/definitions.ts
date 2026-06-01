@@ -1,7 +1,7 @@
 import { JSX } from 'react'
 
 import { GridProps } from 'lib/components'
-import { SwitchAt } from 'lib/definitions'
+import { SwitchAt } from 'lib/types'
 
 type ChildrenAsFuncArgs = {
   setMainOpen: (mainOpen: boolean) => Promise<boolean>

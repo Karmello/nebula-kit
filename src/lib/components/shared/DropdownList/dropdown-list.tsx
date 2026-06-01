@@ -1,4 +1,4 @@
-import { LENGTH_SCALE } from 'lib/definitions'
+import { LENGTH_SCALE } from 'lib/constants'
 
 import { DropdownListProvider } from './providers'
 import { WithSlots } from '../WithSlots'

@@ -1,12 +1,12 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useRef } from 'react'
 import classNames from 'classnames'
 
-import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
 import { withPrefix } from 'lib/helpers'
 
 import { ActionSurface } from '../ActionSurface'
 import { WithIcon } from '../WithIcon'
 import { Loader } from '../Loader'
+import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from '../../../constants'
 
 import {
   DEFAULT_ICON_BUTTON_INTENT,

@@ -1,7 +1,7 @@
 import { Activity } from 'lucide-react'
 
 import { ComponentMeta } from 'client/definitions'
-import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
+import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 
 import { type IconButtonProps, ICON_BUTTON_TAGS } from './definitions'
 import { IconButton } from './icon-button'

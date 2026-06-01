@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useLayoutEffect } from 'react'
 
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
-import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/definitions'
+import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/constants'
 import { useScreen, useGlobalScrollLock } from 'lib/hooks'
 
 import { ProviderProps, SplitViewContextProps, SplitViewMode } from './definitions'

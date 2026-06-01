@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 import { useAppStore, usePlaygroundStore, getInitialState } from 'client/store'
 import { Box, Flex, Section, Spacer, SplitView } from 'lib/components'
-import { LIB_PREFIX } from 'lib/definitions'
+import { LIB_PREFIX } from 'lib/constants'
 
 import {
   ComponentSelect,

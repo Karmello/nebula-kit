@@ -1,5 +1,5 @@
 import { BoxProps } from 'lib/components'
-import { DEFAULT_SWITCH_AT } from 'lib/definitions'
+import { DEFAULT_SWITCH_AT } from 'lib/constants'
 
 export const DEFAULT_SPLIT_VIEW_SIDE_WIDTH = '225px'
 export const DEFAULT_SPLIT_VIEW_SIDE_INTENT: SplitViewSideProps['intent'] = { base: 'tertiary', [DEFAULT_SWITCH_AT]: 'neutral' }

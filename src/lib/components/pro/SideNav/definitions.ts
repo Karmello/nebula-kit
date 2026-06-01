@@ -1,6 +1,6 @@
 import { ButtonProps, FlexProps } from 'lib/components'
 import { BoxVariant } from 'lib/components/core/Box'
-import { RespValue } from 'lib/definitions'
+import { RespValue } from 'lib/types'
 
 export const SIDE_NAV_EXPAND_MODES = ['single', 'multiple'] as const
 export const SIDE_NAV_VARIANTS = ['solid', 'ghost'] as const satisfies BoxVariant[]

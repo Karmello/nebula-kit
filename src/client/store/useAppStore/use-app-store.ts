@@ -4,7 +4,7 @@ import { persist } from 'zustand/middleware'
 
 import { ApiUser } from 'client/definitions'
 import { NebkitProviderProps } from 'lib/components'
-import { LIB_PREFIX } from 'lib/definitions'
+import { LIB_PREFIX } from 'lib/constants'
 
 import {
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,

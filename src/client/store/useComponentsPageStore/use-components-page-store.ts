@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
 import { COMPONENT_CATEGORIES } from 'client/definitions'
-import { LIB_PREFIX } from 'lib/definitions'
+import { LIB_PREFIX } from 'lib/constants'
 
 export type ComponentsPageStore = {
   categoryKey: string

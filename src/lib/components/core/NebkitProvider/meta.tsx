@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { SATURATIONS, THEMES } from 'lib/definitions'
+import { SATURATIONS, THEMES } from 'lib/constants'
 
 import {
   type NebkitProviderProps,

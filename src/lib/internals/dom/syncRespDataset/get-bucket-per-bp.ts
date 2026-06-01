@@ -1,7 +1,7 @@
 import isNil from 'lodash-es/isNil.js'
 import isObject from 'lodash-es/isObject.js'
 
-import { Breakpoint } from 'lib/definitions'
+import { Breakpoint } from 'lib/types'
 
 import { getDataAttrName } from './get-data-attr-name'
 import { Bucket, isBlank, PropValues } from '../definitions'

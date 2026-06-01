@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { Box, BoxProps, Slide } from 'lib/components'
 import { resolveLengthValue, withPrefix } from 'lib/helpers'
-import { CONTROL_SIZE_MAP } from 'lib/definitions'
+import { CONTROL_SIZE_MAP } from 'lib/constants'
 
 import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SIZE, SWITCH_BORDER_MULTIPLIER, SwitchProps } from './definitions'
 

@@ -1,6 +1,6 @@
 import { SyntheticEvent } from 'react'
 
-import { RespValue } from 'lib/definitions'
+import { RespValue } from 'lib/types'
 
 import type { BoxProps } from '../Box/definitions'
 

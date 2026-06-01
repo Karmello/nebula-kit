@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
+import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 
 import { BREADCRUMB_TAGS, DEFAULT_BREADCRUMB_INTENT, type BreadcrumbProps } from './definitions'
 import { BOX_INTENTS } from '../../core/Box/definitions'

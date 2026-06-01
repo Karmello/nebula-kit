@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
+import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 
 import { DEFAULT_MULTI_SELECT_INLINE_SIZE, type MultiSelectProps } from './definitions'
 

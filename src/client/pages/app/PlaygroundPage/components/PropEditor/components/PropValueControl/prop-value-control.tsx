@@ -3,7 +3,7 @@ import { sentenceCase } from 'change-case'
 import { DOCS_CSS_LABEL, PLAYGROUND_ARRAY_DATA_MAP, PLAYGROUND_CONTROLS_MAP, PlaygroundProp } from 'client/definitions'
 import { usePlaygroundStore } from 'client/store'
 import { Input, Text, Spacer, Select, IconButton } from 'lib/components'
-import { Breakpoint } from 'lib/definitions'
+import { Breakpoint } from 'lib/types'
 
 export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
   const components = usePlaygroundStore(state => state.components)

@@ -1,5 +1,5 @@
 import { BoxProps } from 'lib/components'
-import { IconName, RespValue, TShirtSize } from 'lib/definitions'
+import { IconName, RespValue, TShirtSize } from 'lib/types'
 import { BoxVariant, BoxColor } from 'lib/components/core/Box'
 import { TextTypography } from 'lib/components/core/Text'
 

@@ -1,4 +1,4 @@
-import { Breakpoint } from 'lib/definitions'
+import { Breakpoint } from 'lib/types'
 
 import { Bucket, PropValues, isBlank } from '../definitions'
 

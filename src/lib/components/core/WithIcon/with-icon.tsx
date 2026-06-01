@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 import { Box, Flex, Icon, Rotate } from 'lib/components'
-import { TEXT_TYPOGRAPHY_MAP } from 'lib/definitions'
+import { TEXT_TYPOGRAPHY_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 
 import { DEFAULT_WITH_ICON_GAP, DEFAULT_WITH_ICON_ICON_PLACEMENT, WithIconProps } from './definitions'

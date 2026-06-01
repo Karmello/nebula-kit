@@ -13,7 +13,7 @@ import {
 } from '@floating-ui/react'
 
 import { WithSlots } from 'lib/components/shared'
-import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
+import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { useControlled } from 'lib/hooks'
 
 import {

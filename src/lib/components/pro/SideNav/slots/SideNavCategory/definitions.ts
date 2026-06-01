@@ -1,7 +1,7 @@
 import { BoxProps, ButtonProps } from 'lib/components'
 
 import { SideNavVariant } from '../../definitions'
-import { RespValue } from 'lib/definitions'
+import { RespValue } from 'lib/types'
 
 export const DEFAULT_SIDE_NAV_CATEGORY_VARIANT: SideNavCategoryProps['variant'] = 'ghost'
 export const DEFAULT_SIDE_NAV_CATEGORY_INTENT: SideNavCategoryProps['intent'] = 'neutral'

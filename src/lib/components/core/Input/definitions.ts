@@ -1,6 +1,6 @@
 import { InputHTMLAttributes, ReactNode } from 'react'
 
-import { ControlSize } from 'lib/definitions'
+import { ControlSize } from 'lib/types'
 
 import { type BoxProps } from '../Box/definitions'
 

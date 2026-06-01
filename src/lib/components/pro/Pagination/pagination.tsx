@@ -1,7 +1,8 @@
 import { useCallback, useMemo } from 'react'
 
 import { Box, Button, Flex, Icon, Link, Segment } from 'lib/components'
-import { CONTROL_SIZE_MAP, IconName } from 'lib/definitions'
+import { CONTROL_SIZE_MAP } from 'lib/constants'
+import { IconName } from 'lib/types'
 
 import {
   PaginationProps,

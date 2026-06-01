@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { ComponentMeta } from 'client/definitions'
-import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
+import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 
 import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_VARIANT, type InputProps } from './definitions'
 import { Input } from './input'

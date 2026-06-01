@@ -1,5 +1,5 @@
 import { Box, Flex, Icon, Spacer, Text, Tooltip } from 'lib/components'
-import { IconName } from 'lib/definitions'
+import { IconName } from 'lib/types'
 import { ICONS } from 'lib/icons/lucide'
 
 export default () => {

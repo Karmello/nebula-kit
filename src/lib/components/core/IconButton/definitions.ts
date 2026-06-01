@@ -1,4 +1,4 @@
-import { type ControlSize } from 'lib/definitions'
+import { type ControlSize } from '../../../types'
 
 import { ActionSurfaceProps } from '../ActionSurface'
 import { WithIconProps } from '../WithIcon'

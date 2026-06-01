@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { RespValue } from 'lib/definitions'
+import { RespValue } from 'lib/types'
 
 export type PropValue = RespValue<string | number | boolean>
 

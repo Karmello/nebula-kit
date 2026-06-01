@@ -1,4 +1,11 @@
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
+import { TSHIRT_SIZES } from 'lib/constants'
+
+import { GRID_TAGS, type GridProps } from './definitions'
+import { GridItemProps } from './GridItem'
+import BOX_META from '../Box/meta'
+import { Grid } from './'
+import { Box } from '../Box'
 
 import {
   CSS_GRID_AUTO_FLOW,
@@ -6,14 +13,7 @@ import {
   CSS_GRID_ITEM_JUSTIFY_SELF,
   CSS_GRID_PLACE_CONTENT,
   CSS_GRID_PLACE_ITEMS,
-  TSHIRT_SIZES,
-} from 'lib/definitions'
-
-import { GRID_TAGS, type GridProps } from './definitions'
-import { GridItemProps } from './GridItem'
-import BOX_META from '../Box/meta'
-import { Grid } from './'
-import { Box } from '../Box'
+} from '../../../constants'
 
 export default {
   Grid: {

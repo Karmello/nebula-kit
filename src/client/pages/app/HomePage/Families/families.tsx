@@ -2,7 +2,7 @@ import { kebabCase } from 'change-case'
 import { PAGE_SECTIONS } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { Box, Button, Flex, Grid, Link, Section, Spacer, Text } from 'lib/components'
-import { IconName } from 'lib/definitions'
+import { IconName } from 'lib/types'
 
 const Family = ({
   heading,

@@ -1,6 +1,7 @@
-import { CssGridAutoFlow, CssGridPlaceContent, CssGridPlaceItems, CssValue, RespValue, TShirtSize } from 'lib/definitions'
-
+import { RespValue, TShirtSize } from 'lib/types'
 import { BoxProps } from 'lib/components'
+
+import { CssGridAutoFlow, CssGridPlaceContent, CssGridPlaceItems, CssValue } from '../../../types'
 
 export const GRID_TAGS = ['div', 'section', 'main', 'article', 'aside', 'nav', 'ul', 'ol'] as const
 

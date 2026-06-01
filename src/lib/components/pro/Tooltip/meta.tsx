@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { COLORS } from 'lib/definitions'
+import { COLORS } from 'lib/constants'
 
 import {
   DEFAULT_TOOLTIP_INTENT,

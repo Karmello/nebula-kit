@@ -2,7 +2,7 @@ import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef 
 import classNames from 'classnames'
 
 import { syncRespDataset } from 'lib/internals/dom'
-import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
+import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 

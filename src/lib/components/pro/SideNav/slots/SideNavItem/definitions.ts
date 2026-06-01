@@ -1,5 +1,5 @@
 import { LinkProps, ButtonProps } from 'lib/components'
-import { RespValue } from 'lib/definitions'
+import { RespValue } from 'lib/types'
 
 import { SideNavVariant } from '../../definitions'
 

@@ -1,6 +1,7 @@
 import { RefObject } from 'react'
 
-import { Breakpoint, BREAKPOINTS } from 'lib/definitions'
+import { Breakpoint } from 'lib/types'
+import { BREAKPOINTS } from 'lib/constants'
 
 import { Bucket, PropValues, isBlank } from '../definitions'
 import { getBucketPerBp } from './get-bucket-per-bp'

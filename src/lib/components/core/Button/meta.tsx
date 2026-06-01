@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
+import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 
 import TEXT_META from '../Text/meta'
 import ACTION_SURFACE_META from '../ActionSurface/meta'

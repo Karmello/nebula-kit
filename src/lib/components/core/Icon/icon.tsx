@@ -5,10 +5,11 @@ import { Box } from 'lib/components'
 import { syncRespDataset } from 'lib/internals/dom'
 import { resolveLengthValue, withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
-import { CssValue, IconName } from 'lib/definitions'
+import { IconName } from 'lib/types'
 import { getSvgIconComponent } from 'lib/icons/lucide'
 
 import { DEFAULT_ICON_SIZE, IconProps, IconSize } from './definitions'
+import { CssValue } from '../../../types'
 
 export const Icon = memo(
   ({

@@ -1,5 +1,5 @@
 import { Box } from 'lib/components'
-import { CONTROL_SIZE_MAP } from 'lib/definitions'
+import { CONTROL_SIZE_MAP } from 'lib/constants'
 
 import { TabsPanelProps } from './definitions'
 import { useTabsContext } from '../../TabsContext'

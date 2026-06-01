@@ -1,6 +1,6 @@
 import type { BoxProps } from 'lib/components'
 import { BoxIntent } from 'lib/components/core/Box'
-import { ControlSize, RespValue } from 'lib/definitions'
+import { ControlSize, RespValue } from 'lib/types'
 
 export const SWITCH_BORDER_MULTIPLIER = 2
 

@@ -1,5 +1,5 @@
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
-import { TSHIRT_SIZES } from 'lib/definitions'
+import { TSHIRT_SIZES } from 'lib/constants'
 
 import { DEFAULT_SPACER_BLOCK_SIZE, type SpacerProps } from './definitions'
 import { Text } from '../Text'

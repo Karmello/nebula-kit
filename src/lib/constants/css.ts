@@ -1,5 +1,3 @@
-// constants
-
 export const CSS_TEXT_ALIGN = ['left', 'right', 'center', 'justify', 'start', 'end'] as const
 export const CSS_POINTER_EVENTS = ['auto', 'none'] as const
 export const CSS_DISPLAY = ['block', 'inline', 'inline-block', 'none', 'contents'] as const
@@ -49,28 +47,3 @@ export const CSS_GRID_PLACE_CONTENT = [
 
 export const CSS_GRID_ITEM_JUSTIFY_SELF = ['auto', 'start', 'center', 'end', 'stretch'] as const
 export const CSS_GRID_ITEM_ALIGN_SELF = ['auto', 'start', 'center', 'end', 'stretch'] as const
-
-// types
-
-export type CssTextAlign = (typeof CSS_TEXT_ALIGN)[number]
-export type CssPointerEvents = (typeof CSS_POINTER_EVENTS)[number]
-export type CssDisplay = (typeof CSS_DISPLAY)[number]
-export type CssOverflow = (typeof CSS_OVERFLOW)[number]
-export type CssPosition = (typeof CSS_POSITION)[number]
-export type CssVisibility = (typeof CSS_VISIBILITY)[number]
-
-export type CssFlexDisplay = (typeof CSS_FLEX_DISPLAY)[number]
-export type CssFlexDirection = (typeof CSS_FLEX_DIRECTION)[number]
-export type CssFlexWrap = (typeof CSS_FLEX_WRAP)[number]
-export type CssFlexJustifyContent = (typeof CSS_FLEX_JUSTIFY_CONTENT)[number]
-export type CssFlexAlignItems = (typeof CSS_FLEX_ALIGN_ITEMS)[number]
-export type CssFlexAlignContent = (typeof CSS_FLEX_ALIGN_CONTENT)[number]
-export type CssFlexItemAlignSelf = (typeof CSS_FLEX_ITEM_ALIGN_SELF)[number]
-
-export type CssGridAutoFlow = (typeof CSS_GRID_AUTO_FLOW)[number]
-export type CssGridPlaceItems = (typeof CSS_GRID_PLACE_ITEMS)[number]
-export type CssGridPlaceContent = (typeof CSS_GRID_PLACE_CONTENT)[number]
-export type CssGridItemJustifySelf = (typeof CSS_GRID_ITEM_JUSTIFY_SELF)[number]
-export type CssGridItemAlignSelf = (typeof CSS_GRID_ITEM_ALIGN_SELF)[number]
-
-export type CssValue = string & {}

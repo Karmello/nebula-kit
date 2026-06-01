@@ -1,5 +1,5 @@
 import { ActionSurfaceProps, BoxProps } from 'lib/components'
-import { ControlSize } from 'lib/definitions'
+import { ControlSize } from 'lib/types'
 import { SELECT_VARIANTS } from 'lib/components/core/Select/constants'
 
 import { BoxColor, BoxIntent } from '../Box'

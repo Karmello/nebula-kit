@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { Box, Segment } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/definitions'
+import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 
 import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_VARIANT, InputAffixProps, InputProps } from './definitions'
 

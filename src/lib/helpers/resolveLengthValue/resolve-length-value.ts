@@ -1,4 +1,5 @@
-import { RespValue, LENGTH_SCALE, TShirtSize } from 'lib/definitions'
+import { LENGTH_SCALE } from 'lib/constants'
+import { RespValue, TShirtSize } from 'lib/types'
 
 type ResolveMode = 'single' | 'shorthand'
 

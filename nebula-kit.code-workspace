@@ -13,7 +13,20 @@
       "path": "src/client",
     },
     {
+      "name": "lib",
       "path": "src/lib",
+    },
+    {
+      "name": "components",
+      "path": "src/lib/components",
+    },
+    {
+      "name": "constants",
+      "path": "src/lib/constants",
+    },
+    {
+      "name": "types",
+      "path": "src/lib/types",
     },
   ],
   "settings": {

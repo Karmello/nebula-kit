@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { WithSlots } from 'lib/components/shared'
-import { DEFAULT_CONTROL_SIZE } from 'lib/definitions'
+import { DEFAULT_CONTROL_SIZE } from 'lib/constants'
 
 import {
   AutocompleteProps,

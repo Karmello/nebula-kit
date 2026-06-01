@@ -1,6 +1,6 @@
 import { BoxProps } from 'lib/components'
 import { DropdownListProps } from 'lib/components/shared'
-import { ControlSize } from 'lib/definitions'
+import { ControlSize } from 'lib/types'
 
 export const BREADCRUMB_TAGS = ['div', 'nav', 'section'] as const
 

@@ -1,8 +1,9 @@
 import { createContext, useContext, ReactNode, useState } from 'react'
 
-import { Breakpoint, BREAKPOINTS } from 'lib/definitions'
+import { BREAKPOINTS } from 'lib/constants'
 import { getLibMsg } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
+import { Breakpoint } from 'lib/types'
 
 import { ToolbarOwnProps } from '../definitions'
 

@@ -1,20 +1,10 @@
 import { ElementType } from 'react'
 
-import {
-  COLORS,
-  CssDisplay,
-  CssOverflow,
-  CssPointerEvents,
-  CssPosition,
-  CssTextAlign,
-  CssValue,
-  CssVisibility,
-  RespValue,
-  THEMES,
-  TShirtSize,
-} from 'lib/definitions'
-
+import { RespValue, TShirtSize } from 'lib/types'
+import { COLORS, THEMES } from 'lib/constants'
 import { HtmlTagProps } from 'lib/components/shared'
+
+import { CssDisplay, CssOverflow, CssPointerEvents, CssPosition, CssTextAlign, CssValue, CssVisibility } from '../../../types'
 
 export const BOX_THEMES = [...THEMES, 'flipped'] as const
 export const BOX_VARIANTS = ['solid', 'outline', 'soft-outline', 'ghost'] as const

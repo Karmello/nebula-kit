@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/definitions'
+import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/constants'
 
 import BOX_META from '../Box/meta'
 import FLEX_META from '../Flex/meta'

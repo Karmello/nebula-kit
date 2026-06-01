@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { ComponentMeta } from 'client/definitions'
-import { DEFAULT_CONTROL_SIZE } from 'lib/definitions'
+import { DEFAULT_CONTROL_SIZE } from 'lib/constants'
 
 import {
   DEFAULT_PAGINATION_BOUNDARY_COUNT,

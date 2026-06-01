@@ -1,5 +1,5 @@
 import { Box, Flex, Link, Section, Text, WithIcon } from 'lib/components'
-import { IconName } from 'lib/definitions'
+import { IconName } from 'lib/types'
 
 type ArticleProps = {
   title: string

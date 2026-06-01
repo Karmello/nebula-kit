@@ -1,6 +1,6 @@
 import { CodeSnippet } from 'client/components'
 import { Box, Spacer, Table, Text } from 'lib/components'
-import { LENGTH_SCALE } from 'lib/definitions'
+import { LENGTH_SCALE } from 'lib/constants'
 
 export default () => {
   return (

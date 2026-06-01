@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 import { BoxProps, WithIconProps } from 'lib/components'
 import { BoxVariant } from 'lib/components/core/Box/definitions'
 import { TextProps, TextTypography } from 'lib/components/core/Text/definitions'
-import { RespValue, TShirtSize } from 'lib/definitions'
+import { RespValue, TShirtSize } from 'lib/types'
 
 export const SECTION_TAGS = ['section', 'article', 'aside', 'div'] as const
 export const SECTION_SIZES = ['sm', 'md', 'lg', 'xl', '2xl'] as const satisfies TShirtSize[]

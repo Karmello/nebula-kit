@@ -12,7 +12,7 @@ import json from '@shikijs/langs/json'
 import githubLight from '@shikijs/themes/github-light'
 import githubDark from '@shikijs/themes/github-dark'
 
-import { Theme } from 'lib/definitions'
+import { Theme } from 'lib/types'
 
 const highlighter = await createHighlighterCore({
   engine: createJavaScriptRegexEngine(),

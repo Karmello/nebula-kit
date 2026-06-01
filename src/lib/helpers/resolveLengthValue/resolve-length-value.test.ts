@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import { LENGTH_SCALE } from 'lib/definitions'
+import { LENGTH_SCALE } from 'lib/constants'
 
 import { resolveLengthValue } from './resolve-length-value'
 

@@ -1,5 +1,5 @@
 import { BoxProps } from 'lib/components'
-import { TShirtSize } from 'lib/definitions'
+import { TShirtSize } from 'lib/types'
 
 export const DEFAULT_LOADER_SIZE: LoaderProps['size'] = 'md'
 export const DEFAULT_LOADER_ACTIVE: LoaderProps['active'] = true

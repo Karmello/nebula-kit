@@ -1,7 +1,7 @@
 import { useState, Fragment, useCallback } from 'react'
 
 import { Box, Flex, Icon, Text } from 'lib/components'
-import { CONTROL_SIZE_MAP } from 'lib/definitions'
+import { CONTROL_SIZE_MAP } from 'lib/constants'
 import { DropdownList } from 'lib/components/shared'
 
 import { BreadcrumbProps, BreadcrumbTag, DEFAULT_BREADCRUMB_INTENT, DEFAULT_BREADCRUMB_SIZE } from './definitions'

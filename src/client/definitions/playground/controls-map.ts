@@ -1,4 +1,4 @@
-import { ICON_NAMES } from 'lib/definitions'
+import { ICON_NAMES } from 'lib/constants'
 
 import { PlaygroundProp } from './types'
 

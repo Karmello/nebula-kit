@@ -1,6 +1,6 @@
 import { useLayoutEffect, useState } from 'react'
 
-import { Theme } from 'lib/definitions'
+import { Theme } from 'lib/types'
 
 const getTheme = (): Theme => {
   if (typeof document === 'undefined') {

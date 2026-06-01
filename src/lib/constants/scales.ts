@@ -1,11 +1,6 @@
-import { TextTag, TextTypography } from 'lib/components/core/Text/definitions'
+import { TextTag, TextTypography } from 'lib/components/core/Text'
 
-// constants
-
-export const TSHIRT_SIZES = ['3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'] as const
-export const CONTROL_SIZES = ['2xs', 'xs', 'sm', 'md', 'lg', 'xl'] as const satisfies TShirtSize[]
-
-export const DEFAULT_CONTROL_SIZE: ControlSize = 'md'
+import type { TShirtSize } from '../types'
 
 export const LENGTH_SCALE: Record<TShirtSize, string> = {
   '3xs': '2px',
@@ -158,8 +153,3 @@ export const CONTROL_SIZE_MAP: Record<
     loaderSize: '27px',
   },
 }
-
-// types
-
-export type TShirtSize = (typeof TSHIRT_SIZES)[number]
-export type ControlSize = (typeof CONTROL_SIZES)[number]

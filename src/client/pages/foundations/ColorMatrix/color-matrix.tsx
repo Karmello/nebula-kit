@@ -1,5 +1,5 @@
 import { Box, Flex, Spacer, Text } from 'lib/components'
-import { COLORS } from 'lib/definitions'
+import { COLORS } from 'lib/constants'
 
 export default () => {
   const arr = Array.from({ length: 26 }, (v, k) => k)

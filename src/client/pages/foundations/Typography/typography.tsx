@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 
 import { Box, Grid, Spacer, Table, Text } from 'lib/components'
 import { TEXT_TYPOGRAPHY, TextTypography } from 'lib/components/core/Text'
-import { TEXT_TYPOGRAPHY_MAP } from 'lib/definitions'
+import { TEXT_TYPOGRAPHY_MAP } from 'lib/constants'
 
 const MAP: Record<TextTypography, string> = {
   body: 'Default text for reading and general content. Balanced for legibility and rhythm across devices.',

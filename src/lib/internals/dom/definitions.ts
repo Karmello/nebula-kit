@@ -1,4 +1,4 @@
-import { RespValue } from 'lib/definitions'
+import { RespValue } from 'lib/types'
 
 export type PropValue = string | number | boolean
 export type PropValues = Record<string, RespValue<PropValue> | undefined>

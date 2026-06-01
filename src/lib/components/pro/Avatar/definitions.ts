@@ -1,5 +1,5 @@
 import { BoxProps, ImageProps } from 'lib/components'
-import { TShirtSize } from 'lib/definitions'
+import { TShirtSize } from 'lib/types'
 
 export const AVATAR_SIZES_MAP: Record<AvatarSize, { side: BoxProps['blockSize']; fontSize: string }> = {
   xs: {

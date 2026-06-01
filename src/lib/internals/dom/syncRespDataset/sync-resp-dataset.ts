@@ -1,6 +1,7 @@
 import { RefObject } from 'react'
 
-import { Breakpoint, BREAKPOINTS } from 'lib/definitions'
+import { BREAKPOINTS } from 'lib/constants'
+import { Breakpoint } from 'lib/types'
 
 import { getBucketPerBp } from './get-bucket-per-bp'
 import { getDataAttrName } from './get-data-attr-name'

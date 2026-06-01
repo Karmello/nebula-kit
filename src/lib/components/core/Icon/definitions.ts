@@ -1,5 +1,7 @@
-import { CssValue, IconName, RespValue, TShirtSize } from 'lib/definitions'
+import { IconName, RespValue, TShirtSize } from 'lib/types'
 import { BoxProps } from 'lib/components/core/Box'
+
+import type { CssValue } from '../../../types'
 
 export const DEFAULT_ICON_SIZE: IconProps['size'] = 'md'
 

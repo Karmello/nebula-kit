@@ -1,6 +1,9 @@
 import { ElementType } from 'react'
 
-import {
+import { RespValue, TShirtSize } from 'lib/types'
+import { BoxProps } from 'lib/components'
+
+import type {
   CssFlexAlignContent,
   CssFlexAlignItems,
   CssFlexDirection,
@@ -8,11 +11,7 @@ import {
   CssFlexJustifyContent,
   CssFlexWrap,
   CssValue,
-  RespValue,
-  TShirtSize,
-} from 'lib/definitions'
-
-import { BoxProps } from 'lib/components'
+} from '../../../types'
 
 type FlexOwnProps = {
   display?: RespValue<CssFlexDisplay>

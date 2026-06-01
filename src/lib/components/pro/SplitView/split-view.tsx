@@ -4,7 +4,7 @@ import { Grid } from 'lib/components'
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
-import { DEFAULT_SWITCH_AT } from 'lib/definitions'
+import { DEFAULT_SWITCH_AT } from 'lib/constants'
 import { buildStaticDataset } from 'lib/internals/dom'
 
 import { SplitViewProvider, useSplitViewContext } from './SplitViewProvider'

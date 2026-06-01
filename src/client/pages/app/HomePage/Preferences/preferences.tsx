@@ -2,7 +2,7 @@ import { sentenceCase } from 'change-case'
 
 import { useAppStore } from 'client/store'
 import { Flex, Button, Select, Text, Segment } from 'lib/components'
-import { COLORS, THEMES } from 'lib/definitions'
+import { COLORS, THEMES } from 'lib/constants'
 
 export const Preferences = () => {
   const theme = useAppStore(state => state.theme)
