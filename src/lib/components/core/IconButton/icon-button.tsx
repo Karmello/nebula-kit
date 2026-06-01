@@ -8,14 +8,16 @@ import { ActionSurface } from '../ActionSurface'
 import { WithIcon } from '../WithIcon'
 import { Loader } from '../Loader'
 
-import { type IconButtonProps, IconButtonTag } from './definitions'
+import {
+  DEFAULT_ICON_BUTTON_INTENT,
+  DEFAULT_ICON_BUTTON_RIPPLE,
+  DEFAULT_ICON_BUTTON_TAG,
+  DEFAULT_ICON_BUTTON_VARIANT,
+  type IconButtonProps,
+  type IconButtonTag,
+} from './definitions'
 
 import './icon-button.scss'
-
-export const DEFAULT_ICON_BUTTON_TAG: IconButtonTag = 'button'
-export const DEFAULT_ICON_BUTTON_VARIANT: IconButtonProps['variant'] = 'solid'
-export const DEFAULT_ICON_BUTTON_INTENT: IconButtonProps['intent'] = 'tertiary'
-export const DEFAULT_ICON_BUTTON_RIPPLE: IconButtonProps['ripple'] = true
 
 export const IconButton = <T extends IconButtonTag = typeof DEFAULT_ICON_BUTTON_TAG>({
   // ActionSurface
