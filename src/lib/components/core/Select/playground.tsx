@@ -1,4 +1,5 @@
-import { Select, SelectProps } from 'lib/components'
+import { Select } from '.'
+import { type SelectProps } from './types'
 
 export type PropsFromSelectKey = (typeof PROPS_FROM_SELECT)[number]
 

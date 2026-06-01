@@ -1,4 +1,4 @@
-import { TextProps } from 'lib/components'
+import { type TextProps } from './definitions'
 
 export type PropsFromTextKey = (typeof PROPS_FROM_TEXT)[number]
 

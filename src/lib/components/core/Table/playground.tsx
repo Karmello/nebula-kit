@@ -1,4 +1,5 @@
-import { Table, TableProps } from 'lib/components'
+import { Table } from './'
+import { type TableProps } from './definitions'
 
 export type PropsFromTableKey = (typeof PROPS_FROM_TABLE)[number]
 

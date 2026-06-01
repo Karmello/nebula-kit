@@ -1,4 +1,6 @@
-import { Button, Tooltip, TooltipProps } from 'lib/components'
+import { Tooltip } from './'
+import { Button } from '../../core/Button'
+import { type TooltipProps } from './types'
 
 export type PropsFromTooltipKey = (typeof PROPS_FROM_TOOLTIP)[number]
 

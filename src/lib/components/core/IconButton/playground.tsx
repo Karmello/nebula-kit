@@ -1,4 +1,4 @@
-import { IconButtonProps } from 'lib/components'
+import { type IconButtonProps } from './definitions'
 
 export type PropsFromIconButtonKey = (typeof PROPS_FROM_ICON_BUTTON)[number]
 

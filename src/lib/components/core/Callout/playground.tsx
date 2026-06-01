@@ -1,4 +1,4 @@
-import { CalloutProps } from 'lib/components'
+import { type CalloutProps } from './definitions'
 
 export type PropsFromCalloutKey = (typeof PROPS_FROM_CALLOUT)[number]
 

@@ -1,4 +1,4 @@
-import { SectionProps } from 'lib/components'
+import { type SectionProps } from './definitions'
 
 export type PropsFromSectionKey = (typeof PROPS_FROM_SECTION)[number]
 

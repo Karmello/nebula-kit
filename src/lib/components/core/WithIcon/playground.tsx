@@ -1,4 +1,4 @@
-import { WithIconProps } from 'lib/components'
+import { type WithIconProps } from './definitions'
 
 export type PropsFromWithIconKey = (typeof PROPS_FROM_WITH_ICON)[number]
 

@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/components'
+import { type BoxProps } from './definitions'
 
 export type PropsFromBoxKey = (typeof PROPS_FROM_BOX)[number]
 
