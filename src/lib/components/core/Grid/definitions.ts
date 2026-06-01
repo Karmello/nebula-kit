@@ -1,11 +1,7 @@
-import { RespValue, TShirtSize } from 'lib/types'
+import type { GridTag, RespValue, TShirtSize } from 'lib/types'
 import { BoxProps } from 'lib/components'
 
 import { CssGridAutoFlow, CssGridPlaceContent, CssGridPlaceItems, CssValue } from '../../../types'
-
-export const GRID_TAGS = ['div', 'section', 'main', 'article', 'aside', 'nav', 'ul', 'ol'] as const
-
-export type GridTag = (typeof GRID_TAGS)[number]
 
 type GridOwnProps = {
   gridTemplateColumns?: RespValue<string>

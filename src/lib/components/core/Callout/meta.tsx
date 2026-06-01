@@ -3,7 +3,6 @@ import { ComponentMeta } from 'client/definitions'
 import {
   CALLOUT_SIZES,
   CALLOUT_STATUSES,
-  CALLOUT_TAGS,
   CALLOUT_VARIANTS,
   DEFAULT_CALLOUT_INTENT,
   DEFAULT_CALLOUT_SIZE,
@@ -15,6 +14,7 @@ import {
 import BOX_META from '../Box/meta'
 import { Callout } from './callout'
 import { Spacer } from '../Spacer'
+import { CALLOUT_TAGS } from '../../../constants'
 
 export default {
   Callout: {

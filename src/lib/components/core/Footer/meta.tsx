@@ -1,9 +1,9 @@
 import { ComponentMeta } from 'client/definitions'
-import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/constants'
+import { DEFAULT_SWITCH_AT, FOOTER_TAGS, SWITCH_AT } from 'lib/constants'
 
 import BOX_META from '../Box/meta'
 import FLEX_META from '../Flex/meta'
-import { DEFAULT_FOOTER_BORDER_INTENT, FOOTER_TAGS, type FooterProps } from './definitions'
+import { DEFAULT_FOOTER_BORDER_INTENT, type FooterProps } from './definitions'
 import { FooterSectionProps } from './slots'
 import { Footer } from '.'
 

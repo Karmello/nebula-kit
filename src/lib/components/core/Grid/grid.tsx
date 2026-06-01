@@ -6,9 +6,10 @@ import { withPrefix, resolveLengthValue } from 'lib/helpers'
 import { syncRespStyle } from 'lib/internals/dom'
 import { useScreen } from 'lib/hooks'
 
-import { GridTag, GridProps } from './definitions'
+import { GridProps } from './definitions'
 
 import './grid.scss'
+import { GridTag } from 'lib/types'
 
 export const Grid = <T extends GridTag = 'div'>({
   // Box

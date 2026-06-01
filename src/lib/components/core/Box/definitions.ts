@@ -1,23 +1,25 @@
 import { ElementType } from 'react'
 
-import { RespValue, TShirtSize } from 'lib/types'
-import { COLORS, THEMES } from 'lib/constants'
 import { HtmlTagProps } from 'lib/components/shared'
 
-import { CssDisplay, CssOverflow, CssPointerEvents, CssPosition, CssTextAlign, CssValue, CssVisibility } from '../../../types'
+import type {
+  RespValue,
+  TShirtSize,
+  CssDisplay,
+  CssOverflow,
+  CssPointerEvents,
+  CssPosition,
+  CssTextAlign,
+  CssValue,
+  CssVisibility,
+  BoxTheme,
+  BoxColor,
+  BoxVariant,
+  BoxIntent,
+  BoxSurface,
+} from '../../../types'
 
-export const BOX_THEMES = [...THEMES, 'flipped'] as const
-export const BOX_VARIANTS = ['solid', 'outline', 'soft-outline', 'ghost'] as const
-export const BOX_INTENTS = ['neutral', 'muted', 'tertiary', 'secondary', 'primary', 'inverse'] as const
-export const BOX_SURFACES = ['selected', 'dividing'] as const
-
-export type BoxTheme = (typeof BOX_THEMES)[number]
-export type BoxVariant = (typeof BOX_VARIANTS)[number]
-export type BoxIntent = (typeof BOX_INTENTS)[number]
-export type BoxColor = (typeof COLORS)[number]
-export type BoxSurface = (typeof BOX_SURFACES)[number]
-
-type BoxOwnProps = {
+export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   // surface
   drawable?: boolean
   elevated?: boolean
@@ -87,5 +89,3 @@ type BoxOwnProps = {
   marginBottom?: RespValue<TShirtSize | CssValue>
   marginLeft?: RespValue<TShirtSize | CssValue>
 }
-
-export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & BoxOwnProps

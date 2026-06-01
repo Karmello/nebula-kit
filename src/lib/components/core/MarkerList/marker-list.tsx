@@ -5,7 +5,8 @@ import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 
 import { MarkerListProvider } from './MarkerListProvider'
-import { MarkerListTag, MarkerListProps, DEFAULT_MARKER_LIST_GAP } from './definitions'
+import { MarkerListProps, DEFAULT_MARKER_LIST_GAP } from './definitions'
+import type { MarkerListTag } from '../../../types'
 
 import './marker-list.scss'
 

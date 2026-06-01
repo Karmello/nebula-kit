@@ -1,4 +1,4 @@
-import type { ControlSize, SwitchAt, TShirtSize } from '../types'
+import type { ControlSize, SwitchAt, TShirtSize } from 'lib/types'
 
 export const DEFAULT_CONTROL_SIZE: ControlSize = 'md'
 export const DEFAULT_SWITCH_AT: SwitchAt = 'lg'
@@ -12,3 +12,8 @@ export const COLORS = ['gray', 'green', 'blue', 'red', 'pink', 'amber'] as const
 export const BREAKPOINTS = ['base', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
 
 export const SWITCH_AT = [...BREAKPOINTS.filter(bp => bp !== 'base')] as const
+
+export const BOX_THEMES = [...THEMES, 'flipped'] as const
+export const BOX_VARIANTS = ['solid', 'outline', 'soft-outline', 'ghost'] as const
+export const BOX_INTENTS = ['neutral', 'muted', 'tertiary', 'secondary', 'primary', 'inverse'] as const
+export const BOX_SURFACES = ['selected', 'dividing'] as const

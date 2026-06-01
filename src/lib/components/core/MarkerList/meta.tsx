@@ -1,9 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_MARKER_LIST_GAP, MARKER_LIST_STYLES, MARKER_LIST_TAGS, type MarkerListProps } from './definitions'
+import { DEFAULT_MARKER_LIST_GAP, MARKER_LIST_STYLES, type MarkerListProps } from './definitions'
 import BOX_META from '../Box/meta'
 import FLEX_META from '../Flex/meta'
 import { MarkerList, MarkerListItemProps } from './'
+import { MARKER_LIST_TAGS } from '../../../constants'
 
 export default {
   MarkerList: {

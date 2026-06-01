@@ -3,8 +3,7 @@ import { ReactNode } from 'react'
 import { useNavigateTo } from 'client/hooks'
 import { Plan } from 'client/definitions'
 import { Flex, Icon, Link, Section, Spacer, Text } from 'lib/components'
-import { BoxColor } from 'lib/components/core/Box'
-import { IconName } from 'lib/types'
+import { BoxColor, IconName } from 'lib/types'
 
 import { PricingPlanButton } from './PricingPlanButton'
 

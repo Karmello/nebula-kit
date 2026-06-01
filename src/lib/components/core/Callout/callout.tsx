@@ -6,7 +6,6 @@ import { withPrefix } from 'lib/helpers'
 
 import {
   CalloutProps,
-  CalloutTag,
   DEFAULT_CALLOUT_VARIANT,
   DEFAULT_CALLOUT_STATUS,
   DEFAULT_CALLOUT_SIZE,
@@ -14,6 +13,7 @@ import {
   CALLOUT_CONFIG,
   CALLOUT_SIZE_CONFIG,
 } from './definitions'
+import { CalloutTag } from 'lib/types'
 
 export const Callout = <T extends CalloutTag = 'div'>({
   // Box

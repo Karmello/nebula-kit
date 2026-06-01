@@ -1,6 +1,5 @@
-import { TextTag, TextTypography } from 'lib/components/core/Text'
-
-import type { TShirtSize } from '../types'
+import { TextTypography } from 'lib/components/core/Text'
+import type { TextTag, TShirtSize } from 'lib/types'
 
 export const LENGTH_SCALE: Record<TShirtSize, string> = {
   '3xs': '2px',

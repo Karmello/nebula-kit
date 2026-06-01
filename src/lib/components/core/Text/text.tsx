@@ -5,7 +5,8 @@ import { buildStaticDataset } from 'lib/internals/dom'
 import { TEXT_TYPOGRAPHY_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 
-import { DEFAULT_TEXT_TYPOGRAPHY, TextTag, TextProps } from './definitions'
+import type { TextTag } from '../../../types'
+import { DEFAULT_TEXT_TYPOGRAPHY, TextProps } from './definitions'
 
 import './text.scss'
 

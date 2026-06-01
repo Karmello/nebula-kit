@@ -1,6 +1,5 @@
 import { BoxProps } from 'lib/components'
-import { IconName, RespValue, TShirtSize } from 'lib/types'
-import { BoxVariant, BoxColor } from 'lib/components/core/Box'
+import { BoxColor, BoxVariant, CalloutTag, IconName, RespValue, TShirtSize } from 'lib/types'
 import { TextTypography } from 'lib/components/core/Text'
 
 export const CALLOUT_SIZE_CONFIG: Record<
@@ -30,12 +29,10 @@ export const DEFAULT_CALLOUT_VARIANT: CalloutProps['variant'] = 'solid'
 export const DEFAULT_CALLOUT_INTENT: CalloutProps['intent'] = 'primary'
 export const DEFAULT_CALLOUT_STATUS: CalloutProps['status'] = 'info'
 
-export const CALLOUT_TAGS = ['div', 'section', 'article', 'aside'] as const
 export const CALLOUT_SIZES = ['sm', 'md', 'lg', 'xl', '2xl'] as const satisfies TShirtSize[]
 export const CALLOUT_VARIANTS = ['solid', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
 export const CALLOUT_STATUSES = ['info', 'success', 'warning', 'error'] as const
 
-export type CalloutTag = (typeof CALLOUT_TAGS)[number]
 export type CalloutSize = (typeof CALLOUT_SIZES)[number]
 export type CalloutVariant = (typeof CALLOUT_VARIANTS)[number]
 export type CalloutStatus = (typeof CALLOUT_STATUSES)[number]

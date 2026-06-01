@@ -1,7 +1,6 @@
 import type { Placement } from '@floating-ui/react'
 
-import { TShirtSize } from 'lib/types'
-import type { BoxIntent, BoxVariant } from 'lib/components/core/Box/definitions'
+import { BoxIntent, BoxVariant, TShirtSize } from 'lib/types'
 import type { TooltipProps } from 'lib/components/pro/Tooltip/types'
 
 export const TOOLTIP_PLACEMENTS = [

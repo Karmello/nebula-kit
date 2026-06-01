@@ -1,8 +1,7 @@
 import { ComponentMeta } from 'client/definitions'
-import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { BOX_INTENTS, BREADCRUMB_TAGS, COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 
-import { BREADCRUMB_TAGS, DEFAULT_BREADCRUMB_INTENT, type BreadcrumbProps } from './definitions'
-import { BOX_INTENTS } from '../../core/Box/definitions'
+import { DEFAULT_BREADCRUMB_INTENT, type BreadcrumbProps } from './definitions'
 import { Breadcrumb } from './breadcrumb'
 import BOX_META from '../../core/Box/meta'
 
@@ -97,7 +96,7 @@ export default {
       },
       tag: {
         ...BOX_META.Box.props.tag,
-        options: BREADCRUMB_TAGS as never,
+        options: BREADCRUMB_TAGS,
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,

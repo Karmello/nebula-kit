@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { sentenceCase } from 'change-case'
 
 import { Box, Button, Grid, Select, Spacer, Text, Switch, Flex } from 'lib/components'
-import { BOX_VARIANTS, BOX_INTENTS, BoxVariant } from 'lib/components/core/Box/definitions'
-import { COLORS } from 'lib/constants'
+import { BOX_INTENTS, BOX_VARIANTS, COLORS } from 'lib/constants'
+import { BoxVariant } from 'lib/types'
 
 const STATES = ['rest', 'selected', 'disabled', 'loading'] as const
 

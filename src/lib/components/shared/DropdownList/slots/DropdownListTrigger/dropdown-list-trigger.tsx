@@ -1,13 +1,14 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, RefObject } from 'react'
 
 import { ActionSurface } from 'lib/components'
-import { ActionSurfaceTag, DEFAULT_ACTION_SURFACE_TAG } from 'lib/components/core/ActionSurface/definitions'
 import { withPrefix } from 'lib/helpers'
 
 import { useDropdownListContext } from '../../providers'
 import { DEFAULT_DROPDOWN_LIST_TRIGGER_VARIANT, DropdownListTriggerProps } from './definitions'
+import type { ActionSurfaceTag } from '../../../../../types'
+import { ACTION_SURFACE_TAGS } from '../../../../../constants'
 
-export const DropdownListTrigger = <T extends ActionSurfaceTag = typeof DEFAULT_ACTION_SURFACE_TAG>({
+export const DropdownListTrigger = <T extends ActionSurfaceTag = (typeof ACTION_SURFACE_TAGS)[0]>({
   children,
   variant = DEFAULT_DROPDOWN_LIST_TRIGGER_VARIANT,
   ...rest

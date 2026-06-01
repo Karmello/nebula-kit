@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { BOX_INTENTS, COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 
 import {
   DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
@@ -17,7 +17,6 @@ import {
 } from '../../shared/DropdownList/definitions'
 
 import { Autocomplete, AutocompleteOptionProps } from '.'
-import { BOX_INTENTS } from '../../core/Box/definitions'
 import BOX_META from '../../core/Box/meta'
 import ACTION_SURFACE_META from '../../core/ActionSurface/meta'
 

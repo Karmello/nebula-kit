@@ -5,7 +5,6 @@ import {
   DEFAULT_SECTION_SIZE,
   DEFAULT_SECTION_VARIANT,
   SECTION_SIZES,
-  SECTION_TAGS,
   SECTION_VARIANTS,
   type SectionProps,
 } from './definitions'
@@ -14,6 +13,7 @@ import BOX_META from './../Box/meta'
 import TEXT_META from './../Text/meta'
 import WITH_ICON_META from './../WithIcon/meta'
 import { Section } from './section'
+import { SECTION_TAGS } from 'lib/constants'
 
 export default {
   Section: {

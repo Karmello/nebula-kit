@@ -1,12 +1,10 @@
 import { type ResizeProps } from '../Resize'
 import { BoxProps } from '../Box'
 import { type ButtonProps } from '../Button'
+import { RevealTag } from 'lib/types'
 
-export const REVEAL_TAGS = ['div', 'section', 'article', 'aside', 'li'] as const
 export const DEFAULT_REVEAL_INTENT: RevealProps['intent'] = 'tertiary'
 export const DEFAULT_REVEAL_SIZE: RevealProps['size'] = 'sm'
-
-export type RevealTag = (typeof REVEAL_TAGS)[number]
 
 type RevealOwnProps = {
   label: string

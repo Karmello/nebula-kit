@@ -13,7 +13,6 @@ import { WithIcon } from '../WithIcon'
 import { Flex } from '../Flex'
 
 import {
-  ButtonTag,
   type ButtonProps,
   DEFAULT_BUTTON_INTENT,
   DEFAULT_BUTTON_VARIANT,
@@ -22,6 +21,7 @@ import {
 } from './definitions'
 
 import './button.scss'
+import { ButtonTag } from 'lib/types'
 
 export const Button = <T extends ButtonTag = 'button'>({
   // Box

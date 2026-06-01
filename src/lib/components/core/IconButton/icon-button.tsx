@@ -6,20 +6,19 @@ import { withPrefix } from 'lib/helpers'
 import { ActionSurface } from '../ActionSurface'
 import { WithIcon } from '../WithIcon'
 import { Loader } from '../Loader'
-import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from '../../../constants'
+import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE, ICON_BUTTON_TAGS } from '../../../constants'
 
 import {
   DEFAULT_ICON_BUTTON_INTENT,
   DEFAULT_ICON_BUTTON_RIPPLE,
-  DEFAULT_ICON_BUTTON_TAG,
   DEFAULT_ICON_BUTTON_VARIANT,
   type IconButtonProps,
-  type IconButtonTag,
 } from './definitions'
 
 import './icon-button.scss'
+import { IconButtonTag } from 'lib/types'
 
-export const IconButton = <T extends IconButtonTag = typeof DEFAULT_ICON_BUTTON_TAG>({
+export const IconButton = <T extends IconButtonTag = (typeof ICON_BUTTON_TAGS)[0]>({
   // ActionSurface
   tag = 'button' as T,
   tagAttrs,

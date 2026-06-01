@@ -8,9 +8,10 @@ import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 
 import { FooterProvider } from './FooterProvider'
-import { DEFAULT_FOOTER_BORDER_INTENT, FooterProps, FooterTag } from './definitions'
+import { DEFAULT_FOOTER_BORDER_INTENT, FooterProps } from './definitions'
 
 import './footer.scss'
+import { FooterTag } from 'lib/types'
 
 export const Footer = <T extends FooterTag = 'div'>({
   // HtmlTag

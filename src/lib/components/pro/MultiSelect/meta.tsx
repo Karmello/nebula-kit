@@ -1,5 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
-import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { BOX_INTENTS, COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 
 import { DEFAULT_MULTI_SELECT_INLINE_SIZE, type MultiSelectProps } from './definitions'
 
@@ -11,7 +11,6 @@ import {
   DROPDOWN_LIST_SCROLL_ALIGN,
 } from '../../shared/DropdownList/definitions'
 
-import { BOX_INTENTS } from '../../core/Box/definitions'
 import { MultiSelect } from '.'
 import BOX_META from '../../core/Box/meta'
 import ACTION_SURFACE_META from '../../core/ActionSurface/meta'

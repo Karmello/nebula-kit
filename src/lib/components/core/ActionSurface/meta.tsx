@@ -1,16 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
 
-import {
-  type ActionSurfaceProps,
-  ACTION_SURFACE_TAGS,
-  DEFAULT_ACTION_SURFACE_INTERACTIVE,
-  DEFAULT_ACTION_SURFACE_RIPPLE,
-  DEFAULT_ACTION_SURFACE_TAG,
-} from './definitions'
+import { type ActionSurfaceProps, DEFAULT_ACTION_SURFACE_INTERACTIVE, DEFAULT_ACTION_SURFACE_RIPPLE } from './definitions'
 
 import BOX_META from '../Box/meta'
 import { ActionSurface } from './action-surface'
 import { Text } from '../Text'
+import { ACTION_SURFACE_TAGS } from '../../../constants'
 
 export default {
   ActionSurface: {
@@ -71,7 +66,7 @@ export default {
       },
       tag: {
         ...BOX_META.Box.props.tag,
-        defaultValue: DEFAULT_ACTION_SURFACE_TAG,
+        defaultValue: ACTION_SURFACE_TAGS[0],
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,

@@ -62,7 +62,7 @@ export const SelectImpl = ({
     if (!open) triggerRef.current?.focus()
   }, [open])
 
-  const triggerRef = useRef<HTMLDivElement | null>(null)
+  const triggerRef = useRef<HTMLButtonElement | null>(null)
   const menuRef = useRef<HTMLDivElement | null>(null)
   const listRef = useRef<Array<HTMLElement | null>>([])
 

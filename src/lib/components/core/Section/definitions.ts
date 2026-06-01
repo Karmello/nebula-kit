@@ -1,11 +1,9 @@
 import { ReactNode } from 'react'
 
 import { BoxProps, WithIconProps } from 'lib/components'
-import { BoxVariant } from 'lib/components/core/Box/definitions'
 import { TextProps, TextTypography } from 'lib/components/core/Text/definitions'
-import { RespValue, TShirtSize } from 'lib/types'
+import { BoxVariant, RespValue, SectionTag, TShirtSize } from 'lib/types'
 
-export const SECTION_TAGS = ['section', 'article', 'aside', 'div'] as const
 export const SECTION_SIZES = ['sm', 'md', 'lg', 'xl', '2xl'] as const satisfies TShirtSize[]
 export const SECTION_VARIANTS = ['ghost', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
 
@@ -28,7 +26,6 @@ export const SECTION_SIZE_CONFIG: Record<
   '2xl': { padding: 'xl', spacerBlockSize: 'lg', textTypography: 'h2' },
 }
 
-export type SectionTag = (typeof SECTION_TAGS)[number]
 export type SectionSize = (typeof SECTION_SIZES)[number]
 export type SectionVariant = (typeof SECTION_VARIANTS)[number]
 
