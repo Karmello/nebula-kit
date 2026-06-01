@@ -1,4 +1,4 @@
-import { ReactElement, useState, useLayoutEffect, useRef, cloneElement, RefObject, createRef, useEffect, Ref } from 'react'
+import { ReactElement, useState, useLayoutEffect, useRef, cloneElement, RefObject, createRef, useEffect } from 'react'
 import { motion } from 'motion/react'
 
 import {
@@ -93,7 +93,6 @@ export const SelectImpl = ({
     visibleItemsCount: visibleItemsCount !== undefined ? visibleItemsCount : 5,
     optionBlockSize,
     itemsCount: optionSlots.length,
-    removeSingleDivider: variant === 'outline',
   })
 
   const handleOnOptionClick = (value: string) => {
@@ -116,7 +115,7 @@ export const SelectImpl = ({
 
   const { getReferenceProps, getFloatingProps, getItemProps } = useInteractions([click, dismiss, listNavigation])
 
-  const isOpeningUpwards = placement.includes('bottom')
+  const isOpeningDownwards = placement.includes('bottom')
 
   return (
     <>
@@ -131,10 +130,10 @@ export const SelectImpl = ({
         paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
         disabled={disabled}
         selected={open}
-        borderBottomLeftRadius={open && isOpeningUpwards ? '0px' : undefined}
-        borderBottomRightRadius={open && isOpeningUpwards ? '0px' : undefined}
-        borderTopLeftRadius={open && !isOpeningUpwards ? '0px' : undefined}
-        borderTopRightRadius={open && !isOpeningUpwards ? '0px' : undefined}
+        borderBottomLeftRadius={open && isOpeningDownwards ? '0px' : undefined}
+        borderBottomRightRadius={open && isOpeningDownwards ? '0px' : undefined}
+        borderTopLeftRadius={open && !isOpeningDownwards ? '0px' : undefined}
+        borderTopRightRadius={open && !isOpeningDownwards ? '0px' : undefined}
       >
         <WithIcon
           iconName="chevron-down"
@@ -168,7 +167,7 @@ export const SelectImpl = ({
               initial={{ scaleY: 0, opacity: 0 }}
               animate={{ scaleY: 1, opacity: 1 }}
               transition={{ duration: 0.18, ease: 'easeInOut' }}
-              style={{ transformOrigin: isOpeningUpwards ? 'top' : 'bottom' }}
+              style={{ transformOrigin: isOpeningDownwards ? 'top' : 'bottom' }}
             >
               <Box
                 tagRef={menuRef}
@@ -181,10 +180,10 @@ export const SelectImpl = ({
                 inlineSize={`${triggerWidth}px`}
                 blockSize={`${menuBlockSize}px`}
                 borderTopWidth="0px"
-                borderTopLeftRadius={isOpeningUpwards ? '0px' : undefined}
-                borderTopRightRadius={isOpeningUpwards ? '0px' : undefined}
-                borderBottomLeftRadius={!isOpeningUpwards ? '0px' : undefined}
-                borderBottomRightRadius={!isOpeningUpwards ? '0px' : undefined}
+                borderTopLeftRadius={isOpeningDownwards ? '0px' : undefined}
+                borderTopRightRadius={isOpeningDownwards ? '0px' : undefined}
+                borderBottomLeftRadius={!isOpeningDownwards ? '0px' : undefined}
+                borderBottomRightRadius={!isOpeningDownwards ? '0px' : undefined}
               >
                 <Box drawable variant="solid" intent="neutral" blockSize={`${menuScrollingBlockSize}px`} borderRadius="0px">
                   <Flex flexDirection="column">
@@ -200,8 +199,9 @@ export const SelectImpl = ({
                         intent,
                         color,
                         size,
-                        isOpeningUpwards,
+                        isOpeningDownwards,
                         isFirst: index === 0,
+                        isLast: index === optionSlots.length - 1,
                       })
                     )}
                   </Flex>

@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
+import { Box } from '../../Box/box'
 import { useMarkerListContext } from '../MarkerListProvider'
 import { MarkerListItemProps } from './definitions'
 

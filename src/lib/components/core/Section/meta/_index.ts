@@ -1,0 +1,30 @@
+import { ComponentMeta } from 'client/definitions'
+
+import { SECTION_TAGS, type SectionProps } from '../definitions'
+import { SECTION_PROPS_META } from './props'
+import { SECTION_EXAMPLES_META } from './examples'
+
+const SECTION_META: ComponentMeta<SectionProps> = {
+  overview: {
+    bundle: 'core',
+    title: 'Semantic container for grouping content under a titled section.',
+    features: [
+      'groups related content under a semantic section with a heading',
+      'provides consistent spacing and visual separation between heading and body',
+      'supports optional icon and styling variants for section headers',
+    ],
+    composedOf: ['Box', 'Text', 'Divider', 'Spacer', 'WithIcon'],
+    topLevelTags: SECTION_TAGS,
+  },
+  props: SECTION_PROPS_META,
+  examples: SECTION_EXAMPLES_META,
+  changelog: {
+    '0.10.0': ['refined size presets for better layout balance and spacing consistency', 'added `headingIntent` prop'],
+    '0.9.0': ['exposed `interactive` prop via Box'],
+    '0.2.3': ['released'],
+  },
+}
+
+export default {
+  Section: SECTION_META,
+}

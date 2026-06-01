@@ -1,0 +1,24 @@
+import { ComponentMeta } from 'client/definitions'
+
+import { CALLOUT_TAGS, type CalloutProps } from '../definitions'
+import { CALLOUT_PROPS_META } from './props'
+import { CALLOUT_EXAMPLES_META } from './examples'
+
+const CALLOUT_META: ComponentMeta<CalloutProps> = {
+  overview: {
+    bundle: 'core',
+    title: 'Semantic message block for emphasizing important information.',
+    features: ['used to draw attention to important information, confirmations, warnings or errors within a page'],
+    composedOf: ['Box', 'Text', 'Spacer', 'WithIcon'],
+    topLevelTags: CALLOUT_TAGS,
+  },
+  props: CALLOUT_PROPS_META,
+  examples: CALLOUT_EXAMPLES_META,
+  changelog: {
+    '0.2.3': ['released'],
+  },
+}
+
+export default {
+  Callout: CALLOUT_META,
+}

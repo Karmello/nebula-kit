@@ -1,0 +1,63 @@
+import { ComponentMeta } from 'client/definitions'
+import { CONTROL_SIZES } from 'lib/definitions'
+
+import { Button } from '../button'
+import { Flex } from '../../Flex/flex'
+import { type ButtonProps } from '../definitions'
+
+const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
+  {
+    description: 'Default button has medium size, solid variant and tertiary intent.',
+    jsx: <Button>Default button</Button>,
+  },
+  {
+    description: 'Examples of different button sizes.',
+    jsx: (
+      <Flex flexWrap="wrap" alignItems="center" gap="xs">
+        {CONTROL_SIZES.map(size => (
+          <Button key={size} size={size} iconName="tree-pine">
+            {size}
+          </Button>
+        ))}
+      </Flex>
+    ),
+  },
+  {
+    description: 'Button stretched to fill the full width of its container.',
+    jsx: <Button fullWidth>Full width button</Button>,
+  },
+  {
+    description: 'Button with text and icon.',
+    jsx: <Button iconName="search">Button with icon</Button>,
+  },
+  {
+    description: 'Full width button with an icon aligned to the right edge.',
+    jsx: (
+      <Button fullWidth iconName="search" iconPlacement="right" align="split">
+        Button with icon
+      </Button>
+    ),
+  },
+  {
+    description: 'Button with bolded text.',
+    jsx: <Button bold>Bold</Button>,
+  },
+  {
+    description: 'Disabled button.',
+    jsx: <Button disabled>Disabled</Button>,
+  },
+  {
+    description: 'Button in loading state.',
+    jsx: <Button loading>Loading</Button>,
+  },
+  {
+    description: 'Extra large button with description.',
+    jsx: (
+      <Button description="Description text." size="xl" bold>
+        Extra large button
+      </Button>
+    ),
+  },
+]
+
+export { BUTTON_EXAMPLES_META }

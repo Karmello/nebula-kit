@@ -5,52 +5,15 @@
       "path": ".",
     },
     {
-      "name": "tools",
-      "path": "tools",
-    },
-    {
       "name": "src",
       "path": "src",
-    },
-    {
-      "name": "server",
-      "path": "src/server",
     },
     {
       "name": "client",
       "path": "src/client",
     },
     {
-      "name": "definitions",
-      "path": "src/client/definitions",
-    },
-    {
-      "name": "meta",
-      "path": "src/client/meta",
-    },
-    {
-      "name": "pages",
-      "path": "src/client/pages",
-    },
-    {
-      "name": "lib",
       "path": "src/lib",
-    },
-    {
-      "name": "definitions",
-      "path": "src/lib/definitions",
-    },
-    {
-      "name": "styles",
-      "path": "src/lib/styles",
-    },
-    {
-      "name": "components",
-      "path": "src/lib/components",
-    },
-    {
-      "name": "internals",
-      "path": "src/lib/internals",
     },
   ],
   "settings": {

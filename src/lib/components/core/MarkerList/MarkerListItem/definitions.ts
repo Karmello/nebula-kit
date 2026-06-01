@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/components'
+import { type BoxProps } from '../../Box/definitions'
 
 type PropsFromBox = Pick<BoxProps<'li'>, 'tagAttrs' | 'tagRef' | 'color' | 'intent'> & {
   children: BoxProps<'li'>['children']

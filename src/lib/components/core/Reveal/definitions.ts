@@ -1,4 +1,6 @@
-import { BoxProps, ButtonProps, ResizeProps } from 'lib/components'
+import { type ResizeProps } from '../Resize'
+import { BoxProps } from '../Box'
+import { type ButtonProps } from '../Button'
 
 export const REVEAL_TAGS = ['div', 'section', 'article', 'aside', 'li'] as const
 export const DEFAULT_REVEAL_INTENT: RevealProps['intent'] = 'tertiary'

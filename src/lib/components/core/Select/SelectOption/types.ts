@@ -18,6 +18,7 @@ export type SelectOptionInternalProps = {
   color: SelectProps['color']
   size: SelectProps['size']
   // own
-  isOpeningUpwards: boolean
+  isOpeningDownwards: boolean
   isFirst: boolean
+  isLast: boolean
 }

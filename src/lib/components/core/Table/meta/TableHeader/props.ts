@@ -1,0 +1,35 @@
+import { ComponentMeta } from 'client/definitions'
+
+import { BOX_PROPS_META } from '../../../Box/meta/props'
+import { type TableHeaderProps } from '../../slots/TableHeader/definitions'
+import { TABLE_PROPS_META } from '../props'
+
+const TABLE_HEADER_PROPS_META: ComponentMeta<TableHeaderProps>['props'] = {
+  children: {
+    ...BOX_PROPS_META.children,
+    options: ['Table.HeaderRow'],
+    isRequired: true,
+    description: 'Row slot.',
+  },
+  color: {
+    ...BOX_PROPS_META.color,
+    description: 'Color applied to every cell.',
+  },
+  intent: {
+    ...BOX_PROPS_META.intent,
+    description: 'Color tone applied to every cell.',
+  },
+  paddingBlock: {
+    ...BOX_PROPS_META.paddingBlock,
+    description: 'Padding for the top and bottom sides applied to every cell.',
+  },
+  paddingInline: {
+    ...BOX_PROPS_META.paddingInline,
+    description: 'Padding for the left and right sides applied to every cell.',
+  },
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
+  textAlign: TABLE_PROPS_META.textAlign,
+}
+
+export { TABLE_HEADER_PROPS_META }

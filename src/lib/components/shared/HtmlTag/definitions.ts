@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ComponentRef, ElementType, ReactNode, Ref, RefObject } from 'react'
+import { ComponentPropsWithoutRef, ComponentRef, ElementType, ReactNode, RefObject } from 'react'
 
 type DataAttrs = {
   [K in `data-${string}`]?: unknown

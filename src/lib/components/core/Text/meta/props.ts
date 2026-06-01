@@ -1,0 +1,68 @@
+import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
+
+import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_SPACE, TEXT_TYPOGRAPHY, TEXT_WORD_BREAK, type TextProps } from '../definitions'
+import { BOX_PROPS_META } from '../../Box/meta/props'
+
+const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
+  bold: {
+    options: ['boolean'],
+    description: 'Toggles bold styling.',
+  },
+  children: {
+    ...BOX_PROPS_META.children,
+    isRequired: true,
+  },
+  clampLines: {
+    options: ['number'],
+    description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
+  },
+  color: BOX_PROPS_META.color,
+  fontSize: {
+    options: [DOCS_CSS_LABEL],
+    description: 'Sets the fontSize value, bypassing typography.',
+  },
+  intent: BOX_PROPS_META.intent,
+  italic: {
+    options: ['boolean'],
+    description: 'Toggles italic styling.',
+  },
+  lineHeight: {
+    options: [DOCS_CSS_LABEL],
+    description: 'Sets the lineHeight value, bypassing typography.',
+  },
+  noWrap: {
+    options: ['boolean'],
+    description: 'Prevents the text from wrapping onto multiple lines.',
+  },
+  space: {
+    options: TEXT_SPACE,
+    description:
+      'Controls the insertion of non-breaking spaces before and/or after the text content. Useful when composing multiple inline Text elements.',
+  },
+  tag: {
+    ...BOX_PROPS_META.tag,
+    defaultValue: 'p',
+  },
+  tagAttrs: BOX_PROPS_META.tagAttrs,
+  tagRef: BOX_PROPS_META.tagRef,
+  textAlign: BOX_PROPS_META.textAlign,
+  truncate: {
+    options: ['boolean'],
+    description: 'Shortens overflowing text to a single line with an ellipsis.',
+  },
+  typography: {
+    options: TEXT_TYPOGRAPHY,
+    defaultValue: DEFAULT_TEXT_TYPOGRAPHY,
+    description: 'Applies a predefined typography style from the design system.',
+  },
+  underline: {
+    options: ['boolean'],
+    description: 'Toggles underlined styling.',
+  },
+  wordBreak: {
+    options: TEXT_WORD_BREAK,
+    description: 'Controls how words break and wrap when text overflows its container.',
+  },
+}
+
+export { TEXT_PROPS_META }
