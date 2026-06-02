@@ -1,9 +1,9 @@
+import { Loader, LoaderProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { Box } from '../Box'
 import { BOX_META } from '../Box/meta'
-import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE, LOADER_SIZES, type LoaderProps } from './definitions'
-import { Loader } from './loader'
+import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE, LOADER_SIZES } from './definitions'
 
 export const LOADER_META = {
   Loader: {

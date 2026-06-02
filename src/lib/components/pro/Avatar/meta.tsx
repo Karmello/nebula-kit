@@ -1,8 +1,8 @@
 import { IMAGE_META } from 'lib/components/core/Image/meta'
+import { Avatar, AvatarProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { Avatar } from './avatar'
-import { AVATAR_SHAPES, AVATAR_SIZES, type AvatarProps, DEFAULT_AVATAR_SHAPE, DEFAULT_AVATAR_SIZE } from './definitions'
+import { AVATAR_SHAPES, AVATAR_SIZES, DEFAULT_AVATAR_SHAPE, DEFAULT_AVATAR_SIZE } from './definitions'
 
 export const AVATAR_META = {
   Avatar: {

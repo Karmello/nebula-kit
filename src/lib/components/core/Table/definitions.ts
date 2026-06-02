@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/components'
+import { BoxProps } from '../Box'
 
 export const TABLE_LAYOUTS = ['auto', 'fixed'] as const
 export const DEFAULT_TABLE_LAYOUT: TableProps['layout'] = 'auto'

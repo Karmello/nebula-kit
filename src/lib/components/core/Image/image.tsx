@@ -1,12 +1,12 @@
 import { useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
+import { ImageProps } from 'lib/index.core'
 import { syncRespStyle } from 'lib/internals/dom'
 
-import { ImageProps } from './definitions'
+import { Box } from '../Box'
 
 import './image.scss'
 

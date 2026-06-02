@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import classNames from 'classnames'
 
-import { Box, Segment } from 'lib/components'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
+import { InputAffixProps, InputProps, Segment } from 'lib/index.core'
 
-import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_VARIANT, InputAffixProps, InputProps } from './definitions'
+import { Box } from '../Box'
+import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_VARIANT } from './definitions'
 
 import './input.scss'
 

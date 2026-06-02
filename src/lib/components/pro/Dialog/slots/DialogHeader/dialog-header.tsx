@@ -1,10 +1,10 @@
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { Box } from 'lib/index.core'
+import { DialogHeaderProps } from 'lib/index.pro'
 
 import { useDialogContext } from '../../DialogProvider'
-import { DialogHeaderProps } from './definitions'
 
 export const DialogHeader = ({
   // Box

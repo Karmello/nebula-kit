@@ -1,13 +1,12 @@
 import { cloneElement, ReactElement, useEffect, useState } from 'react'
 
+import { Flex, Slide, SlideProps, Text } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { Box } from '../Box'
 import { BOX_META } from '../Box/meta'
-import { Flex } from '../Flex'
-import { Text } from '../Text'
-import { SLIDE_FROM, type SlideProps } from './definitions'
-import { DEFAULT_SLIDE_DURATION, DEFAULT_SLIDE_EASING, Slide } from './slide'
+import { SLIDE_FROM } from './definitions'
+import { DEFAULT_SLIDE_DURATION, DEFAULT_SLIDE_EASING } from './slide'
 
 const SlideWrapper = ({ children }: { children: ReactElement }) => {
   const [visible, setVisible] = useState<boolean>(false)

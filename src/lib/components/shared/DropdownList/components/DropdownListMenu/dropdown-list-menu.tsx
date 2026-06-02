@@ -1,11 +1,13 @@
 import { cloneElement, ReactNode, RefObject, useCallback, useLayoutEffect, useRef, useState } from 'react'
 
-import { Box, Divider, Resize, VirtualList } from 'lib/components'
-import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT, Portal } from 'lib/components/shared'
+import { Portal } from 'lib/components/shared/Portal'
+import { Box, Divider, Resize } from 'lib/index.core'
+import { VirtualList } from 'lib/index.pro'
 import { FloatingResolved, useFloating } from 'lib/internals/positioning'
 
+import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'
 import { useDropdownListContext } from '../../providers'
-import { DropdownListItem } from '../../slots/DropdownListItem/dropdown-list-item'
+import { DropdownListItem } from '../../slots'
 
 export const DropdownListMenu = ({
   items,

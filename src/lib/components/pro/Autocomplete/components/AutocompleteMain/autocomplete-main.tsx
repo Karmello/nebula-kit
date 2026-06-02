@@ -1,12 +1,11 @@
 import { ReactElement, ReactNode, useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
-import { AutocompleteOptionProps, IconButton, Input, Text } from 'lib/components'
 import { DropdownList, DropdownListState } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-
-import { AutocompleteProps } from '../../definitions'
+import { IconButton, Input, Text } from 'lib/index.core'
+import { AutocompleteOptionProps, AutocompleteProps } from 'lib/index.pro'
 
 type AutocompleteMainProps = Omit<AutocompleteProps, 'children' | 'defaultValue' | 'value' | 'onChange'> & {
   items: ReactNode[]

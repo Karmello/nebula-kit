@@ -8,7 +8,7 @@ import { buildStaticDataset, syncRespDataset, syncRespStyle } from 'lib/internal
 import { useTransitionLifecycle } from 'lib/internals/motion'
 import { useResolveAppearance } from 'lib/internals/styling'
 
-import { type BoxProps } from './types'
+import { BoxProps } from './types'
 
 import './styles/box.scss'
 

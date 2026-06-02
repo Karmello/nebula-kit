@@ -1,13 +1,13 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { resolveLengthValue, withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
+import { GridProps } from 'lib/index.core'
 import { syncRespStyle } from 'lib/internals/dom'
 import { GridTag } from 'lib/types'
 
-import { GridProps } from './definitions'
+import { Box } from '../Box'
 
 import './grid.scss'
 

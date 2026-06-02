@@ -1,8 +1,7 @@
 import { createContext, useContext, useMemo } from 'react'
 
-import { BoxTheme } from 'lib/components/core/Box/types'
-
-import type { RespValue } from '../../../types'
+import { BoxTheme } from 'lib/components/core/Box'
+import { RespValue } from 'lib/types'
 
 type ThemeContextValue = {
   theme?: RespValue<BoxTheme>

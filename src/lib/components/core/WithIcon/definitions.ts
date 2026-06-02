@@ -1,8 +1,8 @@
-import { BoxProps, FlexProps, IconProps } from 'lib/components'
-import { RotateProps } from 'lib/components/core/Rotate/definitions'
+import { FlexProps, IconProps, RotateProps } from 'lib/index.core'
+import { CssFlexJustifyContent } from 'lib/types'
 
-import { CssFlexJustifyContent } from '../../../types'
-import { TextTypography } from '../Text/definitions'
+import { BoxProps } from '../Box'
+import { TextTypography } from '../Text'
 
 export const DEFAULT_WITH_ICON_ICON_PLACEMENT: WithIconProps['iconPlacement'] = 'left'
 export const DEFAULT_WITH_ICON_GAP: WithIconProps['gap'] = 'xs'

@@ -1,4 +1,4 @@
-import { BoxProps, FlexItemProps } from 'lib/components'
+import { BoxProps, FlexItemProps } from 'lib/index.core'
 
 export const DEFAULT_FOOTER_SECTION_FLEX: FlexItemProps['flex'] = '1'
 

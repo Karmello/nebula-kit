@@ -2,10 +2,10 @@ import { useState } from 'react'
 
 import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { AutocompleteProps } from 'lib/index.pro'
 
 import { AutocompleteMain } from './components'
 import {
-  AutocompleteProps,
   DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
   DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   DEFAULT_AUTOCOMPLETE_INTENT,

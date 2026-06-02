@@ -1,8 +1,9 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
+import { CALLOUT_CONFIG, CALLOUT_STATUSES, CalloutStatus, DEFAULT_CALLOUT_STATUS } from 'lib/components/core/Callout'
+import { Button } from 'lib/index.core'
+import { SnackbarProps, useSnackbar } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { Button } from '../../core/Button'
-import { CALLOUT_CONFIG, CALLOUT_STATUSES, type CalloutStatus, DEFAULT_CALLOUT_STATUS } from './../../core/Callout/definitions'
 import {
   DEFAULT_SNACKBAR_AUTO_CLOSE_DELAY,
   DEFAULT_SNACKBAR_CLOSE_ON_OUTSIDE_CLICK,
@@ -10,10 +11,8 @@ import {
   DEFAULT_SNACKBAR_PLACEMENT,
   SNACKBAR_PLACEMENTS,
   SnackbarPlacement,
-  type SnackbarProps,
-  useSnackbar,
-  type UseSnackbarShowArgs,
-} from './../Snackbar'
+  UseSnackbarShowArgs,
+} from './definitions'
 
 const SnackbarWrapper = ({
   status,

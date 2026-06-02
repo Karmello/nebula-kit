@@ -1,11 +1,11 @@
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
+import { Box, TableBodyProps } from 'lib/index.core'
 
 import { TableContext, useTableContext } from '../../TableContext'
-import { DEFAULT_TABLE_BODY_INTENT, TableBodyProps } from './definitions'
+import { DEFAULT_TABLE_BODY_INTENT } from './definitions'
 
 export const TableBody = ({
   children,

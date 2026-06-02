@@ -1,8 +1,8 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
+import { Box } from 'lib/index.core'
+import { VirtualList, VirtualListProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { Box } from '../../core/Box'
-import { VirtualList, type VirtualListProps } from '..'
 import { DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN, DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX, VIRTUAL_LIST_SCROLL_ALIGN } from './definitions'
 
 export const VIRTUAL_LIST_META = {

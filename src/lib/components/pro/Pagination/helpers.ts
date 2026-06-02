@@ -1,4 +1,6 @@
-import { PaginationItem, PaginationProps } from './definitions'
+import { PaginationProps } from 'lib/index.pro'
+
+import { PaginationItem } from './definitions'
 
 const buildItems = (
   totalPages: PaginationProps['totalPages'],

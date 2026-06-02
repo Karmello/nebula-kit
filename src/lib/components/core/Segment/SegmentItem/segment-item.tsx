@@ -1,10 +1,8 @@
 import { ComponentProps, ElementType, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
-import { Flex } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-
-import { SegmentItemProps } from './definitions'
+import { Flex, SegmentItemProps } from 'lib/index.core'
 
 export const SegmentItem = <T extends ElementType = 'div'>({
   // Flex.Item

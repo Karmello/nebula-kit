@@ -1,4 +1,4 @@
-import { InputProps } from 'lib/components'
+import { InputProps } from 'lib/index.core'
 
 export const DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE: PasswordInputProps['autoComplete'] = 'current-password'
 

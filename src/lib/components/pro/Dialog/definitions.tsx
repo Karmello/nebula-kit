@@ -1,4 +1,5 @@
-import { BoxIntent, BoxProps } from 'lib/components/core/Box/types'
+import { BoxIntent } from 'lib/components/core/Box'
+import { BoxProps } from 'lib/index.core'
 import { TShirtSize } from 'lib/types'
 
 export const DIALOG_SIZE_MAP: Record<DialogSize, BoxProps['inlineSize']> = {

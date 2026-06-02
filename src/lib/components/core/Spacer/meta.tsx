@@ -1,10 +1,9 @@
 import { TSHIRT_SIZES } from 'lib/constants'
+import { Spacer, SpacerProps, Text } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
-import { Text } from '../Text'
-import { DEFAULT_SPACER_BLOCK_SIZE, type SpacerProps } from './definitions'
-import { Spacer } from './spacer'
+import { DEFAULT_SPACER_BLOCK_SIZE } from './definitions'
 
 export const SPACER_META = {
   Spacer: {

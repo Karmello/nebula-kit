@@ -1,3 +1,15 @@
+import {
+  Table,
+  TableBodyProps,
+  TableCaptionProps,
+  TableCellProps,
+  TableFooterProps,
+  TableHeaderCellProps,
+  TableHeaderProps,
+  TableHeaderRowProps,
+  TableProps,
+  TableRowProps,
+} from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
@@ -7,19 +19,7 @@ import {
   DEFAULT_TABLE_PADDING_BLOCK,
   DEFAULT_TABLE_PADDING_INLINE,
   TABLE_LAYOUTS,
-  type TableProps,
-} from './../Table/definitions'
-import { Table } from '.'
-import {
-  TableBodyProps,
-  TableCaptionProps,
-  TableCellProps,
-  TableFooterProps,
-  TableHeaderCellProps,
-  TableHeaderProps,
-  TableHeaderRowProps,
-  TableRowProps,
-} from './slots'
+} from './definitions'
 import { DEFAULT_TABLE_BODY_INTENT } from './slots/TableBody/definitions'
 import { DEFAULT_TABLE_CAPTION_INTENT } from './slots/TableCaption/definitions'
 import { DEFAULT_TABLE_FOOTER_INTENT } from './slots/TableFooter/definitions'

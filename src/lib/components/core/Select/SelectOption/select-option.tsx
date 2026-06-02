@@ -1,7 +1,7 @@
-import { ActionSurface, Text } from 'lib/components'
 import { CONTROL_SIZE_MAP } from 'lib/constants'
+import { ActionSurface, SelectOptionProps, Text } from 'lib/index.core'
 
-import type { SelectOptionInternalProps, SelectOptionProps } from './types'
+import { SelectOptionInternalProps } from './types'
 
 export const SelectOption = ({
   // ActionSurface

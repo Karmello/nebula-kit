@@ -2,12 +2,12 @@ import { useLayoutEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { Box } from 'lib/index.core'
 import { useAnchoredPosition } from 'lib/internals/positioning'
 
-import { useBrandContext } from '../../shared/BrandProvider'
-import { useThemeContext } from '../../shared/ThemeProvider'
+import { useBrandContext } from '../BrandProvider'
+import { useThemeContext } from '../ThemeProvider'
 import { PortalProps } from './definitions'
 
 export const DEFAULT_PORTAL_PLACEMENT: PortalProps['placement'] = 'bottom-start'

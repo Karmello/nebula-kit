@@ -1,21 +1,29 @@
+import { DEFAULT_BUTTON_INTENT } from 'lib/components/core/Button'
 import { BUTTON_META } from 'lib/components/core/Button/meta'
 import { FLEX_META } from 'lib/components/core/Flex/meta'
 import { TEXT_META } from 'lib/components/core/Text/meta'
 import { WITH_ICON_META } from 'lib/components/core/WithIcon/meta'
 import { Checkbox, Input, Select } from 'lib/index.core'
+import {
+  Autocomplete,
+  Form,
+  FormActionButtonProps,
+  FormActionsProps,
+  FormFieldProps,
+  FormFieldsProps,
+  FormHintProps,
+  FormLabelProps,
+  FormProps,
+  MultiSelect,
+  Switch,
+} from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_BUTTON_INTENT } from '../../core/Button/definitions'
-import { Autocomplete } from '../Autocomplete'
-import { MultiSelect } from '../MultiSelect'
-import { Switch } from '../Switch'
-import { Form } from '.'
 import {
   DEFAULT_FORM_ALIGN_ITEMS,
   DEFAULT_FORM_COLUMN_GAP,
   DEFAULT_FORM_FLEX_DIRECTION,
   DEFAULT_FORM_ROW_GAP,
-  type FormProps,
 } from './definitions'
 import {
   DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT,
@@ -27,12 +35,6 @@ import {
   DEFAULT_FORM_FIELDS_ROW_GAP,
   DEFAULT_FORM_HINT_INTENT,
   DEFAULT_FORM_LABEL_INTENT,
-  FormActionButtonProps,
-  FormActionsProps,
-  FormFieldProps,
-  FormFieldsProps,
-  FormHintProps,
-  FormLabelProps,
 } from './slots'
 
 export const FORM_META = {

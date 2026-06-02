@@ -1,17 +1,9 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { BUTTON_META } from 'lib/components/core/Button/meta'
+import { Tabs, TabsPanelProps, TabsProps, TabsTabProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import {
-  DEFAULT_TABS_ORIENTATION,
-  DEFAULT_TABS_VARIANT,
-  Tabs,
-  TABS_ORIENTATION,
-  TABS_VARIANTS,
-  type TabsPanelProps,
-  type TabsProps,
-  type TabsTabProps,
-} from './'
+import { DEFAULT_TABS_ORIENTATION, DEFAULT_TABS_VARIANT, TABS_ORIENTATION, TABS_VARIANTS } from './definitions'
 
 export const TABS_META = {
   Tabs: {

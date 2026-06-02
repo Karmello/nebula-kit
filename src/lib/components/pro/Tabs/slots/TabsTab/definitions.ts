@@ -1,4 +1,4 @@
-import { ButtonProps } from 'lib/components'
+import { ButtonProps } from 'lib/index.core'
 
 type PropsFromButton = Pick<
   ButtonProps,

@@ -1,5 +1,7 @@
-import { BoxProps, FlexProps } from 'lib/components'
+import { FlexProps } from 'lib/index.core'
 import { MarkerListTag } from 'lib/types'
+
+import { BoxProps } from '../Box'
 
 export const MARKER_LIST_STYLES = ['disc', 'circle', 'square', 'decimal'] as const
 

@@ -1,12 +1,11 @@
 import { cloneElement } from 'react'
 import classNames from 'classnames'
 
-import { Box, TableHeaderCellProps } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
+import { Box, TableHeaderCellProps, TableRowProps } from 'lib/index.core'
 
 import { TableContext, useTableContext } from '../../TableContext'
-import { TableRowProps } from './definitions'
 
 export const TableRow = ({
   // Box

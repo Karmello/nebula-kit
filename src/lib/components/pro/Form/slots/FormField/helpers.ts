@@ -1,4 +1,6 @@
-import { EMAIL_REGEX, FormFieldProps } from './definitions'
+import { FormFieldProps } from 'lib/index.pro'
+
+import { EMAIL_REGEX } from './definitions'
 
 export const getRulesObject = ({ options, required, minLength, maxLength, email }: Partial<FormFieldProps>) => {
   const rules = {} as any

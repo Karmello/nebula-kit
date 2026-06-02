@@ -1,4 +1,4 @@
-import { type ButtonProps } from './definitions'
+import { ButtonProps } from 'lib/index.core'
 
 export type PropsFromButtonKey = (typeof PROPS_FROM_BUTTON)[number]
 

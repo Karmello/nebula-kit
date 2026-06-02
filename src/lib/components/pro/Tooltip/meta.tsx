@@ -1,10 +1,9 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { COLORS } from 'lib/constants'
+import { Button, Icon } from 'lib/index.core'
+import { Tooltip, TooltipProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { Tooltip, type TooltipProps } from '..'
-import { Button } from './../../core/Button'
-import { Icon } from './../../core/Icon'
 import {
   DEFAULT_TOOLTIP_INTENT,
   DEFAULT_TOOLTIP_MAX_INLINE_SIZE,

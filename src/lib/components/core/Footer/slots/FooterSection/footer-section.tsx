@@ -1,8 +1,8 @@
-import { Box, Flex } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { Box, Flex, FooterSectionProps } from 'lib/index.core'
 
 import { useFooterContext } from '../../FooterProvider'
-import { DEFAULT_FOOTER_SECTION_FLEX, FooterSectionProps } from './definitions'
+import { DEFAULT_FOOTER_SECTION_FLEX } from './definitions'
 
 export const FooterSection = ({
   // Box

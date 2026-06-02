@@ -1,11 +1,11 @@
 import { useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { SlideProps } from 'lib/index.core'
 import { buildTransition, useVisibilityTransition } from 'lib/internals/motion'
 
-import { SlideProps } from './definitions'
+import { Box } from '../Box'
 import { syncSlidePosition } from './helpers'
 
 export const DEFAULT_SLIDE_DURATION: SlideProps['duration'] = 200

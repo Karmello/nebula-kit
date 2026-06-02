@@ -1,5 +1,6 @@
-import { BoxVariant } from '../Box/types'
-import { SelectProps } from './types'
+import { SelectProps } from 'lib/index.core'
+
+import { BoxVariant } from '../Box'
 
 export const SELECT_VARIANTS = ['solid', 'outline'] as const satisfies readonly BoxVariant[]
 

@@ -1,11 +1,12 @@
 import { useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxProps, Slide } from 'lib/components'
 import { CONTROL_SIZE_MAP } from 'lib/constants'
 import { resolveLengthValue, withPrefix } from 'lib/helpers'
+import { Box, BoxProps, Slide } from 'lib/index.core'
+import { SwitchProps } from 'lib/index.pro'
 
-import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SIZE, SWITCH_BORDER_MULTIPLIER, SwitchProps } from './definitions'
+import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SIZE, SWITCH_BORDER_MULTIPLIER } from './definitions'
 
 import './switch.scss'
 

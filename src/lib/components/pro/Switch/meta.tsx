@@ -1,6 +1,6 @@
-import { Switch, SwitchProps } from 'lib/components'
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { BUTTON_META } from 'lib/components/core/Button/meta'
+import { Switch, SwitchProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SIZE, SWITCH_INTENTS } from './definitions'

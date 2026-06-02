@@ -1,5 +1,5 @@
-import { BoxProps } from 'lib/components'
 import { DropdownListProps } from 'lib/components/shared'
+import { BoxProps } from 'lib/index.core'
 import { BreadcrumbTag, ControlSize } from 'lib/types'
 
 export const DEFAULT_BREADCRUMB_INTENT: BreadcrumbProps['intent'] = 'muted'

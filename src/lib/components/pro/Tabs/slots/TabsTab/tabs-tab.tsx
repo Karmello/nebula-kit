@@ -1,11 +1,11 @@
 import { useCallback } from 'react'
 import classNames from 'classnames'
 
-import { Button } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { Button } from 'lib/index.core'
+import { TabsTabProps } from 'lib/index.pro'
 
 import { useTabsContext } from '../../TabsContext'
-import { TabsTabProps } from './definitions'
 
 export const TabsTab = ({
   // Button

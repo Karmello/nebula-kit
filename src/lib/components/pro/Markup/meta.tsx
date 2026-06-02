@@ -1,10 +1,7 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
+import { MarkerList, Text } from 'lib/index.core'
+import { Markup, MarkupProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
-
-import { MarkerList } from '../../core/MarkerList'
-import { Text } from '../../core/Text'
-import { type MarkupProps } from './definitions'
-import { Markup } from './markup'
 
 export const MARKUP_META = {
   Markup: {

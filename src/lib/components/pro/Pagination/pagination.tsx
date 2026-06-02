@@ -1,7 +1,8 @@
 import { useCallback, useMemo } from 'react'
 
-import { Box, Button, Flex, Icon, Link, Segment } from 'lib/components'
 import { CONTROL_SIZE_MAP } from 'lib/constants'
+import { Box, Button, Flex, Icon, Link, Segment } from 'lib/index.core'
+import { PaginationProps } from 'lib/index.pro'
 import { IconName } from 'lib/types'
 
 import {
@@ -12,7 +13,6 @@ import {
   DEFAULT_PAGINATION_SIBLING_COUNT,
   DEFAULT_PAGINATION_SIZE,
   DEFAULT_PAGINATION_VARIANT,
-  PaginationProps,
 } from './definitions'
 import { getPaginationItems } from './helpers'
 

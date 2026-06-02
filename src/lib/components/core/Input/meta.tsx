@@ -1,12 +1,11 @@
 import { useState } from 'react'
 
 import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { IconButton, Input, InputProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
-import { IconButton } from '../IconButton'
-import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_VARIANT, type InputProps } from './definitions'
-import { Input } from './input'
+import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_VARIANT } from './definitions'
 
 const InputControlled = () => {
   const [value, setValue] = useState<string>('value')

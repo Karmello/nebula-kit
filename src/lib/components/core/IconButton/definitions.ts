@@ -1,8 +1,8 @@
 import { ICON_BUTTON_TAGS } from 'lib/constants'
+import { WithIconProps } from 'lib/index.core'
+import { ControlSize, IconButtonTag } from 'lib/types'
 
-import { type ControlSize, IconButtonTag } from '../../../types'
 import { ActionSurfaceProps } from '../ActionSurface'
-import { WithIconProps } from '../WithIcon'
 
 export const DEFAULT_ICON_BUTTON_VARIANT: IconButtonProps['variant'] = 'solid'
 export const DEFAULT_ICON_BUTTON_INTENT: IconButtonProps['intent'] = 'tertiary'

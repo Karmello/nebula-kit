@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { CONTROL_SIZE_MAP, TEXT_TYPOGRAPHY_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
+import { TextareaProps } from 'lib/index.core'
 
+import { Box } from '../Box'
 import {
   DEFAULT_TEXTAREA_INLINE_SIZE,
   DEFAULT_TEXTAREA_INTENT,
@@ -12,7 +13,6 @@ import {
   DEFAULT_TEXTAREA_RESIZE,
   DEFAULT_TEXTAREA_ROWS,
   DEFAULT_TEXTAREA_VARIANT,
-  TextareaProps,
 } from './definitions'
 
 import './textarea.scss'

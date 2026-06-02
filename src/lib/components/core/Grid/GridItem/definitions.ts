@@ -1,9 +1,7 @@
 import { ElementType } from 'react'
 
-import { BoxProps } from 'lib/components'
-import { RespValue } from 'lib/types'
-
-import type { CssGridItemAlignSelf, CssGridItemJustifySelf } from '../../../../types'
+import { BoxProps } from 'lib/index.core'
+import { CssGridItemAlignSelf, CssGridItemJustifySelf, RespValue } from 'lib/types'
 
 type GridItemOwnProps = {
   gridColumn?: RespValue<string>

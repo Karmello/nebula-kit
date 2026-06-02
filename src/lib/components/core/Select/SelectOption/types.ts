@@ -1,4 +1,4 @@
-import { ActionSurfaceProps, SelectProps } from 'lib/components'
+import { ActionSurfaceProps, SelectProps } from 'lib/index.core'
 
 export type SelectOptionProps = {
   // ActionSurface

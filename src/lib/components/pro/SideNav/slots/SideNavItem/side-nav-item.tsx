@@ -1,10 +1,10 @@
 import classNames from 'classnames'
 
-import { Button, Link } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { Button, Link } from 'lib/index.core'
+import { SideNavItemProps } from 'lib/index.pro'
 
 import { useSideNavContext } from '../../SideNavProvider'
-import { SideNavItemProps } from './definitions'
 
 export const SideNavItem = ({
   tagRef,

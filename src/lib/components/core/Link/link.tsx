@@ -3,8 +3,9 @@ import classNames from 'classnames'
 
 import { HtmlTag, HtmlTagProps } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
+import { LinkProps } from 'lib/index.core'
 
-import { DEFAULT_LINK_TARGET, LinkProps } from './definitions'
+import { DEFAULT_LINK_TARGET } from './definitions'
 
 import './link.scss'
 

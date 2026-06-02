@@ -1,3 +1,4 @@
+import { Image, ImageProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { Box } from '../Box'
@@ -9,9 +10,7 @@ import {
   IMAGE_LOADING,
   IMAGE_OBJECT_FIT,
   IMAGE_REFERRER_POLICY,
-  type ImageProps,
 } from './definitions'
-import { Image } from './image'
 
 export const IMAGE_META = {
   Image: {

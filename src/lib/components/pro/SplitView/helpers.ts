@@ -1,4 +1,4 @@
-import { SplitViewProps } from './definitions'
+import { SplitViewProps } from 'lib/index.pro'
 
 export const getToggleIconName = (sidePosition: SplitViewProps['sidePosition'], sideOpen: boolean) => {
   return sidePosition === 'left'

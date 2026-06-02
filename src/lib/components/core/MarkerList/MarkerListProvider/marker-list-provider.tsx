@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext } from 'react'
 
-import { MarkerListProps } from '../definitions'
+import { MarkerListProps } from 'lib/index.core'
 
 type MarkerListContextValue = {
   color: MarkerListProps['color']

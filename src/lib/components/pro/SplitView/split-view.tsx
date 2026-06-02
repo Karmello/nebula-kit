@@ -1,13 +1,14 @@
 import { useCallback } from 'react'
 
-import { Grid } from 'lib/components'
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
 import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_SWITCH_AT } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
+import { Grid } from 'lib/index.core'
+import { SplitViewProps } from 'lib/index.pro'
 import { buildStaticDataset } from 'lib/internals/dom'
 
-import { SPLIT_VIEW_SIDE_POSITIONS, SplitViewProps } from './definitions'
+import { SPLIT_VIEW_SIDE_POSITIONS } from './definitions'
 import { SplitViewProvider, useSplitViewContext } from './SplitViewProvider'
 
 import './split-view.scss'

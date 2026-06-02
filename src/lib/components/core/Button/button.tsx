@@ -4,21 +4,12 @@ import classNames from 'classnames'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
+import { ButtonProps, Flex, Loader, Text, WithIcon } from 'lib/index.core'
 import { syncRespDataset } from 'lib/internals/dom'
 import { ButtonTag } from 'lib/types'
 
 import { ActionSurface } from '../ActionSurface'
-import { Flex } from '../Flex'
-import { Loader } from '../Loader'
-import { Text } from '../Text'
-import { WithIcon } from '../WithIcon'
-import {
-  type ButtonProps,
-  DEFAULT_BUTTON_ALIGN,
-  DEFAULT_BUTTON_INTENT,
-  DEFAULT_BUTTON_RIPPLE,
-  DEFAULT_BUTTON_VARIANT,
-} from './definitions'
+import { DEFAULT_BUTTON_ALIGN, DEFAULT_BUTTON_INTENT, DEFAULT_BUTTON_RIPPLE, DEFAULT_BUTTON_VARIANT } from './definitions'
 
 import './button.scss'
 

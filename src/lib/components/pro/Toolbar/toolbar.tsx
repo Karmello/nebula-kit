@@ -1,13 +1,13 @@
 import { useCallback } from 'react'
 import classNames from 'classnames'
 
-import { Grid } from 'lib/components'
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
 import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_SWITCH_AT } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
+import { Grid } from 'lib/index.core'
+import { ToolbarProps } from 'lib/index.pro'
 
-import { ToolbarProps } from './definitions'
 import { ToolbarProvider, useToolbarContext } from './ToolbarProvider'
 import { ToolbarToggle } from './ToolbarToggle'
 

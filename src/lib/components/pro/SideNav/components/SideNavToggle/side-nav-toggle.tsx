@@ -1,4 +1,4 @@
-import { Box, Divider, IconButton, Spacer } from 'lib/components'
+import { Box, Divider, IconButton, Spacer } from 'lib/index.core'
 
 import { useSideNavContext } from '../../SideNavProvider'
 

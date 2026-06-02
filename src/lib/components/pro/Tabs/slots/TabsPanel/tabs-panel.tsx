@@ -1,8 +1,8 @@
-import { Box } from 'lib/components'
 import { CONTROL_SIZE_MAP } from 'lib/constants'
+import { Box } from 'lib/index.core'
+import { TabsPanelProps } from 'lib/index.pro'
 
 import { useTabsContext } from '../../TabsContext'
-import { TabsPanelProps } from './definitions'
 
 export const TabsPanel = ({
   // Box

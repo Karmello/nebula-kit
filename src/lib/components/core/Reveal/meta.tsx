@@ -1,12 +1,12 @@
 import { REVEAL_TAGS } from 'lib/constants'
+import { Reveal, RevealProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { Box } from '../Box'
 import { BOX_META } from '../Box/meta'
 import { BUTTON_META } from '../Button/meta'
 import { RESIZE_META } from '../Resize/meta'
-import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SIZE, type RevealProps } from './definitions'
-import { Reveal } from './reveal'
+import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SIZE } from './definitions'
 
 export const REVEAL_META = {
   Reveal: {

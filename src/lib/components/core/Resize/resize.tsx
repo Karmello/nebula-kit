@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { ResizeProps } from 'lib/index.core'
 import { MeasuredSizes, syncMeasuredSize } from 'lib/internals/measurement'
 import { buildSizeTransition } from 'lib/internals/motion'
 
-import { ResizeProps } from './definitions'
+import { Box } from '../Box'
 import { syncResizeVisibility } from './helpers'
 
 export const DEFAULT_RESIZE_DURATION: ResizeProps['duration'] = 200

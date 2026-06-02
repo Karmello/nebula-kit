@@ -1,8 +1,9 @@
-import { Children, Fragment, isValidElement, ReactNode, useEffect, useMemo } from 'react'
+import { Children, isValidElement, ReactNode, useEffect, useMemo } from 'react'
+import { Fragment } from 'react/jsx-runtime'
 
 import { getLibMsg } from 'lib/helpers'
 
-import { type WithSlotsProps } from './definitions'
+import { WithSlotsProps } from './definitions'
 
 type ResolvedSlots<SlotName extends string> = {
   slotsByName: Record<SlotName, ReactNode[]>

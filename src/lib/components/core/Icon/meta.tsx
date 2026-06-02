@@ -1,10 +1,10 @@
 import { Footprints } from 'lucide-react'
 
+import { Icon, IconProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
-import { DEFAULT_ICON_SIZE, ICON_SIZES, type IconProps } from './definitions'
-import { Icon } from './icon'
+import { DEFAULT_ICON_SIZE, ICON_SIZES } from './definitions'
 
 export const ICON_META = {
   Icon: {

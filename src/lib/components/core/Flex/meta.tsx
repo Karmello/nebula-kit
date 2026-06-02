@@ -1,6 +1,3 @@
-import { TSHIRT_SIZES } from 'lib/constants'
-import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
-
 import {
   CSS_FLEX_ALIGN_CONTENT,
   CSS_FLEX_ALIGN_ITEMS,
@@ -9,11 +6,13 @@ import {
   CSS_FLEX_ITEM_ALIGN_SELF,
   CSS_FLEX_JUSTIFY_CONTENT,
   CSS_FLEX_WRAP,
-} from '../../../constants'
+  TSHIRT_SIZES,
+} from 'lib/constants'
+import { Flex, FlexItemProps, FlexProps } from 'lib/index.core'
+import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
+
 import { Box } from '../Box'
 import { BOX_META } from '../Box/meta'
-import { Flex, FlexItemProps } from './'
-import { type FlexProps } from './definitions'
 
 export const FLEX_META = {
   Flex: {

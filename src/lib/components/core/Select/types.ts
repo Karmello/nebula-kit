@@ -1,8 +1,8 @@
-import { ActionSurfaceProps, BoxProps } from 'lib/components'
-import { SELECT_VARIANTS } from 'lib/components/core/Select/constants'
 import { ControlSize } from 'lib/types'
 
-import { BoxColor, BoxIntent } from '../Box/types'
+import { ActionSurfaceProps } from '../ActionSurface'
+import { BoxColor, BoxIntent, BoxProps } from '../Box'
+import { SELECT_VARIANTS } from './constants'
 
 type SelectVariant = (typeof SELECT_VARIANTS)[number]
 

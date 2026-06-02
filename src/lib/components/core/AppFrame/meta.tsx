@@ -1,16 +1,9 @@
+import { AppFrame, AppFrameFooterProps, AppFrameHeaderProps, AppFrameMainProps, AppFrameProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { GRID_META } from '../Grid/meta'
-import { AppFrame } from '.'
-import { AppFrameProps } from './definitions'
-import {
-  AppFrameFooterProps,
-  AppFrameHeaderProps,
-  AppFrameMainProps,
-  DEFAULT_APP_FRAME_FOOTER_INTENT,
-  DEFAULT_APP_FRAME_HEADER_INTENT,
-} from './slots'
+import { DEFAULT_APP_FRAME_FOOTER_INTENT, DEFAULT_APP_FRAME_HEADER_INTENT } from './slots'
 
 export const APP_FRAME_META = {
   AppFrame: {

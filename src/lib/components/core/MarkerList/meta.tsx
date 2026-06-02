@@ -1,10 +1,10 @@
+import { MARKER_LIST_TAGS } from 'lib/constants'
+import { MarkerList, MarkerListItemProps, MarkerListProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
-import { MARKER_LIST_TAGS } from '../../../constants'
 import { BOX_META } from '../Box/meta'
 import { FLEX_META } from '../Flex/meta'
-import { MarkerList, MarkerListItemProps } from './'
-import { DEFAULT_MARKER_LIST_GAP, MARKER_LIST_STYLES, type MarkerListProps } from './definitions'
+import { DEFAULT_MARKER_LIST_GAP, MARKER_LIST_STYLES } from './definitions'
 
 export const MARKER_LIST_META = {
   MarkerList: {

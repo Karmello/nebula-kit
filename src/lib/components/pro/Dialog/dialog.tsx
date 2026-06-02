@@ -1,10 +1,11 @@
 import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Fade, Flex, IconButton, Scale } from 'lib/components'
 import { Portal, WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 import { useCurrentTheme, useGlobalScrollLock } from 'lib/hooks'
+import { Box, Flex, IconButton } from 'lib/index.core'
+import { DialogProps, Fade, Scale } from 'lib/index.pro'
 import { useFocusTrap } from 'lib/internals/focus'
 
 import {
@@ -14,7 +15,6 @@ import {
   DIALOG_PADDING,
   DIALOG_RESIZE_DURATION,
   DIALOG_SIZE_MAP,
-  DialogProps,
 } from './definitions'
 import { DialogProvider } from './DialogProvider'
 

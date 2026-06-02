@@ -1,6 +1,5 @@
-import { Grid } from 'lib/components'
-
-import { ToolbarStartProps } from './definitions'
+import { Grid } from 'lib/index.core'
+import { ToolbarStartProps } from 'lib/index.pro'
 
 export const ToolbarStart = ({ children, tagAttrs, tagRef }: ToolbarStartProps) => {
   return (

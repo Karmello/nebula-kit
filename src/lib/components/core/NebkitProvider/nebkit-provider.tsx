@@ -2,6 +2,7 @@ import { ReactElement, useLayoutEffect, useRef } from 'react'
 
 import { BrandProvider, ThemeProvider } from 'lib/components/shared'
 import { useGlobalScrollLock } from 'lib/hooks'
+import { NebkitProviderProps } from 'lib/index.core'
 
 import {
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
@@ -10,7 +11,6 @@ import {
   DEFAULT_NEBKIT_SATURATION,
   DEFAULT_NEBKIT_THEME,
   NEBKIT_SIZES_MAP,
-  NebkitProviderProps,
 } from './definitions'
 
 export const NebkitProvider = ({

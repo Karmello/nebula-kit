@@ -1,15 +1,15 @@
 import { memo, useLayoutEffect, useRef, useState } from 'react'
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { resolveLengthValue, withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { getSvgIconComponent } from 'lib/icons/lucide'
+import { IconProps } from 'lib/index.core'
 import { syncRespDataset } from 'lib/internals/dom'
-import { IconName } from 'lib/types'
+import { CssValue, IconName } from 'lib/types'
 
-import { CssValue } from '../../../types'
-import { DEFAULT_ICON_SIZE, IconProps, IconSize } from './definitions'
+import { Box } from '../Box'
+import { DEFAULT_ICON_SIZE, IconSize } from './definitions'
 
 export const Icon = memo(
   ({

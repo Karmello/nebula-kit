@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
 
+import { Rotate, RotateProps, Text } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
-import { Text } from '../Text'
-import { type RotateProps } from './definitions'
-import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING, Rotate } from './rotate'
+import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING } from './rotate'
 
 const RotateWrapper = ({ children }: Partial<RotateProps>) => {
   const [angle, setAngle] = useState<number>(0)

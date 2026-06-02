@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+import { Textarea, TextareaProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
@@ -9,9 +10,7 @@ import {
   DEFAULT_TEXTAREA_ROWS,
   DEFAULT_TEXTAREA_VARIANT,
   TEXTAREA_RESIZE,
-  type TextareaProps,
 } from './definitions'
-import { Textarea } from './textarea'
 
 const TextareaControlled = () => {
   const [value, setValue] = useState<string>('value')

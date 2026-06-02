@@ -1,4 +1,4 @@
-import { TextProps, WithIconProps } from 'lib/components'
+import { TextProps, WithIconProps } from 'lib/index.core'
 
 export const DEFAULT_FORM_HINT_INTENT: FormHintProps['intent'] = 'secondary'
 export const DEFAULT_FORM_HINT_COLOR: FormHintProps['color'] = 'blue'

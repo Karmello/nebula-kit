@@ -1,7 +1,8 @@
-import { Flex } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
+import { Flex } from 'lib/index.core'
+import { FormActionsProps } from 'lib/index.pro'
 
-import { DEFAULT_FORM_ACTIONS_GAP, FormActionsProps } from './definitions'
+import { DEFAULT_FORM_ACTIONS_GAP } from './definitions'
 
 export const FormActions = ({
   // Flex

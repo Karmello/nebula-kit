@@ -1,6 +1,6 @@
 import { FieldValues, RegisterOptions } from 'react-hook-form'
 
-import { FlexItemProps } from 'lib/components'
+import { FlexItemProps } from 'lib/index.core'
 
 export const DEFAULT_FORM_FIELD_FLEX: FormFieldProps['flex'] = '1'
 

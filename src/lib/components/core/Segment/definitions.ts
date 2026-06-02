@@ -1,6 +1,6 @@
 import { ElementType } from 'react'
 
-import { FlexProps } from 'lib/components'
+import { FlexProps } from 'lib/index.core'
 
 export const DEFAULT_SEGMENT_FLEX_DIRECTION: SegmentProps['flexDirection'] = 'row'
 

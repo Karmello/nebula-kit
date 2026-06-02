@@ -1,5 +1,4 @@
-import { Avatar } from './avatar'
-import { type AvatarProps } from './definitions'
+import { Avatar, AvatarProps } from 'lib/index.pro'
 
 export type PropsFromAvatarKey = (typeof PROPS_FROM_AVATAR)[number]
 

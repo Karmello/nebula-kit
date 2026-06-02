@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { Box } from 'lib/index.core'
 
 import { AppFrameFooterProps, DEFAULT_APP_FRAME_FOOTER_INTENT } from './definitions'
 

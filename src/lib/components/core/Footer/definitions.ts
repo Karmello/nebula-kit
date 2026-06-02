@@ -1,5 +1,6 @@
-import { BoxProps } from 'lib/components'
-import type { FooterTag, SwitchAt } from 'lib/types'
+import { FooterTag, SwitchAt } from 'lib/types'
+
+import { BoxProps } from '../Box'
 
 export const DEFAULT_FOOTER_BORDER_INTENT: FooterProps['borderIntent'] = 'muted'
 

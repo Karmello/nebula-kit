@@ -1,4 +1,4 @@
-import { TextProps, WithIconProps } from 'lib/components'
+import { TextProps, WithIconProps } from 'lib/index.core'
 
 export const DEFAULT_FORM_LABEL_INTENT: FormLabelProps['intent'] = 'neutral'
 

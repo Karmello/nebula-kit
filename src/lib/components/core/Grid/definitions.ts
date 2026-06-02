@@ -1,7 +1,6 @@
-import { BoxProps } from 'lib/components'
-import type { GridTag, RespValue, TShirtSize } from 'lib/types'
+import { CssGridAutoFlow, CssGridPlaceContent, CssGridPlaceItems, CssValue, GridTag, RespValue, TShirtSize } from 'lib/types'
 
-import { CssGridAutoFlow, CssGridPlaceContent, CssGridPlaceItems, CssValue } from '../../../types'
+import { BoxProps } from '../Box'
 
 type GridOwnProps = {
   gridTemplateColumns?: RespValue<string>

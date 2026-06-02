@@ -12,8 +12,9 @@ import {
   useRole,
 } from '@floating-ui/react'
 
-import { Box, Text } from 'lib/components'
 import { resolveLengthToken } from 'lib/helpers'
+import { Box, Text } from 'lib/index.core'
+import { TooltipProps } from 'lib/index.pro'
 
 import {
   DEFAULT_TOOLTIP_INTENT,
@@ -25,7 +26,6 @@ import {
   DEFAULT_TOOLTIP_PLACEMENT,
   DEFAULT_TOOLTIP_VARIANT,
 } from './constants'
-import type { TooltipProps } from './types'
 
 export const Tooltip = ({
   // Box

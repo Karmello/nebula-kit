@@ -1,8 +1,7 @@
 import { LENGTH_SCALE } from 'lib/constants'
 
 import { WithSlots } from '../WithSlots'
-import { DropdownListMain } from './components/DropdownListMain/dropdown-list-main'
-import { DropdownListMenu } from './components/DropdownListMenu/dropdown-list-menu'
+import { DropdownListMain, DropdownListMenu } from './components'
 import {
   DEFAULT_DROPDOWN_ITEM_BLOCK_SIZE,
   DEFAULT_DROPDOWN_LIST_INTENT,

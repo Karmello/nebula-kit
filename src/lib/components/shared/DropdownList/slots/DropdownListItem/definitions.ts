@@ -1,4 +1,4 @@
-import { ActionSurfaceProps } from 'lib/components'
+import { ActionSurfaceProps } from 'lib/index.core'
 
 export type DropdownListItemProps = Pick<
   ActionSurfaceProps,

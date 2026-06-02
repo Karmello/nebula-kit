@@ -1,10 +1,10 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, RefObject } from 'react'
 
-import { ActionSurface } from 'lib/components'
+import { ACTION_SURFACE_TAGS } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
+import { ActionSurface } from 'lib/index.core'
+import { ActionSurfaceTag } from 'lib/types'
 
-import { ACTION_SURFACE_TAGS } from '../../../../../constants'
-import type { ActionSurfaceTag } from '../../../../../types'
 import { useDropdownListContext } from '../../providers'
 import { DEFAULT_DROPDOWN_LIST_TRIGGER_VARIANT, DropdownListTriggerProps } from './definitions'
 

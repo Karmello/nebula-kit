@@ -1,4 +1,4 @@
-import { MultiSelectOptionProps } from './definitions'
+import { MultiSelectOptionProps } from 'lib/index.pro'
 
 export const MultiSelectOption = ({ children }: MultiSelectOptionProps) => {
   return children

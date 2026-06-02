@@ -1,12 +1,13 @@
 import { useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Flex, IconButton, Resize } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { Box, Flex, IconButton, Resize } from 'lib/index.core'
+import { SplitViewSideProps } from 'lib/index.pro'
 import { useFocusTrap } from 'lib/internals/focus'
 
 import { useSplitViewContext } from '../../SplitViewProvider'
-import { DEFAULT_SPLIT_VIEW_SIDE_INTENT, DEFAULT_SPLIT_VIEW_SIDE_WIDTH, SplitViewSideProps } from './definitions'
+import { DEFAULT_SPLIT_VIEW_SIDE_INTENT, DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from './definitions'
 
 export const SplitViewSide = ({
   // Box

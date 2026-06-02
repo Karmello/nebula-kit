@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 
+import { Resize, ResizeProps, Text } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
-import { Text } from './../Text'
-import { RESIZE_PROPERTIES, type ResizeProps } from './definitions'
-import { DEFAULT_RESIZE_DURATION, DEFAULT_RESIZE_EASING, Resize } from './resize'
+import { RESIZE_PROPERTIES } from './definitions'
+import { DEFAULT_RESIZE_DURATION, DEFAULT_RESIZE_EASING } from './resize'
 
 const ResizeWrapper = ({ property }: { property: ResizeProps['property'] }) => {
   const [visible, setVisible] = useState<boolean>(false)

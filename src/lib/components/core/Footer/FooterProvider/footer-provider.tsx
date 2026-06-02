@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext } from 'react'
 
-import { FooterProps } from '../definitions'
+import { FooterProps } from 'lib/index.core'
 
 type FooterContextValue = {
   borderIntent: FooterProps['borderIntent']

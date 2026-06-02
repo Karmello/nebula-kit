@@ -1,5 +1,5 @@
-import { ButtonProps, FlexProps } from 'lib/components'
-import { BoxVariant } from 'lib/components/core/Box/types'
+import { BoxVariant } from 'lib/components/core/Box'
+import { ButtonProps, FlexProps } from 'lib/index.core'
 import { RespValue } from 'lib/types'
 
 export const SIDE_NAV_EXPAND_MODES = ['single', 'multiple'] as const

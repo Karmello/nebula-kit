@@ -1,6 +1,7 @@
-import { Spacer, Text, WithIcon } from 'lib/components'
+import { Spacer, Text, WithIcon } from 'lib/index.core'
+import { FormHintProps } from 'lib/index.pro'
 
-import { DEFAULT_FORM_HINT_COLOR, DEFAULT_FORM_HINT_INTENT, FormHintProps } from './definitions'
+import { DEFAULT_FORM_HINT_COLOR, DEFAULT_FORM_HINT_INTENT } from './definitions'
 
 export const FormHint = ({
   // Text

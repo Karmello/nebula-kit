@@ -1,4 +1,4 @@
-import { BoxProps, ButtonProps } from 'lib/components'
+import { BoxProps, ButtonProps } from 'lib/index.core'
 
 export const DEFAULT_PAGINATION_SHOW_PREV_NEXT: PaginationProps['showPrevNext'] = false
 export const DEFAULT_PAGINATION_SHOW_FIRST_LAST: PaginationProps['showFirstLast'] = false

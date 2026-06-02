@@ -1,6 +1,7 @@
-import { Spacer, Text, WithIcon } from 'lib/components'
+import { Spacer, Text, WithIcon } from 'lib/index.core'
+import { FormLabelProps } from 'lib/index.pro'
 
-import { DEFAULT_FORM_LABEL_INTENT, FormLabelProps } from './definitions'
+import { DEFAULT_FORM_LABEL_INTENT } from './definitions'
 
 export const FormLabel = ({
   // Text

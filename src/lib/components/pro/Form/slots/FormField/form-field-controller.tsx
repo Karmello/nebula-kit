@@ -2,7 +2,7 @@ import { cloneElement, ReactElement } from 'react'
 import { omit } from 'lodash-es'
 import { Controller, useFormContext } from 'react-hook-form'
 
-import { Form, FormFieldProps, FormHintProps, FormLabelProps } from 'lib/components'
+import { Form, FormFieldProps, FormHintProps, FormLabelProps } from 'lib/index.pro'
 
 import { getRulesObject } from './helpers'
 

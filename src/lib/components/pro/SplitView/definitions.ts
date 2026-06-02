@@ -1,6 +1,6 @@
 import { JSX } from 'react'
 
-import { GridProps } from 'lib/components'
+import { GridProps } from 'lib/index.core'
 import { SwitchAt } from 'lib/types'
 
 import { SplitViewContextProps } from './SplitViewProvider/definitions'

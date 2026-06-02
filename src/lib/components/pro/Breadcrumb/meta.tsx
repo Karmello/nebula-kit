@@ -1,10 +1,10 @@
-import { BOX_INTENTS } from 'lib/components/core/Box/constants'
+import { BOX_INTENTS } from 'lib/components/core/Box'
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { BREADCRUMB_TAGS, COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { Breadcrumb, BreadcrumbProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { Breadcrumb } from './breadcrumb'
-import { type BreadcrumbProps, DEFAULT_BREADCRUMB_INTENT } from './definitions'
+import { DEFAULT_BREADCRUMB_INTENT } from './definitions'
 
 const tree = [
   {

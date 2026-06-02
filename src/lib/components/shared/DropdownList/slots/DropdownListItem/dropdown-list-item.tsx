@@ -1,6 +1,6 @@
 import { MouseEvent } from 'react'
 
-import { ActionSurface } from 'lib/components'
+import { ActionSurface } from 'lib/index.core'
 
 import { useDropdownListContext } from '../../providers'
 import { DropdownListItemProps } from './definitions'

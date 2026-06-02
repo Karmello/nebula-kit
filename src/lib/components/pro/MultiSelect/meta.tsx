@@ -1,18 +1,18 @@
 import { ACTION_SURFACE_META } from 'lib/components/core/ActionSurface/meta'
-import { BOX_INTENTS } from 'lib/components/core/Box/constants'
+import { BOX_INTENTS } from 'lib/components/core/Box'
 import { BOX_META } from 'lib/components/core/Box/meta'
-import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
-import { ComponentMeta } from 'client/definitions'
-
 import {
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
   DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DROPDOWN_LIST_PLACEMENTS,
   DROPDOWN_LIST_SCROLL_ALIGN,
-} from '../../shared/DropdownList/definitions'
-import { MultiSelect } from '.'
-import { DEFAULT_MULTI_SELECT_INLINE_SIZE, type MultiSelectProps } from './definitions'
+} from 'lib/components/shared'
+import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { MultiSelect, MultiSelectProps } from 'lib/index.pro'
+import { ComponentMeta } from 'client/definitions'
+
+import { DEFAULT_MULTI_SELECT_INLINE_SIZE } from './definitions'
 
 export const MULTI_SELECT_META = {
   MultiSelect: {

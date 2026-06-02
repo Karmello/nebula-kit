@@ -1,8 +1,7 @@
+import { ButtonProps, ResizeProps } from 'lib/index.core'
 import { RevealTag } from 'lib/types'
 
 import { BoxProps } from '../Box'
-import { type ButtonProps } from '../Button'
-import { type ResizeProps } from '../Resize'
 
 export const DEFAULT_REVEAL_INTENT: RevealProps['intent'] = 'tertiary'
 export const DEFAULT_REVEAL_SIZE: RevealProps['size'] = 'sm'

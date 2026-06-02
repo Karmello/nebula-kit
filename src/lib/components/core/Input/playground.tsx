@@ -1,4 +1,4 @@
-import { type InputProps } from './definitions'
+import { InputProps } from 'lib/index.core'
 
 export type PropsFromInputKey = (typeof PROPS_FROM_INPUT)[number]
 

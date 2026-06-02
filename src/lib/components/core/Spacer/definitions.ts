@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/components'
+import { BoxProps } from '../Box'
 
 export const DEFAULT_SPACER_BLOCK_SIZE: SpacerProps['blockSize'] = 'md'
 

@@ -1,5 +1,5 @@
-import { BoxProps, ButtonProps } from 'lib/components'
-import { BoxVariant } from 'lib/components/core/Box/types'
+import { BoxVariant } from 'lib/components/core/Box'
+import { BoxProps, ButtonProps } from 'lib/index.core'
 import { RespValue } from 'lib/types'
 
 export const TABS_VARIANTS = ['solid', 'outline'] as const satisfies BoxVariant[]

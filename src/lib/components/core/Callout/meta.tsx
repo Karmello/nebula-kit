@@ -1,14 +1,12 @@
+import { CALLOUT_TAGS } from 'lib/constants'
+import { Callout, CalloutProps, Spacer } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
-import { CALLOUT_TAGS } from '../../../constants'
 import { BOX_META } from '../Box/meta'
-import { Spacer } from '../Spacer'
-import { Callout } from './callout'
 import {
   CALLOUT_SIZES,
   CALLOUT_STATUSES,
   CALLOUT_VARIANTS,
-  type CalloutProps,
   DEFAULT_CALLOUT_INTENT,
   DEFAULT_CALLOUT_SIZE,
   DEFAULT_CALLOUT_STATUS,

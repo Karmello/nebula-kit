@@ -1,9 +1,10 @@
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { SpacerProps } from 'lib/index.core'
 
-import { DEFAULT_SPACER_BLOCK_SIZE, SpacerProps } from './definitions'
+import { Box } from '../Box'
+import { DEFAULT_SPACER_BLOCK_SIZE } from './definitions'
 
 export const Spacer = ({
   // Box

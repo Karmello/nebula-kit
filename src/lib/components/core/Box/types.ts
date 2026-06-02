@@ -1,7 +1,8 @@
 import { ElementType } from 'react'
 
-import { COLORS } from '../../../constants'
-import type {
+import { HtmlTagProps } from 'lib/components/shared'
+import { COLORS } from 'lib/constants'
+import {
   CssDisplay,
   CssOverflow,
   CssPointerEvents,
@@ -11,8 +12,8 @@ import type {
   CssVisibility,
   RespValue,
   TShirtSize,
-} from '../../../types'
-import type { HtmlTagProps } from '../../shared/HtmlTag/definitions'
+} from 'lib/types'
+
 import { BOX_INTENTS, BOX_SURFACES, BOX_THEMES, BOX_VARIANTS } from './constants'
 
 export type BoxTheme = (typeof BOX_THEMES)[number]

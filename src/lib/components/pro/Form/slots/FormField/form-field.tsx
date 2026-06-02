@@ -1,11 +1,12 @@
 import { ReactElement } from 'react'
 import classNames from 'classnames'
 
-import { Flex, FormHintProps, FormLabelProps } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
+import { Flex } from 'lib/index.core'
+import { FormFieldProps, FormHintProps, FormLabelProps } from 'lib/index.pro'
 
-import { DEFAULT_FORM_FIELD_FLEX, FormFieldProps } from './definitions'
+import { DEFAULT_FORM_FIELD_FLEX } from './definitions'
 import { FormFieldController } from './form-field-controller'
 
 export const FormField = ({

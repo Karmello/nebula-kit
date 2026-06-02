@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { BUTTON_META } from 'lib/components/core/Button/meta'
 import { DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { Pagination, PaginationProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import {
@@ -12,9 +13,7 @@ import {
   DEFAULT_PAGINATION_SHOW_PREV_NEXT,
   DEFAULT_PAGINATION_SIBLING_COUNT,
   DEFAULT_PAGINATION_VARIANT,
-  PaginationProps,
 } from './definitions'
-import { Pagination } from './pagination'
 
 const Example1 = () => {
   const [page, setPage] = useState<number>(1)

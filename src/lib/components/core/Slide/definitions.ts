@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/components'
+import { BoxProps } from '../Box'
 
 export const SLIDE_FROM = ['top', 'right', 'bottom', 'left'] as const
 

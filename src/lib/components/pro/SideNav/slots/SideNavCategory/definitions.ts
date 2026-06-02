@@ -1,4 +1,4 @@
-import { BoxProps, ButtonProps } from 'lib/components'
+import { BoxProps, ButtonProps } from 'lib/index.core'
 import { RespValue } from 'lib/types'
 
 import { SideNavVariant } from '../../definitions'

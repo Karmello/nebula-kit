@@ -1,4 +1,4 @@
-import { type TextProps } from './definitions'
+import { TextProps } from './definitions'
 
 export type PropsFromTextKey = (typeof PROPS_FROM_TEXT)[number]
 

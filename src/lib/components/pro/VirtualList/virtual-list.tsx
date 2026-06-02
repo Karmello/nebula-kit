@@ -1,8 +1,9 @@
 import { useLayoutEffect, useMemo, useRef, useState } from 'react'
 
-import { Box } from 'lib/components'
+import { Box } from 'lib/index.core'
+import { VirtualListProps } from 'lib/index.pro'
 
-import { DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN, DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX, VirtualListProps } from './definitions'
+import { DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN, DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX } from './definitions'
 
 export const VirtualList = <T,>({
   // Box

@@ -1,19 +1,13 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useRef } from 'react'
 import classNames from 'classnames'
 
+import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE, ICON_BUTTON_TAGS } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
+import { IconButtonProps, Loader, WithIcon } from 'lib/index.core'
 import { IconButtonTag } from 'lib/types'
 
-import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE, ICON_BUTTON_TAGS } from '../../../constants'
 import { ActionSurface } from '../ActionSurface'
-import { Loader } from '../Loader'
-import { WithIcon } from '../WithIcon'
-import {
-  DEFAULT_ICON_BUTTON_INTENT,
-  DEFAULT_ICON_BUTTON_RIPPLE,
-  DEFAULT_ICON_BUTTON_VARIANT,
-  type IconButtonProps,
-} from './definitions'
+import { DEFAULT_ICON_BUTTON_INTENT, DEFAULT_ICON_BUTTON_RIPPLE, DEFAULT_ICON_BUTTON_VARIANT } from './definitions'
 
 import './icon-button.scss'
 

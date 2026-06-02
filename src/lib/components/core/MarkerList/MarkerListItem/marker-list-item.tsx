@@ -1,10 +1,9 @@
 import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
+import { Box, MarkerListItemProps } from 'lib/index.core'
 
-import { Box } from '../../Box/box'
 import { useMarkerListContext } from '../MarkerListProvider'
-import { MarkerListItemProps } from './definitions'
 
 export const MarkerListItem = ({ children, tagAttrs, tagRef, color, intent }: MarkerListItemProps) => {
   const { color: rootColor, intent: rootIntent } = useMarkerListContext()

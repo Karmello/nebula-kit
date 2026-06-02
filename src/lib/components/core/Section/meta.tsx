@@ -1,4 +1,5 @@
 import { SECTION_TAGS } from 'lib/constants'
+import { Section, SectionProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
@@ -10,9 +11,7 @@ import {
   DEFAULT_SECTION_VARIANT,
   SECTION_SIZES,
   SECTION_VARIANTS,
-  type SectionProps,
 } from './definitions'
-import { Section } from './section'
 
 export const SECTION_META = {
   Section: {

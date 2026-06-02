@@ -1,14 +1,12 @@
 import { BUTTON_TAGS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { Button, ButtonProps, Flex } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { ACTION_SURFACE_META } from '../ActionSurface/meta'
-import { Flex } from '../Flex'
 import { TEXT_META } from '../Text/meta'
 import { WITH_ICON_META } from '../WithIcon/meta'
-import { Button } from './button'
 import {
   BUTTON_ALIGNS,
-  type ButtonProps,
   DEFAULT_BUTTON_ALIGN,
   DEFAULT_BUTTON_INTENT,
   DEFAULT_BUTTON_RIPPLE,

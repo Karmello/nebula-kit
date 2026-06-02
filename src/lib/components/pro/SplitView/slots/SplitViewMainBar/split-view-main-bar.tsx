@@ -1,9 +1,8 @@
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-
-import { SplitViewMainBarProps } from './definitions'
+import { Box } from 'lib/index.core'
+import { SplitViewMainBarProps } from 'lib/index.pro'
 
 export const SplitViewMainBar = ({ children, tagAttrs, tagRef }: SplitViewMainBarProps) => {
   return (

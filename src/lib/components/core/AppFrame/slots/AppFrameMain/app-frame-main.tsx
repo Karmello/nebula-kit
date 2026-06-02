@@ -1,9 +1,7 @@
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-
-import { AppFrameMainProps } from './definitions'
+import { AppFrameMainProps, Box } from 'lib/index.core'
 
 import './app-frame-main.scss'
 

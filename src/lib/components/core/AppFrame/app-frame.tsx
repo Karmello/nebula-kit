@@ -1,11 +1,10 @@
 import classNames from 'classnames'
 
-import { Grid } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
+import { AppFrameProps, Grid } from 'lib/index.core'
 
 import { AppFrameProvider } from './AppFrameProvider'
-import { AppFrameProps } from './definitions'
 
 import './app-frame.scss'
 

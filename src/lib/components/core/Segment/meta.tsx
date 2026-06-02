@@ -1,11 +1,9 @@
+import { Button, Segment, SegmentItemProps, SegmentProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
-import { Segment } from '..'
+import { Box } from '../Box'
 import { FLEX_META } from '../Flex/meta'
-import { Box } from './../Box'
-import { Button } from './../Button'
-import { DEFAULT_SEGMENT_FLEX_DIRECTION, type SegmentProps } from './definitions'
-import { SegmentItemProps } from './SegmentItem'
+import { DEFAULT_SEGMENT_FLEX_DIRECTION } from './definitions'
 
 export const SEGMENT_META = {
   Segment: {

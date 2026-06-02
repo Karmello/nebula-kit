@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext, useState } from 'react'
 
-import { SideNavProps } from '../definitions'
+import { SideNavProps } from 'lib/index.pro'
 
 type ProviderProps = SideNavProps & {
   children: ReactNode

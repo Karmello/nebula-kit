@@ -1,4 +1,5 @@
 import { SATURATIONS, THEMES } from 'lib/constants'
+import { NebkitProviderProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import {
@@ -9,7 +10,6 @@ import {
   DEFAULT_NEBKIT_THEME,
   NEBKIT_BORDER_RADIUS_SIZES,
   NEBKIT_RIPPLE_MODES,
-  type NebkitProviderProps,
 } from './definitions'
 
 export const NEBKIT_PROVIDER_META = {

@@ -1,14 +1,14 @@
 import { useCallback, useRef, useState } from 'react'
 
-import { Box, Callout, Flex, IconButton, Slide } from 'lib/components'
-import { CALLOUT_CONFIG } from 'lib/components/core/Callout/definitions'
+import { CALLOUT_CONFIG } from 'lib/components/core/Callout'
+import { Box, Callout, Flex, IconButton, Slide } from 'lib/index.core'
+import { SnackbarProps } from 'lib/index.pro'
 
 import {
   DEFAULT_SNACKBAR_AUTO_CLOSE_DELAY,
   DEFAULT_SNACKBAR_CLOSE_ON_OUTSIDE_CLICK,
   DEFAULT_SNACKBAR_INLINE_SIZE,
   DEFAULT_SNACKBAR_PLACEMENT,
-  SnackbarProps,
   UseSnackbarShowArgs,
 } from './definitions'
 import { SnackbarProvider } from './SnackbarProvider'

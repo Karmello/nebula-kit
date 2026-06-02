@@ -2,9 +2,9 @@ import { useId } from 'react'
 import classNames from 'classnames'
 import { FieldValues, FormProvider, useForm } from 'react-hook-form'
 
-import { Flex } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
+import { Flex } from 'lib/index.core'
 
 import {
   DEFAULT_FORM_ALIGN_ITEMS,

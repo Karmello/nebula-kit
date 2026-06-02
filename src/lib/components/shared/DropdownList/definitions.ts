@@ -1,6 +1,7 @@
-import { ActionSurfaceProps, BoxProps } from 'lib/components'
-import { PortalPlacement } from 'lib/components/shared/Portal'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { ActionSurfaceProps, BoxProps } from 'lib/index.core'
+
+import { PortalPlacement } from '../Portal'
 
 export const DROPDOWN_LIST_PLACEMENTS = [
   'bottom-start',

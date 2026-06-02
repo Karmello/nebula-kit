@@ -2,7 +2,7 @@ import { SyntheticEvent } from 'react'
 
 import { RespValue } from 'lib/types'
 
-import type { BoxProps } from '../Box/types'
+import { BoxProps } from '../Box'
 
 export const IMAGE_LOADING = ['eager', 'lazy'] as const
 export const IMAGE_DECODING = ['sync', 'async', 'auto'] as const

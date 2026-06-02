@@ -1,14 +1,14 @@
 import { ComponentProps, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Spacer, Text, WithIcon } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { CalloutProps, Spacer, Text, WithIcon } from 'lib/index.core'
 import { CalloutTag } from 'lib/types'
 
+import { Box } from '../Box'
 import {
   CALLOUT_CONFIG,
   CALLOUT_SIZE_CONFIG,
-  CalloutProps,
   DEFAULT_CALLOUT_INTENT,
   DEFAULT_CALLOUT_SIZE,
   DEFAULT_CALLOUT_STATUS,

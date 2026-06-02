@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useContext } from 'react'
 
-import { BoxIntent, BoxProps } from 'lib/components/core/Box/types'
+import { BoxIntent } from 'lib/components/core/Box'
+import { BoxProps } from 'lib/index.core'
 
 type DialogContextValue = {
   intent: BoxIntent

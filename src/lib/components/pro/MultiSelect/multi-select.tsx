@@ -1,12 +1,13 @@
 import { ReactElement, useState } from 'react'
 import classNames from 'classnames'
 
-import { SelectOptionProps, Text, WithIcon } from 'lib/components'
 import { DropdownList, DropdownListState, WithSlots } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
+import { SelectOptionProps, Text, WithIcon } from 'lib/index.core'
+import { MultiSelectProps } from 'lib/index.pro'
 
-import { DEFAULT_MULTI_SELECT_INLINE_SIZE, MultiSelectProps } from './definitions'
+import { DEFAULT_MULTI_SELECT_INLINE_SIZE } from './definitions'
 import { MultiSelectProvider } from './MultiSelectProvider'
 
 export const MultiSelect = ({

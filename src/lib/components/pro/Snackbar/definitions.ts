@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 
-import type { BoxProps } from 'lib/components'
-import { CalloutStatus } from 'lib/components/core/Callout/definitions'
+import { CalloutStatus } from 'lib/components/core/Callout'
+import { BoxProps } from 'lib/index.core'
 
 export const SNACKBAR_PLACEMENTS = [
   'top-left',

@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/components'
+import { BoxProps } from 'lib/index.core'
 
 export const SCALE_ORIGIN = [
   'center',

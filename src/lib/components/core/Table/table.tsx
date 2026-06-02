@@ -1,15 +1,15 @@
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
+import { TableProps } from 'lib/index.core'
 
+import { Box } from '../Box'
 import {
   DEFAULT_TABLE_INTENT,
   DEFAULT_TABLE_LAYOUT,
   DEFAULT_TABLE_PADDING_BLOCK,
   DEFAULT_TABLE_PADDING_INLINE,
-  TableProps,
 } from './definitions'
 import { TableContext } from './TableContext'
 

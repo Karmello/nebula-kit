@@ -1,19 +1,18 @@
 import { ACTION_SURFACE_META } from 'lib/components/core/ActionSurface/meta'
-import { BOX_INTENTS } from 'lib/components/core/Box/constants'
+import { BOX_INTENTS } from 'lib/components/core/Box'
 import { BOX_META } from 'lib/components/core/Box/meta'
-import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
-import { ComponentMeta } from 'client/definitions'
-
 import {
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
   DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DROPDOWN_LIST_PLACEMENTS,
   DROPDOWN_LIST_SCROLL_ALIGN,
-} from '../../shared/DropdownList/definitions'
-import { Autocomplete, AutocompleteOptionProps } from '.'
+} from 'lib/components/shared'
+import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { Autocomplete, AutocompleteOptionProps, AutocompleteProps } from 'lib/index.pro'
+import { ComponentMeta } from 'client/definitions'
+
 import {
-  type AutocompleteProps,
   DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
   DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,

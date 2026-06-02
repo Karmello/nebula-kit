@@ -1,4 +1,4 @@
-import { type IconProps } from './definitions'
+import { IconProps } from 'lib/index.core'
 
 export type PropsFromIconKey = (typeof PROPS_FROM_ICON)[number]
 

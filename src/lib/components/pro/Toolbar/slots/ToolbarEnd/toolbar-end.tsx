@@ -1,6 +1,5 @@
-import { Grid } from 'lib/components'
-
-import { ToolbarEndProps } from './definitions'
+import { Grid } from 'lib/index.core'
+import { ToolbarEndProps } from 'lib/index.pro'
 
 export const ToolbarEnd = ({ children, tagAttrs, tagRef }: ToolbarEndProps) => {
   return (

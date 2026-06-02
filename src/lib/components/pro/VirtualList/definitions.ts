@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import type { BoxProps } from 'lib/components'
+import { BoxProps } from 'lib/index.core'
 
 export const VIRTUAL_LIST_SCROLL_ALIGN = ['start', 'center', 'end'] as const
 export const DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX: VirtualListProps['scrollToIndex'] = 0

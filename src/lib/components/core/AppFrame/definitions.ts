@@ -1,4 +1,4 @@
-import { GridProps } from 'lib/components'
+import { GridProps } from 'lib/index.core'
 
 type AppFrameOwnProps = {
   stickyHeader?: boolean

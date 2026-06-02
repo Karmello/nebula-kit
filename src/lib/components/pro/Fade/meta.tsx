@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 
 import { BOX_META } from 'lib/components/core/Box/meta'
+import { Box } from 'lib/index.core'
+import { Fade, FadeProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { Box } from './../../core/Box'
-import { type FadeProps } from './definitions'
-import { DEFAULT_FADE_DURATION, DEFAULT_FADE_EASING, Fade } from './fade'
+import { DEFAULT_FADE_DURATION, DEFAULT_FADE_EASING } from './fade'
 
 const FadeWrapper = ({ children }: Partial<FadeProps>) => {
   const [visible, setVisible] = useState<boolean>(false)

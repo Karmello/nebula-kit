@@ -1,4 +1,4 @@
-import { FlexProps } from 'lib/components'
+import { FlexProps } from 'lib/index.core'
 
 export const DEFAULT_FORM_ACTIONS_GAP: FormActionsProps['gap'] = '10px'
 

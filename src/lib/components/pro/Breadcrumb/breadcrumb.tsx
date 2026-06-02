@@ -1,11 +1,13 @@
-import { Fragment, useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
+import { Fragment } from 'react/jsx-runtime'
 
-import { Box, Flex, Icon, Text } from 'lib/components'
 import { DropdownList } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP } from 'lib/constants'
+import { Box, Flex, Icon, Text } from 'lib/index.core'
+import { BreadcrumbProps } from 'lib/index.pro'
 import { BreadcrumbTag } from 'lib/types'
 
-import { BreadcrumbProps, DEFAULT_BREADCRUMB_INTENT, DEFAULT_BREADCRUMB_SIZE } from './definitions'
+import { DEFAULT_BREADCRUMB_INTENT, DEFAULT_BREADCRUMB_SIZE } from './definitions'
 import { convertTreeToLevels } from './helpers'
 
 export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({

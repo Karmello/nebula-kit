@@ -1,10 +1,10 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 
-import { Box, Image, Loader, Text } from 'lib/components'
+import { Box, Image, Loader, Text } from 'lib/index.core'
+import { AvatarProps } from 'lib/index.pro'
 
 import {
   AVATAR_SIZES_MAP,
-  AvatarProps,
   DEFAULT_AVATAR_OBJECT_FIT,
   DEFAULT_AVATAR_OBJECT_POSITION,
   DEFAULT_AVATAR_SHAPE,

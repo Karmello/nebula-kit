@@ -14,12 +14,10 @@ import { motion } from 'motion/react'
 import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { useControlled } from 'lib/hooks'
+import { Flex, SelectOptionProps, SelectProps, Text, WithIcon } from 'lib/index.core'
 
 import { ActionSurface } from '../ActionSurface'
 import { Box } from '../Box'
-import { Flex } from '../Flex'
-import { Text } from '../Text'
-import { WithIcon } from '../WithIcon'
 import {
   DEFAULT_SELECT_INLINE_SIZE,
   DEFAULT_SELECT_INTENT,
@@ -27,8 +25,7 @@ import {
   DEFAULT_SELECT_VISIBLE_ITEMS_COUNT,
 } from './constants'
 import { resolveSelectValues } from './helpers'
-import { SelectOptionInternalProps, type SelectOptionProps } from './SelectOption'
-import { SelectProps } from './types'
+import { SelectOptionInternalProps } from './SelectOption'
 
 export const SelectImpl = ({
   // ActionSurface

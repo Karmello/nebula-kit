@@ -1,4 +1,4 @@
-import { BoxProps } from '../../core/Box'
+import { BoxProps } from 'lib/index.core'
 
 type FadeOwnProps = {
   visible: boolean

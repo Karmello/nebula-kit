@@ -1,6 +1,6 @@
 import { useLayoutEffect, useState } from 'react'
 
-import { HydrationGateProps } from './definitions'
+import { HydrationGateProps } from 'lib/index.core'
 
 export const HydrationGate = ({ children, minDelay = 0 }: HydrationGateProps) => {
   const [visible, setVisible] = useState(false)

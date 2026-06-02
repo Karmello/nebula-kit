@@ -1,3 +1,4 @@
+import { WithIcon, WithIconProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { Box } from '../Box'
@@ -11,9 +12,7 @@ import {
   DEFAULT_WITH_ICON_ICON_PLACEMENT,
   WITH_ICON_ICON_PLACEMENTS,
   WITH_ICON_JUSTIFY_CONTENT,
-  type WithIconProps,
 } from './definitions'
-import { WithIcon } from './with-icon'
 
 export const WITH_ICON_META = {
   WithIcon: {

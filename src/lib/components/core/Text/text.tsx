@@ -1,11 +1,11 @@
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { TEXT_TYPOGRAPHY_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { buildStaticDataset } from 'lib/internals/dom'
+import { TextTag } from 'lib/types'
 
-import type { TextTag } from '../../../types'
+import { Box } from '../Box'
 import { DEFAULT_TEXT_TYPOGRAPHY, TextProps } from './definitions'
 
 import './text.scss'

@@ -1,14 +1,8 @@
 import { GRID_META } from 'lib/components/core/Grid/meta'
 import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/constants'
+import { Box, Button, Segment, Select } from 'lib/index.core'
+import { Toolbar, ToolbarEndProps, ToolbarMainProps, ToolbarProps, ToolbarStartProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
-
-import { Box } from '../../core/Box'
-import { Button } from '../../core/Button'
-import { Segment } from '../../core/Segment'
-import { Select } from '../../core/Select'
-import { Toolbar } from '.'
-import { type ToolbarProps } from './definitions'
-import { ToolbarEndProps, ToolbarMainProps, ToolbarStartProps } from './slots'
 
 export const TOOLBAR_META = {
   Toolbar: {

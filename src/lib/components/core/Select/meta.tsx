@@ -1,13 +1,12 @@
+import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from 'lib/components/shared'
 import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { Select, SelectOptionProps, SelectProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../shared/DropdownList'
 import { ACTION_SURFACE_META } from '../ActionSurface/meta'
-import { BOX_INTENTS } from '../Box/constants'
+import { BOX_INTENTS } from '../Box'
 import { BOX_META } from '../Box/meta'
-import { DEFAULT_SELECT_INLINE_SIZE, DEFAULT_SELECT_INTENT, DEFAULT_SELECT_VARIANT, Select, SELECT_VARIANTS } from './'
-import { SelectOptionProps } from './SelectOption'
-import { type SelectProps } from './types'
+import { DEFAULT_SELECT_INLINE_SIZE, DEFAULT_SELECT_INTENT, DEFAULT_SELECT_VARIANT, SELECT_VARIANTS } from './constants'
 
 export const SELECT_META = {
   Select: {

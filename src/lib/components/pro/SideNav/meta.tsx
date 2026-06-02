@@ -2,6 +2,7 @@ import { BOX_META } from 'lib/components/core/Box/meta'
 import { BUTTON_META } from 'lib/components/core/Button/meta'
 import { FLEX_META } from 'lib/components/core/Flex/meta'
 import { LINK_META } from 'lib/components/core/Link/meta'
+import { SideNav, SideNavCategoryProps, SideNavItemProps, SideNavProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import {
@@ -10,16 +11,8 @@ import {
   DEFAULT_SIDE_NAV_SIZE,
   SIDE_NAV_EXPAND_MODES,
   SIDE_NAV_VARIANTS,
-  type SideNavProps,
-} from './../SideNav/definitions'
-import {
-  DEFAULT_SIDE_NAV_CATEGORY_EXPANDED,
-  DEFAULT_SIDE_NAV_CATEGORY_INTENT,
-  DEFAULT_SIDE_NAV_CATEGORY_VARIANT,
-  SideNav,
-  SideNavCategoryProps,
-  SideNavItemProps,
-} from '.'
+} from './definitions'
+import { DEFAULT_SIDE_NAV_CATEGORY_EXPANDED, DEFAULT_SIDE_NAV_CATEGORY_INTENT, DEFAULT_SIDE_NAV_CATEGORY_VARIANT } from './slots'
 
 export const SIDE_NAV_META = {
   SideNav: {

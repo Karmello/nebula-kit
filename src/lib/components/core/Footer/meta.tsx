@@ -1,11 +1,10 @@
 import { DEFAULT_SWITCH_AT, FOOTER_TAGS, SWITCH_AT } from 'lib/constants'
+import { Footer, FooterProps, FooterSectionProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { FLEX_META } from '../Flex/meta'
-import { Footer } from '.'
-import { DEFAULT_FOOTER_BORDER_INTENT, type FooterProps } from './definitions'
-import { FooterSectionProps } from './slots'
+import { DEFAULT_FOOTER_BORDER_INTENT } from './definitions'
 
 export const FOOTER_META = {
   Footer: {

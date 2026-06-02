@@ -1,6 +1,5 @@
+import { HydrationGateProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
-
-import { type HydrationGateProps } from './definitions'
 
 export const HYDRATION_GATE_META = {
   HydrationGate: {
