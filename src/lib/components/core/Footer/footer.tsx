@@ -3,15 +3,15 @@ import { ComponentProps, PropsWithoutRef } from 'react'
 import { Flex } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/constants'
-import { buildStaticDataset } from 'lib/internals/dom'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
+import { buildStaticDataset } from 'lib/internals/dom'
+import { FooterTag } from 'lib/types'
 
-import { FooterProvider } from './FooterProvider'
 import { DEFAULT_FOOTER_BORDER_INTENT, FooterProps } from './definitions'
+import { FooterProvider } from './FooterProvider'
 
 import './footer.scss'
-import { FooterTag } from 'lib/types'
 
 export const Footer = <T extends FooterTag = 'div'>({
   // HtmlTag

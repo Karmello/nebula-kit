@@ -1,11 +1,11 @@
 import { useMemo } from 'react'
-import { Navigate, Route, Routes, useLocation } from 'react-router'
 import { pascalCase } from 'change-case'
+import { Navigate, Route, Routes, useLocation } from 'react-router'
 
-import * as FOUNDATION_COMPONENTS from 'client/pages/foundations'
-import { FOUNDATIONS_CATEGORIES, FOUNDATIONS_SECTIONS, PageKey } from 'client/definitions'
-import { NextPageButton } from 'client/components'
 import { Spacer } from 'lib/components'
+import { NextPageButton } from 'client/components'
+import { FOUNDATIONS_CATEGORIES, FOUNDATIONS_SECTIONS, PageKey } from 'client/definitions'
+import * as FOUNDATION_COMPONENTS from 'client/pages/foundations'
 
 export const FoundationsPageRoutes = () => {
   const { pathname } = useLocation()

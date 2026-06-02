@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 
-import { useNavigateTo } from 'client/hooks'
 import { Box, Link } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { useNavigateTo } from 'client/hooks'
 
 import './ortho.scss'
 

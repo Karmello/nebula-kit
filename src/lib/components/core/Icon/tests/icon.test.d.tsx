@@ -1,5 +1,5 @@
 import { createRef } from 'react'
-import { expectType, expectError } from 'tsd'
+import { expectError,expectType } from 'tsd'
 
 import { Icon } from '..'
 

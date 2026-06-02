@@ -2,9 +2,9 @@ import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, useLayoutEf
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { withPrefix, resolveLengthValue } from 'lib/helpers'
+import { resolveLengthValue,withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
-import { syncRespStyle, syncRespDataset } from 'lib/internals/dom'
+import { syncRespDataset,syncRespStyle } from 'lib/internals/dom'
 
 import { FlexProps } from './definitions'
 

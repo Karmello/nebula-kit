@@ -1,5 +1,5 @@
-import { usePlaygroundStore } from 'client/store'
 import { Button, Spacer, Table, Text, WithIcon } from 'lib/components'
+import { usePlaygroundStore } from 'client/store'
 
 export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: () => void }) => {
   const components = usePlaygroundStore(state => state.components)

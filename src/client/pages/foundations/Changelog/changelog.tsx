@@ -1,8 +1,8 @@
 import { useMemo } from 'react'
 
-import meta from 'client/meta'
+import { Box, MarkerList, Markup,Section, Spacer, Tabs, Text } from 'lib/components'
 import { RELEASE_INFO, ReleaseVersion } from 'client/definitions'
-import { Box, MarkerList, Section, Spacer, Text, Tabs, Markup } from 'lib/components'
+import meta from 'client/meta'
 
 type Notes = { core: Record<string, string[]>; pro: Record<string, string[]> }
 

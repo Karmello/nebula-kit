@@ -1,7 +1,7 @@
 import { noCase, pascalCase } from 'change-case'
 
-import { COMPONENT_CATEGORIES, FOUNDATIONS_CATEGORIES, PageKey } from 'client/definitions'
 import { IconName } from 'lib/types'
+import { COMPONENT_CATEGORIES, FOUNDATIONS_CATEGORIES, PageKey } from 'client/definitions'
 
 type Option = {
   label: string

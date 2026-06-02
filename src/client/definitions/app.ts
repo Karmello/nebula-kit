@@ -1,5 +1,5 @@
-import { FOUNDATIONS_SECTIONS } from './foundations-routing'
 import { COMPONENTS_PAGE_SECTIONS } from './components-page-routing'
+import { FOUNDATIONS_SECTIONS } from './foundations-routing'
 
 export enum PageKey {
   authLogin = '/auth/log-in',

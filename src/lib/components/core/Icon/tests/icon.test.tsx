@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react'
-import { describe, it, expect } from 'vitest'
+import { describe, expect,it } from 'vitest'
 
 import { resolveLengthValue } from 'lib/helpers'
 
-import { DEFAULT_ICON_SIZE } from '../definitions'
 import { Icon } from '..'
+import { DEFAULT_ICON_SIZE } from '../definitions'
 
 describe('<Icon />', () => {
   it('renders Icon component', () => {

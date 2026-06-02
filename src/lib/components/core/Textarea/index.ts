@@ -1,2 +1,2 @@
-export * from './textarea'
 export * from './definitions'
+export * from './textarea'

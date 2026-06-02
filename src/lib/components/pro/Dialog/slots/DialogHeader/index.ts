@@ -1,2 +1,2 @@
-export * from './dialog-header'
 export * from './definitions'
+export * from './dialog-header'

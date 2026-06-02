@@ -3,15 +3,14 @@ import { useEffect, useRef, useState } from 'react'
 import { Box, Flex, Segment, Spacer } from 'lib/components'
 import { useAskAssistant } from 'client/api'
 
-import { Chat, Prompt, ContextMenu, PromptToolbar } from './components'
-
+import { Chat, ContextMenu, Prompt, PromptToolbar } from './components'
 import {
+  CHAT_ASSISTANT_MAX_MESSAGES_SENT,
   CHAT_INTRO_TEXT,
   ChatHistory,
   PROMPT_MAX_HEIGHT_PX,
   PROMPT_MAX_LENGTH,
   PROMPT_ONGOING_REQUEST_TEXT,
-  CHAT_ASSISTANT_MAX_MESSAGES_SENT,
 } from './definitions'
 
 export const ChatAssistant = () => {

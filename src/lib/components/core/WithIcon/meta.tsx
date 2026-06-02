@@ -1,5 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
 
+import { Box } from '../Box'
+import { BOX_META } from '../Box/meta'
+import { FLEX_META } from '../Flex/meta'
+import { ICON_META } from '../Icon/meta'
+import { ROTATE_META } from '../Rotate/meta'
+import { TEXT_META } from '../Text/meta'
 import {
   DEFAULT_WITH_ICON_GAP,
   DEFAULT_WITH_ICON_ICON_PLACEMENT,
@@ -7,16 +13,9 @@ import {
   WITH_ICON_JUSTIFY_CONTENT,
   type WithIconProps,
 } from './definitions'
-
 import { WithIcon } from './with-icon'
-import { Box } from '../Box'
-import BOX_META from '../Box/meta'
-import FLEX_META from '../Flex/meta'
-import TEXT_META from '../Text/meta'
-import ICONS_PROPS_META from '../Icon/meta'
-import ROTATE_PROPS_META from '../Rotate/meta'
 
-export default {
+export const WITH_ICON_META = {
   WithIcon: {
     overview: {
       bundle: 'core',
@@ -31,20 +30,20 @@ export default {
     },
     props: {
       children: BOX_META.Box.props.children,
-      customSvgIcon: ICONS_PROPS_META.Icon.props.children,
+      customSvgIcon: ICON_META.Icon.props.children,
       gap: {
         ...FLEX_META.Flex.props.gap,
         defaultValue: String(DEFAULT_WITH_ICON_GAP),
         description: 'Spacing between icon and content.',
       },
       iconAngle: {
-        ...ROTATE_PROPS_META.Rotate.props.angle,
+        ...ROTATE_META.Rotate.props.angle,
         isRequired: false,
         description: 'Defines the rotation angle of the icon, animating when the value changes.',
       },
-      iconColor: ICONS_PROPS_META.Icon.props.color,
-      iconIntent: ICONS_PROPS_META.Icon.props.intent,
-      iconName: ICONS_PROPS_META.Icon.props.name,
+      iconColor: ICON_META.Icon.props.color,
+      iconIntent: ICON_META.Icon.props.intent,
+      iconName: ICON_META.Icon.props.name,
       iconPlacement: {
         options: WITH_ICON_ICON_PLACEMENTS as unknown as string[],
         defaultValue: DEFAULT_WITH_ICON_ICON_PLACEMENT,
@@ -52,7 +51,7 @@ export default {
         isResponsive: false,
         description: 'Icon placement relative to children.',
       },
-      iconSize: ICONS_PROPS_META.Icon.props.size,
+      iconSize: ICON_META.Icon.props.size,
       iconTypography: TEXT_META.Text.props.typography,
       inlineSize: BOX_META.Box.props.inlineSize,
       justifyContent: {

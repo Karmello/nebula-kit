@@ -1,22 +1,21 @@
 import { ComponentMeta } from 'client/definitions'
 
+import { CALLOUT_TAGS } from '../../../constants'
+import { BOX_META } from '../Box/meta'
+import { Spacer } from '../Spacer'
+import { Callout } from './callout'
 import {
   CALLOUT_SIZES,
   CALLOUT_STATUSES,
   CALLOUT_VARIANTS,
+  type CalloutProps,
   DEFAULT_CALLOUT_INTENT,
   DEFAULT_CALLOUT_SIZE,
   DEFAULT_CALLOUT_STATUS,
   DEFAULT_CALLOUT_VARIANT,
-  type CalloutProps,
 } from './definitions'
 
-import BOX_META from '../Box/meta'
-import { Callout } from './callout'
-import { Spacer } from '../Spacer'
-import { CALLOUT_TAGS } from '../../../constants'
-
-export default {
+export const CALLOUT_META = {
   Callout: {
     overview: {
       bundle: 'core',

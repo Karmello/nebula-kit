@@ -1,2 +1,2 @@
-export * from './markup'
 export * from './definitions'
+export * from './markup'

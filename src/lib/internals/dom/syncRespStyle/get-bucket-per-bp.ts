@@ -1,6 +1,6 @@
 import { Breakpoint } from 'lib/types'
 
-import { Bucket, PropValues, isBlank } from '../definitions'
+import { Bucket, isBlank,PropValues } from '../definitions'
 
 export const getBucketPerBp = (bp: Breakpoint, propValues: PropValues): Bucket => {
   const bucket: Bucket = {}

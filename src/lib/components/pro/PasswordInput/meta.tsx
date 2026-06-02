@@ -1,10 +1,10 @@
+import { INPUT_META } from 'lib/components/core/Input/meta'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE, type PasswordInputProps } from './definitions'
 import { PasswordInput } from './password-input'
-import INPUT_META from '../../core/Input/meta'
 
-export default {
+export const PASSWORD_META = {
   PasswordInput: {
     overview: {
       bundle: 'pro',

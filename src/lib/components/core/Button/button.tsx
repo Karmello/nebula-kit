@@ -1,27 +1,26 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { syncRespDataset } from 'lib/internals/dom'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
+import { syncRespDataset } from 'lib/internals/dom'
+import { ButtonTag } from 'lib/types'
 
 import { ActionSurface } from '../ActionSurface'
-import { Text } from '../Text'
-import { Loader } from '../Loader'
-import { WithIcon } from '../WithIcon'
 import { Flex } from '../Flex'
-
+import { Loader } from '../Loader'
+import { Text } from '../Text'
+import { WithIcon } from '../WithIcon'
 import {
   type ButtonProps,
-  DEFAULT_BUTTON_INTENT,
-  DEFAULT_BUTTON_VARIANT,
-  DEFAULT_BUTTON_RIPPLE,
   DEFAULT_BUTTON_ALIGN,
+  DEFAULT_BUTTON_INTENT,
+  DEFAULT_BUTTON_RIPPLE,
+  DEFAULT_BUTTON_VARIANT,
 } from './definitions'
 
 import './button.scss'
-import { ButtonTag } from 'lib/types'
 
 export const Button = <T extends ButtonTag = 'button'>({
   // Box

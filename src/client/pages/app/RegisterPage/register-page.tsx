@@ -1,11 +1,10 @@
 import { useCallback } from 'react'
 
+import { Box, Button, Divider, Flex, Form, Input, Link, PasswordInput, Section, Spacer, Text, useSnackbar } from 'lib/components'
+import { useRegisterUser } from 'client/api'
+import { PageKey } from 'client/definitions'
 import { UseMakeApiRequestRes, useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { PageKey } from 'client/definitions'
-import { useRegisterUser } from 'client/api'
-
-import { Box, Button, Divider, Flex, Form, Input, Link, PasswordInput, Section, Spacer, Text, useSnackbar } from 'lib/components'
 
 type RegisterFormValues = {
   email: string

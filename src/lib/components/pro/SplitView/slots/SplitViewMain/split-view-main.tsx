@@ -1,12 +1,12 @@
 import classNames from 'classnames'
 
-import { Box, Flex, Spacer, IconButton } from 'lib/components'
+import { Box, Flex, IconButton,Spacer } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 
-import { SplitViewMainProps } from './definitions'
 import { getToggleIconName } from '../../helpers'
 import { useSplitViewContext } from '../../SplitViewProvider'
+import { SplitViewMainProps } from './definitions'
 
 export const SplitViewMain = ({
   // Box

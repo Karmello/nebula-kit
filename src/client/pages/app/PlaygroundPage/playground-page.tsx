@@ -1,19 +1,19 @@
 import { useEffect } from 'react'
 
-import { useAppStore, usePlaygroundStore, getInitialState } from 'client/store'
 import { Box, Flex, Section, Spacer, SplitView } from 'lib/components'
 import { LIB_PREFIX } from 'lib/constants'
+import { getInitialState,useAppStore, usePlaygroundStore } from 'client/store'
 
 import {
   ComponentSelect,
-  PropSelect,
-  PropEditor,
-  RenderPanel,
-  TogglePropsButton,
-  PropsViewer,
-  SwitchPropViewButton,
   DocsButton,
   PredefinedExamples,
+  PropEditor,
+  PropSelect,
+  PropsViewer,
+  RenderPanel,
+  SwitchPropViewButton,
+  TogglePropsButton,
 } from './components'
 
 export const PlaygroundPage = () => {

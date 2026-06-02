@@ -1,6 +1,10 @@
 import { useState } from 'react'
+
+import { BOX_META } from 'lib/components/core/Box/meta'
 import { ComponentMeta } from 'client/definitions'
 
+import { Box } from '../../core/Box'
+import { Button } from '../../core/Button'
 import {
   DEFAULT_SCALE_AXIS,
   DEFAULT_SCALE_DURATION,
@@ -10,11 +14,7 @@ import {
   DEFAULT_SCALE_TO,
   Scale,
 } from '../Scale'
-
 import { SCALE_AXIS, SCALE_ORIGIN, type ScaleProps } from './definitions'
-import { Button } from '../../core/Button'
-import { Box } from '../../core/Box'
-import BOX_META from '../../core/Box/meta'
 
 const Example1 = () => {
   const [visible, setVisible] = useState(false)
@@ -31,7 +31,7 @@ const Example1 = () => {
   )
 }
 
-export default {
+export const SCALE_META = {
   Scale: {
     overview: {
       bundle: 'pro',

@@ -1,6 +1,6 @@
 import { cloneElement, ReactNode, RefObject, useCallback, useLayoutEffect, useRef, useState } from 'react'
 
-import { Box, Resize, VirtualList, Divider } from 'lib/components'
+import { Box, Divider,Resize, VirtualList } from 'lib/components'
 import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT, Portal } from 'lib/components/shared'
 import { FloatingResolved, useFloating } from 'lib/internals/positioning'
 

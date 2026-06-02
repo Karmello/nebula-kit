@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
-import { useMakeApiRequest } from 'client/hooks'
 import { ApiUser } from 'client/definitions'
+import { useMakeApiRequest } from 'client/hooks'
 import { useAppStore } from 'client/store'
 
 export type UseGetUserSuccess = { user: ApiUser }

@@ -1,5 +1,5 @@
-import { resolveFitStrategy } from './fit-strategy'
 import { FloatingFitProps } from '../../definitions'
+import { resolveFitStrategy } from './fit-strategy'
 
 describe('resolveFitStrategy - no anchor', () => {
   it('returns preferred placement when anchor is missing', () => {

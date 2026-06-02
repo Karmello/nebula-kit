@@ -4,9 +4,8 @@ import classNames from 'classnames'
 import { Box, Divider, SectionProps, Spacer, Text, WithIcon } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { SECTION_SIZE_CONFIG, DEFAULT_SECTION_SIZE, DEFAULT_SECTION_INTENT, DEFAULT_SECTION_VARIANT } from './definitions'
-
 import type { SectionTag } from '../../../types'
+import { DEFAULT_SECTION_INTENT, DEFAULT_SECTION_SIZE, DEFAULT_SECTION_VARIANT,SECTION_SIZE_CONFIG } from './definitions'
 
 export const Section = <T extends SectionTag = 'section'>({
   // Box

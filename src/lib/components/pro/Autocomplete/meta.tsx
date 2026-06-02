@@ -1,12 +1,8 @@
+import { ACTION_SURFACE_META } from 'lib/components/core/ActionSurface/meta'
+import { BOX_INTENTS } from 'lib/components/core/Box/constants'
+import { BOX_META } from 'lib/components/core/Box/meta'
+import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { ComponentMeta } from 'client/definitions'
-import { BOX_INTENTS, COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
-
-import {
-  DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
-  DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
-  DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
-  type AutocompleteProps,
-} from './definitions'
 
 import {
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
@@ -15,12 +11,15 @@ import {
   DROPDOWN_LIST_PLACEMENTS,
   DROPDOWN_LIST_SCROLL_ALIGN,
 } from '../../shared/DropdownList/definitions'
-
 import { Autocomplete, AutocompleteOptionProps } from '.'
-import BOX_META from '../../core/Box/meta'
-import ACTION_SURFACE_META from '../../core/ActionSurface/meta'
+import {
+  type AutocompleteProps,
+  DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
+  DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
+  DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
+} from './definitions'
 
-export default {
+export const AUTOCOMPLETE_META = {
   Autocomplete: {
     overview: {
       bundle: 'pro',

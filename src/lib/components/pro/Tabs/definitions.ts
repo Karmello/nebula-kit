@@ -1,5 +1,6 @@
 import { BoxProps, ButtonProps } from 'lib/components'
-import { BoxVariant, RespValue } from 'lib/types'
+import { BoxVariant } from 'lib/components/core/Box/types'
+import { RespValue } from 'lib/types'
 
 export const TABS_VARIANTS = ['solid', 'outline'] as const satisfies BoxVariant[]
 export const TABS_ORIENTATION = ['horizontal', 'vertical'] as const

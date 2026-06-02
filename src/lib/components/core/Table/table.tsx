@@ -4,15 +4,14 @@ import { Box } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 
-import { TableContext } from './TableContext'
-
 import {
-  DEFAULT_TABLE_LAYOUT,
   DEFAULT_TABLE_INTENT,
-  TableProps,
+  DEFAULT_TABLE_LAYOUT,
   DEFAULT_TABLE_PADDING_BLOCK,
   DEFAULT_TABLE_PADDING_INLINE,
+  TableProps,
 } from './definitions'
+import { TableContext } from './TableContext'
 
 import './table.scss'
 

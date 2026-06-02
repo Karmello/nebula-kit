@@ -3,9 +3,9 @@ import { RefObject } from 'react'
 import { BREAKPOINTS } from 'lib/constants'
 import { Breakpoint } from 'lib/types'
 
+import { Bucket, PropValues } from '../definitions'
 import { getBucketPerBp } from './get-bucket-per-bp'
 import { getDataAttrName } from './get-data-attr-name'
-import { Bucket, PropValues } from '../definitions'
 
 export const syncRespDataset = (
   namespace: string,

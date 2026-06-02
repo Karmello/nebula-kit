@@ -1,5 +1,5 @@
+import { Box, Flex, Link, Text, WithIcon } from 'lib/components'
 import { useNavigateTo } from 'client/hooks'
-import { Box, Text, Flex, Link, WithIcon } from 'lib/components'
 
 export default () => {
   const navigateTo = useNavigateTo()

@@ -1,5 +1,4 @@
-import { Section, Button, Text, Spacer, Flex, WithIcon } from 'lib/components'
-
+import { Button, Flex, Section, Spacer, Text, WithIcon } from 'lib/components'
 import { useConnectToDiscord } from 'client/api'
 
 export const ConnectToDiscordSection = ({ userPlan, discordUserId }: { userPlan: string; discordUserId: string }) => {

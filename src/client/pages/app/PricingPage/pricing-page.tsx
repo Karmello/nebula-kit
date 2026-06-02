@@ -1,8 +1,8 @@
 import { useLayoutEffect } from 'react'
 
+import { Box, Flex, Grid, Loader,Section, Spacer, Text } from 'lib/components'
 import { useGetUser } from 'client/api'
 import { useAppStore } from 'client/store'
-import { Box, Flex, Section, Spacer, Text, Grid, Loader } from 'lib/components'
 
 import { PricingPlanCard } from './components/PricingPlanCard'
 import { PRICING_DATA } from './definitions'

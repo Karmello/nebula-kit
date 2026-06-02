@@ -1,12 +1,12 @@
 import classNames from 'classnames'
 
-import { WithSlots } from 'lib/components/shared'
 import { Flex } from 'lib/components'
+import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 
-import { SideNavProvider } from './SideNavProvider'
 import { SideNavToggle } from './components'
-import { DEFAULT_SIDE_NAV_EXPAND_MODE, DEFAULT_SIDE_NAV_SIZE, DEFAULT_SIDE_NAV_GAP, SideNavProps } from './definitions'
+import { DEFAULT_SIDE_NAV_EXPAND_MODE, DEFAULT_SIDE_NAV_GAP, DEFAULT_SIDE_NAV_SIZE, SideNavProps } from './definitions'
+import { SideNavProvider } from './SideNavProvider'
 
 import './side-nav.scss'
 

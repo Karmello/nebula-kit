@@ -5,16 +5,15 @@ import { CONTROL_SIZE_MAP } from 'lib/constants'
 import { IconName } from 'lib/types'
 
 import {
-  PaginationProps,
+  DEFAULT_PAGINATION_BOUNDARY_COUNT,
+  DEFAULT_PAGINATION_INTENT,
   DEFAULT_PAGINATION_SHOW_FIRST_LAST,
   DEFAULT_PAGINATION_SHOW_PREV_NEXT,
   DEFAULT_PAGINATION_SIBLING_COUNT,
-  DEFAULT_PAGINATION_BOUNDARY_COUNT,
-  DEFAULT_PAGINATION_VARIANT,
-  DEFAULT_PAGINATION_INTENT,
   DEFAULT_PAGINATION_SIZE,
+  DEFAULT_PAGINATION_VARIANT,
+  PaginationProps,
 } from './definitions'
-
 import { getPaginationItems } from './helpers'
 
 export const Pagination = ({

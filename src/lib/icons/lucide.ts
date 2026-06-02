@@ -1,5 +1,4 @@
 import { JSX, SVGProps } from 'react'
-
 import {
   ArrowDown,
   ArrowLeft,
@@ -16,11 +15,11 @@ import {
   ChevronDown,
   ChevronLeft,
   ChevronRight,
-  ChevronUp,
   ChevronsDown,
   ChevronsLeft,
   ChevronsRight,
   ChevronsUp,
+  ChevronUp,
   CircleAlert,
   CircleUser,
   CircleX,
@@ -81,8 +80,8 @@ import {
   TreePine,
   TriangleAlert,
   User,
-  Users,
   UserPlus,
+  Users,
   X,
   Zap,
 } from 'lucide-react'

@@ -1,9 +1,10 @@
 import { ReactNode } from 'react'
 
-import { useNavigateTo } from 'client/hooks'
-import { Plan } from 'client/definitions'
 import { Flex, Icon, Link, Section, Spacer, Text } from 'lib/components'
-import { BoxColor, IconName } from 'lib/types'
+import { BoxColor } from 'lib/components/core/Box/types'
+import { IconName } from 'lib/types'
+import { Plan } from 'client/definitions'
+import { useNavigateTo } from 'client/hooks'
 
 import { PricingPlanButton } from './PricingPlanButton'
 

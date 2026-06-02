@@ -1,11 +1,12 @@
+import { COLORS, TSHIRT_SIZES } from 'lib/constants'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
-import { BOX_INTENTS, BOX_SURFACES, BOX_THEMES, BOX_VARIANTS, COLORS, TSHIRT_SIZES } from 'lib/constants'
 
-import { Box } from './box'
-import { type BoxProps } from './definitions'
 import { CSS_DISPLAY, CSS_OVERFLOW, CSS_POINTER_EVENTS, CSS_POSITION, CSS_TEXT_ALIGN, CSS_VISIBILITY } from '../../../constants'
+import { Box } from './box'
+import { BOX_INTENTS, BOX_SURFACES, BOX_THEMES, BOX_VARIANTS } from './constants'
+import { type BoxProps } from './types'
 
-export default {
+export const BOX_META = {
   Box: {
     overview: {
       bundle: 'core',

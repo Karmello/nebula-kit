@@ -1,7 +1,7 @@
-import { useLogoutUser, useRequestEmailUpdate, UseRequestEmailUpdateRes } from 'client/api'
-import { useNavigateTo } from 'client/hooks'
-import { PageKey } from 'client/definitions'
 import { Box, Form, Input, Section, Spacer, Text, useSnackbar } from 'lib/components'
+import { useLogoutUser, useRequestEmailUpdate, UseRequestEmailUpdateRes } from 'client/api'
+import { PageKey } from 'client/definitions'
+import { useNavigateTo } from 'client/hooks'
 
 export const UpdateEmailSection = () => {
   const navigateTo = useNavigateTo()

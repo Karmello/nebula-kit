@@ -1,6 +1,8 @@
 import { ReactElement } from 'react'
 
-import { BoxColor, Saturation, TShirtSize, Theme } from 'lib/types'
+import { Saturation, Theme,TShirtSize } from 'lib/types'
+
+import { BoxColor } from '../Box/types'
 
 export const DEFAULT_NEBKIT_THEME: NebkitProviderProps['theme'] = 'light'
 export const DEFAULT_NEBKIT_BRAND: NebkitProviderProps['brand'] = 'gray'

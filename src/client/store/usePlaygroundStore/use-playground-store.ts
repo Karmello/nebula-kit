@@ -3,8 +3,8 @@ import { persist } from 'zustand/middleware'
 
 import { LIB_PREFIX } from 'lib/constants'
 
-import { getInitialState } from './get-initial-state'
 import { PropValue, State } from './definitions'
+import { getInitialState } from './get-initial-state'
 
 type Store = State & {
   setDisplayProps: (displayProps: boolean) => void

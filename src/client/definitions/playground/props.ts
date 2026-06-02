@@ -1,4 +1,3 @@
-import { PROPS_FROM_AVATAR } from 'lib/components/pro/Avatar/playground'
 import { PROPS_FROM_BOX } from 'lib/components/core/Box/playground'
 import { PROPS_FROM_BUTTON } from 'lib/components/core/Button/playground'
 import { PROPS_FROM_CALLOUT } from 'lib/components/core/Callout/playground'
@@ -10,12 +9,13 @@ import { PROPS_FROM_LOADER } from 'lib/components/core/Loader/playground'
 import { PROPS_FROM_REVEAL } from 'lib/components/core/Reveal/playground'
 import { PROPS_FROM_SECTION } from 'lib/components/core/Section/playground'
 import { PROPS_FROM_SELECT } from 'lib/components/core/Select/playground'
-import { PROPS_FROM_SWITCH } from 'lib/components/pro/Switch/playground'
-import { PROPS_FROM_TABS } from 'lib/components/pro/Tabs/playground'
 import { PROPS_FROM_TABLE } from 'lib/components/core/Table/playground'
 import { PROPS_FROM_TEXT } from 'lib/components/core/Text/playground'
-import { PROPS_FROM_TOOLTIP } from 'lib/components/pro/Tooltip/playground'
 import { PROPS_FROM_WITH_ICON } from 'lib/components/core/WithIcon/playground'
+import { PROPS_FROM_AVATAR } from 'lib/components/pro/Avatar/playground'
+import { PROPS_FROM_SWITCH } from 'lib/components/pro/Switch/playground'
+import { PROPS_FROM_TABS } from 'lib/components/pro/Tabs/playground'
+import { PROPS_FROM_TOOLTIP } from 'lib/components/pro/Tooltip/playground'
 
 export const PLAYGROUND_PROPS_MAP: Record<string, readonly string[]> = {
   Avatar: PROPS_FROM_AVATAR,

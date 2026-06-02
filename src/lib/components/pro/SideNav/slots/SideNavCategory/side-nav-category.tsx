@@ -1,16 +1,15 @@
 import { cloneElement, useEffect, useId, useLayoutEffect } from 'react'
 import classNames from 'classnames'
 
+import { Box, Button, Flex, Resize, Spacer } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
-import { Resize, Box, Button, Flex, Spacer } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import { useSideNavContext } from '../../SideNavProvider'
-
 import {
+  DEFAULT_SIDE_NAV_CATEGORY_EXPANDED,
   DEFAULT_SIDE_NAV_CATEGORY_INTENT,
   DEFAULT_SIDE_NAV_CATEGORY_VARIANT,
-  DEFAULT_SIDE_NAV_CATEGORY_EXPANDED,
   SideNavCategoryProps,
 } from './definitions'
 

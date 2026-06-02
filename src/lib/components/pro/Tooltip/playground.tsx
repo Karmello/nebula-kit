@@ -1,5 +1,5 @@
-import { Tooltip } from './'
 import { Button } from '../../core/Button'
+import { Tooltip } from './'
 import { type TooltipProps } from './types'
 
 export type PropsFromTooltipKey = (typeof PROPS_FROM_TOOLTIP)[number]

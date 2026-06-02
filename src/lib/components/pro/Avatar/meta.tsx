@@ -1,10 +1,10 @@
+import { IMAGE_META } from 'lib/components/core/Image/meta'
 import { ComponentMeta } from 'client/definitions'
 
-import { AVATAR_SHAPES, AVATAR_SIZES, DEFAULT_AVATAR_SHAPE, DEFAULT_AVATAR_SIZE, type AvatarProps } from './definitions'
-import IMAGE_META from '../../core/Image/meta'
 import { Avatar } from './avatar'
+import { AVATAR_SHAPES, AVATAR_SIZES, type AvatarProps, DEFAULT_AVATAR_SHAPE, DEFAULT_AVATAR_SIZE } from './definitions'
 
-export default {
+export const AVATAR_META = {
   Avatar: {
     overview: {
       bundle: 'pro',

@@ -1,8 +1,8 @@
 import { pascalCase } from 'change-case'
 
+import { Box, Flex, MarkerList, Markup, Section, Spacer, Text } from 'lib/components'
 import meta from 'client/meta'
 import { useComponentsPageStore } from 'client/store'
-import { Box, Flex, MarkerList, Markup, Section, Spacer, Text } from 'lib/components'
 
 export const ComponentChangelogPage = () => {
   const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)

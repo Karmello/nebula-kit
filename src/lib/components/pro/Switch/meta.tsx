@@ -1,11 +1,11 @@
 import { Switch, SwitchProps } from 'lib/components'
+import { BOX_META } from 'lib/components/core/Box/meta'
+import { BUTTON_META } from 'lib/components/core/Button/meta'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SIZE, SWITCH_INTENTS } from './definitions'
-import BOX_META from '../../core/Box/meta'
-import BUTTON_META from '../../core/Button/meta'
 
-export default {
+export const SWITCH_META = {
   Switch: {
     overview: {
       bundle: 'pro',

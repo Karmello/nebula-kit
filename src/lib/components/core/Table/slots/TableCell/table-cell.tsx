@@ -3,8 +3,8 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { TableCellProps } from './definitions'
 import { useTableContext } from '../../TableContext'
+import { TableCellProps } from './definitions'
 
 export const TableCell = ({
   // Box

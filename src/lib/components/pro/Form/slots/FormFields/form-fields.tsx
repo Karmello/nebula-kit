@@ -5,9 +5,9 @@ import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 
 import {
-  DEFAULT_FORM_FIELDS_FLEX_DIRECTION,
   DEFAULT_FORM_FIELDS_ALIGN_ITEMS,
   DEFAULT_FORM_FIELDS_COLUMN_GAP,
+  DEFAULT_FORM_FIELDS_FLEX_DIRECTION,
   DEFAULT_FORM_FIELDS_ROW_GAP,
   FormFieldsProps,
 } from './definitions'

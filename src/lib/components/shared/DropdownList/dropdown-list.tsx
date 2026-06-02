@@ -1,11 +1,8 @@
 import { LENGTH_SCALE } from 'lib/constants'
 
-import { DropdownListProvider } from './providers'
 import { WithSlots } from '../WithSlots'
-
 import { DropdownListMain } from './components/DropdownListMain/dropdown-list-main'
 import { DropdownListMenu } from './components/DropdownListMenu/dropdown-list-menu'
-
 import {
   DEFAULT_DROPDOWN_ITEM_BLOCK_SIZE,
   DEFAULT_DROPDOWN_LIST_INTENT,
@@ -17,6 +14,7 @@ import {
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
   DropdownListProps,
 } from './definitions'
+import { DropdownListProvider } from './providers'
 
 export const DropdownList = ({
   // Box

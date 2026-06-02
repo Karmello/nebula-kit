@@ -1,5 +1,7 @@
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
+import { Box } from '../Box'
+import { BOX_META } from '../Box/meta'
 import {
   IMAGE_CROSS_ORIGIN,
   IMAGE_DECODING,
@@ -9,12 +11,9 @@ import {
   IMAGE_REFERRER_POLICY,
   type ImageProps,
 } from './definitions'
-
-import BOX_META from '../Box/meta'
 import { Image } from './image'
-import { Box } from '../Box'
 
-export default {
+export const IMAGE_META = {
   Image: {
     overview: {
       bundle: 'core',

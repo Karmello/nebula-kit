@@ -1,20 +1,18 @@
 import { Pattern } from './definitions'
-
+import { DrawableSurface } from './jsx/drawable-surface'
+import drawableSurfaceCode from './jsx/drawable-surface.tsx?raw'
+import { InteractiveCard } from './jsx/interactive-card'
+import interactiveCardCode from './jsx/interactive-card.tsx?raw'
+import { LoginForm } from './jsx/login-form'
+import loginFormCode from './jsx/login-form.tsx?raw'
+import { ResponsiveStack } from './jsx/responsive-stack'
+import responsiveStackCode from './jsx/responsive-stack.tsx?raw'
+import { StylingIsland } from './jsx/styling-island'
+import stylingIslandCode from './jsx/styling-island.tsx?raw'
 // jsx
 import { Test } from './jsx/test'
-import { DrawableSurface } from './jsx/drawable-surface'
-import { StylingIsland } from './jsx/styling-island'
-import { ResponsiveStack } from './jsx/responsive-stack'
-import { InteractiveCard } from './jsx/interactive-card'
-import { LoginForm } from './jsx/login-form'
-
 // code
 import testCode from './jsx/test.tsx?raw'
-import drawableSurfaceCode from './jsx/drawable-surface.tsx?raw'
-import stylingIslandCode from './jsx/styling-island.tsx?raw'
-import responsiveStackCode from './jsx/responsive-stack.tsx?raw'
-import interactiveCardCode from './jsx/interactive-card.tsx?raw'
-import loginFormCode from './jsx/login-form.tsx?raw'
 
 export const PATTERNS: Array<Pattern> = [
   {

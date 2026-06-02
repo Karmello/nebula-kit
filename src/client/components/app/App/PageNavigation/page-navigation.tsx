@@ -1,9 +1,9 @@
 import { useLocation } from 'react-router'
 
-import { useNavigateTo } from 'client/hooks'
-import { PageKey } from 'client/definitions'
-import { useAppStore, useComponentsPageStore, useFoundationsPageStore, usePatternsStore } from 'client/store'
 import { Button, Flex, Link } from 'lib/components'
+import { PageKey } from 'client/definitions'
+import { useNavigateTo } from 'client/hooks'
+import { useAppStore, useComponentsPageStore, useFoundationsPageStore, usePatternsStore } from 'client/store'
 
 type Props = {
   toolbarSlot: 'start' | 'main'

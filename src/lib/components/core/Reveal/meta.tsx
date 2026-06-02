@@ -1,14 +1,14 @@
+import { REVEAL_TAGS } from 'lib/constants'
 import { ComponentMeta } from 'client/definitions'
 
+import { Box } from '../Box'
+import { BOX_META } from '../Box/meta'
+import { BUTTON_META } from '../Button/meta'
+import { RESIZE_META } from '../Resize/meta'
 import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SIZE, type RevealProps } from './definitions'
 import { Reveal } from './reveal'
-import { Box } from '../Box'
-import BOX_META from '../Box/meta'
-import RESIZE_META from '../Resize/meta'
-import BUTTON_META from '../Button/meta'
-import { REVEAL_TAGS } from 'lib/constants'
 
-export default {
+export const REVEAL_META = {
   Reveal: {
     overview: {
       bundle: 'core',

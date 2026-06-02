@@ -1,4 +1,4 @@
-import { ScaleProps, SCALE_ORIGIN_MAP } from './definitions'
+import { SCALE_ORIGIN_MAP,ScaleProps } from './definitions'
 
 const getScaleTransform = ({ visible, axis, from, to }: Pick<ScaleProps, 'visible' | 'axis' | 'from' | 'to'>) => {
   const value = visible ? to : from

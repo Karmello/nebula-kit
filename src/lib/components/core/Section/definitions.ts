@@ -2,7 +2,9 @@ import { ReactNode } from 'react'
 
 import { BoxProps, WithIconProps } from 'lib/components'
 import { TextProps, TextTypography } from 'lib/components/core/Text/definitions'
-import { BoxVariant, RespValue, SectionTag, TShirtSize } from 'lib/types'
+import { RespValue, SectionTag, TShirtSize } from 'lib/types'
+
+import { BoxVariant } from '../Box/types'
 
 export const SECTION_SIZES = ['sm', 'md', 'lg', 'xl', '2xl'] as const satisfies TShirtSize[]
 export const SECTION_VARIANTS = ['ghost', 'outline', 'soft-outline'] as const satisfies BoxVariant[]

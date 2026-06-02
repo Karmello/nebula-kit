@@ -1,5 +1,5 @@
-import { usePlaygroundStore } from 'client/store'
 import { Button } from 'lib/components'
+import { usePlaygroundStore } from 'client/store'
 
 export const SwitchPropViewButton = () => {
   const components = usePlaygroundStore(state => state.components)

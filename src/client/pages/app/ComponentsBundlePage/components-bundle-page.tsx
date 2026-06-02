@@ -1,6 +1,6 @@
-import { useNavigateTo } from 'client/hooks'
-import { PageKey } from 'client/definitions'
 import { Box, Button, Flex, Grid, Link, Section, Spacer, Text } from 'lib/components'
+import { PageKey } from 'client/definitions'
+import { useNavigateTo } from 'client/hooks'
 
 import { CORE_DATA, PRO_DATA } from './definitions'
 

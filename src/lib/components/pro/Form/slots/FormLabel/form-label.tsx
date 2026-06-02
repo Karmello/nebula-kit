@@ -1,4 +1,4 @@
-import { Text, Spacer, WithIcon } from 'lib/components'
+import { Spacer, Text, WithIcon } from 'lib/components'
 
 import { DEFAULT_FORM_LABEL_INTENT, FormLabelProps } from './definitions'
 

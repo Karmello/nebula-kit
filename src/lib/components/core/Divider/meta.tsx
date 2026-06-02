@@ -1,11 +1,11 @@
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_MARGIN_BLOCK, type DividerProps } from './definitions'
-import BOX_META from './../Box/meta'
-import { Divider } from './divider'
+import { BOX_META } from '../Box/meta'
 import { Text } from './../Text'
+import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_MARGIN_BLOCK, type DividerProps } from './definitions'
+import { Divider } from './divider'
 
-export default {
+export const DIVIDER_META = {
   Divider: {
     overview: {
       bundle: 'core',

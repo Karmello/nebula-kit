@@ -1,2 +1,2 @@
-export * from './with-icon'
 export * from './definitions'
+export * from './with-icon'

@@ -1,13 +1,13 @@
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_SEGMENT_FLEX_DIRECTION, type SegmentProps } from './definitions'
-import { SegmentItemProps } from './SegmentItem'
 import { Segment } from '..'
+import { FLEX_META } from '../Flex/meta'
 import { Box } from './../Box'
 import { Button } from './../Button'
-import FLEX_META from './../Flex/meta'
+import { DEFAULT_SEGMENT_FLEX_DIRECTION, type SegmentProps } from './definitions'
+import { SegmentItemProps } from './SegmentItem'
 
-export default {
+export const SEGMENT_META = {
   Segment: {
     overview: {
       bundle: 'core',

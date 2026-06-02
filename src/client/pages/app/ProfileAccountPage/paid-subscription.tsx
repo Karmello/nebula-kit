@@ -1,8 +1,8 @@
 import { useLayoutEffect } from 'react'
 
+import { Box, Button, Callout, Link, Loader, Section, Spacer, Table, Text } from 'lib/components'
 import { useGetPaymentDetailsUrl, useGetPaymentInfo } from 'client/api'
 import { useAppStore } from 'client/store'
-import { Box, Button, Callout, Link, Loader, Section, Spacer, Table, Text } from 'lib/components'
 
 export default ({ enabled }: { enabled: boolean }) => {
   const user = useAppStore(state => state.user)

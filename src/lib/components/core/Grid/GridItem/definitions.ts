@@ -1,7 +1,7 @@
 import { ElementType } from 'react'
 
-import { RespValue } from 'lib/types'
 import { BoxProps } from 'lib/components'
+import { RespValue } from 'lib/types'
 
 import type { CssGridItemAlignSelf, CssGridItemJustifySelf } from '../../../../types'
 

@@ -1,2 +1,2 @@
-export * from './pagination'
 export * from './definitions'
+export * from './pagination'

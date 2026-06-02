@@ -1,2 +1,2 @@
-export * from './fade'
 export * from './definitions'
+export * from './fade'

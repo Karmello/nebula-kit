@@ -3,8 +3,8 @@ import classNames from 'classnames'
 import { Grid, Resize } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { ToolbarMainProps } from './definitions'
 import { useToolbarContext } from '../../ToolbarProvider'
+import { ToolbarMainProps } from './definitions'
 
 export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) => {
   const { switchAt, mainOpen, isSwitchAtHit } = useToolbarContext()

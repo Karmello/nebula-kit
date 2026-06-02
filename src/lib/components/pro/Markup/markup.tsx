@@ -1,7 +1,7 @@
 import { Box } from 'lib/components'
 
-import { transformChildren } from './helpers/transform-children'
 import { type MarkupProps } from './definitions'
+import { transformChildren } from './helpers/transform-children'
 
 export const Markup = ({
   // Box

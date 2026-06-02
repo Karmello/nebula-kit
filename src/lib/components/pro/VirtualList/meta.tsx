@@ -1,11 +1,11 @@
+import { BOX_META } from 'lib/components/core/Box/meta'
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN, DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX, VIRTUAL_LIST_SCROLL_ALIGN } from './definitions'
-import { VirtualList, type VirtualListProps } from '..'
 import { Box } from '../../core/Box'
-import BOX_META from '../../core/Box/meta'
+import { VirtualList, type VirtualListProps } from '..'
+import { DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN, DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX, VIRTUAL_LIST_SCROLL_ALIGN } from './definitions'
 
-export default {
+export const VIRTUAL_LIST_META = {
   VirtualList: {
     overview: {
       bundle: 'pro',

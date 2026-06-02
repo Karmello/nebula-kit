@@ -1,4 +1,4 @@
-import { expectType, expectError } from 'tsd'
+import { expectError,expectType } from 'tsd'
 
 import { Select } from '../Select'
 

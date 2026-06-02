@@ -1,11 +1,10 @@
 import { useMemo } from 'react'
 import { Navigate, Route, Routes } from 'react-router'
 
-import { ComponentOverviewPage, ComponentPropsPage, ComponentExamplesPage, ComponentChangelogPage } from 'client/pages'
-
-import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
-import { NextPageButton } from 'client/components'
 import { Spacer } from 'lib/components'
+import { NextPageButton } from 'client/components'
+import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
+import { ComponentChangelogPage,ComponentExamplesPage, ComponentOverviewPage, ComponentPropsPage } from 'client/pages'
 
 const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
   switch (sectionKey) {

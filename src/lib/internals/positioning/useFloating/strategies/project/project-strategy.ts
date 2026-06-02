@@ -1,3 +1,4 @@
+import { DEFAULT_FLOATING_PLACEMENT, FloatingProjectProps, FloatingResolved } from '../../definitions'
 import {
   applyViewportPadding,
   expandAxes,
@@ -9,8 +10,6 @@ import {
   resolveAutoSide,
   Side,
 } from '../../helpers'
-
-import { DEFAULT_FLOATING_PLACEMENT, FloatingProjectProps, FloatingResolved } from '../../definitions'
 
 export const resolveProjectStrategy = (props: Omit<FloatingProjectProps, 'children' | 'onResolve'>): FloatingResolved => {
   const {

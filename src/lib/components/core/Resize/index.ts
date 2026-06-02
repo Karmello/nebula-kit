@@ -1,2 +1,2 @@
-export * from './resize'
 export * from './definitions'
+export * from './resize'

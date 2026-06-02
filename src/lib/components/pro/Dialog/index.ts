@@ -1,6 +1,5 @@
 import { Dialog as DialogBase } from './dialog'
-
-import { DialogHeader, DialogContent, DialogFooter } from './slots'
+import { DialogContent, DialogFooter,DialogHeader } from './slots'
 
 export const Dialog = Object.assign(DialogBase, {
   Header: DialogHeader,

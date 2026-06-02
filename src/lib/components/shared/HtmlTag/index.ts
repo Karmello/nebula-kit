@@ -1,2 +1,2 @@
-export * from './html-tag'
 export * from './definitions'
+export * from './html-tag'

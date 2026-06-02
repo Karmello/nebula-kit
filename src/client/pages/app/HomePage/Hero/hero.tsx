@@ -1,7 +1,7 @@
+import { Button, Flex, Image, Link, Spacer, Text, Tooltip } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useComponentsPageStore, usePatternsStore } from 'client/store'
-import { Button, Flex, Image, Link, Spacer, Text, Tooltip } from 'lib/components'
 
 export const Hero = () => {
   const navigateTo = useNavigateTo()

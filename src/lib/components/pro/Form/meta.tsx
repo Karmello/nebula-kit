@@ -1,5 +1,15 @@
+import { BUTTON_META } from 'lib/components/core/Button/meta'
+import { FLEX_META } from 'lib/components/core/Flex/meta'
+import { TEXT_META } from 'lib/components/core/Text/meta'
+import { WITH_ICON_META } from 'lib/components/core/WithIcon/meta'
+import { Checkbox, Input, Select } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
+import { DEFAULT_BUTTON_INTENT } from '../../core/Button/definitions'
+import { Autocomplete } from '../Autocomplete'
+import { MultiSelect } from '../MultiSelect'
+import { Switch } from '../Switch'
+import { Form } from '.'
 import {
   DEFAULT_FORM_ALIGN_ITEMS,
   DEFAULT_FORM_COLUMN_GAP,
@@ -7,7 +17,6 @@ import {
   DEFAULT_FORM_ROW_GAP,
   type FormProps,
 } from './definitions'
-
 import {
   DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT,
   DEFAULT_FORM_ACTIONS_GAP,
@@ -26,18 +35,7 @@ import {
   FormLabelProps,
 } from './slots'
 
-import { DEFAULT_BUTTON_INTENT } from '../../core/Button/definitions'
-import { Form } from '.'
-import { Checkbox, Input, Select } from 'lib/index.core'
-import { Autocomplete } from '../Autocomplete'
-import { MultiSelect } from '../MultiSelect'
-import { Switch } from '../Switch'
-import FLEX_META from '../../core/Flex/meta'
-import TEXT_META from '../../core/Text/meta'
-import BUTTON_META from '../../core/Button/meta'
-import WITH_ICON_META from '../../core/WithIcon/meta'
-
-export default {
+export const FORM_META = {
   Form: {
     overview: {
       bundle: 'pro',

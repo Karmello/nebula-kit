@@ -1,4 +1,4 @@
-import { Section, Button, Text, Spacer, Flex, WithIcon } from 'lib/components'
+import { Button, Flex, Section, Spacer, Text, WithIcon } from 'lib/components'
 import { useConnectToGithub } from 'client/api'
 
 export const ConnectToGithubSection = ({ userPlan, githubUsername }: { userPlan: string; githubUsername: string }) => {

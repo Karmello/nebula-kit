@@ -1,6 +1,6 @@
 import { ActionSurfaceProps, TextProps, WithIconProps } from 'lib/components'
-import { ButtonTag, ControlSize, RespValue } from 'lib/types'
 import { BUTTON_TAGS } from 'lib/constants'
+import { ButtonTag, ControlSize, RespValue } from 'lib/types'
 
 export const DEFAULT_BUTTON_INTERACTIVE: ButtonProps['interactive'] = true
 export const DEFAULT_BUTTON_VARIANT: ButtonProps['variant'] = 'solid'

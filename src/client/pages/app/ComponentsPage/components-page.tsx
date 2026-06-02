@@ -1,9 +1,9 @@
 import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
-import { useComponentsPageStore } from 'client/store'
 import { CatalogPageTemplate } from 'client/components'
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
+import { useComponentsPageStore } from 'client/store'
 
 export const ComponentsPage = () => {
   const { pathname } = useLocation()

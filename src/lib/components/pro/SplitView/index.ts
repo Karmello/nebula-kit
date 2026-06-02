@@ -1,6 +1,5 @@
-import { SplitView as SplitViewBase } from './split-view'
-
 import { SplitViewMain, SplitViewMainBar, SplitViewSide } from './slots'
+import { SplitView as SplitViewBase } from './split-view'
 
 export const SplitView = Object.assign(SplitViewBase, {
   Main: SplitViewMain,

@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
+import { BOX_META } from '../Box/meta'
+import { Text } from './../Text'
 import { RESIZE_PROPERTIES, type ResizeProps } from './definitions'
 import { DEFAULT_RESIZE_DURATION, DEFAULT_RESIZE_EASING, Resize } from './resize'
-import { Text } from './../Text'
-import BOX_META from './../Box/meta'
 
 const ResizeWrapper = ({ property }: { property: ResizeProps['property'] }) => {
   const [visible, setVisible] = useState<boolean>(false)
@@ -33,7 +33,7 @@ const ResizeWrapper = ({ property }: { property: ResizeProps['property'] }) => {
   )
 }
 
-export default {
+export const RESIZE_META = {
   Resize: {
     overview: {
       bundle: 'core',

@@ -2,10 +2,7 @@ import { Dispatch, SetStateAction } from 'react'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-import { ApiUser } from 'client/definitions'
 import { NebkitProviderProps } from 'lib/components'
-import { LIB_PREFIX } from 'lib/constants'
-
 import {
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
   DEFAULT_NEBKIT_BRAND,
@@ -13,6 +10,8 @@ import {
   DEFAULT_NEBKIT_SATURATION,
   DEFAULT_NEBKIT_THEME,
 } from 'lib/components/core/NebkitProvider'
+import { LIB_PREFIX } from 'lib/constants'
+import { ApiUser } from 'client/definitions'
 
 export type AppStore = {
   theme: NebkitProviderProps['theme']

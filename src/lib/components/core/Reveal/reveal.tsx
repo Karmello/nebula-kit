@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
-import { Box, Flex, Button, Resize, RevealProps } from 'lib/components'
+import { Box, Button, Flex, Resize, RevealProps } from 'lib/components'
+import { RevealTag } from 'lib/types'
 
 import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SIZE } from './definitions'
-import { RevealTag } from 'lib/types'
 
 export const Reveal = <T extends RevealTag = 'div'>({
   // Resize

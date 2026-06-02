@@ -1,11 +1,11 @@
+import { TEXT_TAGS } from 'lib/constants'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
+import { BOX_META } from '../Box/meta'
 import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_SPACE, TEXT_TYPOGRAPHY, TEXT_WORD_BREAK, type TextProps } from './definitions'
 import { Text } from './text'
-import BOX_META from '../Box/meta'
-import { TEXT_TAGS } from 'lib/constants'
 
-export default {
+export const TEXT_META = {
   Text: {
     overview: {
       bundle: 'core',

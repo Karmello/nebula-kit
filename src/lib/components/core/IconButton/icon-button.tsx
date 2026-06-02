@@ -2,12 +2,12 @@ import { ComponentProps, ComponentRef, PropsWithoutRef, useRef } from 'react'
 import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
+import { IconButtonTag } from 'lib/types'
 
-import { ActionSurface } from '../ActionSurface'
-import { WithIcon } from '../WithIcon'
-import { Loader } from '../Loader'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE, ICON_BUTTON_TAGS } from '../../../constants'
-
+import { ActionSurface } from '../ActionSurface'
+import { Loader } from '../Loader'
+import { WithIcon } from '../WithIcon'
 import {
   DEFAULT_ICON_BUTTON_INTENT,
   DEFAULT_ICON_BUTTON_RIPPLE,
@@ -16,7 +16,6 @@ import {
 } from './definitions'
 
 import './icon-button.scss'
-import { IconButtonTag } from 'lib/types'
 
 export const IconButton = <T extends IconButtonTag = (typeof ICON_BUTTON_TAGS)[0]>({
   // ActionSurface

@@ -4,14 +4,13 @@ import { Box, Callout, Flex, IconButton, Slide } from 'lib/components'
 import { CALLOUT_CONFIG } from 'lib/components/core/Callout/definitions'
 
 import {
-  UseSnackbarShowArgs,
-  SnackbarProps,
-  DEFAULT_SNACKBAR_PLACEMENT,
   DEFAULT_SNACKBAR_AUTO_CLOSE_DELAY,
   DEFAULT_SNACKBAR_CLOSE_ON_OUTSIDE_CLICK,
   DEFAULT_SNACKBAR_INLINE_SIZE,
+  DEFAULT_SNACKBAR_PLACEMENT,
+  SnackbarProps,
+  UseSnackbarShowArgs,
 } from './definitions'
-
 import { SnackbarProvider } from './SnackbarProvider'
 
 export const Snackbar = ({

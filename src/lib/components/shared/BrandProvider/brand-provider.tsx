@@ -1,6 +1,7 @@
 import { createContext, useContext, useMemo } from 'react'
 
-import { BoxColor, RespValue } from 'lib/types'
+import { BoxColor } from 'lib/components/core/Box/types'
+import { RespValue } from 'lib/types'
 
 type BrandContextValue = {
   brand?: RespValue<BoxColor>

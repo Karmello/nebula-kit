@@ -1,9 +1,9 @@
 import { RefObject } from 'react'
 
-import { Breakpoint } from 'lib/types'
 import { BREAKPOINTS } from 'lib/constants'
+import { Breakpoint } from 'lib/types'
 
-import { Bucket, PropValues, isBlank } from '../definitions'
+import { Bucket, isBlank,PropValues } from '../definitions'
 import { getBucketPerBp } from './get-bucket-per-bp'
 
 export const syncRespStyle = (

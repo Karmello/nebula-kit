@@ -1,6 +1,6 @@
-import { useNavigateTo } from 'client/hooks'
+import { Box, Button, Grid,Link, Section, Spacer, Text } from 'lib/components'
 import { PageKey } from 'client/definitions'
-import { Box, Button, Link, Section, Spacer, Text, Grid } from 'lib/components'
+import { useNavigateTo } from 'client/hooks'
 
 export const Principles = () => {
   const navigateTo = useNavigateTo()

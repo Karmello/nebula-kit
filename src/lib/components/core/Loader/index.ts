@@ -1,2 +1,2 @@
-export * from './loader'
 export * from './definitions'
+export * from './loader'

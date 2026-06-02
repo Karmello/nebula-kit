@@ -1,19 +1,19 @@
 import { useState } from 'react'
 
-import { ComponentMeta } from 'client/definitions'
 import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { ComponentMeta } from 'client/definitions'
 
+import { BOX_META } from '../Box/meta'
+import { IconButton } from '../IconButton'
 import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_VARIANT, type InputProps } from './definitions'
 import { Input } from './input'
-import BOX_META from '../Box/meta'
-import { IconButton } from '../IconButton'
 
 const InputControlled = () => {
   const [value, setValue] = useState<string>('value')
   return <Input value={value} onChange={setValue} />
 }
 
-export default {
+export const INPUT_META = {
   Input: {
     overview: {
       bundle: 'core',

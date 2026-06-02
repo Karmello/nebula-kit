@@ -2,8 +2,8 @@ import { useRef } from 'react'
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { buildTransition, useVisibilityTransition } from 'lib/internals/motion'
 import { withPrefix } from 'lib/helpers'
+import { buildTransition, useVisibilityTransition } from 'lib/internals/motion'
 
 import { SlideProps } from './definitions'
 import { syncSlidePosition } from './helpers'

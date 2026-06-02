@@ -3,8 +3,8 @@ import isObject from 'lodash-es/isObject.js'
 
 import { Breakpoint } from 'lib/types'
 
-import { getDataAttrName } from './get-data-attr-name'
 import { Bucket, isBlank, PropValues } from '../definitions'
+import { getDataAttrName } from './get-data-attr-name'
 
 export const getBucketPerBp = (namespace: string, breakpoint: Breakpoint, propValues: PropValues): Bucket => {
   const bucket: Bucket = {}

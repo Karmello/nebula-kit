@@ -1,9 +1,9 @@
 import { sentenceCase } from 'change-case'
 
-import { useAppStore } from 'client/store'
-import { Button, Flex, Select, Dialog, Text, Segment, Box, Spacer, WithIcon } from 'lib/components'
+import { Box, Button, Dialog, Flex, Segment, Select, Spacer, Text, WithIcon } from 'lib/components'
 import { NEBKIT_BORDER_RADIUS_SIZES, NEBKIT_RIPPLE_MODES } from 'lib/components/core/NebkitProvider'
 import { COLORS, SATURATIONS, THEMES } from 'lib/constants'
+import { useAppStore } from 'client/store'
 
 export const AppPrefsDialog = () => {
   const theme = useAppStore(state => state.theme)

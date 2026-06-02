@@ -3,8 +3,8 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { DEFAULT_TABLE_CAPTION_INTENT, TableCaptionProps } from './definitions'
 import { useTableContext } from '../../TableContext'
+import { DEFAULT_TABLE_CAPTION_INTENT, TableCaptionProps } from './definitions'
 
 export const TableCaption = ({
   // Box

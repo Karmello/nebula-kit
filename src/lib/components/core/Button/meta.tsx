@@ -1,23 +1,21 @@
-import { ComponentMeta } from 'client/definitions'
 import { BUTTON_TAGS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { ComponentMeta } from 'client/definitions'
 
-import TEXT_META from '../Text/meta'
-import ACTION_SURFACE_META from '../ActionSurface/meta'
-import WITH_ICON_META from '../WithIcon/meta'
-
+import { ACTION_SURFACE_META } from '../ActionSurface/meta'
+import { Flex } from '../Flex'
+import { TEXT_META } from '../Text/meta'
+import { WITH_ICON_META } from '../WithIcon/meta'
+import { Button } from './button'
 import {
   BUTTON_ALIGNS,
+  type ButtonProps,
   DEFAULT_BUTTON_ALIGN,
   DEFAULT_BUTTON_INTENT,
   DEFAULT_BUTTON_RIPPLE,
   DEFAULT_BUTTON_VARIANT,
-  type ButtonProps,
 } from './definitions'
 
-import { Button } from './button'
-import { Flex } from '../Flex'
-
-export default {
+export const BUTTON_META = {
   Button: {
     overview: {
       bundle: 'core',

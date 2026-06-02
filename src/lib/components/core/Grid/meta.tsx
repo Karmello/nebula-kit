@@ -1,11 +1,5 @@
-import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { GRID_TAGS, TSHIRT_SIZES } from 'lib/constants'
-
-import { type GridProps } from './definitions'
-import { GridItemProps } from './GridItem'
-import BOX_META from '../Box/meta'
-import { Grid } from './'
-import { Box } from '../Box'
+import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import {
   CSS_GRID_AUTO_FLOW,
@@ -14,8 +8,13 @@ import {
   CSS_GRID_PLACE_CONTENT,
   CSS_GRID_PLACE_ITEMS,
 } from '../../../constants'
+import { Box } from '../Box'
+import { BOX_META } from '../Box/meta'
+import { Grid } from './'
+import { type GridProps } from './definitions'
+import { GridItemProps } from './GridItem'
 
-export default {
+export const GRID_META = {
   Grid: {
     overview: {
       bundle: 'core',

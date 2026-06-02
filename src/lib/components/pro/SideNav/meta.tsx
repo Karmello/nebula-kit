@@ -1,3 +1,7 @@
+import { BOX_META } from 'lib/components/core/Box/meta'
+import { BUTTON_META } from 'lib/components/core/Button/meta'
+import { FLEX_META } from 'lib/components/core/Flex/meta'
+import { LINK_META } from 'lib/components/core/Link/meta'
 import { ComponentMeta } from 'client/definitions'
 
 import {
@@ -8,7 +12,6 @@ import {
   SIDE_NAV_VARIANTS,
   type SideNavProps,
 } from './../SideNav/definitions'
-
 import {
   DEFAULT_SIDE_NAV_CATEGORY_EXPANDED,
   DEFAULT_SIDE_NAV_CATEGORY_INTENT,
@@ -18,12 +21,7 @@ import {
   SideNavItemProps,
 } from '.'
 
-import FLEX_META from '../../core/Flex/meta'
-import BUTTON_META from '../../core/Button/meta'
-import BOX_META from '../../core/Box/meta'
-import LINK_META from '../../core/Link/meta'
-
-export default {
+export const SIDE_NAV_META = {
   SideNav: {
     overview: {
       bundle: 'pro',

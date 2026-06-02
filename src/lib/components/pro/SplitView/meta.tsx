@@ -1,6 +1,12 @@
-import { ComponentMeta } from 'client/definitions'
+import { BOX_META } from 'lib/components/core/Box/meta'
+import { GRID_META } from 'lib/components/core/Grid/meta'
 import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/constants'
+import { ComponentMeta } from 'client/definitions'
 
+import { Box } from '../../core/Box'
+import { Text } from '../../core/Text'
+import { SplitView } from '.'
+import { SPLIT_VIEW_SIDE_POSITIONS, type SplitViewProps } from './definitions'
 import {
   DEFAULT_SPLIT_VIEW_SIDE_INTENT,
   DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
@@ -9,14 +15,7 @@ import {
   SplitViewSideProps,
 } from './slots'
 
-import { SPLIT_VIEW_SIDE_POSITIONS, type SplitViewProps } from './definitions'
-import { SplitView } from '.'
-import { Box } from '../../core/Box'
-import { Text } from '../../core/Text'
-import GRID_META from '../../core/Grid/meta'
-import BOX_META from '../../core/Box/meta'
-
-export default {
+export const SPLIT_VIEW_META = {
   SplitView: {
     overview: {
       bundle: 'pro',

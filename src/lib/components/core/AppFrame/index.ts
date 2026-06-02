@@ -1,6 +1,5 @@
 import { AppFrame as AppFrameBase } from './app-frame'
-
-import { AppFrameHeader, AppFrameMain, AppFrameFooter } from './slots'
+import { AppFrameFooter,AppFrameHeader, AppFrameMain } from './slots'
 
 export const AppFrame = Object.assign(AppFrameBase, {
   Header: AppFrameHeader,

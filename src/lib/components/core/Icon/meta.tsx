@@ -2,11 +2,11 @@ import { Footprints } from 'lucide-react'
 
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
+import { BOX_META } from '../Box/meta'
 import { DEFAULT_ICON_SIZE, ICON_SIZES, type IconProps } from './definitions'
 import { Icon } from './icon'
-import BOX_META from '../Box/meta'
 
-export default {
+export const ICON_META = {
   Icon: {
     overview: {
       bundle: 'core',

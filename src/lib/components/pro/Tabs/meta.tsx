@@ -1,20 +1,19 @@
+import { BOX_META } from 'lib/components/core/Box/meta'
+import { BUTTON_META } from 'lib/components/core/Button/meta'
 import { ComponentMeta } from 'client/definitions'
 
 import {
-  type TabsPanelProps,
-  type TabsTabProps,
-  type TabsProps,
-  TABS_ORIENTATION,
   DEFAULT_TABS_ORIENTATION,
-  TABS_VARIANTS,
   DEFAULT_TABS_VARIANT,
   Tabs,
+  TABS_ORIENTATION,
+  TABS_VARIANTS,
+  type TabsPanelProps,
+  type TabsProps,
+  type TabsTabProps,
 } from './'
 
-import BOX_META from './../../core/Box/meta'
-import BUTTON_META from './../../core/Button/meta'
-
-export default {
+export const TABS_META = {
   Tabs: {
     overview: {
       bundle: 'pro',

@@ -1,7 +1,9 @@
 import { useState } from 'react'
 
-import { ComponentMeta } from 'client/definitions'
+import { BOX_META } from 'lib/components/core/Box/meta'
+import { BUTTON_META } from 'lib/components/core/Button/meta'
 import { DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { ComponentMeta } from 'client/definitions'
 
 import {
   DEFAULT_PAGINATION_BOUNDARY_COUNT,
@@ -12,10 +14,7 @@ import {
   DEFAULT_PAGINATION_VARIANT,
   PaginationProps,
 } from './definitions'
-
 import { Pagination } from './pagination'
-import BOX_META from '../../core/Box/meta'
-import BUTTON_META from '../../core/Button/meta'
 
 const Example1 = () => {
   const [page, setPage] = useState<number>(1)
@@ -57,7 +56,7 @@ const Example3 = () => {
   )
 }
 
-export default {
+export const PAGINATION_META = {
   Pagination: {
     overview: {
       bundle: 'pro',

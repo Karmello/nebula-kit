@@ -1,7 +1,7 @@
-import { useNavigateTo } from 'client/hooks'
-import { getCopyrightInfo } from 'client/helpers'
+import { Box, Link, MarkerList,Section, Spacer, Text } from 'lib/components'
 import { PageKey } from 'client/definitions'
-import { Box, Text, Spacer, Link, Section, MarkerList } from 'lib/components'
+import { getCopyrightInfo } from 'client/helpers'
+import { useNavigateTo } from 'client/hooks'
 
 export default () => {
   const navigateTo = useNavigateTo()

@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
-import { WithSlots } from 'lib/components/shared'
 import { Grid } from 'lib/components'
+import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 
 import { AppFrameProvider } from './AppFrameProvider'

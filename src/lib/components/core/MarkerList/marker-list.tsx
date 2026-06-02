@@ -4,9 +4,9 @@ import { Flex } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 
-import { MarkerListProvider } from './MarkerListProvider'
-import { MarkerListProps, DEFAULT_MARKER_LIST_GAP } from './definitions'
 import type { MarkerListTag } from '../../../types'
+import { DEFAULT_MARKER_LIST_GAP,MarkerListProps } from './definitions'
+import { MarkerListProvider } from './MarkerListProvider'
 
 import './marker-list.scss'
 

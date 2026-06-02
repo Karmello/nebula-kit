@@ -1,107 +1,107 @@
 import { ComponentMeta } from 'client/definitions'
 
-import actionSurfaceMeta from '../../lib/components/core/ActionSurface/meta'
-import appFrameMeta from '../../lib/components/core/AppFrame/meta'
-import autocompleteMeta from '../../lib/components/pro/Autocomplete/meta'
-import avatarMeta from '../../lib/components/pro/Avatar/meta'
-import boxMeta from '../../lib/components/core/Box/meta'
-import breadcrumbMeta from '../../lib/components/pro/Breadcrumb/meta'
-import buttonMeta from '../../lib/components/core/Button/meta'
-import calloutMeta from '../../lib/components/core/Callout/meta'
-import checkboxMeta from '../../lib/components/core/Checkbox/meta'
-import dialogMeta from '../../lib/components/pro/Dialog/meta'
-import dividerMeta from '../../lib/components/core/Divider/meta'
-import fadeMeta from '../../lib/components/pro/Fade/meta'
-import flexMeta from '../../lib/components/core/Flex/meta'
-import footerMeta from '../../lib/components/core/Footer/meta'
-import formMeta from '../../lib/components/pro/Form/meta'
-import gridMeta from '../../lib/components/core/Grid/meta'
-import hydrationGateMeta from '../../lib/components/core/HydrationGate/meta'
-import iconMeta from '../../lib/components/core/Icon/meta'
-import iconButtonMeta from '../../lib/components/core/IconButton/meta'
-import imageMeta from '../../lib/components/core/Image/meta'
-import inputMeta from '../../lib/components/core/Input/meta'
-import linkMeta from '../../lib/components/core/Link/meta'
-import loaderMeta from '../../lib/components/core/Loader/meta'
-import markerListMeta from '../../lib/components/core/MarkerList/meta'
-import markupMeta from '../../lib/components/pro/Markup/meta'
-import multiSelectMeta from '../../lib/components/pro/MultiSelect/meta'
-import nebkitProviderMeta from '../../lib/components/core/NebkitProvider/meta'
-import paginationMeta from '../../lib/components/pro/Pagination/meta'
-import passwordInput from '../../lib/components/pro/PasswordInput/meta'
-import resizeMeta from '../../lib/components/core/Resize/meta'
-import revealMeta from '../../lib/components/core/Reveal/meta'
-import rotateMeta from '../../lib/components/core/Rotate/meta'
-import scaleMeta from '../../lib/components/pro/Scale/meta'
-import sectionMeta from '../../lib/components/core/Section/meta'
-import segmentMeta from '../../lib/components/core/Segment/meta'
-import selectMeta from '../../lib/components/core/Select/meta'
-import sideNavMeta from '../../lib/components/pro/SideNav/meta'
-import slideMeta from '../../lib/components/core/Slide/meta'
-import snackbarMeta from '../../lib/components/pro/Snackbar/meta'
-import spacerMeta from '../../lib/components/core/Spacer/meta'
-import splitViewMeta from '../../lib/components/pro/SplitView/meta'
-import switchMeta from '../../lib/components/pro/Switch/meta'
-import tableMeta from '../../lib/components/core/Table/meta'
-import tabsMeta from '../../lib/components/pro/Tabs/meta'
-import textMeta from '../../lib/components/core/Text/meta'
-import textareaMeta from '../../lib/components/core/Textarea/meta'
-import toolbarMeta from '../../lib/components/pro/Toolbar/meta'
-import tooltipMeta from '../../lib/components/pro/Tooltip/meta'
-import virtualListMeta from '../../lib/components/pro/VirtualList/meta'
-import withIconMeta from '../../lib/components/core/WithIcon/meta'
+import { ACTION_SURFACE_META } from '../../lib/components/core/ActionSurface/meta'
+import { APP_FRAME_META } from '../../lib/components/core/AppFrame/meta'
+import { BOX_META } from '../../lib/components/core/Box/meta'
+import { BUTTON_META } from '../../lib/components/core/Button/meta'
+import { CALLOUT_META } from '../../lib/components/core/Callout/meta'
+import { CHECKBOX_META } from '../../lib/components/core/Checkbox/meta'
+import { DIVIDER_META } from '../../lib/components/core/Divider/meta'
+import { FLEX_META } from '../../lib/components/core/Flex/meta'
+import { FOOTER_META } from '../../lib/components/core/Footer/meta'
+import { GRID_META } from '../../lib/components/core/Grid/meta'
+import { HYDRATION_GATE_META } from '../../lib/components/core/HydrationGate/meta'
+import { ICON_META } from '../../lib/components/core/Icon/meta'
+import { ICON_BUTTON_META } from '../../lib/components/core/IconButton/meta'
+import { IMAGE_META } from '../../lib/components/core/Image/meta'
+import { INPUT_META } from '../../lib/components/core/Input/meta'
+import { LINK_META } from '../../lib/components/core/Link/meta'
+import { LOADER_META } from '../../lib/components/core/Loader/meta'
+import { MARKER_LIST_META } from '../../lib/components/core/MarkerList/meta'
+import { NEBKIT_PROVIDER_META } from '../../lib/components/core/NebkitProvider/meta'
+import { RESIZE_META } from '../../lib/components/core/Resize/meta'
+import { REVEAL_META } from '../../lib/components/core/Reveal/meta'
+import { ROTATE_META } from '../../lib/components/core/Rotate/meta'
+import { SECTION_META } from '../../lib/components/core/Section/meta'
+import { SEGMENT_META } from '../../lib/components/core/Segment/meta'
+import { SELECT_META } from '../../lib/components/core/Select/meta'
+import { SLIDE_META } from '../../lib/components/core/Slide/meta'
+import { SPACER_META } from '../../lib/components/core/Spacer/meta'
+import { TABLE_META } from '../../lib/components/core/Table/meta'
+import { TEXT_META } from '../../lib/components/core/Text/meta'
+import { TEXTAREA_META } from '../../lib/components/core/Textarea/meta'
+import { WITH_ICON_META } from '../../lib/components/core/WithIcon/meta'
+import { AUTOCOMPLETE_META } from '../../lib/components/pro/Autocomplete/meta'
+import { AVATAR_META } from '../../lib/components/pro/Avatar/meta'
+import { BREADCRUMB_META } from '../../lib/components/pro/Breadcrumb/meta'
+import { DIALOG_META } from '../../lib/components/pro/Dialog/meta'
+import { FADE_META } from '../../lib/components/pro/Fade/meta'
+import { FORM_META } from '../../lib/components/pro/Form/meta'
+import { MARKUP_META } from '../../lib/components/pro/Markup/meta'
+import { MULTI_SELECT_META } from '../../lib/components/pro/MultiSelect/meta'
+import { PAGINATION_META } from '../../lib/components/pro/Pagination/meta'
+import { PASSWORD_META } from '../../lib/components/pro/PasswordInput/meta'
+import { SCALE_META } from '../../lib/components/pro/Scale/meta'
+import { SIDE_NAV_META } from '../../lib/components/pro/SideNav/meta'
+import { SNACKBAR_META } from '../../lib/components/pro/Snackbar/meta'
+import { SPLIT_VIEW_META } from '../../lib/components/pro/SplitView/meta'
+import { SWITCH_META } from '../../lib/components/pro/Switch/meta'
+import { TABS_META } from '../../lib/components/pro/Tabs/meta'
+import { TOOLBAR_META } from '../../lib/components/pro/Toolbar/meta'
+import { TOOLTIP_META } from '../../lib/components/pro/Tooltip/meta'
+import { VIRTUAL_LIST_META } from '../../lib/components/pro/VirtualList/meta'
 
 const META = {
-  ActionSurface: actionSurfaceMeta,
-  AppFrame: appFrameMeta,
-  Autocomplete: autocompleteMeta,
-  Avatar: avatarMeta,
-  Box: boxMeta,
-  Breadcrumb: breadcrumbMeta,
-  Button: buttonMeta,
-  Callout: calloutMeta,
-  Checkbox: checkboxMeta,
-  Dialog: dialogMeta,
-  Divider: dividerMeta,
-  Fade: fadeMeta,
-  Flex: flexMeta,
-  Footer: footerMeta,
-  Form: formMeta,
-  Grid: gridMeta,
-  HydrationGate: hydrationGateMeta,
-  Icon: iconMeta,
-  IconButton: iconButtonMeta,
-  Image: imageMeta,
-  Input: inputMeta,
-  Link: linkMeta,
-  Loader: loaderMeta,
-  MarkerList: markerListMeta,
-  Markup: markupMeta,
-  MultiSelect: multiSelectMeta,
-  NebkitProvider: nebkitProviderMeta,
-  Pagination: paginationMeta,
-  PasswordInput: passwordInput,
-  Resize: resizeMeta,
-  Reveal: revealMeta,
-  Rotate: rotateMeta,
-  Scale: scaleMeta,
-  Section: sectionMeta,
-  Segment: segmentMeta,
-  Select: selectMeta,
-  SideNav: sideNavMeta,
-  Slide: slideMeta,
-  Snackbar: snackbarMeta,
-  Spacer: spacerMeta,
-  SplitView: splitViewMeta,
-  Switch: switchMeta,
-  Table: tableMeta,
-  Tabs: tabsMeta,
-  Text: textMeta,
-  Textarea: textareaMeta,
-  Toolbar: toolbarMeta,
-  VirtualList: virtualListMeta,
-  Tooltip: tooltipMeta,
-  WithIcon: withIconMeta,
+  ActionSurface: ACTION_SURFACE_META,
+  AppFrame: APP_FRAME_META,
+  Autocomplete: AUTOCOMPLETE_META,
+  Avatar: AVATAR_META,
+  Box: BOX_META,
+  Breadcrumb: BREADCRUMB_META,
+  Button: BUTTON_META,
+  Callout: CALLOUT_META,
+  Checkbox: CHECKBOX_META,
+  Dialog: DIALOG_META,
+  Divider: DIVIDER_META,
+  Fade: FADE_META,
+  Flex: FLEX_META,
+  Footer: FOOTER_META,
+  Form: FORM_META,
+  Grid: GRID_META,
+  HydrationGate: HYDRATION_GATE_META,
+  Icon: ICON_META,
+  IconButton: ICON_BUTTON_META,
+  Image: IMAGE_META,
+  Input: INPUT_META,
+  Link: LINK_META,
+  Loader: LOADER_META,
+  MarkerList: MARKER_LIST_META,
+  Markup: MARKUP_META,
+  MultiSelect: MULTI_SELECT_META,
+  NebkitProvider: NEBKIT_PROVIDER_META,
+  Pagination: PAGINATION_META,
+  PasswordInput: PASSWORD_META,
+  Resize: RESIZE_META,
+  Reveal: REVEAL_META,
+  Rotate: ROTATE_META,
+  Scale: SCALE_META,
+  Section: SECTION_META,
+  Segment: SEGMENT_META,
+  Select: SELECT_META,
+  SideNav: SIDE_NAV_META,
+  Slide: SLIDE_META,
+  Snackbar: SNACKBAR_META,
+  Spacer: SPACER_META,
+  SplitView: SPLIT_VIEW_META,
+  Switch: SWITCH_META,
+  Table: TABLE_META,
+  Tabs: TABS_META,
+  Text: TEXT_META,
+  Textarea: TEXTAREA_META,
+  Toolbar: TOOLBAR_META,
+  VirtualList: VIRTUAL_LIST_META,
+  Tooltip: TOOLTIP_META,
+  WithIcon: WITH_ICON_META,
 } as Record<string, Record<string, ComponentMeta<object>>>
 
 export default META

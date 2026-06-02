@@ -1,10 +1,10 @@
 import { useMemo } from 'react'
 import { kebabCase } from 'change-case'
 
+import { Button, Link } from 'lib/components'
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { usePlaygroundStore } from 'client/store'
-import { Button, Link } from 'lib/components'
 
 export const DocsButton = () => {
   const navigateTo = useNavigateTo()

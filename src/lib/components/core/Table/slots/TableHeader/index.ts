@@ -1,2 +1,2 @@
-export { TableHeader } from './table-header'
 export { type TableHeaderProps } from './definitions'
+export { TableHeader } from './table-header'

@@ -1,16 +1,16 @@
-import { ComponentMeta } from 'client/definitions'
+import { GRID_META } from 'lib/components/core/Grid/meta'
 import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/constants'
+import { ComponentMeta } from 'client/definitions'
 
-import { type ToolbarProps } from './definitions'
-import { ToolbarEndProps, ToolbarMainProps, ToolbarStartProps } from './slots'
-import { Toolbar } from '.'
 import { Box } from '../../core/Box'
 import { Button } from '../../core/Button'
 import { Segment } from '../../core/Segment'
 import { Select } from '../../core/Select'
-import GRID_META from '../../core/Grid/meta'
+import { Toolbar } from '.'
+import { type ToolbarProps } from './definitions'
+import { ToolbarEndProps, ToolbarMainProps, ToolbarStartProps } from './slots'
 
-export default {
+export const TOOLBAR_META = {
   Toolbar: {
     overview: {
       bundle: 'pro',

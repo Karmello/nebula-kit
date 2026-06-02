@@ -1,8 +1,8 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-import { FOUNDATIONS_CATEGORIES } from 'client/definitions'
 import { LIB_PREFIX } from 'lib/constants'
+import { FOUNDATIONS_CATEGORIES } from 'client/definitions'
 
 export type FoundationsPageStore = {
   categoryKey: string

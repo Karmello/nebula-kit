@@ -1,2 +1,2 @@
-export * from './use-floating'
 export * from './definitions'
+export * from './use-floating'

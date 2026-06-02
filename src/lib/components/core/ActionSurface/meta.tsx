@@ -1,13 +1,12 @@
+import { ACTION_SURFACE_TAGS } from 'lib/constants'
 import { ComponentMeta } from 'client/definitions'
 
-import { type ActionSurfaceProps, DEFAULT_ACTION_SURFACE_INTERACTIVE, DEFAULT_ACTION_SURFACE_RIPPLE } from './definitions'
-
-import BOX_META from '../Box/meta'
-import { ActionSurface } from './action-surface'
+import { BOX_META } from '../Box/meta'
 import { Text } from '../Text'
-import { ACTION_SURFACE_TAGS } from '../../../constants'
+import { ActionSurface } from './action-surface'
+import { ActionSurfaceProps, DEFAULT_ACTION_SURFACE_INTERACTIVE, DEFAULT_ACTION_SURFACE_RIPPLE } from './definitions'
 
-export default {
+export const ACTION_SURFACE_META = {
   ActionSurface: {
     overview: {
       bundle: 'core',

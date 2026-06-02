@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { SpacerProps, DEFAULT_SPACER_BLOCK_SIZE } from './definitions'
+import { DEFAULT_SPACER_BLOCK_SIZE,SpacerProps } from './definitions'
 
 export const Spacer = ({
   // Box

@@ -1,7 +1,7 @@
+import { Button, Divider, Flex, Footer, Link, MarkerList, Spacer, Text } from 'lib/components'
 import { PageKey, RELEASE_VERSIONS } from 'client/definitions'
 import { getCopyrightInfo } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'
-import { Button, Divider, Flex, Footer, Link, MarkerList, Spacer, Text } from 'lib/components'
 
 export const AppFooter = () => {
   const navigateTo = useNavigateTo()

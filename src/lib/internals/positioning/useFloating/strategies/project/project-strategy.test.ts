@@ -1,7 +1,7 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect,it } from 'vitest'
 
-import { resolveProjectStrategy } from './'
 import type { FloatingProjectProps } from '../../definitions'
+import { resolveProjectStrategy } from './'
 
 describe('resolveProjectStrategy - no anchor', () => {
   it('returns preferred placement when anchor is missing', () => {

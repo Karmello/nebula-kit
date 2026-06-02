@@ -1,15 +1,14 @@
 import { RefObject, useLayoutEffect, useRef, useState } from 'react'
-
 import {
-  useFloating,
-  useHover,
-  useClick,
-  useDismiss,
-  useInteractions,
+  flip,
   FloatingPortal,
   offset as floatingOffset,
-  flip,
   shift,
+  useClick,
+  useDismiss,
+  useFloating,
+  useHover,
+  useInteractions,
   useRole,
 } from '@floating-ui/react'
 
@@ -26,7 +25,6 @@ import {
   DEFAULT_TOOLTIP_PLACEMENT,
   DEFAULT_TOOLTIP_VARIANT,
 } from './constants'
-
 import type { TooltipProps } from './types'
 
 export const Tooltip = ({

@@ -5,8 +5,8 @@ import { Box, Flex, Text, WithIcon } from 'lib/components'
 import { useCurrentTheme } from 'lib/hooks'
 
 import { CopyButton } from '../CopyButton'
-import { tokenizeCode } from './highlight-tokens'
 import { CodeSnippetProps, DEFAULT_MAX_BLOCK_SIZE } from './definitions'
+import { tokenizeCode } from './highlight-tokens'
 
 export const CodeSnippet = ({
   code,

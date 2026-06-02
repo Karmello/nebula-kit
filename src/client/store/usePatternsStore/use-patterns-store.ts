@@ -1,8 +1,8 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-import { PATTERNS, PATTERN_CATEGORIES } from 'client/definitions'
 import { LIB_PREFIX } from 'lib/constants'
+import { PATTERN_CATEGORIES,PATTERNS } from 'client/definitions'
 
 export type PatternsStore = {
   patternCategories: string[]

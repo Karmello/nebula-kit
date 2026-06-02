@@ -1,2 +1,2 @@
-export * from './flex-item'
 export * from './definitions'
+export * from './flex-item'

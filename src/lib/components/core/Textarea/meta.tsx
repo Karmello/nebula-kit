@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import { ComponentMeta } from 'client/definitions'
 
+import { BOX_META } from '../Box/meta'
 import {
   DEFAULT_TEXTAREA_INTENT,
   DEFAULT_TEXTAREA_RESIZE,
@@ -10,16 +11,14 @@ import {
   TEXTAREA_RESIZE,
   type TextareaProps,
 } from './definitions'
-
 import { Textarea } from './textarea'
-import BOX_META from './../Box/meta'
 
 const TextareaControlled = () => {
   const [value, setValue] = useState<string>('value')
   return <Textarea value={value} onChange={setValue} />
 }
 
-export default {
+export const TEXTAREA_META = {
   Textarea: {
     overview: {
       bundle: 'core',

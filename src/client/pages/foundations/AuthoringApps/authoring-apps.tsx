@@ -1,5 +1,5 @@
+import { Box, MarkerList,Section, Spacer, Text } from 'lib/components'
 import { CodeSnippet } from 'client/components'
-import { Box, Text, Section, Spacer, MarkerList } from 'lib/components'
 
 export default () => {
   return (

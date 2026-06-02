@@ -1,2 +1,2 @@
-export * from './spacer'
 export * from './definitions'
+export * from './spacer'

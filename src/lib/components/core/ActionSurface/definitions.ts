@@ -1,8 +1,9 @@
 import { ComponentProps } from 'react'
 
-import { BoxProps } from 'lib/components'
-import type { ActionSurfaceTag } from '../../../types'
-import { ACTION_SURFACE_TAGS } from '../../../constants'
+import { ACTION_SURFACE_TAGS } from 'lib/constants'
+import { ActionSurfaceTag } from 'lib/types'
+
+import { BoxProps } from '../Box'
 
 export const DEFAULT_ACTION_SURFACE_INTERACTIVE: ActionSurfaceProps['interactive'] = true
 export const DEFAULT_ACTION_SURFACE_RIPPLE: ActionSurfaceProps['ripple'] = true

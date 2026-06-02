@@ -1,9 +1,9 @@
 import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
-import { useFoundationsPageStore } from 'client/store'
 import { CatalogPageTemplate } from 'client/components'
 import { FOUNDATIONS_CATEGORIES, PageKey } from 'client/definitions'
+import { useFoundationsPageStore } from 'client/store'
 
 export const FoundationsPage = () => {
   const { pathname } = useLocation()

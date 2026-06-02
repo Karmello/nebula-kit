@@ -1,9 +1,10 @@
+import { BOX_INTENTS } from 'lib/components/core/Box/constants'
+import { BOX_META } from 'lib/components/core/Box/meta'
+import { BREADCRUMB_TAGS, COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { ComponentMeta } from 'client/definitions'
-import { BOX_INTENTS, BREADCRUMB_TAGS, COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 
-import { DEFAULT_BREADCRUMB_INTENT, type BreadcrumbProps } from './definitions'
 import { Breadcrumb } from './breadcrumb'
-import BOX_META from '../../core/Box/meta'
+import { type BreadcrumbProps, DEFAULT_BREADCRUMB_INTENT } from './definitions'
 
 const tree = [
   {
@@ -52,7 +53,7 @@ const tree = [
   },
 ]
 
-export default {
+export const BREADCRUMB_META = {
   Breadcrumb: {
     overview: {
       bundle: 'pro',

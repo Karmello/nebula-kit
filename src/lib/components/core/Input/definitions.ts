@@ -2,7 +2,7 @@ import { InputHTMLAttributes, ReactNode } from 'react'
 
 import { ControlSize } from 'lib/types'
 
-import { type BoxProps } from '../Box/definitions'
+import { type BoxProps } from '../Box/types'
 
 export const DEFAULT_INPUT_VARIANT: InputProps['variant'] = 'solid'
 export const DEFAULT_INPUT_INTENT: InputProps['intent'] = 'tertiary'

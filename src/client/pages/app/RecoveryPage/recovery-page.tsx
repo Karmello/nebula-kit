@@ -1,10 +1,10 @@
 import { useLocation } from 'react-router'
 
-import { useRecoverPassword, useRecoverPasswordConfirm, UseRecoverPasswordRes } from 'client/api'
-import { useAppStore } from 'client/store'
-import { useNavigateTo } from 'client/hooks'
-import { PageKey } from 'client/definitions'
 import { Box, Button, Divider, Flex, Form, Input, Link, PasswordInput, Section, Spacer, useSnackbar } from 'lib/components'
+import { useRecoverPassword, useRecoverPasswordConfirm, UseRecoverPasswordRes } from 'client/api'
+import { PageKey } from 'client/definitions'
+import { useNavigateTo } from 'client/hooks'
+import { useAppStore } from 'client/store'
 
 export const RecoveryPage = () => {
   const user = useAppStore(state => state.user)

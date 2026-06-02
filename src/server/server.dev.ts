@@ -1,10 +1,10 @@
-import fs from 'node:fs'
-import path from 'node:path'
+import { createElement } from 'react'
 import express from 'express'
 import getPort from 'get-port'
-import { createServer as createViteServer, ViteDevServer } from 'vite'
-import { createElement } from 'react'
 import { renderToString } from 'react-dom/server'
+import { createServer as createViteServer, ViteDevServer } from 'vite'
+import fs from 'node:fs'
+import path from 'node:path'
 
 import { getFinalIndexHtml } from './helpers'
 

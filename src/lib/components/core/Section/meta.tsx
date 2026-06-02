@@ -1,5 +1,9 @@
+import { SECTION_TAGS } from 'lib/constants'
 import { ComponentMeta } from 'client/definitions'
 
+import { BOX_META } from '../Box/meta'
+import { TEXT_META } from '../Text/meta'
+import { WITH_ICON_META } from '../WithIcon/meta'
 import {
   DEFAULT_SECTION_INTENT,
   DEFAULT_SECTION_SIZE,
@@ -8,14 +12,9 @@ import {
   SECTION_VARIANTS,
   type SectionProps,
 } from './definitions'
-
-import BOX_META from './../Box/meta'
-import TEXT_META from './../Text/meta'
-import WITH_ICON_META from './../WithIcon/meta'
 import { Section } from './section'
-import { SECTION_TAGS } from 'lib/constants'
 
-export default {
+export const SECTION_META = {
   Section: {
     overview: {
       bundle: 'core',

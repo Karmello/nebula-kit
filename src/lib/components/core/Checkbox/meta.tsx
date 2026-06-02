@@ -1,19 +1,18 @@
 import { ComponentMeta } from 'client/definitions'
 
+import { BOX_META } from '../Box/meta'
+import { Flex } from '../Flex'
 import {
   CHECKBOX_SIZES,
   CHECKBOX_VARIANTS,
+  type CheckboxProps,
   DEFAULT_CHECKBOX_INTENT,
   DEFAULT_CHECKBOX_SIZE,
   DEFAULT_CHECKBOX_VARIANT,
-  type CheckboxProps,
 } from './../Checkbox/definitions'
-
-import BOX_META from '../Box/meta'
-import { Flex } from '../Flex'
 import { Checkbox } from './checkbox'
 
-export default {
+export const CHECKBOX_META = {
   Checkbox: {
     overview: {
       bundle: 'core',

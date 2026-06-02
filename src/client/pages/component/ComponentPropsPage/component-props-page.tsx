@@ -1,7 +1,7 @@
 import { pascalCase } from 'change-case'
 
-import { useComponentsPageStore } from 'client/store'
 import meta from 'client/meta'
+import { useComponentsPageStore } from 'client/store'
 
 import { PropsTable } from './PropsTable'
 

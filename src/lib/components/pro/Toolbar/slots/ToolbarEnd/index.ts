@@ -1,2 +1,2 @@
-export * from './toolbar-end'
 export * from './definitions'
+export * from './toolbar-end'

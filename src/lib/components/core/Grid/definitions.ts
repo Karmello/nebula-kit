@@ -1,5 +1,5 @@
-import type { GridTag, RespValue, TShirtSize } from 'lib/types'
 import { BoxProps } from 'lib/components'
+import type { GridTag, RespValue, TShirtSize } from 'lib/types'
 
 import { CssGridAutoFlow, CssGridPlaceContent, CssGridPlaceItems, CssValue } from '../../../types'
 

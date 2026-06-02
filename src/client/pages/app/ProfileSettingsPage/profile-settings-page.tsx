@@ -1,10 +1,10 @@
 import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
+import { Box, Loader, Section, Spacer, useSnackbar } from 'lib/components'
 import { useGetUser } from 'client/api'
 import { PageKey } from 'client/definitions'
 import { useAppStore } from 'client/store'
-import { Box, Loader, Section, Spacer, useSnackbar } from 'lib/components'
 
 import { AccountDeactivationSection } from './AccountDeactivationSection'
 import { ConnectToDiscordSection } from './ConnectToDiscordSection'

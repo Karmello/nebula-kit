@@ -1,13 +1,13 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box } from 'lib/components'
 import { Ripple } from 'lib/components/shared'
+import { ACTION_SURFACE_TAGS } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
+import { ActionSurfaceTag } from 'lib/types'
 
-import { ActionSurfaceTag } from '../../../types'
-import { ACTION_SURFACE_TAGS } from '../../../constants'
-import { type ActionSurfaceProps, DEFAULT_ACTION_SURFACE_INTERACTIVE, DEFAULT_ACTION_SURFACE_RIPPLE } from './definitions'
+import { Box } from '../Box'
+import { ActionSurfaceProps, DEFAULT_ACTION_SURFACE_INTERACTIVE, DEFAULT_ACTION_SURFACE_RIPPLE } from './definitions'
 
 import './action-surface.scss'
 

@@ -1,12 +1,12 @@
+import { BOX_META } from 'lib/components/core/Box/meta'
 import { ComponentMeta } from 'client/definitions'
 
+import { MarkerList } from '../../core/MarkerList'
+import { Text } from '../../core/Text'
 import { type MarkupProps } from './definitions'
 import { Markup } from './markup'
-import { Text } from '../../core/Text'
-import { MarkerList } from '../../core/MarkerList'
-import BOX_META from '../../core/Box/meta'
 
-export default {
+export const MARKUP_META = {
   Markup: {
     overview: {
       bundle: 'pro',

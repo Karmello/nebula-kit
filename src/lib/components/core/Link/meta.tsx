@@ -1,13 +1,13 @@
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_LINK_TARGET, LINK_TARGETS, type LinkProps } from './definitions'
-import { Link } from './link'
 import { Button } from './../Button'
 import { IconButton } from './../IconButton'
 import { Image } from './../Image'
 import { Text } from './../Text'
+import { DEFAULT_LINK_TARGET, LINK_TARGETS, type LinkProps } from './definitions'
+import { Link } from './link'
 
-export default {
+export const LINK_META = {
   Link: {
     overview: {
       bundle: 'core',

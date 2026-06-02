@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useLocation } from 'react-router'
 
 import { Box, Button, Flex } from 'lib/components'
-import { BoxColor } from 'lib/types'
+import { BoxColor } from 'lib/components/core/Box/types'
 
 const BUTTON_LABEL_MAP: Record<string, { label: string; color: BoxColor }> = {
   new_account_verification: {

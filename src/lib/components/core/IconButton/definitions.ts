@@ -1,6 +1,6 @@
 import { ICON_BUTTON_TAGS } from 'lib/constants'
-import { IconButtonTag, type ControlSize } from '../../../types'
 
+import { type ControlSize,IconButtonTag } from '../../../types'
 import { ActionSurfaceProps } from '../ActionSurface'
 import { WithIconProps } from '../WithIcon'
 

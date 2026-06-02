@@ -6,9 +6,9 @@ import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 import { useAnchoredPosition } from 'lib/internals/positioning'
 
-import { PortalProps } from './definitions'
-import { useThemeContext } from '../../shared/ThemeProvider'
 import { useBrandContext } from '../../shared/BrandProvider'
+import { useThemeContext } from '../../shared/ThemeProvider'
+import { PortalProps } from './definitions'
 
 export const DEFAULT_PORTAL_PLACEMENT: PortalProps['placement'] = 'bottom-start'
 

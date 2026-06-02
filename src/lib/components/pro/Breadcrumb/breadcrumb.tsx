@@ -1,12 +1,12 @@
-import { useState, Fragment, useCallback } from 'react'
+import { Fragment, useCallback,useState } from 'react'
 
 import { Box, Flex, Icon, Text } from 'lib/components'
-import { CONTROL_SIZE_MAP } from 'lib/constants'
 import { DropdownList } from 'lib/components/shared'
+import { CONTROL_SIZE_MAP } from 'lib/constants'
+import { BreadcrumbTag } from 'lib/types'
 
 import { BreadcrumbProps, DEFAULT_BREADCRUMB_INTENT, DEFAULT_BREADCRUMB_SIZE } from './definitions'
 import { convertTreeToLevels } from './helpers'
-import { BreadcrumbTag } from 'lib/types'
 
 export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
   // HtmlTag

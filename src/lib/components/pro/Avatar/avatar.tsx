@@ -1,16 +1,16 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 
-import { Box, Image, Text, Loader } from 'lib/components'
+import { Box, Image, Loader,Text } from 'lib/components'
 
 import {
-  AvatarProps,
   AVATAR_SIZES_MAP,
-  LOADER_DELAY,
-  MIN_LOADER_VISIBLE_TIME,
-  DEFAULT_AVATAR_SIZE,
-  DEFAULT_AVATAR_SHAPE,
+  AvatarProps,
   DEFAULT_AVATAR_OBJECT_FIT,
   DEFAULT_AVATAR_OBJECT_POSITION,
+  DEFAULT_AVATAR_SHAPE,
+  DEFAULT_AVATAR_SIZE,
+  LOADER_DELAY,
+  MIN_LOADER_VISIBLE_TIME,
 } from './definitions'
 
 export const Avatar = ({

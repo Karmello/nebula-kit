@@ -1,26 +1,25 @@
-import { Routes, Route, Navigate } from 'react-router'
-
-import {
-  HomePage,
-  FoundationsPage,
-  ComponentsPage,
-  FaqPage,
-  BlogPage,
-  PricingPage,
-  ComponentsBundlePage,
-  LoginPage,
-  RegisterPage,
-  RecoveryPage,
-  ProfileAccountPage,
-  ProfileSettingsPage,
-  ConfirmActionPage,
-  FeedbackPage,
-  PlaygroundPage,
-  PatternsPage,
-  AssistantPage,
-} from 'client/pages'
+import { Navigate,Route, Routes } from 'react-router'
 
 import { PageKey } from 'client/definitions'
+import {
+  AssistantPage,
+  BlogPage,
+  ComponentsBundlePage,
+  ComponentsPage,
+  ConfirmActionPage,
+  FaqPage,
+  FeedbackPage,
+  FoundationsPage,
+  HomePage,
+  LoginPage,
+  PatternsPage,
+  PlaygroundPage,
+  PricingPage,
+  ProfileAccountPage,
+  ProfileSettingsPage,
+  RecoveryPage,
+  RegisterPage,
+} from 'client/pages'
 
 import styles from './root-page.module.scss'
 

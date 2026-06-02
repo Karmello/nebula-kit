@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react'
-import { describe, it, expect } from 'vitest'
+import { describe, expect,it } from 'vitest'
 
-import { Segment } from '..'
 import { Button } from '../../Button'
+import { Segment } from '..'
 
 describe('Segment', () => {
   it('renders as <div> by default', () => {

@@ -1,2 +1,2 @@
-export * from './image'
 export * from './definitions'
+export * from './image'

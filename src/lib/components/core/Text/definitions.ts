@@ -1,4 +1,5 @@
 import { TextTag } from 'lib/types'
+
 import { BoxProps } from '../Box'
 
 export const TEXT_SPACE = ['start', 'end', 'both'] as const

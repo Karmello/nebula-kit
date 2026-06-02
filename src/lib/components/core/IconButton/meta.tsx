@@ -1,14 +1,14 @@
 import { Activity } from 'lucide-react'
 
-import { ComponentMeta } from 'client/definitions'
 import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE, ICON_BUTTON_TAGS } from 'lib/constants'
+import { ComponentMeta } from 'client/definitions'
 
+import { ACTION_SURFACE_META } from '../ActionSurface/meta'
+import { WITH_ICON_META } from '../WithIcon/meta'
 import { type IconButtonProps } from './definitions'
 import { IconButton } from './icon-button'
-import ACTION_SURFACE_META from '../ActionSurface/meta'
-import WITH_ICON_META from '../WithIcon/meta'
 
-export default {
+export const ICON_BUTTON_META = {
   IconButton: {
     overview: {
       bundle: 'core',

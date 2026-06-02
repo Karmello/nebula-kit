@@ -1,5 +1,5 @@
-import { applyViewportPadding, expandAxes, formatPlacement, parsePlacement, Rect, Side } from '../../helpers'
 import { FloatingFitProps, FloatingResolved } from '../../definitions'
+import { applyViewportPadding, expandAxes, formatPlacement, parsePlacement, Rect, Side } from '../../helpers'
 
 type BlockSpace = {
   side: Side

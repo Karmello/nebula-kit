@@ -1,6 +1,6 @@
 import { kebabCase } from 'change-case'
 
-import { Icon, Section, Spacer, Table, Text, Link, Tooltip, Flex, WithIcon } from 'lib/components'
+import { Flex, Icon, Link, Section, Spacer, Table, Text, Tooltip, WithIcon } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 
 type Props = {

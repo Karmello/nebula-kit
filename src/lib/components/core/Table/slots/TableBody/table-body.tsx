@@ -4,8 +4,8 @@ import { Box } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 
+import { TableContext,useTableContext } from '../../TableContext'
 import { DEFAULT_TABLE_BODY_INTENT, TableBodyProps } from './definitions'
-import { useTableContext, TableContext } from '../../TableContext'
 
 export const TableBody = ({
   children,

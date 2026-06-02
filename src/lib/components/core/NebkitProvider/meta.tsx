@@ -1,8 +1,7 @@
-import { ComponentMeta } from 'client/definitions'
 import { SATURATIONS, THEMES } from 'lib/constants'
+import { ComponentMeta } from 'client/definitions'
 
 import {
-  type NebkitProviderProps,
   DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
   DEFAULT_NEBKIT_BRAND,
   DEFAULT_NEBKIT_RIPPLE_MODE,
@@ -10,9 +9,10 @@ import {
   DEFAULT_NEBKIT_THEME,
   NEBKIT_BORDER_RADIUS_SIZES,
   NEBKIT_RIPPLE_MODES,
+  type NebkitProviderProps,
 } from './definitions'
 
-export default {
+export const NEBKIT_PROVIDER_META = {
   NebkitProvider: {
     overview: {
       bundle: 'core',

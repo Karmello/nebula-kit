@@ -1,4 +1,5 @@
-import { test, expect } from '@playwright/experimental-ct-react'
+import { expect,test } from '@playwright/experimental-ct-react'
+
 import { Box } from 'lib/components'
 
 test('responsive inline style is applied on initial mount', async ({ mount, page }) => {

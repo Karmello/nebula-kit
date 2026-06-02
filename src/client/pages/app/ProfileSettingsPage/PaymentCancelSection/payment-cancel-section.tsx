@@ -1,4 +1,4 @@
-import { Section, MarkerList, Spacer, Text } from 'lib/components'
+import { MarkerList, Section, Spacer, Text } from 'lib/components'
 
 import { PaymentCancelForm } from './payment-cancel-form'
 

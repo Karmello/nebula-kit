@@ -1,5 +1,4 @@
 import { Box } from 'lib/components'
-
 import { buildTransition } from 'lib/internals/motion'
 
 import { RotateProps } from './definitions'

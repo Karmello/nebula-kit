@@ -1,9 +1,9 @@
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router'
 
+import { HydrationGate, NebkitProvider, Snackbar } from 'lib/components'
 import { App } from 'client/components'
 import { useAppStore } from 'client/store'
-import { NebkitProvider, HydrationGate, Snackbar } from 'lib/components'
 
 import 'lib/styles/index.scss'
 

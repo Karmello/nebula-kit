@@ -1,9 +1,9 @@
 import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
+import { Box, Section, Spacer, useSnackbar } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useAppStore } from 'client/store'
-import { Box, Section, Spacer, useSnackbar } from 'lib/components'
 
 import AccountDetails from './account-details'
 import PaidSubscription from './paid-subscription'

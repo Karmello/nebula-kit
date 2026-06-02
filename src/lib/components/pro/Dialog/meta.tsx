@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
+import { BOX_META } from 'lib/components/core/Box/meta'
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK, DEFAULT_DIALOG_SIZE, DIALOG_SIZES, type DialogProps } from './definitions'
 import { Dialog, DialogFooterProps, DialogHeaderProps } from '..'
 import { Button } from './../../core/Button'
-import BOX_META from './../../core/Box/meta'
+import { DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK, DEFAULT_DIALOG_SIZE, DIALOG_SIZES, type DialogProps } from './definitions'
 
 const DialogWrapper = () => {
   const [open, setOpen] = useState<boolean>(false)
@@ -30,7 +30,7 @@ const DialogWrapper = () => {
   )
 }
 
-export default {
+export const DIALOG_META = {
   Dialog: {
     overview: {
       bundle: 'pro',

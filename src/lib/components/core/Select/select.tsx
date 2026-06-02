@@ -1,9 +1,7 @@
-import { ReactElement, useState, useLayoutEffect, useRef, cloneElement, RefObject, createRef, useEffect } from 'react'
-import { motion } from 'motion/react'
-
+import { cloneElement, createRef, ReactElement, RefObject, useEffect,useLayoutEffect, useRef, useState } from 'react'
 import {
-  FloatingPortal,
   flip,
+  FloatingPortal,
   shift,
   useClick,
   useDismiss,
@@ -11,26 +9,26 @@ import {
   useInteractions,
   useListNavigation,
 } from '@floating-ui/react'
+import { motion } from 'motion/react'
 
 import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { useControlled } from 'lib/hooks'
 
+import { ActionSurface } from '../ActionSurface'
+import { Box } from '../Box'
+import { Flex } from '../Flex'
+import { Text } from '../Text'
+import { WithIcon } from '../WithIcon'
 import {
   DEFAULT_SELECT_INLINE_SIZE,
   DEFAULT_SELECT_INTENT,
   DEFAULT_SELECT_VARIANT,
   DEFAULT_SELECT_VISIBLE_ITEMS_COUNT,
 } from './constants'
-
 import { resolveSelectValues } from './helpers'
-import { SelectProps } from './types'
 import { SelectOptionInternalProps, type SelectOptionProps } from './SelectOption'
-import { ActionSurface } from '../ActionSurface'
-import { Box } from '../Box'
-import { Text } from '../Text'
-import { WithIcon } from '../WithIcon'
-import { Flex } from '../Flex'
+import { SelectProps } from './types'
 
 export const SelectImpl = ({
   // ActionSurface

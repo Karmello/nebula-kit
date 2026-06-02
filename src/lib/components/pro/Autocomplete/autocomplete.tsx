@@ -3,15 +3,14 @@ import { useState } from 'react'
 import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_CONTROL_SIZE } from 'lib/constants'
 
+import { AutocompleteMain } from './components'
 import {
   AutocompleteProps,
-  DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
-  DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
+  DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   DEFAULT_AUTOCOMPLETE_INTENT,
+  DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
 } from './definitions'
-
-import { AutocompleteMain } from './components'
 
 export const Autocomplete = ({
   // HtmlTag

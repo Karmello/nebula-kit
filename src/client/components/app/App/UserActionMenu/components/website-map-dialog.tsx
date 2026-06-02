@@ -1,7 +1,7 @@
-import { useAppStore } from 'client/store'
-import { useNavigateTo } from 'client/hooks'
-import { Dialog, Text, WithIcon, Button, ButtonProps, Flex, Icon, IconProps } from 'lib/components'
+import { Button, ButtonProps, Dialog, Flex, Icon, IconProps,Text, WithIcon } from 'lib/components'
 import { PageKey } from 'client/definitions'
+import { useNavigateTo } from 'client/hooks'
+import { useAppStore } from 'client/store'
 
 export const WebsiteMapDialog = () => {
   const showWebsiteMap = useAppStore(state => state.showWebsiteMap)

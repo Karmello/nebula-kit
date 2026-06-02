@@ -2,7 +2,6 @@ import { createRef } from 'react'
 import { expectError, expectType } from 'tsd'
 
 import { Button } from '../../Button'
-
 import { Segment } from '..'
 
 // -------------------------------------

@@ -1,5 +1,4 @@
 import { SideNav as SideNavBase } from './side-nav'
-
 import { SideNavCategory, SideNavItem } from './slots'
 
 export const SideNav = Object.assign(SideNavBase, {

@@ -1,2 +1,2 @@
-export * from './portal'
 export * from './definitions'
+export * from './portal'

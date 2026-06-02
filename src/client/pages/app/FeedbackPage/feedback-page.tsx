@@ -1,5 +1,5 @@
-import { useSendFeedback, UseSendFeedbackRes } from 'client/api'
 import { Box, Form, Section, Spacer, Text, Textarea, useSnackbar } from 'lib/components'
+import { useSendFeedback, UseSendFeedbackRes } from 'client/api'
 
 export const FeedbackPage = () => {
   const { show } = useSnackbar()

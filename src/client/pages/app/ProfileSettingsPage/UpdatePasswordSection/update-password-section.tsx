@@ -1,7 +1,7 @@
-import { useUpdatePassword, UseUpdatePasswordRes, useLogoutUser } from 'client/api'
-import { useNavigateTo } from 'client/hooks'
+import { Box, Form, PasswordInput,Section, Spacer, Text, useSnackbar } from 'lib/components'
+import { useLogoutUser,useUpdatePassword, UseUpdatePasswordRes } from 'client/api'
 import { PageKey } from 'client/definitions'
-import { Box, Form, Section, Spacer, Text, useSnackbar, PasswordInput } from 'lib/components'
+import { useNavigateTo } from 'client/hooks'
 
 export const UpdatePasswordSection = () => {
   const navigateTo = useNavigateTo()

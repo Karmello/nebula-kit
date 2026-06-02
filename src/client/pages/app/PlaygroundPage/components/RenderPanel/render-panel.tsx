@@ -1,7 +1,7 @@
+import * as LIB_COMPONENTS from 'lib/components'
+import { Box, Icon, Spacer, Text, Tooltip, WithIcon } from 'lib/components'
 import { COMPONENT_TEMPLATES } from 'client/definitions'
 import { usePlaygroundStore } from 'client/store'
-import * as LIB_COMPONENTS from 'lib/components'
-import { Text, Spacer, Box, Tooltip, Icon, WithIcon } from 'lib/components'
 
 export const RenderPanel = () => {
   const { activeComponent, getPropValues } = usePlaygroundStore()

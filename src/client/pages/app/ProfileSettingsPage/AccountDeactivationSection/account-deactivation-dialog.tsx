@@ -1,5 +1,5 @@
-import { useRequestAccountDeactivation } from 'client/api'
 import { Button, Dialog, Segment, Text, useSnackbar, WithIcon } from 'lib/components'
+import { useRequestAccountDeactivation } from 'client/api'
 
 export const AccountDeactivationDialog = ({
   open,

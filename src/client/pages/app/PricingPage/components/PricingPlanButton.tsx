@@ -1,9 +1,9 @@
+import { Box, Button, Link, Text, WithIcon } from 'lib/components'
+import { BoxColor } from 'lib/components/core/Box/types'
+import { useCheckoutPaidPlan } from 'client/api'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { useCheckoutPaidPlan } from 'client/api'
-import { Box, Button, Link, Text, WithIcon } from 'lib/components'
-import { BoxColor } from 'lib/types'
 
 type PricingPlanButtonProps = {
   plan: string

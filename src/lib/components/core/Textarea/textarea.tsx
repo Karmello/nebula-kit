@@ -2,8 +2,8 @@ import { useState } from 'react'
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { withPrefix } from 'lib/helpers'
 import { CONTROL_SIZE_MAP, TEXT_TYPOGRAPHY_MAP } from 'lib/constants'
+import { withPrefix } from 'lib/helpers'
 
 import {
   DEFAULT_TEXTAREA_INLINE_SIZE,

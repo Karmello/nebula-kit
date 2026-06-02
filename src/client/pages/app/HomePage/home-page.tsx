@@ -1,12 +1,12 @@
 import { Box, Divider, Flex, Spacer, Text } from 'lib/components'
 
 import { About } from './About'
+import { Families } from './Families'
 import { Hero } from './Hero'
-import { Principles } from './Principles'
 import { Ortho } from './Ortho'
 import { Preferences } from './Preferences'
+import { Principles } from './Principles'
 import { Video } from './Video'
-import { Families } from './Families'
 
 export const HomePage = () => {
   return (

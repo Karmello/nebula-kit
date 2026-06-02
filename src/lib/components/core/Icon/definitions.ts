@@ -1,5 +1,5 @@
-import { IconName, RespValue, TShirtSize } from 'lib/types'
 import { BoxProps } from 'lib/components/core/Box'
+import { IconName, RespValue, TShirtSize } from 'lib/types'
 
 import type { CssValue } from '../../../types'
 

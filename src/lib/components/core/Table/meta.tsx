@@ -1,5 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 
+import { BOX_META } from '../Box/meta'
 import {
   DEFAULT_TABLE_INTENT,
   DEFAULT_TABLE_LAYOUT,
@@ -8,9 +9,7 @@ import {
   TABLE_LAYOUTS,
   type TableProps,
 } from './../Table/definitions'
-
-import BOX_META from '../Box/meta'
-
+import { Table } from '.'
 import {
   TableBodyProps,
   TableCaptionProps,
@@ -21,13 +20,11 @@ import {
   TableHeaderRowProps,
   TableRowProps,
 } from './slots'
-
-import { Table } from '.'
 import { DEFAULT_TABLE_BODY_INTENT } from './slots/TableBody/definitions'
-import { DEFAULT_TABLE_FOOTER_INTENT } from './slots/TableFooter/definitions'
 import { DEFAULT_TABLE_CAPTION_INTENT } from './slots/TableCaption/definitions'
+import { DEFAULT_TABLE_FOOTER_INTENT } from './slots/TableFooter/definitions'
 
-const TABLE_META = {
+const META = {
   overview: {
     bundle: 'core',
     title:
@@ -310,8 +307,8 @@ const TABLE_META = {
   },
 } as ComponentMeta<TableProps>
 
-export default {
-  Table: TABLE_META,
+export const TABLE_META = {
+  Table: META,
   TableBody: {
     overview: {
       bundle: 'core',
@@ -348,7 +345,7 @@ export default {
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
-      textAlign: TABLE_META.props.textAlign,
+      textAlign: META.props.textAlign,
     },
   } as ComponentMeta<TableBodyProps>,
   TableHeader: {
@@ -386,7 +383,7 @@ export default {
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
-      textAlign: TABLE_META.props.textAlign,
+      textAlign: META.props.textAlign,
     },
   } as ComponentMeta<TableHeaderProps>,
   TableFooter: {
@@ -425,7 +422,7 @@ export default {
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
-      textAlign: TABLE_META.props.textAlign,
+      textAlign: META.props.textAlign,
     },
   } as ComponentMeta<TableFooterProps>,
   TableCaption: {
@@ -481,7 +478,7 @@ export default {
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
-      textAlign: TABLE_META.props.textAlign,
+      textAlign: META.props.textAlign,
     },
   } as ComponentMeta<TableRowProps>,
   TableHeaderRow: {
@@ -511,7 +508,7 @@ export default {
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
-      textAlign: TABLE_META.props.textAlign,
+      textAlign: META.props.textAlign,
     },
   } as ComponentMeta<TableHeaderRowProps>,
   TableCell: {

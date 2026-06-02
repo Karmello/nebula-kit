@@ -1,11 +1,11 @@
 import { useLayoutEffect } from 'react'
-import { useLocation, Navigate } from 'react-router'
+import { Navigate,useLocation } from 'react-router'
 
-import { useNavigateTo } from 'client/hooks'
-import { PATTERNS, PATTERN_CATEGORIES } from 'client/definitions'
-import { CodeSnippet } from 'client/components'
-import { usePatternsStore } from 'client/store'
 import { Box, Flex, Markup, MultiSelect, Section, SideNav, Spacer, SplitView, Text } from 'lib/components'
+import { CodeSnippet } from 'client/components'
+import { PATTERN_CATEGORIES,PATTERNS } from 'client/definitions'
+import { useNavigateTo } from 'client/hooks'
+import { usePatternsStore } from 'client/store'
 
 export const PatternsPage = () => {
   const { pathname, search } = useLocation()

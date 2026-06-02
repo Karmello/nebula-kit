@@ -1,2 +1,2 @@
-export * from './with-slots'
 export * from './definitions'
+export * from './with-slots'

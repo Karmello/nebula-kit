@@ -1,2 +1,2 @@
-export * from './virtual-list'
 export * from './definitions'
+export * from './virtual-list'

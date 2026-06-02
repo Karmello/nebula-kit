@@ -1,5 +1,5 @@
-import { useNavigateTo } from 'client/hooks'
 import { Breadcrumb } from 'lib/components'
+import { useNavigateTo } from 'client/hooks'
 
 import { CatalogPageBreadcrumbProps, TREE } from './definitions'
 

@@ -1,4 +1,4 @@
-import { Box, Text, Flex, Link, WithIcon } from 'lib/components'
+import { Box, Flex, Link, Text, WithIcon } from 'lib/components'
 
 export default () => {
   return (

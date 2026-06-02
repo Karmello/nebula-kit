@@ -1,6 +1,6 @@
-import { usePlaygroundStore } from 'client/store'
 import { Flex } from 'lib/components'
 import { BREAKPOINTS } from 'lib/constants'
+import { usePlaygroundStore } from 'client/store'
 
 import { PropValueControl } from './components'
 

@@ -1,4 +1,4 @@
-import { RefObject, createContext, useContext } from 'react'
+import { createContext, RefObject, useContext } from 'react'
 
 import { TabsProps } from '../definitions'
 

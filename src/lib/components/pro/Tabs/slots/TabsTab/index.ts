@@ -1,2 +1,2 @@
-export * from './tabs-tab'
 export * from './definitions'
+export * from './tabs-tab'

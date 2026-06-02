@@ -2,9 +2,9 @@ import { useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { syncRespStyle } from 'lib/internals/dom'
-import { useScreen } from 'lib/hooks'
 import { withPrefix } from 'lib/helpers'
+import { useScreen } from 'lib/hooks'
+import { syncRespStyle } from 'lib/internals/dom'
 
 import { ImageProps } from './definitions'
 

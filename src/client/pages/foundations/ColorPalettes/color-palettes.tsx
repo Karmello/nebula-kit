@@ -1,8 +1,8 @@
 import { sentenceCase } from 'change-case'
 
-import { useAppStore } from 'client/store'
 import { Box, Flex, Select, Spacer, Text } from 'lib/components'
 import { COLORS } from 'lib/constants'
+import { useAppStore } from 'client/store'
 
 export default () => {
   const brand = useAppStore(state => state.brand)

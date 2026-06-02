@@ -3,10 +3,10 @@ import { ComponentProps, ComponentRef, PropsWithoutRef, RefObject } from 'react'
 import { ActionSurface } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
+import { ACTION_SURFACE_TAGS } from '../../../../../constants'
+import type { ActionSurfaceTag } from '../../../../../types'
 import { useDropdownListContext } from '../../providers'
 import { DEFAULT_DROPDOWN_LIST_TRIGGER_VARIANT, DropdownListTriggerProps } from './definitions'
-import type { ActionSurfaceTag } from '../../../../../types'
-import { ACTION_SURFACE_TAGS } from '../../../../../constants'
 
 export const DropdownListTrigger = <T extends ActionSurfaceTag = (typeof ACTION_SURFACE_TAGS)[0]>({
   children,

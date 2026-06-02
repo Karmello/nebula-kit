@@ -1,11 +1,11 @@
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
-import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE, LOADER_SIZES, type LoaderProps } from './definitions'
-import BOX_META from '../Box/meta'
-import { Loader } from './loader'
 import { Box } from '../Box'
+import { BOX_META } from '../Box/meta'
+import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE, LOADER_SIZES, type LoaderProps } from './definitions'
+import { Loader } from './loader'
 
-export default {
+export const LOADER_META = {
   Loader: {
     overview: {
       bundle: 'core',

@@ -1,12 +1,12 @@
 import { pascalCase } from 'change-case'
 
-import meta from 'client/meta'
-import { CodeSnippet } from 'client/components'
-import { convertElemToString } from 'client/helpers'
-import { useAppStore, useComponentsPageStore } from 'client/store'
-import { ComponentMeta } from 'client/definitions'
 import { Box, Flex, Markup, Reveal, Spacer, Switch, Text, WithIcon } from 'lib/components'
 import { useCurrentTheme } from 'lib/hooks'
+import { CodeSnippet } from 'client/components'
+import { ComponentMeta } from 'client/definitions'
+import { convertElemToString } from 'client/helpers'
+import meta from 'client/meta'
+import { useAppStore, useComponentsPageStore } from 'client/store'
 
 const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   const { description, jsx, code, noSandBox, noCode, sandBoxWithNoPadding } = props

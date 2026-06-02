@@ -1,8 +1,8 @@
-import { expectType, expectError } from 'tsd'
+import { expectError,expectType } from 'tsd'
 
-import { Link } from '../Link'
 import { Button } from '../Button'
 import { Image } from '../Image'
+import { Link } from '../Link'
 import { Text } from '../Text'
 
 // required props

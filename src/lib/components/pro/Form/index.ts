@@ -1,6 +1,5 @@
 import { Form as FormBase } from './form'
-
-import { FormFields, FormField, FormActions, FormActionButton, FormLabel, FormHint } from './slots'
+import { FormActionButton, FormActions, FormField, FormFields, FormHint,FormLabel } from './slots'
 
 export const Form = Object.assign(FormBase, {
   Fields: FormFields,

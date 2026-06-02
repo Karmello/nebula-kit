@@ -1,2 +1,2 @@
-export * from './scale'
 export * from './definitions'
+export * from './scale'

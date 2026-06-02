@@ -3,17 +3,17 @@ import classNames from 'classnames'
 
 import { Box, Spacer, Text, WithIcon } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
+import { CalloutTag } from 'lib/types'
 
 import {
-  CalloutProps,
-  DEFAULT_CALLOUT_VARIANT,
-  DEFAULT_CALLOUT_STATUS,
-  DEFAULT_CALLOUT_SIZE,
-  DEFAULT_CALLOUT_INTENT,
   CALLOUT_CONFIG,
   CALLOUT_SIZE_CONFIG,
+  CalloutProps,
+  DEFAULT_CALLOUT_INTENT,
+  DEFAULT_CALLOUT_SIZE,
+  DEFAULT_CALLOUT_STATUS,
+  DEFAULT_CALLOUT_VARIANT,
 } from './definitions'
-import { CalloutTag } from 'lib/types'
 
 export const Callout = <T extends CalloutTag = 'div'>({
   // Box

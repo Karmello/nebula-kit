@@ -2,7 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 
 import { type HydrationGateProps } from './definitions'
 
-export default {
+export const HYDRATION_GATE_META = {
   HydrationGate: {
     overview: {
       bundle: 'core',

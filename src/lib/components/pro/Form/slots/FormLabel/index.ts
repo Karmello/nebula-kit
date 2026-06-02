@@ -1,2 +1,2 @@
-export * from './form-label'
 export * from './definitions'
+export * from './form-label'

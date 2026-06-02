@@ -2,14 +2,14 @@ import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef 
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { withPrefix, resolveLengthValue } from 'lib/helpers'
-import { syncRespStyle } from 'lib/internals/dom'
+import { resolveLengthValue,withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
+import { syncRespStyle } from 'lib/internals/dom'
+import { GridTag } from 'lib/types'
 
 import { GridProps } from './definitions'
 
 import './grid.scss'
-import { GridTag } from 'lib/types'
 
 export const Grid = <T extends GridTag = 'div'>({
   // Box

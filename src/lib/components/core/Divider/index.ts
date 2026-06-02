@@ -1,2 +1,2 @@
-export * from './divider'
 export * from './definitions'
+export * from './divider'

@@ -1,10 +1,10 @@
 import { useLayoutEffect, useMemo, useRef, useState } from 'react'
 
+import { Autocomplete, Resize, Text, WithIcon } from 'lib/components'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { Autocomplete, Resize, Text, WithIcon } from 'lib/components'
 
-import { RESIZE_DURATION, OPTIONS } from './definitions'
+import { OPTIONS,RESIZE_DURATION } from './definitions'
 
 export const AppJump = () => {
   const [query, setQuery] = useState<string>('')

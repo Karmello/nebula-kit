@@ -1,6 +1,8 @@
 import { BoxProps } from 'lib/components'
-import { BoxColor, BoxVariant, CalloutTag, IconName, RespValue, TShirtSize } from 'lib/types'
 import { TextTypography } from 'lib/components/core/Text'
+import { CalloutTag, IconName, RespValue, TShirtSize } from 'lib/types'
+
+import { BoxColor, BoxVariant } from '../Box/types'
 
 export const CALLOUT_SIZE_CONFIG: Record<
   CalloutSize,

@@ -5,8 +5,8 @@ import { Box, TableHeaderCellProps } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 
+import { TableContext,useTableContext } from '../../TableContext'
 import { TableRowProps } from './definitions'
-import { useTableContext, TableContext } from '../../TableContext'
 
 export const TableRow = ({
   // Box

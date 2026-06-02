@@ -1,7 +1,7 @@
 import { JSX } from 'react'
 import { FieldValues, SubmitErrorHandler, SubmitHandler, UseFormProps, UseFormReturn } from 'react-hook-form'
 
-import { FlexProps, FlexItemProps } from 'lib/components'
+import { FlexItemProps,FlexProps } from 'lib/components'
 
 export const DEFAULT_FORM_FLEX_DIRECTION: FormProps['flexDirection'] = 'column'
 export const DEFAULT_FORM_ALIGN_ITEMS: FormProps['alignItems'] = 'stretch'

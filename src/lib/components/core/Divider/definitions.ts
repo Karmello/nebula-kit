@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/components/core/Box/definitions'
+import type { BoxProps } from '../Box/types'
 
 export const DEFAULT_DIVIDER_INTENT: DividerProps['intent'] = 'muted'
 export const DEFAULT_DIVIDER_MARGIN_BLOCK: DividerProps['marginBlock'] = '3px'

@@ -1,4 +1,4 @@
-import { type BoxProps } from '../Box/definitions'
+import { type BoxProps } from '../Box/types'
 
 export const DEFAULT_TEXTAREA_VARIANT: TextareaProps['variant'] = 'solid'
 export const DEFAULT_TEXTAREA_INTENT: TextareaProps['intent'] = 'tertiary'

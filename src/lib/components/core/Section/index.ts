@@ -1,2 +1,2 @@
-export * from './section'
 export * from './definitions'
+export * from './section'

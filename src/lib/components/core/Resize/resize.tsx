@@ -3,8 +3,8 @@ import classNames from 'classnames'
 
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
-import { buildSizeTransition } from 'lib/internals/motion'
 import { MeasuredSizes, syncMeasuredSize } from 'lib/internals/measurement'
+import { buildSizeTransition } from 'lib/internals/motion'
 
 import { ResizeProps } from './definitions'
 import { syncResizeVisibility } from './helpers'

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
-import { useMakeApiRequest, UseMakeApiRequestRes } from 'client/hooks'
 import { useSnackbar } from 'lib/components'
+import { useMakeApiRequest, UseMakeApiRequestRes } from 'client/hooks'
 
 export type UseAskAssistantSuccess = { answer: string }
 export type UseAskAssistantError = { error: string }

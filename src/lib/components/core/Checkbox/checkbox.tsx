@@ -5,11 +5,11 @@ import { Box, Icon } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
 import {
-  CheckboxProps,
   CHECKBOX_SIZE_MAP,
+  CheckboxProps,
+  DEFAULT_CHECKBOX_INTENT,
   DEFAULT_CHECKBOX_SIZE,
   DEFAULT_CHECKBOX_VARIANT,
-  DEFAULT_CHECKBOX_INTENT,
 } from './definitions'
 
 import './checkbox.scss'

@@ -1,2 +1,2 @@
-export * from './nebkit-provider'
 export * from './definitions'
+export * from './nebkit-provider'

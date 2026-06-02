@@ -1,15 +1,15 @@
 import { pascalCase } from 'change-case'
 
-import meta from 'client/meta'
-import { useComponentsPageStore } from 'client/store'
-import { ComponentMeta } from 'client/definitions'
+import { Box, Button, Flex,Link, Section, Spacer, Text } from 'lib/components'
 import { CodeSnippet } from 'client/components'
+import { ComponentMeta } from 'client/definitions'
 import { convertElemToString } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'
-import { Text, Box, Spacer, Section, Button, Link, Flex } from 'lib/components'
+import meta from 'client/meta'
+import { useComponentsPageStore } from 'client/store'
 
-import { ListWithHeading } from './ListWithHeading'
 import { ListWithChips } from './ListWithChips'
+import { ListWithHeading } from './ListWithHeading'
 
 const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const navigateTo = useNavigateTo()

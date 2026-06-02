@@ -1,9 +1,9 @@
 import type { Placement } from '@floating-ui/react'
 
 import type { BoxProps } from 'lib/components'
+import { BoxColor } from 'lib/components/core/Box/types'
 
 import { TOOLTIP_INTENTS, TOOLTIP_MODES, TOOLTIP_OFFSET, TOOLTIP_VARIANTS } from './constants'
-import { BoxColor } from 'lib/types'
 
 export type TooltipVariant = (typeof TOOLTIP_VARIANTS)[number]
 export type TooltipIntent = (typeof TOOLTIP_INTENTS)[number]

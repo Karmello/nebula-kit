@@ -1,2 +1,2 @@
-export * from './rotate'
 export * from './definitions'
+export * from './rotate'

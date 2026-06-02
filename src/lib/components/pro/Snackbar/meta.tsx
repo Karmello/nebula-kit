@@ -1,20 +1,19 @@
+import { BOX_META } from 'lib/components/core/Box/meta'
 import { ComponentMeta } from 'client/definitions'
 
+import { Button } from '../../core/Button'
+import { CALLOUT_CONFIG, CALLOUT_STATUSES, type CalloutStatus, DEFAULT_CALLOUT_STATUS } from './../../core/Callout/definitions'
 import {
-  DEFAULT_SNACKBAR_PLACEMENT,
-  SNACKBAR_PLACEMENTS,
-  SnackbarPlacement,
-  type UseSnackbarShowArgs,
-  type SnackbarProps,
-  useSnackbar,
   DEFAULT_SNACKBAR_AUTO_CLOSE_DELAY,
   DEFAULT_SNACKBAR_CLOSE_ON_OUTSIDE_CLICK,
   DEFAULT_SNACKBAR_INLINE_SIZE,
+  DEFAULT_SNACKBAR_PLACEMENT,
+  SNACKBAR_PLACEMENTS,
+  SnackbarPlacement,
+  type SnackbarProps,
+  useSnackbar,
+  type UseSnackbarShowArgs,
 } from './../Snackbar'
-
-import { CALLOUT_CONFIG, CALLOUT_STATUSES, DEFAULT_CALLOUT_STATUS, type CalloutStatus } from './../../core/Callout/definitions'
-import { Button } from '../../core/Button'
-import BOX_META from '../../core/Box/meta'
 
 const SnackbarWrapper = ({
   status,
@@ -44,7 +43,7 @@ const SnackbarWrapper = ({
   )
 }
 
-export default {
+export const SNACKBAR_META = {
   Snackbar: {
     overview: {
       bundle: 'pro',

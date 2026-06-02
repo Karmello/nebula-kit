@@ -1,13 +1,13 @@
 import { useLocation } from 'react-router'
 
-import { useNavigateTo } from 'client/hooks'
-import { PageKey } from 'client/definitions'
-import { useAppStore } from 'client/store'
-import { useLogoutUser } from 'client/api'
 import { Flex, IconButton, Select } from 'lib/components'
+import { useLogoutUser } from 'client/api'
+import { PageKey } from 'client/definitions'
+import { useNavigateTo } from 'client/hooks'
+import { useAppStore } from 'client/store'
 
-import { WebsiteMapDialog } from './components/website-map-dialog'
 import { AppPrefsDialog } from './components/app-prefs-dialog'
+import { WebsiteMapDialog } from './components/website-map-dialog'
 
 export const UserActionMenu = () => {
   const { pathname } = useLocation()

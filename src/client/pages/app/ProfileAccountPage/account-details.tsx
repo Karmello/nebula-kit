@@ -1,12 +1,12 @@
 import { useLayoutEffect } from 'react'
 import { sentenceCase } from 'change-case'
 
-import { useNavigateTo } from 'client/hooks'
-import { PageKey } from 'client/definitions'
+import { Box, Button, Flex, Link, Loader, Section, Spacer, Table, Text, WithIcon } from 'lib/components'
 import { useGetUser } from 'client/api'
-import { useAppStore } from 'client/store'
 import { CopyButton } from 'client/components'
-import { Loader, Table, Text, Flex, Link, Button, Box, Spacer, Section, WithIcon } from 'lib/components'
+import { PageKey } from 'client/definitions'
+import { useNavigateTo } from 'client/hooks'
+import { useAppStore } from 'client/store'
 
 export default () => {
   const getUser = useGetUser()

@@ -2,12 +2,12 @@ import { cloneElement, ReactElement, useEffect, useState } from 'react'
 
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
+import { Box } from '../Box'
+import { BOX_META } from '../Box/meta'
+import { Flex } from '../Flex'
+import { Text } from '../Text'
 import { SLIDE_FROM, type SlideProps } from './definitions'
 import { DEFAULT_SLIDE_DURATION, DEFAULT_SLIDE_EASING, Slide } from './slide'
-import { Text } from '../Text'
-import { Box } from '../Box'
-import { Flex } from '../Flex'
-import BOX_META from '../Box/meta'
 
 const SlideWrapper = ({ children }: { children: ReactElement }) => {
   const [visible, setVisible] = useState<boolean>(false)
@@ -31,7 +31,7 @@ const SlideWrapper = ({ children }: { children: ReactElement }) => {
   return cloneElement(children as any, { visible })
 }
 
-export default {
+export const SLIDE_META = {
   Slide: {
     overview: {
       bundle: 'core',

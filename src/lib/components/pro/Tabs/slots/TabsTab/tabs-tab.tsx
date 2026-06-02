@@ -4,8 +4,8 @@ import classNames from 'classnames'
 import { Button } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { TabsTabProps } from './definitions'
 import { useTabsContext } from '../../TabsContext'
+import { TabsTabProps } from './definitions'
 
 export const TabsTab = ({
   // Button

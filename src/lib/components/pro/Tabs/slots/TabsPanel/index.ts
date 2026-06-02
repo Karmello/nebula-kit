@@ -1,2 +1,2 @@
-export * from './tabs-panel'
 export * from './definitions'
+export * from './tabs-panel'

@@ -1,6 +1,10 @@
-import { ComponentMeta } from 'client/definitions'
+import { BOX_META } from 'lib/components/core/Box/meta'
 import { COLORS } from 'lib/constants'
+import { ComponentMeta } from 'client/definitions'
 
+import { Tooltip, type TooltipProps } from '..'
+import { Button } from './../../core/Button'
+import { Icon } from './../../core/Icon'
 import {
   DEFAULT_TOOLTIP_INTENT,
   DEFAULT_TOOLTIP_MAX_INLINE_SIZE,
@@ -17,12 +21,7 @@ import {
   TOOLTIP_VARIANTS,
 } from './constants'
 
-import { Button } from './../../core/Button'
-import { Icon } from './../../core/Icon'
-import { Tooltip, type TooltipProps } from '..'
-import BOX_META from './../../core/Box/meta'
-
-export default {
+export const TOOLTIP_META = {
   Tooltip: {
     overview: {
       bundle: 'pro',

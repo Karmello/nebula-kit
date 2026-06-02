@@ -1,6 +1,6 @@
+import { Box, Link, MarkerList, Spacer, Text } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
-import { Box, Link, MarkerList, Spacer, Text } from 'lib/components'
 
 export default () => {
   const navigateTo = useNavigateTo()

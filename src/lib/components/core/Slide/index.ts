@@ -1,2 +1,2 @@
-export * from './slide'
 export * from './definitions'
+export * from './slide'

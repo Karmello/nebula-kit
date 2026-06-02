@@ -2,12 +2,10 @@ import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
 import { Box, Fade, Flex, IconButton, Scale } from 'lib/components'
-import { WithSlots, Portal } from 'lib/components/shared'
-import { useGlobalScrollLock, useCurrentTheme } from 'lib/hooks'
-import { useFocusTrap } from 'lib/internals/focus'
+import { Portal,WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
-
-import { DialogProvider } from './DialogProvider'
+import { useCurrentTheme,useGlobalScrollLock } from 'lib/hooks'
+import { useFocusTrap } from 'lib/internals/focus'
 
 import {
   DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK,
@@ -18,6 +16,7 @@ import {
   DIALOG_SIZE_MAP,
   DialogProps,
 } from './definitions'
+import { DialogProvider } from './DialogProvider'
 
 export const Dialog = ({
   // HtmlTag

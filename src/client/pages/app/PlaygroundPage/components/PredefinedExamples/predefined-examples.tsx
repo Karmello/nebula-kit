@@ -1,6 +1,6 @@
+import { Select } from 'lib/components'
 import { PLAYGROUND_PRESETS } from 'client/definitions'
 import { usePlaygroundStore } from 'client/store'
-import { Select } from 'lib/components'
 
 export const PredefinedExamples = () => {
   const components = usePlaygroundStore(state => state.components)

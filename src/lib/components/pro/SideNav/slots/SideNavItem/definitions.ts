@@ -1,4 +1,4 @@
-import { LinkProps, ButtonProps } from 'lib/components'
+import { ButtonProps,LinkProps } from 'lib/components'
 import { RespValue } from 'lib/types'
 
 import { SideNavVariant } from '../../definitions'

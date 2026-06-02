@@ -2,8 +2,8 @@ import { ComponentProps, ElementType, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
 import { Flex } from 'lib/components'
-import { withPrefix } from 'lib/helpers'
 import { WithSlots } from 'lib/components/shared'
+import { withPrefix } from 'lib/helpers'
 
 import { DEFAULT_SEGMENT_FLEX_DIRECTION, SegmentProps } from './definitions'
 

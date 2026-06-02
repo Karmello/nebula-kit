@@ -1,4 +1,3 @@
-import { PropsFromAvatarKey } from 'lib/components/pro/Avatar/playground'
 import { PropsFromBoxKey } from 'lib/components/core/Box/playground'
 import { PropsFromButtonKey } from 'lib/components/core/Button/playground'
 import { PropsFromCalloutKey } from 'lib/components/core/Callout/playground'
@@ -10,12 +9,13 @@ import { PropsFromLoaderKey } from 'lib/components/core/Loader/playground'
 import { PropsFromRevealKey } from 'lib/components/core/Reveal/playground'
 import { PropsFromSectionKey } from 'lib/components/core/Section/playground'
 import { PropsFromSelectKey } from 'lib/components/core/Select/playground'
-import { PropsFromSwitchKey } from 'lib/components/pro/Switch/playground'
 import { PropsFromTableKey } from 'lib/components/core/Table/playground'
-import { PropsFromTabsKey } from 'lib/components/pro/Tabs/playground'
 import { PropsFromTextKey } from 'lib/components/core/Text/playground'
-import { PropsFromTooltipKey } from 'lib/components/pro/Tooltip/playground'
 import { PropsFromWithIconKey } from 'lib/components/core/WithIcon/playground'
+import { PropsFromAvatarKey } from 'lib/components/pro/Avatar/playground'
+import { PropsFromSwitchKey } from 'lib/components/pro/Switch/playground'
+import { PropsFromTabsKey } from 'lib/components/pro/Tabs/playground'
+import { PropsFromTooltipKey } from 'lib/components/pro/Tooltip/playground'
 
 export type PlaygroundProp =
   | PropsFromAvatarKey

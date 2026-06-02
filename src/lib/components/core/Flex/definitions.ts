@@ -1,7 +1,7 @@
 import { ElementType } from 'react'
 
-import { RespValue, TShirtSize } from 'lib/types'
 import { BoxProps } from 'lib/components'
+import { RespValue, TShirtSize } from 'lib/types'
 
 import type {
   CssFlexAlignContent,

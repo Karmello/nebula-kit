@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { buildStaticDataset } from 'lib/internals/dom'
 import { TEXT_TYPOGRAPHY_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
+import { buildStaticDataset } from 'lib/internals/dom'
 
 import type { TextTag } from '../../../types'
 import { DEFAULT_TEXT_TYPOGRAPHY, TextProps } from './definitions'

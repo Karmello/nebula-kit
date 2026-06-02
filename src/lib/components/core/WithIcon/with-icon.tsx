@@ -4,8 +4,8 @@ import { Box, Flex, Icon, Rotate } from 'lib/components'
 import { TEXT_TYPOGRAPHY_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 
-import { DEFAULT_WITH_ICON_GAP, DEFAULT_WITH_ICON_ICON_PLACEMENT, WithIconProps } from './definitions'
 import { DEFAULT_TEXT_TYPOGRAPHY } from '../Text'
+import { DEFAULT_WITH_ICON_GAP, DEFAULT_WITH_ICON_ICON_PLACEMENT, WithIconProps } from './definitions'
 
 export const WithIcon = ({
   // Box

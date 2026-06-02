@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 
-import { buildStaticDataset } from 'lib/internals/dom'
-import { withPrefix } from 'lib/helpers'
 import { Box } from 'lib/components'
+import { withPrefix } from 'lib/helpers'
+import { buildStaticDataset } from 'lib/internals/dom'
 
 import { useAppFrameContext } from '../../AppFrameProvider'
 import { AppFrameHeaderProps, DEFAULT_APP_FRAME_HEADER_INTENT } from './definitions'

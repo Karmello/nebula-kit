@@ -2,9 +2,9 @@ import { ReactElement, ReactNode, useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
 import { AutocompleteOptionProps, IconButton, Input, Text } from 'lib/components'
-import { withPrefix } from 'lib/helpers'
-import { CONTROL_SIZE_MAP } from 'lib/constants'
 import { DropdownList, DropdownListState } from 'lib/components/shared'
+import { CONTROL_SIZE_MAP } from 'lib/constants'
+import { withPrefix } from 'lib/helpers'
 
 import { AutocompleteProps } from '../../definitions'
 
