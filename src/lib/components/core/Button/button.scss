@@ -1,4 +1,5 @@
-.neb-button {
+.neb-button,
+a.neb-button {
   background-color: transparent;
   font-family: inherit;
   line-height: 1;
@@ -9,12 +10,10 @@
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   border-radius: var(--neb-border-radius);
-}
-
-a.neb-button {
   text-decoration: none;
 }
 
-.neb-button[data-neb-button-full-width='true'] {
+.neb-button[data-neb-button-full-width='true'],
+a.neb-button[data-neb-button-full-width='true'] {
   inline-size: 100%;
 }
