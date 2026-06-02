@@ -3,8 +3,8 @@ import { expectError, expectType } from 'tsd'
 
 import { MarkerList } from '..'
 
-// children are required
-expectError(<MarkerList />)
+// children are not required
+expectType(<MarkerList />)
 
 // children passed
 expectType(<MarkerList>children</MarkerList>)

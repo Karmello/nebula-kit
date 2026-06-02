@@ -1,3 +1,4 @@
+import { BOX_META } from 'lib/components/core/Box/meta'
 import { DEFAULT_BUTTON_INTENT } from 'lib/components/core/Button'
 import { BUTTON_META } from 'lib/components/core/Button/meta'
 import { FLEX_META } from 'lib/components/core/Flex/meta'
@@ -241,6 +242,7 @@ export const FORM_META = {
       slots: ['Form.Field'],
     },
     props: {
+      ...BOX_META.Box.props,
       alignContent: FLEX_META.Flex.props.alignContent,
       alignItems: {
         ...FLEX_META.Flex.props.alignItems,
@@ -281,6 +283,7 @@ export const FORM_META = {
       slots: ['Form.ActionButton'],
     },
     props: {
+      ...BOX_META.Box.props,
       alignContent: FLEX_META.Flex.props.alignContent,
       alignItems: FLEX_META.Flex.props.alignItems,
       children: {
@@ -317,6 +320,7 @@ export const FORM_META = {
       slots: ['Form.Label', 'Form.Hint'],
     },
     props: {
+      ...BOX_META.Box.props,
       alignSelf: FLEX_META.FlexItem.props.alignSelf,
       children: {
         ...FLEX_META.FlexItem.props.children,
@@ -385,6 +389,7 @@ export const FORM_META = {
       topLevelTags: ['button'],
     },
     props: {
+      ...BOX_META.Box.props,
       alignSelf: FLEX_META.FlexItem.props.alignSelf,
       children: BUTTON_META.Button.props.children,
       color: BUTTON_META.Button.props.color,

@@ -4,6 +4,7 @@ export const CSS_DISPLAY = ['block', 'inline', 'inline-block', 'none', 'contents
 export const CSS_OVERFLOW = ['visible', 'hidden', 'clip', 'scroll', 'auto'] as const
 export const CSS_POSITION = ['static', 'relative', 'absolute', 'fixed', 'sticky'] as const
 export const CSS_VISIBILITY = ['visible', 'hidden'] as const
+export const CSS_CURSOR = ['default', 'pointer', 'text', 'grab', 'grabbing', 'not-allowed', 'wait', 'progress', 'move'] as const
 
 export const CSS_FLEX_DISPLAY = ['flex', 'inline-flex'] as const
 export const CSS_FLEX_DIRECTION = ['row', 'row-reverse', 'column', 'column-reverse'] as const

@@ -9,12 +9,6 @@ import { syncRespStyle } from 'lib/internals/dom'
 import './flex-item.scss'
 
 export const FlexItem = <T extends ElementType = 'div'>({
-  // Box
-  children,
-  tag,
-  tagAttrs,
-  tagRef,
-  hidden,
   // own
   flex,
   flexGrow,
@@ -22,13 +16,16 @@ export const FlexItem = <T extends ElementType = 'div'>({
   flexBasis,
   alignSelf,
   order,
+  // Box
+  ...boxProps
 }: FlexItemProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
+  const finalRef = boxProps.tagRef || ref
 
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    syncRespStyle('Flex.Item', tagRef || ref, bp, {
+    syncRespStyle('Flex.Item', finalRef, bp, {
       flex,
       flexGrow,
       flexShrink,
@@ -40,17 +37,16 @@ export const FlexItem = <T extends ElementType = 'div'>({
 
   return (
     <Box
-      tag={tag}
+      {...boxProps}
       tagAttrs={
         {
-          ...tagAttrs,
-          className: classNames(withPrefix('flex-item'), tagAttrs?.className),
+          ...boxProps.tagAttrs,
+          className: classNames(withPrefix('flex-item'), boxProps.tagAttrs?.className),
         } as PropsWithoutRef<ComponentProps<T>>
       }
-      tagRef={tagRef || ref}
-      hidden={hidden}
+      tagRef={finalRef}
     >
-      {children}
+      {boxProps.children}
     </Box>
   )
 }

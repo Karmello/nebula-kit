@@ -29,6 +29,7 @@ export const FLEX_META = {
       slots: ['Flex.Item'],
     },
     props: {
+      ...BOX_META.Box.props,
       alignContent: {
         options: CSS_FLEX_ALIGN_CONTENT,
         isResponsive: true,
@@ -127,6 +128,7 @@ export const FLEX_META = {
       composedOf: ['Box'],
     },
     props: {
+      ...BOX_META.Box.props,
       alignSelf: {
         options: CSS_FLEX_ITEM_ALIGN_SELF,
         isResponsive: true,

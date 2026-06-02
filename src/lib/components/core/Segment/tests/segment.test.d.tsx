@@ -8,7 +8,7 @@ import { Segment } from '..'
 // children
 // -------------------------------------
 
-expectError(<Segment />)
+expectType(<Segment />)
 
 expectType(
   <Segment>
@@ -209,14 +209,6 @@ expectError(
 expectError(
   <Segment>
     <Segment.Item hidden="true">
-      <Button>Button</Button>
-    </Segment.Item>
-  </Segment>
-)
-
-expectError(
-  <Segment>
-    <Segment.Item margin="10px">
       <Button>Button</Button>
     </Segment.Item>
   </Segment>

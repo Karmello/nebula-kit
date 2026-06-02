@@ -1,5 +1,6 @@
 import {
   COLORS,
+  CSS_CURSOR,
   CSS_DISPLAY,
   CSS_OVERFLOW,
   CSS_POINTER_EVENTS,
@@ -129,6 +130,10 @@ export const BOX_META = {
         options: COLORS,
         isResponsive: true,
         description: 'Color applied to the component.',
+      },
+      cursor: {
+        options: CSS_CURSOR,
+        description: 'Controls the mouse cursor shown when hovering over the element.',
       },
       disabled: {
         options: ['boolean'],

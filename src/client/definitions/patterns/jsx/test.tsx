@@ -1,15 +1,28 @@
-import { Box, Select } from 'lib/components'
+import { Flex, FlexItemProps, Text } from 'lib/components'
 
 export const Test = () => {
+  const flexItemProps: FlexItemProps<'button'> = {
+    tag: 'button',
+    cursor: 'pointer',
+    flex: '1',
+    drawable: true,
+    interactive: true,
+    variant: 'solid',
+    intent: 'tertiary',
+    padding: 'xs',
+  }
+
   return (
-    <>
-      <Box drawable variant="solid" intent="primary" padding="3xl">
-        <Select variant="outline">
-          <Select.Option value="option-1">Option 1</Select.Option>
-          <Select.Option value="option-2">Option 2</Select.Option>
-          <Select.Option value="option-3">Option 3</Select.Option>
-        </Select>
-      </Box>
-    </>
+    <Flex drawable brand="blue" variant="solid" intent="tertiary" surface="dividing" inlineSize="300px" columnGap="3xs">
+      <Flex.Item {...flexItemProps} borderTopRightRadius="0px" borderBottomRightRadius="0px">
+        <Text textAlign="center">Box 1</Text>
+      </Flex.Item>
+      <Flex.Item {...flexItemProps} borderRadius="0px">
+        <Text textAlign="center">Box 2</Text>
+      </Flex.Item>
+      <Flex.Item {...flexItemProps} borderTopLeftRadius="0px" borderBottomLeftRadius="0px">
+        <Text textAlign="center">Box 3</Text>
+      </Flex.Item>
+    </Flex>
   )
 }

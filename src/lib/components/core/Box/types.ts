@@ -3,6 +3,7 @@ import { ElementType } from 'react'
 import { HtmlTagProps } from 'lib/components/shared'
 import { COLORS } from 'lib/constants'
 import {
+  CssCursor,
   CssDisplay,
   CssOverflow,
   CssPointerEvents,
@@ -36,6 +37,7 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   surface?: BoxSurface
   disabled?: boolean
   activeOnFocus?: boolean
+  cursor?: CssCursor
   hidden?: RespValue<boolean>
   // css
   opacity?: RespValue<string>
@@ -84,6 +86,7 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   paddingRight?: RespValue<TShirtSize | CssValue>
   paddingBottom?: RespValue<TShirtSize | CssValue>
   paddingLeft?: RespValue<TShirtSize | CssValue>
+  // margin
   margin?: RespValue<TShirtSize | CssValue>
   marginInline?: RespValue<TShirtSize | CssValue>
   marginBlock?: RespValue<TShirtSize | CssValue>

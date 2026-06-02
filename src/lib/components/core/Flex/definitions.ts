@@ -14,7 +14,7 @@ import {
 
 import { BoxProps } from '../Box'
 
-type FlexOwnProps = {
+export type FlexProps<T extends ElementType = 'div'> = Omit<BoxProps<T>, 'display'> & {
   display?: RespValue<CssFlexDisplay>
   flexDirection?: RespValue<CssFlexDirection>
   flexWrap?: RespValue<CssFlexWrap>
@@ -25,9 +25,3 @@ type FlexOwnProps = {
   rowGap?: RespValue<TShirtSize | CssValue>
   columnGap?: RespValue<TShirtSize | CssValue>
 }
-
-type PropsFromBox<T extends ElementType = 'div'> = Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef'> & {
-  children: BoxProps<T>['children']
-}
-
-export type FlexProps<T extends ElementType = 'div'> = PropsFromBox<T> & FlexOwnProps

@@ -195,7 +195,7 @@ expectType(
   </Form.Fields>
 )
 
-expectError(
+expectType(
   <Form.Fields drawable>
     <Form.Field name="email">
       <Input />
@@ -203,7 +203,7 @@ expectError(
   </Form.Fields>
 )
 
-expectError(
+expectType(
   <Form.Fields variant="solid">
     <Form.Field name="email">
       <Input />
@@ -221,13 +221,13 @@ expectType(
   </Form.Actions>
 )
 
-expectError(
+expectType(
   <Form.Actions drawable>
     <Form.ActionButton type="submit">Submit</Form.ActionButton>
   </Form.Actions>
 )
 
-expectError(
+expectType(
   <Form.Actions variant="solid">
     <Form.ActionButton type="submit">Submit</Form.ActionButton>
   </Form.Actions>
@@ -268,23 +268,19 @@ expectError(
   </Form.Field>
 )
 
-//
-// hidden primitive leakage
-//
-
-expectError(
+expectType(
   <Form.Field name="email" color="blue">
     <Input />
   </Form.Field>
 )
 
-expectError(
+expectType(
   <Form.Field name="email" variant="solid">
     <Input />
   </Form.Field>
 )
 
-expectError(
+expectType(
   <Form.Field name="email" drawable>
     <Input />
   </Form.Field>
@@ -329,7 +325,7 @@ expectError(<Form.ActionButton variant="banana">Save</Form.ActionButton>)
 
 expectError(<Form.ActionButton typography="h1">Save</Form.ActionButton>)
 
-expectError(<Form.ActionButton padding="md">Save</Form.ActionButton>)
+expectType(<Form.ActionButton padding="md">Save</Form.ActionButton>)
 
 //
 // Form.Label

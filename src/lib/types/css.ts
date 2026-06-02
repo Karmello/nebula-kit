@@ -1,4 +1,5 @@
 import {
+  CSS_CURSOR,
   CSS_DISPLAY,
   CSS_FLEX_ALIGN_CONTENT,
   CSS_FLEX_ALIGN_ITEMS,
@@ -25,6 +26,7 @@ export type CssDisplay = (typeof CSS_DISPLAY)[number]
 export type CssOverflow = (typeof CSS_OVERFLOW)[number]
 export type CssPosition = (typeof CSS_POSITION)[number]
 export type CssVisibility = (typeof CSS_VISIBILITY)[number]
+export type CssCursor = (typeof CSS_CURSOR)[number]
 
 export type CssFlexDisplay = (typeof CSS_FLEX_DISPLAY)[number]
 export type CssFlexDirection = (typeof CSS_FLEX_DIRECTION)[number]

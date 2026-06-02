@@ -17,16 +17,22 @@
       "path": "src/lib",
     },
     {
-      "name": "components",
-      "path": "src/lib/components",
-    },
-    {
       "name": "constants",
       "path": "src/lib/constants",
     },
     {
       "name": "types",
       "path": "src/lib/types",
+    },
+    {
+      "name": "components",
+      "path": "src/lib/components",
+    },
+    {
+      "path": "src/lib/components/core",
+    },
+    {
+      "path": "src/lib/components/pro",
     },
   ],
   "settings": {

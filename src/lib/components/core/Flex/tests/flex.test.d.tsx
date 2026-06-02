@@ -9,7 +9,7 @@ import { Flex } from '..'
 // children
 // -------------------------------------
 
-expectError(<Flex />)
+expectType(<Flex />)
 
 expectType(
   <Flex>
@@ -231,28 +231,28 @@ expectError(
 )
 
 // -------------------------------------
-// props intentionally NOT exposed from Box
+// props intentionally exposed from Box
 // -------------------------------------
 
-expectError(
+expectType(
   <Flex blockSize="5px">
     <Box />
   </Flex>
 )
 
-expectError(
+expectType(
   <Flex margin="5px">
     <Box />
   </Flex>
 )
 
-expectError(
+expectType(
   <Flex padding="5px">
     <Box />
   </Flex>
 )
 
-expectError(
+expectType(
   <Flex variant="solid">
     <Box />
   </Flex>
@@ -333,22 +333,6 @@ expectType(
 // -------------------------------------
 // Flex.Item invalid props
 // -------------------------------------
-
-expectError(
-  <Flex>
-    <Flex.Item margin="5px">
-      <Box />
-    </Flex.Item>
-  </Flex>
-)
-
-expectError(
-  <Flex>
-    <Flex.Item padding="5px">
-      <Box />
-    </Flex.Item>
-  </Flex>
-)
 
 expectError(
   <Flex>

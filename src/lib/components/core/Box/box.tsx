@@ -28,6 +28,7 @@ export const Box = <T extends ElementType = 'div'>({
   surface,
   disabled,
   activeOnFocus,
+  cursor,
   hidden,
   opacity,
   visibility,
@@ -204,7 +205,7 @@ export const Box = <T extends ElementType = 'div'>({
             {
               ...tagAttrs,
               className: classNames(withPrefix('box'), tagAttrs?.className || ''),
-              style: { ...tagAttrs?.style, pointerEvents },
+              style: { ...tagAttrs?.style, pointerEvents, cursor },
               disabled,
               ...buildStaticDataset('Box', {
                 drawable,
