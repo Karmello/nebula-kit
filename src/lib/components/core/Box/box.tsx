@@ -1,10 +1,10 @@
-import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, RefObject,useLayoutEffect, useRef } from 'react'
+import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, RefObject, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { BrandProvider, HtmlTag,ThemeProvider } from 'lib/components/shared'
-import { resolveLengthValue,withPrefix } from 'lib/helpers'
+import { BrandProvider, HtmlTag, ThemeProvider } from 'lib/components/shared'
+import { resolveLengthValue, withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
-import { buildStaticDataset,syncRespDataset, syncRespStyle } from 'lib/internals/dom'
+import { buildStaticDataset, syncRespDataset, syncRespStyle } from 'lib/internals/dom'
 import { useTransitionLifecycle } from 'lib/internals/motion'
 import { useResolveAppearance } from 'lib/internals/styling'
 

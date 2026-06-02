@@ -1,4 +1,4 @@
-import { Flex,Icon, Select, Spacer, Text, Tooltip } from 'lib/components'
+import { Flex, Icon, Select, Spacer, Text, Tooltip } from 'lib/components'
 import { usePlaygroundStore } from 'client/store'
 
 export const ComponentSelect = () => {

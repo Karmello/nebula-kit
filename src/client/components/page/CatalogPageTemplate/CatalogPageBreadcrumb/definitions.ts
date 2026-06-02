@@ -1,4 +1,4 @@
-import { COMPONENT_CATEGORIES,FOUNDATIONS_CATEGORIES } from 'client/definitions'
+import { COMPONENT_CATEGORIES, FOUNDATIONS_CATEGORIES } from 'client/definitions'
 
 import { parsePageCategories } from './helpers'
 

@@ -3,7 +3,7 @@ import { useRef, useState } from 'react'
 import { Box, Flex, Segment } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 
-import { DEFAULT_TABS_INTENT, DEFAULT_TABS_ORIENTATION,DEFAULT_TABS_VARIANT, TabsProps } from './definitions'
+import { DEFAULT_TABS_INTENT, DEFAULT_TABS_ORIENTATION, DEFAULT_TABS_VARIANT, TabsProps } from './definitions'
 import { TabsContext, TabsContextValue } from './TabsContext'
 
 export const Tabs = ({

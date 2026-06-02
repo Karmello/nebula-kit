@@ -1,4 +1,4 @@
-import { describe, expect,it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import type { FloatingProjectProps } from '../../definitions'
 import { resolveProjectStrategy } from './'

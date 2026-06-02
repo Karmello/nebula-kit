@@ -1,6 +1,6 @@
 import { sentenceCase } from 'change-case'
 
-import { Button, Flex, Segment,Select, Text } from 'lib/components'
+import { Button, Flex, Segment, Select, Text } from 'lib/components'
 import { COLORS, THEMES } from 'lib/constants'
 import { useAppStore } from 'client/store'
 

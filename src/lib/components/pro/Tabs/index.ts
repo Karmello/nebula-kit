@@ -1,4 +1,4 @@
-import { TabsPanel,TabsTab } from './slots'
+import { TabsPanel, TabsTab } from './slots'
 import { Tabs as TabsBase } from './tabs'
 
 export const Tabs = Object.assign(TabsBase, {

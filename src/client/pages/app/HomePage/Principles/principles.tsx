@@ -1,4 +1,4 @@
-import { Box, Button, Grid,Link, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, Grid, Link, Section, Spacer, Text } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 

@@ -1,6 +1,6 @@
 import { pascalCase } from 'change-case'
 
-import { Box, Button, Flex,Link, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, Flex, Link, Section, Spacer, Text } from 'lib/components'
 import { CodeSnippet } from 'client/components'
 import { ComponentMeta } from 'client/definitions'
 import { convertElemToString } from 'client/helpers'

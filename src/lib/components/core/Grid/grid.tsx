@@ -2,7 +2,7 @@ import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef 
 import classNames from 'classnames'
 
 import { Box } from 'lib/components'
-import { resolveLengthValue,withPrefix } from 'lib/helpers'
+import { resolveLengthValue, withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { syncRespStyle } from 'lib/internals/dom'
 import { GridTag } from 'lib/types'

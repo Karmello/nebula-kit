@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
 import { Box, Fade, Flex, IconButton, Scale } from 'lib/components'
-import { Portal,WithSlots } from 'lib/components/shared'
+import { Portal, WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
-import { useCurrentTheme,useGlobalScrollLock } from 'lib/hooks'
+import { useCurrentTheme, useGlobalScrollLock } from 'lib/hooks'
 import { useFocusTrap } from 'lib/internals/focus'
 
 import {

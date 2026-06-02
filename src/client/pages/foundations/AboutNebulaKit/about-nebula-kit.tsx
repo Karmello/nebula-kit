@@ -1,4 +1,4 @@
-import { Box, Flex,Text } from 'lib/components'
+import { Box, Flex, Text } from 'lib/components'
 
 export default () => {
   return (

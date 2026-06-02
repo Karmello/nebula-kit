@@ -1,4 +1,4 @@
-import { JSX,ReactNode } from 'react'
+import { JSX, ReactNode } from 'react'
 
 export type WithSlotsProps<SlotName extends string> = {
   componentName: string

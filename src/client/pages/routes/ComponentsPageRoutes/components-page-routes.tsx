@@ -4,7 +4,7 @@ import { Navigate, Route, Routes } from 'react-router'
 import { Spacer } from 'lib/components'
 import { NextPageButton } from 'client/components'
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
-import { ComponentChangelogPage,ComponentExamplesPage, ComponentOverviewPage, ComponentPropsPage } from 'client/pages'
+import { ComponentChangelogPage, ComponentExamplesPage, ComponentOverviewPage, ComponentPropsPage } from 'client/pages'
 
 const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
   switch (sectionKey) {

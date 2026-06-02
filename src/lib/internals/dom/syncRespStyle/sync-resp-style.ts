@@ -3,7 +3,7 @@ import { RefObject } from 'react'
 import { BREAKPOINTS } from 'lib/constants'
 import { Breakpoint } from 'lib/types'
 
-import { Bucket, isBlank,PropValues } from '../definitions'
+import { Bucket, isBlank, PropValues } from '../definitions'
 import { getBucketPerBp } from './get-bucket-per-bp'
 
 export const syncRespStyle = (

@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-import { Saturation, Theme,TShirtSize } from 'lib/types'
+import { Saturation, Theme, TShirtSize } from 'lib/types'
 
 import { BoxColor } from '../Box/types'
 

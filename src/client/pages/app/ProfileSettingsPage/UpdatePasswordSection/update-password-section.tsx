@@ -1,5 +1,5 @@
-import { Box, Form, PasswordInput,Section, Spacer, Text, useSnackbar } from 'lib/components'
-import { useLogoutUser,useUpdatePassword, UseUpdatePasswordRes } from 'client/api'
+import { Box, Form, PasswordInput, Section, Spacer, Text, useSnackbar } from 'lib/components'
+import { useLogoutUser, useUpdatePassword, UseUpdatePasswordRes } from 'client/api'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 

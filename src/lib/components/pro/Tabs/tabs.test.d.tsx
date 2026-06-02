@@ -1,4 +1,4 @@
-import { expectError,expectType } from 'tsd'
+import { expectError, expectType } from 'tsd'
 
 import { Tabs } from '../Tabs'
 

@@ -1,7 +1,7 @@
 import { useLayoutEffect, useState } from 'react'
 
 import { Button, Flex, Link } from 'lib/components'
-import { COMPONENTS_PAGE_SECTIONS,FOUNDATIONS_SECTIONS, PageKey } from 'client/definitions'
+import { COMPONENTS_PAGE_SECTIONS, FOUNDATIONS_SECTIONS, PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useComponentsPageStore, useFoundationsPageStore } from 'client/store'
 

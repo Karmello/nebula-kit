@@ -1,6 +1,6 @@
 import META from 'client/meta'
 
-import { DEFAULT_DESCRIPTION,DEFAULT_TITLE, getHtmlMetaData } from './helpers'
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, getHtmlMetaData } from './helpers'
 
 describe('server / helpers / getHtmlMetaData', () => {
   it('path /', () => {

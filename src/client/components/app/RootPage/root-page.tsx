@@ -1,4 +1,4 @@
-import { Navigate,Route, Routes } from 'react-router'
+import { Navigate, Route, Routes } from 'react-router'
 
 import { PageKey } from 'client/definitions'
 import {

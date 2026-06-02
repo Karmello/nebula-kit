@@ -1,6 +1,6 @@
 import { ReactElement, useLayoutEffect, useRef } from 'react'
 
-import { BrandProvider,ThemeProvider } from 'lib/components/shared'
+import { BrandProvider, ThemeProvider } from 'lib/components/shared'
 import { useGlobalScrollLock } from 'lib/hooks'
 
 import {

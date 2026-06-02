@@ -1,4 +1,4 @@
-import { Box, MarkerList,Section, Spacer, Text } from 'lib/components'
+import { Box, MarkerList, Section, Spacer, Text } from 'lib/components'
 import { CodeSnippet } from 'client/components'
 
 export default () => {

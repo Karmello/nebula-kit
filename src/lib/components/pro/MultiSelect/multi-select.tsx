@@ -2,7 +2,7 @@ import { ReactElement, useState } from 'react'
 import classNames from 'classnames'
 
 import { SelectOptionProps, Text, WithIcon } from 'lib/components'
-import { DropdownList, DropdownListState,WithSlots } from 'lib/components/shared'
+import { DropdownList, DropdownListState, WithSlots } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { beforeEach,describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
 
 import { NebkitProvider } from '..'
 import { DEFAULT_NEBKIT_THEME } from '../definitions'

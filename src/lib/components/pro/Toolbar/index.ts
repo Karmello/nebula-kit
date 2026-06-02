@@ -1,4 +1,4 @@
-import { ToolbarEnd,ToolbarMain, ToolbarStart } from './slots'
+import { ToolbarEnd, ToolbarMain, ToolbarStart } from './slots'
 import { Toolbar as ToolbarBase } from './toolbar'
 
 export const Toolbar = Object.assign(ToolbarBase, {

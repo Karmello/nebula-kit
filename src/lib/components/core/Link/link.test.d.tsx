@@ -1,4 +1,4 @@
-import { expectError,expectType } from 'tsd'
+import { expectError, expectType } from 'tsd'
 
 import { Button } from '../Button'
 import { Image } from '../Image'

@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { Box } from 'lib/components'
 import { withPrefix } from 'lib/helpers'
 
-import { DEFAULT_LOADER_ACTIVE,DEFAULT_LOADER_SIZE, LoaderProps } from './definitions'
+import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE, LoaderProps } from './definitions'
 
 import './loader.scss'
 

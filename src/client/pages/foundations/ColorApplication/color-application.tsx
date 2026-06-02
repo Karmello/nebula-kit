@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { sentenceCase } from 'change-case'
 
-import { Box, Button, Flex,Grid, Select, Spacer, Switch, Text } from 'lib/components'
+import { Box, Button, Flex, Grid, Select, Spacer, Switch, Text } from 'lib/components'
 import { BOX_INTENTS, BOX_VARIANTS } from 'lib/components/core/Box/constants'
 import { BoxVariant } from 'lib/components/core/Box/types'
 import { COLORS } from 'lib/constants'

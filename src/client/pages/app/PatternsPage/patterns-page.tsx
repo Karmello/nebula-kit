@@ -1,9 +1,9 @@
 import { useLayoutEffect } from 'react'
-import { Navigate,useLocation } from 'react-router'
+import { Navigate, useLocation } from 'react-router'
 
 import { Box, Flex, Markup, MultiSelect, Section, SideNav, Spacer, SplitView, Text } from 'lib/components'
 import { CodeSnippet } from 'client/components'
-import { PATTERN_CATEGORIES,PATTERNS } from 'client/definitions'
+import { PATTERN_CATEGORIES, PATTERNS } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { usePatternsStore } from 'client/store'
 

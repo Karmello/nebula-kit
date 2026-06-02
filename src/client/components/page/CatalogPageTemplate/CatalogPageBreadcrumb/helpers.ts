@@ -1,4 +1,4 @@
-import { COMPONENT_CATEGORIES,FOUNDATIONS_CATEGORIES } from 'client/definitions'
+import { COMPONENT_CATEGORIES, FOUNDATIONS_CATEGORIES } from 'client/definitions'
 
 export const parsePageCategories = (pageCategories: typeof FOUNDATIONS_CATEGORIES | typeof COMPONENT_CATEGORIES) => {
   return pageCategories.map(c => ({

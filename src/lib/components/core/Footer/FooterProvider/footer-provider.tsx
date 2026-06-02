@@ -1,4 +1,4 @@
-import { createContext, ReactNode,useContext } from 'react'
+import { createContext, ReactNode, useContext } from 'react'
 
 import { FooterProps } from '../definitions'
 

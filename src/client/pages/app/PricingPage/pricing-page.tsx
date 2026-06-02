@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react'
 
-import { Box, Flex, Grid, Loader,Section, Spacer, Text } from 'lib/components'
+import { Box, Flex, Grid, Loader, Section, Spacer, Text } from 'lib/components'
 import { useGetUser } from 'client/api'
 import { useAppStore } from 'client/store'
 

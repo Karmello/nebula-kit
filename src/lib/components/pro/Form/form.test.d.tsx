@@ -1,6 +1,6 @@
 import { createRef } from 'react'
 import { FieldErrors, FieldValues, UseFormReturn } from 'react-hook-form'
-import { expectError,expectType } from 'tsd'
+import { expectError, expectType } from 'tsd'
 
 import { Input } from 'lib/components'
 

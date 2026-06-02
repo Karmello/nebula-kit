@@ -1,6 +1,6 @@
 import { sentenceCase } from 'change-case'
 
-import { IconButton,Input, Select, Spacer, Text } from 'lib/components'
+import { IconButton, Input, Select, Spacer, Text } from 'lib/components'
 import { Breakpoint } from 'lib/types'
 import { DOCS_CSS_LABEL, PLAYGROUND_ARRAY_DATA_MAP, PLAYGROUND_CONTROLS_MAP, PlaygroundProp } from 'client/definitions'
 import { usePlaygroundStore } from 'client/store'

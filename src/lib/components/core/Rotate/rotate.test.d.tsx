@@ -1,5 +1,5 @@
 import { createRef } from 'react'
-import { expectError,expectType } from 'tsd'
+import { expectError, expectType } from 'tsd'
 
 import { Rotate } from '../Rotate'
 

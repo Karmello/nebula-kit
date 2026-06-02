@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 
-import { Box, Image, Loader,Text } from 'lib/components'
+import { Box, Image, Loader, Text } from 'lib/components'
 
 import {
   AVATAR_SIZES_MAP,

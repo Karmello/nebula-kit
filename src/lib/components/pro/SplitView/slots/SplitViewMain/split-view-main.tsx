@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import { Box, Flex, IconButton,Spacer } from 'lib/components'
+import { Box, Flex, IconButton, Spacer } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 
