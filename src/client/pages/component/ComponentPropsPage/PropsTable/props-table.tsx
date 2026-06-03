@@ -5,13 +5,14 @@ import { ComponentMeta } from 'client/definitions'
 
 type Props = {
   data: ComponentMeta<Record<string, object>>['props']
+  category: string
 }
 
 const MIN_OPTIONS_FOR_TOOLTIP = 5
 const VISIBLE_OPTIONS_COUNT = 3
 const UNGROUPED_GROUP_NAME = 'Other'
 
-export const PropsTable = ({ data }: Props) => {
+export const PropsTable = ({ data, category }: Props) => {
   if (!data) return null
 
   const groups = Object.entries(data).reduce<Record<string, typeof data>>((acc, [name, prop]) => {
@@ -27,7 +28,7 @@ export const PropsTable = ({ data }: Props) => {
   }, {})
 
   const renderTable = (props: typeof data) => (
-    <Table color="blue" intent="neutral" paddingBlock="2xs" paddingInline="xs">
+    <Table color="blue" intent="neutral" paddingBlock="xs" paddingInline="sm">
       <Table.Header>
         <Table.HeaderRow>
           <Table.HeaderCell>Name</Table.HeaderCell>
@@ -122,6 +123,12 @@ export const PropsTable = ({ data }: Props) => {
 
   return (
     <>
+      {category ? (
+        <>
+          <Text typography="h5">{category}</Text>
+          <Spacer blockSize="xs" />
+        </>
+      ) : null}
       <Tabs defaultValue={entries[0][0]} inlineSize="100%">
         {entries.map(([groupName]) => (
           <Tabs.Tab key={groupName} value={groupName}>

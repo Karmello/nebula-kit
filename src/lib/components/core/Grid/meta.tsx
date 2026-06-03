@@ -13,6 +13,8 @@ import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { Box } from '../Box'
 import { BOX_META } from '../Box/meta'
 
+const GRID_GROUP_NAME = 'CSS Grid'
+
 export const GRID_META = {
   Grid: {
     overview: {
@@ -29,70 +31,80 @@ export const GRID_META = {
       slots: ['Grid.Item'],
     },
     props: {
-      children: {
-        ...BOX_META.Box.props.children,
-        isRequired: true,
-        description: 'Grid.Item or any React node.',
-      },
-      columnGap: {
-        options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
-        isResponsive: true,
-        description: 'Sets the spacing between grid columns.',
-        link: true,
-      },
-      gap: {
-        options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
-        isResponsive: true,
-        description: 'Sets the spacing between rows and columns in the grid.',
-        link: true,
-      },
-      gridAutoColumns: {
-        options: [DOCS_CSS_LABEL],
-        isResponsive: true,
-        description: 'Defines the size of columns that are created automatically.',
-        link: true,
-      },
-      gridAutoFlow: {
-        options: CSS_GRID_AUTO_FLOW,
-        isResponsive: true,
-        description: 'Controls how items are automatically placed into the grid.',
-        link: true,
-      },
-      gridAutoRows: {
-        options: [DOCS_CSS_LABEL],
-        isResponsive: true,
-        description: 'Defines the size of rows that are created automatically.',
-        link: true,
-      },
       gridTemplateColumns: {
+        group: GRID_GROUP_NAME,
         options: [DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Defines the column structure of the grid.',
         link: true,
       },
       gridTemplateRows: {
+        group: GRID_GROUP_NAME,
         options: [DOCS_CSS_LABEL],
         isResponsive: true,
         description: "Sets how the grid's rows are laid out.",
         link: true,
       },
+      gridAutoColumns: {
+        group: GRID_GROUP_NAME,
+        options: [DOCS_CSS_LABEL],
+        isResponsive: true,
+        description: 'Defines the size of columns that are created automatically.',
+        link: true,
+      },
+      gridAutoRows: {
+        group: GRID_GROUP_NAME,
+        options: [DOCS_CSS_LABEL],
+        isResponsive: true,
+        description: 'Defines the size of rows that are created automatically.',
+        link: true,
+      },
+      gridAutoFlow: {
+        group: GRID_GROUP_NAME,
+        options: CSS_GRID_AUTO_FLOW,
+        isResponsive: true,
+        description: 'Controls how items are automatically placed into the grid.',
+        link: true,
+      },
       placeContent: {
+        group: GRID_GROUP_NAME,
         options: CSS_GRID_PLACE_CONTENT,
         isResponsive: true,
         description: 'Controls how the grid as a whole is aligned within the container.',
         link: true,
       },
       placeItems: {
+        group: GRID_GROUP_NAME,
         options: CSS_GRID_PLACE_ITEMS,
         isResponsive: true,
         description: 'Controls how grid items are aligned within their cells.',
         link: true,
       },
+      gap: {
+        group: GRID_GROUP_NAME,
+        options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
+        isResponsive: true,
+        description: 'Sets the spacing between rows and columns in the grid.',
+        link: true,
+      },
       rowGap: {
+        group: GRID_GROUP_NAME,
         options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Sets the spacing between grid rows.',
         link: true,
+      },
+      columnGap: {
+        group: GRID_GROUP_NAME,
+        options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
+        isResponsive: true,
+        description: 'Sets the spacing between grid columns.',
+        link: true,
+      },
+      children: {
+        ...BOX_META.Box.props.children,
+        isRequired: true,
+        description: 'Grid.Item or any React node.',
       },
       tag: BOX_META.Box.props.tag,
       tagAttrs: BOX_META.Box.props.tagAttrs,
@@ -128,7 +140,29 @@ export const GRID_META = {
       composedOf: ['Box'],
     },
     props: {
+      gridColumn: {
+        group: GRID_GROUP_NAME,
+        options: [DOCS_CSS_LABEL],
+        isResponsive: true,
+        description: "Sets the item's horizontal position or span between grid columns.",
+        link: true,
+      },
+      gridRow: {
+        group: GRID_GROUP_NAME,
+        options: [DOCS_CSS_LABEL],
+        isResponsive: true,
+        description: "Sets the item's vertical position or span between grid rows.",
+        link: true,
+      },
+      justifySelf: {
+        group: GRID_GROUP_NAME,
+        options: CSS_GRID_ITEM_JUSTIFY_SELF,
+        isResponsive: true,
+        description: 'Controls horizontal alignment of the item within its grid cell.',
+        link: true,
+      },
       alignSelf: {
+        group: GRID_GROUP_NAME,
         options: CSS_GRID_ITEM_ALIGN_SELF,
         isResponsive: true,
         description: 'Controls vertical alignment of the item within its grid cell.',
@@ -137,24 +171,6 @@ export const GRID_META = {
       children: {
         ...BOX_META.Box.props.children,
         isRequired: true,
-      },
-      gridColumn: {
-        options: [DOCS_CSS_LABEL],
-        isResponsive: true,
-        description: "Sets the item's horizontal position or span between grid columns.",
-        link: true,
-      },
-      gridRow: {
-        options: [DOCS_CSS_LABEL],
-        isResponsive: true,
-        description: "Sets the item's vertical position or span between grid rows.",
-        link: true,
-      },
-      justifySelf: {
-        options: CSS_GRID_ITEM_JUSTIFY_SELF,
-        isResponsive: true,
-        description: 'Controls horizontal alignment of the item within its grid cell.',
-        link: true,
       },
       tag: BOX_META.Box.props.tag,
       tagAttrs: BOX_META.Box.props.tagAttrs,
