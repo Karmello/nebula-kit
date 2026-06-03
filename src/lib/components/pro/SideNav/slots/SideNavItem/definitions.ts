@@ -16,7 +16,6 @@ type PropsFromButton = Pick<
   | 'align'
   | 'elevated'
   | 'selected'
-  | 'description'
 > & {
   children: ButtonProps<'a'>['children']
   variant?: RespValue<SideNavVariant>

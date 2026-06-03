@@ -1,13 +1,15 @@
-import { BUTTON_TAGS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { BUTTON_TAGS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE, PROP_GROUPS } from 'lib/constants'
 import { Button, ButtonProps, Flex } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
+import { ICON_META } from '../Icon/meta'
 import { TEXT_META } from '../Text/meta'
-import { WITH_ICON_META } from '../WithIcon/meta'
 import {
   BUTTON_ALIGNS,
+  BUTTON_ICON_PLACEMENTS,
   DEFAULT_BUTTON_ALIGN,
+  DEFAULT_BUTTON_ICON_PLACEMENT,
   DEFAULT_BUTTON_INTENT,
   DEFAULT_BUTTON_RIPPLE,
   DEFAULT_BUTTON_VARIANT,
@@ -24,67 +26,74 @@ export const BUTTON_META = {
         'supports first-class icon composition, including custom SVG icons',
         'supports full-width layout to span the entire container',
       ],
-      composedOf: ['Box', 'Text', 'Loader', 'WithIcon', 'Flex'],
+      composedOf: ['Flex', 'Text', 'Icon', 'Loader'],
       topLevelTags: BUTTON_TAGS,
     },
     props: {
-      align: {
-        options: BUTTON_ALIGNS,
-        defaultValue: String(DEFAULT_BUTTON_ALIGN),
-        isResponsive: true,
-        description: 'Controls how inner content is arranged within the container.',
-      },
-      bold: TEXT_META.Text.props.bold,
-      children: {
-        ...BOX_META.Box.props.children,
-        isRequired: true,
-        description: 'Label rendered.',
+      elevated: BOX_META.Box.props.elevated,
+      selected: {
+        group: PROP_GROUPS.SURFACE,
+        options: ['boolean'],
+        description: 'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
       },
       color: BOX_META.Box.props.color,
-      customSvgIcon: WITH_ICON_META.WithIcon.props.customSvgIcon,
-      description: {
-        options: ['string'],
-        description: 'Secondary text displayed below the main label. Works with xl size only.',
+      variant: {
+        ...BOX_META.Box.props.variant,
+        defaultValue: String(DEFAULT_BUTTON_VARIANT),
       },
-      disabled: BOX_META.Box.props.disabled,
-      elevated: BOX_META.Box.props.elevated,
-      fullWidth: {
-        options: ['boolean'],
-        isResponsive: true,
-        description: 'Expands the button to match the full width of its container.',
-      },
-      iconAngle: WITH_ICON_META.WithIcon.props.iconAngle,
-      iconName: WITH_ICON_META.WithIcon.props.iconName,
-      iconPlacement: WITH_ICON_META.WithIcon.props.iconPlacement,
-      inlineSize: BOX_META.Box.props.inlineSize,
       intent: {
         ...BOX_META.Box.props.intent,
         defaultValue: String(DEFAULT_BUTTON_INTENT),
       },
       loading: {
+        group: PROP_GROUPS.INTERACTION,
         options: ['boolean'],
         description: 'Activates the loading state, shows a spinner and prevents interaction.',
       },
-      maxInlineSize: BOX_META.Box.props.maxInlineSize,
-      minInlineSize: BOX_META.Box.props.minInlineSize,
-      onClick: {
-        options: ['e => void'],
-        description: 'Click event handler for the button element.',
-      },
+      disabled: BOX_META.Box.props.disabled,
       ripple: {
-        options: ['boolean'],
+        ...BOX_META.Box.props.ripple,
         defaultValue: String(DEFAULT_BUTTON_RIPPLE),
-        description: 'Toggles the ripple effect on pointer interaction.',
       },
-      selected: {
-        options: ['boolean'],
-        description: 'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
+      align: {
+        group: PROP_GROUPS.LAYOUT,
+        options: BUTTON_ALIGNS,
+        defaultValue: String(DEFAULT_BUTTON_ALIGN),
+        isResponsive: true,
+        description: 'Controls how inner content is arranged within the container.',
       },
       size: {
+        group: PROP_GROUPS.SIZE,
         options: CONTROL_SIZES,
         defaultValue: DEFAULT_CONTROL_SIZE,
         description:
           'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
+      },
+      fullWidth: {
+        group: PROP_GROUPS.SIZE,
+        options: ['boolean'],
+        isResponsive: true,
+        description: 'Expands the button to match the full width of its container.',
+      },
+      inlineSize: BOX_META.Box.props.inlineSize,
+      minInlineSize: BOX_META.Box.props.minInlineSize,
+      maxInlineSize: BOX_META.Box.props.maxInlineSize,
+      bold: TEXT_META.Text.props.bold,
+      iconName: ICON_META.Icon.props.name,
+      customSvgIcon: {
+        ...ICON_META.Icon.props.children,
+        group: PROP_GROUPS.ICON,
+      },
+      iconPlacement: {
+        group: PROP_GROUPS.ICON,
+        options: BUTTON_ICON_PLACEMENTS,
+        defaultValue: DEFAULT_BUTTON_ICON_PLACEMENT,
+        description: 'Icon placement relative to label.',
+      },
+      children: {
+        ...BOX_META.Box.props.children,
+        isRequired: true,
+        description: 'Label rendered.',
       },
       tag: {
         ...BOX_META.Box.props.tag,
@@ -93,9 +102,10 @@ export const BUTTON_META = {
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
-      variant: {
-        ...BOX_META.Box.props.variant,
-        defaultValue: String(DEFAULT_BUTTON_VARIANT),
+      onClick: {
+        group: PROP_GROUPS.ROOT,
+        options: ['e => void'],
+        description: 'Click event handler for the button element.',
       },
     },
     examples: [
@@ -143,14 +153,6 @@ export const BUTTON_META = {
         description: 'Button in loading state.',
         jsx: <Button loading>Loading</Button>,
       },
-      {
-        description: 'Extra large button with description.',
-        jsx: (
-          <Button description="Description text." size="xl" bold>
-            Extra large button
-          </Button>
-        ),
-      },
     ],
     changelog: {
       '0.10.0': ['removed `justifyContent` prop', 'removed `textAlign` prop', 'added `align` prop'],
@@ -160,5 +162,5 @@ export const BUTTON_META = {
       '0.4.0': ['added `onClick` prop'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<ButtonProps>,
+  } satisfies ComponentMeta<ButtonProps>,
 }

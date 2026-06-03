@@ -21,7 +21,6 @@ export const SideNavItem = ({
   align,
   elevated,
   selected,
-  description,
   // Link
   href,
   onClick,
@@ -54,7 +53,6 @@ export const SideNavItem = ({
         align={align}
         elevated={elevated}
         selected={selected}
-        description={description}
       >
         {children}
       </Button>

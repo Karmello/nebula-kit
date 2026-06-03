@@ -50,7 +50,7 @@ export const WebsiteMapDialog = () => {
         <Flex flexDirection="column" alignItems="stretch" rowGap="2xs">
           <Button
             {...commonButtonProps}
-            description="Recommended composition and architectural patterns."
+            // description="Recommended composition and architectural patterns."
             customSvgIcon={<Icon {...commonIconProps} name="pyramid" />}
             onClick={() => handleClick(PageKey.patterns)}
           >
@@ -58,7 +58,7 @@ export const WebsiteMapDialog = () => {
           </Button>
           <Button
             {...commonButtonProps}
-            description="Interactive environment for testing components and props in isolation."
+            // description="Interactive environment for testing components and props in isolation."
             customSvgIcon={<Icon {...commonIconProps} name="flask-conical" />}
             onClick={() => handleClick(PageKey.playground)}
           >
@@ -66,7 +66,7 @@ export const WebsiteMapDialog = () => {
           </Button>
           <Button
             {...commonButtonProps}
-            description="Explanations of NebulaKit concepts, styling and architecture."
+            // description="Explanations of NebulaKit concepts, styling and architecture."
             customSvgIcon={<Icon {...commonIconProps} name="book-open-text" />}
             onClick={() => handleClick(PageKey.foundations)}
           >
@@ -74,7 +74,7 @@ export const WebsiteMapDialog = () => {
           </Button>
           <Button
             {...commonButtonProps}
-            description="Documentation for Core and Pro components."
+            // description="Documentation for Core and Pro components."
             customSvgIcon={<Icon {...commonIconProps} name="package" />}
             onClick={() => handleClick(PageKey.components)}
           >
@@ -82,7 +82,7 @@ export const WebsiteMapDialog = () => {
           </Button>
           <Button
             {...commonButtonProps}
-            description="Answers to common questions about the system."
+            // description="Answers to common questions about the system."
             customSvgIcon={<Icon {...commonIconProps} name="message-circle-question-mark" />}
             onClick={() => handleClick(PageKey.faq)}
           >
@@ -90,7 +90,7 @@ export const WebsiteMapDialog = () => {
           </Button>
           <Button
             {...commonButtonProps}
-            description="Articles, thoughts and deeper technical discussions."
+            // description="Articles, thoughts and deeper technical discussions."
             customSvgIcon={<Icon {...commonIconProps} name="rss" />}
             onClick={() => handleClick(PageKey.blog)}
           >
@@ -98,7 +98,7 @@ export const WebsiteMapDialog = () => {
           </Button>
           <Button
             {...commonButtonProps}
-            description="Subscription plans and bundle information."
+            // description="Subscription plans and bundle information."
             customSvgIcon={<Icon {...commonIconProps} name="credit-card" />}
             onClick={() => handleClick(PageKey.pricing)}
           >
@@ -106,7 +106,7 @@ export const WebsiteMapDialog = () => {
           </Button>
           <Button
             {...commonButtonProps}
-            description="Ideas, suggestions and user feedback."
+            // description="Ideas, suggestions and user feedback."
             customSvgIcon={<Icon {...commonIconProps} name="mail" />}
             onClick={() => handleClick(PageKey.feedback)}
           >
@@ -114,7 +114,7 @@ export const WebsiteMapDialog = () => {
           </Button>
           <Button
             {...commonButtonProps}
-            description="AI-powered helper for understanding NebulaKit concepts."
+            // description="AI-powered helper for understanding NebulaKit concepts."
             customSvgIcon={<Icon {...commonIconProps} name="sparkles" />}
             onClick={() => handleClick(PageKey.assistant)}
           >

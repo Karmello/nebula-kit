@@ -96,7 +96,7 @@ export const PatternsPage = () => {
                             navigateTo(href)
                           }}
                           selected={pattern.id === id}
-                          description={category}
+                          // description={category}
                           bold
                           align="start"
                         >

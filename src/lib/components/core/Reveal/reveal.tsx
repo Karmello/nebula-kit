@@ -50,7 +50,6 @@ export const Reveal = <T extends RevealTag = 'div'>({
           tagAttrs={{
             style: { borderRadius: 0 },
           }}
-          iconAngle={open ? 180 : 0}
           ripple={!open}
           bold
           selected={open}

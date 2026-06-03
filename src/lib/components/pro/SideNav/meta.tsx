@@ -179,7 +179,6 @@ export const SIDE_NAV_META = {
       },
       color: BUTTON_META.Button.props.color,
       customSvgIcon: BUTTON_META.Button.props.customSvgIcon,
-      description: BUTTON_META.Button.props.description,
       elevated: BUTTON_META.Button.props.elevated,
       href: LINK_META.Link.props.href,
       iconName: BUTTON_META.Button.props.iconName,

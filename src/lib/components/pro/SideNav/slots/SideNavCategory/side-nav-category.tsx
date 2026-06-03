@@ -83,7 +83,6 @@ export const SideNavCategory = ({
                   'aria-expanded': expandedCategories[id],
                 }}
                 iconName="chevron-right"
-                iconAngle={expandedCategories[id] ? 90 : 0}
                 variant={variant || rootVariant}
                 color={color || rootColor}
                 intent={intent || rootIntent}

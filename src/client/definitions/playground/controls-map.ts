@@ -16,7 +16,6 @@ export const PLAYGROUND_CONTROLS_MAP: Record<PlaygroundProp, { type: 'array' | '
   clampLines: { type: 'string' },
   color: { type: 'array' },
   content: { type: 'string' },
-  description: { type: 'string' },
   disabled: { type: 'boolean' },
   drawable: { type: 'boolean' },
   elevated: { type: 'boolean' },
