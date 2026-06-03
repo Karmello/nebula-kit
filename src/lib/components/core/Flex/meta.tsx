@@ -91,7 +91,6 @@ export const FLEX_META = {
       children: {
         group: FLEX_BOX_GROUP_NAME,
         ...BOX_META.Box.props.children,
-        isRequired: true,
         description: 'Flex.Item or any React node.',
       },
       display: {

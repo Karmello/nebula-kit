@@ -1,14 +1,12 @@
-import { ComponentProps, ComponentRef, PropsWithoutRef, RefObject } from 'react'
+import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, RefObject } from 'react'
 
-import { ACTION_SURFACE_TAGS } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { Box } from 'lib/index.core'
-import { ActionSurfaceTag } from 'lib/types'
 
 import { useDropdownListContext } from '../../providers'
 import { DEFAULT_DROPDOWN_LIST_TRIGGER_VARIANT, DropdownListTriggerProps } from './definitions'
 
-export const DropdownListTrigger = <T extends ActionSurfaceTag = (typeof ACTION_SURFACE_TAGS)[0]>({
+export const DropdownListTrigger = <T extends ElementType = 'div'>({
   children,
   variant = DEFAULT_DROPDOWN_LIST_TRIGGER_VARIANT,
   ...rest

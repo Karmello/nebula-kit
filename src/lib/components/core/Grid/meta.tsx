@@ -4,7 +4,6 @@ import {
   CSS_GRID_ITEM_JUSTIFY_SELF,
   CSS_GRID_PLACE_CONTENT,
   CSS_GRID_PLACE_ITEMS,
-  GRID_TAGS,
   TSHIRT_SIZES,
 } from 'lib/constants'
 import { Grid, GridItemProps, GridProps } from 'lib/index.core'
@@ -27,7 +26,6 @@ export const GRID_META = {
         'manages spacing between items with gap properties',
       ],
       composedOf: ['Box'],
-      topLevelTags: GRID_TAGS,
       slots: ['Grid.Item'],
     },
     props: {
@@ -101,14 +99,11 @@ export const GRID_META = {
         description: 'Sets the spacing between grid columns.',
         link: true,
       },
+      ...BOX_META.Box.props,
       children: {
         ...BOX_META.Box.props.children,
-        isRequired: true,
         description: 'Grid.Item or any React node.',
       },
-      tag: BOX_META.Box.props.tag,
-      tagAttrs: BOX_META.Box.props.tagAttrs,
-      tagRef: BOX_META.Box.props.tagRef,
     },
     examples: [
       {
@@ -168,13 +163,7 @@ export const GRID_META = {
         description: 'Controls vertical alignment of the item within its grid cell.',
         link: true,
       },
-      children: {
-        ...BOX_META.Box.props.children,
-        isRequired: true,
-      },
-      tag: BOX_META.Box.props.tag,
-      tagAttrs: BOX_META.Box.props.tagAttrs,
-      tagRef: BOX_META.Box.props.tagRef,
+      ...BOX_META.Box.props,
     },
     examples: [
       {

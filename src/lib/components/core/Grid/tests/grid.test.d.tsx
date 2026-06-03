@@ -9,7 +9,7 @@ import { Grid } from '..'
 // children
 // -------------------------------------
 
-expectError(<Grid />)
+expectType(<Grid />)
 
 expectType(
   <Grid>
@@ -70,17 +70,13 @@ expectType(
   </Grid>
 )
 
-// -------------------------------------
-// invalid tags
-// -------------------------------------
-
-expectError(
+expectType(
   <Grid tag="span">
     <Box />
   </Grid>
 )
 
-expectError(
+expectType(
   <Grid tag="button">
     <Box />
   </Grid>
@@ -236,28 +232,28 @@ expectError(
 )
 
 // -------------------------------------
-// props intentionally NOT exposed from Box
+// props intentionally exposed from Box
 // -------------------------------------
 
-expectError(
+expectType(
   <Grid blockSize="5px">
     <Box />
   </Grid>
 )
 
-expectError(
+expectType(
   <Grid margin="5px">
     <Box />
   </Grid>
 )
 
-expectError(
+expectType(
   <Grid padding="5px">
     <Box />
   </Grid>
 )
 
-expectError(
+expectType(
   <Grid variant="solid">
     <Box />
   </Grid>
@@ -320,10 +316,10 @@ expectType(
 )
 
 // -------------------------------------
-// Grid.Item invalid props
+// Grid.Item props
 // -------------------------------------
 
-expectError(
+expectType(
   <Grid>
     <Grid.Item margin="5px">
       <Box />
@@ -331,7 +327,7 @@ expectError(
   </Grid>
 )
 
-expectError(
+expectType(
   <Grid>
     <Grid.Item padding="5px">
       <Box />

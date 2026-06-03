@@ -9,23 +9,21 @@ import { syncRespStyle } from 'lib/internals/dom'
 import './grid-item.scss'
 
 export const GridItem = <T extends ElementType = 'div'>({
-  // Box
-  children,
-  tag,
-  tagAttrs,
-  tagRef,
   // own
   gridColumn,
   gridRow,
   justifySelf,
   alignSelf,
+  // Box
+  ...boxProps
 }: GridItemProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
+  const finalRef = boxProps.tagRef || ref
 
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    syncRespStyle('Grid.Item', tagRef || ref, bp, {
+    syncRespStyle('Grid.Item', finalRef, bp, {
       gridColumn,
       gridRow,
       justifySelf,
@@ -35,16 +33,16 @@ export const GridItem = <T extends ElementType = 'div'>({
 
   return (
     <Box
-      tag={tag}
+      {...boxProps}
       tagAttrs={
         {
-          ...tagAttrs,
-          className: classNames(withPrefix('grid-item'), tagAttrs?.className),
+          ...boxProps.tagAttrs,
+          className: classNames(withPrefix('grid-item'), boxProps.tagAttrs?.className),
         } as PropsWithoutRef<ComponentProps<T>>
       }
-      tagRef={tagRef || ref}
+      tagRef={finalRef}
     >
-      {children}
+      {boxProps.children}
     </Box>
   )
 }

@@ -1,4 +1,4 @@
-import { useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { UIEvent, useLayoutEffect, useMemo, useRef, useState } from 'react'
 
 import { Box } from 'lib/index.core'
 import { VirtualListProps } from 'lib/index.pro'
@@ -105,7 +105,7 @@ export const VirtualList = <T,>({
       tagRef={resolvedRef}
       tagAttrs={{
         ...tagAttrs,
-        onScroll: e => {
+        onScroll: (e: UIEvent<HTMLDivElement, globalThis.UIEvent>) => {
           const next = e.currentTarget.scrollTop
           setScrollTop(next)
           tagAttrs?.onScroll?.(e)

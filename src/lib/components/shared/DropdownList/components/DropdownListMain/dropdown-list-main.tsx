@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from 'react'
+import { KeyboardEvent, useEffect, useLayoutEffect } from 'react'
 
 import { useOutsideClick } from 'lib/hooks'
 import { Box, BoxProps } from 'lib/index.core'
@@ -70,7 +70,7 @@ export const DropdownListMain = ({
         ...tagAttrs,
         style: { minInlineSize: '0px', ...tagAttrs?.style },
         role: 'listbox',
-        onKeyDown: e => {
+        onKeyDown: (e: KeyboardEvent<HTMLElement>) => {
           if (e.key === 'Escape' || e.key === 'Tab') {
             e.stopPropagation()
             setResizeVisible(false)

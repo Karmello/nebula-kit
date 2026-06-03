@@ -1,7 +1,7 @@
 import { createRef } from 'react'
 import { expectError, expectType } from 'tsd'
 
-import { AppFrame } from '../'
+import { AppFrame } from './'
 
 // children required
 expectError(<AppFrame />)
