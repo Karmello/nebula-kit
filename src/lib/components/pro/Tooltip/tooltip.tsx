@@ -72,10 +72,8 @@ export const Tooltip = ({
         tag="span"
         display="inline-block"
         tagRef={triggerRef}
-        tagAttrs={{
-          ...getReferenceProps(),
-          style: { cursor: mode === 'click' ? 'pointer' : undefined },
-        }}
+        tagAttrs={getReferenceProps()}
+        cursor={mode === 'click' ? 'pointer' : undefined}
       >
         {children}
       </Box>

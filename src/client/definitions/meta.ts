@@ -26,6 +26,7 @@ export type Prop = {
   isResponsive?: boolean
   description?: string
   link?: boolean
+  group?: string
 }
 
 type Example = {

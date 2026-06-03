@@ -40,14 +40,14 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   activeOnFocus?: boolean
   cursor?: CssCursor
   hidden?: RespValue<boolean>
-  // css
+  pointerEvents?: CssPointerEvents
+  // appearance
   opacity?: RespValue<string>
   visibility?: RespValue<CssVisibility>
   textAlign?: RespValue<CssTextAlign>
-  zIndex?: RespValue<number>
-  pointerEvents?: CssPointerEvents
   aspectRatio?: RespValue<string>
   transform?: RespValue<string>
+  zIndex?: RespValue<number>
   // border
   borderWidth?: RespValue<string>
   borderTopWidth?: RespValue<string>
@@ -60,12 +60,11 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   borderTopRightRadius?: RespValue<string>
   borderBottomRightRadius?: RespValue<string>
   borderBottomLeftRadius?: RespValue<string>
-  // display
+  // layout
   display?: RespValue<CssDisplay>
   overflow?: RespValue<CssOverflow>
   overflowX?: RespValue<CssOverflow>
   overflowY?: RespValue<CssOverflow>
-  // position
   position?: RespValue<CssPosition>
   inset?: RespValue<TShirtSize | CssValue>
   top?: RespValue<TShirtSize | CssValue>
