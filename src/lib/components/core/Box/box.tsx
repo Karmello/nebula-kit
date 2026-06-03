@@ -210,7 +210,7 @@ export const Box = <T extends ElementType = 'div'>({
           tagAttrs={
             {
               ...tagAttrs,
-              className: classNames(withPrefix('box'), usesRipple ? withPrefix('ripple') : '', tagAttrs?.className || ''),
+              className: classNames(withPrefix('box'), tagAttrs?.className || ''),
               style: { ...tagAttrs?.style, pointerEvents, cursor },
               disabled,
               ...buildStaticDataset('Box', {
@@ -220,6 +220,7 @@ export const Box = <T extends ElementType = 'div'>({
                 surface,
                 disabled,
                 activeOnFocus,
+                ripple: usesRipple,
               }),
             } as PropsWithoutRef<ComponentProps<T>>
           }

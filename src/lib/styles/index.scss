@@ -3,8 +3,6 @@
 @use './engine/_index' as *;
 @use './tokens/_index' as *;
 
-@use '../components/core/Box/useRipple/use-ripple.scss';
-
 html {
   font-family:
     system-ui,

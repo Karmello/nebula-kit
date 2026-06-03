@@ -2,6 +2,7 @@
 @use './outline.scss';
 @use './soft-outline.scss';
 @use './ghost.scss';
+@use '../useRipple/use-ripple.scss';
 
 .neb-box {
   background-color: transparent;
