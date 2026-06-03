@@ -13,18 +13,24 @@ export const PatternsPage = () => {
   const { patternCategories, setPatternCategories, activePatternId, setActivePatternId } = usePatternsStore()
 
   const patternIdParam = new URLSearchParams(search).get('id')
-  const pattern = PATTERNS.find(p => p.id === patternIdParam)
+  const queryPattern = PATTERNS.find(p => p.id === patternIdParam)
+  const activePattern = PATTERNS.find(p => p.id === activePatternId)
 
   useLayoutEffect(() => {
-    if (pattern) {
-      setActivePatternId(pattern.id)
+    if (queryPattern) {
+      setActivePatternId(queryPattern.id)
     }
-  }, [pattern])
+  }, [queryPattern])
 
-  if (!pattern) {
-    return <Navigate replace to={{ pathname, search: `?id=${activePatternId}` }} />
+  if (!queryPattern) {
+    if (activePattern) {
+      return <Navigate replace to={{ pathname, search: `?id=${activePatternId}` }} />
+    } else {
+      return <Navigate replace to={{ pathname, search: `?id=${PATTERNS[0].id}` }} />
+    }
   }
 
+  const pattern = queryPattern || activePattern
   const Component = pattern.component
 
   return (

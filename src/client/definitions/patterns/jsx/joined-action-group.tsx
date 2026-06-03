@@ -1,6 +1,6 @@
-import { Flex, FlexItemProps, Text } from 'lib/components'
+import { Flex, FlexItemProps, Text } from '@nebula-kit/core'
 
-export const Test = () => {
+export const JoinedActionGroup = () => {
   const flexItemProps: FlexItemProps<'button'> = {
     tag: 'button',
     cursor: 'pointer',

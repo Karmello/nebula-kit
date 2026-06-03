@@ -1,4 +1,4 @@
-import { Box, Text } from 'lib/components'
+import { Box, Text } from '@nebula-kit/core'
 
 export const DrawableSurface = () => {
   return (

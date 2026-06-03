@@ -14,6 +14,8 @@ import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { Box } from '../Box'
 import { BOX_META } from '../Box/meta'
 
+const FLEX_BOX_GROUP_NAME = 'Flexbox'
+
 export const FLEX_META = {
   Flex: {
     overview: {
@@ -29,69 +31,76 @@ export const FLEX_META = {
       slots: ['Flex.Item'],
     },
     props: {
-      ...BOX_META.Box.props,
-      alignContent: {
-        options: CSS_FLEX_ALIGN_CONTENT,
-        isResponsive: true,
-        description: 'Aligns rows of items along the cross axis when wrapping is enabled.',
-        link: true,
-      },
-      alignItems: {
-        options: CSS_FLEX_ALIGN_ITEMS,
-        isResponsive: true,
-        description: 'Aligns items within each row along the cross axis.',
-        link: true,
-      },
-      children: {
-        ...BOX_META.Box.props.children,
-        isRequired: true,
-        description: 'Flex.Item or any React node.',
-      },
-      columnGap: {
-        options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
-        isResponsive: true,
-        description: 'Defines horizontal spacing between columns of children.',
-        link: true,
-      },
-      display: {
-        options: CSS_FLEX_DISPLAY,
-        isResponsive: true,
-        description: 'Switches between block and inline behavior.',
-        link: true,
-      },
       flexDirection: {
+        group: FLEX_BOX_GROUP_NAME,
         options: CSS_FLEX_DIRECTION,
         isResponsive: true,
         description: 'Sets the flow of children along the main axis.',
         link: true,
       },
       flexWrap: {
+        group: FLEX_BOX_GROUP_NAME,
         options: CSS_FLEX_WRAP,
         isResponsive: true,
         description: 'Controls whether children stay on one line or wrap onto multiple lines.',
         link: true,
       },
-      gap: {
-        options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
-        isResponsive: true,
-        description: 'Defines spacing between children on both axes.',
-        link: true,
-      },
       justifyContent: {
+        group: FLEX_BOX_GROUP_NAME,
         options: CSS_FLEX_JUSTIFY_CONTENT,
         isResponsive: true,
         description: 'Distributes children along the main axis.',
         link: true,
       },
+      alignItems: {
+        group: FLEX_BOX_GROUP_NAME,
+        options: CSS_FLEX_ALIGN_ITEMS,
+        isResponsive: true,
+        description: 'Aligns items within each row along the cross axis.',
+        link: true,
+      },
+      alignContent: {
+        group: FLEX_BOX_GROUP_NAME,
+        options: CSS_FLEX_ALIGN_CONTENT,
+        isResponsive: true,
+        description: 'Aligns rows of items along the cross axis when wrapping is enabled.',
+        link: true,
+      },
+      gap: {
+        group: FLEX_BOX_GROUP_NAME,
+        options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
+        isResponsive: true,
+        description: 'Defines spacing between children on both axes.',
+        link: true,
+      },
       rowGap: {
+        group: FLEX_BOX_GROUP_NAME,
         options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Defines vertical spacing between rows of children.',
         link: true,
       },
-      tag: BOX_META.Box.props.tag,
-      tagAttrs: BOX_META.Box.props.tagAttrs,
-      tagRef: BOX_META.Box.props.tagRef,
+      columnGap: {
+        group: FLEX_BOX_GROUP_NAME,
+        options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
+        isResponsive: true,
+        description: 'Defines horizontal spacing between columns of children.',
+        link: true,
+      },
+      ...BOX_META.Box.props,
+      children: {
+        group: FLEX_BOX_GROUP_NAME,
+        ...BOX_META.Box.props.children,
+        isRequired: true,
+        description: 'Flex.Item or any React node.',
+      },
+      display: {
+        group: FLEX_BOX_GROUP_NAME,
+        options: CSS_FLEX_DISPLAY,
+        isResponsive: true,
+        description: 'Switches between block and inline behavior.',
+        link: true,
+      },
     },
     examples: [
       {

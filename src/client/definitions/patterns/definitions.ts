@@ -1,6 +1,6 @@
 import { ComponentType } from 'react'
 
-export const PATTERN_CATEGORIES = ['Basic', 'Layout', 'Cards', 'Forms'] as const
+export const PATTERN_CATEGORIES = ['Basic', 'Layout', 'Cards', 'Forms', 'Actions'] as const
 
 export type PatternCategory = (typeof PATTERN_CATEGORIES)[number]
 

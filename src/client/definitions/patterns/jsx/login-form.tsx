@@ -1,4 +1,5 @@
-import { Box, Form, Input, PasswordInput, Section } from 'lib/components'
+import { Box, Input, Section } from '@nebula-kit/core'
+import { Form, PasswordInput } from '@nebula-kit/pro'
 
 export const LoginForm = () => {
   return (

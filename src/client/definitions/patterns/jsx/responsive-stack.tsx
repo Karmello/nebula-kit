@@ -1,4 +1,4 @@
-import { Box, Flex } from 'lib/components'
+import { Box, Flex } from '@nebula-kit/core'
 
 export const ResponsiveStack = () => {
   return (

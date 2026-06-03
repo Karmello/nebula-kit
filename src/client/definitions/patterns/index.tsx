@@ -3,26 +3,16 @@ import { DrawableSurface } from './jsx/drawable-surface'
 import drawableSurfaceCode from './jsx/drawable-surface.tsx?raw'
 import { InteractiveCard } from './jsx/interactive-card'
 import interactiveCardCode from './jsx/interactive-card.tsx?raw'
+import { JoinedActionGroup } from './jsx/joined-action-group'
+import joinedActionGroupCode from './jsx/joined-action-group.tsx?raw'
 import { LoginForm } from './jsx/login-form'
 import loginFormCode from './jsx/login-form.tsx?raw'
 import { ResponsiveStack } from './jsx/responsive-stack'
 import responsiveStackCode from './jsx/responsive-stack.tsx?raw'
 import { StylingIsland } from './jsx/styling-island'
 import stylingIslandCode from './jsx/styling-island.tsx?raw'
-// jsx
-import { Test } from './jsx/test'
-// code
-import testCode from './jsx/test.tsx?raw'
 
 export const PATTERNS: Array<Pattern> = [
-  {
-    id: 'test',
-    category: 'Basic',
-    title: 'Test',
-    description: 'Just for testing.',
-    component: Test,
-    code: testCode,
-  },
   {
     id: 'drawable-surface',
     category: 'Basic',
@@ -63,6 +53,15 @@ export const PATTERNS: Array<Pattern> = [
     description: 'Simple login form composition.',
     component: LoginForm,
     code: loginFormCode,
+  },
+  {
+    id: 'joined-action-group',
+    category: 'Actions',
+    title: 'Joined action group',
+    description:
+      'Interactive items can be grouped into a joined surface with shared styling, tight spacing and authored per-item behavior.',
+    component: JoinedActionGroup,
+    code: joinedActionGroupCode,
   },
 ]
 

@@ -48,27 +48,6 @@ export const BOX_META = {
       ],
     },
     props: {
-      children: {
-        group: PropGroup.ROOT,
-        options: ['ReactNode'],
-        description: 'Content rendered.',
-      },
-      tag: {
-        group: PropGroup.ROOT,
-        options: ['HTML tag'],
-        defaultValue: 'div',
-        description: 'The HTML tag to be rendered as the container.',
-      },
-      tagAttrs: {
-        group: PropGroup.ROOT,
-        options: ['HTML tag attributes'],
-        description: 'Additional HTML attributes applied to the root tag.',
-      },
-      tagRef: {
-        group: PropGroup.ROOT,
-        options: ['RefObject'],
-        description: 'Reference to the root HTML tag.',
-      },
       drawable: {
         group: PropGroup.SURFACE,
         options: ['boolean'],
@@ -112,7 +91,6 @@ export const BOX_META = {
         isResponsive: true,
         description: "Color tone applied to the component's main color.",
       },
-
       interactive: {
         group: PropGroup.INTERACTION,
         options: ['boolean'],
@@ -156,7 +134,6 @@ export const BOX_META = {
         description: 'Controls whether the element can receive pointer interactions.',
         link: true,
       },
-
       opacity: {
         group: PropGroup.APPEARANCE,
         options: [DOCS_CSS_LABEL],
@@ -199,7 +176,6 @@ export const BOX_META = {
         description: 'Applies a CSS transform for positional adjustment.',
         link: true,
       },
-
       display: {
         group: PropGroup.LAYOUT,
         options: CSS_DISPLAY,
@@ -312,7 +288,6 @@ export const BOX_META = {
         description: 'Maximum logical width.',
         link: true,
       },
-
       padding: {
         group: PropGroup.PADDING,
         options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
@@ -412,7 +387,6 @@ export const BOX_META = {
         description: 'Margin for the left side.',
         link: true,
       },
-
       borderWidth: {
         group: PropGroup.BORDER,
         options: [DOCS_CSS_LABEL],
@@ -448,7 +422,6 @@ export const BOX_META = {
         description: 'Border width for the left side.',
         link: true,
       },
-
       borderRadius: {
         group: PropGroup.BORDER_RADIUS,
         options: [DOCS_CSS_LABEL],
@@ -483,6 +456,27 @@ export const BOX_META = {
         isResponsive: true,
         description: 'Border radius for the bottom left corner.',
         link: true,
+      },
+      children: {
+        group: PropGroup.ROOT,
+        options: ['ReactNode'],
+        description: 'Content rendered.',
+      },
+      tag: {
+        group: PropGroup.ROOT,
+        options: ['HTML tag'],
+        defaultValue: 'div',
+        description: 'The HTML tag to be rendered as the container.',
+      },
+      tagAttrs: {
+        group: PropGroup.ROOT,
+        options: ['HTML tag attributes'],
+        description: 'Additional HTML attributes applied to the root tag.',
+      },
+      tagRef: {
+        group: PropGroup.ROOT,
+        options: ['RefObject'],
+        description: 'Reference to the root HTML tag.',
       },
     },
     examples: [
