@@ -9,8 +9,8 @@ import { buildStaticDataset, syncRespDataset, syncRespStyle } from 'lib/internal
 import { useTransitionLifecycle } from 'lib/internals/motion'
 import { useResolveAppearance } from 'lib/internals/styling'
 
+import { useRipple } from './hooks'
 import { BoxProps } from './types'
-import { useRipple } from './useRipple'
 
 import './styles/box.scss'
 

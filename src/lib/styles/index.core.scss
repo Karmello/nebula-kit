@@ -5,7 +5,7 @@
 @use '../components/core/Box/styles/outline.scss';
 @use '../components/core/Box/styles/soft-outline.scss';
 @use '../components/core/Box/styles/solid.scss';
-@use '../components/core/Box/useRipple/use-ripple.scss';
+@use '../components/core/Box/hooks/useRipple/use-ripple.scss';
 
 @use '../components/core/AppFrame/app-frame.scss';
 @use '../components/core/AppFrame/slots/AppFrameHeader/app-frame-header.scss';
