@@ -11,7 +11,7 @@ import {
   DEFAULT_BUTTON_INTENT,
   DEFAULT_BUTTON_RIPPLE,
   DEFAULT_BUTTON_VARIANT,
-} from './definitions'
+} from './constants'
 
 export const BUTTON_META = {
   Button: {

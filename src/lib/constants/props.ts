@@ -12,3 +12,20 @@ export const COLORS = ['gray', 'green', 'blue', 'red', 'pink', 'amber'] as const
 export const BREAKPOINTS = ['base', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
 
 export const SWITCH_AT = [...BREAKPOINTS.filter(bp => bp !== 'base')] as const
+
+export enum PROP_GROUPS {
+  SURFACE = 'Surface',
+  INTERACTION = 'Interaction',
+  APPEARANCE = 'Appearance',
+  LAYOUT = 'Layout',
+  SIZE = 'Size',
+  PADDING = 'Padding',
+  MARGIN = 'Margin',
+  BORDER = 'Border',
+  BORDER_RADIUS = 'Border radius',
+  ROOT = 'Root',
+  FLEX_BOX = 'Flexbox',
+  GRID_LAYOUT = 'Grid layout',
+  IMAGE_RENDERING = 'Image rendering',
+  TYPOGRAPHY = 'Typography',
+}

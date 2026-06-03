@@ -1,7 +1,7 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useRef } from 'react'
 import classNames from 'classnames'
 
-import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE, ICON_BUTTON_TAGS } from 'lib/constants'
+import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { Box, IconButtonProps, Loader, WithIcon } from 'lib/index.core'
 import { IconButtonTag } from 'lib/types'
@@ -10,7 +10,7 @@ import { DEFAULT_ICON_BUTTON_INTENT, DEFAULT_ICON_BUTTON_RIPPLE, DEFAULT_ICON_BU
 
 import './icon-button.scss'
 
-export const IconButton = <T extends IconButtonTag = (typeof ICON_BUTTON_TAGS)[0]>({
+export const IconButton = <T extends IconButtonTag = 'button'>({
   tag = 'button' as T,
   tagAttrs,
   tagRef,

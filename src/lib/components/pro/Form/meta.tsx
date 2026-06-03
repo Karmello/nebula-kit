@@ -1,5 +1,5 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
-import { DEFAULT_BUTTON_INTENT } from 'lib/components/core/Button'
+import { DEFAULT_BUTTON_INTENT } from 'lib/components/core/Button/constants'
 import { BUTTON_META } from 'lib/components/core/Button/meta'
 import { FLEX_META } from 'lib/components/core/Flex/meta'
 import { TEXT_META } from 'lib/components/core/Text/meta'

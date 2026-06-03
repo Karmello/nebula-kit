@@ -8,7 +8,7 @@ import { Box, ButtonProps, Flex, Loader, Text, WithIcon } from 'lib/index.core'
 import { syncRespDataset } from 'lib/internals/dom'
 import { ButtonTag } from 'lib/types'
 
-import { DEFAULT_BUTTON_ALIGN, DEFAULT_BUTTON_INTENT, DEFAULT_BUTTON_RIPPLE, DEFAULT_BUTTON_VARIANT } from './definitions'
+import { DEFAULT_BUTTON_ALIGN, DEFAULT_BUTTON_INTENT, DEFAULT_BUTTON_RIPPLE, DEFAULT_BUTTON_VARIANT } from './constants'
 
 import './button.scss'
 

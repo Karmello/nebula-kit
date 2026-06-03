@@ -2,23 +2,16 @@ import classNames from 'classnames'
 
 import { TEXT_TYPOGRAPHY_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
+import { TextProps } from 'lib/index.core'
 import { buildStaticDataset } from 'lib/internals/dom'
 import { TextTag } from 'lib/types'
 
 import { Box } from '../Box'
-import { DEFAULT_TEXT_TYPOGRAPHY, TextProps } from './definitions'
+import { DEFAULT_TEXT_TYPOGRAPHY } from './constants'
 
 import './text.scss'
 
 export const Text = <T extends TextTag = 'p'>({
-  // Box
-  children,
-  tag,
-  tagAttrs,
-  tagRef,
-  color,
-  intent,
-  textAlign,
   // own
   typography = DEFAULT_TEXT_TYPOGRAPHY,
   fontSize,
@@ -31,6 +24,12 @@ export const Text = <T extends TextTag = 'p'>({
   truncate,
   clampLines,
   space,
+  // Box
+  children,
+  tag,
+  tagAttrs,
+  tagRef,
+  ...boxProps
 }: TextProps<T>) => {
   return (
     <Box
@@ -58,10 +57,8 @@ export const Text = <T extends TextTag = 'p'>({
       }}
       drawable
       variant="ghost"
-      intent={intent}
-      color={color}
-      textAlign={textAlign}
       interactive={tag === 'a'}
+      {...boxProps}
     >
       {space === 'start' || space === 'both' ? <> </> : null}
       {children}

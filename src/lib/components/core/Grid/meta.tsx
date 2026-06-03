@@ -4,6 +4,7 @@ import {
   CSS_GRID_ITEM_JUSTIFY_SELF,
   CSS_GRID_PLACE_CONTENT,
   CSS_GRID_PLACE_ITEMS,
+  PROP_GROUPS,
   TSHIRT_SIZES,
 } from 'lib/constants'
 import { Grid, GridItemProps, GridProps } from 'lib/index.core'
@@ -11,8 +12,6 @@ import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { Box } from '../Box'
 import { BOX_META } from '../Box/meta'
-
-const GRID_GROUP_NAME = 'CSS Grid'
 
 export const GRID_META = {
   Grid: {
@@ -30,70 +29,70 @@ export const GRID_META = {
     },
     props: {
       gridTemplateColumns: {
-        group: GRID_GROUP_NAME,
+        group: PROP_GROUPS.GRID_LAYOUT,
         options: [DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Defines the column structure of the grid.',
         link: true,
       },
       gridTemplateRows: {
-        group: GRID_GROUP_NAME,
+        group: PROP_GROUPS.GRID_LAYOUT,
         options: [DOCS_CSS_LABEL],
         isResponsive: true,
         description: "Sets how the grid's rows are laid out.",
         link: true,
       },
       gridAutoColumns: {
-        group: GRID_GROUP_NAME,
+        group: PROP_GROUPS.GRID_LAYOUT,
         options: [DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Defines the size of columns that are created automatically.',
         link: true,
       },
       gridAutoRows: {
-        group: GRID_GROUP_NAME,
+        group: PROP_GROUPS.GRID_LAYOUT,
         options: [DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Defines the size of rows that are created automatically.',
         link: true,
       },
       gridAutoFlow: {
-        group: GRID_GROUP_NAME,
+        group: PROP_GROUPS.GRID_LAYOUT,
         options: CSS_GRID_AUTO_FLOW,
         isResponsive: true,
         description: 'Controls how items are automatically placed into the grid.',
         link: true,
       },
       placeContent: {
-        group: GRID_GROUP_NAME,
+        group: PROP_GROUPS.GRID_LAYOUT,
         options: CSS_GRID_PLACE_CONTENT,
         isResponsive: true,
         description: 'Controls how the grid as a whole is aligned within the container.',
         link: true,
       },
       placeItems: {
-        group: GRID_GROUP_NAME,
+        group: PROP_GROUPS.GRID_LAYOUT,
         options: CSS_GRID_PLACE_ITEMS,
         isResponsive: true,
         description: 'Controls how grid items are aligned within their cells.',
         link: true,
       },
       gap: {
-        group: GRID_GROUP_NAME,
+        group: PROP_GROUPS.GRID_LAYOUT,
         options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Sets the spacing between rows and columns in the grid.',
         link: true,
       },
       rowGap: {
-        group: GRID_GROUP_NAME,
+        group: PROP_GROUPS.GRID_LAYOUT,
         options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Sets the spacing between grid rows.',
         link: true,
       },
       columnGap: {
-        group: GRID_GROUP_NAME,
+        group: PROP_GROUPS.GRID_LAYOUT,
         options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Sets the spacing between grid columns.',
@@ -136,28 +135,28 @@ export const GRID_META = {
     },
     props: {
       gridColumn: {
-        group: GRID_GROUP_NAME,
+        group: PROP_GROUPS.GRID_LAYOUT,
         options: [DOCS_CSS_LABEL],
         isResponsive: true,
         description: "Sets the item's horizontal position or span between grid columns.",
         link: true,
       },
       gridRow: {
-        group: GRID_GROUP_NAME,
+        group: PROP_GROUPS.GRID_LAYOUT,
         options: [DOCS_CSS_LABEL],
         isResponsive: true,
         description: "Sets the item's vertical position or span between grid rows.",
         link: true,
       },
       justifySelf: {
-        group: GRID_GROUP_NAME,
+        group: PROP_GROUPS.GRID_LAYOUT,
         options: CSS_GRID_ITEM_JUSTIFY_SELF,
         isResponsive: true,
         description: 'Controls horizontal alignment of the item within its grid cell.',
         link: true,
       },
       alignSelf: {
-        group: GRID_GROUP_NAME,
+        group: PROP_GROUPS.GRID_LAYOUT,
         options: CSS_GRID_ITEM_ALIGN_SELF,
         isResponsive: true,
         description: 'Controls vertical alignment of the item within its grid cell.',

@@ -1,6 +1,6 @@
 import { useFormContext } from 'react-hook-form'
 
-import { DEFAULT_BUTTON_INTENT } from 'lib/components/core/Button'
+import { DEFAULT_BUTTON_INTENT } from 'lib/components/core/Button/constants'
 import { withPrefix } from 'lib/helpers'
 import { Button, Flex } from 'lib/index.core'
 import { FormActionButtonProps } from 'lib/index.pro'
