@@ -1,4 +1,3 @@
-export { ActionSurface, type ActionSurfaceProps } from './ActionSurface'
 export {
   AppFrame,
   type AppFrameFooterProps,

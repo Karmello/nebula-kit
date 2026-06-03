@@ -1,7 +1,9 @@
-import { ActionSurfaceProps } from 'lib/index.core'
+import { ComponentPropsWithoutRef } from 'react'
+
+import { BoxProps } from 'lib/index.core'
 
 export type DropdownListItemProps = Pick<
-  ActionSurfaceProps,
+  BoxProps,
   | 'blockSize'
   | 'children'
   | 'disabled'
@@ -11,10 +13,11 @@ export type DropdownListItemProps = Pick<
   | 'maxInlineSize'
   | 'minBlockSize'
   | 'minInlineSize'
-  | 'onClick'
   | 'padding'
   | 'paddingBlock'
   | 'paddingInline'
   | 'ripple'
-  | 'selected'
->
+  | 'surface'
+> & {
+  onClick?: ComponentPropsWithoutRef<'button'>['onClick']
+}

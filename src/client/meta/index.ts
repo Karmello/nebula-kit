@@ -1,6 +1,5 @@
 import { ComponentMeta } from 'client/definitions'
 
-import { ACTION_SURFACE_META } from '../../lib/components/core/ActionSurface/meta'
 import { APP_FRAME_META } from '../../lib/components/core/AppFrame/meta'
 import { BOX_META } from '../../lib/components/core/Box/meta'
 import { BUTTON_META } from '../../lib/components/core/Button/meta'
@@ -53,7 +52,6 @@ import { TOOLTIP_META } from '../../lib/components/pro/Tooltip/meta'
 import { VIRTUAL_LIST_META } from '../../lib/components/pro/VirtualList/meta'
 
 const META = {
-  ActionSurface: ACTION_SURFACE_META,
   AppFrame: APP_FRAME_META,
   Autocomplete: AUTOCOMPLETE_META,
   Avatar: AVATAR_META,

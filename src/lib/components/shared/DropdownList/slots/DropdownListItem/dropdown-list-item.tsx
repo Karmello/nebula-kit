@@ -1,6 +1,6 @@
 import { MouseEvent } from 'react'
 
-import { ActionSurface } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 
 import { useDropdownListContext } from '../../providers'
 import { DropdownListItemProps } from './definitions'
@@ -10,7 +10,8 @@ export const DropdownListItem = ({ index, children, ...rest }: DropdownListItemP
     useDropdownListContext()
 
   return (
-    <ActionSurface
+    <Box
+      tag="button"
       tagAttrs={{
         'data-neb-dropdown-list-item-index': index,
         'data-neb-box-hovered': blockMouse && index === hoveredIndex,
@@ -31,10 +32,12 @@ export const DropdownListItem = ({ index, children, ...rest }: DropdownListItemP
       color={color}
       intent={intent}
       borderRadius="0px"
+      interactive
+      cursor="pointer"
       {...rest}
     >
       {children}
-    </ActionSurface>
+    </Box>
   )
 }
 

@@ -49,14 +49,14 @@ export const Reveal = <T extends RevealTag = 'div'>({
           iconPlacement="right"
           tagAttrs={{
             style: { borderRadius: 0 },
-            onClick: () => {
-              setOpen(!open)
-            },
           }}
           iconAngle={open ? 180 : 0}
           ripple={!open}
           bold
           selected={open}
+          onClick={() => {
+            setOpen(!open)
+          }}
         >
           {label}
         </Button>

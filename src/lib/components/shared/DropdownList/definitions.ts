@@ -1,5 +1,5 @@
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
-import { ActionSurfaceProps, BoxProps } from 'lib/index.core'
+import { BoxProps } from 'lib/index.core'
 
 import { PortalPlacement } from '../Portal'
 
@@ -36,9 +36,8 @@ export type DropdownListProps = {
   children: BoxProps['children']
   tagRef?: BoxProps['tagRef']
   tagAttrs?: BoxProps['tagAttrs']
-  // ActionSurface
-  color?: ActionSurfaceProps['color']
-  intent?: ActionSurfaceProps['intent']
+  color?: BoxProps['color']
+  intent?: BoxProps['intent']
   // own
   state?: DropdownListState
   onStateChange?: (state: DropdownListState) => void

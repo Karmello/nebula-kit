@@ -14,10 +14,8 @@ import { motion } from 'motion/react'
 import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { useControlled } from 'lib/hooks'
-import { Flex, SelectOptionProps, SelectProps, Text, WithIcon } from 'lib/index.core'
+import { Box, Flex, SelectOptionProps, SelectProps, Text, WithIcon } from 'lib/index.core'
 
-import { ActionSurface } from '../ActionSurface'
-import { Box } from '../Box'
 import {
   DEFAULT_SELECT_INLINE_SIZE,
   DEFAULT_SELECT_INTENT,
@@ -28,7 +26,6 @@ import { resolveSelectValues } from './helpers'
 import { SelectOptionInternalProps } from './SelectOption'
 
 export const SelectImpl = ({
-  // ActionSurface
   variant = DEFAULT_SELECT_VARIANT,
   intent = DEFAULT_SELECT_INTENT,
   color,
@@ -114,7 +111,8 @@ export const SelectImpl = ({
 
   return (
     <>
-      <ActionSurface
+      <Box
+        tag="button"
         tagRef={triggerRef}
         tagAttrs={getReferenceProps()}
         variant={variant}
@@ -124,11 +122,14 @@ export const SelectImpl = ({
         blockSize={CONTROL_SIZE_MAP[size].blockSize}
         paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
         disabled={disabled}
-        selected={open}
+        surface={open ? 'selected' : undefined}
         borderBottomLeftRadius={open && isOpeningDownwards ? '0px' : undefined}
         borderBottomRightRadius={open && isOpeningDownwards ? '0px' : undefined}
         borderTopLeftRadius={open && !isOpeningDownwards ? '0px' : undefined}
         borderTopRightRadius={open && !isOpeningDownwards ? '0px' : undefined}
+        cursor="pointer"
+        ripple
+        interactive
       >
         <WithIcon
           iconName="chevron-down"
@@ -141,7 +142,7 @@ export const SelectImpl = ({
             {staticLabel ?? selectedOptionSlot?.props.children ?? 'Select...'}
           </Text>
         </WithIcon>
-      </ActionSurface>
+      </Box>
       {open && (
         <FloatingPortal>
           <Box
@@ -189,7 +190,7 @@ export const SelectImpl = ({
                         tagAttrs: getItemProps({
                           onClick: () => handleOnOptionClick(optionSlot.props.value),
                         }),
-                        selected: currentValue === optionSlot.props.value,
+                        surface: currentValue === optionSlot.props.value ? 'selected' : undefined,
                         variant,
                         intent,
                         color,

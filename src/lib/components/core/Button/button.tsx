@@ -4,11 +4,10 @@ import classNames from 'classnames'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
-import { ButtonProps, Flex, Loader, Text, WithIcon } from 'lib/index.core'
+import { Box, ButtonProps, Flex, Loader, Text, WithIcon } from 'lib/index.core'
 import { syncRespDataset } from 'lib/internals/dom'
 import { ButtonTag } from 'lib/types'
 
-import { ActionSurface } from '../ActionSurface'
 import { DEFAULT_BUTTON_ALIGN, DEFAULT_BUTTON_INTENT, DEFAULT_BUTTON_RIPPLE, DEFAULT_BUTTON_VARIANT } from './definitions'
 
 import './button.scss'
@@ -54,12 +53,15 @@ export const Button = <T extends ButtonTag = 'button'>({
   }, [bp, fullWidth])
 
   return (
-    <ActionSurface
+    <Box
       tag={tag}
       tagAttrs={
         {
           ...tagAttrs,
           className: classNames(withPrefix('button'), tagAttrs?.className),
+          ...(tag === 'button' ? { type: (tagAttrs as ComponentProps<'button'> | undefined)?.type || 'button' } : {}),
+          onClick: onClick || tagAttrs?.onClick,
+          'aria-disabled': disabled || undefined,
         } as PropsWithoutRef<ComponentProps<T>>
       }
       tagRef={finalRef}
@@ -71,11 +73,13 @@ export const Button = <T extends ButtonTag = 'button'>({
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
       elevated={elevated}
-      selected={selected}
+      surface={selected ? 'selected' : undefined}
       blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
       paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
       ripple={ripple}
-      onClick={onClick}
+      interactive
+      cursor="pointer"
+      position="relative"
     >
       <WithIcon
         inlineSize="100%"
@@ -106,7 +110,7 @@ export const Button = <T extends ButtonTag = 'button'>({
         </Flex>
       </WithIcon>
       {loading && !disabled ? <Loader centered size={CONTROL_SIZE_MAP[size || 'md'].loaderSize} /> : null}
-    </ActionSurface>
+    </Box>
   )
 }
 

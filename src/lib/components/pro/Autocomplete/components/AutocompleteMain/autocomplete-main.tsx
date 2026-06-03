@@ -115,7 +115,12 @@ export const AutocompleteMain = ({
         setDropdownListState(prev => ({ ...prev, open: true }))
       }}
     >
-      <DropdownList.Trigger tag="div" inlineSize={inlineSize} disabled={disabled} selected={dropdownListState?.open}>
+      <DropdownList.Trigger
+        tag="div"
+        inlineSize={inlineSize}
+        disabled={disabled}
+        surface={dropdownListState?.open ? 'selected' : undefined}
+      >
         <Input
           tagAttrs={{
             'aria-labelledby': tagAttrs?.['aria-labelledby'],
@@ -166,7 +171,7 @@ export const AutocompleteMain = ({
             blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
             paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
             elevated={dropdownListState?.open}
-            selected={isSelected}
+            surface={isSelected ? 'selected' : undefined}
             inlineSize="100%"
             onClick={() => {
               setInputValue(slotProps.label)

@@ -3,7 +3,6 @@ import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { Select, SelectOptionProps, SelectProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
-import { ACTION_SURFACE_META } from '../ActionSurface/meta'
 import { BOX_INTENTS } from '../Box'
 import { BOX_META } from '../Box/meta'
 import { DEFAULT_SELECT_INLINE_SIZE, DEFAULT_SELECT_INTENT, DEFAULT_SELECT_VARIANT, SELECT_VARIANTS } from './constants'
@@ -23,7 +22,7 @@ export const SELECT_META = {
         'click outside and Escape key dismissal',
         'supports fixed trigger labels via `staticLabel`',
       ],
-      composedOf: ['ActionSurface', 'Box', 'Text', 'Flex', 'WithIcon'],
+      composedOf: ['Box', 'Text', 'Flex', 'WithIcon'],
       slots: ['Select.Option'],
     },
     props: {
@@ -129,11 +128,11 @@ export const SELECT_META = {
       title: 'Represents a selectable item within a Select dropdown list.',
       description:
         'Select.Option defines an available choice within a Select component. Each option provides a value used for selection and renders the content displayed to the user inside the dropdown list.',
-      composedOf: ['ActionSurface', 'Text', 'Divider'],
+      composedOf: ['Box', 'Text', 'Divider'],
       topLevelTags: ['button'],
     },
     props: {
-      children: ACTION_SURFACE_META.ActionSurface.props.children,
+      children: BOX_META.Box.props.children,
       value: {
         options: ['string'],
         isRequired: true,

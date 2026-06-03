@@ -52,7 +52,7 @@ export const PATTERNS: Array<Pattern> = [
     category: 'Cards',
     title: 'Interactive card',
     description:
-      'A clickable card can be composed from **ActionSurface** and layout primitives while keeping content structure fully authored by the user.',
+      'A clickable card can be composed from **Box** and layout primitives while keeping content structure fully authored by the user.',
     component: InteractiveCard,
     code: interactiveCardCode,
   },

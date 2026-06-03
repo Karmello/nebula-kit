@@ -2,7 +2,7 @@ import { ComponentProps, ComponentRef, PropsWithoutRef, RefObject } from 'react'
 
 import { ACTION_SURFACE_TAGS } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { ActionSurface } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 import { ActionSurfaceTag } from 'lib/types'
 
 import { useDropdownListContext } from '../../providers'
@@ -19,13 +19,23 @@ export const DropdownListTrigger = <T extends ActionSurfaceTag = (typeof ACTION_
   const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(floatingResolved?.placement)
 
   return (
-    <ActionSurface
+    <Box
+      tag="button"
       tagRef={triggerRef as RefObject<ComponentRef<T>>}
       tagAttrs={
         {
           className: withPrefix('dropdown-list-trigger'),
           'aria-haspopup': 'listbox',
           'aria-expanded': false,
+          onClick: () => {
+            if (!rest.disabled && !openOnFocus) {
+              if (internalOpen) {
+                setResizeVisible(false)
+              } else {
+                setInternalOpen(true)
+              }
+            }
+          },
           onFocus: () => {
             if (openOnFocus && !internalOpen) {
               setInternalOpen(true)
@@ -41,15 +51,6 @@ export const DropdownListTrigger = <T extends ActionSurfaceTag = (typeof ACTION_
           },
         } as PropsWithoutRef<ComponentProps<T>>
       }
-      onClick={() => {
-        if (!rest.disabled && !openOnFocus) {
-          if (internalOpen) {
-            setResizeVisible(false)
-          } else {
-            setInternalOpen(true)
-          }
-        }
-      }}
       variant={variant}
       color={color}
       borderBottomLeftRadius={internalOpen && opensUpDownwards ? '0px' : undefined}
@@ -58,9 +59,12 @@ export const DropdownListTrigger = <T extends ActionSurfaceTag = (typeof ACTION_
       borderTopRightRadius={internalOpen && !opensUpDownwards ? '0px' : undefined}
       {...rest}
       intent={rest.intent || intent}
+      interactive
+      surface={internalOpen ? 'selected' : undefined}
+      cursor="pointer"
     >
       {children}
-    </ActionSurface>
+    </Box>
   )
 }
 

@@ -1,17 +1,17 @@
-import { ActionSurfaceProps, SelectProps } from 'lib/index.core'
+import { BoxProps, SelectProps } from 'lib/index.core'
 
 export type SelectOptionProps = {
-  // ActionSurface
-  children: ActionSurfaceProps['children']
+  // Box
+  children: BoxProps<'button'>['children']
   // own
   value: string
 }
 
 export type SelectOptionInternalProps = {
-  // ActionSurface
-  tagRef: ActionSurfaceProps['tagRef']
-  tagAttrs: ActionSurfaceProps['tagAttrs']
-  selected: ActionSurfaceProps['selected']
+  // Box
+  tagRef: BoxProps<'button'>['tagRef']
+  tagAttrs: BoxProps<'button'>['tagAttrs']
+  surface: BoxProps['surface']
   // Select
   variant: SelectProps['variant']
   intent: SelectProps['intent']

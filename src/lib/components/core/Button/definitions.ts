@@ -1,8 +1,9 @@
+import { ComponentPropsWithoutRef } from 'react'
+
 import { BUTTON_TAGS } from 'lib/constants'
-import { WithIconProps } from 'lib/index.core'
+import { BoxProps, WithIconProps } from 'lib/index.core'
 import { ButtonTag, ControlSize, RespValue } from 'lib/types'
 
-import { ActionSurfaceProps } from '../ActionSurface'
 import { TextProps } from '../Text'
 
 export const DEFAULT_BUTTON_VARIANT: ButtonProps['variant'] = 'solid'
@@ -14,16 +15,8 @@ export const BUTTON_ALIGNS = ['center', 'start', 'split'] as const
 
 export type ButtonAlign = (typeof BUTTON_ALIGNS)[number]
 
-type ButtonOwnProps = {
-  size?: ControlSize
-  fullWidth?: RespValue<boolean>
-  align?: RespValue<ButtonAlign>
-  loading?: boolean
-  description?: string
-}
-
-type PropsFromActionSurface<T extends ButtonTag = (typeof BUTTON_TAGS)[0]> = Pick<
-  ActionSurfaceProps<T>,
+export type ButtonProps<T extends ButtonTag = (typeof BUTTON_TAGS)[0]> = Pick<
+  BoxProps<T>,
   | 'children'
   | 'tag'
   | 'tagAttrs'
@@ -37,15 +30,14 @@ type PropsFromActionSurface<T extends ButtonTag = (typeof BUTTON_TAGS)[0]> = Pic
   | 'minInlineSize'
   | 'maxInlineSize'
   | 'ripple'
-  | 'selected'
-  | 'onClick'
->
-
-type PropsFromText = Pick<TextProps<'span'>, 'bold'>
-
-type PropsFromWithIcon = Pick<WithIconProps, 'customSvgIcon' | 'iconName' | 'iconAngle' | 'iconPlacement'>
-
-export type ButtonProps<T extends ButtonTag = 'button'> = PropsFromActionSurface<T> &
-  PropsFromText &
-  PropsFromWithIcon &
-  ButtonOwnProps
+> &
+  Pick<TextProps<'span'>, 'bold'> &
+  Pick<WithIconProps, 'customSvgIcon' | 'iconName' | 'iconAngle' | 'iconPlacement'> & {
+    size?: ControlSize
+    fullWidth?: RespValue<boolean>
+    align?: RespValue<ButtonAlign>
+    loading?: boolean
+    description?: string
+    selected?: boolean
+    onClick?: ComponentPropsWithoutRef<T>['onClick']
+  }

@@ -2,7 +2,7 @@ import { BUTTON_TAGS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { Button, ButtonProps, Flex } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
-import { ACTION_SURFACE_META } from '../ActionSurface/meta'
+import { BOX_META } from '../Box/meta'
 import { TEXT_META } from '../Text/meta'
 import { WITH_ICON_META } from '../WithIcon/meta'
 import {
@@ -24,7 +24,7 @@ export const BUTTON_META = {
         'supports first-class icon composition, including custom SVG icons',
         'supports full-width layout to span the entire container',
       ],
-      composedOf: ['ActionSurface', 'Text', 'Loader', 'WithIcon', 'Flex'],
+      composedOf: ['Box', 'Text', 'Loader', 'WithIcon', 'Flex'],
       topLevelTags: BUTTON_TAGS,
     },
     props: {
@@ -36,18 +36,18 @@ export const BUTTON_META = {
       },
       bold: TEXT_META.Text.props.bold,
       children: {
-        ...ACTION_SURFACE_META.ActionSurface.props.children,
+        ...BOX_META.Box.props.children,
         isRequired: true,
         description: 'Label rendered.',
       },
-      color: ACTION_SURFACE_META.ActionSurface.props.color,
+      color: BOX_META.Box.props.color,
       customSvgIcon: WITH_ICON_META.WithIcon.props.customSvgIcon,
       description: {
         options: ['string'],
         description: 'Secondary text displayed below the main label. Works with xl size only.',
       },
-      disabled: ACTION_SURFACE_META.ActionSurface.props.disabled,
-      elevated: ACTION_SURFACE_META.ActionSurface.props.elevated,
+      disabled: BOX_META.Box.props.disabled,
+      elevated: BOX_META.Box.props.elevated,
       fullWidth: {
         options: ['boolean'],
         isResponsive: true,
@@ -56,17 +56,17 @@ export const BUTTON_META = {
       iconAngle: WITH_ICON_META.WithIcon.props.iconAngle,
       iconName: WITH_ICON_META.WithIcon.props.iconName,
       iconPlacement: WITH_ICON_META.WithIcon.props.iconPlacement,
-      inlineSize: ACTION_SURFACE_META.ActionSurface.props.inlineSize,
+      inlineSize: BOX_META.Box.props.inlineSize,
       intent: {
-        ...ACTION_SURFACE_META.ActionSurface.props.intent,
+        ...BOX_META.Box.props.intent,
         defaultValue: String(DEFAULT_BUTTON_INTENT),
       },
       loading: {
         options: ['boolean'],
         description: 'Activates the loading state, shows a spinner and prevents interaction.',
       },
-      maxInlineSize: ACTION_SURFACE_META.ActionSurface.props.maxInlineSize,
-      minInlineSize: ACTION_SURFACE_META.ActionSurface.props.minInlineSize,
+      maxInlineSize: BOX_META.Box.props.maxInlineSize,
+      minInlineSize: BOX_META.Box.props.minInlineSize,
       onClick: {
         options: ['e => void'],
         description: 'Click event handler for the button element.',
@@ -87,14 +87,14 @@ export const BUTTON_META = {
           'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
       },
       tag: {
-        ...ACTION_SURFACE_META.ActionSurface.props.tag,
+        ...BOX_META.Box.props.tag,
         options: BUTTON_TAGS,
         defaultValue: 'button',
       },
-      tagAttrs: ACTION_SURFACE_META.ActionSurface.props.tagAttrs,
-      tagRef: ACTION_SURFACE_META.ActionSurface.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
       variant: {
-        ...ACTION_SURFACE_META.ActionSurface.props.variant,
+        ...BOX_META.Box.props.variant,
         defaultValue: String(DEFAULT_BUTTON_VARIANT),
       },
     },

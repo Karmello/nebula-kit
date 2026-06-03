@@ -80,7 +80,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                 <DropdownList.Trigger
                   variant="ghost"
                   intent="primary"
-                  selected={isOpen}
+                  surface={isOpen ? 'selected' : undefined}
                   ripple={!isOpen}
                   blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
                   paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
@@ -105,7 +105,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                       blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
                       paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
                       onClick={() => handleChange(index, node.value)}
-                      selected={isSelected}
+                      surface={isSelected ? 'selected' : undefined}
                       elevated
                     >
                       <Text

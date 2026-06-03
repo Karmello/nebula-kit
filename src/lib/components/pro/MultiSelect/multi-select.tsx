@@ -88,7 +88,7 @@ export const MultiSelect = ({
                 paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
                 inlineSize={inlineSize}
                 disabled={disabled}
-                selected={dropdownListState?.open}
+                surface={dropdownListState?.open ? 'selected' : undefined}
                 ripple={!dropdownListState?.open}
               >
                 <WithIcon
@@ -111,7 +111,7 @@ export const MultiSelect = ({
                     key={index}
                     index={index}
                     elevated={dropdownListState?.open}
-                    selected={isSelected}
+                    surface={isSelected ? 'selected' : undefined}
                     blockSize={CONTROL_SIZE_MAP[size].blockSize}
                     paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
                     inlineSize="100%"

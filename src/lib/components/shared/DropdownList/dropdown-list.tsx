@@ -20,7 +20,6 @@ export const DropdownList = ({
   children,
   tagRef,
   tagAttrs,
-  // ActionSurface
   color,
   intent = DEFAULT_DROPDOWN_LIST_INTENT,
   // Portal

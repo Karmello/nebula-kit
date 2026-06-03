@@ -1,4 +1,3 @@
-import { ACTION_SURFACE_META } from 'lib/components/core/ActionSurface/meta'
 import { BOX_INTENTS } from 'lib/components/core/Box'
 import { BOX_META } from 'lib/components/core/Box/meta'
 import {
@@ -127,7 +126,7 @@ export const MULTI_SELECT_META = {
       topLevelTags: ['button'],
     },
     props: {
-      children: ACTION_SURFACE_META.ActionSurface.props.children,
+      children: BOX_META.Box.props.children,
       value: {
         options: ['string'],
         isRequired: true,

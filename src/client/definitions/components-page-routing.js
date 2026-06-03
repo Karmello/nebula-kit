@@ -18,7 +18,6 @@ export const COMPONENT_CATEGORIES = [
       { key: 'text', label: 'Text', sections, bundle: 'core' },
       { key: 'image', label: 'Image', sections, bundle: 'core' },
       { key: 'icon', label: 'Icon', sections, bundle: 'core' },
-      { key: 'action-surface', label: 'ActionSurface', sections, bundle: 'core' },
     ],
   },
   {
