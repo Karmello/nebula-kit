@@ -33,6 +33,7 @@ export const CSS_FLEX_ALIGN_CONTENT = [
 
 export const CSS_FLEX_ITEM_ALIGN_SELF = ['auto', 'flex-start', 'flex-end', 'center', 'stretch', 'baseline'] as const
 
+export const CSS_GRID_DISPLAY = ['grid', 'inline-grid'] as const
 export const CSS_GRID_AUTO_FLOW = ['row', 'column', 'row dense', 'column dense'] as const
 export const CSS_GRID_PLACE_ITEMS = ['stretch', 'start', 'center', 'end'] as const
 

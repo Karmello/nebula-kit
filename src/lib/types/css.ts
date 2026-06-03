@@ -9,6 +9,7 @@ import {
   CSS_FLEX_JUSTIFY_CONTENT,
   CSS_FLEX_WRAP,
   CSS_GRID_AUTO_FLOW,
+  CSS_GRID_DISPLAY,
   CSS_GRID_ITEM_ALIGN_SELF,
   CSS_GRID_ITEM_JUSTIFY_SELF,
   CSS_GRID_PLACE_CONTENT,
@@ -36,6 +37,7 @@ export type CssFlexAlignItems = (typeof CSS_FLEX_ALIGN_ITEMS)[number]
 export type CssFlexAlignContent = (typeof CSS_FLEX_ALIGN_CONTENT)[number]
 export type CssFlexItemAlignSelf = (typeof CSS_FLEX_ITEM_ALIGN_SELF)[number]
 
+export type CssGridDisplay = (typeof CSS_GRID_DISPLAY)[number]
 export type CssGridAutoFlow = (typeof CSS_GRID_AUTO_FLOW)[number]
 export type CssGridPlaceItems = (typeof CSS_GRID_PLACE_ITEMS)[number]
 export type CssGridPlaceContent = (typeof CSS_GRID_PLACE_CONTENT)[number]

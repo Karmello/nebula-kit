@@ -1,5 +1,6 @@
 import {
   CSS_GRID_AUTO_FLOW,
+  CSS_GRID_DISPLAY,
   CSS_GRID_ITEM_ALIGN_SELF,
   CSS_GRID_ITEM_JUSTIFY_SELF,
   CSS_GRID_PLACE_CONTENT,
@@ -102,6 +103,13 @@ export const GRID_META = {
       children: {
         ...BOX_META.Box.props.children,
         description: 'Grid.Item or any React node.',
+      },
+      display: {
+        group: PROP_GROUPS.LAYOUT,
+        options: CSS_GRID_DISPLAY,
+        isResponsive: true,
+        description: 'Switches between block and inline behavior.',
+        link: true,
       },
     },
     examples: [

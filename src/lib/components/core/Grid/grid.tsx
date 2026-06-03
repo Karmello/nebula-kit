@@ -12,6 +12,7 @@ import './grid.scss'
 
 export const Grid = <T extends ElementType = 'div'>({
   // own
+  display,
   gridTemplateColumns,
   gridTemplateRows,
   gridAutoRows,
@@ -32,6 +33,7 @@ export const Grid = <T extends ElementType = 'div'>({
 
   useLayoutEffect(() => {
     syncRespStyle('Grid', finalRef, bp, {
+      display,
       gridTemplateColumns,
       gridTemplateRows,
       gridAutoRows,
@@ -45,6 +47,7 @@ export const Grid = <T extends ElementType = 'div'>({
     })
   }, [
     bp,
+    display,
     gridTemplateColumns,
     gridTemplateRows,
     gridAutoRows,

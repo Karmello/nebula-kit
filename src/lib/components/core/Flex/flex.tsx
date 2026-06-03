@@ -30,7 +30,7 @@ export const Flex = <T extends ElementType = 'div'>({
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    syncRespStyle('Flex', finalRef || ref, bp, {
+    syncRespStyle('Flex', finalRef, bp, {
       display,
       flexDirection,
       flexWrap,

@@ -93,7 +93,7 @@ export const FLEX_META = {
         description: 'Flex.Item or any React node.',
       },
       display: {
-        group: PROP_GROUPS.FLEX_BOX,
+        group: PROP_GROUPS.LAYOUT,
         options: CSS_FLEX_DISPLAY,
         isResponsive: true,
         description: 'Switches between block and inline behavior.',
