@@ -3,8 +3,8 @@ import { expectError, expectType } from 'tsd'
 
 import { Button } from '.'
 
-// children optional
-expectType(<Button />)
+// children required
+expectError(<Button />)
 
 // children passed
 expectType(<Button>Button</Button>)
@@ -79,7 +79,7 @@ expectError(<Button size="2xl">Button</Button>)
 
 // icon props
 expectType(
-  <Button iconName="check" iconPlacement="right" iconAngle={90}>
+  <Button iconName="check" iconPlacement="right">
     Button
   </Button>
 )
