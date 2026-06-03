@@ -17,11 +17,11 @@ export const Icon = memo(
     children,
     tagAttrs,
     tagRef,
+    intent,
+    color,
     // own
     name,
     size = DEFAULT_ICON_SIZE,
-    intent,
-    color,
   }: IconProps) => {
     const localRef = useRef<HTMLSpanElement>(null)
     const { bp } = useScreen()

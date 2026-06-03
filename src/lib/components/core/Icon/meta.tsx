@@ -1,5 +1,6 @@
 import { Footprints } from 'lucide-react'
 
+import { PROP_GROUPS } from 'lib/constants'
 import { Icon, IconProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
@@ -22,9 +23,18 @@ export const ICON_META = {
       },
     },
     props: {
-      children: {
-        ...BOX_META.Box.props.children,
-        description: 'Custom SVG icon rendered instead of name.',
+      name: {
+        group: PROP_GROUPS.ICON,
+        options: ['IconName'],
+        isResponsive: true,
+        description: 'Name of the icon to render.',
+      },
+      size: {
+        group: PROP_GROUPS.ICON,
+        options: [...ICON_SIZES, DOCS_CSS_LABEL],
+        defaultValue: String(DEFAULT_ICON_SIZE),
+        isResponsive: true,
+        description: 'Size of the icon.',
       },
       color: {
         ...BOX_META.Box.props.color,
@@ -34,16 +44,9 @@ export const ICON_META = {
         ...BOX_META.Box.props.intent,
         description: 'Color tone applied to the icon.',
       },
-      name: {
-        options: ['IconName'],
-        isResponsive: true,
-        description: 'Name of the icon to render.',
-      },
-      size: {
-        options: [...ICON_SIZES, DOCS_CSS_LABEL],
-        defaultValue: String(DEFAULT_ICON_SIZE),
-        isResponsive: true,
-        description: 'Size of the icon.',
+      children: {
+        ...BOX_META.Box.props.children,
+        description: 'Custom SVG icon rendered instead of name.',
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,

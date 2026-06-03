@@ -28,4 +28,5 @@ export enum PROP_GROUPS {
   GRID_LAYOUT = 'Grid layout',
   IMAGE_RENDERING = 'Image rendering',
   TYPOGRAPHY = 'Typography',
+  ICON = 'Icon',
 }
