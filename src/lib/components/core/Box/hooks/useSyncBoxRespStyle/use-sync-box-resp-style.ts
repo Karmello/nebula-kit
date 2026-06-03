@@ -54,7 +54,7 @@ export const useSyncBoxRespStyle = <T extends ElementType = 'div'>({
   marginRight,
   marginBottom,
   marginLeft,
-}: BoxProps<T> & { finalRef: RefObject<ComponentRef<T>> }) => {
+}: BoxProps<T> & { finalRef: RefObject<ComponentRef<T> | null> }) => {
   const { bp } = useScreen()
 
   useLayoutEffect(() => {

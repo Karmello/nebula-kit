@@ -11,23 +11,6 @@ import { Box } from '../Box'
 import './image.scss'
 
 export const Image = ({
-  // Box
-  tagAttrs,
-  tagRef,
-  blockSize,
-  borderRadius,
-  display,
-  inlineSize,
-  maxBlockSize,
-  maxInlineSize,
-  minBlockSize,
-  minInlineSize,
-  opacity,
-  pointerEvents,
-  overflow,
-  overflowX,
-  overflowY,
-  aspectRatio,
   // own
   src,
   alt,
@@ -41,10 +24,12 @@ export const Image = ({
   objectPosition,
   onLoad,
   onError,
+  // Box
+  ...boxProps
 }: ImageProps) => {
   const ref = useRef<HTMLImageElement>(null)
 
-  const finalRef = tagRef || ref
+  const finalRef = boxProps.tagRef || ref
 
   const { bp } = useScreen()
 
@@ -56,8 +41,8 @@ export const Image = ({
     <Box
       tag="img"
       tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('image'), tagAttrs?.className),
+        ...boxProps.tagAttrs,
+        className: classNames(withPrefix('image'), boxProps.tagAttrs?.className),
         src,
         alt,
         title,
@@ -69,21 +54,8 @@ export const Image = ({
         onLoad,
         onError,
       }}
+      {...boxProps}
       tagRef={finalRef}
-      blockSize={blockSize}
-      borderRadius={borderRadius}
-      display={display}
-      inlineSize={inlineSize}
-      maxBlockSize={maxBlockSize}
-      maxInlineSize={maxInlineSize}
-      minBlockSize={minBlockSize}
-      minInlineSize={minInlineSize}
-      opacity={opacity}
-      pointerEvents={pointerEvents}
-      overflow={overflow}
-      overflowX={overflowX}
-      overflowY={overflowY}
-      aspectRatio={aspectRatio}
     />
   )
 }
