@@ -75,5 +75,5 @@ export const AVATAR_META = {
     changelog: {
       '0.4.0': ['released'],
     },
-  } as ComponentMeta<AvatarProps>,
+  } satisfies ComponentMeta<AvatarProps>,
 }

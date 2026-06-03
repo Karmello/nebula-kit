@@ -120,7 +120,7 @@ export const SELECT_META = {
       '0.3.0': ['updated public API'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<SelectProps>,
+  } satisfies ComponentMeta<SelectProps>,
   SelectOption: {
     overview: {
       bundle: 'core',
@@ -139,5 +139,5 @@ export const SELECT_META = {
         description: 'Defines value for the option.',
       },
     },
-  } as ComponentMeta<SelectOptionProps>,
+  } satisfies ComponentMeta<SelectOptionProps>,
 }

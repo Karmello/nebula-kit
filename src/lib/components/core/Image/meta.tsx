@@ -149,5 +149,5 @@ export const IMAGE_META = {
     changelog: {
       '0.4.0': ['released'],
     },
-  } as ComponentMeta<ImageProps>,
+  } satisfies ComponentMeta<ImageProps>,
 }

@@ -120,5 +120,5 @@ export const BREADCRUMB_META = {
       '0.6.0': ['added `itemBorderIntent` prop'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<BreadcrumbProps>,
+  } satisfies ComponentMeta<BreadcrumbProps>,
 }

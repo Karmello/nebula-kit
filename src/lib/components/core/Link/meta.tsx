@@ -102,5 +102,5 @@ export const LINK_META = {
       '0.4.0': ['changed behavior to wrap content by default and only clone when required to ensure valid HTML'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<LinkProps>,
+  } satisfies ComponentMeta<LinkProps>,
 }

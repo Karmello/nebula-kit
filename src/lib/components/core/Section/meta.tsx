@@ -103,5 +103,5 @@ export const SECTION_META = {
       '0.9.0': ['exposed `interactive` prop via Box'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<SectionProps>,
+  } satisfies ComponentMeta<SectionProps>,
 }

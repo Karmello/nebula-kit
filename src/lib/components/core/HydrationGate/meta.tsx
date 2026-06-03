@@ -42,5 +42,5 @@ export const HYDRATION_GATE_META = {
     changelog: {
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<HydrationGateProps>,
+  } satisfies ComponentMeta<HydrationGateProps>,
 }

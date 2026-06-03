@@ -130,5 +130,5 @@ export const VIRTUAL_LIST_META = {
       '0.11.0': ['changed `itemHeight` prop to `itemBlockSize`'],
       '0.3.0': ['released'],
     },
-  } as ComponentMeta<VirtualListProps>,
+  } satisfies ComponentMeta<VirtualListProps>,
 }

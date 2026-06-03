@@ -119,7 +119,7 @@ export const SPLIT_VIEW_META = {
       '0.8.0': ['removed `borderIntent` prop'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<SplitViewProps>,
+  } satisfies ComponentMeta<SplitViewProps>,
   SplitViewSide: {
     overview: {
       bundle: 'pro',
@@ -157,7 +157,7 @@ export const SPLIT_VIEW_META = {
       tagRef: BOX_META.Box.props.tagRef,
       theme: BOX_META.Box.props.theme,
     },
-  } as ComponentMeta<SplitViewSideProps>,
+  } satisfies ComponentMeta<SplitViewSideProps>,
   SplitViewMain: {
     overview: {
       bundle: 'pro',
@@ -185,7 +185,7 @@ export const SPLIT_VIEW_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
     },
-  } as ComponentMeta<SplitViewMainProps>,
+  } satisfies ComponentMeta<SplitViewMainProps>,
   SplitViewMainBar: {
     overview: {
       bundle: 'pro',
@@ -204,5 +204,5 @@ export const SPLIT_VIEW_META = {
         isRequired: true,
       },
     },
-  } as ComponentMeta<SplitViewMainBarProps>,
+  } satisfies ComponentMeta<SplitViewMainBarProps>,
 }

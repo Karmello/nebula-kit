@@ -58,5 +58,5 @@ export const LOADER_META = {
       '0.9.0': ['added support for predefined size scale values on the `size` prop'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<LoaderProps>,
+  } satisfies ComponentMeta<LoaderProps>,
 }

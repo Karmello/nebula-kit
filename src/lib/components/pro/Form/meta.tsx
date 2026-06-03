@@ -229,7 +229,7 @@ export const FORM_META = {
       ],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<FormProps>,
+  } satisfies ComponentMeta<FormProps>,
   FormFields: {
     overview: {
       bundle: 'pro',
@@ -271,7 +271,7 @@ export const FORM_META = {
       tagAttrs: FLEX_META.Flex.props.tagAttrs,
       tagRef: FLEX_META.Flex.props.tagRef,
     },
-  } as ComponentMeta<FormFieldsProps>,
+  } satisfies ComponentMeta<FormFieldsProps>,
   FormActions: {
     overview: {
       bundle: 'pro',
@@ -303,7 +303,7 @@ export const FORM_META = {
       tagAttrs: FLEX_META.Flex.props.tagAttrs,
       tagRef: FLEX_META.Flex.props.tagRef,
     },
-  } as ComponentMeta<FormActionsProps>,
+  } satisfies ComponentMeta<FormActionsProps>,
   FormField: {
     overview: {
       bundle: 'pro',
@@ -377,7 +377,7 @@ export const FORM_META = {
       tagAttrs: FLEX_META.FlexItem.props.tagAttrs,
       tagRef: FLEX_META.FlexItem.props.tagRef,
     },
-  } as ComponentMeta<FormFieldProps>,
+  } satisfies ComponentMeta<FormFieldProps>,
   FormActionButton: {
     overview: {
       bundle: 'pro',
@@ -418,7 +418,7 @@ export const FORM_META = {
       },
       variant: BUTTON_META.Button.props.variant,
     },
-  } as ComponentMeta<FormActionButtonProps>,
+  } satisfies ComponentMeta<FormActionButtonProps>,
   FormLabel: {
     overview: {
       bundle: 'pro',
@@ -443,7 +443,7 @@ export const FORM_META = {
       tagRef: TEXT_META.Text.props.tagRef,
       truncate: TEXT_META.Text.props.truncate,
     },
-  } as ComponentMeta<FormLabelProps>,
+  } satisfies ComponentMeta<FormLabelProps>,
   FormHint: {
     overview: {
       bundle: 'pro',
@@ -468,5 +468,5 @@ export const FORM_META = {
       tagRef: TEXT_META.Text.props.tagRef,
       truncate: TEXT_META.Text.props.truncate,
     },
-  } as ComponentMeta<FormHintProps>,
+  } satisfies ComponentMeta<FormHintProps>,
 }

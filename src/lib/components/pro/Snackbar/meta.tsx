@@ -208,7 +208,7 @@ show({
     changelog: {
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<SnackbarProps>,
+  } satisfies ComponentMeta<SnackbarProps>,
   useSnackbar: {
     overview: {
       bundle: 'pro',
@@ -252,5 +252,5 @@ show({
         description: 'Defines the message type of the snackbar.',
       },
     },
-  } as ComponentMeta<UseSnackbarShowArgs>,
+  } satisfies ComponentMeta<UseSnackbarShowArgs>,
 }

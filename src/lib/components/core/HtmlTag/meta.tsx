@@ -52,5 +52,5 @@ export const HTML_TAG_META = {
     changelog: {
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<HtmlTagProps<ElementType>>,
+  } satisfies ComponentMeta<HtmlTagProps<ElementType>>,
 }

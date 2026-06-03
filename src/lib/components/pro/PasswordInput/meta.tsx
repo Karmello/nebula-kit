@@ -49,5 +49,5 @@ export const PASSWORD_META = {
     changelog: {
       '0.10.0': ['released'],
     },
-  } as ComponentMeta<PasswordInputProps>,
+  } satisfies ComponentMeta<PasswordInputProps>,
 }

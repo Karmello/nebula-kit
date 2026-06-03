@@ -52,7 +52,7 @@ export const APP_FRAME_META = {
       '0.8.0': ['removed `borderIntent` prop'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<AppFrameProps>,
+  } satisfies ComponentMeta<AppFrameProps>,
   AppFrameHeader: {
     overview: {
       bundle: 'core',
@@ -75,7 +75,7 @@ export const APP_FRAME_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
     },
-  } as ComponentMeta<AppFrameHeaderProps>,
+  } satisfies ComponentMeta<AppFrameHeaderProps>,
   AppFrameMain: {
     overview: {
       bundle: 'core',
@@ -100,7 +100,7 @@ export const APP_FRAME_META = {
       paddingBottom: BOX_META.Box.props.paddingBottom,
       paddingLeft: BOX_META.Box.props.paddingLeft,
     },
-  } as ComponentMeta<AppFrameMainProps>,
+  } satisfies ComponentMeta<AppFrameMainProps>,
   AppFrameFooter: {
     overview: {
       bundle: 'core',
@@ -130,5 +130,5 @@ export const APP_FRAME_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
     },
-  } as ComponentMeta<AppFrameFooterProps>,
+  } satisfies ComponentMeta<AppFrameFooterProps>,
 }

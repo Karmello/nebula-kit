@@ -74,5 +74,5 @@ export const SPACER_META = {
       '0.9.0': ['added support for predefined size scale values on the `blockSize` prop'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<SpacerProps>,
+  } satisfies ComponentMeta<SpacerProps>,
 }

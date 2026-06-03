@@ -113,5 +113,5 @@ export const CALLOUT_META = {
     changelog: {
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<CalloutProps>,
+  } satisfies ComponentMeta<CalloutProps>,
 }

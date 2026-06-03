@@ -98,7 +98,7 @@ export const DIALOG_META = {
       '0.5.0': ['fixed backdrop flicker'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<DialogProps>,
+  } satisfies ComponentMeta<DialogProps>,
   DialogHeader: {
     overview: {
       bundle: 'pro',
@@ -116,7 +116,7 @@ export const DIALOG_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
     },
-  } as ComponentMeta<DialogHeaderProps>,
+  } satisfies ComponentMeta<DialogHeaderProps>,
   DialogContent: {
     overview: {
       bundle: 'pro',
@@ -151,5 +151,5 @@ export const DIALOG_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
     },
-  } as ComponentMeta<DialogFooterProps>,
+  } satisfies ComponentMeta<DialogFooterProps>,
 }

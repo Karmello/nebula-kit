@@ -83,5 +83,5 @@ export const ICON_BUTTON_META = {
     changelog: {
       '0.11.0': ['released'],
     },
-  } as ComponentMeta<IconButtonProps>,
+  } satisfies ComponentMeta<IconButtonProps>,
 }

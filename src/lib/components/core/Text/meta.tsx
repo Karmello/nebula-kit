@@ -188,5 +188,5 @@ export const TEXT_META = {
       '0.7.0': ['fixed text link display behavior inside table cells'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<TextProps>,
+  } satisfies ComponentMeta<TextProps>,
 }

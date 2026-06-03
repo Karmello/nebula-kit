@@ -122,7 +122,7 @@ export const FLEX_META = {
       ],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<FlexProps>,
+  } satisfies ComponentMeta<FlexProps>,
   FlexItem: {
     overview: {
       bundle: 'core',
@@ -198,5 +198,5 @@ export const FLEX_META = {
         ),
       },
     ],
-  } as ComponentMeta<FlexItemProps>,
+  } satisfies ComponentMeta<FlexItemProps>,
 }

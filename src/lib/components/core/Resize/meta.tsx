@@ -98,5 +98,5 @@ export const RESIZE_META = {
     changelog: {
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<ResizeProps>,
+  } satisfies ComponentMeta<ResizeProps>,
 }

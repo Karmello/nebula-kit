@@ -63,5 +63,5 @@ export const DIVIDER_META = {
       '0.6.0': ['exposed `opacity` prop via Box'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<DividerProps>,
+  } satisfies ComponentMeta<DividerProps>,
 }

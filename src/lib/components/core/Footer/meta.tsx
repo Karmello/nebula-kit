@@ -90,7 +90,7 @@ export const FOOTER_META = {
     changelog: {
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<FooterProps>,
+  } satisfies ComponentMeta<FooterProps>,
   FooterSection: {
     overview: {
       bundle: 'core',
@@ -110,5 +110,5 @@ export const FOOTER_META = {
       flex: FLEX_META.FlexItem.props.flex,
       alignSelf: FLEX_META.FlexItem.props.alignSelf,
     },
-  } as ComponentMeta<FooterSectionProps>,
+  } satisfies ComponentMeta<FooterSectionProps>,
 }

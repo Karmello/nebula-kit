@@ -80,5 +80,5 @@ export const ROTATE_META = {
     changelog: {
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<RotateProps>,
+  } satisfies ComponentMeta<RotateProps>,
 }

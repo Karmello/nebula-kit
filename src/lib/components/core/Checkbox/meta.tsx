@@ -105,5 +105,5 @@ export const CHECKBOX_META = {
       '0.4.0': ['fixed focus handling'],
       '0.3.0': ['released'],
     },
-  } as ComponentMeta<CheckboxProps>,
+  } satisfies ComponentMeta<CheckboxProps>,
 }

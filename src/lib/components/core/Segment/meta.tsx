@@ -198,7 +198,7 @@ export const SEGMENT_META = {
     changelog: {
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<SegmentProps>,
+  } satisfies ComponentMeta<SegmentProps>,
   SegmentItem: {
     overview: {
       bundle: 'core',
@@ -210,18 +210,6 @@ export const SEGMENT_META = {
       ],
       composedOf: ['Flex.Item'],
     },
-    props: {
-      alignSelf: FLEX_META.FlexItem.props.alignSelf,
-      children: FLEX_META.FlexItem.props.children,
-      flex: FLEX_META.FlexItem.props.flex,
-      flexBasis: FLEX_META.FlexItem.props.flexBasis,
-      flexGrow: FLEX_META.FlexItem.props.flexGrow,
-      flexShrink: FLEX_META.FlexItem.props.flexShrink,
-      hidden: FLEX_META.FlexItem.props.hidden,
-      order: FLEX_META.FlexItem.props.order,
-      tag: FLEX_META.FlexItem.props.tag,
-      tagAttrs: FLEX_META.FlexItem.props.tagAttrs,
-      tagRef: FLEX_META.FlexItem.props.tagRef,
-    },
-  } as ComponentMeta<SegmentItemProps>,
+    props: FLEX_META.FlexItem.props,
+  } satisfies ComponentMeta<SegmentItemProps>,
 }

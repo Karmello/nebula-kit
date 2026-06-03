@@ -118,5 +118,5 @@ export const TOOLTIP_META = {
       '0.9.0': ['added configurable hover and click interaction modes with improved dismissal behavior'],
       '0.3.0': ['released'],
     },
-  } as ComponentMeta<TooltipProps>,
+  } satisfies ComponentMeta<TooltipProps>,
 }

@@ -543,5 +543,5 @@ export const BOX_META = {
       '0.4.0': ['added `visibility` prop', 'added `aspectRatio` prop', 'added `transform` prop'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<BoxProps>,
+  } satisfies ComponentMeta<BoxProps>,
 }

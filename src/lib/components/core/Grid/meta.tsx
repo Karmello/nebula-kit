@@ -132,7 +132,7 @@ export const GRID_META = {
       '0.9.0': ['added support for predefined size scale values on gap-related props'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<GridProps>,
+  } satisfies ComponentMeta<GridProps>,
   GridItem: {
     overview: {
       bundle: 'core',
@@ -197,5 +197,5 @@ export const GRID_META = {
         ),
       },
     ],
-  } as ComponentMeta<GridItemProps>,
+  } satisfies ComponentMeta<GridItemProps>,
 }

@@ -90,5 +90,5 @@ export const WITH_ICON_META = {
     changelog: {
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<WithIconProps>,
+  } satisfies ComponentMeta<WithIconProps>,
 }

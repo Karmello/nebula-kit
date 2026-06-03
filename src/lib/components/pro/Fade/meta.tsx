@@ -90,5 +90,5 @@ export const FADE_META = {
     changelog: {
       '0.11.0': ['released'],
     },
-  } as ComponentMeta<FadeProps>,
+  } satisfies ComponentMeta<FadeProps>,
 }

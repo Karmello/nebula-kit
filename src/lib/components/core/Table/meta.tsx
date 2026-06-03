@@ -305,7 +305,7 @@ const META = {
   changelog: {
     '0.2.3': ['released'],
   },
-} as ComponentMeta<TableProps>
+} satisfies ComponentMeta<TableProps>
 
 export const TABLE_META = {
   Table: META,
@@ -347,7 +347,7 @@ export const TABLE_META = {
       tagRef: BOX_META.Box.props.tagRef,
       textAlign: META.props.textAlign,
     },
-  } as ComponentMeta<TableBodyProps>,
+  } satisfies ComponentMeta<TableBodyProps>,
   TableHeader: {
     overview: {
       bundle: 'core',
@@ -385,7 +385,7 @@ export const TABLE_META = {
       tagRef: BOX_META.Box.props.tagRef,
       textAlign: META.props.textAlign,
     },
-  } as ComponentMeta<TableHeaderProps>,
+  } satisfies ComponentMeta<TableHeaderProps>,
   TableFooter: {
     overview: {
       bundle: 'core',
@@ -424,7 +424,7 @@ export const TABLE_META = {
       tagRef: BOX_META.Box.props.tagRef,
       textAlign: META.props.textAlign,
     },
-  } as ComponentMeta<TableFooterProps>,
+  } satisfies ComponentMeta<TableFooterProps>,
   TableCaption: {
     overview: {
       bundle: 'core',
@@ -450,7 +450,7 @@ export const TABLE_META = {
       tagRef: BOX_META.Box.props.tagRef,
       textAlign: BOX_META.Box.props.textAlign,
     },
-  } as ComponentMeta<TableCaptionProps>,
+  } satisfies ComponentMeta<TableCaptionProps>,
   TableRow: {
     overview: {
       bundle: 'core',
@@ -480,7 +480,7 @@ export const TABLE_META = {
       tagRef: BOX_META.Box.props.tagRef,
       textAlign: META.props.textAlign,
     },
-  } as ComponentMeta<TableRowProps>,
+  } satisfies ComponentMeta<TableRowProps>,
   TableHeaderRow: {
     overview: {
       bundle: 'core',
@@ -510,7 +510,7 @@ export const TABLE_META = {
       tagRef: BOX_META.Box.props.tagRef,
       textAlign: META.props.textAlign,
     },
-  } as ComponentMeta<TableHeaderRowProps>,
+  } satisfies ComponentMeta<TableHeaderRowProps>,
   TableCell: {
     overview: {
       bundle: 'core',
@@ -542,7 +542,7 @@ export const TABLE_META = {
       tagRef: BOX_META.Box.props.tagRef,
       textAlign: BOX_META.Box.props.textAlign,
     },
-  } as ComponentMeta<TableCellProps>,
+  } satisfies ComponentMeta<TableCellProps>,
   TableHeaderCell: {
     overview: {
       bundle: 'core',
@@ -574,5 +574,5 @@ export const TABLE_META = {
       tagRef: BOX_META.Box.props.tagRef,
       textAlign: BOX_META.Box.props.textAlign,
     },
-  } as ComponentMeta<TableHeaderCellProps>,
+  } satisfies ComponentMeta<TableHeaderCellProps>,
 }

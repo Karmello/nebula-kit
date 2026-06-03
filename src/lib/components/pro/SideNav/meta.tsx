@@ -156,7 +156,7 @@ export const SIDE_NAV_META = {
       '0.8.0': ['changed `elevated` prop to `surface` on SideNav.Item'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<SideNavProps>,
+  } satisfies ComponentMeta<SideNavProps>,
   SideNavItem: {
     overview: {
       bundle: 'pro',
@@ -193,7 +193,7 @@ export const SIDE_NAV_META = {
         options: SIDE_NAV_VARIANTS,
       },
     },
-  } as ComponentMeta<SideNavItemProps>,
+  } satisfies ComponentMeta<SideNavItemProps>,
   SideNavCategory: {
     overview: {
       bundle: 'pro',
@@ -243,5 +243,5 @@ export const SIDE_NAV_META = {
         defaultValue: String(DEFAULT_SIDE_NAV_CATEGORY_VARIANT),
       },
     },
-  } as ComponentMeta<SideNavCategoryProps>,
+  } satisfies ComponentMeta<SideNavCategoryProps>,
 }

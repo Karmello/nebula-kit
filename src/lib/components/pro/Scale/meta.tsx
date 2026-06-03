@@ -104,5 +104,5 @@ export const SCALE_META = {
     changelog: {
       '0.11.0': ['released'],
     },
-  } as ComponentMeta<ScaleProps>,
+  } satisfies ComponentMeta<ScaleProps>,
 }

@@ -73,7 +73,7 @@ export const MARKER_LIST_META = {
     changelog: {
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<MarkerListProps>,
+  } satisfies ComponentMeta<MarkerListProps>,
   MarkerListItem: {
     overview: {
       bundle: 'core',
@@ -98,5 +98,5 @@ export const MARKER_LIST_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
     },
-  } as ComponentMeta<MarkerListItemProps>,
+  } satisfies ComponentMeta<MarkerListItemProps>,
 }

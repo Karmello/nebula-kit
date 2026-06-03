@@ -8,7 +8,7 @@ import {
   DROPDOWN_LIST_SCROLL_ALIGN,
 } from 'lib/components/shared'
 import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
-import { MultiSelect, MultiSelectProps } from 'lib/index.pro'
+import { MultiSelect, MultiSelectOptionProps, MultiSelectProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_MULTI_SELECT_INLINE_SIZE } from './definitions'
@@ -116,7 +116,7 @@ export const MULTI_SELECT_META = {
       '0.6.0': ['replaced `intent` with separate `triggerIntent` and `listIntent` props'],
       '0.3.0': ['released'],
     },
-  } as ComponentMeta<MultiSelectProps>,
+  } satisfies ComponentMeta<MultiSelectProps>,
   MultiSelectOption: {
     overview: {
       bundle: 'pro',
@@ -133,5 +133,5 @@ export const MULTI_SELECT_META = {
         description: 'Defines value for the option.',
       },
     },
-  },
+  } satisfies ComponentMeta<MultiSelectOptionProps>,
 }

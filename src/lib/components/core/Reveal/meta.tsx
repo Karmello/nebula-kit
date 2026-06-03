@@ -70,5 +70,5 @@ export const REVEAL_META = {
     changelog: {
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<RevealProps>,
+  } satisfies ComponentMeta<RevealProps>,
 }

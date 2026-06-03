@@ -170,7 +170,7 @@ export const TABS_META = {
       '0.10.0': ['changed `flexDirection` prop to `orientation`'],
       '0.3.0': ['released'],
     },
-  } as ComponentMeta<TabsProps>,
+  } satisfies ComponentMeta<TabsProps>,
   TabsTab: {
     overview: {
       bundle: 'pro',
@@ -199,7 +199,7 @@ export const TABS_META = {
         description: 'Value that identifies the tab and links it to its panel.',
       },
     },
-  } as ComponentMeta<TabsTabProps>,
+  } satisfies ComponentMeta<TabsTabProps>,
   TabsPanel: {
     overview: {
       bundle: 'pro',
@@ -222,5 +222,5 @@ export const TABS_META = {
         description: 'Value that identifies the panel and links it to a tab.',
       },
     },
-  } as ComponentMeta<TabsPanelProps>,
+  } satisfies ComponentMeta<TabsPanelProps>,
 }

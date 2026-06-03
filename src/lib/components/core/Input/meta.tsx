@@ -136,5 +136,5 @@ return (
       '0.9.0': ['added `maxLength` prop'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<InputProps>,
+  } satisfies ComponentMeta<InputProps>,
 }

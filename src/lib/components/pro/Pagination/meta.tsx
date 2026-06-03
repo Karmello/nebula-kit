@@ -181,5 +181,5 @@ return (
     changelog: {
       '0.4.0': ['released'],
     },
-  } as ComponentMeta<PaginationProps>,
+  } satisfies ComponentMeta<PaginationProps>,
 }

@@ -146,7 +146,7 @@ export const AUTOCOMPLETE_META = {
       '0.5.0': ['removed `onClosed` prop'],
       '0.3.0': ['released'],
     },
-  } as ComponentMeta<AutocompleteProps>,
+  } satisfies ComponentMeta<AutocompleteProps>,
   AutocompleteOption: {
     overview: {
       bundle: 'pro',
@@ -169,5 +169,5 @@ export const AUTOCOMPLETE_META = {
         description: 'Defines value for the option.',
       },
     },
-  } as ComponentMeta<AutocompleteOptionProps>,
+  } satisfies ComponentMeta<AutocompleteOptionProps>,
 }

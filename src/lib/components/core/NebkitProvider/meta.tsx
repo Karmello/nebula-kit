@@ -83,5 +83,5 @@ export const NEBKIT_PROVIDER_META = {
       '0.3.0': ['updated public API'],
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<NebkitProviderProps>,
+  } satisfies ComponentMeta<NebkitProviderProps>,
 }

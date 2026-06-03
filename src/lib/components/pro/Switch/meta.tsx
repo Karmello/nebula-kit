@@ -69,5 +69,5 @@ export const SWITCH_META = {
       '0.7.0': ['added `intent` prop'],
       '0.4.0': ['released'],
     },
-  } as ComponentMeta<SwitchProps>,
+  } satisfies ComponentMeta<SwitchProps>,
 }

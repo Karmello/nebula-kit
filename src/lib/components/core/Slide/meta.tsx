@@ -128,5 +128,5 @@ export const SLIDE_META = {
     changelog: {
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<SlideProps>,
+  } satisfies ComponentMeta<SlideProps>,
 }

@@ -83,7 +83,7 @@ export const TOOLBAR_META = {
     changelog: {
       '0.2.3': ['released'],
     },
-  } as ComponentMeta<ToolbarProps>,
+  } satisfies ComponentMeta<ToolbarProps>,
   ToolbarMain: {
     overview: {
       bundle: 'pro',
@@ -100,7 +100,7 @@ export const TOOLBAR_META = {
       tagAttrs: GRID_META.GridItem.props.tagAttrs,
       tagRef: GRID_META.GridItem.props.tagRef,
     },
-  } as ComponentMeta<ToolbarMainProps>,
+  } satisfies ComponentMeta<ToolbarMainProps>,
   ToolbarStart: {
     overview: {
       bundle: 'pro',
@@ -118,7 +118,7 @@ export const TOOLBAR_META = {
       tagAttrs: GRID_META.GridItem.props.tagAttrs,
       tagRef: GRID_META.GridItem.props.tagRef,
     },
-  } as ComponentMeta<ToolbarStartProps>,
+  } satisfies ComponentMeta<ToolbarStartProps>,
   ToolbarEnd: {
     overview: {
       bundle: 'pro',
@@ -136,5 +136,5 @@ export const TOOLBAR_META = {
       tagAttrs: GRID_META.GridItem.props.tagAttrs,
       tagRef: GRID_META.GridItem.props.tagRef,
     },
-  } as ComponentMeta<ToolbarEndProps>,
+  } satisfies ComponentMeta<ToolbarEndProps>,
 }

@@ -92,5 +92,5 @@ export const MARKUP_META = {
     changelog: {
       '0.10.0': ['released'],
     },
-  } as ComponentMeta<MarkupProps>,
+  } satisfies ComponentMeta<MarkupProps>,
 }
