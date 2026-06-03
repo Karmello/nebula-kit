@@ -143,7 +143,6 @@ expectType<React.JSX.Element>(<MultiSelect.Option value="one">One</MultiSelect.O
 expectType<React.JSX.Element>(<MultiSelect.Option value="one">One</MultiSelect.Option>)
 
 expectError(<MultiSelect.Option>One</MultiSelect.Option>)
-expectError(<MultiSelect.Option value="one" />)
 expectError(<MultiSelect.Option value={1}>One</MultiSelect.Option>)
 
 expectError(

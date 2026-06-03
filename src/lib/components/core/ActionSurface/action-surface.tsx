@@ -1,7 +1,7 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Ripple } from 'lib/components/shared'
+// import { Ripple } from 'lib/components/shared'
 import { ACTION_SURFACE_TAGS } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { ActionSurfaceTag } from 'lib/types'
@@ -18,11 +18,13 @@ export const ActionSurface = <T extends ActionSurfaceTag = (typeof ACTION_SURFAC
   onClick,
   // Box
   tag = ACTION_SURFACE_TAGS[0] as T,
+  tagRef,
+  tagAttrs,
   children,
   ...boxProps
 }: ActionSurfaceProps<T>) => {
   const localRef = useRef<ComponentRef<T>>(null)
-  const finalRef = boxProps.tagRef || localRef
+  const finalRef = tagRef || localRef
 
   return (
     <Box
@@ -31,11 +33,11 @@ export const ActionSurface = <T extends ActionSurfaceTag = (typeof ACTION_SURFAC
       tagAttrs={
         {
           onClick,
-          ...boxProps.tagAttrs,
-          className: classNames(withPrefix('action-surface'), boxProps.tagAttrs?.className),
-          ...(tag === 'button' ? { type: (boxProps.tagAttrs as ComponentProps<'button'> | undefined)?.type || 'button' } : {}),
+          ...tagAttrs,
+          className: classNames(withPrefix('action-surface'), tagAttrs?.className),
+          ...(tag === 'button' ? { type: (tagAttrs as ComponentProps<'button'> | undefined)?.type || 'button' } : {}),
           style: {
-            ...boxProps.tagAttrs?.style,
+            ...tagAttrs?.style,
             pointerEvents: boxProps.disabled ? 'none' : undefined,
           },
           'aria-disabled': boxProps.disabled || undefined,
@@ -46,10 +48,11 @@ export const ActionSurface = <T extends ActionSurfaceTag = (typeof ACTION_SURFAC
       surface={selected ? 'selected' : undefined}
       position="relative"
       overflow="clip"
+      cursor="pointer"
       {...boxProps}
     >
       {children}
-      <Ripple parentRef={finalRef} active={ripple && !boxProps.disabled} />
+      {/* <Ripple parentRef={finalRef} active={ripple && !boxProps.disabled} /> */}
     </Box>
   )
 }

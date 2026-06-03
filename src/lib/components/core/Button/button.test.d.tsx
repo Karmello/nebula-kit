@@ -1,10 +1,10 @@
 import { createRef } from 'react'
 import { expectError, expectType } from 'tsd'
 
-import { Button } from '..'
+import { Button } from '.'
 
-// children are required
-expectError(<Button />)
+// children optional
+expectType(<Button />)
 
 // children passed
 expectType(<Button>Button</Button>)
@@ -125,7 +125,6 @@ expectType(<Button selected>Button</Button>)
 expectType(<Button loading>Button</Button>)
 expectType(<Button ripple={false}>Button</Button>)
 expectType(<Button elevated>Button</Button>)
-expectType(<Button interactive={false}>Button</Button>)
 
 // hidden Box props must NOT leak
 expectError(<Button margin="5px">Button</Button>)

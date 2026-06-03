@@ -35,6 +35,7 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   // interaction
   interactive?: boolean
   surface?: BoxSurface
+  ripple?: boolean
   disabled?: boolean
   activeOnFocus?: boolean
   cursor?: CssCursor

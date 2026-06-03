@@ -337,6 +337,10 @@ export const BOX_META = {
         description: 'Right offset.',
         link: true,
       },
+      ripple: {
+        options: ['boolean'],
+        description: 'Toggles the ripple effect on pointer interaction.',
+      },
       surface: {
         options: BOX_SURFACES,
         description: 'Applies a persistent surface behavior that overrides transient interaction states like hover and active.',

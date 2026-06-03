@@ -10,6 +10,7 @@ import { useTransitionLifecycle } from 'lib/internals/motion'
 import { useResolveAppearance } from 'lib/internals/styling'
 
 import { BoxProps } from './types'
+import { useRipple } from './useRipple'
 
 import './styles/box.scss'
 
@@ -27,6 +28,7 @@ export const Box = <T extends ElementType = 'div'>({
   intent,
   interactive,
   surface,
+  ripple,
   disabled,
   activeOnFocus,
   cursor,
@@ -197,6 +199,9 @@ export const Box = <T extends ElementType = 'div'>({
     })
   }, [bp, resolvedAppearance.theme, resolvedAppearance.color, variant, intent, hidden])
 
+  const usesRipple = ripple && interactive && !disabled
+  useRipple(finalRef, usesRipple)
+
   return (
     <ThemeProvider theme={resolvedAppearance.theme}>
       <BrandProvider brand={resolvedAppearance.brand}>
@@ -205,7 +210,7 @@ export const Box = <T extends ElementType = 'div'>({
           tagAttrs={
             {
               ...tagAttrs,
-              className: classNames(withPrefix('box'), tagAttrs?.className || ''),
+              className: classNames(withPrefix('box'), usesRipple ? withPrefix('ripple') : '', tagAttrs?.className || ''),
               style: { ...tagAttrs?.style, pointerEvents, cursor },
               disabled,
               ...buildStaticDataset('Box', {

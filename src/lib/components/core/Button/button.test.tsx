@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
-import { Button } from '..'
+import { Button } from '.'
 
 describe('Button', () => {
   it('renders as <button> by default', () => {
