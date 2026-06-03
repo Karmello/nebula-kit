@@ -146,7 +146,6 @@ export const AutocompleteMain = ({
                     iconName={dropdownListState?.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'}
                     iconAngle={dropdownListState?.open ? 180 : 0}
                     elevated={dropdownListState?.open}
-                    interactive={!dropdownListState?.open}
                     onClick={() => {
                       setDropdownListState(prev => ({ ...prev, open: !prev.open }))
                     }}

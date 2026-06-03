@@ -15,7 +15,7 @@ type IconButtonOwnProps = {
 
 type PropsFromActionSurface<T extends IconButtonTag = (typeof ICON_BUTTON_TAGS)[0]> = Pick<
   ActionSurfaceProps<T>,
-  'tag' | 'tagAttrs' | 'tagRef' | 'variant' | 'color' | 'intent' | 'disabled' | 'ripple' | 'onClick' | 'elevated' | 'interactive'
+  'tag' | 'tagAttrs' | 'tagRef' | 'variant' | 'color' | 'intent' | 'disabled' | 'ripple' | 'onClick' | 'elevated'
 >
 
 type PropsFromWithIcon = Pick<WithIconProps, 'customSvgIcon' | 'iconName' | 'iconAngle'>

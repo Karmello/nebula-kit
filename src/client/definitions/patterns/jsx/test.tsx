@@ -5,7 +5,6 @@ export const Test = () => {
     tag: 'button',
     cursor: 'pointer',
     flex: '1',
-    drawable: true,
     interactive: true,
     variant: 'solid',
     intent: 'tertiary',

@@ -1,7 +1,7 @@
 import { ElementType } from 'react'
 
-import { HtmlTagProps } from 'lib/components/shared'
 import { COLORS } from 'lib/constants'
+import { HtmlTagProps } from 'lib/index.core'
 import {
   CssCursor,
   CssDisplay,

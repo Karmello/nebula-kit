@@ -4,7 +4,7 @@ import { ComponentMeta } from 'client/definitions'
 import { BOX_META } from '../Box/meta'
 import { Text } from '../Text'
 import { ActionSurface } from './action-surface'
-import { ActionSurfaceProps, DEFAULT_ACTION_SURFACE_INTERACTIVE, DEFAULT_ACTION_SURFACE_RIPPLE } from './definitions'
+import { ActionSurfaceProps, DEFAULT_ACTION_SURFACE_RIPPLE } from './definitions'
 
 export const ACTION_SURFACE_META = {
   ActionSurface: {
@@ -24,36 +24,11 @@ export const ACTION_SURFACE_META = {
       topLevelTags: ACTION_SURFACE_TAGS,
     },
     props: {
-      blockSize: BOX_META.Box.props.blockSize,
-      borderBottomLeftRadius: BOX_META.Box.props.borderBottomLeftRadius,
-      borderBottomRightRadius: BOX_META.Box.props.borderBottomRightRadius,
-      borderRadius: BOX_META.Box.props.borderRadius,
-      borderTopLeftRadius: BOX_META.Box.props.borderTopLeftRadius,
-      borderTopRightRadius: BOX_META.Box.props.borderTopRightRadius,
-      children: {
-        ...BOX_META.Box.props.children,
-        isRequired: true,
-      },
-      color: BOX_META.Box.props.color,
-      disabled: BOX_META.Box.props.disabled,
-      elevated: BOX_META.Box.props.elevated,
-      inlineSize: BOX_META.Box.props.inlineSize,
-      intent: BOX_META.Box.props.intent,
-      interactive: {
-        ...BOX_META.Box.props.interactive,
-        defaultValue: String(DEFAULT_ACTION_SURFACE_INTERACTIVE),
-      },
-      maxBlockSize: BOX_META.Box.props.maxBlockSize,
-      maxInlineSize: BOX_META.Box.props.maxInlineSize,
-      minBlockSize: BOX_META.Box.props.minBlockSize,
-      minInlineSize: BOX_META.Box.props.minInlineSize,
+      ...BOX_META.Box.props,
       onClick: {
         options: ['e => void'],
         description: 'Click event handler.',
       },
-      padding: BOX_META.Box.props.padding,
-      paddingBlock: BOX_META.Box.props.paddingBlock,
-      paddingInline: BOX_META.Box.props.paddingInline,
       ripple: {
         options: ['boolean'],
         defaultValue: String(DEFAULT_ACTION_SURFACE_RIPPLE),
@@ -67,9 +42,6 @@ export const ACTION_SURFACE_META = {
         ...BOX_META.Box.props.tag,
         defaultValue: ACTION_SURFACE_TAGS[0],
       },
-      tagAttrs: BOX_META.Box.props.tagAttrs,
-      tagRef: BOX_META.Box.props.tagRef,
-      variant: BOX_META.Box.props.variant,
     },
     examples: [
       {

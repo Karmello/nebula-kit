@@ -10,6 +10,7 @@ import { DIVIDER_META } from '../../lib/components/core/Divider/meta'
 import { FLEX_META } from '../../lib/components/core/Flex/meta'
 import { FOOTER_META } from '../../lib/components/core/Footer/meta'
 import { GRID_META } from '../../lib/components/core/Grid/meta'
+import { HTML_TAG_META } from '../../lib/components/core/HtmlTag/meta'
 import { HYDRATION_GATE_META } from '../../lib/components/core/HydrationGate/meta'
 import { ICON_META } from '../../lib/components/core/Icon/meta'
 import { ICON_BUTTON_META } from '../../lib/components/core/IconButton/meta'
@@ -68,6 +69,7 @@ const META = {
   Footer: FOOTER_META,
   Form: FORM_META,
   Grid: GRID_META,
+  HtmlTag: HTML_TAG_META,
   HydrationGate: HYDRATION_GATE_META,
   Icon: ICON_META,
   IconButton: ICON_BUTTON_META,

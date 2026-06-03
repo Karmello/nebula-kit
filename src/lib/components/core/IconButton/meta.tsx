@@ -38,7 +38,6 @@ export const ICON_BUTTON_META = {
       iconAngle: WITH_ICON_META.WithIcon.props.iconAngle,
       iconName: WITH_ICON_META.WithIcon.props.iconName,
       intent: ACTION_SURFACE_META.ActionSurface.props.intent,
-      interactive: ACTION_SURFACE_META.ActionSurface.props.interactive,
       loading: {
         options: ['boolean'],
         description: 'Activates the loading state, shows a spinner and prevents interaction.',

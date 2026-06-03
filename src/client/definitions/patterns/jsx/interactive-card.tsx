@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { ActionSurface, Divider, Scale, Spacer, Text, WithIcon } from 'lib/components'
+import { Box, Divider, Scale, Spacer, Text, WithIcon } from 'lib/components'
 
 export const InteractiveCard = () => {
   const [visible, setVisible] = useState<boolean>(false)
@@ -14,7 +14,7 @@ export const InteractiveCard = () => {
 
   return (
     <Scale visible={visible}>
-      <ActionSurface variant="solid" intent="muted" color="amber" padding="lg">
+      <Box tag="button" drawable interactive variant="solid" intent="muted" color="amber" padding="lg" cursor="pointer">
         <WithIcon iconTypography="h4" iconName="orbit">
           <Text typography="h4">Interactive card</Text>
         </WithIcon>
@@ -24,7 +24,7 @@ export const InteractiveCard = () => {
         <Text color="blue" intent="primary">
           Click to learn more
         </Text>
-      </ActionSurface>
+      </Box>
     </Scale>
   )
 }

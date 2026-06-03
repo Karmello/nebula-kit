@@ -1,9 +1,10 @@
 import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, RefObject, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { BrandProvider, HtmlTag, ThemeProvider } from 'lib/components/shared'
+import { BrandProvider, ThemeProvider } from 'lib/components/shared'
 import { resolveLengthValue, withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
+import { HtmlTag } from 'lib/index.core'
 import { buildStaticDataset, syncRespDataset, syncRespStyle } from 'lib/internals/dom'
 import { useTransitionLifecycle } from 'lib/internals/motion'
 import { useResolveAppearance } from 'lib/internals/styling'
@@ -208,7 +209,7 @@ export const Box = <T extends ElementType = 'div'>({
               style: { ...tagAttrs?.style, pointerEvents, cursor },
               disabled,
               ...buildStaticDataset('Box', {
-                drawable,
+                drawable: drawable || interactive,
                 elevated,
                 interactive,
                 surface,

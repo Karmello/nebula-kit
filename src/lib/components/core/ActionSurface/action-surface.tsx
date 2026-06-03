@@ -7,42 +7,22 @@ import { withPrefix } from 'lib/helpers'
 import { ActionSurfaceTag } from 'lib/types'
 
 import { Box } from '../Box'
-import { ActionSurfaceProps, DEFAULT_ACTION_SURFACE_INTERACTIVE, DEFAULT_ACTION_SURFACE_RIPPLE } from './definitions'
+import { ActionSurfaceProps, DEFAULT_ACTION_SURFACE_RIPPLE } from './definitions'
 
 import './action-surface.scss'
 
 export const ActionSurface = <T extends ActionSurfaceTag = (typeof ACTION_SURFACE_TAGS)[0]>({
-  // Box
-  children,
-  tag = ACTION_SURFACE_TAGS[0] as T,
-  tagAttrs,
-  tagRef,
-  color,
-  disabled,
-  elevated,
-  intent,
-  interactive = DEFAULT_ACTION_SURFACE_INTERACTIVE,
-  onClick,
+  // own
   ripple = DEFAULT_ACTION_SURFACE_RIPPLE,
   selected,
-  variant,
-  inlineSize,
-  minInlineSize,
-  maxInlineSize,
-  blockSize,
-  minBlockSize,
-  maxBlockSize,
-  padding,
-  paddingBlock,
-  paddingInline,
-  borderRadius,
-  borderBottomLeftRadius,
-  borderBottomRightRadius,
-  borderTopLeftRadius,
-  borderTopRightRadius,
+  onClick,
+  // Box
+  tag = ACTION_SURFACE_TAGS[0] as T,
+  children,
+  ...boxProps
 }: ActionSurfaceProps<T>) => {
   const localRef = useRef<ComponentRef<T>>(null)
-  const finalRef = tagRef || localRef
+  const finalRef = boxProps.tagRef || localRef
 
   return (
     <Box
@@ -51,43 +31,25 @@ export const ActionSurface = <T extends ActionSurfaceTag = (typeof ACTION_SURFAC
       tagAttrs={
         {
           onClick,
-          ...tagAttrs,
-          className: classNames(withPrefix('action-surface'), tagAttrs?.className),
-          ...(tag === 'button' ? { type: (tagAttrs as ComponentProps<'button'> | undefined)?.type || 'button' } : {}),
+          ...boxProps.tagAttrs,
+          className: classNames(withPrefix('action-surface'), boxProps.tagAttrs?.className),
+          ...(tag === 'button' ? { type: (boxProps.tagAttrs as ComponentProps<'button'> | undefined)?.type || 'button' } : {}),
           style: {
-            ...tagAttrs?.style,
-            pointerEvents: disabled ? 'none' : undefined,
+            ...boxProps.tagAttrs?.style,
+            pointerEvents: boxProps.disabled ? 'none' : undefined,
           },
-          'aria-disabled': disabled || undefined,
+          'aria-disabled': boxProps.disabled || undefined,
         } as PropsWithoutRef<ComponentProps<T>>
       }
       drawable
-      variant={variant}
-      color={color}
-      intent={intent}
-      disabled={disabled}
-      interactive={interactive}
-      elevated={elevated}
+      interactive
       surface={selected ? 'selected' : undefined}
       position="relative"
       overflow="clip"
-      inlineSize={inlineSize}
-      minInlineSize={minInlineSize}
-      maxInlineSize={maxInlineSize}
-      blockSize={blockSize}
-      minBlockSize={minBlockSize}
-      maxBlockSize={maxBlockSize}
-      padding={padding}
-      paddingBlock={paddingBlock}
-      paddingInline={paddingInline}
-      borderRadius={borderRadius}
-      borderBottomLeftRadius={borderBottomLeftRadius}
-      borderBottomRightRadius={borderBottomRightRadius}
-      borderTopLeftRadius={borderTopLeftRadius}
-      borderTopRightRadius={borderTopRightRadius}
+      {...boxProps}
     >
       {children}
-      <Ripple parentRef={finalRef} active={ripple && !disabled} />
+      <Ripple parentRef={finalRef} active={ripple && !boxProps.disabled} />
     </Box>
   )
 }

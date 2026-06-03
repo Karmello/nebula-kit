@@ -5,7 +5,6 @@ import { ButtonTag, ControlSize, RespValue } from 'lib/types'
 import { ActionSurfaceProps } from '../ActionSurface'
 import { TextProps } from '../Text'
 
-export const DEFAULT_BUTTON_INTERACTIVE: ButtonProps['interactive'] = true
 export const DEFAULT_BUTTON_VARIANT: ButtonProps['variant'] = 'solid'
 export const DEFAULT_BUTTON_INTENT: ButtonProps['intent'] = 'tertiary'
 export const DEFAULT_BUTTON_RIPPLE: ButtonProps['ripple'] = true
@@ -32,7 +31,6 @@ type PropsFromActionSurface<T extends ButtonTag = (typeof BUTTON_TAGS)[0]> = Pic
   | 'variant'
   | 'color'
   | 'intent'
-  | 'interactive'
   | 'disabled'
   | 'elevated'
   | 'inlineSize'

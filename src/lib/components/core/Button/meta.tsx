@@ -61,7 +61,6 @@ export const BUTTON_META = {
         ...ACTION_SURFACE_META.ActionSurface.props.intent,
         defaultValue: String(DEFAULT_BUTTON_INTENT),
       },
-      interactive: ACTION_SURFACE_META.ActionSurface.props.interactive,
       loading: {
         options: ['boolean'],
         description: 'Activates the loading state, shows a spinner and prevents interaction.',

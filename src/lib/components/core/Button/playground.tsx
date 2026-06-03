@@ -16,7 +16,6 @@ export const PROPS_FROM_BUTTON = [
   'iconPlacement',
   'inlineSize',
   'intent',
-  'interactive',
   'loading',
   'minInlineSize',
   'maxInlineSize',

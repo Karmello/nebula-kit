@@ -21,7 +21,6 @@ export const IconButton = <T extends IconButtonTag = (typeof ICON_BUTTON_TAGS)[0
   intent = DEFAULT_ICON_BUTTON_INTENT,
   disabled,
   elevated,
-  interactive,
   // WithIcon
   customSvgIcon,
   iconName,
@@ -50,7 +49,6 @@ export const IconButton = <T extends IconButtonTag = (typeof ICON_BUTTON_TAGS)[0
       intent={intent}
       disabled={disabled || loading}
       elevated={elevated}
-      interactive={interactive}
       ripple={ripple}
       onClick={onClick}
       inlineSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}

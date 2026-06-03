@@ -10,6 +10,7 @@ export const COMPONENT_CATEGORIES = [
     key: 'primitives',
     label: 'Primitives',
     items: [
+      { key: 'html-tag', label: 'HtmlTag', sections, bundle: 'core' },
       { key: 'box', label: 'Box', sections, bundle: 'core' },
       { key: 'flex', label: 'Flex', sections, bundle: 'core' },
       { key: 'grid', label: 'Grid', sections, bundle: 'core' },

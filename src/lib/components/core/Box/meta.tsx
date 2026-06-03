@@ -179,7 +179,8 @@ export const BOX_META = {
       },
       interactive: {
         options: ['boolean'],
-        description: 'Enables visual interaction affordances such as hover and active styling.',
+        description:
+          'Enables visual interaction affordances such as hover and active styling. Sets drawable to true automatically.',
       },
       left: {
         options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],

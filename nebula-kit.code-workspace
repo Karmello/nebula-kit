@@ -17,6 +17,10 @@
       "path": "src/lib",
     },
     {
+      "name": "styles",
+      "path": "src/lib/styles",
+    },
+    {
       "name": "constants",
       "path": "src/lib/constants",
     },
@@ -29,9 +33,11 @@
       "path": "src/lib/components",
     },
     {
+      "name": "core",
       "path": "src/lib/components/core",
     },
     {
+      "name": "pro",
       "path": "src/lib/components/pro",
     },
   ],
