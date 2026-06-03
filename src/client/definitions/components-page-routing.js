@@ -14,16 +14,14 @@ export const COMPONENT_CATEGORIES = [
       { key: 'box', label: 'Box', sections, bundle: 'core' },
       { key: 'flex', label: 'Flex', sections, bundle: 'core' },
       { key: 'grid', label: 'Grid', sections, bundle: 'core' },
-      { key: 'table', label: 'Table', sections, bundle: 'core' },
-      { key: 'text', label: 'Text', sections, bundle: 'core' },
       { key: 'image', label: 'Image', sections, bundle: 'core' },
-      { key: 'icon', label: 'Icon', sections, bundle: 'core' },
     ],
   },
   {
     key: 'layout',
     label: 'Layout',
     items: [
+      { key: 'table', label: 'Table', sections, bundle: 'core' },
       { key: 'segment', label: 'Segment', sections, bundle: 'core' },
       { key: 'spacer', label: 'Spacer', sections, bundle: 'core' },
       { key: 'divider', label: 'Divider', sections, bundle: 'core' },
@@ -33,7 +31,11 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'typography',
     label: 'Typography',
-    items: [{ key: 'markup', label: 'Markup', sections, bundle: 'pro' }],
+    items: [
+      { key: 'text', label: 'Text', sections, bundle: 'core' },
+      { key: 'icon', label: 'Icon', sections, bundle: 'core' },
+      { key: 'markup', label: 'Markup', sections, bundle: 'pro' },
+    ],
   },
   {
     key: 'images',
