@@ -1,3 +1,4 @@
+import { ComponentProps, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
 import { TEXT_TYPOGRAPHY_MAP } from 'lib/constants'
@@ -31,33 +32,37 @@ export const Text = <T extends TextTag = 'p'>({
   tagRef,
   ...boxProps
 }: TextProps<T>) => {
+  const resolvedTag = tag || TEXT_TYPOGRAPHY_MAP[typography].tag
+
   return (
     <Box
-      tag={tag || TEXT_TYPOGRAPHY_MAP[typography].tag}
+      tag={resolvedTag}
       tagRef={tagRef as any}
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('text'), tagAttrs?.className),
-        style: {
-          fontSize: fontSize ?? TEXT_TYPOGRAPHY_MAP[typography].fontSize,
-          lineHeight: lineHeight ?? TEXT_TYPOGRAPHY_MAP[typography].lineHeight,
-          wordBreak,
-          ...(clampLines && clampLines > 0
-            ? {
-                display: '-webkit-box',
-                WebkitLineClamp: clampLines,
-                WebkitBoxOrient: 'vertical' as const,
-                overflow: 'hidden',
-                borderRadius: 0,
-              }
-            : {}),
-          ...(tagAttrs?.style || {}),
-        },
-        ...buildStaticDataset('Text', { typography, bold, italic, underline, noWrap, truncate }),
-      }}
+      tagAttrs={
+        {
+          ...tagAttrs,
+          className: classNames(withPrefix('text'), tagAttrs?.className),
+          style: {
+            fontSize: fontSize ?? TEXT_TYPOGRAPHY_MAP[typography].fontSize,
+            lineHeight: lineHeight ?? TEXT_TYPOGRAPHY_MAP[typography].lineHeight,
+            wordBreak,
+            ...(clampLines && clampLines > 0
+              ? {
+                  display: '-webkit-box',
+                  WebkitLineClamp: clampLines,
+                  WebkitBoxOrient: 'vertical' as const,
+                  overflow: 'hidden',
+                  borderRadius: 0,
+                }
+              : {}),
+            ...(tagAttrs?.style || {}),
+          },
+          ...buildStaticDataset('Text', { typography, bold, italic, underline, noWrap, truncate }),
+        } as PropsWithoutRef<ComponentProps<T>>
+      }
       drawable
       variant="ghost"
-      interactive={tag === 'a'}
+      interactive={resolvedTag === 'a'}
       {...boxProps}
     >
       {space === 'start' || space === 'both' ? <> </> : null}

@@ -46,7 +46,7 @@ export const Callout = <T extends CalloutTag = 'div'>({
       padding={CALLOUT_SIZE_CONFIG[size || 'md'].padding}
     >
       <Title
-        iconTypography={CALLOUT_SIZE_CONFIG[size || 'md'].textTypography}
+        typography={CALLOUT_SIZE_CONFIG[size || 'md'].textTypography as any}
         iconName={CALLOUT_CONFIG[status || 'info'].iconName}
       >
         <Text typography={CALLOUT_SIZE_CONFIG[size || 'md'].textTypography}>

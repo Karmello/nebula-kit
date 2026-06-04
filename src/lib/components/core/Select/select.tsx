@@ -131,13 +131,7 @@ export const SelectImpl = ({
         ripple
         interactive
       >
-        <Title
-          iconName="chevron-down"
-          iconPlacement="right"
-          iconSize={CONTROL_SIZE_MAP[size].iconSize}
-          justifyContent="space-between"
-          iconAngle={open ? 180 : 0}
-        >
+        <Title iconName="chevron-down" iconPlacement="right">
           <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight}>
             {staticLabel ?? selectedOptionSlot?.props.children ?? 'Select...'}
           </Text>

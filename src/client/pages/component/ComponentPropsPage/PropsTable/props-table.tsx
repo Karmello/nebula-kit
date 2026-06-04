@@ -55,7 +55,7 @@ export const PropsTable = ({ data, category }: Props) => {
                     {name}
                   </Text>
                 ) : (
-                  <Title iconName="external-link" iconPlacement="right" iconColor="blue" iconIntent="primary">
+                  <Title iconName="external-link" iconPlacement="right" color="blue" intent="primary">
                     <Link
                       href={`https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/${kebabCase(name)}`}
                       target="_blank"

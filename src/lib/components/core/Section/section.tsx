@@ -47,7 +47,11 @@ export const Section = <T extends SectionTag = 'section'>({
       overflowY="hidden"
       maxInlineSize="100%"
     >
-      <Title iconTypography={SECTION_SIZE_CONFIG[size || 'md'].textTypography} iconName={iconName} iconPlacement={iconPlacement}>
+      <Title
+        typography={SECTION_SIZE_CONFIG[size || 'md'].textTypography as any}
+        iconName={iconName}
+        iconPlacement={iconPlacement}
+      >
         <Text typography={SECTION_SIZE_CONFIG[size || 'md'].textTypography} color={color} intent={headingIntent} bold>
           {heading}
         </Text>

@@ -4,15 +4,11 @@ export type PropsFromTitleKey = (typeof PROPS_FROM_TITLE)[number]
 
 export const PROPS_FROM_TITLE = [
   'children',
-  'gap',
-  'iconAngle',
-  'iconColor',
-  'iconIntent',
+  'color',
   'iconName',
   'iconPlacement',
-  'iconSize',
-  'inlineSize',
-  'justifyContent',
+  'intent',
+  'typography',
 ] as const satisfies readonly (keyof TitleProps)[]
 
 export const TITLE_PRESETS = [

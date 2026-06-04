@@ -94,9 +94,6 @@ export const MultiSelect = ({
                 <Title
                   iconName={dropdownListState?.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'}
                   iconPlacement="right"
-                  justifyContent="space-between"
-                  iconAngle={dropdownListState?.open ? 180 : 0}
-                  iconSize={CONTROL_SIZE_MAP[size].iconSize}
                 >
                   <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight} truncate>
                     {currentLabel || 'Select ...'}
@@ -118,7 +115,7 @@ export const MultiSelect = ({
                     onClick={() => handleChange(slotProps.value)}
                     ripple={false}
                   >
-                    <Title iconName={isSelected ? 'check' : undefined} iconPlacement="right" justifyContent="space-between">
+                    <Title iconName={isSelected ? 'check' : undefined} iconPlacement="right">
                       <Text
                         fontSize={CONTROL_SIZE_MAP[size].fontSize}
                         lineHeight={CONTROL_SIZE_MAP[size].lineHeight}

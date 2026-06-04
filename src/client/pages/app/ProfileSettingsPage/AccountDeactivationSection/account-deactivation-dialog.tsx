@@ -18,10 +18,8 @@ export const AccountDeactivationDialog = ({
   return (
     <Dialog open={open}>
       <Dialog.Header>
-        <Title iconTypography="h6" iconName="triangle-alert" iconIntent="primary" iconColor="red">
-          <Text typography="h6" intent="primary" color="red">
-            Account deactivation
-          </Text>
+        <Title typography="h6" iconName="triangle-alert" intent="primary" color="red">
+          Account deactivation
         </Title>
       </Dialog.Header>
       <Dialog.Content>

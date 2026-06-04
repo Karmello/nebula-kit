@@ -1,89 +1,69 @@
-import { Title } from 'lib/index.core'
+import { PROP_GROUPS } from 'lib/constants'
+import { Title, TitleProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
-import { Box } from '../Box'
-import { BOX_META } from '../Box/meta'
 import { FLEX_META } from '../Flex/meta'
 import { ICON_META } from '../Icon/meta'
-import { ROTATE_META } from '../Rotate/meta'
-import { TEXT_META } from '../Text/meta'
-import {
-  DEFAULT_TITLE_GAP,
-  DEFAULT_TITLE_ICON_PLACEMENT,
-  TITLE_ICON_PLACEMENTS,
-  TITLE_JUSTIFY_CONTENT,
-  TitleProps,
-} from './definitions'
+import { DEFAULT_TITLE_ICON_PLACEMENT, DEFAULT_TITLE_TYPOGRAPHY, TITLE_ICON_PLACEMENTS, TITLE_TYPOGRAPHY } from './constants'
 
 export const TITLE_META = {
   Title: {
     overview: {
       bundle: 'core',
-      title: 'Layout component that aligns an icon with accompanying content.',
+      title: 'Title text component with optional icon support.',
+      description:
+        'Title renders concise text with an optional icon, keeping icon size, spacing, color and intent aligned with the selected typography.',
       features: [
-        'renders an icon next to the children passed',
-        'controls layout of an icon and children',
-        'handles icon rotation if required',
+        'renders concise title text with an optional icon',
+        'syncs icon size and spacing with typography',
+        'supports left or right icon placement',
+        'applies shared color and intent to text and icon',
+        'allows custom content when children are not plain text',
       ],
-      composedOf: ['Box', 'Flex', 'Rotate', 'Icon'],
+      composedOf: ['Flex', 'Text', 'Icon'],
       topLevelTags: ['span'],
     },
     props: {
-      children: BOX_META.Box.props.children,
-      customSvgIcon: ICON_META.Icon.props.children,
-      gap: {
-        ...FLEX_META.Flex.props.gap,
-        defaultValue: String(DEFAULT_TITLE_GAP),
-        description: 'Spacing between icon and content.',
+      color: FLEX_META.Flex.props.color,
+      intent: FLEX_META.Flex.props.intent,
+      typography: {
+        group: PROP_GROUPS.TYPOGRAPHY,
+        options: TITLE_TYPOGRAPHY,
+        defaultValue: DEFAULT_TITLE_TYPOGRAPHY,
+        description: 'Typography style used for plain text children and for deriving the icon size and spacing.',
       },
-      iconAngle: {
-        ...ROTATE_META.Rotate.props.angle,
-        isRequired: false,
-        description: 'Defines the rotation angle of the icon, animating when the value changes.',
-      },
-      iconColor: ICON_META.Icon.props.color,
-      iconIntent: ICON_META.Icon.props.intent,
       iconName: ICON_META.Icon.props.name,
       iconPlacement: {
+        group: PROP_GROUPS.ICON,
         options: TITLE_ICON_PLACEMENTS as unknown as string[],
         defaultValue: DEFAULT_TITLE_ICON_PLACEMENT,
         isRequired: false,
         isResponsive: false,
         description: 'Icon placement relative to children.',
       },
-      iconSize: ICON_META.Icon.props.size,
-      iconTypography: TEXT_META.Text.props.typography,
-      inlineSize: BOX_META.Box.props.inlineSize,
-      justifyContent: {
-        ...FLEX_META.Flex.props.justifyContent,
-        options: TITLE_JUSTIFY_CONTENT,
-        description: 'Distributes an icon and children along the main axis.',
+      customSvgIcon: {
+        ...ICON_META.Icon.props.children,
+        group: PROP_GROUPS.ICON,
       },
-      tagAttrs: BOX_META.Box.props.tagAttrs,
-      tagRef: BOX_META.Box.props.tagRef,
+      children: {
+        ...FLEX_META.Flex.props.children,
+        isRequired: true,
+        description:
+          'Content rendered as the title. Plain string or number children are wrapped in Text using the selected typography. Custom React nodes are rendered directly.',
+      },
+      tagAttrs: FLEX_META.Flex.props.tagAttrs,
+      tagRef: FLEX_META.Flex.props.tagRef,
     },
     examples: [
       {
         description: 'Search icon aligned with the provided text content.',
-        jsx: (
-          <Title iconName="search">
-            <Box tag="span">Text content</Box>
-          </Title>
-        ),
+        jsx: <Title iconName="search">Text content</Title>,
       },
       {
         description: 'Icon on the right.',
         jsx: (
           <Title iconName="search" iconPlacement="right">
-            <Box tag="span">Text content</Box>
-          </Title>
-        ),
-      },
-      {
-        description: 'Icon aligned to the right edge of the container.',
-        jsx: (
-          <Title iconName="search" iconPlacement="right" justifyContent="space-between">
-            <Box tag="span">Text content</Box>
+            Text content
           </Title>
         ),
       },

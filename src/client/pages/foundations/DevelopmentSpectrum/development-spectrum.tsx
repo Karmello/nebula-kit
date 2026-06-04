@@ -23,12 +23,12 @@ export default () => {
                   manually assembling layouts, accessibility and reusable component architecture.
                 </Text>
                 <Spacer />
-                <Title iconName="arrow-up" iconColor="red" iconIntent="primary">
-                  <Text>maximum control, precise customization</Text>
+                <Title iconName="arrow-up" color="red" intent="primary">
+                  maximum control, precise customization
                 </Title>
                 <Spacer blockSize="sm" />
-                <Title iconName="arrow-down" iconColor="red" iconIntent="primary">
-                  <Text>higher cognitive load, slow development, repetitive work</Text>
+                <Title iconName="arrow-down" color="red" intent="primary">
+                  higher cognitive load, slow development, repetitive work
                 </Title>
               </Box>
             </Box>
@@ -48,15 +48,13 @@ export default () => {
                   preserving consistency, composability and architectural clarity.
                 </Text>
                 <Spacer />
-                <Title iconName="arrow-up" iconColor="blue" iconIntent="primary">
-                  <Text>
-                    predictable architecture, structured development, reduced cognitive load, fast composition, long-term
-                    maintainability
-                  </Text>
+                <Title iconName="arrow-up" color="blue" intent="primary">
+                  predictable architecture, structured development, reduced cognitive load, fast composition, long-term
+                  maintainability
                 </Title>
                 <Spacer blockSize="sm" />
-                <Title iconName="arrow-down" iconColor="blue" iconIntent="primary">
-                  <Text>opinionated architecture, constrained flexibility</Text>
+                <Title iconName="arrow-down" color="blue" intent="primary">
+                  opinionated architecture, constrained flexibility
                 </Title>
               </Box>
             </Box>
@@ -76,12 +74,12 @@ export default () => {
                   interface assembly is delegated directly to AI systems.
                 </Text>
                 <Spacer />
-                <Title iconName="arrow-up" iconColor="red" iconIntent="primary">
-                  <Text>low upfront effort, fast iteration, instant output</Text>
+                <Title iconName="arrow-up" color="red" intent="primary">
+                  low upfront effort, fast iteration, instant output
                 </Title>
                 <Spacer blockSize="sm" />
-                <Title iconName="arrow-down" iconColor="red" iconIntent="primary">
-                  <Text>inconsistent patterns, difficult maintenance, growing entropy, 80% wall</Text>
+                <Title iconName="arrow-down" color="red" intent="primary">
+                  inconsistent patterns, difficult maintenance, growing entropy, 80% wall
                 </Title>
               </Box>
             </Box>

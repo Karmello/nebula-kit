@@ -4,253 +4,117 @@ import { expectError, expectType } from 'tsd'
 import { Title } from '../'
 
 // -------------------------------------
-// children optional
+// children
 // -------------------------------------
 
-expectType(<Title iconName="check" />)
+expectError(<Title />)
 
-expectType(<Title iconName="check">children</Title>)
+expectType(<Title>Title</Title>)
+
+expectType(<Title>{123}</Title>)
+
+expectType(
+  <Title>
+    <span>Title</span>
+  </Title>
+)
+
+// -------------------------------------
+// typography
+// -------------------------------------
+
+expectType(<Title typography="h1">Title</Title>)
+expectType(<Title typography="h2">Title</Title>)
+expectType(<Title typography="h3">Title</Title>)
+expectType(<Title typography="h4">Title</Title>)
+expectType(<Title typography="h5">Title</Title>)
+expectType(<Title typography="h6">Title</Title>)
+
+expectError(<Title typography="body">Title</Title>)
+expectError(<Title typography="wrong">Title</Title>)
 
 // -------------------------------------
 // iconName
 // -------------------------------------
 
-expectType(<Title iconName="check">children</Title>)
+expectType(<Title iconName="check">Title</Title>)
 
-expectType(<Title iconName={{ md: 'check' }}>children</Title>)
+expectType(<Title iconName={{ md: 'check' }}>Title</Title>)
 
-expectError(<Title iconName="xyz">children</Title>)
+expectError(<Title iconName="xyz">Title</Title>)
 
 // -------------------------------------
 // iconPlacement
 // -------------------------------------
 
-expectType(
-  <Title iconName="check" iconPlacement="left">
-    children
-  </Title>
-)
+expectType(<Title iconPlacement="left">Title</Title>)
 
-expectType(
-  <Title iconName="check" iconPlacement="right">
-    children
-  </Title>
-)
+expectType(<Title iconPlacement="right">Title</Title>)
 
-expectError(
-  <Title iconName="check" iconPlacement="center">
-    children
-  </Title>
-)
-
-// -------------------------------------
-// iconAngle
-// -------------------------------------
-
-expectType(
-  <Title iconName="check" iconAngle={180}>
-    children
-  </Title>
-)
-
-expectError(
-  <Title iconName="check" iconAngle="180">
-    children
-  </Title>
-)
-
-// -------------------------------------
-// iconIntent
-// -------------------------------------
-
-expectType(
-  <Title iconName="check" iconIntent="primary">
-    children
-  </Title>
-)
-
-expectType(
-  <Title iconName="check" iconIntent={{ md: 'secondary' }}>
-    children
-  </Title>
-)
-
-expectError(
-  <Title iconName="check" iconIntent="wrong">
-    children
-  </Title>
-)
-
-// -------------------------------------
-// iconColor
-// -------------------------------------
-
-expectType(
-  <Title iconName="check" iconColor="blue">
-    children
-  </Title>
-)
-
-expectType(
-  <Title iconName="check" iconColor={{ lg: 'red' }}>
-    children
-  </Title>
-)
-
-expectError(
-  <Title iconName="check" iconColor="wrong">
-    children
-  </Title>
-)
-
-// -------------------------------------
-// iconSize
-// -------------------------------------
-
-expectType(
-  <Title iconName="check" iconSize="md">
-    children
-  </Title>
-)
-
-expectType(
-  <Title iconName="check" iconSize="40px">
-    children
-  </Title>
-)
-
-expectType(
-  <Title iconName="check" iconSize={{ md: 'xl' }}>
-    children
-  </Title>
-)
-
-// -------------------------------------
-// iconTypography
-// -------------------------------------
-
-expectType(
-  <Title iconName="check" iconTypography="body">
-    children
-  </Title>
-)
-
-expectType(
-  <Title iconName="check" iconTypography="h1">
-    children
-  </Title>
-)
-
-expectError(
-  <Title iconName="check" iconTypography="wrong">
-    children
-  </Title>
-)
-
-// -------------------------------------
-// gap
-// -------------------------------------
-
-expectType(
-  <Title iconName="check" gap="md">
-    children
-  </Title>
-)
-
-expectType(
-  <Title iconName="check" gap="20px">
-    children
-  </Title>
-)
-
-expectType(
-  <Title iconName="check" gap={{ md: 'lg' }}>
-    children
-  </Title>
-)
-
-// -------------------------------------
-// justifyContent
-// -------------------------------------
-
-expectType(
-  <Title iconName="check" justifyContent="center">
-    children
-  </Title>
-)
-
-expectType(
-  <Title iconName="check" justifyContent="space-between">
-    children
-  </Title>
-)
-
-expectError(
-  <Title iconName="check" justifyContent="wrong">
-    children
-  </Title>
-)
+expectError(<Title iconPlacement="center">Title</Title>)
 
 // -------------------------------------
 // customSvgIcon
 // -------------------------------------
 
-expectType(<Title customSvgIcon={<svg />}>children</Title>)
+expectType(<Title customSvgIcon={<svg />}>Title</Title>)
+
+// -------------------------------------
+// color
+// -------------------------------------
+
+expectType(<Title color="blue">Title</Title>)
+
+expectType(<Title color={{ md: 'red' }}>Title</Title>)
+
+expectError(<Title color="wrong">Title</Title>)
+
+// -------------------------------------
+// intent
+// -------------------------------------
+
+expectType(<Title intent="primary">Title</Title>)
+
+expectType(<Title intent={{ md: 'secondary' }}>Title</Title>)
+
+expectError(<Title intent="wrong">Title</Title>)
 
 // -------------------------------------
 // refs
 // -------------------------------------
 
-expectType(
-  <Title iconName="check" tagRef={createRef<HTMLSpanElement>()}>
-    children
-  </Title>
-)
+expectType(<Title tagRef={createRef<HTMLSpanElement>()}>Title</Title>)
 
 // -------------------------------------
 // tagAttrs
 // -------------------------------------
 
-expectType(
-  <Title iconName="check" tagAttrs={{ 'data-testid': 'icon' }}>
-    children
-  </Title>
-)
+expectType(<Title tagAttrs={{ 'data-testid': 'title' }}>Title</Title>)
 
-expectError(
-  <Title iconName="check" tagAttrs={{ href: 'href' }}>
-    children
-  </Title>
-)
+expectType(<Title tagAttrs={{ title: 'Tooltip' }}>Title</Title>)
+
+expectError(<Title tagAttrs={{ href: 'href' }}>Title</Title>)
 
 // -------------------------------------
 // root tag locked
 // -------------------------------------
 
-expectError(
-  <Title iconName="check" tag="div">
-    children
-  </Title>
-)
+expectError(<Title tag="div">Title</Title>)
 
 // -------------------------------------
 // props intentionally NOT exposed
 // -------------------------------------
 
-expectError(
-  <Title iconName="check" flexDirection="column">
-    children
-  </Title>
-)
+expectError(<Title flexDirection="column">Title</Title>)
 
-expectError(
-  <Title iconName="check" variant="solid">
-    children
-  </Title>
-)
+expectError(<Title gap="md">Title</Title>)
 
-expectError(
-  <Title iconName="check" margin="10px">
-    children
-  </Title>
-)
+expectError(<Title iconSize="lg">Title</Title>)
+
+expectError(<Title iconTypography="h1">Title</Title>)
+
+expectError(<Title justifyContent="center">Title</Title>)
+
+expectError(<Title variant="solid">Title</Title>)
+
+expectError(<Title margin="10px">Title</Title>)

@@ -17,7 +17,7 @@ const Article = ({ title, date, platform, href, iconName }: ArticleProps) => {
           {`${new Date(date).toDateString()} |`}
         </Text>
         <Text tag="span">{`${platform} |`}</Text>
-        <Title iconName="external-link" iconPlacement="right" iconIntent="primary" iconColor="blue">
+        <Title iconName="external-link" iconPlacement="right" intent="primary" color="blue">
           <Link href={href} target="_blank">
             <Text tag="span" intent="primary" color="blue">
               Open

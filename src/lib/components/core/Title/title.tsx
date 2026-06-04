@@ -2,42 +2,33 @@ import classNames from 'classnames'
 
 import { TEXT_TYPOGRAPHY_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { Flex, Icon, Rotate, TitleProps } from 'lib/index.core'
+import { Flex, Icon, Text, TitleProps } from 'lib/index.core'
 
-import { DEFAULT_TEXT_TYPOGRAPHY } from '../Text'
-import { DEFAULT_TITLE_GAP, DEFAULT_TITLE_ICON_PLACEMENT } from './definitions'
+import { DEFAULT_TITLE_ICON_PLACEMENT, DEFAULT_TITLE_TYPOGRAPHY } from './constants'
 
 export const Title = ({
-  // Box
-  children,
+  // own
+  typography = DEFAULT_TITLE_TYPOGRAPHY,
+  iconPlacement = DEFAULT_TITLE_ICON_PLACEMENT,
+  // Flex
   tagAttrs,
   tagRef,
-  inlineSize,
-  // Flex
-  justifyContent,
-  gap = DEFAULT_TITLE_GAP,
+  color,
+  intent,
+  // Text
+  children,
   // Icon
   iconName,
-  iconSize,
-  iconIntent,
-  iconColor,
   customSvgIcon,
-  // Rotate
-  iconAngle,
   // own
-  iconTypography = DEFAULT_TEXT_TYPOGRAPHY,
-  iconPlacement = DEFAULT_TITLE_ICON_PLACEMENT,
 }: TitleProps) => {
   const icon = (
-    <Icon
-      name={iconName}
-      size={iconSize !== undefined ? iconSize : TEXT_TYPOGRAPHY_MAP[iconTypography].iconSize}
-      intent={iconIntent}
-      color={iconColor}
-    >
+    <Icon name={iconName} size={TEXT_TYPOGRAPHY_MAP[typography || 'h6'].iconSize} intent={intent} color={color}>
       {customSvgIcon}
     </Icon>
   )
+
+  const isPlainText = typeof children === 'string' || typeof children === 'number'
 
   return (
     <Flex
@@ -47,16 +38,22 @@ export const Title = ({
         className: classNames(withPrefix('title'), tagAttrs?.className || ''),
       }}
       tagRef={tagRef}
-      inlineSize={inlineSize}
-      alignItems="center"
       flexDirection="row"
       flexWrap="nowrap"
-      justifyContent={justifyContent === 'space-between' && iconPlacement === 'left' ? 'flex-start' : justifyContent}
-      gap={gap}
+      alignItems="center"
+      color={color}
+      intent={intent}
+      columnGap={TEXT_TYPOGRAPHY_MAP[typography || 'h6'].iconGap}
     >
-      {iconPlacement === 'left' ? iconAngle !== undefined ? <Rotate angle={iconAngle}>{icon}</Rotate> : icon : null}
-      {children}
-      {iconPlacement === 'right' ? iconAngle !== undefined ? <Rotate angle={iconAngle}>{icon}</Rotate> : icon : null}
+      {iconPlacement === 'left' ? icon : null}
+      {isPlainText ? (
+        <Text typography={typography} color={color} intent={intent}>
+          {children}
+        </Text>
+      ) : (
+        children
+      )}
+      {iconPlacement === 'right' ? icon : null}
     </Flex>
   )
 }

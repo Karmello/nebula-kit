@@ -122,12 +122,10 @@ export default () => {
                   <Title
                     iconName={hasPaidPlan ? (isDiscordConnected ? 'check' : undefined) : undefined}
                     iconPlacement="right"
-                    iconColor={discordStatusColor}
-                    iconIntent={hasPaidPlan ? 'primary' : undefined}
+                    color={discordStatusColor}
+                    intent={hasPaidPlan ? 'primary' : undefined}
                   >
-                    <Text color={discordStatusColor} intent={hasPaidPlan ? 'primary' : undefined}>
-                      {discordStatusText}
-                    </Text>
+                    {discordStatusText}
                   </Title>
                 ) : null}
               </Table.Cell>
@@ -145,12 +143,10 @@ export default () => {
                       <Title
                         iconName={hasPaidPlan ? (isGithubConnected ? 'check' : undefined) : undefined}
                         iconPlacement="right"
-                        iconColor={githubStatusColor}
-                        iconIntent={hasPaidPlan ? 'primary' : undefined}
+                        color={githubStatusColor}
+                        intent={hasPaidPlan ? 'primary' : undefined}
                       >
-                        <Text color={githubStatusColor} intent={hasPaidPlan ? 'primary' : undefined}>
-                          {githubStatusText}
-                        </Text>
+                        {githubStatusText}
                       </Title>
                     </Flex.Item>
 

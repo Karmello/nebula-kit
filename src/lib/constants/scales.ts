@@ -21,6 +21,7 @@ export const TEXT_TYPOGRAPHY_MAP: Record<
     lineHeight: number
     iconSize: string
     tag: TextTag
+    iconGap?: string
   }
 > = {
   body: {
@@ -52,36 +53,42 @@ export const TEXT_TYPOGRAPHY_MAP: Record<
     lineHeight: 1.3,
     iconSize: '15px',
     tag: 'h6',
+    iconGap: LENGTH_SCALE.xs,
   },
   h5: {
     fontSize: '21px',
     lineHeight: 1.3,
     iconSize: '19px',
     tag: 'h5',
+    iconGap: LENGTH_SCALE.xs,
   },
   h4: {
     fontSize: '27px',
     lineHeight: 1.2,
     iconSize: '25px',
     tag: 'h4',
+    iconGap: LENGTH_SCALE.xs,
   },
   h3: {
     fontSize: '37px',
     lineHeight: 1.2,
     iconSize: '33px',
     tag: 'h3',
+    iconGap: LENGTH_SCALE.xs,
   },
   h2: {
     fontSize: '48px',
     lineHeight: 1.1,
     iconSize: '40px',
     tag: 'h2',
+    iconGap: LENGTH_SCALE.sm,
   },
   h1: {
     fontSize: '60px',
     lineHeight: 1.1,
     iconSize: '50px',
     tag: 'h1',
+    iconGap: LENGTH_SCALE.md,
   },
 }
 

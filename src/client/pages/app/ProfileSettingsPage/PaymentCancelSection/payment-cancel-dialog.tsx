@@ -18,10 +18,8 @@ export const PaymentCancelDialog = ({
   return (
     <Dialog open={open}>
       <Dialog.Header>
-        <Title iconName="triangle-alert" iconColor="red" iconIntent="primary" iconTypography="h6">
-          <Text typography="h6" intent="primary" color="red">
-            Cancel subscription
-          </Text>
+        <Title typography="h6" iconName="triangle-alert" color="red" intent="primary">
+          Cancel subscription
         </Title>
       </Dialog.Header>
       <Dialog.Content>
