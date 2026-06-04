@@ -11,7 +11,7 @@ import { SECTION_PRESETS } from 'lib/components/core/Section/playground'
 import { SELECT_PRESETS } from 'lib/components/core/Select/playground'
 import { TABLE_PRESETS } from 'lib/components/core/Table/playground'
 import { TEXT_PRESETS } from 'lib/components/core/Text/playground'
-import { WITH_ICON_PRESETS } from 'lib/components/core/WithIcon/playground'
+import { TITLE_PRESETS } from 'lib/components/core/Title/playground'
 import { AVATAR_PRESETS } from 'lib/components/pro/Avatar/playground'
 import { SWITCH_PRESETS } from 'lib/components/pro/Switch/playground'
 import { TABS_PRESETS } from 'lib/components/pro/Tabs/playground'
@@ -35,5 +35,5 @@ export const PLAYGROUND_PRESETS: Record<string, Array<{ name: string; props: obj
   Tabs: TABS_PRESETS,
   Text: TEXT_PRESETS,
   Tooltip: TOOLTIP_PRESETS,
-  WithIcon: WITH_ICON_PRESETS,
+  Title: TITLE_PRESETS,
 }

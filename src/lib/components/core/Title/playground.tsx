@@ -1,8 +1,8 @@
-import { WithIconProps } from 'lib/index.core'
+import { TitleProps } from 'lib/index.core'
 
-export type PropsFromWithIconKey = (typeof PROPS_FROM_WITH_ICON)[number]
+export type PropsFromTitleKey = (typeof PROPS_FROM_TITLE)[number]
 
-export const PROPS_FROM_WITH_ICON = [
+export const PROPS_FROM_TITLE = [
   'children',
   'gap',
   'iconAngle',
@@ -13,15 +13,15 @@ export const PROPS_FROM_WITH_ICON = [
   'iconSize',
   'inlineSize',
   'justifyContent',
-] as const satisfies readonly (keyof WithIconProps)[]
+] as const satisfies readonly (keyof TitleProps)[]
 
-export const WITH_ICON_PRESETS = [
+export const TITLE_PRESETS = [
   {
     name: 'Icon on the right',
     props: {
       children: 'Text aligned together with icon',
       iconName: 'puzzle',
       iconPlacement: 'right',
-    } as Record<PropsFromWithIconKey, unknown>,
+    } as Record<PropsFromTitleKey, unknown>,
   },
 ]

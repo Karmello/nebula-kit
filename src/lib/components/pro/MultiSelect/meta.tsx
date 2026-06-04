@@ -19,7 +19,7 @@ export const MULTI_SELECT_META = {
       bundle: 'pro',
       title: 'Form control for choosing multiple options from a list.',
       features: ['supports both controlled and uncontrolled modes'],
-      composedOf: ['Text', 'WithIcon'],
+      composedOf: ['Text', 'Title'],
       topLevelTags: ['div'],
       slots: ['MultiSelect.Option'],
     },

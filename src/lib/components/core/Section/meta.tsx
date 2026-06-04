@@ -4,7 +4,7 @@ import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { TEXT_META } from '../Text/meta'
-import { WITH_ICON_META } from '../WithIcon/meta'
+import { TITLE_META } from '../Title/meta'
 import {
   DEFAULT_SECTION_INTENT,
   DEFAULT_SECTION_SIZE,
@@ -23,7 +23,7 @@ export const SECTION_META = {
         'provides consistent spacing and visual separation between heading and body',
         'supports optional icon and styling variants for section headers',
       ],
-      composedOf: ['Box', 'Text', 'Divider', 'Spacer', 'WithIcon'],
+      composedOf: ['Box', 'Text', 'Divider', 'Spacer', 'Title'],
       topLevelTags: SECTION_TAGS,
     },
     props: {
@@ -41,9 +41,9 @@ export const SECTION_META = {
         ...TEXT_META.Text.props.intent,
         description: "Color tone applied to the component's heading text.",
       },
-      iconName: WITH_ICON_META.WithIcon.props.iconName,
+      iconName: TITLE_META.Title.props.iconName,
       iconPlacement: {
-        ...WITH_ICON_META.WithIcon.props.iconPlacement,
+        ...TITLE_META.Title.props.iconPlacement,
         description: 'Icon placement relative to heading.',
       },
       intent: {

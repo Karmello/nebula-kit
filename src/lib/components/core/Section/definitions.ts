@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { WithIconProps } from 'lib/index.core'
+import { TitleProps } from 'lib/index.core'
 import { RespValue, SectionTag, TShirtSize } from 'lib/types'
 
 import { BoxProps, BoxVariant } from '../Box'
@@ -45,6 +45,6 @@ type PropsFromBox<T extends SectionTag = 'section'> = Pick<
   children: BoxProps<T>['children']
 }
 
-type PropsFromWithIcon = Pick<WithIconProps, 'iconName' | 'iconPlacement'>
+type PropsFromTitle = Pick<TitleProps, 'iconName' | 'iconPlacement'>
 
-export type SectionProps<T extends SectionTag = 'section'> = PropsFromBox<T> & PropsFromWithIcon & SectionOwnProps
+export type SectionProps<T extends SectionTag = 'section'> = PropsFromBox<T> & PropsFromTitle & SectionOwnProps

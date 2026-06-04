@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Icon, Spacer, Text, WithIcon } from 'lib/components'
+import { Box, Divider, Flex, Icon, Spacer, Text, Title } from 'lib/components'
 
 export default () => {
   return (
@@ -23,13 +23,13 @@ export default () => {
                   manually assembling layouts, accessibility and reusable component architecture.
                 </Text>
                 <Spacer />
-                <WithIcon iconName="arrow-up" iconColor="red" iconIntent="primary">
+                <Title iconName="arrow-up" iconColor="red" iconIntent="primary">
                   <Text>maximum control, precise customization</Text>
-                </WithIcon>
+                </Title>
                 <Spacer blockSize="sm" />
-                <WithIcon iconName="arrow-down" iconColor="red" iconIntent="primary">
+                <Title iconName="arrow-down" iconColor="red" iconIntent="primary">
                   <Text>higher cognitive load, slow development, repetitive work</Text>
-                </WithIcon>
+                </Title>
               </Box>
             </Box>
           </Flex.Item>
@@ -48,16 +48,16 @@ export default () => {
                   preserving consistency, composability and architectural clarity.
                 </Text>
                 <Spacer />
-                <WithIcon iconName="arrow-up" iconColor="blue" iconIntent="primary">
+                <Title iconName="arrow-up" iconColor="blue" iconIntent="primary">
                   <Text>
                     predictable architecture, structured development, reduced cognitive load, fast composition, long-term
                     maintainability
                   </Text>
-                </WithIcon>
+                </Title>
                 <Spacer blockSize="sm" />
-                <WithIcon iconName="arrow-down" iconColor="blue" iconIntent="primary">
+                <Title iconName="arrow-down" iconColor="blue" iconIntent="primary">
                   <Text>opinionated architecture, constrained flexibility</Text>
-                </WithIcon>
+                </Title>
               </Box>
             </Box>
           </Flex.Item>
@@ -76,13 +76,13 @@ export default () => {
                   interface assembly is delegated directly to AI systems.
                 </Text>
                 <Spacer />
-                <WithIcon iconName="arrow-up" iconColor="red" iconIntent="primary">
+                <Title iconName="arrow-up" iconColor="red" iconIntent="primary">
                   <Text>low upfront effort, fast iteration, instant output</Text>
-                </WithIcon>
+                </Title>
                 <Spacer blockSize="sm" />
-                <WithIcon iconName="arrow-down" iconColor="red" iconIntent="primary">
+                <Title iconName="arrow-down" iconColor="red" iconIntent="primary">
                   <Text>inconsistent patterns, difficult maintenance, growing entropy, 80% wall</Text>
-                </WithIcon>
+                </Title>
               </Box>
             </Box>
           </Flex.Item>

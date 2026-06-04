@@ -1,6 +1,6 @@
 import { kebabCase } from 'change-case'
 
-import { Flex, Icon, Link, Spacer, Table, Tabs, Text, Tooltip, WithIcon } from 'lib/components'
+import { Flex, Icon, Link, Spacer, Table, Tabs, Text, Title, Tooltip } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 
 type Props = {
@@ -55,7 +55,7 @@ export const PropsTable = ({ data, category }: Props) => {
                     {name}
                   </Text>
                 ) : (
-                  <WithIcon iconName="external-link" iconPlacement="right" iconColor="blue" iconIntent="primary">
+                  <Title iconName="external-link" iconPlacement="right" iconColor="blue" iconIntent="primary">
                     <Link
                       href={`https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/${kebabCase(name)}`}
                       target="_blank"
@@ -64,7 +64,7 @@ export const PropsTable = ({ data, category }: Props) => {
                         {name}
                       </Text>
                     </Link>
-                  </WithIcon>
+                  </Title>
                 )}
               </Table.Cell>
 

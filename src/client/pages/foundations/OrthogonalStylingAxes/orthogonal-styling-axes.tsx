@@ -1,4 +1,4 @@
-import { Box, Flex, Link, Text, WithIcon } from 'lib/components'
+import { Box, Flex, Link, Text, Title } from 'lib/components'
 import { useNavigateTo } from 'client/hooks'
 
 export default () => {
@@ -34,7 +34,7 @@ export default () => {
           always local. They describe how a specific drawable surface presents itself within that environment. Each axis operates
           independently, so changing one never changes the meaning or behavior of the others.
         </Text>
-        <WithIcon iconName="arrow-right" iconPlacement="right" iconColor="blue" iconIntent="primary">
+        <Title iconName="arrow-right" iconPlacement="right" iconColor="blue" iconIntent="primary">
           <Link
             href="/foundations/concepts/styling-system/styling-axes"
             onClick={() => {
@@ -45,7 +45,7 @@ export default () => {
               More on the topic
             </Text>
           </Link>
-        </WithIcon>
+        </Title>
       </Flex>
     </Box>
   )

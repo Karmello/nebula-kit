@@ -30,7 +30,7 @@ import { SPACER_META } from '../../lib/components/core/Spacer/meta'
 import { TABLE_META } from '../../lib/components/core/Table/meta'
 import { TEXT_META } from '../../lib/components/core/Text/meta'
 import { TEXTAREA_META } from '../../lib/components/core/Textarea/meta'
-import { WITH_ICON_META } from '../../lib/components/core/WithIcon/meta'
+import { TITLE_META } from '../../lib/components/core/Title/meta'
 import { AUTOCOMPLETE_META } from '../../lib/components/pro/Autocomplete/meta'
 import { AVATAR_META } from '../../lib/components/pro/Avatar/meta'
 import { BREADCRUMB_META } from '../../lib/components/pro/Breadcrumb/meta'
@@ -98,10 +98,10 @@ const META = {
   Tabs: TABS_META,
   Text: TEXT_META,
   Textarea: TEXTAREA_META,
+  Title: TITLE_META,
   Toolbar: TOOLBAR_META,
-  VirtualList: VIRTUAL_LIST_META,
   Tooltip: TOOLTIP_META,
-  WithIcon: WITH_ICON_META,
+  VirtualList: VIRTUAL_LIST_META,
 } as Record<string, Record<string, ComponentMeta<object>>>
 
 export default META

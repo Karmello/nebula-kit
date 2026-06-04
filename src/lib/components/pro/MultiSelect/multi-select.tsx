@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { DropdownList, DropdownListState, WithSlots } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { SelectOptionProps, Text, WithIcon } from 'lib/index.core'
+import { SelectOptionProps, Text, Title } from 'lib/index.core'
 import { MultiSelectProps } from 'lib/index.pro'
 
 import { DEFAULT_MULTI_SELECT_INLINE_SIZE } from './definitions'
@@ -91,7 +91,7 @@ export const MultiSelect = ({
                 surface={dropdownListState?.open ? 'selected' : undefined}
                 ripple={!dropdownListState?.open}
               >
-                <WithIcon
+                <Title
                   iconName={dropdownListState?.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'}
                   iconPlacement="right"
                   justifyContent="space-between"
@@ -101,7 +101,7 @@ export const MultiSelect = ({
                   <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight} truncate>
                     {currentLabel || 'Select ...'}
                   </Text>
-                </WithIcon>
+                </Title>
               </DropdownList.Trigger>
               {slotsByName['MultiSelect.Option'].map((slot, index) => {
                 const slotProps = (slot as ReactElement<SelectOptionProps>).props
@@ -118,7 +118,7 @@ export const MultiSelect = ({
                     onClick={() => handleChange(slotProps.value)}
                     ripple={false}
                   >
-                    <WithIcon iconName={isSelected ? 'check' : undefined} iconPlacement="right" justifyContent="space-between">
+                    <Title iconName={isSelected ? 'check' : undefined} iconPlacement="right" justifyContent="space-between">
                       <Text
                         fontSize={CONTROL_SIZE_MAP[size].fontSize}
                         lineHeight={CONTROL_SIZE_MAP[size].lineHeight}
@@ -126,7 +126,7 @@ export const MultiSelect = ({
                       >
                         {slot}
                       </Text>
-                    </WithIcon>
+                    </Title>
                   </DropdownList.Item>
                 )
               })}

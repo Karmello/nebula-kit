@@ -1,4 +1,4 @@
-import { Button, Flex, Section, Spacer, Text, WithIcon } from 'lib/components'
+import { Button, Flex, Section, Spacer, Text, Title } from 'lib/components'
 import { useConnectToDiscord } from 'client/api'
 
 export const ConnectToDiscordSection = ({ userPlan, discordUserId }: { userPlan: string; discordUserId: string }) => {
@@ -35,11 +35,11 @@ export const ConnectToDiscordSection = ({ userPlan, discordUserId }: { userPlan:
             * For paid users
           </Text>
         ) : discordUserId ? (
-          <WithIcon iconName="check" iconPlacement="right">
+          <Title iconName="check" iconPlacement="right">
             <Text intent="secondary" color="gray" italic>
               Done
             </Text>
-          </WithIcon>
+          </Title>
         ) : null}
       </Flex>
       <Spacer blockSize="xs" />

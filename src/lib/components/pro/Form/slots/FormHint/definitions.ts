@@ -1,4 +1,4 @@
-import { TextProps, WithIconProps } from 'lib/index.core'
+import { TextProps, TitleProps } from 'lib/index.core'
 
 export const DEFAULT_FORM_HINT_INTENT: FormHintProps['intent'] = 'secondary'
 export const DEFAULT_FORM_HINT_COLOR: FormHintProps['color'] = 'blue'
@@ -8,6 +8,4 @@ type PropsFromText = Pick<
   'bold' | 'children' | 'color' | 'intent' | 'noWrap' | 'tagAttrs' | 'tagRef' | 'truncate'
 >
 
-type PropsFromWithIcon = Pick<WithIconProps, 'iconName' | 'iconPlacement'>
-
-export type FormHintProps = PropsFromText & PropsFromWithIcon
+export type FormHintProps = PropsFromText & Pick<TitleProps, 'iconName' | 'iconPlacement'>

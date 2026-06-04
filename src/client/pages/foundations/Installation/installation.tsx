@@ -1,4 +1,4 @@
-import { Box, Link, Section, Spacer, Text, WithIcon } from 'lib/components'
+import { Box, Link, Section, Spacer, Text, Title } from 'lib/components'
 import { CodeSnippet } from 'client/components'
 
 export default () => {
@@ -6,13 +6,13 @@ export default () => {
     <Box maxInlineSize="55rem">
       <Section size="sm" heading="Core bundle" iconName="arrow-down" intent="primary">
         <Text intent="neutral">The Core bundle is published on the public npm registry.</Text>
-        <WithIcon iconName="external-link" iconPlacement="right" iconColor="blue" iconIntent="primary">
+        <Title iconName="external-link" iconPlacement="right" iconColor="blue" iconIntent="primary">
           <Link href="https://www.npmjs.com/package/@nebula-kit/core" target="_blank">
             <Text intent="primary" color="blue">
               https://www.npmjs.com/package/@nebula-kit/core
             </Text>
           </Link>
-        </WithIcon>
+        </Title>
         <Spacer blockSize="sm" />
         <CodeSnippet lang="bash" code="npm install @nebula-kit/core" description="Install with NPM" />
         <Spacer blockSize="sm" />

@@ -1,4 +1,4 @@
-import { Spacer, Text, WithIcon } from 'lib/index.core'
+import { Spacer, Text, Title } from 'lib/index.core'
 import { FormLabelProps } from 'lib/index.pro'
 
 import { DEFAULT_FORM_LABEL_INTENT } from './definitions'
@@ -13,13 +13,13 @@ export const FormLabel = ({
   color,
   noWrap,
   truncate,
-  // WithIcon
+  // Title
   iconName,
   iconPlacement,
 }: FormLabelProps) => {
   return (
     <>
-      <WithIcon iconName={iconName} iconPlacement={iconPlacement}>
+      <Title iconName={iconName} iconPlacement={iconPlacement}>
         <Text
           tag="label"
           tagAttrs={tagAttrs}
@@ -33,7 +33,7 @@ export const FormLabel = ({
         >
           {children}
         </Text>
-      </WithIcon>
+      </Title>
       <Spacer blockSize="2xs" />
     </>
   )

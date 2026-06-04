@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Box, Divider, Spacer, Text, WithIcon } from '@nebula-kit/core'
+import { Box, Divider, Spacer, Text, Title } from '@nebula-kit/core'
 import { Scale } from '@nebula-kit/pro'
 
 export const InteractiveCard = () => {
@@ -14,10 +14,10 @@ export const InteractiveCard = () => {
 
   return (
     <Scale visible={visible}>
-      <Box tag="button" drawable interactive variant="solid" intent="muted" color="amber" padding="lg" cursor="pointer">
-        <WithIcon iconTypography="h4" iconName="orbit">
+      <Box tag="button" interactive ripple variant="solid" intent="muted" color="amber" padding="lg" cursor="pointer">
+        <Title iconTypography="h4" iconName="orbit">
           <Text typography="h4">Interactive card</Text>
-        </WithIcon>
+        </Title>
         <Spacer blockSize="xs" />
         <Text>This is clickable card.</Text>
         <Divider marginBlock="xs" />

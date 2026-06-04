@@ -2,7 +2,7 @@ import { ComponentProps, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
-import { CalloutProps, Spacer, Text, WithIcon } from 'lib/index.core'
+import { CalloutProps, Spacer, Text, Title } from 'lib/index.core'
 import { CalloutTag } from 'lib/types'
 
 import { Box } from '../Box'
@@ -45,14 +45,14 @@ export const Callout = <T extends CalloutTag = 'div'>({
       borderRadius="var(--neb-border-radius)"
       padding={CALLOUT_SIZE_CONFIG[size || 'md'].padding}
     >
-      <WithIcon
+      <Title
         iconTypography={CALLOUT_SIZE_CONFIG[size || 'md'].textTypography}
         iconName={CALLOUT_CONFIG[status || 'info'].iconName}
       >
         <Text typography={CALLOUT_SIZE_CONFIG[size || 'md'].textTypography}>
           {heading || CALLOUT_CONFIG[status || 'info'].heading}
         </Text>
-      </WithIcon>
+      </Title>
       {content ? (
         <>
           <Spacer blockSize={CALLOUT_SIZE_CONFIG[size || 'md'].spacerBlockSize} />

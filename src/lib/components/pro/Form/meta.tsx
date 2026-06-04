@@ -3,7 +3,7 @@ import { DEFAULT_BUTTON_INTENT } from 'lib/components/core/Button/constants'
 import { BUTTON_META } from 'lib/components/core/Button/meta'
 import { FLEX_META } from 'lib/components/core/Flex/meta'
 import { TEXT_META } from 'lib/components/core/Text/meta'
-import { WITH_ICON_META } from 'lib/components/core/WithIcon/meta'
+import { TITLE_META } from 'lib/components/core/Title/meta'
 import { Checkbox, Input, Select } from 'lib/index.core'
 import {
   Autocomplete,
@@ -425,15 +425,15 @@ export const FORM_META = {
       name: 'Form.Label',
       title: "Custom label slot for a form field's control.",
       features: ['replaces the "label" prop on Form.Field when provided'],
-      composedOf: ['Text', 'Spacer', 'WithIcon'],
+      composedOf: ['Text', 'Spacer', 'Title'],
       topLevelTags: ['label'],
     },
     props: {
       bold: TEXT_META.Text.props.bold,
       children: TEXT_META.Text.props.children,
       color: TEXT_META.Text.props.color,
-      iconName: WITH_ICON_META.WithIcon.props.iconName,
-      iconPlacement: WITH_ICON_META.WithIcon.props.iconPlacement,
+      iconName: TITLE_META.Title.props.iconName,
+      iconPlacement: TITLE_META.Title.props.iconPlacement,
       intent: {
         ...TEXT_META.Text.props.intent,
         defaultValue: String(DEFAULT_FORM_LABEL_INTENT),
@@ -450,15 +450,15 @@ export const FORM_META = {
       name: 'Form.Hint',
       title: "Helper text slot for a form field's control.",
       features: ['replaces the "hint" prop on Form.Field when provided'],
-      composedOf: ['Text', 'Spacer', 'WithIcon'],
+      composedOf: ['Text', 'Spacer', 'Title'],
       topLevelTags: ['span'],
     },
     props: {
       bold: TEXT_META.Text.props.bold,
       children: TEXT_META.Text.props.children,
       color: TEXT_META.Text.props.color,
-      iconName: WITH_ICON_META.WithIcon.props.iconName,
-      iconPlacement: WITH_ICON_META.WithIcon.props.iconPlacement,
+      iconName: TITLE_META.Title.props.iconName,
+      iconPlacement: TITLE_META.Title.props.iconPlacement,
       intent: {
         ...TEXT_META.Text.props.intent,
         defaultValue: String(DEFAULT_FORM_HINT_INTENT),

@@ -1,46 +1,46 @@
 import { createRef } from 'react'
 import { expectError, expectType } from 'tsd'
 
-import { WithIcon } from '../'
+import { Title } from '../'
 
 // -------------------------------------
 // children optional
 // -------------------------------------
 
-expectType(<WithIcon iconName="check" />)
+expectType(<Title iconName="check" />)
 
-expectType(<WithIcon iconName="check">children</WithIcon>)
+expectType(<Title iconName="check">children</Title>)
 
 // -------------------------------------
 // iconName
 // -------------------------------------
 
-expectType(<WithIcon iconName="check">children</WithIcon>)
+expectType(<Title iconName="check">children</Title>)
 
-expectType(<WithIcon iconName={{ md: 'check' }}>children</WithIcon>)
+expectType(<Title iconName={{ md: 'check' }}>children</Title>)
 
-expectError(<WithIcon iconName="xyz">children</WithIcon>)
+expectError(<Title iconName="xyz">children</Title>)
 
 // -------------------------------------
 // iconPlacement
 // -------------------------------------
 
 expectType(
-  <WithIcon iconName="check" iconPlacement="left">
+  <Title iconName="check" iconPlacement="left">
     children
-  </WithIcon>
+  </Title>
 )
 
 expectType(
-  <WithIcon iconName="check" iconPlacement="right">
+  <Title iconName="check" iconPlacement="right">
     children
-  </WithIcon>
+  </Title>
 )
 
 expectError(
-  <WithIcon iconName="check" iconPlacement="center">
+  <Title iconName="check" iconPlacement="center">
     children
-  </WithIcon>
+  </Title>
 )
 
 // -------------------------------------
@@ -48,15 +48,15 @@ expectError(
 // -------------------------------------
 
 expectType(
-  <WithIcon iconName="check" iconAngle={180}>
+  <Title iconName="check" iconAngle={180}>
     children
-  </WithIcon>
+  </Title>
 )
 
 expectError(
-  <WithIcon iconName="check" iconAngle="180">
+  <Title iconName="check" iconAngle="180">
     children
-  </WithIcon>
+  </Title>
 )
 
 // -------------------------------------
@@ -64,21 +64,21 @@ expectError(
 // -------------------------------------
 
 expectType(
-  <WithIcon iconName="check" iconIntent="primary">
+  <Title iconName="check" iconIntent="primary">
     children
-  </WithIcon>
+  </Title>
 )
 
 expectType(
-  <WithIcon iconName="check" iconIntent={{ md: 'secondary' }}>
+  <Title iconName="check" iconIntent={{ md: 'secondary' }}>
     children
-  </WithIcon>
+  </Title>
 )
 
 expectError(
-  <WithIcon iconName="check" iconIntent="wrong">
+  <Title iconName="check" iconIntent="wrong">
     children
-  </WithIcon>
+  </Title>
 )
 
 // -------------------------------------
@@ -86,21 +86,21 @@ expectError(
 // -------------------------------------
 
 expectType(
-  <WithIcon iconName="check" iconColor="blue">
+  <Title iconName="check" iconColor="blue">
     children
-  </WithIcon>
+  </Title>
 )
 
 expectType(
-  <WithIcon iconName="check" iconColor={{ lg: 'red' }}>
+  <Title iconName="check" iconColor={{ lg: 'red' }}>
     children
-  </WithIcon>
+  </Title>
 )
 
 expectError(
-  <WithIcon iconName="check" iconColor="wrong">
+  <Title iconName="check" iconColor="wrong">
     children
-  </WithIcon>
+  </Title>
 )
 
 // -------------------------------------
@@ -108,21 +108,21 @@ expectError(
 // -------------------------------------
 
 expectType(
-  <WithIcon iconName="check" iconSize="md">
+  <Title iconName="check" iconSize="md">
     children
-  </WithIcon>
+  </Title>
 )
 
 expectType(
-  <WithIcon iconName="check" iconSize="40px">
+  <Title iconName="check" iconSize="40px">
     children
-  </WithIcon>
+  </Title>
 )
 
 expectType(
-  <WithIcon iconName="check" iconSize={{ md: 'xl' }}>
+  <Title iconName="check" iconSize={{ md: 'xl' }}>
     children
-  </WithIcon>
+  </Title>
 )
 
 // -------------------------------------
@@ -130,21 +130,21 @@ expectType(
 // -------------------------------------
 
 expectType(
-  <WithIcon iconName="check" iconTypography="body">
+  <Title iconName="check" iconTypography="body">
     children
-  </WithIcon>
+  </Title>
 )
 
 expectType(
-  <WithIcon iconName="check" iconTypography="h1">
+  <Title iconName="check" iconTypography="h1">
     children
-  </WithIcon>
+  </Title>
 )
 
 expectError(
-  <WithIcon iconName="check" iconTypography="wrong">
+  <Title iconName="check" iconTypography="wrong">
     children
-  </WithIcon>
+  </Title>
 )
 
 // -------------------------------------
@@ -152,21 +152,21 @@ expectError(
 // -------------------------------------
 
 expectType(
-  <WithIcon iconName="check" gap="md">
+  <Title iconName="check" gap="md">
     children
-  </WithIcon>
+  </Title>
 )
 
 expectType(
-  <WithIcon iconName="check" gap="20px">
+  <Title iconName="check" gap="20px">
     children
-  </WithIcon>
+  </Title>
 )
 
 expectType(
-  <WithIcon iconName="check" gap={{ md: 'lg' }}>
+  <Title iconName="check" gap={{ md: 'lg' }}>
     children
-  </WithIcon>
+  </Title>
 )
 
 // -------------------------------------
@@ -174,37 +174,37 @@ expectType(
 // -------------------------------------
 
 expectType(
-  <WithIcon iconName="check" justifyContent="center">
+  <Title iconName="check" justifyContent="center">
     children
-  </WithIcon>
+  </Title>
 )
 
 expectType(
-  <WithIcon iconName="check" justifyContent="space-between">
+  <Title iconName="check" justifyContent="space-between">
     children
-  </WithIcon>
+  </Title>
 )
 
 expectError(
-  <WithIcon iconName="check" justifyContent="wrong">
+  <Title iconName="check" justifyContent="wrong">
     children
-  </WithIcon>
+  </Title>
 )
 
 // -------------------------------------
 // customSvgIcon
 // -------------------------------------
 
-expectType(<WithIcon customSvgIcon={<svg />}>children</WithIcon>)
+expectType(<Title customSvgIcon={<svg />}>children</Title>)
 
 // -------------------------------------
 // refs
 // -------------------------------------
 
 expectType(
-  <WithIcon iconName="check" tagRef={createRef<HTMLSpanElement>()}>
+  <Title iconName="check" tagRef={createRef<HTMLSpanElement>()}>
     children
-  </WithIcon>
+  </Title>
 )
 
 // -------------------------------------
@@ -212,15 +212,15 @@ expectType(
 // -------------------------------------
 
 expectType(
-  <WithIcon iconName="check" tagAttrs={{ 'data-testid': 'icon' }}>
+  <Title iconName="check" tagAttrs={{ 'data-testid': 'icon' }}>
     children
-  </WithIcon>
+  </Title>
 )
 
 expectError(
-  <WithIcon iconName="check" tagAttrs={{ href: 'href' }}>
+  <Title iconName="check" tagAttrs={{ href: 'href' }}>
     children
-  </WithIcon>
+  </Title>
 )
 
 // -------------------------------------
@@ -228,9 +228,9 @@ expectError(
 // -------------------------------------
 
 expectError(
-  <WithIcon iconName="check" tag="div">
+  <Title iconName="check" tag="div">
     children
-  </WithIcon>
+  </Title>
 )
 
 // -------------------------------------
@@ -238,19 +238,19 @@ expectError(
 // -------------------------------------
 
 expectError(
-  <WithIcon iconName="check" flexDirection="column">
+  <Title iconName="check" flexDirection="column">
     children
-  </WithIcon>
+  </Title>
 )
 
 expectError(
-  <WithIcon iconName="check" variant="solid">
+  <Title iconName="check" variant="solid">
     children
-  </WithIcon>
+  </Title>
 )
 
 expectError(
-  <WithIcon iconName="check" margin="10px">
+  <Title iconName="check" margin="10px">
     children
-  </WithIcon>
+  </Title>
 )

@@ -1,20 +1,20 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
-import { WithIcon } from '..'
+import { Title } from '..'
 
-describe('<WithIcon />', () => {
+describe('<Title />', () => {
   it('renders icon on the left by default', () => {
-    render(<WithIcon iconName="search">hello</WithIcon>)
+    render(<Title iconName="search">hello</Title>)
     const el = screen.getByText('hello')
     expect(el.firstChild.nodeName.toLowerCase()).toBe('span')
   })
 
   it('renders icon on the right when iconPlacement="right"', () => {
     render(
-      <WithIcon iconName="search" iconPlacement="right">
+      <Title iconName="search" iconPlacement="right">
         hello
-      </WithIcon>
+      </Title>
     )
     const el = screen.getByText('hello')
     expect(el.lastChild.nodeName.toLowerCase()).toBe('span')

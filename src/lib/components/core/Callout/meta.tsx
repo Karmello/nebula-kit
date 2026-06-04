@@ -19,7 +19,7 @@ export const CALLOUT_META = {
       bundle: 'core',
       title: 'Semantic message block for emphasizing important information.',
       features: ['used to draw attention to important information, confirmations, warnings or errors within a page'],
-      composedOf: ['Box', 'Text', 'Spacer', 'WithIcon'],
+      composedOf: ['Box', 'Text', 'Spacer', 'Title'],
       topLevelTags: CALLOUT_TAGS,
     },
     props: {

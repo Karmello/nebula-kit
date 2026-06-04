@@ -1,4 +1,4 @@
-import { WithIcon, WithIconProps } from 'lib/index.core'
+import { Title } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { Box } from '../Box'
@@ -8,14 +8,15 @@ import { ICON_META } from '../Icon/meta'
 import { ROTATE_META } from '../Rotate/meta'
 import { TEXT_META } from '../Text/meta'
 import {
-  DEFAULT_WITH_ICON_GAP,
-  DEFAULT_WITH_ICON_ICON_PLACEMENT,
-  WITH_ICON_ICON_PLACEMENTS,
-  WITH_ICON_JUSTIFY_CONTENT,
+  DEFAULT_TITLE_GAP,
+  DEFAULT_TITLE_ICON_PLACEMENT,
+  TITLE_ICON_PLACEMENTS,
+  TITLE_JUSTIFY_CONTENT,
+  TitleProps,
 } from './definitions'
 
-export const WITH_ICON_META = {
-  WithIcon: {
+export const TITLE_META = {
+  Title: {
     overview: {
       bundle: 'core',
       title: 'Layout component that aligns an icon with accompanying content.',
@@ -32,7 +33,7 @@ export const WITH_ICON_META = {
       customSvgIcon: ICON_META.Icon.props.children,
       gap: {
         ...FLEX_META.Flex.props.gap,
-        defaultValue: String(DEFAULT_WITH_ICON_GAP),
+        defaultValue: String(DEFAULT_TITLE_GAP),
         description: 'Spacing between icon and content.',
       },
       iconAngle: {
@@ -44,8 +45,8 @@ export const WITH_ICON_META = {
       iconIntent: ICON_META.Icon.props.intent,
       iconName: ICON_META.Icon.props.name,
       iconPlacement: {
-        options: WITH_ICON_ICON_PLACEMENTS as unknown as string[],
-        defaultValue: DEFAULT_WITH_ICON_ICON_PLACEMENT,
+        options: TITLE_ICON_PLACEMENTS as unknown as string[],
+        defaultValue: DEFAULT_TITLE_ICON_PLACEMENT,
         isRequired: false,
         isResponsive: false,
         description: 'Icon placement relative to children.',
@@ -55,7 +56,7 @@ export const WITH_ICON_META = {
       inlineSize: BOX_META.Box.props.inlineSize,
       justifyContent: {
         ...FLEX_META.Flex.props.justifyContent,
-        options: WITH_ICON_JUSTIFY_CONTENT,
+        options: TITLE_JUSTIFY_CONTENT,
         description: 'Distributes an icon and children along the main axis.',
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
@@ -65,30 +66,31 @@ export const WITH_ICON_META = {
       {
         description: 'Search icon aligned with the provided text content.',
         jsx: (
-          <WithIcon iconName="search">
+          <Title iconName="search">
             <Box tag="span">Text content</Box>
-          </WithIcon>
+          </Title>
         ),
       },
       {
         description: 'Icon on the right.',
         jsx: (
-          <WithIcon iconName="search" iconPlacement="right">
+          <Title iconName="search" iconPlacement="right">
             <Box tag="span">Text content</Box>
-          </WithIcon>
+          </Title>
         ),
       },
       {
         description: 'Icon aligned to the right edge of the container.',
         jsx: (
-          <WithIcon iconName="search" iconPlacement="right" justifyContent="space-between">
+          <Title iconName="search" iconPlacement="right" justifyContent="space-between">
             <Box tag="span">Text content</Box>
-          </WithIcon>
+          </Title>
         ),
       },
     ],
     changelog: {
+      '0.11.0': ['renamed `WithIcon` to `Title`'],
       '0.2.3': ['released'],
     },
-  } satisfies ComponentMeta<WithIconProps>,
+  } satisfies ComponentMeta<TitleProps>,
 }

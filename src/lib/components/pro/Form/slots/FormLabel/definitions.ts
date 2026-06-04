@@ -1,4 +1,4 @@
-import { TextProps, WithIconProps } from 'lib/index.core'
+import { TextProps, TitleProps } from 'lib/index.core'
 
 export const DEFAULT_FORM_LABEL_INTENT: FormLabelProps['intent'] = 'neutral'
 
@@ -7,6 +7,4 @@ type PropsFromText = Pick<
   'bold' | 'children' | 'color' | 'intent' | 'noWrap' | 'tagAttrs' | 'tagRef' | 'truncate'
 >
 
-type PropsFromWithIcon = Pick<WithIconProps, 'iconName' | 'iconPlacement'>
-
-export type FormLabelProps = PropsFromText & PropsFromWithIcon
+export type FormLabelProps = PropsFromText & Pick<TitleProps, 'iconName' | 'iconPlacement'>

@@ -14,7 +14,7 @@ import { motion } from 'motion/react'
 import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { useControlled } from 'lib/hooks'
-import { Box, Flex, SelectOptionProps, SelectProps, Text, WithIcon } from 'lib/index.core'
+import { Box, Flex, SelectOptionProps, SelectProps, Text, Title } from 'lib/index.core'
 
 import {
   DEFAULT_SELECT_INLINE_SIZE,
@@ -131,7 +131,7 @@ export const SelectImpl = ({
         ripple
         interactive
       >
-        <WithIcon
+        <Title
           iconName="chevron-down"
           iconPlacement="right"
           iconSize={CONTROL_SIZE_MAP[size].iconSize}
@@ -141,7 +141,7 @@ export const SelectImpl = ({
           <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight}>
             {staticLabel ?? selectedOptionSlot?.props.children ?? 'Select...'}
           </Text>
-        </WithIcon>
+        </Title>
       </Box>
       {open && (
         <FloatingPortal>

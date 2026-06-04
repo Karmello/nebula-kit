@@ -22,7 +22,7 @@ export const SELECT_META = {
         'click outside and Escape key dismissal',
         'supports fixed trigger labels via `staticLabel`',
       ],
-      composedOf: ['Box', 'Text', 'Flex', 'WithIcon'],
+      composedOf: ['Box', 'Text', 'Flex', 'Title'],
       slots: ['Select.Option'],
     },
     props: {

@@ -1,4 +1,4 @@
-import { Button, Dialog, Segment, Text, useSnackbar, WithIcon } from 'lib/components'
+import { Button, Dialog, Segment, Text, Title, useSnackbar } from 'lib/components'
 import { useCancelPaidPlan } from 'client/api'
 
 export const PaymentCancelDialog = ({
@@ -18,11 +18,11 @@ export const PaymentCancelDialog = ({
   return (
     <Dialog open={open}>
       <Dialog.Header>
-        <WithIcon iconName="triangle-alert" iconColor="red" iconIntent="primary" iconTypography="h6">
+        <Title iconName="triangle-alert" iconColor="red" iconIntent="primary" iconTypography="h6">
           <Text typography="h6" intent="primary" color="red">
             Cancel subscription
           </Text>
-        </WithIcon>
+        </Title>
       </Dialog.Header>
       <Dialog.Content>
         Are you sure you want to cancel the subscription for

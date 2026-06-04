@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { TokensResult } from 'shiki'
 
-import { Box, Flex, Text, WithIcon } from 'lib/components'
+import { Box, Flex, Text, Title } from 'lib/components'
 import { useCurrentTheme } from 'lib/hooks'
 
 import { CopyButton } from '../CopyButton'
@@ -54,11 +54,11 @@ export const CodeSnippet = ({
           <Flex.Item flex="1">
             {description ? (
               <Box paddingBlock="10px">
-                <WithIcon iconName={descriptionIcon ? 'arrow-down' : undefined}>
+                <Title iconName={descriptionIcon ? 'arrow-down' : undefined}>
                   <Text bold={boldDescription} intent="neutral" tagAttrs={{ style: { lineHeight: 1.25 } }}>
                     {description}
                   </Text>
-                </WithIcon>
+                </Title>
               </Box>
             ) : null}
           </Flex.Item>

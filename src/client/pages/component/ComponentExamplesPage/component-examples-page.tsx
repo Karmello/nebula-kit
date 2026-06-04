@@ -1,6 +1,6 @@
 import { pascalCase } from 'change-case'
 
-import { Box, Flex, Markup, Reveal, Spacer, Switch, Text, WithIcon } from 'lib/components'
+import { Box, Flex, Markup, Reveal, Spacer, Switch, Text, Title } from 'lib/components'
 import { useCurrentTheme } from 'lib/hooks'
 import { CodeSnippet } from 'client/components'
 import { ComponentMeta } from 'client/definitions'
@@ -17,11 +17,11 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   return (
     <>
       {description && !noSandBox ? (
-        <WithIcon iconName="arrow-down">
+        <Title iconName="arrow-down">
           <Markup>
             <Text bold>{description}</Text>
           </Markup>
-        </WithIcon>
+        </Title>
       ) : null}
       <Spacer blockSize="xs" />
       {!noSandBox ? (

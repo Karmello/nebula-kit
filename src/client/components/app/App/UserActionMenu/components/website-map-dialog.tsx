@@ -1,4 +1,4 @@
-import { Button, ButtonProps, Dialog, Flex, Icon, IconProps, Text, WithIcon } from 'lib/components'
+import { Button, ButtonProps, Dialog, Flex, Icon, IconProps, Text, Title } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
@@ -42,9 +42,9 @@ export const WebsiteMapDialog = () => {
       closeOnBackdropClick
     >
       <Dialog.Header>
-        <WithIcon iconName="compass">
+        <Title iconName="compass">
           <Text bold>Website map</Text>
-        </WithIcon>
+        </Title>
       </Dialog.Header>
       <Dialog.Content>
         <Flex flexDirection="column" alignItems="stretch" rowGap="2xs">

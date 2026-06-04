@@ -45,4 +45,4 @@ export {
 } from './Table'
 export { Text, type TextProps } from './Text'
 export { Textarea, type TextareaProps } from './Textarea'
-export { WithIcon, type WithIconProps } from './WithIcon'
+export { Title, type TitleProps } from './Title'

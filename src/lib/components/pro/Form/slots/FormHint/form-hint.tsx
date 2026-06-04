@@ -1,4 +1,4 @@
-import { Spacer, Text, WithIcon } from 'lib/index.core'
+import { Spacer, Text, Title } from 'lib/index.core'
 import { FormHintProps } from 'lib/index.pro'
 
 import { DEFAULT_FORM_HINT_COLOR, DEFAULT_FORM_HINT_INTENT } from './definitions'
@@ -13,14 +13,14 @@ export const FormHint = ({
   color = DEFAULT_FORM_HINT_COLOR,
   noWrap,
   truncate,
-  // WithIcon
+  // Title
   iconName,
   iconPlacement,
 }: FormHintProps) => {
   return (
     <>
       <Spacer blockSize="2xs" />
-      <WithIcon iconName={iconName} iconPlacement={iconPlacement}>
+      <Title iconName={iconName} iconPlacement={iconPlacement}>
         <Text
           tag="span"
           tagAttrs={tagAttrs}
@@ -34,7 +34,7 @@ export const FormHint = ({
         >
           {children}
         </Text>
-      </WithIcon>
+      </Title>
     </>
   )
 }

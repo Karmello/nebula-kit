@@ -1,7 +1,7 @@
 import { useLayoutEffect } from 'react'
 import { sentenceCase } from 'change-case'
 
-import { Box, Button, Flex, Link, Loader, Section, Spacer, Table, Text, WithIcon } from 'lib/components'
+import { Box, Button, Flex, Link, Loader, Section, Spacer, Table, Text, Title } from 'lib/components'
 import { useGetUser } from 'client/api'
 import { CopyButton } from 'client/components'
 import { PageKey } from 'client/definitions'
@@ -119,7 +119,7 @@ export default () => {
 
               <Table.Cell colSpan={2}>
                 {userData ? (
-                  <WithIcon
+                  <Title
                     iconName={hasPaidPlan ? (isDiscordConnected ? 'check' : undefined) : undefined}
                     iconPlacement="right"
                     iconColor={discordStatusColor}
@@ -128,7 +128,7 @@ export default () => {
                     <Text color={discordStatusColor} intent={hasPaidPlan ? 'primary' : undefined}>
                       {discordStatusText}
                     </Text>
-                  </WithIcon>
+                  </Title>
                 ) : null}
               </Table.Cell>
             </Table.Row>
@@ -142,7 +142,7 @@ export default () => {
                 {userData ? (
                   <Flex alignItems="center" flexWrap="wrap" rowGap="xs" columnGap="sm">
                     <Flex.Item alignSelf="auto">
-                      <WithIcon
+                      <Title
                         iconName={hasPaidPlan ? (isGithubConnected ? 'check' : undefined) : undefined}
                         iconPlacement="right"
                         iconColor={githubStatusColor}
@@ -151,7 +151,7 @@ export default () => {
                         <Text color={githubStatusColor} intent={hasPaidPlan ? 'primary' : undefined}>
                           {githubStatusText}
                         </Text>
-                      </WithIcon>
+                      </Title>
                     </Flex.Item>
 
                     {isGithubConnected ? (

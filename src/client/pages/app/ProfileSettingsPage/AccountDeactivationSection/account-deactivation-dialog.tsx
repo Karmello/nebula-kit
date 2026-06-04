@@ -1,4 +1,4 @@
-import { Button, Dialog, Segment, Text, useSnackbar, WithIcon } from 'lib/components'
+import { Button, Dialog, Segment, Text, Title, useSnackbar } from 'lib/components'
 import { useRequestAccountDeactivation } from 'client/api'
 
 export const AccountDeactivationDialog = ({
@@ -18,11 +18,11 @@ export const AccountDeactivationDialog = ({
   return (
     <Dialog open={open}>
       <Dialog.Header>
-        <WithIcon iconTypography="h6" iconName="triangle-alert" iconIntent="primary" iconColor="red">
+        <Title iconTypography="h6" iconName="triangle-alert" iconIntent="primary" iconColor="red">
           <Text typography="h6" intent="primary" color="red">
             Account deactivation
           </Text>
-        </WithIcon>
+        </Title>
       </Dialog.Header>
       <Dialog.Content>
         Are you sure you want to deactivate the account for

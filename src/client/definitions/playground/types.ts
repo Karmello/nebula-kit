@@ -11,7 +11,7 @@ import { PropsFromSectionKey } from 'lib/components/core/Section/playground'
 import { PropsFromSelectKey } from 'lib/components/core/Select/playground'
 import { PropsFromTableKey } from 'lib/components/core/Table/playground'
 import { PropsFromTextKey } from 'lib/components/core/Text/playground'
-import { PropsFromWithIconKey } from 'lib/components/core/WithIcon/playground'
+import { PropsFromTitleKey } from 'lib/components/core/Title/playground'
 import { PropsFromAvatarKey } from 'lib/components/pro/Avatar/playground'
 import { PropsFromSwitchKey } from 'lib/components/pro/Switch/playground'
 import { PropsFromTabsKey } from 'lib/components/pro/Tabs/playground'
@@ -35,4 +35,4 @@ export type PlaygroundProp =
   | PropsFromTabsKey
   | PropsFromTextKey
   | PropsFromTooltipKey
-  | PropsFromWithIconKey
+  | PropsFromTitleKey

@@ -25,7 +25,6 @@ export const COMPONENT_CATEGORIES = [
       { key: 'segment', label: 'Segment', sections, bundle: 'core' },
       { key: 'spacer', label: 'Spacer', sections, bundle: 'core' },
       { key: 'divider', label: 'Divider', sections, bundle: 'core' },
-      { key: 'with-icon', label: 'WithIcon', sections, bundle: 'core' },
     ],
   },
   {
@@ -34,6 +33,7 @@ export const COMPONENT_CATEGORIES = [
     items: [
       { key: 'text', label: 'Text', sections, bundle: 'core' },
       { key: 'icon', label: 'Icon', sections, bundle: 'core' },
+      { key: 'title', label: 'Title', sections, bundle: 'core' },
       { key: 'markup', label: 'Markup', sections, bundle: 'pro' },
     ],
   },

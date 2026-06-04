@@ -1,6 +1,6 @@
 import { useLayoutEffect, useMemo, useRef, useState } from 'react'
 
-import { Autocomplete, Resize, Text, WithIcon } from 'lib/components'
+import { Autocomplete, Resize, Text, Title } from 'lib/components'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
 
@@ -100,11 +100,11 @@ export const AppJump = () => {
         {filtered.map(({ label, href, iconName }) => {
           return (
             <Autocomplete.Option key={href} value={href} label={href}>
-              <WithIcon iconName={iconName}>
+              <Title iconName={iconName}>
                 <Text tag="span" tagAttrs={{ style: { whiteSpace: 'wrap', lineHeight: 1.1 } }}>
                   {label}
                 </Text>
-              </WithIcon>
+              </Title>
             </Autocomplete.Option>
           )
         })}

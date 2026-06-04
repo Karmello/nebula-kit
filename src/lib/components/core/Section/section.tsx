@@ -2,7 +2,7 @@ import { ComponentProps, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
-import { Divider, SectionProps, Spacer, Text, WithIcon } from 'lib/index.core'
+import { Divider, SectionProps, Spacer, Text, Title } from 'lib/index.core'
 import { SectionTag } from 'lib/types'
 
 import { Box } from '../Box'
@@ -18,7 +18,7 @@ export const Section = <T extends SectionTag = 'section'>({
   color,
   intent = DEFAULT_SECTION_INTENT,
   interactive,
-  // WithIcon
+  // Title
   iconName,
   iconPlacement,
   // own
@@ -47,15 +47,11 @@ export const Section = <T extends SectionTag = 'section'>({
       overflowY="hidden"
       maxInlineSize="100%"
     >
-      <WithIcon
-        iconTypography={SECTION_SIZE_CONFIG[size || 'md'].textTypography}
-        iconName={iconName}
-        iconPlacement={iconPlacement}
-      >
+      <Title iconTypography={SECTION_SIZE_CONFIG[size || 'md'].textTypography} iconName={iconName} iconPlacement={iconPlacement}>
         <Text typography={SECTION_SIZE_CONFIG[size || 'md'].textTypography} color={color} intent={headingIntent} bold>
           {heading}
         </Text>
-      </WithIcon>
+      </Title>
       <Divider color={color} marginTop="2xs" />
       {children ? (
         <>

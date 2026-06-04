@@ -1,4 +1,4 @@
-import { Box, Button, Link, Text, WithIcon } from 'lib/components'
+import { Box, Button, Link, Text, Title } from 'lib/components'
 import { BoxColor } from 'lib/components/core/Box/types'
 import { useCheckoutPaidPlan } from 'client/api'
 import { PageKey } from 'client/definitions'
@@ -67,9 +67,9 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
         if (plan === activePlan) {
           return (
             <Box drawable variant="solid" intent="secondary" color={color} paddingBlock="10px" paddingInline="14px">
-              <WithIcon iconName="check" iconPlacement="right">
+              <Title iconName="check" iconPlacement="right">
                 <Text bold>This is the plan you are on</Text>
-              </WithIcon>
+              </Title>
             </Box>
           )
         } else {
