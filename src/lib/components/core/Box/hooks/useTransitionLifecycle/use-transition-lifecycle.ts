@@ -7,7 +7,7 @@ export const useTransitionLifecycle = (elemRef: RefObject<HTMLElement>, enabled 
     const el = elemRef.current
     if (!el) return
 
-    el.setAttribute('data-neb-transitions', 'false')
+    el.setAttribute('data-neb-box-enable-transitions', 'false')
   }, [elemRef, enabled])
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export const useTransitionLifecycle = (elemRef: RefObject<HTMLElement>, enabled 
 
     const raf1 = requestAnimationFrame(() => {
       raf2 = requestAnimationFrame(() => {
-        el.setAttribute('data-neb-transitions', 'true')
+        el.setAttribute('data-neb-box-enable-transitions', 'true')
       })
     })
 

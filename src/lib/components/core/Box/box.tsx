@@ -6,10 +6,9 @@ import { resolveLengthValue, withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { HtmlTag } from 'lib/index.core'
 import { buildStaticDataset, syncRespDataset, syncRespStyle } from 'lib/internals/dom'
-import { useTransitionLifecycle } from 'lib/internals/motion'
 import { useResolveAppearance } from 'lib/internals/styling'
 
-import { useRipple } from './hooks'
+import { useRipple, useTransitionLifecycle } from './hooks'
 import { BoxProps } from './types'
 
 import './styles/box.scss'

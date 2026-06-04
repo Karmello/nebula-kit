@@ -22,8 +22,13 @@ html {
   }
 }
 
-html.neb-transitions {
-  .neb-box[data-neb-box-drawable='true'][data-neb-transitions='true'] {
+html:not([data-neb-hydrated]) #root {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+html[data-neb-enable-global-transitions] {
+  .neb-box[data-neb-box-drawable='true'][data-neb-box-enable-transitions='true'] {
     transition:
       background-color 0.15s linear,
       border-color 0.15s linear,

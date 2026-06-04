@@ -26,13 +26,13 @@ export const NebkitProvider = ({
 
   const enableRafRef = useRef<number | null>(null)
 
-  const scheduleEnableTransitions = () => {
+  const scheduleEnableGlobalTransitions = () => {
     if (enableRafRef.current !== null) {
       cancelAnimationFrame(enableRafRef.current)
     }
 
     enableRafRef.current = requestAnimationFrame(() => {
-      document.documentElement.classList.add('neb-transitions')
+      document.documentElement.setAttribute('data-neb-enable-global-transitions', 'true')
       enableRafRef.current = null
     })
   }
@@ -45,10 +45,12 @@ export const NebkitProvider = ({
     }
   }, [lockGlobalScroll, lock, unlock])
 
-  // initial enable
+  // Reveals SSR-rendered content after the first client frame.
+  // This hides the pre-hydration DOM while runtime-applied layout styles settle.
   useLayoutEffect(() => {
     const raf = requestAnimationFrame(() => {
-      scheduleEnableTransitions()
+      document.documentElement.setAttribute('data-neb-hydrated', 'true')
+      scheduleEnableGlobalTransitions()
     })
 
     return () => {
@@ -60,11 +62,12 @@ export const NebkitProvider = ({
     }
   }, [])
 
-  // resize handling
+  // Temporarily disables global transitions while the viewport is resizing.
+  // Responsive runtime styles can change during resize, so transitions are re-enabled on the next frame.
   useLayoutEffect(() => {
     const handleResize = () => {
-      document.documentElement.classList.remove('neb-transitions')
-      scheduleEnableTransitions()
+      document.documentElement.removeAttribute('data-neb-enable-global-transitions')
+      scheduleEnableGlobalTransitions()
     }
 
     window.addEventListener('resize', handleResize)
@@ -74,8 +77,10 @@ export const NebkitProvider = ({
     }
   }, [])
 
+  // Applies global NebulaKit configuration to the document root.
+  // Global transitions are disabled during the update so theme/token changes do not animate the whole UI.
   useLayoutEffect(() => {
-    document.documentElement.classList.remove('neb-transitions')
+    document.documentElement.removeAttribute('data-neb-enable-global-transitions')
 
     document.documentElement.setAttribute('data-theme', theme || `${DEFAULT_NEBKIT_THEME}`)
     document.documentElement.setAttribute('data-brand', brand || `${DEFAULT_NEBKIT_BRAND}`)
@@ -87,7 +92,7 @@ export const NebkitProvider = ({
       NEBKIT_SIZES_MAP.borderRadiusSize[borderRadiusSize || 'md'] || ''
     )
 
-    scheduleEnableTransitions()
+    scheduleEnableGlobalTransitions()
   }, [theme, brand, saturation, borderRadiusSize, rippleMode])
 
   return (
