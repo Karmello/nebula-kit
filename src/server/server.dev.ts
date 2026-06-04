@@ -10,7 +10,7 @@ import { getFinalIndexHtml } from './helpers'
 
 const renderApp = async (vite: ViteDevServer, url: string) => {
   const { StaticRouter } = await vite.ssrLoadModule('react-router')
-  const { Client } = await vite.ssrLoadModule('src/client/index.ts')
+  const { Client } = await vite.ssrLoadModule('src/client/components/app/Client/client.tsx')
 
   return renderToString(createElement(StaticRouter, { location: url }, createElement(Client)))
 }

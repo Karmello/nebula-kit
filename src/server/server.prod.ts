@@ -3,10 +3,11 @@ import express from 'express'
 import getPort from 'get-port'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router'
-import { Client } from 'src/client'
 import { fileURLToPath } from 'url'
 import fs from 'node:fs'
 import path from 'node:path'
+
+import { Client } from 'client/components/app/Client/client'
 
 import { getFinalIndexHtml } from './helpers'
 
