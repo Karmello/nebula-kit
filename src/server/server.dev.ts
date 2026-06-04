@@ -10,17 +10,9 @@ import { getFinalIndexHtml } from './helpers'
 
 const renderApp = async (vite: ViteDevServer, url: string) => {
   const { StaticRouter } = await vite.ssrLoadModule('react-router')
-  const { HydrationGate } = await vite.ssrLoadModule('src/lib/components/core/index.ts')
-  const { NebkitProvider } = await vite.ssrLoadModule('src/lib/components/core/index.ts')
-  const { App } = await vite.ssrLoadModule('src/client/components/index.ts')
+  const { Client } = await vite.ssrLoadModule('src/client/index.ts')
 
-  return renderToString(
-    createElement(
-      StaticRouter,
-      { location: url },
-      createElement(HydrationGate, null, createElement(NebkitProvider, { borderRadius: 5 }, createElement(App)))
-    )
-  )
+  return renderToString(createElement(StaticRouter, { location: url }, createElement(Client)))
 }
 
 const start = async () => {

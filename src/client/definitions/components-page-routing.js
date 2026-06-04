@@ -133,10 +133,7 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'utility',
     label: 'Utility',
-    items: [
-      { key: 'nebkit-provider', label: 'NebkitProvider', sections, bundle: 'core' },
-      { key: 'hydration-gate', label: 'HydrationGate', sections, bundle: 'core' },
-    ],
+    items: [{ key: 'nebkit-provider', label: 'NebkitProvider', sections, bundle: 'core' }],
   },
 ]
 

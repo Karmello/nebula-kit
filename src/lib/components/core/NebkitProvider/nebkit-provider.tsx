@@ -45,10 +45,9 @@ export const NebkitProvider = ({
     }
   }, [lockGlobalScroll, lock, unlock])
 
-  // hydration + initial enable
+  // initial enable
   useLayoutEffect(() => {
     const raf = requestAnimationFrame(() => {
-      window.dispatchEvent(new CustomEvent('neb:hydrated'))
       scheduleEnableTransitions()
     })
 

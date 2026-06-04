@@ -3,8 +3,7 @@ import express from 'express'
 import getPort from 'get-port'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router'
-import { App } from 'src/client/components'
-import { HydrationGate, NebkitProvider, Snackbar } from 'src/lib/components'
+import { Client } from 'src/client'
 import { fileURLToPath } from 'url'
 import fs from 'node:fs'
 import path from 'node:path'
@@ -28,17 +27,7 @@ app.use(express.static(buildDir, { index: false }))
 
 app.get(/.*/, (req, res) => {
   try {
-    const appHtml = renderToString(
-      createElement(
-        StaticRouter,
-        { location: req.originalUrl },
-        createElement(
-          HydrationGate,
-          null,
-          createElement(NebkitProvider, null, createElement(Snackbar, { closeOnOutsideClick: true } as any, createElement(App)))
-        )
-      )
-    )
+    const appHtml = renderToString(createElement(StaticRouter, { location: req.originalUrl }, createElement(Client)))
 
     res
       .status(200)
