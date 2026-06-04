@@ -1,12 +1,11 @@
 export const BREADCRUMB_TAGS = ['div', 'nav', 'section'] as const
 
 export const BUTTON_TAGS = ['button', 'a'] as const
+export const ICON_BUTTON_TAGS = ['button', 'a'] as const
 
 export const CALLOUT_TAGS = ['div', 'section', 'article', 'aside'] as const
 
 export const FOOTER_TAGS = ['div', 'footer'] as const
-
-export const ICON_BUTTON_TAGS = ['button', 'a'] as const
 
 export const MARKER_LIST_TAGS = ['ul', 'ol'] as const
 
