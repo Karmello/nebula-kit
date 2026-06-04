@@ -7,20 +7,19 @@ const sections = [
 
 export const COMPONENT_CATEGORIES = [
   {
-    key: 'primitives',
-    label: 'Primitives',
+    key: 'base',
+    label: 'Base',
     items: [
       { key: 'html-tag', label: 'HtmlTag', sections, bundle: 'core' },
       { key: 'box', label: 'Box', sections, bundle: 'core' },
-      { key: 'flex', label: 'Flex', sections, bundle: 'core' },
-      { key: 'grid', label: 'Grid', sections, bundle: 'core' },
-      { key: 'image', label: 'Image', sections, bundle: 'core' },
     ],
   },
   {
     key: 'layout',
     label: 'Layout',
     items: [
+      { key: 'flex', label: 'Flex', sections, bundle: 'core' },
+      { key: 'grid', label: 'Grid', sections, bundle: 'core' },
       { key: 'table', label: 'Table', sections, bundle: 'core' },
       { key: 'segment', label: 'Segment', sections, bundle: 'core' },
       { key: 'spacer', label: 'Spacer', sections, bundle: 'core' },
@@ -40,7 +39,10 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'images',
     label: 'Images',
-    items: [{ key: 'avatar', label: 'Avatar', sections, bundle: 'pro' }],
+    items: [
+      { key: 'image', label: 'Image', sections, bundle: 'core' },
+      { key: 'avatar', label: 'Avatar', sections, bundle: 'pro' },
+    ],
   },
   {
     key: 'motion',
