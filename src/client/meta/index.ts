@@ -30,6 +30,7 @@ import { TABLE_META } from '../../lib/components/core/Table/meta'
 import { TEXT_META } from '../../lib/components/core/Text/meta'
 import { TEXTAREA_META } from '../../lib/components/core/Textarea/meta'
 import { TITLE_META } from '../../lib/components/core/Title/meta'
+import { ACTION_GROUP_META } from '../../lib/components/pro/ActionGroup/meta'
 import { AUTOCOMPLETE_META } from '../../lib/components/pro/Autocomplete/meta'
 import { AVATAR_META } from '../../lib/components/pro/Avatar/meta'
 import { BREADCRUMB_META } from '../../lib/components/pro/Breadcrumb/meta'
@@ -52,6 +53,7 @@ import { TOOLTIP_META } from '../../lib/components/pro/Tooltip/meta'
 import { VIRTUAL_LIST_META } from '../../lib/components/pro/VirtualList/meta'
 
 const META = {
+  ActionGroup: ACTION_GROUP_META,
   AppFrame: APP_FRAME_META,
   Autocomplete: AUTOCOMPLETE_META,
   Avatar: AVATAR_META,
