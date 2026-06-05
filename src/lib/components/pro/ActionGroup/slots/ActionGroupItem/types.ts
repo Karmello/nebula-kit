@@ -7,7 +7,7 @@ export type ActionGroupItemTag = (typeof ACTION_GROUP_ITEM_TAGS)[number]
 
 export type ActionGroupItemProps<T extends ActionGroupItemTag = 'button'> = Pick<
   FlexItemProps<T>,
-  'tag' | 'tagAttrs' | 'tagRef'
+  'tag' | 'tagAttrs' | 'tagRef' | 'disabled'
 > & {
   children: FlexItemProps<T>['children']
   selected?: boolean

@@ -8,6 +8,7 @@ export const ActionGroupItem = <T extends ActionGroupItemTag = 'button'>({
   tagAttrs,
   tagRef,
   selected,
+  disabled,
   ...internalProps
 }: ActionGroupItemProps<T>) => {
   const { color, intent, ripple, itemsCount, isFirst, isLast, direction, square } = internalProps as ActionGroupItemInternalProps
@@ -21,6 +22,7 @@ export const ActionGroupItem = <T extends ActionGroupItemTag = 'button'>({
       intent={intent}
       ripple={ripple}
       surface={selected ? 'selected' : undefined}
+      disabled={disabled}
       flex="1"
       interactive
       cursor="pointer"

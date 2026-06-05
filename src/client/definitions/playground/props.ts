@@ -12,12 +12,14 @@ import { PROPS_FROM_SELECT } from 'lib/components/core/Select/playground'
 import { PROPS_FROM_TABLE } from 'lib/components/core/Table/playground'
 import { PROPS_FROM_TEXT } from 'lib/components/core/Text/playground'
 import { PROPS_FROM_TITLE } from 'lib/components/core/Title/playground'
+import { PROPS_FROM_ACTION_GROUP } from 'lib/components/pro/ActionGroup/playground'
 import { PROPS_FROM_AVATAR } from 'lib/components/pro/Avatar/playground'
 import { PROPS_FROM_SWITCH } from 'lib/components/pro/Switch/playground'
 import { PROPS_FROM_TABS } from 'lib/components/pro/Tabs/playground'
 import { PROPS_FROM_TOOLTIP } from 'lib/components/pro/Tooltip/playground'
 
 export const PLAYGROUND_PROPS_MAP: Record<string, readonly string[]> = {
+  ActionGroup: PROPS_FROM_ACTION_GROUP,
   Avatar: PROPS_FROM_AVATAR,
   Box: PROPS_FROM_BOX,
   Button: PROPS_FROM_BUTTON,

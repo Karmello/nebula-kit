@@ -17,11 +17,11 @@ export const ActionGroup = ({
   tagAttrs,
   tagRef,
   direction = DEFAULT_ACTION_GROUP_DIRECTION,
+  gap = DEFAULT_ACTION_GROUP_GAP,
   square,
   color,
   intent = DEFAULT_ACTION_GROUP_INTENT,
   ripple = DEFAULT_ACTION_GROUP_RIPPLE,
-  gap = DEFAULT_ACTION_GROUP_GAP,
 }: ActionGroupProps) => {
   return (
     <WithSlots<'ActionGroup.Item'>
