@@ -1,5 +1,7 @@
 import { KeyboardEvent, ReactNode } from 'react'
 
+import { ActionGroupProps } from './types'
+
 const isItemDisabled = (itemSlots: ReactNode[], index: number) => {
   const slot = itemSlots[index] as any
   return !!slot?.props?.disabled
@@ -45,7 +47,7 @@ export const getTargetIndexFromKeyboardEvent = (
   e: KeyboardEvent<HTMLElement>,
   currentIndex: number,
   itemSlots: ReactNode[],
-  direction: 'row' | 'column'
+  direction: ActionGroupProps['direction']
 ): number | undefined => {
   switch (e.key) {
     case 'Home':
