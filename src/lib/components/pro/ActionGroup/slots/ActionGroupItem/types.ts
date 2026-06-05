@@ -4,15 +4,17 @@ import { ActionGroupProps } from 'lib/index.pro'
 
 export type ActionGroupItemTag = (typeof ACTION_GROUP_ITEM_TAGS)[number]
 
-export type ActionGroupItemProps<T extends ActionGroupItemTag = 'button'> = Pick<
-  FlexItemProps<T>,
-  'tag' | 'tagAttrs' | 'tagRef' | 'disabled'
-> & {
+export type ActionGroupItemProps<T extends ActionGroupItemTag = 'button'> = Pick<FlexItemProps<T>, 'tag' | 'disabled'> & {
   children: FlexItemProps<T>['children']
   selected?: boolean
 }
 
-export type ActionGroupItemInternalProps = Pick<ActionGroupProps, 'color' | 'intent' | 'ripple' | 'direction' | 'square'> & {
+export type ActionGroupItemInternalProps<T extends ActionGroupItemTag = 'button'> = Pick<
+  ActionGroupProps,
+  'color' | 'intent' | 'ripple' | 'direction' | 'square'
+> & {
+  tagAttrs: FlexItemProps<T>['tagAttrs']
+  tagRef: FlexItemProps<T>['tagRef']
   itemsCount: number
   isFirst: boolean
   isLast: boolean

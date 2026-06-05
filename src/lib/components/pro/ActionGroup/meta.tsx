@@ -21,13 +21,14 @@ export const ACTION_GROUP_META = {
       bundle: 'pro',
       title: 'Organize and navigate related actions.',
       description:
-        'ActionGroup arranges interactive actions in a horizontal or vertical flow, providing a consistent foundation for navigation, selection states, keyboard interactions and joined surfaces. It is commonly used to build tabs, menus, navigation controls, segmented controls and selection interfaces.',
+        'ActionGroup arranges interactive actions in a horizontal or vertical flow, providing a consistent foundation for navigation, focus management, keyboard interactions and joined surfaces. It is commonly used to build tabs, menus, navigation controls, segmented controls and selection interfaces.',
       features: [
         'provides joined surfaces with automatic border radius management',
         'supports horizontal and vertical layouts',
-        'handles keyboard navigation between items',
-        'supports selected and disabled item states',
-        'works with buttons and links',
+        'implements roving tabindex keyboard navigation',
+        'automatically skips disabled items during keyboard navigation',
+        'supports disabled and consumer-controlled selected states',
+        'supports polymorphic item rendering through the tag prop',
         'allows arbitrary content inside each item',
       ],
       composedOf: ['Flex'],
@@ -48,11 +49,13 @@ export const ACTION_GROUP_META = {
         ...FLEX_META.Flex.props.flexDirection,
         options: ACTION_GROUP_DIRECTION,
         defaultValue: String(DEFAULT_ACTION_GROUP_DIRECTION),
+        isResponsive: false,
       },
       gap: {
         ...FLEX_META.Flex.props.gap,
         options: ACTION_GROUP_GAP,
         defaultValue: String(DEFAULT_ACTION_GROUP_GAP),
+        isResponsive: false,
       },
       square: {
         group: PROP_GROUPS.APPEARANCE,
@@ -64,30 +67,30 @@ export const ACTION_GROUP_META = {
         isRequired: true,
         description: 'ActionGroup.Item slots.',
       },
-      tagAttrs: FLEX_META.Flex.props.tagAttrs,
       tagRef: FLEX_META.Flex.props.tagRef,
+      tagAttrs: FLEX_META.Flex.props.tagAttrs,
     },
     examples: [
       {
         description: 'Actions arranged in a horizontal flow.',
         jsx: (
           <ActionGroup>
-            <ActionGroup.Item>
+            <ActionGroup.Item tag="a">
               <Box margin="sm">
                 <Text textAlign="center">Item 1</Text>
               </Box>
             </ActionGroup.Item>
-            <ActionGroup.Item>
+            <ActionGroup.Item tag="a" disabled>
               <Box margin="sm">
                 <Text textAlign="center">Item 2</Text>
               </Box>
             </ActionGroup.Item>
-            <ActionGroup.Item>
+            <ActionGroup.Item tag="a">
               <Box margin="sm">
                 <Text textAlign="center">Item 3</Text>
               </Box>
             </ActionGroup.Item>
-            <ActionGroup.Item>
+            <ActionGroup.Item tag="a">
               <Box margin="sm">
                 <Text textAlign="center">Item 4</Text>
               </Box>
@@ -154,8 +157,6 @@ export const ACTION_GROUP_META = {
         options: ACTION_GROUP_ITEM_TAGS,
         defaultValue: DEFAULT_ACTION_GROUP_ITEM_TAG,
       },
-      tagAttrs: FLEX_META.FlexItem.props.tagAttrs,
-      tagRef: FLEX_META.FlexItem.props.tagRef,
     },
   } satisfies ComponentMeta<ActionGroupItemProps>,
 }

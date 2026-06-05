@@ -5,13 +5,12 @@ import { ActionGroupItemInternalProps, ActionGroupItemProps, ActionGroupItemTag 
 export const ActionGroupItem = <T extends ActionGroupItemTag = 'button'>({
   children,
   tag = 'button' as T,
-  tagAttrs,
-  tagRef,
   selected,
   disabled,
   ...internalProps
 }: ActionGroupItemProps<T>) => {
-  const { color, intent, ripple, itemsCount, isFirst, isLast, direction, square } = internalProps as ActionGroupItemInternalProps
+  const { tagAttrs, tagRef, color, intent, ripple, itemsCount, isFirst, isLast, direction, square } =
+    internalProps as ActionGroupItemInternalProps<T>
 
   return (
     <Flex.Item

@@ -1,14 +1,13 @@
 import { FlexProps } from 'lib/index.core'
-import { RespValue } from 'lib/types'
 
 import { ACTION_GROUP_DIRECTION, ACTION_GROUP_GAP } from './constants'
 
 export type ActionGroupDirection = (typeof ACTION_GROUP_DIRECTION)[number]
 export type ActionGroupGap = (typeof ACTION_GROUP_GAP)[number]
 
-export type ActionGroupProps = Pick<FlexProps, 'tagAttrs' | 'tagRef' | 'color' | 'intent' | 'ripple'> & {
+export type ActionGroupProps = Pick<FlexProps, 'tagRef' | 'tagAttrs' | 'color' | 'intent' | 'ripple'> & {
   children: FlexProps['children']
-  direction?: RespValue<ActionGroupDirection>
-  gap?: RespValue<ActionGroupGap>
+  direction?: ActionGroupDirection
+  gap?: ActionGroupGap
   square?: boolean
 }
