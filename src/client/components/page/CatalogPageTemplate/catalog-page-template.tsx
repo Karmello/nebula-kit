@@ -121,7 +121,9 @@ export const CatalogPageTemplate = memo(
                       <SplitView.MainBar>
                         <Flex columnGap="sm" rowGap="2xs" alignItems="center" flexWrap="wrap">
                           <Text typography="h3">
-                            {pageKey === PageKey.foundations.toString() ? activeSectionObj?.label : activeItemObj?.label}
+                            {pageKey === PageKey.foundations.toString()
+                              ? activeSectionObj?.label
+                              : `${activeItemObj?.label} ${activeSectionObj?.label.toLowerCase()}`}
                           </Text>
                           {pageKey !== PageKey.foundations.toString() && bundleLabel ? (
                             <Box

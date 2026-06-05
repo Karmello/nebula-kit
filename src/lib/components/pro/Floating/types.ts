@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { FLOATING_PLACEMENT } from 'lib/components/pro/Floating/constants'
+import { FLOATING_PLACEMENT } from './constants'
 
 export type FloatingPlacement = (typeof FLOATING_PLACEMENT)[number]
 

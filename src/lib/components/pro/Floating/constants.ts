@@ -1,4 +1,4 @@
-import { FloatingProps } from './types'
+import { FloatingProps } from 'lib/index.pro'
 
 export const FLOATING_MODE = ['hover', 'click'] as const
 

@@ -1,4 +1,4 @@
-import { HtmlTag } from 'lib/components'
+import { HtmlTag } from 'lib/index.core'
 
 import { FloatingTriggerInternalProps, FloatingTriggerProps } from './types'
 

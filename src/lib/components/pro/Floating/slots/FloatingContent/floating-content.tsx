@@ -1,7 +1,7 @@
 import { FloatingPortal } from '@floating-ui/react'
 import { motion } from 'motion/react'
 
-import { HtmlTag } from 'lib/components'
+import { HtmlTag } from 'lib/index.core'
 
 import { FloatingContentInternalProps, FloatingContentProps } from './types'
 

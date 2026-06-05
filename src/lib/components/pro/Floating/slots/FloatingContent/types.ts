@@ -1,4 +1,4 @@
-import { HtmlTagProps } from 'lib/components'
+import { HtmlTagProps } from 'lib/index.core'
 
 export type FloatingContentProps = {
   children: HtmlTagProps<'span'>['children']
