@@ -1,3 +1,4 @@
+import { Box } from 'lib/components'
 import { PROP_GROUPS } from 'lib/constants'
 import { Floating } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
@@ -65,9 +66,17 @@ export const FLOATING_META = {
     examples: [
       {
         jsx: (
-          <Floating>
-            <Floating.Trigger>trigger</Floating.Trigger>
-            <Floating.Content>content</Floating.Content>
+          <Floating offset={10}>
+            <Floating.Trigger>
+              <Box drawable variant="solid" intent="primary" padding="sm">
+                Trigger
+              </Box>
+            </Floating.Trigger>
+            <Floating.Content>
+              <Box drawable variant="solid" intent="primary" padding="sm">
+                Content
+              </Box>
+            </Floating.Content>
           </Floating>
         ),
       },
@@ -80,8 +89,15 @@ export const FLOATING_META = {
     overview: {
       bundle: 'pro',
       name: 'Floating.Trigger',
-      title: '...',
-      description: '...',
+      title: 'Anchor element used to position and control the floating content.',
+      description:
+        'Floating.Trigger wraps the element that opens the floating layer and acts as the positioning reference for Floating.Content.',
+      features: [
+        'provides the reference element used by Floating UI',
+        'preserves the rendered child structure without applying visual styling',
+      ],
+      composedOf: ['HtmlTag'],
+      topLevelTags: ['span'],
     },
     props: {
       children: {
@@ -96,8 +112,12 @@ export const FLOATING_META = {
     overview: {
       bundle: 'pro',
       name: 'Floating.Content',
-      title: '...',
-      description: '...',
+      title: 'Portal-rendered overlay positioned relative to the trigger.',
+      description:
+        'Floating.Content wraps the floating layer, renders it in a portal and applies the positioning, dismissal and opening animation behavior managed by Floating.',
+      features: ['renders only while the floating layer is open', 'closes on outside press, Escape and Tab navigation'],
+      composedOf: ['HtmlTag'],
+      topLevelTags: ['span'],
     },
     props: {
       children: {

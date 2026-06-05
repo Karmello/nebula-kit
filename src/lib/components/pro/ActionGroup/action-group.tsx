@@ -47,11 +47,7 @@ const ActionGroupImpl = ({
   return (
     <Flex
       tagRef={tagRef}
-      tagAttrs={{
-        ...tagAttrs,
-        role: 'toolbar',
-        'aria-orientation': direction === 'column' ? 'vertical' : 'horizontal',
-      }}
+      tagAttrs={tagAttrs}
       flexDirection={direction}
       color={color}
       intent={intent}
