@@ -35,6 +35,7 @@ import { AVATAR_META } from '../../lib/components/pro/Avatar/meta'
 import { BREADCRUMB_META } from '../../lib/components/pro/Breadcrumb/meta'
 import { DIALOG_META } from '../../lib/components/pro/Dialog/meta'
 import { FADE_META } from '../../lib/components/pro/Fade/meta'
+import { FLOATING_META } from '../../lib/components/pro/Floating/meta'
 import { FORM_META } from '../../lib/components/pro/Form/meta'
 import { MARKUP_META } from '../../lib/components/pro/Markup/meta'
 import { MULTI_SELECT_META } from '../../lib/components/pro/MultiSelect/meta'
@@ -63,12 +64,13 @@ const META = {
   Divider: DIVIDER_META,
   Fade: FADE_META,
   Flex: FLEX_META,
+  Floating: FLOATING_META,
   Footer: FOOTER_META,
   Form: FORM_META,
   Grid: GRID_META,
   HtmlTag: HTML_TAG_META,
-  Icon: ICON_META,
   IconButton: ICON_BUTTON_META,
+  Icon: ICON_META,
   Image: IMAGE_META,
   Input: INPUT_META,
   Link: LINK_META,

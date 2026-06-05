@@ -27,6 +27,15 @@ export const COMPONENT_CATEGORIES = [
     ],
   },
   {
+    key: 'overlays',
+    label: 'Overlays',
+    items: [
+      { key: 'floating', label: 'Floating', sections, bundle: 'pro' },
+      { key: 'tooltip', label: 'Tooltip', sections, bundle: 'pro' },
+      { key: 'dialog', label: 'Dialog', sections, bundle: 'pro' },
+    ],
+  },
+  {
     key: 'typography',
     label: 'Typography',
     items: [
@@ -97,14 +106,6 @@ export const COMPONENT_CATEGORIES = [
     items: [
       { key: 'marker-list', label: 'MarkerList', sections, bundle: 'core' },
       { key: 'virtual-list', label: 'VirtualList', sections, bundle: 'pro' },
-    ],
-  },
-  {
-    key: 'overlays',
-    label: 'Overlays',
-    items: [
-      { key: 'dialog', label: 'Dialog', sections, bundle: 'pro' },
-      { key: 'tooltip', label: 'Tooltip', sections, bundle: 'pro' },
     ],
   },
   {

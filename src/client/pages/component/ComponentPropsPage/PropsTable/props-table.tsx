@@ -1,6 +1,6 @@
 import { kebabCase } from 'change-case'
 
-import { Flex, Icon, Link, Spacer, Table, Tabs, Text, Title, Tooltip } from 'lib/components'
+import { Divider, Flex, Icon, Link, Spacer, Table, Tabs, Text, Title, Tooltip } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 
 type Props = {
@@ -115,6 +115,12 @@ export const PropsTable = ({ data, category }: Props) => {
   if (entries.length === 1) {
     return (
       <>
+        {category ? (
+          <>
+            <Text typography="h5">{category}</Text>
+            <Divider marginBlock="xs" />
+          </>
+        ) : null}
         {renderTable(entries[0][1])}
         <Spacer blockSize="xl" />
       </>

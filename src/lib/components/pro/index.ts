@@ -3,6 +3,7 @@ export { Avatar, type AvatarProps } from './Avatar'
 export { Breadcrumb, type BreadcrumbProps } from './Breadcrumb'
 export { Dialog, type DialogContentProps, type DialogFooterProps, type DialogHeaderProps, type DialogProps } from './Dialog'
 export { Fade, type FadeProps } from './Fade'
+export { Floating, type FloatingProps } from './Floating'
 export {
   Form,
   type FormActionButtonProps,

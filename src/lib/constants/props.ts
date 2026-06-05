@@ -29,4 +29,5 @@ export enum PROP_GROUPS {
   IMAGE_RENDERING = 'Image rendering',
   TYPOGRAPHY = 'Typography',
   ICON = 'Icon',
+  FLOATING = 'Floating',
 }
