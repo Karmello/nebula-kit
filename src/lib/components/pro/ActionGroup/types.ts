@@ -1,6 +1,7 @@
-import { ACTION_GROUP_DIRECTION, ACTION_GROUP_GAP } from 'lib/components/pro/ActionGroup/constants'
 import { FlexProps } from 'lib/index.core'
 import { RespValue } from 'lib/types'
+
+import { ACTION_GROUP_DIRECTION, ACTION_GROUP_GAP } from './constants'
 
 export type ActionGroupDirection = (typeof ACTION_GROUP_DIRECTION)[number]
 export type ActionGroupGap = (typeof ACTION_GROUP_GAP)[number]

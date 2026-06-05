@@ -1,4 +1,4 @@
-import { Flex } from 'lib/components'
+import { Flex } from 'lib/index.core'
 
 import { ActionGroupItemInternalProps, ActionGroupItemProps, ActionGroupItemTag } from './types'
 

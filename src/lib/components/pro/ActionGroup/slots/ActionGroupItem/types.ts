@@ -1,6 +1,7 @@
-import { ACTION_GROUP_ITEM_TAGS } from 'lib/components/pro/ActionGroup/slots/ActionGroupItem/constants'
 import { FlexItemProps } from 'lib/index.core'
 import { ActionGroupProps } from 'lib/index.pro'
+
+import { ACTION_GROUP_ITEM_TAGS } from '../ActionGroupItem'
 
 export type ActionGroupItemTag = (typeof ACTION_GROUP_ITEM_TAGS)[number]
 

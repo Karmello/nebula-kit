@@ -1,6 +1,6 @@
 import { CssFlexDirection, TShirtSize } from 'lib/types'
 
-import { ActionGroupProps } from './types'
+import { ActionGroupProps } from '../ActionGroup'
 
 export const ACTION_GROUP_DIRECTION = ['row', 'column'] as const satisfies CssFlexDirection[]
 export const ACTION_GROUP_GAP = ['3xs', '2xs', 'xs'] as const satisfies TShirtSize[]
