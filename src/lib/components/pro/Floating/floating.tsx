@@ -1,4 +1,4 @@
-import { cloneElement, RefObject, useLayoutEffect, useRef, useState } from 'react'
+import { cloneElement, RefObject, useLayoutEffect, useRef } from 'react'
 import {
   autoUpdate,
   flip,
@@ -12,6 +12,7 @@ import {
 } from '@floating-ui/react'
 
 import { WithSlots } from 'lib/components/shared'
+import { useControlled } from 'lib/hooks'
 
 import { DEFAULT_FLOATING_MODE, DEFAULT_FLOATING_PLACEMENT } from './constants'
 import { FloatingProps } from './types'
@@ -21,8 +22,14 @@ export const Floating = ({
   mode = DEFAULT_FLOATING_MODE,
   placement = DEFAULT_FLOATING_PLACEMENT,
   offset,
+  open,
+  onOpenChange,
 }: FloatingProps) => {
-  const [open, setOpen] = useState(false)
+  const [internalOpen, setInternalOpen] = useControlled({
+    value: open,
+    defaultValue: false,
+    onChange: onOpenChange,
+  })
 
   const triggerRef = useRef<HTMLSpanElement | null>(null)
 
@@ -32,8 +39,8 @@ export const Floating = ({
     context,
     placement: floatingPlacement,
   } = useFloating({
-    open,
-    onOpenChange: setOpen,
+    open: internalOpen,
+    onOpenChange: setInternalOpen,
     placement,
     middleware: [flip(), shift(), floatingOffset(offset)],
     whileElementsMounted: autoUpdate,
@@ -79,11 +86,11 @@ export const Floating = ({
                 },
                 ...getFloatingProps({
                   onKeyDown: e => {
-                    if (e.key === 'Tab') setOpen(false)
+                    if (e.key === 'Tab') setInternalOpen(false)
                   },
                 }),
               },
-              open,
+              open: internalOpen,
               isOpeningDownwards,
             })}
           </>

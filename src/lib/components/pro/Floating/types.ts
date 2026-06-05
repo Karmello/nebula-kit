@@ -9,4 +9,6 @@ export type FloatingProps = {
   mode?: 'click' | 'hover'
   placement?: FloatingPlacement
   offset?: number
+  open?: boolean
+  onOpenChange?: (open: boolean) => void
 }

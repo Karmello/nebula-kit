@@ -1,5 +1,5 @@
-import { Floating } from 'lib/components/pro'
 import { PROP_GROUPS } from 'lib/constants'
+import { Floating } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_FLOATING_MODE, DEFAULT_FLOATING_PLACEMENT, FLOATING_MODE, FLOATING_PLACEMENT } from './constants'
@@ -28,12 +28,6 @@ export const FLOATING_META = {
       slots: ['Floating.Trigger', 'Floating.Content'],
     },
     props: {
-      children: {
-        group: PROP_GROUPS.ROOT,
-        options: ['ReactNode'],
-        isRequired: true,
-        description: 'Floating.Trigger + Floating.Content slots.',
-      },
       mode: {
         group: PROP_GROUPS.FLOATING,
         options: FLOATING_MODE,
@@ -50,6 +44,22 @@ export const FLOATING_META = {
         group: PROP_GROUPS.FLOATING,
         options: ['number'],
         description: 'Sets the distance between the trigger and floating content.',
+      },
+      open: {
+        group: PROP_GROUPS.FLOATING,
+        options: ['boolean'],
+        description: 'Controls whether the floating content is currently visible.',
+      },
+      onOpenChange: {
+        group: PROP_GROUPS.FLOATING,
+        options: ['(open: boolean) => void'],
+        description: 'Callback fired when the floating content requests to open or close.',
+      },
+      children: {
+        group: PROP_GROUPS.ROOT,
+        options: ['ReactNode'],
+        isRequired: true,
+        description: 'Floating.Trigger + Floating.Content slots.',
       },
     },
     examples: [
