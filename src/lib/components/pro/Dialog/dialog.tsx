@@ -1,12 +1,13 @@
 import { useEffect, useRef } from 'react'
+import { FloatingPortal, useDismiss, useFloating, useInteractions } from '@floating-ui/react'
 import classNames from 'classnames'
+import { motion } from 'motion/react'
 
-import { Portal, WithSlots } from 'lib/components/shared'
+import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 import { useCurrentTheme, useGlobalScrollLock } from 'lib/hooks'
 import { Box, Flex, IconButton } from 'lib/index.core'
-import { DialogProps, Fade, Scale } from 'lib/index.pro'
-import { useFocusTrap } from 'lib/internals/focus'
+import { DialogProps } from 'lib/index.pro'
 
 import {
   DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK,
@@ -39,9 +40,7 @@ export const Dialog = ({
 
   useEffect(() => {
     if (!open) return
-
     lock()
-
     return () => {
       setTimeout(() => {
         unlock()
@@ -49,12 +48,21 @@ export const Dialog = ({
     }
   }, [open])
 
-  // useFocusTrap({
-  //   active: open,
-  //   targetRef: finalRef,
-  //   onFocusEscape: onClose,
-  //   disableEscapeOnOutsideClick: true,
-  // })
+  const { refs, context } = useFloating({
+    open,
+    onOpenChange: nextOpen => {
+      if (!nextOpen) {
+        onClose?.()
+      }
+    },
+  })
+
+  const dismiss = useDismiss(context, {
+    outsidePress: closeOnBackdropClick,
+    escapeKey: true,
+  })
+
+  const { getFloatingProps } = useInteractions([dismiss])
 
   return (
     <WithSlots<'Dialog.Header' | 'Dialog.Content' | 'Dialog.Footer'>
@@ -65,71 +73,71 @@ export const Dialog = ({
       {({ slotsByName }) => {
         return (
           <DialogProvider intent={DIALOG_INTENT} padding={DIALOG_PADDING}>
-            <Portal>
-              <Fade visible={open}>
-                <Box
-                  tagAttrs={{
-                    style: {
-                      backgroundColor: theme === 'light' ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)',
-                    },
-                    onClick: () => {
-                      if (closeOnBackdropClick) {
-                        onClose?.()
-                      }
-                    },
-                  }}
-                  position="fixed"
-                  inset="0px"
-                  pointerEvents={open ? 'auto' : 'none'}
-                  zIndex={1000}
+            {open ? (
+              <FloatingPortal>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.2, ease: 'easeOut' }}
+                  style={{ position: 'fixed', inset: 0, zIndex: 1000 }}
                 >
-                  <Flex
+                  <Box
                     tagAttrs={{
-                      style: { blockSize: '100%', inlineSize: '100%' },
+                      style: { backgroundColor: theme === 'light' ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)' },
+                      onClick: () => {
+                        if (closeOnBackdropClick) {
+                          onClose?.()
+                        }
+                      },
                     }}
-                    justifyContent="center"
-                    alignItems="center"
+                    position="fixed"
+                    inset="0px"
+                    pointerEvents={open ? 'auto' : 'none'}
                   >
-                    <Scale visible={open} easing={open ? 'ease-out' : 'ease-in'}>
-                      <Box
-                        tag="dialog"
-                        tagAttrs={{
-                          ...tagAttrs,
-                          className: classNames(withPrefix('dialog'), tagAttrs?.className),
-                          role: 'dialog',
-                          'aria-modal': true,
-                          onClick: e => {
-                            e.stopPropagation()
-                          },
-                        }}
-                        tagRef={finalRef}
-                        drawable
-                        variant="outline"
-                        maxInlineSize="95dvw"
-                        maxBlockSize="90dvh"
-                        position="relative"
-                        overflowY="auto"
-                        intent="primary"
-                        inlineSize={DIALOG_SIZE_MAP[size || 'md']}
-                        borderRadius="var(--neb-border-radius)"
-                      >
-                        <Box drawable variant="solid" intent="neutral" borderRadius="0px">
-                          {onClose ? (
-                            <Box position="absolute" top="8px" right="8px">
-                              <IconButton size="2xs" iconName="close" variant="outline" intent="tertiary" onClick={onClose} />
-                            </Box>
-                          ) : null}
+                    <Flex blockSize="100%" inlineSize="100%" justifyContent="center" alignItems="center">
+                      <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.2, ease: 'easeOut' }}>
+                        <Box tagRef={refs.setFloating as any} tagAttrs={getFloatingProps()}>
+                          <Box
+                            tag="dialog"
+                            tagAttrs={{
+                              ...tagAttrs,
+                              className: classNames(withPrefix('dialog'), tagAttrs?.className),
+                              role: 'dialog',
+                              'aria-modal': true,
+                              onClick: e => {
+                                e.stopPropagation()
+                              },
+                            }}
+                            tagRef={finalRef}
+                            drawable
+                            variant="outline"
+                            maxInlineSize="95dvw"
+                            maxBlockSize="90dvh"
+                            position="relative"
+                            overflowY="auto"
+                            intent="primary"
+                            inlineSize={DIALOG_SIZE_MAP[size || 'md']}
+                            borderRadius="var(--neb-border-radius)"
+                          >
+                            <Box drawable variant="solid" intent="neutral" borderRadius="0px">
+                              {onClose ? (
+                                <Box position="absolute" top="8px" right="8px">
+                                  <IconButton size="2xs" iconName="close" variant="outline" intent="tertiary" onClick={onClose} />
+                                </Box>
+                              ) : null}
 
-                          {slotsByName['Dialog.Header']}
-                          {slotsByName['Dialog.Content']}
-                          {slotsByName['Dialog.Footer']}
+                              {slotsByName['Dialog.Header']}
+                              {slotsByName['Dialog.Content']}
+                              {slotsByName['Dialog.Footer']}
+                            </Box>
+                          </Box>
                         </Box>
-                      </Box>
-                    </Scale>
-                  </Flex>
-                </Box>
-              </Fade>
-            </Portal>
+                      </motion.div>
+                    </Flex>
+                  </Box>
+                </motion.div>
+              </FloatingPortal>
+            ) : null}
           </DialogProvider>
         )
       }}

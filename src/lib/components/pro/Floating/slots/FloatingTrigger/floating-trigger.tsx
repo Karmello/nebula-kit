@@ -1,4 +1,4 @@
-import { HtmlTag } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 
 import { FloatingTriggerInternalProps, FloatingTriggerProps } from './types'
 
@@ -6,9 +6,9 @@ export const FloatingTrigger = ({ children, ...internalProps }: FloatingTriggerP
   const { tagRef, tagAttrs } = internalProps as FloatingTriggerInternalProps
 
   return (
-    <HtmlTag tag="span" tagRef={tagRef} tagAttrs={tagAttrs}>
+    <Box tag="span" tagRef={tagRef} tagAttrs={tagAttrs}>
       {children}
-    </HtmlTag>
+    </Box>
   )
 }
 

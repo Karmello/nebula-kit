@@ -71,10 +71,13 @@ export const Floating = ({
 
   const isOpeningDownwards = internalPlacement?.includes('bottom')
 
+  const previousOpenRef = useRef(internalOpen)
   useEffect(() => {
-    if (!internalOpen) {
+    const wasOpen = previousOpenRef.current
+    if (wasOpen && !internalOpen) {
       focusTriggerChild(triggerRef)
     }
+    previousOpenRef.current = internalOpen
   }, [internalOpen])
 
   return (
@@ -97,7 +100,7 @@ export const Floating = ({
           <>
             {cloneElement(triggerSlot as any, {
               tagRef: triggerRef,
-              tagAttrs: getReferenceProps({ style: { display: 'inline-block' } }),
+              tagAttrs: getReferenceProps(),
             })}
             {cloneElement(contentSlot as any, {
               tagRef: refs.setFloating as unknown as RefObject<HTMLSpanElement>,

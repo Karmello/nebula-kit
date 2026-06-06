@@ -1,7 +1,7 @@
-import { HtmlTagProps } from 'lib/index.core'
+import { BoxProps } from 'lib/index.core'
 
 export type FloatingTriggerProps = {
-  children: HtmlTagProps<'span'>['children']
+  children: BoxProps<'span'>['children']
 }
 
-export type FloatingTriggerInternalProps = Pick<HtmlTagProps<'span'>, 'tagRef' | 'tagAttrs'>
+export type FloatingTriggerInternalProps = Pick<BoxProps<'span'>, 'tagRef' | 'tagAttrs'>

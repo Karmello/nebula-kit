@@ -1,7 +1,7 @@
 import { FloatingPortal } from '@floating-ui/react'
 import { motion } from 'motion/react'
 
-import { HtmlTag } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 
 import { FloatingContentInternalProps, FloatingContentProps } from './types'
 
@@ -12,7 +12,7 @@ export const FloatingContent = ({ children, ...internalProps }: FloatingContentP
 
   return (
     <FloatingPortal>
-      <HtmlTag
+      <Box
         tag="span"
         tagRef={tagRef}
         tagAttrs={{
@@ -33,7 +33,7 @@ export const FloatingContent = ({ children, ...internalProps }: FloatingContentP
         >
           {children}
         </motion.div>
-      </HtmlTag>
+      </Box>
     </FloatingPortal>
   )
 }

@@ -24,8 +24,6 @@ export const FLOATING_META = {
         'supports configurable placement and offset',
         'provides a foundation for building custom overlays and floating interfaces',
       ],
-      composedOf: ['HtmlTag'],
-      topLevelTags: ['span'],
       slots: ['Floating.Trigger', 'Floating.Content'],
     },
     props: {
@@ -107,7 +105,7 @@ export const FLOATING_META = {
         'provides the reference element used by Floating UI',
         'preserves the rendered child structure without applying visual styling',
       ],
-      composedOf: ['HtmlTag'],
+      composedOf: ['Box'],
       topLevelTags: ['span'],
     },
     props: {
@@ -127,7 +125,7 @@ export const FLOATING_META = {
       description:
         'Floating.Content wraps the floating layer, renders it in a portal and applies the positioning, dismissal and opening animation behavior managed by Floating.',
       features: ['renders only while the floating layer is open', 'closes on outside press, Escape and Tab navigation'],
-      composedOf: ['HtmlTag'],
+      composedOf: ['Box'],
       topLevelTags: ['span'],
     },
     props: {
