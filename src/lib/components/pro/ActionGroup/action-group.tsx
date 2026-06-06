@@ -1,15 +1,15 @@
-import { cloneElement, createRef, KeyboardEvent, ReactNode, RefObject, useRef, useState } from 'react'
+import { cloneElement } from 'react'
 
 import { WithSlots } from 'lib/components/shared'
 import { Flex } from 'lib/index.core'
 
+import { ActionGroupProvider, useActionGroupContext } from './action-group-provider'
 import {
   DEFAULT_ACTION_GROUP_DIRECTION,
   DEFAULT_ACTION_GROUP_GAP,
   DEFAULT_ACTION_GROUP_INTENT,
   DEFAULT_ACTION_GROUP_RIPPLE,
 } from './constants'
-import { getInitialActiveIndex, getTargetIndexFromKeyboardEvent } from './helpers'
 import { ActionGroupItemInternalProps } from './slots'
 import { ActionGroupProps } from './types'
 
@@ -23,27 +23,8 @@ const ActionGroupImpl = ({
   intent = DEFAULT_ACTION_GROUP_INTENT,
   elevated,
   ripple = DEFAULT_ACTION_GROUP_RIPPLE,
-  itemSlots,
-}: ActionGroupProps & { itemSlots: ReactNode[] }) => {
-  const [activeIndex, setActiveIndex] = useState(getInitialActiveIndex(itemSlots))
-
-  const itemRefs = useRef<RefObject<HTMLElement | null>[]>([])
-
-  itemSlots.forEach((_, index) => {
-    itemRefs.current[index] ??= createRef<HTMLElement>()
-  })
-
-  const focusItem = (index: number) => {
-    setActiveIndex(index)
-    itemRefs.current[index]?.current?.focus()
-  }
-
-  const onKeyDown = (e: KeyboardEvent<HTMLElement>, index: number) => {
-    const targetIndex = getTargetIndexFromKeyboardEvent(e, index, itemSlots, direction)
-    if (targetIndex === undefined) return
-    e.preventDefault()
-    focusItem(targetIndex)
-  }
+}: ActionGroupProps) => {
+  const { itemSlots } = useActionGroupContext()
 
   const isAttachedStart = attached === 'start' || attached === 'both'
   const isAttachedEnd = attached === 'end' || attached === 'both'
@@ -79,16 +60,7 @@ const ActionGroupImpl = ({
           slot as any,
           {
             key: index,
-            tagRef: itemRefs.current[index],
-            tagAttrs: {
-              tabIndex: activeIndex === index ? 0 : -1,
-              onFocus: () => {
-                setActiveIndex(index)
-              },
-              onKeyDown: (e: KeyboardEvent<HTMLElement>) => {
-                onKeyDown(e, index)
-              },
-            },
+            index,
             color,
             intent,
             elevated,
@@ -98,7 +70,7 @@ const ActionGroupImpl = ({
             isLast: index === itemSlots.length - 1,
             direction,
             attached,
-          } as ActionGroupItemInternalProps<any>
+          } as ActionGroupItemInternalProps
         )
       )}
     </Flex>
@@ -118,7 +90,14 @@ export const ActionGroup = (props: ActionGroupProps) => {
       ]}
       childrenToVerify={props.children}
     >
-      {({ slotsByName }) => <ActionGroupImpl {...props} itemSlots={slotsByName['ActionGroup.Item']} />}
+      {({ slotsByName }) => {
+        const itemSlots = slotsByName['ActionGroup.Item']
+        return (
+          <ActionGroupProvider itemSlots={itemSlots}>
+            <ActionGroupImpl {...props} />
+          </ActionGroupProvider>
+        )
+      }}
     </WithSlots>
   )
 }

@@ -1,17 +1,28 @@
+import { ComponentPropsWithoutRef, ComponentRef, KeyboardEvent, useRef } from 'react'
+
 import { Flex } from 'lib/index.core'
 
+import { useActionGroupContext } from '../../action-group-provider'
+import { getTargetIndexFromKeyboardEvent } from '../../helpers'
 import { ActionGroupItemInternalProps, ActionGroupItemProps, ActionGroupItemTag } from './types'
 
 export const ActionGroupItem = <T extends ActionGroupItemTag = 'button'>({
   children,
   tag = 'button' as T,
+  tagAttrs,
+  tagRef,
   selected,
   disabled,
   onClick,
   ...internalProps
 }: ActionGroupItemProps<T>) => {
-  const { tagAttrs, tagRef, color, intent, elevated, ripple, itemsCount, isFirst, isLast, direction, attached } =
-    internalProps as ActionGroupItemInternalProps<T>
+  const ref = useRef<ComponentRef<T>>(null)
+  const finalRef = tagRef || ref
+
+  const { itemSlots, activeIndex, setActiveIndex } = useActionGroupContext()
+
+  const { index, color, intent, elevated, ripple, itemsCount, isFirst, isLast, direction, attached } =
+    internalProps as ActionGroupItemInternalProps
 
   const hasMultipleItems = itemsCount > 1
   const attachedStart = attached === 'start' || attached === 'both'
@@ -24,11 +35,24 @@ export const ActionGroupItem = <T extends ActionGroupItemTag = 'button'>({
   return (
     <Flex.Item
       tag={tag}
-      tagAttrs={{
-        ...tagAttrs,
-        onClick,
-      }}
-      tagRef={tagRef}
+      tagRef={finalRef}
+      tagAttrs={
+        {
+          ...tagAttrs,
+          tabIndex: activeIndex === index ? 0 : -1,
+          onFocus: () => {
+            setActiveIndex(index)
+          },
+          onKeyDown: (e: KeyboardEvent<HTMLElement>) => {
+            const targetIndex = getTargetIndexFromKeyboardEvent(e, index, itemSlots, direction)
+            if (targetIndex === undefined) return
+            e.preventDefault()
+            setActiveIndex(targetIndex)
+            ;(e.currentTarget.parentElement?.childNodes[targetIndex] as HTMLElement)?.focus()
+          },
+          onClick,
+        } as ComponentPropsWithoutRef<T>
+      }
       color={color}
       intent={intent}
       elevated={elevated}

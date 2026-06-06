@@ -29,12 +29,6 @@ export const FLOATING_META = {
       slots: ['Floating.Trigger', 'Floating.Content'],
     },
     props: {
-      mode: {
-        group: PROP_GROUPS.FLOATING,
-        options: FLOATING_MODE,
-        defaultValue: DEFAULT_FLOATING_MODE,
-        description: 'Defines which interaction opens the floating content.',
-      },
       placement: {
         group: PROP_GROUPS.FLOATING,
         options: FLOATING_PLACEMENT,
@@ -46,15 +40,17 @@ export const FLOATING_META = {
         options: ['number'],
         description: 'Sets the distance between the trigger and floating content.',
       },
-      open: {
-        group: PROP_GROUPS.FLOATING,
-        options: ['boolean'],
-        description: 'Controls whether the floating content is currently visible.',
+      mode: {
+        group: PROP_GROUPS.INTERACTION,
+        options: FLOATING_MODE,
+        defaultValue: DEFAULT_FLOATING_MODE,
+        description: 'Defines which interaction opens the floating content.',
       },
-      onOpenChange: {
-        group: PROP_GROUPS.FLOATING,
-        options: ['(open: boolean) => void'],
-        description: 'Callback fired when the floating content requests to open or close.',
+      disabled: {
+        group: PROP_GROUPS.INTERACTION,
+        options: ['boolean'],
+        description:
+          'Disables the floating interaction, preventing the floating content from opening through trigger hover or click behavior.',
       },
       onPlacementChange: {
         group: PROP_GROUPS.FLOATING,
@@ -66,6 +62,16 @@ export const FLOATING_META = {
         options: ['ReactNode'],
         isRequired: true,
         description: 'Floating.Trigger + Floating.Content slots.',
+      },
+      open: {
+        group: PROP_GROUPS.ROOT,
+        options: ['boolean'],
+        description: 'Controls whether the floating content is currently visible.',
+      },
+      onOpenChange: {
+        group: PROP_GROUPS.ROOT,
+        options: ['(open: boolean) => void'],
+        description: 'Callback fired when the floating content requests to open or close.',
       },
     },
     examples: [

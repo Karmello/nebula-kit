@@ -78,22 +78,22 @@ export const ACTION_GROUP_META = {
         description: 'Actions arranged in a horizontal flow.',
         jsx: (
           <ActionGroup>
-            <ActionGroup.Item tag="a">
+            <ActionGroup.Item>
               <Box margin="sm">
                 <Text textAlign="center">Item 1</Text>
               </Box>
             </ActionGroup.Item>
-            <ActionGroup.Item tag="a">
+            <ActionGroup.Item>
               <Box margin="sm">
                 <Text textAlign="center">Item 2</Text>
               </Box>
             </ActionGroup.Item>
-            <ActionGroup.Item tag="a">
+            <ActionGroup.Item>
               <Box margin="sm">
                 <Text textAlign="center">Item 3</Text>
               </Box>
             </ActionGroup.Item>
-            <ActionGroup.Item tag="a">
+            <ActionGroup.Item>
               <Box margin="sm">
                 <Text textAlign="center">Item 4</Text>
               </Box>
@@ -160,6 +160,8 @@ export const ACTION_GROUP_META = {
         options: ACTION_GROUP_ITEM_TAGS,
         defaultValue: DEFAULT_ACTION_GROUP_ITEM_TAG,
       },
+      tagRef: FLEX_META.FlexItem.props.tagRef,
+      tagAttrs: FLEX_META.FlexItem.props.tagAttrs,
       onClick: {
         group: PROP_GROUPS.ROOT,
         options: ['e => void'],

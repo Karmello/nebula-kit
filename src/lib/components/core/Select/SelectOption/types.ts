@@ -1,4 +1,6 @@
+import { ReactNode } from 'react'
+
 export type SelectOptionProps = {
-  children: string
+  children: ReactNode
   value: string
 }

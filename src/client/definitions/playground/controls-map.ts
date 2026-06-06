@@ -5,6 +5,7 @@ import { PlaygroundProp } from './types'
 export const PLAYGROUND_CONTROLS_MAP: Record<PlaygroundProp, { type: 'array' | 'boolean' | 'string' }> = {
   active: { type: 'boolean' },
   align: { type: 'array' },
+  attached: { type: 'array' },
   blockSize: { type: 'string' },
   bold: { type: 'boolean' },
   borderRadius: { type: 'string' },
@@ -54,7 +55,6 @@ export const PLAYGROUND_CONTROLS_MAP: Record<PlaygroundProp, { type: 'array' | '
   selected: { type: 'boolean' },
   shape: { type: 'array' },
   size: { type: 'array' },
-  square: { type: 'boolean' },
   src: { type: 'string' },
   staticLabel: { type: 'string' },
   status: { type: 'array' },

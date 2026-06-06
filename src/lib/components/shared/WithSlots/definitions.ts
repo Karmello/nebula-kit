@@ -9,5 +9,5 @@ export type WithSlotsProps<SlotName extends string> = {
     slotsByName: Record<SlotName, ReactNode[]>
     allValidSlots: ReactNode[]
     allNonSlots: ReactNode[] | null
-  }) => JSX.Element
+  }) => JSX.Element | null
 }

@@ -10,7 +10,7 @@ export const PROPS_FROM_ACTION_GROUP = [
   'gap',
   'intent',
   'ripple',
-  'square',
+  'attached',
 ] as const satisfies readonly (keyof ActionGroupProps)[]
 
 export const ACTION_GROUP_PRESETS = [

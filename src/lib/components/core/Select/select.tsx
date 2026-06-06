@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { ReactElement, useEffect, useRef, useState } from 'react'
 
 import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
@@ -35,10 +35,11 @@ export const SelectImpl = ({
 
   const [currentValue, setCurrentValue] = useControlled({ value, defaultValue, onChange })
   const triggerRef = useRef<HTMLButtonElement | null>(null)
+  const selectedItemRef = useRef<HTMLButtonElement | null>(null)
 
   const triggerWidth = triggerRef.current?.offsetWidth
   const currentLabel = optionSlots.find(slot => slot.props.value === currentValue)?.props.children
-  const isOpenDownwards = placement.startsWith('bottom')
+  const isOpenDownwards = placement?.startsWith('bottom')
   const optionBlockSize = Number(CONTROL_SIZE_MAP[size].blockSize.replace('px', ''))
 
   const { menuBlockSize } = resolveSelectValues({
@@ -47,8 +48,22 @@ export const SelectImpl = ({
     itemsCount: optionSlots.length,
   })
 
+  useEffect(() => {
+    if (!open) return
+    requestAnimationFrame(() => {
+      selectedItemRef.current?.focus()
+    })
+  }, [open])
+
   return (
-    <Floating mode="click" open={open} onOpenChange={setOpen} placement={placement} onPlacementChange={setPlacement}>
+    <Floating
+      mode="click"
+      open={open}
+      onOpenChange={setOpen}
+      placement={placement}
+      onPlacementChange={setPlacement}
+      disabled={disabled}
+    >
       <Floating.Trigger>
         <Box
           tag="button"
@@ -92,27 +107,32 @@ export const SelectImpl = ({
           borderBottomRightRadius={!isOpenDownwards ? '0px' : undefined}
         >
           <ActionGroup direction="column" attached={isOpenDownwards ? 'start' : 'end'} intent={intent} color={color} elevated>
-            {optionSlots.map((slot, key) => (
-              <ActionGroup.Item
-                key={key}
-                selected={currentValue === slot.props.value}
-                onClick={() => {
-                  setCurrentValue(slot.props.value)
-                  setOpen(false)
-                }}
-              >
-                <Flex
-                  alignItems="center"
-                  alignContent="stretch"
-                  blockSize={CONTROL_SIZE_MAP[size].blockSize}
-                  paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
+            {optionSlots.map((slot, key) => {
+              const isSelected = currentValue === slot.props.value
+
+              return (
+                <ActionGroup.Item
+                  key={key}
+                  tagRef={isSelected ? selectedItemRef : undefined}
+                  selected={isSelected}
+                  onClick={() => {
+                    setCurrentValue(slot.props.value)
+                    setOpen(false)
+                  }}
                 >
-                  <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight}>
-                    {slot}
-                  </Text>
-                </Flex>
-              </ActionGroup.Item>
-            ))}
+                  <Flex
+                    alignItems="center"
+                    alignContent="stretch"
+                    blockSize={CONTROL_SIZE_MAP[size].blockSize}
+                    paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
+                  >
+                    <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight}>
+                      {slot}
+                    </Text>
+                  </Flex>
+                </ActionGroup.Item>
+              )
+            })}
           </ActionGroup>
         </Box>
       </Floating.Content>

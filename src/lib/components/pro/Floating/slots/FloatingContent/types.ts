@@ -1,3 +1,5 @@
+import { FloatingContext } from '@floating-ui/react'
+
 import { HtmlTagProps } from 'lib/index.core'
 
 export type FloatingContentProps = {
@@ -7,4 +9,5 @@ export type FloatingContentProps = {
 export type FloatingContentInternalProps = Pick<HtmlTagProps<'span'>, 'tagRef' | 'tagAttrs'> & {
   open: boolean
   isOpeningDownwards: boolean
+  context: FloatingContext
 }

@@ -15,6 +15,7 @@ import { WithSlots } from 'lib/components/shared'
 import { useControlled } from 'lib/hooks'
 
 import { DEFAULT_FLOATING_MODE, DEFAULT_FLOATING_PLACEMENT } from './constants'
+import { focusTriggerChild } from './helpers'
 import { FloatingProps } from './types'
 
 export const Floating = ({
@@ -23,6 +24,7 @@ export const Floating = ({
   placement = DEFAULT_FLOATING_PLACEMENT,
   offset,
   open,
+  disabled,
   onOpenChange,
   onPlacementChange,
 }: FloatingProps) => {
@@ -47,7 +49,12 @@ export const Floating = ({
     placement: floatingPlacement,
   } = useFloating({
     open: internalOpen,
-    onOpenChange: setInternalOpen,
+    onOpenChange: (nextOpen, _, reason) => {
+      setInternalOpen(nextOpen)
+      if (!nextOpen && (reason === 'escape-key' || reason === 'focus-out')) {
+        requestAnimationFrame(() => focusTriggerChild(triggerRef))
+      }
+    },
     placement,
     middleware: [flip(), shift(), floatingOffset(offset)],
     whileElementsMounted: autoUpdate,
@@ -61,13 +68,13 @@ export const Floating = ({
     refs.setReference(triggerRef.current)
   }, [])
 
-  const hover = useHover(context, { enabled: mode === 'hover' })
-  const click = useClick(context, { enabled: mode === 'click' })
+  const hover = useHover(context, { enabled: !disabled && mode === 'hover' })
+  const click = useClick(context, { enabled: !disabled && mode === 'click' })
   const dismiss = useDismiss(context, { outsidePress: true, escapeKey: true })
 
   const { getReferenceProps, getFloatingProps } = useInteractions([hover, click, dismiss])
 
-  const isOpeningDownwards = internalPlacement.includes('bottom')
+  const isOpeningDownwards = internalPlacement?.includes('bottom')
 
   return (
     <WithSlots<'Floating.Trigger' | 'Floating.Content'>
@@ -98,14 +105,11 @@ export const Floating = ({
                   ...floatingStyles,
                   zIndex: 'var(--neb-z-floating)',
                 },
-                ...getFloatingProps({
-                  onKeyDown: e => {
-                    if (e.key === 'Tab') setInternalOpen(false)
-                  },
-                }),
+                ...getFloatingProps(),
               },
               open: internalOpen,
               isOpeningDownwards,
+              context,
             })}
           </>
         )

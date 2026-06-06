@@ -12,7 +12,7 @@ export const resolveSelectValues = ({
 }): { menuBlockSize: number; finalVisibleItemsCount: number } => {
   const finalVisibleItemsCount = Math.min(itemsCount, visibleItemsCount)
 
-  const dividerSize = Number.parseFloat(resolveLengthToken(DEFAULT_ACTION_GROUP_GAP))
+  const dividerSize = Number.parseFloat(resolveLengthToken(DEFAULT_ACTION_GROUP_GAP || '3xs'))
 
   const menuBlockSize = finalVisibleItemsCount * optionBlockSize + (finalVisibleItemsCount - 1) * dividerSize + dividerSize
 
