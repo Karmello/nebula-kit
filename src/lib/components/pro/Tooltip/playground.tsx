@@ -10,10 +10,6 @@ export const PROPS_FROM_TOOLTIP = [
   'maxInlineSize',
   'minInlineSize',
   'mode',
-  'offset',
-  'padding',
-  'paddingBlock',
-  'paddingInline',
   'placement',
   'variant',
 ] as const satisfies readonly (keyof TooltipProps)[]

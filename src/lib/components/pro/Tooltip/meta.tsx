@@ -1,5 +1,5 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
-import { COLORS } from 'lib/constants'
+import { PROP_GROUPS } from 'lib/constants'
 import { Button, Icon } from 'lib/index.core'
 import { Tooltip, TooltipProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
@@ -8,14 +8,10 @@ import {
   DEFAULT_TOOLTIP_INTENT,
   DEFAULT_TOOLTIP_MAX_INLINE_SIZE,
   DEFAULT_TOOLTIP_MODE,
-  DEFAULT_TOOLTIP_OFFSET,
-  DEFAULT_TOOLTIP_PADDING_BLOCK,
-  DEFAULT_TOOLTIP_PADDING_INLINE,
   DEFAULT_TOOLTIP_PLACEMENT,
   DEFAULT_TOOLTIP_VARIANT,
   TOOLTIP_INTENTS,
   TOOLTIP_MODES,
-  TOOLTIP_OFFSET,
   TOOLTIP_PLACEMENTS,
   TOOLTIP_VARIANTS,
 } from './constants'
@@ -34,66 +30,59 @@ export const TOOLTIP_META = {
         'supports automatic dismissal via outside click and Escape key',
         'configurable placement and offset behavior',
       ],
-      composedOf: ['Box', 'Text'],
+      composedOf: ['Floating', 'Box', 'Text'],
     },
     props: {
-      children: {
-        options: BOX_META.Box.props.children.options,
-        isRequired: true,
-        description: BOX_META.Box.props.children.description,
-      },
-      color: {
-        options: COLORS,
-        description: BOX_META.Box.props.color.description,
-      },
       content: {
+        group: PROP_GROUPS.TOOLTIP,
         options: ['string'],
         isRequired: true,
         description: 'The text content displayed inside the tooltip.',
       },
-      intent: {
-        options: TOOLTIP_INTENTS,
-        defaultValue: String(DEFAULT_TOOLTIP_INTENT),
-        description: BOX_META.Box.props.intent.description,
-      },
-      maxInlineSize: {
-        options: ['number'],
-        defaultValue: String(DEFAULT_TOOLTIP_MAX_INLINE_SIZE),
-        description: 'Maximum logical width in pixels.',
-      },
-      minInlineSize: {
-        options: ['number'],
-        description: 'Minimum logical width in pixels.',
-      },
-      mode: {
-        options: TOOLTIP_MODES,
-        defaultValue: DEFAULT_TOOLTIP_MODE,
-        description: 'Controls which interaction opens the tooltip.',
-      },
-      offset: {
-        options: TOOLTIP_OFFSET,
-        defaultValue: String(DEFAULT_TOOLTIP_OFFSET),
-        description: 'Distance between the tooltip and its trigger element.',
-      },
-      padding: BOX_META.Box.props.padding,
-      paddingBlock: {
-        ...BOX_META.Box.props.paddingBlock,
-        defaultValue: String(DEFAULT_TOOLTIP_PADDING_BLOCK),
-      },
-      paddingInline: {
-        ...BOX_META.Box.props.paddingInline,
-        defaultValue: String(DEFAULT_TOOLTIP_PADDING_INLINE),
-      },
       placement: {
+        group: PROP_GROUPS.TOOLTIP,
         options: TOOLTIP_PLACEMENTS,
         defaultValue: DEFAULT_TOOLTIP_PLACEMENT,
         description:
           'Preferred position of the tooltip relative to its trigger element. The position gets auto-adjusted so the tooltip stays visible.',
       },
+      color: {
+        ...BOX_META.Box.props.color,
+        isResponsive: false,
+      },
       variant: {
+        ...BOX_META.Box.props.variant,
         options: TOOLTIP_VARIANTS,
         defaultValue: String(DEFAULT_TOOLTIP_VARIANT),
-        description: BOX_META.Box.props.variant.description,
+        isResponsive: false,
+      },
+      intent: {
+        ...BOX_META.Box.props.intent,
+        options: TOOLTIP_INTENTS,
+        defaultValue: String(DEFAULT_TOOLTIP_INTENT),
+        isResponsive: false,
+      },
+      mode: {
+        group: PROP_GROUPS.INTERACTION,
+        options: TOOLTIP_MODES,
+        defaultValue: DEFAULT_TOOLTIP_MODE,
+        description: 'Controls which interaction opens the tooltip.',
+      },
+      minInlineSize: {
+        ...BOX_META.Box.props.minInlineSize,
+        options: ['number'],
+        isResponsive: false,
+      },
+      maxInlineSize: {
+        ...BOX_META.Box.props.maxInlineSize,
+        options: ['number'],
+        defaultValue: String(DEFAULT_TOOLTIP_MAX_INLINE_SIZE),
+        isResponsive: false,
+      },
+      children: {
+        ...BOX_META.Box.props.children,
+        isRequired: true,
+        description: 'Trigger element.',
       },
     },
     examples: [

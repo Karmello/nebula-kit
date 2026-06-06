@@ -30,4 +30,5 @@ export enum PROP_GROUPS {
   TYPOGRAPHY = 'Typography',
   ICON = 'Icon',
   FLOATING = 'Floating',
+  TOOLTIP = 'Tooltip',
 }

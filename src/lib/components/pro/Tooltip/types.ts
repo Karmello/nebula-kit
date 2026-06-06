@@ -1,29 +1,22 @@
 import { Placement } from '@floating-ui/react'
 
 import { BoxColor } from 'lib/components/core/Box'
-import { BoxProps } from 'lib/index.core'
 
-import { TOOLTIP_INTENTS, TOOLTIP_MODES, TOOLTIP_OFFSET, TOOLTIP_VARIANTS } from './constants'
+import { FloatingTriggerProps } from '../Floating'
+import { TOOLTIP_INTENTS, TOOLTIP_MODES, TOOLTIP_VARIANTS } from './constants'
 
 export type TooltipVariant = (typeof TOOLTIP_VARIANTS)[number]
 export type TooltipIntent = (typeof TOOLTIP_INTENTS)[number]
 export type TooltipMode = (typeof TOOLTIP_MODES)[number]
-export type TooltipOffset = (typeof TOOLTIP_OFFSET)[number]
 
 export type TooltipProps = {
-  // Box
-  children: BoxProps<'span'>['children']
+  children: FloatingTriggerProps['children']
+  color?: BoxColor
   variant?: TooltipVariant
   intent?: TooltipIntent
-  color?: BoxColor
-  padding?: BoxProps<'div'>['padding']
-  paddingBlock?: BoxProps<'div'>['paddingBlock']
-  paddingInline?: BoxProps<'div'>['paddingInline']
-  // own
   content: string
   placement?: Placement
   mode?: TooltipMode
-  offset?: TooltipOffset
   minInlineSize?: number
   maxInlineSize?: number
 }

@@ -64,7 +64,7 @@ export const SelectImpl = ({
       onPlacementChange={setPlacement}
       disabled={disabled}
     >
-      <Floating.Trigger>
+      <Floating.Trigger display="block">
         <Box
           tag="button"
           tagRef={triggerRef}

@@ -1,10 +1,12 @@
 import { Box } from 'lib/components'
+import { BOX_META } from 'lib/components/core/Box/meta'
 import { PROP_GROUPS } from 'lib/constants'
 import { Floating } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_FLOATING_MODE, DEFAULT_FLOATING_PLACEMENT, FLOATING_MODE, FLOATING_PLACEMENT } from './constants'
 import { FloatingContentProps, FloatingTriggerProps } from './slots'
+import { DEFAULT_FLOATING_TRIGGER_DISPLAY, FLOATING_TRIGGER_DISPLAY } from './slots/FloatingTrigger/constants'
 import { FloatingProps } from './types'
 
 export const FLOATING_META = {
@@ -109,6 +111,13 @@ export const FLOATING_META = {
       topLevelTags: ['span'],
     },
     props: {
+      cursor: BOX_META.Box.props.cursor,
+      display: {
+        ...BOX_META.Box.props.display,
+        options: FLOATING_TRIGGER_DISPLAY,
+        defaultValue: DEFAULT_FLOATING_TRIGGER_DISPLAY,
+        isResponsive: false,
+      },
       children: {
         group: PROP_GROUPS.ROOT,
         options: ['ReactNode'],
