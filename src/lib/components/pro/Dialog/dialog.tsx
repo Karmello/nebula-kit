@@ -49,12 +49,12 @@ export const Dialog = ({
     }
   }, [open])
 
-  useFocusTrap({
-    active: open,
-    targetRef: finalRef,
-    onFocusEscape: onClose,
-    disableEscapeOnOutsideClick: true,
-  })
+  // useFocusTrap({
+  //   active: open,
+  //   targetRef: finalRef,
+  //   onFocusEscape: onClose,
+  //   disableEscapeOnOutsideClick: true,
+  // })
 
   return (
     <WithSlots<'Dialog.Header' | 'Dialog.Content' | 'Dialog.Footer'>

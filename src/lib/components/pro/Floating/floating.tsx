@@ -1,4 +1,4 @@
-import { cloneElement, RefObject, useLayoutEffect, useRef } from 'react'
+import { cloneElement, RefObject, useEffect, useLayoutEffect, useRef } from 'react'
 import {
   autoUpdate,
   flip,
@@ -49,12 +49,7 @@ export const Floating = ({
     placement: floatingPlacement,
   } = useFloating({
     open: internalOpen,
-    onOpenChange: (nextOpen, _, reason) => {
-      setInternalOpen(nextOpen)
-      if (!nextOpen && (reason === 'escape-key' || reason === 'focus-out')) {
-        requestAnimationFrame(() => focusTriggerChild(triggerRef))
-      }
-    },
+    onOpenChange: setInternalOpen,
     placement,
     middleware: [flip(), shift(), floatingOffset(offset)],
     whileElementsMounted: autoUpdate,
@@ -75,6 +70,12 @@ export const Floating = ({
   const { getReferenceProps, getFloatingProps } = useInteractions([hover, click, dismiss])
 
   const isOpeningDownwards = internalPlacement?.includes('bottom')
+
+  useEffect(() => {
+    if (!internalOpen) {
+      focusTriggerChild(triggerRef)
+    }
+  }, [internalOpen])
 
   return (
     <WithSlots<'Floating.Trigger' | 'Floating.Content'>
@@ -107,9 +108,9 @@ export const Floating = ({
                 },
                 ...getFloatingProps(),
               },
-              open: internalOpen,
+              internalOpen,
+              setInternalOpen,
               isOpeningDownwards,
-              context,
             })}
           </>
         )
