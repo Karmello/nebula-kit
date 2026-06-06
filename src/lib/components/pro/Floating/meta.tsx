@@ -56,6 +56,11 @@ export const FLOATING_META = {
         options: ['(open: boolean) => void'],
         description: 'Callback fired when the floating content requests to open or close.',
       },
+      onPlacementChange: {
+        group: PROP_GROUPS.FLOATING,
+        options: ['placement => void'],
+        description: 'Callback fired when the resolved placement changes.',
+      },
       children: {
         group: PROP_GROUPS.ROOT,
         options: ['ReactNode'],

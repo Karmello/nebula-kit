@@ -11,4 +11,5 @@ export type FloatingProps = {
   offset?: number
   open?: boolean
   onOpenChange?: (open: boolean) => void
+  onPlacementChange?: (placement: FloatingPlacement) => void
 }

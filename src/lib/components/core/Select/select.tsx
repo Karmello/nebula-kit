@@ -1,20 +1,10 @@
-import { cloneElement, createRef, ReactElement, RefObject, useEffect, useLayoutEffect, useRef, useState } from 'react'
-import {
-  flip,
-  FloatingPortal,
-  shift,
-  useClick,
-  useDismiss,
-  useFloating,
-  useInteractions,
-  useListNavigation,
-} from '@floating-ui/react'
-import { motion } from 'motion/react'
+import { ReactElement, useEffect, useLayoutEffect, useRef, useState } from 'react'
 
 import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { useControlled } from 'lib/hooks'
-import { Box, Flex, SelectOptionProps, SelectProps, Text, Title } from 'lib/index.core'
+import { Box, Flex, Icon, SelectOptionProps, SelectProps, Text } from 'lib/index.core'
+import { ActionGroup, Floating, FloatingProps } from 'lib/index.pro'
 
 import {
   DEFAULT_SELECT_INLINE_SIZE,
@@ -23,7 +13,6 @@ import {
   DEFAULT_SELECT_VISIBLE_ITEMS_COUNT,
 } from './constants'
 import { resolveSelectValues } from './helpers'
-import { SelectOptionInternalProps } from './SelectOption'
 
 export const SelectImpl = ({
   variant = DEFAULT_SELECT_VARIANT,
@@ -40,168 +29,94 @@ export const SelectImpl = ({
   staticLabel,
   // extra
   optionSlots,
-}: SelectProps & { optionSlots: ReactElement<SelectOptionProps & SelectOptionInternalProps>[] }) => {
-  const [open, setOpen] = useState(false)
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+}: SelectProps & { optionSlots: ReactElement<SelectOptionProps>[] }) => {
+  const [open, setOpen] = useState<boolean>(false)
+  const [placement, setPlacement] = useState<FloatingProps['placement']>('bottom-start')
 
-  const [currentValue, setCurrentValue] = useControlled({
-    value,
-    defaultValue,
-    onChange,
-  })
-
-  useEffect(() => {
-    if (!open) triggerRef.current?.focus()
-  }, [open])
-
+  const [currentValue, setCurrentValue] = useControlled({ value, defaultValue, onChange })
   const triggerRef = useRef<HTMLButtonElement | null>(null)
-  const menuRef = useRef<HTMLDivElement | null>(null)
-  const listRef = useRef<Array<HTMLElement | null>>([])
-
-  useEffect(() => {
-    listRef.current = itemRefs.current.map(ref => ref.current)
-  })
-
-  const itemRefs = useRef<RefObject<HTMLButtonElement | null>[]>(optionSlots.map(() => createRef<HTMLButtonElement | null>()))
-
-  const { refs, floatingStyles, context, placement } = useFloating({
-    open,
-    onOpenChange: setOpen,
-    placement: 'bottom-start',
-    middleware: [flip(), shift()],
-  })
-
-  useLayoutEffect(() => {
-    refs.setReference(triggerRef.current)
-  }, [])
-
-  const click = useClick(context)
-  const dismiss = useDismiss(context, { outsidePress: true, escapeKey: true })
 
   const triggerWidth = triggerRef.current?.offsetWidth
+  const currentLabel = optionSlots.find(slot => slot.props.value === currentValue)?.props.children
+  const isOpenDownwards = placement.startsWith('bottom')
   const optionBlockSize = Number(CONTROL_SIZE_MAP[size].blockSize.replace('px', ''))
 
-  const { menuBlockSize, menuScrollingBlockSize } = resolveSelectValues({
+  const { menuBlockSize } = resolveSelectValues({
     visibleItemsCount: visibleItemsCount !== undefined ? visibleItemsCount : 5,
     optionBlockSize,
     itemsCount: optionSlots.length,
   })
 
-  const handleOnOptionClick = (value: string) => {
-    setCurrentValue(value)
-    setOpen(false)
-  }
-
-  const selectedOptionIndex = optionSlots.findIndex(slot => slot.props.value === currentValue)
-  const selectedOptionSlot = optionSlots[selectedOptionIndex]
-
-  const listNavigation = useListNavigation(context, {
-    listRef,
-    activeIndex,
-    selectedIndex: selectedOptionIndex,
-    onNavigate: setActiveIndex,
-    loop: true,
-    virtual: false,
-    focusItemOnOpen: true,
-  })
-
-  const { getReferenceProps, getFloatingProps, getItemProps } = useInteractions([click, dismiss, listNavigation])
-
-  const isOpeningDownwards = placement.includes('bottom')
-
   return (
-    <>
-      <Box
-        tag="button"
-        tagRef={triggerRef}
-        tagAttrs={getReferenceProps()}
-        variant={variant}
-        intent={intent}
-        color={color}
-        inlineSize={inlineSize}
-        blockSize={CONTROL_SIZE_MAP[size].blockSize}
-        paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
-        disabled={disabled}
-        surface={open ? 'selected' : undefined}
-        borderBottomLeftRadius={open && isOpeningDownwards ? '0px' : undefined}
-        borderBottomRightRadius={open && isOpeningDownwards ? '0px' : undefined}
-        borderTopLeftRadius={open && !isOpeningDownwards ? '0px' : undefined}
-        borderTopRightRadius={open && !isOpeningDownwards ? '0px' : undefined}
-        cursor="pointer"
-        ripple
-        interactive
-      >
-        <Title iconName="chevron-down" iconPlacement="right">
-          <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight}>
-            {staticLabel ?? selectedOptionSlot?.props.children ?? 'Select...'}
-          </Text>
-        </Title>
-      </Box>
-      {open && (
-        <FloatingPortal>
-          <Box
-            tagRef={refs.setFloating as unknown as RefObject<HTMLDivElement>}
-            tagAttrs={{
-              style: {
-                ...floatingStyles,
-                zIndex: 'var(--neb-z-dropdown)',
-              },
-              ...getFloatingProps({
-                onKeyDown: e => {
-                  if (e.key === 'Tab') setOpen(false)
-                },
-              }),
-            }}
-          >
-            <motion.div
-              initial={{ scaleY: 0, opacity: 0 }}
-              animate={{ scaleY: 1, opacity: 1 }}
-              transition={{ duration: 0.18, ease: 'easeInOut' }}
-              style={{ transformOrigin: isOpeningDownwards ? 'top' : 'bottom' }}
-            >
-              <Box
-                tagRef={menuRef}
-                drawable
-                variant={variant}
-                intent={intent}
-                color={color}
-                elevated
-                overflowY="auto"
-                inlineSize={`${triggerWidth}px`}
-                blockSize={`${menuBlockSize}px`}
-                borderTopWidth="0px"
-                borderTopLeftRadius={isOpeningDownwards ? '0px' : undefined}
-                borderTopRightRadius={isOpeningDownwards ? '0px' : undefined}
-                borderBottomLeftRadius={!isOpeningDownwards ? '0px' : undefined}
-                borderBottomRightRadius={!isOpeningDownwards ? '0px' : undefined}
+    <Floating mode="click" open={open} onOpenChange={setOpen} placement={placement} onPlacementChange={setPlacement}>
+      <Floating.Trigger>
+        <Box
+          tag="button"
+          tagRef={triggerRef}
+          variant={variant}
+          intent={intent}
+          color={color}
+          inlineSize={inlineSize}
+          blockSize={CONTROL_SIZE_MAP[size].blockSize}
+          paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
+          disabled={disabled}
+          surface={open ? 'selected' : undefined}
+          cursor="pointer"
+          ripple={!open}
+          interactive
+          borderBottomLeftRadius={open && isOpenDownwards ? '0px' : undefined}
+          borderBottomRightRadius={open && isOpenDownwards ? '0px' : undefined}
+          borderTopLeftRadius={open && !isOpenDownwards ? '0px' : undefined}
+          borderTopRightRadius={open && !isOpenDownwards ? '0px' : undefined}
+        >
+          <Flex tag="span" alignItems="center" justifyContent="space-between" columnGap="xs">
+            <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight} truncate>
+              {staticLabel ?? currentLabel ?? 'Select...'}
+            </Text>
+            <Icon name="chevron-down" size={CONTROL_SIZE_MAP[size].iconSize} />
+          </Flex>
+        </Box>
+      </Floating.Trigger>
+      <Floating.Content>
+        <Box
+          drawable
+          variant="solid"
+          intent={intent}
+          color={color}
+          inlineSize={`${triggerWidth}px`}
+          maxBlockSize={`${menuBlockSize}px`}
+          overflowY="auto"
+          borderTopLeftRadius={isOpenDownwards ? '0px' : undefined}
+          borderTopRightRadius={isOpenDownwards ? '0px' : undefined}
+          borderBottomLeftRadius={!isOpenDownwards ? '0px' : undefined}
+          borderBottomRightRadius={!isOpenDownwards ? '0px' : undefined}
+        >
+          <ActionGroup direction="column" attached={isOpenDownwards ? 'start' : 'end'} intent={intent} color={color} elevated>
+            {optionSlots.map((slot, key) => (
+              <ActionGroup.Item
+                key={key}
+                selected={currentValue === slot.props.value}
+                onClick={() => {
+                  setCurrentValue(slot.props.value)
+                  setOpen(false)
+                }}
               >
-                <Box drawable variant="solid" intent="neutral" blockSize={`${menuScrollingBlockSize}px`} borderRadius="0px">
-                  <Flex flexDirection="column">
-                    {optionSlots.map((optionSlot, index) =>
-                      cloneElement(optionSlot, {
-                        key: optionSlot.props.value,
-                        tagRef: itemRefs.current[index],
-                        tagAttrs: getItemProps({
-                          onClick: () => handleOnOptionClick(optionSlot.props.value),
-                        }),
-                        surface: currentValue === optionSlot.props.value ? 'selected' : undefined,
-                        variant,
-                        intent,
-                        color,
-                        size,
-                        isOpeningDownwards,
-                        isFirst: index === 0,
-                        isLast: index === optionSlots.length - 1,
-                      })
-                    )}
-                  </Flex>
-                </Box>
-              </Box>
-            </motion.div>
-          </Box>
-        </FloatingPortal>
-      )}
-    </>
+                <Flex
+                  alignItems="center"
+                  alignContent="stretch"
+                  blockSize={CONTROL_SIZE_MAP[size].blockSize}
+                  paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
+                >
+                  <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight}>
+                    {slot}
+                  </Text>
+                </Flex>
+              </ActionGroup.Item>
+            ))}
+          </ActionGroup>
+        </Box>
+      </Floating.Content>
+    </Floating>
   )
 }
 
@@ -213,8 +128,7 @@ export const Select = (props: SelectProps) => {
       slotsConfig={[{ name: 'Select.Option', required: true, allowMultiple: true }]}
     >
       {({ slotsByName }) => {
-        const optionSlots = slotsByName['Select.Option'] as ReactElement<SelectOptionProps & SelectOptionInternalProps>[]
-
+        const optionSlots = slotsByName['Select.Option'] as ReactElement<SelectOptionProps>[]
         return <SelectImpl {...props} optionSlots={optionSlots} />
       }}
     </WithSlots>

@@ -18,9 +18,10 @@ const ActionGroupImpl = ({
   tagAttrs,
   direction = DEFAULT_ACTION_GROUP_DIRECTION,
   gap = DEFAULT_ACTION_GROUP_GAP,
-  square,
+  attached,
   color,
   intent = DEFAULT_ACTION_GROUP_INTENT,
+  elevated,
   ripple = DEFAULT_ACTION_GROUP_RIPPLE,
   itemSlots,
 }: ActionGroupProps & { itemSlots: ReactNode[] }) => {
@@ -44,6 +45,13 @@ const ActionGroupImpl = ({
     focusItem(targetIndex)
   }
 
+  const isAttachedStart = attached === 'start' || attached === 'both'
+  const isAttachedEnd = attached === 'end' || attached === 'both'
+  const shouldSquareTop = direction === 'column' && isAttachedStart
+  const shouldSquareRight = direction === 'row' && isAttachedEnd
+  const shouldSquareBottom = direction === 'column' && isAttachedEnd
+  const shouldSquareLeft = direction === 'row' && isAttachedStart
+
   return (
     <Flex
       tagRef={tagRef}
@@ -51,12 +59,20 @@ const ActionGroupImpl = ({
       flexDirection={direction}
       color={color}
       intent={intent}
+      elevated={elevated}
       drawable
       surface="dividing"
       variant="solid"
       alignItems="stretch"
       gap={gap}
-      borderRadius={square ? '0px' : undefined}
+      borderTopLeftRadius={shouldSquareTop || shouldSquareLeft ? '0px' : undefined}
+      borderTopRightRadius={shouldSquareTop || shouldSquareRight ? '0px' : undefined}
+      borderBottomRightRadius={shouldSquareBottom || shouldSquareRight ? '0px' : undefined}
+      borderBottomLeftRadius={shouldSquareBottom || shouldSquareLeft ? '0px' : undefined}
+      paddingTop={isAttachedStart && direction === 'column' ? gap : undefined}
+      paddingRight={isAttachedEnd && direction === 'row' ? gap : undefined}
+      paddingBottom={isAttachedEnd && direction === 'column' ? gap : undefined}
+      paddingLeft={isAttachedStart && direction === 'row' ? gap : undefined}
     >
       {itemSlots.map((slot, index) =>
         cloneElement(
@@ -75,12 +91,13 @@ const ActionGroupImpl = ({
             },
             color,
             intent,
+            elevated,
             ripple,
             itemsCount: itemSlots.length,
             isFirst: index === 0,
             isLast: index === itemSlots.length - 1,
             direction,
-            square,
+            attached,
           } as ActionGroupItemInternalProps<any>
         )
       )}

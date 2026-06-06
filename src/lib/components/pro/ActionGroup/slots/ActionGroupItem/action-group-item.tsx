@@ -7,18 +7,31 @@ export const ActionGroupItem = <T extends ActionGroupItemTag = 'button'>({
   tag = 'button' as T,
   selected,
   disabled,
+  onClick,
   ...internalProps
 }: ActionGroupItemProps<T>) => {
-  const { tagAttrs, tagRef, color, intent, ripple, itemsCount, isFirst, isLast, direction, square } =
+  const { tagAttrs, tagRef, color, intent, elevated, ripple, itemsCount, isFirst, isLast, direction, attached } =
     internalProps as ActionGroupItemInternalProps<T>
+
+  const hasMultipleItems = itemsCount > 1
+  const attachedStart = attached === 'start' || attached === 'both'
+  const attachedEnd = attached === 'end' || attached === 'both'
+  const attachedTopLeft = isFirst && attachedStart
+  const attachedTopRight = direction === 'column' ? isFirst && attachedStart : isLast && attachedEnd
+  const attachedBottomRight = isLast && attachedEnd
+  const attachedBottomLeft = direction === 'column' ? isLast && attachedEnd : isFirst && attachedStart
 
   return (
     <Flex.Item
       tag={tag}
-      tagAttrs={tagAttrs}
+      tagAttrs={{
+        ...tagAttrs,
+        onClick,
+      }}
       tagRef={tagRef}
       color={color}
       intent={intent}
+      elevated={elevated}
       ripple={ripple}
       surface={selected ? 'selected' : undefined}
       disabled={disabled}
@@ -26,14 +39,22 @@ export const ActionGroupItem = <T extends ActionGroupItemTag = 'button'>({
       interactive
       cursor="pointer"
       variant="solid"
-      borderRadius={square || (itemsCount > 2 && !isFirst && !isLast) ? '0px' : undefined}
+      borderRadius={attached === 'both' || (itemsCount > 2 && !isFirst && !isLast) ? '0px' : undefined}
+      borderTopLeftRadius={(hasMultipleItems && !isFirst) || attachedTopLeft ? '0px' : undefined}
       borderTopRightRadius={
-        (direction === 'row' && itemsCount > 1 && !isLast) || (direction === 'column' && isLast) ? '0px' : undefined
+        (direction === 'row' && hasMultipleItems && !isLast) ||
+        (direction === 'column' && hasMultipleItems && isLast) ||
+        attachedTopRight
+          ? '0px'
+          : undefined
       }
-      borderBottomRightRadius={itemsCount > 1 && !isLast ? '0px' : undefined}
-      borderTopLeftRadius={itemsCount > 1 && !isFirst ? '0px' : undefined}
+      borderBottomRightRadius={(hasMultipleItems && !isLast) || attachedBottomRight ? '0px' : undefined}
       borderBottomLeftRadius={
-        (direction === 'row' && itemsCount > 1 && !isFirst) || (direction === 'column' && isFirst) ? '0px' : undefined
+        (direction === 'row' && hasMultipleItems && !isFirst) ||
+        (direction === 'column' && hasMultipleItems && isFirst) ||
+        attachedBottomLeft
+          ? '0px'
+          : undefined
       }
     >
       {children}

@@ -5,6 +5,7 @@ import { ActionGroup } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import {
+  ACTION_GROUP_ATTACHED,
   ACTION_GROUP_DIRECTION,
   ACTION_GROUP_GAP,
   DEFAULT_ACTION_GROUP_DIRECTION,
@@ -41,6 +42,7 @@ export const ACTION_GROUP_META = {
         ...FLEX_META.Flex.props.intent,
         defaultValue: String(DEFAULT_ACTION_GROUP_INTENT),
       },
+      elevated: FLEX_META.Flex.props.elevated,
       ripple: {
         ...FLEX_META.Flex.props.ripple,
         defaultValue: String(DEFAULT_ACTION_GROUP_RIPPLE),
@@ -57,10 +59,11 @@ export const ACTION_GROUP_META = {
         defaultValue: String(DEFAULT_ACTION_GROUP_GAP),
         isResponsive: false,
       },
-      square: {
+      attached: {
         group: PROP_GROUPS.APPEARANCE,
-        options: ['boolean'],
-        description: 'Forces all group items to render with square corners by removing item border radius.',
+        options: ACTION_GROUP_ATTACHED,
+        description:
+          'Removes radius on the specified edge and applies the internal seam spacing needed to visually connect adjacent surfaces.',
       },
       children: {
         ...FLEX_META.Flex.props.children,
@@ -80,7 +83,7 @@ export const ACTION_GROUP_META = {
                 <Text textAlign="center">Item 1</Text>
               </Box>
             </ActionGroup.Item>
-            <ActionGroup.Item tag="a" disabled>
+            <ActionGroup.Item tag="a">
               <Box margin="sm">
                 <Text textAlign="center">Item 2</Text>
               </Box>
@@ -156,6 +159,11 @@ export const ACTION_GROUP_META = {
         ...FLEX_META.FlexItem.props.tag,
         options: ACTION_GROUP_ITEM_TAGS,
         defaultValue: DEFAULT_ACTION_GROUP_ITEM_TAG,
+      },
+      onClick: {
+        group: PROP_GROUPS.ROOT,
+        options: ['e => void'],
+        description: 'Click event handler for the Item slot.',
       },
     },
   } satisfies ComponentMeta<ActionGroupItemProps>,

@@ -24,11 +24,18 @@ export const Floating = ({
   offset,
   open,
   onOpenChange,
+  onPlacementChange,
 }: FloatingProps) => {
   const [internalOpen, setInternalOpen] = useControlled({
     value: open,
     defaultValue: false,
     onChange: onOpenChange,
+  })
+
+  const [internalPlacement, setInternalPlacement] = useControlled({
+    value: placement,
+    defaultValue: DEFAULT_FLOATING_PLACEMENT,
+    onChange: onPlacementChange,
   })
 
   const triggerRef = useRef<HTMLSpanElement | null>(null)
@@ -47,6 +54,10 @@ export const Floating = ({
   })
 
   useLayoutEffect(() => {
+    setInternalPlacement(floatingPlacement)
+  }, [floatingPlacement])
+
+  useLayoutEffect(() => {
     refs.setReference(triggerRef.current)
   }, [])
 
@@ -56,7 +67,7 @@ export const Floating = ({
 
   const { getReferenceProps, getFloatingProps } = useInteractions([hover, click, dismiss])
 
-  const isOpeningDownwards = floatingPlacement.includes('bottom')
+  const isOpeningDownwards = internalPlacement.includes('bottom')
 
   return (
     <WithSlots<'Floating.Trigger' | 'Floating.Content'>
@@ -65,11 +76,14 @@ export const Floating = ({
         { name: 'Floating.Trigger', required: true },
         { name: 'Floating.Content', required: true },
       ]}
+      someRequired
       childrenToVerify={children}
     >
       {({ slotsByName }) => {
         const triggerSlot = slotsByName['Floating.Trigger'][0]
         const contentSlot = slotsByName['Floating.Content'][0]
+
+        if (!triggerSlot || !contentSlot) return null
 
         return (
           <>

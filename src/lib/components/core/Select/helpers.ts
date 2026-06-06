@@ -1,3 +1,4 @@
+import { DEFAULT_ACTION_GROUP_GAP } from 'lib/components/pro/ActionGroup'
 import { resolveLengthToken } from 'lib/helpers'
 
 export const resolveSelectValues = ({
@@ -8,20 +9,15 @@ export const resolveSelectValues = ({
   visibleItemsCount: number
   optionBlockSize: number
   itemsCount: number
-}): { menuBlockSize: number; menuScrollingBlockSize: number; finalVisibleItemsCount: number } => {
+}): { menuBlockSize: number; finalVisibleItemsCount: number } => {
   const finalVisibleItemsCount = Math.min(itemsCount, visibleItemsCount)
 
-  const dividerSize = Number.parseFloat(resolveLengthToken('3xs'))
+  const dividerSize = Number.parseFloat(resolveLengthToken(DEFAULT_ACTION_GROUP_GAP))
 
-  // const menuBlockSize = finalVisibleItemsCount * optionBlockSize + (finalVisibleItemsCount - 1) * dividerSize
-  // const menuScrollingBlockSize = itemsCount * optionBlockSize + (itemsCount - 1) * dividerSize
-
-  const menuBlockSize = finalVisibleItemsCount * optionBlockSize
-  const menuScrollingBlockSize = itemsCount * optionBlockSize
+  const menuBlockSize = finalVisibleItemsCount * optionBlockSize + (finalVisibleItemsCount - 1) * dividerSize + dividerSize
 
   return {
     menuBlockSize,
-    menuScrollingBlockSize,
     finalVisibleItemsCount,
   }
 }
