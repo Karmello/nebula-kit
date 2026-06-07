@@ -1,6 +1,6 @@
 import { BoxProps } from 'lib/index.core'
 
-type PropsFromBox = Pick<
+export type AppFrameMainProps = Pick<
   BoxProps<'main'>,
   | 'tagAttrs'
   | 'tagRef'
@@ -14,5 +14,3 @@ type PropsFromBox = Pick<
 > & {
   children: BoxProps<'main'>['children']
 }
-
-export type AppFrameMainProps = PropsFromBox

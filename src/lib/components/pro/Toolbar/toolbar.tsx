@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
 import { WithSlots } from 'lib/components/shared'
-import { DEFAULT_SWITCH_AT } from 'lib/constants'
+import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { Grid } from 'lib/index.core'
 import { ToolbarProps } from 'lib/index.pro'
@@ -54,7 +54,7 @@ const ToolbarComponent = ({ children, tagAttrs, tagRef }: ToolbarProps) => {
   )
 }
 
-export const Toolbar = ({ children, tagAttrs, tagRef, switchAt = DEFAULT_SWITCH_AT }: ToolbarProps) => {
+export const Toolbar = ({ children, tagAttrs, tagRef, switchAt = DEFAULT_SWITCH_BREAKPOINT }: ToolbarProps) => {
   return (
     <ToolbarProvider switchAt={switchAt}>
       <ToolbarComponent tagAttrs={tagAttrs} tagRef={tagRef} switchAt={switchAt}>

@@ -1,33 +1,21 @@
-import classNames from 'classnames'
-
-import { withPrefix } from 'lib/helpers'
 import { AppFrameHeaderProps, Box } from 'lib/index.core'
-import { buildStaticDataset } from 'lib/internals/dom'
 
-import { useAppFrameContext } from '../../AppFrameProvider'
-import { DEFAULT_APP_FRAME_HEADER_INTENT } from './definitions'
-
-import './app-frame-header.scss'
+import { AppFrameHeaderInternalProps, DEFAULT_APP_FRAME_HEADER_INTENT } from './definitions'
 
 export const AppFrameHeader = ({
-  // Box
   children,
   tagAttrs,
   tagRef,
   color,
   intent = DEFAULT_APP_FRAME_HEADER_INTENT,
-  ...paddings
+  ...internalProps
 }: AppFrameHeaderProps) => {
-  const { stickyHeader } = useAppFrameContext()
+  const { stickyHeader } = internalProps as AppFrameHeaderInternalProps
 
   return (
     <Box
       tag="header"
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('app-frame-header'), tagAttrs?.className),
-        ...buildStaticDataset('AppFrameHeader', { stickyHeader }),
-      }}
+      tagAttrs={tagAttrs}
       tagRef={tagRef}
       drawable
       variant="outline"
@@ -37,8 +25,11 @@ export const AppFrameHeader = ({
       borderRadius="0px"
       borderBottomWidth="var(--neb-length-3xs)"
       surface="dividing"
+      position={stickyHeader ? 'sticky' : undefined}
+      top={stickyHeader ? '0px' : undefined}
+      zIndex={stickyHeader ? 10 : undefined}
     >
-      <Box drawable borderRadius="0px" variant="solid" color={color} intent={intent} {...paddings}>
+      <Box drawable borderRadius="0px" variant="solid" color={color} intent={intent}>
         {children}
       </Box>
     </Box>

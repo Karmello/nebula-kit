@@ -1,39 +1,47 @@
+import { DEFAULT_SWITCH_BREAKPOINT, PROP_GROUPS, SWITCH_BREAKPOINTS } from 'lib/constants'
 import { AppFrame, AppFrameFooterProps, AppFrameHeaderProps, AppFrameMainProps, AppFrameProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { GRID_META } from '../Grid/meta'
 import { DEFAULT_APP_FRAME_FOOTER_INTENT, DEFAULT_APP_FRAME_HEADER_INTENT } from './slots'
+import { AppFrameFooterSectionProps } from './slots/AppFrameFooterSection/definitions'
 
 export const APP_FRAME_META = {
   AppFrame: {
     overview: {
       bundle: 'core',
-      title: 'Structural component that defines the global layout of an application view.',
+      title: 'Application shell for structuring a full page view.',
+      description:
+        'AppFrame defines the outer structure of an application view by arranging header, main and footer regions into a predictable page shell.',
       features: [
-        'provides header, main area and footer regions for the application',
-        'establishes a consistent page structure for application-level layouts',
+        'provides semantic header, main and footer regions',
+        'keeps application-level page structure consistent',
+        'supports an optional sticky header',
+        'allows the main region to own page content spacing',
+        'supports footer sections that can stack or align horizontally across breakpoints',
       ],
       composedOf: ['Grid'],
       topLevelTags: ['div'],
-      slots: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer'],
+      slots: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer', 'AppFrame.FooterSection'],
     },
     props: {
-      children: {
-        ...GRID_META.Grid.props.children,
-        isRequired: true,
-        options: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer'],
-        description: 'AppFrame.Footer is optional, the rest is required.',
-      },
-      tagAttrs: GRID_META.Grid.props.tagAttrs,
-      tagRef: GRID_META.Grid.props.tagRef,
       stickyHeader: {
+        group: PROP_GROUPS.LAYOUT,
         options: ['boolean'],
         defaultValue: 'false',
         isRequired: false,
         isResponsive: false,
         description: 'Keeps the header fixed at the top of the viewport.',
       },
+      children: {
+        ...GRID_META.Grid.props.children,
+        isRequired: true,
+        options: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer'],
+        description: 'AppFrame.Footer is optional, the rest is required.',
+      },
+      tagRef: GRID_META.Grid.props.tagRef,
+      tagAttrs: GRID_META.Grid.props.tagAttrs,
     },
     examples: [
       {
@@ -42,13 +50,18 @@ export const APP_FRAME_META = {
           <AppFrame>
             <AppFrame.Header>Header</AppFrame.Header>
             <AppFrame.Main>Main</AppFrame.Main>
-            <AppFrame.Footer>Footer</AppFrame.Footer>
+            <AppFrame.Footer>
+              <AppFrame.FooterSection>Footer section 1</AppFrame.FooterSection>
+              <AppFrame.FooterSection>Footer section 2</AppFrame.FooterSection>
+              <AppFrame.FooterSection>Footer section 3</AppFrame.FooterSection>
+            </AppFrame.Footer>
           </AppFrame>
         ),
         sandBoxWithNoPadding: true,
       },
     ],
     changelog: {
+      '0.11.0': ['merged `Footer` into `AppFrame`'],
       '0.8.0': ['removed `borderIntent` prop'],
       '0.2.3': ['released'],
     },
@@ -63,17 +76,21 @@ export const APP_FRAME_META = {
       topLevelTags: ['header'],
     },
     props: {
+      color: {
+        ...BOX_META.Box.props.color,
+        isResponsive: false,
+      },
+      intent: {
+        ...BOX_META.Box.props.intent,
+        defaultValue: String(DEFAULT_APP_FRAME_HEADER_INTENT),
+        isResponsive: false,
+      },
       children: {
         ...BOX_META.Box.props.children,
         isRequired: true,
       },
-      color: BOX_META.Box.props.color,
-      intent: {
-        ...BOX_META.Box.props.intent,
-        defaultValue: String(DEFAULT_APP_FRAME_HEADER_INTENT),
-      },
-      tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
     },
   } satisfies ComponentMeta<AppFrameHeaderProps>,
   AppFrameMain: {
@@ -86,12 +103,6 @@ export const APP_FRAME_META = {
       topLevelTags: ['main'],
     },
     props: {
-      children: {
-        ...BOX_META.Box.props.children,
-        isRequired: true,
-      },
-      tagAttrs: BOX_META.Box.props.tagAttrs,
-      tagRef: BOX_META.Box.props.tagRef,
       padding: BOX_META.Box.props.padding,
       paddingInline: BOX_META.Box.props.paddingInline,
       paddingBlock: BOX_META.Box.props.paddingBlock,
@@ -99,6 +110,12 @@ export const APP_FRAME_META = {
       paddingRight: BOX_META.Box.props.paddingRight,
       paddingBottom: BOX_META.Box.props.paddingBottom,
       paddingLeft: BOX_META.Box.props.paddingLeft,
+      children: {
+        ...BOX_META.Box.props.children,
+        isRequired: true,
+      },
+      tagRef: BOX_META.Box.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
     },
   } satisfies ComponentMeta<AppFrameMainProps>,
   AppFrameFooter: {
@@ -106,29 +123,64 @@ export const APP_FRAME_META = {
       bundle: 'core',
       name: 'AppFrame.Footer?',
       title: 'Defines the bottom region of AppFrame.',
-      guidelines: ['commonly used for legal notices, links or supplementary information'],
+      guidelines: [
+        'commonly used for legal notices, links or supplementary information',
+        'AppFrame.FooterSection slot is optional, when no footer sections are provided, AppFrame.Footer renders its children directly',
+      ],
       composedOf: ['Box'],
       topLevelTags: ['footer'],
+      slots: ['AppFrame.FooterSection'],
     },
     props: {
+      color: {
+        ...BOX_META.Box.props.color,
+        isResponsive: false,
+      },
+      intent: {
+        ...BOX_META.Box.props.intent,
+        defaultValue: String(DEFAULT_APP_FRAME_FOOTER_INTENT),
+        isResponsive: false,
+      },
+      footerStackBreakpoint: {
+        group: PROP_GROUPS.LAYOUT,
+        options: SWITCH_BREAKPOINTS,
+        defaultValue: DEFAULT_SWITCH_BREAKPOINT,
+        description:
+          'Defines the breakpoint from which the footer switches from a stacked vertical layout to a horizontal layout.',
+      },
+      children: {
+        ...BOX_META.Box.props.children,
+        isRequired: true,
+        description:
+          'Footer content. Can be AppFrame.FooterSection slots or any regular React content when section grouping is not needed.',
+      },
+      tagRef: BOX_META.Box.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+    },
+  } satisfies ComponentMeta<AppFrameFooterProps>,
+  AppFrameFooterSection: {
+    overview: {
+      bundle: 'core',
+      name: 'AppFrame.FooterSection?',
+      title: 'Defines a content group inside AppFrame.Footer.',
+      description:
+        'AppFrame.FooterSection groups related footer content such as links, legal text or supplementary navigation inside the footer region.',
+      features: [
+        'groups related footer content into separate sections',
+        'participates in the footer layout when sections stack or align horizontally',
+        'keeps footer content structure explicit without requiring custom wrappers',
+      ],
+      composedOf: ['Box'],
+      topLevelTags: ['section'],
+    },
+    props: {
+      padding: {
+        ...BOX_META.Box.props.padding,
+      },
       children: {
         ...BOX_META.Box.props.children,
         isRequired: true,
       },
-      color: BOX_META.Box.props.color,
-      intent: {
-        ...BOX_META.Box.props.intent,
-        defaultValue: String(DEFAULT_APP_FRAME_FOOTER_INTENT),
-      },
-      padding: BOX_META.Box.props.padding,
-      paddingBlock: BOX_META.Box.props.paddingBlock,
-      paddingBottom: BOX_META.Box.props.paddingBottom,
-      paddingInline: BOX_META.Box.props.paddingInline,
-      paddingLeft: BOX_META.Box.props.paddingLeft,
-      paddingRight: BOX_META.Box.props.paddingRight,
-      paddingTop: BOX_META.Box.props.paddingTop,
-      tagAttrs: BOX_META.Box.props.tagAttrs,
-      tagRef: BOX_META.Box.props.tagRef,
     },
-  } satisfies ComponentMeta<AppFrameFooterProps>,
+  } satisfies ComponentMeta<AppFrameFooterSectionProps>,
 }

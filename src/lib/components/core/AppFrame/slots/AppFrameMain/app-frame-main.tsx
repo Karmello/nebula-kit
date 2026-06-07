@@ -1,21 +1,15 @@
-import classNames from 'classnames'
-
-import { withPrefix } from 'lib/helpers'
 import { AppFrameMainProps, Box } from 'lib/index.core'
-
-import './app-frame-main.scss'
 
 export const AppFrameMain = ({ children, tagAttrs, tagRef, ...paddings }: AppFrameMainProps) => {
   return (
     <Box
       tag="main"
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('app-frame-main'), tagAttrs?.className),
-      }}
+      tagAttrs={tagAttrs}
       tagRef={tagRef}
       drawable
       borderRadius="0px"
+      minBlockSize="0px"
+      minInlineSize="0px"
       {...paddings}
     >
       {children}

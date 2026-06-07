@@ -1,7 +1,7 @@
 import { JSX } from 'react'
 
 import { GridProps } from 'lib/index.core'
-import { SwitchAt } from 'lib/types'
+import { SwitchBreakpoint } from 'lib/types'
 
 type ChildrenAsFuncArgs = {
   setMainOpen: (mainOpen: boolean) => Promise<boolean>
@@ -9,7 +9,7 @@ type ChildrenAsFuncArgs = {
 }
 
 export type ToolbarOwnProps = {
-  switchAt?: SwitchAt
+  switchAt?: SwitchBreakpoint
 }
 
 type PropsFromGrid = Pick<GridProps<'nav'>, 'tagAttrs' | 'tagRef'> & {

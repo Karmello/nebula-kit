@@ -1,7 +1,7 @@
 import { ComponentProps, PropsWithoutRef } from 'react'
 
 import { WithSlots } from 'lib/components/shared'
-import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/constants'
+import { BREAKPOINTS, DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { Flex, FooterProps } from 'lib/index.core'
@@ -28,7 +28,7 @@ export const Footer = <T extends FooterTag = 'div'>({
   paddingBottom,
   paddingLeft,
   // own
-  switchAt = DEFAULT_SWITCH_AT,
+  switchAt = DEFAULT_SWITCH_BREAKPOINT,
   borderIntent = DEFAULT_FOOTER_BORDER_INTENT,
 }: FooterProps<T>) => {
   const { bp } = useScreen()

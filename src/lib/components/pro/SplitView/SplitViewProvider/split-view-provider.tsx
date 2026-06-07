@@ -1,14 +1,14 @@
 import { createContext, useContext, useLayoutEffect, useState } from 'react'
 
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
-import { BREAKPOINTS, DEFAULT_SWITCH_AT } from 'lib/constants'
+import { BREAKPOINTS, DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
 import { useGlobalScrollLock, useScreen } from 'lib/hooks'
 
 import { ProviderProps, SplitViewContextProps, SplitViewMode } from './definitions'
 
 const SplitViewContext = createContext<SplitViewContextProps>({} as SplitViewContextProps)
 
-export const SplitViewProvider = ({ children, sidePosition, switchAt = DEFAULT_SWITCH_AT }: ProviderProps) => {
+export const SplitViewProvider = ({ children, sidePosition, switchAt = DEFAULT_SWITCH_BREAKPOINT }: ProviderProps) => {
   const { bp } = useScreen()
   const { lock, unlock } = useGlobalScrollLock()
 

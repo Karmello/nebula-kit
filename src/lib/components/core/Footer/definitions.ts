@@ -1,11 +1,11 @@
-import { FooterTag, SwitchAt } from 'lib/types'
+import { FooterTag, SwitchBreakpoint } from 'lib/types'
 
 import { BoxProps } from '../Box'
 
 export const DEFAULT_FOOTER_BORDER_INTENT: FooterProps['borderIntent'] = 'muted'
 
 type FooterOwnProps = {
-  switchAt?: SwitchAt
+  switchAt?: SwitchBreakpoint
   borderIntent?: BoxProps['intent']
 }
 

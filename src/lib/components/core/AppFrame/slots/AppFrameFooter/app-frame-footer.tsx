@@ -1,40 +1,64 @@
-import classNames from 'classnames'
+import { cloneElement } from 'react'
 
-import { withPrefix } from 'lib/helpers'
-import { Box } from 'lib/index.core'
+import { WithSlots } from 'lib/components/shared'
+import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
+import { Box, Flex } from 'lib/index.core'
 
 import { AppFrameFooterProps, DEFAULT_APP_FRAME_FOOTER_INTENT } from './definitions'
 
 export const AppFrameFooter = ({
-  // Box
   children,
   tagAttrs,
   tagRef,
   color,
   intent = DEFAULT_APP_FRAME_FOOTER_INTENT,
-  ...paddings
+  footerStackBreakpoint = DEFAULT_SWITCH_BREAKPOINT,
 }: AppFrameFooterProps) => {
   return (
-    <Box
-      tag="footer"
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('app-frame-footer'), tagAttrs?.className),
-      }}
-      tagRef={tagRef}
-      drawable
-      variant="outline"
-      color={color}
-      intent={intent}
-      borderWidth="0px"
-      borderRadius="0px"
-      borderTopWidth="var(--neb-length-3xs)"
-      surface="dividing"
+    <WithSlots<'AppFrame.FooterSection'>
+      componentName="AppFrame.Footer"
+      slotsConfig={[{ name: 'AppFrame.FooterSection', allowMultiple: true }]}
+      childrenToVerify={children}
     >
-      <Box drawable borderRadius="0px" variant="solid" color={color} intent={intent} {...paddings}>
-        {children}
-      </Box>
-    </Box>
+      {({ slotsByName }) => {
+        const appFrameFooterSectionSlots = slotsByName['AppFrame.FooterSection']
+
+        return (
+          <Box
+            tag="footer"
+            tagAttrs={tagAttrs}
+            tagRef={tagRef}
+            drawable
+            variant="outline"
+            color={color}
+            intent={intent}
+            borderRadius="0px"
+            borderWidth="0px"
+            borderTopWidth="var(--neb-length-3xs)"
+            surface="dividing"
+          >
+            <Box drawable variant="solid" intent={intent} color={color} borderRadius="0px">
+              {appFrameFooterSectionSlots.length ? (
+                <Flex flexDirection={{ base: 'column', [footerStackBreakpoint]: 'row' }} alignItems="stretch">
+                  {appFrameFooterSectionSlots.map((footerSectionSlot, index) => (
+                    <Flex.Item key={index} flex="1">
+                      {cloneElement(footerSectionSlot as any, {
+                        color,
+                        intent,
+                        footerStackBreakpoint,
+                        isLast: index === appFrameFooterSectionSlots.length - 1,
+                      })}
+                    </Flex.Item>
+                  ))}
+                </Flex>
+              ) : (
+                children
+              )}
+            </Box>
+          </Box>
+        )
+      }}
+    </WithSlots>
   )
 }
 

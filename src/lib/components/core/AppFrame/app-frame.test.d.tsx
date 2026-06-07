@@ -86,7 +86,7 @@ expectType(
 )
 
 expectType(
-  <AppFrame.Header color={{ base: 'gray', md: 'blue' }} intent={{ base: 'muted', lg: 'primary' }}>
+  <AppFrame.Header color="amber" intent="primary">
     header
   </AppFrame.Header>
 )
@@ -128,19 +128,7 @@ expectError(<AppFrame.Footer />)
 
 // Footer props
 expectType(
-  <AppFrame.Footer color="blue" intent="primary" padding="lg">
-    footer
-  </AppFrame.Footer>
-)
-
-expectType(
-  <AppFrame.Footer
-    color={{ base: 'gray', md: 'blue' }}
-    intent={{ base: 'muted', lg: 'primary' }}
-    padding={{ base: 'sm', lg: '40px' }}
-    paddingInline="md"
-    paddingBlock="lg"
-  >
+  <AppFrame.Footer color="blue" intent="primary">
     footer
   </AppFrame.Footer>
 )

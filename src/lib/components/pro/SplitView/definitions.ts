@@ -1,7 +1,7 @@
 import { JSX } from 'react'
 
 import { GridProps } from 'lib/index.core'
-import { SwitchAt } from 'lib/types'
+import { SwitchBreakpoint } from 'lib/types'
 
 import { SplitViewContextProps } from './SplitViewProvider/definitions'
 
@@ -16,7 +16,7 @@ type ChildrenAsFuncArgs = {
 
 export type SplitViewOwnProps = {
   sidePosition?: SplitViewSidePosition
-  switchAt?: SwitchAt
+  switchAt?: SwitchBreakpoint
 }
 
 type PropsFromGrid = Pick<GridProps<'div'>, 'tagAttrs' | 'tagRef'> & {

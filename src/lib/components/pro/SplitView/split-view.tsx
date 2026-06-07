@@ -2,7 +2,7 @@ import { useCallback } from 'react'
 
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
 import { WithSlots } from 'lib/components/shared'
-import { DEFAULT_SWITCH_AT } from 'lib/constants'
+import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { Grid } from 'lib/index.core'
 import { SplitViewProps } from 'lib/index.pro'
@@ -70,7 +70,7 @@ export const SplitView = ({
   tagRef,
   // own
   sidePosition = SPLIT_VIEW_SIDE_POSITIONS[0],
-  switchAt = DEFAULT_SWITCH_AT,
+  switchAt = DEFAULT_SWITCH_BREAKPOINT,
 }: SplitViewProps) => {
   return (
     <SplitViewProvider sidePosition={sidePosition} switchAt={switchAt}>

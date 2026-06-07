@@ -135,7 +135,7 @@ export const PropsTable = ({ data, category }: Props) => {
           <Spacer blockSize="xs" />
         </>
       ) : null}
-      <Tabs defaultValue={entries[0][0]}>
+      <Tabs defaultValue={entries[0][0]} size="sm" intent="neutral" color="blue">
         {entries.map(([groupName]) => (
           <Tabs.Tab key={groupName} value={groupName} minInlineSize="120px">
             {groupName}

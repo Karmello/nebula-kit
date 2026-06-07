@@ -1,5 +1,5 @@
 import { GRID_META } from 'lib/components/core/Grid/meta'
-import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/constants'
+import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
 import { Box, Button, Segment, Select } from 'lib/index.core'
 import { Toolbar, ToolbarEndProps, ToolbarMainProps, ToolbarProps, ToolbarStartProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
@@ -31,8 +31,8 @@ export const TOOLBAR_META = {
       tagAttrs: GRID_META.Grid.props.tagAttrs,
       tagRef: GRID_META.Grid.props.tagRef,
       switchAt: {
-        options: SWITCH_AT,
-        defaultValue: DEFAULT_SWITCH_AT,
+        options: SWITCH_BREAKPOINTS,
+        defaultValue: DEFAULT_SWITCH_BREAKPOINT,
         isRequired: false,
         isResponsive: false,
         description: 'Defines the breakpoint at which the main section switches between collapsed and inline layout.',

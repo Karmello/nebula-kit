@@ -1,4 +1,4 @@
-import { DEFAULT_SWITCH_AT, FOOTER_TAGS, SWITCH_AT } from 'lib/constants'
+import { DEFAULT_SWITCH_BREAKPOINT, FOOTER_TAGS, SWITCH_BREAKPOINTS } from 'lib/constants'
 import { Footer, FooterProps, FooterSectionProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
@@ -41,8 +41,8 @@ export const FOOTER_META = {
       paddingBottom: BOX_META.Box.props.paddingBottom,
       paddingLeft: BOX_META.Box.props.paddingLeft,
       switchAt: {
-        options: SWITCH_AT as unknown as string[],
-        defaultValue: DEFAULT_SWITCH_AT,
+        options: SWITCH_BREAKPOINTS as unknown as string[],
+        defaultValue: DEFAULT_SWITCH_BREAKPOINT,
         description:
           'Defines the breakpoint at which footer sections switch from stacking vertically to arranging horizontally within the layout.',
       },
