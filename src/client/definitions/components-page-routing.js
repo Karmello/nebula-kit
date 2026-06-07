@@ -130,7 +130,6 @@ export const COMPONENT_CATEGORIES = [
     label: 'Shells',
     items: [
       { key: 'app-frame', label: 'AppFrame', sections, bundle: 'core' },
-      { key: 'footer', label: 'Footer', sections, bundle: 'core' },
       { key: 'split-view', label: 'SplitView', sections, bundle: 'pro' },
       { key: 'toolbar', label: 'Toolbar', sections, bundle: 'pro' },
     ],
