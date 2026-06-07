@@ -21,16 +21,7 @@ export const ActionGroupItem = <T extends ActionGroupItemTag = 'button'>({
 
   const { itemSlots, activeIndex, setActiveIndex } = useActionGroupContext()
 
-  const { index, color, intent, elevated, ripple, itemsCount, isFirst, isLast, direction, attached } =
-    internalProps as ActionGroupItemInternalProps
-
-  const hasMultipleItems = itemsCount > 1
-  const attachedStart = attached === 'start' || attached === 'both'
-  const attachedEnd = attached === 'end' || attached === 'both'
-  const attachedTopLeft = isFirst && attachedStart
-  const attachedTopRight = direction === 'column' ? isFirst && attachedStart : isLast && attachedEnd
-  const attachedBottomRight = isLast && attachedEnd
-  const attachedBottomLeft = direction === 'column' ? isLast && attachedEnd : isFirst && attachedStart
+  const { index, color, intent, elevated, ripple, direction, stretch } = internalProps as ActionGroupItemInternalProps
 
   return (
     <Flex.Item
@@ -59,27 +50,12 @@ export const ActionGroupItem = <T extends ActionGroupItemTag = 'button'>({
       ripple={ripple}
       surface={selected ? 'selected' : undefined}
       disabled={disabled}
-      flex="1"
+      flex={stretch ? '1 0 auto' : undefined}
+      minInlineSize="max-content"
       interactive
       cursor="pointer"
       variant="solid"
-      borderRadius={attached === 'both' || (itemsCount > 2 && !isFirst && !isLast) ? '0px' : undefined}
-      borderTopLeftRadius={(hasMultipleItems && !isFirst) || attachedTopLeft ? '0px' : undefined}
-      borderTopRightRadius={
-        (direction === 'row' && hasMultipleItems && !isLast) ||
-        (direction === 'column' && hasMultipleItems && isLast) ||
-        attachedTopRight
-          ? '0px'
-          : undefined
-      }
-      borderBottomRightRadius={(hasMultipleItems && !isLast) || attachedBottomRight ? '0px' : undefined}
-      borderBottomLeftRadius={
-        (direction === 'row' && hasMultipleItems && !isFirst) ||
-        (direction === 'column' && hasMultipleItems && isFirst) ||
-        attachedBottomLeft
-          ? '0px'
-          : undefined
-      }
+      borderRadius="0px"
     >
       {children}
     </Flex.Item>

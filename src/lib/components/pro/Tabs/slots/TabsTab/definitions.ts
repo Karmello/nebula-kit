@@ -1,14 +1,9 @@
-import { ButtonProps } from 'lib/index.core'
+import { ActionGroupItemProps } from 'lib/components/pro/ActionGroup'
+import { FlexProps, TextProps } from 'lib/index.core'
 
-type PropsFromButton = Pick<
-  ButtonProps,
-  'customSvgIcon' | 'disabled' | 'iconName' | 'iconPlacement' | 'inlineSize' | 'align' | 'tagAttrs' | 'tagRef'
-> & {
-  children: ButtonProps['children']
-}
-
-type TabsTabOwnProps = {
+export type TabsTabProps = {
+  children: TextProps<'span'>['children']
   value: string | number
+  disabled?: ActionGroupItemProps['disabled']
+  minInlineSize?: FlexProps['minInlineSize']
 }
-
-export type TabsTabProps = PropsFromButton & TabsTabOwnProps

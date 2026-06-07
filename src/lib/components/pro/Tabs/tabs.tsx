@@ -1,39 +1,25 @@
-import { useRef, useState } from 'react'
-
 import { WithSlots } from 'lib/components/shared'
-import { Box, Flex, Segment } from 'lib/index.core'
-import { TabsProps } from 'lib/index.pro'
+import { CONTROL_SIZE_MAP } from 'lib/constants'
+import { useControlled } from 'lib/hooks'
+import { Box, Flex, Text } from 'lib/index.core'
+import { ActionGroup, TabsPanelProps, TabsProps, TabsTabProps } from 'lib/index.pro'
 
-import { DEFAULT_TABS_INTENT, DEFAULT_TABS_ORIENTATION, DEFAULT_TABS_VARIANT } from './definitions'
-import { TabsContext, TabsContextValue } from './TabsContext'
+import { DEFAULT_TABS_DEFAULT_VALUE, DEFAULT_TABS_DIRECTION, DEFAULT_TABS_INTENT, DEFAULT_TABS_SIZE } from './definitions'
 
 export const Tabs = ({
-  // Box
   children,
-  tagAttrs,
   tagRef,
+  tagAttrs,
+  value,
+  defaultValue = DEFAULT_TABS_DEFAULT_VALUE,
+  onChange,
   color,
   intent = DEFAULT_TABS_INTENT,
-  variant = DEFAULT_TABS_VARIANT,
-  inlineSize,
-  // Button
-  size,
-  // own
-  orientation = DEFAULT_TABS_ORIENTATION,
-  value,
-  defaultValue,
-  onChange,
+  size = DEFAULT_TABS_SIZE,
+  direction = DEFAULT_TABS_DIRECTION,
+  stretch,
 }: TabsProps) => {
-  const [internalValue, setInternalValue] = useState<string | number>(defaultValue || 1)
-  const ref = useRef<HTMLDivElement | null>(null)
-
-  const isControlled = value !== undefined
-  const currentValue = isControlled ? value : internalValue
-
-  const handleChange = (value: string | number) => {
-    if (!isControlled) setInternalValue(value)
-    onChange?.(value)
-  }
+  const [currentValue, setCurrentValue] = useControlled<string | number>({ value, defaultValue, onChange })
 
   return (
     <WithSlots<'Tabs.Tab' | 'Tabs.Panel'>
@@ -45,64 +31,94 @@ export const Tabs = ({
       ]}
     >
       {({ slotsByName }) => {
-        const tabs = [] as TabsContextValue['tabs']
-        slotsByName['Tabs.Tab'].forEach(tab => {
-          const { value, disabled } = (tab as any).props
-          tabs.push({ value, disabled } as TabsContextValue['tabs'][number])
-        })
-
         return (
-          <TabsContext
-            value={{
-              rootRef: tagRef || ref,
-              tabs,
-              currentValue,
-              handleChange,
-              color,
-              intent,
-              size,
-              orientation,
-            }}
+          <Box
+            tagRef={tagRef}
+            tagAttrs={tagAttrs}
+            drawable
+            color={color}
+            intent={intent}
+            variant="outline"
+            surface="dividing"
+            borderTopWidth={direction === 'row' ? '0px' : undefined}
+            borderLeftWidth={direction === 'column' ? '0px' : undefined}
+            overflow="clip"
           >
-            <Box
-              tagAttrs={tagAttrs}
-              tagRef={tagRef || ref}
-              drawable
-              color={color}
-              intent={intent}
-              variant={variant}
-              inlineSize={inlineSize}
-              maxInlineSize="100%"
-              overflow="hidden"
-              display="inline-block"
-            >
-              <Flex flexDirection={orientation === 'vertical' ? 'row' : 'column'} alignItems="stretch">
-                <Box
-                  drawable
-                  variant="solid"
-                  intent={intent}
+            <Flex flexDirection={direction === 'column' ? 'row' : 'column'} alignItems="stretch">
+              <Box overflowX="auto">
+                <ActionGroup
+                  tagAttrs={{ role: 'tablist', 'aria-orientation': direction === 'row' ? 'horizontal' : 'vertical' }}
+                  direction={direction}
+                  attach={direction === 'row' ? 'block' : 'inline'}
                   color={color}
-                  borderRadius="0px"
-                  inlineSize={orientation === 'horizontal' ? '100%' : undefined}
-                  maxInlineSize="100%"
-                  overflowX={orientation === 'horizontal' ? 'auto' : undefined}
+                  intent={intent}
+                  stretch={stretch}
                 >
-                  <Segment
-                    flexDirection={orientation === 'horizontal' ? 'row' : 'column'}
-                    tagAttrs={{
-                      role: 'tablist',
-                      'aria-orientation': orientation,
-                    }}
-                  >
-                    {slotsByName['Tabs.Tab'].map((tab, index) => {
-                      return <Segment.Item key={index}>{tab}</Segment.Item>
-                    })}
-                  </Segment>
-                </Box>
-                {slotsByName['Tabs.Panel']}
-              </Flex>
-            </Box>
-          </TabsContext>
+                  {slotsByName['Tabs.Tab'].map((tab, index) => {
+                    const { value, disabled, minInlineSize } = (tab as any).props as TabsTabProps
+                    const isSelected = currentValue === value
+
+                    return (
+                      <ActionGroup.Item
+                        key={index}
+                        tagAttrs={{
+                          id: `tab-${value}`,
+                          role: 'tab',
+                          'aria-selected': isSelected,
+                          'aria-controls': `panel-${value}`,
+                        }}
+                        selected={isSelected}
+                        disabled={disabled}
+                        onClick={() => {
+                          setCurrentValue(value)
+                        }}
+                      >
+                        <Flex
+                          blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
+                          paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
+                          minInlineSize={minInlineSize}
+                          justifyContent="center"
+                          alignItems="center"
+                        >
+                          <Text
+                            tag="span"
+                            bold={isSelected}
+                            fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
+                            lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
+                          >
+                            {tab}
+                          </Text>
+                        </Flex>
+                      </ActionGroup.Item>
+                    )
+                  })}
+                </ActionGroup>
+              </Box>
+              <Flex.Item flex={direction === 'column' ? '1' : undefined}>
+                {slotsByName['Tabs.Panel'].map((panel, index) => {
+                  const { value } = (panel as any).props as TabsPanelProps
+                  const isSelected = currentValue === value
+
+                  if (!isSelected) return null
+
+                  return (
+                    <Box
+                      key={index}
+                      tagAttrs={{
+                        role: 'tabpanel',
+                        id: `panel-${value}`,
+                        'aria-labelledby': `tab-${value}`,
+                        hidden: !isSelected,
+                      }}
+                      padding={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
+                    >
+                      {panel}
+                    </Box>
+                  )
+                })}
+              </Flex.Item>
+            </Flex>
+          </Box>
         )
       }}
     </WithSlots>

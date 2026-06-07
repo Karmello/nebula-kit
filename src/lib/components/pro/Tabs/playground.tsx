@@ -2,14 +2,7 @@ import { Tabs, TabsProps } from 'lib/index.pro'
 
 export type PropsFromTabsKey = (typeof PROPS_FROM_TABS)[number]
 
-export const PROPS_FROM_TABS = [
-  'color',
-  'inlineSize',
-  'intent',
-  'orientation',
-  'size',
-  'variant',
-] as const satisfies readonly (keyof TabsProps)[]
+export const PROPS_FROM_TABS = ['color', 'direction', 'intent', 'size', 'stretch'] as const satisfies readonly (keyof TabsProps)[]
 
 export const TABS_PRESETS = [
   {
@@ -21,8 +14,6 @@ export const TABS_PRESETS = [
   {
     name: 'Custom',
     props: {
-      inlineSize: '100%',
-      variant: 'solid',
       intent: 'primary',
     } as Record<PropsFromTabsKey, unknown>,
   },
@@ -30,19 +21,19 @@ export const TABS_PRESETS = [
 
 export const TabsTemplate = (props: any) => (
   <Tabs {...props}>
-    <Tabs.Tab value={1} inlineSize="100px">
+    <Tabs.Tab value={1} minInlineSize="100px">
       First
     </Tabs.Tab>
-    <Tabs.Tab value={2} inlineSize="100px">
+    <Tabs.Tab value={2} minInlineSize="100px">
       Second
     </Tabs.Tab>
-    <Tabs.Tab value={3} inlineSize="100px">
+    <Tabs.Tab value={3} minInlineSize="100px">
       Third
     </Tabs.Tab>
-    <Tabs.Tab value={4} inlineSize="100px">
+    <Tabs.Tab value={4} minInlineSize="100px">
       Fourth
     </Tabs.Tab>
-    <Tabs.Tab value={5} inlineSize="100px">
+    <Tabs.Tab value={5} minInlineSize="100px">
       Fifth
     </Tabs.Tab>
     <Tabs.Panel value={1}>This is the first tab content.</Tabs.Panel>

@@ -4,12 +4,7 @@ import { WithSlots } from 'lib/components/shared'
 import { Flex } from 'lib/index.core'
 
 import { ActionGroupProvider, useActionGroupContext } from './action-group-provider'
-import {
-  DEFAULT_ACTION_GROUP_DIRECTION,
-  DEFAULT_ACTION_GROUP_GAP,
-  DEFAULT_ACTION_GROUP_INTENT,
-  DEFAULT_ACTION_GROUP_RIPPLE,
-} from './constants'
+import { DEFAULT_ACTION_GROUP_DIRECTION, DEFAULT_ACTION_GROUP_INTENT, DEFAULT_ACTION_GROUP_RIPPLE } from './constants'
 import { ActionGroupItemInternalProps } from './slots'
 import { ActionGroupProps } from './types'
 
@@ -17,21 +12,41 @@ const ActionGroupImpl = ({
   tagRef,
   tagAttrs,
   direction = DEFAULT_ACTION_GROUP_DIRECTION,
-  gap = DEFAULT_ACTION_GROUP_GAP,
-  attached,
+  attach,
   color,
   intent = DEFAULT_ACTION_GROUP_INTENT,
   elevated,
   ripple = DEFAULT_ACTION_GROUP_RIPPLE,
+  stretch,
 }: ActionGroupProps) => {
   const { itemSlots } = useActionGroupContext()
 
-  const isAttachedStart = attached === 'start' || attached === 'both'
-  const isAttachedEnd = attached === 'end' || attached === 'both'
-  const shouldSquareTop = direction === 'column' && isAttachedStart
-  const shouldSquareRight = direction === 'row' && isAttachedEnd
-  const shouldSquareBottom = direction === 'column' && isAttachedEnd
-  const shouldSquareLeft = direction === 'row' && isAttachedStart
+  let zeroTopLeft = false
+  let zeroTopRight = false
+  let zeroBottomLeft = false
+  let zeroBottomRight = false
+
+  if (attach === 'top' || attach === 'block') {
+    zeroTopLeft = true
+    zeroTopRight = true
+  }
+
+  if (attach === 'right' || attach === 'inline') {
+    zeroTopRight = true
+    zeroBottomRight = true
+  }
+
+  if (attach === 'bottom' || attach === 'block') {
+    zeroBottomLeft = true
+    zeroBottomRight = true
+  }
+
+  if (attach === 'left' || attach === 'inline') {
+    zeroBottomLeft = true
+    zeroTopLeft = true
+  }
+
+  const gap = '3xs'
 
   return (
     <Flex
@@ -45,15 +60,19 @@ const ActionGroupImpl = ({
       surface="dividing"
       variant="solid"
       alignItems="stretch"
+      display={stretch ? 'flex' : 'inline-flex'}
+      inlineSize="max-content"
+      minInlineSize="100%"
+      overflow="clip"
       gap={gap}
-      borderTopLeftRadius={shouldSquareTop || shouldSquareLeft ? '0px' : undefined}
-      borderTopRightRadius={shouldSquareTop || shouldSquareRight ? '0px' : undefined}
-      borderBottomRightRadius={shouldSquareBottom || shouldSquareRight ? '0px' : undefined}
-      borderBottomLeftRadius={shouldSquareBottom || shouldSquareLeft ? '0px' : undefined}
-      paddingTop={isAttachedStart && direction === 'column' ? gap : undefined}
-      paddingRight={isAttachedEnd && direction === 'row' ? gap : undefined}
-      paddingBottom={isAttachedEnd && direction === 'column' ? gap : undefined}
-      paddingLeft={isAttachedStart && direction === 'row' ? gap : undefined}
+      borderTopLeftRadius={zeroTopLeft ? '0px' : undefined}
+      borderTopRightRadius={zeroTopRight ? '0px' : undefined}
+      borderBottomRightRadius={zeroBottomRight ? '0px' : undefined}
+      borderBottomLeftRadius={zeroBottomLeft ? '0px' : undefined}
+      paddingTop={attach === 'top' || attach === 'block' ? gap : undefined}
+      paddingRight={attach === 'right' || attach === 'inline' ? gap : undefined}
+      paddingBottom={attach === 'bottom' || attach === 'block' ? gap : undefined}
+      paddingLeft={attach === 'left' || attach === 'inline' ? gap : undefined}
     >
       {itemSlots.map((slot, index) =>
         cloneElement(
@@ -65,11 +84,8 @@ const ActionGroupImpl = ({
             intent,
             elevated,
             ripple,
-            itemsCount: itemSlots.length,
-            isFirst: index === 0,
-            isLast: index === itemSlots.length - 1,
             direction,
-            attached,
+            stretch,
           } as ActionGroupItemInternalProps
         )
       )}

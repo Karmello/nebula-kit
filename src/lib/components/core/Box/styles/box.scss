@@ -52,6 +52,7 @@
 
 .neb-box[data-neb-box-disabled='true'] {
   pointer-events: none;
+  user-select: none;
 }
 
 .neb-box[data-neb-box-hidden='true'] {

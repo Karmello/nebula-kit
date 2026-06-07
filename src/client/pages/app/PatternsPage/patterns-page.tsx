@@ -84,7 +84,7 @@ export const PatternsPage = () => {
                   </MultiSelect>
                   <Spacer blockSize="sm" />
                   <SideNav size="xl" gap="3xs" intent={{ base: 'tertiary', lg: 'muted' }}>
-                    {PATTERNS.filter(p => patternCategories.includes(p.category)).map(({ id, title, category }) => {
+                    {PATTERNS.filter(p => patternCategories.includes(p.category)).map(({ id, title }) => {
                       const href = `/patterns?id=${id}`
 
                       return (

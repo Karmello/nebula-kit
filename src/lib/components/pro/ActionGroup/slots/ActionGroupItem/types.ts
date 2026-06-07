@@ -17,10 +17,7 @@ export type ActionGroupItemProps<T extends ActionGroupItemTag = 'button'> = Pick
 
 export type ActionGroupItemInternalProps = Pick<
   ActionGroupProps,
-  'color' | 'intent' | 'elevated' | 'ripple' | 'direction' | 'attached'
+  'color' | 'intent' | 'elevated' | 'ripple' | 'direction' | 'stretch'
 > & {
   index: number
-  itemsCount: number
-  isFirst: boolean
-  isLast: boolean
 }

@@ -5,11 +5,9 @@ import { ActionGroup } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import {
-  ACTION_GROUP_ATTACHED,
+  ACTION_GROUP_ATTACH,
   ACTION_GROUP_DIRECTION,
-  ACTION_GROUP_GAP,
   DEFAULT_ACTION_GROUP_DIRECTION,
-  DEFAULT_ACTION_GROUP_GAP,
   DEFAULT_ACTION_GROUP_INTENT,
   DEFAULT_ACTION_GROUP_RIPPLE,
 } from './constants'
@@ -47,23 +45,23 @@ export const ACTION_GROUP_META = {
         ...FLEX_META.Flex.props.ripple,
         defaultValue: String(DEFAULT_ACTION_GROUP_RIPPLE),
       },
+      attach: {
+        group: PROP_GROUPS.APPEARANCE,
+        options: ACTION_GROUP_ATTACH,
+        description:
+          'Removes radius on the specified edge and applies the internal seam spacing needed to visually connect adjacent surfaces.',
+      },
       direction: {
         ...FLEX_META.Flex.props.flexDirection,
+        group: PROP_GROUPS.LAYOUT,
         options: ACTION_GROUP_DIRECTION,
         defaultValue: String(DEFAULT_ACTION_GROUP_DIRECTION),
         isResponsive: false,
       },
-      gap: {
-        ...FLEX_META.Flex.props.gap,
-        options: ACTION_GROUP_GAP,
-        defaultValue: String(DEFAULT_ACTION_GROUP_GAP),
-        isResponsive: false,
-      },
-      attached: {
-        group: PROP_GROUPS.APPEARANCE,
-        options: ACTION_GROUP_ATTACHED,
-        description:
-          'Removes radius on the specified edge and applies the internal seam spacing needed to visually connect adjacent surfaces.',
+      stretch: {
+        group: 'Layout',
+        options: ['boolean'],
+        description: 'Whether items should stretch to evenly fill the available inline space.',
       },
       children: {
         ...FLEX_META.Flex.props.children,
@@ -93,9 +91,26 @@ export const ACTION_GROUP_META = {
                 <Text textAlign="center">Item 3</Text>
               </Box>
             </ActionGroup.Item>
+          </ActionGroup>
+        ),
+      },
+      {
+        description: 'Actions arranged in a horizontal flow and stretched.',
+        jsx: (
+          <ActionGroup stretch>
             <ActionGroup.Item>
               <Box margin="sm">
-                <Text textAlign="center">Item 4</Text>
+                <Text textAlign="center">Item 1</Text>
+              </Box>
+            </ActionGroup.Item>
+            <ActionGroup.Item>
+              <Box margin="sm">
+                <Text textAlign="center">Item 2</Text>
+              </Box>
+            </ActionGroup.Item>
+            <ActionGroup.Item>
+              <Box margin="sm">
+                <Text textAlign="center">Item 3</Text>
               </Box>
             </ActionGroup.Item>
           </ActionGroup>
@@ -118,11 +133,6 @@ export const ACTION_GROUP_META = {
             <ActionGroup.Item>
               <Box margin="sm">
                 <Text textAlign="center">Item 3</Text>
-              </Box>
-            </ActionGroup.Item>
-            <ActionGroup.Item>
-              <Box margin="sm">
-                <Text textAlign="center">Item 4</Text>
               </Box>
             </ActionGroup.Item>
           </ActionGroup>

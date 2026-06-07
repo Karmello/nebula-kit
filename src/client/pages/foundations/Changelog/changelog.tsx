@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-import { Box, MarkerList, Markup, Section, Spacer, Tabs, Text } from 'lib/components'
+import { Box, MarkerList, Markup, Section, Spacer, Tabs, Text, Title } from 'lib/components'
 import { RELEASE_INFO, ReleaseVersion } from 'client/definitions'
 import meta from 'client/meta'
 
@@ -94,15 +94,15 @@ export default ({ pathname }: { pathname: string }) => {
       {displayCoreNotes || displayProNotes ? (
         <>
           <Spacer blockSize="lg" />
-          <Tabs defaultValue={displayCoreNotes ? 'core' : 'pro'} inlineSize="100%">
+          <Tabs defaultValue={displayCoreNotes ? 'core' : 'pro'}>
             {displayCoreNotes ? (
-              <Tabs.Tab value="core" iconName="package">
-                Core
+              <Tabs.Tab value="core">
+                <Title iconName="package">Core</Title>
               </Tabs.Tab>
             ) : null}
             {displayProNotes ? (
-              <Tabs.Tab value="pro" iconName="star">
-                Pro
+              <Tabs.Tab value="pro">
+                <Title iconName="star">Pro</Title>
               </Tabs.Tab>
             ) : null}
             {displayCoreNotes ? (

@@ -5,12 +5,13 @@ import { ActionGroup, ActionGroupProps } from '.'
 export type PropsFromActionGroupKey = (typeof PROPS_FROM_ACTION_GROUP)[number]
 
 export const PROPS_FROM_ACTION_GROUP = [
+  'attach',
   'color',
   'direction',
-  'gap',
+  'elevated',
+  'stretch',
   'intent',
   'ripple',
-  'attached',
 ] as const satisfies readonly (keyof ActionGroupProps)[]
 
 export const ACTION_GROUP_PRESETS = [

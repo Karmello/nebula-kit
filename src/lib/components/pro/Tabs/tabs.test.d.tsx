@@ -43,32 +43,18 @@ expectType(
 )
 
 //
-// responsive inherited props
+// inherited props
 //
 
 expectType(
-  <Tabs color={{ base: 'blue', lg: 'red' }}>
+  <Tabs color="amber">
     <Tabs.Tab value="a">Tab A</Tabs.Tab>
     <Tabs.Panel value="a">Panel A</Tabs.Panel>
   </Tabs>
 )
 
 expectType(
-  <Tabs intent={{ base: 'primary', lg: 'secondary' }}>
-    <Tabs.Tab value="a">Tab A</Tabs.Tab>
-    <Tabs.Panel value="a">Panel A</Tabs.Panel>
-  </Tabs>
-)
-
-expectType(
-  <Tabs variant={{ base: 'outline', lg: 'solid' }}>
-    <Tabs.Tab value="a">Tab A</Tabs.Tab>
-    <Tabs.Panel value="a">Panel A</Tabs.Panel>
-  </Tabs>
-)
-
-expectType(
-  <Tabs inlineSize={{ base: '100%', lg: '600px' }}>
+  <Tabs intent="primary">
     <Tabs.Tab value="a">Tab A</Tabs.Tab>
     <Tabs.Panel value="a">Panel A</Tabs.Panel>
   </Tabs>
@@ -171,11 +157,7 @@ expectError(
 // Tabs.Tab
 //
 
-expectType(
-  <Tabs.Tab value="a" align={{ base: 'center', lg: 'split' }} inlineSize={{ base: '100px', lg: '200px' }}>
-    Tab
-  </Tabs.Tab>
-)
+expectType(<Tabs.Tab value="a">Tab</Tabs.Tab>)
 
 expectType(<Tabs.Tab value={1}>Tab</Tabs.Tab>)
 

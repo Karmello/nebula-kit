@@ -31,4 +31,5 @@ export enum PROP_GROUPS {
   ICON = 'Icon',
   FLOATING = 'Floating',
   TOOLTIP = 'Tooltip',
+  STATE = 'State',
 }

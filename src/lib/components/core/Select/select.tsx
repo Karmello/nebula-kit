@@ -106,7 +106,14 @@ export const SelectImpl = ({
           borderBottomLeftRadius={!isOpenDownwards ? '0px' : undefined}
           borderBottomRightRadius={!isOpenDownwards ? '0px' : undefined}
         >
-          <ActionGroup direction="column" attached={isOpenDownwards ? 'start' : 'end'} intent={intent} color={color} elevated>
+          <ActionGroup
+            direction="column"
+            attach={isOpenDownwards ? 'top' : 'bottom'}
+            intent={intent}
+            color={color}
+            elevated
+            stretch
+          >
             {optionSlots.map((slot, key) => {
               const isSelected = currentValue === slot.props.value
 
