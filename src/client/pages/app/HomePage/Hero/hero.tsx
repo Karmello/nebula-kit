@@ -1,15 +1,11 @@
 import { Button, Flex, Image, Link, Spacer, Text, Tooltip } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
-import { useComponentsPageStore, usePatternsStore } from 'client/store'
+import { usePatternsStore } from 'client/store'
 
 export const Hero = () => {
   const navigateTo = useNavigateTo()
   const activePatternId = usePatternsStore(state => state.activePatternId)
-
-  const componentsPageCategoryKey = useComponentsPageStore(state => state.categoryKey)
-  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
-  const componentsPageSectionKey = useComponentsPageStore(state => state.sectionKey)
 
   return (
     <Flex columnGap="md" rowGap="xl" alignItems="center" flexDirection={{ base: 'column', md: 'row', lg: 'column', xl: 'row' }}>
@@ -21,25 +17,23 @@ export const Hero = () => {
         <Spacer blockSize="lg" />
         <Flex columnGap="xs" rowGap="sm" flexWrap="wrap" justifyContent={{ base: 'center', md: 'flex-start' }}>
           <Link
+            href={`${PageKey.foundations}/overview/introduction/why-nebula`}
+            onClick={() => {
+              navigateTo(`${PageKey.foundations}/overview/introduction/why-nebula`)
+            }}
+          >
+            <Button color="blue" intent="primary" iconName="arrow-right" iconPlacement="right" size="sm">
+              Foundations
+            </Button>
+          </Link>
+          <Link
             href={`${PageKey.patterns}?id=${activePatternId}`}
             onClick={() => {
               navigateTo(`${PageKey.patterns}?id=${activePatternId}`)
             }}
           >
-            <Button color="blue" intent="primary" iconName="arrow-right" iconPlacement="right" size="sm">
-              Explore patterns
-            </Button>
-          </Link>
-          <Link
-            href={`${PageKey.components}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`}
-            onClick={() => {
-              navigateTo(
-                `${PageKey.components}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`
-              )
-            }}
-          >
             <Button variant="ghost" color="blue" intent="primary" iconName="arrow-right" iconPlacement="right" size="sm">
-              Browse components
+              Patterns
             </Button>
           </Link>
         </Flex>

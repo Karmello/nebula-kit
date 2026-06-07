@@ -59,26 +59,6 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
       ) : null}
       <Flex.Item hidden={{ base: toolbarSlot === 'start', md: toolbarSlot !== 'start' }}>
         <Link
-          href={`${PageKey.patterns}?id=${activePatternId}`}
-          onClick={async () => {
-            if (mainOpen) await setMainOpen(false)
-            navigateTo(`${PageKey.patterns}?id=${activePatternId}`)
-          }}
-        >
-          <Button
-            intent="muted"
-            selected={currentPageKey === PageKey.patterns}
-            bold={currentPageKey === PageKey.patterns}
-            iconName="pyramid"
-            fullWidth
-            minInlineSize="120px"
-          >
-            Patterns
-          </Button>
-        </Link>
-      </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', md: toolbarSlot !== 'start' }}>
-        <Link
           href={`${PageKey.foundations}/${foundationsPageCategoryKey}/${foundationsPageItemKey}/${foundationsPageSectionKey}`}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
@@ -116,6 +96,26 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             minInlineSize="150px"
           >
             Components
+          </Button>
+        </Link>
+      </Flex.Item>
+      <Flex.Item hidden={{ base: toolbarSlot === 'start', md: toolbarSlot !== 'start' }}>
+        <Link
+          href={`${PageKey.patterns}?id=${activePatternId}`}
+          onClick={async () => {
+            if (mainOpen) await setMainOpen(false)
+            navigateTo(`${PageKey.patterns}?id=${activePatternId}`)
+          }}
+        >
+          <Button
+            intent="muted"
+            selected={currentPageKey === PageKey.patterns}
+            bold={currentPageKey === PageKey.patterns}
+            iconName="pyramid"
+            fullWidth
+            minInlineSize="120px"
+          >
+            Patterns
           </Button>
         </Link>
       </Flex.Item>
