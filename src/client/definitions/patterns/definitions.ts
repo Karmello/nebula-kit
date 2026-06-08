@@ -10,6 +10,6 @@ export type Pattern = {
   title: string
   description: string
   component: ComponentType
-  code: string
+  code?: string
   usage?: string
 }

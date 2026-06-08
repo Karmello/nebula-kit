@@ -1,9 +1,9 @@
-import fs from 'node:fs/promises'
-import path from 'node:path'
 import React from 'react'
+import { snakeCase } from 'change-case'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { MemoryRouter } from 'react-router'
-import { snakeCase } from 'change-case'
+import fs from 'node:fs/promises'
+import path from 'node:path'
 
 import * as Foundations from '../../../src/client/pages/foundations'
 import { htmlToText } from './helpers/html-to-text'

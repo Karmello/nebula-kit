@@ -5,6 +5,10 @@
       "path": ".",
     },
     {
+      "name": "tools",
+      "path": "tools",
+    },
+    {
       "name": "src",
       "path": "src",
     },

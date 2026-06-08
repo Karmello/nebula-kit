@@ -64,9 +64,11 @@ export const PatternsPage = () => {
                         <Component />
                       </Box>
                     </Flex.Item>
-                    <Flex.Item flex="1">
-                      <CodeSnippet lang="tsx" code={pattern.code} usage={pattern.usage} maxBlockSize="calc(100dvh - 275px)" />
-                    </Flex.Item>
+                    {pattern?.code ? (
+                      <Flex.Item flex="1">
+                        <CodeSnippet lang="tsx" code={pattern.code} usage={pattern.usage} maxBlockSize="calc(100dvh - 275px)" />
+                      </Flex.Item>
+                    ) : null}
                   </Flex>
                 </SplitView.Main>
                 <SplitView.Side inlineSize="350px" paddingRight={{ lg: 'md' }}>

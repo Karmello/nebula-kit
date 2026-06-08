@@ -1,5 +1,4 @@
 import { Pattern } from '../../../../src/client/definitions/patterns/definitions'
-import { convertElemToString } from '../../../../src/client/helpers'
 
 export const generatePatterns = (patterns: Pattern[]) => {
   const lines: string[] = []
@@ -17,9 +16,13 @@ export const generatePatterns = (patterns: Pattern[]) => {
     lines.push('')
     lines.push(pattern.description.trim())
     lines.push('')
-    lines.push('```tsx')
-    lines.push(convertElemToString(pattern.jsx).trim())
-    lines.push('```')
+
+    if (pattern.code) {
+      lines.push('```tsx')
+      lines.push(pattern.code)
+      lines.push('```')
+    }
+
     lines.push('')
   }
 
