@@ -3,10 +3,16 @@ import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { GRID_META } from '../Grid/meta'
-import { AppFrame, type AppFrameFooterProps, type AppFrameHeaderProps, type AppFrameMainProps } from './'
+import { AppFrame } from './'
 import type { AppFrameProps } from './definitions'
-import { DEFAULT_APP_FRAME_FOOTER_INTENT, DEFAULT_APP_FRAME_HEADER_INTENT } from './slots'
-import { type AppFrameFooterSectionProps } from './slots/AppFrameFooterSection/definitions'
+import {
+  type AppFrameFooterProps,
+  type AppFrameFooterSectionProps,
+  type AppFrameHeaderProps,
+  type AppFrameMainProps,
+  DEFAULT_APP_FRAME_FOOTER_INTENT,
+  DEFAULT_APP_FRAME_HEADER_INTENT,
+} from './slots'
 
 export const APP_FRAME_META = {
   AppFrame: {

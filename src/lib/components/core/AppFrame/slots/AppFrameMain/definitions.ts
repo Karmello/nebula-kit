@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/index.core'
+import type { BoxProps } from '../../../Box/types'
 
 export type AppFrameMainProps = Pick<
   BoxProps<'main'>,
