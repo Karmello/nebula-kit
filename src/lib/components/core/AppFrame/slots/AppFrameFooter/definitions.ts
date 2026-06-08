@@ -1,6 +1,6 @@
+import { BoxColor, BoxIntent } from 'lib/components/core/Box'
+import { BoxProps } from 'lib/index.core'
 import { SwitchBreakpoint } from 'lib/types'
-
-import type { BoxColor, BoxIntent, BoxProps } from '../../../Box/types'
 
 export const DEFAULT_APP_FRAME_FOOTER_INTENT: AppFrameFooterProps['intent'] = 'muted'
 

@@ -1,4 +1,4 @@
-import { Box } from 'lib/components'
+import { Box } from 'lib/index.core'
 
 import {
   AppFrameFooterSectionInternalProps,

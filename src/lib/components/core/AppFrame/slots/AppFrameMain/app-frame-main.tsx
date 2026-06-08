@@ -1,4 +1,5 @@
-import { AppFrameMainProps, Box } from 'lib/index.core'
+import { AppFrameMainProps } from 'lib/components'
+import { Box } from 'lib/index.core'
 
 export const AppFrameMain = ({ children, tagAttrs, tagRef, ...paddings }: AppFrameMainProps) => {
   return (

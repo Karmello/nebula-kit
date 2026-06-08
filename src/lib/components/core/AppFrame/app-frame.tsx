@@ -1,7 +1,7 @@
 import { cloneElement } from 'react'
 
+import { AppFrameProps, Grid } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
-import { AppFrameProps, Grid } from 'lib/index.core'
 
 export const AppFrame = ({ children, tagAttrs, tagRef, stickyHeader = false }: AppFrameProps) => {
   return (

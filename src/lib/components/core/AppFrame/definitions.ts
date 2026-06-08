@@ -1,4 +1,4 @@
-import { GridProps } from 'lib/index.core'
+import { GridProps } from 'lib/components'
 
 export type AppFrameProps = Pick<GridProps, 'tagAttrs' | 'tagRef'> & {
   children: GridProps['children']

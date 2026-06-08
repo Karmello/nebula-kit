@@ -1,4 +1,5 @@
-import { AppFrameHeaderProps, Box } from 'lib/index.core'
+import { AppFrameHeaderProps } from 'lib/components'
+import { Box } from 'lib/index.core'
 
 import { AppFrameHeaderInternalProps, DEFAULT_APP_FRAME_HEADER_INTENT } from './definitions'
 

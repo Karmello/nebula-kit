@@ -1,10 +1,11 @@
 import { cloneElement } from 'react'
 
+import { AppFrameFooterProps, Flex } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
-import { Box, Flex } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 
-import { AppFrameFooterProps, DEFAULT_APP_FRAME_FOOTER_INTENT } from './definitions'
+import { DEFAULT_APP_FRAME_FOOTER_INTENT } from './definitions'
 
 export const AppFrameFooter = ({
   children,

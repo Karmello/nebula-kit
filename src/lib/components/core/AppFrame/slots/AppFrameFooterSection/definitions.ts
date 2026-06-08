@@ -1,4 +1,5 @@
-import { AppFrameFooterProps, BoxProps } from 'lib/components'
+import { AppFrameFooterProps } from 'lib/components'
+import { BoxProps } from 'lib/index.core'
 
 export type AppFrameFooterSectionProps = {
   children: BoxProps<'section'>['children']
