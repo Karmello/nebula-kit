@@ -4,6 +4,8 @@ import { BoxProps } from 'lib/index.core'
 export type AppFrameFooterSectionProps = {
   children: BoxProps<'section'>['children']
   padding?: BoxProps<'section'>['padding']
+  paddingInline?: BoxProps<'section'>['paddingInline']
+  paddingBlock?: BoxProps<'section'>['paddingBlock']
 }
 
 export type AppFrameFooterSectionInternalProps = {

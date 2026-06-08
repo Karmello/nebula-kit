@@ -11,6 +11,7 @@ import {
   type AppFrameHeaderProps,
   type AppFrameMainProps,
   DEFAULT_APP_FRAME_FOOTER_INTENT,
+  DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING,
   DEFAULT_APP_FRAME_HEADER_INTENT,
 } from './slots'
 
@@ -183,7 +184,10 @@ export const APP_FRAME_META = {
     props: {
       padding: {
         ...BOX_META.Box.props.padding,
+        defaultValue: String(DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING),
       },
+      paddingInline: BOX_META.Box.props.paddingInline,
+      paddingBlock: BOX_META.Box.props.paddingBlock,
       children: {
         ...BOX_META.Box.props.children,
         isRequired: true,

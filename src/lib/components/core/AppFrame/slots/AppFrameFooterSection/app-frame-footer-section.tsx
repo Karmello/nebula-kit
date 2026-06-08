@@ -9,6 +9,8 @@ import {
 export const AppFrameFooterSection = ({
   children,
   padding = DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING,
+  paddingBlock,
+  paddingInline,
   ...internalProps
 }: AppFrameFooterSectionProps) => {
   const { color, intent, footerStackBreakpoint, isLast } = internalProps as AppFrameFooterSectionInternalProps
@@ -26,6 +28,8 @@ export const AppFrameFooterSection = ({
       borderBottomWidth={{ base: !isLast ? 'var(--neb-length-3xs)' : undefined, [footerStackBreakpoint || 'lg']: '0px' }}
       borderRightWidth={{ [footerStackBreakpoint || 'lg']: !isLast ? 'var(--neb-length-3xs)' : undefined }}
       padding={padding}
+      paddingBlock={paddingBlock}
+      paddingInline={paddingInline}
     >
       {children}
     </Box>
