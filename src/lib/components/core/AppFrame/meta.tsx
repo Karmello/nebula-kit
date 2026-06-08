@@ -1,11 +1,12 @@
-import { AppFrame, AppFrameFooterProps, AppFrameHeaderProps, AppFrameMainProps, AppFrameProps } from 'lib/components'
 import { DEFAULT_SWITCH_BREAKPOINT, PROP_GROUPS, SWITCH_BREAKPOINTS } from 'lib/constants'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { GRID_META } from '../Grid/meta'
+import { AppFrame, type AppFrameFooterProps, type AppFrameHeaderProps, type AppFrameMainProps } from './'
+import type { AppFrameProps } from './definitions'
 import { DEFAULT_APP_FRAME_FOOTER_INTENT, DEFAULT_APP_FRAME_HEADER_INTENT } from './slots'
-import { AppFrameFooterSectionProps } from './slots/AppFrameFooterSection/definitions'
+import { type AppFrameFooterSectionProps } from './slots/AppFrameFooterSection/definitions'
 
 export const APP_FRAME_META = {
   AppFrame: {
