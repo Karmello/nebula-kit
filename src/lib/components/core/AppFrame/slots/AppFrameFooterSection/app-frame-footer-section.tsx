@@ -1,10 +1,7 @@
+import { AppFrameFooterSectionProps } from 'lib/components'
 import { Box } from 'lib/index.core'
 
-import {
-  AppFrameFooterSectionInternalProps,
-  AppFrameFooterSectionProps,
-  DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING,
-} from './definitions'
+import { AppFrameFooterSectionInternalProps, DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING } from './definitions'
 
 export const AppFrameFooterSection = ({
   children,

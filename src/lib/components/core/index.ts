@@ -1,6 +1,7 @@
 export {
   AppFrame,
   type AppFrameFooterProps,
+  type AppFrameFooterSectionProps,
   type AppFrameHeaderProps,
   type AppFrameMainProps,
   type AppFrameProps,
