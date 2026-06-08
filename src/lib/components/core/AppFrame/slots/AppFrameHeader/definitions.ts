@@ -1,5 +1,5 @@
-import { BoxColor, BoxIntent } from 'lib/components/core/Box'
-import { AppFrameProps, BoxProps } from 'lib/index.core'
+import { BoxColor, BoxIntent, BoxProps } from '../../../Box/types'
+import { AppFrameProps } from '../../definitions'
 
 export const DEFAULT_APP_FRAME_HEADER_INTENT: AppFrameHeaderProps['intent'] = 'muted'
 
