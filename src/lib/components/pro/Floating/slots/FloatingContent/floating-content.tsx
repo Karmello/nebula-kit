@@ -1,6 +1,6 @@
-import { FloatingPortal } from '@floating-ui/react'
 import { motion } from 'motion/react'
 
+import { Portal } from 'lib/components/shared'
 import { Box } from 'lib/index.core'
 
 import { FloatingContentInternalProps, FloatingContentProps } from './types'
@@ -11,7 +11,7 @@ export const FloatingContent = ({ children, ...internalProps }: FloatingContentP
   if (!internalOpen) return null
 
   return (
-    <FloatingPortal>
+    <Portal>
       <Box
         tag="span"
         tagRef={tagRef}
@@ -34,7 +34,7 @@ export const FloatingContent = ({ children, ...internalProps }: FloatingContentP
           {children}
         </motion.div>
       </Box>
-    </FloatingPortal>
+    </Portal>
   )
 }
 

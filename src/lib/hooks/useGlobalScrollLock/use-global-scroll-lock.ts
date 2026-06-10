@@ -3,32 +3,31 @@ import { useCallback, useRef } from 'react'
 export const useGlobalScrollLock = () => {
   const lockCountRef = useRef(0)
 
-  const lock = useCallback(() => {
-    const html = document.documentElement
+  const html = document.documentElement
+  const body = document.body
 
+  const lock = useCallback(() => {
     if (lockCountRef.current === 0) {
-      // measure BEFORE locking
       const scrollbarWidth = window.innerWidth - html.clientWidth
 
-      html.style.paddingRight = `${scrollbarWidth}px`
-      html.style.overflow = 'hidden'
+      if (scrollbarWidth > 0) {
+        body.style.paddingRight = `${scrollbarWidth}px`
+      }
+
+      body.style.overflow = 'hidden'
     }
 
     lockCountRef.current += 1
   }, [])
 
   const unlock = useCallback(() => {
-    if (lockCountRef.current === 0) {
-      return
-    }
+    if (lockCountRef.current === 0) return
 
     lockCountRef.current -= 1
 
     if (lockCountRef.current === 0) {
-      const html = document.documentElement
-
-      html.style.overflow = ''
-      html.style.paddingRight = ''
+      body.style.overflow = ''
+      body.style.paddingRight = ''
     }
   }, [])
 

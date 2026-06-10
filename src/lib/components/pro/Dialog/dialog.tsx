@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
-import { FloatingPortal, useDismiss, useFloating, useInteractions } from '@floating-ui/react'
+import { useDismiss, useFloating, useInteractions } from '@floating-ui/react'
 import classNames from 'classnames'
 import { motion } from 'motion/react'
 
-import { WithSlots } from 'lib/components/shared'
+import { Portal, WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 import { useCurrentTheme, useGlobalScrollLock } from 'lib/hooks'
 import { Box, Flex, IconButton } from 'lib/index.core'
@@ -74,7 +74,7 @@ export const Dialog = ({
         return (
           <DialogProvider intent={DIALOG_INTENT} padding={DIALOG_PADDING}>
             {open ? (
-              <FloatingPortal>
+              <Portal>
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -136,7 +136,7 @@ export const Dialog = ({
                     </Flex>
                   </Box>
                 </motion.div>
-              </FloatingPortal>
+              </Portal>
             ) : null}
           </DialogProvider>
         )
