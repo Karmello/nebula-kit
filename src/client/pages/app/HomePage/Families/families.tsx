@@ -56,28 +56,28 @@ export const Families = () => {
       gap="sm"
     >
       <Family
-        heading="Primitives"
-        description="Foundational building blocks for composing higher-level components quickly through consistent, predictable and reusable patterns."
-        iconName="puzzle"
-        components={['Box', 'Flex', 'Text']}
-      />
-      <Family
         heading="Layout"
         description="Powerful layout components make arranging UI straightforward by using well-known techniques like Flexbox or CSS Grid."
-        iconName="panel-top-bottom-dashed"
+        iconName="puzzle"
         components={['Flex', 'Grid']}
       />
       <Family
-        heading="Navigation"
-        description="A range of navigational components makes it possible to handle different view transitions."
-        iconName="square-menu"
-        components={['Breadcrumb', 'Pagination']}
+        heading="Overlays"
+        description="Overlay components handle layered UI patterns like dialogs, tooltips and floating surfaces."
+        iconName="panel-top-bottom-dashed"
+        components={['Dialog', 'Tooltip']}
       />
       <Family
-        heading="Forms"
-        description="Form components simplify form bootstrapping while remaining consistent with system surfaces and UI."
+        heading="Content"
+        description="Content components provide consistent ways to display text, icons and structured information."
+        iconName="square-menu"
+        components={['Text', 'Icon']}
+      />
+      <Family
+        heading="Form elements"
+        description="Form elements provide consistent controls for collecting and selecting user input."
         iconName="text-select"
-        components={['Form', 'Select']}
+        components={['Input', 'Select']}
       />
     </Grid>
   )

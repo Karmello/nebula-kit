@@ -28,8 +28,8 @@ export const COMPONENT_CATEGORIES = [
     key: 'overlays',
     label: 'Overlays',
     items: [
-      { key: 'tooltip', label: 'Tooltip', sections, bundle: 'pro' },
       { key: 'dialog', label: 'Dialog', sections, bundle: 'pro' },
+      { key: 'tooltip', label: 'Tooltip', sections, bundle: 'pro' },
       { key: 'floating', label: 'Floating', sections, bundle: 'pro' },
       { key: 'portal', label: 'Portal', sections, bundle: 'pro' },
       { key: 'focus-trap', label: 'FocusTrap', sections, bundle: 'pro' },

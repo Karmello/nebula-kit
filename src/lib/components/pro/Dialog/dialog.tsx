@@ -1,10 +1,11 @@
 import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, Flex, FocusTrap, IconButton, Portal, Resize } from 'lib/components'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 import { useCurrentTheme, useGlobalScrollLock } from 'lib/hooks'
+import { Box, Flex, IconButton, Resize } from 'lib/index.core'
+import { FocusTrap, Portal } from 'lib/index.pro'
 
 import {
   DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK,
@@ -13,7 +14,7 @@ import {
   DIALOG_PADDING,
   DIALOG_RESIZE_DURATION,
   DIALOG_SIZE_MAP,
-  DialogProps,
+  type DialogProps,
 } from './definitions'
 import { DialogProvider } from './DialogProvider'
 

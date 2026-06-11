@@ -2,10 +2,12 @@ import { useState } from 'react'
 
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { Button } from 'lib/index.core'
-import { Dialog, DialogFooterProps, DialogHeaderProps, DialogProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK, DEFAULT_DIALOG_SIZE, DIALOG_SIZES } from './definitions'
+import { Dialog } from './'
+import { DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK, DEFAULT_DIALOG_SIZE, DIALOG_SIZES, type DialogProps } from './definitions'
+import { type DialogFooterProps } from './slots/DialogFooter/definitions'
+import { type DialogHeaderProps } from './slots/DialogHeader/definitions'
 
 const DialogWrapper = () => {
   const [open, setOpen] = useState<boolean>(false)
