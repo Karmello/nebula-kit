@@ -8,8 +8,8 @@ import { convertElemToString } from 'client/helpers'
 import meta from 'client/meta'
 import { useAppStore, useComponentsPageStore } from 'client/store'
 
-const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
-  const { description, jsx, code, noSandBox, noCode, sandBoxWithNoPadding } = props
+const SingleExample = (props: ComponentMeta<unknown>['examples'][number] & { hideExamplesThemeToggle: boolean }) => {
+  const { description, jsx, code, noSandBox, noCode, sandBoxWithNoPadding, hideExamplesThemeToggle } = props
 
   const theme = useCurrentTheme()
   const flipGlobalThemeOnExamples = useAppStore(state => state.flipGlobalThemeOnExamples)
@@ -29,7 +29,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           <Box drawable variant="outline" intent="tertiary" tagAttrs={{ style: { borderStyle: 'dashed' } }}>
             <Box
               drawable
-              theme={flipGlobalThemeOnExamples ? 'flipped' : theme}
+              theme={!hideExamplesThemeToggle ? (flipGlobalThemeOnExamples ? 'global-flipped' : theme) : undefined}
               variant="solid"
               intent="neutral"
               padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
@@ -73,9 +73,11 @@ export const ComponentExamplesPage = () => {
 
   if (!meta[itemKeyPascal]) return null
 
+  const hideExamplesThemeToggle = meta[itemKeyPascal][itemKeyPascal].hideExamplesThemeToggle
+
   return (
     <Box maxInlineSize="55rem">
-      {!meta[itemKeyPascal][itemKeyPascal].hideExamplesThemeToggle ? (
+      {!hideExamplesThemeToggle ? (
         <>
           <Flex alignItems="center" columnGap="sm">
             <Switch size="xs" checked={flipGlobalThemeOnExamples} onChange={setFlipGlobalThemeOnExamples} />
@@ -90,7 +92,9 @@ export const ComponentExamplesPage = () => {
         {Object.keys(meta[itemKeyPascal] || []).map(key => {
           return (meta[itemKeyPascal][key].examples || [])
             .filter(example => !example.skip)
-            .map((example, i) => <SingleExample key={`${key}_${i}`} {...example} />)
+            .map((example, i) => (
+              <SingleExample key={`${key}_${i}`} {...example} hideExamplesThemeToggle={hideExamplesThemeToggle} />
+            ))
         })}
       </Flex>
     </Box>

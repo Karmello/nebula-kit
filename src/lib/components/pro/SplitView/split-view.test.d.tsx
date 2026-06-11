@@ -186,20 +186,9 @@ expectError(<SplitView.Side />)
 // refs
 expectType(<SplitView.Side tagRef={createRef<HTMLElement>()}>Side</SplitView.Side>)
 
-// theme
-expectType(<SplitView.Side theme="light">Side</SplitView.Side>)
-expectType(<SplitView.Side theme="dark">Side</SplitView.Side>)
-expectType(<SplitView.Side theme="flipped">Side</SplitView.Side>)
-
-expectType(<SplitView.Side theme={{ md: 'dark' }}>Side</SplitView.Side>)
-
-expectError(<SplitView.Side theme="wrong">Side</SplitView.Side>)
-
 // intent
 expectType(<SplitView.Side intent="neutral">Side</SplitView.Side>)
 expectType(<SplitView.Side intent="primary">Side</SplitView.Side>)
-
-expectType(<SplitView.Side intent={{ base: 'tertiary', lg: 'neutral' }}>Side</SplitView.Side>)
 
 expectError(<SplitView.Side intent="wrong">Side</SplitView.Side>)
 

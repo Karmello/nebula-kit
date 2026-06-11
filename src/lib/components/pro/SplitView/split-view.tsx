@@ -3,15 +3,10 @@ import { useCallback } from 'react'
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
 import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
-import { withPrefix } from 'lib/helpers'
 import { Grid } from 'lib/index.core'
-import { SplitViewProps } from 'lib/index.pro'
-import { buildStaticDataset } from 'lib/internals/dom'
 
-import { SPLIT_VIEW_SIDE_POSITIONS } from './definitions'
+import { SPLIT_VIEW_SIDE_POSITIONS, type SplitViewProps } from './definitions'
 import { SplitViewProvider, useSplitViewContext } from './SplitViewProvider'
-
-import './split-view.scss'
 
 const SplitViewComponent = ({
   // Grid
@@ -44,14 +39,11 @@ const SplitViewComponent = ({
       {({ slotsByName }) => {
         return (
           <Grid
-            tagAttrs={{
-              ...tagAttrs,
-              className: withPrefix('split-view'),
-              ...buildStaticDataset('SplitView', { mode }),
-            }}
             tagRef={tagRef}
+            tagAttrs={tagAttrs}
             gridTemplateColumns={sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto'}
             gridTemplateRows="1fr"
+            blockSize="100%"
           >
             {sidePosition === 'left' ? slotsByName['SplitView.Side'] : null}
             {slotsByName['SplitView.Main']}

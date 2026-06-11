@@ -1,4 +1,4 @@
-import { createContext, useContext, useLayoutEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
 
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
 import { BREAKPOINTS, DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
@@ -17,17 +17,17 @@ export const SplitViewProvider = ({ children, sidePosition, switchAt = DEFAULT_S
   )
   const [sideOpen, setSideOpen] = useState<boolean>(mode === 'inline')
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setMode(BREAKPOINTS.slice(0, BREAKPOINTS.indexOf(switchAt)).includes(bp) ? 'overlay' : 'inline')
   }, [bp])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setTimeout(() => {
       setSideOpen(mode === 'inline')
-    }, 200)
+    }, DEFAULT_RESIZE_DURATION)
   }, [mode])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (mode === 'overlay' && sideOpen) {
       lock()
       document.body.style.pointerEvents = 'none'

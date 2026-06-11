@@ -10,7 +10,7 @@ type PromptToolbarProps = {
 
 export const PromptToolbar = ({ loading, disabled, lengthStatus, handleSend, handleCancel }: PromptToolbarProps) => {
   return (
-    <Box drawable theme="flipped" variant="solid" intent="neutral" padding="7px" paddingLeft="17px">
+    <Box drawable theme="global-flipped" variant="solid" intent="neutral" padding="7px" paddingLeft="17px">
       <Flex alignItems="center">
         <Flex.Item flex="1">
           <Flex alignItems="center" columnGap="sm">

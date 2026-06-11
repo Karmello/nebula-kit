@@ -1,25 +1,25 @@
 import { useRef } from 'react'
-import classNames from 'classnames'
 
-import { withPrefix } from 'lib/helpers'
 import { Box, Flex, IconButton, Resize } from 'lib/index.core'
 import { SplitViewSideProps } from 'lib/index.pro'
 import { useFocusTrap } from 'lib/internals/focus'
 
 import { useSplitViewContext } from '../../SplitViewProvider'
-import { DEFAULT_SPLIT_VIEW_SIDE_INTENT, DEFAULT_SPLIT_VIEW_SIDE_WIDTH } from './definitions'
+import {
+  DEFAULT_SPLIT_VIEW_SIDE_BLOCK_SIZE,
+  DEFAULT_SPLIT_VIEW_SIDE_INLINE_SIZE,
+  DEFAULT_SPLIT_VIEW_SIDE_INTENT,
+} from './definitions'
 
 export const SplitViewSide = ({
   // Box
   children,
   tagAttrs,
   tagRef,
-  theme,
-  brand,
   color,
   intent = DEFAULT_SPLIT_VIEW_SIDE_INTENT,
-  inlineSize = DEFAULT_SPLIT_VIEW_SIDE_WIDTH,
-  blockSize,
+  inlineSize = DEFAULT_SPLIT_VIEW_SIDE_INLINE_SIZE,
+  blockSize = DEFAULT_SPLIT_VIEW_SIDE_BLOCK_SIZE,
   padding,
   paddingInline,
   paddingBlock,
@@ -28,7 +28,7 @@ export const SplitViewSide = ({
   paddingBottom,
   paddingLeft,
 }: SplitViewSideProps) => {
-  const { sideOpen, setSideOpen, sidePosition, mode } = useSplitViewContext()
+  const { sideOpen, setSideOpen, sidePosition, mode, switchAt } = useSplitViewContext()
 
   const ref = useRef(null)
   const finalRef = tagRef || ref
@@ -44,15 +44,13 @@ export const SplitViewSide = ({
       tag="aside"
       tagAttrs={{
         ...tagAttrs,
-        className: classNames(withPrefix('split-view-side'), tagAttrs?.className),
         inert: !sideOpen,
         role: mode === 'overlay' ? 'dialog' : 'complementary',
         'aria-modal': mode === 'overlay' ? true : undefined,
       }}
       tagRef={finalRef}
       drawable
-      theme={theme}
-      brand={brand}
+      theme={{ base: 'global-flipped', [switchAt || 'lg']: 'global' }}
       variant="outline"
       color={color}
       intent={intent}
@@ -63,12 +61,20 @@ export const SplitViewSide = ({
       borderRightWidth={mode === 'overlay' && sidePosition === 'left' && sideOpen ? 'var(--neb-length-3xs)' : '0px'}
       left={sidePosition === 'left' ? '0px' : undefined}
       right={sidePosition === 'right' ? '0px' : undefined}
-      maxInlineSize={mode === 'inline' ? inlineSize : undefined}
+      maxInlineSize={mode === 'inline' ? inlineSize : '100%'}
       blockSize={blockSize}
+      overflowX="hidden"
+      pointerEvents="auto"
+      zIndex={mode === 'overlay' ? 20 : undefined}
+      position={mode === 'overlay' ? 'fixed' : undefined}
+      top={mode === 'overlay' ? '0px' : undefined}
+      bottom={mode === 'overlay' ? '0px' : undefined}
+      overflowY={mode === 'overlay' ? 'auto' : 'hidden'}
     >
       <Box
         drawable
         borderRadius="0px"
+        theme={{ base: 'global-flipped', [switchAt || 'lg']: 'global' }}
         variant="solid"
         color={color}
         intent={intent}
@@ -94,8 +100,6 @@ export const SplitViewSide = ({
                 </Flex>
               ) : null}
               <Box
-                theme={theme}
-                brand={brand}
                 padding={padding}
                 paddingInline={paddingInline}
                 paddingBlock={paddingBlock}

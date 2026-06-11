@@ -1,6 +1,6 @@
 import { BoxProps } from 'lib/index.core'
 
-type PropsFromBox = Pick<
+export type SplitViewMainProps = Pick<
   BoxProps<'section'>,
   | 'tagAttrs'
   | 'tagRef'
@@ -14,5 +14,3 @@ type PropsFromBox = Pick<
 > & {
   children: BoxProps<'section'>['children']
 }
-
-export type SplitViewMainProps = PropsFromBox

@@ -1,20 +1,15 @@
-import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
+import { BoxColor, BoxIntent } from 'lib/components/core/Box'
 import { BoxProps } from 'lib/index.core'
 
-export const DEFAULT_SPLIT_VIEW_SIDE_WIDTH = '225px'
-export const DEFAULT_SPLIT_VIEW_SIDE_INTENT: SplitViewSideProps['intent'] = {
-  base: 'tertiary',
-  [DEFAULT_SWITCH_BREAKPOINT]: 'neutral',
-}
+export const DEFAULT_SPLIT_VIEW_SIDE_INLINE_SIZE: SplitViewSideProps['inlineSize'] = '225px'
+export const DEFAULT_SPLIT_VIEW_SIDE_BLOCK_SIZE: SplitViewSideProps['blockSize'] = '100%'
 
-type PropsFromBox = Pick<
+export const DEFAULT_SPLIT_VIEW_SIDE_INTENT: SplitViewSideProps['intent'] = 'neutral'
+
+export type SplitViewSideProps = Pick<
   BoxProps<'aside'>,
   | 'tagAttrs'
   | 'tagRef'
-  | 'theme'
-  | 'brand'
-  | 'color'
-  | 'intent'
   | 'inlineSize'
   | 'blockSize'
   | 'padding'
@@ -26,6 +21,6 @@ type PropsFromBox = Pick<
   | 'paddingLeft'
 > & {
   children: BoxProps<'aside'>['children']
+  color?: BoxColor
+  intent?: BoxIntent
 }
-
-export type SplitViewSideProps = PropsFromBox

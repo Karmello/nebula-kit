@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 import { Box, Flex, Section, Spacer, SplitView } from 'lib/components'
 import { LIB_PREFIX } from 'lib/constants'
-import { getInitialState, useAppStore, usePlaygroundStore } from 'client/store'
+import { getInitialState, usePlaygroundStore } from 'client/store'
 
 import {
   ComponentSelect,
@@ -17,7 +17,6 @@ import {
 } from './components'
 
 export const PlaygroundPage = () => {
-  const theme = useAppStore(state => state.theme)
   const activeComponent = usePlaygroundStore(state => state.activeComponent)
 
   useEffect(() => {
@@ -54,11 +53,7 @@ export const PlaygroundPage = () => {
                     }}
                   />
                 </SplitView.Main>
-                <SplitView.Side
-                  theme={{ base: theme === 'light' ? 'dark' : 'light', lg: theme }}
-                  intent="neutral"
-                  inlineSize="320px"
-                >
+                <SplitView.Side intent="neutral" inlineSize="320px">
                   <Box padding={{ base: '10px', lg: '0px' }} paddingLeft={{ lg: '30px' }}>
                     <Flex flexDirection="column" alignItems="stretch" rowGap="md">
                       <Flex.Item>

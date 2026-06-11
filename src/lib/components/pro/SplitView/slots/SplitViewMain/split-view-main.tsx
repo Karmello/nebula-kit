@@ -1,7 +1,4 @@
-import classNames from 'classnames'
-
 import { WithSlots } from 'lib/components/shared'
-import { withPrefix } from 'lib/helpers'
 import { Box, Flex, IconButton, Spacer } from 'lib/index.core'
 import { SplitViewMainProps } from 'lib/index.pro'
 
@@ -33,11 +30,8 @@ export const SplitViewMain = ({
         return (
           <Box
             tag="section"
-            tagAttrs={{
-              ...tagAttrs,
-              className: classNames(withPrefix('split-view-main'), tagAttrs?.className),
-            }}
             tagRef={tagRef}
+            tagAttrs={tagAttrs}
             padding={padding}
             paddingInline={paddingInline}
             paddingBlock={paddingBlock}
@@ -45,6 +39,8 @@ export const SplitViewMain = ({
             paddingRight={paddingRight}
             paddingBottom={paddingBottom}
             paddingLeft={paddingLeft}
+            minInlineSize="0px"
+            overflow="clip"
           >
             <Flex alignItems="center" flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'} gap="sm">
               <Flex.Item>

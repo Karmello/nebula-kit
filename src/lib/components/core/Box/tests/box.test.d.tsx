@@ -106,7 +106,8 @@ expectError(<Box intent={{ md: 'wrong' }} />)
 
 expectType(<Box theme="light" />)
 expectType(<Box theme="dark" />)
-expectType(<Box theme="flipped" />)
+expectType(<Box theme="global" />)
+expectType(<Box theme="global-flipped" />)
 
 expectType(<Box theme={{ md: 'dark' }} />)
 

@@ -53,7 +53,7 @@ export const BOX_META = {
         options: BOX_THEMES,
         isResponsive: true,
         description:
-          'Sets a local theme boundary for the component and its drawable descendants. Overrides the resolved theme for this subtree. Use flipped to invert the resolved theme at this boundary.',
+          'Sets a local theme boundary for the component and its drawable descendants. Supports explicit themes, the global application theme or the opposite of the global application theme.',
       },
       brand: {
         group: PROP_GROUPS.SURFACE,
@@ -523,6 +523,7 @@ export const BOX_META = {
       },
     ],
     changelog: {
+      '0.11.0': ['replaced `flipped` theme value with `global` and `global-flipped`'],
       '0.9.0': [
         'added `hidden` prop',
         'added support for the flipped `theme` value, allowing components to invert the nearest inherited theme within a subtree',
