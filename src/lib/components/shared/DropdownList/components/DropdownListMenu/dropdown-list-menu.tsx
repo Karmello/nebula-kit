@@ -1,8 +1,7 @@
 import { cloneElement, ReactNode, RefObject, useCallback, useLayoutEffect, useRef, useState } from 'react'
 
-import { Portal } from 'lib/components/shared/Portal'
 import { Box, Divider, Resize } from 'lib/index.core'
-import { VirtualList } from 'lib/index.pro'
+import { Portal, VirtualList } from 'lib/index.pro'
 import { FloatingResolved, useFloating } from 'lib/internals/positioning'
 
 import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'

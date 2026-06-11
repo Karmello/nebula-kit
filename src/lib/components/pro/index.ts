@@ -5,6 +5,7 @@ export { Breadcrumb, type BreadcrumbProps } from './Breadcrumb'
 export { Dialog, type DialogContentProps, type DialogFooterProps, type DialogHeaderProps, type DialogProps } from './Dialog'
 export { Fade, type FadeProps } from './Fade'
 export { Floating, type FloatingProps } from './Floating'
+export { FocusTrap, type FocusTrapProps } from './FocusTrap'
 export {
   Form,
   type FormActionButtonProps,
@@ -19,6 +20,7 @@ export { Markup, type MarkupProps } from './Markup'
 export { MultiSelect, type MultiSelectOptionProps, type MultiSelectProps } from './MultiSelect'
 export { Pagination, type PaginationProps } from './Pagination'
 export { PasswordInput, type PasswordInputProps } from './PasswordInput'
+export { Portal, type PortalProps } from './Portal'
 export { Scale, type ScaleProps } from './Scale'
 export { SideNav, type SideNavCategoryProps, type SideNavItemProps, type SideNavProps } from './SideNav'
 export { Snackbar, type SnackbarProps, useSnackbar } from './Snackbar'

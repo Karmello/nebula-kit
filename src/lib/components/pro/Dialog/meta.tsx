@@ -42,7 +42,7 @@ export const DIALOG_META = {
         'includes an optional close button and configurable dismissal behavior',
         'automatically disables page scrolling while open',
       ],
-      composedOf: ['Flex', 'Box', 'Button', 'Scale'],
+      composedOf: ['Flex', 'Box', 'Button', 'Scale', 'FocusTrap'],
       topLevelTags: ['dialog'],
       slots: ['Dialog.Header', 'Dialog.Content', 'Dialog.Footer'],
     },

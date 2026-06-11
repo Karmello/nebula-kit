@@ -1,8 +1,7 @@
 import { useRef } from 'react'
 
 import { Box, Flex, IconButton, Resize } from 'lib/index.core'
-import { SplitViewSideProps } from 'lib/index.pro'
-import { useFocusTrap } from 'lib/internals/focus'
+import { FocusTrap, SplitViewSideProps } from 'lib/index.pro'
 
 import { useSplitViewContext } from '../../SplitViewProvider'
 import {
@@ -32,12 +31,6 @@ export const SplitViewSide = ({
 
   const ref = useRef(null)
   const finalRef = tagRef || ref
-
-  useFocusTrap({
-    active: mode == 'overlay' && sideOpen,
-    targetRef: finalRef,
-    onFocusEscape: () => setSideOpen(false),
-  })
 
   return (
     <Box
@@ -82,37 +75,39 @@ export const SplitViewSide = ({
         overflowY={sideOpen ? 'auto' : 'hidden'}
         overflowX="hidden"
       >
-        <Resize property="inlineSize" visible={sideOpen} easing="cubic-bezier(0.4, 0, 0.2, 1)">
-          <Box inlineSize={inlineSize} maxInlineSize="100dvw" paddingRight="3xs">
-            <Box>
-              {mode === 'overlay' ? (
-                <Flex justifyContent="flex-end">
-                  <Box padding="2xs" paddingRight="3xs" paddingBottom="md">
-                    <IconButton
-                      iconName="close"
-                      intent={intent || 'tertiary'}
-                      size="2xs"
-                      onClick={() => {
-                        setSideOpen(false)
-                      }}
-                    />
-                  </Box>
-                </Flex>
-              ) : null}
-              <Box
-                padding={padding}
-                paddingInline={paddingInline}
-                paddingBlock={paddingBlock}
-                paddingTop={paddingTop}
-                paddingRight={paddingRight}
-                paddingBottom={paddingBottom}
-                paddingLeft={paddingLeft}
-              >
-                {children}
+        <FocusTrap tagRef={finalRef} active={mode == 'overlay' && sideOpen} onFocusEscape={() => setSideOpen(false)}>
+          <Resize property="inlineSize" visible={sideOpen} easing="cubic-bezier(0.4, 0, 0.2, 1)">
+            <Box inlineSize={inlineSize} maxInlineSize="100dvw" paddingRight="3xs">
+              <Box>
+                {mode === 'overlay' ? (
+                  <Flex justifyContent="flex-end">
+                    <Box padding="2xs" paddingRight="3xs" paddingBottom="md">
+                      <IconButton
+                        iconName="close"
+                        intent={intent || 'tertiary'}
+                        size="2xs"
+                        onClick={() => {
+                          setSideOpen(false)
+                        }}
+                      />
+                    </Box>
+                  </Flex>
+                ) : null}
+                <Box
+                  padding={padding}
+                  paddingInline={paddingInline}
+                  paddingBlock={paddingBlock}
+                  paddingTop={paddingTop}
+                  paddingRight={paddingRight}
+                  paddingBottom={paddingBottom}
+                  paddingLeft={paddingLeft}
+                >
+                  {children}
+                </Box>
               </Box>
             </Box>
-          </Box>
-        </Resize>
+          </Resize>
+        </FocusTrap>
       </Box>
     </Box>
   )

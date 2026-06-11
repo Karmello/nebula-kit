@@ -134,7 +134,7 @@ export const SPLIT_VIEW_META = {
         'automatically renders a close action when displayed in overlay mode',
       ],
       guidelines: ['typically used for navigation, menus or supplementary content'],
-      composedOf: ['Box', 'Flex', 'IconButton', 'Resize'],
+      composedOf: ['Box', 'Flex', 'IconButton', 'Resize', 'FocusTrap'],
       topLevelTags: ['aside'],
     },
     props: {

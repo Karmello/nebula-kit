@@ -1,15 +1,15 @@
-import { RefObject, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
+import { DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK, FocusTrapProps } from './definitions'
 import { isInsideLogicalTree } from './helpers'
 
-export type UseFocusTrapProps = {
-  active: boolean
-  targetRef: RefObject<HTMLElement | null>
-  onFocusEscape?: () => void
-  disableEscapeOnOutsideClick?: boolean
-}
-
-export const useFocusTrap = ({ active, targetRef, onFocusEscape, disableEscapeOnOutsideClick }: UseFocusTrapProps) => {
+export const FocusTrap = ({
+  active,
+  tagRef,
+  children,
+  onFocusEscape,
+  disableEscapeOnOutsideClick = DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK,
+}: FocusTrapProps) => {
   const triggerRef = useRef<HTMLElement | null>(null)
   const prevActiveRef = useRef(false)
   const hadTabIndexRef = useRef(false)
@@ -32,7 +32,7 @@ export const useFocusTrap = ({ active, targetRef, onFocusEscape, disableEscapeOn
   }, [active])
 
   useEffect(() => {
-    const target = targetRef?.current
+    const target = tagRef?.current as HTMLElement
 
     if (!active || !target) return
 
@@ -97,8 +97,11 @@ export const useFocusTrap = ({ active, targetRef, onFocusEscape, disableEscapeOn
 
     const handleFocusIn = () => {
       if (document.activeElement === lastFocusedRef.current) return
+
       const activeEl = document.activeElement as HTMLElement | null
+
       if (!activeEl || isInsideLogicalTree(activeEl, target)) return
+
       lastFocusedRef.current = activeEl
       focusBoundary()
     }
@@ -134,5 +137,7 @@ export const useFocusTrap = ({ active, targetRef, onFocusEscape, disableEscapeOn
         target.removeAttribute('tabindex')
       }
     }
-  }, [active, targetRef, onFocusEscape, disableEscapeOnOutsideClick])
+  }, [active, tagRef, onFocusEscape, disableEscapeOnOutsideClick])
+
+  return children
 }

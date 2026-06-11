@@ -1,3 +1,5 @@
+import { FOCUS_TRAP_META } from 'lib/components/pro/FocusTrap/meta'
+import { PORTAL_META } from 'lib/components/pro/Portal/meta'
 import { ComponentMeta } from 'client/definitions'
 
 import { APP_FRAME_META } from '../../lib/components/core/AppFrame/meta'
@@ -66,6 +68,7 @@ const META = {
   Fade: FADE_META,
   Flex: FLEX_META,
   Floating: FLOATING_META,
+  FocusTrap: FOCUS_TRAP_META,
   Form: FORM_META,
   Grid: GRID_META,
   HtmlTag: HTML_TAG_META,
@@ -81,6 +84,7 @@ const META = {
   NebkitProvider: NEBKIT_PROVIDER_META,
   Pagination: PAGINATION_META,
   PasswordInput: PASSWORD_META,
+  Portal: PORTAL_META,
   Resize: RESIZE_META,
   Reveal: REVEAL_META,
   Rotate: ROTATE_META,

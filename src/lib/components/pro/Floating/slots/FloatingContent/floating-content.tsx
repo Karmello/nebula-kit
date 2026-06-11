@@ -1,7 +1,7 @@
 import { motion } from 'motion/react'
 
-import { Portal } from 'lib/components/shared'
 import { Box } from 'lib/index.core'
+import { Portal } from 'lib/index.pro'
 
 import { FloatingContentInternalProps, FloatingContentProps } from './types'
 
