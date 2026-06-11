@@ -1,8 +1,8 @@
 import { ReactNode } from 'react'
 
 import { Flex, Icon, Link, Section, Spacer, Text } from 'lib/components'
-import { BoxColor } from 'lib/components/core/Box/types'
-import { IconName } from 'lib/types'
+import type { BoxColor } from 'lib/components/core/Box/types'
+import { type IconName } from 'lib/components/core/Icon/definitions'
 import { Plan } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 

@@ -1,5 +1,4 @@
 import {
-  COLORS,
   CSS_CURSOR,
   CSS_DISPLAY,
   CSS_OVERFLOW,
@@ -14,7 +13,7 @@ import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { BoxProps } from '.'
 import { Box } from './box'
-import { BOX_INTENTS, BOX_SURFACES, BOX_THEMES, BOX_VARIANTS } from './constants'
+import { BOX_COLORS, BOX_INTENTS, BOX_SURFACES, BOX_THEMES, BOX_VARIANTS } from './constants'
 
 export const BOX_META = {
   Box: {
@@ -57,12 +56,12 @@ export const BOX_META = {
       },
       brand: {
         group: PROP_GROUPS.SURFACE,
-        options: COLORS,
+        options: BOX_COLORS,
         description: 'Default surface color context for the component and its descendants.',
       },
       color: {
         group: PROP_GROUPS.SURFACE,
-        options: COLORS,
+        options: BOX_COLORS,
         description: 'Color applied to the component.',
       },
       variant: {

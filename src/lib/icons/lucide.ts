@@ -86,7 +86,7 @@ import {
   Zap,
 } from 'lucide-react'
 
-import { IconName } from 'lib/types'
+import { type IconName } from 'lib/components/core/Icon/definitions'
 
 export const ICONS: Record<IconName, any> = {
   'arrow-down': ArrowDown,

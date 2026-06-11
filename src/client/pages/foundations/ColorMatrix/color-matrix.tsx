@@ -1,5 +1,5 @@
 import { Box, Flex, Spacer, Text } from 'lib/components'
-import { COLORS } from 'lib/constants'
+import { BOX_COLORS } from 'lib/components/core/Box/constants'
 
 export default () => {
   const arr = Array.from({ length: 26 }, (v, k) => k)
@@ -8,7 +8,7 @@ export default () => {
     <Box>
       <Text>Color calibration.</Text>
       <Spacer blockSize="lg" />
-      {COLORS.map(color => (
+      {BOX_COLORS.map(color => (
         <Flex key={color} flexDirection="row" alignItems="stretch">
           {arr.map(n => {
             return (

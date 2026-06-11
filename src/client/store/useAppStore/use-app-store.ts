@@ -4,11 +4,11 @@ import { persist } from 'zustand/middleware'
 
 import { NebkitProviderProps } from 'lib/components'
 import {
-  DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
-  DEFAULT_NEBKIT_BRAND,
-  DEFAULT_NEBKIT_RIPPLE_MODE,
-  DEFAULT_NEBKIT_SATURATION,
-  DEFAULT_NEBKIT_THEME,
+  DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE,
+  DEFAULT_NEBKIT_PROVIDER_BRAND,
+  DEFAULT_NEBKIT_PROVIDER_RIPPLE_MODE,
+  DEFAULT_NEBKIT_PROVIDER_SATURATION,
+  DEFAULT_NEBKIT_PROVIDER_THEME,
 } from 'lib/components/core/NebkitProvider'
 import { LIB_PREFIX } from 'lib/constants'
 import { ApiUser } from 'client/definitions'
@@ -40,15 +40,15 @@ export const useAppStore = create<AppStore>()(
   persist(
     set =>
       ({
-        theme: DEFAULT_NEBKIT_THEME,
+        theme: DEFAULT_NEBKIT_PROVIDER_THEME,
         setTheme: (theme: NebkitProviderProps['theme']) => set({ theme }),
-        brand: DEFAULT_NEBKIT_BRAND,
+        brand: DEFAULT_NEBKIT_PROVIDER_BRAND,
         setBrand: (brand: NebkitProviderProps['brand']) => set({ brand }),
-        saturation: DEFAULT_NEBKIT_SATURATION,
+        saturation: DEFAULT_NEBKIT_PROVIDER_SATURATION,
         setSaturation: (saturation: NebkitProviderProps['saturation']) => set({ saturation }),
-        borderRadiusSize: DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
+        borderRadiusSize: DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE,
         setBorderRadiusSize: (borderRadiusSize: NebkitProviderProps['borderRadiusSize']) => set({ borderRadiusSize }),
-        rippleMode: DEFAULT_NEBKIT_RIPPLE_MODE,
+        rippleMode: DEFAULT_NEBKIT_PROVIDER_RIPPLE_MODE,
         setRippleMode: (rippleMode: NebkitProviderProps['rippleMode']) => set({ rippleMode }),
         user: null,
         setUser: (user: ApiUser | null) => set({ user }),

@@ -1,7 +1,7 @@
 import { sentenceCase } from 'change-case'
 
 import { Box, Flex, Select, Spacer, Text } from 'lib/components'
-import { COLORS } from 'lib/constants'
+import { BOX_COLORS } from 'lib/components/core/Box/constants'
 import { useAppStore } from 'client/store'
 
 export default () => {
@@ -16,7 +16,7 @@ export default () => {
       <Spacer />
       <Text bold>Brand</Text>
       <Select value={brand} onChange={setBrand} inlineSize="150px" size="sm">
-        {COLORS.map(brand => (
+        {BOX_COLORS.map(brand => (
           <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
         ))}
       </Select>

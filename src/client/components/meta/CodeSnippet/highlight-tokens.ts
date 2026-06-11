@@ -10,7 +10,7 @@ import githubDark from '@shikijs/themes/github-dark'
 import githubLight from '@shikijs/themes/github-light'
 import { BundledLanguage, createHighlighterCore, createJavaScriptRegexEngine, TokensResult } from 'shiki'
 
-import { Theme } from 'lib/types'
+import type { NebkitProviderTheme } from 'lib/components/core/NebkitProvider/types'
 
 const highlighter = await createHighlighterCore({
   engine: createJavaScriptRegexEngine(),
@@ -18,6 +18,6 @@ const highlighter = await createHighlighterCore({
   themes: [githubLight, githubDark],
 })
 
-export const tokenizeCode = (code: string, lang: BundledLanguage, theme: Theme): TokensResult => {
+export const tokenizeCode = (code: string, lang: BundledLanguage, theme: NebkitProviderTheme): TokensResult => {
   return highlighter.codeToTokens(code, { lang, theme: theme === 'light' ? githubLight : githubDark })
 }

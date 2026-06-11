@@ -1,12 +1,13 @@
 import { BoxProps } from 'lib/components'
-import { BoxTheme } from 'lib/components/core/Box'
+import type { BoxTheme } from 'lib/components/core/Box/types'
+import type { NebkitProviderTheme } from 'lib/components/core/NebkitProvider/types'
 import { useBrandContext, useThemeContext } from 'lib/components/shared'
 import { useCurrentTheme } from 'lib/hooks'
-import { RespValue, Theme } from 'lib/types'
+import { RespValue } from 'lib/types'
 
-export const flipTheme = (theme: Theme): Theme => (theme === 'dark' ? 'light' : 'dark')
+export const flipTheme = (theme: NebkitProviderTheme): NebkitProviderTheme => (theme === 'dark' ? 'light' : 'dark')
 
-export const resolveThemeValue = (theme: BoxTheme, globalTheme: Theme): Theme => {
+export const resolveThemeValue = (theme: BoxTheme, globalTheme: NebkitProviderTheme): NebkitProviderTheme => {
   if (theme === 'global') {
     return globalTheme
   }
@@ -21,12 +22,12 @@ export const resolveThemeValue = (theme: BoxTheme, globalTheme: Theme): Theme =>
 export const resolveTheme = (
   theme: BoxProps['theme'],
   inheritedTheme: BoxProps['theme'],
-  globalTheme: Theme
-): RespValue<Theme> => {
+  globalTheme: NebkitProviderTheme
+): RespValue<NebkitProviderTheme> => {
   const resolvedTheme = theme ?? inheritedTheme
 
   if (!resolvedTheme) {
-    return resolvedTheme as unknown as RespValue<Theme>
+    return resolvedTheme as unknown as RespValue<NebkitProviderTheme>
   }
 
   if (typeof resolvedTheme === 'string') {
@@ -35,14 +36,17 @@ export const resolveTheme = (
 
   return Object.fromEntries(
     Object.entries(resolvedTheme).map(([breakpoint, value]) => [breakpoint, resolveThemeValue(value, globalTheme)])
-  ) as RespValue<Theme>
+  ) as RespValue<NebkitProviderTheme>
 }
 
 export const useResolveAppearance = ({
   theme,
   brand,
   color,
-}: Pick<BoxProps, 'theme' | 'brand' | 'color'>): { theme: RespValue<Theme> } & Pick<BoxProps, 'brand' | 'color'> => {
+}: Pick<BoxProps, 'theme' | 'brand' | 'color'>): { theme: RespValue<NebkitProviderTheme> } & Pick<
+  BoxProps,
+  'brand' | 'color'
+> => {
   const globalTheme = useCurrentTheme()
 
   const themeCtx = useThemeContext()

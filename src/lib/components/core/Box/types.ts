@@ -1,8 +1,6 @@
 import { ElementType } from 'react'
 
-import { COLORS } from 'lib/constants'
-import { HtmlTagProps } from 'lib/index.core'
-import {
+import type {
   CssCursor,
   CssDisplay,
   CssOverflow,
@@ -15,12 +13,13 @@ import {
   TShirtSize,
 } from 'lib/types'
 
-import { BOX_INTENTS, BOX_SURFACES, BOX_THEMES, BOX_VARIANTS } from './constants'
+import { type HtmlTagProps } from '../HtmlTag/definitions'
+import { BOX_COLORS, BOX_INTENTS, BOX_SURFACES, BOX_THEMES, BOX_VARIANTS } from './constants'
 
 export type BoxTheme = (typeof BOX_THEMES)[number]
 export type BoxVariant = (typeof BOX_VARIANTS)[number]
 export type BoxIntent = (typeof BOX_INTENTS)[number]
-export type BoxColor = (typeof COLORS)[number]
+export type BoxColor = (typeof BOX_COLORS)[number]
 export type BoxSurface = (typeof BOX_SURFACES)[number]
 
 export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {

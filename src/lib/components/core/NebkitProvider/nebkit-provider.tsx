@@ -2,24 +2,24 @@ import { ReactElement, useLayoutEffect, useRef } from 'react'
 
 import { BrandProvider, ThemeProvider } from 'lib/components/shared'
 import { useGlobalScrollLock } from 'lib/hooks'
-import { NebkitProviderProps } from 'lib/index.core'
 
 import {
-  DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
-  DEFAULT_NEBKIT_BRAND,
-  DEFAULT_NEBKIT_RIPPLE_MODE,
-  DEFAULT_NEBKIT_SATURATION,
-  DEFAULT_NEBKIT_THEME,
-  NEBKIT_SIZES_MAP,
-} from './definitions'
+  DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE,
+  DEFAULT_NEBKIT_PROVIDER_BRAND,
+  DEFAULT_NEBKIT_PROVIDER_RIPPLE_MODE,
+  DEFAULT_NEBKIT_PROVIDER_SATURATION,
+  DEFAULT_NEBKIT_PROVIDER_THEME,
+  NEBKIT_PROVIDER_SIZES_MAP,
+} from './constants'
+import type { NebkitProviderProps } from './types'
 
 export const NebkitProvider = ({
   children,
-  theme = DEFAULT_NEBKIT_THEME,
-  brand = DEFAULT_NEBKIT_BRAND,
-  saturation = DEFAULT_NEBKIT_SATURATION,
-  borderRadiusSize = DEFAULT_NEBKIT_BORDER_RADIUS_SIZE,
-  rippleMode = DEFAULT_NEBKIT_RIPPLE_MODE,
+  theme = DEFAULT_NEBKIT_PROVIDER_THEME,
+  brand = DEFAULT_NEBKIT_PROVIDER_BRAND,
+  saturation = DEFAULT_NEBKIT_PROVIDER_SATURATION,
+  borderRadiusSize = DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE,
+  rippleMode = DEFAULT_NEBKIT_PROVIDER_RIPPLE_MODE,
   lockGlobalScroll,
 }: NebkitProviderProps): ReactElement => {
   const { lock, unlock } = useGlobalScrollLock()
@@ -82,14 +82,14 @@ export const NebkitProvider = ({
   useLayoutEffect(() => {
     document.documentElement.removeAttribute('data-neb-enable-global-transitions')
 
-    document.documentElement.setAttribute('data-theme', theme || `${DEFAULT_NEBKIT_THEME}`)
-    document.documentElement.setAttribute('data-brand', brand || `${DEFAULT_NEBKIT_BRAND}`)
-    document.documentElement.setAttribute('data-saturation', saturation || `${DEFAULT_NEBKIT_SATURATION}`)
-    document.documentElement.setAttribute('data-ripple-mode', rippleMode || `${DEFAULT_NEBKIT_RIPPLE_MODE}`)
+    document.documentElement.setAttribute('data-theme', theme || `${DEFAULT_NEBKIT_PROVIDER_THEME}`)
+    document.documentElement.setAttribute('data-brand', brand || `${DEFAULT_NEBKIT_PROVIDER_BRAND}`)
+    document.documentElement.setAttribute('data-saturation', saturation || `${DEFAULT_NEBKIT_PROVIDER_SATURATION}`)
+    document.documentElement.setAttribute('data-ripple-mode', rippleMode || `${DEFAULT_NEBKIT_PROVIDER_RIPPLE_MODE}`)
 
     document.documentElement.style.setProperty(
       '--neb-border-radius',
-      NEBKIT_SIZES_MAP.borderRadiusSize[borderRadiusSize || 'md'] || ''
+      NEBKIT_PROVIDER_SIZES_MAP.borderRadiusSize[borderRadiusSize || 'md'] || ''
     )
 
     scheduleEnableGlobalTransitions()

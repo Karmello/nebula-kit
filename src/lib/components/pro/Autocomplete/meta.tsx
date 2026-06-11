@@ -1,4 +1,4 @@
-import { BOX_INTENTS } from 'lib/components/core/Box'
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import { BOX_META } from 'lib/components/core/Box/meta'
 import {
   DEFAULT_DROPDOWN_LIST_PLACEMENT,
@@ -7,7 +7,7 @@ import {
   DROPDOWN_LIST_PLACEMENTS,
   DROPDOWN_LIST_SCROLL_ALIGN,
 } from 'lib/components/shared'
-import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { Autocomplete, AutocompleteOptionProps, AutocompleteProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
@@ -41,7 +41,7 @@ export const AUTOCOMPLETE_META = {
         description: 'Option slots rendered.',
       },
       color: {
-        options: COLORS,
+        options: BOX_COLORS,
         description: 'Color applied to the component.',
       },
       debounceDelay: {

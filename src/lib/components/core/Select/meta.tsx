@@ -1,9 +1,9 @@
 import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from 'lib/components/shared'
-import { COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { Select, SelectOptionProps, SelectProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
-import { BOX_INTENTS } from '../Box'
+import { BOX_COLORS, BOX_INTENTS } from '../Box/constants'
 import { BOX_META } from '../Box/meta'
 import { DEFAULT_SELECT_INLINE_SIZE, DEFAULT_SELECT_INTENT, DEFAULT_SELECT_VARIANT, SELECT_VARIANTS } from './constants'
 
@@ -32,7 +32,7 @@ export const SELECT_META = {
         description: 'Option slots rendered.',
       },
       color: {
-        options: COLORS,
+        options: BOX_COLORS,
         description: 'Color applied to the component.',
       },
       defaultValue: {

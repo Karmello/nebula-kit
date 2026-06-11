@@ -1,9 +1,9 @@
 import { useCallback, useMemo } from 'react'
 
+import { type IconName } from 'lib/components/core/Icon/definitions'
 import { CONTROL_SIZE_MAP } from 'lib/constants'
 import { Box, Button, Flex, Icon, Link, Segment } from 'lib/index.core'
 import { PaginationProps } from 'lib/index.pro'
-import { IconName } from 'lib/types'
 
 import {
   DEFAULT_PAGINATION_BOUNDARY_COUNT,

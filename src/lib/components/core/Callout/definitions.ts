@@ -1,7 +1,8 @@
-import { CalloutTag, IconName, TShirtSize } from 'lib/types'
+import { CalloutTag, TShirtSize } from 'lib/types'
 
-import { BoxColor, BoxProps, BoxVariant } from '../Box'
-import { TextTypography } from '../Text'
+import type { BoxColor, BoxProps, BoxVariant } from '../Box/types'
+import { type IconName } from '../Icon/definitions'
+import type { TextTypography } from '../Text/types'
 
 export const CALLOUT_SIZE_CONFIG: Record<
   CalloutSize,

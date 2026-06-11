@@ -6,10 +6,10 @@ import { useScreen } from 'lib/hooks'
 import { getSvgIconComponent } from 'lib/icons/lucide'
 import { IconProps } from 'lib/index.core'
 import { syncRespDataset } from 'lib/internals/dom'
-import { CssValue, IconName } from 'lib/types'
+import type { CssValue } from 'lib/types'
 
 import { Box } from '../Box'
-import { DEFAULT_ICON_SIZE, IconSize } from './definitions'
+import { DEFAULT_ICON_SIZE, type IconName, type IconSize } from './definitions'
 
 export const Icon = memo(
   ({

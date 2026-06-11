@@ -1,8 +1,8 @@
-import { BREADCRUMB_TAGS, COLORS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { BREADCRUMB_TAGS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
 import { Breadcrumb, BreadcrumbProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { BOX_INTENTS } from '../../core/Box/constants'
+import { BOX_COLORS, BOX_INTENTS } from '../../core/Box/constants'
 import { BOX_META } from '../../core/Box/meta'
 import { DEFAULT_BREADCRUMB_INTENT } from './definitions'
 
@@ -71,7 +71,7 @@ export const BREADCRUMB_META = {
     },
     props: {
       color: {
-        options: COLORS,
+        options: BOX_COLORS,
         description: 'Color applied to the component.',
       },
       defaultPath: {
