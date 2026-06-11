@@ -49,12 +49,7 @@ expectError(<Button align="between">Button</Button>)
 
 // valid responsive props
 expectType(
-  <Button
-    variant={{ base: 'solid', md: 'ghost' }}
-    intent={{ base: 'primary', lg: 'secondary' }}
-    inlineSize={{ base: '100%', md: '200px' }}
-    fullWidth={{ base: true, md: false }}
-  >
+  <Button inlineSize={{ base: '100%', md: '200px' }} fullWidth={{ base: true, md: false }}>
     Button
   </Button>
 )

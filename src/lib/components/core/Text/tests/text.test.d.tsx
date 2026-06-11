@@ -110,8 +110,7 @@ expectError(<Text textAlign="wrong">text</Text>)
 
 expectType(<Text intent="primary">text</Text>)
 expectType(<Text color="blue">text</Text>)
-
-expectType(<Text color={{ md: 'red' }}>text</Text>)
+expectType(<Text color="red">text</Text>)
 
 expectError(<Text intent="wrong">text</Text>)
 expectError(<Text color="wrong">text</Text>)

@@ -48,12 +48,6 @@ expectType(
 // responsive inherited props
 //
 
-expectType(<Textarea color={{ base: 'blue', lg: 'red' }} />)
-
-expectType(<Textarea intent={{ base: 'primary', lg: 'secondary' }} />)
-
-expectType(<Textarea variant={{ base: 'ghost', lg: 'outline' }} />)
-
 expectType(<Textarea inlineSize={{ base: '100%', lg: '600px' }} />)
 
 //

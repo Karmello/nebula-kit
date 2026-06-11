@@ -81,11 +81,6 @@ expectError(<Callout tagRef={createRef<HTMLAnchorElement>()} content="Content" /
 
 expectError(<Callout tag="div" tagRef={createRef<HTMLButtonElement>()} content="Content" />)
 
-// responsive props
-expectType(<Callout content="Content" intent={{ base: 'primary', md: 'secondary' }} />)
-
-expectType(<Callout content="Content" variant={{ base: 'solid', lg: 'outline' }} />)
-
 // invalid responsive breakpoint
 expectError(<Callout content="Content" intent={{ mobile: 'primary' }} />)
 

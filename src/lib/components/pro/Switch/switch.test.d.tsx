@@ -96,7 +96,7 @@ expectType(<Switch color="red" />)
 expectType(<Switch color="pink" />)
 expectType(<Switch color="amber" />)
 
-expectType(<Switch color={{ md: 'blue' }} />)
+expectType(<Switch color="blue" />)
 
 expectError(<Switch color="wrong" />)
 
@@ -113,7 +113,7 @@ expectType(<Switch intent="tertiary" />)
 expectType(<Switch intent="secondary" />)
 expectType(<Switch intent="primary" />)
 
-expectType(<Switch intent={{ lg: 'primary' }} />)
+expectType(<Switch intent="primary" />)
 
 // intentionally narrowed union
 expectError(<Switch intent="neutral" />)

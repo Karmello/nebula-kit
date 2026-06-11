@@ -28,10 +28,10 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   drawable?: boolean
   elevated?: boolean
   theme?: RespValue<BoxTheme>
-  brand?: RespValue<BoxColor>
-  color?: RespValue<BoxColor>
-  variant?: RespValue<BoxVariant>
-  intent?: RespValue<BoxIntent>
+  brand?: BoxColor
+  color?: BoxColor
+  variant?: BoxVariant
+  intent?: BoxIntent
   // interaction
   interactive?: boolean
   surface?: BoxSurface

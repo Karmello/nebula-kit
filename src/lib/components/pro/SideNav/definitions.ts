@@ -1,6 +1,5 @@
 import { BoxVariant } from 'lib/components/core/Box'
 import { ButtonProps, FlexProps } from 'lib/index.core'
-import { RespValue } from 'lib/types'
 
 export const SIDE_NAV_EXPAND_MODES = ['single', 'multiple'] as const
 export const SIDE_NAV_VARIANTS = ['solid', 'ghost'] as const satisfies BoxVariant[]
@@ -24,5 +23,5 @@ export type SideNavProps = PropsFromFlex &
   PropsFromButton &
   SideNavOwnProps & {
     children: FlexProps<'nav'>['children']
-    variant?: RespValue<SideNavVariant>
+    variant?: SideNavVariant
   }

@@ -38,8 +38,6 @@ expectError(<Divider color="purple" />)
 // responsive props allowed
 expectType(
   <Divider
-    intent={{ base: 'muted', md: 'primary' }}
-    color={{ base: 'gray', lg: 'blue' }}
     marginBlock={{ base: 'xs', md: 'lg' }}
     marginTop={{ base: '5px', xl: '20px' }}
     marginBottom={{ base: 'sm', md: '2rem' }}

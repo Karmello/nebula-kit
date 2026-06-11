@@ -79,8 +79,6 @@ expectType(<PasswordInput color="red" />)
 expectType(<PasswordInput color="pink" />)
 expectType(<PasswordInput color="amber" />)
 
-expectType(<PasswordInput color={{ md: 'blue' }} />)
-
 expectError(<PasswordInput color="wrong" />)
 
 expectError(<PasswordInput color={{ md: 'wrong' }} />)
@@ -98,8 +96,6 @@ expectType(<PasswordInput intent="secondary" />)
 expectType(<PasswordInput intent="primary" />)
 expectType(<PasswordInput intent="inverse" />)
 
-expectType(<PasswordInput intent={{ lg: 'primary' }} />)
-
 expectError(<PasswordInput intent="wrong" />)
 
 expectError(<PasswordInput intent={{ md: 'wrong' }} />)
@@ -114,8 +110,6 @@ expectType(<PasswordInput variant="solid" />)
 expectType(<PasswordInput variant="outline" />)
 expectType(<PasswordInput variant="soft-outline" />)
 expectType(<PasswordInput variant="ghost" />)
-
-expectType(<PasswordInput variant={{ md: 'outline' }} />)
 
 expectError(<PasswordInput variant="wrong" />)
 

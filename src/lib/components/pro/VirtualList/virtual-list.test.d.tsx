@@ -187,7 +187,7 @@ expectError(
 
 expectType(<VirtualList items={['a']} itemBlockSize={40} visibleItemsCount={5} color="blue" renderItem={item => item} />)
 
-expectType(<VirtualList items={['a']} itemBlockSize={40} visibleItemsCount={5} color={{ md: 'red' }} renderItem={item => item} />)
+expectType(<VirtualList items={['a']} itemBlockSize={40} visibleItemsCount={5} color="red" renderItem={item => item} />)
 
 expectError(<VirtualList items={['a']} itemBlockSize={40} visibleItemsCount={5} color="wrong" renderItem={item => item} />)
 
@@ -197,9 +197,7 @@ expectError(<VirtualList items={['a']} itemBlockSize={40} visibleItemsCount={5} 
 
 expectType(<VirtualList items={['a']} itemBlockSize={40} visibleItemsCount={5} intent="primary" renderItem={item => item} />)
 
-expectType(
-  <VirtualList items={['a']} itemBlockSize={40} visibleItemsCount={5} intent={{ lg: 'inverse' }} renderItem={item => item} />
-)
+expectType(<VirtualList items={['a']} itemBlockSize={40} visibleItemsCount={5} intent="inverse" renderItem={item => item} />)
 
 expectError(<VirtualList items={['a']} itemBlockSize={40} visibleItemsCount={5} intent="wrong" renderItem={item => item} />)
 

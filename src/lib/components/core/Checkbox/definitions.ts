@@ -1,5 +1,5 @@
 import { CONTROL_SIZE_MAP } from 'lib/constants'
-import { RespValue, TShirtSize } from 'lib/types'
+import { TShirtSize } from 'lib/types'
 
 import { BoxProps, BoxVariant } from '../Box'
 
@@ -23,7 +23,7 @@ export type CheckboxSize = (typeof CHECKBOX_SIZES)[number]
 type PropsFromBox = Pick<BoxProps<'input'>, 'tagAttrs' | 'tagRef' | 'intent' | 'color' | 'disabled'>
 
 type CheckboxOwnProps = {
-  variant?: RespValue<CheckboxVariant>
+  variant?: CheckboxVariant
   size?: CheckboxSize
   checked?: boolean
   defaultChecked?: boolean

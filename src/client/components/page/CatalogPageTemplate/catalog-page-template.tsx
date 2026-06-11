@@ -61,7 +61,6 @@ export const CatalogPageTemplate = memo(
                               }
                               navigateTo(href)
                             }}
-                            intent={{ base: 'tertiary', lg: 'neutral' }}
                             selected={isItemSelected}
                             bold={isItemSelected}
                           >
@@ -107,7 +106,6 @@ export const CatalogPageTemplate = memo(
                                   }
                                   navigateTo(href)
                                 }}
-                                intent={{ base: 'tertiary', lg: 'neutral' }}
                                 selected={isItemSelected}
                                 bold={isItemSelected}
                               >

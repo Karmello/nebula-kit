@@ -44,14 +44,7 @@ expectType(<Icon name="check" color="amber" />)
 expectError(<Icon name="check" color="purple" />)
 
 // responsive props allowed
-expectType(
-  <Icon
-    name={{ base: 'check', md: 'search' }}
-    size={{ base: 'sm', lg: '24px' }}
-    intent={{ base: 'muted', md: 'primary' }}
-    color={{ base: 'gray', xl: 'blue' }}
-  />
-)
+expectType(<Icon name={{ base: 'check', md: 'search' }} size={{ base: 'sm', lg: '24px' }} />)
 
 // invalid responsive breakpoint
 expectError(<Icon size={{ mobile: 'sm' }} />)

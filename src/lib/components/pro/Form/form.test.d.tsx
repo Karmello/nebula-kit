@@ -291,12 +291,7 @@ expectType(
 //
 
 expectType(
-  <Form.ActionButton
-    type="submit"
-    variant={{ base: 'solid', lg: 'outline' }}
-    intent={{ base: 'primary', lg: 'secondary' }}
-    flex={{ base: '1', lg: '0' }}
-  >
+  <Form.ActionButton type="submit" variant="solid" intent="primary" flex={{ base: '1', lg: '0' }}>
     Submit
   </Form.ActionButton>
 )
@@ -332,7 +327,7 @@ expectType(<Form.ActionButton padding="md">Save</Form.ActionButton>)
 //
 
 expectType(
-  <Form.Label color={{ base: 'blue', lg: 'red' }} intent={{ base: 'primary', lg: 'secondary' }}>
+  <Form.Label color="blue" intent="primary">
     Label
   </Form.Label>
 )
@@ -346,7 +341,7 @@ expectError(<Form.Label variant="solid">Label</Form.Label>)
 //
 
 expectType(
-  <Form.Hint color={{ base: 'blue', lg: 'red' }} intent={{ base: 'secondary', lg: 'primary' }}>
+  <Form.Hint color="gray" intent="secondary">
     Hint
   </Form.Hint>
 )

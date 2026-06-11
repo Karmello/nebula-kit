@@ -203,19 +203,6 @@ expectError(
   </Section>
 )
 
-// responsive props
-expectType(
-  <Section
-    heading="Heading"
-    color={{ base: 'gray', md: 'blue' }}
-    intent={{ base: 'muted', lg: 'primary' }}
-    headingIntent={{ base: 'secondary', xl: 'inverse' }}
-    variant={{ base: 'ghost', md: 'outline' }}
-  >
-    Content
-  </Section>
-)
-
 // invalid responsive breakpoint
 expectError(
   <Section heading="Heading" intent={{ mobile: 'primary' }}>

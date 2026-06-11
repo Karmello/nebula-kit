@@ -63,17 +63,13 @@ expectError(<MarkerList color="purple">children</MarkerList>)
 expectError(<MarkerList intent="danger">children</MarkerList>)
 
 // responsive props
-expectType(
-  <MarkerList color={{ base: 'gray', md: 'blue' }} intent={{ base: 'muted', lg: 'primary' }} gap={{ base: '2xs', md: '24px' }}>
-    children
-  </MarkerList>
-)
+expectType(<MarkerList gap={{ base: '2xs', md: '24px' }}>children</MarkerList>)
 
 // invalid responsive breakpoint
 expectError(<MarkerList gap={{ mobile: 'sm' }}>children</MarkerList>)
 
 // invalid responsive enum value
-expectError(<MarkerList intent={{ base: 'primary', md: 'danger' }}>children</MarkerList>)
+expectError(<MarkerList intent="danger">children</MarkerList>)
 
 // tagAttrs
 expectType(
@@ -95,7 +91,7 @@ expectType(
 )
 
 expectType(
-  <MarkerList.Item color={{ base: 'gray', md: 'blue' }} intent={{ base: 'muted', md: 'primary' }}>
+  <MarkerList.Item color="blue" intent="muted">
     Item
   </MarkerList.Item>
 )

@@ -58,25 +58,21 @@ export const BOX_META = {
       brand: {
         group: PROP_GROUPS.SURFACE,
         options: COLORS,
-        isResponsive: true,
         description: 'Default surface color context for the component and its descendants.',
       },
       color: {
         group: PROP_GROUPS.SURFACE,
         options: COLORS,
-        isResponsive: true,
         description: 'Color applied to the component.',
       },
       variant: {
         group: PROP_GROUPS.SURFACE,
         options: BOX_VARIANTS,
-        isResponsive: true,
         description: 'Visual style variant.',
       },
       intent: {
         group: PROP_GROUPS.SURFACE,
         options: BOX_INTENTS,
-        isResponsive: true,
         description: "Color tone applied to the component's main color.",
       },
       interactive: {

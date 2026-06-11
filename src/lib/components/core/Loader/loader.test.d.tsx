@@ -39,8 +39,8 @@ expectType(<Loader size="2xl" />)
 expectType(<Loader size="120px" />)
 expectType(<Loader size="4rem" />)
 
-// responsive color allowed
-expectType(<Loader color={{ base: 'gray', md: 'blue' }} />)
+// responsive color not allowed
+expectError(<Loader color={{ base: 'gray', md: 'blue' }} />)
 
 // invalid responsive breakpoint
 expectError(<Loader color={{ mobile: 'blue' }} />)

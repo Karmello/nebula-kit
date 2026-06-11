@@ -1,5 +1,4 @@
 import { ButtonProps, LinkProps } from 'lib/index.core'
-import { RespValue } from 'lib/types'
 
 import { SideNavVariant } from '../../definitions'
 
@@ -18,7 +17,7 @@ type PropsFromButton = Pick<
   | 'selected'
 > & {
   children: ButtonProps<'a'>['children']
-  variant?: RespValue<SideNavVariant>
+  variant?: SideNavVariant
 }
 
 type PropsFromLink = Pick<LinkProps, 'href' | 'onClick'>

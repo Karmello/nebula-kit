@@ -72,12 +72,7 @@ export const PatternsPage = () => {
                   </Flex>
                 </SplitView.Main>
                 <SplitView.Side inlineSize="350px" paddingRight={{ lg: 'md' }}>
-                  <MultiSelect
-                    value={patternCategories}
-                    onChange={setPatternCategories}
-                    intent={{ base: 'tertiary', lg: 'neutral' }}
-                    size="sm"
-                  >
+                  <MultiSelect value={patternCategories} onChange={setPatternCategories} size="sm">
                     {PATTERN_CATEGORIES.map(c => (
                       <MultiSelect.Option key={c} value={c}>
                         {c}
@@ -85,7 +80,7 @@ export const PatternsPage = () => {
                     ))}
                   </MultiSelect>
                   <Spacer blockSize="sm" />
-                  <SideNav size="xl" gap="3xs" intent={{ base: 'tertiary', lg: 'muted' }}>
+                  <SideNav size="xl" gap="3xs">
                     {PATTERNS.filter(p => patternCategories.includes(p.category)).map(({ id, title }) => {
                       const href = `/patterns?id=${id}`
 

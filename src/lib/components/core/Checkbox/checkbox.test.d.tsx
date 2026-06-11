@@ -27,16 +27,6 @@ expectType(
 )
 
 //
-// responsive inherited props
-//
-
-expectType(<Checkbox color={{ base: 'blue', lg: 'red' }} />)
-
-expectType(<Checkbox intent={{ base: 'primary', lg: 'secondary' }} />)
-
-expectType(<Checkbox variant={{ base: 'outline', lg: 'solid' }} />)
-
-//
 // enum validation
 //
 

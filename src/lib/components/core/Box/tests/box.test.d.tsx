@@ -75,7 +75,7 @@ expectType(<Box variant="outline" />)
 expectType(<Box variant="soft-outline" />)
 expectType(<Box variant="ghost" />)
 
-expectType(<Box variant={{ md: 'solid' }} />)
+expectType(<Box variant="solid" />)
 
 expectError(<Box variant="wrong" />)
 
@@ -93,8 +93,7 @@ expectType(<Box intent="tertiary" />)
 expectType(<Box intent="secondary" />)
 expectType(<Box intent="primary" />)
 expectType(<Box intent="inverse" />)
-
-expectType(<Box intent={{ lg: 'primary' }} />)
+expectType(<Box intent="primary" />)
 
 expectError(<Box intent="wrong" />)
 
@@ -119,8 +118,7 @@ expectError(<Box theme="wrong" />)
 
 expectType(<Box color="blue" />)
 expectType(<Box brand="green" />)
-
-expectType(<Box color={{ md: 'red' }} />)
+expectType(<Box color="red" />)
 
 expectError(<Box color="wrong" />)
 expectError(<Box brand="wrong" />)

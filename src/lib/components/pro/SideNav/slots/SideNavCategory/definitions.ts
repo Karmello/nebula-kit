@@ -1,5 +1,4 @@
 import { BoxProps, ButtonProps } from 'lib/index.core'
-import { RespValue } from 'lib/types'
 
 import { SideNavVariant } from '../../definitions'
 
@@ -14,7 +13,7 @@ type SideNavCategoryOwnProps = {
 
 type PropsFromBox = Pick<BoxProps<'ul'>, 'tagAttrs' | 'tagRef'> & {
   children: BoxProps<'ul'>['children']
-  variant?: RespValue<SideNavVariant>
+  variant?: SideNavVariant
 }
 
 type PropsFromButton = Pick<ButtonProps<'button'>, 'color' | 'intent' | 'align' | 'bold'>

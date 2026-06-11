@@ -192,9 +192,6 @@ export const Box = <T extends ElementType = 'div'>({
   useLayoutEffect(() => {
     syncRespDataset('Box', finalRef, bp, {
       theme: resolvedAppearance.theme,
-      color: resolvedAppearance.color,
-      variant,
-      intent,
       hidden,
     })
   }, [bp, tag, resolvedAppearance.theme, resolvedAppearance.color, variant, intent, hidden])
@@ -221,6 +218,9 @@ export const Box = <T extends ElementType = 'div'>({
                 disabled,
                 activeOnFocus,
                 ripple: usesRipple,
+                color: resolvedAppearance.color,
+                variant,
+                intent,
               }),
             } as PropsWithoutRef<ComponentProps<T>>
           }

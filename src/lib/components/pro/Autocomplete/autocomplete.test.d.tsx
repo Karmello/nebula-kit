@@ -64,7 +64,7 @@ expectType(
 //
 
 expectType(
-  <Autocomplete color={{ base: 'blue', lg: 'red' }}>
+  <Autocomplete color="blue">
     <Autocomplete.Option value="pl" label="Poland">
       Poland
     </Autocomplete.Option>
@@ -72,7 +72,7 @@ expectType(
 )
 
 expectType(
-  <Autocomplete intent={{ base: 'primary', lg: 'secondary' }}>
+  <Autocomplete intent="primary">
     <Autocomplete.Option value="pl" label="Poland">
       Poland
     </Autocomplete.Option>

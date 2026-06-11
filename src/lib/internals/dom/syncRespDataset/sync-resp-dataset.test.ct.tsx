@@ -26,7 +26,7 @@ test('responsive semantic dataset updates with breakpoint changes', async ({ mou
   await page.setViewportSize({ width: 375, height: 800 }) // base
 
   await mount(
-    <Box tagAttrs={{ id: 'box' }} intent={{ base: 'primary', md: 'secondary' }}>
+    <Box tagAttrs={{ id: 'box' }} theme={{ base: 'light', md: 'dark' }}>
       Responsive
     </Box>
   )
@@ -34,13 +34,13 @@ test('responsive semantic dataset updates with breakpoint changes', async ({ mou
   const box = page.locator('#box')
 
   // base
-  await expect(box).toHaveAttribute('data-neb-box-intent', 'primary')
+  await expect(box).toHaveAttribute('data-neb-box-theme', 'light')
 
   // md
   await page.setViewportSize({ width: 800, height: 800 })
-  await expect(box).toHaveAttribute('data-neb-box-intent', 'secondary')
+  await expect(box).toHaveAttribute('data-neb-box-theme', 'dark')
 
   // lg (override persists)
   await page.setViewportSize({ width: 1200, height: 800 })
-  await expect(box).toHaveAttribute('data-neb-box-intent', 'secondary')
+  await expect(box).toHaveAttribute('data-neb-box-theme', 'dark')
 })

@@ -40,11 +40,7 @@ expectType<React.JSX.Element>(
 )
 
 expectType<React.JSX.Element>(
-  <MultiSelect
-    color={{ base: 'gray', md: 'blue' }}
-    intent={{ base: 'tertiary', lg: 'primary' }}
-    inlineSize={{ base: '100%', md: '2xl' }}
-  >
+  <MultiSelect color="blue" intent="tertiary" inlineSize={{ base: '100%', md: '2xl' }}>
     <MultiSelect.Option value="one">One</MultiSelect.Option>
   </MultiSelect>
 )

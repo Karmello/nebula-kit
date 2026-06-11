@@ -177,7 +177,7 @@ expectError(
 
 // responsive props
 expectType(
-  <Reveal color={{ base: 'gray', md: 'blue' }} intent={{ base: 'muted', lg: 'primary' }} label="Label">
+  <Reveal color="blue" intent="primary" label="Label">
     children
   </Reveal>
 )

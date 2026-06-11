@@ -1,4 +1,4 @@
-import { CalloutTag, IconName, RespValue, TShirtSize } from 'lib/types'
+import { CalloutTag, IconName, TShirtSize } from 'lib/types'
 
 import { BoxColor, BoxProps, BoxVariant } from '../Box'
 import { TextTypography } from '../Text'
@@ -42,7 +42,7 @@ type CalloutOwnProps = {
   content: string
   heading?: string
   size?: CalloutSize
-  variant?: RespValue<CalloutVariant>
+  variant?: CalloutVariant
   status?: CalloutStatus
 }
 

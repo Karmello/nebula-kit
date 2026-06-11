@@ -45,16 +45,6 @@ expectType(
 )
 
 //
-// responsive inherited props
-//
-
-expectType(<Input color={{ base: 'blue', lg: 'red' }} />)
-
-expectType(<Input intent={{ base: 'primary', lg: 'secondary' }} />)
-
-expectType(<Input variant={{ base: 'ghost', lg: 'outline' }} />)
-
-//
 // intentionally NON-responsive props
 //
 

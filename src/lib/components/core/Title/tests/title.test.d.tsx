@@ -65,7 +65,7 @@ expectType(<Title customSvgIcon={<svg />}>Title</Title>)
 
 expectType(<Title color="blue">Title</Title>)
 
-expectType(<Title color={{ md: 'red' }}>Title</Title>)
+expectType(<Title color="red">Title</Title>)
 
 expectError(<Title color="wrong">Title</Title>)
 
@@ -75,7 +75,7 @@ expectError(<Title color="wrong">Title</Title>)
 
 expectType(<Title intent="primary">Title</Title>)
 
-expectType(<Title intent={{ md: 'secondary' }}>Title</Title>)
+expectType(<Title intent="secondary">Title</Title>)
 
 expectError(<Title intent="wrong">Title</Title>)
 

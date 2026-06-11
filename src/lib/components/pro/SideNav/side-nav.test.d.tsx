@@ -141,7 +141,7 @@ expectType(
 )
 
 expectType(
-  <SideNav color={{ md: 'red' }}>
+  <SideNav color="red">
     <SideNav.Item href="/a">A</SideNav.Item>
   </SideNav>
 )
@@ -163,7 +163,7 @@ expectType(
 )
 
 expectType(
-  <SideNav intent={{ lg: 'inverse' }}>
+  <SideNav intent="inverse">
     <SideNav.Item href="/a">A</SideNav.Item>
   </SideNav>
 )
@@ -192,7 +192,7 @@ expectType(
 
 // responsive
 expectType(
-  <SideNav variant={{ md: 'solid' }}>
+  <SideNav variant="solid">
     <SideNav.Item href="/a">A</SideNav.Item>
   </SideNav>
 )
@@ -282,7 +282,7 @@ expectType(
 )
 
 expectType(
-  <SideNav.Item href="/x" variant={{ md: 'ghost' }}>
+  <SideNav.Item href="/x" variant="ghost">
     Item
   </SideNav.Item>
 )
@@ -396,7 +396,7 @@ expectType(
 )
 
 expectType(
-  <SideNav.Category label="Category" variant={{ md: 'ghost' }}>
+  <SideNav.Category label="Category" variant="ghost">
     <SideNav.Item href="/x">Item</SideNav.Item>
   </SideNav.Category>
 )

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
 import { TitleProps } from 'lib/index.core'
-import { RespValue, SectionTag, TShirtSize } from 'lib/types'
+import { SectionTag, TShirtSize } from 'lib/types'
 
 import { BoxProps, BoxVariant } from '../Box'
 import { TextProps, TextTypography } from '../Text'
@@ -35,7 +35,7 @@ type SectionOwnProps = {
   heading: ReactNode
   headingIntent?: TextProps['intent']
   size?: SectionSize
-  variant?: RespValue<SectionVariant>
+  variant?: SectionVariant
 }
 
 type PropsFromBox<T extends SectionTag = 'section'> = Pick<

@@ -161,7 +161,7 @@ expectType(<Pagination currentPage={1} totalPages={10} onChange={() => null} />)
 
 expectType(<Pagination currentPage={1} totalPages={10} onChange={() => null} color="blue" />)
 
-expectType(<Pagination currentPage={1} totalPages={10} onChange={() => null} color={{ md: 'red' }} />)
+expectType(<Pagination currentPage={1} totalPages={10} onChange={() => null} color="red" />)
 
 expectError(<Pagination currentPage={1} totalPages={10} onChange={() => null} color="wrong" />)
 
@@ -171,7 +171,7 @@ expectError(<Pagination currentPage={1} totalPages={10} onChange={() => null} co
 
 expectType(<Pagination currentPage={1} totalPages={10} onChange={() => null} intent="neutral" />)
 
-expectType(<Pagination currentPage={1} totalPages={10} onChange={() => null} intent={{ lg: 'inverse' }} />)
+expectType(<Pagination currentPage={1} totalPages={10} onChange={() => null} intent="inverse" />)
 
 expectError(<Pagination currentPage={1} totalPages={10} onChange={() => null} intent="wrong" />)
 
@@ -181,7 +181,7 @@ expectError(<Pagination currentPage={1} totalPages={10} onChange={() => null} in
 
 expectType(<Pagination currentPage={1} totalPages={10} onChange={() => null} variant="solid" />)
 
-expectType(<Pagination currentPage={1} totalPages={10} onChange={() => null} variant={{ md: 'outline' }} />)
+expectType(<Pagination currentPage={1} totalPages={10} onChange={() => null} variant="outline" />)
 
 expectError(<Pagination currentPage={1} totalPages={10} onChange={() => null} variant="wrong" />)
 

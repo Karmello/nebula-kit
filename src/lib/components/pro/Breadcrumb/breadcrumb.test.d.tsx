@@ -167,7 +167,7 @@ expectType(<Breadcrumb tree={[]} onChange={() => null} />)
 
 expectType(<Breadcrumb tree={[]} color="blue" />)
 
-expectType(<Breadcrumb tree={[]} color={{ md: 'red' }} />)
+expectType(<Breadcrumb tree={[]} color="red" />)
 
 expectError(<Breadcrumb tree={[]} color="wrong" />)
 
@@ -181,7 +181,7 @@ expectType(<Breadcrumb tree={[]} intent="neutral" />)
 
 expectType(<Breadcrumb tree={[]} intent="primary" />)
 
-expectType(<Breadcrumb tree={[]} intent={{ lg: 'inverse' }} />)
+expectType(<Breadcrumb tree={[]} intent="inverse" />)
 
 expectError(<Breadcrumb tree={[]} intent="wrong" />)
 
