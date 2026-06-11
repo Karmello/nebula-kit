@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react'
 
-import { Box, Button, PortalProps } from 'lib/components'
 import { HTML_TAG_META } from 'lib/components/core/HtmlTag/meta'
+import { Box, Button } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
-import { PORTAL_PLACEMENTS } from './definitions'
+import { PORTAL_PLACEMENTS, type PortalProps } from './definitions'
 import { DEFAULT_PORTAL_PLACEMENT, Portal } from './portal'
 
 const PortalWrapper = ({ placement }: Partial<PortalProps>) => {

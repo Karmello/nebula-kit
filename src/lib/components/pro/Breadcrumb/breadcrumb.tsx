@@ -5,7 +5,7 @@ import { DropdownList } from 'lib/components/shared'
 import { CONTROL_SIZE_MAP } from 'lib/constants'
 import { Box, Flex, Icon, Text } from 'lib/index.core'
 import { BreadcrumbProps } from 'lib/index.pro'
-import { BreadcrumbTag } from 'lib/types'
+import { type BreadcrumbTag } from 'lib/types'
 
 import { DEFAULT_BREADCRUMB_INTENT, DEFAULT_BREADCRUMB_SIZE } from './definitions'
 import { convertTreeToLevels } from './helpers'

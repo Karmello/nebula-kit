@@ -7,7 +7,7 @@ import { withPrefix } from 'lib/helpers'
 import { Box } from 'lib/index.core'
 import { useAnchoredPosition } from 'lib/internals/positioning'
 
-import { PortalProps } from './definitions'
+import { type PortalProps } from './definitions'
 
 export const DEFAULT_PORTAL_PLACEMENT: PortalProps['placement'] = 'bottom-start'
 

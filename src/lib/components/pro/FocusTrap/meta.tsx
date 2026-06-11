@@ -1,10 +1,11 @@
 import { useRef } from 'react'
 
-import { Button, Flex, FocusTrap, FocusTrapProps } from 'lib/components'
-import { HTML_TAG_META } from 'lib/components/core/HtmlTag/meta'
+import { Button, Flex } from 'lib/index.core'
+import { FocusTrap } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK } from './definitions'
+import { HTML_TAG_META } from '../../core/HtmlTag/meta'
+import { DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK, type FocusTrapProps } from './definitions'
 
 const FocusTrapWrapper = () => {
   const ref = useRef(null)
