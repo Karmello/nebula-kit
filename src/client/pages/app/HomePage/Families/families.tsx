@@ -58,13 +58,13 @@ export const Families = () => {
       <Family
         heading="Layout"
         description="Powerful layout components make arranging UI straightforward by using well-known techniques like Flexbox or CSS Grid."
-        iconName="puzzle"
+        iconName="panel-top-bottom-dashed"
         components={['Flex', 'Grid']}
       />
       <Family
         heading="Overlays"
         description="Overlay components handle layered UI patterns like dialogs, tooltips and floating surfaces."
-        iconName="panel-top-bottom-dashed"
+        iconName="layers"
         components={['Dialog', 'Tooltip']}
       />
       <Family
