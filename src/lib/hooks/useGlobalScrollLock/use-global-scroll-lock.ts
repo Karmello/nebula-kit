@@ -3,10 +3,12 @@ import { useCallback, useRef } from 'react'
 export const useGlobalScrollLock = () => {
   const lockCountRef = useRef(0)
 
-  const html = document.documentElement
-  const body = document.body
-
   const lock = useCallback(() => {
+    if (typeof document === 'undefined') return
+
+    const html = document.documentElement
+    const body = document.body
+
     if (lockCountRef.current === 0) {
       const scrollbarWidth = window.innerWidth - html.clientWidth
 
@@ -21,7 +23,10 @@ export const useGlobalScrollLock = () => {
   }, [])
 
   const unlock = useCallback(() => {
+    if (typeof document === 'undefined') return
     if (lockCountRef.current === 0) return
+
+    const body = document.body
 
     lockCountRef.current -= 1
 
