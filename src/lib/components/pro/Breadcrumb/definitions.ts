@@ -1,6 +1,7 @@
-import { DropdownListProps } from 'lib/components/shared'
 import { type BoxProps } from 'lib/index.core'
-import { BreadcrumbTag, ControlSize } from 'lib/types'
+import type { BreadcrumbTag, ControlSize } from 'lib/types'
+
+import { type DropdownListProps } from '../../shared/DropdownList/definitions'
 
 export const DEFAULT_BREADCRUMB_INTENT: BreadcrumbProps['intent'] = 'muted'
 export const DEFAULT_BREADCRUMB_SIZE: BreadcrumbProps['size'] = 'xs'
