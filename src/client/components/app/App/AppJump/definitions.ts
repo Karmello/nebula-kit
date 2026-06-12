@@ -1,6 +1,6 @@
 import { noCase, pascalCase } from 'change-case'
 
-import { type IconName } from 'lib/components/core/Icon/definitions'
+import { type IconName } from 'lib/components/core/Icon/types'
 import { COMPONENT_CATEGORIES, FOUNDATIONS_CATEGORIES, PageKey } from 'client/definitions'
 
 type Option = {

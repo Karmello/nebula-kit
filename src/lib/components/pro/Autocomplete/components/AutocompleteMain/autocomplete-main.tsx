@@ -2,7 +2,7 @@ import { ReactElement, ReactNode, useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
 import { DropdownList, DropdownListState } from 'lib/components/shared'
-import { CONTROL_SIZE_MAP } from 'lib/constants'
+import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { IconButton, Input, Text } from 'lib/index.core'
 import { AutocompleteOptionProps, AutocompleteProps } from 'lib/index.pro'
@@ -103,7 +103,7 @@ export const AutocompleteMain = ({
       onStateChange={setDropdownListState}
       intent={intent}
       color={color}
-      itemBlockSize={Number(CONTROL_SIZE_MAP[size || 'md'].blockSize.replace('px', ''))}
+      itemBlockSize={Number(CONTROL_SCALE_MAP[size || 'md'].blockSize.replace('px', ''))}
       scrollToIndex={currentItemIndex}
       scrollAlign={scrollAlign}
       visibleItemsCount={visibleItemsCount}
@@ -167,8 +167,8 @@ export const AutocompleteMain = ({
           <DropdownList.Item
             key={index}
             index={index}
-            blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
-            paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
+            blockSize={CONTROL_SCALE_MAP[size || 'md'].blockSize}
+            paddingInline={CONTROL_SCALE_MAP[size || 'md'].fontSize}
             elevated={dropdownListState?.open}
             surface={isSelected ? 'selected' : undefined}
             inlineSize="100%"

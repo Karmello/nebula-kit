@@ -214,19 +214,19 @@ expectError(
 // -------------------------------------
 
 expectType(
-  <Grid gap="md" rowGap="5px" columnGap="xl">
+  <Grid gap="24px" rowGap="5px" columnGap="48px">
     <Box />
   </Grid>
 )
 
 expectType(
-  <Grid gap={{ md: 'lg' }}>
+  <Grid gap={{ md: '48px' }}>
     <Box />
   </Grid>
 )
 
 expectError(
-  <Grid gap={{ wrong: 'md' }}>
+  <Grid gap={{ wrong: '24px' }}>
     <Box />
   </Grid>
 )

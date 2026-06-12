@@ -1,10 +1,10 @@
 import { ComponentPropsWithoutRef } from 'react'
 
 import { FlexProps, IconProps } from 'lib/index.core'
-import { ControlSize, IconButtonTag } from 'lib/types'
+import type { IconButtonTag, TShirtSize } from 'lib/types'
 
 export type IconButtonProps<T extends IconButtonTag = 'button'> = {
-  size?: ControlSize
+  size?: TShirtSize
   loading?: boolean
   onClick?: ComponentPropsWithoutRef<T>['onClick']
 } & {

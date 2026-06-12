@@ -1,20 +1,12 @@
-import { TShirtSize } from 'lib/types'
+import type { CssValue, Length } from 'lib/types'
 
-import { BoxProps } from '../Box'
+import { type BoxProps } from '../Box'
 
-export const DEFAULT_LOADER_SIZE: LoaderProps['size'] = 'md'
+export const DEFAULT_LOADER_SIZE: LoaderProps['size'] = '24px'
 export const DEFAULT_LOADER_ACTIVE: LoaderProps['active'] = true
 
-export const LOADER_SIZES = ['sm', 'md', 'lg', 'xl', '2xl'] as const satisfies TShirtSize[]
-
-export type LoaderSize = (typeof LOADER_SIZES)[number] | string
-
-type LoaderOwnProps = {
+export type LoaderProps = Pick<BoxProps, 'tagAttrs' | 'tagRef' | 'color'> & {
   active?: boolean
-  size?: LoaderSize
+  size?: Length | CssValue
   centered?: boolean
 }
-
-type PropsFromBox = Pick<BoxProps, 'tagAttrs' | 'tagRef' | 'color'>
-
-export type LoaderProps = PropsFromBox & LoaderOwnProps

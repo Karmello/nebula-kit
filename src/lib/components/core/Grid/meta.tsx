@@ -5,8 +5,8 @@ import {
   CSS_GRID_ITEM_JUSTIFY_SELF,
   CSS_GRID_PLACE_CONTENT,
   CSS_GRID_PLACE_ITEMS,
+  LENGTHS,
   PROP_GROUPS,
-  TSHIRT_SIZES,
 } from 'lib/constants'
 import { Grid, GridItemProps, GridProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
@@ -80,21 +80,21 @@ export const GRID_META = {
       },
       gap: {
         group: PROP_GROUPS.GRID_LAYOUT,
-        options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
+        options: [...LENGTHS, DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Sets the spacing between rows and columns in the grid.',
         link: true,
       },
       rowGap: {
         group: PROP_GROUPS.GRID_LAYOUT,
-        options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
+        options: [...LENGTHS, DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Sets the spacing between grid rows.',
         link: true,
       },
       columnGap: {
         group: PROP_GROUPS.GRID_LAYOUT,
-        options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
+        options: [...LENGTHS, DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Sets the spacing between grid columns.',
         link: true,

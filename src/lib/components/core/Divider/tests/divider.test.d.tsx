@@ -38,9 +38,9 @@ expectError(<Divider color="purple" />)
 // responsive props allowed
 expectType(
   <Divider
-    marginBlock={{ base: 'xs', md: 'lg' }}
+    marginBlock={{ base: '8px', md: '48px' }}
     marginTop={{ base: '5px', xl: '20px' }}
-    marginBottom={{ base: 'sm', md: '2rem' }}
+    marginBottom={{ base: '16px', md: '2rem' }}
   />
 )
 
@@ -71,8 +71,8 @@ expectType(
 expectError(<Divider opacity={0.5} />)
 
 // hidden Box props must not leak
-expectError(<Divider padding="md" />)
-expectError(<Divider margin="md" />)
+expectError(<Divider padding="24px" />)
+expectError(<Divider margin="24px" />)
 expectError(<Divider variant="solid" />)
 expectError(<Divider interactive />)
 expectError(<Divider display="block" />)
@@ -80,4 +80,4 @@ expectError(<Divider inlineSize="100px" />)
 expectError(<Divider blockSize="5px" />)
 expectError(<Divider borderRadius="10px" />)
 expectError(<Divider position="absolute" />)
-expectError(<Divider gap="md" />)
+expectError(<Divider gap="24px" />)

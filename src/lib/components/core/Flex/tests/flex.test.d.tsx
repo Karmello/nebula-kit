@@ -213,19 +213,19 @@ expectError(
 // -------------------------------------
 
 expectType(
-  <Flex gap="md" rowGap="5px" columnGap="xl">
+  <Flex gap="24px" rowGap="5px" columnGap="48px">
     <Box />
   </Flex>
 )
 
 expectType(
-  <Flex gap={{ md: 'lg' }}>
+  <Flex gap={{ md: '48px' }}>
     <Box />
   </Flex>
 )
 
 expectError(
-  <Flex gap={{ wrong: 'md' }}>
+  <Flex gap={{ wrong: '24px' }}>
     <Box />
   </Flex>
 )

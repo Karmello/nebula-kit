@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { IconButton, Input, InputProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
@@ -66,8 +66,8 @@ export const INPUT_META = {
         description: 'Prevents editing the value while keeping the field focusable.',
       },
       size: {
-        options: CONTROL_SIZES,
-        defaultValue: DEFAULT_CONTROL_SIZE,
+        options: TSHIRT_SIZES,
+        defaultValue: DEFAULT_TSHIRT_SIZE,
         description:
           'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
       },

@@ -30,7 +30,7 @@ expectType(
 
 expectType(
   <Form
-    gap={{ base: 'sm', lg: 'lg' }}
+    gap={{ base: '16px', lg: '48px' }}
     flexDirection={{ base: 'column', lg: 'row' }}
     justifyContent={{ base: 'center', lg: 'space-between' }}
     alignItems={{ base: 'stretch', lg: 'center' }}
@@ -121,7 +121,7 @@ expectError(
 //
 
 expectError(
-  <Form gap={{ mobile: 'md' }}>
+  <Form gap={{ mobile: '24px' }}>
     <Form.Fields>
       <Form.Field name="email">
         <Input />
@@ -188,7 +188,7 @@ expectType(
 //
 
 expectType(
-  <Form.Fields gap={{ base: 'sm', lg: 'lg' }} flexDirection={{ base: 'column', lg: 'row' }}>
+  <Form.Fields gap={{ base: '16px', lg: '48px' }} flexDirection={{ base: 'column', lg: 'row' }}>
     <Form.Field name="email">
       <Input />
     </Form.Field>
@@ -216,7 +216,7 @@ expectType(
 //
 
 expectType(
-  <Form.Actions gap={{ base: 'sm', lg: 'lg' }} flexDirection={{ base: 'column', lg: 'row' }}>
+  <Form.Actions gap={{ base: '16px', lg: '48px' }} flexDirection={{ base: 'column', lg: 'row' }}>
     <Form.ActionButton type="submit">Submit</Form.ActionButton>
   </Form.Actions>
 )
@@ -320,7 +320,7 @@ expectError(<Form.ActionButton variant="banana">Save</Form.ActionButton>)
 
 expectError(<Form.ActionButton typography="h1">Save</Form.ActionButton>)
 
-expectType(<Form.ActionButton padding="md">Save</Form.ActionButton>)
+expectType(<Form.ActionButton padding="24px">Save</Form.ActionButton>)
 
 //
 // Form.Label
@@ -332,7 +332,7 @@ expectType(
   </Form.Label>
 )
 
-expectError(<Form.Label margin="md">Label</Form.Label>)
+expectError(<Form.Label margin="24px">Label</Form.Label>)
 
 expectError(<Form.Label variant="solid">Label</Form.Label>)
 
@@ -346,6 +346,6 @@ expectType(
   </Form.Hint>
 )
 
-expectError(<Form.Hint margin="md">Hint</Form.Hint>)
+expectError(<Form.Hint margin="24px">Hint</Form.Hint>)
 
 expectError(<Form.Hint variant="solid">Hint</Form.Hint>)

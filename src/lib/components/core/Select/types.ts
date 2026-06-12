@@ -1,4 +1,4 @@
-import { ControlSize } from 'lib/types'
+import { TShirtSize } from 'lib/types'
 
 import { BoxColor, BoxIntent, BoxProps } from '../Box'
 import { SELECT_VARIANTS } from './constants'
@@ -17,7 +17,7 @@ export type SelectProps = {
   defaultValue?: string
   value?: string
   onChange?: (value: string) => void
-  size?: ControlSize
+  size?: TShirtSize
   visibleItemsCount?: number
   staticLabel?: string
 }

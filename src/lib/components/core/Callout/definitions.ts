@@ -1,22 +1,22 @@
-import { CalloutTag, TShirtSize } from 'lib/types'
+import { CalloutTag, Length, TShirtSize } from 'lib/types'
 
 import type { BoxColor, BoxProps, BoxVariant } from '../Box/types'
-import { type IconName } from '../Icon/definitions'
+import { type IconName } from '../Icon/types'
 import type { TextTypography } from '../Text/types'
 
 export const CALLOUT_SIZE_CONFIG: Record<
-  CalloutSize,
+  TShirtSize,
   {
-    padding: TShirtSize
+    padding: Length
     textTypography: TextTypography
-    spacerBlockSize: TShirtSize
+    spacerBlockSize: Length
   }
 > = {
-  sm: { padding: 'sm', textTypography: 'h6', spacerBlockSize: 'xs' },
-  md: { padding: 'md', textTypography: 'h5', spacerBlockSize: 'sm' },
-  lg: { padding: 'lg', textTypography: 'h4', spacerBlockSize: 'md' },
-  xl: { padding: 'xl', textTypography: 'h3', spacerBlockSize: 'lg' },
-  '2xl': { padding: '2xl', textTypography: 'h2', spacerBlockSize: 'xl' },
+  xs: { padding: '16px', textTypography: 'h6', spacerBlockSize: '8px' },
+  sm: { padding: '16px', textTypography: 'h6', spacerBlockSize: '8px' },
+  md: { padding: '24px', textTypography: 'h5', spacerBlockSize: '16px' },
+  lg: { padding: '32px', textTypography: 'h4', spacerBlockSize: '24px' },
+  xl: { padding: '48px', textTypography: 'h3', spacerBlockSize: '32px' },
 }
 
 export const CALLOUT_CONFIG: Record<CalloutStatus, { color: BoxColor; heading: string; iconName: IconName }> = {
@@ -31,18 +31,16 @@ export const DEFAULT_CALLOUT_VARIANT: CalloutProps['variant'] = 'solid'
 export const DEFAULT_CALLOUT_INTENT: CalloutProps['intent'] = 'primary'
 export const DEFAULT_CALLOUT_STATUS: CalloutProps['status'] = 'info'
 
-export const CALLOUT_SIZES = ['sm', 'md', 'lg', 'xl', '2xl'] as const satisfies TShirtSize[]
 export const CALLOUT_VARIANTS = ['solid', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
 export const CALLOUT_STATUSES = ['info', 'success', 'warning', 'error'] as const
 
-export type CalloutSize = (typeof CALLOUT_SIZES)[number]
 export type CalloutVariant = (typeof CALLOUT_VARIANTS)[number]
 export type CalloutStatus = (typeof CALLOUT_STATUSES)[number]
 
 type CalloutOwnProps = {
   content: string
   heading?: string
-  size?: CalloutSize
+  size?: TShirtSize
   variant?: CalloutVariant
   status?: CalloutStatus
 }

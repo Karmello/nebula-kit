@@ -1,4 +1,4 @@
-import { LoaderProps } from 'lib/index.core'
+import { type LoaderProps } from './definitions'
 
 export type PropsFromLoaderKey = (typeof PROPS_FROM_LOADER)[number]
 
@@ -7,13 +7,16 @@ export const PROPS_FROM_LOADER = ['active', 'centered', 'color', 'size'] as cons
 export const LOADER_PRESETS = [
   {
     name: 'Default',
-    props: {} as Record<PropsFromLoaderKey, unknown>,
+    props: {},
   },
   {
     name: 'Custom',
     props: {
       color: 'blue',
-      size: '2xl',
-    } as Record<PropsFromLoaderKey, unknown>,
+      size: '48px',
+    },
   },
-]
+] satisfies {
+  name: string
+  props: Pick<LoaderProps, PropsFromLoaderKey>
+}[]

@@ -15,4 +15,4 @@ export type AppFrameFooterSectionInternalProps = {
   isLast: boolean
 }
 
-export const DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING: AppFrameFooterSectionProps['padding'] = 'xs'
+export const DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING: AppFrameFooterSectionProps['padding'] = '8px'

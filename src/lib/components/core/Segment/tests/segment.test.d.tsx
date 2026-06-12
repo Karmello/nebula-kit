@@ -83,7 +83,7 @@ expectError(
 // -------------------------------------
 
 expectError(
-  <Segment gap="md">
+  <Segment gap="24px">
     <Segment.Item>
       <Button>Button 1</Button>
     </Segment.Item>

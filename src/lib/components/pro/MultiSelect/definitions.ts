@@ -1,6 +1,6 @@
 import { DropdownListProps } from 'lib/components/shared'
 import { BoxProps } from 'lib/index.core'
-import { ControlSize } from 'lib/types'
+import { TShirtSize } from 'lib/types'
 
 export const DEFAULT_MULTI_SELECT_INLINE_SIZE: MultiSelectProps['inlineSize'] = '100%'
 
@@ -8,7 +8,7 @@ type MultiSelectOwnProps = {
   defaultValue?: string[]
   value?: string[]
   onChange?: (value: string[]) => void
-  size?: ControlSize
+  size?: TShirtSize
   dropdownPlacement?: DropdownListProps['placement']
 }
 

@@ -21,11 +21,11 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   } = meta
 
   const content = (
-    <Flex flexDirection="column" alignItems="stretch" gap="lg">
+    <Flex flexDirection="column" alignItems="stretch" gap="48px">
       <Box>
         <Text typography="lead">{title}</Text>
         {examples?.[0] ? (
-          <Box marginBlock="sm">
+          <Box marginBlock="16px">
             <CodeSnippet lang="tsx" code={examples[0].code || convertElemToString(examples[0].jsx)} />
           </Box>
         ) : null}
@@ -49,7 +49,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       {slots ? <ListWithChips heading="Slots" items={slots} color="gray" /> : null}
       {hooks ? <ListWithChips heading="Hooks" items={hooks} color="green" /> : null}
       {readMoreLink ? (
-        <Box marginTop="sm">
+        <Box marginTop="16px">
           <Link
             href={readMoreLink.href}
             onClick={() => {
@@ -74,7 +74,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       ) : (
         content
       )}
-      <Spacer blockSize="2xl" />
+      <Spacer blockSize="64px" />
     </>
   )
 }

@@ -26,7 +26,7 @@ expectType<React.JSX.Element>(
   <MultiSelect
     color="blue"
     intent="primary"
-    inlineSize="md"
+    inlineSize="24px"
     disabled
     dropdownPlacement="top-start"
     scrollAlign="center"
@@ -40,7 +40,7 @@ expectType<React.JSX.Element>(
 )
 
 expectType<React.JSX.Element>(
-  <MultiSelect color="blue" intent="tertiary" inlineSize={{ base: '100%', md: '2xl' }}>
+  <MultiSelect color="blue" intent="tertiary" inlineSize={{ base: '100%', md: '64px' }}>
     <MultiSelect.Option value="one">One</MultiSelect.Option>
   </MultiSelect>
 )
@@ -99,7 +99,7 @@ expectError(
 )
 
 expectError(
-  <MultiSelect inlineSize={{ tablet: 'md' }}>
+  <MultiSelect inlineSize={{ tablet: '24px' }}>
     <MultiSelect.Option value="one">One</MultiSelect.Option>
   </MultiSelect>
 )
@@ -111,19 +111,19 @@ expectError(
 )
 
 expectError(
-  <MultiSelect gap="md">
+  <MultiSelect gap="24px">
     <MultiSelect.Option value="one">One</MultiSelect.Option>
   </MultiSelect>
 )
 
 expectError(
-  <MultiSelect margin="md">
+  <MultiSelect margin="24px">
     <MultiSelect.Option value="one">One</MultiSelect.Option>
   </MultiSelect>
 )
 
 expectError(
-  <MultiSelect padding="md">
+  <MultiSelect padding="24px">
     <MultiSelect.Option value="one">One</MultiSelect.Option>
   </MultiSelect>
 )

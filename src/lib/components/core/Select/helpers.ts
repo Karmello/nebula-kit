@@ -1,5 +1,3 @@
-import { resolveLengthToken } from 'lib/helpers'
-
 export const resolveSelectValues = ({
   visibleItemsCount,
   optionBlockSize,
@@ -11,7 +9,7 @@ export const resolveSelectValues = ({
 }): { menuBlockSize: number; finalVisibleItemsCount: number } => {
   const finalVisibleItemsCount = Math.min(itemsCount, visibleItemsCount)
 
-  const dividerSize = Number.parseFloat(resolveLengthToken('3xs'))
+  const dividerSize = 2
 
   const menuBlockSize = finalVisibleItemsCount * optionBlockSize + (finalVisibleItemsCount - 1) * dividerSize + dividerSize
 

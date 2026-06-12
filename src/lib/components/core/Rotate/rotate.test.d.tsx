@@ -92,13 +92,13 @@ expectType(
 
 // hidden Box props must not leak
 expectError(
-  <Rotate angle={90} padding="md">
+  <Rotate angle={90} padding="24px">
     children
   </Rotate>
 )
 
 expectError(
-  <Rotate angle={90} margin="md">
+  <Rotate angle={90} margin="24px">
     children
   </Rotate>
 )
@@ -134,7 +134,7 @@ expectError(
 )
 
 expectError(
-  <Rotate angle={90} gap="md">
+  <Rotate angle={90} gap="24px">
     children
   </Rotate>
 )

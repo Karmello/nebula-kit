@@ -35,7 +35,7 @@ export const SideNavCategory = ({
     variant: rootVariant,
     color: rootColor,
     intent: rootIntent,
-    size,
+    scale,
     gap,
   } = useSideNavContext()
 
@@ -87,7 +87,7 @@ export const SideNavCategory = ({
                 color={color || rootColor}
                 intent={intent || rootIntent}
                 align={align}
-                size={size}
+                scale={scale}
                 fullWidth
                 bold={bold}
                 ripple={!expandedCategories[id]}

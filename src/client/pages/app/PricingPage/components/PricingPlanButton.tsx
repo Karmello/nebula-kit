@@ -25,7 +25,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
             navigateTo(`${PageKey.foundations}/overview/getting-started/installation`)
           }}
         >
-          <Button size="sm" color={color} intent="primary">
+          <Button scale="sm" color={color} intent="primary">
             Get started
           </Button>
         </Link>
@@ -42,7 +42,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
             navigateTo(PageKey.authRegister)
           }}
         >
-          <Button size="sm" intent="primary" color={color}>
+          <Button scale="sm" intent="primary" color={color}>
             Subscribe
           </Button>
         </Link>
@@ -56,7 +56,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
                 checkoutPaidPlan.sendRequest({ plan })
               },
             }}
-            size="sm"
+            scale="sm"
             intent="primary"
             color={color}
           >

@@ -36,7 +36,7 @@ export default () => {
 
   return (
     <Section heading="Details" size="sm" intent="primary" color="blue">
-      <Spacer blockSize="xs" />
+      <Spacer blockSize="8px" />
 
       {!getUser.isMakingRequest ? (
         <Table layout="fixed" intent="neutral">
@@ -67,7 +67,7 @@ export default () => {
               </Table.Cell>
 
               <Table.Cell colSpan={2}>
-                <Flex alignItems="center" flexWrap="wrap" rowGap="xs" columnGap="sm">
+                <Flex alignItems="center" flexWrap="wrap" rowGap="8px" columnGap="16px">
                   <Text bold>{userData ? sentenceCase(userData.plan) : ''}</Text>
 
                   {!getUser.isMakingRequest ? (
@@ -77,7 +77,7 @@ export default () => {
                         navigateTo(PageKey.pricing)
                       }}
                     >
-                      <Button size="xs" variant="outline" intent="tertiary" color="blue">
+                      <Button scale="xs" variant="outline" intent="tertiary" color="blue">
                         {userData?.plan === 'free' ? 'Upgrade' : 'Details'}
                       </Button>
                     </Link>
@@ -93,7 +93,7 @@ export default () => {
 
               <Table.Cell colSpan={2}>
                 {userData ? (
-                  <Flex alignItems="center" gap="xs">
+                  <Flex alignItems="center" gap="8px">
                     <Text
                       intent={userData.licenseKey ? 'primary' : undefined}
                       color={userData.licenseKey ? 'blue' : undefined}
@@ -138,7 +138,7 @@ export default () => {
 
               <Table.Cell colSpan={2}>
                 {userData ? (
-                  <Flex alignItems="center" flexWrap="wrap" rowGap="xs" columnGap="sm">
+                  <Flex alignItems="center" flexWrap="wrap" rowGap="8px" columnGap="16px">
                     <Flex.Item alignSelf="auto">
                       <Title
                         iconName={hasPaidPlan ? (isGithubConnected ? 'check' : undefined) : undefined}
@@ -153,7 +153,7 @@ export default () => {
                     {isGithubConnected ? (
                       <Link href="https://github.com/orgs/nebula-kit/projects/1" target="_blank">
                         <Button
-                          size="xs"
+                          scale="xs"
                           variant="outline"
                           intent="secondary"
                           color="blue"
@@ -171,7 +171,7 @@ export default () => {
           </Table.Body>
         </Table>
       ) : (
-        <Box position="relative" blockSize="2xl" drawable variant="solid" intent="muted">
+        <Box position="relative" blockSize="64px" drawable variant="solid" intent="muted">
           <Loader centered active color="blue" size="sm" />
         </Box>
       )}

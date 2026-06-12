@@ -1,4 +1,4 @@
-import { IconButtonProps } from 'lib/index.core'
+import type { IconButtonProps } from './types'
 
 export type PropsFromIconButtonKey = (typeof PROPS_FROM_ICON_BUTTON)[number]
 
@@ -20,6 +20,9 @@ export const ICON_BUTTON_PRESETS = [
     props: {
       iconName: 'send',
       color: 'blue',
-    } as Record<PropsFromIconButtonKey, unknown>,
+    },
   },
-]
+] satisfies {
+  name: string
+  props: Pick<IconButtonProps, PropsFromIconButtonKey>
+}[]

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import { TEXT_TYPOGRAPHY_MAP } from 'lib/constants'
+import { TYPOGRAPHY_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { Flex, Icon, Text, TitleProps } from 'lib/index.core'
 
@@ -23,7 +23,7 @@ export const Title = ({
   // own
 }: TitleProps) => {
   const icon = (
-    <Icon name={iconName} size={TEXT_TYPOGRAPHY_MAP[typography || 'h6'].iconSize} intent={intent} color={color}>
+    <Icon name={iconName} intent={intent} color={color} size={TYPOGRAPHY_MAP[typography || 'h6'].fontSize}>
       {customSvgIcon}
     </Icon>
   )
@@ -43,7 +43,7 @@ export const Title = ({
       alignItems="center"
       color={color}
       intent={intent}
-      columnGap={TEXT_TYPOGRAPHY_MAP[typography || 'h6'].iconGap}
+      columnGap={TYPOGRAPHY_MAP[typography || 'h6'].gap}
     >
       {iconPlacement === 'left' ? icon : null}
       {isPlainText ? (

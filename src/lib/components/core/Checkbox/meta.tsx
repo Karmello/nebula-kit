@@ -1,14 +1,9 @@
+import { TSHIRT_SIZES } from 'lib/constants'
 import { Checkbox, CheckboxProps, Flex } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
-import {
-  CHECKBOX_SIZES,
-  CHECKBOX_VARIANTS,
-  DEFAULT_CHECKBOX_INTENT,
-  DEFAULT_CHECKBOX_SIZE,
-  DEFAULT_CHECKBOX_VARIANT,
-} from './definitions'
+import { CHECKBOX_VARIANTS, DEFAULT_CHECKBOX_INTENT, DEFAULT_CHECKBOX_SIZE, DEFAULT_CHECKBOX_VARIANT } from './definitions'
 
 export const CHECKBOX_META = {
   Checkbox: {
@@ -39,7 +34,7 @@ export const CHECKBOX_META = {
         description: 'Called when the checked state changes. Receives the new checked value.',
       },
       size: {
-        options: CHECKBOX_SIZES,
+        options: TSHIRT_SIZES,
         defaultValue: DEFAULT_CHECKBOX_SIZE,
         description: 'Controls overall proportions, adjusting the checkbox and icon size.',
       },
@@ -59,7 +54,7 @@ export const CHECKBOX_META = {
       {
         description: 'Different checkbox sizes in the outline variant.',
         jsx: (
-          <Flex gap="xs" alignItems="center">
+          <Flex gap="8px" alignItems="center">
             <Checkbox size="xs" variant="outline" />
             <Checkbox size="sm" variant="outline" />
             <Checkbox size="md" variant="outline" />
@@ -70,7 +65,7 @@ export const CHECKBOX_META = {
       {
         description: 'Different checkbox sizes in the soft-outline variant.',
         jsx: (
-          <Flex gap="xs" alignItems="center">
+          <Flex gap="8px" alignItems="center">
             <Checkbox size="xs" variant="soft-outline" />
             <Checkbox size="sm" variant="soft-outline" />
             <Checkbox size="md" variant="soft-outline" />
@@ -81,7 +76,7 @@ export const CHECKBOX_META = {
       {
         description: 'Different checkbox sizes in the solid variant.',
         jsx: (
-          <Flex gap="xs" alignItems="center">
+          <Flex gap="8px" alignItems="center">
             <Checkbox size="xs" variant="solid" />
             <Checkbox size="sm" variant="solid" />
             <Checkbox size="md" variant="solid" />
@@ -92,7 +87,7 @@ export const CHECKBOX_META = {
       {
         description: 'Disabled selected checkboxes.',
         jsx: (
-          <Flex gap="xs" alignItems="center">
+          <Flex gap="8px" alignItems="center">
             <Checkbox size="xs" variant="solid" disabled defaultChecked />
             <Checkbox size="sm" variant="solid" disabled defaultChecked />
             <Checkbox size="md" variant="solid" disabled defaultChecked />

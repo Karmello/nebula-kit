@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { WithSlots } from 'lib/components/shared'
-import { DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { DEFAULT_TSHIRT_SIZE } from 'lib/constants'
 import { AutocompleteProps } from 'lib/index.pro'
 
 import { AutocompleteMain } from './components'
@@ -31,7 +31,7 @@ export const Autocomplete = ({
   value,
   onChange,
   onInputChange,
-  size = DEFAULT_CONTROL_SIZE,
+  size = DEFAULT_TSHIRT_SIZE,
   dropdownPlacement,
   disableFiltering = DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
   debounceDelay,

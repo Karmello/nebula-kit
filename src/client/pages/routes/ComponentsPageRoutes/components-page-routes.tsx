@@ -45,7 +45,7 @@ export const ComponentsPageRoutes = ({ pageKey }: { pageKey: PageKey.foundations
 
   return (
     <>
-      <Spacer blockSize="sm" />
+      <Spacer blockSize="16px" />
       <Routes>
         {ROUTES}
         <Route

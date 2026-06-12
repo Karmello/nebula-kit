@@ -1,4 +1,4 @@
-import { TSHIRT_SIZES } from 'lib/constants'
+import { LENGTHS } from 'lib/constants'
 import { Spacer, SpacerProps, Text } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
@@ -20,7 +20,7 @@ export const SPACER_META = {
     },
     props: {
       blockSize: {
-        options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
+        options: [...LENGTHS, DOCS_CSS_LABEL],
         defaultValue: String(DEFAULT_SPACER_BLOCK_SIZE),
         isResponsive: true,
         description: 'Controls the spacer block size using predefined length tokens or any CSS value.',
@@ -40,11 +40,11 @@ export const SPACER_META = {
         ),
       },
       {
-        description: 'Vertical spacing between two text blocks using a larger spacing token (4xl).',
+        description: 'Vertical spacing between two text blocks using a larger spacing.',
         jsx: (
           <>
             <Text>Text 1</Text>
-            <Spacer blockSize="4xl" />
+            <Spacer blockSize="128px" />
             <Text>Text 2</Text>
           </>
         ),
@@ -64,7 +64,7 @@ export const SPACER_META = {
         jsx: (
           <>
             <Text>Text 1</Text>
-            <Spacer blockSize={{ base: 'sm', md: 'xl' }} />
+            <Spacer blockSize={{ base: '16px', md: '48px' }} />
             <Text>Text 2</Text>
           </>
         ),

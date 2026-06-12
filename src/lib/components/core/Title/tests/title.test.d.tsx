@@ -107,7 +107,7 @@ expectError(<Title tag="div">Title</Title>)
 
 expectError(<Title flexDirection="column">Title</Title>)
 
-expectError(<Title gap="md">Title</Title>)
+expectError(<Title gap="24px">Title</Title>)
 
 expectError(<Title iconSize="lg">Title</Title>)
 

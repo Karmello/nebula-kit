@@ -7,7 +7,7 @@ import {
   DROPDOWN_LIST_PLACEMENTS,
   DROPDOWN_LIST_SCROLL_ALIGN,
 } from 'lib/components/shared'
-import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { MultiSelect, MultiSelectOptionProps, MultiSelectProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
@@ -62,8 +62,8 @@ export const MULTI_SELECT_META = {
         description: 'Defines how the selected option is positioned within the scroll area.',
       },
       size: {
-        options: CONTROL_SIZES,
-        defaultValue: DEFAULT_CONTROL_SIZE,
+        options: TSHIRT_SIZES,
+        defaultValue: DEFAULT_TSHIRT_SIZE,
         description:
           'Controls overall proportions - adjusting trigger and list item sizing to keep the dropdown visually balanced at each size.',
       },

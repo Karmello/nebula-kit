@@ -30,7 +30,7 @@ expectError(<Loader color="purple" />)
 
 // valid sizes
 expectType(<Loader size="sm" />)
-expectType(<Loader size="md" />)
+expectType(<Loader size="24px" />)
 expectType(<Loader size="lg" />)
 expectType(<Loader size="xl" />)
 expectType(<Loader size="2xl" />)
@@ -72,8 +72,8 @@ expectType(
 )
 
 // hidden Box props must not leak
-expectError(<Loader padding="md" />)
-expectError(<Loader margin="md" />)
+expectError(<Loader padding="24px" />)
+expectError(<Loader margin="24px" />)
 expectError(<Loader variant="solid" />)
 expectError(<Loader intent="primary" />)
 expectError(<Loader interactive />)
@@ -81,7 +81,7 @@ expectError(<Loader display="block" />)
 expectError(<Loader inlineSize="100px" />)
 expectError(<Loader blockSize="100px" />)
 expectError(<Loader borderRadius="10px" />)
-expectError(<Loader gap="md" />)
+expectError(<Loader gap="24px" />)
 expectError(<Loader flexDirection="column" />)
 expectError(<Loader position="absolute" />)
 

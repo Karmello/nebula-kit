@@ -1,5 +1,6 @@
 import { ButtonProps } from 'lib/index.core'
 
+export const DEFAULT_BUTTON_SCALE: ButtonProps['scale'] = 'md'
 export const DEFAULT_BUTTON_VARIANT: ButtonProps['variant'] = 'solid'
 export const DEFAULT_BUTTON_INTENT: ButtonProps['intent'] = 'tertiary'
 export const DEFAULT_BUTTON_RIPPLE: ButtonProps['ripple'] = true

@@ -26,11 +26,11 @@ export const ProfileAccountPage = () => {
   }
 
   return (
-    <Box paddingTop="sm" paddingInline={{ base: 'md', lg: 'xl' }} maxInlineSize="75rem">
+    <Box paddingTop="16px" paddingInline={{ base: '24px', lg: '48px' }} maxInlineSize="75rem">
       <Section size="lg" heading="Account" iconName="circle-user">
-        <Spacer blockSize="md" />
+        <Spacer blockSize="24px" />
         <AccountDetails />
-        <Spacer blockSize="lg" />
+        <Spacer blockSize="48px" />
         <PaidSubscription enabled={user && user.plan !== 'free'} />
       </Section>
     </Box>

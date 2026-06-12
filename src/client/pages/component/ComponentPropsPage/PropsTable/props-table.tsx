@@ -28,7 +28,7 @@ export const PropsTable = ({ data, category }: Props) => {
   }, {})
 
   const renderTable = (props: typeof data) => (
-    <Table color="blue" intent="neutral" paddingBlock="xs" paddingInline="sm">
+    <Table color="blue" intent="neutral" paddingBlock="8px" paddingInline="16px">
       <Table.Header>
         <Table.HeaderRow>
           <Table.HeaderCell>Name</Table.HeaderCell>
@@ -90,13 +90,13 @@ export const PropsTable = ({ data, category }: Props) => {
 
               <Table.Cell>
                 <Flex justifyContent="center">
-                  {isRequired ? <Icon name="check" intent="primary" color="blue" size="20px" /> : '-'}
+                  {isRequired ? <Icon name="check" intent="primary" color="blue" size="24px" /> : '-'}
                 </Flex>
               </Table.Cell>
 
               <Table.Cell>
                 <Flex justifyContent="center">
-                  {isResponsive ? <Icon name="check" intent="primary" color="blue" size="20px" /> : '-'}
+                  {isResponsive ? <Icon name="check" intent="primary" color="blue" size="24px" /> : '-'}
                 </Flex>
               </Table.Cell>
 
@@ -118,11 +118,11 @@ export const PropsTable = ({ data, category }: Props) => {
         {category ? (
           <>
             <Text typography="h5">{category}</Text>
-            <Divider marginBlock="xs" />
+            <Divider marginBlock="8px" />
           </>
         ) : null}
         {renderTable(entries[0][1])}
-        <Spacer blockSize="xl" />
+        <Spacer blockSize="48px" />
       </>
     )
   }
@@ -132,7 +132,7 @@ export const PropsTable = ({ data, category }: Props) => {
       {category ? (
         <>
           <Text typography="h5">{category}</Text>
-          <Spacer blockSize="xs" />
+          <Spacer blockSize="8px" />
         </>
       ) : null}
       <Tabs defaultValue={entries[0][0]} size="sm" intent="neutral" color="blue">
@@ -148,7 +148,7 @@ export const PropsTable = ({ data, category }: Props) => {
           </Tabs.Panel>
         ))}
       </Tabs>
-      <Spacer blockSize="xl" />
+      <Spacer blockSize="48px" />
     </>
   )
 }

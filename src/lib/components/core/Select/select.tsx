@@ -1,7 +1,7 @@
 import { ReactElement, useEffect, useRef, useState } from 'react'
 
 import { WithSlots } from 'lib/components/shared'
-import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE } from 'lib/constants'
 import { useControlled } from 'lib/hooks'
 import { Box, Flex, Icon, SelectOptionProps, SelectProps, Text } from 'lib/index.core'
 import { ActionGroup, Floating, FloatingProps } from 'lib/index.pro'
@@ -24,7 +24,7 @@ export const SelectImpl = ({
   defaultValue,
   value,
   onChange,
-  size = DEFAULT_CONTROL_SIZE,
+  size = DEFAULT_TSHIRT_SIZE,
   visibleItemsCount = DEFAULT_SELECT_VISIBLE_ITEMS_COUNT,
   staticLabel,
   // extra
@@ -40,7 +40,7 @@ export const SelectImpl = ({
   const triggerWidth = triggerRef.current?.offsetWidth
   const currentLabel = optionSlots.find(slot => slot.props.value === currentValue)?.props.children
   const isOpenDownwards = placement?.startsWith('bottom')
-  const optionBlockSize = Number(CONTROL_SIZE_MAP[size].blockSize.replace('px', ''))
+  const optionBlockSize = Number(CONTROL_SCALE_MAP[size].blockSize.replace('px', ''))
 
   const { menuBlockSize } = resolveSelectValues({
     visibleItemsCount: visibleItemsCount !== undefined ? visibleItemsCount : 5,
@@ -72,8 +72,8 @@ export const SelectImpl = ({
           intent={intent}
           color={color}
           inlineSize={inlineSize}
-          blockSize={CONTROL_SIZE_MAP[size].blockSize}
-          paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
+          blockSize={CONTROL_SCALE_MAP[size].blockSize}
+          paddingInline={CONTROL_SCALE_MAP[size].fontSize}
           disabled={disabled}
           surface={open ? 'selected' : undefined}
           cursor="pointer"
@@ -84,11 +84,11 @@ export const SelectImpl = ({
           borderTopLeftRadius={open && !isOpenDownwards ? '0px' : undefined}
           borderTopRightRadius={open && !isOpenDownwards ? '0px' : undefined}
         >
-          <Flex tag="span" alignItems="center" justifyContent="space-between" columnGap="xs">
-            <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight} truncate>
+          <Flex tag="span" alignItems="center" justifyContent="space-between" columnGap="8px">
+            <Text fontSize={CONTROL_SCALE_MAP[size].fontSize} lineHeight={CONTROL_SCALE_MAP[size].lineHeight} truncate>
               {staticLabel ?? currentLabel ?? 'Select...'}
             </Text>
-            <Icon name="chevron-down" size={CONTROL_SIZE_MAP[size].iconSize} />
+            <Icon name="chevron-down" size={CONTROL_SCALE_MAP[size].fontSize} />
           </Flex>
         </Box>
       </Floating.Trigger>
@@ -130,10 +130,10 @@ export const SelectImpl = ({
                   <Flex
                     alignItems="center"
                     alignContent="stretch"
-                    blockSize={CONTROL_SIZE_MAP[size].blockSize}
-                    paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
+                    blockSize={CONTROL_SCALE_MAP[size].blockSize}
+                    paddingInline={CONTROL_SCALE_MAP[size].fontSize}
                   >
-                    <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight}>
+                    <Text fontSize={CONTROL_SCALE_MAP[size].fontSize} lineHeight={CONTROL_SCALE_MAP[size].lineHeight}>
                       {slot}
                     </Text>
                   </Flex>

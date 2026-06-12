@@ -5,7 +5,7 @@ export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Text>Responsive values in NebulaKit are mobile-first and forward-only.</Text>
-      <Spacer blockSize="xs" />
+      <Spacer blockSize="8px" />
       <MarkerList>
         <MarkerList.Item>
           <Text>A value defined at base applies to all breakpoints</Text>
@@ -17,9 +17,9 @@ export default () => {
           <Text>Values are never unset automatically at later breakpoints</Text>
         </MarkerList.Item>
       </MarkerList>
-      <Spacer blockSize="sm" />
+      <Spacer blockSize="16px" />
       <CodeSnippet lang="tsx" code={`<Box padding={{ base: "10px", md: "50px" }} />`} />
-      <Spacer blockSize="sm" />
+      <Spacer blockSize="16px" />
       <Text>
         Any property typed as
         <Text tag="span" bold space="both">
@@ -40,7 +40,7 @@ export default () => {
         </Text>
         breakpoints.
       </Text>
-      <Spacer blockSize="xs" />
+      <Spacer blockSize="8px" />
       <Text>Result:</Text>
       <MarkerList>
         <MarkerList.Item>
@@ -50,9 +50,9 @@ export default () => {
           <Text>md, lg, xl - 50px</Text>
         </MarkerList.Item>
       </MarkerList>
-      <Spacer blockSize="sm" />
+      <Spacer blockSize="16px" />
       <CodeSnippet lang="tsx" code={`<Box padding={{ base: "10px", md: "50px" }} paddingBottom="25px" />`} />
-      <Spacer blockSize="sm" />
+      <Spacer blockSize="16px" />
       <Text>
         When combining responsive and non-responsive props, the more specific one wins. In the above example,
         <Text tag="span" bold space="both">
@@ -64,9 +64,9 @@ export default () => {
         </Text>
         , its value overrides the final bottom padding at every breakpoint.
       </Text>
-      <Spacer blockSize="sm" />
+      <Spacer blockSize="16px" />
       <CodeSnippet lang="tsx" code={`<Box padding={{ md: "50px" }} />`} />
-      <Spacer blockSize="sm" />
+      <Spacer blockSize="16px" />
       <Text>If a value is defined only at a later breakpoint, it does not affect earlier ones. Result:</Text>
       <MarkerList>
         <MarkerList.Item>
@@ -76,9 +76,9 @@ export default () => {
           <Text>md, lg, xl - 50px</Text>
         </MarkerList.Item>
       </MarkerList>
-      <Spacer blockSize="sm" />
+      <Spacer blockSize="16px" />
       <CodeSnippet lang="tsx" code={`<Box padding={{ base: "10px", lg: "0px" }} />`} />
-      <Spacer blockSize="sm" />
+      <Spacer blockSize="16px" />
       <Text>
         Responsive values can override forward, but they never cancel earlier values. If you need a different value at a later
         breakpoint, provide it explicitly. This model keeps responsive behavior predictable, avoids hidden defaults and ensures

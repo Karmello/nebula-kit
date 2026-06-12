@@ -100,11 +100,11 @@ expectType(
 // hidden primitive leakage
 //
 
-expectError(<Input margin="md" />)
+expectError(<Input margin="24px" />)
 
-expectError(<Input padding="md" />)
+expectError(<Input padding="24px" />)
 
-expectError(<Input gap="md" />)
+expectError(<Input gap="24px" />)
 
 expectError(<Input flexDirection="column" />)
 

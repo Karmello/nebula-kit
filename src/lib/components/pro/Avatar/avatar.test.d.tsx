@@ -18,7 +18,7 @@ expectType(<Avatar initials="JD" />)
 
 expectError(<Avatar shape="circle" />)
 
-expectError(<Avatar size="3xl" />)
+expectError(<Avatar size="96px" />)
 
 expectError(<Avatar loading="instant" />)
 
@@ -56,11 +56,11 @@ expectError(<Avatar objectPosition={{ desktop: 'center' }} />)
 // hidden primitive leakage
 //
 
-expectError(<Avatar margin="md" />)
+expectError(<Avatar margin="24px" />)
 
-expectError(<Avatar padding="md" />)
+expectError(<Avatar padding="24px" />)
 
-expectError(<Avatar gap="md" />)
+expectError(<Avatar gap="24px" />)
 
 expectError(<Avatar drawable />)
 

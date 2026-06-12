@@ -97,19 +97,19 @@ expectError(
 //
 
 expectError(
-  <Select margin="md">
+  <Select margin="24px">
     <Select.Option value="a">A</Select.Option>
   </Select>
 )
 
 expectError(
-  <Select padding="md">
+  <Select padding="24px">
     <Select.Option value="a">A</Select.Option>
   </Select>
 )
 
 expectError(
-  <Select gap="md">
+  <Select gap="24px">
     <Select.Option value="a">A</Select.Option>
   </Select>
 )
@@ -147,7 +147,7 @@ expectError(<Select.Option value={123}>Option</Select.Option>)
 //
 
 expectError(
-  <Select.Option margin="md" value="a">
+  <Select.Option margin="24px" value="a">
     Option
   </Select.Option>
 )

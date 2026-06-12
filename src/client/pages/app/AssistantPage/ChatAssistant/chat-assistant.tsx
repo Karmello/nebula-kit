@@ -89,7 +89,7 @@ export const ChatAssistant = () => {
       <Flex justifyContent="flex-end">
         <ContextMenu onChange={handleContextMenuChange} disabled={askAssistant.isMakingRequest} />
       </Flex>
-      <Spacer blockSize="sm" />
+      <Spacer blockSize="16px" />
       <Segment tagAttrs={{ style: { blockSize: 'calc(100% - 50px)' } }} flexDirection="column">
         <Segment.Item flex="1" tagAttrs={{ style: { overflowY: 'hidden' } }}>
           <Chat tagRef={chatScrollingAreaRef} chatHistory={chatHistory} handleQuestionClick={handleQuestionClick} />

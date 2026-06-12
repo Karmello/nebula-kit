@@ -1,6 +1,6 @@
 import { InputHTMLAttributes, ReactNode } from 'react'
 
-import { ControlSize } from 'lib/types'
+import { TShirtSize } from 'lib/types'
 
 import { BoxProps } from '../Box'
 
@@ -15,7 +15,7 @@ type InputOwnProps = {
   onChange?: (value: string) => void
   onFocus?: React.FocusEventHandler<HTMLInputElement>
   onBlur?: React.FocusEventHandler<HTMLInputElement>
-  size?: ControlSize
+  size?: TShirtSize
   startAffix?: (props: InputAffixProps) => ReactNode
   endAffix?: (props: InputAffixProps) => ReactNode
   placeholder?: string

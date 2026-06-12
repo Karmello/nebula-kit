@@ -1,4 +1,4 @@
-import { CalloutProps } from 'lib/index.core'
+import { type CalloutProps } from './definitions'
 
 export type PropsFromCalloutKey = (typeof PROPS_FROM_CALLOUT)[number]
 
@@ -17,7 +17,7 @@ export const CALLOUT_PRESETS = [
     props: {
       content: 'Success callout with solid variant applied.',
       status: 'success',
-    } as Record<PropsFromCalloutKey, unknown>,
+    },
   },
   {
     name: 'Info',
@@ -25,6 +25,9 @@ export const CALLOUT_PRESETS = [
       content: 'Info callout with outline variant applied.',
       status: 'info',
       variant: 'outline',
-    } as Record<PropsFromCalloutKey, unknown>,
+    },
   },
-]
+] satisfies {
+  name: string
+  props: Pick<CalloutProps, PropsFromCalloutKey>
+}[]

@@ -1,5 +1,5 @@
 import { WithSlots } from 'lib/components/shared'
-import { CONTROL_SIZE_MAP } from 'lib/constants'
+import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { useControlled } from 'lib/hooks'
 import { Box, Flex, Text } from 'lib/index.core'
 import { ActionGroup, TabsPanelProps, TabsProps, TabsTabProps } from 'lib/index.pro'
@@ -74,8 +74,8 @@ export const Tabs = ({
                         }}
                       >
                         <Flex
-                          blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
-                          paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
+                          blockSize={CONTROL_SCALE_MAP[size || 'md'].blockSize}
+                          paddingInline={CONTROL_SCALE_MAP[size || 'md'].fontSize}
                           minInlineSize={minInlineSize}
                           justifyContent="center"
                           alignItems="center"
@@ -83,8 +83,8 @@ export const Tabs = ({
                           <Text
                             tag="span"
                             bold={isSelected}
-                            fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
-                            lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
+                            fontSize={CONTROL_SCALE_MAP[size || 'md'].fontSize}
+                            lineHeight={CONTROL_SCALE_MAP[size || 'md'].lineHeight}
                           >
                             {tab}
                           </Text>
@@ -110,7 +110,7 @@ export const Tabs = ({
                         'aria-labelledby': `tab-${value}`,
                         hidden: !isSelected,
                       }}
-                      padding={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
+                      padding={CONTROL_SCALE_MAP[size || 'md'].fontSize}
                     >
                       {panel}
                     </Box>

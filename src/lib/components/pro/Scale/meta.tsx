@@ -22,7 +22,7 @@ const Example1 = () => {
     <>
       <Button onClick={() => setVisible(value => !value)}>Toggle scale</Button>
       <Scale visible={visible}>
-        <Box drawable variant="solid" intent="primary" padding="md">
+        <Box drawable variant="solid" intent="primary" padding="24px">
           Scaled content
         </Box>
       </Scale>
@@ -95,7 +95,7 @@ export const SCALE_META = {
         description: 'Scale transition controlled by `visible` prop.',
         jsx: <Example1 />,
         code: `<Scale visible={visible}>
-  <Box drawable variant="solid" intent="primary" padding="md" marginLeft="sm">
+  <Box drawable variant="solid" intent="primary" padding="24px" marginLeft="16px">
     Scaled content
   </Box>
 </Scale>`,

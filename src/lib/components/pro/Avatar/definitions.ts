@@ -1,7 +1,7 @@
 import { BoxProps, ImageProps } from 'lib/index.core'
 import { TShirtSize } from 'lib/types'
 
-export const AVATAR_SIZES_MAP: Record<AvatarSize, { side: BoxProps['blockSize']; fontSize: string }> = {
+export const AVATAR_SIZES_MAP: Record<TShirtSize, { side: BoxProps['blockSize']; fontSize: string }> = {
   xs: {
     side: '50px',
     fontSize: '20px',
@@ -22,16 +22,11 @@ export const AVATAR_SIZES_MAP: Record<AvatarSize, { side: BoxProps['blockSize'];
     side: '225px',
     fontSize: '70px',
   },
-  '2xl': {
-    side: '300px',
-    fontSize: '80px',
-  },
 }
 
 export const LOADER_DELAY = 150
 export const MIN_LOADER_VISIBLE_TIME = 300
 
-export const AVATAR_SIZES = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const satisfies TShirtSize[]
 export const AVATAR_SHAPES = ['round', 'square'] as const
 
 export const DEFAULT_AVATAR_SIZE: AvatarProps['size'] = 'md'
@@ -39,7 +34,6 @@ export const DEFAULT_AVATAR_SHAPE: AvatarProps['shape'] = 'round'
 export const DEFAULT_AVATAR_OBJECT_FIT: AvatarProps['objectFit'] = 'cover'
 export const DEFAULT_AVATAR_OBJECT_POSITION: AvatarProps['objectPosition'] = 'center'
 
-export type AvatarSize = (typeof AVATAR_SIZES)[number]
 export type AvatarShape = (typeof AVATAR_SHAPES)[number]
 
 type PropsFromImage = Pick<
@@ -59,7 +53,7 @@ type PropsFromImage = Pick<
 >
 
 type AvatarOwnProps = {
-  size?: AvatarSize
+  size?: TShirtSize
   shape?: AvatarShape
   initials?: string
 }

@@ -7,7 +7,7 @@ import {
   DROPDOWN_LIST_PLACEMENTS,
   DROPDOWN_LIST_SCROLL_ALIGN,
 } from 'lib/components/shared'
-import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { Autocomplete, AutocompleteOptionProps, AutocompleteProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
@@ -101,8 +101,8 @@ export const AUTOCOMPLETE_META = {
         description: 'Controls whether the dropdown toggle is rendered next to the input.',
       },
       size: {
-        options: CONTROL_SIZES,
-        defaultValue: DEFAULT_CONTROL_SIZE,
+        options: TSHIRT_SIZES,
+        defaultValue: DEFAULT_TSHIRT_SIZE,
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,

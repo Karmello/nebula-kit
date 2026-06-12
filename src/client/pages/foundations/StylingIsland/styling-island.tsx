@@ -12,7 +12,7 @@ export default () => {
         </Text>
         <Spacer />
         <Text>Theme and brand follow the same rules:</Text>
-        <Spacer blockSize="xs" />
+        <Spacer blockSize="8px" />
         <MarkerList>
           <MarkerList.Item>
             <Text>they are scoped to a subtree</Text>
@@ -34,9 +34,9 @@ export default () => {
           A styling island is complete only when both context and surface are defined. Setting theme alone changes how colors are
           interpreted, but does not create a visible surface.
         </Text>
-        <Spacer blockSize="xs" />
+        <Spacer blockSize="8px" />
         <Text>How to do it properly ?</Text>
-        <Spacer blockSize="xs" />
+        <Spacer blockSize="8px" />
         <CodeSnippet
           lang="tsx"
           code={`<Box theme="dark" drawable variant="solid" intent="neutral">
@@ -49,7 +49,7 @@ export default () => {
           Components inside the island rely on the active theme to resolve contrast, states and colors. Without a surface, they
           may still render on the parent background, which can lead to:
         </Text>
-        <Spacer blockSize="xs" />
+        <Spacer blockSize="8px" />
         <MarkerList>
           <MarkerList.Item>
             <Text>incorrect contrast</Text>

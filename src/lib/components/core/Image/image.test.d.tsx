@@ -147,11 +147,11 @@ expectError(<Image pointerEvents="wrong" />)
 expectType(<Image blockSize="20px" />)
 expectType(<Image inlineSize="300px" />)
 
-expectType(<Image inlineSize={{ md: 'lg' }} />)
+expectType(<Image inlineSize={{ md: '48px' }} />)
 
 expectType(<Image maxInlineSize={{ lg: '500px' }} />)
 
-expectType(<Image minBlockSize={{ md: 'xs' }} />)
+expectType(<Image minBlockSize={{ md: '8px' }} />)
 
 expectError(<Image inlineSize={{ wrong: '10px' }} />)
 

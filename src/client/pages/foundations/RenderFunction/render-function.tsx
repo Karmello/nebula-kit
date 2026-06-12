@@ -16,7 +16,7 @@ export default () => {
         simplifies state sharing between parent and child and removes the need for extra wrapper components or prop drilling. It
         also keeps markup cleaner, since the logic for how and when elements appear lives alongside the data that drives them.
       </Text>
-      <Spacer blockSize="md" />
+      <Spacer blockSize="24px" />
       <CodeSnippet
         lang="tsx"
         code={`<SplitView>

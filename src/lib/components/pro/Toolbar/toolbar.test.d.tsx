@@ -162,11 +162,11 @@ expectType(<Toolbar.Start tagRef={createRef<HTMLDivElement>()}>Start</Toolbar.St
 expectError(<Toolbar.Start tagRef={createRef<HTMLButtonElement>()}>Start</Toolbar.Start>)
 
 // hidden primitive leakage
-expectError(<Toolbar.Start gap="md">Start</Toolbar.Start>)
+expectError(<Toolbar.Start gap="24px">Start</Toolbar.Start>)
 
 expectError(<Toolbar.Start flex="1">Start</Toolbar.Start>)
 
-expectError(<Toolbar.Start padding="md">Start</Toolbar.Start>)
+expectError(<Toolbar.Start padding="24px">Start</Toolbar.Start>)
 
 expectError(<Toolbar.Start variant="solid">Start</Toolbar.Start>)
 
@@ -184,11 +184,11 @@ expectType(<Toolbar.Main tagRef={createRef<HTMLDivElement>()}>Main</Toolbar.Main
 expectError(<Toolbar.Main tagRef={createRef<HTMLButtonElement>()}>Main</Toolbar.Main>)
 
 // hidden primitive leakage
-expectError(<Toolbar.Main gap="md">Main</Toolbar.Main>)
+expectError(<Toolbar.Main gap="24pxmd">Main</Toolbar.Main>)
 
 expectError(<Toolbar.Main flex="1">Main</Toolbar.Main>)
 
-expectError(<Toolbar.Main padding="md">Main</Toolbar.Main>)
+expectError(<Toolbar.Main padding="24px">Main</Toolbar.Main>)
 
 expectError(<Toolbar.Main variant="solid">Main</Toolbar.Main>)
 
@@ -206,10 +206,10 @@ expectType(<Toolbar.End tagRef={createRef<HTMLDivElement>()}>End</Toolbar.End>)
 expectError(<Toolbar.End tagRef={createRef<HTMLButtonElement>()}>End</Toolbar.End>)
 
 // hidden primitive leakage
-expectError(<Toolbar.End gap="md">End</Toolbar.End>)
+expectError(<Toolbar.End gap="24px">End</Toolbar.End>)
 
 expectError(<Toolbar.End flex="1">End</Toolbar.End>)
 
-expectError(<Toolbar.End padding="md">End</Toolbar.End>)
+expectError(<Toolbar.End padding="24px">End</Toolbar.End>)
 
 expectError(<Toolbar.End variant="solid">End</Toolbar.End>)

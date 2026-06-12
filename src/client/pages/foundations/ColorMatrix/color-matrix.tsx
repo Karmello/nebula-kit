@@ -7,7 +7,7 @@ export default () => {
   return (
     <Box>
       <Text>Color calibration.</Text>
-      <Spacer blockSize="lg" />
+      <Spacer blockSize="48px" />
       {BOX_COLORS.map(color => (
         <Flex key={color} flexDirection="row" alignItems="stretch">
           {arr.map(n => {
@@ -24,7 +24,7 @@ export default () => {
           })}
         </Flex>
       ))}
-      <Spacer blockSize="sm" />
+      <Spacer blockSize="16px" />
     </Box>
   )
 }

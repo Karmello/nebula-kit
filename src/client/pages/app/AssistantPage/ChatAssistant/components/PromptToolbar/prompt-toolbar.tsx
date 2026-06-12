@@ -13,7 +13,7 @@ export const PromptToolbar = ({ loading, disabled, lengthStatus, handleSend, han
     <Box drawable theme="global-flipped" variant="solid" intent="neutral" padding="7px" paddingLeft="17px">
       <Flex alignItems="center">
         <Flex.Item flex="1">
-          <Flex alignItems="center" columnGap="sm">
+          <Flex alignItems="center" columnGap="16px">
             <Tooltip
               intent="primary"
               variant="outline"
@@ -21,19 +21,19 @@ export const PromptToolbar = ({ loading, disabled, lengthStatus, handleSend, han
               maxInlineSize={300}
               content="ENTER sends | SHIFT + ENTER adds a new line | TAB returns to the prompt"
             >
-              <Icon name="keyboard" size="22px" />
+              <Icon name="keyboard" size="24px" />
             </Tooltip>
             {!loading ? <Text typography="small">{lengthStatus}</Text> : null}
           </Flex>
         </Flex.Item>
-        <Flex alignItems="center" columnGap="sm">
+        <Flex alignItems="center" columnGap="16px">
           <Loader active={loading} size="sm" />
           <Button
             intent="primary"
             color={!loading ? 'blue' : 'red'}
             iconName={!loading ? 'send-horizontal' : 'circle-x'}
             iconPlacement="right"
-            size="sm"
+            scale="sm"
             disabled={disabled}
             onClick={() => {
               if (!loading) {

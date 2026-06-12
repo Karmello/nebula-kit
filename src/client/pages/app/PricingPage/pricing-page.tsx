@@ -19,15 +19,15 @@ export const PricingPage = () => {
   }, [user])
 
   return (
-    <Box paddingTop="sm" paddingInline={{ base: 'md', lg: 'xl' }}>
+    <Box paddingTop="16px" paddingInline={{ base: '24px', lg: '48px' }}>
       <Section size="lg" heading="Pricing plans" iconName="credit-card">
         <Text>Choose the plan that fits your workflow.</Text>
-        <Spacer blockSize="lg" />
+        <Spacer blockSize="48px" />
         {getUser.isMakingRequest ? (
           <Loader centered size="lg" color="blue" />
         ) : (
           <>
-            <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }} gap="sm">
+            <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }} gap="16px">
               <PricingPlanCard
                 plan={PRICING_DATA.plans.free.id as never}
                 activePlan={getUser.data?.user.plan}
@@ -73,8 +73,8 @@ export const PricingPage = () => {
                 options={PRICING_DATA.plans.enterprise.whatYouGet}
               />
             </Grid>
-            <Spacer blockSize="lg" />
-            <Flex flexDirection="column" rowGap="2xs">
+            <Spacer blockSize="48px" />
+            <Flex flexDirection="column" rowGap="4px">
               {PRICING_DATA.additionalInfo.map((info, key) => (
                 <Text key={key} italic>
                   {info}

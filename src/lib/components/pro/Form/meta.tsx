@@ -409,7 +409,7 @@ export const FORM_META = {
         description: 'Callback fired when the button is clicked.',
       },
       order: FLEX_META.FlexItem.props.order,
-      size: BUTTON_META.Button.props.size,
+      scale: BUTTON_META.Button.props.scale,
       tagAttrs: FLEX_META.FlexItem.props.tagAttrs,
       tagRef: FLEX_META.FlexItem.props.tagRef,
       type: {

@@ -20,13 +20,13 @@ export default () => {
           <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
         ))}
       </Select>
-      <Spacer blockSize="lg" />
-      <Flex flexDirection="column" alignItems="stretch" rowGap="sm">
+      <Spacer blockSize="48px" />
+      <Flex flexDirection="column" alignItems="stretch" rowGap="16px">
         {arr.map(n => {
           return (
             <Flex.Item key={n} flexGrow="1">
               <Text typography="small">{`Step ${n}`}</Text>
-              <Spacer blockSize="3xs" />
+              <Spacer blockSize="2px" />
               <Box
                 drawable
                 variant="outline"
@@ -39,7 +39,7 @@ export default () => {
           )
         })}
       </Flex>
-      <Spacer blockSize="sm" />
+      <Spacer blockSize="16px" />
     </Box>
   )
 }

@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 
 import { Box, Grid, Spacer, Table, Text } from 'lib/components'
 import { TEXT_TYPOGRAPHY, TextTypography } from 'lib/components/core/Text'
-import { TEXT_TYPOGRAPHY_MAP } from 'lib/constants'
+import { TYPOGRAPHY_MAP } from 'lib/constants'
 
 const MAP: Record<TextTypography, string> = {
   body: 'Default text for reading and general content. Balanced for legibility and rhythm across devices.',
@@ -28,7 +28,7 @@ export default () => {
         are exposed as reusable CSS custom properties, allowing the same styles to be referenced directly in custom layouts,
         markdown content and external components outside the NebulaKit primitives.
       </Text>
-      <Spacer blockSize="xl" />
+      <Spacer blockSize="48px" />
       <Table paddingBlock="10px" paddingInline="15px">
         <Table.Header>
           <Table.HeaderRow>
@@ -38,9 +38,9 @@ export default () => {
           </Table.HeaderRow>
         </Table.Header>
         <Table.Body>
-          {Object.keys(TEXT_TYPOGRAPHY_MAP).map(key => {
-            const fontSize: string = (TEXT_TYPOGRAPHY_MAP[key as never] as any).fontSize
-            const lineHeight: string = (TEXT_TYPOGRAPHY_MAP[key as never] as any).lineHeight
+          {Object.keys(TYPOGRAPHY_MAP).map(key => {
+            const fontSize: string = (TYPOGRAPHY_MAP[key as never] as any).fontSize
+            const lineHeight: string = (TYPOGRAPHY_MAP[key as never] as any).lineHeight
 
             return (
               <Table.Row key={key}>
@@ -64,20 +64,20 @@ export default () => {
           })}
         </Table.Body>
       </Table>
-      <Spacer blockSize="3xl" />
+      <Spacer blockSize="96px" />
       <Grid
         gridTemplateColumns={{
           base: '1fr',
           md: 'max-content minmax(0, 1fr)',
         }}
-        columnGap="lg"
+        columnGap="48px"
       >
         {TEXT_TYPOGRAPHY.map(typography => (
           <Fragment key={typography}>
             <Text intent="primary" bold>
               {typography}
             </Text>
-            <Box drawable variant="outline" intent="muted" marginBottom="md">
+            <Box drawable variant="outline" intent="muted" marginBottom="24px">
               <Text intent="neutral" typography={typography}>
                 {MAP[typography]}
               </Text>

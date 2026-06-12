@@ -50,8 +50,8 @@ export const SplitViewSide = ({
       surface="dividing"
       borderWidth="0px"
       borderRadius="0px"
-      borderLeftWidth={mode === 'overlay' && sidePosition === 'right' && sideOpen ? 'var(--neb-length-3xs)' : '0px'}
-      borderRightWidth={mode === 'overlay' && sidePosition === 'left' && sideOpen ? 'var(--neb-length-3xs)' : '0px'}
+      borderLeftWidth={mode === 'overlay' && sidePosition === 'right' && sideOpen ? '2px' : '0px'}
+      borderRightWidth={mode === 'overlay' && sidePosition === 'left' && sideOpen ? '2px' : '0px'}
       left={sidePosition === 'left' ? '0px' : undefined}
       right={sidePosition === 'right' ? '0px' : undefined}
       maxInlineSize={mode === 'inline' ? inlineSize : '100%'}
@@ -77,15 +77,15 @@ export const SplitViewSide = ({
       >
         <FocusTrap tagRef={finalRef} active={mode == 'overlay' && sideOpen} onFocusEscape={() => setSideOpen(false)}>
           <Resize property="inlineSize" visible={sideOpen} easing="cubic-bezier(0.4, 0, 0.2, 1)">
-            <Box inlineSize={inlineSize} maxInlineSize="100dvw" paddingRight="3xs">
+            <Box inlineSize={inlineSize} maxInlineSize="100dvw" paddingRight="2px">
               <Box>
                 {mode === 'overlay' ? (
                   <Flex justifyContent="flex-end">
-                    <Box padding="2xs" paddingRight="3xs" paddingBottom="md">
+                    <Box padding="4px" paddingRight="2px" paddingBottom="24px">
                       <IconButton
                         iconName="close"
                         intent={intent || 'tertiary'}
-                        size="2xs"
+                        size="xs"
                         onClick={() => {
                           setSideOpen(false)
                         }}

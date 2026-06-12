@@ -6,7 +6,7 @@ import { Box } from '../Box'
 import { BOX_META } from '../Box/meta'
 import { BUTTON_META } from '../Button/meta'
 import { RESIZE_META } from '../Resize/meta'
-import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SIZE } from './definitions'
+import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SCALE } from './definitions'
 
 export const REVEAL_META = {
   Reveal: {
@@ -36,9 +36,9 @@ export const REVEAL_META = {
         isRequired: true,
         description: 'Text displayed on the reveal button.',
       },
-      size: {
-        ...BUTTON_META.Button.props.size,
-        defaultValue: DEFAULT_REVEAL_SIZE,
+      scale: {
+        ...BUTTON_META.Button.props.scale,
+        defaultValue: DEFAULT_REVEAL_SCALE,
         description: 'Size of the reveal button.',
       },
       tag: BOX_META.Box.props.tag,

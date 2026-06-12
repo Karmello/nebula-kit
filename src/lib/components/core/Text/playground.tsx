@@ -1,4 +1,4 @@
-import { TextProps } from './types'
+import type { TextProps } from './types'
 
 export type PropsFromTextKey = (typeof PROPS_FROM_TEXT)[number]
 
@@ -23,7 +23,7 @@ export const TEXT_PRESETS = [
     name: 'Default',
     props: {
       children: 'This is basic text with default body typography.',
-    } as Record<PropsFromTextKey, unknown>,
+    },
   },
   {
     name: 'Custom',
@@ -32,6 +32,9 @@ export const TEXT_PRESETS = [
       color: 'red',
       intent: 'primary',
       typography: 'h4',
-    } as Record<PropsFromTextKey, unknown>,
+    },
   },
-]
+] satisfies {
+  name: string
+  props: Pick<TextProps, PropsFromTextKey>
+}[]

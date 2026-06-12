@@ -210,16 +210,16 @@ expectError(<Box textAlign="wrong" />)
 
 expectType(<Box blockSize="20px" />)
 expectType(<Box inlineSize="20px" />)
-expectType(<Box minInlineSize="sm" />)
-expectType(<Box maxInlineSize="2xl" />)
+expectType(<Box minInlineSize="16px" />)
+expectType(<Box maxInlineSize="64px" />)
 
-expectType(<Box padding={{ md: 'lg' }} />)
+expectType(<Box padding={{ md: '48px' }} />)
 
 expectType(<Box marginLeft={{ lg: '10px' }} />)
 
-expectType(<Box inset={{ md: 'xs' }} />)
+expectType(<Box inset={{ md: '8px' }} />)
 
-expectError(<Box padding={{ wrong: 'md' }} />)
+expectError(<Box padding={{ wrong: '24px' }} />)
 
 // -------------------------------------
 // css string props

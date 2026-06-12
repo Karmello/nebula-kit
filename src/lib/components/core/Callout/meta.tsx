@@ -1,10 +1,9 @@
-import { CALLOUT_TAGS } from 'lib/constants'
+import { CALLOUT_TAGS, TSHIRT_SIZES } from 'lib/constants'
 import { Callout, CalloutProps, Spacer } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import {
-  CALLOUT_SIZES,
   CALLOUT_STATUSES,
   CALLOUT_VARIANTS,
   DEFAULT_CALLOUT_INTENT,
@@ -38,7 +37,7 @@ export const CALLOUT_META = {
         defaultValue: String(DEFAULT_CALLOUT_INTENT),
       },
       size: {
-        options: CALLOUT_SIZES,
+        options: TSHIRT_SIZES,
         defaultValue: DEFAULT_CALLOUT_SIZE,
         description: 'Controls overall proportions - adjusting heading size and spacings.',
       },
@@ -66,9 +65,9 @@ export const CALLOUT_META = {
         jsx: (
           <>
             <Callout content="Callout text content" />
-            <Spacer blockSize="md" />
+            <Spacer blockSize="24px" />
             <Callout content="Callout text content" variant="outline" />
-            <Spacer blockSize="md" />
+            <Spacer blockSize="24px" />
             <Callout content="Callout text content" variant="soft-outline" />
           </>
         ),
@@ -78,9 +77,9 @@ export const CALLOUT_META = {
         jsx: (
           <>
             <Callout content="Callout text content" status="success" />
-            <Spacer blockSize="md" />
+            <Spacer blockSize="24px" />
             <Callout content="Callout text content" variant="outline" status="success" />
-            <Spacer blockSize="md" />
+            <Spacer blockSize="24px" />
             <Callout content="Callout text content" variant="soft-outline" status="success" />
           </>
         ),
@@ -90,9 +89,9 @@ export const CALLOUT_META = {
         jsx: (
           <>
             <Callout content="Callout text content" status="warning" />
-            <Spacer blockSize="md" />
+            <Spacer blockSize="24px" />
             <Callout content="Callout text content" variant="outline" status="warning" />
-            <Spacer blockSize="md" />
+            <Spacer blockSize="24px" />
             <Callout content="Callout text content" variant="soft-outline" status="warning" />
           </>
         ),
@@ -102,9 +101,9 @@ export const CALLOUT_META = {
         jsx: (
           <>
             <Callout content="Callout text content" status="error" />
-            <Spacer blockSize="md" />
+            <Spacer blockSize="24px" />
             <Callout content="Callout text content" variant="outline" status="error" />
-            <Spacer blockSize="md" />
+            <Spacer blockSize="24px" />
             <Callout content="Callout text content" variant="soft-outline" status="error" />
           </>
         ),

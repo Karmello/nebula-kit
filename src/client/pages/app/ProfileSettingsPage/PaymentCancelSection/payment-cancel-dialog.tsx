@@ -45,7 +45,7 @@ export const PaymentCancelDialog = ({
                   }
                 },
               }}
-              size="sm"
+              scale="sm"
               intent="primary"
               color="red"
               loading={cancelPaidPlan.isMakingRequest}
@@ -54,7 +54,7 @@ export const PaymentCancelDialog = ({
             </Button>
           </Segment.Item>
           <Segment.Item>
-            <Button size="sm" tagAttrs={{ onClick: handleClose }} disabled={cancelPaidPlan.isMakingRequest}>
+            <Button scale="sm" tagAttrs={{ onClick: handleClose }} disabled={cancelPaidPlan.isMakingRequest}>
               Keep plan
             </Button>
           </Segment.Item>

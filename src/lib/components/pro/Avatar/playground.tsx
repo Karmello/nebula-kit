@@ -1,4 +1,5 @@
-import { Avatar, AvatarProps } from 'lib/index.pro'
+import { Avatar } from './avatar'
+import { type AvatarProps } from './definitions'
 
 export type PropsFromAvatarKey = (typeof PROPS_FROM_AVATAR)[number]
 
@@ -9,8 +10,11 @@ export const AVATAR_PRESETS = [
     name: 'Default',
     props: {
       src: '/imgs/mj23.webp',
-    } as Record<PropsFromAvatarKey, unknown>,
+    },
   },
-]
+] satisfies {
+  name: string
+  props: Pick<AvatarProps, PropsFromAvatarKey>
+}[]
 
 export const AvatarTemplate = (props: any) => <Avatar {...props} />

@@ -96,7 +96,7 @@ expectError(
 // -------------------------------------
 
 expectType(
-  <Table inlineSize={{ md: 'xl' }}>
+  <Table inlineSize={{ md: '48px' }}>
     <Table.Body>
       <Table.Row>
         <Table.Cell>Cell</Table.Cell>
@@ -116,7 +116,7 @@ expectType(
 )
 
 expectType(
-  <Table paddingInline="lg" paddingBlock="10px">
+  <Table paddingInline="48px" paddingBlock="10px">
     <Table.Body>
       <Table.Row>
         <Table.Cell>Cell</Table.Cell>
@@ -318,7 +318,7 @@ expectError(<Table.Cell colSpan="2">Cell</Table.Cell>)
 expectError(<Table.Cell rowSpan="3">Cell</Table.Cell>)
 
 expectType(
-  <Table.Cell minInlineSize={{ md: 'xl' }} maxInlineSize="300px" blockSize="100px">
+  <Table.Cell minInlineSize={{ md: '48px' }} maxInlineSize="300px" blockSize="100px">
     Cell
   </Table.Cell>
 )

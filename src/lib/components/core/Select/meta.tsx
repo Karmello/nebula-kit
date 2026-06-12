@@ -1,5 +1,5 @@
 import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from 'lib/components/shared'
-import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { Select, SelectOptionProps, SelectProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
@@ -56,8 +56,8 @@ export const SELECT_META = {
         description: 'Callback fired when the selected value changes.',
       },
       size: {
-        options: CONTROL_SIZES,
-        defaultValue: DEFAULT_CONTROL_SIZE,
+        options: TSHIRT_SIZES,
+        defaultValue: DEFAULT_TSHIRT_SIZE,
         description:
           'Controls overall proportions - adjusting trigger and list item sizing to keep the dropdown visually balanced at each size.',
       },

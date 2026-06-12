@@ -17,7 +17,7 @@ export const ComponentChangelogPage = () => {
   return (
     <>
       <Box maxInlineSize="55rem">
-        <Flex flexDirection="column" alignItems="stretch" gap="lg">
+        <Flex flexDirection="column" alignItems="stretch" gap="48px">
           {versionKeys.map(vKey => (
             <Section key={vKey} heading={`v${vKey}`} size="sm" intent="primary" color="blue">
               <MarkerList>
@@ -33,7 +33,7 @@ export const ComponentChangelogPage = () => {
           ))}
         </Flex>
       </Box>
-      <Spacer blockSize="2xl" />
+      <Spacer blockSize="64px" />
     </>
   )
 }

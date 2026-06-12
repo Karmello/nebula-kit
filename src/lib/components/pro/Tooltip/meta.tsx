@@ -90,7 +90,7 @@ export const TOOLTIP_META = {
         description: 'Tooltip using hover mode (default).',
         jsx: (
           <Tooltip content="This tooltip shows on hover." mode="hover">
-            <Icon name="message-circle-question-mark" size="40px" />
+            <Icon name="message-circle-question-mark" size="24px" />
           </Tooltip>
         ),
       },

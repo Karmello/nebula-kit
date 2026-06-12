@@ -46,7 +46,7 @@ const ActionGroupImpl = ({
     zeroTopLeft = true
   }
 
-  const gap = '3xs'
+  const gap = '2px'
 
   return (
     <Flex

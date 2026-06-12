@@ -139,13 +139,13 @@ expectType(
 
 // hidden Box props must not leak
 expectError(
-  <Slide from="left" visible padding="md">
+  <Slide from="left" visible padding="24px">
     children
   </Slide>
 )
 
 expectError(
-  <Slide from="left" visible margin="md">
+  <Slide from="left" visible margin="24px">
     children
   </Slide>
 )
@@ -181,7 +181,7 @@ expectError(
 )
 
 expectError(
-  <Slide from="left" visible gap="md">
+  <Slide from="left" visible gap="24px">
     children
   </Slide>
 )

@@ -1,17 +1,17 @@
 import { useCallback, useMemo } from 'react'
 
-import { type IconName } from 'lib/components/core/Icon/definitions'
-import { CONTROL_SIZE_MAP } from 'lib/constants'
+import { type IconName } from 'lib/components/core/Icon/types'
+import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { Box, Button, Flex, Icon, Link, Segment } from 'lib/index.core'
 import { PaginationProps } from 'lib/index.pro'
 
 import {
   DEFAULT_PAGINATION_BOUNDARY_COUNT,
   DEFAULT_PAGINATION_INTENT,
+  DEFAULT_PAGINATION_SCALE,
   DEFAULT_PAGINATION_SHOW_FIRST_LAST,
   DEFAULT_PAGINATION_SHOW_PREV_NEXT,
   DEFAULT_PAGINATION_SIBLING_COUNT,
-  DEFAULT_PAGINATION_SIZE,
   DEFAULT_PAGINATION_VARIANT,
 } from './definitions'
 import { getPaginationItems } from './helpers'
@@ -24,7 +24,7 @@ export const Pagination = ({
   color,
   disabled,
   intent = DEFAULT_PAGINATION_INTENT,
-  size = DEFAULT_PAGINATION_SIZE,
+  scale = DEFAULT_PAGINATION_SCALE,
   variant = DEFAULT_PAGINATION_VARIANT,
   // own
   currentPage,
@@ -87,7 +87,7 @@ export const Pagination = ({
                 variant={variant}
                 intent={intent}
                 color={color}
-                size={size}
+                scale={scale}
                 iconName={iconName}
                 disabled={disabled}
                 bold={active}
@@ -125,8 +125,8 @@ export const Pagination = ({
                   intent={intent}
                   color={color}
                   disabled
-                  blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
-                  paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
+                  blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
+                  paddingInline={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
                 >
                   <Flex tagAttrs={{ style: { blockSize: 'inherit' } }} alignItems="center">
                     <Icon name="ellipsis" />

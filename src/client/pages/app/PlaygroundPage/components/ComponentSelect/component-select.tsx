@@ -16,10 +16,10 @@ export const ComponentSelect = () => {
           maxInlineSize={400}
           mode="click"
         >
-          <Icon name="info" size="18px" color="blue" intent="primary" />
+          <Icon name="info" size="24px" color="blue" intent="primary" />
         </Tooltip>
       </Flex>
-      <Spacer blockSize="2xs" />
+      <Spacer blockSize="4px" />
       <Select value={activeComponent} onChange={setActiveComponent}>
         {Object.keys(components).map(name => (
           <Select.Option value={name}>{name}</Select.Option>

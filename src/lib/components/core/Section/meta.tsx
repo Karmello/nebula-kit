@@ -1,17 +1,11 @@
-import { SECTION_TAGS } from 'lib/constants'
+import { SECTION_TAGS, TSHIRT_SIZES } from 'lib/constants'
 import { Section, SectionProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { TEXT_META } from '../Text/meta'
 import { TITLE_META } from '../Title/meta'
-import {
-  DEFAULT_SECTION_INTENT,
-  DEFAULT_SECTION_SIZE,
-  DEFAULT_SECTION_VARIANT,
-  SECTION_SIZES,
-  SECTION_VARIANTS,
-} from './definitions'
+import { DEFAULT_SECTION_INTENT, DEFAULT_SECTION_SIZE, DEFAULT_SECTION_VARIANT, SECTION_VARIANTS } from './definitions'
 
 export const SECTION_META = {
   Section: {
@@ -52,7 +46,7 @@ export const SECTION_META = {
       },
       interactive: BOX_META.Box.props.interactive,
       size: {
-        options: SECTION_SIZES,
+        options: TSHIRT_SIZES,
         defaultValue: DEFAULT_SECTION_SIZE,
         description: 'Controls overall proportions - adjusting heading size and spacings.',
       },

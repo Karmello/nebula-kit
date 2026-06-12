@@ -1,8 +1,9 @@
 import { IMAGE_META } from 'lib/components/core/Image/meta'
+import { TSHIRT_SIZES } from 'lib/constants'
 import { Avatar, AvatarProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { AVATAR_SHAPES, AVATAR_SIZES, DEFAULT_AVATAR_SHAPE, DEFAULT_AVATAR_SIZE } from './definitions'
+import { AVATAR_SHAPES, DEFAULT_AVATAR_SHAPE, DEFAULT_AVATAR_SIZE } from './definitions'
 
 export const AVATAR_META = {
   Avatar: {
@@ -37,7 +38,7 @@ export const AVATAR_META = {
         description: "Controls the avatar's outer shape. Use round for a circular avatar or square for a rectangular one.",
       },
       size: {
-        options: AVATAR_SIZES,
+        options: TSHIRT_SIZES,
         defaultValue: DEFAULT_AVATAR_SIZE,
         description: "Controls the avatar's overall dimensions using the predefined size scale.",
       },
@@ -61,7 +62,7 @@ export const AVATAR_META = {
       },
       {
         description: 'The biggest size.',
-        jsx: <Avatar src="/imgs/mj23.webp" size="2xl" />,
+        jsx: <Avatar src="/imgs/mj23.webp" size="xl" />,
       },
       {
         description: 'Displaying initials as a fallback when the image cannot be loaded.',

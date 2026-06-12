@@ -64,7 +64,17 @@ export const Checkbox = ({
         blockSize={CHECKBOX_SIZE_MAP[size || 'xs'].blockSize}
         inlineSize={CHECKBOX_SIZE_MAP[size || 'xs'].blockSize}
       />
-      {currentChecked ? <Icon name="check" size={CHECKBOX_SIZE_MAP[size || 'xs'].iconSize} /> : null}
+      {currentChecked ? (
+        <Icon
+          tagAttrs={{
+            style: {
+              blockSize: CHECKBOX_SIZE_MAP[size || 'xs'].iconSize,
+              inlineSize: CHECKBOX_SIZE_MAP[size || 'xs'].iconSize,
+            },
+          }}
+          name="check"
+        />
+      ) : null}
     </Box>
   )
 }

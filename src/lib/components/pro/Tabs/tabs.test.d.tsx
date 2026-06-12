@@ -119,14 +119,14 @@ expectError(
 //
 
 expectError(
-  <Tabs margin="md">
+  <Tabs margin="24px">
     <Tabs.Tab value="a">Tab A</Tabs.Tab>
     <Tabs.Panel value="a">Panel A</Tabs.Panel>
   </Tabs>
 )
 
 expectError(
-  <Tabs gap="md">
+  <Tabs gap="24px">
     <Tabs.Tab value="a">Tab A</Tabs.Tab>
     <Tabs.Panel value="a">Panel A</Tabs.Panel>
   </Tabs>
@@ -220,7 +220,7 @@ expectType(<Tabs.Panel value={1}>Panel</Tabs.Panel>)
 //
 
 expectError(
-  <Tabs.Panel value="a" padding="md">
+  <Tabs.Panel value="a" padding="24px">
     Panel
   </Tabs.Panel>
 )

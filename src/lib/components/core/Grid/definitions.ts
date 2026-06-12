@@ -1,13 +1,13 @@
 import { ElementType } from 'react'
 
-import {
+import type {
   CssGridAutoFlow,
   CssGridDisplay,
   CssGridPlaceContent,
   CssGridPlaceItems,
   CssValue,
+  Length,
   RespValue,
-  TShirtSize,
 } from 'lib/types'
 
 import { BoxProps } from '../Box'
@@ -21,7 +21,7 @@ export type GridProps<T extends ElementType = 'div'> = Omit<BoxProps<T>, 'displa
   gridAutoFlow?: RespValue<CssGridAutoFlow>
   placeItems?: RespValue<CssGridPlaceItems>
   placeContent?: RespValue<CssGridPlaceContent>
-  gap?: RespValue<TShirtSize | CssValue>
-  rowGap?: RespValue<TShirtSize | CssValue>
-  columnGap?: RespValue<TShirtSize | CssValue>
+  gap?: RespValue<Length | CssValue>
+  rowGap?: RespValue<Length | CssValue>
+  columnGap?: RespValue<Length | CssValue>
 }

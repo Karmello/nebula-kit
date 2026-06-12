@@ -12,13 +12,13 @@ export const Preferences = () => {
   const setBrand = useAppStore(state => state.setBrand)
 
   return (
-    <Flex flexWrap="wrap" rowGap="md" columnGap="sm" justifyContent="center">
+    <Flex flexWrap="wrap" rowGap="24px" columnGap="16px" justifyContent="center">
       <Flex.Item>
         <Text bold>Theme</Text>
         <Segment>
           {NEBKIT_PROVIDER_THEMES.map(key => (
             <Segment.Item key={key}>
-              <Button intent={key === theme ? 'inverse' : 'tertiary'} size="sm" onClick={() => setTheme(key)}>
+              <Button intent={key === theme ? 'inverse' : 'tertiary'} scale="sm" onClick={() => setTheme(key)}>
                 {sentenceCase(key)}
               </Button>
             </Segment.Item>

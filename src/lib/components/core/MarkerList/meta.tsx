@@ -63,7 +63,7 @@ export const MARKER_LIST_META = {
       {
         description: 'MarkerList with circular markers and custom spacing between items.',
         jsx: (
-          <MarkerList listStyle="circle" gap="lg">
+          <MarkerList listStyle="circle" gap="48px">
             <MarkerList.Item>Item 1</MarkerList.Item>
             <MarkerList.Item>Item 2</MarkerList.Item>
           </MarkerList>

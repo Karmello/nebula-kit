@@ -24,7 +24,7 @@ export const DocsButton = () => {
         navigateTo(url)
       }}
     >
-      <Button size="xs" iconName="arrow-right" iconPlacement="right" variant="outline" intent="tertiary" color="blue">
+      <Button scale="xs" iconName="arrow-right" iconPlacement="right" variant="outline" intent="tertiary" color="blue">
         Docs
       </Button>
     </Link>

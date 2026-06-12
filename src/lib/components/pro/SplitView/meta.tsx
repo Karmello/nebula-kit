@@ -70,7 +70,7 @@ export const SPLIT_VIEW_META = {
           <Box blockSize="500px">
             <SplitView>
               <SplitView.Side inlineSize={{ base: '300px', md: '500px', lg: '150px' }}>
-                <Box margin="xs">
+                <Box margin="8px">
                   <Text noWrap>Side</Text>
                 </Box>
               </SplitView.Side>

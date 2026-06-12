@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import classNames from 'classnames'
 
-import { CONTROL_SIZE_MAP, TEXT_TYPOGRAPHY_MAP } from 'lib/constants'
+import { CONTROL_SCALE_MAP, TYPOGRAPHY_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { TextareaProps } from 'lib/index.core'
 
@@ -57,8 +57,8 @@ export const Textarea = ({
         ...tagAttrs,
         className: classNames(withPrefix('textarea'), tagAttrs?.className),
         style: {
-          fontSize: TEXT_TYPOGRAPHY_MAP.body.fontSize,
-          lineHeight: TEXT_TYPOGRAPHY_MAP.body.lineHeight,
+          fontSize: TYPOGRAPHY_MAP.body.fontSize,
+          lineHeight: TYPOGRAPHY_MAP.body.lineHeight,
           resize,
           ...tagAttrs?.style,
         },
@@ -82,7 +82,7 @@ export const Textarea = ({
       inlineSize={inlineSize}
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
-      padding={CONTROL_SIZE_MAP.md.paddingInline}
+      padding={CONTROL_SCALE_MAP.md.fontSize}
       interactive
       activeOnFocus
     />

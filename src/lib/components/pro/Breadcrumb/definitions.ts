@@ -1,4 +1,4 @@
-import type { BreadcrumbTag, ControlSize } from 'lib/types'
+import type { BreadcrumbTag, TShirtSize } from 'lib/types'
 
 import { type BoxProps } from '../../core/Box/types'
 import { type DropdownListProps } from '../../shared/DropdownList/definitions'
@@ -16,7 +16,7 @@ type BreadcrumbOwnProps = {
   tree: BreadcrumbNode[]
   defaultPath?: string[]
   path?: string[]
-  size?: ControlSize
+  size?: TShirtSize
   onChange?: (path: string[]) => void
 }
 

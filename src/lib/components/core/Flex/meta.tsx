@@ -6,8 +6,8 @@ import {
   CSS_FLEX_ITEM_ALIGN_SELF,
   CSS_FLEX_JUSTIFY_CONTENT,
   CSS_FLEX_WRAP,
+  LENGTHS,
   PROP_GROUPS,
-  TSHIRT_SIZES,
 } from 'lib/constants'
 import { Flex, FlexItemProps, FlexProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
@@ -67,21 +67,21 @@ export const FLEX_META = {
       },
       gap: {
         group: PROP_GROUPS.FLEX_BOX,
-        options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
+        options: [...LENGTHS, DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Defines spacing between children on both axes.',
         link: true,
       },
       rowGap: {
         group: PROP_GROUPS.FLEX_BOX,
-        options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
+        options: [...LENGTHS, DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Defines vertical spacing between rows of children.',
         link: true,
       },
       columnGap: {
         group: PROP_GROUPS.FLEX_BOX,
-        options: [...TSHIRT_SIZES, DOCS_CSS_LABEL],
+        options: [...LENGTHS, DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Defines horizontal spacing between columns of children.',
         link: true,

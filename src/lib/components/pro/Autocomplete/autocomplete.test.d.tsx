@@ -160,7 +160,7 @@ expectError(
 //
 
 expectError(
-  <Autocomplete margin="md">
+  <Autocomplete margin="24px">
     <Autocomplete.Option value="pl" label="Poland">
       Poland
     </Autocomplete.Option>
@@ -168,7 +168,7 @@ expectError(
 )
 
 expectError(
-  <Autocomplete padding="md">
+  <Autocomplete padding="24px">
     <Autocomplete.Option value="pl" label="Poland">
       Poland
     </Autocomplete.Option>
@@ -176,7 +176,7 @@ expectError(
 )
 
 expectError(
-  <Autocomplete gap="md">
+  <Autocomplete gap="24px">
     <Autocomplete.Option value="pl" label="Poland">
       Poland
     </Autocomplete.Option>
@@ -282,7 +282,7 @@ expectError(<Autocomplete.Option label="Poland">Poland</Autocomplete.Option>)
 //
 
 expectError(
-  <Autocomplete.Option value="pl" label="Poland" margin="md">
+  <Autocomplete.Option value="pl" label="Poland" margin="24px">
     Poland
   </Autocomplete.Option>
 )

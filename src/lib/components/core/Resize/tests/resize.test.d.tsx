@@ -127,13 +127,13 @@ expectType(
 
 // hidden Box props must not leak
 expectError(
-  <Resize property="blockSize" visible padding="md">
+  <Resize property="blockSize" visible padding="24px">
     children
   </Resize>
 )
 
 expectError(
-  <Resize property="blockSize" visible margin="md">
+  <Resize property="blockSize" visible margin="24px">
     children
   </Resize>
 )
@@ -163,7 +163,7 @@ expectError(
 )
 
 expectError(
-  <Resize property="blockSize" visible gap="md">
+  <Resize property="blockSize" visible gap="24px">
     children
   </Resize>
 )

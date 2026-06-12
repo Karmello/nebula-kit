@@ -3,7 +3,7 @@ import { BUTTON_META } from 'lib/components/core/Button/meta'
 import { Switch, SwitchProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SIZE, SWITCH_INTENTS } from './definitions'
+import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SCALE, SWITCH_INTENTS } from './definitions'
 
 export const SWITCH_META = {
   Switch: {
@@ -34,9 +34,9 @@ export const SWITCH_META = {
         options: ['(checked: boolean) => void'],
         description: 'Called when the checked state changes. Receives the new checked value.',
       },
-      size: {
-        ...BUTTON_META.Button.props.size,
-        defaultValue: DEFAULT_SWITCH_SIZE,
+      scale: {
+        ...BUTTON_META.Button.props.scale,
+        defaultValue: DEFAULT_SWITCH_SCALE,
         description: 'Controls overall proportions.',
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
@@ -56,8 +56,8 @@ export const SWITCH_META = {
         jsx: <Switch defaultChecked />,
       },
       {
-        description: 'Switch with custom size.',
-        jsx: <Switch size="lg" />,
+        description: 'Switch with custom scale.',
+        jsx: <Switch scale="lg" />,
       },
       {
         description: 'Disabled Switch.',

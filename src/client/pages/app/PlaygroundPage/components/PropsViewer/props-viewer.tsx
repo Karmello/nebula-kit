@@ -15,8 +15,8 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
   return (
     <>
       <Text bold>Props</Text>
-      <Spacer blockSize="xs" />
-      <Table layout="fixed" intent="neutral" paddingBlock="3xs" paddingInline="xs">
+      <Spacer blockSize="8px" />
+      <Table layout="fixed" intent="neutral" paddingBlock="2px" paddingInline="8px">
         <Table.Body intent="muted">
           {Object.keys(props)
             .sort()
@@ -44,7 +44,7 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
                       intent="primary"
                       color="blue"
                       bold={components[activeComponent].activeProp === propName}
-                      size="sm"
+                      scale="sm"
                       iconName={props[propName].isResponsive ? 'screen-share' : undefined}
                       iconPlacement="right"
                       onClick={() => {

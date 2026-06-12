@@ -12,7 +12,7 @@ export default () => {
         allowing small adjustments at lower values and larger jumps for layout-level spacing. Each length token is also exposed as
         a CSS custom property, allowing the scale to be referenced directly in custom styles and external content.
       </Text>
-      <Spacer blockSize="xl" />
+      <Spacer blockSize="48px" />
       <Table paddingBlock="10px" paddingInline="15px">
         <Table.Header>
           <Table.HeaderRow>
@@ -43,8 +43,8 @@ export default () => {
       <CodeSnippet
         lang="tsx"
         description="Scale values can be used anywhere length props are accepted."
-        code={`<Box padding="md" />
-<Box margin="lg" />
+        code={`<Box padding="24px" />
+<Box margin="48px" />
 <Box inlineSize="2xl" />`}
       />
       <Spacer />

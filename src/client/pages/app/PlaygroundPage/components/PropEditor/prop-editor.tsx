@@ -17,7 +17,7 @@ export const PropEditor = () => {
       {typeof prop.value !== 'object' ? (
         <PropValueControl />
       ) : (
-        <Flex flexDirection="column" alignItems="stretch" rowGap="sm">
+        <Flex flexDirection="column" alignItems="stretch" rowGap="16px">
           {BREAKPOINTS.map(bp => (
             <Flex.Item key={bp}>
               <PropValueControl bp={bp} />

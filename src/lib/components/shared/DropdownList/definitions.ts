@@ -1,5 +1,5 @@
 import { PortalPlacement } from 'lib/components/pro/Portal'
-import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE } from 'lib/constants'
 import { BoxProps } from 'lib/index.core'
 
 export const DROPDOWN_LIST_PLACEMENTS = [
@@ -20,7 +20,7 @@ export const DEFAULT_DROPDOWN_LIST_PLACEMENT: DropdownListProps['placement'] = '
 export const DEFAULT_DROPDOWN_LIST_INTENT: DropdownListProps['intent'] = 'tertiary'
 
 export const DEFAULT_DROPDOWN_ITEM_BLOCK_SIZE: DropdownListProps['itemBlockSize'] = Number(
-  CONTROL_SIZE_MAP[DEFAULT_CONTROL_SIZE].blockSize.replace('px', '')
+  CONTROL_SCALE_MAP[DEFAULT_TSHIRT_SIZE].blockSize.replace('px', '')
 )
 
 export const DROPDOWN_LIST_SCROLL_ALIGN = ['start', 'center', 'end'] as const

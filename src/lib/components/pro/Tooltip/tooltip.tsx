@@ -1,6 +1,5 @@
 import { useState } from 'react'
 
-import { resolveLengthToken } from 'lib/helpers'
 import { Box, Text } from 'lib/index.core'
 import { Floating, TooltipProps } from 'lib/index.pro'
 
@@ -28,13 +27,7 @@ export const Tooltip = ({
   const [open, setOpen] = useState(false)
 
   return (
-    <Floating
-      open={open}
-      onOpenChange={setOpen}
-      mode={mode}
-      placement={placement}
-      offset={Number.parseFloat(resolveLengthToken('xs'))}
-    >
+    <Floating open={open} onOpenChange={setOpen} mode={mode} placement={placement} offset={8}>
       <Floating.Trigger display="inline-block" cursor={mode === 'click' ? 'pointer' : undefined}>
         {children}
       </Floating.Trigger>
@@ -52,8 +45,8 @@ export const Tooltip = ({
             variant="solid"
             intent={variant === 'outline' ? 'neutral' : intent}
             color={color}
-            paddingBlock="xs"
-            paddingInline="sm"
+            paddingBlock="8px"
+            paddingInline="16px"
           >
             <Text>{content}</Text>
           </Box>

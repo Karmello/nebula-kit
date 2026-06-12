@@ -1,5 +1,5 @@
 import { Box, Flex, Link, Section, Text, Title } from 'lib/components'
-import { type IconName } from 'lib/components/core/Icon/definitions'
+import { type IconName } from 'lib/components/core/Icon/types'
 
 type ArticleProps = {
   title: string
@@ -12,7 +12,7 @@ type ArticleProps = {
 const Article = ({ title, date, platform, href, iconName }: ArticleProps) => {
   return (
     <Section heading={title} variant="outline" intent="secondary" size="sm" iconName={iconName}>
-      <Flex columnGap="xs" flexWrap="wrap">
+      <Flex columnGap="8px" flexWrap="wrap">
         <Text tag="span" noWrap>
           {`${new Date(date).toDateString()} |`}
         </Text>
@@ -31,9 +31,9 @@ const Article = ({ title, date, platform, href, iconName }: ArticleProps) => {
 
 export const BlogPage = () => {
   return (
-    <Box paddingTop="sm" paddingInline={{ base: 'md', lg: 'xl' }} maxInlineSize="75rem">
+    <Box paddingTop="16px" paddingInline={{ base: '24px', lg: '48px' }} maxInlineSize="75rem">
       <Section size="lg" heading="Blog" iconName="rss">
-        <Flex flexDirection="column" rowGap="sm" alignItems="stretch">
+        <Flex flexDirection="column" rowGap="16px" alignItems="stretch">
           <Article
             title="Local theme island in action"
             date="02-04-2026"

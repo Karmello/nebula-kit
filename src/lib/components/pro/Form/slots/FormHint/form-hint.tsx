@@ -19,7 +19,7 @@ export const FormHint = ({
 }: FormHintProps) => {
   return (
     <>
-      <Spacer blockSize="2xs" />
+      <Spacer blockSize="4px" />
       <Title iconName={iconName} iconPlacement={iconPlacement}>
         <Text
           tag="span"

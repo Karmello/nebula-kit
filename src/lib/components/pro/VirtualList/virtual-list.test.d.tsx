@@ -218,11 +218,11 @@ expectError(
 // hidden primitive leakage
 // -------------------------------------
 
-expectError(<VirtualList items={['a']} itemBlockSize={40} visibleItemsCount={5} renderItem={item => item} gap="md" />)
+expectError(<VirtualList items={['a']} itemBlockSize={40} visibleItemsCount={5} renderItem={item => item} gap="24px" />)
 
 expectError(<VirtualList items={['a']} itemBlockSize={40} visibleItemsCount={5} renderItem={item => item} flex="1" />)
 
-expectError(<VirtualList items={['a']} itemBlockSize={40} visibleItemsCount={5} renderItem={item => item} padding="md" />)
+expectError(<VirtualList items={['a']} itemBlockSize={40} visibleItemsCount={5} renderItem={item => item} padding="24px" />)
 
 expectError(<VirtualList items={['a']} itemBlockSize={40} visibleItemsCount={5} renderItem={item => item} variant="solid" />)
 

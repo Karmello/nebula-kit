@@ -10,8 +10,8 @@ export const ConnectToDiscordSection = ({ userPlan, discordUserId }: { userPlan:
         Connect your Discord account to receive your NebulaKit role and priority badge in the community. This helps us recognize
         your plan and provide the right level of support.
       </Text>
-      <Spacer blockSize="md" />
-      <Flex alignItems="center" columnGap="sm">
+      <Spacer blockSize="24px" />
+      <Flex alignItems="center" columnGap="16px">
         <Button
           tagAttrs={{
             onClick: async () => {
@@ -21,7 +21,7 @@ export const ConnectToDiscordSection = ({ userPlan, discordUserId }: { userPlan:
               }
             },
           }}
-          size="sm"
+          scale="sm"
           intent="primary"
           color="blue"
           iconName="plug"
@@ -42,7 +42,7 @@ export const ConnectToDiscordSection = ({ userPlan, discordUserId }: { userPlan:
           </Title>
         ) : null}
       </Flex>
-      <Spacer blockSize="xs" />
+      <Spacer blockSize="8px" />
     </Section>
   )
 }

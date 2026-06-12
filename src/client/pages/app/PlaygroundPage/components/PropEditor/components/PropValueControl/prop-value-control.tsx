@@ -47,7 +47,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
   return (
     <>
       <Text bold>{bp ? `${sentenceCase(activeProp)} [${bp}]` : sentenceCase(activeProp)}</Text>
-      <Spacer blockSize="2xs" />
+      <Spacer blockSize="4px" />
 
       {PLAYGROUND_CONTROLS_MAP[activeProp as PlaygroundProp].type === 'string' ? (
         <Input

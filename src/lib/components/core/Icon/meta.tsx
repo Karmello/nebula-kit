@@ -1,11 +1,12 @@
 import { Footprints } from 'lucide-react'
 
 import { PROP_GROUPS } from 'lib/constants'
-import { Icon, IconProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
-import { DEFAULT_ICON_SIZE, ICON_SIZES } from './definitions'
+import { DEFAULT_ICON_SIZE } from './constants'
+import { Icon } from './icon'
+import type { IconProps } from './types'
 
 export const ICON_META = {
   Icon: {
@@ -23,18 +24,17 @@ export const ICON_META = {
       },
     },
     props: {
+      children: {
+        ...BOX_META.Box.props.children,
+        description: 'Custom SVG icon rendered instead of name.',
+      },
+      tagRef: BOX_META.Box.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
       name: {
         group: PROP_GROUPS.ICON,
         options: ['IconName'],
         isResponsive: true,
         description: 'Name of the icon to render.',
-      },
-      size: {
-        group: PROP_GROUPS.ICON,
-        options: [...ICON_SIZES, DOCS_CSS_LABEL],
-        defaultValue: String(DEFAULT_ICON_SIZE),
-        isResponsive: true,
-        description: 'Size of the icon.',
       },
       color: {
         ...BOX_META.Box.props.color,
@@ -44,12 +44,12 @@ export const ICON_META = {
         ...BOX_META.Box.props.intent,
         description: 'Color tone applied to the icon.',
       },
-      children: {
-        ...BOX_META.Box.props.children,
-        description: 'Custom SVG icon rendered instead of name.',
+      size: {
+        group: PROP_GROUPS.SIZE,
+        options: [DOCS_CSS_LABEL],
+        defaultValue: String(DEFAULT_ICON_SIZE),
+        description: 'Size of the icon.',
       },
-      tagAttrs: BOX_META.Box.props.tagAttrs,
-      tagRef: BOX_META.Box.props.tagRef,
     },
     examples: [
       {
@@ -77,7 +77,7 @@ import { Footprints } from 'lucide-react'
       },
       {
         description: 'Icon with custom size.',
-        jsx: <Icon name="search" size="xl" />,
+        jsx: <Icon name="search" size="64px" />,
       },
     ],
     changelog: {

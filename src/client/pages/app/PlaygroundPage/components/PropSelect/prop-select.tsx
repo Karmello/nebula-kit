@@ -19,10 +19,10 @@ export const PropSelect = () => {
           maxInlineSize={400}
           mode="click"
         >
-          <Icon name="info" size="18px" color="blue" intent="primary" />
+          <Icon name="info" size="32px" color="blue" intent="primary" />
         </Tooltip>
       </Flex>
-      <Spacer blockSize="2xs" />
+      <Spacer blockSize="4px" />
       <Select value={value} onChange={value => setActiveProp(activeComponent, value)}>
         {Object.keys(props)
           .sort()

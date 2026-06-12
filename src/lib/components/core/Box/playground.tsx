@@ -1,4 +1,4 @@
-import { BoxProps } from '.'
+import type { BoxProps } from '.'
 
 export type PropsFromBoxKey = (typeof PROPS_FROM_BOX)[number]
 
@@ -28,7 +28,7 @@ export const BOX_PRESETS = [
     name: 'Non-drawable',
     props: {
       children: 'Non-drawable Box used as a simple container.',
-    } as Record<PropsFromBoxKey, unknown>,
+    },
   },
   {
     name: 'Drawable',
@@ -39,7 +39,7 @@ export const BOX_PRESETS = [
       color: 'green',
       intent: 'primary',
       padding: '20px',
-    } as Record<PropsFromBoxKey, unknown>,
+    },
   },
   {
     name: 'Interactive',
@@ -51,6 +51,9 @@ export const BOX_PRESETS = [
       color: 'blue',
       intent: 'primary',
       padding: '20px',
-    } as Record<PropsFromBoxKey, unknown>,
+    },
   },
-]
+] satisfies {
+  name: string
+  props: Pick<BoxProps, PropsFromBoxKey>
+}[]

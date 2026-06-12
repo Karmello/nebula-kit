@@ -207,9 +207,9 @@ expectType(<PasswordInput onChange={() => null} />)
 // hidden primitive leakage
 // -------------------------------------
 
-expectError(<PasswordInput gap="md" />)
-expectError(<PasswordInput margin="md" />)
-expectError(<PasswordInput padding="md" />)
+expectError(<PasswordInput gap="24px" />)
+expectError(<PasswordInput margin="24px" />)
+expectError(<PasswordInput padding="24px" />)
 expectError(<PasswordInput flex="1" />)
 expectError(<PasswordInput justifyContent="center" />)
 expectError(<PasswordInput alignItems="center" />)

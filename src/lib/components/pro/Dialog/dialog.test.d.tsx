@@ -208,7 +208,7 @@ expectType(<Dialog.Header tagRef={createRef<HTMLDivElement>()}>Header</Dialog.He
 expectError(<Dialog.Header tagRef={createRef<HTMLButtonElement>()}>Header</Dialog.Header>)
 
 // hidden primitive leakage
-expectError(<Dialog.Header padding="md">Header</Dialog.Header>)
+expectError(<Dialog.Header padding="24px">Header</Dialog.Header>)
 
 expectError(<Dialog.Header variant="solid">Header</Dialog.Header>)
 
@@ -228,7 +228,7 @@ expectType(<Dialog.Content tagRef={createRef<HTMLDivElement>()}>Content</Dialog.
 expectError(<Dialog.Content tagRef={createRef<HTMLButtonElement>()}>Content</Dialog.Content>)
 
 // hidden primitive leakage
-expectError(<Dialog.Content padding="md">Content</Dialog.Content>)
+expectError(<Dialog.Content padding="24px">Content</Dialog.Content>)
 
 expectError(<Dialog.Content variant="solid">Content</Dialog.Content>)
 
@@ -248,7 +248,7 @@ expectType(<Dialog.Footer tagRef={createRef<HTMLDivElement>()}>Footer</Dialog.Fo
 expectError(<Dialog.Footer tagRef={createRef<HTMLButtonElement>()}>Footer</Dialog.Footer>)
 
 // hidden primitive leakage
-expectError(<Dialog.Footer padding="md">Footer</Dialog.Footer>)
+expectError(<Dialog.Footer padding="24px">Footer</Dialog.Footer>)
 
 expectError(<Dialog.Footer variant="solid">Footer</Dialog.Footer>)
 

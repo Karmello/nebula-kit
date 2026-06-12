@@ -41,16 +41,20 @@ export const AppPrefsDialog = () => {
       </Dialog.Header>
       <Dialog.Content>
         <Box padding="20px" paddingBottom="40px">
-          <Flex flexWrap="wrap" columnGap="sm" rowGap="md">
+          <Flex flexWrap="wrap" columnGap="16px" rowGap="24px">
             <Flex.Item>
               <Text bold typography="small">
                 Theme
               </Text>
-              <Spacer blockSize="3xs" />
+              <Spacer blockSize="2px" />
               <Segment>
                 {NEBKIT_PROVIDER_THEMES.map(key => (
                   <Segment.Item key={key}>
-                    <Button intent={key === theme ? 'inverse' : 'tertiary'} size="xs" tagAttrs={{ onClick: () => setTheme(key) }}>
+                    <Button
+                      intent={key === theme ? 'inverse' : 'tertiary'}
+                      scale="xs"
+                      tagAttrs={{ onClick: () => setTheme(key) }}
+                    >
                       {sentenceCase(key)}
                     </Button>
                   </Segment.Item>
@@ -61,7 +65,7 @@ export const AppPrefsDialog = () => {
               <Text bold typography="small">
                 Brand
               </Text>
-              <Spacer blockSize="3xs" />
+              <Spacer blockSize="2px" />
               <Select value={brand} onChange={setBrand} inlineSize="150px" size="xs">
                 {BOX_COLORS.map(brand => (
                   <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
@@ -72,7 +76,7 @@ export const AppPrefsDialog = () => {
               <Text bold typography="small">
                 Saturation
               </Text>
-              <Spacer blockSize="3xs" />
+              <Spacer blockSize="2px" />
               <Select value={saturation} onChange={setSaturation} inlineSize="150px" size="xs">
                 {NEBKIT_PROVIDER_SATURATIONS.map(saturation => (
                   <Select.Option value={saturation}>{sentenceCase(saturation)}</Select.Option>
@@ -83,7 +87,7 @@ export const AppPrefsDialog = () => {
               <Text bold typography="small">
                 Border radius
               </Text>
-              <Spacer blockSize="3xs" />
+              <Spacer blockSize="2px" />
               <Select value={borderRadiusSize} onChange={setBorderRadiusSize} inlineSize="150px" size="xs">
                 {NEBKIT_PROVIDER_BORDER_RADIUS_SIZES.map(n => (
                   <Select.Option value={n}>{n}</Select.Option>
@@ -94,7 +98,7 @@ export const AppPrefsDialog = () => {
               <Text bold typography="small">
                 Ripple mode
               </Text>
-              <Spacer blockSize="3xs" />
+              <Spacer blockSize="2px" />
               <Select value={rippleMode} onChange={setRippleMode} inlineSize="150px" size="xs">
                 {NEBKIT_PROVIDER_RIPPLE_MODES.map(n => (
                   <Select.Option value={n}>{sentenceCase(n)}</Select.Option>

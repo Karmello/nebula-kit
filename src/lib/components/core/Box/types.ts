@@ -9,8 +9,8 @@ import type {
   CssTextAlign,
   CssValue,
   CssVisibility,
+  Length,
   RespValue,
-  TShirtSize,
 } from 'lib/types'
 
 import { type HtmlTagProps } from '../HtmlTag/definitions'
@@ -48,49 +48,49 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   transform?: RespValue<string>
   zIndex?: RespValue<number>
   // border
-  borderWidth?: RespValue<string>
-  borderTopWidth?: RespValue<string>
-  borderRightWidth?: RespValue<string>
-  borderBottomWidth?: RespValue<string>
-  borderLeftWidth?: RespValue<string>
+  borderWidth?: RespValue<Length | CssValue>
+  borderTopWidth?: RespValue<Length | CssValue>
+  borderRightWidth?: RespValue<Length | CssValue>
+  borderBottomWidth?: RespValue<Length | CssValue>
+  borderLeftWidth?: RespValue<Length | CssValue>
   // border radius
-  borderRadius?: RespValue<string>
-  borderTopLeftRadius?: RespValue<string>
-  borderTopRightRadius?: RespValue<string>
-  borderBottomRightRadius?: RespValue<string>
-  borderBottomLeftRadius?: RespValue<string>
+  borderRadius?: RespValue<Length | CssValue>
+  borderTopLeftRadius?: RespValue<Length | CssValue>
+  borderTopRightRadius?: RespValue<Length | CssValue>
+  borderBottomRightRadius?: RespValue<Length | CssValue>
+  borderBottomLeftRadius?: RespValue<Length | CssValue>
   // layout
   display?: RespValue<CssDisplay>
   overflow?: RespValue<CssOverflow>
   overflowX?: RespValue<CssOverflow>
   overflowY?: RespValue<CssOverflow>
   position?: RespValue<CssPosition>
-  inset?: RespValue<TShirtSize | CssValue>
-  top?: RespValue<TShirtSize | CssValue>
-  right?: RespValue<TShirtSize | CssValue>
-  bottom?: RespValue<TShirtSize | CssValue>
-  left?: RespValue<TShirtSize | CssValue>
+  inset?: RespValue<Length | CssValue>
+  top?: RespValue<Length | CssValue>
+  right?: RespValue<Length | CssValue>
+  bottom?: RespValue<Length | CssValue>
+  left?: RespValue<Length | CssValue>
   // size
-  blockSize?: RespValue<TShirtSize | CssValue>
-  minBlockSize?: RespValue<TShirtSize | CssValue>
-  maxBlockSize?: RespValue<TShirtSize | CssValue>
-  inlineSize?: RespValue<TShirtSize | CssValue>
-  minInlineSize?: RespValue<TShirtSize | CssValue>
-  maxInlineSize?: RespValue<TShirtSize | CssValue>
+  blockSize?: RespValue<Length | CssValue>
+  minBlockSize?: RespValue<Length | CssValue>
+  maxBlockSize?: RespValue<Length | CssValue>
+  inlineSize?: RespValue<Length | CssValue>
+  minInlineSize?: RespValue<Length | CssValue>
+  maxInlineSize?: RespValue<Length | CssValue>
   // padding
-  padding?: RespValue<TShirtSize | CssValue>
-  paddingInline?: RespValue<TShirtSize | CssValue>
-  paddingBlock?: RespValue<TShirtSize | CssValue>
-  paddingTop?: RespValue<TShirtSize | CssValue>
-  paddingRight?: RespValue<TShirtSize | CssValue>
-  paddingBottom?: RespValue<TShirtSize | CssValue>
-  paddingLeft?: RespValue<TShirtSize | CssValue>
+  padding?: RespValue<Length | CssValue>
+  paddingInline?: RespValue<Length | CssValue>
+  paddingBlock?: RespValue<Length | CssValue>
+  paddingTop?: RespValue<Length | CssValue>
+  paddingRight?: RespValue<Length | CssValue>
+  paddingBottom?: RespValue<Length | CssValue>
+  paddingLeft?: RespValue<Length | CssValue>
   // margin
-  margin?: RespValue<TShirtSize | CssValue>
-  marginInline?: RespValue<TShirtSize | CssValue>
-  marginBlock?: RespValue<TShirtSize | CssValue>
-  marginTop?: RespValue<TShirtSize | CssValue>
-  marginRight?: RespValue<TShirtSize | CssValue>
-  marginBottom?: RespValue<TShirtSize | CssValue>
-  marginLeft?: RespValue<TShirtSize | CssValue>
+  margin?: RespValue<Length | CssValue>
+  marginInline?: RespValue<Length | CssValue>
+  marginBlock?: RespValue<Length | CssValue>
+  marginTop?: RespValue<Length | CssValue>
+  marginRight?: RespValue<Length | CssValue>
+  marginBottom?: RespValue<Length | CssValue>
+  marginLeft?: RespValue<Length | CssValue>
 }

@@ -21,7 +21,7 @@ export default ({ enabled }: { enabled: boolean }) => {
 
   return (
     <Section heading="Subscription" size="sm" intent="primary" color="blue">
-      <Spacer blockSize="xs" />
+      <Spacer blockSize="8px" />
       {!getPaymentInfo.isMakingRequest ? (
         <>
           <Table layout="fixed" intent="neutral">
@@ -74,10 +74,10 @@ export default ({ enabled }: { enabled: boolean }) => {
               </Table.Row>
             </Table.Body>
           </Table>
-          <Spacer blockSize="sm" />
+          <Spacer blockSize="16px" />
           <Link href={getPaymentDetailsUrl.data?.url} target="_blank">
             <Button
-              size="xs"
+              scale="xs"
               intent="primary"
               color="blue"
               disabled={!!getPaymentDetailsUrl.error}
@@ -89,7 +89,7 @@ export default ({ enabled }: { enabled: boolean }) => {
           </Link>
           {getPaymentInfo.data?.subscription.status === 'PAST_DUE' ? (
             <>
-              <Spacer blockSize="lg" />
+              <Spacer blockSize="48px" />
               <Callout
                 size="sm"
                 status="error"
@@ -101,7 +101,7 @@ export default ({ enabled }: { enabled: boolean }) => {
           ) : null}
         </>
       ) : (
-        <Box position="relative" blockSize="2xl" drawable variant="solid" intent="muted">
+        <Box position="relative" blockSize="64px" drawable variant="solid" intent="muted">
           <Loader centered active color="blue" size="sm" />
         </Box>
       )}

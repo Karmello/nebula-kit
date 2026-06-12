@@ -1,6 +1,6 @@
 import { DropdownListProps } from 'lib/components/shared'
 import { BoxProps } from 'lib/index.core'
-import { ControlSize } from 'lib/types'
+import { TShirtSize } from 'lib/types'
 
 export const DEFAULT_AUTOCOMPLETE_INLINE_SIZE: AutocompleteProps['inlineSize'] = '100%'
 export const DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING: AutocompleteProps['disableFiltering'] = false
@@ -12,7 +12,7 @@ type AutocompleteOwnProps = {
   value?: string
   onChange?: (value: string) => void
   onInputChange?: (value: string) => void
-  size?: ControlSize
+  size?: TShirtSize
   dropdownPlacement?: DropdownListProps['placement']
   disableFiltering?: boolean
   debounceDelay?: number

@@ -1,6 +1,6 @@
-import { Reveal, RevealProps } from 'lib/index.core'
-
 import { Box } from '../Box'
+import { type RevealProps } from './definitions'
+import { Reveal } from './reveal'
 
 export type PropsFromRevealKey = (typeof PROPS_FROM_REVEAL)[number]
 
@@ -10,7 +10,7 @@ export const PROPS_FROM_REVEAL = [
   'disabled',
   'intent',
   'label',
-  'size',
+  'scale',
 ] as const satisfies readonly (keyof RevealProps)[]
 
 export const REVEAL_PRESETS = [
@@ -19,9 +19,12 @@ export const REVEAL_PRESETS = [
     props: {
       children: 'Hidden by default. Revealed with motion when the moment feels right.',
       label: 'Reveal me !',
-    } as Record<PropsFromRevealKey, unknown>,
+    },
   },
-]
+] satisfies {
+  name: string
+  props: Pick<RevealProps, PropsFromRevealKey>
+}[]
 
 export const RevealTemplate = (props: any) => (
   <Reveal {...props}>

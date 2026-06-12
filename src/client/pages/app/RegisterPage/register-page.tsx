@@ -44,14 +44,14 @@ export const RegisterPage = () => {
   }
 
   return (
-    <Box padding={{ base: 'md', lg: 'xl' }}>
+    <Box padding={{ base: '24px', lg: '48px' }}>
       <Box inlineSize="400px" maxInlineSize="100%" margin="0 auto">
         <Section size="lg" heading="Registration" iconName="user-plus">
           <Text typography="caption" intent="secondary">
             We only use your email for account access and essential security steps. If you ever change your mind, you can
             permanently remove your account in the settings.
           </Text>
-          <Spacer blockSize="md" />
+          <Spacer blockSize="24px" />
           <Form<RegisterFormValues>
             onValidSubmission={onValidSubmission}
             onInvalidSubmission={errors => {
@@ -75,9 +75,9 @@ export const RegisterPage = () => {
               </Form.ActionButton>
             </Form.Actions>
           </Form>
-          <Spacer blockSize="lg" />
+          <Spacer blockSize="48px" />
           <Divider />
-          <Spacer blockSize="sm" />
+          <Spacer blockSize="16px" />
           <Flex justifyContent="center">
             <Link
               href={PageKey.authLogin}

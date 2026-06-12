@@ -1,10 +1,10 @@
 import { BoxIntent } from 'lib/components/core/Box'
 import { BoxProps } from 'lib/index.core'
-import { ControlSize } from 'lib/types'
+import { TShirtSize } from 'lib/types'
 
 export const SWITCH_BORDER_MULTIPLIER = 2
 
-export const DEFAULT_SWITCH_SIZE: SwitchProps['size'] = 'xs'
+export const DEFAULT_SWITCH_SCALE: SwitchProps['scale'] = 'xs'
 export const DEFAULT_SWITCH_INTENT: SwitchProps['intent'] = 'tertiary'
 
 export const SWITCH_INTENTS = ['muted', 'tertiary', 'secondary', 'primary'] as const satisfies BoxIntent[]
@@ -19,7 +19,7 @@ type SwitchOwnProps = {
   checked?: boolean
   defaultChecked?: boolean
   onChange?: (checked: boolean) => void
-  size?: ControlSize
+  scale?: TShirtSize
 }
 
 export type SwitchProps = PropsFromBox & SwitchOwnProps

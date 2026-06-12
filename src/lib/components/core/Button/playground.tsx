@@ -1,4 +1,4 @@
-import { ButtonProps } from 'lib/index.core'
+import type { ButtonProps } from './types'
 
 export type PropsFromButtonKey = (typeof PROPS_FROM_BUTTON)[number]
 
@@ -19,7 +19,7 @@ export const PROPS_FROM_BUTTON = [
   'maxInlineSize',
   'ripple',
   'selected',
-  'size',
+  'scale',
   'variant',
 ] as const satisfies readonly (keyof ButtonProps)[]
 
@@ -30,7 +30,7 @@ export const BUTTON_PRESETS = [
       children: 'Click me',
       color: 'green',
       intent: 'primary',
-    } as Record<PropsFromButtonKey, unknown>,
+    },
   },
   {
     name: 'Full-width',
@@ -39,7 +39,7 @@ export const BUTTON_PRESETS = [
       color: 'blue',
       intent: 'primary',
       fullWidth: true,
-    } as Record<PropsFromButtonKey, unknown>,
+    },
   },
   {
     name: 'With icon',
@@ -49,7 +49,7 @@ export const BUTTON_PRESETS = [
       intent: 'primary',
       iconName: 'send',
       iconPlacement: 'right',
-    } as Record<PropsFromButtonKey, unknown>,
+    },
   },
   {
     name: 'Loading',
@@ -58,6 +58,9 @@ export const BUTTON_PRESETS = [
       color: 'blue',
       intent: 'primary',
       loading: true,
-    } as Record<PropsFromButtonKey, unknown>,
+    },
   },
-]
+] satisfies {
+  name: string
+  props: Pick<ButtonProps, PropsFromButtonKey>
+}[]

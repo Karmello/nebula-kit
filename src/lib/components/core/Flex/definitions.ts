@@ -8,8 +8,8 @@ import {
   CssFlexJustifyContent,
   CssFlexWrap,
   CssValue,
+  Length,
   RespValue,
-  TShirtSize,
 } from 'lib/types'
 
 import { BoxProps } from '../Box'
@@ -21,7 +21,7 @@ export type FlexProps<T extends ElementType = 'div'> = Omit<BoxProps<T>, 'displa
   justifyContent?: RespValue<CssFlexJustifyContent>
   alignItems?: RespValue<CssFlexAlignItems>
   alignContent?: RespValue<CssFlexAlignContent>
-  gap?: RespValue<TShirtSize | CssValue>
-  rowGap?: RespValue<TShirtSize | CssValue>
-  columnGap?: RespValue<TShirtSize | CssValue>
+  gap?: RespValue<Length | CssValue>
+  rowGap?: RespValue<Length | CssValue>
+  columnGap?: RespValue<Length | CssValue>
 }

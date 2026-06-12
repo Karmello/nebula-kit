@@ -195,14 +195,14 @@ expectError(<SplitView.Side intent="wrong">Side</SplitView.Side>)
 // inlineSize
 expectType(<SplitView.Side inlineSize="300px">Side</SplitView.Side>)
 
-expectType(<SplitView.Side inlineSize={{ md: 'lg' }}>Side</SplitView.Side>)
+expectType(<SplitView.Side inlineSize={{ md: '48px' }}>Side</SplitView.Side>)
 
 // exposed padding props
 expectType(
   <SplitView.Side
-    padding="md"
-    paddingInline="lg"
-    paddingBlock="sm"
+    padding="24px"
+    paddingInline="48px"
+    paddingBlock="16px"
     paddingTop="10px"
     paddingRight="10px"
     paddingBottom="10px"
@@ -213,9 +213,9 @@ expectType(
 )
 
 // hidden primitive leakage
-expectError(<SplitView.Side margin="md">Side</SplitView.Side>)
+expectError(<SplitView.Side margin="24px">Side</SplitView.Side>)
 
-expectError(<SplitView.Side gap="md">Side</SplitView.Side>)
+expectError(<SplitView.Side gap="24px">Side</SplitView.Side>)
 
 expectError(<SplitView.Side variant="solid">Side</SplitView.Side>)
 
@@ -235,9 +235,9 @@ expectType(<SplitView.Main tagRef={createRef<HTMLElement>()}>Main</SplitView.Mai
 // padding props
 expectType(
   <SplitView.Main
-    padding="md"
-    paddingInline="lg"
-    paddingBlock="sm"
+    padding="24px"
+    paddingInline="48px"
+    paddingBlock="16px"
     paddingTop="10px"
     paddingRight="10px"
     paddingBottom="10px"
@@ -256,9 +256,9 @@ expectType(
 )
 
 // hidden primitive leakage
-expectError(<SplitView.Main margin="md">Main</SplitView.Main>)
+expectError(<SplitView.Main margin="24px">Main</SplitView.Main>)
 
-expectError(<SplitView.Main gap="md">Main</SplitView.Main>)
+expectError(<SplitView.Main gap="24px">Main</SplitView.Main>)
 
 expectError(<SplitView.Main variant="solid">Main</SplitView.Main>)
 
@@ -278,7 +278,7 @@ expectType(<SplitView.MainBar tagRef={createRef<HTMLDivElement>()}>Bar</SplitVie
 expectError(<SplitView.MainBar tagRef={createRef<HTMLButtonElement>()}>Bar</SplitView.MainBar>)
 
 // hidden primitive leakage
-expectError(<SplitView.MainBar padding="md">Bar</SplitView.MainBar>)
+expectError(<SplitView.MainBar padding="24px">Bar</SplitView.MainBar>)
 
 expectError(<SplitView.MainBar intent="primary">Bar</SplitView.MainBar>)
 

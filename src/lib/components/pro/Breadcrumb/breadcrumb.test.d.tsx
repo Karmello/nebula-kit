@@ -208,14 +208,14 @@ expectError(<Breadcrumb tree={[]} size={{ md: 'lg' }} />)
 // hidden primitive leakage
 // -------------------------------------
 
-expectError(<Breadcrumb tree={[]} gap="md" />)
+expectError(<Breadcrumb tree={[]} gap="24px" />)
 
-expectError(<Breadcrumb tree={[]} padding="md" />)
+expectError(<Breadcrumb tree={[]} padding="24px" />)
 
-expectError(<Breadcrumb tree={[]} margin="md" />)
+expectError(<Breadcrumb tree={[]} margin="24px" />)
 
 expectError(<Breadcrumb tree={[]} flex="1" />)
 
 expectError(<Breadcrumb tree={[]} variant="solid" />)
 
-expectError(<Breadcrumb tree={[]} inlineSize="md" />)
+expectError(<Breadcrumb tree={[]} inlineSize="24px" />)

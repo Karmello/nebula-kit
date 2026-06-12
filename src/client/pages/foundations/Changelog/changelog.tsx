@@ -43,7 +43,7 @@ const PanelContent = ({ bundleNotes, componentNotes }: { bundleNotes?: string[];
       {componentNames.map((name, i) => (
         <Box key={name}>
           <Notes componentName={name} notes={componentNotes[name]} />
-          {i < componentNames.length - 1 ? <Spacer blockSize="lg" /> : null}
+          {i < componentNames.length - 1 ? <Spacer blockSize="48px" /> : null}
         </Box>
       ))}
     </Box>
@@ -77,23 +77,23 @@ export default ({ pathname }: { pathname: string }) => {
   return (
     <Box maxInlineSize="55rem">
       {releaseInfo.headline ? (
-        <Box marginBottom="2xs">
+        <Box marginBottom="4px">
           <Text typography="h5">{releaseInfo.headline}</Text>
         </Box>
       ) : null}
       <Text italic intent="secondary">
         {new Date(releaseInfo.timestamp).toDateString()}
       </Text>
-      <Spacer blockSize="sm" />
+      <Spacer blockSize="16px" />
       {releaseInfo.changelog?.main ? (
         <>
-          <Spacer blockSize="xs" />
+          <Spacer blockSize="8px" />
           <Notes notes={releaseInfo.changelog.main} />
         </>
       ) : null}
       {displayCoreNotes || displayProNotes ? (
         <>
-          <Spacer blockSize="lg" />
+          <Spacer blockSize="48px" />
           <Tabs defaultValue={displayCoreNotes ? 'core' : 'pro'}>
             {displayCoreNotes ? (
               <Tabs.Tab value="core">

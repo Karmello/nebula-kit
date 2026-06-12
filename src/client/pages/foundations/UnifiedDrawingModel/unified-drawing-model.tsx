@@ -3,7 +3,7 @@ import { Box, Flex, Text } from 'lib/components'
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap="sm">
+      <Flex flexDirection="column" gap="16px">
         <Text>
           When you see a NebulaKit component rendered on the screen, you can be certain that the
           <Text tag="span" bold space="both">

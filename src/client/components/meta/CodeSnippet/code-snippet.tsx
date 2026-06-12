@@ -50,7 +50,7 @@ export const CodeSnippet = ({
           },
         }}
       >
-        <Flex alignItems="flex-end" columnGap="xs">
+        <Flex alignItems="flex-end" columnGap="8px">
           <Flex.Item flex="1">
             {description ? (
               <Box paddingBlock="10px">
@@ -77,7 +77,7 @@ export const CodeSnippet = ({
           variant="solid"
         >
           <Flex tag="pre">
-            <Box tag="code" paddingInline="sm" paddingBlock={fullBg ? '0px' : 'sm'} paddingBottom="sm">
+            <Box tag="code" paddingInline="16px" paddingBlock={fullBg ? '0px' : '16px'} paddingBottom="16px">
               {data.tokens.map((token, i) => {
                 const isEmpty = token.length === 0
 

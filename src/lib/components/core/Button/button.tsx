@@ -1,26 +1,28 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
-import { ButtonProps, Flex, Icon, Loader, Text } from 'lib/index.core'
+import { Flex, Icon, Loader, Text } from 'lib/index.core'
 import { syncRespDataset } from 'lib/internals/dom'
-import { ButtonTag } from 'lib/types'
+import type { ButtonTag } from 'lib/types'
 
 import {
   DEFAULT_BUTTON_ALIGN,
   DEFAULT_BUTTON_ICON_PLACEMENT,
   DEFAULT_BUTTON_INTENT,
   DEFAULT_BUTTON_RIPPLE,
+  DEFAULT_BUTTON_SCALE,
   DEFAULT_BUTTON_VARIANT,
 } from './constants'
+import type { ButtonProps } from './types'
 
 import './button.scss'
 
 export const Button = <T extends ButtonTag = 'button'>({
   // own
-  size = DEFAULT_CONTROL_SIZE,
+  scale = DEFAULT_BUTTON_SCALE,
   fullWidth,
   align = DEFAULT_BUTTON_ALIGN,
   loading,
@@ -57,7 +59,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   }, [bp, fullWidth])
 
   const icon = (
-    <Icon name={iconName} size={CONTROL_SIZE_MAP[size || 'md'].iconSize}>
+    <Icon name={iconName} size={CONTROL_SCALE_MAP[scale || 'md'].fontSize}>
       {customSvgIcon}
     </Icon>
   )
@@ -84,21 +86,21 @@ export const Button = <T extends ButtonTag = 'button'>({
       maxInlineSize={maxInlineSize}
       elevated={elevated}
       surface={selected ? 'selected' : undefined}
-      blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
-      paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
+      blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
+      paddingInline={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
       ripple={ripple}
       interactive
       cursor="pointer"
       position="relative"
       alignItems="center"
-      columnGap={CONTROL_SIZE_MAP[size || 'md'].iconGap}
+      columnGap={CONTROL_SCALE_MAP[scale || 'md'].gap}
       justifyContent={align === 'split' ? 'space-between' : align === 'center' ? 'center' : 'flex-start'}
     >
       {iconPlacement === 'left' ? icon : null}
       <Text
         tag="span"
-        fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
-        lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
+        fontSize={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
+        lineHeight={CONTROL_SCALE_MAP[scale || 'md'].lineHeight}
         bold={bold}
         textAlign={align === 'center' ? 'center' : undefined}
         truncate
@@ -106,7 +108,7 @@ export const Button = <T extends ButtonTag = 'button'>({
         {children}
       </Text>
       {iconPlacement === 'right' ? icon : null}
-      {loading && !disabled ? <Loader centered size={CONTROL_SIZE_MAP[size || 'md'].loaderSize} /> : null}
+      {loading && !disabled ? <Loader size={CONTROL_SCALE_MAP[scale || 'md'].fontSize} centered /> : null}
     </Flex>
   )
 }

@@ -1,4 +1,4 @@
-import { CheckboxProps } from 'lib/index.core'
+import { type CheckboxProps } from './definitions'
 
 export type PropsFromCheckboxKey = (typeof PROPS_FROM_CHECKBOX)[number]
 
@@ -16,13 +16,16 @@ export const CHECKBOX_PRESETS = [
     name: 'Standard',
     props: {
       color: 'gray',
-    } as Record<PropsFromCheckboxKey, unknown>,
+    },
   },
   {
     name: 'Solid',
     props: {
       variant: 'solid',
       color: 'blue',
-    } as Record<PropsFromCheckboxKey, unknown>,
+    },
   },
-]
+] satisfies {
+  name: string
+  props: Pick<CheckboxProps, PropsFromCheckboxKey>
+}[]

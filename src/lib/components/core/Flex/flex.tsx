@@ -1,7 +1,7 @@
 import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { resolveLengthValue, withPrefix } from 'lib/helpers'
+import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { FlexProps } from 'lib/index.core'
 import { syncRespDataset, syncRespStyle } from 'lib/internals/dom'
@@ -37,9 +37,9 @@ export const Flex = <T extends ElementType = 'div'>({
       justifyContent,
       alignItems,
       alignContent,
-      gap: gap !== undefined ? resolveLengthValue(gap) : undefined,
-      rowGap: rowGap !== undefined ? resolveLengthValue(rowGap) : undefined,
-      columnGap: columnGap !== undefined ? resolveLengthValue(columnGap) : undefined,
+      gap,
+      rowGap,
+      columnGap,
     })
   }, [bp, display, flexDirection, flexWrap, justifyContent, alignItems, alignContent, gap, rowGap, columnGap])
 

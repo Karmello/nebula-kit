@@ -8,7 +8,7 @@ import { ComponentMeta } from 'client/definitions'
 import {
   DEFAULT_SIDE_NAV_EXPAND_MODE,
   DEFAULT_SIDE_NAV_GAP,
-  DEFAULT_SIDE_NAV_SIZE,
+  DEFAULT_SIDE_NAV_SCALE,
   SIDE_NAV_EXPAND_MODES,
   SIDE_NAV_VARIANTS,
 } from './definitions'
@@ -138,9 +138,9 @@ export const SIDE_NAV_META = {
         ...BUTTON_META.Button.props.intent,
         description: 'Color tone applied to all categories and items.',
       },
-      size: {
-        ...BUTTON_META.Button.props.size,
-        defaultValue: DEFAULT_SIDE_NAV_SIZE,
+      scale: {
+        ...BUTTON_META.Button.props.scale,
+        defaultValue: DEFAULT_SIDE_NAV_SCALE,
       },
       tagAttrs: FLEX_META.Flex.props.tagAttrs,
       tagRef: FLEX_META.Flex.props.tagRef,

@@ -23,7 +23,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number] & { hid
           </Markup>
         </Title>
       ) : null}
-      <Spacer blockSize="xs" />
+      <Spacer blockSize="8px" />
       {!noSandBox ? (
         <>
           <Box drawable variant="outline" intent="tertiary" tagAttrs={{ style: { borderStyle: 'dashed' } }}>
@@ -38,7 +38,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number] & { hid
               {jsx}
             </Box>
           </Box>
-          <Spacer blockSize="xs" />
+          <Spacer blockSize="8px" />
         </>
       ) : null}
       {!noCode ? (
@@ -58,7 +58,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number] & { hid
           )}
         </>
       ) : null}
-      <Spacer blockSize="2xl" />
+      <Spacer blockSize="64px" />
     </>
   )
 }
@@ -79,13 +79,13 @@ export const ComponentExamplesPage = () => {
     <Box maxInlineSize="55rem">
       {!hideExamplesThemeToggle ? (
         <>
-          <Flex alignItems="center" columnGap="sm">
-            <Switch size="xs" checked={flipGlobalThemeOnExamples} onChange={setFlipGlobalThemeOnExamples} />
+          <Flex alignItems="center" columnGap="16px">
+            <Switch scale="xs" checked={flipGlobalThemeOnExamples} onChange={setFlipGlobalThemeOnExamples} />
             <Text bold typography="small">
               Use flipped theme
             </Text>
           </Flex>
-          <Spacer blockSize="xl" />
+          <Spacer blockSize="48px" />
         </>
       ) : null}
       <Flex flexDirection="column" alignItems="stretch">

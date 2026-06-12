@@ -34,7 +34,7 @@ export const PatternsPage = () => {
   const Component = pattern.component
 
   return (
-    <Box paddingTop="sm" paddingInline={{ base: 'md', lg: 'xl' }}>
+    <Box paddingTop="16px" paddingInline={{ base: '24px', lg: '48px' }}>
       <Section size="lg" heading="Patterns" iconName="pyramid">
         <SplitView>
           {({ mode, setSideOpen }) => {
@@ -45,13 +45,13 @@ export const PatternsPage = () => {
                     <Text typography="h5" noWrap>
                       {pattern.title}
                     </Text>
-                    <Spacer blockSize="3xs" />
+                    <Spacer blockSize="2px" />
                     <Markup>
                       <Text intent="primary">{pattern.description}</Text>
                     </Markup>
                   </SplitView.MainBar>
-                  <Spacer blockSize="lg" />
-                  <Flex gap="md" flexDirection="column" alignItems="stretch">
+                  <Spacer blockSize="48px" />
+                  <Flex gap="24px" flexDirection="column" alignItems="stretch">
                     <Flex.Item flex="1">
                       <Box
                         tagAttrs={{ style: { borderStyle: 'dashed' } }}
@@ -59,7 +59,7 @@ export const PatternsPage = () => {
                         variant="outline"
                         intent="tertiary"
                         maxBlockSize="calc(100dvh - 275px)"
-                        padding="sm"
+                        padding="16px"
                       >
                         <Component />
                       </Box>
@@ -71,7 +71,7 @@ export const PatternsPage = () => {
                     ) : null}
                   </Flex>
                 </SplitView.Main>
-                <SplitView.Side inlineSize="350px" paddingRight={{ lg: 'md' }}>
+                <SplitView.Side inlineSize="350px" paddingRight={{ lg: '24px' }}>
                   <MultiSelect value={patternCategories} onChange={setPatternCategories} size="sm">
                     {PATTERN_CATEGORIES.map(c => (
                       <MultiSelect.Option key={c} value={c}>
@@ -79,8 +79,8 @@ export const PatternsPage = () => {
                       </MultiSelect.Option>
                     ))}
                   </MultiSelect>
-                  <Spacer blockSize="sm" />
-                  <SideNav size="xl" gap="3xs">
+                  <Spacer blockSize="16px" />
+                  <SideNav scale="xl" gap="2px">
                     {PATTERNS.filter(p => patternCategories.includes(p.category)).map(({ id, title }) => {
                       const href = `/patterns?id=${id}`
 

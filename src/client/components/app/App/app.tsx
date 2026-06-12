@@ -51,7 +51,7 @@ export const App = () => {
   if (getUser.isMakingRequest || logoutUser.isMakingRequest) {
     return (
       <Box blockSize="100dvh">
-        <Loader centered size="lg" />
+        <Loader centered size="32px" />
       </Box>
     )
   }
@@ -80,18 +80,18 @@ export const App = () => {
         </Toolbar>
         <AppJump />
       </AppFrame.Header>
-      <AppFrame.Main paddingTop={{ base: 'md', lg: 'xl' }} paddingBottom="3xl">
+      <AppFrame.Main paddingTop={{ base: '24px', lg: '48px' }} paddingBottom="96px">
         <RootPage />
       </AppFrame.Main>
       <AppFrame.Footer footerStackBreakpoint="lg">
-        <AppFrame.FooterSection padding="sm">
+        <AppFrame.FooterSection padding="16px">
           <Text bold>Current release</Text>
-          <Divider marginBottom="sm" intent="muted" />
+          <Divider marginBottom="16px" intent="muted" />
           <Text typography="small" italic color="gray" intent="primary">
             NebulaKit is actively developed and released in incremental updates. Each release introduces improvements and
             refinements across the system.
           </Text>
-          <Spacer blockSize="sm" />
+          <Spacer blockSize="16px" />
           <Link
             href={`${PageKey.foundations}/resources/changelog/v${RELEASE_VERSIONS[0]}`}
             onClick={() => {
@@ -102,58 +102,58 @@ export const App = () => {
               NebulaKit v{RELEASE_VERSIONS[0]}
             </Text>
           </Link>
-          <Spacer blockSize="sm" />
+          <Spacer blockSize="16px" />
           <Link href="https://www.npmjs.com/package/@nebula-kit/core" target="_blank">
-            <Button color="red" intent="primary" size="xs" iconName="external-link" iconPlacement="right">
+            <Button color="red" intent="primary" scale="xs" iconName="external-link" iconPlacement="right">
               @nebula-kit/core
             </Button>
           </Link>
         </AppFrame.FooterSection>
-        <AppFrame.FooterSection padding="sm">
+        <AppFrame.FooterSection padding="16px">
           <Text bold>Community & Support</Text>
-          <Divider marginBottom="sm" intent="muted" />
+          <Divider marginBottom="16px" intent="muted" />
           <Text typography="small" italic color="gray" intent="primary">
             This is a closed-source project. There is no public GitHub repository. You can still follow updates, ask questions and
             join the community through the channels below.
           </Text>
-          <Spacer blockSize="sm" />
-          <Flex flexDirection="row" flexWrap="wrap" gap="2xs">
+          <Spacer blockSize="16px" />
+          <Flex flexDirection="row" flexWrap="wrap" gap="4px">
             <Link href="https://x.com/captainnebula" target="_blank">
-              <Button color="gray" intent="inverse" size="xs" iconName="external-link" iconPlacement="right">
+              <Button color="gray" intent="inverse" scale="xs" iconName="external-link" iconPlacement="right">
                 X profile
               </Button>
             </Link>
             <Link href="https://discord.gg/BgezCRDN8H" target="_blank">
-              <Button color="blue" intent="primary" size="xs" iconName="external-link" iconPlacement="right">
+              <Button color="blue" intent="primary" scale="xs" iconName="external-link" iconPlacement="right">
                 Discord server
               </Button>
             </Link>
           </Flex>
         </AppFrame.FooterSection>
-        <AppFrame.FooterSection padding="sm">
+        <AppFrame.FooterSection padding="16px">
           <Text bold>About the author</Text>
-          <Divider marginBottom="sm" intent="muted" />
+          <Divider marginBottom="16px" intent="muted" />
           <Text typography="small" italic color="gray" intent="primary">
             The product is designed and maintained by a solo software engineer focused on long-term UI architecture and system
             consistency.
           </Text>
-          <Spacer blockSize="sm" />
-          <Flex flexDirection="row" flexWrap="wrap" gap="2xs">
+          <Spacer blockSize="16px" />
+          <Flex flexDirection="row" flexWrap="wrap" gap="4px">
             <Link href="https://www.linkedin.com/in/nogakamil" target="_blank">
-              <Button color="blue" intent="primary" size="xs" iconName="external-link" iconPlacement="right">
+              <Button color="blue" intent="primary" scale="xs" iconName="external-link" iconPlacement="right">
                 LinkedIn
               </Button>
             </Link>
             <Link href="https://github.com/Karmello" target="_blank">
-              <Button color="gray" intent="inverse" size="xs" iconName="external-link" iconPlacement="right">
+              <Button color="gray" intent="inverse" scale="xs" iconName="external-link" iconPlacement="right">
                 GitHub
               </Button>
             </Link>
           </Flex>
         </AppFrame.FooterSection>
-        <AppFrame.FooterSection padding="sm">
+        <AppFrame.FooterSection padding="16px">
           <Text bold>Legal information</Text>
-          <Divider marginBottom="sm" intent="muted" />
+          <Divider marginBottom="16px" intent="muted" />
           <MarkerList gap="0px">
             <MarkerList.Item>
               <Link
@@ -192,13 +192,13 @@ export const App = () => {
               </Link>
             </MarkerList.Item>
           </MarkerList>
-          <Spacer blockSize="sm" />
+          <Spacer blockSize="16px" />
           <Link href="mailto:contact@nebulakit.dev" target="_blank">
-            <Button color="blue" intent="secondary" variant="outline" size="xs" iconName="mail">
+            <Button color="blue" intent="secondary" variant="outline" scale="xs" iconName="mail">
               contact@nebulakit.dev
             </Button>
           </Link>
-          <Spacer blockSize="sm" />
+          <Spacer blockSize="16px" />
           <Text typography="caption" intent="primary" color="gray">
             {getCopyrightInfo()}
           </Text>

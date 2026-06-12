@@ -26,7 +26,7 @@ export const FoundationsPageRoutes = () => {
           Component={() => (
             <>
               <Component pathname={pathname} />
-              <Spacer blockSize="xl" />
+              <Spacer blockSize="48px" />
               <NextPageButton pageKey={PageKey.foundations} />
             </>
           )}
@@ -37,7 +37,7 @@ export const FoundationsPageRoutes = () => {
 
   return (
     <>
-      <Spacer blockSize="sm" />
+      <Spacer blockSize="16px" />
       <Routes>
         {ROUTES}
         <Route

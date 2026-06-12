@@ -18,14 +18,14 @@ export const RenderPanel = () => {
             maxInlineSize={400}
             mode="click"
           >
-            <Icon name="info" size="18px" color="blue" intent="primary" />
+            <Icon name="info" size="24px" color="blue" intent="primary" />
           </Tooltip>
         }
         iconPlacement="right"
       >
         <Text bold>Canvas</Text>
       </Title>
-      <Spacer blockSize="2xs" />
+      <Spacer blockSize="4px" />
       <Box
         tagAttrs={{ style: { borderStyle: 'dashed' } }}
         drawable

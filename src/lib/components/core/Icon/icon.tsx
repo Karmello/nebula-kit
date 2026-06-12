@@ -1,15 +1,14 @@
 import { memo, useLayoutEffect, useRef, useState } from 'react'
 import classNames from 'classnames'
 
-import { resolveLengthValue, withPrefix } from 'lib/helpers'
+import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { getSvgIconComponent } from 'lib/icons/lucide'
-import { IconProps } from 'lib/index.core'
 import { syncRespDataset } from 'lib/internals/dom'
-import type { CssValue } from 'lib/types'
 
 import { Box } from '../Box'
-import { DEFAULT_ICON_SIZE, type IconName, type IconSize } from './definitions'
+import { DEFAULT_ICON_SIZE } from './constants'
+import type { IconName, IconProps } from './types'
 
 export const Icon = memo(
   ({
@@ -29,13 +28,11 @@ export const Icon = memo(
     const finalRef = tagRef || localRef
 
     const [resolvedName, setResolvedName] = useState<IconName>()
-    const [resolvedSize, setResolvedSize] = useState<IconSize | CssValue>()
 
     useLayoutEffect(() => {
-      syncRespDataset('Icon', finalRef, bp, { name, size: size !== undefined ? resolveLengthValue(size) : undefined })
+      syncRespDataset('Icon', finalRef, bp, { name })
       setResolvedName(finalRef.current?.dataset.nebIconName as IconName)
-      setResolvedSize(finalRef.current?.dataset.nebIconSize)
-    }, [bp, name, size])
+    }, [bp, name])
 
     if (!name && !children) return null
 
@@ -59,7 +56,7 @@ export const Icon = memo(
         intent={intent}
         display="inline-block"
       >
-        {children || (Svg ? <Svg style={{ width: resolvedSize, height: resolvedSize }} /> : null)}
+        {children || (Svg ? <Svg style={{ width: size, height: size }} /> : null)}
       </Box>
     )
   }

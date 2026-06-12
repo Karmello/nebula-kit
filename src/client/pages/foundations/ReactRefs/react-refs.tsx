@@ -19,7 +19,7 @@ export default () => {
         content="In rare cases, a component may not expose tagRef because it already uses a ref internally and overriding it would break existing functionality.
         However, in most situations you can rely on tagRef being available for direct access and control of the root element."
       />
-      <Spacer blockSize="md" />
+      <Spacer blockSize="24px" />
       <CodeSnippet
         lang="tsx"
         code={`const [visible, setVisible] = useState<boolean>(false)

@@ -54,7 +54,7 @@ export const AssistantMessage = ({ content, handleQuestionClick }: AssistantMess
               const question = decodeURIComponent(href.replace('app://ask/', ''))
 
               return (
-                <Button size="xs" variant="outline" color="blue" intent="tertiary" onClick={() => handleQuestionClick(question)}>
+                <Button scale="xs" variant="outline" color="blue" intent="tertiary" onClick={() => handleQuestionClick(question)}>
                   {children}
                 </Button>
               )
@@ -63,7 +63,7 @@ export const AssistantMessage = ({ content, handleQuestionClick }: AssistantMess
             return <a href={href}>{children}</a>
           },
           hr() {
-            return <Divider intent="muted" marginTop="lg" />
+            return <Divider intent="muted" marginTop="48px" />
           },
         }}
       >

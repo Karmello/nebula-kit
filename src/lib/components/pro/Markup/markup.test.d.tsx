@@ -85,12 +85,12 @@ expectError(<Markup intent="primary">Markup</Markup>)
 
 expectError(<Markup variant="solid">Markup</Markup>)
 
-expectError(<Markup padding="md">Markup</Markup>)
+expectError(<Markup padding="24px">Markup</Markup>)
 
-expectError(<Markup margin="md">Markup</Markup>)
+expectError(<Markup margin="24px">Markup</Markup>)
 
-expectError(<Markup gap="md">Markup</Markup>)
+expectError(<Markup gap="24px">Markup</Markup>)
 
 expectError(<Markup flex="1">Markup</Markup>)
 
-expectError(<Markup inlineSize="md">Markup</Markup>)
+expectError(<Markup inlineSize="24px">Markup</Markup>)

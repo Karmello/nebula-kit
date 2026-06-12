@@ -1,4 +1,5 @@
-import { Tabs, TabsProps } from 'lib/index.pro'
+import { Tabs } from './'
+import { type TabsProps } from './definitions'
 
 export type PropsFromTabsKey = (typeof PROPS_FROM_TABS)[number]
 
@@ -9,15 +10,18 @@ export const TABS_PRESETS = [
     name: 'Default',
     props: {
       //
-    } as Record<PropsFromTabsKey, unknown>,
+    },
   },
   {
     name: 'Custom',
     props: {
       intent: 'primary',
-    } as Record<PropsFromTabsKey, unknown>,
+    },
   },
-]
+] satisfies {
+  name: string
+  props: Pick<TabsProps, PropsFromTabsKey>
+}[]
 
 export const TabsTemplate = (props: any) => (
   <Tabs {...props}>

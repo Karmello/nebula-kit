@@ -107,19 +107,19 @@ expectType(<AppFrame.Main padding="10px">main</AppFrame.Main>)
 
 expectType(
   <AppFrame.Main
-    padding={{ base: 'sm', md: '20px' }}
-    paddingInline="lg"
-    paddingBlock="xl"
-    paddingTop="3xs"
-    paddingRight="2xs"
-    paddingBottom="xs"
-    paddingLeft="md"
+    padding={{ base: '16px', md: '20px' }}
+    paddingInline="48px"
+    paddingBlock="48px"
+    paddingTop="2px"
+    paddingRight="4px"
+    paddingBottom="8px"
+    paddingLeft="24px"
   >
     main
   </AppFrame.Main>
 )
 
-expectError(<AppFrame.Main padding={{ mobile: 'md' }}>main</AppFrame.Main>)
+expectError(<AppFrame.Main padding={{ mobile: '24px' }}>main</AppFrame.Main>)
 
 expectType(<AppFrame.Main tagRef={createRef<HTMLElement>()}>main</AppFrame.Main>)
 
@@ -143,14 +143,14 @@ expectType(<AppFrame.Footer tagRef={createRef<HTMLElement>()}>footer</AppFrame.F
 
 // hidden root Grid/Box props must not leak
 expectError(
-  <AppFrame gap="md">
+  <AppFrame gap="24px">
     <AppFrame.Header>header</AppFrame.Header>
     <AppFrame.Main>main</AppFrame.Main>
   </AppFrame>
 )
 
 expectError(
-  <AppFrame padding="md">
+  <AppFrame padding="24px">
     <AppFrame.Header>header</AppFrame.Header>
     <AppFrame.Main>main</AppFrame.Main>
   </AppFrame>
@@ -170,7 +170,7 @@ expectError(<AppFrame.Main color="blue">main</AppFrame.Main>)
 
 expectError(<AppFrame.Main variant="solid">main</AppFrame.Main>)
 
-expectError(<AppFrame.Main gap="md">main</AppFrame.Main>)
+expectError(<AppFrame.Main gap="24px">main</AppFrame.Main>)
 
 // removed API regression protection
 expectError(

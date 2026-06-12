@@ -63,10 +63,10 @@ expectError(<MarkerList color="purple">children</MarkerList>)
 expectError(<MarkerList intent="danger">children</MarkerList>)
 
 // responsive props
-expectType(<MarkerList gap={{ base: '2xs', md: '24px' }}>children</MarkerList>)
+expectType(<MarkerList gap={{ base: '4px', md: '24px' }}>children</MarkerList>)
 
 // invalid responsive breakpoint
-expectError(<MarkerList gap={{ mobile: 'sm' }}>children</MarkerList>)
+expectError(<MarkerList gap={{ mobile: '16px' }}>children</MarkerList>)
 
 // invalid responsive enum value
 expectError(<MarkerList intent="danger">children</MarkerList>)
@@ -112,16 +112,16 @@ expectError(<MarkerList.Item unknown="xyz">children</MarkerList.Item>)
 expectError(<MarkerList flexDirection="column">children</MarkerList>)
 expectError(<MarkerList alignItems="center">children</MarkerList>)
 expectError(<MarkerList justifyContent="center">children</MarkerList>)
-expectError(<MarkerList rowGap="md">children</MarkerList>)
-expectError(<MarkerList columnGap="md">children</MarkerList>)
+expectError(<MarkerList rowGap="24px">children</MarkerList>)
+expectError(<MarkerList columnGap="24px">children</MarkerList>)
 
 // hidden Box props must not leak
-expectError(<MarkerList padding="md">children</MarkerList>)
-expectError(<MarkerList margin="md">children</MarkerList>)
+expectError(<MarkerList padding="24px">children</MarkerList>)
+expectError(<MarkerList margin="24px">children</MarkerList>)
 expectError(<MarkerList variant="solid">children</MarkerList>)
 expectError(<MarkerList inlineSize="100px">children</MarkerList>)
 
-expectError(<MarkerList.Item padding="md">children</MarkerList.Item>)
-expectError(<MarkerList.Item margin="md">children</MarkerList.Item>)
+expectError(<MarkerList.Item padding="24px">children</MarkerList.Item>)
+expectError(<MarkerList.Item margin="24px">children</MarkerList.Item>)
 expectError(<MarkerList.Item variant="solid">children</MarkerList.Item>)
-expectError(<MarkerList.Item gap="md">children</MarkerList.Item>)
+expectError(<MarkerList.Item gap="24px">children</MarkerList.Item>)

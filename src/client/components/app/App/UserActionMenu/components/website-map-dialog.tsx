@@ -10,7 +10,7 @@ export const WebsiteMapDialog = () => {
   const navigateTo = useNavigateTo()
 
   const commonButtonProps = {
-    size: 'xl',
+    scale: 'xl',
     bold: true,
     fullWidth: true,
     iconPlacement: 'right',
@@ -22,7 +22,7 @@ export const WebsiteMapDialog = () => {
   const commonIconProps = {
     color: 'blue',
     intent: 'primary',
-    size: '27px',
+    size: 'md',
   } as IconProps
 
   const handleClick = (pageKey: PageKey) => {
@@ -47,7 +47,7 @@ export const WebsiteMapDialog = () => {
         </Title>
       </Dialog.Header>
       <Dialog.Content>
-        <Flex flexDirection="column" alignItems="stretch" rowGap="2xs">
+        <Flex flexDirection="column" alignItems="stretch" rowGap="4px">
           <Button
             {...commonButtonProps}
             // description="Recommended composition and architectural patterns."

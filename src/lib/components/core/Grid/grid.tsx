@@ -1,7 +1,7 @@
 import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { resolveLengthValue, withPrefix } from 'lib/helpers'
+import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { GridProps } from 'lib/index.core'
 import { syncRespStyle } from 'lib/internals/dom'
@@ -41,9 +41,9 @@ export const Grid = <T extends ElementType = 'div'>({
       gridAutoFlow,
       placeItems,
       placeContent,
-      gap: gap !== undefined ? resolveLengthValue(gap) : undefined,
-      rowGap: rowGap !== undefined ? resolveLengthValue(rowGap) : undefined,
-      columnGap: columnGap !== undefined ? resolveLengthValue(columnGap) : undefined,
+      gap,
+      rowGap,
+      columnGap,
     })
   }, [
     bp,

@@ -14,7 +14,7 @@ export const UpdatePasswordSection = () => {
       <Text>
         You can update your account password here. For security, your current password is required to complete the change.
       </Text>
-      <Spacer blockSize="md" />
+      <Spacer blockSize="24px" />
       <Box maxInlineSize={{ md: '350px' }}>
         <Form<{ currentPassword: string; newPassword: string }>
           useFormProps={{
@@ -56,7 +56,7 @@ export const UpdatePasswordSection = () => {
           }}
         </Form>
       </Box>
-      <Spacer blockSize="xs" />
+      <Spacer blockSize="8px" />
     </Section>
   )
 }

@@ -14,13 +14,13 @@ export const InteractiveCard = () => {
 
   return (
     <Scale visible={visible}>
-      <Box tag="button" interactive ripple variant="solid" intent="muted" color="amber" padding="lg" cursor="pointer">
+      <Box tag="button" interactive ripple variant="solid" intent="muted" color="amber" padding="48px" cursor="pointer">
         <Title typography="h4" iconName="orbit">
           Interactive card
         </Title>
-        <Spacer blockSize="xs" />
+        <Spacer blockSize="8px" />
         <Text>This is clickable card.</Text>
-        <Divider marginBlock="xs" />
+        <Divider marginBlock="8px" />
         <Text color="blue" intent="primary">
           Click to learn more
         </Text>

@@ -7,7 +7,7 @@ export const Principles = () => {
 
   return (
     <>
-      <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="lg">
+      <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="48px">
         <Section heading="JSX first" color="green" intent="primary" iconName="code">
           <Text intent="neutral">
             JSX is the primary development flow. Styling happens through structured props instead of constant CSS authoring, while
@@ -43,7 +43,7 @@ export const Principles = () => {
           </Text>
         </Section>
       </Grid>
-      <Spacer blockSize="lg" />
+      <Spacer blockSize="48px" />
       <Box textAlign="center">
         <Link
           href={`${PageKey.foundations}/overview/philosophy/jsx-first`}
@@ -51,7 +51,7 @@ export const Principles = () => {
             navigateTo(`${PageKey.foundations}/overview/philosophy/jsx-first`)
           }}
         >
-          <Button size="sm" color="green" intent="primary">
+          <Button scale="sm" color="green" intent="primary">
             Read more
           </Button>
         </Link>

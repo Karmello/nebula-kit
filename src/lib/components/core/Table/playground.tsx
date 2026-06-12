@@ -1,4 +1,5 @@
-import { Table, TableProps } from 'lib/index.core'
+import { Table } from './'
+import { type TableProps } from './definitions'
 
 export type PropsFromTableKey = (typeof PROPS_FROM_TABLE)[number]
 
@@ -19,15 +20,18 @@ export const TABLE_PRESETS = [
     name: 'Default',
     props: {
       //
-    } as Record<PropsFromTableKey, unknown>,
+    },
   },
   {
     name: 'Borderless',
     props: {
       intent: 'neutral',
-    } as Record<PropsFromTableKey, unknown>,
+    },
   },
-]
+] satisfies {
+  name: string
+  props: Pick<TableProps, PropsFromTableKey>
+}[]
 
 export const TableTemplate = (props: any) => (
   <Table {...props}>

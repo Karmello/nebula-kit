@@ -1,4 +1,5 @@
-import { Select, SelectProps } from 'lib/index.core'
+import { Select } from './'
+import type { SelectProps } from './types'
 
 export type PropsFromSelectKey = (typeof PROPS_FROM_SELECT)[number]
 
@@ -18,13 +19,13 @@ export const SELECT_PRESETS = [
     name: 'Default',
     props: {
       //
-    } as Record<PropsFromSelectKey, unknown>,
+    },
   },
   {
     name: 'Custom width',
     props: {
       inlineSize: '200px',
-    } as Record<PropsFromSelectKey, unknown>,
+    },
   },
   {
     name: 'Blue primary',
@@ -32,9 +33,12 @@ export const SELECT_PRESETS = [
       inlineSize: '200px',
       intent: 'primary',
       color: 'blue',
-    } as Record<PropsFromSelectKey, unknown>,
+    },
   },
-]
+] satisfies {
+  name: string
+  props: Pick<SelectProps, PropsFromSelectKey>
+}[]
 
 export const SelectTemplate = (props: any) => (
   <Select {...props}>

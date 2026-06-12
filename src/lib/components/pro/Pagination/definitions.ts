@@ -6,7 +6,7 @@ export const DEFAULT_PAGINATION_SIBLING_COUNT: PaginationProps['siblingCount'] =
 export const DEFAULT_PAGINATION_BOUNDARY_COUNT: PaginationProps['boundaryCount'] = 1
 
 export const DEFAULT_PAGINATION_INTENT: PaginationProps['intent'] = 'primary'
-export const DEFAULT_PAGINATION_SIZE: PaginationProps['size'] = 'md'
+export const DEFAULT_PAGINATION_SCALE: PaginationProps['scale'] = 'md'
 export const DEFAULT_PAGINATION_VARIANT: PaginationProps['variant'] = 'ghost'
 
 export type PaginationItem =
@@ -19,7 +19,7 @@ export type PaginationItem =
 
 type PropsFromBox = Pick<BoxProps<'nav'>, 'tagAttrs' | 'tagRef'>
 
-type PropsFromButton = Pick<ButtonProps, 'color' | 'disabled' | 'intent' | 'size' | 'variant'>
+type PropsFromButton = Pick<ButtonProps, 'color' | 'disabled' | 'intent' | 'scale' | 'variant'>
 
 type PaginationOwnProps = {
   currentPage: number

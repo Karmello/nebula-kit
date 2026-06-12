@@ -1,30 +1,29 @@
-import { CONTROL_SIZE_MAP } from 'lib/constants'
-import { TShirtSize } from 'lib/types'
+import { CONTROL_SCALE_MAP } from 'lib/constants'
+import type { TShirtSize } from 'lib/types'
 
 import { BoxProps, BoxVariant } from '../Box'
 
-export const CHECKBOX_SIZE_MAP: Record<CheckboxSize, { blockSize: BoxProps['blockSize']; iconSize: string }> = {
-  xs: { blockSize: CONTROL_SIZE_MAP['2xs'].blockSize, iconSize: '22px' },
-  sm: { blockSize: CONTROL_SIZE_MAP.xs.blockSize, iconSize: '26px' },
-  md: { blockSize: CONTROL_SIZE_MAP.sm.blockSize, iconSize: '30px' },
-  lg: { blockSize: CONTROL_SIZE_MAP.md.blockSize, iconSize: '35px' },
+export const CHECKBOX_SIZE_MAP: Record<TShirtSize, { blockSize: BoxProps['blockSize']; iconSize: string }> = {
+  xs: { blockSize: CONTROL_SCALE_MAP.xs.blockSize, iconSize: '22px' },
+  sm: { blockSize: CONTROL_SCALE_MAP.sm.blockSize, iconSize: '26px' },
+  md: { blockSize: CONTROL_SCALE_MAP.md.blockSize, iconSize: '30px' },
+  lg: { blockSize: CONTROL_SCALE_MAP.lg.blockSize, iconSize: '35px' },
+  xl: { blockSize: CONTROL_SCALE_MAP.xl.blockSize, iconSize: '35px' },
 }
 
 export const CHECKBOX_VARIANTS = ['solid', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
-export const CHECKBOX_SIZES = ['xs', 'sm', 'md', 'lg'] as const satisfies TShirtSize[]
 
 export const DEFAULT_CHECKBOX_VARIANT: CheckboxProps['variant'] = 'outline'
 export const DEFAULT_CHECKBOX_INTENT: CheckboxProps['intent'] = 'tertiary'
 export const DEFAULT_CHECKBOX_SIZE: CheckboxProps['size'] = 'xs'
 
 export type CheckboxVariant = (typeof CHECKBOX_VARIANTS)[number]
-export type CheckboxSize = (typeof CHECKBOX_SIZES)[number]
 
 type PropsFromBox = Pick<BoxProps<'input'>, 'tagAttrs' | 'tagRef' | 'intent' | 'color' | 'disabled'>
 
 type CheckboxOwnProps = {
   variant?: CheckboxVariant
-  size?: CheckboxSize
+  size?: TShirtSize
   checked?: boolean
   defaultChecked?: boolean
   onChange?: (checked: boolean) => void

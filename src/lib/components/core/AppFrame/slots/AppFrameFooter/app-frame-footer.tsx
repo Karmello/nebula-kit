@@ -34,7 +34,7 @@ export const AppFrameFooter = ({
             intent={intent}
             borderRadius="0px"
             borderWidth="0px"
-            borderTopWidth="var(--neb-length-3xs)"
+            borderTopWidth="2px"
             surface="dividing"
           >
             <Box drawable variant="solid" intent={intent} color={color} borderRadius="0px">

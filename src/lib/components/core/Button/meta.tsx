@@ -1,4 +1,4 @@
-import { BUTTON_TAGS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE, PROP_GROUPS } from 'lib/constants'
+import { BUTTON_TAGS, DEFAULT_TSHIRT_SIZE, PROP_GROUPS, TSHIRT_SIZES } from 'lib/constants'
 import { Button, ButtonProps, Flex } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
@@ -62,10 +62,10 @@ export const BUTTON_META = {
         isResponsive: true,
         description: 'Controls how inner content is arranged within the container.',
       },
-      size: {
+      scale: {
         group: PROP_GROUPS.SIZE,
-        options: CONTROL_SIZES,
-        defaultValue: DEFAULT_CONTROL_SIZE,
+        options: TSHIRT_SIZES,
+        defaultValue: DEFAULT_TSHIRT_SIZE,
         description:
           'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
       },
@@ -116,9 +116,9 @@ export const BUTTON_META = {
       {
         description: 'Examples of different button sizes.',
         jsx: (
-          <Flex flexWrap="wrap" alignItems="center" gap="xs">
-            {CONTROL_SIZES.map(size => (
-              <Button key={size} size={size} iconName="tree-pine">
+          <Flex flexWrap="wrap" alignItems="center" gap="8px">
+            {TSHIRT_SIZES.map(size => (
+              <Button key={size} scale={size} iconName="tree-pine">
                 {size}
               </Button>
             ))}

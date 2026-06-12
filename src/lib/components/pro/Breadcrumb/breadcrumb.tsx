@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 import { Fragment } from 'react/jsx-runtime'
 
 import { DropdownList } from 'lib/components/shared'
-import { CONTROL_SIZE_MAP } from 'lib/constants'
+import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { Box, Flex, Icon, Text } from 'lib/index.core'
 import { BreadcrumbProps } from 'lib/index.pro'
 import { type BreadcrumbTag } from 'lib/types'
@@ -56,7 +56,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
 
   return (
     <Box tag={tag} tagAttrs={tagAttrs} tagRef={tagRef} overflowX="auto">
-      <Flex gap="xs" alignItems="center">
+      <Flex gap="8px" alignItems="center">
         {levels.slice(0, currentPath.length + 1).map((level, index) => {
           const scrollToIndex = levels[index].findIndex(node => node.value === currentPath[index])
 
@@ -66,7 +66,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
             <Fragment key={index}>
               <DropdownList
                 tagAttrs={{ style: { minInlineSize: 'auto' } }}
-                itemBlockSize={Number(CONTROL_SIZE_MAP[size || 'md'].blockSize.replace('px', ''))}
+                itemBlockSize={Number(CONTROL_SCALE_MAP[size || 'md'].blockSize.replace('px', ''))}
                 color={color}
                 intent={intent}
                 scrollToIndex={scrollToIndex > -1 ? scrollToIndex : undefined}
@@ -82,14 +82,14 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                   intent="primary"
                   surface={isOpen ? 'selected' : undefined}
                   ripple={!isOpen}
-                  blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
-                  paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
+                  blockSize={CONTROL_SCALE_MAP[size || 'md'].blockSize}
+                  paddingInline={CONTROL_SCALE_MAP[size || 'md'].fontSize}
                 >
                   <Text
                     bold
                     intent="primary"
-                    fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
-                    lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
+                    fontSize={CONTROL_SCALE_MAP[size || 'md'].fontSize}
+                    lineHeight={CONTROL_SCALE_MAP[size || 'md'].lineHeight}
                     noWrap
                   >
                     {levels[index].find(node => node.value === currentPath[index])?.label || 'Select ...'}
@@ -102,16 +102,16 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                       key={node.value}
                       index={index}
                       inlineSize="100%"
-                      blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
-                      paddingInline={CONTROL_SIZE_MAP[size || 'md'].paddingInline}
+                      blockSize={CONTROL_SCALE_MAP[size || 'md'].blockSize}
+                      paddingInline={CONTROL_SCALE_MAP[size || 'md'].fontSize}
                       onClick={() => handleChange(index, node.value)}
                       surface={isSelected ? 'selected' : undefined}
                       elevated
                     >
                       <Text
                         bold={isSelected}
-                        fontSize={CONTROL_SIZE_MAP[size || 'md'].fontSize}
-                        lineHeight={CONTROL_SIZE_MAP[size || 'md'].lineHeight}
+                        fontSize={CONTROL_SCALE_MAP[size || 'md'].fontSize}
+                        lineHeight={CONTROL_SCALE_MAP[size || 'md'].lineHeight}
                         textAlign="center"
                       >
                         {node.label}
@@ -120,7 +120,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                   )
                 })}
               </DropdownList>
-              {index < levels.length - 1 ? <Icon name="chevron-right" color={color} intent="primary" size="sm" /> : null}
+              {index < levels.length - 1 ? <Icon name="chevron-right" color={color} intent="primary" size="24px" /> : null}
             </Fragment>
           )
         })}

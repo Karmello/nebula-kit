@@ -15,7 +15,7 @@ export const SwitchPropViewButton = () => {
   return (
     <Button
       intent="primary"
-      size="sm"
+      scale="sm"
       fullWidth
       iconName="screen-share"
       tagAttrs={{

@@ -13,7 +13,7 @@ export default () => {
       </Text>
       <Spacer />
       <Text>The license defines:</Text>
-      <Spacer blockSize="xs" />
+      <Spacer blockSize="8px" />
       <MarkerList>
         <MarkerList.Item>
           <Text>permitted and prohibited uses of the library</Text>
@@ -34,14 +34,14 @@ export default () => {
           <Text>liability and warranty disclaimers</Text>
         </MarkerList.Item>
       </MarkerList>
-      <Spacer blockSize="xs" />
+      <Spacer blockSize="8px" />
       <Text>If you do not agree to the license, you may not use NebulaKit.</Text>
-      <Spacer blockSize="md" />
+      <Spacer blockSize="24px" />
       <Text>
         NebulaKit may evolve over time. Features, APIs and bundles may be added, modified or removed. Notable changes are
         documented in the changelog.
       </Text>
-      <Spacer blockSize="xs" />
+      <Spacer blockSize="8px" />
       <Text>
         <Text tag="span" space="end">
           For full legal terms, see the
@@ -58,7 +58,7 @@ export default () => {
         </Link>
         .
       </Text>
-      <Spacer blockSize="xs" />
+      <Spacer blockSize="8px" />
       <Text>For questions regarding these terms, contact via email.</Text>
     </Box>
   )

@@ -63,19 +63,19 @@ expectError(
 //
 
 expectError(
-  <Snackbar margin="md">
+  <Snackbar margin="24px">
     <div />
   </Snackbar>
 )
 
 expectError(
-  <Snackbar padding="md">
+  <Snackbar padding="24px">
     <div />
   </Snackbar>
 )
 
 expectError(
-  <Snackbar gap="md">
+  <Snackbar gap="24px">
     <div />
   </Snackbar>
 )

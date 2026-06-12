@@ -77,17 +77,17 @@ export const ACTION_GROUP_META = {
         jsx: (
           <ActionGroup>
             <ActionGroup.Item>
-              <Box margin="sm">
+              <Box margin="16px">
                 <Text textAlign="center">Item 1</Text>
               </Box>
             </ActionGroup.Item>
             <ActionGroup.Item>
-              <Box margin="sm">
+              <Box margin="16px">
                 <Text textAlign="center">Item 2</Text>
               </Box>
             </ActionGroup.Item>
             <ActionGroup.Item>
-              <Box margin="sm">
+              <Box margin="16px">
                 <Text textAlign="center">Item 3</Text>
               </Box>
             </ActionGroup.Item>
@@ -99,17 +99,17 @@ export const ACTION_GROUP_META = {
         jsx: (
           <ActionGroup stretch>
             <ActionGroup.Item>
-              <Box margin="sm">
+              <Box margin="16px">
                 <Text textAlign="center">Item 1</Text>
               </Box>
             </ActionGroup.Item>
             <ActionGroup.Item>
-              <Box margin="sm">
+              <Box margin="16px">
                 <Text textAlign="center">Item 2</Text>
               </Box>
             </ActionGroup.Item>
             <ActionGroup.Item>
-              <Box margin="sm">
+              <Box margin="16px">
                 <Text textAlign="center">Item 3</Text>
               </Box>
             </ActionGroup.Item>
@@ -121,17 +121,17 @@ export const ACTION_GROUP_META = {
         jsx: (
           <ActionGroup direction="column">
             <ActionGroup.Item>
-              <Box margin="sm">
+              <Box margin="16px">
                 <Text textAlign="center">Item 1</Text>
               </Box>
             </ActionGroup.Item>
             <ActionGroup.Item>
-              <Box margin="sm">
+              <Box margin="16px">
                 <Text textAlign="center">Item 2</Text>
               </Box>
             </ActionGroup.Item>
             <ActionGroup.Item>
-              <Box margin="sm">
+              <Box margin="16px">
                 <Text textAlign="center">Item 3</Text>
               </Box>
             </ActionGroup.Item>

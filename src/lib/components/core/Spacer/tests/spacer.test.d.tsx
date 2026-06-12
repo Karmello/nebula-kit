@@ -19,13 +19,13 @@ expectError(<Spacer>children</Spacer>)
 // blockSize
 // -------------------------------------
 
-expectType(<Spacer blockSize="xs" />)
+expectType(<Spacer blockSize="8px" />)
 
 expectType(<Spacer blockSize="100px" />)
 
-expectType(<Spacer blockSize={{ md: 'xl' }} />)
+expectType(<Spacer blockSize={{ md: '48px' }} />)
 
-expectError(<Spacer blockSize={{ wrong: 'xl' }} />)
+expectError(<Spacer blockSize={{ wrong: '48px' }} />)
 
 // -------------------------------------
 // no polymorphism

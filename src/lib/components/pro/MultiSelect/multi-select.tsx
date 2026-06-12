@@ -2,7 +2,7 @@ import { ReactElement, useState } from 'react'
 import classNames from 'classnames'
 
 import { DropdownList, DropdownListState, WithSlots } from 'lib/components/shared'
-import { CONTROL_SIZE_MAP, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { SelectOptionProps, Text, Title } from 'lib/index.core'
 import { MultiSelectProps } from 'lib/index.pro'
@@ -26,7 +26,7 @@ export const MultiSelect = ({
   defaultValue,
   value,
   onChange,
-  size = DEFAULT_CONTROL_SIZE,
+  size = DEFAULT_TSHIRT_SIZE,
   dropdownPlacement,
 }: MultiSelectProps) => {
   const [dropdownListState, setDropdownListState] = useState<DropdownListState>({
@@ -76,7 +76,7 @@ export const MultiSelect = ({
               onStateChange={setDropdownListState}
               intent={intent}
               color={color}
-              itemBlockSize={Number(CONTROL_SIZE_MAP[size].blockSize.replace('px', ''))}
+              itemBlockSize={Number(CONTROL_SCALE_MAP[size].blockSize.replace('px', ''))}
               scrollToIndex={currentSlotIndex}
               scrollAlign={scrollAlign}
               visibleItemsCount={visibleItemsCount}
@@ -84,8 +84,8 @@ export const MultiSelect = ({
               keepOpen
             >
               <DropdownList.Trigger
-                blockSize={CONTROL_SIZE_MAP[size].blockSize}
-                paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
+                blockSize={CONTROL_SCALE_MAP[size].blockSize}
+                paddingInline={CONTROL_SCALE_MAP[size].fontSize}
                 inlineSize={inlineSize}
                 disabled={disabled}
                 surface={dropdownListState?.open ? 'selected' : undefined}
@@ -95,7 +95,7 @@ export const MultiSelect = ({
                   iconName={dropdownListState?.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'}
                   iconPlacement="right"
                 >
-                  <Text fontSize={CONTROL_SIZE_MAP[size].fontSize} lineHeight={CONTROL_SIZE_MAP[size].lineHeight} truncate>
+                  <Text fontSize={CONTROL_SCALE_MAP[size].fontSize} lineHeight={CONTROL_SCALE_MAP[size].lineHeight} truncate>
                     {currentLabel || 'Select ...'}
                   </Text>
                 </Title>
@@ -109,16 +109,16 @@ export const MultiSelect = ({
                     index={index}
                     elevated={dropdownListState?.open}
                     surface={isSelected ? 'selected' : undefined}
-                    blockSize={CONTROL_SIZE_MAP[size].blockSize}
-                    paddingInline={CONTROL_SIZE_MAP[size].paddingInline}
+                    blockSize={CONTROL_SCALE_MAP[size].blockSize}
+                    paddingInline={CONTROL_SCALE_MAP[size].fontSize}
                     inlineSize="100%"
                     onClick={() => handleChange(slotProps.value)}
                     ripple={false}
                   >
                     <Title iconName={isSelected ? 'check' : undefined} iconPlacement="right">
                       <Text
-                        fontSize={CONTROL_SIZE_MAP[size].fontSize}
-                        lineHeight={CONTROL_SIZE_MAP[size].lineHeight}
+                        fontSize={CONTROL_SCALE_MAP[size].fontSize}
+                        lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
                         bold={isSelected}
                       >
                         {slot}

@@ -4,7 +4,7 @@ import { Button, Flex, Resize, RevealProps } from 'lib/index.core'
 import { RevealTag } from 'lib/types'
 
 import { Box } from '../Box'
-import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SIZE } from './definitions'
+import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SCALE } from './definitions'
 
 export const Reveal = <T extends RevealTag = 'div'>({
   // Resize
@@ -17,7 +17,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
   color,
   // Button
   disabled,
-  size = DEFAULT_REVEAL_SIZE,
+  scale = DEFAULT_REVEAL_SCALE,
   // own
   label,
 }: RevealProps<T>) => {
@@ -41,7 +41,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
       <Flex flexDirection="column" alignItems="stretch">
         <Button
           disabled={disabled}
-          size={size}
+          scale={scale}
           align="split"
           color={color}
           intent={intent}

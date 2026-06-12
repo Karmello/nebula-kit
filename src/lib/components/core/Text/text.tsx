@@ -1,7 +1,7 @@
 import { ComponentProps, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
-import { TEXT_TYPOGRAPHY_MAP } from 'lib/constants'
+import { TYPOGRAPHY_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { TextProps } from 'lib/index.core'
 import { buildStaticDataset } from 'lib/internals/dom'
@@ -32,7 +32,7 @@ export const Text = <T extends TextTag = 'p'>({
   tagRef,
   ...boxProps
 }: TextProps<T>) => {
-  const resolvedTag = tag || TEXT_TYPOGRAPHY_MAP[typography].tag
+  const resolvedTag = tag || TYPOGRAPHY_MAP[typography].tag
 
   return (
     <Box
@@ -43,8 +43,8 @@ export const Text = <T extends TextTag = 'p'>({
           ...tagAttrs,
           className: classNames(withPrefix('text'), tagAttrs?.className),
           style: {
-            fontSize: fontSize ?? TEXT_TYPOGRAPHY_MAP[typography].fontSize,
-            lineHeight: lineHeight ?? TEXT_TYPOGRAPHY_MAP[typography].lineHeight,
+            fontSize: fontSize ?? TYPOGRAPHY_MAP[typography].fontSize,
+            lineHeight: lineHeight ?? TYPOGRAPHY_MAP[typography].lineHeight,
             wordBreak,
             ...(clampLines && clampLines > 0
               ? {

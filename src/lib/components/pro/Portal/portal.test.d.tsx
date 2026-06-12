@@ -75,9 +75,9 @@ expectType(
 )
 
 // hidden Box props must not leak
-expectError(<Portal padding="md">children</Portal>)
+expectError(<Portal padding="24px">children</Portal>)
 
-expectError(<Portal margin="md">children</Portal>)
+expectError(<Portal margin="24px">children</Portal>)
 
 expectError(<Portal color="blue">children</Portal>)
 
@@ -95,7 +95,7 @@ expectError(<Portal blockSize="100px">children</Portal>)
 
 expectError(<Portal borderRadius="10px">children</Portal>)
 
-expectError(<Portal gap="md">children</Portal>)
+expectError(<Portal gap="24px">children</Portal>)
 
 expectError(<Portal flexDirection="column">children</Portal>)
 

@@ -1,6 +1,6 @@
 import { Activity } from 'lucide-react'
 
-import { CONTROL_SIZES, DEFAULT_CONTROL_SIZE, ICON_BUTTON_TAGS, PROP_GROUPS } from 'lib/constants'
+import { DEFAULT_TSHIRT_SIZE, ICON_BUTTON_TAGS, PROP_GROUPS, TSHIRT_SIZES } from 'lib/constants'
 import { IconButton, IconButtonProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
@@ -50,8 +50,8 @@ export const ICON_BUTTON_META = {
       },
       size: {
         group: PROP_GROUPS.SIZE,
-        options: CONTROL_SIZES,
-        defaultValue: DEFAULT_CONTROL_SIZE,
+        options: TSHIRT_SIZES,
+        defaultValue: DEFAULT_TSHIRT_SIZE,
         description: 'Controls the overall interaction geometry and icon proportions',
       },
       iconName: ICON_META.Icon.props.name,

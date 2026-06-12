@@ -1,5 +1,7 @@
 import { Button } from 'lib/index.core'
-import { Tooltip, TooltipProps } from 'lib/index.pro'
+
+import { Tooltip } from './tooltip'
+import type { TooltipProps } from './types'
 
 export type PropsFromTooltipKey = (typeof PROPS_FROM_TOOLTIP)[number]
 
@@ -19,7 +21,7 @@ export const TOOLTIP_PRESETS = [
     name: 'Default',
     props: {
       content: 'This is tooltip content.',
-    } as Record<PropsFromTooltipKey, unknown>,
+    },
   },
   {
     name: 'Custom',
@@ -29,9 +31,12 @@ export const TOOLTIP_PRESETS = [
       variant: 'outline',
       mode: 'click',
       content: 'This is much much longer tooltip content to display maxInlineSize in action.',
-    } as Record<PropsFromTooltipKey, unknown>,
+    },
   },
-]
+] satisfies {
+  name: string
+  props: Pick<TooltipProps, PropsFromTooltipKey>
+}[]
 
 export const TooltipTemplate = (props: any) => {
   return (

@@ -84,11 +84,11 @@ expectError(<Textarea variant={{ desktop: 'outline' }} />)
 // hidden primitive leakage
 //
 
-expectError(<Textarea margin="md" />)
+expectError(<Textarea margin="24px" />)
 
-expectError(<Textarea padding="md" />)
+expectError(<Textarea padding="24px" />)
 
-expectError(<Textarea gap="md" />)
+expectError(<Textarea gap="24px" />)
 
 expectError(<Textarea flexDirection="column" />)
 

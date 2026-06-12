@@ -79,12 +79,12 @@ export const FLOATING_META = {
         jsx: (
           <Floating offset={10}>
             <Floating.Trigger>
-              <Box drawable variant="solid" intent="primary" padding="sm">
+              <Box drawable variant="solid" intent="primary" padding="16px">
                 Trigger
               </Box>
             </Floating.Trigger>
             <Floating.Content>
-              <Box drawable variant="solid" intent="primary" padding="sm">
+              <Box drawable variant="solid" intent="primary" padding="16px">
                 Content
               </Box>
             </Floating.Content>

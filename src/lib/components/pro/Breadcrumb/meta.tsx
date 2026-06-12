@@ -1,4 +1,4 @@
-import { BREADCRUMB_TAGS, CONTROL_SIZES, DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { BREADCRUMB_TAGS, DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { Breadcrumb, BreadcrumbProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
@@ -92,8 +92,8 @@ export const BREADCRUMB_META = {
         description: 'Controls the active breadcrumb path, enabling fully controlled behavior.',
       },
       size: {
-        options: CONTROL_SIZES,
-        defaultValue: DEFAULT_CONTROL_SIZE,
+        options: TSHIRT_SIZES,
+        defaultValue: DEFAULT_TSHIRT_SIZE,
       },
       tag: {
         ...BOX_META.Box.props.tag,

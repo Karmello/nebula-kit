@@ -42,7 +42,7 @@ export const SplitViewMain = ({
             minInlineSize="0px"
             overflow="clip"
           >
-            <Flex alignItems="center" flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'} gap="sm">
+            <Flex alignItems="center" flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'} gap="16px">
               <Flex.Item>
                 <IconButton
                   tagAttrs={{ 'aria-expanded': sideOpen }}
@@ -56,7 +56,7 @@ export const SplitViewMain = ({
                 {slotsByName['SplitView.MainBar']}
               </Flex.Item>
             </Flex>
-            <Spacer blockSize="xs" />
+            <Spacer blockSize="8px" />
             {allNonSlots}
           </Box>
         )

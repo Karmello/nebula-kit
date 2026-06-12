@@ -73,9 +73,9 @@ export const CatalogPageTemplate = memo(
                 })}
               </SideNav>
             </SplitView.Side>
-            <SplitView.Main paddingLeft="md">
+            <SplitView.Main paddingLeft="24px">
               <SplitView.MainBar>
-                <Box marginRight="md">
+                <Box marginRight="24px">
                   <CatalogPageBreadcrumb
                     pageKey={pageKey.replace('/', '')}
                     categoryKey={activeCategoryObj?.key}
@@ -84,7 +84,7 @@ export const CatalogPageTemplate = memo(
                   />
                 </Box>
               </SplitView.MainBar>
-              <Spacer blockSize="md" />
+              <Spacer blockSize="24px" />
               <SplitView sidePosition="right">
                 {({ mode, setSideOpen }) => (
                   <>
@@ -117,7 +117,7 @@ export const CatalogPageTemplate = memo(
                     </SplitView.Side>
                     <SplitView.Main paddingRight="20px">
                       <SplitView.MainBar>
-                        <Flex columnGap="sm" rowGap="2xs" alignItems="center" flexWrap="wrap">
+                        <Flex columnGap="16px" rowGap="4px" alignItems="center" flexWrap="wrap">
                           <Text typography="h3">
                             {pageKey === PageKey.foundations.toString() ? activeSectionObj?.label : activeItemObj?.label}
                           </Text>
@@ -145,7 +145,7 @@ export const CatalogPageTemplate = memo(
                               <Button
                                 iconName="arrow-right"
                                 iconPlacement="right"
-                                size="xs"
+                                scale="xs"
                                 variant="ghost"
                                 intent="primary"
                                 color="blue"
@@ -156,7 +156,7 @@ export const CatalogPageTemplate = memo(
                             </Link>
                           ) : null}
                         </Flex>
-                        <Divider marginTop="xs" />
+                        <Divider marginTop="8px" />
                       </SplitView.MainBar>
                       {pageKey === PageKey.foundations.toString() ? (
                         <FoundationsPageRoutes />

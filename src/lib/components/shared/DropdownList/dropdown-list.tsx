@@ -53,7 +53,7 @@ export const DropdownList = ({
         if (correctedVisibleItemsCount <= 0 && noOptionsLabel) correctedVisibleItemsCount = 1
 
         const finalItemBlockSize =
-          (itemBlockSize !== undefined ? itemBlockSize : 50) + Number(LENGTH_SCALE['3xs'].replace('px', ''))
+          (itemBlockSize !== undefined ? itemBlockSize : 50) + Number(LENGTH_SCALE['2px'].replace('px', ''))
 
         return (
           <DropdownListProvider

@@ -11,7 +11,7 @@ export const ICON_PRESETS = [
       name: 'mail',
       color: 'green',
       intent: 'primary',
-    } as Record<PropsFromIconKey, unknown>,
+    },
   },
   {
     name: 'Custom size',
@@ -19,7 +19,10 @@ export const ICON_PRESETS = [
       name: 'globe',
       color: 'blue',
       intent: 'secondary',
-      size: '50px',
-    } as Record<PropsFromIconKey, unknown>,
+      size: '24px',
+    },
   },
-]
+] satisfies {
+  name: string
+  props: Pick<IconProps, PropsFromIconKey>
+}[]

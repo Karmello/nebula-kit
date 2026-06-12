@@ -9,11 +9,11 @@ export const JoinedActionGroup = () => {
     ripple: true,
     variant: 'solid',
     intent: 'tertiary',
-    padding: 'xs',
+    padding: '8px',
   }
 
   return (
-    <Flex drawable brand="blue" variant="solid" intent="tertiary" surface="dividing" inlineSize="300px" columnGap="3xs">
+    <Flex drawable brand="blue" variant="solid" intent="tertiary" surface="dividing" inlineSize="300px" columnGap="2px">
       <Flex.Item {...flexItemProps} borderTopRightRadius="0px" borderBottomRightRadius="0px">
         <Text textAlign="center">Box 1</Text>
       </Flex.Item>

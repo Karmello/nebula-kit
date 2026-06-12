@@ -10,8 +10,8 @@ export const ConnectToGithubSection = ({ userPlan, githubUsername }: { userPlan:
         Connect your GitHub account to unlock access to the private NebulaKit roadmap. This lets you follow upcoming features,
         track progress and stay aligned with what's being built next.
       </Text>
-      <Spacer blockSize="md" />
-      <Flex alignItems="center" columnGap="sm">
+      <Spacer blockSize="24px" />
+      <Flex alignItems="center" columnGap="16px">
         <Button
           tagAttrs={{
             onClick: async () => {
@@ -21,7 +21,7 @@ export const ConnectToGithubSection = ({ userPlan, githubUsername }: { userPlan:
               }
             },
           }}
-          size="sm"
+          scale="sm"
           intent="primary"
           color="blue"
           iconName="plug"
@@ -42,7 +42,7 @@ export const ConnectToGithubSection = ({ userPlan, githubUsername }: { userPlan:
           </Title>
         ) : null}
       </Flex>
-      <Spacer blockSize="xs" />
+      <Spacer blockSize="8px" />
     </Section>
   )
 }

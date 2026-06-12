@@ -3,7 +3,7 @@ import { BoxColor } from 'lib/components/core/Box/types'
 
 export const ListWithChips = ({ heading, items, color = 'blue' }: { heading: string; items: string[]; color?: BoxColor }) => (
   <Section heading={heading} size="sm">
-    <Flex flexDirection="row" flexWrap="wrap" gap="2xs">
+    <Flex flexDirection="row" flexWrap="wrap" gap="4px">
       {items.map((s, i) => (
         <Box
           key={i}

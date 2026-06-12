@@ -6,10 +6,10 @@ export const FeedbackPage = () => {
   const sendFeedback = useSendFeedback()
 
   return (
-    <Box paddingTop="sm" paddingInline={{ base: 'md', lg: 'xl' }} maxInlineSize="75rem">
+    <Box paddingTop="16px" paddingInline={{ base: '24px', lg: '48px' }} maxInlineSize="75rem">
       <Section size="lg" heading="Feedback" iconName="mail">
         <Text>Help shape the future of NebulaKit. All feedback submitted here is anonymous.</Text>
-        <Spacer blockSize="lg" />
+        <Spacer blockSize="48px" />
         <Form<{ message: string }>
           useFormProps={{ defaultValues: { message: '' } }}
           onValidSubmission={async ({ message }) => {

@@ -3,7 +3,7 @@ import { Box, Flex, Text } from 'lib/components'
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap="sm">
+      <Flex flexDirection="column" gap="16px">
         <Text>
           Inheritance is another powerful concept that NebulaKit takes advantage of. Whenever composition happens - meaning one
           component reuses another - underlying props may be forwarded outward when the reused component's abstraction remains

@@ -1,6 +1,6 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { FLEX_META } from 'lib/components/core/Flex/meta'
-import { CONTROL_SIZES, PROP_GROUPS } from 'lib/constants'
+import { PROP_GROUPS, TSHIRT_SIZES } from 'lib/constants'
 import { Tabs, TabsPanelProps, TabsProps, TabsTabProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
@@ -41,7 +41,7 @@ export const TABS_META = {
       stretch: ACTION_GROUP_META.ActionGroup.props.stretch,
       size: {
         group: PROP_GROUPS.SIZE,
-        options: CONTROL_SIZES,
+        options: TSHIRT_SIZES,
         defaultValue: DEFAULT_TABS_SIZE,
         description: 'Sets the size of the tab items.',
       },

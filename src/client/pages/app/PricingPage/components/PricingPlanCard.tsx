@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 import { Flex, Icon, Link, Section, Spacer, Text } from 'lib/components'
 import type { BoxColor } from 'lib/components/core/Box/types'
-import { type IconName } from 'lib/components/core/Icon/definitions'
+import type { IconName } from 'lib/components/core/Icon/types'
 import { Plan } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 
@@ -36,11 +36,11 @@ export const PricingPlanCard = ({
   const OptionIncluded = ({ children }: { children: ReactNode }) => {
     return (
       <>
-        <Flex alignItems="center" columnGap="sm">
-          <Icon name="check" intent="primary" color={color} size="sm" />
+        <Flex alignItems="center" columnGap="16px">
+          <Icon name="check" intent="primary" color={color} size="24px" />
           {children}
         </Flex>
-        <Spacer blockSize="3xs" />
+        <Spacer blockSize="2px" />
       </>
     )
   }
@@ -66,7 +66,7 @@ export const PricingPlanCard = ({
       <Text intent="neutral" bold>
         What you get:
       </Text>
-      <Spacer blockSize="xs" />
+      <Spacer blockSize="8px" />
       <OptionIncluded>
         <Link
           href="/pricing/core"
@@ -98,11 +98,11 @@ export const PricingPlanCard = ({
           <Text intent="neutral">{s}</Text>
         </OptionIncluded>
       ))}
-      <Spacer blockSize="lg" />
+      <Spacer blockSize="48px" />
       <Flex justifyContent="center">
         <PricingPlanButton plan={plan} activePlan={activePlan} color={color} />
       </Flex>
-      <Spacer blockSize="sm" />
+      <Spacer blockSize="16px" />
     </Section>
   )
 }

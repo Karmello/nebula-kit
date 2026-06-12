@@ -26,7 +26,7 @@ export const SideNavToggle = () => {
         />
       </Box>
       <Divider />
-      <Spacer blockSize="sm" />
+      <Spacer blockSize="16px" />
     </>
   )
 }

@@ -38,9 +38,9 @@ export const ProfileSettingsPage = () => {
   }, [search])
 
   return (
-    <Box paddingTop="sm" paddingInline={{ base: 'md', lg: 'xl' }} maxInlineSize="75rem">
+    <Box paddingTop="16px" paddingInline={{ base: '24px', lg: '48px' }} maxInlineSize="75rem">
       <Section size="lg" heading="Settings" iconName="settings">
-        <Spacer blockSize="md" />
+        <Spacer blockSize="24px" />
         {!getUser.data || getUser.isMakingRequest ? (
           <Box position="relative" blockSize="160px">
             <Loader centered size="lg" color="blue" />
@@ -48,13 +48,13 @@ export const ProfileSettingsPage = () => {
         ) : (
           <>
             <UpdatePasswordSection />
-            <Spacer blockSize="lg" />
+            <Spacer blockSize="48px" />
             <UpdateEmailSection />
-            <Spacer blockSize="lg" />
+            <Spacer blockSize="48px" />
             <ConnectToDiscordSection userPlan={getUser.data.user.plan} discordUserId={getUser.data.user.discordUserId} />
-            <Spacer blockSize="lg" />
+            <Spacer blockSize="48px" />
             <ConnectToGithubSection userPlan={getUser.data.user.plan} githubUsername={getUser.data.user.githubUsername} />
-            <Spacer blockSize="lg" />
+            <Spacer blockSize="48px" />
             <PaymentCancelSection
               userEmail={getUser.data.user.email}
               userPlan={getUser.data.user.plan}
@@ -63,7 +63,7 @@ export const ProfileSettingsPage = () => {
                 getUser.sendRequest()
               }}
             />
-            <Spacer blockSize="lg" />
+            <Spacer blockSize="48px" />
             <AccountDeactivationSection
               userEmail={getUser.data.user.email}
               userPlan={getUser.data.user.plan}

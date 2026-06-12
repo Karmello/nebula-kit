@@ -1,9 +1,10 @@
+import { PROP_GROUPS } from 'lib/constants'
 import { Loader, LoaderProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { Box } from '../Box'
 import { BOX_META } from '../Box/meta'
-import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE, LOADER_SIZES } from './definitions'
+import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE } from './definitions'
 
 export const LOADER_META = {
   Loader: {
@@ -15,26 +16,29 @@ export const LOADER_META = {
       topLevelTags: ['div'],
     },
     props: {
+      tagRef: BOX_META.Box.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
       active: {
+        group: PROP_GROUPS.STATE,
         options: ['boolean'],
         defaultValue: String(DEFAULT_LOADER_ACTIVE),
         description:
           'Controls whether the Loader is visible. Pass a boolean to show or hide the component without having to wrap it in your own conditional render logic.',
       },
+      color: BOX_META.Box.props.color,
       centered: {
+        group: PROP_GROUPS.LAYOUT,
         options: ['boolean'],
         defaultValue: 'false',
         description:
           'Absolutely centers the loader in both axes. Wrap it with an element with "position" set to "relative" to define the centering context.',
       },
-      color: BOX_META.Box.props.color,
       size: {
-        options: [...LOADER_SIZES, DOCS_CSS_LABEL],
+        group: PROP_GROUPS.SIZE,
+        options: [DOCS_CSS_LABEL],
         defaultValue: String(DEFAULT_LOADER_SIZE),
         description: 'Controls the diameter of the loader.',
       },
-      tagAttrs: BOX_META.Box.props.tagAttrs,
-      tagRef: BOX_META.Box.props.tagRef,
     },
     examples: [
       {
@@ -43,7 +47,7 @@ export const LOADER_META = {
       },
       {
         description: 'Custom loader.',
-        jsx: <Loader size="lg" color="blue" />,
+        jsx: <Loader size="48px" color="blue" />,
       },
       {
         description: 'Absolutely centered Loader rendered inside a parent container with position set to relative.',

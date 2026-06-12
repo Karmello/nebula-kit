@@ -1,4 +1,4 @@
-import { TitleProps } from 'lib/index.core'
+import type { TitleProps } from './types'
 
 export type PropsFromTitleKey = (typeof PROPS_FROM_TITLE)[number]
 
@@ -18,6 +18,9 @@ export const TITLE_PRESETS = [
       children: 'Text aligned together with icon',
       iconName: 'puzzle',
       iconPlacement: 'right',
-    } as Record<PropsFromTitleKey, unknown>,
+    },
   },
-]
+] satisfies {
+  name: string
+  props: Pick<TitleProps, PropsFromTitleKey>
+}[]

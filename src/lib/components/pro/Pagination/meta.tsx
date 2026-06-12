@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { BUTTON_META } from 'lib/components/core/Button/meta'
-import { DEFAULT_CONTROL_SIZE } from 'lib/constants'
+import { DEFAULT_TSHIRT_SIZE } from 'lib/constants'
 import { Pagination, PaginationProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
@@ -114,9 +114,9 @@ export const PAGINATION_META = {
         defaultValue: String(DEFAULT_PAGINATION_SIBLING_COUNT),
         description: 'Number of page items shown adjacent to the current page.',
       },
-      size: {
-        ...BUTTON_META.Button.props.size,
-        defaultValue: DEFAULT_CONTROL_SIZE,
+      scale: {
+        ...BUTTON_META.Button.props.scale,
+        defaultValue: DEFAULT_TSHIRT_SIZE,
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,

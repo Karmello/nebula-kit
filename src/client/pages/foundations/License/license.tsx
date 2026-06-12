@@ -9,15 +9,15 @@ export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Text>NebulaKit is provided under a proprietary license.</Text>
-      <Spacer blockSize="xs" />
+      <Spacer blockSize="8px" />
       <Text>
         You are granted a non-exclusive, non-transferable license to use NebulaKit in personal and commercial projects, subject to
         the terms described below.
       </Text>
-      <Spacer blockSize="md" />
+      <Spacer blockSize="24px" />
       <Section heading="Permitted use" size="sm">
         <Text>You may:</Text>
-        <Spacer blockSize="xs" />
+        <Spacer blockSize="8px" />
         <MarkerList>
           <MarkerList.Item>
             <Text>use NebulaKit to build, develop and deploy personal or commercial applications</Text>
@@ -30,10 +30,10 @@ export default () => {
           </MarkerList.Item>
         </MarkerList>
       </Section>
-      <Spacer blockSize="md" />
+      <Spacer blockSize="24px" />
       <Section heading="Restrictions" size="sm">
         <Text>You may not:</Text>
-        <Spacer blockSize="xs" />
+        <Spacer blockSize="8px" />
         <MarkerList>
           <MarkerList.Item>
             <Text>redistribute, resell, sublicense or repackage NebulaKit itself</Text>
@@ -49,10 +49,10 @@ export default () => {
           </MarkerList.Item>
         </MarkerList>
       </Section>
-      <Spacer blockSize="md" />
+      <Spacer blockSize="24px" />
       <Section heading="Core and Pro bundles" size="sm">
         <Text>NebulaKit is distributed in two bundles, both are subject to this license.</Text>
-        <Spacer blockSize="xs" />
+        <Spacer blockSize="8px" />
         <MarkerList>
           <MarkerList.Item>
             <Text>
@@ -84,33 +84,33 @@ export default () => {
             </Text>
           </MarkerList.Item>
         </MarkerList>
-        <Spacer blockSize="xs" />
+        <Spacer blockSize="8px" />
         <Text>
           Access to Pro features is granted only while a valid license key is active. If the license key is revoked access to Pro
           components ends immediately.
         </Text>
       </Section>
-      <Spacer blockSize="md" />
+      <Spacer blockSize="24px" />
       <Section heading="Ownership" size="sm">
         <Text>
           All rights, title and interest in NebulaKit, including its source code, documentation and related assets, remain the
           exclusive property of the author.
         </Text>
       </Section>
-      <Spacer blockSize="md" />
+      <Spacer blockSize="24px" />
       <Section heading="No warranty" size="sm">
         <Text>
           NebulaKit is provided "as is", without warranty of any kind, express or implied. You assume all risk associated with its
           use.
         </Text>
       </Section>
-      <Spacer blockSize="md" />
+      <Spacer blockSize="24px" />
       <Section heading="Changes" size="sm">
         <Text>
           License terms may be updated over time. Continued use of NebulaKit constitutes acceptance of the current license terms.
         </Text>
       </Section>
-      <Spacer blockSize="md" />
+      <Spacer blockSize="24px" />
       <Text italic>{getCopyrightInfo()}</Text>
     </Box>
   )

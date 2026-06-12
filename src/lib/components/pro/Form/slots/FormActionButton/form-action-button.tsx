@@ -22,7 +22,7 @@ export const FormActionButton = ({
   variant,
   intent,
   color,
-  size,
+  scale,
   disabled,
   iconName,
   iconPlacement,
@@ -67,7 +67,7 @@ export const FormActionButton = ({
         variant={variant}
         intent={intent ?? finalDefaultIntent}
         color={color ?? finalDefaultColor}
-        size={size}
+        scale={scale}
         disabled={disabled}
         iconName={iconName}
         iconPlacement={iconPlacement}

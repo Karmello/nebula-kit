@@ -18,15 +18,15 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
         heading={bundle === 'core' ? `Core bundle (${CORE_DATA.length})` : `Pro bundle (${PRO_DATA.length})`}
         iconName="package"
       >
-        <Flex alignItems="center" columnGap="xl" flexWrap="wrap" justifyContent="space-between">
+        <Flex alignItems="center" columnGap="48px" flexWrap="wrap" justifyContent="space-between">
           {bundle === 'core' ? <Text>All components available for free.</Text> : <Text>Comes with the paid plans.</Text>}
           <Link href={PageKey.pricing} onClick={() => navigateTo(PageKey.pricing)}>
-            <Button size="sm" variant="ghost" intent="primary" color="blue" iconName="arrow-left">
+            <Button scale="sm" variant="ghost" intent="primary" color="blue" iconName="arrow-left">
               Back to Pricing page
             </Button>
           </Link>
         </Flex>
-        <Spacer blockSize="lg" />
+        <Spacer blockSize="48px" />
         <Grid
           gridTemplateColumns={{
             base: '1fr',
@@ -34,7 +34,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
             lg: 'repeat(3, 1fr)',
             xl: 'repeat(4, 1fr)',
           }}
-          gap="sm"
+          gap="16px"
         >
           {(bundle === 'core' ? CORE_DATA : PRO_DATA).map(item => (
             <Section
@@ -51,7 +51,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
             </Section>
           ))}
         </Grid>
-        <Spacer blockSize="lg" />
+        <Spacer blockSize="48px" />
         <Flex justifyContent="center">
           <Link
             href={bundle === 'core' ? PageKey.pricingPro : PageKey.pricingCore}
@@ -59,7 +59,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
               navigateTo(bundle === 'core' ? PageKey.pricingPro : PageKey.pricingCore)
             }}
           >
-            <Button size="sm" color="amber" iconName="package">
+            <Button scale="sm" color="amber" iconName="package">
               {bundle === 'core' ? 'Pro bundle' : 'Core bundle'}
             </Button>
           </Link>

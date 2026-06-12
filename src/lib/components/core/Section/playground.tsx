@@ -1,4 +1,4 @@
-import { SectionProps } from 'lib/index.core'
+import { type SectionProps } from './definitions'
 
 export type PropsFromSectionKey = (typeof PROPS_FROM_SECTION)[number]
 
@@ -21,7 +21,7 @@ export const SECTION_PRESETS = [
     props: {
       children: 'This is simple basic section.',
       heading: 'Basic section',
-    } as Record<PropsFromSectionKey, unknown>,
+    },
   },
   {
     name: 'With border',
@@ -33,7 +33,7 @@ export const SECTION_PRESETS = [
       intent: 'secondary',
       size: 'lg',
       variant: 'outline',
-    } as Record<PropsFromSectionKey, unknown>,
+    },
   },
   {
     name: 'Interactive',
@@ -46,6 +46,9 @@ export const SECTION_PRESETS = [
       size: 'lg',
       variant: 'outline',
       interactive: true,
-    } as Record<PropsFromSectionKey, unknown>,
+    },
   },
-]
+] satisfies {
+  name: string
+  props: Pick<SectionProps, PropsFromSectionKey>
+}[]

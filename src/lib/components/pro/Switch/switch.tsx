@@ -1,12 +1,12 @@
 import { useLayoutEffect, useState } from 'react'
 import classNames from 'classnames'
 
-import { CONTROL_SIZE_MAP } from 'lib/constants'
-import { resolveLengthValue, withPrefix } from 'lib/helpers'
+import { CONTROL_SCALE_MAP } from 'lib/constants'
+import { withPrefix } from 'lib/helpers'
 import { Box, BoxProps, Slide } from 'lib/index.core'
 import { SwitchProps } from 'lib/index.pro'
 
-import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SIZE, SWITCH_BORDER_MULTIPLIER } from './definitions'
+import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SCALE, SWITCH_BORDER_MULTIPLIER } from './definitions'
 
 import './switch.scss'
 
@@ -21,7 +21,7 @@ export const Switch = ({
   checked,
   defaultChecked,
   onChange,
-  size = DEFAULT_SWITCH_SIZE,
+  scale = DEFAULT_SWITCH_SCALE,
 }: SwitchProps) => {
   const [internalChecked, setInternalChecked] = useState<boolean>(defaultChecked ?? false)
 
@@ -43,14 +43,14 @@ export const Switch = ({
     onChange?.(checked)
   }
 
-  const resolvedBlockSize = resolveLengthValue(CONTROL_SIZE_MAP[size || 'md'].blockSize)
+  const resolvedBlockSize = CONTROL_SCALE_MAP[scale || 'md'].blockSize
 
   const thumbBlockSize =
     `calc(${resolvedBlockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})` as BoxProps['blockSize']
 
   return (
     <Box
-      key={String(size)}
+      key={String(scale)}
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('switch'), tagAttrs?.className),
@@ -75,7 +75,7 @@ export const Switch = ({
         variant="solid"
         intent={intent}
         color={color}
-        blockSize={CONTROL_SIZE_MAP[size || 'md'].blockSize}
+        blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
         inlineSize={`calc(${resolvedBlockSize} * 2 - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})`}
       />
       <Slide
