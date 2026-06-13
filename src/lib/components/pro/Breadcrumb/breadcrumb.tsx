@@ -83,7 +83,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                   surface={isOpen ? 'selected' : undefined}
                   ripple={!isOpen}
                   blockSize={CONTROL_SCALE_MAP[size || 'md'].blockSize}
-                  paddingInline={CONTROL_SCALE_MAP[size || 'md'].fontSize}
+                  paddingInline={CONTROL_SCALE_MAP[size || 'md'].paddingInline}
                 >
                   <Text
                     bold
@@ -103,7 +103,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                       index={index}
                       inlineSize="100%"
                       blockSize={CONTROL_SCALE_MAP[size || 'md'].blockSize}
-                      paddingInline={CONTROL_SCALE_MAP[size || 'md'].fontSize}
+                      paddingInline={CONTROL_SCALE_MAP[size || 'md'].paddingInline}
                       onClick={() => handleChange(index, node.value)}
                       surface={isSelected ? 'selected' : undefined}
                       elevated
@@ -120,7 +120,9 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                   )
                 })}
               </DropdownList>
-              {index < levels.length - 1 ? <Icon name="chevron-right" color={color} intent="primary" size="24px" /> : null}
+              {index < levels.length - 1 ? (
+                <Icon name="chevron-right" color={color} intent="primary" size={CONTROL_SCALE_MAP[size || 'md'].fontSize} />
+              ) : null}
             </Fragment>
           )
         })}

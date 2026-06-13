@@ -85,7 +85,7 @@ export const SplitViewSide = ({
                       <IconButton
                         iconName="close"
                         intent={intent || 'tertiary'}
-                        size="xs"
+                        scale="xs"
                         onClick={() => {
                           setSideOpen(false)
                         }}

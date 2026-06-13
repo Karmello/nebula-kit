@@ -73,7 +73,7 @@ export const SelectImpl = ({
           color={color}
           inlineSize={inlineSize}
           blockSize={CONTROL_SCALE_MAP[size].blockSize}
-          paddingInline={CONTROL_SCALE_MAP[size].fontSize}
+          paddingInline={CONTROL_SCALE_MAP[size].paddingInline}
           disabled={disabled}
           surface={open ? 'selected' : undefined}
           cursor="pointer"
@@ -131,7 +131,7 @@ export const SelectImpl = ({
                     alignItems="center"
                     alignContent="stretch"
                     blockSize={CONTROL_SCALE_MAP[size].blockSize}
-                    paddingInline={CONTROL_SCALE_MAP[size].fontSize}
+                    paddingInline={CONTROL_SCALE_MAP[size].paddingInline}
                   >
                     <Text fontSize={CONTROL_SCALE_MAP[size].fontSize} lineHeight={CONTROL_SCALE_MAP[size].lineHeight}>
                       {slot}

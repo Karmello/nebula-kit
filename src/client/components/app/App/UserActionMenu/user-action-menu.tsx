@@ -29,6 +29,7 @@ export const UserActionMenu = () => {
     <>
       <Flex>
         <IconButton
+          scale="md"
           iconName="compass"
           intent="muted"
           onClick={() => {
@@ -36,6 +37,7 @@ export const UserActionMenu = () => {
           }}
         />
         <IconButton
+          scale="md"
           iconName={showAppJump ? 'search-x' : 'search'}
           intent="muted"
           onClick={() => {
@@ -43,6 +45,7 @@ export const UserActionMenu = () => {
           }}
         />
         <IconButton
+          scale="md"
           iconName="settings"
           intent="muted"
           onClick={() => {

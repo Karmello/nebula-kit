@@ -87,7 +87,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       elevated={elevated}
       surface={selected ? 'selected' : undefined}
       blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
-      paddingInline={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
+      paddingInline={CONTROL_SCALE_MAP[scale || 'md'].paddingInline}
       ripple={ripple}
       interactive
       cursor="pointer"

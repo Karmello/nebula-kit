@@ -15,8 +15,8 @@ export default () => {
       <Flex flexWrap="wrap" justifyContent={{ base: 'center', xl: 'flex-start' }} gap="8px">
         {Object.keys(ICONS).map(iconName => (
           <Tooltip key={iconName} content={iconName} minInlineSize={0} maxInlineSize={300}>
-            <Box tagAttrs={{ style: { lineHeight: 0 } }} drawable variant="outline" intent="tertiary" padding="20px">
-              <Icon name={iconName as IconName} size="24px" intent="primary" color="blue" />
+            <Box tagAttrs={{ style: { lineHeight: 0 } }} drawable variant="outline" intent="tertiary" padding="16px">
+              <Icon name={iconName as IconName} size="32px" intent="primary" color="blue" />
             </Box>
           </Tooltip>
         ))}

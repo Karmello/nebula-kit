@@ -90,13 +90,13 @@ export const PropsTable = ({ data, category }: Props) => {
 
               <Table.Cell>
                 <Flex justifyContent="center">
-                  {isRequired ? <Icon name="check" intent="primary" color="blue" size="24px" /> : '-'}
+                  {isRequired ? <Icon name="check" intent="primary" color="blue" size="16px" /> : '-'}
                 </Flex>
               </Table.Cell>
 
               <Table.Cell>
                 <Flex justifyContent="center">
-                  {isResponsive ? <Icon name="check" intent="primary" color="blue" size="24px" /> : '-'}
+                  {isResponsive ? <Icon name="check" intent="primary" color="blue" size="16px" /> : '-'}
                 </Flex>
               </Table.Cell>
 

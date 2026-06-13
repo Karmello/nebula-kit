@@ -1,18 +1,23 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useRef } from 'react'
 import classNames from 'classnames'
 
-import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE } from 'lib/constants'
+import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { Flex, Icon, IconButtonProps, Loader } from 'lib/index.core'
 import { IconButtonTag } from 'lib/types'
 
-import { DEFAULT_ICON_BUTTON_INTENT, DEFAULT_ICON_BUTTON_RIPPLE, DEFAULT_ICON_BUTTON_VARIANT } from './constants'
+import {
+  DEFAULT_ICON_BUTTON_INTENT,
+  DEFAULT_ICON_BUTTON_RIPPLE,
+  DEFAULT_ICON_BUTTON_SCALE,
+  DEFAULT_ICON_BUTTON_VARIANT,
+} from './constants'
 
 import './icon-button.scss'
 
 export const IconButton = <T extends IconButtonTag = 'button'>({
   // own
-  size = DEFAULT_TSHIRT_SIZE,
+  scale = DEFAULT_ICON_BUTTON_SCALE,
   loading,
   onClick,
   // Icon
@@ -35,6 +40,7 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
   return (
     <Flex
       tag={tag}
+      tagRef={finalRef}
       tagAttrs={
         {
           ...tagAttrs,
@@ -44,26 +50,25 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
           'aria-disabled': disabled || undefined,
         } as PropsWithoutRef<ComponentProps<T>>
       }
-      tagRef={finalRef}
       variant={variant}
       color={color}
       intent={intent}
       disabled={disabled || loading}
       elevated={elevated}
       ripple={ripple}
-      minInlineSize={CONTROL_SCALE_MAP[size || 'md'].blockSize}
-      maxInlineSize={CONTROL_SCALE_MAP[size || 'md'].blockSize}
-      blockSize={CONTROL_SCALE_MAP[size || 'md'].blockSize}
+      minInlineSize={CONTROL_SCALE_MAP[scale || 'sm'].blockSize}
+      maxInlineSize={CONTROL_SCALE_MAP[scale || 'sm'].blockSize}
+      blockSize={CONTROL_SCALE_MAP[scale || 'sm'].blockSize}
       interactive
       cursor="pointer"
       position="relative"
       justifyContent="center"
       alignItems="center"
     >
-      <Icon name={iconName} size={CONTROL_SCALE_MAP[size || 'md'].fontSize}>
+      <Icon name={iconName} size={CONTROL_SCALE_MAP[scale || 'sm'].fontSize}>
         {customSvgIcon}
       </Icon>
-      {loading && !disabled ? <Loader centered size={CONTROL_SCALE_MAP[size || 'md'].fontSize} /> : null}
+      {loading && !disabled ? <Loader centered size={CONTROL_SCALE_MAP[scale || 'sm'].fontSize} /> : null}
     </Flex>
   )
 }

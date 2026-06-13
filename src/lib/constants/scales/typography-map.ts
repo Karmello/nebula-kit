@@ -13,7 +13,7 @@ export const TYPOGRAPHY_MAP: Record<
   body: {
     tag: 'p',
     fontSize: '15px',
-    lineHeight: 1.5,
+    lineHeight: 1.4,
   },
   lead: {
     tag: 'p',
@@ -28,42 +28,42 @@ export const TYPOGRAPHY_MAP: Record<
   caption: {
     tag: 'p',
     fontSize: '11px',
-    lineHeight: 1.4,
+    lineHeight: 1.3,
   },
   h6: {
     tag: 'h6',
     fontSize: '16px',
-    lineHeight: 1.3,
+    lineHeight: 1.4,
     gap: '9px',
   },
   h5: {
     tag: 'h5',
-    fontSize: '21px',
-    lineHeight: 1.3,
+    fontSize: '22px',
+    lineHeight: 1.4,
     gap: '11px',
   },
   h4: {
     tag: 'h4',
     fontSize: '27px',
-    lineHeight: 1.2,
+    lineHeight: 1.4,
     gap: '13px',
   },
   h3: {
     tag: 'h3',
     fontSize: '37px',
-    lineHeight: 1.2,
+    lineHeight: 1.3,
     gap: '15px',
   },
   h2: {
     tag: 'h2',
     fontSize: '48px',
-    lineHeight: 1.1,
+    lineHeight: 1.3,
     gap: '20px',
   },
   h1: {
     tag: 'h1',
     fontSize: '60px',
-    lineHeight: 1.1,
+    lineHeight: 1.3,
     gap: '25px',
   },
 }

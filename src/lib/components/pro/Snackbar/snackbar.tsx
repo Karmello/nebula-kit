@@ -62,7 +62,7 @@ export const Snackbar = ({
               <Box position="absolute" top="15px" right="15px">
                 <IconButton
                   iconName="close"
-                  size="xs"
+                  scale="xs"
                   variant="solid"
                   intent="primary"
                   color={CALLOUT_CONFIG[snackbar?.status || 'info'].color}

@@ -1,12 +1,17 @@
 import { Activity } from 'lucide-react'
 
-import { DEFAULT_TSHIRT_SIZE, ICON_BUTTON_TAGS, PROP_GROUPS, TSHIRT_SIZES } from 'lib/constants'
+import { ICON_BUTTON_TAGS, PROP_GROUPS, TSHIRT_SIZES } from 'lib/constants'
 import { IconButton, IconButtonProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { ICON_META } from '../Icon/meta'
-import { DEFAULT_ICON_BUTTON_INTENT, DEFAULT_ICON_BUTTON_RIPPLE, DEFAULT_ICON_BUTTON_VARIANT } from './constants'
+import {
+  DEFAULT_ICON_BUTTON_INTENT,
+  DEFAULT_ICON_BUTTON_RIPPLE,
+  DEFAULT_ICON_BUTTON_SCALE,
+  DEFAULT_ICON_BUTTON_VARIANT,
+} from './constants'
 
 export const ICON_BUTTON_META = {
   IconButton: {
@@ -48,10 +53,10 @@ export const ICON_BUTTON_META = {
         ...BOX_META.Box.props.ripple,
         defaultValue: String(DEFAULT_ICON_BUTTON_RIPPLE),
       },
-      size: {
+      scale: {
         group: PROP_GROUPS.SIZE,
         options: TSHIRT_SIZES,
-        defaultValue: DEFAULT_TSHIRT_SIZE,
+        defaultValue: DEFAULT_ICON_BUTTON_SCALE,
         description: 'Controls the overall interaction geometry and icon proportions',
       },
       iconName: ICON_META.Icon.props.name,
@@ -64,8 +69,8 @@ export const ICON_BUTTON_META = {
         ...BOX_META.Box.props.tag,
         options: ICON_BUTTON_TAGS,
       },
-      tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
       onClick: {
         group: PROP_GROUPS.ROOT,
         options: ['e => void'],
@@ -87,10 +92,10 @@ export const ICON_BUTTON_META = {
       },
       {
         description: 'Custon SVG icon.',
-        jsx: <IconButton customSvgIcon={<Activity size="18px" />} />,
+        jsx: <IconButton customSvgIcon={<Activity size="17px" />} />,
         code: `import { Activity } from 'lucide-react'
 
-<IconButton customSvgIcon={<Activity size="18px" />} />`,
+<IconButton customSvgIcon={<Activity size="17px" />} />`,
       },
     ],
     changelog: {

@@ -85,7 +85,7 @@ export const Input = ({
           interactive
           activeOnFocus
           blockSize={CONTROL_SCALE_MAP[size || 'md'].blockSize}
-          paddingInline={CONTROL_SCALE_MAP[size || 'md'].fontSize}
+          paddingInline={CONTROL_SCALE_MAP[size || 'md'].paddingInline}
         />
       </Segment.Item>
       {endAffix ? <Segment.Item>{endAffix(affixProps)}</Segment.Item> : null}

@@ -67,7 +67,7 @@ export const BUTTON_META = {
         options: TSHIRT_SIZES,
         defaultValue: DEFAULT_TSHIRT_SIZE,
         description:
-          'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
+          'Controls overall proportions adjusting blockSize, horizontal padding and fontSize to keep content balanced.',
       },
       fullWidth: {
         group: PROP_GROUPS.SIZE,
@@ -114,12 +114,12 @@ export const BUTTON_META = {
         jsx: <Button>Default button</Button>,
       },
       {
-        description: 'Examples of different button sizes.',
+        description: 'Examples of different button scales.',
         jsx: (
           <Flex flexWrap="wrap" alignItems="center" gap="8px">
             {TSHIRT_SIZES.map(size => (
               <Button key={size} scale={size} iconName="tree-pine">
-                {size}
+                {size.toUpperCase()} scale
               </Button>
             ))}
           </Flex>

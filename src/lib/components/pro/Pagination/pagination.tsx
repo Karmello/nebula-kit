@@ -126,7 +126,7 @@ export const Pagination = ({
                   color={color}
                   disabled
                   blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
-                  paddingInline={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
+                  paddingInline={CONTROL_SCALE_MAP[scale || 'md'].paddingInline}
                 >
                   <Flex tagAttrs={{ style: { blockSize: 'inherit' } }} alignItems="center">
                     <Icon name="ellipsis" />

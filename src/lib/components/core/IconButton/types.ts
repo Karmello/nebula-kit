@@ -4,7 +4,7 @@ import { FlexProps, IconProps } from 'lib/index.core'
 import type { IconButtonTag, TShirtSize } from 'lib/types'
 
 export type IconButtonProps<T extends IconButtonTag = 'button'> = {
-  size?: TShirtSize
+  scale?: TShirtSize
   loading?: boolean
   onClick?: ComponentPropsWithoutRef<T>['onClick']
 } & {

@@ -1,26 +1,20 @@
-import classNames from 'classnames'
-
-import { withPrefix } from 'lib/helpers'
-import { SpacerProps } from 'lib/index.core'
-
 import { Box } from '../Box'
-import { DEFAULT_SPACER_BLOCK_SIZE } from './definitions'
+import { DEFAULT_SPACER_BLOCK_SIZE, type SpacerProps } from './definitions'
 
 export const Spacer = ({
   // Box
-  tagAttrs,
   tagRef,
+  tagAttrs,
   blockSize = DEFAULT_SPACER_BLOCK_SIZE,
 }: SpacerProps) => {
   return (
     <Box
+      tagRef={tagRef}
       tagAttrs={{
         ...tagAttrs,
-        className: classNames(withPrefix('spacer'), tagAttrs?.className),
         role: 'presentation',
         'aria-hidden': 'true',
       }}
-      tagRef={tagRef}
       blockSize={blockSize}
     />
   )

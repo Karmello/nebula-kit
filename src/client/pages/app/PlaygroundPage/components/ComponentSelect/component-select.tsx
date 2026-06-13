@@ -16,7 +16,7 @@ export const ComponentSelect = () => {
           maxInlineSize={400}
           mode="click"
         >
-          <Icon name="info" size="24px" color="blue" intent="primary" />
+          <Icon name="info" size="16px" color="blue" intent="primary" />
         </Tooltip>
       </Flex>
       <Spacer blockSize="4px" />

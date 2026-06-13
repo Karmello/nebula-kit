@@ -27,7 +27,7 @@ export const Hero = () => {
               navigateTo(`${PageKey.foundations}/overview/introduction/why-nebula`)
             }}
           >
-            <Button color="blue" intent="primary" iconName="arrow-right" iconPlacement="right" scale="sm">
+            <Button color="blue" intent="primary" iconName="arrow-right" iconPlacement="right" scale="md">
               Foundations
             </Button>
           </Link>
@@ -37,7 +37,7 @@ export const Hero = () => {
               navigateTo(`${PageKey.patterns}?id=${activePatternId}`)
             }}
           >
-            <Button variant="ghost" color="blue" intent="primary" iconName="arrow-right" iconPlacement="right" scale="sm">
+            <Button variant="ghost" color="blue" intent="primary" iconName="arrow-right" iconPlacement="right" scale="md">
               Patterns
             </Button>
           </Link>

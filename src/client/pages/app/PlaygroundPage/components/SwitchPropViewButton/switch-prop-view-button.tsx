@@ -18,14 +18,14 @@ export const SwitchPropViewButton = () => {
       scale="sm"
       fullWidth
       iconName="screen-share"
-      tagAttrs={{
-        onClick: () => {
-          if (typeof value !== 'object') {
-            setPropField(activeComponent, activeProp, 'value', { base: value })
-          } else {
-            setPropField(activeComponent, activeProp, 'value', value.base)
-          }
-        },
+      iconPlacement="right"
+      align="split"
+      onClick={() => {
+        if (typeof value !== 'object') {
+          setPropField(activeComponent, activeProp, 'value', { base: value })
+        } else {
+          setPropField(activeComponent, activeProp, 'value', value.base)
+        }
       }}
     >
       {typeof value === 'object' ? 'Responsive values: ON' : 'Responsive values: OFF'}

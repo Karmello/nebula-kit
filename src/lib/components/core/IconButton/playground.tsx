@@ -10,7 +10,7 @@ export const PROPS_FROM_ICON_BUTTON = [
   'intent',
   'loading',
   'ripple',
-  'size',
+  'scale',
   'variant',
 ] as const satisfies readonly (keyof IconButtonProps)[]
 

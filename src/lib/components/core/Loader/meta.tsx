@@ -16,8 +16,6 @@ export const LOADER_META = {
       topLevelTags: ['div'],
     },
     props: {
-      tagRef: BOX_META.Box.props.tagRef,
-      tagAttrs: BOX_META.Box.props.tagAttrs,
       active: {
         group: PROP_GROUPS.STATE,
         options: ['boolean'],
@@ -39,6 +37,8 @@ export const LOADER_META = {
         defaultValue: String(DEFAULT_LOADER_SIZE),
         description: 'Controls the diameter of the loader.',
       },
+      tagRef: BOX_META.Box.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
     },
     examples: [
       {

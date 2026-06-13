@@ -85,7 +85,7 @@ export const MultiSelect = ({
             >
               <DropdownList.Trigger
                 blockSize={CONTROL_SCALE_MAP[size].blockSize}
-                paddingInline={CONTROL_SCALE_MAP[size].fontSize}
+                paddingInline={CONTROL_SCALE_MAP[size].paddingInline}
                 inlineSize={inlineSize}
                 disabled={disabled}
                 surface={dropdownListState?.open ? 'selected' : undefined}
@@ -110,7 +110,7 @@ export const MultiSelect = ({
                     elevated={dropdownListState?.open}
                     surface={isSelected ? 'selected' : undefined}
                     blockSize={CONTROL_SCALE_MAP[size].blockSize}
-                    paddingInline={CONTROL_SCALE_MAP[size].fontSize}
+                    paddingInline={CONTROL_SCALE_MAP[size].paddingInline}
                     inlineSize="100%"
                     onClick={() => handleChange(slotProps.value)}
                     ripple={false}

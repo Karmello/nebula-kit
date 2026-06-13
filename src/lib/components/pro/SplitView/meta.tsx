@@ -27,14 +27,6 @@ export const SPLIT_VIEW_META = {
       slots: ['SplitView.Side', 'SplitView.Main'],
     },
     props: {
-      children: {
-        ...GRID_META.Grid.props.children,
-        isRequired: true,
-        options: ['SplitView.Side', 'SplitView.Main'],
-        description: 'Accepts slots directly or via a render function with access to the SplitView context.',
-      },
-      tagRef: GRID_META.Grid.props.tagRef,
-      tagAttrs: GRID_META.Grid.props.tagAttrs,
       sidePosition: {
         group: PROP_GROUPS.LAYOUT,
         options: SPLIT_VIEW_SIDE_POSITIONS as unknown as string[],
@@ -47,6 +39,14 @@ export const SPLIT_VIEW_META = {
         defaultValue: DEFAULT_SWITCH_BREAKPOINT,
         description: 'Defines the breakpoint at which the side panel switches from overlay to inline layout mode.',
       },
+      children: {
+        ...GRID_META.Grid.props.children,
+        isRequired: true,
+        options: ['SplitView.Side', 'SplitView.Main'],
+        description: 'Accepts slots directly or via a render function with access to the SplitView context.',
+      },
+      tagRef: GRID_META.Grid.props.tagRef,
+      tagAttrs: GRID_META.Grid.props.tagAttrs,
     },
     examples: [
       {
@@ -138,12 +138,6 @@ export const SPLIT_VIEW_META = {
       topLevelTags: ['aside'],
     },
     props: {
-      children: {
-        ...BOX_META.Box.props.children,
-        isRequired: true,
-      },
-      tagRef: BOX_META.Box.props.tagRef,
-      tagAttrs: BOX_META.Box.props.tagAttrs,
       color: {
         ...BOX_META.Box.props.color,
         isResponsive: false,
@@ -168,6 +162,12 @@ export const SPLIT_VIEW_META = {
       paddingRight: BOX_META.Box.props.paddingRight,
       paddingBottom: BOX_META.Box.props.paddingBottom,
       paddingLeft: BOX_META.Box.props.paddingLeft,
+      children: {
+        ...BOX_META.Box.props.children,
+        isRequired: true,
+      },
+      tagRef: BOX_META.Box.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
     },
   } satisfies ComponentMeta<SplitViewSideProps>,
   SplitViewMain: {
@@ -181,6 +181,13 @@ export const SPLIT_VIEW_META = {
       slots: ['SplitView.MainBar'],
     },
     props: {
+      padding: BOX_META.Box.props.padding,
+      paddingInline: BOX_META.Box.props.paddingInline,
+      paddingBlock: BOX_META.Box.props.paddingBlock,
+      paddingTop: BOX_META.Box.props.paddingTop,
+      paddingRight: BOX_META.Box.props.paddingRight,
+      paddingBottom: BOX_META.Box.props.paddingBottom,
+      paddingLeft: BOX_META.Box.props.paddingLeft,
       children: {
         ...BOX_META.Box.props.children,
         options: ['ReactNode', 'SplitView.MainBar'],
@@ -189,13 +196,6 @@ export const SPLIT_VIEW_META = {
       },
       tagRef: BOX_META.Box.props.tagRef,
       tagAttrs: BOX_META.Box.props.tagAttrs,
-      padding: BOX_META.Box.props.padding,
-      paddingInline: BOX_META.Box.props.paddingInline,
-      paddingBlock: BOX_META.Box.props.paddingBlock,
-      paddingTop: BOX_META.Box.props.paddingTop,
-      paddingRight: BOX_META.Box.props.paddingRight,
-      paddingBottom: BOX_META.Box.props.paddingBottom,
-      paddingLeft: BOX_META.Box.props.paddingLeft,
     },
   } satisfies ComponentMeta<SplitViewMainProps>,
   SplitViewMainBar: {

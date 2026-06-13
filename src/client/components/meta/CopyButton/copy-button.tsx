@@ -25,7 +25,7 @@ export const CopyButton = ({ text }: CopyButtonProps) => {
     <IconButton
       tagAttrs={{ 'aria-label': copied ? 'Copied' : 'Copy code' }}
       iconName={copied ? 'check' : 'copy'}
-      size="xs"
+      scale="xs"
       variant="ghost"
       intent="primary"
       color="blue"

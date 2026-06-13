@@ -18,7 +18,7 @@ export const RenderPanel = () => {
             maxInlineSize={400}
             mode="click"
           >
-            <Icon name="info" size="24px" color="blue" intent="primary" />
+            <Icon name="info" size="16px" color="blue" intent="primary" />
           </Tooltip>
         }
         iconPlacement="right"

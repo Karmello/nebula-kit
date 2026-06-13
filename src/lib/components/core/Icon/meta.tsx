@@ -24,12 +24,6 @@ export const ICON_META = {
       },
     },
     props: {
-      children: {
-        ...BOX_META.Box.props.children,
-        description: 'Custom SVG icon rendered instead of name.',
-      },
-      tagRef: BOX_META.Box.props.tagRef,
-      tagAttrs: BOX_META.Box.props.tagAttrs,
       name: {
         group: PROP_GROUPS.ICON,
         options: ['IconName'],
@@ -50,6 +44,12 @@ export const ICON_META = {
         defaultValue: String(DEFAULT_ICON_SIZE),
         description: 'Size of the icon.',
       },
+      children: {
+        ...BOX_META.Box.props.children,
+        description: 'Custom SVG icon rendered when not using name prop.',
+      },
+      tagRef: BOX_META.Box.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
     },
     examples: [
       {

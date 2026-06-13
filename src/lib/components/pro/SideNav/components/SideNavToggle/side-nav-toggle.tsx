@@ -19,7 +19,7 @@ export const SideNavToggle = () => {
             'aria-expanded': isAnyCategoryExpanded,
           }}
           iconName={isAnyCategoryExpanded ? 'list-chevrons-down-up' : 'list-chevrons-up-down'}
-          size="xs"
+          scale="xs"
           onClick={() => {
             setExpandedCategories(state => Object.fromEntries(Object.keys(state).map(id => [id, !isAnyCategoryExpanded])))
           }}

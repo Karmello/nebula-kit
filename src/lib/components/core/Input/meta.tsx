@@ -69,7 +69,7 @@ export const INPUT_META = {
         options: TSHIRT_SIZES,
         defaultValue: DEFAULT_TSHIRT_SIZE,
         description:
-          'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
+          'Controls overall proportions adjusting blockSize, horizontal padding and fontSize to keep content balanced.',
       },
       startAffix: {
         options: ['props => ReactNode'],
