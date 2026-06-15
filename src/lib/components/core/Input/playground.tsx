@@ -8,7 +8,7 @@ export const PROPS_FROM_INPUT = [
   'intent',
   'placeholder',
   'readOnly',
-  'size',
+  'scale',
   'variant',
 ] as const satisfies readonly (keyof InputProps)[]
 

@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import classNames from 'classnames'
 
-import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE } from 'lib/constants'
+import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { InputAffixProps, InputProps, Segment } from 'lib/index.core'
 
 import { Box } from '../Box'
-import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_VARIANT } from './definitions'
+import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_SCALE, DEFAULT_INPUT_VARIANT } from './definitions'
 
 import './input.scss'
 
@@ -24,7 +24,7 @@ export const Input = ({
   onChange,
   onFocus,
   onBlur,
-  size = DEFAULT_TSHIRT_SIZE,
+  scale = DEFAULT_INPUT_SCALE,
   startAffix,
   endAffix,
   placeholder,
@@ -47,7 +47,7 @@ export const Input = ({
     ...(color !== undefined && { color }),
     ...(intent !== undefined && { intent }),
     ...(disabled !== undefined && { disabled }),
-    ...(size !== undefined && { size }),
+    ...(scale !== undefined && { scale }),
   }
 
   return (
@@ -61,8 +61,8 @@ export const Input = ({
             className: classNames(withPrefix('input'), tagAttrs?.className),
             style: {
               ...tagAttrs?.style,
-              fontSize: CONTROL_SCALE_MAP[size || 'md'].fontSize,
-              lineHeight: CONTROL_SCALE_MAP[size || 'md'].lineHeight,
+              fontSize: CONTROL_SCALE_MAP[scale || 'md'].fontSize,
+              lineHeight: CONTROL_SCALE_MAP[scale || 'md'].lineHeight,
             },
             value: currentValue,
             onChange: e => {
@@ -84,8 +84,8 @@ export const Input = ({
           inlineSize="100%"
           interactive
           activeOnFocus
-          blockSize={CONTROL_SCALE_MAP[size || 'md'].blockSize}
-          paddingInline={CONTROL_SCALE_MAP[size || 'md'].paddingInline}
+          blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
+          paddingInline={CONTROL_SCALE_MAP[scale || 'md'].paddingInline}
         />
       </Segment.Item>
       {endAffix ? <Segment.Item>{endAffix(affixProps)}</Segment.Item> : null}

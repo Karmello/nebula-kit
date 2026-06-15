@@ -13,6 +13,7 @@ export const ToolbarToggle = () => {
         }}
         variant="ghost"
         intent="primary"
+        scale="md"
         iconName={mainOpen ? 'close' : 'menu'}
         onClick={() => setMainOpen(!mainOpen)}
       />

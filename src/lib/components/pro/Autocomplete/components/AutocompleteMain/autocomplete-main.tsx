@@ -133,7 +133,7 @@ export const AutocompleteMain = ({
             onInputChange?.(value)
           }}
           placeholder={placeholder}
-          size={size}
+          scale={size}
           variant="solid"
           intent={intent}
           color={color}

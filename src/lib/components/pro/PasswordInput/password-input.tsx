@@ -20,7 +20,7 @@ export const PasswordInput = ({
   placeholder,
   readOnly,
   autoComplete = DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE,
-  size,
+  scale,
   value,
   variant,
 }: PasswordInputProps) => {
@@ -48,7 +48,7 @@ export const PasswordInput = ({
       placeholder={placeholder}
       readOnly={readOnly}
       autoComplete={autoComplete}
-      size={size}
+      scale={scale}
       value={value}
       variant={variant}
     />

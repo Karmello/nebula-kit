@@ -15,7 +15,7 @@ type PropsFromInput = Pick<
   | 'onFocus'
   | 'placeholder'
   | 'readOnly'
-  | 'size'
+  | 'scale'
   | 'tagAttrs'
   | 'tagRef'
   | 'value'

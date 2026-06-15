@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
-import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
+import { TSHIRT_SIZES } from 'lib/constants'
 import { IconButton, Input, InputProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
-import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_VARIANT } from './definitions'
+import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_SCALE, DEFAULT_INPUT_VARIANT } from './definitions'
 
 const InputControlled = () => {
   const [value, setValue] = useState<string>('value')
@@ -65,9 +65,9 @@ export const INPUT_META = {
         options: ['boolean'],
         description: 'Prevents editing the value while keeping the field focusable.',
       },
-      size: {
+      scale: {
         options: TSHIRT_SIZES,
-        defaultValue: DEFAULT_TSHIRT_SIZE,
+        defaultValue: DEFAULT_INPUT_SCALE,
         description:
           'Controls overall proportions adjusting blockSize, horizontal padding and fontSize to keep content balanced.',
       },

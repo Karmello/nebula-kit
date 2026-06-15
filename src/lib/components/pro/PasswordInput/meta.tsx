@@ -34,7 +34,7 @@ export const PASSWORD_META = {
       onFocus: INPUT_META.Input.props.onFocus,
       placeholder: INPUT_META.Input.props.placeholder,
       readOnly: INPUT_META.Input.props.readOnly,
-      size: INPUT_META.Input.props.size,
+      scale: INPUT_META.Input.props.scale,
       tagAttrs: INPUT_META.Input.props.tagAttrs,
       tagRef: INPUT_META.Input.props.tagRef,
       value: INPUT_META.Input.props.value,

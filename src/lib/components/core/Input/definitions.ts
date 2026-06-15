@@ -6,8 +6,9 @@ import { BoxProps } from '../Box'
 
 export const DEFAULT_INPUT_VARIANT: InputProps['variant'] = 'solid'
 export const DEFAULT_INPUT_INTENT: InputProps['intent'] = 'tertiary'
+export const DEFAULT_INPUT_SCALE: InputProps['scale'] = 'md'
 
-export type InputAffixProps = Pick<InputProps, 'color' | 'disabled' | 'intent' | 'size' | 'variant'>
+export type InputAffixProps = Pick<InputProps, 'color' | 'disabled' | 'intent' | 'scale' | 'variant'>
 
 type InputOwnProps = {
   defaultValue?: string
@@ -15,7 +16,7 @@ type InputOwnProps = {
   onChange?: (value: string) => void
   onFocus?: React.FocusEventHandler<HTMLInputElement>
   onBlur?: React.FocusEventHandler<HTMLInputElement>
-  size?: TShirtSize
+  scale?: TShirtSize
   startAffix?: (props: InputAffixProps) => ReactNode
   endAffix?: (props: InputAffixProps) => ReactNode
   placeholder?: string
