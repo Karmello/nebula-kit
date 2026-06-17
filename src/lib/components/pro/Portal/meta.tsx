@@ -41,7 +41,7 @@ export const PORTAL_META = {
         'serves as the foundation for dropdowns modals tooltips and other overlay components',
       ],
       composedOf: ['Box'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
     },
     props: {
       anchorRef: {

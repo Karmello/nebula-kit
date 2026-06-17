@@ -15,7 +15,7 @@ export const SPACER_META = {
         'supports responsive spacing for adaptive layouts',
       ],
       composedOf: ['Box'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
     },
     props: {
       blockSize: {

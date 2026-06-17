@@ -38,7 +38,7 @@ export const ROTATE_META = {
         'works well for icons, toggles and directional indicators',
       ],
       composedOf: ['Box'],
-      topLevelTags: ['span'],
+      exposedTags: ['span'],
     },
     props: {
       angle: {

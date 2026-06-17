@@ -24,7 +24,7 @@ export const TEXTAREA_META = {
       title: 'Multiline text input for entering and editing longer text.',
       features: ['supports both controlled and uncontrolled modes'],
       composedOf: ['Box'],
-      topLevelTags: ['textarea'],
+      exposedTags: ['textarea'],
     },
     props: {
       color: BOX_META.Box.props.color,

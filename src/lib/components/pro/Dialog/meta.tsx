@@ -45,7 +45,7 @@ export const DIALOG_META = {
         'automatically disables page scrolling while open',
       ],
       composedOf: ['Flex', 'Box', 'Button', 'Scale', 'FocusTrap'],
-      topLevelTags: ['dialog'],
+      exposedTags: ['dialog'],
       slots: ['Dialog.Header', 'Dialog.Content', 'Dialog.Footer'],
     },
     props: {
@@ -108,7 +108,7 @@ export const DIALOG_META = {
       title: 'Header area of the dialog.',
       features: ['for the dialog title or heading content'],
       composedOf: ['Box'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
     },
     props: {
       children: {
@@ -125,7 +125,7 @@ export const DIALOG_META = {
       name: 'Dialog.Content',
       title: 'Primary content area of the dialog.',
       composedOf: ['Box'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
     },
     props: {
       children: {
@@ -143,7 +143,7 @@ export const DIALOG_META = {
       title: 'Footer area of the dialog.',
       features: ['for actions'],
       composedOf: ['Box'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
     },
     props: {
       children: {

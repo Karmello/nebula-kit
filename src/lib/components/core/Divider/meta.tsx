@@ -14,7 +14,7 @@ export const DIVIDER_META = {
         'marks a thematic break between related blocks of content',
       ],
       composedOf: ['Box'],
-      topLevelTags: ['hr'],
+      exposedTags: ['hr'],
     },
     props: {
       color: BOX_META.Box.props.color,

@@ -108,7 +108,7 @@ export const FLOATING_META = {
         'preserves the rendered child structure without applying visual styling',
       ],
       composedOf: ['Box'],
-      topLevelTags: ['span'],
+      exposedTags: ['span'],
     },
     props: {
       cursor: BOX_META.Box.props.cursor,
@@ -135,7 +135,7 @@ export const FLOATING_META = {
         'Floating.Content wraps the floating layer, renders it in a portal and applies the positioning, dismissal and opening animation behavior managed by Floating.',
       features: ['renders only while the floating layer is open', 'closes on outside press, Escape and Tab navigation'],
       composedOf: ['Box'],
-      topLevelTags: ['span'],
+      exposedTags: ['span'],
     },
     props: {
       children: {

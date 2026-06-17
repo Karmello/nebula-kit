@@ -30,7 +30,7 @@ export const APP_FRAME_META = {
         'supports footer sections that can stack or align horizontally across breakpoints',
       ],
       composedOf: ['Grid'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
       slots: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer', 'AppFrame.FooterSection'],
     },
     props: {
@@ -81,7 +81,7 @@ export const APP_FRAME_META = {
       title: 'Defines the top region of AppFrame.',
       guidelines: ['typically used for navigation, branding or other global actions'],
       composedOf: ['Box'],
-      topLevelTags: ['header'],
+      exposedTags: ['header'],
     },
     props: {
       color: {
@@ -108,7 +108,7 @@ export const APP_FRAME_META = {
       title: 'Defines the central content region of AppFrame.',
       features: ['holds the primary application content or view'],
       composedOf: ['Box'],
-      topLevelTags: ['main'],
+      exposedTags: ['main'],
     },
     props: {
       padding: BOX_META.Box.props.padding,
@@ -136,7 +136,7 @@ export const APP_FRAME_META = {
         'AppFrame.FooterSection slot is optional, when no footer sections are provided, AppFrame.Footer renders its children directly',
       ],
       composedOf: ['Box'],
-      topLevelTags: ['footer'],
+      exposedTags: ['footer'],
       slots: ['AppFrame.FooterSection'],
     },
     props: {
@@ -179,7 +179,7 @@ export const APP_FRAME_META = {
         'keeps footer content structure explicit without requiring custom wrappers',
       ],
       composedOf: ['Box'],
-      topLevelTags: ['section'],
+      exposedTags: ['section'],
     },
     props: {
       padding: {

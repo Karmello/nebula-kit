@@ -70,7 +70,7 @@ export const PAGINATION_META = {
         'routing support via hrefBuilder for URL-based pagination and deep linking',
       ],
       composedOf: ['Box', 'Segment', 'Flex', 'Button', 'Link', 'Icon'],
-      topLevelTags: ['nav'],
+      exposedTags: ['nav'],
     },
     props: {
       boundaryCount: {

@@ -15,7 +15,7 @@ export const LINK_META = {
         'automatically chooses the correct HTML structure under the hood',
         'supports href and target for standard link behavior',
       ],
-      topLevelTags: ['a'],
+      exposedTags: ['a'],
     },
     examples: [
       {

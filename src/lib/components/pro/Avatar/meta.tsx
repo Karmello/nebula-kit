@@ -17,7 +17,7 @@ export const AVATAR_META = {
         'built-in loading indicator with delay and minimum display time',
       ],
       composedOf: ['Box', 'Image', 'Text', 'Loader'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
     },
     props: {
       alt: IMAGE_META.Image.props.alt,

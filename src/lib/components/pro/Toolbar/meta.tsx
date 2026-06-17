@@ -18,7 +18,7 @@ export const TOOLBAR_META = {
         'often paired with ButtonGroup rendered inside the main section',
       ],
       composedOf: ['Grid'],
-      topLevelTags: ['nav'],
+      exposedTags: ['nav'],
       slots: ['Toolbar.Main', 'Toolbar.Start', 'Toolbar.End'],
     },
     props: {

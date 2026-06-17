@@ -38,12 +38,13 @@ export const useRipple = (elemRef: RefObject<any>, active?: boolean) => {
 
     if (!isInteractive || isDisabled) return
 
-    el.dataset.nebRipple = 'true'
+    el.dataset.nebBoxRipple = 'true'
 
     const triggerRipple = (x?: number, y?: number) => {
       const rect = el.getBoundingClientRect()
 
       const size = Math.max(rect.width, rect.height)
+
       const left = x ?? rect.width / 2 - size / 2
       const top = y ?? rect.height / 2 - size / 2
 

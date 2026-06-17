@@ -13,7 +13,7 @@ export const LOADER_META = {
       title: 'Circular indicator for loading states.',
       features: ['displays a minimal circular spinner to indicate an ongoing operation'],
       composedOf: ['Box'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
     },
     props: {
       active: {

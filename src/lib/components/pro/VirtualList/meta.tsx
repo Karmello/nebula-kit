@@ -20,7 +20,7 @@ export const VIRTUAL_LIST_META = {
         'suitable for dropdowns menus and command palettes',
       ],
       composedOf: ['Box'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
     },
     props: {
       color: {

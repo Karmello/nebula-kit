@@ -12,7 +12,7 @@ export const CHECKBOX_META = {
       title: 'Form control for toggling a binary on/off state.',
       features: ['supports both controlled and uncontrolled modes'],
       composedOf: ['Box', 'Icon'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
     },
     props: {
       checked: {

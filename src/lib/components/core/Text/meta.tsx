@@ -17,7 +17,7 @@ export const TEXT_META = {
         'provides common text styling and formatting options',
       ],
       composedOf: ['Box'],
-      topLevelTags: TEXT_TAGS,
+      exposedTags: TEXT_TAGS,
     },
     props: {
       typography: {

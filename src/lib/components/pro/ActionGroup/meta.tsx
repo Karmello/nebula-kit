@@ -31,7 +31,7 @@ export const ACTION_GROUP_META = {
         'allows arbitrary content inside each item',
       ],
       composedOf: ['Flex'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
       slots: ['ActionGroup.Item'],
     },
     props: {
@@ -152,7 +152,7 @@ export const ACTION_GROUP_META = {
         'ActionGroup.Item represents an individual action within an ActionGroup. It provides an interactive surface that can display arbitrary content and participate in navigation, selection and group styling.',
       features: ['can be rendered as a button or link', 'supports selected and disabled states'],
       composedOf: ['Flex.Item'],
-      topLevelTags: ACTION_GROUP_ITEM_TAGS,
+      exposedTags: ACTION_GROUP_ITEM_TAGS,
     },
     props: {
       selected: {

@@ -18,7 +18,7 @@ export const SECTION_META = {
         'supports optional icon and styling variants for section headers',
       ],
       composedOf: ['Box', 'Text', 'Divider', 'Spacer', 'Title'],
-      topLevelTags: SECTION_TAGS,
+      exposedTags: SECTION_TAGS,
     },
     props: {
       children: {

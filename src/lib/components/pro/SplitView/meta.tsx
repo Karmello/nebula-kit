@@ -23,7 +23,7 @@ export const SPLIT_VIEW_META = {
         'in overlay mode, blocks pointer interaction outside the active panel',
       ],
       guidelines: ['typically used for side navigation layouts, settings pages or documentation interfaces'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
       slots: ['SplitView.Side', 'SplitView.Main'],
     },
     props: {
@@ -135,7 +135,7 @@ export const SPLIT_VIEW_META = {
       ],
       guidelines: ['typically used for navigation, menus or supplementary content'],
       composedOf: ['Box', 'Flex', 'IconButton', 'Resize', 'FocusTrap'],
-      topLevelTags: ['aside'],
+      exposedTags: ['aside'],
     },
     props: {
       color: {
@@ -177,7 +177,7 @@ export const SPLIT_VIEW_META = {
       title: 'Defines the main content region of the SplitView layout.',
       features: ['holds the primary content region of the SplitView layout'],
       composedOf: ['Box', 'Flex', 'IconButton', 'Spacer'],
-      topLevelTags: ['section'],
+      exposedTags: ['section'],
       slots: ['SplitView.MainBar'],
     },
     props: {
@@ -206,7 +206,7 @@ export const SPLIT_VIEW_META = {
       features: ['can contain any custom content, such as breadcrumbs or other controls'],
       guidelines: ['should be placed inside SplitView.Main slot'],
       composedOf: ['Box'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
     },
     props: {
       children: {

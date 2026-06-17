@@ -31,7 +31,7 @@ export const AUTOCOMPLETE_META = {
         'renders its dropdown without animation for maximum responsiveness',
       ],
       composedOf: ['Input', 'Text', 'IconButton'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
       slots: ['Autocomplete.Option'],
     },
     props: {
@@ -153,7 +153,7 @@ export const AUTOCOMPLETE_META = {
       name: 'Autocomplete.Option',
       title: 'Represents a single option within Autocomplete component.',
       composedOf: ['DropdownList.Item'],
-      topLevelTags: ['button'],
+      exposedTags: ['button'],
     },
     props: {
       children: BOX_META.Box.props.children,

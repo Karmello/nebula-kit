@@ -17,7 +17,7 @@ export const PASSWORD_META = {
         'supports both controlled and uncontrolled modes',
       ],
       composedOf: ['Input', 'IconButton'],
-      topLevelTags: ['input'],
+      exposedTags: ['input'],
     },
     props: {
       autoComplete: {

@@ -10,7 +10,7 @@ type Overview = {
   features?: string[]
   guidelines?: string[]
   composedOf?: string[]
-  topLevelTags?: readonly string[]
+  exposedTags?: readonly string[]
   slots?: string[]
   hooks?: string[]
   readMoreLink?: {

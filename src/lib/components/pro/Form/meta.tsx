@@ -49,7 +49,7 @@ export const FORM_META = {
         'orchestrates the submission lifecycle via valid and invalid submission handlers',
       ],
       composedOf: ['Flex', 'Flex.Item'],
-      topLevelTags: ['form'],
+      exposedTags: ['form'],
       slots: ['Form.Fields', 'Form.Actions'],
     },
     props: {
@@ -238,7 +238,7 @@ export const FORM_META = {
       features: ['controls layout and spacing between form fields'],
       guidelines: ['expects Form.Field slots as children'],
       composedOf: ['Flex'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
       slots: ['Form.Field'],
     },
     props: {
@@ -279,7 +279,7 @@ export const FORM_META = {
       title: 'Container for form action elements such as submit and secondary buttons.',
       features: ['controls layout and alignment of form action elements independently from form fields'],
       composedOf: ['Flex'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
       slots: ['Form.ActionButton'],
     },
     props: {
@@ -316,7 +316,7 @@ export const FORM_META = {
         'exposes Flex.Item props for per-field layout control',
       ],
       composedOf: ['Flex.Item'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
       slots: ['Form.Label', 'Form.Hint'],
     },
     props: {
@@ -386,7 +386,7 @@ export const FORM_META = {
       features: ['exposes Flex.Item props for per-button layout control'],
       guidelines: ['use the "type" prop to enable built-in behaviors such as submit, reset or clear'],
       composedOf: ['Flex.Item', 'Button'],
-      topLevelTags: ['button'],
+      exposedTags: ['button'],
     },
     props: {
       ...BOX_META.Box.props,
@@ -426,7 +426,7 @@ export const FORM_META = {
       title: "Custom label slot for a form field's control.",
       features: ['replaces the "label" prop on Form.Field when provided'],
       composedOf: ['Text', 'Spacer', 'Title'],
-      topLevelTags: ['label'],
+      exposedTags: ['label'],
     },
     props: {
       bold: TEXT_META.Text.props.bold,
@@ -451,7 +451,7 @@ export const FORM_META = {
       title: "Helper text slot for a form field's control.",
       features: ['replaces the "hint" prop on Form.Field when provided'],
       composedOf: ['Text', 'Spacer', 'Title'],
-      topLevelTags: ['span'],
+      exposedTags: ['span'],
     },
     props: {
       bold: TEXT_META.Text.props.bold,

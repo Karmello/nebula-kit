@@ -14,7 +14,7 @@ export const MARKER_LIST_META = {
       features: ['presents short text collections with bullets or numbers'],
       guidelines: ['use ol tag with numeric marker styles and ul with bullet marker styles for correct semantics'],
       composedOf: ['Flex'],
-      topLevelTags: MARKER_LIST_TAGS,
+      exposedTags: MARKER_LIST_TAGS,
       slots: ['MarkerList.Item'],
     },
     props: {
@@ -80,7 +80,7 @@ export const MARKER_LIST_META = {
       name: 'MarkerList.Item',
       title: 'Single item inside MarkerList.',
       composedOf: ['Box'],
-      topLevelTags: ['li'],
+      exposedTags: ['li'],
     },
     props: {
       children: {

@@ -19,7 +19,7 @@ export const TABS_META = {
         'manages selection state without unmounting content',
       ],
       composedOf: ['Box', 'Flex', 'ActionGroup'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
       slots: ['Tabs.Tab', 'Tabs.Panel'],
     },
     props: {
@@ -184,7 +184,7 @@ export const TABS_META = {
       title: 'Selectable tab item within a Tabs component.',
       features: ['activates the panel with the matching value', 'inherits visual styling from Button'],
       composedOf: ['ActionGroup.Item', 'Flex', 'Text'],
-      topLevelTags: ['button'],
+      exposedTags: ['button'],
     },
     props: {
       value: {
@@ -208,7 +208,7 @@ export const TABS_META = {
       title: 'Content panel associated with a tab.',
       features: ['displayed when its corresponding tab is active'],
       composedOf: ['Box'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
     },
     props: {
       value: {

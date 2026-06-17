@@ -19,7 +19,7 @@ export const INPUT_META = {
       title: 'Form control for entering or editing text.',
       features: ['supports both controlled and uncontrolled modes', 'supports start and end affixes'],
       composedOf: ['Box', 'Segment'],
-      topLevelTags: ['input'],
+      exposedTags: ['input'],
     },
     props: {
       autoComplete: {

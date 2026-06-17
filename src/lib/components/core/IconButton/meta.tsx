@@ -30,7 +30,7 @@ export const ICON_BUTTON_META = {
         'keeps interaction geometry consistent with the global control sizing system',
       ],
       composedOf: ['Flex', 'Icon', 'Loader'],
-      topLevelTags: ICON_BUTTON_TAGS,
+      exposedTags: ICON_BUTTON_TAGS,
     },
     props: {
       elevated: BOX_META.Box.props.elevated,

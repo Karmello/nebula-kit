@@ -27,7 +27,7 @@ export const BUTTON_META = {
         'supports full-width layout to span the entire container',
       ],
       composedOf: ['Flex', 'Text', 'Icon', 'Loader'],
-      topLevelTags: BUTTON_TAGS,
+      exposedTags: BUTTON_TAGS,
     },
     props: {
       elevated: BOX_META.Box.props.elevated,

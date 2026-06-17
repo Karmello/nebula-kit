@@ -24,7 +24,7 @@ export const MARKUP_META = {
         'Markup can process nested string children recursively when they appear inside Text-based structures',
       ],
       composedOf: ['Box'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
     },
     props: {
       children: {

@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { InputAffixProps, InputProps, Segment } from 'lib/index.core'
+import { Flex, InputAffixProps, InputProps } from 'lib/index.core'
 
 import { Box } from '../Box'
 import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_SCALE, DEFAULT_INPUT_VARIANT } from './definitions'
@@ -51,9 +51,13 @@ export const Input = ({
   }
 
   return (
-    <Segment>
-      {startAffix ? <Segment.Item>{startAffix(affixProps)}</Segment.Item> : null}
-      <Segment.Item flex="1">
+    <Flex>
+      {startAffix ? (
+        <Flex.Item borderTopRightRadius="0px" borderBottomRightRadius="0px">
+          {startAffix(affixProps)}
+        </Flex.Item>
+      ) : null}
+      <Flex.Item flex="1">
         <Box
           tag="input"
           tagAttrs={{
@@ -76,7 +80,6 @@ export const Input = ({
             autoComplete,
           }}
           tagRef={tagRef}
-          drawable
           variant={variant}
           color={color}
           intent={intent}
@@ -87,9 +90,9 @@ export const Input = ({
           blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
           paddingInline={CONTROL_SCALE_MAP[scale || 'md'].paddingInline}
         />
-      </Segment.Item>
-      {endAffix ? <Segment.Item>{endAffix(affixProps)}</Segment.Item> : null}
-    </Segment>
+      </Flex.Item>
+      {endAffix ? <Flex.Item>{endAffix(affixProps)}</Flex.Item> : null}
+    </Flex>
   )
 }
 

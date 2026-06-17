@@ -17,7 +17,7 @@ export const REVEAL_META = {
         'provides a labeled control for toggling content visibility',
         'animates expand and collapse using measured height for smooth transitions',
       ],
-      topLevelTags: REVEAL_TAGS,
+      exposedTags: REVEAL_TAGS,
       composedOf: ['Box', 'Flex', 'Button', 'Resize'],
     },
     props: {

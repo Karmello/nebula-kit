@@ -36,7 +36,7 @@ const META = {
       'always renders with square corners and does not inherit the global border radius',
     ],
     composedOf: ['Box'],
-    topLevelTags: ['table'],
+    exposedTags: ['table'],
     slots: ['Table.Body', 'Table.Header', 'Table.Footer', 'Table.Caption'],
   },
   props: {
@@ -316,7 +316,7 @@ export const TABLE_META = {
       title: 'Main data rows of the table.',
       guidelines: ['expects Table.Row as children', 'this slot can be used multiple times'],
       composedOf: ['Box'],
-      topLevelTags: ['tbody'],
+      exposedTags: ['tbody'],
       slots: ['Table.Row'],
     },
     props: {
@@ -355,7 +355,7 @@ export const TABLE_META = {
       title: 'Column headers of the table.',
       guidelines: ['expects Table.HeaderRow as children'],
       composedOf: ['Box'],
-      topLevelTags: ['thead'],
+      exposedTags: ['thead'],
       slots: ['Table.HeaderRow'],
     },
     props: {
@@ -393,7 +393,7 @@ export const TABLE_META = {
       title: 'Summary or footer rows of the table.',
       guidelines: ['expects Table.Row as children'],
       composedOf: ['Box'],
-      topLevelTags: ['tfoot'],
+      exposedTags: ['tfoot'],
       slots: ['Table.Row'],
     },
     props: {
@@ -432,7 +432,7 @@ export const TABLE_META = {
       title: 'Provides a descriptive title for the table.',
       features: ['gets rendered at the top of the table as a descriptive title'],
       composedOf: ['Box'],
-      topLevelTags: ['caption'],
+      exposedTags: ['caption'],
     },
     props: {
       children: {
@@ -458,7 +458,7 @@ export const TABLE_META = {
       title: 'Represents a single row within the table structure.',
       guidelines: ['should be placed inside Table.Body or Table.Footer to define individual data rows'],
       composedOf: ['Box'],
-      topLevelTags: ['tr'],
+      exposedTags: ['tr'],
       slots: ['Table.Cell', 'Table.HeaderCell'],
     },
     props: {
@@ -488,7 +488,7 @@ export const TABLE_META = {
       title: 'Represents a row within Table.Head for organizing header cells.',
       guidelines: ["should be use within Table.Head to group header cells and define the table's column labels."],
       composedOf: ['Box'],
-      topLevelTags: ['tr'],
+      exposedTags: ['tr'],
       slots: ['Table.HeaderCell'],
     },
     props: {
@@ -518,7 +518,7 @@ export const TABLE_META = {
       title: 'Represents a single cell within a table row.',
       guidelines: ['should be used inside Table.Row'],
       composedOf: ['Box'],
-      topLevelTags: ['td'],
+      exposedTags: ['td'],
     },
     props: {
       blockSize: BOX_META.Box.props.blockSize,
@@ -550,7 +550,7 @@ export const TABLE_META = {
       title: 'Represents a single header cell.',
       guidelines: ['can be used inside Table.Row or Table.HeaderRow'],
       composedOf: ['Box'],
-      topLevelTags: ['th'],
+      exposedTags: ['th'],
     },
     props: {
       blockSize: BOX_META.Box.props.blockSize,

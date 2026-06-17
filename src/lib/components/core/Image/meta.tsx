@@ -25,7 +25,7 @@ export const IMAGE_META = {
         'serves as a base for composed image components',
       ],
       composedOf: ['Box'],
-      topLevelTags: ['img'],
+      exposedTags: ['img'],
     },
     props: {
       src: {

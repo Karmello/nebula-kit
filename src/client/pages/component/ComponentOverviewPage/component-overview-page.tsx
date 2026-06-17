@@ -15,13 +15,13 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const navigateTo = useNavigateTo()
 
   const {
-    overview: { name, title, description, features, guidelines, composedOf, topLevelTags, slots, hooks, readMoreLink },
+    overview: { name, title, description, features, guidelines, composedOf, exposedTags, slots, hooks, readMoreLink },
     examples,
     props,
   } = meta
 
   const content = (
-    <Flex flexDirection="column" alignItems="stretch" gap="48px">
+    <Flex flexDirection="column" alignItems="stretch" gap="32px">
       <Box>
         <Text typography="lead">{title}</Text>
         {examples?.[0] ? (
@@ -38,10 +38,10 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       {features ? <ListWithHeading heading="Features" items={features} /> : null}
       {guidelines ? <ListWithHeading heading="Guidelines" items={guidelines} /> : null}
       {composedOf ? <ListWithChips heading="Composed of" items={composedOf} color="red" /> : null}
-      {topLevelTags ? (
+      {exposedTags ? (
         <ListWithChips
-          heading={topLevelTags.length > 1 ? 'Root tags' : 'Root tag'}
-          items={topLevelTags as string[]}
+          heading={exposedTags.length > 1 ? 'Exposed tags' : 'Exposed tag'}
+          items={exposedTags as string[]}
           color="amber"
         />
       ) : null}

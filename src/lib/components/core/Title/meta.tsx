@@ -21,7 +21,7 @@ export const TITLE_META = {
         'allows custom content when children are not plain text',
       ],
       composedOf: ['Flex', 'Text', 'Icon'],
-      topLevelTags: ['span'],
+      exposedTags: ['span'],
     },
     props: {
       color: FLEX_META.Flex.props.color,

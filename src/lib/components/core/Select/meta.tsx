@@ -129,7 +129,7 @@ export const SELECT_META = {
       description:
         'Select.Option defines an available choice within a Select component. Each option provides a value used for selection and renders the content displayed to the user inside the dropdown list.',
       composedOf: ['Box', 'Text', 'Divider'],
-      topLevelTags: ['button'],
+      exposedTags: ['button'],
     },
     props: {
       children: BOX_META.Box.props.children,

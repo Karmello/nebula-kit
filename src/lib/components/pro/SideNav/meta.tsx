@@ -29,7 +29,7 @@ export const SIDE_NAV_META = {
         'does not manage selected state internally - active items should be derived from the current route, pathname or query parameters',
       ],
       composedOf: ['Flex'],
-      topLevelTags: ['nav'],
+      exposedTags: ['nav'],
       slots: ['SideNav.Item', 'SideNav.Category'],
     },
     examples: [
@@ -168,7 +168,7 @@ export const SIDE_NAV_META = {
         'can be nested inside SideNav.Category to participate in hierarchical navigation',
       ],
       composedOf: ['Link', 'Button'],
-      topLevelTags: ['a'],
+      exposedTags: ['a'],
     },
     props: {
       align: BUTTON_META.Button.props.align,
@@ -208,7 +208,7 @@ export const SIDE_NAV_META = {
         'expects only SideNav.Item elements as children',
       ],
       composedOf: ['Box', 'Flex', 'Button', 'Resize', 'Spacer'],
-      topLevelTags: ['ul'],
+      exposedTags: ['ul'],
       slots: ['SideNav.Item'],
     },
     props: {

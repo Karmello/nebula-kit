@@ -45,7 +45,7 @@ export const FADE_META = {
         'works well for overlays, tooltips, popovers and transient UI',
       ],
       composedOf: ['Box'],
-      topLevelTags: ['span'],
+      exposedTags: ['span'],
     },
     props: {
       children: {

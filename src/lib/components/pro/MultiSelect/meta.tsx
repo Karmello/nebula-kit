@@ -20,7 +20,7 @@ export const MULTI_SELECT_META = {
       title: 'Form control for choosing multiple options from a list.',
       features: ['supports both controlled and uncontrolled modes'],
       composedOf: ['Text', 'Title'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
       slots: ['MultiSelect.Option'],
     },
     props: {
@@ -123,7 +123,7 @@ export const MULTI_SELECT_META = {
       name: 'MultiSelect.Option',
       title: 'Represents a single option within MultiSelect component.',
       composedOf: ['DropdownList.Item'],
-      topLevelTags: ['button'],
+      exposedTags: ['button'],
     },
     props: {
       children: BOX_META.Box.props.children,

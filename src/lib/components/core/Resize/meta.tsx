@@ -46,7 +46,7 @@ export const RESIZE_META = {
         'keeps layout motion explicit without hard-coded sizes',
       ],
       composedOf: ['Box'],
-      topLevelTags: ['div'],
+      exposedTags: ['div'],
     },
     props: {
       children: {
