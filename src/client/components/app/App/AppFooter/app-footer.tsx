@@ -9,11 +9,11 @@ export const AppFooter = () => {
   return (
     <Footer switchAt="lg" paddingBlock="sm" paddingInline="md" paddingBottom={{ base: 'sm', lg: 'lg' }}>
       <Footer.Section>
-        <Text bold>Current release</Text>
+        <Text bold>Final release</Text>
         <Divider marginBottom="sm" intent="tertiary" />
         <Text typography="small" italic color="gray" intent="primary">
-          NebulaKit is actively developed and released in incremental updates. Each release introduces improvements and
-          refinements across the system.
+          NebulaKit was an experimental project exploring how AI could help a solo developer discover new approaches to building
+          UIs in 2026. The experiment has since concluded and the project is no longer maintained.
         </Text>
         <Spacer blockSize="sm" />
         <Link
@@ -37,8 +37,7 @@ export const AppFooter = () => {
         <Text bold>Community & Support</Text>
         <Divider marginBottom="sm" intent="tertiary" />
         <Text typography="small" italic color="gray" intent="primary">
-          This is a closed-source project. There is no public GitHub repository. You can still follow updates, ask questions and
-          join the community through the channels below.
+          This is a closed-source project. There is no public GitHub repository.
         </Text>
         <Spacer blockSize="sm" />
         <Flex flexDirection="row" flexWrap="wrap" gap="2xs">
