@@ -36,10 +36,6 @@ export const AppFooter = () => {
       <Footer.Section>
         <Text bold>Community & Support</Text>
         <Divider marginBottom="sm" intent="tertiary" />
-        <Text typography="small" italic color="gray" intent="primary">
-          This is a closed-source project. There is no public GitHub repository.
-        </Text>
-        <Spacer blockSize="sm" />
         <Flex flexDirection="row" flexWrap="wrap" gap="2xs">
           <Link href="https://x.com/captainnebula" target="_blank">
             <Button color="gray" intent="inverse" size="xs" iconName="external-link" iconPlacement="right">
@@ -57,7 +53,7 @@ export const AppFooter = () => {
         <Text bold>About the author</Text>
         <Divider marginBottom="sm" intent="tertiary" />
         <Text typography="small" italic color="gray" intent="primary">
-          The product is designed and maintained by a solo software engineer focused on long-term UI architecture and system
+          The product was designed and maintained by a solo software engineer focused on long-term UI architecture and system
           consistency.
         </Text>
         <Spacer blockSize="sm" />
