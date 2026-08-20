@@ -2,6 +2,7 @@ import { LinkProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_LINK_TARGET, LINK_TARGETS } from '../definitions'
+import { LINK_CHANGELOG } from './changelog'
 import { LINK_EXAMPLES } from './examples'
 
 export const LINK_META = {
@@ -40,9 +41,6 @@ export const LINK_META = {
         description: 'Callback fired when the component is clicked. Automatically prevents default navigation when provided.',
       },
     },
-    changelog: {
-      '0.4.0': ['changed behavior to wrap content by default and only clone when required to ensure valid HTML'],
-      '0.2.3': ['released'],
-    },
+    changelog: LINK_CHANGELOG,
   } satisfies ComponentMeta<LinkProps>,
 }

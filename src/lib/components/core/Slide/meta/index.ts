@@ -4,6 +4,7 @@ import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { BOX_META } from '../../Box/meta'
 import { SLIDE_FROM } from '../definitions'
 import { DEFAULT_SLIDE_DURATION, DEFAULT_SLIDE_EASING } from '../slide'
+import { SLIDE_CHANGELOG } from './changelog'
 import { SLIDE_EXAMPLES } from './examples'
 
 export const SLIDE_META = {
@@ -50,8 +51,6 @@ export const SLIDE_META = {
       },
     },
     examples: SLIDE_EXAMPLES,
-    changelog: {
-      '0.2.3': ['released'],
-    },
+    changelog: SLIDE_CHANGELOG,
   } satisfies ComponentMeta<SlideProps>,
 }

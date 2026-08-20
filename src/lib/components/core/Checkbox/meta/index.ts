@@ -4,6 +4,7 @@ import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
 import { CHECKBOX_VARIANTS, DEFAULT_CHECKBOX_INTENT, DEFAULT_CHECKBOX_SIZE, DEFAULT_CHECKBOX_VARIANT } from '../definitions'
+import { CHECKBOX_CHANGELOG } from './changelog'
 import { CHECKBOX_EXAMPLES } from './examples'
 
 export const CHECKBOX_META = {
@@ -48,9 +49,6 @@ export const CHECKBOX_META = {
       },
     },
     examples: CHECKBOX_EXAMPLES,
-    changelog: {
-      '0.4.0': ['fixed focus handling'],
-      '0.3.0': ['released'],
-    },
+    changelog: CHECKBOX_CHANGELOG,
   } satisfies ComponentMeta<CheckboxProps>,
 }

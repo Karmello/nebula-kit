@@ -6,6 +6,7 @@ import { BOX_META } from '../../Box/meta'
 import { TEXT_META } from '../../Text/meta'
 import { TITLE_META } from '../../Title/meta'
 import { DEFAULT_SECTION_INTENT, DEFAULT_SECTION_SIZE, DEFAULT_SECTION_VARIANT, SECTION_VARIANTS } from '../definitions'
+import { SECTION_CHANGELOG } from './changelog'
 import { SECTION_EXAMPLES } from './examples'
 
 export const SECTION_META = {
@@ -64,10 +65,6 @@ export const SECTION_META = {
       },
     },
     examples: SECTION_EXAMPLES,
-    changelog: {
-      '0.10.0': ['refined size presets for better layout balance and spacing consistency', 'added `headingIntent` prop'],
-      '0.9.0': ['exposed `interactive` prop via Box'],
-      '0.2.3': ['released'],
-    },
+    changelog: SECTION_CHANGELOG,
   } satisfies ComponentMeta<SectionProps>,
 }

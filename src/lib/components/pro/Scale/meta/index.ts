@@ -11,6 +11,7 @@ import {
   DEFAULT_SCALE_ORIGIN,
   DEFAULT_SCALE_TO,
 } from '../scale'
+import { SCALE_CHANGELOG } from './changelog'
 import { SCALE_EXAMPLES } from './examples'
 
 export const SCALE_META = {
@@ -74,8 +75,6 @@ export const SCALE_META = {
       },
     },
     examples: SCALE_EXAMPLES,
-    changelog: {
-      '0.11.0': ['released'],
-    },
+    changelog: SCALE_CHANGELOG,
   } satisfies ComponentMeta<ScaleProps>,
 }

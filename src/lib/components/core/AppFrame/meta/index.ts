@@ -13,6 +13,7 @@ import {
   DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING,
   DEFAULT_APP_FRAME_HEADER_INTENT,
 } from '../slots'
+import { APP_FRAME_CHANGELOG } from './changelog'
 import { APP_FRAME_EXAMPLES } from './examples'
 
 export const APP_FRAME_META = {
@@ -52,11 +53,7 @@ export const APP_FRAME_META = {
       tagAttrs: GRID_META.Grid.props.tagAttrs,
     },
     examples: APP_FRAME_EXAMPLES,
-    changelog: {
-      '0.11.0': ['merged `Footer` into `AppFrame`'],
-      '0.8.0': ['removed `borderIntent` prop'],
-      '0.2.3': ['released'],
-    },
+    changelog: APP_FRAME_CHANGELOG,
   } satisfies ComponentMeta<AppFrameProps>,
   AppFrameHeader: {
     overview: {

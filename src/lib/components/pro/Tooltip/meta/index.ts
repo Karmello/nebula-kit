@@ -14,6 +14,7 @@ import {
   TOOLTIP_PLACEMENTS,
   TOOLTIP_VARIANTS,
 } from '../constants'
+import { TOOLTIP_CHANGELOG } from './changelog'
 import { TOOLTIP_EXAMPLES } from './examples'
 
 export const TOOLTIP_META = {
@@ -86,9 +87,6 @@ export const TOOLTIP_META = {
       },
     },
     examples: TOOLTIP_EXAMPLES,
-    changelog: {
-      '0.9.0': ['added configurable hover and click interaction modes with improved dismissal behavior'],
-      '0.3.0': ['released'],
-    },
+    changelog: TOOLTIP_CHANGELOG,
   } satisfies ComponentMeta<TooltipProps>,
 }

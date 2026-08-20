@@ -12,6 +12,7 @@ import {
   NEBKIT_PROVIDER_THEMES,
 } from '../constants'
 import type { NebkitProviderProps } from '../types'
+import { NEBKIT_PROVIDER_CHANGELOG } from './changelog'
 import { NEBKIT_PROVIDER_EXAMPLES } from './examples'
 
 export const NEBKIT_PROVIDER_META = {
@@ -63,12 +64,6 @@ export const NEBKIT_PROVIDER_META = {
     },
     examples: NEBKIT_PROVIDER_EXAMPLES,
     hideExamplesThemeToggle: true,
-    changelog: {
-      '0.9.0': ['added `saturation` prop'],
-      '0.6.0': ['changed `ripple` prop to `rippleMode`'],
-      '0.5.0': ['added `ripple` prop'],
-      '0.3.0': ['updated public API'],
-      '0.2.3': ['released'],
-    },
+    changelog: NEBKIT_PROVIDER_CHANGELOG,
   } satisfies ComponentMeta<NebkitProviderProps>,
 }

@@ -11,6 +11,7 @@ import {
   SNACKBAR_PLACEMENTS,
   UseSnackbarShowArgs,
 } from '../definitions'
+import { SNACKBAR_CHANGELOG } from './changelog'
 import { SNACKBAR_EXAMPLES, USE_SNACKBAR_EXAMPLES } from './examples'
 
 export const SNACKBAR_META = {
@@ -58,9 +59,7 @@ export const SNACKBAR_META = {
       },
     },
     examples: SNACKBAR_EXAMPLES,
-    changelog: {
-      '0.2.3': ['released'],
-    },
+    changelog: SNACKBAR_CHANGELOG,
   } satisfies ComponentMeta<SnackbarProps>,
   useSnackbar: {
     overview: {

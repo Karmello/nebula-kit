@@ -3,6 +3,7 @@ import { ComponentMeta } from 'client/definitions'
 
 import { PORTAL_PLACEMENTS, type PortalProps } from '../definitions'
 import { DEFAULT_PORTAL_PLACEMENT } from '../portal'
+import { PORTAL_CHANGELOG } from './changelog'
 import { PORTAL_EXAMPLES } from './examples'
 
 export const PORTAL_META = {
@@ -45,10 +46,6 @@ export const PORTAL_META = {
       tagRef: HTML_TAG_META.HtmlTag.props.tagRef,
     },
     examples: PORTAL_EXAMPLES,
-    changelog: {
-      '0.8.0': ['optimized position tracking logic for performance'],
-      '0.3.0': ['updated public API'],
-      '0.2.3': ['released'],
-    },
+    changelog: PORTAL_CHANGELOG,
   } satisfies ComponentMeta<PortalProps>,
 }

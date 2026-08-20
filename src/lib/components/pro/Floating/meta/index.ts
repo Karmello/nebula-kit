@@ -6,6 +6,7 @@ import { DEFAULT_FLOATING_MODE, DEFAULT_FLOATING_PLACEMENT, FLOATING_MODE, FLOAT
 import { FloatingContentProps, FloatingTriggerProps } from '../slots'
 import { DEFAULT_FLOATING_TRIGGER_DISPLAY, FLOATING_TRIGGER_DISPLAY } from '../slots/FloatingTrigger/constants'
 import { FloatingProps } from '../types'
+import { FLOATING_CHANGELOG } from './changelog'
 import { FLOATING_EXAMPLES } from './examples'
 
 export const FLOATING_META = {
@@ -74,9 +75,7 @@ export const FLOATING_META = {
       },
     },
     examples: FLOATING_EXAMPLES,
-    changelog: {
-      '0.11.0': ['released'],
-    },
+    changelog: FLOATING_CHANGELOG,
   } satisfies ComponentMeta<FloatingProps>,
   FloatingTrigger: {
     overview: {

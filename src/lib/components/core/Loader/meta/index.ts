@@ -4,6 +4,7 @@ import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
 import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE } from '../definitions'
+import { LOADER_CHANGELOG } from './changelog'
 import { LOADER_EXAMPLES } from './examples'
 
 export const LOADER_META = {
@@ -41,9 +42,6 @@ export const LOADER_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
     },
     examples: LOADER_EXAMPLES,
-    changelog: {
-      '0.9.0': ['added support for predefined size scale values on the `size` prop'],
-      '0.2.3': ['released'],
-    },
+    changelog: LOADER_CHANGELOG,
   } satisfies ComponentMeta<LoaderProps>,
 }

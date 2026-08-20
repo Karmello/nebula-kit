@@ -2,7 +2,12 @@ import { BOX_META } from 'lib/components/core/Box/meta'
 import { VirtualListProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN, DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX, VIRTUAL_LIST_SCROLL_ALIGN } from '../definitions'
+import {
+  DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN,
+  DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX,
+  VIRTUAL_LIST_SCROLL_ALIGN,
+} from '../definitions'
+import { VIRTUAL_LIST_CHANGELOG } from './changelog'
 import { VIRTUAL_LIST_EXAMPLES } from './examples'
 
 export const VIRTUAL_LIST_META = {
@@ -79,9 +84,6 @@ export const VIRTUAL_LIST_META = {
       },
     },
     examples: VIRTUAL_LIST_EXAMPLES,
-    changelog: {
-      '0.11.0': ['changed `itemHeight` prop to `itemBlockSize`'],
-      '0.3.0': ['released'],
-    },
+    changelog: VIRTUAL_LIST_CHANGELOG,
   } satisfies ComponentMeta<VirtualListProps>,
 }

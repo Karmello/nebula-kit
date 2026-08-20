@@ -4,6 +4,7 @@ import { AvatarProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { AVATAR_SHAPES, DEFAULT_AVATAR_SHAPE, DEFAULT_AVATAR_SIZE } from '../definitions'
+import { AVATAR_CHANGELOG } from './changelog'
 import { AVATAR_EXAMPLES } from './examples'
 
 export const AVATAR_META = {
@@ -49,8 +50,6 @@ export const AVATAR_META = {
       title: IMAGE_META.Image.props.title,
     },
     examples: AVATAR_EXAMPLES,
-    changelog: {
-      '0.4.0': ['released'],
-    },
+    changelog: AVATAR_CHANGELOG,
   } satisfies ComponentMeta<AvatarProps>,
 }

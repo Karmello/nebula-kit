@@ -4,6 +4,7 @@ import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 import { BOX_META } from '../../Box/meta'
 import { RESIZE_PROPERTIES } from '../definitions'
 import { DEFAULT_RESIZE_DURATION, DEFAULT_RESIZE_EASING } from '../resize'
+import { RESIZE_CHANGELOG } from './changelog'
 import { RESIZE_EXAMPLES } from './examples'
 
 export const RESIZE_META = {
@@ -51,8 +52,6 @@ export const RESIZE_META = {
       },
     },
     examples: RESIZE_EXAMPLES,
-    changelog: {
-      '0.2.3': ['released'],
-    },
+    changelog: RESIZE_CHANGELOG,
   } satisfies ComponentMeta<ResizeProps>,
 }

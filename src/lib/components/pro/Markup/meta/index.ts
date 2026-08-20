@@ -2,6 +2,7 @@ import { BOX_META } from 'lib/components/core/Box/meta'
 import { MarkupProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
+import { MARKUP_CHANGELOG } from './changelog'
 import { MARKUP_EXAMPLES } from './examples'
 
 export const MARKUP_META = {
@@ -37,8 +38,6 @@ export const MARKUP_META = {
       tagRef: BOX_META.Box.props.tagRef,
     },
     examples: MARKUP_EXAMPLES,
-    changelog: {
-      '0.10.0': ['released'],
-    },
+    changelog: MARKUP_CHANGELOG,
   } satisfies ComponentMeta<MarkupProps>,
 }

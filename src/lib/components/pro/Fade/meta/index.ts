@@ -3,6 +3,7 @@ import { FadeProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_FADE_DURATION, DEFAULT_FADE_EASING } from '../fade'
+import { FADE_CHANGELOG } from './changelog'
 import { FADE_EXAMPLES } from './examples'
 
 export const FADE_META = {
@@ -45,8 +46,6 @@ export const FADE_META = {
       },
     },
     examples: FADE_EXAMPLES,
-    changelog: {
-      '0.11.0': ['released'],
-    },
+    changelog: FADE_CHANGELOG,
   } satisfies ComponentMeta<FadeProps>,
 }

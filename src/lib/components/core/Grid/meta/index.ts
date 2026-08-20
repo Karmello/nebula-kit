@@ -11,6 +11,7 @@ import { GridItemProps, GridProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
+import { GRID_CHANGELOG } from './changelog'
 import { GRID_EXAMPLES, GRID_ITEM_EXAMPLES } from './examples'
 
 export const GRID_META = {
@@ -114,10 +115,7 @@ export const GRID_META = {
       },
     },
     examples: GRID_EXAMPLES,
-    changelog: {
-      '0.9.0': ['added support for predefined size scale values on gap-related props'],
-      '0.2.3': ['released'],
-    },
+    changelog: GRID_CHANGELOG,
   } satisfies ComponentMeta<GridProps>,
   GridItem: {
     overview: {

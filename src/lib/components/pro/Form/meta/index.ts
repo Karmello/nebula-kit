@@ -32,6 +32,7 @@ import {
   DEFAULT_FORM_HINT_INTENT,
   DEFAULT_FORM_LABEL_INTENT,
 } from '../slots'
+import { FORM_CHANGELOG } from './changelog'
 import { FORM_EXAMPLES } from './examples'
 
 export const FORM_META = {
@@ -106,14 +107,7 @@ export const FORM_META = {
       },
     },
     examples: FORM_EXAMPLES,
-    changelog: {
-      '0.10.0': [
-        'removed `display` prop',
-        'removed `scale` and `textAlign` props on Form.Label and Form.Hint slots',
-        'made `onValidSubmission` prop optional',
-      ],
-      '0.2.3': ['released'],
-    },
+    changelog: FORM_CHANGELOG,
   } satisfies ComponentMeta<FormProps>,
   FormFields: {
     overview: {

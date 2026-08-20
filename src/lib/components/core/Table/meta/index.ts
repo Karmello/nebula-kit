@@ -22,6 +22,7 @@ import {
 import { DEFAULT_TABLE_BODY_INTENT } from '../slots/TableBody/definitions'
 import { DEFAULT_TABLE_CAPTION_INTENT } from '../slots/TableCaption/definitions'
 import { DEFAULT_TABLE_FOOTER_INTENT } from '../slots/TableFooter/definitions'
+import { TABLE_CHANGELOG } from './changelog'
 import { TABLE_EXAMPLES } from './examples'
 
 const META = {
@@ -81,9 +82,7 @@ const META = {
     },
   },
   examples: TABLE_EXAMPLES,
-  changelog: {
-    '0.2.3': ['released'],
-  },
+  changelog: TABLE_CHANGELOG,
 } satisfies ComponentMeta<TableProps>
 
 export const TABLE_META = {

@@ -11,6 +11,7 @@ import {
   IMAGE_OBJECT_FIT,
   IMAGE_REFERRER_POLICY,
 } from '../constants'
+import { IMAGE_CHANGELOG } from './changelog'
 import { IMAGE_EXAMPLES } from './examples'
 
 export const IMAGE_META = {
@@ -110,8 +111,6 @@ export const IMAGE_META = {
       tagRef: BOX_META.Box.props.tagRef,
     },
     examples: IMAGE_EXAMPLES,
-    changelog: {
-      '0.4.0': ['released'],
-    },
+    changelog: IMAGE_CHANGELOG,
   } satisfies ComponentMeta<ImageProps>,
 }

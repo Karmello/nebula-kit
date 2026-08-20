@@ -13,6 +13,7 @@ import {
   SIDE_NAV_VARIANTS,
 } from '../definitions'
 import { DEFAULT_SIDE_NAV_CATEGORY_EXPANDED, DEFAULT_SIDE_NAV_CATEGORY_INTENT, DEFAULT_SIDE_NAV_CATEGORY_VARIANT } from '../slots'
+import { SIDE_NAV_CHANGELOG } from './changelog'
 import { SIDE_NAV_EXAMPLES } from './examples'
 
 export const SIDE_NAV_META = {
@@ -71,12 +72,7 @@ export const SIDE_NAV_META = {
         description: 'Visual style variant applied to all categories and items.',
       },
     },
-    changelog: {
-      '0.10.0': ['exposed `size` prop via Button', 'exposed `gap` prop via Flex'],
-      '0.9.0': ['exposed `selected` prop on SideNav.Item via Button'],
-      '0.8.0': ['changed `elevated` prop to `surface` on SideNav.Item'],
-      '0.2.3': ['released'],
-    },
+    changelog: SIDE_NAV_CHANGELOG,
   } satisfies ComponentMeta<SideNavProps>,
   SideNavItem: {
     overview: {

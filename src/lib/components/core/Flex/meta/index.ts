@@ -12,6 +12,7 @@ import { FlexItemProps, FlexProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
+import { FLEX_CHANGELOG } from './changelog'
 import { FLEX_EXAMPLES, FLEX_ITEM_EXAMPLES } from './examples'
 
 export const FLEX_META = {
@@ -102,13 +103,7 @@ export const FLEX_META = {
       },
     },
     examples: FLEX_EXAMPLES,
-    changelog: {
-      '0.9.0': [
-        'exposed `hidden` prop on Flex.Item via Box',
-        'added support for predefined size scale values on gap-related props',
-      ],
-      '0.2.3': ['released'],
-    },
+    changelog: FLEX_CHANGELOG,
   } satisfies ComponentMeta<FlexProps>,
   FlexItem: {
     overview: {

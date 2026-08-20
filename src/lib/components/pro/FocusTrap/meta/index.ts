@@ -2,6 +2,7 @@ import { ComponentMeta } from 'client/definitions'
 
 import { HTML_TAG_META } from '../../../core/HtmlTag/meta'
 import { DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK, type FocusTrapProps } from '../definitions'
+import { FOCUS_TRAP_CHANGELOG } from './changelog'
 import { FOCUS_TRAP_EXAMPLES } from './examples'
 
 export const FOCUS_TRAP_META = {
@@ -47,8 +48,6 @@ export const FOCUS_TRAP_META = {
       },
     },
     examples: FOCUS_TRAP_EXAMPLES,
-    changelog: {
-      '0.2.3': ['released'],
-    },
+    changelog: FOCUS_TRAP_CHANGELOG,
   } satisfies ComponentMeta<FocusTrapProps>,
 }

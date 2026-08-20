@@ -6,6 +6,7 @@ import { ComponentMeta } from 'client/definitions'
 
 import { SPLIT_VIEW_SIDE_POSITIONS } from '../definitions'
 import { DEFAULT_SPLIT_VIEW_SIDE_BLOCK_SIZE, DEFAULT_SPLIT_VIEW_SIDE_INLINE_SIZE, DEFAULT_SPLIT_VIEW_SIDE_INTENT } from '../slots'
+import { SPLIT_VIEW_CHANGELOG } from './changelog'
 import { SPLIT_VIEW_EXAMPLES } from './examples'
 
 export const SPLIT_VIEW_META = {
@@ -49,12 +50,7 @@ export const SPLIT_VIEW_META = {
       tagAttrs: GRID_META.Grid.props.tagAttrs,
     },
     examples: SPLIT_VIEW_EXAMPLES,
-    changelog: {
-      '0.11.0': ['exposed `blockSize` prop on SplitView.Side slot'],
-      '0.10.0': ['exposed all `padding` props on SplitView.Side slot'],
-      '0.8.0': ['removed `borderIntent` prop'],
-      '0.2.3': ['released'],
-    },
+    changelog: SPLIT_VIEW_CHANGELOG,
   } satisfies ComponentMeta<SplitViewProps>,
   SplitViewSide: {
     overview: {

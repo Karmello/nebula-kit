@@ -9,6 +9,7 @@ import {
   DEFAULT_TEXTAREA_VARIANT,
   TEXTAREA_RESIZE,
 } from '../definitions'
+import { TEXTAREA_CHANGELOG } from './changelog'
 import { TEXTAREA_EXAMPLES } from './examples'
 
 export const TEXTAREA_META = {
@@ -80,9 +81,6 @@ export const TEXTAREA_META = {
       },
     },
     examples: TEXTAREA_EXAMPLES,
-    changelog: {
-      '0.9.0': ['added `maxLength` prop'],
-      '0.2.3': ['released'],
-    },
+    changelog: TEXTAREA_CHANGELOG,
   } satisfies ComponentMeta<TextareaProps>,
 }

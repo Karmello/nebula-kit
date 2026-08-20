@@ -12,6 +12,7 @@ import {
 } from '../constants'
 import { ACTION_GROUP_ITEM_TAGS, ActionGroupItemProps, DEFAULT_ACTION_GROUP_ITEM_TAG } from '../slots'
 import { ActionGroupProps } from '../types'
+import { ACTION_GROUP_CHANGELOG } from './changelog'
 import { ACTION_GROUP_EXAMPLES } from './examples'
 
 export const ACTION_GROUP_META = {
@@ -72,9 +73,7 @@ export const ACTION_GROUP_META = {
       tagAttrs: FLEX_META.Flex.props.tagAttrs,
     },
     examples: ACTION_GROUP_EXAMPLES,
-    changelog: {
-      '0.11.0': ['released'],
-    },
+    changelog: ACTION_GROUP_CHANGELOG,
   } satisfies ComponentMeta<ActionGroupProps>,
   ActionGroupItem: {
     overview: {

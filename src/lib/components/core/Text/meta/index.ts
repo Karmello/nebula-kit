@@ -4,6 +4,7 @@ import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
 import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_SPACE, TEXT_TYPOGRAPHY, TEXT_WORD_BREAK } from '../constants'
+import { TEXT_CHANGELOG } from './changelog'
 import { TEXT_EXAMPLES } from './examples'
 
 export const TEXT_META = {
@@ -92,11 +93,6 @@ export const TEXT_META = {
       tagRef: BOX_META.Box.props.tagRef,
     },
     examples: TEXT_EXAMPLES,
-    changelog: {
-      '0.10.0': ['removed `scale` prop', 'added `wordBreak` prop', 'removed `WithIcon` dependency'],
-      '0.9.0': ['added `fontSize` and `lineHeight` props for overriding typography-derived values directly'],
-      '0.7.0': ['fixed text link display behavior inside table cells'],
-      '0.2.3': ['released'],
-    },
+    changelog: TEXT_CHANGELOG,
   } satisfies ComponentMeta<TextProps>,
 }

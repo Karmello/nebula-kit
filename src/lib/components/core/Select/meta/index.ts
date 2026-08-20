@@ -6,6 +6,7 @@ import { ComponentMeta } from 'client/definitions'
 import { BOX_COLORS, BOX_INTENTS } from '../../Box/constants'
 import { BOX_META } from '../../Box/meta'
 import { DEFAULT_SELECT_INLINE_SIZE, DEFAULT_SELECT_INTENT, DEFAULT_SELECT_VARIANT, SELECT_VARIANTS } from '../constants'
+import { SELECT_CHANGELOG } from './changelog'
 import { SELECT_EXAMPLES } from './examples'
 
 export const SELECT_META = {
@@ -83,13 +84,7 @@ export const SELECT_META = {
       },
     },
     examples: SELECT_EXAMPLES,
-    changelog: {
-      '0.7.0': ['replaced `triggerIntent` and `listIntent` with a single `intent` prop'],
-      '0.6.0': ['replaced `intent` with separate `triggerIntent` and `listIntent` props'],
-      '0.5.0': ['removed `onClosed` prop'],
-      '0.3.0': ['updated public API'],
-      '0.2.3': ['released'],
-    },
+    changelog: SELECT_CHANGELOG,
   } satisfies ComponentMeta<SelectProps>,
   SelectOption: {
     overview: {

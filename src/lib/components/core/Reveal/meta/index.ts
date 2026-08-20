@@ -6,6 +6,7 @@ import { BOX_META } from '../../Box/meta'
 import { BUTTON_META } from '../../Button/meta'
 import { RESIZE_META } from '../../Resize/meta'
 import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SCALE } from '../definitions'
+import { REVEAL_CHANGELOG } from './changelog'
 import { REVEAL_EXAMPLES } from './examples'
 
 export const REVEAL_META = {
@@ -46,8 +47,6 @@ export const REVEAL_META = {
       tagRef: BOX_META.Box.props.tagRef,
     },
     examples: REVEAL_EXAMPLES,
-    changelog: {
-      '0.2.3': ['released'],
-    },
+    changelog: REVEAL_CHANGELOG,
   } satisfies ComponentMeta<RevealProps>,
 }

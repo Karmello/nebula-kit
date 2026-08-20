@@ -3,6 +3,7 @@ import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
 import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_MARGIN_BLOCK } from '../definitions'
+import { DIVIDER_CHANGELOG } from './changelog'
 import { DIVIDER_EXAMPLES } from './examples'
 
 export const DIVIDER_META = {
@@ -34,17 +35,6 @@ export const DIVIDER_META = {
       tagRef: BOX_META.Box.props.tagRef,
     },
     examples: DIVIDER_EXAMPLES,
-    changelog: {
-      '0.11.0': ['removed `surface` prop'],
-      '0.9.0': [
-        'added support for predefined size scale values on margin-related props',
-        'removed `opacity` prop',
-        'exposed `surface` prop via Box',
-      ],
-      '0.8.0': ['changed `elevated` prop to `surface`'],
-      '0.7.0': ['exposed `elevated` prop via Box'],
-      '0.6.0': ['exposed `opacity` prop via Box'],
-      '0.2.3': ['released'],
-    },
+    changelog: DIVIDER_CHANGELOG,
   } satisfies ComponentMeta<DividerProps>,
 }

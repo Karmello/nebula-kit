@@ -5,6 +5,7 @@ import { ComponentMeta } from 'client/definitions'
 import { BOX_COLORS, BOX_INTENTS } from '../../../core/Box/constants'
 import { BOX_META } from '../../../core/Box/meta'
 import { DEFAULT_BREADCRUMB_INTENT } from '../definitions'
+import { BREADCRUMB_CHANGELOG } from './changelog'
 import { BREADCRUMB_EXAMPLES } from './examples'
 
 export const BREADCRUMB_META = {
@@ -62,10 +63,6 @@ export const BREADCRUMB_META = {
       },
     },
     examples: BREADCRUMB_EXAMPLES,
-    changelog: {
-      '0.7.0': ['removed `itemBorderIntent` prop'],
-      '0.6.0': ['added `itemBorderIntent` prop'],
-      '0.2.3': ['released'],
-    },
+    changelog: BREADCRUMB_CHANGELOG,
   } satisfies ComponentMeta<BreadcrumbProps>,
 }

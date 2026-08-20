@@ -3,6 +3,7 @@ import { PasswordInputProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE } from '../definitions'
+import { PASSWORD_CHANGELOG } from './changelog'
 import { PASSWORD_INPUT_EXAMPLES } from './examples'
 
 export const PASSWORD_META = {
@@ -42,8 +43,6 @@ export const PASSWORD_META = {
       variant: INPUT_META.Input.props.variant,
     },
     examples: PASSWORD_INPUT_EXAMPLES,
-    changelog: {
-      '0.10.0': ['released'],
-    },
+    changelog: PASSWORD_CHANGELOG,
   } satisfies ComponentMeta<PasswordInputProps>,
 }

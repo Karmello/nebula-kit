@@ -6,6 +6,7 @@ import { BOX_META } from '../../Box/meta'
 import { FLEX_META } from '../../Flex/meta'
 import { ICON_META } from '../../Icon/meta'
 import { DEFAULT_TITLE_ICON_PLACEMENT, DEFAULT_TITLE_TYPOGRAPHY, TITLE_ICON_PLACEMENTS, TITLE_TYPOGRAPHY } from '../constants'
+import { TITLE_CHANGELOG } from './changelog'
 import { TITLE_EXAMPLES } from './examples'
 
 export const TITLE_META = {
@@ -57,9 +58,6 @@ export const TITLE_META = {
       tagRef: FLEX_META.Flex.props.tagRef,
     },
     examples: TITLE_EXAMPLES,
-    changelog: {
-      '0.11.0': ['renamed `WithIcon` to `Title`'],
-      '0.2.3': ['released'],
-    },
+    changelog: TITLE_CHANGELOG,
   } satisfies ComponentMeta<TitleProps>,
 }

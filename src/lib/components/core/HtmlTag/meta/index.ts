@@ -3,6 +3,7 @@ import { ElementType } from 'react'
 import { HtmlTagProps } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 
+import { HTML_TAG_CHANGELOG } from './changelog'
 import { HTML_TAG_EXAMPLES } from './examples'
 
 export const HTML_TAG_META = {
@@ -40,8 +41,6 @@ export const HTML_TAG_META = {
     },
     examples: HTML_TAG_EXAMPLES,
     hideExamplesThemeToggle: true,
-    changelog: {
-      '0.2.3': ['released'],
-    },
+    changelog: HTML_TAG_CHANGELOG,
   } satisfies ComponentMeta<HtmlTagProps<ElementType>>,
 }

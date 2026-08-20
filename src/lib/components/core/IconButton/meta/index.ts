@@ -10,6 +10,7 @@ import {
   DEFAULT_ICON_BUTTON_SCALE,
   DEFAULT_ICON_BUTTON_VARIANT,
 } from '../constants'
+import { ICON_BUTTON_CHANGELOG } from './changelog'
 import { ICON_BUTTON_EXAMPLES } from './examples'
 
 export const ICON_BUTTON_META = {
@@ -77,8 +78,6 @@ export const ICON_BUTTON_META = {
       },
     },
     examples: ICON_BUTTON_EXAMPLES,
-    changelog: {
-      '0.11.0': ['released'],
-    },
+    changelog: ICON_BUTTON_CHANGELOG,
   } satisfies ComponentMeta<IconButtonProps>,
 }

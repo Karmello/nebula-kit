@@ -4,6 +4,7 @@ import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
 import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_SCALE, DEFAULT_INPUT_VARIANT } from '../definitions'
+import { INPUT_CHANGELOG } from './changelog'
 import { INPUT_EXAMPLES } from './examples'
 
 export const INPUT_META = {
@@ -82,10 +83,6 @@ export const INPUT_META = {
       },
     },
     examples: INPUT_EXAMPLES,
-    changelog: {
-      '0.11.0': ['added `autoComplete` prop'],
-      '0.9.0': ['added `maxLength` prop'],
-      '0.2.3': ['released'],
-    },
+    changelog: INPUT_CHANGELOG,
   } satisfies ComponentMeta<InputProps>,
 }

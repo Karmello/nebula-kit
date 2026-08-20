@@ -12,6 +12,7 @@ import { MultiSelectOptionProps, MultiSelectProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_MULTI_SELECT_INLINE_SIZE } from '../definitions'
+import { MULTI_SELECT_CHANGELOG } from './changelog'
 import { MULTI_SELECT_EXAMPLES } from './examples'
 
 export const MULTI_SELECT_META = {
@@ -81,11 +82,7 @@ export const MULTI_SELECT_META = {
       },
     },
     examples: MULTI_SELECT_EXAMPLES,
-    changelog: {
-      '0.7.0': ['replaced `triggerIntent` and `listIntent` with a single `intent` prop'],
-      '0.6.0': ['replaced `intent` with separate `triggerIntent` and `listIntent` props'],
-      '0.3.0': ['released'],
-    },
+    changelog: MULTI_SELECT_CHANGELOG,
   } satisfies ComponentMeta<MultiSelectProps>,
   MultiSelectOption: {
     overview: {

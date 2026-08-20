@@ -12,6 +12,7 @@ import {
   DEFAULT_PAGINATION_SIBLING_COUNT,
   DEFAULT_PAGINATION_VARIANT,
 } from '../definitions'
+import { PAGINATION_CHANGELOG } from './changelog'
 import { PAGINATION_EXAMPLES } from './examples'
 
 export const PAGINATION_META = {
@@ -90,8 +91,6 @@ export const PAGINATION_META = {
       },
     },
     examples: PAGINATION_EXAMPLES,
-    changelog: {
-      '0.4.0': ['released'],
-    },
+    changelog: PAGINATION_CHANGELOG,
   } satisfies ComponentMeta<PaginationProps>,
 }

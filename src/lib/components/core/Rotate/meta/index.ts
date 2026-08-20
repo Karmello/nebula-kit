@@ -3,6 +3,7 @@ import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
 import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING } from '../rotate'
+import { ROTATE_CHANGELOG } from './changelog'
 import { ROTATE_EXAMPLES } from './examples'
 
 export const ROTATE_META = {
@@ -46,8 +47,6 @@ export const ROTATE_META = {
       tagRef: BOX_META.Box.props.tagRef,
     },
     examples: ROTATE_EXAMPLES,
-    changelog: {
-      '0.2.3': ['released'],
-    },
+    changelog: ROTATE_CHANGELOG,
   } satisfies ComponentMeta<RotateProps>,
 }

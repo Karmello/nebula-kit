@@ -14,6 +14,7 @@ import {
   DEFAULT_BUTTON_RIPPLE,
   DEFAULT_BUTTON_VARIANT,
 } from '../constants'
+import { BUTTON_CHANGELOG } from './changelog'
 import { BUTTON_EXAMPLES } from './examples'
 
 export const BUTTON_META = {
@@ -110,13 +111,6 @@ export const BUTTON_META = {
       },
     },
     examples: BUTTON_EXAMPLES,
-    changelog: {
-      '0.10.0': ['removed `justifyContent` prop', 'removed `textAlign` prop', 'added `align` prop'],
-      '0.9.0': ['changed `surface` prop to `elevated`'],
-      '0.8.0': ['exposed `selected` prop', 'changed `elevated` prop to `surface`'],
-      '0.7.0': ['exposed `interactive` prop'],
-      '0.4.0': ['added `onClick` prop'],
-      '0.2.3': ['released'],
-    },
+    changelog: BUTTON_CHANGELOG,
   } satisfies ComponentMeta<ButtonProps>,
 }

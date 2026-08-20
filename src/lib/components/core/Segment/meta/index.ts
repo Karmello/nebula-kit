@@ -3,6 +3,7 @@ import { ComponentMeta } from 'client/definitions'
 
 import { FLEX_META } from '../../Flex/meta'
 import { DEFAULT_SEGMENT_FLEX_DIRECTION } from '../definitions'
+import { SEGMENT_CHANGELOG } from './changelog'
 import { SEGMENT_EXAMPLES } from './examples'
 
 export const SEGMENT_META = {
@@ -33,9 +34,7 @@ export const SEGMENT_META = {
       tagRef: FLEX_META.Flex.props.tagRef,
     },
     examples: SEGMENT_EXAMPLES,
-    changelog: {
-      '0.2.3': ['released'],
-    },
+    changelog: SEGMENT_CHANGELOG,
   } satisfies ComponentMeta<SegmentProps>,
   SegmentItem: {
     overview: {

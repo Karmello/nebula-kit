@@ -3,6 +3,7 @@ import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
 import { ToolbarEndProps, ToolbarMainProps, ToolbarProps, ToolbarStartProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
+import { TOOLBAR_CHANGELOG } from './changelog'
 import { TOOLBAR_EXAMPLES } from './examples'
 
 export const TOOLBAR_META = {
@@ -40,9 +41,7 @@ export const TOOLBAR_META = {
       },
     },
     examples: TOOLBAR_EXAMPLES,
-    changelog: {
-      '0.2.3': ['released'],
-    },
+    changelog: TOOLBAR_CHANGELOG,
   } satisfies ComponentMeta<ToolbarProps>,
   ToolbarMain: {
     overview: {

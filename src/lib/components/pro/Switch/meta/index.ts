@@ -4,6 +4,7 @@ import { SwitchProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SCALE, SWITCH_INTENTS } from '../definitions'
+import { SWITCH_CHANGELOG } from './changelog'
 import { SWITCH_EXAMPLES } from './examples'
 
 export const SWITCH_META = {
@@ -44,10 +45,6 @@ export const SWITCH_META = {
       tagRef: BOX_META.Box.props.tagRef,
     },
     examples: SWITCH_EXAMPLES,
-    changelog: {
-      '0.9.0': ['narrowed supported `intent` values'],
-      '0.7.0': ['added `intent` prop'],
-      '0.4.0': ['released'],
-    },
+    changelog: SWITCH_CHANGELOG,
   } satisfies ComponentMeta<SwitchProps>,
 }

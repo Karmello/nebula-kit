@@ -4,6 +4,7 @@ import { ComponentMeta } from 'client/definitions'
 import { DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK, DEFAULT_DIALOG_SIZE, DIALOG_SIZES, type DialogProps } from '../definitions'
 import { type DialogFooterProps } from '../slots/DialogFooter/definitions'
 import { type DialogHeaderProps } from '../slots/DialogHeader/definitions'
+import { DIALOG_CHANGELOG } from './changelog'
 import { DIALOG_EXAMPLES } from './examples'
 
 export const DIALOG_META = {
@@ -53,11 +54,7 @@ export const DIALOG_META = {
       tagRef: BOX_META.Box.props.tagRef,
     },
     examples: DIALOG_EXAMPLES,
-    changelog: {
-      '0.6.0': ['fixed dialog closing on inside clicks when `closeOnBackdropClick` was enabled'],
-      '0.5.0': ['fixed backdrop flicker'],
-      '0.2.3': ['released'],
-    },
+    changelog: DIALOG_CHANGELOG,
   } satisfies ComponentMeta<DialogProps>,
   DialogHeader: {
     overview: {

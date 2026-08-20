@@ -16,6 +16,7 @@ import {
   DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
 } from '../definitions'
+import { AUTOCOMPLETE_CHANGELOG } from './changelog'
 import { AUTOCOMPLETE_EXAMPLES } from './examples'
 
 export const AUTOCOMPLETE_META = {
@@ -118,12 +119,7 @@ export const AUTOCOMPLETE_META = {
       },
     },
     examples: AUTOCOMPLETE_EXAMPLES,
-    changelog: {
-      '0.7.0': ['replaced `triggerIntent` and `listIntent` with a single `intent` prop'],
-      '0.6.0': ['replaced `intent` with separate `triggerIntent` and `listIntent` props'],
-      '0.5.0': ['removed `onClosed` prop'],
-      '0.3.0': ['released'],
-    },
+    changelog: AUTOCOMPLETE_CHANGELOG,
   } satisfies ComponentMeta<AutocompleteProps>,
   AutocompleteOption: {
     overview: {

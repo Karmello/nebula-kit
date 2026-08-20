@@ -5,6 +5,7 @@ import { ComponentMeta } from 'client/definitions'
 
 import { ACTION_GROUP_META } from '../../ActionGroup/meta'
 import { DEFAULT_TABS_DIRECTION, DEFAULT_TABS_INTENT, DEFAULT_TABS_SIZE, TABS_DIRECTION } from '../definitions'
+import { TABS_CHANGELOG } from './changelog'
 import { TABS_EXAMPLES } from './examples'
 
 export const TABS_META = {
@@ -70,11 +71,7 @@ export const TABS_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
     },
     examples: TABS_EXAMPLES,
-    changelog: {
-      '0.11.0': ['changed `orientation` prop to `direction`'],
-      '0.10.0': ['changed `flexDirection` prop to `orientation`'],
-      '0.3.0': ['released'],
-    },
+    changelog: TABS_CHANGELOG,
   } satisfies ComponentMeta<TabsProps>,
   TabsTab: {
     overview: {

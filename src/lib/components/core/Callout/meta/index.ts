@@ -11,6 +11,7 @@ import {
   DEFAULT_CALLOUT_STATUS,
   DEFAULT_CALLOUT_VARIANT,
 } from '../definitions'
+import { CALLOUT_CHANGELOG } from './changelog'
 import { CALLOUT_EXAMPLES } from './examples'
 
 export const CALLOUT_META = {
@@ -57,8 +58,6 @@ export const CALLOUT_META = {
       },
     },
     examples: CALLOUT_EXAMPLES,
-    changelog: {
-      '0.2.3': ['released'],
-    },
+    changelog: CALLOUT_CHANGELOG,
   } satisfies ComponentMeta<CalloutProps>,
 }

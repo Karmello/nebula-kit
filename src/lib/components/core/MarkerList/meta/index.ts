@@ -5,6 +5,7 @@ import { ComponentMeta } from 'client/definitions'
 import { BOX_META } from '../../Box/meta'
 import { FLEX_META } from '../../Flex/meta'
 import { DEFAULT_MARKER_LIST_GAP, MARKER_LIST_STYLES } from '../definitions'
+import { MARKER_LIST_CHANGELOG } from './changelog'
 import { MARKER_LIST_EXAMPLES } from './examples'
 
 export const MARKER_LIST_META = {
@@ -52,9 +53,7 @@ export const MARKER_LIST_META = {
       tagRef: BOX_META.Box.props.tagRef,
     },
     examples: MARKER_LIST_EXAMPLES,
-    changelog: {
-      '0.2.3': ['released'],
-    },
+    changelog: MARKER_LIST_CHANGELOG,
   } satisfies ComponentMeta<MarkerListProps>,
   MarkerListItem: {
     overview: {
