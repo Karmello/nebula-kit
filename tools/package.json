@@ -7,7 +7,7 @@
   },
   "packageManager": "yarn@4.10.3",
   "scripts": {
-    "dump:meta": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./common/ignore-assets-loader.js' tsx ./release/dump-meta.js",
+    "dump:meta": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--loader ./common/ignore-assets-loader.js --loader ./common/raw-loader.js' tsx ./release/dump-meta.js",
     "dist:css": "sass --load-path ../src/lib ../src/lib/styles/index.$TSUP_BUNDLE.scss ../dist/$TSUP_BUNDLE/styles.css --no-source-map",
     "dist:bundle": "yarn dump:meta && cd .. && tsup --config tsup.pkg.ts && yarn --cwd tools dist:css && node ./tools/release/annotate-props-jsdoc.js && node ./tools/release/annotate-components-jsdoc.js && node ./tools/release/annotate-slots-jsdoc.js && node ./tools/release/generate-package-json.js && node ./tools/release/generate-readme.js",
     "dist:core": "rimraf ../dist/core && TSUP_BUNDLE=core yarn dist:bundle && TSUP_BUNDLE=core yarn dist:clean",
