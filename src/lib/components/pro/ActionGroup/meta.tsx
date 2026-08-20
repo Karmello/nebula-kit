@@ -1,8 +1,6 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { FLEX_META } from 'lib/components/core/Flex/meta'
 import { PROP_GROUPS } from 'lib/constants'
-import { Box, Text } from 'lib/index.core'
-import { ActionGroup } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import {
@@ -12,6 +10,7 @@ import {
   DEFAULT_ACTION_GROUP_INTENT,
   DEFAULT_ACTION_GROUP_RIPPLE,
 } from './constants'
+import { ACTION_GROUP_EXAMPLES } from './examples'
 import { ACTION_GROUP_ITEM_TAGS, ActionGroupItemProps, DEFAULT_ACTION_GROUP_ITEM_TAG } from './slots'
 import { ActionGroupProps } from './types'
 
@@ -72,74 +71,7 @@ export const ACTION_GROUP_META = {
       tagRef: FLEX_META.Flex.props.tagRef,
       tagAttrs: FLEX_META.Flex.props.tagAttrs,
     },
-    examples: [
-      {
-        description: 'Actions arranged in a horizontal flow.',
-        jsx: (
-          <ActionGroup>
-            <ActionGroup.Item>
-              <Box margin="16px">
-                <Text textAlign="center">Item 1</Text>
-              </Box>
-            </ActionGroup.Item>
-            <ActionGroup.Item>
-              <Box margin="16px">
-                <Text textAlign="center">Item 2</Text>
-              </Box>
-            </ActionGroup.Item>
-            <ActionGroup.Item>
-              <Box margin="16px">
-                <Text textAlign="center">Item 3</Text>
-              </Box>
-            </ActionGroup.Item>
-          </ActionGroup>
-        ),
-      },
-      {
-        description: 'Actions arranged in a horizontal flow and stretched.',
-        jsx: (
-          <ActionGroup stretch>
-            <ActionGroup.Item>
-              <Box margin="16px">
-                <Text textAlign="center">Item 1</Text>
-              </Box>
-            </ActionGroup.Item>
-            <ActionGroup.Item>
-              <Box margin="16px">
-                <Text textAlign="center">Item 2</Text>
-              </Box>
-            </ActionGroup.Item>
-            <ActionGroup.Item>
-              <Box margin="16px">
-                <Text textAlign="center">Item 3</Text>
-              </Box>
-            </ActionGroup.Item>
-          </ActionGroup>
-        ),
-      },
-      {
-        description: 'Actions arranged in a vertical flow.',
-        jsx: (
-          <ActionGroup direction="column">
-            <ActionGroup.Item>
-              <Box margin="16px">
-                <Text textAlign="center">Item 1</Text>
-              </Box>
-            </ActionGroup.Item>
-            <ActionGroup.Item>
-              <Box margin="16px">
-                <Text textAlign="center">Item 2</Text>
-              </Box>
-            </ActionGroup.Item>
-            <ActionGroup.Item>
-              <Box margin="16px">
-                <Text textAlign="center">Item 3</Text>
-              </Box>
-            </ActionGroup.Item>
-          </ActionGroup>
-        ),
-      },
-    ],
+    examples: ACTION_GROUP_EXAMPLES,
     changelog: {
       '0.11.0': ['released'],
     },

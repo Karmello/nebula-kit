@@ -1,11 +1,11 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { GRID_META } from 'lib/components/core/Grid/meta'
 import { DEFAULT_SWITCH_BREAKPOINT, PROP_GROUPS, SWITCH_BREAKPOINTS } from 'lib/constants'
-import { Box, Text } from 'lib/index.core'
-import { SplitView, SplitViewMainBarProps, SplitViewMainProps, SplitViewProps, SplitViewSideProps } from 'lib/index.pro'
+import { SplitViewMainBarProps, SplitViewMainProps, SplitViewProps, SplitViewSideProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { SPLIT_VIEW_SIDE_POSITIONS } from './definitions'
+import { SPLIT_VIEW_EXAMPLES } from './examples'
 import { DEFAULT_SPLIT_VIEW_SIDE_BLOCK_SIZE, DEFAULT_SPLIT_VIEW_SIDE_INLINE_SIZE, DEFAULT_SPLIT_VIEW_SIDE_INTENT } from './slots'
 
 export const SPLIT_VIEW_META = {
@@ -48,75 +48,7 @@ export const SPLIT_VIEW_META = {
       tagRef: GRID_META.Grid.props.tagRef,
       tagAttrs: GRID_META.Grid.props.tagAttrs,
     },
-    examples: [
-      {
-        description: 'Basic render case for SplitView.',
-        jsx: (
-          <SplitView>
-            <SplitView.Side>Side</SplitView.Side>
-            <SplitView.Main>
-              <SplitView.MainBar>MainBar</SplitView.MainBar>
-              Main
-            </SplitView.Main>
-          </SplitView>
-        ),
-        noSandBox: true,
-        skip: true,
-      },
-      {
-        description:
-          "SplitView with side panel, main content area and MainBar above the main content. It fills its parent's height. Resize the viewport to a smaller width to see the side panel switch to its overlay version.",
-        jsx: (
-          <Box blockSize="500px">
-            <SplitView>
-              <SplitView.Side inlineSize={{ base: '300px', md: '500px', lg: '150px' }}>
-                <Box margin="8px">
-                  <Text noWrap>Side</Text>
-                </Box>
-              </SplitView.Side>
-              <SplitView.Main padding="10px">
-                <SplitView.MainBar>
-                  <Text>MainBar</Text>
-                </SplitView.MainBar>
-                <Text>Main</Text>
-              </SplitView.Main>
-            </SplitView>
-          </Box>
-        ),
-        sandBoxWithNoPadding: true,
-      },
-      {
-        description: 'Using render function to access SplitView context and control its open state in overlay mode.',
-        code: `
-<SplitView>
-  {({ setSideOpen, mode }) => (
-    <>
-      <SplitView.Side>
-        <Button
-          tagAttrs={{
-            onClick: () => {
-              // auto-close side panel on button click
-              if (mode === 'overlay') {
-                await setSideOpen(false)
-              }
-              // navigate to different route when animation done
-              ...
-            },
-          }}
-        >
-          Menu button
-        </Button>
-      </SplitView.Side>
-      <SplitView.Main>
-        <SplitView.MainBar>MainBar</SplitView.MainBar>
-        Main
-      </SplitView.Main>
-    </>
-  )}
-</SplitView>`,
-        noSandBox: true,
-      },
-    ],
+    examples: SPLIT_VIEW_EXAMPLES,
     changelog: {
       '0.11.0': ['exposed `blockSize` prop on SplitView.Side slot'],
       '0.10.0': ['exposed all `padding` props on SplitView.Side slot'],

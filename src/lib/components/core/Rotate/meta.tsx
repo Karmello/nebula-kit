@@ -1,28 +1,9 @@
-import { useEffect, useState } from 'react'
-
-import { Rotate, RotateProps, Text } from 'lib/index.core'
+import { RotateProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
+import { ROTATE_EXAMPLES } from './examples'
 import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING } from './rotate'
-
-const RotateWrapper = ({ children }: Partial<RotateProps>) => {
-  const [angle, setAngle] = useState<number>(0)
-  let interval: NodeJS.Timeout | null = null
-
-  useEffect(() => {
-    interval = setInterval(() => {
-      setAngle(angle => (angle += 90))
-    }, 1000)
-
-    return () => {
-      clearInterval(interval)
-      interval = null
-    }
-  }, [])
-
-  return <Rotate angle={angle}>{children}</Rotate>
-}
 
 export const ROTATE_META = {
   Rotate: {
@@ -64,19 +45,7 @@ export const ROTATE_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
     },
-    examples: [
-      {
-        description: 'Rotation is triggered by changing the value of the angle prop.',
-        jsx: (
-          <RotateWrapper>
-            <Text>Text</Text>
-          </RotateWrapper>
-        ),
-        code: `<Rotate angle={angle}>
-  <Text>Text</Text>
-</Rotate>`,
-      },
-    ],
+    examples: ROTATE_EXAMPLES,
     changelog: {
       '0.2.3': ['released'],
     },

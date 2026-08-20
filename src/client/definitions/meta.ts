@@ -29,7 +29,7 @@ export type Prop = {
   group?: string
 }
 
-type Example = {
+export type Example = {
   jsx?: JSX.Element
   code?: string
   description?: string

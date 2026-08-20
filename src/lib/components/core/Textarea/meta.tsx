@@ -1,6 +1,4 @@
-import { useState } from 'react'
-
-import { Textarea, TextareaProps } from 'lib/index.core'
+import { TextareaProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
@@ -11,11 +9,7 @@ import {
   DEFAULT_TEXTAREA_VARIANT,
   TEXTAREA_RESIZE,
 } from './definitions'
-
-const TextareaControlled = () => {
-  const [value, setValue] = useState<string>('value')
-  return <Textarea value={value} onChange={setValue} />
-}
+import { TEXTAREA_EXAMPLES } from './examples'
 
 export const TEXTAREA_META = {
   Textarea: {
@@ -85,25 +79,7 @@ export const TEXTAREA_META = {
         defaultValue: String(DEFAULT_TEXTAREA_VARIANT),
       },
     },
-    examples: [
-      {
-        description: 'Textarea used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
-        jsx: <Textarea defaultValue="default value" />,
-      },
-      {
-        description: 'Textarea used in controlled mode with its value managed through external state.',
-        jsx: <TextareaControlled />,
-        code: `const [value, setValue] = useState<string>('value')
-    \n
-return (
-  <Textarea value={value} onChange={onChange} />
-)`,
-      },
-      {
-        description: 'Disabled Textarea.',
-        jsx: <Textarea defaultValue="default value" disabled />,
-      },
-    ],
+    examples: TEXTAREA_EXAMPLES,
     changelog: {
       '0.9.0': ['added `maxLength` prop'],
       '0.2.3': ['released'],

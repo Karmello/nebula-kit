@@ -11,6 +11,7 @@ import {
   NEBKIT_PROVIDER_SATURATIONS,
   NEBKIT_PROVIDER_THEMES,
 } from './constants'
+import { NEBKIT_PROVIDER_EXAMPLES } from './examples'
 import type { NebkitProviderProps } from './types'
 
 export const NEBKIT_PROVIDER_META = {
@@ -60,22 +61,7 @@ export const NEBKIT_PROVIDER_META = {
         description: 'Global theme.',
       },
     },
-    examples: [
-      {
-        description: 'Use it as a wrapper around your entire app.',
-        code: `<NebkitProvider>
-  <App />
-</NebkitProvider>`,
-        noSandBox: true,
-      },
-      {
-        description: 'Changing global configuration.',
-        code: `<NebkitProvider theme="dark" brand="blue" borderRadiusSize="xs">
-  <App />
-</NebkitProvider>`,
-        noSandBox: true,
-      },
-    ],
+    examples: NEBKIT_PROVIDER_EXAMPLES,
     hideExamplesThemeToggle: true,
     changelog: {
       '0.9.0': ['added `saturation` prop'],

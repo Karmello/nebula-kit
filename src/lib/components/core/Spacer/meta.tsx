@@ -1,8 +1,9 @@
-import { Spacer, SpacerProps, Text } from 'lib/index.core'
+import { SpacerProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { DEFAULT_SPACER_BLOCK_SIZE } from './definitions'
+import { SPACER_EXAMPLES } from './examples'
 
 export const SPACER_META = {
   Spacer: {
@@ -26,18 +27,7 @@ export const SPACER_META = {
       tagRef: BOX_META.Box.props.tagRef,
       tagAttrs: BOX_META.Box.props.tagAttrs,
     },
-    examples: [
-      {
-        description: `Vertical spacing between two text blocks.`,
-        jsx: (
-          <>
-            <Text>Text 1</Text>
-            <Spacer blockSize="48px" />
-            <Text>Text 2</Text>
-          </>
-        ),
-      },
-    ],
+    examples: SPACER_EXAMPLES,
     changelog: {
       '0.9.0': ['added support for predefined size scale values on the `blockSize` prop'],
       '0.2.3': ['released'],

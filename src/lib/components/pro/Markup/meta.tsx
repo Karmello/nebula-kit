@@ -1,7 +1,8 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
-import { MarkerList, Text } from 'lib/index.core'
-import { Markup, MarkupProps } from 'lib/index.pro'
+import { MarkupProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
+
+import { MARKUP_EXAMPLES } from './examples'
 
 export const MARKUP_META = {
   Markup: {
@@ -35,60 +36,7 @@ export const MARKUP_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
     },
-    examples: [
-      {
-        description: 'Basic inline formatting.',
-        jsx: (
-          <Markup>
-            <Text>This text contains **bold**, _italic_ and `inline code`.</Text>
-          </Markup>
-        ),
-      },
-      {
-        description: 'Multiple Text blocks.',
-        jsx: (
-          <Markup>
-            <Text typography="h5">**Markup heading**</Text>
-            <Text>_Markup paragraph_</Text>
-          </Markup>
-        ),
-      },
-      {
-        description: 'Text nested inside Text.',
-        jsx: (
-          <Markup>
-            <Text>
-              This paragraph contains nested
-              <Text tag="span" color="blue" intent="primary" space="both">
-                `inline`
-              </Text>
-              formatting inside another Text component.
-            </Text>
-          </Markup>
-        ),
-      },
-      {
-        description: 'MarkerList example.',
-        jsx: (
-          <Markup>
-            <MarkerList>
-              <MarkerList.Item>
-                <Text>Text wrapped with `Markup` can interpret inline formatting markers.</Text>
-              </MarkerList.Item>
-              <MarkerList.Item>
-                <Text>Double asterisks render **bold text** inside the existing Text component.</Text>
-              </MarkerList.Item>
-              <MarkerList.Item>
-                <Text>Underscores render _italic text_ without manually nesting Text spans.</Text>
-              </MarkerList.Item>
-              <MarkerList.Item>
-                <Text>Backticks render `inline code` for short technical values.</Text>
-              </MarkerList.Item>
-            </MarkerList>
-          </Markup>
-        ),
-      },
-    ],
+    examples: MARKUP_EXAMPLES,
     changelog: {
       '0.10.0': ['released'],
     },

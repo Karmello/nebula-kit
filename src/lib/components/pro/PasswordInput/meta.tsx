@@ -1,8 +1,9 @@
 import { INPUT_META } from 'lib/components/core/Input/meta'
-import { PasswordInput, PasswordInputProps } from 'lib/index.pro'
+import { PasswordInputProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE } from './definitions'
+import { PASSWORD_INPUT_EXAMPLES } from './examples'
 
 export const PASSWORD_META = {
   PasswordInput: {
@@ -40,12 +41,7 @@ export const PASSWORD_META = {
       value: INPUT_META.Input.props.value,
       variant: INPUT_META.Input.props.variant,
     },
-    examples: [
-      {
-        description: 'Basic PasswordInput.',
-        jsx: <PasswordInput />,
-      },
-    ],
+    examples: PASSWORD_INPUT_EXAMPLES,
     changelog: {
       '0.10.0': ['released'],
     },

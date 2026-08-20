@@ -1,5 +1,5 @@
 import { BUTTON_TAGS, DEFAULT_TSHIRT_SIZE, PROP_GROUPS, TSHIRT_SIZES } from 'lib/constants'
-import { Button, ButtonProps, Flex } from 'lib/index.core'
+import { ButtonProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
@@ -14,6 +14,7 @@ import {
   DEFAULT_BUTTON_RIPPLE,
   DEFAULT_BUTTON_VARIANT,
 } from './constants'
+import { BUTTON_EXAMPLES } from './examples'
 
 export const BUTTON_META = {
   Button: {
@@ -108,52 +109,7 @@ export const BUTTON_META = {
         description: 'Click event handler for the button element.',
       },
     },
-    examples: [
-      {
-        description: 'Default button has medium size, solid variant and tertiary intent.',
-        jsx: <Button>Default button</Button>,
-      },
-      {
-        description: 'Examples of different button scales.',
-        jsx: (
-          <Flex flexWrap="wrap" alignItems="center" gap="8px">
-            {TSHIRT_SIZES.map(size => (
-              <Button key={size} scale={size} iconName="tree-pine">
-                {size.toUpperCase()} scale
-              </Button>
-            ))}
-          </Flex>
-        ),
-      },
-      {
-        description: 'Button stretched to fill the full width of its container.',
-        jsx: <Button fullWidth>Full width button</Button>,
-      },
-      {
-        description: 'Button with text and icon.',
-        jsx: <Button iconName="search">Button with icon</Button>,
-      },
-      {
-        description: 'Full width button with an icon aligned to the right edge.',
-        jsx: (
-          <Button fullWidth iconName="search" iconPlacement="right" align="split">
-            Button with icon
-          </Button>
-        ),
-      },
-      {
-        description: 'Button with bolded text.',
-        jsx: <Button bold>Bold</Button>,
-      },
-      {
-        description: 'Disabled button.',
-        jsx: <Button disabled>Disabled</Button>,
-      },
-      {
-        description: 'Button in loading state.',
-        jsx: <Button loading>Loading</Button>,
-      },
-    ],
+    examples: BUTTON_EXAMPLES,
     changelog: {
       '0.10.0': ['removed `justifyContent` prop', 'removed `textAlign` prop', 'added `align` prop'],
       '0.9.0': ['changed `surface` prop to `elevated`'],

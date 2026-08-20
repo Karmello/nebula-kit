@@ -1,25 +1,8 @@
-import { useRef } from 'react'
-
-import { Button, Flex } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { HTML_TAG_META } from '../../core/HtmlTag/meta'
 import { DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK, type FocusTrapProps } from './definitions'
-import { FocusTrap } from './focus-trap'
-
-const FocusTrapWrapper = () => {
-  const ref = useRef(null)
-
-  return (
-    <FocusTrap tagRef={ref} active>
-      <Flex tagRef={ref} gap="8px">
-        <Button>Button 1</Button>
-        <Button>Button 2</Button>
-        <Button>Button 3</Button>
-      </Flex>
-    </FocusTrap>
-  )
-}
+import { FOCUS_TRAP_EXAMPLES } from './examples'
 
 export const FOCUS_TRAP_META = {
   FocusTrap: {
@@ -63,24 +46,7 @@ export const FOCUS_TRAP_META = {
         description: 'Ref to the DOM element that the trap should contain focus within.',
       },
     },
-    examples: [
-      {
-        description: 'Focus stays locked between the three buttons while the trap is active.',
-        jsx: <FocusTrapWrapper />,
-        code: `// The tagRef must point to the same DOM element that visually contains the focusable content
-const ref = useRef(null)
-
-return (
-  <FocusTrap tagRef={ref} active>
-    <Flex tagRef={ref} gap="8px">
-      <Button>Button 1</Button>
-      <Button>Button 2</Button>
-      <Button>Button 3</Button>
-    </Flex>
-  </FocusTrap>
-)`,
-      },
-    ],
+    examples: FOCUS_TRAP_EXAMPLES,
     changelog: {
       '0.2.3': ['released'],
     },

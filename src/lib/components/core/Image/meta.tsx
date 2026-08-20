@@ -1,8 +1,7 @@
 import { PROP_GROUPS } from 'lib/constants'
-import { Image, ImageProps } from 'lib/index.core'
+import { ImageProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
-import { Box } from '../Box'
 import { BOX_META } from '../Box/meta'
 import {
   IMAGE_CROSS_ORIGIN,
@@ -12,6 +11,7 @@ import {
   IMAGE_OBJECT_FIT,
   IMAGE_REFERRER_POLICY,
 } from './constants'
+import { IMAGE_EXAMPLES } from './examples'
 
 export const IMAGE_META = {
   Image: {
@@ -109,43 +109,7 @@ export const IMAGE_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
     },
-    examples: [
-      {
-        jsx: <Image />,
-        skip: true,
-      },
-      {
-        description: 'Basic image rendering with a defined size.',
-        jsx: (
-          <Box textAlign="center">
-            <Image src="/imgs/town.webp" display="inline-block" inlineSize="300px" />
-          </Box>
-        ),
-      },
-      {
-        description: 'Rounded image.',
-        jsx: (
-          <Box textAlign="center">
-            <Image src="/imgs/town.webp" display="inline-block" inlineSize="300px" borderRadius="50%" overflow="hidden" />
-          </Box>
-        ),
-      },
-      {
-        description: 'Image constrained by a fixed aspect ratio.',
-        jsx: (
-          <Box textAlign="center">
-            <Image
-              src="/imgs/town.webp"
-              display="inline-block"
-              inlineSize="300px"
-              aspectRatio="16 / 9"
-              objectFit="cover"
-              overflow="hidden"
-            />
-          </Box>
-        ),
-      },
-    ],
+    examples: IMAGE_EXAMPLES,
     changelog: {
       '0.4.0': ['released'],
     },

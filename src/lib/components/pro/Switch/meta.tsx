@@ -1,9 +1,10 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { BUTTON_META } from 'lib/components/core/Button/meta'
-import { Switch, SwitchProps } from 'lib/index.pro'
+import { SwitchProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SCALE, SWITCH_INTENTS } from './definitions'
+import { SWITCH_EXAMPLES } from './examples'
 
 export const SWITCH_META = {
   Switch: {
@@ -42,28 +43,7 @@ export const SWITCH_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
     },
-    examples: [
-      {
-        jsx: <Switch />,
-        skip: true,
-      },
-      {
-        description: 'Default Switch.',
-        jsx: <Switch />,
-      },
-      {
-        description: 'Switch turned on by default.',
-        jsx: <Switch defaultChecked />,
-      },
-      {
-        description: 'Switch with custom scale.',
-        jsx: <Switch scale="lg" />,
-      },
-      {
-        description: 'Disabled Switch.',
-        jsx: <Switch disabled />,
-      },
-    ],
+    examples: SWITCH_EXAMPLES,
     changelog: {
       '0.9.0': ['narrowed supported `intent` values'],
       '0.7.0': ['added `intent` prop'],

@@ -1,7 +1,9 @@
 import { ElementType } from 'react'
 
-import { HtmlTag, HtmlTagProps } from 'lib/components'
+import { HtmlTagProps } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
+
+import { HTML_TAG_EXAMPLES } from './examples'
 
 export const HTML_TAG_META = {
   HtmlTag: {
@@ -36,18 +38,7 @@ export const HTML_TAG_META = {
         description: 'Reference to the root HTML tag.',
       },
     },
-    examples: [
-      {
-        description: 'Renders as <div> by default.',
-        jsx: <HtmlTag />,
-        noSandBox: true,
-      },
-      {
-        description: 'Choosing the <a> tag, makes its all attributes available on the tagAttrs property.',
-        jsx: <HtmlTag tag="a" tagAttrs={{ href: 'https://google.com' }} />,
-        noSandBox: true,
-      },
-    ],
+    examples: HTML_TAG_EXAMPLES,
     hideExamplesThemeToggle: true,
     changelog: {
       '0.2.3': ['released'],

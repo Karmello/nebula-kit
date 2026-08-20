@@ -3,8 +3,8 @@ import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { GRID_META } from '../Grid/meta'
-import { AppFrame } from './'
 import type { AppFrameProps } from './definitions'
+import { APP_FRAME_EXAMPLES } from './examples'
 import {
   type AppFrameFooterProps,
   type AppFrameFooterSectionProps,
@@ -51,23 +51,7 @@ export const APP_FRAME_META = {
       tagRef: GRID_META.Grid.props.tagRef,
       tagAttrs: GRID_META.Grid.props.tagAttrs,
     },
-    examples: [
-      {
-        description: 'Application view composed of header, main area and footer.',
-        jsx: (
-          <AppFrame>
-            <AppFrame.Header>Header</AppFrame.Header>
-            <AppFrame.Main>Main</AppFrame.Main>
-            <AppFrame.Footer>
-              <AppFrame.FooterSection>Footer section 1</AppFrame.FooterSection>
-              <AppFrame.FooterSection>Footer section 2</AppFrame.FooterSection>
-              <AppFrame.FooterSection>Footer section 3</AppFrame.FooterSection>
-            </AppFrame.Footer>
-          </AppFrame>
-        ),
-        sandBoxWithNoPadding: true,
-      },
-    ],
+    examples: APP_FRAME_EXAMPLES,
     changelog: {
       '0.11.0': ['merged `Footer` into `AppFrame`'],
       '0.8.0': ['removed `borderIntent` prop'],

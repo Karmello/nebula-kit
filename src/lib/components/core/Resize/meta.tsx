@@ -1,37 +1,10 @@
-import { useEffect, useState } from 'react'
-
-import { Resize, ResizeProps, Text } from 'lib/index.core'
+import { ResizeProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { RESIZE_PROPERTIES } from './definitions'
+import { RESIZE_EXAMPLES } from './examples'
 import { DEFAULT_RESIZE_DURATION, DEFAULT_RESIZE_EASING } from './resize'
-
-const ResizeWrapper = ({ property }: { property: ResizeProps['property'] }) => {
-  const [visible, setVisible] = useState<boolean>(false)
-  let interval: NodeJS.Timeout | null = null
-
-  useEffect(() => {
-    setVisible(true)
-  }, [])
-
-  useEffect(() => {
-    interval = setInterval(() => {
-      setVisible(!visible)
-    }, 1000)
-
-    return () => {
-      clearInterval(interval)
-      interval = null
-    }
-  }, [visible])
-
-  return (
-    <Resize visible={visible} property={property} duration={1000}>
-      <Text noWrap>Animated content.</Text>
-    </Resize>
-  )
-}
 
 export const RESIZE_META = {
   Resize: {
@@ -77,24 +50,7 @@ export const RESIZE_META = {
         description: 'Toggles the visibility of the content.',
       },
     },
-    examples: [
-      {
-        description: 'Animating the inlineSize property.',
-        jsx: <ResizeWrapper property="inlineSize" />,
-        code: `<Resize visible={visible} property="inlineSize" duration={1000}>
-  <Text noWrap>Animated content.</Text>
-</Resize>`,
-        sandBoxWithNoPadding: true,
-      },
-      {
-        description: 'Animating the blockSize property.',
-        jsx: <ResizeWrapper property="blockSize" />,
-        code: `<Resize visible={visible} property="blockSize" duration={1000}>
-  <Text noWrap>Animated content.</Text>
-</Resize>`,
-        sandBoxWithNoPadding: true,
-      },
-    ],
+    examples: RESIZE_EXAMPLES,
     changelog: {
       '0.2.3': ['released'],
     },

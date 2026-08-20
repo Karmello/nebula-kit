@@ -1,9 +1,10 @@
 import { TSHIRT_SIZES } from 'lib/constants'
-import { Checkbox, CheckboxProps, Flex } from 'lib/index.core'
+import { CheckboxProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { CHECKBOX_VARIANTS, DEFAULT_CHECKBOX_INTENT, DEFAULT_CHECKBOX_SIZE, DEFAULT_CHECKBOX_VARIANT } from './definitions'
+import { CHECKBOX_EXAMPLES } from './examples'
 
 export const CHECKBOX_META = {
   Checkbox: {
@@ -46,56 +47,7 @@ export const CHECKBOX_META = {
         defaultValue: String(DEFAULT_CHECKBOX_VARIANT),
       },
     },
-    examples: [
-      {
-        code: '<Checkbox checked={checked} />',
-        skip: true,
-      },
-      {
-        description: 'Different checkbox sizes in the outline variant.',
-        jsx: (
-          <Flex gap="8px" alignItems="center">
-            <Checkbox size="xs" variant="outline" />
-            <Checkbox size="sm" variant="outline" />
-            <Checkbox size="md" variant="outline" />
-            <Checkbox size="lg" variant="outline" />
-          </Flex>
-        ),
-      },
-      {
-        description: 'Different checkbox sizes in the soft-outline variant.',
-        jsx: (
-          <Flex gap="8px" alignItems="center">
-            <Checkbox size="xs" variant="soft-outline" />
-            <Checkbox size="sm" variant="soft-outline" />
-            <Checkbox size="md" variant="soft-outline" />
-            <Checkbox size="lg" variant="soft-outline" />
-          </Flex>
-        ),
-      },
-      {
-        description: 'Different checkbox sizes in the solid variant.',
-        jsx: (
-          <Flex gap="8px" alignItems="center">
-            <Checkbox size="xs" variant="solid" />
-            <Checkbox size="sm" variant="solid" />
-            <Checkbox size="md" variant="solid" />
-            <Checkbox size="lg" variant="solid" />
-          </Flex>
-        ),
-      },
-      {
-        description: 'Disabled selected checkboxes.',
-        jsx: (
-          <Flex gap="8px" alignItems="center">
-            <Checkbox size="xs" variant="solid" disabled defaultChecked />
-            <Checkbox size="sm" variant="solid" disabled defaultChecked />
-            <Checkbox size="md" variant="solid" disabled defaultChecked />
-            <Checkbox size="lg" variant="solid" disabled defaultChecked />
-          </Flex>
-        ),
-      },
-    ],
+    examples: CHECKBOX_EXAMPLES,
     changelog: {
       '0.4.0': ['fixed focus handling'],
       '0.3.0': ['released'],

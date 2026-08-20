@@ -1,11 +1,9 @@
-import { useState } from 'react'
-
 import { BOX_META } from 'lib/components/core/Box/meta'
-import { Box, Button } from 'lib/index.core'
-import { Scale, ScaleProps } from 'lib/index.pro'
+import { ScaleProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { SCALE_AXIS, SCALE_ORIGIN } from './definitions'
+import { SCALE_EXAMPLES } from './examples'
 import {
   DEFAULT_SCALE_AXIS,
   DEFAULT_SCALE_DURATION,
@@ -14,21 +12,6 @@ import {
   DEFAULT_SCALE_ORIGIN,
   DEFAULT_SCALE_TO,
 } from './scale'
-
-const Example1 = () => {
-  const [visible, setVisible] = useState(false)
-
-  return (
-    <>
-      <Button onClick={() => setVisible(value => !value)}>Toggle scale</Button>
-      <Scale visible={visible}>
-        <Box drawable variant="solid" intent="primary" padding="24px">
-          Scaled content
-        </Box>
-      </Scale>
-    </>
-  )
-}
 
 export const SCALE_META = {
   Scale: {
@@ -90,17 +73,7 @@ export const SCALE_META = {
           'Controls whether the content is rendered in its visible or hidden visual state. Triggers enter and exit scale transitions.',
       },
     },
-    examples: [
-      {
-        description: 'Scale transition controlled by `visible` prop.',
-        jsx: <Example1 />,
-        code: `<Scale visible={visible}>
-  <Box drawable variant="solid" intent="primary" padding="24px" marginLeft="16px">
-    Scaled content
-  </Box>
-</Scale>`,
-      },
-    ],
+    examples: SCALE_EXAMPLES,
     changelog: {
       '0.11.0': ['released'],
     },

@@ -1,8 +1,9 @@
-import { Divider, DividerProps, Text } from 'lib/index.core'
+import { DividerProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_MARGIN_BLOCK } from './definitions'
+import { DIVIDER_EXAMPLES } from './examples'
 
 export const DIVIDER_META = {
   Divider: {
@@ -32,25 +33,7 @@ export const DIVIDER_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
     },
-    examples: [
-      {
-        description: 'By default Divider renders with tertiary intent and marginBlock of 3.',
-        jsx: <Divider />,
-      },
-      {
-        description: 'Divider with custom color and intent.',
-        jsx: <Divider color="blue" intent="primary" />,
-      },
-      {
-        description: 'Divider placed directly under heading.',
-        jsx: (
-          <>
-            <Text typography="h6">Heading</Text>
-            <Divider />
-          </>
-        ),
-      },
-    ],
+    examples: DIVIDER_EXAMPLES,
     changelog: {
       '0.11.0': ['removed `surface` prop'],
       '0.9.0': [

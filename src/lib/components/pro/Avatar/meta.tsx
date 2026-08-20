@@ -1,9 +1,10 @@
 import { IMAGE_META } from 'lib/components/core/Image/meta'
 import { TSHIRT_SIZES } from 'lib/constants'
-import { Avatar, AvatarProps } from 'lib/index.pro'
+import { AvatarProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { AVATAR_SHAPES, DEFAULT_AVATAR_SHAPE, DEFAULT_AVATAR_SIZE } from './definitions'
+import { AVATAR_EXAMPLES } from './examples'
 
 export const AVATAR_META = {
   Avatar: {
@@ -47,32 +48,7 @@ export const AVATAR_META = {
       tagRef: IMAGE_META.Image.props.tagRef,
       title: IMAGE_META.Image.props.title,
     },
-    examples: [
-      {
-        code: '<Avatar src={src} size="sm" />',
-        skip: true,
-      },
-      {
-        description: 'Defalt medium size.',
-        jsx: <Avatar src="/imgs/mj23.webp" />,
-      },
-      {
-        description: 'The smallest size.',
-        jsx: <Avatar src="/imgs/mj23.webp" size="xs" />,
-      },
-      {
-        description: 'The biggest size.',
-        jsx: <Avatar src="/imgs/mj23.webp" size="xl" />,
-      },
-      {
-        description: 'Displaying initials as a fallback when the image cannot be loaded.',
-        jsx: <Avatar src="wrong-img-src" initials="mj" />,
-      },
-      {
-        description: 'Square shape.',
-        jsx: <Avatar src="/imgs/mj23.webp" shape="square" />,
-      },
-    ],
+    examples: AVATAR_EXAMPLES,
     changelog: {
       '0.4.0': ['released'],
     },

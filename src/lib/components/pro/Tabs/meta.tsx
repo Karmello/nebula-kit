@@ -1,10 +1,11 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { PROP_GROUPS, TSHIRT_SIZES } from 'lib/constants'
-import { Tabs, TabsPanelProps, TabsProps, TabsTabProps } from 'lib/index.pro'
+import { TabsPanelProps, TabsProps, TabsTabProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { ACTION_GROUP_META } from '../ActionGroup/meta'
 import { DEFAULT_TABS_DIRECTION, DEFAULT_TABS_INTENT, DEFAULT_TABS_SIZE, TABS_DIRECTION } from './definitions'
+import { TABS_EXAMPLES } from './examples'
 
 export const TABS_META = {
   Tabs: {
@@ -68,108 +69,7 @@ export const TABS_META = {
       tagRef: BOX_META.Box.props.tagRef,
       tagAttrs: BOX_META.Box.props.tagAttrs,
     },
-    examples: [
-      {
-        skip: true,
-        jsx: (
-          <Tabs>
-            <Tabs.Tab value={1} minInlineSize="100px">
-              First
-            </Tabs.Tab>
-            <Tabs.Tab value={2} minInlineSize="100px">
-              Second
-            </Tabs.Tab>
-            <Tabs.Tab value={3} minInlineSize="100px">
-              Third
-            </Tabs.Tab>
-            <Tabs.Panel value={1}>This is the first tab content.</Tabs.Panel>
-            <Tabs.Panel value={2}>This is the second tab content.</Tabs.Panel>
-            <Tabs.Panel value={3}>This is the third tab content.</Tabs.Panel>
-          </Tabs>
-        ),
-      },
-      {
-        description: 'Horizontal tab arrangement.',
-        jsx: (
-          <Tabs>
-            <Tabs.Tab value={1} minInlineSize="100px">
-              First
-            </Tabs.Tab>
-            <Tabs.Tab value={2} minInlineSize="100px">
-              Second
-            </Tabs.Tab>
-            <Tabs.Tab value={3} minInlineSize="100px">
-              Third
-            </Tabs.Tab>
-            <Tabs.Tab value={4} minInlineSize="100px">
-              Fourth
-            </Tabs.Tab>
-            <Tabs.Tab value={5} minInlineSize="100px">
-              Fifth
-            </Tabs.Tab>
-            <Tabs.Panel value={1}>This is the first tab content.</Tabs.Panel>
-            <Tabs.Panel value={2}>This is the second tab content.</Tabs.Panel>
-            <Tabs.Panel value={3}>This is the third tab content.</Tabs.Panel>
-            <Tabs.Panel value={4}>This is the fourth tab content.</Tabs.Panel>
-            <Tabs.Panel value={5}>This is the fifth tab content.</Tabs.Panel>
-          </Tabs>
-        ),
-      },
-      {
-        description: 'Horizontal tab arrangement with stretched tabs.',
-        jsx: (
-          <Tabs stretch>
-            <Tabs.Tab value={1} minInlineSize="100px">
-              First
-            </Tabs.Tab>
-            <Tabs.Tab value={2} minInlineSize="100px">
-              Second
-            </Tabs.Tab>
-            <Tabs.Tab value={3} minInlineSize="100px">
-              Third
-            </Tabs.Tab>
-            <Tabs.Tab value={4} minInlineSize="100px">
-              Fourth
-            </Tabs.Tab>
-            <Tabs.Tab value={5} minInlineSize="100px">
-              Fifth
-            </Tabs.Tab>
-            <Tabs.Panel value={1}>This is the first tab content.</Tabs.Panel>
-            <Tabs.Panel value={2}>This is the second tab content.</Tabs.Panel>
-            <Tabs.Panel value={3}>This is the third tab content.</Tabs.Panel>
-            <Tabs.Panel value={4}>This is the fourth tab content.</Tabs.Panel>
-            <Tabs.Panel value={5}>This is the fifth tab content.</Tabs.Panel>
-          </Tabs>
-        ),
-      },
-      {
-        description: 'Vertical tab arrangement.',
-        jsx: (
-          <Tabs direction="column">
-            <Tabs.Tab value={1} minInlineSize="100px">
-              First
-            </Tabs.Tab>
-            <Tabs.Tab value={2} minInlineSize="100px">
-              Second
-            </Tabs.Tab>
-            <Tabs.Tab value={3} minInlineSize="100px">
-              Third
-            </Tabs.Tab>
-            <Tabs.Tab value={4} minInlineSize="100px">
-              Fourth
-            </Tabs.Tab>
-            <Tabs.Tab value={5} minInlineSize="100px">
-              Fifth
-            </Tabs.Tab>
-            <Tabs.Panel value={1}>This is the first tab content.</Tabs.Panel>
-            <Tabs.Panel value={2}>This is the second tab content.</Tabs.Panel>
-            <Tabs.Panel value={3}>This is the third tab content.</Tabs.Panel>
-            <Tabs.Panel value={4}>This is the fourth tab content.</Tabs.Panel>
-            <Tabs.Panel value={5}>This is the fifth tab content.</Tabs.Panel>
-          </Tabs>
-        ),
-      },
-    ],
+    examples: TABS_EXAMPLES,
     changelog: {
       '0.11.0': ['changed `orientation` prop to `direction`'],
       '0.10.0': ['changed `flexDirection` prop to `orientation`'],

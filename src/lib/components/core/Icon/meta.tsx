@@ -1,11 +1,9 @@
-import { Footprints } from 'lucide-react'
-
 import { PROP_GROUPS } from 'lib/constants'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { DEFAULT_ICON_SIZE } from './constants'
-import { Icon } from './icon'
+import { ICON_EXAMPLES } from './examples'
 import type { IconProps } from './types'
 
 export const ICON_META = {
@@ -51,35 +49,7 @@ export const ICON_META = {
       tagRef: BOX_META.Box.props.tagRef,
       tagAttrs: BOX_META.Box.props.tagAttrs,
     },
-    examples: [
-      {
-        description: 'Default icon.',
-        jsx: <Icon name="search" />,
-      },
-      {
-        description: 'Icon with custom color and intent.',
-        jsx: <Icon name="search" color="blue" intent="primary" />,
-      },
-      {
-        description: 'Custom SVG icon passed as children, semantic styling stays preserved.',
-        jsx: (
-          <Icon color="blue" intent="primary">
-            <Footprints />
-          </Icon>
-        ),
-        code: `import { Icon } from 'lib/components'
-import { Footprints } from 'lucide-react'
-
-<Icon color="blue" intent="primary">
-  <Footprints />
-</Icon>
-`,
-      },
-      {
-        description: 'Icon with custom size.',
-        jsx: <Icon name="search" size="64px" />,
-      },
-    ],
+    examples: ICON_EXAMPLES,
     changelog: {
       '0.10.0': ['made `name` and `size` props responsive'],
       '0.9.0': ['added support for predefined size scale values on the `size` prop'],

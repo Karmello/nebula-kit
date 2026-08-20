@@ -1,10 +1,9 @@
-import { Box } from 'lib/components'
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { PROP_GROUPS } from 'lib/constants'
-import { Floating } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_FLOATING_MODE, DEFAULT_FLOATING_PLACEMENT, FLOATING_MODE, FLOATING_PLACEMENT } from './constants'
+import { FLOATING_EXAMPLES } from './examples'
 import { FloatingContentProps, FloatingTriggerProps } from './slots'
 import { DEFAULT_FLOATING_TRIGGER_DISPLAY, FLOATING_TRIGGER_DISPLAY } from './slots/FloatingTrigger/constants'
 import { FloatingProps } from './types'
@@ -74,24 +73,7 @@ export const FLOATING_META = {
         description: 'Callback fired when the floating content requests to open or close.',
       },
     },
-    examples: [
-      {
-        jsx: (
-          <Floating offset={10}>
-            <Floating.Trigger>
-              <Box drawable variant="solid" intent="primary" padding="16px">
-                Trigger
-              </Box>
-            </Floating.Trigger>
-            <Floating.Content>
-              <Box drawable variant="solid" intent="primary" padding="16px">
-                Content
-              </Box>
-            </Floating.Content>
-          </Floating>
-        ),
-      },
-    ],
+    examples: FLOATING_EXAMPLES,
     changelog: {
       '0.11.0': ['released'],
     },

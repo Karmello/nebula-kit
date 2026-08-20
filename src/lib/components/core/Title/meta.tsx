@@ -1,11 +1,12 @@
 import { PROP_GROUPS } from 'lib/constants'
-import { Title, TitleProps } from 'lib/index.core'
+import { TitleProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { FLEX_META } from '../Flex/meta'
 import { ICON_META } from '../Icon/meta'
 import { DEFAULT_TITLE_ICON_PLACEMENT, DEFAULT_TITLE_TYPOGRAPHY, TITLE_ICON_PLACEMENTS, TITLE_TYPOGRAPHY } from './constants'
+import { TITLE_EXAMPLES } from './examples'
 
 export const TITLE_META = {
   Title: {
@@ -55,20 +56,7 @@ export const TITLE_META = {
       tagAttrs: FLEX_META.Flex.props.tagAttrs,
       tagRef: FLEX_META.Flex.props.tagRef,
     },
-    examples: [
-      {
-        description: 'Search icon aligned with the provided text content.',
-        jsx: <Title iconName="search">Text content</Title>,
-      },
-      {
-        description: 'Icon on the right.',
-        jsx: (
-          <Title iconName="search" iconPlacement="right">
-            Text content
-          </Title>
-        ),
-      },
-    ],
+    examples: TITLE_EXAMPLES,
     changelog: {
       '0.11.0': ['renamed `WithIcon` to `Title`'],
       '0.2.3': ['released'],

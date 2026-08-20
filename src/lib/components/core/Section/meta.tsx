@@ -1,11 +1,12 @@
 import { SECTION_TAGS, TSHIRT_SIZES } from 'lib/constants'
-import { Section, SectionProps } from 'lib/index.core'
+import { SectionProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { TEXT_META } from '../Text/meta'
 import { TITLE_META } from '../Title/meta'
 import { DEFAULT_SECTION_INTENT, DEFAULT_SECTION_SIZE, DEFAULT_SECTION_VARIANT, SECTION_VARIANTS } from './definitions'
+import { SECTION_EXAMPLES } from './examples'
 
 export const SECTION_META = {
   Section: {
@@ -62,36 +63,7 @@ export const SECTION_META = {
         defaultValue: String(DEFAULT_SECTION_VARIANT),
       },
     },
-    examples: [
-      {
-        description: 'Default section with a heading and body content.',
-        jsx: <Section heading="Section heading">Section content area</Section>,
-      },
-      {
-        description: 'Section with custom size and variant.',
-        jsx: (
-          <Section heading="Section heading" size="lg" variant="outline">
-            Section content area
-          </Section>
-        ),
-      },
-      {
-        description: 'Section with custom intent configuration.',
-        jsx: (
-          <Section heading="Section heading" size="lg" variant="outline" intent="primary">
-            Section content area
-          </Section>
-        ),
-      },
-      {
-        description: 'Interactive section.',
-        jsx: (
-          <Section heading="Section heading" size="lg" variant="outline" intent="primary" interactive>
-            Section content area
-          </Section>
-        ),
-      },
-    ],
+    examples: SECTION_EXAMPLES,
     changelog: {
       '0.10.0': ['refined size presets for better layout balance and spacing consistency', 'added `headingIntent` prop'],
       '0.9.0': ['exposed `interactive` prop via Box'],

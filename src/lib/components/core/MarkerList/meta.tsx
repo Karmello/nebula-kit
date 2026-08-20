@@ -1,10 +1,11 @@
 import { MARKER_LIST_TAGS } from 'lib/constants'
-import { MarkerList, MarkerListItemProps, MarkerListProps } from 'lib/index.core'
+import { MarkerListItemProps, MarkerListProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { FLEX_META } from '../Flex/meta'
 import { DEFAULT_MARKER_LIST_GAP, MARKER_LIST_STYLES } from './definitions'
+import { MARKER_LIST_EXAMPLES } from './examples'
 
 export const MARKER_LIST_META = {
   MarkerList: {
@@ -50,26 +51,7 @@ export const MARKER_LIST_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
     },
-    examples: [
-      {
-        description: 'Basic MarkerList with two list items.',
-        jsx: (
-          <MarkerList>
-            <MarkerList.Item>Item 1</MarkerList.Item>
-            <MarkerList.Item>Item 2</MarkerList.Item>
-          </MarkerList>
-        ),
-      },
-      {
-        description: 'MarkerList with circular markers and custom spacing between items.',
-        jsx: (
-          <MarkerList listStyle="circle" gap="48px">
-            <MarkerList.Item>Item 1</MarkerList.Item>
-            <MarkerList.Item>Item 2</MarkerList.Item>
-          </MarkerList>
-        ),
-      },
-    ],
+    examples: MARKER_LIST_EXAMPLES,
     changelog: {
       '0.2.3': ['released'],
     },

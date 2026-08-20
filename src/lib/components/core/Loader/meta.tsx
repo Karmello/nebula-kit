@@ -1,10 +1,10 @@
 import { PROP_GROUPS } from 'lib/constants'
-import { Loader, LoaderProps } from 'lib/index.core'
+import { LoaderProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
-import { Box } from '../Box'
 import { BOX_META } from '../Box/meta'
 import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE } from './definitions'
+import { LOADER_EXAMPLES } from './examples'
 
 export const LOADER_META = {
   Loader: {
@@ -40,24 +40,7 @@ export const LOADER_META = {
       tagRef: BOX_META.Box.props.tagRef,
       tagAttrs: BOX_META.Box.props.tagAttrs,
     },
-    examples: [
-      {
-        description: 'Default loader.',
-        jsx: <Loader />,
-      },
-      {
-        description: 'Custom loader.',
-        jsx: <Loader size="48px" color="blue" />,
-      },
-      {
-        description: 'Absolutely centered Loader rendered inside a parent container with position set to relative.',
-        jsx: (
-          <Box position="relative">
-            <Loader centered />
-          </Box>
-        ),
-      },
-    ],
+    examples: LOADER_EXAMPLES,
     changelog: {
       '0.9.0': ['added support for predefined size scale values on the `size` prop'],
       '0.2.3': ['released'],

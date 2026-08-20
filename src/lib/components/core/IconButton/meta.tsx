@@ -1,7 +1,5 @@
-import { Activity } from 'lucide-react'
-
 import { ICON_BUTTON_TAGS, PROP_GROUPS, TSHIRT_SIZES } from 'lib/constants'
-import { IconButton, IconButtonProps } from 'lib/index.core'
+import { IconButtonProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
@@ -12,6 +10,7 @@ import {
   DEFAULT_ICON_BUTTON_SCALE,
   DEFAULT_ICON_BUTTON_VARIANT,
 } from './constants'
+import { ICON_BUTTON_EXAMPLES } from './examples'
 
 export const ICON_BUTTON_META = {
   IconButton: {
@@ -77,27 +76,7 @@ export const ICON_BUTTON_META = {
         description: 'Click event handler for the element.',
       },
     },
-    examples: [
-      {
-        description: 'Send icon.',
-        jsx: <IconButton iconName="send" />,
-      },
-      {
-        description: 'Disabled.',
-        jsx: <IconButton iconName="send" disabled />,
-      },
-      {
-        description: 'Loading.',
-        jsx: <IconButton iconName="send" loading />,
-      },
-      {
-        description: 'Custon SVG icon.',
-        jsx: <IconButton customSvgIcon={<Activity size="17px" />} />,
-        code: `import { Activity } from 'lucide-react'
-
-<IconButton customSvgIcon={<Activity size="17px" />} />`,
-      },
-    ],
+    examples: ICON_BUTTON_EXAMPLES,
     changelog: {
       '0.11.0': ['released'],
     },

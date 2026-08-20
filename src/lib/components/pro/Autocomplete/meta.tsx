@@ -8,7 +8,7 @@ import {
   DROPDOWN_LIST_SCROLL_ALIGN,
 } from 'lib/components/shared'
 import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
-import { Autocomplete, AutocompleteOptionProps, AutocompleteProps } from 'lib/index.pro'
+import { AutocompleteOptionProps, AutocompleteProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import {
@@ -16,6 +16,7 @@ import {
   DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
 } from './definitions'
+import { AUTOCOMPLETE_EXAMPLES } from './examples'
 
 export const AUTOCOMPLETE_META = {
   Autocomplete: {
@@ -116,30 +117,7 @@ export const AUTOCOMPLETE_META = {
         description: 'Specifies the number of list items visible before scrolling is enabled.',
       },
     },
-    examples: [
-      {
-        description: 'Autocomplete used in uncontrolled mode.',
-        jsx: (
-          <Autocomplete noOptionsLabel="Nothing found">
-            <Autocomplete.Option value="PL" label="Poland">
-              Poland
-            </Autocomplete.Option>
-            <Autocomplete.Option value="UK" label="United Kingdom">
-              United Kingdom
-            </Autocomplete.Option>
-            <Autocomplete.Option value="DE" label="Germany">
-              Germany
-            </Autocomplete.Option>
-            <Autocomplete.Option value="US" label="United States">
-              United States
-            </Autocomplete.Option>
-            <Autocomplete.Option value="FR" label="France">
-              France
-            </Autocomplete.Option>
-          </Autocomplete>
-        ),
-      },
-    ],
+    examples: AUTOCOMPLETE_EXAMPLES,
     changelog: {
       '0.7.0': ['replaced `triggerIntent` and `listIntent` with a single `intent` prop'],
       '0.6.0': ['replaced `intent` with separate `triggerIntent` and `listIntent` props'],

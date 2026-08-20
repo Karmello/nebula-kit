@@ -1,16 +1,10 @@
-import { useState } from 'react'
-
 import { TSHIRT_SIZES } from 'lib/constants'
-import { IconButton, Input, InputProps } from 'lib/index.core'
+import { InputProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../Box/meta'
 import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_SCALE, DEFAULT_INPUT_VARIANT } from './definitions'
-
-const InputControlled = () => {
-  const [value, setValue] = useState<string>('value')
-  return <Input value={value} onChange={setValue} />
-}
+import { INPUT_EXAMPLES } from './examples'
 
 export const INPUT_META = {
   Input: {
@@ -87,50 +81,7 @@ export const INPUT_META = {
         defaultValue: String(DEFAULT_INPUT_VARIANT),
       },
     },
-    examples: [
-      {
-        description: 'Input used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
-        jsx: <Input defaultValue="default value" />,
-      },
-      {
-        description: 'Input used in controlled mode with its value managed through external state.',
-        jsx: <InputControlled />,
-        code: `const [value, setValue] = useState<string>('value')
-    \n
-return (
-  <Input value={value} onChange={onChange} />
-)`,
-      },
-      {
-        description: 'Input with interactive elements attached on the left and right.',
-        jsx: (
-          <Input
-            startAffix={props => <IconButton {...props} iconName="search" />}
-            endAffix={props => <IconButton {...props} iconName="eye" />}
-          />
-        ),
-        code: `<Input
-  startAffix={props => <IconButton {...props} iconName="search" />}
-  endAffix={props => <IconButton {...props} iconName="eye" />}
-/>`,
-      },
-      {
-        description: 'Disabled Input.',
-        jsx: (
-          <Input
-            startAffix={props => <IconButton {...props} iconName="search" />}
-            endAffix={props => <IconButton {...props} iconName="eye" />}
-            disabled
-            value="value"
-          />
-        ),
-        code: `<Input
-  startAffix={props => <IconButton {...props} iconName="search" />}
-  endAffix={props => <IconButton {...props} iconName="eye" />}
-  disabled
-/>`,
-      },
-    ],
+    examples: INPUT_EXAMPLES,
     changelog: {
       '0.11.0': ['added `autoComplete` prop'],
       '0.9.0': ['added `maxLength` prop'],

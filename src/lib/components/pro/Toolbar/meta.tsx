@@ -1,8 +1,9 @@
 import { GRID_META } from 'lib/components/core/Grid/meta'
 import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
-import { Box, Button, Segment, Select } from 'lib/index.core'
-import { Toolbar, ToolbarEndProps, ToolbarMainProps, ToolbarProps, ToolbarStartProps } from 'lib/index.pro'
+import { ToolbarEndProps, ToolbarMainProps, ToolbarProps, ToolbarStartProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
+
+import { TOOLBAR_EXAMPLES } from './examples'
 
 export const TOOLBAR_META = {
   Toolbar: {
@@ -38,48 +39,7 @@ export const TOOLBAR_META = {
         description: 'Defines the breakpoint at which the main section switches between collapsed and inline layout.',
       },
     },
-    examples: [
-      {
-        description: 'Basic render case for Toolbar.',
-        jsx: (
-          <Toolbar>
-            <Toolbar.Start>Start</Toolbar.Start>
-            <Toolbar.Main>Main</Toolbar.Main>
-            <Toolbar.End>End</Toolbar.End>
-          </Toolbar>
-        ),
-        noSandBox: true,
-        skip: true,
-      },
-      {
-        description:
-          'Application header with a brand label on the left, navigation links in the main section that adapt responsively from column to row and an action menu on the right.',
-        jsx: (
-          <Toolbar switchAt="md">
-            <Toolbar.Start>
-              <Box paddingInline="20px">Brand</Box>
-            </Toolbar.Start>
-            <Toolbar.Main>
-              <Segment flexDirection={{ base: 'column', md: 'row' }}>
-                <Segment.Item>
-                  <Button fullWidth>Page 1</Button>
-                </Segment.Item>
-                <Segment.Item>
-                  <Button fullWidth>Page 2</Button>
-                </Segment.Item>
-              </Segment>
-            </Toolbar.Main>
-            <Toolbar.End>
-              <Select staticLabel="Menu">
-                <Select.Option value="option-1">Option 1</Select.Option>
-                <Select.Option value="option-2">Option 2</Select.Option>
-              </Select>
-            </Toolbar.End>
-          </Toolbar>
-        ),
-        sandBoxWithNoPadding: true,
-      },
-    ],
+    examples: TOOLBAR_EXAMPLES,
     changelog: {
       '0.2.3': ['released'],
     },

@@ -1,9 +1,7 @@
-import { useState } from 'react'
-
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { BUTTON_META } from 'lib/components/core/Button/meta'
 import { DEFAULT_TSHIRT_SIZE } from 'lib/constants'
-import { Pagination, PaginationProps } from 'lib/index.pro'
+import { PaginationProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import {
@@ -14,46 +12,7 @@ import {
   DEFAULT_PAGINATION_SIBLING_COUNT,
   DEFAULT_PAGINATION_VARIANT,
 } from './definitions'
-
-const Example1 = () => {
-  const [page, setPage] = useState<number>(1)
-  return <Pagination currentPage={page} totalPages={10} onChange={setPage} />
-}
-
-const Example2 = () => {
-  const [page, setPage] = useState<number>(1)
-  return (
-    <Pagination
-      variant="solid"
-      intent="tertiary"
-      currentPage={page}
-      totalPages={20}
-      onChange={page => {
-        setPage(page)
-        // manual navigation
-      }}
-      hrefBuilder={page => `/products?page=${page}`}
-      showPrevNext
-    />
-  )
-}
-
-const Example3 = () => {
-  const [page, setPage] = useState<number>(1)
-  return (
-    <Pagination
-      variant="outline"
-      intent="tertiary"
-      currentPage={page}
-      totalPages={50}
-      onChange={setPage}
-      showFirstLast
-      showPrevNext
-      siblingCount={2}
-      boundaryCount={2}
-    />
-  )
-}
+import { PAGINATION_EXAMPLES } from './examples'
 
 export const PAGINATION_META = {
   Pagination: {
@@ -130,54 +89,7 @@ export const PAGINATION_META = {
         defaultValue: String(DEFAULT_PAGINATION_VARIANT),
       },
     },
-    examples: [
-      {
-        description: 'Basic controlled pagination.',
-        jsx: <Example1 />,
-        code: `const [page, setPage] = useState<number>(1)
-
-return <Pagination currentPage={page} totalPages={10} onChange={setPage} />`,
-      },
-      {
-        description: 'Pagination with routing.',
-        jsx: <Example2 />,
-        code: `const [page, setPage] = useState<number>(1)
-
-return (
-  <Pagination
-    variant="solid"
-    intent="tertiary"
-    currentPage={page}
-    totalPages={20}
-    onChange={page => {
-      setPage(page)
-      // manual navigation
-    }}
-    hrefBuilder={page => \`/products?page=$\{page}\`}
-    showPrevNext
-  />
-)`,
-      },
-      {
-        description: 'Pagination with extended controls.',
-        jsx: <Example3 />,
-        code: `const [page, setPage] = useState<number>(1)
-
-return (
-  <Pagination
-    variant="outline"
-    intent="tertiary"
-    currentPage={page}
-    totalPages={50}
-    onChange={setPage}
-    showFirstLast
-    showPrevNext
-    siblingCount={2}
-    boundaryCount={2}
-  />
-)`,
-      },
-    ],
+    examples: PAGINATION_EXAMPLES,
     changelog: {
       '0.4.0': ['released'],
     },

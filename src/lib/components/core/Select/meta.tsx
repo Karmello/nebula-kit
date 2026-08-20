@@ -1,11 +1,12 @@
 import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from 'lib/components/shared'
 import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
-import { Select, SelectOptionProps, SelectProps } from 'lib/index.core'
+import { SelectOptionProps, SelectProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_COLORS, BOX_INTENTS } from '../Box/constants'
 import { BOX_META } from '../Box/meta'
 import { DEFAULT_SELECT_INLINE_SIZE, DEFAULT_SELECT_INTENT, DEFAULT_SELECT_VARIANT, SELECT_VARIANTS } from './constants'
+import { SELECT_EXAMPLES } from './examples'
 
 export const SELECT_META = {
   Select: {
@@ -81,38 +82,7 @@ export const SELECT_META = {
         description: 'Specifies the number of list items visible before scrolling is enabled.',
       },
     },
-    examples: [
-      {
-        description: 'Select used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
-        jsx: (
-          <Select defaultValue="option-1">
-            <Select.Option value="option-1">Option 1</Select.Option>
-            <Select.Option value="option-2">Option 2</Select.Option>
-            <Select.Option value="option-3">Option 3</Select.Option>
-          </Select>
-        ),
-      },
-      {
-        description: 'Select rendered with a custom inline size.',
-        jsx: (
-          <Select defaultValue="option-1" inlineSize="200px">
-            <Select.Option value="option-1">Option 1</Select.Option>
-            <Select.Option value="option-2">Option 2</Select.Option>
-            <Select.Option value="option-3">Option 3</Select.Option>
-          </Select>
-        ),
-      },
-      {
-        description: 'Disabled Select.',
-        jsx: (
-          <Select defaultValue="option-1" inlineSize="200px" disabled>
-            <Select.Option value="option-1">Option 1</Select.Option>
-            <Select.Option value="option-2">Option 2</Select.Option>
-            <Select.Option value="option-3">Option 3</Select.Option>
-          </Select>
-        ),
-      },
-    ],
+    examples: SELECT_EXAMPLES,
     changelog: {
       '0.7.0': ['replaced `triggerIntent` and `listIntent` with a single `intent` prop'],
       '0.6.0': ['replaced `intent` with separate `triggerIntent` and `listIntent` props'],

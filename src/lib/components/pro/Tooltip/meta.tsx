@@ -1,7 +1,6 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { PROP_GROUPS } from 'lib/constants'
-import { Button, Icon } from 'lib/index.core'
-import { Tooltip, TooltipProps } from 'lib/index.pro'
+import { TooltipProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import {
@@ -15,6 +14,7 @@ import {
   TOOLTIP_PLACEMENTS,
   TOOLTIP_VARIANTS,
 } from './constants'
+import { TOOLTIP_EXAMPLES } from './examples'
 
 export const TOOLTIP_META = {
   Tooltip: {
@@ -85,24 +85,7 @@ export const TOOLTIP_META = {
         description: 'Trigger element.',
       },
     },
-    examples: [
-      {
-        description: 'Tooltip using hover mode (default).',
-        jsx: (
-          <Tooltip content="This tooltip shows on hover." mode="hover">
-            <Icon name="message-circle-question-mark" size="24px" />
-          </Tooltip>
-        ),
-      },
-      {
-        description: 'Tooltip using click mode.',
-        jsx: (
-          <Tooltip content="This tooltip shows on click." mode="click">
-            <Button>Click me</Button>
-          </Tooltip>
-        ),
-      },
-    ],
+    examples: TOOLTIP_EXAMPLES,
     changelog: {
       '0.9.0': ['added configurable hover and click interaction modes with improved dismissal behavior'],
       '0.3.0': ['released'],

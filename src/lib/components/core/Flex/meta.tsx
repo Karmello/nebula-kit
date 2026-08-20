@@ -8,11 +8,11 @@ import {
   CSS_FLEX_WRAP,
   PROP_GROUPS,
 } from 'lib/constants'
-import { Flex, FlexItemProps, FlexProps } from 'lib/index.core'
+import { FlexItemProps, FlexProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
-import { Box } from '../Box'
 import { BOX_META } from '../Box/meta'
+import { FLEX_EXAMPLES, FLEX_ITEM_EXAMPLES } from './examples'
 
 export const FLEX_META = {
   Flex: {
@@ -101,21 +101,7 @@ export const FLEX_META = {
         link: true,
       },
     },
-    examples: [
-      {
-        description: 'Flex arranging two boxes side by side.',
-        jsx: (
-          <Flex>
-            <Box drawable variant="outline" intent="primary">
-              Item 1
-            </Box>
-            <Box drawable variant="outline" intent="primary">
-              Item 2
-            </Box>
-          </Flex>
-        ),
-      },
-    ],
+    examples: FLEX_EXAMPLES,
     changelog: {
       '0.9.0': [
         'exposed `hidden` prop on Flex.Item via Box',
@@ -184,24 +170,6 @@ export const FLEX_META = {
       children: BOX_META.Box.props.children,
       hidden: BOX_META.Box.props.hidden,
     },
-    examples: [
-      {
-        description: 'Using Flex.Item to let one item expand while the other keeps its natural size.',
-        jsx: (
-          <Flex>
-            <Flex.Item flex="1">
-              <Box drawable variant="outline" intent="primary">
-                Item 1
-              </Box>
-            </Flex.Item>
-            <Flex.Item>
-              <Box drawable variant="outline" intent="primary">
-                Item 2
-              </Box>
-            </Flex.Item>
-          </Flex>
-        ),
-      },
-    ],
+    examples: FLEX_ITEM_EXAMPLES,
   } satisfies ComponentMeta<FlexItemProps>,
 }

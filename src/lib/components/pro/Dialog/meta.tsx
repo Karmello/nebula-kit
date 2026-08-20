@@ -1,36 +1,10 @@
-import { useState } from 'react'
-
 import { BOX_META } from 'lib/components/core/Box/meta'
-import { Button } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
-import { Dialog } from './'
 import { DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK, DEFAULT_DIALOG_SIZE, DIALOG_SIZES, type DialogProps } from './definitions'
+import { DIALOG_EXAMPLES } from './examples'
 import { type DialogFooterProps } from './slots/DialogFooter/definitions'
 import { type DialogHeaderProps } from './slots/DialogHeader/definitions'
-
-const DialogWrapper = () => {
-  const [open, setOpen] = useState<boolean>(false)
-
-  return (
-    <>
-      <Dialog open={open} onClose={() => setOpen(false)}>
-        <Dialog.Header>Dialog header</Dialog.Header>
-        <Dialog.Content>Dialog content</Dialog.Content>
-        <Dialog.Footer>Dialog footer</Dialog.Footer>
-      </Dialog>
-      <Button
-        tagAttrs={{
-          onClick: () => {
-            setOpen(true)
-          },
-        }}
-      >
-        Open dialog
-      </Button>
-    </>
-  )
-}
 
 export const DIALOG_META = {
   Dialog: {
@@ -78,23 +52,7 @@ export const DIALOG_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
     },
-    examples: [
-      {
-        code: `<Dialog open={open}>
-  <Dialog.Content>Dialog content</Dialog.Content>
-</Dialog>`,
-        skip: true,
-      },
-      {
-        jsx: <DialogWrapper />,
-        code: `<Dialog open={open} onClose={() => setOpen(false)}>
-  <Dialog.Header>Dialog header</Dialog.Header>
-  <Dialog.Content>Dialog content</Dialog.Content>
-  <Dialog.Footer>Dialog footer</Dialog.Footer>
-</Dialog>`,
-        description: 'Dialog with all three available slots present.',
-      },
-    ],
+    examples: DIALOG_EXAMPLES,
     changelog: {
       '0.6.0': ['fixed dialog closing on inside clicks when `closeOnBackdropClick` was enabled'],
       '0.5.0': ['fixed backdrop flicker'],

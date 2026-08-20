@@ -1,35 +1,9 @@
-import { useEffect, useState } from 'react'
-
 import { BOX_META } from 'lib/components/core/Box/meta'
-import { Box } from 'lib/index.core'
-import { Fade, FadeProps } from 'lib/index.pro'
+import { FadeProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
+import { FADE_EXAMPLES } from './examples'
 import { DEFAULT_FADE_DURATION, DEFAULT_FADE_EASING } from './fade'
-
-const FadeWrapper = ({ children }: Partial<FadeProps>) => {
-  const [visible, setVisible] = useState<boolean>(false)
-  let interval: NodeJS.Timeout | null = null
-
-  useEffect(() => {
-    setVisible(visible => !visible)
-
-    interval = setInterval(() => {
-      setVisible(visible => !visible)
-    }, 2000)
-
-    return () => {
-      clearInterval(interval)
-      interval = null
-    }
-  }, [])
-
-  return (
-    <Fade visible={visible} duration={1000}>
-      {children}
-    </Fade>
-  )
-}
 
 export const FADE_META = {
   Fade: {
@@ -70,23 +44,7 @@ export const FADE_META = {
         description: 'Controls whether the content is shown or hidden through the fade transition.',
       },
     },
-    examples: [
-      {
-        description: 'Fade transition controlled by `visible` prop.',
-        jsx: (
-          <FadeWrapper>
-            <Box drawable variant="outline" intent="primary" padding="20px">
-              Fade content
-            </Box>
-          </FadeWrapper>
-        ),
-        code: `<Fade visible={visible}>
-  <Box drawable variant="outline" intent="primary" padding="20px">
-    Fade content
-  </Box>
-</Fade>`,
-      },
-    ],
+    examples: FADE_EXAMPLES,
     changelog: {
       '0.11.0': ['released'],
     },

@@ -1,9 +1,9 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
-import { Box } from 'lib/index.core'
-import { VirtualList, VirtualListProps } from 'lib/index.pro'
+import { VirtualListProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN, DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX, VIRTUAL_LIST_SCROLL_ALIGN } from './definitions'
+import { VIRTUAL_LIST_EXAMPLES } from './examples'
 
 export const VIRTUAL_LIST_META = {
   VirtualList: {
@@ -78,54 +78,7 @@ export const VIRTUAL_LIST_META = {
         description: 'Specifies the number of list items visible before scrolling is enabled.',
       },
     },
-    examples: [
-      {
-        description: 'Virtual list with 100 items, displaying 10 and rendering 30 at a time.',
-        sandBoxWithNoPadding: true,
-        jsx: (
-          <VirtualList<{ label: string }>
-            items={Array.from({ length: 100 }, (v, k) => ({ label: `List item ${k + 1}` }))}
-            itemBlockSize={50}
-            visibleItemsCount={10}
-            renderItem={({ label }) => (
-              <Box
-                drawable
-                interactive
-                variant="solid"
-                intent="muted"
-                borderRadius="0px"
-                blockSize="50px"
-                textAlign="center"
-                padding="15px"
-              >
-                {label}
-              </Box>
-            )}
-            intent="muted"
-          />
-        ),
-        code: `<VirtualList<{ label: string }>
-  items={Array.from({ length: 100 }, (v, k) => ({ label: \`List item $\{k + 1}\` }))}
-  itemBlockSize={50}
-  visibleItemsCount={10}
-  renderItem={({ label }, index) => (
-    <Box
-      drawable
-      interactive
-      variant="solid"
-      intent="muted"
-      borderRadius="0px"
-      blockSize="50px"
-      textAlign="center"
-      padding="15px"
-    >
-      {label}
-    </Box>
-  )}
-  intent="muted"
-/>`,
-      },
-    ],
+    examples: VIRTUAL_LIST_EXAMPLES,
     changelog: {
       '0.11.0': ['changed `itemHeight` prop to `itemBlockSize`'],
       '0.3.0': ['released'],

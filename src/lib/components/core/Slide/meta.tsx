@@ -1,34 +1,10 @@
-import { cloneElement, ReactElement, useEffect, useState } from 'react'
-
-import { Flex, Slide, SlideProps, Text } from 'lib/index.core'
+import { SlideProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
-import { Box } from '../Box'
 import { BOX_META } from '../Box/meta'
 import { SLIDE_FROM } from './definitions'
+import { SLIDE_EXAMPLES } from './examples'
 import { DEFAULT_SLIDE_DURATION, DEFAULT_SLIDE_EASING } from './slide'
-
-const SlideWrapper = ({ children }: { children: ReactElement }) => {
-  const [visible, setVisible] = useState<boolean>(false)
-  let interval: NodeJS.Timeout | null = null
-
-  useEffect(() => {
-    setVisible(true)
-  }, [])
-
-  useEffect(() => {
-    interval = setInterval(() => {
-      setVisible(!visible)
-    }, 1000)
-
-    return () => {
-      clearInterval(interval)
-      interval = null
-    }
-  }, [visible])
-
-  return cloneElement(children as any, { visible })
-}
 
 export const SLIDE_META = {
   Slide: {
@@ -73,58 +49,7 @@ export const SLIDE_META = {
         description: 'Toggles the visibility of the content.',
       },
     },
-    examples: [
-      {
-        description: 'Sliding in from the left.',
-        jsx: (
-          <SlideWrapper>
-            <Slide visible={false} from="left" duration={1000}>
-              <Text>Animated content.</Text>
-            </Slide>
-          </SlideWrapper>
-        ),
-        code: `<Slide visible={visible} from="left" duration={1000}>
-  <Text>Animated content.</Text>
-</Slide>`,
-        sandBoxWithNoPadding: true,
-      },
-      {
-        description: 'Sliding in from the right.',
-        jsx: (
-          <Flex justifyContent="flex-end">
-            <Box overflowX="hidden">
-              <SlideWrapper>
-                <Slide visible={false} from="right" duration={1000}>
-                  <Text>Animated content.</Text>
-                </Slide>
-              </SlideWrapper>
-            </Box>
-          </Flex>
-        ),
-        code: `<Slide visible={visible} from="right" duration={1000}>
-  <Text>Animated content.</Text>
-</Slide>`,
-        sandBoxWithNoPadding: true,
-      },
-      {
-        description: 'Sliding in from the top.',
-        jsx: (
-          <Box overflowX="hidden">
-            <SlideWrapper>
-              <Slide visible={false} from="top" duration={1000}>
-                <Text>Animated content.</Text>
-              </Slide>
-            </SlideWrapper>
-          </Box>
-        ),
-        code: `<Slide visible={visible} from="top" duration={1000}>
-  <Text>
-    Animated content.
-  </Text>
-</Slide>`,
-        sandBoxWithNoPadding: true,
-      },
-    ],
+    examples: SLIDE_EXAMPLES,
     changelog: {
       '0.2.3': ['released'],
     },

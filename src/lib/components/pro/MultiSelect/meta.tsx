@@ -8,10 +8,11 @@ import {
   DROPDOWN_LIST_SCROLL_ALIGN,
 } from 'lib/components/shared'
 import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
-import { MultiSelect, MultiSelectOptionProps, MultiSelectProps } from 'lib/index.pro'
+import { MultiSelectOptionProps, MultiSelectProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_MULTI_SELECT_INLINE_SIZE } from './definitions'
+import { MULTI_SELECT_EXAMPLES } from './examples'
 
 export const MULTI_SELECT_META = {
   MultiSelect: {
@@ -79,38 +80,7 @@ export const MULTI_SELECT_META = {
         description: 'Specifies the number of list items visible before scrolling is enabled.',
       },
     },
-    examples: [
-      {
-        description: 'MultiSelect used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
-        jsx: (
-          <MultiSelect defaultValue={['option-1']}>
-            <MultiSelect.Option value="option-1">Option 1</MultiSelect.Option>
-            <MultiSelect.Option value="option-2">Option 2</MultiSelect.Option>
-            <MultiSelect.Option value="option-3">Option 3</MultiSelect.Option>
-          </MultiSelect>
-        ),
-      },
-      {
-        description: 'MultiSelect rendered with a custom inline size.',
-        jsx: (
-          <MultiSelect defaultValue={['option-1']} inlineSize="200px">
-            <MultiSelect.Option value="option-1">Option 1</MultiSelect.Option>
-            <MultiSelect.Option value="option-2">Option 2</MultiSelect.Option>
-            <MultiSelect.Option value="option-3">Option 3</MultiSelect.Option>
-          </MultiSelect>
-        ),
-      },
-      {
-        description: 'Disabled MultiSelect.',
-        jsx: (
-          <MultiSelect defaultValue={['option-1']} inlineSize="200px" disabled>
-            <MultiSelect.Option value="option-1">Option 1</MultiSelect.Option>
-            <MultiSelect.Option value="option-2">Option 2</MultiSelect.Option>
-            <MultiSelect.Option value="option-3">Option 3</MultiSelect.Option>
-          </MultiSelect>
-        ),
-      },
-    ],
+    examples: MULTI_SELECT_EXAMPLES,
     changelog: {
       '0.7.0': ['replaced `triggerIntent` and `listIntent` with a single `intent` prop'],
       '0.6.0': ['replaced `intent` with separate `triggerIntent` and `listIntent` props'],

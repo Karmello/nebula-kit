@@ -1,12 +1,12 @@
 import { REVEAL_TAGS } from 'lib/constants'
-import { Reveal, RevealProps } from 'lib/index.core'
+import { RevealProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
-import { Box } from '../Box'
 import { BOX_META } from '../Box/meta'
 import { BUTTON_META } from '../Button/meta'
 import { RESIZE_META } from '../Resize/meta'
 import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SCALE } from './definitions'
+import { REVEAL_EXAMPLES } from './examples'
 
 export const REVEAL_META = {
   Reveal: {
@@ -45,28 +45,7 @@ export const REVEAL_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
     },
-    examples: [
-      {
-        description: 'Default reveal with a label and content provided.',
-        jsx: (
-          <Reveal label="Label">
-            <Box blockSize="80px" padding="20px">
-              Content
-            </Box>
-          </Reveal>
-        ),
-      },
-      {
-        description: 'Disabled state of the Reveal.',
-        jsx: (
-          <Reveal label="Label" disabled>
-            <Box blockSize="80px" padding="20px">
-              Content
-            </Box>
-          </Reveal>
-        ),
-      },
-    ],
+    examples: REVEAL_EXAMPLES,
     changelog: {
       '0.2.3': ['released'],
     },
