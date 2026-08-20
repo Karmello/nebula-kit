@@ -1,4 +1,4 @@
-import { BUTTON_TAGS, DEFAULT_TSHIRT_SIZE, PROP_GROUPS, TSHIRT_SIZES } from 'lib/constants'
+import { BUTTON_TAGS, DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { ButtonProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
@@ -34,7 +34,6 @@ export const BUTTON_META = {
     props: {
       elevated: BOX_META.Box.props.elevated,
       selected: {
-        group: PROP_GROUPS.SURFACE,
         options: ['boolean'],
         description: 'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
       },
@@ -48,7 +47,6 @@ export const BUTTON_META = {
         defaultValue: String(DEFAULT_BUTTON_INTENT),
       },
       loading: {
-        group: PROP_GROUPS.INTERACTION,
         options: ['boolean'],
         description: 'Activates the loading state, shows a spinner and prevents interaction.',
       },
@@ -58,21 +56,18 @@ export const BUTTON_META = {
         defaultValue: String(DEFAULT_BUTTON_RIPPLE),
       },
       align: {
-        group: PROP_GROUPS.LAYOUT,
         options: BUTTON_ALIGNS,
         defaultValue: String(DEFAULT_BUTTON_ALIGN),
         isResponsive: true,
         description: 'Controls how inner content is arranged within the container.',
       },
       scale: {
-        group: PROP_GROUPS.SIZE,
         options: TSHIRT_SIZES,
         defaultValue: DEFAULT_TSHIRT_SIZE,
         description:
           'Controls overall proportions adjusting blockSize, horizontal padding and fontSize to keep content balanced.',
       },
       fullWidth: {
-        group: PROP_GROUPS.SIZE,
         options: ['boolean'],
         isResponsive: true,
         description: 'Expands the button to match the full width of its container.',
@@ -84,10 +79,8 @@ export const BUTTON_META = {
       iconName: ICON_META.Icon.props.name,
       customSvgIcon: {
         ...ICON_META.Icon.props.children,
-        group: PROP_GROUPS.ICON,
       },
       iconPlacement: {
-        group: PROP_GROUPS.ICON,
         options: BUTTON_ICON_PLACEMENTS,
         defaultValue: DEFAULT_BUTTON_ICON_PLACEMENT,
         description: 'Icon placement relative to label.',
@@ -105,7 +98,6 @@ export const BUTTON_META = {
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
       onClick: {
-        group: PROP_GROUPS.ROOT,
         options: ['e => void'],
         description: 'Click event handler for the button element.',
       },

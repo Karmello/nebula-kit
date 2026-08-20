@@ -1,6 +1,6 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { GRID_META } from 'lib/components/core/Grid/meta'
-import { DEFAULT_SWITCH_BREAKPOINT, PROP_GROUPS, SWITCH_BREAKPOINTS } from 'lib/constants'
+import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
 import { SplitViewMainBarProps, SplitViewMainProps, SplitViewProps, SplitViewSideProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
@@ -29,13 +29,11 @@ export const SPLIT_VIEW_META = {
     },
     props: {
       sidePosition: {
-        group: PROP_GROUPS.LAYOUT,
         options: SPLIT_VIEW_SIDE_POSITIONS as unknown as string[],
         defaultValue: SPLIT_VIEW_SIDE_POSITIONS[0],
         description: 'Controls which horizontal side the side panel is attached to.',
       },
       switchAt: {
-        group: PROP_GROUPS.LAYOUT,
         options: SWITCH_BREAKPOINTS,
         defaultValue: DEFAULT_SWITCH_BREAKPOINT,
         description: 'Defines the breakpoint at which the side panel switches from overlay to inline layout mode.',

@@ -1,4 +1,3 @@
-import { PROP_GROUPS } from 'lib/constants'
 import { LoaderProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
@@ -18,7 +17,6 @@ export const LOADER_META = {
     },
     props: {
       active: {
-        group: PROP_GROUPS.STATE,
         options: ['boolean'],
         defaultValue: String(DEFAULT_LOADER_ACTIVE),
         description:
@@ -26,14 +24,12 @@ export const LOADER_META = {
       },
       color: BOX_META.Box.props.color,
       centered: {
-        group: PROP_GROUPS.LAYOUT,
         options: ['boolean'],
         defaultValue: 'false',
         description:
           'Absolutely centers the loader in both axes. Wrap it with an element with "position" set to "relative" to define the centering context.',
       },
       size: {
-        group: PROP_GROUPS.SIZE,
         options: [DOCS_CSS_LABEL],
         defaultValue: String(DEFAULT_LOADER_SIZE),
         description: 'Controls the diameter of the loader.',

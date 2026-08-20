@@ -1,4 +1,3 @@
-import { PROP_GROUPS } from 'lib/constants'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
@@ -24,7 +23,6 @@ export const ICON_META = {
     },
     props: {
       name: {
-        group: PROP_GROUPS.ICON,
         options: ['IconName'],
         isResponsive: true,
         description: 'Name of the icon to render.',
@@ -38,7 +36,6 @@ export const ICON_META = {
         description: 'Color tone applied to the icon.',
       },
       size: {
-        group: PROP_GROUPS.SIZE,
         options: [DOCS_CSS_LABEL],
         defaultValue: String(DEFAULT_ICON_SIZE),
         description: 'Size of the icon.',

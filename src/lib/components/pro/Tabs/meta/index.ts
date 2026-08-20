@@ -1,5 +1,5 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
-import { PROP_GROUPS, TSHIRT_SIZES } from 'lib/constants'
+import { TSHIRT_SIZES } from 'lib/constants'
 import { TabsPanelProps, TabsProps, TabsTabProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
@@ -34,30 +34,25 @@ export const TABS_META = {
         isResponsive: false,
       },
       direction: {
-        group: PROP_GROUPS.LAYOUT,
         options: TABS_DIRECTION,
         defaultValue: DEFAULT_TABS_DIRECTION,
         description: 'Sets whether tab items are arranged horizontally or vertically.',
       },
       stretch: ACTION_GROUP_META.ActionGroup.props.stretch,
       size: {
-        group: PROP_GROUPS.SIZE,
         options: TSHIRT_SIZES,
         defaultValue: DEFAULT_TABS_SIZE,
         description: 'Sets the size of the tab items.',
       },
       value: {
-        group: PROP_GROUPS.STATE,
         options: ['string', 'number'],
         description: 'Controls the active tab value.',
       },
       defaultValue: {
-        group: PROP_GROUPS.STATE,
         options: ['string', 'number'],
         description: 'Sets the initial active tab in uncontrolled mode.',
       },
       onChange: {
-        group: PROP_GROUPS.STATE,
         options: ['(value: string | number) => void'],
         description: 'Called when the active tab value changes.',
       },
@@ -84,7 +79,6 @@ export const TABS_META = {
     },
     props: {
       value: {
-        group: PROP_GROUPS.STATE,
         options: ['string', 'number'],
         isRequired: true,
         description: 'Value that identifies the tab and links it to its panel.',
@@ -111,7 +105,6 @@ export const TABS_META = {
     },
     props: {
       value: {
-        group: PROP_GROUPS.STATE,
         options: ['string', 'number'],
         isRequired: true,
         description: 'Value that identifies the panel and links it to a tab.',

@@ -1,5 +1,4 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
-import { PROP_GROUPS } from 'lib/constants'
 import { TooltipProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
@@ -35,13 +34,11 @@ export const TOOLTIP_META = {
     },
     props: {
       content: {
-        group: PROP_GROUPS.TOOLTIP,
         options: ['string'],
         isRequired: true,
         description: 'The text content displayed inside the tooltip.',
       },
       placement: {
-        group: PROP_GROUPS.TOOLTIP,
         options: TOOLTIP_PLACEMENTS,
         defaultValue: DEFAULT_TOOLTIP_PLACEMENT,
         description:
@@ -64,7 +61,6 @@ export const TOOLTIP_META = {
         isResponsive: false,
       },
       mode: {
-        group: PROP_GROUPS.INTERACTION,
         options: TOOLTIP_MODES,
         defaultValue: DEFAULT_TOOLTIP_MODE,
         description: 'Controls which interaction opens the tooltip.',

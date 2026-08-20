@@ -1,4 +1,4 @@
-import { ICON_BUTTON_TAGS, PROP_GROUPS, TSHIRT_SIZES } from 'lib/constants'
+import { ICON_BUTTON_TAGS, TSHIRT_SIZES } from 'lib/constants'
 import { IconButtonProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
@@ -44,7 +44,6 @@ export const ICON_BUTTON_META = {
         defaultValue: String(DEFAULT_ICON_BUTTON_INTENT),
       },
       loading: {
-        group: PROP_GROUPS.INTERACTION,
         options: ['boolean'],
         description: 'Activates the loading state, shows a spinner and prevents interaction.',
       },
@@ -54,7 +53,6 @@ export const ICON_BUTTON_META = {
         defaultValue: String(DEFAULT_ICON_BUTTON_RIPPLE),
       },
       scale: {
-        group: PROP_GROUPS.SIZE,
         options: TSHIRT_SIZES,
         defaultValue: DEFAULT_ICON_BUTTON_SCALE,
         description: 'Controls the overall interaction geometry and icon proportions',
@@ -62,7 +60,6 @@ export const ICON_BUTTON_META = {
       iconName: ICON_META.Icon.props.name,
       customSvgIcon: {
         ...ICON_META.Icon.props.children,
-        group: PROP_GROUPS.ICON,
         description: 'Custom SVG icon rendered instead of iconName.',
       },
       tag: {
@@ -72,7 +69,6 @@ export const ICON_BUTTON_META = {
       tagRef: BOX_META.Box.props.tagRef,
       tagAttrs: BOX_META.Box.props.tagAttrs,
       onClick: {
-        group: PROP_GROUPS.ROOT,
         options: ['e => void'],
         description: 'Click event handler for the element.',
       },

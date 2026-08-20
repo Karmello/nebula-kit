@@ -1,4 +1,3 @@
-import { PROP_GROUPS } from 'lib/constants'
 import { ImageProps } from 'lib/index.core'
 import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
 
@@ -30,66 +29,54 @@ export const IMAGE_META = {
     },
     props: {
       src: {
-        group: PROP_GROUPS.IMAGE_RENDERING,
         options: ['string'],
         description: 'Source URL of the image.',
       },
       alt: {
-        group: PROP_GROUPS.IMAGE_RENDERING,
         options: ['string'],
         description: 'Alternative text describing the image for accessibility.',
       },
       title: {
-        group: PROP_GROUPS.IMAGE_RENDERING,
         options: ['string'],
         description: 'Supplementary text associated with the image.',
       },
       loading: {
-        group: PROP_GROUPS.IMAGE_RENDERING,
         options: IMAGE_LOADING,
         description: 'Controls whether the image is loaded eagerly or lazily by the browser.',
       },
       decoding: {
-        group: PROP_GROUPS.IMAGE_RENDERING,
         options: IMAGE_DECODING,
         description: 'Hints how the browser should decode the image.',
       },
       fetchPriority: {
-        group: PROP_GROUPS.IMAGE_RENDERING,
         options: IMAGE_FETCH_PRIORITY,
         description: 'Hints the browser about the relative priority of fetching the image.',
       },
       objectFit: {
-        group: PROP_GROUPS.IMAGE_RENDERING,
         options: IMAGE_OBJECT_FIT,
         isResponsive: true,
         description: 'Defines how the image is resized to fit its container.',
         link: true,
       },
       objectPosition: {
-        group: PROP_GROUPS.IMAGE_RENDERING,
         options: [DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Sets the alignment of the image within its container.',
         link: true,
       },
       onLoad: {
-        group: PROP_GROUPS.IMAGE_RENDERING,
         options: ['e => void'],
         description: 'Called when the underlying img element fires a load event.',
       },
       onError: {
-        group: PROP_GROUPS.IMAGE_RENDERING,
         options: ['e => void'],
         description: 'Called when the underlying img element fires an error event.',
       },
       crossOrigin: {
-        group: PROP_GROUPS.IMAGE_RENDERING,
         options: IMAGE_CROSS_ORIGIN,
         description: 'Controls the CORS mode used when fetching the image.',
       },
       referrerPolicy: {
-        group: PROP_GROUPS.IMAGE_RENDERING,
         options: IMAGE_REFERRER_POLICY,
         description: 'Controls which referrer information is sent when fetching the image.',
       },

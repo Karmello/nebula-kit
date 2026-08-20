@@ -1,4 +1,4 @@
-import { DEFAULT_SWITCH_BREAKPOINT, PROP_GROUPS, SWITCH_BREAKPOINTS } from 'lib/constants'
+import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
@@ -36,7 +36,6 @@ export const APP_FRAME_META = {
     },
     props: {
       stickyHeader: {
-        group: PROP_GROUPS.LAYOUT,
         options: ['boolean'],
         defaultValue: 'false',
         isRequired: false,
@@ -131,7 +130,6 @@ export const APP_FRAME_META = {
         isResponsive: false,
       },
       footerStackBreakpoint: {
-        group: PROP_GROUPS.LAYOUT,
         options: SWITCH_BREAKPOINTS,
         defaultValue: DEFAULT_SWITCH_BREAKPOINT,
         description:

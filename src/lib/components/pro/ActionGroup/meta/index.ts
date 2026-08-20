@@ -1,6 +1,5 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { FLEX_META } from 'lib/components/core/Flex/meta'
-import { PROP_GROUPS } from 'lib/constants'
 import { ComponentMeta } from 'client/definitions'
 
 import {
@@ -47,20 +46,17 @@ export const ACTION_GROUP_META = {
         defaultValue: String(DEFAULT_ACTION_GROUP_RIPPLE),
       },
       attach: {
-        group: PROP_GROUPS.APPEARANCE,
         options: ACTION_GROUP_ATTACH,
         description:
           'Removes radius on the specified edge and applies the internal seam spacing needed to visually connect adjacent surfaces.',
       },
       direction: {
         ...FLEX_META.Flex.props.flexDirection,
-        group: PROP_GROUPS.LAYOUT,
         options: ACTION_GROUP_DIRECTION,
         defaultValue: String(DEFAULT_ACTION_GROUP_DIRECTION),
         isResponsive: false,
       },
       stretch: {
-        group: 'Layout',
         options: ['boolean'],
         description: 'Whether items should stretch to evenly fill the available inline space.',
       },
@@ -88,7 +84,6 @@ export const ACTION_GROUP_META = {
     },
     props: {
       selected: {
-        group: PROP_GROUPS.INTERACTION,
         options: ['boolean'],
         description: 'Marks the item as selected and applies the corresponding selected surface styling.',
       },
@@ -105,7 +100,6 @@ export const ACTION_GROUP_META = {
       tagRef: FLEX_META.FlexItem.props.tagRef,
       tagAttrs: FLEX_META.FlexItem.props.tagAttrs,
       onClick: {
-        group: PROP_GROUPS.ROOT,
         options: ['e => void'],
         description: 'Click event handler for the Item slot.',
       },

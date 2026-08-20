@@ -1,5 +1,4 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
-import { PROP_GROUPS } from 'lib/constants'
 import { ComponentMeta } from 'client/definitions'
 
 import { DEFAULT_FLOATING_MODE, DEFAULT_FLOATING_PLACEMENT, FLOATING_MODE, FLOATING_PLACEMENT } from '../constants'
@@ -30,46 +29,38 @@ export const FLOATING_META = {
     },
     props: {
       placement: {
-        group: PROP_GROUPS.FLOATING,
         options: FLOATING_PLACEMENT,
         defaultValue: DEFAULT_FLOATING_PLACEMENT,
         description: 'Defines the preferred position of the floating content relative to the trigger.',
       },
       offset: {
-        group: PROP_GROUPS.FLOATING,
         options: ['number'],
         description: 'Sets the distance between the trigger and floating content.',
       },
       mode: {
-        group: PROP_GROUPS.INTERACTION,
         options: FLOATING_MODE,
         defaultValue: DEFAULT_FLOATING_MODE,
         description: 'Defines which interaction opens the floating content.',
       },
       disabled: {
-        group: PROP_GROUPS.INTERACTION,
         options: ['boolean'],
         description:
           'Disables the floating interaction, preventing the floating content from opening through trigger hover or click behavior.',
       },
       onPlacementChange: {
-        group: PROP_GROUPS.FLOATING,
         options: ['placement => void'],
         description: 'Callback fired when the resolved placement changes.',
       },
       children: {
-        group: PROP_GROUPS.ROOT,
         options: ['ReactNode'],
         isRequired: true,
         description: 'Floating.Trigger + Floating.Content slots.',
       },
       open: {
-        group: PROP_GROUPS.ROOT,
         options: ['boolean'],
         description: 'Controls whether the floating content is currently visible.',
       },
       onOpenChange: {
-        group: PROP_GROUPS.ROOT,
         options: ['(open: boolean) => void'],
         description: 'Callback fired when the floating content requests to open or close.',
       },
@@ -100,7 +91,6 @@ export const FLOATING_META = {
         isResponsive: false,
       },
       children: {
-        group: PROP_GROUPS.ROOT,
         options: ['ReactNode'],
         isRequired: true,
         description: 'Element used to trigger and position the floating content.',
@@ -120,7 +110,6 @@ export const FLOATING_META = {
     },
     props: {
       children: {
-        group: PROP_GROUPS.ROOT,
         options: ['ReactNode'],
         isRequired: true,
         description: 'Content displayed when the floating layer is open.',

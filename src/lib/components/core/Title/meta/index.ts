@@ -1,4 +1,3 @@
-import { PROP_GROUPS } from 'lib/constants'
 import { TitleProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
@@ -30,14 +29,12 @@ export const TITLE_META = {
       color: BOX_META.Box.props.color,
       intent: BOX_META.Box.props.intent,
       typography: {
-        group: PROP_GROUPS.TYPOGRAPHY,
         options: TITLE_TYPOGRAPHY,
         defaultValue: DEFAULT_TITLE_TYPOGRAPHY,
         description: 'Typography style used for plain text children and for deriving the icon size and spacing.',
       },
       iconName: ICON_META.Icon.props.name,
       iconPlacement: {
-        group: PROP_GROUPS.ICON,
         options: TITLE_ICON_PLACEMENTS as unknown as string[],
         defaultValue: DEFAULT_TITLE_ICON_PLACEMENT,
         isRequired: false,
@@ -46,7 +43,6 @@ export const TITLE_META = {
       },
       customSvgIcon: {
         ...ICON_META.Icon.props.children,
-        group: PROP_GROUPS.ICON,
       },
       children: {
         ...FLEX_META.Flex.props.children,
