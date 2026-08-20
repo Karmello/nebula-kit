@@ -22,7 +22,18 @@ export const AppFrame = ({ children, tagAttrs, tagRef, stickyHeader = false }: A
         const footerSlot = slotsByName['AppFrame.Footer'][0]
 
         return (
-          <Grid tagRef={tagRef} tagAttrs={tagAttrs} gridTemplateRows="auto 1fr auto" minInlineSize="100%" minBlockSize="100dvh">
+          <Grid
+            tagRef={tagRef}
+            tagAttrs={{
+              ...tagAttrs,
+              style: {
+                ...tagAttrs?.style,
+                minInlineSize: '100%',
+                minBlockSize: '100dvh',
+              },
+            }}
+            gridTemplateRows="auto 1fr auto"
+          >
             {cloneElement(headerSlot as any, { stickyHeader })}
             {mainSlot}
             {footerSlot}

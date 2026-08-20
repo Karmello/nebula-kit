@@ -98,7 +98,9 @@ export const GRID_META = {
         description: 'Sets the spacing between grid columns.',
         link: true,
       },
-      ...BOX_META.Box.props,
+      tag: BOX_META.Box.props.tag,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
       children: {
         ...BOX_META.Box.props.children,
         description: 'Grid.Item or any React node.',
@@ -169,7 +171,10 @@ export const GRID_META = {
         description: 'Controls vertical alignment of the item within its grid cell.',
         link: true,
       },
-      ...BOX_META.Box.props,
+      tag: BOX_META.Box.props.tag,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
+      children: BOX_META.Box.props.children,
     },
     examples: [
       {

@@ -7,6 +7,8 @@ export const CALLOUT_TAGS = ['div', 'section', 'article', 'aside'] as const
 
 export const FOOTER_TAGS = ['div', 'footer'] as const
 
+export const GRID_TAGS = ['div', 'section', 'main', 'article', 'aside', 'nav', 'ul', 'ol'] as const
+
 export const MARKER_LIST_TAGS = ['ul', 'ol'] as const
 
 export const REVEAL_TAGS = ['div', 'section', 'article', 'aside', 'li'] as const

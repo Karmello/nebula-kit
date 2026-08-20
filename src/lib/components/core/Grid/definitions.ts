@@ -1,18 +1,17 @@
-import { ElementType } from 'react'
-
-import type {
+import {
   CssGridAutoFlow,
   CssGridDisplay,
   CssGridPlaceContent,
   CssGridPlaceItems,
   CssValue,
-  Length,
+  GridTag,
   RespValue,
+  TShirtSize,
 } from 'lib/types'
 
 import { BoxProps } from '../Box'
 
-export type GridProps<T extends ElementType = 'div'> = Omit<BoxProps<T>, 'display'> & {
+type GridOwnProps = {
   display?: RespValue<CssGridDisplay>
   gridTemplateColumns?: RespValue<string>
   gridTemplateRows?: RespValue<string>
@@ -21,7 +20,13 @@ export type GridProps<T extends ElementType = 'div'> = Omit<BoxProps<T>, 'displa
   gridAutoFlow?: RespValue<CssGridAutoFlow>
   placeItems?: RespValue<CssGridPlaceItems>
   placeContent?: RespValue<CssGridPlaceContent>
-  gap?: RespValue<Length | CssValue>
-  rowGap?: RespValue<Length | CssValue>
-  columnGap?: RespValue<Length | CssValue>
+  gap?: RespValue<TShirtSize | CssValue>
+  rowGap?: RespValue<TShirtSize | CssValue>
+  columnGap?: RespValue<TShirtSize | CssValue>
 }
+
+type PropsFromBox<T extends GridTag = 'div'> = Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef'> & {
+  children: BoxProps<T>['children']
+}
+
+export type GridProps<T extends GridTag = 'div'> = PropsFromBox<T> & GridOwnProps

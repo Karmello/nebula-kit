@@ -40,10 +40,15 @@ const SplitViewComponent = ({
         return (
           <Grid
             tagRef={tagRef}
-            tagAttrs={tagAttrs}
+            tagAttrs={{
+              ...tagAttrs,
+              style: {
+                ...tagAttrs?.style,
+                blockSize: '100%',
+              },
+            }}
             gridTemplateColumns={sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto'}
             gridTemplateRows="1fr"
-            blockSize="100%"
           >
             {sidePosition === 'left' ? slotsByName['SplitView.Side'] : null}
             {slotsByName['SplitView.Main']}

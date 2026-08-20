@@ -1,29 +1,32 @@
-import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
+import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { Box, GridItemProps } from 'lib/index.core'
 import { syncRespStyle } from 'lib/internals/dom'
+import type { GridTag } from 'lib/types'
 
 import './grid-item.scss'
 
-export const GridItem = <T extends ElementType = 'div'>({
+export const GridItem = <T extends GridTag = 'div'>({
+  // Box
+  children,
+  tag,
+  tagAttrs,
+  tagRef,
   // own
   gridColumn,
   gridRow,
   justifySelf,
   alignSelf,
-  // Box
-  ...boxProps
 }: GridItemProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
-  const finalRef = boxProps.tagRef || ref
 
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    syncRespStyle('Grid.Item', finalRef, bp, {
+    syncRespStyle('Grid.Item', tagRef || ref, bp, {
       gridColumn,
       gridRow,
       justifySelf,
@@ -33,16 +36,16 @@ export const GridItem = <T extends ElementType = 'div'>({
 
   return (
     <Box
-      {...boxProps}
+      tag={tag}
       tagAttrs={
         {
-          ...boxProps.tagAttrs,
-          className: classNames(withPrefix('grid-item'), boxProps.tagAttrs?.className),
+          ...tagAttrs,
+          className: classNames(withPrefix('grid-item'), tagAttrs?.className),
         } as PropsWithoutRef<ComponentProps<T>>
       }
-      tagRef={finalRef}
+      tagRef={tagRef || ref}
     >
-      {boxProps.children}
+      {children}
     </Box>
   )
 }
