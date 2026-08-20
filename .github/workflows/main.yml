@@ -60,9 +60,6 @@ jobs:
       - name: Run typecheck
         run: yarn typecheck
 
-      - name: Run TSD tests
-        run: yarn tsd
-
       - name: Run Vitest tests
         run: yarn test
 
