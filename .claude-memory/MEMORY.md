@@ -1,0 +1,2 @@
+- [Project resurrection](project_resurrection.md) — nebula-kit is being revived from dormancy; expect structural cleanup work
+- [Large refactor approach](large_refactor_approach.md) — validated pattern: manual convention + parallel batch agents + full verification
