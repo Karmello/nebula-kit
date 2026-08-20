@@ -44,10 +44,7 @@ export const SNACKBAR_EXAMPLES: Example[] = [
   {
     description: 'Informational snackbar at the bottom right (default).',
     jsx: (
-      <SnackbarWrapper
-        status="info"
-        content="This is an informational message that highlights something worth your attention."
-      />
+      <SnackbarWrapper status="info" content="This is an informational message that highlights something worth your attention." />
     ),
     code: `const { show } = useSnackbar()
     \r
