@@ -1,9 +1,11 @@
 import { ElementType } from 'react'
 
-import { BoxProps } from 'lib/index.core'
 import { CssFlexItemAlignSelf, RespValue } from 'lib/types'
 
-export type FlexItemProps<T extends ElementType = 'div'> = BoxProps<T> & {
+import type { BoxProps } from '../../Box/types'
+import type { HtmlTagProps } from '../../HtmlTag/definitions'
+
+type FlexItemOwnProps = {
   flex?: RespValue<string>
   flexGrow?: RespValue<string>
   flexShrink?: RespValue<string>
@@ -11,3 +13,9 @@ export type FlexItemProps<T extends ElementType = 'div'> = BoxProps<T> & {
   alignSelf?: RespValue<CssFlexItemAlignSelf>
   order?: RespValue<string>
 }
+
+type PropsFromBox<T extends ElementType = 'div'> = Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef' | 'hidden'> & {
+  children: HtmlTagProps<T>['children']
+}
+
+export type FlexItemProps<T extends ElementType = 'div'> = PropsFromBox<T> & FlexItemOwnProps

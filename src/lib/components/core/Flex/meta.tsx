@@ -85,7 +85,9 @@ export const FLEX_META = {
         description: 'Defines horizontal spacing between columns of children.',
         link: true,
       },
-      ...BOX_META.Box.props,
+      tag: BOX_META.Box.props.tag,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
       children: {
         group: PROP_GROUPS.FLEX_BOX,
         ...BOX_META.Box.props.children,
@@ -176,7 +178,11 @@ export const FLEX_META = {
         description: "Defines the item's order relative to other items, independent of source order.",
         link: true,
       },
-      ...BOX_META.Box.props,
+      tag: BOX_META.Box.props.tag,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
+      children: BOX_META.Box.props.children,
+      hidden: BOX_META.Box.props.hidden,
     },
     examples: [
       {

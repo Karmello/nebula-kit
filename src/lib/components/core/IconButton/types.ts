@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef } from 'react'
 
-import { FlexProps, IconProps } from 'lib/index.core'
+import { BoxProps, IconProps } from 'lib/index.core'
 import type { IconButtonTag, TShirtSize } from 'lib/types'
 
 export type IconButtonProps<T extends IconButtonTag = 'button'> = {
@@ -10,4 +10,4 @@ export type IconButtonProps<T extends IconButtonTag = 'button'> = {
 } & {
   iconName?: IconProps['name']
   customSvgIcon?: IconProps['children']
-} & Pick<FlexProps<T>, 'tag' | 'tagAttrs' | 'tagRef' | 'variant' | 'color' | 'intent' | 'disabled' | 'elevated' | 'ripple'>
+} & Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef' | 'variant' | 'color' | 'intent' | 'disabled' | 'elevated' | 'ripple'>

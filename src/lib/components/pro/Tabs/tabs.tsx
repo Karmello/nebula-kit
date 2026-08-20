@@ -74,9 +74,13 @@ export const Tabs = ({
                         }}
                       >
                         <Flex
-                          blockSize={CONTROL_SCALE_MAP[size || 'md'].blockSize}
-                          paddingInline={CONTROL_SCALE_MAP[size || 'md'].paddingInline}
-                          minInlineSize={minInlineSize}
+                          tagAttrs={{
+                            style: {
+                              blockSize: CONTROL_SCALE_MAP[size || 'md'].blockSize,
+                              paddingInline: CONTROL_SCALE_MAP[size || 'md'].paddingInline,
+                              minInlineSize,
+                            },
+                          }}
                           justifyContent="center"
                           alignItems="center"
                         >

@@ -2,7 +2,7 @@ import classNames from 'classnames'
 
 import { TYPOGRAPHY_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { Flex, Icon, Text, TitleProps } from 'lib/index.core'
+import { Box, Flex, Icon, Text, TitleProps } from 'lib/index.core'
 
 import { DEFAULT_TITLE_ICON_PLACEMENT, DEFAULT_TITLE_TYPOGRAPHY } from './constants'
 
@@ -31,30 +31,34 @@ export const Title = ({
   const isPlainText = typeof children === 'string' || typeof children === 'number'
 
   return (
-    <Flex
+    <Box
       tag="span"
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('title'), tagAttrs?.className || ''),
       }}
       tagRef={tagRef}
-      flexDirection="row"
-      flexWrap="nowrap"
-      alignItems="center"
       color={color}
       intent={intent}
-      columnGap={TYPOGRAPHY_MAP[typography || 'h6'].gap}
     >
-      {iconPlacement === 'left' ? icon : null}
-      {isPlainText ? (
-        <Text typography={typography} color={color} intent={intent}>
-          {children}
-        </Text>
-      ) : (
-        children
-      )}
-      {iconPlacement === 'right' ? icon : null}
-    </Flex>
+      <Flex
+        tag="span"
+        flexDirection="row"
+        flexWrap="nowrap"
+        alignItems="center"
+        columnGap={TYPOGRAPHY_MAP[typography || 'h6'].gap}
+      >
+        {iconPlacement === 'left' ? icon : null}
+        {isPlainText ? (
+          <Text typography={typography} color={color} intent={intent}>
+            {children}
+          </Text>
+        ) : (
+          children
+        )}
+        {iconPlacement === 'right' ? icon : null}
+      </Flex>
+    </Box>
   )
 }
 

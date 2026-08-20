@@ -11,6 +11,11 @@ import { Box } from '../Box'
 import './flex.scss'
 
 export const Flex = <T extends ElementType = 'div'>({
+  // Box
+  children,
+  tag,
+  tagAttrs,
+  tagRef,
   // own
   display,
   flexDirection,
@@ -21,16 +26,13 @@ export const Flex = <T extends ElementType = 'div'>({
   gap,
   rowGap,
   columnGap,
-  // Box
-  ...boxProps
 }: FlexProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
-  const finalRef = boxProps.tagRef || ref
 
   const { bp } = useScreen()
 
   useLayoutEffect(() => {
-    syncRespStyle('Flex', finalRef, bp, {
+    syncRespStyle('Flex', tagRef || ref, bp, {
       display,
       flexDirection,
       flexWrap,
@@ -44,21 +46,21 @@ export const Flex = <T extends ElementType = 'div'>({
   }, [bp, display, flexDirection, flexWrap, justifyContent, alignItems, alignContent, gap, rowGap, columnGap])
 
   useLayoutEffect(() => {
-    syncRespDataset('Flex', finalRef, bp, { flexDirection })
+    syncRespDataset('Flex', tagRef || ref, bp, { flexDirection })
   }, [bp, flexDirection])
 
   return (
     <Box
-      {...boxProps}
+      tag={tag}
       tagAttrs={
         {
-          ...boxProps.tagAttrs,
-          className: classNames(withPrefix('flex'), boxProps.tagAttrs?.className),
+          ...tagAttrs,
+          className: classNames(withPrefix('flex'), tagAttrs?.className),
         } as PropsWithoutRef<ComponentProps<T>>
       }
-      tagRef={finalRef}
+      tagRef={tagRef || ref}
     >
-      {boxProps.children}
+      {children}
     </Box>
   )
 }

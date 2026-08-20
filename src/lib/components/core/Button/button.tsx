@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
-import { Flex, Icon, Loader, Text } from 'lib/index.core'
+import { Box, Flex, Icon, Loader, Text } from 'lib/index.core'
 import { syncRespDataset } from 'lib/internals/dom'
 import type { ButtonTag } from 'lib/types'
 
@@ -65,7 +65,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   )
 
   return (
-    <Flex
+    <Box
       tag={tag}
       tagAttrs={
         {
@@ -92,24 +92,31 @@ export const Button = <T extends ButtonTag = 'button'>({
       interactive
       cursor="pointer"
       position="relative"
-      alignItems="center"
-      columnGap={CONTROL_SCALE_MAP[scale || 'md'].gap}
-      justifyContent={align === 'split' ? 'space-between' : align === 'center' ? 'center' : 'flex-start'}
     >
-      {iconPlacement === 'left' ? icon : null}
-      <Text
+      <Flex
         tag="span"
-        fontSize={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
-        lineHeight={CONTROL_SCALE_MAP[scale || 'md'].lineHeight}
-        bold={bold}
-        textAlign={align === 'center' ? 'center' : undefined}
-        truncate
+        tagAttrs={{
+          style: { inlineSize: '100%' },
+        }}
+        alignItems="center"
+        columnGap={CONTROL_SCALE_MAP[scale || 'md'].gap}
+        justifyContent={align === 'split' ? 'space-between' : align === 'center' ? 'center' : 'flex-start'}
       >
-        {children}
-      </Text>
-      {iconPlacement === 'right' ? icon : null}
-      {loading && !disabled ? <Loader size={CONTROL_SCALE_MAP[scale || 'md'].fontSize} centered /> : null}
-    </Flex>
+        {iconPlacement === 'left' ? icon : null}
+        <Text
+          tag="span"
+          fontSize={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
+          lineHeight={CONTROL_SCALE_MAP[scale || 'md'].lineHeight}
+          bold={bold}
+          textAlign={align === 'center' ? 'center' : undefined}
+          truncate
+        >
+          {children}
+        </Text>
+        {iconPlacement === 'right' ? icon : null}
+        {loading && !disabled ? <Loader size={CONTROL_SCALE_MAP[scale || 'md'].fontSize} centered /> : null}
+      </Flex>
+    </Box>
   )
 }
 

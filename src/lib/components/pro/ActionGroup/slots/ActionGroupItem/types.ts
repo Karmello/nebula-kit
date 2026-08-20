@@ -1,16 +1,16 @@
 import { ComponentPropsWithoutRef } from 'react'
 
 import { ACTION_GROUP_ITEM_TAGS } from 'lib/components/pro/ActionGroup/slots/ActionGroupItem'
-import { FlexItemProps } from 'lib/index.core'
-import { ActionGroupProps } from 'lib/index.pro'
+import { type BoxProps } from 'lib/index.core'
+import { type ActionGroupProps } from 'lib/index.pro'
 
 export type ActionGroupItemTag = (typeof ACTION_GROUP_ITEM_TAGS)[number]
 
 export type ActionGroupItemProps<T extends ActionGroupItemTag = 'button'> = Pick<
-  FlexItemProps<T>,
+  BoxProps<T>,
   'tag' | 'tagAttrs' | 'tagRef' | 'disabled'
 > & {
-  children: FlexItemProps<T>['children']
+  children: BoxProps<T>['children']
   selected?: boolean
   onClick?: ComponentPropsWithoutRef<T>['onClick']
 }

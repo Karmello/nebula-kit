@@ -1,3 +1,4 @@
+import { BOX_META } from 'lib/components/core/Box/meta'
 import { FLEX_META } from 'lib/components/core/Flex/meta'
 import { PROP_GROUPS } from 'lib/constants'
 import { Box, Text } from 'lib/index.core'
@@ -35,14 +36,14 @@ export const ACTION_GROUP_META = {
       slots: ['ActionGroup.Item'],
     },
     props: {
-      color: FLEX_META.Flex.props.color,
+      color: BOX_META.Box.props.color,
       intent: {
-        ...FLEX_META.Flex.props.intent,
+        ...BOX_META.Box.props.intent,
         defaultValue: String(DEFAULT_ACTION_GROUP_INTENT),
       },
-      elevated: FLEX_META.Flex.props.elevated,
+      elevated: BOX_META.Box.props.elevated,
       ripple: {
-        ...FLEX_META.Flex.props.ripple,
+        ...BOX_META.Box.props.ripple,
         defaultValue: String(DEFAULT_ACTION_GROUP_RIPPLE),
       },
       attach: {
@@ -160,7 +161,7 @@ export const ACTION_GROUP_META = {
         options: ['boolean'],
         description: 'Marks the item as selected and applies the corresponding selected surface styling.',
       },
-      disabled: FLEX_META.FlexItem.props.disabled,
+      disabled: BOX_META.Box.props.disabled,
       children: {
         ...FLEX_META.FlexItem.props.children,
         isRequired: true,

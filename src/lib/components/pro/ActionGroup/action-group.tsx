@@ -1,7 +1,7 @@
 import { cloneElement } from 'react'
 
 import { WithSlots } from 'lib/components/shared'
-import { Flex } from 'lib/index.core'
+import { Box, Flex } from 'lib/index.core'
 
 import { ActionGroupProvider, useActionGroupContext } from './action-group-provider'
 import { DEFAULT_ACTION_GROUP_DIRECTION, DEFAULT_ACTION_GROUP_INTENT, DEFAULT_ACTION_GROUP_RIPPLE } from './constants'
@@ -49,22 +49,18 @@ const ActionGroupImpl = ({
   const gap = '2px'
 
   return (
-    <Flex
+    <Box
       tagRef={tagRef}
       tagAttrs={tagAttrs}
-      flexDirection={direction}
       color={color}
       intent={intent}
       elevated={elevated}
       drawable
       surface="dividing"
       variant="solid"
-      alignItems="stretch"
-      display={stretch ? 'flex' : 'inline-flex'}
       inlineSize="max-content"
       minInlineSize="100%"
       overflow="clip"
-      gap={gap}
       borderTopLeftRadius={zeroTopLeft ? '0px' : undefined}
       borderTopRightRadius={zeroTopRight ? '0px' : undefined}
       borderBottomRightRadius={zeroBottomRight ? '0px' : undefined}
@@ -74,22 +70,24 @@ const ActionGroupImpl = ({
       paddingBottom={attach === 'bottom' || attach === 'block' ? gap : undefined}
       paddingLeft={attach === 'left' || attach === 'inline' ? gap : undefined}
     >
-      {itemSlots.map((slot, index) =>
-        cloneElement(
-          slot as any,
-          {
-            key: index,
-            index,
-            color,
-            intent,
-            elevated,
-            ripple,
-            direction,
-            stretch,
-          } as ActionGroupItemInternalProps
-        )
-      )}
-    </Flex>
+      <Flex flexDirection={direction} alignItems="stretch" display={stretch ? 'flex' : 'inline-flex'} gap={gap}>
+        {itemSlots.map((slot, index) =>
+          cloneElement(
+            slot as any,
+            {
+              key: index,
+              index,
+              color,
+              intent,
+              elevated,
+              ripple,
+              direction,
+              stretch,
+            } as ActionGroupItemInternalProps
+          )
+        )}
+      </Flex>
+    </Box>
   )
 }
 

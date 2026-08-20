@@ -53,7 +53,14 @@ export const Input = ({
   return (
     <Flex>
       {startAffix ? (
-        <Flex.Item borderTopRightRadius="0px" borderBottomRightRadius="0px">
+        <Flex.Item
+          tagAttrs={{
+            style: {
+              borderTopRightRadius: '0px',
+              borderBottomRightRadius: '0px',
+            },
+          }}
+        >
           {startAffix(affixProps)}
         </Flex.Item>
       ) : null}

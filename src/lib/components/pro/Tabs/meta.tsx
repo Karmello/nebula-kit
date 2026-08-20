@@ -1,5 +1,4 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
-import { FLEX_META } from 'lib/components/core/Flex/meta'
 import { PROP_GROUPS, TSHIRT_SIZES } from 'lib/constants'
 import { Tabs, TabsPanelProps, TabsProps, TabsTabProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
@@ -194,7 +193,10 @@ export const TABS_META = {
         description: 'Value that identifies the tab and links it to its panel.',
       },
       disabled: ACTION_GROUP_META.ActionGroupItem.props.disabled,
-      minInlineSize: FLEX_META.Flex.props.minInlineSize,
+      minInlineSize: {
+        ...BOX_META.Box.props.minInlineSize,
+        isResponsive: false,
+      },
       children: {
         ...BOX_META.Box.props.children,
         isRequired: true,

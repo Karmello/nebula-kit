@@ -128,10 +128,14 @@ export const SelectImpl = ({
                   }}
                 >
                   <Flex
+                    tagAttrs={{
+                      style: {
+                        blockSize: CONTROL_SCALE_MAP[size].blockSize,
+                        paddingInline: CONTROL_SCALE_MAP[size].paddingInline,
+                      },
+                    }}
                     alignItems="center"
                     alignContent="stretch"
-                    blockSize={CONTROL_SCALE_MAP[size].blockSize}
-                    paddingInline={CONTROL_SCALE_MAP[size].paddingInline}
                   >
                     <Text fontSize={CONTROL_SCALE_MAP[size].fontSize} lineHeight={CONTROL_SCALE_MAP[size].lineHeight}>
                       {slot}

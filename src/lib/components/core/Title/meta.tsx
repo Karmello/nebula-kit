@@ -2,6 +2,7 @@ import { PROP_GROUPS } from 'lib/constants'
 import { Title, TitleProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
+import { BOX_META } from '../Box/meta'
 import { FLEX_META } from '../Flex/meta'
 import { ICON_META } from '../Icon/meta'
 import { DEFAULT_TITLE_ICON_PLACEMENT, DEFAULT_TITLE_TYPOGRAPHY, TITLE_ICON_PLACEMENTS, TITLE_TYPOGRAPHY } from './constants'
@@ -24,8 +25,8 @@ export const TITLE_META = {
       exposedTags: ['span'],
     },
     props: {
-      color: FLEX_META.Flex.props.color,
-      intent: FLEX_META.Flex.props.intent,
+      color: BOX_META.Box.props.color,
+      intent: BOX_META.Box.props.intent,
       typography: {
         group: PROP_GROUPS.TYPOGRAPHY,
         options: TITLE_TYPOGRAPHY,

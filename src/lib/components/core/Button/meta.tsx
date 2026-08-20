@@ -26,7 +26,7 @@ export const BUTTON_META = {
         'supports first-class icon composition, including custom SVG icons',
         'supports full-width layout to span the entire container',
       ],
-      composedOf: ['Flex', 'Text', 'Icon', 'Loader'],
+      composedOf: ['Box', 'Flex', 'Text', 'Icon', 'Loader'],
       exposedTags: BUTTON_TAGS,
     },
     props: {

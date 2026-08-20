@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef } from 'react'
 
-import { FlexProps, IconProps } from 'lib/index.core'
+import { BoxProps, IconProps } from 'lib/index.core'
 import { ButtonTag, RespValue, TShirtSize } from 'lib/types'
 
 import { TextProps } from '../Text'
@@ -18,7 +18,7 @@ export type ButtonProps<T extends ButtonTag = 'button'> = {
   onClick?: ComponentPropsWithoutRef<T>['onClick']
   iconPlacement?: ButtonIconPlacement
 } & Pick<
-  FlexProps<T>,
+  BoxProps<T>,
   | 'tag'
   | 'tagAttrs'
   | 'tagRef'
