@@ -49,6 +49,25 @@ export const BOX_META = {
         options: ['boolean'],
         description: 'Applies the active (pressed) visual state while the element is focused.',
       },
+      alignContent: {
+        options: CSS_ALIGN_CONTENT,
+        isResponsive: true,
+        description: 'Aligns rows of items along the cross axis when wrapping is enabled.',
+        link: true,
+      },
+      alignItems: {
+        options: CSS_ALIGN_ITEMS,
+        isResponsive: true,
+        description: 'Aligns items within each row along the cross axis.',
+        link: true,
+      },
+      alignSelf: {
+        options: CSS_ALIGN_SELF,
+        isResponsive: true,
+        description:
+          "Overrides the parent container's alignItems value for this specific item, in a flex or grid container.",
+        link: true,
+      },
       aspectRatio: {
         options: ['string'],
         isResponsive: true,
@@ -139,6 +158,12 @@ export const BOX_META = {
         options: BOX_COLORS,
         description: 'Color applied to the component.',
       },
+      columnGap: {
+        options: ['string'],
+        isResponsive: true,
+        description: 'Defines horizontal spacing between columns of children.',
+        link: true,
+      },
       cursor: {
         options: CSS_CURSOR,
         description: 'Controls the mouse cursor shown when hovering over the element.',
@@ -162,6 +187,92 @@ export const BOX_META = {
         options: ['boolean'],
         description:
           'Shifts the component onto an elevated surface level, adjusting the base surface and all related interaction states together.',
+      },
+      flex: {
+        options: ['string'],
+        isResponsive: true,
+        description: 'Shorthand for flex-grow, flex-shrink and flex-basis.',
+        link: true,
+      },
+      flexBasis: {
+        options: ['string'],
+        isResponsive: true,
+        description: "Sets the item's initial main-size before free space is distributed.",
+        link: true,
+      },
+      flexDirection: {
+        options: CSS_FLEX_DIRECTION,
+        isResponsive: true,
+        description: 'Sets the flow of children along the main axis.',
+        link: true,
+      },
+      flexGrow: {
+        options: ['string'],
+        isResponsive: true,
+        description:
+          'Controls how much the item can grow relative to the other items when extra space is available.',
+        link: true,
+      },
+      flexShrink: {
+        options: ['string'],
+        isResponsive: true,
+        description:
+          'Controls how much the item can shrink relative to the other items when space is limited.',
+        link: true,
+      },
+      flexWrap: {
+        options: CSS_FLEX_WRAP,
+        isResponsive: true,
+        description: 'Controls whether children stay on one line or wrap onto multiple lines.',
+        link: true,
+      },
+      gap: {
+        options: ['string'],
+        isResponsive: true,
+        description: 'Defines spacing between children on both axes.',
+        link: true,
+      },
+      gridAutoColumns: {
+        options: ['string'],
+        isResponsive: true,
+        description: 'Defines the size of columns that are created automatically.',
+        link: true,
+      },
+      gridAutoFlow: {
+        options: CSS_GRID_AUTO_FLOW,
+        isResponsive: true,
+        description: 'Controls how items are automatically placed into the grid.',
+        link: true,
+      },
+      gridAutoRows: {
+        options: ['string'],
+        isResponsive: true,
+        description: 'Defines the size of rows that are created automatically.',
+        link: true,
+      },
+      gridColumn: {
+        options: ['string'],
+        isResponsive: true,
+        description: "Sets the item's horizontal position or span between grid columns.",
+        link: true,
+      },
+      gridRow: {
+        options: ['string'],
+        isResponsive: true,
+        description: "Sets the item's vertical position or span between grid rows.",
+        link: true,
+      },
+      gridTemplateColumns: {
+        options: ['string'],
+        isResponsive: true,
+        description: 'Defines the column structure of the grid.',
+        link: true,
+      },
+      gridTemplateRows: {
+        options: ['string'],
+        isResponsive: true,
+        description: "Sets how the grid's rows are laid out.",
+        link: true,
       },
       hidden: {
         options: ['boolean'],
@@ -189,6 +300,18 @@ export const BOX_META = {
         options: ['boolean'],
         description:
           'Enables visual interaction affordances such as hover and active styling. Sets drawable to true automatically.',
+      },
+      justifyContent: {
+        options: CSS_JUSTIFY_CONTENT,
+        isResponsive: true,
+        description: 'Distributes children along the main axis.',
+        link: true,
+      },
+      justifySelf: {
+        options: CSS_JUSTIFY_SELF,
+        isResponsive: true,
+        description: 'Controls horizontal alignment of the item within its grid cell.',
+        link: true,
       },
       left: {
         options: ['string'],
@@ -268,6 +391,13 @@ export const BOX_META = {
         description: 'Transparency level, from fully visible to fully transparent.',
         link: true,
       },
+      order: {
+        options: ['string'],
+        isResponsive: true,
+        description:
+          "Defines the item's order relative to other items, independent of source order.",
+        link: true,
+      },
       overflow: {
         options: CSS_OVERFLOW,
         isResponsive: true,
@@ -328,6 +458,18 @@ export const BOX_META = {
         description: 'Padding for the top side.',
         link: true,
       },
+      placeContent: {
+        options: CSS_PLACE_CONTENT,
+        isResponsive: true,
+        description: 'Controls how the grid as a whole is aligned within the container.',
+        link: true,
+      },
+      placeItems: {
+        options: CSS_PLACE_ITEMS,
+        isResponsive: true,
+        description: 'Controls how grid items are aligned within their cells.',
+        link: true,
+      },
       pointerEvents: {
         options: CSS_POINTER_EVENTS,
         description: 'Controls whether the element can receive pointer interactions.',
@@ -348,6 +490,12 @@ export const BOX_META = {
       ripple: {
         options: ['boolean'],
         description: 'Toggles the ripple effect on pointer interaction.',
+      },
+      rowGap: {
+        options: ['string'],
+        isResponsive: true,
+        description: 'Defines vertical spacing between rows of children.',
+        link: true,
       },
       surface: {
         options: BOX_SURFACES,
@@ -405,154 +553,6 @@ export const BOX_META = {
         options: ['number'],
         isResponsive: true,
         description: 'Controls the stacking order.',
-        link: true,
-      },
-      alignContent: {
-        options: CSS_ALIGN_CONTENT,
-        isResponsive: true,
-        description: 'Aligns rows of items along the cross axis when wrapping is enabled.',
-        link: true,
-      },
-      alignItems: {
-        options: CSS_ALIGN_ITEMS,
-        isResponsive: true,
-        description: 'Aligns items within each row along the cross axis.',
-        link: true,
-      },
-      columnGap: {
-        options: ['string'],
-        isResponsive: true,
-        description: 'Defines horizontal spacing between columns of children.',
-        link: true,
-      },
-      flexDirection: {
-        options: CSS_FLEX_DIRECTION,
-        isResponsive: true,
-        description: 'Sets the flow of children along the main axis.',
-        link: true,
-      },
-      flexWrap: {
-        options: CSS_FLEX_WRAP,
-        isResponsive: true,
-        description: 'Controls whether children stay on one line or wrap onto multiple lines.',
-        link: true,
-      },
-      gap: {
-        options: ['string'],
-        isResponsive: true,
-        description: 'Defines spacing between children on both axes.',
-        link: true,
-      },
-      justifyContent: {
-        options: CSS_JUSTIFY_CONTENT,
-        isResponsive: true,
-        description: 'Distributes children along the main axis.',
-        link: true,
-      },
-      rowGap: {
-        options: ['string'],
-        isResponsive: true,
-        description: 'Defines vertical spacing between rows of children.',
-        link: true,
-      },
-      alignSelf: {
-        options: CSS_ALIGN_SELF,
-        isResponsive: true,
-        description:
-          "Overrides the parent container's alignItems value for this specific item, in a flex or grid container.",
-        link: true,
-      },
-      flex: {
-        options: ['string'],
-        isResponsive: true,
-        description: 'Shorthand for flex-grow, flex-shrink and flex-basis.',
-        link: true,
-      },
-      flexBasis: {
-        options: ['string'],
-        isResponsive: true,
-        description: "Sets the item's initial main-size before free space is distributed.",
-        link: true,
-      },
-      flexGrow: {
-        options: ['string'],
-        isResponsive: true,
-        description:
-          'Controls how much the item can grow relative to the other items when extra space is available.',
-        link: true,
-      },
-      flexShrink: {
-        options: ['string'],
-        isResponsive: true,
-        description:
-          'Controls how much the item can shrink relative to the other items when space is limited.',
-        link: true,
-      },
-      order: {
-        options: ['string'],
-        isResponsive: true,
-        description:
-          "Defines the item's order relative to other items, independent of source order.",
-        link: true,
-      },
-      gridAutoColumns: {
-        options: ['string'],
-        isResponsive: true,
-        description: 'Defines the size of columns that are created automatically.',
-        link: true,
-      },
-      gridAutoFlow: {
-        options: CSS_GRID_AUTO_FLOW,
-        isResponsive: true,
-        description: 'Controls how items are automatically placed into the grid.',
-        link: true,
-      },
-      gridAutoRows: {
-        options: ['string'],
-        isResponsive: true,
-        description: 'Defines the size of rows that are created automatically.',
-        link: true,
-      },
-      gridTemplateColumns: {
-        options: ['string'],
-        isResponsive: true,
-        description: 'Defines the column structure of the grid.',
-        link: true,
-      },
-      gridTemplateRows: {
-        options: ['string'],
-        isResponsive: true,
-        description: "Sets how the grid's rows are laid out.",
-        link: true,
-      },
-      placeContent: {
-        options: CSS_PLACE_CONTENT,
-        isResponsive: true,
-        description: 'Controls how the grid as a whole is aligned within the container.',
-        link: true,
-      },
-      placeItems: {
-        options: CSS_PLACE_ITEMS,
-        isResponsive: true,
-        description: 'Controls how grid items are aligned within their cells.',
-        link: true,
-      },
-      gridColumn: {
-        options: ['string'],
-        isResponsive: true,
-        description: "Sets the item's horizontal position or span between grid columns.",
-        link: true,
-      },
-      gridRow: {
-        options: ['string'],
-        isResponsive: true,
-        description: "Sets the item's vertical position or span between grid rows.",
-        link: true,
-      },
-      justifySelf: {
-        options: CSS_JUSTIFY_SELF,
-        isResponsive: true,
-        description: 'Controls horizontal alignment of the item within its grid cell.',
         link: true,
       },
     },
