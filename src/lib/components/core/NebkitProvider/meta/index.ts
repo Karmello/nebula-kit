@@ -1,5 +1,6 @@
 import { ComponentMeta } from 'client/definitions'
 
+import { BOX_COLORS } from '../../Box'
 import {
   DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE,
   DEFAULT_NEBKIT_PROVIDER_BRAND,
@@ -33,7 +34,7 @@ export const NEBKIT_PROVIDER_META = {
         description: 'Global border radius size applied across all components.',
       },
       brand: {
-        options: ['BoxColor'],
+        options: BOX_COLORS,
         defaultValue: DEFAULT_NEBKIT_PROVIDER_BRAND,
         description: 'Global brand color used as the primary accent across components.',
       },

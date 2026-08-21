@@ -1,8 +1,7 @@
 import { createContext, ReactNode, RefObject, useContext, useEffect, useRef, useState } from 'react'
 
-import { FloatingResolved } from 'lib/internals/positioning'
-
 import { DropdownListPlacement, DropdownListProps } from '../../definitions'
+import { FloatingResolved } from '../../hooks'
 
 type ProviderProps = { children: ReactNode } & ExternalProps
 

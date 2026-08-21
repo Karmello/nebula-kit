@@ -6,9 +6,8 @@ import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { HtmlTag } from 'lib/index.core'
 import { buildStaticDataset, syncRespDataset, syncRespStyle } from 'lib/internals/dom'
-import { useResolveAppearance } from 'lib/internals/styling'
 
-import { useRipple, useTransitionLifecycle } from './hooks'
+import { useResolveAppearance, useRipple, useTransitionLifecycle } from './hooks'
 import { BoxProps } from './types'
 
 import './styles/box.scss'

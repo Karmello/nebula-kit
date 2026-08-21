@@ -3,11 +3,9 @@ import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
 import { ResizeProps } from 'lib/index.core'
-import { MeasuredSizes, syncMeasuredSize } from 'lib/internals/measurement'
-import { buildSizeTransition } from 'lib/internals/motion'
 
 import { Box } from '../Box'
-import { syncResizeVisibility } from './helpers'
+import { buildSizeTransition, MeasuredSizes, syncMeasuredSize, syncResizeVisibility } from './helpers'
 
 export const DEFAULT_RESIZE_DURATION: ResizeProps['duration'] = 200
 export const DEFAULT_RESIZE_EASING: ResizeProps['easing'] = 'linear'
