@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Spacer, Text } from 'lib/components'
+import { Box, Divider, Flex, NEB_LENGTH, Spacer, Text } from 'lib/components'
 
 import { About } from './About'
 import { Families } from './Families'
@@ -10,7 +10,7 @@ import { Video } from './Video'
 
 export const HomePage = () => {
   return (
-    <Box padding={{ base: '24px', lg: '48px' }} paddingTop="4px">
+    <Box padding={{ base: '24px', lg: '48px' }} paddingTop={NEB_LENGTH.px_004}>
       <Flex
         flexDirection={{ base: 'column', lg: 'row' }}
         justifyContent="center"

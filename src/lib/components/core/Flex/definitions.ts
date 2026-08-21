@@ -7,9 +7,7 @@ import {
   CssFlexDisplay,
   CssFlexJustifyContent,
   CssFlexWrap,
-  CssValue,
   RespValue,
-  TShirtSize,
 } from 'lib/types'
 
 import { BoxProps } from '../Box'
@@ -21,9 +19,9 @@ type FlexOwnProps = {
   justifyContent?: RespValue<CssFlexJustifyContent>
   alignItems?: RespValue<CssFlexAlignItems>
   alignContent?: RespValue<CssFlexAlignContent>
-  gap?: RespValue<TShirtSize | CssValue>
-  rowGap?: RespValue<TShirtSize | CssValue>
-  columnGap?: RespValue<TShirtSize | CssValue>
+  gap?: RespValue<string>
+  rowGap?: RespValue<string>
+  columnGap?: RespValue<string>
 }
 
 type PropsFromBox<T extends ElementType = 'div'> = Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef'> & {

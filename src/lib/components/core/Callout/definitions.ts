@@ -1,4 +1,4 @@
-import { CalloutTag, Length, TShirtSize } from 'lib/types'
+import { CalloutTag, TShirtSize } from 'lib/types'
 
 import type { BoxColor, BoxProps, BoxVariant } from '../Box/types'
 import { type IconName } from '../Icon/types'
@@ -7,9 +7,9 @@ import type { TextTypography } from '../Text/types'
 export const CALLOUT_SIZE_CONFIG: Record<
   TShirtSize,
   {
-    padding: Length
+    padding: string
     textTypography: TextTypography
-    spacerBlockSize: Length
+    spacerBlockSize: string
   }
 > = {
   xs: { padding: '16px', textTypography: 'h6', spacerBlockSize: '8px' },

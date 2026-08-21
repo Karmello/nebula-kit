@@ -1,4 +1,4 @@
-import { LENGTH_SCALE } from 'lib/constants'
+import { NEB_LENGTH } from 'lib/constants'
 
 import { WithSlots } from '../WithSlots'
 import { DropdownListMain, DropdownListMenu } from './components'
@@ -53,7 +53,7 @@ export const DropdownList = ({
         if (correctedVisibleItemsCount <= 0 && noOptionsLabel) correctedVisibleItemsCount = 1
 
         const finalItemBlockSize =
-          (itemBlockSize !== undefined ? itemBlockSize : 50) + Number(LENGTH_SCALE['2px'].replace('px', ''))
+          (itemBlockSize !== undefined ? itemBlockSize : 50) + Number(NEB_LENGTH.px_002.replace('px', ''))
 
         return (
           <DropdownListProvider

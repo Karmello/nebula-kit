@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
 import { type TitleProps } from 'lib/index.core'
-import type { Length, SectionTag, TShirtSize } from 'lib/types'
+import type { SectionTag, TShirtSize } from 'lib/types'
 
 import { type BoxProps, type BoxVariant } from '../Box'
 import { type TextProps, type TextTypography } from '../Text'
@@ -15,8 +15,8 @@ export const DEFAULT_SECTION_SIZE: SectionProps['size'] = 'md'
 export const SECTION_SIZE_CONFIG: Record<
   TShirtSize,
   {
-    padding: Length
-    spacerBlockSize: Length
+    padding: string
+    spacerBlockSize: string
     textTypography: TextTypography
   }
 > = {

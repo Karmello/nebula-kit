@@ -7,9 +7,7 @@ import type {
   CssPointerEvents,
   CssPosition,
   CssTextAlign,
-  CssValue,
   CssVisibility,
-  Length,
   RespValue,
 } from 'lib/types'
 
@@ -48,49 +46,49 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   transform?: RespValue<string>
   zIndex?: RespValue<number>
   // border
-  borderWidth?: RespValue<Length | CssValue>
-  borderTopWidth?: RespValue<Length | CssValue>
-  borderRightWidth?: RespValue<Length | CssValue>
-  borderBottomWidth?: RespValue<Length | CssValue>
-  borderLeftWidth?: RespValue<Length | CssValue>
+  borderWidth?: RespValue<string>
+  borderTopWidth?: RespValue<string>
+  borderRightWidth?: RespValue<string>
+  borderBottomWidth?: RespValue<string>
+  borderLeftWidth?: RespValue<string>
   // border radius
-  borderRadius?: RespValue<Length | CssValue>
-  borderTopLeftRadius?: RespValue<Length | CssValue>
-  borderTopRightRadius?: RespValue<Length | CssValue>
-  borderBottomRightRadius?: RespValue<Length | CssValue>
-  borderBottomLeftRadius?: RespValue<Length | CssValue>
+  borderRadius?: RespValue<string>
+  borderTopLeftRadius?: RespValue<string>
+  borderTopRightRadius?: RespValue<string>
+  borderBottomRightRadius?: RespValue<string>
+  borderBottomLeftRadius?: RespValue<string>
   // layout
   display?: RespValue<CssDisplay>
   overflow?: RespValue<CssOverflow>
   overflowX?: RespValue<CssOverflow>
   overflowY?: RespValue<CssOverflow>
   position?: RespValue<CssPosition>
-  inset?: RespValue<Length | CssValue>
-  top?: RespValue<Length | CssValue>
-  right?: RespValue<Length | CssValue>
-  bottom?: RespValue<Length | CssValue>
-  left?: RespValue<Length | CssValue>
+  inset?: RespValue<string>
+  top?: RespValue<string>
+  right?: RespValue<string>
+  bottom?: RespValue<string>
+  left?: RespValue<string>
   // size
-  blockSize?: RespValue<Length | CssValue>
-  minBlockSize?: RespValue<Length | CssValue>
-  maxBlockSize?: RespValue<Length | CssValue>
-  inlineSize?: RespValue<Length | CssValue>
-  minInlineSize?: RespValue<Length | CssValue>
-  maxInlineSize?: RespValue<Length | CssValue>
+  blockSize?: RespValue<string>
+  minBlockSize?: RespValue<string>
+  maxBlockSize?: RespValue<string>
+  inlineSize?: RespValue<string>
+  minInlineSize?: RespValue<string>
+  maxInlineSize?: RespValue<string>
   // padding
-  padding?: RespValue<Length | CssValue>
-  paddingInline?: RespValue<Length | CssValue>
-  paddingBlock?: RespValue<Length | CssValue>
-  paddingTop?: RespValue<Length | CssValue>
-  paddingRight?: RespValue<Length | CssValue>
-  paddingBottom?: RespValue<Length | CssValue>
-  paddingLeft?: RespValue<Length | CssValue>
+  padding?: RespValue<string>
+  paddingInline?: RespValue<string>
+  paddingBlock?: RespValue<string>
+  paddingTop?: RespValue<string>
+  paddingRight?: RespValue<string>
+  paddingBottom?: RespValue<string>
+  paddingLeft?: RespValue<string>
   // margin
-  margin?: RespValue<Length | CssValue>
-  marginInline?: RespValue<Length | CssValue>
-  marginBlock?: RespValue<Length | CssValue>
-  marginTop?: RespValue<Length | CssValue>
-  marginRight?: RespValue<Length | CssValue>
-  marginBottom?: RespValue<Length | CssValue>
-  marginLeft?: RespValue<Length | CssValue>
+  margin?: RespValue<string>
+  marginInline?: RespValue<string>
+  marginBlock?: RespValue<string>
+  marginTop?: RespValue<string>
+  marginRight?: RespValue<string>
+  marginBottom?: RespValue<string>
+  marginLeft?: RespValue<string>
 }

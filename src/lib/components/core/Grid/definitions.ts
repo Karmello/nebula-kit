@@ -1,13 +1,4 @@
-import {
-  CssGridAutoFlow,
-  CssGridDisplay,
-  CssGridPlaceContent,
-  CssGridPlaceItems,
-  CssValue,
-  GridTag,
-  RespValue,
-  TShirtSize,
-} from 'lib/types'
+import { CssGridAutoFlow, CssGridDisplay, CssGridPlaceContent, CssGridPlaceItems, GridTag, RespValue } from 'lib/types'
 
 import { BoxProps } from '../Box'
 
@@ -20,9 +11,9 @@ type GridOwnProps = {
   gridAutoFlow?: RespValue<CssGridAutoFlow>
   placeItems?: RespValue<CssGridPlaceItems>
   placeContent?: RespValue<CssGridPlaceContent>
-  gap?: RespValue<TShirtSize | CssValue>
-  rowGap?: RespValue<TShirtSize | CssValue>
-  columnGap?: RespValue<TShirtSize | CssValue>
+  gap?: RespValue<string>
+  rowGap?: RespValue<string>
+  columnGap?: RespValue<string>
 }
 
 type PropsFromBox<T extends GridTag = 'div'> = Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef'> & {

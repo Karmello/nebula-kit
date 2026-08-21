@@ -1,5 +1,5 @@
 import { Box, Spacer, Table, Text } from 'lib/components'
-import { LENGTH_SCALE } from 'lib/constants'
+import { NEB_LENGTH } from 'lib/constants'
 import { CodeSnippet } from 'client/components'
 
 export default () => {
@@ -22,7 +22,7 @@ export default () => {
           </Table.HeaderRow>
         </Table.Header>
         <Table.Body>
-          {Object.keys(LENGTH_SCALE).map(key => (
+          {Object.keys(NEB_LENGTH).map(key => (
             <Table.Row key={key}>
               <Table.Cell>
                 <Text intent="primary" bold>
@@ -33,7 +33,7 @@ export default () => {
                 <Text italic>{`--neb-length-${key}`}</Text>
               </Table.Cell>
               <Table.Cell>
-                <Text>{LENGTH_SCALE[key as never]}</Text>
+                <Text>{NEB_LENGTH[key as never]}</Text>
               </Table.Cell>
             </Table.Row>
           ))}
