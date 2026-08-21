@@ -54,7 +54,7 @@ export const PlaygroundPage = () => {
                   />
                 </SplitView.Main>
                 <SplitView.Side intent="neutral" inlineSize="320px">
-                  <Box padding={{ base: '10px', lg: NEB_LENGTH.px_000 }} paddingLeft={{ lg: '30px' }}>
+                  <Box padding={{ base: NEB_LENGTH.px_012, lg: NEB_LENGTH.px_000 }} paddingLeft={{ lg: NEB_LENGTH.px_032 }}>
                     <Flex flexDirection="column" alignItems="stretch" rowGap={NEB_LENGTH.px_024}>
                       <Flex.Item>
                         <ComponentSelect />

@@ -25,7 +25,7 @@ export default ({ enabled }: { enabled: boolean }) => {
       {!getPaymentInfo.isMakingRequest ? (
         <>
           <Table layout="fixed" intent="neutral">
-            <Table.Body intent="muted" paddingBlock="10px" paddingInline={NEB_LENGTH.px_012}>
+            <Table.Body intent="muted" paddingBlock={NEB_LENGTH.px_012} paddingInline={NEB_LENGTH.px_012}>
               <Table.Row>
                 <Table.Cell colSpan={1}>
                   <Text lineHeight={1.2}>Renews every</Text>

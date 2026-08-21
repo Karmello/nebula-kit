@@ -5,7 +5,7 @@ import { FAQ } from './definitions'
 const Question = ({ question, answer }: { question: string; answer: string }) => {
   return (
     <Reveal label={question}>
-      <Box padding="10px">
+      <Box padding={NEB_LENGTH.px_012}>
         <Text>{answer}</Text>
       </Box>
     </Reveal>

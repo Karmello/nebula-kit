@@ -15,7 +15,7 @@ export const HomePage = () => {
         flexDirection={{ base: 'column', lg: 'row' }}
         justifyContent="center"
         rowGap={NEB_LENGTH.px_064}
-        columnGap={{ base: '50px', xl: '100px' }}
+        columnGap={{ base: NEB_LENGTH.px_048, xl: NEB_LENGTH.px_096 }}
       >
         <Flex.Item flex="2">
           <About />

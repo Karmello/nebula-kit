@@ -11,9 +11,9 @@ export const ListWithChips = ({ heading, items, color = 'blue' }: { heading: str
           variant="solid"
           color={color}
           intent="tertiary"
-          paddingInline="10px"
+          paddingInline={NEB_LENGTH.px_012}
           paddingBlock={NEB_LENGTH.px_004}
-          borderRadius="10px"
+          borderRadius={NEB_LENGTH.px_012}
         >
           <Text>{s}</Text>
         </Box>

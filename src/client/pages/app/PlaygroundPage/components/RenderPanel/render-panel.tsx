@@ -31,7 +31,7 @@ export const RenderPanel = () => {
         drawable
         variant="outline"
         intent="tertiary"
-        padding="25px"
+        padding={NEB_LENGTH.px_024}
         overflowX="auto"
       >
         <Component {...getPropValues(activeComponent)} />

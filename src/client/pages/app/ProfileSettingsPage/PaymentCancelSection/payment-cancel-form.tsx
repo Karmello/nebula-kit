@@ -41,7 +41,7 @@ export const PaymentCancelForm = ({
             * For paid users
           </Text>
         ) : null}
-        <Box position="relative" blockSize="45px">
+        <Box position="relative" blockSize={NEB_LENGTH.px_048}>
           <Box position="absolute">
             <Button
               tagAttrs={{
@@ -59,7 +59,7 @@ export const PaymentCancelForm = ({
           </Box>
           <Box position="absolute">
             <Resize property="inlineSize" visible={enableInput}>
-              <Box inlineSize="400px" paddingRight="20px">
+              <Box inlineSize="400px" paddingRight={NEB_LENGTH.px_024}>
                 <Input
                   placeholder="Enter your email"
                   tagAttrs={{ autoComplete: 'off' }}

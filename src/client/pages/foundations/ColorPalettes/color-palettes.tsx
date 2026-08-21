@@ -33,7 +33,7 @@ export default () => {
                 intent="muted"
                 brand={brand}
                 tagAttrs={{ style: { backgroundColor: `hsl(var(--h) var(--s) var(--l-${n}))` } }}
-                blockSize="50px"
+                blockSize={NEB_LENGTH.px_048}
               />
             </Flex.Item>
           )

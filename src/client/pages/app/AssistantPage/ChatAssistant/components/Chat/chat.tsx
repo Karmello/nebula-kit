@@ -20,7 +20,7 @@ export const Chat = ({ tagRef, chatHistory, handleQuestionClick }: ChatProps) =>
       intent="muted"
       blockSize="100%"
       overflowY="auto"
-      padding="20px"
+      padding={NEB_LENGTH.px_024}
       borderBottomWidth={NEB_LENGTH.px_000}
     >
       <Flex flexDirection="column" rowGap={NEB_LENGTH.px_048}>

@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router'
 
-import { Button, Flex, Link } from 'lib/components'
+import { Button, Flex, Link, NEB_LENGTH } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore, useComponentsPageStore, useFoundationsPageStore, usePatternsStore } from 'client/store'
@@ -173,7 +173,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             bold={currentPageKey === PageKey.blog}
             iconName="rss"
             fullWidth
-            minInlineSize="95px"
+            minInlineSize={NEB_LENGTH.px_096}
           >
             Blog
           </Button>

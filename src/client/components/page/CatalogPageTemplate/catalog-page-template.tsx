@@ -115,7 +115,7 @@ export const CatalogPageTemplate = memo(
                           })}
                       </SideNav>
                     </SplitView.Side>
-                    <SplitView.Main paddingRight="20px">
+                    <SplitView.Main paddingRight={NEB_LENGTH.px_024}>
                       <SplitView.MainBar>
                         <Flex columnGap={NEB_LENGTH.px_016} rowGap={NEB_LENGTH.px_004} alignItems="center" flexWrap="wrap">
                           <Text typography="h3">
@@ -127,9 +127,9 @@ export const CatalogPageTemplate = memo(
                               variant="solid"
                               intent="muted"
                               color="amber"
-                              borderRadius="10px"
+                              borderRadius={NEB_LENGTH.px_012}
                               paddingBlock={NEB_LENGTH.px_006}
-                              paddingInline="9px"
+                              paddingInline={NEB_LENGTH.px_008}
                             >
                               <Text typography="small">{bundleLabel}</Text>
                             </Box>

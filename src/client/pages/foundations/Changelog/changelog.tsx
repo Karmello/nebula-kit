@@ -38,7 +38,7 @@ const PanelContent = ({ bundleNotes, componentNotes }: { bundleNotes?: string[];
   const componentNames = Object.keys(componentNotes)
 
   return (
-    <Box paddingInline="15px" paddingBlock="25px">
+    <Box paddingInline={NEB_LENGTH.px_016} paddingBlock={NEB_LENGTH.px_024}>
       <Notes notes={bundleNotes} />
       {componentNames.map((name, i) => (
         <Box key={name}>

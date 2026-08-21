@@ -29,7 +29,7 @@ export default () => {
         markdown content and external components outside the NebulaKit primitives.
       </Text>
       <Spacer blockSize={NEB_LENGTH.px_048} />
-      <Table paddingBlock="10px" paddingInline="15px">
+      <Table paddingBlock={NEB_LENGTH.px_012} paddingInline={NEB_LENGTH.px_016}>
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeaderCell>Typography</Table.HeaderCell>

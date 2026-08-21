@@ -40,7 +40,7 @@ export default () => {
 
       {!getUser.isMakingRequest ? (
         <Table layout="fixed" intent="neutral">
-          <Table.Body intent="muted" paddingBlock="10px" paddingInline={NEB_LENGTH.px_012}>
+          <Table.Body intent="muted" paddingBlock={NEB_LENGTH.px_012} paddingInline={NEB_LENGTH.px_012}>
             <Table.Row>
               <Table.Cell>
                 <Text lineHeight={1.2}>Email</Text>

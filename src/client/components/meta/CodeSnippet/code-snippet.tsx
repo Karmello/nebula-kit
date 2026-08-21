@@ -53,7 +53,7 @@ export const CodeSnippet = ({
         <Flex alignItems="flex-end" columnGap={NEB_LENGTH.px_008}>
           <Flex.Item flex="1">
             {description ? (
-              <Box paddingBlock="10px">
+              <Box paddingBlock={NEB_LENGTH.px_012}>
                 <Title iconName={descriptionIcon ? 'arrow-down' : undefined}>
                   <Text bold={boldDescription} intent="neutral" tagAttrs={{ style: { lineHeight: 1.25 } }}>
                     {description}

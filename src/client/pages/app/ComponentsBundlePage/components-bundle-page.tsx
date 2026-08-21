@@ -12,7 +12,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
   const navigateTo = useNavigateTo()
 
   return (
-    <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }}>
+    <Box paddingTop={NEB_LENGTH.px_016} paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}>
       <Section
         size="lg"
         heading={bundle === 'core' ? `Core bundle (${CORE_DATA.length})` : `Pro bundle (${PRO_DATA.length})`}

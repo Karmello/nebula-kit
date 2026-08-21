@@ -40,7 +40,7 @@ export const AppPrefsDialog = () => {
         </Title>
       </Dialog.Header>
       <Dialog.Content>
-        <Box padding="20px" paddingBottom="40px">
+        <Box padding={NEB_LENGTH.px_024} paddingBottom={NEB_LENGTH.px_048}>
           <Flex flexWrap="wrap" columnGap={NEB_LENGTH.px_016} rowGap={NEB_LENGTH.px_024}>
             <Flex.Item>
               <Text bold typography="small">

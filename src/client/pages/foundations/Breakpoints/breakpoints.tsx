@@ -6,7 +6,7 @@ export default () => {
     <Box maxInlineSize={{ lg: '55rem' }}>
       <Text>Responsive breakpoints with their pixel ranges defined in the system.</Text>
       <Spacer blockSize={NEB_LENGTH.px_048} />
-      <Table paddingBlock="10px" paddingInline="15px">
+      <Table paddingBlock={NEB_LENGTH.px_012} paddingInline={NEB_LENGTH.px_016}>
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeaderCell>Breakpoint</Table.HeaderCell>
