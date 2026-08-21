@@ -48,32 +48,6 @@
   padding-inline: initial;
   padding-block: initial;
   padding: initial;
-
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-  gap: initial;
-  row-gap: initial;
-  column-gap: initial;
-  flex: 0 1 auto;
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-  align-self: auto;
-  order: 0;
-
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-auto-rows: auto;
-  grid-auto-columns: auto;
-  grid-auto-flow: row;
-  place-items: stretch;
-  place-content: start;
-  grid-column: auto;
-  grid-row: auto;
-  justify-self: auto;
 }
 
 .neb-box[data-neb-box-disabled='true'] {

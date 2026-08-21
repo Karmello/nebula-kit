@@ -21,15 +21,11 @@ export const JoinedActionGroup = () => {
           inlineSize="100%"
           blockSize={NEB_LENGTH.px_064}
           borderRadius={NEB_LENGTH.px_000}
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
         >
-          <Box
-            display="flex"
-            tagAttrs={{ style: { blockSize: '100%' } }}
-            justifyContent="center"
-            alignItems="center"
-          >
-            <Text>Hello !</Text>
-          </Box>
+          <Text>Hello !</Text>
         </Box>
       </Box>
     </Box>
