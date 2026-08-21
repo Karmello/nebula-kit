@@ -1,4 +1,4 @@
-import { MeasuredSizeProperty, MeasuredSizes } from '../'
+import { MeasuredSizeProperty, MeasuredSizes } from '../syncMeasuredSize'
 
 export type SyncResizeVisibilityProps = {
   container: HTMLElement
