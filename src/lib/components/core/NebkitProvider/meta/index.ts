@@ -27,11 +27,6 @@ export const NEBKIT_PROVIDER_META = {
       guidelines: ['must wrap the application root and should be rendered once at the top level'],
     },
     props: {
-      children: {
-        options: ['ReactElement'],
-        isRequired: true,
-        description: 'Application component to be wrapped by the provider.',
-      },
       borderRadiusSize: {
         options: NEBKIT_PROVIDER_BORDER_RADIUS_SIZES,
         defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE),
@@ -41,6 +36,11 @@ export const NEBKIT_PROVIDER_META = {
         options: ['BoxColor'],
         defaultValue: DEFAULT_NEBKIT_PROVIDER_BRAND,
         description: 'Global brand color used as the primary accent across components.',
+      },
+      children: {
+        options: ['ReactElement'],
+        isRequired: true,
+        description: 'Application component to be wrapped by the provider.',
       },
       lockGlobalScroll: {
         options: ['boolean'],

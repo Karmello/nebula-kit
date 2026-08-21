@@ -32,16 +32,36 @@ export const BUTTON_META = {
       exposedTags: BUTTON_TAGS,
     },
     props: {
-      elevated: BOX_META.Box.props.elevated,
-      selected: {
-        options: ['boolean'],
-        description: 'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
+      align: {
+        options: BUTTON_ALIGNS,
+        defaultValue: String(DEFAULT_BUTTON_ALIGN),
+        isResponsive: true,
+        description: 'Controls how inner content is arranged within the container.',
+      },
+      bold: TEXT_META.Text.props.bold,
+      children: {
+        ...BOX_META.Box.props.children,
+        isRequired: true,
+        description: 'Label rendered.',
       },
       color: BOX_META.Box.props.color,
-      variant: {
-        ...BOX_META.Box.props.variant,
-        defaultValue: String(DEFAULT_BUTTON_VARIANT),
+      customSvgIcon: {
+        ...ICON_META.Icon.props.children,
       },
+      disabled: BOX_META.Box.props.disabled,
+      elevated: BOX_META.Box.props.elevated,
+      fullWidth: {
+        options: ['boolean'],
+        isResponsive: true,
+        description: 'Expands the button to match the full width of its container.',
+      },
+      iconName: ICON_META.Icon.props.name,
+      iconPlacement: {
+        options: BUTTON_ICON_PLACEMENTS,
+        defaultValue: DEFAULT_BUTTON_ICON_PLACEMENT,
+        description: 'Icon placement relative to label.',
+      },
+      inlineSize: BOX_META.Box.props.inlineSize,
       intent: {
         ...BOX_META.Box.props.intent,
         defaultValue: String(DEFAULT_BUTTON_INTENT),
@@ -50,16 +70,15 @@ export const BUTTON_META = {
         options: ['boolean'],
         description: 'Activates the loading state, shows a spinner and prevents interaction.',
       },
-      disabled: BOX_META.Box.props.disabled,
+      maxInlineSize: BOX_META.Box.props.maxInlineSize,
+      minInlineSize: BOX_META.Box.props.minInlineSize,
+      onClick: {
+        options: ['e => void'],
+        description: 'Click event handler for the button element.',
+      },
       ripple: {
         ...BOX_META.Box.props.ripple,
         defaultValue: String(DEFAULT_BUTTON_RIPPLE),
-      },
-      align: {
-        options: BUTTON_ALIGNS,
-        defaultValue: String(DEFAULT_BUTTON_ALIGN),
-        isResponsive: true,
-        description: 'Controls how inner content is arranged within the container.',
       },
       scale: {
         options: TSHIRT_SIZES,
@@ -67,28 +86,9 @@ export const BUTTON_META = {
         description:
           'Controls overall proportions adjusting blockSize, horizontal padding and fontSize to keep content balanced.',
       },
-      fullWidth: {
+      selected: {
         options: ['boolean'],
-        isResponsive: true,
-        description: 'Expands the button to match the full width of its container.',
-      },
-      inlineSize: BOX_META.Box.props.inlineSize,
-      minInlineSize: BOX_META.Box.props.minInlineSize,
-      maxInlineSize: BOX_META.Box.props.maxInlineSize,
-      bold: TEXT_META.Text.props.bold,
-      iconName: ICON_META.Icon.props.name,
-      customSvgIcon: {
-        ...ICON_META.Icon.props.children,
-      },
-      iconPlacement: {
-        options: BUTTON_ICON_PLACEMENTS,
-        defaultValue: DEFAULT_BUTTON_ICON_PLACEMENT,
-        description: 'Icon placement relative to label.',
-      },
-      children: {
-        ...BOX_META.Box.props.children,
-        isRequired: true,
-        description: 'Label rendered.',
+        description: 'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
       },
       tag: {
         ...BOX_META.Box.props.tag,
@@ -97,9 +97,9 @@ export const BUTTON_META = {
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
-      onClick: {
-        options: ['e => void'],
-        description: 'Click event handler for the button element.',
+      variant: {
+        ...BOX_META.Box.props.variant,
+        defaultValue: String(DEFAULT_BUTTON_VARIANT),
       },
     },
     examples: BUTTON_EXAMPLES,

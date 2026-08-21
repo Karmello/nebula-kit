@@ -22,10 +22,9 @@ export const ICON_META = {
       },
     },
     props: {
-      name: {
-        options: ['IconName'],
-        isResponsive: true,
-        description: 'Name of the icon to render.',
+      children: {
+        ...BOX_META.Box.props.children,
+        description: 'Custom SVG icon rendered when not using name prop.',
       },
       color: {
         ...BOX_META.Box.props.color,
@@ -35,17 +34,18 @@ export const ICON_META = {
         ...BOX_META.Box.props.intent,
         description: 'Color tone applied to the icon.',
       },
+      name: {
+        options: ['IconName'],
+        isResponsive: true,
+        description: 'Name of the icon to render.',
+      },
       size: {
         options: [DOCS_CSS_LABEL],
         defaultValue: String(DEFAULT_ICON_SIZE),
         description: 'Size of the icon.',
       },
-      children: {
-        ...BOX_META.Box.props.children,
-        description: 'Custom SVG icon rendered when not using name prop.',
-      },
-      tagRef: BOX_META.Box.props.tagRef,
       tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
     examples: ICON_EXAMPLES,
     changelog: ICON_CHANGELOG,

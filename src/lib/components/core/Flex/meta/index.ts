@@ -29,6 +29,34 @@ export const FLEX_META = {
       slots: ['Flex.Item'],
     },
     props: {
+      alignContent: {
+        options: CSS_FLEX_ALIGN_CONTENT,
+        isResponsive: true,
+        description: 'Aligns rows of items along the cross axis when wrapping is enabled.',
+        link: true,
+      },
+      alignItems: {
+        options: CSS_FLEX_ALIGN_ITEMS,
+        isResponsive: true,
+        description: 'Aligns items within each row along the cross axis.',
+        link: true,
+      },
+      children: {
+        ...BOX_META.Box.props.children,
+        description: 'Flex.Item or any React node.',
+      },
+      columnGap: {
+        options: [DOCS_CSS_LABEL],
+        isResponsive: true,
+        description: 'Defines horizontal spacing between columns of children.',
+        link: true,
+      },
+      display: {
+        options: CSS_FLEX_DISPLAY,
+        isResponsive: true,
+        description: 'Switches between block and inline behavior.',
+        link: true,
+      },
       flexDirection: {
         options: CSS_FLEX_DIRECTION,
         isResponsive: true,
@@ -41,28 +69,16 @@ export const FLEX_META = {
         description: 'Controls whether children stay on one line or wrap onto multiple lines.',
         link: true,
       },
-      justifyContent: {
-        options: CSS_FLEX_JUSTIFY_CONTENT,
-        isResponsive: true,
-        description: 'Distributes children along the main axis.',
-        link: true,
-      },
-      alignItems: {
-        options: CSS_FLEX_ALIGN_ITEMS,
-        isResponsive: true,
-        description: 'Aligns items within each row along the cross axis.',
-        link: true,
-      },
-      alignContent: {
-        options: CSS_FLEX_ALIGN_CONTENT,
-        isResponsive: true,
-        description: 'Aligns rows of items along the cross axis when wrapping is enabled.',
-        link: true,
-      },
       gap: {
         options: [DOCS_CSS_LABEL],
         isResponsive: true,
         description: 'Defines spacing between children on both axes.',
+        link: true,
+      },
+      justifyContent: {
+        options: CSS_FLEX_JUSTIFY_CONTENT,
+        isResponsive: true,
+        description: 'Distributes children along the main axis.',
         link: true,
       },
       rowGap: {
@@ -71,25 +87,9 @@ export const FLEX_META = {
         description: 'Defines vertical spacing between rows of children.',
         link: true,
       },
-      columnGap: {
-        options: [DOCS_CSS_LABEL],
-        isResponsive: true,
-        description: 'Defines horizontal spacing between columns of children.',
-        link: true,
-      },
       tag: BOX_META.Box.props.tag,
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
-      children: {
-        ...BOX_META.Box.props.children,
-        description: 'Flex.Item or any React node.',
-      },
-      display: {
-        options: CSS_FLEX_DISPLAY,
-        isResponsive: true,
-        description: 'Switches between block and inline behavior.',
-        link: true,
-      },
     },
     examples: FLEX_EXAMPLES,
     changelog: FLEX_CHANGELOG,
@@ -106,6 +106,13 @@ export const FLEX_META = {
       composedOf: ['Box'],
     },
     props: {
+      alignSelf: {
+        options: CSS_FLEX_ITEM_ALIGN_SELF,
+        isResponsive: true,
+        description: "Overrides the parent container's alignItems value for this specific item.",
+        link: true,
+      },
+      children: BOX_META.Box.props.children,
       flex: {
         options: [DOCS_CSS_LABEL],
         isResponsive: true,
@@ -130,12 +137,7 @@ export const FLEX_META = {
         description: 'Controls how much the item can shrink relative to the other items when space is limited.',
         link: true,
       },
-      alignSelf: {
-        options: CSS_FLEX_ITEM_ALIGN_SELF,
-        isResponsive: true,
-        description: "Overrides the parent container's alignItems value for this specific item.",
-        link: true,
-      },
+      hidden: BOX_META.Box.props.hidden,
       order: {
         options: [DOCS_CSS_LABEL],
         isResponsive: true,
@@ -145,8 +147,6 @@ export const FLEX_META = {
       tag: BOX_META.Box.props.tag,
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
-      children: BOX_META.Box.props.children,
-      hidden: BOX_META.Box.props.hidden,
     },
     examples: FLEX_ITEM_EXAMPLES,
   } satisfies ComponentMeta<FlexItemProps>,

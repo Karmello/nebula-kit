@@ -26,12 +26,15 @@ export const TITLE_META = {
       exposedTags: ['span'],
     },
     props: {
+      children: {
+        ...FLEX_META.Flex.props.children,
+        isRequired: true,
+        description:
+          'Content rendered as the title. Plain string or number children are wrapped in Text using the selected typography. Custom React nodes are rendered directly.',
+      },
       color: BOX_META.Box.props.color,
-      intent: BOX_META.Box.props.intent,
-      typography: {
-        options: TITLE_TYPOGRAPHY,
-        defaultValue: DEFAULT_TITLE_TYPOGRAPHY,
-        description: 'Typography style used for plain text children and for deriving the icon size and spacing.',
+      customSvgIcon: {
+        ...ICON_META.Icon.props.children,
       },
       iconName: ICON_META.Icon.props.name,
       iconPlacement: {
@@ -41,17 +44,14 @@ export const TITLE_META = {
         isResponsive: false,
         description: 'Icon placement relative to children.',
       },
-      customSvgIcon: {
-        ...ICON_META.Icon.props.children,
-      },
-      children: {
-        ...FLEX_META.Flex.props.children,
-        isRequired: true,
-        description:
-          'Content rendered as the title. Plain string or number children are wrapped in Text using the selected typography. Custom React nodes are rendered directly.',
-      },
+      intent: BOX_META.Box.props.intent,
       tagAttrs: FLEX_META.Flex.props.tagAttrs,
       tagRef: FLEX_META.Flex.props.tagRef,
+      typography: {
+        options: TITLE_TYPOGRAPHY,
+        defaultValue: DEFAULT_TITLE_TYPOGRAPHY,
+        description: 'Typography style used for plain text children and for deriving the icon size and spacing.',
+      },
     },
     examples: TITLE_EXAMPLES,
     changelog: TITLE_CHANGELOG,

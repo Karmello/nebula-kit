@@ -29,6 +29,10 @@ export const MARKER_LIST_META = {
         ...BOX_META.Box.props.color,
         description: 'Color applied to all items at once.',
       },
+      gap: {
+        ...FLEX_META.Flex.props.rowGap,
+        defaultValue: String(DEFAULT_MARKER_LIST_GAP),
+      },
       intent: {
         ...BOX_META.Box.props.intent,
         description: 'Color tone applied to all items at once.',
@@ -39,10 +43,6 @@ export const MARKER_LIST_META = {
         isRequired: false,
         isResponsive: false,
         description: 'Defines the marker style used for list items.',
-      },
-      gap: {
-        ...FLEX_META.Flex.props.rowGap,
-        defaultValue: String(DEFAULT_MARKER_LIST_GAP),
       },
       tag: {
         ...BOX_META.Box.props.tag,

@@ -33,41 +33,24 @@ export const TOOLTIP_META = {
       composedOf: ['Floating', 'Box', 'Text'],
     },
     props: {
-      content: {
-        options: ['string'],
+      children: {
+        ...BOX_META.Box.props.children,
         isRequired: true,
-        description: 'The text content displayed inside the tooltip.',
-      },
-      placement: {
-        options: TOOLTIP_PLACEMENTS,
-        defaultValue: DEFAULT_TOOLTIP_PLACEMENT,
-        description:
-          'Preferred position of the tooltip relative to its trigger element. The position gets auto-adjusted so the tooltip stays visible.',
+        description: 'Trigger element.',
       },
       color: {
         ...BOX_META.Box.props.color,
         isResponsive: false,
       },
-      variant: {
-        ...BOX_META.Box.props.variant,
-        options: TOOLTIP_VARIANTS,
-        defaultValue: String(DEFAULT_TOOLTIP_VARIANT),
-        isResponsive: false,
+      content: {
+        options: ['string'],
+        isRequired: true,
+        description: 'The text content displayed inside the tooltip.',
       },
       intent: {
         ...BOX_META.Box.props.intent,
         options: TOOLTIP_INTENTS,
         defaultValue: String(DEFAULT_TOOLTIP_INTENT),
-        isResponsive: false,
-      },
-      mode: {
-        options: TOOLTIP_MODES,
-        defaultValue: DEFAULT_TOOLTIP_MODE,
-        description: 'Controls which interaction opens the tooltip.',
-      },
-      minInlineSize: {
-        ...BOX_META.Box.props.minInlineSize,
-        options: ['number'],
         isResponsive: false,
       },
       maxInlineSize: {
@@ -76,10 +59,27 @@ export const TOOLTIP_META = {
         defaultValue: String(DEFAULT_TOOLTIP_MAX_INLINE_SIZE),
         isResponsive: false,
       },
-      children: {
-        ...BOX_META.Box.props.children,
-        isRequired: true,
-        description: 'Trigger element.',
+      minInlineSize: {
+        ...BOX_META.Box.props.minInlineSize,
+        options: ['number'],
+        isResponsive: false,
+      },
+      mode: {
+        options: TOOLTIP_MODES,
+        defaultValue: DEFAULT_TOOLTIP_MODE,
+        description: 'Controls which interaction opens the tooltip.',
+      },
+      placement: {
+        options: TOOLTIP_PLACEMENTS,
+        defaultValue: DEFAULT_TOOLTIP_PLACEMENT,
+        description:
+          'Preferred position of the tooltip relative to its trigger element. The position gets auto-adjusted so the tooltip stays visible.',
+      },
+      variant: {
+        ...BOX_META.Box.props.variant,
+        options: TOOLTIP_VARIANTS,
+        defaultValue: String(DEFAULT_TOOLTIP_VARIANT),
+        isResponsive: false,
       },
     },
     examples: TOOLTIP_EXAMPLES,

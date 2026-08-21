@@ -31,14 +31,14 @@ export const LINK_META = {
         isRequired: true,
         description: 'Destination URL.',
       },
+      onClick: {
+        options: ['e => void'],
+        description: 'Callback fired when the component is clicked. Automatically prevents default navigation when provided.',
+      },
       target: {
         options: LINK_TARGETS,
         defaultValue: DEFAULT_LINK_TARGET,
         description: 'Specifies where to open the linked document, following the standard HTML target attribute behavior.',
-      },
-      onClick: {
-        options: ['e => void'],
-        description: 'Callback fired when the component is clicked. Automatically prevents default navigation when provided.',
       },
     },
     changelog: LINK_CHANGELOG,

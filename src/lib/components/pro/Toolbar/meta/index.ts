@@ -30,8 +30,6 @@ export const TOOLBAR_META = {
         options: ['Toolbar.Start', 'Toolbar.Main', 'Toolbar.End'],
         description: 'Accepts slots directly or via a render function with access to the context argument.',
       },
-      tagAttrs: GRID_META.Grid.props.tagAttrs,
-      tagRef: GRID_META.Grid.props.tagRef,
       switchAt: {
         options: SWITCH_BREAKPOINTS,
         defaultValue: DEFAULT_SWITCH_BREAKPOINT,
@@ -39,6 +37,8 @@ export const TOOLBAR_META = {
         isResponsive: false,
         description: 'Defines the breakpoint at which the main section switches between collapsed and inline layout.',
       },
+      tagAttrs: GRID_META.Grid.props.tagAttrs,
+      tagRef: GRID_META.Grid.props.tagRef,
     },
     examples: TOOLBAR_EXAMPLES,
     changelog: TOOLBAR_CHANGELOG,

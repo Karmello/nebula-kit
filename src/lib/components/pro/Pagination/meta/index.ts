@@ -59,6 +59,10 @@ export const PAGINATION_META = {
         isRequired: true,
         description: 'Callback invoked with the target page number when the active page changes.',
       },
+      scale: {
+        ...BUTTON_META.Button.props.scale,
+        defaultValue: DEFAULT_TSHIRT_SIZE,
+      },
       showFirstLast: {
         options: ['boolean'],
         defaultValue: String(DEFAULT_PAGINATION_SHOW_FIRST_LAST),
@@ -73,10 +77,6 @@ export const PAGINATION_META = {
         options: ['number'],
         defaultValue: String(DEFAULT_PAGINATION_SIBLING_COUNT),
         description: 'Number of page items shown adjacent to the current page.',
-      },
-      scale: {
-        ...BUTTON_META.Button.props.scale,
-        defaultValue: DEFAULT_TSHIRT_SIZE,
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,

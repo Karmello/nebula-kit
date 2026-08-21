@@ -33,12 +33,14 @@ export const ICON_BUTTON_META = {
       exposedTags: ICON_BUTTON_TAGS,
     },
     props: {
-      elevated: BOX_META.Box.props.elevated,
       color: BOX_META.Box.props.color,
-      variant: {
-        ...BOX_META.Box.props.variant,
-        defaultValue: String(DEFAULT_ICON_BUTTON_VARIANT),
+      customSvgIcon: {
+        ...ICON_META.Icon.props.children,
+        description: 'Custom SVG icon rendered instead of iconName.',
       },
+      disabled: BOX_META.Box.props.disabled,
+      elevated: BOX_META.Box.props.elevated,
+      iconName: ICON_META.Icon.props.name,
       intent: {
         ...BOX_META.Box.props.intent,
         defaultValue: String(DEFAULT_ICON_BUTTON_INTENT),
@@ -47,7 +49,10 @@ export const ICON_BUTTON_META = {
         options: ['boolean'],
         description: 'Activates the loading state, shows a spinner and prevents interaction.',
       },
-      disabled: BOX_META.Box.props.disabled,
+      onClick: {
+        options: ['e => void'],
+        description: 'Click event handler for the element.',
+      },
       ripple: {
         ...BOX_META.Box.props.ripple,
         defaultValue: String(DEFAULT_ICON_BUTTON_RIPPLE),
@@ -57,20 +62,15 @@ export const ICON_BUTTON_META = {
         defaultValue: DEFAULT_ICON_BUTTON_SCALE,
         description: 'Controls the overall interaction geometry and icon proportions',
       },
-      iconName: ICON_META.Icon.props.name,
-      customSvgIcon: {
-        ...ICON_META.Icon.props.children,
-        description: 'Custom SVG icon rendered instead of iconName.',
-      },
       tag: {
         ...BOX_META.Box.props.tag,
         options: ICON_BUTTON_TAGS,
       },
-      tagRef: BOX_META.Box.props.tagRef,
       tagAttrs: BOX_META.Box.props.tagAttrs,
-      onClick: {
-        options: ['e => void'],
-        description: 'Click event handler for the element.',
+      tagRef: BOX_META.Box.props.tagRef,
+      variant: {
+        ...BOX_META.Box.props.variant,
+        defaultValue: String(DEFAULT_ICON_BUTTON_VARIANT),
       },
     },
     examples: ICON_BUTTON_EXAMPLES,

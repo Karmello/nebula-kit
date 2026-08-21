@@ -55,12 +55,12 @@ export const AUTOCOMPLETE_META = {
         options: ['string'],
         description: 'Initial selected item value when the component is used in uncontrolled mode.',
       },
-      disabled: BOX_META.Box.props.disabled,
       disableFiltering: {
         options: ['boolean'],
         defaultValue: String(DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING),
         description: 'Disables internal label-based filtering. Use when options are filtered externally.',
       },
+      disabled: BOX_META.Box.props.disabled,
       dropdownPlacement: {
         options: DROPDOWN_LIST_PLACEMENTS,
         defaultValue: DEFAULT_DROPDOWN_LIST_PLACEMENT,

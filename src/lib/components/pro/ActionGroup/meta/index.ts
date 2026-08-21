@@ -35,38 +35,38 @@ export const ACTION_GROUP_META = {
       slots: ['ActionGroup.Item'],
     },
     props: {
-      color: BOX_META.Box.props.color,
-      intent: {
-        ...BOX_META.Box.props.intent,
-        defaultValue: String(DEFAULT_ACTION_GROUP_INTENT),
-      },
-      elevated: BOX_META.Box.props.elevated,
-      ripple: {
-        ...BOX_META.Box.props.ripple,
-        defaultValue: String(DEFAULT_ACTION_GROUP_RIPPLE),
-      },
       attach: {
         options: ACTION_GROUP_ATTACH,
         description:
           'Removes radius on the specified edge and applies the internal seam spacing needed to visually connect adjacent surfaces.',
-      },
-      direction: {
-        ...FLEX_META.Flex.props.flexDirection,
-        options: ACTION_GROUP_DIRECTION,
-        defaultValue: String(DEFAULT_ACTION_GROUP_DIRECTION),
-        isResponsive: false,
-      },
-      stretch: {
-        options: ['boolean'],
-        description: 'Whether items should stretch to evenly fill the available inline space.',
       },
       children: {
         ...FLEX_META.Flex.props.children,
         isRequired: true,
         description: 'ActionGroup.Item slots.',
       },
-      tagRef: FLEX_META.Flex.props.tagRef,
+      color: BOX_META.Box.props.color,
+      direction: {
+        ...FLEX_META.Flex.props.flexDirection,
+        options: ACTION_GROUP_DIRECTION,
+        defaultValue: String(DEFAULT_ACTION_GROUP_DIRECTION),
+        isResponsive: false,
+      },
+      elevated: BOX_META.Box.props.elevated,
+      intent: {
+        ...BOX_META.Box.props.intent,
+        defaultValue: String(DEFAULT_ACTION_GROUP_INTENT),
+      },
+      ripple: {
+        ...BOX_META.Box.props.ripple,
+        defaultValue: String(DEFAULT_ACTION_GROUP_RIPPLE),
+      },
+      stretch: {
+        options: ['boolean'],
+        description: 'Whether items should stretch to evenly fill the available inline space.',
+      },
       tagAttrs: FLEX_META.Flex.props.tagAttrs,
+      tagRef: FLEX_META.Flex.props.tagRef,
     },
     examples: ACTION_GROUP_EXAMPLES,
     changelog: ACTION_GROUP_CHANGELOG,
@@ -83,26 +83,26 @@ export const ACTION_GROUP_META = {
       exposedTags: ACTION_GROUP_ITEM_TAGS,
     },
     props: {
-      selected: {
-        options: ['boolean'],
-        description: 'Marks the item as selected and applies the corresponding selected surface styling.',
-      },
-      disabled: BOX_META.Box.props.disabled,
       children: {
         ...FLEX_META.FlexItem.props.children,
         isRequired: true,
+      },
+      disabled: BOX_META.Box.props.disabled,
+      onClick: {
+        options: ['e => void'],
+        description: 'Click event handler for the Item slot.',
+      },
+      selected: {
+        options: ['boolean'],
+        description: 'Marks the item as selected and applies the corresponding selected surface styling.',
       },
       tag: {
         ...FLEX_META.FlexItem.props.tag,
         options: ACTION_GROUP_ITEM_TAGS,
         defaultValue: DEFAULT_ACTION_GROUP_ITEM_TAG,
       },
-      tagRef: FLEX_META.FlexItem.props.tagRef,
       tagAttrs: FLEX_META.FlexItem.props.tagAttrs,
-      onClick: {
-        options: ['e => void'],
-        description: 'Click event handler for the Item slot.',
-      },
+      tagRef: FLEX_META.FlexItem.props.tagRef,
     },
   } satisfies ComponentMeta<ActionGroupItemProps>,
 }

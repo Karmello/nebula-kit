@@ -35,6 +35,12 @@ export const APP_FRAME_META = {
       slots: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer', 'AppFrame.FooterSection'],
     },
     props: {
+      children: {
+        ...GRID_META.Grid.props.children,
+        isRequired: true,
+        options: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer'],
+        description: 'AppFrame.Footer is optional, the rest is required.',
+      },
       stickyHeader: {
         options: ['boolean'],
         defaultValue: 'false',
@@ -42,14 +48,8 @@ export const APP_FRAME_META = {
         isResponsive: false,
         description: 'Keeps the header fixed at the top of the viewport.',
       },
-      children: {
-        ...GRID_META.Grid.props.children,
-        isRequired: true,
-        options: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer'],
-        description: 'AppFrame.Footer is optional, the rest is required.',
-      },
-      tagRef: GRID_META.Grid.props.tagRef,
       tagAttrs: GRID_META.Grid.props.tagAttrs,
+      tagRef: GRID_META.Grid.props.tagRef,
     },
     examples: APP_FRAME_EXAMPLES,
     changelog: APP_FRAME_CHANGELOG,
@@ -64,6 +64,10 @@ export const APP_FRAME_META = {
       exposedTags: ['header'],
     },
     props: {
+      children: {
+        ...BOX_META.Box.props.children,
+        isRequired: true,
+      },
       color: {
         ...BOX_META.Box.props.color,
         isResponsive: false,
@@ -73,12 +77,8 @@ export const APP_FRAME_META = {
         defaultValue: String(DEFAULT_APP_FRAME_HEADER_INTENT),
         isResponsive: false,
       },
-      children: {
-        ...BOX_META.Box.props.children,
-        isRequired: true,
-      },
-      tagRef: BOX_META.Box.props.tagRef,
       tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
   } satisfies ComponentMeta<AppFrameHeaderProps>,
   AppFrameMain: {
@@ -91,19 +91,19 @@ export const APP_FRAME_META = {
       exposedTags: ['main'],
     },
     props: {
-      padding: BOX_META.Box.props.padding,
-      paddingInline: BOX_META.Box.props.paddingInline,
-      paddingBlock: BOX_META.Box.props.paddingBlock,
-      paddingTop: BOX_META.Box.props.paddingTop,
-      paddingRight: BOX_META.Box.props.paddingRight,
-      paddingBottom: BOX_META.Box.props.paddingBottom,
-      paddingLeft: BOX_META.Box.props.paddingLeft,
       children: {
         ...BOX_META.Box.props.children,
         isRequired: true,
       },
-      tagRef: BOX_META.Box.props.tagRef,
+      padding: BOX_META.Box.props.padding,
+      paddingBlock: BOX_META.Box.props.paddingBlock,
+      paddingBottom: BOX_META.Box.props.paddingBottom,
+      paddingInline: BOX_META.Box.props.paddingInline,
+      paddingLeft: BOX_META.Box.props.paddingLeft,
+      paddingRight: BOX_META.Box.props.paddingRight,
+      paddingTop: BOX_META.Box.props.paddingTop,
       tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
   } satisfies ComponentMeta<AppFrameMainProps>,
   AppFrameFooter: {
@@ -120,13 +120,14 @@ export const APP_FRAME_META = {
       slots: ['AppFrame.FooterSection'],
     },
     props: {
+      children: {
+        ...BOX_META.Box.props.children,
+        isRequired: true,
+        description:
+          'Footer content. Can be AppFrame.FooterSection slots or any regular React content when section grouping is not needed.',
+      },
       color: {
         ...BOX_META.Box.props.color,
-        isResponsive: false,
-      },
-      intent: {
-        ...BOX_META.Box.props.intent,
-        defaultValue: String(DEFAULT_APP_FRAME_FOOTER_INTENT),
         isResponsive: false,
       },
       footerStackBreakpoint: {
@@ -135,14 +136,13 @@ export const APP_FRAME_META = {
         description:
           'Defines the breakpoint from which the footer switches from a stacked vertical layout to a horizontal layout.',
       },
-      children: {
-        ...BOX_META.Box.props.children,
-        isRequired: true,
-        description:
-          'Footer content. Can be AppFrame.FooterSection slots or any regular React content when section grouping is not needed.',
+      intent: {
+        ...BOX_META.Box.props.intent,
+        defaultValue: String(DEFAULT_APP_FRAME_FOOTER_INTENT),
+        isResponsive: false,
       },
-      tagRef: BOX_META.Box.props.tagRef,
       tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
   } satisfies ComponentMeta<AppFrameFooterProps>,
   AppFrameFooterSection: {
@@ -161,16 +161,16 @@ export const APP_FRAME_META = {
       exposedTags: ['section'],
     },
     props: {
-      padding: {
-        ...BOX_META.Box.props.padding,
-        defaultValue: String(DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING),
-      },
-      paddingInline: BOX_META.Box.props.paddingInline,
-      paddingBlock: BOX_META.Box.props.paddingBlock,
       children: {
         ...BOX_META.Box.props.children,
         isRequired: true,
       },
+      padding: {
+        ...BOX_META.Box.props.padding,
+        defaultValue: String(DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING),
+      },
+      paddingBlock: BOX_META.Box.props.paddingBlock,
+      paddingInline: BOX_META.Box.props.paddingInline,
     },
   } satisfies ComponentMeta<AppFrameFooterSectionProps>,
 }

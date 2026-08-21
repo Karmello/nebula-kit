@@ -28,41 +28,41 @@ export const FLOATING_META = {
       slots: ['Floating.Trigger', 'Floating.Content'],
     },
     props: {
-      placement: {
-        options: FLOATING_PLACEMENT,
-        defaultValue: DEFAULT_FLOATING_PLACEMENT,
-        description: 'Defines the preferred position of the floating content relative to the trigger.',
-      },
-      offset: {
-        options: ['number'],
-        description: 'Sets the distance between the trigger and floating content.',
-      },
-      mode: {
-        options: FLOATING_MODE,
-        defaultValue: DEFAULT_FLOATING_MODE,
-        description: 'Defines which interaction opens the floating content.',
+      children: {
+        options: ['ReactNode'],
+        isRequired: true,
+        description: 'Floating.Trigger + Floating.Content slots.',
       },
       disabled: {
         options: ['boolean'],
         description:
           'Disables the floating interaction, preventing the floating content from opening through trigger hover or click behavior.',
       },
+      mode: {
+        options: FLOATING_MODE,
+        defaultValue: DEFAULT_FLOATING_MODE,
+        description: 'Defines which interaction opens the floating content.',
+      },
+      offset: {
+        options: ['number'],
+        description: 'Sets the distance between the trigger and floating content.',
+      },
+      onOpenChange: {
+        options: ['(open: boolean) => void'],
+        description: 'Callback fired when the floating content requests to open or close.',
+      },
       onPlacementChange: {
         options: ['placement => void'],
         description: 'Callback fired when the resolved placement changes.',
-      },
-      children: {
-        options: ['ReactNode'],
-        isRequired: true,
-        description: 'Floating.Trigger + Floating.Content slots.',
       },
       open: {
         options: ['boolean'],
         description: 'Controls whether the floating content is currently visible.',
       },
-      onOpenChange: {
-        options: ['(open: boolean) => void'],
-        description: 'Callback fired when the floating content requests to open or close.',
+      placement: {
+        options: FLOATING_PLACEMENT,
+        defaultValue: DEFAULT_FLOATING_PLACEMENT,
+        description: 'Defines the preferred position of the floating content relative to the trigger.',
       },
     },
     examples: FLOATING_EXAMPLES,
@@ -83,17 +83,17 @@ export const FLOATING_META = {
       exposedTags: ['span'],
     },
     props: {
+      children: {
+        options: ['ReactNode'],
+        isRequired: true,
+        description: 'Element used to trigger and position the floating content.',
+      },
       cursor: BOX_META.Box.props.cursor,
       display: {
         ...BOX_META.Box.props.display,
         options: FLOATING_TRIGGER_DISPLAY,
         defaultValue: DEFAULT_FLOATING_TRIGGER_DISPLAY,
         isResponsive: false,
-      },
-      children: {
-        options: ['ReactNode'],
-        isRequired: true,
-        description: 'Element used to trigger and position the floating content.',
       },
     },
   } satisfies ComponentMeta<FloatingTriggerProps>,
