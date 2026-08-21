@@ -19,7 +19,15 @@ type FormFieldOwnProps = {
 
 type PropsFromBox = Pick<
   BoxProps<'div'>,
-  'tagAttrs' | 'tagRef' | 'children' | 'flex' | 'flexGrow' | 'flexShrink' | 'flexBasis' | 'alignSelf' | 'order'
+  | 'tagAttrs'
+  | 'tagRef'
+  | 'children'
+  | 'flex'
+  | 'flexGrow'
+  | 'flexShrink'
+  | 'flexBasis'
+  | 'alignSelf'
+  | 'order'
 >
 
 export type FormFieldProps = PropsFromBox & FormFieldOwnProps

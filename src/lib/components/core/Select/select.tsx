@@ -84,7 +84,13 @@ export const SelectImpl = ({
           borderTopLeftRadius={open && !isOpenDownwards ? '0px' : undefined}
           borderTopRightRadius={open && !isOpenDownwards ? '0px' : undefined}
         >
-          <Box display="flex" tag="span" alignItems="center" justifyContent="space-between" columnGap="8px">
+          <Box
+            display="flex"
+            tag="span"
+            alignItems="center"
+            justifyContent="space-between"
+            columnGap="8px"
+          >
             <Text
               fontSize={CONTROL_SCALE_MAP[size].fontSize}
               lineHeight={CONTROL_SCALE_MAP[size].lineHeight}

@@ -51,7 +51,12 @@ export const AppPrefsDialog = () => {
       </Dialog.Header>
       <Dialog.Content>
         <Box padding={NEB_LENGTH.px_024} paddingBottom={NEB_LENGTH.px_048}>
-          <Box display="flex" flexWrap="wrap" columnGap={NEB_LENGTH.px_016} rowGap={NEB_LENGTH.px_024}>
+          <Box
+            display="flex"
+            flexWrap="wrap"
+            columnGap={NEB_LENGTH.px_016}
+            rowGap={NEB_LENGTH.px_024}
+          >
             <Box>
               <Text bold typography="small">
                 Theme
