@@ -1,6 +1,5 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { BUTTON_META } from 'lib/components/core/Button/meta'
-import { FLEX_META } from 'lib/components/core/Flex/meta'
 import { LINK_META } from 'lib/components/core/Link/meta'
 import { SideNavCategoryProps, SideNavItemProps, SideNavProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
@@ -35,14 +34,14 @@ export const SIDE_NAV_META = {
         'intentionally opinionated and optimized for sidebar navigation, it is not intended as a general-purpose menu component',
         'does not manage selected state internally - active items should be derived from the current route, pathname or query parameters',
       ],
-      composedOf: ['Flex'],
+      composedOf: ['Box'],
       exposedTags: ['nav'],
       slots: ['SideNav.Item', 'SideNav.Category'],
     },
     examples: SIDE_NAV_EXAMPLES,
     props: {
       children: {
-        ...FLEX_META.Flex.props.children,
+        ...BOX_META.Box.props.children,
         options: ['SideNav.Category', 'SideNav.Item'],
         isRequired: true,
         description: 'SideNav slots.',
@@ -58,7 +57,7 @@ export const SIDE_NAV_META = {
           'Controls whether one or multiple categories can remain expanded at the same time.',
       },
       gap: {
-        ...FLEX_META.Flex.props.gap,
+        ...BOX_META.Box.props.gap,
         defaultValue: String(DEFAULT_SIDE_NAV_GAP),
         description: 'Defines vertical spacing between items.',
       },
@@ -70,8 +69,8 @@ export const SIDE_NAV_META = {
         ...BUTTON_META.Button.props.scale,
         defaultValue: DEFAULT_SIDE_NAV_SCALE,
       },
-      tagAttrs: FLEX_META.Flex.props.tagAttrs,
-      tagRef: FLEX_META.Flex.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
       variant: {
         options: SIDE_NAV_VARIANTS,
         isResponsive: true,
@@ -132,7 +131,7 @@ export const SIDE_NAV_META = {
         'intended exclusively for hierarchical navigation within SideNav',
         'expects only SideNav.Item elements as children',
       ],
-      composedOf: ['Box', 'Flex', 'Button', 'Resize', 'Spacer'],
+      composedOf: ['Box', 'Button', 'Resize', 'Spacer'],
       exposedTags: ['ul'],
       slots: ['SideNav.Item'],
     },

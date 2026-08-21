@@ -100,9 +100,6 @@ describe('syncRespStyle', () => {
       padding: '8px',
     })
 
-    syncRespStyle('Flex', ref, 'base' as any, {})
-
-    // Box-applied style must survive Flex update
     expect(el.style.padding).toBe('8px')
   })
 

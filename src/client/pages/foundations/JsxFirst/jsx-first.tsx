@@ -1,9 +1,9 @@
-import { Box, Flex, NEB_LENGTH, Text } from 'lib/components'
+import { Box, NEB_LENGTH, Text } from 'lib/components'
 
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap={NEB_LENGTH.px_016}>
+      <Box display="flex" flexDirection="column" gap={NEB_LENGTH.px_016}>
         <Text>
           NebulaKit is JSX first, meaning most of the time you are going to spend inside your JSX
           files, writing tags and customizing them via React props. This does not mean it is
@@ -41,7 +41,7 @@ export default () => {
           and are intentionally discouraged, as they may interfere with how NebulaKit's internal
           styling engine works and can introduce unexpected behavior.
         </Text>
-      </Flex>
+      </Box>
     </Box>
   )
 }

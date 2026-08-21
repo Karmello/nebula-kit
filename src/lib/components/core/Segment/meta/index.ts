@@ -1,7 +1,7 @@
 import { SegmentItemProps, SegmentProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
-import { FLEX_META } from '../../Flex/meta'
+import { BOX_META } from '../../Box/meta'
 import { DEFAULT_SEGMENT_FLEX_DIRECTION } from '../definitions'
 import { SEGMENT_CHANGELOG } from './changelog'
 import { SEGMENT_EXAMPLES } from './examples'
@@ -17,22 +17,22 @@ export const SEGMENT_META = {
         'automatically manages border radiuses for seamless attachment',
       ],
 
-      composedOf: ['Flex'],
+      composedOf: ['Box'],
       slots: ['Segment.Item'],
     },
     props: {
       children: {
-        ...FLEX_META.Flex.props.children,
+        ...BOX_META.Box.props.children,
         options: ['Segment.Item'],
         description: 'Any number of Segment.Item slots.',
       },
       flexDirection: {
-        ...FLEX_META.Flex.props.flexDirection,
+        ...BOX_META.Box.props.flexDirection,
         defaultValue: String(DEFAULT_SEGMENT_FLEX_DIRECTION),
       },
-      tag: FLEX_META.Flex.props.tag,
-      tagAttrs: FLEX_META.Flex.props.tagAttrs,
-      tagRef: FLEX_META.Flex.props.tagRef,
+      tag: BOX_META.Box.props.tag,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
     examples: SEGMENT_EXAMPLES,
     changelog: SEGMENT_CHANGELOG,
@@ -46,8 +46,20 @@ export const SEGMENT_META = {
       guidelines: [
         'targets the ".neb-box" class to adjust border radiuses, so children must be Boxes or render a Box as the root element under the hood',
       ],
-      composedOf: ['Flex.Item'],
+      composedOf: ['Box'],
     },
-    props: FLEX_META.FlexItem.props,
+    props: {
+      tag: BOX_META.Box.props.tag,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
+      hidden: BOX_META.Box.props.hidden,
+      children: BOX_META.Box.props.children,
+      flex: BOX_META.Box.props.flex,
+      flexGrow: BOX_META.Box.props.flexGrow,
+      flexShrink: BOX_META.Box.props.flexShrink,
+      flexBasis: BOX_META.Box.props.flexBasis,
+      alignSelf: BOX_META.Box.props.alignSelf,
+      order: BOX_META.Box.props.order,
+    },
   } satisfies ComponentMeta<SegmentItemProps>,
 }

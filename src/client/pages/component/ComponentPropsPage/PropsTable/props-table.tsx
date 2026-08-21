@@ -1,8 +1,8 @@
 import { kebabCase } from 'change-case'
 
 import {
+  Box,
   Divider,
-  Flex,
   Icon,
   Link,
   NEB_LENGTH,
@@ -110,23 +110,23 @@ export const PropsTable = ({ data, category }: Props) => {
                 </Table.Cell>
 
                 <Table.Cell>
-                  <Flex justifyContent="center">
+                  <Box display="flex" justifyContent="center">
                     {isRequired ? (
                       <Icon name="check" intent="primary" color="blue" size={NEB_LENGTH.px_016} />
                     ) : (
                       '-'
                     )}
-                  </Flex>
+                  </Box>
                 </Table.Cell>
 
                 <Table.Cell>
-                  <Flex justifyContent="center">
+                  <Box display="flex" justifyContent="center">
                     {isResponsive ? (
                       <Icon name="check" intent="primary" color="blue" size={NEB_LENGTH.px_016} />
                     ) : (
                       '-'
                     )}
-                  </Flex>
+                  </Box>
                 </Table.Cell>
 
                 <Table.Cell>

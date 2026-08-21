@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-import { Box, Flex, NEB_LENGTH, Section, Spacer, SplitView } from 'lib/components'
+import { Box, NEB_LENGTH, Section, Spacer, SplitView } from 'lib/components'
 import { LIB_PREFIX } from 'lib/constants'
 import { getInitialState, usePlaygroundStore } from 'client/store'
 
@@ -40,13 +40,13 @@ export const PlaygroundPage = () => {
               <>
                 <SplitView.Main>
                   <SplitView.MainBar>
-                    <Flex flexWrap="wrap" gap={NEB_LENGTH.px_008}>
-                      <Flex flexWrap="wrap" gap={NEB_LENGTH.px_008}>
+                    <Box display="flex" flexWrap="wrap" gap={NEB_LENGTH.px_008}>
+                      <Box display="flex" flexWrap="wrap" gap={NEB_LENGTH.px_008}>
                         <TogglePropsButton />
                         <PredefinedExamples />
-                      </Flex>
+                      </Box>
                       <DocsButton />
-                    </Flex>
+                    </Box>
                   </SplitView.MainBar>
                   <Spacer blockSize={NEB_LENGTH.px_024} />
                   <RenderPanel />
@@ -62,26 +62,32 @@ export const PlaygroundPage = () => {
                     padding={{ base: NEB_LENGTH.px_012, lg: NEB_LENGTH.px_000 }}
                     paddingLeft={{ lg: NEB_LENGTH.px_032 }}
                   >
-                    <Flex flexDirection="column" alignItems="stretch" rowGap={NEB_LENGTH.px_024}>
-                      <Flex.Item>
+                    <Box
+                      display="flex"
+                      flexDirection="column"
+                      alignItems="stretch"
+                      rowGap={NEB_LENGTH.px_024}
+                    >
+                      <Box>
                         <ComponentSelect />
-                      </Flex.Item>
-                      <Flex.Item>
-                        <Flex
+                      </Box>
+                      <Box>
+                        <Box
+                          display="flex"
                           flexDirection="column"
                           alignItems="stretch"
                           rowGap={NEB_LENGTH.px_008}
                         >
-                          <Flex.Item>
+                          <Box>
                             <PropSelect />
-                          </Flex.Item>
+                          </Box>
                           <SwitchPropViewButton />
-                        </Flex>
-                      </Flex.Item>
-                      <Flex.Item>
+                        </Box>
+                      </Box>
+                      <Box>
                         <PropEditor />
-                      </Flex.Item>
-                    </Flex>
+                      </Box>
+                    </Box>
                   </Box>
                 </SplitView.Side>
               </>

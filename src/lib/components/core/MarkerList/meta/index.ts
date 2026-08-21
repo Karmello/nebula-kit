@@ -3,7 +3,6 @@ import { MarkerListItemProps, MarkerListProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
-import { FLEX_META } from '../../Flex/meta'
 import { DEFAULT_MARKER_LIST_GAP, MARKER_LIST_STYLES } from '../definitions'
 import { MARKER_LIST_CHANGELOG } from './changelog'
 import { MARKER_LIST_EXAMPLES } from './examples'
@@ -17,7 +16,7 @@ export const MARKER_LIST_META = {
       guidelines: [
         'use ol tag with numeric marker styles and ul with bullet marker styles for correct semantics',
       ],
-      composedOf: ['Flex'],
+      composedOf: ['Box'],
       exposedTags: MARKER_LIST_TAGS,
       slots: ['MarkerList.Item'],
     },
@@ -32,7 +31,7 @@ export const MARKER_LIST_META = {
         description: 'Color applied to all items at once.',
       },
       gap: {
-        ...FLEX_META.Flex.props.rowGap,
+        ...BOX_META.Box.props.rowGap,
         defaultValue: String(DEFAULT_MARKER_LIST_GAP),
       },
       intent: {

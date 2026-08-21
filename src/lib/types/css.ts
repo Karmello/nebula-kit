@@ -4,7 +4,6 @@ import {
   CSS_FLEX_ALIGN_CONTENT,
   CSS_FLEX_ALIGN_ITEMS,
   CSS_FLEX_DIRECTION,
-  CSS_FLEX_DISPLAY,
   CSS_FLEX_ITEM_ALIGN_SELF,
   CSS_FLEX_JUSTIFY_CONTENT,
   CSS_FLEX_WRAP,
@@ -29,7 +28,6 @@ export type CssPosition = (typeof CSS_POSITION)[number]
 export type CssVisibility = (typeof CSS_VISIBILITY)[number]
 export type CssCursor = (typeof CSS_CURSOR)[number]
 
-export type CssFlexDisplay = (typeof CSS_FLEX_DISPLAY)[number]
 export type CssFlexDirection = (typeof CSS_FLEX_DIRECTION)[number]
 export type CssFlexWrap = (typeof CSS_FLEX_WRAP)[number]
 export type CssFlexJustifyContent = (typeof CSS_FLEX_JUSTIFY_CONTENT)[number]

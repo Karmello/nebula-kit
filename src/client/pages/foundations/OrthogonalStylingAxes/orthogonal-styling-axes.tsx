@@ -1,4 +1,4 @@
-import { Box, Flex, Link, NEB_LENGTH, Text, Title } from 'lib/components'
+import { Box, Link, NEB_LENGTH, Text, Title } from 'lib/components'
 import { useNavigateTo } from 'client/hooks'
 
 export default () => {
@@ -6,7 +6,7 @@ export default () => {
 
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap={NEB_LENGTH.px_016}>
+      <Box display="flex" flexDirection="column" gap={NEB_LENGTH.px_016}>
         <Text>
           NebulaKit resolves visual styles using five orthogonal axes:
           <Text tag="span" bold space="start">
@@ -48,7 +48,7 @@ export default () => {
             </Text>
           </Link>
         </Title>
-      </Flex>
+      </Box>
     </Box>
   )
 }

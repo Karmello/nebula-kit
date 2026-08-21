@@ -7,7 +7,6 @@ import {
   Box,
   Button,
   Divider,
-  Flex,
   Link,
   Loader,
   MarkerList,
@@ -139,7 +138,7 @@ export const App = () => {
             follow updates, ask questions and join the community through the channels below.
           </Text>
           <Spacer blockSize={NEB_LENGTH.px_016} />
-          <Flex flexDirection="row" flexWrap="wrap" gap={NEB_LENGTH.px_004}>
+          <Box display="flex" flexDirection="row" flexWrap="wrap" gap={NEB_LENGTH.px_004}>
             <Link href="https://x.com/captainnebula" target="_blank">
               <Button
                 color="gray"
@@ -162,7 +161,7 @@ export const App = () => {
                 Discord server
               </Button>
             </Link>
-          </Flex>
+          </Box>
         </AppFrame.FooterSection>
         <AppFrame.FooterSection padding={NEB_LENGTH.px_016}>
           <Text bold>About the author</Text>
@@ -172,7 +171,7 @@ export const App = () => {
             UI architecture and system consistency.
           </Text>
           <Spacer blockSize={NEB_LENGTH.px_016} />
-          <Flex flexDirection="row" flexWrap="wrap" gap={NEB_LENGTH.px_004}>
+          <Box display="flex" flexDirection="row" flexWrap="wrap" gap={NEB_LENGTH.px_004}>
             <Link href="https://www.linkedin.com/in/nogakamil" target="_blank">
               <Button
                 color="blue"
@@ -195,7 +194,7 @@ export const App = () => {
                 GitHub
               </Button>
             </Link>
-          </Flex>
+          </Box>
         </AppFrame.FooterSection>
         <AppFrame.FooterSection padding={NEB_LENGTH.px_016}>
           <Text bold>Legal information</Text>

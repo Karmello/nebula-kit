@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
-import { Flex, SegmentProps } from 'lib/index.core'
+import { Box, SegmentProps } from 'lib/index.core'
 
 import { DEFAULT_SEGMENT_FLEX_DIRECTION } from './definitions'
 
@@ -25,7 +25,8 @@ export const Segment = <T extends ElementType = 'div'>({
     >
       {({ slotsByName }) => {
         return (
-          <Flex
+          <Box
+            display="flex"
             tag={tag}
             tagAttrs={
               {
@@ -39,7 +40,7 @@ export const Segment = <T extends ElementType = 'div'>({
             alignItems="stretch"
           >
             {slotsByName['Segment.Item']}
-          </Flex>
+          </Box>
         )
       }}
     </WithSlots>

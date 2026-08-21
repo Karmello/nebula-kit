@@ -8,7 +8,6 @@ import { BUTTON_META } from '../../lib/components/core/Button/meta'
 import { CALLOUT_META } from '../../lib/components/core/Callout/meta'
 import { CHECKBOX_META } from '../../lib/components/core/Checkbox/meta'
 import { DIVIDER_META } from '../../lib/components/core/Divider/meta'
-import { FLEX_META } from '../../lib/components/core/Flex/meta'
 import { GRID_META } from '../../lib/components/core/Grid/meta'
 import { HTML_TAG_META } from '../../lib/components/core/HtmlTag/meta'
 import { ICON_META } from '../../lib/components/core/Icon/meta'
@@ -66,7 +65,6 @@ const META = {
   Dialog: DIALOG_META,
   Divider: DIVIDER_META,
   Fade: FADE_META,
-  Flex: FLEX_META,
   Floating: FLOATING_META,
   FocusTrap: FOCUS_TRAP_META,
   Form: FORM_META,

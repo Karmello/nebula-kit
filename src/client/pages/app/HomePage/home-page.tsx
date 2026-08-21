@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, NEB_LENGTH, Spacer, Text } from 'lib/components'
+import { Box, Divider, NEB_LENGTH, Spacer, Text } from 'lib/components'
 
 import { About } from './About'
 import { Families } from './Families'
@@ -14,13 +14,14 @@ export const HomePage = () => {
       padding={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
       paddingTop={NEB_LENGTH.px_004}
     >
-      <Flex
+      <Box
+        display="flex"
         flexDirection={{ base: 'column', lg: 'row' }}
         justifyContent="center"
         rowGap={NEB_LENGTH.px_064}
         columnGap={{ base: NEB_LENGTH.px_048, xl: NEB_LENGTH.px_096 }}
       >
-        <Flex.Item flex="2">
+        <Box flex="2">
           <About />
           <Spacer blockSize={{ base: NEB_LENGTH.px_048, lg: NEB_LENGTH.px_048 }} />
           <Text typography="h1" color="blue" intent="primary" bold>
@@ -31,9 +32,10 @@ export const HomePage = () => {
           <Hero />
           <Divider marginBlock={NEB_LENGTH.px_048} />
           <Video />
-        </Flex.Item>
-        <Flex.Item flex="1">
-          <Flex
+        </Box>
+        <Box flex="1">
+          <Box
+            display="flex"
             alignItems="center"
             alignContent="center"
             columnGap={NEB_LENGTH.px_048}
@@ -41,17 +43,17 @@ export const HomePage = () => {
             justifyContent="center"
             flexDirection={{ base: 'column', md: 'row-reverse' }}
           >
-            <Flex.Item>
+            <Box>
               <Preferences />
-            </Flex.Item>
-            <Flex.Item>
+            </Box>
+            <Box>
               <Ortho />
-            </Flex.Item>
-          </Flex>
+            </Box>
+          </Box>
           <Spacer blockSize={NEB_LENGTH.px_064} />
           <Principles />
-        </Flex.Item>
-      </Flex>
+        </Box>
+      </Box>
       <Spacer blockSize={NEB_LENGTH.px_096} />
       <Families />
     </Box>

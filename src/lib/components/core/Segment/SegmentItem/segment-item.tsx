@@ -2,7 +2,7 @@ import { ComponentProps, ElementType, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
-import { Flex, SegmentItemProps } from 'lib/index.core'
+import { Box, SegmentItemProps } from 'lib/index.core'
 
 export const SegmentItem = <T extends ElementType = 'div'>({
   // Flex.Item
@@ -18,7 +18,7 @@ export const SegmentItem = <T extends ElementType = 'div'>({
   order,
 }: SegmentItemProps<T>) => {
   return (
-    <Flex.Item
+    <Box
       tag={tag}
       tagAttrs={
         {
@@ -35,7 +35,7 @@ export const SegmentItem = <T extends ElementType = 'div'>({
       order={order}
     >
       {children}
-    </Flex.Item>
+    </Box>
   )
 }
 

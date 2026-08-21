@@ -1,4 +1,4 @@
-import { Box, Flex, Icon, NEB_LENGTH, Spacer, Text, Tooltip } from 'lib/components'
+import { Box, Icon, NEB_LENGTH, Spacer, Text, Tooltip } from 'lib/components'
 import { type IconName } from 'lib/components/core/Icon/types'
 import { ICONS } from 'lib/icons/lucide'
 
@@ -12,7 +12,8 @@ export default () => {
         </Text>
       </Box>
       <Spacer blockSize={NEB_LENGTH.px_048} />
-      <Flex
+      <Box
+        display="flex"
         flexWrap="wrap"
         justifyContent={{ base: 'center', xl: 'flex-start' }}
         gap={NEB_LENGTH.px_008}
@@ -35,7 +36,7 @@ export default () => {
             </Box>
           </Tooltip>
         ))}
-      </Flex>
+      </Box>
     </>
   )
 }

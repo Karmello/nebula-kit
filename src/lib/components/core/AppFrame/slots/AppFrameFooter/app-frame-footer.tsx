@@ -2,7 +2,7 @@ import { cloneElement } from 'react'
 
 import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
-import { Box, Flex } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 
 import { type AppFrameFooterProps, DEFAULT_APP_FRAME_FOOTER_INTENT } from './definitions'
 
@@ -39,21 +39,22 @@ export const AppFrameFooter = ({
           >
             <Box drawable variant="solid" intent={intent} color={color} borderRadius="0px">
               {appFrameFooterSectionSlots.length ? (
-                <Flex
+                <Box
+                  display="flex"
                   flexDirection={{ base: 'column', [footerStackBreakpoint]: 'row' }}
                   alignItems="stretch"
                 >
                   {appFrameFooterSectionSlots.map((footerSectionSlot, index) => (
-                    <Flex.Item key={index} flex="1">
+                    <Box key={index} flex="1">
                       {cloneElement(footerSectionSlot as any, {
                         color,
                         intent,
                         footerStackBreakpoint,
                         isLast: index === appFrameFooterSectionSlots.length - 1,
                       })}
-                    </Flex.Item>
+                    </Box>
                   ))}
-                </Flex>
+                </Box>
               ) : (
                 children
               )}

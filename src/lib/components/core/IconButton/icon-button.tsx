@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { Box, Flex, Icon, IconButtonProps, Loader } from 'lib/index.core'
+import { Box, Icon, IconButtonProps, Loader } from 'lib/index.core'
 import { IconButtonTag } from 'lib/types'
 
 import {
@@ -23,7 +23,7 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
   // Icon
   iconName,
   customSvgIcon,
-  // Flex
+  // Box
   tag = 'button' as T,
   tagAttrs,
   tagRef,
@@ -65,14 +65,14 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
       cursor="pointer"
       position="relative"
     >
-      <Flex justifyContent="center" alignItems="center">
+      <Box display="flex" justifyContent="center" alignItems="center">
         <Icon name={iconName} size={CONTROL_SCALE_MAP[scale || 'sm'].fontSize}>
           {customSvgIcon}
         </Icon>
         {loading && !disabled ? (
           <Loader centered size={CONTROL_SCALE_MAP[scale || 'sm'].fontSize} />
         ) : null}
-      </Flex>
+      </Box>
     </Box>
   )
 }

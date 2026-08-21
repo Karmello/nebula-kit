@@ -1,6 +1,6 @@
 import { cloneElement, ReactElement, useEffect, useState } from 'react'
 
-import { Flex, Slide, Text } from 'lib/index.core'
+import { Slide, Text } from 'lib/index.core'
 import { type Example } from 'client/definitions'
 
 import { Box } from '../../Box'
@@ -45,7 +45,7 @@ export const SLIDE_EXAMPLES: Example[] = [
   {
     description: 'Sliding in from the right.',
     jsx: (
-      <Flex justifyContent="flex-end">
+      <Box display="flex" justifyContent="flex-end">
         <Box overflowX="hidden">
           <SlideWrapper>
             <Slide visible={false} from="right" duration={1000}>
@@ -53,7 +53,7 @@ export const SLIDE_EXAMPLES: Example[] = [
             </Slide>
           </SlideWrapper>
         </Box>
-      </Flex>
+      </Box>
     ),
     code: `<Slide visible={visible} from="right" duration={1000}>
   <Text>Animated content.</Text>

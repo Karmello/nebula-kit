@@ -1,6 +1,6 @@
 import { useLayoutEffect, useState } from 'react'
 
-import { Button, Flex, Link } from 'lib/components'
+import { Box, Button, Link } from 'lib/components'
 import { COMPONENTS_PAGE_SECTIONS, FOUNDATIONS_SECTIONS, PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useComponentsPageStore, useFoundationsPageStore } from 'client/store'
@@ -65,7 +65,7 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
   const href = `${pageKey}/${categoryKey}/${itemKey}/${sectionKey}`
 
   return (
-    <Flex justifyContent={{ base: 'center', lg: 'flex-start' }}>
+    <Box display="flex" justifyContent={{ base: 'center', lg: 'flex-start' }}>
       <Link
         href={href}
         onClick={() => {
@@ -76,6 +76,6 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
           Continue
         </Button>
       </Link>
-    </Flex>
+    </Box>
   )
 }

@@ -2,7 +2,7 @@ import { useFormContext } from 'react-hook-form'
 
 import { DEFAULT_BUTTON_INTENT } from 'lib/components/core/Button/constants'
 import { withPrefix } from 'lib/helpers'
-import { Button, Flex } from 'lib/index.core'
+import { Box, Button } from 'lib/index.core'
 import { FormActionButtonProps } from 'lib/index.pro'
 
 import {
@@ -44,7 +44,7 @@ export const FormActionButton = ({
   const finalDefaultColor = type === 'submit' ? DEFAULT_FORM_ACTION_SUBMIT_BUTTON_COLOR : undefined
 
   return (
-    <Flex.Item
+    <Box
       tagAttrs={tagAttrs}
       tagRef={tagRef}
       flex={flex}
@@ -79,7 +79,7 @@ export const FormActionButton = ({
       >
         {children}
       </Button>
-    </Flex.Item>
+    </Box>
   )
 }
 

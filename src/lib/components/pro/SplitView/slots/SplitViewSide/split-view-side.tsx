@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 
-import { Box, Flex, IconButton, Resize } from 'lib/index.core'
+import { Box, IconButton, Resize } from 'lib/index.core'
 import { FocusTrap, SplitViewSideProps } from 'lib/index.pro'
 
 import { useSplitViewContext } from '../../SplitViewProvider'
@@ -84,7 +84,7 @@ export const SplitViewSide = ({
             <Box inlineSize={inlineSize} maxInlineSize="100dvw" paddingRight="2px">
               <Box>
                 {mode === 'overlay' ? (
-                  <Flex justifyContent="flex-end">
+                  <Box display="flex" justifyContent="flex-end">
                     <Box padding="4px" paddingRight="2px" paddingBottom="24px">
                       <IconButton
                         iconName="close"
@@ -95,7 +95,7 @@ export const SplitViewSide = ({
                         }}
                       />
                     </Box>
-                  </Flex>
+                  </Box>
                 ) : null}
                 <Box
                   padding={padding}

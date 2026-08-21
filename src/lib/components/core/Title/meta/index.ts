@@ -2,7 +2,6 @@ import { TitleProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
-import { FLEX_META } from '../../Flex/meta'
 import { ICON_META } from '../../Icon/meta'
 import {
   DEFAULT_TITLE_ICON_PLACEMENT,
@@ -27,12 +26,12 @@ export const TITLE_META = {
         'applies shared color and intent to text and icon',
         'allows custom content when children are not plain text',
       ],
-      composedOf: ['Flex', 'Text', 'Icon'],
+      composedOf: ['Box', 'Text', 'Icon'],
       exposedTags: ['span'],
     },
     props: {
       children: {
-        ...FLEX_META.Flex.props.children,
+        ...BOX_META.Box.props.children,
         isRequired: true,
         description:
           'Content rendered as the title. Plain string or number children are wrapped in Text using the selected typography. Custom React nodes are rendered directly.',
@@ -50,8 +49,8 @@ export const TITLE_META = {
         description: 'Icon placement relative to children.',
       },
       intent: BOX_META.Box.props.intent,
-      tagAttrs: FLEX_META.Flex.props.tagAttrs,
-      tagRef: FLEX_META.Flex.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
       typography: {
         options: TITLE_TYPOGRAPHY,
         defaultValue: DEFAULT_TITLE_TYPOGRAPHY,

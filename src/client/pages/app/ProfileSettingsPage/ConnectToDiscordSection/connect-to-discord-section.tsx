@@ -1,4 +1,4 @@
-import { Button, Flex, NEB_LENGTH, Section, Spacer, Text, Title } from 'lib/components'
+import { Box, Button, NEB_LENGTH, Section, Spacer, Text, Title } from 'lib/components'
 import { useConnectToDiscord } from 'client/api'
 
 export const ConnectToDiscordSection = ({
@@ -17,7 +17,7 @@ export const ConnectToDiscordSection = ({
         community. This helps us recognize your plan and provide the right level of support.
       </Text>
       <Spacer blockSize={NEB_LENGTH.px_024} />
-      <Flex alignItems="center" columnGap={NEB_LENGTH.px_016}>
+      <Box display="flex" alignItems="center" columnGap={NEB_LENGTH.px_016}>
         <Button
           tagAttrs={{
             onClick: async () => {
@@ -47,7 +47,7 @@ export const ConnectToDiscordSection = ({
             </Text>
           </Title>
         ) : null}
-      </Flex>
+      </Box>
       <Spacer blockSize={NEB_LENGTH.px_008} />
     </Section>
   )

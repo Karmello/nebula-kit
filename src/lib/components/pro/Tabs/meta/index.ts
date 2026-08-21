@@ -24,7 +24,7 @@ export const TABS_META = {
         'fully keyboard-operable with predictable focus behavior',
         'manages selection state without unmounting content',
       ],
-      composedOf: ['Box', 'Flex', 'ActionGroup'],
+      composedOf: ['Box', 'ActionGroup'],
       exposedTags: ['div'],
       slots: ['Tabs.Tab', 'Tabs.Panel'],
     },
@@ -82,7 +82,7 @@ export const TABS_META = {
         'activates the panel with the matching value',
         'inherits visual styling from Button',
       ],
-      composedOf: ['ActionGroup.Item', 'Flex', 'Text'],
+      composedOf: ['ActionGroup.Item', 'Text'],
       exposedTags: ['button'],
     },
     props: {

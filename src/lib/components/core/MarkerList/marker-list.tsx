@@ -2,7 +2,7 @@ import classNames from 'classnames'
 
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
-import { Flex, MarkerListProps } from 'lib/index.core'
+import { Box, MarkerListProps } from 'lib/index.core'
 import { MarkerListTag } from 'lib/types'
 
 import { DEFAULT_MARKER_LIST_GAP } from './definitions'
@@ -32,7 +32,8 @@ export const MarkerList = <T extends MarkerListTag = 'ul'>({
       {({ slotsByName }) => {
         return (
           <MarkerListProvider color={color} intent={intent}>
-            <Flex
+            <Box
+              display="flex"
               tag={tag || 'ul'}
               tagAttrs={{
                 ...tagAttrs,
@@ -49,7 +50,7 @@ export const MarkerList = <T extends MarkerListTag = 'ul'>({
               gap={gap}
             >
               {slotsByName['MarkerList.Item']}
-            </Flex>
+            </Box>
           </MarkerListProvider>
         )
       }}

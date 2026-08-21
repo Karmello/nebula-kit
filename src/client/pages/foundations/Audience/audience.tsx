@@ -1,9 +1,9 @@
-import { Box, Flex, NEB_LENGTH, Text } from 'lib/components'
+import { Box, NEB_LENGTH, Text } from 'lib/components'
 
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap={NEB_LENGTH.px_016}>
+      <Box display="flex" flexDirection="column" gap={NEB_LENGTH.px_016}>
         <Text>
           NebulaKit is specific. It is not meant to cover every possible approach to building user
           interfaces. That means it will not be a good fit for every developer or every company. It
@@ -34,7 +34,7 @@ export default () => {
           repeat over and over again. Identifying and supporting these well-known patterns is
           exactly what the system is designed to do.
         </Text>
-      </Flex>
+      </Box>
     </Box>
   )
 }

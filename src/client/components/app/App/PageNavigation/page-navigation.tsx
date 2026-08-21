@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router'
 
-import { Button, Flex, Link, NEB_LENGTH } from 'lib/components'
+import { Box, Button, Link, NEB_LENGTH } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import {
@@ -37,13 +37,14 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
   }
 
   return (
-    <Flex
+    <Box
+      display="flex"
       flexDirection={toolbarSlot === 'start' ? 'row' : { base: 'column', md: 'row' }}
       flexWrap={{ base: 'nowrap', md: 'wrap' }}
       alignItems="stretch"
     >
       {toolbarSlot === 'start' ? (
-        <Flex.Item>
+        <Box>
           <Link
             href={PageKey.home}
             onClick={async () => {
@@ -60,9 +61,9 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
               NebulaKit
             </Button>
           </Link>
-        </Flex.Item>
+        </Box>
       ) : null}
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', md: toolbarSlot !== 'start' }}>
+      <Box hidden={{ base: toolbarSlot === 'start', md: toolbarSlot !== 'start' }}>
         <Link
           href={`${PageKey.foundations}/${foundationsPageCategoryKey}/${foundationsPageItemKey}/${foundationsPageSectionKey}`}
           onClick={async () => {
@@ -83,8 +84,8 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             Foundations
           </Button>
         </Link>
-      </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
+      </Box>
+      <Box hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
         <Link
           href={`${PageKey.components}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`}
           onClick={async () => {
@@ -105,8 +106,8 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             Components
           </Button>
         </Link>
-      </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', md: toolbarSlot !== 'start' }}>
+      </Box>
+      <Box hidden={{ base: toolbarSlot === 'start', md: toolbarSlot !== 'start' }}>
         <Link
           href={`${PageKey.patterns}?id=${activePatternId}`}
           onClick={async () => {
@@ -125,8 +126,8 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             Patterns
           </Button>
         </Link>
-      </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
+      </Box>
+      <Box hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
         <Link
           href={PageKey.playground}
           onClick={async () => {
@@ -145,8 +146,8 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             Playground
           </Button>
         </Link>
-      </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
+      </Box>
+      <Box hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
         <Link
           href={PageKey.faq}
           onClick={async () => {
@@ -165,8 +166,8 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             FAQ
           </Button>
         </Link>
-      </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
+      </Box>
+      <Box hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
         <Link
           href={PageKey.blog}
           onClick={async () => {
@@ -185,9 +186,9 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             Blog
           </Button>
         </Link>
-      </Flex.Item>
+      </Box>
       {!user?.plan || user.plan === 'free' ? (
-        <Flex.Item hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
+        <Box hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
           <Link
             href={PageKey.pricing}
             onClick={async () => {
@@ -206,9 +207,9 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
               Pricing
             </Button>
           </Link>
-        </Flex.Item>
+        </Box>
       ) : null}
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', xxl: toolbarSlot !== 'start' }}>
+      <Box hidden={{ base: toolbarSlot === 'start', xxl: toolbarSlot !== 'start' }}>
         <Link
           href={PageKey.feedback}
           onClick={async () => {
@@ -227,8 +228,8 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             Feedback
           </Button>
         </Link>
-      </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', xxl: toolbarSlot !== 'start' }}>
+      </Box>
+      <Box hidden={{ base: toolbarSlot === 'start', xxl: toolbarSlot !== 'start' }}>
         <Link
           href={PageKey.assistant}
           onClick={async () => {
@@ -247,7 +248,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             Assistant
           </Button>
         </Link>
-      </Flex.Item>
-    </Flex>
+      </Box>
+    </Box>
   )
 }

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { Flex, Icon, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, Icon, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import type { BoxColor } from 'lib/components/core/Box/types'
 import type { IconName } from 'lib/components/core/Icon/types'
 import { Plan } from 'client/definitions'
@@ -36,10 +36,10 @@ export const PricingPlanCard = ({
   const OptionIncluded = ({ children }: { children: ReactNode }) => {
     return (
       <>
-        <Flex alignItems="center" columnGap={NEB_LENGTH.px_016}>
+        <Box display="flex" alignItems="center" columnGap={NEB_LENGTH.px_016}>
           <Icon name="check" intent="primary" color={color} size={NEB_LENGTH.px_024} />
           {children}
-        </Flex>
+        </Box>
         <Spacer blockSize={NEB_LENGTH.px_002} />
       </>
     )
@@ -99,9 +99,9 @@ export const PricingPlanCard = ({
         </OptionIncluded>
       ))}
       <Spacer blockSize={NEB_LENGTH.px_048} />
-      <Flex justifyContent="center">
+      <Box display="flex" justifyContent="center">
         <PricingPlanButton plan={plan} activePlan={activePlan} color={color} />
-      </Flex>
+      </Box>
       <Spacer blockSize={NEB_LENGTH.px_016} />
     </Section>
   )

@@ -86,6 +86,21 @@ export const Box = <T extends ElementType = 'div'>({
   marginRight,
   marginBottom,
   marginLeft,
+  // flex
+  flexDirection,
+  flexWrap,
+  justifyContent,
+  alignItems,
+  alignContent,
+  gap,
+  rowGap,
+  columnGap,
+  flex,
+  flexGrow,
+  flexShrink,
+  flexBasis,
+  alignSelf,
+  order,
 }: BoxProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
   const finalRef = tagRef || ref
@@ -144,6 +159,20 @@ export const Box = <T extends ElementType = 'div'>({
       marginRight,
       marginBottom,
       marginLeft,
+      flexDirection,
+      flexWrap,
+      justifyContent,
+      alignItems,
+      alignContent,
+      gap,
+      rowGap,
+      columnGap,
+      flex,
+      flexGrow,
+      flexShrink,
+      flexBasis,
+      alignSelf,
+      order,
     })
   }, [
     bp,
@@ -194,14 +223,38 @@ export const Box = <T extends ElementType = 'div'>({
     marginRight,
     marginBottom,
     marginLeft,
+    flexDirection,
+    flexWrap,
+    justifyContent,
+    alignItems,
+    alignContent,
+    gap,
+    rowGap,
+    columnGap,
+    flex,
+    flexGrow,
+    flexShrink,
+    flexBasis,
+    alignSelf,
+    order,
   ])
 
   useLayoutEffect(() => {
     syncRespDataset('Box', finalRef, bp, {
       theme: resolvedAppearance.theme,
       hidden,
+      flexDirection,
     })
-  }, [bp, tag, resolvedAppearance.theme, resolvedAppearance.color, variant, intent, hidden])
+  }, [
+    bp,
+    tag,
+    resolvedAppearance.theme,
+    resolvedAppearance.color,
+    variant,
+    intent,
+    hidden,
+    flexDirection,
+  ])
 
   const usesRipple = ripple && interactive && !disabled
   useRipple(finalRef, usesRipple)

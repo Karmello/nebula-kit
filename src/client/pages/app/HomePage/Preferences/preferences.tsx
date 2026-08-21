@@ -1,6 +1,6 @@
 import { sentenceCase } from 'change-case'
 
-import { Button, Flex, NEB_LENGTH, Segment, Select, Text } from 'lib/components'
+import { Box, Button, NEB_LENGTH, Segment, Select, Text } from 'lib/components'
 import { BOX_COLORS } from 'lib/components/core/Box/constants'
 import { NEBKIT_PROVIDER_THEMES } from 'lib/components/core/NebkitProvider/constants'
 import { useAppStore } from 'client/store'
@@ -12,13 +12,14 @@ export const Preferences = () => {
   const setBrand = useAppStore(state => state.setBrand)
 
   return (
-    <Flex
+    <Box
+      display="flex"
       flexWrap="wrap"
       rowGap={NEB_LENGTH.px_024}
       columnGap={NEB_LENGTH.px_016}
       justifyContent="center"
     >
-      <Flex.Item>
+      <Box>
         <Text bold>Theme</Text>
         <Segment>
           {NEBKIT_PROVIDER_THEMES.map(key => (
@@ -33,15 +34,15 @@ export const Preferences = () => {
             </Segment.Item>
           ))}
         </Segment>
-      </Flex.Item>
-      <Flex.Item>
+      </Box>
+      <Box>
         <Text bold>Brand</Text>
         <Select value={brand} onChange={setBrand} inlineSize="150px" size="sm">
           {BOX_COLORS.map(brand => (
             <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
           ))}
         </Select>
-      </Flex.Item>
-    </Flex>
+      </Box>
+    </Box>
   )
 }

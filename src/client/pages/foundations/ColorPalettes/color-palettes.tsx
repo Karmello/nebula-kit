@@ -1,6 +1,6 @@
 import { sentenceCase } from 'change-case'
 
-import { Box, Flex, NEB_LENGTH, Select, Spacer, Text } from 'lib/components'
+import { Box, NEB_LENGTH, Select, Spacer, Text } from 'lib/components'
 import { BOX_COLORS } from 'lib/components/core/Box/constants'
 import { useAppStore } from 'client/store'
 
@@ -21,10 +21,10 @@ export default () => {
         ))}
       </Select>
       <Spacer blockSize={NEB_LENGTH.px_048} />
-      <Flex flexDirection="column" alignItems="stretch" rowGap={NEB_LENGTH.px_016}>
+      <Box display="flex" flexDirection="column" alignItems="stretch" rowGap={NEB_LENGTH.px_016}>
         {arr.map(n => {
           return (
-            <Flex.Item key={n} flexGrow="1">
+            <Box key={n} flexGrow="1">
               <Text typography="small">{`Step ${n}`}</Text>
               <Spacer blockSize={NEB_LENGTH.px_002} />
               <Box
@@ -35,10 +35,10 @@ export default () => {
                 tagAttrs={{ style: { backgroundColor: `hsl(var(--h) var(--s) var(--l-${n}))` } }}
                 blockSize={NEB_LENGTH.px_048}
               />
-            </Flex.Item>
+            </Box>
           )
         })}
-      </Flex>
+      </Box>
       <Spacer blockSize={NEB_LENGTH.px_016} />
     </Box>
   )

@@ -1,5 +1,5 @@
 import { WithSlots } from 'lib/components/shared'
-import { Flex } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 import { FormActionsProps } from 'lib/index.pro'
 
 import { DEFAULT_FORM_ACTIONS_GAP } from './definitions'
@@ -25,7 +25,8 @@ export const FormActions = ({
     >
       {({ slotsByName }) => {
         return (
-          <Flex
+          <Box
+            display="flex"
             tagAttrs={tagAttrs}
             tagRef={tagRef}
             flexDirection={flexDirection}
@@ -37,7 +38,7 @@ export const FormActions = ({
             rowGap={rowGap}
           >
             {slotsByName['Form.ActionButton']}
-          </Flex>
+          </Box>
         )
       }}
     </WithSlots>

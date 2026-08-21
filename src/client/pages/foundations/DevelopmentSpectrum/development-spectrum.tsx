@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Icon, NEB_LENGTH, Spacer, Text, Title } from 'lib/components'
+import { Box, Divider, Icon, NEB_LENGTH, Spacer, Text, Title } from 'lib/components'
 
 export default () => {
   return (
@@ -11,12 +11,13 @@ export default () => {
       </Text>
       <Spacer blockSize={NEB_LENGTH.px_048} />
       <Box overflowX="auto">
-        <Flex
+        <Box
+          display="flex"
           flexDirection={{ base: 'column', md: 'row' }}
           alignItems="center"
           gap={NEB_LENGTH.px_016}
         >
-          <Flex.Item flex="1">
+          <Box flex="1">
             <Box drawable variant="outline" intent="secondary" color="red" minInlineSize="300px">
               <Box drawable variant="solid" intent="muted" color="red" padding={NEB_LENGTH.px_024}>
                 <Text typography="h5" intent="primary" color="red">
@@ -42,11 +43,11 @@ export default () => {
                 </Title>
               </Box>
             </Box>
-          </Flex.Item>
-          <Flex.Item>
+          </Box>
+          <Box>
             <Icon name={{ base: 'arrow-down', md: 'arrow-right' }} size={NEB_LENGTH.px_024} />
-          </Flex.Item>
-          <Flex.Item flex="1">
+          </Box>
+          <Box flex="1">
             <Box drawable variant="outline" intent="secondary" color="blue" minInlineSize="300px">
               <Box drawable variant="solid" intent="muted" color="blue" padding={NEB_LENGTH.px_024}>
                 <Text typography="h5" intent="primary" color="blue">
@@ -73,11 +74,11 @@ export default () => {
                 </Title>
               </Box>
             </Box>
-          </Flex.Item>
-          <Flex.Item>
+          </Box>
+          <Box>
             <Icon name={{ base: 'arrow-down', md: 'arrow-right' }} size={NEB_LENGTH.px_024} />
-          </Flex.Item>
-          <Flex.Item flex="1">
+          </Box>
+          <Box flex="1">
             <Box drawable variant="outline" intent="secondary" color="red" minInlineSize="300px">
               <Box drawable variant="solid" intent="muted" color="red" padding={NEB_LENGTH.px_024}>
                 <Text typography="h5" intent="primary" color="red">
@@ -102,8 +103,8 @@ export default () => {
                 </Title>
               </Box>
             </Box>
-          </Flex.Item>
-        </Flex>
+          </Box>
+        </Box>
       </Box>
     </>
   )

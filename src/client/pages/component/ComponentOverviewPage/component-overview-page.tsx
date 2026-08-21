@@ -1,6 +1,6 @@
 import { pascalCase } from 'change-case'
 
-import { Box, Button, Flex, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { CodeSnippet } from 'client/components'
 import { ComponentMeta } from 'client/definitions'
 import { convertElemToString } from 'client/helpers'
@@ -32,7 +32,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   } = meta
 
   const content = (
-    <Flex flexDirection="column" alignItems="stretch" gap={NEB_LENGTH.px_032}>
+    <Box display="flex" flexDirection="column" alignItems="stretch" gap={NEB_LENGTH.px_032}>
       <Box>
         <Text typography="lead">{title}</Text>
         {examples?.[0] ? (
@@ -87,7 +87,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
           </Link>
         </Box>
       ) : null}
-    </Flex>
+    </Box>
   )
 
   return (

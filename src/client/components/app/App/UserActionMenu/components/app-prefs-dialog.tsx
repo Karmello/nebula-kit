@@ -4,7 +4,6 @@ import {
   Box,
   Button,
   Dialog,
-  Flex,
   NEB_LENGTH,
   Segment,
   Select,
@@ -52,8 +51,8 @@ export const AppPrefsDialog = () => {
       </Dialog.Header>
       <Dialog.Content>
         <Box padding={NEB_LENGTH.px_024} paddingBottom={NEB_LENGTH.px_048}>
-          <Flex flexWrap="wrap" columnGap={NEB_LENGTH.px_016} rowGap={NEB_LENGTH.px_024}>
-            <Flex.Item>
+          <Box display="flex" flexWrap="wrap" columnGap={NEB_LENGTH.px_016} rowGap={NEB_LENGTH.px_024}>
+            <Box>
               <Text bold typography="small">
                 Theme
               </Text>
@@ -71,8 +70,8 @@ export const AppPrefsDialog = () => {
                   </Segment.Item>
                 ))}
               </Segment>
-            </Flex.Item>
-            <Flex.Item>
+            </Box>
+            <Box>
               <Text bold typography="small">
                 Brand
               </Text>
@@ -82,8 +81,8 @@ export const AppPrefsDialog = () => {
                   <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
                 ))}
               </Select>
-            </Flex.Item>
-            <Flex.Item>
+            </Box>
+            <Box>
               <Text bold typography="small">
                 Saturation
               </Text>
@@ -93,8 +92,8 @@ export const AppPrefsDialog = () => {
                   <Select.Option value={saturation}>{sentenceCase(saturation)}</Select.Option>
                 ))}
               </Select>
-            </Flex.Item>
-            <Flex.Item>
+            </Box>
+            <Box>
               <Text bold typography="small">
                 Border radius
               </Text>
@@ -109,8 +108,8 @@ export const AppPrefsDialog = () => {
                   <Select.Option value={n}>{n}</Select.Option>
                 ))}
               </Select>
-            </Flex.Item>
-            <Flex.Item>
+            </Box>
+            <Box>
               <Text bold typography="small">
                 Ripple mode
               </Text>
@@ -120,8 +119,8 @@ export const AppPrefsDialog = () => {
                   <Select.Option value={n}>{sentenceCase(n)}</Select.Option>
                 ))}
               </Select>
-            </Flex.Item>
-          </Flex>
+            </Box>
+          </Box>
         </Box>
       </Dialog.Content>
       <Dialog.Footer>

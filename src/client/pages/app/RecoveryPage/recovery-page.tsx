@@ -4,7 +4,6 @@ import {
   Box,
   Button,
   Divider,
-  Flex,
   Form,
   Input,
   Link,
@@ -84,7 +83,7 @@ export const RecoveryPage = () => {
           <Spacer blockSize={NEB_LENGTH.px_048} />
           <Divider />
           <Spacer blockSize={NEB_LENGTH.px_016} />
-          <Flex justifyContent="center">
+          <Box display="flex" justifyContent="center">
             <Link
               href={PageKey.authLogin}
               onClick={() => {
@@ -101,7 +100,7 @@ export const RecoveryPage = () => {
                 Back
               </Button>
             </Link>
-          </Flex>
+          </Box>
         </Section>
       </Box>
     </Box>

@@ -1,5 +1,5 @@
 import { WithSlots } from 'lib/components/shared'
-import { Box, Flex, IconButton, Spacer } from 'lib/index.core'
+import { Box, IconButton, Spacer } from 'lib/index.core'
 import { SplitViewMainProps } from 'lib/index.pro'
 
 import { getToggleIconName } from '../../helpers'
@@ -42,12 +42,13 @@ export const SplitViewMain = ({
             minInlineSize="0px"
             overflow="clip"
           >
-            <Flex
+            <Box
+              display="flex"
               alignItems="center"
               flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'}
               gap="16px"
             >
-              <Flex.Item>
+              <Box>
                 <IconButton
                   tagAttrs={{ 'aria-expanded': sideOpen }}
                   iconName={getToggleIconName(sidePosition, sideOpen)}
@@ -55,11 +56,11 @@ export const SplitViewMain = ({
                   scale="xs"
                   onClick={() => setSideOpen(!sideOpen)}
                 />
-              </Flex.Item>
-              <Flex.Item flex="1" tagAttrs={{ style: { minInlineSize: '0px' } }}>
+              </Box>
+              <Box flex="1" tagAttrs={{ style: { minInlineSize: '0px' } }}>
                 {slotsByName['SplitView.MainBar']}
-              </Flex.Item>
-            </Flex>
+              </Box>
+            </Box>
             <Spacer blockSize="8px" />
             {allNonSlots}
           </Box>

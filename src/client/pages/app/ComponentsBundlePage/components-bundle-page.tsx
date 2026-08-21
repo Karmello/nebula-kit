@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Grid, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, Grid, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 
@@ -25,7 +25,8 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
         }
         iconName="package"
       >
-        <Flex
+        <Box
+          display="flex"
           alignItems="center"
           columnGap={NEB_LENGTH.px_048}
           flexWrap="wrap"
@@ -41,7 +42,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
               Back to Pricing page
             </Button>
           </Link>
-        </Flex>
+        </Box>
         <Spacer blockSize={NEB_LENGTH.px_048} />
         <Grid
           gridTemplateColumns={{
@@ -68,7 +69,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
           ))}
         </Grid>
         <Spacer blockSize={NEB_LENGTH.px_048} />
-        <Flex justifyContent="center">
+        <Box display="flex" justifyContent="center">
           <Link
             href={bundle === 'core' ? PageKey.pricingPro : PageKey.pricingCore}
             onClick={() => {
@@ -79,7 +80,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
               {bundle === 'core' ? 'Pro bundle' : 'Core bundle'}
             </Button>
           </Link>
-        </Flex>
+        </Box>
       </Section>
     </Box>
   )

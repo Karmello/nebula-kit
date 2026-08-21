@@ -1,4 +1,4 @@
-import { Box, Flex, NEB_LENGTH, Text } from '@nebula-kit/core'
+import { Box, NEB_LENGTH, Text } from '@nebula-kit/core'
 
 export const JoinedActionGroup = () => {
   return (
@@ -22,13 +22,14 @@ export const JoinedActionGroup = () => {
           blockSize={NEB_LENGTH.px_064}
           borderRadius={NEB_LENGTH.px_000}
         >
-          <Flex
+          <Box
+            display="flex"
             tagAttrs={{ style: { blockSize: '100%' } }}
             justifyContent="center"
             alignItems="center"
           >
             <Text>Hello !</Text>
-          </Flex>
+          </Box>
         </Box>
       </Box>
     </Box>

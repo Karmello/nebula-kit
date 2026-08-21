@@ -1,8 +1,8 @@
 import {
+  Box,
   Button,
   ButtonProps,
   Dialog,
-  Flex,
   Icon,
   IconProps,
   NEB_LENGTH,
@@ -57,7 +57,7 @@ export const WebsiteMapDialog = () => {
         </Title>
       </Dialog.Header>
       <Dialog.Content>
-        <Flex flexDirection="column" alignItems="stretch" rowGap={NEB_LENGTH.px_004}>
+        <Box display="flex" flexDirection="column" alignItems="stretch" rowGap={NEB_LENGTH.px_004}>
           <Button
             {...commonButtonProps}
             // description="Recommended composition and architectural patterns."
@@ -130,7 +130,7 @@ export const WebsiteMapDialog = () => {
           >
             Assistant
           </Button>
-        </Flex>
+        </Box>
       </Dialog.Content>
     </Dialog>
   )

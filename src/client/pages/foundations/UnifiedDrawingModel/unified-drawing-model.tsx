@@ -1,9 +1,9 @@
-import { Box, Flex, NEB_LENGTH, Text } from 'lib/components'
+import { Box, NEB_LENGTH, Text } from 'lib/components'
 
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap={NEB_LENGTH.px_016}>
+      <Box display="flex" flexDirection="column" gap={NEB_LENGTH.px_016}>
         <Text>
           When you see a NebulaKit component rendered on the screen, you can be certain that the
           <Text tag="span" bold space="both">
@@ -22,7 +22,7 @@ export default () => {
           system more coherent and creates a clear sense that every component is crafted from the
           same material.
         </Text>
-      </Flex>
+      </Box>
     </Box>
   )
 }

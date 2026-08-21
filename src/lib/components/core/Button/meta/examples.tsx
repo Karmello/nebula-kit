@@ -1,5 +1,5 @@
 import { TSHIRT_SIZES } from 'lib/constants'
-import { Button, Flex } from 'lib/index.core'
+import { Box, Button } from 'lib/index.core'
 import { type Example } from 'client/definitions'
 
 export const BUTTON_EXAMPLES: Example[] = [
@@ -10,13 +10,13 @@ export const BUTTON_EXAMPLES: Example[] = [
   {
     description: 'Examples of different button scales.',
     jsx: (
-      <Flex flexWrap="wrap" alignItems="center" gap="8px">
+      <Box display="flex" flexWrap="wrap" alignItems="center" gap="8px">
         {TSHIRT_SIZES.map(size => (
           <Button key={size} scale={size} iconName="tree-pine">
             {size.toUpperCase()} scale
           </Button>
         ))}
-      </Flex>
+      </Box>
     ),
   },
   {

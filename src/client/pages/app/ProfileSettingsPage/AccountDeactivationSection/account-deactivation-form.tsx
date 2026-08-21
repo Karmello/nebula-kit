@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { Box, Button, Flex, IconButton, Input, NEB_LENGTH, Resize, Text } from 'lib/components'
+import { Box, Button, IconButton, Input, NEB_LENGTH, Resize, Text } from 'lib/components'
 
 import { AccountDeactivationDialog } from './account-deactivation-dialog'
 
@@ -35,7 +35,7 @@ export const AccountDeactivationForm = ({
         }}
         handleDeactivateSuccess={handleDeactivateSuccess}
       />
-      <Flex flexDirection="column" rowGap={NEB_LENGTH.px_008}>
+      <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_008}>
         {!deactivateSectionEnabled ? (
           <Text intent="secondary" color="gray" italic>
             * You need to unsubscribe from your paid plan first
@@ -98,7 +98,7 @@ export const AccountDeactivationForm = ({
             </Resize>
           </Box>
         </Box>
-      </Flex>
+      </Box>
     </>
   )
 }

@@ -4,7 +4,7 @@ import { FieldValues, FormProvider, useForm } from 'react-hook-form'
 
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
-import { Flex } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 
 import {
   DEFAULT_FORM_ALIGN_ITEMS,
@@ -71,7 +71,8 @@ export const Form = <
       {({ slotsByName }) => {
         return (
           <FormProvider {...(form as any)} formId={formId}>
-            <Flex
+            <Box
+              display="flex"
               tag="form"
               tagAttrs={{
                 ...tagAttrs,
@@ -87,9 +88,9 @@ export const Form = <
               rowGap={rowGap}
               columnGap={columnGap}
             >
-              <Flex.Item flex="1">{slotsByName['Form.Fields']}</Flex.Item>
-              <Flex.Item>{slotsByName['Form.Actions']}</Flex.Item>
-            </Flex>
+              <Box flex="1">{slotsByName['Form.Fields']}</Box>
+              <Box>{slotsByName['Form.Actions']}</Box>
+            </Box>
           </FormProvider>
         )
       }}

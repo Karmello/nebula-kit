@@ -1,6 +1,6 @@
 import { RefObject } from 'react'
 
-import { Box, Flex, NEB_LENGTH } from 'lib/components'
+import { Box, NEB_LENGTH } from 'lib/components'
 
 import { ChatHistory } from '../../definitions'
 import { AssistantMessage, UserMessage } from './components'
@@ -23,7 +23,7 @@ export const Chat = ({ tagRef, chatHistory, handleQuestionClick }: ChatProps) =>
       padding={NEB_LENGTH.px_024}
       borderBottomWidth={NEB_LENGTH.px_000}
     >
-      <Flex flexDirection="column" rowGap={NEB_LENGTH.px_048}>
+      <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_048}>
         {chatHistory.map(({ role, content }, key) =>
           role === 'assistant' ? (
             <AssistantMessage
@@ -35,7 +35,7 @@ export const Chat = ({ tagRef, chatHistory, handleQuestionClick }: ChatProps) =>
             <UserMessage key={key} content={content} />
           )
         )}
-      </Flex>
+      </Box>
     </Box>
   )
 }

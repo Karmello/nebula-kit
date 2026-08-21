@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { Flex, InputAffixProps, InputProps } from 'lib/index.core'
+import { InputAffixProps, InputProps } from 'lib/index.core'
 
 import { Box } from '../Box'
 import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_SCALE, DEFAULT_INPUT_VARIANT } from './definitions'
@@ -51,9 +51,9 @@ export const Input = ({
   }
 
   return (
-    <Flex>
+    <Box display="flex">
       {startAffix ? (
-        <Flex.Item
+        <Box
           tagAttrs={{
             style: {
               borderTopRightRadius: '0px',
@@ -62,9 +62,9 @@ export const Input = ({
           }}
         >
           {startAffix(affixProps)}
-        </Flex.Item>
+        </Box>
       ) : null}
-      <Flex.Item flex="1">
+      <Box flex="1">
         <Box
           tag="input"
           tagAttrs={{
@@ -97,9 +97,9 @@ export const Input = ({
           blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
           paddingInline={CONTROL_SCALE_MAP[scale || 'md'].paddingInline}
         />
-      </Flex.Item>
-      {endAffix ? <Flex.Item>{endAffix(affixProps)}</Flex.Item> : null}
-    </Flex>
+      </Box>
+      {endAffix ? <Box>{endAffix(affixProps)}</Box> : null}
+    </Box>
   )
 }
 

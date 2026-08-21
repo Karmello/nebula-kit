@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react'
 
-import { Box, Flex, Grid, Loader, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, Grid, Loader, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { useGetUser } from 'client/api'
 import { useAppStore } from 'client/store'
 
@@ -80,13 +80,13 @@ export const PricingPage = () => {
               />
             </Grid>
             <Spacer blockSize={NEB_LENGTH.px_048} />
-            <Flex flexDirection="column" rowGap={NEB_LENGTH.px_004}>
+            <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_004}>
               {PRICING_DATA.additionalInfo.map((info, key) => (
                 <Text key={key} italic>
                   {info}
                 </Text>
               ))}
-            </Flex>
+            </Box>
           </>
         )}
       </Section>

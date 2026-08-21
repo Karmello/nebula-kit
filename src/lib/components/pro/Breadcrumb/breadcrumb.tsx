@@ -3,7 +3,7 @@ import { Fragment } from 'react/jsx-runtime'
 
 import { DropdownList } from 'lib/components/shared'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
-import { Box, Flex, Icon, Text } from 'lib/index.core'
+import { Box, Icon, Text } from 'lib/index.core'
 import { BreadcrumbProps } from 'lib/index.pro'
 import { type BreadcrumbTag } from 'lib/types'
 
@@ -56,7 +56,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
 
   return (
     <Box tag={tag} tagAttrs={tagAttrs} tagRef={tagRef} overflowX="auto">
-      <Flex gap="8px" alignItems="center">
+      <Box display="flex" gap="8px" alignItems="center">
         {levels.slice(0, currentPath.length + 1).map((level, index) => {
           const scrollToIndex = levels[index].findIndex(node => node.value === currentPath[index])
 
@@ -132,7 +132,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
             </Fragment>
           )
         })}
-      </Flex>
+      </Box>
     </Box>
   )
 }

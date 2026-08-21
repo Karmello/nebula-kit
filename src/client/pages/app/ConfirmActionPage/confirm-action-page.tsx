@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLocation } from 'react-router'
 
-import { Box, Button, Flex, NEB_LENGTH } from 'lib/components'
+import { Box, Button, NEB_LENGTH } from 'lib/components'
 import { BoxColor } from 'lib/components/core/Box/types'
 
 const BUTTON_LABEL_MAP: Record<string, { label: string; color: BoxColor }> = {
@@ -37,7 +37,7 @@ export const ConfirmActionPage = () => {
       padding={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
       paddingTop={NEB_LENGTH.px_096}
     >
-      <Flex justifyContent="center">
+      <Box display="flex" justifyContent="center">
         <Button
           tagAttrs={{
             onClick: () => {
@@ -58,7 +58,7 @@ export const ConfirmActionPage = () => {
             ? BUTTON_LABEL_MAP[action as never].label
             : 'Confirm'}
         </Button>
-      </Flex>
+      </Box>
     </Box>
   )
 }

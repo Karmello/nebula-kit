@@ -5,7 +5,6 @@ import {
   Box,
   Button,
   Divider,
-  Flex,
   Form,
   Input,
   Link,
@@ -108,7 +107,7 @@ export const LoginPage = () => {
           <Spacer blockSize={NEB_LENGTH.px_048} />
           <Divider />
           <Spacer blockSize={NEB_LENGTH.px_016} />
-          <Flex justifyContent="center">
+          <Box display="flex" justifyContent="center">
             <Link
               href={PageKey.authRegister}
               onClick={() => {
@@ -119,8 +118,8 @@ export const LoginPage = () => {
                 Don't have an account ? Sign up.
               </Button>
             </Link>
-          </Flex>
-          <Flex justifyContent="center">
+          </Box>
+          <Box display="flex" justifyContent="center">
             <Link
               href={PageKey.authRecover}
               onClick={() => {
@@ -131,7 +130,7 @@ export const LoginPage = () => {
                 Forgot your password ? Click here.
               </Button>
             </Link>
-          </Flex>
+          </Box>
         </Section>
       </Box>
     </Box>

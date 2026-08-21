@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from 'react'
 
 import { CALLOUT_CONFIG } from 'lib/components/core/Callout'
-import { Box, Callout, Flex, IconButton, Slide } from 'lib/index.core'
+import { Box, Callout, IconButton, Slide } from 'lib/index.core'
 import { SnackbarProps } from 'lib/index.pro'
 
 import {
@@ -41,7 +41,7 @@ export const Snackbar = ({
       autoCloseDelay={autoCloseDelay}
       closeOnOutsideClick={closeOnOutsideClick}
     >
-      <Flex tagRef={rootRef} justifyContent="center">
+      <Box display="flex" tagRef={rootRef} justifyContent="center">
         <Box
           position="fixed"
           top={finalPlacement.includes('top') ? '0px' : 'unset'}
@@ -82,7 +82,7 @@ export const Snackbar = ({
             </Box>
           </Slide>
         </Box>
-      </Flex>
+      </Box>
       {children}
     </SnackbarProvider>
   )

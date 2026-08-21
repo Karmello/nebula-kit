@@ -1,9 +1,9 @@
-import { Box, Flex, NEB_LENGTH, Text } from 'lib/components'
+import { Box, NEB_LENGTH, Text } from 'lib/components'
 
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap={NEB_LENGTH.px_016}>
+      <Box display="flex" flexDirection="column" gap={NEB_LENGTH.px_016}>
         <Text>
           When it comes to functionality, NebulaKit is built purely on component composition. Every
           meaningful behavior is encapsulated as a separate component and exposed to the user as
@@ -19,7 +19,7 @@ export default () => {
           functionality is always split at the right moment, taking maximum advantage of what
           composition brings while avoiding its common pitfalls.
         </Text>
-      </Flex>
+      </Box>
     </Box>
   )
 }

@@ -29,7 +29,7 @@ export const ICON_BUTTON_META = {
         'supports polymorphic rendering as button or anchor',
         'keeps interaction geometry consistent with the global control sizing system',
       ],
-      composedOf: ['Flex', 'Icon', 'Loader'],
+      composedOf: ['Icon', 'Loader'],
       exposedTags: ICON_BUTTON_TAGS,
     },
     props: {

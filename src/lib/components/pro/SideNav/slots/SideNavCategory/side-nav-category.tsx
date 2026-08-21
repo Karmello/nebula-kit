@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
-import { Box, Button, Flex, Resize, Spacer } from 'lib/index.core'
+import { Box, Button, Resize, Spacer } from 'lib/index.core'
 import { SideNavCategoryProps } from 'lib/index.pro'
 
 import { useSideNavContext } from '../../SideNavProvider'
@@ -100,13 +100,13 @@ export const SideNavCategory = ({
             <Box tag="li">
               <Resize property="blockSize" visible={expandedCategories[id]}>
                 <Spacer blockSize={gap} />
-                <Flex tag="ul" flexDirection="column" gap={gap}>
+                <Box display="flex" tag="ul" flexDirection="column" gap={gap}>
                   {slotsByName['SideNav.Item'].map((slot, key) => (
                     <Box key={key} tag="li" inlineSize="100%">
                       {cloneElement(slot as any, { categoryId: id })}
                     </Box>
                   ))}
-                </Flex>
+                </Box>
               </Resize>
             </Box>
           </Box>

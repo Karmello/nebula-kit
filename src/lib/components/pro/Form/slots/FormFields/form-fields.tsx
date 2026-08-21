@@ -2,7 +2,7 @@ import classNames from 'classnames'
 
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
-import { Flex } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 import { FormFieldsProps } from 'lib/index.pro'
 
 import {
@@ -39,7 +39,8 @@ export const FormFields = ({
     >
       {({ slotsByName }) => {
         return (
-          <Flex
+          <Box
+            display="flex"
             tagAttrs={{
               ...tagAttrs,
               className: classNames(withPrefix('form-fields'), tagAttrs?.className),
@@ -54,7 +55,7 @@ export const FormFields = ({
             rowGap={rowGap}
           >
             {slotsByName['Form.Field']}
-          </Flex>
+          </Box>
         )
       }}
     </WithSlots>

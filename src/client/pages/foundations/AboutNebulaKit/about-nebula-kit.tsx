@@ -1,9 +1,9 @@
-import { Box, Flex, NEB_LENGTH, Text } from 'lib/components'
+import { Box, NEB_LENGTH, Text } from 'lib/components'
 
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap={NEB_LENGTH.px_016}>
+      <Box display="flex" flexDirection="column" gap={NEB_LENGTH.px_016}>
         <Text>
           NebulaKit is one person's idea. It is the result of almost ten years of experimenting with
           user interfaces across different programming languages and frontend technologies. The
@@ -61,7 +61,7 @@ export default () => {
           not aim to hide developer concerns, but to teach how to handle them in a structured and
           sustainable way.
         </Text>
-      </Flex>
+      </Box>
     </Box>
   )
 }

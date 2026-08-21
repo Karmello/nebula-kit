@@ -3,6 +3,12 @@ import { ElementType } from 'react'
 import type {
   CssCursor,
   CssDisplay,
+  CssFlexAlignContent,
+  CssFlexAlignItems,
+  CssFlexDirection,
+  CssFlexItemAlignSelf,
+  CssFlexJustifyContent,
+  CssFlexWrap,
   CssOverflow,
   CssPointerEvents,
   CssPosition,
@@ -91,4 +97,19 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   marginRight?: RespValue<string>
   marginBottom?: RespValue<string>
   marginLeft?: RespValue<string>
+  // flex
+  flexDirection?: RespValue<CssFlexDirection>
+  flexWrap?: RespValue<CssFlexWrap>
+  justifyContent?: RespValue<CssFlexJustifyContent>
+  alignItems?: RespValue<CssFlexAlignItems>
+  alignContent?: RespValue<CssFlexAlignContent>
+  gap?: RespValue<string>
+  rowGap?: RespValue<string>
+  columnGap?: RespValue<string>
+  flex?: RespValue<string>
+  flexGrow?: RespValue<string>
+  flexShrink?: RespValue<string>
+  flexBasis?: RespValue<string>
+  alignSelf?: RespValue<CssFlexItemAlignSelf>
+  order?: RespValue<string>
 }

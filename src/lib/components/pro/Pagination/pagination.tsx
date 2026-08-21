@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react'
 
 import { type IconName } from 'lib/components/core/Icon/types'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
-import { Box, Button, Flex, Icon, Link, Segment } from 'lib/index.core'
+import { Box, Button, Icon, Link, Segment } from 'lib/index.core'
 import { PaginationProps } from 'lib/index.pro'
 
 import {
@@ -137,9 +137,13 @@ export const Pagination = ({
                   blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
                   paddingInline={CONTROL_SCALE_MAP[scale || 'md'].paddingInline}
                 >
-                  <Flex tagAttrs={{ style: { blockSize: 'inherit' } }} alignItems="center">
+                  <Box
+                    display="flex"
+                    tagAttrs={{ style: { blockSize: 'inherit' } }}
+                    alignItems="center"
+                  >
                     <Icon name="ellipsis" />
-                  </Flex>
+                  </Box>
                 </Box>
               )}
               {item.type === 'page' &&

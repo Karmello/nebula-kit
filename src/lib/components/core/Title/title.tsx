@@ -2,7 +2,7 @@ import classNames from 'classnames'
 
 import { TYPOGRAPHY_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { Box, Flex, Icon, Text, TitleProps } from 'lib/index.core'
+import { Box, Icon, Text, TitleProps } from 'lib/index.core'
 
 import { DEFAULT_TITLE_ICON_PLACEMENT, DEFAULT_TITLE_TYPOGRAPHY } from './constants'
 
@@ -10,7 +10,7 @@ export const Title = ({
   // own
   typography = DEFAULT_TITLE_TYPOGRAPHY,
   iconPlacement = DEFAULT_TITLE_ICON_PLACEMENT,
-  // Flex
+  // Box
   tagAttrs,
   tagRef,
   color,
@@ -46,7 +46,8 @@ export const Title = ({
       color={color}
       intent={intent}
     >
-      <Flex
+      <Box
+        display="flex"
         tag="span"
         flexDirection="row"
         flexWrap="nowrap"
@@ -62,7 +63,7 @@ export const Title = ({
           children
         )}
         {iconPlacement === 'right' ? icon : null}
-      </Flex>
+      </Box>
     </Box>
   )
 }

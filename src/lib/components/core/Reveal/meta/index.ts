@@ -19,7 +19,7 @@ export const REVEAL_META = {
         'animates expand and collapse using measured height for smooth transitions',
       ],
       exposedTags: REVEAL_TAGS,
-      composedOf: ['Box', 'Flex', 'Button', 'Resize'],
+      composedOf: ['Box', 'Button', 'Resize'],
     },
     props: {
       children: {

@@ -1,6 +1,6 @@
 import { pascalCase } from 'change-case'
 
-import { Box, Flex, Markup, NEB_LENGTH, Reveal, Spacer, Switch, Text, Title } from 'lib/components'
+import { Box, Markup, NEB_LENGTH, Reveal, Spacer, Switch, Text, Title } from 'lib/components'
 import { useCurrentTheme } from 'lib/hooks'
 import { CodeSnippet } from 'client/components'
 import { ComponentMeta } from 'client/definitions'
@@ -105,7 +105,7 @@ export const ComponentExamplesPage = () => {
     <Box maxInlineSize="55rem">
       {!hideExamplesThemeToggle ? (
         <>
-          <Flex alignItems="center" columnGap={NEB_LENGTH.px_016}>
+          <Box display="flex" alignItems="center" columnGap={NEB_LENGTH.px_016}>
             <Switch
               scale="xs"
               checked={flipGlobalThemeOnExamples}
@@ -114,11 +114,11 @@ export const ComponentExamplesPage = () => {
             <Text bold typography="small">
               Use flipped theme
             </Text>
-          </Flex>
+          </Box>
           <Spacer blockSize={NEB_LENGTH.px_048} />
         </>
       ) : null}
-      <Flex flexDirection="column" alignItems="stretch">
+      <Box display="flex" flexDirection="column" alignItems="stretch">
         {Object.keys(meta[itemKeyPascal] || []).map(key => {
           return (meta[itemKeyPascal][key].examples || [])
             .filter(example => !example.skip)
@@ -130,7 +130,7 @@ export const ComponentExamplesPage = () => {
               />
             ))
         })}
-      </Flex>
+      </Box>
     </Box>
   )
 }

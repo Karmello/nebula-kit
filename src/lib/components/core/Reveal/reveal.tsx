@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { Button, Flex, Resize, RevealProps } from 'lib/index.core'
+import { Button, Resize, RevealProps } from 'lib/index.core'
 import { RevealTag } from 'lib/types'
 
 import { Box } from '../Box'
@@ -38,7 +38,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
       surface="dividing"
       disabled={disabled}
     >
-      <Flex flexDirection="column" alignItems="stretch">
+      <Box display="flex" flexDirection="column" alignItems="stretch">
         <Button
           disabled={disabled}
           scale={scale}
@@ -64,7 +64,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
             {children}
           </Resize>
         </Box>
-      </Flex>
+      </Box>
     </Box>
   )
 }

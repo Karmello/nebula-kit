@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { Box, Button, Flex, IconButton, Input, NEB_LENGTH, Resize, Text } from 'lib/components'
+import { Box, Button, IconButton, Input, NEB_LENGTH, Resize, Text } from 'lib/components'
 
 import { PaymentCancelDialog } from './payment-cancel-dialog'
 
@@ -35,7 +35,7 @@ export const PaymentCancelForm = ({
         }}
         handleCancelSuccess={handleCancelSuccess}
       />
-      <Flex flexDirection="column" rowGap={NEB_LENGTH.px_008}>
+      <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_008}>
         {!cancelSectionEnabled ? (
           <Text intent="secondary" color="gray" italic>
             * For paid users
@@ -96,7 +96,7 @@ export const PaymentCancelForm = ({
             </Resize>
           </Box>
         </Box>
-      </Flex>
+      </Box>
     </>
   )
 }

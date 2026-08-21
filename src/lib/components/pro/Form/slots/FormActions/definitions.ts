@@ -1,7 +1,20 @@
-import { FlexProps } from 'lib/index.core'
+import { BoxProps } from 'lib/index.core'
 
 export const DEFAULT_FORM_ACTIONS_GAP: FormActionsProps['gap'] = '10px'
 
-type PropsFromFlex = Omit<FlexProps<'div'>, 'tag' | 'display'>
+type PropsFromBox = Pick<
+  BoxProps<'div'>,
+  | 'tagAttrs'
+  | 'tagRef'
+  | 'children'
+  | 'flexDirection'
+  | 'flexWrap'
+  | 'justifyContent'
+  | 'alignItems'
+  | 'alignContent'
+  | 'gap'
+  | 'rowGap'
+  | 'columnGap'
+>
 
-export type FormActionsProps = PropsFromFlex
+export type FormActionsProps = PropsFromBox

@@ -4,7 +4,6 @@ import {
   Box,
   Button,
   Divider,
-  Flex,
   Form,
   Input,
   Link,
@@ -95,7 +94,7 @@ export const RegisterPage = () => {
           <Spacer blockSize={NEB_LENGTH.px_048} />
           <Divider />
           <Spacer blockSize={NEB_LENGTH.px_016} />
-          <Flex justifyContent="center">
+          <Box display="flex" justifyContent="center">
             <Link
               href={PageKey.authLogin}
               onClick={() => {
@@ -106,7 +105,7 @@ export const RegisterPage = () => {
                 Already have an account ? Log in.
               </Button>
             </Link>
-          </Flex>
+          </Box>
         </Section>
       </Box>
     </Box>

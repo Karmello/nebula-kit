@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { sentenceCase } from 'change-case'
 
-import { Box, Button, Flex, Grid, NEB_LENGTH, Select, Spacer, Switch, Text } from 'lib/components'
+import { Box, Button, Grid, NEB_LENGTH, Select, Spacer, Switch, Text } from 'lib/components'
 import { BOX_COLORS, BOX_INTENTS, BOX_VARIANTS } from 'lib/components/core/Box/constants'
 import type { BoxVariant } from 'lib/components/core/Box/types'
 
@@ -21,8 +21,8 @@ export default () => {
         color spectrum in practice.
       </Text>
       <Spacer />
-      <Flex flexWrap="wrap" columnGap={NEB_LENGTH.px_016} rowGap={NEB_LENGTH.px_008}>
-        <Flex.Item>
+      <Box display="flex" flexWrap="wrap" columnGap={NEB_LENGTH.px_016} rowGap={NEB_LENGTH.px_008}>
+        <Box>
           <Text bold intent="primary">
             Variant
           </Text>
@@ -36,8 +36,8 @@ export default () => {
               <Select.Option value={variant}>{sentenceCase(variant)}</Select.Option>
             ))}
           </Select>
-        </Flex.Item>
-        <Flex.Item>
+        </Box>
+        <Box>
           <Text bold intent="primary">
             State
           </Text>
@@ -51,14 +51,14 @@ export default () => {
               <Select.Option value={state}>{sentenceCase(state)}</Select.Option>
             ))}
           </Select>
-        </Flex.Item>
-        <Flex.Item>
+        </Box>
+        <Box>
           <Text bold intent="primary">
             Elevated
           </Text>
           <Switch checked={elevated} onChange={setElevated} />
-        </Flex.Item>
-      </Flex>
+        </Box>
+      </Box>
       <Spacer blockSize={NEB_LENGTH.px_048} />
       <Box overflowX="auto">
         <Grid gridTemplateColumns={`repeat(${BOX_INTENTS.length}, 1fr)`} gap={NEB_LENGTH.px_008}>

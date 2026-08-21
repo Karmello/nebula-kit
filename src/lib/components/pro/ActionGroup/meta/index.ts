@@ -1,5 +1,4 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
-import { FLEX_META } from 'lib/components/core/Flex/meta'
 import { ComponentMeta } from 'client/definitions'
 
 import {
@@ -34,7 +33,7 @@ export const ACTION_GROUP_META = {
         'supports polymorphic item rendering through the tag prop',
         'allows arbitrary content inside each item',
       ],
-      composedOf: ['Flex'],
+      composedOf: ['Box'],
       exposedTags: ['div'],
       slots: ['ActionGroup.Item'],
     },
@@ -45,13 +44,13 @@ export const ACTION_GROUP_META = {
           'Removes radius on the specified edge and applies the internal seam spacing needed to visually connect adjacent surfaces.',
       },
       children: {
-        ...FLEX_META.Flex.props.children,
+        ...BOX_META.Box.props.children,
         isRequired: true,
         description: 'ActionGroup.Item slots.',
       },
       color: BOX_META.Box.props.color,
       direction: {
-        ...FLEX_META.Flex.props.flexDirection,
+        ...BOX_META.Box.props.flexDirection,
         options: ACTION_GROUP_DIRECTION,
         defaultValue: String(DEFAULT_ACTION_GROUP_DIRECTION),
         isResponsive: false,
@@ -69,8 +68,8 @@ export const ACTION_GROUP_META = {
         options: ['boolean'],
         description: 'Whether items should stretch to evenly fill the available inline space.',
       },
-      tagAttrs: FLEX_META.Flex.props.tagAttrs,
-      tagRef: FLEX_META.Flex.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
     examples: ACTION_GROUP_EXAMPLES,
     changelog: ACTION_GROUP_CHANGELOG,
@@ -83,12 +82,12 @@ export const ACTION_GROUP_META = {
       description:
         'ActionGroup.Item represents an individual action within an ActionGroup. It provides an interactive surface that can display arbitrary content and participate in navigation, selection and group styling.',
       features: ['can be rendered as a button or link', 'supports selected and disabled states'],
-      composedOf: ['Flex.Item'],
+      composedOf: ['Box'],
       exposedTags: ACTION_GROUP_ITEM_TAGS,
     },
     props: {
       children: {
-        ...FLEX_META.FlexItem.props.children,
+        ...BOX_META.Box.props.children,
         isRequired: true,
       },
       disabled: BOX_META.Box.props.disabled,
@@ -102,12 +101,12 @@ export const ACTION_GROUP_META = {
           'Marks the item as selected and applies the corresponding selected surface styling.',
       },
       tag: {
-        ...FLEX_META.FlexItem.props.tag,
+        ...BOX_META.Box.props.tag,
         options: ACTION_GROUP_ITEM_TAGS,
         defaultValue: DEFAULT_ACTION_GROUP_ITEM_TAG,
       },
-      tagAttrs: FLEX_META.FlexItem.props.tagAttrs,
-      tagRef: FLEX_META.FlexItem.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
   } satisfies ComponentMeta<ActionGroupItemProps>,
 }

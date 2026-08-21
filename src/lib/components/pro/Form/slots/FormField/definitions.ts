@@ -1,6 +1,6 @@
 import { FieldValues, RegisterOptions } from 'react-hook-form'
 
-import { FlexItemProps } from 'lib/index.core'
+import { BoxProps } from 'lib/index.core'
 
 export const DEFAULT_FORM_FIELD_FLEX: FormFieldProps['flex'] = '1'
 
@@ -17,6 +17,9 @@ type FormFieldOwnProps = {
   email?: boolean | string
 }
 
-type PropsFromFlexItem = Omit<FlexItemProps<'div'>, 'tag' | 'hidden'>
+type PropsFromBox = Pick<
+  BoxProps<'div'>,
+  'tagAttrs' | 'tagRef' | 'children' | 'flex' | 'flexGrow' | 'flexShrink' | 'flexBasis' | 'alignSelf' | 'order'
+>
 
-export type FormFieldProps = PropsFromFlexItem & FormFieldOwnProps
+export type FormFieldProps = PropsFromBox & FormFieldOwnProps

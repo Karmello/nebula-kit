@@ -1,8 +1,9 @@
-import { Box, Flex, NEB_LENGTH } from '@nebula-kit/core'
+import { Box, NEB_LENGTH } from '@nebula-kit/core'
 
 export const ResponsiveStack = () => {
   return (
-    <Flex
+    <Box
+      display="flex"
       flexDirection={{ base: 'column', md: 'row' }}
       alignItems="stretch"
       gap={NEB_LENGTH.px_008}
@@ -13,6 +14,6 @@ export const ResponsiveStack = () => {
       <Box drawable color="green" variant="outline" intent="primary" padding={NEB_LENGTH.px_048}>
         Box 2
       </Box>
-    </Flex>
+    </Box>
   )
 }

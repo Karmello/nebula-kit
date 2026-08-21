@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
-import { Box, Flex, Icon, Loader, Text } from 'lib/index.core'
+import { Box, Icon, Loader, Text } from 'lib/index.core'
 import { syncRespDataset } from 'lib/internals/dom'
 import type { ButtonTag } from 'lib/types'
 
@@ -29,7 +29,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   selected,
   onClick,
   iconPlacement = DEFAULT_BUTTON_ICON_PLACEMENT,
-  // Flex
+  // Box
   tag = 'button' as T,
   tagAttrs,
   tagRef,
@@ -95,7 +95,8 @@ export const Button = <T extends ButtonTag = 'button'>({
       cursor="pointer"
       position="relative"
     >
-      <Flex
+      <Box
+        display="flex"
         tag="span"
         tagAttrs={{
           style: { inlineSize: '100%' },
@@ -121,7 +122,7 @@ export const Button = <T extends ButtonTag = 'button'>({
         {loading && !disabled ? (
           <Loader size={CONTROL_SCALE_MAP[scale || 'md'].fontSize} centered />
         ) : null}
-      </Flex>
+      </Box>
     </Box>
   )
 }

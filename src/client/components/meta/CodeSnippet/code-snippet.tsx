@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { TokensResult } from 'shiki'
 
-import { Box, Flex, NEB_LENGTH, Text, Title } from 'lib/components'
+import { Box, NEB_LENGTH, Text, Title } from 'lib/components'
 import { useCurrentTheme } from 'lib/hooks'
 
 import { CopyButton } from '../CopyButton'
@@ -32,7 +32,8 @@ export const CodeSnippet = ({
   }
 
   return (
-    <Flex
+    <Box
+      display="flex"
       flexDirection="column"
       alignItems="stretch"
       tagAttrs={{
@@ -50,8 +51,8 @@ export const CodeSnippet = ({
           },
         }}
       >
-        <Flex alignItems="flex-end" columnGap={NEB_LENGTH.px_008}>
-          <Flex.Item flex="1">
+        <Box display="flex" alignItems="flex-end" columnGap={NEB_LENGTH.px_008}>
+          <Box flex="1">
             {description ? (
               <Box paddingBlock={NEB_LENGTH.px_012}>
                 <Title iconName={descriptionIcon ? 'arrow-down' : undefined}>
@@ -65,9 +66,9 @@ export const CodeSnippet = ({
                 </Title>
               </Box>
             ) : null}
-          </Flex.Item>
+          </Box>
           <CopyButton text={code} />
-        </Flex>
+        </Box>
         <Box
           tagAttrs={{
             style: {
@@ -80,7 +81,7 @@ export const CodeSnippet = ({
           drawable
           variant="solid"
         >
-          <Flex tag="pre">
+          <Box display="flex" tag="pre">
             <Box
               tag="code"
               paddingInline={NEB_LENGTH.px_016}
@@ -114,9 +115,9 @@ export const CodeSnippet = ({
                 )
               })}
             </Box>
-          </Flex>
+          </Box>
         </Box>
       </Box>
-    </Flex>
+    </Box>
   )
 }

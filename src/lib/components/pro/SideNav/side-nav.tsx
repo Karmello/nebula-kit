@@ -2,7 +2,7 @@ import classNames from 'classnames'
 
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
-import { Flex } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 import { SideNavProps } from 'lib/index.pro'
 
 import { SideNavToggle } from './components'
@@ -48,7 +48,8 @@ export const SideNav = ({
           scale={scale}
           gap={gap}
         >
-          <Flex
+          <Box
+            display="flex"
             tag="nav"
             tagAttrs={{
               ...tagAttrs,
@@ -60,7 +61,7 @@ export const SideNav = ({
           >
             {slotsByName['SideNav.Category'].length ? <SideNavToggle /> : null}
             {allValidSlots}
-          </Flex>
+          </Box>
         </SideNavProvider>
       )}
     </WithSlots>

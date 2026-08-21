@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
-import { Flex } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 import { FormFieldProps, FormHintProps, FormLabelProps } from 'lib/index.pro'
 
 import { DEFAULT_FORM_FIELD_FLEX } from './definitions'
@@ -39,7 +39,7 @@ export const FormField = ({
     >
       {({ slotsByName, allNonSlots }) => {
         return (
-          <Flex.Item
+          <Box
             tagAttrs={{
               ...tagAttrs,
               className: classNames(withPrefix('form-field'), tagAttrs?.className),
@@ -60,7 +60,7 @@ export const FormField = ({
               }
               customFormHintComponent={slotsByName['Form.Hint']?.[0] as ReactElement<FormHintProps>}
             />
-          </Flex.Item>
+          </Box>
         )
       }}
     </WithSlots>

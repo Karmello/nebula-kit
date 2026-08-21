@@ -4,7 +4,6 @@ import { sentenceCase } from 'change-case'
 import {
   Box,
   Button,
-  Flex,
   Link,
   Loader,
   NEB_LENGTH,
@@ -89,7 +88,8 @@ export default () => {
               </Table.Cell>
 
               <Table.Cell colSpan={2}>
-                <Flex
+                <Box
+                  display="flex"
                   alignItems="center"
                   flexWrap="wrap"
                   rowGap={NEB_LENGTH.px_008}
@@ -109,7 +109,7 @@ export default () => {
                       </Button>
                     </Link>
                   ) : null}
-                </Flex>
+                </Box>
               </Table.Cell>
             </Table.Row>
 
@@ -120,7 +120,7 @@ export default () => {
 
               <Table.Cell colSpan={2}>
                 {userData ? (
-                  <Flex alignItems="center" gap={NEB_LENGTH.px_008}>
+                  <Box display="flex" alignItems="center" gap={NEB_LENGTH.px_008}>
                     <Text
                       intent={userData.licenseKey ? 'primary' : undefined}
                       color={userData.licenseKey ? 'blue' : undefined}
@@ -132,7 +132,7 @@ export default () => {
                     </Text>
 
                     {userData.licenseKey ? <CopyButton text={userData.licenseKey} /> : null}
-                  </Flex>
+                  </Box>
                 ) : (
                   ''
                 )}
@@ -165,13 +165,14 @@ export default () => {
 
               <Table.Cell colSpan={2}>
                 {userData ? (
-                  <Flex
+                  <Box
+                    display="flex"
                     alignItems="center"
                     flexWrap="wrap"
                     rowGap={NEB_LENGTH.px_008}
                     columnGap={NEB_LENGTH.px_016}
                   >
-                    <Flex.Item alignSelf="auto">
+                    <Box alignSelf="auto">
                       <Title
                         iconName={
                           hasPaidPlan ? (isGithubConnected ? 'check' : undefined) : undefined
@@ -182,7 +183,7 @@ export default () => {
                       >
                         {githubStatusText}
                       </Title>
-                    </Flex.Item>
+                    </Box>
 
                     {isGithubConnected ? (
                       <Link href="https://github.com/orgs/nebula-kit/projects/1" target="_blank">
@@ -198,7 +199,7 @@ export default () => {
                         </Button>
                       </Link>
                     ) : null}
-                  </Flex>
+                  </Box>
                 ) : null}
               </Table.Cell>
             </Table.Row>

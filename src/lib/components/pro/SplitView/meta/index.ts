@@ -73,7 +73,7 @@ export const SPLIT_VIEW_META = {
         'automatically renders a close action when displayed in overlay mode',
       ],
       guidelines: ['typically used for navigation, menus or supplementary content'],
-      composedOf: ['Box', 'Flex', 'IconButton', 'Resize', 'FocusTrap'],
+      composedOf: ['Box', 'IconButton', 'Resize', 'FocusTrap'],
       exposedTags: ['aside'],
     },
     props: {
@@ -115,7 +115,7 @@ export const SPLIT_VIEW_META = {
       name: 'SplitView.Main',
       title: 'Defines the main content region of the SplitView layout.',
       features: ['holds the primary content region of the SplitView layout'],
-      composedOf: ['Box', 'Flex', 'IconButton', 'Spacer'],
+      composedOf: ['Box', 'IconButton', 'Spacer'],
       exposedTags: ['section'],
       slots: ['SplitView.MainBar'],
     },

@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 import { useCurrentTheme, useGlobalScrollLock } from 'lib/hooks'
-import { Box, Flex, IconButton, Resize } from 'lib/index.core'
+import { Box, IconButton, Resize } from 'lib/index.core'
 import { FocusTrap, Portal } from 'lib/index.pro'
 
 import {
@@ -83,7 +83,8 @@ export const Dialog = ({
                 pointerEvents={open ? 'auto' : 'none'}
                 zIndex={1000}
               >
-                <Flex
+                <Box
+                  display="flex"
                   tagAttrs={{
                     style: { blockSize: '100%', inlineSize: '100%' },
                   }}
@@ -143,7 +144,7 @@ export const Dialog = ({
                       </Box>
                     </Resize>
                   </FocusTrap>
-                </Flex>
+                </Box>
               </Box>
             </Portal>
           </DialogProvider>

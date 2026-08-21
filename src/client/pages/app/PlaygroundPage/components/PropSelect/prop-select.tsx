@@ -1,4 +1,4 @@
-import { Flex, Icon, NEB_LENGTH, Select, Spacer, Text, Tooltip } from 'lib/components'
+import { Box, Icon, NEB_LENGTH, Select, Spacer, Text, Tooltip } from 'lib/components'
 import { usePlaygroundStore } from 'client/store'
 
 export const PropSelect = () => {
@@ -11,7 +11,7 @@ export const PropSelect = () => {
 
   return (
     <>
-      <Flex justifyContent="space-between" alignItems="center">
+      <Box display="flex" justifyContent="space-between" alignItems="center">
         <Text bold>Property</Text>
         <Tooltip
           content="The props list was also intentionally narrowed to include only those that best fit this context."
@@ -21,7 +21,7 @@ export const PropSelect = () => {
         >
           <Icon name="info" size={NEB_LENGTH.px_016} color="blue" intent="primary" />
         </Tooltip>
-      </Flex>
+      </Box>
       <Spacer blockSize={NEB_LENGTH.px_004} />
       <Select value={value} onChange={value => setActiveProp(activeComponent, value)}>
         {Object.keys(props)

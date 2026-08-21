@@ -1,7 +1,6 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { DEFAULT_BUTTON_INTENT } from 'lib/components/core/Button/constants'
 import { BUTTON_META } from 'lib/components/core/Button/meta'
-import { FLEX_META } from 'lib/components/core/Flex/meta'
 import { TEXT_META } from 'lib/components/core/Text/meta'
 import { TITLE_META } from 'lib/components/core/Title/meta'
 import {
@@ -46,32 +45,32 @@ export const FORM_META = {
         'manages form state and validation using React Hook Form internally',
         'orchestrates the submission lifecycle via valid and invalid submission handlers',
       ],
-      composedOf: ['Flex', 'Flex.Item'],
+      composedOf: ['Box'],
       exposedTags: ['form'],
       slots: ['Form.Fields', 'Form.Actions'],
     },
     props: {
       alignItems: {
-        ...FLEX_META.Flex.props.alignItems,
+        ...BOX_META.Box.props.alignItems,
         defaultValue: String(DEFAULT_FORM_ALIGN_ITEMS),
       },
       children: {
-        ...FLEX_META.FlexItem.props.children,
+        ...BOX_META.Box.props.children,
         options: ['Form.Fields', 'Form.Actions'],
         isRequired: true,
         description: 'Available slots.',
       },
       columnGap: {
-        ...FLEX_META.Flex.props.columnGap,
+        ...BOX_META.Box.props.columnGap,
         defaultValue: String(DEFAULT_FORM_COLUMN_GAP),
       },
       flexDirection: {
-        ...FLEX_META.Flex.props.flexDirection,
+        ...BOX_META.Box.props.flexDirection,
         defaultValue: String(DEFAULT_FORM_FLEX_DIRECTION),
       },
-      flexWrap: FLEX_META.Flex.props.flexWrap,
-      gap: FLEX_META.Flex.props.gap,
-      justifyContent: FLEX_META.Flex.props.justifyContent,
+      flexWrap: BOX_META.Box.props.flexWrap,
+      gap: BOX_META.Box.props.gap,
+      justifyContent: BOX_META.Box.props.justifyContent,
       minLoadingTime: {
         options: ['number'],
         description:
@@ -98,11 +97,11 @@ export const FORM_META = {
           'Resets the form back to its initial default values after a successful submission.',
       },
       rowGap: {
-        ...FLEX_META.Flex.props.rowGap,
+        ...BOX_META.Box.props.rowGap,
         defaultValue: String(DEFAULT_FORM_ROW_GAP),
       },
-      tagAttrs: FLEX_META.Flex.props.tagAttrs,
-      tagRef: FLEX_META.Flex.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
       useFormProps: {
         options: ['UseFormProps (RHF)'],
         description: 'Passes configuration options directly to RHF useForm.',
@@ -118,39 +117,39 @@ export const FORM_META = {
       title: 'Container for grouping and laying out form fields within a Form.',
       features: ['controls layout and spacing between form fields'],
       guidelines: ['expects Form.Field slots as children'],
-      composedOf: ['Flex'],
+      composedOf: ['Box'],
       exposedTags: ['div'],
       slots: ['Form.Field'],
     },
     props: {
       ...BOX_META.Box.props,
-      alignContent: FLEX_META.Flex.props.alignContent,
+      alignContent: BOX_META.Box.props.alignContent,
       alignItems: {
-        ...FLEX_META.Flex.props.alignItems,
+        ...BOX_META.Box.props.alignItems,
         defaultValue: String(DEFAULT_FORM_FIELDS_ALIGN_ITEMS),
       },
       children: {
-        ...FLEX_META.Flex.props.children,
+        ...BOX_META.Box.props.children,
         options: ['Form.Field'],
         description: 'Any number of Form.Field slots.',
       },
       columnGap: {
-        ...FLEX_META.Flex.props.columnGap,
+        ...BOX_META.Box.props.columnGap,
         defaultValue: String(DEFAULT_FORM_FIELDS_COLUMN_GAP),
       },
       flexDirection: {
-        ...FLEX_META.Flex.props.flexDirection,
+        ...BOX_META.Box.props.flexDirection,
         defaultValue: String(DEFAULT_FORM_FIELDS_FLEX_DIRECTION),
       },
-      flexWrap: FLEX_META.Flex.props.flexWrap,
-      gap: FLEX_META.Flex.props.gap,
-      justifyContent: FLEX_META.Flex.props.justifyContent,
+      flexWrap: BOX_META.Box.props.flexWrap,
+      gap: BOX_META.Box.props.gap,
+      justifyContent: BOX_META.Box.props.justifyContent,
       rowGap: {
-        ...FLEX_META.Flex.props.rowGap,
+        ...BOX_META.Box.props.rowGap,
         defaultValue: String(DEFAULT_FORM_FIELDS_ROW_GAP),
       },
-      tagAttrs: FLEX_META.Flex.props.tagAttrs,
-      tagRef: FLEX_META.Flex.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
   } satisfies ComponentMeta<FormFieldsProps>,
   FormActions: {
@@ -161,30 +160,30 @@ export const FORM_META = {
       features: [
         'controls layout and alignment of form action elements independently from form fields',
       ],
-      composedOf: ['Flex'],
+      composedOf: ['Box'],
       exposedTags: ['div'],
       slots: ['Form.ActionButton'],
     },
     props: {
       ...BOX_META.Box.props,
-      alignContent: FLEX_META.Flex.props.alignContent,
-      alignItems: FLEX_META.Flex.props.alignItems,
+      alignContent: BOX_META.Box.props.alignContent,
+      alignItems: BOX_META.Box.props.alignItems,
       children: {
-        ...FLEX_META.Flex.props.children,
+        ...BOX_META.Box.props.children,
         options: ['Form.ActionButton'],
         description: 'Action button slots.',
       },
-      columnGap: FLEX_META.Flex.props.columnGap,
-      flexDirection: FLEX_META.Flex.props.flexDirection,
-      flexWrap: FLEX_META.Flex.props.flexWrap,
+      columnGap: BOX_META.Box.props.columnGap,
+      flexDirection: BOX_META.Box.props.flexDirection,
+      flexWrap: BOX_META.Box.props.flexWrap,
       gap: {
-        ...FLEX_META.Flex.props.gap,
+        ...BOX_META.Box.props.gap,
         defaultValue: String(DEFAULT_FORM_ACTIONS_GAP),
       },
-      justifyContent: FLEX_META.Flex.props.justifyContent,
-      rowGap: FLEX_META.Flex.props.rowGap,
-      tagAttrs: FLEX_META.Flex.props.tagAttrs,
-      tagRef: FLEX_META.Flex.props.tagRef,
+      justifyContent: BOX_META.Box.props.justifyContent,
+      rowGap: BOX_META.Box.props.rowGap,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
   } satisfies ComponentMeta<FormActionsProps>,
   FormField: {
@@ -196,17 +195,17 @@ export const FORM_META = {
         'manages field registration and value control using React Hook Form',
         'provides shorthand props for common validation rules',
         'automatically associates labels and controls for accessibility based on the "name" prop',
-        'exposes Flex.Item props for per-field layout control',
+        'exposes Box props for per-field layout control',
       ],
-      composedOf: ['Flex.Item'],
+      composedOf: ['Box'],
       exposedTags: ['div'],
       slots: ['Form.Label', 'Form.Hint'],
     },
     props: {
       ...BOX_META.Box.props,
-      alignSelf: FLEX_META.FlexItem.props.alignSelf,
+      alignSelf: BOX_META.Box.props.alignSelf,
       children: {
-        ...FLEX_META.FlexItem.props.children,
+        ...BOX_META.Box.props.children,
         description: 'Form field component like Input or Select.',
       },
       email: {
@@ -215,14 +214,14 @@ export const FORM_META = {
           'Enables email format validation. Pass true to use the built-in validation message or a string to provide a custom one.',
       },
       flex: {
-        ...FLEX_META.FlexItem.props.flex,
+        ...BOX_META.Box.props.flex,
         defaultValue: String(DEFAULT_FORM_FIELD_FLEX),
         description:
           'Shorthand for flex-grow, flex-shrink and flex-basis. Defaults to 1 to allow fields to expand and fill available space.',
       },
-      flexBasis: FLEX_META.FlexItem.props.flexBasis,
-      flexGrow: FLEX_META.FlexItem.props.flexGrow,
-      flexShrink: FLEX_META.FlexItem.props.flexShrink,
+      flexBasis: BOX_META.Box.props.flexBasis,
+      flexGrow: BOX_META.Box.props.flexGrow,
+      flexShrink: BOX_META.Box.props.flexShrink,
       hint: {
         options: ['string'],
         description:
@@ -252,14 +251,14 @@ export const FORM_META = {
         options: ['RegisterOptions (RHF)'],
         description: 'Validation and configuration rules mapped to RHF Controller.',
       },
-      order: FLEX_META.FlexItem.props.order,
+      order: BOX_META.Box.props.order,
       required: {
         options: ['boolean', 'string'],
         description:
           'Marks the field as required. Pass true to use the built-in validation message or a string to provide a custom one.',
       },
-      tagAttrs: FLEX_META.FlexItem.props.tagAttrs,
-      tagRef: FLEX_META.FlexItem.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
   } satisfies ComponentMeta<FormFieldProps>,
   FormActionButton: {
@@ -267,23 +266,23 @@ export const FORM_META = {
       bundle: 'pro',
       name: 'Form.ActionButton',
       title: 'Action button for form submission and related actions.',
-      features: ['exposes Flex.Item props for per-button layout control'],
+      features: ['exposes Box props for per-button layout control'],
       guidelines: [
         'use the "type" prop to enable built-in behaviors such as submit, reset or clear',
       ],
-      composedOf: ['Flex.Item', 'Button'],
+      composedOf: ['Box', 'Button'],
       exposedTags: ['button'],
     },
     props: {
       ...BOX_META.Box.props,
-      alignSelf: FLEX_META.FlexItem.props.alignSelf,
+      alignSelf: BOX_META.Box.props.alignSelf,
       children: BUTTON_META.Button.props.children,
       color: BUTTON_META.Button.props.color,
       disabled: BUTTON_META.Button.props.disabled,
-      flex: FLEX_META.FlexItem.props.flex,
-      flexBasis: FLEX_META.FlexItem.props.flexBasis,
-      flexGrow: FLEX_META.FlexItem.props.flexGrow,
-      flexShrink: FLEX_META.FlexItem.props.flexShrink,
+      flex: BOX_META.Box.props.flex,
+      flexBasis: BOX_META.Box.props.flexBasis,
+      flexGrow: BOX_META.Box.props.flexGrow,
+      flexShrink: BOX_META.Box.props.flexShrink,
       iconName: BUTTON_META.Button.props.iconName,
       iconPlacement: BUTTON_META.Button.props.iconPlacement,
       intent: {
@@ -294,10 +293,10 @@ export const FORM_META = {
         options: ['e => void'],
         description: 'Callback fired when the button is clicked.',
       },
-      order: FLEX_META.FlexItem.props.order,
+      order: BOX_META.Box.props.order,
       scale: BUTTON_META.Button.props.scale,
-      tagAttrs: FLEX_META.FlexItem.props.tagAttrs,
-      tagRef: FLEX_META.FlexItem.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
       type: {
         options: ['submit', 'reset', 'clear'],
         description: "Defines the button's action behavior. Do omit for custom buttons.",

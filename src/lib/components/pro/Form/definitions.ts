@@ -7,7 +7,7 @@ import {
   UseFormReturn,
 } from 'react-hook-form'
 
-import { FlexItemProps, FlexProps } from 'lib/index.core'
+import { BoxProps } from 'lib/index.core'
 
 export const DEFAULT_FORM_FLEX_DIRECTION: FormProps['flexDirection'] = 'column'
 export const DEFAULT_FORM_ALIGN_ITEMS: FormProps['alignItems'] = 'stretch'
@@ -27,18 +27,18 @@ type FormOwnProps<
   resetOnSuccess?: boolean
 }
 
-type PropsFromFlexItem<
+type PropsFromBoxChildren<
   TFieldValues extends FieldValues = FieldValues,
   TContext = any,
   TTransformedValues = TFieldValues,
 > = {
   children:
-    | FlexItemProps<'form'>['children']
+    | BoxProps<'form'>['children']
     | ((formContext: UseFormReturn<TFieldValues, TContext, TTransformedValues>) => JSX.Element)
 }
 
-type PropsFromFlex = Pick<
-  FlexProps<'form'>,
+type PropsFromBox = Pick<
+  BoxProps<'form'>,
   | 'tagAttrs'
   | 'tagRef'
   | 'flexDirection'
@@ -58,6 +58,6 @@ export type FormProps<
   useFormProps?: UseFormProps<TFieldValues, TContext, TTransformedValues>
   onValidSubmission?: SubmitHandler<TTransformedValues>
   onInvalidSubmission?: SubmitErrorHandler<TFieldValues>
-} & PropsFromFlexItem<TFieldValues, TContext, TTransformedValues> &
-  PropsFromFlex &
+} & PropsFromBoxChildren<TFieldValues, TContext, TTransformedValues> &
+  PropsFromBox &
   FormOwnProps<TFieldValues, TContext, TTransformedValues>

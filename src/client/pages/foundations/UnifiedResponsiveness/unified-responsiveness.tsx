@@ -1,9 +1,9 @@
-import { Box, Flex, NEB_LENGTH, Text } from 'lib/components'
+import { Box, NEB_LENGTH, Text } from 'lib/components'
 
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap={NEB_LENGTH.px_016}>
+      <Box display="flex" flexDirection="column" gap={NEB_LENGTH.px_016}>
         <Text>
           Just like Box's drawing capabilities, responsiveness is also centralized, implemented once
           and reused by multiple components. The model enforces very predictable behavior. When a
@@ -22,7 +22,7 @@ export default () => {
           layouts. Responsiveness is driven entirely through React hooks and custom logic that
           determines breakpoint precedence and resolves the final values.
         </Text>
-      </Flex>
+      </Box>
     </Box>
   )
 }

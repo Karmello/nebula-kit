@@ -1,5 +1,5 @@
 import { BoxVariant } from 'lib/components/core/Box'
-import { ButtonProps, FlexProps } from 'lib/index.core'
+import { BoxProps, ButtonProps } from 'lib/index.core'
 
 export const SIDE_NAV_EXPAND_MODES = ['single', 'multiple'] as const
 export const SIDE_NAV_VARIANTS = ['solid', 'ghost'] as const satisfies BoxVariant[]
@@ -15,13 +15,13 @@ export type SideNavOwnProps = {
   expandMode?: SideNavExpandMode
 }
 
-type PropsFromFlex = Pick<FlexProps<'nav'>, 'tagAttrs' | 'tagRef' | 'gap'>
+type PropsFromBox = Pick<BoxProps<'nav'>, 'tagAttrs' | 'tagRef' | 'gap'>
 
 type PropsFromButton = Pick<ButtonProps<'a'>, 'color' | 'intent' | 'scale'>
 
-export type SideNavProps = PropsFromFlex &
+export type SideNavProps = PropsFromBox &
   PropsFromButton &
   SideNavOwnProps & {
-    children: FlexProps<'nav'>['children']
+    children: BoxProps<'nav'>['children']
     variant?: SideNavVariant
   }

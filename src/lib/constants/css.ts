@@ -1,6 +1,14 @@
 export const CSS_TEXT_ALIGN = ['left', 'right', 'center', 'justify', 'start', 'end'] as const
 export const CSS_POINTER_EVENTS = ['auto', 'none'] as const
-export const CSS_DISPLAY = ['block', 'inline', 'inline-block', 'none', 'contents'] as const
+export const CSS_DISPLAY = [
+  'block',
+  'inline',
+  'inline-block',
+  'flex',
+  'inline-flex',
+  'contents',
+  'none',
+] as const
 export const CSS_OVERFLOW = ['visible', 'hidden', 'clip', 'scroll', 'auto'] as const
 export const CSS_POSITION = ['static', 'relative', 'absolute', 'fixed', 'sticky'] as const
 export const CSS_VISIBILITY = ['visible', 'hidden'] as const
@@ -16,7 +24,6 @@ export const CSS_CURSOR = [
   'move',
 ] as const
 
-export const CSS_FLEX_DISPLAY = ['flex', 'inline-flex'] as const
 export const CSS_FLEX_DIRECTION = ['row', 'row-reverse', 'column', 'column-reverse'] as const
 export const CSS_FLEX_WRAP = ['nowrap', 'wrap', 'wrap-reverse'] as const
 

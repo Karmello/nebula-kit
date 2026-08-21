@@ -1,9 +1,9 @@
-import { Box, Flex, NEB_LENGTH, Text } from 'lib/components'
+import { Box, NEB_LENGTH, Text } from 'lib/components'
 
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" gap={NEB_LENGTH.px_016}>
+      <Box display="flex" flexDirection="column" gap={NEB_LENGTH.px_016}>
         <Text>
           NebulaKit ensures that proper semantic HTML tags are applied to each component
           automatically, without the developer needing to think about it at all. If a component is
@@ -20,7 +20,7 @@ export default () => {
           </Text>
           component, which is the underlying primitive used by every component in the library.
         </Text>
-      </Flex>
+      </Box>
     </Box>
   )
 }

@@ -3,7 +3,6 @@ import { Navigate, useLocation } from 'react-router'
 
 import {
   Box,
-  Flex,
   Markup,
   MultiSelect,
   NEB_LENGTH,
@@ -66,8 +65,13 @@ export const PatternsPage = () => {
                     </Markup>
                   </SplitView.MainBar>
                   <Spacer blockSize={NEB_LENGTH.px_048} />
-                  <Flex gap={NEB_LENGTH.px_024} flexDirection="column" alignItems="stretch">
-                    <Flex.Item flex="1">
+                  <Box
+                    display="flex"
+                    gap={NEB_LENGTH.px_024}
+                    flexDirection="column"
+                    alignItems="stretch"
+                  >
+                    <Box flex="1">
                       <Box
                         tagAttrs={{ style: { borderStyle: 'dashed' } }}
                         drawable
@@ -78,18 +82,18 @@ export const PatternsPage = () => {
                       >
                         <Component />
                       </Box>
-                    </Flex.Item>
+                    </Box>
                     {pattern?.code ? (
-                      <Flex.Item flex="1">
+                      <Box flex="1">
                         <CodeSnippet
                           lang="tsx"
                           code={pattern.code}
                           usage={pattern.usage}
                           maxBlockSize="calc(100dvh - 275px)"
                         />
-                      </Flex.Item>
+                      </Box>
                     ) : null}
-                  </Flex>
+                  </Box>
                 </SplitView.Main>
                 <SplitView.Side inlineSize="350px" paddingRight={{ lg: NEB_LENGTH.px_024 }}>
                   <MultiSelect value={patternCategories} onChange={setPatternCategories} size="sm">

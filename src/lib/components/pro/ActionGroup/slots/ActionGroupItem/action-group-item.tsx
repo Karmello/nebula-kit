@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, ComponentRef, KeyboardEvent, useRef } from 'react'
 
-import { Box, Flex } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 
 import { useActionGroupContext } from '../../action-group-provider'
 import { getTargetIndexFromKeyboardEvent } from '../../helpers'
@@ -25,7 +25,7 @@ export const ActionGroupItem = <T extends ActionGroupItemTag = 'button'>({
     internalProps as ActionGroupItemInternalProps
 
   return (
-    <Flex.Item flex={stretch ? '1 0 auto' : undefined}>
+    <Box flex={stretch ? '1 0 auto' : undefined}>
       <Box
         tag={tag}
         tagRef={finalRef}
@@ -63,7 +63,7 @@ export const ActionGroupItem = <T extends ActionGroupItemTag = 'button'>({
       >
         {children}
       </Box>
-    </Flex.Item>
+    </Box>
   )
 }
 

@@ -4,7 +4,6 @@ import {
   Box,
   Button,
   Divider,
-  Flex,
   Link,
   NEB_LENGTH,
   SideNav,
@@ -131,7 +130,8 @@ export const CatalogPageTemplate = memo(
                     </SplitView.Side>
                     <SplitView.Main paddingRight={NEB_LENGTH.px_024}>
                       <SplitView.MainBar>
-                        <Flex
+                        <Box
+                          display="flex"
                           columnGap={NEB_LENGTH.px_016}
                           rowGap={NEB_LENGTH.px_004}
                           alignItems="center"
@@ -176,7 +176,7 @@ export const CatalogPageTemplate = memo(
                               </Button>
                             </Link>
                           ) : null}
-                        </Flex>
+                        </Box>
                         <Divider marginTop={NEB_LENGTH.px_008} />
                       </SplitView.MainBar>
                       {pageKey === PageKey.foundations.toString() ? (

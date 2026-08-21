@@ -1,6 +1,6 @@
 import { kebabCase } from 'change-case'
 
-import { Box, Button, Flex, Grid, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, Grid, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { type IconName } from 'lib/components/core/Icon/types'
 import { PAGE_SECTIONS } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
@@ -25,7 +25,7 @@ const Family = ({
         {components ? (
           <>
             <Spacer blockSize={NEB_LENGTH.px_024} />
-            <Flex gap={NEB_LENGTH.px_008}>
+            <Box display="flex" gap={NEB_LENGTH.px_008}>
               {components.map(c => {
                 const { pageKey, categoryKey, itemKey } = PAGE_SECTIONS.find(
                   s => s.itemKey === kebabCase(c)
@@ -45,7 +45,7 @@ const Family = ({
                   </Link>
                 )
               })}
-            </Flex>
+            </Box>
           </>
         ) : null}
       </Section>
@@ -67,7 +67,7 @@ export const Families = () => {
         heading="Layout"
         description="Powerful layout components make arranging UI straightforward by using well-known techniques like Flexbox or CSS Grid."
         iconName="panel-top-bottom-dashed"
-        components={['Flex', 'Grid']}
+        components={['Grid']}
       />
       <Family
         heading="Overlays"

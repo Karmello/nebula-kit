@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router'
 
-import { Flex, IconButton, Select } from 'lib/components'
+import { Box, IconButton, Select } from 'lib/components'
 import { useLogoutUser } from 'client/api'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
@@ -27,7 +27,7 @@ export const UserActionMenu = () => {
 
   return (
     <>
-      <Flex>
+      <Box display="flex">
         <IconButton
           scale="md"
           iconName="compass"
@@ -78,7 +78,7 @@ export const UserActionMenu = () => {
             </>
           )}
         </Select>
-      </Flex>
+      </Box>
       <WebsiteMapDialog />
       <AppPrefsDialog />
     </>

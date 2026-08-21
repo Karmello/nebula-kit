@@ -1,4 +1,3 @@
-import { FlexProps } from 'lib/index.core'
 import { MarkerListTag } from 'lib/types'
 
 import { BoxProps } from '../Box'
@@ -13,13 +12,9 @@ type MarkerListOwnProps = {
   listStyle?: MarkerListStyle
 }
 
-type PropsFromFlex<T extends MarkerListTag = 'ul'> = Pick<
-  FlexProps<T>,
-  'tag' | 'tagAttrs' | 'tagRef' | 'children' | 'gap'
+type PropsFromBox<T extends MarkerListTag = 'ul'> = Pick<
+  BoxProps<T>,
+  'tag' | 'tagAttrs' | 'tagRef' | 'children' | 'gap' | 'color' | 'intent'
 >
 
-type PropsFromBox<T extends MarkerListTag = 'ul'> = Pick<BoxProps<T>, 'color' | 'intent'>
-
-export type MarkerListProps<T extends MarkerListTag = 'ul'> = PropsFromFlex<T> &
-  PropsFromBox<T> &
-  MarkerListOwnProps
+export type MarkerListProps<T extends MarkerListTag = 'ul'> = PropsFromBox<T> & MarkerListOwnProps

@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 
-import { Button, Flex } from 'lib/index.core'
+import { Box, Button } from 'lib/index.core'
 import { type Example } from 'client/definitions'
 
 import { FocusTrap } from '../focus-trap'
@@ -10,11 +10,11 @@ const FocusTrapWrapper = () => {
 
   return (
     <FocusTrap tagRef={ref} active>
-      <Flex tagRef={ref} gap="8px">
+      <Box display="flex" tagRef={ref} gap="8px">
         <Button>Button 1</Button>
         <Button>Button 2</Button>
         <Button>Button 3</Button>
-      </Flex>
+      </Box>
     </FocusTrap>
   )
 }
@@ -28,11 +28,11 @@ const ref = useRef(null)
 
 return (
   <FocusTrap tagRef={ref} active>
-    <Flex tagRef={ref} gap="8px">
+    <Box display="flex" tagRef={ref} gap="8px">
       <Button>Button 1</Button>
       <Button>Button 2</Button>
       <Button>Button 3</Button>
-    </Flex>
+    </Box>
   </FocusTrap>
 )`,
   },

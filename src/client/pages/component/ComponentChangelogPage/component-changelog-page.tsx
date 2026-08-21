@@ -1,6 +1,6 @@
 import { pascalCase } from 'change-case'
 
-import { Box, Flex, MarkerList, Markup, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, MarkerList, Markup, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import meta from 'client/meta'
 import { useComponentsPageStore } from 'client/store'
 
@@ -17,7 +17,7 @@ export const ComponentChangelogPage = () => {
   return (
     <>
       <Box maxInlineSize="55rem">
-        <Flex flexDirection="column" alignItems="stretch" gap={NEB_LENGTH.px_048}>
+        <Box display="flex" flexDirection="column" alignItems="stretch" gap={NEB_LENGTH.px_048}>
           {versionKeys.map(vKey => (
             <Section key={vKey} heading={`v${vKey}`} size="sm" intent="primary" color="blue">
               <MarkerList>
@@ -31,7 +31,7 @@ export const ComponentChangelogPage = () => {
               </MarkerList>
             </Section>
           ))}
-        </Flex>
+        </Box>
       </Box>
       <Spacer blockSize={NEB_LENGTH.px_064} />
     </>

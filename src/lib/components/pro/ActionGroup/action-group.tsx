@@ -1,7 +1,7 @@
 import { cloneElement } from 'react'
 
 import { WithSlots } from 'lib/components/shared'
-import { Box, Flex } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 
 import { ActionGroupProvider, useActionGroupContext } from './action-group-provider'
 import {
@@ -74,7 +74,7 @@ const ActionGroupImpl = ({
       paddingBottom={attach === 'bottom' || attach === 'block' ? gap : undefined}
       paddingLeft={attach === 'left' || attach === 'inline' ? gap : undefined}
     >
-      <Flex
+      <Box
         flexDirection={direction}
         alignItems="stretch"
         display={stretch ? 'flex' : 'inline-flex'}
@@ -95,7 +95,7 @@ const ActionGroupImpl = ({
             } as ActionGroupItemInternalProps
           )
         )}
-      </Flex>
+      </Box>
     </Box>
   )
 }

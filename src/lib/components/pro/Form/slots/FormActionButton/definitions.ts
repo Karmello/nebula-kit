@@ -1,6 +1,6 @@
 import { MouseEventHandler } from 'react'
 
-import { ButtonProps, FlexItemProps } from 'lib/index.core'
+import { BoxProps, ButtonProps } from 'lib/index.core'
 
 export const DEFAULT_FORM_ACTION_SUBMIT_BUTTON_INTENT: FormActionButtonProps['intent'] = 'primary'
 export const DEFAULT_FORM_ACTION_SUBMIT_BUTTON_COLOR: FormActionButtonProps['color'] = 'blue'
@@ -10,7 +10,10 @@ type FormActionButtonOwnProps = {
   onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
-type PropsFromFlexItem = Omit<FlexItemProps<'div'>, 'children' | 'tag' | 'hidden'>
+type PropsFromFlexItem = Pick<
+  BoxProps<'div'>,
+  'tagAttrs' | 'tagRef' | 'flex' | 'flexGrow' | 'flexShrink' | 'flexBasis' | 'alignSelf' | 'order'
+>
 
 type PropsFromButton = Pick<
   ButtonProps,

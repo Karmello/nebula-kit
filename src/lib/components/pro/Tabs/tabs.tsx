@@ -1,7 +1,7 @@
 import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { useControlled } from 'lib/hooks'
-import { Box, Flex, Text } from 'lib/index.core'
+import { Box, Text } from 'lib/index.core'
 import { ActionGroup, TabsPanelProps, TabsProps, TabsTabProps } from 'lib/index.pro'
 
 import {
@@ -53,7 +53,11 @@ export const Tabs = ({
             borderLeftWidth={direction === 'column' ? '0px' : undefined}
             overflow="clip"
           >
-            <Flex flexDirection={direction === 'column' ? 'row' : 'column'} alignItems="stretch">
+            <Box
+              display="flex"
+              flexDirection={direction === 'column' ? 'row' : 'column'}
+              alignItems="stretch"
+            >
               <Box overflowX="auto">
                 <ActionGroup
                   tagAttrs={{
@@ -85,7 +89,8 @@ export const Tabs = ({
                           setCurrentValue(value)
                         }}
                       >
-                        <Flex
+                        <Box
+                          display="flex"
                           tagAttrs={{
                             style: {
                               blockSize: CONTROL_SCALE_MAP[size || 'md'].blockSize,
@@ -104,13 +109,13 @@ export const Tabs = ({
                           >
                             {tab}
                           </Text>
-                        </Flex>
+                        </Box>
                       </ActionGroup.Item>
                     )
                   })}
                 </ActionGroup>
               </Box>
-              <Flex.Item flex={direction === 'column' ? '1' : undefined}>
+              <Box flex={direction === 'column' ? '1' : undefined}>
                 {slotsByName['Tabs.Panel'].map((panel, index) => {
                   const { value } = (panel as any).props as TabsPanelProps
                   const isSelected = currentValue === value
@@ -132,8 +137,8 @@ export const Tabs = ({
                     </Box>
                   )
                 })}
-              </Flex.Item>
-            </Flex>
+              </Box>
+            </Box>
           </Box>
         )
       }}

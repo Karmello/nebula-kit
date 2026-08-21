@@ -1,4 +1,4 @@
-import { Box, Button, Flex, MarkerList, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, MarkerList, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { BOX_INTENTS } from 'lib/components/core/Box/constants'
 import { BoxIntent } from 'lib/components/core/Box/types'
 
@@ -14,7 +14,7 @@ const INTENTS_INFO_MAP: Record<BoxIntent, string> = {
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Flex flexDirection="column" alignItems="stretch" gap={NEB_LENGTH.px_048}>
+      <Box display="flex" flexDirection="column" alignItems="stretch" gap={NEB_LENGTH.px_048}>
         <Text>
           Intents and variants available in the system, showing how semantic roles combine with
           visual styles across components.
@@ -22,7 +22,7 @@ export default () => {
         <Section heading="Solid variant" size="sm">
           <Text>Filled surface, strong emphasis.</Text>
           <Spacer blockSize={NEB_LENGTH.px_024} />
-          <Flex flexWrap="wrap" gap={NEB_LENGTH.px_008}>
+          <Box display="flex" flexWrap="wrap" gap={NEB_LENGTH.px_008}>
             {BOX_INTENTS.map(intent => {
               return (
                 <Button key={intent} variant="solid" intent={intent}>
@@ -30,12 +30,12 @@ export default () => {
                 </Button>
               )
             })}
-          </Flex>
+          </Box>
         </Section>
         <Section heading="Outline variant" size="sm">
           <Text>Border only, background matches the app's surface.</Text>
           <Spacer blockSize={NEB_LENGTH.px_024} />
-          <Flex flexWrap="wrap" gap={NEB_LENGTH.px_008}>
+          <Box display="flex" flexWrap="wrap" gap={NEB_LENGTH.px_008}>
             {BOX_INTENTS.map(intent => {
               return (
                 <Button key={intent} variant="outline" intent={intent}>
@@ -43,12 +43,12 @@ export default () => {
                 </Button>
               )
             })}
-          </Flex>
+          </Box>
         </Section>
         <Section heading="Soft outline variant" size="sm">
           <Text>Border only, background matches the app's surface, text matches the border.</Text>
           <Spacer blockSize={NEB_LENGTH.px_024} />
-          <Flex flexWrap="wrap" gap={NEB_LENGTH.px_008}>
+          <Box display="flex" flexWrap="wrap" gap={NEB_LENGTH.px_008}>
             {BOX_INTENTS.map(intent => {
               return (
                 <Button key={intent} variant="soft-outline" intent={intent}>
@@ -56,12 +56,12 @@ export default () => {
                 </Button>
               )
             })}
-          </Flex>
+          </Box>
         </Section>
         <Section heading="Ghost variant" size="sm">
           <Text>Text only, background and border match the app's surface.</Text>
           <Spacer blockSize={NEB_LENGTH.px_024} />
-          <Flex flexWrap="wrap" gap={NEB_LENGTH.px_008}>
+          <Box display="flex" flexWrap="wrap" gap={NEB_LENGTH.px_008}>
             {BOX_INTENTS.map(intent => {
               return (
                 <Button key={intent} variant="ghost" intent={intent}>
@@ -69,7 +69,7 @@ export default () => {
                 </Button>
               )
             })}
-          </Flex>
+          </Box>
         </Section>
         <Section heading="Intents" size="sm">
           <MarkerList>
@@ -81,7 +81,7 @@ export default () => {
             ))}
           </MarkerList>
         </Section>
-      </Flex>
+      </Box>
     </Box>
   )
 }

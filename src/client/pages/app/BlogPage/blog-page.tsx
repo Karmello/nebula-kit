@@ -1,4 +1,4 @@
-import { Box, Flex, Link, NEB_LENGTH, Section, Text, Title } from 'lib/components'
+import { Box, Link, NEB_LENGTH, Section, Text, Title } from 'lib/components'
 import { type IconName } from 'lib/components/core/Icon/types'
 
 type ArticleProps = {
@@ -12,7 +12,7 @@ type ArticleProps = {
 const Article = ({ title, date, platform, href, iconName }: ArticleProps) => {
   return (
     <Section heading={title} variant="outline" intent="secondary" size="sm" iconName={iconName}>
-      <Flex columnGap={NEB_LENGTH.px_008} flexWrap="wrap">
+      <Box display="flex" columnGap={NEB_LENGTH.px_008} flexWrap="wrap">
         <Text tag="span" noWrap>
           {`${new Date(date).toDateString()} |`}
         </Text>
@@ -24,7 +24,7 @@ const Article = ({ title, date, platform, href, iconName }: ArticleProps) => {
             </Text>
           </Link>
         </Title>
-      </Flex>
+      </Box>
     </Section>
   )
 }
@@ -37,7 +37,7 @@ export const BlogPage = () => {
       maxInlineSize="75rem"
     >
       <Section size="lg" heading="Blog" iconName="rss">
-        <Flex flexDirection="column" rowGap={NEB_LENGTH.px_016} alignItems="stretch">
+        <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_016} alignItems="stretch">
           <Article
             title="Local theme island in action"
             date="02-04-2026"
@@ -66,7 +66,7 @@ export const BlogPage = () => {
             href="https://dev.to/karmello/design-systems-and-the-problem-of-ui-entropy-e3c"
             iconName="newspaper"
           />
-        </Flex>
+        </Box>
       </Section>
     </Box>
   )

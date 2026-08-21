@@ -22,7 +22,7 @@ export const BREADCRUMB_META = {
         'integrates cleanly with routing, configuration and non-routing flows',
         'keeps application logic and navigation policy outside the component',
       ],
-      composedOf: ['Box', 'Flex', 'Icon', 'Text'],
+      composedOf: ['Box', 'Icon', 'Text'],
       exposedTags: ['div', 'nav', 'section'],
     },
     props: {

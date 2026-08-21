@@ -3,7 +3,7 @@ import { ReactElement, useEffect, useRef, useState } from 'react'
 import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE } from 'lib/constants'
 import { useControlled } from 'lib/hooks'
-import { Box, Flex, Icon, SelectOptionProps, SelectProps, Text } from 'lib/index.core'
+import { Box, Icon, SelectOptionProps, SelectProps, Text } from 'lib/index.core'
 import { ActionGroup, Floating, FloatingProps } from 'lib/index.pro'
 
 import {
@@ -84,7 +84,7 @@ export const SelectImpl = ({
           borderTopLeftRadius={open && !isOpenDownwards ? '0px' : undefined}
           borderTopRightRadius={open && !isOpenDownwards ? '0px' : undefined}
         >
-          <Flex tag="span" alignItems="center" justifyContent="space-between" columnGap="8px">
+          <Box display="flex" tag="span" alignItems="center" justifyContent="space-between" columnGap="8px">
             <Text
               fontSize={CONTROL_SCALE_MAP[size].fontSize}
               lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
@@ -93,7 +93,7 @@ export const SelectImpl = ({
               {staticLabel ?? currentLabel ?? 'Select...'}
             </Text>
             <Icon name="chevron-down" size={CONTROL_SCALE_MAP[size].fontSize} />
-          </Flex>
+          </Box>
         </Box>
       </Floating.Trigger>
       <Floating.Content>
@@ -131,7 +131,8 @@ export const SelectImpl = ({
                     setOpen(false)
                   }}
                 >
-                  <Flex
+                  <Box
+                    display="flex"
                     tagAttrs={{
                       style: {
                         blockSize: CONTROL_SCALE_MAP[size].blockSize,
@@ -147,7 +148,7 @@ export const SelectImpl = ({
                     >
                       {slot}
                     </Text>
-                  </Flex>
+                  </Box>
                 </ActionGroup.Item>
               )
             })}

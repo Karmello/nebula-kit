@@ -1,4 +1,4 @@
-import { Flex, NEB_LENGTH } from 'lib/components'
+import { Box, NEB_LENGTH } from 'lib/components'
 import { BREAKPOINTS } from 'lib/constants'
 import { usePlaygroundStore } from 'client/store'
 
@@ -17,13 +17,13 @@ export const PropEditor = () => {
       {typeof prop.value !== 'object' ? (
         <PropValueControl />
       ) : (
-        <Flex flexDirection="column" alignItems="stretch" rowGap={NEB_LENGTH.px_016}>
+        <Box display="flex" flexDirection="column" alignItems="stretch" rowGap={NEB_LENGTH.px_016}>
           {BREAKPOINTS.map(bp => (
-            <Flex.Item key={bp}>
+            <Box key={bp}>
               <PropValueControl bp={bp} />
-            </Flex.Item>
+            </Box>
           ))}
-        </Flex>
+        </Box>
       )}
     </>
   )

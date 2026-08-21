@@ -6,7 +6,7 @@
   }
 }
 
-.neb-segment[data-neb-flex-flex-direction='row'] {
+.neb-segment[data-neb-box-flex-direction='row'] {
   .neb-segment-item:first-child {
     > .neb-box[data-neb-box-drawable='true'] {
       border-top-left-radius: var(--neb-border-radius);
@@ -21,7 +21,7 @@
   }
 }
 
-.neb-segment[data-neb-flex-flex-direction='row-reverse'] {
+.neb-segment[data-neb-box-flex-direction='row-reverse'] {
   .neb-segment-item:last-child {
     > .neb-box[data-neb-box-drawable='true'] {
       border-top-left-radius: var(--neb-border-radius);
@@ -36,7 +36,7 @@
   }
 }
 
-.neb-segment[data-neb-flex-flex-direction='column'] {
+.neb-segment[data-neb-box-flex-direction='column'] {
   .neb-segment-item:first-child {
     > .neb-box[data-neb-box-drawable='true'] {
       border-top-left-radius: var(--neb-border-radius);
@@ -51,7 +51,7 @@
   }
 }
 
-.neb-segment[data-neb-flex-flex-direction='column-reverse'] {
+.neb-segment[data-neb-box-flex-direction='column-reverse'] {
   .neb-segment-item:last-child {
     > .neb-box[data-neb-box-drawable='true'] {
       border-top-left-radius: var(--neb-border-radius);

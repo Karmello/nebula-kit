@@ -1,4 +1,4 @@
-import { Box, Flex, NEB_LENGTH, Text } from 'lib/components'
+import { Box, NEB_LENGTH, Text } from 'lib/components'
 
 type UserMessageProps = {
   content: string
@@ -6,7 +6,7 @@ type UserMessageProps = {
 
 export const UserMessage = ({ content }: UserMessageProps) => {
   return (
-    <Flex.Item alignSelf="flex-end">
+    <Box alignSelf="flex-end">
       <Box
         drawable
         variant="solid"
@@ -19,6 +19,6 @@ export const UserMessage = ({ content }: UserMessageProps) => {
           {content}
         </Text>
       </Box>
-    </Flex.Item>
+    </Box>
   )
 }
