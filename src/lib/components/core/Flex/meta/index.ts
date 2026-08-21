@@ -8,7 +8,7 @@ import {
   CSS_FLEX_WRAP,
 } from 'lib/constants'
 import { FlexItemProps, FlexProps } from 'lib/index.core'
-import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
+import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
 import { FLEX_CHANGELOG } from './changelog'
@@ -46,7 +46,7 @@ export const FLEX_META = {
         description: 'Flex.Item or any React node.',
       },
       columnGap: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: 'Defines horizontal spacing between columns of children.',
         link: true,
@@ -70,7 +70,7 @@ export const FLEX_META = {
         link: true,
       },
       gap: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: 'Defines spacing between children on both axes.',
         link: true,
@@ -82,7 +82,7 @@ export const FLEX_META = {
         link: true,
       },
       rowGap: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: 'Defines vertical spacing between rows of children.',
         link: true,
@@ -114,32 +114,32 @@ export const FLEX_META = {
       },
       children: BOX_META.Box.props.children,
       flex: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: 'Shorthand for flex-grow, flex-shrink and flex-basis.',
         link: true,
       },
       flexBasis: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: "Sets the item's initial main-size before free space is distributed.",
         link: true,
       },
       flexGrow: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: 'Controls how much the item can grow relative to the other items when extra space is available.',
         link: true,
       },
       flexShrink: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: 'Controls how much the item can shrink relative to the other items when space is limited.',
         link: true,
       },
       hidden: BOX_META.Box.props.hidden,
       order: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: "Defines the item's order relative to other items, independent of source order.",
         link: true,

@@ -1,5 +1,5 @@
 import { ResizeProps } from 'lib/index.core'
-import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
+import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
 import { RESIZE_PROPERTIES } from '../definitions'
@@ -34,7 +34,7 @@ export const RESIZE_META = {
         description: 'Animation duration in milliseconds.',
       },
       easing: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         defaultValue: DEFAULT_RESIZE_EASING,
         description: 'Timing function for the animation.',
       },

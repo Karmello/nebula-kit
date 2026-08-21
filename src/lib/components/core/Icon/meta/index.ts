@@ -1,4 +1,4 @@
-import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
+import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
 import { DEFAULT_ICON_SIZE } from '../constants'
@@ -40,7 +40,7 @@ export const ICON_META = {
         description: 'Name of the icon to render.',
       },
       size: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         defaultValue: String(DEFAULT_ICON_SIZE),
         description: 'Size of the icon.',
       },

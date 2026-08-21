@@ -26,7 +26,7 @@ export const PropsTable = ({ data, category }: Props) => {
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell minInlineSize="20ch">Values</Table.HeaderCell>
+            <Table.HeaderCell minInlineSize="20ch">Value</Table.HeaderCell>
             <Table.HeaderCell textAlign="center">Default</Table.HeaderCell>
             <Table.HeaderCell textAlign="center">Required</Table.HeaderCell>
             <Table.HeaderCell textAlign="center">Responsive</Table.HeaderCell>

@@ -2,7 +2,7 @@ import { sentenceCase } from 'change-case'
 
 import { IconButton, Input, NEB_LENGTH, Select, Spacer, Text } from 'lib/components'
 import { Breakpoint } from 'lib/types'
-import { DOCS_CSS_LABEL, PLAYGROUND_ARRAY_DATA_MAP, PLAYGROUND_CONTROLS_MAP, PlaygroundProp } from 'client/definitions'
+import { PLAYGROUND_ARRAY_DATA_MAP, PLAYGROUND_CONTROLS_MAP, PlaygroundProp } from 'client/definitions'
 import { usePlaygroundStore } from 'client/store'
 
 export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
@@ -69,7 +69,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
       {PLAYGROUND_CONTROLS_MAP[activeProp as PlaygroundProp].type === 'array' ? (
         <Select value={value} onChange={onChange}>
           <Select.Option value="">...</Select.Option>
-          {(PLAYGROUND_ARRAY_DATA_MAP[prop.options[0]] || prop.options.filter(o => o !== DOCS_CSS_LABEL)).map(option => (
+          {PLAYGROUND_ARRAY_DATA_MAP[prop.options[0]].map(option => (
             <Select.Option key={option} value={option}>
               {option}
             </Select.Option>

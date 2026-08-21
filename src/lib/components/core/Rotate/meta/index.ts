@@ -1,5 +1,5 @@
 import { RotateProps } from 'lib/index.core'
-import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
+import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
 import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING } from '../rotate'
@@ -39,7 +39,7 @@ export const ROTATE_META = {
         description: 'Animation duration in milliseconds.',
       },
       easing: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         defaultValue: DEFAULT_ROTATE_EASING,
         description: 'Timing function for the animation.',
       },

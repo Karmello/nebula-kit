@@ -1,6 +1,6 @@
 import { TEXT_TAGS } from 'lib/constants'
 import { TextProps } from 'lib/index.core'
-import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
+import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
 import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_SPACE, TEXT_TYPOGRAPHY, TEXT_WORD_BREAK } from '../constants'
@@ -35,7 +35,7 @@ export const TEXT_META = {
       },
       color: BOX_META.Box.props.color,
       fontSize: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         description: 'Sets the fontSize value, bypassing typography.',
       },
       intent: BOX_META.Box.props.intent,
@@ -44,7 +44,7 @@ export const TEXT_META = {
         description: 'Toggles italic styling.',
       },
       lineHeight: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         description: 'Sets the lineHeight value, bypassing typography.',
       },
       noWrap: {

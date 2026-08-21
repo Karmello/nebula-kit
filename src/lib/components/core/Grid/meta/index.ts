@@ -7,7 +7,7 @@ import {
   CSS_GRID_PLACE_ITEMS,
 } from 'lib/constants'
 import { GridItemProps, GridProps } from 'lib/index.core'
-import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
+import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
 import { GRID_CHANGELOG } from './changelog'
@@ -33,7 +33,7 @@ export const GRID_META = {
         description: 'Grid.Item or any React node.',
       },
       columnGap: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: 'Sets the spacing between grid columns.',
         link: true,
@@ -45,13 +45,13 @@ export const GRID_META = {
         link: true,
       },
       gap: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: 'Sets the spacing between rows and columns in the grid.',
         link: true,
       },
       gridAutoColumns: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: 'Defines the size of columns that are created automatically.',
         link: true,
@@ -63,19 +63,19 @@ export const GRID_META = {
         link: true,
       },
       gridAutoRows: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: 'Defines the size of rows that are created automatically.',
         link: true,
       },
       gridTemplateColumns: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: 'Defines the column structure of the grid.',
         link: true,
       },
       gridTemplateRows: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: "Sets how the grid's rows are laid out.",
         link: true,
@@ -93,7 +93,7 @@ export const GRID_META = {
         link: true,
       },
       rowGap: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: 'Sets the spacing between grid rows.',
         link: true,
@@ -122,13 +122,13 @@ export const GRID_META = {
       },
       children: BOX_META.Box.props.children,
       gridColumn: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: "Sets the item's horizontal position or span between grid columns.",
         link: true,
       },
       gridRow: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: "Sets the item's vertical position or span between grid rows.",
         link: true,

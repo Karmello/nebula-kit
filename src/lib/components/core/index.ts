@@ -1,3 +1,4 @@
+export { NEB_LENGTH } from '../../constants'
 export {
   AppFrame,
   type AppFrameFooterProps,

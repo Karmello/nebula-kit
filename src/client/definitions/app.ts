@@ -26,5 +26,3 @@ export const PAGE_SECTIONS = [
   ...FOUNDATIONS_SECTIONS.map(o => ({ ...o, pageKey: PageKey.foundations.replace('/', '') })),
   ...COMPONENTS_PAGE_SECTIONS.map(o => ({ ...o, pageKey: PageKey.components.replace('/', '') })),
 ]
-
-export const DOCS_CSS_LABEL = '<CSS>'

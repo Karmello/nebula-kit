@@ -1,6 +1,4 @@
-import { Box, Button, Flex, Spacer, Text } from '@nebula-kit/core'
-
-import { NEB_LENGTH } from 'lib/components'
+import { Box, Button, Flex, NEB_LENGTH, Spacer, Text } from '@nebula-kit/core'
 
 export const StylingIsland = () => {
   return (

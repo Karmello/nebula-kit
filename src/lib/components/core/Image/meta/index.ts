@@ -1,5 +1,5 @@
 import { ImageProps } from 'lib/index.core'
-import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
+import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
 import {
@@ -64,7 +64,7 @@ export const IMAGE_META = {
         link: true,
       },
       objectPosition: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         isResponsive: true,
         description: 'Sets the alignment of the image within its container.',
         link: true,

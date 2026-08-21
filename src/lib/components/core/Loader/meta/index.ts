@@ -1,5 +1,5 @@
 import { LoaderProps } from 'lib/index.core'
-import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
+import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
 import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE } from '../definitions'
@@ -30,7 +30,7 @@ export const LOADER_META = {
       },
       color: BOX_META.Box.props.color,
       size: {
-        options: [DOCS_CSS_LABEL],
+        options: ['string'],
         defaultValue: String(DEFAULT_LOADER_SIZE),
         description: 'Controls the diameter of the loader.',
       },

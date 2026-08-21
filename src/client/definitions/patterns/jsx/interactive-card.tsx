@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Box, Divider, Spacer, Text, Title } from '@nebula-kit/core'
+import { Box, Divider, NEB_LENGTH, Spacer, Text, Title } from '@nebula-kit/core'
 import { Scale } from '@nebula-kit/pro'
-
-import { NEB_LENGTH } from 'lib/components'
 
 export const InteractiveCard = () => {
   const [visible, setVisible] = useState<boolean>(false)
