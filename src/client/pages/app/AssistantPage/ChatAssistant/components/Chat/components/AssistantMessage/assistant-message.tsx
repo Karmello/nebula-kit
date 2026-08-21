@@ -2,7 +2,7 @@ import { Children, ReactElement, ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-import { Box, Button, Divider } from 'lib/components'
+import { Box, Button, Divider, NEB_LENGTH } from 'lib/components'
 import { CodeSnippet } from 'client/components'
 import { CODE_SNIPPET_LANGS } from 'client/components/meta/CodeSnippet/definitions'
 
@@ -26,8 +26,8 @@ export const AssistantMessage = ({ content, handleQuestionClick }: AssistantMess
                 drawable
                 variant="solid"
                 intent="muted"
-                paddingInline="6px"
-                paddingBlock="2px"
+                paddingInline={NEB_LENGTH.px_006}
+                paddingBlock={NEB_LENGTH.px_002}
               >
                 {children}
               </Box>
@@ -63,7 +63,7 @@ export const AssistantMessage = ({ content, handleQuestionClick }: AssistantMess
             return <a href={href}>{children}</a>
           },
           hr() {
-            return <Divider intent="muted" marginTop="48px" />
+            return <Divider intent="muted" marginTop={NEB_LENGTH.px_048} />
           },
         }}
       >

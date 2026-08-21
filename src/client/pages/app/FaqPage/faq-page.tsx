@@ -1,4 +1,4 @@
-import { Box, Flex, Reveal, Section, Text } from 'lib/components'
+import { Box, Flex, NEB_LENGTH, Reveal, Section, Text } from 'lib/components'
 
 import { FAQ } from './definitions'
 
@@ -14,9 +14,9 @@ const Question = ({ question, answer }: { question: string; answer: string }) =>
 
 export const FaqPage = () => {
   return (
-    <Box paddingTop="16px" paddingInline={{ base: '24px', lg: '48px' }} maxInlineSize="75rem">
+    <Box paddingTop={NEB_LENGTH.px_016} paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }} maxInlineSize="75rem">
       <Section size="lg" heading="Frequently asked questions" iconName="message-circle-question-mark">
-        <Flex flexDirection="column" rowGap="16px">
+        <Flex flexDirection="column" rowGap={NEB_LENGTH.px_016}>
           {FAQ.map(({ question, answer }, key) => (
             <Question key={key} question={question} answer={answer} />
           ))}

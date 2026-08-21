@@ -1,6 +1,6 @@
 import { sentenceCase } from 'change-case'
 
-import { Box, Button, Dialog, Flex, Segment, Select, Spacer, Text, Title } from 'lib/components'
+import { Box, Button, Dialog, Flex, NEB_LENGTH, Segment, Select, Spacer, Text, Title } from 'lib/components'
 import { BOX_COLORS } from 'lib/components/core/Box/constants'
 import {
   NEBKIT_PROVIDER_BORDER_RADIUS_SIZES,
@@ -41,12 +41,12 @@ export const AppPrefsDialog = () => {
       </Dialog.Header>
       <Dialog.Content>
         <Box padding="20px" paddingBottom="40px">
-          <Flex flexWrap="wrap" columnGap="16px" rowGap="24px">
+          <Flex flexWrap="wrap" columnGap={NEB_LENGTH.px_016} rowGap={NEB_LENGTH.px_024}>
             <Flex.Item>
               <Text bold typography="small">
                 Theme
               </Text>
-              <Spacer blockSize="2px" />
+              <Spacer blockSize={NEB_LENGTH.px_002} />
               <Segment>
                 {NEBKIT_PROVIDER_THEMES.map(key => (
                   <Segment.Item key={key}>
@@ -65,7 +65,7 @@ export const AppPrefsDialog = () => {
               <Text bold typography="small">
                 Brand
               </Text>
-              <Spacer blockSize="2px" />
+              <Spacer blockSize={NEB_LENGTH.px_002} />
               <Select value={brand} onChange={setBrand} inlineSize="150px" size="xs">
                 {BOX_COLORS.map(brand => (
                   <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
@@ -76,7 +76,7 @@ export const AppPrefsDialog = () => {
               <Text bold typography="small">
                 Saturation
               </Text>
-              <Spacer blockSize="2px" />
+              <Spacer blockSize={NEB_LENGTH.px_002} />
               <Select value={saturation} onChange={setSaturation} inlineSize="150px" size="xs">
                 {NEBKIT_PROVIDER_SATURATIONS.map(saturation => (
                   <Select.Option value={saturation}>{sentenceCase(saturation)}</Select.Option>
@@ -87,7 +87,7 @@ export const AppPrefsDialog = () => {
               <Text bold typography="small">
                 Border radius
               </Text>
-              <Spacer blockSize="2px" />
+              <Spacer blockSize={NEB_LENGTH.px_002} />
               <Select value={borderRadiusSize} onChange={setBorderRadiusSize} inlineSize="150px" size="xs">
                 {NEBKIT_PROVIDER_BORDER_RADIUS_SIZES.map(n => (
                   <Select.Option value={n}>{n}</Select.Option>
@@ -98,7 +98,7 @@ export const AppPrefsDialog = () => {
               <Text bold typography="small">
                 Ripple mode
               </Text>
-              <Spacer blockSize="2px" />
+              <Spacer blockSize={NEB_LENGTH.px_002} />
               <Select value={rippleMode} onChange={setRippleMode} inlineSize="150px" size="xs">
                 {NEBKIT_PROVIDER_RIPPLE_MODES.map(n => (
                   <Select.Option value={n}>{sentenceCase(n)}</Select.Option>

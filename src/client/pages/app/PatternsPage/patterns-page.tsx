@@ -1,7 +1,7 @@
 import { useLayoutEffect } from 'react'
 import { Navigate, useLocation } from 'react-router'
 
-import { Box, Flex, Markup, MultiSelect, Section, SideNav, Spacer, SplitView, Text } from 'lib/components'
+import { Box, Flex, Markup, MultiSelect, NEB_LENGTH, Section, SideNav, Spacer, SplitView, Text } from 'lib/components'
 import { CodeSnippet } from 'client/components'
 import { PATTERN_CATEGORIES, PATTERNS } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
@@ -34,7 +34,7 @@ export const PatternsPage = () => {
   const Component = pattern.component
 
   return (
-    <Box paddingTop="16px" paddingInline={{ base: '24px', lg: '48px' }}>
+    <Box paddingTop={NEB_LENGTH.px_016} paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}>
       <Section size="lg" heading="Patterns" iconName="pyramid">
         <SplitView>
           {({ mode, setSideOpen }) => {
@@ -45,13 +45,13 @@ export const PatternsPage = () => {
                     <Text typography="h5" noWrap>
                       {pattern.title}
                     </Text>
-                    <Spacer blockSize="2px" />
+                    <Spacer blockSize={NEB_LENGTH.px_002} />
                     <Markup>
                       <Text intent="primary">{pattern.description}</Text>
                     </Markup>
                   </SplitView.MainBar>
-                  <Spacer blockSize="48px" />
-                  <Flex gap="24px" flexDirection="column" alignItems="stretch">
+                  <Spacer blockSize={NEB_LENGTH.px_048} />
+                  <Flex gap={NEB_LENGTH.px_024} flexDirection="column" alignItems="stretch">
                     <Flex.Item flex="1">
                       <Box
                         tagAttrs={{ style: { borderStyle: 'dashed' } }}
@@ -59,7 +59,7 @@ export const PatternsPage = () => {
                         variant="outline"
                         intent="tertiary"
                         maxBlockSize="calc(100dvh - 275px)"
-                        padding="16px"
+                        padding={NEB_LENGTH.px_016}
                       >
                         <Component />
                       </Box>
@@ -71,7 +71,7 @@ export const PatternsPage = () => {
                     ) : null}
                   </Flex>
                 </SplitView.Main>
-                <SplitView.Side inlineSize="350px" paddingRight={{ lg: '24px' }}>
+                <SplitView.Side inlineSize="350px" paddingRight={{ lg: NEB_LENGTH.px_024 }}>
                   <MultiSelect value={patternCategories} onChange={setPatternCategories} size="sm">
                     {PATTERN_CATEGORIES.map(c => (
                       <MultiSelect.Option key={c} value={c}>
@@ -79,8 +79,8 @@ export const PatternsPage = () => {
                       </MultiSelect.Option>
                     ))}
                   </MultiSelect>
-                  <Spacer blockSize="16px" />
-                  <SideNav scale="xl" gap="2px">
+                  <Spacer blockSize={NEB_LENGTH.px_016} />
+                  <SideNav scale="xl" gap={NEB_LENGTH.px_002}>
                     {PATTERNS.filter(p => patternCategories.includes(p.category)).map(({ id, title }) => {
                       const href = `/patterns?id=${id}`
 

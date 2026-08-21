@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { Flex, Icon, Link, Section, Spacer, Text } from 'lib/components'
+import { Flex, Icon, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import type { BoxColor } from 'lib/components/core/Box/types'
 import type { IconName } from 'lib/components/core/Icon/types'
 import { Plan } from 'client/definitions'
@@ -36,11 +36,11 @@ export const PricingPlanCard = ({
   const OptionIncluded = ({ children }: { children: ReactNode }) => {
     return (
       <>
-        <Flex alignItems="center" columnGap="16px">
-          <Icon name="check" intent="primary" color={color} size="24px" />
+        <Flex alignItems="center" columnGap={NEB_LENGTH.px_016}>
+          <Icon name="check" intent="primary" color={color} size={NEB_LENGTH.px_024} />
           {children}
         </Flex>
-        <Spacer blockSize="2px" />
+        <Spacer blockSize={NEB_LENGTH.px_002} />
       </>
     )
   }
@@ -66,7 +66,7 @@ export const PricingPlanCard = ({
       <Text intent="neutral" bold>
         What you get:
       </Text>
-      <Spacer blockSize="8px" />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
       <OptionIncluded>
         <Link
           href="/pricing/core"
@@ -98,11 +98,11 @@ export const PricingPlanCard = ({
           <Text intent="neutral">{s}</Text>
         </OptionIncluded>
       ))}
-      <Spacer blockSize="48px" />
+      <Spacer blockSize={NEB_LENGTH.px_048} />
       <Flex justifyContent="center">
         <PricingPlanButton plan={plan} activePlan={activePlan} color={color} />
       </Flex>
-      <Spacer blockSize="16px" />
+      <Spacer blockSize={NEB_LENGTH.px_016} />
     </Section>
   )
 }

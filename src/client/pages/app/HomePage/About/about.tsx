@@ -1,4 +1,4 @@
-import { Box, Reveal, Spacer, Text } from 'lib/components'
+import { Box, NEB_LENGTH, Reveal, Spacer, Text } from 'lib/components'
 
 export const About = () => {
   return (
@@ -10,7 +10,7 @@ export const About = () => {
           developers using NebulaKit. By exploring the site, you can see how the components, patterns and constraints of the
           system behave in a real application.
         </Text>
-        <Spacer blockSize="8px" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>
           The website reflects how NebulaKit is intended to be used in practice. Some surfaces inherit the active brand, while
           others define their color locally for semantic or contextual reasons.

@@ -1,5 +1,5 @@
 import * as LIB_COMPONENTS from 'lib/components'
-import { Box, Icon, Spacer, Text, Title, Tooltip } from 'lib/components'
+import { Box, Icon, NEB_LENGTH, Spacer, Text, Title, Tooltip } from 'lib/components'
 import { COMPONENT_TEMPLATES } from 'client/definitions'
 import { usePlaygroundStore } from 'client/store'
 
@@ -18,14 +18,14 @@ export const RenderPanel = () => {
             maxInlineSize={400}
             mode="click"
           >
-            <Icon name="info" size="16px" color="blue" intent="primary" />
+            <Icon name="info" size={NEB_LENGTH.px_016} color="blue" intent="primary" />
           </Tooltip>
         }
         iconPlacement="right"
       >
         <Text bold>Canvas</Text>
       </Title>
-      <Spacer blockSize="4px" />
+      <Spacer blockSize={NEB_LENGTH.px_004} />
       <Box
         tagAttrs={{ style: { borderStyle: 'dashed' } }}
         drawable

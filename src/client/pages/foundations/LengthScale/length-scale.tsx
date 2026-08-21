@@ -1,5 +1,4 @@
-import { Box, Spacer, Table, Text } from 'lib/components'
-import { NEB_LENGTH } from 'lib/constants'
+import { Box, NEB_LENGTH, Spacer, Table, Text } from 'lib/components'
 import { CodeSnippet } from 'client/components'
 
 export default () => {
@@ -12,7 +11,7 @@ export default () => {
         allowing small adjustments at lower values and larger jumps for layout-level spacing. Each length token is also exposed as
         a CSS custom property, allowing the scale to be referenced directly in custom styles and external content.
       </Text>
-      <Spacer blockSize="48px" />
+      <Spacer blockSize={NEB_LENGTH.px_048} />
       <Table paddingBlock="10px" paddingInline="15px">
         <Table.Header>
           <Table.HeaderRow>

@@ -1,4 +1,4 @@
-import { Box, Spacer, Text } from 'lib/components'
+import { Box, NEB_LENGTH, Spacer, Text } from 'lib/components'
 import { CodeSnippet } from 'client/components'
 
 export default () => {
@@ -16,7 +16,7 @@ export default () => {
         simplifies state sharing between parent and child and removes the need for extra wrapper components or prop drilling. It
         also keeps markup cleaner, since the logic for how and when elements appear lives alongside the data that drives them.
       </Text>
-      <Spacer blockSize="24px" />
+      <Spacer blockSize={NEB_LENGTH.px_024} />
       <CodeSnippet
         lang="tsx"
         code={`<SplitView>

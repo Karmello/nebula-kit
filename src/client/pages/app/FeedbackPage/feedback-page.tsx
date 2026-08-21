@@ -1,4 +1,4 @@
-import { Box, Form, Section, Spacer, Text, Textarea, useSnackbar } from 'lib/components'
+import { Box, Form, NEB_LENGTH, Section, Spacer, Text, Textarea, useSnackbar } from 'lib/components'
 import { useSendFeedback, UseSendFeedbackRes } from 'client/api'
 
 export const FeedbackPage = () => {
@@ -6,10 +6,10 @@ export const FeedbackPage = () => {
   const sendFeedback = useSendFeedback()
 
   return (
-    <Box paddingTop="16px" paddingInline={{ base: '24px', lg: '48px' }} maxInlineSize="75rem">
+    <Box paddingTop={NEB_LENGTH.px_016} paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }} maxInlineSize="75rem">
       <Section size="lg" heading="Feedback" iconName="mail">
         <Text>Help shape the future of NebulaKit. All feedback submitted here is anonymous.</Text>
-        <Spacer blockSize="48px" />
+        <Spacer blockSize={NEB_LENGTH.px_048} />
         <Form<{ message: string }>
           useFormProps={{ defaultValues: { message: '' } }}
           onValidSubmission={async ({ message }) => {

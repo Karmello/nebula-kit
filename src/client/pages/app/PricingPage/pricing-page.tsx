@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react'
 
-import { Box, Flex, Grid, Loader, Section, Spacer, Text } from 'lib/components'
+import { Box, Flex, Grid, Loader, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { useGetUser } from 'client/api'
 import { useAppStore } from 'client/store'
 
@@ -19,15 +19,15 @@ export const PricingPage = () => {
   }, [user])
 
   return (
-    <Box paddingTop="16px" paddingInline={{ base: '24px', lg: '48px' }}>
+    <Box paddingTop={NEB_LENGTH.px_016} paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}>
       <Section size="lg" heading="Pricing plans" iconName="credit-card">
         <Text>Choose the plan that fits your workflow.</Text>
-        <Spacer blockSize="48px" />
+        <Spacer blockSize={NEB_LENGTH.px_048} />
         {getUser.isMakingRequest ? (
-          <Loader centered size="24px" color="blue" />
+          <Loader centered size={NEB_LENGTH.px_024} color="blue" />
         ) : (
           <>
-            <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }} gap="16px">
+            <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }} gap={NEB_LENGTH.px_016}>
               <PricingPlanCard
                 plan={PRICING_DATA.plans.free.id as never}
                 activePlan={getUser.data?.user.plan}
@@ -73,8 +73,8 @@ export const PricingPage = () => {
                 options={PRICING_DATA.plans.enterprise.whatYouGet}
               />
             </Grid>
-            <Spacer blockSize="48px" />
-            <Flex flexDirection="column" rowGap="4px">
+            <Spacer blockSize={NEB_LENGTH.px_048} />
+            <Flex flexDirection="column" rowGap={NEB_LENGTH.px_004}>
               {PRICING_DATA.additionalInfo.map((info, key) => (
                 <Text key={key} italic>
                   {info}

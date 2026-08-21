@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { TokensResult } from 'shiki'
 
-import { Box, Flex, Text, Title } from 'lib/components'
+import { Box, Flex, NEB_LENGTH, Text, Title } from 'lib/components'
 import { useCurrentTheme } from 'lib/hooks'
 
 import { CopyButton } from '../CopyButton'
@@ -50,7 +50,7 @@ export const CodeSnippet = ({
           },
         }}
       >
-        <Flex alignItems="flex-end" columnGap="8px">
+        <Flex alignItems="flex-end" columnGap={NEB_LENGTH.px_008}>
           <Flex.Item flex="1">
             {description ? (
               <Box paddingBlock="10px">
@@ -77,7 +77,12 @@ export const CodeSnippet = ({
           variant="solid"
         >
           <Flex tag="pre">
-            <Box tag="code" paddingInline="16px" paddingBlock={fullBg ? '0px' : '16px'} paddingBottom="16px">
+            <Box
+              tag="code"
+              paddingInline={NEB_LENGTH.px_016}
+              paddingBlock={fullBg ? '0px' : '16px'}
+              paddingBottom={NEB_LENGTH.px_016}
+            >
               {data.tokens.map((token, i) => {
                 const isEmpty = token.length === 0
 

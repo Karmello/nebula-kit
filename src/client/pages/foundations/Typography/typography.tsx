@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 
-import { Box, Grid, Spacer, Table, Text } from 'lib/components'
+import { Box, Grid, NEB_LENGTH, Spacer, Table, Text } from 'lib/components'
 import { TEXT_TYPOGRAPHY, TextTypography } from 'lib/components/core/Text'
 import { TYPOGRAPHY_MAP } from 'lib/constants'
 
@@ -28,7 +28,7 @@ export default () => {
         are exposed as reusable CSS custom properties, allowing the same styles to be referenced directly in custom layouts,
         markdown content and external components outside the NebulaKit primitives.
       </Text>
-      <Spacer blockSize="48px" />
+      <Spacer blockSize={NEB_LENGTH.px_048} />
       <Table paddingBlock="10px" paddingInline="15px">
         <Table.Header>
           <Table.HeaderRow>
@@ -64,20 +64,20 @@ export default () => {
           })}
         </Table.Body>
       </Table>
-      <Spacer blockSize="96px" />
+      <Spacer blockSize={NEB_LENGTH.px_096} />
       <Grid
         gridTemplateColumns={{
           base: '1fr',
           md: 'max-content minmax(0, 1fr)',
         }}
-        columnGap="48px"
+        columnGap={NEB_LENGTH.px_048}
       >
         {TEXT_TYPOGRAPHY.map(typography => (
           <Fragment key={typography}>
             <Text intent="primary" bold>
               {typography}
             </Text>
-            <Box drawable variant="outline" intent="muted" marginBottom="24px">
+            <Box drawable variant="outline" intent="muted" marginBottom={NEB_LENGTH.px_024}>
               <Text intent="neutral" typography={typography}>
                 {MAP[typography]}
               </Text>

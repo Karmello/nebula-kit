@@ -1,7 +1,7 @@
 import { useLayoutEffect } from 'react'
 import { sentenceCase } from 'change-case'
 
-import { Box, Button, Flex, Link, Loader, Section, Spacer, Table, Text, Title } from 'lib/components'
+import { Box, Button, Flex, Link, Loader, NEB_LENGTH, Section, Spacer, Table, Text, Title } from 'lib/components'
 import { useGetUser } from 'client/api'
 import { CopyButton } from 'client/components'
 import { PageKey } from 'client/definitions'
@@ -36,11 +36,11 @@ export default () => {
 
   return (
     <Section heading="Details" size="sm" intent="primary" color="blue">
-      <Spacer blockSize="8px" />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
 
       {!getUser.isMakingRequest ? (
         <Table layout="fixed" intent="neutral">
-          <Table.Body intent="muted" paddingBlock="10px" paddingInline="12px">
+          <Table.Body intent="muted" paddingBlock="10px" paddingInline={NEB_LENGTH.px_012}>
             <Table.Row>
               <Table.Cell>
                 <Text lineHeight={1.2}>Email</Text>
@@ -67,7 +67,7 @@ export default () => {
               </Table.Cell>
 
               <Table.Cell colSpan={2}>
-                <Flex alignItems="center" flexWrap="wrap" rowGap="8px" columnGap="16px">
+                <Flex alignItems="center" flexWrap="wrap" rowGap={NEB_LENGTH.px_008} columnGap={NEB_LENGTH.px_016}>
                   <Text bold>{userData ? sentenceCase(userData.plan) : ''}</Text>
 
                   {!getUser.isMakingRequest ? (
@@ -93,7 +93,7 @@ export default () => {
 
               <Table.Cell colSpan={2}>
                 {userData ? (
-                  <Flex alignItems="center" gap="8px">
+                  <Flex alignItems="center" gap={NEB_LENGTH.px_008}>
                     <Text
                       intent={userData.licenseKey ? 'primary' : undefined}
                       color={userData.licenseKey ? 'blue' : undefined}
@@ -138,7 +138,7 @@ export default () => {
 
               <Table.Cell colSpan={2}>
                 {userData ? (
-                  <Flex alignItems="center" flexWrap="wrap" rowGap="8px" columnGap="16px">
+                  <Flex alignItems="center" flexWrap="wrap" rowGap={NEB_LENGTH.px_008} columnGap={NEB_LENGTH.px_016}>
                     <Flex.Item alignSelf="auto">
                       <Title
                         iconName={hasPaidPlan ? (isGithubConnected ? 'check' : undefined) : undefined}
@@ -171,8 +171,8 @@ export default () => {
           </Table.Body>
         </Table>
       ) : (
-        <Box position="relative" blockSize="64px" drawable variant="solid" intent="muted">
-          <Loader centered active color="blue" size="24px" />
+        <Box position="relative" blockSize={NEB_LENGTH.px_064} drawable variant="solid" intent="muted">
+          <Loader centered active color="blue" size={NEB_LENGTH.px_024} />
         </Box>
       )}
     </Section>

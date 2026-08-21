@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { pascalCase } from 'change-case'
 import { Navigate, Route, Routes, useLocation } from 'react-router'
 
-import { Spacer } from 'lib/components'
+import { NEB_LENGTH, Spacer } from 'lib/components'
 import { NextPageButton } from 'client/components'
 import { FOUNDATIONS_CATEGORIES, FOUNDATIONS_SECTIONS, PageKey } from 'client/definitions'
 import * as FOUNDATION_COMPONENTS from 'client/pages/foundations'
@@ -26,7 +26,7 @@ export const FoundationsPageRoutes = () => {
           Component={() => (
             <>
               <Component pathname={pathname} />
-              <Spacer blockSize="48px" />
+              <Spacer blockSize={NEB_LENGTH.px_048} />
               <NextPageButton pageKey={PageKey.foundations} />
             </>
           )}
@@ -37,7 +37,7 @@ export const FoundationsPageRoutes = () => {
 
   return (
     <>
-      <Spacer blockSize="16px" />
+      <Spacer blockSize={NEB_LENGTH.px_016} />
       <Routes>
         {ROUTES}
         <Route

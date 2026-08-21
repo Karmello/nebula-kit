@@ -10,31 +10,31 @@ import { Video } from './Video'
 
 export const HomePage = () => {
   return (
-    <Box padding={{ base: '24px', lg: '48px' }} paddingTop={NEB_LENGTH.px_004}>
+    <Box padding={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }} paddingTop={NEB_LENGTH.px_004}>
       <Flex
         flexDirection={{ base: 'column', lg: 'row' }}
         justifyContent="center"
-        rowGap="64px"
+        rowGap={NEB_LENGTH.px_064}
         columnGap={{ base: '50px', xl: '100px' }}
       >
         <Flex.Item flex="2">
           <About />
-          <Spacer blockSize={{ base: '48px', lg: '48px' }} />
+          <Spacer blockSize={{ base: NEB_LENGTH.px_048, lg: NEB_LENGTH.px_048 }} />
           <Text typography="h1" color="blue" intent="primary" bold>
             NebulaKit
           </Text>
           <Divider />
-          <Spacer blockSize="24px" />
+          <Spacer blockSize={NEB_LENGTH.px_024} />
           <Hero />
-          <Divider marginBlock="48px" />
+          <Divider marginBlock={NEB_LENGTH.px_048} />
           <Video />
         </Flex.Item>
         <Flex.Item flex="1">
           <Flex
             alignItems="center"
             alignContent="center"
-            columnGap="48px"
-            rowGap="48px"
+            columnGap={NEB_LENGTH.px_048}
+            rowGap={NEB_LENGTH.px_048}
             justifyContent="center"
             flexDirection={{ base: 'column', md: 'row-reverse' }}
           >
@@ -45,11 +45,11 @@ export const HomePage = () => {
               <Ortho />
             </Flex.Item>
           </Flex>
-          <Spacer blockSize="64px" />
+          <Spacer blockSize={NEB_LENGTH.px_064} />
           <Principles />
         </Flex.Item>
       </Flex>
-      <Spacer blockSize="96px" />
+      <Spacer blockSize={NEB_LENGTH.px_096} />
       <Families />
     </Box>
   )

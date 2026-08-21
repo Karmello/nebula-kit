@@ -1,6 +1,6 @@
 import { pascalCase } from 'change-case'
 
-import { Box, Button, Flex, Link, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, Flex, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { CodeSnippet } from 'client/components'
 import { ComponentMeta } from 'client/definitions'
 import { convertElemToString } from 'client/helpers'
@@ -21,11 +21,11 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   } = meta
 
   const content = (
-    <Flex flexDirection="column" alignItems="stretch" gap="32px">
+    <Flex flexDirection="column" alignItems="stretch" gap={NEB_LENGTH.px_032}>
       <Box>
         <Text typography="lead">{title}</Text>
         {examples?.[0] ? (
-          <Box marginBlock="16px">
+          <Box marginBlock={NEB_LENGTH.px_016}>
             <CodeSnippet lang="tsx" code={examples[0].code || convertElemToString(examples[0].jsx)} />
           </Box>
         ) : null}
@@ -49,7 +49,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       {slots ? <ListWithChips heading="Slots" items={slots} color="gray" /> : null}
       {hooks ? <ListWithChips heading="Hooks" items={hooks} color="green" /> : null}
       {readMoreLink ? (
-        <Box marginTop="16px">
+        <Box marginTop={NEB_LENGTH.px_016}>
           <Link
             href={readMoreLink.href}
             onClick={() => {
@@ -74,7 +74,7 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       ) : (
         content
       )}
-      <Spacer blockSize="64px" />
+      <Spacer blockSize={NEB_LENGTH.px_064} />
     </>
   )
 }

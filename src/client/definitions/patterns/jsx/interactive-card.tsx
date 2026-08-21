@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { Box, Divider, Spacer, Text, Title } from '@nebula-kit/core'
 import { Scale } from '@nebula-kit/pro'
 
+import { NEB_LENGTH } from 'lib/components'
+
 export const InteractiveCard = () => {
   const [visible, setVisible] = useState<boolean>(false)
 
@@ -14,13 +16,22 @@ export const InteractiveCard = () => {
 
   return (
     <Scale visible={visible}>
-      <Box tag="button" interactive ripple variant="solid" intent="muted" color="amber" padding="48px" cursor="pointer">
+      <Box
+        tag="button"
+        interactive
+        ripple
+        variant="solid"
+        intent="muted"
+        color="amber"
+        padding={NEB_LENGTH.px_048}
+        cursor="pointer"
+      >
         <Title typography="h4" iconName="orbit">
           Interactive card
         </Title>
-        <Spacer blockSize="8px" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>This is clickable card.</Text>
-        <Divider marginBlock="8px" />
+        <Divider marginBlock={NEB_LENGTH.px_008} />
         <Text color="blue" intent="primary">
           Click to learn more
         </Text>

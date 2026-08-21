@@ -1,4 +1,4 @@
-import { Box, Link, Section, Spacer, Text, Title } from 'lib/components'
+import { Box, Link, NEB_LENGTH, Section, Spacer, Text, Title } from 'lib/components'
 import { CodeSnippet } from 'client/components'
 
 export default () => {
@@ -13,15 +13,15 @@ export default () => {
             </Text>
           </Link>
         </Title>
-        <Spacer blockSize="16px" />
+        <Spacer blockSize={NEB_LENGTH.px_016} />
         <CodeSnippet lang="bash" code="npm install @nebula-kit/core" description="Install with NPM" />
-        <Spacer blockSize="16px" />
+        <Spacer blockSize={NEB_LENGTH.px_016} />
         <CodeSnippet lang="bash" code="yarn add @nebula-kit/core" description="Install with Yarn" />
       </Section>
-      <Spacer blockSize="48px" />
+      <Spacer blockSize={NEB_LENGTH.px_048} />
       <Section size="sm" heading="Pro bundle" iconName="arrow-down" intent="primary">
         <Text intent="neutral">The Pro bundle is distributed through a private registry.</Text>
-        <Spacer blockSize="16px" />
+        <Spacer blockSize={NEB_LENGTH.px_016} />
         <CodeSnippet
           lang="log"
           code={`@nebula-kit-private:registry=https://api.nebulakit.dev/registry
@@ -29,14 +29,14 @@ export default () => {
 \nalways-auth=true`}
           description="To access it, add the following to your project's .npmrc file"
         />
-        <Spacer blockSize="8px" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text typography="caption" intent="secondary" color="gray">
           NEB_TOKEN is your personal license key used to authenticate access to the Pro bundle. You'll find it in your NebulaKit
           account dashboard after subscribing.
         </Text>
-        <Spacer blockSize="16px" />
+        <Spacer blockSize={NEB_LENGTH.px_016} />
         <CodeSnippet lang="bash" code="npm install @nebula-kit-private/pro" description="Install with NPM" />
-        <Spacer blockSize="16px" />
+        <Spacer blockSize={NEB_LENGTH.px_016} />
         <CodeSnippet lang="bash" code="yarn add @nebula-kit-private/pro" description="Install with Yarn" />
       </Section>
     </Box>

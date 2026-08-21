@@ -1,4 +1,4 @@
-import { Section, Spacer, Text } from 'lib/components'
+import { NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 
 import { AccountDeactivationForm } from './account-deactivation-form'
 
@@ -18,7 +18,7 @@ export const AccountDeactivationSection = ({
         data, disconnects any linked services and signs you out immediately. Your email becomes free to register a new account in
         the future.
       </Text>
-      <Spacer blockSize="24px" />
+      <Spacer blockSize={NEB_LENGTH.px_024} />
       <AccountDeactivationForm userEmail={userEmail} userPlan={userPlan} handleDeactivateSuccess={handleDeactivateSuccess} />
     </Section>
   )

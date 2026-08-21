@@ -1,4 +1,4 @@
-import { Button, Spacer, Table, Text, Title } from 'lib/components'
+import { Button, NEB_LENGTH, Spacer, Table, Text, Title } from 'lib/components'
 import { usePlaygroundStore } from 'client/store'
 
 export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: () => void }) => {
@@ -15,8 +15,8 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
   return (
     <>
       <Text bold>Props</Text>
-      <Spacer blockSize="8px" />
-      <Table layout="fixed" intent="neutral" paddingBlock="2px" paddingInline="8px">
+      <Spacer blockSize={NEB_LENGTH.px_008} />
+      <Table layout="fixed" intent="neutral" paddingBlock={NEB_LENGTH.px_002} paddingInline={NEB_LENGTH.px_008}>
         <Table.Body intent="muted">
           {Object.keys(props)
             .sort()

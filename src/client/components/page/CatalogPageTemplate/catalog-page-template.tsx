@@ -1,6 +1,6 @@
 import { memo } from 'react'
 
-import { Box, Button, Divider, Flex, Link, SideNav, Spacer, SplitView, Text } from 'lib/components'
+import { Box, Button, Divider, Flex, Link, NEB_LENGTH, SideNav, Spacer, SplitView, Text } from 'lib/components'
 import { PageKey, PLAYGROUND_PROPS_MAP } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import meta from 'client/meta'
@@ -73,9 +73,9 @@ export const CatalogPageTemplate = memo(
                 })}
               </SideNav>
             </SplitView.Side>
-            <SplitView.Main paddingLeft="24px">
+            <SplitView.Main paddingLeft={NEB_LENGTH.px_024}>
               <SplitView.MainBar>
-                <Box marginRight="24px">
+                <Box marginRight={NEB_LENGTH.px_024}>
                   <CatalogPageBreadcrumb
                     pageKey={pageKey.replace('/', '')}
                     categoryKey={activeCategoryObj?.key}
@@ -84,7 +84,7 @@ export const CatalogPageTemplate = memo(
                   />
                 </Box>
               </SplitView.MainBar>
-              <Spacer blockSize="24px" />
+              <Spacer blockSize={NEB_LENGTH.px_024} />
               <SplitView sidePosition="right">
                 {({ mode, setSideOpen }) => (
                   <>
@@ -117,7 +117,7 @@ export const CatalogPageTemplate = memo(
                     </SplitView.Side>
                     <SplitView.Main paddingRight="20px">
                       <SplitView.MainBar>
-                        <Flex columnGap="16px" rowGap="4px" alignItems="center" flexWrap="wrap">
+                        <Flex columnGap={NEB_LENGTH.px_016} rowGap={NEB_LENGTH.px_004} alignItems="center" flexWrap="wrap">
                           <Text typography="h3">
                             {pageKey === PageKey.foundations.toString() ? activeSectionObj?.label : activeItemObj?.label}
                           </Text>
@@ -128,7 +128,7 @@ export const CatalogPageTemplate = memo(
                               intent="muted"
                               color="amber"
                               borderRadius="10px"
-                              paddingBlock="6px"
+                              paddingBlock={NEB_LENGTH.px_006}
                               paddingInline="9px"
                             >
                               <Text typography="small">{bundleLabel}</Text>
@@ -156,7 +156,7 @@ export const CatalogPageTemplate = memo(
                             </Link>
                           ) : null}
                         </Flex>
-                        <Divider marginTop="8px" />
+                        <Divider marginTop={NEB_LENGTH.px_008} />
                       </SplitView.MainBar>
                       {pageKey === PageKey.foundations.toString() ? (
                         <FoundationsPageRoutes />

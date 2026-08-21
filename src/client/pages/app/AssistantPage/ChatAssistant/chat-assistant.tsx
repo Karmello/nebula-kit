@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-import { Box, Flex, Segment, Spacer } from 'lib/components'
+import { Box, Flex, NEB_LENGTH, Segment, Spacer } from 'lib/components'
 import { useAskAssistant } from 'client/api'
 
 import { Chat, ContextMenu, Prompt, PromptToolbar } from './components'
@@ -89,7 +89,7 @@ export const ChatAssistant = () => {
       <Flex justifyContent="flex-end">
         <ContextMenu onChange={handleContextMenuChange} disabled={askAssistant.isMakingRequest} />
       </Flex>
-      <Spacer blockSize="16px" />
+      <Spacer blockSize={NEB_LENGTH.px_016} />
       <Segment tagAttrs={{ style: { blockSize: 'calc(100% - 50px)' } }} flexDirection="column">
         <Segment.Item flex="1" tagAttrs={{ style: { overflowY: 'hidden' } }}>
           <Chat tagRef={chatScrollingAreaRef} chatHistory={chatHistory} handleQuestionClick={handleQuestionClick} />

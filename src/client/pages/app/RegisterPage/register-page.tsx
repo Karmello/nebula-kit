@@ -1,6 +1,20 @@
 import { useCallback } from 'react'
 
-import { Box, Button, Divider, Flex, Form, Input, Link, PasswordInput, Section, Spacer, Text, useSnackbar } from 'lib/components'
+import {
+  Box,
+  Button,
+  Divider,
+  Flex,
+  Form,
+  Input,
+  Link,
+  NEB_LENGTH,
+  PasswordInput,
+  Section,
+  Spacer,
+  Text,
+  useSnackbar,
+} from 'lib/components'
 import { useRegisterUser } from 'client/api'
 import { PageKey } from 'client/definitions'
 import { UseMakeApiRequestRes, useNavigateTo } from 'client/hooks'
@@ -44,14 +58,14 @@ export const RegisterPage = () => {
   }
 
   return (
-    <Box padding={{ base: '24px', lg: '48px' }}>
+    <Box padding={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}>
       <Box inlineSize="400px" maxInlineSize="100%" margin="0 auto">
         <Section size="lg" heading="Registration" iconName="user-plus">
           <Text typography="caption" intent="secondary">
             We only use your email for account access and essential security steps. If you ever change your mind, you can
             permanently remove your account in the settings.
           </Text>
-          <Spacer blockSize="24px" />
+          <Spacer blockSize={NEB_LENGTH.px_024} />
           <Form<RegisterFormValues>
             onValidSubmission={onValidSubmission}
             onInvalidSubmission={errors => {
@@ -75,9 +89,9 @@ export const RegisterPage = () => {
               </Form.ActionButton>
             </Form.Actions>
           </Form>
-          <Spacer blockSize="48px" />
+          <Spacer blockSize={NEB_LENGTH.px_048} />
           <Divider />
-          <Spacer blockSize="16px" />
+          <Spacer blockSize={NEB_LENGTH.px_016} />
           <Flex justifyContent="center">
             <Link
               href={PageKey.authLogin}

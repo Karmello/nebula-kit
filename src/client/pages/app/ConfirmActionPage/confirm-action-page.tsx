@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLocation } from 'react-router'
 
-import { Box, Button, Flex } from 'lib/components'
+import { Box, Button, Flex, NEB_LENGTH } from 'lib/components'
 import { BoxColor } from 'lib/components/core/Box/types'
 
 const BUTTON_LABEL_MAP: Record<string, { label: string; color: BoxColor }> = {
@@ -33,7 +33,7 @@ export const ConfirmActionPage = () => {
   const url = params.get('url')
 
   return (
-    <Box padding={{ base: '24px', lg: '48px' }} paddingTop="100px">
+    <Box padding={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }} paddingTop="100px">
       <Flex justifyContent="center">
         <Button
           tagAttrs={{

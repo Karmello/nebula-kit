@@ -1,4 +1,4 @@
-import { Button, ButtonProps, Dialog, Flex, Icon, IconProps, Text, Title } from 'lib/components'
+import { Button, ButtonProps, Dialog, Flex, Icon, IconProps, NEB_LENGTH, Text, Title } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
@@ -47,7 +47,7 @@ export const WebsiteMapDialog = () => {
         </Title>
       </Dialog.Header>
       <Dialog.Content>
-        <Flex flexDirection="column" alignItems="stretch" rowGap="4px">
+        <Flex flexDirection="column" alignItems="stretch" rowGap={NEB_LENGTH.px_004}>
           <Button
             {...commonButtonProps}
             // description="Recommended composition and architectural patterns."

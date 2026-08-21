@@ -1,6 +1,6 @@
 import { kebabCase } from 'change-case'
 
-import { Divider, Flex, Icon, Link, Spacer, Table, Text, Title, Tooltip } from 'lib/components'
+import { Divider, Flex, Icon, Link, NEB_LENGTH, Spacer, Table, Text, Title, Tooltip } from 'lib/components'
 import { ComponentMeta } from 'client/definitions'
 
 type Props = {
@@ -19,10 +19,10 @@ export const PropsTable = ({ data, category }: Props) => {
       {category ? (
         <>
           <Text typography="h5">{category}</Text>
-          <Divider marginBlock="8px" />
+          <Divider marginBlock={NEB_LENGTH.px_008} />
         </>
       ) : null}
-      <Table color="blue" intent="neutral" paddingBlock="8px" paddingInline="16px">
+      <Table color="blue" intent="neutral" paddingBlock={NEB_LENGTH.px_008} paddingInline={NEB_LENGTH.px_016}>
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeaderCell>Name</Table.HeaderCell>
@@ -84,13 +84,13 @@ export const PropsTable = ({ data, category }: Props) => {
 
                 <Table.Cell>
                   <Flex justifyContent="center">
-                    {isRequired ? <Icon name="check" intent="primary" color="blue" size="16px" /> : '-'}
+                    {isRequired ? <Icon name="check" intent="primary" color="blue" size={NEB_LENGTH.px_016} /> : '-'}
                   </Flex>
                 </Table.Cell>
 
                 <Table.Cell>
                   <Flex justifyContent="center">
-                    {isResponsive ? <Icon name="check" intent="primary" color="blue" size="16px" /> : '-'}
+                    {isResponsive ? <Icon name="check" intent="primary" color="blue" size={NEB_LENGTH.px_016} /> : '-'}
                   </Flex>
                 </Table.Cell>
 
@@ -102,7 +102,7 @@ export const PropsTable = ({ data, category }: Props) => {
           })}
         </Table.Body>
       </Table>
-      <Spacer blockSize="48px" />
+      <Spacer blockSize={NEB_LENGTH.px_048} />
     </>
   )
 }

@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-import { Box, MarkerList, Markup, Section, Spacer, Tabs, Text, Title } from 'lib/components'
+import { Box, MarkerList, Markup, NEB_LENGTH, Section, Spacer, Tabs, Text, Title } from 'lib/components'
 import { RELEASE_INFO, ReleaseVersion } from 'client/definitions'
 import meta from 'client/meta'
 
@@ -43,7 +43,7 @@ const PanelContent = ({ bundleNotes, componentNotes }: { bundleNotes?: string[];
       {componentNames.map((name, i) => (
         <Box key={name}>
           <Notes componentName={name} notes={componentNotes[name]} />
-          {i < componentNames.length - 1 ? <Spacer blockSize="48px" /> : null}
+          {i < componentNames.length - 1 ? <Spacer blockSize={NEB_LENGTH.px_048} /> : null}
         </Box>
       ))}
     </Box>
@@ -77,23 +77,23 @@ export default ({ pathname }: { pathname: string }) => {
   return (
     <Box maxInlineSize="55rem">
       {releaseInfo.headline ? (
-        <Box marginBottom="4px">
+        <Box marginBottom={NEB_LENGTH.px_004}>
           <Text typography="h5">{releaseInfo.headline}</Text>
         </Box>
       ) : null}
       <Text italic intent="secondary">
         {new Date(releaseInfo.timestamp).toDateString()}
       </Text>
-      <Spacer blockSize="16px" />
+      <Spacer blockSize={NEB_LENGTH.px_016} />
       {releaseInfo.changelog?.main ? (
         <>
-          <Spacer blockSize="8px" />
+          <Spacer blockSize={NEB_LENGTH.px_008} />
           <Notes notes={releaseInfo.changelog.main} />
         </>
       ) : null}
       {displayCoreNotes || displayProNotes ? (
         <>
-          <Spacer blockSize="48px" />
+          <Spacer blockSize={NEB_LENGTH.px_048} />
           <Tabs defaultValue={displayCoreNotes ? 'core' : 'pro'}>
             {displayCoreNotes ? (
               <Tabs.Tab value="core">

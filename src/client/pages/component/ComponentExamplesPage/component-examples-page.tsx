@@ -1,6 +1,6 @@
 import { pascalCase } from 'change-case'
 
-import { Box, Flex, Markup, Reveal, Spacer, Switch, Text, Title } from 'lib/components'
+import { Box, Flex, Markup, NEB_LENGTH, Reveal, Spacer, Switch, Text, Title } from 'lib/components'
 import { useCurrentTheme } from 'lib/hooks'
 import { CodeSnippet } from 'client/components'
 import { ComponentMeta } from 'client/definitions'
@@ -23,7 +23,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number] & { hid
           </Markup>
         </Title>
       ) : null}
-      <Spacer blockSize="8px" />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
       {!noSandBox ? (
         <>
           <Box drawable variant="outline" intent="tertiary" tagAttrs={{ style: { borderStyle: 'dashed' } }}>
@@ -33,12 +33,12 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number] & { hid
               variant="solid"
               intent="neutral"
               padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
-              borderRadius="0px"
+              borderRadius={NEB_LENGTH.px_000}
             >
               {jsx}
             </Box>
           </Box>
-          <Spacer blockSize="8px" />
+          <Spacer blockSize={NEB_LENGTH.px_008} />
         </>
       ) : null}
       {!noCode ? (
@@ -58,7 +58,7 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number] & { hid
           )}
         </>
       ) : null}
-      <Spacer blockSize="64px" />
+      <Spacer blockSize={NEB_LENGTH.px_064} />
     </>
   )
 }
@@ -79,13 +79,13 @@ export const ComponentExamplesPage = () => {
     <Box maxInlineSize="55rem">
       {!hideExamplesThemeToggle ? (
         <>
-          <Flex alignItems="center" columnGap="16px">
+          <Flex alignItems="center" columnGap={NEB_LENGTH.px_016}>
             <Switch scale="xs" checked={flipGlobalThemeOnExamples} onChange={setFlipGlobalThemeOnExamples} />
             <Text bold typography="small">
               Use flipped theme
             </Text>
           </Flex>
-          <Spacer blockSize="48px" />
+          <Spacer blockSize={NEB_LENGTH.px_048} />
         </>
       ) : null}
       <Flex flexDirection="column" alignItems="stretch">

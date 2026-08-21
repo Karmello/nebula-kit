@@ -1,6 +1,6 @@
 import { kebabCase } from 'change-case'
 
-import { Box, Button, Flex, Grid, Link, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, Flex, Grid, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { type IconName } from 'lib/components/core/Icon/types'
 import { PAGE_SECTIONS } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
@@ -24,8 +24,8 @@ const Family = ({
         <Text intent="neutral">{description}</Text>
         {components ? (
           <>
-            <Spacer blockSize="24px" />
-            <Flex gap="8px">
+            <Spacer blockSize={NEB_LENGTH.px_024} />
+            <Flex gap={NEB_LENGTH.px_008}>
               {components.map(c => {
                 const { pageKey, categoryKey, itemKey } = PAGE_SECTIONS.find(s => s.itemKey === kebabCase(c))
                 const href = `/${pageKey}/${categoryKey}/${itemKey}/overview`
@@ -53,7 +53,7 @@ export const Families = () => {
         md: 'repeat(2, 1fr)',
         xl: 'repeat(4, 1fr)',
       }}
-      gap="16px"
+      gap={NEB_LENGTH.px_016}
     >
       <Family
         heading="Layout"

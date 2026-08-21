@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Link, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, Grid, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 
@@ -7,7 +7,7 @@ export const Principles = () => {
 
   return (
     <>
-      <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="48px">
+      <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap={NEB_LENGTH.px_048}>
         <Section heading="JSX first" color="green" intent="primary" iconName="code">
           <Text intent="neutral">
             JSX is the primary development flow. Styling happens through structured props instead of constant CSS authoring, while
@@ -43,7 +43,7 @@ export const Principles = () => {
           </Text>
         </Section>
       </Grid>
-      <Spacer blockSize="48px" />
+      <Spacer blockSize={NEB_LENGTH.px_048} />
       <Box textAlign="center">
         <Link
           href={`${PageKey.foundations}/overview/philosophy/jsx-first`}

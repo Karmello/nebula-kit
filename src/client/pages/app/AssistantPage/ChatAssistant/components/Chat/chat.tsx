@@ -1,6 +1,6 @@
 import { RefObject } from 'react'
 
-import { Box, Flex } from 'lib/components'
+import { Box, Flex, NEB_LENGTH } from 'lib/components'
 
 import { ChatHistory } from '../../definitions'
 import { AssistantMessage, UserMessage } from './components'
@@ -21,9 +21,9 @@ export const Chat = ({ tagRef, chatHistory, handleQuestionClick }: ChatProps) =>
       blockSize="100%"
       overflowY="auto"
       padding="20px"
-      borderBottomWidth="0px"
+      borderBottomWidth={NEB_LENGTH.px_000}
     >
-      <Flex flexDirection="column" rowGap="48px">
+      <Flex flexDirection="column" rowGap={NEB_LENGTH.px_048}>
         {chatHistory.map(({ role, content }, key) =>
           role === 'assistant' ? (
             <AssistantMessage key={key} content={content} handleQuestionClick={handleQuestionClick} />

@@ -1,4 +1,4 @@
-import { Box, Form, PasswordInput, Section, Spacer, Text, useSnackbar } from 'lib/components'
+import { Box, Form, NEB_LENGTH, PasswordInput, Section, Spacer, Text, useSnackbar } from 'lib/components'
 import { useLogoutUser, useUpdatePassword, UseUpdatePasswordRes } from 'client/api'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
@@ -14,7 +14,7 @@ export const UpdatePasswordSection = () => {
       <Text>
         You can update your account password here. For security, your current password is required to complete the change.
       </Text>
-      <Spacer blockSize="24px" />
+      <Spacer blockSize={NEB_LENGTH.px_024} />
       <Box maxInlineSize={{ md: '350px' }}>
         <Form<{ currentPassword: string; newPassword: string }>
           useFormProps={{
@@ -56,7 +56,7 @@ export const UpdatePasswordSection = () => {
           }}
         </Form>
       </Box>
-      <Spacer blockSize="8px" />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
     </Section>
   )
 }

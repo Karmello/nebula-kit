@@ -1,4 +1,4 @@
-import { Box, MarkerList, Section, Spacer, Text } from 'lib/components'
+import { Box, MarkerList, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { CodeSnippet } from 'client/components'
 
 export default () => {
@@ -6,9 +6,9 @@ export default () => {
     <Box maxInlineSize="55rem">
       <Section size="sm" heading="Only drawable Boxes participate in visual styling">
         <Text>Box exposes a drawable prop that controls whether it participates in rendering visual styles.</Text>
-        <Spacer blockSize="8px" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>By default, a Box is not drawable:</Text>
-        <Spacer blockSize="8px" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <MarkerList>
           <MarkerList.Item>
             <Text>it does not render background or surface styles</Text>
@@ -20,15 +20,15 @@ export default () => {
             <Text>it behaves like a structural element (similar to a div)</Text>
           </MarkerList.Item>
         </MarkerList>
-        <Spacer blockSize="8px" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>This keeps layouts lightweight and avoids unnecessary styling work.</Text>
       </Section>
       <Spacer />
       <Section size="sm" heading="Drawable as a gate">
         <Text>The drawable prop acts as a gate for all visual styling.</Text>
-        <Spacer blockSize="8px" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>When drawable is enabled:</Text>
-        <Spacer blockSize="8px" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <MarkerList>
           <MarkerList.Item>
             <Text>the Box can render a surface</Text>
@@ -37,13 +37,13 @@ export default () => {
             <Text>styling props like theme, brand, color, variant, intent and surface become meaningful</Text>
           </MarkerList.Item>
         </MarkerList>
-        <Spacer blockSize="8px" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>Without drawable, these props have no visual effect.</Text>
       </Section>
       <Spacer />
       <Section size="sm" heading="Minimum required to draw a surface">
         <Text>Enabling drawable alone is not enough. To render a visible surface, the Box also needs:</Text>
-        <Spacer blockSize="8px" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <MarkerList>
           <MarkerList.Item>
             <Text>a variant (how it is drawn)</Text>

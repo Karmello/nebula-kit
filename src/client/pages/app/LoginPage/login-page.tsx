@@ -1,7 +1,20 @@
 import { useCallback, useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
-import { Box, Button, Divider, Flex, Form, Input, Link, PasswordInput, Section, Spacer, useSnackbar } from 'lib/components'
+import {
+  Box,
+  Button,
+  Divider,
+  Flex,
+  Form,
+  Input,
+  Link,
+  NEB_LENGTH,
+  PasswordInput,
+  Section,
+  Spacer,
+  useSnackbar,
+} from 'lib/components'
 import { useLoginUser, UseLoginUserRes } from 'client/api'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
@@ -66,7 +79,7 @@ export const LoginPage = () => {
   }
 
   return (
-    <Box padding={{ base: '24px', lg: '48px' }}>
+    <Box padding={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}>
       <Box inlineSize="400px" maxInlineSize="100%" margin="0 auto">
         <Section size="lg" heading="Log in" iconName="log-in">
           <Form
@@ -92,9 +105,9 @@ export const LoginPage = () => {
               </Form.ActionButton>
             </Form.Actions>
           </Form>
-          <Spacer blockSize="48px" />
+          <Spacer blockSize={NEB_LENGTH.px_048} />
           <Divider />
-          <Spacer blockSize="16px" />
+          <Spacer blockSize={NEB_LENGTH.px_016} />
           <Flex justifyContent="center">
             <Link
               href={PageKey.authRegister}

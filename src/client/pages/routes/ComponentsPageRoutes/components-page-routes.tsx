@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { Navigate, Route, Routes } from 'react-router'
 
-import { Spacer } from 'lib/components'
+import { NEB_LENGTH, Spacer } from 'lib/components'
 import { NextPageButton } from 'client/components'
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
 import { ComponentChangelogPage, ComponentExamplesPage, ComponentOverviewPage, ComponentPropsPage } from 'client/pages'
@@ -45,7 +45,7 @@ export const ComponentsPageRoutes = ({ pageKey }: { pageKey: PageKey.foundations
 
   return (
     <>
-      <Spacer blockSize="16px" />
+      <Spacer blockSize={NEB_LENGTH.px_016} />
       <Routes>
         {ROUTES}
         <Route

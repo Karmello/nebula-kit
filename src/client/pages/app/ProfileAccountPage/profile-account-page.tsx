@@ -1,7 +1,7 @@
 import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
-import { Box, Section, Spacer, useSnackbar } from 'lib/components'
+import { Box, NEB_LENGTH, Section, Spacer, useSnackbar } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useAppStore } from 'client/store'
 
@@ -26,11 +26,11 @@ export const ProfileAccountPage = () => {
   }
 
   return (
-    <Box paddingTop="16px" paddingInline={{ base: '24px', lg: '48px' }} maxInlineSize="75rem">
+    <Box paddingTop={NEB_LENGTH.px_016} paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }} maxInlineSize="75rem">
       <Section size="lg" heading="Account" iconName="circle-user">
-        <Spacer blockSize="24px" />
+        <Spacer blockSize={NEB_LENGTH.px_024} />
         <AccountDetails />
-        <Spacer blockSize="48px" />
+        <Spacer blockSize={NEB_LENGTH.px_048} />
         <PaidSubscription enabled={user && user.plan !== 'free'} />
       </Section>
     </Box>

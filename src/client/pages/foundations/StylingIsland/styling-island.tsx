@@ -1,4 +1,4 @@
-import { Box, MarkerList, Section, Spacer, Text } from 'lib/components'
+import { Box, MarkerList, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { CodeSnippet } from 'client/components'
 
 export default () => {
@@ -12,7 +12,7 @@ export default () => {
         </Text>
         <Spacer />
         <Text>Theme and brand follow the same rules:</Text>
-        <Spacer blockSize="8px" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <MarkerList>
           <MarkerList.Item>
             <Text>they are scoped to a subtree</Text>
@@ -34,9 +34,9 @@ export default () => {
           A styling island is complete only when both context and surface are defined. Setting theme alone changes how colors are
           interpreted, but does not create a visible surface.
         </Text>
-        <Spacer blockSize="8px" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>How to do it properly ?</Text>
-        <Spacer blockSize="8px" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <CodeSnippet
           lang="tsx"
           code={`<Box theme="dark" drawable variant="solid" intent="neutral">
@@ -49,7 +49,7 @@ export default () => {
           Components inside the island rely on the active theme to resolve contrast, states and colors. Without a surface, they
           may still render on the parent background, which can lead to:
         </Text>
-        <Spacer blockSize="8px" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <MarkerList>
           <MarkerList.Item>
             <Text>incorrect contrast</Text>

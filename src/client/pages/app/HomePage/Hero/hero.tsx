@@ -1,4 +1,4 @@
-import { Button, Flex, Image, Link, Spacer, Text, Tooltip } from 'lib/components'
+import { Button, Flex, Image, Link, NEB_LENGTH, Spacer, Text, Tooltip } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { usePatternsStore } from 'client/store'
@@ -9,8 +9,8 @@ export const Hero = () => {
 
   return (
     <Flex
-      columnGap="24px"
-      rowGap="48px"
+      columnGap={NEB_LENGTH.px_024}
+      rowGap={NEB_LENGTH.px_048}
       alignItems="center"
       flexDirection={{ base: 'column', md: 'row', lg: 'column', xl: 'row' }}
     >
@@ -19,8 +19,13 @@ export const Hero = () => {
           React UI system designed to minimize interface development effort, letting you focus on application logic while keeping
           products consistent, maintainable and resistant to entropy.
         </Text>
-        <Spacer blockSize="48px" />
-        <Flex columnGap="8px" rowGap="16px" flexWrap="wrap" justifyContent={{ base: 'center', md: 'flex-start' }}>
+        <Spacer blockSize={NEB_LENGTH.px_048} />
+        <Flex
+          columnGap={NEB_LENGTH.px_008}
+          rowGap={NEB_LENGTH.px_016}
+          flexWrap="wrap"
+          justifyContent={{ base: 'center', md: 'flex-start' }}
+        >
           <Link
             href={`${PageKey.foundations}/overview/introduction/why-nebula`}
             onClick={() => {

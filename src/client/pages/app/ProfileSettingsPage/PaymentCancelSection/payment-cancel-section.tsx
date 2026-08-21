@@ -1,4 +1,4 @@
-import { MarkerList, Section, Spacer, Text } from 'lib/components'
+import { MarkerList, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 
 import { PaymentCancelForm } from './payment-cancel-form'
 
@@ -14,11 +14,11 @@ export const PaymentCancelSection = ({
   return (
     <Section heading="Subscription" variant="soft-outline" intent="primary" color="red">
       <Text intent="neutral">This section allows you to cancel your active subscription and return to the free plan.</Text>
-      <Spacer blockSize="24px" />
+      <Spacer blockSize={NEB_LENGTH.px_024} />
       <Text bold intent="neutral">
         What happens when you cancel
       </Text>
-      <Spacer blockSize="16px" />
+      <Spacer blockSize={NEB_LENGTH.px_016} />
       <MarkerList intent="neutral" color="gray">
         <MarkerList.Item>
           <Text intent="neutral">your account switches back to the free plan</Text>
@@ -36,12 +36,12 @@ export const PaymentCancelSection = ({
           <Text intent="neutral">unused time in your billing period is not refunded</Text>
         </MarkerList.Item>
       </MarkerList>
-      <Spacer blockSize="16px" />
+      <Spacer blockSize={NEB_LENGTH.px_016} />
       <Text intent="neutral">
         If you change your mind later, you can start a new subscription at any time and a fresh license key will be issued
         automatically.
       </Text>
-      <Spacer blockSize="24px" />
+      <Spacer blockSize={NEB_LENGTH.px_024} />
       <PaymentCancelForm userEmail={userEmail} userPlan={userPlan} handleCancelSuccess={handleCancelSuccess} />
     </Section>
   )

@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react'
 
-import { Box, Button, Callout, Link, Loader, Section, Spacer, Table, Text } from 'lib/components'
+import { Box, Button, Callout, Link, Loader, NEB_LENGTH, Section, Spacer, Table, Text } from 'lib/components'
 import { useGetPaymentDetailsUrl, useGetPaymentInfo } from 'client/api'
 import { useAppStore } from 'client/store'
 
@@ -21,11 +21,11 @@ export default ({ enabled }: { enabled: boolean }) => {
 
   return (
     <Section heading="Subscription" size="sm" intent="primary" color="blue">
-      <Spacer blockSize="8px" />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
       {!getPaymentInfo.isMakingRequest ? (
         <>
           <Table layout="fixed" intent="neutral">
-            <Table.Body intent="muted" paddingBlock="10px" paddingInline="12px">
+            <Table.Body intent="muted" paddingBlock="10px" paddingInline={NEB_LENGTH.px_012}>
               <Table.Row>
                 <Table.Cell colSpan={1}>
                   <Text lineHeight={1.2}>Renews every</Text>
@@ -74,7 +74,7 @@ export default ({ enabled }: { enabled: boolean }) => {
               </Table.Row>
             </Table.Body>
           </Table>
-          <Spacer blockSize="16px" />
+          <Spacer blockSize={NEB_LENGTH.px_016} />
           <Link href={getPaymentDetailsUrl.data?.url} target="_blank">
             <Button
               scale="xs"
@@ -89,7 +89,7 @@ export default ({ enabled }: { enabled: boolean }) => {
           </Link>
           {getPaymentInfo.data?.subscription.status === 'PAST_DUE' ? (
             <>
-              <Spacer blockSize="48px" />
+              <Spacer blockSize={NEB_LENGTH.px_048} />
               <Callout
                 size="sm"
                 status="error"
@@ -101,8 +101,8 @@ export default ({ enabled }: { enabled: boolean }) => {
           ) : null}
         </>
       ) : (
-        <Box position="relative" blockSize="64px" drawable variant="solid" intent="muted">
-          <Loader centered active color="blue" size="24px" />
+        <Box position="relative" blockSize={NEB_LENGTH.px_064} drawable variant="solid" intent="muted">
+          <Loader centered active color="blue" size={NEB_LENGTH.px_024} />
         </Box>
       )}
     </Section>

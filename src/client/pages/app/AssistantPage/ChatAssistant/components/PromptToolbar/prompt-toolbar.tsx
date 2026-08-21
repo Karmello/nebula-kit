@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Icon, Loader, Text, Tooltip } from 'lib/components'
+import { Box, Button, Flex, Icon, Loader, NEB_LENGTH, Text, Tooltip } from 'lib/components'
 
 type PromptToolbarProps = {
   loading: boolean
@@ -13,7 +13,7 @@ export const PromptToolbar = ({ loading, disabled, lengthStatus, handleSend, han
     <Box drawable theme="global-flipped" variant="solid" intent="neutral" padding="7px" paddingLeft="17px">
       <Flex alignItems="center">
         <Flex.Item flex="1">
-          <Flex alignItems="center" columnGap="16px">
+          <Flex alignItems="center" columnGap={NEB_LENGTH.px_016}>
             <Tooltip
               intent="primary"
               variant="outline"
@@ -21,12 +21,12 @@ export const PromptToolbar = ({ loading, disabled, lengthStatus, handleSend, han
               maxInlineSize={300}
               content="ENTER sends | SHIFT + ENTER adds a new line | TAB returns to the prompt"
             >
-              <Icon name="keyboard" size="24px" />
+              <Icon name="keyboard" size={NEB_LENGTH.px_024} />
             </Tooltip>
             {!loading ? <Text typography="small">{lengthStatus}</Text> : null}
           </Flex>
         </Flex.Item>
-        <Flex alignItems="center" columnGap="16px">
+        <Flex alignItems="center" columnGap={NEB_LENGTH.px_016}>
           <Loader active={loading} size="sm" />
           <Button
             intent="primary"

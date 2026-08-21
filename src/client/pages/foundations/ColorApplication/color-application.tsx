@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { sentenceCase } from 'change-case'
 
-import { Box, Button, Flex, Grid, Select, Spacer, Switch, Text } from 'lib/components'
+import { Box, Button, Flex, Grid, NEB_LENGTH, Select, Spacer, Switch, Text } from 'lib/components'
 import { BOX_COLORS, BOX_INTENTS, BOX_VARIANTS } from 'lib/components/core/Box/constants'
 import type { BoxVariant } from 'lib/components/core/Box/types'
 
@@ -20,7 +20,7 @@ export default () => {
         Intents and variants combined through Button components, illustrating the system's full color spectrum in practice.
       </Text>
       <Spacer />
-      <Flex flexWrap="wrap" columnGap="16px" rowGap="8px">
+      <Flex flexWrap="wrap" columnGap={NEB_LENGTH.px_016} rowGap={NEB_LENGTH.px_008}>
         <Flex.Item>
           <Text bold intent="primary">
             Variant
@@ -48,9 +48,9 @@ export default () => {
           <Switch checked={elevated} onChange={setElevated} />
         </Flex.Item>
       </Flex>
-      <Spacer blockSize="48px" />
+      <Spacer blockSize={NEB_LENGTH.px_048} />
       <Box overflowX="auto">
-        <Grid gridTemplateColumns={`repeat(${BOX_INTENTS.length}, 1fr)`} gap="8px">
+        <Grid gridTemplateColumns={`repeat(${BOX_INTENTS.length}, 1fr)`} gap={NEB_LENGTH.px_008}>
           {BOX_COLORS.map(color => {
             return BOX_INTENTS.map(intent => {
               return (

@@ -1,11 +1,11 @@
-import { Box, MarkerList, Spacer, Text } from 'lib/components'
+import { Box, MarkerList, NEB_LENGTH, Spacer, Text } from 'lib/components'
 
 export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Text>NebulaKit respects your privacy and only collects the minimum information needed to provide its services.</Text>
       <Spacer />
-      <MarkerList gap="16px">
+      <MarkerList gap={NEB_LENGTH.px_016}>
         <MarkerList.Item>
           <Text bold>Account registration</Text>
           <Text>

@@ -1,6 +1,6 @@
 import { sentenceCase } from 'change-case'
 
-import { IconButton, Input, Select, Spacer, Text } from 'lib/components'
+import { IconButton, Input, NEB_LENGTH, Select, Spacer, Text } from 'lib/components'
 import { Breakpoint } from 'lib/types'
 import { DOCS_CSS_LABEL, PLAYGROUND_ARRAY_DATA_MAP, PLAYGROUND_CONTROLS_MAP, PlaygroundProp } from 'client/definitions'
 import { usePlaygroundStore } from 'client/store'
@@ -47,7 +47,7 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
   return (
     <>
       <Text bold>{bp ? `${sentenceCase(activeProp)} [${bp}]` : sentenceCase(activeProp)}</Text>
-      <Spacer blockSize="4px" />
+      <Spacer blockSize={NEB_LENGTH.px_004} />
 
       {PLAYGROUND_CONTROLS_MAP[activeProp as PlaygroundProp].type === 'string' ? (
         <Input

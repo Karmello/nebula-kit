@@ -1,4 +1,4 @@
-import { Box, Form, Input, Section, Spacer, Text, useSnackbar } from 'lib/components'
+import { Box, Form, Input, NEB_LENGTH, Section, Spacer, Text, useSnackbar } from 'lib/components'
 import { useLogoutUser, useRequestEmailUpdate, UseRequestEmailUpdateRes } from 'client/api'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
@@ -17,7 +17,7 @@ export const UpdateEmailSection = () => {
         Your current email remains active until you complete the first login with the new one, so you always retain access
         throughout the process.
       </Text>
-      <Spacer blockSize="24px" />
+      <Spacer blockSize={NEB_LENGTH.px_024} />
       <Box maxInlineSize={{ md: '500px' }}>
         <Form<{ email: string }>
           useFormProps={{
@@ -64,7 +64,7 @@ export const UpdateEmailSection = () => {
           }}
         </Form>
       </Box>
-      <Spacer blockSize="8px" />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
     </Section>
   )
 }
