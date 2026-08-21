@@ -43,7 +43,7 @@ export const ProfileSettingsPage = () => {
         <Spacer blockSize="24px" />
         {!getUser.data || getUser.isMakingRequest ? (
           <Box position="relative" blockSize="160px">
-            <Loader centered size="lg" color="blue" />
+            <Loader centered size="24px" color="blue" />
           </Box>
         ) : (
           <>

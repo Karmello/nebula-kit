@@ -24,7 +24,7 @@ export const PricingPage = () => {
         <Text>Choose the plan that fits your workflow.</Text>
         <Spacer blockSize="48px" />
         {getUser.isMakingRequest ? (
-          <Loader centered size="lg" color="blue" />
+          <Loader centered size="24px" color="blue" />
         ) : (
           <>
             <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }} gap="16px">

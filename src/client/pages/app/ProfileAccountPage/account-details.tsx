@@ -172,7 +172,7 @@ export default () => {
         </Table>
       ) : (
         <Box position="relative" blockSize="64px" drawable variant="solid" intent="muted">
-          <Loader centered active color="blue" size="sm" />
+          <Loader centered active color="blue" size="24px" />
         </Box>
       )}
     </Section>
