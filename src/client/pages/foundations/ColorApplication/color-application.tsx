@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { sentenceCase } from 'change-case'
 
-import { Box, Button, Grid, NEB_LENGTH, Select, Spacer, Switch, Text } from 'lib/components'
+import { Box, Button, NEB_LENGTH, Select, Spacer, Switch, Text } from 'lib/components'
 import { BOX_COLORS, BOX_INTENTS, BOX_VARIANTS } from 'lib/components/core/Box/constants'
 import type { BoxVariant } from 'lib/components/core/Box/types'
 
@@ -61,11 +61,15 @@ export default () => {
       </Box>
       <Spacer blockSize={NEB_LENGTH.px_048} />
       <Box overflowX="auto">
-        <Grid gridTemplateColumns={`repeat(${BOX_INTENTS.length}, 1fr)`} gap={NEB_LENGTH.px_008}>
+        <Box
+          display="grid"
+          gridTemplateColumns={`repeat(${BOX_INTENTS.length}, 1fr)`}
+          gap={NEB_LENGTH.px_008}
+        >
           {BOX_COLORS.map(color => {
             return BOX_INTENTS.map(intent => {
               return (
-                <Grid.Item key={`${color}_${intent}`}>
+                <Box key={`${color}_${intent}`}>
                   <Button
                     color={color}
                     variant={variant}
@@ -78,11 +82,11 @@ export default () => {
                   >
                     {intent} {color}
                   </Button>
-                </Grid.Item>
+                </Box>
               )
             })
           })}
-        </Grid>
+        </Box>
       </Box>
     </>
   )

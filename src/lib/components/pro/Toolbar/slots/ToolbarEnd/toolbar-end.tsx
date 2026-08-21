@@ -1,9 +1,9 @@
-import { Grid } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 import { ToolbarEndProps } from 'lib/index.pro'
 
 export const ToolbarEnd = ({ children, tagAttrs, tagRef }: ToolbarEndProps) => {
   return (
-    <Grid.Item
+    <Box
       tagAttrs={{
         ...tagAttrs,
         style: {
@@ -17,7 +17,7 @@ export const ToolbarEnd = ({ children, tagAttrs, tagRef }: ToolbarEndProps) => {
       alignSelf="center"
     >
       {children}
-    </Grid.Item>
+    </Box>
   )
 }
 

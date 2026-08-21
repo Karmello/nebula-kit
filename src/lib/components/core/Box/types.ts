@@ -1,15 +1,19 @@
 import { ElementType } from 'react'
 
 import type {
+  CssAlignContent,
+  CssAlignItems,
+  CssAlignSelf,
   CssCursor,
   CssDisplay,
-  CssFlexAlignContent,
-  CssFlexAlignItems,
   CssFlexDirection,
-  CssFlexItemAlignSelf,
-  CssFlexJustifyContent,
   CssFlexWrap,
+  CssGridAutoFlow,
+  CssJustifyContent,
+  CssJustifySelf,
   CssOverflow,
+  CssPlaceContent,
+  CssPlaceItems,
   CssPointerEvents,
   CssPosition,
   CssTextAlign,
@@ -100,9 +104,9 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   // flex
   flexDirection?: RespValue<CssFlexDirection>
   flexWrap?: RespValue<CssFlexWrap>
-  justifyContent?: RespValue<CssFlexJustifyContent>
-  alignItems?: RespValue<CssFlexAlignItems>
-  alignContent?: RespValue<CssFlexAlignContent>
+  justifyContent?: RespValue<CssJustifyContent>
+  alignItems?: RespValue<CssAlignItems>
+  alignContent?: RespValue<CssAlignContent>
   gap?: RespValue<string>
   rowGap?: RespValue<string>
   columnGap?: RespValue<string>
@@ -110,6 +114,18 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   flexGrow?: RespValue<string>
   flexShrink?: RespValue<string>
   flexBasis?: RespValue<string>
-  alignSelf?: RespValue<CssFlexItemAlignSelf>
+  alignSelf?: RespValue<CssAlignSelf>
   order?: RespValue<string>
+  // grid
+  gridTemplateColumns?: RespValue<string>
+  gridTemplateRows?: RespValue<string>
+  gridAutoRows?: RespValue<string>
+  gridAutoColumns?: RespValue<string>
+  gridAutoFlow?: RespValue<CssGridAutoFlow>
+  placeItems?: RespValue<CssPlaceItems>
+  placeContent?: RespValue<CssPlaceContent>
+  // grid item
+  gridColumn?: RespValue<string>
+  gridRow?: RespValue<string>
+  justifySelf?: RespValue<CssJustifySelf>
 }

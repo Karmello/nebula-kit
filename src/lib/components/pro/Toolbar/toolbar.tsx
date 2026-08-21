@@ -5,7 +5,7 @@ import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
 import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { Grid } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 import { ToolbarProps } from 'lib/index.pro'
 
 import { ToolbarProvider, useToolbarContext } from './ToolbarProvider'
@@ -41,7 +41,8 @@ const ToolbarComponent = ({ children, tagAttrs, tagRef }: ToolbarProps) => {
       childrenToVerify={finalChildren}
     >
       {({ slotsByName }) => (
-        <Grid
+        <Box
+          display="grid"
           tag="nav"
           tagAttrs={{
             ...tagAttrs,
@@ -55,7 +56,7 @@ const ToolbarComponent = ({ children, tagAttrs, tagRef }: ToolbarProps) => {
           {slotsByName['Toolbar.Start']}
           {slotsByName['Toolbar.Main']}
           {slotsByName['Toolbar.End']}
-        </Grid>
+        </Box>
       )}
     </WithSlots>
   )

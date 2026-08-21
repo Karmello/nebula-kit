@@ -101,6 +101,18 @@ export const Box = <T extends ElementType = 'div'>({
   flexBasis,
   alignSelf,
   order,
+  // grid
+  gridTemplateColumns,
+  gridTemplateRows,
+  gridAutoRows,
+  gridAutoColumns,
+  gridAutoFlow,
+  placeItems,
+  placeContent,
+  // grid item
+  gridColumn,
+  gridRow,
+  justifySelf,
 }: BoxProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
   const finalRef = tagRef || ref
@@ -173,6 +185,16 @@ export const Box = <T extends ElementType = 'div'>({
       flexBasis,
       alignSelf,
       order,
+      gridTemplateColumns,
+      gridTemplateRows,
+      gridAutoRows,
+      gridAutoColumns,
+      gridAutoFlow,
+      placeItems,
+      placeContent,
+      gridColumn,
+      gridRow,
+      justifySelf,
     })
   }, [
     bp,
@@ -237,6 +259,16 @@ export const Box = <T extends ElementType = 'div'>({
     flexBasis,
     alignSelf,
     order,
+    gridTemplateColumns,
+    gridTemplateRows,
+    gridAutoRows,
+    gridAutoColumns,
+    gridAutoFlow,
+    placeItems,
+    placeContent,
+    gridColumn,
+    gridRow,
+    justifySelf,
   ])
 
   useLayoutEffect(() => {

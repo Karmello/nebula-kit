@@ -1,6 +1,6 @@
 import { JSX } from 'react'
 
-import { GridProps } from 'lib/index.core'
+import { BoxProps } from 'lib/index.core'
 import { SwitchBreakpoint } from 'lib/types'
 
 import { SplitViewContextProps } from './SplitViewProvider/definitions'
@@ -19,8 +19,8 @@ export type SplitViewOwnProps = {
   switchAt?: SwitchBreakpoint
 }
 
-type PropsFromGrid = Pick<GridProps<'div'>, 'tagAttrs' | 'tagRef'> & {
-  children: GridProps<'div'>['children'] | ((args: ChildrenAsFuncArgs) => JSX.Element)
+type PropsFromBox = Pick<BoxProps<'div'>, 'tagAttrs' | 'tagRef'> & {
+  children: BoxProps<'div'>['children'] | ((args: ChildrenAsFuncArgs) => JSX.Element)
 }
 
-export type SplitViewProps = PropsFromGrid & SplitViewOwnProps
+export type SplitViewProps = PropsFromBox & SplitViewOwnProps

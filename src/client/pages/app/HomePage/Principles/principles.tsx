@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 
@@ -7,7 +7,8 @@ export const Principles = () => {
 
   return (
     <>
-      <Grid
+      <Box
+        display="grid"
         gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }}
         gap={NEB_LENGTH.px_048}
       >
@@ -68,7 +69,7 @@ export const Principles = () => {
             products stable as they grow.
           </Text>
         </Section>
-      </Grid>
+      </Box>
       <Spacer blockSize={NEB_LENGTH.px_048} />
       <Box textAlign="center">
         <Link

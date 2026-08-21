@@ -1,6 +1,6 @@
 import { kebabCase } from 'change-case'
 
-import { Box, Button, Grid, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { type IconName } from 'lib/components/core/Icon/types'
 import { PAGE_SECTIONS } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
@@ -55,7 +55,8 @@ const Family = ({
 
 export const Families = () => {
   return (
-    <Grid
+    <Box
+      display="grid"
       gridTemplateColumns={{
         base: '1fr',
         md: 'repeat(2, 1fr)',
@@ -67,7 +68,7 @@ export const Families = () => {
         heading="Layout"
         description="Powerful layout components make arranging UI straightforward by using well-known techniques like Flexbox or CSS Grid."
         iconName="panel-top-bottom-dashed"
-        components={['Grid']}
+        components={['Box']}
       />
       <Family
         heading="Overlays"
@@ -87,6 +88,6 @@ export const Families = () => {
         iconName="text-select"
         components={['Input', 'Select']}
       />
-    </Grid>
+    </Box>
   )
 }

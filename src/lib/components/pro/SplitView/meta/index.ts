@@ -1,5 +1,4 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
-import { GRID_META } from 'lib/components/core/Grid/meta'
 import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
 import {
   SplitViewMainBarProps,
@@ -24,7 +23,7 @@ export const SPLIT_VIEW_META = {
     overview: {
       bundle: 'pro',
       title: 'Two-panel layout for displaying side content alongside main content.',
-      composedOf: ['Grid'],
+      composedOf: ['Box'],
       features: [
         'provides dedicated side panel and main content regions',
         'switches the side panel between overlay and inline modes at the specified breakpoint (switchAt)',
@@ -40,7 +39,7 @@ export const SPLIT_VIEW_META = {
     },
     props: {
       children: {
-        ...GRID_META.Grid.props.children,
+        ...BOX_META.Box.props.children,
         isRequired: true,
         options: ['SplitView.Side', 'SplitView.Main'],
         description:
@@ -57,8 +56,8 @@ export const SPLIT_VIEW_META = {
         description:
           'Defines the breakpoint at which the side panel switches from overlay to inline layout mode.',
       },
-      tagAttrs: GRID_META.Grid.props.tagAttrs,
-      tagRef: GRID_META.Grid.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
     examples: SPLIT_VIEW_EXAMPLES,
     changelog: SPLIT_VIEW_CHANGELOG,

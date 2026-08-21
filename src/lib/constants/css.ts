@@ -6,6 +6,8 @@ export const CSS_DISPLAY = [
   'inline-block',
   'flex',
   'inline-flex',
+  'grid',
+  'inline-grid',
   'contents',
   'none',
 ] as const
@@ -27,7 +29,7 @@ export const CSS_CURSOR = [
 export const CSS_FLEX_DIRECTION = ['row', 'row-reverse', 'column', 'column-reverse'] as const
 export const CSS_FLEX_WRAP = ['nowrap', 'wrap', 'wrap-reverse'] as const
 
-export const CSS_FLEX_JUSTIFY_CONTENT = [
+export const CSS_JUSTIFY_CONTENT = [
   'flex-start',
   'center',
   'flex-end',
@@ -36,15 +38,9 @@ export const CSS_FLEX_JUSTIFY_CONTENT = [
   'space-evenly',
 ] as const
 
-export const CSS_FLEX_ALIGN_ITEMS = [
-  'flex-start',
-  'center',
-  'flex-end',
-  'stretch',
-  'baseline',
-] as const
+export const CSS_ALIGN_ITEMS = ['flex-start', 'center', 'flex-end', 'stretch', 'baseline'] as const
 
-export const CSS_FLEX_ALIGN_CONTENT = [
+export const CSS_ALIGN_CONTENT = [
   'flex-start',
   'center',
   'flex-end',
@@ -54,20 +50,21 @@ export const CSS_FLEX_ALIGN_CONTENT = [
   'space-evenly',
 ] as const
 
-export const CSS_FLEX_ITEM_ALIGN_SELF = [
+export const CSS_ALIGN_SELF = [
   'auto',
   'flex-start',
   'flex-end',
   'center',
   'stretch',
   'baseline',
+  'start',
+  'end',
 ] as const
 
-export const CSS_GRID_DISPLAY = ['grid', 'inline-grid'] as const
 export const CSS_GRID_AUTO_FLOW = ['row', 'column', 'row dense', 'column dense'] as const
-export const CSS_GRID_PLACE_ITEMS = ['stretch', 'start', 'center', 'end'] as const
+export const CSS_PLACE_ITEMS = ['stretch', 'start', 'center', 'end'] as const
 
-export const CSS_GRID_PLACE_CONTENT = [
+export const CSS_PLACE_CONTENT = [
   'start',
   'center',
   'end',
@@ -77,5 +74,4 @@ export const CSS_GRID_PLACE_CONTENT = [
   'space-evenly',
 ] as const
 
-export const CSS_GRID_ITEM_JUSTIFY_SELF = ['auto', 'start', 'center', 'end', 'stretch'] as const
-export const CSS_GRID_ITEM_ALIGN_SELF = ['auto', 'start', 'center', 'end', 'stretch'] as const
+export const CSS_JUSTIFY_SELF = ['auto', 'start', 'center', 'end', 'stretch'] as const

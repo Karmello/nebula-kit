@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 
-import { Box, Grid, NEB_LENGTH, Spacer, Table, Text } from 'lib/components'
+import { Box, NEB_LENGTH, Spacer, Table, Text } from 'lib/components'
 import { TEXT_TYPOGRAPHY, TextTypography } from 'lib/components/core/Text'
 import { TYPOGRAPHY_MAP } from 'lib/constants'
 
@@ -66,7 +66,8 @@ export default () => {
         </Table.Body>
       </Table>
       <Spacer blockSize={NEB_LENGTH.px_096} />
-      <Grid
+      <Box
+        display="grid"
         gridTemplateColumns={{
           base: '1fr',
           md: 'max-content minmax(0, 1fr)',
@@ -85,7 +86,7 @@ export default () => {
             </Box>
           </Fragment>
         ))}
-      </Grid>
+      </Box>
     </Box>
   )
 }

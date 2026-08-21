@@ -3,7 +3,7 @@ import { useCallback } from 'react'
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
 import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
-import { Grid } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 
 import { SPLIT_VIEW_SIDE_POSITIONS, type SplitViewProps } from './definitions'
 import { SplitViewProvider, useSplitViewContext } from './SplitViewProvider'
@@ -39,7 +39,8 @@ const SplitViewComponent = ({
     >
       {({ slotsByName }) => {
         return (
-          <Grid
+          <Box
+            display="grid"
             tagRef={tagRef}
             tagAttrs={{
               ...tagAttrs,
@@ -56,7 +57,7 @@ const SplitViewComponent = ({
             {sidePosition === 'left' ? slotsByName['SplitView.Side'] : null}
             {slotsByName['SplitView.Main']}
             {sidePosition === 'right' ? slotsByName['SplitView.Side'] : null}
-          </Grid>
+          </Box>
         )
       }}
     </WithSlots>

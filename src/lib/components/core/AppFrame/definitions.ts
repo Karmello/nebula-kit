@@ -1,6 +1,6 @@
-import { type GridProps } from '../Grid/definitions'
+import { type BoxProps } from '../Box/types'
 
-export type AppFrameProps = Pick<GridProps, 'tagAttrs' | 'tagRef'> & {
-  children: GridProps['children']
+export type AppFrameProps = Pick<BoxProps, 'tagAttrs' | 'tagRef'> & {
+  children: BoxProps['children']
   stickyHeader?: boolean
 }

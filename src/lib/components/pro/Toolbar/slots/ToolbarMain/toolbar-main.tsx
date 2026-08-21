@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
-import { Grid, Resize } from 'lib/index.core'
+import { Box, Resize } from 'lib/index.core'
 import { ToolbarMainProps } from 'lib/index.pro'
 
 import { useToolbarContext } from '../../ToolbarProvider'
@@ -10,7 +10,7 @@ export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) =>
   const { switchAt, mainOpen, isSwitchAtHit } = useToolbarContext()
 
   return (
-    <Grid.Item
+    <Box
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('toolbar-main'), tagAttrs?.className),
@@ -33,7 +33,7 @@ export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) =>
       ) : (
         children
       )}
-    </Grid.Item>
+    </Box>
   )
 }
 

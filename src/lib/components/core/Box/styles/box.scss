@@ -63,6 +63,17 @@
   flex-basis: auto;
   align-self: auto;
   order: 0;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+  grid-auto-columns: auto;
+  grid-auto-flow: row;
+  place-items: stretch;
+  place-content: start;
+  grid-column: auto;
+  grid-row: auto;
+  justify-self: auto;
 }
 
 .neb-box[data-neb-box-disabled='true'] {

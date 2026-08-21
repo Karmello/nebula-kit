@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 
@@ -44,7 +44,8 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
           </Link>
         </Box>
         <Spacer blockSize={NEB_LENGTH.px_048} />
-        <Grid
+        <Box
+          display="grid"
           gridTemplateColumns={{
             base: '1fr',
             md: 'repeat(2, 1fr)',
@@ -67,7 +68,7 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
               <Text intent="neutral">{item.title}</Text>
             </Section>
           ))}
-        </Grid>
+        </Box>
         <Spacer blockSize={NEB_LENGTH.px_048} />
         <Box display="flex" justifyContent="center">
           <Link

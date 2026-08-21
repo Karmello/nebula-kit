@@ -18,10 +18,7 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'layout',
     label: 'Layout',
-    items: [
-      { key: 'grid', label: 'Grid', sections, bundle: 'core' },
-      { key: 'segment', label: 'Segment', sections, bundle: 'core' },
-    ],
+    items: [{ key: 'segment', label: 'Segment', sections, bundle: 'core' }],
   },
   {
     key: 'overlays',

@@ -1,7 +1,7 @@
 import { cloneElement } from 'react'
 
 import { WithSlots } from 'lib/components/shared'
-import { Grid } from 'lib/index.core'
+import { Box } from 'lib/index.core'
 
 import { type AppFrameProps } from './definitions'
 
@@ -22,7 +22,8 @@ export const AppFrame = ({ children, tagAttrs, tagRef, stickyHeader = false }: A
         const footerSlot = slotsByName['AppFrame.Footer'][0]
 
         return (
-          <Grid
+          <Box
+            display="grid"
             tagRef={tagRef}
             tagAttrs={{
               ...tagAttrs,
@@ -37,7 +38,7 @@ export const AppFrame = ({ children, tagAttrs, tagRef, stickyHeader = false }: A
             {cloneElement(headerSlot as any, { stickyHeader })}
             {mainSlot}
             {footerSlot}
-          </Grid>
+          </Box>
         )
       }}
     </WithSlots>

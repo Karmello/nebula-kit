@@ -2,7 +2,6 @@ import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
-import { GRID_META } from '../../Grid/meta'
 import type { AppFrameProps } from '../definitions'
 import {
   type AppFrameFooterProps,
@@ -30,13 +29,13 @@ export const APP_FRAME_META = {
         'allows the main region to own page content spacing',
         'supports footer sections that can stack or align horizontally across breakpoints',
       ],
-      composedOf: ['Grid'],
+      composedOf: ['Box'],
       exposedTags: ['div'],
       slots: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer', 'AppFrame.FooterSection'],
     },
     props: {
       children: {
-        ...GRID_META.Grid.props.children,
+        ...BOX_META.Box.props.children,
         isRequired: true,
         options: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer'],
         description: 'AppFrame.Footer is optional, the rest is required.',
@@ -48,8 +47,8 @@ export const APP_FRAME_META = {
         isResponsive: false,
         description: 'Keeps the header fixed at the top of the viewport.',
       },
-      tagAttrs: GRID_META.Grid.props.tagAttrs,
-      tagRef: GRID_META.Grid.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
     examples: APP_FRAME_EXAMPLES,
     changelog: APP_FRAME_CHANGELOG,

@@ -1,7 +1,7 @@
-import { GridItemProps } from 'lib/index.core'
+import { BoxProps } from 'lib/index.core'
 
-type PropsFromGridItem = Pick<GridItemProps<'div'>, 'tagAttrs' | 'tagRef'> & {
-  children: GridItemProps<'div'>['children']
+type PropsFromBox = Pick<BoxProps<'div'>, 'tagAttrs' | 'tagRef'> & {
+  children: BoxProps<'div'>['children']
 }
 
-export type ToolbarStartProps = PropsFromGridItem
+export type ToolbarStartProps = PropsFromBox

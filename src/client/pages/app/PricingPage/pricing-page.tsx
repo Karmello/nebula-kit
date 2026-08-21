@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react'
 
-import { Box, Grid, Loader, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, Loader, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { useGetUser } from 'client/api'
 import { useAppStore } from 'client/store'
 
@@ -30,7 +30,8 @@ export const PricingPage = () => {
           <Loader centered size={NEB_LENGTH.px_024} color="blue" />
         ) : (
           <>
-            <Grid
+            <Box
+              display="grid"
               gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }}
               gap={NEB_LENGTH.px_016}
             >
@@ -78,7 +79,7 @@ export const PricingPage = () => {
                 description={PRICING_DATA.plans.enterprise.description}
                 options={PRICING_DATA.plans.enterprise.whatYouGet}
               />
-            </Grid>
+            </Box>
             <Spacer blockSize={NEB_LENGTH.px_048} />
             <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_004}>
               {PRICING_DATA.additionalInfo.map((info, key) => (

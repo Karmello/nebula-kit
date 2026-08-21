@@ -1,4 +1,4 @@
-import { GRID_META } from 'lib/components/core/Grid/meta'
+import { BOX_META } from 'lib/components/core/Box/meta'
 import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
 import { ToolbarEndProps, ToolbarMainProps, ToolbarProps, ToolbarStartProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
@@ -19,13 +19,13 @@ export const TOOLBAR_META = {
         'often used inside AppFrame.Header to control navigation and provide additional tools',
         'often paired with ButtonGroup rendered inside the main section',
       ],
-      composedOf: ['Grid'],
+      composedOf: ['Box'],
       exposedTags: ['nav'],
       slots: ['Toolbar.Main', 'Toolbar.Start', 'Toolbar.End'],
     },
     props: {
       children: {
-        ...GRID_META.Grid.props.children,
+        ...BOX_META.Box.props.children,
         isRequired: true,
         options: ['Toolbar.Start', 'Toolbar.Main', 'Toolbar.End'],
         description:
@@ -39,8 +39,8 @@ export const TOOLBAR_META = {
         description:
           'Defines the breakpoint at which the main section switches between collapsed and inline layout.',
       },
-      tagAttrs: GRID_META.Grid.props.tagAttrs,
-      tagRef: GRID_META.Grid.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
     examples: TOOLBAR_EXAMPLES,
     changelog: TOOLBAR_CHANGELOG,
@@ -51,15 +51,15 @@ export const TOOLBAR_META = {
       name: 'Toolbar.Main',
       title: 'Defines the main slot of Toolbar.',
       features: ['holds the primary, collapsible content of the toolbar'],
-      composedOf: ['Grid.Item'],
+      composedOf: ['Box'],
     },
     props: {
       children: {
-        ...GRID_META.GridItem.props.children,
+        ...BOX_META.Box.props.children,
         isRequired: true,
       },
-      tagAttrs: GRID_META.GridItem.props.tagAttrs,
-      tagRef: GRID_META.GridItem.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
   } satisfies ComponentMeta<ToolbarMainProps>,
   ToolbarStart: {
@@ -72,15 +72,15 @@ export const TOOLBAR_META = {
         'remains visible when the main section is collapsed',
       ],
       guidelines: ['commonly used for brand, logo or home button'],
-      composedOf: ['Grid.Item'],
+      composedOf: ['Box'],
     },
     props: {
       children: {
-        ...GRID_META.GridItem.props.children,
+        ...BOX_META.Box.props.children,
         isRequired: true,
       },
-      tagAttrs: GRID_META.GridItem.props.tagAttrs,
-      tagRef: GRID_META.GridItem.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
   } satisfies ComponentMeta<ToolbarStartProps>,
   ToolbarEnd: {
@@ -93,15 +93,15 @@ export const TOOLBAR_META = {
         'remains visible when the main section is collapsed',
       ],
       guidelines: ['commonly used for user actions, menus or status items'],
-      composedOf: ['Grid.Item'],
+      composedOf: ['Box'],
     },
     props: {
       children: {
-        ...GRID_META.GridItem.props.children,
+        ...BOX_META.Box.props.children,
         isRequired: true,
       },
-      tagAttrs: GRID_META.GridItem.props.tagAttrs,
-      tagRef: GRID_META.GridItem.props.tagRef,
+      tagAttrs: BOX_META.Box.props.tagAttrs,
+      tagRef: BOX_META.Box.props.tagRef,
     },
   } satisfies ComponentMeta<ToolbarEndProps>,
 }
