@@ -39,7 +39,10 @@ export const AppFrameFooter = ({
           >
             <Box drawable variant="solid" intent={intent} color={color} borderRadius="0px">
               {appFrameFooterSectionSlots.length ? (
-                <Flex flexDirection={{ base: 'column', [footerStackBreakpoint]: 'row' }} alignItems="stretch">
+                <Flex
+                  flexDirection={{ base: 'column', [footerStackBreakpoint]: 'row' }}
+                  alignItems="stretch"
+                >
                   {appFrameFooterSectionSlots.map((footerSectionSlot, index) => (
                     <Flex.Item key={index} flex="1">
                       {cloneElement(footerSectionSlot as any, {

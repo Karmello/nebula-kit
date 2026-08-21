@@ -19,7 +19,13 @@ export const TOOLTIP_PLACEMENTS = [
 ] as const satisfies readonly Placement[]
 
 export const TOOLTIP_VARIANTS = ['solid', 'outline'] as const satisfies BoxVariant[]
-export const TOOLTIP_INTENTS = ['muted', 'tertiary', 'secondary', 'primary', 'inverse'] as const satisfies BoxIntent[]
+export const TOOLTIP_INTENTS = [
+  'muted',
+  'tertiary',
+  'secondary',
+  'primary',
+  'inverse',
+] as const satisfies BoxIntent[]
 export const TOOLTIP_MODES = ['hover', 'click'] as const
 
 export const DEFAULT_TOOLTIP_VARIANT: TooltipProps['variant'] = 'solid'

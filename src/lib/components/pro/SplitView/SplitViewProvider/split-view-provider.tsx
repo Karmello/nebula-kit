@@ -8,7 +8,11 @@ import { ProviderProps, SplitViewContextProps, SplitViewMode } from './definitio
 
 const SplitViewContext = createContext<SplitViewContextProps>({} as SplitViewContextProps)
 
-export const SplitViewProvider = ({ children, sidePosition, switchAt = DEFAULT_SWITCH_BREAKPOINT }: ProviderProps) => {
+export const SplitViewProvider = ({
+  children,
+  sidePosition,
+  switchAt = DEFAULT_SWITCH_BREAKPOINT,
+}: ProviderProps) => {
   const { bp } = useScreen()
   const { lock, unlock } = useGlobalScrollLock()
 

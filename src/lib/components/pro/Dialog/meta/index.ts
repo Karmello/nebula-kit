@@ -1,7 +1,12 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK, DEFAULT_DIALOG_SIZE, DIALOG_SIZES, type DialogProps } from '../definitions'
+import {
+  DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK,
+  DEFAULT_DIALOG_SIZE,
+  DIALOG_SIZES,
+  type DialogProps,
+} from '../definitions'
 import { type DialogFooterProps } from '../slots/DialogFooter/definitions'
 import { type DialogHeaderProps } from '../slots/DialogHeader/definitions'
 import { DIALOG_CHANGELOG } from './changelog'
@@ -28,12 +33,14 @@ export const DIALOG_META = {
         ...BOX_META.Box.props.children,
         options: ['Dialog.Header', 'Dialog.Content', 'Dialog.Footer'],
         isRequired: true,
-        description: 'Dialog.Content slot is required. Dialog.Header and Dialog.Footer are optional.',
+        description:
+          'Dialog.Content slot is required. Dialog.Header and Dialog.Footer are optional.',
       },
       closeOnBackdropClick: {
         options: ['boolean'],
         defaultValue: String(DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK),
-        description: 'Controls whether clicking the backdrop closes the dialog. Requires onClose to be provided.',
+        description:
+          'Controls whether clicking the backdrop closes the dialog. Requires onClose to be provided.',
       },
       onClose: {
         options: ['() => void'],

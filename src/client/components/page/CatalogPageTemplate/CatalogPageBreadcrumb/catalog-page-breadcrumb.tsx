@@ -3,7 +3,12 @@ import { useNavigateTo } from 'client/hooks'
 
 import { CatalogPageBreadcrumbProps, TREE } from './definitions'
 
-export const CatalogPageBreadcrumb = ({ pageKey, categoryKey, itemKey, sectionKey }: CatalogPageBreadcrumbProps) => {
+export const CatalogPageBreadcrumb = ({
+  pageKey,
+  categoryKey,
+  itemKey,
+  sectionKey,
+}: CatalogPageBreadcrumbProps) => {
   const navigateTo = useNavigateTo()
 
   return (
@@ -14,11 +19,14 @@ export const CatalogPageBreadcrumb = ({ pageKey, categoryKey, itemKey, sectionKe
         const currentPageTree = TREE.find(node => node.value === path[0])
         const pageKey = path[0]
         const categoryKey = path[1] || currentPageTree.children[0].value
-        const itemKey = path[2] || currentPageTree.children.find(node => node.value === categoryKey).children[0].value
+        const itemKey =
+          path[2] ||
+          currentPageTree.children.find(node => node.value === categoryKey).children[0].value
         const sectionKey =
           path[3] ||
-          currentPageTree.children.find(node => node.value === categoryKey).children.find(node => node.value === itemKey)
-            .children[0].value
+          currentPageTree.children
+            .find(node => node.value === categoryKey)
+            .children.find(node => node.value === itemKey).children[0].value
 
         setTimeout(() => {
           navigateTo(`/${pageKey}/${categoryKey}/${itemKey}/${sectionKey}`)

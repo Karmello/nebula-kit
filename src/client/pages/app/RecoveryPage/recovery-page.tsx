@@ -64,7 +64,13 @@ export const RecoveryPage = () => {
                   <Input tagAttrs={{ autoComplete: 'off' }} placeholder="Enter email address" />
                 </Form.Field>
               ) : (
-                <Form.Field name="newPassword" label="New password" required minLength={8} maxLength={128}>
+                <Form.Field
+                  name="newPassword"
+                  label="New password"
+                  required
+                  minLength={8}
+                  maxLength={128}
+                >
                   <PasswordInput placeholder="Enter password" autoComplete="off" />
                 </Form.Field>
               )}

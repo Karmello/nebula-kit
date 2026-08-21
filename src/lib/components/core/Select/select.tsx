@@ -85,7 +85,11 @@ export const SelectImpl = ({
           borderTopRightRadius={open && !isOpenDownwards ? '0px' : undefined}
         >
           <Flex tag="span" alignItems="center" justifyContent="space-between" columnGap="8px">
-            <Text fontSize={CONTROL_SCALE_MAP[size].fontSize} lineHeight={CONTROL_SCALE_MAP[size].lineHeight} truncate>
+            <Text
+              fontSize={CONTROL_SCALE_MAP[size].fontSize}
+              lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
+              truncate
+            >
               {staticLabel ?? currentLabel ?? 'Select...'}
             </Text>
             <Icon name="chevron-down" size={CONTROL_SCALE_MAP[size].fontSize} />
@@ -137,7 +141,10 @@ export const SelectImpl = ({
                     alignItems="center"
                     alignContent="stretch"
                   >
-                    <Text fontSize={CONTROL_SCALE_MAP[size].fontSize} lineHeight={CONTROL_SCALE_MAP[size].lineHeight}>
+                    <Text
+                      fontSize={CONTROL_SCALE_MAP[size].fontSize}
+                      lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
+                    >
                       {slot}
                     </Text>
                   </Flex>

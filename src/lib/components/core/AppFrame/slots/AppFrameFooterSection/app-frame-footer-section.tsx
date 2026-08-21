@@ -13,7 +13,8 @@ export const AppFrameFooterSection = ({
   paddingInline,
   ...internalProps
 }: AppFrameFooterSectionProps) => {
-  const { color, intent, footerStackBreakpoint, isLast } = internalProps as AppFrameFooterSectionInternalProps
+  const { color, intent, footerStackBreakpoint, isLast } =
+    internalProps as AppFrameFooterSectionInternalProps
 
   return (
     <Box
@@ -25,7 +26,10 @@ export const AppFrameFooterSection = ({
       surface="dividing"
       borderRadius="0px"
       borderWidth="0px"
-      borderBottomWidth={{ base: !isLast ? '2px' : undefined, [footerStackBreakpoint || 'lg']: '0px' }}
+      borderBottomWidth={{
+        base: !isLast ? '2px' : undefined,
+        [footerStackBreakpoint || 'lg']: '0px',
+      }}
       borderRightWidth={{ [footerStackBreakpoint || 'lg']: !isLast ? '2px' : undefined }}
       padding={padding}
       paddingBlock={paddingBlock}

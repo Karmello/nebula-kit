@@ -7,7 +7,14 @@ type TableHeaderCellOwnProps = {
 
 type PropsFromBox = Pick<
   BoxProps<'th'>,
-  'tagAttrs' | 'tagRef' | 'minInlineSize' | 'maxInlineSize' | 'blockSize' | 'textAlign' | 'color' | 'intent'
+  | 'tagAttrs'
+  | 'tagRef'
+  | 'minInlineSize'
+  | 'maxInlineSize'
+  | 'blockSize'
+  | 'textAlign'
+  | 'color'
+  | 'intent'
 > & {
   children: BoxProps<'th'>['children']
 }

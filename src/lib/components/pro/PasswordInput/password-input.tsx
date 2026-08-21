@@ -35,7 +35,11 @@ export const PasswordInput = ({
       }}
       tagRef={tagRef}
       endAffix={props => (
-        <IconButton {...props} iconName={hidePassword ? 'eye-off' : 'eye'} onClick={() => setHidePassword(!hidePassword)} />
+        <IconButton
+          {...props}
+          iconName={hidePassword ? 'eye-off' : 'eye'}
+          onClick={() => setHidePassword(!hidePassword)}
+        />
       )}
       color={color}
       defaultValue={defaultValue}

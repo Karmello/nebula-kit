@@ -1,7 +1,10 @@
 import { ComponentMeta } from 'client/definitions'
 
 import { HTML_TAG_META } from '../../../core/HtmlTag/meta'
-import { DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK, type FocusTrapProps } from '../definitions'
+import {
+  DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK,
+  type FocusTrapProps,
+} from '../definitions'
 import { FOCUS_TRAP_CHANGELOG } from './changelog'
 import { FOCUS_TRAP_EXAMPLES } from './examples'
 
@@ -39,7 +42,8 @@ export const FOCUS_TRAP_META = {
       },
       onFocusEscape: {
         options: ['() => void'],
-        description: 'Called when the user attempts to exit the trapped region (ESC key or clicking outside).',
+        description:
+          'Called when the user attempts to exit the trapped region (ESC key or clicking outside).',
       },
       tagRef: {
         ...HTML_TAG_META.HtmlTag.props.tagRef,

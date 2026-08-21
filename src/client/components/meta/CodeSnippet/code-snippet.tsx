@@ -55,7 +55,11 @@ export const CodeSnippet = ({
             {description ? (
               <Box paddingBlock={NEB_LENGTH.px_012}>
                 <Title iconName={descriptionIcon ? 'arrow-down' : undefined}>
-                  <Text bold={boldDescription} intent="neutral" tagAttrs={{ style: { lineHeight: 1.25 } }}>
+                  <Text
+                    bold={boldDescription}
+                    intent="neutral"
+                    tagAttrs={{ style: { lineHeight: 1.25 } }}
+                  >
                     {description}
                   </Text>
                 </Title>
@@ -95,7 +99,12 @@ export const CodeSnippet = ({
                             key={j}
                             tag="span"
                             tagAttrs={{
-                              style: { display: 'inline', color, fontSize: '13px', letterSpacing: '0px' },
+                              style: {
+                                display: 'inline',
+                                color,
+                                fontSize: '13px',
+                                letterSpacing: '0px',
+                              },
                             }}
                           >
                             {content}

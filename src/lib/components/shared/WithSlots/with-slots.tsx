@@ -22,7 +22,9 @@ export const WithSlots = <SlotName extends string>({
     if (!childrenToVerify) return null
 
     const finalChildrenToVerify =
-      (childrenToVerify as any)?.type === Fragment ? (childrenToVerify as any)?.props?.children : childrenToVerify
+      (childrenToVerify as any)?.type === Fragment
+        ? (childrenToVerify as any)?.props?.children
+        : childrenToVerify
 
     const slotsByName = {} as Record<SlotName, ReactNode[]>
     const allValidSlots: ReactNode[] = []
@@ -96,7 +98,11 @@ export const WithSlots = <SlotName extends string>({
     const { slotsByName, allValidSlots } = resolved
 
     if (someRequired && !allValidSlots.length) {
-      console.warn(getLibMsg(`${componentName} expects ${Object.keys(slotsByName).join(' or ')} to be its child`))
+      console.warn(
+        getLibMsg(
+          `${componentName} expects ${Object.keys(slotsByName).join(' or ')} to be its child`
+        )
+      )
       return
     }
 

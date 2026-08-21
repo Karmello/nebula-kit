@@ -27,7 +27,11 @@ export const PlaygroundPage = () => {
   }, [])
 
   return (
-    <Box paddingTop={NEB_LENGTH.px_016} paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }} overflowY="hidden">
+    <Box
+      paddingTop={NEB_LENGTH.px_016}
+      paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+      overflowY="hidden"
+    >
       <Section size="lg" heading={`Playground (${activeComponent})`} iconName="flask-conical">
         <Spacer blockSize={NEB_LENGTH.px_008} />
         <SplitView sidePosition="right">
@@ -54,13 +58,20 @@ export const PlaygroundPage = () => {
                   />
                 </SplitView.Main>
                 <SplitView.Side intent="neutral" inlineSize="320px">
-                  <Box padding={{ base: NEB_LENGTH.px_012, lg: NEB_LENGTH.px_000 }} paddingLeft={{ lg: NEB_LENGTH.px_032 }}>
+                  <Box
+                    padding={{ base: NEB_LENGTH.px_012, lg: NEB_LENGTH.px_000 }}
+                    paddingLeft={{ lg: NEB_LENGTH.px_032 }}
+                  >
                     <Flex flexDirection="column" alignItems="stretch" rowGap={NEB_LENGTH.px_024}>
                       <Flex.Item>
                         <ComponentSelect />
                       </Flex.Item>
                       <Flex.Item>
-                        <Flex flexDirection="column" alignItems="stretch" rowGap={NEB_LENGTH.px_008}>
+                        <Flex
+                          flexDirection="column"
+                          alignItems="stretch"
+                          rowGap={NEB_LENGTH.px_008}
+                        >
                           <Flex.Item>
                             <PropSelect />
                           </Flex.Item>

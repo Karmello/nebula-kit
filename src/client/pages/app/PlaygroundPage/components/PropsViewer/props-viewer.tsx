@@ -16,7 +16,12 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
     <>
       <Text bold>Props</Text>
       <Spacer blockSize={NEB_LENGTH.px_008} />
-      <Table layout="fixed" intent="neutral" paddingBlock={NEB_LENGTH.px_002} paddingInline={NEB_LENGTH.px_008}>
+      <Table
+        layout="fixed"
+        intent="neutral"
+        paddingBlock={NEB_LENGTH.px_002}
+        paddingInline={NEB_LENGTH.px_008}
+      >
         <Table.Body intent="muted">
           {Object.keys(props)
             .sort()
@@ -24,7 +29,10 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
               let propValue = '-'
               const valueType = typeof props[propName].value
 
-              if (props[propName].value !== undefined && JSON.stringify(props[propName].value) != '{}') {
+              if (
+                props[propName].value !== undefined &&
+                JSON.stringify(props[propName].value) != '{}'
+              ) {
                 propValue =
                   valueType === 'object'
                     ? JSON.stringify(props[propName].value)

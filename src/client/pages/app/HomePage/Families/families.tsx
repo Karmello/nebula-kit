@@ -27,11 +27,19 @@ const Family = ({
             <Spacer blockSize={NEB_LENGTH.px_024} />
             <Flex gap={NEB_LENGTH.px_008}>
               {components.map(c => {
-                const { pageKey, categoryKey, itemKey } = PAGE_SECTIONS.find(s => s.itemKey === kebabCase(c))
+                const { pageKey, categoryKey, itemKey } = PAGE_SECTIONS.find(
+                  s => s.itemKey === kebabCase(c)
+                )
                 const href = `/${pageKey}/${categoryKey}/${itemKey}/overview`
                 return (
                   <Link key={c} href={href} onClick={() => navigateTo(href)}>
-                    <Button scale="sm" variant="solid" intent="tertiary" iconName="box" iconPlacement="right">
+                    <Button
+                      scale="sm"
+                      variant="solid"
+                      intent="tertiary"
+                      iconName="box"
+                      iconPlacement="right"
+                    >
                       {c}
                     </Button>
                   </Link>

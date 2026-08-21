@@ -25,7 +25,8 @@ const SplitViewComponent = ({
     []
   )
 
-  const finalChildren = typeof children === 'function' ? children({ setSideOpen: setSideOpenASync, mode }) : children
+  const finalChildren =
+    typeof children === 'function' ? children({ setSideOpen: setSideOpenASync, mode }) : children
 
   return (
     <WithSlots<'SplitView.Main' | 'SplitView.Side'>
@@ -47,7 +48,9 @@ const SplitViewComponent = ({
                 blockSize: '100%',
               },
             }}
-            gridTemplateColumns={sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto'}
+            gridTemplateColumns={
+              sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto'
+            }
             gridTemplateRows="1fr"
           >
             {sidePosition === 'left' ? slotsByName['SplitView.Side'] : null}

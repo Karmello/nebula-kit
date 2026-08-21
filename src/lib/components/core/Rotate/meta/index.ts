@@ -26,7 +26,8 @@ export const ROTATE_META = {
       angle: {
         options: ['number'],
         isRequired: true,
-        description: 'Rotation angle of the content in degrees. Changing the value triggers a rotation animation.',
+        description:
+          'Rotation angle of the content in degrees. Changing the value triggers a rotation animation.',
       },
       children: {
         ...BOX_META.Box.props.children,

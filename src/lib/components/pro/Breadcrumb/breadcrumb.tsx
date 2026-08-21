@@ -92,7 +92,8 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                     lineHeight={CONTROL_SCALE_MAP[size || 'md'].lineHeight}
                     noWrap
                   >
-                    {levels[index].find(node => node.value === currentPath[index])?.label || 'Select ...'}
+                    {levels[index].find(node => node.value === currentPath[index])?.label ||
+                      'Select ...'}
                   </Text>
                 </DropdownList.Trigger>
                 {level.map(node => {
@@ -121,7 +122,12 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                 })}
               </DropdownList>
               {index < levels.length - 1 ? (
-                <Icon name="chevron-right" color={color} intent="primary" size={CONTROL_SCALE_MAP[size || 'md'].fontSize} />
+                <Icon
+                  name="chevron-right"
+                  color={color}
+                  intent="primary"
+                  size={CONTROL_SCALE_MAP[size || 'md'].fontSize}
+                />
               ) : null}
             </Fragment>
           )

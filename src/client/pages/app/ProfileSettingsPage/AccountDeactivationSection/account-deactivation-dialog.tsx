@@ -54,7 +54,11 @@ export const AccountDeactivationDialog = ({
             </Button>
           </Segment.Item>
           <Segment.Item>
-            <Button scale="sm" tagAttrs={{ onClick: handleClose }} disabled={requestAccountDeactivation.isMakingRequest}>
+            <Button
+              scale="sm"
+              tagAttrs={{ onClick: handleClose }}
+              disabled={requestAccountDeactivation.isMakingRequest}
+            >
               Keep account
             </Button>
           </Segment.Item>

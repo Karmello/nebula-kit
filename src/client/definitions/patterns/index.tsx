@@ -17,7 +17,8 @@ export const PATTERNS: Array<Pattern> = [
     id: 'drawable-surface',
     category: 'Basic',
     title: 'Drawable surface',
-    description: 'Box turns into a drawable surface when **drawable**, **variant** and **intent** props are provided.',
+    description:
+      'Box turns into a drawable surface when **drawable**, **variant** and **intent** props are provided.',
     component: DrawableSurface,
     code: drawableSurfaceCode,
   },
@@ -25,7 +26,8 @@ export const PATTERNS: Array<Pattern> = [
     id: 'styling-island',
     category: 'Basic',
     title: 'Styling island',
-    description: 'Components within a styling island resolve against the local **theme** and **brand**.',
+    description:
+      'Components within a styling island resolve against the local **theme** and **brand**.',
     component: StylingIsland,
     code: stylingIslandCode,
   },
@@ -33,7 +35,8 @@ export const PATTERNS: Array<Pattern> = [
     id: 'responsive-stack',
     category: 'Layout',
     title: 'Responsive stack',
-    description: 'Items stack **vertically** on mobile and align **horizontally** on larger screens.',
+    description:
+      'Items stack **vertically** on mobile and align **horizontally** on larger screens.',
     component: ResponsiveStack,
     code: responsiveStackCode,
   },

@@ -19,7 +19,10 @@ export const PricingPage = () => {
   }, [user])
 
   return (
-    <Box paddingTop={NEB_LENGTH.px_016} paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}>
+    <Box
+      paddingTop={NEB_LENGTH.px_016}
+      paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+    >
       <Section size="lg" heading="Pricing plans" iconName="credit-card">
         <Text>Choose the plan that fits your workflow.</Text>
         <Spacer blockSize={NEB_LENGTH.px_048} />
@@ -27,7 +30,10 @@ export const PricingPage = () => {
           <Loader centered size={NEB_LENGTH.px_024} color="blue" />
         ) : (
           <>
-            <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }} gap={NEB_LENGTH.px_016}>
+            <Grid
+              gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }}
+              gap={NEB_LENGTH.px_016}
+            >
               <PricingPlanCard
                 plan={PRICING_DATA.plans.free.id as never}
                 activePlan={getUser.data?.user.plan}

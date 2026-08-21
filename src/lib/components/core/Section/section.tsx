@@ -6,7 +6,12 @@ import { Divider, SectionProps, Spacer, Text, Title } from 'lib/index.core'
 import { SectionTag } from 'lib/types'
 
 import { Box } from '../Box'
-import { DEFAULT_SECTION_INTENT, DEFAULT_SECTION_SIZE, DEFAULT_SECTION_VARIANT, SECTION_SIZE_CONFIG } from './definitions'
+import {
+  DEFAULT_SECTION_INTENT,
+  DEFAULT_SECTION_SIZE,
+  DEFAULT_SECTION_VARIANT,
+  SECTION_SIZE_CONFIG,
+} from './definitions'
 
 export const Section = <T extends SectionTag = 'section'>({
   // Box
@@ -52,7 +57,12 @@ export const Section = <T extends SectionTag = 'section'>({
         iconName={iconName}
         iconPlacement={iconPlacement}
       >
-        <Text typography={SECTION_SIZE_CONFIG[size || 'md'].textTypography} color={color} intent={headingIntent} bold>
+        <Text
+          typography={SECTION_SIZE_CONFIG[size || 'md'].textTypography}
+          color={color}
+          intent={headingIntent}
+          bold
+        >
           {heading}
         </Text>
       </Title>

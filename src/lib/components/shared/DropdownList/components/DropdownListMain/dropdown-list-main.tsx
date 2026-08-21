@@ -14,7 +14,10 @@ export const DropdownListMain = ({
   // own
   itemsCount,
   finalItemBlockSize,
-}: Pick<BoxProps, 'children' | 'tagAttrs' | 'tagRef'> & { itemsCount: number; finalItemBlockSize: number }) => {
+}: Pick<BoxProps, 'children' | 'tagAttrs' | 'tagRef'> & {
+  itemsCount: number
+  finalItemBlockSize: number
+}) => {
   const {
     triggerRef,
     portalRef,
@@ -97,7 +100,9 @@ export const DropdownListMain = ({
               itemsCount,
               activeIndex: hoveredIndex,
               scrollTop: scrollWrapperRef.current.scrollTop,
-              visibleItemsCount: floatingResolved?.blockSize ? Math.floor(floatingResolved.blockSize / finalItemBlockSize) : 1,
+              visibleItemsCount: floatingResolved?.blockSize
+                ? Math.floor(floatingResolved.blockSize / finalItemBlockSize)
+                : 1,
               itemBlockSize: finalItemBlockSize,
             })
 

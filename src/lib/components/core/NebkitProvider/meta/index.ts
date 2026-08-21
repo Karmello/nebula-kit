@@ -45,7 +45,8 @@ export const NEBKIT_PROVIDER_META = {
       },
       lockGlobalScroll: {
         options: ['boolean'],
-        description: 'Locks global document scrolling while preserving layout by compensating for scrollbar width.',
+        description:
+          'Locks global document scrolling while preserving layout by compensating for scrollbar width.',
       },
       rippleMode: {
         options: NEBKIT_PROVIDER_RIPPLE_MODES,

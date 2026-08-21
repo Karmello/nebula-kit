@@ -5,7 +5,12 @@ import { withPrefix } from 'lib/helpers'
 import { ResizeProps } from 'lib/index.core'
 
 import { Box } from '../Box'
-import { buildSizeTransition, MeasuredSizes, syncMeasuredSize, syncResizeVisibility } from './helpers'
+import {
+  buildSizeTransition,
+  MeasuredSizes,
+  syncMeasuredSize,
+  syncResizeVisibility,
+} from './helpers'
 
 export const DEFAULT_RESIZE_DURATION: ResizeProps['duration'] = 200
 export const DEFAULT_RESIZE_EASING: ResizeProps['easing'] = 'linear'

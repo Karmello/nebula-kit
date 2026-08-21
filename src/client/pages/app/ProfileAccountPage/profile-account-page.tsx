@@ -26,7 +26,11 @@ export const ProfileAccountPage = () => {
   }
 
   return (
-    <Box paddingTop={NEB_LENGTH.px_016} paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }} maxInlineSize="75rem">
+    <Box
+      paddingTop={NEB_LENGTH.px_016}
+      paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+      maxInlineSize="75rem"
+    >
       <Section size="lg" heading="Account" iconName="circle-user">
         <Spacer blockSize={NEB_LENGTH.px_024} />
         <AccountDetails />

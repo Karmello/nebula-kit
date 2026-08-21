@@ -5,7 +5,12 @@ import { ComponentMeta } from 'client/definitions'
 import { BOX_META } from '../../Box/meta'
 import { TEXT_META } from '../../Text/meta'
 import { TITLE_META } from '../../Title/meta'
-import { DEFAULT_SECTION_INTENT, DEFAULT_SECTION_SIZE, DEFAULT_SECTION_VARIANT, SECTION_VARIANTS } from '../definitions'
+import {
+  DEFAULT_SECTION_INTENT,
+  DEFAULT_SECTION_SIZE,
+  DEFAULT_SECTION_VARIANT,
+  SECTION_VARIANTS,
+} from '../definitions'
 import { SECTION_CHANGELOG } from './changelog'
 import { SECTION_EXAMPLES } from './examples'
 

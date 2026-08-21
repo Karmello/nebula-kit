@@ -6,7 +6,8 @@ import { Portal } from 'lib/index.pro'
 import { FloatingContentInternalProps, FloatingContentProps } from './types'
 
 export const FloatingContent = ({ children, ...internalProps }: FloatingContentProps) => {
-  const { tagRef, tagAttrs, internalOpen, setInternalOpen, isOpeningDownwards } = internalProps as FloatingContentInternalProps
+  const { tagRef, tagAttrs, internalOpen, setInternalOpen, isOpeningDownwards } =
+    internalProps as FloatingContentInternalProps
 
   if (!internalOpen) return null
 

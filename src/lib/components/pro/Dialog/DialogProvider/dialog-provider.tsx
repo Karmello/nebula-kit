@@ -10,7 +10,11 @@ type DialogContextValue = {
 
 const DialogContext = createContext<DialogContextValue | undefined>(undefined)
 
-export const DialogProvider = ({ children, intent, padding }: { children: ReactNode } & DialogContextValue) => {
+export const DialogProvider = ({
+  children,
+  intent,
+  padding,
+}: { children: ReactNode } & DialogContextValue) => {
   return <DialogContext.Provider value={{ intent, padding }}>{children}</DialogContext.Provider>
 }
 

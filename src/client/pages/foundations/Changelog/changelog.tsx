@@ -1,6 +1,16 @@
 import { useMemo } from 'react'
 
-import { Box, MarkerList, Markup, NEB_LENGTH, Section, Spacer, Tabs, Text, Title } from 'lib/components'
+import {
+  Box,
+  MarkerList,
+  Markup,
+  NEB_LENGTH,
+  Section,
+  Spacer,
+  Tabs,
+  Text,
+  Title,
+} from 'lib/components'
 import { RELEASE_INFO, ReleaseVersion } from 'client/definitions'
 import meta from 'client/meta'
 
@@ -34,7 +44,13 @@ const Notes = ({ componentName, notes = [] }: { componentName?: string; notes: s
   )
 }
 
-const PanelContent = ({ bundleNotes, componentNotes }: { bundleNotes?: string[]; componentNotes: Record<string, string[]> }) => {
+const PanelContent = ({
+  bundleNotes,
+  componentNotes,
+}: {
+  bundleNotes?: string[]
+  componentNotes: Record<string, string[]>
+}) => {
   const componentNames = Object.keys(componentNotes)
 
   return (
@@ -107,7 +123,10 @@ export default ({ pathname }: { pathname: string }) => {
             ) : null}
             {displayCoreNotes ? (
               <Tabs.Panel value="core">
-                <PanelContent bundleNotes={releaseInfo.changelog?.core} componentNotes={notes.core} />
+                <PanelContent
+                  bundleNotes={releaseInfo.changelog?.core}
+                  componentNotes={notes.core}
+                />
               </Tabs.Panel>
             ) : null}
             <Tabs.Panel value="pro">

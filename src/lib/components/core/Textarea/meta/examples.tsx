@@ -10,7 +10,8 @@ const TextareaControlled = () => {
 
 export const TEXTAREA_EXAMPLES: Example[] = [
   {
-    description: 'Textarea used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
+    description:
+      'Textarea used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
     jsx: <Textarea defaultValue="default value" />,
   },
   {

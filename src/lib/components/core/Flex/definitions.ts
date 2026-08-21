@@ -24,7 +24,10 @@ type FlexOwnProps = {
   columnGap?: RespValue<string>
 }
 
-type PropsFromBox<T extends ElementType = 'div'> = Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef'> & {
+type PropsFromBox<T extends ElementType = 'div'> = Pick<
+  BoxProps<T>,
+  'tag' | 'tagAttrs' | 'tagRef'
+> & {
   children: BoxProps<T>['children']
 }
 

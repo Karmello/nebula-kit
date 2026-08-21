@@ -35,7 +35,8 @@ export const PORTAL_META = {
       },
       offset: {
         options: ['number'],
-        description: 'Defines the distance (px) between the anchor element and the portal content along the placement axis.',
+        description:
+          'Defines the distance (px) between the anchor element and the portal content along the placement axis.',
       },
       placement: {
         options: PORTAL_PLACEMENTS,

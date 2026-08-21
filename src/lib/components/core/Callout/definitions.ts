@@ -19,7 +19,10 @@ export const CALLOUT_SIZE_CONFIG: Record<
   xl: { padding: '48px', textTypography: 'h3', spacerBlockSize: '32px' },
 }
 
-export const CALLOUT_CONFIG: Record<CalloutStatus, { color: BoxColor; heading: string; iconName: IconName }> = {
+export const CALLOUT_CONFIG: Record<
+  CalloutStatus,
+  { color: BoxColor; heading: string; iconName: IconName }
+> = {
   info: { color: 'blue', heading: 'Info', iconName: 'info' },
   success: { color: 'green', heading: 'Success', iconName: 'check-circle' },
   warning: { color: 'amber', heading: 'Warning', iconName: 'triangle-alert' },
@@ -45,6 +48,9 @@ type CalloutOwnProps = {
   status?: CalloutStatus
 }
 
-type PropsFromBox<T extends CalloutTag = 'div'> = Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef' | 'intent'>
+type PropsFromBox<T extends CalloutTag = 'div'> = Pick<
+  BoxProps<T>,
+  'tag' | 'tagAttrs' | 'tagRef' | 'intent'
+>
 
 export type CalloutProps<T extends CalloutTag = 'div'> = PropsFromBox<T> & CalloutOwnProps

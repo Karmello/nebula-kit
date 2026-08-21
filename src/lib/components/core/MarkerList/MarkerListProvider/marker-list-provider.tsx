@@ -9,8 +9,14 @@ type MarkerListContextValue = {
 
 const MarkerListContext = createContext<MarkerListContextValue | undefined>(undefined)
 
-export const MarkerListProvider = ({ children, color, intent }: { children: ReactNode } & MarkerListContextValue) => {
-  return <MarkerListContext.Provider value={{ color, intent }}>{children}</MarkerListContext.Provider>
+export const MarkerListProvider = ({
+  children,
+  color,
+  intent,
+}: { children: ReactNode } & MarkerListContextValue) => {
+  return (
+    <MarkerListContext.Provider value={{ color, intent }}>{children}</MarkerListContext.Provider>
+  )
 }
 
 export const useMarkerListContext = () => {

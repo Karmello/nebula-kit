@@ -30,7 +30,9 @@ export const Loader = ({
         className: classNames(withPrefix('loader'), tagAttrs?.className || ''),
         style: {
           ...tagAttrs?.style,
-          '--neb-loader-color': color ? 'hsl(var(--h) var(--s) var(--main-primary-l))' : 'var(--loader)',
+          '--neb-loader-color': color
+            ? 'hsl(var(--h) var(--s) var(--main-primary-l))'
+            : 'var(--loader)',
         } as CSSProperties,
       }}
       tagRef={tagRef}

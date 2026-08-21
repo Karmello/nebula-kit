@@ -8,7 +8,8 @@ export const HTML_TAG_EXAMPLES: Example[] = [
     noSandBox: true,
   },
   {
-    description: 'Choosing the <a> tag, makes its all attributes available on the tagAttrs property.',
+    description:
+      'Choosing the <a> tag, makes its all attributes available on the tagAttrs property.',
     jsx: <HtmlTag tag="a" tagAttrs={{ href: 'https://google.com' }} />,
     noSandBox: true,
   },

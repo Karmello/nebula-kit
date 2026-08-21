@@ -11,7 +11,10 @@ export const resolveSelectValues = ({
 
   const dividerSize = 2
 
-  const menuBlockSize = finalVisibleItemsCount * optionBlockSize + (finalVisibleItemsCount - 1) * dividerSize + dividerSize
+  const menuBlockSize =
+    finalVisibleItemsCount * optionBlockSize +
+    (finalVisibleItemsCount - 1) * dividerSize +
+    dividerSize
 
   return {
     menuBlockSize,

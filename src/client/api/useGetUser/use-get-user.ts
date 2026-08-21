@@ -10,7 +10,10 @@ export type UseGetUserError = { message: string }
 export const useGetUser = (disableAutoLogout = false, minLoadingTime?: number) => {
   const setUser = useAppStore(state => state.setUser)
 
-  const { code, data, error, isMakingRequest, sendRequest } = useMakeApiRequest<UseGetUserSuccess, UseGetUserError>({
+  const { code, data, error, isMakingRequest, sendRequest } = useMakeApiRequest<
+    UseGetUserSuccess,
+    UseGetUserError
+  >({
     path: '/auth/me',
     disableAutoLogout,
     minLoadingTime,

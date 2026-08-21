@@ -17,7 +17,8 @@ export const IMAGE_META = {
   Image: {
     overview: {
       bundle: 'core',
-      title: 'Foundational component for rendering and styling images consistently across the system.',
+      title:
+        'Foundational component for rendering and styling images consistently across the system.',
       features: [
         'renders a native img element',
         'exposes logical sizing and constraints',

@@ -60,7 +60,8 @@ const META = {
     layout: {
       options: TABLE_LAYOUTS,
       defaultValue: DEFAULT_TABLE_LAYOUT,
-      description: 'Defines the layout algorithm: "auto" sizes columns by content, "fixed" by table width and column widths.',
+      description:
+        'Defines the layout algorithm: "auto" sizes columns by content, "fixed" by table width and column widths.',
     },
     maxInlineSize: BOX_META.Box.props.maxInlineSize,
     minInlineSize: BOX_META.Box.props.minInlineSize,
@@ -234,7 +235,9 @@ export const TABLE_META = {
       bundle: 'core',
       name: 'Table.Row',
       title: 'Represents a single row within the table structure.',
-      guidelines: ['should be placed inside Table.Body or Table.Footer to define individual data rows'],
+      guidelines: [
+        'should be placed inside Table.Body or Table.Footer to define individual data rows',
+      ],
       composedOf: ['Box'],
       exposedTags: ['tr'],
       slots: ['Table.Cell', 'Table.HeaderCell'],
@@ -264,7 +267,9 @@ export const TABLE_META = {
       bundle: 'core',
       name: 'Table.HeaderRow?',
       title: 'Represents a row within Table.Head for organizing header cells.',
-      guidelines: ["should be use within Table.Head to group header cells and define the table's column labels."],
+      guidelines: [
+        "should be use within Table.Head to group header cells and define the table's column labels.",
+      ],
       composedOf: ['Box'],
       exposedTags: ['tr'],
       slots: ['Table.HeaderCell'],

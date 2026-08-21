@@ -33,12 +33,14 @@ export const LINK_META = {
       },
       onClick: {
         options: ['e => void'],
-        description: 'Callback fired when the component is clicked. Automatically prevents default navigation when provided.',
+        description:
+          'Callback fired when the component is clicked. Automatically prevents default navigation when provided.',
       },
       target: {
         options: LINK_TARGETS,
         defaultValue: DEFAULT_LINK_TARGET,
-        description: 'Specifies where to open the linked document, following the standard HTML target attribute behavior.',
+        description:
+          'Specifies where to open the linked document, following the standard HTML target attribute behavior.',
       },
     },
     changelog: LINK_CHANGELOG,

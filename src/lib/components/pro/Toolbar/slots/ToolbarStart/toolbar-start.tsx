@@ -3,7 +3,13 @@ import { ToolbarStartProps } from 'lib/index.pro'
 
 export const ToolbarStart = ({ children, tagAttrs, tagRef }: ToolbarStartProps) => {
   return (
-    <Grid.Item tagAttrs={tagAttrs} tagRef={tagRef} gridRow="1 / 2" gridColumn="2 / 3" alignSelf="center">
+    <Grid.Item
+      tagAttrs={tagAttrs}
+      tagRef={tagRef}
+      gridRow="1 / 2"
+      gridColumn="2 / 3"
+      alignSelf="center"
+    >
       {children}
     </Grid.Item>
   )

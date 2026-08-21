@@ -8,8 +8,18 @@ import { convertElemToString } from 'client/helpers'
 import meta from 'client/meta'
 import { useAppStore, useComponentsPageStore } from 'client/store'
 
-const SingleExample = (props: ComponentMeta<unknown>['examples'][number] & { hideExamplesThemeToggle: boolean }) => {
-  const { description, jsx, code, noSandBox, noCode, sandBoxWithNoPadding, hideExamplesThemeToggle } = props
+const SingleExample = (
+  props: ComponentMeta<unknown>['examples'][number] & { hideExamplesThemeToggle: boolean }
+) => {
+  const {
+    description,
+    jsx,
+    code,
+    noSandBox,
+    noCode,
+    sandBoxWithNoPadding,
+    hideExamplesThemeToggle,
+  } = props
 
   const theme = useCurrentTheme()
   const flipGlobalThemeOnExamples = useAppStore(state => state.flipGlobalThemeOnExamples)
@@ -26,10 +36,21 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number] & { hid
       <Spacer blockSize={NEB_LENGTH.px_008} />
       {!noSandBox ? (
         <>
-          <Box drawable variant="outline" intent="tertiary" tagAttrs={{ style: { borderStyle: 'dashed' } }}>
+          <Box
+            drawable
+            variant="outline"
+            intent="tertiary"
+            tagAttrs={{ style: { borderStyle: 'dashed' } }}
+          >
             <Box
               drawable
-              theme={!hideExamplesThemeToggle ? (flipGlobalThemeOnExamples ? 'global-flipped' : theme) : undefined}
+              theme={
+                !hideExamplesThemeToggle
+                  ? flipGlobalThemeOnExamples
+                    ? 'global-flipped'
+                    : theme
+                  : undefined
+              }
               variant="solid"
               intent="neutral"
               padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
@@ -45,7 +66,12 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number] & { hid
         <>
           {!noSandBox ? (
             <Reveal label="Code" intent="tertiary">
-              <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} borderRadius={false} fullBg />
+              <CodeSnippet
+                lang="tsx"
+                code={code || convertElemToString(jsx)}
+                borderRadius={false}
+                fullBg
+              />
             </Reveal>
           ) : (
             <CodeSnippet
@@ -80,7 +106,11 @@ export const ComponentExamplesPage = () => {
       {!hideExamplesThemeToggle ? (
         <>
           <Flex alignItems="center" columnGap={NEB_LENGTH.px_016}>
-            <Switch scale="xs" checked={flipGlobalThemeOnExamples} onChange={setFlipGlobalThemeOnExamples} />
+            <Switch
+              scale="xs"
+              checked={flipGlobalThemeOnExamples}
+              onChange={setFlipGlobalThemeOnExamples}
+            />
             <Text bold typography="small">
               Use flipped theme
             </Text>
@@ -93,7 +123,11 @@ export const ComponentExamplesPage = () => {
           return (meta[itemKeyPascal][key].examples || [])
             .filter(example => !example.skip)
             .map((example, i) => (
-              <SingleExample key={`${key}_${i}`} {...example} hideExamplesThemeToggle={hideExamplesThemeToggle} />
+              <SingleExample
+                key={`${key}_${i}`}
+                {...example}
+                hideExamplesThemeToggle={hideExamplesThemeToggle}
+              />
             ))
         })}
       </Flex>

@@ -16,7 +16,8 @@ export default () => {
     <Box maxInlineSize="55rem">
       <Flex flexDirection="column" alignItems="stretch" gap={NEB_LENGTH.px_048}>
         <Text>
-          Intents and variants available in the system, showing how semantic roles combine with visual styles across components.
+          Intents and variants available in the system, showing how semantic roles combine with
+          visual styles across components.
         </Text>
         <Section heading="Solid variant" size="sm">
           <Text>Filled surface, strong emphasis.</Text>

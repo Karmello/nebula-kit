@@ -8,7 +8,8 @@ export const useRipple = (elemRef: RefObject<any>, active?: boolean) => {
   useEffect(() => {
     if (typeof document === 'undefined') return
 
-    const isGloballyEnabled = () => document.documentElement.getAttribute('data-ripple-mode') !== 'off'
+    const isGloballyEnabled = () =>
+      document.documentElement.getAttribute('data-ripple-mode') !== 'off'
 
     setGloballyEnabled(isGloballyEnabled())
 

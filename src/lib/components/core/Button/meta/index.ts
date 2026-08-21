@@ -21,7 +21,8 @@ export const BUTTON_META = {
   Button: {
     overview: {
       bundle: 'core',
-      title: 'Interactive control for triggering actions with consistent semantics, layout and visual states.',
+      title:
+        'Interactive control for triggering actions with consistent semantics, layout and visual states.',
       features: [
         'provides a consistent, accessible trigger for user actions',
         'handles interactive states: hover, active, focus, disabled, loading',
@@ -88,7 +89,8 @@ export const BUTTON_META = {
       },
       selected: {
         options: ['boolean'],
-        description: 'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
+        description:
+          'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
       },
       tag: {
         ...BOX_META.Box.props.tag,

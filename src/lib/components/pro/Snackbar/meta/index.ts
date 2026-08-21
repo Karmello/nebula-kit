@@ -18,7 +18,8 @@ export const SNACKBAR_META = {
   Snackbar: {
     overview: {
       bundle: 'pro',
-      title: 'Floating message container for transient status notifications, anchored to the viewport.',
+      title:
+        'Floating message container for transient status notifications, anchored to the viewport.',
       features: [
         'displays short, non-intrusive status messages without affecting page layout',
         'appears above the UI and automatically hides after a configurable duration',

@@ -16,8 +16,9 @@ export const Hero = () => {
     >
       <Flex.Item flex="1">
         <Text typography="h5">
-          React UI system designed to minimize interface development effort, letting you focus on application logic while keeping
-          products consistent, maintainable and resistant to entropy.
+          React UI system designed to minimize interface development effort, letting you focus on
+          application logic while keeping products consistent, maintainable and resistant to
+          entropy.
         </Text>
         <Spacer blockSize={NEB_LENGTH.px_048} />
         <Flex
@@ -32,7 +33,13 @@ export const Hero = () => {
               navigateTo(`${PageKey.foundations}/overview/introduction/why-nebula`)
             }}
           >
-            <Button color="blue" intent="primary" iconName="arrow-right" iconPlacement="right" scale="md">
+            <Button
+              color="blue"
+              intent="primary"
+              iconName="arrow-right"
+              iconPlacement="right"
+              scale="md"
+            >
               Foundations
             </Button>
           </Link>
@@ -42,7 +49,14 @@ export const Hero = () => {
               navigateTo(`${PageKey.patterns}?id=${activePatternId}`)
             }}
           >
-            <Button variant="ghost" color="blue" intent="primary" iconName="arrow-right" iconPlacement="right" scale="md">
+            <Button
+              variant="ghost"
+              color="blue"
+              intent="primary"
+              iconName="arrow-right"
+              iconPlacement="right"
+              scale="md"
+            >
               Patterns
             </Button>
           </Link>
@@ -56,7 +70,13 @@ export const Hero = () => {
           }}
         >
           <Tooltip content="Go to AI assistant" minInlineSize={150} maxInlineSize={250}>
-            <Image src="/captain-nebula.webp" inlineSize="225px" blockSize="225px" alt="Captain Nebula" fetchPriority="high" />
+            <Image
+              src="/captain-nebula.webp"
+              inlineSize="225px"
+              blockSize="225px"
+              alt="Captain Nebula"
+              fetchPriority="high"
+            />
           </Tooltip>
         </Link>
       </Flex.Item>

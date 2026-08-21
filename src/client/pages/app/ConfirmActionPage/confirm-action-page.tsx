@@ -33,7 +33,10 @@ export const ConfirmActionPage = () => {
   const url = params.get('url')
 
   return (
-    <Box padding={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }} paddingTop={NEB_LENGTH.px_096}>
+    <Box
+      padding={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+      paddingTop={NEB_LENGTH.px_096}
+    >
       <Flex justifyContent="center">
         <Button
           tagAttrs={{
@@ -43,11 +46,17 @@ export const ConfirmActionPage = () => {
             },
           }}
           intent="primary"
-          color={action && BUTTON_LABEL_MAP[action as never] ? BUTTON_LABEL_MAP[action as never].color : 'blue'}
+          color={
+            action && BUTTON_LABEL_MAP[action as never]
+              ? BUTTON_LABEL_MAP[action as never].color
+              : 'blue'
+          }
           loading={loading}
           disabled={!url}
         >
-          {action && BUTTON_LABEL_MAP[action as never] ? BUTTON_LABEL_MAP[action as never].label : 'Confirm'}
+          {action && BUTTON_LABEL_MAP[action as never]
+            ? BUTTON_LABEL_MAP[action as never].label
+            : 'Confirm'}
         </Button>
       </Flex>
     </Box>

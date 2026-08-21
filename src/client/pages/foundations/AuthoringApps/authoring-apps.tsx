@@ -5,10 +5,11 @@ export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Text>
-        NebulaKit is designed around authored composition rather than generated structure. Instead of hiding application
-        architecture behind high-level abstractions, it encourages developers to build interfaces directly from a small set of
-        predictable primitives and orchestration components. The goal is not to minimize JSX at all costs, but rather produce
-        application code that remains understandable, compositional and resistant to entropy as projects grow.
+        NebulaKit is designed around authored composition rather than generated structure. Instead
+        of hiding application architecture behind high-level abstractions, it encourages developers
+        to build interfaces directly from a small set of predictable primitives and orchestration
+        components. The goal is not to minimize JSX at all costs, but rather produce application
+        code that remains understandable, compositional and resistant to entropy as projects grow.
       </Text>
       <Spacer blockSize={NEB_LENGTH.px_016} />
       <Text>Authored NebulaKit applications tend to share several structural characteristics:</Text>
@@ -16,9 +17,10 @@ export default () => {
       <Section heading="Composition remains visible" size="sm">
         <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>
-          NebulaKit favors explicit composition over hidden orchestration. Layout, grouping and structure are usually authored
-          directly through primitives such as Box, Flex, Grid and Text. Components are intentionally built on top of one another
-          using the same vocabulary exposed publicly to the user.
+          NebulaKit favors explicit composition over hidden orchestration. Layout, grouping and
+          structure are usually authored directly through primitives such as Box, Flex, Grid and
+          Text. Components are intentionally built on top of one another using the same vocabulary
+          exposed publicly to the user.
         </Text>
         <Spacer blockSize={NEB_LENGTH.px_008} />
         <CodeSnippet
@@ -34,17 +36,19 @@ export default () => {
         />
         <Spacer blockSize={NEB_LENGTH.px_016} />
         <Text>
-          Rather than replacing layout concepts with semantic aliases everywhere, NebulaKit preserves the underlying mental model
-          of the web platform. This keeps authored UI predictable and easier to reason about over time.
+          Rather than replacing layout concepts with semantic aliases everywhere, NebulaKit
+          preserves the underlying mental model of the web platform. This keeps authored UI
+          predictable and easier to reason about over time.
         </Text>
       </Section>
       <Spacer blockSize={NEB_LENGTH.px_048} />
       <Section heading="Abstractions compress behavior, not structure" size="sm">
         <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>
-          NebulaKit intentionally avoids introducing abstractions purely to reduce repeated JSX. Repeated layout or repeated
-          visual structure alone is usually not enough reason to create a new component. Higher-order abstractions are expected to
-          emerge primarily from repeated behavioral orchestration.
+          NebulaKit intentionally avoids introducing abstractions purely to reduce repeated JSX.
+          Repeated layout or repeated visual structure alone is usually not enough reason to create
+          a new component. Higher-order abstractions are expected to emerge primarily from repeated
+          behavioral orchestration.
         </Text>
         <Spacer blockSize={NEB_LENGTH.px_016} />
         <Text>For example:</Text>
@@ -67,16 +71,17 @@ export default () => {
         <Text>are strong candidates for reusable abstractions.</Text>
         <Spacer blockSize={NEB_LENGTH.px_016} />
         <Text>
-          Meanwhile small presentation-specific patterns are usually expected to remain local to the application itself. This
-          keeps the framework smaller while allowing applications to evolve their own domain language naturally.
+          Meanwhile small presentation-specific patterns are usually expected to remain local to the
+          application itself. This keeps the framework smaller while allowing applications to evolve
+          their own domain language naturally.
         </Text>
       </Section>
       <Spacer blockSize={NEB_LENGTH.px_048} />
       <Section heading="Applications own orchestration" size="sm">
         <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>
-          NebulaKit components typically own rendering mechanics and accessibility behavior, while applications remain responsible
-          for workflow orchestration.
+          NebulaKit components typically own rendering mechanics and accessibility behavior, while
+          applications remain responsible for workflow orchestration.
         </Text>
         <Spacer blockSize={NEB_LENGTH.px_016} />
         <Text>For example:</Text>
@@ -113,14 +118,17 @@ export default () => {
           </MarkerList.Item>
         </MarkerList>
         <Spacer blockSize={NEB_LENGTH.px_016} />
-        <Text>This separation keeps application behavior visible instead of hiding it behind framework-specific APIs.</Text>
+        <Text>
+          This separation keeps application behavior visible instead of hiding it behind
+          framework-specific APIs.
+        </Text>
       </Section>
       <Spacer blockSize={NEB_LENGTH.px_048} />
       <Section heading="Responsive behavior stays explicit" size="sm">
         <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>
-          Responsive behavior is authored directly through responsive props instead of separate CSS files or generated utility
-          classes.
+          Responsive behavior is authored directly through responsive props instead of separate CSS
+          files or generated utility classes.
         </Text>
       </Section>
       <Spacer blockSize={NEB_LENGTH.px_008} />
@@ -138,17 +146,18 @@ export default () => {
       />
       <Spacer blockSize={NEB_LENGTH.px_016} />
       <Text>
-        NebulaKit intentionally preserves familiar layout concepts such as flexbox, grid, spacing and sizing instead of replacing
-        them with framework-specific DSLs. Developers are still expected to understand the underlying concepts of the platform
-        itself. NebulaKit reduces implementation friction, not platform literacy.
+        NebulaKit intentionally preserves familiar layout concepts such as flexbox, grid, spacing
+        and sizing instead of replacing them with framework-specific DSLs. Developers are still
+        expected to understand the underlying concepts of the platform itself. NebulaKit reduces
+        implementation friction, not platform literacy.
       </Text>
       <Spacer blockSize={NEB_LENGTH.px_048} />
       <Section heading="Local abstractions are encouraged" size="sm">
         <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>
-          NebulaKit encourages applications to create their own lightweight local abstractions when repeated patterns become
-          stable within a project. Small application-specific wrappers are preferred over framework-level expansion when the
-          abstraction:
+          NebulaKit encourages applications to create their own lightweight local abstractions when
+          repeated patterns become stable within a project. Small application-specific wrappers are
+          preferred over framework-level expansion when the abstraction:
         </Text>
         <Spacer blockSize={NEB_LENGTH.px_008} />
         <MarkerList>
@@ -164,8 +173,8 @@ export default () => {
         </MarkerList>
         <Spacer blockSize={NEB_LENGTH.px_016} />
         <Text>
-          This helps prevent abstraction creep inside the framework itself while keeping authored application code clean and
-          maintainable.
+          This helps prevent abstraction creep inside the framework itself while keeping authored
+          application code clean and maintainable.
         </Text>
       </Section>
       <Spacer blockSize={NEB_LENGTH.px_048} />
@@ -223,8 +232,8 @@ export default () => {
         <Text>over ultra-short syntax or highly abstracted visual DSLs.</Text>
         <Spacer blockSize={NEB_LENGTH.px_016} />
         <Text>
-          As applications grow, the authored code is expected to remain readable, editable and structurally obvious rather than
-          increasingly magical or framework-driven.
+          As applications grow, the authored code is expected to remain readable, editable and
+          structurally obvious rather than increasingly magical or framework-driven.
         </Text>
       </Section>
       <Spacer blockSize={NEB_LENGTH.px_048} />
@@ -254,8 +263,9 @@ export default () => {
         </MarkerList>
         <Spacer blockSize={NEB_LENGTH.px_016} />
         <Text>
-          The resulting code typically remains close to standard React mental models while reducing the amount of CSS
-          infrastructure, styling coordination and UI orchestration developers need to build repeatedly across projects.
+          The resulting code typically remains close to standard React mental models while reducing
+          the amount of CSS infrastructure, styling coordination and UI orchestration developers
+          need to build repeatedly across projects.
         </Text>
       </Section>
     </Box>

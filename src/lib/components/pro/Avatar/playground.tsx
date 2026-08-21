@@ -3,7 +3,12 @@ import { type AvatarProps } from './definitions'
 
 export type PropsFromAvatarKey = (typeof PROPS_FROM_AVATAR)[number]
 
-export const PROPS_FROM_AVATAR = ['initials', 'shape', 'size', 'src'] as const satisfies readonly (keyof AvatarProps)[]
+export const PROPS_FROM_AVATAR = [
+  'initials',
+  'shape',
+  'size',
+  'src',
+] as const satisfies readonly (keyof AvatarProps)[]
 
 export const AVATAR_PRESETS = [
   {

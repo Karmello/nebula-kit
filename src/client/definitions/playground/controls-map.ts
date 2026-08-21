@@ -2,7 +2,10 @@ import { ICON_NAMES } from 'lib/constants'
 
 import { PlaygroundProp } from './types'
 
-export const PLAYGROUND_CONTROLS_MAP: Record<PlaygroundProp, { type: 'array' | 'boolean' | 'string' }> = {
+export const PLAYGROUND_CONTROLS_MAP: Record<
+  PlaygroundProp,
+  { type: 'array' | 'boolean' | 'string' }
+> = {
   active: { type: 'boolean' },
   align: { type: 'array' },
   attach: { type: 'array' },

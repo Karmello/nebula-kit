@@ -21,7 +21,9 @@ export const SideNavToggle = () => {
           iconName={isAnyCategoryExpanded ? 'list-chevrons-down-up' : 'list-chevrons-up-down'}
           scale="xs"
           onClick={() => {
-            setExpandedCategories(state => Object.fromEntries(Object.keys(state).map(id => [id, !isAnyCategoryExpanded])))
+            setExpandedCategories(state =>
+              Object.fromEntries(Object.keys(state).map(id => [id, !isAnyCategoryExpanded]))
+            )
           }}
         />
       </Box>

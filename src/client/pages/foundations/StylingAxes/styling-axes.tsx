@@ -25,8 +25,8 @@ export default () => {
         </MarkerList>
         <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>
-          Local themes allow creating isolated areas (for example a dark panel inside a light app) without affecting the rest of
-          the UI.
+          Local themes allow creating isolated areas (for example a dark panel inside a light app)
+          without affecting the rest of the UI.
         </Text>
       </Section>
       <Spacer blockSize={NEB_LENGTH.px_048} />

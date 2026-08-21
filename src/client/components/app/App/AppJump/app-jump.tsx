@@ -59,7 +59,8 @@ export const AppJump = () => {
   useLayoutEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement
-      const isTyping = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable
+      const isTyping =
+        target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable
       if (isTyping) return
       if (e.key === '/') {
         e.preventDefault()
@@ -113,7 +114,12 @@ export const AppJump = () => {
   }, [showAppJump, filtered])
 
   return (
-    <Resize property="blockSize" visible={showAppJump} duration={RESIZE_DURATION} easing="cubic-bezier(0.4, 0, 0.2, 1)">
+    <Resize
+      property="blockSize"
+      visible={showAppJump}
+      duration={RESIZE_DURATION}
+      easing="cubic-bezier(0.4, 0, 0.2, 1)"
+    >
       {autocomplete}
     </Resize>
   )

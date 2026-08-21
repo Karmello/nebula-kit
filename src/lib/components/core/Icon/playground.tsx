@@ -2,7 +2,12 @@ import { IconProps } from 'lib/index.core'
 
 export type PropsFromIconKey = (typeof PROPS_FROM_ICON)[number]
 
-export const PROPS_FROM_ICON = ['color', 'intent', 'name', 'size'] as const satisfies readonly (keyof IconProps)[]
+export const PROPS_FROM_ICON = [
+  'color',
+  'intent',
+  'name',
+  'size',
+] as const satisfies readonly (keyof IconProps)[]
 
 export const ICON_PRESETS = [
   {

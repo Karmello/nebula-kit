@@ -10,7 +10,8 @@ export const SEGMENT_META = {
   Segment: {
     overview: {
       bundle: 'core',
-      title: 'Composite component that visually merges multiple Box-based surfaces into a single segmented group.',
+      title:
+        'Composite component that visually merges multiple Box-based surfaces into a single segmented group.',
       features: [
         'groups Box-based surfaces into a horizontal or vertical block',
         'automatically manages border radiuses for seamless attachment',

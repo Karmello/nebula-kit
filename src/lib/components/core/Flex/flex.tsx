@@ -1,4 +1,11 @@
-import { ComponentProps, ComponentRef, ElementType, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
+import {
+  ComponentProps,
+  ComponentRef,
+  ElementType,
+  PropsWithoutRef,
+  useLayoutEffect,
+  useRef,
+} from 'react'
 import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
@@ -43,7 +50,18 @@ export const Flex = <T extends ElementType = 'div'>({
       rowGap,
       columnGap,
     })
-  }, [bp, display, flexDirection, flexWrap, justifyContent, alignItems, alignContent, gap, rowGap, columnGap])
+  }, [
+    bp,
+    display,
+    flexDirection,
+    flexWrap,
+    justifyContent,
+    alignItems,
+    alignContent,
+    gap,
+    rowGap,
+    columnGap,
+  ])
 
   useLayoutEffect(() => {
     syncRespDataset('Flex', tagRef || ref, bp, { flexDirection })

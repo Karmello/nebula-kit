@@ -9,7 +9,10 @@ import { getRulesObject } from './helpers'
 const CHECKABLE_COMPONENTS = ['Checkbox', 'Switch']
 
 type FormFieldControllerProps = {
-  formFieldProps: Pick<FormFieldProps, 'name' | 'label' | 'hint' | 'options' | 'required' | 'minLength' | 'maxLength' | 'email'>
+  formFieldProps: Pick<
+    FormFieldProps,
+    'name' | 'label' | 'hint' | 'options' | 'required' | 'minLength' | 'maxLength' | 'email'
+  >
   formFieldComponent: ReactElement<any>
   customFormLabelComponent?: ReactElement<FormLabelProps>
   customFormHintComponent?: ReactElement<FormHintProps>
@@ -35,7 +38,9 @@ export const FormFieldController = ({
       name={name}
       control={formContext.control}
       defaultValue={
-        isCheckable ? (formFieldComponent.props['defaultChecked'] ?? false) : (formFieldComponent.props['defaultValue'] ?? '')
+        isCheckable
+          ? (formFieldComponent.props['defaultChecked'] ?? false)
+          : (formFieldComponent.props['defaultValue'] ?? '')
       }
       rules={getRulesObject({ options, required, minLength, maxLength, email })}
       render={({ field, fieldState }) => {
@@ -82,7 +87,11 @@ export const FormFieldController = ({
                 name,
               },
             })}
-            {customFormHintComponent ? customFormHintComponent : hint ? <Form.Hint>{hint}</Form.Hint> : null}
+            {customFormHintComponent ? (
+              customFormHintComponent
+            ) : hint ? (
+              <Form.Hint>{hint}</Form.Hint>
+            ) : null}
           </>
         )
       }}

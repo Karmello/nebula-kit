@@ -28,7 +28,9 @@ app.use(express.static(buildDir, { index: false }))
 
 app.get(/.*/, (req, res) => {
   try {
-    const appHtml = renderToString(createElement(StaticRouter, { location: req.originalUrl }, createElement(Client)))
+    const appHtml = renderToString(
+      createElement(StaticRouter, { location: req.originalUrl }, createElement(Client))
+    )
 
     res
       .status(200)

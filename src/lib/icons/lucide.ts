@@ -175,6 +175,8 @@ export const ICONS: Record<IconName, any> = {
   zap: Zap,
 }
 
-export const getSvgIconComponent = (name: IconName): ((props: SVGProps<SVGElement>) => JSX.Element) => {
+export const getSvgIconComponent = (
+  name: IconName
+): ((props: SVGProps<SVGElement>) => JSX.Element) => {
   return ICONS[name]
 }

@@ -14,7 +14,11 @@ export type UseAnchoredPositionReturn = AnchoredPosition & {
   transform?: string
 }
 
-export const useAnchoredPosition = ({ anchorRef, placement, offset }: UseAnchoredPositionProps): UseAnchoredPositionReturn => {
+export const useAnchoredPosition = ({
+  anchorRef,
+  placement,
+  offset,
+}: UseAnchoredPositionProps): UseAnchoredPositionReturn => {
   const [position, setPosition] = useState<AnchoredPosition>({})
 
   const frameRef = useRef<number | null>(null)

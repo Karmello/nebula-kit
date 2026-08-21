@@ -1,6 +1,7 @@
 import { InputProps } from 'lib/index.core'
 
-export const DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE: PasswordInputProps['autoComplete'] = 'current-password'
+export const DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE: PasswordInputProps['autoComplete'] =
+  'current-password'
 
 type PropsFromInput = Pick<
   InputProps,

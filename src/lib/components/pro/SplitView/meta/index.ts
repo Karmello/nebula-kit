@@ -1,11 +1,20 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { GRID_META } from 'lib/components/core/Grid/meta'
 import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
-import { SplitViewMainBarProps, SplitViewMainProps, SplitViewProps, SplitViewSideProps } from 'lib/index.pro'
+import {
+  SplitViewMainBarProps,
+  SplitViewMainProps,
+  SplitViewProps,
+  SplitViewSideProps,
+} from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { SPLIT_VIEW_SIDE_POSITIONS } from '../definitions'
-import { DEFAULT_SPLIT_VIEW_SIDE_BLOCK_SIZE, DEFAULT_SPLIT_VIEW_SIDE_INLINE_SIZE, DEFAULT_SPLIT_VIEW_SIDE_INTENT } from '../slots'
+import {
+  DEFAULT_SPLIT_VIEW_SIDE_BLOCK_SIZE,
+  DEFAULT_SPLIT_VIEW_SIDE_INLINE_SIZE,
+  DEFAULT_SPLIT_VIEW_SIDE_INTENT,
+} from '../slots'
 import { SPLIT_VIEW_CHANGELOG } from './changelog'
 import { SPLIT_VIEW_EXAMPLES } from './examples'
 
@@ -23,7 +32,9 @@ export const SPLIT_VIEW_META = {
         'stretches to fill the full height of its parent container',
         'in overlay mode, blocks pointer interaction outside the active panel',
       ],
-      guidelines: ['typically used for side navigation layouts, settings pages or documentation interfaces'],
+      guidelines: [
+        'typically used for side navigation layouts, settings pages or documentation interfaces',
+      ],
       exposedTags: ['div'],
       slots: ['SplitView.Side', 'SplitView.Main'],
     },
@@ -32,7 +43,8 @@ export const SPLIT_VIEW_META = {
         ...GRID_META.Grid.props.children,
         isRequired: true,
         options: ['SplitView.Side', 'SplitView.Main'],
-        description: 'Accepts slots directly or via a render function with access to the SplitView context.',
+        description:
+          'Accepts slots directly or via a render function with access to the SplitView context.',
       },
       sidePosition: {
         options: SPLIT_VIEW_SIDE_POSITIONS as unknown as string[],
@@ -42,7 +54,8 @@ export const SPLIT_VIEW_META = {
       switchAt: {
         options: SWITCH_BREAKPOINTS,
         defaultValue: DEFAULT_SWITCH_BREAKPOINT,
-        description: 'Defines the breakpoint at which the side panel switches from overlay to inline layout mode.',
+        description:
+          'Defines the breakpoint at which the side panel switches from overlay to inline layout mode.',
       },
       tagAttrs: GRID_META.Grid.props.tagAttrs,
       tagRef: GRID_META.Grid.props.tagRef,

@@ -31,7 +31,11 @@ const Article = ({ title, date, platform, href, iconName }: ArticleProps) => {
 
 export const BlogPage = () => {
   return (
-    <Box paddingTop={NEB_LENGTH.px_016} paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }} maxInlineSize="75rem">
+    <Box
+      paddingTop={NEB_LENGTH.px_016}
+      paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+      maxInlineSize="75rem"
+    >
       <Section size="lg" heading="Blog" iconName="rss">
         <Flex flexDirection="column" rowGap={NEB_LENGTH.px_016} alignItems="stretch">
           <Article

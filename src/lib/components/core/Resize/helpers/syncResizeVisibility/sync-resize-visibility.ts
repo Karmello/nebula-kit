@@ -7,6 +7,11 @@ export type SyncResizeVisibilityProps = {
   sizes: MeasuredSizes
 }
 
-export const syncResizeVisibility = ({ container, property, visible, sizes }: SyncResizeVisibilityProps) => {
+export const syncResizeVisibility = ({
+  container,
+  property,
+  visible,
+  sizes,
+}: SyncResizeVisibilityProps) => {
   container.style[property] = visible ? sizes[property] : '0px'
 }

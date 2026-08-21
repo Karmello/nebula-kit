@@ -37,7 +37,10 @@ export const RegisterPage = () => {
   }, [])
 
   const onResponse = useCallback(
-    async (res: UseMakeApiRequestRes<typeof registerUser.data, typeof registerUser.error>, formContext: any) => {
+    async (
+      res: UseMakeApiRequestRes<typeof registerUser.data, typeof registerUser.error>,
+      formContext: any
+    ) => {
       if (res.ok) {
         show({ status: 'info', content: res.data.message })
       } else {
@@ -62,8 +65,8 @@ export const RegisterPage = () => {
       <Box inlineSize="400px" maxInlineSize="100%" margin="0 auto">
         <Section size="lg" heading="Registration" iconName="user-plus">
           <Text typography="caption" intent="secondary">
-            We only use your email for account access and essential security steps. If you ever change your mind, you can
-            permanently remove your account in the settings.
+            We only use your email for account access and essential security steps. If you ever
+            change your mind, you can permanently remove your account in the settings.
           </Text>
           <Spacer blockSize={NEB_LENGTH.px_024} />
           <Form<RegisterFormValues>

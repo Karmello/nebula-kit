@@ -34,7 +34,10 @@ const start = async () => {
 
       let indexHtml = fs.readFileSync(path.resolve(__dirname, '../../index.html'), 'utf-8')
       indexHtml = await vite.transformIndexHtml(url, indexHtml)
-      indexHtml = indexHtml.replace('</head>', `<style id='neb-ssr-dev-styles'>${css}</style></head>`)
+      indexHtml = indexHtml.replace(
+        '</head>',
+        `<style id='neb-ssr-dev-styles'>${css}</style></head>`
+      )
 
       const appHtml = await renderApp(vite, url)
       indexHtml = indexHtml.replace('<!--ssr-outlet-->', appHtml)

@@ -23,7 +23,12 @@ export const Title = ({
   // own
 }: TitleProps) => {
   const icon = (
-    <Icon name={iconName} intent={intent} color={color} size={TYPOGRAPHY_MAP[typography || 'h6'].fontSize}>
+    <Icon
+      name={iconName}
+      intent={intent}
+      color={color}
+      size={TYPOGRAPHY_MAP[typography || 'h6'].fontSize}
+    >
       {customSvgIcon}
     </Icon>
   )

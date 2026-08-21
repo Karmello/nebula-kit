@@ -28,14 +28,16 @@ export const TOOLBAR_META = {
         ...GRID_META.Grid.props.children,
         isRequired: true,
         options: ['Toolbar.Start', 'Toolbar.Main', 'Toolbar.End'],
-        description: 'Accepts slots directly or via a render function with access to the context argument.',
+        description:
+          'Accepts slots directly or via a render function with access to the context argument.',
       },
       switchAt: {
         options: SWITCH_BREAKPOINTS,
         defaultValue: DEFAULT_SWITCH_BREAKPOINT,
         isRequired: false,
         isResponsive: false,
-        description: 'Defines the breakpoint at which the main section switches between collapsed and inline layout.',
+        description:
+          'Defines the breakpoint at which the main section switches between collapsed and inline layout.',
       },
       tagAttrs: GRID_META.Grid.props.tagAttrs,
       tagRef: GRID_META.Grid.props.tagRef,
@@ -65,7 +67,10 @@ export const TOOLBAR_META = {
       bundle: 'pro',
       name: 'Toolbar.Start?',
       title: 'Defines the start slot of Toolbar.',
-      features: ['fixed region at the start of the toolbar', 'remains visible when the main section is collapsed'],
+      features: [
+        'fixed region at the start of the toolbar',
+        'remains visible when the main section is collapsed',
+      ],
       guidelines: ['commonly used for brand, logo or home button'],
       composedOf: ['Grid.Item'],
     },
@@ -83,7 +88,10 @@ export const TOOLBAR_META = {
       bundle: 'pro',
       name: 'Toolbar.End?',
       title: 'Defines the end slot of Toolbar.',
-      features: ['fixed region at the end of the toolbar', 'remains visible when the main section is collapsed'],
+      features: [
+        'fixed region at the end of the toolbar',
+        'remains visible when the main section is collapsed',
+      ],
       guidelines: ['commonly used for user actions, menus or status items'],
       composedOf: ['Grid.Item'],
     },

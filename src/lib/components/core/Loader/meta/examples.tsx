@@ -13,7 +13,8 @@ export const LOADER_EXAMPLES: Example[] = [
     jsx: <Loader size="48px" color="blue" />,
   },
   {
-    description: 'Absolutely centered Loader rendered inside a parent container with position set to relative.',
+    description:
+      'Absolutely centered Loader rendered inside a parent container with position set to relative.',
     jsx: (
       <Box position="relative">
         <Loader centered />

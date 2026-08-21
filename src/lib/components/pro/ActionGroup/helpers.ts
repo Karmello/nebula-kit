@@ -73,4 +73,5 @@ export const getTargetIndexFromKeyboardEvent = (
   }
 }
 
-export const getInitialActiveIndex = (itemSlots: ReactNode[]) => itemSlots.findIndex(slot => !(slot as any)?.props?.disabled)
+export const getInitialActiveIndex = (itemSlots: ReactNode[]) =>
+  itemSlots.findIndex(slot => !(slot as any)?.props?.disabled)

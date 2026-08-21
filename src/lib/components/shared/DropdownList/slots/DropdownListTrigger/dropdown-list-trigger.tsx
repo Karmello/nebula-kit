@@ -11,10 +11,20 @@ export const DropdownListTrigger = <T extends ElementType = 'div'>({
   variant = DEFAULT_DROPDOWN_LIST_TRIGGER_VARIANT,
   ...rest
 }: DropdownListTriggerProps<T>) => {
-  const { triggerRef, internalOpen, setInternalOpen, setResizeVisible, openOnFocus, floatingResolved, color, intent } =
-    useDropdownListContext()
+  const {
+    triggerRef,
+    internalOpen,
+    setInternalOpen,
+    setResizeVisible,
+    openOnFocus,
+    floatingResolved,
+    color,
+    intent,
+  } = useDropdownListContext()
 
-  const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(floatingResolved?.placement)
+  const opensUpDownwards = ['bottom-start', 'bottom-end', undefined].includes(
+    floatingResolved?.placement
+  )
 
   return (
     <Box

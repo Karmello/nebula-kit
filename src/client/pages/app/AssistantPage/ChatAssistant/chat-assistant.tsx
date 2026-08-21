@@ -14,7 +14,9 @@ import {
 } from './definitions'
 
 export const ChatAssistant = () => {
-  const [chatHistory, setChatHistory] = useState<ChatHistory>([{ role: 'assistant', content: CHAT_INTRO_TEXT }])
+  const [chatHistory, setChatHistory] = useState<ChatHistory>([
+    { role: 'assistant', content: CHAT_INTRO_TEXT },
+  ])
   const [prompt, setPrompt] = useState<string>('')
 
   const askAssistant = useAskAssistant()
@@ -92,14 +94,19 @@ export const ChatAssistant = () => {
       <Spacer blockSize={NEB_LENGTH.px_016} />
       <Segment tagAttrs={{ style: { blockSize: 'calc(100% - 50px)' } }} flexDirection="column">
         <Segment.Item flex="1" tagAttrs={{ style: { overflowY: 'hidden' } }}>
-          <Chat tagRef={chatScrollingAreaRef} chatHistory={chatHistory} handleQuestionClick={handleQuestionClick} />
+          <Chat
+            tagRef={chatScrollingAreaRef}
+            chatHistory={chatHistory}
+            handleQuestionClick={handleQuestionClick}
+          />
         </Segment.Item>
         <Segment.Item>
           <Prompt
             tagRef={textareaRef}
             tagAttrs={{
               style: {
-                overflow: textareaRef.current?.scrollHeight > PROMPT_MAX_HEIGHT_PX ? 'visible' : 'hidden',
+                overflow:
+                  textareaRef.current?.scrollHeight > PROMPT_MAX_HEIGHT_PX ? 'visible' : 'hidden',
                 outline: 'none',
                 borderRadius: 0,
               },

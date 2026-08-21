@@ -8,8 +8,9 @@ export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Text>
-        NebulaKit is provided for developers building user interfaces and digital products. By installing, accessing or using
-        NebulaKit or any related materials, you agree to be bound by the NebulaKit License.
+        NebulaKit is provided for developers building user interfaces and digital products. By
+        installing, accessing or using NebulaKit or any related materials, you agree to be bound by
+        the NebulaKit License.
       </Text>
       <Spacer />
       <Text>The license defines:</Text>
@@ -38,8 +39,8 @@ export default () => {
       <Text>If you do not agree to the license, you may not use NebulaKit.</Text>
       <Spacer blockSize={NEB_LENGTH.px_024} />
       <Text>
-        NebulaKit may evolve over time. Features, APIs and bundles may be added, modified or removed. Notable changes are
-        documented in the changelog.
+        NebulaKit may evolve over time. Features, APIs and bundles may be added, modified or
+        removed. Notable changes are documented in the changelog.
       </Text>
       <Spacer blockSize={NEB_LENGTH.px_008} />
       <Text>

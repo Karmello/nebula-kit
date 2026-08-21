@@ -49,7 +49,10 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
 
   const keys = MAP[pageKey].keys
   const currentSectionIndex = sections.findIndex(
-    s => s.categoryKey === keys.categoryKey && s.itemKey === keys.itemKey && s.sectionKey === keys.sectionKey
+    s =>
+      s.categoryKey === keys.categoryKey &&
+      s.itemKey === keys.itemKey &&
+      s.sectionKey === keys.sectionKey
   )
 
   const nextSectionIndex = currentSectionIndex + 1

@@ -12,9 +12,10 @@ export const UpdateEmailSection = () => {
   return (
     <Section heading="Email address" variant="outline" intent="tertiary">
       <Text>
-        In case you need to update your email address, you can request a change by providing a new one. A verification link will
-        be sent to that address. After confirming it, you'll be able to sign in with the new email using your existing password.
-        Your current email remains active until you complete the first login with the new one, so you always retain access
+        In case you need to update your email address, you can request a change by providing a new
+        one. A verification link will be sent to that address. After confirming it, you'll be able
+        to sign in with the new email using your existing password. Your current email remains
+        active until you complete the first login with the new one, so you always retain access
         throughout the process.
       </Text>
       <Spacer blockSize={NEB_LENGTH.px_024} />
@@ -50,12 +51,23 @@ export const UpdateEmailSection = () => {
             return (
               <>
                 <Form.Fields>
-                  <Form.Field name="email" label="New email" required email minLength={5} maxLength={254}>
+                  <Form.Field
+                    name="email"
+                    label="New email"
+                    required
+                    email
+                    minLength={5}
+                    maxLength={254}
+                  >
                     <Input placeholder="Enter email address" tagAttrs={{ autoComplete: 'off' }} />
                   </Form.Field>
                 </Form.Fields>
                 <Form.Actions>
-                  <Form.ActionButton flex={{ base: '1', md: '0' }} type="submit" disabled={!isDirty}>
+                  <Form.ActionButton
+                    flex={{ base: '1', md: '0' }}
+                    type="submit"
+                    disabled={!isDirty}
+                  >
                     Request update
                   </Form.ActionButton>
                 </Form.Actions>

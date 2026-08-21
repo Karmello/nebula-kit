@@ -1,6 +1,17 @@
 import { useLayoutEffect } from 'react'
 
-import { Box, Button, Callout, Link, Loader, NEB_LENGTH, Section, Spacer, Table, Text } from 'lib/components'
+import {
+  Box,
+  Button,
+  Callout,
+  Link,
+  Loader,
+  NEB_LENGTH,
+  Section,
+  Spacer,
+  Table,
+  Text,
+} from 'lib/components'
 import { useGetPaymentDetailsUrl, useGetPaymentInfo } from 'client/api'
 import { useAppStore } from 'client/store'
 
@@ -25,7 +36,11 @@ export default ({ enabled }: { enabled: boolean }) => {
       {!getPaymentInfo.isMakingRequest ? (
         <>
           <Table layout="fixed" intent="neutral">
-            <Table.Body intent="muted" paddingBlock={NEB_LENGTH.px_012} paddingInline={NEB_LENGTH.px_012}>
+            <Table.Body
+              intent="muted"
+              paddingBlock={NEB_LENGTH.px_012}
+              paddingInline={NEB_LENGTH.px_012}
+            >
               <Table.Row>
                 <Table.Cell colSpan={1}>
                   <Text lineHeight={1.2}>Renews every</Text>
@@ -36,7 +51,8 @@ export default ({ enabled }: { enabled: boolean }) => {
                   </Text>
                 </Table.Cell>
               </Table.Row>
-              {getPaymentInfo.data?.subscription.status && getPaymentInfo.data?.subscription.status !== 'PAST_DUE' ? (
+              {getPaymentInfo.data?.subscription.status &&
+              getPaymentInfo.data?.subscription.status !== 'PAST_DUE' ? (
                 <Table.Row>
                   <Table.Cell colSpan={1}>
                     <Text lineHeight={1.2}>Amount</Text>
@@ -48,7 +64,8 @@ export default ({ enabled }: { enabled: boolean }) => {
                   </Table.Cell>
                 </Table.Row>
               ) : null}
-              {getPaymentInfo.data?.subscription.status && getPaymentInfo.data?.subscription.status !== 'PAST_DUE' ? (
+              {getPaymentInfo.data?.subscription.status &&
+              getPaymentInfo.data?.subscription.status !== 'PAST_DUE' ? (
                 <Table.Row>
                   <Table.Cell colSpan={1}>
                     <Text lineHeight={1.2}>Last payment</Text>
@@ -101,7 +118,13 @@ export default ({ enabled }: { enabled: boolean }) => {
           ) : null}
         </>
       ) : (
-        <Box position="relative" blockSize={NEB_LENGTH.px_064} drawable variant="solid" intent="muted">
+        <Box
+          position="relative"
+          blockSize={NEB_LENGTH.px_064}
+          drawable
+          variant="solid"
+          intent="muted"
+        >
           <Loader centered active color="blue" size={NEB_LENGTH.px_024} />
         </Box>
       )}

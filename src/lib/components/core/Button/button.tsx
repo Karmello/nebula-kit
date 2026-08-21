@@ -71,7 +71,9 @@ export const Button = <T extends ButtonTag = 'button'>({
         {
           ...tagAttrs,
           className: classNames(withPrefix('button'), tagAttrs?.className),
-          ...(tag === 'button' ? { type: (tagAttrs as ComponentProps<'button'> | undefined)?.type || 'button' } : {}),
+          ...(tag === 'button'
+            ? { type: (tagAttrs as ComponentProps<'button'> | undefined)?.type || 'button' }
+            : {}),
           onClick: onClick || tagAttrs?.onClick,
           'aria-disabled': disabled || undefined,
         } as PropsWithoutRef<ComponentProps<T>>
@@ -100,7 +102,9 @@ export const Button = <T extends ButtonTag = 'button'>({
         }}
         alignItems="center"
         columnGap={CONTROL_SCALE_MAP[scale || 'md'].gap}
-        justifyContent={align === 'split' ? 'space-between' : align === 'center' ? 'center' : 'flex-start'}
+        justifyContent={
+          align === 'split' ? 'space-between' : align === 'center' ? 'center' : 'flex-start'
+        }
       >
         {iconPlacement === 'left' ? icon : null}
         <Text
@@ -114,7 +118,9 @@ export const Button = <T extends ButtonTag = 'button'>({
           {children}
         </Text>
         {iconPlacement === 'right' ? icon : null}
-        {loading && !disabled ? <Loader size={CONTROL_SCALE_MAP[scale || 'md'].fontSize} centered /> : null}
+        {loading && !disabled ? (
+          <Loader size={CONTROL_SCALE_MAP[scale || 'md'].fontSize} centered />
+        ) : null}
       </Flex>
     </Box>
   )

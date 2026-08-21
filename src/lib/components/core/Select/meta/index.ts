@@ -5,7 +5,12 @@ import { ComponentMeta } from 'client/definitions'
 
 import { BOX_COLORS, BOX_INTENTS } from '../../Box/constants'
 import { BOX_META } from '../../Box/meta'
-import { DEFAULT_SELECT_INLINE_SIZE, DEFAULT_SELECT_INTENT, DEFAULT_SELECT_VARIANT, SELECT_VARIANTS } from '../constants'
+import {
+  DEFAULT_SELECT_INLINE_SIZE,
+  DEFAULT_SELECT_INTENT,
+  DEFAULT_SELECT_VARIANT,
+  SELECT_VARIANTS,
+} from '../constants'
 import { SELECT_CHANGELOG } from './changelog'
 import { SELECT_EXAMPLES } from './examples'
 

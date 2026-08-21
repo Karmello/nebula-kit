@@ -7,7 +7,12 @@ export const SWITCH_BORDER_MULTIPLIER = 2
 export const DEFAULT_SWITCH_SCALE: SwitchProps['scale'] = 'xs'
 export const DEFAULT_SWITCH_INTENT: SwitchProps['intent'] = 'tertiary'
 
-export const SWITCH_INTENTS = ['muted', 'tertiary', 'secondary', 'primary'] as const satisfies BoxIntent[]
+export const SWITCH_INTENTS = [
+  'muted',
+  'tertiary',
+  'secondary',
+  'primary',
+] as const satisfies BoxIntent[]
 
 export type SwitchIntent = (typeof SWITCH_INTENTS)[number]
 

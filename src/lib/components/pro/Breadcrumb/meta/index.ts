@@ -12,7 +12,8 @@ export const BREADCRUMB_META = {
   Breadcrumb: {
     overview: {
       bundle: 'pro',
-      title: 'Interactive hierarchical navigation control for selecting and modifying a position within a structured path.',
+      title:
+        'Interactive hierarchical navigation control for selecting and modifying a position within a structured path.',
       features: [
         'displays a hierarchical path using interactive DropdownList components',
         'reveals navigation levels progressively based on user selection',
@@ -31,7 +32,8 @@ export const BREADCRUMB_META = {
       },
       defaultPath: {
         options: ['string[]'],
-        description: 'Initial breadcrumb path applied once to seed internal state when the component is uncontrolled.',
+        description:
+          'Initial breadcrumb path applied once to seed internal state when the component is uncontrolled.',
       },
       intent: {
         options: BOX_INTENTS,
@@ -59,7 +61,8 @@ export const BREADCRUMB_META = {
       tree: {
         options: ['object[]'],
         isRequired: true,
-        description: 'Hierarchical data source that defines the breadcrumb structure and available selections.',
+        description:
+          'Hierarchical data source that defines the breadcrumb structure and available selections.',
       },
     },
     examples: BREADCRUMB_EXAMPLES,

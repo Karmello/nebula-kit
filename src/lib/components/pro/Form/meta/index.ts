@@ -39,7 +39,8 @@ export const FORM_META = {
   Form: {
     overview: {
       bundle: 'pro',
-      title: 'Composable form container with layout and submission orchestration, built on React Hook Form.',
+      title:
+        'Composable form container with layout and submission orchestration, built on React Hook Form.',
       features: [
         'coordinates layout between form sections and actions',
         'manages form state and validation using React Hook Form internally',
@@ -93,7 +94,8 @@ export const FORM_META = {
       resetOnSuccess: {
         options: ['boolean'],
         defaultValue: 'false',
-        description: 'Resets the form back to its initial default values after a successful submission.',
+        description:
+          'Resets the form back to its initial default values after a successful submission.',
       },
       rowGap: {
         ...FLEX_META.Flex.props.rowGap,
@@ -156,7 +158,9 @@ export const FORM_META = {
       bundle: 'pro',
       name: 'Form.Actions',
       title: 'Container for form action elements such as submit and secondary buttons.',
-      features: ['controls layout and alignment of form action elements independently from form fields'],
+      features: [
+        'controls layout and alignment of form action elements independently from form fields',
+      ],
       composedOf: ['Flex'],
       exposedTags: ['div'],
       slots: ['Form.ActionButton'],
@@ -221,7 +225,8 @@ export const FORM_META = {
       flexShrink: FLEX_META.FlexItem.props.flexShrink,
       hint: {
         options: ['string'],
-        description: 'Text used to render hint when no custom Form.Hint slot is defined. Acts as a shorthand for simple hints.',
+        description:
+          'Text used to render hint when no custom Form.Hint slot is defined. Acts as a shorthand for simple hints.',
       },
       label: {
         options: ['string'],
@@ -263,7 +268,9 @@ export const FORM_META = {
       name: 'Form.ActionButton',
       title: 'Action button for form submission and related actions.',
       features: ['exposes Flex.Item props for per-button layout control'],
-      guidelines: ['use the "type" prop to enable built-in behaviors such as submit, reset or clear'],
+      guidelines: [
+        'use the "type" prop to enable built-in behaviors such as submit, reset or clear',
+      ],
       composedOf: ['Flex.Item', 'Button'],
       exposedTags: ['button'],
     },

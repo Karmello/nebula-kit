@@ -3,7 +3,8 @@ import { type Example } from 'client/definitions'
 
 export const SELECT_EXAMPLES: Example[] = [
   {
-    description: 'Select used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
+    description:
+      'Select used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
     jsx: (
       <Select defaultValue="option-1">
         <Select.Option value="option-1">Option 1</Select.Option>

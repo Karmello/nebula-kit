@@ -45,4 +45,6 @@ type PropsFromBox<T extends SectionTag = 'section'> = Pick<
 
 type PropsFromTitle = Pick<TitleProps, 'iconName' | 'iconPlacement'>
 
-export type SectionProps<T extends SectionTag = 'section'> = PropsFromBox<T> & PropsFromTitle & SectionOwnProps
+export type SectionProps<T extends SectionTag = 'section'> = PropsFromBox<T> &
+  PropsFromTitle &
+  SectionOwnProps

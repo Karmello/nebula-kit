@@ -67,7 +67,10 @@ export const Grid = <T extends GridTag = 'div'>({
     <Box
       tag={tag}
       tagAttrs={
-        { ...tagAttrs, className: classNames(withPrefix('grid'), tagAttrs?.className) } as PropsWithoutRef<ComponentProps<T>>
+        {
+          ...tagAttrs,
+          className: classNames(withPrefix('grid'), tagAttrs?.className),
+        } as PropsWithoutRef<ComponentProps<T>>
       }
       tagRef={tagRef || ref}
     >

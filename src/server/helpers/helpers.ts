@@ -50,7 +50,10 @@ export const getFinalIndexHtml = (indexHtml: string, appHtml: string, url: strin
     .replace('<!-- og:title -->', `<meta property="og:title" content="${title}" />`)
     .replace('<!-- og:description -->', `<meta name="og:description" content="${description}" />`)
     .replace('<!-- twitter:title -->', `<meta property="twitter:title" content="${title}" />`)
-    .replace('<!-- twitter:description -->', `<meta name="twitter:description" content="${description}" />`)
+    .replace(
+      '<!-- twitter:description -->',
+      `<meta name="twitter:description" content="${description}" />`
+    )
     .replace(
       '</head>',
       `<script async src="https://plausible.io/js/script.js" data-domain="${process.env.PLAUSIBLE_DOMAIN}"></script></head>`

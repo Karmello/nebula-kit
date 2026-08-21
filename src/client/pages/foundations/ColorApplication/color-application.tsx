@@ -17,7 +17,8 @@ export default () => {
   return (
     <>
       <Text>
-        Intents and variants combined through Button components, illustrating the system's full color spectrum in practice.
+        Intents and variants combined through Button components, illustrating the system's full
+        color spectrum in practice.
       </Text>
       <Spacer />
       <Flex flexWrap="wrap" columnGap={NEB_LENGTH.px_016} rowGap={NEB_LENGTH.px_008}>
@@ -25,7 +26,12 @@ export default () => {
           <Text bold intent="primary">
             Variant
           </Text>
-          <Select value={variant} onChange={value => setVariant(value as BoxVariant)} inlineSize="140px" size="sm">
+          <Select
+            value={variant}
+            onChange={value => setVariant(value as BoxVariant)}
+            inlineSize="140px"
+            size="sm"
+          >
             {BOX_VARIANTS.map(variant => (
               <Select.Option value={variant}>{sentenceCase(variant)}</Select.Option>
             ))}
@@ -35,7 +41,12 @@ export default () => {
           <Text bold intent="primary">
             State
           </Text>
-          <Select value={state} onChange={value => setState(value as State)} inlineSize="130px" size="sm">
+          <Select
+            value={state}
+            onChange={value => setState(value as State)}
+            inlineSize="130px"
+            size="sm"
+          >
             {STATES.map(state => (
               <Select.Option value={state}>{sentenceCase(state)}</Select.Option>
             ))}

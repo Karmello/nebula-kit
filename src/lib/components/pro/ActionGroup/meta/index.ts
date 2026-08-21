@@ -9,7 +9,11 @@ import {
   DEFAULT_ACTION_GROUP_INTENT,
   DEFAULT_ACTION_GROUP_RIPPLE,
 } from '../constants'
-import { ACTION_GROUP_ITEM_TAGS, ActionGroupItemProps, DEFAULT_ACTION_GROUP_ITEM_TAG } from '../slots'
+import {
+  ACTION_GROUP_ITEM_TAGS,
+  ActionGroupItemProps,
+  DEFAULT_ACTION_GROUP_ITEM_TAG,
+} from '../slots'
 import { ActionGroupProps } from '../types'
 import { ACTION_GROUP_CHANGELOG } from './changelog'
 import { ACTION_GROUP_EXAMPLES } from './examples'
@@ -94,7 +98,8 @@ export const ACTION_GROUP_META = {
       },
       selected: {
         options: ['boolean'],
-        description: 'Marks the item as selected and applies the corresponding selected surface styling.',
+        description:
+          'Marks the item as selected and applies the corresponding selected surface styling.',
       },
       tag: {
         ...FLEX_META.FlexItem.props.tag,

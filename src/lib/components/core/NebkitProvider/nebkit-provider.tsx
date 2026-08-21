@@ -84,8 +84,14 @@ export const NebkitProvider = ({
 
     document.documentElement.setAttribute('data-theme', theme || `${DEFAULT_NEBKIT_PROVIDER_THEME}`)
     document.documentElement.setAttribute('data-brand', brand || `${DEFAULT_NEBKIT_PROVIDER_BRAND}`)
-    document.documentElement.setAttribute('data-saturation', saturation || `${DEFAULT_NEBKIT_PROVIDER_SATURATION}`)
-    document.documentElement.setAttribute('data-ripple-mode', rippleMode || `${DEFAULT_NEBKIT_PROVIDER_RIPPLE_MODE}`)
+    document.documentElement.setAttribute(
+      'data-saturation',
+      saturation || `${DEFAULT_NEBKIT_PROVIDER_SATURATION}`
+    )
+    document.documentElement.setAttribute(
+      'data-ripple-mode',
+      rippleMode || `${DEFAULT_NEBKIT_PROVIDER_RIPPLE_MODE}`
+    )
 
     document.documentElement.style.setProperty(
       '--neb-border-radius',

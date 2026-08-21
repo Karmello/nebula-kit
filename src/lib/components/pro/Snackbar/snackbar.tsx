@@ -51,7 +51,11 @@ export const Snackbar = ({
           pointerEvents={!visible ? 'none' : undefined}
           zIndex={30}
         >
-          <Slide from={finalPlacement.split('-')[0] as never} visible={visible} easing={visible ? 'ease-out' : 'ease-in'}>
+          <Slide
+            from={finalPlacement.split('-')[0] as never}
+            visible={visible}
+            easing={visible ? 'ease-out' : 'ease-in'}
+          >
             <Box
               key={snackbar?.status}
               position="relative"
@@ -69,7 +73,12 @@ export const Snackbar = ({
                   onClick={handleClose}
                 />
               </Box>
-              <Callout size="sm" content={snackbar?.content || ''} heading={snackbar?.heading} status={snackbar?.status} />
+              <Callout
+                size="sm"
+                content={snackbar?.content || ''}
+                heading={snackbar?.heading}
+                status={snackbar?.status}
+              />
             </Box>
           </Slide>
         </Box>

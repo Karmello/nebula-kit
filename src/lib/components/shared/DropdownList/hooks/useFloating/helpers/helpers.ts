@@ -49,7 +49,11 @@ export const applyViewportPadding = (viewport: Rect, padding = 0): Rect => ({
  * Normalizes inline-size envelope against viewport width.
  * Safe for all strategies.
  */
-export const normalizeInlineEnvelope = (minInlineSize: number, maxInlineSize: number, viewportWidth: number) => {
+export const normalizeInlineEnvelope = (
+  minInlineSize: number,
+  maxInlineSize: number,
+  viewportWidth: number
+) => {
   const max = Math.min(maxInlineSize, viewportWidth)
   const min = Math.min(minInlineSize, max)
 
@@ -102,7 +106,11 @@ export const resolveAutoAlign = (side: Side, anchor: Rect, viewport: Rect): Alig
  * Auto side via thirds.
  * Returns null in the middle third (no opinion).
  */
-export const resolveAutoSide = (axes: 'both' | 'x' | 'y', anchor: Rect, viewport: Rect): Side | null => {
+export const resolveAutoSide = (
+  axes: 'both' | 'x' | 'y',
+  anchor: Rect,
+  viewport: Rect
+): Side | null => {
   if (axes === 'y' || axes === 'both') {
     const centerY = anchor.top + anchor.height / 2
     const third = viewport.height / 3

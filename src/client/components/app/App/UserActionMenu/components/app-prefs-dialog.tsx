@@ -1,6 +1,17 @@
 import { sentenceCase } from 'change-case'
 
-import { Box, Button, Dialog, Flex, NEB_LENGTH, Segment, Select, Spacer, Text, Title } from 'lib/components'
+import {
+  Box,
+  Button,
+  Dialog,
+  Flex,
+  NEB_LENGTH,
+  Segment,
+  Select,
+  Spacer,
+  Text,
+  Title,
+} from 'lib/components'
 import { BOX_COLORS } from 'lib/components/core/Box/constants'
 import {
   NEBKIT_PROVIDER_BORDER_RADIUS_SIZES,
@@ -88,7 +99,12 @@ export const AppPrefsDialog = () => {
                 Border radius
               </Text>
               <Spacer blockSize={NEB_LENGTH.px_002} />
-              <Select value={borderRadiusSize} onChange={setBorderRadiusSize} inlineSize="150px" size="xs">
+              <Select
+                value={borderRadiusSize}
+                onChange={setBorderRadiusSize}
+                inlineSize="150px"
+                size="xs"
+              >
                 {NEBKIT_PROVIDER_BORDER_RADIUS_SIZES.map(n => (
                   <Select.Option value={n}>{n}</Select.Option>
                 ))}

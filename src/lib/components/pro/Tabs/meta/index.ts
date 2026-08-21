@@ -4,7 +4,12 @@ import { TabsPanelProps, TabsProps, TabsTabProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { ACTION_GROUP_META } from '../../ActionGroup/meta'
-import { DEFAULT_TABS_DIRECTION, DEFAULT_TABS_INTENT, DEFAULT_TABS_SIZE, TABS_DIRECTION } from '../definitions'
+import {
+  DEFAULT_TABS_DIRECTION,
+  DEFAULT_TABS_INTENT,
+  DEFAULT_TABS_SIZE,
+  TABS_DIRECTION,
+} from '../definitions'
 import { TABS_CHANGELOG } from './changelog'
 import { TABS_EXAMPLES } from './examples'
 
@@ -73,7 +78,10 @@ export const TABS_META = {
       bundle: 'pro',
       name: 'Tabs.Tab',
       title: 'Selectable tab item within a Tabs component.',
-      features: ['activates the panel with the matching value', 'inherits visual styling from Button'],
+      features: [
+        'activates the panel with the matching value',
+        'inherits visual styling from Button',
+      ],
       composedOf: ['ActionGroup.Item', 'Flex', 'Text'],
       exposedTags: ['button'],
     },

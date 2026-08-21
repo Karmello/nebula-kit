@@ -51,7 +51,17 @@ export const useFloating = ({
       lastRef.current = next
       onResolve?.(next)
     }
-  }, [anchorRef, mode, placement, offset, viewportPadding, floatingBlockSize, minInlineSize, maxInlineSize, onResolve])
+  }, [
+    anchorRef,
+    mode,
+    placement,
+    offset,
+    viewportPadding,
+    floatingBlockSize,
+    minInlineSize,
+    maxInlineSize,
+    onResolve,
+  ])
 
   useEffect(() => {
     if (!enabled) return

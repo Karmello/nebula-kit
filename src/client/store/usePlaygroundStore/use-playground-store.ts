@@ -19,7 +19,8 @@ export const usePlaygroundStore = create<Store>()(
     (set, get) => ({
       ...getInitialState(),
       setDisplayProps: (displayProps: boolean) => set(state => ({ ...state, displayProps })),
-      setActiveComponent: (activeComponent: string) => set(state => ({ ...state, activeComponent })),
+      setActiveComponent: (activeComponent: string) =>
+        set(state => ({ ...state, activeComponent })),
       setActiveProp: (componentName: string, activeProp: string) =>
         set(state => ({
           ...state,

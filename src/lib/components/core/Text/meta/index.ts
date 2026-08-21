@@ -31,7 +31,8 @@ export const TEXT_META = {
       },
       clampLines: {
         options: ['number'],
-        description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
+        description:
+          'Limits text to a set number of lines and truncates the rest with an ellipsis.',
       },
       color: BOX_META.Box.props.color,
       fontSize: {

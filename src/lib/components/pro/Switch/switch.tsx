@@ -6,7 +6,11 @@ import { withPrefix } from 'lib/helpers'
 import { Box, BoxProps, Slide } from 'lib/index.core'
 import { SwitchProps } from 'lib/index.pro'
 
-import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SCALE, SWITCH_BORDER_MULTIPLIER } from './definitions'
+import {
+  DEFAULT_SWITCH_INTENT,
+  DEFAULT_SWITCH_SCALE,
+  SWITCH_BORDER_MULTIPLIER,
+} from './definitions'
 
 import './switch.scss'
 
@@ -90,7 +94,13 @@ export const Switch = ({
         visible={animatedChecked}
         easing="cubic-bezier(0.25, 0, 0.4, 1)"
       >
-        <Box drawable variant="solid" intent="neutral" blockSize={thumbBlockSize} inlineSize={thumbBlockSize} />
+        <Box
+          drawable
+          variant="solid"
+          intent="neutral"
+          blockSize={thumbBlockSize}
+          inlineSize={thumbBlockSize}
+        />
       </Slide>
     </Box>
   )

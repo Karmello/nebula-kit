@@ -1,6 +1,17 @@
 import { memo } from 'react'
 
-import { Box, Button, Divider, Flex, Link, NEB_LENGTH, SideNav, Spacer, SplitView, Text } from 'lib/components'
+import {
+  Box,
+  Button,
+  Divider,
+  Flex,
+  Link,
+  NEB_LENGTH,
+  SideNav,
+  Spacer,
+  SplitView,
+  Text,
+} from 'lib/components'
 import { PageKey, PLAYGROUND_PROPS_MAP } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import meta from 'client/meta'
@@ -35,7 +46,10 @@ export const CatalogPageTemplate = memo(
       <SplitView>
         {({ mode, setSideOpen }) => (
           <>
-            <SplitView.Side inlineSize={{ base: '275px', lg: '225px' }} blockSize={{ lg: 'calc(100dvh - 125px)' }}>
+            <SplitView.Side
+              inlineSize={{ base: '275px', lg: '225px' }}
+              blockSize={{ lg: 'calc(100dvh - 125px)' }}
+            >
               <SideNav expandMode="single">
                 {data.map(({ key: categoryKey, label, items }) => {
                   const isCategorySelected = activeCategoryObj?.key === categoryKey
@@ -117,9 +131,16 @@ export const CatalogPageTemplate = memo(
                     </SplitView.Side>
                     <SplitView.Main paddingRight={NEB_LENGTH.px_024}>
                       <SplitView.MainBar>
-                        <Flex columnGap={NEB_LENGTH.px_016} rowGap={NEB_LENGTH.px_004} alignItems="center" flexWrap="wrap">
+                        <Flex
+                          columnGap={NEB_LENGTH.px_016}
+                          rowGap={NEB_LENGTH.px_004}
+                          alignItems="center"
+                          flexWrap="wrap"
+                        >
                           <Text typography="h3">
-                            {pageKey === PageKey.foundations.toString() ? activeSectionObj?.label : activeItemObj?.label}
+                            {pageKey === PageKey.foundations.toString()
+                              ? activeSectionObj?.label
+                              : activeItemObj?.label}
                           </Text>
                           {pageKey !== PageKey.foundations.toString() && bundleLabel ? (
                             <Box

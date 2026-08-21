@@ -34,7 +34,14 @@ test('Box resolves default primary solid styling', async ({ mount, page }) => {
 
 test('Nested Box resolves same primary solid styling as parent', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" blockSize="200px" padding="16px">
+    <Box
+      tagAttrs={{ id: 'parent' }}
+      drawable
+      variant="solid"
+      intent="primary"
+      blockSize="200px"
+      padding="16px"
+    >
       <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" blockSize="100px">
         Child
       </Box>
@@ -84,11 +91,24 @@ test('Nested Box resolves same primary solid styling as parent', async ({ mount,
 test('Local dark theme produces same result as global dark theme', async ({ mount, page }) => {
   await mount(
     <>
-      <Box tagAttrs={{ id: 'local-dark' }} drawable variant="solid" intent="primary" theme="dark" blockSize="200px">
+      <Box
+        tagAttrs={{ id: 'local-dark' }}
+        drawable
+        variant="solid"
+        intent="primary"
+        theme="dark"
+        blockSize="200px"
+      >
         Local Dark
       </Box>
 
-      <Box tagAttrs={{ id: 'global-dark' }} drawable variant="solid" intent="primary" blockSize="200px">
+      <Box
+        tagAttrs={{ id: 'global-dark' }}
+        drawable
+        variant="solid"
+        intent="primary"
+        blockSize="200px"
+      >
         Global Dark
       </Box>
     </>,
@@ -138,8 +158,23 @@ test('Local dark theme produces same result as global dark theme', async ({ moun
 
 test('Nested theme islands reset correctly (dark → light)', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'dark-parent' }} drawable variant="solid" intent="inverse" theme="dark" blockSize="200px" padding="16px">
-      <Box tagAttrs={{ id: 'light-child' }} drawable variant="solid" intent="inverse" theme="light" blockSize="100px">
+    <Box
+      tagAttrs={{ id: 'dark-parent' }}
+      drawable
+      variant="solid"
+      intent="inverse"
+      theme="dark"
+      blockSize="200px"
+      padding="16px"
+    >
+      <Box
+        tagAttrs={{ id: 'light-child' }}
+        drawable
+        variant="solid"
+        intent="inverse"
+        theme="light"
+        blockSize="100px"
+      >
         Light Child
       </Box>
     </Box>
@@ -192,11 +227,37 @@ test('Nested theme islands reset correctly (dark → light)', async ({ mount, pa
   expect(result.lightBg).not.toBe(result.darkBg)
 })
 
-test('Nested theme islands rebind correctly across multiple boundaries (dark → light → dark)', async ({ mount, page }) => {
+test('Nested theme islands rebind correctly across multiple boundaries (dark → light → dark)', async ({
+  mount,
+  page,
+}) => {
   await mount(
-    <Box tagAttrs={{ id: 'dark-1' }} drawable variant="solid" intent="inverse" theme="dark" blockSize="300px" padding="16px">
-      <Box tagAttrs={{ id: 'light-1' }} drawable variant="solid" intent="inverse" theme="light" blockSize="220px" padding="16px">
-        <Box tagAttrs={{ id: 'dark-2' }} drawable variant="solid" intent="inverse" theme="dark" blockSize="140px">
+    <Box
+      tagAttrs={{ id: 'dark-1' }}
+      drawable
+      variant="solid"
+      intent="inverse"
+      theme="dark"
+      blockSize="300px"
+      padding="16px"
+    >
+      <Box
+        tagAttrs={{ id: 'light-1' }}
+        drawable
+        variant="solid"
+        intent="inverse"
+        theme="light"
+        blockSize="220px"
+        padding="16px"
+      >
+        <Box
+          tagAttrs={{ id: 'dark-2' }}
+          drawable
+          variant="solid"
+          intent="inverse"
+          theme="dark"
+          blockSize="140px"
+        >
           Dark Again
         </Box>
       </Box>

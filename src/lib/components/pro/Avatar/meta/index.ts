@@ -28,7 +28,8 @@ export const AVATAR_META = {
       fetchPriority: IMAGE_META.Image.props.fetchPriority,
       initials: {
         options: ['string'],
-        description: 'Text displayed as a fallback when the image fails to load or src is not provided.',
+        description:
+          'Text displayed as a fallback when the image fails to load or src is not provided.',
       },
       loading: IMAGE_META.Image.props.loading,
       objectFit: IMAGE_META.Image.props.objectFit,
@@ -37,7 +38,8 @@ export const AVATAR_META = {
       shape: {
         options: AVATAR_SHAPES as never,
         defaultValue: DEFAULT_AVATAR_SHAPE,
-        description: "Controls the avatar's outer shape. Use round for a circular avatar or square for a rectangular one.",
+        description:
+          "Controls the avatar's outer shape. Use round for a circular avatar or square for a rectangular one.",
       },
       size: {
         options: TSHIRT_SIZES,

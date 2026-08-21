@@ -4,7 +4,12 @@ import { useControlled } from 'lib/hooks'
 import { Box, Flex, Text } from 'lib/index.core'
 import { ActionGroup, TabsPanelProps, TabsProps, TabsTabProps } from 'lib/index.pro'
 
-import { DEFAULT_TABS_DEFAULT_VALUE, DEFAULT_TABS_DIRECTION, DEFAULT_TABS_INTENT, DEFAULT_TABS_SIZE } from './definitions'
+import {
+  DEFAULT_TABS_DEFAULT_VALUE,
+  DEFAULT_TABS_DIRECTION,
+  DEFAULT_TABS_INTENT,
+  DEFAULT_TABS_SIZE,
+} from './definitions'
 
 export const Tabs = ({
   children,
@@ -19,7 +24,11 @@ export const Tabs = ({
   direction = DEFAULT_TABS_DIRECTION,
   stretch,
 }: TabsProps) => {
-  const [currentValue, setCurrentValue] = useControlled<string | number>({ value, defaultValue, onChange })
+  const [currentValue, setCurrentValue] = useControlled<string | number>({
+    value,
+    defaultValue,
+    onChange,
+  })
 
   return (
     <WithSlots<'Tabs.Tab' | 'Tabs.Panel'>
@@ -47,7 +56,10 @@ export const Tabs = ({
             <Flex flexDirection={direction === 'column' ? 'row' : 'column'} alignItems="stretch">
               <Box overflowX="auto">
                 <ActionGroup
-                  tagAttrs={{ role: 'tablist', 'aria-orientation': direction === 'row' ? 'horizontal' : 'vertical' }}
+                  tagAttrs={{
+                    role: 'tablist',
+                    'aria-orientation': direction === 'row' ? 'horizontal' : 'vertical',
+                  }}
                   direction={direction}
                   attach={direction === 'row' ? 'block' : 'inline'}
                   color={color}

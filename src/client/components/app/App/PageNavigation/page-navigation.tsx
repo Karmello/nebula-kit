@@ -3,7 +3,12 @@ import { useLocation } from 'react-router'
 import { Button, Flex, Link, NEB_LENGTH } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
-import { useAppStore, useComponentsPageStore, useFoundationsPageStore, usePatternsStore } from 'client/store'
+import {
+  useAppStore,
+  useComponentsPageStore,
+  useFoundationsPageStore,
+  usePatternsStore,
+} from 'client/store'
 
 type Props = {
   toolbarSlot: 'start' | 'main'
@@ -84,7 +89,9 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
           href={`${PageKey.components}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
-            navigateTo(`${PageKey.components}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`)
+            navigateTo(
+              `${PageKey.components}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`
+            )
           }}
         >
           <Button

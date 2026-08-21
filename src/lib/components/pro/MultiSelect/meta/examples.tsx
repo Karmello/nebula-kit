@@ -3,7 +3,8 @@ import { type Example } from 'client/definitions'
 
 export const MULTI_SELECT_EXAMPLES: Example[] = [
   {
-    description: 'MultiSelect used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
+    description:
+      'MultiSelect used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
     jsx: (
       <MultiSelect defaultValue={['option-1']}>
         <MultiSelect.Option value="option-1">Option 1</MultiSelect.Option>

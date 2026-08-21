@@ -1,4 +1,13 @@
-import { TableBody, TableCaption, TableCell, TableFooter, TableHeader, TableHeaderCell, TableHeaderRow, TableRow } from './slots'
+import {
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHeader,
+  TableHeaderCell,
+  TableHeaderRow,
+  TableRow,
+} from './slots'
 import { Table as TableBase } from './table'
 
 export const Table = Object.assign(TableBase, {

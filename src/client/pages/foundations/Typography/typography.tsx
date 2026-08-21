@@ -23,9 +23,10 @@ export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Text>
-        Typography defines the set of semantic text styles used across the system. Each typography preset combines font size, line
-        height and structural intent to create consistent reading rhythm and visual hierarchy throughout the UI. Typography values
-        are exposed as reusable CSS custom properties, allowing the same styles to be referenced directly in custom layouts,
+        Typography defines the set of semantic text styles used across the system. Each typography
+        preset combines font size, line height and structural intent to create consistent reading
+        rhythm and visual hierarchy throughout the UI. Typography values are exposed as reusable CSS
+        custom properties, allowing the same styles to be referenced directly in custom layouts,
         markdown content and external components outside the NebulaKit primitives.
       </Text>
       <Spacer blockSize={NEB_LENGTH.px_048} />

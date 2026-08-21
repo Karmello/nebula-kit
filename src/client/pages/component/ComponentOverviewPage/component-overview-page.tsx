@@ -15,7 +15,18 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
   const navigateTo = useNavigateTo()
 
   const {
-    overview: { name, title, description, features, guidelines, composedOf, exposedTags, slots, hooks, readMoreLink },
+    overview: {
+      name,
+      title,
+      description,
+      features,
+      guidelines,
+      composedOf,
+      exposedTags,
+      slots,
+      hooks,
+      readMoreLink,
+    },
     examples,
     props,
   } = meta
@@ -26,7 +37,10 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
         <Text typography="lead">{title}</Text>
         {examples?.[0] ? (
           <Box marginBlock={NEB_LENGTH.px_016}>
-            <CodeSnippet lang="tsx" code={examples[0].code || convertElemToString(examples[0].jsx)} />
+            <CodeSnippet
+              lang="tsx"
+              code={examples[0].code || convertElemToString(examples[0].jsx)}
+            />
           </Box>
         ) : null}
       </Box>
@@ -45,7 +59,12 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
           color="amber"
         />
       ) : null}
-      {props ? <ListWithChips heading="Props" items={Object.keys(props).sort((a, b) => a.localeCompare(b))} /> : null}
+      {props ? (
+        <ListWithChips
+          heading="Props"
+          items={Object.keys(props).sort((a, b) => a.localeCompare(b))}
+        />
+      ) : null}
       {slots ? <ListWithChips heading="Slots" items={slots} color="gray" /> : null}
       {hooks ? <ListWithChips heading="Hooks" items={hooks} color="green" /> : null}
       {readMoreLink ? (
@@ -56,7 +75,13 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
               navigateTo(readMoreLink.href)
             }}
           >
-            <Button variant="ghost" color="blue" intent="primary" iconName="arrow-right" iconPlacement="right">
+            <Button
+              variant="ghost"
+              color="blue"
+              intent="primary"
+              iconName="arrow-right"
+              iconPlacement="right"
+            >
               {readMoreLink.label}
             </Button>
           </Link>

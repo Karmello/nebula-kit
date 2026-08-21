@@ -12,7 +12,11 @@ import {
   SIDE_NAV_EXPAND_MODES,
   SIDE_NAV_VARIANTS,
 } from '../definitions'
-import { DEFAULT_SIDE_NAV_CATEGORY_EXPANDED, DEFAULT_SIDE_NAV_CATEGORY_INTENT, DEFAULT_SIDE_NAV_CATEGORY_VARIANT } from '../slots'
+import {
+  DEFAULT_SIDE_NAV_CATEGORY_EXPANDED,
+  DEFAULT_SIDE_NAV_CATEGORY_INTENT,
+  DEFAULT_SIDE_NAV_CATEGORY_VARIANT,
+} from '../slots'
 import { SIDE_NAV_CHANGELOG } from './changelog'
 import { SIDE_NAV_EXAMPLES } from './examples'
 
@@ -20,7 +24,8 @@ export const SIDE_NAV_META = {
   SideNav: {
     overview: {
       bundle: 'pro',
-      title: 'Sidebar navigation component designed specifically for flat and nested navigation with expandable categories.',
+      title:
+        'Sidebar navigation component designed specifically for flat and nested navigation with expandable categories.',
       features: [
         'supports flat items and expandable categories for hierarchical navigation',
         'allows single or multiple categories to be expanded at once',
@@ -49,7 +54,8 @@ export const SIDE_NAV_META = {
       expandMode: {
         options: SIDE_NAV_EXPAND_MODES,
         defaultValue: DEFAULT_SIDE_NAV_EXPAND_MODE,
-        description: 'Controls whether one or multiple categories can remain expanded at the same time.',
+        description:
+          'Controls whether one or multiple categories can remain expanded at the same time.',
       },
       gap: {
         ...FLEX_META.Flex.props.gap,
@@ -79,7 +85,9 @@ export const SIDE_NAV_META = {
       bundle: 'pro',
       name: 'SideNav.Item',
       title: 'Defines a single navigational entry within SideNav.',
-      features: ['represents a leaf item that navigates to a destination or triggers navigation logic'],
+      features: [
+        'represents a leaf item that navigates to a destination or triggers navigation logic',
+      ],
       guidelines: [
         'can be used directly inside SideNav for flat navigation',
         'can be nested inside SideNav.Category to participate in hierarchical navigation',
@@ -141,7 +149,8 @@ export const SIDE_NAV_META = {
       expanded: {
         options: ['boolean'],
         defaultValue: String(DEFAULT_SIDE_NAV_CATEGORY_EXPANDED),
-        description: 'Controls whether the category is expanded. When provided, the expansion state is controlled externally.',
+        description:
+          'Controls whether the category is expanded. When provided, the expansion state is controlled externally.',
       },
       intent: {
         ...BUTTON_META.Button.props.intent,

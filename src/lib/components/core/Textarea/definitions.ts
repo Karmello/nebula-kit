@@ -26,7 +26,15 @@ type TextareaOwnProps = {
 
 type PropsFromBox = Pick<
   BoxProps<'textarea'>,
-  'tagAttrs' | 'tagRef' | 'variant' | 'color' | 'intent' | 'disabled' | 'inlineSize' | 'minInlineSize' | 'maxInlineSize'
+  | 'tagAttrs'
+  | 'tagRef'
+  | 'variant'
+  | 'color'
+  | 'intent'
+  | 'disabled'
+  | 'inlineSize'
+  | 'minInlineSize'
+  | 'maxInlineSize'
 >
 
 export type TextareaProps = PropsFromBox & TextareaOwnProps

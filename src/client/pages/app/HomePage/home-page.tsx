@@ -10,7 +10,10 @@ import { Video } from './Video'
 
 export const HomePage = () => {
   return (
-    <Box padding={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }} paddingTop={NEB_LENGTH.px_004}>
+    <Box
+      padding={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+      paddingTop={NEB_LENGTH.px_004}
+    >
       <Flex
         flexDirection={{ base: 'column', lg: 'row' }}
         justifyContent="center"

@@ -8,7 +8,12 @@ import ts from '@shikijs/langs/ts'
 import tsx from '@shikijs/langs/tsx'
 import githubDark from '@shikijs/themes/github-dark'
 import githubLight from '@shikijs/themes/github-light'
-import { BundledLanguage, createHighlighterCore, createJavaScriptRegexEngine, TokensResult } from 'shiki'
+import {
+  BundledLanguage,
+  createHighlighterCore,
+  createJavaScriptRegexEngine,
+  TokensResult,
+} from 'shiki'
 
 import type { NebkitProviderTheme } from 'lib/components/core/NebkitProvider/types'
 
@@ -18,6 +23,13 @@ const highlighter = await createHighlighterCore({
   themes: [githubLight, githubDark],
 })
 
-export const tokenizeCode = (code: string, lang: BundledLanguage, theme: NebkitProviderTheme): TokensResult => {
-  return highlighter.codeToTokens(code, { lang, theme: theme === 'light' ? githubLight : githubDark })
+export const tokenizeCode = (
+  code: string,
+  lang: BundledLanguage,
+  theme: NebkitProviderTheme
+): TokensResult => {
+  return highlighter.codeToTokens(code, {
+    lang,
+    theme: theme === 'light' ? githubLight : githubDark,
+  })
 }

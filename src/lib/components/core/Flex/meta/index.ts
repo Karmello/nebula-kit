@@ -128,20 +128,23 @@ export const FLEX_META = {
       flexGrow: {
         options: ['string'],
         isResponsive: true,
-        description: 'Controls how much the item can grow relative to the other items when extra space is available.',
+        description:
+          'Controls how much the item can grow relative to the other items when extra space is available.',
         link: true,
       },
       flexShrink: {
         options: ['string'],
         isResponsive: true,
-        description: 'Controls how much the item can shrink relative to the other items when space is limited.',
+        description:
+          'Controls how much the item can shrink relative to the other items when space is limited.',
         link: true,
       },
       hidden: BOX_META.Box.props.hidden,
       order: {
         options: ['string'],
         isResponsive: true,
-        description: "Defines the item's order relative to other items, independent of source order.",
+        description:
+          "Defines the item's order relative to other items, independent of source order.",
         link: true,
       },
       tag: BOX_META.Box.props.tag,

@@ -31,7 +31,11 @@ export const FORM_EXAMPLES: Example[] = [
     jsx: (
       <Form onValidSubmission={null}>
         <Form.Fields>
-          <Form.Field name="firstName" label="First name" hint="This will appear on your public profile.">
+          <Form.Field
+            name="firstName"
+            label="First name"
+            hint="This will appear on your public profile."
+          >
             <Input />
           </Form.Field>
           <Form.Field name="gender" label="Gender" hint="Used for profile personalization.">
@@ -111,6 +115,7 @@ export const FORM_EXAMPLES: Example[] = [
         </Form.Actions>
       </Form>
     ),
-    description: 'Mobile-first form with vertically stacked fields that transition to a horizontal layout on wider screens.',
+    description:
+      'Mobile-first form with vertically stacked fields that transition to a horizontal layout on wider screens.',
   },
 ]

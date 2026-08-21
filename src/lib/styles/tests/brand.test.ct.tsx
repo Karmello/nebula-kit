@@ -4,8 +4,22 @@ import { Box } from 'lib/components'
 
 test('Local brand overrides global brand', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" blockSize="200px" padding="16px">
-      <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" brand="green" blockSize="100px">
+    <Box
+      tagAttrs={{ id: 'parent' }}
+      drawable
+      variant="solid"
+      intent="primary"
+      blockSize="200px"
+      padding="16px"
+    >
+      <Box
+        tagAttrs={{ id: 'child' }}
+        drawable
+        variant="solid"
+        intent="primary"
+        brand="green"
+        blockSize="100px"
+      >
         Child
       </Box>
     </Box>,
@@ -60,7 +74,15 @@ test('Local brand overrides global brand', async ({ mount, page }) => {
 
 test('Child Box inherits brand when no local brand is set', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" brand="green" blockSize="200px" padding="16px">
+    <Box
+      tagAttrs={{ id: 'parent' }}
+      drawable
+      variant="solid"
+      intent="primary"
+      brand="green"
+      blockSize="200px"
+      padding="16px"
+    >
       <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" blockSize="100px">
         Child
       </Box>
@@ -106,8 +128,23 @@ test('Child Box inherits brand when no local brand is set', async ({ mount, page
 
 test('Brand survives theme islands (light → dark → light)', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'dark-parent' }} drawable variant="solid" intent="primary" theme="dark" blockSize="200px" padding="16px">
-      <Box tagAttrs={{ id: 'light-child' }} drawable variant="solid" intent="primary" theme="light" blockSize="100px">
+    <Box
+      tagAttrs={{ id: 'dark-parent' }}
+      drawable
+      variant="solid"
+      intent="primary"
+      theme="dark"
+      blockSize="200px"
+      padding="16px"
+    >
+      <Box
+        tagAttrs={{ id: 'light-child' }}
+        drawable
+        variant="solid"
+        intent="primary"
+        theme="light"
+        blockSize="100px"
+      >
         Child
       </Box>
     </Box>,

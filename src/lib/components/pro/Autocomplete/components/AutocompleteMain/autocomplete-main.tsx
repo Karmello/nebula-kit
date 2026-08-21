@@ -7,7 +7,10 @@ import { withPrefix } from 'lib/helpers'
 import { IconButton, Input, Text } from 'lib/index.core'
 import { AutocompleteOptionProps, AutocompleteProps } from 'lib/index.pro'
 
-type AutocompleteMainProps = Omit<AutocompleteProps, 'children' | 'defaultValue' | 'value' | 'onChange'> & {
+type AutocompleteMainProps = Omit<
+  AutocompleteProps,
+  'children' | 'defaultValue' | 'value' | 'onChange'
+> & {
   items: ReactNode[]
   currentValue?: string
   handleChange: (value: string) => void
@@ -60,7 +63,9 @@ export const AutocompleteMain = ({
     }
   }, [queryValue, disableFiltering, items])
 
-  const currentItemIndex = items.findIndex(item => (item as ReactElement<AutocompleteOptionProps>).props.value === currentValue)
+  const currentItemIndex = items.findIndex(
+    item => (item as ReactElement<AutocompleteOptionProps>).props.value === currentValue
+  )
 
   const currentItem = items[currentItemIndex] as ReactElement<AutocompleteOptionProps>
 
@@ -148,7 +153,11 @@ export const AutocompleteMain = ({
                         e.stopPropagation()
                       },
                     }}
-                    iconName={dropdownListState?.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'}
+                    iconName={
+                      dropdownListState?.placement?.startsWith('bottom')
+                        ? 'chevron-down'
+                        : 'chevron-up'
+                    }
                     elevated={dropdownListState?.open}
                     onClick={() => {
                       setDropdownListState(prev => ({ ...prev, open: !prev.open }))

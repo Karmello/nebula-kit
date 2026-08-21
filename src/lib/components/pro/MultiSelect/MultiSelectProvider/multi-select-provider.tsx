@@ -7,7 +7,11 @@ type ProviderProps = { children: ReactNode } & Props
 const MultiSelectContext = createContext<Props | undefined>(undefined)
 
 export const MultiSelectProvider = ({ children, currentValue, handleChange }: ProviderProps) => {
-  return <MultiSelectContext.Provider value={{ currentValue, handleChange }}>{children}</MultiSelectContext.Provider>
+  return (
+    <MultiSelectContext.Provider value={{ currentValue, handleChange }}>
+      {children}
+    </MultiSelectContext.Provider>
+  )
 }
 
 export const useMultiSelectContext = () => {

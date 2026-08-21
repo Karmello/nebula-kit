@@ -16,7 +16,10 @@ export const getNextActiveIndex = ({
   const listHeight = visibleItemsCount * itemBlockSize
 
   const firstVisibleIndex = Math.floor(scrollTop / itemBlockSize)
-  const lastVisibleIndex = Math.min(Math.ceil((scrollTop + listHeight) / itemBlockSize) - 1, itemsCount - 1)
+  const lastVisibleIndex = Math.min(
+    Math.ceil((scrollTop + listHeight) / itemBlockSize) - 1,
+    itemsCount - 1
+  )
 
   // ✅ first navigation from "no selection" uses current viewport
   if (activeIndex === -1) {

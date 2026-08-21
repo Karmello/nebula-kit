@@ -10,7 +10,8 @@ const InputControlled = () => {
 
 export const INPUT_EXAMPLES: Example[] = [
   {
-    description: 'Input used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
+    description:
+      'Input used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
     jsx: <Input defaultValue="default value" />,
   },
   {

@@ -1,9 +1,17 @@
 import { BOX_META } from 'lib/components/core/Box/meta'
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_FLOATING_MODE, DEFAULT_FLOATING_PLACEMENT, FLOATING_MODE, FLOATING_PLACEMENT } from '../constants'
+import {
+  DEFAULT_FLOATING_MODE,
+  DEFAULT_FLOATING_PLACEMENT,
+  FLOATING_MODE,
+  FLOATING_PLACEMENT,
+} from '../constants'
 import { FloatingContentProps, FloatingTriggerProps } from '../slots'
-import { DEFAULT_FLOATING_TRIGGER_DISPLAY, FLOATING_TRIGGER_DISPLAY } from '../slots/FloatingTrigger/constants'
+import {
+  DEFAULT_FLOATING_TRIGGER_DISPLAY,
+  FLOATING_TRIGGER_DISPLAY,
+} from '../slots/FloatingTrigger/constants'
 import { FloatingProps } from '../types'
 import { FLOATING_CHANGELOG } from './changelog'
 import { FLOATING_EXAMPLES } from './examples'
@@ -62,7 +70,8 @@ export const FLOATING_META = {
       placement: {
         options: FLOATING_PLACEMENT,
         defaultValue: DEFAULT_FLOATING_PLACEMENT,
-        description: 'Defines the preferred position of the floating content relative to the trigger.',
+        description:
+          'Defines the preferred position of the floating content relative to the trigger.',
       },
     },
     examples: FLOATING_EXAMPLES,
@@ -104,7 +113,10 @@ export const FLOATING_META = {
       title: 'Portal-rendered overlay positioned relative to the trigger.',
       description:
         'Floating.Content wraps the floating layer, renders it in a portal and applies the positioning, dismissal and opening animation behavior managed by Floating.',
-      features: ['renders only while the floating layer is open', 'closes on outside press, Escape and Tab navigation'],
+      features: [
+        'renders only while the floating layer is open',
+        'closes on outside press, Escape and Tab navigation',
+      ],
       composedOf: ['Box'],
       exposedTags: ['span'],
     },

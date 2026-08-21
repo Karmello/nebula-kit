@@ -13,7 +13,9 @@ export const DocsButton = () => {
   const url = useMemo(() => {
     const componentName = kebabCase(activeComponent)
 
-    const { key: category } = COMPONENT_CATEGORIES.find(obj => obj.items.some(obj => obj.key === componentName))
+    const { key: category } = COMPONENT_CATEGORIES.find(obj =>
+      obj.items.some(obj => obj.key === componentName)
+    )
     return `${PageKey.components}/${category}/${componentName}/overview`
   }, [activeComponent])
 
@@ -24,7 +26,14 @@ export const DocsButton = () => {
         navigateTo(url)
       }}
     >
-      <Button scale="xs" iconName="arrow-right" iconPlacement="right" variant="outline" intent="tertiary" color="blue">
+      <Button
+        scale="xs"
+        iconName="arrow-right"
+        iconPlacement="right"
+        variant="outline"
+        intent="tertiary"
+        color="blue"
+      >
         Docs
       </Button>
     </Link>

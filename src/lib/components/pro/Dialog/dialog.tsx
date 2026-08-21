@@ -56,7 +56,11 @@ export const Dialog = ({
     <WithSlots<'Dialog.Header' | 'Dialog.Content' | 'Dialog.Footer'>
       componentName="Dialog"
       childrenToVerify={children}
-      slotsConfig={[{ name: 'Dialog.Header' }, { name: 'Dialog.Content', required: true }, { name: 'Dialog.Footer' }]}
+      slotsConfig={[
+        { name: 'Dialog.Header' },
+        { name: 'Dialog.Content', required: true },
+        { name: 'Dialog.Footer' },
+      ]}
     >
       {({ slotsByName }) => {
         return (
@@ -65,7 +69,8 @@ export const Dialog = ({
               <Box
                 tagAttrs={{
                   style: {
-                    backgroundColor: theme === 'light' ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)',
+                    backgroundColor:
+                      theme === 'light' ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)',
                     transition: canAnimateRef.current ? 'opacity 0.4s ease-out' : 'none',
                   },
                   onClick: () => {
@@ -85,7 +90,12 @@ export const Dialog = ({
                   justifyContent="center"
                   alignItems="center"
                 >
-                  <FocusTrap tagRef={tagRef || ref} active={open} onFocusEscape={onClose} disableEscapeOnOutsideClick>
+                  <FocusTrap
+                    tagRef={tagRef || ref}
+                    active={open}
+                    onFocusEscape={onClose}
+                    disableEscapeOnOutsideClick
+                  >
                     <Resize
                       property="blockSize"
                       visible={open}
@@ -117,7 +127,13 @@ export const Dialog = ({
                         <Box drawable variant="solid" intent="neutral" borderRadius="0px">
                           {onClose ? (
                             <Box position="absolute" top="8px" right="8px">
-                              <IconButton scale="xs" iconName="close" variant="outline" intent="tertiary" onClick={onClose} />
+                              <IconButton
+                                scale="xs"
+                                iconName="close"
+                                variant="outline"
+                                intent="tertiary"
+                                onClick={onClose}
+                              />
                             </Box>
                           ) : null}
                           {slotsByName['Dialog.Header']}

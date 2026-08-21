@@ -49,11 +49,13 @@ export const DropdownList = ({
     >
       {({ slotsByName }) => {
         const itemsCount = slotsByName['DropdownList.Item'].length
-        let correctedVisibleItemsCount = itemsCount < (visibleItemsCount ?? 0) ? itemsCount : (visibleItemsCount ?? 0)
+        let correctedVisibleItemsCount =
+          itemsCount < (visibleItemsCount ?? 0) ? itemsCount : (visibleItemsCount ?? 0)
         if (correctedVisibleItemsCount <= 0 && noOptionsLabel) correctedVisibleItemsCount = 1
 
         const finalItemBlockSize =
-          (itemBlockSize !== undefined ? itemBlockSize : 50) + Number(NEB_LENGTH.px_002.replace('px', ''))
+          (itemBlockSize !== undefined ? itemBlockSize : 50) +
+          Number(NEB_LENGTH.px_002.replace('px', ''))
 
         return (
           <DropdownListProvider
@@ -71,7 +73,12 @@ export const DropdownList = ({
             color={color}
             intent={intent}
           >
-            <DropdownListMain tagRef={tagRef} tagAttrs={tagAttrs} itemsCount={itemsCount} finalItemBlockSize={finalItemBlockSize}>
+            <DropdownListMain
+              tagRef={tagRef}
+              tagAttrs={tagAttrs}
+              itemsCount={itemsCount}
+              finalItemBlockSize={finalItemBlockSize}
+            >
               {slotsByName['DropdownList.Trigger']}
               <DropdownListMenu
                 items={slotsByName['DropdownList.Item']}

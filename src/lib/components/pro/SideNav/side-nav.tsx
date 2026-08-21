@@ -6,7 +6,11 @@ import { Flex } from 'lib/index.core'
 import { SideNavProps } from 'lib/index.pro'
 
 import { SideNavToggle } from './components'
-import { DEFAULT_SIDE_NAV_EXPAND_MODE, DEFAULT_SIDE_NAV_GAP, DEFAULT_SIDE_NAV_SCALE } from './definitions'
+import {
+  DEFAULT_SIDE_NAV_EXPAND_MODE,
+  DEFAULT_SIDE_NAV_GAP,
+  DEFAULT_SIDE_NAV_SCALE,
+} from './definitions'
 import { SideNavProvider } from './SideNavProvider'
 
 import './side-nav.scss'
@@ -36,7 +40,14 @@ export const SideNav = ({
       childrenToVerify={children}
     >
       {({ slotsByName, allValidSlots }) => (
-        <SideNavProvider expandMode={expandMode} variant={variant} color={color} intent={intent} scale={scale} gap={gap}>
+        <SideNavProvider
+          expandMode={expandMode}
+          variant={variant}
+          color={color}
+          intent={intent}
+          scale={scale}
+          gap={gap}
+        >
           <Flex
             tag="nav"
             tagAttrs={{

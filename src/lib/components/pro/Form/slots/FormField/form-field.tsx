@@ -55,7 +55,9 @@ export const FormField = ({
             <FormFieldController
               formFieldProps={{ name, label, hint, options, required, minLength, maxLength, email }}
               formFieldComponent={allNonSlots?.[0] as ReactElement<any>}
-              customFormLabelComponent={slotsByName['Form.Label']?.[0] as ReactElement<FormLabelProps>}
+              customFormLabelComponent={
+                slotsByName['Form.Label']?.[0] as ReactElement<FormLabelProps>
+              }
               customFormHintComponent={slotsByName['Form.Hint']?.[0] as ReactElement<FormHintProps>}
             />
           </Flex.Item>

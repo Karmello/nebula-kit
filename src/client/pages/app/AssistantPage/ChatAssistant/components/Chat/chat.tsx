@@ -26,7 +26,11 @@ export const Chat = ({ tagRef, chatHistory, handleQuestionClick }: ChatProps) =>
       <Flex flexDirection="column" rowGap={NEB_LENGTH.px_048}>
         {chatHistory.map(({ role, content }, key) =>
           role === 'assistant' ? (
-            <AssistantMessage key={key} content={content} handleQuestionClick={handleQuestionClick} />
+            <AssistantMessage
+              key={key}
+              content={content}
+              handleQuestionClick={handleQuestionClick}
+            />
           ) : (
             <UserMessage key={key} content={content} />
           )

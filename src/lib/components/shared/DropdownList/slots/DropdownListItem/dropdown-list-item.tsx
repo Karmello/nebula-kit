@@ -5,9 +5,21 @@ import { Box } from 'lib/index.core'
 import { useDropdownListContext } from '../../providers'
 import { DropdownListItemProps } from './definitions'
 
-export const DropdownListItem = ({ index, children, ...rest }: DropdownListItemProps & { index: number }) => {
-  const { blockMouse, hoveredIndex, setResizeVisible, setBlockMouse, setHoveredIndex, keepOpen, color, intent } =
-    useDropdownListContext()
+export const DropdownListItem = ({
+  index,
+  children,
+  ...rest
+}: DropdownListItemProps & { index: number }) => {
+  const {
+    blockMouse,
+    hoveredIndex,
+    setResizeVisible,
+    setBlockMouse,
+    setHoveredIndex,
+    keepOpen,
+    color,
+    intent,
+  } = useDropdownListContext()
 
   return (
     <Box

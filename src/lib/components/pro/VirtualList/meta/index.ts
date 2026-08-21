@@ -14,7 +14,8 @@ export const VIRTUAL_LIST_META = {
   VirtualList: {
     overview: {
       bundle: 'pro',
-      title: 'High-performance, fixed-height virtualized list for rendering large datasets efficiently.',
+      title:
+        'High-performance, fixed-height virtualized list for rendering large datasets efficiently.',
       description:
         'VirtualList is a low-level layout primitive for rendering long lists in a predictable and performant way. It limits DOM output to only what is visible while preserving natural scrolling behavior.',
       features: [
@@ -68,7 +69,8 @@ export const VIRTUAL_LIST_META = {
       scrollAlign: {
         options: VIRTUAL_LIST_SCROLL_ALIGN,
         defaultValue: String(DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN),
-        description: 'Defines how the item targeted by the "scrollToIndex" prop is positioned within the scroll area.',
+        description:
+          'Defines how the item targeted by the "scrollToIndex" prop is positioned within the scroll area.',
       },
       scrollToIndex: {
         options: ['number'],

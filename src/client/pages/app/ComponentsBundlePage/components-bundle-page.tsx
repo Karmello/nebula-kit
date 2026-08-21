@@ -12,14 +12,30 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
   const navigateTo = useNavigateTo()
 
   return (
-    <Box paddingTop={NEB_LENGTH.px_016} paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}>
+    <Box
+      paddingTop={NEB_LENGTH.px_016}
+      paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+    >
       <Section
         size="lg"
-        heading={bundle === 'core' ? `Core bundle (${CORE_DATA.length})` : `Pro bundle (${PRO_DATA.length})`}
+        heading={
+          bundle === 'core'
+            ? `Core bundle (${CORE_DATA.length})`
+            : `Pro bundle (${PRO_DATA.length})`
+        }
         iconName="package"
       >
-        <Flex alignItems="center" columnGap={NEB_LENGTH.px_048} flexWrap="wrap" justifyContent="space-between">
-          {bundle === 'core' ? <Text>All components available for free.</Text> : <Text>Comes with the paid plans.</Text>}
+        <Flex
+          alignItems="center"
+          columnGap={NEB_LENGTH.px_048}
+          flexWrap="wrap"
+          justifyContent="space-between"
+        >
+          {bundle === 'core' ? (
+            <Text>All components available for free.</Text>
+          ) : (
+            <Text>Comes with the paid plans.</Text>
+          )}
           <Link href={PageKey.pricing} onClick={() => navigateTo(PageKey.pricing)}>
             <Button scale="sm" variant="ghost" intent="primary" color="blue" iconName="arrow-left">
               Back to Pricing page

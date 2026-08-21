@@ -13,14 +13,15 @@ export const getInitialState = (): State => {
   Object.keys(META)
     .filter(componentName => Object.keys(PLAYGROUND_PROPS_MAP).includes(componentName))
     .forEach(componentName => {
-      const componentPropNames = Object.keys(META[componentName][componentName].props).filter(name =>
-        PLAYGROUND_PROPS_MAP[componentName].includes(name)
+      const componentPropNames = Object.keys(META[componentName][componentName].props).filter(
+        name => PLAYGROUND_PROPS_MAP[componentName].includes(name)
       )
 
       const props: Props = {}
 
       componentPropNames.forEach(propName => {
-        const { options, defaultValue, isResponsive } = META[componentName][componentName].props[propName as never]
+        const { options, defaultValue, isResponsive } =
+          META[componentName][componentName].props[propName as never]
 
         let parsedDefaultValue
 

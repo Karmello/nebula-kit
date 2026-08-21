@@ -12,7 +12,10 @@ export const INPUT_META = {
     overview: {
       bundle: 'core',
       title: 'Form control for entering or editing text.',
-      features: ['supports both controlled and uncontrolled modes', 'supports start and end affixes'],
+      features: [
+        'supports both controlled and uncontrolled modes',
+        'supports start and end affixes',
+      ],
       composedOf: ['Box', 'Segment'],
       exposedTags: ['input'],
     },

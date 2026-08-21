@@ -1,4 +1,8 @@
-import { DEFAULT_FLOATING_PLACEMENT, FloatingProjectProps, FloatingResolved } from '../../definitions'
+import {
+  DEFAULT_FLOATING_PLACEMENT,
+  FloatingProjectProps,
+  FloatingResolved,
+} from '../../definitions'
 import {
   applyViewportPadding,
   expandAxes,
@@ -11,7 +15,9 @@ import {
   Side,
 } from '../../helpers'
 
-export const resolveProjectStrategy = (props: Omit<FloatingProjectProps, 'children' | 'onResolve'>): FloatingResolved => {
+export const resolveProjectStrategy = (
+  props: Omit<FloatingProjectProps, 'children' | 'onResolve'>
+): FloatingResolved => {
   const {
     mode,
     placement = DEFAULT_FLOATING_PLACEMENT,
@@ -50,7 +56,12 @@ export const resolveProjectStrategy = (props: Omit<FloatingProjectProps, 'childr
   const autoSide = resolveAutoSide(mode.split('-')[1] as never, anchor, viewport)
 
   const candidates = allowedSides.map(side => {
-    const inlineSpace = getInlineSpace(side, anchor, viewport, side === 'left' || side === 'right' ? offset : 0)
+    const inlineSpace = getInlineSpace(
+      side,
+      anchor,
+      viewport,
+      side === 'left' || side === 'right' ? offset : 0
+    )
 
     return {
       side,

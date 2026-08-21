@@ -31,7 +31,10 @@ export const GRID_ITEM_EXAMPLES: Example[] = [
             Start
           </Box>
         </Grid.Item>
-        <Grid.Item gridRow={{ base: '2 / 3', md: '1 / 2' }} gridColumn={{ base: '1 / -1', md: '2 / 3' }}>
+        <Grid.Item
+          gridRow={{ base: '2 / 3', md: '1 / 2' }}
+          gridColumn={{ base: '1 / -1', md: '2 / 3' }}
+        >
           <Box drawable variant="outline" intent="primary">
             Middle
           </Box>

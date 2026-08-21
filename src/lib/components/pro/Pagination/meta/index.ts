@@ -36,7 +36,8 @@ export const PAGINATION_META = {
       boundaryCount: {
         options: ['number'],
         defaultValue: String(DEFAULT_PAGINATION_BOUNDARY_COUNT),
-        description: 'Number of page items always shown at the beginning and end of the pagination range.',
+        description:
+          'Number of page items always shown at the beginning and end of the pagination range.',
       },
       color: BUTTON_META.Button.props.color,
       currentPage: {

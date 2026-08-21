@@ -14,8 +14,14 @@ type PropsFromResize = {
   children: ResizeProps['children']
 }
 
-type PropsFromBox<T extends RevealTag = 'div'> = Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef' | 'color' | 'intent'>
+type PropsFromBox<T extends RevealTag = 'div'> = Pick<
+  BoxProps<T>,
+  'tag' | 'tagAttrs' | 'tagRef' | 'color' | 'intent'
+>
 
 type PropsFromButton = Pick<ButtonProps<'button'>, 'scale' | 'disabled'>
 
-export type RevealProps<T extends RevealTag = 'div'> = PropsFromResize & PropsFromBox<T> & PropsFromButton & RevealOwnProps
+export type RevealProps<T extends RevealTag = 'div'> = PropsFromResize &
+  PropsFromBox<T> &
+  PropsFromButton &
+  RevealOwnProps

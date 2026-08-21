@@ -9,7 +9,8 @@ export const Video = () => {
         tagAttrs={{
           src: 'https://www.youtube-nocookie.com/embed/WBTCswhSz6g?list=PLucbUGAh96p7hH87OY-C50iiCA7LAv_Ci',
           title: 'Responsive UI, driven by props',
-          allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+          allow:
+            'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
           allowFullScreen: true,
         }}
         aspectRatio="16 / 9"

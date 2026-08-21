@@ -5,7 +5,13 @@ import { Box, MarkerListItemProps } from 'lib/index.core'
 
 import { useMarkerListContext } from '../MarkerListProvider'
 
-export const MarkerListItem = ({ children, tagAttrs, tagRef, color, intent }: MarkerListItemProps) => {
+export const MarkerListItem = ({
+  children,
+  tagAttrs,
+  tagRef,
+  color,
+  intent,
+}: MarkerListItemProps) => {
   const { color: rootColor, intent: rootIntent } = useMarkerListContext()
 
   return (

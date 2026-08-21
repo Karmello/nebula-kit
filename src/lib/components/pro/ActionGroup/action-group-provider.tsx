@@ -8,7 +8,13 @@ type ContextValue = {
 
 const ActionGroupContext = createContext<ContextValue>({} as ContextValue)
 
-export const ActionGroupProvider = ({ children, itemSlots }: { children: ReactNode; itemSlots: ReactNode[] }) => {
+export const ActionGroupProvider = ({
+  children,
+  itemSlots,
+}: {
+  children: ReactNode
+  itemSlots: ReactNode[]
+}) => {
   const [activeIndex, setActiveIndex] = useState<number>(0)
 
   return (

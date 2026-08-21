@@ -7,11 +7,20 @@ import { HtmlTagProps } from './definitions'
 
 import './html-tag.scss'
 
-export const HtmlTag = <T extends ElementType = 'div'>({ children, tag, tagAttrs, tagRef }: HtmlTagProps<T>) => {
+export const HtmlTag = <T extends ElementType = 'div'>({
+  children,
+  tag,
+  tagAttrs,
+  tagRef,
+}: HtmlTagProps<T>) => {
   const Tag = (tag ?? 'div') as any
 
   return (
-    <Tag {...tagAttrs} ref={tagRef} className={classNames(withPrefix('html-tag'), tagAttrs?.className)}>
+    <Tag
+      {...tagAttrs}
+      ref={tagRef}
+      className={classNames(withPrefix('html-tag'), tagAttrs?.className)}
+    >
       {children}
     </Tag>
   )

@@ -5,11 +5,13 @@ export default () => {
   return (
     <Box maxInlineSize={{ lg: '55rem' }}>
       <Text>
-        The length scale defines the set of consistent values used for spacing and dimensions across the system. It is used in
-        layout-related props such as logical sizes as well as margin, padding and gap props. It replaces arbitrary CSS values with
-        a predictable scale, making layouts easier to reason about and maintain. The scale follows a progressive step pattern,
-        allowing small adjustments at lower values and larger jumps for layout-level spacing. Each length token is also exposed as
-        a CSS custom property, allowing the scale to be referenced directly in custom styles and external content.
+        The length scale defines the set of consistent values used for spacing and dimensions across
+        the system. It is used in layout-related props such as logical sizes as well as margin,
+        padding and gap props. It replaces arbitrary CSS values with a predictable scale, making
+        layouts easier to reason about and maintain. The scale follows a progressive step pattern,
+        allowing small adjustments at lower values and larger jumps for layout-level spacing. Each
+        length token is also exposed as a CSS custom property, allowing the scale to be referenced
+        directly in custom styles and external content.
       </Text>
       <Spacer blockSize={NEB_LENGTH.px_048} />
       <Table paddingBlock={NEB_LENGTH.px_012} paddingInline={NEB_LENGTH.px_016}>

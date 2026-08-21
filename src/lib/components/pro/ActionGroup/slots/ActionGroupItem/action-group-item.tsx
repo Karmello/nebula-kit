@@ -21,7 +21,8 @@ export const ActionGroupItem = <T extends ActionGroupItemTag = 'button'>({
 
   const { itemSlots, activeIndex, setActiveIndex } = useActionGroupContext()
 
-  const { index, color, intent, elevated, ripple, direction, stretch } = internalProps as ActionGroupItemInternalProps
+  const { index, color, intent, elevated, ripple, direction, stretch } =
+    internalProps as ActionGroupItemInternalProps
 
   return (
     <Flex.Item flex={stretch ? '1 0 auto' : undefined}>
@@ -40,7 +41,10 @@ export const ActionGroupItem = <T extends ActionGroupItemTag = 'button'>({
               if (targetIndex === undefined) return
               e.preventDefault()
               setActiveIndex(targetIndex)
-              ;(e.currentTarget.parentElement?.parentElement?.childNodes[targetIndex].childNodes[0] as HTMLElement)?.focus()
+              ;(
+                e.currentTarget.parentElement?.parentElement?.childNodes[targetIndex]
+                  .childNodes[0] as HTMLElement
+              )?.focus()
             },
             onClick,
           } as ComponentPropsWithoutRef<T>

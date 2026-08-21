@@ -11,7 +11,14 @@ import { useAnchoredPosition } from './hooks'
 
 export const DEFAULT_PORTAL_PLACEMENT: PortalProps['placement'] = 'bottom-start'
 
-export const Portal = ({ children, tagRef, tagAttrs, anchorRef, placement = DEFAULT_PORTAL_PLACEMENT, offset }: PortalProps) => {
+export const Portal = ({
+  children,
+  tagRef,
+  tagAttrs,
+  anchorRef,
+  placement = DEFAULT_PORTAL_PLACEMENT,
+  offset,
+}: PortalProps) => {
   const [container, setContainer] = useState<HTMLElement | null>(null)
 
   const ref = useRef<HTMLDivElement | null>(null)

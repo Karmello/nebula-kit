@@ -38,7 +38,11 @@ export const ProfileSettingsPage = () => {
   }, [search])
 
   return (
-    <Box paddingTop={NEB_LENGTH.px_016} paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }} maxInlineSize="75rem">
+    <Box
+      paddingTop={NEB_LENGTH.px_016}
+      paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+      maxInlineSize="75rem"
+    >
       <Section size="lg" heading="Settings" iconName="settings">
         <Spacer blockSize={NEB_LENGTH.px_024} />
         {!getUser.data || getUser.isMakingRequest ? (
@@ -51,9 +55,15 @@ export const ProfileSettingsPage = () => {
             <Spacer blockSize={NEB_LENGTH.px_048} />
             <UpdateEmailSection />
             <Spacer blockSize={NEB_LENGTH.px_048} />
-            <ConnectToDiscordSection userPlan={getUser.data.user.plan} discordUserId={getUser.data.user.discordUserId} />
+            <ConnectToDiscordSection
+              userPlan={getUser.data.user.plan}
+              discordUserId={getUser.data.user.discordUserId}
+            />
             <Spacer blockSize={NEB_LENGTH.px_048} />
-            <ConnectToGithubSection userPlan={getUser.data.user.plan} githubUsername={getUser.data.user.githubUsername} />
+            <ConnectToGithubSection
+              userPlan={getUser.data.user.plan}
+              githubUsername={getUser.data.user.githubUsername}
+            />
             <Spacer blockSize={NEB_LENGTH.px_048} />
             <PaymentCancelSection
               userEmail={getUser.data.user.email}

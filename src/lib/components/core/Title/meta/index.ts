@@ -4,7 +4,12 @@ import { ComponentMeta } from 'client/definitions'
 import { BOX_META } from '../../Box/meta'
 import { FLEX_META } from '../../Flex/meta'
 import { ICON_META } from '../../Icon/meta'
-import { DEFAULT_TITLE_ICON_PLACEMENT, DEFAULT_TITLE_TYPOGRAPHY, TITLE_ICON_PLACEMENTS, TITLE_TYPOGRAPHY } from '../constants'
+import {
+  DEFAULT_TITLE_ICON_PLACEMENT,
+  DEFAULT_TITLE_TYPOGRAPHY,
+  TITLE_ICON_PLACEMENTS,
+  TITLE_TYPOGRAPHY,
+} from '../constants'
 import { TITLE_CHANGELOG } from './changelog'
 import { TITLE_EXAMPLES } from './examples'
 
@@ -50,7 +55,8 @@ export const TITLE_META = {
       typography: {
         options: TITLE_TYPOGRAPHY,
         defaultValue: DEFAULT_TITLE_TYPOGRAPHY,
-        description: 'Typography style used for plain text children and for deriving the icon size and spacing.',
+        description:
+          'Typography style used for plain text children and for deriving the icon size and spacing.',
       },
     },
     examples: TITLE_EXAMPLES,

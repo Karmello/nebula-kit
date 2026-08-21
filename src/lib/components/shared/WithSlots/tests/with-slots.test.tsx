@@ -280,7 +280,11 @@ describe('WithSlots', () => {
             allowMultiple: true,
           },
         ]}
-        childrenToVerify={[<HeaderSlot key="header" />, <FooterSlot key="footer-1" />, <FooterSlot key="footer-2" />]}
+        childrenToVerify={[
+          <HeaderSlot key="header" />,
+          <FooterSlot key="footer-1" />,
+          <FooterSlot key="footer-2" />,
+        ]}
       >
         {({ slotsByName, allValidSlots, allNonSlots }) => {
           expect(slotsByName['Component.Header']).toHaveLength(1)
@@ -350,7 +354,9 @@ describe('WithSlots', () => {
 
     expect(warnSpy).toHaveBeenCalledTimes(1)
 
-    expect(warnSpy.mock.calls[0]?.[0]).toContain('Component expects Component.Header or Component.Footer to be its child')
+    expect(warnSpy.mock.calls[0]?.[0]).toContain(
+      'Component expects Component.Header or Component.Footer to be its child'
+    )
 
     warnSpy.mockRestore()
   })
@@ -430,7 +436,9 @@ describe('WithSlots', () => {
 
     expect(warnSpy).toHaveBeenCalledTimes(1)
 
-    expect(warnSpy.mock.calls[0]?.[0]).toContain('Component expects Component.Header or Component.Footer to be its child')
+    expect(warnSpy.mock.calls[0]?.[0]).toContain(
+      'Component expects Component.Header or Component.Footer to be its child'
+    )
 
     warnSpy.mockRestore()
   })

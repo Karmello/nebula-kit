@@ -4,7 +4,12 @@ import { Navigate, Route, Routes } from 'react-router'
 import { NEB_LENGTH, Spacer } from 'lib/components'
 import { NextPageButton } from 'client/components'
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
-import { ComponentChangelogPage, ComponentExamplesPage, ComponentOverviewPage, ComponentPropsPage } from 'client/pages'
+import {
+  ComponentChangelogPage,
+  ComponentExamplesPage,
+  ComponentOverviewPage,
+  ComponentPropsPage,
+} from 'client/pages'
 
 const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
   switch (sectionKey) {
@@ -21,7 +26,11 @@ const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
   }
 }
 
-export const ComponentsPageRoutes = ({ pageKey }: { pageKey: PageKey.foundations | PageKey.components }) => {
+export const ComponentsPageRoutes = ({
+  pageKey,
+}: {
+  pageKey: PageKey.foundations | PageKey.components
+}) => {
   const ROUTES = useMemo(() => {
     return COMPONENT_CATEGORIES.map(({ key: categoryKey, items }) =>
       items.map(({ key: itemKey, sections }) =>

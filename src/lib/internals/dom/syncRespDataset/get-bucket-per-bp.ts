@@ -6,7 +6,11 @@ import { Breakpoint } from 'lib/types'
 import { Bucket, isBlank, PropValues } from '../definitions'
 import { getDataAttrName } from './get-data-attr-name'
 
-export const getBucketPerBp = (namespace: string, breakpoint: Breakpoint, propValues: PropValues): Bucket => {
+export const getBucketPerBp = (
+  namespace: string,
+  breakpoint: Breakpoint,
+  propValues: PropValues
+): Bucket => {
   const bucket: Bucket = {}
 
   for (const propName in propValues) {

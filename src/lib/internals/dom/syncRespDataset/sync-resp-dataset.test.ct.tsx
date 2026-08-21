@@ -2,7 +2,10 @@ import { expect, test } from '@playwright/experimental-ct-react'
 
 import { Box } from 'lib/components'
 
-test('Box does not write semantic dataset attribute when prop is absent', async ({ mount, page }) => {
+test('Box does not write semantic dataset attribute when prop is absent', async ({
+  mount,
+  page,
+}) => {
   await mount(<Box tagAttrs={{ id: 'box' }}>Test</Box>)
 
   const box = page.locator('#box')

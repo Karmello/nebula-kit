@@ -8,7 +8,13 @@ type PromptToolbarProps = {
   handleCancel: () => void
 }
 
-export const PromptToolbar = ({ loading, disabled, lengthStatus, handleSend, handleCancel }: PromptToolbarProps) => {
+export const PromptToolbar = ({
+  loading,
+  disabled,
+  lengthStatus,
+  handleSend,
+  handleCancel,
+}: PromptToolbarProps) => {
   return (
     <Box
       drawable

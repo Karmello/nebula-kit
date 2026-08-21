@@ -40,7 +40,9 @@ export const MultiSelect = ({
   const currentValue = isControlled ? value : internalValue
 
   const handleChange = (value: string) => {
-    const nextValue = currentValue?.includes(value) ? currentValue.filter(v => v !== value) : [...(currentValue || []), value]
+    const nextValue = currentValue?.includes(value)
+      ? currentValue.filter(v => v !== value)
+      : [...(currentValue || []), value]
 
     if (!isControlled) setInternalValue(nextValue)
     onChange?.(nextValue)
@@ -53,7 +55,9 @@ export const MultiSelect = ({
       slotsConfig={[{ name: 'MultiSelect.Option', required: true, allowMultiple: true }]}
     >
       {({ slotsByName }) => {
-        const currentSlotIndex = slotsByName['MultiSelect.Option'].findIndex(slot => (slot as any).props.value === currentValue)
+        const currentSlotIndex = slotsByName['MultiSelect.Option'].findIndex(
+          slot => (slot as any).props.value === currentValue
+        )
 
         const currentLabel = slotsByName['MultiSelect.Option']
           .map(slot => {
@@ -92,10 +96,18 @@ export const MultiSelect = ({
                 ripple={!dropdownListState?.open}
               >
                 <Title
-                  iconName={dropdownListState?.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'}
+                  iconName={
+                    dropdownListState?.placement?.startsWith('bottom')
+                      ? 'chevron-down'
+                      : 'chevron-up'
+                  }
                   iconPlacement="right"
                 >
-                  <Text fontSize={CONTROL_SCALE_MAP[size].fontSize} lineHeight={CONTROL_SCALE_MAP[size].lineHeight} truncate>
+                  <Text
+                    fontSize={CONTROL_SCALE_MAP[size].fontSize}
+                    lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
+                    truncate
+                  >
                     {currentLabel || 'Select ...'}
                   </Text>
                 </Title>

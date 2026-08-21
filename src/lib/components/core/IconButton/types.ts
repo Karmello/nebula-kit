@@ -10,4 +10,15 @@ export type IconButtonProps<T extends IconButtonTag = 'button'> = {
 } & {
   iconName?: IconProps['name']
   customSvgIcon?: IconProps['children']
-} & Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef' | 'variant' | 'color' | 'intent' | 'disabled' | 'elevated' | 'ripple'>
+} & Pick<
+    BoxProps<T>,
+    | 'tag'
+    | 'tagAttrs'
+    | 'tagRef'
+    | 'variant'
+    | 'color'
+    | 'intent'
+    | 'disabled'
+    | 'elevated'
+    | 'ripple'
+  >

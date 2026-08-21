@@ -7,7 +7,14 @@ type TableCellOwnProps = {
 
 type PropsFromBox = Pick<
   BoxProps<'td'>,
-  'tagAttrs' | 'tagRef' | 'minInlineSize' | 'maxInlineSize' | 'blockSize' | 'textAlign' | 'color' | 'intent'
+  | 'tagAttrs'
+  | 'tagRef'
+  | 'minInlineSize'
+  | 'maxInlineSize'
+  | 'blockSize'
+  | 'textAlign'
+  | 'color'
+  | 'intent'
 > & {
   children: BoxProps<'td'>['children']
 }

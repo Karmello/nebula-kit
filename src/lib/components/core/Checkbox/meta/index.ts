@@ -3,7 +3,12 @@ import { CheckboxProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
-import { CHECKBOX_VARIANTS, DEFAULT_CHECKBOX_INTENT, DEFAULT_CHECKBOX_SIZE, DEFAULT_CHECKBOX_VARIANT } from '../definitions'
+import {
+  CHECKBOX_VARIANTS,
+  DEFAULT_CHECKBOX_INTENT,
+  DEFAULT_CHECKBOX_SIZE,
+  DEFAULT_CHECKBOX_VARIANT,
+} from '../definitions'
 import { CHECKBOX_CHANGELOG } from './changelog'
 import { CHECKBOX_EXAMPLES } from './examples'
 

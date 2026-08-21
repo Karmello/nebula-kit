@@ -9,7 +9,8 @@ export const MARKUP_META = {
   Markup: {
     overview: {
       bundle: 'pro',
-      title: 'Lightweight inline markup interpreter for rendering formatted textual content through Text components.',
+      title:
+        'Lightweight inline markup interpreter for rendering formatted textual content through Text components.',
       description:
         'Markup is a lightweight inline markup interpreter that enhances existing textual content with inline formatting such as bold, italic and inline code. It walks through nested textual structures and transforms supported formatting markers into semantic inline elements while preserving the original typography, sizing and layout behavior defined by Text.',
       features: [
@@ -32,7 +33,8 @@ export const MARKUP_META = {
       children: {
         ...BOX_META.Box.props.children,
         isRequired: true,
-        description: 'Text content rendered and processed for supported inline markup. Direct Text children are recommended.',
+        description:
+          'Text content rendered and processed for supported inline markup. Direct Text children are recommended.',
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,

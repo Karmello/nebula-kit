@@ -20,7 +20,13 @@ export const IMAGE_EXAMPLES: Example[] = [
     description: 'Rounded image.',
     jsx: (
       <Box textAlign="center">
-        <Image src="/imgs/town.webp" display="inline-block" inlineSize="300px" borderRadius="50%" overflow="hidden" />
+        <Image
+          src="/imgs/town.webp"
+          display="inline-block"
+          inlineSize="300px"
+          borderRadius="50%"
+          overflow="hidden"
+        />
       </Box>
     ),
   },

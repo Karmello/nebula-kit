@@ -3,7 +3,13 @@ import { type TabsProps } from './definitions'
 
 export type PropsFromTabsKey = (typeof PROPS_FROM_TABS)[number]
 
-export const PROPS_FROM_TABS = ['color', 'direction', 'intent', 'size', 'stretch'] as const satisfies readonly (keyof TabsProps)[]
+export const PROPS_FROM_TABS = [
+  'color',
+  'direction',
+  'intent',
+  'size',
+  'stretch',
+] as const satisfies readonly (keyof TabsProps)[]
 
 export const TABS_PRESETS = [
   {

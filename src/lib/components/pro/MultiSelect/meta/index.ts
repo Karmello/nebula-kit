@@ -37,7 +37,8 @@ export const MULTI_SELECT_META = {
       },
       defaultValue: {
         options: ['string[]'],
-        description: 'Initial set of selected values when the component is used in uncontrolled mode.',
+        description:
+          'Initial set of selected values when the component is used in uncontrolled mode.',
       },
       disabled: BOX_META.Box.props.disabled,
       dropdownPlacement: {
@@ -73,7 +74,8 @@ export const MULTI_SELECT_META = {
       tagRef: BOX_META.Box.props.tagRef,
       value: {
         options: ['string[]'],
-        description: 'Current set of selected values when the component is used in controlled mode.',
+        description:
+          'Current set of selected values when the component is used in controlled mode.',
       },
       visibleItemsCount: {
         options: ['number'],

@@ -42,7 +42,11 @@ export const SplitViewMain = ({
             minInlineSize="0px"
             overflow="clip"
           >
-            <Flex alignItems="center" flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'} gap="16px">
+            <Flex
+              alignItems="center"
+              flexDirection={sidePosition === 'left' ? 'row' : 'row-reverse'}
+              gap="16px"
+            >
               <Flex.Item>
                 <IconButton
                   tagAttrs={{ 'aria-expanded': sideOpen }}

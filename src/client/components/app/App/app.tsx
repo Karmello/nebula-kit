@@ -2,7 +2,20 @@ import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 import { getHtmlMetaData } from 'src/server/helpers'
 
-import { AppFrame, Box, Button, Divider, Flex, Link, Loader, MarkerList, NEB_LENGTH, Spacer, Text, Toolbar } from 'lib/components'
+import {
+  AppFrame,
+  Box,
+  Button,
+  Divider,
+  Flex,
+  Link,
+  Loader,
+  MarkerList,
+  NEB_LENGTH,
+  Spacer,
+  Text,
+  Toolbar,
+} from 'lib/components'
 import { useGetUser, useLogoutUser } from 'client/api'
 import { PageKey, RELEASE_VERSIONS } from 'client/definitions'
 import { getCopyrightInfo } from 'client/helpers'
@@ -80,7 +93,10 @@ export const App = () => {
         </Toolbar>
         <AppJump />
       </AppFrame.Header>
-      <AppFrame.Main paddingTop={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }} paddingBottom={NEB_LENGTH.px_096}>
+      <AppFrame.Main
+        paddingTop={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+        paddingBottom={NEB_LENGTH.px_096}
+      >
         <RootPage />
       </AppFrame.Main>
       <AppFrame.Footer footerStackBreakpoint="lg">
@@ -88,8 +104,8 @@ export const App = () => {
           <Text bold>Current release</Text>
           <Divider marginBottom={NEB_LENGTH.px_016} intent="muted" />
           <Text typography="small" italic color="gray" intent="primary">
-            NebulaKit is actively developed and released in incremental updates. Each release introduces improvements and
-            refinements across the system.
+            NebulaKit is actively developed and released in incremental updates. Each release
+            introduces improvements and refinements across the system.
           </Text>
           <Spacer blockSize={NEB_LENGTH.px_016} />
           <Link
@@ -104,7 +120,13 @@ export const App = () => {
           </Link>
           <Spacer blockSize={NEB_LENGTH.px_016} />
           <Link href="https://www.npmjs.com/package/@nebula-kit/core" target="_blank">
-            <Button color="red" intent="primary" scale="xs" iconName="external-link" iconPlacement="right">
+            <Button
+              color="red"
+              intent="primary"
+              scale="xs"
+              iconName="external-link"
+              iconPlacement="right"
+            >
               @nebula-kit/core
             </Button>
           </Link>
@@ -113,18 +135,30 @@ export const App = () => {
           <Text bold>Community & Support</Text>
           <Divider marginBottom={NEB_LENGTH.px_016} intent="muted" />
           <Text typography="small" italic color="gray" intent="primary">
-            This is a closed-source project. There is no public GitHub repository. You can still follow updates, ask questions and
-            join the community through the channels below.
+            This is a closed-source project. There is no public GitHub repository. You can still
+            follow updates, ask questions and join the community through the channels below.
           </Text>
           <Spacer blockSize={NEB_LENGTH.px_016} />
           <Flex flexDirection="row" flexWrap="wrap" gap={NEB_LENGTH.px_004}>
             <Link href="https://x.com/captainnebula" target="_blank">
-              <Button color="gray" intent="inverse" scale="xs" iconName="external-link" iconPlacement="right">
+              <Button
+                color="gray"
+                intent="inverse"
+                scale="xs"
+                iconName="external-link"
+                iconPlacement="right"
+              >
                 X profile
               </Button>
             </Link>
             <Link href="https://discord.gg/BgezCRDN8H" target="_blank">
-              <Button color="blue" intent="primary" scale="xs" iconName="external-link" iconPlacement="right">
+              <Button
+                color="blue"
+                intent="primary"
+                scale="xs"
+                iconName="external-link"
+                iconPlacement="right"
+              >
                 Discord server
               </Button>
             </Link>
@@ -134,18 +168,30 @@ export const App = () => {
           <Text bold>About the author</Text>
           <Divider marginBottom={NEB_LENGTH.px_016} intent="muted" />
           <Text typography="small" italic color="gray" intent="primary">
-            The product is designed and maintained by a solo software engineer focused on long-term UI architecture and system
-            consistency.
+            The product is designed and maintained by a solo software engineer focused on long-term
+            UI architecture and system consistency.
           </Text>
           <Spacer blockSize={NEB_LENGTH.px_016} />
           <Flex flexDirection="row" flexWrap="wrap" gap={NEB_LENGTH.px_004}>
             <Link href="https://www.linkedin.com/in/nogakamil" target="_blank">
-              <Button color="blue" intent="primary" scale="xs" iconName="external-link" iconPlacement="right">
+              <Button
+                color="blue"
+                intent="primary"
+                scale="xs"
+                iconName="external-link"
+                iconPlacement="right"
+              >
                 LinkedIn
               </Button>
             </Link>
             <Link href="https://github.com/Karmello" target="_blank">
-              <Button color="gray" intent="inverse" scale="xs" iconName="external-link" iconPlacement="right">
+              <Button
+                color="gray"
+                intent="inverse"
+                scale="xs"
+                iconName="external-link"
+                iconPlacement="right"
+              >
                 GitHub
               </Button>
             </Link>

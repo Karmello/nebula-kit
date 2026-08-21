@@ -25,12 +25,19 @@ const ToolbarComponent = ({ children, tagAttrs, tagRef }: ToolbarProps) => {
     []
   )
 
-  const finalChildren = typeof children === 'function' ? children({ setMainOpen: setMainOpenAsync, mainOpen }) : children
+  const finalChildren =
+    typeof children === 'function'
+      ? children({ setMainOpen: setMainOpenAsync, mainOpen })
+      : children
 
   return (
     <WithSlots<'Toolbar.Start' | 'Toolbar.Main' | 'Toolbar.End'>
       componentName="Toolbar"
-      slotsConfig={[{ name: 'Toolbar.Start' }, { name: 'Toolbar.Main', required: true }, { name: 'Toolbar.End' }]}
+      slotsConfig={[
+        { name: 'Toolbar.Start' },
+        { name: 'Toolbar.Main', required: true },
+        { name: 'Toolbar.End' },
+      ]}
       childrenToVerify={finalChildren}
     >
       {({ slotsByName }) => (
@@ -54,7 +61,12 @@ const ToolbarComponent = ({ children, tagAttrs, tagRef }: ToolbarProps) => {
   )
 }
 
-export const Toolbar = ({ children, tagAttrs, tagRef, switchAt = DEFAULT_SWITCH_BREAKPOINT }: ToolbarProps) => {
+export const Toolbar = ({
+  children,
+  tagAttrs,
+  tagRef,
+  switchAt = DEFAULT_SWITCH_BREAKPOINT,
+}: ToolbarProps) => {
   return (
     <ToolbarProvider switchAt={switchAt}>
       <ToolbarComponent tagAttrs={tagAttrs} tagRef={tagRef} switchAt={switchAt}>

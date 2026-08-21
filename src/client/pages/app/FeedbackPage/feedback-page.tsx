@@ -6,7 +6,11 @@ export const FeedbackPage = () => {
   const sendFeedback = useSendFeedback()
 
   return (
-    <Box paddingTop={NEB_LENGTH.px_016} paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }} maxInlineSize="75rem">
+    <Box
+      paddingTop={NEB_LENGTH.px_016}
+      paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+      maxInlineSize="75rem"
+    >
       <Section size="lg" heading="Feedback" iconName="mail">
         <Text>Help shape the future of NebulaKit. All feedback submitted here is anonymous.</Text>
         <Spacer blockSize={NEB_LENGTH.px_048} />

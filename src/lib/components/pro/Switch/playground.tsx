@@ -2,7 +2,12 @@ import { type SwitchProps } from './definitions'
 
 export type PropsFromSwitchKey = (typeof PROPS_FROM_SWITCH)[number]
 
-export const PROPS_FROM_SWITCH = ['color', 'disabled', 'intent', 'scale'] as const satisfies readonly (keyof SwitchProps)[]
+export const PROPS_FROM_SWITCH = [
+  'color',
+  'disabled',
+  'intent',
+  'scale',
+] as const satisfies readonly (keyof SwitchProps)[]
 
 export const SWITCH_PRESETS = [
   {

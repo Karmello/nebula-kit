@@ -40,7 +40,8 @@ export const SPLIT_VIEW_EXAMPLES: Example[] = [
     sandBoxWithNoPadding: true,
   },
   {
-    description: 'Using render function to access SplitView context and control its open state in overlay mode.',
+    description:
+      'Using render function to access SplitView context and control its open state in overlay mode.',
     code: `
 <SplitView>
   {({ setSideOpen, mode }) => (

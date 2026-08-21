@@ -5,9 +5,13 @@ import { useBrandContext, useThemeContext } from 'lib/components/shared'
 import { useCurrentTheme } from 'lib/hooks'
 import { RespValue } from 'lib/types'
 
-export const flipTheme = (theme: NebkitProviderTheme): NebkitProviderTheme => (theme === 'dark' ? 'light' : 'dark')
+export const flipTheme = (theme: NebkitProviderTheme): NebkitProviderTheme =>
+  theme === 'dark' ? 'light' : 'dark'
 
-export const resolveThemeValue = (theme: BoxTheme, globalTheme: NebkitProviderTheme): NebkitProviderTheme => {
+export const resolveThemeValue = (
+  theme: BoxTheme,
+  globalTheme: NebkitProviderTheme
+): NebkitProviderTheme => {
   if (theme === 'global') {
     return globalTheme
   }
@@ -35,7 +39,10 @@ export const resolveTheme = (
   }
 
   return Object.fromEntries(
-    Object.entries(resolvedTheme).map(([breakpoint, value]) => [breakpoint, resolveThemeValue(value, globalTheme)])
+    Object.entries(resolvedTheme).map(([breakpoint, value]) => [
+      breakpoint,
+      resolveThemeValue(value, globalTheme),
+    ])
   ) as RespValue<NebkitProviderTheme>
 }
 

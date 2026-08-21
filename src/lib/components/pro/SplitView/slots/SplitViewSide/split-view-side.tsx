@@ -75,7 +75,11 @@ export const SplitViewSide = ({
         overflowY={sideOpen ? 'auto' : 'hidden'}
         overflowX="hidden"
       >
-        <FocusTrap tagRef={finalRef} active={mode == 'overlay' && sideOpen} onFocusEscape={() => setSideOpen(false)}>
+        <FocusTrap
+          tagRef={finalRef}
+          active={mode == 'overlay' && sideOpen}
+          onFocusEscape={() => setSideOpen(false)}
+        >
           <Resize property="inlineSize" visible={sideOpen} easing="cubic-bezier(0.4, 0, 0.2, 1)">
             <Box inlineSize={inlineSize} maxInlineSize="100dvw" paddingRight="2px">
               <Box>

@@ -5,7 +5,10 @@ export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Section size="sm" heading="Only drawable Boxes participate in visual styling">
-        <Text>Box exposes a drawable prop that controls whether it participates in rendering visual styles.</Text>
+        <Text>
+          Box exposes a drawable prop that controls whether it participates in rendering visual
+          styles.
+        </Text>
         <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>By default, a Box is not drawable:</Text>
         <Spacer blockSize={NEB_LENGTH.px_008} />
@@ -34,7 +37,9 @@ export default () => {
             <Text>the Box can render a surface</Text>
           </MarkerList.Item>
           <MarkerList.Item>
-            <Text>styling props like theme, brand, color, variant, intent and surface become meaningful</Text>
+            <Text>
+              styling props like theme, brand, color, variant, intent and surface become meaningful
+            </Text>
           </MarkerList.Item>
         </MarkerList>
         <Spacer blockSize={NEB_LENGTH.px_008} />
@@ -42,7 +47,9 @@ export default () => {
       </Section>
       <Spacer />
       <Section size="sm" heading="Minimum required to draw a surface">
-        <Text>Enabling drawable alone is not enough. To render a visible surface, the Box also needs:</Text>
+        <Text>
+          Enabling drawable alone is not enough. To render a visible surface, the Box also needs:
+        </Text>
         <Spacer blockSize={NEB_LENGTH.px_008} />
         <MarkerList>
           <MarkerList.Item>
@@ -54,7 +61,10 @@ export default () => {
         </MarkerList>
         <CodeSnippet lang="tsx" code={'<Box drawable variant="solid" intent="neutral" />'} />
         <Spacer />
-        <Text>Both variant and intent are required. Providing only one does not produce a complete surface.</Text>
+        <Text>
+          Both variant and intent are required. Providing only one does not produce a complete
+          surface.
+        </Text>
         <Spacer />
       </Section>
     </Box>

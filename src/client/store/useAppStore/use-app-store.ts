@@ -47,7 +47,8 @@ export const useAppStore = create<AppStore>()(
         saturation: DEFAULT_NEBKIT_PROVIDER_SATURATION,
         setSaturation: (saturation: NebkitProviderProps['saturation']) => set({ saturation }),
         borderRadiusSize: DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE,
-        setBorderRadiusSize: (borderRadiusSize: NebkitProviderProps['borderRadiusSize']) => set({ borderRadiusSize }),
+        setBorderRadiusSize: (borderRadiusSize: NebkitProviderProps['borderRadiusSize']) =>
+          set({ borderRadiusSize }),
         rippleMode: DEFAULT_NEBKIT_PROVIDER_RIPPLE_MODE,
         setRippleMode: (rippleMode: NebkitProviderProps['rippleMode']) => set({ rippleMode }),
         user: null,
@@ -59,7 +60,8 @@ export const useAppStore = create<AppStore>()(
         showAppSettings: false,
         setShowAppSettings: (showAppSettings: boolean) => set({ showAppSettings }),
         flipGlobalThemeOnExamples: true,
-        setFlipGlobalThemeOnExamples: flipGlobalThemeOnExamples => set({ flipGlobalThemeOnExamples }),
+        setFlipGlobalThemeOnExamples: flipGlobalThemeOnExamples =>
+          set({ flipGlobalThemeOnExamples }),
       }) as AppStore,
     {
       name: `${LIB_PREFIX}.app`,

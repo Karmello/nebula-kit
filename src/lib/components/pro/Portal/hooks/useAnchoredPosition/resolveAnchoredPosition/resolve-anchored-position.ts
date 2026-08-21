@@ -6,7 +6,11 @@ export type ResolveAnchoredPositionProps = {
   offset?: number
 }
 
-export const resolveAnchoredPosition = ({ anchor, placement, offset }: ResolveAnchoredPositionProps): AnchoredPosition => {
+export const resolveAnchoredPosition = ({
+  anchor,
+  placement,
+  offset,
+}: ResolveAnchoredPositionProps): AnchoredPosition => {
   const anchorRect = anchor.getBoundingClientRect()
 
   let top = anchorRect.top + window.scrollY

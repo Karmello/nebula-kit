@@ -25,8 +25,8 @@ export default () => {
         <Text tag="span" bold space="both">
           RespValue
         </Text>
-        and marked as responsive in the props table can accept either a single value or an object of breakpoint-specific values,
-        like in the above example where
+        and marked as responsive in the props table can accept either a single value or an object of
+        breakpoint-specific values, like in the above example where
         <Text tag="span" bold space="both">
           padding
         </Text>
@@ -51,14 +51,19 @@ export default () => {
         </MarkerList.Item>
       </MarkerList>
       <Spacer blockSize={NEB_LENGTH.px_016} />
-      <CodeSnippet lang="tsx" code={`<Box padding={{ base: "10px", md: "50px" }} paddingBottom="25px" />`} />
+      <CodeSnippet
+        lang="tsx"
+        code={`<Box padding={{ base: "10px", md: "50px" }} paddingBottom="25px" />`}
+      />
       <Spacer blockSize={NEB_LENGTH.px_016} />
       <Text>
-        When combining responsive and non-responsive props, the more specific one wins. In the above example,
+        When combining responsive and non-responsive props, the more specific one wins. In the above
+        example,
         <Text tag="span" bold space="both">
           paddingBottom
         </Text>
-        isn't a breakpoint object, so it applies to all breakpoints by default. Because it's more specific than
+        isn't a breakpoint object, so it applies to all breakpoints by default. Because it's more
+        specific than
         <Text tag="span" bold space="start">
           padding
         </Text>
@@ -67,7 +72,9 @@ export default () => {
       <Spacer blockSize={NEB_LENGTH.px_016} />
       <CodeSnippet lang="tsx" code={`<Box padding={{ md: "50px" }} />`} />
       <Spacer blockSize={NEB_LENGTH.px_016} />
-      <Text>If a value is defined only at a later breakpoint, it does not affect earlier ones. Result:</Text>
+      <Text>
+        If a value is defined only at a later breakpoint, it does not affect earlier ones. Result:
+      </Text>
       <MarkerList>
         <MarkerList.Item>
           <Text>base, sm - no padding applied</Text>
@@ -80,9 +87,10 @@ export default () => {
       <CodeSnippet lang="tsx" code={`<Box padding={{ base: "10px", lg: "0px" }} />`} />
       <Spacer blockSize={NEB_LENGTH.px_016} />
       <Text>
-        Responsive values can override forward, but they never cancel earlier values. If you need a different value at a later
-        breakpoint, provide it explicitly. This model keeps responsive behavior predictable, avoids hidden defaults and ensures
-        styles never change implicitly when breakpoints shift.
+        Responsive values can override forward, but they never cancel earlier values. If you need a
+        different value at a later breakpoint, provide it explicitly. This model keeps responsive
+        behavior predictable, avoids hidden defaults and ensures styles never change implicitly when
+        breakpoints shift.
       </Text>
     </Box>
   )

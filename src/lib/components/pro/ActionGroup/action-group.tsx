@@ -4,7 +4,11 @@ import { WithSlots } from 'lib/components/shared'
 import { Box, Flex } from 'lib/index.core'
 
 import { ActionGroupProvider, useActionGroupContext } from './action-group-provider'
-import { DEFAULT_ACTION_GROUP_DIRECTION, DEFAULT_ACTION_GROUP_INTENT, DEFAULT_ACTION_GROUP_RIPPLE } from './constants'
+import {
+  DEFAULT_ACTION_GROUP_DIRECTION,
+  DEFAULT_ACTION_GROUP_INTENT,
+  DEFAULT_ACTION_GROUP_RIPPLE,
+} from './constants'
 import { ActionGroupItemInternalProps } from './slots'
 import { ActionGroupProps } from './types'
 
@@ -70,7 +74,12 @@ const ActionGroupImpl = ({
       paddingBottom={attach === 'bottom' || attach === 'block' ? gap : undefined}
       paddingLeft={attach === 'left' || attach === 'inline' ? gap : undefined}
     >
-      <Flex flexDirection={direction} alignItems="stretch" display={stretch ? 'flex' : 'inline-flex'} gap={gap}>
+      <Flex
+        flexDirection={direction}
+        alignItems="stretch"
+        display={stretch ? 'flex' : 'inline-flex'}
+        gap={gap}
+      >
         {itemSlots.map((slot, index) =>
           cloneElement(
             slot as any,

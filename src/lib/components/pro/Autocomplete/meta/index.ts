@@ -58,7 +58,8 @@ export const AUTOCOMPLETE_META = {
       disableFiltering: {
         options: ['boolean'],
         defaultValue: String(DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING),
-        description: 'Disables internal label-based filtering. Use when options are filtered externally.',
+        description:
+          'Disables internal label-based filtering. Use when options are filtered externally.',
       },
       disabled: BOX_META.Box.props.disabled,
       dropdownPlacement: {
@@ -90,7 +91,8 @@ export const AUTOCOMPLETE_META = {
       },
       placeholder: {
         options: ['string'],
-        description: 'Placeholder text displayed in the input when no value is selected and the input is empty.',
+        description:
+          'Placeholder text displayed in the input when no value is selected and the input is empty.',
       },
       scrollAlign: {
         options: DROPDOWN_LIST_SCROLL_ALIGN,

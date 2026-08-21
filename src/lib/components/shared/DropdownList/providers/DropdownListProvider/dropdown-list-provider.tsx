@@ -74,7 +74,10 @@ export const DropdownListProvider = ({
   const [floatingResolved, setFloatingResolved] = useState<FloatingResolved | undefined>(undefined)
 
   useEffect(() => {
-    onStateChange?.({ open: internalOpen, placement: floatingResolved?.placement as DropdownListPlacement })
+    onStateChange?.({
+      open: internalOpen,
+      placement: floatingResolved?.placement as DropdownListPlacement,
+    })
   }, [internalOpen, floatingResolved?.placement])
 
   useEffect(() => {

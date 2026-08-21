@@ -11,8 +11,8 @@ export default () => {
       <Text>NebulaKit is provided under a proprietary license.</Text>
       <Spacer blockSize={NEB_LENGTH.px_008} />
       <Text>
-        You are granted a non-exclusive, non-transferable license to use NebulaKit in personal and commercial projects, subject to
-        the terms described below.
+        You are granted a non-exclusive, non-transferable license to use NebulaKit in personal and
+        commercial projects, subject to the terms described below.
       </Text>
       <Spacer blockSize={NEB_LENGTH.px_024} />
       <Section heading="Permitted use" size="sm">
@@ -20,10 +20,14 @@ export default () => {
         <Spacer blockSize={NEB_LENGTH.px_008} />
         <MarkerList>
           <MarkerList.Item>
-            <Text>use NebulaKit to build, develop and deploy personal or commercial applications</Text>
+            <Text>
+              use NebulaKit to build, develop and deploy personal or commercial applications
+            </Text>
           </MarkerList.Item>
           <MarkerList.Item>
-            <Text>distribute applications that include NebulaKit as part of their bundled output</Text>
+            <Text>
+              distribute applications that include NebulaKit as part of their bundled output
+            </Text>
           </MarkerList.Item>
           <MarkerList.Item>
             <Text>use NebulaKit internally within your organization or team</Text>
@@ -68,8 +72,8 @@ export default () => {
                 Pro
               </Text>
               <Text tag="span" space="end">
-                - includes additional components and features and requires an active subscription and a valid license key, pricing
-                details are available on
+                - includes additional components and features and requires an active subscription
+                and a valid license key, pricing details are available on
               </Text>
               <Link
                 href={PageKey.pricing}
@@ -86,28 +90,29 @@ export default () => {
         </MarkerList>
         <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>
-          Access to Pro features is granted only while a valid license key is active. If the license key is revoked access to Pro
-          components ends immediately.
+          Access to Pro features is granted only while a valid license key is active. If the license
+          key is revoked access to Pro components ends immediately.
         </Text>
       </Section>
       <Spacer blockSize={NEB_LENGTH.px_024} />
       <Section heading="Ownership" size="sm">
         <Text>
-          All rights, title and interest in NebulaKit, including its source code, documentation and related assets, remain the
-          exclusive property of the author.
+          All rights, title and interest in NebulaKit, including its source code, documentation and
+          related assets, remain the exclusive property of the author.
         </Text>
       </Section>
       <Spacer blockSize={NEB_LENGTH.px_024} />
       <Section heading="No warranty" size="sm">
         <Text>
-          NebulaKit is provided "as is", without warranty of any kind, express or implied. You assume all risk associated with its
-          use.
+          NebulaKit is provided "as is", without warranty of any kind, express or implied. You
+          assume all risk associated with its use.
         </Text>
       </Section>
       <Spacer blockSize={NEB_LENGTH.px_024} />
       <Section heading="Changes" size="sm">
         <Text>
-          License terms may be updated over time. Continued use of NebulaKit constitutes acceptance of the current license terms.
+          License terms may be updated over time. Continued use of NebulaKit constitutes acceptance
+          of the current license terms.
         </Text>
       </Section>
       <Spacer blockSize={NEB_LENGTH.px_024} />

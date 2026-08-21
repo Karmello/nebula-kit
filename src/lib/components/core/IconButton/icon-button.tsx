@@ -45,7 +45,9 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
         {
           ...tagAttrs,
           className: classNames(withPrefix('icon-button'), tagAttrs?.className),
-          ...(tag === 'button' ? { type: (tagAttrs as ComponentProps<'button'> | undefined)?.type || 'button' } : {}),
+          ...(tag === 'button'
+            ? { type: (tagAttrs as ComponentProps<'button'> | undefined)?.type || 'button' }
+            : {}),
           onClick: onClick || tagAttrs?.onClick,
           'aria-disabled': disabled || undefined,
         } as PropsWithoutRef<ComponentProps<T>>
@@ -67,7 +69,9 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
         <Icon name={iconName} size={CONTROL_SCALE_MAP[scale || 'sm'].fontSize}>
           {customSvgIcon}
         </Icon>
-        {loading && !disabled ? <Loader centered size={CONTROL_SCALE_MAP[scale || 'sm'].fontSize} /> : null}
+        {loading && !disabled ? (
+          <Loader centered size={CONTROL_SCALE_MAP[scale || 'sm'].fontSize} />
+        ) : null}
       </Flex>
     </Box>
   )

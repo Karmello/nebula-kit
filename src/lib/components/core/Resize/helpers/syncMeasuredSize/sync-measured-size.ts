@@ -10,7 +10,13 @@ export type SyncMeasuredSizeProps = {
   sizes: MeasuredSizes
 }
 
-export const syncMeasuredSize = ({ container, content, property, visible, sizes }: SyncMeasuredSizeProps) => {
+export const syncMeasuredSize = ({
+  container,
+  content,
+  property,
+  visible,
+  sizes,
+}: SyncMeasuredSizeProps) => {
   sizes.inlineSize = `${content.scrollWidth}px`
   sizes.blockSize = `${content.scrollHeight}px`
 

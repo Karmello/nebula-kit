@@ -1,7 +1,19 @@
 import { useLayoutEffect } from 'react'
 import { sentenceCase } from 'change-case'
 
-import { Box, Button, Flex, Link, Loader, NEB_LENGTH, Section, Spacer, Table, Text, Title } from 'lib/components'
+import {
+  Box,
+  Button,
+  Flex,
+  Link,
+  Loader,
+  NEB_LENGTH,
+  Section,
+  Spacer,
+  Table,
+  Text,
+  Title,
+} from 'lib/components'
 import { useGetUser } from 'client/api'
 import { CopyButton } from 'client/components'
 import { PageKey } from 'client/definitions'
@@ -32,7 +44,11 @@ export default () => {
 
   const discordStatusText = hasPaidPlan ? (isDiscordConnected ? 'Connected' : 'Not connected') : '-'
 
-  const githubStatusText = hasPaidPlan ? (isGithubConnected ? `Connected as ${userData?.githubUsername}` : 'Not connected') : '-'
+  const githubStatusText = hasPaidPlan
+    ? isGithubConnected
+      ? `Connected as ${userData?.githubUsername}`
+      : 'Not connected'
+    : '-'
 
   return (
     <Section heading="Details" size="sm" intent="primary" color="blue">
@@ -40,7 +56,11 @@ export default () => {
 
       {!getUser.isMakingRequest ? (
         <Table layout="fixed" intent="neutral">
-          <Table.Body intent="muted" paddingBlock={NEB_LENGTH.px_012} paddingInline={NEB_LENGTH.px_012}>
+          <Table.Body
+            intent="muted"
+            paddingBlock={NEB_LENGTH.px_012}
+            paddingInline={NEB_LENGTH.px_012}
+          >
             <Table.Row>
               <Table.Cell>
                 <Text lineHeight={1.2}>Email</Text>
@@ -57,7 +77,9 @@ export default () => {
               </Table.Cell>
 
               <Table.Cell colSpan={2}>
-                <Text wordBreak="break-all">{userData ? new Date(userData.createdAt).toDateString() : ''}</Text>
+                <Text wordBreak="break-all">
+                  {userData ? new Date(userData.createdAt).toDateString() : ''}
+                </Text>
               </Table.Cell>
             </Table.Row>
 
@@ -67,7 +89,12 @@ export default () => {
               </Table.Cell>
 
               <Table.Cell colSpan={2}>
-                <Flex alignItems="center" flexWrap="wrap" rowGap={NEB_LENGTH.px_008} columnGap={NEB_LENGTH.px_016}>
+                <Flex
+                  alignItems="center"
+                  flexWrap="wrap"
+                  rowGap={NEB_LENGTH.px_008}
+                  columnGap={NEB_LENGTH.px_016}
+                >
                   <Text bold>{userData ? sentenceCase(userData.plan) : ''}</Text>
 
                   {!getUser.isMakingRequest ? (
@@ -138,10 +165,17 @@ export default () => {
 
               <Table.Cell colSpan={2}>
                 {userData ? (
-                  <Flex alignItems="center" flexWrap="wrap" rowGap={NEB_LENGTH.px_008} columnGap={NEB_LENGTH.px_016}>
+                  <Flex
+                    alignItems="center"
+                    flexWrap="wrap"
+                    rowGap={NEB_LENGTH.px_008}
+                    columnGap={NEB_LENGTH.px_016}
+                  >
                     <Flex.Item alignSelf="auto">
                       <Title
-                        iconName={hasPaidPlan ? (isGithubConnected ? 'check' : undefined) : undefined}
+                        iconName={
+                          hasPaidPlan ? (isGithubConnected ? 'check' : undefined) : undefined
+                        }
                         iconPlacement="right"
                         color={githubStatusColor}
                         intent={hasPaidPlan ? 'primary' : undefined}
@@ -171,7 +205,13 @@ export default () => {
           </Table.Body>
         </Table>
       ) : (
-        <Box position="relative" blockSize={NEB_LENGTH.px_064} drawable variant="solid" intent="muted">
+        <Box
+          position="relative"
+          blockSize={NEB_LENGTH.px_064}
+          drawable
+          variant="solid"
+          intent="muted"
+        >
           <Loader centered active color="blue" size={NEB_LENGTH.px_024} />
         </Box>
       )}

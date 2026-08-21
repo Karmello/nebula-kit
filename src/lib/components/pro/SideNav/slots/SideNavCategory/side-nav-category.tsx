@@ -76,7 +76,9 @@ export const SideNavCategory = ({
                       setExpandedCategories(state => ({ ...state, [id]: !state[id] }))
                     } else {
                       setExpandedCategories(state =>
-                        Object.fromEntries(Object.keys(state).map(_id => [_id, _id === id ? !state[id] : false]))
+                        Object.fromEntries(
+                          Object.keys(state).map(_id => [_id, _id === id ? !state[id] : false])
+                        )
                       )
                     }
                   },

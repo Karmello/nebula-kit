@@ -1,4 +1,12 @@
-import { cloneElement, ReactNode, RefObject, useCallback, useLayoutEffect, useRef, useState } from 'react'
+import {
+  cloneElement,
+  ReactNode,
+  RefObject,
+  useCallback,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react'
 
 import { Box, Divider, Resize } from 'lib/index.core'
 import { Portal, VirtualList } from 'lib/index.pro'
@@ -45,7 +53,9 @@ export const DropdownListMenu = ({
     ? Math.floor(floatingResolved.blockSize / finalItemBlockSize)
     : correctedVisibleItemsCount
 
-  const finalAnimationDuration = !disableListAnimation ? Math.min(400, Math.max(200, finalVisibleItemsCount * 40)) : 0
+  const finalAnimationDuration = !disableListAnimation
+    ? Math.min(400, Math.max(200, finalVisibleItemsCount * 40))
+    : 0
 
   useLayoutEffect(() => {
     const wasOpen = prevOpenRef.current
@@ -74,7 +84,10 @@ export const DropdownListMenu = ({
 
   const handleResolve = useCallback(
     (resolved: FloatingResolved) => {
-      if (resolved.placement !== floatingResolved?.placement || resolved.blockSize !== floatingResolved?.blockSize) {
+      if (
+        resolved.placement !== floatingResolved?.placement ||
+        resolved.blockSize !== floatingResolved?.blockSize
+      ) {
         setFloatingResolved(resolved)
       }
     },
@@ -95,7 +108,11 @@ export const DropdownListMenu = ({
   }
 
   return (
-    <Portal tagRef={portalRef} anchorRef={triggerRef} placement={floatingResolved?.placement || placement}>
+    <Portal
+      tagRef={portalRef}
+      anchorRef={triggerRef}
+      placement={floatingResolved?.placement || placement}
+    >
       <Resize
         property="blockSize"
         visible={resizeVisible}
@@ -119,7 +136,9 @@ export const DropdownListMenu = ({
               tagRef={scrollWrapperRef}
               items={items}
               itemBlockSize={finalItemBlockSize}
-              visibleItemsCount={finalVisibleItemsCount ?? DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT}
+              visibleItemsCount={
+                finalVisibleItemsCount ?? DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT
+              }
               scrollToIndex={scrollToIndex}
               scrollAlign={scrollAlign}
               elevated

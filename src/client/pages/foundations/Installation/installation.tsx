@@ -14,7 +14,11 @@ export default () => {
           </Link>
         </Title>
         <Spacer blockSize={NEB_LENGTH.px_016} />
-        <CodeSnippet lang="bash" code="npm install @nebula-kit/core" description="Install with NPM" />
+        <CodeSnippet
+          lang="bash"
+          code="npm install @nebula-kit/core"
+          description="Install with NPM"
+        />
         <Spacer blockSize={NEB_LENGTH.px_016} />
         <CodeSnippet lang="bash" code="yarn add @nebula-kit/core" description="Install with Yarn" />
       </Section>
@@ -31,13 +35,21 @@ export default () => {
         />
         <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text typography="caption" intent="secondary" color="gray">
-          NEB_TOKEN is your personal license key used to authenticate access to the Pro bundle. You'll find it in your NebulaKit
-          account dashboard after subscribing.
+          NEB_TOKEN is your personal license key used to authenticate access to the Pro bundle.
+          You'll find it in your NebulaKit account dashboard after subscribing.
         </Text>
         <Spacer blockSize={NEB_LENGTH.px_016} />
-        <CodeSnippet lang="bash" code="npm install @nebula-kit-private/pro" description="Install with NPM" />
+        <CodeSnippet
+          lang="bash"
+          code="npm install @nebula-kit-private/pro"
+          description="Install with NPM"
+        />
         <Spacer blockSize={NEB_LENGTH.px_016} />
-        <CodeSnippet lang="bash" code="yarn add @nebula-kit-private/pro" description="Install with Yarn" />
+        <CodeSnippet
+          lang="bash"
+          code="yarn add @nebula-kit-private/pro"
+          description="Install with Yarn"
+        />
       </Section>
     </Box>
   )

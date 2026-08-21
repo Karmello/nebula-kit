@@ -1,7 +1,10 @@
 import { BoxProps, ImageProps } from 'lib/index.core'
 import { TShirtSize } from 'lib/types'
 
-export const AVATAR_SIZES_MAP: Record<TShirtSize, { side: BoxProps['blockSize']; fontSize: string }> = {
+export const AVATAR_SIZES_MAP: Record<
+  TShirtSize,
+  { side: BoxProps['blockSize']; fontSize: string }
+> = {
   xs: {
     side: '50px',
     fontSize: '20px',

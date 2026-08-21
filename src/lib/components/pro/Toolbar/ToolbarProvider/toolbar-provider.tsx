@@ -26,7 +26,11 @@ export const ToolbarProvider = ({ children, switchAt }: ProviderProps) => {
 
   const isSwitchAtHit = BREAKPOINTS.indexOf(bp) >= BREAKPOINTS.indexOf(switchAt as Breakpoint)
 
-  return <ToolbarContext.Provider value={{ switchAt, mainOpen, setMainOpen, isSwitchAtHit }}>{children}</ToolbarContext.Provider>
+  return (
+    <ToolbarContext.Provider value={{ switchAt, mainOpen, setMainOpen, isSwitchAtHit }}>
+      {children}
+    </ToolbarContext.Provider>
+  )
 }
 
 export const useToolbarContext = () => {

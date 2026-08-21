@@ -18,7 +18,8 @@ export const BOX_META = {
   Box: {
     overview: {
       bundle: 'core',
-      title: 'Foundational visual surface component that exposes a curated set of core CSS properties.',
+      title:
+        'Foundational visual surface component that exposes a curated set of core CSS properties.',
       description:
         'Box is a foundational visual surface component that exposes a curated set of core CSS properties - appearance, spacing, sizing and positioning - so you can style a plain block-level element directly in JSX.',
       features: [
@@ -166,7 +167,8 @@ export const BOX_META = {
       inset: {
         options: ['string'],
         isResponsive: true,
-        description: 'Shorthand for setting top, right, bottom and left offsets. Directional props override it.',
+        description:
+          'Shorthand for setting top, right, bottom and left offsets. Directional props override it.',
         link: true,
       },
       intent: {
@@ -339,7 +341,8 @@ export const BOX_META = {
       },
       surface: {
         options: BOX_SURFACES,
-        description: 'Applies a persistent surface behavior that overrides transient interaction states like hover and active.',
+        description:
+          'Applies a persistent surface behavior that overrides transient interaction states like hover and active.',
       },
       tag: {
         options: ['HTML tag'],
