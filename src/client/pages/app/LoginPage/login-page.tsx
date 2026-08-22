@@ -17,6 +17,7 @@ import {
 } from 'lib/components'
 import { useLoginUser, UseLoginUserRes } from 'client/api'
 import { PageKey } from 'client/definitions'
+import { waitForTime } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
 
@@ -27,14 +28,6 @@ const MIN_LOADING_TIME = 500
 type LoginFormValues = {
   email: string
   password: string
-}
-
-const waitForTime = async (start: number, minLoadingTime: number) => {
-  const remaining = minLoadingTime - (Date.now() - start)
-
-  if (remaining > 0) {
-    await new Promise(resolve => setTimeout(resolve, remaining))
-  }
 }
 
 export const LoginPage = () => {

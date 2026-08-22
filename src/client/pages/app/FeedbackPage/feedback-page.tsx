@@ -12,6 +12,9 @@ import {
   useSnackbar,
 } from 'lib/components'
 import { useSendFeedback } from 'client/api'
+import { waitForTime } from 'client/helpers'
+
+const MIN_LOADING_TIME = 500
 
 export const FeedbackPage = () => {
   const { show } = useSnackbar()
@@ -23,14 +26,16 @@ export const FeedbackPage = () => {
   })
 
   const handleSubmit = form.handleSubmit(async (...args) => {
+    const start = Date.now()
     const res = await sendFeedback.sendRequest({ message: args[0].message })
+    await waitForTime(start, MIN_LOADING_TIME)
 
     show({
       status: res.ok ? 'success' : res.code >= 500 ? 'error' : 'warning',
       content: res.ok ? res.data.message : res.error.message,
     })
 
-    form.reset()
+    if (res.ok) form.reset()
   })
 
   const { isSubmitting } = form.formState
