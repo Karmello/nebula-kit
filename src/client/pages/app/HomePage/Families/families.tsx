@@ -83,7 +83,7 @@ export const Families = () => {
         components={['Text', 'Icon']}
       />
       <Family
-        heading="Form elements"
+        heading="Form"
         description="Form elements provide consistent controls for collecting and selecting user input."
         iconName="text-select"
         components={['Input', 'Select']}

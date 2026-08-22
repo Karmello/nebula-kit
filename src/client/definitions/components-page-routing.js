@@ -69,10 +69,9 @@ export const COMPONENT_CATEGORIES = [
     ],
   },
   {
-    key: 'form-elements',
-    label: 'Form elements',
+    key: 'form',
+    label: 'Form',
     items: [
-      { key: 'form', label: 'Form', sections, bundle: 'pro' },
       { key: 'input', label: 'Input', sections, bundle: 'core' },
       { key: 'password-input', label: 'PasswordInput', sections, bundle: 'pro' },
       { key: 'textarea', label: 'Textarea', sections, bundle: 'core' },

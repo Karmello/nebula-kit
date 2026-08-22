@@ -11,16 +11,6 @@ export {
 export { Fade, type FadeProps } from './Fade'
 export { Floating, type FloatingProps } from './Floating'
 export { FocusTrap, type FocusTrapProps } from './FocusTrap'
-export {
-  Form,
-  type FormActionButtonProps,
-  type FormActionsProps,
-  type FormFieldProps,
-  type FormFieldsProps,
-  type FormHintProps,
-  type FormLabelProps,
-  type FormProps,
-} from './Form'
 export { Markup, type MarkupProps } from './Markup'
 export { MultiSelect, type MultiSelectOptionProps, type MultiSelectProps } from './MultiSelect'
 export { Pagination, type PaginationProps } from './Pagination'

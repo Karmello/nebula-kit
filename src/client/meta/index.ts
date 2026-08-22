@@ -34,7 +34,6 @@ import { BREADCRUMB_META } from '../../lib/components/pro/Breadcrumb/meta'
 import { DIALOG_META } from '../../lib/components/pro/Dialog/meta'
 import { FADE_META } from '../../lib/components/pro/Fade/meta'
 import { FLOATING_META } from '../../lib/components/pro/Floating/meta'
-import { FORM_META } from '../../lib/components/pro/Form/meta'
 import { MARKUP_META } from '../../lib/components/pro/Markup/meta'
 import { MULTI_SELECT_META } from '../../lib/components/pro/MultiSelect/meta'
 import { PAGINATION_META } from '../../lib/components/pro/Pagination/meta'
@@ -63,7 +62,6 @@ const META = {
   Fade: FADE_META,
   Floating: FLOATING_META,
   FocusTrap: FOCUS_TRAP_META,
-  Form: FORM_META,
   HtmlTag: HTML_TAG_META,
   IconButton: ICON_BUTTON_META,
   Icon: ICON_META,

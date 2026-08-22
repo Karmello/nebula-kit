@@ -10,7 +10,7 @@ if (!bundle) {
 
 const filterDeps = deps => {
   let allowed = ['classnames', 'change-case', 'lodash-es', 'lucide-react']
-  if (bundle === 'pro') allowed.push('react-hook-form')
+  // if (bundle === 'pro') allowed.push('react-hook-form')
   return Object.fromEntries(Object.entries(deps || {}).filter(([name]) => allowed.includes(name)))
 }
 
