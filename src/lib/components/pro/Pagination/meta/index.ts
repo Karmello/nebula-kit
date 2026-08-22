@@ -29,7 +29,7 @@ export const PAGINATION_META = {
         'automatic ellipsis handling',
         'routing support via hrefBuilder for URL-based pagination and deep linking',
       ],
-      composedOf: ['Box', 'Button', 'Link', 'Icon'],
+      composedOf: ['Box', 'Text', 'Icon', 'Link'],
       exposedTags: ['nav'],
     },
     props: {

@@ -1,4 +1,5 @@
-import { BoxProps, ButtonProps } from 'lib/index.core'
+import { BoxProps } from 'lib/index.core'
+import { TShirtSize } from 'lib/types'
 
 export const DEFAULT_PAGINATION_SHOW_PREV_NEXT: PaginationProps['showPrevNext'] = false
 export const DEFAULT_PAGINATION_SHOW_FIRST_LAST: PaginationProps['showFirstLast'] = false
@@ -17,11 +18,13 @@ export type PaginationItem =
   | { type: 'first'; page: number }
   | { type: 'last'; page: number }
 
-type PropsFromBox = Pick<BoxProps<'nav'>, 'tagAttrs' | 'tagRef'>
-
-type PropsFromButton = Pick<ButtonProps, 'color' | 'disabled' | 'intent' | 'scale' | 'variant'>
+type PropsFromBox = Pick<
+  BoxProps<'nav'>,
+  'tagAttrs' | 'tagRef' | 'color' | 'disabled' | 'intent' | 'variant'
+>
 
 type PaginationOwnProps = {
+  scale?: TShirtSize
   currentPage: number
   totalPages: number
   onChange: (page: number) => void
@@ -32,4 +35,4 @@ type PaginationOwnProps = {
   boundaryCount?: number
 }
 
-export type PaginationProps = PropsFromBox & PropsFromButton & PaginationOwnProps
+export type PaginationProps = PropsFromBox & PaginationOwnProps

@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react'
 
 import { type IconName } from 'lib/components/core/Icon/types'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
-import { Box, Button, Icon, Link } from 'lib/index.core'
+import { Box, Icon, Link, Text } from 'lib/index.core'
 import { PaginationProps } from 'lib/index.pro'
 
 import {
@@ -20,13 +20,12 @@ export const Pagination = ({
   // Box
   tagAttrs,
   tagRef,
-  // Button
   color,
   disabled,
   intent = DEFAULT_PAGINATION_INTENT,
-  scale = DEFAULT_PAGINATION_SCALE,
   variant = DEFAULT_PAGINATION_VARIANT,
   // own
+  scale = DEFAULT_PAGINATION_SCALE,
   currentPage,
   totalPages,
   onChange,
@@ -91,30 +90,54 @@ export const Pagination = ({
           disabled?: boolean
           iconName?: IconName
         }) => {
-          const button = (
-            <Button
-              tagAttrs={{ 'aria-current': active ? 'page' : undefined }}
-              onClick={!hrefBuilder ? () => handleChange(item.page) : undefined}
+          const control = (
+            <Box
+              tag={!hrefBuilder ? 'button' : 'div'}
+              interactive
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              cursor="pointer"
+              tagAttrs={{
+                ...(!hrefBuilder ? { type: 'button' } : {}),
+                'aria-current': active ? 'page' : undefined,
+                onClick: !hrefBuilder ? () => handleChange(item.page) : undefined,
+              }}
+              disabled={disabled}
               variant={variant}
               intent={intent}
               color={color}
-              scale={scale}
-              iconName={iconName}
-              disabled={disabled}
-              bold={active}
-              selected={active}
               elevated={active}
+              surface={active ? 'selected' : undefined}
+              ripple
+              blockSize={CONTROL_SCALE_MAP[scale].blockSize}
+              paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
             >
-              {!iconName ? item.page : undefined}
-            </Button>
+              {iconName ? (
+                <Icon name={iconName} size={CONTROL_SCALE_MAP[scale].fontSize} />
+              ) : (
+                <Text
+                  bold={active}
+                  fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+                  lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
+                >
+                  {item.page}
+                </Text>
+              )}
+            </Box>
           )
 
           return hrefBuilder ? (
-            <Link href={hrefBuilder(item.page)} onClick={() => handleChange(item.page)}>
-              {button}
+            <Link
+              href={hrefBuilder(item.page)}
+              onClick={() => {
+                if (!disabled) handleChange(item.page)
+              }}
+            >
+              {control}
             </Link>
           ) : (
-            button
+            control
           )
         }
 
