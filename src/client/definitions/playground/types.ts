@@ -12,14 +12,12 @@ import { PropsFromSelectKey } from 'lib/components/core/Select/playground'
 import { PropsFromTableKey } from 'lib/components/core/Table/playground'
 import { PropsFromTextKey } from 'lib/components/core/Text/playground'
 import { PropsFromTitleKey } from 'lib/components/core/Title/playground'
-import { PropsFromActionGroupKey } from 'lib/components/pro/ActionGroup/playground'
 import { PropsFromAvatarKey } from 'lib/components/pro/Avatar/playground'
 import { PropsFromSwitchKey } from 'lib/components/pro/Switch/playground'
 import { PropsFromTabsKey } from 'lib/components/pro/Tabs/playground'
 import { PropsFromTooltipKey } from 'lib/components/pro/Tooltip/playground'
 
 export type PlaygroundProp =
-  | PropsFromActionGroupKey
   | PropsFromAvatarKey
   | PropsFromBoxKey
   | PropsFromButtonKey

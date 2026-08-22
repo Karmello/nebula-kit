@@ -1,5 +1,4 @@
 import { BoxColor, BoxIntent, BoxProps } from 'lib/components/core/Box'
-import { ActionGroupProps } from 'lib/index.pro'
 import { TShirtSize } from 'lib/types'
 
 export const TABS_DIRECTION = ['row', 'column'] as const
@@ -22,5 +21,5 @@ export type TabsProps = {
   onChange?: (value: string | number) => void
   direction?: TabsDirection
   size?: TShirtSize
-  stretch?: ActionGroupProps['stretch']
+  stretch?: boolean
 }

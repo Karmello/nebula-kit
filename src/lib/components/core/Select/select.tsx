@@ -1,10 +1,10 @@
 import { ReactElement, useEffect, useRef, useState } from 'react'
 
 import { WithSlots } from 'lib/components/shared'
-import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE } from 'lib/constants'
+import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE, NEB_LENGTH } from 'lib/constants'
 import { useControlled } from 'lib/hooks'
 import { Box, Icon, SelectOptionProps, SelectProps, Text } from 'lib/index.core'
-import { ActionGroup, Floating, FloatingProps } from 'lib/index.pro'
+import { Floating, FloatingProps } from 'lib/index.pro'
 
 import {
   DEFAULT_SELECT_INLINE_SIZE,
@@ -116,26 +116,30 @@ export const SelectImpl = ({
           borderBottomLeftRadius={!isOpenDownwards ? '0px' : undefined}
           borderBottomRightRadius={!isOpenDownwards ? '0px' : undefined}
         >
-          <ActionGroup
-            direction="column"
-            attach={isOpenDownwards ? 'top' : 'bottom'}
-            intent={intent}
-            color={color}
-            elevated
-            stretch
-          >
+          <Box intent={intent} color={color} elevated>
             {optionSlots.map((slot, key) => {
               const isSelected = currentValue === slot.props.value
 
               return (
-                <ActionGroup.Item
+                <Box
                   key={key}
-                  tagRef={isSelected ? selectedItemRef : undefined}
-                  selected={isSelected}
-                  onClick={() => {
-                    setCurrentValue(slot.props.value)
-                    setOpen(false)
+                  tag="button"
+                  tagAttrs={{
+                    onClick: () => {
+                      setCurrentValue(slot.props.value)
+                      setOpen(false)
+                    },
                   }}
+                  drawable
+                  interactive
+                  variant="solid"
+                  elevated
+                  intent={intent}
+                  color={color}
+                  cursor="pointer"
+                  surface={isSelected ? 'selected' : undefined}
+                  inlineSize="100%"
+                  borderRadius={NEB_LENGTH.px_000}
                 >
                   <Box
                     display="flex"
@@ -155,10 +159,10 @@ export const SelectImpl = ({
                       {slot}
                     </Text>
                   </Box>
-                </ActionGroup.Item>
+                </Box>
               )
             })}
-          </ActionGroup>
+          </Box>
         </Box>
       </Floating.Content>
     </Floating>

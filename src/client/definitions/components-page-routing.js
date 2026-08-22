@@ -65,7 +65,6 @@ export const COMPONENT_CATEGORIES = [
       { key: 'button', label: 'Button', sections, bundle: 'core' },
       { key: 'icon-button', label: 'IconButton', sections, bundle: 'core' },
       { key: 'link', label: 'Link', sections, bundle: 'core' },
-      { key: 'action-group', label: 'ActionGroup', sections, bundle: 'pro' },
       { key: 'tabs', label: 'Tabs', sections, bundle: 'pro' },
     ],
   },

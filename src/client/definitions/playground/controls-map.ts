@@ -8,7 +8,6 @@ export const PLAYGROUND_CONTROLS_MAP: Record<
 > = {
   active: { type: 'boolean' },
   align: { type: 'array' },
-  attach: { type: 'array' },
   blockSize: { type: 'string' },
   bold: { type: 'boolean' },
   borderRadius: { type: 'string' },

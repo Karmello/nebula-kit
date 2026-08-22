@@ -3,7 +3,6 @@ import { TSHIRT_SIZES } from 'lib/constants'
 import { TabsPanelProps, TabsProps, TabsTabProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { ACTION_GROUP_META } from '../../ActionGroup/meta'
 import {
   DEFAULT_TABS_DIRECTION,
   DEFAULT_TABS_INTENT,
@@ -24,7 +23,7 @@ export const TABS_META = {
         'fully keyboard-operable with predictable focus behavior',
         'manages selection state without unmounting content',
       ],
-      composedOf: ['Box', 'ActionGroup'],
+      composedOf: ['Box'],
       exposedTags: ['div'],
       slots: ['Tabs.Tab', 'Tabs.Panel'],
     },
@@ -62,7 +61,9 @@ export const TABS_META = {
         defaultValue: DEFAULT_TABS_SIZE,
         description: 'Sets the size of the tab items.',
       },
-      stretch: ACTION_GROUP_META.ActionGroup.props.stretch,
+      stretch: {
+        options: ['boolean'],
+      },
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,
       value: {
@@ -82,7 +83,7 @@ export const TABS_META = {
         'activates the panel with the matching value',
         'inherits visual styling from Button',
       ],
-      composedOf: ['ActionGroup.Item', 'Text'],
+      composedOf: ['Text'],
       exposedTags: ['button'],
     },
     props: {
@@ -90,7 +91,9 @@ export const TABS_META = {
         ...BOX_META.Box.props.children,
         isRequired: true,
       },
-      disabled: ACTION_GROUP_META.ActionGroupItem.props.disabled,
+      disabled: {
+        options: ['boolean'],
+      },
       minInlineSize: {
         ...BOX_META.Box.props.minInlineSize,
         isResponsive: false,

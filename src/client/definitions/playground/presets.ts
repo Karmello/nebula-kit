@@ -12,14 +12,12 @@ import { SELECT_PRESETS } from 'lib/components/core/Select/playground'
 import { TABLE_PRESETS } from 'lib/components/core/Table/playground'
 import { TEXT_PRESETS } from 'lib/components/core/Text/playground'
 import { TITLE_PRESETS } from 'lib/components/core/Title/playground'
-import { ACTION_GROUP_PRESETS } from 'lib/components/pro/ActionGroup/playground'
 import { AVATAR_PRESETS } from 'lib/components/pro/Avatar/playground'
 import { SWITCH_PRESETS } from 'lib/components/pro/Switch/playground'
 import { TABS_PRESETS } from 'lib/components/pro/Tabs/playground'
 import { TOOLTIP_PRESETS } from 'lib/components/pro/Tooltip/playground'
 
 export const PLAYGROUND_PRESETS: Record<string, Array<{ name: string; props: object }>> = {
-  ActionGroup: ACTION_GROUP_PRESETS,
   Avatar: AVATAR_PRESETS,
   Box: BOX_PRESETS,
   Button: BUTTON_PRESETS,
