@@ -23,6 +23,8 @@ export const PromptToolbar = ({
       intent="neutral"
       padding={NEB_LENGTH.px_008}
       paddingLeft={NEB_LENGTH.px_016}
+      borderTopLeftRadius={NEB_LENGTH.px_000}
+      borderTopRightRadius={NEB_LENGTH.px_000}
     >
       <Box display="flex" alignItems="center">
         <Box flex="1">

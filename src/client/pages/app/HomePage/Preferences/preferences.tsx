@@ -1,8 +1,7 @@
 import { sentenceCase } from 'change-case'
 
-import { Box, Button, NEB_LENGTH, Segment, Select, Text } from 'lib/components'
+import { Box, Button, NEB_LENGTH, Select, Text } from 'lib/components'
 import { BOX_COLORS } from 'lib/components/core/Box/constants'
-import { NEBKIT_PROVIDER_THEMES } from 'lib/components/core/NebkitProvider/constants'
 import { useAppStore } from 'client/store'
 
 export const Preferences = () => {
@@ -21,19 +20,32 @@ export const Preferences = () => {
     >
       <Box>
         <Text bold>Theme</Text>
-        <Segment>
-          {NEBKIT_PROVIDER_THEMES.map(key => (
-            <Segment.Item key={key}>
-              <Button
-                intent={key === theme ? 'inverse' : 'tertiary'}
-                scale="sm"
-                onClick={() => setTheme(key)}
-              >
-                {sentenceCase(key)}
-              </Button>
-            </Segment.Item>
-          ))}
-        </Segment>
+        <Button
+          intent={theme === 'light' ? 'inverse' : 'tertiary'}
+          scale="sm"
+          tagAttrs={{
+            onClick: () => setTheme('light'),
+            style: {
+              borderTopRightRadius: NEB_LENGTH.px_000,
+              borderBottomRightRadius: NEB_LENGTH.px_000,
+            },
+          }}
+        >
+          {sentenceCase('Light')}
+        </Button>
+        <Button
+          intent={theme === 'dark' ? 'inverse' : 'tertiary'}
+          scale="sm"
+          tagAttrs={{
+            onClick: () => setTheme('dark'),
+            style: {
+              borderTopLeftRadius: NEB_LENGTH.px_000,
+              borderBottomLeftRadius: NEB_LENGTH.px_000,
+            },
+          }}
+        >
+          {sentenceCase('Dark')}
+        </Button>
       </Box>
       <Box>
         <Text bold>Brand</Text>

@@ -4,29 +4,53 @@ export const JoinedActionGroup = () => {
   return (
     <Box
       drawable
-      variant="outline"
-      intent="secondary"
-      color="blue"
+      brand="blue"
+      display="flex"
+      gap={NEB_LENGTH.px_002}
       inlineSize={NEB_LENGTH.px_512}
-      maxInlineSize="100%"
-      blockSize={NEB_LENGTH.px_512}
-      borderRadius={NEB_LENGTH.px_000}
+      variant="solid"
+      intent="muted"
+      color="blue"
+      overflow="hidden"
     >
-      <Box drawable variant="solid" intent="muted" color="blue" inlineSize="100%" blockSize="100%">
-        <Box
-          drawable
-          variant="solid"
-          intent="tertiary"
-          color="blue"
-          inlineSize="100%"
-          blockSize={NEB_LENGTH.px_064}
-          borderRadius={NEB_LENGTH.px_000}
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Text>Hello !</Text>
-        </Box>
+      <Box
+        tag="button"
+        drawable
+        flex="1"
+        variant="solid"
+        intent="tertiary"
+        padding={NEB_LENGTH.px_012}
+        borderRadius={NEB_LENGTH.px_000}
+        interactive
+        cursor="pointer"
+      >
+        <Text>Item 1</Text>
+      </Box>
+      <Box
+        tag="button"
+        drawable
+        flex="1"
+        variant="solid"
+        intent="tertiary"
+        padding={NEB_LENGTH.px_012}
+        borderRadius={NEB_LENGTH.px_000}
+        interactive
+        cursor="pointer"
+      >
+        <Text>Item 2</Text>
+      </Box>
+      <Box
+        tag="button"
+        drawable
+        flex="1"
+        variant="solid"
+        intent="tertiary"
+        padding={NEB_LENGTH.px_012}
+        borderRadius={NEB_LENGTH.px_000}
+        interactive
+        cursor="pointer"
+      >
+        <Text>Item 3</Text>
       </Box>
     </Box>
   )

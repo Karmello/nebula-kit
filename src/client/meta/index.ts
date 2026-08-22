@@ -21,7 +21,6 @@ import { RESIZE_META } from '../../lib/components/core/Resize/meta'
 import { REVEAL_META } from '../../lib/components/core/Reveal/meta'
 import { ROTATE_META } from '../../lib/components/core/Rotate/meta'
 import { SECTION_META } from '../../lib/components/core/Section/meta'
-import { SEGMENT_META } from '../../lib/components/core/Segment/meta'
 import { SELECT_META } from '../../lib/components/core/Select/meta'
 import { SLIDE_META } from '../../lib/components/core/Slide/meta'
 import { SPACER_META } from '../../lib/components/core/Spacer/meta'
@@ -86,7 +85,6 @@ const META = {
   Rotate: ROTATE_META,
   Scale: SCALE_META,
   Section: SECTION_META,
-  Segment: SEGMENT_META,
   Select: SELECT_META,
   SideNav: SIDE_NAV_META,
   Slide: SLIDE_META,

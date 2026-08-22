@@ -1,22 +1,11 @@
 import { sentenceCase } from 'change-case'
 
-import {
-  Box,
-  Button,
-  Dialog,
-  NEB_LENGTH,
-  Segment,
-  Select,
-  Spacer,
-  Text,
-  Title,
-} from 'lib/components'
+import { Box, Button, Dialog, NEB_LENGTH, Select, Spacer, Text, Title } from 'lib/components'
 import { BOX_COLORS } from 'lib/components/core/Box/constants'
 import {
   NEBKIT_PROVIDER_BORDER_RADIUS_SIZES,
   NEBKIT_PROVIDER_RIPPLE_MODES,
   NEBKIT_PROVIDER_SATURATIONS,
-  NEBKIT_PROVIDER_THEMES,
 } from 'lib/components/core/NebkitProvider/constants'
 import { useAppStore } from 'client/store'
 
@@ -62,19 +51,32 @@ export const AppPrefsDialog = () => {
                 Theme
               </Text>
               <Spacer blockSize={NEB_LENGTH.px_002} />
-              <Segment>
-                {NEBKIT_PROVIDER_THEMES.map(key => (
-                  <Segment.Item key={key}>
-                    <Button
-                      intent={key === theme ? 'inverse' : 'tertiary'}
-                      scale="xs"
-                      tagAttrs={{ onClick: () => setTheme(key) }}
-                    >
-                      {sentenceCase(key)}
-                    </Button>
-                  </Segment.Item>
-                ))}
-              </Segment>
+              <Button
+                intent={theme === 'light' ? 'inverse' : 'tertiary'}
+                scale="xs"
+                tagAttrs={{
+                  onClick: () => setTheme('light'),
+                  style: {
+                    borderTopRightRadius: NEB_LENGTH.px_000,
+                    borderBottomRightRadius: NEB_LENGTH.px_000,
+                  },
+                }}
+              >
+                {sentenceCase('Light')}
+              </Button>
+              <Button
+                intent={theme === 'dark' ? 'inverse' : 'tertiary'}
+                scale="xs"
+                tagAttrs={{
+                  onClick: () => setTheme('dark'),
+                  style: {
+                    borderTopLeftRadius: NEB_LENGTH.px_000,
+                    borderBottomLeftRadius: NEB_LENGTH.px_000,
+                  },
+                }}
+              >
+                {sentenceCase('Dark')}
+              </Button>
             </Box>
             <Box>
               <Text bold typography="small">

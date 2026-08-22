@@ -1,4 +1,4 @@
-import { Box, Button, Segment, Select } from 'lib/index.core'
+import { Box, Button, Select } from 'lib/index.core'
 import { Toolbar } from 'lib/index.pro'
 import { type Example } from 'client/definitions'
 
@@ -24,14 +24,10 @@ export const TOOLBAR_EXAMPLES: Example[] = [
           <Box paddingInline="20px">Brand</Box>
         </Toolbar.Start>
         <Toolbar.Main>
-          <Segment flexDirection={{ base: 'column', md: 'row' }}>
-            <Segment.Item>
-              <Button fullWidth>Page 1</Button>
-            </Segment.Item>
-            <Segment.Item>
-              <Button fullWidth>Page 2</Button>
-            </Segment.Item>
-          </Segment>
+          <Box display="flex" flexDirection={{ base: 'column', md: 'row' }}>
+            <Button fullWidth={{ base: true, md: false }}>Page 1</Button>
+            <Button fullWidth={{ base: true, md: false }}>Page 2</Button>
+          </Box>
         </Toolbar.Main>
         <Toolbar.End>
           <Select staticLabel="Menu">

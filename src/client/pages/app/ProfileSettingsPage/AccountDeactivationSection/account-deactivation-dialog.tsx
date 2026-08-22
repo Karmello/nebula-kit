@@ -1,4 +1,4 @@
-import { Button, Dialog, Segment, Text, Title, useSnackbar } from 'lib/components'
+import { Button, Dialog, NEB_LENGTH, Text, Title, useSnackbar } from 'lib/components'
 import { useRequestAccountDeactivation } from 'client/api'
 
 export const AccountDeactivationDialog = ({
@@ -30,39 +30,43 @@ export const AccountDeactivationDialog = ({
         ? Confirm in order to obtain deactivation link.
       </Dialog.Content>
       <Dialog.Footer>
-        <Segment>
-          <Segment.Item>
-            <Button
-              tagAttrs={{
-                onClick: async () => {
-                  const res = await requestAccountDeactivation.sendRequest({ email: userEmail })
-                  handleClose()
-                  if (res.ok) {
-                    show({ status: 'info', content: res.data.message })
-                    handleDeactivateSuccess()
-                  } else {
-                    show({ status: 'warning', content: res.error.message })
-                  }
-                },
-              }}
-              scale="sm"
-              intent="primary"
-              color="red"
-              loading={requestAccountDeactivation.isMakingRequest}
-            >
-              Get deactivation link
-            </Button>
-          </Segment.Item>
-          <Segment.Item>
-            <Button
-              scale="sm"
-              tagAttrs={{ onClick: handleClose }}
-              disabled={requestAccountDeactivation.isMakingRequest}
-            >
-              Keep account
-            </Button>
-          </Segment.Item>
-        </Segment>
+        <Button
+          tagAttrs={{
+            style: {
+              borderTopRightRadius: NEB_LENGTH.px_000,
+              borderBottomRightRadius: NEB_LENGTH.px_000,
+            },
+            onClick: async () => {
+              const res = await requestAccountDeactivation.sendRequest({ email: userEmail })
+              handleClose()
+              if (res.ok) {
+                show({ status: 'info', content: res.data.message })
+                handleDeactivateSuccess()
+              } else {
+                show({ status: 'warning', content: res.error.message })
+              }
+            },
+          }}
+          scale="sm"
+          intent="primary"
+          color="red"
+          loading={requestAccountDeactivation.isMakingRequest}
+        >
+          Get deactivation link
+        </Button>
+        <Button
+          scale="sm"
+          tagAttrs={{
+            onClick: handleClose,
+            style: {
+              borderTopLeftRadius: NEB_LENGTH.px_000,
+              borderBottomLeftRadius: NEB_LENGTH.px_000,
+            },
+          }}
+          disabled={requestAccountDeactivation.isMakingRequest}
+        >
+          Keep account
+        </Button>
       </Dialog.Footer>
     </Dialog>
   )

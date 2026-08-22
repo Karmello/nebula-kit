@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react'
 
 import { type IconName } from 'lib/components/core/Icon/types'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
-import { Box, Button, Icon, Link, Segment } from 'lib/index.core'
+import { Box, Button, Icon, Link } from 'lib/index.core'
 import { PaginationProps } from 'lib/index.pro'
 
 import {
@@ -75,103 +75,104 @@ export const Pagination = ({
       tag="nav"
       tagAttrs={{ 'aria-label': 'Pagination', ...tagAttrs }}
       tagRef={tagRef}
+      display="flex"
+      flexDirection="row"
+      flexWrap="nowrap"
       overflowX="auto"
       overflowY="hidden"
     >
-      <Segment>
-        {paginationItems.map((item, index) => {
-          const renderControl = ({
-            active,
-            disabled,
-            iconName,
-          }: {
-            active?: boolean
-            disabled?: boolean
-            iconName?: IconName
-          }) => {
-            const button = (
-              <Button
-                tagAttrs={{ 'aria-current': active ? 'page' : undefined }}
-                onClick={!hrefBuilder ? () => handleChange(item.page) : undefined}
+      {paginationItems.map((item, index) => {
+        const renderControl = ({
+          active,
+          disabled,
+          iconName,
+        }: {
+          active?: boolean
+          disabled?: boolean
+          iconName?: IconName
+        }) => {
+          const button = (
+            <Button
+              tagAttrs={{ 'aria-current': active ? 'page' : undefined }}
+              onClick={!hrefBuilder ? () => handleChange(item.page) : undefined}
+              variant={variant}
+              intent={intent}
+              color={color}
+              scale={scale}
+              iconName={iconName}
+              disabled={disabled}
+              bold={active}
+              selected={active}
+              elevated={active}
+            >
+              {!iconName ? item.page : undefined}
+            </Button>
+          )
+
+          return hrefBuilder ? (
+            <Link href={hrefBuilder(item.page)} onClick={() => handleChange(item.page)}>
+              {button}
+            </Link>
+          ) : (
+            button
+          )
+        }
+
+        return (
+          <Box
+            key={
+              item.type === 'page'
+                ? `page-${item.page}-${item.page === safeCurrentPage}`
+                : item.page !== undefined
+                  ? `${item.type}-${item.page}`
+                  : `${item.type}-${index}`
+            }
+          >
+            {item.type === 'ellipsis' && (
+              <Box
+                tagAttrs={{ 'aria-hidden': true }}
+                drawable
                 variant={variant}
                 intent={intent}
                 color={color}
-                scale={scale}
-                iconName={iconName}
-                disabled={disabled}
-                bold={active}
-                selected={active}
-                elevated={active}
+                disabled
+                blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
+                paddingInline={CONTROL_SCALE_MAP[scale || 'md'].paddingInline}
               >
-                {!iconName ? item.page : undefined}
-              </Button>
-            )
-
-            return hrefBuilder ? (
-              <Link href={hrefBuilder(item.page)} onClick={() => handleChange(item.page)}>
-                {button}
-              </Link>
-            ) : (
-              button
-            )
-          }
-
-          return (
-            <Segment.Item
-              key={
-                item.type === 'page'
-                  ? `page-${item.page}-${item.page === safeCurrentPage}`
-                  : item.page !== undefined
-                    ? `${item.type}-${item.page}`
-                    : `${item.type}-${index}`
-              }
-            >
-              {item.type === 'ellipsis' && (
                 <Box
-                  tagAttrs={{ 'aria-hidden': true }}
-                  drawable
-                  variant={variant}
-                  intent={intent}
-                  color={color}
-                  disabled
-                  blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
-                  paddingInline={CONTROL_SCALE_MAP[scale || 'md'].paddingInline}
+                  display="flex"
+                  tagAttrs={{ style: { blockSize: 'inherit' } }}
+                  alignItems="center"
                 >
-                  <Box
-                    display="flex"
-                    tagAttrs={{ style: { blockSize: 'inherit' } }}
-                    alignItems="center"
-                  >
-                    <Icon name="ellipsis" />
-                  </Box>
+                  <Icon name="ellipsis" />
                 </Box>
-              )}
-              {item.type === 'page' &&
-                renderControl({ disabled, active: item.page === safeCurrentPage })}
-              {item.type === 'prev' &&
-                renderControl({
-                  disabled: disabled || safeCurrentPage === 1,
-                  iconName: 'chevron-left',
-                })}
-              {item.type === 'next' &&
-                renderControl({
-                  disabled: disabled || safeCurrentPage === totalPages,
-                  iconName: 'chevron-right',
-                })}
-              {item.type === 'first' &&
-                renderControl({
-                  disabled: disabled || safeCurrentPage === 1,
-                  iconName: 'chevrons-left',
-                })}
-              {item.type === 'last' &&
-                renderControl({
-                  disabled: disabled || safeCurrentPage === totalPages,
-                  iconName: 'chevrons-right',
-                })}
-            </Segment.Item>
-          )
-        })}
-      </Segment>
+              </Box>
+            )}
+            {item.type === 'page' &&
+              renderControl({ disabled, active: item.page === safeCurrentPage })}
+            {item.type === 'prev' &&
+              renderControl({
+                disabled: disabled || safeCurrentPage === 1,
+                iconName: 'chevron-left',
+              })}
+            {item.type === 'next' &&
+              renderControl({
+                disabled: disabled || safeCurrentPage === totalPages,
+                iconName: 'chevron-right',
+              })}
+            {item.type === 'first' &&
+              renderControl({
+                disabled: disabled || safeCurrentPage === 1,
+                iconName: 'chevrons-left',
+              })}
+            {item.type === 'last' &&
+              renderControl({
+                disabled: disabled || safeCurrentPage === totalPages,
+                iconName: 'chevrons-right',
+              })}
+          </Box>
+        )
+      })}
     </Box>
   )
 }

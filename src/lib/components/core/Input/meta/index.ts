@@ -16,7 +16,7 @@ export const INPUT_META = {
         'supports both controlled and uncontrolled modes',
         'supports start and end affixes',
       ],
-      composedOf: ['Box', 'Segment'],
+      composedOf: ['Box'],
       exposedTags: ['input'],
     },
     props: {
