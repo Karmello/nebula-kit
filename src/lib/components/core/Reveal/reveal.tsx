@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
-import { Button, Resize, RevealProps } from 'lib/index.core'
+import { CONTROL_SCALE_MAP } from 'lib/constants'
+import { Icon, Resize, RevealProps, Rotate, Text } from 'lib/index.core'
 import { RevealTag } from 'lib/types'
 
 import { Box } from '../Box'
@@ -38,26 +39,40 @@ export const Reveal = <T extends RevealTag = 'div'>({
       disabled={disabled}
     >
       <Box display="flex" flexDirection="column" alignItems="stretch">
-        <Button
-          disabled={disabled}
-          scale={scale}
-          align="split"
-          color={color}
-          intent={intent}
-          iconName="chevron-down"
-          iconPlacement="right"
+        <Box
+          tag="button"
+          interactive
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          cursor="pointer"
           tagAttrs={{
+            type: 'button',
             style: { borderRadius: 0 },
+            onClick: () => {
+              setOpen(!open)
+            },
           }}
+          disabled={disabled}
+          color={color}
+          variant="solid"
+          intent={intent}
           ripple={!open}
-          bold
-          selected={open}
-          onClick={() => {
-            setOpen(!open)
-          }}
+          surface={open ? 'selected' : undefined}
+          blockSize={CONTROL_SCALE_MAP[scale].blockSize}
+          paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
         >
-          {label}
-        </Button>
+          <Text
+            bold
+            fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+            lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
+          >
+            {label}
+          </Text>
+          <Rotate angle={!open ? 0 : 180}>
+            <Icon name="chevron-down" size={CONTROL_SCALE_MAP[scale].fontSize} />
+          </Rotate>
+        </Box>
         <Box tagAttrs={{ inert: !open }}>
           <Resize property="blockSize" visible={open}>
             {children}
