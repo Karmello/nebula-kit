@@ -15,10 +15,9 @@ export const Reveal = <T extends RevealTag = 'div'>({
   tagRef,
   intent = DEFAULT_REVEAL_INTENT,
   color,
-  // Button
   disabled,
-  scale = DEFAULT_REVEAL_SCALE,
   // own
+  scale = DEFAULT_REVEAL_SCALE,
   label,
 }: RevealProps<T>) => {
   const [open, setOpen] = useState<boolean>(false)
