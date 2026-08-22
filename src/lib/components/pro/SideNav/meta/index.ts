@@ -131,7 +131,7 @@ export const SIDE_NAV_META = {
         'intended exclusively for hierarchical navigation within SideNav',
         'expects only SideNav.Item elements as children',
       ],
-      composedOf: ['Box', 'Button', 'Resize', 'Spacer'],
+      composedOf: ['Box', 'Text', 'Icon', 'Resize', 'Spacer'],
       exposedTags: ['ul'],
       slots: ['SideNav.Item'],
     },
