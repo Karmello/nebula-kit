@@ -5,8 +5,6 @@ import { InteractiveCard } from './jsx/interactive-card'
 import interactiveCardCode from './jsx/interactive-card.tsx?raw'
 import { JoinedActionGroup } from './jsx/joined-action-group'
 import joinedActionGroupCode from './jsx/joined-action-group.tsx?raw'
-import { LoginForm } from './jsx/login-form'
-import loginFormCode from './jsx/login-form.tsx?raw'
 import { ResponsiveStack } from './jsx/responsive-stack'
 import responsiveStackCode from './jsx/responsive-stack.tsx?raw'
 import { StylingIsland } from './jsx/styling-island'
@@ -48,14 +46,6 @@ export const PATTERNS: Array<Pattern> = [
       'A clickable card can be composed from **Box** and layout primitives while keeping content structure fully authored by the user.',
     component: InteractiveCard,
     code: interactiveCardCode,
-  },
-  {
-    id: 'login-form',
-    category: 'Forms',
-    title: 'Login form',
-    description: 'Simple login form composition.',
-    component: LoginForm,
-    code: loginFormCode,
   },
   {
     id: 'joined-action-group',
