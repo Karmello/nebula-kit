@@ -17,13 +17,10 @@ import {
 } from 'lib/components'
 import { useLoginUser, UseLoginUserRes } from 'client/api'
 import { PageKey } from 'client/definitions'
-import { waitForTime } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
-const MIN_LOADING_TIME = 500
 
 type LoginFormValues = {
   email: string
@@ -79,9 +76,7 @@ export const LoginPage = () => {
 
   const handleSubmit = form.handleSubmit(
     async data => {
-      const start = Date.now()
       const res = await loginUser.sendRequest(data)
-      await waitForTime(start, MIN_LOADING_TIME)
       if (res.ok) form.reset()
       onResponse(res)
     },
