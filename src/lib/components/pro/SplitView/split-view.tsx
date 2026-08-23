@@ -5,8 +5,9 @@ import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
 import { Box } from 'lib/index.core'
 
-import { SPLIT_VIEW_SIDE_POSITIONS, type SplitViewProps } from './definitions'
+import { SPLIT_VIEW_SIDE_POSITIONS } from './constants'
 import { SplitViewProvider, useSplitViewContext } from './SplitViewProvider'
+import { type SplitViewProps } from './types'
 
 const SplitViewComponent = ({
   // Grid

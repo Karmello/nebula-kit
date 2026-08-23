@@ -9,8 +9,8 @@ import {
   DEFAULT_SNACKBAR_INLINE_SIZE,
   DEFAULT_SNACKBAR_PLACEMENT,
   SNACKBAR_PLACEMENTS,
-  UseSnackbarShowArgs,
-} from '../definitions'
+} from '../constants'
+import { UseSnackbarShowArgs } from '../types'
 import { SNACKBAR_CHANGELOG } from './changelog'
 import { SNACKBAR_EXAMPLES, USE_SNACKBAR_EXAMPLES } from './examples'
 

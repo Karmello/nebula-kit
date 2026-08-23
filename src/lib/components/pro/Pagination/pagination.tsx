@@ -13,7 +13,7 @@ import {
   DEFAULT_PAGINATION_SHOW_PREV_NEXT,
   DEFAULT_PAGINATION_SIBLING_COUNT,
   DEFAULT_PAGINATION_VARIANT,
-} from './definitions'
+} from './constants'
 import { getPaginationItems } from './helpers'
 
 export const Pagination = ({

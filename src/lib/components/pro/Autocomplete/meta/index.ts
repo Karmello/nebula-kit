@@ -15,7 +15,7 @@ import {
   DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
   DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
-} from '../definitions'
+} from '../constants'
 import { AUTOCOMPLETE_CHANGELOG } from './changelog'
 import { AUTOCOMPLETE_EXAMPLES } from './examples'
 

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { IconButton, Input } from 'lib/index.core'
 import { PasswordInputProps } from 'lib/index.pro'
 
-import { DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE } from './definitions'
+import { DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE } from './constants'
 
 export const PasswordInput = ({
   // Input

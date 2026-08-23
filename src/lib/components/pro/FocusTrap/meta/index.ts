@@ -1,10 +1,8 @@
 import { ComponentMeta } from 'client/definitions'
 
 import { HTML_TAG_META } from '../../../core/HtmlTag/meta'
-import {
-  DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK,
-  type FocusTrapProps,
-} from '../definitions'
+import { DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK } from '../constants'
+import { type FocusTrapProps } from '../types'
 import { FOCUS_TRAP_CHANGELOG } from './changelog'
 import { FOCUS_TRAP_EXAMPLES } from './examples'
 

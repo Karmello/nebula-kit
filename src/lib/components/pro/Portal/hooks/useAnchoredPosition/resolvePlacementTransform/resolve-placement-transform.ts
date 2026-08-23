@@ -1,4 +1,4 @@
-import { AnchoredPlacement } from '../definitions'
+import { AnchoredPlacement } from '../types'
 
 export type ResolvePlacementTransformProps = {
   placement: AnchoredPlacement

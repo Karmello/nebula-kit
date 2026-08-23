@@ -2,7 +2,7 @@ import { BOX_META } from 'lib/components/core/Box/meta'
 import { ScaleProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { SCALE_AXIS, SCALE_ORIGIN } from '../definitions'
+import { SCALE_AXIS, SCALE_ORIGIN } from '../constants'
 import {
   DEFAULT_SCALE_AXIS,
   DEFAULT_SCALE_DURATION,

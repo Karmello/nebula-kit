@@ -7,7 +7,7 @@ import { withPrefix } from 'lib/helpers'
 import { SelectOptionProps, Text, Title } from 'lib/index.core'
 import { MultiSelectProps } from 'lib/index.pro'
 
-import { DEFAULT_MULTI_SELECT_INLINE_SIZE } from './definitions'
+import { DEFAULT_MULTI_SELECT_INLINE_SIZE } from './constants'
 import { MultiSelectProvider } from './MultiSelectProvider'
 
 export const MultiSelect = ({

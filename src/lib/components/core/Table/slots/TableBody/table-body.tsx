@@ -5,7 +5,7 @@ import { withPrefix } from 'lib/helpers'
 import { Box, TableBodyProps } from 'lib/index.core'
 
 import { TableContext, useTableContext } from '../../TableContext'
-import { DEFAULT_TABLE_BODY_INTENT } from './definitions'
+import { DEFAULT_TABLE_BODY_INTENT } from './constants'
 
 export const TableBody = ({
   children,

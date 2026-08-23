@@ -5,5 +5,6 @@ export const Autocomplete = Object.assign(AutocompleteBase, {
   Option: AutocompleteOption,
 })
 
-export * from './definitions'
+export * from './constants'
 export * from './slots'
+export * from './types'

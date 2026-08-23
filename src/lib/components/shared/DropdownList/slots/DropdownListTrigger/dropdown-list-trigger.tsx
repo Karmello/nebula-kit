@@ -4,7 +4,8 @@ import { withPrefix } from 'lib/helpers'
 import { Box } from 'lib/index.core'
 
 import { useDropdownListContext } from '../../providers'
-import { DEFAULT_DROPDOWN_LIST_TRIGGER_VARIANT, DropdownListTriggerProps } from './definitions'
+import { DEFAULT_DROPDOWN_LIST_TRIGGER_VARIANT } from './constants'
+import { DropdownListTriggerProps } from './types'
 
 export const DropdownListTrigger = <T extends ElementType = 'div'>({
   children,

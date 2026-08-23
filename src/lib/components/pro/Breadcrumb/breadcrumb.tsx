@@ -7,7 +7,7 @@ import { Box, Icon, Text } from 'lib/index.core'
 import { BreadcrumbProps } from 'lib/index.pro'
 import { type BreadcrumbTag } from 'lib/types'
 
-import { DEFAULT_BREADCRUMB_INTENT, DEFAULT_BREADCRUMB_SIZE } from './definitions'
+import { DEFAULT_BREADCRUMB_INTENT, DEFAULT_BREADCRUMB_SIZE } from './constants'
 import { convertTreeToLevels } from './helpers'
 
 export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({

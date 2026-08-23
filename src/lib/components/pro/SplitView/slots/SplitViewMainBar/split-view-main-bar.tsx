@@ -1,6 +1,6 @@
 import { Box } from 'lib/index.core'
 
-import { type SplitViewMainBarProps } from './definitions'
+import { type SplitViewMainBarProps } from './types'
 
 export const SplitViewMainBar = ({ children, tagAttrs, tagRef }: SplitViewMainBarProps) => {
   return (

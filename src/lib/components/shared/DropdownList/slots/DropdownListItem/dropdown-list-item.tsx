@@ -3,7 +3,7 @@ import { MouseEvent } from 'react'
 import { Box } from 'lib/index.core'
 
 import { useDropdownListContext } from '../../providers'
-import { DropdownListItemProps } from './definitions'
+import { DropdownListItemProps } from './types'
 
 export const DropdownListItem = ({
   index,

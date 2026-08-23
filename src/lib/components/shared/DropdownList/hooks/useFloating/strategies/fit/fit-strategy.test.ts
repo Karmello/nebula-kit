@@ -1,4 +1,4 @@
-import { FloatingFitProps } from '../../definitions'
+import { FloatingFitProps } from '../../types'
 import { resolveFitStrategy } from './fit-strategy'
 
 describe('resolveFitStrategy - no anchor', () => {

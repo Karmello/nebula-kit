@@ -6,7 +6,7 @@ import { withPrefix } from 'lib/helpers'
 import { InputAffixProps, InputProps } from 'lib/index.core'
 
 import { Box } from '../Box'
-import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_SCALE, DEFAULT_INPUT_VARIANT } from './definitions'
+import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_SCALE, DEFAULT_INPUT_VARIANT } from './constants'
 
 import './input.scss'
 

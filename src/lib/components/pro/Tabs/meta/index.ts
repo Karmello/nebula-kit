@@ -8,7 +8,7 @@ import {
   DEFAULT_TABS_INTENT,
   DEFAULT_TABS_SIZE,
   TABS_DIRECTION,
-} from '../definitions'
+} from '../constants'
 import { TABS_CHANGELOG } from './changelog'
 import { TABS_EXAMPLES } from './examples'
 

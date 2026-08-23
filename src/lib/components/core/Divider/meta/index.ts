@@ -2,7 +2,7 @@ import { DividerProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
-import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_MARGIN_BLOCK } from '../definitions'
+import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_MARGIN_BLOCK } from '../constants'
 import { DIVIDER_CHANGELOG } from './changelog'
 import { DIVIDER_EXAMPLES } from './examples'
 

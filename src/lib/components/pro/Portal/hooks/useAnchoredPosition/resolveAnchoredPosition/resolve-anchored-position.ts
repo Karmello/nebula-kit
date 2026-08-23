@@ -1,4 +1,4 @@
-import { AnchoredPlacement, AnchoredPosition } from '../definitions'
+import { AnchoredPlacement, AnchoredPosition } from '../types'
 
 export type ResolveAnchoredPositionProps = {
   anchor: HTMLElement

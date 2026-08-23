@@ -8,7 +8,7 @@ import {
   DEFAULT_TEXTAREA_ROWS,
   DEFAULT_TEXTAREA_VARIANT,
   TEXTAREA_RESIZE,
-} from '../definitions'
+} from '../constants'
 import { TEXTAREA_CHANGELOG } from './changelog'
 import { TEXTAREA_EXAMPLES } from './examples'
 

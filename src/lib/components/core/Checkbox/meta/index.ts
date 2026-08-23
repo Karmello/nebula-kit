@@ -8,7 +8,7 @@ import {
   DEFAULT_CHECKBOX_INTENT,
   DEFAULT_CHECKBOX_SIZE,
   DEFAULT_CHECKBOX_VARIANT,
-} from '../definitions'
+} from '../constants'
 import { CHECKBOX_CHANGELOG } from './changelog'
 import { CHECKBOX_EXAMPLES } from './examples'
 

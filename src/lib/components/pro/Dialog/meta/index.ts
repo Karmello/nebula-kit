@@ -5,10 +5,10 @@ import {
   DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK,
   DEFAULT_DIALOG_SIZE,
   DIALOG_SIZES,
-  type DialogProps,
-} from '../definitions'
-import { type DialogFooterProps } from '../slots/DialogFooter/definitions'
-import { type DialogHeaderProps } from '../slots/DialogHeader/definitions'
+} from '../constants'
+import { type DialogFooterProps } from '../slots/DialogFooter/types'
+import { type DialogHeaderProps } from '../slots/DialogHeader/types'
+import { type DialogProps } from '../types'
 import { DIALOG_CHANGELOG } from './changelog'
 import { DIALOG_EXAMPLES } from './examples'
 

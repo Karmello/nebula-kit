@@ -10,7 +10,7 @@ import {
   DEFAULT_SIDE_NAV_EXPAND_MODE,
   DEFAULT_SIDE_NAV_GAP,
   DEFAULT_SIDE_NAV_SCALE,
-} from './definitions'
+} from './constants'
 import { SideNavProvider } from './SideNavProvider'
 
 import './side-nav.scss'

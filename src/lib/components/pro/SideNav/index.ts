@@ -6,5 +6,6 @@ export const SideNav = Object.assign(SideNavBase, {
   Item: SideNavItem,
 })
 
-export * from './definitions'
+export * from './constants'
 export * from './slots'
+export * from './types'

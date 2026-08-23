@@ -7,5 +7,6 @@ export const Dialog = Object.assign(DialogBase, {
   Footer: DialogFooter,
 })
 
-export * from './definitions'
+export * from './constants'
 export * from './slots'
+export * from './types'

@@ -1,5 +1,5 @@
 import { Table } from './'
-import { type TableProps } from './definitions'
+import { type TableProps } from './types'
 
 export type PropsFromTableKey = (typeof PROPS_FROM_TABLE)[number]
 

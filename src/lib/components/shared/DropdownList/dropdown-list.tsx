@@ -11,9 +11,9 @@ import {
   DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
   DEFAULT_DROPDOWN_LIST_SCROLL_TO_INDEX,
   DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
-  DropdownListProps,
-} from './definitions'
+} from './constants'
 import { DropdownListProvider } from './providers'
+import { DropdownListProps } from './types'
 
 export const DropdownList = ({
   // Box

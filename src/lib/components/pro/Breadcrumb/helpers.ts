@@ -1,4 +1,4 @@
-import { BreadcrumbNode } from './definitions'
+import { BreadcrumbNode } from './types'
 
 export const convertTreeToLevels = (tree: BreadcrumbNode[], path: string[]): BreadcrumbNode[][] => {
   const levels: BreadcrumbNode[][] = []

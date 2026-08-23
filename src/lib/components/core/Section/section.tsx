@@ -11,7 +11,7 @@ import {
   DEFAULT_SECTION_SIZE,
   DEFAULT_SECTION_VARIANT,
   SECTION_SIZE_CONFIG,
-} from './definitions'
+} from './constants'
 
 export const Section = <T extends SectionTag = 'section'>({
   // Box

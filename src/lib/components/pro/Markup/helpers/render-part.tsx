@@ -1,6 +1,6 @@
 import { Box } from 'lib/index.core'
 
-import { MarkupPart } from '../definitions'
+import { MarkupPart } from '../types'
 
 export const renderPart = (part: MarkupPart, index: number) => {
   switch (part.type) {

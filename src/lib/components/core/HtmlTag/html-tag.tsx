@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
 
-import { HtmlTagProps } from './definitions'
+import { HtmlTagProps } from './types'
 
 import './html-tag.scss'
 

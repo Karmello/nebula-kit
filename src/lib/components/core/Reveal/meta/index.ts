@@ -5,7 +5,7 @@ import { ComponentMeta } from 'client/definitions'
 import { BOX_META } from '../../Box/meta'
 import { BUTTON_META } from '../../Button/meta'
 import { RESIZE_META } from '../../Resize/meta'
-import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SCALE } from '../definitions'
+import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SCALE } from '../constants'
 import { REVEAL_CHANGELOG } from './changelog'
 import { REVEAL_EXAMPLES } from './examples'
 

@@ -5,7 +5,7 @@ import { withPrefix } from 'lib/helpers'
 import { LoaderProps } from 'lib/index.core'
 
 import { Box } from '../Box'
-import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE } from './definitions'
+import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE } from './constants'
 
 import './loader.scss'
 

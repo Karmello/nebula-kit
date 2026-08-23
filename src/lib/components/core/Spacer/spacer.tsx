@@ -1,5 +1,6 @@
 import { Box } from '../Box'
-import { DEFAULT_SPACER_BLOCK_SIZE, type SpacerProps } from './definitions'
+import { DEFAULT_SPACER_BLOCK_SIZE } from './constants'
+import { type SpacerProps } from './types'
 
 export const Spacer = ({
   // Box

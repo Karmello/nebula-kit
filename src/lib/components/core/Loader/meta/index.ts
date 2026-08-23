@@ -2,7 +2,7 @@ import { LoaderProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
-import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE } from '../definitions'
+import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE } from '../constants'
 import { LOADER_CHANGELOG } from './changelog'
 import { LOADER_EXAMPLES } from './examples'
 

@@ -6,7 +6,7 @@ import { VirtualListProps } from 'lib/index.pro'
 import {
   DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN,
   DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX,
-} from './definitions'
+} from './constants'
 
 export const VirtualList = <T,>({
   // Box

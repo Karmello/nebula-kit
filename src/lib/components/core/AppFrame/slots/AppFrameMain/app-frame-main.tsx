@@ -1,6 +1,6 @@
 import { Box } from 'lib/index.core'
 
-import { type AppFrameMainProps } from './definitions'
+import { type AppFrameMainProps } from './types'
 
 export const AppFrameMain = ({ children, tagAttrs, tagRef, ...paddings }: AppFrameMainProps) => {
   return (

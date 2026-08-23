@@ -13,7 +13,7 @@ import {
   DEFAULT_SIDE_NAV_CATEGORY_EXPANDED,
   DEFAULT_SIDE_NAV_CATEGORY_INTENT,
   DEFAULT_SIDE_NAV_CATEGORY_VARIANT,
-} from './definitions'
+} from './constants'
 
 export const SideNavCategory = ({
   // Box

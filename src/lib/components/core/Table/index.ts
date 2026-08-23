@@ -21,5 +21,6 @@ export const Table = Object.assign(TableBase, {
   Row: TableRow,
 })
 
-export * from './definitions'
+export * from './constants'
 export * from './slots'
+export * from './types'

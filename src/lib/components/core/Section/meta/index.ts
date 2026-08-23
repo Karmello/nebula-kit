@@ -10,7 +10,7 @@ import {
   DEFAULT_SECTION_SIZE,
   DEFAULT_SECTION_VARIANT,
   SECTION_VARIANTS,
-} from '../definitions'
+} from '../constants'
 import { SECTION_CHANGELOG } from './changelog'
 import { SECTION_EXAMPLES } from './examples'
 

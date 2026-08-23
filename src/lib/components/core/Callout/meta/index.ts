@@ -10,7 +10,7 @@ import {
   DEFAULT_CALLOUT_SIZE,
   DEFAULT_CALLOUT_STATUS,
   DEFAULT_CALLOUT_VARIANT,
-} from '../definitions'
+} from '../constants'
 import { CALLOUT_CHANGELOG } from './changelog'
 import { CALLOUT_EXAMPLES } from './examples'
 

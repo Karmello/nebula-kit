@@ -2,7 +2,7 @@ import { SlideProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
-import { SLIDE_FROM } from '../definitions'
+import { SLIDE_FROM } from '../constants'
 import { DEFAULT_SLIDE_DURATION, DEFAULT_SLIDE_EASING } from '../slide'
 import { SLIDE_CHANGELOG } from './changelog'
 import { SLIDE_EXAMPLES } from './examples'

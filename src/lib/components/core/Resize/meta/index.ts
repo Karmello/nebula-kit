@@ -2,7 +2,7 @@ import { ResizeProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
-import { RESIZE_PROPERTIES } from '../definitions'
+import { RESIZE_PROPERTIES } from '../constants'
 import { DEFAULT_RESIZE_DURATION, DEFAULT_RESIZE_EASING } from '../resize'
 import { RESIZE_CHANGELOG } from './changelog'
 import { RESIZE_EXAMPLES } from './examples'

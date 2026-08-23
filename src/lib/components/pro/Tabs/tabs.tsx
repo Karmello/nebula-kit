@@ -9,7 +9,7 @@ import {
   DEFAULT_TABS_DIRECTION,
   DEFAULT_TABS_INTENT,
   DEFAULT_TABS_SIZE,
-} from './definitions'
+} from './constants'
 
 export const Tabs = ({
   children,

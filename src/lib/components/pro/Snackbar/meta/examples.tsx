@@ -3,7 +3,7 @@ import { Button } from 'lib/index.core'
 import { useSnackbar } from 'lib/index.pro'
 import { type Example } from 'client/definitions'
 
-import { type SnackbarPlacement } from '../definitions'
+import { type SnackbarPlacement } from '../types'
 
 const SnackbarWrapper = ({
   status,

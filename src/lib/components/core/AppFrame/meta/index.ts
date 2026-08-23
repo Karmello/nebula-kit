@@ -2,16 +2,18 @@ import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
-import type { AppFrameProps } from '../definitions'
 import {
   type AppFrameFooterProps,
   type AppFrameFooterSectionProps,
   type AppFrameHeaderProps,
   type AppFrameMainProps,
+} from '../slots'
+import {
   DEFAULT_APP_FRAME_FOOTER_INTENT,
   DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING,
   DEFAULT_APP_FRAME_HEADER_INTENT,
 } from '../slots'
+import type { AppFrameProps } from '../types'
 import { APP_FRAME_CHANGELOG } from './changelog'
 import { APP_FRAME_EXAMPLES } from './examples'
 

@@ -11,7 +11,7 @@ import {
   DEFAULT_AVATAR_SIZE,
   LOADER_DELAY,
   MIN_LOADER_VISIBLE_TIME,
-} from './definitions'
+} from './constants'
 
 export const Avatar = ({
   // Image

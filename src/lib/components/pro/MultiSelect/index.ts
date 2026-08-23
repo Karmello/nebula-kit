@@ -5,5 +5,6 @@ export const MultiSelect = Object.assign(MultiSelectBase, {
   Option: MultiSelectOption,
 })
 
-export * from './definitions'
+export * from './constants'
 export * from './slots'
+export * from './types'

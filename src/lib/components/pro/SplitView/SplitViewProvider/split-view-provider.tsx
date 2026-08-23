@@ -4,7 +4,7 @@ import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
 import { BREAKPOINTS, DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
 import { useGlobalScrollLock, useScreen } from 'lib/hooks'
 
-import { ProviderProps, SplitViewContextProps, SplitViewMode } from './definitions'
+import { ProviderProps, SplitViewContextProps, SplitViewMode } from './types'
 
 const SplitViewContext = createContext<SplitViewContextProps>({} as SplitViewContextProps)
 

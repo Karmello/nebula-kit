@@ -9,9 +9,9 @@ import {
   DEFAULT_SNACKBAR_CLOSE_ON_OUTSIDE_CLICK,
   DEFAULT_SNACKBAR_INLINE_SIZE,
   DEFAULT_SNACKBAR_PLACEMENT,
-  UseSnackbarShowArgs,
-} from './definitions'
+} from './constants'
 import { SnackbarProvider } from './SnackbarProvider'
+import { UseSnackbarShowArgs } from './types'
 
 export const Snackbar = ({
   // Box

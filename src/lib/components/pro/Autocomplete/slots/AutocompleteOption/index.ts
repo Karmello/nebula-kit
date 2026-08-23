@@ -1,2 +1,2 @@
 export * from './autocomplete-option'
-export * from './definitions'
+export * from './types'

@@ -1,2 +1,2 @@
-export * from './definitions'
 export * from './rotate'
+export * from './types'

@@ -14,9 +14,9 @@ import {
   DIALOG_PADDING,
   DIALOG_RESIZE_DURATION,
   DIALOG_SIZE_MAP,
-  type DialogProps,
-} from './definitions'
+} from './constants'
 import { DialogProvider } from './DialogProvider'
+import { type DialogProps } from './types'
 
 export const Dialog = ({
   // HtmlTag

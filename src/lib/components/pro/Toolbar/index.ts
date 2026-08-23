@@ -7,5 +7,5 @@ export const Toolbar = Object.assign(ToolbarBase, {
   End: ToolbarEnd,
 })
 
-export * from './definitions'
 export * from './slots'
+export * from './types'

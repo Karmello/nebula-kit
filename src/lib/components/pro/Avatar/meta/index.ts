@@ -3,7 +3,7 @@ import { TSHIRT_SIZES } from 'lib/constants'
 import { AvatarProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { AVATAR_SHAPES, DEFAULT_AVATAR_SHAPE, DEFAULT_AVATAR_SIZE } from '../definitions'
+import { AVATAR_SHAPES, DEFAULT_AVATAR_SHAPE, DEFAULT_AVATAR_SIZE } from '../constants'
 import { AVATAR_CHANGELOG } from './changelog'
 import { AVATAR_EXAMPLES } from './examples'
 

@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { withPrefix } from 'lib/helpers'
 import { HtmlTag, HtmlTagProps, LinkProps } from 'lib/index.core'
 
-import { DEFAULT_LINK_COMPOSE_MODE, DEFAULT_LINK_TARGET } from './definitions'
+import { DEFAULT_LINK_COMPOSE_MODE, DEFAULT_LINK_TARGET } from './constants'
 
 import './link.scss'
 

@@ -10,7 +10,7 @@ import {
   DEFAULT_SWITCH_INTENT,
   DEFAULT_SWITCH_SCALE,
   SWITCH_BORDER_MULTIPLIER,
-} from './definitions'
+} from './constants'
 
 import './switch.scss'
 

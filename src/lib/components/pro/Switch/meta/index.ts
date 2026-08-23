@@ -3,7 +3,7 @@ import { BUTTON_META } from 'lib/components/core/Button/meta'
 import { SwitchProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SCALE, SWITCH_INTENTS } from '../definitions'
+import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SCALE, SWITCH_INTENTS } from '../constants'
 import { SWITCH_CHANGELOG } from './changelog'
 import { SWITCH_EXAMPLES } from './examples'
 

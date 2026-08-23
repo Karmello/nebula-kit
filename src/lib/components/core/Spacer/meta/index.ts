@@ -2,7 +2,7 @@ import { SpacerProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
-import { DEFAULT_SPACER_BLOCK_SIZE } from '../definitions'
+import { DEFAULT_SPACER_BLOCK_SIZE } from '../constants'
 import { SPACER_CHANGELOG } from './changelog'
 import { SPACER_EXAMPLES } from './examples'
 

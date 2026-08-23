@@ -3,7 +3,7 @@ import { cloneElement } from 'react'
 import { WithSlots } from 'lib/components/shared'
 import { Box } from 'lib/index.core'
 
-import { type AppFrameProps } from './definitions'
+import { type AppFrameProps } from './types'
 
 export const AppFrame = ({ children, tagAttrs, tagRef, stickyHeader = false }: AppFrameProps) => {
   return (

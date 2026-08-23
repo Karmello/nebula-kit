@@ -8,5 +8,5 @@ export const AppFrame = Object.assign(AppFrameBase, {
   FooterSection: AppFrameFooterSection,
 })
 
-export * from './definitions'
 export * from './slots'
+export * from './types'

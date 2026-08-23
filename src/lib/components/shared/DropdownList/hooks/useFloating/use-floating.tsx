@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef } from 'react'
 
-import { DEFAULT_FLOATING_PLACEMENT, FloatingProps } from './definitions'
+import { DEFAULT_FLOATING_PLACEMENT } from './constants'
 import { resolveFitStrategy, resolveProjectStrategy } from './strategies'
+import { FloatingProps } from './types'
 
 export const useFloating = ({
   anchorRef,

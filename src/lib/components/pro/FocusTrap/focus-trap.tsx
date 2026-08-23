@@ -1,10 +1,8 @@
 import { useEffect, useRef } from 'react'
 
-import {
-  DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK,
-  type FocusTrapProps,
-} from './definitions'
+import { DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK } from './constants'
 import { isInsideLogicalTree } from './helpers'
+import { type FocusTrapProps } from './types'
 
 export const FocusTrap = ({
   active,

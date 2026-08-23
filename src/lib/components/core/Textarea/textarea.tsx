@@ -13,7 +13,7 @@ import {
   DEFAULT_TEXTAREA_RESIZE,
   DEFAULT_TEXTAREA_ROWS,
   DEFAULT_TEXTAREA_VARIANT,
-} from './definitions'
+} from './constants'
 
 import './textarea.scss'
 

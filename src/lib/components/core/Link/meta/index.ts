@@ -6,7 +6,7 @@ import {
   DEFAULT_LINK_TARGET,
   LINK_COMPOSE_MODES,
   LINK_TARGETS,
-} from '../definitions'
+} from '../constants'
 import { LINK_CHANGELOG } from './changelog'
 import { LINK_EXAMPLES } from './examples'
 

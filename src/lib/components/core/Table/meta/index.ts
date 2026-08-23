@@ -18,10 +18,10 @@ import {
   DEFAULT_TABLE_PADDING_BLOCK,
   DEFAULT_TABLE_PADDING_INLINE,
   TABLE_LAYOUTS,
-} from '../definitions'
-import { DEFAULT_TABLE_BODY_INTENT } from '../slots/TableBody/definitions'
-import { DEFAULT_TABLE_CAPTION_INTENT } from '../slots/TableCaption/definitions'
-import { DEFAULT_TABLE_FOOTER_INTENT } from '../slots/TableFooter/definitions'
+} from '../constants'
+import { DEFAULT_TABLE_BODY_INTENT } from '../slots/TableBody/constants'
+import { DEFAULT_TABLE_CAPTION_INTENT } from '../slots/TableCaption/constants'
+import { DEFAULT_TABLE_FOOTER_INTENT } from '../slots/TableFooter/constants'
 import { TABLE_CHANGELOG } from './changelog'
 import { TABLE_EXAMPLES } from './examples'
 

@@ -1,7 +1,7 @@
 import { createContext, ReactNode, RefObject, useContext, useEffect, useRef, useState } from 'react'
 
-import { DropdownListPlacement, DropdownListProps } from '../../definitions'
 import { FloatingResolved } from '../../hooks'
+import { DropdownListPlacement, DropdownListProps } from '../../types'
 
 type ProviderProps = { children: ReactNode } & ExternalProps
 

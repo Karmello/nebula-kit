@@ -8,7 +8,7 @@ import {
   DEFAULT_SPLIT_VIEW_SIDE_BLOCK_SIZE,
   DEFAULT_SPLIT_VIEW_SIDE_INLINE_SIZE,
   DEFAULT_SPLIT_VIEW_SIDE_INTENT,
-} from './definitions'
+} from './constants'
 
 export const SplitViewSide = ({
   // Box

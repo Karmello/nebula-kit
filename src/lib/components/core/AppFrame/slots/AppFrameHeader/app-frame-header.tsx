@@ -1,10 +1,7 @@
 import { Box } from 'lib/index.core'
 
-import {
-  type AppFrameHeaderInternalProps,
-  type AppFrameHeaderProps,
-  DEFAULT_APP_FRAME_HEADER_INTENT,
-} from './definitions'
+import { DEFAULT_APP_FRAME_HEADER_INTENT } from './constants'
+import { type AppFrameHeaderInternalProps, type AppFrameHeaderProps } from './types'
 
 export const AppFrameHeader = ({
   children,

@@ -11,7 +11,7 @@ import {
 import { Box, Divider, Resize } from 'lib/index.core'
 import { Portal, VirtualList } from 'lib/index.pro'
 
-import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../definitions'
+import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from '../../constants'
 import { FloatingResolved, useFloating } from '../../hooks'
 import { useDropdownListContext } from '../../providers'
 import { DropdownListItem } from '../../slots'

@@ -1,6 +1,6 @@
 import { Box } from '../Box'
-import { type RevealProps } from './definitions'
 import { Reveal } from './reveal'
+import { type RevealProps } from './types'
 
 export type PropsFromRevealKey = (typeof PROPS_FROM_REVEAL)[number]
 

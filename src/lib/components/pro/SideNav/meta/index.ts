@@ -10,7 +10,7 @@ import {
   DEFAULT_SIDE_NAV_SCALE,
   SIDE_NAV_EXPAND_MODES,
   SIDE_NAV_VARIANTS,
-} from '../definitions'
+} from '../constants'
 import {
   DEFAULT_SIDE_NAV_CATEGORY_EXPANDED,
   DEFAULT_SIDE_NAV_CATEGORY_INTENT,

@@ -21,7 +21,7 @@ import type {
   RespValue,
 } from 'lib/types'
 
-import { type HtmlTagProps } from '../HtmlTag/definitions'
+import { type HtmlTagProps } from '../HtmlTag/types'
 import { BOX_COLORS, BOX_INTENTS, BOX_SURFACES, BOX_THEMES, BOX_VARIANTS } from './constants'
 
 export type BoxTheme = (typeof BOX_THEMES)[number]

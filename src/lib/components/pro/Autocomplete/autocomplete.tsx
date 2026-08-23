@@ -10,7 +10,7 @@ import {
   DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   DEFAULT_AUTOCOMPLETE_INTENT,
   DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
-} from './definitions'
+} from './constants'
 
 export const Autocomplete = ({
   // HtmlTag

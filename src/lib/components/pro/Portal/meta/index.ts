@@ -1,8 +1,9 @@
 import { HTML_TAG_META } from 'lib/components/core/HtmlTag/meta'
 import { ComponentMeta } from 'client/definitions'
 
-import { PORTAL_PLACEMENTS, type PortalProps } from '../definitions'
+import { PORTAL_PLACEMENTS } from '../constants'
 import { DEFAULT_PORTAL_PLACEMENT } from '../portal'
+import { type PortalProps } from '../types'
 import { PORTAL_CHANGELOG } from './changelog'
 import { PORTAL_EXAMPLES } from './examples'
 

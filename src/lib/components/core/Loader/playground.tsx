@@ -1,4 +1,4 @@
-import { type LoaderProps } from './definitions'
+import { type LoaderProps } from './types'
 
 export type PropsFromLoaderKey = (typeof PROPS_FROM_LOADER)[number]
 

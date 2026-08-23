@@ -3,7 +3,7 @@ import { InputProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
-import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_SCALE, DEFAULT_INPUT_VARIANT } from '../definitions'
+import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_SCALE, DEFAULT_INPUT_VARIANT } from '../constants'
 import { INPUT_CHANGELOG } from './changelog'
 import { INPUT_EXAMPLES } from './examples'
 

@@ -1,4 +1,4 @@
-import { type SwitchProps } from './definitions'
+import { type SwitchProps } from './types'
 
 export type PropsFromSwitchKey = (typeof PROPS_FROM_SWITCH)[number]
 

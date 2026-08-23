@@ -10,7 +10,7 @@ import {
   DEFAULT_TABLE_LAYOUT,
   DEFAULT_TABLE_PADDING_BLOCK,
   DEFAULT_TABLE_PADDING_INLINE,
-} from './definitions'
+} from './constants'
 import { TableContext } from './TableContext'
 
 import './table.scss'

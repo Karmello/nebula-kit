@@ -1,5 +1,5 @@
 import { Tabs } from './'
-import { type TabsProps } from './definitions'
+import { type TabsProps } from './types'
 
 export type PropsFromTabsKey = (typeof PROPS_FROM_TABS)[number]
 

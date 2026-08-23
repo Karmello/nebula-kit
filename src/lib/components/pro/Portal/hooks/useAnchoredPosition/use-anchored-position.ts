@@ -1,8 +1,8 @@
 import { RefObject, useCallback, useLayoutEffect, useRef, useState } from 'react'
 
-import { AnchoredPlacement, AnchoredPosition } from './definitions'
 import { resolveAnchoredPosition } from './resolveAnchoredPosition'
 import { resolvePlacementTransform } from './resolvePlacementTransform'
+import { AnchoredPlacement, AnchoredPosition } from './types'
 
 export type UseAnchoredPositionProps = {
   anchorRef?: RefObject<HTMLElement | null>

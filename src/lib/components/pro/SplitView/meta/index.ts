@@ -8,7 +8,7 @@ import {
 } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { SPLIT_VIEW_SIDE_POSITIONS } from '../definitions'
+import { SPLIT_VIEW_SIDE_POSITIONS } from '../constants'
 import {
   DEFAULT_SPLIT_VIEW_SIDE_BLOCK_SIZE,
   DEFAULT_SPLIT_VIEW_SIDE_INLINE_SIZE,

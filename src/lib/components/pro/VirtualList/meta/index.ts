@@ -6,7 +6,7 @@ import {
   DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN,
   DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX,
   VIRTUAL_LIST_SCROLL_ALIGN,
-} from '../definitions'
+} from '../constants'
 import { VIRTUAL_LIST_CHANGELOG } from './changelog'
 import { VIRTUAL_LIST_EXAMPLES } from './examples'
 

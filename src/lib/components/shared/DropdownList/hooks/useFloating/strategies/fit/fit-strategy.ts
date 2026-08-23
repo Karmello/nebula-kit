@@ -1,4 +1,3 @@
-import { FloatingFitProps, FloatingResolved } from '../../definitions'
 import {
   applyViewportPadding,
   expandAxes,
@@ -7,6 +6,7 @@ import {
   Rect,
   Side,
 } from '../../helpers'
+import { FloatingFitProps, FloatingResolved } from '../../types'
 
 type BlockSpace = {
   side: Side

@@ -4,7 +4,7 @@ import { withPrefix } from 'lib/helpers'
 import { Box, TableCaptionProps } from 'lib/index.core'
 
 import { useTableContext } from '../../TableContext'
-import { DEFAULT_TABLE_CAPTION_INTENT } from './definitions'
+import { DEFAULT_TABLE_CAPTION_INTENT } from './constants'
 
 export const TableCaption = ({
   // Box

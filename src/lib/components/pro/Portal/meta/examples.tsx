@@ -3,8 +3,8 @@ import { useRef, useState } from 'react'
 import { Box, Button } from 'lib/index.core'
 import { type Example } from 'client/definitions'
 
-import { type PortalProps } from '../definitions'
 import { Portal } from '../portal'
+import { type PortalProps } from '../types'
 
 const PortalWrapper = ({ placement }: Partial<PortalProps>) => {
   const [visible, setVisible] = useState<boolean>(false)

@@ -5,7 +5,7 @@ import { withPrefix } from 'lib/helpers'
 import { Box, TableFooterProps } from 'lib/index.core'
 
 import { TableContext, useTableContext } from '../../TableContext'
-import { DEFAULT_TABLE_FOOTER_INTENT } from './definitions'
+import { DEFAULT_TABLE_FOOTER_INTENT } from './constants'
 
 export const TableFooter = ({
   // Box

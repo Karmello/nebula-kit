@@ -1,6 +1,6 @@
 import { createContext, ReactNode, RefObject, useContext, useEffect, useRef } from 'react'
 
-import { UseSnackbarShowArgs } from '../definitions'
+import { UseSnackbarShowArgs } from '../types'
 
 type SnackbarProviderProps = {
   rootRef: RefObject<HTMLDivElement | null>

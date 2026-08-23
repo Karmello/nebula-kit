@@ -13,7 +13,7 @@ import {
   DEFAULT_CALLOUT_SIZE,
   DEFAULT_CALLOUT_STATUS,
   DEFAULT_CALLOUT_VARIANT,
-} from './definitions'
+} from './constants'
 
 export const Callout = <T extends CalloutTag = 'div'>({
   // Box

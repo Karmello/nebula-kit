@@ -3,7 +3,7 @@ import { Fragment } from 'react/jsx-runtime'
 
 import { getLibMsg } from 'lib/helpers'
 
-import { WithSlotsProps } from './definitions'
+import { WithSlotsProps } from './types'
 
 type ResolvedSlots<SlotName extends string> = {
   slotsByName: Record<SlotName, ReactNode[]>

@@ -2,7 +2,7 @@ import { INPUT_META } from 'lib/components/core/Input/meta'
 import { PasswordInputProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE } from '../definitions'
+import { DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE } from '../constants'
 import { PASSWORD_CHANGELOG } from './changelog'
 import { PASSWORD_INPUT_EXAMPLES } from './examples'
 

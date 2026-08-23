@@ -11,7 +11,7 @@ import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { MultiSelectOptionProps, MultiSelectProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_MULTI_SELECT_INLINE_SIZE } from '../definitions'
+import { DEFAULT_MULTI_SELECT_INLINE_SIZE } from '../constants'
 import { MULTI_SELECT_CHANGELOG } from './changelog'
 import { MULTI_SELECT_EXAMPLES } from './examples'
 

@@ -1,4 +1,4 @@
-import { type SectionProps } from './definitions'
+import { type SectionProps } from './types'
 
 export type PropsFromSectionKey = (typeof PROPS_FROM_SECTION)[number]
 

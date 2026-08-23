@@ -4,7 +4,8 @@ import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
 import { Box } from 'lib/index.core'
 
-import { type AppFrameFooterProps, DEFAULT_APP_FRAME_FOOTER_INTENT } from './definitions'
+import { DEFAULT_APP_FRAME_FOOTER_INTENT } from './constants'
+import { type AppFrameFooterProps } from './types'
 
 export const AppFrameFooter = ({
   children,

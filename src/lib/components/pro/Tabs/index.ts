@@ -6,5 +6,6 @@ export const Tabs = Object.assign(TabsBase, {
   Panel: TabsPanel,
 })
 
-export * from './definitions'
+export * from './constants'
 export * from './slots'
+export * from './types'

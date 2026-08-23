@@ -1,4 +1,5 @@
-import { MARKUP_REGEX, MarkupPart } from '../definitions'
+import { MARKUP_REGEX } from '../constants'
+import { MarkupPart } from '../types'
 
 export const parseString = (value: string): MarkupPart[] => {
   const matches = value.split(MARKUP_REGEX)
