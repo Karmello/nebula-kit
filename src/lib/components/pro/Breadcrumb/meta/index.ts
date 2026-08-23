@@ -1,10 +1,10 @@
-import { BREADCRUMB_TAGS, DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
+import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { BreadcrumbProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_COLORS, BOX_INTENTS } from '../../../core/Box/constants'
 import { BOX_META } from '../../../core/Box/meta'
-import { DEFAULT_BREADCRUMB_INTENT } from '../constants'
+import { BREADCRUMB_TAGS, DEFAULT_BREADCRUMB_INTENT } from '../constants'
 import { BREADCRUMB_CHANGELOG } from './changelog'
 import { BREADCRUMB_EXAMPLES } from './examples'
 

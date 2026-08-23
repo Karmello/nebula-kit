@@ -6,7 +6,6 @@ import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { Box, Icon, Loader, Text } from 'lib/index.core'
 import { syncRespDataset } from 'lib/internals/dom'
-import type { ButtonTag } from 'lib/types'
 
 import {
   DEFAULT_BUTTON_ALIGN,
@@ -16,7 +15,7 @@ import {
   DEFAULT_BUTTON_SCALE,
   DEFAULT_BUTTON_VARIANT,
 } from './constants'
-import type { ButtonProps } from './types'
+import type { ButtonProps, ButtonTag } from './types'
 
 import './button.scss'
 

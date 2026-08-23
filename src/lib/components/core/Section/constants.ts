@@ -5,6 +5,7 @@ import { type BoxVariant } from '../Box'
 import { type TextTypography } from '../Text'
 
 export const SECTION_VARIANTS = ['ghost', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
+export const SECTION_TAGS = ['section', 'article', 'aside', 'div'] as const
 
 export const DEFAULT_SECTION_VARIANT: SectionProps['variant'] = 'ghost'
 export const DEFAULT_SECTION_INTENT: SectionProps['intent'] = 'neutral'

@@ -3,7 +3,6 @@ import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
 import { CalloutProps, Spacer, Text, Title } from 'lib/index.core'
-import { CalloutTag } from 'lib/types'
 
 import { Box } from '../Box'
 import {
@@ -14,6 +13,7 @@ import {
   DEFAULT_CALLOUT_STATUS,
   DEFAULT_CALLOUT_VARIANT,
 } from './constants'
+import { CalloutTag } from './types'
 
 export const Callout = <T extends CalloutTag = 'div'>({
   // Box

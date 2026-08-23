@@ -1,4 +1,4 @@
-import { BUTTON_TAGS, DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
+import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { ButtonProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
@@ -8,6 +8,7 @@ import { TEXT_META } from '../../Text/meta'
 import {
   BUTTON_ALIGNS,
   BUTTON_ICON_PLACEMENTS,
+  BUTTON_TAGS,
   DEFAULT_BUTTON_ALIGN,
   DEFAULT_BUTTON_ICON_PLACEMENT,
   DEFAULT_BUTTON_INTENT,

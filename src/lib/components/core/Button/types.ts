@@ -1,11 +1,12 @@
 import { ComponentPropsWithoutRef } from 'react'
 
 import { BoxProps, IconProps } from 'lib/index.core'
-import { ButtonTag, RespValue, TShirtSize } from 'lib/types'
+import { RespValue, TShirtSize } from 'lib/types'
 
 import { type TextProps } from '../Text'
-import { BUTTON_ALIGNS, BUTTON_ICON_PLACEMENTS } from './constants'
+import { BUTTON_ALIGNS, BUTTON_ICON_PLACEMENTS, BUTTON_TAGS } from './constants'
 
+export type ButtonTag = (typeof BUTTON_TAGS)[number]
 export type ButtonAlign = (typeof BUTTON_ALIGNS)[number]
 export type ButtonIconPlacement = (typeof BUTTON_ICON_PLACEMENTS)[number]
 

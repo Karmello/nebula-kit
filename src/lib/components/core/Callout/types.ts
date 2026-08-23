@@ -1,8 +1,9 @@
-import { CalloutTag, TShirtSize } from 'lib/types'
+import { TShirtSize } from 'lib/types'
 
 import type { BoxProps } from '../Box/types'
-import { CALLOUT_STATUSES, CALLOUT_VARIANTS } from './constants'
+import { CALLOUT_STATUSES, CALLOUT_TAGS, CALLOUT_VARIANTS } from './constants'
 
+export type CalloutTag = (typeof CALLOUT_TAGS)[number]
 export type CalloutVariant = (typeof CALLOUT_VARIANTS)[number]
 export type CalloutStatus = (typeof CALLOUT_STATUSES)[number]
 

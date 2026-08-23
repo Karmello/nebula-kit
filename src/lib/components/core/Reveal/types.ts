@@ -1,7 +1,10 @@
 import { ResizeProps } from 'lib/index.core'
-import { RevealTag, TShirtSize } from 'lib/types'
+import { TShirtSize } from 'lib/types'
 
 import { BoxProps } from '../Box'
+import { REVEAL_TAGS } from './constants'
+
+export type RevealTag = (typeof REVEAL_TAGS)[number]
 
 export type RevealProps<T extends RevealTag = 'div'> = {
   // own

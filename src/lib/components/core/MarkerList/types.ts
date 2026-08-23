@@ -1,8 +1,7 @@
-import { MarkerListTag } from 'lib/types'
-
 import { BoxProps } from '../Box'
-import { MARKER_LIST_STYLES } from './constants'
+import { MARKER_LIST_STYLES, MARKER_LIST_TAGS } from './constants'
 
+export type MarkerListTag = (typeof MARKER_LIST_TAGS)[number]
 export type MarkerListStyle = (typeof MARKER_LIST_STYLES)[number]
 
 export type MarkerListProps<T extends MarkerListTag = 'ul'> = {

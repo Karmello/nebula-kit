@@ -14,5 +14,6 @@ export const TEXT_TYPOGRAPHY = [
   'h1',
 ] as const
 export const TEXT_WORD_BREAK = ['normal', 'break-all', 'keep-all', 'break-word'] as const
+export const TEXT_TAGS = ['p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a', 'label'] as const
 
 export const DEFAULT_TEXT_TYPOGRAPHY: TextTypography = 'body'

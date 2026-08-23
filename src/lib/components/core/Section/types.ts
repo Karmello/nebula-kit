@@ -1,12 +1,13 @@
 import { ReactNode } from 'react'
 
 import { type TitleProps } from 'lib/index.core'
-import type { SectionTag, TShirtSize } from 'lib/types'
+import type { TShirtSize } from 'lib/types'
 
 import { type BoxProps } from '../Box'
 import { type TextProps } from '../Text'
-import { SECTION_VARIANTS } from './constants'
+import { SECTION_TAGS, SECTION_VARIANTS } from './constants'
 
+export type SectionTag = (typeof SECTION_TAGS)[number]
 export type SectionVariant = (typeof SECTION_VARIANTS)[number]
 
 export type SectionProps<T extends SectionTag = 'section'> = {

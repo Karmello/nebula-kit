@@ -1,4 +1,4 @@
-import { SECTION_TAGS, TSHIRT_SIZES } from 'lib/constants'
+import { TSHIRT_SIZES } from 'lib/constants'
 import { SectionProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
@@ -9,6 +9,7 @@ import {
   DEFAULT_SECTION_INTENT,
   DEFAULT_SECTION_SIZE,
   DEFAULT_SECTION_VARIANT,
+  SECTION_TAGS,
   SECTION_VARIANTS,
 } from '../constants'
 import { SECTION_CHANGELOG } from './changelog'

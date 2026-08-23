@@ -3,7 +3,6 @@ import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
 import { Divider, SectionProps, Spacer, Text, Title } from 'lib/index.core'
-import { SectionTag } from 'lib/types'
 
 import { Box } from '../Box'
 import {
@@ -12,6 +11,7 @@ import {
   DEFAULT_SECTION_VARIANT,
   SECTION_SIZE_CONFIG,
 } from './constants'
+import { SectionTag } from './types'
 
 export const Section = <T extends SectionTag = 'section'>({
   // Box

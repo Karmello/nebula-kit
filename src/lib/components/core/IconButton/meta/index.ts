@@ -1,4 +1,4 @@
-import { ICON_BUTTON_TAGS, TSHIRT_SIZES } from 'lib/constants'
+import { TSHIRT_SIZES } from 'lib/constants'
 import { IconButtonProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
@@ -9,6 +9,7 @@ import {
   DEFAULT_ICON_BUTTON_RIPPLE,
   DEFAULT_ICON_BUTTON_SCALE,
   DEFAULT_ICON_BUTTON_VARIANT,
+  ICON_BUTTON_TAGS,
 } from '../constants'
 import { ICON_BUTTON_CHANGELOG } from './changelog'
 import { ICON_BUTTON_EXAMPLES } from './examples'

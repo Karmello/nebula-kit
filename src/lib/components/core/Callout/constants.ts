@@ -37,3 +37,4 @@ export const DEFAULT_CALLOUT_STATUS: CalloutProps['status'] = 'info'
 
 export const CALLOUT_VARIANTS = ['solid', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
 export const CALLOUT_STATUSES = ['info', 'success', 'warning', 'error'] as const
+export const CALLOUT_TAGS = ['div', 'section', 'article', 'aside'] as const

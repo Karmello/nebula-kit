@@ -4,11 +4,11 @@ import { Fragment } from 'react/jsx-runtime'
 import { DropdownList } from 'lib/components/shared'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { Box, Icon, Text } from 'lib/index.core'
-import { BreadcrumbProps } from 'lib/index.pro'
-import { type BreadcrumbTag } from 'lib/types'
+import { type BreadcrumbProps } from 'lib/index.pro'
 
 import { DEFAULT_BREADCRUMB_INTENT, DEFAULT_BREADCRUMB_SIZE } from './constants'
 import { convertTreeToLevels } from './helpers'
+import { type BreadcrumbTag } from './types'
 
 export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
   // HtmlTag

@@ -1,5 +1,4 @@
-import type { TextTypography } from 'lib/components/core/Text/types'
-import type { TextTag } from 'lib/types'
+import type { TextTag, TextTypography } from 'lib/components/core/Text/types'
 
 export const TYPOGRAPHY_MAP: Record<
   TextTypography,

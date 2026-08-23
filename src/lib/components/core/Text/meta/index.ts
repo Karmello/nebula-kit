@@ -1,9 +1,14 @@
-import { TEXT_TAGS } from 'lib/constants'
 import { TextProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
-import { DEFAULT_TEXT_TYPOGRAPHY, TEXT_SPACE, TEXT_TYPOGRAPHY, TEXT_WORD_BREAK } from '../constants'
+import {
+  DEFAULT_TEXT_TYPOGRAPHY,
+  TEXT_SPACE,
+  TEXT_TAGS,
+  TEXT_TYPOGRAPHY,
+  TEXT_WORD_BREAK,
+} from '../constants'
 import { TEXT_CHANGELOG } from './changelog'
 import { TEXT_EXAMPLES } from './examples'
 

@@ -42,7 +42,7 @@ export const BOX_EXAMPLES: Example[] = [
   },
   {
     jsx: (
-      <Box drawable interactive variant="solid" intent="primary" padding="20px">
+      <Box interactive variant="solid" intent="primary" padding="20px">
         Interactive Box
       </Box>
     ),
@@ -50,7 +50,7 @@ export const BOX_EXAMPLES: Example[] = [
   },
   {
     jsx: (
-      <Box drawable interactive disabled variant="solid" intent="primary" padding="20px">
+      <Box interactive disabled variant="solid" intent="primary" padding="20px">
         Disabled Box
       </Box>
     ),

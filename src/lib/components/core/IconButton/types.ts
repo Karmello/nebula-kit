@@ -1,7 +1,11 @@
 import { ComponentPropsWithoutRef } from 'react'
 
 import { BoxProps, IconProps } from 'lib/index.core'
-import type { IconButtonTag, TShirtSize } from 'lib/types'
+import type { TShirtSize } from 'lib/types'
+
+import { ICON_BUTTON_TAGS } from './constants'
+
+export type IconButtonTag = (typeof ICON_BUTTON_TAGS)[number]
 
 export type IconButtonProps<T extends IconButtonTag = 'button'> = {
   // own

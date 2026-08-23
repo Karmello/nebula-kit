@@ -1,7 +1,10 @@
-import type { BreadcrumbTag, TShirtSize } from 'lib/types'
+import type { TShirtSize } from 'lib/types'
 
 import { type BoxProps } from '../../core/Box/types'
 import { type DropdownListProps } from '../../shared/DropdownList/types'
+import { BREADCRUMB_TAGS } from './constants'
+
+export type BreadcrumbTag = (typeof BREADCRUMB_TAGS)[number]
 
 export type BreadcrumbNode = {
   value: string

@@ -1,8 +1,8 @@
 import { BoxProps } from 'lib/index.core'
-import { TextTag } from 'lib/types'
 
-import { TEXT_SPACE, TEXT_TYPOGRAPHY, TEXT_WORD_BREAK } from './constants'
+import { TEXT_SPACE, TEXT_TAGS, TEXT_TYPOGRAPHY, TEXT_WORD_BREAK } from './constants'
 
+export type TextTag = (typeof TEXT_TAGS)[number]
 export type TextSpace = (typeof TEXT_SPACE)[number]
 export type TextTypography = (typeof TEXT_TYPOGRAPHY)[number]
 export type TextWordBreak = (typeof TEXT_WORD_BREAK)[number]

@@ -1,11 +1,10 @@
-import { REVEAL_TAGS } from 'lib/constants'
 import { RevealProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
 import { BUTTON_META } from '../../Button/meta'
 import { RESIZE_META } from '../../Resize/meta'
-import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SCALE } from '../constants'
+import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SCALE, REVEAL_TAGS } from '../constants'
 import { REVEAL_CHANGELOG } from './changelog'
 import { REVEAL_EXAMPLES } from './examples'
 

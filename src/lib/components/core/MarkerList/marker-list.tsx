@@ -3,10 +3,10 @@ import classNames from 'classnames'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 import { Box, MarkerListProps } from 'lib/index.core'
-import { MarkerListTag } from 'lib/types'
 
 import { DEFAULT_MARKER_LIST_GAP } from './constants'
 import { MarkerListProvider } from './MarkerListProvider'
+import { MarkerListTag } from './types'
 
 import './marker-list.scss'
 

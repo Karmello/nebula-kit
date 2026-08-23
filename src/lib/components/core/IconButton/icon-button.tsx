@@ -4,7 +4,6 @@ import classNames from 'classnames'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { Box, Icon, IconButtonProps, Loader } from 'lib/index.core'
-import { IconButtonTag } from 'lib/types'
 
 import {
   DEFAULT_ICON_BUTTON_INTENT,
@@ -12,6 +11,7 @@ import {
   DEFAULT_ICON_BUTTON_SCALE,
   DEFAULT_ICON_BUTTON_VARIANT,
 } from './constants'
+import { IconButtonTag } from './types'
 
 import './icon-button.scss'
 

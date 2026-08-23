@@ -1,9 +1,8 @@
-import { MARKER_LIST_TAGS } from 'lib/constants'
 import { MarkerListItemProps, MarkerListProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
-import { DEFAULT_MARKER_LIST_GAP, MARKER_LIST_STYLES } from '../constants'
+import { DEFAULT_MARKER_LIST_GAP, MARKER_LIST_STYLES, MARKER_LIST_TAGS } from '../constants'
 import { MARKER_LIST_CHANGELOG } from './changelog'
 import { MARKER_LIST_EXAMPLES } from './examples'
 

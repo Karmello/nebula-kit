@@ -1,10 +1,11 @@
-import { CALLOUT_TAGS, TSHIRT_SIZES } from 'lib/constants'
+import { TSHIRT_SIZES } from 'lib/constants'
 import { CalloutProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
 import { BOX_META } from '../../Box/meta'
 import {
   CALLOUT_STATUSES,
+  CALLOUT_TAGS,
   CALLOUT_VARIANTS,
   DEFAULT_CALLOUT_INTENT,
   DEFAULT_CALLOUT_SIZE,

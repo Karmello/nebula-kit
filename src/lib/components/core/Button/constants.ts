@@ -9,3 +9,4 @@ export const DEFAULT_BUTTON_ICON_PLACEMENT: ButtonProps['iconPlacement'] = 'left
 
 export const BUTTON_ALIGNS = ['center', 'start', 'split'] as const
 export const BUTTON_ICON_PLACEMENTS = ['left', 'right'] as const
+export const BUTTON_TAGS = ['button', 'a'] as const
