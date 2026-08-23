@@ -1,24 +1,26 @@
 import classNames from 'classnames'
 
+import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { Button, Link } from 'lib/index.core'
+import { Box, Icon, Link, Text } from 'lib/index.core'
 import { SideNavItemProps } from 'lib/index.pro'
 
 import { useSideNavContext } from '../../SideNavProvider'
+import { DEFAULT_SIDE_NAV_ITEM_ALIGN, DEFAULT_SIDE_NAV_ITEM_ICON_PLACEMENT } from './definitions'
 
 export const SideNavItem = ({
   tagRef,
   tagAttrs,
   children,
-  // Button
   variant,
   color,
   intent,
+  // own
+  align = DEFAULT_SIDE_NAV_ITEM_ALIGN,
   bold,
   customSvgIcon,
   iconName,
-  iconPlacement,
-  align,
+  iconPlacement = DEFAULT_SIDE_NAV_ITEM_ICON_PLACEMENT,
   elevated,
   selected,
   // Link
@@ -36,11 +38,26 @@ export const SideNavItem = ({
 
   const { categoryId } = props || ({} as any)
 
+  const icon =
+    iconName || customSvgIcon ? (
+      <Icon name={iconName} size={CONTROL_SCALE_MAP[scale].fontSize}>
+        {customSvgIcon}
+      </Icon>
+    ) : null
+
   return (
     <Link href={href} onClick={onClick}>
-      <Button
-        tag="a"
+      <Box
+        tag="button"
         tagRef={tagRef}
+        interactive
+        display="flex"
+        alignItems="center"
+        justifyContent={
+          align === 'split' ? 'space-between' : align === 'center' ? 'center' : 'flex-start'
+        }
+        cursor="pointer"
+        columnGap={CONTROL_SCALE_MAP[scale].gap}
         tagAttrs={{
           ...tagAttrs,
           className: classNames(withPrefix('side-nav-item'), tagAttrs?.className || ''),
@@ -50,18 +67,24 @@ export const SideNavItem = ({
         variant={variant || rootVariant}
         color={color || rootColor}
         intent={intent || rootIntent}
-        scale={scale}
-        fullWidth
-        bold={bold}
-        customSvgIcon={customSvgIcon}
-        iconName={iconName}
-        iconPlacement={iconPlacement}
-        align={align}
         elevated={elevated}
-        selected={selected}
+        surface={selected ? 'selected' : undefined}
+        inlineSize="100%"
+        blockSize={CONTROL_SCALE_MAP[scale].blockSize}
+        paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
+        ripple
       >
-        {children}
-      </Button>
+        {iconPlacement === 'left' ? icon : null}
+        <Text
+          bold={bold}
+          fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+          lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
+          textAlign={align === 'center' ? 'center' : undefined}
+        >
+          {children}
+        </Text>
+        {iconPlacement === 'right' ? icon : null}
+      </Box>
     </Link>
   )
 }

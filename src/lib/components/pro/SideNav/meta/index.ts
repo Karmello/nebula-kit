@@ -91,7 +91,7 @@ export const SIDE_NAV_META = {
         'can be used directly inside SideNav for flat navigation',
         'can be nested inside SideNav.Category to participate in hierarchical navigation',
       ],
-      composedOf: ['Link', 'Button'],
+      composedOf: ['Link', 'Box', 'Text', 'Icon'],
       exposedTags: ['a'],
     },
     props: {

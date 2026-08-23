@@ -1,5 +1,6 @@
 import { BoxVariant } from 'lib/components/core/Box'
-import { BoxProps, ButtonProps } from 'lib/index.core'
+import { BoxProps } from 'lib/index.core'
+import { TShirtSize } from 'lib/types'
 
 export const SIDE_NAV_EXPAND_MODES = ['single', 'multiple'] as const
 export const SIDE_NAV_VARIANTS = ['solid', 'ghost'] as const satisfies BoxVariant[]
@@ -13,14 +14,12 @@ export type SideNavVariant = (typeof SIDE_NAV_VARIANTS)[number]
 
 export type SideNavOwnProps = {
   expandMode?: SideNavExpandMode
+  scale?: TShirtSize
 }
 
-type PropsFromBox = Pick<BoxProps<'nav'>, 'tagAttrs' | 'tagRef' | 'gap'>
-
-type PropsFromButton = Pick<ButtonProps<'a'>, 'color' | 'intent' | 'scale'>
+type PropsFromBox = Pick<BoxProps<'nav'>, 'tagAttrs' | 'tagRef' | 'gap' | 'color' | 'intent'>
 
 export type SideNavProps = PropsFromBox &
-  PropsFromButton &
   SideNavOwnProps & {
     children: BoxProps<'nav'>['children']
     variant?: SideNavVariant

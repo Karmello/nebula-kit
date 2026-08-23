@@ -21,11 +21,10 @@ export const SideNav = ({
   tagAttrs,
   tagRef,
   gap = DEFAULT_SIDE_NAV_GAP,
-  // Button
   color,
   intent,
-  scale = DEFAULT_SIDE_NAV_SCALE,
   // own
+  scale = DEFAULT_SIDE_NAV_SCALE,
   expandMode = DEFAULT_SIDE_NAV_EXPAND_MODE,
   variant,
 }: SideNavProps) => {
