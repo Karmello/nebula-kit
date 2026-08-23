@@ -4,6 +4,8 @@ type MultiSelectOptionOwnProps = {
   value: string
 }
 
-type PropsFromDropdownListItem = Pick<DropdownListItemProps, 'children'>
+type PropsFromDropdownListItem = {
+  children?: DropdownListItemProps['children']
+}
 
 export type MultiSelectOptionProps = PropsFromDropdownListItem & MultiSelectOptionOwnProps

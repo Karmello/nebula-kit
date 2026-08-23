@@ -20,12 +20,16 @@ type BreadcrumbOwnProps = {
   onChange?: (path: string[]) => void
 }
 
-type PropsFromBox<T extends BreadcrumbTag = 'div'> = Pick<
-  BoxProps<T>,
-  'tag' | 'tagAttrs' | 'tagRef'
->
+type PropsFromBox<T extends BreadcrumbTag = 'div'> = {
+  tag?: BoxProps<T>['tag']
+  tagAttrs?: BoxProps<T>['tagAttrs']
+  tagRef?: BoxProps<T>['tagRef']
+}
 
-type PropsFromDropdownList = Pick<DropdownListProps, 'color' | 'intent'>
+type PropsFromDropdownList = {
+  color?: DropdownListProps['color']
+  intent?: DropdownListProps['intent']
+}
 
 export type BreadcrumbProps<T extends BreadcrumbTag = 'div'> = PropsFromBox<T> &
   PropsFromDropdownList &

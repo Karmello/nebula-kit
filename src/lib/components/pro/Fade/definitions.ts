@@ -6,7 +6,9 @@ type FadeOwnProps = {
   easing?: string
 }
 
-type PropsFromBox = Pick<BoxProps<'span'>, 'tagAttrs' | 'tagRef'> & {
+type PropsFromBox = {
+  tagAttrs?: BoxProps<'span'>['tagAttrs']
+  tagRef?: BoxProps<'span'>['tagRef']
   children: BoxProps<'span'>['children']
 }
 

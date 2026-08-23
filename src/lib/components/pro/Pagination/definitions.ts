@@ -18,10 +18,14 @@ export type PaginationItem =
   | { type: 'first'; page: number }
   | { type: 'last'; page: number }
 
-type PropsFromBox = Pick<
-  BoxProps<'nav'>,
-  'tagAttrs' | 'tagRef' | 'color' | 'disabled' | 'intent' | 'variant'
->
+type PropsFromBox = {
+  tagAttrs?: BoxProps<'nav'>['tagAttrs']
+  tagRef?: BoxProps<'nav'>['tagRef']
+  color?: BoxProps<'nav'>['color']
+  disabled?: BoxProps<'nav'>['disabled']
+  intent?: BoxProps<'nav'>['intent']
+  variant?: BoxProps<'nav'>['variant']
+}
 
 type PaginationOwnProps = {
   scale?: TShirtSize

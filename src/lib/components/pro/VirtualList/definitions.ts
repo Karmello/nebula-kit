@@ -19,6 +19,12 @@ type VirtualListOwnProps<T = any> = {
   ensureVisibleIndex?: number
 }
 
-type PropsFromBox = Pick<BoxProps, 'tagAttrs' | 'tagRef' | 'intent' | 'color' | 'elevated'>
+type PropsFromBox = {
+  tagAttrs?: BoxProps['tagAttrs']
+  tagRef?: BoxProps['tagRef']
+  intent?: BoxProps['intent']
+  color?: BoxProps['color']
+  elevated?: BoxProps['elevated']
+}
 
 export type VirtualListProps<T = any> = VirtualListOwnProps<T> & PropsFromBox

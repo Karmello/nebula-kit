@@ -11,7 +11,9 @@ type ResizeOwnProps = {
   easing?: string
 }
 
-type PropsFromBox = Pick<BoxProps<'div'>, 'tagAttrs' | 'tagRef'> & {
+type PropsFromBox = {
+  tagAttrs?: BoxProps<'div'>['tagAttrs']
+  tagRef?: BoxProps<'div'>['tagRef']
   children: BoxProps<'div'>['children']
 }
 

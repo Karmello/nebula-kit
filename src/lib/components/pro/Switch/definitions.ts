@@ -16,7 +16,11 @@ export const SWITCH_INTENTS = [
 
 export type SwitchIntent = (typeof SWITCH_INTENTS)[number]
 
-type PropsFromBox = Pick<BoxProps, 'tagAttrs' | 'tagRef' | 'disabled' | 'color'> & {
+type PropsFromBox = {
+  tagAttrs?: BoxProps['tagAttrs']
+  tagRef?: BoxProps['tagRef']
+  disabled?: BoxProps['disabled']
+  color?: BoxProps['color']
   intent?: SwitchIntent
 }
 

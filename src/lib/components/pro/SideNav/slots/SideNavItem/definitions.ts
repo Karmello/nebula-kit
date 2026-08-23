@@ -21,11 +21,18 @@ type SideNavItemOwnProps = {
   selected?: boolean
 }
 
-type PropsFromBox = Pick<BoxProps<'button'>, 'tagRef' | 'tagAttrs' | 'color' | 'intent'> & {
+type PropsFromBox = {
+  tagRef?: BoxProps<'button'>['tagRef']
+  tagAttrs?: BoxProps<'button'>['tagAttrs']
+  color?: BoxProps<'button'>['color']
+  intent?: BoxProps<'button'>['intent']
   children: BoxProps<'button'>['children']
   variant?: SideNavVariant
 }
 
-type PropsFromLink = Pick<LinkProps, 'href' | 'onClick'>
+type PropsFromLink = {
+  href: LinkProps['href']
+  onClick?: LinkProps['onClick']
+}
 
 export type SideNavItemProps = PropsFromBox & PropsFromLink & SideNavItemOwnProps

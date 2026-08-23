@@ -3,10 +3,16 @@ import { type AppFrameProps } from '../../definitions'
 
 export const DEFAULT_APP_FRAME_HEADER_INTENT: AppFrameHeaderProps['intent'] = 'muted'
 
-export type AppFrameHeaderProps = Pick<BoxProps<'header'>, 'tagAttrs' | 'tagRef'> & {
+export type AppFrameHeaderProps = {
+  // Box
+  tagAttrs?: BoxProps<'header'>['tagAttrs']
+  tagRef?: BoxProps<'header'>['tagRef']
   children: BoxProps<'header'>['children']
+  // own
   color?: BoxColor
   intent?: BoxIntent
 }
 
-export type AppFrameHeaderInternalProps = Pick<AppFrameProps, 'stickyHeader'>
+export type AppFrameHeaderInternalProps = {
+  stickyHeader?: AppFrameProps['stickyHeader']
+}

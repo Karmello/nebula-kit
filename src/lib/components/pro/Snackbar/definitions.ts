@@ -26,7 +26,9 @@ export type UseSnackbarShowArgs = {
   heading?: string
 }
 
-type PropsFromBox = Pick<BoxProps, 'inlineSize'>
+type PropsFromBox = {
+  inlineSize?: BoxProps['inlineSize']
+}
 
 type SnackbarOwnProps = {
   children: ReactElement

@@ -36,14 +36,20 @@ type SectionOwnProps = {
   variant?: SectionVariant
 }
 
-type PropsFromBox<T extends SectionTag = 'section'> = Pick<
-  BoxProps<T>,
-  'tag' | 'tagAttrs' | 'tagRef' | 'color' | 'intent' | 'interactive'
-> & {
+type PropsFromBox<T extends SectionTag = 'section'> = {
+  tag?: BoxProps<T>['tag']
+  tagAttrs?: BoxProps<T>['tagAttrs']
+  tagRef?: BoxProps<T>['tagRef']
+  color?: BoxProps<T>['color']
+  intent?: BoxProps<T>['intent']
+  interactive?: BoxProps<T>['interactive']
   children: BoxProps<T>['children']
 }
 
-type PropsFromTitle = Pick<TitleProps, 'iconName' | 'iconPlacement'>
+type PropsFromTitle = {
+  iconName?: TitleProps['iconName']
+  iconPlacement?: TitleProps['iconPlacement']
+}
 
 export type SectionProps<T extends SectionTag = 'section'> = PropsFromBox<T> &
   PropsFromTitle &

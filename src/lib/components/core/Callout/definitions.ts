@@ -48,9 +48,11 @@ type CalloutOwnProps = {
   status?: CalloutStatus
 }
 
-type PropsFromBox<T extends CalloutTag = 'div'> = Pick<
-  BoxProps<T>,
-  'tag' | 'tagAttrs' | 'tagRef' | 'intent'
->
+type PropsFromBox<T extends CalloutTag = 'div'> = {
+  tag?: BoxProps<T>['tag']
+  tagAttrs?: BoxProps<T>['tagAttrs']
+  tagRef?: BoxProps<T>['tagRef']
+  intent?: BoxProps<T>['intent']
+}
 
 export type CalloutProps<T extends CalloutTag = 'div'> = PropsFromBox<T> & CalloutOwnProps

@@ -18,7 +18,11 @@ type SideNavCategoryOwnProps = {
   bold?: boolean
 }
 
-type PropsFromBox = Pick<BoxProps<'ul'>, 'tagAttrs' | 'tagRef' | 'color' | 'intent'> & {
+type PropsFromBox = {
+  tagAttrs?: BoxProps<'ul'>['tagAttrs']
+  tagRef?: BoxProps<'ul'>['tagRef']
+  color?: BoxProps<'ul'>['color']
+  intent?: BoxProps<'ul'>['intent']
   children: BoxProps<'ul'>['children']
   variant?: SideNavVariant
 }

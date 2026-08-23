@@ -5,17 +5,15 @@ type TableHeaderCellOwnProps = {
   rowSpan?: number
 }
 
-type PropsFromBox = Pick<
-  BoxProps<'th'>,
-  | 'tagAttrs'
-  | 'tagRef'
-  | 'minInlineSize'
-  | 'maxInlineSize'
-  | 'blockSize'
-  | 'textAlign'
-  | 'color'
-  | 'intent'
-> & {
+type PropsFromBox = {
+  tagAttrs?: BoxProps<'th'>['tagAttrs']
+  tagRef?: BoxProps<'th'>['tagRef']
+  minInlineSize?: BoxProps<'th'>['minInlineSize']
+  maxInlineSize?: BoxProps<'th'>['maxInlineSize']
+  blockSize?: BoxProps<'th'>['blockSize']
+  textAlign?: BoxProps<'th'>['textAlign']
+  color?: BoxProps<'th'>['color']
+  intent?: BoxProps<'th'>['intent']
   children: BoxProps<'th'>['children']
 }
 

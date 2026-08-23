@@ -20,7 +20,9 @@ export type MarkupPart =
       value: string
     }
 
-type PropsFromBox = Pick<BoxProps, 'tagAttrs' | 'tagRef'> & {
+type PropsFromBox = {
+  tagAttrs?: BoxProps['tagAttrs']
+  tagRef?: BoxProps['tagRef']
   children: BoxProps['children']
 }
 

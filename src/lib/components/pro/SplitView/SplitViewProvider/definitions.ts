@@ -2,7 +2,9 @@ import { ReactNode } from 'react'
 
 import { SplitViewProps } from 'lib/index.pro'
 
-export type ProviderProps = Pick<SplitViewProps, 'sidePosition' | 'switchAt'> & {
+export type ProviderProps = {
+  sidePosition?: SplitViewProps['sidePosition']
+  switchAt?: SplitViewProps['switchAt']
   children: ReactNode
 }
 

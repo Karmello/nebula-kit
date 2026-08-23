@@ -13,19 +13,17 @@ type TableOwnProps = {
   layout?: TableLayout
 }
 
-type PropsFromBox = Pick<
-  BoxProps<'table'>,
-  | 'tagAttrs'
-  | 'tagRef'
-  | 'inlineSize'
-  | 'minInlineSize'
-  | 'maxInlineSize'
-  | 'color'
-  | 'intent'
-  | 'paddingBlock'
-  | 'paddingInline'
-  | 'textAlign'
-> & {
+type PropsFromBox = {
+  tagAttrs?: BoxProps<'table'>['tagAttrs']
+  tagRef?: BoxProps<'table'>['tagRef']
+  inlineSize?: BoxProps<'table'>['inlineSize']
+  minInlineSize?: BoxProps<'table'>['minInlineSize']
+  maxInlineSize?: BoxProps<'table'>['maxInlineSize']
+  color?: BoxProps<'table'>['color']
+  intent?: BoxProps<'table'>['intent']
+  paddingBlock?: BoxProps<'table'>['paddingBlock']
+  paddingInline?: BoxProps<'table'>['paddingInline']
+  textAlign?: BoxProps<'table'>['textAlign']
   children: BoxProps<'table'>['children']
 }
 

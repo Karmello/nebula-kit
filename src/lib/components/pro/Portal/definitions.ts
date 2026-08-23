@@ -25,7 +25,9 @@ type PortalOwnProps = {
   offset?: number
 }
 
-type PropsFromHtmlTag = Pick<HtmlTagProps<'div'>, 'tagAttrs' | 'tagRef'> & {
+type PropsFromHtmlTag = {
+  tagAttrs?: HtmlTagProps<'div'>['tagAttrs']
+  tagRef?: HtmlTagProps<'div'>['tagRef']
   children: HtmlTagProps<'div'>['children']
 }
 

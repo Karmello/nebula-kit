@@ -12,13 +12,19 @@ type MultiSelectOwnProps = {
   dropdownPlacement?: DropdownListProps['placement']
 }
 
-type PropsFromBox = Pick<BoxProps<'div'>, 'inlineSize' | 'disabled'> & {
+type PropsFromBox = {
+  inlineSize?: BoxProps<'div'>['inlineSize']
+  disabled?: BoxProps<'div'>['disabled']
   children: BoxProps<'div'>['children']
 }
 
-type PropsFromDropdownList = Pick<
-  DropdownListProps,
-  'tagAttrs' | 'tagRef' | 'color' | 'intent' | 'scrollAlign' | 'visibleItemsCount'
->
+type PropsFromDropdownList = {
+  tagAttrs?: DropdownListProps['tagAttrs']
+  tagRef?: DropdownListProps['tagRef']
+  color?: DropdownListProps['color']
+  intent?: DropdownListProps['intent']
+  scrollAlign?: DropdownListProps['scrollAlign']
+  visibleItemsCount?: DropdownListProps['visibleItemsCount']
+}
 
 export type MultiSelectProps = PropsFromBox & PropsFromDropdownList & MultiSelectOwnProps

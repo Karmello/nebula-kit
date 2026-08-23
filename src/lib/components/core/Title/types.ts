@@ -6,10 +6,17 @@ export type TitleTypography = (typeof TITLE_TYPOGRAPHY)[number]
 export type TitleIconPlacement = (typeof TITLE_ICON_PLACEMENTS)[number]
 
 export type TitleProps = {
+  // own
   typography?: TitleTypography
   iconPlacement?: TitleIconPlacement
-} & Pick<BoxProps<'span'>, 'tagAttrs' | 'tagRef' | 'color' | 'intent'> & {
-    children: TextProps['children']
-    iconName?: IconProps['name']
-    customSvgIcon?: IconProps['children']
-  }
+  // Box
+  tagAttrs?: BoxProps<'span'>['tagAttrs']
+  tagRef?: BoxProps<'span'>['tagRef']
+  color?: BoxProps<'span'>['color']
+  intent?: BoxProps<'span'>['intent']
+  // Text
+  children: TextProps['children']
+  // Icon
+  iconName?: IconProps['name']
+  customSvgIcon?: IconProps['children']
+}

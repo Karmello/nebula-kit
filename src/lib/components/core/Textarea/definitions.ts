@@ -24,17 +24,16 @@ type TextareaOwnProps = {
   maxLength?: number
 }
 
-type PropsFromBox = Pick<
-  BoxProps<'textarea'>,
-  | 'tagAttrs'
-  | 'tagRef'
-  | 'variant'
-  | 'color'
-  | 'intent'
-  | 'disabled'
-  | 'inlineSize'
-  | 'minInlineSize'
-  | 'maxInlineSize'
->
+type PropsFromBox = {
+  tagAttrs?: BoxProps<'textarea'>['tagAttrs']
+  tagRef?: BoxProps<'textarea'>['tagRef']
+  variant?: BoxProps<'textarea'>['variant']
+  color?: BoxProps<'textarea'>['color']
+  intent?: BoxProps<'textarea'>['intent']
+  disabled?: BoxProps<'textarea'>['disabled']
+  inlineSize?: BoxProps<'textarea'>['inlineSize']
+  minInlineSize?: BoxProps<'textarea'>['minInlineSize']
+  maxInlineSize?: BoxProps<'textarea'>['maxInlineSize']
+}
 
 export type TextareaProps = PropsFromBox & TextareaOwnProps

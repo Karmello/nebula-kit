@@ -17,7 +17,13 @@ export type SideNavOwnProps = {
   scale?: TShirtSize
 }
 
-type PropsFromBox = Pick<BoxProps<'nav'>, 'tagAttrs' | 'tagRef' | 'gap' | 'color' | 'intent'>
+type PropsFromBox = {
+  tagAttrs?: BoxProps<'nav'>['tagAttrs']
+  tagRef?: BoxProps<'nav'>['tagRef']
+  gap?: BoxProps<'nav'>['gap']
+  color?: BoxProps<'nav'>['color']
+  intent?: BoxProps<'nav'>['intent']
+}
 
 export type SideNavProps = PropsFromBox &
   SideNavOwnProps & {

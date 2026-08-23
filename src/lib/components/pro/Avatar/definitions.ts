@@ -39,21 +39,20 @@ export const DEFAULT_AVATAR_OBJECT_POSITION: AvatarProps['objectPosition'] = 'ce
 
 export type AvatarShape = (typeof AVATAR_SHAPES)[number]
 
-type PropsFromImage = Pick<
-  ImageProps,
-  | 'tagAttrs'
-  | 'tagRef'
-  | 'src'
-  | 'alt'
-  | 'title'
-  | 'loading'
-  | 'decoding'
-  | 'fetchPriority'
-  | 'crossOrigin'
-  | 'referrerPolicy'
-  | 'objectFit'
-  | 'objectPosition'
->
+type PropsFromImage = {
+  tagAttrs?: ImageProps['tagAttrs']
+  tagRef?: ImageProps['tagRef']
+  src?: ImageProps['src']
+  alt?: ImageProps['alt']
+  title?: ImageProps['title']
+  loading?: ImageProps['loading']
+  decoding?: ImageProps['decoding']
+  fetchPriority?: ImageProps['fetchPriority']
+  crossOrigin?: ImageProps['crossOrigin']
+  referrerPolicy?: ImageProps['referrerPolicy']
+  objectFit?: ImageProps['objectFit']
+  objectPosition?: ImageProps['objectPosition']
+}
 
 type AvatarOwnProps = {
   size?: TShirtSize

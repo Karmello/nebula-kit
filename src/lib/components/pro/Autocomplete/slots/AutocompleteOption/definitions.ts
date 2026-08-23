@@ -5,6 +5,8 @@ type AutocompleteOptionOwnProps = {
   label: string
 }
 
-type PropsFromDropdownListItem = Pick<DropdownListItemProps, 'children'>
+type PropsFromDropdownListItem = {
+  children?: DropdownListItemProps['children']
+}
 
 export type AutocompleteOptionProps = PropsFromDropdownListItem & AutocompleteOptionOwnProps

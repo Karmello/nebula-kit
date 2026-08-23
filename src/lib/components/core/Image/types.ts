@@ -20,6 +20,7 @@ type ImageReferrerPolicy = (typeof IMAGE_REFERRER_POLICY)[number]
 type ImageFetchPriority = (typeof IMAGE_FETCH_PRIORITY)[number]
 
 export type ImageProps = {
+  // own
   src?: string
   alt?: string
   title?: string
@@ -32,22 +33,21 @@ export type ImageProps = {
   objectPosition?: RespValue<string>
   onLoad?: (e: SyntheticEvent<HTMLImageElement>) => void
   onError?: (e: SyntheticEvent<HTMLImageElement>) => void
-} & Pick<
-  BoxProps<'img'>,
-  | 'tagAttrs'
-  | 'tagRef'
-  | 'inlineSize'
-  | 'minInlineSize'
-  | 'maxInlineSize'
-  | 'blockSize'
-  | 'minBlockSize'
-  | 'maxBlockSize'
-  | 'display'
-  | 'opacity'
-  | 'borderRadius'
-  | 'pointerEvents'
-  | 'overflow'
-  | 'overflowX'
-  | 'overflowY'
-  | 'aspectRatio'
->
+  // Box
+  tagAttrs?: BoxProps<'img'>['tagAttrs']
+  tagRef?: BoxProps<'img'>['tagRef']
+  inlineSize?: BoxProps<'img'>['inlineSize']
+  minInlineSize?: BoxProps<'img'>['minInlineSize']
+  maxInlineSize?: BoxProps<'img'>['maxInlineSize']
+  blockSize?: BoxProps<'img'>['blockSize']
+  minBlockSize?: BoxProps<'img'>['minBlockSize']
+  maxBlockSize?: BoxProps<'img'>['maxBlockSize']
+  display?: BoxProps<'img'>['display']
+  opacity?: BoxProps<'img'>['opacity']
+  borderRadius?: BoxProps<'img'>['borderRadius']
+  pointerEvents?: BoxProps<'img'>['pointerEvents']
+  overflow?: BoxProps<'img'>['overflow']
+  overflowX?: BoxProps<'img'>['overflowX']
+  overflowY?: BoxProps<'img'>['overflowY']
+  aspectRatio?: BoxProps<'img'>['aspectRatio']
+}

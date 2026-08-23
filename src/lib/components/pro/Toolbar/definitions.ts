@@ -12,7 +12,9 @@ export type ToolbarOwnProps = {
   switchAt?: SwitchBreakpoint
 }
 
-type PropsFromBox = Pick<BoxProps<'nav'>, 'tagAttrs' | 'tagRef'> & {
+type PropsFromBox = {
+  tagAttrs?: BoxProps<'nav'>['tagAttrs']
+  tagRef?: BoxProps<'nav'>['tagRef']
   children: BoxProps<'nav'>['children'] | ((args: ChildrenAsFuncArgs) => JSX.Element)
 }
 

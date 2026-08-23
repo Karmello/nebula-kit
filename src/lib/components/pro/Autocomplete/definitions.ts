@@ -20,19 +20,20 @@ type AutocompleteOwnProps = {
   showToggle?: boolean
 }
 
-type PropsFromBox = Pick<BoxProps<'div'>, 'inlineSize' | 'disabled'> & {
+type PropsFromBox = {
+  inlineSize?: BoxProps<'div'>['inlineSize']
+  disabled?: BoxProps<'div'>['disabled']
   children: BoxProps<'div'>['children']
 }
 
-type PropsFromDropdownList = Pick<
-  DropdownListProps,
-  | 'tagAttrs'
-  | 'tagRef'
-  | 'color'
-  | 'intent'
-  | 'scrollAlign'
-  | 'visibleItemsCount'
-  | 'noOptionsLabel'
->
+type PropsFromDropdownList = {
+  tagAttrs?: DropdownListProps['tagAttrs']
+  tagRef?: DropdownListProps['tagRef']
+  color?: DropdownListProps['color']
+  intent?: DropdownListProps['intent']
+  scrollAlign?: DropdownListProps['scrollAlign']
+  visibleItemsCount?: DropdownListProps['visibleItemsCount']
+  noOptionsLabel?: DropdownListProps['noOptionsLabel']
+}
 
 export type AutocompleteProps = PropsFromBox & PropsFromDropdownList & AutocompleteOwnProps

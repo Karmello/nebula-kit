@@ -8,6 +8,7 @@ export type TextTypography = (typeof TEXT_TYPOGRAPHY)[number]
 export type TextWordBreak = (typeof TEXT_WORD_BREAK)[number]
 
 export type TextProps<T extends TextTag = 'p'> = {
+  // own
   typography?: TextTypography
   fontSize?: string
   lineHeight?: number | string
@@ -19,6 +20,12 @@ export type TextProps<T extends TextTag = 'p'> = {
   truncate?: boolean
   clampLines?: number
   space?: TextSpace
-} & Pick<BoxProps<T>, 'tag' | 'tagAttrs' | 'tagRef' | 'color' | 'intent' | 'textAlign'> & {
-    children: BoxProps<T>['children']
-  }
+  // Box
+  tag?: BoxProps<T>['tag']
+  tagAttrs?: BoxProps<T>['tagAttrs']
+  tagRef?: BoxProps<T>['tagRef']
+  color?: BoxProps<T>['color']
+  intent?: BoxProps<T>['intent']
+  textAlign?: BoxProps<T>['textAlign']
+  children: BoxProps<T>['children']
+}

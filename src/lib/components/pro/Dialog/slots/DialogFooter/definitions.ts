@@ -1,6 +1,8 @@
 import { BoxProps } from 'lib/index.core'
 
-type PropsFromBox = Pick<BoxProps, 'tagAttrs' | 'tagRef'> & {
+type PropsFromBox = {
+  tagAttrs?: BoxProps['tagAttrs']
+  tagRef?: BoxProps['tagRef']
   children: BoxProps<'dialog'>['children']
 }
 

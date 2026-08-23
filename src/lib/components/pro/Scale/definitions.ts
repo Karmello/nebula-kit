@@ -29,7 +29,9 @@ export const SCALE_AXIS = ['both', 'x', 'y'] as const
 export type ScaleOrigin = (typeof SCALE_ORIGIN)[number]
 export type ScaleAxis = (typeof SCALE_AXIS)[number]
 
-type PropsFromBox = Pick<BoxProps, 'tagAttrs' | 'tagRef'> & {
+type PropsFromBox = {
+  tagAttrs?: BoxProps['tagAttrs']
+  tagRef?: BoxProps['tagRef']
   children: BoxProps['children']
 }
 

@@ -6,6 +6,13 @@ import type { BoxProps } from '../Box/types'
 export type IconName = (typeof ICON_NAMES)[number]
 
 export type IconProps = {
+  // own
   name?: RespValue<IconName>
   size?: string
-} & Pick<BoxProps<'span'>, 'children' | 'tagAttrs' | 'tagRef' | 'intent' | 'color'>
+  // Box
+  children?: BoxProps<'span'>['children']
+  tagAttrs?: BoxProps<'span'>['tagAttrs']
+  tagRef?: BoxProps<'span'>['tagRef']
+  intent?: BoxProps<'span'>['intent']
+  color?: BoxProps<'span'>['color']
+}

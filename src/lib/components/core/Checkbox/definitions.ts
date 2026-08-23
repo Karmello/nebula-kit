@@ -26,7 +26,13 @@ export const DEFAULT_CHECKBOX_SIZE: CheckboxProps['size'] = 'xs'
 
 export type CheckboxVariant = (typeof CHECKBOX_VARIANTS)[number]
 
-type PropsFromBox = Pick<BoxProps<'input'>, 'tagAttrs' | 'tagRef' | 'intent' | 'color' | 'disabled'>
+type PropsFromBox = {
+  tagAttrs?: BoxProps<'input'>['tagAttrs']
+  tagRef?: BoxProps<'input'>['tagRef']
+  intent?: BoxProps<'input'>['intent']
+  color?: BoxProps<'input'>['color']
+  disabled?: BoxProps<'input'>['disabled']
+}
 
 type CheckboxOwnProps = {
   variant?: CheckboxVariant

@@ -4,8 +4,14 @@ import { BoxProps } from 'lib/index.core'
 export type FloatingTriggerDisplay = (typeof FLOATING_TRIGGER_DISPLAY)[number]
 
 export type FloatingTriggerProps = {
+  // own
   children: BoxProps<'span'>['children']
   display?: FloatingTriggerDisplay
-} & Pick<BoxProps<'span'>, 'cursor'>
+  // Box
+  cursor?: BoxProps<'span'>['cursor']
+}
 
-export type FloatingTriggerInternalProps = Pick<BoxProps<'span'>, 'tagRef' | 'tagAttrs'>
+export type FloatingTriggerInternalProps = {
+  tagRef?: BoxProps<'span'>['tagRef']
+  tagAttrs?: BoxProps<'span'>['tagAttrs']
+}
