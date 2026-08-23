@@ -1,4 +1,4 @@
-import { TSHIRT_SIZES } from 'lib/constants'
+import { NEB_LENGTH, TSHIRT_SIZES } from 'lib/constants'
 import { Box, Button } from 'lib/index.core'
 import { type Example } from 'client/definitions'
 
@@ -10,7 +10,7 @@ export const BUTTON_EXAMPLES: Example[] = [
   {
     description: 'Examples of different button scales.',
     jsx: (
-      <Box display="flex" flexWrap="wrap" alignItems="center" gap="8px">
+      <Box display="flex" flexWrap="wrap" alignItems="center" gap={NEB_LENGTH.px_008}>
         {TSHIRT_SIZES.map(size => (
           <Button key={size} scale={size} iconName="tree-pine">
             {size.toUpperCase()} scale

@@ -1,4 +1,4 @@
-import { ComponentProps, ComponentRef, PropsWithoutRef, useLayoutEffect, useRef } from 'react'
+import { ComponentRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
 import { CONTROL_SCALE_MAP } from 'lib/constants'
@@ -67,17 +67,13 @@ export const Button = <T extends ButtonTag = 'button'>({
   return (
     <Box
       tag={tag}
-      tagAttrs={
-        {
-          ...tagAttrs,
-          className: classNames(withPrefix('button'), tagAttrs?.className),
-          ...(tag === 'button'
-            ? { type: (tagAttrs as ComponentProps<'button'> | undefined)?.type || 'button' }
-            : {}),
-          onClick: onClick || tagAttrs?.onClick,
-          'aria-disabled': disabled || undefined,
-        } as PropsWithoutRef<ComponentProps<T>>
-      }
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('button'), tagAttrs?.className),
+        ...(tag === 'button' ? { type: tagAttrs?.type || 'button' } : {}),
+        onClick: onClick || tagAttrs?.onClick,
+        'aria-disabled': disabled || undefined,
+      }}
       tagRef={finalRef}
       variant={variant}
       color={color}
@@ -88,21 +84,21 @@ export const Button = <T extends ButtonTag = 'button'>({
       maxInlineSize={maxInlineSize}
       elevated={elevated}
       surface={selected ? 'selected' : undefined}
-      blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
-      paddingInline={CONTROL_SCALE_MAP[scale || 'md'].paddingInline}
+      blockSize={CONTROL_SCALE_MAP[scale].blockSize}
+      paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
       ripple={ripple}
       interactive
       cursor="pointer"
       position="relative"
     >
       <Box
-        display="flex"
         tag="span"
         tagAttrs={{
           style: { inlineSize: '100%' },
         }}
+        display="flex"
         alignItems="center"
-        columnGap={CONTROL_SCALE_MAP[scale || 'md'].gap}
+        columnGap={CONTROL_SCALE_MAP[scale].gap}
         justifyContent={
           align === 'split' ? 'space-between' : align === 'center' ? 'center' : 'flex-start'
         }
@@ -110,8 +106,8 @@ export const Button = <T extends ButtonTag = 'button'>({
         {iconPlacement === 'left' ? icon : null}
         <Text
           tag="span"
-          fontSize={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
-          lineHeight={CONTROL_SCALE_MAP[scale || 'md'].lineHeight}
+          fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+          lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
           bold={bold}
           textAlign={align === 'center' ? 'center' : undefined}
           truncate
@@ -119,9 +115,7 @@ export const Button = <T extends ButtonTag = 'button'>({
           {children}
         </Text>
         {iconPlacement === 'right' ? icon : null}
-        {loading && !disabled ? (
-          <Loader size={CONTROL_SCALE_MAP[scale || 'md'].fontSize} centered />
-        ) : null}
+        {loading && !disabled ? <Loader size={CONTROL_SCALE_MAP[scale].fontSize} centered /> : null}
       </Box>
     </Box>
   )
