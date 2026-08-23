@@ -92,16 +92,16 @@ export const Pagination = ({
         }) => {
           const control = (
             <Box
-              tag={!hrefBuilder ? 'button' : 'div'}
+              tag="button"
               interactive
               display="flex"
               justifyContent="center"
               alignItems="center"
               cursor="pointer"
               tagAttrs={{
-                ...(!hrefBuilder ? { type: 'button' } : {}),
+                type: 'button',
                 'aria-current': active ? 'page' : undefined,
-                onClick: !hrefBuilder ? () => handleChange(item.page) : undefined,
+                onClick: () => handleChange(item.page),
               }}
               disabled={disabled}
               variant={variant}
@@ -128,12 +128,7 @@ export const Pagination = ({
           )
 
           return hrefBuilder ? (
-            <Link
-              href={hrefBuilder(item.page)}
-              onClick={() => {
-                if (!disabled) handleChange(item.page)
-              }}
-            >
+            <Link href={hrefBuilder(item.page)} onClick={() => handleChange(item.page)}>
               {control}
             </Link>
           ) : (
