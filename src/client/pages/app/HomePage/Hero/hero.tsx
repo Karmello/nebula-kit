@@ -70,6 +70,7 @@ export const Hero = () => {
           onClick={() => {
             navigateTo(PageKey.assistant)
           }}
+          composeMode="wrap"
         >
           <Tooltip content="Go to AI assistant" minInlineSize={150} maxInlineSize={250}>
             <Image

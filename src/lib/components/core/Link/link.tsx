@@ -1,10 +1,10 @@
-import { Children, cloneElement, MouseEvent } from 'react'
+import { Children, cloneElement, isValidElement, MouseEvent } from 'react'
 import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
 import { HtmlTag, HtmlTagProps, LinkProps } from 'lib/index.core'
 
-import { DEFAULT_LINK_TARGET } from './definitions'
+import { DEFAULT_LINK_COMPOSE_MODE, DEFAULT_LINK_TARGET } from './definitions'
 
 import './link.scss'
 
@@ -15,6 +15,7 @@ export const Link = ({
   href,
   target = DEFAULT_LINK_TARGET,
   onClick,
+  composeMode = DEFAULT_LINK_COMPOSE_MODE,
 }: LinkProps) => {
   const finalOnClick = (e: MouseEvent<HTMLAnchorElement>) => {
     if (onClick) {
@@ -25,15 +26,15 @@ export const Link = ({
 
   const finalChildren = Children.toArray(children)[0] as any
 
-  const displayName = finalChildren?.type?.displayName
+  if (composeMode === 'merge' && isValidElement(finalChildren)) {
+    const element = finalChildren as any
 
-  if (['Button', 'Text'].includes(displayName)) {
-    return cloneElement<HtmlTagProps<'a'>>(finalChildren, {
-      ...finalChildren.props,
+    return cloneElement<HtmlTagProps<'a'>>(element, {
+      ...element.props,
       tag: 'a',
       tagAttrs: {
-        ...finalChildren.props.tagAttrs,
-        className: classNames(withPrefix('link'), finalChildren.props.tagAttrs?.className),
+        ...element.props.tagAttrs,
+        className: classNames(withPrefix('link'), element.props.tagAttrs?.className),
         href,
         target,
         onClick: finalOnClick,

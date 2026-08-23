@@ -29,6 +29,7 @@ export const Ortho = () => {
       onClick={() => {
         navigateTo('/foundations/concepts/styling-system/styling-axes')
       }}
+      composeMode="wrap"
     >
       <Box tagAttrs={{ className: withPrefix('ortho') }}>
         <Box tagAttrs={{ className: withPrefix('ortho-inner') }}>

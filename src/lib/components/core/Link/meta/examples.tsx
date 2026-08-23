@@ -12,7 +12,7 @@ export const LINK_EXAMPLES: Example[] = [
   },
   {
     jsx: (
-      <Link href="https://google.com" target="_blank">
+      <Link href="https://google.com" target="_blank" composeMode="wrap">
         <IconButton iconName="external-link" intent="primary" />
       </Link>
     ),
@@ -55,7 +55,7 @@ export const LINK_EXAMPLES: Example[] = [
   {
     description: 'Using Link together with Image.',
     jsx: (
-      <Link href="https://google.com" target="_blank">
+      <Link href="https://google.com" target="_blank" composeMode="wrap">
         <Image src="/imgs/town.webp" display="inline-block" inlineSize="300px" />
       </Link>
     ),
