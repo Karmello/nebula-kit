@@ -6,11 +6,7 @@ import { withPrefix } from 'lib/helpers'
 import { Box, BoxProps, Slide } from 'lib/index.core'
 import { SwitchProps } from 'lib/index.pro'
 
-import {
-  DEFAULT_SWITCH_INTENT,
-  DEFAULT_SWITCH_SCALE,
-  SWITCH_BORDER_MULTIPLIER,
-} from './constants'
+import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SCALE, SWITCH_BORDER_MULTIPLIER } from './constants'
 
 import './switch.scss'
 
