@@ -19,16 +19,13 @@ export const PORTAL_PLACEMENTS = [
 
 export type PortalPlacement = (typeof PORTAL_PLACEMENTS)[number]
 
-type PortalOwnProps = {
+export type PortalProps = {
+  // own
   anchorRef?: RefObject<HTMLElement | null>
   placement?: PortalPlacement
   offset?: number
-}
-
-type PropsFromHtmlTag = {
+  // HtmlTag
   tagAttrs?: HtmlTagProps<'div'>['tagAttrs']
   tagRef?: HtmlTagProps<'div'>['tagRef']
   children: HtmlTagProps<'div'>['children']
 }
-
-export type PortalProps = PropsFromHtmlTag & PortalOwnProps

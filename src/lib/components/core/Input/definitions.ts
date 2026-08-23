@@ -16,7 +16,8 @@ export type InputAffixProps = {
   variant?: InputProps['variant']
 }
 
-type InputOwnProps = {
+export type InputProps = {
+  // own
   defaultValue?: string
   value?: string
   onChange?: (value: string) => void
@@ -29,9 +30,7 @@ type InputOwnProps = {
   readOnly?: boolean
   maxLength?: number
   autoComplete?: InputHTMLAttributes<HTMLInputElement>['autoComplete']
-}
-
-type PropsFromBox = {
+  // Box
   tagAttrs?: BoxProps<'input'>['tagAttrs']
   tagRef?: BoxProps<'input'>['tagRef']
   variant?: BoxProps<'input'>['variant']
@@ -39,5 +38,3 @@ type PropsFromBox = {
   intent?: BoxProps<'input'>['intent']
   disabled?: BoxProps<'input'>['disabled']
 }
-
-export type InputProps = PropsFromBox & InputOwnProps

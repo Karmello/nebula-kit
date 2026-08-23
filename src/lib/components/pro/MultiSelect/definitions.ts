@@ -4,21 +4,18 @@ import { TShirtSize } from 'lib/types'
 
 export const DEFAULT_MULTI_SELECT_INLINE_SIZE: MultiSelectProps['inlineSize'] = '100%'
 
-type MultiSelectOwnProps = {
+export type MultiSelectProps = {
+  // own
   defaultValue?: string[]
   value?: string[]
   onChange?: (value: string[]) => void
   size?: TShirtSize
   dropdownPlacement?: DropdownListProps['placement']
-}
-
-type PropsFromBox = {
+  // Box
   inlineSize?: BoxProps<'div'>['inlineSize']
   disabled?: BoxProps<'div'>['disabled']
   children: BoxProps<'div'>['children']
-}
-
-type PropsFromDropdownList = {
+  // DropdownList
   tagAttrs?: DropdownListProps['tagAttrs']
   tagRef?: DropdownListProps['tagRef']
   color?: DropdownListProps['color']
@@ -26,5 +23,3 @@ type PropsFromDropdownList = {
   scrollAlign?: DropdownListProps['scrollAlign']
   visibleItemsCount?: DropdownListProps['visibleItemsCount']
 }
-
-export type MultiSelectProps = PropsFromBox & PropsFromDropdownList & MultiSelectOwnProps

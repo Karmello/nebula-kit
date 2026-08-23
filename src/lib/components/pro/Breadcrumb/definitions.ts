@@ -12,25 +12,18 @@ export type BreadcrumbNode = {
   children?: BreadcrumbNode[]
 }
 
-type BreadcrumbOwnProps = {
+export type BreadcrumbProps<T extends BreadcrumbTag = 'div'> = {
+  // own
   tree: BreadcrumbNode[]
   defaultPath?: string[]
   path?: string[]
   size?: TShirtSize
   onChange?: (path: string[]) => void
-}
-
-type PropsFromBox<T extends BreadcrumbTag = 'div'> = {
+  // Box
   tag?: BoxProps<T>['tag']
   tagAttrs?: BoxProps<T>['tagAttrs']
   tagRef?: BoxProps<T>['tagRef']
-}
-
-type PropsFromDropdownList = {
+  // DropdownList
   color?: DropdownListProps['color']
   intent?: DropdownListProps['intent']
 }
-
-export type BreadcrumbProps<T extends BreadcrumbTag = 'div'> = PropsFromBox<T> &
-  PropsFromDropdownList &
-  BreadcrumbOwnProps

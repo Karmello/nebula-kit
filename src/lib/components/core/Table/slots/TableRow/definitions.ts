@@ -1,6 +1,6 @@
 import { BoxProps } from 'lib/index.core'
 
-type PropsFromBox = {
+export type TableRowProps = {
   tagAttrs?: BoxProps<'tr'>['tagAttrs']
   tagRef?: BoxProps<'tr'>['tagRef']
   color?: BoxProps<'tr'>['color']
@@ -8,5 +8,3 @@ type PropsFromBox = {
   textAlign?: BoxProps<'tr'>['textAlign']
   children: BoxProps<'tr'>['children']
 }
-
-export type TableRowProps = PropsFromBox

@@ -1,12 +1,9 @@
 import { DropdownListItemProps } from 'lib/components/shared'
 
-type AutocompleteOptionOwnProps = {
+export type AutocompleteOptionProps = {
+  // own
   value: string
   label: string
-}
-
-type PropsFromDropdownListItem = {
+  // DropdownListItem
   children?: DropdownListItemProps['children']
 }
-
-export type AutocompleteOptionProps = PropsFromDropdownListItem & AutocompleteOptionOwnProps

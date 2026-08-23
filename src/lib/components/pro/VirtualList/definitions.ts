@@ -8,7 +8,8 @@ export const DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN: VirtualListProps['scrollAlign'] 
 
 export type VirtualListScrollAlign = (typeof VIRTUAL_LIST_SCROLL_ALIGN)[number]
 
-type VirtualListOwnProps<T = any> = {
+export type VirtualListProps<T = any> = {
+  // own
   items: T[]
   itemBlockSize: number
   visibleItemsCount: number
@@ -17,14 +18,10 @@ type VirtualListOwnProps<T = any> = {
   scrollAlign?: VirtualListScrollAlign
   overscan?: number
   ensureVisibleIndex?: number
-}
-
-type PropsFromBox = {
+  // Box
   tagAttrs?: BoxProps['tagAttrs']
   tagRef?: BoxProps['tagRef']
   intent?: BoxProps['intent']
   color?: BoxProps['color']
   elevated?: BoxProps['elevated']
 }
-
-export type VirtualListProps<T = any> = VirtualListOwnProps<T> & PropsFromBox

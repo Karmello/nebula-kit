@@ -3,7 +3,7 @@ import { BoxProps } from '../Box'
 export const DEFAULT_DIVIDER_INTENT: DividerProps['intent'] = 'muted'
 export const DEFAULT_DIVIDER_MARGIN_BLOCK: DividerProps['marginBlock'] = '3px'
 
-type PropsFromBox = {
+export type DividerProps = {
   tagAttrs?: BoxProps<'hr'>['tagAttrs']
   tagRef?: BoxProps<'hr'>['tagRef']
   color?: BoxProps<'hr'>['color']
@@ -13,5 +13,3 @@ type PropsFromBox = {
   marginBottom?: BoxProps<'hr'>['marginBottom']
   elevated?: BoxProps<'hr'>['elevated']
 }
-
-export type DividerProps = PropsFromBox

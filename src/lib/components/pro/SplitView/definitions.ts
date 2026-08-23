@@ -14,15 +14,12 @@ type ChildrenAsFuncArgs = {
   mode: SplitViewContextProps['mode']
 }
 
-export type SplitViewOwnProps = {
+export type SplitViewProps = {
+  // own
   sidePosition?: SplitViewSidePosition
   switchAt?: SwitchBreakpoint
-}
-
-type PropsFromBox = {
+  // Box
   tagAttrs?: BoxProps<'div'>['tagAttrs']
   tagRef?: BoxProps<'div'>['tagRef']
   children: BoxProps<'div'>['children'] | ((args: ChildrenAsFuncArgs) => JSX.Element)
 }
-
-export type SplitViewProps = PropsFromBox & SplitViewOwnProps

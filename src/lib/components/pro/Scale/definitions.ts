@@ -29,13 +29,8 @@ export const SCALE_AXIS = ['both', 'x', 'y'] as const
 export type ScaleOrigin = (typeof SCALE_ORIGIN)[number]
 export type ScaleAxis = (typeof SCALE_AXIS)[number]
 
-type PropsFromBox = {
-  tagAttrs?: BoxProps['tagAttrs']
-  tagRef?: BoxProps['tagRef']
-  children: BoxProps['children']
-}
-
-type OwnProps = {
+export type ScaleProps = {
+  // own
   visible: boolean
   axis?: ScaleAxis
   from?: number
@@ -43,6 +38,8 @@ type OwnProps = {
   origin?: ScaleOrigin
   duration?: number
   easing?: string
+  // Box
+  tagAttrs?: BoxProps['tagAttrs']
+  tagRef?: BoxProps['tagRef']
+  children: BoxProps['children']
 }
-
-export type ScaleProps = PropsFromBox & OwnProps

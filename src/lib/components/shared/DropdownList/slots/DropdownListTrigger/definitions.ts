@@ -5,6 +5,8 @@ import { BoxProps } from 'lib/index.core'
 export const DEFAULT_DROPDOWN_LIST_TRIGGER_VARIANT: DropdownListTriggerProps['variant'] = 'solid'
 
 export type DropdownListTriggerProps<T extends ElementType = 'button'> = {
+  // own
+  onClick?: ComponentPropsWithoutRef<T>['onClick']
   // Box
   tag?: BoxProps<T>['tag']
   blockSize?: BoxProps<T>['blockSize']
@@ -22,6 +24,4 @@ export type DropdownListTriggerProps<T extends ElementType = 'button'> = {
   surface?: BoxProps<T>['surface']
   variant?: BoxProps<T>['variant']
   intent?: BoxProps<T>['intent']
-  // own
-  onClick?: ComponentPropsWithoutRef<T>['onClick']
 }

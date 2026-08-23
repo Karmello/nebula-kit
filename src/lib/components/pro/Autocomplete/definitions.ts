@@ -7,7 +7,8 @@ export const DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING: AutocompleteProps['disableF
 export const DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE: AutocompleteProps['showToggle'] = true
 export const DEFAULT_AUTOCOMPLETE_INTENT: AutocompleteProps['intent'] = 'tertiary'
 
-type AutocompleteOwnProps = {
+export type AutocompleteProps = {
+  // own
   defaultValue?: string
   value?: string
   onChange?: (value: string) => void
@@ -18,15 +19,11 @@ type AutocompleteOwnProps = {
   debounceDelay?: number
   placeholder?: string
   showToggle?: boolean
-}
-
-type PropsFromBox = {
+  // Box
   inlineSize?: BoxProps<'div'>['inlineSize']
   disabled?: BoxProps<'div'>['disabled']
   children: BoxProps<'div'>['children']
-}
-
-type PropsFromDropdownList = {
+  // DropdownList
   tagAttrs?: DropdownListProps['tagAttrs']
   tagRef?: DropdownListProps['tagRef']
   color?: DropdownListProps['color']
@@ -35,5 +32,3 @@ type PropsFromDropdownList = {
   visibleItemsCount?: DropdownListProps['visibleItemsCount']
   noOptionsLabel?: DropdownListProps['noOptionsLabel']
 }
-
-export type AutocompleteProps = PropsFromBox & PropsFromDropdownList & AutocompleteOwnProps

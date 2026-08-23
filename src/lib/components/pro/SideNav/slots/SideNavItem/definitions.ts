@@ -11,7 +11,8 @@ export const DEFAULT_SIDE_NAV_ITEM_ICON_PLACEMENT: SideNavItemProps['iconPlaceme
 export type SideNavItemAlign = (typeof SIDE_NAV_ITEM_ALIGNS)[number]
 export type SideNavItemIconPlacement = (typeof SIDE_NAV_ITEM_ICON_PLACEMENTS)[number]
 
-type SideNavItemOwnProps = {
+export type SideNavItemProps = {
+  // own
   align?: SideNavItemAlign
   bold?: boolean
   customSvgIcon?: IconProps['children']
@@ -19,20 +20,14 @@ type SideNavItemOwnProps = {
   iconPlacement?: SideNavItemIconPlacement
   elevated?: boolean
   selected?: boolean
-}
-
-type PropsFromBox = {
+  // Box
   tagRef?: BoxProps<'button'>['tagRef']
   tagAttrs?: BoxProps<'button'>['tagAttrs']
   color?: BoxProps<'button'>['color']
   intent?: BoxProps<'button'>['intent']
   children: BoxProps<'button'>['children']
   variant?: SideNavVariant
-}
-
-type PropsFromLink = {
+  // Link
   href: LinkProps['href']
   onClick?: LinkProps['onClick']
 }
-
-export type SideNavItemProps = PropsFromBox & PropsFromLink & SideNavItemOwnProps

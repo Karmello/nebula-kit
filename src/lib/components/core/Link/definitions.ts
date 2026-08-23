@@ -11,15 +11,12 @@ export const DEFAULT_LINK_COMPOSE_MODE: LinkProps['composeMode'] = 'merge'
 export type LinkTarget = (typeof LINK_TARGETS)[number]
 export type LinkComposeMode = (typeof LINK_COMPOSE_MODES)[number]
 
-type LinkOwnProps = {
+export type LinkProps = {
+  // own
   href: string
   target?: LinkTarget
   onClick?: MouseEventHandler<HTMLAnchorElement>
   composeMode?: LinkComposeMode
-}
-
-type PropsFromHtmlTag = {
+  // HtmlTag
   children: HtmlTagProps<'a'>['children']
 }
-
-export type LinkProps = PropsFromHtmlTag & LinkOwnProps

@@ -29,14 +29,13 @@ export const SECTION_SIZE_CONFIG: Record<
 
 export type SectionVariant = (typeof SECTION_VARIANTS)[number]
 
-type SectionOwnProps = {
+export type SectionProps<T extends SectionTag = 'section'> = {
+  // own
   heading: ReactNode
   headingIntent?: TextProps['intent']
   size?: TShirtSize
   variant?: SectionVariant
-}
-
-type PropsFromBox<T extends SectionTag = 'section'> = {
+  // Box
   tag?: BoxProps<T>['tag']
   tagAttrs?: BoxProps<T>['tagAttrs']
   tagRef?: BoxProps<T>['tagRef']
@@ -44,13 +43,7 @@ type PropsFromBox<T extends SectionTag = 'section'> = {
   intent?: BoxProps<T>['intent']
   interactive?: BoxProps<T>['interactive']
   children: BoxProps<T>['children']
-}
-
-type PropsFromTitle = {
+  // Title
   iconName?: TitleProps['iconName']
   iconPlacement?: TitleProps['iconPlacement']
 }
-
-export type SectionProps<T extends SectionTag = 'section'> = PropsFromBox<T> &
-  PropsFromTitle &
-  SectionOwnProps

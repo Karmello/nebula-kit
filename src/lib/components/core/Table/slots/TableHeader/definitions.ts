@@ -1,6 +1,6 @@
 import { BoxProps } from 'lib/index.core'
 
-type PropsFromBox = {
+export type TableHeaderProps = {
   tagAttrs?: BoxProps<'thead'>['tagAttrs']
   tagRef?: BoxProps<'thead'>['tagRef']
   color?: BoxProps<'thead'>['color']
@@ -10,5 +10,3 @@ type PropsFromBox = {
   textAlign?: BoxProps<'thead'>['textAlign']
   children: BoxProps<'thead'>['children']
 }
-
-export type TableHeaderProps = PropsFromBox

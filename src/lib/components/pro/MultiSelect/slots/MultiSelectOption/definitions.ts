@@ -1,11 +1,8 @@
 import { DropdownListItemProps } from 'lib/components/shared'
 
-type MultiSelectOptionOwnProps = {
+export type MultiSelectOptionProps = {
+  // own
   value: string
-}
-
-type PropsFromDropdownListItem = {
+  // DropdownListItem
   children?: DropdownListItemProps['children']
 }
-
-export type MultiSelectOptionProps = PropsFromDropdownListItem & MultiSelectOptionOwnProps

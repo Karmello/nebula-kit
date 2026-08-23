@@ -8,14 +8,11 @@ type ChildrenAsFuncArgs = {
   mainOpen: boolean
 }
 
-export type ToolbarOwnProps = {
+export type ToolbarProps = {
+  // own
   switchAt?: SwitchBreakpoint
-}
-
-type PropsFromBox = {
+  // Box
   tagAttrs?: BoxProps<'nav'>['tagAttrs']
   tagRef?: BoxProps<'nav'>['tagRef']
   children: BoxProps<'nav'>['children'] | ((args: ChildrenAsFuncArgs) => JSX.Element)
 }
-
-export type ToolbarProps = PropsFromBox & ToolbarOwnProps

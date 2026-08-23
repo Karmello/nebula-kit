@@ -3,7 +3,7 @@ import { InputProps } from 'lib/index.core'
 export const DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE: PasswordInputProps['autoComplete'] =
   'current-password'
 
-type PropsFromInput = {
+export type PasswordInputProps = {
   autoComplete?: InputProps['autoComplete']
   color?: InputProps['color']
   defaultValue?: InputProps['defaultValue']
@@ -21,5 +21,3 @@ type PropsFromInput = {
   value?: InputProps['value']
   variant?: InputProps['variant']
 }
-
-export type PasswordInputProps = PropsFromInput

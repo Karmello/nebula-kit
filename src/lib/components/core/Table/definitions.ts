@@ -9,11 +9,10 @@ export const DEFAULT_TABLE_PADDING_INLINE: TableProps['paddingInline'] = '15px'
 
 export type TableLayout = (typeof TABLE_LAYOUTS)[number]
 
-type TableOwnProps = {
+export type TableProps = {
+  // own
   layout?: TableLayout
-}
-
-type PropsFromBox = {
+  // Box
   tagAttrs?: BoxProps<'table'>['tagAttrs']
   tagRef?: BoxProps<'table'>['tagRef']
   inlineSize?: BoxProps<'table'>['inlineSize']
@@ -26,5 +25,3 @@ type PropsFromBox = {
   textAlign?: BoxProps<'table'>['textAlign']
   children: BoxProps<'table'>['children']
 }
-
-export type TableProps = PropsFromBox & TableOwnProps

@@ -40,19 +40,16 @@ export const CALLOUT_STATUSES = ['info', 'success', 'warning', 'error'] as const
 export type CalloutVariant = (typeof CALLOUT_VARIANTS)[number]
 export type CalloutStatus = (typeof CALLOUT_STATUSES)[number]
 
-type CalloutOwnProps = {
+export type CalloutProps<T extends CalloutTag = 'div'> = {
+  // own
   content: string
   heading?: string
   size?: TShirtSize
   variant?: CalloutVariant
   status?: CalloutStatus
-}
-
-type PropsFromBox<T extends CalloutTag = 'div'> = {
+  // Box
   tag?: BoxProps<T>['tag']
   tagAttrs?: BoxProps<T>['tagAttrs']
   tagRef?: BoxProps<T>['tagRef']
   intent?: BoxProps<T>['intent']
 }
-
-export type CalloutProps<T extends CalloutTag = 'div'> = PropsFromBox<T> & CalloutOwnProps

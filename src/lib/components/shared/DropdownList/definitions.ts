@@ -31,12 +31,6 @@ export type DropdownListPlacement = (typeof DROPDOWN_LIST_PLACEMENTS)[number]
 export type DropdownListState = { open: boolean; placement: DropdownListPlacement }
 
 export type DropdownListProps = {
-  // Box
-  children: BoxProps['children']
-  tagRef?: BoxProps['tagRef']
-  tagAttrs?: BoxProps['tagAttrs']
-  color?: BoxProps['color']
-  intent?: BoxProps['intent']
   // own
   state?: DropdownListState
   onStateChange?: (state: DropdownListState) => void
@@ -51,4 +45,10 @@ export type DropdownListProps = {
   disableListAnimation?: boolean
   onOpened?: () => void
   onClosed?: () => void
+  // Box
+  children: BoxProps['children']
+  tagRef?: BoxProps['tagRef']
+  tagAttrs?: BoxProps['tagAttrs']
+  color?: BoxProps['color']
+  intent?: BoxProps['intent']
 }

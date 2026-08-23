@@ -5,9 +5,10 @@ import { getLibMsg } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { Breakpoint } from 'lib/types'
 
-import { ToolbarOwnProps } from '../definitions'
+import { ToolbarProps } from '../definitions'
 
-type ProviderProps = ToolbarOwnProps & {
+type ProviderProps = {
+  switchAt?: ToolbarProps['switchAt']
   children: ReactNode
 }
 

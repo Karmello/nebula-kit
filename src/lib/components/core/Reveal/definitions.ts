@@ -6,16 +6,13 @@ import { BoxProps } from '../Box'
 export const DEFAULT_REVEAL_INTENT: RevealProps['intent'] = 'tertiary'
 export const DEFAULT_REVEAL_SCALE: RevealProps['scale'] = 'sm'
 
-type RevealOwnProps = {
+export type RevealProps<T extends RevealTag = 'div'> = {
+  // own
   label: string
   scale?: TShirtSize
-}
-
-type PropsFromResize = {
+  // Resize
   children: ResizeProps['children']
-}
-
-type PropsFromBox<T extends RevealTag = 'div'> = {
+  // Box
   tag?: BoxProps<T>['tag']
   tagAttrs?: BoxProps<T>['tagAttrs']
   tagRef?: BoxProps<T>['tagRef']
@@ -23,7 +20,3 @@ type PropsFromBox<T extends RevealTag = 'div'> = {
   intent?: BoxProps<T>['intent']
   disabled?: BoxProps<T>['disabled']
 }
-
-export type RevealProps<T extends RevealTag = 'div'> = PropsFromResize &
-  PropsFromBox<T> &
-  RevealOwnProps

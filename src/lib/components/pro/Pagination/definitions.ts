@@ -18,16 +18,8 @@ export type PaginationItem =
   | { type: 'first'; page: number }
   | { type: 'last'; page: number }
 
-type PropsFromBox = {
-  tagAttrs?: BoxProps<'nav'>['tagAttrs']
-  tagRef?: BoxProps<'nav'>['tagRef']
-  color?: BoxProps<'nav'>['color']
-  disabled?: BoxProps<'nav'>['disabled']
-  intent?: BoxProps<'nav'>['intent']
-  variant?: BoxProps<'nav'>['variant']
-}
-
-type PaginationOwnProps = {
+export type PaginationProps = {
+  // own
   scale?: TShirtSize
   currentPage: number
   totalPages: number
@@ -37,6 +29,11 @@ type PaginationOwnProps = {
   showFirstLast?: boolean
   siblingCount?: number
   boundaryCount?: number
+  // Box
+  tagAttrs?: BoxProps<'nav'>['tagAttrs']
+  tagRef?: BoxProps<'nav'>['tagRef']
+  color?: BoxProps<'nav'>['color']
+  disabled?: BoxProps<'nav'>['disabled']
+  intent?: BoxProps<'nav'>['intent']
+  variant?: BoxProps<'nav'>['variant']
 }
-
-export type PaginationProps = PropsFromBox & PaginationOwnProps

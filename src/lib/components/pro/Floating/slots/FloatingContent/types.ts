@@ -5,11 +5,11 @@ export type FloatingContentProps = {
 }
 
 export type FloatingContentInternalProps = {
-  // Box
-  tagRef?: BoxProps<'span'>['tagRef']
-  tagAttrs?: BoxProps<'span'>['tagAttrs']
   // own
   internalOpen: boolean
   setInternalOpen: (internalOpen: boolean) => void
   isOpeningDownwards: boolean
+  // Box
+  tagRef?: BoxProps<'span'>['tagRef']
+  tagAttrs?: BoxProps<'span'>['tagAttrs']
 }

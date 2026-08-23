@@ -26,20 +26,17 @@ export const DEFAULT_CHECKBOX_SIZE: CheckboxProps['size'] = 'xs'
 
 export type CheckboxVariant = (typeof CHECKBOX_VARIANTS)[number]
 
-type PropsFromBox = {
+export type CheckboxProps = {
+  // own
+  variant?: CheckboxVariant
+  size?: TShirtSize
+  checked?: boolean
+  defaultChecked?: boolean
+  onChange?: (checked: boolean) => void
+  // Box
   tagAttrs?: BoxProps<'input'>['tagAttrs']
   tagRef?: BoxProps<'input'>['tagRef']
   intent?: BoxProps<'input'>['intent']
   color?: BoxProps<'input'>['color']
   disabled?: BoxProps<'input'>['disabled']
 }
-
-type CheckboxOwnProps = {
-  variant?: CheckboxVariant
-  size?: TShirtSize
-  checked?: boolean
-  defaultChecked?: boolean
-  onChange?: (checked: boolean) => void
-}
-
-export type CheckboxProps = PropsFromBox & CheckboxOwnProps

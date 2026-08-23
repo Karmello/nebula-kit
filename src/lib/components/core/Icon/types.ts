@@ -10,9 +10,9 @@ export type IconProps = {
   name?: RespValue<IconName>
   size?: string
   // Box
-  children?: BoxProps<'span'>['children']
   tagAttrs?: BoxProps<'span'>['tagAttrs']
   tagRef?: BoxProps<'span'>['tagRef']
   intent?: BoxProps<'span'>['intent']
   color?: BoxProps<'span'>['color']
+  children?: BoxProps<'span'>['children']
 }

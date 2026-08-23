@@ -3,6 +3,8 @@ import { ComponentPropsWithoutRef } from 'react'
 import { BoxProps } from 'lib/index.core'
 
 export type DropdownListItemProps = {
+  // own
+  onClick?: ComponentPropsWithoutRef<'button'>['onClick']
   // Box
   blockSize?: BoxProps['blockSize']
   children?: BoxProps['children']
@@ -18,6 +20,4 @@ export type DropdownListItemProps = {
   paddingInline?: BoxProps['paddingInline']
   ripple?: BoxProps['ripple']
   surface?: BoxProps['surface']
-  // own
-  onClick?: ComponentPropsWithoutRef<'button'>['onClick']
 }

@@ -1,11 +1,10 @@
 import { BoxProps } from 'lib/index.core'
 
-type TableHeaderCellOwnProps = {
+export type TableHeaderCellProps = {
+  // own
   colSpan?: number
   rowSpan?: number
-}
-
-type PropsFromBox = {
+  // Box
   tagAttrs?: BoxProps<'th'>['tagAttrs']
   tagRef?: BoxProps<'th'>['tagRef']
   minInlineSize?: BoxProps<'th'>['minInlineSize']
@@ -16,5 +15,3 @@ type PropsFromBox = {
   intent?: BoxProps<'th'>['intent']
   children: BoxProps<'th'>['children']
 }
-
-export type TableHeaderCellProps = PropsFromBox & TableHeaderCellOwnProps

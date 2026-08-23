@@ -2,7 +2,7 @@ import { BoxProps } from 'lib/index.core'
 
 export const DEFAULT_TABLE_CAPTION_INTENT: TableCaptionProps['intent'] = 'neutral'
 
-type PropsFromBox = {
+export type TableCaptionProps = {
   tagAttrs?: BoxProps<'td'>['tagAttrs']
   tagRef?: BoxProps<'td'>['tagRef']
   intent?: BoxProps<'td'>['intent']
@@ -12,5 +12,3 @@ type PropsFromBox = {
   textAlign?: BoxProps<'td'>['textAlign']
   children: BoxProps<'td'>['children']
 }
-
-export type TableCaptionProps = PropsFromBox

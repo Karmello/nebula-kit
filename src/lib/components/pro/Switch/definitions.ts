@@ -16,19 +16,16 @@ export const SWITCH_INTENTS = [
 
 export type SwitchIntent = (typeof SWITCH_INTENTS)[number]
 
-type PropsFromBox = {
+export type SwitchProps = {
+  // own
+  checked?: boolean
+  defaultChecked?: boolean
+  onChange?: (checked: boolean) => void
+  scale?: TShirtSize
+  // Box
   tagAttrs?: BoxProps['tagAttrs']
   tagRef?: BoxProps['tagRef']
   disabled?: BoxProps['disabled']
   color?: BoxProps['color']
   intent?: SwitchIntent
 }
-
-type SwitchOwnProps = {
-  checked?: boolean
-  defaultChecked?: boolean
-  onChange?: (checked: boolean) => void
-  scale?: TShirtSize
-}
-
-export type SwitchProps = PropsFromBox & SwitchOwnProps

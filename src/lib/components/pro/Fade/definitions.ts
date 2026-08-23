@@ -1,15 +1,12 @@
 import { BoxProps } from 'lib/index.core'
 
-type FadeOwnProps = {
+export type FadeProps = {
+  // own
   visible: boolean
   duration?: number
   easing?: string
-}
-
-type PropsFromBox = {
+  // Box
   tagAttrs?: BoxProps<'span'>['tagAttrs']
   tagRef?: BoxProps<'span'>['tagRef']
   children: BoxProps<'span'>['children']
 }
-
-export type FadeProps = PropsFromBox & FadeOwnProps

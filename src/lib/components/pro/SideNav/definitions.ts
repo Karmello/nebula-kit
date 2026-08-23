@@ -12,21 +12,16 @@ export const DEFAULT_SIDE_NAV_GAP: SideNavProps['gap'] = '2px'
 export type SideNavExpandMode = (typeof SIDE_NAV_EXPAND_MODES)[number]
 export type SideNavVariant = (typeof SIDE_NAV_VARIANTS)[number]
 
-export type SideNavOwnProps = {
+export type SideNavProps = {
+  // own
   expandMode?: SideNavExpandMode
   scale?: TShirtSize
-}
-
-type PropsFromBox = {
+  variant?: SideNavVariant
+  // Box
   tagAttrs?: BoxProps<'nav'>['tagAttrs']
   tagRef?: BoxProps<'nav'>['tagRef']
   gap?: BoxProps<'nav'>['gap']
   color?: BoxProps<'nav'>['color']
   intent?: BoxProps<'nav'>['intent']
+  children: BoxProps<'nav'>['children']
 }
-
-export type SideNavProps = PropsFromBox &
-  SideNavOwnProps & {
-    children: BoxProps<'nav'>['children']
-    variant?: SideNavVariant
-  }

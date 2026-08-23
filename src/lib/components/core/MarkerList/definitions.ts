@@ -8,11 +8,10 @@ export const DEFAULT_MARKER_LIST_GAP: MarkerListProps['gap'] = '4px'
 
 export type MarkerListStyle = (typeof MARKER_LIST_STYLES)[number]
 
-type MarkerListOwnProps = {
+export type MarkerListProps<T extends MarkerListTag = 'ul'> = {
+  // own
   listStyle?: MarkerListStyle
-}
-
-type PropsFromBox<T extends MarkerListTag = 'ul'> = {
+  // Box
   tag?: BoxProps<T>['tag']
   tagAttrs?: BoxProps<T>['tagAttrs']
   tagRef?: BoxProps<T>['tagRef']
@@ -21,5 +20,3 @@ type PropsFromBox<T extends MarkerListTag = 'ul'> = {
   color?: BoxProps<T>['color']
   intent?: BoxProps<T>['intent']
 }
-
-export type MarkerListProps<T extends MarkerListTag = 'ul'> = PropsFromBox<T> & MarkerListOwnProps

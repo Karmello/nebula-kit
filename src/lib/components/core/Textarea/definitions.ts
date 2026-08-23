@@ -11,7 +11,8 @@ export const TEXTAREA_RESIZE = ['none', 'vertical', 'horizontal', 'both'] as con
 
 export type TextareaResize = (typeof TEXTAREA_RESIZE)[number]
 
-type TextareaOwnProps = {
+export type TextareaProps = {
+  // own
   defaultValue?: string
   value?: string
   onChange?: (value: string) => void
@@ -22,9 +23,7 @@ type TextareaOwnProps = {
   placeholder?: string
   readOnly?: boolean
   maxLength?: number
-}
-
-type PropsFromBox = {
+  // Box
   tagAttrs?: BoxProps<'textarea'>['tagAttrs']
   tagRef?: BoxProps<'textarea'>['tagRef']
   variant?: BoxProps<'textarea'>['variant']
@@ -35,5 +34,3 @@ type PropsFromBox = {
   minInlineSize?: BoxProps<'textarea'>['minInlineSize']
   maxInlineSize?: BoxProps<'textarea'>['maxInlineSize']
 }
-
-export type TextareaProps = PropsFromBox & TextareaOwnProps

@@ -11,14 +11,13 @@ export const DEFAULT_SIDE_NAV_CATEGORY_ALIGN: SideNavCategoryProps['align'] = 'c
 
 export type SideNavCategoryAlign = (typeof SIDE_NAV_CATEGORY_ALIGNS)[number]
 
-type SideNavCategoryOwnProps = {
+export type SideNavCategoryProps = {
+  // own
   label: string
   expanded?: boolean
   align?: SideNavCategoryAlign
   bold?: boolean
-}
-
-type PropsFromBox = {
+  // Box
   tagAttrs?: BoxProps<'ul'>['tagAttrs']
   tagRef?: BoxProps<'ul'>['tagRef']
   color?: BoxProps<'ul'>['color']
@@ -26,5 +25,3 @@ type PropsFromBox = {
   children: BoxProps<'ul'>['children']
   variant?: SideNavVariant
 }
-
-export type SideNavCategoryProps = PropsFromBox & SideNavCategoryOwnProps

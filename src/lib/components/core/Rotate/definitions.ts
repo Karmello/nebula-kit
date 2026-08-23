@@ -1,15 +1,12 @@
 import { BoxProps } from '../Box'
 
-type RotateOwnProps = {
+export type RotateProps = {
+  // own
   angle: number
   duration?: number
   easing?: string
-}
-
-type PropsFromBox = {
+  // Box
   tagAttrs?: BoxProps<'span'>['tagAttrs']
   tagRef?: BoxProps<'span'>['tagRef']
   children: BoxProps<'span'>['children']
 }
-
-export type RotateProps = PropsFromBox & RotateOwnProps

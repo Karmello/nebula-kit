@@ -26,15 +26,12 @@ export type UseSnackbarShowArgs = {
   heading?: string
 }
 
-type PropsFromBox = {
-  inlineSize?: BoxProps['inlineSize']
-}
-
-type SnackbarOwnProps = {
+export type SnackbarProps = {
+  // own
   children: ReactElement
   placement?: SnackbarPlacement
   autoCloseDelay?: number
   closeOnOutsideClick?: boolean
+  // Box
+  inlineSize?: BoxProps['inlineSize']
 }
-
-export type SnackbarProps = PropsFromBox & SnackbarOwnProps

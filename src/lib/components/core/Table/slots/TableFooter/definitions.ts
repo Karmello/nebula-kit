@@ -2,7 +2,7 @@ import { BoxProps } from 'lib/index.core'
 
 export const DEFAULT_TABLE_FOOTER_INTENT: TableFooterProps['intent'] = 'neutral'
 
-type PropsFromBox = {
+export type TableFooterProps = {
   tagAttrs?: BoxProps<'tfoot'>['tagAttrs']
   tagRef?: BoxProps<'tfoot'>['tagRef']
   color?: BoxProps<'tfoot'>['color']
@@ -12,5 +12,3 @@ type PropsFromBox = {
   textAlign?: BoxProps<'tfoot'>['textAlign']
   children: BoxProps<'tfoot'>['children']
 }
-
-export type TableFooterProps = PropsFromBox
