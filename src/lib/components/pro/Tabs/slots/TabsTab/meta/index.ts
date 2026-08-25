@@ -8,7 +8,10 @@ export const TABS_TAB_META = {
     bundle: 'pro',
     name: 'Tabs.Tab',
     title: 'Selectable tab item within a Tabs component.',
-    features: ['activates the panel with the matching value', 'inherits visual styling from Button'],
+    features: [
+      'activates the panel with the matching value',
+      'inherits visual styling from Button',
+    ],
     composedOf: ['Text'],
     exposedTags: ['button'],
   },

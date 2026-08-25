@@ -73,8 +73,7 @@ export const MULTI_SELECT_META = {
     tagRef: BOX_META.Box.props.tagRef,
     value: {
       options: ['string[]'],
-      description:
-        'Current set of selected values when the component is used in controlled mode.',
+      description: 'Current set of selected values when the component is used in controlled mode.',
     },
     visibleItemsCount: {
       options: ['number'],

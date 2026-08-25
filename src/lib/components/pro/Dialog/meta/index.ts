@@ -30,8 +30,7 @@ export const DIALOG_META = {
       ...BOX_META.Box.props.children,
       options: ['Dialog.Header', 'Dialog.Content', 'Dialog.Footer'],
       isRequired: true,
-      description:
-        'Dialog.Content slot is required. Dialog.Header and Dialog.Footer are optional.',
+      description: 'Dialog.Content slot is required. Dialog.Header and Dialog.Footer are optional.',
     },
     closeOnBackdropClick: {
       options: ['boolean'],
