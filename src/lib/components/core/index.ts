@@ -8,6 +8,7 @@ export {
   type AppFrameProps,
 } from './AppFrame'
 export { Box, type BoxProps } from './Box'
+export { BoxGroup, type BoxGroupItemProps, type BoxGroupProps } from './BoxGroup'
 export { Button, type ButtonProps } from './Button'
 export { Callout, type CalloutProps } from './Callout'
 export { Checkbox, type CheckboxProps } from './Checkbox'

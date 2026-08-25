@@ -1,57 +1,73 @@
-import { Box, NEB_LENGTH, Text } from '@nebula-kit/core'
+import { BoxGroup, NEB_LENGTH, Text } from '@nebula-kit/core'
 
 export const JoinedActionGroup = () => {
   return (
-    <Box
-      drawable
-      brand="blue"
+    <BoxGroup
+      // gap={NEB_LENGTH.px_002}
       display="flex"
-      gap={NEB_LENGTH.px_002}
-      inlineSize={NEB_LENGTH.px_512}
-      variant="solid"
-      intent="muted"
-      color="blue"
-      overflow="hidden"
+      // flexDirection="column"
+      squared
+      // drawable
+      // variant="solid"
+      // intent="primary"
+      // surface="dividing"
+      // paddingTop={NEB_LENGTH.px_002}
     >
-      <Box
+      <BoxGroup.Item
         tag="button"
-        drawable
-        flex="1"
-        variant="solid"
-        intent="tertiary"
-        padding={NEB_LENGTH.px_012}
-        borderRadius={NEB_LENGTH.px_000}
         interactive
+        ripple
         cursor="pointer"
+        variant="outline"
+        intent="primary"
+        padding={NEB_LENGTH.px_012}
       >
-        <Text>Item 1</Text>
-      </Box>
-      <Box
+        <Text>Box 1</Text>
+      </BoxGroup.Item>
+      <BoxGroup.Item
         tag="button"
-        drawable
-        flex="1"
-        variant="solid"
-        intent="tertiary"
-        padding={NEB_LENGTH.px_012}
-        borderRadius={NEB_LENGTH.px_000}
         interactive
+        ripple
         cursor="pointer"
+        variant="solid"
+        intent="primary"
+        padding={NEB_LENGTH.px_012}
       >
-        <Text>Item 2</Text>
-      </Box>
-      <Box
+        <Text>Box 2</Text>
+      </BoxGroup.Item>
+      <BoxGroup.Item
         tag="button"
-        drawable
-        flex="1"
-        variant="solid"
-        intent="tertiary"
-        padding={NEB_LENGTH.px_012}
-        borderRadius={NEB_LENGTH.px_000}
         interactive
+        ripple
         cursor="pointer"
+        variant="solid"
+        intent="primary"
+        padding={NEB_LENGTH.px_012}
       >
-        <Text>Item 3</Text>
-      </Box>
-    </Box>
+        <Text>Box 3</Text>
+      </BoxGroup.Item>
+      <BoxGroup.Item
+        tag="button"
+        interactive
+        ripple
+        cursor="pointer"
+        variant="solid"
+        intent="primary"
+        padding={NEB_LENGTH.px_012}
+      >
+        <Text>Box 4</Text>
+      </BoxGroup.Item>
+      <BoxGroup.Item
+        tag="button"
+        interactive
+        ripple
+        cursor="pointer"
+        variant="solid"
+        intent="primary"
+        padding={NEB_LENGTH.px_012}
+      >
+        <Text>Box 5</Text>
+      </BoxGroup.Item>
+    </BoxGroup>
   )
 }
