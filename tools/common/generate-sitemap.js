@@ -3,8 +3,8 @@ import { writeFileSync } from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-import { FOUNDATIONS_CATEGORIES } from '../../src/client/definitions/foundations-routing.js'
 import { COMPONENT_CATEGORIES } from '../../src/client/definitions/components-page-routing.js'
+import { FOUNDATIONS_CATEGORIES } from '../../src/client/definitions/foundations-routing.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -28,8 +28,6 @@ function extractRoutes(basePath, categories) {
       for (const section of item.sections) {
         const sectionKey = section.key
 
-        // URL format:
-        // /foundations/overview/introduction/why-nebula
         const url = `/${basePath}/${categoryKey}/${itemKey}/${sectionKey}`
 
         routes.push(url)

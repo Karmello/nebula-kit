@@ -36,13 +36,13 @@ export const PromptToolbar = ({
               maxInlineSize={300}
               content="ENTER sends | SHIFT + ENTER adds a new line | TAB returns to the prompt"
             >
-              <Icon name="keyboard" size={NEB_LENGTH.px_024} />
+              <Icon name="keyboard" size={NEB_LENGTH.px_016} />
             </Tooltip>
             {!loading ? <Text typography="small">{lengthStatus}</Text> : null}
           </Box>
         </Box>
         <Box display="flex" alignItems="center" columnGap={NEB_LENGTH.px_016}>
-          <Loader active={loading} size="sm" />
+          <Loader active={loading} size={NEB_LENGTH.px_016} />
           <Button
             intent="primary"
             color={!loading ? 'blue' : 'red'}

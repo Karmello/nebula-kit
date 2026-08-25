@@ -54,7 +54,7 @@ export const Icon = memo(
         variant="ghost"
         color={color}
         intent={intent}
-        display="inline-block"
+        display="block"
       >
         {children || (Svg ? <Svg style={{ width: size, height: size }} /> : null)}
       </Box>

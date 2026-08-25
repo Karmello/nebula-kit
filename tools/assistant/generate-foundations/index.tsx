@@ -10,7 +10,7 @@ import { htmlToText } from './helpers/html-to-text'
 
 const includedPages = {
   overview: {
-    introduction: ['WhyNebula', 'AboutNebulaKit', 'DevelopmentSpectrum', 'Audience', 'AuthoringApps', 'UnderTheHood'],
+    introduction: ['AboutNebulaKit', 'UnderTheHood'],
     philosophy: [
       'JsxFirst',
       'BuiltOnComposition',
@@ -24,7 +24,14 @@ const includedPages = {
     gettingStarted: ['Installation', 'Requirements', 'UseWithVite', 'UseWithWebpack5'],
   },
   concepts: {
-    architecture: ['System', 'Performance', 'ResponsiveProps', 'ReactRefs', 'Slots', 'RenderFunction'],
+    architecture: [
+      'System',
+      'Performance',
+      'ResponsiveProps',
+      'ReactRefs',
+      'Slots',
+      'RenderFunction',
+    ],
     stylingSystem: [
       'StylingAxes',
       'DrawableSurface',

@@ -24,9 +24,9 @@ describe('server / helpers / getHtmlMetaData', () => {
     })
   })
 
-  it('path /foundations/overview/introduction/why-nebula', () => {
-    expect(getHtmlMetaData('/foundations/overview/introduction/why-nebula')).toEqual({
-      title: 'NebulaKit | Foundations | Overview | Introduction | Why Nebula',
+  it('path /foundations/overview/introduction/about-nebula-kit', () => {
+    expect(getHtmlMetaData('/foundations/overview/introduction/about-nebula-kit')).toEqual({
+      title: 'NebulaKit | Foundations | Overview | Introduction | About Nebula Kit',
       description: DEFAULT_DESCRIPTION,
     })
   })

@@ -23,6 +23,7 @@ const Item = ({
       justifyContent="space-between"
       alignItems="center"
       padding={NEB_LENGTH.px_016}
+      columnGap={NEB_LENGTH.px_024}
       interactive
       cursor="pointer"
       color="blue"

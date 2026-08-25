@@ -30,9 +30,9 @@ export const Hero = () => {
           justifyContent={{ base: 'center', md: 'flex-start' }}
         >
           <Link
-            href={`${PageKey.foundations}/overview/introduction/why-nebula`}
+            href={`${PageKey.foundations}/overview/introduction/about-nebula-kit`}
             onClick={() => {
-              navigateTo(`${PageKey.foundations}/overview/introduction/why-nebula`)
+              navigateTo(`${PageKey.foundations}/overview/introduction/about-nebula-kit`)
             }}
           >
             <Button
@@ -42,7 +42,7 @@ export const Hero = () => {
               iconPlacement="right"
               scale="md"
             >
-              Foundations
+              Read more
             </Button>
           </Link>
           <Link

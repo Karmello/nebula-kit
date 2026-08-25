@@ -7,55 +7,14 @@ const sections = [
 
 export const COMPONENT_CATEGORIES = [
   {
-    key: 'base',
-    label: 'Base',
+    key: 'primitives',
+    label: 'Primitives',
     items: [
-      { key: 'nebkit-provider', label: 'NebkitProvider', sections, bundle: 'core' },
       { key: 'box', label: 'Box', sections, bundle: 'core' },
-      { key: 'html-tag', label: 'HtmlTag', sections, bundle: 'core' },
-    ],
-  },
-  {
-    key: 'overlays',
-    label: 'Overlays',
-    items: [
-      { key: 'dialog', label: 'Dialog', sections, bundle: 'pro' },
-      { key: 'tooltip', label: 'Tooltip', sections, bundle: 'pro' },
-      { key: 'floating', label: 'Floating', sections, bundle: 'pro' },
-      { key: 'portal', label: 'Portal', sections, bundle: 'pro' },
-      { key: 'focus-trap', label: 'FocusTrap', sections, bundle: 'pro' },
-    ],
-  },
-  {
-    key: 'content',
-    label: 'Content',
-    items: [
       { key: 'text', label: 'Text', sections, bundle: 'core' },
       { key: 'icon', label: 'Icon', sections, bundle: 'core' },
-      { key: 'title', label: 'Title', sections, bundle: 'core' },
-      { key: 'markup', label: 'Markup', sections, bundle: 'pro' },
-      { key: 'spacer', label: 'Spacer', sections, bundle: 'core' },
-      { key: 'divider', label: 'Divider', sections, bundle: 'core' },
-      { key: 'marker-list', label: 'MarkerList', sections, bundle: 'core' },
-    ],
-  },
-  {
-    key: 'images',
-    label: 'Images',
-    items: [
       { key: 'image', label: 'Image', sections, bundle: 'core' },
-      { key: 'avatar', label: 'Avatar', sections, bundle: 'pro' },
-    ],
-  },
-  {
-    key: 'motion',
-    label: 'Motion',
-    items: [
-      { key: 'resize', label: 'Resize', sections, bundle: 'core' },
-      { key: 'rotate', label: 'Rotate', sections, bundle: 'core' },
-      { key: 'slide', label: 'Slide', sections, bundle: 'core' },
-      { key: 'fade', label: 'Fade', sections, bundle: 'pro' },
-      { key: 'scale', label: 'Scale', sections, bundle: 'pro' },
+      { key: 'table', label: 'Table', sections, bundle: 'core' },
     ],
   },
   {
@@ -66,6 +25,22 @@ export const COMPONENT_CATEGORIES = [
       { key: 'icon-button', label: 'IconButton', sections, bundle: 'core' },
       { key: 'link', label: 'Link', sections, bundle: 'core' },
       { key: 'tabs', label: 'Tabs', sections, bundle: 'pro' },
+    ],
+  },
+  {
+    key: 'images',
+    label: 'Images',
+    items: [{ key: 'avatar', label: 'Avatar', sections, bundle: 'pro' }],
+  },
+  {
+    key: 'content',
+    label: 'Content',
+    items: [
+      { key: 'title', label: 'Title', sections, bundle: 'core' },
+      { key: 'markup', label: 'Markup', sections, bundle: 'pro' },
+      { key: 'spacer', label: 'Spacer', sections, bundle: 'core' },
+      { key: 'divider', label: 'Divider', sections, bundle: 'core' },
+      { key: 'marker-list', label: 'MarkerList', sections, bundle: 'core' },
     ],
   },
   {
@@ -91,6 +66,15 @@ export const COMPONENT_CATEGORIES = [
     ],
   },
   {
+    key: 'feedback',
+    label: 'Feedback',
+    items: [
+      { key: 'loader', label: 'Loader', sections, bundle: 'core' },
+      { key: 'callout', label: 'Callout', sections, bundle: 'core' },
+      { key: 'snackbar', label: 'Snackbar', sections, bundle: 'pro' },
+    ],
+  },
+  {
     key: 'navigation',
     label: 'Navigation',
     items: [
@@ -102,18 +86,17 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'data',
     label: 'Data',
-    items: [
-      { key: 'table', label: 'Table', sections, bundle: 'core' },
-      { key: 'virtual-list', label: 'VirtualList', sections, bundle: 'pro' },
-    ],
+    items: [{ key: 'virtual-list', label: 'VirtualList', sections, bundle: 'pro' }],
   },
   {
-    key: 'feedback',
-    label: 'Feedback',
+    key: 'overlays',
+    label: 'Overlays',
     items: [
-      { key: 'loader', label: 'Loader', sections, bundle: 'core' },
-      { key: 'callout', label: 'Callout', sections, bundle: 'core' },
-      { key: 'snackbar', label: 'Snackbar', sections, bundle: 'pro' },
+      { key: 'dialog', label: 'Dialog', sections, bundle: 'pro' },
+      { key: 'tooltip', label: 'Tooltip', sections, bundle: 'pro' },
+      { key: 'floating', label: 'Floating', sections, bundle: 'pro' },
+      { key: 'portal', label: 'Portal', sections, bundle: 'pro' },
+      { key: 'focus-trap', label: 'FocusTrap', sections, bundle: 'pro' },
     ],
   },
   {
@@ -123,6 +106,25 @@ export const COMPONENT_CATEGORIES = [
       { key: 'app-frame', label: 'AppFrame', sections, bundle: 'core' },
       { key: 'split-view', label: 'SplitView', sections, bundle: 'pro' },
       { key: 'toolbar', label: 'Toolbar', sections, bundle: 'pro' },
+    ],
+  },
+  {
+    key: 'motion',
+    label: 'Motion',
+    items: [
+      { key: 'resize', label: 'Resize', sections, bundle: 'core' },
+      { key: 'rotate', label: 'Rotate', sections, bundle: 'core' },
+      { key: 'slide', label: 'Slide', sections, bundle: 'core' },
+      { key: 'fade', label: 'Fade', sections, bundle: 'pro' },
+      { key: 'scale', label: 'Scale', sections, bundle: 'pro' },
+    ],
+  },
+  {
+    key: 'other',
+    label: 'Other',
+    items: [
+      { key: 'nebkit-provider', label: 'NebkitProvider', sections, bundle: 'core' },
+      { key: 'html-tag', label: 'HtmlTag', sections, bundle: 'core' },
     ],
   },
 ]

@@ -65,10 +65,16 @@ export const Families = () => {
       gap={NEB_LENGTH.px_016}
     >
       <Family
-        heading="Layout"
-        description="Powerful layout components make arranging UI straightforward by using well-known techniques like Flexbox or CSS Grid."
-        iconName="panel-top-bottom-dashed"
-        components={['Box']}
+        heading="Primitives"
+        description="Primitive components are the simplest building blocks that lets you create higher level components just the way you want."
+        iconName="box"
+        components={['Box', 'Text', 'Icon']}
+      />
+      <Family
+        heading="Form"
+        description="Form elements provide consistent controls for collecting and selecting user input."
+        iconName="text-select"
+        components={['Input', 'Select']}
       />
       <Family
         heading="Overlays"
@@ -77,16 +83,10 @@ export const Families = () => {
         components={['Dialog', 'Tooltip']}
       />
       <Family
-        heading="Content"
-        description="Content components provide consistent ways to display text, icons and structured information."
-        iconName="square-menu"
-        components={['Text', 'Icon']}
-      />
-      <Family
-        heading="Form"
-        description="Form elements provide consistent controls for collecting and selecting user input."
-        iconName="text-select"
-        components={['Input', 'Select']}
+        heading="Motion"
+        description="Motion components lets you add simple animations without a need for a third party library."
+        iconName="orbit"
+        components={['Resize', 'Scale']}
       />
     </Box>
   )

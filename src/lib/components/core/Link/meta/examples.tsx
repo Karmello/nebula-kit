@@ -12,7 +12,7 @@ export const LINK_EXAMPLES: Example[] = [
   },
   {
     jsx: (
-      <Link href="https://google.com" target="_blank" composeMode="wrap">
+      <Link href="https://google.com" target="_blank">
         <IconButton iconName="external-link" intent="primary" />
       </Link>
     ),

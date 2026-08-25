@@ -65,7 +65,7 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
       cursor="pointer"
       position="relative"
     >
-      <Box display="flex" justifyContent="center" alignItems="center">
+      <Box display="flex" justifyContent="center" alignItems="center" blockSize="100%">
         <Icon name={iconName} size={CONTROL_SCALE_MAP[scale || 'sm'].fontSize}>
           {customSvgIcon}
         </Icon>
