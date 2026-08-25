@@ -44,6 +44,9 @@
       "name": "pro",
       "path": "src/lib/components/pro",
     },
+    {
+      "path": "src/lib/components/shared",
+    },
   ],
   "settings": {
     "typescript.tsdk": "nebula-kit/node_modules/typescript/lib",
