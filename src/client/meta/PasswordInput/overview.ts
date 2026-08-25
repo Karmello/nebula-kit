@@ -10,6 +10,6 @@ export const PASSWORD_OVERVIEW: DocOverview = {
     'preserves native password input semantics',
     'supports both controlled and uncontrolled modes',
   ],
-  composedOf: ['Input', 'IconButton'],
+  composedOf: ['Box', 'IconButton', 'Input'],
   exposedTags: ['input'],
 }

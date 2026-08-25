@@ -12,7 +12,7 @@ export const SNACKBAR_OVERVIEW: DocOverview = {
     'Snackbar must wrap the application root and should be rendered once at the top level',
     'managed by a provider and controlled via the "useSnackbar" hook',
   ],
-  composedOf: ['Box', 'Callout', 'Button', 'Slide'],
+  composedOf: ['Box', 'Callout', 'IconButton', 'Slide'],
   hooks: ['useSnackbar'],
 }
 

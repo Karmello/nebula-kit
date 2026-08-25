@@ -9,6 +9,6 @@ export const AVATAR_OVERVIEW: DocOverview = {
     'optional initials fallback when image is unavailable or fails to load',
     'built-in loading indicator with delay and minimum display time',
   ],
-  composedOf: ['Box', 'Image', 'Text', 'Loader'],
+  composedOf: ['Box', 'Image', 'Loader', 'Text'],
   exposedTags: ['div'],
 }

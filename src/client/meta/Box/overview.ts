@@ -16,4 +16,5 @@ export const BOX_OVERVIEW: DocOverview = {
     'use `brand` prop to apply a brand context to wrapping Box and its children',
     'use `surface` prop to control the depth style of the component',
   ],
+  composedOf: ['HtmlTag'],
 }

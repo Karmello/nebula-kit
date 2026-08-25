@@ -9,6 +9,6 @@ export const SIDE_NAV_ITEM_OVERVIEW: DocOverview = {
     'can be used directly inside SideNav for flat navigation',
     'can be nested inside SideNav.Category to participate in hierarchical navigation',
   ],
-  composedOf: ['Link', 'Box', 'Text', 'Icon'],
+  composedOf: ['Box', 'Icon', 'Link', 'Text'],
   exposedTags: ['a'],
 }

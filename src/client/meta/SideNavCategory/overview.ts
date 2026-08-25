@@ -12,7 +12,7 @@ export const SIDE_NAV_CATEGORY_OVERVIEW: DocOverview = {
     'intended exclusively for hierarchical navigation within SideNav',
     'expects only SideNav.Item elements as children',
   ],
-  composedOf: ['Box', 'Text', 'Icon', 'Resize', 'Spacer'],
+  composedOf: ['Box', 'Icon', 'Resize', 'Spacer', 'Text'],
   exposedTags: ['ul'],
   slots: ['SideNav.Item'],
 }

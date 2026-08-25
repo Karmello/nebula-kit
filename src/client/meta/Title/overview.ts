@@ -12,6 +12,6 @@ export const TITLE_OVERVIEW: DocOverview = {
     'applies shared color and intent to text and icon',
     'allows custom content when children are not plain text',
   ],
-  composedOf: ['Box', 'Text', 'Icon'],
+  composedOf: ['Box', 'Icon', 'Text'],
   exposedTags: ['span'],
 }

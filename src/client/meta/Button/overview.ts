@@ -11,6 +11,6 @@ export const BUTTON_OVERVIEW: DocOverview = {
     'supports first-class icon composition, including custom SVG icons',
     'supports full-width layout to span the entire container',
   ],
-  composedOf: ['Box', 'Text', 'Icon', 'Loader'],
+  composedOf: ['Box', 'Icon', 'Loader', 'Text'],
   exposedTags: BUTTON_TAGS,
 }

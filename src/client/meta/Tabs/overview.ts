@@ -9,7 +9,7 @@ export const TABS_OVERVIEW: DocOverview = {
     'fully keyboard-operable with predictable focus behavior',
     'manages selection state without unmounting content',
   ],
-  composedOf: ['Box'],
+  composedOf: ['Box', 'Text'],
   exposedTags: ['div'],
   slots: ['Tabs.Tab', 'Tabs.Panel'],
 }

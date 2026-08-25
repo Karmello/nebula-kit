@@ -12,4 +12,5 @@ export const SCALE_OVERVIEW: DocOverview = {
     'supports both-axis and single-axis scale transitions',
     'supports configurable transform origins for directional scaling behavior',
   ],
+  composedOf: ['Box'],
 }

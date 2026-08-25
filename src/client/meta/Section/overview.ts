@@ -9,6 +9,6 @@ export const SECTION_OVERVIEW: DocOverview = {
     'provides consistent spacing and visual separation between heading and body',
     'supports optional icon and styling variants for section headers',
   ],
-  composedOf: ['Box', 'Text', 'Divider', 'Spacer', 'Title'],
+  composedOf: ['Box', 'Divider', 'Spacer', 'Text', 'Title'],
   exposedTags: SECTION_TAGS,
 }

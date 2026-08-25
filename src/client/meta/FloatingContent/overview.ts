@@ -10,6 +10,6 @@ export const FLOATING_CONTENT_OVERVIEW: DocOverview = {
     'renders only while the floating layer is open',
     'closes on outside press, Escape and Tab navigation',
   ],
-  composedOf: ['Box'],
+  composedOf: ['Box', 'Portal'],
   exposedTags: ['span'],
 }

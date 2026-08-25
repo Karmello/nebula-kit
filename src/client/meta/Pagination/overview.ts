@@ -12,6 +12,6 @@ export const PAGINATION_OVERVIEW: DocOverview = {
     'automatic ellipsis handling',
     'routing support via hrefBuilder for URL-based pagination and deep linking',
   ],
-  composedOf: ['Box', 'Text', 'Icon', 'Link'],
+  composedOf: ['Box', 'Icon', 'Link', 'Text'],
   exposedTags: ['nav'],
 }

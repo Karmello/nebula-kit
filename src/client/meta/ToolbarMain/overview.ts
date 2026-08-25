@@ -5,5 +5,5 @@ export const TOOLBAR_MAIN_OVERVIEW: DocOverview = {
   name: 'Toolbar.Main',
   title: 'Defines the main slot of Toolbar.',
   features: ['holds the primary, collapsible content of the toolbar'],
-  composedOf: ['Box'],
+  composedOf: ['Box', 'Resize'],
 }

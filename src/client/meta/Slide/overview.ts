@@ -11,4 +11,5 @@ export const SLIDE_OVERVIEW: DocOverview = {
     'coordinates enter and exit transitions using visibility state',
     'works well for overlays, drawers, popovers and transient UI',
   ],
+  composedOf: ['Box'],
 }
