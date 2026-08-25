@@ -24,7 +24,7 @@ export const TOOLBAR_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       isRequired: true,
       options: ['Toolbar.Start', 'Toolbar.Main', 'Toolbar.End'],
       description:
@@ -38,8 +38,8 @@ export const TOOLBAR_META = {
       description:
         'Defines the breakpoint at which the main section switches between collapsed and inline layout.',
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
   },
   examples: TOOLBAR_EXAMPLES,
   changelog: TOOLBAR_CHANGELOG,

@@ -16,29 +16,29 @@ export const TABLE_HEADER_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       options: ['Table.HeaderRow'],
       isRequired: true,
       description: 'Row slot.',
     },
     color: {
-      ...BOX_META.Box.props.color,
+      ...BOX_META.props.color,
       description: 'Color applied to every cell.',
     },
     intent: {
-      ...BOX_META.Box.props.intent,
+      ...BOX_META.props.intent,
       description: 'Color tone applied to every cell.',
     },
     paddingBlock: {
-      ...BOX_META.Box.props.paddingBlock,
+      ...BOX_META.props.paddingBlock,
       description: 'Padding for the top and bottom sides applied to every cell.',
     },
     paddingInline: {
-      ...BOX_META.Box.props.paddingInline,
+      ...BOX_META.props.paddingInline,
       description: 'Padding for the left and right sides applied to every cell.',
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
     textAlign: TABLE_META.props.textAlign,
   },
 } satisfies ComponentMeta<TableHeaderProps>

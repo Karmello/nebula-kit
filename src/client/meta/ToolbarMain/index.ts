@@ -13,10 +13,10 @@ export const TOOLBAR_MAIN_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       isRequired: true,
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
   },
 } satisfies ComponentMeta<ToolbarMainProps>

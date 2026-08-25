@@ -15,19 +15,19 @@ export const APP_FRAME_HEADER_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       isRequired: true,
     },
     color: {
-      ...BOX_META.Box.props.color,
+      ...BOX_META.props.color,
       isResponsive: false,
     },
     intent: {
-      ...BOX_META.Box.props.intent,
+      ...BOX_META.props.intent,
       defaultValue: String(DEFAULT_APP_FRAME_HEADER_INTENT),
       isResponsive: false,
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
   },
 } satisfies ComponentMeta<AppFrameHeaderProps>

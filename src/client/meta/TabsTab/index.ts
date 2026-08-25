@@ -17,14 +17,14 @@ export const TABS_TAB_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       isRequired: true,
     },
     disabled: {
       options: ['boolean'],
     },
     minInlineSize: {
-      ...BOX_META.Box.props.minInlineSize,
+      ...BOX_META.props.minInlineSize,
       isResponsive: false,
     },
     value: {

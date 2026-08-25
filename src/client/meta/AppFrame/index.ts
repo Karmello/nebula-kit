@@ -24,7 +24,7 @@ export const APP_FRAME_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       isRequired: true,
       options: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer'],
       description: 'AppFrame.Footer is optional, the rest is required.',
@@ -36,8 +36,8 @@ export const APP_FRAME_META = {
       isResponsive: false,
       description: 'Keeps the header fixed at the top of the viewport.',
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
   },
   examples: APP_FRAME_EXAMPLES,
   changelog: APP_FRAME_CHANGELOG,

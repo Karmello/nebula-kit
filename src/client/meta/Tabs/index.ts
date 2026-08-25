@@ -28,13 +28,13 @@ export const TABS_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       options: ['Tabs.Tab', 'Tabs.Panel'],
       isRequired: true,
       description: 'Available slots.',
     },
     color: {
-      ...BOX_META.Box.props.color,
+      ...BOX_META.props.color,
       isResponsive: false,
     },
     defaultValue: {
@@ -47,7 +47,7 @@ export const TABS_META = {
       description: 'Sets whether tab items are arranged horizontally or vertically.',
     },
     intent: {
-      ...BOX_META.Box.props.intent,
+      ...BOX_META.props.intent,
       defaultValue: DEFAULT_TABS_INTENT,
       isResponsive: false,
     },
@@ -63,8 +63,8 @@ export const TABS_META = {
     stretch: {
       options: ['boolean'],
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
     value: {
       options: ['string', 'number'],
       description: 'Controls the active tab value.',

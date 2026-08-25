@@ -60,7 +60,7 @@ export const AUTOCOMPLETE_META = {
       description:
         'Disables internal label-based filtering. Use when options are filtered externally.',
     },
-    disabled: BOX_META.Box.props.disabled,
+    disabled: BOX_META.props.disabled,
     dropdownPlacement: {
       options: DROPDOWN_LIST_PLACEMENTS,
       defaultValue: DEFAULT_DROPDOWN_LIST_PLACEMENT,
@@ -68,7 +68,7 @@ export const AUTOCOMPLETE_META = {
         'Defines the preferred placement of the dropdown relative to the trigger. The final placement may be adjusted automatically to keep the list visible.',
     },
     inlineSize: {
-      ...BOX_META.Box.props.inlineSize,
+      ...BOX_META.props.inlineSize,
       defaultValue: String(DEFAULT_AUTOCOMPLETE_INLINE_SIZE),
     },
     intent: {
@@ -107,8 +107,8 @@ export const AUTOCOMPLETE_META = {
       options: TSHIRT_SIZES,
       defaultValue: DEFAULT_TSHIRT_SIZE,
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
     value: {
       options: ['string'],
       description: 'Current selected item value when the component is used in controlled mode.',

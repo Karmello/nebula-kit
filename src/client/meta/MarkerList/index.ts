@@ -24,20 +24,20 @@ export const MARKER_LIST_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       isRequired: true,
       description: 'Any number of MarkerList.Item slots.',
     },
     color: {
-      ...BOX_META.Box.props.color,
+      ...BOX_META.props.color,
       description: 'Color applied to all items at once.',
     },
     gap: {
-      ...BOX_META.Box.props.rowGap,
+      ...BOX_META.props.rowGap,
       defaultValue: String(DEFAULT_MARKER_LIST_GAP),
     },
     intent: {
-      ...BOX_META.Box.props.intent,
+      ...BOX_META.props.intent,
       description: 'Color tone applied to all items at once.',
     },
     listStyle: {
@@ -48,12 +48,12 @@ export const MARKER_LIST_META = {
       description: 'Defines the marker style used for list items.',
     },
     tag: {
-      ...BOX_META.Box.props.tag,
+      ...BOX_META.props.tag,
       options: MARKER_LIST_TAGS,
       defaultValue: 'ul',
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
   },
   examples: MARKER_LIST_EXAMPLES,
   changelog: MARKER_LIST_CHANGELOG,

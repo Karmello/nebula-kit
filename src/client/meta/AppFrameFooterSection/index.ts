@@ -21,14 +21,14 @@ export const APP_FRAME_FOOTER_SECTION_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       isRequired: true,
     },
     padding: {
-      ...BOX_META.Box.props.padding,
+      ...BOX_META.props.padding,
       defaultValue: String(DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING),
     },
-    paddingBlock: BOX_META.Box.props.paddingBlock,
-    paddingInline: BOX_META.Box.props.paddingInline,
+    paddingBlock: BOX_META.props.paddingBlock,
+    paddingInline: BOX_META.props.paddingInline,
   },
 } satisfies ComponentMeta<AppFrameFooterSectionProps>

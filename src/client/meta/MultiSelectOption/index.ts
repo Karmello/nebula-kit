@@ -12,7 +12,7 @@ export const MULTI_SELECT_OPTION_META = {
     exposedTags: ['button'],
   },
   props: {
-    children: BOX_META.Box.props.children,
+    children: BOX_META.props.children,
     value: {
       options: ['string'],
       isRequired: true,

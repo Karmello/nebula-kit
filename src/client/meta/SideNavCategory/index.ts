@@ -28,15 +28,15 @@ export const SIDE_NAV_CATEGORY_META = {
     slots: ['SideNav.Item'],
   },
   props: {
-    align: BUTTON_META.Button.props.align,
-    bold: BUTTON_META.Button.props.bold,
+    align: BUTTON_META.props.align,
+    bold: BUTTON_META.props.bold,
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       options: ['SideNav.Item'],
       isRequired: true,
       description: 'SideNav.Item slots rendered.',
     },
-    color: BUTTON_META.Button.props.color,
+    color: BUTTON_META.props.color,
     expanded: {
       options: ['boolean'],
       defaultValue: String(DEFAULT_SIDE_NAV_CATEGORY_EXPANDED),
@@ -44,7 +44,7 @@ export const SIDE_NAV_CATEGORY_META = {
         'Controls whether the category is expanded. When provided, the expansion state is controlled externally.',
     },
     intent: {
-      ...BUTTON_META.Button.props.intent,
+      ...BUTTON_META.props.intent,
       defaultValue: String(DEFAULT_SIDE_NAV_CATEGORY_INTENT),
     },
     label: {
@@ -52,10 +52,10 @@ export const SIDE_NAV_CATEGORY_META = {
       isRequired: true,
       description: 'Text label for the category.',
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
     variant: {
-      ...BUTTON_META.Button.props.variant,
+      ...BUTTON_META.props.variant,
       options: SIDE_NAV_VARIANTS,
       defaultValue: String(DEFAULT_SIDE_NAV_CATEGORY_VARIANT),
     },

@@ -13,18 +13,18 @@ export const MARKER_LIST_ITEM_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       isRequired: true,
     },
     color: {
-      ...BOX_META.Box.props.color,
+      ...BOX_META.props.color,
       description: 'Color applied to each item individually.',
     },
     intent: {
-      ...BOX_META.Box.props.intent,
+      ...BOX_META.props.intent,
       description: 'Color tone applied to each item individually.',
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
   },
 } satisfies ComponentMeta<MarkerListItemProps>

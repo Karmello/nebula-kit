@@ -12,7 +12,7 @@ export const AUTOCOMPLETE_OPTION_META = {
     exposedTags: ['button'],
   },
   props: {
-    children: BOX_META.Box.props.children,
+    children: BOX_META.props.children,
     label: {
       options: ['string'],
       isRequired: true,

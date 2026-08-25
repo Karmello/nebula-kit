@@ -29,18 +29,18 @@ export const TABLE_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       options: ['Table.Body', 'Table.Header', 'Table.Footer', 'Table.Caption'],
       isRequired: true,
       description: 'Table.Body is required, the rest optional.',
     },
     color: {
-      ...BOX_META.Box.props.color,
+      ...BOX_META.props.color,
       description: "Color applied to the table's background surface.",
     },
-    inlineSize: BOX_META.Box.props.inlineSize,
+    inlineSize: BOX_META.props.inlineSize,
     intent: {
-      ...BOX_META.Box.props.intent,
+      ...BOX_META.props.intent,
       defaultValue: String(DEFAULT_TABLE_INTENT),
       description: "Color tone applied to the table's background surface.",
     },
@@ -50,22 +50,22 @@ export const TABLE_META = {
       description:
         'Defines the layout algorithm: "auto" sizes columns by content, "fixed" by table width and column widths.',
     },
-    maxInlineSize: BOX_META.Box.props.maxInlineSize,
-    minInlineSize: BOX_META.Box.props.minInlineSize,
+    maxInlineSize: BOX_META.props.maxInlineSize,
+    minInlineSize: BOX_META.props.minInlineSize,
     paddingBlock: {
-      ...BOX_META.Box.props.paddingBlock,
+      ...BOX_META.props.paddingBlock,
       defaultValue: DEFAULT_TABLE_PADDING_BLOCK as never,
       description: 'Padding for the top and bottom sides applied to every cell.',
     },
     paddingInline: {
-      ...BOX_META.Box.props.paddingInline,
+      ...BOX_META.props.paddingInline,
       defaultValue: DEFAULT_TABLE_PADDING_INLINE as never,
       description: 'Padding for the left and right sides applied to every cell.',
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
     textAlign: {
-      ...BOX_META.Box.props.textAlign,
+      ...BOX_META.props.textAlign,
       description: 'Text alignment applied to every cell.',
     },
   },

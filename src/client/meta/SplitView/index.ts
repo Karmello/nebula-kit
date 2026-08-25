@@ -28,7 +28,7 @@ export const SPLIT_VIEW_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       isRequired: true,
       options: ['SplitView.Side', 'SplitView.Main'],
       description:
@@ -45,8 +45,8 @@ export const SPLIT_VIEW_META = {
       description:
         'Defines the breakpoint at which the side panel switches from overlay to inline layout mode.',
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
   },
   examples: SPLIT_VIEW_EXAMPLES,
   changelog: SPLIT_VIEW_CHANGELOG,

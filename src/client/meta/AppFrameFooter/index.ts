@@ -20,13 +20,13 @@ export const APP_FRAME_FOOTER_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       isRequired: true,
       description:
         'Footer content. Can be AppFrame.FooterSection slots or any regular React content when section grouping is not needed.',
     },
     color: {
-      ...BOX_META.Box.props.color,
+      ...BOX_META.props.color,
       isResponsive: false,
     },
     footerStackBreakpoint: {
@@ -36,11 +36,11 @@ export const APP_FRAME_FOOTER_META = {
         'Defines the breakpoint from which the footer switches from a stacked vertical layout to a horizontal layout.',
     },
     intent: {
-      ...BOX_META.Box.props.intent,
+      ...BOX_META.props.intent,
       defaultValue: String(DEFAULT_APP_FRAME_FOOTER_INTENT),
       isResponsive: false,
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
   },
 } satisfies ComponentMeta<AppFrameFooterProps>

@@ -18,21 +18,21 @@ export const TABLE_ROW_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       options: ['Table.Cell', 'Table.HeaderCell'],
       isRequired: true,
       description: 'Cell slot.',
     },
     color: {
-      ...BOX_META.Box.props.color,
+      ...BOX_META.props.color,
       description: 'Color applied to every cell.',
     },
     intent: {
-      ...BOX_META.Box.props.intent,
+      ...BOX_META.props.intent,
       description: 'Color tone applied to every cell.',
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
     textAlign: TABLE_META.props.textAlign,
   },
 } satisfies ComponentMeta<TableRowProps>

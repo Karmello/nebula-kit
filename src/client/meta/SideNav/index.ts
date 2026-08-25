@@ -34,13 +34,13 @@ export const SIDE_NAV_META = {
   examples: SIDE_NAV_EXAMPLES,
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       options: ['SideNav.Category', 'SideNav.Item'],
       isRequired: true,
       description: 'SideNav slots.',
     },
     color: {
-      ...BUTTON_META.Button.props.color,
+      ...BUTTON_META.props.color,
       description: 'Color applied to all categories and items.',
     },
     expandMode: {
@@ -50,20 +50,20 @@ export const SIDE_NAV_META = {
         'Controls whether one or multiple categories can remain expanded at the same time.',
     },
     gap: {
-      ...BOX_META.Box.props.gap,
+      ...BOX_META.props.gap,
       defaultValue: String(DEFAULT_SIDE_NAV_GAP),
       description: 'Defines vertical spacing between items.',
     },
     intent: {
-      ...BUTTON_META.Button.props.intent,
+      ...BUTTON_META.props.intent,
       description: 'Color tone applied to all categories and items.',
     },
     scale: {
-      ...BUTTON_META.Button.props.scale,
+      ...BUTTON_META.props.scale,
       defaultValue: DEFAULT_SIDE_NAV_SCALE,
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
     variant: {
       options: SIDE_NAV_VARIANTS,
       isResponsive: true,

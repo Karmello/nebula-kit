@@ -39,7 +39,7 @@ export const MULTI_SELECT_META = {
       description:
         'Initial set of selected values when the component is used in uncontrolled mode.',
     },
-    disabled: BOX_META.Box.props.disabled,
+    disabled: BOX_META.props.disabled,
     dropdownPlacement: {
       options: DROPDOWN_LIST_PLACEMENTS,
       defaultValue: DEFAULT_DROPDOWN_LIST_PLACEMENT,
@@ -47,7 +47,7 @@ export const MULTI_SELECT_META = {
         'Defines the preferred placement of the dropdown relative to the trigger. The final placement may be adjusted automatically to keep the list visible.',
     },
     inlineSize: {
-      ...BOX_META.Box.props.inlineSize,
+      ...BOX_META.props.inlineSize,
       defaultValue: String(DEFAULT_MULTI_SELECT_INLINE_SIZE),
     },
     intent: {
@@ -69,8 +69,8 @@ export const MULTI_SELECT_META = {
       description:
         'Controls overall proportions - adjusting trigger and list item sizing to keep the dropdown visually balanced at each size.',
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
     value: {
       options: ['string[]'],
       description: 'Current set of selected values when the component is used in controlled mode.',

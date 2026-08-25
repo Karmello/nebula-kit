@@ -14,7 +14,7 @@ export const TABS_PANEL_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       isRequired: true,
     },
     value: {

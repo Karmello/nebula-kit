@@ -50,7 +50,7 @@ import { SIDE_NAV_META } from './SideNav'
 import { SIDE_NAV_CATEGORY_META } from './SideNavCategory'
 import { SIDE_NAV_ITEM_META } from './SideNavItem'
 import { SLIDE_META } from './Slide'
-import { SNACKBAR_META } from './Snackbar'
+import { SNACKBAR_META, USE_SNACKBAR_META } from './Snackbar'
 import { SPACER_META } from './Spacer'
 import { SPLIT_VIEW_META } from './SplitView'
 import { SPLIT_VIEW_MAIN_META } from './SplitViewMain'
@@ -91,51 +91,103 @@ const META = {
     Autocomplete: AUTOCOMPLETE_META,
     AutocompleteOption: AUTOCOMPLETE_OPTION_META,
   },
-  Avatar: AVATAR_META,
-  Box: BOX_META,
-  Breadcrumb: BREADCRUMB_META,
-  Button: BUTTON_META,
-  Callout: CALLOUT_META,
-  Checkbox: CHECKBOX_META,
+  Avatar: {
+    Avatar: AVATAR_META,
+  },
+  Box: {
+    Box: BOX_META,
+  },
+  Breadcrumb: {
+    Breadcrumb: BREADCRUMB_META,
+  },
+  Button: {
+    Button: BUTTON_META,
+  },
+  Callout: {
+    Callout: CALLOUT_META,
+  },
+  Checkbox: {
+    Checkbox: CHECKBOX_META,
+  },
   Dialog: {
     Dialog: DIALOG_META,
     DialogHeader: DIALOG_HEADER_META,
     DialogContent: DIALOG_CONTENT_META,
     DialogFooter: DIALOG_FOOTER_META,
   },
-  Divider: DIVIDER_META,
-  Fade: FADE_META,
+  Divider: {
+    Divider: DIVIDER_META,
+  },
+  Fade: {
+    Fade: FADE_META,
+  },
   Floating: {
     Floating: FLOATING_META,
     FloatingTrigger: FLOATING_TRIGGER_META,
     FloatingContent: FLOATING_CONTENT_META,
   },
-  FocusTrap: FOCUS_TRAP_META,
-  HtmlTag: HTML_TAG_META,
-  IconButton: ICON_BUTTON_META,
-  Icon: ICON_META,
-  Image: IMAGE_META,
-  Input: INPUT_META,
-  Link: LINK_META,
-  Loader: LOADER_META,
+  FocusTrap: {
+    FocusTrap: FOCUS_TRAP_META,
+  },
+  HtmlTag: {
+    HtmlTag: HTML_TAG_META,
+  },
+  IconButton: {
+    IconButton: ICON_BUTTON_META,
+  },
+  Icon: {
+    Icon: ICON_META,
+  },
+  Image: {
+    Image: IMAGE_META,
+  },
+  Input: {
+    Input: INPUT_META,
+  },
+  Link: {
+    Link: LINK_META,
+  },
+  Loader: {
+    Loader: LOADER_META,
+  },
   MarkerList: {
     MarkerList: MARKER_LIST_META,
     MarkerListItem: MARKER_LIST_ITEM_META,
   },
-  Markup: MARKUP_META,
+  Markup: {
+    Markup: MARKUP_META,
+  },
   MultiSelect: {
     MultiSelect: MULTI_SELECT_META,
     MultiSelectOption: MULTI_SELECT_OPTION_META,
   },
-  NebkitProvider: NEBKIT_PROVIDER_META,
-  Pagination: PAGINATION_META,
-  PasswordInput: PASSWORD_META,
-  Portal: PORTAL_META,
-  Resize: RESIZE_META,
-  Reveal: REVEAL_META,
-  Rotate: ROTATE_META,
-  Scale: SCALE_META,
-  Section: SECTION_META,
+  NebkitProvider: {
+    NebkitProvider: NEBKIT_PROVIDER_META,
+  },
+  Pagination: {
+    Pagination: PAGINATION_META,
+  },
+  PasswordInput: {
+    PasswordInput: PASSWORD_META,
+  },
+  Portal: {
+    Portal: PORTAL_META,
+  },
+  Resize: {
+    Resize: RESIZE_META,
+  },
+  Reveal: {
+    Reveal: REVEAL_META,
+  },
+  Rotate: {
+    Rotate: ROTATE_META,
+  },
+  Scale: {
+    Scale: SCALE_META,
+  },
+  Section: {
+    Section: SECTION_META,
+  },
   Select: {
     Select: SELECT_META,
     SelectOption: SELECT_OPTION_META,
@@ -145,16 +197,25 @@ const META = {
     SideNavItem: SIDE_NAV_ITEM_META,
     SideNavCategory: SIDE_NAV_CATEGORY_META,
   },
-  Slide: SLIDE_META,
-  Snackbar: SNACKBAR_META,
-  Spacer: SPACER_META,
+  Slide: {
+    Slide: SLIDE_META,
+  },
+  Snackbar: {
+    Snackbar: SNACKBAR_META,
+    useSnackbar: USE_SNACKBAR_META,
+  },
+  Spacer: {
+    Spacer: SPACER_META,
+  },
   SplitView: {
     SplitView: SPLIT_VIEW_META,
     SplitViewSide: SPLIT_VIEW_SIDE_META,
     SplitViewMain: SPLIT_VIEW_MAIN_META,
     SplitViewMainBar: SPLIT_VIEW_MAIN_BAR_META,
   },
-  Switch: SWITCH_META,
+  Switch: {
+    Switch: SWITCH_META,
+  },
   Table: {
     Table: TABLE_META,
     TableBody: TABLE_BODY_META,
@@ -171,17 +232,27 @@ const META = {
     TabsTab: TABS_TAB_META,
     TabsPanel: TABS_PANEL_META,
   },
-  Text: TEXT_META,
-  Textarea: TEXTAREA_META,
-  Title: TITLE_META,
+  Text: {
+    Text: TEXT_META,
+  },
+  Textarea: {
+    Textarea: TEXTAREA_META,
+  },
+  Title: {
+    Title: TITLE_META,
+  },
   Toolbar: {
     Toolbar: TOOLBAR_META,
     ToolbarMain: TOOLBAR_MAIN_META,
     ToolbarStart: TOOLBAR_START_META,
     ToolbarEnd: TOOLBAR_END_META,
   },
-  Tooltip: TOOLTIP_META,
-  VirtualList: VIRTUAL_LIST_META,
+  Tooltip: {
+    Tooltip: TOOLTIP_META,
+  },
+  VirtualList: {
+    VirtualList: VIRTUAL_LIST_META,
+  },
 } as Record<string, Record<string, ComponentMeta<object>>>
 
 export default META

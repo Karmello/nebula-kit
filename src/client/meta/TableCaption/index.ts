@@ -15,18 +15,18 @@ export const TABLE_CAPTION_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       isRequired: true,
     },
-    color: BOX_META.Box.props.color,
+    color: BOX_META.props.color,
     intent: {
-      ...BOX_META.Box.props.intent,
+      ...BOX_META.props.intent,
       defaultValue: String(DEFAULT_TABLE_CAPTION_INTENT),
     },
-    paddingBlock: BOX_META.Box.props.paddingBlock,
-    paddingInline: BOX_META.Box.props.paddingInline,
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
-    textAlign: BOX_META.Box.props.textAlign,
+    paddingBlock: BOX_META.props.paddingBlock,
+    paddingInline: BOX_META.props.paddingInline,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
+    textAlign: BOX_META.props.textAlign,
   },
 } satisfies ComponentMeta<TableCaptionProps>

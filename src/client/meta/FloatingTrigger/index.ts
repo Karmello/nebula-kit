@@ -27,9 +27,9 @@ export const FLOATING_TRIGGER_META = {
       isRequired: true,
       description: 'Element used to trigger and position the floating content.',
     },
-    cursor: BOX_META.Box.props.cursor,
+    cursor: BOX_META.props.cursor,
     display: {
-      ...BOX_META.Box.props.display,
+      ...BOX_META.props.display,
       options: FLOATING_TRIGGER_DISPLAY,
       defaultValue: DEFAULT_FLOATING_TRIGGER_DISPLAY,
       isResponsive: false,

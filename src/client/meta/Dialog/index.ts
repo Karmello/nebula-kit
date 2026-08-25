@@ -27,7 +27,7 @@ export const DIALOG_META = {
   },
   props: {
     children: {
-      ...BOX_META.Box.props.children,
+      ...BOX_META.props.children,
       options: ['Dialog.Header', 'Dialog.Content', 'Dialog.Footer'],
       isRequired: true,
       description: 'Dialog.Content slot is required. Dialog.Header and Dialog.Footer are optional.',
@@ -53,8 +53,8 @@ export const DIALOG_META = {
       defaultValue: DEFAULT_DIALOG_SIZE,
       description: 'Defines the dialog width using predefined size presets.',
     },
-    tagAttrs: BOX_META.Box.props.tagAttrs,
-    tagRef: BOX_META.Box.props.tagRef,
+    tagAttrs: BOX_META.props.tagAttrs,
+    tagRef: BOX_META.props.tagRef,
   },
   examples: DIALOG_EXAMPLES,
   changelog: DIALOG_CHANGELOG,

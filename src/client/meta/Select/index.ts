@@ -45,17 +45,17 @@ export const SELECT_META = {
       options: ['string'],
       description: 'Initial selected item value when the component is used in uncontrolled mode.',
     },
-    disabled: BOX_META.Box.props.disabled,
+    disabled: BOX_META.props.disabled,
     inlineSize: {
-      options: BOX_META.Box.props.inlineSize.options,
+      options: BOX_META.props.inlineSize.options,
       defaultValue: String(DEFAULT_SELECT_INLINE_SIZE),
       isResponsive: true,
-      description: BOX_META.Box.props.inlineSize.description,
+      description: BOX_META.props.inlineSize.description,
     },
     intent: {
       options: BOX_INTENTS,
       defaultValue: DEFAULT_SELECT_INTENT,
-      description: BOX_META.Box.props.intent.description,
+      description: BOX_META.props.intent.description,
     },
     onChange: {
       options: ['(value: string) => void'],
@@ -79,7 +79,7 @@ export const SELECT_META = {
     variant: {
       options: SELECT_VARIANTS,
       defaultValue: DEFAULT_SELECT_VARIANT,
-      description: BOX_META.Box.props.variant.description,
+      description: BOX_META.props.variant.description,
     },
     visibleItemsCount: {
       options: ['number'],
