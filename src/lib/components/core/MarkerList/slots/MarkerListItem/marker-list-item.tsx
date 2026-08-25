@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { withPrefix } from 'lib/helpers'
 import { Box, MarkerListItemProps } from 'lib/index.core'
 
-import { useMarkerListContext } from '../MarkerListProvider'
+import { useMarkerListContext } from '../../MarkerListProvider'
 
 export const MarkerListItem = ({
   children,

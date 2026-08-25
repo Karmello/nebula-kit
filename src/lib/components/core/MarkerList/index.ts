@@ -1,10 +1,10 @@
 import { MarkerList as MarkerListBase } from './marker-list'
-import { MarkerListItem } from './MarkerListItem'
+import { MarkerListItem } from './slots'
 
 export const MarkerList = Object.assign(MarkerListBase, {
   Item: MarkerListItem,
 })
 
 export * from './constants'
-export * from './MarkerListItem'
+export * from './slots'
 export * from './types'
