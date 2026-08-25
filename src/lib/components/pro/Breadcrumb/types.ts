@@ -1,7 +1,6 @@
 import type { TShirtSize } from 'lib/types'
 
-import { type BoxProps } from '../../core/Box/types'
-import { type DropdownListProps } from '../../shared/DropdownList/types'
+import { type BoxColor, type BoxIntent, type BoxProps } from '../../core/Box/types'
 import { BREADCRUMB_TAGS } from './constants'
 
 export type BreadcrumbTag = (typeof BREADCRUMB_TAGS)[number]
@@ -23,7 +22,6 @@ export type BreadcrumbProps<T extends BreadcrumbTag = 'div'> = {
   tag?: BoxProps<T>['tag']
   tagAttrs?: BoxProps<T>['tagAttrs']
   tagRef?: BoxProps<T>['tagRef']
-  // DropdownList
-  color?: DropdownListProps['color']
-  intent?: DropdownListProps['intent']
+  color?: BoxColor
+  intent?: BoxIntent
 }

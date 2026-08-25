@@ -3,9 +3,9 @@ import {
   DEFAULT_SELECT_INLINE_SIZE,
   DEFAULT_SELECT_INTENT,
   DEFAULT_SELECT_VARIANT,
+  DEFAULT_SELECT_VISIBLE_ITEMS_COUNT,
   SELECT_VARIANTS,
 } from 'lib/components/core/Select/constants'
-import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from 'lib/components/shared'
 import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { SelectProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
@@ -64,7 +64,7 @@ export const SELECT_PROPS: Record<keyof SelectProps, DocProp> = {
   },
   visibleItemsCount: {
     options: ['number'],
-    defaultValue: String(DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT),
+    defaultValue: String(DEFAULT_SELECT_VISIBLE_ITEMS_COUNT),
     description: 'Specifies the number of list items visible before scrolling is enabled.',
   },
 }
