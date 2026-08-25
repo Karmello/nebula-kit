@@ -3,7 +3,7 @@ import { Box, IconButton, Spacer } from 'lib/index.core'
 import { SplitViewMainProps } from 'lib/index.pro'
 
 import { getToggleIconName } from '../../helpers'
-import { useSplitViewContext } from '../../SplitViewProvider'
+import { useSplitViewContext } from '../../providers/SplitViewProvider'
 
 export const SplitViewMain = ({
   // Box

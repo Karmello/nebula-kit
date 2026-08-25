@@ -6,7 +6,7 @@ import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
 import { Box } from 'lib/index.core'
 
 import { SPLIT_VIEW_SIDE_POSITIONS } from './constants'
-import { SplitViewProvider, useSplitViewContext } from './SplitViewProvider'
+import { SplitViewProvider, useSplitViewContext } from './providers/SplitViewProvider'
 import { type SplitViewProps } from './types'
 
 const SplitViewComponent = ({

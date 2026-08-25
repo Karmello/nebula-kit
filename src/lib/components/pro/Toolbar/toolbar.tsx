@@ -8,7 +8,7 @@ import { withPrefix } from 'lib/helpers'
 import { Box } from 'lib/index.core'
 import { ToolbarProps } from 'lib/index.pro'
 
-import { ToolbarProvider, useToolbarContext } from './ToolbarProvider'
+import { ToolbarProvider, useToolbarContext } from './providers/ToolbarProvider'
 import { ToolbarToggle } from './ToolbarToggle'
 
 import './toolbar.scss'

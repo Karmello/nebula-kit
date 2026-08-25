@@ -4,7 +4,7 @@ import { withPrefix } from 'lib/helpers'
 import { Box, Resize } from 'lib/index.core'
 import { ToolbarMainProps } from 'lib/index.pro'
 
-import { useToolbarContext } from '../../ToolbarProvider'
+import { useToolbarContext } from '../../providers/ToolbarProvider'
 
 export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) => {
   const { switchAt, mainOpen, isSwitchAtHit } = useToolbarContext()

@@ -15,7 +15,7 @@ import {
   DIALOG_RESIZE_DURATION,
   DIALOG_SIZE_MAP,
 } from './constants'
-import { DialogProvider } from './DialogProvider'
+import { DialogProvider } from './providers/DialogProvider'
 import { type DialogProps } from './types'
 
 export const Dialog = ({

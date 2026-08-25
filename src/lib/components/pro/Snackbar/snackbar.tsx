@@ -10,7 +10,7 @@ import {
   DEFAULT_SNACKBAR_INLINE_SIZE,
   DEFAULT_SNACKBAR_PLACEMENT,
 } from './constants'
-import { SnackbarProvider } from './SnackbarProvider'
+import { SnackbarProvider } from './providers/SnackbarProvider'
 import { UseSnackbarShowArgs } from './types'
 
 export const Snackbar = ({

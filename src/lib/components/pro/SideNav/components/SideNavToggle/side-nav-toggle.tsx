@@ -1,6 +1,6 @@
 import { Box, Divider, IconButton, Spacer } from 'lib/index.core'
 
-import { useSideNavContext } from '../../SideNavProvider'
+import { useSideNavContext } from '../../providers/SideNavProvider'
 
 export const SideNavToggle = () => {
   const { expandMode, expandedCategories, setExpandedCategories } = useSideNavContext()

@@ -5,7 +5,7 @@ import { withPrefix } from 'lib/helpers'
 import { Box, Icon, Link, Text } from 'lib/index.core'
 import { SideNavItemProps } from 'lib/index.pro'
 
-import { useSideNavContext } from '../../SideNavProvider'
+import { useSideNavContext } from '../../providers/SideNavProvider'
 import { DEFAULT_SIDE_NAV_ITEM_ALIGN, DEFAULT_SIDE_NAV_ITEM_ICON_PLACEMENT } from './constants'
 
 export const SideNavItem = ({

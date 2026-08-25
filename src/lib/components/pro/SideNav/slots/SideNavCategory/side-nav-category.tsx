@@ -7,7 +7,7 @@ import { withPrefix } from 'lib/helpers'
 import { Box, Icon, Resize, Spacer, Text } from 'lib/index.core'
 import { SideNavCategoryProps } from 'lib/index.pro'
 
-import { useSideNavContext } from '../../SideNavProvider'
+import { useSideNavContext } from '../../providers/SideNavProvider'
 import {
   DEFAULT_SIDE_NAV_CATEGORY_ALIGN,
   DEFAULT_SIDE_NAV_CATEGORY_EXPANDED,

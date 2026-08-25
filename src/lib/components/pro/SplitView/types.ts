@@ -4,7 +4,7 @@ import { BoxProps } from 'lib/index.core'
 import { SwitchBreakpoint } from 'lib/types'
 
 import { SPLIT_VIEW_SIDE_POSITIONS } from './constants'
-import { SplitViewContextProps } from './SplitViewProvider/types'
+import { SplitViewContextProps } from './providers/SplitViewProvider/types'
 
 export type SplitViewSidePosition = (typeof SPLIT_VIEW_SIDE_POSITIONS)[number]
 

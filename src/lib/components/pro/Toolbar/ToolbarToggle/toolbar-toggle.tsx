@@ -1,6 +1,6 @@
 import { Box, IconButton } from 'lib/index.core'
 
-import { useToolbarContext } from '../ToolbarProvider'
+import { useToolbarContext } from '../providers/ToolbarProvider'
 
 export const ToolbarToggle = () => {
   const { switchAt, mainOpen, setMainOpen, isSwitchAtHit } = useToolbarContext()

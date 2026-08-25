@@ -5,7 +5,7 @@ import { getLibMsg } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { Breakpoint } from 'lib/types'
 
-import { ToolbarProps } from '../types'
+import { ToolbarProps } from '../../types'
 
 type ProviderProps = {
   switchAt?: ToolbarProps['switchAt']

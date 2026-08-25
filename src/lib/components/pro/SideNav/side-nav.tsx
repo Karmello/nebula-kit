@@ -11,7 +11,7 @@ import {
   DEFAULT_SIDE_NAV_GAP,
   DEFAULT_SIDE_NAV_SCALE,
 } from './constants'
-import { SideNavProvider } from './SideNavProvider'
+import { SideNavProvider } from './providers/SideNavProvider'
 
 import './side-nav.scss'
 

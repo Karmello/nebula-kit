@@ -5,7 +5,7 @@ import { withPrefix } from 'lib/helpers'
 import { Box, MarkerListProps } from 'lib/index.core'
 
 import { DEFAULT_MARKER_LIST_GAP } from './constants'
-import { MarkerListProvider } from './MarkerListProvider'
+import { MarkerListProvider } from './providers/MarkerListProvider'
 import { MarkerListTag } from './types'
 
 import './marker-list.scss'

@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { Box, IconButton, Resize } from 'lib/index.core'
 import { FocusTrap, SplitViewSideProps } from 'lib/index.pro'
 
-import { useSplitViewContext } from '../../SplitViewProvider'
+import { useSplitViewContext } from '../../providers/SplitViewProvider'
 import {
   DEFAULT_SPLIT_VIEW_SIDE_BLOCK_SIZE,
   DEFAULT_SPLIT_VIEW_SIDE_INLINE_SIZE,
