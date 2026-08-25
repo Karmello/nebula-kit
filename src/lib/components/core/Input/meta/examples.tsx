@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { IconButton, Input } from 'lib/index.core'
+import { Input } from 'lib/index.core'
 import { type Example } from 'client/definitions'
 
 const InputControlled = () => {
@@ -24,32 +24,8 @@ return (
 )`,
   },
   {
-    description: 'Input with interactive elements attached on the left and right.',
-    jsx: (
-      <Input
-        startAffix={props => <IconButton {...props} iconName="search" />}
-        endAffix={props => <IconButton {...props} iconName="eye" />}
-      />
-    ),
-    code: `<Input
-  startAffix={props => <IconButton {...props} iconName="search" />}
-  endAffix={props => <IconButton {...props} iconName="eye" />}
-/>`,
-  },
-  {
     description: 'Disabled Input.',
-    jsx: (
-      <Input
-        startAffix={props => <IconButton {...props} iconName="search" />}
-        endAffix={props => <IconButton {...props} iconName="eye" />}
-        disabled
-        value="value"
-      />
-    ),
-    code: `<Input
-  startAffix={props => <IconButton {...props} iconName="search" />}
-  endAffix={props => <IconButton {...props} iconName="eye" />}
-  disabled
-/>`,
+    jsx: <Input disabled value="value" />,
+    code: `<Input disabled />`,
   },
 ]

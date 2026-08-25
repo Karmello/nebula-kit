@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { DropdownList, DropdownListState } from 'lib/components/shared'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { IconButton, Input, Text } from 'lib/index.core'
+import { Box, IconButton, Input, Text } from 'lib/index.core'
 import { AutocompleteOptionProps, AutocompleteProps } from 'lib/index.pro'
 
 type AutocompleteMainProps = Omit<
@@ -126,47 +126,50 @@ export const AutocompleteMain = ({
         disabled={disabled}
         surface={dropdownListState?.open ? 'selected' : undefined}
       >
-        <Input
-          tagAttrs={{
-            'aria-labelledby': tagAttrs?.['aria-labelledby'],
-            style: { borderRadius: '0px' },
-          }}
-          value={inputValue}
-          onChange={value => {
-            setInputValue(value)
-            if (!dropdownListState?.open) setDropdownListState(prev => ({ ...prev, open: true }))
-            onInputChange?.(value)
-          }}
-          placeholder={placeholder}
-          scale={size}
-          variant="solid"
-          intent={intent}
-          color={color}
-          disabled={disabled}
-          endAffix={
-            showToggle
-              ? props => (
-                  <IconButton
-                    {...props}
-                    tagAttrs={{
-                      onFocus: (e: { stopPropagation: () => void }) => {
-                        e.stopPropagation()
-                      },
-                    }}
-                    iconName={
-                      dropdownListState?.placement?.startsWith('bottom')
-                        ? 'chevron-down'
-                        : 'chevron-up'
-                    }
-                    elevated={dropdownListState?.open}
-                    onClick={() => {
-                      setDropdownListState(prev => ({ ...prev, open: !prev.open }))
-                    }}
-                  />
-                )
-              : undefined
-          }
-        />
+        <Box display="flex">
+          <Box flex="1">
+            <Input
+              tagAttrs={{
+                'aria-labelledby': tagAttrs?.['aria-labelledby'],
+                style: { borderTopRightRadius: 0, borderBottomRightRadius: 0 },
+              }}
+              value={inputValue}
+              onChange={value => {
+                setInputValue(value)
+                if (!dropdownListState?.open)
+                  setDropdownListState(prev => ({ ...prev, open: true }))
+                onInputChange?.(value)
+              }}
+              placeholder={placeholder}
+              scale={size}
+              variant="solid"
+              intent={intent}
+              color={color}
+              disabled={disabled}
+            />
+          </Box>
+          {showToggle ? (
+            <IconButton
+              tagAttrs={{
+                onFocus: (e: { stopPropagation: () => void }) => {
+                  e.stopPropagation()
+                },
+                style: {
+                  borderTopLeftRadius: 0,
+                  borderBottomLeftRadius: 0,
+                },
+              }}
+              iconName={
+                dropdownListState?.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'
+              }
+              elevated={dropdownListState?.open}
+              onClick={() => {
+                setDropdownListState(prev => ({ ...prev, open: !prev.open }))
+              }}
+              scale={size}
+            />
+          ) : null}
+        </Box>
       </DropdownList.Trigger>
       {filteredItems.map((slot, index) => {
         const slotProps = (slot as ReactElement<AutocompleteOptionProps>).props

@@ -1,16 +1,8 @@
-import { InputHTMLAttributes, ReactNode } from 'react'
+import { InputHTMLAttributes } from 'react'
 
 import { TShirtSize } from 'lib/types'
 
 import { BoxProps } from '../Box'
-
-export type InputAffixProps = {
-  color?: InputProps['color']
-  disabled?: InputProps['disabled']
-  intent?: InputProps['intent']
-  scale?: InputProps['scale']
-  variant?: InputProps['variant']
-}
 
 export type InputProps = {
   // own
@@ -20,8 +12,6 @@ export type InputProps = {
   onFocus?: React.FocusEventHandler<HTMLInputElement>
   onBlur?: React.FocusEventHandler<HTMLInputElement>
   scale?: TShirtSize
-  startAffix?: (props: InputAffixProps) => ReactNode
-  endAffix?: (props: InputAffixProps) => ReactNode
   placeholder?: string
   readOnly?: boolean
   maxLength?: number

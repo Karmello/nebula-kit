@@ -58,20 +58,18 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
       disabled={disabled || loading}
       elevated={elevated}
       ripple={ripple}
-      minInlineSize={CONTROL_SCALE_MAP[scale || 'sm'].blockSize}
-      maxInlineSize={CONTROL_SCALE_MAP[scale || 'sm'].blockSize}
-      blockSize={CONTROL_SCALE_MAP[scale || 'sm'].blockSize}
+      minInlineSize={CONTROL_SCALE_MAP[scale].blockSize}
+      maxInlineSize={CONTROL_SCALE_MAP[scale].blockSize}
+      blockSize={CONTROL_SCALE_MAP[scale].blockSize}
       interactive
       cursor="pointer"
       position="relative"
     >
       <Box display="flex" justifyContent="center" alignItems="center" blockSize="100%">
-        <Icon name={iconName} size={CONTROL_SCALE_MAP[scale || 'sm'].fontSize}>
+        <Icon name={iconName} size={CONTROL_SCALE_MAP[scale].fontSize}>
           {customSvgIcon}
         </Icon>
-        {loading && !disabled ? (
-          <Loader centered size={CONTROL_SCALE_MAP[scale || 'sm'].fontSize} />
-        ) : null}
+        {loading && !disabled ? <Loader centered size={CONTROL_SCALE_MAP[scale].fontSize} /> : null}
       </Box>
     </Box>
   )

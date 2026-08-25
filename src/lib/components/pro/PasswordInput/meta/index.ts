@@ -2,7 +2,7 @@ import { INPUT_META } from 'lib/components/core/Input/meta'
 import { PasswordInputProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE } from '../constants'
+import { DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE, DEFAULT_PASSWORD_INPUT_SCALE } from '../constants'
 import { PASSWORD_CHANGELOG } from './changelog'
 import { PASSWORD_INPUT_EXAMPLES } from './examples'
 
@@ -36,7 +36,10 @@ export const PASSWORD_META = {
       onFocus: INPUT_META.Input.props.onFocus,
       placeholder: INPUT_META.Input.props.placeholder,
       readOnly: INPUT_META.Input.props.readOnly,
-      scale: INPUT_META.Input.props.scale,
+      scale: {
+        ...INPUT_META.Input.props.scale,
+        defaultValue: DEFAULT_PASSWORD_INPUT_SCALE,
+      },
       tagAttrs: INPUT_META.Input.props.tagAttrs,
       tagRef: INPUT_META.Input.props.tagRef,
       value: INPUT_META.Input.props.value,

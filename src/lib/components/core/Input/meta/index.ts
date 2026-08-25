@@ -12,10 +12,7 @@ export const INPUT_META = {
     overview: {
       bundle: 'core',
       title: 'Form control for entering or editing text.',
-      features: [
-        'supports both controlled and uncontrolled modes',
-        'supports start and end affixes',
-      ],
+      features: ['supports both controlled and uncontrolled modes'],
       composedOf: ['Box'],
       exposedTags: ['input'],
     },
@@ -30,11 +27,6 @@ export const INPUT_META = {
         description: 'Initial value displayed when the component is used in uncontrolled mode.',
       },
       disabled: BOX_META.Box.props.disabled,
-      endAffix: {
-        options: ['props => ReactNode'],
-        description:
-          'Render function that receives Input props and returns the end affix. Only defined props are passed to the render function.',
-      },
       intent: {
         ...BOX_META.Box.props.intent,
         defaultValue: String(DEFAULT_INPUT_INTENT),
@@ -68,11 +60,6 @@ export const INPUT_META = {
         defaultValue: DEFAULT_INPUT_SCALE,
         description:
           'Controls overall proportions adjusting blockSize, horizontal padding and fontSize to keep content balanced.',
-      },
-      startAffix: {
-        options: ['props => ReactNode'],
-        description:
-          'Render function that receives Input props and returns the start affix. Only defined props are passed to the render function.',
       },
       tagAttrs: BOX_META.Box.props.tagAttrs,
       tagRef: BOX_META.Box.props.tagRef,

@@ -59,39 +59,56 @@ export const PaymentCancelForm = ({
           </Box>
           <Box position="absolute">
             <Resize property="inlineSize" visible={enableInput}>
-              <Box inlineSize="400px" paddingRight={NEB_LENGTH.px_024}>
+              <Box display="flex" inlineSize="400px" paddingRight={NEB_LENGTH.px_024}>
+                <IconButton
+                  tagAttrs={{
+                    style: {
+                      borderTopRightRadius: 0,
+                      borderBottomRightRadius: 0,
+                    },
+                  }}
+                  scale="sm"
+                  variant="solid"
+                  intent="tertiary"
+                  color="red"
+                  iconName="close"
+                  onClick={() => {
+                    setEnableInput(false)
+                  }}
+                />
                 <Input
                   placeholder="Enter your email"
-                  tagAttrs={{ autoComplete: 'off' }}
+                  tagAttrs={{
+                    autoComplete: 'off',
+                    style: {
+                      borderRadius: 0,
+                    },
+                  }}
                   value={inputValue}
                   onChange={setInputValue}
                   scale="sm"
                   variant="solid"
                   intent="tertiary"
                   color="red"
-                  startAffix={props => (
-                    <IconButton
-                      {...props}
-                      iconName="close"
-                      onClick={() => {
-                        setEnableInput(false)
-                      }}
-                    />
-                  )}
-                  endAffix={props => (
-                    <Button
-                      {...props}
-                      tagAttrs={{
-                        onClick: () => {
-                          setOpenDialog(true)
-                        },
-                      }}
-                      disabled={inputValue !== userEmail}
-                    >
-                      Continue
-                    </Button>
-                  )}
                 />
+                <Button
+                  scale="sm"
+                  variant="solid"
+                  intent="tertiary"
+                  color="red"
+                  tagAttrs={{
+                    onClick: () => {
+                      setOpenDialog(true)
+                    },
+                    style: {
+                      borderTopLeftRadius: 0,
+                      borderBottomLeftRadius: 0,
+                    },
+                  }}
+                  disabled={inputValue !== userEmail}
+                >
+                  Continue
+                </Button>
               </Box>
             </Resize>
           </Box>

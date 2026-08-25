@@ -1,6 +1,6 @@
 import { sentenceCase } from 'change-case'
 
-import { IconButton, Input, NEB_LENGTH, Select, Spacer, Text } from 'lib/components'
+import { Box, IconButton, Input, NEB_LENGTH, Select, Spacer, Text } from 'lib/components'
 import { Breakpoint } from 'lib/types'
 import {
   PLAYGROUND_ARRAY_DATA_MAP,
@@ -54,14 +54,22 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
       <Spacer blockSize={NEB_LENGTH.px_004} />
 
       {PLAYGROUND_CONTROLS_MAP[activeProp as PlaygroundProp].type === 'string' ? (
-        <Input
-          placeholder="..."
-          value={value}
-          onChange={onChange}
-          endAffix={props => (
-            <IconButton {...props} iconName="close" onClick={() => onChange('')} />
-          )}
-        />
+        <Box display="flex">
+          <Box flex="1">
+            <Input
+              tagAttrs={{ style: { borderTopRightRadius: 0, borderBottomRightRadius: 0 } }}
+              placeholder="..."
+              value={value}
+              onChange={onChange}
+            />
+          </Box>
+          <IconButton
+            tagAttrs={{ style: { borderTopLeftRadius: 0, borderBottomLeftRadius: 0 } }}
+            iconName="close"
+            onClick={() => onChange('')}
+            scale="md"
+          />
+        </Box>
       ) : null}
 
       {PLAYGROUND_CONTROLS_MAP[activeProp as PlaygroundProp].type === 'boolean' ? (
