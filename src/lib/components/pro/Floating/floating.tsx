@@ -88,10 +88,10 @@ export const Floating = ({
       setInternalOpen(false)
     }
 
-    window.addEventListener('scroll', handleScroll, { capture: true, passive: true })
+    window.addEventListener('scroll', handleScroll, { passive: true })
 
     return () => {
-      window.removeEventListener('scroll', handleScroll, { capture: true })
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [internalOpen])
 
