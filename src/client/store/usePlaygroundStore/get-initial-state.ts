@@ -1,5 +1,5 @@
-import { PLAYGROUND_PRESETS, PLAYGROUND_PROPS_MAP } from 'client/definitions'
 import META from 'client/meta'
+import { PLAYGROUND_PRESETS, PLAYGROUND_PROPS_MAP } from 'client/playground'
 
 import { Props, State } from './definitions'
 

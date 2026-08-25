@@ -1,5 +1,5 @@
 import { Select } from 'lib/components'
-import { PLAYGROUND_PRESETS } from 'client/definitions'
+import { PLAYGROUND_PRESETS } from 'client/playground'
 import { usePlaygroundStore } from 'client/store'
 
 export const PredefinedExamples = () => {

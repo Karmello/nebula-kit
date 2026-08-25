@@ -6,7 +6,7 @@ import {
   PLAYGROUND_ARRAY_DATA_MAP,
   PLAYGROUND_CONTROLS_MAP,
   PlaygroundProp,
-} from 'client/definitions'
+} from 'client/playground'
 import { usePlaygroundStore } from 'client/store'
 
 export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {

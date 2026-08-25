@@ -1,6 +1,6 @@
 import * as LIB_COMPONENTS from 'lib/components'
 import { Box, Icon, NEB_LENGTH, Spacer, Text, Title, Tooltip } from 'lib/components'
-import { COMPONENT_TEMPLATES } from 'client/definitions'
+import { COMPONENT_TEMPLATES } from 'client/playground'
 import { usePlaygroundStore } from 'client/store'
 
 export const RenderPanel = () => {

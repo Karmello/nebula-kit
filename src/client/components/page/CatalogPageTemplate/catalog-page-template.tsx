@@ -11,10 +11,11 @@ import {
   SplitView,
   Text,
 } from 'lib/components'
-import { PageKey, PLAYGROUND_PROPS_MAP } from 'client/definitions'
+import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import meta from 'client/meta'
 import { ComponentsPageRoutes, FoundationsPageRoutes } from 'client/pages'
+import { PLAYGROUND_PROPS_MAP } from 'client/playground'
 import { usePlaygroundStore } from 'client/store'
 
 import { CatalogPageBreadcrumb } from './CatalogPageBreadcrumb'
