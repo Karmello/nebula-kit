@@ -1,30 +1,10 @@
 import type { AppFrameMainProps } from 'lib/components/core/AppFrame/slots/AppFrameMain/types'
 import { ComponentMeta } from 'client/definitions'
 
-import { BOX_META } from '../Box'
+import { APP_FRAME_MAIN_OVERVIEW } from './overview'
+import { APP_FRAME_MAIN_PROPS } from './props'
 
 export const APP_FRAME_MAIN_META = {
-  overview: {
-    bundle: 'core',
-    name: 'AppFrame.Main',
-    title: 'Defines the central content region of AppFrame.',
-    features: ['holds the primary application content or view'],
-    composedOf: ['Box'],
-    exposedTags: ['main'],
-  },
-  props: {
-    children: {
-      ...BOX_META.props.children,
-      isRequired: true,
-    },
-    padding: BOX_META.props.padding,
-    paddingBlock: BOX_META.props.paddingBlock,
-    paddingBottom: BOX_META.props.paddingBottom,
-    paddingInline: BOX_META.props.paddingInline,
-    paddingLeft: BOX_META.props.paddingLeft,
-    paddingRight: BOX_META.props.paddingRight,
-    paddingTop: BOX_META.props.paddingTop,
-    tagAttrs: BOX_META.props.tagAttrs,
-    tagRef: BOX_META.props.tagRef,
-  },
+  overview: APP_FRAME_MAIN_OVERVIEW,
+  props: APP_FRAME_MAIN_PROPS,
 } satisfies ComponentMeta<AppFrameMainProps>

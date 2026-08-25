@@ -1,60 +1,14 @@
-import {
-  DEFAULT_MARKER_LIST_GAP,
-  MARKER_LIST_STYLES,
-  MARKER_LIST_TAGS,
-} from 'lib/components/core/MarkerList/constants'
 import { MarkerListProps } from 'lib/index.core'
 import { ComponentMeta } from 'client/definitions'
 
-import { BOX_META } from '../Box'
 import { MARKER_LIST_CHANGELOG } from './changelog'
 import { MARKER_LIST_EXAMPLES } from './examples'
+import { MARKER_LIST_OVERVIEW } from './overview'
+import { MARKER_LIST_PROPS } from './props'
 
 export const MARKER_LIST_META = {
-  overview: {
-    bundle: 'core',
-    title: 'List component that displays items with native markers.',
-    features: ['presents short text collections with bullets or numbers'],
-    guidelines: [
-      'use ol tag with numeric marker styles and ul with bullet marker styles for correct semantics',
-    ],
-    composedOf: ['Box'],
-    exposedTags: MARKER_LIST_TAGS,
-    slots: ['MarkerList.Item'],
-  },
-  props: {
-    children: {
-      ...BOX_META.props.children,
-      isRequired: true,
-      description: 'Any number of MarkerList.Item slots.',
-    },
-    color: {
-      ...BOX_META.props.color,
-      description: 'Color applied to all items at once.',
-    },
-    gap: {
-      ...BOX_META.props.rowGap,
-      defaultValue: String(DEFAULT_MARKER_LIST_GAP),
-    },
-    intent: {
-      ...BOX_META.props.intent,
-      description: 'Color tone applied to all items at once.',
-    },
-    listStyle: {
-      options: MARKER_LIST_STYLES,
-      defaultValue: MARKER_LIST_STYLES[0],
-      isRequired: false,
-      isResponsive: false,
-      description: 'Defines the marker style used for list items.',
-    },
-    tag: {
-      ...BOX_META.props.tag,
-      options: MARKER_LIST_TAGS,
-      defaultValue: 'ul',
-    },
-    tagAttrs: BOX_META.props.tagAttrs,
-    tagRef: BOX_META.props.tagRef,
-  },
+  overview: MARKER_LIST_OVERVIEW,
+  props: MARKER_LIST_PROPS,
   examples: MARKER_LIST_EXAMPLES,
   changelog: MARKER_LIST_CHANGELOG,
 } satisfies ComponentMeta<MarkerListProps>

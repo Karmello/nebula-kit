@@ -1,22 +1,10 @@
 import type { MultiSelectOptionProps } from 'lib/components/pro/MultiSelect/slots/MultiSelectOption/types'
 import { ComponentMeta } from 'client/definitions'
 
-import { BOX_META } from '../Box'
+import { MULTI_SELECT_OPTION_OVERVIEW } from './overview'
+import { MULTI_SELECT_OPTION_PROPS } from './props'
 
 export const MULTI_SELECT_OPTION_META = {
-  overview: {
-    bundle: 'pro',
-    name: 'MultiSelect.Option',
-    title: 'Represents a single option within MultiSelect component.',
-    composedOf: ['DropdownList.Item'],
-    exposedTags: ['button'],
-  },
-  props: {
-    children: BOX_META.props.children,
-    value: {
-      options: ['string'],
-      isRequired: true,
-      description: 'Defines value for the option.',
-    },
-  },
+  overview: MULTI_SELECT_OPTION_OVERVIEW,
+  props: MULTI_SELECT_OPTION_PROPS,
 } satisfies ComponentMeta<MultiSelectOptionProps>

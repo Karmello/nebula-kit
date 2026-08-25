@@ -1,0 +1,41 @@
+import {
+  DEFAULT_TITLE_ICON_PLACEMENT,
+  DEFAULT_TITLE_TYPOGRAPHY,
+  TITLE_ICON_PLACEMENTS,
+  TITLE_TYPOGRAPHY,
+} from 'lib/components/core/Title/constants'
+import { TitleProps } from 'lib/index.core'
+import type { Prop } from 'client/definitions'
+
+import { BOX_META } from '../Box'
+import { ICON_META } from '../Icon'
+
+export const TITLE_PROPS: Record<keyof TitleProps, Prop> = {
+  children: {
+    ...BOX_META.props.children,
+    isRequired: true,
+    description:
+      'Content rendered as the title. Plain string or number children are wrapped in Text using the selected typography. Custom React nodes are rendered directly.',
+  },
+  color: BOX_META.props.color,
+  customSvgIcon: {
+    ...ICON_META.props.children,
+  },
+  iconName: ICON_META.props.name,
+  iconPlacement: {
+    options: TITLE_ICON_PLACEMENTS as unknown as string[],
+    defaultValue: DEFAULT_TITLE_ICON_PLACEMENT,
+    isRequired: false,
+    isResponsive: false,
+    description: 'Icon placement relative to children.',
+  },
+  intent: BOX_META.props.intent,
+  tagAttrs: BOX_META.props.tagAttrs,
+  tagRef: BOX_META.props.tagRef,
+  typography: {
+    options: TITLE_TYPOGRAPHY,
+    defaultValue: DEFAULT_TITLE_TYPOGRAPHY,
+    description:
+      'Typography style used for plain text children and for deriving the icon size and spacing.',
+  },
+}

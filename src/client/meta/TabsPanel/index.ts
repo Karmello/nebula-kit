@@ -1,26 +1,10 @@
 import type { TabsPanelProps } from 'lib/components/pro/Tabs/slots/TabsPanel/types'
 import { ComponentMeta } from 'client/definitions'
 
-import { BOX_META } from '../Box'
+import { TABS_PANEL_OVERVIEW } from './overview'
+import { TABS_PANEL_PROPS } from './props'
 
 export const TABS_PANEL_META = {
-  overview: {
-    bundle: 'pro',
-    name: 'Tabs.Panel',
-    title: 'Content panel associated with a tab.',
-    features: ['displayed when its corresponding tab is active'],
-    composedOf: ['Box'],
-    exposedTags: ['div'],
-  },
-  props: {
-    children: {
-      ...BOX_META.props.children,
-      isRequired: true,
-    },
-    value: {
-      options: ['string', 'number'],
-      isRequired: true,
-      description: 'Value that identifies the panel and links it to a tab.',
-    },
-  },
+  overview: TABS_PANEL_OVERVIEW,
+  props: TABS_PANEL_PROPS,
 } satisfies ComponentMeta<TabsPanelProps>

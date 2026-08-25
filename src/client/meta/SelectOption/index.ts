@@ -1,24 +1,10 @@
 import type { SelectOptionProps } from 'lib/components/core/Select/slots/SelectOption/types'
 import { ComponentMeta } from 'client/definitions'
 
-import { BOX_META } from '../Box'
+import { SELECT_OPTION_OVERVIEW } from './overview'
+import { SELECT_OPTION_PROPS } from './props'
 
 export const SELECT_OPTION_META = {
-  overview: {
-    bundle: 'core',
-    name: 'Select.Option',
-    title: 'Represents a selectable item within a Select dropdown list.',
-    description:
-      'Select.Option defines an available choice within a Select component. Each option provides a value used for selection and renders the content displayed to the user inside the dropdown list.',
-    composedOf: ['Box', 'Text', 'Divider'],
-    exposedTags: ['button'],
-  },
-  props: {
-    children: BOX_META.props.children,
-    value: {
-      options: ['string'],
-      isRequired: true,
-      description: 'Defines value for the option.',
-    },
-  },
+  overview: SELECT_OPTION_OVERVIEW,
+  props: SELECT_OPTION_PROPS,
 } satisfies ComponentMeta<SelectOptionProps>

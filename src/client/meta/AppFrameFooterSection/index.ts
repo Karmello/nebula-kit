@@ -1,34 +1,10 @@
-import { DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING } from 'lib/components/core/AppFrame/slots/AppFrameFooterSection/constants'
 import type { AppFrameFooterSectionProps } from 'lib/components/core/AppFrame/slots/AppFrameFooterSection/types'
 import { ComponentMeta } from 'client/definitions'
 
-import { BOX_META } from '../Box'
+import { APP_FRAME_FOOTER_SECTION_OVERVIEW } from './overview'
+import { APP_FRAME_FOOTER_SECTION_PROPS } from './props'
 
 export const APP_FRAME_FOOTER_SECTION_META = {
-  overview: {
-    bundle: 'core',
-    name: 'AppFrame.FooterSection?',
-    title: 'Defines a content group inside AppFrame.Footer.',
-    description:
-      'AppFrame.FooterSection groups related footer content such as links, legal text or supplementary navigation inside the footer region.',
-    features: [
-      'groups related footer content into separate sections',
-      'participates in the footer layout when sections stack or align horizontally',
-      'keeps footer content structure explicit without requiring custom wrappers',
-    ],
-    composedOf: ['Box'],
-    exposedTags: ['section'],
-  },
-  props: {
-    children: {
-      ...BOX_META.props.children,
-      isRequired: true,
-    },
-    padding: {
-      ...BOX_META.props.padding,
-      defaultValue: String(DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING),
-    },
-    paddingBlock: BOX_META.props.paddingBlock,
-    paddingInline: BOX_META.props.paddingInline,
-  },
+  overview: APP_FRAME_FOOTER_SECTION_OVERVIEW,
+  props: APP_FRAME_FOOTER_SECTION_PROPS,
 } satisfies ComponentMeta<AppFrameFooterSectionProps>

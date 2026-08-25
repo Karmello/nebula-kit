@@ -1,78 +1,14 @@
-import { SCALE_AXIS, SCALE_ORIGIN } from 'lib/components/pro/Scale/constants'
-import {
-  DEFAULT_SCALE_AXIS,
-  DEFAULT_SCALE_DURATION,
-  DEFAULT_SCALE_EASING,
-  DEFAULT_SCALE_FROM,
-  DEFAULT_SCALE_ORIGIN,
-  DEFAULT_SCALE_TO,
-} from 'lib/components/pro/Scale/scale'
 import { ScaleProps } from 'lib/index.pro'
 import { ComponentMeta } from 'client/definitions'
 
-import { BOX_META } from '../Box'
 import { SCALE_CHANGELOG } from './changelog'
 import { SCALE_EXAMPLES } from './examples'
+import { SCALE_OVERVIEW } from './overview'
+import { SCALE_PROPS } from './props'
 
 export const SCALE_META = {
-  overview: {
-    bundle: 'pro',
-    title: 'Motion component for animating visual scale transitions.',
-    description:
-      'Scale applies transform-based motion that visually scales content between hidden and visible states. It can scale on both axes or a single axis, making it useful for dialogs, dropdowns, popovers, menus and floating UI surfaces.',
-    features: [
-      'animates visibility using CSS transform scale',
-      'performs visual-only motion without affecting layout',
-      'supports configurable scale values for hidden and visible states',
-      'supports both-axis and single-axis scale transitions',
-      'supports configurable transform origins for directional scaling behavior',
-    ],
-  },
-  props: {
-    axis: {
-      options: SCALE_AXIS,
-      defaultValue: DEFAULT_SCALE_AXIS,
-      description: 'Defines which axis the content scales on during the transition.',
-    },
-    children: {
-      ...BOX_META.props.children,
-      isRequired: true,
-    },
-    duration: {
-      options: ['number'],
-      defaultValue: String(DEFAULT_SCALE_DURATION),
-      description: 'Duration of the scale transition in milliseconds.',
-    },
-    easing: {
-      options: ['string'],
-      defaultValue: DEFAULT_SCALE_EASING,
-      description: 'Defines the CSS easing function used for the scale transition.',
-    },
-    from: {
-      options: ['number'],
-      defaultValue: String(DEFAULT_SCALE_FROM),
-      description: 'Defines the scale value used when the content is hidden.',
-    },
-    origin: {
-      options: SCALE_ORIGIN,
-      defaultValue: DEFAULT_SCALE_ORIGIN,
-      description:
-        'Defines the transform origin used for the scale transition. Controls the point from which the content visually scales.',
-    },
-    tagAttrs: BOX_META.props.tagAttrs,
-    tagRef: BOX_META.props.tagRef,
-    to: {
-      options: ['number'],
-      defaultValue: String(DEFAULT_SCALE_TO),
-      description: 'Defines the scale value used when the content is visible.',
-    },
-    visible: {
-      options: ['boolean'],
-      isRequired: true,
-      description:
-        'Controls whether the content is rendered in its visible or hidden visual state. Triggers enter and exit scale transitions.',
-    },
-  },
+  overview: SCALE_OVERVIEW,
+  props: SCALE_PROPS,
   examples: SCALE_EXAMPLES,
   changelog: SCALE_CHANGELOG,
 } satisfies ComponentMeta<ScaleProps>

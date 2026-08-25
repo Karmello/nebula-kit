@@ -2,7 +2,7 @@ import { JSX } from 'react'
 
 import { ReleaseVersion } from './release'
 
-type Overview = {
+export type Overview = {
   name?: string
   bundle: 'core' | 'pro'
   title: string

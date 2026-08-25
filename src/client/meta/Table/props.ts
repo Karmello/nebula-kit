@@ -1,0 +1,54 @@
+import {
+  DEFAULT_TABLE_INTENT,
+  DEFAULT_TABLE_LAYOUT,
+  DEFAULT_TABLE_PADDING_BLOCK,
+  DEFAULT_TABLE_PADDING_INLINE,
+  TABLE_LAYOUTS,
+} from 'lib/components/core/Table/constants'
+import { TableProps } from 'lib/index.core'
+import type { Prop } from 'client/definitions'
+
+import { BOX_META } from '../Box'
+
+export const TABLE_PROPS: Record<keyof TableProps, Prop> = {
+  children: {
+    ...BOX_META.props.children,
+    options: ['Table.Body', 'Table.Header', 'Table.Footer', 'Table.Caption'],
+    isRequired: true,
+    description: 'Table.Body is required, the rest optional.',
+  },
+  color: {
+    ...BOX_META.props.color,
+    description: "Color applied to the table's background surface.",
+  },
+  inlineSize: BOX_META.props.inlineSize,
+  intent: {
+    ...BOX_META.props.intent,
+    defaultValue: String(DEFAULT_TABLE_INTENT),
+    description: "Color tone applied to the table's background surface.",
+  },
+  layout: {
+    options: TABLE_LAYOUTS,
+    defaultValue: DEFAULT_TABLE_LAYOUT,
+    description:
+      'Defines the layout algorithm: "auto" sizes columns by content, "fixed" by table width and column widths.',
+  },
+  maxInlineSize: BOX_META.props.maxInlineSize,
+  minInlineSize: BOX_META.props.minInlineSize,
+  paddingBlock: {
+    ...BOX_META.props.paddingBlock,
+    defaultValue: DEFAULT_TABLE_PADDING_BLOCK as never,
+    description: 'Padding for the top and bottom sides applied to every cell.',
+  },
+  paddingInline: {
+    ...BOX_META.props.paddingInline,
+    defaultValue: DEFAULT_TABLE_PADDING_INLINE as never,
+    description: 'Padding for the left and right sides applied to every cell.',
+  },
+  tagAttrs: BOX_META.props.tagAttrs,
+  tagRef: BOX_META.props.tagRef,
+  textAlign: {
+    ...BOX_META.props.textAlign,
+    description: 'Text alignment applied to every cell.',
+  },
+}

@@ -1,0 +1,48 @@
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
+import { BREADCRUMB_TAGS, DEFAULT_BREADCRUMB_INTENT } from 'lib/components/pro/Breadcrumb/constants'
+import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
+import { BreadcrumbProps } from 'lib/index.pro'
+import type { Prop } from 'client/definitions'
+
+import { BOX_META } from '../Box'
+
+export const BREADCRUMB_PROPS: Record<keyof BreadcrumbProps, Prop> = {
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+  },
+  defaultPath: {
+    options: ['string[]'],
+    description:
+      'Initial breadcrumb path applied once to seed internal state when the component is uncontrolled.',
+  },
+  intent: {
+    options: BOX_INTENTS,
+    defaultValue: String(DEFAULT_BREADCRUMB_INTENT),
+    description: 'Color tone applied to the list.',
+  },
+  onChange: {
+    options: ['(path: string[]) => void'],
+    description: 'Called when the user selects a value, receiving the updated breadcrumb path.',
+  },
+  path: {
+    options: ['string[]'],
+    description: 'Controls the active breadcrumb path, enabling fully controlled behavior.',
+  },
+  size: {
+    options: TSHIRT_SIZES,
+    defaultValue: DEFAULT_TSHIRT_SIZE,
+  },
+  tag: {
+    ...BOX_META.props.tag,
+    options: BREADCRUMB_TAGS,
+  },
+  tagAttrs: BOX_META.props.tagAttrs,
+  tagRef: BOX_META.props.tagRef,
+  tree: {
+    options: ['object[]'],
+    isRequired: true,
+    description:
+      'Hierarchical data source that defines the breadcrumb structure and available selections.',
+  },
+}
