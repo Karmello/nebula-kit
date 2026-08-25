@@ -1,2 +1,6 @@
 - [Project resurrection](project_resurrection.md) — nebula-kit is being revived from dormancy; expect structural cleanup work
 - [Large refactor approach](large_refactor_approach.md) — validated pattern: manual convention + parallel batch agents + full verification
+- [Always verify with prettier](feedback_verify_prettier.md) — run yarn prettier/prettify alongside lint + typecheck on every change
+- [Always commit workspace file](feedback_commit_workspace_file.md) — include nebula-kit.code-workspace changes in commits, don't leave them out
+- [Docs meta architecture](project_docs_meta_architecture.md) — props.ts vs types.ts split is deliberate, don't suggest merging via JSDoc
+- [Docs meta flattening](project_docs_meta_flattening.md) — props.ts cross-refs removed; punch-list of pre-existing bugs left unfixed
