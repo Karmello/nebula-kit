@@ -1,3 +1,4 @@
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_SIDE_NAV_EXPAND_MODE,
   DEFAULT_SIDE_NAV_GAP,
@@ -5,21 +6,18 @@ import {
   SIDE_NAV_EXPAND_MODES,
   SIDE_NAV_VARIANTS,
 } from 'lib/components/pro/SideNav/constants'
+import { TSHIRT_SIZES } from 'lib/constants'
 import { SideNavProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-import { BUTTON_META } from '../Button'
-
 export const SIDE_NAV_PROPS: Record<keyof SideNavProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
     options: ['SideNav.Category', 'SideNav.Item'],
     isRequired: true,
     description: 'SideNav slots.',
   },
   color: {
-    ...BUTTON_META.props.color,
+    options: BOX_COLORS,
     description: 'Color applied to all categories and items.',
   },
   expandMode: {
@@ -29,20 +27,31 @@ export const SIDE_NAV_PROPS: Record<keyof SideNavProps, DocProp> = {
       'Controls whether one or multiple categories can remain expanded at the same time.',
   },
   gap: {
-    ...BOX_META.props.gap,
+    options: ['string'],
+    isResponsive: true,
+    link: true,
     defaultValue: String(DEFAULT_SIDE_NAV_GAP),
     description: 'Defines vertical spacing between items.',
   },
   intent: {
-    ...BUTTON_META.props.intent,
+    options: BOX_INTENTS,
+    defaultValue: 'tertiary',
     description: 'Color tone applied to all categories and items.',
   },
   scale: {
-    ...BUTTON_META.props.scale,
+    options: TSHIRT_SIZES,
     defaultValue: DEFAULT_SIDE_NAV_SCALE,
+    description:
+      'Controls overall proportions adjusting blockSize, horizontal padding and fontSize to keep content balanced.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   variant: {
     options: SIDE_NAV_VARIANTS,
     isResponsive: true,

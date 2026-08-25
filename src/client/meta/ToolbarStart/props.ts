@@ -1,13 +1,18 @@
 import type { ToolbarStartProps } from 'lib/components/pro/Toolbar/slots/ToolbarStart/types'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const TOOLBAR_START_PROPS: Record<keyof ToolbarStartProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
+    options: ['ReactNode'],
     isRequired: true,
+    description: 'Content rendered.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
 }

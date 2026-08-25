@@ -1,3 +1,4 @@
+import { BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   CALLOUT_STATUSES,
   CALLOUT_VARIANTS,
@@ -9,8 +10,6 @@ import {
 import { TSHIRT_SIZES } from 'lib/constants'
 import { CalloutProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
-
-import { BOX_META } from '../Box'
 
 export const CALLOUT_PROPS: Record<keyof CalloutProps, DocProp> = {
   content: {
@@ -24,8 +23,9 @@ export const CALLOUT_PROPS: Record<keyof CalloutProps, DocProp> = {
     options: ['string'],
   },
   intent: {
-    ...BOX_META.props.intent,
+    options: BOX_INTENTS,
     defaultValue: String(DEFAULT_CALLOUT_INTENT),
+    description: "Color tone applied to the component's main color.",
   },
   size: {
     options: TSHIRT_SIZES,
@@ -37,12 +37,22 @@ export const CALLOUT_PROPS: Record<keyof CalloutProps, DocProp> = {
     defaultValue: DEFAULT_CALLOUT_STATUS,
     description: 'Defines the type of message being communicated.',
   },
-  tag: BOX_META.props.tag,
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tag: {
+    options: ['HTML tag'],
+    defaultValue: 'div',
+    description: 'The HTML tag to be rendered as the container.',
+  },
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   variant: {
-    ...BOX_META.props.variant,
     options: Object.values(CALLOUT_VARIANTS),
     defaultValue: String(DEFAULT_CALLOUT_VARIANT),
+    description: 'Visual style variant.',
   },
 }

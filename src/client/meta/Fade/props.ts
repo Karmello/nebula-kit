@@ -2,12 +2,11 @@ import { DEFAULT_FADE_DURATION, DEFAULT_FADE_EASING } from 'lib/components/pro/F
 import { FadeProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const FADE_PROPS: Record<keyof FadeProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
+    options: ['ReactNode'],
     isRequired: true,
+    description: 'Content rendered.',
   },
   duration: {
     options: ['number'],
@@ -19,8 +18,14 @@ export const FADE_PROPS: Record<keyof FadeProps, DocProp> = {
     defaultValue: DEFAULT_FADE_EASING,
     description: 'CSS timing function used for the fade transition animation.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   visible: {
     options: ['boolean'],
     isRequired: true,

@@ -1,3 +1,4 @@
+import { BOX_COLORS, BOX_INTENTS, BOX_VARIANTS } from 'lib/components/core/Box/constants'
 import {
   BUTTON_ALIGNS,
   BUTTON_ICON_PLACEMENTS,
@@ -12,10 +13,6 @@ import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { ButtonProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-import { ICON_META } from '../Icon'
-import { TEXT_META } from '../Text'
-
 export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
   align: {
     options: BUTTON_ALIGNS,
@@ -23,46 +20,81 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
     isResponsive: true,
     description: 'Controls how inner content is arranged within the container.',
   },
-  bold: TEXT_META.props.bold,
+  bold: {
+    options: ['boolean'],
+    description: 'Toggles bold styling.',
+  },
   children: {
-    ...BOX_META.props.children,
+    options: ['ReactNode'],
     isRequired: true,
     description: 'Label rendered.',
   },
-  color: BOX_META.props.color,
-  customSvgIcon: {
-    ...ICON_META.props.children,
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
   },
-  disabled: BOX_META.props.disabled,
-  elevated: BOX_META.props.elevated,
+  customSvgIcon: {
+    options: ['ReactNode'],
+    description: 'Custom SVG icon rendered when not using name prop.',
+  },
+  disabled: {
+    options: ['boolean'],
+    description: 'Disables the component and its interactions.',
+  },
+  elevated: {
+    options: ['boolean'],
+    description:
+      'Shifts the component onto an elevated surface level, adjusting the base surface and all related interaction states together.',
+  },
   fullWidth: {
     options: ['boolean'],
     isResponsive: true,
     description: 'Expands the button to match the full width of its container.',
   },
-  iconName: ICON_META.props.name,
+  iconName: {
+    options: ['IconName'],
+    isResponsive: true,
+    description: 'Name of the icon to render.',
+  },
   iconPlacement: {
     options: BUTTON_ICON_PLACEMENTS,
     defaultValue: DEFAULT_BUTTON_ICON_PLACEMENT,
     description: 'Icon placement relative to label.',
   },
-  inlineSize: BOX_META.props.inlineSize,
+  inlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Logical width.',
+    link: true,
+  },
   intent: {
-    ...BOX_META.props.intent,
+    options: BOX_INTENTS,
+    description: "Color tone applied to the component's main color.",
     defaultValue: String(DEFAULT_BUTTON_INTENT),
   },
   loading: {
     options: ['boolean'],
     description: 'Activates the loading state, shows a spinner and prevents interaction.',
   },
-  maxInlineSize: BOX_META.props.maxInlineSize,
-  minInlineSize: BOX_META.props.minInlineSize,
+  maxInlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Maximum logical width.',
+    link: true,
+  },
+  minInlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Minimum logical width.',
+    link: true,
+  },
   onClick: {
     options: ['e => void'],
     description: 'Click event handler for the button element.',
   },
   ripple: {
-    ...BOX_META.props.ripple,
+    options: ['boolean'],
+    description: 'Toggles the ripple effect on pointer interaction.',
     defaultValue: String(DEFAULT_BUTTON_RIPPLE),
   },
   scale: {
@@ -77,14 +109,21 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
       'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
   },
   tag: {
-    ...BOX_META.props.tag,
     options: BUTTON_TAGS,
     defaultValue: 'button',
+    description: 'The HTML tag to be rendered as the container.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   variant: {
-    ...BOX_META.props.variant,
+    options: BOX_VARIANTS,
+    description: 'Visual style variant.',
     defaultValue: String(DEFAULT_BUTTON_VARIANT),
   },
 }

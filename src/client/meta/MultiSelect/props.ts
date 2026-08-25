@@ -10,8 +10,6 @@ import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { MultiSelectProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const MULTI_SELECT_PROPS: Record<keyof MultiSelectProps, DocProp> = {
   children: {
     options: ['MultiSelect.Option'],
@@ -26,17 +24,20 @@ export const MULTI_SELECT_PROPS: Record<keyof MultiSelectProps, DocProp> = {
     options: ['string[]'],
     description: 'Initial set of selected values when the component is used in uncontrolled mode.',
   },
-  disabled: BOX_META.props.disabled,
+  disabled: {
+    options: ['boolean'],
+    description: 'Disables the component and its interactions.',
+  },
   inlineSize: {
-    options: BOX_META.props.inlineSize.options,
+    options: ['string'],
     defaultValue: String(DEFAULT_MULTI_SELECT_INLINE_SIZE),
     isResponsive: true,
-    description: BOX_META.props.inlineSize.description,
+    description: 'Logical width.',
   },
   intent: {
     options: BOX_INTENTS,
     defaultValue: DEFAULT_MULTI_SELECT_INTENT,
-    description: BOX_META.props.intent.description,
+    description: "Color tone applied to the component's main color.",
   },
   onChange: {
     options: ['(value: string[]) => void'],
@@ -60,7 +61,7 @@ export const MULTI_SELECT_PROPS: Record<keyof MultiSelectProps, DocProp> = {
   variant: {
     options: MULTI_SELECT_VARIANTS,
     defaultValue: DEFAULT_MULTI_SELECT_VARIANT,
-    description: BOX_META.props.variant.description,
+    description: 'Visual style variant.',
   },
   visibleItemsCount: {
     options: ['number'],

@@ -1,3 +1,4 @@
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_TABS_DIRECTION,
   DEFAULT_TABS_INTENT,
@@ -8,18 +9,16 @@ import { TSHIRT_SIZES } from 'lib/constants'
 import { TabsProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const TABS_PROPS: Record<keyof TabsProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
     options: ['Tabs.Tab', 'Tabs.Panel'],
     isRequired: true,
     description: 'Available slots.',
   },
   color: {
-    ...BOX_META.props.color,
+    options: BOX_COLORS,
     isResponsive: false,
+    description: 'Color applied to the component.',
   },
   defaultValue: {
     options: ['string', 'number'],
@@ -31,9 +30,10 @@ export const TABS_PROPS: Record<keyof TabsProps, DocProp> = {
     description: 'Sets whether tab items are arranged horizontally or vertically.',
   },
   intent: {
-    ...BOX_META.props.intent,
+    options: BOX_INTENTS,
     defaultValue: DEFAULT_TABS_INTENT,
     isResponsive: false,
+    description: "Color tone applied to the component's main color.",
   },
   onChange: {
     options: ['(value: string | number) => void'],
@@ -47,8 +47,14 @@ export const TABS_PROPS: Record<keyof TabsProps, DocProp> = {
   stretch: {
     options: ['boolean'],
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   value: {
     options: ['string', 'number'],
     description: 'Controls the active tab value.',

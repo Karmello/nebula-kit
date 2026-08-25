@@ -1,3 +1,4 @@
+import { BOX_COLORS, BOX_INTENTS, BOX_VARIANTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_INPUT_INTENT,
   DEFAULT_INPUT_SCALE,
@@ -7,22 +8,27 @@ import { TSHIRT_SIZES } from 'lib/constants'
 import { InputProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const INPUT_PROPS: Record<keyof InputProps, DocProp> = {
   autoComplete: {
     options: ['HTMLInputAutoCompleteAttribute'],
     description: 'Controls the browser autocomplete behavior for the input field.',
   },
-  color: BOX_META.props.color,
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+  },
   defaultValue: {
     options: ['string'],
     description: 'Initial value displayed when the component is used in uncontrolled mode.',
   },
-  disabled: BOX_META.props.disabled,
+  disabled: {
+    options: ['boolean'],
+    description: 'Disables the component and its interactions.',
+  },
   intent: {
-    ...BOX_META.props.intent,
+    options: BOX_INTENTS,
     defaultValue: String(DEFAULT_INPUT_INTENT),
+    description: "Color tone applied to the component's main color.",
   },
   maxLength: {
     options: ['number'],
@@ -54,14 +60,21 @@ export const INPUT_PROPS: Record<keyof InputProps, DocProp> = {
     description:
       'Controls overall proportions adjusting blockSize, horizontal padding and fontSize to keep content balanced.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   value: {
     options: ['string'],
     description: 'Current value displayed when the component is used in controlled mode.',
   },
   variant: {
-    ...BOX_META.props.variant,
+    options: BOX_VARIANTS,
     defaultValue: String(DEFAULT_INPUT_VARIANT),
+    description: 'Visual style variant.',
   },
 }

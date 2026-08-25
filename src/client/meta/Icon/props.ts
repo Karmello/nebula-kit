@@ -1,20 +1,19 @@
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import { DEFAULT_ICON_SIZE } from 'lib/components/core/Icon/constants'
 import type { IconProps } from 'lib/components/core/Icon/types'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const ICON_PROPS: Record<keyof IconProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
+    options: ['ReactNode'],
     description: 'Custom SVG icon rendered when not using name prop.',
   },
   color: {
-    ...BOX_META.props.color,
+    options: BOX_COLORS,
     description: 'Color applied to the icon.',
   },
   intent: {
-    ...BOX_META.props.intent,
+    options: BOX_INTENTS,
     description: 'Color tone applied to the icon.',
   },
   name: {
@@ -27,6 +26,12 @@ export const ICON_PROPS: Record<keyof IconProps, DocProp> = {
     defaultValue: String(DEFAULT_ICON_SIZE),
     description: 'Size of the icon.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
 }

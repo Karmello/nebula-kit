@@ -2,17 +2,29 @@ import { DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING } from 'lib/components/core/Ap
 import type { AppFrameFooterSectionProps } from 'lib/components/core/AppFrame/slots/AppFrameFooterSection/types'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const APP_FRAME_FOOTER_SECTION_PROPS: Record<keyof AppFrameFooterSectionProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
+    options: ['ReactNode'],
     isRequired: true,
+    description: 'Content rendered.',
   },
   padding: {
-    ...BOX_META.props.padding,
+    options: ['string'],
+    isResponsive: true,
+    description: 'Padding for all sides.',
+    link: true,
     defaultValue: String(DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING),
   },
-  paddingBlock: BOX_META.props.paddingBlock,
-  paddingInline: BOX_META.props.paddingInline,
+  paddingBlock: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Padding for the top and bottom sides.',
+    link: true,
+  },
+  paddingInline: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Padding for the left and right sides.',
+    link: true,
+  },
 }

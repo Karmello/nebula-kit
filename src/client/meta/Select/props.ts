@@ -10,8 +10,6 @@ import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { SelectProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const SELECT_PROPS: Record<keyof SelectProps, DocProp> = {
   children: {
     options: ['Select.Option'],
@@ -26,17 +24,20 @@ export const SELECT_PROPS: Record<keyof SelectProps, DocProp> = {
     options: ['string'],
     description: 'Initial selected item value when the component is used in uncontrolled mode.',
   },
-  disabled: BOX_META.props.disabled,
+  disabled: {
+    options: ['boolean'],
+    description: 'Disables the component and its interactions.',
+  },
   inlineSize: {
-    options: BOX_META.props.inlineSize.options,
+    options: ['string'],
     defaultValue: String(DEFAULT_SELECT_INLINE_SIZE),
     isResponsive: true,
-    description: BOX_META.props.inlineSize.description,
+    description: 'Logical width.',
   },
   intent: {
     options: BOX_INTENTS,
     defaultValue: DEFAULT_SELECT_INTENT,
-    description: BOX_META.props.intent.description,
+    description: "Color tone applied to the component's main color.",
   },
   onChange: {
     options: ['(value: string) => void'],
@@ -60,7 +61,7 @@ export const SELECT_PROPS: Record<keyof SelectProps, DocProp> = {
   variant: {
     options: SELECT_VARIANTS,
     defaultValue: DEFAULT_SELECT_VARIANT,
-    description: BOX_META.props.variant.description,
+    description: 'Visual style variant.',
   },
   visibleItemsCount: {
     options: ['number'],

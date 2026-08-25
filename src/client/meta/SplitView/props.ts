@@ -3,13 +3,10 @@ import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
 import { SplitViewProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const SPLIT_VIEW_PROPS: Record<keyof SplitViewProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
-    isRequired: true,
     options: ['SplitView.Side', 'SplitView.Main'],
+    isRequired: true,
     description:
       'Accepts slots directly or via a render function with access to the SplitView context.',
   },
@@ -24,6 +21,12 @@ export const SPLIT_VIEW_PROPS: Record<keyof SplitViewProps, DocProp> = {
     description:
       'Defines the breakpoint at which the side panel switches from overlay to inline layout mode.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
 }

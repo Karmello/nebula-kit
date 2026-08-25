@@ -10,8 +10,6 @@ import {
 import { ScaleProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const SCALE_PROPS: Record<keyof ScaleProps, DocProp> = {
   axis: {
     options: SCALE_AXIS,
@@ -19,8 +17,9 @@ export const SCALE_PROPS: Record<keyof ScaleProps, DocProp> = {
     description: 'Defines which axis the content scales on during the transition.',
   },
   children: {
-    ...BOX_META.props.children,
+    options: ['ReactNode'],
     isRequired: true,
+    description: 'Content rendered.',
   },
   duration: {
     options: ['number'],
@@ -43,8 +42,14 @@ export const SCALE_PROPS: Record<keyof ScaleProps, DocProp> = {
     description:
       'Defines the transform origin used for the scale transition. Controls the point from which the content visually scales.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   to: {
     options: ['number'],
     defaultValue: String(DEFAULT_SCALE_TO),

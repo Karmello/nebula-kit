@@ -4,8 +4,6 @@ import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { BreadcrumbProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const BREADCRUMB_PROPS: Record<keyof BreadcrumbProps, DocProp> = {
   color: {
     options: BOX_COLORS,
@@ -34,11 +32,18 @@ export const BREADCRUMB_PROPS: Record<keyof BreadcrumbProps, DocProp> = {
     defaultValue: DEFAULT_TSHIRT_SIZE,
   },
   tag: {
-    ...BOX_META.props.tag,
     options: BREADCRUMB_TAGS,
+    defaultValue: 'div',
+    description: 'The HTML tag to be rendered as the container.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   tree: {
     options: ['object[]'],
     isRequired: true,

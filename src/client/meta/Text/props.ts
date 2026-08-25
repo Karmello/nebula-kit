@@ -1,13 +1,13 @@
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_TEXT_TYPOGRAPHY,
   TEXT_SPACE,
   TEXT_TYPOGRAPHY,
   TEXT_WORD_BREAK,
 } from 'lib/components/core/Text/constants'
+import { CSS_TEXT_ALIGN } from 'lib/constants'
 import { TextProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
-
-import { BOX_META } from '../Box'
 
 export const TEXT_PROPS: Record<keyof TextProps, DocProp> = {
   bold: {
@@ -15,19 +15,26 @@ export const TEXT_PROPS: Record<keyof TextProps, DocProp> = {
     description: 'Toggles bold styling.',
   },
   children: {
-    ...BOX_META.props.children,
+    options: ['ReactNode'],
     isRequired: true,
+    description: 'Content rendered.',
   },
   clampLines: {
     options: ['number'],
     description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
   },
-  color: BOX_META.props.color,
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+  },
   fontSize: {
     options: ['string'],
     description: 'Sets the fontSize value, bypassing typography.',
   },
-  intent: BOX_META.props.intent,
+  intent: {
+    options: BOX_INTENTS,
+    description: "Color tone applied to the component's main color.",
+  },
   italic: {
     options: ['boolean'],
     description: 'Toggles italic styling.',
@@ -46,12 +53,24 @@ export const TEXT_PROPS: Record<keyof TextProps, DocProp> = {
       'Controls the insertion of non-breaking spaces before and/or after the text content. Useful when composing multiple inline Text elements.',
   },
   tag: {
-    ...BOX_META.props.tag,
+    options: ['HTML tag'],
     defaultValue: 'p',
+    description: 'The HTML tag to be rendered as the container.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
-  textAlign: BOX_META.props.textAlign,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
+  textAlign: {
+    options: CSS_TEXT_ALIGN,
+    isResponsive: true,
+    description: 'Text alignment within the component.',
+    link: true,
+  },
   truncate: {
     options: ['boolean'],
     description: 'Shortens overflowing text to a single line with an ellipsis.',

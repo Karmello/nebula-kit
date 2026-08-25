@@ -2,8 +2,6 @@ import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING } from 'lib/components/c
 import { RotateProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const ROTATE_PROPS: Record<keyof RotateProps, DocProp> = {
   angle: {
     options: ['number'],
@@ -12,7 +10,7 @@ export const ROTATE_PROPS: Record<keyof RotateProps, DocProp> = {
       'Rotation angle of the content in degrees. Changing the value triggers a rotation animation.',
   },
   children: {
-    ...BOX_META.props.children,
+    options: ['ReactNode'],
     isRequired: true,
     description: 'Content being rotated.',
   },
@@ -26,6 +24,12 @@ export const ROTATE_PROPS: Record<keyof RotateProps, DocProp> = {
     defaultValue: DEFAULT_ROTATE_EASING,
     description: 'Timing function for the animation.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
 }

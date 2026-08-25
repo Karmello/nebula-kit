@@ -9,8 +9,6 @@ import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { AutocompleteProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const AUTOCOMPLETE_PROPS: Record<keyof AutocompleteProps, DocProp> = {
   children: {
     options: ['Autocomplete.Option'],
@@ -36,9 +34,15 @@ export const AUTOCOMPLETE_PROPS: Record<keyof AutocompleteProps, DocProp> = {
     description:
       'Disables internal label-based filtering. Use when options are filtered externally.',
   },
-  disabled: BOX_META.props.disabled,
+  disabled: {
+    options: ['boolean'],
+    description: 'Disables the component and its interactions.',
+  },
   inlineSize: {
-    ...BOX_META.props.inlineSize,
+    options: ['string'],
+    isResponsive: true,
+    description: 'Logical width.',
+    link: true,
     defaultValue: String(DEFAULT_AUTOCOMPLETE_INLINE_SIZE),
   },
   intent: {
@@ -72,7 +76,10 @@ export const AUTOCOMPLETE_PROPS: Record<keyof AutocompleteProps, DocProp> = {
     options: TSHIRT_SIZES,
     defaultValue: DEFAULT_TSHIRT_SIZE,
   },
-  tagRef: BOX_META.props.tagRef,
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   value: {
     options: ['string'],
     description: 'Current selected item value when the component is used in controlled mode.',

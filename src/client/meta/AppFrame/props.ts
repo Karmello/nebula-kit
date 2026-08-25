@@ -1,13 +1,10 @@
 import type { AppFrameProps } from 'lib/components/core/AppFrame/types'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const APP_FRAME_PROPS: Record<keyof AppFrameProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
-    isRequired: true,
     options: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer'],
+    isRequired: true,
     description: 'AppFrame.Footer is optional, the rest is required.',
   },
   stickyHeader: {
@@ -17,6 +14,12 @@ export const APP_FRAME_PROPS: Record<keyof AppFrameProps, DocProp> = {
     isResponsive: false,
     description: 'Keeps the header fixed at the top of the viewport.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
 }

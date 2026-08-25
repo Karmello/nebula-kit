@@ -1,19 +1,19 @@
 import { DEFAULT_APP_FRAME_FOOTER_INTENT } from 'lib/components/core/AppFrame/slots/AppFrameFooter/constants'
 import type { AppFrameFooterProps } from 'lib/components/core/AppFrame/slots/AppFrameFooter/types'
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const APP_FRAME_FOOTER_PROPS: Record<keyof AppFrameFooterProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
+    options: ['ReactNode'],
     isRequired: true,
     description:
       'Footer content. Can be AppFrame.FooterSection slots or any regular React content when section grouping is not needed.',
   },
   color: {
-    ...BOX_META.props.color,
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
     isResponsive: false,
   },
   footerStackBreakpoint: {
@@ -23,10 +23,17 @@ export const APP_FRAME_FOOTER_PROPS: Record<keyof AppFrameFooterProps, DocProp> 
       'Defines the breakpoint from which the footer switches from a stacked vertical layout to a horizontal layout.',
   },
   intent: {
-    ...BOX_META.props.intent,
+    options: BOX_INTENTS,
     defaultValue: String(DEFAULT_APP_FRAME_FOOTER_INTENT),
+    description: "Color tone applied to the component's main color.",
     isResponsive: false,
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
 }

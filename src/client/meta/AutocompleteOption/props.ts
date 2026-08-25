@@ -1,10 +1,11 @@
 import type { AutocompleteOptionProps } from 'lib/components/pro/Autocomplete/slots/AutocompleteOption/types'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const AUTOCOMPLETE_OPTION_PROPS: Record<keyof AutocompleteOptionProps, DocProp> = {
-  children: BOX_META.props.children,
+  children: {
+    options: ['ReactNode'],
+    description: 'Content rendered.',
+  },
   label: {
     options: ['string'],
     isRequired: true,

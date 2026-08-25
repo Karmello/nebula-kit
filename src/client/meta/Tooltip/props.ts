@@ -1,3 +1,4 @@
+import { BOX_COLORS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_TOOLTIP_INTENT,
   DEFAULT_TOOLTIP_MAX_INLINE_SIZE,
@@ -12,16 +13,15 @@ import {
 import { TooltipProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const TOOLTIP_PROPS: Record<keyof TooltipProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
+    options: ['ReactNode'],
     isRequired: true,
     description: 'Trigger element.',
   },
   color: {
-    ...BOX_META.props.color,
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
     isResponsive: false,
   },
   content: {
@@ -30,21 +30,23 @@ export const TOOLTIP_PROPS: Record<keyof TooltipProps, DocProp> = {
     description: 'The text content displayed inside the tooltip.',
   },
   intent: {
-    ...BOX_META.props.intent,
     options: TOOLTIP_INTENTS,
     defaultValue: String(DEFAULT_TOOLTIP_INTENT),
+    description: "Color tone applied to the component's main color.",
     isResponsive: false,
   },
   maxInlineSize: {
-    ...BOX_META.props.maxInlineSize,
     options: ['number'],
     defaultValue: String(DEFAULT_TOOLTIP_MAX_INLINE_SIZE),
     isResponsive: false,
+    description: 'Maximum logical width.',
+    link: true,
   },
   minInlineSize: {
-    ...BOX_META.props.minInlineSize,
     options: ['number'],
     isResponsive: false,
+    description: 'Minimum logical width.',
+    link: true,
   },
   mode: {
     options: TOOLTIP_MODES,
@@ -58,9 +60,9 @@ export const TOOLTIP_PROPS: Record<keyof TooltipProps, DocProp> = {
       'Preferred position of the tooltip relative to its trigger element. The position gets auto-adjusted so the tooltip stays visible.',
   },
   variant: {
-    ...BOX_META.props.variant,
     options: TOOLTIP_VARIANTS,
     defaultValue: String(DEFAULT_TOOLTIP_VARIANT),
+    description: 'Visual style variant.',
     isResponsive: false,
   },
 }

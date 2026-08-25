@@ -6,11 +6,8 @@ import {
 import type { DialogProps } from 'lib/components/pro/Dialog/types'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const DIALOG_PROPS: Record<keyof DialogProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
     options: ['Dialog.Header', 'Dialog.Content', 'Dialog.Footer'],
     isRequired: true,
     description: 'Dialog.Content slot is required. Dialog.Header and Dialog.Footer are optional.',
@@ -36,6 +33,12 @@ export const DIALOG_PROPS: Record<keyof DialogProps, DocProp> = {
     defaultValue: DEFAULT_DIALOG_SIZE,
     description: 'Defines the dialog width using predefined size presets.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
 }

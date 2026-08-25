@@ -10,8 +10,6 @@ import { UseSnackbarShowArgs } from 'lib/components/pro/Snackbar/types'
 import { SnackbarProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const SNACKBAR_PROPS: Record<keyof SnackbarProps, DocProp> = {
   autoCloseDelay: {
     options: ['number'],
@@ -29,7 +27,9 @@ export const SNACKBAR_PROPS: Record<keyof SnackbarProps, DocProp> = {
     description: 'Closes the snackbar when the user clicks outside of its surface.',
   },
   inlineSize: {
-    ...BOX_META.props.inlineSize,
+    options: ['string'],
+    isResponsive: true,
+    link: true,
     defaultValue: String(DEFAULT_SNACKBAR_INLINE_SIZE),
     description: 'Logical inline size of the snackbar container.',
   },

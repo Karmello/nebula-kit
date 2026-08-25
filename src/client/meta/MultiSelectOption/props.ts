@@ -1,10 +1,11 @@
 import type { MultiSelectOptionProps } from 'lib/components/pro/MultiSelect/slots/MultiSelectOption/types'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const MULTI_SELECT_OPTION_PROPS: Record<keyof MultiSelectOptionProps, DocProp> = {
-  children: BOX_META.props.children,
+  children: {
+    options: ['ReactNode'],
+    description: 'Content rendered.',
+  },
   value: {
     options: ['string'],
     isRequired: true,

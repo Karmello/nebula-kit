@@ -1,3 +1,4 @@
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_DIVIDER_INTENT,
   DEFAULT_DIVIDER_MARGIN_BLOCK,
@@ -5,21 +6,46 @@ import {
 import { DividerProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const DIVIDER_PROPS: Record<keyof DividerProps, DocProp> = {
-  color: BOX_META.props.color,
-  elevated: BOX_META.props.elevated,
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+  },
+  elevated: {
+    options: ['boolean'],
+    description:
+      'Shifts the component onto an elevated surface level, adjusting the base surface and all related interaction states together.',
+  },
   intent: {
-    ...BOX_META.props.intent,
+    options: BOX_INTENTS,
     defaultValue: String(DEFAULT_DIVIDER_INTENT),
+    description: "Color tone applied to the component's main color.",
   },
   marginBlock: {
-    ...BOX_META.props.marginBlock,
+    options: ['string'],
     defaultValue: String(DEFAULT_DIVIDER_MARGIN_BLOCK),
+    isResponsive: true,
+    description: 'Margin for the top and bottom sides.',
+    link: true,
   },
-  marginBottom: BOX_META.props.marginBottom,
-  marginTop: BOX_META.props.marginTop,
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  marginBottom: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Margin for the bottom side.',
+    link: true,
+  },
+  marginTop: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Margin for the top side.',
+    link: true,
+  },
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
 }

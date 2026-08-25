@@ -1,3 +1,4 @@
+import { BOX_COLORS, BOX_INTENTS, BOX_VARIANTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_PAGINATION_BOUNDARY_COUNT,
   DEFAULT_PAGINATION_INTENT,
@@ -6,12 +7,9 @@ import {
   DEFAULT_PAGINATION_SIBLING_COUNT,
   DEFAULT_PAGINATION_VARIANT,
 } from 'lib/components/pro/Pagination/constants'
-import { DEFAULT_TSHIRT_SIZE } from 'lib/constants'
+import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { PaginationProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
-
-import { BOX_META } from '../Box'
-import { BUTTON_META } from '../Button'
 
 export const PAGINATION_PROPS: Record<keyof PaginationProps, DocProp> = {
   boundaryCount: {
@@ -20,21 +18,28 @@ export const PAGINATION_PROPS: Record<keyof PaginationProps, DocProp> = {
     description:
       'Number of page items always shown at the beginning and end of the pagination range.',
   },
-  color: BUTTON_META.props.color,
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+  },
   currentPage: {
     options: ['number'],
     isRequired: true,
     description: 'The currently active page number.',
   },
-  disabled: BUTTON_META.props.disabled,
+  disabled: {
+    options: ['boolean'],
+    description: 'Disables the component and its interactions.',
+  },
   hrefBuilder: {
     options: ['(page: number) => string'],
     description:
       'Function called with a page number to produce the target URL for that page, enabling routing-based pagination and deep linking.',
   },
   intent: {
-    ...BUTTON_META.props.intent,
+    options: BOX_INTENTS,
     defaultValue: String(DEFAULT_PAGINATION_INTENT),
+    description: "Color tone applied to the component's main color.",
   },
   onChange: {
     options: ['(page: number) => void'],
@@ -42,8 +47,10 @@ export const PAGINATION_PROPS: Record<keyof PaginationProps, DocProp> = {
     description: 'Callback invoked with the target page number when the active page changes.',
   },
   scale: {
-    ...BUTTON_META.props.scale,
+    options: TSHIRT_SIZES,
     defaultValue: DEFAULT_TSHIRT_SIZE,
+    description:
+      'Controls overall proportions adjusting blockSize, horizontal padding and fontSize to keep content balanced.',
   },
   showFirstLast: {
     options: ['boolean'],
@@ -60,15 +67,22 @@ export const PAGINATION_PROPS: Record<keyof PaginationProps, DocProp> = {
     defaultValue: String(DEFAULT_PAGINATION_SIBLING_COUNT),
     description: 'Number of page items shown adjacent to the current page.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   totalPages: {
     options: ['number'],
     isRequired: true,
     description: 'Total number of available pages.',
   },
   variant: {
-    ...BUTTON_META.props.variant,
+    options: BOX_VARIANTS,
     defaultValue: String(DEFAULT_PAGINATION_VARIANT),
+    description: 'Visual style variant.',
   },
 }

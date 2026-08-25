@@ -1,3 +1,4 @@
+import { BOX_COLORS, BOX_INTENTS, BOX_VARIANTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_TEXTAREA_INTENT,
   DEFAULT_TEXTAREA_RESIZE,
@@ -8,26 +9,46 @@ import {
 import { TextareaProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const TEXTAREA_PROPS: Record<keyof TextareaProps, DocProp> = {
-  color: BOX_META.props.color,
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+  },
   defaultValue: {
     options: ['string'],
     description: 'Initial value displayed when the component is used in uncontrolled mode.',
   },
-  disabled: BOX_META.props.disabled,
-  inlineSize: BOX_META.props.inlineSize,
-  intent: {
-    ...BOX_META.props.intent,
-    defaultValue: String(DEFAULT_TEXTAREA_INTENT),
+  disabled: {
+    options: ['boolean'],
+    description: 'Disables the component and its interactions.',
   },
-  maxInlineSize: BOX_META.props.maxInlineSize,
+  inlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Logical width.',
+    link: true,
+  },
+  intent: {
+    options: BOX_INTENTS,
+    defaultValue: String(DEFAULT_TEXTAREA_INTENT),
+    description: "Color tone applied to the component's main color.",
+  },
+  maxInlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Maximum logical width.',
+    link: true,
+  },
   maxLength: {
     options: ['number'],
     description: 'Maximum number of characters allowed for the textarea value.',
   },
-  minInlineSize: BOX_META.props.minInlineSize,
+  minInlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Minimum logical width.',
+    link: true,
+  },
   onBlur: {
     options: ['e => void'],
     description: 'Callback fired when the textarea loses focus.',
@@ -58,14 +79,21 @@ export const TEXTAREA_PROPS: Record<keyof TextareaProps, DocProp> = {
     defaultValue: DEFAULT_TEXTAREA_ROWS as never,
     description: 'Initial number of text rows to display.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   value: {
     options: ['string'],
     description: 'Current value displayed when the component is used in controlled mode.',
   },
   variant: {
-    ...BOX_META.props.variant,
+    options: BOX_VARIANTS,
     defaultValue: String(DEFAULT_TEXTAREA_VARIANT),
+    description: 'Visual style variant.',
   },
 }

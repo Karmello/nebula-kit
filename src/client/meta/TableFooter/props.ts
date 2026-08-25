@@ -1,35 +1,48 @@
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import { DEFAULT_TABLE_FOOTER_INTENT } from 'lib/components/core/Table/slots/TableFooter/constants'
 import type { TableFooterProps } from 'lib/components/core/Table/slots/TableFooter/types'
+import { CSS_TEXT_ALIGN } from 'lib/constants'
 import type { DocProp } from 'client/definitions'
-
-import { BOX_META } from '../Box'
-import { TABLE_META } from '../Table'
 
 export const TABLE_FOOTER_PROPS: Record<keyof TableFooterProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
     options: ['Table.Row'],
     isRequired: true,
     description: 'Row slot.',
   },
   color: {
-    ...BOX_META.props.color,
+    options: BOX_COLORS,
     description: 'Color applied to every cell.',
   },
   intent: {
-    ...BOX_META.props.intent,
+    options: BOX_INTENTS,
     defaultValue: String(DEFAULT_TABLE_FOOTER_INTENT),
     description: 'Color tone applied to every cell.',
   },
   paddingBlock: {
-    ...BOX_META.props.paddingBlock,
+    options: ['string'],
+    isResponsive: true,
     description: 'Padding for the top and bottom sides applied to every cell.',
+    link: true,
   },
   paddingInline: {
-    ...BOX_META.props.paddingInline,
+    options: ['string'],
+    isResponsive: true,
     description: 'Padding for the left and right sides applied to every cell.',
+    link: true,
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
-  textAlign: TABLE_META.props.textAlign,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
+  textAlign: {
+    options: CSS_TEXT_ALIGN,
+    isResponsive: true,
+    description: 'Text alignment applied to every cell.',
+    link: true,
+  },
 }

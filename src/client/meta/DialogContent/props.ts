@@ -1,10 +1,18 @@
-import { BOX_META } from '../Box'
+import type { DialogContentProps } from 'lib/components/pro/Dialog/slots/DialogContent/types'
+import type { DocProp } from 'client/definitions'
 
-export const DIALOG_CONTENT_PROPS = {
+export const DIALOG_CONTENT_PROPS: Record<keyof DialogContentProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
+    options: ['ReactNode'],
     isRequired: true,
+    description: 'Content rendered.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
 }

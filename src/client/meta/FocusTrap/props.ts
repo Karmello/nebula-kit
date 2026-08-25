@@ -2,8 +2,6 @@ import { DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK } from 'lib/componen
 import type { FocusTrapProps } from 'lib/components/pro/FocusTrap/types'
 import type { DocProp } from 'client/definitions'
 
-import { HTML_TAG_META } from '../HtmlTag'
-
 export const FOCUS_TRAP_PROPS: Record<keyof FocusTrapProps, DocProp> = {
   active: {
     options: ['boolean'],
@@ -11,7 +9,7 @@ export const FOCUS_TRAP_PROPS: Record<keyof FocusTrapProps, DocProp> = {
     description: 'Enables or disables the focus trap.',
   },
   children: {
-    ...HTML_TAG_META.props.children,
+    options: ['ReactNode'],
     isRequired: true,
     description: 'Content whose focus is controlled by the trap.',
   },
@@ -26,7 +24,7 @@ export const FOCUS_TRAP_PROPS: Record<keyof FocusTrapProps, DocProp> = {
       'Called when the user attempts to exit the trapped region (ESC key or clicking outside).',
   },
   tagRef: {
-    ...HTML_TAG_META.props.tagRef,
+    options: ['RefObject'],
     isRequired: true,
     description: 'Ref to the DOM element that the trap should contain focus within.',
   },

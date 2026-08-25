@@ -1,3 +1,4 @@
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN,
   DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX,
@@ -6,15 +7,13 @@ import {
 import { VirtualListProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const VIRTUAL_LIST_PROPS: Record<keyof VirtualListProps, DocProp> = {
   color: {
-    ...BOX_META.props.color,
+    options: BOX_COLORS,
     description: 'Color applied to the surface behind list items.',
   },
   elevated: {
-    ...BOX_META.props.elevated,
+    options: ['boolean'],
     description: 'Applies an elevated surface level behind the list items.',
   },
   ensureVisibleIndex: {
@@ -23,7 +22,7 @@ export const VIRTUAL_LIST_PROPS: Record<keyof VirtualListProps, DocProp> = {
       'Index of the item that should be kept fully visible within the list viewport. When provided, the list scrolls only if needed to ensure this item remains in view.',
   },
   intent: {
-    ...BOX_META.props.intent,
+    options: BOX_INTENTS,
     description: 'Color tone applied to the surface behind list items.',
   },
   itemBlockSize: {
@@ -57,8 +56,14 @@ export const VIRTUAL_LIST_PROPS: Record<keyof VirtualListProps, DocProp> = {
     defaultValue: String(DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX),
     description: 'Scrolls the list to the item at the given index on render.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   visibleItemsCount: {
     options: ['number'],
     isRequired: true,

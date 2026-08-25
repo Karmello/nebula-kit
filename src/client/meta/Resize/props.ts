@@ -3,11 +3,9 @@ import { DEFAULT_RESIZE_DURATION, DEFAULT_RESIZE_EASING } from 'lib/components/c
 import { ResizeProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const RESIZE_PROPS: Record<keyof ResizeProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
+    options: ['ReactNode'],
     isRequired: true,
     description: 'Content animated.',
   },
@@ -26,8 +24,14 @@ export const RESIZE_PROPS: Record<keyof ResizeProps, DocProp> = {
     isRequired: true,
     description: 'Property to animate (logical size only).',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   visible: {
     options: ['boolean'],
     isRequired: true,

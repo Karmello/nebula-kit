@@ -1,19 +1,20 @@
 import type { TabsTabProps } from 'lib/components/pro/Tabs/slots/TabsTab/types'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const TABS_TAB_PROPS: Record<keyof TabsTabProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
+    options: ['ReactNode'],
     isRequired: true,
+    description: 'Content rendered.',
   },
   disabled: {
     options: ['boolean'],
   },
   minInlineSize: {
-    ...BOX_META.props.minInlineSize,
+    options: ['string'],
     isResponsive: false,
+    description: 'Minimum logical width.',
+    link: true,
   },
   value: {
     options: ['string', 'number'],

@@ -1,3 +1,4 @@
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_TABLE_INTENT,
   DEFAULT_TABLE_LAYOUT,
@@ -5,25 +6,28 @@ import {
   DEFAULT_TABLE_PADDING_INLINE,
   TABLE_LAYOUTS,
 } from 'lib/components/core/Table/constants'
+import { CSS_TEXT_ALIGN } from 'lib/constants'
 import { TableProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const TABLE_PROPS: Record<keyof TableProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
     options: ['Table.Body', 'Table.Header', 'Table.Footer', 'Table.Caption'],
     isRequired: true,
     description: 'Table.Body is required, the rest optional.',
   },
   color: {
-    ...BOX_META.props.color,
+    options: BOX_COLORS,
     description: "Color applied to the table's background surface.",
   },
-  inlineSize: BOX_META.props.inlineSize,
+  inlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Logical width.',
+    link: true,
+  },
   intent: {
-    ...BOX_META.props.intent,
+    options: BOX_INTENTS,
     defaultValue: String(DEFAULT_TABLE_INTENT),
     description: "Color tone applied to the table's background surface.",
   },
@@ -33,22 +37,44 @@ export const TABLE_PROPS: Record<keyof TableProps, DocProp> = {
     description:
       'Defines the layout algorithm: "auto" sizes columns by content, "fixed" by table width and column widths.',
   },
-  maxInlineSize: BOX_META.props.maxInlineSize,
-  minInlineSize: BOX_META.props.minInlineSize,
+  maxInlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Maximum logical width.',
+    link: true,
+  },
+  minInlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Minimum logical width.',
+    link: true,
+  },
   paddingBlock: {
-    ...BOX_META.props.paddingBlock,
-    defaultValue: DEFAULT_TABLE_PADDING_BLOCK as never,
+    options: ['string'],
+    isResponsive: true,
     description: 'Padding for the top and bottom sides applied to every cell.',
+    link: true,
+    defaultValue: DEFAULT_TABLE_PADDING_BLOCK as never,
   },
   paddingInline: {
-    ...BOX_META.props.paddingInline,
-    defaultValue: DEFAULT_TABLE_PADDING_INLINE as never,
+    options: ['string'],
+    isResponsive: true,
     description: 'Padding for the left and right sides applied to every cell.',
+    link: true,
+    defaultValue: DEFAULT_TABLE_PADDING_INLINE as never,
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   textAlign: {
-    ...BOX_META.props.textAlign,
+    options: CSS_TEXT_ALIGN,
+    isResponsive: true,
     description: 'Text alignment applied to every cell.',
+    link: true,
   },
 }

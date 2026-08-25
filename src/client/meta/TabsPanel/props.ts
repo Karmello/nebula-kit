@@ -1,12 +1,11 @@
 import type { TabsPanelProps } from 'lib/components/pro/Tabs/slots/TabsPanel/types'
 import type { DocProp } from 'client/definitions'
 
-import { BOX_META } from '../Box'
-
 export const TABS_PANEL_PROPS: Record<keyof TabsPanelProps, DocProp> = {
   children: {
-    ...BOX_META.props.children,
+    options: ['ReactNode'],
     isRequired: true,
+    description: 'Content rendered.',
   },
   value: {
     options: ['string', 'number'],
