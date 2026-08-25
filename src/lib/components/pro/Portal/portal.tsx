@@ -55,18 +55,18 @@ export const Portal = ({
         ...tagAttrs,
         className: classNames(withPrefix('portal'), tagAttrs?.className),
         style: {
-          ...tagAttrs?.style,
           transition: 'none',
           transform: position.transform,
+          zIndex: 'var(--neb-z-portal)',
+          ...tagAttrs?.style,
         },
       }}
       theme={themeContext?.theme}
       brand={brandContext?.brand}
       position="absolute"
-      zIndex={1000}
       pointerEvents="auto"
-      top={position.top !== undefined ? `${position.top}px` : undefined}
-      left={position.left !== undefined ? `${position.left}px` : undefined}
+      top={position.top !== undefined ? `${position.top}px` : '0px'}
+      left={position.left !== undefined ? `${position.left}px` : '0px'}
     >
       {children}
     </Box>,

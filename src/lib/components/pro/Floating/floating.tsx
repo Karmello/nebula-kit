@@ -72,12 +72,27 @@ export const Floating = ({
   const isOpeningDownwards = internalPlacement?.includes('bottom')
 
   const previousOpenRef = useRef(internalOpen)
+
   useEffect(() => {
     const wasOpen = previousOpenRef.current
     if (wasOpen && !internalOpen) {
       focusTriggerChild(triggerRef)
     }
     previousOpenRef.current = internalOpen
+  }, [internalOpen])
+
+  useEffect(() => {
+    if (!internalOpen) return
+
+    const handleScroll = () => {
+      setInternalOpen(false)
+    }
+
+    window.addEventListener('scroll', handleScroll, { capture: true, passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll, { capture: true })
+    }
   }, [internalOpen])
 
   return (
@@ -107,7 +122,6 @@ export const Floating = ({
               tagAttrs: {
                 style: {
                   ...floatingStyles,
-                  zIndex: 'var(--neb-z-floating)',
                 },
                 ...getFloatingProps(),
               },

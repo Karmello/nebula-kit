@@ -89,7 +89,7 @@ export const PropsTable = ({ data, category }: Props) => {
                     <Tooltip
                       content={options.join(', ')}
                       placement="top"
-                      minInlineSize={100}
+                      minInlineSize={200}
                       maxInlineSize={350}
                     >
                       <Text>

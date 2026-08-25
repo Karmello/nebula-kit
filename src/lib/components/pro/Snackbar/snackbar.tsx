@@ -49,7 +49,11 @@ export const Snackbar = ({
           left={finalPlacement.includes('left') ? '0px' : 'unset'}
           right={finalPlacement.includes('right') ? '0px' : 'unset'}
           pointerEvents={!visible ? 'none' : undefined}
-          zIndex={30}
+          tagAttrs={{
+            style: {
+              zIndex: 'var(--neb-z-snackbar)',
+            },
+          }}
         >
           <Slide
             from={finalPlacement.split('-')[0] as never}

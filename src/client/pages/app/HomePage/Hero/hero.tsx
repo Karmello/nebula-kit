@@ -72,7 +72,7 @@ export const Hero = () => {
           }}
           composeMode="wrap"
         >
-          <Tooltip content="Go to AI assistant" minInlineSize={150} maxInlineSize={250}>
+          <Tooltip content="Go to AI assistant">
             <Image
               src="/captain-nebula.webp"
               inlineSize="225px"

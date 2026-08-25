@@ -4,8 +4,8 @@ import classNames from 'classnames'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 import { useCurrentTheme, useGlobalScrollLock } from 'lib/hooks'
-import { Box, IconButton, Resize } from 'lib/index.core'
-import { FocusTrap, Portal } from 'lib/index.pro'
+import { Box, IconButton } from 'lib/index.core'
+import { FocusTrap, Portal, Scale } from 'lib/index.pro'
 
 import {
   DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK,
@@ -65,7 +65,13 @@ export const Dialog = ({
       {({ slotsByName }) => {
         return (
           <DialogProvider intent={DIALOG_INTENT} padding={DIALOG_PADDING}>
-            <Portal>
+            <Portal
+              tagAttrs={{
+                style: {
+                  zIndex: 'var(--neb-z-dialog-portal)',
+                },
+              }}
+            >
               <Box
                 tagAttrs={{
                   style: {
@@ -81,7 +87,6 @@ export const Dialog = ({
                 inset="0px"
                 opacity={open ? '1' : '0'}
                 pointerEvents={open ? 'auto' : 'none'}
-                zIndex={1000}
               >
                 <Box
                   display="flex"
@@ -97,8 +102,7 @@ export const Dialog = ({
                     onFocusEscape={onClose}
                     disableEscapeOnOutsideClick
                   >
-                    <Resize
-                      property="blockSize"
+                    <Scale
                       visible={open}
                       easing={open ? 'ease-out' : 'ease-in'}
                       duration={DIALOG_RESIZE_DURATION}
@@ -142,7 +146,7 @@ export const Dialog = ({
                           {slotsByName['Dialog.Footer']}
                         </Box>
                       </Box>
-                    </Resize>
+                    </Scale>
                   </FocusTrap>
                 </Box>
               </Box>

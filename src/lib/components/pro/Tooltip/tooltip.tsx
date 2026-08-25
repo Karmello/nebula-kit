@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { Box, Text } from 'lib/index.core'
-import { Floating, TooltipProps } from 'lib/index.pro'
+import { Fade, Floating, TooltipProps } from 'lib/index.pro'
 
 import {
   DEFAULT_TOOLTIP_INTENT,
@@ -25,6 +25,13 @@ export const Tooltip = ({
   maxInlineSize = DEFAULT_TOOLTIP_MAX_INLINE_SIZE,
 }: TooltipProps) => {
   const [open, setOpen] = useState(false)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      setVisible(open)
+    })
+  }, [open])
 
   return (
     <Floating open={open} onOpenChange={setOpen} mode={mode} placement={placement} offset={8}>
@@ -32,25 +39,27 @@ export const Tooltip = ({
         {children}
       </Floating.Trigger>
       <Floating.Content>
-        <Box
-          drawable
-          variant={variant}
-          intent={intent}
-          color={color}
-          minInlineSize={`${minInlineSize}px`}
-          maxInlineSize={`${maxInlineSize}px`}
-        >
+        <Fade visible={visible}>
           <Box
             drawable
-            variant="solid"
-            intent={variant === 'outline' ? 'neutral' : intent}
+            variant={variant}
+            intent={intent}
             color={color}
-            paddingBlock="8px"
-            paddingInline="16px"
+            minInlineSize={`${minInlineSize}px`}
+            maxInlineSize={`${maxInlineSize}px`}
           >
-            <Text>{content}</Text>
+            <Box
+              drawable
+              variant="solid"
+              intent={variant === 'outline' ? 'neutral' : intent}
+              color={color}
+              paddingBlock="8px"
+              paddingInline="16px"
+            >
+              <Text>{content}</Text>
+            </Box>
           </Box>
-        </Box>
+        </Fade>
       </Floating.Content>
     </Floating>
   )

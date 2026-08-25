@@ -16,7 +16,13 @@ export const AppFrameHeader = ({
   return (
     <Box
       tag="header"
-      tagAttrs={tagAttrs}
+      tagAttrs={{
+        ...tagAttrs,
+        style: {
+          ...tagAttrs?.style,
+          zIndex: stickyHeader ? 'var(--neb-z-app-frame-header)' : undefined,
+        },
+      }}
       tagRef={tagRef}
       drawable
       variant="outline"
@@ -28,7 +34,6 @@ export const AppFrameHeader = ({
       surface="dividing"
       position={stickyHeader ? 'sticky' : undefined}
       top={stickyHeader ? '0px' : undefined}
-      zIndex={stickyHeader ? 10 : undefined}
     >
       <Box drawable borderRadius="0px" variant="solid" color={color} intent={intent}>
         {children}
