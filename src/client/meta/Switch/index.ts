@@ -1,5 +1,5 @@
 import { SwitchProps } from 'lib/index.pro'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { SWITCH_CHANGELOG } from './changelog'
 import { SWITCH_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const SWITCH_META = {
   props: SWITCH_PROPS,
   examples: SWITCH_EXAMPLES,
   changelog: SWITCH_CHANGELOG,
-} satisfies ComponentMeta<SwitchProps>
+} satisfies DocMeta<SwitchProps>

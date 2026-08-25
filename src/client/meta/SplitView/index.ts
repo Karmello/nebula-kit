@@ -1,5 +1,5 @@
 import { SplitViewProps } from 'lib/index.pro'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { SPLIT_VIEW_CHANGELOG } from './changelog'
 import { SPLIT_VIEW_EXAMPLES } from './examples'
@@ -12,4 +12,4 @@ export const SPLIT_VIEW_META = {
   props: SPLIT_VIEW_PROPS,
   examples: SPLIT_VIEW_EXAMPLES,
   changelog: SPLIT_VIEW_CHANGELOG,
-} satisfies ComponentMeta<SplitViewProps>
+} satisfies DocMeta<SplitViewProps>

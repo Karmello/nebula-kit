@@ -1,5 +1,5 @@
 import { InputProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { INPUT_CHANGELOG } from './changelog'
 import { INPUT_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const INPUT_META = {
   props: INPUT_PROPS,
   examples: INPUT_EXAMPLES,
   changelog: INPUT_CHANGELOG,
-} satisfies ComponentMeta<InputProps>
+} satisfies DocMeta<InputProps>

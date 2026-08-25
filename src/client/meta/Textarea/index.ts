@@ -1,5 +1,5 @@
 import { TextareaProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { TEXTAREA_CHANGELOG } from './changelog'
 import { TEXTAREA_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const TEXTAREA_META = {
   props: TEXTAREA_PROPS,
   examples: TEXTAREA_EXAMPLES,
   changelog: TEXTAREA_CHANGELOG,
-} satisfies ComponentMeta<TextareaProps>
+} satisfies DocMeta<TextareaProps>

@@ -1,5 +1,5 @@
 import type { AppFrameProps } from 'lib/components/core/AppFrame/types'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { APP_FRAME_CHANGELOG } from './changelog'
 import { APP_FRAME_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const APP_FRAME_META = {
   props: APP_FRAME_PROPS,
   examples: APP_FRAME_EXAMPLES,
   changelog: APP_FRAME_CHANGELOG,
-} satisfies ComponentMeta<AppFrameProps>
+} satisfies DocMeta<AppFrameProps>

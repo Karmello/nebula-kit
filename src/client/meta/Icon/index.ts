@@ -1,5 +1,5 @@
 import type { IconProps } from 'lib/components/core/Icon/types'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { ICON_CHANGELOG } from './changelog'
 import { ICON_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const ICON_META = {
   props: ICON_PROPS,
   examples: ICON_EXAMPLES,
   changelog: ICON_CHANGELOG,
-} satisfies ComponentMeta<IconProps>
+} satisfies DocMeta<IconProps>

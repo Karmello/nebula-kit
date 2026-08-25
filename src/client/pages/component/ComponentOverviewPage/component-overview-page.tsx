@@ -2,7 +2,7 @@ import { pascalCase } from 'change-case'
 
 import { Box, Button, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { CodeSnippet } from 'client/components'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 import { convertElemToString } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'
 import meta from 'client/meta'
@@ -11,7 +11,7 @@ import { useComponentsPageStore } from 'client/store'
 import { ListWithChips } from './ListWithChips'
 import { ListWithHeading } from './ListWithHeading'
 
-const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
+const SingleOverview = ({ meta }: { meta: DocMeta<object> }) => {
   const navigateTo = useNavigateTo()
 
   const {

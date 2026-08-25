@@ -1,5 +1,5 @@
 import type { DialogProps } from 'lib/components/pro/Dialog/types'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { DIALOG_CHANGELOG } from './changelog'
 import { DIALOG_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const DIALOG_META = {
   props: DIALOG_PROPS,
   examples: DIALOG_EXAMPLES,
   changelog: DIALOG_CHANGELOG,
-} satisfies ComponentMeta<DialogProps>
+} satisfies DocMeta<DialogProps>

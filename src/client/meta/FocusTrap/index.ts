@@ -1,5 +1,5 @@
 import type { FocusTrapProps } from 'lib/components/pro/FocusTrap/types'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { FOCUS_TRAP_CHANGELOG } from './changelog'
 import { FOCUS_TRAP_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const FOCUS_TRAP_META = {
   props: FOCUS_TRAP_PROPS,
   examples: FOCUS_TRAP_EXAMPLES,
   changelog: FOCUS_TRAP_CHANGELOG,
-} satisfies ComponentMeta<FocusTrapProps>
+} satisfies DocMeta<FocusTrapProps>

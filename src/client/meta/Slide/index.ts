@@ -1,5 +1,5 @@
 import { SlideProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { SLIDE_CHANGELOG } from './changelog'
 import { SLIDE_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const SLIDE_META = {
   props: SLIDE_PROPS,
   examples: SLIDE_EXAMPLES,
   changelog: SLIDE_CHANGELOG,
-} satisfies ComponentMeta<SlideProps>
+} satisfies DocMeta<SlideProps>

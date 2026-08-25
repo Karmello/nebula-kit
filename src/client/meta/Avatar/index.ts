@@ -1,5 +1,5 @@
 import { AvatarProps } from 'lib/index.pro'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { AVATAR_CHANGELOG } from './changelog'
 import { AVATAR_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const AVATAR_META = {
   props: AVATAR_PROPS,
   examples: AVATAR_EXAMPLES,
   changelog: AVATAR_CHANGELOG,
-} satisfies ComponentMeta<AvatarProps>
+} satisfies DocMeta<AvatarProps>

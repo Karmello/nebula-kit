@@ -1,5 +1,5 @@
 import type { SelectOptionProps } from 'lib/components/core/Select/slots/SelectOption/types'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { SELECT_OPTION_OVERVIEW } from './overview'
 import { SELECT_OPTION_PROPS } from './props'
@@ -7,4 +7,4 @@ import { SELECT_OPTION_PROPS } from './props'
 export const SELECT_OPTION_META = {
   overview: SELECT_OPTION_OVERVIEW,
   props: SELECT_OPTION_PROPS,
-} satisfies ComponentMeta<SelectOptionProps>
+} satisfies DocMeta<SelectOptionProps>

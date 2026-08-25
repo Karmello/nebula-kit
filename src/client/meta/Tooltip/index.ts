@@ -1,5 +1,5 @@
 import { TooltipProps } from 'lib/index.pro'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { TOOLTIP_CHANGELOG } from './changelog'
 import { TOOLTIP_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const TOOLTIP_META = {
   props: TOOLTIP_PROPS,
   examples: TOOLTIP_EXAMPLES,
   changelog: TOOLTIP_CHANGELOG,
-} satisfies ComponentMeta<TooltipProps>
+} satisfies DocMeta<TooltipProps>

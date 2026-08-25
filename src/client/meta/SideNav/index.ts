@@ -1,5 +1,5 @@
 import { SideNavProps } from 'lib/index.pro'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { SIDE_NAV_CHANGELOG } from './changelog'
 import { SIDE_NAV_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const SIDE_NAV_META = {
   examples: SIDE_NAV_EXAMPLES,
   props: SIDE_NAV_PROPS,
   changelog: SIDE_NAV_CHANGELOG,
-} satisfies ComponentMeta<SideNavProps>
+} satisfies DocMeta<SideNavProps>

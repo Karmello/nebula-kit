@@ -1,5 +1,5 @@
 import { PaginationProps } from 'lib/index.pro'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { PAGINATION_CHANGELOG } from './changelog'
 import { PAGINATION_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const PAGINATION_META = {
   props: PAGINATION_PROPS,
   examples: PAGINATION_EXAMPLES,
   changelog: PAGINATION_CHANGELOG,
-} satisfies ComponentMeta<PaginationProps>
+} satisfies DocMeta<PaginationProps>

@@ -1,5 +1,5 @@
 import { MultiSelectProps } from 'lib/index.pro'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { MULTI_SELECT_CHANGELOG } from './changelog'
 import { MULTI_SELECT_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const MULTI_SELECT_META = {
   props: MULTI_SELECT_PROPS,
   examples: MULTI_SELECT_EXAMPLES,
   changelog: MULTI_SELECT_CHANGELOG,
-} satisfies ComponentMeta<MultiSelectProps>
+} satisfies DocMeta<MultiSelectProps>

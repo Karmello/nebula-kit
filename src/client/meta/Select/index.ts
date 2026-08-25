@@ -1,5 +1,5 @@
 import { SelectProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { SELECT_CHANGELOG } from './changelog'
 import { SELECT_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const SELECT_META = {
   props: SELECT_PROPS,
   examples: SELECT_EXAMPLES,
   changelog: SELECT_CHANGELOG,
-} satisfies ComponentMeta<SelectProps>
+} satisfies DocMeta<SelectProps>

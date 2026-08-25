@@ -1,5 +1,5 @@
 import { FadeProps } from 'lib/index.pro'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { FADE_CHANGELOG } from './changelog'
 import { FADE_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const FADE_META = {
   props: FADE_PROPS,
   examples: FADE_EXAMPLES,
   changelog: FADE_CHANGELOG,
-} satisfies ComponentMeta<FadeProps>
+} satisfies DocMeta<FadeProps>

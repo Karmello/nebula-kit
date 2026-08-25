@@ -1,5 +1,5 @@
 import { CalloutProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { CALLOUT_CHANGELOG } from './changelog'
 import { CALLOUT_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const CALLOUT_META = {
   props: CALLOUT_PROPS,
   examples: CALLOUT_EXAMPLES,
   changelog: CALLOUT_CHANGELOG,
-} satisfies ComponentMeta<CalloutProps>
+} satisfies DocMeta<CalloutProps>

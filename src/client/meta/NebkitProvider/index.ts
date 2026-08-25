@@ -1,5 +1,5 @@
 import type { NebkitProviderProps } from 'lib/components/core/NebkitProvider/types'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { NEBKIT_PROVIDER_CHANGELOG } from './changelog'
 import { NEBKIT_PROVIDER_EXAMPLES } from './examples'
@@ -12,4 +12,4 @@ export const NEBKIT_PROVIDER_META = {
   examples: NEBKIT_PROVIDER_EXAMPLES,
   hideExamplesThemeToggle: true,
   changelog: NEBKIT_PROVIDER_CHANGELOG,
-} satisfies ComponentMeta<NebkitProviderProps>
+} satisfies DocMeta<NebkitProviderProps>

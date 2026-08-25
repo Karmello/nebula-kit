@@ -1,5 +1,5 @@
 import { ScaleProps } from 'lib/index.pro'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { SCALE_CHANGELOG } from './changelog'
 import { SCALE_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const SCALE_META = {
   props: SCALE_PROPS,
   examples: SCALE_EXAMPLES,
   changelog: SCALE_CHANGELOG,
-} satisfies ComponentMeta<ScaleProps>
+} satisfies DocMeta<ScaleProps>

@@ -1,5 +1,5 @@
 import { ImageProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { IMAGE_CHANGELOG } from './changelog'
 import { IMAGE_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const IMAGE_META = {
   props: IMAGE_PROPS,
   examples: IMAGE_EXAMPLES,
   changelog: IMAGE_CHANGELOG,
-} satisfies ComponentMeta<ImageProps>
+} satisfies DocMeta<ImageProps>

@@ -12,10 +12,10 @@ import {
   Title,
   Tooltip,
 } from 'lib/components'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 type Props = {
-  data: ComponentMeta<Record<string, object>>['props']
+  data: DocMeta<Record<string, object>>['props']
   category: string
 }
 

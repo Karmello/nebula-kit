@@ -1,5 +1,5 @@
 import { RespValue } from 'lib/types'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 export type PropValue = RespValue<string | number | boolean>
 
@@ -18,7 +18,7 @@ export type State = {
   components: Record<
     string,
     {
-      bundle: ComponentMeta<unknown>['overview']['bundle']
+      bundle: DocMeta<unknown>['overview']['bundle']
       props: Props
       activeProp: string
     }

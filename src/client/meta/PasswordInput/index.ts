@@ -1,5 +1,5 @@
 import { PasswordInputProps } from 'lib/index.pro'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { PASSWORD_CHANGELOG } from './changelog'
 import { PASSWORD_INPUT_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const PASSWORD_META = {
   props: PASSWORD_PROPS,
   examples: PASSWORD_INPUT_EXAMPLES,
   changelog: PASSWORD_CHANGELOG,
-} satisfies ComponentMeta<PasswordInputProps>
+} satisfies DocMeta<PasswordInputProps>

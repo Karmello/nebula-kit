@@ -1,5 +1,5 @@
 import { AutocompleteProps } from 'lib/index.pro'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { AUTOCOMPLETE_CHANGELOG } from './changelog'
 import { AUTOCOMPLETE_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const AUTOCOMPLETE_META = {
   props: AUTOCOMPLETE_PROPS,
   examples: AUTOCOMPLETE_EXAMPLES,
   changelog: AUTOCOMPLETE_CHANGELOG,
-} satisfies ComponentMeta<AutocompleteProps>
+} satisfies DocMeta<AutocompleteProps>

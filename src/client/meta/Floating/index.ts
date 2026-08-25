@@ -1,5 +1,5 @@
 import { FloatingProps } from 'lib/components/pro/Floating/types'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { FLOATING_CHANGELOG } from './changelog'
 import { FLOATING_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const FLOATING_META = {
   props: FLOATING_PROPS,
   examples: FLOATING_EXAMPLES,
   changelog: FLOATING_CHANGELOG,
-} satisfies ComponentMeta<FloatingProps>
+} satisfies DocMeta<FloatingProps>

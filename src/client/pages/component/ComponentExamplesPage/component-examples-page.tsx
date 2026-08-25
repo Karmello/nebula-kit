@@ -3,13 +3,13 @@ import { pascalCase } from 'change-case'
 import { Box, Markup, NEB_LENGTH, Reveal, Spacer, Switch, Text, Title } from 'lib/components'
 import { useCurrentTheme } from 'lib/hooks'
 import { CodeSnippet } from 'client/components'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 import { convertElemToString } from 'client/helpers'
 import meta from 'client/meta'
 import { useAppStore, useComponentsPageStore } from 'client/store'
 
 const SingleExample = (
-  props: ComponentMeta<unknown>['examples'][number] & { hideExamplesThemeToggle: boolean }
+  props: DocMeta<unknown>['examples'][number] & { hideExamplesThemeToggle: boolean }
 ) => {
   const {
     description,

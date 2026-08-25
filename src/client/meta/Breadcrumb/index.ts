@@ -1,5 +1,5 @@
 import { BreadcrumbProps } from 'lib/index.pro'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { BREADCRUMB_CHANGELOG } from './changelog'
 import { BREADCRUMB_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const BREADCRUMB_META = {
   props: BREADCRUMB_PROPS,
   examples: BREADCRUMB_EXAMPLES,
   changelog: BREADCRUMB_CHANGELOG,
-} satisfies ComponentMeta<BreadcrumbProps>
+} satisfies DocMeta<BreadcrumbProps>

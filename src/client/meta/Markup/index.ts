@@ -1,5 +1,5 @@
 import { MarkupProps } from 'lib/index.pro'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { MARKUP_CHANGELOG } from './changelog'
 import { MARKUP_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const MARKUP_META = {
   props: MARKUP_PROPS,
   examples: MARKUP_EXAMPLES,
   changelog: MARKUP_CHANGELOG,
-} satisfies ComponentMeta<MarkupProps>
+} satisfies DocMeta<MarkupProps>

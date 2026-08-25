@@ -1,5 +1,5 @@
 import { TabsProps } from 'lib/index.pro'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { TABS_CHANGELOG } from './changelog'
 import { TABS_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const TABS_META = {
   props: TABS_PROPS,
   examples: TABS_EXAMPLES,
   changelog: TABS_CHANGELOG,
-} satisfies ComponentMeta<TabsProps>
+} satisfies DocMeta<TabsProps>

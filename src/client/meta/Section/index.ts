@@ -1,5 +1,5 @@
 import { SectionProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { SECTION_CHANGELOG } from './changelog'
 import { SECTION_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const SECTION_META = {
   props: SECTION_PROPS,
   examples: SECTION_EXAMPLES,
   changelog: SECTION_CHANGELOG,
-} satisfies ComponentMeta<SectionProps>
+} satisfies DocMeta<SectionProps>

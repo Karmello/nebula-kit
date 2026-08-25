@@ -1,5 +1,5 @@
 import type { TableCellProps } from 'lib/components/core/Table/slots/TableCell/types'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { TABLE_CELL_OVERVIEW } from './overview'
 import { TABLE_CELL_PROPS } from './props'
@@ -7,4 +7,4 @@ import { TABLE_CELL_PROPS } from './props'
 export const TABLE_CELL_META = {
   overview: TABLE_CELL_OVERVIEW,
   props: TABLE_CELL_PROPS,
-} satisfies ComponentMeta<TableCellProps>
+} satisfies DocMeta<TableCellProps>

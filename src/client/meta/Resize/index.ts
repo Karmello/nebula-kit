@@ -1,5 +1,5 @@
 import { ResizeProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { RESIZE_CHANGELOG } from './changelog'
 import { RESIZE_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const RESIZE_META = {
   props: RESIZE_PROPS,
   examples: RESIZE_EXAMPLES,
   changelog: RESIZE_CHANGELOG,
-} satisfies ComponentMeta<ResizeProps>
+} satisfies DocMeta<ResizeProps>

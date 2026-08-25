@@ -1,5 +1,5 @@
 import { RotateProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { ROTATE_CHANGELOG } from './changelog'
 import { ROTATE_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const ROTATE_META = {
   props: ROTATE_PROPS,
   examples: ROTATE_EXAMPLES,
   changelog: ROTATE_CHANGELOG,
-} satisfies ComponentMeta<RotateProps>
+} satisfies DocMeta<RotateProps>

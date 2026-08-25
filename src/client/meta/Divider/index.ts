@@ -1,5 +1,5 @@
 import { DividerProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { DIVIDER_CHANGELOG } from './changelog'
 import { DIVIDER_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const DIVIDER_META = {
   props: DIVIDER_PROPS,
   examples: DIVIDER_EXAMPLES,
   changelog: DIVIDER_CHANGELOG,
-} satisfies ComponentMeta<DividerProps>
+} satisfies DocMeta<DividerProps>

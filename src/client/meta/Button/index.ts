@@ -1,5 +1,5 @@
 import { ButtonProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { BUTTON_CHANGELOG } from './changelog'
 import { BUTTON_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const BUTTON_META = {
   props: BUTTON_PROPS,
   examples: BUTTON_EXAMPLES,
   changelog: BUTTON_CHANGELOG,
-} satisfies ComponentMeta<ButtonProps>
+} satisfies DocMeta<ButtonProps>

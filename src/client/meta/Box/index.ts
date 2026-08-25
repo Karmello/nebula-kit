@@ -1,5 +1,5 @@
 import type { BoxProps } from 'lib/components/core/Box'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { BOX_CHANGELOG } from './changelog'
 import { BOX_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const BOX_META = {
   props: BOX_PROPS,
   examples: BOX_EXAMPLES,
   changelog: BOX_CHANGELOG,
-} satisfies ComponentMeta<BoxProps>
+} satisfies DocMeta<BoxProps>

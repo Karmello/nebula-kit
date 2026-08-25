@@ -1,5 +1,5 @@
 import { SpacerProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { SPACER_CHANGELOG } from './changelog'
 import { SPACER_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const SPACER_META = {
   props: SPACER_PROPS,
   examples: SPACER_EXAMPLES,
   changelog: SPACER_CHANGELOG,
-} satisfies ComponentMeta<SpacerProps>
+} satisfies DocMeta<SpacerProps>

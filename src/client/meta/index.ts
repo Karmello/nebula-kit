@@ -1,4 +1,4 @@
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { APP_FRAME_META } from './AppFrame'
 import { APP_FRAME_FOOTER_META } from './AppFrameFooter'
@@ -253,6 +253,6 @@ const META = {
   VirtualList: {
     VirtualList: VIRTUAL_LIST_META,
   },
-} as Record<string, Record<string, ComponentMeta<object>>>
+} as Record<string, Record<string, DocMeta<object>>>
 
 export default META

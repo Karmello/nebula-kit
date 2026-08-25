@@ -1,5 +1,5 @@
 import type { PortalProps } from 'lib/components/pro/Portal/types'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { PORTAL_CHANGELOG } from './changelog'
 import { PORTAL_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const PORTAL_META = {
   props: PORTAL_PROPS,
   examples: PORTAL_EXAMPLES,
   changelog: PORTAL_CHANGELOG,
-} satisfies ComponentMeta<PortalProps>
+} satisfies DocMeta<PortalProps>

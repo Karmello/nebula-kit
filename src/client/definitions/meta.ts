@@ -40,7 +40,7 @@ export type Example = {
 
 export type Changelog = Partial<Record<ReleaseVersion, string[]>>
 
-export type ComponentMeta<PropsType> = {
+export type DocMeta<PropsType> = {
   overview: Overview
   props?: Record<keyof PropsType, Prop>
   examples?: Example[]

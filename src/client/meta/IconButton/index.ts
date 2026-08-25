@@ -1,5 +1,5 @@
 import { IconButtonProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { ICON_BUTTON_CHANGELOG } from './changelog'
 import { ICON_BUTTON_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const ICON_BUTTON_META = {
   props: ICON_BUTTON_PROPS,
   examples: ICON_BUTTON_EXAMPLES,
   changelog: ICON_BUTTON_CHANGELOG,
-} satisfies ComponentMeta<IconButtonProps>
+} satisfies DocMeta<IconButtonProps>

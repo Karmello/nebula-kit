@@ -1,5 +1,5 @@
 import { TextProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { TEXT_CHANGELOG } from './changelog'
 import { TEXT_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const TEXT_META = {
   props: TEXT_PROPS,
   examples: TEXT_EXAMPLES,
   changelog: TEXT_CHANGELOG,
-} satisfies ComponentMeta<TextProps>
+} satisfies DocMeta<TextProps>

@@ -1,5 +1,5 @@
 import { CheckboxProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { CHECKBOX_CHANGELOG } from './changelog'
 import { CHECKBOX_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const CHECKBOX_META = {
   props: CHECKBOX_PROPS,
   examples: CHECKBOX_EXAMPLES,
   changelog: CHECKBOX_CHANGELOG,
-} satisfies ComponentMeta<CheckboxProps>
+} satisfies DocMeta<CheckboxProps>

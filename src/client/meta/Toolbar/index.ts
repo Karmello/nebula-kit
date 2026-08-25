@@ -1,5 +1,5 @@
 import { ToolbarProps } from 'lib/index.pro'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { TOOLBAR_CHANGELOG } from './changelog'
 import { TOOLBAR_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const TOOLBAR_META = {
   props: TOOLBAR_PROPS,
   examples: TOOLBAR_EXAMPLES,
   changelog: TOOLBAR_CHANGELOG,
-} satisfies ComponentMeta<ToolbarProps>
+} satisfies DocMeta<ToolbarProps>

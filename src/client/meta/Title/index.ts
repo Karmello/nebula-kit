@@ -1,5 +1,5 @@
 import { TitleProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { TITLE_CHANGELOG } from './changelog'
 import { TITLE_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const TITLE_META = {
   props: TITLE_PROPS,
   examples: TITLE_EXAMPLES,
   changelog: TITLE_CHANGELOG,
-} satisfies ComponentMeta<TitleProps>
+} satisfies DocMeta<TitleProps>

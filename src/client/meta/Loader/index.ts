@@ -1,5 +1,5 @@
 import { LoaderProps } from 'lib/index.core'
-import { ComponentMeta } from 'client/definitions'
+import { DocMeta } from 'client/definitions'
 
 import { LOADER_CHANGELOG } from './changelog'
 import { LOADER_EXAMPLES } from './examples'
@@ -11,4 +11,4 @@ export const LOADER_META = {
   props: LOADER_PROPS,
   examples: LOADER_EXAMPLES,
   changelog: LOADER_CHANGELOG,
-} satisfies ComponentMeta<LoaderProps>
+} satisfies DocMeta<LoaderProps>
