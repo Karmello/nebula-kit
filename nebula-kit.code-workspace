@@ -17,6 +17,10 @@
       "path": "src/client",
     },
     {
+      "name": "meta",
+      "path": "src/client/meta",
+    },
+    {
       "name": "lib",
       "path": "src/lib",
     },
@@ -45,6 +49,7 @@
       "path": "src/lib/components/pro",
     },
     {
+      "name": "shared",
       "path": "src/lib/components/shared",
     },
   ],
