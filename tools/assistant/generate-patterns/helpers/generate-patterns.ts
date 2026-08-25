@@ -1,4 +1,4 @@
-import { Pattern } from '../../../../src/client/definitions/patterns/definitions'
+import { Pattern } from '../../../../src/client/patterns/definitions'
 
 export const generatePatterns = (patterns: Pattern[]) => {
   const lines: string[] = []

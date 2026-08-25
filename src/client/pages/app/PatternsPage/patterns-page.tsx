@@ -13,8 +13,8 @@ import {
   Text,
 } from 'lib/components'
 import { CodeSnippet } from 'client/components'
-import { PATTERN_CATEGORIES, PATTERNS } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
+import { PATTERN_CATEGORIES, PATTERNS } from 'client/patterns'
 import { usePatternsStore } from 'client/store'
 
 export const PatternsPage = () => {
