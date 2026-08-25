@@ -1,6 +1,9 @@
-import { DropdownListProps } from 'lib/components/shared'
-import { BoxProps } from 'lib/index.core'
+import { BoxColor, BoxIntent, BoxProps } from 'lib/components/core/Box'
 import { TShirtSize } from 'lib/types'
+
+import { MULTI_SELECT_VARIANTS } from './constants'
+
+type MultiSelectVariant = (typeof MULTI_SELECT_VARIANTS)[number]
 
 export type MultiSelectProps = {
   // own
@@ -8,16 +11,13 @@ export type MultiSelectProps = {
   value?: string[]
   onChange?: (value: string[]) => void
   size?: TShirtSize
-  dropdownPlacement?: DropdownListProps['placement']
+  visibleItemsCount?: number
+  staticLabel?: string
   // Box
-  inlineSize?: BoxProps<'div'>['inlineSize']
-  disabled?: BoxProps<'div'>['disabled']
-  children: BoxProps<'div'>['children']
-  // DropdownList
-  tagAttrs?: DropdownListProps['tagAttrs']
-  tagRef?: DropdownListProps['tagRef']
-  color?: DropdownListProps['color']
-  intent?: DropdownListProps['intent']
-  scrollAlign?: DropdownListProps['scrollAlign']
-  visibleItemsCount?: DropdownListProps['visibleItemsCount']
+  children: BoxProps['children']
+  variant?: MultiSelectVariant
+  intent?: BoxIntent
+  color?: BoxColor
+  inlineSize?: BoxProps['inlineSize']
+  disabled?: BoxProps['disabled']
 }

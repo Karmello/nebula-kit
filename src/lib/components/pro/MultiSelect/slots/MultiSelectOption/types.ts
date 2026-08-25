@@ -1,8 +1,4 @@
-import { DropdownListItemProps } from 'lib/components/shared'
-
 export type MultiSelectOptionProps = {
-  // own
+  children: string
   value: string
-  // DropdownListItem
-  children?: DropdownListItemProps['children']
 }

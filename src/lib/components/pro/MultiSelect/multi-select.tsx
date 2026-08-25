@@ -1,25 +1,23 @@
-import { ReactElement, useState } from 'react'
-import classNames from 'classnames'
+import { ReactElement, useEffect, useRef, useState } from 'react'
 
-import { DropdownList, DropdownListState, WithSlots } from 'lib/components/shared'
-import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE } from 'lib/constants'
-import { withPrefix } from 'lib/helpers'
-import { SelectOptionProps, Text, Title } from 'lib/index.core'
-import { MultiSelectProps } from 'lib/index.pro'
+import { WithSlots } from 'lib/components/shared'
+import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE, NEB_LENGTH } from 'lib/constants'
+import { useControlled } from 'lib/hooks'
+import { Box, Divider, Icon, Resize, Text } from 'lib/index.core'
+import { Floating, FloatingProps, MultiSelectOptionProps, MultiSelectProps } from 'lib/index.pro'
 
-import { DEFAULT_MULTI_SELECT_INLINE_SIZE } from './constants'
-import { MultiSelectProvider } from './MultiSelectProvider'
+import {
+  DEFAULT_MULTI_SELECT_INLINE_SIZE,
+  DEFAULT_MULTI_SELECT_INTENT,
+  DEFAULT_MULTI_SELECT_VARIANT,
+  DEFAULT_MULTI_SELECT_VISIBLE_ITEMS_COUNT,
+} from './constants'
+import { resolveMultiSelectValues } from './helpers'
 
-export const MultiSelect = ({
-  // DropdownList
-  tagAttrs,
-  tagRef,
+export const MultiSelectImpl = ({
+  variant = DEFAULT_MULTI_SELECT_VARIANT,
+  intent = DEFAULT_MULTI_SELECT_INTENT,
   color,
-  intent,
-  scrollAlign,
-  visibleItemsCount,
-  // Box
-  children,
   inlineSize = DEFAULT_MULTI_SELECT_INLINE_SIZE,
   disabled,
   // own
@@ -27,121 +25,205 @@ export const MultiSelect = ({
   value,
   onChange,
   size = DEFAULT_TSHIRT_SIZE,
-  dropdownPlacement,
-}: MultiSelectProps) => {
-  const [dropdownListState, setDropdownListState] = useState<DropdownListState>({
-    open: false,
-    placement: dropdownPlacement || 'bottom-center',
+  visibleItemsCount = DEFAULT_MULTI_SELECT_VISIBLE_ITEMS_COUNT,
+  staticLabel,
+  // extra
+  optionSlots,
+}: MultiSelectProps & { optionSlots: ReactElement<MultiSelectOptionProps>[] }) => {
+  const [open, setOpen] = useState<boolean>(false)
+  const [visible, setVisible] = useState<boolean>(false)
+  const [placement, setPlacement] = useState<FloatingProps['placement']>('bottom-start')
+
+  const [rawValue, setCurrentValue] = useControlled<string[]>({ value, defaultValue, onChange })
+  const currentValue = rawValue || []
+
+  const triggerRef = useRef<HTMLButtonElement | null>(null)
+  const selectedItemRef = useRef<HTMLButtonElement | null>(null)
+
+  const triggerWidth = triggerRef.current?.offsetWidth
+  const currentLabel = optionSlots
+    .filter(slot => currentValue.includes(slot.props.value))
+    .map(slot => slot.props.children)
+    .join(', ')
+  const isOpenDownwards = placement?.startsWith('bottom')
+  const optionBlockSize = Number(CONTROL_SCALE_MAP[size].blockSize.replace('px', ''))
+
+  const { menuBlockSize } = resolveMultiSelectValues({
+    visibleItemsCount: visibleItemsCount !== undefined ? visibleItemsCount : 5,
+    optionBlockSize,
+    itemsCount: optionSlots.length,
   })
 
-  const [internalValue, setInternalValue] = useState<string[]>(defaultValue || [])
+  const toggleValue = (optionValue: string) => {
+    const nextValue = currentValue.includes(optionValue)
+      ? currentValue.filter(v => v !== optionValue)
+      : [...currentValue, optionValue]
 
-  const isControlled = value !== undefined
-  const currentValue = isControlled ? value : internalValue
-
-  const handleChange = (value: string) => {
-    const nextValue = currentValue?.includes(value)
-      ? currentValue.filter(v => v !== value)
-      : [...(currentValue || []), value]
-
-    if (!isControlled) setInternalValue(nextValue)
-    onChange?.(nextValue)
+    setCurrentValue(nextValue)
   }
 
+  useEffect(() => {
+    if (!open) return
+    requestAnimationFrame(() => {
+      selectedItemRef.current?.focus()
+    })
+  }, [open])
+
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      setVisible(open)
+    })
+  }, [open])
+
+  return (
+    <Floating
+      mode="click"
+      open={open}
+      onOpenChange={setOpen}
+      placement={placement}
+      onPlacementChange={setPlacement}
+      disabled={disabled}
+    >
+      <Floating.Trigger display="block">
+        <Box
+          tag="button"
+          tagRef={triggerRef}
+          variant={variant}
+          intent={intent}
+          color={color}
+          inlineSize={inlineSize}
+          blockSize={CONTROL_SCALE_MAP[size].blockSize}
+          paddingInline={CONTROL_SCALE_MAP[size].paddingInline}
+          disabled={disabled}
+          surface={open ? 'selected' : undefined}
+          cursor="pointer"
+          ripple={!open}
+          interactive
+          borderBottomLeftRadius={open && isOpenDownwards ? '0px' : undefined}
+          borderBottomRightRadius={open && isOpenDownwards ? '0px' : undefined}
+          borderTopLeftRadius={open && !isOpenDownwards ? '0px' : undefined}
+          borderTopRightRadius={open && !isOpenDownwards ? '0px' : undefined}
+        >
+          <Box
+            display="flex"
+            tag="span"
+            alignItems="center"
+            justifyContent="space-between"
+            columnGap={NEB_LENGTH.px_008}
+          >
+            <Text
+              fontSize={CONTROL_SCALE_MAP[size].fontSize}
+              lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
+              truncate
+            >
+              {staticLabel ?? (currentLabel || 'Select...')}
+            </Text>
+            <Icon name="chevron-down" size={CONTROL_SCALE_MAP[size].fontSize} />
+          </Box>
+        </Box>
+      </Floating.Trigger>
+      <Floating.Content>
+        <Resize visible={visible} property="blockSize" easing={visible ? 'ease-out' : undefined}>
+          <Box
+            drawable
+            variant="solid"
+            intent={intent}
+            color={color}
+            inlineSize={`${triggerWidth}px`}
+            maxBlockSize={`${menuBlockSize}px`}
+            overflowY="auto"
+            borderTopLeftRadius={isOpenDownwards ? '0px' : undefined}
+            borderTopRightRadius={isOpenDownwards ? '0px' : undefined}
+            borderBottomLeftRadius={!isOpenDownwards ? '0px' : undefined}
+            borderBottomRightRadius={!isOpenDownwards ? '0px' : undefined}
+          >
+            <Box intent={intent} color={color} elevated>
+              {optionSlots.map((slot, key) => {
+                const isSelected = currentValue.includes(slot.props.value)
+
+                return (
+                  <Box key={key}>
+                    {isOpenDownwards ? (
+                      <Divider
+                        marginBlock={NEB_LENGTH.px_000}
+                        elevated
+                        color={color}
+                        intent={intent}
+                      />
+                    ) : null}
+                    <Box
+                      tag="button"
+                      tagAttrs={{
+                        onClick: () => {
+                          toggleValue(slot.props.value)
+                        },
+                      }}
+                      drawable
+                      interactive
+                      variant="solid"
+                      elevated
+                      intent={intent}
+                      color={color}
+                      cursor="pointer"
+                      surface={isSelected ? 'selected' : undefined}
+                      inlineSize="100%"
+                      borderRadius={NEB_LENGTH.px_000}
+                    >
+                      <Box
+                        display="flex"
+                        tagAttrs={{
+                          style: {
+                            blockSize: CONTROL_SCALE_MAP[size].blockSize,
+                            paddingInline: CONTROL_SCALE_MAP[size].paddingInline,
+                          },
+                        }}
+                        alignItems="center"
+                        justifyContent="space-between"
+                        columnGap={NEB_LENGTH.px_008}
+                      >
+                        <Text
+                          fontSize={CONTROL_SCALE_MAP[size].fontSize}
+                          lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
+                          bold={isSelected}
+                        >
+                          {slot}
+                        </Text>
+                        {isSelected ? (
+                          <Icon name="check" size={CONTROL_SCALE_MAP[size].fontSize} />
+                        ) : null}
+                      </Box>
+                    </Box>
+                    {!isOpenDownwards ? (
+                      <Divider
+                        marginBlock={NEB_LENGTH.px_000}
+                        elevated
+                        color={color}
+                        intent={intent}
+                      />
+                    ) : null}
+                  </Box>
+                )
+              })}
+            </Box>
+          </Box>
+        </Resize>
+      </Floating.Content>
+    </Floating>
+  )
+}
+
+export const MultiSelect = (props: MultiSelectProps) => {
   return (
     <WithSlots<'MultiSelect.Option'>
-      childrenToVerify={children}
+      childrenToVerify={props.children}
       componentName="MultiSelect"
       slotsConfig={[{ name: 'MultiSelect.Option', required: true, allowMultiple: true }]}
     >
       {({ slotsByName }) => {
-        const currentSlotIndex = slotsByName['MultiSelect.Option'].findIndex(
-          slot => (slot as any).props.value === currentValue
-        )
-
-        const currentLabel = slotsByName['MultiSelect.Option']
-          .map(slot => {
-            const { value, children } = (slot as any).props
-            return { value, label: children }
-          })
-          .filter(obj => currentValue.includes(obj.value))
-          .map(obj => obj.label)
-          .join(', ')
-
-        return (
-          <MultiSelectProvider currentValue={currentValue} handleChange={handleChange}>
-            <DropdownList
-              tagRef={tagRef}
-              tagAttrs={{
-                ...tagAttrs,
-                className: classNames(withPrefix('multi-select'), tagAttrs?.className),
-              }}
-              state={dropdownListState}
-              onStateChange={setDropdownListState}
-              intent={intent}
-              color={color}
-              itemBlockSize={Number(CONTROL_SCALE_MAP[size].blockSize.replace('px', ''))}
-              scrollToIndex={currentSlotIndex}
-              scrollAlign={scrollAlign}
-              visibleItemsCount={visibleItemsCount}
-              placement={dropdownPlacement}
-              keepOpen
-            >
-              <DropdownList.Trigger
-                blockSize={CONTROL_SCALE_MAP[size].blockSize}
-                paddingInline={CONTROL_SCALE_MAP[size].paddingInline}
-                inlineSize={inlineSize}
-                disabled={disabled}
-                surface={dropdownListState?.open ? 'selected' : undefined}
-                ripple={!dropdownListState?.open}
-              >
-                <Title
-                  iconName={
-                    dropdownListState?.placement?.startsWith('bottom')
-                      ? 'chevron-down'
-                      : 'chevron-up'
-                  }
-                  iconPlacement="right"
-                >
-                  <Text
-                    fontSize={CONTROL_SCALE_MAP[size].fontSize}
-                    lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
-                    truncate
-                  >
-                    {currentLabel || 'Select ...'}
-                  </Text>
-                </Title>
-              </DropdownList.Trigger>
-              {slotsByName['MultiSelect.Option'].map((slot, index) => {
-                const slotProps = (slot as ReactElement<SelectOptionProps>).props
-                const isSelected = currentValue.includes(slotProps.value)
-                return (
-                  <DropdownList.Item
-                    key={index}
-                    index={index}
-                    elevated={dropdownListState?.open}
-                    surface={isSelected ? 'selected' : undefined}
-                    blockSize={CONTROL_SCALE_MAP[size].blockSize}
-                    paddingInline={CONTROL_SCALE_MAP[size].paddingInline}
-                    inlineSize="100%"
-                    onClick={() => handleChange(slotProps.value)}
-                    ripple={false}
-                  >
-                    <Title iconName={isSelected ? 'check' : undefined} iconPlacement="right">
-                      <Text
-                        fontSize={CONTROL_SCALE_MAP[size].fontSize}
-                        lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
-                        bold={isSelected}
-                      >
-                        {slot}
-                      </Text>
-                    </Title>
-                  </DropdownList.Item>
-                )
-              })}
-            </DropdownList>
-          </MultiSelectProvider>
-        )
+        const optionSlots = slotsByName[
+          'MultiSelect.Option'
+        ] as ReactElement<MultiSelectOptionProps>[]
+        return <MultiSelectImpl {...props} optionSlots={optionSlots} />
       }}
     </WithSlots>
   )

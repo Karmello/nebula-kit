@@ -1,12 +1,11 @@
 import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
-import { DEFAULT_MULTI_SELECT_INLINE_SIZE } from 'lib/components/pro/MultiSelect/constants'
 import {
-  DEFAULT_DROPDOWN_LIST_PLACEMENT,
-  DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
-  DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
-  DROPDOWN_LIST_PLACEMENTS,
-  DROPDOWN_LIST_SCROLL_ALIGN,
-} from 'lib/components/shared'
+  DEFAULT_MULTI_SELECT_INLINE_SIZE,
+  DEFAULT_MULTI_SELECT_INTENT,
+  DEFAULT_MULTI_SELECT_VARIANT,
+  DEFAULT_MULTI_SELECT_VISIBLE_ITEMS_COUNT,
+  MULTI_SELECT_VARIANTS,
+} from 'lib/components/pro/MultiSelect/constants'
 import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { MultiSelectProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
@@ -28,28 +27,20 @@ export const MULTI_SELECT_PROPS: Record<keyof MultiSelectProps, DocProp> = {
     description: 'Initial set of selected values when the component is used in uncontrolled mode.',
   },
   disabled: BOX_META.props.disabled,
-  dropdownPlacement: {
-    options: DROPDOWN_LIST_PLACEMENTS,
-    defaultValue: DEFAULT_DROPDOWN_LIST_PLACEMENT,
-    description:
-      'Defines the preferred placement of the dropdown relative to the trigger. The final placement may be adjusted automatically to keep the list visible.',
-  },
   inlineSize: {
-    ...BOX_META.props.inlineSize,
+    options: BOX_META.props.inlineSize.options,
     defaultValue: String(DEFAULT_MULTI_SELECT_INLINE_SIZE),
+    isResponsive: true,
+    description: BOX_META.props.inlineSize.description,
   },
   intent: {
     options: BOX_INTENTS,
-    description: 'Color tone applied to the component.',
+    defaultValue: DEFAULT_MULTI_SELECT_INTENT,
+    description: BOX_META.props.intent.description,
   },
   onChange: {
     options: ['(value: string[]) => void'],
     description: 'Callback fired when the set of selected values changes.',
-  },
-  scrollAlign: {
-    options: DROPDOWN_LIST_SCROLL_ALIGN,
-    defaultValue: DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
-    description: 'Defines how the selected option is positioned within the scroll area.',
   },
   size: {
     options: TSHIRT_SIZES,
@@ -57,15 +48,23 @@ export const MULTI_SELECT_PROPS: Record<keyof MultiSelectProps, DocProp> = {
     description:
       'Controls overall proportions - adjusting trigger and list item sizing to keep the dropdown visually balanced at each size.',
   },
-  tagAttrs: BOX_META.props.tagAttrs,
-  tagRef: BOX_META.props.tagRef,
+  staticLabel: {
+    options: ['string'],
+    description:
+      'Displays a fixed label instead of the selected values. Useful for navigation-style selects where the trigger text should stay constant.',
+  },
   value: {
     options: ['string[]'],
     description: 'Current set of selected values when the component is used in controlled mode.',
   },
+  variant: {
+    options: MULTI_SELECT_VARIANTS,
+    defaultValue: DEFAULT_MULTI_SELECT_VARIANT,
+    description: BOX_META.props.variant.description,
+  },
   visibleItemsCount: {
     options: ['number'],
-    defaultValue: String(DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT),
+    defaultValue: String(DEFAULT_MULTI_SELECT_VISIBLE_ITEMS_COUNT),
     description: 'Specifies the number of list items visible before scrolling is enabled.',
   },
 }
