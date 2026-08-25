@@ -3,6 +3,10 @@ import { PORTAL_META } from 'lib/components/pro/Portal/meta'
 import { ComponentMeta } from 'client/definitions'
 
 import { APP_FRAME_META } from '../../lib/components/core/AppFrame/meta'
+import { APP_FRAME_FOOTER_META } from '../../lib/components/core/AppFrame/slots/AppFrameFooter/meta'
+import { APP_FRAME_FOOTER_SECTION_META } from '../../lib/components/core/AppFrame/slots/AppFrameFooterSection/meta'
+import { APP_FRAME_HEADER_META } from '../../lib/components/core/AppFrame/slots/AppFrameHeader/meta'
+import { APP_FRAME_MAIN_META } from '../../lib/components/core/AppFrame/slots/AppFrameMain/meta'
 import { BOX_META } from '../../lib/components/core/Box/meta'
 import { BUTTON_META } from '../../lib/components/core/Button/meta'
 import { CALLOUT_META } from '../../lib/components/core/Callout/meta'
@@ -49,7 +53,13 @@ import { TOOLTIP_META } from '../../lib/components/pro/Tooltip/meta'
 import { VIRTUAL_LIST_META } from '../../lib/components/pro/VirtualList/meta'
 
 const META = {
-  AppFrame: APP_FRAME_META,
+  AppFrame: {
+    AppFrame: APP_FRAME_META,
+    AppFrameHeader: APP_FRAME_HEADER_META,
+    AppFrameMain: APP_FRAME_MAIN_META,
+    AppFrameFooter: APP_FRAME_FOOTER_META,
+    AppFrameFooterSection: APP_FRAME_FOOTER_SECTION_META,
+  },
   Autocomplete: AUTOCOMPLETE_META,
   Avatar: AVATAR_META,
   Box: BOX_META,

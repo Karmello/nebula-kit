@@ -1,0 +1,33 @@
+import { ComponentMeta } from 'client/definitions'
+
+import { BOX_META } from '../../../../Box/meta'
+import { DEFAULT_APP_FRAME_HEADER_INTENT } from '../constants'
+import type { AppFrameHeaderProps } from '../types'
+
+export const APP_FRAME_HEADER_META = {
+  overview: {
+    bundle: 'core',
+    name: 'AppFrame.Header',
+    title: 'Defines the top region of AppFrame.',
+    guidelines: ['typically used for navigation, branding or other global actions'],
+    composedOf: ['Box'],
+    exposedTags: ['header'],
+  },
+  props: {
+    children: {
+      ...BOX_META.Box.props.children,
+      isRequired: true,
+    },
+    color: {
+      ...BOX_META.Box.props.color,
+      isResponsive: false,
+    },
+    intent: {
+      ...BOX_META.Box.props.intent,
+      defaultValue: String(DEFAULT_APP_FRAME_HEADER_INTENT),
+      isResponsive: false,
+    },
+    tagAttrs: BOX_META.Box.props.tagAttrs,
+    tagRef: BOX_META.Box.props.tagRef,
+  },
+} satisfies ComponentMeta<AppFrameHeaderProps>
